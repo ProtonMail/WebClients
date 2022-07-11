@@ -1,16 +1,7 @@
 import { Dispatch, SetStateAction, useCallback } from 'react';
 import { c, msgid } from 'ttag';
 import { useDispatch } from 'react-redux';
-import {
-    classnames,
-    FilterUtils,
-    useApi,
-    useEventManager,
-    useFilters,
-    useLabels,
-    useMailSettings,
-    useNotifications,
-} from '@proton/components';
+import { classnames, useApi, useEventManager, useLabels, useMailSettings, useNotifications } from '@proton/components';
 import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
@@ -19,18 +10,15 @@ import { undoActions } from '@proton/shared/lib/api/mailUndoActions';
 import { labelMessages } from '@proton/shared/lib/api/messages';
 import { labelConversations } from '@proton/shared/lib/api/conversations';
 import isTruthy from '@proton/utils/isTruthy';
-import unique from '@proton/utils/unique';
-import { canonizeEmail } from '@proton/shared/lib/helpers/email';
-import { addTreeFilter } from '@proton/shared/lib/api/filters';
-import { updateSpamAction } from '@proton/shared/lib/api/mailSettings';
 import { SpamAction } from '@proton/shared/lib/interfaces';
+import { updateSpamAction } from '@proton/shared/lib/api/mailSettings';
 
 import { useOptimisticApplyLabels } from '../optimistic/useOptimisticApplyLabels';
 import { useMoveAll } from './useMoveAll';
 import MoveScheduledModal from '../../components/message/modals/MoveScheduledModal';
 import { Conversation } from '../../models/conversation';
 import { getMessagesAuthorizedToMove } from '../../helpers/message/messages';
-import { getSenders, isMessage as testIsMessage } from '../../helpers/elements';
+import { isMessage as testIsMessage } from '../../helpers/elements';
 import UndoActionNotification from '../../components/notifications/UndoActionNotification';
 import { PAGE_SIZE, SUCCESS_NOTIFICATION_EXPIRATION } from '../../constants';
 import { isLabel } from '../../helpers/labels';
@@ -38,9 +26,9 @@ import { backendActionFinished, backendActionStarted } from '../../logic/element
 import { Element } from '../../models/element';
 import MoveAllButton from '../../components/notifications/MoveAllButton';
 import MoveToSpamModal from '../../components/message/modals/MoveToSpamModal';
+import { useCreateFilters } from './useCreateFilters';
 
 const { SPAM, TRASH, SCHEDULED, SENT, ALL_SENT, DRAFTS, ALL_DRAFTS, INBOX } = MAILBOX_LABEL_IDS;
-const { createDefaultLabelsFilter } = FilterUtils;
 
 const joinSentences = (success: string, notAuthorized: string) => [success, notAuthorized].filter(isTruthy).join(' ');
 
@@ -157,28 +145,16 @@ const getNotificationTextUnauthorized = (folderID?: string, fromLabelID?: string
     return notificationText;
 };
 
-const getNotificationTextFilters = (isMessage: boolean, senders: string[], folder: string) => {
-    let notificationText: string;
-    const sendersList = senders.join(', ');
-
-    if (isMessage) {
-        notificationText = c('Success').t`Messages from ${sendersList} will be moved to ${folder}`;
-    } else {
-        notificationText = c('Success').t`Conversations from ${sendersList} will be moved to ${folder}`;
-    }
-
-    return notificationText;
-};
-
 export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolean>>) => {
     const api = useApi();
     const { call, stop, start } = useEventManager();
     const { createNotification } = useNotifications();
     const [labels = []] = useLabels();
-    const [filters = []] = useFilters();
     const optimisticApplyLabels = useOptimisticApplyLabels();
     const [mailSettings] = useMailSettings();
     const dispatch = useDispatch();
+    const getCreateFilters = useCreateFilters();
+
     let canUndo = true; // Used to not display the Undo button if moving only scheduled messages/conversations to trash
 
     const { moveAll, modal: moveAllModal } = useMoveAll();
@@ -245,21 +221,6 @@ export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolea
             return mailSettings?.SpamAction;
         }
     };
-    
-    const doCreateFilters = async (elements: Element[], folderID: string, folderName: string) => {
-        const senders = unique(
-            elements
-                .flatMap((element) => getSenders(element))
-                .map((recipient) => recipient?.Address)
-                .filter(isTruthy)
-                .map((email) => canonizeEmail(email))
-        );
-        const newFilters = createDefaultLabelsFilter(senders, [{ ID: folderID, Name: folderName }], filters);
-        await Promise.all(newFilters.map((filter) => api(addTreeFilter(filter as any))));
-        createNotification({
-            text: getNotificationTextFilters(testIsMessage(elements[0]), senders, folderName),
-        });
-    };
 
     const moveToFolder = useCallback(
         async (
@@ -303,6 +264,8 @@ export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolea
                 return;
             }
 
+            const { doCreateFilters, undoCreateFilters } = getCreateFilters();
+
             let rollback = () => {};
 
             const handleDo = async () => {
@@ -312,10 +275,12 @@ export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolea
                     stop();
                     dispatch(backendActionStarted());
                     rollback = optimisticApplyLabels(authorizedToMove, { [folderID]: true }, true, [], fromLabelID);
-                    const { UndoToken } = await api(action({ LabelID: folderID, IDs: elementIDs, SpamAction: spamAction }));
-                    if (createFilters) {
-                        await doCreateFilters(elements, folderID, folderName);
-                    }
+
+                    const [{ UndoToken }] = await Promise.all([
+                        api<{ UndoToken: { Token: string } }>(action({ LabelID: folderID, IDs: elementIDs, SpamAction: spamAction })),
+                        createFilters ? doCreateFilters(elements, [folderID], true) : undefined,
+                    ]);
+
                     // We are not checking ValidUntil since notification stay for few seconds after this action
                     token = UndoToken.Token;
                 } catch (error: any) {
@@ -350,7 +315,11 @@ export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolea
                         // Stop the event manager to prevent race conditions
                         stop();
                         rollback();
-                        await api(undoActions(token));
+
+                        await Promise.all([
+                            token !== undefined ? api(undoActions(token)) : undefined,
+                            createFilters ? undoCreateFilters() : undefined,
+                        ]);
                     } finally {
                         start();
                         await call();
