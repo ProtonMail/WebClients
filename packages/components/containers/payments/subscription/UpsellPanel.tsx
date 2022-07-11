@@ -20,7 +20,7 @@ import {
     isTrial,
 } from '@proton/shared/lib/helpers/subscription';
 import { Currency, Plan, Subscription, UserModel } from '@proton/shared/lib/interfaces';
-import { MAX_CALENDARS_PER_USER } from '@proton/shared/lib/calendar/constants';
+import { MAX_CALENDARS_PAID } from '@proton/shared/lib/calendar/constants';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 
@@ -244,7 +244,7 @@ const UpsellPanel = ({ currency, subscription, plans, user, openSubscriptionModa
                 step: SUBSCRIPTION_STEPS.CHECKOUT,
                 disablePlanSelection: true,
             });
-        const numberOfPersonalCalendars = MAX_CALENDARS_PER_USER;
+        const numberOfPersonalCalendars = MAX_CALENDARS_PAID;
         const items: (Item | undefined)[] = [
             {
                 icon: 'storage',

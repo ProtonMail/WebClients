@@ -3,9 +3,9 @@ import { c, msgid } from 'ttag';
 
 import { VisualCalendar, SubscribedCalendar } from '@proton/shared/lib/interfaces/calendar';
 import { SimpleMap, UserModel } from '@proton/shared/lib/interfaces';
-import { MAX_CALENDARS_PER_USER } from '@proton/shared/lib/calendar/constants';
 import { Card } from '@proton/atoms';
 
+import { MAX_CALENDARS_PAID } from '@proton/shared/lib/calendar/constants';
 import { Alert, ButtonLike, PrimaryButton, SettingsLink, Tooltip } from '../../../components';
 import { SettingsSection } from '../../account';
 import CalendarsTable from './CalendarsTable';
@@ -53,14 +53,14 @@ const CalendarsSection = ({
                 {calendarLimitReachedText}
             </Alert>
         )}
-        {user.isFree && canUpgradeLimit && !canAdd && !isFeatureUnavailable && (
+        {!user.hasPaidMail && canUpgradeLimit && !canAdd && !isFeatureUnavailable && (
             <Card rounded className="mb1">
                 <div className="flex flex-nowrap flex-align-items-center">
                     <p className="flex-item-fluid mt0 mb0 pr2">
                         {c('Upgrade notice').ngettext(
-                            msgid`Upgrade to a paid plan to create up to ${MAX_CALENDARS_PER_USER} calendar, allowing you to make calendars for work, to share with friends, and just for yourself.`,
-                            `Upgrade to a paid plan to create up to ${MAX_CALENDARS_PER_USER} calendars, allowing you to make calendars for work, to share with friends, and just for yourself.`,
-                            MAX_CALENDARS_PER_USER
+                            msgid`Upgrade to a Mail paid plan to create up to ${MAX_CALENDARS_PAID} calendar, allowing you to make calendars for work, to share with friends, and just for yourself.`,
+                            `Upgrade to a Mail paid plan to create up to ${MAX_CALENDARS_PAID} calendars, allowing you to make calendars for work, to share with friends, and just for yourself.`,
+                            MAX_CALENDARS_PAID
                         )}
                     </p>
                     <ButtonLike as={SettingsLink} path="/upgrade" color="norm" shape="solid" size="small">

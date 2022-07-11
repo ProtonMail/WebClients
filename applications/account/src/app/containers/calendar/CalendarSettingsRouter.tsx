@@ -1,19 +1,14 @@
 import { ReactNode, useMemo } from 'react';
 import { Switch, Route, useRouteMatch, useLocation } from 'react-router-dom';
-import { c } from 'ttag';
 
 import { UserModel } from '@proton/shared/lib/interfaces';
-import { Card } from '@proton/atoms';
 import {
-    ButtonLike,
     CalendarImportSection,
     CalendarLayoutSection,
     CalendarShareSection,
     CalendarTimeSection,
     PersonalCalendarsSection,
     PrivateMainSettingsArea,
-    SettingsLink,
-    SettingsSection,
     SubscribedCalendarsSection,
     ThemesSection,
     useAddresses,
@@ -130,34 +125,12 @@ const CalendarSettingsRouter = ({
                         defaultCalendar={defaultCalendar}
                         user={user}
                     />
-                    {user.isFree ? (
-                        <SettingsSection>
-                            <Card rounded className="mb1" data-test-id="card:upgrade">
-                                <div className="flex flex-nowrap flex-align-items-center">
-                                    <p className="flex-item-fluid mt0 mb0 pr2">
-                                        {c('Upgrade notice')
-                                            .t`Upgrade to a paid plan to share your personal calendar via link with anyone.`}
-                                    </p>
-                                    <ButtonLike
-                                        as={SettingsLink}
-                                        path="/upgrade"
-                                        color="norm"
-                                        shape="solid"
-                                        size="small"
-                                    >
-                                        {c('Action').t`Upgrade`}
-                                    </ButtonLike>
-                                </div>
-                            </Card>
-                        </SettingsSection>
-                    ) : (
-                        <CalendarShareSection
-                            id="calendar-share-section"
-                            calendars={personalCalendars}
-                            defaultCalendar={defaultCalendar}
-                            user={user}
-                        />
-                    )}
+                    <CalendarShareSection
+                        id="calendar-share-section"
+                        calendars={personalCalendars}
+                        defaultCalendar={defaultCalendar}
+                        user={user}
+                    />
                 </PrivateMainSettingsArea>
             </Route>
             {redirect}
