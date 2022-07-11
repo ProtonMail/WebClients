@@ -108,7 +108,12 @@ const InputFieldBase = <E extends ElementType = typeof defaultElement>(
                     : { tooltipType: 'warning' as const, iconClassName: 'color-warning', title: warning };
 
                 return (
-                    <Tooltip title={title} type={tooltipType} isOpen={isFocused && !rest.value}>
+                    <Tooltip
+                        title={title}
+                        type={tooltipType}
+                        originalPlacement="top-right"
+                        isOpen={isFocused && !rest.value}
+                    >
                         <span className="flex flex-item-noshrink p0-25">
                             <Icon name="exclamation-circle-filled" className={iconClassName} />
                         </span>
