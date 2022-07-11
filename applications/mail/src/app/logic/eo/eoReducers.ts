@@ -92,7 +92,7 @@ export const EODocumentInitializeFulfilled = (
     const messageState = getMessageState(state);
 
     if (messageState) {
-        Object.assign(messageState.data, dataChanges);
+        Object.assign(messageState.data!, dataChanges);
         if (messageState.messageDocument) {
             messageState.messageDocument.initialized = initialized;
             messageState.messageDocument.document = preparation?.document;

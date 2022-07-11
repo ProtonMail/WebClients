@@ -18,14 +18,14 @@
         "execa": "^5.1.1",
         "gettext-parser": "^5.1.2",
         "glob": "^8.0.3",
-        "ttag-cli": "^1.9.3"
+        "ttag-cli": "^1.9.4"
     },
     "devDependencies": {
         "cross-env": "^7.0.3",
-        "eslint": "^8.14.0",
-        "prettier": "^2.6.2"
+        "eslint": "^8.19.0",
+        "prettier": "^2.7.1"
     },
     "engines": {
-        "node": ">= v16.15.0"
+        "node": ">= v16.16.0"
     }
 }
