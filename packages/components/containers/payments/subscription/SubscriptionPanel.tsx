@@ -1,15 +1,5 @@
 import { c, msgid } from 'ttag';
-import {
-    PLANS,
-    PLAN_NAMES,
-    APPS,
-    CYCLE,
-    BRAND_NAME,
-    VPN_CONNECTIONS,
-    MAX_CALENDARS_FREE,
-    MAX_CALENDARS_PAID,
-    APP_NAMES,
-} from '@proton/shared/lib/constants';
+import { PLANS, PLAN_NAMES, APPS, CYCLE, BRAND_NAME, VPN_CONNECTIONS, APP_NAMES } from '@proton/shared/lib/constants';
 import { getHasB2BPlan, getPrimaryPlan, hasVPN, isTrial } from '@proton/shared/lib/helpers/subscription';
 import {
     Subscription,
@@ -24,9 +14,9 @@ import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import percentage from '@proton/utils/percentage';
 import isTruthy from '@proton/utils/isTruthy';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
-import { MAX_CALENDARS_PER_USER } from '@proton/shared/lib/calendar/constants';
 import { getFreeServers, getPlusServers } from '@proton/shared/lib/vpn/features';
 
+import { MAX_CALENDARS_FREE, MAX_CALENDARS_PAID } from '@proton/shared/lib/calendar/constants';
 import { Price, StripedList, StripedItem, Meter, Button, IconName, Icon } from '../../../components';
 import { OpenSubscriptionModalCallback } from './SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from './constants';
@@ -227,7 +217,7 @@ const SubscriptionPanel = ({
                 icon: 'calendar-checkmark',
                 text: (() => {
                     if (MaxMembers > 1) {
-                        const n = user.hasPaidMail ? MAX_CALENDARS_PER_USER : MAX_CALENDARS_FREE;
+                        const n = user.hasPaidMail ? MAX_CALENDARS_PAID : MAX_CALENDARS_FREE;
                         return c('Subscription attribute').ngettext(
                             msgid`${n} calendar per user`,
                             `${n} calendars per user`,

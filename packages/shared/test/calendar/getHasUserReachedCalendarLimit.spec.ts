@@ -1,15 +1,15 @@
-import getHasUserReachedCalendarLimit from '../../lib/calendar/getHasUserReachedCalendarLimit';
 import {
-    MAX_CALENDARS_PER_FREE_USER,
-    MAX_CALENDARS_PER_USER,
-    MAX_SUBSCRIBED_CALENDARS_PER_USER,
-} from '../../lib/calendar/constants';
+    MAX_CALENDARS_FREE,
+    MAX_CALENDARS_PAID,
+    MAX_SUBSCRIBED_CALENDARS,
+} from '@proton/shared/lib/calendar/constants';
+import getHasUserReachedCalendarLimit from '../../lib/calendar/getHasUserReachedCalendarLimit';
 
 describe('getHasUserReachedCalendarLimit', () => {
     it('informs whether the calendar limit for a user and calendar type has been reached', () => {
         expect(
             getHasUserReachedCalendarLimit({
-                calendarsLength: MAX_CALENDARS_PER_FREE_USER - 1,
+                calendarsLength: MAX_CALENDARS_FREE - 1,
                 isFreeUser: true,
                 isSubscribedCalendar: false,
             })
@@ -17,7 +17,7 @@ describe('getHasUserReachedCalendarLimit', () => {
 
         expect(
             getHasUserReachedCalendarLimit({
-                calendarsLength: MAX_CALENDARS_PER_FREE_USER,
+                calendarsLength: MAX_CALENDARS_FREE,
                 isFreeUser: true,
                 isSubscribedCalendar: false,
             })
@@ -25,7 +25,7 @@ describe('getHasUserReachedCalendarLimit', () => {
 
         expect(
             getHasUserReachedCalendarLimit({
-                calendarsLength: MAX_CALENDARS_PER_FREE_USER + 1,
+                calendarsLength: MAX_CALENDARS_FREE + 1,
                 isFreeUser: true,
                 isSubscribedCalendar: false,
             })
@@ -33,7 +33,7 @@ describe('getHasUserReachedCalendarLimit', () => {
 
         expect(
             getHasUserReachedCalendarLimit({
-                calendarsLength: MAX_CALENDARS_PER_USER - 1,
+                calendarsLength: MAX_CALENDARS_PAID - 1,
                 isFreeUser: false,
                 isSubscribedCalendar: false,
             })
@@ -41,7 +41,7 @@ describe('getHasUserReachedCalendarLimit', () => {
 
         expect(
             getHasUserReachedCalendarLimit({
-                calendarsLength: MAX_CALENDARS_PER_USER,
+                calendarsLength: MAX_CALENDARS_PAID,
                 isFreeUser: false,
                 isSubscribedCalendar: false,
             })
@@ -49,7 +49,7 @@ describe('getHasUserReachedCalendarLimit', () => {
 
         expect(
             getHasUserReachedCalendarLimit({
-                calendarsLength: MAX_CALENDARS_PER_USER + 1,
+                calendarsLength: MAX_CALENDARS_PAID + 1,
                 isFreeUser: false,
                 isSubscribedCalendar: false,
             })
@@ -57,7 +57,7 @@ describe('getHasUserReachedCalendarLimit', () => {
 
         expect(
             getHasUserReachedCalendarLimit({
-                calendarsLength: MAX_SUBSCRIBED_CALENDARS_PER_USER - 1,
+                calendarsLength: MAX_SUBSCRIBED_CALENDARS - 1,
                 isFreeUser: true,
                 isSubscribedCalendar: true,
             })
@@ -65,7 +65,7 @@ describe('getHasUserReachedCalendarLimit', () => {
 
         expect(
             getHasUserReachedCalendarLimit({
-                calendarsLength: MAX_SUBSCRIBED_CALENDARS_PER_USER - 1,
+                calendarsLength: MAX_SUBSCRIBED_CALENDARS - 1,
                 isFreeUser: false,
                 isSubscribedCalendar: true,
             })
@@ -73,7 +73,7 @@ describe('getHasUserReachedCalendarLimit', () => {
 
         expect(
             getHasUserReachedCalendarLimit({
-                calendarsLength: MAX_SUBSCRIBED_CALENDARS_PER_USER,
+                calendarsLength: MAX_SUBSCRIBED_CALENDARS,
                 isFreeUser: true,
                 isSubscribedCalendar: true,
             })
@@ -81,7 +81,7 @@ describe('getHasUserReachedCalendarLimit', () => {
 
         expect(
             getHasUserReachedCalendarLimit({
-                calendarsLength: MAX_SUBSCRIBED_CALENDARS_PER_USER,
+                calendarsLength: MAX_SUBSCRIBED_CALENDARS,
                 isFreeUser: false,
                 isSubscribedCalendar: true,
             })
@@ -89,7 +89,7 @@ describe('getHasUserReachedCalendarLimit', () => {
 
         expect(
             getHasUserReachedCalendarLimit({
-                calendarsLength: MAX_SUBSCRIBED_CALENDARS_PER_USER + 1,
+                calendarsLength: MAX_SUBSCRIBED_CALENDARS + 1,
                 isFreeUser: true,
                 isSubscribedCalendar: true,
             })
@@ -97,7 +97,7 @@ describe('getHasUserReachedCalendarLimit', () => {
 
         expect(
             getHasUserReachedCalendarLimit({
-                calendarsLength: MAX_SUBSCRIBED_CALENDARS_PER_USER + 1,
+                calendarsLength: MAX_SUBSCRIBED_CALENDARS + 1,
                 isFreeUser: false,
                 isSubscribedCalendar: true,
             })

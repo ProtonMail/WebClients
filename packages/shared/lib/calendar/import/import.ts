@@ -18,7 +18,7 @@ import {
     VcalVtimezoneComponent,
 } from '../../interfaces/calendar';
 
-import { ICAL_METHOD, IMPORT_ERROR_TYPE, MAX_CALENDARS_PER_USER, MAX_IMPORT_EVENTS } from '../constants';
+import { ICAL_METHOD, IMPORT_ERROR_TYPE, MAX_CALENDARS_PAID, MAX_IMPORT_EVENTS } from '../constants';
 import getComponentFromCalendarEvent from '../getComponentFromCalendarEvent';
 import { generateVeventHashUID, getOriginalUID } from '../helper';
 import { IMPORT_EVENT_ERROR_TYPE, ImportEventError } from '../icsSurgery/ImportEventError';
@@ -283,7 +283,7 @@ const getParentEventFromApi = async (uid: string, api: Api, calendarId: string) 
             ...getEventByUID({
                 UID: uid,
                 Page: 0,
-                PageSize: MAX_CALENDARS_PER_USER,
+                PageSize: MAX_CALENDARS_PAID,
             }),
             silence: true,
         });

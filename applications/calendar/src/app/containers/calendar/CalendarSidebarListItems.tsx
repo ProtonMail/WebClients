@@ -141,7 +141,7 @@ const CalendarSidebarListItems = ({
                                         >
                                             {c('Action').t`Edit`}
                                         </DropdownMenuButton>
-                                        {isPersonalCalendar && !user.isFree && (
+                                        {isPersonalCalendar && user.hasPaidMail && (
                                             <DropdownMenuLink
                                                 as={SettingsLink}
                                                 path={`/calendars?share=${calendar.ID}`}

@@ -123,13 +123,8 @@ const ExtraEvents = ({ message }: Props) => {
                     const activeCalendars = getProbablyActiveCalendars(calendars);
                     const defaultCalendar = getDefaultCalendar(activeCalendars, calendarUserSettings.DefaultCalendarID);
                     const disabledCalendars = calendars.filter(unary(getIsCalendarDisabled));
-                    const canCreateCalendar = getCanCreateCalendar(
-                        activeCalendars,
-                        disabledCalendars,
-                        calendars,
-                        user.isFree
-                    );
-                    const maxUserCalendarsDisabled = getMaxUserCalendarsDisabled(disabledCalendars, user.isFree);
+                    const canCreateCalendar = getCanCreateCalendar(calendars, !user.hasPaidMail);
+                    const maxUserCalendarsDisabled = getMaxUserCalendarsDisabled(disabledCalendars, !user.hasPaidMail);
 
                     return {
                         calendars,

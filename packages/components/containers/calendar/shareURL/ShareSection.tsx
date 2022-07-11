@@ -1,8 +1,8 @@
-import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import { ComponentPropsWithoutRef, MouseEvent, useState } from 'react';
 import { c } from 'ttag';
+import { Card } from '@proton/atoms/Card';
+import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import { VisualCalendar, ACCESS_LEVEL, CalendarUrlResponse } from '@proton/shared/lib/interfaces/calendar';
-
 import {
     buildLink,
     generateEncryptedPurpose,
@@ -13,16 +13,16 @@ import { splitKeys } from '@proton/shared/lib/keys';
 import { Nullable } from '@proton/shared/lib/interfaces/utils';
 import { ModalWithProps } from '@proton/shared/lib/interfaces/Modal';
 import { UserModel } from '@proton/shared/lib/interfaces';
+
 import { useApi, useGetCalendarInfo, useNotifications } from '../../../hooks';
 import { useModalsMap } from '../../../hooks/useModalsMap';
 import { useCalendarModelEventManager } from '../../eventManager';
-
 import LinkTable from './LinkTable';
 import ShareTable from './ShareTable';
 import ShareLinkSuccessModal from './ShareLinkSuccessModal';
 import DeleteLinkConfirmationModal from './DeleteLinkConfirmationModal';
 import EditLinkModal from './EditLinkModal';
-import { Alert, Loader } from '../../../components';
+import { Alert, ButtonLike, Loader, SettingsLink } from '../../../components';
 import useCalendarShareUrls from './useCalendarShareUrls';
 import { SettingsParagraph, SettingsSection } from '../../account';
 
@@ -149,6 +149,40 @@ const ShareSection = ({ calendars, defaultCalendar, user, ...rest }: Props) => {
     const { editLinkModal, shareLinkSuccessModal, deleteLinkConfirmationModal } = modalsMap;
     const editLinkModalProps = editLinkModal.props;
 
+    const shareTableHeader = calendars.length ? (
+        <>
+            {infoParagraph}
+            <ShareTable
+                linksMap={linksMap}
+                isLoadingCreate={isLoadingCreate}
+                disabled={!!isLoadingLinks}
+                calendars={calendars}
+                onCreateLink={handleCreateLink}
+                defaultCalendar={defaultCalendar}
+                user={user}
+            />
+        </>
+    ) : (
+        <>
+            <Alert className="mb1" type="warning">{c('Info')
+                .t`You need to have a personal calendar to create a link.`}</Alert>
+            {infoParagraph}
+        </>
+    );
+    const upgradeBanner = (
+        <Card rounded className="mb1" data-test-id="card:upgrade">
+            <div className="flex flex-nowrap flex-align-items-center">
+                <p className="flex-item-fluid mt0 mb0 pr2">
+                    {c('Upgrade notice')
+                        .t`Upgrade to a Mail paid plan to share your personal calendar via link with anyone.`}
+                </p>
+                <ButtonLike as={SettingsLink} path="/upgrade" color="norm" shape="solid" size="small">
+                    {c('Action').t`Upgrade`}
+                </ButtonLike>
+            </div>
+        </Card>
+    );
+
     return (
         <SettingsSection {...rest}>
             {!!editLinkModalProps && (
@@ -200,26 +234,7 @@ const ShareSection = ({ calendars, defaultCalendar, user, ...rest }: Props) => {
                     onClose={() => closeModal('deleteLinkConfirmationModal')}
                 />
             )}
-            {calendars.length ? (
-                <>
-                    {infoParagraph}
-                    <ShareTable
-                        linksMap={linksMap}
-                        isLoadingCreate={isLoadingCreate}
-                        disabled={!!isLoadingLinks}
-                        calendars={calendars}
-                        onCreateLink={handleCreateLink}
-                        defaultCalendar={defaultCalendar}
-                        user={user}
-                    />
-                </>
-            ) : (
-                <>
-                    <Alert className="mb1" type="warning">{c('Info')
-                        .t`You need to have a personal calendar to create a link.`}</Alert>
-                    {infoParagraph}
-                </>
-            )}
+            {user.hasPaidMail ? shareTableHeader : upgradeBanner}
             {isLoadingLinks ? (
                 <div className="text-center">
                     <Loader />

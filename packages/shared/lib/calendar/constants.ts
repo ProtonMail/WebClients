@@ -1,7 +1,11 @@
-import { APPS, BASE_SIZE, ACCENT_COLORS } from '../constants';
+import { ACCENT_COLORS, APPS, BASE_SIZE } from '../constants';
 import { getAppName } from '../apps/helper';
 
 export const CALENDAR_APP_NAME = getAppName(APPS.PROTONCALENDAR);
+
+export const MAX_CALENDARS_FREE = 1;
+export const MAX_SUBSCRIBED_CALENDARS = 5;
+export const MAX_CALENDARS_PAID = 20; // Only paid mail
 
 export enum CALENDAR_CARD_TYPE {
     CLEAR_TEXT = 0,
@@ -94,10 +98,6 @@ export enum ATTENDEE_STATUS_API {
     DECLINED = 2,
     ACCEPTED = 3,
 }
-
-export const MAX_CALENDARS_PER_FREE_USER = 1;
-export const MAX_CALENDARS_PER_USER = 20;
-export const MAX_SUBSCRIBED_CALENDARS_PER_USER = 5;
 
 export const MAX_LENGTHS_API = {
     UID: 191,

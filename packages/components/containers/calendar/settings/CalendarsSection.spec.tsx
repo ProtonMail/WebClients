@@ -23,7 +23,7 @@ function renderComponent(props?: Partial<CalendarsSectionProps>) {
     const defaultProps: CalendarsSectionProps = {
         calendars: [],
         // defaultCalendarID?: string,
-        user: { isFree: true } as UserModel,
+        user: { hasPaidMail: false } as UserModel,
         // loading?: boolean,
         loadingMap: {},
         canAdd: false,
