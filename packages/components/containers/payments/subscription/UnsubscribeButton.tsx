@@ -1,17 +1,14 @@
 import { ReactNode } from 'react';
 import { c } from 'ttag';
-import { getCalendars } from '@proton/shared/lib/models/calendarsModel';
 import { deleteSubscription } from '@proton/shared/lib/api/payments';
 import { hasBonuses } from '@proton/shared/lib/helpers/organization';
-import { MAX_CALENDARS_PER_FREE_USER } from '@proton/shared/lib/calendar/constants';
-import { Calendar, CalendarUrlsResponse } from '@proton/shared/lib/interfaces/calendar';
-import { getPublicLinks } from '@proton/shared/lib/api/calendars';
-import { getIsPersonalCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
-import unary from '@proton/utils/unary';
+import { getShouldCalendarPreventSubscripitionChange } from '@proton/shared/lib/calendar/subscription';
 import { hasMigrationDiscount, hasNewVisionary } from '@proton/shared/lib/helpers/subscription';
 import { PLANS, PLAN_SERVICES } from '@proton/shared/lib/constants';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
+import { hasPaidMail } from '@proton/shared/lib/user/helpers';
+
 import Button, { ButtonProps } from '../../../components/button/Button';
 import {
     useApi,
@@ -25,6 +22,7 @@ import {
     useSubscription,
     useVPNCountriesCount,
     useVPNServersCount,
+    useGetCalendars,
 } from '../../../hooks';
 import LossLoyaltyModal from '../LossLoyaltyModal';
 import DowngradeModal from '../DowngradeModal';
@@ -53,6 +51,7 @@ const UnsubscribeButton = ({ className, children, ...rest }: Props) => {
     const { createModal } = useModals();
     const api = useApi();
     const { call } = useEventManager();
+    const getCalendars = useGetCalendars();
     const [loading, withLoading] = useLoading();
 
     const { Plans = [], PeriodEnd = 0 } = subscription || {};
@@ -83,18 +82,12 @@ const UnsubscribeButton = ({ className, children, ...rest }: Props) => {
         }
 
         // Start promise early
-        const calendarPromise = (async () => {
-            const calendars: Calendar[] = await getCalendars(api);
-            const personalCalendars = calendars.filter(unary(getIsPersonalCalendar));
-
-            const hasLinks = !!(
-                await Promise.all(
-                    personalCalendars.map((calendar) => api<CalendarUrlsResponse>(getPublicLinks(calendar.ID)))
-                )
-            ).flatMap(({ CalendarUrls }) => CalendarUrls).length;
-
-            return personalCalendars.length > MAX_CALENDARS_PER_FREE_USER || hasLinks;
-        })();
+        const shouldCalendarPreventDowngradePromise = getShouldCalendarPreventSubscripitionChange({
+            hasPaidMail: hasPaidMail(user),
+            willHavePaidMail: false,
+            api,
+            getCalendars,
+        });
 
         if (hasMigrationDiscount(subscription)) {
             await new Promise<void>((resolve, reject) => {
@@ -125,9 +118,9 @@ const UnsubscribeButton = ({ className, children, ...rest }: Props) => {
             });
         }
 
-        if (await calendarPromise) {
+        if (await shouldCalendarPreventDowngradePromise) {
             await new Promise<void>((resolve, reject) => {
-                createModal(<CalendarDowngradeModal onConfirm={reject} onClose={reject} />);
+                createModal(<CalendarDowngradeModal isDowngrade onConfirm={reject} onClose={reject} />);
             });
         }
 

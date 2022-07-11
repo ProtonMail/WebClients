@@ -5,20 +5,28 @@ import { AlertModal, AppLink, Button, ModalProps } from '../../../components';
 
 interface Props extends ModalProps {
     onConfirm: () => void;
+    isDowngrade?: boolean;
 }
 
 const CALENDAR_APP_NAME = getAppName(APPS.PROTONCALENDAR);
 
-const CalendarDowngradeModal = ({ onConfirm, onClose, ...rest }: Props) => {
+const CalendarDowngradeModal = ({ isDowngrade, onConfirm, onClose, ...rest }: Props) => {
     const linkButton = (
         <AppLink toApp={APPS.PROTONACCOUNT} to="/calendar/calendars" onClick={onClose}>
             {c('Action').t`Open ${CALENDAR_APP_NAME} settings`}
         </AppLink>
     );
 
+    const title = isDowngrade ? c('Title').t`Downgrade account` : c('Title').t`Cancel Mail subscription`;
+    const text = isDowngrade
+        ? c('Info')
+              .t`You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription.`
+        : c('Info')
+              .t`You must remove any additional personal calendars and any shared calendar links before you can cancel your Mail subscription.`;
+
     return (
         <AlertModal
-            title={c('Title').t`Downgrade account`}
+            title={title}
             buttons={[
                 <Button
                     onClick={() => {
@@ -35,8 +43,7 @@ const CalendarDowngradeModal = ({ onConfirm, onClose, ...rest }: Props) => {
             {...rest}
         >
             <div>
-                {c('Info')
-                    .t`You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription.`}
+                {text}
                 <br />
                 {linkButton}
             </div>

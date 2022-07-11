@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { c, msgid } from 'ttag';
 
-import { MAX_CALENDARS_PER_USER } from '@proton/shared/lib/calendar/constants';
+import { MAX_CALENDARS_PAID } from '@proton/shared/lib/calendar/constants';
 import { Calendar } from '@proton/shared/lib/interfaces/calendar';
 import noop from '@proton/utils/noop';
 import {
@@ -130,9 +130,9 @@ const CustomizeCalendarImportModal = ({
         );
     };
 
-    const calendarLimitReached = calendarsToBeCreatedCount + calendars.length > MAX_CALENDARS_PER_USER;
+    const calendarLimitReached = calendarsToBeCreatedCount + calendars.length > MAX_CALENDARS_PAID;
     const disabled = calendarLimitReached || selectedCalendarsTotal === 0;
-    const calendarToFixCount = Math.abs(MAX_CALENDARS_PER_USER - calendars.length - calendarsToBeCreatedCount);
+    const calendarToFixCount = Math.abs(MAX_CALENDARS_PAID - calendars.length - calendarsToBeCreatedCount);
 
     const canMerge = activeCalendars.length > 0;
 

@@ -20,7 +20,7 @@ import {
 } from '@proton/shared/lib/interfaces/EasySwitch';
 import { Calendar } from '@proton/shared/lib/interfaces/calendar';
 import isTruthy from '@proton/utils/isTruthy';
-import { MAX_CALENDARS_PER_USER } from '@proton/shared/lib/calendar/constants';
+import { MAX_CALENDARS_PAID } from '@proton/shared/lib/calendar/constants';
 import { getProbablyActiveCalendars } from '@proton/shared/lib/calendar/calendar';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
@@ -181,7 +181,7 @@ const IASelectImportTypeStep = ({
         return mailMapping ? getMailMappingErrors(mailMapping) : [];
     }, [modalModel.payload[ImportType.MAIL]?.Mapping]);
 
-    const calendarLimitReached = calendarsToBeCreated + calendars.length > MAX_CALENDARS_PER_USER;
+    const calendarLimitReached = calendarsToBeCreated + calendars.length > MAX_CALENDARS_PAID;
 
     const payloadErrors = [
         checkedTypes[MAIL] && mailMappingErrors,

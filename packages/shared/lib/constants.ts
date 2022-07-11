@@ -14,9 +14,6 @@ export const WEEK = 7 * DAY;
 export const MONTH = 4 * WEEK;
 export const YEAR = 12 * MONTH;
 
-export const MAX_CALENDARS_FREE = 1;
-export const MAX_CALENDARS_PAID = 20; // Only paid mail
-
 // Max quantity for all addons
 export const MAX_VPN_ADDON = 2000;
 export const MAX_MEMBER_ADDON = 5000;
