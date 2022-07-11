@@ -164,14 +164,15 @@ const EmailUnsubscribeContainer = () => {
     if (error) {
         const signIn = (
             <a key="1" href="/login" target="_self">
-                {c('Action').t`sign in`}
+                {c('Error message, unsubscribe').t`sign in`}
             </a>
         );
 
         return (
             <GenericError>
-                <span>{c('Error message').t`There was a problem unsubscribing you.`}</span>
-                <span>{c('Error message').jt`Please ${signIn} to update your email subscription preferences.`}</span>
+                <span>{c('Error message, unsubscribe').t`There was a problem unsubscribing you.`}</span>
+                <span>{c('Error message, unsubscribe')
+                    .jt`Please ${signIn} to update your email subscription preferences.`}</span>
             </GenericError>
         );
     }

@@ -153,9 +153,9 @@ const MemberStorageSelector = ({
     const sizeElementWidth = 1;
     // We calculate a ratio because the modal has a transform animation which the getBoundingClientRect doesn't take into account
     const ratio = (sizeRect?.width || 0) / sizeElementWidth;
-    const sizeLabel = getSizeFormat(unit);
+    const sizeLabel = getSizeFormat(unit, parsedValueInUnit);
     const sizeLabelSuffix = (
-        <span id={uid} aria-label={getLongSizeFormat(unit)}>
+        <span id={uid} aria-label={getLongSizeFormat(unit, parsedValueInUnit)}>
             {sizeLabel}
         </span>
     );

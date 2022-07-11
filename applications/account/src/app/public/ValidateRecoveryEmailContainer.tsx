@@ -21,20 +21,27 @@ const ValidateRecoveryEmailContainer = () => {
         withLoading(api({ ...postVerifyValidate({ JWT: jwt }), silence: true }).catch(setError));
     }, []);
 
-    const signIn = (
-        <a key="1" href="/switch" target="_self">
-            {c('Action').t`sign in`}
-        </a>
-    );
-
     if (error) {
+        // This sign in variable is not shared with the sign in variable below to allow for different translations.
+        const signIn = (
+            <a key="1" href="/switch" target="_self">
+                {c('Error message, recovery').t`sign in`}
+            </a>
+        );
         return (
             <GenericError>
-                <span>{c('Recovery Email').t`There was a problem verifying your email address.`}</span>
-                <span>{c('Recovery Email').jt`Please ${signIn} to resend a recovery email verification request.`}</span>
+                <span>{c('Error message, recovery').t`There was a problem verifying your email address.`}</span>
+                <span>{c('Error message, recovery')
+                    .jt`Please ${signIn} to resend a recovery email verification request.`}</span>
             </GenericError>
         );
     }
+
+    const signIn = (
+        <a key="1" href="/switch" target="_self">
+            {c('Recovery Email').t`sign in`}
+        </a>
+    );
 
     return (
         <main className="main-area">
