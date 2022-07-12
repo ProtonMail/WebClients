@@ -1,3 +1,6 @@
+export { default as SettingsLayout } from './SettingsLayout';
+export { default as SettingsLayoutLeft } from './SettingsLayoutLeft';
+export { default as SettingsLayoutRight } from './SettingsLayoutRight';
 export { default as SettingsPageTitle } from './SettingsPageTitle';
 export { default as SettingsParagraph } from './SettingsParagraph';
 export { default as SettingsSection } from './SettingsSection';

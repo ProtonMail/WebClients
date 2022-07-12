@@ -96,6 +96,8 @@ export interface UserSettings {
     WeekStart: SETTINGS_WEEK_START;
     DateFormat: SETTINGS_DATE_FORMAT;
     TimeFormat: SETTINGS_TIME_FORMAT;
+    Telemetry: 1 | 0;
+    CrashReports: 1 | 0;
     Welcome: number;
     WelcomeFlag: number;
     EarlyAccess: number;
