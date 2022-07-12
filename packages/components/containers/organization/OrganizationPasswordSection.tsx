@@ -65,7 +65,7 @@ const OrganizationPasswordSection = ({ organization, onceRef }: Props) => {
     };
 
     const handleActivateOrganizationKeys = () => {
-        createModal(<ReactivateOrganizationKeysModal mode="activate" />);
+        createModal(<ReactivateOrganizationKeysModal mode="activate" onResetKeys={handleResetOrganizationKeys} />);
     };
 
     const handleChangeOrganizationPassword = () => {
@@ -146,6 +146,9 @@ const OrganizationPasswordSection = ({ organization, onceRef }: Props) => {
                         </Alert>
                         <Button color="norm" onClick={handleActivateOrganizationKeys} className="mr1">
                             {c('Action').t`Activate organization key`}
+                        </Button>
+                        <Button onClick={handleResetOrganizationKeys} className="mr1">
+                            {c('Action').t`Reset organization keys`}
                         </Button>
                     </>
                 )}
