@@ -88,7 +88,7 @@ export const useApplyLabels = () => {
     const [labels = []] = useLabels();
     const optimisticApplyLabels = useOptimisticApplyLabels();
     const dispatch = useDispatch();
-    const getCreateFilters = useCreateFilters();
+    const { getFilterActions } = useCreateFilters();
 
     const applyLabels = useCallback(
         async (
@@ -110,7 +110,7 @@ export const useApplyLabels = () => {
             const elementIDs = elements.map((element) => element.ID);
             const rollbacks = {} as { [labelID: string]: () => void };
 
-            const { doCreateFilters, undoCreateFilters } = getCreateFilters();
+            const { doCreateFilters, undoCreateFilters } = getFilterActions();
 
             const handleDo = async () => {
                 let tokens = [];

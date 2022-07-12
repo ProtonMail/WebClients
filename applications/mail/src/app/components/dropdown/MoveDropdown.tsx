@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -11,6 +11,7 @@ import {
     Mark,
     SearchInput,
     Tooltip,
+    classnames,
     generateUID,
     useFolders,
     useLoading,
@@ -26,6 +27,7 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import { isMessage as testIsMessage } from '../../helpers/elements';
 import { getMessagesAuthorizedToMove } from '../../helpers/message/messages';
+import { useCreateFilters } from '../../hooks/actions/useCreateFilters';
 import { useMoveToFolder } from '../../hooks/actions/useMoveToFolder';
 import { useGetElementsFromIDs } from '../../hooks/mailbox/useElements';
 import { Breakpoints } from '../../models/utils';
@@ -72,6 +74,7 @@ const MoveDropdown = ({ selectedIDs, labelID, conversationMode, onClose, onLock,
     const normSearch = normalize(search, true);
     const getElementsFromIDs = useGetElementsFromIDs();
     const { moveToFolder, moveScheduledModal, moveAllModal, moveToSpamModal } = useMoveToFolder(setContainFocus);
+    const { getSendersToFilter } = useCreateFilters();
 
     const [editLabelProps, setEditLabelModalOpen] = useModalState();
 
@@ -82,6 +85,10 @@ const MoveDropdown = ({ selectedIDs, labelID, conversationMode, onClose, onLock,
     const isMessage = testIsMessage(elements[0]);
     const canMoveToInbox = isMessage ? !!getMessagesAuthorizedToMove(elements as Message[], INBOX).length : true;
     const canMoveToSpam = isMessage ? !!getMessagesAuthorizedToMove(elements as Message[], SPAM).length : true;
+
+    const alwaysDisabled = useMemo(() => {
+        return !getSendersToFilter(elements).length;
+    }, [getSendersToFilter, elements]);
 
     const list = treeview
         .reduce<FolderItem[]>((acc, folder) => folderReducer(acc, folder), [])
@@ -128,6 +135,10 @@ const MoveDropdown = ({ selectedIDs, labelID, conversationMode, onClose, onLock,
     const folderButtonID = (ID: string) => `${uid}-${ID}`;
     const autoFocusSearch = !breakpoints.isNarrow;
 
+    const alwaysTooltip = alwaysDisabled
+        ? c('Context filtering disabled').t`Your selection contains only yourself as sender`
+        : undefined;
+
     return (
         <>
             <div className="flex flex-justify-space-between flex-align-items-center m1 mb0">
@@ -160,18 +171,21 @@ const MoveDropdown = ({ selectedIDs, labelID, conversationMode, onClose, onLock,
                     data-prevent-arrow-navigation
                 />
             </div>
-            <div className="p1 border-bottom">
-                <Checkbox
-                    id={alwaysCheckID}
-                    checked={always}
-                    onChange={({ target }) => setAlways(target.checked)}
-                    data-testid="label-dropdown:always-move"
-                    data-prevent-arrow-navigation
-                />
-                <label htmlFor={alwaysCheckID} className="flex-item-fluid">
-                    {c('Label').t`Always move senders emails`}
-                </label>
-            </div>
+            <Tooltip title={alwaysTooltip}>
+                <div className={classnames(['p1 border-bottom', alwaysDisabled && 'color-disabled'])}>
+                    <Checkbox
+                        id={alwaysCheckID}
+                        checked={always}
+                        disabled={alwaysDisabled}
+                        onChange={({ target }) => setAlways(target.checked)}
+                        data-testid="label-dropdown:always-move"
+                        data-prevent-arrow-navigation
+                    />
+                    <label htmlFor={alwaysCheckID} className="flex-item-fluid">
+                        {c('Label').t`Always move senders emails`}
+                    </label>
+                </div>
+            </Tooltip>
             <div
                 className="scroll-if-needed scroll-smooth-touch mt1 move-dropdown-list-container"
                 data-testid="move-dropdown-list"

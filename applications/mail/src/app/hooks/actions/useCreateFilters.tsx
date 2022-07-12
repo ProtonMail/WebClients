@@ -1,16 +1,17 @@
-import { useCallback } from 'react';
+import { useCallback, useMemo } from 'react';
 import { c } from 'ttag';
 import unique from '@proton/utils/unique';
 import isTruthy from '@proton/utils/isTruthy';
 import { canonizeEmail } from '@proton/shared/lib/helpers/email';
 import { InlineLinkButton, useAppLink } from '@proton/components/components';
 import { createDefaultLabelsFilter } from '@proton/components/containers/filters/utils';
-import { useNotifications, useFilters, useApi, useLabels, useFolders } from '@proton/components';
+import { useNotifications, useFilters, useApi, useLabels, useFolders, useAddresses } from '@proton/components';
 import { addTreeFilter, deleteFilter } from '@proton/shared/lib/api/filters';
 import { Label } from '@proton/shared/lib/interfaces';
 import { Folder } from '@proton/shared/lib/interfaces/Folder';
 import { APPS } from '@proton/shared/lib/constants';
 import { Filter } from '@proton/components/containers/filters/interfaces';
+import diff from '@proton/utils/diff';
 import { getSenders, isMessage as testIsMessage } from '../../helpers/elements';
 import { Element } from '../../models/element';
 
@@ -48,20 +49,33 @@ export const useCreateFilters = () => {
     const appLink = useAppLink();
     const [labels = []] = useLabels();
     const [folders = []] = useFolders();
+    const [addresses = []] = useAddresses();
 
-    return useCallback(() => {
-        let createdFilters: Filter[] = [];
-        let notificationID: number | undefined;
+    const ownAddresses = useMemo(() => {
+        return addresses.map((address) => canonizeEmail(address.Email));
+    }, [addresses]);
 
-        const doCreateFilters = async (elements: Element[], labelIDs: string[], isFolder: boolean) => {
-            const senders = unique(
+    const getSendersToFilter = useCallback(
+        (elements: Element[]) => {
+            const allSenderAddresses = unique(
                 elements
                     .flatMap((element) => getSenders(element))
                     .map((recipient) => recipient?.Address)
                     .filter(isTruthy)
                     .map((email) => canonizeEmail(email))
             );
+            const senders = diff(allSenderAddresses, ownAddresses);
+            return senders;
+        },
+        [ownAddresses]
+    );
 
+    const getFilterActions = useCallback(() => {
+        let createdFilters: Filter[] = [];
+        let notificationID: number | undefined;
+
+        const doCreateFilters = async (elements: Element[], labelIDs: string[], isFolder: boolean) => {
+            const senders = getSendersToFilter(elements);
             const usedLabels: (Label | Folder)[] = isFolder ? folders : labels;
             const appliedLabels = labelIDs
                 .map((labelID) => usedLabels.find((label) => label.ID === labelID))
@@ -105,6 +119,8 @@ export const useCreateFilters = () => {
             return Promise.all(createdFilters.map((filter) => api(deleteFilter(filter.ID))));
         };
 
-        return { doCreateFilters, undoCreateFilters };
-    }, [filters, labels, folders]);
+        return { getSendersToFilter, doCreateFilters, undoCreateFilters };
+    }, [filters, labels, folders, getSendersToFilter]);
+
+    return { getSendersToFilter, getFilterActions };
 };

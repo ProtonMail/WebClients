@@ -11,20 +11,24 @@ import {
     PrimaryButton,
     SearchInput,
     Tooltip,
+    classnames,
     generateUID,
     useLabels,
     useLoading,
     useModalState,
 } from '@proton/components';
 import EditLabelModal from '@proton/components/containers/labels/modals/EditLabelModal';
-import { ACCENT_COLORS, LABEL_TYPE } from '@proton/shared/lib/constants';
+import { ACCENT_COLORS, LABEL_TYPE, MAILBOX_IDENTIFIERS } from '@proton/shared/lib/constants';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { normalize } from '@proton/shared/lib/helpers/string';
 import { Label } from '@proton/shared/lib/interfaces/Label';
 import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
 
 import { getLabelIDs } from '../../helpers/elements';
+import { getStandardFolders } from '../../helpers/labels';
 import { useApplyLabels } from '../../hooks/actions/useApplyLabels';
+import { useCreateFilters } from '../../hooks/actions/useCreateFilters';
+import { useMoveToFolder } from '../../hooks/actions/useMoveToFolder';
 import { useGetElementsFromIDs } from '../../hooks/mailbox/useElements';
 import { Element } from '../../models/element';
 import { Breakpoints } from '../../models/utils';
@@ -80,16 +84,19 @@ interface Props {
 const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: Props) => {
     const [labels = []] = useLabels();
 
+    const labelIDs = labels.map(({ ID }) => ID);
+
     const [uid] = useState(generateUID('label-dropdown'));
     const [loading, withLoading] = useLoading();
     const [search, updateSearch] = useState('');
     const [containFocus, setContainFocus] = useState(true);
     const [lastChecked, setLastChecked] = useState(''); // Store ID of the last label ID checked
-    // const [alsoArchive, updateAlsoArchive] = useState(false);
+    const [alsoArchive, updateAlsoArchive] = useState(false);
     const [always, setAlways] = useState(false);
     const getElementsFromIDs = useGetElementsFromIDs();
     const applyLabels = useApplyLabels();
-    // const { moveToFolder, moveScheduledModal, moveAllModal, moveToSpamModal } = useMoveToFolder(setContainFocus);
+    const { moveToFolder, moveScheduledModal, moveAllModal, moveToSpamModal } = useMoveToFolder(setContainFocus);
+    const { getSendersToFilter } = useCreateFilters();
 
     const [editLabelProps, setEditLabelModalOpen] = useModalState();
 
@@ -98,6 +105,9 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
         [selectedIDs, labels, labelID]
     );
     const [selectedLabelIDs, setSelectedLabelIDs] = useState<SelectionState>(initialState);
+    const alwaysDisabled = useMemo(() => {
+        return !getSendersToFilter(getElementsFromIDs(selectedIDs)).length;
+    }, [getSendersToFilter, selectedIDs]);
 
     useEffect(() => onLock(!containFocus), [containFocus]);
 
@@ -113,12 +123,11 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
 
     // The dropdown is several times in the view, native html ids has to be different each time
     const searchInputID = `${uid}-search`;
-    // const archiveCheckID = `${uid}-archive`;
+    const archiveCheckID = `${uid}-archive`;
     const alwaysCheckID = `${uid}-always`;
     const labelCheckID = (ID: string) => `${uid}-${ID}`;
     const areSameLabels = isDeepEqual(initialState, selectedLabelIDs);
-    // const applyDisabled = areSameLabels && !alsoArchive;
-    const applyDisabled = areSameLabels;
+    const applyDisabled = areSameLabels && !alsoArchive;
     const autoFocusSearch = !breakpoints.isNarrow;
     const normSearch = normalize(search, true);
     const list = labels.filter(({ Name = '' }) => {
@@ -149,11 +158,11 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
             promises.push(applyLabels(elements, changes, always));
         }
 
-        // if (alsoArchive) {
-        //     const folderName = getStandardFolders()[MAILBOX_IDENTIFIERS.archive].name;
-        //     const fromLabelID = labelIDs.includes(labelID) ? MAILBOX_IDENTIFIERS.inbox : labelID;
-        //     promises.push(moveToFolder(elements, MAILBOX_IDENTIFIERS.archive, folderName, fromLabelID, false));
-        // }
+        if (alsoArchive) {
+            const folderName = getStandardFolders()[MAILBOX_IDENTIFIERS.archive].name;
+            const fromLabelID = labelIDs.includes(labelID) ? MAILBOX_IDENTIFIERS.inbox : labelID;
+            promises.push(moveToFolder(elements, MAILBOX_IDENTIFIERS.archive, folderName, fromLabelID, false));
+        }
 
         await Promise.all(promises);
         onClose();
@@ -201,6 +210,10 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
         await withLoading(handleApply());
     };
 
+    const alwaysTooltip = alwaysDisabled
+        ? c('Context filtering disabled').t`Your selection contains only yourself as sender`
+        : undefined;
+
     return (
         <form onSubmit={handleSubmit}>
             <div className="flex flex-justify-space-between flex-align-items-center m1 mb0">
@@ -238,18 +251,33 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
                     data-prevent-arrow-navigation
                 />
             </div>
-            <div className="p1 border-bottom">
+            <div className="flex m1 mb0">
                 <Checkbox
-                    id={alwaysCheckID}
-                    checked={always}
-                    onChange={({ target }) => setAlways(target.checked)}
-                    data-testid="label-dropdown:always-move"
+                    id={archiveCheckID}
+                    checked={alsoArchive}
+                    onChange={({ target }) => updateAlsoArchive(target.checked)}
+                    data-testid="label-dropdown:also-archive"
                     data-prevent-arrow-navigation
                 />
-                <label htmlFor={alwaysCheckID} className="flex-item-fluid">
-                    {c('Label').t`Always move senders emails`}
+                <label htmlFor={archiveCheckID} className="flex-item-fluid">
+                    {c('Label').t`Also archive`}
                 </label>
             </div>
+            <Tooltip title={alwaysTooltip}>
+                <div className={classnames(['p1 border-bottom', alwaysDisabled && 'color-disabled'])}>
+                    <Checkbox
+                        id={alwaysCheckID}
+                        checked={always}
+                        disabled={alwaysDisabled}
+                        onChange={({ target }) => setAlways(target.checked)}
+                        data-testid="label-dropdown:always-move"
+                        data-prevent-arrow-navigation
+                    />
+                    <label htmlFor={alwaysCheckID} className="flex-item-fluid">
+                        {c('Label').t`Always label senders emails`}
+                    </label>
+                </div>
+            </Tooltip>
             <div
                 className="scroll-if-needed scroll-smooth-touch mt1 label-dropdown-list-container"
                 data-testid="label-dropdown-list"
@@ -294,18 +322,6 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
                     )}
                 </ul>
             </div>
-            {/* <div className="flex m1 mb0">
-                <Checkbox
-                    id={archiveCheckID}
-                    checked={alsoArchive}
-                    onChange={({ target }) => updateAlsoArchive(target.checked)}
-                    data-testid="label-dropdown:also-archive"
-                    data-prevent-arrow-navigation
-                />
-                <label htmlFor={archiveCheckID} className="flex-item-fluid">
-                    {c('Label').t`Also archive`}
-                </label>
-            </div> */}
             <div className="m1">
                 <PrimaryButton
                     className="w100"
@@ -318,9 +334,9 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
                     {c('Action').t`Apply`}
                 </PrimaryButton>
             </div>
-            {/* {moveScheduledModal}
+            {moveScheduledModal}
             {moveAllModal}
-            {moveToSpamModal} */}
+            {moveToSpamModal}
         </form>
     );
 };
