@@ -1,5 +1,7 @@
-import { Children, cloneElement, ReactElement, ReactNode, useContext, useEffect, useState } from 'react';
+import { Children, cloneElement, HTMLProps, ReactElement, ReactNode, useContext, useEffect, useState } from 'react';
 import useInstance from '@proton/hooks/useInstance';
+import isTruthy from '@proton/utils/isTruthy';
+
 import { generateUID, classnames } from '../../helpers';
 import { usePopper, Popper, usePopperAnchor } from '../popper';
 import useRightToLeft from '../../containers/rightToLeft/useRightToLeft';
@@ -9,7 +11,7 @@ import { TooltipExclusiveContext } from './TooltipExclusive';
 
 export type TooltipType = 'info' | 'error' | 'warning';
 
-interface Props {
+interface Props extends Omit<HTMLProps<HTMLElement>, 'title' | 'children'> {
     children: ReactElement;
     title?: ReactNode;
     originalPlacement?: 'top' | 'bottom' | 'left' | 'right';
@@ -105,7 +107,7 @@ const Tooltip = ({
                 ref: mergedRef,
                 ...rest,
                 ...mergeCallbacks(tooltipHandlers, child.props),
-                'aria-describedby': uid,
+                'aria-describedby': [child.props['aria-describedby'], uid].filter(isTruthy).join(' '),
             })}
             <Popper
                 divRef={setPopperEl}
