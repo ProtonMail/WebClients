@@ -3,16 +3,16 @@
  * truthy for, the second of which contains elements predicate returns falsey for.
  */
 export default function partition<T, K = T>(arr: (T | K)[], predicate: (item: T | K) => item is T): [T[], K[]] {
-    return arr.reduce<[T[], K[]]>(
-        (accumulator, current) => {
-            if (predicate(current)) {
-                accumulator[0].push(current);
-            } else {
-                accumulator[1].push(current);
-            }
+    const truthyItems: T[] = [];
+    const falseyItems: K[] = [];
 
-            return accumulator;
-        },
-        [[], []]
-    );
+    for (const item of arr) {
+        if (predicate(item)) {
+            truthyItems.push(item);
+        } else {
+            falseyItems.push(item);
+        }
+    }
+
+    return [truthyItems, falseyItems];
 }
