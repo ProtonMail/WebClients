@@ -2,6 +2,9 @@ import React from 'react';
 import { c } from 'ttag';
 import { updateCrashReports, updateTelemetry } from '@proton/shared/lib/api/settings';
 import noop from '@proton/utils/noop';
+import { setSentryEnabled } from '@proton/shared/lib/helpers/sentry';
+import { setMetricsEnabled } from '@proton/shared/lib/helpers/metrics';
+
 import { Toggle } from '../../components';
 import { useApi, useEventManager, useLoading, useUserSettings } from '../../hooks';
 
@@ -41,7 +44,9 @@ const PrivacySection = () => {
                         checked={telemetryEnabled}
                         onChange={({ target }) => {
                             const handleChange = async (value: boolean) => {
-                                return api(updateTelemetry({ Telemetry: Number(value) })).then(call);
+                                await api(updateTelemetry({ Telemetry: Number(value) }));
+                                await call();
+                                setMetricsEnabled(value);
                             };
                             withLoadingTelemetry(handleChange(target.checked)).catch(noop);
                         }}
@@ -61,7 +66,9 @@ const PrivacySection = () => {
                         checked={crashReportsEnabled}
                         onChange={({ target }) => {
                             const handleChange = async (value: boolean) => {
-                                return api(updateCrashReports({ CrashReports: Number(value) })).then(call);
+                                await api(updateCrashReports({ CrashReports: Number(value) }));
+                                await call();
+                                setSentryEnabled(value);
                             };
                             withLoadingCrashReports(handleChange(target.checked)).catch(noop);
                         }}
