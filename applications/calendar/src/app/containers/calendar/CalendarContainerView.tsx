@@ -10,7 +10,7 @@ import {
     PrivateAppContainer,
     FloatingButton,
     MainLogo,
-    TimezoneSelector,
+    TimeZoneSelector,
     Icon,
     TopNavbarListItemSettingsDropdown,
     TopNavbarListItemContactsDropdown,
@@ -538,7 +538,7 @@ const CalendarContainerView = ({
                         />
                     }
                     timezoneSelector={
-                        <TimezoneSelector
+                        <TimeZoneSelector
                             data-test-id="calendar-view:time-zone-dropdown"
                             className="no-mobile no-tablet"
                             date={noonDate}
