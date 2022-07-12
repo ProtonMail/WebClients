@@ -1,4 +1,4 @@
-import { mergeUint8Arrays } from '@proton/utils/array';
+import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
 import { EncryptedBlock, EncryptedThumbnailBlock, Link, BlockToken } from '../interface';

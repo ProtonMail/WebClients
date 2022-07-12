@@ -1,7 +1,7 @@
 import { Fragment, ReactNode, useState } from 'react';
 import { c } from 'ttag';
 import { SUBSCRIPTION_CANCELLATION_REASONS } from '@proton/shared/lib/constants';
-import { shuffle } from '@proton/utils/array';
+import shuffle from '@proton/utils/shuffle';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { UserModel } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';

@@ -2,7 +2,7 @@ import { memo, useEffect } from 'react';
 
 import { TableRow, classnames, DragMoveContainer } from '@proton/components';
 import { isEquivalent } from '@proton/shared/lib/helpers/object';
-import { shallowEqual } from '@proton/utils/array';
+import shallowEqual from '@proton/utils/shallowEqual';
 
 import { DragMoveControls, FileBrowserBaseItem } from '../interface';
 import useFileBrowserItem from '../hooks/useFileBrowserItem';
