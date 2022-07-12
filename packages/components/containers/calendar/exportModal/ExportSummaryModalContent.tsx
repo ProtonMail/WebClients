@@ -8,7 +8,7 @@ import {
 } from '@proton/shared/lib/interfaces/calendar';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
-import { partition } from '@proton/utils/array';
+import partition from '@proton/utils/partition';
 import { Alert, Bordered, Details, DynamicProgress, Href, Summary } from '../../../components';
 
 const getErrorMessage = (hasMultiplePasswordResetErrors: boolean) => (type: EXPORT_EVENT_ERROR_TYPES) => {

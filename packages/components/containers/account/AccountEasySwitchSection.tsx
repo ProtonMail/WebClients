@@ -14,7 +14,7 @@ import {
     getVisualCalendars,
 } from '@proton/shared/lib/calendar/calendar';
 import { getIsPersonalCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
-import { partition } from '@proton/utils/array';
+import partition from '@proton/utils/partition';
 import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
 import { useAddresses, useCalendars, useCalendarUserSettings, useFeature, useModals, useUser } from '../../hooks';

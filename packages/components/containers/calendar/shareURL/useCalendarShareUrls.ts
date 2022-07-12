@@ -5,7 +5,7 @@ import {
     transformLinkFromAPI,
     transformLinksFromAPI,
 } from '@proton/shared/lib/calendar/shareUrl/helpers';
-import { updateItem } from '@proton/utils/array';
+import updateItem from '@proton/utils/updateItem';
 import { SimpleMap } from '@proton/shared/lib/interfaces';
 import { VisualCalendar, CalendarLink, CalendarUrl } from '@proton/shared/lib/interfaces/calendar';
 import {
