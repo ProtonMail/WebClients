@@ -153,7 +153,7 @@ export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolea
     const optimisticApplyLabels = useOptimisticApplyLabels();
     const [mailSettings] = useMailSettings();
     const dispatch = useDispatch();
-    const getCreateFilters = useCreateFilters();
+    const { getFilterActions } = useCreateFilters();
 
     let canUndo = true; // Used to not display the Undo button if moving only scheduled messages/conversations to trash
 
@@ -264,7 +264,7 @@ export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolea
                 return;
             }
 
-            const { doCreateFilters, undoCreateFilters } = getCreateFilters();
+            const { doCreateFilters, undoCreateFilters } = getFilterActions();
 
             let rollback = () => {};
 

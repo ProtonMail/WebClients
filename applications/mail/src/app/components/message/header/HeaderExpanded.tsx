@@ -10,7 +10,6 @@ import {
     classnames,
     useAddresses,
     useContactModals,
-    useFolders,
     useMailSettings,
     useToggle,
 } from '@proton/components';
@@ -18,7 +17,6 @@ import { shiftKey } from '@proton/shared/lib/helpers/browser';
 import { scrollIntoView } from '@proton/shared/lib/helpers/dom';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { Label } from '@proton/shared/lib/interfaces/Label';
-import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import {
     getHasOnlyIcsAttachments,
@@ -31,14 +29,10 @@ import {
 import { MESSAGE_ACTIONS } from '../../../constants';
 import { useOnCompose, useOnMailTo } from '../../../containers/ComposeProvider';
 import { isSelfAddress } from '../../../helpers/addresses';
-import { getCurrentFolderID } from '../../../helpers/labels';
 import { MessageViewIcons } from '../../../helpers/message/icon';
 import { useRecipientLabel } from '../../../hooks/contact/useRecipientLabel';
 import { MessageState } from '../../../logic/messages/messagesTypes';
 import { Breakpoints } from '../../../models/utils';
-import CustomFilterDropdown from '../../dropdown/CustomFilterDropdown';
-import LabelDropdown from '../../dropdown/LabelDropdown';
-import MoveDropdown from '../../dropdown/MoveDropdown';
 import ItemAttachmentIcon from '../../list/ItemAttachmentIcon';
 import ItemDate from '../../list/ItemDate';
 import ItemLabels from '../../list/ItemLabels';
@@ -47,14 +41,12 @@ import ItemStar from '../../list/ItemStar';
 import MailRecipients from '../recipients/MailRecipients';
 import RecipientItem from '../recipients/RecipientItem';
 import RecipientType from '../recipients/RecipientType';
-import HeaderDropdown from './HeaderDropdown';
 import HeaderExtra from './HeaderExtra';
 import HeaderMoreDropdown from './HeaderMoreDropdown';
 import HeaderTopPrivacyIcon from './HeaderTopPrivacyIcon';
 
 interface Props {
     labelID: string;
-    conversationMode: boolean;
     labels?: Label[];
     mailSettings: MailSettings;
     message: MessageState;
@@ -72,13 +64,11 @@ interface Props {
     breakpoints: Breakpoints;
     labelDropdownToggleRef: React.MutableRefObject<() => void>;
     moveDropdownToggleRef: React.MutableRefObject<() => void>;
-    filterDropdownToggleRef: React.MutableRefObject<() => void>;
     parentMessageRef: React.RefObject<HTMLElement>;
 }
 
 const HeaderExpanded = ({
     labelID,
-    conversationMode,
     labels,
     message,
     messageViewIcons,
@@ -96,14 +86,13 @@ const HeaderExpanded = ({
     breakpoints,
     labelDropdownToggleRef,
     moveDropdownToggleRef,
-    filterDropdownToggleRef,
     parentMessageRef,
 }: Props) => {
     const [addresses = []] = useAddresses();
-    const [folders = []] = useFolders();
+    // const [folders = []] = useFolders();
     const { state: showDetails, toggle: toggleDetails } = useToggle();
-    const selectedIDs = [message.data?.ID || ''];
-    const currentFolderID = getCurrentFolderID(message.data?.LabelIDs, folders);
+    // const selectedIDs = [message.data?.ID || ''];
+    // const currentFolderID = getCurrentFolderID(message.data?.LabelIDs, folders);
     const isSendingMessage = message.draftFlags?.sending;
     const isOutboxMessage = isOutbox(message.data);
     const hasOnlyIcsAttachments = getHasOnlyIcsAttachments(message.data?.AttachmentInfo);
@@ -202,33 +191,33 @@ const HeaderExpanded = ({
     ) : (
         c('Title').t`Forward`
     );
-    const titleFilterOn = Shortcuts ? (
-        <>
-            {c('Title').t`Filter on`}
-            <br />
-            <kbd className="border-none">F</kbd>
-        </>
-    ) : (
-        c('Title').t`Filter on`
-    );
-    const titleMoveTo = Shortcuts ? (
-        <>
-            {c('Title').t`Move to`}
-            <br />
-            <kbd className="border-none">M</kbd>
-        </>
-    ) : (
-        c('Title').t`Move to`
-    );
-    const titleLabelAs = Shortcuts ? (
-        <>
-            {c('Title').t`Label as`}
-            <br />
-            <kbd className="border-none">L</kbd>
-        </>
-    ) : (
-        c('Title').t`Label as`
-    );
+    // const titleFilterOn = Shortcuts ? (
+    //     <>
+    //         {c('Title').t`Filter on`}
+    //         <br />
+    //         <kbd className="border-none">F</kbd>
+    //     </>
+    // ) : (
+    //     c('Title').t`Filter on`
+    // );
+    // const titleMoveTo = Shortcuts ? (
+    //     <>
+    //         {c('Title').t`Move to`}
+    //         <br />
+    //         <kbd className="border-none">M</kbd>
+    //     </>
+    // ) : (
+    //     c('Title').t`Move to`
+    // );
+    // const titleLabelAs = Shortcuts ? (
+    //     <>
+    //         {c('Title').t`Label as`}
+    //         <br />
+    //         <kbd className="border-none">L</kbd>
+    //     </>
+    // ) : (
+    //     c('Title').t`Label as`
+    // );
 
     return (
         <div
@@ -363,9 +352,11 @@ const HeaderExpanded = ({
                         messageViewIcons={messageViewIcons}
                         onContactDetails={onContactDetails}
                         onContactEdit={onContactEdit}
+                        labelDropdownToggleRef={labelDropdownToggleRef}
+                        moveDropdownToggleRef={moveDropdownToggleRef}
                     />
 
-                    {!isNarrow && (
+                    {/* {!isNarrow && (
                         <ButtonGroup className="mr1 mb0-5">
                             <HeaderDropdown
                                 icon
@@ -433,7 +424,7 @@ const HeaderExpanded = ({
                                 )}
                             </HeaderDropdown>
                         </ButtonGroup>
-                    )}
+                    )} */}
                 </div>
                 {!isScheduledMessage && (
                     <ButtonGroup className="mb0-5">

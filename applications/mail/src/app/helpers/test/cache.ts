@@ -40,6 +40,7 @@ export const minimalCache = () => {
     addToCache('Labels', []);
     addToCache('MessageCounts', []);
     addToCache('ConversationCounts', []);
+    addToCache('Filters', []);
     cache.set('ADDRESS_KEYS', addressKeysCache);
     addKeysToAddressKeysCache('AddressID', undefined);
 };

@@ -40,7 +40,6 @@ import { updateAttachment } from '../../../logic/attachments/attachmentsActions'
 import { MessageState, MessageStateWithData, MessageWithOptionalBody } from '../../../logic/messages/messagesTypes';
 import { Element } from '../../../models/element';
 import { Breakpoints } from '../../../models/utils';
-import CustomFilterDropdown from '../../dropdown/CustomFilterDropdown';
 import LabelDropdown from '../../dropdown/LabelDropdown';
 import MoveDropdown from '../../dropdown/MoveDropdown';
 import MessageDetailsModal from '../modals/MessageDetailsModal';
@@ -66,6 +65,8 @@ interface Props {
     messageViewIcons: MessageViewIcons;
     onContactDetails: (contactID: string) => void;
     onContactEdit: (props: ContactEditProps) => void;
+    labelDropdownToggleRef: React.MutableRefObject<() => void>;
+    moveDropdownToggleRef: React.MutableRefObject<() => void>;
 }
 
 const HeaderMoreDropdown = ({
@@ -82,6 +83,8 @@ const HeaderMoreDropdown = ({
     messageViewIcons,
     onContactDetails,
     onContactEdit,
+    labelDropdownToggleRef,
+    moveDropdownToggleRef,
 }: Props) => {
     const location = useLocation();
     const api = useApi();
@@ -154,9 +157,6 @@ const HeaderMoreDropdown = ({
     const additionalDropdowns: DropdownRender[] | undefined = isNarrow
         ? [
               ({ onClose, onLock }) => (
-                  <CustomFilterDropdown message={message.data as Message} onClose={onClose} onLock={onLock} />
-              ),
-              ({ onClose, onLock }) => (
                   <MoveDropdown
                       labelID={fromFolderID}
                       selectedIDs={selectedIDs}
@@ -215,6 +215,24 @@ const HeaderMoreDropdown = ({
     ) : (
         c('Title').t`Move to trash`
     );
+    const titleMoveTo = Shortcuts ? (
+        <>
+            {c('Title').t`Move to`}
+            <br />
+            <kbd className="border-none">M</kbd>
+        </>
+    ) : (
+        c('Title').t`Move to`
+    );
+    const titleLabelAs = Shortcuts ? (
+        <>
+            {c('Title').t`Label as`}
+            <br />
+            <kbd className="border-none">L</kbd>
+        </>
+    ) : (
+        c('Title').t`Label as`
+    );
 
     return (
         <>
@@ -255,6 +273,56 @@ const HeaderMoreDropdown = ({
                         </Button>
                     </Tooltip>
                 )}
+                {!isNarrow && [
+                    <HeaderDropdown
+                        key="message-header-expanded:folder-dropdown"
+                        icon
+                        autoClose={false}
+                        noMaxSize
+                        content={<Icon name="folder-arrow-in" alt={c('Action').t`Move to`} />}
+                        className="messageMoveDropdownButton"
+                        dropDownClassName="move-dropdown"
+                        title={titleMoveTo}
+                        loading={!messageLoaded}
+                        externalToggleRef={moveDropdownToggleRef}
+                        data-testid="message-header-expanded:folder-dropdown"
+                    >
+                        {({ onClose, onLock }) => (
+                            <MoveDropdown
+                                labelID={fromFolderID}
+                                selectedIDs={selectedIDs}
+                                conversationMode={false}
+                                onClose={onClose}
+                                onLock={onLock}
+                                onBack={onBack}
+                                breakpoints={breakpoints}
+                            />
+                        )}
+                    </HeaderDropdown>,
+                    <HeaderDropdown
+                        key="message-header-expanded:label-dropdown"
+                        icon
+                        autoClose={false}
+                        noMaxSize
+                        content={<Icon name="tag" alt={c('Action').t`Label as`} />}
+                        className="messageLabelDropdownButton"
+                        dropDownClassName="label-dropdown"
+                        title={titleLabelAs}
+                        loading={!messageLoaded}
+                        externalToggleRef={labelDropdownToggleRef}
+                        data-testid="message-header-expanded:label-dropdown"
+                    >
+                        {({ onClose, onLock }) => (
+                            <LabelDropdown
+                                labelID={labelID}
+                                selectedIDs={selectedIDs}
+                                onClose={onClose}
+                                onLock={onLock}
+                                breakpoints={breakpoints}
+                            />
+                        )}
+                    </HeaderDropdown>,
+                ]}
                 <HeaderDropdown
                     icon
                     disabled={!messageLoaded}
@@ -292,23 +360,15 @@ const HeaderMoreDropdown = ({
                                         className="text-left flex flex-nowrap flex-align-items-center"
                                         onClick={() => onOpenAdditionnal(0)}
                                     >
-                                        <Icon name="filter" className="mr0-5" />
-                                        <span className="flex-item-fluid myauto">{c('Action').t`Filter on...`}</span>
+                                        <Icon name="folder-arrow-in" className="mr0-5" />
+                                        <span className="flex-item-fluid mtauto mbauto">{c('Action')
+                                            .t`Move to...`}</span>
                                     </DropdownMenuButton>
                                 )}
                                 {isNarrow && (
                                     <DropdownMenuButton
                                         className="text-left flex flex-nowrap flex-align-items-center"
                                         onClick={() => onOpenAdditionnal(1)}
-                                    >
-                                        <Icon name="folder" className="mr0-5" />
-                                        <span className="flex-item-fluid myauto">{c('Action').t`Move to...`}</span>
-                                    </DropdownMenuButton>
-                                )}
-                                {isNarrow && (
-                                    <DropdownMenuButton
-                                        className="text-left flex flex-nowrap flex-align-items-center"
-                                        onClick={() => onOpenAdditionnal(2)}
                                     >
                                         <Icon name="tag" className="mr0-5" />
                                         <span className="flex-item-fluid myauto">{c('Action').t`Label as...`}</span>
