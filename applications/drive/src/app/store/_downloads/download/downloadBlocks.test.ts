@@ -1,6 +1,6 @@
 import { ReadableStream } from 'web-streams-polyfill';
 
-import { mergeUint8Arrays } from '@proton/utils/array';
+import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
 import { createApiError, createOfflineError } from '@proton/shared/lib/fetch/ApiError';
 
 import { TransferCancel } from '../../../components/TransferManager/transfer';
