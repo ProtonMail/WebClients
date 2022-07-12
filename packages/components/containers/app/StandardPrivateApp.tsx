@@ -14,6 +14,8 @@ import { getApiErrorMessage, getIs401Error } from '@proton/shared/lib/api/helper
 import { getBrowserLocale, getClosestLocaleCode } from '@proton/shared/lib/i18n/helper';
 import { APPS, REQUIRES_INTERNAL_EMAIL_ADDRESS, REQUIRES_NONDELINQUENT } from '@proton/shared/lib/constants';
 import { getFeatures } from '@proton/shared/lib/api/features';
+import { setSentryEnabled } from '@proton/shared/lib/helpers/sentry';
+import { setMetricsEnabled } from '@proton/shared/lib/helpers/metrics';
 
 import { getWelcomeFlagsValue, useApi, useCache, useConfig, WELCOME_FLAGS_CACHE_KEY } from '../../hooks';
 
@@ -104,6 +106,9 @@ const StandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>>({
             const [userSettings, user] = result as [UserSettings, User];
 
             cache.set(WELCOME_FLAGS_CACHE_KEY, getWelcomeFlagsValue(userSettings));
+
+            setSentryEnabled(!!userSettings.CrashReports);
+            setMetricsEnabled(!!userSettings.Telemetry);
 
             const hasNonDelinquentRequirement = REQUIRES_NONDELINQUENT.includes(APP_NAME);
             const hasNonDelinquentScope = getHasNonDelinquentScope(user);
