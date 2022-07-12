@@ -35,7 +35,7 @@ function renderBasicVerticalSteps() {
 describe('<VerticalSteps /> with basic render', () => {
     let output: RenderResult<typeof import('@testing-library/dom/types/queries'), HTMLElement, HTMLElement>;
 
-    beforeAll(() => {
+    beforeEach(() => {
         output = renderBasicVerticalSteps();
     });
 
@@ -44,14 +44,9 @@ describe('<VerticalSteps /> with basic render', () => {
         expect(container.querySelectorAll('li')).toHaveLength(4);
     });
 
-    it('should display icons', () => {
-        const { container } = output;
-        expect(container.querySelectorAll('li > svg')).toHaveLength(4);
-    });
-
     it('should display titles', () => {
         const { container } = output;
-        const titles = container.querySelectorAll('.steps-vertical-item-text > span:first-child');
+        const titles = container.querySelectorAll('.vertical-steps-item-text > span:first-child');
         expect(titles).toHaveLength(4);
         expect(titles[0].textContent).toBe('Choose a username');
         expect(titles[1].textContent).toBe('Today: get instant access');
@@ -61,7 +56,7 @@ describe('<VerticalSteps /> with basic render', () => {
 
     it('should display descriptions', () => {
         const { container } = output;
-        const descriptions = container.querySelectorAll('.steps-vertical-item-text > span:last-child');
+        const descriptions = container.querySelectorAll('.vertical-steps-item-text > span:last-child');
         expect(descriptions).toHaveLength(4);
         expect(descriptions[0].textContent).toBe('You successfully selected your new email address.');
         expect(descriptions[1].textContent).toBe('15 GB secure mailbox with unlimited personalisation.');
