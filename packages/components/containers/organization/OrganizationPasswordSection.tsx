@@ -120,7 +120,7 @@ const OrganizationPasswordSection = ({ organization, onceRef }: Props) => {
                         <Button color="norm" onClick={handleChangeOrganizationPassword} className="mr1">
                             {c('Action').t`Change password`}
                         </Button>
-                        <Button color="norm" onClick={() => handleChangeOrganizationKeys()}>
+                        <Button onClick={() => handleChangeOrganizationKeys()}>
                             {c('Action').t`Change organization keys`}
                         </Button>
                     </>
