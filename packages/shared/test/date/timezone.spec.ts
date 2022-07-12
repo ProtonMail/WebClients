@@ -1,5 +1,11 @@
 import { listTimeZones } from '@protontech/timezone-support';
-import { convertUTCDateTimeToZone, convertZonedDateTimeToUTC, getSupportedTimezone } from '../../lib/date/timezone';
+import {
+    convertUTCDateTimeToZone,
+    convertZonedDateTimeToUTC,
+    toAllowedTimeZone,
+    getSupportedTimezone,
+    ALLOWED_TIMEZONES_LIST,
+} from '../../lib/date/timezone';
 import { MANUAL_TIMEZONE_LINKS, unsupportedTimezoneLinks } from '../../lib/date/timezoneDatabase';
 
 describe('convert utc', () => {
@@ -60,6 +66,34 @@ describe('convert utc', () => {
         expect(convertUTCDateTimeToZone(obj(2019, 10, 27, 0), 'Europe/Zurich')).toEqual(obj(2019, 10, 27, 2));
         expect(convertUTCDateTimeToZone(obj(2019, 10, 27, 1), 'Europe/Zurich')).toEqual(obj(2019, 10, 27, 2));
         expect(convertUTCDateTimeToZone(obj(2019, 10, 27, 2), 'Europe/Zurich')).toEqual(obj(2019, 10, 27, 3));
+    });
+});
+
+describe('getAllowedTimezone', () => {
+    it('transforms all time zones supported by our library into time zones allowed by the BE', () => {
+        const timeZones = listTimeZones();
+
+        let result = true;
+
+        try {
+            timeZones.forEach((tzid) => toAllowedTimeZone(tzid));
+        } catch {
+            result = false;
+        }
+
+        expect(result).toEqual(true);
+    });
+
+    it('does not transform time zones already allowed', () => {
+        let result = true;
+
+        for (const tzid of ALLOWED_TIMEZONES_LIST) {
+            if (toAllowedTimeZone(tzid) !== tzid) {
+                result = false;
+            }
+        }
+
+        expect(result).toEqual(true);
     });
 });
 

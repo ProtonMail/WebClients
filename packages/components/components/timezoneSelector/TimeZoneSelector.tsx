@@ -16,7 +16,7 @@ interface Props extends Omit<SelectProps<string>, 'onChange' | 'children'> {
     date?: Date;
     loading?: boolean;
 }
-export const TimezoneSelector = ({ loading = false, disabled = false, date, timezone, onChange, ...rest }: Props) => {
+export const TimeZoneSelector = ({ loading = false, disabled = false, date, timezone, onChange, ...rest }: Props) => {
     const timezoneOptions = useMemo(() => {
         const options = getTimeZoneOptions(date || new Date());
 
@@ -40,4 +40,4 @@ export const TimezoneSelector = ({ loading = false, disabled = false, date, time
     );
 };
 
-export default TimezoneSelector;
+export default TimeZoneSelector;

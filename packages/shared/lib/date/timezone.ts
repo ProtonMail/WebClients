@@ -1,3 +1,4 @@
+import isTruthy from '@proton/utils/isTruthy';
 import {
     findTimeZone,
     getTimeZoneLinks,
@@ -5,8 +6,14 @@ import {
     getZonedTime,
     listTimeZones,
 } from '@protontech/timezone-support';
+import { Api } from '@proton/shared/lib/interfaces';
+import { getAllowedTimeZones } from '@proton/shared/lib/api/calendars';
 import { DateTime } from '../interfaces/calendar/Date';
-import { MANUAL_TIMEZONE_LINKS, unsupportedTimezoneLinks } from './timezoneDatabase';
+import {
+    FALLBACK_ALLOWED_SUPPORTED_TIMEZONES_LIST,
+    MANUAL_TIMEZONE_LINKS,
+    unsupportedTimezoneLinks,
+} from './timezoneDatabase';
 
 export const toLocalDate = ({
     year = 0,
@@ -45,6 +52,50 @@ export const fromUTCDate = (date: Date) => {
     };
 };
 
+// The list of all IANA time zones that we support is fetched from the BE at app load
+export let ALLOWED_TIMEZONES_LIST: string[] = [...FALLBACK_ALLOWED_SUPPORTED_TIMEZONES_LIST];
+
+/**
+ * Load from API list of time zones that the BE allows
+ * */
+export const loadAllowedTimeZones = async (api: Api) => {
+    const { Timezones } = await api<{ Code: number; Timezones: string[] }>(getAllowedTimeZones());
+
+    /*
+     * We remove time zones that we cannot parse. In practice there should never be a need for this,
+     * but because time zone updating is a manual process involving multiple teams, better be extra safe to avoid app crashes.
+     *
+     * The time it takes to run this code is one order of magnitude less than the API call above,
+     * so it doesn't significatively decrease the performance of this function. If we ever need better
+     * performance, there's room for improvement
+     */
+    const supportedTimeZones = Timezones.map((tzid) => {
+        try {
+            findTimeZone(tzid);
+            return tzid;
+        } catch (e: any) {
+            console.error(`${tzid} not supported`);
+        }
+    }).filter(isTruthy);
+
+    ALLOWED_TIMEZONES_LIST = supportedTimeZones;
+};
+
+/**
+ * Transform a time zone supported by our library into one allowed by the BE
+ */
+export const toAllowedTimeZone = (tzid: string) => {
+    const allowedTimeZone =
+        unsupportedTimezoneLinks[tzid] || FALLBACK_ALLOWED_SUPPORTED_TIMEZONES_LIST.find((tz) => tz === tzid);
+
+    if (!allowedTimeZone) {
+        // this should never happen (we have a test for it), throwing here for TS safety
+        throw new Error('Unrecognized time zone');
+    }
+
+    return allowedTimeZone;
+};
+
 const guessTimezone = (timezones: string[]) => {
     try {
         const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
@@ -73,10 +124,11 @@ export const getTimezone = () => {
     }
     // If the guessed timezone is undefined, there's not much we can do
     if (!timezone) {
-        return ianaTimezones[0];
+        return ALLOWED_TIMEZONES_LIST[0];
     }
-    // If the guessed timezone is not supported, return the linked timezone
-    return unsupportedTimezoneLinks[timezone] || timezone;
+
+    // The guessed time zone is supported by our library, transform it into one supported by the BE
+    return toAllowedTimeZone(timezone);
 };
 
 /**
@@ -119,12 +171,6 @@ type GetTimeZoneOptions = (
     key: string;
 }[];
 
-// The list of all IANA time zones that we support is not dynamic. We can generate it just once
-const SUPPORTED_TIMEZONES_LIST = listTimeZones()
-    // UTC is called Etc/UTC but the API accepts UTC
-    .concat('UTC')
-    .filter((name) => !unsupportedTimezoneLinks[name]);
-
 /**
  * @return {Array<Object>}      [{ text: 'Africa/Nairobi: UTC +03:00', value: 'Africa/Nairobi'}, ...]
  */
@@ -132,7 +178,7 @@ export const getTimeZoneOptions: GetTimeZoneOptions = (
     date = new Date(),
     { formatter = ({ utcOffset, name }: FormatterProps) => `${utcOffset} • ${name}` } = {}
 ) => {
-    return SUPPORTED_TIMEZONES_LIST.map((name) => {
+    return ALLOWED_TIMEZONES_LIST.map((name) => {
         const { abbreviation, offset } = getUTCOffset(date, findTimeZone(name));
 
         return {
@@ -182,7 +228,7 @@ export const getSupportedTimezone = (tzid: string): string | undefined => {
         // It might be a globally unique timezone identifier, whose specification is not addressed by the RFC.
         // We try to match it with one of our supported list by brute force. We should fall here rarely
         const lowerCaseStrippedTzid = strippedTzid.toLowerCase();
-        const supportedTimezone = SUPPORTED_TIMEZONES_LIST.find((supportedTzid) =>
+        const supportedTimezone = ALLOWED_TIMEZONES_LIST.find((supportedTzid) =>
             lowerCaseStrippedTzid.includes(supportedTzid.toLowerCase())
         );
         if (supportedTimezone) {

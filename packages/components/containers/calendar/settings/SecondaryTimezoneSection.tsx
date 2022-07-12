@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { useApi, useEventManager, useLoading, useNotifications } from '../../../hooks';
-import { TimezoneSelector } from '../../../components';
+import { TimeZoneSelector } from '../../../components';
 
 import SettingsLayoutLeft from '../../account/SettingsLayoutLeft';
 import SettingsLayout from '../../account/SettingsLayout';
@@ -40,7 +40,7 @@ const SecondaryTimezoneSection = ({ calendarUserSettings: { SecondaryTimezone, D
                 </label>
             </SettingsLayoutLeft>
             <SettingsLayoutRight>
-                <TimezoneSelector
+                <TimeZoneSelector
                     data-test-id="settings/secondary-time-zone:dropdown"
                     loading={loadingSecondaryTimeZone}
                     disabled={!DisplaySecondaryTimezone}
