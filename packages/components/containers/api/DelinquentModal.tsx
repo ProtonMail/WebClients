@@ -12,7 +12,7 @@ const DelinquentModal = (props: ModalProps) => {
         <AlertModal
             title={title}
             buttons={[
-                <ButtonLike color="norm" as={SettingsLink} path={getInvoicesPathname(APP_NAME)}>
+                <ButtonLike color="norm" as={SettingsLink} path={getInvoicesPathname(APP_NAME)} onClick={props.onClose}>
                     {c('Action').t`View invoice`}
                 </ButtonLike>,
             ]}
