@@ -302,9 +302,6 @@
       "OK": [
         "ОК"
       ],
-      "Open in a new tab": [
-        ""
-      ],
       "Open navigation": [
         "Показать панель навигации"
       ],
@@ -374,9 +371,6 @@
       "Send": [
         "Отправить"
       ],
-      "Send feedback": [
-        ""
-      ],
       "Set recovery phrase": [
         "Установить фразу для восстановления"
       ],
@@ -409,9 +403,6 @@
       ],
       "Skip": [
         "Пропустить"
-      ],
-      "Start import": [
-        ""
       ],
       "Start setup": [
         "Приступить к настройкам"
@@ -884,68 +875,6 @@
     "colon": {
       ": ": [
         ": "
-      ]
-    },
-    "color": {
-      "carrot": [
-        ""
-      ],
-      "cerise": [
-        ""
-      ],
-      "cobalt": [
-        ""
-      ],
-      "copper": [
-        ""
-      ],
-      "enzian": [
-        ""
-      ],
-      "fern": [
-        ""
-      ],
-      "forest": [
-        ""
-      ],
-      "ocean": [
-        ""
-      ],
-      "olive": [
-        ""
-      ],
-      "pacific": [
-        ""
-      ],
-      "pickle": [
-        ""
-      ],
-      "pine": [
-        ""
-      ],
-      "pink": [
-        ""
-      ],
-      "plum": [
-        ""
-      ],
-      "purple": [
-        ""
-      ],
-      "reef": [
-        ""
-      ],
-      "sahara": [
-        ""
-      ],
-      "slateblue": [
-        ""
-      ],
-      "soil": [
-        ""
-      ],
-      "strawberry": [
-        ""
       ]
     },
     "Confirm modal title": {
@@ -1927,11 +1856,6 @@
         "Событие принадлежит отключенному календарю."
       ]
     },
-    "Don't ask to update timezone checkbox label": {
-      "Don't ask again": [
-        ""
-      ]
-    },
     "Dropdown action icon tooltip": {
       "Add calendar": [
         "Добавить календарь"
@@ -2301,7 +2225,7 @@
       "This label name is not available. Please choose a different name.": [
         "Это название ярлыка недоступно. Пожалуйста, выберите другое название."
       ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser": [
+      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
         "Это сообщение может содержать ссылки, которые не могут быть правильно открыты в вашем текущем браузере"
       ],
       "Trusted keys are not valid for sending": [
@@ -2626,15 +2550,7 @@
         "(без названия)"
       ]
     },
-    "Feedback Modal Title": {
-      "Your feedback": [
-        ""
-      ]
-    },
     "file size format": {
-      "bytes": [
-        "байт"
-      ],
       "GB": [
         "Гбайт"
       ],
@@ -2643,20 +2559,6 @@
       ],
       "MB": [
         "Мбайт"
-      ]
-    },
-    "file size format, long": {
-      "Bytes": [
-        "Байт"
-      ],
-      "Gigabytes": [
-        "Гигабайт"
-      ],
-      "Kilobytes": [
-        "Килобайт"
-      ],
-      "Megabytes": [
-        "Мегабайт"
       ]
     },
     "Filter notification": {
@@ -3212,12 +3114,6 @@
       "Other options": [
         "Другие возможности"
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
-        "PGP/Inline is only compatible with Plain Text format. Please note that Proton Mail always signs encrypted messages."
-      ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
-        "PGP/MIME automatically sends the message using the current composer mode. Please note that Proton Mail always signs encrypted messages."
-      ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Пожалуйста, обратите внимание, что адреса, назначенные этой группе, НЕ будут удалены."
       ],
@@ -3556,12 +3452,6 @@
       "Automatically save contacts": [
         "Автоматически сохранять контакты"
       ],
-      "Awful": [
-        ""
-      ],
-      "Bad": [
-        ""
-      ],
       "Browser": [
         "Браузер"
       ],
@@ -3658,14 +3548,8 @@
       "From: ${ importedEmail }": [
         "От: ${ importedEmail }"
       ],
-      "Good": [
-        ""
-      ],
       "Hide password": [
         "Скрыть пароль"
-      ],
-      "How would you describe your experience with the new Proton?": [
-        ""
       ],
       "I understand the risk": [
         "Я понимаю риск"
@@ -3717,9 +3601,6 @@
       ],
       "Notifications": [
         "Уведомления"
-      ],
-      "OK": [
-        ""
       ],
       "Operating system": [
         "Операционная система"
@@ -3804,9 +3685,6 @@
       ],
       "What happened?": [
         "Что случилось?"
-      ],
-      "Wonderful": [
-        ""
       ]
     },
     "Label for contact group color": {
@@ -4107,11 +3985,6 @@
     "new_plans: info": {
       "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
         "Introducing Proton’s refreshed look.${ br }Many services, one mission. Welcome to an internet where privacy is the default."
-      ]
-    },
-    "new_plans: label": {
-      "Tell us about your experience. (Optional)": [
-        ""
       ]
     },
     "new_plans: placeholder": {
@@ -4597,9 +4470,6 @@
       ]
     },
     "Spotlight": {
-      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        ""
-      ],
       "Get up to 18 months of ${ planName } for free": [
         "Получите до 18 месяцев ${ planName } бесплатно"
       ],
@@ -4608,9 +4478,6 @@
       ],
       "No more missed appointments": [
         "Больше никаких пропущенных встреч"
-      ],
-      "Try ${ DRIVE_APP_NAME }": [
-        ""
       ],
       "With email notifications, you decide which events to be notified about and when.": [
         "При использовании уведомлений по электронной почте вы сами решаете, о каких событиях и когда получать уведомления."
@@ -5315,11 +5182,6 @@
       ],
       "Replay video": [
         "Воспроизвести видео"
-      ]
-    },
-    "View event button tooltip": {
-      "Open in a new tab": [
-        ""
       ]
     },
     "Warning": {

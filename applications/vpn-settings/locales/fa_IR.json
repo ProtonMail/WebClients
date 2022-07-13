@@ -5,17 +5,11 @@
   },
   "contexts": {
     "Action": {
-      "${ address } is available.": [
-        ""
-      ],
       "${ BRAND_NAME } introduction": [
         "${ BRAND_NAME } مقدمه"
       ],
       "${ BRAND_NAME } shop": [
         "فروشگاه ${ BRAND_NAME }"
-      ],
-      "Activate recovery": [
-        ""
       ],
       "Add credit / debit card": [
         "افزودن کارت اعتباری / دبیت"
@@ -28,9 +22,6 @@
       ],
       "Apply": [
         "اعمال"
-      ],
-      "Attach screenshot(s)": [
-        ""
       ],
       "Authenticate": [
         "احراز هویت"
@@ -46,9 +37,6 @@
       ],
       "Change password": [
         "تغییر رمز عبور"
-      ],
-      "Chat with us": [
-        ""
       ],
       "Close": [
         "بستن"
@@ -77,29 +65,11 @@
       "Copy email to clipboard": [
         "کپی ایمیل به کلیپ‌بورد"
       ],
-      "Create": [
-        ""
-      ],
-      "Create a secure ProtonMail address instead": [
-        ""
-      ],
       "Create account": [
         "ایجاد حساب‌کاربری"
       ],
-      "Create address": [
-        ""
-      ],
-      "Create free account": [
-        ""
-      ],
-      "Current plan": [
-        ""
-      ],
       "Customize": [
         "سفارشی"
-      ],
-      "Customize plan": [
-        ""
       ],
       "Decrease": [
         "کاستن"
@@ -113,20 +83,11 @@
       "Details": [
         "جزئیات"
       ],
-      "Didn't receive a code?": [
-        ""
-      ],
-      "Didn't receive the code?": [
-        ""
-      ],
       "Done": [
         "انجام شد"
       ],
       "Downgrade": [
         "پایین آوردن"
-      ],
-      "Downgrade account": [
-        ""
       ],
       "Download": [
         "بارگیری"
@@ -137,38 +98,17 @@
       "Edit": [
         "ویرایش"
       ],
-      "Edit billing details": [
-        ""
-      ],
       "Edit email address": [
         "ویرایش نشانی ایمیل"
       ],
       "Edit phone number": [
         "ویرایش شماره‌تلفن"
       ],
-      "Edit sign-in details": [
-        ""
-      ],
-      "Edit subscription": [
-        ""
-      ],
       "enable desktop notifications": [
         "فعا‌ل‌سازی اعلان‌های دسکتاپ"
       ],
-      "Explore other ${ BRAND_NAME } plans": [
-        ""
-      ],
-      "Extend": [
-        ""
-      ],
-      "Get ${ vpnPlus }": [
-        ""
-      ],
       "Get verification code": [
         "دریافت کد تأیید"
-      ],
-      "Go to sign in": [
-        ""
       ],
       "Hide": [
         "پنهان کردن"
@@ -179,17 +119,11 @@
       "Increase": [
         "افزودن"
       ],
-      "Load more": [
-        ""
-      ],
       "Loading verification": [
         "در حال بارگیری تأیید"
       ],
       "Mark as default": [
         "انتخاب به عنوان پیش‌فرض"
-      ],
-      "Maybe later": [
-        ""
       ],
       "More info: ${ safeTitle }": [
         "اطلاعات بیشتر: ${ safeTitle }"
@@ -218,14 +152,8 @@
       "Pay": [
         "پرداخت"
       ],
-      "Pay ${ price }": [
-        ""
-      ],
       "Previous": [
         "قبلی"
-      ],
-      "Refer a friend": [
-        ""
       ],
       "Refresh the page": [
         "نوسازی صفحه"
@@ -260,32 +188,8 @@
       "Retry": [
         "تلاش مجدد"
       ],
-      "Return to sign in": [
-        ""
-      ],
-      "Revoke": [
-        ""
-      ],
-      "Revoke ${ name }": [
-        ""
-      ],
       "Save": [
         "ذخیره"
-      ],
-      "Save selected": [
-        ""
-      ],
-      "Select ${ planTitle }": [
-        ""
-      ],
-      "Send code": [
-        ""
-      ],
-      "Send my username": [
-        ""
-      ],
-      "Set recovery phrase": [
-        ""
       ],
       "Share via link": [
         "هم‌رسانی با پیوند"
@@ -296,17 +200,11 @@
       "Show": [
         "نمایش"
       ],
-      "Show preview": [
-        ""
-      ],
       "Sign in": [
         "ورود"
       ],
       "Sign out": [
         "خروج"
-      ],
-      "Signing in": [
-        ""
       ],
       "Signing out": [
         "در حال خارج شدن"
@@ -326,23 +224,8 @@
       "Try another method": [
         "روش دیگری را امتحان کنید"
       ],
-      "Unlock": [
-        ""
-      ],
-      "Unlock data": [
-        ""
-      ],
-      "Update recovery file": [
-        ""
-      ],
-      "Update recovery phrase": [
-        ""
-      ],
       "Upgrade": [
         "ارتقا"
-      ],
-      "Use ${ label } theme": [
-        ""
       ],
       "Use a different card": [
         "از کارت دیگری استفاده کنید"
@@ -350,23 +233,11 @@
       "Use a different payment method": [
         "از روش پرداخت دیگری استفاده کنید"
       ],
-      "Use recovery code": [
-        ""
-      ],
-      "Use two-factor authentication code": [
-        ""
-      ],
-      "Use your current email address instead": [
-        ""
-      ],
       "User": [
         "کاربر"
       ],
       "Verify": [
         "تایید"
-      ],
-      "Verify account": [
-        ""
       ],
       "Verify code": [
         "تایید کد"
@@ -374,17 +245,11 @@
       "Verify code again": [
         "تایید دوباره کد"
       ],
-      "Verify email": [
-        ""
-      ],
       "View": [
         "نمایش"
       ],
       "View invoice": [
         "مشاهده صورتحساب"
-      ],
-      "View plans details": [
-        ""
       ],
       "Yes": [
         "بله"
@@ -396,19 +261,7 @@
         "کوچک‌نمایی"
       ]
     },
-    "Action in trial plan": {
-      "No, thanks": [
-        ""
-      ],
-      "Try free for 30 days": [
-        ""
-      ]
-    },
     "Addon": {
-      "+ ${ _users } user": [
-        "",
-        ""
-      ],
       "+ ${ domains } custom domain": [
         "+ ${ domains } دامنه سفارشی",
         "+ ${ domains } دامنه سفارشی"
@@ -436,44 +289,14 @@
         "${ vpnBonus } اتصال"
       ]
     },
-    "Alter": {
-      "This will disconnect all the routers and clients using this certificate.": [
-        ""
-      ]
-    },
     "Apps dropdown": {
       "Proton applications": [
         "برنامه های Proton"
       ]
     },
-    "Badge": {
-      "5 users": [
-        ""
-      ]
-    },
-    "Billing cycle": {
-      "Payable every 12 months": [
-        ""
-      ],
-      "Payable every 24 months": [
-        ""
-      ],
-      "Payable every month": [
-        ""
-      ],
-      "Renews automatically on ${ formattedEndTime }": [
-        ""
-      ]
-    },
     "Billing cycle option": {
       "1 month": [
         "۱ ماه"
-      ],
-      "12 months": [
-        ""
-      ],
-      "24 months": [
-        ""
       ],
       "Annually": [
         "سالانه"
@@ -483,11 +306,6 @@
       ],
       "Two-year": [
         "دو ساله"
-      ]
-    },
-    "blackfriday Action": {
-      "Get the offer": [
-        ""
       ]
     },
     "blackfriday Info": {
@@ -505,14 +323,8 @@
       ]
     },
     "blackfriday Title": {
-      "Best deal": [
-        ""
-      ],
       "Most popular": [
         "محبوب‌ترین"
-      ],
-      "Save more when combining Mail and VPN": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer Action": {
@@ -523,20 +335,9 @@
         "الان معامله را بگیر"
       ]
     },
-    "blackfriday: VPNspecialoffer Badge popup": {
-      "${ vpnPlus } Special Offer 2021 discount has been applied": [
-        ""
-      ]
-    },
     "blackfriday: VPNspecialoffer Info": {
-      "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
-        ""
-      ],
       "Save ${ percentage }%": [
         "${ percentage }%"
-      ],
-      "Special offer Terms and Conditions": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer info": {
@@ -550,15 +351,6 @@
       ]
     },
     "blackfriday: VPNspecialoffer Title": {
-      "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
-        ""
-      ],
-      "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
-        ""
-      ],
-      "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
-        ""
-      ],
       "1 month": [
         "۱ ماه"
       ],
@@ -567,18 +359,6 @@
       ],
       "24 months": [
         "۲۴ ماه"
-      ],
-      "Billed at ${ amount } for the first 2 years.${ supNotice }": [
-        ""
-      ],
-      "Billed at ${ amount } for the first month.${ supNotice }": [
-        ""
-      ],
-      "Billed at ${ amount } for the first year.${ supNotice }": [
-        ""
-      ],
-      "Get the special year-end offer on our Premium VPN PLUS plan": [
-        ""
       ]
     },
     "Bug category": {
@@ -652,123 +432,14 @@
         "مشکل دسترسی به وب‌سایت"
       ]
     },
-    "Button": {
-      "Continue using ${ MAIL_APP_NAME }.": [
-        ""
-      ]
-    },
     "Calendar status": {
-      "Not synced": [
-        ""
-      ],
       "Syncing": [
         "در حال همگام‌سازی"
-      ]
-    },
-    "Calendar subscription not synced error": {
-      "Calendar could not be decrypted": [
-        ""
-      ],
-      "Calendar is syncing": [
-        ""
-      ],
-      "Calendar is too big": [
-        ""
-      ],
-      "Calendar link is not accessible": [
-        ""
-      ],
-      "Calendar link is temporarily inaccessible": [
-        ""
-      ],
-      "Failed to sync calendar": [
-        ""
-      ],
-      "More than 12 hours passed since last update": [
-        ""
-      ],
-      "Unsupported calendar format": [
-        ""
-      ]
-    },
-    "Checkout row": {
-      "${ users } user": [
-        "",
-        ""
-      ],
-      "Total for ${ n } month": [
-        "",
-        ""
       ]
     },
     "Collapsible tooltip": {
       "Close": [
         "بستن"
-      ],
-      "Open": [
-        ""
-      ]
-    },
-    "color": {
-      "carrot": [
-        ""
-      ],
-      "cerise": [
-        ""
-      ],
-      "cobalt": [
-        ""
-      ],
-      "copper": [
-        ""
-      ],
-      "enzian": [
-        ""
-      ],
-      "fern": [
-        ""
-      ],
-      "forest": [
-        ""
-      ],
-      "ocean": [
-        ""
-      ],
-      "olive": [
-        ""
-      ],
-      "pacific": [
-        ""
-      ],
-      "pickle": [
-        ""
-      ],
-      "pine": [
-        ""
-      ],
-      "pink": [
-        ""
-      ],
-      "plum": [
-        ""
-      ],
-      "purple": [
-        ""
-      ],
-      "reef": [
-        ""
-      ],
-      "sahara": [
-        ""
-      ],
-      "slateblue": [
-        ""
-      ],
-      "soil": [
-        ""
-      ],
-      "strawberry": [
-        ""
       ]
     },
     "Confirmation message to delete payment method": {
@@ -1091,9 +762,6 @@
       ],
       "Heard Island and McDonald Islands": [
         "جزیره هرد و جزایر مک دونالد"
-      ],
-      "Holy See (Vatican City State)": [
-        ""
       ],
       "Honduras": [
         "هندوراس"
@@ -1443,9 +1111,6 @@
       "Svalbard and Jan Mayen": [
         "اسوالبارد و جان ماین"
       ],
-      "Swaziland": [
-        ""
-      ],
       "Sweden": [
         "سوئد"
       ],
@@ -1481,9 +1146,6 @@
       ],
       "Trinidad and Tobago": [
         "ترینیداد و تباگو"
-      ],
-      "Tristan da Cunha": [
-        ""
       ],
       "Tunisia": [
         "تونس"
@@ -1563,22 +1225,9 @@
         "(از طریق ${ entryCountryName })"
       ]
     },
-    "Coupon": {
-      "Coupon applied: ${ CouponCode }": [
-        ""
-      ]
-    },
     "Credits": {
       "Unused credits": [
         "اعتبارات استفاده نشده"
-      ]
-    },
-    "Cycle": {
-      "/month": [
-        ""
-      ],
-      "/user per month": [
-        ""
       ]
     },
     "Delinquent modal title": {
@@ -1587,34 +1236,8 @@
       ]
     },
     "Downgrade account reason": {
-      "Bugs or quality issue": [
-        ""
-      ],
       "I use a different Proton account": [
         "من از یک حساب پروتن دیگر استفاده می‌کنم"
-      ],
-      "Missing feature(s)": [
-        ""
-      ],
-      "My reason isn't listed, please comment": [
-        ""
-      ],
-      "Streaming service unsupported": [
-        ""
-      ],
-      "Subscription is too expensive": [
-        ""
-      ],
-      "Switching to a different provider": [
-        ""
-      ],
-      "Temporary need, may come back in the future": [
-        ""
-      ]
-    },
-    "Downgrade modal exit survey title": {
-      "Help us improve!": [
-        ""
       ]
     },
     "Error": {
@@ -1627,14 +1250,8 @@
       "Can't check username, try again later": [
         "نمی‌توان نام کاربری را چک کرد، دوباره امتحان کنید"
       ],
-      "Checkout expired, please try again": [
-        ""
-      ],
       "Code wrong or not valid anymore": [
         "کد غلط یا دیگر غیر معتبر است"
-      ],
-      "Domain not available, try again later": [
-        ""
       ],
       "Email is not valid": [
         "ایمیل معتبر نیست"
@@ -1647,12 +1264,6 @@
       ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "اگر زمان در تلویزیون شما منقضی شده است، روی نوسازی در تلویزیون خود کلیک کرده و کد خود را دوباره وارد کنید."
-      ],
-      "Incorrect login credentials. Please try again.": [
-        ""
-      ],
-      "Incorrect mailbox password. Please try again.": [
-        ""
       ],
       "Invalid ${ name } code": [
         "کد ${ name } نامعتبر"
@@ -1681,9 +1292,6 @@
       "Not a valid number": [
         "شماره معتبر نیست"
       ],
-      "Organization not recognized. Try again.": [
-        ""
-      ],
       "Passwords do not match": [
         "رمزهای عبور مطابقت ندارند"
       ],
@@ -1702,20 +1310,11 @@
       "Payments are currently not available, please try again later": [
         "در حال حاضر امکان پرداخت موجود نیست، لطفا بعدا دوباره امتحان کنید"
       ],
-      "Please generate keys before you try to change your password": [
-        ""
-      ],
-      "Please set a recovery email first": [
-        ""
-      ],
       "Please set a recovery phone number first": [
         "لطفاً ابتدا یک شماره تماس بازیابی تنظیم کنید"
       ],
       "Process aborted": [
         "فرآیند قطع شد"
-      ],
-      "Request timed out": [
-        ""
       ],
       "Signature verification failed": [
         "تصدیق امضا ناموفق بود"
@@ -1750,14 +1349,8 @@
       "Unknown payment token status": [
         "وضعیت نشانه پرداخت ناشناخته"
       ],
-      "Wrong recovery phrase. Try again or use another recovery method.": [
-        ""
-      ],
       "You have no invoices.": [
         "هیچ صورت‌حسابی ندارید."
-      ],
-      "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
-        ""
       ]
     },
     "Error message": {
@@ -1778,11 +1371,6 @@
       ],
       "You may also ${ refresh } or try again later.": [
         "همچنین می‌توانید ${ refresh } کرده یا بعدا دوباره امتحان کنید."
-      ]
-    },
-    "Error notification": {
-      "Certificate ${ name } not found or already revoked": [
-        ""
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -1812,9 +1400,6 @@
       ]
     },
     "file size format": {
-      "bytes": [
-        "بایت"
-      ],
       "GB": [
         "گیگابایت"
       ],
@@ -1823,20 +1408,6 @@
       ],
       "MB": [
         "مگابایت"
-      ]
-    },
-    "file size format, long": {
-      "Bytes": [
-        ""
-      ],
-      "Gigabytes": [
-        ""
-      ],
-      "Kilobytes": [
-        ""
-      ],
-      "Megabytes": [
-        ""
       ]
     },
     "Frequency of news": {
@@ -1893,12 +1464,6 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } به اجازهٔ شما برای ${ enableDesktopNotifications } نیاز دارد."
       ],
-      "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
-        ""
-      ],
-      "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
-        ""
-      ],
       "${ number } city": [
         "${ number } شهر",
         "${ number } شهر"
@@ -1907,23 +1472,8 @@
         "${ number } سرور",
         "${ number } سرور"
       ],
-      "${ storageSize } storage": [
-        ""
-      ],
-      "${ strongAddressAvailable } You will use this email address to sign into all ${ BRAND_NAME } services.": [
-        ""
-      ],
-      "${ vpnBasic }, ${ vpnPlus } or ${ visionary } required for Country level connection.": [
-        ""
-      ],
-      "${ vpnPlus } or ${ visionary } required for Secure Core feature.": [
-        ""
-      ],
       "(Mail + VPN)": [
         "(ایمیل + VPN)"
-      ],
-      "* No credit card required.": [
-        ""
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } حافظه هدیه"
@@ -1932,32 +1482,14 @@
         "+${ organization.BonusVPN } اتصال برای ${ VPN_APP_NAME } (به شما اجازه می‌دهد تا دستگاه‌های بیشتری را به VPN متصل کنید)",
         "+${ organization.BonusVPN } اتصال برای ${ VPN_APP_NAME } (به شما اجازه می‌دهد دستگاه‌های بیشتری را به VPN متصل کنید)"
       ],
-      "10 email addresses": [
-        ""
-      ],
       "20% discount applied to your subscription with coupon ${ code }": [
         "۲۰٪ تخفیف به اشتراک شما با کوپن ${ code } اعمال شد"
-      ],
-      "30-day money-back guarantee.": [
-        ""
-      ],
-      "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
-        ""
-      ],
-      "A user is an account associated with a single username, mailbox, and person": [
-        ""
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "دسترسی به حساب به دلیل صورتحساب‌های پرداخت نشده محدود شده است. لطفا با مدیرتان تماس بگیرید."
       ],
-      "Account size": [
-        ""
-      ],
       "Account successfully updated": [
         "حساب کاربری با موفقیت به‌روزرسانی شد"
-      ],
-      "Additional options": [
-        ""
       ],
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
         "بعد از پرداخت Bitcoin، لطفا دستورالعمل زیر را دنبال کنید تا ارتقا پیدا کنید."
@@ -1965,17 +1497,8 @@
       "Amount below minimum (${ amount }).": [
         "مقدار کمتر از حداقل (${ amount })."
       ],
-      "AOL reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
-        ""
-      ],
-      "Based in Switzerland, available globally": [
-        ""
-      ],
       "Basic, Plus or Visionary subscription required": [
         "اشتراک Basic، Plus یا Visionary مورد نیاز است"
-      ],
-      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
-        ""
       ],
       "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
         "صورت‌حساب در پایان دورهٔ صورت‌حساب کنونی شما (در ${ renewalDate } تمدید می‌شود)"
@@ -2001,14 +1524,8 @@
       "By leaving now, changes may not be saved": [
         "با خارج شدن، تغییرات ممکن است که ذخیره نشوند"
       ],
-      "Choose the look and feel of the application.": [
-        ""
-      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "روی \"درخواست کد جدید\" کلیک کنید تا یک کد تایید جدید به ${ strong } ارسال شود. اگر این شماره‌تلفن نادرست است، جهت اصلاح آن روی \"ویرایش\" کلیک نمایید."
-      ],
-      "Continue anyway?": [
-        ""
       ],
       "Creating your account": [
         "ایجاد حساب کاربری خود"
@@ -2016,29 +1533,11 @@
       "Credit for the unused portion of your previous plan subscription": [
         "اعتبار برای قسمت استفاده نشدهٔ طرح اشتراک قبلی شما"
       ],
-      "Custom email domains": [
-        ""
-      ],
       "Discount applied to your subscription with coupon ${ code }": [
         "تخفیف به اشتراک شما با کوپن ${ code } اعمال شد"
       ],
-      "Do not use the OpenVPN / IKEv2 credentials in ${ VPN_APP_NAME } applications or on the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
-        ""
-      ],
-      "Done! We sent a code to ${ destination }.": [
-        ""
-      ],
-      "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
-        ""
-      ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "اپ مورد علاقه خود را امروز بارگیری نموده و حریم خصوصی را با خود هر کجا که میروید ببرید."
-      ],
-      "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
-        ""
-      ],
-      "Email hosting is only available for domains you already own. Domain registration is not currently available through Proton. You can host email for domains registered on any domain registrar.": [
-        ""
       ],
       "Emailing preference saved": [
         "تنظیمات ایمیل‌دهی ذخیره شد"
@@ -2046,38 +1545,14 @@
       "Enter key manually instead": [
         "در عوض کلید را به صورت دستی وارد کنید"
       ],
-      "Enter the code sent to your phone number ${ phone }.": [
-        ""
-      ],
-      "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
-        ""
-      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "کد تاییدی که برای ${ destinationText } ارسال شد را وارد نمایید."
-      ],
-      "Enter your ${ BRAND_NAME } Account details.": [
-        ""
-      ],
-      "Enter your ${ BRAND_NAME } Account email address or username.": [
-        ""
       ],
       "Enter your login password to confirm your identity.": [
         "برای احراز هویت، رمز خود را وارد کنید."
       ],
-      "Enter your own password (as organization admin) and new password for this user ${ Name } (${ Email }).": [
-        ""
-      ],
-      "Enter your recovery email address and we will send you your username or email address.": [
-        ""
-      ],
-      "Enter your recovery phone number and we will send you your username or email address.": [
-        ""
-      ],
       "Expired": [
         "منقضی شده"
-      ],
-      "expires ${ expirationDate }": [
-        ""
       ],
       "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
         "برای ویزا و مستر کارت ، 3 رقم پشت کارت شما. برای American Express، 4 رقم جلوی کارت شما."
@@ -2090,9 +1565,6 @@
       ],
       "Free up some space or contact your administrator.": [
         "مقداری فضای آزاد ایجاد کنید یا با مدیر خود تماس بگیرید."
-      ],
-      "Google records your online activity and reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
-        ""
       ],
       "here": [
         "اینجا"
@@ -2115,23 +1587,8 @@
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to log into your account. Each code can only be used once.": [
         "اگر شما دستگاه دو-مرحله ای فعال شده خود را از دست دهید، این کدها می‌توانند بجای کد تأیید هویت دو-مرحله ای ۶ رقمی استفاده شوند تا به حساب خود وارد شوید. هر کد می‌تواند تنها یک بار استفاده شود."
       ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
-        ""
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } paid features, including additional storage and filters.": [
-        ""
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
-        ""
-      ],
-      "If you wish to combine this account with another one, do NOT delete it.": [
-        ""
-      ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "مهم: لطفاً مطمئن شوید که کدهای بازیابی را ذخیره می‌کنید. در غیر اینصورت شما می‌توانید برای همیشه دسترسی به حساب خود را اگر که دستگاه تأیید هویت دو-مرحله ای خود را گم کنید، از دست دهید."
-      ],
-      "In case you lose your login details, we’ll send you recovery instructions via email or SMS.": [
-        ""
       ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
         "نصب یک پرونده تنظیمات کشور برای وصل شدن به یک سرور تصادفی در کشور انتخابی شما."
@@ -2145,26 +1602,14 @@
       "Install a Server configuration file to connect to a specific server in the country of your choice.": [
         "نصب یک پرونده تنظیمات سرور برای اتصال به یک سرور در کشور انتخابی شما."
       ],
-      "Internet connection lost": [
-        ""
-      ],
       "Internet connection lost. Please check your device's connectivity.": [
         "اتصال اینترنت از دست رفت. لطفا اتصال دستگاه خود را بررسی کنید."
       ],
       "Internet connection restored.": [
         "اتصال اینترنت برقرار شد."
       ],
-      "Issues signing in?": [
-        ""
-      ],
-      "Learn how to log in to ${ VPN_APP_NAME } with third-party VPN applications.": [
-        ""
-      ],
       "Learn more": [
         "بیشتر بدانید"
-      ],
-      "Link copied to clipboard": [
-        ""
       ],
       "Loading": [
         "در حال بارگذاری"
@@ -2175,23 +1620,8 @@
       "Loading preview": [
         "در حال بارگذاری پیش‌نمایش"
       ],
-      "Log in to ${ MAIL_APP_NAME } to activate your address": [
-        ""
-      ],
-      "lose access to all current encrypted data": [
-        ""
-      ],
-      "Mail.ru reads your personal data in order to provide access for advertisers, Russian government agencies and other third parties. For better privacy, create a secure email address.": [
-        ""
-      ],
-      "Make sure you remember the password to log in and decrypt emails. ${ boldAlert } We recommend adding a ${ recoveryLink } first.": [
-        ""
-      ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "برای تنظیم حساب خود ، این اطلاعات را به صورت دستی در دستگاه تأیید اعتبار 2 عامل وارد کنید. ${ _switchButton }."
-      ],
-      "No credit card required": [
-        ""
       ],
       "No payment is required at this time.": [
         "در حال حاضر پرداختی لازم نیست."
@@ -2205,20 +1635,8 @@
       "Not set": [
         "تنظیم نشده"
       ],
-      "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
-        ""
-      ],
-      "Number of users": [
-        ""
-      ],
       "of": [
         "از"
-      ],
-      "One account for all ${ BRAND_NAME } services.": [
-        ""
-      ],
-      "Or select a particular server:": [
-        ""
       ],
       "P2P": [
         "P2P"
@@ -2231,9 +1649,6 @@
       ],
       "Plan upgrade required": [
         "ارتقا برنامه مورد نیاز است"
-      ],
-      "Please enter the 12-word recovery phrase associated with your account.": [
-        ""
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "لطفاً توجه کنید که با فشردن دکمهٔ تایید، حساب شما ${ creditsRemaining } اعتبار باقیمانده خواهد داشت."
@@ -2259,23 +1674,8 @@
       "Preview": [
         "پیش‌نمایش"
       ],
-      "Priority support": [
-        ""
-      ],
-      "Proton can't help you recover any lost passwords.": [
-        ""
-      ],
-      "read our two-factor authentication guide first": [
-        ""
-      ],
-      "recovery method": [
-        ""
-      ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "بازیابی صفحه یا ${ link } بطور خودکار بیشتر مسايل را حل خواهد کرد."
-      ],
-      "Revoke certificate ${ name }": [
-        ""
       ],
       "Scan QR code instead": [
         "به جای آن ، کد QR را اسکن کنید"
@@ -2283,44 +1683,20 @@
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
         "برای تنظیم حساب کاربری خود، این دستگاه را با کد تأیید اعتبار دو عامل خود اسکن کنید. ${ switchButton }."
       ],
-      "Securing your account": [
-        ""
-      ],
       "Server is currently down": [
         "سرور اکنون کار نمی‌کند"
       ],
       "Server load": [
         "بار سرور"
       ],
-      "Servers are unreachable. Please try again in a few minutes": [
-        ""
-      ],
-      "Session timed out": [
-        ""
-      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "از آنجایی که شما یک کاربر وفادار هستید، حساب کاربری شما امکانات فعال شدهٔ اضافی است."
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        ""
-      ],
-      "Support for 1 custom email domain": [
-        ""
       ],
       "support team": [
         "تیم پشتیبانی"
       ],
       "Thank you for supporting our mission.": [
         "برای پشتیبانی از آرمان ما سپاسگزاریم."
-      ],
-      "The securest way to browse, stream, and be online.": [
-        ""
-      ],
-      "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
-        ""
-      ],
-      "These configurations are provided to work with WireGuard routers and official clients.": [
-        ""
       ],
       "This account has been suspended due to a potential policy violation.": [
         "این حساب به دلیل یک تخطی احتمالی از سیاست‌ها به تعلیق درآمده است."
@@ -2331,9 +1707,6 @@
       "This can take a few seconds or a few minutes depending on your device": [
         "بسته به دستگاه شما می تواند چند ثانیه یا چند دقیقه طول بکشد"
       ],
-      "This will also disable any two-factor authentication method associated with this account.": [
-        ""
-      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "این کار اشتراک پرداختی فعلی شما را لغو خواهد کرد و شما هر گونه مزایای وفاداری را که تا کنون کسب کرده‌اید، از دست خواهید داد. موجودی باقی ماندهٔ اشتراک شما به صورت اعتبار حساب به شما بازگردانده می‌شود."
       ],
@@ -2343,32 +1716,14 @@
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "این گزینه به طور دائم حساب کاربری شما و تمام داده‌های آن را حذف می‌کند. شما قادر به فعال‌سازی دوبارهٔ این حساب کاربری نخواهید بود."
       ],
-      "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
-        ""
-      ],
-      "This will sign you out of any active sessions and disable 2-factor authentication.": [
-        ""
-      ],
       "This wizard will enable Two-Factor Authentication (2FA) on your Proton account. Two-factor authentication will make your Proton account more secure so we recommend enabling it.": [
         "این پرسشنامه تایید هویت دو-مرحله ای (2FA) را در حساب پروتن شما فعال می‌کند. تایید هویت دو-مرحله ای حساب پروتن شما را امن‌تر خواهد کرد بنابراین ما فعال کردن آن را توصیه می‌کنیم."
-      ],
-      "to continue to ${ toAppName }": [
-        ""
       ],
       "To fight spam and abuse, please verify you are human.": [
         "برای نبرد با هرزنامه و سؤاستفاده، لطفاً تایید کنید که شما انسانید."
       ],
       "To keep up with the latest development at Proton products, you can subscribe to our various emails and visit our blog from time to time.": [
         "برای پیگیری آخرین پیشرفت در محصولات پروتن، می‌توانید در ایمیل‌های مختلف ما مشترک شوید و هر از گاهی به وبلاگ ما مراجعه کنید."
-      ],
-      "To proceed, select an account recovery method so we can verify the request.": [
-        ""
-      ],
-      "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a ${ VPN_APP_NAME } server.": [
-        ""
-      ],
-      "To use ${ toAppName }, please create an address.": [
-        ""
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "حساب‌تان را با اعتباری که می‌توانید برای اشتراک در یک طرح جدید یا تمدید طرح فعلی استفاده کنید شارژ کنید. شما برای هر ${ i18nCurrency } که هزینه می‌کنید یک واحد اعتبار دریافت می‌کنید."
@@ -2391,26 +1746,8 @@
       "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
         "حالت دو-رمزه رمزهای عبور جداگانه برای رمزگشایی ورود و صندوق پستی استفاده میکند. این یک مزیت امنیتی کوچک در بعضی مواقع ارائه میکند، با این حال ما برای بیشتر کاربران حالت تک-رمزه توصیه میکنیم. برای تغییر به حالت دو-رمزه، ابتدا یک-رمزعبور ورودی و سپس یک-رمزعبور صندوق پستی تنظیم کنید."
       ],
-      "Unfortunately there is no recovery method saved for this account.": [
-        ""
-      ],
-      "Unlimited folders, labels, and filters": [
-        ""
-      ],
-      "Unlimited messages": [
-        ""
-      ],
       "Unsupported file": [
         "فایل پشتیبانی نشده"
-      ],
-      "Update the URL in your password manager": [
-        ""
-      ],
-      "Use the best server according to current load and position: ${ formattedBestServerName }": [
-        ""
-      ],
-      "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
-        ""
       ],
       "Verification can take a few minutes.": [
         "تایید ممکن است چند دقیقه طول بکشد."
@@ -2421,41 +1758,14 @@
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "تایید، یک زبانه جدید باز خواهد کرد، لطفا مسدودکننده پنجره‌های Pop-up را غیرفعال کنید. هیچ هزینه‌ای از شما دریافت نخواهد شد. هر مبلغی که بابت تایید از کارت شما کم شود، بلافاصله بازپرداخت می‌شود."
       ],
-      "Verifying your payment": [
-        ""
-      ],
-      "Version ${ version }": [
-        ""
-      ],
-      "Warning:": [
-        ""
-      ],
-      "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
-        ""
-      ],
-      "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
-        ""
-      ],
-      "We recommend using your recovery phrase instead.": [
-        ""
-      ],
       "We use 3-D Secure to protect your payments.": [
         "ما از 3-D امن استفاده میکنیم تا پرداختهای شما را حفاظت کنیم."
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "برای تکمیل این تراکنش از طریق یک تب جدید در مرورگر به پی‌پال منتقل می‌شوید. برای ادامه لطفا اگر از مسدودکننده‌های Pop-up روی مرورگرتان استفاده می‌کنید، آن‌ها را غیرفعال کنید."
       ],
-      "We'll send a new verification code to ${ strong }": [
-        ""
-      ],
       "We're moving! Join us at our new site: ${ link }.": [
         "ما در حال جابجایی هستیم! به ما در سایت جدیدمان بپیوندید: ${ link }."
-      ],
-      "We’ll send a reset code to the email address you provided for account recovery.": [
-        ""
-      ],
-      "We’ll send a reset code to the phone number you provided for account recovery.": [
-        ""
       ],
       "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
         "ما در حال به‌روزرسانی طرح فعلی شما به یک طرح بهبود یافته هستیم که به ازای قیمت یکسان قابلیت‌های بیشتری ارائه می‌دهد. هنگامی که سامانه‌های ما در حال به‌روزرسانی هستند، شما قادر به تغییر آن نخواهید بود. ما به شما به محض انجام شدن آن پیام خواهیم داد."
@@ -2466,15 +1776,6 @@
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "آیا می‌خواهید یک کد تایید جدید دریافت نمایید یا از یک روش تایید جایگزین استفاده کنید؟"
       ],
-      "Would you like to receive a new verification code?": [
-        ""
-      ],
-      "Yahoo reads your personal data in order to provide access for advertisers, US intelligence agencies and other third parties. For better privacy, create a secure email address.": [
-        ""
-      ],
-      "Yandex records your online activity and reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
-        ""
-      ],
       "You already have a free account": [
         "در حال حاضر یک حساب کاربری رایگان دارید"
       ],
@@ -2484,23 +1785,8 @@
       "You can customize and download your invoices for accounting purposes.": [
         "می‌توانید صورتحساب‌های خود را برای اهداف حسابداری، شخصی‌سازی و دانلود کنید."
       ],
-      "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
-        ""
-      ],
-      "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
-        ""
-      ],
-      "You cannot use the OpenVPN / IKEv2 credentials to log in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
-        ""
-      ],
-      "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
-        ""
-      ],
       "You have no saved payment methods.": [
         "شما روش پرداخت ذخیره شده‌ای ندارید."
-      ],
-      "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
-        ""
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "شما باید یک کارت اعتباری یا حساب بانکی به حساب پی‌پل خود متصل کنید تا امکان استفاده از این روش پرداخت را داشته باشید."
@@ -2517,23 +1803,11 @@
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
         "شما به ۱۰۰٪ ظرفیت حافظه خود رسیدید. شما نمیتوانید ایمیلهای جدید دریافت کرده یا بفرستید. ${ freeUpMessage } ${ upgradeLink }"
       ],
-      "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
-        ""
-      ],
       "You will be soon redirected to your bank to verify your payment.": [
         "به زودی برای تایید پرداخت به بانک خود هدایت می‌شوید."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "شما به زودی جهت تأیید پرداخت خود به پی‌پال منتقل می‌شوید."
-      ],
-      "You'll stay signed in even after you close the browser.": [
-        ""
-      ],
-      "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, please create an address.": [
-        ""
-      ],
-      "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
-        ""
       ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
         "حساب شما حداقل یک صورتحساب تاریخ گذشته دارد. دسترسی شما محدود شده است. ${ payInvoiceLink }"
@@ -2553,9 +1827,6 @@
       "Your email will only be used for this one-time verification.": [
         "ایمیل شما فقط برای این تأیید یکبار مصرف استفاده خواهد شد."
       ],
-      "Your existing ${ BRAND_NAME } account can be used to access all ${ BRAND_NAME } services. Please sign in with ${ email }.": [
-        ""
-      ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "اطلاعات پرداخت شما با رمزنگاری TLS و قوانین حریم خصوصی سوئیس محافظت می‌شود."
       ],
@@ -2564,9 +1835,6 @@
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "حساب پروتن شما در حال حاضر متوقف شده است. به منظور ادامه استفاده از حسابتان، لطفا صورتحساب‌های عقب افتاده را بپردازید."
-      ],
-      "Your recovery email address:": [
-        ""
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "اشتراک شما توسط Mozilla اداره می شود. لطفا با پشتیبانی Mozilla تماس بگیرید."
@@ -2595,9 +1863,6 @@
     "Invoice state display as badge": {
       "Billed": [
         "قبض"
-      ],
-      "Gifted": [
-        ""
       ],
       "Paid": [
         "پرداخت شده"
@@ -2642,16 +1907,6 @@
       ]
     },
     "Label": {
-      "${ humanUsedSpace } of ${ humanMaxSpace }": [
-        ""
-      ],
-      "${ MAIL_APP_NAME } address": [
-        ""
-      ],
-      "${ n } month": [
-        "",
-        ""
-      ],
       "Allow recovery by email": [
         "اجازهٔ بازیابی از طریق ایمیل"
       ],
@@ -2664,17 +1919,11 @@
       "Amount due": [
         "مبلغ پرداختی"
       ],
-      "Attach screenshot(s)": [
-        ""
-      ],
       "Billing cycle": [
         "دوره صورتحساب"
       ],
       "Block malware only": [
         "فقط بدافزار مسدود شود"
-      ],
-      "Block malware, ads and trackers": [
-        ""
       ],
       "bonus storage": [
         "فضای هدیه"
@@ -2703,17 +1952,8 @@
       "Category": [
         "دسته‌بندی"
       ],
-      "Choose a name for the generated certificate file": [
-        ""
-      ],
       "Code": [
         "کد"
-      ],
-      "Code is 6 digits without spaces": [
-        ""
-      ],
-      "Config to connect to ${ serverName }": [
-        ""
       ],
       "Confirm login password": [
         "تایید گذرواژه ورود"
@@ -2730,23 +1970,11 @@
       "Copy": [
         "کپی"
       ],
-      "Could you please let us know which provider?": [
-        ""
-      ],
-      "Could you please specify which streaming service?": [
-        ""
-      ],
-      "Could you please specify?": [
-        ""
-      ],
       "Country": [
         "کشور"
       ],
       "Credits used": [
         "اعتبار استفاده شده"
-      ],
-      "Current login password": [
-        ""
       ],
       "Customize invoices": [
         "شخصی‌سازی صورتحساب‌ها"
@@ -2757,32 +1985,17 @@
       "Delete": [
         "حذف"
       ],
-      "Device/certificate name": [
-        ""
-      ],
       "Digits": [
         "ارقام"
       ],
       "Discount": [
         "تخفیف"
       ],
-      "Do you have any suggestions for our team?": [
-        ""
-      ],
       "Email address": [
         "آدرس ایمیل"
       ],
-      "Email or username": [
-        ""
-      ],
-      "Enter organization name to confirm": [
-        ""
-      ],
       "Enter the code displayed on your TV": [
         "کد نشان داده شده بر روی تلویزیون خود را وارد کنید"
-      ],
-      "Expiration date": [
-        ""
       ],
       "Expires": [
         "انقضا"
@@ -2799,14 +2012,8 @@
       "Interval": [
         "وقفه"
       ],
-      "Keep me signed in": [
-        ""
-      ],
       "Key": [
         "کلید"
-      ],
-      "Level for NetShield blocker filtering": [
-        ""
       ],
       "Login password": [
         "رمز عبور"
@@ -2832,9 +2039,6 @@
       "New password": [
         "رمز عبور جدید"
       ],
-      "No filter": [
-        ""
-      ],
       "Non-standard ports": [
         "درگاه‌های غیر-استاندارد"
       ],
@@ -2856,9 +2060,6 @@
       "Operating system version": [
         "نگارش سیستم عامل"
       ],
-      "Optional": [
-        ""
-      ],
       "Other amount": [
         "سایر مبالغ"
       ],
@@ -2868,17 +2069,8 @@
       "Payer": [
         "پرداخت کننده"
       ],
-      "Payment details": [
-        ""
-      ],
-      "Payment method": [
-        ""
-      ],
       "Phone number": [
         "شماره تلفن"
-      ],
-      "Phrase consists of 12 unique words in a specific order": [
-        ""
       ],
       "Postal code": [
         "کد پستی"
@@ -2889,32 +2081,11 @@
       "Proton username": [
         "نام کاربری پروتن"
       ],
-      "Recovery code": [
-        ""
-      ],
-      "Recovery email address": [
-        ""
-      ],
-      "Recovery phone number": [
-        ""
-      ],
-      "Recovery phrase": [
-        ""
-      ],
-      "Repeat password": [
-        ""
-      ],
       "Reveal password": [
         "نمایش رمز عبور"
       ],
-      "Security code": [
-        ""
-      ],
       "Select your country": [
         "کشور خود را انتخاب کنید"
-      ],
-      "Subscription options": [
-        ""
       ],
       "System information": [
         "اطلاعات سیستم"
@@ -2960,14 +2131,6 @@
       ],
       "Your password (admin)": [
         "رمزعبور شما (مدیر)"
-      ],
-      "ZIP code": [
-        ""
-      ]
-    },
-    "label": {
-      "Recovery phone number": [
-        ""
       ]
     },
     "Label for news": {
@@ -2982,9 +2145,6 @@
       ],
       "Proton newsletter": [
         "خبرنامه پروتون"
-      ],
-      "Proton offers and promotions": [
-        ""
       ],
       "Proton product announcements": [
         "اطلاعیه‌های محصولات پروتون"
@@ -3007,12 +2167,6 @@
       ],
       "click here": [
         "اینجا کلیک کنید"
-      ],
-      "Common sign in issues": [
-        ""
-      ],
-      "Common sign up issues": [
-        ""
       ],
       "Forgot username?": [
         "نام کاربریتان را فراموش کرده‌اید؟"
@@ -3044,12 +2198,6 @@
       "Sign in": [
         "ورود"
       ],
-      "Terms": [
-        ""
-      ],
-      "Trouble signing in?": [
-        ""
-      ],
       "Upgrade": [
         "ارتقا"
       ],
@@ -3063,17 +2211,9 @@
         "تفاوت بین پروتکلهای UDP و TCP چیست؟"
       ]
     },
-    "Member downgrade modal": {
-      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        ""
-      ]
-    },
     "Message": {
       "Are you sure you want to disable two-factor authentication?": [
         "آیا مطمئن هستید که می خواهید تأیید هویت دو عاملی را غیرفعال کنید?"
-      ],
-      "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
-        ""
       ]
     },
     "Message display when a new app version is available": {
@@ -3092,681 +2232,50 @@
         "فرانک سوئیس"
       ]
     },
-    "new_plans": {
-      "Highest VPN speed": [
-        ""
-      ],
-      "Keep your inbox organized with folders": [
-        ""
-      ],
-      "Medium VPN speed": [
-        ""
-      ]
-    },
     "new_plans: action": {
-      "Continue to review": [
-        ""
-      ],
       "Continue with free": [
         "Continue with Free"
       ],
       "Delete account": [
         "حذف حساب کاربری"
       ],
-      "Downgrade account": [
-        ""
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        ""
-      ],
-      "Get ${ planName }": [
-        ""
-      ],
-      "Get ${ upsellShortPlan.title }": [
-        ""
-      ],
       "Got it": [
         "فهمیدم"
-      ],
-      "Keep ${ plan }": [
-        ""
-      ],
-      "Keep account": [
-        ""
-      ],
-      "Switch or add account": [
-        ""
-      ],
-      "Switch plan": [
-        ""
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        ""
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        ""
-      ],
-      "From ${ _price }": [
-        ""
-      ],
-      "From ${ _price2 } per user": [
-        ""
-      ],
-      "From ${ price }": [
-        ""
-      ],
-      "Keep my ${ currentPlanName } account": [
-        ""
-      ],
-      "Upgrade now": [
-        ""
-      ]
-    },
-    "new_plans: attribute": {
-      "Get ${ connections } high-speed VPN connection": [
-        "",
-        ""
-      ],
-      "Get ${ connections } high-speed VPN connection per user": [
-        "",
-        ""
       ]
     },
     "new_plans: feature": {
-      "${ DRIVE_APP_NAME } (web beta)": [
-        ""
-      ],
-      "${ n } custom email domain": [
-        "",
-        ""
-      ],
-      "${ n } email address": [
-        "",
-        ""
-      ],
-      "${ n } email address per user": [
-        "",
-        ""
-      ],
-      "${ n } filter": [
-        "",
-        ""
-      ],
-      "${ n } folder": [
-        "",
-        ""
-      ],
-      "${ n } folder and label": [
-        "",
-        ""
-      ],
-      "${ n } label": [
-        "",
-        ""
-      ],
-      "${ n } message per day": [
-        "",
-        ""
-      ],
-      "${ n } personal calendar": [
-        "",
-        ""
-      ],
-      "${ n } VPN connection": [
-        "",
-        ""
-      ],
-      "${ n } VPN connection per user": [
-        "",
-        ""
-      ],
-      "${ size } attachment size": [
-        ""
-      ],
-      "${ size } storage per user": [
-        ""
-      ],
-      "${ size } total storage": [
-        ""
-      ],
-      "1 free VPN connection in total": [
-        ""
-      ],
-      "99.95% SLA": [
-        ""
-      ],
-      "Admin console": [
-        ""
-      ],
-      "Advanced sharing security": [
-        ""
-      ],
-      "Auto-reply": [
-        ""
-      ],
-      "Catch-all": [
-        ""
-      ],
-      "Centralized billing": [
-        ""
-      ],
-      "Contact groups": [
-        ""
-      ],
-      "Contact groups management": [
-        ""
-      ],
-      "Custom email domains": [
-        ""
-      ],
       "DNS leak prevention": [
         "جلوگیری از نشت DNS"
-      ],
-      "Document editors (docs, sheets, slides)": [
-        ""
-      ],
-      "Easy Switch import assistant": [
-        ""
-      ],
-      "Email client support (via IMAP/SMTP)": [
-        ""
-      ],
-      "Enables HIPAA compliance": [
-        ""
-      ],
-      "Encrypted contact details": [
-        ""
-      ],
-      "Encrypted VPN servers": [
-        ""
-      ],
-      "End-to-end encryption": [
-        ""
-      ],
-      "Free VPN on a single device": [
-        ""
-      ],
-      "GDPR data processing agreement": [
-        ""
-      ],
-      "High-speed VPN on ${ n } device": [
-        "",
-        ""
-      ],
-      "HTML signatures": [
-        ""
-      ],
-      "Kill switch/always-on VPN": [
-        ""
-      ],
-      "Limited support": [
-        ""
-      ],
-      "Multiple admin roles": [
-        ""
-      ],
-      "NetShield malware and ad-blocker": [
-        ""
       ],
       "P2P/BitTorrent": [
         "P2P/BitTorrent"
       ],
-      "Password-protected Emails": [
-        ""
-      ],
-      "Phone support (6+ users)": [
-        ""
-      ],
-      "Priority email support": [
-        ""
-      ],
-      "Priority support": [
-        ""
-      ],
-      "Router support": [
-        ""
-      ],
       "Secure Core servers": [
         "سرور های Secure Core"
       ],
-      "Send & receive invitations": [
-        ""
-      ],
-      "Share calendar via link": [
-        ""
-      ],
-      "Share files and folders via link": [
-        ""
-      ],
-      "Sign in as user": [
-        ""
-      ],
-      "Split tunneling (Android and Windows)": [
-        ""
-      ],
       "Strict no-logs policy": [
         "سیاست سخت‌گیرانهٔ عدم ثبت رویدادها"
-      ],
-      "Team management": [
-        ""
       ],
       "Tor over VPN": [
         "Tor بر روی VPN"
       ],
       "Two-factor authentication": [
         "احراز هویت دو مرحله‌ای"
-      ],
-      "Unlimited filters": [
-        ""
-      ],
-      "Unlimited folders": [
-        ""
-      ],
-      "Unlimited folders, labels and filters": [
-        ""
-      ],
-      "Unlimited labels": [
-        ""
-      ],
-      "Unlimited messages per day": [
-        ""
-      ],
-      "Unlimited volume/bandwidth": [
-        ""
-      ],
-      "Up to ${ totalStorageSize } total storage": [
-        ""
-      ],
-      "User credential management": [
-        ""
-      ],
-      "User session management": [
-        ""
-      ],
-      "Worldwide streaming services": [
-        ""
       ]
     },
     "new_plans: heading": {
       "Support": [
         "پشتیبانی"
-      ],
-      "Team management": [
-        ""
-      ]
-    },
-    "new_plans: info": {
-      "${ brand } ending in ${ last4 }": [
-        ""
-      ],
-      "* With 1-month subscription. Other subscription options available at checkout.": [
-        ""
-      ],
-      "* With 12-month subscription. Other subscription options available at checkout.": [
-        ""
-      ],
-      "* With 24-month subscription. Other subscription options available at checkout.": [
-        ""
-      ],
-      "Applicable credits, proration, and coupons are applied in the next step": [
-        ""
-      ],
-      "Comprehensive privacy and security with all Proton services combined.": [
-        ""
-      ],
-      "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
-        ""
-      ],
-      "If you downgrade your account, you lose all ${ visionary } plan benefits and it won’t be available if you try to subscribe again.": [
-        ""
-      ],
-      "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
-        ""
-      ],
-      "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
-        ""
-      ],
-      "Popular": [
-        ""
-      ],
-      "Price for future renewal: includes all applicable non-expired coupons saved to your account": [
-        ""
-      ],
-      "Privacy and security suite for businesses, including all premium Proton services.": [
-        ""
-      ],
-      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        ""
-      ],
-      "Secure email and calendar for professionals and businesses.": [
-        ""
-      ],
-      "Secure email with advanced features for your everyday communications.": [
-        ""
-      ],
-      "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
-        ""
-      ],
-      "The no-cost starter account designed to empower everyone with privacy by default.": [
-        ""
-      ],
-      "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
-        ""
-      ],
-      "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
-        ""
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        ""
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        ""
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        ""
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        ""
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        ""
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        ""
-      ]
-    },
-    "new_plans: Label": {
-      "${ humanUsedSpace } of ${ humanMaxSpace }": [
-        ""
-      ]
-    },
-    "new_plans: Plan frequency": {
-      "/month": [
-        ""
-      ]
-    },
-    "new_plans: Plan time remaining": {
-      "You still have ${ daysRemaining } day left on your ${ currentPlanName } account.": [
-        "",
-        ""
       ]
     },
     "new_plans: signup": {
-      "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }.": [
-        ""
-      ],
-      "Payment details": [
-        ""
-      ],
-      "Save your email address or phone number to use for verification if you need to reset your account.": [
-        ""
-      ],
       "Subscription": [
         "اشتراک"
-      ],
-      "terms and conditions": [
-        ""
-      ],
-      "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
-        ""
-      ],
-      "Your ${ planName } subscription is now active.": [
-        ""
-      ],
-      "Your selected plan: ${ planName }": [
-        ""
-      ]
-    },
-    "new_plans: title": {
-      "Delete account?": [
-        ""
-      ],
-      "Downgrade account?": [
-        ""
-      ],
-      "Improved plans coming soon!": [
-        ""
-      ],
-      "Review subscription and pay": [
-        ""
-      ],
-      "Start exploring the Proton universe": [
-        ""
-      ],
-      "Switch plans?": [
-        ""
-      ]
-    },
-    "new_plans: Title": {
-      "${ mailPlanName } Trial": [
-        ""
-      ],
-      "Upgrade to ${ planName }": [
-        ""
-      ],
-      "Your account's usage": [
-        ""
-      ]
-    },
-    "new_plans: tooltip": {
-      "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
-        ""
-      ],
-      "Addresses have full sending and receiving capability. A user can have multiple addresses assigned to them; however, a single address cannot be assigned to multiple users.": [
-        ""
-      ],
-      "Advanced security VPN with global network": [
-        ""
-      ],
-      "Allows you to access more than one network at the same time, e.g., stream a film from another country while still getting local search results": [
-        ""
-      ],
-      "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
-        ""
-      ],
-      "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
-        ""
-      ],
-      "Control access to your shared files by adding password protection and link expiration dates": [
-        ""
-      ],
-      "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscription": [
-        ""
-      ],
-      "Create up to ${ n } custom calendar.": [
-        "",
-        ""
-      ],
-      "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
-        ""
-      ],
-      "Easily share your calendars with your colleagues, family, and friends via a link": [
-        ""
-      ],
-      "Easily share your calendars with your family, friends, or colleagues via a link": [
-        ""
-      ],
-      "End-to-end encrypted calendar": [
-        ""
-      ],
-      "End-to-end encrypted file storage": [
-        ""
-      ],
-      "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
-        ""
-      ],
-      "Force sign-out of user sessions when user credentials are believed to be compromised": [
-        ""
-      ],
-      "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
-        ""
-      ],
-      "Keeps you protected by blocking all network connections when you are accidentally disconnected from our VPN server": [
-        ""
-      ],
-      "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
-        ""
-      ],
-      "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
-        ""
-      ],
-      "On business days, receive support from the Proton Customer Support team within 24 hours of requests": [
-        ""
-      ],
-      "On top of that, add up to 5 calendars from colleagues, organizations, family, and friends.": [
-        ""
-      ],
-      "On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
-        ""
-      ],
-      "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections": [
-        ""
-      ],
-      "Option to view non-private user inboxes as the user would, including full message and contact details": [
-        ""
-      ],
-      "Organization management tool that lets admins add and remove users, allocate storage, configure domains, and perform other tasks": [
-        ""
-      ],
-      "Our robust infrastructure ensures you will be able to access your account when you need it": [
-        ""
-      ],
-      "Our servers’ hard disks are fully encrypted with multiple password layers so your data is protected even if our hardware is compromised": [
-        ""
-      ],
-      "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
-        ""
-      ],
-      "Phone support is available from the Proton Customer Success team during European business hours, for customers with 6 or more users": [
-        ""
-      ],
-      "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
-        ""
-      ],
-      "Protect every device connected to your WiFi network. It’s also useful if you have devices that do not support VPN settings directly.": [
-        ""
-      ],
-      "Quickly set up out-of-office messages": [
-        ""
-      ],
-      "Quickly transfer your emails, calendars or contacts from any provider": [
-        ""
-      ],
-      "Requires a code sent to a mobile phone to sign in. This ensures even if a password is compromised, the account stays secure.": [
-        ""
-      ],
-      "Reset user passwords and reset two-factor authentication on users": [
-        ""
-      ],
-      "Route your internet traffic through the Tor network with a single click": [
-        ""
-      ],
-      "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even Proton can't access them.": [
-        ""
-      ],
-      "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
-        ""
-      ],
-      "Set up filters to automatically reply to, sort, and/or label your emails": [
-        ""
-      ],
-      "Share your files or folders with anyone by using secure, shareable links": [
-        ""
-      ],
-      "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
-        ""
-      ],
-      "Start with ${ freeStorageSize } and unlock more storage along the way. Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        ""
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
-        ""
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
-        ""
-      ],
-      "Support for file-sharing protocols like BitTorrent": [
-        ""
-      ],
-      "Use your own custom email domain addresses, e.g., you@yourname.com": [
-        ""
-      ],
-      "We keep no session usage logs of what you do online, and we do not log metadata that can compromise your privacy": [
-        ""
-      ],
-      "We’re committed to helping customers subject to HIPAA/HITECH regulations safeguard protected health information (PHI). Signed BAAs are available for all ${ BRAND_NAME } for Business customers.": [
-        ""
-      ],
-      "When connected to our VPN, your DNS queries through our encrypted VPN tunnel, adding to your online privacy and security": [
-        ""
-      ],
-      "When sending to other ${ MAIL_APP_NAME } users, encryption is automatic. Sending to non-${ MAIL_APP_NAME } users requires setting a password prior to sending.": [
-        ""
-      ],
-      "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
-        ""
-      ]
-    },
-    "new_plans: Upsell attribute": {
-      "${ storageSize } total storage": [
-        ""
-      ],
-      "10 email addresses/aliases": [
-        ""
-      ],
-      "Access advanced VPN features": [
-        ""
-      ],
-      "Add more personalization with 15 email addresses and support for 3 custom email domains": [
-        ""
-      ],
-      "Boost your storage space to ${ bundleStorage } total": [
-        ""
-      ],
-      "Boost your storage space to ${ businessStorage } per user": [
-        ""
-      ],
-      "Boost your storage space to ${ driveStorage } total": [
-        ""
-      ],
-      "Cover more ground with support for 10 custom email domains": [
-        ""
-      ],
-      "Create up to ${ numberOfPersonalCalendars } personal calendar": [
-        "",
-        ""
-      ],
-      "Everything in ${ vpnPlanName }": [
-        ""
-      ],
-      "Get 5 additional email addresses per user": [
-        ""
-      ],
-      "Priority support": [
-        ""
-      ],
-      "Support for 1 custom email domain": [
-        ""
-      ],
-      "Unlimited folders, labels, and filters": [
-        ""
-      ],
-      "Unlimited messages": [
-        ""
       ]
     },
     "Notification": {
       "OpenVPN / IKEv2 credentials regenerated": [
         "جزئیات ورودی OpenVPN / IKEv2 دوباره تولید شد"
-      ]
-    },
-    "Onboarding": {
-      "Welcome to ${ VPN_APP_NAME }": [
-        ""
       ]
     },
     "Option": {
@@ -3826,9 +2335,6 @@
       "Bitcoin": [
         "بیت‌کوین"
       ],
-      "Credit/debit card": [
-        ""
-      ],
       "New credit/debit card": [
         "کارت اعتباری/نقدی جدید"
       ],
@@ -3885,18 +2391,6 @@
         "نام (یا نام شرکت) و آدرس خود را به صورتحساب‌ها اضافه کنید"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        ""
-      ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
-        ""
-      ],
-      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
-        "",
-        ""
-      ]
-    },
     "Price": {
       "Free": [
         "رایگان"
@@ -3906,26 +2400,8 @@
       "Cancel": [
         "لغو"
       ],
-      "Email address has been verified.": [
-        ""
-      ],
-      "Email address not yet verified.": [
-        ""
-      ],
-      "Send verification email": [
-        ""
-      ],
-      "Verification email sent to ${ email.Value }": [
-        ""
-      ],
-      "Verify now": [
-        ""
-      ],
-      "Verify recovery email?": [
-        ""
-      ],
-      "Verifying your email address increases your account security and allows additional options for recovery.": [
-        ""
+      "Verify with email": [
+        "تایید با ایمیل"
       ]
     },
     "Recovery method": {
@@ -3934,34 +2410,19 @@
       ],
       "Phone number": [
         "شماره تلفن"
-      ],
-      "Phrase": [
-        ""
+      ]
+    },
+    "Recovery Phone": {
+      "Cancel": [
+        "لغو"
       ]
     },
     "Signup label": {
-      "Display name": [
-        ""
-      ],
       "Email": [
         "ایمیل"
       ],
       "Username": [
         "نام کاربری"
-      ]
-    },
-    "Spotlight": {
-      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        ""
-      ],
-      "Get up to 18 months of ${ planName } for free": [
-        ""
-      ],
-      "Invite friends and earn rewards!": [
-        ""
-      ],
-      "Try ${ DRIVE_APP_NAME }": [
-        ""
       ]
     },
     "State": {
@@ -3980,91 +2441,12 @@
         "فضای ذخیره‌سازی فعلی شما:"
       ]
     },
-    "Subscription attribute": {
-      "${ _n } calendar per user": [
-        "",
-        ""
-      ],
-      "${ maxVpn } high-speed VPN connection": [
-        "",
-        ""
-      ],
-      "${ n } calendar": [
-        "",
-        ""
-      ],
-      "${ n } high-speed VPN connection": [
-        "",
-        ""
-      ],
-      "${ n } high-speed VPN connection per user": [
-        "",
-        ""
-      ],
-      "${ n } VPN connection": [
-        "",
-        ""
-      ],
-      "${ n } VPN connection per user": [
-        "",
-        ""
-      ],
-      "${ UsedAddresses } address": [
-        "",
-        ""
-      ],
-      "${ UsedAddresses } of ${ MaxAddresses } email address": [
-        "",
-        ""
-      ],
-      "${ UsedCalendars } calendar": [
-        "",
-        ""
-      ],
-      "${ UsedDomains } of ${ MaxDomains } custom domain": [
-        "",
-        ""
-      ],
-      "${ UsedMembers } of ${ MaxMembers } user": [
-        "",
-        ""
-      ],
-      "1 email address": [
-        ""
-      ],
-      "1 VPN connection": [
-        ""
-      ],
-      "Access to streaming services globally": [
-        ""
-      ],
-      "Built-in ad blocker (NetShield)": [
-        ""
-      ],
-      "High-speed VPN on ${ maxVpn } device": [
-        "",
-        ""
-      ]
-    },
-    "Subscription price": {
-      "For": [
-        ""
-      ]
-    },
     "Subscription saving": {
       "Save": [
         "ذخیره"
       ]
     },
-    "Subtitle for trial plan": {
-      "The privacy-first Mail and Calendar solution for your everyday communications needs.": [
-        ""
-      ]
-    },
     "Success": {
-      "${ server.Domain } copied to your clipboard": [
-        ""
-      ],
       "Account deleted. Logging out...": [
         "حساب کاربری حذف شد. در حال خروج..."
       ],
@@ -4085,12 +2467,6 @@
       ],
       "Gift code applied": [
         "کد هدیه اعمال شد"
-      ],
-      "If you entered a valid recovery email we will send you an email with your usernames in the next minute.": [
-        ""
-      ],
-      "If you entered a valid recovery phone we will send you an sms with your usernames in the next minute.": [
-        ""
       ],
       "Invoice customized": [
         "صورتحساب سفارشی شد"
@@ -4123,42 +2499,9 @@
         "شما با موفقیت لغو اشتراک کردید"
       ]
     },
-    "Success notification": {
-      "Certificate ${ name } revoked": [
-        ""
-      ],
-      "Certificate extended until ${ formattedExpirationDate }": [
-        ""
-      ],
-      "Config \"${ name }\" created, note that the private key is not stored and won't be shown again, you should copy or download this config.": [
-        ""
-      ],
-      "Creating config file for ${ serverName }": [
-        ""
-      ]
-    },
-    "Suffix": {
-      "/month": [
-        ""
-      ],
-      "/user per month": [
-        ""
-      ]
-    },
     "Suffix for price": {
-      "/month": [
-        ""
-      ],
       "per month": [
         "در ماه"
-      ]
-    },
-    "Tab subscription modal": {
-      "For businesses": [
-        ""
-      ],
-      "For individuals": [
-        ""
       ]
     },
     "TableHeader": {
@@ -4178,27 +2521,9 @@
         "وضعیت"
       ]
     },
-    "Themes": {
-      "Themes": [
-        ""
-      ]
-    },
     "Title": {
-      "${ maxUsers } user": [
-        "",
-        ""
-      ],
-      "${ VPN_APP_NAME } clients": [
-        ""
-      ],
-      "1. Give a name to the config to be generated": [
-        ""
-      ],
       "1. Select platform": [
         "1. انتخاب پلتفرم"
-      ],
-      "2. Select platform": [
-        ""
       ],
       "2. Select protocol": [
         "2. انتخاب پروتکل"
@@ -4208,12 +2533,6 @@
       ],
       "3. Select config file and download": [
         "۳. فایل پیکربندی را انتخاب و بارگیری کنید"
-      ],
-      "3. Select VPN options": [
-        ""
-      ],
-      "4. Select a server to connect to": [
-        ""
       ],
       "Account": [
         "حساب کاربری"
@@ -4235,9 +2554,6 @@
       ],
       "Add PayPal payment method": [
         "روش پرداخت PayPal را اضافه کنید"
-      ],
-      "Address is available": [
-        ""
       ],
       "Amount": [
         "مقدار"
@@ -4284,15 +2600,6 @@
       "Confirm phone number": [
         "تأیید شماره تلفن"
       ],
-      "Congratulations on choosing privacy!": [
-        ""
-      ],
-      "Create a ${ mailAppName } address": [
-        ""
-      ],
-      "Create your ${ BRAND_NAME } Account": [
-        ""
-      ],
       "Credits": [
         "اعتبار"
       ],
@@ -4314,20 +2621,11 @@
       "Delete account": [
         "حذف حساب کاربری"
       ],
-      "Delete organization?": [
-        ""
-      ],
       "Device connected!": [
         "دستگاه متصل شد!"
       ],
       "Disable two-factor authentication": [
         "غیرفعال کردن احراز هویت دو مرحله‌ای"
-      ],
-      "Downgrade account": [
-        ""
-      ],
-      "Download ${ VPN_APP_NAME }": [
-        ""
       ],
       "Downloads": [
         "دانلودها"
@@ -4344,14 +2642,8 @@
       "Error": [
         "خطا"
       ],
-      "Find email or username": [
-        ""
-      ],
       "General": [
         "عمومی"
-      ],
-      "Get ${ vpnPlus } to access all servers": [
-        ""
       ],
       "Gift code": [
         "کد هدیه"
@@ -4376,9 +2668,6 @@
       ],
       "Next": [
         "بعدی"
-      ],
-      "No recovery method": [
-        ""
       ],
       "Open actions dropdown": [
         "باز کردن منوی اقدامات"
@@ -4419,9 +2708,6 @@
       "PayPal verification failed": [
         "تایید PayPal ناموفق بود"
       ],
-      "Phone": [
-        ""
-      ],
       "Plan summary": [
         "خلاصه طرح‌ها"
       ],
@@ -4440,9 +2726,6 @@
       "Recommended": [
         "توصیه شده"
       ],
-      "Recovery": [
-        ""
-      ],
       "Report a problem": [
         "گزارش یک مشکل"
       ],
@@ -4452,23 +2735,8 @@
       "Reset password": [
         "بازنشانی رمز عبور"
       ],
-      "Reset password?": [
-        ""
-      ],
-      "Revoke certificate": [
-        ""
-      ],
-      "Save contact details": [
-        ""
-      ],
-      "Secure email based in Switzerland": [
-        ""
-      ],
       "Select a plan": [
         "انتخاب طرح"
-      ],
-      "Set new password": [
-        ""
       ],
       "Set up two-factor authentication": [
         "فعال‌کردن احراز هویت دو مرحله‌ای"
@@ -4491,12 +2759,6 @@
       "Switch to two-password mode": [
         "تغییر به حالت دو-رمزه"
       ],
-      "This address might compromise your privacy.": [
-        ""
-      ],
-      "Try the best of ${ MAIL_APP_NAME } for free": [
-        ""
-      ],
       "TV log in": [
         "ورود تلویزیون"
       ],
@@ -4506,29 +2768,17 @@
       "Type": [
         "نوع"
       ],
-      "Unlock your mailbox": [
-        ""
-      ],
       "Unsupported browser": [
         "مرورگر پشتیبانی نشده"
       ],
       "Username": [
         "نام کاربری"
       ],
-      "Verification": [
-        ""
-      ],
       "Warning": [
         "هشدار"
       ],
-      "Warning!": [
-        ""
-      ],
       "What's new": [
         "تازه ها چیست"
-      ],
-      "WireGuard configuration": [
-        ""
       ],
       "You already have a Proton account": [
         "شما در حال حاضر یک حساب Proton دارید"
@@ -4538,9 +2788,6 @@
       ],
       "Your plan": [
         "طرح شما"
-      ],
-      "You’ve been invited to try ${ mailAppName }": [
-        ""
       ],
       "ZIP / postal code": [
         "کد پستی"
@@ -4557,11 +2804,6 @@
         "وضعیت"
       ]
     },
-    "Title for PDF file": {
-      "${ MAIL_APP_NAME } invoice": [
-        ""
-      ]
-    },
     "Tooltip": {
       "Discount applied for annual billing cycle": [
         "تخفیف پرداخت سالانه اعمال شد"
@@ -4573,14 +2815,6 @@
         "اگر شما کد هدیه خریده‌اید یا از تیم پشتیبانی ما دریافت کرده‌اید، می‌توانید آن را اینجا وارد کنید."
       ]
     },
-    "Tor out of date": {
-      "stable release": [
-        ""
-      ],
-      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
-        ""
-      ]
-    },
     "Validation": {
       "Password must contain at least ${ length } character": [
         "گذرواژه باید شامل حداقل ${ length } نویسه باشد",
@@ -4590,20 +2824,6 @@
     "VPN info": {
       "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, and more.": [
         "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HB0 Now, و موارد بیشتر."
-      ]
-    },
-    "VPN Plan Feature": {
-      "${ n } server": [
-        "",
-        ""
-      ],
-      "${ n } VPN connection": [
-        "",
-        ""
-      ],
-      "${ numberOfServers } in ${ numberOfCountries } country": [
-        "",
-        ""
       ]
     },
     "VPNClient": {
@@ -4648,23 +2868,11 @@
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "با پاک کردن این شماره همراه، شما دیگر قادر به بازیابی حساب خود نخواهید بود."
       ],
-      "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
-        ""
-      ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "لطفا توجه کنید که با انتخاب این روش پرداخت، حساب شما نمیتواند بلافاصله ارتقا یابد. ما حساب شما را زمانیکه پرداخت شما صاف شد، به روز خواهیم کرد."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "گزارش‌ها سرتاسر رمزگذاری شده نیستند، لطفاً هیچ اطلاعات حساسی ارسال نکنید."
-      ],
-      "The date and time settings on your device are out of sync. ${ learnMore }": [
-        ""
-      ],
-      "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
-        ""
-      ],
-      "Your free trial ends on ${ textDate }. ${ action }": [
-        ""
       ]
     }
   }

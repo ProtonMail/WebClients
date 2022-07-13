@@ -4,20 +4,6 @@
     "language": "da_DK"
   },
   "contexts": {
-    "Access level": {
-      "Full": [
-        ""
-      ],
-      "Full view": [
-        ""
-      ],
-      "Limited": [
-        ""
-      ],
-      "Limited view": [
-        ""
-      ]
-    },
     "Action": {
       "${ address } is available.": [
         "${ address } er tilgængelig."
@@ -103,6 +89,9 @@
       "Apply": [
         "Anvend"
       ],
+      "Apply to existing message": [
+        "Anvend på eksisterende besked"
+      ],
       "Attach screenshot(s)": [
         "Vedhæft skærmfoto(s)"
       ],
@@ -175,9 +164,6 @@
       "Continue to ${ name }": [
         "Fortsæt til ${ name }"
       ],
-      "Continue with": [
-        "Fortsæt med"
-      ],
       "Continue with Google": [
         "Fortsæt med Google"
       ],
@@ -192,9 +178,6 @@
       ],
       "Create": [
         "Opret"
-      ],
-      "Create a secure ProtonMail address instead": [
-        "Create a secure Proton Mail address instead"
       ],
       "Create account": [
         "Opret konto"
@@ -345,6 +328,9 @@
       ],
       "Extend": [
         "Forlæng"
+      ],
+      "Filters are being applied. This might take a few minutes.": [
+        "Filtre anvendes. Dette kan tage et par minutter."
       ],
       "Font": [
         "Skrifttype"
@@ -679,17 +665,11 @@
       "Show preview": [
         "Vis en forhåndsvisning"
       ],
-      "sign in": [
-        "log ind"
-      ],
       "Sign in": [
         "Log ind"
       ],
       "Sign out": [
         "Log ud"
-      ],
-      "Sign out from": [
-        "Log ud fra"
       ],
       "Sign out of all accounts": [
         "Log ud alle konti"
@@ -941,11 +921,6 @@
         "Ikke-understøttet begivenhed"
       ]
     },
-    "Auto import invitations setting": {
-      "Add to calendar and mark as pending": [
-        ""
-      ]
-    },
     "Autoresponse": {
       "I'm out of the office with limited access to my email.": [
         "Jeg har kun begrænset adgang til mine e-mails i øjeblikket."
@@ -1006,34 +981,17 @@
         "To-År"
       ]
     },
-    "blackfriday Action": {
-      "Get the offer": [
-        ""
-      ]
-    },
     "blackfriday Info": {
       "beta": [
         "beta"
       ],
       "Includes": [
         "Inkluderer"
-      ],
-      "Standard price: ${ regularPrice }": [
-        ""
-      ],
-      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
-        ""
       ]
     },
     "blackfriday Title": {
-      "Best deal": [
-        ""
-      ],
       "Most popular": [
         "Mest populært"
-      ],
-      "Save more when combining Mail and VPN": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer Action": {
@@ -1044,20 +1002,9 @@
         "Gør brug af tilduddet nu"
       ]
     },
-    "blackfriday: VPNspecialoffer Badge popup": {
-      "${ vpnPlus } Special Offer 2021 discount has been applied": [
-        ""
-      ]
-    },
     "blackfriday: VPNspecialoffer Info": {
-      "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
-        ""
-      ],
       "Save ${ percentage }%": [
         "Spar ${ percentage }%"
-      ],
-      "Special offer Terms and Conditions": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer info": {
@@ -1071,15 +1018,6 @@
       ]
     },
     "blackfriday: VPNspecialoffer Title": {
-      "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
-        ""
-      ],
-      "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
-        ""
-      ],
-      "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
-        ""
-      ],
       "1 month": [
         "1 måned"
       ],
@@ -1088,18 +1026,6 @@
       ],
       "24 months": [
         "24 måneder"
-      ],
-      "Billed at ${ amount } for the first 2 years.${ supNotice }": [
-        ""
-      ],
-      "Billed at ${ amount } for the first month.${ supNotice }": [
-        ""
-      ],
-      "Billed at ${ amount } for the first year.${ supNotice }": [
-        ""
-      ],
-      "Get the special year-end offer on our Premium VPN PLUS plan": [
-        ""
       ]
     },
     "Bridge version load failed": {
@@ -1198,41 +1124,7 @@
         "Tweet"
       ]
     },
-    "Calendar import section description": {
-      "You can import ICS files from another calendar to ${ CALENDAR_APP_NAME }. This lets you quickly import one event or your entire agenda.": [
-        ""
-      ]
-    },
-    "Calendar limit warning": {
-      "You have reached the maximum number of personal calendars you can create within your plan.": [
-        ""
-      ],
-      "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } subscribed calendar.": [
-        "",
-        ""
-      ]
-    },
-    "Calendar link purpose update success message": {
-      "Label added": [
-        ""
-      ],
-      "Label deleted": [
-        ""
-      ],
-      "Label edited": [
-        ""
-      ]
-    },
     "Calendar status": {
-      "Active": [
-        ""
-      ],
-      "Default": [
-        ""
-      ],
-      "Disabled": [
-        ""
-      ],
       "Not synced": [
         "Ikke synkroniseret"
       ],
@@ -1296,29 +1188,11 @@
       ]
     },
     "color": {
-      "Apple": [
-        ""
-      ],
-      "azureish white": [
-        ""
-      ],
-      "blanched almond": [
-        ""
-      ],
-      "blue-gray": [
-        ""
-      ],
-      "caramel": [
-        ""
-      ],
       "carrot": [
         "gulerod"
       ],
       "cerise": [
         "kirsebærrød"
-      ],
-      "cinnabar": [
-        ""
       ],
       "cobalt": [
         "kobolt"
@@ -1326,59 +1200,14 @@
       "copper": [
         "kobber"
       ],
-      "cyan-blue azure": [
-        ""
-      ],
-      "dandelion": [
-        ""
-      ],
-      "dark cerulean": [
-        ""
-      ],
-      "dark midnight blue": [
-        ""
-      ],
-      "dim gray": [
-        ""
-      ],
       "enzian": [
         "ensian"
       ],
       "fern": [
         "bregne"
       ],
-      "field drab": [
-        ""
-      ],
       "forest": [
         "skov"
-      ],
-      "gainsboro": [
-        ""
-      ],
-      "japanese laurel": [
-        ""
-      ],
-      "kiwi": [
-        ""
-      ],
-      "lemon yellow": [
-        ""
-      ],
-      "light carmine pink": [
-        ""
-      ],
-      "light moss green": [
-        ""
-      ],
-      "light red": [
-        ""
-      ],
-      "maize": [
-        ""
-      ],
-      "mughal green": [
-        ""
       ],
       "ocean": [
         "ocean"
@@ -1386,35 +1215,8 @@
       "olive": [
         "oliven"
       ],
-      "outer space": [
-        ""
-      ],
       "pacific": [
         "stillehav"
-      ],
-      "palatinate blue": [
-        ""
-      ],
-      "pale cerulean": [
-        ""
-      ],
-      "pastel gray": [
-        ""
-      ],
-      "persian plum": [
-        ""
-      ],
-      "persian red": [
-        ""
-      ],
-      "philippine gray": [
-        ""
-      ],
-      "philippine silver": [
-        ""
-      ],
-      "pickle": [
-        ""
       ],
       "pine": [
         "fyr"
@@ -1422,29 +1224,17 @@
       "pink": [
         "pink"
       ],
-      "pistachio": [
-        ""
-      ],
       "plum": [
         "blomme"
       ],
       "purple": [
         "lilla"
       ],
-      "raisin black": [
-        ""
-      ],
       "reef": [
         "rev"
       ],
-      "ruddy pink": [
-        ""
-      ],
       "sahara": [
         "sahara"
-      ],
-      "satin sheen gold": [
-        ""
       ],
       "slateblue": [
         "skiferblå"
@@ -1454,12 +1244,6 @@
       ],
       "strawberry": [
         "jordbær"
-      ],
-      "vivid auburn": [
-        ""
-      ],
-      "white": [
-        ""
       ]
     },
     "Condition for custom filter": {
@@ -2539,20 +2323,6 @@
         "Hjælp os med at blive bedre!"
       ]
     },
-    "Duration": {
-      "120 minutes": [
-        ""
-      ],
-      "30 minutes": [
-        ""
-      ],
-      "60 minutes": [
-        ""
-      ],
-      "90 minutes": [
-        ""
-      ]
-    },
     "Email body for description (description part)": {
       "Description: ${ eventDescription }": [
         "Beskrivelse: ${ eventDescription }"
@@ -2638,9 +2408,6 @@
       ],
       "A group with this name already exists": [
         "En gruppe med dette navn findes allerede"
-      ],
-      "Address already associated to a user": [
-        "Adresse allerede tilknyttet en bruger"
       ],
       "Address primary private key not found": [
         "Adresses primære private nøgle ikke fundet"
@@ -3178,23 +2945,14 @@
       "Error: ${ errorMessage }": [
         "Fejl: ${ errorMessage }"
       ],
-      "Invalid URL": [
-        ""
-      ],
       "Oops, something went wrong": [
         "Ups, noget gik galt"
       ],
       "Please ${ refresh } or check your connection.": [
         "${ refresh } eller tjek din forbindelse."
       ],
-      "Please ${ signIn } to update your email subscription preferences.": [
-        "${ signIn } for at opdatere dine e-mail-abonnementspræferencer."
-      ],
       "There was a problem connecting to Proton.": [
         "Der opstod et problem med at oprette forbindelse til Proton."
-      ],
-      "There was a problem unsubscribing you.": [
-        "Der opstod et problem med at afmelde dig."
       ],
       "Too many child sessions, please clear your cookies and sign back in.": [
         "For mange undersessioner, ryd dine cookies og log på igen."
@@ -3214,14 +2972,6 @@
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Intet billede valgt"
-      ]
-    },
-    "Error when exporting event from calendar": {
-      "Event @ ${ timeString }": [
-        ""
-      ],
-      "Event from ${ timeString }, ${ rruleString }": [
-        ""
       ]
     },
     "Event invitation error": {
@@ -3273,54 +3023,6 @@
         "(ingen titel)"
       ]
     },
-    "Export calendar": {
-      "${ totalProcessed }/${ totalToProcess } event exported": [
-        "",
-        ""
-      ],
-      "Calendar successfully exported. You can now save the ICS file.": [
-        ""
-      ],
-      "Decrypting events from your calendar: ${ totalProcessed }/${ totalToProcess }": [
-        ""
-      ],
-      "Due to a password reset, none of your events could be decrypted and exported.": [
-        ""
-      ],
-      "Due to a password reset, some of your events could not be decrypted and exported.": [
-        ""
-      ],
-      "Error decrypting event": [
-        ""
-      ],
-      "Learn how to restore encrypted events with old password": [
-        ""
-      ],
-      "Loading events": [
-        ""
-      ],
-      "None of the events could be exported.": [
-        ""
-      ],
-      "Password reset - event cannot be decrypted": [
-        ""
-      ],
-      "Password reset - multiple events cannot be decrypted": [
-        ""
-      ],
-      "Please don't close the tab before the exporting process is finished.": [
-        ""
-      ],
-      "Some of your events could not be exported.": [
-        ""
-      ],
-      "The internet connection was interrupted, causing the export process to fail. Please try again.": [
-        ""
-      ],
-      "You can save an ICS file of the events that were successfully exported.": [
-        ""
-      ]
-    },
     "Feature": {
       "${ MaxVPN } VPN connection": [
         "${ MaxVPN } VPN-forbindelse",
@@ -3347,9 +3049,6 @@
       ]
     },
     "file size format": {
-      "bytes": [
-        "bytes"
-      ],
       "GB": [
         "GB"
       ],
@@ -3360,29 +3059,12 @@
         "MB"
       ]
     },
-    "file size format, long": {
-      "Bytes": [
-        "Bytes"
-      ],
-      "Gigabytes": [
-        "Gigabytes"
-      ],
-      "Kilobytes": [
-        "Kilobytes"
-      ],
-      "Megabytes": [
-        "Megabytes"
-      ]
-    },
     "Filter Actions": {
       "Archive": [
         "Arkivér"
       ],
       "Inbox": [
         "Indbakke"
-      ],
-      "Inbox - Default": [
-        ""
       ],
       "Select a folder": [
         "Vælg en mappe"
@@ -3436,9 +3118,6 @@
       ]
     },
     "FilterSettings": {
-      "Add a custom filter to automatically perform certain actions, like labeling or archiving messages. Filters can be edited and created directly via Sieve programming language.": [
-        ""
-      ],
       "Apply sender-specific spam rules. Messages from addresses or domains on the Allow List always go to your Inbox while messages from addresses or domains on the Block List always go to Spam. Marking a message as spam adds its address to the Block List. Marking a message as not spam adds it to the Allow List.": [
         "Anvend afsenderspecifikke spamregler. Beskeder fra adresser eller domæner på Godkendt-listen fortsætter altid til din indbakke, mens blokerede adresser altid ryger i spam. Markering af en besked som spam føjer adressen til blokeringslisten. Markering af en besked som ikke-spam føjer den til listen over godkendte afsendere."
       ],
@@ -3788,62 +3467,17 @@
       ]
     },
     "Import instructions": {
-      "Click ${ boldManage } to expand the options menu.": [
-        ""
-      ],
-      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to Proton.": [
-        ""
-      ],
-      "Expand the dropdown menu by clicking on the 3 dots (...).": [
-        ""
-      ],
-      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
-        ""
-      ],
-      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
-        ""
-      ],
-      "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }.": [
-        ""
-      ],
-      "Go to ${ boldAccountSecurity }.": [
-        ""
-      ],
-      "Go to Outlook ${ securitySettingsLink }.": [
-        ""
-      ],
-      "If 2-step verification is off, turn it on.": [
-        ""
-      ],
-      "Open your ${ yahooMailLink } contacts.": [
-        ""
-      ],
-      "Open your Outlook ${ outlookContactsLink }.": [
-        ""
-      ],
-      "Select ${ boldExportContacts } and choose which contacts to export.": [
-        ""
-      ],
-      "Select ${ boldExportCSV }.": [
-        ""
-      ],
       "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
         "For at importere en kalender til Proton skal du bruge ${ knowledgeBaseLink }. Download det fra Outlook i 3 nemme trin:"
       ],
       "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
         "For at importere en kalender til Proton skal du bruge ${ knowledgeBaseLink }. Download det fra Yahoo i 3 nemme trin:"
       ],
-      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
-        ""
-      ],
       "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
         "For at importere kontakter til Proton skal du bruge ${ knowledgeBaseLink }. Download det fra Outlook i 3 nemme trin:"
       ],
       "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
         "For at importere kontakter til Proton skal du bruge ${ knowledgeBaseLink }. Download det fra Yahoo i 3 nemme trin:"
-      ],
-      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
-        ""
       ],
       "To import emails to Proton, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
         "For at importere e-mails til Proton, skal du bruge et ${ appPasswordLink } fra Outlook. Få det ved at følge disse trin:"
@@ -3911,26 +3545,6 @@
       ],
       "Yahoo": [
         "Yahoo"
-      ]
-    },
-    "Import instructions step": {
-      "Click on the ${ boldICS } link and download the file.": [
-        ""
-      ],
-      "Go to ${ calendarLink } in your Outlook settings.": [
-        ""
-      ],
-      "Go to ${ calendarViewLink } in Yahoo.": [
-        ""
-      ],
-      "Mouse over the calendar you want to import and open the dropdown menu.": [
-        ""
-      ],
-      "Select ${ boldExport } to export the calendar as an ICS file.": [
-        ""
-      ],
-      "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it.": [
-        ""
       ]
     },
     "Import key": {
@@ -4251,15 +3865,6 @@
       "and": [
         "og"
       ],
-      "Anyone with this link can see all the event details of this calendar such as title, location or participants.": [
-        ""
-      ],
-      "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
-        ""
-      ],
-      "Anyone with this link won't be able to sync or get future updates for your calendar. If you want to give them access again, you will have to create a new link.": [
-        ""
-      ],
       "AOL reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
         "AOL læser dine personlige data for at give adgang for annoncører og andre tredjeparter. Opret en sikker e-mailadresse for bedre beskyttelse af personlige oplysninger."
       ],
@@ -4356,9 +3961,6 @@
       "By leaving now, changes may not be saved": [
         "Ved at forlade nu gemmes ændringer ikke"
       ],
-      "By sharing the full event details of this calendar, you accept to grant Proton access to this calendar's encrypted information.": [
-        ""
-      ],
       "Center": [
         "Centrér"
       ],
@@ -4414,26 +4016,8 @@
       "Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.": [
         "Aktuelt allokeres al ledig lagerplads til administratorkontoen. Reducér administratorkontoallokeringen for at frigive lagerplads til yderligere brugere. Du kan altid forøge den samlede mængde lagerplads ved at opgradere din konto."
       ],
-      "Custom": [
-        ""
-      ],
-      "Custom daily": [
-        ""
-      ],
       "Custom email domains": [
         "Brugerdefinerede e-maildomæner"
-      ],
-      "Custom monthly": [
-        ""
-      ],
-      "Custom weekly": [
-        ""
-      ],
-      "Custom yearly": [
-        ""
-      ],
-      "Daily": [
-        ""
       ],
       "Data locked": [
         "Data låst"
@@ -4480,9 +4064,6 @@
       ],
       "Download your PGP keys for use with other PGP-compatible services.": [
         "Download dine PGP-nøgler til brug sammen med andre PGP-kompatible tjenester."
-      ],
-      "Drop a file here to upload": [
-        ""
       ],
       "Drop the file here to upload": [
         "Slip filen her for at uploade"
@@ -4555,9 +4136,6 @@
       ],
       "Enter your recovery phone number and we will send you your username or email address.": [
         "Indtast dit telefonnummer til gendannelse, og vi vil så sende dig dit brugernavn eller din e-mailadresse."
-      ],
-      "Event invitations and RSVPs will be sent in this language.": [
-        ""
       ],
       "Expired": [
         "Udløbet"
@@ -4774,17 +4352,11 @@
       "Learn more": [
         "Få mere at vide"
       ],
-      "learn more about Sieve programming language": [
-        ""
-      ],
       "Left to Right": [
         "Venstre mod højre"
       ],
       "Let your contacts know you care about their privacy.": [
         "Lad dine kontakter vide, at du bekymrer dig om deres privatliv."
-      ],
-      "Limited view: others see if you're busy. Full view: shows all event details, including name, location, or participants.": [
-        ""
       ],
       "Link copied to clipboard": [
         "Link kopieret til udklipsholder"
@@ -4827,9 +4399,6 @@
       ],
       "Merged": [
         "Flettet"
-      ],
-      "Monthly ${ onDayString }": [
-        ""
       ],
       "more": [
         "mere"
@@ -4905,9 +4474,6 @@
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Ændr kun disse indstillinger, hvis du benytter PGP ifm. ikke-${ BRAND_NAME }-modtagere."
-      ],
-      "Only you can see the labels.": [
-        ""
       ],
       "Or select a particular server:": [
         "Eller vælg en bestemt server:"
@@ -5033,9 +4599,6 @@
       "Queued": [
         "Sat i kø"
       ],
-      "read our two-factor authentication guide first": [
-        ""
-      ],
       "Recovery file downloaded": [
         "Gendannelsesfil downloadet"
       ],
@@ -5089,9 +4652,6 @@
       ],
       "Select a service provider to start": [
         "Vælg en tjenesteudbyder for at starte"
-      ],
-      "Select Continue to ${ name } to open the app. This also creates a ${ name } account with your ${ MAIL_APP_NAME } address so you can sign in with one click in the future.": [
-        "Vælg Fortsæt til ${ name } for at åbne appen. Dette opretter også en ${ name }-konto med din ${ MAIL_APP_NAME }-adresse, så du fremover kan logge ind med ét klik."
       ],
       "Select what you want to move from Google.": [
         "Vælg, hvad du vil overflytte fra Google."
@@ -5306,9 +4866,6 @@
       "To use ${ toAppName }, please create an address.": [
         "Opret en adresse for at bruge ${ toAppName }."
       ],
-      "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
-        ""
-      ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Genopfyld din konto med kredit, som du kan benytte på et nyt abonnement eller fornyelse af dit nuværende. Du får én kredit pr. brugte ${ i18nCurrency }."
       ],
@@ -5465,9 +5022,6 @@
       "Yandex records your online activity and reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
         "Yandex registrerer din onlineaktivitet og læser dine personlige data for at give adgang for annoncører og andre tredjeparter. Opret en sikker e-mailadresse for bedre beskyttelse af personlige oplysninger."
       ],
-      "Yearly": [
-        ""
-      ],
       "You already have a free account": [
         "Du har allerede en gratis konto"
       ],
@@ -5534,12 +5088,6 @@
       "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription.": [
         "Du skal fjerne eventuelle ekstra personlige kalendere og delte kalenderlinks, før du kan annullere dit abonnement."
       ],
-      "You need to have a personal calendar to create a link.": [
-        ""
-      ],
-      "You need to have an active personal calendar to import your events from .ics.": [
-        ""
-      ],
       "You need to have an active personal calendar to import your events.": [
         "Du skal have en aktiv personlig kalender for at importere dine begivenheder."
       ],
@@ -5551,9 +5099,6 @@
       ],
       "You should export a backup of this key in case you need to restore data it encrypted.": [
         "Du bør eksportere en sikkerhedskopi af denne nøgle, hvis du har brug for at gendanne data, som den krypterede nøgle har krypteret."
-      ],
-      "You still need to reply to invitations for the host to see your response.": [
-        ""
       ],
       "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
         "Du vil ${ loseAllData } i din ${ BRAND_NAME } konto. For at gendanne det, skal du indtaste din gamle adgangskode."
@@ -6028,11 +5573,6 @@
         "Mark som forældet"
       ]
     },
-    "Knowledge base link label": {
-      "Here's how": [
-        ""
-      ]
-    },
     "Label": {
       " and ": [
         " og "
@@ -6121,9 +5661,6 @@
       "Attach screenshot(s)": [
         "Vedhæft skærmfoto(s)"
       ],
-      "Auto-detect primary time zone": [
-        ""
-      ],
       "Auto-load embedded images": [
         "Auto-indlæs indlejrede billeder"
       ],
@@ -6180,9 +5717,6 @@
       ],
       "Code is 6 digits without spaces": [
         "Kode er på 6 cifre uden mellemrum"
-      ],
-      "Color": [
-        ""
       ],
       "Composer": [
         "Skrivevindue"
@@ -6268,38 +5802,17 @@
       "Days of the week": [
         "Ugedage"
       ],
-      "Default email address": [
-        ""
-      ],
-      "Default event duration": [
-        ""
-      ],
-      "Default full day notifications": [
-        ""
-      ],
       "Default language": [
         "Standardsporg"
       ],
-      "Default language (${ defaultLanguage })": [
-        ""
-      ],
-      "Default notifications": [
-        ""
-      ],
       "Default PGP scheme": [
         "Standard PGP-metode"
-      ],
-      "Default view": [
-        ""
       ],
       "Delete": [
         "Slet"
       ],
       "Density": [
         "Tæthed"
-      ],
-      "Description": [
-        ""
       ],
       "Device/certificate name": [
         "Enhed/certifikatnavn"
@@ -6309,9 +5822,6 @@
       ],
       "Discount": [
         "Rabat"
-      ],
-      "Display": [
-        ""
       ],
       "Display name": [
         "Visningsnavn"
@@ -6649,15 +6159,6 @@
       "Send auto-reply": [
         "Send auto-svar"
       ],
-      "Send in": [
-        ""
-      ],
-      "Show secondary time zone": [
-        ""
-      ],
-      "Show week numbers": [
-        ""
-      ],
       "Sign external messages": [
         "Signér eksterne beskeder"
       ],
@@ -6742,9 +6243,6 @@
       "Upload 1 or more recovery files or encryption keys": [
         "Upload 1 eller flere gendannelsesfiler eller krypteringsnøgler"
       ],
-      "URL": [
-        ""
-      ],
       "Use folder colors": [
         "Brug mappefarver"
       ],
@@ -6801,12 +6299,6 @@
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Ja, jeg ønsker at slette denne konto og alle dens data permanent."
-      ],
-      "Your calendar URL": [
-        ""
-      ],
-      "Your calendar URL label": [
-        ""
       ],
       "Your password (admin)": [
         "Din adgangskode (admin)"
@@ -6987,9 +6479,6 @@
       "Learn more": [
         "Få mere at vide"
       ],
-      "Need help?": [
-        ""
-      ],
       "Not activated": [
         "Ikke aktiveret"
       ],
@@ -7016,9 +6505,6 @@
       ],
       "Terms and conditions": [
         "Vilkår og betingelser"
-      ],
-      "Trouble signing in?": [
-        ""
       ],
       "Upgrade": [
         "Opgradér"
@@ -7075,12 +6561,6 @@
       "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Importer alle beskeder fra ${ totalLabelsCount } etiketten siden ${ periodFragment } og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }",
         "Importer alle beskeder fra ${ totalLabelsCount } etiketter siden ${ periodFragment } og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }"
-      ]
-    },
-    "Maximum calendar links reached warning": {
-      "You can create up to ${ MAX_LINKS_PER_CALENDAR } link per calendar. To create a new link to this calendar, delete one from the list below.": [
-        "",
-        ""
       ]
     },
     "Member action": {
@@ -7147,11 +6627,6 @@
         "Sådan importerer du e-mails fra Yahoo"
       ]
     },
-    "Modal title and action": {
-      "Add calendar": [
-        ""
-      ]
-    },
     "Monetary unit": {
       "Dollar": [
         "Dollar"
@@ -7161,29 +6636,6 @@
       ],
       "Swiss franc": [
         "Schweizer franc"
-      ]
-    },
-    "Monthly recurring event, frequency": {
-      "Every ${ interval } month ${ onDayString }": [
-        "",
-        ""
-      ],
-      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
-        "",
-        ""
-      ],
-      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
-        "",
-        ""
-      ],
-      "Monthly ${ onDayString }": [
-        ""
-      ],
-      "Monthly ${ onDayString }, ${ timesString }": [
-        ""
-      ],
-      "Monthly ${ onDayString }, ${ untilString }": [
-        ""
       ]
     },
     "Monthly recurring event, repeats on": {
@@ -7329,688 +6781,12 @@
         "Etiketnavn"
       ]
     },
-    "new_plans": {
-      "Highest VPN speed": [
-        ""
-      ],
-      "Keep your inbox organized with folders": [
-        ""
-      ],
-      "Medium VPN speed": [
-        ""
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        ""
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        ""
-      ],
-      "From ${ _price }": [
-        ""
-      ],
-      "From ${ _price2 } per user": [
-        ""
-      ],
-      "From ${ price }": [
-        ""
-      ],
-      "Keep my ${ currentPlanName } account": [
-        ""
-      ],
-      "Upgrade now": [
-        ""
-      ]
-    },
-    "new_plans: action": {
-      "Continue to review": [
-        ""
-      ],
-      "Continue with free": [
-        ""
-      ],
-      "Delete account": [
-        ""
-      ],
-      "Downgrade account": [
-        ""
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        ""
-      ],
-      "Get ${ planName }": [
-        ""
-      ],
-      "Get ${ upsellShortPlan.title }": [
-        ""
-      ],
-      "Got it": [
-        ""
-      ],
-      "Keep ${ plan }": [
-        ""
-      ],
-      "Keep account": [
-        ""
-      ],
-      "Switch or add account": [
-        ""
-      ],
-      "Switch plan": [
-        ""
-      ]
-    },
-    "new_plans: attribute": {
-      "Get ${ connections } high-speed VPN connection": [
-        "",
-        ""
-      ],
-      "Get ${ connections } high-speed VPN connection per user": [
-        "",
-        ""
-      ]
-    },
-    "new_plans: feature": {
-      "${ DRIVE_APP_NAME } (web beta)": [
-        ""
-      ],
-      "${ n } custom email domain": [
-        "",
-        ""
-      ],
-      "${ n } email address": [
-        "",
-        ""
-      ],
-      "${ n } email address per user": [
-        "",
-        ""
-      ],
-      "${ n } filter": [
-        "",
-        ""
-      ],
-      "${ n } folder": [
-        "",
-        ""
-      ],
-      "${ n } folder and label": [
-        "",
-        ""
-      ],
-      "${ n } label": [
-        "",
-        ""
-      ],
-      "${ n } message per day": [
-        "",
-        ""
-      ],
-      "${ n } personal calendar": [
-        "",
-        ""
-      ],
-      "${ n } VPN connection": [
-        "",
-        ""
-      ],
-      "${ n } VPN connection per user": [
-        "",
-        ""
-      ],
-      "${ size } attachment size": [
-        ""
-      ],
-      "${ size } storage per user": [
-        ""
-      ],
-      "${ size } total storage": [
-        ""
-      ],
-      "1 free VPN connection in total": [
-        ""
-      ],
-      "99.95% SLA": [
-        ""
-      ],
-      "Admin console": [
-        ""
-      ],
-      "Advanced sharing security": [
-        ""
-      ],
-      "Auto-reply": [
-        ""
-      ],
-      "Catch-all": [
-        ""
-      ],
-      "Centralized billing": [
-        ""
-      ],
-      "Contact groups": [
-        ""
-      ],
-      "Contact groups management": [
-        ""
-      ],
-      "Custom email domains": [
-        ""
-      ],
-      "DNS leak prevention": [
-        ""
-      ],
-      "Document editors (docs, sheets, slides)": [
-        ""
-      ],
-      "Easy Switch import assistant": [
-        ""
-      ],
-      "Email client support (via IMAP/SMTP)": [
-        ""
-      ],
-      "Enables HIPAA compliance": [
-        ""
-      ],
-      "Encrypted contact details": [
-        ""
-      ],
-      "Encrypted VPN servers": [
-        ""
-      ],
-      "End-to-end encryption": [
-        ""
-      ],
-      "Free VPN on a single device": [
-        ""
-      ],
-      "GDPR data processing agreement": [
-        ""
-      ],
-      "High-speed VPN on ${ n } device": [
-        "",
-        ""
-      ],
-      "HTML signatures": [
-        ""
-      ],
-      "Kill switch/always-on VPN": [
-        ""
-      ],
-      "Limited support": [
-        ""
-      ],
-      "Multiple admin roles": [
-        ""
-      ],
-      "NetShield malware and ad-blocker": [
-        ""
-      ],
-      "P2P/BitTorrent": [
-        ""
-      ],
-      "Password-protected Emails": [
-        ""
-      ],
-      "Phone support (6+ users)": [
-        ""
-      ],
-      "Priority email support": [
-        ""
-      ],
-      "Priority support": [
-        ""
-      ],
-      "Router support": [
-        ""
-      ],
-      "Secure Core servers": [
-        ""
-      ],
-      "Send & receive invitations": [
-        ""
-      ],
-      "Share calendar via link": [
-        ""
-      ],
-      "Share files and folders via link": [
-        ""
-      ],
-      "Sign in as user": [
-        ""
-      ],
-      "Split tunneling (Android and Windows)": [
-        ""
-      ],
-      "Strict no-logs policy": [
-        ""
-      ],
-      "Team management": [
-        ""
-      ],
-      "Tor over VPN": [
-        ""
-      ],
-      "Two-factor authentication": [
-        ""
-      ],
-      "Unlimited filters": [
-        ""
-      ],
-      "Unlimited folders": [
-        ""
-      ],
-      "Unlimited folders, labels and filters": [
-        ""
-      ],
-      "Unlimited labels": [
-        ""
-      ],
-      "Unlimited messages per day": [
-        ""
-      ],
-      "Unlimited volume/bandwidth": [
-        ""
-      ],
-      "Up to ${ totalStorageSize } total storage": [
-        ""
-      ],
-      "User credential management": [
-        ""
-      ],
-      "User session management": [
-        ""
-      ],
-      "Worldwide streaming services": [
-        ""
-      ]
-    },
-    "new_plans: heading": {
-      "Support": [
-        ""
-      ],
-      "Team management": [
-        ""
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        ""
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        ""
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        ""
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        ""
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        ""
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        ""
-      ]
-    },
-    "new_plans: info": {
-      "${ brand } ending in ${ last4 }": [
-        ""
-      ],
-      "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
-        ""
-      ],
-      "* With 1-month subscription. Other subscription options available at checkout.": [
-        ""
-      ],
-      "* With 12-month subscription. Other subscription options available at checkout.": [
-        ""
-      ],
-      "* With 24-month subscription. Other subscription options available at checkout.": [
-        ""
-      ],
-      "Applicable credits, proration, and coupons are applied in the next step": [
-        ""
-      ],
-      "Comprehensive privacy and security with all Proton services combined.": [
-        ""
-      ],
-      "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
-        ""
-      ],
-      "If you downgrade your account, you lose all ${ visionary } plan benefits and it won’t be available if you try to subscribe again.": [
-        ""
-      ],
-      "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
-        ""
-      ],
-      "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
-        ""
-      ],
-      "Popular": [
-        ""
-      ],
-      "Price for future renewal: includes all applicable non-expired coupons saved to your account": [
-        ""
-      ],
-      "Privacy and security suite for businesses, including all premium Proton services.": [
-        ""
-      ],
-      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        ""
-      ],
-      "Secure email and calendar for professionals and businesses.": [
-        ""
-      ],
-      "Secure email with advanced features for your everyday communications.": [
-        ""
-      ],
-      "Set automatic replies to inform contacts you are out of the office or unable to respond.": [
-        ""
-      ],
-      "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
-        ""
-      ],
-      "The no-cost starter account designed to empower everyone with privacy by default.": [
-        ""
-      ],
-      "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
-        ""
-      ],
-      "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
-        ""
-      ]
-    },
-    "new_plans: Label": {
-      "${ humanUsedSpace } of ${ humanMaxSpace }": [
-        ""
-      ]
-    },
-    "new_plans: Plan frequency": {
-      "/month": [
-        ""
-      ]
-    },
-    "new_plans: Plan time remaining": {
-      "You still have ${ daysRemaining } day left on your ${ currentPlanName } account.": [
-        "",
-        ""
-      ]
-    },
-    "new_plans: signup": {
-      "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }.": [
-        ""
-      ],
-      "Payment details": [
-        ""
-      ],
-      "Save your email address or phone number to use for verification if you need to reset your account.": [
-        ""
-      ],
-      "Subscription": [
-        ""
-      ],
-      "terms and conditions": [
-        ""
-      ],
-      "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
-        ""
-      ],
-      "Your ${ planName } subscription is now active.": [
-        ""
-      ],
-      "Your selected plan: ${ planName }": [
-        ""
-      ]
-    },
     "new_plans: Title": {
-      "${ mailPlanName } Trial": [
-        ""
-      ],
       "Upgrade to ${ planName }": [
         "Opgrader til ${ planName }"
       ],
       "Your account's usage": [
         "Din kontos forbrug"
-      ]
-    },
-    "new_plans: title": {
-      "Delete account?": [
-        ""
-      ],
-      "Downgrade account?": [
-        ""
-      ],
-      "Improved plans coming soon!": [
-        ""
-      ],
-      "Review subscription and pay": [
-        ""
-      ],
-      "Start exploring the Proton universe": [
-        ""
-      ],
-      "Switch plans?": [
-        ""
-      ],
-      "Unlock premium features by upgrading": [
-        ""
-      ]
-    },
-    "new_plans: tooltip": {
-      "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
-        ""
-      ],
-      "Addresses have full sending and receiving capability. A user can have multiple addresses assigned to them; however, a single address cannot be assigned to multiple users.": [
-        ""
-      ],
-      "Advanced security VPN with global network": [
-        ""
-      ],
-      "Allows you to access more than one network at the same time, e.g., stream a film from another country while still getting local search results": [
-        ""
-      ],
-      "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
-        ""
-      ],
-      "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
-        ""
-      ],
-      "Control access to your shared files by adding password protection and link expiration dates": [
-        ""
-      ],
-      "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscription": [
-        ""
-      ],
-      "Create up to ${ n } custom calendar.": [
-        "",
-        ""
-      ],
-      "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
-        ""
-      ],
-      "Easily share your calendars with your colleagues, family, and friends via a link": [
-        ""
-      ],
-      "Easily share your calendars with your family, friends, or colleagues via a link": [
-        ""
-      ],
-      "End-to-end encrypted calendar": [
-        ""
-      ],
-      "End-to-end encrypted file storage": [
-        ""
-      ],
-      "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
-        ""
-      ],
-      "Force sign-out of user sessions when user credentials are believed to be compromised": [
-        ""
-      ],
-      "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
-        ""
-      ],
-      "Keeps you protected by blocking all network connections when you are accidentally disconnected from our VPN server": [
-        ""
-      ],
-      "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
-        ""
-      ],
-      "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
-        ""
-      ],
-      "On business days, receive support from the Proton Customer Support team within 24 hours of requests": [
-        ""
-      ],
-      "On top of that, add up to 5 calendars from colleagues, organizations, family, and friends.": [
-        ""
-      ],
-      "On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
-        ""
-      ],
-      "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections": [
-        ""
-      ],
-      "Option to view non-private user inboxes as the user would, including full message and contact details": [
-        ""
-      ],
-      "Organization management tool that lets admins add and remove users, allocate storage, configure domains, and perform other tasks": [
-        ""
-      ],
-      "Our robust infrastructure ensures you will be able to access your account when you need it": [
-        ""
-      ],
-      "Our servers’ hard disks are fully encrypted with multiple password layers so your data is protected even if our hardware is compromised": [
-        ""
-      ],
-      "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
-        ""
-      ],
-      "Phone support is available from the Proton Customer Success team during European business hours, for customers with 6 or more users": [
-        ""
-      ],
-      "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
-        ""
-      ],
-      "Protect every device connected to your WiFi network. It’s also useful if you have devices that do not support VPN settings directly.": [
-        ""
-      ],
-      "Quickly set up out-of-office messages": [
-        ""
-      ],
-      "Quickly transfer your emails, calendars or contacts from any provider": [
-        ""
-      ],
-      "Requires a code sent to a mobile phone to sign in. This ensures even if a password is compromised, the account stays secure.": [
-        ""
-      ],
-      "Reset user passwords and reset two-factor authentication on users": [
-        ""
-      ],
-      "Route your internet traffic through the Tor network with a single click": [
-        ""
-      ],
-      "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even Proton can't access them.": [
-        ""
-      ],
-      "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
-        ""
-      ],
-      "Set up filters to automatically reply to, sort, and/or label your emails": [
-        ""
-      ],
-      "Share your files or folders with anyone by using secure, shareable links": [
-        ""
-      ],
-      "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
-        ""
-      ],
-      "Start with ${ freeStorageSize } and unlock more storage along the way. Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        ""
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
-        ""
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
-        ""
-      ],
-      "Support for file-sharing protocols like BitTorrent": [
-        ""
-      ],
-      "Use your own custom email domain addresses, e.g., you@yourname.com": [
-        ""
-      ],
-      "We keep no session usage logs of what you do online, and we do not log metadata that can compromise your privacy": [
-        ""
-      ],
-      "We’re committed to helping customers subject to HIPAA/HITECH regulations safeguard protected health information (PHI). Signed BAAs are available for all ${ BRAND_NAME } for Business customers.": [
-        ""
-      ],
-      "When connected to our VPN, your DNS queries through our encrypted VPN tunnel, adding to your online privacy and security": [
-        ""
-      ],
-      "When sending to other ${ MAIL_APP_NAME } users, encryption is automatic. Sending to non-${ MAIL_APP_NAME } users requires setting a password prior to sending.": [
-        ""
-      ],
-      "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
-        ""
-      ]
-    },
-    "new_plans: upgrade": {
-      "Included with ${ plus }, ${ bundle }, and ${ BRAND_NAME } for Business.": [
-        ""
-      ],
-      "Included with all ${ BRAND_NAME } for Business plans.": [
-        ""
-      ]
-    },
-    "new_plans: Upsell attribute": {
-      "${ storageSize } total storage": [
-        ""
-      ],
-      "10 email addresses/aliases": [
-        ""
-      ],
-      "Access advanced VPN features": [
-        ""
-      ],
-      "Add more personalization with 15 email addresses and support for 3 custom email domains": [
-        ""
-      ],
-      "Boost your storage space to ${ bundleStorage } total": [
-        ""
-      ],
-      "Boost your storage space to ${ businessStorage } per user": [
-        ""
-      ],
-      "Boost your storage space to ${ driveStorage } total": [
-        ""
-      ],
-      "Cover more ground with support for 10 custom email domains": [
-        ""
-      ],
-      "Create up to ${ numberOfPersonalCalendars } personal calendar": [
-        "",
-        ""
-      ],
-      "Everything in ${ vpnPlanName }": [
-        ""
-      ],
-      "Get 5 additional email addresses per user": [
-        ""
-      ],
-      "Priority support": [
-        ""
-      ],
-      "Support for 1 custom email domain": [
-        ""
-      ],
-      "Unlimited folders, labels, and filters": [
-        ""
-      ],
-      "Unlimited messages": [
-        ""
       ]
     },
     "Notification": {
@@ -8025,43 +6801,6 @@
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "OpenVPN / IKEv2-legitimationsoplysninger regenereret"
-      ]
-    },
-    "Notification time input": {
-      "at": [
-        ""
-      ]
-    },
-    "Notification type": {
-      "email": [
-        ""
-      ],
-      "notification": [
-        ""
-      ]
-    },
-    "Notification when": {
-      "at time of event": [
-        ""
-      ],
-      "day before": [
-        "",
-        ""
-      ],
-      "hour before": [
-        "",
-        ""
-      ],
-      "minute before": [
-        "",
-        ""
-      ],
-      "on the same day": [
-        ""
-      ],
-      "week before": [
-        "",
-        ""
       ]
     },
     "Oauth instructions": {
@@ -8356,12 +7095,6 @@
       "A way to contact you": [
         "En måde at kontakte dig på"
       ],
-      "Add a calendar description": [
-        ""
-      ],
-      "Add a calendar name": [
-        ""
-      ],
       "Add gift code": [
         "Tilføj gavekode"
       ],
@@ -8449,18 +7182,6 @@
         "Tilføj dit eget (eller firma-) navn og adresse til dine fakturaer"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        ""
-      ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
-        ""
-      ],
-      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
-        "",
-        ""
-      ]
-    },
     "Price": {
       "Free": [
         "Gratis"
@@ -8523,15 +7244,6 @@
       ],
       "Email address not yet verified.": [
         "E-mailadressen er endnu ikke bekræftet."
-      ],
-      "Please ${ signIn } to resend a recovery email verification request.": [
-        "${ signIn } for at sende en ny anmodning om bekræftelse af e-mail til gendannelse."
-      ],
-      "Send verification email": [
-        "Send bekræftelsesmail"
-      ],
-      "There was a problem verifying your email address.": [
-        "Der opstod et problem med at bekræfte din e-mailadresse."
       ],
       "Verification email sent to ${ email.Value }": [
         "Bekræftelsesmail sendt til ${ email.Value }"
@@ -8599,11 +7311,6 @@
         "Upload yderligere filer"
       ]
     },
-    "Select search results": {
-      "No results found": [
-        ""
-      ]
-    },
     "Settings description": {
       "Make the move to privacy. Effortlessly and securely.": [
         "Skift til privatliv. Ubesværet og sikkert."
@@ -8618,11 +7325,6 @@
       ],
       "Organization": [
         "Organisation"
-      ]
-    },
-    "Settings update growler warning": {
-      "Failed to update settings": [
-        ""
       ]
     },
     "Settings/filters": {
@@ -8699,23 +7401,11 @@
       ]
     },
     "Spotlight": {
-      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        ""
-      ],
       "Get up to 18 months of ${ planName } for free": [
         "Få op til 18 måneder med ${ planName } gratis"
       ],
       "Invite friends and earn rewards!": [
         "Inviter venner, og optjen belønninger!"
-      ],
-      "No more missed appointments": [
-        ""
-      ],
-      "Try ${ DRIVE_APP_NAME }": [
-        ""
-      ],
-      "With email notifications, you decide which events to be notified about and when.": [
-        ""
       ]
     },
     "State": {
@@ -8746,37 +7436,6 @@
       ],
       "Your current storage:": [
         "Din aktuelle lagerplads:"
-      ]
-    },
-    "Subscribe to calendar modal": {
-      "Calendar URL": [
-        ""
-      ],
-      "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Subscribed calendars.\n${ kbLink }": [
-        ""
-      ]
-    },
-    "Subscribe to calendar modal description": {
-      "Learn how to get a private calendar link.": [
-        ""
-      ]
-    },
-    "Subscribed calendar extension warning": {
-      "By using this link, Google will make the calendar you are subscribing to public": [
-        ""
-      ],
-      "This link might be wrong": [
-        ""
-      ]
-    },
-    "Subscribed calendar section description": {
-      "Add public, external, or shared calendars using a URL.": [
-        ""
-      ]
-    },
-    "Subscribed calendar URL length warning": {
-      "URL is too long": [
-        ""
       ]
     },
     "Subscription attribute": {
@@ -8882,18 +7541,6 @@
       "Bug reported": [
         "Fejl anmeldt"
       ],
-      "Calendar added. It might take a few minutes to sync.": [
-        ""
-      ],
-      "Calendar created": [
-        ""
-      ],
-      "Calendar removed": [
-        ""
-      ],
-      "Calendar updated": [
-        ""
-      ],
       "Canceling import": [
         "Annullerer import"
       ],
@@ -8905,9 +7552,6 @@
       ],
       "Credits added": [
         "Kreditter tilføjet"
-      ],
-      "Default calendar updated": [
-        ""
       ],
       "DMARC value copied to clipboard": [
         "DMARC-værdi kopieret til udklipsholder"
@@ -9072,11 +7716,6 @@
         "pr. måned"
       ]
     },
-    "Summary of errors during export calendar": {
-      "Details about events that couldn't be exported": [
-        ""
-      ]
-    },
     "Tab in domain modal": {
       "Addresses": [
         "Adresser"
@@ -9141,11 +7780,6 @@
       "${ minutes } minute": [
         "${ minutes } minut",
         "${ minutes } minutter"
-      ]
-    },
-    "Timezone search placeholder": {
-      "Search timezones": [
-        ""
       ]
     },
     "Title": {
@@ -9721,9 +8355,6 @@
       "Referral tracker": [
         "Sporing af henvisning"
       ],
-      "Remove calendar": [
-        ""
-      ],
       "Report a problem": [
         "Anmeld et problem"
       ],
@@ -9935,11 +8566,6 @@
         "Postnummer"
       ]
     },
-    "Title (number of minutes/hours/days/weeks)": {
-      "Choose a number": [
-        ""
-      ]
-    },
     "Title for payment methods table": {
       "Actions": [
         "Handlinger"
@@ -10090,9 +8716,6 @@
       "This feature is only available for paid users": [
         "Denne funktion er kun tilgængelig for betalende brugere"
       ],
-      "This feature is unavailable for the moment": [
-        ""
-      ],
       "This key cannot be used for encryption": [
         "Nøglen kanm ikke benyttes til kryptering"
       ],
@@ -10167,15 +8790,6 @@
       "Upgrade to ${ planName } to connect up to ${ n } device to the VPN at once": [
         "Opgrader til ${ planName } for at forbinde op til ${ n } enhed til VPN'en samtidig",
         "Opgrader til ${ planName } for at forbinde op til ${ n } enheder til VPN'en samtidig"
-      ]
-    },
-    "Upgrade notice": {
-      "Upgrade to a paid plan to create up to ${ MAX_CALENDARS_PER_USER } calendar, allowing you to make calendars for work, to share with friends, and just for yourself.": [
-        "",
-        ""
-      ],
-      "Upgrade to a paid plan to share your personal calendar via link with anyone.": [
-        ""
       ]
     },
     "User role": {
@@ -10342,137 +8956,46 @@
       ]
     },
     "Weekly recurring event, frequency": {
-      "Every ${ interval } week on ${ multipleDaysString }": [
-        "",
-        ""
-      ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
-        "",
-        ""
-      ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
-        "",
-        ""
-      ],
       "Every ${ interval } week on all days": [
         "Hver ${ interval } uge på alle dage",
         "Hver ${ interval } uge på alle dage"
-      ],
-      "Every ${ interval } week on all days, ${ timesString }": [
-        "",
-        ""
-      ],
-      "Every ${ interval } week on all days, ${ untilString }": [
-        "",
-        ""
       ],
       "Every ${ interval } week on Friday": [
         "Hver ${ interval } uge om fredagen",
         "Hver ${ interval } uge om fredagen"
       ],
-      "Every ${ interval } week on Friday, ${ timesString }": [
-        "",
-        ""
-      ],
-      "Every ${ interval } week on Friday, ${ untilString }": [
-        "",
-        ""
-      ],
       "Every ${ interval } week on Monday": [
         "Hver ${ interval } uge om mandagen",
         "Hver ${ interval } uge om mandagen"
-      ],
-      "Every ${ interval } week on Monday, ${ timesString }": [
-        "",
-        ""
-      ],
-      "Every ${ interval } week on Monday, ${ untilString }": [
-        "",
-        ""
       ],
       "Every ${ interval } week on Saturday": [
         "Hver ${ interval } uge om lørdagen",
         "Hver ${ interval } uge om lørdagen"
       ],
-      "Every ${ interval } week on Saturday, ${ timesString }": [
-        "",
-        ""
-      ],
-      "Every ${ interval } week on Saturday, ${ untilString }": [
-        "",
-        ""
-      ],
       "Every ${ interval } week on Sunday": [
         "Hver ${ interval } uge om søndagen",
         "Hver ${ interval } uge om søndagen"
-      ],
-      "Every ${ interval } week on Sunday, ${ timesString }": [
-        "",
-        ""
-      ],
-      "Every ${ interval } week on Sunday, ${ untilString }": [
-        "",
-        ""
       ],
       "Every ${ interval } week on Thursday": [
         "Hver ${ interval } uge om torsdagen",
         "Hver ${ interval } uge om torsdagen"
       ],
-      "Every ${ interval } week on Thursday, ${ timesString }": [
-        "",
-        ""
-      ],
-      "Every ${ interval } week on Thursday, ${ untilString }": [
-        "",
-        ""
-      ],
       "Every ${ interval } week on Tuesday": [
         "Hver ${ interval } uge om tirsdagen",
         "Hver ${ interval } uge om tirsdagen"
-      ],
-      "Every ${ interval } week on Tuesday, ${ timesString }": [
-        "",
-        ""
-      ],
-      "Every ${ interval } week on Tuesday, ${ untilString }": [
-        "",
-        ""
       ],
       "Every ${ interval } week on Wednesday": [
         "Hver ${ interval } uge om onsdagen",
         "Hver ${ interval } uge om onsdagen"
       ],
-      "Every ${ interval } week on Wednesday, ${ timesString }": [
-        "",
-        ""
-      ],
-      "Every ${ interval } week on Wednesday, ${ untilString }": [
-        "",
-        ""
-      ],
       "Weekly on ${ multipleDaysString }": [
         "Ugentlig på ${ multipleDaysString }"
-      ],
-      "Weekly on ${ multipleDaysString }, ${ timesString }": [
-        ""
-      ],
-      "Weekly on ${ multipleDaysString }, ${ untilString }": [
-        ""
       ],
       "Weekly on all days": [
         "Ugentligt på alle dage"
       ],
-      "Weekly on all days, ${ timesString }": [
-        ""
-      ],
-      "Weekly on all days, ${ untilString }": [
-        ""
-      ],
       "Weekly on Friday": [
         "Ugentligt om fredagen"
-      ],
-      "Weekly on Friday, ${ timesString }": [
-        ""
       ],
       "Weekly on Friday, ${ untilString }": [
         "Ugentligt om fredagen, ${ untilString }"
@@ -10480,56 +9003,20 @@
       "Weekly on Monday": [
         "Ugentligt om mandagen"
       ],
-      "Weekly on Monday, ${ timesString }": [
-        ""
-      ],
-      "Weekly on Monday, ${ untilString }": [
-        ""
-      ],
       "Weekly on Saturday": [
         "Ugentligt om lørdagen"
-      ],
-      "Weekly on Saturday, ${ timesString }": [
-        ""
-      ],
-      "Weekly on Saturday, ${ untilString }": [
-        ""
       ],
       "Weekly on Sunday": [
         "Ugentligt om søndagen"
       ],
-      "Weekly on Sunday, ${ timesString }": [
-        ""
-      ],
-      "Weekly on Sunday, ${ untilString }": [
-        ""
-      ],
       "Weekly on Thursday": [
         "Ugentligt om torsdagen"
-      ],
-      "Weekly on Thursday, ${ timesString }": [
-        ""
-      ],
-      "Weekly on Thursday, ${ untilString }": [
-        ""
       ],
       "Weekly on Tuesday": [
         "Ugentligt om tirsdagen"
       ],
-      "Weekly on Tuesday, ${ timesString }": [
-        ""
-      ],
-      "Weekly on Tuesday, ${ untilString }": [
-        ""
-      ],
       "Weekly on Wednesday": [
         "Ugentligt om onsdagen"
-      ],
-      "Weekly on Wednesday, ${ timesString }": [
-        ""
-      ],
-      "Weekly on Wednesday, ${ untilString }": [
-        ""
       ]
     },
     "Weekly recurring event, repeats on (multiple days), frequency": {
@@ -10553,29 +9040,6 @@
       ],
       "Wednesday": [
         "Onsdag"
-      ]
-    },
-    "Yearly recurring event, frequency": {
-      "Every ${ interval } year": [
-        "",
-        ""
-      ],
-      "Every ${ interval } year, ${ timesString }": [
-        "",
-        ""
-      ],
-      "Every ${ interval } year, ${ untilString }": [
-        "",
-        ""
-      ],
-      "Yearly": [
-        ""
-      ],
-      "Yearly, ${ timesString }": [
-        ""
-      ],
-      "Yearly, ${ untilString }": [
-        ""
       ]
     }
   }

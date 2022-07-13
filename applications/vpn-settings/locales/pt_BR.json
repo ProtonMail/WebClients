@@ -80,8 +80,8 @@
       "Create": [
         "Criar"
       ],
-      "Create a secure ProtonMail address instead": [
-        "Em vez disso, crie um endereço ProtonMail seguro"
+      "Create a secure ${ MAIL_APP_NAME } address instead": [
+        "Ou então, crie um endereço ${ MAIL_APP_NAME } seguro"
       ],
       "Create account": [
         "Criar uma conta"
@@ -157,9 +157,6 @@
       ],
       "Explore other ${ BRAND_NAME } plans": [
         "Explore outros planos ${ BRAND_NAME }"
-      ],
-      "Extend": [
-        ""
       ],
       "Get ${ vpnPlus }": [
         "Obter ${ vpnPlus }"
@@ -485,11 +482,6 @@
         "Dois anos"
       ]
     },
-    "blackfriday Action": {
-      "Get the offer": [
-        ""
-      ]
-    },
     "blackfriday Info": {
       "beta": [
         "beta"
@@ -505,14 +497,8 @@
       ]
     },
     "blackfriday Title": {
-      "Best deal": [
-        ""
-      ],
       "Most popular": [
         "Mais popular"
-      ],
-      "Save more when combining Mail and VPN": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer Action": {
@@ -523,20 +509,9 @@
         "Obter oferta agora"
       ]
     },
-    "blackfriday: VPNspecialoffer Badge popup": {
-      "${ vpnPlus } Special Offer 2021 discount has been applied": [
-        ""
-      ]
-    },
     "blackfriday: VPNspecialoffer Info": {
-      "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
-        ""
-      ],
       "Save ${ percentage }%": [
         "${ percentage }%"
-      ],
-      "Special offer Terms and Conditions": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer info": {
@@ -550,15 +525,6 @@
       ]
     },
     "blackfriday: VPNspecialoffer Title": {
-      "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
-        ""
-      ],
-      "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
-        ""
-      ],
-      "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
-        ""
-      ],
       "1 month": [
         "1 mês"
       ],
@@ -567,18 +533,6 @@
       ],
       "24 months": [
         "24 meses"
-      ],
-      "Billed at ${ amount } for the first 2 years.${ supNotice }": [
-        ""
-      ],
-      "Billed at ${ amount } for the first month.${ supNotice }": [
-        ""
-      ],
-      "Billed at ${ amount } for the first year.${ supNotice }": [
-        ""
-      ],
-      "Get the special year-end offer on our Premium VPN PLUS plan": [
-        ""
       ]
     },
     "Bug category": {
@@ -722,9 +676,6 @@
       "copper": [
         "cobre"
       ],
-      "enzian": [
-        ""
-      ],
       "fern": [
         "samambaia"
       ],
@@ -737,29 +688,14 @@
       "olive": [
         "azeitona"
       ],
-      "pacific": [
-        ""
-      ],
-      "pickle": [
-        ""
-      ],
-      "pine": [
-        ""
-      ],
       "pink": [
         "rosa"
-      ],
-      "plum": [
-        ""
       ],
       "purple": [
         "roxo"
       ],
       "reef": [
         "recife"
-      ],
-      "sahara": [
-        ""
       ],
       "slateblue": [
         "azul ardósia"
@@ -1812,7 +1748,8 @@
       ]
     },
     "file size format": {
-      "bytes": [
+      "byte": [
+        "byte",
         "bytes"
       ],
       "GB": [
@@ -1826,16 +1763,20 @@
       ]
     },
     "file size format, long": {
-      "Bytes": [
+      "Byte": [
+        "Byte",
         "Bytes"
       ],
-      "Gigabytes": [
+      "Gigabyte": [
+        "Gigabyte",
         "Gigabytes"
       ],
-      "Kilobytes": [
+      "Kilobyte": [
+        "Kilobyte",
         "Kilobytes"
       ],
-      "Megabytes": [
+      "Megabyte": [
+        "Megabyte",
         "Megabytes"
       ]
     },
@@ -2013,9 +1954,6 @@
       "Creating your account": [
         "Criando sua conta"
       ],
-      "Credit for the unused portion of your previous plan subscription": [
-        ""
-      ],
       "Custom email domains": [
         "Domínios personalizados de e-mail"
       ],
@@ -2037,9 +1975,6 @@
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "A hospedagem de e-mails para 10 nomes de domínio de e-mail adicionais está incluída gratuitamente. Domínios adicionais podem ser adicionados por ${ price }."
       ],
-      "Email hosting is only available for domains you already own. Domain registration is not currently available through Proton. You can host email for domains registered on any domain registrar.": [
-        ""
-      ],
       "Emailing preference saved": [
         "Preferências de e-mail salvas"
       ],
@@ -2054,9 +1989,6 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Digite o código de verificação que foi enviado para ${ destinationText }."
-      ],
-      "Enter your ${ BRAND_NAME } Account details.": [
-        ""
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Entre seu e-mail ou nome de usuário da conta ${ BRAND_NAME }."
@@ -2214,9 +2146,6 @@
       "of": [
         "de"
       ],
-      "One account for all ${ BRAND_NAME } services.": [
-        ""
-      ],
       "Or select a particular server:": [
         "Ou selecione um servidor particular:"
       ],
@@ -2313,9 +2242,6 @@
       "Thank you for supporting our mission.": [
         "Obrigado por apoiar a nossa missão."
       ],
-      "The securest way to browse, stream, and be online.": [
-        ""
-      ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Estes arquivos de configuração permitem escolher qual servidor ${ VPN_APP_NAME } será conectado ao usar um aplicativo de VPN de terceiros ou ao configurar uma conexão de VPN em um roteador."
       ],
@@ -2403,9 +2329,6 @@
       "Unsupported file": [
         "Arquivo não suportado"
       ],
-      "Update the URL in your password manager": [
-        ""
-      ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Use o melhor servidor de acordo com a carga atual e a posição: ${ formattedBestServerName }"
       ],
@@ -2457,9 +2380,6 @@
       "We’ll send a reset code to the phone number you provided for account recovery.": [
         "Enviaremos um código de redefinição para o número de telefone que você forneceu para a recuperação da conta."
       ],
-      "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
-        ""
-      ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Quando sua assinatura renovar, nós aplicaremos quaisquer créditos disponíveis antes de mudar o método de pagamento acima."
       ],
@@ -2508,6 +2428,9 @@
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "Você deve ter um cartão de crédito ou uma conta bancária vinculada à sua conta do PayPal. Se a sua conta do PayPal não tiver isso, clique no botão abaixo."
       ],
+      "You must remove any additional personal calendars and any shared calendar links before you can cancel your Mail subscription.": [
+        "Você deve remover todos os calendários pessoais adicionais e quaisquer links de calendário compartilhados antes de cancelar sua assinatura de e-mail."
+      ],
       "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription.": [
         "Você deve remover todos os calendários pessoais adicionais e quaisquer links de calendário compartilhados antes de cancelar sua assinatura."
       ],
@@ -2553,9 +2476,6 @@
       "Your email will only be used for this one-time verification.": [
         "Seu e-mail só será utilizado para essa verificação única."
       ],
-      "Your existing ${ BRAND_NAME } account can be used to access all ${ BRAND_NAME } services. Please sign in with ${ email }.": [
-        ""
-      ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "Suas informações de pagamento estão protegidas com a criptografia TLS e leis de privacidade suíças."
       ],
@@ -2595,9 +2515,6 @@
     "Invoice state display as badge": {
       "Billed": [
         "Faturado"
-      ],
-      "Gifted": [
-        ""
       ],
       "Paid": [
         "Pago"
@@ -2642,9 +2559,6 @@
       ]
     },
     "Label": {
-      "${ humanUsedSpace } of ${ humanMaxSpace }": [
-        ""
-      ],
       "${ MAIL_APP_NAME } address": [
         "Endereço do ${ MAIL_APP_NAME }"
       ],
@@ -3047,9 +2961,6 @@
       "Terms": [
         "Termos"
       ],
-      "Trouble signing in?": [
-        ""
-      ],
       "Upgrade": [
         "Upgrade"
       ],
@@ -3437,9 +3348,6 @@
       "Privacy and security suite for businesses, including all premium Proton services.": [
         "Pacote de privacidade e segurança para empresas, incluindo todos os serviços premium da Proton."
       ],
-      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        ""
-      ],
       "Secure email and calendar for professionals and businesses.": [
         "E-mail e calendário seguros para profissionais e empresas."
       ],
@@ -3460,9 +3368,6 @@
       ]
     },
     "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        ""
-      ],
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "Caso contrário, o acesso à sua conta será limitado e, futuramente, sua conta será desativada."
       ],
@@ -3797,9 +3702,6 @@
       "It's too expensive": [
         "É muito caro"
       ],
-      "macOS": [
-        ""
-      ],
       "My reason isn't listed": [
         "Meu motivo não está listado"
       ],
@@ -3888,13 +3790,6 @@
     "plan customizer, users": {
       "contact": [
         "contato"
-      ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
-        ""
-      ],
-      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
-        "",
-        ""
       ]
     },
     "Price": {
@@ -3912,9 +3807,6 @@
       "Email address not yet verified.": [
         "Endereço de e-mail ainda não verificado."
       ],
-      "Send verification email": [
-        "Enviar e-mail de verificação"
-      ],
       "Verification email sent to ${ email.Value }": [
         "E_mail de verificação enviado para ${ email.Value }"
       ],
@@ -3923,6 +3815,9 @@
       ],
       "Verify recovery email?": [
         "Verificar e-mail de recuperação?"
+      ],
+      "Verify with email": [
+        "Verificar com e-mail"
       ],
       "Verifying your email address increases your account security and allows additional options for recovery.": [
         "Verificar seu endereço de e-mail aumenta a segurança de sua conta e permite opções adicionais de recuperação."
@@ -3939,6 +3834,29 @@
         "Frase"
       ]
     },
+    "Recovery Phone": {
+      "Cancel": [
+        "Cancelar"
+      ],
+      "Phone number has been verified.": [
+        "Número de telefone já verificado."
+      ],
+      "Phone number not yet verified.": [
+        "Número de telefone ainda não verificado."
+      ],
+      "Verify by SMS": [
+        "Verificar por SMS"
+      ],
+      "Verify now": [
+        "Verificar agora"
+      ],
+      "Verify recovery phone?": [
+        "Verificar telefone de recuperação?"
+      ],
+      "Verifying your phone number increases your account security and allows additional options for recovery.": [
+        "Verificar o seu número de telefone aumenta a segurança de sua conta e permite opções adicionais de recuperação."
+      ]
+    },
     "Signup label": {
       "Display name": [
         "Nome de exibição"
@@ -3951,9 +3869,6 @@
       ]
     },
     "Spotlight": {
-      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        ""
-      ],
       "Get up to 18 months of ${ planName } for free": [
         "Obtenha até 18 meses de ${ planName } gratuitamente"
       ],
@@ -4127,12 +4042,6 @@
       "Certificate ${ name } revoked": [
         "O certificado ${ name } foi revogado"
       ],
-      "Certificate extended until ${ formattedExpirationDate }": [
-        ""
-      ],
-      "Config \"${ name }\" created, note that the private key is not stored and won't be shown again, you should copy or download this config.": [
-        ""
-      ],
       "Creating config file for ${ serverName }": [
         "Criando arquivo de configuração para ${ serverName }"
       ]
@@ -4256,6 +4165,9 @@
       ],
       "Billing cycle": [
         "Ciclo de faturamento"
+      ],
+      "Cancel Mail subscription": [
+        "Cancelar assinatura de e-mail"
       ],
       "Card verification": [
         "Verificação do cartão"
@@ -4494,9 +4406,6 @@
       "This address might compromise your privacy.": [
         "Este endereço pode comprometer sua privacidade."
       ],
-      "Try the best of ${ MAIL_APP_NAME } for free": [
-        ""
-      ],
       "TV log in": [
         "Iniciar sessão na TV"
       ],
@@ -4621,9 +4530,6 @@
       ],
       "iOS": [
         "iOS"
-      ],
-      "macOS": [
-        ""
       ],
       "Windows": [
         "Windows"

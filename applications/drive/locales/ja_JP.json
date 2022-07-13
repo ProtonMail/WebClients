@@ -485,9 +485,6 @@
       "Skip": [
         "スキップ"
       ],
-      "Start import": [
-        ""
-      ],
       "Start recovering": [
         "リカバリーを始める"
       ],
@@ -614,11 +611,6 @@
         "問題が発生するなどした場合、いつでもベータ版アクセスを無効にできます。"
       ]
     },
-    "blackfriday Action": {
-      "Get the offer": [
-        ""
-      ]
-    },
     "blackfriday Info": {
       "beta": [
         "ベータ"
@@ -634,14 +626,8 @@
       ]
     },
     "blackfriday Title": {
-      "Best deal": [
-        ""
-      ],
       "Most popular": [
         "最も人気"
-      ],
-      "Save more when combining Mail and VPN": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer Action": {
@@ -653,14 +639,8 @@
       ]
     },
     "blackfriday: VPNspecialoffer Info": {
-      "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
-        ""
-      ],
       "Save ${ percentage }%": [
         "${ percentage }%割引"
-      ],
-      "Special offer Terms and Conditions": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer info": {
@@ -674,15 +654,6 @@
       ]
     },
     "blackfriday: VPNspecialoffer Title": {
-      "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
-        ""
-      ],
-      "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
-        ""
-      ],
-      "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
-        ""
-      ],
       "1 month": [
         "1か月"
       ],
@@ -691,18 +662,6 @@
       ],
       "24 months": [
         "24か月"
-      ],
-      "Billed at ${ amount } for the first 2 years.${ supNotice }": [
-        ""
-      ],
-      "Billed at ${ amount } for the first month.${ supNotice }": [
-        ""
-      ],
-      "Billed at ${ amount } for the first year.${ supNotice }": [
-        ""
-      ],
-      "Get the special year-end offer on our Premium VPN PLUS plan": [
-        ""
       ]
     },
     "Bug category": {
@@ -1764,9 +1723,6 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "連絡先の暗号化とインポート... これには数分かかることがあります。\n処理が完了すると、このモーダルを閉じることができます。"
       ],
-      "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
-        ""
-      ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "連絡先の統合しています... これには数分かかる場合があります。処理が完了したらこのモーダルを閉じることができます。"
       ],
@@ -1778,14 +1734,6 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "結合または保持する必要のない連絡先を削除するためにマークができます。 削除はマージボタンがクリックされた後にのみ行われます"
-      ]
-    },
-    "Description of the purpose of the import CSV modal": {
-      "Also, we have automatically matched CSV fields with vCard fields. You can review and change this matching manually.": [
-        ""
-      ],
-      "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
-        ""
       ]
     },
     "Early Access Disabled": {
@@ -1967,9 +1915,6 @@
       "The new revision of original file is not uploaded yet, please try again later": [
         "元のファイルの新しいリビジョンのアップロードは完了していません。再度お試しください。"
       ],
-      "The original file has missing active revision": [
-        ""
-      ],
       "The original file has missing hash key": [
         "元のファイルのハッシュキーは利用できません"
       ],
@@ -2114,7 +2059,7 @@
       ]
     },
     "file size format": {
-      "bytes": [
+      "byte": [
         "バイト"
       ],
       "GB": [
@@ -2128,16 +2073,16 @@
       ]
     },
     "file size format, long": {
-      "Bytes": [
+      "Byte": [
         "バイト"
       ],
-      "Gigabytes": [
+      "Gigabyte": [
         "ギガバイト"
       ],
-      "Kilobytes": [
+      "Kilobyte": [
         "キロバイト"
       ],
-      "Megabytes": [
+      "Megabyte": [
         "メガバイト"
       ]
     },
@@ -2177,9 +2122,6 @@
     "Hint": {
       "Found ${ items.length } suggestion, use keyboard to navigate.": [
         "${ items.length } つの提案が見つかりました。キーボードを使って操作します。"
-      ],
-      "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
-        ""
       ]
     },
     "Human verification method": {
@@ -2392,9 +2334,6 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "新しい検証コードを要求する前に、迷惑メールフォルダーを確認し、${ strong } が正しいアドレスなことを確認してください。"
       ],
-      "Bulk uploads may reduce your computer’s performance. Consider limiting memory-intensive activities like streaming during upload. Or try uploading in batches.": [
-        ""
-      ],
       "Canceled": [
         "キャンセル"
       ],
@@ -2477,13 +2416,10 @@
         "デジタル署名が検証されました。このフォルダーは ${ emailAddress } によって安全にアップロードされました。"
       ],
       "Download canceled": [
-        ""
+        "ダウンロードをキャンセルしました"
       ],
       "Download failed": [
-        ""
-      ],
-      "Download failed due to ${ error }": [
-        ""
+        "ダウンロードに失敗しました"
       ],
       "Download finished": [
         "ダウンロードが完了しました"
@@ -2491,17 +2427,11 @@
       "Download of ${ downloadFileName } will be aborted": [
         "${ downloadFileName } のダウンロードは中断します"
       ],
-      "Download paused due to connection issue; it will resume automatically": [
-        ""
-      ],
       "Downloaded": [
         "ダウンロード完了"
       ],
       "Downloading": [
         "ダウンロード中"
-      ],
-      "Drag and drop items here or browse for files to upload.": [
-        ""
       ],
       "Drop the file here to upload": [
         "アップロードするファイルをここにドロップしてください"
@@ -2595,9 +2525,6 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "受信トレイに関連するメッセージを見つけなかった場合、迷惑メールフォルダーを確認してください。"
-      ],
-      "If you have one of these, continue to Proton account setting to\nstart the unblock process.": [
-        ""
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "${ contactsFragment } と ${ contactsGroupsFragment } をインポート"
@@ -2719,23 +2646,11 @@
       "Not a valid URL": [
         "有効な URL ではありません"
       ],
-      "Not all files were transferred. Try uploading or downloading the files again.": [
-        ""
-      ],
       "Note: Data may still be available locally on devices where you have installed ${ appName }.": [
         "メモ: まだデータは ${ appName } をインストールしているデバイスで利用可能な場合があります。"
       ],
       "of": [
         " / "
-      ],
-      "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
-        ""
-      ],
-      "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
-        ""
-      ],
-      "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters is allowed": [
-        ""
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "この設定は、メールの宛先に PGP を使用している非 ${ BRAND_NAME } ユーザーがいる場合にのみ変更してください。"
@@ -2755,11 +2670,11 @@
       "Permanently delete all files in your drive": [
         "ドライブからすべてのファイルを完全に削除"
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
-        "PGP/Inline is only compatible with Plain Text format. Please note that Proton Mail always signs encrypted messages."
+      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        "PGP/Inline はプレーンテキスト形式としか互換性がありません。${ MAIL_APP_NAME } は暗号化されたメッセージに常に署名することに注意してください。"
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
-        "PGP/MIME automatically sends the message using the current composer mode. Please note that Proton Mail always signs encrypted messages."
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
+        "PGP/MIME は自動的に現在の書式を使用してメッセージを送信します。${ MAIL_APP_NAME } は暗号化されたメッセージに常に署名することに注意してください。"
       ],
       "Please enter the password to decrypt and view content.": [
         "パスワードを入力して復号しコンテンツを閲覧します。"
@@ -2824,12 +2739,6 @@
       "Search Enabled": [
         "検索が有効です"
       ],
-      "Secure sharing": [
-        ""
-      ],
-      "Secure your documents and data": [
-        ""
-      ],
       "Select an uploaded file or folder and create a link to it.": [
         "アップロードされたファイルまたはフォルダーを選択してリンクを作成します。"
       ],
@@ -2854,20 +2763,11 @@
       "Share files with links": [
         "リンクでファイルを共有"
       ],
-      "Shareable link for ${ boldNameText }": [
-        ""
-      ],
       "Signature check will be ignored": [
         "署名確認は無視されました"
       ],
       "Signature issue": [
         "署名の問題"
-      ],
-      "Some files failed to download. Try downloading the files again.": [
-        ""
-      ],
-      "Some files failed to upload. Try uploading the files again.": [
-        ""
       ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "いくつかのファイルにはアクセスできません。ファイルへのアクセスを復元します。${ StartRecoveryButton }"
@@ -2884,29 +2784,14 @@
       "support team": [
         "サポートチーム"
       ],
-      "Swiss privacy": [
-        ""
-      ],
       "Tap the + button to upload a file or folder.": [
-        ""
-      ],
-      "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
-        ""
+        "+ ボタンをタップしてファイルやフォルダーをアップロードします。"
       ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "アプリケーションは、エクスポートする前に連絡先をローカルで復号する必要があります。プロセスの終了時に、VCF ファイルが生成され、ダウンロードすることができます。"
       ],
-      "The following may have been tampered with: ${ items }. Only open if you trust it.": [
-        ""
-      ],
-      "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
-        ""
-      ],
       "There are no files yet": [
         "まだファイルがありません"
-      ],
-      "These files were shared using end-to-end encryption. To ensure their security — and the security of all your documents, photos, and files — store them in Proton Drive, the cloud storage service you can trust.": [
-        ""
       ],
       "This account has been suspended due to a potential policy violation.": [
         "このアカウントは、ポリシー違反の可能性があるため停止されています。"
@@ -2926,9 +2811,6 @@
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "このリンクはホモグラフ攻撃の可能性があります。 これがあなたのアクセスしたいリンクであることを確認するか、開かないようにしてください。"
       ],
-      "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
-        ""
-      ],
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
         "このリンクは永久に無効化され、このリンクを知っている人は今後あなたのファイルにアクセスできません。ファイルを再度共有した場合、新しいリンクが作成されます。"
       ],
@@ -2943,9 +2825,6 @@
       ],
       "This will overwrite the existing folder": [
         "存在するフォルダーを上書きします"
-      ],
-      "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
-        ""
       ],
       "To fight spam and abuse, please verify you are human.": [
         "迷惑メールや悪用を防止するために、あなたがコンピューターではないことを確認します。"
@@ -3000,9 +2879,6 @@
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "同時にたくさんのファイルをアップロードするとパフォーマンスが低下する可能性があります。"
-      ],
-      "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
-        ""
       ],
       "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "${ emailAddress } がアップロードした ${ fileName } を検証できませんでした。"
@@ -3135,14 +3011,8 @@
       ]
     },
     "Key badge": {
-      "Compromised": [
-        ""
-      ],
       "Expired": [
         "有効期限切れ"
-      ],
-      "Obsolete": [
-        ""
       ],
       "Primary": [
         "プライマリー"
@@ -3394,9 +3264,6 @@
       ],
       "Phone number": [
         "電話番号"
-      ],
-      "Please provide full details to help us take appropriate action": [
-        ""
       ],
       "Post office box": [
         "私書箱"
@@ -3841,9 +3708,6 @@
       ],
       "${ appName } is currently only available if you enable Beta Access.": [
         "${ appName } はベータアクセスを有効にしている場合のみ利用できます。"
-      ],
-      "Your trusty online vault for vital documents and precious memories.": [
-        ""
       ]
     },
     "Onboarding Proton": {
@@ -3905,19 +3769,8 @@
       ]
     },
     "PGP Key info": {
-      "${ emailAddress } has marked this key as compromised. This key cannot be used neither for encryption nor for signature verification.": [
-        ""
-      ],
-      "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
-        ""
-      ],
       "We recommend that you \"untrust\" this key.": [
         "この鍵を「信頼しない」ことをおすすめします。"
-      ]
-    },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        ""
       ]
     },
     "Placeholder": {
@@ -4035,9 +3888,6 @@
       ]
     },
     "Spotlight": {
-      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        ""
-      ],
       "Encrypted search is here": [
         "暗号化された検索が利用できます"
       ],
@@ -4051,7 +3901,7 @@
         "データの安全を保ったまま Drive のファイルを検索できるようになりました。"
       ],
       "Try ${ DRIVE_APP_NAME }": [
-        ""
+        "${ DRIVE_APP_NAME } を試す"
       ]
     },
     "Storage": {
@@ -4242,7 +4092,7 @@
         "戻る"
       ],
       "Based in Switzerland, available globally": [
-        ""
+        "スイス拠点で、世界中で利用可能です"
       ],
       "Beta Access": [
         "ベータ版アクセス"
@@ -4296,7 +4146,7 @@
         "日付"
       ],
       "Decrypting": [
-        ""
+        "復号中"
       ],
       "Delete ${ count } contact": [
         "${ count } 件の連絡先を削除"
@@ -4318,9 +4168,6 @@
       ],
       "Discard changes?": [
         "変更を破棄しますか?"
-      ],
-      "Download shared file": [
-        ""
       ],
       "Download unverified file?": [
         "未検証のファイルをダウンロードしますか?"
@@ -4394,9 +4241,6 @@
       "Found ${ searchView.numberOfResults } result": [
         "${ searchView.numberOfResults } 件見つかりました"
       ],
-      "Getting files": [
-        ""
-      ],
       "Groups": [
         "グループ"
       ],
@@ -4410,7 +4254,7 @@
         "無効な検証コードです"
       ],
       "Item details": [
-        ""
+        "アイテムの詳細"
       ],
       "Items details": [
         "アイテムの詳細"
@@ -4476,7 +4320,7 @@
         "電話番号"
       ],
       "Privacy settings": [
-        ""
+        "プライバシー設定"
       ],
       "Re-sign all contacts": [
         "すべての連絡先を再署名する"
@@ -4571,9 +4415,6 @@
       "This folder has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "フォルダーが利用できないか、無効な署名です。メニュー (⋮) に移動し、詳細の情報を表示します。"
       ],
-      "This link is password protected": [
-        ""
-      ],
       "Total size": [
         "合計サイズ"
       ],
@@ -4616,9 +4457,6 @@
       "You have no folders yet": [
         "フォルダーがありません"
       ],
-      "You've got files": [
-        ""
-      ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         "無料トライアルは ${ formattedEndDate } に終了します。"
       ]
@@ -4649,9 +4487,6 @@
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "暗号化や署名の際に使用されるPGPの方式を選択してください。PGP/Inlineはプレーンテキストのメッセージでしか使用できない事に注意してください。"
-      ],
-      "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
-        ""
       ],
       "The import will start with the most recent messages.": [
         "インポートは新しいメッセージから始まります。"
@@ -4723,9 +4558,6 @@
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "報告はエンドツーエンド暗号化されないため、機密情報は含めないでください。"
-      ],
-      "Some of the contacts to be merged display errors. Please review them individually": [
-        ""
       ],
       "The contact data is corrupted and cannot be displayed.": [
         "連絡先データが壊れているため表示できません。"

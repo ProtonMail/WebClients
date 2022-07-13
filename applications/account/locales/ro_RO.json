@@ -103,6 +103,9 @@
       "Apply": [
         "Aplicare"
       ],
+      "Apply to existing message": [
+        "Aplicare la mesajele existente"
+      ],
       "Attach screenshot(s)": [
         "Atașare capturi de ecran"
       ],
@@ -175,8 +178,8 @@
       "Continue to ${ name }": [
         "Continuare cu ${ name }"
       ],
-      "Continue with": [
-        "Continuare cu"
+      "Continue with ${ nameToDisplay } ${ maybeEmailInBrackets }": [
+        "Continuare cu ${ nameToDisplay } ${ maybeEmailInBrackets }"
       ],
       "Continue with Google": [
         "Continuare cu Google"
@@ -193,8 +196,8 @@
       "Create": [
         "Creare"
       ],
-      "Create a secure ProtonMail address instead": [
-        "Create a secure Proton Mail address instead"
+      "Create a secure ${ MAIL_APP_NAME } address instead": [
+        "Creați în schimb o adresă securizată ${ MAIL_APP_NAME }"
       ],
       "Create account": [
         "Creare cont"
@@ -345,6 +348,9 @@
       ],
       "Extend": [
         "Extindere"
+      ],
+      "Filters are being applied. This might take a few minutes.": [
+        "Se aplică filtrele. Ar putea dura câteva minute."
       ],
       "Font": [
         "Font"
@@ -679,17 +685,14 @@
       "Show preview": [
         "Afișare previzualizare"
       ],
-      "sign in": [
-        "autentificați"
-      ],
       "Sign in": [
         "Autentificare"
       ],
       "Sign out": [
         "Deconectare"
       ],
-      "Sign out from": [
-        "Deconectare din"
+      "Sign out from ${ nameToDisplay } ${ maybeEmailInBrackets }": [
+        "Deconectare de la ${ nameToDisplay } ${ maybeEmailInBrackets }"
       ],
       "Sign out of all accounts": [
         "Deconectare din toate conturile"
@@ -1013,11 +1016,6 @@
         "Bianual"
       ]
     },
-    "blackfriday Action": {
-      "Get the offer": [
-        ""
-      ]
-    },
     "blackfriday Info": {
       "beta": [
         "beta"
@@ -1033,14 +1031,8 @@
       ]
     },
     "blackfriday Title": {
-      "Best deal": [
-        ""
-      ],
       "Most popular": [
         "Cel mai popular"
-      ],
-      "Save more when combining Mail and VPN": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer Action": {
@@ -1051,20 +1043,9 @@
         "Obțineți oferta"
       ]
     },
-    "blackfriday: VPNspecialoffer Badge popup": {
-      "${ vpnPlus } Special Offer 2021 discount has been applied": [
-        ""
-      ]
-    },
     "blackfriday: VPNspecialoffer Info": {
-      "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
-        ""
-      ],
       "Save ${ percentage }%": [
         "- ${ percentage }%"
-      ],
-      "Special offer Terms and Conditions": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer info": {
@@ -1078,15 +1059,6 @@
       ]
     },
     "blackfriday: VPNspecialoffer Title": {
-      "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
-        ""
-      ],
-      "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
-        ""
-      ],
-      "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
-        ""
-      ],
       "1 month": [
         "1 lună"
       ],
@@ -1095,18 +1067,6 @@
       ],
       "24 months": [
         "24 luni"
-      ],
-      "Billed at ${ amount } for the first 2 years.${ supNotice }": [
-        ""
-      ],
-      "Billed at ${ amount } for the first month.${ supNotice }": [
-        ""
-      ],
-      "Billed at ${ amount } for the first year.${ supNotice }": [
-        ""
-      ],
-      "Get the special year-end offer on our Premium VPN PLUS plan": [
-        ""
       ]
     },
     "Bridge version load failed": {
@@ -1214,10 +1174,10 @@
       "You have reached the maximum number of personal calendars you can create within your plan.": [
         "Ați atins numărul maxim de calendare personale pe care le puteți crea în cadrul planului actual."
       ],
-      "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } subscribed calendar.": [
-        "Ați atins numărul maxim de o abonare la un calendar.",
-        "Ați atins numărul maxim de ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } abonări la calendare.",
-        "Ați atins numărul maxim de ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } de abonări la calendare."
+      "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS } subscribed calendar.": [
+        "Ați atins numărul maxim de un calendar abonat.",
+        "Ați atins numărul maxim de ${ MAX_SUBSCRIBED_CALENDARS } calendare abonate.",
+        "Ați atins numărul maxim de ${ MAX_SUBSCRIBED_CALENDARS } de calendare abonate."
       ]
     },
     "Calendar link purpose update success message": {
@@ -2656,9 +2616,6 @@
       "A group with this name already exists": [
         "Un grup cu acest nume există deja"
       ],
-      "Address already associated to a user": [
-        "Adresă deja asociată unui utilizator"
-      ],
       "Address primary private key not found": [
         "Nu s-a găsit adresa cheii private primare"
       ],
@@ -3208,20 +3165,36 @@
       "Please ${ refresh } or check your connection.": [
         "Verificați conexiunea sau ${ refresh }."
       ],
-      "Please ${ signIn } to update your email subscription preferences.": [
-        "Pentru a vă actualiza preferințele de abonare prin e-mail trebuie să vă ${ signIn }."
-      ],
       "There was a problem connecting to Proton.": [
         "A apărut o problemă la conectarea la Proton."
-      ],
-      "There was a problem unsubscribing you.": [
-        "A apărut o problemă la dezabonare."
       ],
       "Too many child sessions, please clear your cookies and sign back in.": [
         "Prea multe sesiuni secundare, ștergeți fişierele cookie și reconectați-vă."
       ],
       "You may also ${ refresh } or try again later.": [
         "Puteți ${ refresh } sau reîncerca mai târziu."
+      ]
+    },
+    "Error message, recovery": {
+      "Please ${ _signIn } to resend a recovery email verification request.": [
+        "Accesați funcția de ${ _signIn } pentru a retrimite o cerere de verificare a e-mailului de recuperare."
+      ],
+      "sign in": [
+        "autentificare"
+      ],
+      "There was a problem verifying your email address.": [
+        "A existat o problemă la verificarea adresei de e-mail."
+      ]
+    },
+    "Error message, unsubscribe": {
+      "Please ${ signIn } to update your email subscription preferences.": [
+        "Pentru a vă actualiza preferințele de abonare prin e-mail trebuie să vă ${ signIn }."
+      ],
+      "sign in": [
+        "autentificați"
+      ],
+      "There was a problem unsubscribing you.": [
+        "A apărut o problemă la dezabonare."
       ]
     },
     "Error notification": {
@@ -3371,8 +3344,10 @@
       ]
     },
     "file size format": {
-      "bytes": [
-        "octeți"
+      "byte": [
+        "bait",
+        "baiți",
+        "de baiți"
       ],
       "GB": [
         "GB"
@@ -3385,16 +3360,24 @@
       ]
     },
     "file size format, long": {
-      "Bytes": [
+      "Byte": [
+        "Bait",
+        "Baiți",
         "Baiți"
       ],
-      "Gigabytes": [
+      "Gigabyte": [
+        "Gigabait",
+        "Gigabaiți",
         "Gigabaiți"
       ],
-      "Kilobytes": [
+      "Kilobyte": [
+        "Kilobait",
+        "Kilobaiți",
         "Kilobaiți"
       ],
-      "Megabytes": [
+      "Megabyte": [
+        "Megabait",
+        "Megabaiți",
         "Megabaiți"
       ]
     },
@@ -4437,6 +4420,9 @@
       "Continue with ${ planName }": [
         "Continuare cu ${ planName }"
       ],
+      "Continuing will connect your ${ ACCOUNT_APP_NAME } to ${ name }.": [
+        "Continuând se va conecta ${ ACCOUNT_APP_NAME } la ${ name }."
+      ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Creare un calendar",
         "Creare ${ calendarsToBeCreated } calendare",
@@ -5152,9 +5138,6 @@
       "Select a service provider to start": [
         "Selectați un furnizor de servicii pentru a începe"
       ],
-      "Select Continue to ${ name } to open the app. This also creates a ${ name } account with your ${ MAIL_APP_NAME } address so you can sign in with one click in the future.": [
-        "Selectați „Continuare cu ${ name }” pentru a deschide aplicația. Acest lucru creează, de asemenea, un cont ${ name } cu adresa ${ MAIL_APP_NAME }, astfel încât să vă puteți autentifica cu un singur clic în viitor."
-      ],
       "Select what you want to move from Google.": [
         "Selectați ce doriți să importați din Google."
       ],
@@ -5592,6 +5575,9 @@
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "Trebuie să aveți un card de credit sau cont bancar asociat la contul de PayPal. Dacă contul de PayPal nu are așa ceva, atunci faceţi clic pe butonul de mai jos."
+      ],
+      "You must remove any additional personal calendars and any shared calendar links before you can cancel your Mail subscription.": [
+        "Trebuie să eliminați toate calendarele personale suplimentare și toate legăturile din calendar partajate înainte de a putea anula abonamentul pe e-mail."
       ],
       "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription.": [
         "Trebuie să eliminați toate calendarele personale suplimentare și toate legăturile din calendar partajate înainte de a putea anula abonamentul."
@@ -6176,6 +6162,9 @@
       ],
       "App password": [
         "Parola aplicației"
+      ],
+      "Apply filter to existing emails": [
+        "Aplicare filtru la mesajele existente"
       ],
       "Ask before loading remote content": [
         "Întrebare înainte de a încărca conținutul de la distanță"
@@ -7171,6 +7160,9 @@
       ]
     },
     "Message": {
+      "All filter actions will be applied to all messages in your Proton Mail account. No auto-reply emails will be sent.": [
+        "Toate acțiunile filtrului vor fi aplicate tuturor mesajelor din contul Proton Mail. Nu se vor trimite răspunsuri automate la mesaje."
+      ],
       "Are you sure you want to disable two-factor authentication?": [
         "Sigur doriți dezactivarea autentificării cu doi factori?"
       ],
@@ -7719,26 +7711,6 @@
         "Gestionare echipă"
       ]
     },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Faceți confidențialitatea ca implicită pentru conservarea fișierelor, stocarea, partajarea și recuperarea lor."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Altfel accesul la cont va fi limitat și eventual va fi dezactivat."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Pentru a continua să utilizați ${ MAIL_APP_NAME } cu funcțiile premium, alegeți tipul de abonament și opțiunea de plată."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Treceți la pachetul de afaceri cu acces la toate serviciile premium Proton."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Treceți la pachetul de confidențialitate complet și accesați toate serviciile premium Proton."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Perioada de probă se termină ${ formattedTrialExpirationDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } care se termină cu ${ last4 }"
@@ -7805,6 +7777,26 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Vă bucurați de un preț promoțional la planul dvs. actual. Dacă vă retrogradați contul, veți pierde prețul promoțional și nu va fi disponibil dacă încercați să vă abonați din nou."
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Faceți confidențialitatea ca implicită pentru conservarea fișierelor, stocarea, partajarea și recuperarea lor."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Altfel accesul la cont va fi limitat și eventual va fi dezactivat."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Pentru a continua să utilizați ${ MAIL_APP_NAME } cu funcțiile premium, alegeți tipul de abonament și opțiunea de plată."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Treceți la pachetul de afaceri cu acces la toate serviciile premium Proton."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Treceți la pachetul de confidențialitate complet și accesați toate serviciile premium Proton."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Perioada de probă se termină ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -8617,14 +8609,8 @@
       "Email address not yet verified.": [
         "Adresa de e-mail nu este verificată."
       ],
-      "Please ${ signIn } to resend a recovery email verification request.": [
-        "Accesaţi funcţia de ${ signIn } pentru a retrimite o cerere de verificare a e-mailului de recuperare."
-      ],
-      "Send verification email": [
-        "Trimitere e-mail de verificare"
-      ],
-      "There was a problem verifying your email address.": [
-        "A existat o problemă la verificarea adresei de e-mail."
+      "sign in": [
+        "autentificați"
       ],
       "Verification email sent to ${ email.Value }": [
         "Mesajul de verificare a fost trimis la ${ email.Value }"
@@ -8634,6 +8620,9 @@
       ],
       "Verify recovery email?": [
         "Verificare e-mail de recuperare?"
+      ],
+      "Verify with email": [
+        "Verificare cu e-mail"
       ],
       "Verifying your email address increases your account security and allows additional options for recovery.": [
         "Verificarea adresei de e-mail vă mărește securitatea contului și permite opțiuni suplimentare de recuperare."
@@ -8654,6 +8643,29 @@
       ],
       "Phrase": [
         "Frază"
+      ]
+    },
+    "Recovery Phone": {
+      "Cancel": [
+        "Anulare"
+      ],
+      "Phone number has been verified.": [
+        "Numărul de telefon a fost verificat."
+      ],
+      "Phone number not yet verified.": [
+        "Număr de telefon încă neverificat."
+      ],
+      "Verify by SMS": [
+        "Verificare prin SMS"
+      ],
+      "Verify now": [
+        "Verificare acum"
+      ],
+      "Verify recovery phone?": [
+        "Verificare număr de telefon de recuperare?"
+      ],
+      "Verifying your phone number increases your account security and allows additional options for recovery.": [
+        "Verificarea numărului de telefon vă mărește securitatea contului și permite opțiuni suplimentare de recuperare."
       ]
     },
     "Remark about a key type option": {
@@ -9373,6 +9385,9 @@
       "Appearance": [
         "Aspect"
       ],
+      "Apply filter to existing messages": [
+        "Aplicare filtru la mesajele existente"
+      ],
       "Apply gift code": [
         "Aplicare cod cadou"
       ],
@@ -9402,6 +9417,9 @@
       ],
       "Bridge for ${ platform }": [
         "Bridge pentru ${ platform }"
+      ],
+      "Cancel Mail subscription": [
+        "Anulare abonament pe e-mail"
       ],
       "Card verification": [
         "Verificare card"
@@ -10281,13 +10299,13 @@
       ]
     },
     "Upgrade notice": {
-      "Upgrade to a paid plan to create up to ${ MAX_CALENDARS_PER_USER } calendar, allowing you to make calendars for work, to share with friends, and just for yourself.": [
-        "Treceți la un plan cu plată pentru a putea crea maxim un calendar. Puteți crea calendare personale, pentru muncă sau să le partajați cu prietenii.",
-        "Treceți la un plan cu plată pentru a putea crea până la ${ MAX_CALENDARS_PER_USER } calendare. Puteți crea calendare personale, pentru muncă sau să le partajați cu prietenii.",
-        "Treceți la un plan cu plată pentru a putea crea până la ${ MAX_CALENDARS_PER_USER } de calendare. Puteți crea calendare personale, pentru muncă sau să le partajați cu prietenii."
+      "Upgrade to a Mail paid plan to create up to ${ MAX_CALENDARS_PAID } calendar, allowing you to make calendars for work, to share with friends, and just for yourself.": [
+        "Treceți la un plan de e-mail cu plată pentru a putea crea până la ${ MAX_CALENDARS_PAID } calendare, să puteți crea calendare pentru muncă, să le partajați cu prietenii sau doar personale.",
+        "Treceți la un plan de e-mail cu plată pentru a putea crea până la ${ MAX_CALENDARS_PAID } calendare, să puteți crea calendare pentru muncă, să le partajați cu prietenii sau doar personale.",
+        "Treceți la un plan de e-mail cu plată pentru a putea crea până la ${ MAX_CALENDARS_PAID } de calendare, să puteți crea calendare pentru muncă, să le partajați cu prietenii sau doar personale."
       ],
-      "Upgrade to a paid plan to share your personal calendar via link with anyone.": [
-        "Treceți la un plan cu plată pentru a vă partaja calendarul personal cu oricine printr-o legătură."
+      "Upgrade to a Mail paid plan to share your personal calendar via link with anyone.": [
+        "Treceți la un plan de e-mail cu plată pentru a vă partaja calendarul personal cu oricine printr-o legătură."
       ]
     },
     "User role": {

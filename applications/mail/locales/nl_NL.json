@@ -335,7 +335,7 @@
         "Externe versleuteling"
       ],
       "Fewer search options": [
-        ""
+        "Minder zoekopties"
       ],
       "Filter on...": [
         "Filteren op..."
@@ -819,7 +819,7 @@
         "Details tonen"
       ],
       "Show fewer search options": [
-        ""
+        "Minder zoekopties tonen"
       ],
       "Show folders": [
         "Mappen weergeven"
@@ -1138,11 +1138,6 @@
         "Als u problemen ondervindt, kunt u Bèta Toegang altijd uitschakelen."
       ]
     },
-    "blackfriday Action": {
-      "Get the offer": [
-        ""
-      ]
-    },
     "blackfriday Info": {
       "beta": [
         "bètaversie"
@@ -1158,14 +1153,8 @@
       ]
     },
     "blackfriday Title": {
-      "Best deal": [
-        ""
-      ],
       "Most popular": [
         "Populairste keuze"
-      ],
-      "Save more when combining Mail and VPN": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer Action": {
@@ -1177,14 +1166,8 @@
       ]
     },
     "blackfriday: VPNspecialoffer Info": {
-      "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
-        ""
-      ],
       "Save ${ percentage }%": [
         "${ percentage } %"
-      ],
-      "Special offer Terms and Conditions": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer info": {
@@ -1198,15 +1181,6 @@
       ]
     },
     "blackfriday: VPNspecialoffer Title": {
-      "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
-        ""
-      ],
-      "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
-        ""
-      ],
-      "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
-        ""
-      ],
       "1 month": [
         "1 maand"
       ],
@@ -1215,18 +1189,6 @@
       ],
       "24 months": [
         "24 maanden"
-      ],
-      "Billed at ${ amount } for the first 2 years.${ supNotice }": [
-        ""
-      ],
-      "Billed at ${ amount } for the first month.${ supNotice }": [
-        ""
-      ],
-      "Billed at ${ amount } for the first year.${ supNotice }": [
-        ""
-      ],
-      "Get the special year-end offer on our Premium VPN PLUS plan": [
-        ""
       ]
     },
     "Bug category": {
@@ -3538,7 +3500,8 @@
       ]
     },
     "file size format": {
-      "bytes": [
+      "byte": [
+        "byte",
         "bytes"
       ],
       "GB": [
@@ -3552,16 +3515,20 @@
       ]
     },
     "file size format, long": {
-      "Bytes": [
+      "Byte": [
+        "Byte",
         "Bytes"
       ],
-      "Gigabytes": [
+      "Gigabyte": [
+        "Gigabyte",
         "Gigabytes"
       ],
-      "Kilobytes": [
+      "Kilobyte": [
+        "Kilobyte",
         "Kilobytes"
       ],
-      "Megabytes": [
+      "Megabyte": [
+        "Megabyt",
         "Megabytes"
       ]
     },
@@ -3948,13 +3915,13 @@
         "Één contactpersoon",
         "${ numContacts } contactpersonen"
       ],
-      "${ occurrencesInBody } occurrence found": [
-        "Één voorval gevonden",
-        "${ occurrencesInBody } voorvallen gevonden"
+      "${ numOccurrences } occurrence found": [
+        "${ numOccurrences } voorval gevonden",
+        "${ numOccurrences } voorvallen gevonden"
       ],
-      "${ occurrencesInBody } occurrence found in the mail content": [
-        "Één voorval gevonden in de mail inhoud",
-        "${ occurrencesInBody } voorvallen gevonden in de mail inhoud"
+      "${ numOccurrences } occurrence found in the mail content": [
+        "${ numOccurrences } voorval gevonden in de inhoud van de mail",
+        "${ numOccurrences } voorvallen gevonden in de inhoud van de mail"
       ],
       "${ pureAttachmentsCount } file attached": [
         "${ pureAttachmentsCount } bestand bijgevoegd",
@@ -4569,11 +4536,11 @@
       "per month.": [
         "per maand."
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
-        "PGP/Inline is only compatible with Plain Text format. Please note that Proton Mail always signs encrypted messages."
+      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        "PGP/Inline is alleen compatibel met tekst zonder opmaak. Houd er rekening mee dat ${ MAIL_APP_NAME } altijd versleutelde berichten tekent."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
-        "PGP/MIME automatically sends the message using the current composer mode. Please note that Proton Mail always signs encrypted messages."
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
+        "PGP/MIME stuurt de berichten automatisch aan de hand van de opmaak in het opstelvenster. Denk eraan dat ${ MAIL_APP_NAME } versleutelde berichten ook altijd ondertekent"
       ],
       "Phone number": [
         "Telefoonnummer"
@@ -5428,6 +5395,9 @@
       ],
       "ANY": [
         "ELK"
+      ],
+      "Apply filter to existing emails": [
+        "Filter toepassen op bestaande e-mails"
       ],
       "Attach screenshot(s)": [
         "Schermafbeelding(en) toevoegen"
@@ -6634,7 +6604,7 @@
         "Kan niet verzenden naar organisatieadres: ${ errorMessage }"
       ],
       "Re-encrypting invitation failed. Please try again": [
-        ""
+        "Uitnodiging voor herversleuteling mislukt. Probeer het opnieuw"
       ]
     },
     "Search - no results": {
@@ -6772,7 +6742,7 @@
     },
     "Spotlight": {
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        ""
+        "${ DRIVE_APP_NAME } is uit de bèta! Geef uw bestanden dezelfde beveiliging als uw e-mails."
       ],
       "Discover all Proton services": [
         "Ontdek alle Proton-diensten"
@@ -6793,7 +6763,7 @@
         "Om uw privacy te beschermen, heeft Proton e-mailtrackers in dit bericht geblokkeerd"
       ],
       "Try ${ DRIVE_APP_NAME }": [
-        ""
+        "Probeer ${ DRIVE_APP_NAME }"
       ],
       "You can now schedule your messages to be sent later": [
         "U kunt nu uw berichten plannen om ze later te versturen"

@@ -175,9 +175,6 @@
       "Continue to ${ name }": [
         "Doorgaan naar ${ name }"
       ],
-      "Continue with": [
-        "Doorgaan met"
-      ],
       "Continue with Google": [
         "Ga verder met Google"
       ],
@@ -192,9 +189,6 @@
       ],
       "Create": [
         "Aanmaken"
-      ],
-      "Create a secure ProtonMail address instead": [
-        "Create a secure Proton Mail address instead"
       ],
       "Create account": [
         "Account aanmaken"
@@ -679,17 +673,11 @@
       "Show preview": [
         "Voorbeeld tonen"
       ],
-      "sign in": [
-        "inloggen"
-      ],
       "Sign in": [
         "Inloggen"
       ],
       "Sign out": [
         "Uitloggen"
-      ],
-      "Sign out from": [
-        "Afmelden van"
       ],
       "Sign out of all accounts": [
         "Alle accounts uitloggen"
@@ -1006,11 +994,6 @@
         "Tweejaarlijks"
       ]
     },
-    "blackfriday Action": {
-      "Get the offer": [
-        ""
-      ]
-    },
     "blackfriday Info": {
       "beta": [
         "bètaversie"
@@ -1026,14 +1009,8 @@
       ]
     },
     "blackfriday Title": {
-      "Best deal": [
-        ""
-      ],
       "Most popular": [
         "Populairste keuze"
-      ],
-      "Save more when combining Mail and VPN": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer Action": {
@@ -1044,20 +1021,9 @@
         "Pak nu deze deal"
       ]
     },
-    "blackfriday: VPNspecialoffer Badge popup": {
-      "${ vpnPlus } Special Offer 2021 discount has been applied": [
-        ""
-      ]
-    },
     "blackfriday: VPNspecialoffer Info": {
-      "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
-        ""
-      ],
       "Save ${ percentage }%": [
         "${ percentage } %"
-      ],
-      "Special offer Terms and Conditions": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer info": {
@@ -1071,15 +1037,6 @@
       ]
     },
     "blackfriday: VPNspecialoffer Title": {
-      "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
-        ""
-      ],
-      "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
-        ""
-      ],
-      "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
-        ""
-      ],
       "1 month": [
         "1 maand"
       ],
@@ -1088,18 +1045,6 @@
       ],
       "24 months": [
         "24 maanden"
-      ],
-      "Billed at ${ amount } for the first 2 years.${ supNotice }": [
-        ""
-      ],
-      "Billed at ${ amount } for the first month.${ supNotice }": [
-        ""
-      ],
-      "Billed at ${ amount } for the first year.${ supNotice }": [
-        ""
-      ],
-      "Get the special year-end offer on our Premium VPN PLUS plan": [
-        ""
       ]
     },
     "Bridge version load failed": {
@@ -1206,10 +1151,6 @@
     "Calendar limit warning": {
       "You have reached the maximum number of personal calendars you can create within your plan.": [
         "U hebt het maximale aantal persoonlijke agenda's bereikt dat u binnen uw abonnement kunt aanmaken."
-      ],
-      "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } subscribed calendar.": [
-        "U hebt het maximum van één geabonneerde agenda bereikt.",
-        "U hebt het maximum van ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } geabonneerde agenda's bereikt."
       ]
     },
     "Calendar link purpose update success message": {
@@ -2639,9 +2580,6 @@
       "A group with this name already exists": [
         "Er bestaat al een groep met deze naam"
       ],
-      "Address already associated to a user": [
-        "Adres is al geassocieerd met een anderen gebruiken"
-      ],
       "Address primary private key not found": [
         "Primaire adressleutel is niet gevonden"
       ],
@@ -3187,20 +3125,25 @@
       "Please ${ refresh } or check your connection.": [
         "${ refresh } alstublieft of controleer uw verbinding."
       ],
-      "Please ${ signIn } to update your email subscription preferences.": [
-        "${ signIn } om de voorkeuren van uw e-mailabonnement bij te werken."
-      ],
       "There was a problem connecting to Proton.": [
         "Fout bij het verbinden met Proton."
-      ],
-      "There was a problem unsubscribing you.": [
-        "Er is een probleem opgetreden bij het uitschrijven van u."
       ],
       "Too many child sessions, please clear your cookies and sign back in.": [
         "Te veel onderliggende sessies, wis uw cookies en log opnieuw in."
       ],
       "You may also ${ refresh } or try again later.": [
         "U kunt ook ${ refresh } of probeer het later opnieuw."
+      ]
+    },
+    "Error message, recovery": {
+      "Please ${ _signIn } to resend a recovery email verification request.": [
+        "${ _signIn } om herstel-e-mailadres verificatie opnieuw te verzenden."
+      ],
+      "sign in": [
+        "inloggen"
+      ],
+      "There was a problem verifying your email address.": [
+        "Er was een probleem bij het verifiëren van uw e-mailadres."
       ]
     },
     "Error notification": {
@@ -3347,9 +3290,6 @@
       ]
     },
     "file size format": {
-      "bytes": [
-        "bytes"
-      ],
       "GB": [
         "GB"
       ],
@@ -3358,20 +3298,6 @@
       ],
       "MB": [
         "MB"
-      ]
-    },
-    "file size format, long": {
-      "Bytes": [
-        "Bytes"
-      ],
-      "Gigabytes": [
-        "Gigabytes"
-      ],
-      "Kilobytes": [
-        "Kilobytes"
-      ],
-      "Megabytes": [
-        "Megabytes"
       ]
     },
     "Filter Actions": {
@@ -5033,9 +4959,6 @@
       "Queued": [
         "In de wachtrij"
       ],
-      "read our two-factor authentication guide first": [
-        ""
-      ],
       "Recovery file downloaded": [
         "Herstelbestand gedownload"
       ],
@@ -5089,9 +5012,6 @@
       ],
       "Select a service provider to start": [
         "Selecteer een dienstverlener om te beginnen"
-      ],
-      "Select Continue to ${ name } to open the app. This also creates a ${ name } account with your ${ MAIL_APP_NAME } address so you can sign in with one click in the future.": [
-        "Selecteer Doorgaan naar ${ name } om de app te openen. Dit maakt ook een ${ name }-account aan met uw ${ MAIL_APP_NAME }-adres zodat u in de toekomst met één klik kunt inloggen."
       ],
       "Select what you want to move from Google.": [
         "Selecteer wat u wil importeren vanaf Google."
@@ -6987,9 +6907,6 @@
       "Learn more": [
         "Meer informatie"
       ],
-      "Need help?": [
-        ""
-      ],
       "Not activated": [
         "Niet geactiveerd"
       ],
@@ -7016,9 +6933,6 @@
       ],
       "Terms and conditions": [
         "Algemene voorwaarden"
-      ],
-      "Trouble signing in?": [
-        ""
       ],
       "Upgrade": [
         "Upgraden"
@@ -7347,12 +7261,6 @@
       "Explore all ${ BRAND_NAME } plans": [
         "Bekijk alle ${ BRAND_NAME }-abonnementen"
       ],
-      "From ${ _price }": [
-        ""
-      ],
-      "From ${ _price2 } per user": [
-        ""
-      ],
       "From ${ price }": [
         "Vanaf ${ price }"
       ],
@@ -7634,26 +7542,6 @@
         "Teambeheer"
       ]
     },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        ""
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Anders zal de toegang tot uw account worden beperkt en wordt uw account uiteindelijk uitgeschakeld."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Om ${ MAIL_APP_NAME } te blijven gebruiken met premium functies, kiest u uw abonnement en betaalwijze."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Upgrade naar het zakelijke pakket met toegang tot alle premium Proton-services."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Upgrade naar het ultieme privacypakket met toegang tot alle premium Proton-services."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Uw proefperiode eindigt op ${ formattedTrialExpirationDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } eindigend met ${ last4 }"
@@ -7697,9 +7585,6 @@
       "Privacy and security suite for businesses, including all premium Proton services.": [
         "Privacy- en beveiligingssuite voor bedrijven, inclusief alle premium Proton-services."
       ],
-      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        ""
-      ],
       "Secure email and calendar for professionals and businesses.": [
         "Veilige e-mail en agenda voor professionals en bedrijven."
       ],
@@ -7722,6 +7607,23 @@
         "U profiteert van een kortingsprijs op uw huidige abonnement. Als u uw account downgradet, raakt u de korting kwijt en is dit abonnement niet meer beschikbaar wanneer u een nieuw abonnement wilt afsluiten."
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Anders zal de toegang tot uw account worden beperkt en wordt uw account uiteindelijk uitgeschakeld."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Om ${ MAIL_APP_NAME } te blijven gebruiken met premium functies, kiest u uw abonnement en betaalwijze."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Upgrade naar het zakelijke pakket met toegang tot alle premium Proton-services."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Upgrade naar het ultieme privacypakket met toegang tot alle premium Proton-services."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Uw proefperiode eindigt op ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } van ${ humanMaxSpace }"
@@ -7740,7 +7642,7 @@
     },
     "new_plans: signup": {
       "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }.": [
-        ""
+        "Door een ${ BRAND_NAME }-account aan te maken, gaat u akkoord met u onze ${ terms }."
       ],
       "Payment details": [
         "Betalingsgegevens"
@@ -7752,7 +7654,7 @@
         "Abonnement"
       ],
       "terms and conditions": [
-        ""
+        "algemene voorwaarden"
       ],
       "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
         "Kies eerst een weergavenaam. Dit is de naam die mensen zien als u een e-mail verzendt, ze uitnodigt voor een gebeurtenis of een bestand deelt."
@@ -7983,9 +7885,6 @@
       ],
       "Boost your storage space to ${ businessStorage } per user": [
         "Breid uw opslagruimte uit naar ${ businessStorage } per gebruiker"
-      ],
-      "Boost your storage space to ${ driveStorage } total": [
-        ""
       ],
       "Cover more ground with support for 10 custom email domains": [
         "Doe meer met ondersteuning voor 10 aangepaste e-maildomeinen"
@@ -8524,15 +8423,6 @@
       "Email address not yet verified.": [
         "E-mailadres nog niet geverifieerd."
       ],
-      "Please ${ signIn } to resend a recovery email verification request.": [
-        "${ signIn } om herstel-e-mailadres verificatie opnieuw te verzenden."
-      ],
-      "Send verification email": [
-        "Verzend verificatiemail"
-      ],
-      "There was a problem verifying your email address.": [
-        "Er was een probleem bij het verifiëren van uw e-mailadres."
-      ],
       "Verification email sent to ${ email.Value }": [
         "Verificatiemail verzonden naar ${ email.Value }"
       ],
@@ -8699,9 +8589,6 @@
       ]
     },
     "Spotlight": {
-      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        ""
-      ],
       "Get up to 18 months of ${ planName } for free": [
         "Krijg tot 18 maanden ${ planName } gratis"
       ],
@@ -8710,9 +8597,6 @@
       ],
       "No more missed appointments": [
         "Geen gemiste afspraken meer"
-      ],
-      "Try ${ DRIVE_APP_NAME }": [
-        ""
       ],
       "With email notifications, you decide which events to be notified about and when.": [
         "Met e-mailmeldingen, beslist u zelf over welke afspraken u een melding ontvangt en wanneer."
@@ -10167,15 +10051,6 @@
       "Upgrade to ${ planName } to connect up to ${ n } device to the VPN at once": [
         "Upgrade naar ${ planName } om tot ${ n } apparaat tegelijkertijd met VPN te verbinden",
         "Upgrade naar ${ planName } om tot ${ n } apparaten tegelijkertijd met VPN te verbinden"
-      ]
-    },
-    "Upgrade notice": {
-      "Upgrade to a paid plan to create up to ${ MAX_CALENDARS_PER_USER } calendar, allowing you to make calendars for work, to share with friends, and just for yourself.": [
-        "Upgrade naar een betaald abonnement om tot ${ MAX_CALENDARS_PER_USER } agenda's te maken, laat u toe om agenda's te maken voor het werk, om te delen met vrienden en alleen voor uzelf.",
-        "Upgrade naar een betaald abonnement om maximaal ${ MAX_CALENDARS_PER_USER } agenda's aan te maken, laat u toe om agenda's te maken voor het werk, om te delen met vrienden en alleen voor uzelf."
-      ],
-      "Upgrade to a paid plan to share your personal calendar via link with anyone.": [
-        "Upgrade naar een betaald plan om uw persoonlijke agenda via een link met iedereen te delen."
       ]
     },
     "User role": {

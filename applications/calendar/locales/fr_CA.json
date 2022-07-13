@@ -299,7 +299,7 @@
         "OK"
       ],
       "Open in a new tab": [
-        ""
+        "Ouvrir dans un nouvel onglet"
       ],
       "Open navigation": [
         "Ouvrir la navigation"
@@ -371,7 +371,7 @@
         "Envoyer"
       ],
       "Send feedback": [
-        ""
+        "Envoyer un avis"
       ],
       "Set recovery phrase": [
         "Créer une phrase de récupération"
@@ -405,9 +405,6 @@
       ],
       "Skip": [
         "Ignorer"
-      ],
-      "Start import": [
-        ""
       ],
       "Start setup": [
         "Débuter la configuration"
@@ -610,34 +607,17 @@
         "Si vous rencontrez des problèmes, vous pouvez toujours désactiver l'accès à la version bêta."
       ]
     },
-    "blackfriday Action": {
-      "Get the offer": [
-        ""
-      ]
-    },
     "blackfriday Info": {
       "beta": [
         "bêta"
       ],
       "Includes": [
         "Inclut"
-      ],
-      "Standard price: ${ regularPrice }": [
-        ""
-      ],
-      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
-        ""
       ]
     },
     "blackfriday Title": {
-      "Best deal": [
-        ""
-      ],
       "Most popular": [
         "La plus populaire"
-      ],
-      "Save more when combining Mail and VPN": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer Action": {
@@ -646,17 +626,6 @@
       ],
       "Get the deal now": [
         "Obtenez l'offre maintenant"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Info": {
-      "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
-        ""
-      ],
-      "Save ${ percentage }%": [
-        ""
-      ],
-      "Special offer Terms and Conditions": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer info": {
@@ -670,15 +639,6 @@
       ]
     },
     "blackfriday: VPNspecialoffer Title": {
-      "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
-        ""
-      ],
-      "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
-        ""
-      ],
-      "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
-        ""
-      ],
       "1 month": [
         "1 mois"
       ],
@@ -687,18 +647,6 @@
       ],
       "24 months": [
         "24 mois"
-      ],
-      "Billed at ${ amount } for the first 2 years.${ supNotice }": [
-        ""
-      ],
-      "Billed at ${ amount } for the first month.${ supNotice }": [
-        ""
-      ],
-      "Billed at ${ amount } for the first year.${ supNotice }": [
-        ""
-      ],
-      "Get the special year-end offer on our Premium VPN PLUS plan": [
-        ""
       ]
     },
     "Bug category": {
@@ -884,64 +832,64 @@
     },
     "color": {
       "carrot": [
-        ""
+        "carotte"
       ],
       "cerise": [
-        ""
+        "rouge cerise"
       ],
       "cobalt": [
-        ""
+        "cobalt"
       ],
       "copper": [
-        ""
+        "cuivre"
       ],
       "enzian": [
-        ""
+        "gentiane"
       ],
       "fern": [
-        ""
+        "fougère"
       ],
       "forest": [
-        ""
+        "forêt"
       ],
       "ocean": [
-        ""
+        "océan"
       ],
       "olive": [
-        ""
+        "olive"
       ],
       "pacific": [
-        ""
+        "pacifique"
       ],
       "pickle": [
-        ""
+        "cornichon"
       ],
       "pine": [
-        ""
+        "pin"
       ],
       "pink": [
-        ""
+        "rose"
       ],
       "plum": [
-        ""
+        "prune"
       ],
       "purple": [
-        ""
+        "violet"
       ],
       "reef": [
-        ""
+        "récif"
       ],
       "sahara": [
-        ""
+        "sahara"
       ],
       "slateblue": [
-        ""
+        "bleu ardoise"
       ],
       "soil": [
-        ""
+        "terre"
       ],
       "strawberry": [
-        ""
+        "fraise"
       ]
     },
     "Confirm modal title": {
@@ -1913,7 +1861,7 @@
     },
     "Don't ask to update timezone checkbox label": {
       "Don't ask again": [
-        ""
+        "Ne plus demander"
       ]
     },
     "Dropdown action icon tooltip": {
@@ -2200,7 +2148,7 @@
         "La clé principale n'est pas valide pour l'envoi"
       ],
       "Primary key retrieved for internal user is not valid for sending": [
-        ""
+        "La clé principale récupérée pour l’utilisateur interne n'est pas valide pour l’envoi"
       ],
       "Request timed out": [
         "La requête a expiré"
@@ -2265,7 +2213,7 @@
       "This label name is not available. Please choose a different name.": [
         "Ce nom de label n'est pas disponible. Veuillez en choisir un autre."
       ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser": [
+      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
         "Il est possible que ce message contienne des liens URL qui pourraient ne pas être ouverts correctement par votre navigateur actuel"
       ],
       "Trusted keys are not valid for sending": [
@@ -2590,11 +2538,12 @@
     },
     "Feedback Modal Title": {
       "Your feedback": [
-        ""
+        "Votre retour d'expérience"
       ]
     },
     "file size format": {
-      "bytes": [
+      "byte": [
+        "octet",
         "octets"
       ],
       "GB": [
@@ -2608,17 +2557,21 @@
       ]
     },
     "file size format, long": {
-      "Bytes": [
+      "Byte": [
+        "Octet",
         "Octets"
       ],
-      "Gigabytes": [
-        "Giga-octets"
+      "Gigabyte": [
+        "Gigaoctet",
+        "Gigaoctets"
       ],
-      "Kilobytes": [
-        "Kilo-octets"
+      "Kilobyte": [
+        "Kilooctet",
+        "Kilooctets"
       ],
-      "Megabytes": [
-        "Mega-octets"
+      "Megabyte": [
+        "Megaoctet",
+        "Megaoctets"
       ]
     },
     "Filter notification": {
@@ -2816,15 +2769,15 @@
         "${ calendarsToBeMergedCount } calendriers fusionnés"
       ],
       "${ contactCount } contact contains multiple email addresses.": [
-        "",
-        ""
+        "Le contact ${ contactCount } dispose de plusieurs adresses courriel.",
+        "Les contacts ${ contactCount } disposent de plusieurs adresses courriel."
       ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } membre",
         "${ contactEmailsLength } membres"
       ],
       "${ contactName } contains multiple email addresses.": [
-        ""
+        "${ contactName } dispose de plusieurs adresses courriel."
       ],
       "${ contactsCount } contact found": [
         "${ contactsCount } contact trouvé",
@@ -3112,11 +3065,11 @@
       "Other options": [
         "Autres options"
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
-        "PGP/Inline is only compatible with Plain Text format. Please note that Proton Mail always signs encrypted messages."
+      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        "PGP/Inline est uniquement compatible avec le format texte brut. Veuillez noter que ${ MAIL_APP_NAME } signe toujours les messages chiffrés."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
-        "PGP/MIME automatically sends the message using the current composer mode. Please note that Proton Mail always signs encrypted messages."
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
+        "PGP/MIME envoie automatiquement le message en utilisant le mode actuel du composeur. Veuillez noter que ${ MAIL_APP_NAME } signe toujours les messages chiffrés."
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Veuillez noter que les adresses assignées à ce groupe ne seront PAS supprimées."
@@ -3131,11 +3084,11 @@
         "Veuillez sélectionner les dossiers que vous souhaitez importer:"
       ],
       "Please select which email address or addresses to add to ${ groupCount } group.": [
-        "",
-        ""
+        "Sélectionnez l'adresse ou les adresses électroniques à ajouter à ${ groupCount } groupe.",
+        "Sélectionnez l'adresse ou les adresses électroniques à ajouter à ${ groupCount } groupes."
       ],
       "Please select which email address or addresses to add to ${ groupName }.": [
-        ""
+        "Sélectionnez l'adresse ou les adresses électroniques à ajouter à ${ groupName }."
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Veuillez patienter pendant que nous recherchons des contacts qui peuvent être signés une nouvelle fois avec la clé de chiffrement principale."
@@ -3455,10 +3408,10 @@
         "Enregistrer automatiquement les contacts"
       ],
       "Awful": [
-        ""
+        "Affreuse"
       ],
       "Bad": [
-        ""
+        "Mauvaise"
       ],
       "Browser": [
         "Navigateur"
@@ -3557,13 +3510,13 @@
         "De: ${ importedEmail }"
       ],
       "Good": [
-        ""
+        "Bonne"
       ],
       "Hide password": [
         "Masquer le mot de passe"
       ],
       "How would you describe your experience with the new Proton?": [
-        ""
+        "Comment décririez-vous votre expérience avec la nouvelle version de Proton?"
       ],
       "I understand the risk": [
         "Je comprends le risque"
@@ -3617,7 +3570,7 @@
         "Notifications"
       ],
       "OK": [
-        ""
+        "OK"
       ],
       "Operating system": [
         "Système d'exploitation"
@@ -3702,7 +3655,7 @@
         "Que s'est-il passé?"
       ],
       "Wonderful": [
-        ""
+        "Merveilleuse"
       ]
     },
     "Label for contact group color": {
@@ -3987,7 +3940,7 @@
     },
     "new_plans: action": {
       "Switch or add account": [
-        ""
+        "Basculez vers ou ajoutez un compte"
       ]
     },
     "new_plans: info": {
@@ -3997,17 +3950,17 @@
     },
     "new_plans: label": {
       "Tell us about your experience. (Optional)": [
-        ""
+        "Parlez-nous de votre expérience (optionnel)"
       ]
     },
     "new_plans: placeholder": {
       "Feedback": [
-        ""
+        "Votre avis"
       ]
     },
     "new_plans: title": {
       "Updated Proton, unified protection": [
-        ""
+        "Nouvelle version, protection unifiée"
       ]
     },
     "Notification": {
@@ -4432,7 +4385,7 @@
     },
     "Spotlight": {
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        ""
+        "${ DRIVE_APP_NAME } n'est plus en version beta. Offrez à vos fichiers la même sécurité que celle dont bénéficient vos courriels."
       ],
       "Get up to 18 months of ${ planName } for free": [
         "Obtenez jusqu'à 18 mois de ${ planName } gratuitement"
@@ -4444,7 +4397,7 @@
         "Plus de rendez-vous manqués"
       ],
       "Try ${ DRIVE_APP_NAME }": [
-        ""
+        "Essayez ${ DRIVE_APP_NAME }"
       ],
       "With email notifications, you decide which events to be notified about and when.": [
         "Avec les notifications par courriel, vous décidez pour quels événements vous serez notifié et quand."
@@ -5133,7 +5086,7 @@
     },
     "View event button tooltip": {
       "Open in a new tab": [
-        ""
+        "Ouvrir dans un nouvel onglet"
       ]
     },
     "Warning": {

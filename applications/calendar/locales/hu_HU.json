@@ -47,9 +47,6 @@
       "Apply": [
         "Alkalmazás"
       ],
-      "Attach screenshot(s)": [
-        ""
-      ],
       "Back": [
         "Vissza"
       ],
@@ -116,9 +113,6 @@
       "Copy email to clipboard": [
         "E-mail másolása a vágólapra"
       ],
-      "Create a new contact group": [
-        ""
-      ],
       "Create calendar": [
         "Naptár létrehozása"
       ],
@@ -148,9 +142,6 @@
       "Deselect all": [
         "Kijelölés törlése"
       ],
-      "Didn't receive the code?": [
-        ""
-      ],
       "Discard": [
         "Elvetés"
       ],
@@ -172,9 +163,6 @@
       "Edit phone number": [
         "Telefonszám módosítása"
       ],
-      "Edit sign-in details": [
-        ""
-      ],
       "Email settings": [
         "E-mail beállítások"
       ],
@@ -183,9 +171,6 @@
       ],
       "Export": [
         "Exportálás"
-      ],
-      "Export contact group": [
-        ""
       ],
       "Export contacts": [
         "Névjegyek exportálása"
@@ -199,17 +184,11 @@
       "Get verification code": [
         "Ellenőrző kód küldése"
       ],
-      "Go to label": [
-        ""
-      ],
       "Go to panel ${ index }": [
         "Váltás: ${ index }"
       ],
       "Go to settings": [
         "Ugrás a Beállításokhoz"
-      ],
-      "Got it": [
-        ""
       ],
       "Hide advanced PGP settings": [
         "Haladó PGP beállítások elrejtése"
@@ -298,9 +277,6 @@
       "OK": [
         "OK"
       ],
-      "Open in a new tab": [
-        ""
-      ],
       "Open navigation": [
         "Navigáció megnyitása"
       ],
@@ -327,9 +303,6 @@
       ],
       "Recover data": [
         "Adatok helyreállítása"
-      ],
-      "Refer a friend": [
-        ""
       ],
       "refresh the page": [
         "az oldal frissítése"
@@ -370,9 +343,6 @@
       "Send": [
         "Küldés"
       ],
-      "Send feedback": [
-        ""
-      ],
       "Set recovery phrase": [
         "Helyreállító jelmondat beállítása"
       ],
@@ -405,9 +375,6 @@
       ],
       "Skip": [
         "Kihagyás"
-      ],
-      "Start import": [
-        ""
       ],
       "Start setup": [
         "Beállítás megkezdése"
@@ -462,12 +429,6 @@
       ],
       "Verify": [
         "Ellenőrzés"
-      ],
-      "Verify account": [
-        ""
-      ],
-      "Verify email": [
-        ""
       ],
       "View": [
         "Megtekintés"
@@ -603,16 +564,8 @@
       ]
     },
     "Beta access description": {
-      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        ""
-      ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Ha problémába ütközik, mindig lesz lehetősége letiltani a Béta hozzáférést."
-      ]
-    },
-    "blackfriday Action": {
-      "Get the offer": [
-        ""
       ]
     },
     "blackfriday Info": {
@@ -624,20 +577,11 @@
       ],
       "Standard price: ${ regularPrice }": [
         "Normál ár: ${ regularPrice }"
-      ],
-      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
-        ""
       ]
     },
     "blackfriday Title": {
-      "Best deal": [
-        ""
-      ],
       "Most popular": [
         "Legnépszerűbb"
-      ],
-      "Save more when combining Mail and VPN": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer Action": {
@@ -649,14 +593,8 @@
       ]
     },
     "blackfriday: VPNspecialoffer Info": {
-      "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
-        ""
-      ],
       "Save ${ percentage }%": [
         "${ percentage } %"
-      ],
-      "Special offer Terms and Conditions": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer info": {
@@ -670,15 +608,6 @@
       ]
     },
     "blackfriday: VPNspecialoffer Title": {
-      "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
-        ""
-      ],
-      "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
-        ""
-      ],
-      "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
-        ""
-      ],
       "1 month": [
         "1 hónap"
       ],
@@ -687,18 +616,6 @@
       ],
       "24 months": [
         "24 hónap"
-      ],
-      "Billed at ${ amount } for the first 2 years.${ supNotice }": [
-        ""
-      ],
-      "Billed at ${ amount } for the first month.${ supNotice }": [
-        ""
-      ],
-      "Billed at ${ amount } for the first year.${ supNotice }": [
-        ""
-      ],
-      "Get the special year-end offer on our Premium VPN PLUS plan": [
-        ""
       ]
     },
     "Bug category": {
@@ -770,11 +687,6 @@
       ],
       "Website access problem": [
         "Probléma a weboldal elérésével"
-      ]
-    },
-    "Button": {
-      "Continue using ${ MAIL_APP_NAME }.": [
-        ""
       ]
     },
     "Calendar invite buttons label": {
@@ -864,11 +776,6 @@
         "Hét"
       ]
     },
-    "Calendar view selector": {
-      "Change time range to": [
-        ""
-      ]
-    },
     "Collapsible tooltip": {
       "Close": [
         "Bezárás"
@@ -880,68 +787,6 @@
     "colon": {
       ": ": [
         ": "
-      ]
-    },
-    "color": {
-      "carrot": [
-        ""
-      ],
-      "cerise": [
-        ""
-      ],
-      "cobalt": [
-        ""
-      ],
-      "copper": [
-        ""
-      ],
-      "enzian": [
-        ""
-      ],
-      "fern": [
-        ""
-      ],
-      "forest": [
-        ""
-      ],
-      "ocean": [
-        ""
-      ],
-      "olive": [
-        ""
-      ],
-      "pacific": [
-        ""
-      ],
-      "pickle": [
-        ""
-      ],
-      "pine": [
-        ""
-      ],
-      "pink": [
-        ""
-      ],
-      "plum": [
-        ""
-      ],
-      "purple": [
-        ""
-      ],
-      "reef": [
-        ""
-      ],
-      "sahara": [
-        ""
-      ],
-      "slateblue": [
-        ""
-      ],
-      "soil": [
-        ""
-      ],
-      "strawberry": [
-        ""
       ]
     },
     "Confirm modal title": {
@@ -1032,125 +877,8 @@
       ]
     },
     "Country name": {
-      "Abkhazia": [
-        ""
-      ],
-      "Afghanistan": [
-        ""
-      ],
-      "Albania": [
-        ""
-      ],
       "Algeria": [
         "Algéria"
-      ],
-      "American Samoa": [
-        ""
-      ],
-      "Andorra": [
-        ""
-      ],
-      "Angola": [
-        ""
-      ],
-      "Anguilla": [
-        ""
-      ],
-      "Antarctica": [
-        ""
-      ],
-      "Antigua and Barbuda": [
-        ""
-      ],
-      "Argentina": [
-        ""
-      ],
-      "Armenia": [
-        ""
-      ],
-      "Aruba": [
-        ""
-      ],
-      "Ascension Island": [
-        ""
-      ],
-      "Australia": [
-        ""
-      ],
-      "Austria": [
-        ""
-      ],
-      "Azerbaijan": [
-        ""
-      ],
-      "Bahamas": [
-        ""
-      ],
-      "Bahrain": [
-        ""
-      ],
-      "Bangladesh": [
-        ""
-      ],
-      "Barbados": [
-        ""
-      ],
-      "Belarus": [
-        ""
-      ],
-      "Belgium": [
-        ""
-      ],
-      "Belize": [
-        ""
-      ],
-      "Benin": [
-        ""
-      ],
-      "Bermuda": [
-        ""
-      ],
-      "Bhutan": [
-        ""
-      ],
-      "Bolivia": [
-        ""
-      ],
-      "Bonaire, Sint Eustatius and Saba": [
-        ""
-      ],
-      "Bosnia and Herzegovina": [
-        ""
-      ],
-      "Botswana": [
-        ""
-      ],
-      "Bouvet Island": [
-        ""
-      ],
-      "Brazil": [
-        ""
-      ],
-      "British Indian Ocean Territory": [
-        ""
-      ],
-      "Brunei Darussalam": [
-        ""
-      ],
-      "Bulgaria": [
-        ""
-      ],
-      "Burkina Faso": [
-        ""
-      ],
-      "Burma": [
-        ""
-      ],
-      "Burundi": [
-        ""
-      ],
-      "Cambodia": [
-        ""
       ],
       "Cameroon": [
         "Kamerun"
@@ -1161,14 +889,8 @@
       "Cape Verde": [
         "Zöld-foki Köztársaság"
       ],
-      "Cayman Islands": [
-        ""
-      ],
       "Central African Republic": [
         "Közép-afrikai Köztársaság"
-      ],
-      "Chad": [
-        ""
       ],
       "Chile": [
         "Chile"
@@ -1185,9 +907,6 @@
       "Colombia": [
         "Kolumbia"
       ],
-      "Comoros": [
-        ""
-      ],
       "Congo": [
         "Kongó"
       ],
@@ -1202,9 +921,6 @@
       ],
       "Cote d'Ivoire\"": [
         "Elefántcsontpart\""
-      ],
-      "Croatia": [
-        ""
       ],
       "Cuba": [
         "Kuba"
@@ -1236,12 +952,6 @@
       "Egypt": [
         "Egyiptom"
       ],
-      "El Salvador": [
-        ""
-      ],
-      "Equatorial Guinea": [
-        ""
-      ],
       "Eritrea": [
         "Eritrea"
       ],
@@ -1251,551 +961,23 @@
       "Ethiopia": [
         "Etiópia"
       ],
-      "Falkland Islands": [
-        ""
-      ],
-      "Faroe Islands": [
-        ""
-      ],
-      "Federated States of Micronesia": [
-        ""
-      ],
       "Fiji": [
         "Fidzsi-szigetek"
       ],
       "Finland": [
         "Finnország"
       ],
-      "France": [
-        ""
-      ],
-      "French Guiana": [
-        ""
-      ],
-      "French Polynesia": [
-        ""
-      ],
-      "French Southern Territories": [
-        ""
-      ],
-      "Gabon": [
-        ""
-      ],
-      "Gambia": [
-        ""
-      ],
-      "Georgia": [
-        ""
-      ],
       "Germany": [
         "Németország"
-      ],
-      "Ghana": [
-        ""
-      ],
-      "Gibraltar": [
-        ""
-      ],
-      "Greece": [
-        ""
-      ],
-      "Greenland": [
-        ""
-      ],
-      "Grenada": [
-        ""
-      ],
-      "Guadeloupe": [
-        ""
-      ],
-      "Guam": [
-        ""
-      ],
-      "Guatemala": [
-        ""
-      ],
-      "Guernsey": [
-        ""
-      ],
-      "Guinea": [
-        ""
-      ],
-      "Guinea-Bissau": [
-        ""
-      ],
-      "Guyana": [
-        ""
-      ],
-      "Haiti": [
-        ""
-      ],
-      "Heard Island and McDonald Islands": [
-        ""
-      ],
-      "Holy See (Vatican City State)": [
-        ""
-      ],
-      "Honduras": [
-        ""
-      ],
-      "Hong Kong": [
-        ""
-      ],
-      "Hungary": [
-        ""
-      ],
-      "Iceland": [
-        ""
-      ],
-      "India": [
-        ""
-      ],
-      "Indonesia": [
-        ""
-      ],
-      "International": [
-        ""
-      ],
-      "Iran": [
-        ""
-      ],
-      "Iraq": [
-        ""
-      ],
-      "Ireland": [
-        ""
-      ],
-      "Isle of Man": [
-        ""
-      ],
-      "Israel": [
-        ""
-      ],
-      "Italy": [
-        ""
-      ],
-      "Jamaica": [
-        ""
-      ],
-      "Japan": [
-        ""
-      ],
-      "Jersey": [
-        ""
-      ],
-      "Jordan": [
-        ""
-      ],
-      "Kazakhstan": [
-        ""
-      ],
-      "Kenya": [
-        ""
-      ],
-      "Kiribati": [
-        ""
-      ],
-      "Kosovo": [
-        ""
-      ],
-      "Kuwait": [
-        ""
-      ],
-      "Kyrgyzstan": [
-        ""
-      ],
-      "Laos": [
-        ""
-      ],
-      "Latvia": [
-        ""
-      ],
-      "Lebanon": [
-        ""
-      ],
-      "Lesotho": [
-        ""
-      ],
-      "Liberia": [
-        ""
-      ],
-      "Libya": [
-        ""
-      ],
-      "Liechtenstein": [
-        ""
-      ],
-      "Lithuania": [
-        ""
-      ],
-      "Luxembourg": [
-        ""
-      ],
-      "Macao": [
-        ""
-      ],
-      "Madagascar": [
-        ""
-      ],
-      "Malawi": [
-        ""
-      ],
-      "Malaysia": [
-        ""
-      ],
-      "Maldives": [
-        ""
-      ],
-      "Mali": [
-        ""
-      ],
-      "Malta": [
-        ""
-      ],
-      "Marshall Islands": [
-        ""
-      ],
-      "Martinique": [
-        ""
-      ],
-      "Mauritania": [
-        ""
-      ],
-      "Mauritius": [
-        ""
-      ],
-      "Mayotte": [
-        ""
-      ],
-      "Mexico": [
-        ""
-      ],
-      "Moldova": [
-        ""
-      ],
-      "Monaco": [
-        ""
-      ],
-      "Mongolia": [
-        ""
-      ],
-      "Montenegro": [
-        ""
-      ],
-      "Montserrat": [
-        ""
-      ],
-      "Morocco": [
-        ""
-      ],
-      "Mozambique": [
-        ""
-      ],
-      "Namibia": [
-        ""
-      ],
-      "Nauru": [
-        ""
-      ],
-      "Nepal": [
-        ""
-      ],
-      "Netherlands": [
-        ""
-      ],
-      "New Caledonia": [
-        ""
-      ],
-      "New Zealand": [
-        ""
-      ],
-      "Nicaragua": [
-        ""
-      ],
-      "Niger": [
-        ""
-      ],
-      "Nigeria": [
-        ""
-      ],
-      "Niue": [
-        ""
-      ],
-      "Norfolk Island": [
-        ""
-      ],
-      "North Korea": [
-        ""
-      ],
-      "North Macedonia": [
-        ""
-      ],
-      "Northern Mariana Islands": [
-        ""
-      ],
-      "Norway": [
-        ""
-      ],
-      "Oman": [
-        ""
-      ],
-      "Pakistan": [
-        ""
-      ],
-      "Palau": [
-        ""
-      ],
-      "Palestine": [
-        ""
-      ],
-      "Panama": [
-        ""
-      ],
-      "Papua New Guinea": [
-        ""
-      ],
-      "Paraguay": [
-        ""
-      ],
-      "Peru": [
-        ""
-      ],
-      "Philippines": [
-        ""
-      ],
-      "Pitcairn": [
-        ""
-      ],
-      "Poland": [
-        ""
-      ],
-      "Portugal": [
-        ""
-      ],
-      "Puerto Rico": [
-        ""
-      ],
-      "Qatar": [
-        ""
-      ],
-      "Reunion": [
-        ""
-      ],
-      "Romania": [
-        ""
-      ],
-      "Russia": [
-        ""
-      ],
-      "Rwanda": [
-        ""
-      ],
-      "Saint Barthélemy": [
-        ""
-      ],
-      "Saint Helena": [
-        ""
-      ],
-      "Saint Kitts and Nevis": [
-        ""
-      ],
-      "Saint Lucia": [
-        ""
-      ],
-      "Saint Martin (French Part)": [
-        ""
-      ],
-      "Saint Pierre and Miquelon": [
-        ""
-      ],
-      "Saint Vincent and the Grenadines": [
-        ""
-      ],
-      "Samoa": [
-        ""
-      ],
-      "San Marino": [
-        ""
-      ],
-      "Sao Tome and Principe": [
-        ""
-      ],
-      "Saudi Arabia": [
-        ""
-      ],
-      "Senegal": [
-        ""
-      ],
-      "Serbia": [
-        ""
-      ],
-      "Seychelles": [
-        ""
-      ],
-      "Sierra Leone": [
-        ""
-      ],
-      "Singapore": [
-        ""
-      ],
-      "Sint Maarten": [
-        ""
-      ],
-      "Slovakia": [
-        ""
-      ],
-      "Slovenia": [
-        ""
-      ],
-      "Solomon Islands": [
-        ""
-      ],
-      "Somalia": [
-        ""
-      ],
-      "South Africa": [
-        ""
-      ],
-      "South Georgia and the South Sandwich Islands": [
-        ""
-      ],
-      "South Korea": [
-        ""
-      ],
-      "South Ossetia": [
-        ""
-      ],
-      "South Sudan": [
-        ""
       ],
       "Spain": [
         "Spanyolország"
       ],
-      "Sri Lanka": [
-        ""
-      ],
-      "Sudan": [
-        ""
-      ],
-      "Suriname": [
-        ""
-      ],
-      "Svalbard and Jan Mayen": [
-        ""
-      ],
-      "Swaziland": [
-        ""
-      ],
-      "Sweden": [
-        ""
-      ],
       "Switzerland": [
         "Svájc"
       ],
-      "Syria": [
-        ""
-      ],
-      "Taiwan": [
-        ""
-      ],
-      "Tajikistan": [
-        ""
-      ],
-      "Tanzania": [
-        ""
-      ],
-      "Thailand": [
-        ""
-      ],
-      "Timor-Leste": [
-        ""
-      ],
-      "Togo": [
-        ""
-      ],
-      "Tokelau": [
-        ""
-      ],
-      "Tonga": [
-        ""
-      ],
-      "Trinidad and Tobago": [
-        ""
-      ],
-      "Tristan da Cunha": [
-        ""
-      ],
-      "Tunisia": [
-        ""
-      ],
-      "Turkey": [
-        ""
-      ],
-      "Turkmenistan": [
-        ""
-      ],
-      "Turks and Caicos Islands": [
-        ""
-      ],
-      "Tuvalu": [
-        ""
-      ],
-      "Uganda": [
-        ""
-      ],
-      "Ukraine": [
-        ""
-      ],
-      "United Arab Emirates": [
-        ""
-      ],
-      "United Kingdom": [
-        ""
-      ],
-      "United States": [
-        ""
-      ],
-      "United States Minor Outlying Islands": [
-        ""
-      ],
-      "Uruguay": [
-        ""
-      ],
-      "Uzbekistan": [
-        ""
-      ],
-      "Vanuatu": [
-        ""
-      ],
-      "Venezuela": [
-        ""
-      ],
-      "Vietnam": [
-        ""
-      ],
-      "Virgin Islands, British": [
-        ""
-      ],
-      "Virgin Islands, U.S.": [
-        ""
-      ],
-      "Wallis and Futuna": [
-        ""
-      ],
       "Western Sahara": [
         "Nyugat-Szahara"
-      ],
-      "Yemen": [
-        ""
-      ],
-      "Zambia": [
-        ""
-      ],
-      "Zimbabwe": [
-        ""
-      ],
-      "Åland Islands": [
-        ""
       ]
     },
     "Custom frequency option": {
@@ -1909,16 +1091,6 @@
     "Disabled calendar tooltip": {
       "The event belongs to a disabled calendar.": [
         "Ez az esemény egy kikapcsolt naptárhoz tartozik."
-      ]
-    },
-    "Don't ask to update timezone checkbox label": {
-      "Don't ask again": [
-        ""
-      ]
-    },
-    "Dropdown action icon tooltip": {
-      "Add calendar": [
-        ""
       ]
     },
     "Duration": {
@@ -2099,9 +1271,6 @@
       "Failed to get original occurrence in series": [
         "Az eredeti előfordulás nem található a szériában"
       ],
-      "Folder name cannot be empty.": [
-        ""
-      ],
       "Image upload failed": [
         "Képfeltöltés sikertelen"
       ],
@@ -2137,9 +1306,6 @@
       ],
       "It is only possible to move events between ${ minDateString } - ${ maxDateString }": [
         "Az esemény csak a következő két dátum között mozgatható:  ${ minDateString } - ${ maxDateString }"
-      ],
-      "Label name cannot be empty.": [
-        ""
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "Fűzzön össze legalább ${ calendarToFixCount } naptárat meglévő Proton naptárakkal",
@@ -2196,12 +1362,6 @@
       "Primary address key is not decrypted.": [
         "Az elsődleges cím kulcsa nincs visszafejtve."
       ],
-      "Primary key is not valid for sending": [
-        ""
-      ],
-      "Primary key retrieved for internal user is not valid for sending": [
-        ""
-      ],
       "Request timed out": [
         "A kérés túllépte az időkorlátot"
       ],
@@ -2232,14 +1392,8 @@
       "Start time must be before end time": [
         "A kezdés idejének meg kell előznie a befejezés idejét"
       ],
-      "The folder name is invalid. Please choose a different name.": [
-        ""
-      ],
       "The folder name is too long. Please choose a different name.": [
         "Ez a mappanév túl hosszú. Adjon meg egy másik nevet."
-      ],
-      "The label name is invalid. Please choose a different name.": [
-        ""
       ],
       "The label name is too long. Please choose a different name.": [
         "Ez a címkenév túl hosszú. Adjon meg egy másik nevet."
@@ -2259,13 +1413,7 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Legalább ${ minimumLength } karakter szükséges ebben a mezőben."
       ],
-      "This folder name is not available. Please choose a different name.": [
-        ""
-      ],
-      "This label name is not available. Please choose a different name.": [
-        ""
-      ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser": [
+      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
         "Ez az üzenet olyan linkeket tartalmazhat, amelyeket a böngészője nem tud megfelelően megnyitni"
       ],
       "Trusted keys are not valid for sending": [
@@ -2499,11 +1647,6 @@
         "Esemény törlése"
       ]
     },
-    "Event duplicate button tooltip": {
-      "Duplicate event": [
-        ""
-      ]
-    },
     "Event edit button tooltip": {
       "Edit event": [
         "Esemény szerkesztése"
@@ -2576,9 +1719,6 @@
       "no": [
         "nem"
       ],
-      "pending": [
-        ""
-      ],
       "yes": [
         "igen"
       ]
@@ -2588,15 +1728,7 @@
         "(névtelen)"
       ]
     },
-    "Feedback Modal Title": {
-      "Your feedback": [
-        ""
-      ]
-    },
     "file size format": {
-      "bytes": [
-        "bájt"
-      ],
       "GB": [
         "GB"
       ],
@@ -2605,20 +1737,6 @@
       ],
       "MB": [
         "MB"
-      ]
-    },
-    "file size format, long": {
-      "Bytes": [
-        "Bájt"
-      ],
-      "Gigabytes": [
-        "Gigabájt"
-      ],
-      "Kilobytes": [
-        "Kilobájt"
-      ],
-      "Megabytes": [
-        "Megabájt"
       ]
     },
     "Filter notification": {
@@ -2815,16 +1933,9 @@
         "${ calendarsToBeMergedCount } egyesített naptár",
         "${ calendarsToBeMergedCount } egyesített naptár"
       ],
-      "${ contactCount } contact contains multiple email addresses.": [
-        "",
-        ""
-      ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } tag",
         "${ contactEmailsLength } tagok"
-      ],
-      "${ contactName } contains multiple email addresses.": [
-        ""
       ],
       "${ contactsCount } contact found": [
         "${ contactsCount } névjegy található",
@@ -2864,9 +1975,6 @@
       "(${ memberCount } member)": [
         "(${ memberCount } tag)",
         "(${ memberCount } tagok)"
-      ],
-      "10 email addresses": [
-        ""
       ],
       "A cancellation email will be sent to removed participants.": [
         "Egy lemondó értesítés kerül elküldésre az eltávolított résztvevőknek."
@@ -3103,20 +2211,11 @@
       "Occurrences previously updated by the organizer will be kept.": [
         "A szervező által korábban frissített alkalmak megmaradnak."
       ],
-      "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
-        ""
-      ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Csak akkor változtassa meg ezeket a beállításokat, ha PGP-t használ a nem ${ BRAND_NAME } címzettekhez."
       ],
       "Other options": [
         "Más opciók"
-      ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
-        "PGP/Inline is only compatible with Plain Text format. Please note that Proton Mail always signs encrypted messages."
-      ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
-        "PGP/MIME automatically sends the message using the current composer mode. Please note that Proton Mail always signs encrypted messages."
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "A csoporthoz rendelt címek NEM kerülnek törlésre."
@@ -3129,13 +2228,6 @@
       ],
       "Please select the folders you would like to import:": [
         "Válassza ki az importálásra kerülő mappákat:"
-      ],
-      "Please select which email address or addresses to add to ${ groupCount } group.": [
-        "",
-        ""
-      ],
-      "Please select which email address or addresses to add to ${ groupName }.": [
-        ""
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Folyamatban van az olyan névjegyek keresése, amelyeket újra aláírhat az elsődleges titkosítás kulccsal."
@@ -3275,9 +2367,6 @@
       "We'll send a new verification code to ${ strong }": [
         "Küldünk egy új ellenőrzési kódot ide: ${ strong }"
       ],
-      "We're moving! Join us at our new site: ${ link }.": [
-        ""
-      ],
       "Week": [
         "Hét"
       ],
@@ -3410,14 +2499,8 @@
       ]
     },
     "Key badge": {
-      "Compromised": [
-        ""
-      ],
       "Expired": [
         "Lejárt"
-      ],
-      "Obsolete": [
-        ""
       ],
       "Primary": [
         "Elsődleges"
@@ -3433,9 +2516,6 @@
       ]
     },
     "Label": {
-      "(Temporarily unavailable. Please check back later.)": [
-        ""
-      ],
       "Add email address": [
         "E-mail cím hozzáadása"
       ],
@@ -3448,17 +2528,8 @@
       "All day": [
         "Egész nap"
       ],
-      "Attach screenshot(s)": [
-        ""
-      ],
       "Automatically save contacts": [
         "Névjegyek automatikus létrehozása"
-      ],
-      "Awful": [
-        ""
-      ],
-      "Bad": [
-        ""
       ],
       "Browser": [
         "Böngésző"
@@ -3478,9 +2549,6 @@
       "City": [
         "Település"
       ],
-      "Code is 6 digits without spaces": [
-        ""
-      ],
       "Color": [
         "Szín"
       ],
@@ -3495,21 +2563,6 @@
       ],
       "Date and time": [
         "Dátum és idő"
-      ],
-      "Default email address": [
-        ""
-      ],
-      "Default event duration": [
-        ""
-      ],
-      "Default full day notifications": [
-        ""
-      ],
-      "Default notifications": [
-        ""
-      ],
-      "Delete": [
-        ""
       ],
       "Description": [
         "Leírás"
@@ -3556,17 +2609,8 @@
       "From: ${ importedEmail }": [
         "Forrás: ${ importedEmail }"
       ],
-      "Good": [
-        ""
-      ],
       "Hide password": [
         "A jelszó elrejtése"
-      ],
-      "How would you describe your experience with the new Proton?": [
-        ""
-      ],
-      "I understand the risk": [
-        ""
       ],
       "Import all messages": [
         "Összes üzenet importálása"
@@ -3615,9 +2659,6 @@
       ],
       "Notifications": [
         "Emlékeztetők"
-      ],
-      "OK": [
-        ""
       ],
       "Operating system": [
         "Operációs rendszer"
@@ -3692,17 +2733,11 @@
       "URL": [
         "URL"
       ],
-      "Username or ${ MAIL_APP_NAME } address": [
-        ""
-      ],
       "Verification code": [
         "Ellenőrző kód"
       ],
       "What happened?": [
         "Mi történt?"
-      ],
-      "Wonderful": [
-        ""
       ]
     },
     "Label for contact group color": {
@@ -3769,9 +2804,6 @@
     "Loading info": {
       "Almost there": [
         "Majdnem kész"
-      ],
-      "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
-        ""
       ],
       "Creating new calendars": [
         "Új naptárak lérehozása"
@@ -3985,29 +3017,9 @@
         "Cimke neve"
       ]
     },
-    "new_plans: action": {
-      "Switch or add account": [
-        ""
-      ]
-    },
     "new_plans: info": {
       "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
         "Introducing Proton’s refreshed look.${ br }Many services, one mission. Welcome to an internet where privacy is the default."
-      ]
-    },
-    "new_plans: label": {
-      "Tell us about your experience. (Optional)": [
-        ""
-      ]
-    },
-    "new_plans: placeholder": {
-      "Feedback": [
-        ""
-      ]
-    },
-    "new_plans: title": {
-      "Updated Proton, unified protection": [
-        ""
       ]
     },
     "Notification": {
@@ -4135,32 +3147,6 @@
         "Ismeretlen"
       ]
     },
-    "Oauth instructions": {
-      "Next you'll need to sign in to your Google account and grant Proton access to your data.": [
-        ""
-      ]
-    },
-    "Oauth instructions video": {
-      "For the import to work, you must select all requested items as shown in the GIF.": [
-        ""
-      ]
-    },
-    "Onboarding": {
-      "Welcome to ${ appName }": [
-        ""
-      ],
-      "Where you can take control of your time and your data.": [
-        ""
-      ]
-    },
-    "Onboarding Action": {
-      "Next": [
-        ""
-      ],
-      "Start using ${ appName }": [
-        ""
-      ]
-    },
     "Onboarding Proton": {
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "Állítsa be a saját szervezete adatait, irányítsa át a domain nevét, hozza létre a fiókokat, hogy a szervezet minden tagja élhessen a védelemmel."
@@ -4269,17 +3255,6 @@
         "A kulcs nem használható titkosításhoz"
       ]
     },
-    "PGP Key info": {
-      "${ emailAddress } has marked this key as compromised. This key cannot be used neither for encryption nor for signature verification.": [
-        ""
-      ],
-      "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
-        ""
-      ],
-      "We recommend that you \"untrust\" this key.": [
-        ""
-      ]
-    },
     "PGP key warning": {
       "Email address not found among user ids defined in sending key (${ keyUserIds })": [
         "Az e-mail cím nem található meg a küldő kulcsban definiált felhasználói azonosítók közt (${ keyUserIds })"
@@ -4322,9 +3297,6 @@
       "Name": [
         "Név"
       ],
-      "Password": [
-        ""
-      ],
       "Please describe the problem and include any error messages": [
         "Írja le a problémát és másolja be az esetleges hibaüzeneteket"
       ],
@@ -4333,9 +3305,6 @@
       ],
       "Search for name or email": [
         "Név vagy e-mail cím keresése"
-      ],
-      "Select": [
-        ""
       ],
       "Start typing an email address": [
         "Kezdjen el írni egy e-mail címet"
@@ -4420,34 +3389,9 @@
         "Nincs találat"
       ]
     },
-    "Settings update growler warning": {
-      "Failed to update settings": [
-        ""
-      ]
-    },
     "Sidebar calendar edit tooltip": {
       "Manage calendar": [
         "Naptár kezelése"
-      ]
-    },
-    "Spotlight": {
-      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        ""
-      ],
-      "Get up to 18 months of ${ planName } for free": [
-        ""
-      ],
-      "Invite friends and earn rewards!": [
-        ""
-      ],
-      "No more missed appointments": [
-        ""
-      ],
-      "Try ${ DRIVE_APP_NAME }": [
-        ""
-      ],
-      "With email notifications, you decide which events to be notified about and when.": [
-        ""
       ]
     },
     "Storage": {
@@ -4490,11 +3434,6 @@
     "Subscribed calendar limit reached modal body": {
       "Unable to add more calendars. You have reached the maximum of subscribed calendars within your plan.": [
         "Nem hozható létre több naptár. Elérte a csomagjában elérhető feliratkozott naptárainak maximumát."
-      ]
-    },
-    "Subscribed calendar URL length warning": {
-      "URL is too long": [
-        ""
       ]
     },
     "Success": {
@@ -4630,11 +3569,6 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Visszajelzés elküldve"
-      ]
-    },
-    "Suffix for price": {
-      "/month": [
-        ""
       ]
     },
     "Table header": {
@@ -5038,9 +3972,6 @@
       "Sign in again to continue": [
         "Lépjen be újból a folytatáshoz"
       ],
-      "Sign in and grant access": [
-        ""
-      ],
       "Update event": [
         "Esemény frissítése"
       ],
@@ -5104,9 +4035,6 @@
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Megadható a partnernek küldött titkosított vagy aláírt levelekben használandó PGP séma. PGP/Inline esetén az üzenet mindig Egyszerű Szöveg formátumú lesz"
       ],
-      "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
-        ""
-      ],
       "The import will start with the most recent messages.": [
         "Az importálás a legfrissebb üzenetekkel kezdődik."
       ],
@@ -5131,11 +4059,6 @@
         "Videó újrajátszása"
       ]
     },
-    "View event button tooltip": {
-      "Open in a new tab": [
-        ""
-      ]
-    },
     "Warning": {
       "Are you sure you want to permanently delete ${ count } contact group?": [
         "Biztos, hogy véglegesen töröl ${ count } névjegy csoportot?",
@@ -5156,9 +4079,6 @@
       ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Ha nem emlékszik a jelszavára, lehetetlen újraaktiválni a kulcsot. A figyelmeztetést el lehet végleg tüntetni, de ez esetben véglegesen elveszíti az ezzel a kulccsal titkosított adatai elérésének lehetőségét."
-      ],
-      "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
-        ""
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
         "A Proton az azonos nevű mappákat összefésüli. Ha ezt el szeretné kerülni, előzetesen nevezze át az azonos nevű mappákat."
@@ -5195,9 +4115,6 @@
       ],
       "You will lose any customization you made so far.": [
         "Elveszíti az eddigi változtatásokat."
-      ],
-      "Your free trial ends on ${ textDate }. ${ action }": [
-        ""
       ]
     },
     "Weekly recurring event, frequency": {

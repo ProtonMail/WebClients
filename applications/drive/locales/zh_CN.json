@@ -191,12 +191,6 @@
       "Download": [
         "下載"
       ],
-      "Download (${ count })": [
-        ""
-      ],
-      "Download all": [
-        ""
-      ],
       "Download anyway": [
         "仍要下载"
       ],
@@ -247,9 +241,6 @@
       ],
       "Get link": [
         "获取链接"
-      ],
-      "Get Proton Drive": [
-        ""
       ],
       "Get started": [
         "开始入门"
@@ -431,9 +422,6 @@
       "Resume upload": [
         "恢复上传"
       ],
-      "Retry": [
-        ""
-      ],
       "Save": [
         "保存"
       ],
@@ -484,9 +472,6 @@
       ],
       "Skip": [
         "跳过"
-      ],
-      "Start import": [
-        ""
       ],
       "Start recovering": [
         "开始恢复"
@@ -607,22 +592,11 @@
       ]
     },
     "Beta access description": {
-      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        ""
-      ],
       "If you encounter issues, you can always disable Beta Access.": [
         "如果使用过程中遇到问题，您可以随时关闭该选项。"
       ]
     },
-    "blackfriday Action": {
-      "Get the offer": [
-        ""
-      ]
-    },
     "blackfriday Info": {
-      "beta": [
-        ""
-      ],
       "Includes": [
         "包含"
       ],
@@ -634,14 +608,8 @@
       ]
     },
     "blackfriday Title": {
-      "Best deal": [
-        ""
-      ],
       "Most popular": [
         "人气最高"
-      ],
-      "Save more when combining Mail and VPN": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer Action": {
@@ -653,14 +621,8 @@
       ]
     },
     "blackfriday: VPNspecialoffer Info": {
-      "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
-        ""
-      ],
       "Save ${ percentage }%": [
         "${ percentage }%"
-      ],
-      "Special offer Terms and Conditions": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer info": {
@@ -674,15 +636,6 @@
       ]
     },
     "blackfriday: VPNspecialoffer Title": {
-      "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
-        ""
-      ],
-      "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
-        ""
-      ],
-      "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
-        ""
-      ],
       "1 month": [
         "1 个月"
       ],
@@ -691,18 +644,6 @@
       ],
       "24 months": [
         "24 个月"
-      ],
-      "Billed at ${ amount } for the first 2 years.${ supNotice }": [
-        ""
-      ],
-      "Billed at ${ amount } for the first month.${ supNotice }": [
-        ""
-      ],
-      "Billed at ${ amount } for the first year.${ supNotice }": [
-        ""
-      ],
-      "Get the special year-end offer on our Premium VPN PLUS plan": [
-        ""
       ]
     },
     "Bug category": {
@@ -813,76 +754,6 @@
       ],
       "Unsupported calendar format": [
         "不受支持的日历格式"
-      ]
-    },
-    "Collapsible tooltip": {
-      "Close": [
-        ""
-      ],
-      "Open": [
-        ""
-      ]
-    },
-    "color": {
-      "carrot": [
-        ""
-      ],
-      "cerise": [
-        ""
-      ],
-      "cobalt": [
-        ""
-      ],
-      "copper": [
-        ""
-      ],
-      "enzian": [
-        ""
-      ],
-      "fern": [
-        ""
-      ],
-      "forest": [
-        ""
-      ],
-      "ocean": [
-        ""
-      ],
-      "olive": [
-        ""
-      ],
-      "pacific": [
-        ""
-      ],
-      "pickle": [
-        ""
-      ],
-      "pine": [
-        ""
-      ],
-      "pink": [
-        ""
-      ],
-      "plum": [
-        ""
-      ],
-      "purple": [
-        ""
-      ],
-      "reef": [
-        ""
-      ],
-      "sahara": [
-        ""
-      ],
-      "slateblue": [
-        ""
-      ],
-      "soil": [
-        ""
-      ],
-      "strawberry": [
-        ""
       ]
     },
     "Confirm modal title": {
@@ -1009,9 +880,6 @@
       "Armenia": [
         "亚美尼亚"
       ],
-      "Aruba": [
-        ""
-      ],
       "Ascension Island": [
         "阿森松岛"
       ],
@@ -1021,95 +889,14 @@
       "Austria": [
         "奥地利"
       ],
-      "Azerbaijan": [
-        ""
-      ],
-      "Bahamas": [
-        ""
-      ],
-      "Bahrain": [
-        ""
-      ],
-      "Bangladesh": [
-        ""
-      ],
-      "Barbados": [
-        ""
-      ],
-      "Belarus": [
-        ""
-      ],
-      "Belgium": [
-        ""
-      ],
-      "Belize": [
-        ""
-      ],
-      "Benin": [
-        ""
-      ],
-      "Bermuda": [
-        ""
-      ],
-      "Bhutan": [
-        ""
-      ],
-      "Bolivia": [
-        ""
-      ],
-      "Bonaire, Sint Eustatius and Saba": [
-        ""
-      ],
-      "Bosnia and Herzegovina": [
-        ""
-      ],
-      "Botswana": [
-        ""
-      ],
-      "Bouvet Island": [
-        ""
-      ],
-      "Brazil": [
-        ""
-      ],
-      "British Indian Ocean Territory": [
-        ""
-      ],
-      "Brunei Darussalam": [
-        ""
-      ],
-      "Bulgaria": [
-        ""
-      ],
-      "Burkina Faso": [
-        ""
-      ],
-      "Burma": [
-        ""
-      ],
-      "Burundi": [
-        ""
-      ],
-      "Cambodia": [
-        ""
-      ],
       "Cameroon": [
         "喀麦隆"
-      ],
-      "Canada": [
-        ""
       ],
       "Cape Verde": [
         "佛得角"
       ],
-      "Cayman Islands": [
-        ""
-      ],
       "Central African Republic": [
         "中非共和国"
-      ],
-      "Chad": [
-        ""
       ],
       "Chile": [
         "智利"
@@ -1120,14 +907,8 @@
       "Christmas Island": [
         "圣诞岛"
       ],
-      "Cocos (Keeling) Islands": [
-        ""
-      ],
       "Colombia": [
         "哥伦比亚"
-      ],
-      "Comoros": [
-        ""
       ],
       "Congo": [
         "刚果（布）"
@@ -1143,9 +924,6 @@
       ],
       "Cote d'Ivoire\"": [
         "科特迪瓦"
-      ],
-      "Croatia": [
-        ""
       ],
       "Cuba": [
         "古巴"
@@ -1177,12 +955,6 @@
       "Egypt": [
         "埃及"
       ],
-      "El Salvador": [
-        ""
-      ],
-      "Equatorial Guinea": [
-        ""
-      ],
       "Eritrea": [
         "厄立特里亚"
       ],
@@ -1195,548 +967,38 @@
       "Falkland Islands": [
         "马尔维纳斯群岛 / 福克兰群岛"
       ],
-      "Faroe Islands": [
-        ""
-      ],
-      "Federated States of Micronesia": [
-        ""
-      ],
       "Fiji": [
         "斐济"
       ],
       "Finland": [
         "芬兰"
       ],
-      "France": [
-        ""
-      ],
-      "French Guiana": [
-        ""
-      ],
-      "French Polynesia": [
-        ""
-      ],
-      "French Southern Territories": [
-        ""
-      ],
-      "Gabon": [
-        ""
-      ],
-      "Gambia": [
-        ""
-      ],
-      "Georgia": [
-        ""
-      ],
       "Germany": [
         "德国"
-      ],
-      "Ghana": [
-        ""
-      ],
-      "Gibraltar": [
-        ""
-      ],
-      "Greece": [
-        ""
-      ],
-      "Greenland": [
-        ""
-      ],
-      "Grenada": [
-        ""
-      ],
-      "Guadeloupe": [
-        ""
-      ],
-      "Guam": [
-        ""
-      ],
-      "Guatemala": [
-        ""
-      ],
-      "Guernsey": [
-        ""
-      ],
-      "Guinea": [
-        ""
-      ],
-      "Guinea-Bissau": [
-        ""
-      ],
-      "Guyana": [
-        ""
-      ],
-      "Haiti": [
-        ""
-      ],
-      "Heard Island and McDonald Islands": [
-        ""
-      ],
-      "Holy See (Vatican City State)": [
-        ""
-      ],
-      "Honduras": [
-        ""
       ],
       "Hong Kong": [
         "中国香港特别行政区"
       ],
-      "Hungary": [
-        ""
-      ],
-      "Iceland": [
-        ""
-      ],
-      "India": [
-        ""
-      ],
-      "Indonesia": [
-        ""
-      ],
-      "International": [
-        ""
-      ],
-      "Iran": [
-        ""
-      ],
-      "Iraq": [
-        ""
-      ],
-      "Ireland": [
-        ""
-      ],
-      "Isle of Man": [
-        ""
-      ],
-      "Israel": [
-        ""
-      ],
-      "Italy": [
-        ""
-      ],
-      "Jamaica": [
-        ""
-      ],
-      "Japan": [
-        ""
-      ],
-      "Jersey": [
-        ""
-      ],
-      "Jordan": [
-        ""
-      ],
-      "Kazakhstan": [
-        ""
-      ],
-      "Kenya": [
-        ""
-      ],
-      "Kiribati": [
-        ""
-      ],
-      "Kosovo": [
-        ""
-      ],
-      "Kuwait": [
-        ""
-      ],
-      "Kyrgyzstan": [
-        ""
-      ],
-      "Laos": [
-        ""
-      ],
-      "Latvia": [
-        ""
-      ],
-      "Lebanon": [
-        ""
-      ],
-      "Lesotho": [
-        ""
-      ],
-      "Liberia": [
-        ""
-      ],
-      "Libya": [
-        ""
-      ],
-      "Liechtenstein": [
-        ""
-      ],
-      "Lithuania": [
-        ""
-      ],
-      "Luxembourg": [
-        ""
-      ],
       "Macao": [
         "中国澳门特别行政区"
-      ],
-      "Madagascar": [
-        ""
-      ],
-      "Malawi": [
-        ""
-      ],
-      "Malaysia": [
-        ""
-      ],
-      "Maldives": [
-        ""
-      ],
-      "Mali": [
-        ""
-      ],
-      "Malta": [
-        ""
-      ],
-      "Marshall Islands": [
-        ""
-      ],
-      "Martinique": [
-        ""
-      ],
-      "Mauritania": [
-        ""
-      ],
-      "Mauritius": [
-        ""
-      ],
-      "Mayotte": [
-        ""
-      ],
-      "Mexico": [
-        ""
-      ],
-      "Moldova": [
-        ""
-      ],
-      "Monaco": [
-        ""
-      ],
-      "Mongolia": [
-        ""
-      ],
-      "Montenegro": [
-        ""
-      ],
-      "Montserrat": [
-        ""
-      ],
-      "Morocco": [
-        ""
-      ],
-      "Mozambique": [
-        ""
-      ],
-      "Namibia": [
-        ""
-      ],
-      "Nauru": [
-        ""
-      ],
-      "Nepal": [
-        ""
-      ],
-      "Netherlands": [
-        ""
-      ],
-      "New Caledonia": [
-        ""
-      ],
-      "New Zealand": [
-        ""
-      ],
-      "Nicaragua": [
-        ""
-      ],
-      "Niger": [
-        ""
-      ],
-      "Nigeria": [
-        ""
-      ],
-      "Niue": [
-        ""
-      ],
-      "Norfolk Island": [
-        ""
       ],
       "North Korea": [
         "朝鲜"
       ],
-      "North Macedonia": [
-        ""
-      ],
-      "Northern Mariana Islands": [
-        ""
-      ],
-      "Norway": [
-        ""
-      ],
-      "Oman": [
-        ""
-      ],
-      "Pakistan": [
-        ""
-      ],
-      "Palau": [
-        ""
-      ],
-      "Palestine": [
-        ""
-      ],
-      "Panama": [
-        ""
-      ],
-      "Papua New Guinea": [
-        ""
-      ],
-      "Paraguay": [
-        ""
-      ],
-      "Peru": [
-        ""
-      ],
-      "Philippines": [
-        ""
-      ],
-      "Pitcairn": [
-        ""
-      ],
-      "Poland": [
-        ""
-      ],
-      "Portugal": [
-        ""
-      ],
-      "Puerto Rico": [
-        ""
-      ],
-      "Qatar": [
-        ""
-      ],
-      "Reunion": [
-        ""
-      ],
-      "Romania": [
-        ""
-      ],
-      "Russia": [
-        ""
-      ],
-      "Rwanda": [
-        ""
-      ],
-      "Saint Barthélemy": [
-        ""
-      ],
-      "Saint Helena": [
-        ""
-      ],
-      "Saint Kitts and Nevis": [
-        ""
-      ],
-      "Saint Lucia": [
-        ""
-      ],
-      "Saint Martin (French Part)": [
-        ""
-      ],
-      "Saint Pierre and Miquelon": [
-        ""
-      ],
-      "Saint Vincent and the Grenadines": [
-        ""
-      ],
-      "Samoa": [
-        ""
-      ],
-      "San Marino": [
-        ""
-      ],
-      "Sao Tome and Principe": [
-        ""
-      ],
-      "Saudi Arabia": [
-        ""
-      ],
-      "Senegal": [
-        ""
-      ],
-      "Serbia": [
-        ""
-      ],
-      "Seychelles": [
-        ""
-      ],
-      "Sierra Leone": [
-        ""
-      ],
-      "Singapore": [
-        ""
-      ],
-      "Sint Maarten": [
-        ""
-      ],
-      "Slovakia": [
-        ""
-      ],
-      "Slovenia": [
-        ""
-      ],
-      "Solomon Islands": [
-        ""
-      ],
-      "Somalia": [
-        ""
-      ],
-      "South Africa": [
-        ""
-      ],
-      "South Georgia and the South Sandwich Islands": [
-        ""
-      ],
       "South Korea": [
         "韩国"
-      ],
-      "South Ossetia": [
-        ""
-      ],
-      "South Sudan": [
-        ""
       ],
       "Spain": [
         "西班牙"
       ],
-      "Sri Lanka": [
-        ""
-      ],
-      "Sudan": [
-        ""
-      ],
-      "Suriname": [
-        ""
-      ],
-      "Svalbard and Jan Mayen": [
-        ""
-      ],
-      "Swaziland": [
-        ""
-      ],
-      "Sweden": [
-        ""
-      ],
       "Switzerland": [
         "瑞士"
-      ],
-      "Syria": [
-        ""
-      ],
-      "Taiwan": [
-        ""
-      ],
-      "Tajikistan": [
-        ""
-      ],
-      "Tanzania": [
-        ""
-      ],
-      "Thailand": [
-        ""
-      ],
-      "Timor-Leste": [
-        ""
-      ],
-      "Togo": [
-        ""
-      ],
-      "Tokelau": [
-        ""
-      ],
-      "Tonga": [
-        ""
-      ],
-      "Trinidad and Tobago": [
-        ""
-      ],
-      "Tristan da Cunha": [
-        ""
-      ],
-      "Tunisia": [
-        ""
-      ],
-      "Turkey": [
-        ""
-      ],
-      "Turkmenistan": [
-        ""
-      ],
-      "Turks and Caicos Islands": [
-        ""
-      ],
-      "Tuvalu": [
-        ""
-      ],
-      "Uganda": [
-        ""
-      ],
-      "Ukraine": [
-        ""
       ],
       "United Arab Emirates": [
         "阿联酋"
       ],
-      "United Kingdom": [
-        ""
-      ],
-      "United States": [
-        ""
-      ],
-      "United States Minor Outlying Islands": [
-        ""
-      ],
-      "Uruguay": [
-        ""
-      ],
-      "Uzbekistan": [
-        ""
-      ],
-      "Vanuatu": [
-        ""
-      ],
-      "Venezuela": [
-        ""
-      ],
-      "Vietnam": [
-        ""
-      ],
-      "Virgin Islands, British": [
-        ""
-      ],
-      "Virgin Islands, U.S.": [
-        ""
-      ],
-      "Wallis and Futuna": [
-        ""
-      ],
       "Western Sahara": [
         "西撒哈拉"
-      ],
-      "Yemen": [
-        ""
-      ],
-      "Zambia": [
-        ""
-      ],
-      "Zimbabwe": [
-        ""
-      ],
-      "Åland Islands": [
-        ""
       ]
     },
     "Default display name vcard": {
@@ -1952,14 +1214,8 @@
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "发生错误，请${ refresh }后重试。若仍出现此错误，请联系我们的${ supportTeam }。"
       ],
-      "The folder name is invalid. Please choose a different name.": [
-        ""
-      ],
       "The folder name is too long. Please choose a different name.": [
         "文件夹名称过长，请重新填写。"
-      ],
-      "The label name is invalid. Please choose a different name.": [
-        ""
       ],
       "The label name is too long. Please choose a different name.": [
         "标签名称过长，请重新填写。"
@@ -2114,9 +1370,6 @@
       ]
     },
     "file size format": {
-      "bytes": [
-        "字节"
-      ],
       "GB": [
         "GB"
       ],
@@ -2124,20 +1377,6 @@
         "KB"
       ],
       "MB": [
-        "MB"
-      ]
-    },
-    "file size format, long": {
-      "Bytes": [
-        "字节"
-      ],
-      "Gigabytes": [
-        "GB"
-      ],
-      "Kilobytes": [
-        "KB"
-      ],
-      "Megabytes": [
         "MB"
       ]
     },
@@ -2284,14 +1523,8 @@
       "${ canceledCount } canceled": [
         "${ canceledCount } 项已取消"
       ],
-      "${ contactCount } contact contains multiple email addresses.": [
-        ""
-      ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } 位成员"
-      ],
-      "${ contactName } contains multiple email addresses.": [
-        ""
       ],
       "${ contactsCount } contact found": [
         "找到 ${ contactsCount } 位联系人"
@@ -2344,9 +1577,6 @@
       "(${ memberCount } member)": [
         "（${ memberCount } 位成员）"
       ],
-      "10 email addresses": [
-        ""
-      ],
       "A number will be added to the filename": [
         "将在文件名中添加一个编号"
       ],
@@ -2391,9 +1621,6 @@
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "请求新的验证码之前，请检查您的垃圾邮件并确认 ${ strong } 地址的正确性。"
-      ],
-      "Bulk uploads may reduce your computer’s performance. Consider limiting memory-intensive activities like streaming during upload. Or try uploading in batches.": [
-        ""
       ],
       "Canceled": [
         "已取消"
@@ -2476,23 +1703,8 @@
       "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
         "数字签名已验证，此文件夹是由 ${ emailAddress } 用户安全上传。"
       ],
-      "Download canceled": [
-        ""
-      ],
-      "Download failed": [
-        ""
-      ],
-      "Download failed due to ${ error }": [
-        ""
-      ],
-      "Download finished": [
-        ""
-      ],
       "Download of ${ downloadFileName } will be aborted": [
         "${ downloadFileName } 的下载进程将被中止"
-      ],
-      "Download paused due to connection issue; it will resume automatically": [
-        ""
       ],
       "Downloaded": [
         "已下载"
@@ -2500,32 +1712,17 @@
       "Downloading": [
         "正在下载"
       ],
-      "Drag and drop items here or browse for files to upload.": [
-        ""
-      ],
       "Drop the file here to upload": [
         "请将文件拖拽至此处进行上传"
       ],
       "Duplicate key updated": [
         "重复的密钥已更新"
       ],
-      "Enabling drive search": [
-        ""
-      ],
-      "Encrypted": [
-        ""
-      ],
       "Encrypted search is here": [
         "已推出加密搜索功能"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "验证码已发至 ${ destinationText }，请在下方输入。"
-      ],
-      "Estimated time remaining: ${ estimatedMinutes } minute": [
-        ""
-      ],
-      "Estimated time remaining: Less than a minute": [
-        ""
       ],
       "Estimating time remaining...": [
         "正在估算剩余时间..."
@@ -2614,9 +1811,6 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "将您的数据从${ importedEmailAddress } 导入到${ toEmail }"
       ],
-      "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
-        ""
-      ],
       "Indexing search results…": [
         "正在索引搜索结果…"
       ],
@@ -2650,23 +1844,11 @@
       "Link copied to clipboard": [
         "链接已复制到剪贴板"
       ],
-      "Link failed to be loaded": [
-        ""
-      ],
-      "Links failed to be loaded": [
-        ""
-      ],
       "Loading": [
         "加载中"
       ],
       "Loading ${ appName }": [
         "正在加载 ${ appName }"
-      ],
-      "Loading link": [
-        ""
-      ],
-      "Loading links": [
-        ""
       ],
       "Loading preview": [
         "正在载入预览"
@@ -2719,23 +1901,11 @@
       "Not a valid URL": [
         "非有效链接"
       ],
-      "Not all files were transferred. Try uploading or downloading the files again.": [
-        ""
-      ],
       "Note: Data may still be available locally on devices where you have installed ${ appName }.": [
         "请注意：安装过 ${ appName } 的设备上仍可能存在本地数据。"
       ],
       "of": [
         "/"
-      ],
-      "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
-        ""
-      ],
-      "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
-        ""
-      ],
-      "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters is allowed": [
-        ""
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "只有在与非 ${ BRAND_NAME } 用户使用 PGP 通讯时才应更改下列选项。"
@@ -2755,15 +1925,6 @@
       "Permanently delete all files in your drive": [
         "永久删除网盘中的所有文件"
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
-        "PGP/Inline is only compatible with Plain Text format. Please note that Proton Mail always signs encrypted messages."
-      ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
-        "PGP/MIME automatically sends the message using the current composer mode. Please note that Proton Mail always signs encrypted messages."
-      ],
-      "Please enter the password to decrypt and view content.": [
-        ""
-      ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "请注意，分配给此组的地址将不会被删除。"
       ],
@@ -2772,12 +1933,6 @@
       ],
       "Please select the folders you would like to import:": [
         "请选择要导入的文件夹："
-      ],
-      "Please select which email address or addresses to add to ${ groupCount } group.": [
-        ""
-      ],
-      "Please select which email address or addresses to add to ${ groupName }.": [
-        ""
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "请稍候，我们正在寻找可用主密钥重新签名的联系人。"
@@ -2800,9 +1955,6 @@
       "Priority support": [
         "优先客服支持"
       ],
-      "Private search enabled. You may now close this dialogue and search for files and folders.": [
-        ""
-      ],
       "Queued": [
         "等待中"
       ],
@@ -2820,15 +1972,6 @@
       ],
       "Search cannot be enabled in this browser": [
         "此浏览器无法启用搜索功能"
-      ],
-      "Search Enabled": [
-        ""
-      ],
-      "Secure sharing": [
-        ""
-      ],
-      "Secure your documents and data": [
-        ""
       ],
       "Select an uploaded file or folder and create a link to it.": [
         "选择一个已上传的文件（夹）并为其创建链接。"
@@ -2854,20 +1997,11 @@
       "Share files with links": [
         "通过链接共享文件"
       ],
-      "Shareable link for ${ boldNameText }": [
-        ""
-      ],
       "Signature check will be ignored": [
         "将忽略签名校验"
       ],
       "Signature issue": [
         "签名问题"
-      ],
-      "Some files failed to download. Try downloading the files again.": [
-        ""
-      ],
-      "Some files failed to upload. Try uploading the files again.": [
-        ""
       ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "您的某些文件无法再访问，请恢复对其的访问权限。${ StartRecoveryButton }"
@@ -2884,12 +2018,6 @@
       "support team": [
         "客服团队"
       ],
-      "Swiss privacy": [
-        ""
-      ],
-      "Tap the + button to upload a file or folder.": [
-        ""
-      ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "该账户可能有一个新密钥，或是以下内容可能已被篡改：${ items }。请务必在信任的情况下打开。"
       ],
@@ -2904,9 +2032,6 @@
       ],
       "There are no files yet": [
         "还没有文件"
-      ],
-      "These files were shared using end-to-end encryption. To ensure their security — and the security of all your documents, photos, and files — store them in Proton Drive, the cloud storage service you can trust.": [
-        ""
       ],
       "This account has been suspended due to a potential policy violation.": [
         "此帐户因可能违反用户协议而被封禁"
@@ -2925,9 +2050,6 @@
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "此链接可能使用了欺骗性域名，请确认可靠性后再打开。"
-      ],
-      "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
-        ""
       ],
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
         "此链接将被永久禁用，无人再能通过此链接访问您的文件。您需要新建一个链接才能重新共享该文件。"
@@ -3001,9 +2123,6 @@
       "Uploading hundreds of files at once may have a performance impact.": [
         "一次上传数百个文件可能会影响性能。"
       ],
-      "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
-        ""
-      ],
       "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "我们无法验证 ${ fileName } 由 ${ emailAddress } 上传。"
       ],
@@ -3015,9 +2134,6 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "我们将向 ${ strong } 发送新的验证码"
-      ],
-      "We're moving! Join us at our new site: ${ link }.": [
-        ""
       ],
       "Week": [
         "周"
@@ -3073,9 +2189,6 @@
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "您的账户有逾期未支付的账单，很快将被限制使用。${ payInvoiceLink }"
       ],
-      "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
-        ""
-      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "从 ${ importedEmailAddressStrong } 到您的 Proton 账户的导入数据已准备就绪。"
       ],
@@ -3111,38 +2224,9 @@
         "多名联系人重复。${ mergeAction }"
       ]
     },
-    "Item": {
-      "file attributes": [
-        ""
-      ],
-      "file data": [
-        ""
-      ],
-      "file data key": [
-        ""
-      ],
-      "keys": [
-        ""
-      ],
-      "name": [
-        ""
-      ],
-      "name hash": [
-        ""
-      ],
-      "thumbnail": [
-        ""
-      ]
-    },
     "Key badge": {
-      "Compromised": [
-        ""
-      ],
       "Expired": [
         "已失效"
-      ],
-      "Obsolete": [
-        ""
       ],
       "Primary": [
         "主密钥"
@@ -3158,9 +2242,6 @@
       ]
     },
     "Label": {
-      "# of accesses": [
-        ""
-      ],
       "(Expired)": [
         "（已失效）"
       ],
@@ -3215,26 +2296,17 @@
       "Category": [
         "类别"
       ],
-      "Child sexual abuse material": [
-        ""
-      ],
       "City": [
         "城市"
       ],
       "Code is 6 digits without spaces": [
         "验证码是无空格的六位数"
       ],
-      "Comment": [
-        ""
-      ],
       "Contacts": [
         "通讯录"
       ],
       "Copy": [
         "复制"
-      ],
-      "Copyright infringement": [
-        ""
       ],
       "Country": [
         "国家"
@@ -3256,9 +2328,6 @@
       ],
       "Download anyway": [
         "仍要下载"
-      ],
-      "Email": [
-        ""
       ],
       "Email address": [
         "邮箱地址"
@@ -3314,9 +2383,6 @@
       "How would you describe your experience with the new Proton?": [
         "您认为新版 Proton 的使用体验如何？"
       ],
-      "I understand the risk": [
-        ""
-      ],
       "Image": [
         "图片"
       ],
@@ -3344,14 +2410,8 @@
       "Last month only": [
         "仅上个月"
       ],
-      "Location": [
-        ""
-      ],
       "Mailbox password": [
         "邮箱密码"
-      ],
-      "Malware": [
-        ""
       ],
       "Manage folders": [
         "管理文件夹"
@@ -3383,9 +2443,6 @@
       "Operating system version": [
         "操作系统版本"
       ],
-      "Other": [
-        ""
-      ],
       "Password": [
         "密码"
       ],
@@ -3394,9 +2451,6 @@
       ],
       "Phone number": [
         "手机号码"
-      ],
-      "Please provide full details to help us take appropriate action": [
-        ""
       ],
       "Post office box": [
         "邮局信箱"
@@ -3422,14 +2476,8 @@
       "Replace folder": [
         "替换文件夹"
       ],
-      "Report Abuse": [
-        ""
-      ],
       "Reveal password": [
         "显示密码"
-      ],
-      "Select type of abuse": [
-        ""
       ],
       "Set expiration date": [
         "设置有效期"
@@ -3445,12 +2493,6 @@
       ],
       "Skip folder": [
         "跳过文件夹"
-      ],
-      "Spam": [
-        ""
-      ],
-      "Stolen data": [
-        ""
       ],
       "Street address": [
         "街道地址"
@@ -3651,75 +2693,6 @@
       ]
     },
     "Notification": {
-      "\"${ name }\" created successfully": [
-        ""
-      ],
-      "\"${ name }\" deleted permanently from trash": [
-        ""
-      ],
-      "\"${ name }\" failed to be created": [
-        ""
-      ],
-      "\"${ name }\" failed to be deleted permanently from trash": [
-        ""
-      ],
-      "\"${ name }\" failed to be moved": [
-        ""
-      ],
-      "\"${ name }\" failed to be moved to trash": [
-        ""
-      ],
-      "\"${ name }\" failed to be restored from trash": [
-        ""
-      ],
-      "\"${ name }\" moved to trash": [
-        ""
-      ],
-      "\"${ name }\" restored from trash": [
-        ""
-      ],
-      "\"${ name }\" successfully moved": [
-        ""
-      ],
-      "\"${ newName }\" failed to be renamed": [
-        ""
-      ],
-      "\"${ newName }\" renamed successfully": [
-        ""
-      ],
-      "${ count } item failed to be decrypted": [
-        ""
-      ],
-      "${ numberOfItems } item deleted permanently from trash": [
-        ""
-      ],
-      "${ numberOfItems } item failed to be deleted permanently from trash": [
-        ""
-      ],
-      "${ numberOfItems } item failed to be moved": [
-        ""
-      ],
-      "${ numberOfItems } item failed to be moved to trash": [
-        ""
-      ],
-      "${ numberOfItems } item failed to be restored from trash": [
-        ""
-      ],
-      "${ numberOfItems } item moved to trash": [
-        ""
-      ],
-      "${ numberOfItems } item restored from trash": [
-        ""
-      ],
-      "${ numberOfItems } item successfully moved": [
-        ""
-      ],
-      "${ numberOfItems } link to your item failed to be deleted": [
-        ""
-      ],
-      "${ numberOfItems } link to your item was deleted": [
-        ""
-      ],
       "All items will soon be permanently deleted from trash": [
         "所有项目将很快从回收站永久删除"
       ],
@@ -3728,9 +2701,6 @@
       ],
       "Contact group updated": [
         "群组已更改"
-      ],
-      "Encrypted search activated": [
-        ""
       ],
       "Failed to download files: ${ err }": [
         "下载文件失败：${ err }"
@@ -3749,9 +2719,6 @@
       ],
       "File or folder is missing a name": [
         "文件或文件夹缺少名称"
-      ],
-      "Item failed to be verified": [
-        ""
       ],
       "Link failed to be loaded": [
         "链接加载失败"
@@ -3774,9 +2741,6 @@
       "Move ${ movingCount } item": [
         "移动 ${ movingCount } 个项目"
       ],
-      "Next page failed to be loaded": [
-        ""
-      ],
       "Not enough space to upload ${ formattedTotal }": [
         "没有足够的空间来上传这 ${ formattedTotal }"
       ],
@@ -3786,64 +2750,14 @@
       "Subfolder failed to be loaded": [
         "加载子文件夹失败"
       ],
-      "The link to \"${ name }\" failed to be deleted": [
-        ""
-      ],
-      "The link to \"${ name }\" was deleted": [
-        ""
-      ],
-      "The link to your item failed to be deleted": [
-        ""
-      ],
-      "The link to your item was deleted": [
-        ""
-      ],
       "Trash failed to be emptied": [
         "未能清空回收站"
       ],
       "Your old files will be deleted in 72 hours": [
         "您的旧文件将在 72 小时内删除"
       ],
-      "Your settings failed to be saved": [
-        ""
-      ],
       "Your settings have been changed successfully": [
         "已成功更改您的设置"
-      ]
-    },
-    "Oauth instructions": {
-      "Next you'll need to sign in to your Google account and grant Proton access to your data.": [
-        ""
-      ]
-    },
-    "Oauth instructions video": {
-      "For the import to work, you must select all requested items as shown in the GIF.": [
-        ""
-      ]
-    },
-    "Onboarding Action": {
-      "Enable Beta Access": [
-        ""
-      ],
-      "Next": [
-        ""
-      ],
-      "Start using ${ appName }": [
-        ""
-      ],
-      "Upgrade account": [
-        ""
-      ]
-    },
-    "Onboarding Info": {
-      "${ appName } is currently in early access and only available to users with a paid plan.": [
-        ""
-      ],
-      "${ appName } is currently only available if you enable Beta Access.": [
-        ""
-      ],
-      "Your trusty online vault for vital documents and precious memories.": [
-        ""
       ]
     },
     "Onboarding Proton": {
@@ -3864,17 +2778,6 @@
       ],
       "You can change this anytime in your settings.": [
         "您可以随时在设置中更改。"
-      ]
-    },
-    "Onboarding Title": {
-      "${ appName } is in Beta": [
-        ""
-      ],
-      "Upgrade to access ${ appName }": [
-        ""
-      ],
-      "Welcome to ${ appName }": [
-        ""
       ]
     },
     "Option": {
@@ -3904,17 +2807,6 @@
         "此密钥不能用于加密"
       ]
     },
-    "PGP Key info": {
-      "${ emailAddress } has marked this key as compromised. This key cannot be used neither for encryption nor for signature verification.": [
-        ""
-      ],
-      "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
-        ""
-      ],
-      "We recommend that you \"untrust\" this key.": [
-        ""
-      ]
-    },
     "PGP key warning": {
       "Email address not found among user ids defined in sending key (${ keyUserIds })": [
         "在发送密钥中定义的用户编号中找不到电子邮件地址 (${ keyUserIds })"
@@ -3929,9 +2821,6 @@
       ],
       "Enter a new folder name": [
         "输入新文件夹名称"
-      ],
-      "Enter your email address": [
-        ""
       ],
       "Filter groups": [
         "查找群组"
@@ -4035,23 +2924,11 @@
       ]
     },
     "Spotlight": {
-      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        ""
-      ],
-      "Encrypted search is here": [
-        ""
-      ],
       "Get up to 18 months of ${ planName } for free": [
         "免费获得最长 18 个月的 ${ planName } 使用权"
       ],
       "Invite friends and earn rewards!": [
         "邀请好友注册赢取奖励！"
-      ],
-      "Now you can easily search Drive files while keeping your data secure.": [
-        ""
-      ],
-      "Try ${ DRIVE_APP_NAME }": [
-        ""
       ]
     },
     "Storage": {
@@ -4208,15 +3085,6 @@
       "${ emailsCount } member": [
         "${ emailsCount } 位成员"
       ],
-      "${ numberOfFailedTransfer.total } failed download": [
-        ""
-      ],
-      "${ numberOfFailedTransfer.total } failed transfer": [
-        ""
-      ],
-      "${ numberOfFailedTransfer.total } failed upload": [
-        ""
-      ],
       "Account suspended": [
         "账号已被冻结"
       ],
@@ -4240,9 +3108,6 @@
       ],
       "Back": [
         "后退"
-      ],
-      "Based in Switzerland, available globally": [
-        ""
       ],
       "Beta Access": [
         "测试版功能"
@@ -4295,9 +3160,6 @@
       "Date": [
         "日期"
       ],
-      "Decrypting": [
-        ""
-      ],
       "Delete ${ count } contact": [
         "删除 ${ count } 个联系人"
       ],
@@ -4318,9 +3180,6 @@
       ],
       "Discard changes?": [
         "放弃更改？"
-      ],
-      "Download shared file": [
-        ""
       ],
       "Download unverified file?": [
         "下载未经验证的文件？"
@@ -4373,9 +3232,6 @@
       "Failed": [
         "失败"
       ],
-      "Feedback": [
-        ""
-      ],
       "File details": [
         "文件详细信息"
       ],
@@ -4394,9 +3250,6 @@
       "Found ${ searchView.numberOfResults } result": [
         "找到${ searchView.numberOfResults }条结果"
       ],
-      "Getting files": [
-        ""
-      ],
       "Groups": [
         "群组"
       ],
@@ -4408,9 +3261,6 @@
       ],
       "Invalid verification code": [
         "无效的验证代码"
-      ],
-      "Item details": [
-        ""
       ],
       "Items details": [
         "项目详细信息"
@@ -4475,9 +3325,6 @@
       "Phone numbers": [
         "电话号码"
       ],
-      "Privacy settings": [
-        ""
-      ],
       "Re-sign all contacts": [
         "重新签署所有联系人"
       ],
@@ -4522,9 +3369,6 @@
       ],
       "Select link expiration time": [
         "选择链接失效时间"
-      ],
-      "Send feedback": [
-        ""
       ],
       "Settings": [
         "设置"
@@ -4571,9 +3415,6 @@
       "This folder has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "此文件夹的签名缺失或无效，请转至菜单 (⋮) → 详细信息以获取相关信息。"
       ],
-      "This link is password protected": [
-        ""
-      ],
       "Total size": [
         "总大小"
       ],
@@ -4616,9 +3457,6 @@
       "You have no folders yet": [
         "您尚未添加文件夹"
       ],
-      "You've got files": [
-        ""
-      ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         "您的免费试用期即将于 ${ formattedEndDate } 结束"
       ]
@@ -4649,9 +3487,6 @@
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "选择在向用户签名或加密时要使用的 PGP 方案。请注意, PGP/内嵌强制纯文本消息。"
-      ],
-      "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
-        ""
       ],
       "The import will start with the most recent messages.": [
         "导入将从最近的信息开始。"
@@ -4714,9 +3549,6 @@
       ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "如果您忘记了密码，您将无法重新激活密钥。我们可以帮助您关闭警告横幅，但在此过程中，您将永久失去通过该密钥加密的所有数据"
-      ],
-      "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
-        ""
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
         "Proton 将会合并所有同名的文件夹。为了避免这种情况，请在导入前更改名称。"
