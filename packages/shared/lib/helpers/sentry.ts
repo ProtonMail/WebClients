@@ -65,6 +65,8 @@ interface Arguments {
     uid?: string;
 }
 
+let sentryEnabled = true;
+
 function main({ config: { SENTRY_DSN, COMMIT, APP_VERSION }, uid, sessionTracking = false }: Arguments) {
     const { host } = window.location;
 
@@ -99,6 +101,10 @@ function main({ config: { SENTRY_DSN, COMMIT, APP_VERSION }, uid, sessionTrackin
 
             // Not interested in uncaught API errors
             if (error instanceof ApiError) {
+                return null;
+            }
+
+            if (!sentryEnabled) {
                 return null;
             }
 
@@ -162,6 +168,10 @@ export const captureMessage = (...args: Parameters<typeof Sentry.captureMessage>
     if (!isLocalhost(window.location.host)) {
         Sentry.captureMessage(...args);
     }
+};
+
+export const setSentryEnabled = (enabled: boolean) => {
+    sentryEnabled = enabled;
 };
 
 export default main;
