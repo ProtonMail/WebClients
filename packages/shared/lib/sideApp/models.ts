@@ -38,6 +38,7 @@ interface CLOSE {
     payload?: {
         url: string;
         app: string;
+        closeDefinitely?: boolean;
     };
 }
 
@@ -94,6 +95,9 @@ interface API_ABORT_REQUEST {
 // Global outside iframe events
 interface CLOSE_OUTSIDE {
     type: SIDE_APP_EVENTS.SIDE_APP_CLOSE_FROM_OUTSIDE;
+    payload?: {
+        closeDefinitely: boolean;
+    };
 }
 
 interface SWITCH_OUTSIDE {
