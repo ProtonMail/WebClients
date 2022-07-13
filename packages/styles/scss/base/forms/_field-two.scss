@@ -7,6 +7,10 @@
 		cursor: default;
 	}
 
+	&-lable-container {
+		margin-block-end: rem(4);
+	}
+
 	&-label {
 		font-weight: var(--font-weight-semibold);
 		cursor: pointer;
@@ -19,11 +23,8 @@
 		color: var(--text-weak);
 	}
 
-	&-input-container {
-		margin-block: rem(4);
-	}
-
 	&-assist {
+		margin-block-start: rem(4);
 		font-size: rem(12);
 		color: var(--text-weak);
 
@@ -93,6 +94,15 @@
 			border-color: var(--field-disabled);
 			background-color: var(--field-disabled-background-color);
 			color: var(--field-disabled-text-color);
+		}
+
+		&.unstyled {
+			&#{&} {
+				border-color: transparent;
+				border-radius: 0;
+				box-shadow: none;
+				background-color: transparent;
+			}
 		}
 	}
 
