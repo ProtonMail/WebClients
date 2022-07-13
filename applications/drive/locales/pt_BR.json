@@ -110,9 +110,6 @@
       "Close transfers": [
         "Fechar transferências"
       ],
-      "Collapse": [
-        ""
-      ],
       "Collapse folder": [
         "Colapsar pastas"
       ],
@@ -487,9 +484,6 @@
       "Skip": [
         "Pular"
       ],
-      "Start import": [
-        ""
-      ],
       "Start recovering": [
         "Comece a recuperar"
       ],
@@ -616,11 +610,6 @@
         "Se você tiver problemas, poderá desativar o Acesso beta."
       ]
     },
-    "blackfriday Action": {
-      "Get the offer": [
-        ""
-      ]
-    },
     "blackfriday Info": {
       "beta": [
         "beta"
@@ -636,14 +625,8 @@
       ]
     },
     "blackfriday Title": {
-      "Best deal": [
-        ""
-      ],
       "Most popular": [
         "Mais popular"
-      ],
-      "Save more when combining Mail and VPN": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer Action": {
@@ -655,14 +638,8 @@
       ]
     },
     "blackfriday: VPNspecialoffer Info": {
-      "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
-        ""
-      ],
       "Save ${ percentage }%": [
         "${ percentage }%"
-      ],
-      "Special offer Terms and Conditions": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer info": {
@@ -676,15 +653,6 @@
       ]
     },
     "blackfriday: VPNspecialoffer Title": {
-      "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
-        ""
-      ],
-      "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
-        ""
-      ],
-      "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
-        ""
-      ],
       "1 month": [
         "1 mês"
       ],
@@ -693,18 +661,6 @@
       ],
       "24 months": [
         "24 meses"
-      ],
-      "Billed at ${ amount } for the first 2 years.${ supNotice }": [
-        ""
-      ],
-      "Billed at ${ amount } for the first month.${ supNotice }": [
-        ""
-      ],
-      "Billed at ${ amount } for the first year.${ supNotice }": [
-        ""
-      ],
-      "Get the special year-end offer on our Premium VPN PLUS plan": [
-        ""
       ]
     },
     "Bug category": {
@@ -838,9 +794,6 @@
       "copper": [
         "cobre"
       ],
-      "enzian": [
-        ""
-      ],
       "fern": [
         "samambaia"
       ],
@@ -852,9 +805,6 @@
       ],
       "olive": [
         "azeitona"
-      ],
-      "pacific": [
-        ""
       ],
       "pickle": [
         "salmoura"
@@ -873,9 +823,6 @@
       ],
       "reef": [
         "recife"
-      ],
-      "sahara": [
-        ""
       ],
       "slateblue": [
         "azul ardósia"
@@ -2123,7 +2070,8 @@
       ]
     },
     "file size format": {
-      "bytes": [
+      "byte": [
+        "byte",
         "bytes"
       ],
       "GB": [
@@ -2137,16 +2085,20 @@
       ]
     },
     "file size format, long": {
-      "Bytes": [
+      "Byte": [
+        "Byte",
         "Bytes"
       ],
-      "Gigabytes": [
+      "Gigabyte": [
+        "Gigabyte",
         "Gigabytes"
       ],
-      "Kilobytes": [
+      "Kilobyte": [
+        "Kilobyte",
         "Kilobytes"
       ],
-      "Megabytes": [
+      "Megabyte": [
+        "Megabyte",
         "Megabytes"
       ]
     },
@@ -2432,9 +2384,6 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Antes de pedir um novo código de verificação, verifique sua pasta de spam e verifique que ${ strong } é o endereço correto."
       ],
-      "Bulk uploads may reduce your computer’s performance. Consider limiting memory-intensive activities like streaming during upload. Or try uploading in batches.": [
-        ""
-      ],
       "Canceled": [
         "Cancelado"
       ],
@@ -2524,17 +2473,8 @@
       "Download failed": [
         "Falha no download"
       ],
-      "Download failed due to ${ error }": [
-        ""
-      ],
-      "Download finished": [
-        ""
-      ],
       "Download of ${ downloadFileName } will be aborted": [
         "Download de ${ downloadFileName } será abortado"
-      ],
-      "Download paused due to connection issue; it will resume automatically": [
-        ""
       ],
       "Downloaded": [
         "Transferido"
@@ -2697,9 +2637,6 @@
       "Link failed to be loaded": [
         "Falha ao carregar o link"
       ],
-      "Links failed to be loaded": [
-        ""
-      ],
       "Loading": [
         "Carregando"
       ],
@@ -2763,23 +2700,14 @@
       "Not a valid URL": [
         "Não é uma URL válida"
       ],
-      "Not all files were transferred. Try uploading or downloading the files again.": [
-        ""
-      ],
       "Note: Data may still be available locally on devices where you have installed ${ appName }.": [
         "Observação: Os dados ainda podem estar disponíveis localmente em dispositivos onde você instalou ${ appName }."
       ],
       "of": [
         "de"
       ],
-      "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
-        ""
-      ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Uma ou mais de suas chaves confiáveis foram marcadas como \"comprometidas\" pelo proprietário. Recomendamos que você \"desconfie\" dessas chaves."
-      ],
-      "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters is allowed": [
-        ""
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Altere essas configurações apenas se você estiver usando o PGP com destinatários que não usam o ${ BRAND_NAME }."
@@ -2799,11 +2727,11 @@
       "Permanently delete all files in your drive": [
         "Excluir permanentemente todos os arquivos no seu drive"
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
-        "PGP/Inline is only compatible with Plain Text format. Please note that Proton Mail always signs encrypted messages."
+      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        "O PGP/Incorporado só é compatível com o formato texto sem formatação. Observe que o ${ MAIL_APP_NAME } sempre assina mensagens criptografadas."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
-        "PGP/MIME automatically sends the message using the current composer mode. Please note that Proton Mail always signs encrypted messages."
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
+        "O PGP/MIME envia automaticamente a mensagem usando o modo de composição atual. Por favor, note que o ${ MAIL_APP_NAME } sempre assina mensagens criptografadas"
       ],
       "Please enter the password to decrypt and view content.": [
         "Por favor, insira a senha para descriptografar e visualizar o conteúdo."
@@ -2872,9 +2800,6 @@
       "Secure sharing": [
         "Compartilhamento seguro"
       ],
-      "Secure your documents and data": [
-        ""
-      ],
       "Select an uploaded file or folder and create a link to it.": [
         "Selecione um arquivo ou pasta enviado e crie um link para ele."
       ],
@@ -2899,20 +2824,11 @@
       "Share files with links": [
         "Compartilhar arquivos com links"
       ],
-      "Shareable link for ${ boldNameText }": [
-        ""
-      ],
       "Signature check will be ignored": [
         "Verificação de assinatura será ignorada"
       ],
       "Signature issue": [
         "Problema de assinatura"
-      ],
-      "Some files failed to download. Try downloading the files again.": [
-        ""
-      ],
-      "Some files failed to upload. Try uploading the files again.": [
-        ""
       ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "Alguns de seus arquivos não estão mais acessíveis. Restaure o acesso aos seus arquivos. ${ StartRecoveryButton }"
@@ -2944,14 +2860,8 @@
       "The following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Os seguintes podem ter sido adulterados: ${ items }. Abra apenas se você confiar."
       ],
-      "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
-        ""
-      ],
       "There are no files yet": [
         "Ainda não há arquivos"
-      ],
-      "These files were shared using end-to-end encryption. To ensure their security — and the security of all your documents, photos, and files — store them in Proton Drive, the cloud storage service you can trust.": [
-        ""
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Essa conta foi suspensa devido a uma possível violação da política de uso."
@@ -2970,9 +2880,6 @@
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Este link pode ser um ataque homógrafo. Por favor, verifique se este é o link que deseja visitar ou não o abra."
-      ],
-      "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
-        ""
       ],
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
         "Este link será desativado permanentemente. Ninguém com este link será capaz de acessar o seu arquivo. Para compartilhar novamente o arquivo, você precisará de um novo link."
@@ -3163,9 +3070,6 @@
       ],
       "file data": [
         "dados do arquivo"
-      ],
-      "file data key": [
-        ""
       ],
       "keys": [
         "chaves"
@@ -4104,9 +4008,6 @@
       ]
     },
     "Spotlight": {
-      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        ""
-      ],
       "Encrypted search is here": [
         "A pesquisa criptografada está aqui"
       ],
@@ -4281,18 +4182,6 @@
       "${ emailsCount } member": [
         "${ emailsCount } membro",
         "${ emailsCount } membros"
-      ],
-      "${ numberOfFailedTransfer.total } failed download": [
-        "",
-        ""
-      ],
-      "${ numberOfFailedTransfer.total } failed transfer": [
-        "",
-        ""
-      ],
-      "${ numberOfFailedTransfer.total } failed upload": [
-        "",
-        ""
       ],
       "Account suspended": [
         "Conta suspensa"
@@ -4696,9 +4585,6 @@
       ],
       "You have no folders yet": [
         "Você ainda não tem pastas"
-      ],
-      "You've got files": [
-        ""
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         "Sua avaliação gratuita termina em breve, em ${ formattedEndDate }"

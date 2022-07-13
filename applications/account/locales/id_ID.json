@@ -103,6 +103,9 @@
       "Apply": [
         "Terapkan"
       ],
+      "Apply to existing message": [
+        "Terapkan untuk pesan yang sudah ada"
+      ],
       "Attach screenshot(s)": [
         "Lampirkan tangkapan layar"
       ],
@@ -175,8 +178,8 @@
       "Continue to ${ name }": [
         "Lanjut ke ${ name }"
       ],
-      "Continue with": [
-        "Lanjut dengan"
+      "Continue with ${ nameToDisplay } ${ maybeEmailInBrackets }": [
+        "Lenjut dengan ${ nameToDisplay } ${ maybeEmailInBrackets }"
       ],
       "Continue with Google": [
         "Lanjutkan dengan Google"
@@ -193,8 +196,8 @@
       "Create": [
         "Buat"
       ],
-      "Create a secure ProtonMail address instead": [
-        "Create a secure Proton Mail address instead"
+      "Create a secure ${ MAIL_APP_NAME } address instead": [
+        "Buat alamat email aman ${ MAIL_APP_NAME }"
       ],
       "Create account": [
         "Buat akun"
@@ -345,6 +348,9 @@
       ],
       "Extend": [
         "Perpanjang"
+      ],
+      "Filters are being applied. This might take a few minutes.": [
+        "Filter sedang diterapkan. Harap tunggu beberapa saat."
       ],
       "Font": [
         "Font"
@@ -679,17 +685,14 @@
       "Show preview": [
         "Tampilkan pratinjau"
       ],
-      "sign in": [
-        "masuk"
-      ],
       "Sign in": [
         "Masuk"
       ],
       "Sign out": [
         "Keluar"
       ],
-      "Sign out from": [
-        "Keluar dari"
+      "Sign out from ${ nameToDisplay } ${ maybeEmailInBrackets }": [
+        "Keluar dari ${ nameToDisplay } ${ maybeEmailInBrackets }"
       ],
       "Sign out of all accounts": [
         "Keluar dari seluruh akun"
@@ -999,11 +1002,6 @@
         "Dua tahun"
       ]
     },
-    "blackfriday Action": {
-      "Get the offer": [
-        ""
-      ]
-    },
     "blackfriday Info": {
       "beta": [
         "beta"
@@ -1019,14 +1017,8 @@
       ]
     },
     "blackfriday Title": {
-      "Best deal": [
-        ""
-      ],
       "Most popular": [
         "Paling populer"
-      ],
-      "Save more when combining Mail and VPN": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer Action": {
@@ -1037,20 +1029,9 @@
         "Dapatkan penawaran sekarang"
       ]
     },
-    "blackfriday: VPNspecialoffer Badge popup": {
-      "${ vpnPlus } Special Offer 2021 discount has been applied": [
-        ""
-      ]
-    },
     "blackfriday: VPNspecialoffer Info": {
-      "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
-        ""
-      ],
       "Save ${ percentage }%": [
         "${ percentage } %"
-      ],
-      "Special offer Terms and Conditions": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer info": {
@@ -1064,15 +1045,6 @@
       ]
     },
     "blackfriday: VPNspecialoffer Title": {
-      "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
-        ""
-      ],
-      "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
-        ""
-      ],
-      "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
-        ""
-      ],
       "1 month": [
         "1 bulan"
       ],
@@ -1081,18 +1053,6 @@
       ],
       "24 months": [
         "24 bulan"
-      ],
-      "Billed at ${ amount } for the first 2 years.${ supNotice }": [
-        ""
-      ],
-      "Billed at ${ amount } for the first month.${ supNotice }": [
-        ""
-      ],
-      "Billed at ${ amount } for the first year.${ supNotice }": [
-        ""
-      ],
-      "Get the special year-end offer on our Premium VPN PLUS plan": [
-        ""
       ]
     },
     "Bridge version load failed": {
@@ -1200,8 +1160,8 @@
       "You have reached the maximum number of personal calendars you can create within your plan.": [
         "Anda telah mencapai batas jumlah kalender personal yang dapat Anda buat untuk jenis akun Anda."
       ],
-      "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } subscribed calendar.": [
-        "Anda mencapai batas langganan maksimal ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } kalender."
+      "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS } subscribed calendar.": [
+        "Anda telah mencapai batas ${ MAX_SUBSCRIBED_CALENDARS } langganan kalender yang diperkenankan."
       ]
     },
     "Calendar link purpose update success message": {
@@ -2622,9 +2582,6 @@
       "A group with this name already exists": [
         "Grup dengan nama ini sudah ada"
       ],
-      "Address already associated to a user": [
-        "Alamat sudah terkait dengan pengguna"
-      ],
       "Address primary private key not found": [
         "Kunci pribadi utama alamat tidak ditemukan"
       ],
@@ -3166,20 +3123,36 @@
       "Please ${ refresh } or check your connection.": [
         "Mohon ${ refresh } atau cek koneksi Anda."
       ],
-      "Please ${ signIn } to update your email subscription preferences.": [
-        "Harap ${ signIn } untuk memperbarui preferensi langganan email Anda."
-      ],
       "There was a problem connecting to Proton.": [
         "Ada masalah saat menyambung ke Proton."
-      ],
-      "There was a problem unsubscribing you.": [
-        "Ada masalah saat berhenti berlangganan."
       ],
       "Too many child sessions, please clear your cookies and sign back in.": [
         "Sesi turunan terlalu banyak. Bersihkan riwayat cookie Anda dan masuk lagi."
       ],
       "You may also ${ refresh } or try again later.": [
         "Anda juga dapat ${ refresh } atau mencoba lagi nanti."
+      ]
+    },
+    "Error message, recovery": {
+      "Please ${ _signIn } to resend a recovery email verification request.": [
+        "Silakan ${ _signIn } untuk mengirimkan ulang permintaan verifikasi email pemulihan."
+      ],
+      "sign in": [
+        "masuk"
+      ],
+      "There was a problem verifying your email address.": [
+        "Terdapat masalah dalam memverifikasi alamat email Anda."
+      ]
+    },
+    "Error message, unsubscribe": {
+      "Please ${ signIn } to update your email subscription preferences.": [
+        "Silakan ${ signIn } untuk memperbarui preferensi langganan email Anda."
+      ],
+      "sign in": [
+        "masuk"
+      ],
+      "There was a problem unsubscribing you.": [
+        "Terdapat masalah dalam memberhentikan langganan Anda."
       ]
     },
     "Error notification": {
@@ -3323,7 +3296,7 @@
       ]
     },
     "file size format": {
-      "bytes": [
+      "byte": [
         "byte"
       ],
       "GB": [
@@ -3337,16 +3310,16 @@
       ]
     },
     "file size format, long": {
-      "Bytes": [
+      "Byte": [
         "Byte"
       ],
-      "Gigabytes": [
+      "Gigabyte": [
         "Gigabyte"
       ],
-      "Kilobytes": [
+      "Kilobyte": [
         "Kilobyte"
       ],
-      "Megabytes": [
+      "Megabyte": [
         "Megabyte"
       ]
     },
@@ -4323,6 +4296,9 @@
       "Continue with ${ planName }": [
         "Lanjut dengan ${ planName }"
       ],
+      "Continuing will connect your ${ ACCOUNT_APP_NAME } to ${ name }.": [
+        "Dengan melanjutkan, akun ${ ACCOUNT_APP_NAME } Anda akan terhubung ke ${ name }."
+      ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Buat ${ calendarsToBeCreated } kalender baru"
       ],
@@ -5028,9 +5004,6 @@
       "Select a service provider to start": [
         "Pilih layanan email yang Anda gunakan untuk memulai"
       ],
-      "Select Continue to ${ name } to open the app. This also creates a ${ name } account with your ${ MAIL_APP_NAME } address so you can sign in with one click in the future.": [
-        "Pilih Lanjut ke ${ name } untuk membuka aplikasi yang bersangkutan. Tindakan ini juga akan membuat akun ${ name } dengan alamat ${ MAIL_APP_NAME } Anda sehingga Anda akan dapat masuk hanya dengan sekali klik ke depannya."
-      ],
       "Select what you want to move from Google.": [
         "Pilih hal-hal apa saja yang hendak Anda pindahkan dari Google."
       ],
@@ -5468,6 +5441,9 @@
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "Anda harus memiliki kartu kredit atau akun bank yang terhubung dengan akun Paypal Anda. Jika akun Paypal Anda tidak memilikinya, silakan klik tombol di bawah."
+      ],
+      "You must remove any additional personal calendars and any shared calendar links before you can cancel your Mail subscription.": [
+        "Anda harus menghapus seluruh kalender personal tambahan beserta tautan kalender yang dibagikan sebelum langganan Mail Anda dapat dibatalkan."
       ],
       "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription.": [
         "Anda harus menghapus seluruh kalender personal tambahan dan tautan kalender yang yang telah dibagikan sebelum Anda dapat membatalkan langganan Anda."
@@ -6046,6 +6022,9 @@
       ],
       "App password": [
         "Kata Sandi Aplikasi"
+      ],
+      "Apply filter to existing emails": [
+        "Terapkan filter untuk email yang sudah ada"
       ],
       "Ask before loading remote content": [
         "Tampilkan dialog konfirmasi sebelum memuat remote content"
@@ -7035,6 +7014,9 @@
       ]
     },
     "Message": {
+      "All filter actions will be applied to all messages in your Proton Mail account. No auto-reply emails will be sent.": [
+        "Semua filter akan diterapkan untuk semua pesan di akun Proton Mail Anda. Email balasan otomatis tidak akan dikirimkan."
+      ],
       "Are you sure you want to disable two-factor authentication?": [
         "Apakah Anda yakin ingin menonaktifkan otentikasi dua faktor?"
       ],
@@ -7549,26 +7531,6 @@
         "Manajemen tim"
       ]
     },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Jadikan privasi sebagai hal yang baku dalam hal penyimpanan, pencadangan, pembagian, dan penerimaan berkas."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Apabila tidak, akses menuju akun Anda akan dibatasi dan akun Anda akan dinonaktifkan ke depannya."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Untuk dapat tetap menggunakan ${ MAIL_APP_NAME } dengan berbagai fitur premium, pilih jenis langganan dan metode pembayaran yang Anda kehendaki."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Tingkatkan akun Anda ke paket bisnis dengan akses ke seluruh layanan premium Proton."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Tingkatkan akun Anda ke paket privasi menyeluruh dan akses seluruh layanan premium yang Proton miliki."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Masa uji coba Anda akan berakhir ${ formattedTrialExpirationDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } akan berakhir dalam ${ last4 }"
@@ -7635,6 +7597,26 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Anda sedang berlangganan ke paket Anda saat ini dengan harga diskon. Dengan menurunkan jenis akun Anda, Anda tidak akan lagi dapat membeli langganan dengan harga diskon ke depannya."
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Jadikan privasi sebagai hal yang baku dalam hal penyimpanan, pencadangan, pembagian, dan penerimaan berkas."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Apabila tidak, akses menuju akun Anda akan dibatasi dan akun Anda akan dinonaktifkan ke depannya."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Untuk dapat tetap menggunakan ${ MAIL_APP_NAME } dengan berbagai fitur premium, pilih jenis langganan dan metode pembayaran yang Anda kehendaki."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Tingkatkan akun Anda ke paket bisnis dengan akses ke seluruh layanan premium Proton."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Tingkatkan akun Anda ke paket privasi menyeluruh dan akses seluruh layanan premium yang Proton miliki."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Masa uji coba Anda akan berakhir ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -8431,14 +8413,8 @@
       "Email address not yet verified.": [
         "Alamat email belum diverifikasi."
       ],
-      "Please ${ signIn } to resend a recovery email verification request.": [
-        "Mohon ${ signIn } untuk dapat mengirimkan ulang email verifikasi."
-      ],
-      "Send verification email": [
-        "Kirim email verifikasi"
-      ],
-      "There was a problem verifying your email address.": [
-        "Terdapat masalah dalam memverifikasi alamat email Anda."
+      "sign in": [
+        "masuk"
       ],
       "Verification email sent to ${ email.Value }": [
         "Email verifikasi telah dikirim ke ${ email.Value }"
@@ -8448,6 +8424,9 @@
       ],
       "Verify recovery email?": [
         "Verifikasi alamat email pemulihan?"
+      ],
+      "Verify with email": [
+        "Verifikasi melalui email"
       ],
       "Verifying your email address increases your account security and allows additional options for recovery.": [
         "Memverifikasi alamat email akan memungkinkan Anda untuk meningkatkan keamanan akun dan menambah metode pemulihan akun."
@@ -8468,6 +8447,29 @@
       ],
       "Phrase": [
         "Frasa"
+      ]
+    },
+    "Recovery Phone": {
+      "Cancel": [
+        "Batal"
+      ],
+      "Phone number has been verified.": [
+        "Nomor telepon telah diverifikasi."
+      ],
+      "Phone number not yet verified.": [
+        "Nomor telepon belum diverifikasi."
+      ],
+      "Verify by SMS": [
+        "Verifikasi melalui SMS"
+      ],
+      "Verify now": [
+        "Verifikasi"
+      ],
+      "Verify recovery phone?": [
+        "Verifikasi nomor telepon pemulihan?"
+      ],
+      "Verifying your phone number increases your account security and allows additional options for recovery.": [
+        "Dengan memverifikasi nomor telepon, Anda akan meningkatkan keamanan akun serta menambah metode pemulihan bagi akun Anda."
       ]
     },
     "Remark about a key type option": {
@@ -9155,6 +9157,9 @@
       "Appearance": [
         "Tampilan"
       ],
+      "Apply filter to existing messages": [
+        "Terapkan filter untuk pesan yang sudah ada"
+      ],
       "Apply gift code": [
         "Gunakan kode hadiah"
       ],
@@ -9184,6 +9189,9 @@
       ],
       "Bridge for ${ platform }": [
         "Bridge untuk ${ platform }"
+      ],
+      "Cancel Mail subscription": [
+        "Batalkan langganan Mail"
       ],
       "Card verification": [
         "Verifikasi kartu"
@@ -10059,11 +10067,11 @@
       ]
     },
     "Upgrade notice": {
-      "Upgrade to a paid plan to create up to ${ MAX_CALENDARS_PER_USER } calendar, allowing you to make calendars for work, to share with friends, and just for yourself.": [
-        "Tingkatkan jenis akun Anda ke akun berbayar untuk dapat membuat hingga ${ MAX_CALENDARS_PER_USER } kalender untuk segala jenis keperluan mulai dari kerja, dibagikan kepada teman, hingga untuk diri Anda sendiri."
+      "Upgrade to a Mail paid plan to create up to ${ MAX_CALENDARS_PAID } calendar, allowing you to make calendars for work, to share with friends, and just for yourself.": [
+        "Tingkatkan akun Anda ke akun Mail berbayar untuk dapat membuat hingga ${ MAX_CALENDARS_PAID } kalender untuk segala jenis keperluan mulai dari kerja, dibagikan kepada teman, hingga diri Anda sendiri."
       ],
-      "Upgrade to a paid plan to share your personal calendar via link with anyone.": [
-        "Tingkatkan jenis akun Anda ke akun berbayar untuk dapat membagikan kalender personal melalui tautan kepada siapapun."
+      "Upgrade to a Mail paid plan to share your personal calendar via link with anyone.": [
+        "Tingkatkan akun Anda ke akun Mail berbayar untuk dapat membagikan kalender personal melalui tautan kepada siapapun."
       ]
     },
     "User role": {

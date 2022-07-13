@@ -48,7 +48,7 @@
         "Modifier le mot de passe"
       ],
       "Chat with us": [
-        "Dialoguez avec nous"
+        "Discutez avec nous"
       ],
       "Close": [
         "Fermer"
@@ -80,8 +80,8 @@
       "Create": [
         "Créer"
       ],
-      "Create a secure ProtonMail address instead": [
-        "Créer une adresse ProtonMail sécurisée à la place"
+      "Create a secure ${ MAIL_APP_NAME } address instead": [
+        "Créez plutôt une adresse sécurisée ${ MAIL_APP_NAME }"
       ],
       "Create account": [
         "Créer un compte"
@@ -99,7 +99,7 @@
         "Personnaliser"
       ],
       "Customize plan": [
-        "Personnaliser l'offre"
+        "Personnaliser l'abonnement"
       ],
       "Decrease": [
         "Diminuer"
@@ -117,7 +117,7 @@
         "Vous n'avez pas reçu de code ?"
       ],
       "Didn't receive the code?": [
-        "Vous n'avez pas reçu le code ?"
+        "Vous n'avez pas reçu le code  ?"
       ],
       "Done": [
         "Terminé"
@@ -339,7 +339,7 @@
         "Mettre à jour la phrase de récupération"
       ],
       "Upgrade": [
-        "Changer d'offre"
+        "Changer d'abonnement"
       ],
       "Use ${ label } theme": [
         "Utiliser le thème « ${ label } »"
@@ -363,7 +363,7 @@
         "Utilisateur"
       ],
       "Verify": [
-        "Vérifier "
+        "Vérifier"
       ],
       "Verify account": [
         "Vérifier le compte"
@@ -521,11 +521,6 @@
       ],
       "Get the deal now": [
         "Profitez de l'offre maintenant"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Badge popup": {
-      "${ vpnPlus } Special Offer 2021 discount has been applied": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer Info": {
@@ -1625,19 +1620,19 @@
         "Montant inférieur au minimum autorisé."
       ],
       "Can't check username, try again later": [
-        "Impossible de vérifier le nom d'utilisateur, réessayez plus tard"
+        "Impossible de vérifier le nom d'utilisateur, réessayez plus tard."
       ],
       "Checkout expired, please try again": [
-        "La commande a expiré, veuillez réessayer"
+        "La commande a expiré, veuillez réessayer."
       ],
       "Code wrong or not valid anymore": [
         "Code incorrect ou plus valide"
       ],
       "Domain not available, try again later": [
-        "Domaine non disponible, veuillez réessayer plus tard"
+        "Domaine non disponible, veuillez réessayer plus tard."
       ],
       "Email is not valid": [
-        "Adresse électronique invalide"
+        "Adresse électronique non valide"
       ],
       "Enter 6 digits": [
         "Saisissez 6 chiffres"
@@ -1655,25 +1650,25 @@
         "Mot de passe de la messagerie incorrect. Veuillez réessayer."
       ],
       "Invalid ${ name } code": [
-        "Code ${ name } invalide"
+        "Code ${ name } non valide"
       ],
       "Invalid card number": [
-        "Numéro de carte invalide"
+        "Numéro de carte non valide"
       ],
       "Invalid code": [
         "Code invalide"
       ],
       "Invalid expiration date": [
-        "Date d’expiration invalide"
+        "Date d’expiration non valide"
       ],
       "Invalid invitation link": [
         "Lien d'invitation invalide"
       ],
       "Invalid postal code": [
-        "Code postal invalide"
+        "Code postal non valide"
       ],
       "Invalid verification code": [
-        "Code de vérification invalide"
+        "Code de vérification non valide"
       ],
       "Name on card required": [
         "Nom du titulaire de la carte requis"
@@ -1685,7 +1680,7 @@
         "Organisation non reconnue. Réessayez."
       ],
       "Passwords do not match": [
-        "Les mots de passe ne correspondent pas"
+        "Les mots de passe ne correspondent pas."
       ],
       "Payment process cancelled": [
         "Processus de paiement annulé"
@@ -1700,25 +1695,25 @@
         "Processus de paiement non pris en charge"
       ],
       "Payments are currently not available, please try again later": [
-        "Les paiements sont actuellement indisponibles, veuillez réessayer ultérieurement"
+        "Les paiements ne sont actuellement pas disponibles, veuillez réessayer plus tard."
       ],
       "Please generate keys before you try to change your password": [
-        "Veuillez générer des clés avant d'essayer de changer votre mot de passe"
+        "Veuillez générer des clés avant d'essayer de changer votre mot de passe."
       ],
       "Please set a recovery email first": [
-        "Veuillez d'abord définir une adresse électronique de récupération"
+        "Veuillez d'abord définir une adresse électronique de récupération."
       ],
       "Please set a recovery phone number first": [
-        "Veuillez d'abord définir un numéro de téléphone de récupération"
+        "Veuillez d'abord définir un numéro de téléphone de récupération."
       ],
       "Process aborted": [
         "Processus interrompu"
       ],
       "Request timed out": [
-        "La requête a expiré"
+        "La requête a expiré."
       ],
       "Signature verification failed": [
-        "La vérification de la signature a échoué"
+        "La vérification de la signature a échoué."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Quelque chose s'est mal passé, veuillez ${ refresh } afin de pouvoir continuer. Si ce message d'erreur s'affiche toujours, veuillez contacter notre ${ supportTeam }."
@@ -1757,7 +1752,7 @@
         "Vous n'avez pas de factures."
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
-        "Votre compte ou organisation possède une facture en retard. Veuillez régler toutes les factures impayées."
+        "Votre compte ou votre organisation a une facture impayée, veuillez la régler."
       ]
     },
     "Error message": {
@@ -1812,7 +1807,8 @@
       ]
     },
     "file size format": {
-      "bytes": [
+      "byte": [
+        "octet",
         "octets"
       ],
       "GB": [
@@ -1826,16 +1822,20 @@
       ]
     },
     "file size format, long": {
-      "Bytes": [
+      "Byte": [
+        "Octet",
         "Octets"
       ],
-      "Gigabytes": [
-        "Giga-octets"
+      "Gigabyte": [
+        "Gigaoctet",
+        "Gigaoctets"
       ],
-      "Kilobytes": [
-        "Kilo-octets"
+      "Kilobyte": [
+        "Kilooctet",
+        "Kilooctets"
       ],
-      "Megabytes": [
+      "Megabyte": [
+        "Megaoctet",
         "Mega-octets"
       ]
     },
@@ -2507,6 +2507,9 @@
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "Vous devez avoir une carte de crédit ou un compte bancaire lié à votre compte PayPal. Si votre compte PayPal n'en dispose pas, veuillez cliquer sur le lien ci-dessous."
+      ],
+      "You must remove any additional personal calendars and any shared calendar links before you can cancel your Mail subscription.": [
+        "Vous devez supprimer tout calendrier personnel supplémentaire et tout lien de calendrier partagé avant de pouvoir annuler votre abonnement."
       ],
       "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription.": [
         "Vous devez supprimer tout calendrier personnel supplémentaire et tout lien de calendrier partagé avant de pouvoir annuler votre abonnement."
@@ -3912,9 +3915,6 @@
       "Email address not yet verified.": [
         "Adresse e-mail non vérifiée."
       ],
-      "Send verification email": [
-        "Envoyer l'e-mail de vérification"
-      ],
       "Verification email sent to ${ email.Value }": [
         "E-mail de vérification envoyé à ${ email.Value }"
       ],
@@ -3923,6 +3923,9 @@
       ],
       "Verify recovery email?": [
         "Vérifier l'e-mail de récupération ?"
+      ],
+      "Verify with email": [
+        "Vérifier par e-mail"
       ],
       "Verifying your email address increases your account security and allows additional options for recovery.": [
         "Vérifier votre adresse e-mail améliore la sécurité de votre compte et offre des options de récupération supplémentaires."
@@ -3939,6 +3942,29 @@
         "Phrase"
       ]
     },
+    "Recovery Phone": {
+      "Cancel": [
+        "Annuler"
+      ],
+      "Phone number has been verified.": [
+        "Numéro de téléphone vérifié."
+      ],
+      "Phone number not yet verified.": [
+        "Numéro de téléphone pas encore vérifié."
+      ],
+      "Verify by SMS": [
+        "Vérifier par SMS"
+      ],
+      "Verify now": [
+        "Vérifier maintenant"
+      ],
+      "Verify recovery phone?": [
+        "Vérifier le téléphone de récupération ?"
+      ],
+      "Verifying your phone number increases your account security and allows additional options for recovery.": [
+        "Vérifier votre numéro de téléphone améliore la sécurité de votre compte et offre des options de récupération supplémentaires."
+      ]
+    },
     "Signup label": {
       "Display name": [
         "Nom d'affichage"
@@ -3952,7 +3978,7 @@
     },
     "Spotlight": {
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        "${ DRIVE_APP_NAME } n'est plus en beta ! Donnez à vos fichiers la même sécurité que vos e-mails."
+        "${ DRIVE_APP_NAME } n'est plus en version beta. Offrez à vos fichiers la même sécurité que celle dont bénéficient vos e-mails."
       ],
       "Get up to 18 months of ${ planName } for free": [
         "Obtenez jusqu'à 18 mois de ${ planName } gratuitement"
@@ -4256,6 +4282,9 @@
       ],
       "Billing cycle": [
         "Cycle de facturation"
+      ],
+      "Cancel Mail subscription": [
+        "Annuler l'abonnement Mail"
       ],
       "Card verification": [
         "Vérification de la carte"

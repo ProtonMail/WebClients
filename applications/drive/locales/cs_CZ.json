@@ -45,7 +45,7 @@
         "Použít"
       ],
       "Attach screenshot(s)": [
-        "Přiložit snímek/snímky obrazovky"
+        "Přiložit sním(ek/ky) obrazovky"
       ],
       "Back": [
         "Zpět"
@@ -165,13 +165,13 @@
         "Smazat ${ selectedCount } kontakt",
         "Smazat ${ selectedCount } kontakty",
         "Smazat ${ selectedCount } kontaktů",
-        "Smazat ${ selectedCount } kontakty"
+        "Smazat ${ selectedCount } kontaktů"
       ],
       "Delete ${ selectedCount } contact group": [
         "Smazat ${ selectedCount } skupinu kontaktů",
         "Smazat ${ selectedCount } skupiny kontaktů",
-        "Smazat ${ selectedCount } skupiny kontaktů",
-        "Smazat ${ selectedCount } skupiny kontaktů"
+        "Smazat ${ selectedCount } skupin kontaktů",
+        "Smazat ${ selectedCount } skupin kontaktů"
       ],
       "Delete contact": [
         "Smazat kontakt"
@@ -459,7 +459,7 @@
         "Nastavit obnovovací frázi"
       ],
       "Share file": [
-        "Sdílet odkaz"
+        "Sdílet soubor"
       ],
       "Share item": [
         "Sdílet položku"
@@ -491,11 +491,8 @@
       "Skip": [
         "Přeskočít"
       ],
-      "Start import": [
-        ""
-      ],
       "Start recovering": [
-        "Počátek zotavení"
+        "Začít obnovu"
       ],
       "Start setup": [
         "Spusťte nastavení"
@@ -543,7 +540,7 @@
         "Aktualizovat obnovovací frázi"
       ],
       "Upgrade": [
-        "Rozšířit"
+        "Navýšit tarif"
       ],
       "Upload anyway": [
         "Přesto nahrát"
@@ -620,11 +617,6 @@
         "Pokud narazíte na problémy, můžete přístup k betaverzi vždy deaktivovat."
       ]
     },
-    "blackfriday Action": {
-      "Get the offer": [
-        ""
-      ]
-    },
     "blackfriday Info": {
       "beta": [
         "beta"
@@ -640,14 +632,8 @@
       ]
     },
     "blackfriday Title": {
-      "Best deal": [
-        ""
-      ],
       "Most popular": [
         "Nejoblíbenější"
-      ],
-      "Save more when combining Mail and VPN": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer Action": {
@@ -659,14 +645,8 @@
       ]
     },
     "blackfriday: VPNspecialoffer Info": {
-      "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
-        ""
-      ],
       "Save ${ percentage }%": [
         "${ percentage } %"
-      ],
-      "Special offer Terms and Conditions": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer info": {
@@ -680,15 +660,6 @@
       ]
     },
     "blackfriday: VPNspecialoffer Title": {
-      "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
-        ""
-      ],
-      "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
-        ""
-      ],
-      "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
-        ""
-      ],
       "1 month": [
         "1 měsíc"
       ],
@@ -697,18 +668,6 @@
       ],
       "24 months": [
         "24 měsíců"
-      ],
-      "Billed at ${ amount } for the first 2 years.${ supNotice }": [
-        ""
-      ],
-      "Billed at ${ amount } for the first month.${ supNotice }": [
-        ""
-      ],
-      "Billed at ${ amount } for the first year.${ supNotice }": [
-        ""
-      ],
-      "Get the special year-end offer on our Premium VPN PLUS plan": [
-        ""
       ]
     },
     "Bug category": {
@@ -764,7 +723,7 @@
         "Problém s registrací"
       ],
       "Slow speed problem": [
-        "Problém s pomalou rychlostí"
+        "Problém s nízkou rychlostí"
       ],
       "Speed problem": [
         "Problém s rychlostí"
@@ -873,7 +832,7 @@
         "švestka"
       ],
       "purple": [
-        "fialová"
+        "purpurová"
       ],
       "reef": [
         "útes"
@@ -882,7 +841,7 @@
         "sahara"
       ],
       "slateblue": [
-        "břidlice"
+        "břidličná modř"
       ],
       "soil": [
         "půda"
@@ -1833,7 +1792,7 @@
         "Podpis kontaktu nebyl ověřen"
       ],
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
-        "V tomto prohlížeči nelze povolit vyhledávání obsahu. Ukončete prosím režim soukromého režim prohlížeče, nebo vyzkoušejte jiný prohlížeč."
+        "V tomto prohlížeči nelze povolit vyhledávání obsahu. Ukončete režim soukromého procházení nebo použijte jiný prohlížeč."
       ],
       "Deselect at least ${ calendarToFixCount } calendar": [
         "Zrušte výběr nejméně ${ calendarToFixCount } kalendáře",
@@ -1866,7 +1825,7 @@
         "Soubor nelze sloučit se složkou"
       ],
       "File selection is already downloading": [
-        "Vybraný soubor se již stahuje"
+        "Vybrané soubory se již stahují"
       ],
       "Folder \"${ name }\" is already downloading": [
         "Složka \"${ name }\" se již stahuje"
@@ -1935,7 +1894,7 @@
         "Hesla se neshodují"
       ],
       "Please activate your content search again": [
-        "Prosím, aktivujte znovu vyhledávací obsah"
+        "Prosím, aktivujte znovu vyhledávání obsahu"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Chcete-li pokračovat, opravte zvýrazněný konflikt.",
@@ -2132,7 +2091,7 @@
     },
     "Error notification when score is missing in user feedback form modal": {
       "Score is required": [
-        "Výsledek je požadován"
+        "Skóre je potřeba vyplnit"
       ]
     },
     "Feedback Modal Title": {
@@ -2141,9 +2100,6 @@
       ]
     },
     "file size format": {
-      "bytes": [
-        "bajty"
-      ],
       "GB": [
         "GB"
       ],
@@ -2152,20 +2108,6 @@
       ],
       "MB": [
         "MB"
-      ]
-    },
-    "file size format, long": {
-      "Bytes": [
-        "Bajty"
-      ],
-      "Gigabytes": [
-        "Gigabajty"
-      ],
-      "Kilobytes": [
-        "Kilobajty"
-      ],
-      "Megabytes": [
-        "Megabajty"
       ]
     },
     "Filter notification": {
@@ -2318,10 +2260,10 @@
         "Nahrávám ${ activeUploadsCount } (${ uploadProgress }%)"
       ],
       "${ addressCount } email address": [
-        "${ addressCount } e-mail adresa",
-        "${ addressCount } e-mail adresy",
+        "${ addressCount } e-mailová adresa",
+        "${ addressCount } e-mailové adresy",
         "${ addressCount } e-mailových adres",
-        "${ addressCount } e-mailové adresy"
+        "${ addressCount } e-mailových adres"
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Aplikace ${ appName } potřebuje Váš souhlas, aby mohla ${ enableDesktopNotifications }."
@@ -2372,10 +2314,10 @@
         "${ contactsCount } kontaktů nalezeno"
       ],
       "${ doneCount } finished": [
-        "${ doneCount } hotovo",
-        "${ doneCount } hotovy",
-        "${ doneCount } hotov",
-        "${ doneCount } hotov"
+        "${ doneCount } ukončený",
+        "${ doneCount } ukončené",
+        "${ doneCount } ukončených",
+        "${ doneCount } ukončených"
       ],
       "${ doneDownloadsCount } downloaded": [
         "${ doneDownloadsCount } stažen",
@@ -2416,8 +2358,8 @@
       "${ pausedCount } paused": [
         "${ pausedCount } pozastaven",
         "${ pausedCount } pozastaveny",
-        "${ pausedCount } zastavených",
-        "${ pausedCount } zastavených"
+        "${ pausedCount } pozastavených",
+        "${ pausedCount } pozastavených"
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } z ${ providerCalendars.length } kalendáře",
@@ -2474,19 +2416,19 @@
         "Ověření adresy pomocí důvěryhodného klíče je pro tuto adresu povoleno. Chcete-li posílat zprávy na tuto adresu, nejprve důvěřujte veřejnému klíči, který může být použit pro odesílání."
       ],
       "All (${ totalFoldersCount } folder)": [
-        "Vše (${ totalFoldersCount } složka)",
-        "Vše (${ totalFoldersCount } složky)",
-        "Vše (${ totalFoldersCount } složek)",
-        "Vše (${ totalFoldersCount } složky)"
+        "Všechna (${ totalFoldersCount } složka)",
+        "Všechny (${ totalFoldersCount } složky)",
+        "Všech (${ totalFoldersCount } složek)",
+        "Všech (${ totalFoldersCount } složek)"
       ],
       "All (${ totalFoldersCount } label)": [
-        "Vše (${ totalFoldersCount } štítek)",
-        "Vše (${ totalFoldersCount } štítky)",
-        "Vše (${ totalFoldersCount } štítků)",
-        "Vše (${ totalFoldersCount } štítků)"
+        "Všechen (${ totalFoldersCount } štítek)",
+        "Všechny (${ totalFoldersCount } štítky)",
+        "Všech (${ totalFoldersCount } štítků)",
+        "Všech (${ totalFoldersCount } štítků)"
       ],
       "An active recovery file": [
-        "Aktualizovat soubor pro obnovení"
+        "Aktivní soubor pro obnovení"
       ],
       "and": [
         "a"
@@ -2501,13 +2443,13 @@
         "Opravdu chcete vyprázdnit koš a trvale smazat všechny položky?"
       ],
       "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
-        "Opravdu chcete trvale odstranit \"${ itemName }\" z koše?"
+        "Opravdu chcete trvale smazat \"${ itemName }\" z koše?"
       ],
       "Are you sure you want to permanently delete selected items from trash?": [
-        "Opravdu chcete trvale odstranit vybrané položky z koše?"
+        "Opravdu chcete trvale smazat vybrané položky z koše?"
       ],
       "Because ${ appName } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
-        "Vzhledem k tomu že ${ appName } je end-to-end zašifrovaná, tak nemáme přístup\na nemůžeme za Vás dekryptovat Vaše soubory. K odemknutí Vašeho disku po resetování hesla\nmusíte mít jedno z následujících:"
+        "Vzhledem k tomu, že ${ appName } používá end-to-end šifrování, nemáme přístup\nani nemůžeme dešifrovat vaše soubory. Pro odemčení disku po resetu hesla,\nmusíte mít jedno z následujících:"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Před vyžádáním nového ověřovacího kódu zkontrolujte složku spamu a zkontrolujte, zda je adresa ${ strong } správná."
@@ -2519,10 +2461,10 @@
         "Zrušeno"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
-        "Nemůžete si vzpomenout na heslo? Můžeme Vám pomoci vyčistit šifrovaná data od všech šifrovaných kontaktů s tímto klíčem a v tomto procesu zavřete upozornění."
+        "Nemůžete si vzpomenout na heslo? Můžeme vám pomoci smazat šifrovaná data všech kontaktů, která jsou šifrována tímto klíčem a zbavit se upozornění."
       ],
       "Checking contact ${ progress } of ${ max }...": [
-        "Vyhledávání kontaktu ${ progress } o ${ max }..."
+        "Kontrola kontaktu ${ progress } z ${ max }..."
       ],
       "Checking signatures": [
         "Ověřování podpisů"
@@ -2531,7 +2473,7 @@
         "Vymazat data"
       ],
       "Clear encrypted search data": [
-        "Vymazat zašifrovaná vyhledávací data"
+        "Vymazat šifrovaná data vyhledávání"
       ],
       "Clearing browser data will clear the search index on this device. All files would need to be re-indexed again while using the search functionality.": [
         "Vymazání dat prohlížeče vymaže index vyhledávání v tomto zařízení. Při použití funkce vyhledávání by bylo nutné všechny soubory znovu indexovat."
@@ -2540,7 +2482,7 @@
         "Vymaže data prohlížeče související se šifrovaným vyhledáváním."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "Klikněte na \"Požádat o nový kód\" pro zaslání nového ověřovacího kódu na ${ strong }. Pokud je toto telefonní číslo nesprávné, klepněte na tlačítko \"Upravit\" pro jeho opravu."
+        "Klikněte na \"Poslat nový kód\" pro zaslání nového ověřovacího kódu na ${ strong }. Pokud je toto telefonní číslo nesprávné, klepněte na tlačítko \"Upravit\" pro jeho opravu."
       ],
       "Close this screen to exit.": [
         "Pro ukončení zavřete tuto obrazovku."
@@ -2582,19 +2524,19 @@
         "Vytváření"
       ],
       "Creating link to file": [
-        "Vytvářím odkazový řádek k souboru"
+        "Vytváření odkazu na soubor"
       ],
       "Creating link to folder": [
-        "Vytvoření odkazu pro složku"
+        "Vytváření odkazu na složku"
       ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "Jsou podporovány CSV soubory z aplikací Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora a některých dalších aplikací a také formáty vCard 3.1 a 4.0 (kódování UTF-8)."
       ],
       "Delete drive": [
-        "Odstranit Disk",
+        "Odstranit disk",
         "Odstranit disky",
-        "Odstranit disků",
-        "Odstranit disků"
+        "Odstranit disky",
+        "Odstranit disky"
       ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "Digitální podpis ověřen. Tento soubor byl bezpečně nahrán uživatelem ${ emailAddress }."
@@ -2642,7 +2584,7 @@
         "Šifrováno"
       ],
       "Encrypted search is here": [
-        "Zašifrované vyhledávání je tady"
+        "Vyhledávání v šifrovaných datech je zde"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Zadejte ověřovací kód, který byl odeslán na ${ destinationText }."
@@ -2663,7 +2605,7 @@
         "Selhalo"
       ],
       "Failed to generate a secure link. Try again later.": [
-        "Nepovedlo se vygenerovat bezpečný odkazový řádek. Zkuste to později."
+        "Nepovedlo se vygenerovat bezpečný odkaz. Zkuste to později."
       ],
       "Failed to open a secure link. The reason is: ${ error }": [
         "Nepodařilo se otevřít zabezpečený odkaz. Důvod: ${ error }"
@@ -2672,7 +2614,7 @@
         "Soubor \"${ name }\" byl smazán během stahování"
       ],
       "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "Souboru chybí podpis. Nemohli jsme ověřit, že ${ emailAddress } nahrál ${ fileName }."
+        "Souboru chybí podpis. Nemohli jsme ověřit, že ${ emailAddress } nahrál/a ${ fileName }."
       ],
       "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
         "Souboru chybí podpis. Nemohli jsme ověřit, kdo nahrál ${ fileName }."
@@ -2681,7 +2623,7 @@
         "Soubor nebude nahrán"
       ],
       "Finalizing": [
-        "Dokončení"
+        "Dokončování"
       ],
       "Folder \"${ link.name }\" was deleted during download": [
         "Složka \"${ link.name }\" byla smazána během stahování"
@@ -2690,7 +2632,7 @@
         "Obsah složky bude sloučen do jedné složky"
       ],
       "Folder is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "Složce chybí podpis. Nemohli jsme ověřit, že ${ emailAddress } nahrál ${ fileName }."
+        "Složce chybí podpis. Nemohli jsme ověřit, že ${ emailAddress } nahrál/a ${ fileName }."
       ],
       "Folder is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
         "Složce chybí podpis. Nemohli jsme ověřit, kdo nahrál ${ fileName }."
@@ -2714,7 +2656,7 @@
         "zde"
       ],
       "How does encrypted search work?": [
-        "Jak fůnguje šifrované vyhledávání?"
+        "Jak funguje vyhledávání v šifrovaných datech?"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Pokud máte potíže s vytvořením účtu, požádejte prosím o pozvánku a my odpovíme do jednoho pracovního dne."
@@ -2726,7 +2668,7 @@
         "Pokud jste nenašli e-mail ve vaší schránce, zkontrolujte prosím složku se spamem."
       ],
       "If you have one of these, continue to Proton account setting to\nstart the unblock process.": [
-        "Pokud máte některý z nich, pokračujte do nastavení účtu Proton, abyste\nzahájit proces odblokování."
+        "Pokud máte některý z nich, pokračujte do nastavení účtu Proton, pro\nzahájení procesu odblokování."
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Importovat ${ contactsFragment } a ${ contactsGroupsFragment }"
@@ -2747,16 +2689,16 @@
         "Importujeme Vaše data z ${ importedEmailAddress } do ${ toEmail }."
       ],
       "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
-        "Stahování souborů ${ esProgress } z ${ totalProgressToShow }"
+        "Indexování položek ${ esProgress } z ${ totalProgressToShow }"
       ],
       "Indexing search results…": [
         "Indexování výsledků vyhledávání…"
       ],
       "Inherited from parent folder": [
-        "Přebráno z nadřazené složky"
+        "Převzato z nadřazené složky"
       ],
       "Initializing": [
-        "Inicializace"
+        "Spouštění"
       ],
       "Internet connection lost": [
         "Připojení k internetu bylo ztraceno"
@@ -2771,7 +2713,7 @@
         "Stačí potvrdit výběr a my se postaráme o zbytek."
       ],
       "Key fingerprint": [
-        "Klíč otisk prstu"
+        "Otisk prstu klíče"
       ],
       "Large imports can take several days.": [
         "Dokončení velkých importů může trvat i několik dní."
@@ -2804,13 +2746,13 @@
         "Načítání náhledu"
       ],
       "Merged": [
-        "Sloučeno"
+        "Sloučený"
       ],
       "More": [
         "Více"
       ],
       "Moving files": [
-        "Stěhování souborů"
+        "Přesouvání souborů"
       ],
       "My Links": [
         "Mé odkazové řádky"
@@ -2822,7 +2764,7 @@
         "Síťový problém"
       ],
       "New": [
-        "Nové"
+        "Nový"
       ],
       "No": [
         "Ne"
@@ -2864,10 +2806,7 @@
         "Jedna ze zašifrovaných jednotek je uzamčená. Je to pravděpodobně způsobeno nedávným resetem hesla."
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
-        "Jeden nebo více důvěryhodných klíčů byl vlastníkem označen jako \"kompromitovaný\". Doporučujeme, abyste tyto klíče \"zrušili\"."
-      ],
-      "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters is allowed": [
-        ""
+        "Jeden nebo více důvěryhodných klíčů byl vlastníkem označen jako \"kompromitovaný\". Doporučujeme, abyste takovým klíčům \"nedůvěřovali\"."
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Tato nastavení změňte, pouze pokud používáte PGP s příjemci, kteří nepoužívají službu ${ BRAND_NAME }."
@@ -2887,11 +2826,11 @@
       "Permanently delete all files in your drive": [
         "Trvalé odstranění všech souborů na disku"
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
-        "PGP/Inline is only compatible with Plain Text format. Please note that Proton Mail always signs encrypted messages."
+      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        "PGP/Inline je kompatibilní pouze s formátem prostého textu. Vezměte na vědomí, že ${ MAIL_APP_NAME } vždy podepisuje šifrované zprávy."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
-        "PGP/MIME automatically sends the message using the current composer mode. Please note that Proton Mail always signs encrypted messages."
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
+        "PGP/MIME automaticky odesílá zprávy pomocí aktuálně zvoleného režimu editoru. Vezměte na vědomí, že ${ MAIL_APP_NAME } vždy podepisuje šifrované zprávy"
       ],
       "Please enter the password to decrypt and view content.": [
         "Prosím zadejte heslo pro dešifrování a zobrazení obsahu."
@@ -2900,7 +2839,7 @@
         "Vezměte prosím na vědomí, že adresy přiřazené k této skupině NEBUDOU smazány."
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
-        "Upozornění, tento proces může trvat nějakou dobu v záležitosti na velikosti Vašeho adresáře."
+        "Vezměte prosím na vědomí, že tento proces může trvat nějakou dobu v závislosti na velikosti vašeho adresáře."
       ],
       "Please select the folders you would like to import:": [
         "Prosím vyberte složky, které chcete importovat:"
@@ -2915,13 +2854,13 @@
         "Vyberte adresu, nebo adresy, které chcete přidat do skupiny ${ groupName }."
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
-        "Prosím vyčkejte jakmile vyhledáme kontakty, které mohou být znovu přihlášeny se základním šifrovacím klíčem."
+        "Prosím čekejte, hledáme kontakty, které mohou být znovu podepsány pomocí výchozího šifrovacího klíče."
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
-        "Prosím, vyčkejte zatímco zjistíme kontakty, které zahrnují šifrovaná data s neaktivním klíčem."
+        "Prosím, vyčkejte dokud nenajdeme kontakty, které jsou šifrované neaktivním klíčem."
       ],
       "Preparing link to file": [
-        "Připravuji odkazový řádek k souboru"
+        "Příprava odkazu na soubor"
       ],
       "Preparing link to folder": [
         "Příprava odkazu na složku"
@@ -2954,7 +2893,7 @@
         "Hlášení bylo odesláno"
       ],
       "Search cannot be enabled in this browser": [
-        "V tomto prohlížeči nelze povolit vyhledávání"
+        "V tomto prohlížeči nelze zapnout vyhledávání"
       ],
       "Search Enabled": [
         "Vyhledávání Zapnuto"
@@ -2984,7 +2923,7 @@
         "Relace vypršela"
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
-        "Vytvořením PGP Vám poskytuje zasílat end-to-end šifrované emailové korespondence i s uživateli, kteří nejsou klientem ${ BRAND_NAME } a používají kompatibilní PGP službu."
+        "Nastavení PGP vám umožní posílat end-to-end šifrované e-maily i s uživateli, kteří nepoužívají ${ BRAND_NAME } ale jinou službu s podporou PGP."
       ],
       "Share files with links": [
         "Sdílejte soubory přes s odkazovými řádky"
@@ -3065,16 +3004,16 @@
         "Odkaz byl vytvořen v předchozí verzi aplikace a nelze jej upravit. Chcete-li změnit jeho nastavení, odkaz smažte a vytvořte nový."
       ],
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
-        "Tento odkazový řádek bude permanentně deaktivován. Nikdo s tímto odkazovým řádkem nebude mít přístup k tvému souboru. Pro opětné sdílení souboru, budete potřebovat nový odkazový řádek."
+        "Tento odkaz bude trvale deaktivován. Nikdo s tímto odkazem již nebude mít přístup k souboru. Chcete-li soubor znovu sdílet, budete potřebovat nový odkaz."
       ],
       "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
         "Tento odkaz bude trvale deaktivován. Nikdo s tímto odkazem nebude mít přístup k vaší složce. Chcete-li složku znovu sdílet, budete potřebovat nový odkaz."
       ],
       "This will delete the link and remove access to your file or folder for anyone with the link.": [
         "Tím odstraníte odkaz a zrušíte přístup k vašemu souboru nebo složce pro každého, kdo má tento odkaz.",
-        "Tím odstraníte odkaz a zrušíte přístup k vaším souborů nebo složkám pro každého, kdo má tento odkaz.",
-        "Tím odstraníte odkaz a zrušíte přístup k vaším souborů nebo složkám pro každého, kdo má tento odkaz.",
-        "Tím odstraníte odkaz a zrušíte přístup k vaším souborů nebo složkám pro každého, kdo má tento odkaz."
+        "Tím odstraníte odkazy a zrušíte přístup k vaším souborů nebo složkám pro každého, kdo má tyto odkazy.",
+        "Tím odstraníte odkazy a zrušíte přístup k vaším souborů nebo složkám pro každého, kdo má tyto odkazy.",
+        "Tím odstraníte odkazy a zrušíte přístup k vaším souborů nebo složkám pro každého, kdo má tyto odkazy."
       ],
       "This will overwrite the existing file": [
         "Tím se přepíše existující soubor"
@@ -3083,19 +3022,19 @@
         "Tím se přepíše existující složka"
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
-        "Aby bylo možné povolit soukromé vyhledávání, musí Zadejte své uživatelské jméno nebo e-mailovou adresu ${ DRIVE_APP_NAME }. indexovat vaše soubory lokálně. ${ DRIVE_APP_NAME } můžete stále normálně používat - dáme vám vědět, až bude indexace dokončena."
+        "Skutečně soukromé vyhledávání ${ DRIVE_APP_NAME } vyžaduje lokální indexování vašich souborů. Můžete nadále používat ${ DRIVE_APP_NAME } - dáme vám vědět, jakmile bude indexace dokončena."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Z důvodu boje proti spamu a obtěžování, ověřte prosím, že jste člověk."
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
-        "Pro opětné přihlášení Vašich kontaktů, potřebujeme prověřit každý kontakt ze seznamu šifrovacích klíčů, které jsou dostupné ve Vašem účtu. Jestliže nebude nalezena shoda s Vaším kontaktem, bude znovu provedeno přihlášení se základním šifrovacím klíčem."
+        "Pro opětovné podepsání vašich kontaktů, potřebujeme prověřit každý kontakt oproti seznamu šifrovacích klíčů dostupných ve vašem účtu. Jestliže nebude nalezena shoda, bude kontakt znovu podepsán pomocí výchozího šifrovacího klíče."
       ],
       "To recover your data, you need to re-activate the contact encryption key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
-        "Pro nahrazení Vašich dat, potřebujete re-aktivovat kontaktní šifrovací klíč od doby, kdy byla data vytvořena. Tato akce požaduje, aby jste si pamatovali heslo, kdy byl klíč generován."
+        "Pro obnovení vašich dat, potřebujete znovu aktivovat šifrovací klíč kontaktu použitý v době, kdy byla data vytvořena. Je potřeba znát heslo, které jste použili, když byl klíč generován."
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
-        "Chcete-li použít ověření adresy, musíte nastavit povolení důvěryhodných klíčů a navázat tak na jeden nebo více dostupných veřejných klíčů, včetně primárního klíče pro tuto adresu. Zabráníte tak použití falešných šifrovacích klíčů."
+        "Chcete-li použít Ověření Adresy, musíte důvěřovat jednomu nebo více dostupným veřejným klíčům, včetně toho, který chcete použít pro odesílání. Toto zamezuje zfalšování šifrovacích klíčů."
       ],
       "Transfer canceled for file \"${ name }\"": [
         "Přenos zrušen pro soubor \"${ name }\""
@@ -3107,7 +3046,7 @@
         "Přenos vynechán pro soubor \"${ file.name }\""
       ],
       "Transfer skipped for folder \"${ folderName }\"": [
-        "Přenos přeskočen pro složku \"${ folderName }\""
+        "Přenos vynechán pro složku \"${ folderName }\""
       ],
       "Trash": [
         "Koš"
@@ -3125,7 +3064,7 @@
         "Nepodporovaný soubor"
       ],
       "Updating drive search...": [
-        "Aktulizování hledání na disku..."
+        "Aktulizace vyhledání na disku..."
       ],
       "Upgrade today to avoid losing the following ${ planName } benefits.": [
         "Upgradujte ještě dnes, abyste nepřišli o následující výhody ${ planName }."
@@ -3134,7 +3073,7 @@
         "Nahrané"
       ],
       "Uploading": [
-        "Nahrávám"
+        "Nahrávání"
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "Nahrávání stovky souboru najednou může zapříčinit dopad na výkon."
@@ -3164,7 +3103,7 @@
         "Co chcete udělat?"
       ],
       "What would you like to do?": [
-        "Co byste chtěli dělat?"
+        "Co chcete udělat?"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Chcete získat nový ověřovací kód nebo použít alternativní metodu ověřování?"
@@ -3265,9 +3204,6 @@
       "name": [
         "název"
       ],
-      "name hash": [
-        ""
-      ],
       "thumbnail": [
         "náhled"
       ]
@@ -3321,10 +3257,10 @@
         "Použít na všechny duplicitní složky"
       ],
       "Apply to all unverified items": [
-        "Platí pro všechny neověřené položky"
+        "Použít na všechny neověřené položky"
       ],
       "Attach screenshot(s)": [
-        "Přiložit snímek/snímky obrazovky"
+        "Přiložit sním(ek/ky) obrazovky"
       ],
       "Audio file": [
         "Zvukový soubor"
@@ -3453,7 +3389,7 @@
         "Skrýt heslo"
       ],
       "How would you describe your experience with the new Proton?": [
-        "Jak byste popsal své zkušenosti s novým Protonem?"
+        "Jak byste popsali své zkušenosti s novým Protonem?"
       ],
       "I understand the risk": [
         "Rozumím rizikům"
@@ -3513,7 +3449,7 @@
         "Nikdy"
       ],
       "Notification": [
-        "Oznámení"
+        "Upozornění"
       ],
       "OK": [
         "OK"
@@ -3540,7 +3476,7 @@
         "Uveďte prosím všechny podrobnosti, které nám pomohou přijmout příslušná opatření"
       ],
       "Post office box": [
-        "PSČ"
+        "P.O. Box"
       ],
       "Postal code": [
         "PSČ"
@@ -3552,7 +3488,7 @@
         "Proton uživatelské jméno"
       ],
       "Public keys": [
-        "Veřejný klíč"
+        "Veřejné klíče"
       ],
       "Region": [
         "Region"
@@ -3594,7 +3530,7 @@
         "Odcizené údaje"
       ],
       "Street address": [
-        "Ulice a č. p"
+        "Ulice a č. p."
       ],
       "System information": [
         "Systémové informace"
@@ -3621,7 +3557,7 @@
         "Odemknout disk"
       ],
       "Unlock drive (recommended)": [
-        "Odemknutí disku (doporučeno)"
+        "Odemknout disk (doporučeno)"
       ],
       "Unlock later": [
         "Odemknout později"
@@ -3706,7 +3642,7 @@
         "Rozšířit"
       ],
       "Upgrade account": [
-        "Rozšířit účet"
+        "Přejít na vyšší tarif"
       ]
     },
     "Loading info": {
@@ -3872,9 +3808,9 @@
       ],
       "${ numberOfItems } item moved to trash": [
         "${ numberOfItems } položka přesunuta do koše",
-        "${ numberOfItems } položky přesunuta do koše",
-        "${ numberOfItems } položek přesunuta do koše",
-        "${ numberOfItems } položek přesunuta do koše"
+        "${ numberOfItems } položky přesunuty do koše",
+        "${ numberOfItems } položek přesunuto do koše",
+        "${ numberOfItems } položek přesunuto do koše"
       ],
       "${ numberOfItems } item restored from trash": [
         "${ numberOfItems } položka obnovena z koše",
@@ -4126,7 +4062,7 @@
         "Způsob, jak vás kontaktovat"
       ],
       "E.g., ": [
-        "Například., "
+        "Například, "
       ],
       "Enter a new folder name": [
         "Zadejte nový název složky"
@@ -4291,7 +4227,7 @@
       "Contact group deleted": [
         "Kontaktní skupina vymazána",
         "Kontaktní skupiny vymazány",
-        "Kontaktní skupin vymazáno",
+        "Kontaktní skupiny vymazány",
         "Kontaktní skupiny vymazány"
       ],
       "Contact saved": [
@@ -4409,15 +4345,15 @@
     "Time unit": {
       "${ hours } hour": [
         "${ hours } hodina",
+        "${ hours } hodiny",
         "${ hours } hodin",
-        "${ hours } hodin",
-        "${ hours } hodiny"
+        "${ hours } hodin"
       ],
       "${ minutes } minute": [
         "${ minutes } minuta",
+        "${ minutes } minuty",
         "${ minutes } minut",
-        "${ minutes } minut",
-        "${ minutes } minuty"
+        "${ minutes } minut"
       ]
     },
     "Title": {
@@ -4458,10 +4394,10 @@
         "Přidat název skupiny kontaktů"
       ],
       "Add to ${ groupCount } group": [
-        "Přidat do skupiny ${ groupCount }",
-        "Přidat do skupin ${ groupCount }",
-        "Přidat do skupin ${ groupCount }",
-        "Přidat do skupin ${ groupCount }"
+        "Přidat do ${ groupCount } skupiny",
+        "Přidat do ${ groupCount } skupin",
+        "Přidat do ${ groupCount } skupin",
+        "Přidat do ${ groupCount } skupin"
       ],
       "Add to ${ groupName }": [
         "Přidat do ${ groupName }"
@@ -4482,13 +4418,13 @@
         "Beta přístup"
       ],
       "Browser might run out of memory": [
-        "Prohlížeči může dojít paměť"
+        "Prohlížeči možná dochází paměť"
       ],
       "Change layout": [
         "Změnit rozložení"
       ],
       "Clearing data": [
-        "Vymazat data"
+        "Vymazání dat"
       ],
       "Completed": [
         "Dokončeno"
@@ -4533,19 +4469,19 @@
         "Dešifrování"
       ],
       "Delete ${ count } contact": [
-        "Smazat ${ count } kontakty",
+        "Smazat ${ count } kontakt",
         "Smazat ${ count } kontakty",
         "Smazat ${ count } kontaků",
         "Smazat ${ count } kontaků"
       ],
       "Delete ${ count } contact group": [
-        "Vymazat ${ count } skupinu kontaktu",
+        "Vymazat ${ count } skupinu kontaktů",
+        "Vymazat ${ count } skupiny kontaktů",
         "Vymazat ${ count } skupin kontaktů",
-        "Vymazat ${ count } skupin kontaktů",
-        "Vymazat ${ count } skupinu kontaktů"
+        "Vymazat ${ count } skupin kontaktů"
       ],
       "Delete ${ Name }": [
-        "Odstranit ${ Name }"
+        "Smazat ${ Name }"
       ],
       "Delete permanently": [
         "Navždy smazat"
@@ -4554,7 +4490,7 @@
         "Mazání kontaktů"
       ],
       "Discard": [
-        "Zahodit"
+        "Zrušit"
       ],
       "Discard changes?": [
         "Zrušit změny?"
@@ -4608,7 +4544,7 @@
         "Zadejte své uživatelské jméno nebo e-mailovou adresu ${ MAIL_APP_NAME }"
       ],
       "Exporting contacts": [
-        "Exportovat kontakty"
+        "Export kontaktů"
       ],
       "Failed": [
         "Selhalo"
@@ -4623,13 +4559,13 @@
         "Proces obnovy souboru"
       ],
       "Files details": [
-        "Podrobnosti souboru"
+        "Podrobnosti souborů"
       ],
       "Folder details": [
         "Podrobnosti složky"
       ],
       "Folders details": [
-        "Detaily složek"
+        "Podrobnosti složek"
       ],
       "Found ${ searchView.numberOfResults } result": [
         "Nalezen ${ searchView.numberOfResults } výsledek",
@@ -4653,10 +4589,10 @@
         "Neplatný ověřovací kód"
       ],
       "Item details": [
-        "Detaily položky"
+        "Podrobnosti položky"
       ],
       "Items details": [
-        "Detaily položek"
+        "Podrobnosti položek"
       ],
       "Link confirmation": [
         "Potvrzení odkazu"
@@ -4704,7 +4640,7 @@
         "Otevřít menu nápovědy"
       ],
       "Open settings menu": [
-        "Otevřít nabídku nastavení"
+        "Otevřít menu nastavení"
       ],
       "Other information": [
         "Další informace"
@@ -4725,13 +4661,13 @@
         "Znovu podepsat všechny kontakty"
       ],
       "Re-signing contacts": [
-        "Znovu podepsat kontakty"
+        "Opětovné podepisování kontaktů"
       ],
       "Recover data": [
         "Obnovit data"
       ],
       "Rename a file": [
-        "Přejmenovat soubory"
+        "Přejmenovat soubor"
       ],
       "Rename a folder": [
         "Přejmenovat složku"
@@ -4764,7 +4700,7 @@
         "Vyberte datum pro vypršení platnosti odkazu"
       ],
       "Select link expiration time": [
-        "Vyberte časovou dobu pro vypršení odkazu"
+        "Vyberte čas pro vypršení platnosti odkazu"
       ],
       "Send feedback": [
         "Odeslat zpětnou vazbu"
@@ -4809,10 +4745,10 @@
         "Odkaz se nepodařilo načíst"
       ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
-        "Tento soubor nemá nebo mu chybí podpis. Běžte do Menu (⋮) → Detaily pro info."
+        "Tento soubor má chybějící nebo neplatný podpis. Běžte do Menu (⋮) → Detaily pro info."
       ],
       "This folder has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
-        "Tato složka nemá nebo jí chybí podpis. Běžte do Menu (⋮) → Detaily pro info."
+        "Tato složka má chybějící nebo neplatný podpis. Běžte do Menu (⋮) → Detaily pro info."
       ],
       "This link is password protected": [
         "Odkaz je chráněn heslem"
@@ -4827,7 +4763,7 @@
         "Typ"
       ],
       "Upgrade required": [
-        "Vyžadována aktualizace"
+        "Vyžadováno navýšení tarifu"
       ],
       "Uploaded": [
         "Nahráno"
@@ -4842,7 +4778,7 @@
         "Varování"
       ],
       "Warning: suspected fake website": [
-        "Varování: pravděpodobně se jedná o podvodnou stránku"
+        "Varování: podezření na falešnou webovou stránku"
       ],
       "What would you like to import?": [
         "Co byste chtěli importovat?"
@@ -4863,7 +4799,7 @@
         "Obdrželi jste soubory"
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
-        "Vaše bezplatná zkušební verze brzy skončí dne ${ formattedEndDate }"
+        "Vaše bezplatná zkušební verze brzy skončí, dne ${ formattedEndDate }"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -4908,10 +4844,10 @@
     },
     "Validation": {
       "Password must contain at least ${ length } character": [
+        "Heslo musí obsahovat alespoň ${ length } znak",
+        "Heslo musí obsahovat alespoň ${ length } znaky",
         "Heslo musí obsahovat alespoň ${ length } znaků",
-        "Hesel musí obsahovat alespoň ${ length } znaků",
-        "Hesel musí obsahovat alespoň ${ length } znaků",
-        "Hesla musí obsahovat alespoň ${ length } znaků"
+        "Heslo musí obsahovat alespoň ${ length } znaků"
       ]
     },
     "Validation Error": {

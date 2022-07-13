@@ -63,13 +63,13 @@
         "Annuler tous les téléchargements"
       ],
       "Cancel all uploads": [
-        "Annuler tous les téléchargements"
+        "Annuler tous les chargements"
       ],
       "Cancel download": [
         "Annuler le téléchargement"
       ],
       "Cancel upload": [
-        "Annuler l’importation"
+        "Annuler le chargement"
       ],
       "Chat with us": [
         "Dialoguez en ligne avec nous"
@@ -359,7 +359,7 @@
         "Suspendre le téléchargement"
       ],
       "Pause upload": [
-        "Suspendre l’importation"
+        "Suspendre le chargement"
       ],
       "Preview": [
         "Aperçu"
@@ -419,7 +419,7 @@
         "Relancer le téléchargement"
       ],
       "Restart upload": [
-        "Relancer l’envoi"
+        "Relancer le chargement"
       ],
       "Restore from trash": [
         "Restaurer depuis la corbeille"
@@ -431,7 +431,7 @@
         "Reprendre le téléchargement"
       ],
       "Resume upload": [
-        "Reprendre l’importation"
+        "Reprendre le chargement"
       ],
       "Retry": [
         "Réessayer"
@@ -486,9 +486,6 @@
       ],
       "Skip": [
         "Ignorer"
-      ],
-      "Start import": [
-        ""
       ],
       "Start recovering": [
         "Commencer la récupération"
@@ -548,10 +545,10 @@
         "Importer un fichier"
       ],
       "Upload folder": [
-        "Déposer un dossier"
+        "Importer un dossier"
       ],
       "Upload picture": [
-        "Télécharger une image"
+        "Charger une image"
       ],
       "Use ${ label } theme": [
         "Utiliser le thème « ${ label } »"
@@ -1788,7 +1785,7 @@
         "De plus, nous avons automatiquement identifié les champs CSV qui correspondent aux champs vCard. Vous pouvez vérifier et modifier cette correspondance manuellement."
       ],
       "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
-        "Nous avons détecté les champs suivants dans le fichier CSV que vous avez téléchargé. Vérifiez ceux que vous souhaitez importer."
+        "Nous avons détecté les champs suivants dans le fichier CSV que vous avez chargé. Vérifiez ceux que vous souhaitez importer."
       ]
     },
     "Early Access Disabled": {
@@ -1847,7 +1844,7 @@
         "Saisissez 6 chiffres"
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
-        "Le fichier « ${ item.name } » ne peut pas être téléchargé en raison de l'erreur « ${ error } »"
+        "Le fichier « ${ item.name } » ne peut pas être chargé en raison de l'erreur « ${ error } »."
       ],
       "File \"${ name }\" is already downloading": [
         "Le fichier « ${ name } » est déjà en cours de téléchargement."
@@ -1865,7 +1862,7 @@
         "Le nom de dossier ne peut pas être vide."
       ],
       "Image upload failed": [
-        "Échec du téléchargement de l'image"
+        "Échec du chargement de l'image"
       ],
       "Incorrect login credentials. Please try again.": [
         "Identifiants de connexion incorrects. Veuillez réessayer."
@@ -1974,7 +1971,7 @@
         "Le nom du label est trop long. Veuillez en choisir un autre."
       ],
       "The new revision of original file is not uploaded yet, please try again later": [
-        "La nouvelle révision du fichier d'origine n'est pas encore téléchargée, veuillez réessayer plus tard."
+        "La nouvelle révision du fichier d'origine n'est pas encore chargée, veuillez réessayer plus tard."
       ],
       "The original file has missing active revision": [
         "Le fichier d'origine a une révision active manquante."
@@ -1986,7 +1983,7 @@
         "Le fichier d'origine a une clé de session manquante."
       ],
       "The original file is not uploaded yet, please try again later": [
-        "Le fichier d'origine n'est pas encore téléchargé, veuillez réessayer plus tard."
+        "Le fichier d'origine n'est pas encore chargé, veuillez réessayer plus tard."
       ],
       "The original folder not found": [
         "Le dossier d'origine est introuvable."
@@ -2028,7 +2025,7 @@
         "Vous devez définir un nom."
       ],
       "Your browser does not support uploading folders": [
-        "Votre navigateur ne prend pas en charge le téléchargement de dossiers."
+        "Votre navigateur ne prend pas en charge le chargement de dossiers."
       ],
       "Your import will not be processed.": [
         "Votre importation ne sera pas traitée."
@@ -2052,13 +2049,13 @@
         "Une erreur s'est produite lors de la lecture de votre fichier ${ formattedFilename }. Le fichier n'a pas le bon format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        "Une erreur s'est produite lors de l'importation de votre fichier ${ formattedFilename }. La taille maximale d’un fichier doit être de ${ MAX_IMPORT_FILE_SIZE_STRING }."
+        "Une erreur s'est produite lors du chargement de votre fichier ${ formattedFilename }. La taille maximale d’un fichier doit être de ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
       "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
-        "Une erreur s'est produite lors du téléchargement de votre fichier ${ formattedFilename }. Aucun fichier .csv ou .vcf sélectionné"
+        "Une erreur s'est produite lors du chargement de votre fichier ${ formattedFilename }. Aucun fichier .csv ou .vcf sélectionné."
       ],
       "An error occurred uploading your file. No file has been selected.": [
-        "Une erreur s'est produite lors de l'importation de votre fichier. Aucun fichier n'a été sélectionné."
+        "Une erreur s'est produite lors du chargement de votre fichier. Aucun fichier n'a été sélectionné."
       ],
       "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
         "Votre fichier ${ formattedFilename } contient plus de ${ MAX_IMPORT_CONTACTS_STRING } contacts."
@@ -2123,7 +2120,8 @@
       ]
     },
     "file size format": {
-      "bytes": [
+      "byte": [
+        "octet",
         "octets"
       ],
       "GB": [
@@ -2137,16 +2135,20 @@
       ]
     },
     "file size format, long": {
-      "Bytes": [
+      "Byte": [
+        "Octet",
         "Octets"
       ],
-      "Gigabytes": [
+      "Gigabyte": [
+        "Gigaoctet",
         "Gigaoctets"
       ],
-      "Kilobytes": [
+      "Kilobyte": [
+        "Kilooctet",
         "Kilooctets"
       ],
-      "Megabytes": [
+      "Megabyte": [
+        "Megaoctet",
         "Megaoctets"
       ]
     },
@@ -2307,8 +2309,8 @@
         "${ canceledCount } annulés"
       ],
       "${ contactCount } contact contains multiple email addresses.": [
-        "Le contact ${ contactCount } dispose de plusieurs adresses e-mail.",
-        "Les contacts ${ contactCount } disposent de plusieurs adresses e-mail."
+        "Le contact ${ contactCount } a plusieurs adresses e-mail.",
+        "Les contacts ${ contactCount } ont plusieurs adresses e-mail."
       ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } membre",
@@ -2386,10 +2388,10 @@
         "10 adresses e-mail"
       ],
       "A number will be added to the filename": [
-        "Un numéro sera ajouté au nom du fichier"
+        "Un numéro sera ajouté au nom du fichier."
       ],
       "A number will be added to the folder name": [
-        "Un numéro sera ajouté au nom du dossier"
+        "Un numéro sera ajouté au nom du dossier."
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Accès au compte restreint en raison de factures impayées. Veuillez contacter votre administrateur."
@@ -2433,7 +2435,7 @@
         "Avant de demander un nouveau code de vérification, vérifiez votre dossier indésirables/spam et assurez-vous que ${ strong } est la bonne adresse."
       ],
       "Bulk uploads may reduce your computer’s performance. Consider limiting memory-intensive activities like streaming during upload. Or try uploading in batches.": [
-        "Les chargements en masse peuvent réduire les performances votre ordinateur. Considérez à limiter les activités gourmandes en mémoire comme le streaming pendant le chargement. Ou essayez les chargements par lots."
+        "Les chargements en masse peuvent réduire les performances de votre ordinateur. Pendant le téléchargement, envisagez de limiter les activités gourmandes en mémoire comme le streaming. Vous pouvez aussi essayer de télécharger par lots."
       ],
       "Canceled": [
         "Annulé"
@@ -2592,7 +2594,7 @@
         "Signature du fichier manquante. Nous n'avons pas pu vérifier qui a chargé le fichier ${ fileName }."
       ],
       "File will not be uploaded": [
-        "Le fichier ne sera pas téléchargé"
+        "Le fichier ne sera pas chargé."
       ],
       "Finalizing": [
         "Finalisation en cours"
@@ -2601,7 +2603,7 @@
         "Le dossier « ${ link.name } » a été supprimé pendant le téléchargement"
       ],
       "Folder contents will merge into a single folder": [
-        "Le contenu du dossier sera fusionné dans un dossier unique"
+        "Le contenu du dossier sera fusionné dans un dossier unique."
       ],
       "Folder is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "Signature du dossier manquante. Nous n'avons pas pu vérifier que ${ emailAddress } a chargé le fichier ${ fileName }."
@@ -2610,7 +2612,7 @@
         "Signature du dossier manquante. Nous n'avons pas pu vérifier qui a chargé le fichier ${ fileName }."
       ],
       "Folder will not be uploaded": [
-        "Le dossier ne sera pas téléchargé"
+        "Le dossier ne sera pas chargé."
       ],
       "Free up some space or add more storage space.": [
         "Libérez de l'espace ou ajoutez plus d'espace de stockage."
@@ -2619,7 +2621,7 @@
         "Libérez de l'espace ou contactez votre administrateur."
       ],
       "Go to \"My files\" and upload some files first.": [
-        "Allez dans « Mes fichiers » et commencez à télécharger des fichiers."
+        "Allez dans « Mes fichiers » et commencez à charger des fichiers."
       ],
       "Group assignment applied": [
         "Affectation de groupe appliquée"
@@ -2758,13 +2760,13 @@
         "Aucun résultat trouvé"
       ],
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
-        "Aucune des clés téléchargées n'est valide pour le chiffrement. Le chiffrement est automatiquement désactivé."
+        "Aucune des clés chargées n'est valide pour le chiffrement. Le chiffrement est automatiquement désactivé."
       ],
       "Not a valid URL": [
         "URL non valide"
       ],
       "Not all files were transferred. Try uploading or downloading the files again.": [
-        "Tous les fichiers n'ont pas été transférés. Essayez de charger ou télécharger les fichiers à nouveau."
+        "Certains fichiers n'ont pas été transférés. Essayez à nouveau de les charger/télécharger."
       ],
       "Note: Data may still be available locally on devices where you have installed ${ appName }.": [
         "Remarque : les données peuvent toujours être disponibles localement au sein des appareils dans lesquels vous avez installé ${ appName }."
@@ -2777,9 +2779,6 @@
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Une ou plusieurs de vos clés de confiance ont été marquées comme « compromises » par leur propriétaire. Nous vous recommandons de ne plus faire confiance à ces clés."
-      ],
-      "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters is allowed": [
-        ""
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Ne modifiez ces paramètres que si vous utilisez PGP avec des destinataires qui n'utilisent pas ${ BRAND_NAME }."
@@ -2799,11 +2798,11 @@
       "Permanently delete all files in your drive": [
         "Supprimez définitivement tous les fichiers de votre disque"
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
-        "PGP/Inline is only compatible with Plain Text format. Please note that Proton Mail always signs encrypted messages."
+      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        "PGP/Inline est uniquement compatible avec le format texte brut. Veuillez noter que ${ MAIL_APP_NAME } signe toujours les messages chiffrés."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
-        "PGP/MIME automatically sends the message using the current composer mode. Please note that Proton Mail always signs encrypted messages."
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
+        "PGP/MIME envoie automatiquement le message en utilisant le mode actuel du composeur. Veuillez noter que ${ MAIL_APP_NAME } signe toujours les messages chiffrés"
       ],
       "Please enter the password to decrypt and view content.": [
         "Veuillez saisir le mot de passe pour déchiffrer et voir le contenu."
@@ -2876,7 +2875,7 @@
         "Sécurisez vos documents et vos données"
       ],
       "Select an uploaded file or folder and create a link to it.": [
-        "Sélectionnez un fichier ou un dossier téléchargé et créez un lien vers celui-ci."
+        "Sélectionnez un fichier ou un dossier chargé et créez un lien vers celui-ci."
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Sélectionnez le format de message que vous souhaitez utiliser par défaut lors de l'envoi d'un e-mails à cette adresse électronique."
@@ -2909,10 +2908,10 @@
         "Problème de signature"
       ],
       "Some files failed to download. Try downloading the files again.": [
-        "Certains fichiers n'ont pas pu être téléchargés. Essayez de télécharger ces fichiers à nouveau."
+        "Certains fichiers n'ont pas pu être téléchargés. Essayez à nouveau de les télécharger."
       ],
       "Some files failed to upload. Try uploading the files again.": [
-        "Certains fichiers n'ont pas pu être chargés. Essayez de charger ces fichiers à nouveau."
+        "Certains fichiers n'ont pas pu être chargés. Essayez à nouveau de les charger."
       ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "Certains de vos fichiers ne sont plus accessibles. Restaurez l'accès à vos fichiers. ${ StartRecoveryButton }"
@@ -2963,7 +2962,7 @@
         "Ce navigateur ne prend pas en charge l'aperçu des documents PDF. Veuillez télécharger le fichier."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
-        "Ce lien mène à un site Web qui pourrait essayer de voler vos informations, comme les mots de passe et les détails de carte de crédit."
+        "Ce lien mène à un site web qui pourrait essayer de voler vos informations, comme les mots de passe et les détails de carte de crédit."
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Ce lien pourrait être une attaque homographique et ne peut pas être ouvert avec les navigateurs Internet Explorer et Edge. Si vous êtes certain de la légitimité de ce lien, veuillez utiliser un autre navigateur pour l'ouvrir."
@@ -2985,10 +2984,10 @@
         "Ceci supprimera les liens et supprimera l'accès à vos fichiers ou dossiers pour toute personne ayant les liens."
       ],
       "This will overwrite the existing file": [
-        "Ceci va écraser le fichier existant"
+        "Ceci va écraser le fichier existant."
       ],
       "This will overwrite the existing folder": [
-        "Ceci va écraser le dossier existant"
+        "Ceci va écraser le dossier existant."
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
         "Pour activer la recherche réellement privée, ${ DRIVE_APP_NAME } doit indexer vos fichiers localement. Vous pourrez toujours utiliser ${ DRIVE_APP_NAME } normalement, nous vous ferons savoir quand l'indexation sera terminée."
@@ -3042,10 +3041,10 @@
         "Importé"
       ],
       "Uploading": [
-        "Téléchargement en cours"
+        "Chargement en cours"
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
-        "Le téléchargement de centaines de fichiers en même temps peut avoir un impact sur les performances."
+        "Le chargement de centaines de fichiers en même temps peut avoir un impact sur les performances."
       ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         "Utilisez ce formulaire pour nous signaler des fichiers partagés inappropriés, illégaux ou tout autre fichier partagé malveillant. Vous êtes sur le point de signaler :"
@@ -3129,7 +3128,7 @@
         "Votre adresse électronique ne sera utilisée que pour cette vérification unique."
       ],
       "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
-        "Vos fichiers ne sont plus accessibles en raison d'une réinitialisation de mot de passe. Téléchargez à nouveau l'ancienne clé de chiffrement pour en récupérer l'accès. ${ KeyReactivationButton }"
+        "Vos fichiers ne sont plus accessibles en raison d'une réinitialisation de mot de passe. Chargez à nouveau l'ancienne clé de chiffrement pour en récupérer l'accès. ${ KeyReactivationButton }"
       ],
       "Your files will be encrypted and then saved.": [
         "Vos fichiers seront chiffrés puis sauvegardés."
@@ -3536,7 +3535,7 @@
         "Envoyer quand même"
       ],
       "Upload picture": [
-        "Télécharger une image"
+        "Charger une image"
       ],
       "Username or ${ MAIL_APP_NAME } address": [
         "Nom d'utilisateur ou adresse ${ MAIL_APP_NAME }"
@@ -3799,17 +3798,17 @@
         "Échec du déplacement, veuillez réessayer"
       ],
       "Failed to upload files: ${ err }": [
-        "Échec de l'importation des fichiers : ${ err }"
+        "Échec du chargement des fichiers : ${ err }"
       ],
       "File or folder \"${ filename }\" and ${ count } other are already uploading": [
-        "Le fichier ou le dossier « ${ filename } » et ${ count } autre sont déjà en cours de téléchargement",
-        "Le fichier ou le dossier « ${ filename } » et ${ count } autres sont déjà en cours de téléchargement"
+        "Le fichier ou dossier « ${ filename } » et ${ count } autre sont déjà en cours de chargement.",
+        "Le fichier ou dossier « ${ filename } » et ${ count } autres sont déjà en cours de chargement."
       ],
       "File or folder \"${ filename }\" is already uploading": [
-        "Le fichier ou le dossier « ${ filename } » est déjà en cours de téléchargement"
+        "Le fichier ou dossier « ${ filename } » est déjà en cours de chargement."
       ],
       "File or folder is missing a name": [
-        "Il manque un nom au fichier ou au dossier"
+        "Il manque un nom au fichier ou au dossier."
       ],
       "Item failed to be verified": [
         "L'élément n'a pas pu être vérifié"
@@ -3845,7 +3844,7 @@
         "La page suivante n'a pas pu être chargée"
       ],
       "Not enough space to upload ${ formattedTotal }": [
-        "Espace insuffisant pour télécharger ${ formattedTotal }"
+        "Espace insuffisant pour charger ${ formattedTotal }"
       ],
       "Root folder failed to be loaded": [
         "Le dossier racine n'a pas pu être chargé"
@@ -4100,12 +4099,12 @@
     },
     "Select files": {
       "Upload": [
-        "Télécharger"
+        "Charger"
       ]
     },
     "Spotlight": {
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        "${ DRIVE_APP_NAME } n'est plus en beta ! Donnez à vos fichiers la même sécurité que vos e-mails."
+        "${ DRIVE_APP_NAME } n'est plus en version beta. Offrez à vos fichiers la même sécurité que celle dont bénéficient vos e-mails."
       ],
       "Encrypted search is here": [
         "La recherche chiffrée se trouve ici"
@@ -4412,7 +4411,7 @@
         "Drive"
       ],
       "Drop to upload": [
-        "Déposer pour télécharger"
+        "Déposer pour importer"
       ],
       "Duplicate file found": [
         "Fichier doublon trouvé"
@@ -4551,7 +4550,7 @@
         "Autres noms"
       ],
       "Performance might be affected": [
-        "Ceci peut affecter les performances"
+        "Ceci peut affecter les performances."
       ],
       "Phone numbers": [
         "Numéros de téléphone"
@@ -4653,7 +4652,7 @@
         "Ce dossier a une signature manquante ou non valide. Allez à Menu (⋮) → Détails pour plus d'informations."
       ],
       "This link is password protected": [
-        "Ce lien est protégé par un mot de passe"
+        "Ce lien est protégé par un mot de passe."
       ],
       "Total size": [
         "Taille totale"
@@ -4671,7 +4670,7 @@
         "Importé"
       ],
       "Uploaded by": [
-        "Téléchargé par"
+        "Chargé par"
       ],
       "View contacts": [
         "Afficher les contacts"
@@ -4738,7 +4737,7 @@
         "L'importation commencera par les messages les plus récents."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
-        "Téléchargez une clé publique pour activer l'envoi de messages électroniques chiffrés de bout en bout vers cette adresse électronique"
+        "Chargez une clé publique pour activer l'envoi de messages électroniques chiffrés de bout en bout vers cette adresse électronique."
       ],
       "You do not have any contacts to export": [
         "Vous n'avez aucun contact à exporter"
@@ -4830,7 +4829,7 @@
         "Cette action est irréversible. Veuillez saisir le mot ${ boldDanger } dans le champ pour continuer."
       ],
       "This feature requires a paid Proton account": [
-        "Cette fonctionnalité nécessite un compte Proton payant"
+        "Cette fonctionnalité nécessite un compte Proton payant."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Malheureusement, nous ne sommes pas en ligne pour le moment. Veuillez remplir le formulaire ci-dessous pour décrire votre problème, nous l'examinerons et vous contacterons lorsque nous serons de nouveau en ligne."

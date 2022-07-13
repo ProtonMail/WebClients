@@ -1143,11 +1143,6 @@
         "Dacă întâmpinați probleme, puteți dezactiva întotdeauna accesul la Beta."
       ]
     },
-    "blackfriday Action": {
-      "Get the offer": [
-        ""
-      ]
-    },
     "blackfriday Info": {
       "beta": [
         "beta"
@@ -1163,14 +1158,8 @@
       ]
     },
     "blackfriday Title": {
-      "Best deal": [
-        ""
-      ],
       "Most popular": [
         "Cel mai popular"
-      ],
-      "Save more when combining Mail and VPN": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer Action": {
@@ -1182,14 +1171,8 @@
       ]
     },
     "blackfriday: VPNspecialoffer Info": {
-      "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
-        ""
-      ],
       "Save ${ percentage }%": [
         "- ${ percentage }%"
-      ],
-      "Special offer Terms and Conditions": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer info": {
@@ -1203,15 +1186,6 @@
       ]
     },
     "blackfriday: VPNspecialoffer Title": {
-      "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
-        ""
-      ],
-      "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
-        ""
-      ],
-      "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
-        ""
-      ],
       "1 month": [
         "1 lună"
       ],
@@ -1220,18 +1194,6 @@
       ],
       "24 months": [
         "24 luni"
-      ],
-      "Billed at ${ amount } for the first 2 years.${ supNotice }": [
-        ""
-      ],
-      "Billed at ${ amount } for the first month.${ supNotice }": [
-        ""
-      ],
-      "Billed at ${ amount } for the first year.${ supNotice }": [
-        ""
-      ],
-      "Get the special year-end offer on our Premium VPN PLUS plan": [
-        ""
       ]
     },
     "Bug category": {
@@ -3559,8 +3521,10 @@
       ]
     },
     "file size format": {
-      "bytes": [
-        "octeți"
+      "byte": [
+        "bait",
+        "baiți",
+        "de baiți"
       ],
       "GB": [
         "GB"
@@ -3573,16 +3537,24 @@
       ]
     },
     "file size format, long": {
-      "Bytes": [
+      "Byte": [
+        "Bait",
+        "Baiți",
         "Baiți"
       ],
-      "Gigabytes": [
+      "Gigabyte": [
+        "Gigabait",
+        "Gigabaiți",
         "Gigabaiți"
       ],
-      "Kilobytes": [
+      "Kilobyte": [
+        "Kilobait",
+        "Kilobaiți",
         "Kilobaiți"
       ],
-      "Megabytes": [
+      "Megabyte": [
+        "Megabait",
+        "Megabaiți",
         "Megabaiți"
       ]
     },
@@ -3990,15 +3962,15 @@
         "${ numContacts } contacte",
         "${ numContacts } de contacte"
       ],
-      "${ occurrencesInBody } occurrence found": [
-        "S-a găsit o apariție",
-        "S-au găsit ${ occurrencesInBody } apariții",
-        "S-au găsit ${ occurrencesInBody } de apariții"
+      "${ numOccurrences } occurrence found": [
+        "S-a găsit o apariție.",
+        "S-au găsit ${ numOccurrences } apariții.",
+        "S-au găsit ${ numOccurrences } de apariții."
       ],
-      "${ occurrencesInBody } occurrence found in the mail content": [
-        "S-a găsit o apariție în conținutul mesajelor",
-        "S-au găsit ${ occurrencesInBody } apariții în conținutul mesajelor",
-        "S-au găsit ${ occurrencesInBody } de apariții în conținutul mesajelor"
+      "${ numOccurrences } occurrence found in the mail content": [
+        "S-a găsit o apariție în conținutul mesajelor.",
+        "S-au găsit ${ numOccurrences } apariții în conținutul mesajelor.",
+        "S-au găsit ${ numOccurrences } de apariții în conținutul mesajelor."
       ],
       "${ pureAttachmentsCount } file attached": [
         "Un fișier atașat.",
@@ -4641,11 +4613,11 @@
       "per month.": [
         "pe lună."
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
-        "PGP/Inline is only compatible with Plain Text format. Please note that Proton Mail always signs encrypted messages."
+      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        "PGP/Inline este compatibil doar cu formatul de text simplu. Rețineți că ${ MAIL_APP_NAME } întotdeauna semnează mesajele criptate."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
-        "PGP/MIME automatically sends the message using the current composer mode. Please note that Proton Mail always signs encrypted messages."
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
+        "PGP/MIME trimite automat mesajele folosind modul actual de compunere. Rețineți că ${ MAIL_APP_NAME } întotdeauna semnează mesajele criptate."
       ],
       "Phone number": [
         "Număr de telefon"
@@ -5513,6 +5485,9 @@
       ],
       "ANY": [
         "ORICARE"
+      ],
+      "Apply filter to existing emails": [
+        "Aplicare filtru la mesajele existente"
       ],
       "Attach screenshot(s)": [
         "Atașare capturi de ecran"

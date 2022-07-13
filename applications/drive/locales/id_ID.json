@@ -485,9 +485,6 @@
       "Skip": [
         "Lewati"
       ],
-      "Start import": [
-        ""
-      ],
       "Start recovering": [
         "Mulai memulihkan"
       ],
@@ -614,11 +611,6 @@
         "Apabila Anda menemui suatu masalah, Anda dapat menonaktifkan Akses Beta kapan saja."
       ]
     },
-    "blackfriday Action": {
-      "Get the offer": [
-        ""
-      ]
-    },
     "blackfriday Info": {
       "beta": [
         "beta"
@@ -634,14 +626,8 @@
       ]
     },
     "blackfriday Title": {
-      "Best deal": [
-        ""
-      ],
       "Most popular": [
         "Paling populer"
-      ],
-      "Save more when combining Mail and VPN": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer Action": {
@@ -653,14 +639,8 @@
       ]
     },
     "blackfriday: VPNspecialoffer Info": {
-      "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
-        ""
-      ],
       "Save ${ percentage }%": [
         "${ percentage } %"
-      ],
-      "Special offer Terms and Conditions": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer info": {
@@ -674,15 +654,6 @@
       ]
     },
     "blackfriday: VPNspecialoffer Title": {
-      "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
-        ""
-      ],
-      "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
-        ""
-      ],
-      "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
-        ""
-      ],
       "1 month": [
         "1 bulan"
       ],
@@ -691,18 +662,6 @@
       ],
       "24 months": [
         "24 bulan"
-      ],
-      "Billed at ${ amount } for the first 2 years.${ supNotice }": [
-        ""
-      ],
-      "Billed at ${ amount } for the first month.${ supNotice }": [
-        ""
-      ],
-      "Billed at ${ amount } for the first year.${ supNotice }": [
-        ""
-      ],
-      "Get the special year-end offer on our Premium VPN PLUS plan": [
-        ""
       ]
     },
     "Bug category": {
@@ -2114,8 +2073,8 @@
       ]
     },
     "file size format": {
-      "bytes": [
-        "bita"
+      "byte": [
+        "byte"
       ],
       "GB": [
         "GB"
@@ -2128,16 +2087,16 @@
       ]
     },
     "file size format, long": {
-      "Bytes": [
+      "Byte": [
         "Byte"
       ],
-      "Gigabytes": [
+      "Gigabyte": [
         "Gigabyte"
       ],
-      "Kilobytes": [
+      "Kilobyte": [
         "Kilobyte"
       ],
-      "Megabytes": [
+      "Megabyte": [
         "Megabyte"
       ]
     },
@@ -2734,9 +2693,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Satu atau lebih kunci terpercaya Anda telah ditandai sebagai \"bocor\" oleh pemiliknya. Kami menyarankan Anda untuk tidak lagi \"memercayai\" kunci tersebut."
       ],
-      "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters is allowed": [
-        ""
-      ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Kami menyarankan Anda untuk mengubah pengaturan ini hanya apabila Anda menggunakan PGP untuk saling bertukar pesan dengan pengguna non-${ BRAND_NAME }."
       ],
@@ -2755,11 +2711,11 @@
       "Permanently delete all files in your drive": [
         "Hapus berkas-berkas yang ada pada drive milik Anda secara permanen"
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
-        "PGP/Inline is only compatible with Plain Text format. Please note that Proton Mail always signs encrypted messages."
+      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        "PGP/Inline hanya kompatibel dengan format Plain Text. Mohon diperhatikan bahwa ${ MAIL_APP_NAME } akan selalu menandatangani pesan yang terenkripsi."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
-        "PGP/MIME automatically sends the message using the current composer mode. Please note that Proton Mail always signs encrypted messages."
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
+        "PGP/MIME mengirim pesan dengan mode komposer saat ini secara otomatis. Mohon diperhatikan bahwa ${ MAIL_APP_NAME } akan selalu menandatangani pesan yang terenkripsi"
       ],
       "Please enter the password to decrypt and view content.": [
         "Silakan masukkan kata sandi untuk dapat mendekripsi dan melihat isi konten."

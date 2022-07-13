@@ -408,9 +408,6 @@
       "Skip": [
         "Omitere"
       ],
-      "Start import": [
-        ""
-      ],
       "Start setup": [
         "Pornire configurare"
       ],
@@ -612,11 +609,6 @@
         "Dacă întâmpinați probleme, puteți dezactiva întotdeauna accesul la Beta."
       ]
     },
-    "blackfriday Action": {
-      "Get the offer": [
-        ""
-      ]
-    },
     "blackfriday Info": {
       "beta": [
         "beta"
@@ -632,14 +624,8 @@
       ]
     },
     "blackfriday Title": {
-      "Best deal": [
-        ""
-      ],
       "Most popular": [
         "Cel mai popular"
-      ],
-      "Save more when combining Mail and VPN": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer Action": {
@@ -651,14 +637,8 @@
       ]
     },
     "blackfriday: VPNspecialoffer Info": {
-      "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
-        ""
-      ],
       "Save ${ percentage }%": [
         "- ${ percentage }%"
-      ],
-      "Special offer Terms and Conditions": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer info": {
@@ -672,15 +652,6 @@
       ]
     },
     "blackfriday: VPNspecialoffer Title": {
-      "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
-        ""
-      ],
-      "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
-        ""
-      ],
-      "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
-        ""
-      ],
       "1 month": [
         "1 lună"
       ],
@@ -689,18 +660,6 @@
       ],
       "24 months": [
         "24 luni"
-      ],
-      "Billed at ${ amount } for the first 2 years.${ supNotice }": [
-        ""
-      ],
-      "Billed at ${ amount } for the first month.${ supNotice }": [
-        ""
-      ],
-      "Billed at ${ amount } for the first year.${ supNotice }": [
-        ""
-      ],
-      "Get the special year-end offer on our Premium VPN PLUS plan": [
-        ""
       ]
     },
     "Bug category": {
@@ -2283,7 +2242,7 @@
       "This label name is not available. Please choose a different name.": [
         "Acest nume de etichetă nu este disponibil. Alegeți un nume diferit."
       ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser": [
+      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
         "Acest mesaj poate conține unele legături care nu pot fi deschise corect de navigatorul actual."
       ],
       "Trusted keys are not valid for sending": [
@@ -2613,8 +2572,10 @@
       ]
     },
     "file size format": {
-      "bytes": [
-        "baiți"
+      "byte": [
+        "bait",
+        "baiți",
+        "de baiți"
       ],
       "GB": [
         "GB"
@@ -2627,16 +2588,24 @@
       ]
     },
     "file size format, long": {
-      "Bytes": [
+      "Byte": [
+        "Bait",
+        "Baiți",
         "Baiți"
       ],
-      "Gigabytes": [
+      "Gigabyte": [
+        "Gigabait",
+        "Gigabaiți",
         "Gigabaiți"
       ],
-      "Kilobytes": [
+      "Kilobyte": [
+        "Kilobait",
+        "Kilobaiți",
         "Kilobaiți"
       ],
-      "Megabytes": [
+      "Megabyte": [
+        "Megabait",
+        "Megabaiți",
         "Megabaiți"
       ]
     },
@@ -3162,11 +3131,11 @@
       "Other options": [
         "Alte opțiuni"
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
-        "PGP/Inline is only compatible with Plain Text format. Please note that Proton Mail always signs encrypted messages."
+      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        "PGP/Inline este compatibil doar cu formatul de text simplu. Rețineți că ${ MAIL_APP_NAME } întotdeauna semnează mesajele criptate."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
-        "PGP/MIME automatically sends the message using the current composer mode. Please note that Proton Mail always signs encrypted messages."
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
+        "PGP/MIME trimite automat mesajele folosind modul actual de compunere. Rețineți că ${ MAIL_APP_NAME } întotdeauna semnează mesajele criptate."
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Rețineți că adresele atribuite acestui grup NU vor fi șterse."

@@ -191,9 +191,6 @@
       "Copy email to clipboard": [
         "Nɣel imayl ɣef afus"
       ],
-      "Copy password to clipboard": [
-        ""
-      ],
       "Create a new contact group": [
         "Snulfu-d agraw n unermes amaynut"
       ],
@@ -262,9 +259,6 @@
       "Discard": [
         "Sefsex"
       ],
-      "Dismiss get started checklist": [
-        ""
-      ],
       "Done": [
         "Immed"
       ],
@@ -285,9 +279,6 @@
       ],
       "Edit email address": [
         "Ẓreg tansa imayl"
-      ],
-      "Edit encryption": [
-        ""
       ],
       "Edit label": [
         "Ẓreg tabzimt"
@@ -310,17 +301,11 @@
       "Encryption": [
         "Awgelhen"
       ],
-      "exclude message content": [
-        ""
-      ],
       "Expand composer": [
         "Snefli amsuddes"
       ],
       "Expand URL": [
         "Sken-d akk URL"
-      ],
-      "Expiration time": [
-        ""
       ],
       "Export": [
         "Sifeḍ"
@@ -330,12 +315,6 @@
       ],
       "Export contacts": [
         "Kter inermisen"
-      ],
-      "External encryption": [
-        ""
-      ],
-      "Fewer search options": [
-        ""
       ],
       "Filter on...": [
         "Imsizdeg ɣef..."
@@ -518,12 +497,6 @@
       "Merge contacts": [
         "Smezdi inermisen"
       ],
-      "Messages from this sender": [
-        ""
-      ],
-      "Messages to this recipient": [
-        ""
-      ],
       "Minimize composer": [
         "Semẓi amsuddes"
       ],
@@ -538,21 +511,6 @@
       ],
       "More search options": [
         "Ugar n textiṛiyin n unadi"
-      ],
-      "Move": [
-        ""
-      ],
-      "Move all conversations from this folder": [
-        ""
-      ],
-      "Move all conversations from this label": [
-        ""
-      ],
-      "Move all messages from this folder": [
-        ""
-      ],
-      "Move all messages from this label": [
-        ""
       ],
       "move emails to": [
         "senkez imaylen ɣer"
@@ -623,9 +581,6 @@
       "Open calendar": [
         "Ldi awitay"
       ],
-      "Open get started checklist modal": [
-        ""
-      ],
       "Open navigation": [
         "Ldi tunigin"
       ],
@@ -677,9 +632,6 @@
       "Re-sign": [
         "Ales azmul"
       ],
-      "Read message": [
-        ""
-      ],
       "Read receipt sent": [
         "Asentem n tɣuri yettwazen"
       ],
@@ -688,9 +640,6 @@
       ],
       "Refer a friend": [
         "Snubget-d ameddakkel"
-      ],
-      "Refine it": [
-        ""
       ],
       "refresh the page": [
         "smiren asebter"
@@ -703,12 +652,6 @@
       ],
       "Remove ${ attachmentName }": [
         "Kkes ${ attachmentName }"
-      ],
-      "Remove encryption": [
-        ""
-      ],
-      "Remove expiration time": [
-        ""
       ],
       "Remove this label": [
         "Kkes tabzimt-a"
@@ -779,9 +722,6 @@
       "send auto-reply email": [
         "azen imayl n tririt tawurmant"
       ],
-      "Send feedback": [
-        ""
-      ],
       "Send read receipt": [
         "Azen aɣerwaḍ n tɣuri"
       ],
@@ -790,9 +730,6 @@
       ],
       "Set as default": [
         "Sbadu-t d amezwer"
-      ],
-      "Set encryption": [
-        ""
       ],
       "Set expiration time": [
         "Sbadu azemz n ufati"
@@ -817,9 +754,6 @@
       ],
       "Show details": [
         "Sken ifutas"
-      ],
-      "Show fewer search options": [
-        ""
       ],
       "Show folders": [
         "Sken ikaramen"
@@ -875,18 +809,12 @@
       "This message contains remote content.": [
         "Izen-agi yesɛa agbur anmeggag."
       ],
-      "Trash all": [
-        ""
-      ],
       "Trust": [
         "Amen"
       ],
       "Trust key": [
         "Tasarut yettwamanen",
         "Tisura yettwamanen"
-      ],
-      "Trust public key": [
-        ""
       ],
       "Try again": [
         "Ɛreḍ tikkelt-nniḍen"
@@ -947,9 +875,6 @@
       ],
       "Use for sending": [
         "Tuzna"
-      ],
-      "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
-        ""
       ],
       "Use “${ label }” setting": [
         "Seqdec iɣewwaṛen n “${ label }”"
@@ -1080,12 +1005,6 @@
         "Anṣuf"
       ]
     },
-    "Amount of completed get started checklist items": {
-      "${ numberOfCompletedItems }/${ totalNumberOfItems } complete": [
-        "",
-        ""
-      ]
-    },
     "Apps dropdown": {
       "Proton applications": [
         "Isnasen n Proton"
@@ -1103,9 +1022,6 @@
       ],
       "Invalid method": [
         "Yir tarrayt"
-      ],
-      "Unsupported calendar component": [
-        ""
       ],
       "Unsupported event": [
         "Tadyant ur nettusefrak ara"
@@ -1131,16 +1047,8 @@
       ]
     },
     "Beta access description": {
-      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        ""
-      ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Ma tmugreḍ uguren tzemreḍ ad tsenseḍ anekcum Biṭa."
-      ]
-    },
-    "blackfriday Action": {
-      "Get the offer": [
-        ""
       ]
     },
     "blackfriday Info": {
@@ -1158,14 +1066,8 @@
       ]
     },
     "blackfriday Title": {
-      "Best deal": [
-        ""
-      ],
       "Most popular": [
         "Aɣerfan akk"
-      ],
-      "Save more when combining Mail and VPN": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer Action": {
@@ -1177,14 +1079,8 @@
       ]
     },
     "blackfriday: VPNspecialoffer Info": {
-      "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
-        ""
-      ],
       "Save ${ percentage }%": [
         "${ percentage } %"
-      ],
-      "Special offer Terms and Conditions": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer info": {
@@ -1198,15 +1094,6 @@
       ]
     },
     "blackfriday: VPNspecialoffer Title": {
-      "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
-        ""
-      ],
-      "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
-        ""
-      ],
-      "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
-        ""
-      ],
       "1 month": [
         "1 wayyur"
       ],
@@ -1215,18 +1102,6 @@
       ],
       "24 months": [
         "24 wayyuren"
-      ],
-      "Billed at ${ amount } for the first 2 years.${ supNotice }": [
-        ""
-      ],
-      "Billed at ${ amount } for the first month.${ supNotice }": [
-        ""
-      ],
-      "Billed at ${ amount } for the first year.${ supNotice }": [
-        ""
-      ],
-      "Get the special year-end offer on our Premium VPN PLUS plan": [
-        ""
       ]
     },
     "Bug category": {
@@ -1352,9 +1227,6 @@
       "${ participantName } asked for the latest updates to an event which does not exist in your calendar anymore.": [
         "${ participantName } yessuter-d ileqman ineggura i tedyant ur nelli ara dayen deg uwitay-inek-inem."
       ],
-      "${ participantName } asked for the latest updates to an event which doesn't match your invitation details. Please verify the invitation details in your calendar.": [
-        ""
-      ],
       "${ participantName } declined an invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } yugi tinubga yerna isumer-d akud amaynut i tmeḍriwt n tedyant-a."
       ],
@@ -1469,9 +1341,6 @@
       "${ participantName } had tentatively accepted your invitation and proposed a new time for this event. Answer and proposal are out of date.": [
         "${ participantName } yeqbel bizmant tinubga-inek·inem yerna isumer-d akud amaynut i tedyant-a. Tiririt d usumer iɛedda-ten wakud."
       ],
-      "${ participantName } is not in the participants list.": [
-        ""
-      ],
       "${ participantName } proposed a new time for one occurrence of this event.": [
         "${ participantName } isumer-d akud amaynut i yiwet n tikkelt kan n tedyant-a."
       ],
@@ -1566,9 +1435,6 @@
       ]
     },
     "Calendar subscription not synced error": {
-      "Calendar could not be decrypted": [
-        ""
-      ],
       "Calendar is syncing": [
         "Awitay yemtawi"
       ],
@@ -1578,17 +1444,11 @@
       "Calendar link is not accessible": [
         "Ulac anekcum ɣer useɣwen n uwitay"
       ],
-      "Calendar link is temporarily inaccessible": [
-        ""
-      ],
       "Failed to sync calendar": [
         "Tuccḍa deg umtawi n uwitay"
       ],
       "More than 12 hours passed since last update": [
         "Ugar n 12 n yisragen i yezrin ɣef uleqqem aneggaru"
-      ],
-      "Unsupported calendar format": [
-        ""
       ]
     },
     "Calendar widget banner": {
@@ -1611,164 +1471,32 @@
       "Apple": [
         "Apple"
       ],
-      "azureish white": [
-        ""
-      ],
-      "blanched almond": [
-        ""
-      ],
-      "blue-gray": [
-        ""
-      ],
-      "caramel": [
-        ""
-      ],
       "carrot": [
         "zṛudyya"
       ],
       "cerise": [
         "areḍli"
       ],
-      "cinnabar": [
-        ""
-      ],
       "cobalt": [
         "kubalt"
-      ],
-      "copper": [
-        ""
-      ],
-      "cyan-blue azure": [
-        ""
-      ],
-      "dandelion": [
-        ""
-      ],
-      "dark cerulean": [
-        ""
-      ],
-      "dark midnight blue": [
-        ""
-      ],
-      "dim gray": [
-        ""
-      ],
-      "enzian": [
-        ""
-      ],
-      "fern": [
-        ""
-      ],
-      "field drab": [
-        ""
       ],
       "forest": [
         "tiẓgi"
       ],
-      "gainsboro": [
-        ""
-      ],
-      "japanese laurel": [
-        ""
-      ],
       "kiwi": [
         "kiwi"
-      ],
-      "lemon yellow": [
-        ""
-      ],
-      "light carmine pink": [
-        ""
-      ],
-      "light moss green": [
-        ""
-      ],
-      "light red": [
-        ""
-      ],
-      "maize": [
-        ""
-      ],
-      "mughal green": [
-        ""
-      ],
-      "ocean": [
-        ""
       ],
       "olive": [
         "azemmur"
       ],
-      "outer space": [
-        ""
-      ],
-      "pacific": [
-        ""
-      ],
-      "palatinate blue": [
-        ""
-      ],
-      "pale cerulean": [
-        ""
-      ],
-      "pastel gray": [
-        ""
-      ],
-      "persian plum": [
-        ""
-      ],
-      "persian red": [
-        ""
-      ],
-      "philippine gray": [
-        ""
-      ],
-      "philippine silver": [
-        ""
-      ],
-      "pickle": [
-        ""
-      ],
-      "pine": [
-        ""
-      ],
       "pink": [
         "axuxi"
-      ],
-      "pistachio": [
-        ""
       ],
       "plum": [
         "taxuxet"
       ],
-      "purple": [
-        ""
-      ],
-      "raisin black": [
-        ""
-      ],
-      "reef": [
-        ""
-      ],
-      "ruddy pink": [
-        ""
-      ],
-      "sahara": [
-        ""
-      ],
-      "satin sheen gold": [
-        ""
-      ],
-      "slateblue": [
-        ""
-      ],
       "soil": [
         "akal"
-      ],
-      "strawberry": [
-        ""
-      ],
-      "vivid auburn": [
-        ""
       ],
       "white": [
         "amellal"
@@ -1973,9 +1701,6 @@
       "Aruba": [
         "Aruba"
       ],
-      "Ascension Island": [
-        ""
-      ],
       "Australia": [
         "Ustṛalya"
       ],
@@ -2153,14 +1878,8 @@
       "Ethiopia": [
         "Ityupya"
       ],
-      "Falkland Islands": [
-        ""
-      ],
       "Faroe Islands": [
         "Tigzirin n Faṛwi"
-      ],
-      "Federated States of Micronesia": [
-        ""
       ],
       "Fiji": [
         "Fiji"
@@ -2233,9 +1952,6 @@
       ],
       "Heard Island and McDonald Islands": [
         "Tigzirin n Hird d Tigzirin n MakDunald"
-      ],
-      "Holy See (Vatican City State)": [
-        ""
       ],
       "Honduras": [
         "Hunduṛas"
@@ -2540,9 +2256,6 @@
       "Singapore": [
         "Singapur"
       ],
-      "Sint Maarten": [
-        ""
-      ],
       "Slovakia": [
         "Sluvakya"
       ],
@@ -2563,9 +2276,6 @@
       ],
       "South Korea": [
         "Kuriya n Unẓul"
-      ],
-      "South Ossetia": [
-        ""
       ],
       "South Sudan": [
         "Sudan n unẓul"
@@ -2623,9 +2333,6 @@
       ],
       "Trinidad and Tobago": [
         "Ṭrindad d Ṭubagu"
-      ],
-      "Tristan da Cunha": [
-        ""
       ],
       "Tunisia": [
         "Tunes"
@@ -2891,33 +2598,13 @@
       "Event starting now": [
         "Tadyant ad ttebdu tura"
       ],
-      "Event starts in ${ minutesUntilEvent } minute": [
-        "",
-        ""
-      ],
       "Event starts tomorrow": [
         "Tadyant ad yebdu azekka"
-      ]
-    },
-    "Email reminder decryption error": {
-      "Event details are encrypted. Sign in again to restore Calendar and decrypt your data. ${ learnMoreLink }": [
-        ""
-      ],
-      "Event details cannot be decrypted. ${ whyNotLink }": [
-        ""
-      ]
-    },
-    "Email reminder error": {
-      "Event is no longer in your calendar": [
-        ""
       ]
     },
     "Email reminder out of date alert": {
       "Event was canceled": [
         "Tadyant tettwasefsex"
-      ],
-      "Event was updated. This reminder is out-of-date.": [
-        ""
       ]
     },
     "Email subject": {
@@ -2946,9 +2633,6 @@
       ]
     },
     "Error": {
-      "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
-        ""
-      ],
       "A group with this name already exists": [
         "Yella yakan ugraw s yisem-agi"
       ],
@@ -2969,9 +2653,6 @@
       ],
       "Calendar limit reached": [
         "Talast n uwitay tewweḍ"
-      ],
-      "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        ""
       ],
       "Choose a date in the future.": [
         "Fren azemz deg yimal."
@@ -3000,14 +2681,6 @@
       ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Tuccḍa di tukksa n uwgelhen: tukksa n uwgelhen n yizen-agi terreẓ."
-      ],
-      "Deselect at least ${ calendarToFixCount } calendar": [
-        "",
-        ""
-      ],
-      "Deselect at least ${ calendarToFixCount } calendar or": [
-        "",
-        ""
       ],
       "Draft could not be saved. Try again.": [
         "Arewway yegguma ad yettusekles. Ɛreḍ tikkelt-nniḍen."
@@ -3075,13 +2748,6 @@
       "Label name cannot be empty.": [
         "Isem n tebzimt ur ilaq ara ad yili d ilem."
       ],
-      "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
-        ""
-      ],
-      "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
-        "",
-        ""
-      ],
       "Message needs to be sent first": [
         "Izen yesra ad yettwazen qbel"
       ],
@@ -3129,10 +2795,6 @@
       "Please activate your content search again": [
         "Ttxil-k·m rmed anadi-inek·inem n ugbur i tikkelt-nniḍen"
       ],
-      "Please fix the highlighted conflict to proceed.": [
-        "",
-        ""
-      ],
       "Please repeat the password": [
         "Ma ulac aɣilif ales awal uffir"
       ],
@@ -3145,17 +2807,8 @@
       "Primary address key is not decrypted.": [
         "Tasarut n tansa tagejdant ur tettwawgelhen ara."
       ],
-      "Primary key is not valid for sending": [
-        ""
-      ],
-      "Primary key retrieved for internal user is not valid for sending": [
-        ""
-      ],
       "Public key could not be trusted": [
         "Tasarut tazayezt izmer ur tettwaman ara"
-      ],
-      "re-activate the previous key": [
-        ""
       ],
       "Removed duplicate recipient: ${ recipents }": [
         "Anermas uslig yettwakkes: ${ recipents }",
@@ -3283,12 +2936,6 @@
       "You must set a name": [
         "Yessefk ad tesbaduḍ isem"
       ],
-      "Your emails cannot be decrypted due to a recent password reset. If you remember your previous password, you can ${ reActivateKeyLink } in order to access your messages. ${ learnMoreLink }": [
-        ""
-      ],
-      "Your emails cannot be decrypted. This may be due to a password reset. ${ learnMoreLink }": [
-        ""
-      ],
       "Your import will not be processed.": [
         "Taktert-inek•inem ur tettwasekkar ara."
       ],
@@ -3302,18 +2949,6 @@
       ]
     },
     "Error display when performing invalid move on message": {
-      "Drafts cannot be moved to Inbox": [
-        ""
-      ],
-      "Drafts cannot be moved to Spam": [
-        ""
-      ],
-      "Sent messages cannot be moved to Inbox": [
-        ""
-      ],
-      "Sent messages cannot be moved to Spam": [
-        ""
-      ],
       "This action cannot be performed": [
         "Tigawt-agi ulamek ara teddu"
       ]
@@ -3415,9 +3050,6 @@
       "Original recurring event could not be found": [
         "Tadyant tameẓlut i d-yettuɣalen ulac-itt"
       ],
-      "Recurring event has no occurrences": [
-        ""
-      ],
       "Recurring rule not supported": [
         "Alugen i d-yettuɣalen ur yettusefrak ara"
       ],
@@ -3478,11 +3110,6 @@
         "Agmuḍ yettwasra"
       ]
     },
-    "Error sending calendar invitation": {
-      "Cannot send invitation to ${ email }. ${ errorMessage }": [
-        ""
-      ]
-    },
     "Event invitation error": {
       "Attached ICS file could not be decrypted": [
         "Afaylu ICS yeddan ulamek ad yettwawgelhen"
@@ -3495,12 +3122,6 @@
       ],
       "Invalid response": [
         "Tiririt tarameɣtut"
-      ],
-      "The event could not be added to your calendar. No answer was sent": [
-        ""
-      ],
-      "The event could not be updated in your calendar. No answer was sent": [
-        ""
       ],
       "Unexpected error": [
         "Tuccḍa u nettwarǧa ara"
@@ -3538,9 +3159,6 @@
       ]
     },
     "file size format": {
-      "bytes": [
-        "ibiten"
-      ],
       "GB": [
         "GAṬ"
       ],
@@ -3551,29 +3169,12 @@
         "KAṬ"
       ]
     },
-    "file size format, long": {
-      "Bytes": [
-        "Iṭamḍanen"
-      ],
-      "Gigabytes": [
-        ""
-      ],
-      "Kilobytes": [
-        ""
-      ],
-      "Megabytes": [
-        ""
-      ]
-    },
     "Filter Actions": {
       "Archive": [
         "Tarcivt"
       ],
       "Inbox": [
         "Tanaka n urmas"
-      ],
-      "Inbox - Default": [
-        ""
       ],
       "Select a folder": [
         "Fren akaram"
@@ -3666,26 +3267,16 @@
       ]
     },
     "Get started checklist completion": {
-      "We've increased the total storage of your account to ${ rewardInGb } GB. Get additional storage and unlock premium features today.": [
-        ""
-      ],
       "You're all set!": [
         "Tesbaduḍ kullec!"
       ]
     },
     "Get started checklist incentive": {
-      "Complete all steps and get a total of ${ rewardInGb } GB on your account": [
-        ""
-      ],
       "Expires soon": [
         "Ad ifat"
       ],
       "Expires today": [
         "Ad yemmet ass-a"
-      ],
-      "Only ${ days } day left": [
-        "",
-        ""
       ]
     },
     "Get started checklist instructions": {
@@ -3697,15 +3288,6 @@
       ],
       "Import contacts or emails": [
         "Kter inermisen neɣ imaylen"
-      ],
-      "Import your contacts or messages": [
-        ""
-      ],
-      "Quickly transfer your contacts or emails from any provider using our Easy Switch import assistant.": [
-        ""
-      ],
-      "Sign into the mobile app to complete the action": [
-        ""
       ],
       "Using your mobile device, scan this QR code or visit": [
         "S yibenk-ik•im aziraz, smiḍen tangalt-a tengalt QR neɣ rzu ɣer"
@@ -3723,11 +3305,6 @@
       ],
       "Set up a recovery method": [
         "Sbadu tarrayt n tririt"
-      ]
-    },
-    "Get started checklist spotlight": {
-      "You can access the checklist anytime from here": [
-        ""
       ]
     },
     "Get started checklist title": {
@@ -3902,16 +3479,9 @@
         "${ calendarsToBeMergedCount } n uwitay yettwamezdi",
         "${ calendarsToBeMergedCount } n yiwitayen ttwamezdin"
       ],
-      "${ contactCount } contact contains multiple email addresses.": [
-        "",
-        ""
-      ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } n uɛeggal",
         "${ contactEmailsLength } n yiɛeggalen"
-      ],
-      "${ contactName } contains multiple email addresses.": [
-        ""
       ],
       "${ contactsCount } contact found": [
         "${ contactsCount } n unermis yettwafen",
@@ -3936,10 +3506,6 @@
         "${ messagesNotAuthorizedToMove } izen ulamek ad yettusenkez.",
         "${ messagesNotAuthorizedToMove } iznan ulamek ad ttwasnekzen."
       ],
-      "${ numberOfTrackers } email tracker blocked": [
-        "",
-        ""
-      ],
       "${ numContactGroups } contact group": [
         "${ numContactGroups } n ugraw n unermes",
         "${ numContactGroups } n yigrawen n unermes"
@@ -3947,14 +3513,6 @@
       "${ numContacts } contact": [
         "${ numContacts } n unermis",
         "${ numContacts } n yinermisen"
-      ],
-      "${ occurrencesInBody } occurrence found": [
-        "${ occurrencesInBody } n temseḍriwt i yettwafen",
-        "${ occurrencesInBody } n temseḍriwin i yettwafen"
-      ],
-      "${ occurrencesInBody } occurrence found in the mail content": [
-        "",
-        ""
       ],
       "${ pureAttachmentsCount } file attached": [
         "Afaylu ${ pureAttachmentsCount } yeddan",
@@ -4035,9 +3593,6 @@
       "Activation in progress": [
         "Asermed itteddu"
       ],
-      "Add ${ addressToCreate } to your account for free, for a limited time only.": [
-        ""
-      ],
       "Add image URL": [
         "Rnu URL n tugna"
       ],
@@ -4085,9 +3640,6 @@
       "Are you sure you want to discard your changes?": [
         "D tidet tebɣiḍ ad tesfesxeḍ ibeddilen-ik m?"
       ],
-      "Are you sure you want to move all messages in this location to Trash?": [
-        ""
-      ],
       "Are you sure you want to permanently delete ${ count } conversation?": [
         "Tebɣiḍ s tidet ad tekkseḍ i lebda ${ count } n udiwenni?",
         "Tebɣiḍ s tidet ad tekkseḍ ${ count } n yidiwenniyen i lebda?"
@@ -4121,9 +3673,6 @@
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Inig azaduran akked tigawin ad qqimen wejden ama remden neɣ ur rmiden ara yinegzumen n unasiw deg yiɣewwaren."
       ],
-      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
-        ""
-      ],
       "Body: ": [
         "Tafekka: "
       ],
@@ -4138,12 +3687,6 @@
       ],
       "Clear data": [
         "Sfeḍ isefka"
-      ],
-      "Clearing browser data also deactivates message content search on this device. All messages will need to be downloaded again to search within them.": [
-        ""
-      ],
-      "Clears browser data related to message content search including downloaded messages": [
-        ""
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Tekki ɣef \"Suter tangalt tamaynut\" akken tangalt n usenqed tamaynut ad tettwaznen ɣer ${ strong }. Ma uṭṭun-agi n tilifun ur yeɣti ara, tekki ɣef \"Ẓreg\" akken ad t-seɣtiḍ."
@@ -4220,9 +3763,6 @@
       "Do you want to re-sign the contact details?": [
         "Tebɣiḍ ad talseḍ azmul i telqayt n unermis?"
       ],
-      "Don't forget to share your password with the recipient": [
-        ""
-      ],
       "Download our mobile application from your favorite app store to communicate securely on-the-go.": [
         "Sader asnas-nneɣ n uziraz seg app store tesmenyafayeḍ i wakken ad temmeslayeḍ s wudem aɣellsan mi ara tettedduḍ."
       ],
@@ -4247,37 +3787,12 @@
       "Duplicate key updated": [
         "Sisleg tasarut yettwaleqqmen"
       ],
-      "Edit encryption": [
-        ""
-      ],
-      "Edit expiration time": [
-        ""
-      ],
-      "Edit link": [
-        ""
-      ],
       "Email address": [
         "Tansa imayl"
-      ],
-      "Email tracker protection is disabled": [
-        ""
-      ],
-      "Email trackers can violate your privacy. Proton did not find any trackers on this message.": [
-        ""
-      ],
-      "Email trackers can violate your privacy. Proton found and blocked ${ numberOfTrackers } tracker.": [
-        "",
-        ""
-      ],
-      "Email trackers can violate your privacy. Turn on tracker protection to prevent senders from knowing whether and when you have opened a message.": [
-        ""
       ],
       "embedded image": [
         "tugna tusliɣt",
         "tugniwin tusliɣin"
-      ],
-      "Encrypt message": [
-        ""
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Sekcem tangalt n usenged i yettwaznen ɣer ${ destinationText }."
@@ -4309,9 +3824,6 @@
       ],
       "Expires soon": [
         "Ad ifat"
-      ],
-      "Expiring message": [
-        ""
       ],
       "file attached": [
         "afaylu yeddan",
@@ -4358,9 +3870,6 @@
         "Asrag",
         "Isragen"
       ],
-      "I'm sending this message to a non-ProtonMail user.": [
-        ""
-      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Ma tufiḍ ugur deg usnulfu n umiḍan-inek/m, ttxil-k/m suter tinnubga ad d-nerr deg yiwen n wass uxeddim."
       ],
@@ -4369,9 +3878,6 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Ma ur tufiḍ ara imayl deg tnaka n urmas, ttxil-k/m wali deg ukaram n ispamen."
-      ],
-      "Image description": [
-        ""
       ],
       "Image URL": [
         "URL n tugna"
@@ -4458,9 +3964,6 @@
       "Manage your labels": [
         "Sefrek tibzimin-inek/m"
       ],
-      "Maximum number of attachments (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) exceeded.": [
-        ""
-      ],
       "members": [
         "imttekkiyen"
       ],
@@ -4493,9 +3996,6 @@
       ],
       "Monthly ${ onDayString }": [
         "Yal ayyur ${ onDayString }"
-      ],
-      "Moving a large amount of messages. This may take a while.": [
-        ""
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Semmi akaram-ik·im amaynut syen fren akaram amaraw ideg tebɣiḍ ad t-terreḍ. Ma yella ur tefrneḍ ara akaram amaraw, akaram-a amaynut ad yettwarnu d akaram n uswir afellay."
@@ -4542,9 +4042,6 @@
       "No trackers found, but some images could not be loaded with tracking protection": [
         "Ulacineḍfaren, maca kra n tugniwin ulamek ara d-alint s ummesten n uḍfar"
       ],
-      "non-Proton Mail": [
-        ""
-      ],
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         "Ula d yiwet seg tsura i d-yettwasulin dtameɣtut i uwgelhen. Awgelhen yettusens s wudem awurman."
       ],
@@ -4553,9 +4050,6 @@
       ],
       "of": [
         "si"
-      ],
-      "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
-        ""
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Beddel iɣewwaren-agi ma yella tesseqdaceḍ PGP akked iɣerwaḍen ur isseqdac ara ${ BRAND_NAME }."
@@ -4569,12 +4063,6 @@
       "per month.": [
         "deg wayyur."
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
-        "PGP/Inline is only compatible with Plain Text format. Please note that Proton Mail always signs encrypted messages."
-      ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
-        "PGP/MIME automatically sends the message using the current composer mode. Please note that Proton Mail always signs encrypted messages."
-      ],
       "Phone number": [
         "Uṭṭun n tiliɣri"
       ],
@@ -4583,9 +4071,6 @@
       ],
       "Please add at least one recipient.": [
         "Ma ulac aɣilif, rnu xarsum yiwen n unermis."
-      ],
-      "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
-        ""
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Ttxil-k·m ẓer belli tansiwin yettunefken i ugraw-a ur ttwakkasent ara."
@@ -4598,13 +4083,6 @@
       ],
       "Please select the type of link you want to insert and fill in all the fields.": [
         "Ttxil fren anaw n useɣwen i tebɣiḍ ad teskecmeḍ teččareḍ akk urtan."
-      ],
-      "Please select which email address or addresses to add to ${ groupCount } group.": [
-        "",
-        ""
-      ],
-      "Please select which email address or addresses to add to ${ groupName }.": [
-        ""
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Ttxil rǧu simmal ad nmuqel inermisen izemren ad ttuzemlen tikkelt-nniḍen s tsarut n uwgelhen tagejdant."
@@ -4645,9 +4123,6 @@
       "Request read receipt": [
         "Ssuter aɣerwaḍ n tɣuri"
       ],
-      "Rich text": [
-        ""
-      ],
       "Right to Left": [
         "Seg uyeffus s azelmaḍ"
       ],
@@ -4666,29 +4141,14 @@
       "Saving draft…": [
         "Asekles n urewway…"
       ],
-      "Scheduled send of this message will be cancelled.": [
-        ""
-      ],
       "Scheduling message...": [
         "Asɣiwes n yizen..."
-      ],
-      "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
-        ""
       ],
       "Seems like you are all caught up for now": [
         "Akka i d-yettban tettwafem akken ma tellam akka tura"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Fren amasal n yimayl i tebɣiḍ ad yettwaseqdec d amezwer mi ara tazneḍ imayl ɣer tansa-a imayl."
-      ],
-      "Select what you want to move from Google.": [
-        ""
-      ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        ""
-      ],
-      "Send an encrypted, password protected message to a ${ boldText } email address.": [
-        ""
       ],
       "Sending": [
         "Tuzna"
@@ -4699,17 +4159,8 @@
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "Tuzna n yiznan seg @pm.me d tamahilt s uxelleṣ. Izen-inek ad itwazen seg tansa-inek tamezwart ${ email }"
       ],
-      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
-        ""
-      ],
-      "Servers are unreachable. Please try again in a few minutes": [
-        ""
-      ],
       "Session timed out": [
         "Yemmed wakud n tɣimit"
-      ],
-      "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
-        ""
       ],
       "Set a recovery phrase": [
         "Sbadu tafyirt n tririt"
@@ -4723,12 +4174,6 @@
       "Sorry, this message does not exist or has already expired.": [
         "Suref-aɣ, izen-agi ur yezgi yella neɣ ahat yemmut."
       ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        ""
-      ],
-      "Store and share files securely with ${ DRIVE_APP_NAME }.": [
-        ""
-      ],
       "Subject": [
         "Asentel"
       ],
@@ -4740,9 +4185,6 @@
       ],
       "Subject: ": [
         "Ameggay: "
-      ],
-      "Support for 1 custom email domain": [
-        ""
       ],
       "Support privacy by upgrading for": [
         "Mudd tallelt i tbaḍnit s usali ɣer"
@@ -4767,9 +4209,6 @@
       ],
       "The original message you are trying to forward / reply to is in the process of being sent. If you continue, you will not be able to undo sending of the original message any longer.": [
         "Izen-a anaṣli i tettaεraḍeḍ ad tazneḍ/ad terreḍ fell-as ha-t-an deg ukala n tuzna. Ma yella tkemmleḍ, ur tettizmireḍ ara akk ad tesfesxeḍ tuzna n yizen anaṣli."
-      ],
-      "The original sender of this message is no longer valid. Your message will be sent from your default address ${ defaultEmail }.": [
-        ""
       ],
       "The sender has requested a read receipt.": [
         "Amazan yetter-d talɣut ɣef tɣuri n yizen."
@@ -4799,9 +4238,6 @@
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Iminig-agi ur yedhil ara tamuɣli n yisemliyen PDF. Ttxil-k•m sader afaylu."
       ],
-      "This conversation contains a scheduled message. Sending of this message will be cancelled.": [
-        ""
-      ],
       "This conversation contains non-trashed messages.": [
         "Adiwenni-a yegber iznan beṛṛa n iḍumman."
       ],
@@ -4814,17 +4250,11 @@
       "This invitation is saved in a disabled calendar.": [
         "Leɛraḍa-agi tettwasekles deg uwitay yensan."
       ],
-      "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
-        ""
-      ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Aseɣwen-a yezmer ad yili d aẓdam homograph, ulamek yeldi s yimingen Internet Explorer d Edge. Ma yella tetḥeqqeḍ belli aseɣwen-a iṣeḥḥa, ttxil-k·m seqdec iminig-nniḍen i twaledyawt-is."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Aseɣwen-a yezmer ad yili d aẓdam homograph. Ttxil-k·m senqed ma d aseɣwen-a iwuɣur tebɣiḍ ad terzuḍ, neɣ ur tettalday ara."
-      ],
-      "This message has been adjusted to comply with a dark background.": [
-        ""
       ],
       "This message is automatically generated as a response to a previous message.": [
         "Izen-agi ilul-d s wudem awurman di tririt i yizen yezrin."
@@ -4901,14 +4331,8 @@
       "Turn on to search the content of your messages": [
         "Sermed akked ad tnadiḍ deg ugbur n yiznan-inek•inem"
       ],
-      "Unlimited folders, labels, and filters": [
-        ""
-      ],
       "Unlimited messages": [
         "Iznan war talast"
-      ],
-      "Unlock message": [
-        ""
       ],
       "Unsupported file": [
         "Afaylu ur yettwadhel ara"
@@ -4946,9 +4370,6 @@
       "Upgrade to use ${ MAIL_APP_NAME } with third-party desktop clients.": [
         "Sali ɣer lqem unnig akken ad tesqedceḍ ${ MAIL_APP_NAME } s yiseɣẓanen n yimsaɣen n uḥric wis kraḍ."
       ],
-      "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        ""
-      ],
       "Upload picture": [
         "Sili tugna"
       ],
@@ -4957,9 +4378,6 @@
       ],
       "URL: ${ unsubscribeMethods.HttpClient }": [
         "URL: ${ unsubscribeMethods.HttpClient }"
-      ],
-      "Use ${ calendarAppName } to keep your agenda private.": [
-        ""
       ],
       "Use keyboard shortcuts to manage your email faster.": [
         "Seqdec inegzumen n unasiw akken ad tesferkeḍ Imaylen-ik·im s tɣawla."
@@ -4981,9 +4399,6 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Ad nazen tangalt tamaynutt n uselken ɣer ${ strong }"
-      ],
-      "We're moving! Join us at our new site: ${ link }.": [
-        ""
       ],
       "Web URL": [
         "URL web"
@@ -5011,12 +4426,6 @@
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Aql-ak.kem teqqneḍ s yisem ${ user.Name } (${ user.Email })."
-      ],
-      "You can add it as an attachment or display it inline in your mail body.": [
-        ""
-      ],
-      "You can also merge imported calendars with existing Proton calendars.": [
-        ""
       ],
       "You can check the progress ${ importProgressLink }.": [
         "Tzemreḍ ad tesneqdeḍ asesfer n ${ importProgressLink }."
@@ -5049,17 +4458,9 @@
         "Ɣur-k **${ count } usqerdec** i yettaskelsen deg ukaram-a",
         "Ɣur-k **${ count } yisqerdcen** i yettaskelsen deg ukaram-a"
       ],
-      "You have **${ count } conversation** tagged with this label": [
-        "",
-        ""
-      ],
       "You have **${ count } message** stored in this folder": [
         "Ɣur-k **${ count } yizen** i yettaskelsen deg ukaram-a",
         "Ɣur-k **${ count } yiznan** i yettaskelsen deg ukaram-a"
-      ],
-      "You have **${ count } message** tagged with this label": [
-        "",
-        ""
       ],
       "You have not given your email any subject. Do you want to send the message anyway?": [
         "Ur as-tmuddeḍ ara akk i yimayl-inek asentel. Tebɣiḍ ad tazneḍ izen ɣas akken?"
@@ -5075,14 +4476,6 @@
       ],
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
         "Tewwḍeḍ ɣer 100% n tallunt-inek .m n weḥraz. Ur tezmireḍ ara ad tazneḍ neɣ ad teṭṭefeḍ imaylen. ${ freeUpMessage } ${ upgradeLink }"
-      ],
-      "You selected **${ count } conversation** from this folder": [
-        "",
-        ""
-      ],
-      "You selected **${ count } conversation** with this label": [
-        "",
-        ""
       ],
       "You selected **${ count } message** from this folder": [
         "Tferneḍ **${ count } yizen** seg ukaram-a",
@@ -5101,24 +4494,8 @@
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Amiḍan-ik·im ɣur-s ma drus yiwet n tfaṭurt i iɛeṭṭlen. Anekcum-inek·inem ur yettɛṭṭil ara ad yesɛu talast. ${ payInvoiceLink }"
       ],
-      "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
-        ""
-      ],
       "Your email will only be used for this one-time verification.": [
         "Imayl-ik ad yettwaseqdec kan tikkelt deg usenqed-agi."
-      ],
-      "Your message will be deleted from the recipient's inbox and your sent folder on ${ dateString } at ${ formattedTime }": [
-        ""
-      ],
-      "Your message will be deleted from the recipient's inbox and your sent folder today at ${ formattedTime }": [
-        ""
-      ],
-      "Your message will be deleted from the recipient's inbox and your sent folder tomorrow at ${ formattedTime }": [
-        ""
-      ],
-      "Your message will expire in ${ numberOfDays } day.": [
-        "",
-        ""
       ],
       "Your message will expire today.": [
         "Izen-ik·im ad immet ass-a."
@@ -5441,9 +4818,6 @@
       "Awful": [
         "Yessewḥac"
       ],
-      "Bad": [
-        ""
-      ],
       "BCC": [
         "Anɣ. Uff. I"
       ],
@@ -5557,9 +4931,6 @@
       ],
       "How would you describe your experience with the new Proton?": [
         "Amek ara tgelmeḍ tarmit-inek•inem akked Proton amaynut?"
-      ],
-      "I understand the risk": [
-        ""
       ],
       "IF": [
         "MA"
@@ -6022,36 +5393,6 @@
         "Ldi deg ${ CALENDAR_APP_NAME }"
       ]
     },
-    "Loading info": {
-      "Almost there": [
-        ""
-      ],
-      "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
-        ""
-      ],
-      "Creating new calendars": [
-        ""
-      ],
-      "Gathering your data": [
-        ""
-      ],
-      "We're gathering your data from your provider": [
-        ""
-      ],
-      "Your import is starting": [
-        ""
-      ]
-    },
-    "Mail import summary": {
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "",
-        ""
-      ],
-      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "",
-        ""
-      ]
-    },
     "Mailbox": {
       "Archive": [
         "Aɣbar"
@@ -6084,9 +5425,6 @@
       ],
       "Re:": [
         "Err:"
-      ],
-      "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
-        ""
       ]
     },
     "Message display when a new app version is available": {
@@ -6097,15 +5435,9 @@
     "Message image": {
       "Image has not been loaded in order to protect your privacy.": [
         "Tugna ur d-tuli ara iwakken ad tettwaḥrez tbaḍnit-ik•ik."
-      ],
-      "Your browser could not verify the remote server's identity. The image might be hosted using the http protocol.": [
-        ""
       ]
     },
     "Message notification": {
-      "Scheduled sending undone": [
-        ""
-      ],
       "Scheduling cancelled. Message has been moved to Drafts.": [
         "Asɣiwes yettwasefsex. Izen yettusenkez ɣer yirewwayen."
       ],
@@ -6268,16 +5600,6 @@
         "ISem n tebzimt"
       ]
     },
-    "new_plans: action": {
-      "Switch or add account": [
-        ""
-      ]
-    },
-    "new_plans: info": {
-      "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
-        ""
-      ]
-    },
     "new_plans: label": {
       "Tell us about your experience. (Optional)": [
         "Mmeslay-aɣ-d ɣef tirmut-ik•im. (d afrayan)"
@@ -6286,11 +5608,6 @@
     "new_plans: placeholder": {
       "Feedback": [
         "Tikti"
-      ]
-    },
-    "new_plans: title": {
-      "Updated Proton, unified protection": [
-        ""
       ]
     },
     "Notification": {
@@ -6307,22 +5624,9 @@
         "Awal uffir yettusbadu akken iwata"
       ]
     },
-    "Oauth instructions": {
-      "Next you'll need to sign in to your Google account and grant Proton access to your data.": [
-        ""
-      ]
-    },
-    "Oauth instructions video": {
-      "For the import to work, you must select all requested items as shown in the GIF.": [
-        ""
-      ]
-    },
     "Onboarding": {
       "Welcome to ${ appName }": [
         "Ansuf ɣer ${ appName }"
-      ],
-      "Where privacy and security meet productivity and ease of use.": [
-        ""
       ]
     },
     "Onboarding Action": {
@@ -6411,17 +5715,6 @@
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "Tasarut ulamek ara tettwaseqdec i uwgelhen"
-      ]
-    },
-    "PGP Key info": {
-      "${ emailAddress } has marked this key as compromised. This key cannot be used neither for encryption nor for signature verification.": [
-        ""
-      ],
-      "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
-        ""
-      ],
-      "We recommend that you \"untrust\" this key.": [
-        ""
       ]
     },
     "PGP key warning": {
@@ -6632,9 +5925,6 @@
       ],
       "Cannot send to organizer address: ${ errorMessage }": [
         "D awezɣi ad tettwazen tansa n umsuddes: ${ errorMessage }"
-      ],
-      "Re-encrypting invitation failed. Please try again": [
-        ""
       ]
     },
     "Search - no results": {
@@ -6771,43 +6061,8 @@
       ]
     },
     "Spotlight": {
-      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        ""
-      ],
       "Discover all Proton services": [
         "Issin imeẓluyen meṛṛa n Proton"
-      ],
-      "Get up to 18 months of ${ planName } for free": [
-        ""
-      ],
-      "Invite friends and earn rewards!": [
-        ""
-      ],
-      "Message Content Search": [
-        ""
-      ],
-      "Securely manage your schedule, files, and online life! Open to discover all Proton services.": [
-        ""
-      ],
-      "To protect your privacy, Proton blocked email trackers in this message": [
-        ""
-      ],
-      "Try ${ DRIVE_APP_NAME }": [
-        ""
-      ],
-      "You can now schedule your messages to be sent later": [
-        ""
-      ],
-      "You can now search the content of your encrypted emails.": [
-        ""
-      ]
-    },
-    "Status": {
-      "This message is from a mailing list.": [
-        ""
-      ],
-      "Unsubscribed": [
-        ""
       ]
     },
     "Step in filter modal": {
@@ -7032,9 +6287,6 @@
       "Move ${ selectionCount } message": [
         "Senkez izen n ${ selectionCount }",
         "Senkez iznan n ${ selectionCount }"
-      ],
-      "Password copied to clipboard": [
-        ""
       ],
       "Phishing reported": [
         "Akellex yettwammel"
@@ -7352,17 +6604,11 @@
       "Enter your password": [
         "Sekcem awal-ik uffir"
       ],
-      "Enter your username or ${ MAIL_APP_NAME } email address": [
-        ""
-      ],
       "Error": [
         "Tuccḍa"
       ],
       "Exporting contacts": [
         "Kter inermisen"
-      ],
-      "External encryption": [
-        ""
       ],
       "Feedback": [
         "Awennit"
@@ -7439,9 +6685,6 @@
       "More selections": [
         "Ugar n ufran"
       ],
-      "Move all messages to Trash": [
-        ""
-      ],
       "Move to": [
         "Senkez ɣer"
       ],
@@ -7453,9 +6696,6 @@
       ],
       "Move to trash": [
         "Awi ar iḍumman"
-      ],
-      "Moving a scheduled message": [
-        ""
       ],
       "New message": [
         "Izen amaynut"
@@ -7746,14 +6986,8 @@
         "Asenqed n uzmul n tceqquft yeddan.\nMazal tzemreḍ ad d-tsadreḍ taceqquft-a yeddan maca yezmer tettubeddel.",
         "Asenqed n yizmulen n tceqqufin yeddan.\nMazal tzemreḍ ad d-tsadreḍ ticeqqufin-a yeddan maca yezmer ttubeddelent."
       ],
-      "The contact data is corrupted and cannot be displayed.": [
-        ""
-      ],
       "The contact failed to load.": [
         "Asali n unermis ur yeddi ara."
-      ],
-      "The date and time settings on your device are out of sync. ${ learnMore }": [
-        ""
       ],
       "The decryption of the encrypted content failed.": [
         "Tukksa n uwgelhen n ugbur awgelhan ur yeddi ara."
@@ -7772,9 +7006,6 @@
       ],
       "You will lose any customization you made so far.": [
         "Ad tesruḥeḍ kra n waggan i tgiḍ ar tura."
-      ],
-      "Your free trial ends on ${ textDate }. ${ action }": [
-        ""
       ]
     },
     "Weekly recurring event, frequency": {
