@@ -167,24 +167,26 @@ const AdvancedSearch = ({
         <form name="advanced-search" onSubmit={handleSubmit} onReset={handleReset}>
             <div className="flex border-bottom pl1 pr1 pt0-25 pb0-5">
                 <SearchField
+                    unstyled
                     value={model.keyword}
                     onChange={({ target }) => updateModel({ ...model, keyword: target.value })}
                     onSubmit={handleSubmit}
                     showSearchIcon={false}
+                    suffix={
+                        isSearch ? (
+                            <Button
+                                shape="ghost"
+                                color="weak"
+                                size="small"
+                                disabled={!Object.keys(model).length}
+                                type="reset"
+                                onClick={handleClear}
+                            >
+                                {c('Action').t`Clear`}
+                            </Button>
+                        ) : null
+                    }
                 />
-                {isSearch ? (
-                    <Button
-                        shape="ghost"
-                        color="weak"
-                        className="flex mtauto mbauto mr0-25"
-                        size="small"
-                        disabled={!Object.keys(model).length}
-                        type="reset"
-                        onClick={handleClear}
-                    >
-                        {c('Action').t`Clear`}
-                    </Button>
-                ) : null}
             </div>
             <div className={classnames(['pt1 px1-5 pb0'])}>
                 {showEncryptedSearch && (

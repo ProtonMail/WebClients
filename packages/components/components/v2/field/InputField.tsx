@@ -74,7 +74,7 @@ const InputFieldBase = <E extends ElementType = typeof defaultElement>(
             rootClassName,
         ]),
         labelContainer: classnames([
-            'flex field-two-label-container flex-justify-space-between flex-nowrap flex-align-items-end flex-gap-0-5',
+            'field-two-label-container flex flex-justify-space-between flex-nowrap flex-align-items-end flex-gap-0-5',
             labelContainerClassName,
         ]),
         inputContainer: 'field-two-input-container relative',
