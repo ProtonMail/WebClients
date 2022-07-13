@@ -940,7 +940,7 @@
         "Mettre à niveau maintenant"
       ],
       "Upload picture": [
-        "Télécharger une image"
+        "Importer une image"
       ],
       "Use ${ label } theme": [
         "Utiliser le thème « ${ label } »"
@@ -1573,7 +1573,7 @@
         "Synchronisation du calendrier"
       ],
       "Calendar is too big": [
-        "Le calendrier est trop gros"
+        "Le calendrier est trop volumineux"
       ],
       "Calendar link is not accessible": [
         "Le lien du calendrier n’est pas accessible."
@@ -2813,7 +2813,7 @@
         "De plus, nous avons automatiquement identifié les champs CSV qui correspondent aux champs vCard. Vous pouvez vérifier et modifier cette correspondance manuellement."
       ],
       "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
-        "Nous avons détecté les champs suivants dans le fichier CSV que vous avez téléchargé. Vérifiez ceux que vous souhaitez importer."
+        "Nous avons détecté les champs suivants dans le fichier CSV que vous avez chargé. Vérifiez ceux que vous souhaitez importer."
       ]
     },
     "Desktop notification body": {
@@ -3040,7 +3040,7 @@
         "Erreur lors de l'envoi du message. Le message n'est pas envoyé."
       ],
       "Error while uploading attachments. Message is not sent.": [
-        "Erreur lors du téléchargement des pièces jointes. Le message n'est pas envoyé."
+        "Erreur lors du chargement des pièces jointes. Le message n'est pas envoyé."
       ],
       "Failed to encrypt attachment. Please try again.": [
         "Échec du chiffrement de la pièce jointe, veuillez réessayer."
@@ -3336,13 +3336,13 @@
         "Une erreur s'est produite lors de la lecture de votre fichier ${ formattedFilename }. Le fichier n'a pas le bon format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        "Une erreur s'est produite lors de l'importation de votre fichier ${ formattedFilename }. La taille maximale d’un fichier doit être de ${ MAX_IMPORT_FILE_SIZE_STRING }."
+        "Une erreur s'est produite lors du chargement de votre fichier ${ formattedFilename }. La taille maximale d’un fichier doit être de ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
       "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
-        "Une erreur s'est produite lors du téléchargement de votre fichier ${ formattedFilename }. Aucun fichier .csv ou .vcf sélectionné"
+        "Une erreur s'est produite lors du chargement de votre fichier ${ formattedFilename }. Aucun fichier .csv ou .vcf sélectionné."
       ],
       "An error occurred uploading your file. No file has been selected.": [
-        "Une erreur s'est produite lors de l'importation de votre fichier. Aucun fichier n'a été sélectionné."
+        "Une erreur s'est produite lors du chargement de votre fichier. Aucun fichier n'a été sélectionné."
       ],
       "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
         "Votre fichier ${ formattedFilename } contient plus de ${ MAX_IMPORT_CONTACTS_STRING } contacts."
@@ -3538,7 +3538,8 @@
       ]
     },
     "file size format": {
-      "bytes": [
+      "byte": [
+        "octet",
         "octets"
       ],
       "GB": [
@@ -3552,16 +3553,20 @@
       ]
     },
     "file size format, long": {
-      "Bytes": [
+      "Byte": [
+        "Octet",
         "Octets"
       ],
-      "Gigabytes": [
+      "Gigabyte": [
+        "Gigaoctet",
         "Gigaoctets"
       ],
-      "Kilobytes": [
+      "Kilobyte": [
+        "Kilooctet",
         "Kilooctets"
       ],
-      "Megabytes": [
+      "Megabyte": [
+        "Megaoctet",
         "Megaoctets"
       ]
     },
@@ -3948,13 +3953,13 @@
         "${ numContacts } contact",
         "${ numContacts } contacts"
       ],
-      "${ occurrencesInBody } occurrence found": [
-        "${ occurrencesInBody } occurrence trouvée",
-        "${ occurrencesInBody } occurrences trouvées"
+      "${ numOccurrences } occurrence found": [
+        "${ numOccurrences } occurrence trouvée",
+        "${ numOccurrences } occurrences trouvées"
       ],
-      "${ occurrencesInBody } occurrence found in the mail content": [
-        "${ occurrencesInBody } occurrence trouvée dans le contenu du courrier",
-        "${ occurrencesInBody } occurrences trouvées dans le contenu du courrier"
+      "${ numOccurrences } occurrence found in the mail content": [
+        "${ numOccurrences } occurrence trouvée dans le contenu du courrier",
+        "${ numOccurrences } occurrences trouvées dans le contenu du courrier"
       ],
       "${ pureAttachmentsCount } file attached": [
         "${ pureAttachmentsCount } fichier joint",
@@ -4239,10 +4244,10 @@
         "Brouillon sauvegardé."
       ],
       "Drop a file here to upload": [
-        "Déposer ici un fichier à envoyer"
+        "Déposer ici un fichier à charger"
       ],
       "Drop the file here to upload": [
-        "Déposez un fichier ici pour le télécharger"
+        "Déposez un fichier ici pour le charger"
       ],
       "Duplicate key updated": [
         "Clé dupliquée mise à jour"
@@ -4546,7 +4551,7 @@
         "autre que Proton Mail"
       ],
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
-        "Aucune des clés téléchargées n'est valide pour le chiffrement. Le chiffrement est automatiquement désactivé."
+        "Aucune des clés chargées n'est valide pour le chiffrement. Le chiffrement est automatiquement désactivé."
       ],
       "Not a valid URL": [
         "URL non valide"
@@ -4569,11 +4574,11 @@
       "per month.": [
         "par mois."
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
-        "PGP/Inline is only compatible with Plain Text format. Please note that Proton Mail always signs encrypted messages."
+      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        "PGP/Inline est uniquement compatible avec le format texte brut. Veuillez noter que ${ MAIL_APP_NAME } signe toujours les messages chiffrés."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
-        "PGP/MIME automatically sends the message using the current composer mode. Please note that Proton Mail always signs encrypted messages."
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
+        "PGP/MIME envoie automatiquement le message en utilisant le mode actuel du composeur. Veuillez noter que ${ MAIL_APP_NAME } signe toujours les messages chiffrés"
       ],
       "Phone number": [
         "Numéro de téléphone"
@@ -4815,7 +4820,7 @@
         "Cette invitation est enregistrée dans un calendrier désactivé."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
-        "Ce lien mène à un site Web qui pourrait essayer de voler vos informations, comme les mots de passe et les détails de carte de crédit."
+        "Ce lien mène à un site web qui pourrait essayer de voler vos informations, comme les mots de passe et les détails de carte de crédit."
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Ce lien pourrait être une attaque homographique et ne peut pas être ouvert avec les navigateurs Internet Explorer et Edge. Si vous êtes certain de la légitimité de ce lien, veuillez utiliser un autre navigateur pour l'ouvrir."
@@ -4917,7 +4922,7 @@
         "Mise à jour de la recherche de contenu de message..."
       ],
       "Upgrade to add more addresses to your account.": [
-        "Passez à l’offre supérieure pour ajouter plus d'adresses à votre compte."
+        "Passez à un abonnement supérieur pour ajouter plus d'adresses à votre compte."
       ],
       "Upgrade to configure a vacation auto-responder.": [
         "Passez à l’offre supérieure pour configurer une réponse automatique en cas d'absence."
@@ -4926,7 +4931,7 @@
         "Passez à l’offre supérieure pour créer plus de dossiers, de filtres et d’adresses."
       ],
       "Upgrade to host emails from your own domain name.": [
-        "Passez à l’offre supérieure pour héberger des e-mails de votre propre nom de domaine."
+        "Passez à un abonnement supérieur pour héberger des e-mails de votre propre nom de domaine."
       ],
       "Upgrade to send email from @pm.me addresses.": [
         "Passez à l’offre supérieure pour envoyer des messages depuis des adresses @pm.me."
@@ -4950,7 +4955,7 @@
         "Passez à l'offre supérieure dès aujourd'hui pour conserver les avantages suivants de ${ planName }."
       ],
       "Upload picture": [
-        "Télécharger une image"
+        "Importer une image"
       ],
       "URL link": [
         "Lien URL"
@@ -5429,6 +5434,9 @@
       "ANY": [
         "N’IMPORTE"
       ],
+      "Apply filter to existing emails": [
+        "Appliquer le filtre aux e-mails existants"
+      ],
       "Attach screenshot(s)": [
         "Joindre une ou plusieurs captures d’écran"
       ],
@@ -5760,7 +5768,7 @@
         "Destinataires non divulgués"
       ],
       "Upload picture": [
-        "Télécharger une image"
+        "Importer une image"
       ],
       "Username or ${ MAIL_APP_NAME } address": [
         "Nom d'utilisateur ou adresse ${ MAIL_APP_NAME }"
@@ -7612,7 +7620,7 @@
         "Attention"
       ],
       "Warning: suspected fake website": [
-        "Attention : site Web potentiellement faux"
+        "Attention : site web suspect/frauduleux"
       ],
       "Welcome": [
         "Bienvenue"
@@ -7670,7 +7678,7 @@
         "Cette fonctionnalité est disponible uniquement pour les utilisateurs payants"
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
-        "Téléchargez une clé publique pour activer l'envoi des e-mails chiffrés de bout en bout vers cette adresse électronique"
+        "Chargez une clé publique pour activer l'envoi des e-mails chiffrés de bout en bout vers cette adresse électronique."
       ],
       "You do not have any contacts to export": [
         "Vous n'avez aucun contact à exporter"

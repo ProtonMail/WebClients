@@ -1148,11 +1148,6 @@
         "Jeśli napotkasz problemy, możesz wyłączyć dostęp beta."
       ]
     },
-    "blackfriday Action": {
-      "Get the offer": [
-        ""
-      ]
-    },
     "blackfriday Info": {
       "beta": [
         "beta"
@@ -1168,14 +1163,8 @@
       ]
     },
     "blackfriday Title": {
-      "Best deal": [
-        ""
-      ],
       "Most popular": [
         "Najpopularniejszy"
-      ],
-      "Save more when combining Mail and VPN": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer Action": {
@@ -1187,14 +1176,8 @@
       ]
     },
     "blackfriday: VPNspecialoffer Info": {
-      "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
-        ""
-      ],
       "Save ${ percentage }%": [
         "${ percentage } %"
-      ],
-      "Special offer Terms and Conditions": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer info": {
@@ -1208,15 +1191,6 @@
       ]
     },
     "blackfriday: VPNspecialoffer Title": {
-      "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
-        ""
-      ],
-      "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
-        ""
-      ],
-      "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
-        ""
-      ],
       "1 month": [
         "1 miesiąc"
       ],
@@ -1225,18 +1199,6 @@
       ],
       "24 months": [
         "24 miesiące"
-      ],
-      "Billed at ${ amount } for the first 2 years.${ supNotice }": [
-        ""
-      ],
-      "Billed at ${ amount } for the first month.${ supNotice }": [
-        ""
-      ],
-      "Billed at ${ amount } for the first year.${ supNotice }": [
-        ""
-      ],
-      "Get the special year-end offer on our Premium VPN PLUS plan": [
-        ""
       ]
     },
     "Bug category": {
@@ -3580,7 +3542,10 @@
       ]
     },
     "file size format": {
-      "bytes": [
+      "byte": [
+        "bajt",
+        "bajty",
+        "bajtów",
         "bajtów"
       ],
       "GB": [
@@ -3594,17 +3559,29 @@
       ]
     },
     "file size format, long": {
-      "Bytes": [
-        "bajty"
+      "Byte": [
+        "bajt",
+        "bajty",
+        "bajtów",
+        "bajtów"
       ],
-      "Gigabytes": [
-        "gigabajty"
+      "Gigabyte": [
+        "gigabajt",
+        "gigabajty",
+        "gigabajtów",
+        "gigabajtów"
       ],
-      "Kilobytes": [
-        "kilobajty"
+      "Kilobyte": [
+        "kilobajt",
+        "kilobajty",
+        "kilobajtów",
+        "kilobajtów"
       ],
-      "Megabytes": [
-        "megabajty"
+      "Megabyte": [
+        "megabajt",
+        "megabajty",
+        "megabajtów",
+        "megabajtów"
       ]
     },
     "Filter Actions": {
@@ -4032,17 +4009,17 @@
         "${ numContacts } kontaktów",
         "${ numContacts } kontaktów"
       ],
-      "${ occurrencesInBody } occurrence found": [
-        "${ occurrencesInBody } znalezione powtórzenie",
-        "${ occurrencesInBody } znalezione powtórzenia",
-        "${ occurrencesInBody } znalezionych powtórzeń",
-        "${ occurrencesInBody } znalezionych powtórzeń"
+      "${ numOccurrences } occurrence found": [
+        "${ numOccurrences } znalezione powtórzenie",
+        "${ numOccurrences } znalezione powtórzenia",
+        "${ numOccurrences } znalezionych powtórzeń",
+        "${ numOccurrences } znalezionych powtórzeń"
       ],
-      "${ occurrencesInBody } occurrence found in the mail content": [
-        "${ occurrencesInBody } znalezione powtórzenie w zawartości wiadomości",
-        "${ occurrencesInBody } znalezione powtórzenia w zawartości wiadomości",
-        "${ occurrencesInBody } znalezionych powtórzeń w zawartości wiadomości",
-        "${ occurrencesInBody } znalezionych powtórzeń w zawartości wiadomości"
+      "${ numOccurrences } occurrence found in the mail content": [
+        "${ numOccurrences } znalezione powtórzenie w zawartości wiadomości",
+        "${ numOccurrences } znalezione powtórzenia w zawartości wiadomości",
+        "${ numOccurrences } znalezionych powtórzeń w zawartości wiadomości",
+        "${ numOccurrences } znalezionych powtórzeń w zawartości wiadomości"
       ],
       "${ pureAttachmentsCount } file attached": [
         "${ pureAttachmentsCount } załącznik",
@@ -4713,11 +4690,11 @@
       "per month.": [
         "miesięcznie."
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
-        "PGP/Inline is only compatible with Plain Text format. Please note that Proton Mail always signs encrypted messages."
+      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        "Schemat PGP/Inline jest kompatybilny tylko z trybem zwykłego tekstu. Pamiętaj, że ${ MAIL_APP_NAME } zawsze podpisuje zaszyfrowane wiadomości."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
-        "PGP/MIME automatically sends the message using the current composer mode. Please note that Proton Mail always signs encrypted messages."
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
+        "Schemat PGP/MIME automatycznie wysyła wiadomości przy użyciu obecnego trybu edytora. Pamiętaj, że ${ MAIL_APP_NAME } zawsze podpisuje zaszyfrowane wiadomości"
       ],
       "Phone number": [
         "Numer telefonu"
@@ -4805,9 +4782,6 @@
       ],
       "Saved at ${ dateString }": [
         "Zapisano o ${ dateString }"
-      ],
-      "Saved on ${ dateString }": [
-        ""
       ],
       "Saving draft…": [
         "Zapisywanie szkicu…"
@@ -5598,6 +5572,9 @@
       ],
       "ANY": [
         "JAKIKOLWIEK"
+      ],
+      "Apply filter to existing emails": [
+        "Zastosuj filtr do obecnych wiadomości"
       ],
       "Attach screenshot(s)": [
         "Dołącz zrzuty ekranu"

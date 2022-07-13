@@ -487,9 +487,6 @@
       "Skip": [
         "Salta"
       ],
-      "Start import": [
-        ""
-      ],
       "Start recovering": [
         "Inizia il recupero"
       ],
@@ -616,11 +613,6 @@
         "Se riscontri problemi, puoi sempre disabilitare l'Accesso Beta."
       ]
     },
-    "blackfriday Action": {
-      "Get the offer": [
-        ""
-      ]
-    },
     "blackfriday Info": {
       "beta": [
         "beta"
@@ -636,14 +628,8 @@
       ]
     },
     "blackfriday Title": {
-      "Best deal": [
-        ""
-      ],
       "Most popular": [
         "Il più richiesto"
-      ],
-      "Save more when combining Mail and VPN": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer Action": {
@@ -655,14 +641,8 @@
       ]
     },
     "blackfriday: VPNspecialoffer Info": {
-      "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
-        ""
-      ],
       "Save ${ percentage }%": [
         "${ percentage } %"
-      ],
-      "Special offer Terms and Conditions": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer info": {
@@ -676,15 +656,6 @@
       ]
     },
     "blackfriday: VPNspecialoffer Title": {
-      "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
-        ""
-      ],
-      "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
-        ""
-      ],
-      "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
-        ""
-      ],
       "1 month": [
         "1 mese"
       ],
@@ -693,18 +664,6 @@
       ],
       "24 months": [
         "24 mesi"
-      ],
-      "Billed at ${ amount } for the first 2 years.${ supNotice }": [
-        ""
-      ],
-      "Billed at ${ amount } for the first month.${ supNotice }": [
-        ""
-      ],
-      "Billed at ${ amount } for the first year.${ supNotice }": [
-        ""
-      ],
-      "Get the special year-end offer on our Premium VPN PLUS plan": [
-        ""
       ]
     },
     "Bug category": {
@@ -2123,7 +2082,8 @@
       ]
     },
     "file size format": {
-      "bytes": [
+      "byte": [
+        "byte",
         "byte"
       ],
       "GB": [
@@ -2137,16 +2097,20 @@
       ]
     },
     "file size format, long": {
-      "Bytes": [
+      "Byte": [
+        "Byte",
         "Byte"
       ],
-      "Gigabytes": [
+      "Gigabyte": [
+        "Gigabyte",
         "Gigabyte"
       ],
-      "Kilobytes": [
+      "Kilobyte": [
+        "Kilobyte",
         "Kilobyte"
       ],
-      "Megabytes": [
+      "Megabyte": [
+        "Megabyte",
         "Megabyte"
       ]
     },
@@ -2433,7 +2397,7 @@
         "Prima di richiedere un nuovo codice di verifica, controlla la tua cartella spam e verifica che ${ strong } sia l'indirizzo corretto."
       ],
       "Bulk uploads may reduce your computer’s performance. Consider limiting memory-intensive activities like streaming during upload. Or try uploading in batches.": [
-        ""
+        "I caricamenti in blocco possono ridurre le prestazioni del tuo computer. Prendi in considerazione la possibilità di limitare le attività ad alta intensità di memoria come lo streaming durante il caricamento. Oppure prova a caricare in batch."
       ],
       "Canceled": [
         "Annullato"
@@ -2543,7 +2507,7 @@
         "Scaricamento"
       ],
       "Drag and drop items here or browse for files to upload.": [
-        ""
+        "Trascina gli elementi qui o cerca i file da caricare."
       ],
       "Drop the file here to upload": [
         "Trascina qui il file per caricare"
@@ -2778,9 +2742,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Una o più chiavi fidate sono state contrassegnate come \"compromesse\" dal proprietario. Si consiglia di \"non fidarsi\" di queste chiavi."
       ],
-      "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters is allowed": [
-        ""
-      ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Cambia queste impostazioni solo se stai usando PGP con destinatari non-${ BRAND_NAME }."
       ],
@@ -2799,11 +2760,11 @@
       "Permanently delete all files in your drive": [
         "Elimina definitivamente tutti i file nello spazio"
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
-        "PGP/Inline is only compatible with Plain Text format. Please note that Proton Mail always signs encrypted messages."
+      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        "PGP/Inline è compatibile solo nel formato Testo Semplice. Per favore nota che ${ MAIL_APP_NAME } firma sempre i messaggi crittografati."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
-        "PGP/MIME automatically sends the message using the current composer mode. Please note that Proton Mail always signs encrypted messages."
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
+        "PGP/MIME invia automaticamente il messaggio utilizzando la modalità corrente di composizione. Per favore nota che ${ MAIL_APP_NAME } firma sempre i messaggi crittografati"
       ],
       "Please enter the password to decrypt and view content.": [
         "Prego immettere la password per decrittare e vedere il contenuto."
@@ -2873,7 +2834,7 @@
         "Condivisione sicura"
       ],
       "Secure your documents and data": [
-        ""
+        "Proteggi i tuoi documenti e dati"
       ],
       "Select an uploaded file or folder and create a link to it.": [
         "Seleziona un file o una cartella caricati e crea un link."
@@ -2933,7 +2894,7 @@
         "Privacy svizzera"
       ],
       "Tap the + button to upload a file or folder.": [
-        ""
+        "Tocca il pulsante + per caricare un file o una cartella."
       ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "L'account potrebbe avere una nuova chiave o quanto segue potrebbe essere stato manomesso: ${ items }. Aprilo solo se ti fidi."

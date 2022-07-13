@@ -4,20 +4,6 @@
     "language": "zh_TW"
   },
   "contexts": {
-    "Access level": {
-      "Full": [
-        ""
-      ],
-      "Full view": [
-        ""
-      ],
-      "Limited": [
-        ""
-      ],
-      "Limited view": [
-        ""
-      ]
-    },
     "Action": {
       "${ address } is available.": [
         "${ address } 是可用的。"
@@ -103,6 +89,9 @@
       "Apply": [
         "套用"
       ],
+      "Apply to existing message": [
+        "套用至現有的訊息"
+      ],
       "Attach screenshot(s)": [
         "貼附螢幕截圖"
       ],
@@ -175,9 +164,6 @@
       "Continue to ${ name }": [
         "繼續使用 ${ name }"
       ],
-      "Continue with": [
-        "繼續使用"
-      ],
       "Continue with Google": [
         "使用 Google 繼續"
       ],
@@ -192,9 +178,6 @@
       ],
       "Create": [
         "加入"
-      ],
-      "Create a secure ProtonMail address instead": [
-        "Create a secure Proton Mail address instead"
       ],
       "Create account": [
         "創建帳號"
@@ -345,6 +328,9 @@
       ],
       "Extend": [
         "延展"
+      ],
+      "Filters are being applied. This might take a few minutes.": [
+        "篩選器正在逐一套用中。這將會耗時幾分鐘時間。"
       ],
       "Font": [
         "字型"
@@ -679,17 +665,11 @@
       "Show preview": [
         "顯示預覽"
       ],
-      "sign in": [
-        "登入"
-      ],
       "Sign in": [
         "登入"
       ],
       "Sign out": [
         "登出"
-      ],
-      "Sign out from": [
-        "登出自"
       ],
       "Sign out of all accounts": [
         "登出所有帳號"
@@ -904,11 +884,6 @@
         "若您現在離開，有一些事件或會無法匯入"
       ]
     },
-    "Alter": {
-      "This will disconnect all the routers and clients using this certificate.": [
-        ""
-      ]
-    },
     "Apps dropdown": {
       "Proton applications": [
         "Proton 應用程式"
@@ -932,11 +907,6 @@
       ],
       "Unsupported event": [
         "不支援的事件"
-      ]
-    },
-    "Auto import invitations setting": {
-      "Add to calendar and mark as pending": [
-        ""
       ]
     },
     "Autoresponse": {
@@ -965,20 +935,6 @@
         "目前工作階段"
       ]
     },
-    "Billing cycle": {
-      "Payable every 12 months": [
-        ""
-      ],
-      "Payable every 24 months": [
-        ""
-      ],
-      "Payable every month": [
-        ""
-      ],
-      "Renews automatically on ${ formattedEndTime }": [
-        ""
-      ]
-    },
     "Billing cycle option": {
       "1 month": [
         "1 個月"
@@ -999,11 +955,6 @@
         "兩年"
       ]
     },
-    "blackfriday Action": {
-      "Get the offer": [
-        ""
-      ]
-    },
     "blackfriday Info": {
       "beta": [
         "測試版"
@@ -1019,14 +970,8 @@
       ]
     },
     "blackfriday Title": {
-      "Best deal": [
-        ""
-      ],
       "Most popular": [
         "最熱門"
-      ],
-      "Save more when combining Mail and VPN": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer Action": {
@@ -1037,20 +982,9 @@
         "立即取得優惠"
       ]
     },
-    "blackfriday: VPNspecialoffer Badge popup": {
-      "${ vpnPlus } Special Offer 2021 discount has been applied": [
-        ""
-      ]
-    },
     "blackfriday: VPNspecialoffer Info": {
-      "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
-        ""
-      ],
       "Save ${ percentage }%": [
         "省下 ${ percentage }%"
-      ],
-      "Special offer Terms and Conditions": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer info": {
@@ -1064,15 +998,6 @@
       ]
     },
     "blackfriday: VPNspecialoffer Title": {
-      "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
-        ""
-      ],
-      "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
-        ""
-      ],
-      "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
-        ""
-      ],
       "1 month": [
         "一個月"
       ],
@@ -1081,18 +1006,6 @@
       ],
       "24 months": [
         "24 個月"
-      ],
-      "Billed at ${ amount } for the first 2 years.${ supNotice }": [
-        ""
-      ],
-      "Billed at ${ amount } for the first month.${ supNotice }": [
-        ""
-      ],
-      "Billed at ${ amount } for the first year.${ supNotice }": [
-        ""
-      ],
-      "Get the special year-end offer on our Premium VPN PLUS plan": [
-        ""
       ]
     },
     "Bridge version load failed": {
@@ -1175,9 +1088,6 @@
       "Add link to your email footer": [
         "將連結加入到您的電郵註腳"
       ],
-      "Continue using ${ MAIL_APP_NAME }.": [
-        ""
-      ],
       "Copy": [
         "複製"
       ],
@@ -1191,40 +1101,7 @@
         "Tweet"
       ]
     },
-    "Calendar import section description": {
-      "You can import ICS files from another calendar to ${ CALENDAR_APP_NAME }. This lets you quickly import one event or your entire agenda.": [
-        ""
-      ]
-    },
-    "Calendar limit warning": {
-      "You have reached the maximum number of personal calendars you can create within your plan.": [
-        ""
-      ],
-      "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } subscribed calendar.": [
-        ""
-      ]
-    },
-    "Calendar link purpose update success message": {
-      "Label added": [
-        ""
-      ],
-      "Label deleted": [
-        ""
-      ],
-      "Label edited": [
-        ""
-      ]
-    },
     "Calendar status": {
-      "Active": [
-        ""
-      ],
-      "Default": [
-        ""
-      ],
-      "Disabled": [
-        ""
-      ],
       "Not synced": [
         "未同步"
       ],
@@ -1259,9 +1136,6 @@
       ]
     },
     "Calendar view": {
-      "Day": [
-        ""
-      ],
       "Month": [
         "月"
       ],
@@ -1272,103 +1146,14 @@
     "Checkout row": {
       "${ users } user": [
         "${ users } 個使用者"
-      ],
-      "Total for ${ n } month": [
-        ""
-      ]
-    },
-    "Collapsible tooltip": {
-      "Close": [
-        ""
-      ],
-      "Open": [
-        ""
       ]
     },
     "color": {
-      "Apple": [
-        ""
-      ],
-      "azureish white": [
-        ""
-      ],
-      "blanched almond": [
-        ""
-      ],
-      "blue-gray": [
-        ""
-      ],
-      "caramel": [
-        ""
-      ],
       "carrot": [
         "胡蘿蔔"
       ],
-      "cerise": [
-        ""
-      ],
-      "cinnabar": [
-        ""
-      ],
-      "cobalt": [
-        ""
-      ],
       "copper": [
         "銅"
-      ],
-      "cyan-blue azure": [
-        ""
-      ],
-      "dandelion": [
-        ""
-      ],
-      "dark cerulean": [
-        ""
-      ],
-      "dark midnight blue": [
-        ""
-      ],
-      "dim gray": [
-        ""
-      ],
-      "enzian": [
-        ""
-      ],
-      "fern": [
-        ""
-      ],
-      "field drab": [
-        ""
-      ],
-      "forest": [
-        ""
-      ],
-      "gainsboro": [
-        ""
-      ],
-      "japanese laurel": [
-        ""
-      ],
-      "kiwi": [
-        ""
-      ],
-      "lemon yellow": [
-        ""
-      ],
-      "light carmine pink": [
-        ""
-      ],
-      "light moss green": [
-        ""
-      ],
-      "light red": [
-        ""
-      ],
-      "maize": [
-        ""
-      ],
-      "mughal green": [
-        ""
       ],
       "ocean": [
         "海洋"
@@ -1376,35 +1161,8 @@
       "olive": [
         "橄欖"
       ],
-      "outer space": [
-        ""
-      ],
       "pacific": [
         "太平洋"
-      ],
-      "palatinate blue": [
-        ""
-      ],
-      "pale cerulean": [
-        ""
-      ],
-      "pastel gray": [
-        ""
-      ],
-      "persian plum": [
-        ""
-      ],
-      "persian red": [
-        ""
-      ],
-      "philippine gray": [
-        ""
-      ],
-      "philippine silver": [
-        ""
-      ],
-      "pickle": [
-        ""
       ],
       "pine": [
         "松樹"
@@ -1412,44 +1170,23 @@
       "pink": [
         "粉紅色"
       ],
-      "pistachio": [
-        ""
-      ],
       "plum": [
         "梅子"
       ],
       "purple": [
         "紫色"
       ],
-      "raisin black": [
-        ""
-      ],
       "reef": [
         "礁石"
       ],
-      "ruddy pink": [
-        ""
-      ],
       "sahara": [
         "撒哈拉"
-      ],
-      "satin sheen gold": [
-        ""
-      ],
-      "slateblue": [
-        ""
       ],
       "soil": [
         "土壤"
       ],
       "strawberry": [
         "草莓"
-      ],
-      "vivid auburn": [
-        ""
-      ],
-      "white": [
-        ""
       ]
     },
     "Condition for custom filter": {
@@ -1585,9 +1322,6 @@
       ],
       "Work": [
         "工作"
-      ],
-      "Yomi": [
-        ""
       ]
     },
     "Countdown unit": {
@@ -2370,11 +2104,6 @@
         "(中轉 ${ entryCountryName })"
       ]
     },
-    "Coupon": {
-      "Coupon applied: ${ CouponCode }": [
-        ""
-      ]
-    },
     "Credits": {
       "Unused credits": [
         "尚餘儲值"
@@ -2383,35 +2112,6 @@
     "Cycle": {
       "/month": [
         "/月"
-      ],
-      "/user per month": [
-        ""
-      ]
-    },
-    "Daily recurring event, frequency": {
-      "${ count } time": [
-        ""
-      ],
-      "Daily": [
-        ""
-      ],
-      "Daily, ${ timesString }": [
-        ""
-      ],
-      "Daily, ${ untilString }": [
-        ""
-      ],
-      "Every ${ interval } day": [
-        ""
-      ],
-      "Every ${ interval } day, ${ timesString }": [
-        ""
-      ],
-      "Every ${ interval } day, ${ untilString }": [
-        ""
-      ],
-      "until ${ dateString }": [
-        ""
       ]
     },
     "Day": {
@@ -2465,9 +2165,6 @@
       ],
       "Track how many people click on your link, sign up, and become paid subscribers. Watch your free months add up.": [
         "追蹤多少人按下您的連結、註冊，並成為付費訂閱者。看著您的免費月份增長。"
-      ],
-      "You can continue to invite friends, but you wont be able to earn more credits": [
-        ""
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "您可以使用 iCal 格式 (ICS 檔案) 匯入事件。檔案大小上限為 ${ MAX_IMPORT_FILE_SIZE_STRING }，上限為 ${ MAX_IMPORT_EVENTS_STRING } 個事件。若您的檔案超出此限，請將其分割為較小的檔案。"
@@ -2621,9 +2318,6 @@
       ],
       "A group with this name already exists": [
         "以此為名的群組已存在"
-      ],
-      "Address already associated to a user": [
-        "電郵位址已與某位使用者關聯"
       ],
       "Address primary private key not found": [
         "找不到位址主要金鑰"
@@ -2829,12 +2523,6 @@
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         "請嘗試重新認證並確保權限設定正確。"
       ],
-      "Please upgrade to a business plan with more than 1 user to get multi-user support": [
-        ""
-      ],
-      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
-        ""
-      ],
       "Primary address key is not decrypted": [
         "主要位址金鑰並未被加密"
       ],
@@ -2859,14 +2547,8 @@
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "其中一些資料夾名稱無法使用。請自訂匯入以編輯該等名稱。"
       ],
-      "Some of your folder names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
-        ""
-      ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "其中一些標籤名稱無法使用。請自訂匯入以編輯該等名稱。"
-      ],
-      "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
-        ""
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "發生錯誤，請${ refresh }以繼續。如果您仍看到此錯誤訊息，請聯絡我們的${ supportTeam }。"
@@ -2877,9 +2559,6 @@
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "您目前使用的瀏覽器無法完成支付認證，請使用其它瀏覽器或透過電腦登入。"
       ],
-      "The folder name is invalid. Please choose a different name.": [
-        ""
-      ],
       "The folder name is too long. Please choose a different name.": [
         "資料夾名稱太長。請換另一個名稱。"
       ],
@@ -2888,9 +2567,6 @@
       ],
       "The keys in your recovery files can't be validated. Please upload individually for more information.": [
         "在您帳號救援檔案內的金鑰無法通過驗證。請逐一上載更多資訊。"
-      ],
-      "The label name is invalid. Please choose a different name.": [
-        ""
       ],
       "The label name is too long. Please choose a different name.": [
         "標籤名稱太長。請換另一個名稱。"
@@ -3157,23 +2833,14 @@
       "Error: ${ errorMessage }": [
         "錯誤：${ errorMessage }"
       ],
-      "Invalid URL": [
-        ""
-      ],
       "Oops, something went wrong": [
         "糟糕，出了一點問題"
       ],
       "Please ${ refresh } or check your connection.": [
         "請${ refresh }或檢查您的連線。"
       ],
-      "Please ${ signIn } to update your email subscription preferences.": [
-        "請 ${ signIn } 以升級您的電郵訂閱偏好設定。"
-      ],
       "There was a problem connecting to Proton.": [
         "連線到 Proton 時發生問題。"
-      ],
-      "There was a problem unsubscribing you.": [
-        "幫您取消訂閱時發生了一點問題。"
       ],
       "Too many child sessions, please clear your cookies and sign back in.": [
         "太多子系作業階段，請清除您的 cookies 然後重新登入。"
@@ -3183,9 +2850,6 @@
       ]
     },
     "Error notification": {
-      "Certificate ${ name } not found or already revoked": [
-        ""
-      ],
       "First name and last name cannot be unchecked at the same time": [
         "姓氏和名字不能同時取消勾選"
       ]
@@ -3193,14 +2857,6 @@
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "未選取任何圖像"
-      ]
-    },
-    "Error when exporting event from calendar": {
-      "Event @ ${ timeString }": [
-        ""
-      ],
-      "Event from ${ timeString }, ${ rruleString }": [
-        ""
       ]
     },
     "Event invitation error": {
@@ -3252,53 +2908,6 @@
         "(無標題)"
       ]
     },
-    "Export calendar": {
-      "${ totalProcessed }/${ totalToProcess } event exported": [
-        ""
-      ],
-      "Calendar successfully exported. You can now save the ICS file.": [
-        ""
-      ],
-      "Decrypting events from your calendar: ${ totalProcessed }/${ totalToProcess }": [
-        ""
-      ],
-      "Due to a password reset, none of your events could be decrypted and exported.": [
-        ""
-      ],
-      "Due to a password reset, some of your events could not be decrypted and exported.": [
-        ""
-      ],
-      "Error decrypting event": [
-        ""
-      ],
-      "Learn how to restore encrypted events with old password": [
-        ""
-      ],
-      "Loading events": [
-        ""
-      ],
-      "None of the events could be exported.": [
-        ""
-      ],
-      "Password reset - event cannot be decrypted": [
-        ""
-      ],
-      "Password reset - multiple events cannot be decrypted": [
-        ""
-      ],
-      "Please don't close the tab before the exporting process is finished.": [
-        ""
-      ],
-      "Some of your events could not be exported.": [
-        ""
-      ],
-      "The internet connection was interrupted, causing the export process to fail. Please try again.": [
-        ""
-      ],
-      "You can save an ICS file of the events that were successfully exported.": [
-        ""
-      ]
-    },
     "Feature": {
       "${ MaxVPN } VPN connection": [
         "${ MaxVPN } 個 VPN 連線"
@@ -3323,9 +2932,6 @@
       ]
     },
     "file size format": {
-      "bytes": [
-        "位元組"
-      ],
       "GB": [
         "GB"
       ],
@@ -3336,29 +2942,12 @@
         "MB"
       ]
     },
-    "file size format, long": {
-      "Bytes": [
-        "位元組"
-      ],
-      "Gigabytes": [
-        "十億位元組"
-      ],
-      "Kilobytes": [
-        "千位元組"
-      ],
-      "Megabytes": [
-        "百萬位元組"
-      ]
-    },
     "Filter Actions": {
       "Archive": [
         "封存"
       ],
       "Inbox": [
         "收件匣"
-      ],
-      "Inbox - Default": [
-        ""
       ],
       "Select a folder": [
         "選擇一個資料夾"
@@ -3412,9 +3001,6 @@
       ]
     },
     "FilterSettings": {
-      "Add a custom filter to automatically perform certain actions, like labeling or archiving messages. Filters can be edited and created directly via Sieve programming language.": [
-        ""
-      ],
       "Apply sender-specific spam rules. Messages from addresses or domains on the Allow List always go to your Inbox while messages from addresses or domains on the Block List always go to Spam. Marking a message as spam adds its address to the Block List. Marking a message as not spam adds it to the Allow List.": [
         "套用視乎寄件人而定的垃圾郵件規則。來自允許清單中電郵位址或網域的郵件一律納入收件匣，而來自封鎖清單中電郵位址或網域的郵件則一概歸於垃圾郵件中。將郵件標記為垃圾郵件時，其電郵位址會加入到封鎖清單中。將郵件標記為非垃圾郵件則會把其加入到允許清單中。"
       ],
@@ -3482,9 +3068,6 @@
       "Label": [
         "標籤"
       ],
-      "Name": [
-        ""
-      ],
       "Notifications": [
         "通知"
       ],
@@ -3496,9 +3079,6 @@
       ],
       "Time": [
         "時間"
-      ],
-      "What others see": [
-        ""
       ]
     },
     "Header for addresses table": {
@@ -3648,9 +3228,6 @@
       "\"Less secure app access\" is turned on in your Google account security settings.": [
         "您的 Google 帳號安全設定中已允許「低安全性應用程式」存取帳號。"
       ],
-      "2-step verification is enabled in your external account.": [
-        ""
-      ],
       "2-step verification is enabled in your external email account.": [
         "您的外部電郵帳號已啟用兩步驟驗證."
       ],
@@ -3665,9 +3242,6 @@
       ],
       "If ${ bold2StepsEnabled }, please make sure that your email address and app password are correct. Do ${ boldNot } use your regular password.": [
         "如果 ${ bold2StepsEnabled }，請確保您的電郵位址和應用程式密碼均正確。${ boldNot } 使用您的一般密碼。"
-      ],
-      "IMAP access is enabled in your external account.": [
-        ""
       ],
       "IMAP access is enabled in your Yahoo account.": [
         "您的 Yahoo 帳號已啟用 IMAP 存取。"
@@ -3693,12 +3267,6 @@
       "Proton can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
         "Proton 無法連線到您的 Gmail 帳號。請確保電郵伺服器位置和連接埠號碼正確。"
       ],
-      "Proton can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
-        ""
-      ],
-      "Proton can't connect to your Yahoo account. Please make sure that:": [
-        ""
-      ],
       "Too many recent requests. Please try again in a few moments.": [
         "最近的請求太多。請容後再試。"
       ],
@@ -3713,15 +3281,6 @@
       ],
       "Your app password is correct. Do ${ boldNot } use your regular password.": [
         "您的 App 密碼正確無誤。請${ boldNot } 使用您常使用的密碼。"
-      ],
-      "Your email account requires an app password to export your data.": [
-        ""
-      ],
-      "Your email account requires one to export your data.": [
-        ""
-      ],
-      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        ""
       ],
       "Your email address and password are correct.": [
         "您的電郵位址和密碼均為正確."
@@ -3755,9 +3314,6 @@
     "Import instructions": {
       "Click ${ boldManage } to expand the options menu.": [
         "點擊 ${ boldManage } 以展開選項功能表。"
-      ],
-      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to Proton.": [
-        ""
       ],
       "Expand the dropdown menu by clicking on the 3 dots (...).": [
         "點擊三個點 (...) 展開下拉式選單"
@@ -3798,17 +3354,11 @@
       "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
         "要匯入行事曆到 Proton，您需要 ${ knowledgeBaseLink }。透過三個簡單的步驟從 Yahoo 下載它："
       ],
-      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
-        ""
-      ],
       "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
         "要匯入聯絡人到 Proton，您需要 ${ knowledgeBaseLink }。透過三個簡單的步驟從 Outlook 下載它："
       ],
       "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
         "要匯入聯絡人到 Proton，您需要 ${ knowledgeBaseLink }。透過三個簡單的步驟從 Yahoo 下載它："
-      ],
-      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
-        ""
       ],
       "To import emails to Proton, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
         "要匯入電郵到 Outlook，您需要來自 Yahoo 的 ${ appPasswordLink }。請按照以下步驟取得："
@@ -3873,29 +3423,6 @@
       ],
       "shared calendars": [
         "已分享的行事曆"
-      ],
-      "Yahoo": [
-        ""
-      ]
-    },
-    "Import instructions step": {
-      "Click on the ${ boldICS } link and download the file.": [
-        ""
-      ],
-      "Go to ${ calendarLink } in your Outlook settings.": [
-        ""
-      ],
-      "Go to ${ calendarViewLink } in Yahoo.": [
-        ""
-      ],
-      "Mouse over the calendar you want to import and open the dropdown menu.": [
-        ""
-      ],
-      "Select ${ boldExport } to export the calendar as an ICS file.": [
-        ""
-      ],
-      "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it.": [
-        ""
       ]
     },
     "Import key": {
@@ -4266,9 +3793,6 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "請求新的驗證碼前，請先檢查您的垃圾郵件資料夾，並檢查 ${ strong } 的位址是否正確。"
       ],
-      "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following MX records to your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        ""
-      ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "您的新電郵位址還需建立加密金鑰，才可用來傳送和接收電郵。"
       ],
@@ -4359,29 +3883,14 @@
       "Custom": [
         "自訂"
       ],
-      "Custom daily": [
-        ""
-      ],
       "Custom email domains": [
         "自訂電郵網域"
-      ],
-      "Custom monthly": [
-        ""
-      ],
-      "Custom weekly": [
-        ""
-      ],
-      "Custom yearly": [
-        ""
       ],
       "Daily": [
         "每日"
       ],
       "Data locked": [
         "資料已上鎖"
-      ],
-      "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
-        ""
       ],
       "Delete link?": [
         "刪除連結?"
@@ -4481,9 +3990,6 @@
       ],
       "Enter your ${ BRAND_NAME } Account details.": [
         "請輸入您的 ${ BRAND_NAME } 帳號詳細資料。"
-      ],
-      "Enter your ${ BRAND_NAME } Account email address or username.": [
-        ""
       ],
       "Enter your login password to confirm your identity.": [
         "請輸入您的登入密碼，以便確認您的身份。"
@@ -5027,9 +4533,6 @@
       ],
       "Select a service provider to start": [
         "選取您的服務提供者以開始"
-      ],
-      "Select Continue to ${ name } to open the app. This also creates a ${ name } account with your ${ MAIL_APP_NAME } address so you can sign in with one click in the future.": [
-        ""
       ],
       "Select what you want to move from Google.": [
         "選取您要從 Google 移動的項目"
@@ -5654,9 +5157,6 @@
       "Billed": [
         "扣帳"
       ],
-      "Gifted": [
-        ""
-      ],
       "Paid": [
         "已付"
       ],
@@ -5966,11 +5466,6 @@
         "標記為已過時"
       ]
     },
-    "Knowledge base link label": {
-      "Here's how": [
-        ""
-      ]
-    },
     "Label": {
       " and ": [
         " 且 "
@@ -6046,6 +5541,9 @@
       ],
       "App password": [
         "應用程式密碼"
+      ],
+      "Apply filter to existing emails": [
+        "將篩選器套用至現有的電郵"
       ],
       "Ask before loading remote content": [
         "載入遠端內容前先詢問"
@@ -6205,12 +5703,6 @@
       ],
       "Default email address": [
         "預設電郵位址"
-      ],
-      "Default event duration": [
-        ""
-      ],
-      "Default full day notifications": [
-        ""
       ],
       "Default language": [
         "預設語言"
@@ -6740,9 +6232,6 @@
       "Your calendar URL": [
         "您的行事曆網址"
       ],
-      "Your calendar URL label": [
-        ""
-      ],
       "Your password (admin)": [
         "您的密碼（管理員）"
       ],
@@ -6764,11 +6253,6 @@
         "復原短語"
       ]
     },
-    "Label for adding a new custom domain": {
-      "Add a domain that you own to your ${ MAIL_APP_NAME } account.": [
-        ""
-      ]
-    },
     "Label for domain modal": {
       "Please add the following TXT record:": [
         "請加入以下的 TXT 記錄："
@@ -6780,9 +6264,6 @@
       ],
       "Private": [
         "私密"
-      ],
-      "VPN connections": [
-        ""
       ]
     },
     "Label for news": {
@@ -7010,11 +6491,6 @@
         "從 ${ totalLabelsCount } 個標籤匯入最近 ${ periodFragment } 的訊息並將其貼上標籤： ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
-    "Maximum calendar links reached warning": {
-      "You can create up to ${ MAX_LINKS_PER_CALENDAR } link per calendar. To create a new link to this calendar, delete one from the list below.": [
-        ""
-      ]
-    },
     "Member action": {
       "Delete": [
         "刪除"
@@ -7035,11 +6511,11 @@
       ]
     },
     "Message": {
+      "All filter actions will be applied to all messages in your Proton Mail account. No auto-reply emails will be sent.": [
+        "所有篩選器將會套用至您 Proton Mail 帳號的所有訊息。自動回覆電郵將不再傳送。"
+      ],
       "Are you sure you want to disable two-factor authentication?": [
         "您確定要停用兩步驟驗證嗎？"
-      ],
-      "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
-        ""
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "您的免費試用已結束。很快就會停用對您帳號的存取權。${ action }"
@@ -7079,11 +6555,6 @@
         "如何從 Yahoo 匯入電郵"
       ]
     },
-    "Modal title and action": {
-      "Add calendar": [
-        ""
-      ]
-    },
     "Monetary unit": {
       "Dollar": [
         "美元"
@@ -7095,30 +6566,7 @@
         "瑞士法郎"
       ]
     },
-    "Monthly recurring event, frequency": {
-      "Every ${ interval } month ${ onDayString }": [
-        ""
-      ],
-      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
-        ""
-      ],
-      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
-        ""
-      ],
-      "Monthly ${ onDayString }": [
-        ""
-      ],
-      "Monthly ${ onDayString }, ${ timesString }": [
-        ""
-      ],
-      "Monthly ${ onDayString }, ${ untilString }": [
-        ""
-      ]
-    },
     "Monthly recurring event, repeats on": {
-      "on day ${ dayOfMonth }": [
-        ""
-      ],
       "on the first Friday": [
         "第一個週五"
       ],
@@ -7140,48 +6588,6 @@
       "on the first Wednesday": [
         "第一個週三"
       ],
-      "on the fourth Friday": [
-        ""
-      ],
-      "on the fourth Monday": [
-        ""
-      ],
-      "on the fourth Saturday": [
-        ""
-      ],
-      "on the fourth Sunday": [
-        ""
-      ],
-      "on the fourth Thursday": [
-        ""
-      ],
-      "on the fourth Tuesday": [
-        ""
-      ],
-      "on the fourth Wednesday": [
-        ""
-      ],
-      "on the last Friday": [
-        ""
-      ],
-      "on the last Monday": [
-        ""
-      ],
-      "on the last Saturday": [
-        ""
-      ],
-      "on the last Sunday": [
-        ""
-      ],
-      "on the last Thursday": [
-        ""
-      ],
-      "on the last Tuesday": [
-        ""
-      ],
-      "on the last Wednesday": [
-        ""
-      ],
       "on the second Friday": [
         "第二個週五"
       ],
@@ -7202,27 +6608,6 @@
       ],
       "on the second Wednesday": [
         "第二個週三"
-      ],
-      "on the third Friday": [
-        ""
-      ],
-      "on the third Monday": [
-        ""
-      ],
-      "on the third Saturday": [
-        ""
-      ],
-      "on the third Sunday": [
-        ""
-      ],
-      "on the third Thursday": [
-        ""
-      ],
-      "on the third Tuesday": [
-        ""
-      ],
-      "on the third Wednesday": [
-        ""
       ]
     },
     "Moved to black/whitelist": {
@@ -7234,9 +6619,6 @@
       ]
     },
     "Navigation": {
-      "Back": [
-        ""
-      ],
       "Back to Calendar": [
         "返回行事曆"
       ],
@@ -7258,338 +6640,20 @@
         "標籤名稱"
       ]
     },
-    "new_plans": {
-      "Highest VPN speed": [
-        ""
-      ],
-      "Keep your inbox organized with folders": [
-        ""
-      ],
-      "Medium VPN speed": [
-        ""
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        ""
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        ""
-      ],
-      "From ${ _price }": [
-        ""
-      ],
-      "From ${ _price2 } per user": [
-        ""
-      ],
-      "From ${ price }": [
-        ""
-      ],
-      "Keep my ${ currentPlanName } account": [
-        ""
-      ],
-      "Upgrade now": [
-        ""
-      ]
-    },
-    "new_plans: action": {
-      "Continue to review": [
-        ""
-      ],
-      "Continue with free": [
-        ""
-      ],
-      "Delete account": [
-        ""
-      ],
-      "Downgrade account": [
-        ""
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        ""
-      ],
-      "Get ${ planName }": [
-        ""
-      ],
-      "Get ${ upsellShortPlan.title }": [
-        ""
-      ],
-      "Got it": [
-        ""
-      ],
-      "Keep ${ plan }": [
-        ""
-      ],
-      "Keep account": [
-        ""
-      ],
-      "Switch or add account": [
-        ""
-      ],
-      "Switch plan": [
-        ""
-      ]
-    },
-    "new_plans: attribute": {
-      "Get ${ connections } high-speed VPN connection": [
-        ""
-      ],
-      "Get ${ connections } high-speed VPN connection per user": [
-        ""
-      ]
-    },
     "new_plans: feature": {
-      "${ DRIVE_APP_NAME } (web beta)": [
-        ""
-      ],
-      "${ n } custom email domain": [
-        ""
-      ],
-      "${ n } email address": [
-        ""
-      ],
-      "${ n } email address per user": [
-        ""
-      ],
-      "${ n } filter": [
-        ""
-      ],
-      "${ n } folder": [
-        ""
-      ],
-      "${ n } folder and label": [
-        ""
-      ],
-      "${ n } label": [
-        ""
-      ],
-      "${ n } message per day": [
-        ""
-      ],
-      "${ n } personal calendar": [
-        ""
-      ],
-      "${ n } VPN connection": [
-        ""
-      ],
-      "${ n } VPN connection per user": [
-        ""
-      ],
-      "${ size } attachment size": [
-        ""
-      ],
-      "${ size } storage per user": [
-        ""
-      ],
-      "${ size } total storage": [
-        ""
-      ],
-      "1 free VPN connection in total": [
-        ""
-      ],
-      "99.95% SLA": [
-        ""
-      ],
-      "Admin console": [
-        ""
-      ],
-      "Advanced sharing security": [
-        ""
-      ],
-      "Auto-reply": [
-        ""
-      ],
-      "Catch-all": [
-        ""
-      ],
-      "Centralized billing": [
-        ""
-      ],
-      "Contact groups": [
-        ""
-      ],
-      "Contact groups management": [
-        ""
-      ],
-      "Custom email domains": [
-        ""
-      ],
-      "DNS leak prevention": [
-        ""
-      ],
-      "Document editors (docs, sheets, slides)": [
-        ""
-      ],
-      "Easy Switch import assistant": [
-        ""
-      ],
-      "Email client support (via IMAP/SMTP)": [
-        ""
-      ],
-      "Enables HIPAA compliance": [
-        ""
-      ],
-      "Encrypted contact details": [
-        ""
-      ],
       "Encrypted VPN servers": [
         "加密的 VPN 伺服器"
       ],
       "End-to-end encryption": [
         "端對端加密"
       ],
-      "Free VPN on a single device": [
-        ""
-      ],
-      "GDPR data processing agreement": [
-        ""
-      ],
-      "High-speed VPN on ${ n } device": [
-        ""
-      ],
-      "HTML signatures": [
-        ""
-      ],
-      "Kill switch/always-on VPN": [
-        ""
-      ],
-      "Limited support": [
-        ""
-      ],
-      "Multiple admin roles": [
-        ""
-      ],
-      "NetShield malware and ad-blocker": [
-        ""
-      ],
-      "P2P/BitTorrent": [
-        ""
-      ],
-      "Password-protected Emails": [
-        ""
-      ],
-      "Phone support (6+ users)": [
-        ""
-      ],
-      "Priority email support": [
-        ""
-      ],
-      "Priority support": [
-        ""
-      ],
-      "Router support": [
-        ""
-      ],
       "Secure Core servers": [
         "Secure Core 伺服器"
-      ],
-      "Send & receive invitations": [
-        ""
-      ],
-      "Share calendar via link": [
-        ""
-      ],
-      "Share files and folders via link": [
-        ""
-      ],
-      "Sign in as user": [
-        ""
-      ],
-      "Split tunneling (Android and Windows)": [
-        ""
-      ],
-      "Strict no-logs policy": [
-        ""
-      ],
-      "Team management": [
-        ""
-      ],
-      "Tor over VPN": [
-        ""
-      ],
-      "Two-factor authentication": [
-        ""
-      ],
-      "Unlimited filters": [
-        ""
-      ],
-      "Unlimited folders": [
-        ""
-      ],
-      "Unlimited folders, labels and filters": [
-        ""
-      ],
-      "Unlimited labels": [
-        ""
-      ],
-      "Unlimited messages per day": [
-        ""
-      ],
-      "Unlimited volume/bandwidth": [
-        ""
-      ],
-      "Up to ${ totalStorageSize } total storage": [
-        ""
-      ],
-      "User credential management": [
-        ""
-      ],
-      "User session management": [
-        ""
-      ],
-      "Worldwide streaming services": [
-        ""
-      ]
-    },
-    "new_plans: heading": {
-      "Support": [
-        ""
-      ],
-      "Team management": [
-        ""
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        ""
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        ""
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        ""
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        ""
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        ""
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        ""
       ]
     },
     "new_plans: info": {
-      "${ brand } ending in ${ last4 }": [
-        ""
-      ],
-      "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
-        ""
-      ],
-      "* With 1-month subscription. Other subscription options available at checkout.": [
-        ""
-      ],
-      "* With 12-month subscription. Other subscription options available at checkout.": [
-        ""
-      ],
-      "* With 24-month subscription. Other subscription options available at checkout.": [
-        ""
-      ],
       "Applicable credits, proration, and coupons are applied in the next step": [
         "適用的餘額、價差與優惠券將在下一步時套用。"
-      ],
-      "Comprehensive privacy and security with all Proton services combined.": [
-        ""
       ],
       "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
         "若你將帳號刪除，你將失去所有 ${ visionary } 帶來的福利，且即使你決定重新建立帳號，也不能再次選擇該方案。"
@@ -7603,32 +6667,8 @@
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "我們的 ${ visionary } 計畫不再可用於新的訂閱者，這是一個給予原 ${ BRAND_NAME } 使用者的特殊方案，具有特別功能與福利。"
       ],
-      "Popular": [
-        ""
-      ],
-      "Price for future renewal: includes all applicable non-expired coupons saved to your account": [
-        ""
-      ],
-      "Privacy and security suite for businesses, including all premium Proton services.": [
-        ""
-      ],
-      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        ""
-      ],
-      "Secure email and calendar for professionals and businesses.": [
-        ""
-      ],
-      "Secure email with advanced features for your everyday communications.": [
-        ""
-      ],
       "Set automatic replies to inform contacts you are out of the office or unable to respond.": [
         "設定自動回覆，可告知來訪者您不在辦公室或暫時無法親自回應。"
-      ],
-      "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
-        ""
-      ],
-      "The no-cost starter account designed to empower everyone with privacy by default.": [
-        ""
       ],
       "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
         "你正在當前的計畫中享受促銷價格。若你刪除你的帳號，你將會永遠失去此促銷價，即使你決定建立一個新帳號也是。"
@@ -7637,292 +6677,22 @@
         "你正在當前的計畫中享受促銷價格。若你將帳號降級，你將會永遠失去此促銷價，即使你決定重新訂閱也是。"
       ]
     },
-    "new_plans: Label": {
-      "${ humanUsedSpace } of ${ humanMaxSpace }": [
-        ""
-      ]
-    },
     "new_plans: Plan frequency": {
       "/month": [
         "/月"
-      ]
-    },
-    "new_plans: Plan time remaining": {
-      "You still have ${ daysRemaining } day left on your ${ currentPlanName } account.": [
-        ""
       ]
     },
     "new_plans: signup": {
       "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }.": [
         "建立 ${ BRAND_NAME } 帳號，即表示您同意我們的${ terms }。"
       ],
-      "Payment details": [
-        ""
-      ],
-      "Save your email address or phone number to use for verification if you need to reset your account.": [
-        ""
-      ],
-      "Subscription": [
-        ""
-      ],
       "terms and conditions": [
         "條款及細則"
-      ],
-      "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
-        ""
-      ],
-      "Your ${ planName } subscription is now active.": [
-        ""
-      ],
-      "Your selected plan: ${ planName }": [
-        ""
-      ]
-    },
-    "new_plans: Title": {
-      "${ mailPlanName } Trial": [
-        ""
-      ],
-      "Upgrade to ${ planName }": [
-        ""
-      ],
-      "Your account's usage": [
-        ""
-      ]
-    },
-    "new_plans: title": {
-      "Delete account?": [
-        ""
-      ],
-      "Downgrade account?": [
-        ""
-      ],
-      "Improved plans coming soon!": [
-        ""
-      ],
-      "Review subscription and pay": [
-        ""
-      ],
-      "Start exploring the Proton universe": [
-        ""
-      ],
-      "Switch plans?": [
-        ""
-      ],
-      "Unlock premium features by upgrading": [
-        ""
       ]
     },
     "new_plans: tooltip": {
-      "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
-        ""
-      ],
-      "Addresses have full sending and receiving capability. A user can have multiple addresses assigned to them; however, a single address cannot be assigned to multiple users.": [
-        ""
-      ],
-      "Advanced security VPN with global network": [
-        ""
-      ],
-      "Allows you to access more than one network at the same time, e.g., stream a film from another country while still getting local search results": [
-        ""
-      ],
-      "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
-        ""
-      ],
-      "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
-        ""
-      ],
-      "Control access to your shared files by adding password protection and link expiration dates": [
-        ""
-      ],
-      "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscription": [
-        ""
-      ],
-      "Create up to ${ n } custom calendar.": [
-        ""
-      ],
-      "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
-        ""
-      ],
-      "Easily share your calendars with your colleagues, family, and friends via a link": [
-        ""
-      ],
-      "Easily share your calendars with your family, friends, or colleagues via a link": [
-        ""
-      ],
-      "End-to-end encrypted calendar": [
-        ""
-      ],
-      "End-to-end encrypted file storage": [
-        ""
-      ],
-      "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
-        ""
-      ],
-      "Force sign-out of user sessions when user credentials are believed to be compromised": [
-        ""
-      ],
-      "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
-        ""
-      ],
-      "Keeps you protected by blocking all network connections when you are accidentally disconnected from our VPN server": [
-        ""
-      ],
-      "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
-        ""
-      ],
-      "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
-        ""
-      ],
-      "On business days, receive support from the Proton Customer Support team within 24 hours of requests": [
-        ""
-      ],
-      "On top of that, add up to 5 calendars from colleagues, organizations, family, and friends.": [
-        ""
-      ],
-      "On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
-        ""
-      ],
-      "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections": [
-        ""
-      ],
-      "Option to view non-private user inboxes as the user would, including full message and contact details": [
-        ""
-      ],
-      "Organization management tool that lets admins add and remove users, allocate storage, configure domains, and perform other tasks": [
-        ""
-      ],
-      "Our robust infrastructure ensures you will be able to access your account when you need it": [
-        ""
-      ],
       "Our servers’ hard disks are fully encrypted with multiple password layers so your data is protected even if our hardware is compromised": [
         "我們以多層密碼完整加密伺服器上的硬碟，即便硬碟被整顆拔走，你的資料仍然受到保護。"
-      ],
-      "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
-        ""
-      ],
-      "Phone support is available from the Proton Customer Success team during European business hours, for customers with 6 or more users": [
-        ""
-      ],
-      "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
-        ""
-      ],
-      "Protect every device connected to your WiFi network. It’s also useful if you have devices that do not support VPN settings directly.": [
-        ""
-      ],
-      "Quickly set up out-of-office messages": [
-        ""
-      ],
-      "Quickly transfer your emails, calendars or contacts from any provider": [
-        ""
-      ],
-      "Requires a code sent to a mobile phone to sign in. This ensures even if a password is compromised, the account stays secure.": [
-        ""
-      ],
-      "Reset user passwords and reset two-factor authentication on users": [
-        ""
-      ],
-      "Route your internet traffic through the Tor network with a single click": [
-        ""
-      ],
-      "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even Proton can't access them.": [
-        ""
-      ],
-      "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
-        ""
-      ],
-      "Set up filters to automatically reply to, sort, and/or label your emails": [
-        ""
-      ],
-      "Share your files or folders with anyone by using secure, shareable links": [
-        ""
-      ],
-      "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
-        ""
-      ],
-      "Start with ${ freeStorageSize } and unlock more storage along the way. Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        ""
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
-        ""
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
-        ""
-      ],
-      "Support for file-sharing protocols like BitTorrent": [
-        ""
-      ],
-      "Use your own custom email domain addresses, e.g., you@yourname.com": [
-        ""
-      ],
-      "We keep no session usage logs of what you do online, and we do not log metadata that can compromise your privacy": [
-        ""
-      ],
-      "We’re committed to helping customers subject to HIPAA/HITECH regulations safeguard protected health information (PHI). Signed BAAs are available for all ${ BRAND_NAME } for Business customers.": [
-        ""
-      ],
-      "When connected to our VPN, your DNS queries through our encrypted VPN tunnel, adding to your online privacy and security": [
-        ""
-      ],
-      "When sending to other ${ MAIL_APP_NAME } users, encryption is automatic. Sending to non-${ MAIL_APP_NAME } users requires setting a password prior to sending.": [
-        ""
-      ],
-      "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
-        ""
-      ]
-    },
-    "new_plans: upgrade": {
-      "Included with ${ plus }, ${ bundle }, and ${ BRAND_NAME } for Business.": [
-        ""
-      ],
-      "Included with all ${ BRAND_NAME } for Business plans.": [
-        ""
-      ]
-    },
-    "new_plans: Upsell attribute": {
-      "${ storageSize } total storage": [
-        ""
-      ],
-      "10 email addresses/aliases": [
-        ""
-      ],
-      "Access advanced VPN features": [
-        ""
-      ],
-      "Add more personalization with 15 email addresses and support for 3 custom email domains": [
-        ""
-      ],
-      "Boost your storage space to ${ bundleStorage } total": [
-        ""
-      ],
-      "Boost your storage space to ${ businessStorage } per user": [
-        ""
-      ],
-      "Boost your storage space to ${ driveStorage } total": [
-        ""
-      ],
-      "Cover more ground with support for 10 custom email domains": [
-        ""
-      ],
-      "Create up to ${ numberOfPersonalCalendars } personal calendar": [
-        ""
-      ],
-      "Everything in ${ vpnPlanName }": [
-        ""
-      ],
-      "Get 5 additional email addresses per user": [
-        ""
-      ],
-      "Priority support": [
-        ""
-      ],
-      "Support for 1 custom email domain": [
-        ""
-      ],
-      "Unlimited folders, labels, and filters": [
-        ""
-      ],
-      "Unlimited messages": [
-        ""
       ]
     },
     "Notification": {
@@ -7932,16 +6702,8 @@
       "A disabled address cannot be primary": [
         "已停用的電郵位址不能成為主要"
       ],
-      "Key with fingerprint ${ fp } has been deleted.": [
-        ""
-      ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "OpenVPN / IKEv2 認證已重新生成"
-      ]
-    },
-    "Notification time input": {
-      "at": [
-        ""
       ]
     },
     "Notification type": {
@@ -7950,41 +6712,6 @@
       ],
       "notification": [
         "通知"
-      ]
-    },
-    "Notification when": {
-      "at time of event": [
-        ""
-      ],
-      "day before": [
-        ""
-      ],
-      "hour before": [
-        ""
-      ],
-      "minute before": [
-        ""
-      ],
-      "on the same day": [
-        ""
-      ],
-      "week before": [
-        ""
-      ]
-    },
-    "Oauth instructions": {
-      "Next you'll need to sign in to your Google account and grant Proton access to your data.": [
-        ""
-      ]
-    },
-    "Oauth instructions video": {
-      "For the import to work, you must select all requested items as shown in the GIF.": [
-        ""
-      ]
-    },
-    "Onboarding": {
-      "Welcome to ${ VPN_APP_NAME }": [
-        ""
       ]
     },
     "Option": {
@@ -8245,9 +6972,6 @@
       "Bitcoin": [
         "比特幣"
       ],
-      "Credit/debit card": [
-        ""
-      ],
       "New credit/debit card": [
         "加入信用卡/扣帳卡"
       ],
@@ -8263,12 +6987,6 @@
     "Placeholder": {
       "A way to contact you": [
         "有甚麼途徑可以聯絡您"
-      ],
-      "Add a calendar description": [
-        ""
-      ],
-      "Add a calendar name": [
-        ""
       ],
       "Add gift code": [
         "加入禮品代碼"
@@ -8431,15 +7149,6 @@
       "Email address not yet verified.": [
         "電郵位址尚未驗證。"
       ],
-      "Please ${ signIn } to resend a recovery email verification request.": [
-        "請 ${ signIn } 以重新傳送還原電郵驗證請求。"
-      ],
-      "Send verification email": [
-        "傳送驗證電郵"
-      ],
-      "There was a problem verifying your email address.": [
-        "驗證您的電郵位址時發生問題。"
-      ],
       "Verification email sent to ${ email.Value }": [
         "驗證電郵已傳送至 ${ email.Value }"
       ],
@@ -8448,6 +7157,9 @@
       ],
       "Verify recovery email?": [
         "驗證還原電郵？"
+      ],
+      "Verify with email": [
+        "電郵驗證"
       ],
       "Verifying your email address increases your account security and allows additional options for recovery.": [
         "驗證您的電郵位址可以增加您帳號的安全性，並提供了額外的還原選項。"
@@ -8468,6 +7180,17 @@
       ],
       "Phrase": [
         "短語"
+      ]
+    },
+    "Recovery Phone": {
+      "Cancel": [
+        "取消"
+      ],
+      "Phone number has been verified.": [
+        "電話號碼已曾驗證."
+      ],
+      "Verify now": [
+        "立刻驗證"
       ]
     },
     "Remark about a key type option": {
@@ -8506,11 +7229,6 @@
         "上載額外的檔案"
       ]
     },
-    "Select search results": {
-      "No results found": [
-        ""
-      ]
-    },
     "Settings description": {
       "Make the move to privacy. Effortlessly and securely.": [
         "轉向隱私。輕鬆且安全。"
@@ -8525,11 +7243,6 @@
       ],
       "Organization": [
         "組織"
-      ]
-    },
-    "Settings update growler warning": {
-      "Failed to update settings": [
-        ""
       ]
     },
     "Settings/filters": {
@@ -8565,9 +7278,6 @@
       ]
     },
     "Signup label": {
-      "Display name": [
-        ""
-      ],
       "Email": [
         "電郵"
       ],
@@ -8609,20 +7319,11 @@
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "${ DRIVE_APP_NAME } 現已正式登場！給您的檔案有如您的電子郵件一樣的安全性。"
       ],
-      "Get up to 18 months of ${ planName } for free": [
-        ""
-      ],
       "Invite friends and earn rewards!": [
         "邀請朋友並賺取獎勵！"
       ],
-      "No more missed appointments": [
-        ""
-      ],
       "Try ${ DRIVE_APP_NAME }": [
         "試試看 ${ DRIVE_APP_NAME }"
-      ],
-      "With email notifications, you decide which events to be notified about and when.": [
-        ""
       ]
     },
     "State": {
@@ -8655,98 +7356,9 @@
         "您目前的儲存空間："
       ]
     },
-    "Subscribe to calendar modal": {
-      "Calendar URL": [
-        ""
-      ],
-      "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Subscribed calendars.\n${ kbLink }": [
-        ""
-      ]
-    },
-    "Subscribe to calendar modal description": {
-      "Learn how to get a private calendar link.": [
-        ""
-      ]
-    },
-    "Subscribed calendar extension warning": {
-      "By using this link, Google will make the calendar you are subscribing to public": [
-        ""
-      ],
-      "This link might be wrong": [
-        ""
-      ]
-    },
-    "Subscribed calendar section description": {
-      "Add public, external, or shared calendars using a URL.": [
-        ""
-      ]
-    },
-    "Subscribed calendar URL length warning": {
-      "URL is too long": [
-        ""
-      ]
-    },
     "Subscription attribute": {
-      "${ _n } calendar per user": [
-        ""
-      ],
-      "${ maxVpn } high-speed VPN connection": [
-        ""
-      ],
-      "${ n } calendar": [
-        ""
-      ],
-      "${ n } high-speed VPN connection": [
-        ""
-      ],
-      "${ n } high-speed VPN connection per user": [
-        ""
-      ],
-      "${ n } VPN connection": [
-        ""
-      ],
-      "${ n } VPN connection per user": [
-        ""
-      ],
       "${ UsedAddresses } address": [
         "${ UsedAddresses } 個電郵位址"
-      ],
-      "${ UsedAddresses } of ${ MaxAddresses } email address": [
-        ""
-      ],
-      "${ UsedCalendars } calendar": [
-        ""
-      ],
-      "${ UsedDomains } of ${ MaxDomains } custom domain": [
-        ""
-      ],
-      "${ UsedMembers } of ${ MaxMembers } user": [
-        ""
-      ],
-      "1 email address": [
-        ""
-      ],
-      "1 VPN connection": [
-        ""
-      ],
-      "Access to streaming services globally": [
-        ""
-      ],
-      "Built-in ad blocker (NetShield)": [
-        ""
-      ],
-      "High-speed VPN on ${ maxVpn } device": [
-        ""
-      ]
-    },
-    "Subscription price": {
-      "For": [
-        ""
-      ]
-    },
-    "Subscription saving": {
-      "Save": [
-        ""
       ]
     },
     "Subtitle for trial plan": {
@@ -8799,9 +7411,6 @@
       ],
       "Credits added": [
         "餘額已增加"
-      ],
-      "Default calendar updated": [
-        ""
       ],
       "DMARC value copied to clipboard": [
         "DMARC 字串已經複製到剪貼簿"
@@ -8934,15 +7543,6 @@
       "Certificate ${ name } revoked": [
         "憑證 ${ name } 已撤銷"
       ],
-      "Certificate extended until ${ formattedExpirationDate }": [
-        ""
-      ],
-      "Config \"${ name }\" created, note that the private key is not stored and won't be shown again, you should copy or download this config.": [
-        ""
-      ],
-      "Creating config file for ${ serverName }": [
-        ""
-      ],
       "Filter removed": [
         "篩選器已移除"
       ],
@@ -8956,19 +7556,6 @@
       ],
       "/user per month": [
         "/ 每使用者每月"
-      ]
-    },
-    "Suffix for price": {
-      "/month": [
-        ""
-      ],
-      "per month": [
-        ""
-      ]
-    },
-    "Summary of errors during export calendar": {
-      "Details about events that couldn't be exported": [
-        ""
       ]
     },
     "Tab in domain modal": {
@@ -9035,11 +7622,6 @@
         "${ minutes } 分鐘"
       ]
     },
-    "Timezone search placeholder": {
-      "Search timezones": [
-        ""
-      ]
-    },
     "Title": {
       "${ appName } Keyboard Shortcuts": [
         "${ appName } 鍵盤快捷鍵"
@@ -9091,9 +7673,6 @@
       ],
       "Add address": [
         "加入電郵位址"
-      ],
-      "Add another notification to remind you of this event": [
-        ""
       ],
       "Add contact group name": [
         "加入聯絡人群組名稱"
@@ -9154,6 +7733,9 @@
       ],
       "Appearance": [
         "外觀"
+      ],
+      "Apply filter to existing messages": [
+        "將篩選器套用至現有的訊息"
       ],
       "Apply gift code": [
         "套用禮品代碼"
@@ -9238,9 +7820,6 @@
       ],
       "Confirm phone number": [
         "確認手機號碼"
-      ],
-      "Congratulations on choosing privacy!": [
-        ""
       ],
       "Connect ${ name }": [
         "連接 ${ name }"
@@ -9656,15 +8235,6 @@
       "Select contact group": [
         "選擇聯絡人群組"
       ],
-      "Select the time to send this notification": [
-        ""
-      ],
-      "Select the way to send this notification": [
-        ""
-      ],
-      "Select when you want this notification to be sent": [
-        ""
-      ],
       "Session management": [
         "工作階段管理"
       ],
@@ -9746,9 +8316,6 @@
       "Time zone": [
         "時區"
       ],
-      "Try the best of ${ MAIL_APP_NAME } for free": [
-        ""
-      ],
       "Two-factor authentication": [
         "兩步驟驗證"
       ],
@@ -9825,11 +8392,6 @@
         "郵編 / 郵政代碼"
       ]
     },
-    "Title (number of minutes/hours/days/weeks)": {
-      "Choose a number": [
-        ""
-      ]
-    },
     "Title for payment methods table": {
       "Actions": [
         "動作"
@@ -9839,11 +8401,6 @@
       ],
       "Status": [
         "狀態"
-      ]
-    },
-    "Title for PDF file": {
-      "${ MAIL_APP_NAME } invoice": [
-        ""
       ]
     },
     "Title header": {
@@ -9908,9 +8465,6 @@
       ]
     },
     "Tooltip": {
-      "${ MAIL_APP_NAME } users will use this key by default for sending": [
-        ""
-      ],
       "Account is disconnected": [
         "帳號已中斷連線"
       ],
@@ -9965,9 +8519,6 @@
       "Signatures produced by this key are treated as invalid and this key cannot be used for encryption": [
         "此金鑰產生的簽章被視作無效，不能用於加密"
       ],
-      "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
-        ""
-      ],
       "The import will start with the most recent messages.": [
         "匯入將由最近的郵件開始。"
       ],
@@ -9979,9 +8530,6 @@
       ],
       "This feature is only available for paid users": [
         "此功能僅提供給付費使用者"
-      ],
-      "This feature is unavailable for the moment": [
-        ""
       ],
       "This key cannot be used for encryption": [
         "此金鑰不能用於加密"
@@ -10004,9 +8552,6 @@
       "You have locally decrypted this key": [
         "您已在本機解密此金鑰"
       ],
-      "Your ${ MAIL_APP_NAME } inbox is almost full": [
-        ""
-      ],
       "Your DKIM signing is working.": [
         "您的 DKIM 簽章運作正常。"
       ],
@@ -10017,16 +8562,6 @@
     "Tooltip automatically attach public key": {
       "This automatically adds your public key to each message you send. Recipients can use this to verify the authenticity of your messages and send encrypted messages to you.": [
         "這會將您的公鑰自動附加到您傳送的每一封郵件。收件人可藉此驗證您的郵件真實性，並傳送加密郵件給您。"
-      ]
-    },
-    "Tooltip default pgp scheme": {
-      "Select the default PGP settings used to sign or encrypt messages with non-${ BRAND_NAME } PGP users. Note that Inline PGP forces plain text messages. Learn more": [
-        ""
-      ]
-    },
-    "Tooltip prompt to trust keys": {
-      "When receiving an email from another ${ MAIL_APP_NAME } user who does not have trusted keys in your contacts, a banner will ask if you want to enable trusted keys.": [
-        ""
       ]
     },
     "Tooltip sign external messages": {
@@ -10056,14 +8591,6 @@
     "Upgrade": {
       "Upgrade to ${ planName } to connect up to ${ n } device to the VPN at once": [
         "升級為 ${ planName } 方案，即可讓 ${ n } 台裝置同時連線 VPN"
-      ]
-    },
-    "Upgrade notice": {
-      "Upgrade to a paid plan to create up to ${ MAX_CALENDARS_PER_USER } calendar, allowing you to make calendars for work, to share with friends, and just for yourself.": [
-        ""
-      ],
-      "Upgrade to a paid plan to share your personal calendar via link with anyone.": [
-        ""
       ]
     },
     "User role": {
@@ -10160,9 +8687,6 @@
       "If you cancel this import, you won't be able to resume it. Proton saved all progress in your account. Cancel anyway?": [
         "如果您取消此匯入，您將無法復原。Proton 已將所有進度儲存在您的帳號中。無論無何都要取消嗎？"
       ],
-      "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
-        ""
-      ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "請注意：選取此付款方法時，您的帳號無法立即升級。付款一俟結算完成，我們就會升級您的帳號。"
       ],
@@ -10180,9 +8704,6 @@
       ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
         "您裝置上的日期與時間設置未同步。 ${ learnMore }"
-      ],
-      "This feature is only available for ${ mailProfessional } plans or higher": [
-        ""
       ],
       "This import may exceed the storage capacity currently available in your Proton account. Please consider customizing your import.": [
         "此匯入可能超出您的 Proton 帳號中目前可用的儲存空間。請考慮自訂您的匯入。"
@@ -10223,213 +8744,6 @@
     "Weak personal key warning": {
       "This key no longer meets our security standards. We suggest you mark it as obsolete and generate a new key.": [
         "此金鑰已不再符合我們的安全標準。我們建議您將其標記為過時的並生成一把新的。"
-      ]
-    },
-    "Weekly recurring event, frequency": {
-      "Every ${ interval } week on ${ multipleDaysString }": [
-        ""
-      ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
-        ""
-      ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
-        ""
-      ],
-      "Every ${ interval } week on all days": [
-        ""
-      ],
-      "Every ${ interval } week on all days, ${ timesString }": [
-        ""
-      ],
-      "Every ${ interval } week on all days, ${ untilString }": [
-        ""
-      ],
-      "Every ${ interval } week on Friday": [
-        ""
-      ],
-      "Every ${ interval } week on Friday, ${ timesString }": [
-        ""
-      ],
-      "Every ${ interval } week on Friday, ${ untilString }": [
-        ""
-      ],
-      "Every ${ interval } week on Monday": [
-        ""
-      ],
-      "Every ${ interval } week on Monday, ${ timesString }": [
-        ""
-      ],
-      "Every ${ interval } week on Monday, ${ untilString }": [
-        ""
-      ],
-      "Every ${ interval } week on Saturday": [
-        ""
-      ],
-      "Every ${ interval } week on Saturday, ${ timesString }": [
-        ""
-      ],
-      "Every ${ interval } week on Saturday, ${ untilString }": [
-        ""
-      ],
-      "Every ${ interval } week on Sunday": [
-        ""
-      ],
-      "Every ${ interval } week on Sunday, ${ timesString }": [
-        ""
-      ],
-      "Every ${ interval } week on Sunday, ${ untilString }": [
-        ""
-      ],
-      "Every ${ interval } week on Thursday": [
-        ""
-      ],
-      "Every ${ interval } week on Thursday, ${ timesString }": [
-        ""
-      ],
-      "Every ${ interval } week on Thursday, ${ untilString }": [
-        ""
-      ],
-      "Every ${ interval } week on Tuesday": [
-        ""
-      ],
-      "Every ${ interval } week on Tuesday, ${ timesString }": [
-        ""
-      ],
-      "Every ${ interval } week on Tuesday, ${ untilString }": [
-        ""
-      ],
-      "Every ${ interval } week on Wednesday": [
-        ""
-      ],
-      "Every ${ interval } week on Wednesday, ${ timesString }": [
-        ""
-      ],
-      "Every ${ interval } week on Wednesday, ${ untilString }": [
-        ""
-      ],
-      "Weekly on ${ multipleDaysString }": [
-        ""
-      ],
-      "Weekly on ${ multipleDaysString }, ${ timesString }": [
-        ""
-      ],
-      "Weekly on ${ multipleDaysString }, ${ untilString }": [
-        ""
-      ],
-      "Weekly on all days": [
-        ""
-      ],
-      "Weekly on all days, ${ timesString }": [
-        ""
-      ],
-      "Weekly on all days, ${ untilString }": [
-        ""
-      ],
-      "Weekly on Friday": [
-        ""
-      ],
-      "Weekly on Friday, ${ timesString }": [
-        ""
-      ],
-      "Weekly on Friday, ${ untilString }": [
-        ""
-      ],
-      "Weekly on Monday": [
-        ""
-      ],
-      "Weekly on Monday, ${ timesString }": [
-        ""
-      ],
-      "Weekly on Monday, ${ untilString }": [
-        ""
-      ],
-      "Weekly on Saturday": [
-        ""
-      ],
-      "Weekly on Saturday, ${ timesString }": [
-        ""
-      ],
-      "Weekly on Saturday, ${ untilString }": [
-        ""
-      ],
-      "Weekly on Sunday": [
-        ""
-      ],
-      "Weekly on Sunday, ${ timesString }": [
-        ""
-      ],
-      "Weekly on Sunday, ${ untilString }": [
-        ""
-      ],
-      "Weekly on Thursday": [
-        ""
-      ],
-      "Weekly on Thursday, ${ timesString }": [
-        ""
-      ],
-      "Weekly on Thursday, ${ untilString }": [
-        ""
-      ],
-      "Weekly on Tuesday": [
-        ""
-      ],
-      "Weekly on Tuesday, ${ timesString }": [
-        ""
-      ],
-      "Weekly on Tuesday, ${ untilString }": [
-        ""
-      ],
-      "Weekly on Wednesday": [
-        ""
-      ],
-      "Weekly on Wednesday, ${ timesString }": [
-        ""
-      ],
-      "Weekly on Wednesday, ${ untilString }": [
-        ""
-      ]
-    },
-    "Weekly recurring event, repeats on (multiple days), frequency": {
-      "Friday": [
-        ""
-      ],
-      "Monday": [
-        ""
-      ],
-      "Saturday": [
-        ""
-      ],
-      "Sunday": [
-        ""
-      ],
-      "Thursday": [
-        ""
-      ],
-      "Tuesday": [
-        ""
-      ],
-      "Wednesday": [
-        ""
-      ]
-    },
-    "Yearly recurring event, frequency": {
-      "Every ${ interval } year": [
-        ""
-      ],
-      "Every ${ interval } year, ${ timesString }": [
-        ""
-      ],
-      "Every ${ interval } year, ${ untilString }": [
-        ""
-      ],
-      "Yearly": [
-        ""
-      ],
-      "Yearly, ${ timesString }": [
-        ""
-      ],
-      "Yearly, ${ untilString }": [
-        ""
       ]
     }
   }

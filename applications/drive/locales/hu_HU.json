@@ -433,9 +433,6 @@
       "Resume upload": [
         "Feltöltés folytatása"
       ],
-      "Retry": [
-        ""
-      ],
       "Save": [
         "Mentés"
       ],
@@ -486,9 +483,6 @@
       ],
       "Skip": [
         "Kihagyás"
-      ],
-      "Start import": [
-        ""
       ],
       "Start recovering": [
         "Helyreállítás indítása"
@@ -616,11 +610,6 @@
         "Ha problémába ütközik, mindig lesz lehetősége letiltani a Béta hozzáférést."
       ]
     },
-    "blackfriday Action": {
-      "Get the offer": [
-        ""
-      ]
-    },
     "blackfriday Info": {
       "beta": [
         "béta"
@@ -630,20 +619,11 @@
       ],
       "Standard price: ${ regularPrice }": [
         "Normál ár: ${ regularPrice }"
-      ],
-      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
-        ""
       ]
     },
     "blackfriday Title": {
-      "Best deal": [
-        ""
-      ],
       "Most popular": [
         "Legnépszerűbb"
-      ],
-      "Save more when combining Mail and VPN": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer Action": {
@@ -655,14 +635,8 @@
       ]
     },
     "blackfriday: VPNspecialoffer Info": {
-      "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
-        ""
-      ],
       "Save ${ percentage }%": [
         "${ percentage } %"
-      ],
-      "Special offer Terms and Conditions": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer info": {
@@ -676,15 +650,6 @@
       ]
     },
     "blackfriday: VPNspecialoffer Title": {
-      "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
-        ""
-      ],
-      "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
-        ""
-      ],
-      "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
-        ""
-      ],
       "1 month": [
         "1 hónap"
       ],
@@ -693,18 +658,6 @@
       ],
       "24 months": [
         "24 hónap"
-      ],
-      "Billed at ${ amount } for the first 2 years.${ supNotice }": [
-        ""
-      ],
-      "Billed at ${ amount } for the first month.${ supNotice }": [
-        ""
-      ],
-      "Billed at ${ amount } for the first year.${ supNotice }": [
-        ""
-      ],
-      "Get the special year-end offer on our Premium VPN PLUS plan": [
-        ""
       ]
     },
     "Bug category": {
@@ -2123,9 +2076,6 @@
       ]
     },
     "file size format": {
-      "bytes": [
-        "bájt"
-      ],
       "GB": [
         "GB"
       ],
@@ -2134,20 +2084,6 @@
       ],
       "MB": [
         "MB"
-      ]
-    },
-    "file size format, long": {
-      "Bytes": [
-        "Bájt"
-      ],
-      "Gigabytes": [
-        "Gigabájt"
-      ],
-      "Kilobytes": [
-        "Kilobájt"
-      ],
-      "Megabytes": [
-        "Megabájt"
       ]
     },
     "Filter notification": {
@@ -2763,9 +2699,6 @@
       "Not a valid URL": [
         "Érvénytelen URL-cím"
       ],
-      "Not all files were transferred. Try uploading or downloading the files again.": [
-        ""
-      ],
       "Note: Data may still be available locally on devices where you have installed ${ appName }.": [
         "Megjegyzés: az adatok még mindig elérhetők lehetnek helyileg olyan eszközökön, ahol telepítette a ${ appName } alkalmazást."
       ],
@@ -2777,9 +2710,6 @@
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Egy vagy több megbízható kulcsát a tulajdonosa \"kompromittáltként\" jelölt meg. Javasoljuk, hogy távolítsa el a kulcsok megbízhatóságát."
-      ],
-      "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters is allowed": [
-        ""
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Csak akkor változtassa meg ezeket a beállításokat, ha PGP-t használ a nem ${ BRAND_NAME } címzettekhez."
@@ -2798,12 +2728,6 @@
       ],
       "Permanently delete all files in your drive": [
         "A tárhelyen található összes fájljának végleges törlése"
-      ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
-        "PGP/Inline is only compatible with Plain Text format. Please note that Proton Mail always signs encrypted messages."
-      ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
-        "PGP/MIME automatically sends the message using the current composer mode. Please note that Proton Mail always signs encrypted messages."
       ],
       "Please enter the password to decrypt and view content.": [
         "Kérjük, írja be a jelszót, hogy visszafejtse és megtekintse a tartalmat."
@@ -2907,12 +2831,6 @@
       ],
       "Signature issue": [
         "Probléma az aláírással"
-      ],
-      "Some files failed to download. Try downloading the files again.": [
-        ""
-      ],
-      "Some files failed to upload. Try uploading the files again.": [
-        ""
       ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "Néhány fájlja már nem érhető el. Állítsa vissza a fájlok elérését. ${ StartRecoveryButton }"
@@ -4281,18 +4199,6 @@
       "${ emailsCount } member": [
         "${ emailsCount } tag",
         "${ emailsCount } tag"
-      ],
-      "${ numberOfFailedTransfer.total } failed download": [
-        "",
-        ""
-      ],
-      "${ numberOfFailedTransfer.total } failed transfer": [
-        "",
-        ""
-      ],
-      "${ numberOfFailedTransfer.total } failed upload": [
-        "",
-        ""
       ],
       "Account suspended": [
         "Fiók felfüggesztve"

@@ -176,7 +176,7 @@ const DataRecoverySection = () => {
                                     <span className="mr0-5">{c('Title').t`Recovery file`}</span>
                                     <Info
                                         title={c('Info')
-                                            .t`A recovery file lets you unlock and view your data after an account reset. `}
+                                            .t`A recovery file lets you unlock and view your data after an account reset.`}
                                     />
                                 </label>
                             </SettingsLayoutLeft>

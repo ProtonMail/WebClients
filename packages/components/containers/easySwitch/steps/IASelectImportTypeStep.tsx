@@ -112,7 +112,7 @@ const IASelectImportTypeStep = ({
 
     const topParagraphRenderer = () => {
         if (!oauthProps) {
-            return <div>{c('Info').t`Select what you want to move from Google.`}</div>;
+            return <div>{c('Info').t`Select what you want to import from Google.`}</div>;
         }
 
         return (

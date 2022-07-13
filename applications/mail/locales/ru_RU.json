@@ -3580,8 +3580,11 @@
       ]
     },
     "file size format": {
-      "bytes": [
-        "байт"
+      "byte": [
+        "байт",
+        "байт",
+        "байты",
+        "байтов"
       ],
       "GB": [
         "ГБ"
@@ -3594,17 +3597,29 @@
       ]
     },
     "file size format, long": {
-      "Bytes": [
-        "Байт"
+      "Byte": [
+        "Байт",
+        "Байты",
+        "",
+        "Байтов"
       ],
-      "Gigabytes": [
-        "Гигабайт"
+      "Gigabyte": [
+        "Гигабайт",
+        "Гигабайт",
+        "Гигабайт",
+        "Гигабайтов"
       ],
-      "Kilobytes": [
-        "Килобайт"
+      "Kilobyte": [
+        "Килобайт",
+        "Килобайты",
+        "",
+        "Килобайтов"
       ],
-      "Megabytes": [
-        "Мегабайт"
+      "Megabyte": [
+        "Мегабайт",
+        "Мегабайты",
+        "",
+        "Мегабайтов"
       ]
     },
     "Filter Actions": {
@@ -4032,17 +4047,17 @@
         "${ numContacts } контактов",
         "${ numContacts } контакт(а,ов)"
       ],
-      "${ occurrencesInBody } occurrence found": [
-        "Найден ${ occurrencesInBody } повтор",
-        "Найдено ${ occurrencesInBody } повторов",
-        "Найдено ${ occurrencesInBody } повтора (повторов)",
-        "Найдено ${ occurrencesInBody } повтора (повторов)"
+      "${ numOccurrences } occurrence found": [
+        "Найден ${ numOccurrences } повтор",
+        "Найден ${ numOccurrences } повтор",
+        "",
+        ""
       ],
-      "${ occurrencesInBody } occurrence found in the mail content": [
-        "${ occurrencesInBody } вхождение найдено в содержимом письма",
-        "${ occurrencesInBody } вхождений найдено в содержимом письма",
-        "${ occurrencesInBody } вхождений найдено в содержимом письма",
-        "${ occurrencesInBody } вхождений(е) найдено в содержимом письма"
+      "${ numOccurrences } occurrence found in the mail content": [
+        "${ numOccurrences } В содержимом письма найдено вхождение",
+        "${ numOccurrences } вхождение найдено в содержимом письма",
+        "",
+        ""
       ],
       "${ pureAttachmentsCount } file attached": [
         "${ pureAttachmentsCount } файл прикреплён",
@@ -4713,11 +4728,11 @@
       "per month.": [
         "в месяц."
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
-        "PGP/Inline is only compatible with Plain Text format. Please note that Proton Mail always signs encrypted messages."
+      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        "PGP/Inline совместим только с форматом Обычного текста. Обратите внимание, что ${ MAIL_APP_NAME } всегда подписывает зашифрованные сообщения."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
-        "PGP/MIME automatically sends the message using the current composer mode. Please note that Proton Mail always signs encrypted messages."
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
+        "PGP/MIME автоматически отправляет сообщение, используя текущий режим редактора писем. Обратите внимание, что ${ MAIL_APP_NAME } всегда подписывает зашифрованные сообщения"
       ],
       "Phone number": [
         "Hомер телефона"
@@ -5598,6 +5613,9 @@
       ],
       "ANY": [
         "ЛЮБОЕ"
+      ],
+      "Apply filter to existing emails": [
+        "Применить к существующему сообщению"
       ],
       "Attach screenshot(s)": [
         "Вложить снимок(ки) экрана"

@@ -103,6 +103,9 @@
       "Apply": [
         "Применить"
       ],
+      "Apply to existing message": [
+        "Применить к существующему сообщению"
+      ],
       "Attach screenshot(s)": [
         "Приложить снимки экрана"
       ],
@@ -175,8 +178,8 @@
       "Continue to ${ name }": [
         "Продолжить с ${ name }"
       ],
-      "Continue with": [
-        "Продолжить с"
+      "Continue with ${ nameToDisplay } ${ maybeEmailInBrackets }": [
+        "Продолжить ${ nameToDisplay } ${ maybeEmailInBrackets }"
       ],
       "Continue with Google": [
         "Продолжить с Google"
@@ -193,8 +196,8 @@
       "Create": [
         "Создать"
       ],
-      "Create a secure ProtonMail address instead": [
-        "Create a secure Proton Mail address instead"
+      "Create a secure ${ MAIL_APP_NAME } address instead": [
+        "Вместо этого создайте защищенный адрес ${ MAIL_APP_NAME }"
       ],
       "Create account": [
         "Создать учётную запись"
@@ -345,6 +348,9 @@
       ],
       "Extend": [
         "Продлить"
+      ],
+      "Filters are being applied. This might take a few minutes.": [
+        "В настоящее время применяются фильтры. Это может занять несколько минут."
       ],
       "Font": [
         "Шрифт"
@@ -679,17 +685,14 @@
       "Show preview": [
         "Показать предпросмотр"
       ],
-      "sign in": [
-        "войти"
-      ],
       "Sign in": [
         "Войти"
       ],
       "Sign out": [
         "Выйти из учетной записи"
       ],
-      "Sign out from": [
-        "Выти из"
+      "Sign out from ${ nameToDisplay } ${ maybeEmailInBrackets }": [
+        "Выписаться из ${ nameToDisplay } ${ maybeEmailInBrackets }"
       ],
       "Sign out of all accounts": [
         "Выйти из всех учётных записей"
@@ -1058,11 +1061,6 @@
         "Получить скидку"
       ]
     },
-    "blackfriday: VPNspecialoffer Badge popup": {
-      "${ vpnPlus } Special Offer 2021 discount has been applied": [
-        ""
-      ]
-    },
     "blackfriday: VPNspecialoffer Info": {
       "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
         "Скидки рассчитываются исходя из стандартной платы за 1 месяц в размере ${ standardMonthlyPricing }"
@@ -1221,11 +1219,11 @@
       "You have reached the maximum number of personal calendars you can create within your plan.": [
         "Вы достигли максимального количества личных календарей, которые можно создать в рамках вашего тарифа."
       ],
-      "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } subscribed calendar.": [
-        "Вы достигли максимума, ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } подписанного календаря.",
-        "Вы достигли максимума, ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } подписанных календарей.",
-        "Вы достигли максимума, ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } подписанных календарей.",
-        "Вы достигли максимума, ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } подписанного календаря."
+      "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS } subscribed calendar.": [
+        "Вы достигли максимального количества ${ MAX_SUBSCRIBED_CALENDARS } подписанных календарей.",
+        "Вы достигли максимального количества подписанных календарей ${ MAX_SUBSCRIBED_CALENDARS }.",
+        "",
+        ""
       ]
     },
     "Calendar link purpose update success message": {
@@ -2673,9 +2671,6 @@
       "A group with this name already exists": [
         "Группа с таким именем уже существует"
       ],
-      "Address already associated to a user": [
-        "Адрес уже связан с пользователем"
-      ],
       "Address primary private key not found": [
         "Основной секретный ключ для адреса не найден"
       ],
@@ -3229,20 +3224,36 @@
       "Please ${ refresh } or check your connection.": [
         "Пожалуйста, ${ refresh } или проверьте подключение."
       ],
-      "Please ${ signIn } to update your email subscription preferences.": [
-        "Пожалуйста ${ signIn }, чтобы изменить подписки."
-      ],
       "There was a problem connecting to Proton.": [
         "Возникла проблема при подключении к Proton."
-      ],
-      "There was a problem unsubscribing you.": [
-        "Произошла ошибка при отказе от подписки."
       ],
       "Too many child sessions, please clear your cookies and sign back in.": [
         "Слишком много дочерних сессий, пожалуйста, очистите куки и войдите снова."
       ],
       "You may also ${ refresh } or try again later.": [
         "Вы также можете ${ refresh } или повторить попытку позже."
+      ]
+    },
+    "Error message, recovery": {
+      "Please ${ _signIn } to resend a recovery email verification request.": [
+        "Пожалуйста, ${ _signIn }, чтобы повторно отправить запрос на проверку электронной почты для восстановления."
+      ],
+      "sign in": [
+        "войти в систему"
+      ],
+      "There was a problem verifying your email address.": [
+        "Возникла проблема с проверкой вашего адреса электронной почты."
+      ]
+    },
+    "Error message, unsubscribe": {
+      "Please ${ signIn } to update your email subscription preferences.": [
+        "Пожалуйста, ${ signIn }, чтобы обновить настройки подписки по электронной почте."
+      ],
+      "sign in": [
+        "войти в систему"
+      ],
+      "There was a problem unsubscribing you.": [
+        "Возникла проблема с отпиской."
       ]
     },
     "Error notification": {
@@ -3395,8 +3406,11 @@
       ]
     },
     "file size format": {
-      "bytes": [
-        "байт"
+      "byte": [
+        "байт",
+        "байт",
+        "байты",
+        "байты"
       ],
       "GB": [
         "Гбайт"
@@ -3409,16 +3423,28 @@
       ]
     },
     "file size format, long": {
-      "Bytes": [
+      "Byte": [
+        "Байт",
+        "Байты",
+        "Байты",
         "Байт"
       ],
-      "Gigabytes": [
+      "Gigabyte": [
+        "Гигабайт",
+        "Гигабайт",
+        "Гигабайт",
         "Гигабайт"
       ],
-      "Kilobytes": [
+      "Kilobyte": [
+        "Килобайт",
+        "Килобайты",
+        "Килобайт",
         "Килобайт"
       ],
-      "Megabytes": [
+      "Megabyte": [
+        "Мегабайт",
+        "Мегабайты",
+        "Мегабайт",
         "Мегабайт"
       ]
     },
@@ -4494,6 +4520,9 @@
       "Continue with ${ planName }": [
         "Продолжить с ${ planName }"
       ],
+      "Continuing will connect your ${ ACCOUNT_APP_NAME } to ${ name }.": [
+        "Продолжение соединит ваш ${ ACCOUNT_APP_NAME } с ${ name }."
+      ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Создать ${ calendarsToBeCreated } календарь",
         "Создать ${ calendarsToBeCreated } календарей",
@@ -5214,9 +5243,6 @@
       "Select a service provider to start": [
         "Выберите поставщика услуг для начала работы"
       ],
-      "Select Continue to ${ name } to open the app. This also creates a ${ name } account with your ${ MAIL_APP_NAME } address so you can sign in with one click in the future.": [
-        "Выберите \"Продолжить\" с ${ name }, чтобы открыть приложение. Это также создаст аккаунт ${ name } с вашим адресом ${ MAIL_APP_NAME }, чтобы в будущем вы могли войти одним нажатием."
-      ],
       "Select what you want to move from Google.": [
         "Выберите, что вы хотите перенести из Google."
       ],
@@ -5654,6 +5680,9 @@
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "Вам необходимо связать кредитную карту или банковский счет с вашим счетом PayPal. Если ваш счет PayPal не имеет такой привязки, пожалуйста, нажмите на кнопку ниже."
+      ],
+      "You must remove any additional personal calendars and any shared calendar links before you can cancel your Mail subscription.": [
+        "Вы должны удалить все дополнительные личные календари и все ссылки на общие календари, прежде чем отменять подписку на Почту."
       ],
       "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription.": [
         "Вы должны удалить все дополнительные личные календари и все ссылки на общие календари, прежде чем вы сможете отменить подписку."
@@ -6241,6 +6270,9 @@
       ],
       "App password": [
         "Пароль приложения"
+      ],
+      "Apply filter to existing emails": [
+        "Применить к существующему сообщению"
       ],
       "Ask before loading remote content": [
         "Спрашивать перед загрузкой внешнего содержимого"
@@ -7239,6 +7271,9 @@
       ]
     },
     "Message": {
+      "All filter actions will be applied to all messages in your Proton Mail account. No auto-reply emails will be sent.": [
+        "Все действия фильтра будут применены ко всем сообщениям в вашем аккаунте Proton Mail. Автоответчики не будут отправляться."
+      ],
       "Are you sure you want to disable two-factor authentication?": [
         "Вы уверены, что хотите отключить двухфакторную аутентификацию?"
       ],
@@ -7313,7 +7348,7 @@
         "Каждые ${ interval } месяца(ев) ${ onDayString } числа, в ${ timesString }"
       ],
       "Every ${ interval } month ${ onDayString }, ${ untilString }": [
-        "",
+        "Каждый ${ interval } месяц ${ onDayString } числа, по ${ untilString }",
         "Каждые ${ interval } месяца ${ onDayString } числа, до ${ untilString }",
         "Каждые ${ interval } месяцев ${ onDayString } числа, до ${ untilString }",
         "Каждые ${ interval } месяца(ев) ${ onDayString } числа, по ${ untilString }"
@@ -7804,26 +7839,6 @@
         "Управление командами"
       ]
     },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Сделайте резервное копирование, хранение, совместное использование и извлечение файлов конфиденциальным по умолчанию."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "В противном случае доступ к вашему аккаунту будет ограничен, и в конечном итоге ваш аккаунт будет отключен."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Чтобы продолжить использование ${ MAIL_APP_NAME } с платными функциями, выберите подписку и способ оплаты."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Перейдите на пакет для предприятий с доступом ко всем платным службам Proton."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Улучшите до пакета максимальной конфиденциальности и получите доступ ко всем платным службам Proton."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Ваш пробный период заканчивается ${ formattedTrialExpirationDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } заканчивающийся на ${ last4 }"
@@ -7890,6 +7905,26 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Вы пользуетесь акционной ценой на свой текущий тариф. Если вы перейдете на более дешевую версию аккаунта, то потеряете возмоножность пользоваться акционной ценой, которая также будет недоступна, если вы попробуете повторно подписаться на тариф."
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Сделайте резервное копирование, хранение, совместное использование и извлечение файлов конфиденциальным по умолчанию."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "В противном случае доступ к вашему аккаунту будет ограничен, и в конечном итоге ваш аккаунт будет отключен."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Чтобы продолжить использование ${ MAIL_APP_NAME } с платными функциями, выберите подписку и способ оплаты."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Перейдите на пакет для предприятий с доступом ко всем платным службам Proton."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Улучшите до пакета максимальной конфиденциальности и получите доступ ко всем платным службам Proton."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Ваш пробный период заканчивается ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -8710,14 +8745,8 @@
       "Email address not yet verified.": [
         "Адрес электронной почты еще не проверен."
       ],
-      "Please ${ signIn } to resend a recovery email verification request.": [
-        "Пожалуйста, ${ signIn }, чтобы повторно отправить запрос на проверку резервного адреса электронной почты."
-      ],
-      "Send verification email": [
-        "Отправить электронное письмо для проверки"
-      ],
-      "There was a problem verifying your email address.": [
-        "Возникла проблема с проверкой вашего адреса электронной почты."
+      "sign in": [
+        "войти в систему"
       ],
       "Verification email sent to ${ email.Value }": [
         "Электронное письмо с подтверждением отправлено на ${ email.Value }"
@@ -8727,6 +8756,9 @@
       ],
       "Verify recovery email?": [
         "Проверить резервный адрес электронной почты?"
+      ],
+      "Verify with email": [
+        "Подтвердить с помощью электронной почты"
       ],
       "Verifying your email address increases your account security and allows additional options for recovery.": [
         "Проверка адреса электронной почты повышает безопасность вашего аккаунта и дает дополнительные возможности для восстановления."
@@ -8747,6 +8779,29 @@
       ],
       "Phrase": [
         "Фраза"
+      ]
+    },
+    "Recovery Phone": {
+      "Cancel": [
+        "Отменить"
+      ],
+      "Phone number has been verified.": [
+        "Номер телефона уже подтвержден."
+      ],
+      "Phone number not yet verified.": [
+        "Номер телефона уже подтвержден."
+      ],
+      "Verify by SMS": [
+        "Подтвердить с помощью СМС"
+      ],
+      "Verify now": [
+        "Проверить сейчас"
+      ],
+      "Verify recovery phone?": [
+        "Проверить резервный адрес электронной почты?"
+      ],
+      "Verifying your phone number increases your account security and allows additional options for recovery.": [
+        "Проверка адреса электронной почты повышает безопасность вашего аккаунта и дает дополнительные возможности для восстановления."
       ]
     },
     "Remark about a key type option": {
@@ -9482,6 +9537,9 @@
       "Appearance": [
         "Внешний вид"
       ],
+      "Apply filter to existing messages": [
+        "Применить к существующему сообщению"
+      ],
       "Apply gift code": [
         "Применить подарочный код"
       ],
@@ -9511,6 +9569,9 @@
       ],
       "Bridge for ${ platform }": [
         "Bridge для ${ platform }"
+      ],
+      "Cancel Mail subscription": [
+        "Отменить подписку на почту"
       ],
       "Card verification": [
         "Проверка карты"
@@ -10392,14 +10453,14 @@
       ]
     },
     "Upgrade notice": {
-      "Upgrade to a paid plan to create up to ${ MAX_CALENDARS_PER_USER } calendar, allowing you to make calendars for work, to share with friends, and just for yourself.": [
-        "Переход на платный тариф позволит вам создавать до ${ MAX_CALENDARS_PER_USER } календаря, и вы сможете использовать их для работы, делиться ими с дузьями, или просто оставить для себя.",
-        "Переход на платный тариф позволит вам создавать до ${ MAX_CALENDARS_PER_USER } календарей, и вы сможете использовать их для работы, делиться ими с дузьями, или просто оставить для себя.",
-        "Переход на платный тариф позволит вам создавать до ${ MAX_CALENDARS_PER_USER } календарей, и вы сможете использовать их для работы, делиться ими с дузьями, или просто оставить для себя.",
-        "Переход на платный тариф позволит вам создавать до ${ MAX_CALENDARS_PER_USER } календаря, и вы сможете использовать их для работы, делиться ими с дузьями, или просто оставить для себя."
+      "Upgrade to a Mail paid plan to create up to ${ MAX_CALENDARS_PAID } calendar, allowing you to make calendars for work, to share with friends, and just for yourself.": [
+        "Перейдите на платный тарифный план Mail, чтобы создавать до ${ MAX_CALENDARS_PAID } календарей, что позволит вам создавать календари для работы, для обмена с друзьями и просто для себя.",
+        "Перейдите на платный тарифный план Mail, чтобы создавать до ${ MAX_CALENDARS_PAID } календарей, что позволит вам создавать календари для работы, для обмена с друзьями и просто для себя.",
+        "",
+        ""
       ],
-      "Upgrade to a paid plan to share your personal calendar via link with anyone.": [
-        "Чтобы поделиться ссылкой на личный календарь, перейдите на платный тариф."
+      "Upgrade to a Mail paid plan to share your personal calendar via link with anyone.": [
+        "Перейдите на платный тарифный план Mail, чтобы делиться личным календарем по ссылке с кем угодно."
       ]
     },
     "User role": {
@@ -10843,7 +10904,7 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "",
+        "Каждый ${ interval } год",
         "Каждые ${ interval } года",
         "Каждые ${ interval } лет",
         "Каждые ${ interval } года (лет)"
@@ -10855,7 +10916,7 @@
         "Каждые ${ interval } года (лет), в ${ timesString }"
       ],
       "Every ${ interval } year, ${ untilString }": [
-        "",
+        "Каждый ${ interval } год, по ${ untilString }",
         "Каждые ${ interval } года, по ${ untilString }",
         "Каждые ${ interval } лет, по ${ untilString }",
         "Каждые ${ interval } года (лет), по ${ untilString }"

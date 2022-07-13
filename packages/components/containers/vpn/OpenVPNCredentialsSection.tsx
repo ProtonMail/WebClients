@@ -57,7 +57,7 @@ const OpenVPNCredentialsSection = (props: Props) => {
                 <>
                     <SettingsParagraph>
                         {c('Info')
-                            .t`Use the following credentials when connecting to ${VPN_APP_NAME} servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.`}
+                            .t`Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.`}
                     </SettingsParagraph>
                     <SettingsParagraph>
                         {c('Info').jt`

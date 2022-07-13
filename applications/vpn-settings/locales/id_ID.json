@@ -80,8 +80,8 @@
       "Create": [
         "Buat"
       ],
-      "Create a secure ProtonMail address instead": [
-        "Buat alamat ProtonMail yang aman"
+      "Create a secure ${ MAIL_APP_NAME } address instead": [
+        "Buat alamat email aman ${ MAIL_APP_NAME }"
       ],
       "Create account": [
         "Buat akun"
@@ -478,11 +478,6 @@
         "Dua tahun"
       ]
     },
-    "blackfriday Action": {
-      "Get the offer": [
-        ""
-      ]
-    },
     "blackfriday Info": {
       "beta": [
         "beta"
@@ -498,14 +493,8 @@
       ]
     },
     "blackfriday Title": {
-      "Best deal": [
-        ""
-      ],
       "Most popular": [
         "Paling populer"
-      ],
-      "Save more when combining Mail and VPN": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer Action": {
@@ -516,20 +505,9 @@
         "Dapatkan penawaran sekarang"
       ]
     },
-    "blackfriday: VPNspecialoffer Badge popup": {
-      "${ vpnPlus } Special Offer 2021 discount has been applied": [
-        ""
-      ]
-    },
     "blackfriday: VPNspecialoffer Info": {
-      "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
-        ""
-      ],
       "Save ${ percentage }%": [
         "${ percentage } %"
-      ],
-      "Special offer Terms and Conditions": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer info": {
@@ -543,15 +521,6 @@
       ]
     },
     "blackfriday: VPNspecialoffer Title": {
-      "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
-        ""
-      ],
-      "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
-        ""
-      ],
-      "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
-        ""
-      ],
       "1 month": [
         "1 bulan"
       ],
@@ -560,18 +529,6 @@
       ],
       "24 months": [
         "24 bulan"
-      ],
-      "Billed at ${ amount } for the first 2 years.${ supNotice }": [
-        ""
-      ],
-      "Billed at ${ amount } for the first month.${ supNotice }": [
-        ""
-      ],
-      "Billed at ${ amount } for the first year.${ supNotice }": [
-        ""
-      ],
-      "Get the special year-end offer on our Premium VPN PLUS plan": [
-        ""
       ]
     },
     "Bug category": {
@@ -1800,7 +1757,7 @@
       ]
     },
     "file size format": {
-      "bytes": [
+      "byte": [
         "byte"
       ],
       "GB": [
@@ -1814,16 +1771,16 @@
       ]
     },
     "file size format, long": {
-      "Bytes": [
+      "Byte": [
         "Byte"
       ],
-      "Gigabytes": [
+      "Gigabyte": [
         "Gigabyte"
       ],
-      "Kilobytes": [
+      "Kilobyte": [
         "Kilobyte"
       ],
-      "Megabytes": [
+      "Megabyte": [
         "Megabyte"
       ]
     },
@@ -2492,6 +2449,9 @@
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "Anda harus memiliki kartu kredit atau akun bank yang terhubung dengan akun Paypal Anda. Jika akun Paypal Anda tidak memilikinya, silakan klik tombol di bawah."
+      ],
+      "You must remove any additional personal calendars and any shared calendar links before you can cancel your Mail subscription.": [
+        "Anda harus menghapus seluruh kalender personal tambahan beserta tautan kalender yang dibagikan sebelum langganan Mail Anda dapat dibatalkan."
       ],
       "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription.": [
         "Anda harus menghapus seluruh kalender personal tambahan dan tautan kalender yang yang telah dibagikan sebelum Anda dapat membatalkan langganan Anda."
@@ -3878,9 +3838,6 @@
       "Email address not yet verified.": [
         "Alamat email belum diverifikasi."
       ],
-      "Send verification email": [
-        "Kirim email verifikasi"
-      ],
       "Verification email sent to ${ email.Value }": [
         "Email verifikasi terkirim ke ${ email.Value }"
       ],
@@ -3889,6 +3846,9 @@
       ],
       "Verify recovery email?": [
         "Verifikasi alamat email pemulihan?"
+      ],
+      "Verify with email": [
+        "Verifikasi melalui email"
       ],
       "Verifying your email address increases your account security and allows additional options for recovery.": [
         "Verifikasi alamat email akan memungkinkan Anda untuk meningkatkan keamanan akun dan menambah metode pemulihan akun."
@@ -3903,6 +3863,29 @@
       ],
       "Phrase": [
         "Frasa"
+      ]
+    },
+    "Recovery Phone": {
+      "Cancel": [
+        "Batal"
+      ],
+      "Phone number has been verified.": [
+        "Nomor telepon telah diverifikasi."
+      ],
+      "Phone number not yet verified.": [
+        "Nomor telepon belum diverifikasi."
+      ],
+      "Verify by SMS": [
+        "Verifikasi melalui SMS"
+      ],
+      "Verify now": [
+        "Verifikasi"
+      ],
+      "Verify recovery phone?": [
+        "Verifikasi nomor telepon pemulihan?"
+      ],
+      "Verifying your phone number increases your account security and allows additional options for recovery.": [
+        "Dengan memverifikasi nomor telepon, Anda akan meningkatkan keamanan akun serta menambah metode pemulihan bagi akun Anda."
       ]
     },
     "Signup label": {
@@ -4208,6 +4191,9 @@
       ],
       "Billing cycle": [
         "Siklus tagihan"
+      ],
+      "Cancel Mail subscription": [
+        "Batalkan langganan Mail"
       ],
       "Card verification": [
         "Verifikasi kartu"
