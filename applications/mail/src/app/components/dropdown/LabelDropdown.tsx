@@ -168,8 +168,6 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
         onClose();
     };
 
-    const handleClickIcon = (labelID: string) => () => handleApply({ [labelID]: LabelState.On });
-
     const applyCheck = (labelIDs: string[], selected: boolean) => {
         const update = labelIDs.reduce((acc, ID) => {
             acc[ID] = selected ? LabelState.On : LabelState.Off;
@@ -299,7 +297,6 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
                                     size={16}
                                     color={Color}
                                     className="flex-item-noshrink relative ml0-25 mr0-5"
-                                    onClick={handleClickIcon(ID)}
                                 />
                                 <span className="text-ellipsis">
                                     <Mark value={search}>{Name}</Mark>
