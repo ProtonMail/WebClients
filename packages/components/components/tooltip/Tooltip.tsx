@@ -1,13 +1,14 @@
-import { Children, cloneElement, HTMLProps, ReactElement, ReactNode, useContext, useEffect, useState } from 'react';
+import { Children, HTMLProps, ReactElement, ReactNode, cloneElement, useContext, useEffect, useState } from 'react';
+
 import useInstance from '@proton/hooks/useInstance';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { generateUID, classnames } from '../../helpers';
-import { usePopper, Popper, usePopperAnchor } from '../popper';
 import useRightToLeft from '../../containers/rightToLeft/useRightToLeft';
-import useTooltipHandlers from './useTooltipHandlers';
+import { classnames, generateUID } from '../../helpers';
 import { useCombinedRefs } from '../../hooks';
+import { Popper, usePopper, usePopperAnchor } from '../popper';
 import { TooltipExclusiveContext } from './TooltipExclusive';
+import useTooltipHandlers from './useTooltipHandlers';
 
 export type TooltipType = 'info' | 'error' | 'warning';
 
@@ -27,7 +28,7 @@ export type TooltipPlacement =
 
 interface Props extends Omit<HTMLProps<HTMLElement>, 'title' | 'children'> {
     children: ReactElement;
-    title?: ReactNode;
+    title: ReactNode;
     originalPlacement?: TooltipPlacement;
     type?: TooltipType;
     anchorOffset?: { x: number; y: number };
