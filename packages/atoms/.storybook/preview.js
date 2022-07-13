@@ -32,6 +32,7 @@ const config = {
 export const decorators = [
     (Story) => (
         <ConfigProvider config={tempConfig}>
+            <Icons />
             <NotificationsProvider>
                 <ModalsProvider>
                     <ApiProvider config={tempConfig}>
