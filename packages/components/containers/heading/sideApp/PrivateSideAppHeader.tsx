@@ -35,7 +35,7 @@ const PrivateSideAppHeader = ({
     const { APP_NAME } = useConfig();
     const appName = APPS_CONFIGURATION[APP_NAME].name;
 
-    const handleToggleIFrame = (nextUrl?: string) => {
+    const handleToggleIFrame = (nextUrl?: string, closeDefinitely?: boolean) => {
         if (!parentApp) {
             return;
         }
@@ -52,7 +52,7 @@ const PrivateSideAppHeader = ({
             postMessageFromIframe(
                 {
                     type: SIDE_APP_EVENTS.SIDE_APP_CLOSE,
-                    payload: { app: APP_NAME, url: window.location.href },
+                    payload: { app: APP_NAME, url: window.location.href, closeDefinitely },
                 },
                 parentApp
             );
@@ -69,7 +69,8 @@ const PrivateSideAppHeader = ({
 
             switch (event.data.type) {
                 case SIDE_APP_EVENTS.SIDE_APP_CLOSE_FROM_OUTSIDE:
-                    handleToggleIFrame();
+                    const { closeDefinitely } = event.data.payload || { closeDefinitely: undefined };
+                    handleToggleIFrame(undefined, closeDefinitely);
                     break;
                 case SIDE_APP_EVENTS.SIDE_APP_SWITCH_FROM_OUTSIDE:
                     const { nextUrl } = event.data.payload;

@@ -21,7 +21,7 @@ const PrivateLayout = (
     { children, breakpoints, labelID, elementID, isBlurred, rightSidebarContent }: Props,
     ref: Ref<HTMLDivElement>
 ) => {
-    const { sideAppUrl } = useSideApp();
+    const { sideAppUrl, showSideApp } = useSideApp();
     const location = useLocation();
     const [expanded, setExpand] = useState(false);
 
@@ -56,7 +56,8 @@ const PrivateLayout = (
         />
     );
 
-    const sideAppSidebar = rightSidebarContent && !sideAppUrl && (
+    const canShowSideAppSidebar = showSideApp ? !sideAppUrl : true;
+    const sideAppSidebar = rightSidebarContent && canShowSideAppSidebar && (
         <div className="side-app-side-bar flex-column mt0-5 ml1 mr1 flex">{rightSidebarContent}</div>
     );
 
@@ -71,7 +72,7 @@ const PrivateLayout = (
             containerRef={ref}
             sideAppSidebar={sideAppSidebar}
             sideAppIframe={sideAppIframe}
-            mainBordered={!!rightSidebarContent && !sideAppUrl}
+            mainBordered={!!rightSidebarContent && canShowSideAppSidebar}
         >
             {children}
         </PrivateAppContainer>
