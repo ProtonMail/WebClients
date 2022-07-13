@@ -103,6 +103,9 @@
       "Apply": [
         "Εφαρμογή"
       ],
+      "Apply to existing message": [
+        "Εφαρμογή σε υπάρχον μήνυμα"
+      ],
       "Attach screenshot(s)": [
         "Επισύναψη στιγμιότυπου/ων οθόνης"
       ],
@@ -175,11 +178,8 @@
       "Continue to ${ name }": [
         "Συνέχεια στο ${ name }"
       ],
-      "Continue with": [
-        "Συνέχεια με"
-      ],
       "Continue with Google": [
-        ""
+        "Συνεχίστε με Google"
       ],
       "Copy": [
         "Αντιγραφή"
@@ -193,8 +193,8 @@
       "Create": [
         "Δημιουργία"
       ],
-      "Create a secure ProtonMail address instead": [
-        "Create a secure Proton Mail address instead"
+      "Create a secure ${ MAIL_APP_NAME } address instead": [
+        "Εναλλακτικά, δημιουργήστε μια διασφαλισμένη διεύθυνση ${ MAIL_APP_NAME }"
       ],
       "Create account": [
         "Δημιουργία λογαριασμού"
@@ -345,6 +345,9 @@
       ],
       "Extend": [
         "Επέκταση"
+      ],
+      "Filters are being applied. This might take a few minutes.": [
+        "Τα φίλτρα εφαρμόζονται. Αυτό μπορεί να πάρει μερικά λεπτά."
       ],
       "Font": [
         "Γραμματοσειρά"
@@ -632,7 +635,7 @@
         "Επιλέξτε αρχεία"
       ],
       "Select language for invitation emails": [
-        ""
+        "Επιλέξτε γλώσσα για τα προσκλητήρια email"
       ],
       "Select timezone": [
         "Επιλογή ζώνης ώρας"
@@ -679,17 +682,11 @@
       "Show preview": [
         "Εμφάνιση προεπισκόπησης"
       ],
-      "sign in": [
-        "είσοδος"
-      ],
       "Sign in": [
         "Είσοδος"
       ],
       "Sign out": [
         "Αποσύνδεση"
-      ],
-      "Sign out from": [
-        "Έξοδος από"
       ],
       "Sign out of all accounts": [
         "Έξοδος από όλους τους λογαριασμούς"
@@ -835,10 +832,6 @@
       ]
     },
     "Addon": {
-      "+ ${ _users } user": [
-        "",
-        ""
-      ],
       "+ ${ domains } custom domain": [
         "+ ${ domains } προσαρμοσμένο domain",
         "+ ${ domains } προσαρμοσμένα domains"
@@ -951,11 +944,6 @@
         "Είμαι εκτός γραφείου με περιορισμένη πρόσβαση στο email μου."
       ]
     },
-    "Badge": {
-      "5 users": [
-        ""
-      ]
-    },
     "Badge for domain": {
       "Disabled": [
         "Απενεργοποιημένο"
@@ -981,9 +969,6 @@
       ],
       "Payable every month": [
         "Πληρωμή κάθε μήνα"
-      ],
-      "Renews automatically on ${ formattedEndTime }": [
-        ""
       ]
     },
     "Billing cycle option": {
@@ -1006,11 +991,6 @@
         "Δύο έτη"
       ]
     },
-    "blackfriday Action": {
-      "Get the offer": [
-        ""
-      ]
-    },
     "blackfriday Info": {
       "beta": [
         "βήτα"
@@ -1026,14 +1006,8 @@
       ]
     },
     "blackfriday Title": {
-      "Best deal": [
-        ""
-      ],
       "Most popular": [
         "Τα πιο δημοφιλή"
-      ],
-      "Save more when combining Mail and VPN": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer Action": {
@@ -1044,20 +1018,9 @@
         "Αποκτήστε την προσφορά τώρα"
       ]
     },
-    "blackfriday: VPNspecialoffer Badge popup": {
-      "${ vpnPlus } Special Offer 2021 discount has been applied": [
-        ""
-      ]
-    },
     "blackfriday: VPNspecialoffer Info": {
-      "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
-        ""
-      ],
       "Save ${ percentage }%": [
         "- ${ percentage }%"
-      ],
-      "Special offer Terms and Conditions": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer info": {
@@ -1071,15 +1034,6 @@
       ]
     },
     "blackfriday: VPNspecialoffer Title": {
-      "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
-        ""
-      ],
-      "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
-        ""
-      ],
-      "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
-        ""
-      ],
       "1 month": [
         "1 μήνας"
       ],
@@ -1088,18 +1042,6 @@
       ],
       "24 months": [
         "24 μήνες"
-      ],
-      "Billed at ${ amount } for the first 2 years.${ supNotice }": [
-        ""
-      ],
-      "Billed at ${ amount } for the first month.${ supNotice }": [
-        ""
-      ],
-      "Billed at ${ amount } for the first year.${ supNotice }": [
-        ""
-      ],
-      "Get the special year-end offer on our Premium VPN PLUS plan": [
-        ""
       ]
     },
     "Bridge version load failed": {
@@ -1179,12 +1121,6 @@
       ]
     },
     "Button": {
-      "Add link to your email footer": [
-        ""
-      ],
-      "Continue using ${ MAIL_APP_NAME }.": [
-        ""
-      ],
       "Copy": [
         "Αντιγραφή"
       ],
@@ -1198,18 +1134,9 @@
         "Tweet"
       ]
     },
-    "Calendar import section description": {
-      "You can import ICS files from another calendar to ${ CALENDAR_APP_NAME }. This lets you quickly import one event or your entire agenda.": [
-        ""
-      ]
-    },
     "Calendar limit warning": {
       "You have reached the maximum number of personal calendars you can create within your plan.": [
         "Έχετε φθάσει τον μέγιστο αριθμό προσωπικών ημερολογίων που μπορείτε να δημιουργήσετε στο πρόγραμμά σας."
-      ],
-      "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } subscribed calendar.": [
-        "",
-        ""
       ]
     },
     "Calendar link purpose update success message": {
@@ -1277,16 +1204,6 @@
         "Εβδομάδα"
       ]
     },
-    "Checkout row": {
-      "${ users } user": [
-        "",
-        ""
-      ],
-      "Total for ${ n } month": [
-        "",
-        ""
-      ]
-    },
     "Collapsible tooltip": {
       "Close": [
         "Κλείσιμο"
@@ -1317,17 +1234,11 @@
       "cerise": [
         "κεράσι"
       ],
-      "cinnabar": [
-        ""
-      ],
       "cobalt": [
         "κοβάλτιο"
       ],
       "copper": [
         "χαλκός"
-      ],
-      "cyan-blue azure": [
-        ""
       ],
       "dandelion": [
         "ραδίκι"
@@ -1338,26 +1249,11 @@
       "dark midnight blue": [
         "μπλε μεσονυκτίου"
       ],
-      "dim gray": [
-        ""
-      ],
-      "enzian": [
-        ""
-      ],
       "fern": [
         "φτέρη"
       ],
-      "field drab": [
-        ""
-      ],
       "forest": [
         "δάσος"
-      ],
-      "gainsboro": [
-        ""
-      ],
-      "japanese laurel": [
-        ""
       ],
       "kiwi": [
         "ακτινίδιο"
@@ -1365,29 +1261,17 @@
       "lemon yellow": [
         "λεμονί"
       ],
-      "light carmine pink": [
-        ""
-      ],
-      "light moss green": [
-        ""
-      ],
       "light red": [
         "ανοιχτό κόκκινο"
       ],
       "maize": [
         "καλαμπόκι"
       ],
-      "mughal green": [
-        ""
-      ],
       "ocean": [
         "ωκεανός"
       ],
       "olive": [
         "λαδί"
-      ],
-      "outer space": [
-        ""
       ],
       "pacific": [
         "Ειρηνικός"
@@ -1397,21 +1281,6 @@
       ],
       "pale cerulean": [
         "χλωμός ουρανός"
-      ],
-      "pastel gray": [
-        ""
-      ],
-      "persian plum": [
-        ""
-      ],
-      "persian red": [
-        ""
-      ],
-      "philippine gray": [
-        ""
-      ],
-      "philippine silver": [
-        ""
       ],
       "pickle": [
         "τουρσί"
@@ -1437,14 +1306,8 @@
       "reef": [
         "ύφαλος"
       ],
-      "ruddy pink": [
-        ""
-      ],
       "sahara": [
         "Σαχάρα"
-      ],
-      "satin sheen gold": [
-        ""
       ],
       "slateblue": [
         "μπλε ροζέ"
@@ -2382,22 +2245,9 @@
         "(μέσω ${ entryCountryName })"
       ]
     },
-    "Coupon": {
-      "Coupon applied: ${ CouponCode }": [
-        ""
-      ]
-    },
     "Credits": {
       "Unused credits": [
         "Αχρησιμοποίητες πιστώσεις"
-      ]
-    },
-    "Cycle": {
-      "/month": [
-        ""
-      ],
-      "/user per month": [
-        ""
       ]
     },
     "Daily recurring event, frequency": {
@@ -2470,21 +2320,12 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Γίνεται κρυπτογράφηση και εισαγωγή επαφών... Η διαδικασία μπορεί να πάρει μερικά λεπτά. Όταν ολοκληρωθεί, μπορείτε να κλείσετε αυτό το παράθυρο."
       ],
-      "Get up to 3 months of ${ mailPlus } for free for every friend who subscribes to ${ MAIL_APP_NAME }.": [
-        ""
-      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Φαίνεται ότι η λίστα επαφών που εισάγετε περιέχει κάποιες ομάδες. Παρακαλούμε εξετάστε τον τρόπο εισαγωγής αυτών των ομάδων."
       ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Το αρχείο πρέπει να έχει μέγιστο μέγεθος ${ MAX_IMPORT_FILE_SIZE_STRING } και να έχει μέχρι και ${ MAX_IMPORT_CONTACTS_STRING } επαφή. Εάν το αρχείο σας είναι μεγαλύτερο, διαχωρίστε το σε μικρότερα αρχεία.",
         "Το αρχείο πρέπει να έχει μέγιστο μέγεθος ${ MAX_IMPORT_FILE_SIZE_STRING } και να έχει μέχρι και ${ MAX_IMPORT_CONTACTS_STRING } επαφές. Εάν το αρχείο σας είναι μεγαλύτερο, διαχωρίστε το σε μικρότερα αρχεία."
-      ],
-      "Track how many people click on your link, sign up, and become paid subscribers. Watch your free months add up.": [
-        ""
-      ],
-      "You can continue to invite friends, but you wont be able to earn more credits": [
-        ""
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Μπορείτε να εισάγετε γεγονότα σε μορφή iCal (ICS αρχείο).\nΤο αρχείο θα πρέπει να έχει μέγιστο μέγεθος ${ MAX_IMPORT_FILE_SIZE_STRING } και να έχει μέχρι ${ MAX_IMPORT_EVENTS_STRING } γεγονότα.\nΑν το αρχείο σας είναι μεγαλύτερο, παρακαλούμε να το χωρίσετε σε μικρότερα αρχεία."
@@ -2639,9 +2480,6 @@
       "A group with this name already exists": [
         "Υπάρχει ήδη μια ομάδα με αυτό το όνομα"
       ],
-      "Address already associated to a user": [
-        "Η διεύθυνση έχει ήδη συσχετιστεί με ένα χρήστη"
-      ],
       "Address primary private key not found": [
         "Δεν βρέθηκε πρωτεύον ιδιωτικό κλειδί διεύθυνσης"
       ],
@@ -2771,9 +2609,6 @@
         "Συγχωνεύστε τουλάχιστον ${ calendarToFixCount } ημερολόγιο με ένα υπάρχον ημερολόγιο του Proton",
         "Συγχωνεύστε τουλάχιστον ${ calendarToFixCount } ημερολόγια με υπάρχοντα ημερολόγια του Proton"
       ],
-      "Missing key packet": [
-        ""
-      ],
       "Name does not match": [
         "Το όνομα δεν ταιριάζει"
       ],
@@ -2852,9 +2687,6 @@
       ],
       "Please upgrade to a business plan with more than 1 user to get multi-user support": [
         "Παρακαλώ αναβαθμίστε σε επιχειρηματικό πλάνο με περισσότερους από 1 χρήστες ώστε να λάβετε υποστήριξη πολλαπλών χρηστών"
-      ],
-      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
-        ""
       ],
       "Primary address key is not decrypted": [
         "Το κύριο κλειδί διεύθυνσης δεν αποκρυπτογραφείται"
@@ -3187,14 +3019,8 @@
       "Please ${ refresh } or check your connection.": [
         "Παρακαλούμε ${ refresh } ή ελέγξτε τη σύνδεση σας."
       ],
-      "Please ${ signIn } to update your email subscription preferences.": [
-        "Παρακαλούμε ${ signIn } για να ενημερώσετε τις προτιμήσεις συνδρομής μέσω ηλεκτρονικού ταχυδρομείου."
-      ],
       "There was a problem connecting to Proton.": [
         "Παρουσιάστηκε ένα πρόβλημα με τη σύνδεση στο Proton."
-      ],
-      "There was a problem unsubscribing you.": [
-        "Παρουσιάστηκε ένα πρόβλημα κατά την απεγγραφή σας."
       ],
       "Too many child sessions, please clear your cookies and sign back in.": [
         "Πάρα πολλές υποσυνεδρίες, παρακαλούμε καθαρίστε τα cookies σας και συνδεθείτε ξανά."
@@ -3216,14 +3042,6 @@
         "Δεν επιλέχθηκε εικόνα"
       ]
     },
-    "Error when exporting event from calendar": {
-      "Event @ ${ timeString }": [
-        ""
-      ],
-      "Event from ${ timeString }, ${ rruleString }": [
-        ""
-      ]
-    },
     "Event invitation error": {
       "Attached ICS file could not be decrypted": [
         "Αδυναμία αποκρυπτογράφησης συνημμένου αρχείου ICS"
@@ -3236,12 +3054,6 @@
       ],
       "Invalid response": [
         "Μη έγκυρη απάντηση"
-      ],
-      "The event could not be added to your calendar. No answer was sent": [
-        ""
-      ],
-      "The event could not be updated in your calendar. No answer was sent": [
-        ""
       ],
       "Unexpected error": [
         "Απροσδόκητο σφάλμα"
@@ -3263,9 +3075,6 @@
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
         "Η απάντησή σας στάλθηκε, αλλά το γεγονός δεν μπόρεσε να προστεθεί στο ημερολόγιό σας"
-      ],
-      "Your answer was sent, but the event could not be updated in your calendar": [
-        ""
       ]
     },
     "Event title": {
@@ -3274,51 +3083,17 @@
       ]
     },
     "Export calendar": {
-      "${ totalProcessed }/${ totalToProcess } event exported": [
-        "",
-        ""
-      ],
       "Calendar successfully exported. You can now save the ICS file.": [
         "Το ημερολόγιο εξήχθη με επιτυχία. Μπορείτε τώρα να αποθηκεύσετε το αρχείο ICS."
       ],
       "Decrypting events from your calendar: ${ totalProcessed }/${ totalToProcess }": [
         "Γίνεται αποκρυπτογράφηση εκδηλώσεων από το ημερολόγιό σας: ${ totalProcessed }/${ totalToProcess }"
       ],
-      "Due to a password reset, none of your events could be decrypted and exported.": [
-        ""
-      ],
-      "Due to a password reset, some of your events could not be decrypted and exported.": [
-        ""
-      ],
-      "Error decrypting event": [
-        ""
-      ],
-      "Learn how to restore encrypted events with old password": [
-        ""
-      ],
-      "Loading events": [
-        ""
-      ],
-      "None of the events could be exported.": [
-        ""
-      ],
-      "Password reset - event cannot be decrypted": [
-        ""
-      ],
-      "Password reset - multiple events cannot be decrypted": [
-        ""
-      ],
       "Please don't close the tab before the exporting process is finished.": [
         "Παρακαλούμε μην κλείσετε την καρτέλα πριν ολοκληρωθεί η διαδικασία εξαγωγής."
       ],
-      "Some of your events could not be exported.": [
-        ""
-      ],
       "The internet connection was interrupted, causing the export process to fail. Please try again.": [
         "Η σύνδεση στο διαδίκτυο διακόπηκε, προκαλώντας την αποτυχία της διαδικασίας εξαγωγής. Παρακαλούμε προσπαθήστε ξανά."
-      ],
-      "You can save an ICS file of the events that were successfully exported.": [
-        ""
       ]
     },
     "Feature": {
@@ -3347,9 +3122,6 @@
       ]
     },
     "file size format": {
-      "bytes": [
-        "bytes"
-      ],
       "GB": [
         "GB"
       ],
@@ -3358,20 +3130,6 @@
       ],
       "MB": [
         "MB"
-      ]
-    },
-    "file size format, long": {
-      "Bytes": [
-        "Bytes"
-      ],
-      "Gigabytes": [
-        "Gigabytes"
-      ],
-      "Kilobytes": [
-        "Kilobytes"
-      ],
-      "Megabytes": [
-        "Megabytes"
       ]
     },
     "Filter Actions": {
@@ -3559,15 +3317,6 @@
         "Τιμή / Δεδομένα / Σημεία προς"
       ]
     },
-    "Hint": {
-      "Found ${ items.length } suggestion, use keyboard to navigate.": [
-        "",
-        ""
-      ],
-      "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
-        ""
-      ]
-    },
     "Human verification method": {
       "CAPTCHA": [
         "CAPTCHA"
@@ -3686,9 +3435,6 @@
       "2-step verification is enabled in your external account.": [
         "Η επαλήθευση σε 2 βήματα είναι ενεργοποιημένη στον εξωτερικό λογαριασμό σας."
       ],
-      "2-step verification is enabled in your external email account.": [
-        ""
-      ],
       "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
         "Εάν ${ bold2StepsDisabled } (προεπιλεγμένες ρυθμίσεις Gmail), βεβαιωθείτε ότι:"
       ],
@@ -3749,15 +3495,6 @@
       "Your app password is correct. Do ${ boldNot } use your regular password.": [
         "Ο κωδικός πρόσβασής σας στην εφαρμογή είναι σωστός. Μη ${ boldNot } χρησιμοποιείτε τον σύνηθες κωδικό σας."
       ],
-      "Your email account requires an app password to export your data.": [
-        ""
-      ],
-      "Your email account requires one to export your data.": [
-        ""
-      ],
-      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        ""
-      ],
       "Your email address and password are correct.": [
         "Η διεύθυνση email και ο κωδικός σας είναι σωστά."
       ],
@@ -3790,9 +3527,6 @@
     "Import instructions": {
       "Click ${ boldManage } to expand the options menu.": [
         "Κάντε κλικ στο ${ boldManage } για ανάπτυξη του μενού επιλογών."
-      ],
-      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to Proton.": [
-        ""
       ],
       "Expand the dropdown menu by clicking on the 3 dots (...).": [
         "Ανοίξτε το αναδιπλούμενο μενού κάνοντας κλικ στις 3 τελείες (...)."
@@ -3827,26 +3561,8 @@
       "Select ${ boldExportCSV }.": [
         "Επιλέξτε ${ boldExportCSV }."
       ],
-      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
-        ""
-      ],
       "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
         "Για την εισαγωγή ενός ημερολογίου στο Proton, θα χρειαστείτε ${ knowledgeBaseLink }. Κατεβάστε το από το Yahoo σε 3 απλά βήματα:"
-      ],
-      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
-        ""
-      ],
-      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
-        ""
-      ],
-      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
-        ""
-      ],
-      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
-        ""
-      ],
-      "To import emails to Proton, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
-        ""
       ],
       "To import emails to Proton, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
         "Για να εισάγετε email στο Proton, χρειάζεστε ${ appPasswordLink } από το Yahoo. Αποκτήστε το ακολουθώντας τα παρακάτω βήματα:"
@@ -3928,9 +3644,6 @@
       ],
       "Select ${ boldExport } to export the calendar as an ICS file.": [
         "Για εξαγωγή του ημερολογίου ως αρχείου ICS, επιλέξτε ${ boldExport }."
-      ],
-      "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it.": [
-        ""
       ]
     },
     "Import key": {
@@ -4251,12 +3964,6 @@
       "and": [
         "και"
       ],
-      "Anyone with this link can see all the event details of this calendar such as title, location or participants.": [
-        ""
-      ],
-      "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
-        ""
-      ],
       "Anyone with this link won't be able to sync or get future updates for your calendar. If you want to give them access again, you will have to create a new link.": [
         "Όποιος έχει αυτόν τον σύνδεσμο, δεν θα μπορεί να συγχρονίσει ή να λάβει μελλοντικές ενημερώσεις για το ημερολόγιό σας. Αν θέλετε να τους ξαναδώσετε πρόσβαση, θα πρέπει να δημιουργήσετε νέο σύνδεσμο."
       ],
@@ -4356,9 +4063,6 @@
       "By leaving now, changes may not be saved": [
         "Φεύγοντας τώρα, οι αλλαγές ενδέχεται να μην αποθηκευτούν"
       ],
-      "By sharing the full event details of this calendar, you accept to grant Proton access to this calendar's encrypted information.": [
-        ""
-      ],
       "Center": [
         "Κέντρο"
       ],
@@ -4389,9 +4093,6 @@
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "Δημιουργήστε μια ετικέτα για τα εισαγόμενα μηνύματα, ένα χρονικό διάστημα για αυτή την εισαγωγή και τις ετικέτες που θέλετε να εισαγάγετε."
-      ],
-      "Create a link to your calendar and share it with anyone outside Proton. Only you can add or remove events.": [
-        ""
       ],
       "Create a new account and share the email address and password with the user.": [
         "Δημιουργήστε έναν νέο λογαριασμό και κοινοποιείστε στον χρήστη τη διεύθυνση και τον κωδικό."
@@ -4556,9 +4257,6 @@
       "Enter your recovery phone number and we will send you your username or email address.": [
         "Εισάγετε τον αριθμό τηλεφώνου ανάκτησης σας και θα σας στείλουμε το όνομα χρήστη ή τη διεύθυνση ηλεκτρονικού ταχυδρομείου σας."
       ],
-      "Event invitations and RSVPs will be sent in this language.": [
-        ""
-      ],
       "Expired": [
         "Ληγμένο"
       ],
@@ -4603,9 +4301,6 @@
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Εάν ένας άλλος διαχειριστής άλλαξε αυτόν τον κωδικό πρόσβασης, θα πρέπει να του ζητήσετε τον νέο κωδικό οργανισμού."
-      ],
-      "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
-        ""
       ],
       "If this domain is currently receiving emails, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Εάν αυτός ο τομέας λαμβάνει αυτή τη στιγμή email, επιλέξτε την καρτέλα ${ boldAddresses } και προσθέστε όλες τις ενεργές διευθύνσεις email πριν αλλάξετε την εγγραφή MX για να εξασφαλίσετε μια ομαλή μετάβαση."
@@ -4782,9 +4477,6 @@
       ],
       "Let your contacts know you care about their privacy.": [
         "Ενημερώστε τις επαφές σας ότι ενδιαφέρεστε για την ιδιωτικότητά τους."
-      ],
-      "Limited view: others see if you're busy. Full view: shows all event details, including name, location, or participants.": [
-        ""
       ],
       "Link copied to clipboard": [
         "Ο σύνδεσμος αντιγράφηκε στο πρόχειρο"
@@ -5089,9 +4781,6 @@
       ],
       "Select a service provider to start": [
         "Επιλογή παρόχου υπηρεσίας για ξεκίνημα"
-      ],
-      "Select Continue to ${ name } to open the app. This also creates a ${ name } account with your ${ MAIL_APP_NAME } address so you can sign in with one click in the future.": [
-        "Επιλέξτε Συνέχεια στο ${ name } για άνοιγμα της εφαρμογής. Αυτό θα δημιουργήσει και έναν λογαριασμό ${ name } με τη διεύθυνσή σας ${ MAIL_APP_NAME }, ώστε στο εξής να μπορείτε να εισέρχεστε με ένα κλικ."
       ],
       "Select what you want to move from Google.": [
         "Επιλέξτε τι θέλετε να εισάγετε από την Google."
@@ -5426,9 +5115,6 @@
       "Week": [
         "Εβδομάδα"
       ],
-      "Week and month views only apply to desktop.": [
-        ""
-      ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "Θα στείλουμε έναν κωδικό επαναφοράς στην ηλ. διεύθυνση που καθορίσατε για ανακτήσεις λογαριασμού."
       ],
@@ -5537,9 +5223,6 @@
       "You need to have a personal calendar to create a link.": [
         "Για να δημιουργήσετε έναν σύνδεσμο, πρέπει να έχετε προσωπικό ημερολόγιο."
       ],
-      "You need to have an active personal calendar to import your events from .ics.": [
-        ""
-      ],
       "You need to have an active personal calendar to import your events.": [
         "Πρέπει να έχετε ένα ενεργό προσωπικό ημερολόγιο για να εισαγάγετε τις εκδηλώσεις σας."
       ],
@@ -5551,9 +5234,6 @@
       ],
       "You should export a backup of this key in case you need to restore data it encrypted.": [
         "Θα πρέπει να εξάγετε αντίγραφο ασφαλείας αυτού του κλειδιού, για ενδεχόμενη ανάγκη σας ανάκτησης δεδομένων που κρυπτογράφησε."
-      ],
-      "You still need to reply to invitations for the host to see your response.": [
-        ""
       ],
       "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
         "Θα ${ loseAllData } στον ${ BRAND_NAME } λογαριασμό σας. Για να το επαναφέρετε, θα πρέπει να εισάγετε τον παλιό κωδικό πρόσβασης σας."
@@ -5661,9 +5341,6 @@
       ],
       "Key ${ fingerprint } has already been uploaded": [
         "Το κλειδί ${ fingerprint } έχει ήδη ανεβεί"
-      ],
-      "Track your referral link activities here": [
-        ""
       ]
     },
     "Info - folder colouring feature": {
@@ -6271,9 +5948,6 @@
       "Default email address": [
         "Προεπιλεγμένη ηλ. διεύθυνση"
       ],
-      "Default event duration": [
-        ""
-      ],
       "Default full day notifications": [
         "Προεπιλεγμένες ολοήμερες ειδοποιήσεις"
       ],
@@ -6742,9 +6416,6 @@
       "Upload 1 or more recovery files or encryption keys": [
         "Ανεβάστε 1 ή περισσότερα αρχεία ανάκτησης ή κλειδιά κρυπτογράφησης"
       ],
-      "URL": [
-        ""
-      ],
       "Use folder colors": [
         "Χρήση χρωμάτων φακέλου"
       ],
@@ -6802,12 +6473,6 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "Ναι, θέλω να διαγράψω οριστικά αυτόν τον λογαριασμό και όλα τα δεδομένα του."
       ],
-      "Your calendar URL": [
-        ""
-      ],
-      "Your calendar URL label": [
-        ""
-      ],
       "Your password (admin)": [
         "Ο κωδικός σας (διαχειριστής)"
       ],
@@ -6845,9 +6510,6 @@
       ],
       "Private": [
         "Ιδιωτικό"
-      ],
-      "VPN connections": [
-        ""
       ]
     },
     "Label for news": {
@@ -6987,9 +6649,6 @@
       "Learn more": [
         "Μάθετε περισσότερα"
       ],
-      "Need help?": [
-        ""
-      ],
       "Not activated": [
         "Μη ενεργοποιημένο"
       ],
@@ -7016,9 +6675,6 @@
       ],
       "Terms and conditions": [
         "Όροι και προϋποθέσεις"
-      ],
-      "Trouble signing in?": [
-        ""
       ],
       "Upgrade": [
         "Αναβάθμιση"
@@ -7105,12 +6761,6 @@
     "Message": {
       "Are you sure you want to disable two-factor authentication?": [
         "Θέλετε σίγουρα να απενεργοποιήσετε την ταυτοποίηση δύο παραγόντων;"
-      ],
-      "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
-        ""
-      ],
-      "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
-        ""
       ]
     },
     "Message display when a new app version is available": {
@@ -7305,9 +6955,6 @@
       ]
     },
     "Navigation": {
-      "Back": [
-        ""
-      ],
       "Back to Calendar": [
         "Πίσω στο Ημερολόγιο"
       ],
@@ -7332,9 +6979,6 @@
     "new_plans": {
       "Highest VPN speed": [
         "Ύψιστη ταχύτητα VPN"
-      ],
-      "Keep your inbox organized with folders": [
-        ""
       ],
       "Medium VPN speed": [
         "Μέτρια ταχύτητα VPN"
@@ -7364,9 +7008,6 @@
       ]
     },
     "new_plans: action": {
-      "Continue to review": [
-        ""
-      ],
       "Continue with free": [
         "Συνέχεια με δωρεάν"
       ],
@@ -7412,21 +7053,6 @@
       ]
     },
     "new_plans: feature": {
-      "${ DRIVE_APP_NAME } (web beta)": [
-        ""
-      ],
-      "${ n } custom email domain": [
-        "",
-        ""
-      ],
-      "${ n } email address": [
-        "",
-        ""
-      ],
-      "${ n } email address per user": [
-        "",
-        ""
-      ],
       "${ n } filter": [
         "${ n } φίλτρο",
         "${ n } φίλτρα"
@@ -7471,23 +7097,11 @@
       "1 free VPN connection in total": [
         "συνολικά 1 δωρεάν σύνδεση VPN"
       ],
-      "99.95% SLA": [
-        ""
-      ],
-      "Admin console": [
-        ""
-      ],
       "Advanced sharing security": [
         "Προχωρημένη διασφάλιση κοινοποίησης"
       ],
       "Auto-reply": [
         "Αυτόματη απάντηση"
-      ],
-      "Catch-all": [
-        ""
-      ],
-      "Centralized billing": [
-        ""
       ],
       "Contact groups": [
         "Ομάδες επαφών"
@@ -7495,23 +7109,8 @@
       "Contact groups management": [
         "Διαχείριση ομάδων επαφών"
       ],
-      "Custom email domains": [
-        ""
-      ],
       "DNS leak prevention": [
         "Αποτροπή διαρροής DNS"
-      ],
-      "Document editors (docs, sheets, slides)": [
-        ""
-      ],
-      "Easy Switch import assistant": [
-        ""
-      ],
-      "Email client support (via IMAP/SMTP)": [
-        ""
-      ],
-      "Enables HIPAA compliance": [
-        ""
       ],
       "Encrypted contact details": [
         "Κρυπτογραφημένα στοιχεία επαφής"
@@ -7525,9 +7124,6 @@
       "Free VPN on a single device": [
         "Δωρεάν VPN σε μία μόνο συσκευή"
       ],
-      "GDPR data processing agreement": [
-        ""
-      ],
       "High-speed VPN on ${ n } device": [
         "VPN υψηλής ταχύτητας σε ${ n } συσκευή",
         "VPN υψηλής ταχύτητας σε ${ n } συσκευές"
@@ -7535,29 +7131,14 @@
       "HTML signatures": [
         "Υπογραφές HTML"
       ],
-      "Kill switch/always-on VPN": [
-        ""
-      ],
       "Limited support": [
         "Περιορισμένη υποστήριξη"
       ],
       "Multiple admin roles": [
         "Πολλαπλοί ρόλοι διαχειριστή"
       ],
-      "NetShield malware and ad-blocker": [
-        ""
-      ],
-      "P2P/BitTorrent": [
-        ""
-      ],
-      "Password-protected Emails": [
-        ""
-      ],
       "Phone support (6+ users)": [
         "Τηλεφωνική υποστήριξη (6+ χρήστες)"
-      ],
-      "Priority email support": [
-        ""
       ],
       "Priority support": [
         "Υποστήριξη κατά προτεραιότητα"
@@ -7579,9 +7160,6 @@
       ],
       "Sign in as user": [
         "Είσοδος ως χρήστης"
-      ],
-      "Split tunneling (Android and Windows)": [
-        ""
       ],
       "Strict no-logs policy": [
         "Αυστηρή πολιτική μη καταγραφής"
@@ -7621,9 +7199,6 @@
       ],
       "User session management": [
         "Διαχείριση συνεδριών χρηστών"
-      ],
-      "Worldwide streaming services": [
-        ""
       ]
     },
     "new_plans: heading": {
@@ -7632,26 +7207,6 @@
       ],
       "Team management": [
         "Διαχείριση ομάδας"
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Κάντε την ιδιωτικότητα προεπιλογή σας, για αντίγραφα ασφαλείας, αποθήκευση, κοινοποίηση και ανάκτηση αρχείων."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        ""
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Για συνέχιση της χρήσης του ${ MAIL_APP_NAME } με προνομιακά χαρακτηριστικά, επιλέξτε τη συνδρομή και τον τρόπο πληρωμής σας."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        ""
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        ""
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Η δοκιμαστική σας περίοδος λήγει στις ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: info": {
@@ -7670,56 +7225,19 @@
       "* With 24-month subscription. Other subscription options available at checkout.": [
         "* Με διετή συνδρομή. Άλλες επιλογές συνδρομών, διαθέσιμες στο ταμείο."
       ],
-      "Applicable credits, proration, and coupons are applied in the next step": [
-        ""
-      ],
-      "Comprehensive privacy and security with all Proton services combined.": [
-        ""
-      ],
-      "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
-        ""
-      ],
-      "If you downgrade your account, you lose all ${ visionary } plan benefits and it won’t be available if you try to subscribe again.": [
-        ""
-      ],
-      "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
-        ""
-      ],
-      "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
-        ""
-      ],
-      "Popular": [
-        ""
-      ],
-      "Price for future renewal: includes all applicable non-expired coupons saved to your account": [
-        ""
-      ],
-      "Privacy and security suite for businesses, including all premium Proton services.": [
-        ""
-      ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Διασφαλισμένος αποθηκευτικός χώρος νέφους που επιτρέπει αποθήκευση, συγχρονισμό και κοινοποίηση αρχείων, εύκολα και διασφαλισμένα."
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Κάντε την ιδιωτικότητα προεπιλογή σας, για αντίγραφα ασφαλείας, αποθήκευση, κοινοποίηση και ανάκτηση αρχείων."
       ],
-      "Secure email and calendar for professionals and businesses.": [
-        ""
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Για συνέχιση της χρήσης του ${ MAIL_APP_NAME } με προνομιακά χαρακτηριστικά, επιλέξτε τη συνδρομή και τον τρόπο πληρωμής σας."
       ],
-      "Secure email with advanced features for your everyday communications.": [
-        ""
-      ],
-      "Set automatic replies to inform contacts you are out of the office or unable to respond.": [
-        ""
-      ],
-      "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
-        ""
-      ],
-      "The no-cost starter account designed to empower everyone with privacy by default.": [
-        ""
-      ],
-      "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
-        ""
-      ],
-      "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
-        ""
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Η δοκιμαστική σας περίοδος λήγει στις ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -7732,33 +7250,12 @@
         "/μήνα"
       ]
     },
-    "new_plans: Plan time remaining": {
-      "You still have ${ daysRemaining } day left on your ${ currentPlanName } account.": [
-        "",
-        ""
-      ]
-    },
     "new_plans: signup": {
-      "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }.": [
-        ""
-      ],
       "Payment details": [
         "Στοιχεία πληρωμής"
       ],
-      "Save your email address or phone number to use for verification if you need to reset your account.": [
-        ""
-      ],
       "Subscription": [
         "Συνδρομή"
-      ],
-      "terms and conditions": [
-        ""
-      ],
-      "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
-        ""
-      ],
-      "Your ${ planName } subscription is now active.": [
-        ""
       ],
       "Your selected plan: ${ planName }": [
         "Το επιλεγμένο σας πρόγραμμα: ${ planName }"
@@ -7788,53 +7285,17 @@
       "Review subscription and pay": [
         "Ανασκόπηση συνδρομής και πληρωμή"
       ],
-      "Start exploring the Proton universe": [
-        ""
-      ],
       "Switch plans?": [
         "Αλλαγή προγράμματος;"
-      ],
-      "Unlock premium features by upgrading": [
-        ""
       ]
     },
     "new_plans: tooltip": {
-      "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
-        ""
-      ],
-      "Addresses have full sending and receiving capability. A user can have multiple addresses assigned to them; however, a single address cannot be assigned to multiple users.": [
-        ""
-      ],
       "Advanced security VPN with global network": [
         "Προηγμένη διασφάλιση VPN με παγκόσμιο δίκτυο"
-      ],
-      "Allows you to access more than one network at the same time, e.g., stream a film from another country while still getting local search results": [
-        ""
-      ],
-      "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
-        ""
-      ],
-      "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
-        ""
-      ],
-      "Control access to your shared files by adding password protection and link expiration dates": [
-        ""
-      ],
-      "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscription": [
-        ""
       ],
       "Create up to ${ n } custom calendar.": [
         "Δημιουργία ${ n } προσαρμοσμένου ημερολογίου.",
         "Δημιουργία έως και ${ n } προσαρμοσμένων ημερολογίων."
-      ],
-      "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
-        ""
-      ],
-      "Easily share your calendars with your colleagues, family, and friends via a link": [
-        ""
-      ],
-      "Easily share your calendars with your family, friends, or colleagues via a link": [
-        ""
       ],
       "End-to-end encrypted calendar": [
         "Διατερματικά κρυπτογραφημένο ημερολόγιο"
@@ -7842,119 +7303,11 @@
       "End-to-end encrypted file storage": [
         "Διατερματικά κρυπτογραφημένη αποθήκευση αρχείων"
       ],
-      "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
-        ""
-      ],
-      "Force sign-out of user sessions when user credentials are believed to be compromised": [
-        ""
-      ],
-      "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
-        ""
-      ],
-      "Keeps you protected by blocking all network connections when you are accidentally disconnected from our VPN server": [
-        ""
-      ],
-      "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
-        ""
-      ],
-      "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
-        ""
-      ],
-      "On business days, receive support from the Proton Customer Support team within 24 hours of requests": [
-        ""
-      ],
-      "On top of that, add up to 5 calendars from colleagues, organizations, family, and friends.": [
-        ""
-      ],
-      "On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
-        ""
-      ],
-      "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections": [
-        ""
-      ],
-      "Option to view non-private user inboxes as the user would, including full message and contact details": [
-        ""
-      ],
-      "Organization management tool that lets admins add and remove users, allocate storage, configure domains, and perform other tasks": [
-        ""
-      ],
-      "Our robust infrastructure ensures you will be able to access your account when you need it": [
-        ""
-      ],
-      "Our servers’ hard disks are fully encrypted with multiple password layers so your data is protected even if our hardware is compromised": [
-        ""
-      ],
-      "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
-        ""
-      ],
-      "Phone support is available from the Proton Customer Success team during European business hours, for customers with 6 or more users": [
-        ""
-      ],
-      "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
-        ""
-      ],
-      "Protect every device connected to your WiFi network. It’s also useful if you have devices that do not support VPN settings directly.": [
-        ""
-      ],
       "Quickly set up out-of-office messages": [
         "Γρήγορος ορισμός μηνυμάτων εκτός γραφείου"
       ],
-      "Quickly transfer your emails, calendars or contacts from any provider": [
-        ""
-      ],
-      "Requires a code sent to a mobile phone to sign in. This ensures even if a password is compromised, the account stays secure.": [
-        ""
-      ],
-      "Reset user passwords and reset two-factor authentication on users": [
-        ""
-      ],
-      "Route your internet traffic through the Tor network with a single click": [
-        ""
-      ],
-      "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even Proton can't access them.": [
-        ""
-      ],
-      "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
-        ""
-      ],
-      "Set up filters to automatically reply to, sort, and/or label your emails": [
-        ""
-      ],
-      "Share your files or folders with anyone by using secure, shareable links": [
-        ""
-      ],
-      "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
-        ""
-      ],
-      "Start with ${ freeStorageSize } and unlock more storage along the way. Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        ""
-      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
         "Ο αποθηκευτικός χώρος μοιράζεται μεταξύ των ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } και ${ DRIVE_APP_NAME }"
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
-        ""
-      ],
-      "Support for file-sharing protocols like BitTorrent": [
-        ""
-      ],
-      "Use your own custom email domain addresses, e.g., you@yourname.com": [
-        ""
-      ],
-      "We keep no session usage logs of what you do online, and we do not log metadata that can compromise your privacy": [
-        ""
-      ],
-      "We’re committed to helping customers subject to HIPAA/HITECH regulations safeguard protected health information (PHI). Signed BAAs are available for all ${ BRAND_NAME } for Business customers.": [
-        ""
-      ],
-      "When connected to our VPN, your DNS queries through our encrypted VPN tunnel, adding to your online privacy and security": [
-        ""
-      ],
-      "When sending to other ${ MAIL_APP_NAME } users, encryption is automatic. Sending to non-${ MAIL_APP_NAME } users requires setting a password prior to sending.": [
-        ""
-      ],
-      "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
-        ""
       ]
     },
     "new_plans: upgrade": {
@@ -7969,26 +7322,11 @@
       "${ storageSize } total storage": [
         "${ storageSize } συνολικός αποθηκευτικός χώρος"
       ],
-      "10 email addresses/aliases": [
-        ""
-      ],
       "Access advanced VPN features": [
         "Πρόσβαση σε προηγμένα χαρακτηριστικά VPN"
       ],
-      "Add more personalization with 15 email addresses and support for 3 custom email domains": [
-        ""
-      ],
-      "Boost your storage space to ${ bundleStorage } total": [
-        ""
-      ],
-      "Boost your storage space to ${ businessStorage } per user": [
-        ""
-      ],
       "Boost your storage space to ${ driveStorage } total": [
         "Μεγαλώστε τον αποθηκευτικό σας χώρο σε συνολικά ${ driveStorage }"
-      ],
-      "Cover more ground with support for 10 custom email domains": [
-        ""
       ],
       "Create up to ${ numberOfPersonalCalendars } personal calendar": [
         "Δημιουργία ${ numberOfPersonalCalendars } προσωπικού ημερολογίου",
@@ -7997,14 +7335,8 @@
       "Everything in ${ vpnPlanName }": [
         "Όλα στο ${ vpnPlanName }"
       ],
-      "Get 5 additional email addresses per user": [
-        ""
-      ],
       "Priority support": [
         "Υποστήριξη κατά προτεραιότητα"
-      ],
-      "Support for 1 custom email domain": [
-        ""
       ],
       "Unlimited folders, labels, and filters": [
         "Απεριόριστοι φάκελοι, ετικέτες και φίλτρα"
@@ -8041,9 +7373,6 @@
       ]
     },
     "Notification when": {
-      "at time of event": [
-        ""
-      ],
       "day before": [
         "ημέρα πριν",
         "ημέρες πριν"
@@ -8337,9 +7666,6 @@
       "Bitcoin": [
         "Bitcoin"
       ],
-      "Credit/debit card": [
-        ""
-      ],
       "New credit/debit card": [
         "Νέα πιστωτική/χρεωστική κάρτα"
       ],
@@ -8524,15 +7850,6 @@
       "Email address not yet verified.": [
         "Η ηλ. διεύθυνση δεν έχει επαληθευθεί ακόμα."
       ],
-      "Please ${ signIn } to resend a recovery email verification request.": [
-        "Παρακαλούμε ${ signIn } για επαναποστολή αιτήματος επαλήθευσης της ηλ. διεύθυνσης ανάκτησης."
-      ],
-      "Send verification email": [
-        "Αποστολή μηνύματος επαλήθευσης"
-      ],
-      "There was a problem verifying your email address.": [
-        "Προέκυψε πρόβλημα κατά την επαλήθευση της ηλ. διεύθυνσής σας."
-      ],
       "Verification email sent to ${ email.Value }": [
         "Στάλθηκε μήνυμα επαλήθευσης στο ${ email.Value }"
       ],
@@ -8605,9 +7922,6 @@
       ]
     },
     "Settings description": {
-      "Make the move to privacy. Effortlessly and securely.": [
-        ""
-      ],
       "You can apply multiple labels to a single message, but messages can usually only be in a single folder. Drag and drop to rearrange the order of your folders and labels.": [
         "Μπορείτε να εφαρμόσετε πολλαπλές ετικέτες σε ένα μήνυμα, αλλά τα μηνύματα μπορούν συνήθως να βρίσκονται μόνο σε έναν φάκελο. Σύρετε και αφήστε για να αναδιατάξετε τη σειρά των φακέλων και των ετικετών σας."
       ]
@@ -8658,9 +7972,6 @@
       ]
     },
     "Signup label": {
-      "Display name": [
-        ""
-      ],
       "Email": [
         "Email"
       ],
@@ -8699,23 +8010,11 @@
       ]
     },
     "Spotlight": {
-      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        ""
-      ],
-      "Get up to 18 months of ${ planName } for free": [
-        ""
-      ],
-      "Invite friends and earn rewards!": [
-        ""
-      ],
       "No more missed appointments": [
         "Όχι άλλα χαμένα ραντεβού"
       ],
       "Try ${ DRIVE_APP_NAME }": [
         "Δοκιμή ${ DRIVE_APP_NAME }"
-      ],
-      "With email notifications, you decide which events to be notified about and when.": [
-        ""
       ]
     },
     "State": {
@@ -8748,23 +8047,12 @@
         "Ο τρέχων χώρος αποθήκευσης:"
       ]
     },
-    "Subscribe to calendar modal": {
-      "Calendar URL": [
-        ""
-      ],
-      "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Subscribed calendars.\n${ kbLink }": [
-        ""
-      ]
-    },
     "Subscribe to calendar modal description": {
       "Learn how to get a private calendar link.": [
         "Μάθετε πώς να αποκτήσετε έναν σύνδεσμο ιδιωτικού ημερολογίου."
       ]
     },
     "Subscribed calendar extension warning": {
-      "By using this link, Google will make the calendar you are subscribing to public": [
-        ""
-      ],
       "This link might be wrong": [
         "Αυτός ο σύνδεσμος ίσως είναι λανθασμένος"
       ]
@@ -8784,75 +8072,9 @@
         "${ _n } ημερολόγιο ανά χρήστη",
         "${ _n } ημερολόγια ανά χρήστη"
       ],
-      "${ maxVpn } high-speed VPN connection": [
-        "",
-        ""
-      ],
       "${ n } calendar": [
         "${ n } ημερολόγιο",
         "${ n } ημερολόγια"
-      ],
-      "${ n } high-speed VPN connection": [
-        "",
-        ""
-      ],
-      "${ n } high-speed VPN connection per user": [
-        "",
-        ""
-      ],
-      "${ n } VPN connection": [
-        "",
-        ""
-      ],
-      "${ n } VPN connection per user": [
-        "",
-        ""
-      ],
-      "${ UsedAddresses } address": [
-        "",
-        ""
-      ],
-      "${ UsedAddresses } of ${ MaxAddresses } email address": [
-        "",
-        ""
-      ],
-      "${ UsedCalendars } calendar": [
-        "",
-        ""
-      ],
-      "${ UsedDomains } of ${ MaxDomains } custom domain": [
-        "",
-        ""
-      ],
-      "${ UsedMembers } of ${ MaxMembers } user": [
-        "",
-        ""
-      ],
-      "1 email address": [
-        ""
-      ],
-      "1 VPN connection": [
-        ""
-      ],
-      "Access to streaming services globally": [
-        ""
-      ],
-      "Built-in ad blocker (NetShield)": [
-        ""
-      ],
-      "High-speed VPN on ${ maxVpn } device": [
-        "",
-        ""
-      ]
-    },
-    "Subscription price": {
-      "For": [
-        ""
-      ]
-    },
-    "Subscription saving": {
-      "Save": [
-        ""
       ]
     },
     "Subtitle for trial plan": {
@@ -9056,38 +8278,9 @@
         "Η Κατάσταση ενημερώθηκε"
       ]
     },
-    "Suffix": {
-      "/month": [
-        ""
-      ],
-      "/user per month": [
-        ""
-      ]
-    },
-    "Suffix for price": {
-      "/month": [
-        ""
-      ],
-      "per month": [
-        ""
-      ]
-    },
-    "Summary of errors during export calendar": {
-      "Details about events that couldn't be exported": [
-        ""
-      ]
-    },
     "Tab in domain modal": {
       "Addresses": [
         "Διευθύνσεις"
-      ]
-    },
-    "Tab subscription modal": {
-      "For businesses": [
-        ""
-      ],
-      "For individuals": [
-        ""
       ]
     },
     "TableHeader": {
@@ -9200,9 +8393,6 @@
       ],
       "Add address": [
         "Προσθήκη διεύθυνσης"
-      ],
-      "Add another notification to remind you of this event": [
-        ""
       ],
       "Add contact group name": [
         "Προσθήκη ονόματος ομάδας επαφών"
@@ -10169,15 +9359,6 @@
         "Αναβαθμίστε σε ${ planName } για να συνδέετε στο VPN έως και ${ n } συσκευές ταυτόχρονα"
       ]
     },
-    "Upgrade notice": {
-      "Upgrade to a paid plan to create up to ${ MAX_CALENDARS_PER_USER } calendar, allowing you to make calendars for work, to share with friends, and just for yourself.": [
-        "",
-        ""
-      ],
-      "Upgrade to a paid plan to share your personal calendar via link with anyone.": [
-        ""
-      ]
-    },
     "User role": {
       "Admin": [
         "Διαχειριστής"
@@ -10276,14 +9457,8 @@
       "If you cancel this import, you won't be able to resume it. Proton saved all progress in your account. Cancel anyway?": [
         "Εάν ακυρώσετε αυτήν την εισαγωγή, δεν θα μπορέσετε να τη συνεχίσετε. Το Proton αποθήκευσε όλη την πρόοδο στον λογαριασμό σας. Ακύρωση οπωσδήποτε;"
       ],
-      "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
-        ""
-      ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Λάβετε υπόψη ότι επιλέγοντας αυτόν τον τρόπο πληρωμής, ο λογαριασμός σας δεν μπορεί να αναβαθμιστεί αμέσως. Θα ενημερώσουμε το λογαριασμό σας μόλις γίνει η εκκαθάριση της πληρωμής."
-      ],
-      "Please provide at least one recipient": [
-        ""
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
         "Το Proton θα συγχωνεύσει όλους τους φακέλους με το ίδιο όνομα. Για να αποφευχθεί αυτό, αλλάξτε τα ονόματα πριν την εισαγωγή."
@@ -10317,9 +9492,6 @@
       ],
       "You will not see this import record in the list anymore.": [
         "Δεν θα βλέπετε πλέον αυτήν την καρτέλα εισαγωγής στη λίστα."
-      ],
-      "Your free trial ends on ${ textDate }. ${ action }": [
-        ""
       ],
       "Your recovery file is outdated. It can't recover new data if you reset your account again.": [
         "Το αρχείο ανάκτησης είναι ξεπερασμένο; Δεν μπορεί να ανακτήσει νέα δεδομένα αν θέλετε να επαναφέρετε ξανά τον λογαριασμό σας."

@@ -41,9 +41,6 @@
       "Add new group": [
         "Προσθήκη νέας ομάδας"
       ],
-      "Add participant": [
-        ""
-      ],
       "Add phone number": [
         "Προσθήκη αριθμού τηλεφώνου"
       ],
@@ -309,9 +306,6 @@
       ],
       "Encryption": [
         "Κρυπτογράφηση"
-      ],
-      "exclude message content": [
-        ""
       ],
       "Expand composer": [
         "Ανάπτυξη συντάκτη"
@@ -686,12 +680,6 @@
       "Recover data": [
         "Ανάκτηση δεδομένων"
       ],
-      "Refer a friend": [
-        ""
-      ],
-      "Refine it": [
-        ""
-      ],
       "refresh the page": [
         "ανανέωσε τη σελίδα"
       ],
@@ -984,9 +972,6 @@
       "View message": [
         "Προβολή μηνύματος"
       ],
-      "View message details": [
-        ""
-      ],
       "View recipients": [
         "Προβολή παραληπτών"
       ],
@@ -1029,17 +1014,6 @@
       ],
       "You don't have any groups.": [
         "Δεν έχετε καμία ομάδα."
-      ]
-    },
-    "Add participant to calendar event": {
-      "Failed to add participant": [
-        ""
-      ],
-      "Invitation sent and participant added": [
-        ""
-      ],
-      "Participant added": [
-        ""
       ]
     },
     "Alert": {
@@ -1131,16 +1105,8 @@
       ]
     },
     "Beta access description": {
-      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        ""
-      ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Εάν αντιμετωπίσετε προβλήματα, μπορείτε πάντα να απενεργοποιήσετε την Πρόσβαση Beta."
-      ]
-    },
-    "blackfriday Action": {
-      "Get the offer": [
-        ""
       ]
     },
     "blackfriday Info": {
@@ -1158,14 +1124,8 @@
       ]
     },
     "blackfriday Title": {
-      "Best deal": [
-        ""
-      ],
       "Most popular": [
         "Τα πιο δημοφιλή"
-      ],
-      "Save more when combining Mail and VPN": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer Action": {
@@ -1177,14 +1137,8 @@
       ]
     },
     "blackfriday: VPNspecialoffer Info": {
-      "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
-        ""
-      ],
       "Save ${ percentage }%": [
         "- ${ percentage }%"
-      ],
-      "Special offer Terms and Conditions": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer info": {
@@ -1198,15 +1152,6 @@
       ]
     },
     "blackfriday: VPNspecialoffer Title": {
-      "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
-        ""
-      ],
-      "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
-        ""
-      ],
-      "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
-        ""
-      ],
       "1 month": [
         "1 μήνας"
       ],
@@ -1215,18 +1160,6 @@
       ],
       "24 months": [
         "24 μήνες"
-      ],
-      "Billed at ${ amount } for the first 2 years.${ supNotice }": [
-        ""
-      ],
-      "Billed at ${ amount } for the first month.${ supNotice }": [
-        ""
-      ],
-      "Billed at ${ amount } for the first year.${ supNotice }": [
-        ""
-      ],
-      "Get the special year-end offer on our Premium VPN PLUS plan": [
-        ""
       ]
     },
     "Bug category": {
@@ -1300,16 +1233,6 @@
         "Πρόβλημα πρόσβασης ιστοσελίδας"
       ]
     },
-    "Button": {
-      "Continue using ${ MAIL_APP_NAME }.": [
-        ""
-      ]
-    },
-    "Calendar attachment tooltip": {
-      "Has a calendar event": [
-        ""
-      ]
-    },
     "Calendar invite buttons label": {
       "Attending?": [
         "Συμμετέχετε;"
@@ -1318,18 +1241,6 @@
     "Calendar invite info": {
       " This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar.": [
         " Αυτή η νέα πρόταση χρόνου δεν ταιριάζει με τα στοιχεία πρόσκλησής σας. Παρακαλώ επιβεβαιώστε τα στοιχεία πρόσκλησης στο ημερολόγιό σας."
-      ],
-      "${ participantName } accepted an invitation and proposed a new time for one occurrence of this event.": [
-        ""
-      ],
-      "${ participantName } accepted an invitation and proposed a new time for this event.": [
-        ""
-      ],
-      "${ participantName } accepted an invitation to one occurrence of the event.": [
-        ""
-      ],
-      "${ participantName } accepted an invitation to this event.": [
-        ""
       ],
       "${ participantName } accepted your invitation and proposed a new time for one occurrence of this event.": [
         "Ο/Η ${ participantName } αποδέχθηκε την πρόσκλησή σας και πρότεινε μια νέα ώρα για μία διοργάνωση αυτής της εκδήλωσης."
@@ -1355,18 +1266,6 @@
       "${ participantName } asked for the latest updates to an event which doesn't match your invitation details. Please verify the invitation details in your calendar.": [
         "Ο/Η ${ participantName } ζήτησε την τελευταία ενημέρωση για μια εκδήλωση που δεν ταιριάζει με τα στοιχεία της πρόσκλησής σας. Παρακαλούμε επιβεβαιώστε τα στοιχεία της στο ημερολόγιό σας."
       ],
-      "${ participantName } declined an invitation and proposed a new time for one occurrence of this event.": [
-        ""
-      ],
-      "${ participantName } declined an invitation and proposed a new time for this event.": [
-        ""
-      ],
-      "${ participantName } declined an invitation to one occurrence of the event.": [
-        ""
-      ],
-      "${ participantName } declined an invitation to this event.": [
-        ""
-      ],
       "${ participantName } declined your invitation and proposed a new time for one occurrence of this event.": [
         "Ο/Η ${ participantName } αρνήθηκε την πρόσκλησή σας και πρότεινε μια νέα ώρα για μία διοργάνωση αυτής της εκδήλωσης."
       ],
@@ -1379,35 +1278,11 @@
       "${ participantName } declined your invitation.": [
         "Ο/Η ${ participantName } αρνήθηκε την πρόσκλησή σας."
       ],
-      "${ participantName } had accepted an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
-        ""
-      ],
-      "${ participantName } had accepted an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
-        ""
-      ],
-      "${ participantName } had accepted an invitation to one occurrence of the event.": [
-        ""
-      ],
-      "${ participantName } had accepted an invitation to this event.": [
-        ""
-      ],
       "${ participantName } had accepted your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "Ο/Η ${ participantName } είχε αποδεχθεί την πρόσκλησή σας και πρότεινε μια νέα ώρα για μία διοργάνωση αυτής της εκδήλωσης. Η ημ/νία της απάντησης και της πρότασης έχει παρέλθει."
       ],
       "${ participantName } had accepted your invitation and proposed a new time for this event. Answer and proposal are out of date.": [
         "Ο/Η ${ participantName } είχε αποδεχθεί την πρόσκλησή σας και πρότεινε μια νέα ώρα για αυτήν την εκδήλωση. Η ημ/νία της απάντησης και της πρότασης έχει παρέλθει."
-      ],
-      "${ participantName } had declined an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
-        ""
-      ],
-      "${ participantName } had declined an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
-        ""
-      ],
-      "${ participantName } had declined an invitation to one occurrence of the event.": [
-        ""
-      ],
-      "${ participantName } had declined an invitation to this event.": [
-        ""
       ],
       "${ participantName } had declined your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "Ο/Η ${ participantName } είχε αρνηθεί την πρόσκλησή σας και πρότεινε μια νέα ώρα για μία διοργάνωση αυτής της εκδήλωσης. Η ημ/νία της απάντησης και της πρότασης έχει παρέλθει."
@@ -1451,44 +1326,17 @@
       "${ participantName } had proposed a new time for this event. This proposal is out of date. You have no calendars.": [
         "Ο/Η ${ participantName } είχε προτείνει μια νέα ώρα για αυτήν την εκδήλωση. Η ημ/νία αυτής της πρότασης έχει παρέλθει. Δεν έχετε ημερολόγια."
       ],
-      "${ participantName } had tentatively accepted an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
-        ""
-      ],
-      "${ participantName } had tentatively accepted an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
-        ""
-      ],
-      "${ participantName } had tentatively accepted an invitation to one occurrence of the event.": [
-        ""
-      ],
-      "${ participantName } had tentatively accepted an invitation to this event.": [
-        ""
-      ],
       "${ participantName } had tentatively accepted your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "Ο/Η ${ participantName } είχε αποδεχθεί με επιφύλαξη την πρόσκλησή σας και πρότεινε μια νέα ώρα για μία διοργάνωση αυτής της εκδήλωσης. Η ημ/νία της απάντησης και της πρότασης έχει παρέλθει."
       ],
       "${ participantName } had tentatively accepted your invitation and proposed a new time for this event. Answer and proposal are out of date.": [
         "Ο/Η ${ participantName } είχε αποδεχθεί με επιφύλαξη την πρόσκλησή σας και πρότεινε μια νέα ώρα για αυτήν την εκδήλωση. Η ημ/νία της απάντησης και της πρότασης έχει παρέλθει."
       ],
-      "${ participantName } is not in the participants list.": [
-        ""
-      ],
       "${ participantName } proposed a new time for one occurrence of this event.": [
         "Ο/Η ${ participantName } πρότεινε μια νέα ώρα για μία διοργάνωση αυτής της εκδήλωσης."
       ],
       "${ participantName } proposed a new time for this event.": [
         "Ο/Η ${ participantName } πρότεινε μια νέα ώρα για αυτήν την εκδήλωση."
-      ],
-      "${ participantName } tentatively accepted an invitation and proposed a new time for one occurrence of this event.": [
-        ""
-      ],
-      "${ participantName } tentatively accepted an invitation and proposed a new time for this event.": [
-        ""
-      ],
-      "${ participantName } tentatively accepted an invitation to one occurrence of the event.": [
-        ""
-      ],
-      "${ participantName } tentatively accepted an invitation to this event.": [
-        ""
       ],
       "${ participantName } tentatively accepted your invitation and proposed a new time for one occurrence of this event.": [
         "Ο/Η ${ participantName } αποδέχθηκε με επιφύλαξη την πρόσκλησή σας και πρότεινε μια νέα ώρα για μία διοργάνωση αυτής της εκδήλωσης."
@@ -1591,14 +1439,6 @@
         "Μη υποστηριζόμενη μορφή ημερολογίου"
       ]
     },
-    "Calendar widget banner": {
-      "Event already ended": [
-        ""
-      ],
-      "Event in progress": [
-        ""
-      ]
-    },
     "Collapsible tooltip": {
       "Close": [
         "Κλείσιμο"
@@ -1629,17 +1469,11 @@
       "cerise": [
         "κεράσι"
       ],
-      "cinnabar": [
-        ""
-      ],
       "cobalt": [
         "κοβάλτιο"
       ],
       "copper": [
         "χαλκός"
-      ],
-      "cyan-blue azure": [
-        ""
       ],
       "dandelion": [
         "ραδίκι"
@@ -1650,26 +1484,11 @@
       "dark midnight blue": [
         "μπλε μεσονυκτίου"
       ],
-      "dim gray": [
-        ""
-      ],
-      "enzian": [
-        ""
-      ],
       "fern": [
         "φτέρη"
       ],
-      "field drab": [
-        ""
-      ],
       "forest": [
         "δάσος"
-      ],
-      "gainsboro": [
-        ""
-      ],
-      "japanese laurel": [
-        ""
       ],
       "kiwi": [
         "ακτινίδιο"
@@ -1677,20 +1496,11 @@
       "lemon yellow": [
         "λεμονί"
       ],
-      "light carmine pink": [
-        ""
-      ],
-      "light moss green": [
-        ""
-      ],
       "light red": [
         "ανοιχτό κόκκινο"
       ],
       "maize": [
         "καλαμπόκι"
-      ],
-      "mughal green": [
-        ""
       ],
       "ocean": [
         "ωκεανός"
@@ -1709,21 +1519,6 @@
       ],
       "pale cerulean": [
         "χλωμός ουρανός"
-      ],
-      "pastel gray": [
-        ""
-      ],
-      "persian plum": [
-        ""
-      ],
-      "persian red": [
-        ""
-      ],
-      "philippine gray": [
-        ""
-      ],
-      "philippine silver": [
-        ""
       ],
       "pickle": [
         "τουρσί"
@@ -1749,14 +1544,8 @@
       "reef": [
         "ύφαλος"
       ],
-      "ruddy pink": [
-        ""
-      ],
       "sahara": [
         "Σαχάρα"
-      ],
-      "satin sheen gold": [
-        ""
       ],
       "slateblue": [
         "μπλε ροζέ"
@@ -2018,9 +1807,6 @@
       "Bolivia": [
         "Βολιβία"
       ],
-      "Bonaire, Sint Eustatius and Saba": [
-        ""
-      ],
       "Bosnia and Herzegovina": [
         "Βοσνία Ερζεγοβίνη"
       ],
@@ -2032,9 +1818,6 @@
       ],
       "Brazil": [
         "Βραζιλία"
-      ],
-      "British Indian Ocean Territory": [
-        ""
       ],
       "Brunei Darussalam": [
         "Μπρουνέι"
@@ -2092,9 +1875,6 @@
       ],
       "Congo": [
         "Κογκό"
-      ],
-      "Congo, Democratic Republic of the": [
-        ""
       ],
       "Cook Islands": [
         "Νήσοι Κουκ"
@@ -2159,9 +1939,6 @@
       "Faroe Islands": [
         "Φερόες"
       ],
-      "Federated States of Micronesia": [
-        ""
-      ],
       "Fiji": [
         "Φίτζι"
       ],
@@ -2176,9 +1953,6 @@
       ],
       "French Polynesia": [
         "Γαλλική Πολυνησία"
-      ],
-      "French Southern Territories": [
-        ""
       ],
       "Gabon": [
         "Γκαμπόν"
@@ -2216,9 +1990,6 @@
       "Guatemala": [
         "Γουατεμάλα"
       ],
-      "Guernsey": [
-        ""
-      ],
       "Guinea": [
         "Γουινέα"
       ],
@@ -2230,9 +2001,6 @@
       ],
       "Haiti": [
         "Αϊτή"
-      ],
-      "Heard Island and McDonald Islands": [
-        ""
       ],
       "Holy See (Vatican City State)": [
         "Βατικανό"
@@ -2254,9 +2022,6 @@
       ],
       "Indonesia": [
         "Ινδονησία"
-      ],
-      "International": [
-        ""
       ],
       "Iran": [
         "Ιράν"
@@ -2281,9 +2046,6 @@
       ],
       "Japan": [
         "Ιαπωνία"
-      ],
-      "Jersey": [
-        ""
       ],
       "Jordan": [
         "Ιορδανία"
@@ -2558,9 +2320,6 @@
       "South Africa": [
         "Νότια Αφρική"
       ],
-      "South Georgia and the South Sandwich Islands": [
-        ""
-      ],
       "South Korea": [
         "Νότια Κορέα"
       ],
@@ -2657,9 +2416,6 @@
       "United States": [
         "Ηνωμένες Πολιτείες"
       ],
-      "United States Minor Outlying Islands": [
-        ""
-      ],
       "Uruguay": [
         "Ουρουγουάη"
       ],
@@ -2680,9 +2436,6 @@
       ],
       "Virgin Islands, U.S.": [
         "Αμερικανικές Παρθένες Νήσοι"
-      ],
-      "Wallis and Futuna": [
-        ""
       ],
       "Western Sahara": [
         "Δυτική Σαχάρα"
@@ -3088,9 +2841,6 @@
       "Message processing error.": [
         "Σφάλμα επεξεργασίας μηνύματος."
       ],
-      "Missing key packet": [
-        ""
-      ],
       "Missing signature": [
         "Λείπει η υπογραφή"
       ],
@@ -3296,11 +3046,6 @@
         "Η αναζήτησή σας ταίριαξε με υπερβολικό αριθμό αποτελεσμάτων. Παρακαλούμε περιορίστε την αναζήτησή σας και δοκιμάστε ξανά."
       ]
     },
-    "Error adding participants to a calendar event": {
-      "At most 100 participants are allowed per invitation": [
-        ""
-      ]
-    },
     "Error display when performing invalid move on message": {
       "Drafts cannot be moved to Inbox": [
         "Αδυναμία μετακίνησης προχείρων στα Εισερχόμενα"
@@ -3478,11 +3223,6 @@
         "Απαιτείται βαθμολογία"
       ]
     },
-    "Error sending calendar invitation": {
-      "Cannot send invitation to ${ email }. ${ errorMessage }": [
-        ""
-      ]
-    },
     "Event invitation error": {
       "Attached ICS file could not be decrypted": [
         "Αδυναμία αποκρυπτογράφησης συνημμένου αρχείου ICS"
@@ -3495,12 +3235,6 @@
       ],
       "Invalid response": [
         "Μη έγκυρη απάντηση"
-      ],
-      "The event could not be added to your calendar. No answer was sent": [
-        ""
-      ],
-      "The event could not be updated in your calendar. No answer was sent": [
-        ""
       ],
       "Unexpected error": [
         "Απροσδόκητο σφάλμα"
@@ -3522,9 +3256,6 @@
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
         "Η απάντησή σας στάλθηκε, αλλά το γεγονός δεν μπόρεσε να προστεθεί στο ημερολόγιό σας"
-      ],
-      "Your answer was sent, but the event could not be updated in your calendar": [
-        ""
       ]
     },
     "Event title": {
@@ -3538,9 +3269,6 @@
       ]
     },
     "file size format": {
-      "bytes": [
-        "bytes"
-      ],
       "GB": [
         "GB"
       ],
@@ -3549,20 +3277,6 @@
       ],
       "MB": [
         "MB"
-      ]
-    },
-    "file size format, long": {
-      "Bytes": [
-        "Bytes"
-      ],
-      "Gigabytes": [
-        "Gigabytes"
-      ],
-      "Kilobytes": [
-        "Kilobytes"
-      ],
-      "Megabytes": [
-        "Megabytes"
       ]
     },
     "Filter Actions": {
@@ -3880,9 +3594,6 @@
       ]
     },
     "Info": {
-      "${ activateLink } or ${ learnMoreLink }.": [
-        ""
-      ],
       "${ addressCount } email address": [
         "${ addressCount } διεύθυνση ηλεκτρονικού ταχυδρομείου",
         "${ addressCount } διευθύνσεις ηλεκτρονικού ταχυδρομείου"
@@ -3902,16 +3613,9 @@
         "${ calendarsToBeMergedCount } συγχωνευμένο ημερολόγιο",
         "${ calendarsToBeMergedCount } συγχωνευμένα ημερολόγια"
       ],
-      "${ contactCount } contact contains multiple email addresses.": [
-        "",
-        ""
-      ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } Μέλος",
         "${ contactEmailsLength } Μέλη"
-      ],
-      "${ contactName } contains multiple email addresses.": [
-        ""
       ],
       "${ contactsCount } contact found": [
         "${ contactsCount } επαφή βρέθηκε",
@@ -3947,14 +3651,6 @@
       "${ numContacts } contact": [
         "${ numContacts } επαφή",
         "${ numContacts } επαφές"
-      ],
-      "${ occurrencesInBody } occurrence found": [
-        "βρέθηκε ${ occurrencesInBody } φορά",
-        "βρέθηκε ${ occurrencesInBody } φορές"
-      ],
-      "${ occurrencesInBody } occurrence found in the mail content": [
-        "βρέθηκε ${ occurrencesInBody } φορά στο σώμα του μηνύματος",
-        "βρέθηκε ${ occurrencesInBody } φορές στο σώμα του μηνύματος"
       ],
       "${ pureAttachmentsCount } file attached": [
         "${ pureAttachmentsCount } συνημμένο αρχείο",
@@ -4019,9 +3715,6 @@
       ],
       "(No Recipient)": [
         "(Κανένας παραλήπτης)"
-      ],
-      "10 email addresses": [
-        ""
       ],
       "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
         "Μια φράση ανάκτησης είναι ένας από τους ασφαλέστερους τρόπους για να προστατεύσετε την πρόσβαση στον λογαριασμό σας. Μπορείτε να τη χρησιμοποιήσετε για να αποκτήσετε πρόσβαση στο λογαριασμό σας και να ανακτήσετε τα κρυπτογραφημένα δεδομένα σας εάν ξεχάσετε ποτέ τον κωδικό πρόσβασής σας."
@@ -4295,18 +3988,6 @@
       "Expiration time": [
         "Χρόνος λήξης"
       ],
-      "Expires": [
-        ""
-      ],
-      "Expires in ${ formattedDelay }": [
-        ""
-      ],
-      "Expires in ${ formattedDelayShort }": [
-        ""
-      ],
-      "Expires in less than ${ formattedDelayShort }": [
-        ""
-      ],
       "Expires soon": [
         "Λήγει σύντομα"
       ],
@@ -4431,9 +4112,6 @@
       "Learn more": [
         "Μάθετε περισσότερα"
       ],
-      "learn more": [
-        ""
-      ],
       "Left to Right": [
         "Αριστερά προς τα δεξιά"
       ],
@@ -4470,9 +4148,6 @@
       "Merged": [
         "Συγχωνευμένα"
       ],
-      "Message expiration works out-of-the-box when sending emails to other ${ MAIL_APP_NAME } users. To send expiring emails to non-${ BRAND_NAME } users, please cancel and add password protection to your email.": [
-        ""
-      ],
       "Message headers": [
         "Headers μηνύματος"
       ],
@@ -4481,15 +4156,6 @@
       ],
       "Message sent.": [
         "Το μήνυμα στάλθηκε."
-      ],
-      "Message will be sent on ${ dateString } at ${ formattedTime }": [
-        ""
-      ],
-      "Message will be sent today at ${ formattedTime }": [
-        ""
-      ],
-      "Message will be sent tomorrow at ${ formattedTime }": [
-        ""
       ],
       "Monthly ${ onDayString }": [
         "Μηνιαίως ${ onDayString }"
@@ -4554,9 +4220,6 @@
       "of": [
         "από"
       ],
-      "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
-        ""
-      ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Αλλάξτε αυτές τις ρυθμίσεις μόνο αν χρησιμοποιείτε PGP με παραλήπτες εκτός ${ BRAND_NAME }."
       ],
@@ -4568,12 +4231,6 @@
       ],
       "per month.": [
         "ανά μήνα."
-      ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
-        "PGP/Inline is only compatible with Plain Text format. Please note that Proton Mail always signs encrypted messages."
-      ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
-        "PGP/MIME automatically sends the message using the current composer mode. Please note that Proton Mail always signs encrypted messages."
       ],
       "Phone number": [
         "Αριθμός τηλεφώνου"
@@ -4598,13 +4255,6 @@
       ],
       "Please select the type of link you want to insert and fill in all the fields.": [
         "Επιλέξτε τον τύπο σύνδεσμου που θέλετε να εισαγάγετε και συμπληρώστε όλα τα πεδία."
-      ],
-      "Please select which email address or addresses to add to ${ groupCount } group.": [
-        "",
-        ""
-      ],
-      "Please select which email address or addresses to add to ${ groupName }.": [
-        ""
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Παρακαλούμε περιμένετε όσο αναζητούμε επαφές που μπορούν να επανυπογραφούν με το πρωτεύον κλειδί κρυπτογράφησης."
@@ -4672,9 +4322,6 @@
       "Scheduling message...": [
         "Γίνεται προγραμματισμός μηνύματος..."
       ],
-      "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
-        ""
-      ],
       "Seems like you are all caught up for now": [
         "Φαίνεται ότι όλοι είστε παγιδευμένοι για τώρα"
       ],
@@ -4687,9 +4334,6 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Επιλέξτε ποια ημερολόγια θα εισαχθούν. Για κάθε εισαγόμενο, ένα νέο ημερολόγιο θα δημιουργηθεί, μέχρι το όριο των 20."
       ],
-      "Send an encrypted, password protected message to a ${ boldText } email address.": [
-        ""
-      ],
       "Sending": [
         "Γίνεται αποστολή"
       ],
@@ -4699,17 +4343,11 @@
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "Η αποστολή μηνυμάτων από τη διεύθυνση @ pm.me είναι μια λειτουργία για λογαριασμούς επι πληρωμή. Το μήνυμά σας θα σταλεί από την προεπιλεγμένη διεύθυνση ${ email }"
       ],
-      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
-        ""
-      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Οι διακομιστές είναι απρόσιτοι. Παρακαλούμε δοκιμάστε ξανά σε λίγα λεπτά"
       ],
       "Session timed out": [
         "Λήξη χρόνου συνεδρίας"
-      ],
-      "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
-        ""
       ],
       "Set a recovery phrase": [
         "Ορισμός φράσης ανάκτησης"
@@ -4740,9 +4378,6 @@
       ],
       "Subject: ": [
         "Θέμα: "
-      ],
-      "Support for 1 custom email domain": [
-        ""
       ],
       "Support privacy by upgrading for": [
         "Υποστηρίξτε την ιδιωτικότητα, μέσω αναβάθμισης σε"
@@ -4844,29 +4479,11 @@
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
         "Αυτό το μήνυμα θα μετακινηθεί στα Πρόχειρα, ώστε να μπορείτε να το επεξεργαστείτε. Θα πρέπει να επαναπρογραμματίσετε πότε θα σταλεί."
       ],
-      "This message will be sent on ${ dateString } at ${ formattedTime }": [
-        ""
-      ],
       "This message will be sent shortly": [
         "Αυτό το μήνυμα θα σταλεί σύντομα"
       ],
-      "This message will be sent today at ${ formattedTime }": [
-        ""
-      ],
-      "This message will be sent tomorrow at ${ formattedTime }": [
-        ""
-      ],
       "This message will expire ${ formattedDate }": [
         "Αυτό το μήνυμα θα λήξει ${ formattedDate }"
-      ],
-      "This message will expire on ${ dateString } at ${ formattedTime }": [
-        ""
-      ],
-      "This message will expire today at ${ formattedTime }": [
-        ""
-      ],
-      "This message will expire tomorrow at ${ formattedTime }": [
-        ""
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Αυτό το δημόσιο κλειδί θα χρησιμοποιηθεί αυτόματα για την κρυπτογράφηση email που αποστέλλεται σε αυτήν τη διεύθυνση."
@@ -4943,9 +4560,6 @@
       "Upgrade to support privacy and get more features.": [
         "Αναβαθμίστε για να υποστηρίξετε το απόρρητο και να αποκτήσετε περισσότερες δυνατότητες."
       ],
-      "Upgrade to use ${ MAIL_APP_NAME } with third-party desktop clients.": [
-        ""
-      ],
       "Upgrade today to avoid losing the following ${ planName } benefits.": [
         "Αναβαθμίστε σήμερα για να μη χάσετε τα παρακάτω προνόμια ${ planName }."
       ],
@@ -4957,9 +4571,6 @@
       ],
       "URL: ${ unsubscribeMethods.HttpClient }": [
         "URL: ${ unsubscribeMethods.HttpClient }"
-      ],
-      "Use ${ calendarAppName } to keep your agenda private.": [
-        ""
       ],
       "Use keyboard shortcuts to manage your email faster.": [
         "Χρησιμοποιήστε συντομεύσεις πληκτρολογίου για να διαχειριστείτε το ηλεκτρονικό ταχυδρομείο σας γρηγορότερα."
@@ -5011,9 +4622,6 @@
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Είστε συνδεδεμένος/η ως ${ user.Name } (${ user.Email })."
-      ],
-      "You can add it as an attachment or display it inline in your mail body.": [
-        ""
       ],
       "You can also merge imported calendars with existing Proton calendars.": [
         "Μπορείτε επίσης να συγχωνεύσετε εισαγόμενα ημερολόγια με υπάρχοντα ημερολόγια του Proton."
@@ -5155,14 +4763,8 @@
       ]
     },
     "Key badge": {
-      "Compromised": [
-        ""
-      ],
       "Expired": [
         "Έχει λήξει"
-      ],
-      "Obsolete": [
-        ""
       ],
       "Primary": [
         "Κύριο"
@@ -6084,9 +5686,6 @@
       ],
       "Re:": [
         "Απ:"
-      ],
-      "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
-        ""
       ]
     },
     "Message display when a new app version is available": {
@@ -6103,9 +5702,6 @@
       ]
     },
     "Message notification": {
-      "Scheduled sending undone": [
-        ""
-      ],
       "Scheduling cancelled. Message has been moved to Drafts.": [
         "Ο προγραμματισμός ακυρώθηκε. Το μήνυμα έχει μεταφερθεί στα Πρόχειρα."
       ],
@@ -6320,9 +5916,6 @@
     "Onboarding": {
       "Welcome to ${ appName }": [
         "Καλώς ήρθατε στο ${ appName }"
-      ],
-      "Where privacy and security meet productivity and ease of use.": [
-        ""
       ]
     },
     "Onboarding Action": {
@@ -6411,17 +6004,6 @@
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "Το κλειδί δεν μπορεί να χρησιμοποιηθεί για κρυπτογράφηση"
-      ]
-    },
-    "PGP Key info": {
-      "${ emailAddress } has marked this key as compromised. This key cannot be used neither for encryption nor for signature verification.": [
-        ""
-      ],
-      "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
-        ""
-      ],
-      "We recommend that you \"untrust\" this key.": [
-        ""
       ]
     },
     "PGP key warning": {
@@ -6771,23 +6353,14 @@
       ]
     },
     "Spotlight": {
-      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        ""
-      ],
       "Discover all Proton services": [
         "Ανακαλύψτε όλες τις υπηρεσίες Proton"
       ],
       "Get up to 18 months of ${ planName } for free": [
         "Λάβετε δωρεάν έως 18 μήνες του ${ planName }"
       ],
-      "Invite friends and earn rewards!": [
-        ""
-      ],
       "Message Content Search": [
         "Αναζήτηση εντός Περιεχομένου Μηνυμάτων"
-      ],
-      "Securely manage your schedule, files, and online life! Open to discover all Proton services.": [
-        ""
       ],
       "To protect your privacy, Proton blocked email trackers in this message": [
         "Για την προστασία του απορρήτου σας, το Proton απέκλεισε τους ιχνηλάτες εντός αυτού του μηνύματος"
@@ -6805,9 +6378,6 @@
     "Status": {
       "This message is from a mailing list.": [
         "Αυτό το μήνυμα προέρχεται από λίστα αλληλογραφίας."
-      ],
-      "Unsubscribed": [
-        ""
       ]
     },
     "Step in filter modal": {
@@ -7427,9 +6997,6 @@
       "Message list": [
         "Λίστα μηνυμάτων"
       ],
-      "Message will expire": [
-        ""
-      ],
       "More": [
         "Περισσότερα"
       ],
@@ -7625,9 +7192,6 @@
       ],
       "What's new": [
         "Τι νέο υπάρχει"
-      ],
-      "Your free trial ends soon, on ${ formattedEndDate }": [
-        ""
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -7685,9 +7249,6 @@
       ]
     },
     "Update font modal": {
-      "Today is a good day to write an email": [
-        ""
-      ],
       "Update default font and size": [
         "Ενημέρωση προεπιλεγμένης γραμματοσειράς και μεγέθους"
       ],
@@ -7730,9 +7291,6 @@
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Αν δεν θυμάστε τον κωδικό πρόσβασής σας, είναι αδύνατο να ενεργοποιήσετε ξανά το κλειδί σας. Μπορούμε να σας βοηθήσουμε να απορρίψετε το διαφημιστικό σήμα, αλλά κατά τη διαδικασία θα χάσετε μόνιμα την πρόσβαση σε όλα τα δεδομένα που κρυπτογραφούνται με αυτό το κλειδί."
       ],
-      "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
-        ""
-      ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
         "Το Proton θα συγχωνεύσει όλους τους φακέλους ίδιου ονόματος. Για αποφυγή της συγχώνευσης, αλλάξτε τα ονόματα πριν την εισαγωγή."
       ],
@@ -7772,9 +7330,6 @@
       ],
       "You will lose any customization you made so far.": [
         "Θα χάσετε οποιαδήποτε προσαρμογές που κάνατε μέχρι στιγμής."
-      ],
-      "Your free trial ends on ${ textDate }. ${ action }": [
-        ""
       ]
     },
     "Weekly recurring event, frequency": {

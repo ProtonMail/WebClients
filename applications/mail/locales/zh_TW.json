@@ -527,9 +527,6 @@
       "More": [
         "更多"
       ],
-      "More details about ${ ariaLabelTitle }": [
-        ""
-      ],
       "More info: ${ safeTitle }": [
         "更多資訊：${ safeTitle }"
       ],
@@ -538,18 +535,6 @@
       ],
       "Move": [
         "移動"
-      ],
-      "Move all conversations from this folder": [
-        ""
-      ],
-      "Move all conversations from this label": [
-        ""
-      ],
-      "Move all messages from this folder": [
-        ""
-      ],
-      "Move all messages from this label": [
-        ""
       ],
       "move emails to": [
         "將電郵移動到"
@@ -601,9 +586,6 @@
       ],
       "No": [
         "否"
-      ],
-      "No trackers found, but some images could not be loaded with tracking protection.": [
-        ""
       ],
       "No, I won't attend": [
         "否，我不會出席"
@@ -872,9 +854,6 @@
       "This message contains remote content.": [
         "此郵件包含遠端內容。"
       ],
-      "Trash all": [
-        ""
-      ],
       "Trust": [
         "信任"
       ],
@@ -980,9 +959,6 @@
       "View message": [
         "檢視訊息"
       ],
-      "View message details": [
-        ""
-      ],
       "View recipients": [
         "檢視收件者"
       ],
@@ -1003,11 +979,6 @@
       ],
       "Zoom out": [
         "縮小"
-      ]
-    },
-    "action": {
-      "Search messages": [
-        ""
       ]
     },
     "Actions message": {
@@ -1076,11 +1047,6 @@
         "歡迎"
       ]
     },
-    "Amount of completed get started checklist items": {
-      "${ numberOfCompletedItems }/${ totalNumberOfItems } complete": [
-        ""
-      ]
-    },
     "Apps dropdown": {
       "Proton applications": [
         "Proton 應用程式"
@@ -1126,16 +1092,8 @@
       ]
     },
     "Beta access description": {
-      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        ""
-      ],
       "If you encounter issues, you can always disable Beta Access.": [
         "若您遇上問題，您隨時可以停用 Beta 測試版。"
-      ]
-    },
-    "blackfriday Action": {
-      "Get the offer": [
-        ""
       ]
     },
     "blackfriday Info": {
@@ -1153,14 +1111,8 @@
       ]
     },
     "blackfriday Title": {
-      "Best deal": [
-        ""
-      ],
       "Most popular": [
         "最熱門"
-      ],
-      "Save more when combining Mail and VPN": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer Action": {
@@ -1172,14 +1124,8 @@
       ]
     },
     "blackfriday: VPNspecialoffer Info": {
-      "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
-        ""
-      ],
       "Save ${ percentage }%": [
         "省下 ${ percentage }%"
-      ],
-      "Special offer Terms and Conditions": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer info": {
@@ -1193,15 +1139,6 @@
       ]
     },
     "blackfriday: VPNspecialoffer Title": {
-      "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
-        ""
-      ],
-      "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
-        ""
-      ],
-      "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
-        ""
-      ],
       "1 month": [
         "一個月"
       ],
@@ -1210,18 +1147,6 @@
       ],
       "24 months": [
         "24 個月"
-      ],
-      "Billed at ${ amount } for the first 2 years.${ supNotice }": [
-        ""
-      ],
-      "Billed at ${ amount } for the first month.${ supNotice }": [
-        ""
-      ],
-      "Billed at ${ amount } for the first year.${ supNotice }": [
-        ""
-      ],
-      "Get the special year-end offer on our Premium VPN PLUS plan": [
-        ""
       ]
     },
     "Bug category": {
@@ -1295,11 +1220,6 @@
         "網站存取問題"
       ]
     },
-    "Button": {
-      "Continue using ${ MAIL_APP_NAME }.": [
-        ""
-      ]
-    },
     "Calendar attachment tooltip": {
       "Has a calendar event": [
         "有行事曆事件"
@@ -1313,15 +1233,6 @@
     "Calendar invite info": {
       " This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar.": [
         "此新的時間提議與您的邀請詳情不符。請驗證在您行事曆中的邀請詳情。"
-      ],
-      "${ participantName } accepted an invitation and proposed a new time for one occurrence of this event.": [
-        ""
-      ],
-      "${ participantName } accepted an invitation and proposed a new time for this event.": [
-        ""
-      ],
-      "${ participantName } accepted an invitation to one occurrence of the event.": [
-        ""
       ],
       "${ participantName } accepted an invitation to this event.": [
         "${ participantName } 已同意出席此活動。"
@@ -1347,18 +1258,6 @@
       "${ participantName } asked for the latest updates to an event which does not exist in your calendar anymore.": [
         "${ participantName } 詢問某個事件的最新消息，惟該事件已不再存在於您的行事曆中。"
       ],
-      "${ participantName } asked for the latest updates to an event which doesn't match your invitation details. Please verify the invitation details in your calendar.": [
-        ""
-      ],
-      "${ participantName } declined an invitation and proposed a new time for one occurrence of this event.": [
-        ""
-      ],
-      "${ participantName } declined an invitation and proposed a new time for this event.": [
-        ""
-      ],
-      "${ participantName } declined an invitation to one occurrence of the event.": [
-        ""
-      ],
       "${ participantName } declined an invitation to this event.": [
         "${ participantName } 已拒絕出席此活動。"
       ],
@@ -1380,12 +1279,6 @@
       "${ participantName } had accepted an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
         "${ participantName } 已接受您的邀請，並就此事件提議新的時間。回答與提議均已過時。"
       ],
-      "${ participantName } had accepted an invitation to one occurrence of the event.": [
-        ""
-      ],
-      "${ participantName } had accepted an invitation to this event.": [
-        ""
-      ],
       "${ participantName } had accepted your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "${ participantName } 已接受您的邀請，並就此事件其中一次提議新的時間。回答與提議均已過時。"
       ],
@@ -1397,12 +1290,6 @@
       ],
       "${ participantName } had declined an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
         "${ participantName } 已謝絕您的邀請，並就此事件提議新的時間。回答與提議均已過時。"
-      ],
-      "${ participantName } had declined an invitation to one occurrence of the event.": [
-        ""
-      ],
-      "${ participantName } had declined an invitation to this event.": [
-        ""
       ],
       "${ participantName } had declined your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "${ participantName } 已謝絕您的邀請，並就此事件其中一次提議新的時間。回答與提議均已過時。"
@@ -1473,15 +1360,6 @@
       "${ participantName } proposed a new time for this event.": [
         "${ participantName } 就此事件已提議新的時間。"
       ],
-      "${ participantName } tentatively accepted an invitation and proposed a new time for one occurrence of this event.": [
-        ""
-      ],
-      "${ participantName } tentatively accepted an invitation and proposed a new time for this event.": [
-        ""
-      ],
-      "${ participantName } tentatively accepted an invitation to one occurrence of the event.": [
-        ""
-      ],
       "${ participantName } tentatively accepted an invitation to this event.": [
         "${ participantName } 已暫訂出席此活動。"
       ],
@@ -1526,12 +1404,6 @@
       ],
       "This invitation is out of date. The event has been updated.": [
         "此邀請已過時。此事件已更新。"
-      ],
-      "This response doesn't match your invitation details. Please verify the invitation details in your calendar.": [
-        ""
-      ],
-      "This response is out of date.": [
-        ""
       ],
       "This response is out of date. The event does not exist in your calendar anymore.": [
         "此回答已過時。此事件不再存在於您的行事曆。"
@@ -1603,170 +1475,8 @@
       ]
     },
     "color": {
-      "Apple": [
-        ""
-      ],
-      "azureish white": [
-        ""
-      ],
-      "blanched almond": [
-        ""
-      ],
-      "blue-gray": [
-        ""
-      ],
-      "caramel": [
-        ""
-      ],
       "carrot": [
         "胡蘿蔔"
-      ],
-      "cerise": [
-        ""
-      ],
-      "cinnabar": [
-        ""
-      ],
-      "cobalt": [
-        ""
-      ],
-      "copper": [
-        ""
-      ],
-      "cyan-blue azure": [
-        ""
-      ],
-      "dandelion": [
-        ""
-      ],
-      "dark cerulean": [
-        ""
-      ],
-      "dark midnight blue": [
-        ""
-      ],
-      "dim gray": [
-        ""
-      ],
-      "enzian": [
-        ""
-      ],
-      "fern": [
-        ""
-      ],
-      "field drab": [
-        ""
-      ],
-      "forest": [
-        ""
-      ],
-      "gainsboro": [
-        ""
-      ],
-      "japanese laurel": [
-        ""
-      ],
-      "kiwi": [
-        ""
-      ],
-      "lemon yellow": [
-        ""
-      ],
-      "light carmine pink": [
-        ""
-      ],
-      "light moss green": [
-        ""
-      ],
-      "light red": [
-        ""
-      ],
-      "maize": [
-        ""
-      ],
-      "mughal green": [
-        ""
-      ],
-      "ocean": [
-        ""
-      ],
-      "olive": [
-        ""
-      ],
-      "outer space": [
-        ""
-      ],
-      "pacific": [
-        ""
-      ],
-      "palatinate blue": [
-        ""
-      ],
-      "pale cerulean": [
-        ""
-      ],
-      "pastel gray": [
-        ""
-      ],
-      "persian plum": [
-        ""
-      ],
-      "persian red": [
-        ""
-      ],
-      "philippine gray": [
-        ""
-      ],
-      "philippine silver": [
-        ""
-      ],
-      "pickle": [
-        ""
-      ],
-      "pine": [
-        ""
-      ],
-      "pink": [
-        ""
-      ],
-      "pistachio": [
-        ""
-      ],
-      "plum": [
-        ""
-      ],
-      "purple": [
-        ""
-      ],
-      "raisin black": [
-        ""
-      ],
-      "reef": [
-        ""
-      ],
-      "ruddy pink": [
-        ""
-      ],
-      "sahara": [
-        ""
-      ],
-      "satin sheen gold": [
-        ""
-      ],
-      "slateblue": [
-        ""
-      ],
-      "soil": [
-        ""
-      ],
-      "strawberry": [
-        ""
-      ],
-      "vivid auburn": [
-        ""
-      ],
-      "white": [
-        ""
       ]
     },
     "Composer email icon": {
@@ -2226,9 +1936,6 @@
       "Haiti": [
         "海地"
       ],
-      "Heard Island and McDonald Islands": [
-        ""
-      ],
       "Holy See (Vatican City State)": [
         "梵蒂岡"
       ],
@@ -2513,9 +2220,6 @@
       ],
       "San Marino": [
         "聖馬利諾"
-      ],
-      "Sao Tome and Principe": [
-        ""
       ],
       "Saudi Arabia": [
         "沙烏地阿拉伯"
@@ -3073,9 +2777,6 @@
       "Message processing error.": [
         "郵件處理錯誤。"
       ],
-      "Missing key packet": [
-        ""
-      ],
       "Missing signature": [
         "簽章遺失"
       ],
@@ -3127,9 +2828,6 @@
       "Primary address key is not decrypted.": [
         "主要位址金鑰並未被解密。"
       ],
-      "Primary key is not valid for sending": [
-        ""
-      ],
       "Primary key retrieved for internal user is not valid for sending": [
         "擷取出的內部使用者專屬主金鑰不適用於發送郵件"
       ],
@@ -3168,9 +2866,6 @@
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "部分標籤名稱無法使用。請自訂匯入內容以編輯該等名稱。"
-      ],
-      "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
-        ""
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "發生錯誤，請${ refresh }以繼續。如果您仍看到此錯誤訊息，請聯絡我們的${ supportTeam }。"
@@ -3216,12 +2911,6 @@
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "此欄位至少須有 ${ minimumLength } 個字元。"
-      ],
-      "This folder name is not available. Please choose a different name.": [
-        ""
-      ],
-      "This label name is not available. Please choose a different name.": [
-        ""
       ],
       "This message has already been sent": [
         "這封郵件已寄出。"
@@ -3452,11 +3141,6 @@
         "沒有選擇圖像"
       ]
     },
-    "Error notification when score is missing in user feedback form modal": {
-      "Score is required": [
-        ""
-      ]
-    },
     "Error sending calendar invitation": {
       "Cannot send invitation to ${ email }. ${ errorMessage }": [
         "無法將邀請函寄送至 ${ email } 。 ${ errorMessage }"
@@ -3511,15 +3195,7 @@
         "(無標題)"
       ]
     },
-    "Feedback Modal Title": {
-      "Your feedback": [
-        ""
-      ]
-    },
     "file size format": {
-      "bytes": [
-        "位元組"
-      ],
       "GB": [
         "GB"
       ],
@@ -3530,29 +3206,12 @@
         "MB"
       ]
     },
-    "file size format, long": {
-      "Bytes": [
-        "位元組"
-      ],
-      "Gigabytes": [
-        ""
-      ],
-      "Kilobytes": [
-        ""
-      ],
-      "Megabytes": [
-        ""
-      ]
-    },
     "Filter Actions": {
       "Archive": [
         "封存"
       ],
       "Inbox": [
         "收件匣"
-      ],
-      "Inbox - Default": [
-        ""
       ],
       "Select a folder": [
         "選擇一個資料夾"
@@ -3645,17 +3304,11 @@
       ]
     },
     "Get started checklist completion": {
-      "We've increased the total storage of your account to ${ rewardInGb } GB. Get additional storage and unlock premium features today.": [
-        ""
-      ],
       "You're all set!": [
         "完工！"
       ]
     },
     "Get started checklist incentive": {
-      "Complete all steps and get a total of ${ rewardInGb } GB on your account": [
-        ""
-      ],
       "Expires soon": [
         "即將到期"
       ],
@@ -3870,14 +3523,8 @@
       "${ calendarsToBeMergedCount } merged calendar": [
         "${ calendarsToBeMergedCount } 個合併行事曆"
       ],
-      "${ contactCount } contact contains multiple email addresses.": [
-        ""
-      ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } 位成員"
-      ],
-      "${ contactName } contains multiple email addresses.": [
-        ""
       ],
       "${ contactsCount } contact found": [
         "找到 ${ contactsCount } 位聯絡人"
@@ -3891,9 +3538,6 @@
       "${ groupCounts } group found": [
         "找到 ${ groupCounts } 個群組"
       ],
-      "${ MAIL_APP_NAME } can protect your business as well.": [
-        ""
-      ],
       "${ messagesNotAuthorizedToMove } message could not be moved.": [
         "${ messagesNotAuthorizedToMove } 封郵件無法移動。"
       ],
@@ -3905,12 +3549,6 @@
       ],
       "${ numContacts } contact": [
         "${ numContacts } 位聯絡人"
-      ],
-      "${ occurrencesInBody } occurrence found": [
-        "找到 ${ occurrencesInBody } 次"
-      ],
-      "${ occurrencesInBody } occurrence found in the mail content": [
-        "已在郵件中找到符合「${ occurrencesInBody }」的內容"
       ],
       "${ pureAttachmentsCount } file attached": [
         "${ pureAttachmentsCount } 個附件"
@@ -3978,9 +3616,6 @@
       "Activation in progress": [
         "啟動中"
       ],
-      "Add ${ addressToCreate } to your account for free, for a limited time only.": [
-        ""
-      ],
       "Add image URL": [
         "附加圖像網址"
       ],
@@ -4026,9 +3661,6 @@
       "Are you sure you want to discard your changes?": [
         "您確定要捨棄所作的變更嗎？"
       ],
-      "Are you sure you want to move all messages in this location to Trash?": [
-        ""
-      ],
       "Are you sure you want to permanently delete ${ count } conversation?": [
         "您確定要永久刪除 ${ count } 個會話嗎？"
       ],
@@ -4058,9 +3690,6 @@
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "不論在設定中是否啟用鍵盤快捷鍵，基本導覽及動作仍然可用。"
-      ],
-      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
-        ""
       ],
       "Body: ": [
         "內文："
@@ -4227,21 +3856,6 @@
       "Expiration time": [
         "有效期限"
       ],
-      "Expires": [
-        ""
-      ],
-      "Expires in ${ formattedDelay }": [
-        ""
-      ],
-      "Expires in ${ formattedDelayShort }": [
-        ""
-      ],
-      "Expires in less than ${ formattedDelayShort }": [
-        ""
-      ],
-      "Expires soon": [
-        ""
-      ],
       "Expiring message": [
         "到期郵件"
       ],
@@ -4386,9 +4000,6 @@
       "Manage your labels": [
         "管理您的標籤"
       ],
-      "Maximum number of attachments (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) exceeded.": [
-        ""
-      ],
       "members": [
         "成員"
       ],
@@ -4397,9 +4008,6 @@
       ],
       "Merged": [
         "合併的"
-      ],
-      "Message expiration works out-of-the-box when sending emails to other ${ MAIL_APP_NAME } users. To send expiring emails to non-${ BRAND_NAME } users, please cancel and add password protection to your email.": [
-        ""
       ],
       "Message headers": [
         "郵件標頭"
@@ -4421,9 +4029,6 @@
       ],
       "Monthly ${ onDayString }": [
         "每月 ${ onDayString } 日"
-      ],
-      "Moving a large amount of messages. This may take a while.": [
-        ""
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "請命名您的新資料夾，並選取放置的上層資料夾。若您不選取上層資料夾，將以頂層資料夾建立。"
@@ -4467,9 +4072,6 @@
       "No results found": [
         "找不到相符的結果"
       ],
-      "No trackers found, but some images could not be loaded with tracking protection": [
-        ""
-      ],
       "non-Proton Mail": [
         "非 Proton Mail"
       ],
@@ -4482,26 +4084,11 @@
       "of": [
         " / "
       ],
-      "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
-        ""
-      ],
-      "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
-        ""
-      ],
       "Other options": [
         "其它選項"
       ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "此郵件已被我們的系統標註為帶有網路釣魚的企圖。請檢查這是否正當郵件。"
-      ],
-      "per month.": [
-        ""
-      ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
-        "PGP/Inline is only compatible with Plain Text format. Please note that Proton Mail always signs encrypted messages."
-      ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
-        "PGP/MIME automatically sends the message using the current composer mode. Please note that Proton Mail always signs encrypted messages."
       ],
       "Phone number": [
         "手機號碼"
@@ -4526,12 +4113,6 @@
       ],
       "Please select the type of link you want to insert and fill in all the fields.": [
         "請選擇您想插入的連結類型，並填寫所有欄位。"
-      ],
-      "Please select which email address or addresses to add to ${ groupCount } group.": [
-        ""
-      ],
-      "Please select which email address or addresses to add to ${ groupName }.": [
-        ""
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "請稍候，我們正查找可使用主要加密金鑰重新簽署的聯絡人。"
@@ -4572,9 +4153,6 @@
       "Request read receipt": [
         "要求讀取回條"
       ],
-      "Rich text": [
-        ""
-      ],
       "Right to Left": [
         "由右至左"
       ],
@@ -4608,9 +4186,6 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "請選擇向該電郵位址傳送時的預設格式"
       ],
-      "Select what you want to move from Google.": [
-        ""
-      ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "請選取要匯入的行事曆。將為每個匯入的行事曆建立一個新行事曆 (上限為 20 個)。"
       ],
@@ -4626,35 +4201,17 @@
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "從 @pm.me 電郵位址寄送郵件是付費功能。您的郵件將從您的預設電郵位址 ${ email } 傳送"
       ],
-      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
-        ""
-      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "無法連線至伺服器。請過幾分鐘後再試"
       ],
       "Session timed out": [
         "工作階段已逾時"
       ],
-      "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
-        ""
-      ],
       "Set a recovery phrase": [
         "設定還原短語"
       ],
-      "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
-        ""
-      ],
       "Show original message": [
         "顯示原始訊息"
-      ],
-      "Sorry, this message does not exist or has already expired.": [
-        ""
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        ""
-      ],
-      "Store and share files securely with ${ DRIVE_APP_NAME }.": [
-        ""
       ],
       "Subject": [
         "主題"
@@ -4694,9 +4251,6 @@
       ],
       "The original message you are trying to forward / reply to is in the process of being sent. If you continue, you will not be able to undo sending of the original message any longer.": [
         "您正在嘗試轉寄/回覆的原始郵件仍有待傳送。若您繼續，您將自此刻起無法再取消傳送原始郵件。"
-      ],
-      "The original sender of this message is no longer valid. Your message will be sent from your default address ${ defaultEmail }.": [
-        ""
       ],
       "The sender has requested a read receipt.": [
         "寄件人要求發送讀取回條。"
@@ -4739,9 +4293,6 @@
       ],
       "This invitation is saved in a disabled calendar.": [
         "此邀請儲存於一個已停用的行事曆。"
-      ],
-      "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
-        ""
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "此連結可能是同形異義字攻擊，且無法在 Internet Explorer 與 Edge 瀏覽器中打開。如果您確定此連結是合法的，請使用其他瀏覽器來開啟。"
@@ -4827,14 +4378,8 @@
       "Turn on to search the content of your messages": [
         "啟用以搜尋您的郵件內容"
       ],
-      "Unlimited folders, labels, and filters": [
-        ""
-      ],
       "Unlimited messages": [
         "無限制的郵件"
-      ],
-      "Unlock message": [
-        ""
       ],
       "Unsupported file": [
         "不支援的檔案"
@@ -4869,12 +4414,6 @@
       "Upgrade to support privacy and get more features.": [
         "升級以支援隱私並取得更多功能。"
       ],
-      "Upgrade to use ${ MAIL_APP_NAME } with third-party desktop clients.": [
-        ""
-      ],
-      "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        ""
-      ],
       "Upload picture": [
         "上載圖像"
       ],
@@ -4883,9 +4422,6 @@
       ],
       "URL: ${ unsubscribeMethods.HttpClient }": [
         "URL：${ unsubscribeMethods.HttpClient }"
-      ],
-      "Use ${ calendarAppName } to keep your agenda private.": [
-        ""
       ],
       "Use keyboard shortcuts to manage your email faster.": [
         "使用鍵盤快捷鍵來更快管理您的電郵。"
@@ -4955,9 +4491,6 @@
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "您可以啟用通知功能，以便在新的電郵訊息送達此資料夾時收到通知。"
-      ],
-      "You can use ${ VPN_APP_NAME } for free today.": [
-        ""
       ],
       "You cannot reply from the invited address.": [
         "您無法從獲邀的電郵位址回覆。"
@@ -5072,14 +4605,8 @@
       ]
     },
     "Key badge": {
-      "Compromised": [
-        ""
-      ],
       "Expired": [
         "已失效"
-      ],
-      "Obsolete": [
-        ""
       ],
       "Primary": [
         "主要"
@@ -5344,23 +4871,11 @@
       "ANY": [
         "任一"
       ],
-      "Attach screenshot(s)": [
-        ""
-      ],
       "Attachments": [
         "附件"
       ],
       "Automatically save contacts": [
         "自動儲存聯絡人"
-      ],
-      "Awful": [
-        ""
-      ],
-      "Bad": [
-        ""
-      ],
-      "BCC": [
-        ""
       ],
       "Blind Carbon Copy": [
         "密件副本"
@@ -5382,9 +4897,6 @@
       ],
       "Category": [
         "類別"
-      ],
-      "CC": [
-        ""
       ],
       "City": [
         "縣市"
@@ -5461,20 +4973,11 @@
       "From: ${ importedEmail }": [
         "寄件者：${ importedEmail }"
       ],
-      "Good": [
-        ""
-      ],
       "Group": [
         "群組"
       ],
       "Hide password": [
         "隱藏密碼"
-      ],
-      "How would you describe your experience with the new Proton?": [
-        ""
-      ],
-      "I understand the risk": [
-        ""
       ],
       "IF": [
         "如"
@@ -5544,9 +5047,6 @@
       ],
       "Notification": [
         "通知"
-      ],
-      "OK": [
-        ""
       ],
       "Operating system": [
         "作業系統"
@@ -5677,9 +5177,6 @@
       "Upload picture": [
         "上載圖像"
       ],
-      "Username or ${ MAIL_APP_NAME } address": [
-        ""
-      ],
       "Verification code": [
         "驗證碼"
       ],
@@ -5700,9 +5197,6 @@
       ],
       "without attachments": [
         "不帶附件"
-      ],
-      "Wonderful": [
-        ""
       ]
     },
     "Label for contact group color": {
@@ -5997,9 +5491,6 @@
       ],
       "Re:": [
         "Re:"
-      ],
-      "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
-        ""
       ]
     },
     "Message display when a new app version is available": {
@@ -6010,9 +5501,6 @@
     "Message image": {
       "Image has not been loaded in order to protect your privacy.": [
         "為了保護您的隱私，不會載入圖像."
-      ],
-      "Your browser could not verify the remote server's identity. The image might be hosted using the http protocol.": [
-        ""
       ]
     },
     "Message notification": {
@@ -6188,11 +5676,6 @@
         "Proton 新樣貌隆重登場！${ br } 多種服務，單一使命。歡迎蒞臨隱私為本的網路世界。"
       ]
     },
-    "new_plans: label": {
-      "Tell us about your experience. (Optional)": [
-        ""
-      ]
-    },
     "new_plans: placeholder": {
       "Feedback": [
         "意見回饋"
@@ -6215,32 +5698,6 @@
       ],
       "Password has been set successfully": [
         "密碼已成功設定。"
-      ]
-    },
-    "Oauth instructions": {
-      "Next you'll need to sign in to your Google account and grant Proton access to your data.": [
-        ""
-      ]
-    },
-    "Oauth instructions video": {
-      "For the import to work, you must select all requested items as shown in the GIF.": [
-        ""
-      ]
-    },
-    "Onboarding": {
-      "Welcome to ${ appName }": [
-        ""
-      ],
-      "Where privacy and security meet productivity and ease of use.": [
-        ""
-      ]
-    },
-    "Onboarding Action": {
-      "Next": [
-        ""
-      ],
-      "Start using ${ appName }": [
-        ""
       ]
     },
     "Onboarding Proton": {
@@ -6323,17 +5780,6 @@
         "此金鑰無法用於加密"
       ]
     },
-    "PGP Key info": {
-      "${ emailAddress } has marked this key as compromised. This key cannot be used neither for encryption nor for signature verification.": [
-        ""
-      ],
-      "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
-        ""
-      ],
-      "We recommend that you \"untrust\" this key.": [
-        ""
-      ]
-    },
     "PGP key warning": {
       "Email address not found among user ids defined in sending key (${ keyUserIds })": [
         "寄送金鑰所定義的使用者識別碼 (${ keyUserIds }) 中找不到電子郵件地址"
@@ -6390,9 +5836,6 @@
       ],
       "Please describe the problem and include any error messages": [
         "請描述問題並附上相關的錯誤訊息 (如有)"
-      ],
-      "Please insert link first": [
-        ""
       ],
       "Search for group name": [
         "搜尋群組名稱"
@@ -6513,9 +5956,6 @@
       "PGP-signed message. Sender verification failed": [
         "經 PGP 簽署的郵件。寄件人驗證失敗"
       ],
-      "Sent by ${ MAIL_APP_NAME } with zero-access encryption": [
-        ""
-      ],
       "Stored with zero-access encryption": [
         "以零存取加密儲存"
       ]
@@ -6554,9 +5994,6 @@
       ],
       "No results found": [
         "找不到相符的結果"
-      ],
-      "No unread messages found": [
-        ""
       ]
     },
     "Select files": {
@@ -6595,18 +6032,6 @@
       ]
     },
     "Sent email icon": {
-      "Encrypted by ${ MAIL_APP_NAME }": [
-        ""
-      ],
-      "Encrypted by ${ MAIL_APP_NAME } to PGP recipient": [
-        ""
-      ],
-      "Encrypted by ${ MAIL_APP_NAME } to verified PGP recipient": [
-        ""
-      ],
-      "Encrypted by ${ MAIL_APP_NAME } to verified recipient": [
-        ""
-      ],
       "End-to-end encrypted": [
         "經端對端加密"
       ],
@@ -6621,12 +6046,6 @@
       ],
       "PGP-signed": [
         "經 PGP 簽署"
-      ],
-      "Sent by ${ MAIL_APP_NAME } with zero-access encryption": [
-        ""
-      ],
-      "Sent by ${ MAIL_APP_NAME } with zero-access encryption to verified recipient": [
-        ""
       ],
       "Sent by you with end-to-end encryption": [
         "由您以端對端加密傳送"
@@ -6679,12 +6098,6 @@
       "Discover all Proton services": [
         "探索所有 Proton 服務"
       ],
-      "Get up to 18 months of ${ planName } for free": [
-        ""
-      ],
-      "Invite friends and earn rewards!": [
-        ""
-      ],
       "Message Content Search": [
         "郵件內文搜尋"
       ],
@@ -6702,14 +6115,6 @@
       ],
       "You can now search the content of your encrypted emails.": [
         "現在您已經能夠在加密的狀態下搜尋信件內容"
-      ]
-    },
-    "Status": {
-      "This message is from a mailing list.": [
-        ""
-      ],
-      "Unsubscribed": [
-        ""
       ]
     },
     "Step in filter modal": {
@@ -6935,16 +6340,6 @@
       ],
       "Verification successful": [
         "驗證成功"
-      ]
-    },
-    "Success notification when user send feedback": {
-      "Feedback sent": [
-        ""
-      ]
-    },
-    "Suffix for price": {
-      "/month": [
-        ""
       ]
     },
     "Table header": {
@@ -7218,9 +6613,6 @@
       "Enter your password": [
         "請輸入您的密碼"
       ],
-      "Enter your username or ${ MAIL_APP_NAME } email address": [
-        ""
-      ],
       "Error": [
         "錯誤"
       ],
@@ -7287,14 +6679,8 @@
       "Merging contacts": [
         "正在合併聯絡人"
       ],
-      "Message details": [
-        ""
-      ],
       "Message list": [
         "郵件清單"
-      ],
-      "Message will expire": [
-        ""
       ],
       "More": [
         "更多"
@@ -7304,9 +6690,6 @@
       ],
       "More selections": [
         "更多選取"
-      ],
-      "Move all messages to Trash": [
-        ""
       ],
       "Move to": [
         "移動到"
@@ -7434,9 +6817,6 @@
       "Sign in again to continue": [
         "請重新登入以繼續"
       ],
-      "Sign in and grant access": [
-        ""
-      ],
       "Sort conversations": [
         "會話排序"
       ],
@@ -7485,14 +6865,8 @@
       "Welcome ${ userName }": [
         "歡迎 ${ userName }"
       ],
-      "What would you like to import?": [
-        ""
-      ],
       "What's new": [
         "最新功能"
-      ],
-      "Your free trial ends soon, on ${ formattedEndDate }": [
-        ""
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -7521,9 +6895,6 @@
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "請選擇向特定使用者簽署時，所需使用的簽章或PGP 方案。請注意 PGP/inline 模式將強制使用純文字郵件格式。"
-      ],
-      "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
-        ""
       ],
       "The import will start with the most recent messages.": [
         "匯入將自近期的郵件開始。"
@@ -7592,9 +6963,6 @@
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "若您忘記密碼，則沒辦法重新啟用您的金鑰。我們可說明您關閉提示橫幅，然而在此過程中，您將永久失去所有經過該金鑰加密的資料。"
       ],
-      "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
-        ""
-      ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
         "Proton 將會合併所有相同名稱的資料夾。為了避免這種狀況，請在匯入前變更名稱。"
       ],
@@ -7633,9 +7001,6 @@
       ],
       "You will lose any customization you made so far.": [
         "您到目前為止所自訂的所有設置將會遺失。"
-      ],
-      "Your free trial ends on ${ textDate }. ${ action }": [
-        ""
       ]
     },
     "Weekly recurring event, frequency": {

@@ -80,8 +80,8 @@
       "Create": [
         "Erstellen"
       ],
-      "Create a secure ProtonMail address instead": [
-        "Erstelle stattdessen eine sichere Proton Mail E-Mail-Adresse"
+      "Create a secure ${ MAIL_APP_NAME } address instead": [
+        "Erstelle stattdessen eine sichere ${ MAIL_APP_NAME }-Adresse"
       ],
       "Create account": [
         "Konto erstellen"
@@ -521,11 +521,6 @@
       ],
       "Get the deal now": [
         "Jetzt zugreifen"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Badge popup": {
-      "${ vpnPlus } Special Offer 2021 discount has been applied": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer Info": {
@@ -1812,7 +1807,8 @@
       ]
     },
     "file size format": {
-      "bytes": [
+      "byte": [
+        "Byte",
         "Bytes"
       ],
       "GB": [
@@ -1826,16 +1822,20 @@
       ]
     },
     "file size format, long": {
-      "Bytes": [
+      "Byte": [
+        "Byte",
         "Bytes"
       ],
-      "Gigabytes": [
+      "Gigabyte": [
+        "Gigabyte",
         "Gigabytes"
       ],
-      "Kilobytes": [
+      "Kilobyte": [
+        "Kilobyte",
         "Kilobytes"
       ],
-      "Megabytes": [
+      "Megabyte": [
+        "Megabyte",
         "Megabytes"
       ]
     },
@@ -2507,6 +2507,9 @@
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "Es muss eine Kreditkarte oder ein Bankkonto mit deinem PayPal-Konto verknüpft sein. Um dies nachzuholen klicke bitte auf die nachfolgende Schaltfläche."
+      ],
+      "You must remove any additional personal calendars and any shared calendar links before you can cancel your Mail subscription.": [
+        "Du musst jegliche zusätzliche persönliche Kalender und alle freigegebenen Kalender-Links löschen, bevor du dein Abonnement kündigen kannst."
       ],
       "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription.": [
         "Du musst jegliche zusätzliche persönliche Kalender und alle freigegebenen Kalender-Links löschen, bevor du dein Abonnement kündigen kannst."
@@ -3912,9 +3915,6 @@
       "Email address not yet verified.": [
         "Die E-Mail-Adresse wurde noch nicht verifiziert."
       ],
-      "Send verification email": [
-        "Verifizierungs-E-Mail senden"
-      ],
       "Verification email sent to ${ email.Value }": [
         "Verifizierungs-E-Mail wurde an ${ email.Value } gesendet."
       ],
@@ -3923,6 +3923,9 @@
       ],
       "Verify recovery email?": [
         "Wiederherstellungs-E-Mail-Adresse verifizieren?"
+      ],
+      "Verify with email": [
+        "Mit E‐Mail bestätigen"
       ],
       "Verifying your email address increases your account security and allows additional options for recovery.": [
         "Das verifizieren deiner E-Mail-Adresse erhöht die Sicherheit deines Kontos und bietet zusätzliche Möglichkeiten zur Wiederherstellung."
@@ -3937,6 +3940,29 @@
       ],
       "Phrase": [
         "Phrase"
+      ]
+    },
+    "Recovery Phone": {
+      "Cancel": [
+        "Abbrechen"
+      ],
+      "Phone number has been verified.": [
+        "Rufnummer wurde verifiziert."
+      ],
+      "Phone number not yet verified.": [
+        "Die Rufnummer wurde noch nicht verifiziert."
+      ],
+      "Verify by SMS": [
+        "Per SMS verifizieren"
+      ],
+      "Verify now": [
+        "Jetzt verifizieren"
+      ],
+      "Verify recovery phone?": [
+        "Wiederherstellungs-Rufnummer verifizieren?"
+      ],
+      "Verifying your phone number increases your account security and allows additional options for recovery.": [
+        "Das verifizieren deiner Rufnummer erhöht die Sicherheit deines Kontos und bietet zusätzliche Möglichkeiten zur Wiederherstellung."
       ]
     },
     "Signup label": {
@@ -4256,6 +4282,9 @@
       ],
       "Billing cycle": [
         "Abrechnungszeitraum"
+      ],
+      "Cancel Mail subscription": [
+        "Mail-Abonnement kündigen"
       ],
       "Card verification": [
         "Kartenprüfung"

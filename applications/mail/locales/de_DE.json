@@ -1608,29 +1608,11 @@
       ]
     },
     "color": {
-      "Apple": [
-        ""
-      ],
-      "azureish white": [
-        ""
-      ],
-      "blanched almond": [
-        ""
-      ],
-      "blue-gray": [
-        ""
-      ],
-      "caramel": [
-        ""
-      ],
       "carrot": [
         "Karotte"
       ],
       "cerise": [
         "Kirschrot"
-      ],
-      "cinnabar": [
-        ""
       ],
       "cobalt": [
         "Kobaltblau"
@@ -1638,59 +1620,14 @@
       "copper": [
         "Kupfer"
       ],
-      "cyan-blue azure": [
-        ""
-      ],
-      "dandelion": [
-        ""
-      ],
-      "dark cerulean": [
-        ""
-      ],
-      "dark midnight blue": [
-        ""
-      ],
-      "dim gray": [
-        ""
-      ],
       "enzian": [
         "Enzian"
       ],
       "fern": [
         "Farn"
       ],
-      "field drab": [
-        ""
-      ],
       "forest": [
         "Waldgrün"
-      ],
-      "gainsboro": [
-        ""
-      ],
-      "japanese laurel": [
-        ""
-      ],
-      "kiwi": [
-        ""
-      ],
-      "lemon yellow": [
-        ""
-      ],
-      "light carmine pink": [
-        ""
-      ],
-      "light moss green": [
-        ""
-      ],
-      "light red": [
-        ""
-      ],
-      "maize": [
-        ""
-      ],
-      "mughal green": [
-        ""
       ],
       "ocean": [
         "Ozeanblau"
@@ -1698,32 +1635,8 @@
       "olive": [
         "Olivgrün"
       ],
-      "outer space": [
-        ""
-      ],
       "pacific": [
         "Pazifikblau"
-      ],
-      "palatinate blue": [
-        ""
-      ],
-      "pale cerulean": [
-        ""
-      ],
-      "pastel gray": [
-        ""
-      ],
-      "persian plum": [
-        ""
-      ],
-      "persian red": [
-        ""
-      ],
-      "philippine gray": [
-        ""
-      ],
-      "philippine silver": [
-        ""
       ],
       "pickle": [
         "Moosgrün"
@@ -1734,29 +1647,17 @@
       "pink": [
         "Rosa"
       ],
-      "pistachio": [
-        ""
-      ],
       "plum": [
         "Pflaume"
       ],
       "purple": [
         "Violett"
       ],
-      "raisin black": [
-        ""
-      ],
       "reef": [
         "Koralle"
       ],
-      "ruddy pink": [
-        ""
-      ],
       "sahara": [
         "Sahara"
-      ],
-      "satin sheen gold": [
-        ""
       ],
       "slateblue": [
         "Blaugrau"
@@ -1766,9 +1667,6 @@
       ],
       "strawberry": [
         "Erdbeere"
-      ],
-      "vivid auburn": [
-        ""
       ],
       "white": [
         "Weiß"
@@ -3538,7 +3436,8 @@
       ]
     },
     "file size format": {
-      "bytes": [
+      "byte": [
+        "Byte",
         "Bytes"
       ],
       "GB": [
@@ -3552,16 +3451,20 @@
       ]
     },
     "file size format, long": {
-      "Bytes": [
+      "Byte": [
+        "Byte",
         "Bytes"
       ],
-      "Gigabytes": [
+      "Gigabyte": [
+        "Gigabyte",
         "Gigabytes"
       ],
-      "Kilobytes": [
+      "Kilobyte": [
+        "Kilobyte",
         "Kilobytes"
       ],
-      "Megabytes": [
+      "Megabyte": [
+        "Megabyte",
         "Megabytes"
       ]
     },
@@ -3948,13 +3851,13 @@
         "${ numContacts } Kontakt",
         "${ numContacts } Kontakte"
       ],
-      "${ occurrencesInBody } occurrence found": [
-        "${ occurrencesInBody } Termin gefunden",
-        "${ occurrencesInBody } Termine gefunden"
+      "${ numOccurrences } occurrence found": [
+        "${ numOccurrences } Vorkommen gefunden",
+        "${ numOccurrences } Vorkommen gefunden"
       ],
-      "${ occurrencesInBody } occurrence found in the mail content": [
-        "${ occurrencesInBody } Termin im Nachrichteninhalt gefunden",
-        "${ occurrencesInBody } Termine im Nachrichteninhalt gefunden"
+      "${ numOccurrences } occurrence found in the mail content": [
+        "${ numOccurrences } Vorkommen im E-Mail-Inhalt gefunden",
+        "${ numOccurrences } Vorkommen im E-Mail-Inhalt gefunden"
       ],
       "${ pureAttachmentsCount } file attached": [
         "${ pureAttachmentsCount } Datei angehängt",
@@ -4569,11 +4472,11 @@
       "per month.": [
         "pro Monat."
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
-        "PGP/Inline is only compatible with Plain Text format. Please note that Proton Mail always signs encrypted messages."
+      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        "PGP/Inline ist nur mit dem Klartext-Format kompatibel. Bitte beachte, dass ${ MAIL_APP_NAME } verschlüsselte Nachrichten immer signiert."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
-        "PGP/MIME automatically sends the message using the current composer mode. Please note that Proton Mail always signs encrypted messages."
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
+        "PGP/MIME sendet die Nachricht automatisch unter Verwendung des aktuellen Verfassen-Modus. Bitte beachte, dass ${ MAIL_APP_NAME } verschlüsselte Nachrichten immer signiert."
       ],
       "Phone number": [
         "Telefonnummer"
@@ -5428,6 +5331,9 @@
       ],
       "ANY": [
         "IRGENDEINE"
+      ],
+      "Apply filter to existing emails": [
+        "Filter auf vorhandene E-Mails anwenden"
       ],
       "Attach screenshot(s)": [
         "Bildschirmfoto(s) anhängen"

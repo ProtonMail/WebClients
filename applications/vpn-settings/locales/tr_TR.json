@@ -80,8 +80,8 @@
       "Create": [
         "Oluştur"
       ],
-      "Create a secure ProtonMail address instead": [
-        "Bunun yerine güvenli bir ProtonMail adresi oluşturun"
+      "Create a secure ${ MAIL_APP_NAME } address instead": [
+        "Bunun yerine güvenli bir ${ MAIL_APP_NAME } adresi oluşturun"
       ],
       "Create account": [
         "Hesap aç"
@@ -485,11 +485,6 @@
         "Iki yıllık"
       ]
     },
-    "blackfriday Action": {
-      "Get the offer": [
-        ""
-      ]
-    },
     "blackfriday Info": {
       "beta": [
         "beta"
@@ -505,14 +500,8 @@
       ]
     },
     "blackfriday Title": {
-      "Best deal": [
-        ""
-      ],
       "Most popular": [
         "En popüler olanlar"
-      ],
-      "Save more when combining Mail and VPN": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer Action": {
@@ -523,20 +512,9 @@
         "Tekliften şimdi yararlan"
       ]
     },
-    "blackfriday: VPNspecialoffer Badge popup": {
-      "${ vpnPlus } Special Offer 2021 discount has been applied": [
-        ""
-      ]
-    },
     "blackfriday: VPNspecialoffer Info": {
-      "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
-        ""
-      ],
       "Save ${ percentage }%": [
         "- %${ percentage }"
-      ],
-      "Special offer Terms and Conditions": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer info": {
@@ -550,15 +528,6 @@
       ]
     },
     "blackfriday: VPNspecialoffer Title": {
-      "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
-        ""
-      ],
-      "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
-        ""
-      ],
-      "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
-        ""
-      ],
       "1 month": [
         "1 ay"
       ],
@@ -567,18 +536,6 @@
       ],
       "24 months": [
         "24 ay"
-      ],
-      "Billed at ${ amount } for the first 2 years.${ supNotice }": [
-        ""
-      ],
-      "Billed at ${ amount } for the first month.${ supNotice }": [
-        ""
-      ],
-      "Billed at ${ amount } for the first year.${ supNotice }": [
-        ""
-      ],
-      "Get the special year-end offer on our Premium VPN PLUS plan": [
-        ""
       ]
     },
     "Bug category": {
@@ -1812,7 +1769,8 @@
       ]
     },
     "file size format": {
-      "bytes": [
+      "byte": [
+        "bayt",
         "bayt"
       ],
       "GB": [
@@ -1826,16 +1784,20 @@
       ]
     },
     "file size format, long": {
-      "Bytes": [
+      "Byte": [
+        "Bayt",
         "Bayt"
       ],
-      "Gigabytes": [
+      "Gigabyte": [
+        "Gigabayt",
         "Gigabayt"
       ],
-      "Kilobytes": [
+      "Kilobyte": [
+        "Kilobayt",
         "Kilobayt"
       ],
-      "Megabytes": [
+      "Megabyte": [
+        "Megabayt",
         "Megabayt"
       ]
     },
@@ -2507,6 +2469,9 @@
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "PayPal hesabınızda bağlantılı bir kredi kartı ya da banka hesabı olmalıdır. PayPal hesabınızda bunlar yoksa, aşağıdaki düğmeye tıklayın."
+      ],
+      "You must remove any additional personal calendars and any shared calendar links before you can cancel your Mail subscription.": [
+        "Mail aboneliğinizi iptal etmeden önce bütün ek olan kişisel takvimleri ve paylaşılan takvim bağlantılarını kaldırmanız gerekir."
       ],
       "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription.": [
         "Aboneliğinizi iptal etmeden önce bütün ek olan kişisel takvimleri ve paylaşılan takvim bağlantılarını kaldırmanız gerekir."
@@ -3912,9 +3877,6 @@
       "Email address not yet verified.": [
         "E-posta adresi henüz doğrulanmamış."
       ],
-      "Send verification email": [
-        "Doğrulama e-postası gönder"
-      ],
       "Verification email sent to ${ email.Value }": [
         "Doğrulama e-postası ${ email.Value } alıcısına gönderildi"
       ],
@@ -3923,6 +3885,9 @@
       ],
       "Verify recovery email?": [
         "Kurtarma e-postası doğrulansın mı?"
+      ],
+      "Verify with email": [
+        "E-posta ile doğrula"
       ],
       "Verifying your email address increases your account security and allows additional options for recovery.": [
         "E-posta adresinizi doğrulamak hesabınızın güvenliğini artırır ve yeni bir kurtarma seçeneği ekler."
@@ -3937,6 +3902,29 @@
       ],
       "Phrase": [
         "İfade"
+      ]
+    },
+    "Recovery Phone": {
+      "Cancel": [
+        "İptal"
+      ],
+      "Phone number has been verified.": [
+        "Telefon numarası doğrulandı."
+      ],
+      "Phone number not yet verified.": [
+        "Telefon numarası henüz doğrulanmamış."
+      ],
+      "Verify by SMS": [
+        "SMS ile doğrula"
+      ],
+      "Verify now": [
+        "Şimdi doğrula"
+      ],
+      "Verify recovery phone?": [
+        "Kurtarma telefonu doğrulansın mı?"
+      ],
+      "Verifying your phone number increases your account security and allows additional options for recovery.": [
+        "Telefon numaranızı doğrulamak hesabınızın güvenliğini arttırır ve yeni bir kurtarma seçeneği ekler."
       ]
     },
     "Signup label": {
@@ -4256,6 +4244,9 @@
       ],
       "Billing cycle": [
         "Fatura dönemi"
+      ],
+      "Cancel Mail subscription": [
+        "Mail aboneliğini iptal et"
       ],
       "Card verification": [
         "Kart doğrulama"
