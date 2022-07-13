@@ -103,6 +103,9 @@
       "Apply": [
         "Applica"
       ],
+      "Apply to existing message": [
+        "Applicare al messaggio esistente"
+      ],
       "Attach screenshot(s)": [
         "Allega screenshot"
       ],
@@ -175,8 +178,8 @@
       "Continue to ${ name }": [
         "Continua su ${ name }"
       ],
-      "Continue with": [
-        "Continua con"
+      "Continue with ${ nameToDisplay } ${ maybeEmailInBrackets }": [
+        "Continua con ${ nameToDisplay } ${ maybeEmailInBrackets }"
       ],
       "Continue with Google": [
         "Continua con Google"
@@ -193,8 +196,8 @@
       "Create": [
         "Crea"
       ],
-      "Create a secure ProtonMail address instead": [
-        "Create a secure Proton Mail address instead"
+      "Create a secure ${ MAIL_APP_NAME } address instead": [
+        "Crea invece un indirizzo ${ MAIL_APP_NAME } sicuro"
       ],
       "Create account": [
         "Crea account"
@@ -345,6 +348,9 @@
       ],
       "Extend": [
         "Estesa"
+      ],
+      "Filters are being applied. This might take a few minutes.": [
+        "I filtri sono stati applicati. Questo potrebbe aver bisogno di qualche minuto."
       ],
       "Font": [
         "Carattere"
@@ -679,17 +685,14 @@
       "Show preview": [
         "Mostra anteprima"
       ],
-      "sign in": [
-        "accedi"
-      ],
       "Sign in": [
         "Accedi"
       ],
       "Sign out": [
         "Esci"
       ],
-      "Sign out from": [
-        "Disconnettiti da"
+      "Sign out from ${ nameToDisplay } ${ maybeEmailInBrackets }": [
+        "Disconnetti da ${ nameToDisplay } ${ maybeEmailInBrackets }"
       ],
       "Sign out of all accounts": [
         "Disconnetti tutti gli account"
@@ -1006,11 +1009,6 @@
         "Due anni"
       ]
     },
-    "blackfriday Action": {
-      "Get the offer": [
-        ""
-      ]
-    },
     "blackfriday Info": {
       "beta": [
         "beta"
@@ -1026,14 +1024,8 @@
       ]
     },
     "blackfriday Title": {
-      "Best deal": [
-        ""
-      ],
       "Most popular": [
         "Il più richiesto"
-      ],
-      "Save more when combining Mail and VPN": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer Action": {
@@ -1044,20 +1036,9 @@
         "Ottieni la promo ora"
       ]
     },
-    "blackfriday: VPNspecialoffer Badge popup": {
-      "${ vpnPlus } Special Offer 2021 discount has been applied": [
-        ""
-      ]
-    },
     "blackfriday: VPNspecialoffer Info": {
-      "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
-        ""
-      ],
       "Save ${ percentage }%": [
         "${ percentage } %"
-      ],
-      "Special offer Terms and Conditions": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer info": {
@@ -1071,15 +1052,6 @@
       ]
     },
     "blackfriday: VPNspecialoffer Title": {
-      "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
-        ""
-      ],
-      "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
-        ""
-      ],
-      "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
-        ""
-      ],
       "1 month": [
         "1 mese"
       ],
@@ -1088,18 +1060,6 @@
       ],
       "24 months": [
         "24 mesi"
-      ],
-      "Billed at ${ amount } for the first 2 years.${ supNotice }": [
-        ""
-      ],
-      "Billed at ${ amount } for the first month.${ supNotice }": [
-        ""
-      ],
-      "Billed at ${ amount } for the first year.${ supNotice }": [
-        ""
-      ],
-      "Get the special year-end offer on our Premium VPN PLUS plan": [
-        ""
       ]
     },
     "Bridge version load failed": {
@@ -1207,9 +1167,9 @@
       "You have reached the maximum number of personal calendars you can create within your plan.": [
         "Hai raggiunto il numero massimo di calendari personali che puoi creare all'interno del tuo piano."
       ],
-      "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } subscribed calendar.": [
-        "Hai raggiunto il massimo di ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } calendario a cui sei iscritto.",
-        "Hai raggiunto il massimo di ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } calendari a cui sei iscritto."
+      "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS } subscribed calendar.": [
+        "Hai raggiunto il massimo di ${ MAX_SUBSCRIBED_CALENDARS } calendario a cui sei iscritto.",
+        "Hai raggiunto il massimo di ${ MAX_SUBSCRIBED_CALENDARS } calendari a cui sei iscritto."
       ]
     },
     "Calendar link purpose update success message": {
@@ -2639,9 +2599,6 @@
       "A group with this name already exists": [
         "Esiste già un gruppo con questo nome"
       ],
-      "Address already associated to a user": [
-        "Indirizzo già associato a un utente"
-      ],
       "Address primary private key not found": [
         "Chiave privata primaria indirizzo non trovata"
       ],
@@ -3187,20 +3144,36 @@
       "Please ${ refresh } or check your connection.": [
         "Per favore ${ refresh } o controlla la tua connessione."
       ],
-      "Please ${ signIn } to update your email subscription preferences.": [
-        "Si prega di ${ signIn } per aggiornare le preferenze di abbonamento email."
-      ],
       "There was a problem connecting to Proton.": [
         "Si è verificato un problema di connessione a Proton."
-      ],
-      "There was a problem unsubscribing you.": [
-        "Si è verificato un errore durante l'annullamento dell'iscrizione."
       ],
       "Too many child sessions, please clear your cookies and sign back in.": [
         "Troppe sessioni per bambini, sei pregato di cancellare i tuoi cookie e accedere nuovamente."
       ],
       "You may also ${ refresh } or try again later.": [
         "Puoi anche ${ refresh } o riprovare più tardi."
+      ]
+    },
+    "Error message, recovery": {
+      "Please ${ _signIn } to resend a recovery email verification request.": [
+        "Si prega di ${ _signIn } per inviare nuovamente una richiesta di verifica dell'email di recupero."
+      ],
+      "sign in": [
+        "accedi"
+      ],
+      "There was a problem verifying your email address.": [
+        "Si è presentato un problema durante la verifica del tuo indirizzo email."
+      ]
+    },
+    "Error message, unsubscribe": {
+      "Please ${ signIn } to update your email subscription preferences.": [
+        "Si prega di ${ signIn } per aggiornare le preferenze di abbonamento email."
+      ],
+      "sign in": [
+        "accedi"
+      ],
+      "There was a problem unsubscribing you.": [
+        "Si è verificato un errore durante l'annullamento dell'iscrizione."
       ]
     },
     "Error notification": {
@@ -3347,7 +3320,8 @@
       ]
     },
     "file size format": {
-      "bytes": [
+      "byte": [
+        "byte",
         "byte"
       ],
       "GB": [
@@ -3361,16 +3335,20 @@
       ]
     },
     "file size format, long": {
-      "Bytes": [
+      "Byte": [
+        "Byte",
         "Byte"
       ],
-      "Gigabytes": [
+      "Gigabyte": [
+        "Gigabyte",
         "Gigabyte"
       ],
-      "Kilobytes": [
+      "Kilobyte": [
+        "Kilobyte",
         "Kilobyte"
       ],
-      "Megabytes": [
+      "Megabyte": [
+        "Megabyte",
         "Megabyte"
       ]
     },
@@ -4380,6 +4358,9 @@
       "Continue with ${ planName }": [
         "Continua con ${ planName }"
       ],
+      "Continuing will connect your ${ ACCOUNT_APP_NAME } to ${ name }.": [
+        "Continuando, il tuo ${ ACCOUNT_APP_NAME } verrà connesso a ${ name }."
+      ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Crea ${ calendarsToBeCreated } nuovo calendario",
         "Crea ${ calendarsToBeCreated } nuovi calendari"
@@ -5090,9 +5071,6 @@
       "Select a service provider to start": [
         "Seleziona un fornitore di servizi per iniziare"
       ],
-      "Select Continue to ${ name } to open the app. This also creates a ${ name } account with your ${ MAIL_APP_NAME } address so you can sign in with one click in the future.": [
-        "Seleziona Continua su ${ name } per aprire l'app. Questo crea anche un account ${ name } con il tuo indirizzo ${ MAIL_APP_NAME } in modo da poter accedere in futuro con un clic."
-      ],
       "Select what you want to move from Google.": [
         "Seleziona cosa vuoi spostare da Google."
       ],
@@ -5530,6 +5508,9 @@
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "Devi avere una carta di credito o un conto bancario collegato al tuo conto PayPal. Se il tuo account PayPal non lo ha, clicca sul pulsante qui sotto."
+      ],
+      "You must remove any additional personal calendars and any shared calendar links before you can cancel your Mail subscription.": [
+        "Devi rimuovere qualsiasi calendario personale e qualsiasi calendario condiviso prima di poter cancellare la tua sottoscrizione."
       ],
       "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription.": [
         "Devi rimuovere ogni calendario personale aggiuntivo e ogni link del calendario condiviso prima di poter annullare il tuo abbonamento."
@@ -6111,6 +6092,9 @@
       ],
       "App password": [
         "Password app"
+      ],
+      "Apply filter to existing emails": [
+        "Applicare i filtri alle email esistenti"
       ],
       "Ask before loading remote content": [
         "Chiedi prima di caricare contenuti remoti"
@@ -7103,6 +7087,9 @@
       ]
     },
     "Message": {
+      "All filter actions will be applied to all messages in your Proton Mail account. No auto-reply emails will be sent.": [
+        "Tutti i filtri saranno applicati a tutti i messaggi nel tuo account Proton Mail. Nessuna risposta automatica verrà inviata."
+      ],
       "Are you sure you want to disable two-factor authentication?": [
         "È sicuro di voler disattivare l'autenticazione in due passaggi?"
       ],
@@ -7634,26 +7621,6 @@
         "Gestione del team"
       ]
     },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Rendi la privacy la tua impostazione predefinita per il backup, l'archiviazione, la condivisione e il recupero dei file."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "In caso contrario, l'accesso al tuo account sarà limitato e il tuo account verrà di seguito disabilitato."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Per continuare a utilizzare ${ MAIL_APP_NAME } con le funzionalità premium, scegli l'abbonamento e le opzioni di pagamento."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Effettua l'upgrade al pacchetto per le aziende con accesso a tutti i servizi premium di Proton."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Effettua l'upgrade al pacchetto per la privacy definitivo e accedi a tutti i servizi premium di Proton."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Il periodo di prova termina il ${ formattedTrialExpirationDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } che termina con ${ last4 }"
@@ -7720,6 +7687,26 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Stai godendo di un prezzo promozionale sul tuo piano attuale. Se esegui il downgrade del tuo account, perderai la possibilità di usufruire di questa promozione e non sarà più disponibile se provi ad abbonarti di nuovo."
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Rendi la privacy la tua impostazione predefinita per il backup, l'archiviazione, la condivisione e il recupero dei file."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "In caso contrario, l'accesso al tuo account sarà limitato e il tuo account verrà di seguito disabilitato."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Per continuare a utilizzare ${ MAIL_APP_NAME } con le funzionalità premium, scegli l'abbonamento e le opzioni di pagamento."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Effettua l'upgrade al pacchetto per le aziende con accesso a tutti i servizi premium di Proton."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Effettua l'upgrade al pacchetto per la privacy definitivo e accedi a tutti i servizi premium di Proton."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Il periodo di prova termina il ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -8524,14 +8511,8 @@
       "Email address not yet verified.": [
         "Indirizzo email non ancora verificato."
       ],
-      "Please ${ signIn } to resend a recovery email verification request.": [
-        "Si prega di ${ signIn } per inviare nuovamente una richiesta di verifica dell'email di recupero."
-      ],
-      "Send verification email": [
-        "Invia email di verifica"
-      ],
-      "There was a problem verifying your email address.": [
-        "Si è presentato un problema nella verifica del tuo indirizzo email."
+      "sign in": [
+        "accedi"
       ],
       "Verification email sent to ${ email.Value }": [
         "Email di verifica inviata a ${ email.Value }"
@@ -8541,6 +8522,9 @@
       ],
       "Verify recovery email?": [
         "Verifica email di recupero?"
+      ],
+      "Verify with email": [
+        "Verifica con email"
       ],
       "Verifying your email address increases your account security and allows additional options for recovery.": [
         "Verificare il tuo indirizzo email migliora la sicurezza del tuo account e permette opzioni aggiuntive per il recupero."
@@ -8561,6 +8545,29 @@
       ],
       "Phrase": [
         "Frase"
+      ]
+    },
+    "Recovery Phone": {
+      "Cancel": [
+        "Annulla"
+      ],
+      "Phone number has been verified.": [
+        "Il numero di telefono è stato verificato."
+      ],
+      "Phone number not yet verified.": [
+        "Numero di telefono non ancora verificato."
+      ],
+      "Verify by SMS": [
+        "Verifica via SMS"
+      ],
+      "Verify now": [
+        "Verifica ora"
+      ],
+      "Verify recovery phone?": [
+        "Verifica telefono di recupero?"
+      ],
+      "Verifying your phone number increases your account security and allows additional options for recovery.": [
+        "Verificare il tuo numero di telefono migliora la sicurezza del tuo account e permette opzioni aggiuntive per il recupero."
       ]
     },
     "Remark about a key type option": {
@@ -9264,6 +9271,9 @@
       "Appearance": [
         "Aspetto"
       ],
+      "Apply filter to existing messages": [
+        "Applicare i filtri ai messaggi esistenti"
+      ],
       "Apply gift code": [
         "Applica codice regalo"
       ],
@@ -9293,6 +9303,9 @@
       ],
       "Bridge for ${ platform }": [
         "Bridge per ${ platform }"
+      ],
+      "Cancel Mail subscription": [
+        "Annulla l'abbonamento"
       ],
       "Card verification": [
         "Verifica della carta"
@@ -10170,12 +10183,12 @@
       ]
     },
     "Upgrade notice": {
-      "Upgrade to a paid plan to create up to ${ MAX_CALENDARS_PER_USER } calendar, allowing you to make calendars for work, to share with friends, and just for yourself.": [
-        "Passa a un piano a pagamento per creare fino a ${ MAX_CALENDARS_PER_USER } calendario, consentendoti di crearne per lavoro, condividerli con gli amici e solo per te.",
-        "Passa a un piano a pagamento per creare fino a ${ MAX_CALENDARS_PER_USER } calendari, consentendoti di crearne per lavoro, condividerli con gli amici e solo per te."
+      "Upgrade to a Mail paid plan to create up to ${ MAX_CALENDARS_PAID } calendar, allowing you to make calendars for work, to share with friends, and just for yourself.": [
+        "Passa ad un piano Mail a pagamento per creare fino a ${ MAX_CALENDARS_PAID } calendario, puoi creare un calendario per il lavoro, da condividere con gli amici, o solo per te.",
+        "Passa a un piano Mail a pagamento per creare fino a ${ MAX_CALENDARS_PAID } calendari, consentendoti di crearne per lavoro, condividerli con gli amici e solo per te."
       ],
-      "Upgrade to a paid plan to share your personal calendar via link with anyone.": [
-        "Passa ad un piano a pagamento per condividere il tuo calendario personale tramite link con chiunque."
+      "Upgrade to a Mail paid plan to share your personal calendar via link with anyone.": [
+        "Passa ad un piano Mail a pagamento per condividere il tuo calendario personale tramite link con chiunque."
       ]
     },
     "User role": {

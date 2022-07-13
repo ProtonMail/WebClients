@@ -80,8 +80,8 @@
       "Create": [
         "Crea"
       ],
-      "Create a secure ProtonMail address instead": [
-        "Crea invece un indirizzo ProtonMail sicuro"
+      "Create a secure ${ MAIL_APP_NAME } address instead": [
+        "Crea invece un indirizzo ${ MAIL_APP_NAME } sicuro"
       ],
       "Create account": [
         "Crea account"
@@ -485,11 +485,6 @@
         "Due anni"
       ]
     },
-    "blackfriday Action": {
-      "Get the offer": [
-        ""
-      ]
-    },
     "blackfriday Info": {
       "beta": [
         "beta"
@@ -505,14 +500,8 @@
       ]
     },
     "blackfriday Title": {
-      "Best deal": [
-        ""
-      ],
       "Most popular": [
         "Il più richiesto"
-      ],
-      "Save more when combining Mail and VPN": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer Action": {
@@ -523,20 +512,9 @@
         "Ottieni la promo ora"
       ]
     },
-    "blackfriday: VPNspecialoffer Badge popup": {
-      "${ vpnPlus } Special Offer 2021 discount has been applied": [
-        ""
-      ]
-    },
     "blackfriday: VPNspecialoffer Info": {
-      "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
-        ""
-      ],
       "Save ${ percentage }%": [
         "${ percentage } %"
-      ],
-      "Special offer Terms and Conditions": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer info": {
@@ -550,15 +528,6 @@
       ]
     },
     "blackfriday: VPNspecialoffer Title": {
-      "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
-        ""
-      ],
-      "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
-        ""
-      ],
-      "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
-        ""
-      ],
       "1 month": [
         "1 mese"
       ],
@@ -567,18 +536,6 @@
       ],
       "24 months": [
         "24 mesi"
-      ],
-      "Billed at ${ amount } for the first 2 years.${ supNotice }": [
-        ""
-      ],
-      "Billed at ${ amount } for the first month.${ supNotice }": [
-        ""
-      ],
-      "Billed at ${ amount } for the first year.${ supNotice }": [
-        ""
-      ],
-      "Get the special year-end offer on our Premium VPN PLUS plan": [
-        ""
       ]
     },
     "Bug category": {
@@ -1812,7 +1769,8 @@
       ]
     },
     "file size format": {
-      "bytes": [
+      "byte": [
+        "byte",
         "byte"
       ],
       "GB": [
@@ -1826,16 +1784,20 @@
       ]
     },
     "file size format, long": {
-      "Bytes": [
+      "Byte": [
+        "Byte",
         "Byte"
       ],
-      "Gigabytes": [
+      "Gigabyte": [
+        "Gigabyte",
         "Gigabyte"
       ],
-      "Kilobytes": [
+      "Kilobyte": [
+        "Kilobyte",
         "Kilobyte"
       ],
-      "Megabytes": [
+      "Megabyte": [
+        "Megabyte",
         "Megabyte"
       ]
     },
@@ -2507,6 +2469,9 @@
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "Devi avere una carta di credito o un conto bancario collegato al tuo conto PayPal. Se il tuo account PayPal non lo ha, clicca sul pulsante qui sotto."
+      ],
+      "You must remove any additional personal calendars and any shared calendar links before you can cancel your Mail subscription.": [
+        "Devi rimuovere qualsiasi calendario personale e qualsiasi calendario condiviso prima di poter cancellare la tua sottoscrizione."
       ],
       "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription.": [
         "Devi rimuovere ogni calendario personale aggiuntivo e ogni link del calendario condiviso prima di poter annullare il tuo abbonamento."
@@ -3912,9 +3877,6 @@
       "Email address not yet verified.": [
         "Indirizzo email non ancora verificato."
       ],
-      "Send verification email": [
-        "Invia email di verifica"
-      ],
       "Verification email sent to ${ email.Value }": [
         "Email di verifica inviata a ${ email.Value }"
       ],
@@ -3923,6 +3885,9 @@
       ],
       "Verify recovery email?": [
         "Verificare email di recupero?"
+      ],
+      "Verify with email": [
+        "Verifica con email"
       ],
       "Verifying your email address increases your account security and allows additional options for recovery.": [
         "Verificare il tuo indirizzo email migliora la sicurezza del tuo account e permette opzioni aggiuntive per il recupero."
@@ -3937,6 +3902,29 @@
       ],
       "Phrase": [
         "Frase"
+      ]
+    },
+    "Recovery Phone": {
+      "Cancel": [
+        "Annulla"
+      ],
+      "Phone number has been verified.": [
+        "Il numero di telefono è stato verificato."
+      ],
+      "Phone number not yet verified.": [
+        "Numero di telefono non ancora verificato."
+      ],
+      "Verify by SMS": [
+        "Verifica via SMS"
+      ],
+      "Verify now": [
+        "Verifica ora"
+      ],
+      "Verify recovery phone?": [
+        "Verifica telefono di recupero?"
+      ],
+      "Verifying your phone number increases your account security and allows additional options for recovery.": [
+        "Verificare il tuo numero di telefono migliora la sicurezza del tuo account e permette opzioni aggiuntive per il recupero."
       ]
     },
     "Signup label": {
@@ -4256,6 +4244,9 @@
       ],
       "Billing cycle": [
         "Ciclo di fatturazione"
+      ],
+      "Cancel Mail subscription": [
+        "Annulla l'abbonamento"
       ],
       "Card verification": [
         "Verifica della carta"

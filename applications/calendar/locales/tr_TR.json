@@ -610,11 +610,6 @@
         "Sorunlarla karşılaşırsanız, istediğiniz zaman Beta erişimini devre dışı bırakabilirsiniz."
       ]
     },
-    "blackfriday Action": {
-      "Get the offer": [
-        ""
-      ]
-    },
     "blackfriday Info": {
       "beta": [
         "beta"
@@ -630,14 +625,8 @@
       ]
     },
     "blackfriday Title": {
-      "Best deal": [
-        ""
-      ],
       "Most popular": [
         "En popüler olanlar"
-      ],
-      "Save more when combining Mail and VPN": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer Action": {
@@ -649,14 +638,8 @@
       ]
     },
     "blackfriday: VPNspecialoffer Info": {
-      "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
-        ""
-      ],
       "Save ${ percentage }%": [
         "- %${ percentage }"
-      ],
-      "Special offer Terms and Conditions": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer info": {
@@ -670,15 +653,6 @@
       ]
     },
     "blackfriday: VPNspecialoffer Title": {
-      "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
-        ""
-      ],
-      "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
-        ""
-      ],
-      "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
-        ""
-      ],
       "1 month": [
         "1 ay"
       ],
@@ -687,18 +661,6 @@
       ],
       "24 months": [
         "24 ay"
-      ],
-      "Billed at ${ amount } for the first 2 years.${ supNotice }": [
-        ""
-      ],
-      "Billed at ${ amount } for the first month.${ supNotice }": [
-        ""
-      ],
-      "Billed at ${ amount } for the first year.${ supNotice }": [
-        ""
-      ],
-      "Get the special year-end offer on our Premium VPN PLUS plan": [
-        ""
       ]
     },
     "Bug category": {
@@ -2265,7 +2227,7 @@
       "This label name is not available. Please choose a different name.": [
         "Bu etiket adı kullanılamaz. Lütfen farklı bir ad seçin."
       ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser": [
+      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
         "Bu iletide, geçerli tarayıcınızda açılamayacak bazı bağlantı adresleri bulunuyor olabilir"
       ],
       "Trusted keys are not valid for sending": [
@@ -2594,7 +2556,8 @@
       ]
     },
     "file size format": {
-      "bytes": [
+      "byte": [
+        "bayt",
         "bayt"
       ],
       "GB": [
@@ -2608,16 +2571,20 @@
       ]
     },
     "file size format, long": {
-      "Bytes": [
+      "Byte": [
+        "Bayt",
         "Bayt"
       ],
-      "Gigabytes": [
+      "Gigabyte": [
+        "Gigabayt",
         "Gigabayt"
       ],
-      "Kilobytes": [
+      "Kilobyte": [
+        "Kilobayt",
         "Kilobayt"
       ],
-      "Megabytes": [
+      "Megabyte": [
+        "Megabayt",
         "Megabayt"
       ]
     },
@@ -3112,11 +3079,11 @@
       "Other options": [
         "Diğer seçenekler"
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
-        "PGP/Inline is only compatible with Plain Text format. Please note that Proton Mail always signs encrypted messages."
+      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        "PGP/Inline yalnızca düz metin biçimiyle uyumludur. Lütfen ${ MAIL_APP_NAME } uygulamasının şifrelenmiş iletileri her zaman imzaladığını unutmayın."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
-        "PGP/MIME automatically sends the message using the current composer mode. Please note that Proton Mail always signs encrypted messages."
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
+        "PGP/MIME, geçerli oluşturucu kipini kullanarak iletiyi otomatik olarak gönderir. Lütfen şifrelenmiş iletilerin her zaman ${ MAIL_APP_NAME } tarafından imzalandığını unutmayın"
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Lütfen bu gruba atanan adreslerin SİLİNEMEYECEĞİNİ unutmayın."

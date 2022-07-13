@@ -20,7 +20,7 @@ const GenericError = ({ children, className, small = false }: Props) => {
     );
 
     const title = c('Error message').t`Oops, something went wrong`;
-    const line1 = c('Error message').t`Brace yourself till we get the error fixed.`;
+    const line1 = c('Error message').t`Something went wrong. Please refresh the page or try again later.`;
     const line2 = c('Error message').jt`You may also ${refresh} or try again later.`;
 
     return (

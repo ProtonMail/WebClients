@@ -1138,11 +1138,6 @@
         "Se riscontri problemi, puoi sempre disabilitare l'Accesso Beta."
       ]
     },
-    "blackfriday Action": {
-      "Get the offer": [
-        ""
-      ]
-    },
     "blackfriday Info": {
       "beta": [
         "beta"
@@ -1158,14 +1153,8 @@
       ]
     },
     "blackfriday Title": {
-      "Best deal": [
-        ""
-      ],
       "Most popular": [
         "Il più richiesto"
-      ],
-      "Save more when combining Mail and VPN": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer Action": {
@@ -1177,14 +1166,8 @@
       ]
     },
     "blackfriday: VPNspecialoffer Info": {
-      "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
-        ""
-      ],
       "Save ${ percentage }%": [
         "${ percentage } %"
-      ],
-      "Special offer Terms and Conditions": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer info": {
@@ -1198,15 +1181,6 @@
       ]
     },
     "blackfriday: VPNspecialoffer Title": {
-      "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
-        ""
-      ],
-      "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
-        ""
-      ],
-      "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
-        ""
-      ],
       "1 month": [
         "1 mese"
       ],
@@ -1215,18 +1189,6 @@
       ],
       "24 months": [
         "24 mesi"
-      ],
-      "Billed at ${ amount } for the first 2 years.${ supNotice }": [
-        ""
-      ],
-      "Billed at ${ amount } for the first month.${ supNotice }": [
-        ""
-      ],
-      "Billed at ${ amount } for the first year.${ supNotice }": [
-        ""
-      ],
-      "Get the special year-end offer on our Premium VPN PLUS plan": [
-        ""
       ]
     },
     "Bug category": {
@@ -3538,7 +3500,8 @@
       ]
     },
     "file size format": {
-      "bytes": [
+      "byte": [
+        "byte",
         "byte"
       ],
       "GB": [
@@ -3552,16 +3515,20 @@
       ]
     },
     "file size format, long": {
-      "Bytes": [
+      "Byte": [
+        "Byte",
         "Byte"
       ],
-      "Gigabytes": [
+      "Gigabyte": [
+        "Gigabyte",
         "Gigabyte"
       ],
-      "Kilobytes": [
+      "Kilobyte": [
+        "Kilobyte",
         "Kilobyte"
       ],
-      "Megabytes": [
+      "Megabyte": [
+        "Megabyte",
         "Megabyte"
       ]
     },
@@ -3948,13 +3915,13 @@
         "${ numContacts } contatto",
         "${ numContacts } contatti"
       ],
-      "${ occurrencesInBody } occurrence found": [
-        "${ occurrencesInBody } occorrenza trovata",
-        "${ occurrencesInBody } occorrenze trovate"
+      "${ numOccurrences } occurrence found": [
+        "${ numOccurrences } occorrenza trovata",
+        "${ numOccurrences } occorrenze trovate"
       ],
-      "${ occurrencesInBody } occurrence found in the mail content": [
-        "${ occurrencesInBody } occorrenza trovata nel contenuto della posta",
-        "${ occurrencesInBody } occorrenze trovate nel contenuto della posta"
+      "${ numOccurrences } occurrence found in the mail content": [
+        "${ numOccurrences } occorrenza trovata nel contenuto delle mail",
+        "${ numOccurrences } occorrenze trovate nel contenuto delle mail"
       ],
       "${ pureAttachmentsCount } file attached": [
         "${ pureAttachmentsCount } file allegato",
@@ -4569,11 +4536,11 @@
       "per month.": [
         "al mese."
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
-        "PGP/Inline is only compatible with Plain Text format. Please note that Proton Mail always signs encrypted messages."
+      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        "PGP/Inline è compatibile solo nel formato Testo Semplice. Per favore nota che ${ MAIL_APP_NAME } firma sempre i messaggi crittografati."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
-        "PGP/MIME automatically sends the message using the current composer mode. Please note that Proton Mail always signs encrypted messages."
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
+        "PGP/MIME invia automaticamente il messaggio utilizzando la modalità corrente di composizione. Per favore nota che ${ MAIL_APP_NAME } firma sempre i messaggi crittografati"
       ],
       "Phone number": [
         "Numero di telefono"
@@ -5428,6 +5395,9 @@
       ],
       "ANY": [
         "QUALSIASI"
+      ],
+      "Apply filter to existing emails": [
+        "Applica filtro alle email esistenti"
       ],
       "Attach screenshot(s)": [
         "Allega screenshot"
@@ -6634,7 +6604,7 @@
         "Impossibile inviare all'indirizzo dell'organizzatore: ${ errorMessage }"
       ],
       "Re-encrypting invitation failed. Please try again": [
-        ""
+        "Crittografia dell'invito non riuscita. Per favore riprova"
       ]
     },
     "Search - no results": {

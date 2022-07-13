@@ -410,9 +410,6 @@
       "Skip": [
         "Pomiń"
       ],
-      "Start import": [
-        ""
-      ],
       "Start setup": [
         "Rozpocznij konfigurację"
       ],
@@ -614,11 +611,6 @@
         "Jeśli napotkasz problemy, możesz wyłączyć dostęp beta."
       ]
     },
-    "blackfriday Action": {
-      "Get the offer": [
-        ""
-      ]
-    },
     "blackfriday Info": {
       "beta": [
         "beta"
@@ -634,14 +626,8 @@
       ]
     },
     "blackfriday Title": {
-      "Best deal": [
-        ""
-      ],
       "Most popular": [
         "Najpopularniejszy"
-      ],
-      "Save more when combining Mail and VPN": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer Action": {
@@ -653,14 +639,8 @@
       ]
     },
     "blackfriday: VPNspecialoffer Info": {
-      "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
-        ""
-      ],
       "Save ${ percentage }%": [
         "${ percentage } %"
-      ],
-      "Special offer Terms and Conditions": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer info": {
@@ -674,15 +654,6 @@
       ]
     },
     "blackfriday: VPNspecialoffer Title": {
-      "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
-        ""
-      ],
-      "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
-        ""
-      ],
-      "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
-        ""
-      ],
       "1 month": [
         "1 miesiąc"
       ],
@@ -691,18 +662,6 @@
       ],
       "24 months": [
         "24 miesiące"
-      ],
-      "Billed at ${ amount } for the first 2 years.${ supNotice }": [
-        ""
-      ],
-      "Billed at ${ amount } for the first month.${ supNotice }": [
-        ""
-      ],
-      "Billed at ${ amount } for the first year.${ supNotice }": [
-        ""
-      ],
-      "Get the special year-end offer on our Premium VPN PLUS plan": [
-        ""
       ]
     },
     "Bug category": {
@@ -2301,7 +2260,7 @@
       "This label name is not available. Please choose a different name.": [
         "Nazwa etykiety nie jest dostępna. Wpisz inną nazwę."
       ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser": [
+      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
         "Ta wiadomość może zawierać adresy URL, które nie mogą być poprawnie otwarte przez obecną przeglądarkę"
       ],
       "Trusted keys are not valid for sending": [
@@ -2632,7 +2591,10 @@
       ]
     },
     "file size format": {
-      "bytes": [
+      "byte": [
+        "bajt",
+        "bajty",
+        "bajtów",
         "bajtów"
       ],
       "GB": [
@@ -2646,17 +2608,29 @@
       ]
     },
     "file size format, long": {
-      "Bytes": [
-        "bajty"
+      "Byte": [
+        "bajt",
+        "bajty",
+        "bajtów",
+        "bajtów"
       ],
-      "Gigabytes": [
-        "gigabajty"
+      "Gigabyte": [
+        "gigabajt",
+        "gigabajty",
+        "gigabajtów",
+        "gigabajtów"
       ],
-      "Kilobytes": [
-        "kilobajty"
+      "Kilobyte": [
+        "kilobajt",
+        "kilobajty",
+        "kilobajtów",
+        "kilobajtów"
       ],
-      "Megabytes": [
-        "megabajty"
+      "Megabyte": [
+        "megabajt",
+        "megabajty",
+        "megabajtów",
+        "megabajtów"
       ]
     },
     "Filter notification": {
@@ -3212,11 +3186,11 @@
       "Other options": [
         "Inne opcje"
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
-        "PGP/Inline is only compatible with Plain Text format. Please note that Proton Mail always signs encrypted messages."
+      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        "Schemat PGP/Inline jest kompatybilny tylko z trybem zwykłego tekstu. Pamiętaj, że ${ MAIL_APP_NAME } zawsze podpisuje zaszyfrowane wiadomości."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
-        "PGP/MIME automatically sends the message using the current composer mode. Please note that Proton Mail always signs encrypted messages."
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
+        "Schemat PGP/MIME automatycznie wysyła wiadomości przy użyciu obecnego trybu edytora. Pamiętaj, że ${ MAIL_APP_NAME } zawsze podpisuje zaszyfrowane wiadomości"
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Pamiętaj, że adresy przypisane do tej grupy NIE zostaną usunięte."

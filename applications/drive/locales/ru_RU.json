@@ -491,9 +491,6 @@
       "Skip": [
         "Пропустить"
       ],
-      "Start import": [
-        ""
-      ],
       "Start recovering": [
         "Начать восстановление"
       ],
@@ -2141,8 +2138,11 @@
       ]
     },
     "file size format": {
-      "bytes": [
-        "байт"
+      "byte": [
+        "байт",
+        "байт",
+        "байты",
+        "байтов"
       ],
       "GB": [
         "Гбайт"
@@ -2155,17 +2155,29 @@
       ]
     },
     "file size format, long": {
-      "Bytes": [
-        "Байт"
+      "Byte": [
+        "Байт",
+        "Байты",
+        "",
+        "Байтов"
       ],
-      "Gigabytes": [
-        "Гигабайт"
+      "Gigabyte": [
+        "Гигабайт",
+        "Гигабайт",
+        "",
+        "Гигабайтов"
       ],
-      "Kilobytes": [
-        "Килобайт"
+      "Kilobyte": [
+        "Килобайт",
+        "Килобайты",
+        "",
+        "Килобайтов"
       ],
-      "Megabytes": [
-        "Мегабайт"
+      "Megabyte": [
+        "Мегабайт",
+        "Мегабайты",
+        "",
+        "Мегабайтов"
       ]
     },
     "Filter notification": {
@@ -2866,9 +2878,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Один или несколько ваших доверенных ключей были отмечены их владельцем как «раскрытые». Мы рекомендуем вам «отозвать доверие» у этих ключей."
       ],
-      "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters is allowed": [
-        ""
-      ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Изменяйте эти настройки только в том случае, если используете PGP для переписки с получателями вне ${ BRAND_NAME }."
       ],
@@ -2887,11 +2896,11 @@
       "Permanently delete all files in your drive": [
         "Окончательно удалить все файлы в вашем хранилище"
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
-        "PGP/Inline is only compatible with Plain Text format. Please note that Proton Mail always signs encrypted messages."
+      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        "PGP/Inline совместим только с форматом Обычного текста. Обратите внимание, что ${ MAIL_APP_NAME } всегда подписывает зашифрованные сообщения."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
-        "PGP/MIME automatically sends the message using the current composer mode. Please note that Proton Mail always signs encrypted messages."
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
+        "PGP/MIME автоматически отправляет сообщение, используя текущий режим редактора писем. Обратите внимание, что ${ MAIL_APP_NAME } всегда подписывает зашифрованные сообщения"
       ],
       "Please enter the password to decrypt and view content.": [
         "Для расшифровки и просмотра содержимого введите пароль."

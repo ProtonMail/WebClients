@@ -192,7 +192,7 @@
         "Copier l’adresse électronique dans le presse-papiers"
       ],
       "Copy password to clipboard": [
-        ""
+        "Copier le mot de passe dans le presse-papier"
       ],
       "Create a new contact group": [
         "Créer un nouveau groupe de contacts"
@@ -287,7 +287,7 @@
         "Modifier l'adresse électronique"
       ],
       "Edit encryption": [
-        ""
+        "Modifier le chiffrement"
       ],
       "Edit label": [
         "Modifier le label"
@@ -320,7 +320,7 @@
         "Afficher toute l'URL"
       ],
       "Expiration time": [
-        ""
+        "Délai d’expiration"
       ],
       "Export": [
         "Exporter"
@@ -332,10 +332,10 @@
         "Exporter les contacts"
       ],
       "External encryption": [
-        ""
+        "Chiffrement externe"
       ],
       "Fewer search options": [
-        ""
+        "Moins d'options de recherche"
       ],
       "Filter on...": [
         "Filtrer sur..."
@@ -519,10 +519,10 @@
         "Fusionner les contacts"
       ],
       "Messages from this sender": [
-        ""
+        "Messages de cet expéditeur"
       ],
       "Messages to this recipient": [
-        ""
+        "Messages vers ce destinataire"
       ],
       "Minimize composer": [
         "Minimiser le composeur"
@@ -540,19 +540,19 @@
         "Plus d'options de recherche"
       ],
       "Move": [
-        ""
+        "Déplacer"
       ],
       "Move all conversations from this folder": [
-        ""
+        "Déplacer toutes les conversations de ce dossier"
       ],
       "Move all conversations from this label": [
-        ""
+        "Déplacer toutes les conversations de ce label"
       ],
       "Move all messages from this folder": [
-        ""
+        "Déplacer tous les messages de ce dossier"
       ],
       "Move all messages from this label": [
-        ""
+        "Déplacer tous les messages de ce label"
       ],
       "move emails to": [
         "déplacer les courriels vers"
@@ -678,7 +678,7 @@
         "Signer à nouveau"
       ],
       "Read message": [
-        ""
+        "Lire le message"
       ],
       "Read receipt sent": [
         "Confirmation de lecture envoyée"
@@ -705,10 +705,10 @@
         "Retirer ${ attachmentName }"
       ],
       "Remove encryption": [
-        ""
+        "Supprimer le chiffrement"
       ],
       "Remove expiration time": [
-        ""
+        "Supprimer le délai d'expiration"
       ],
       "Remove this label": [
         "Supprimer ce label"
@@ -780,7 +780,7 @@
         "envoyer un courriel de réponse automatique"
       ],
       "Send feedback": [
-        ""
+        "Envoyer un avis"
       ],
       "Send read receipt": [
         "Envoyer une confirmation de lecture"
@@ -792,7 +792,7 @@
         "Définir par défaut"
       ],
       "Set encryption": [
-        ""
+        "Définir le chiffrement"
       ],
       "Set expiration time": [
         "Définir la date d'expiration"
@@ -819,7 +819,7 @@
         "Afficher les détails"
       ],
       "Show fewer search options": [
-        ""
+        "Afficher moins d'options de recherche"
       ],
       "Show folders": [
         "Afficher les dossiers"
@@ -876,7 +876,7 @@
         "Ce message comporte du contenu distant."
       ],
       "Trash all": [
-        ""
+        "Tout supprimer"
       ],
       "Trust": [
         "Approuver"
@@ -886,7 +886,7 @@
         "Approuver les clés"
       ],
       "Trust public key": [
-        ""
+        "Approuver la clé publique"
       ],
       "Try again": [
         "Réessayer"
@@ -1138,34 +1138,17 @@
         "Si vous rencontrez des problèmes, vous pouvez toujours désactiver l'accès à la version bêta."
       ]
     },
-    "blackfriday Action": {
-      "Get the offer": [
-        ""
-      ]
-    },
     "blackfriday Info": {
       "beta": [
         "bêta"
       ],
       "Includes": [
         "Inclut"
-      ],
-      "Standard price: ${ regularPrice }": [
-        ""
-      ],
-      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
-        ""
       ]
     },
     "blackfriday Title": {
-      "Best deal": [
-        ""
-      ],
       "Most popular": [
         "La plus populaire"
-      ],
-      "Save more when combining Mail and VPN": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer Action": {
@@ -1174,17 +1157,6 @@
       ],
       "Get the deal now": [
         "Obtenez l'offre maintenant"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Info": {
-      "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
-        ""
-      ],
-      "Save ${ percentage }%": [
-        ""
-      ],
-      "Special offer Terms and Conditions": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer info": {
@@ -1198,15 +1170,6 @@
       ]
     },
     "blackfriday: VPNspecialoffer Title": {
-      "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
-        ""
-      ],
-      "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
-        ""
-      ],
-      "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
-        ""
-      ],
       "1 month": [
         "1 mois"
       ],
@@ -1215,18 +1178,6 @@
       ],
       "24 months": [
         "24 mois"
-      ],
-      "Billed at ${ amount } for the first 2 years.${ supNotice }": [
-        ""
-      ],
-      "Billed at ${ amount } for the first month.${ supNotice }": [
-        ""
-      ],
-      "Billed at ${ amount } for the first year.${ supNotice }": [
-        ""
-      ],
-      "Get the special year-end offer on our Premium VPN PLUS plan": [
-        ""
       ]
     },
     "Bug category": {
@@ -1609,169 +1560,169 @@
     },
     "color": {
       "Apple": [
-        ""
+        "pomme"
       ],
       "azureish white": [
-        ""
+        "blanc azur"
       ],
       "blanched almond": [
-        ""
+        "amande blanche"
       ],
       "blue-gray": [
-        ""
+        "bleu gris"
       ],
       "caramel": [
-        ""
+        "caramel"
       ],
       "carrot": [
-        ""
+        "carotte"
       ],
       "cerise": [
-        ""
+        "rouge cerise"
       ],
       "cinnabar": [
-        ""
+        "rouge cinabre"
       ],
       "cobalt": [
-        ""
+        "cobalt"
       ],
       "copper": [
-        ""
+        "cuivre"
       ],
       "cyan-blue azure": [
-        ""
+        "cyan bleu azur"
       ],
       "dandelion": [
-        ""
+        "pissenlit"
       ],
       "dark cerulean": [
-        ""
+        "bleu foncé"
       ],
       "dark midnight blue": [
-        ""
+        "bleu nuit sombre"
       ],
       "dim gray": [
-        ""
+        "gris foncé"
       ],
       "enzian": [
-        ""
+        "gentiane"
       ],
       "fern": [
-        ""
+        "fougère"
       ],
       "field drab": [
-        ""
+        "marron"
       ],
       "forest": [
-        ""
+        "forêt"
       ],
       "gainsboro": [
-        ""
+        "gris étain"
       ],
       "japanese laurel": [
-        ""
+        "laurier japonais"
       ],
       "kiwi": [
-        ""
+        "kiwi"
       ],
       "lemon yellow": [
-        ""
+        "jaune citron"
       ],
       "light carmine pink": [
-        ""
+        "rose carmin pâle"
       ],
       "light moss green": [
-        ""
+        "vert mousse pâle"
       ],
       "light red": [
-        ""
+        "rouge clair"
       ],
       "maize": [
-        ""
+        "maïs"
       ],
       "mughal green": [
-        ""
+        "vert foncé"
       ],
       "ocean": [
-        ""
+        "océan"
       ],
       "olive": [
-        ""
+        "olive"
       ],
       "outer space": [
-        ""
+        "bleu cosmique"
       ],
       "pacific": [
-        ""
+        "pacifique"
       ],
       "palatinate blue": [
-        ""
+        "bleu roi"
       ],
       "pale cerulean": [
-        ""
+        "bleu ciel"
       ],
       "pastel gray": [
-        ""
+        "gris pastel"
       ],
       "persian plum": [
-        ""
+        "prune perse"
       ],
       "persian red": [
-        ""
+        "rouge persan"
       ],
       "philippine gray": [
-        ""
+        "gris"
       ],
       "philippine silver": [
-        ""
+        "argenté"
       ],
       "pickle": [
-        ""
+        "cornichon"
       ],
       "pine": [
-        ""
+        "pin"
       ],
       "pink": [
-        ""
+        "rose"
       ],
       "pistachio": [
-        ""
+        "pistache"
       ],
       "plum": [
-        ""
+        "prune"
       ],
       "purple": [
-        ""
+        "violet"
       ],
       "raisin black": [
-        ""
+        "raisin noir"
       ],
       "reef": [
-        ""
+        "récif"
       ],
       "ruddy pink": [
-        ""
+        "rose bonbon"
       ],
       "sahara": [
-        ""
+        "sahara"
       ],
       "satin sheen gold": [
-        ""
+        "or satiné brillant"
       ],
       "slateblue": [
-        ""
+        "bleu ardoise"
       ],
       "soil": [
-        ""
+        "terre"
       ],
       "strawberry": [
-        ""
+        "fraise"
       ],
       "vivid auburn": [
-        ""
+        "rouge sombre"
       ],
       "white": [
-        ""
+        "blanc"
       ]
     },
     "Composer email icon": {
@@ -3076,7 +3027,7 @@
         "Le nom du label ne peut pas être vide."
       ],
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
-        ""
+        "Nombre maximum de pièces jointes (${ attachmentsCountLimit }) dépassé"
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "Fusionnez au moins ${ calendarToFixCount } calendrier avec un calendrier Proton existant",
@@ -3146,10 +3097,10 @@
         "La clé d'adresse principale n'est pas déchiffrée."
       ],
       "Primary key is not valid for sending": [
-        ""
+        "La clé principale n'est pas valide pour l'envoi."
       ],
       "Primary key retrieved for internal user is not valid for sending": [
-        ""
+        "La clé principale récupérée pour l’utilisateur interne n'est pas valide pour l’envoi."
       ],
       "Public key could not be trusted": [
         "La clé publique n'a pas pu être approuvée"
@@ -3202,7 +3153,7 @@
         "Certaines pièces jointes n'ont pas pu être déchiffrées.\nSi vous avez la clé privée correspondante, vous aurez toujours la possibilité de déchiffrer\nles fichiers avec un programme tel que GnuPG."
       ],
       "The folder name is invalid. Please choose a different name.": [
-        ""
+        "Le nom du dossier n'est pas valide. Veuillez en choisir un autre."
       ],
       "The folder name is too long. Please choose a different name.": [
         "Le nom du dossier est trop long. Veuillez en choisir un autre."
@@ -3211,7 +3162,7 @@
         "Les propriétés de la clé pour ${ emailAddress } n'ont pas pu être extraites"
       ],
       "The label name is invalid. Please choose a different name.": [
-        ""
+        "Le nom du label n'est pas valide. Veuillez en choisir un autre."
       ],
       "The label name is too long. Please choose a different name.": [
         "Le nom du label est trop long. Veuillez en choisir un autre."
@@ -3534,11 +3485,12 @@
     },
     "Feedback Modal Title": {
       "Your feedback": [
-        ""
+        "Votre retour d'expérience"
       ]
     },
     "file size format": {
-      "bytes": [
+      "byte": [
+        "octet",
         "octets"
       ],
       "GB": [
@@ -3552,17 +3504,21 @@
       ]
     },
     "file size format, long": {
-      "Bytes": [
+      "Byte": [
+        "Octet",
         "Octets"
       ],
-      "Gigabytes": [
-        "Giga-octets"
+      "Gigabyte": [
+        "Gigaoctet",
+        "Gigaoctets"
       ],
-      "Kilobytes": [
-        "Kilo-octets"
+      "Kilobyte": [
+        "Kilooctet",
+        "Kilooctets"
       ],
-      "Megabytes": [
-        "Mega-octets"
+      "Megabyte": [
+        "Megaoctet",
+        "Megaoctets"
       ]
     },
     "Filter Actions": {
@@ -3573,7 +3529,7 @@
         "Boîte de réception"
       ],
       "Inbox - Default": [
-        ""
+        "Boîte de réception, par défaut"
       ],
       "Select a folder": [
         "Sélectionner un dossier"
@@ -3903,15 +3859,15 @@
         "${ calendarsToBeMergedCount } calendriers fusionnés"
       ],
       "${ contactCount } contact contains multiple email addresses.": [
-        "",
-        ""
+        "Le contact ${ contactCount } dispose de plusieurs adresses courriel.",
+        "Les contacts ${ contactCount } disposent de plusieurs adresses courriel."
       ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } membre",
         "${ contactEmailsLength } membres"
       ],
       "${ contactName } contains multiple email addresses.": [
-        ""
+        "${ contactName } dispose de plusieurs adresses courriel."
       ],
       "${ contactsCount } contact found": [
         "${ contactsCount } contact trouvé",
@@ -3948,13 +3904,13 @@
         "${ numContacts } contact",
         "${ numContacts } contacts"
       ],
-      "${ occurrencesInBody } occurrence found": [
-        "${ occurrencesInBody } occurrence trouvée",
-        "${ occurrencesInBody } occurrences trouvées"
+      "${ numOccurrences } occurrence found": [
+        "${ numOccurrences } occurrence trouvée",
+        "${ numOccurrences } occurrences trouvées"
       ],
-      "${ occurrencesInBody } occurrence found in the mail content": [
-        "${ occurrencesInBody } occurrence trouvée dans le contenu du courrier",
-        "${ occurrencesInBody } occurrences trouvées dans le contenu du courrier"
+      "${ numOccurrences } occurrence found in the mail content": [
+        "${ numOccurrences } occurrence trouvée dans le contenu du courrier",
+        "${ numOccurrences } occurrences trouvées dans le contenu du courrier"
       ],
       "${ pureAttachmentsCount } file attached": [
         "${ pureAttachmentsCount } fichier joint",
@@ -4086,7 +4042,7 @@
         "Êtes-vous sûr·e de vouloir abandonner vos changements?"
       ],
       "Are you sure you want to move all messages in this location to Trash?": [
-        ""
+        "Voulez-vous vraiment déplacer tous les messages de cet emplacement vers la Corbeille?"
       ],
       "Are you sure you want to permanently delete ${ count } conversation?": [
         "Êtes-vous sûr·e de vouloir supprimer définitivement ${ count } conversation?",
@@ -4221,7 +4177,7 @@
         "Souhaitez-vous signer à nouveau les coordonnées du contact?"
       ],
       "Don't forget to share your password with the recipient": [
-        ""
+        "N'oubliez pas de communiquer votre mot de passe au destinataire"
       ],
       "Download our mobile application from your favorite app store to communicate securely on-the-go.": [
         "Téléchargez notre application mobile depuis votre boutique d'applications préférée pour communiquer en toute sécurité."
@@ -4248,13 +4204,13 @@
         "Clé dupliquée mise à jour"
       ],
       "Edit encryption": [
-        ""
+        "Modifier le chiffrement"
       ],
       "Edit expiration time": [
-        ""
+        "Modifier le délai d'expiration"
       ],
       "Edit link": [
-        ""
+        "Modifier le lien"
       ],
       "Email address": [
         "Adresse courriel"
@@ -4277,7 +4233,7 @@
         "images intégrées"
       ],
       "Encrypt message": [
-        ""
+        "Chiffrer le message"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Entrez le code de vérification qui a été envoyé à ${ destinationText }."
@@ -4311,7 +4267,7 @@
         "Expire bientôt"
       ],
       "Expiring message": [
-        ""
+        "Message expiré"
       ],
       "file attached": [
         "fichier joint",
@@ -4321,7 +4277,7 @@
         "Les filtres fonctionnent sur tous les messages, y compris les courriels entrants et envoyés. Chaque filtre doit contenir au moins un nom, une condition et une action."
       ],
       "Folder": [
-        ""
+        "Dossier"
       ],
       "For increased security, activate 2FA.": [
         "Pour une sécurité accrue, activez la double authentification (A2F)."
@@ -4359,7 +4315,7 @@
         "Heures"
       ],
       "I'm sending this message to a non-ProtonMail user.": [
-        ""
+        "J'envoie ce message à une personne qui n'utilise pas Proton Mail."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Si vous rencontrez des difficultés à créer votre compte, veuillez demander une invitation et nous vous répondrons dans un délai d'un jour ouvrable."
@@ -4371,7 +4327,7 @@
         "Si vous ne trouvez pas le courriel dans votre boîte de réception, veuillez vérifier votre dossier de pourriel."
       ],
       "Image description": [
-        ""
+        "Description de l'image"
       ],
       "Image URL": [
         "URL de l'image"
@@ -4495,7 +4451,7 @@
         "Mensuellement le ${ onDayString }"
       ],
       "Moving a large amount of messages. This may take a while.": [
-        ""
+        "Transfert de nombreux messages en cours, cela peut prendre un certain temps."
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Nommez votre nouveau dossier et sélectionnez le dossier parent dans lequel vous voulez le mettre. Si vous ne sélectionnez pas un dossier parent, ce nouveau dossier sera créé en tant que dossier de premier niveau."
@@ -4543,7 +4499,7 @@
         "Aucun traqueur trouvé, mais certaines images n'ont pas pu être chargées avec la protection contre le tracking"
       ],
       "non-Proton Mail": [
-        ""
+        "autre que Proton Mail"
       ],
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         "Aucune des clés téléversées n'est valide pour le chiffrement. Le chiffrement est automatiquement désactivé."
@@ -4555,7 +4511,7 @@
         "de"
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
-        ""
+        "Une ou plusieurs de vos clés de confiance ont été marquées comme «compromises» par leur propriétaire. Nous vous recommandons de ne plus faire confiance à ces clés."
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Ne modifiez ces paramètres que si vous utilisez PGP avec des destinataires qui n'utilisent pas ${ BRAND_NAME }."
@@ -4569,11 +4525,11 @@
       "per month.": [
         "par mois."
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
-        "PGP/Inline is only compatible with Plain Text format. Please note that Proton Mail always signs encrypted messages."
+      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        "PGP/Inline est uniquement compatible avec le format texte brut. Veuillez noter que ${ MAIL_APP_NAME } signe toujours les messages chiffrés."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
-        "PGP/MIME automatically sends the message using the current composer mode. Please note that Proton Mail always signs encrypted messages."
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
+        "PGP/MIME envoie automatiquement le message en utilisant le mode actuel du composeur. Veuillez noter que ${ MAIL_APP_NAME } signe toujours les messages chiffrés"
       ],
       "Phone number": [
         "Numéro de téléphone"
@@ -4600,11 +4556,11 @@
         "Veuillez sélectionner le type de lien que vous souhaitez insérer et remplir tous les champs."
       ],
       "Please select which email address or addresses to add to ${ groupCount } group.": [
-        "",
-        ""
+        "Sélectionnez l'adresse ou les adresses électroniques à ajouter à ${ groupCount } groupe.",
+        "Sélectionnez l'adresse ou les adresses électroniques à ajouter à ${ groupCount } groupes."
       ],
       "Please select which email address or addresses to add to ${ groupName }.": [
-        ""
+        "Sélectionnez l'adresse ou les adresses électroniques à ajouter à ${ groupName }."
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Veuillez patienter pendant que nous recherchons des contacts qui peuvent être signés une nouvelle fois avec la clé de chiffrement principale."
@@ -4646,7 +4602,7 @@
         "Demander une confirmation de lecture"
       ],
       "Rich text": [
-        ""
+        "Texte enrichi"
       ],
       "Right to Left": [
         "De droite à gauche"
@@ -4688,7 +4644,7 @@
         "Sélectionnez les calendriers à importer. Un nouveau calendrier sera créé pour chaque calendrier importé dans la limite de 20 calendriers."
       ],
       "Send an encrypted, password protected message to a ${ boldText } email address.": [
-        ""
+        "Envoyez un message chiffré, protégé par un mot de passe, à une adresse électronique ${ boldText }."
       ],
       "Sending": [
         "Envoi en cours"
@@ -4908,7 +4864,7 @@
         "Messages illimités"
       ],
       "Unlock message": [
-        ""
+        "Débloquer le message"
       ],
       "Unsupported file": [
         "Fichier non pris en charge"
@@ -5108,23 +5064,23 @@
         "Votre adresse électronique ne sera utilisée que pour cette vérification unique."
       ],
       "Your message will be deleted from the recipient's inbox and your sent folder on ${ dateString } at ${ formattedTime }": [
-        ""
+        "Votre message sera supprimé de la boîte de réception du destinataire et de votre dossier d'envoi le ${ dateString } à ${ formattedTime }"
       ],
       "Your message will be deleted from the recipient's inbox and your sent folder today at ${ formattedTime }": [
-        ""
+        "Votre message sera supprimé de la boîte de réception du destinataire et de votre dossier d'envoi aujourd'hui à ${ formattedTime }"
       ],
       "Your message will be deleted from the recipient's inbox and your sent folder tomorrow at ${ formattedTime }": [
-        ""
+        "Votre message sera supprimé de la boîte de réception du destinataire et de votre dossier d'envoi aujourd'hui à ${ formattedTime }"
       ],
       "Your message will expire in ${ numberOfDays } day.": [
-        "",
-        ""
+        "Votre message expirera dans ${ numberOfDays } jour.",
+        "Votre message expirera dans ${ numberOfDays } jours."
       ],
       "Your message will expire today.": [
-        ""
+        "Votre message expirera aujourd'hui."
       ],
       "Your message will expire tomorrow.": [
-        ""
+        "Votre message expirera demain."
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Votre numéro de téléphone ne sera utilisé que pour cette vérification unique."
@@ -5156,13 +5112,13 @@
     },
     "Key badge": {
       "Compromised": [
-        ""
+        "Compromise"
       ],
       "Expired": [
         "Expirée"
       ],
       "Obsolete": [
-        ""
+        "Obsolète"
       ],
       "Primary": [
         "Principal"
@@ -5429,6 +5385,9 @@
       "ANY": [
         "N’IMPORTE"
       ],
+      "Apply filter to existing emails": [
+        "Appliquer le filtre aux courriels existants"
+      ],
       "Attach screenshot(s)": [
         "Joindre une ou plusieurs captures d’écran"
       ],
@@ -5439,10 +5398,10 @@
         "Enregistrer automatiquement les contacts"
       ],
       "Awful": [
-        ""
+        "Affreuse"
       ],
       "Bad": [
-        ""
+        "Mauvaise"
       ],
       "BCC": [
         "Cci"
@@ -5547,7 +5506,7 @@
         "De: ${ importedEmail }"
       ],
       "Good": [
-        ""
+        "Bonne"
       ],
       "Group": [
         "Groupe"
@@ -5556,7 +5515,7 @@
         "Masquer le mot de passe"
       ],
       "How would you describe your experience with the new Proton?": [
-        ""
+        "Comment décririez-vous votre expérience avec la nouvelle version de Proton?"
       ],
       "I understand the risk": [
         "Je comprends le risque"
@@ -5631,7 +5590,7 @@
         "Notification"
       ],
       "OK": [
-        ""
+        "OK"
       ],
       "Operating system": [
         "Système d'exploitation"
@@ -5787,7 +5746,7 @@
         "sans pièces jointes"
       ],
       "Wonderful": [
-        ""
+        "Merveilleuse"
       ]
     },
     "Label for contact group color": {
@@ -6270,27 +6229,27 @@
     },
     "new_plans: action": {
       "Switch or add account": [
-        ""
+        "Basculez vers ou ajoutez un compte"
       ]
     },
     "new_plans: info": {
       "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
-        ""
+        "Voici le nouveau look de Proton.${ br } Plusieurs services, une seule mission. Bienvenue sur un internet où la confidentialité est la règle absolue."
       ]
     },
     "new_plans: label": {
       "Tell us about your experience. (Optional)": [
-        ""
+        "Parlez-nous de votre expérience (optionnel)"
       ]
     },
     "new_plans: placeholder": {
       "Feedback": [
-        ""
+        "Votre avis"
       ]
     },
     "new_plans: title": {
       "Updated Proton, unified protection": [
-        ""
+        "Nouvelle version, protection unifiée"
       ]
     },
     "Notification": {
@@ -6415,13 +6374,13 @@
     },
     "PGP Key info": {
       "${ emailAddress } has marked this key as compromised. This key cannot be used neither for encryption nor for signature verification.": [
-        ""
+        "${ emailAddress } a marqué cette clé comme compromise. Cette clé ne peut être utilisée ni pour le chiffrement ni pour la vérification de la signature."
       ],
       "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
-        ""
+        "${ emailAddress } a marqué cette clé comme obsolète. Cette clé ne peut être utilisée que pour la vérification de signature."
       ],
       "We recommend that you \"untrust\" this key.": [
-        ""
+        "Nous vous recommandons de ne plus faire confiance à cette clé."
       ]
     },
     "PGP key warning": {
@@ -6634,7 +6593,7 @@
         "Impossible d'envoyer à l'adresse de l'organisateur·rice: ${ errorMessage }"
       ],
       "Re-encrypting invitation failed. Please try again": [
-        ""
+        "L'invitation de re-chiffrement a échoué. Veuillez réessayer."
       ]
     },
     "Search - no results": {
@@ -6772,7 +6731,7 @@
     },
     "Spotlight": {
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        ""
+        "${ DRIVE_APP_NAME } n'est plus en version beta. Offrez à vos fichiers la même sécurité que celle dont bénéficient vos courriels."
       ],
       "Discover all Proton services": [
         "Découvrez tous les services Proton"
@@ -6793,7 +6752,7 @@
         "Pour protéger votre vie privée, Proton a bloqué les traqueurs de courriel dans ce message"
       ],
       "Try ${ DRIVE_APP_NAME }": [
-        ""
+        "Essayez ${ DRIVE_APP_NAME }"
       ],
       "You can now schedule your messages to be sent later": [
         "Vous pouvez maintenant programmer vos messages pour les envoyer plus tard"
@@ -6804,10 +6763,10 @@
     },
     "Status": {
       "This message is from a mailing list.": [
-        ""
+        "Ce message provient d’une liste de diffusion."
       ],
       "Unsubscribed": [
-        ""
+        "Désabonné"
       ]
     },
     "Step in filter modal": {
@@ -7034,7 +6993,7 @@
         "Déplacer ${ selectionCount } messages"
       ],
       "Password copied to clipboard": [
-        ""
+        "Mot de passe copié dans le presse-papiers"
       ],
       "Phishing reported": [
         "Hameçonnage signalé"
@@ -7362,7 +7321,7 @@
         "Exportation des contacts"
       ],
       "External encryption": [
-        ""
+        "Chiffrement externe"
       ],
       "Feedback": [
         "Votre avis"
@@ -7440,7 +7399,7 @@
         "Plus de sélections"
       ],
       "Move all messages to Trash": [
-        ""
+        "Déplacer tous les messages vers la Corbeille"
       ],
       "Move to": [
         "Déplacer vers"

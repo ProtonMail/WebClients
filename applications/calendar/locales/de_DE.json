@@ -2265,8 +2265,8 @@
       "This label name is not available. Please choose a different name.": [
         "Dieser Kategoriename ist nicht verfügbar. Bitte wähle einen anderen Namen."
       ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser": [
-        "Diese Nachricht kann einige Internetadressen enthalten, die von Ihrem aktuellen Browser nicht ordnungsgemäß geöffnet werden können"
+      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
+        "Diese Nachricht enthält möglicherweise Internetadressen, die von deinem aktuellen Browser nicht ordnungsgemäß geöffnet werden können."
       ],
       "Trusted keys are not valid for sending": [
         "Vertrauenswürdige Schlüssel sind für das Senden ungeeignet"
@@ -2594,7 +2594,8 @@
       ]
     },
     "file size format": {
-      "bytes": [
+      "byte": [
+        "Byte",
         "Bytes"
       ],
       "GB": [
@@ -2608,16 +2609,20 @@
       ]
     },
     "file size format, long": {
-      "Bytes": [
+      "Byte": [
+        "Byte",
         "Bytes"
       ],
-      "Gigabytes": [
+      "Gigabyte": [
+        "Gigabyte",
         "Gigabytes"
       ],
-      "Kilobytes": [
+      "Kilobyte": [
+        "Kilobyte",
         "Kilobytes"
       ],
-      "Megabytes": [
+      "Megabyte": [
+        "Megabyte",
         "Megabytes"
       ]
     },
@@ -3112,11 +3117,11 @@
       "Other options": [
         "Weitere Optionen"
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
-        "PGP/Inline is only compatible with Plain Text format. Please note that Proton Mail always signs encrypted messages."
+      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        "PGP/Inline ist nur mit dem Klartext-Format kompatibel. Bitte beachte, dass ${ MAIL_APP_NAME } verschlüsselte Nachrichten immer signiert."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
-        "PGP/MIME automatically sends the message using the current composer mode. Please note that Proton Mail always signs encrypted messages."
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
+        "PGP/MIME sendet die Nachricht automatisch unter Verwendung des aktuellen Verfassen-Modus. Bitte beachte, dass ${ MAIL_APP_NAME } verschlüsselte Nachrichten immer signiert."
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Bitte beachte, dass die dieser Gruppe zugewiesenen E-Mail-Adressen NICHT gelöscht werden."
@@ -3384,13 +3389,13 @@
         "Deine Daten können nun von ${ importedEmailAddressStrong } in dein Proton-Konto importiert werden."
       ],
       "Your email will only be used for this one-time verification.": [
-        "Ihre E-Mail-Adresse wird nur für diese einmalige Überprüfung verwendet."
+        "Deine E-Mail-Adresse wird nur für diese einmalige Überprüfung verwendet."
       ],
       "Your events will be encrypted and then saved.": [
         "Deine Termine werden verschlüsselt und anschließend gespeichert."
       ],
       "Your phone number will only be used for this one-time verification.": [
-        "Ihre Rufnummer wird nur für diese einmalige Überprüfung verwendet."
+        "Deine Rufnummer wird nur für diese einmalige Überprüfung verwendet."
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Dein Proton-Konto ist derzeit gesperrt. Um es weiter nutzen zu können, begleiche bitte alle überfälligen Rechnungen."

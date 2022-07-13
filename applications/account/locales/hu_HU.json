@@ -175,9 +175,6 @@
       "Continue to ${ name }": [
         "Folytatás itt: ${ name }"
       ],
-      "Continue with": [
-        "Folytatás ezzel:"
-      ],
       "Continue with Google": [
         "Folytatás Google fiókkal"
       ],
@@ -192,9 +189,6 @@
       ],
       "Create": [
         "Létrehozás"
-      ],
-      "Create a secure ProtonMail address instead": [
-        "Create a secure Proton Mail address instead"
       ],
       "Create account": [
         "Fiók létrehozása"
@@ -679,17 +673,11 @@
       "Show preview": [
         "Előnézet megmutatása"
       ],
-      "sign in": [
-        "bejelentkezéshez"
-      ],
       "Sign in": [
         "Bejelentkezés"
       ],
       "Sign out": [
         "Kijelentkezés"
-      ],
-      "Sign out from": [
-        "Kijelentkezés innen:"
       ],
       "Sign out of all accounts": [
         "Minden fiók kiléptetése"
@@ -1006,11 +994,6 @@
         "Kétévente"
       ]
     },
-    "blackfriday Action": {
-      "Get the offer": [
-        ""
-      ]
-    },
     "blackfriday Info": {
       "beta": [
         "béta"
@@ -1020,20 +1003,11 @@
       ],
       "Standard price: ${ regularPrice }": [
         "Normál ár: ${ regularPrice }"
-      ],
-      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
-        ""
       ]
     },
     "blackfriday Title": {
-      "Best deal": [
-        ""
-      ],
       "Most popular": [
         "Legnépszerűbb"
-      ],
-      "Save more when combining Mail and VPN": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer Action": {
@@ -1044,20 +1018,9 @@
         "Érdekel az ajánlat"
       ]
     },
-    "blackfriday: VPNspecialoffer Badge popup": {
-      "${ vpnPlus } Special Offer 2021 discount has been applied": [
-        ""
-      ]
-    },
     "blackfriday: VPNspecialoffer Info": {
-      "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
-        ""
-      ],
       "Save ${ percentage }%": [
         "${ percentage } %"
-      ],
-      "Special offer Terms and Conditions": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer info": {
@@ -1071,15 +1034,6 @@
       ]
     },
     "blackfriday: VPNspecialoffer Title": {
-      "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
-        ""
-      ],
-      "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
-        ""
-      ],
-      "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
-        ""
-      ],
       "1 month": [
         "1 hónap"
       ],
@@ -1088,18 +1042,6 @@
       ],
       "24 months": [
         "24 hónap"
-      ],
-      "Billed at ${ amount } for the first 2 years.${ supNotice }": [
-        ""
-      ],
-      "Billed at ${ amount } for the first month.${ supNotice }": [
-        ""
-      ],
-      "Billed at ${ amount } for the first year.${ supNotice }": [
-        ""
-      ],
-      "Get the special year-end offer on our Premium VPN PLUS plan": [
-        ""
       ]
     },
     "Bridge version load failed": {
@@ -1206,10 +1148,6 @@
     "Calendar limit warning": {
       "You have reached the maximum number of personal calendars you can create within your plan.": [
         "Elérte a csomagjában maximálisan létrehozható személyes naptárak számát."
-      ],
-      "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } subscribed calendar.": [
-        "Elérte a maximálisan lehetséges ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } feliratkozott naptárat.",
-        "Elérte a maximálisan lehetséges ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } feliratkozott naptárat."
       ]
     },
     "Calendar link purpose update success message": {
@@ -1595,9 +1533,6 @@
       ],
       "Work": [
         "Munkahelyi"
-      ],
-      "Yomi": [
-        ""
       ]
     },
     "Countdown unit": {
@@ -2639,9 +2574,6 @@
       "A group with this name already exists": [
         "Már létezik csoport ezzel a névvel"
       ],
-      "Address already associated to a user": [
-        "A cím már társításra került egy felhasználóhoz"
-      ],
       "Address primary private key not found": [
         "A cím elsődleges titkosító kulcsa nem található"
       ],
@@ -3187,14 +3119,8 @@
       "Please ${ refresh } or check your connection.": [
         "Kérjük, ${ refresh } vagy ellenőrizze az internetkapcsolatot."
       ],
-      "Please ${ signIn } to update your email subscription preferences.": [
-        "Az e-mail feliratkozások frissítéséhez: ${ signIn }."
-      ],
       "There was a problem connecting to Proton.": [
         "Hiba lépett fel a Protonhoz történő csatlakozás során."
-      ],
-      "There was a problem unsubscribing you.": [
-        "Hiba történt a leiratkozás során."
       ],
       "Too many child sessions, please clear your cookies and sign back in.": [
         "Túl sok al-folyamat van használatban. Kérjük, törölje a sütiket és jelentkezzen be újra."
@@ -3347,9 +3273,6 @@
       ]
     },
     "file size format": {
-      "bytes": [
-        "bájt"
-      ],
       "GB": [
         "GB"
       ],
@@ -3358,20 +3281,6 @@
       ],
       "MB": [
         "MB"
-      ]
-    },
-    "file size format, long": {
-      "Bytes": [
-        "Bájt"
-      ],
-      "Gigabytes": [
-        "Gigabájt"
-      ],
-      "Kilobytes": [
-        "Kilobájt"
-      ],
-      "Megabytes": [
-        "Megabájt"
       ]
     },
     "Filter Actions": {
@@ -5089,9 +4998,6 @@
       ],
       "Select a service provider to start": [
         "Válaszon ki egy szolgáltatót a kezdéshez"
-      ],
-      "Select Continue to ${ name } to open the app. This also creates a ${ name } account with your ${ MAIL_APP_NAME } address so you can sign in with one click in the future.": [
-        "Válassza a \"Folytatás itt ${ name }\" lehetőséget, hogy megnyissa az alkalmazást. Ez létrehoz egy ${ name } fiókot is a ${ MAIL_APP_NAME } címével, hogy a későbbiekben egy kattintással be tudjon jelentkezni."
       ],
       "Select what you want to move from Google.": [
         "Válassza ki, mit szeretne a Google-ból áthozni."
@@ -7634,26 +7540,6 @@
         "Csoport menedzsment"
       ]
     },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Tegye az adatbiztonságot alapértelmezetté biztonsági mentésekhez, tároláshoz, megosztáshoz és visszakereséshez."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Máskülönben a fiókjához való hozzáférése korlátozott lesz, és a fiókja végül letiltásra kerül."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Ahhoz, hogy tudja folytatni a ${ MAIL_APP_NAME } használatát a prémium funkciókkal, válassza ki előfizetési csomagját és a fizetés módját."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Váltson az üzleti csomagra, a Proton összes prémium szolgáltatásának eléréshez."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Váltson a legnagyobb adatvédelmi csomagra, a Proton összes prémium szolgáltatásának eléréshez."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Próbaideje véget ér: ${ formattedTrialExpirationDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand }, szám vége: ${ last4 }"
@@ -7720,6 +7606,26 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Önnek kedvezményes ára van a jelenlegi csomagjához, Ha kisebb csomagra vált, elveszíti a kedvezményes árat és ezt nem fogja tudni igénybe venni, ha újra előfizet."
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Tegye az adatbiztonságot alapértelmezetté biztonsági mentésekhez, tároláshoz, megosztáshoz és visszakereséshez."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Máskülönben a fiókjához való hozzáférése korlátozott lesz, és a fiókja végül letiltásra kerül."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Ahhoz, hogy tudja folytatni a ${ MAIL_APP_NAME } használatát a prémium funkciókkal, válassza ki előfizetési csomagját és a fizetés módját."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Váltson az üzleti csomagra, a Proton összes prémium szolgáltatásának eléréshez."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Váltson a legnagyobb adatvédelmi csomagra, a Proton összes prémium szolgáltatásának eléréshez."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Próbaideje véget ér: ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -8523,15 +8429,6 @@
       ],
       "Email address not yet verified.": [
         "Az e-mail cím még nincs megerősítve."
-      ],
-      "Please ${ signIn } to resend a recovery email verification request.": [
-        "Kérjük menjen a ${ signIn }, hogy újraküldjük a helyreállítási e-mail cím megerősítő levelet."
-      ],
-      "Send verification email": [
-        "Ellenőrző e-mail küldése"
-      ],
-      "There was a problem verifying your email address.": [
-        "Probléma merült fel email címének megerősítésekor."
       ],
       "Verification email sent to ${ email.Value }": [
         "Az ellenőrző e-mailt elküldtük erre a címre: ${ email.Value }"
@@ -10167,15 +10064,6 @@
       "Upgrade to ${ planName } to connect up to ${ n } device to the VPN at once": [
         "Frissítsen ${ planName }-re, hogy egyszerre akár ${ n } eszközt csatlakoztasson a VPN-re",
         "Frissítsen ${ planName }-re, hogy egyszerre akár ${ n } eszközt csatlakoztasson a VPN-re"
-      ]
-    },
-    "Upgrade notice": {
-      "Upgrade to a paid plan to create up to ${ MAX_CALENDARS_PER_USER } calendar, allowing you to make calendars for work, to share with friends, and just for yourself.": [
-        "Váltson előfizetéses csomagra, hogy akár ${ MAX_CALENDARS_PER_USER } naptárat is létrehozhasson. Így lehet külön naptára munkára, másokkal való megosztásra vagy saját magának.",
-        "Váltson előfizetéses csomagra, hogy akár ${ MAX_CALENDARS_PER_USER } naptárat is létrehozhasson. Így lehet külön naptára munkára, másokkal való megosztásra vagy saját magának."
-      ],
-      "Upgrade to a paid plan to share your personal calendar via link with anyone.": [
-        "Váltson előfizetéses csomagra, hogy egy hivatkozás segítségével bárkivel megoszthassa a személyes naptárát."
       ]
     },
     "User role": {
