@@ -227,6 +227,7 @@ const MemberStorageSelector = ({
             </div>
             <div className="mt0-5">
                 <Slider
+                    marks
                     min={min}
                     max={max}
                     step={step}

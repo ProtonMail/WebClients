@@ -23,6 +23,58 @@ export const Basic = () => {
     );
 };
 
+export const Marks = () => {
+    const [value, setValue] = useState(25);
+
+    return (
+        <div className="p2">
+            <Slider marks value={value} onChange={setValue} />
+        </div>
+    );
+};
+
+export const Color = () => {
+    const [value, setValue] = useState(25);
+
+    return (
+        <div className="p2">
+            <div>
+                <Slider color="success" value={value} onInput={setValue} />
+            </div>
+            <div className="mt2">
+                <Slider color="danger" value={value} onInput={setValue} />
+            </div>
+            <div className="mt2">
+                <Slider color="info" value={value} onInput={setValue} />
+            </div>
+            <div className="mt2">
+                <Slider color="norm" value={value} onInput={setValue} />
+            </div>
+            <div className="mt2">
+                <Slider color="warning" value={value} onInput={setValue} />
+            </div>
+            <div className="mt2">
+                <Slider color="weak" value={value} onInput={setValue} />
+            </div>
+        </div>
+    );
+};
+
+export const Size = () => {
+    const [value, setValue] = useState(25);
+
+    return (
+        <div className="p2">
+            <div>
+                <Slider size="small" value={value} onInput={setValue} />
+            </div>
+            <div className="mt2">
+                <Slider value={value} onInput={setValue} />
+            </div>
+        </div>
+    );
+};
+
 export const Step = () => {
     const [value, setValue] = useState(0.2);
 
