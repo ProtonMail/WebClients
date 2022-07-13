@@ -5,17 +5,11 @@
   },
   "contexts": {
     "Action": {
-      "${ address } is available.": [
-        ""
-      ],
       "${ BRAND_NAME } introduction": [
         "Introdução do ${ BRAND_NAME }"
       ],
       "${ BRAND_NAME } shop": [
         "Loja ${ BRAND_NAME }"
-      ],
-      "Activate recovery": [
-        ""
       ],
       "Add credit / debit card": [
         "Adicionar cartão de débito/crédito"
@@ -28,12 +22,6 @@
       ],
       "Apply": [
         "Aplicar"
-      ],
-      "Attach screenshot(s)": [
-        ""
-      ],
-      "Authenticate": [
-        ""
       ],
       "Back": [
         "Recuar"
@@ -77,29 +65,11 @@
       "Copy email to clipboard": [
         "Copiar mensagem para a área de transferência"
       ],
-      "Create": [
-        ""
-      ],
-      "Create a secure ProtonMail address instead": [
-        ""
-      ],
       "Create account": [
         "Criar conta"
       ],
-      "Create address": [
-        ""
-      ],
-      "Create free account": [
-        ""
-      ],
-      "Current plan": [
-        ""
-      ],
       "Customize": [
         "Personalizar"
-      ],
-      "Customize plan": [
-        ""
       ],
       "Decrease": [
         "Diminuir"
@@ -113,20 +83,11 @@
       "Details": [
         "Detalhes"
       ],
-      "Didn't receive a code?": [
-        ""
-      ],
-      "Didn't receive the code?": [
-        ""
-      ],
       "Done": [
         "Feito"
       ],
       "Downgrade": [
         "Regredir"
-      ],
-      "Downgrade account": [
-        ""
       ],
       "Download": [
         "Transferir"
@@ -137,38 +98,17 @@
       "Edit": [
         "Editar"
       ],
-      "Edit billing details": [
-        ""
-      ],
       "Edit email address": [
         "Editar o endereço de email"
       ],
       "Edit phone number": [
         "Editar número de telefone"
       ],
-      "Edit sign-in details": [
-        ""
-      ],
-      "Edit subscription": [
-        ""
-      ],
       "enable desktop notifications": [
         "activar as notificações"
       ],
-      "Explore other ${ BRAND_NAME } plans": [
-        ""
-      ],
-      "Extend": [
-        ""
-      ],
-      "Get ${ vpnPlus }": [
-        ""
-      ],
       "Get verification code": [
         "Obter código de verificação"
-      ],
-      "Go to sign in": [
-        ""
       ],
       "Hide": [
         "Ocultar"
@@ -179,17 +119,11 @@
       "Increase": [
         "Aumentar"
       ],
-      "Load more": [
-        ""
-      ],
       "Loading verification": [
         "A carregar verificação"
       ],
       "Mark as default": [
         "Marcar como predefinição"
-      ],
-      "Maybe later": [
-        ""
       ],
       "More info: ${ safeTitle }": [
         "Mais informações: ${ safeTitle }"
@@ -218,14 +152,8 @@
       "Pay": [
         "Pagar"
       ],
-      "Pay ${ price }": [
-        ""
-      ],
       "Previous": [
         "Anterior"
-      ],
-      "Refer a friend": [
-        ""
       ],
       "Refresh the page": [
         "Actualizar a página"
@@ -260,32 +188,8 @@
       "Retry": [
         "Repetir"
       ],
-      "Return to sign in": [
-        ""
-      ],
-      "Revoke": [
-        ""
-      ],
-      "Revoke ${ name }": [
-        ""
-      ],
       "Save": [
         "Gravar"
-      ],
-      "Save selected": [
-        ""
-      ],
-      "Select ${ planTitle }": [
-        ""
-      ],
-      "Send code": [
-        ""
-      ],
-      "Send my username": [
-        ""
-      ],
-      "Set recovery phrase": [
-        ""
       ],
       "Share via link": [
         "Partilhar por ligação"
@@ -296,17 +200,11 @@
       "Show": [
         "Mostrar"
       ],
-      "Show preview": [
-        ""
-      ],
       "Sign in": [
         "Iniciar sessão"
       ],
       "Sign out": [
         "Terminar sessão"
-      ],
-      "Signing in": [
-        ""
       ],
       "Signing out": [
         "A terminar sessão"
@@ -326,23 +224,8 @@
       "Try another method": [
         "Tentar outro método"
       ],
-      "Unlock": [
-        ""
-      ],
-      "Unlock data": [
-        ""
-      ],
-      "Update recovery file": [
-        ""
-      ],
-      "Update recovery phrase": [
-        ""
-      ],
       "Upgrade": [
         "Actualizar"
-      ],
-      "Use ${ label } theme": [
-        ""
       ],
       "Use a different card": [
         "Utilizar um cartão diferente"
@@ -350,23 +233,11 @@
       "Use a different payment method": [
         "Utilizar um método de pagamento diferente"
       ],
-      "Use recovery code": [
-        ""
-      ],
-      "Use two-factor authentication code": [
-        ""
-      ],
-      "Use your current email address instead": [
-        ""
-      ],
       "User": [
         "Utilizador"
       ],
       "Verify": [
         "Verificar"
-      ],
-      "Verify account": [
-        ""
       ],
       "Verify code": [
         "Verificar código"
@@ -374,17 +245,11 @@
       "Verify code again": [
         "Verificar código novamente"
       ],
-      "Verify email": [
-        ""
-      ],
       "View": [
         "Ver"
       ],
       "View invoice": [
         "Ver factura"
-      ],
-      "View plans details": [
-        ""
       ],
       "Yes": [
         "Sim"
@@ -396,19 +261,7 @@
         "Reduzir"
       ]
     },
-    "Action in trial plan": {
-      "No, thanks": [
-        ""
-      ],
-      "Try free for 30 days": [
-        ""
-      ]
-    },
     "Addon": {
-      "+ ${ _users } user": [
-        "",
-        ""
-      ],
       "+ ${ domains } custom domain": [
         "+ ${ domains } domínio personalizado",
         "+ ${ domains } domínios personalizados"
@@ -436,44 +289,14 @@
         "${ vpnBonus } ligações"
       ]
     },
-    "Alter": {
-      "This will disconnect all the routers and clients using this certificate.": [
-        ""
-      ]
-    },
     "Apps dropdown": {
       "Proton applications": [
         "Aplicações Proton"
       ]
     },
-    "Badge": {
-      "5 users": [
-        ""
-      ]
-    },
-    "Billing cycle": {
-      "Payable every 12 months": [
-        ""
-      ],
-      "Payable every 24 months": [
-        ""
-      ],
-      "Payable every month": [
-        ""
-      ],
-      "Renews automatically on ${ formattedEndTime }": [
-        ""
-      ]
-    },
     "Billing cycle option": {
       "1 month": [
         "1 mês"
-      ],
-      "12 months": [
-        ""
-      ],
-      "24 months": [
-        ""
       ],
       "Annually": [
         "Anualmente"
@@ -485,34 +308,17 @@
         "Dois anos"
       ]
     },
-    "blackfriday Action": {
-      "Get the offer": [
-        ""
-      ]
-    },
     "blackfriday Info": {
       "beta": [
         "beta"
       ],
       "Includes": [
         "Inclui"
-      ],
-      "Standard price: ${ regularPrice }": [
-        ""
-      ],
-      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
-        ""
       ]
     },
     "blackfriday Title": {
-      "Best deal": [
-        ""
-      ],
       "Most popular": [
         "Mais popular"
-      ],
-      "Save more when combining Mail and VPN": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer Action": {
@@ -523,20 +329,9 @@
         "Obtenha a promoção já"
       ]
     },
-    "blackfriday: VPNspecialoffer Badge popup": {
-      "${ vpnPlus } Special Offer 2021 discount has been applied": [
-        ""
-      ]
-    },
     "blackfriday: VPNspecialoffer Info": {
-      "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
-        ""
-      ],
       "Save ${ percentage }%": [
         "${ percentage } %"
-      ],
-      "Special offer Terms and Conditions": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer info": {
@@ -550,15 +345,6 @@
       ]
     },
     "blackfriday: VPNspecialoffer Title": {
-      "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
-        ""
-      ],
-      "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
-        ""
-      ],
-      "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
-        ""
-      ],
       "1 month": [
         "1 mês"
       ],
@@ -567,18 +353,6 @@
       ],
       "24 months": [
         "24 meses"
-      ],
-      "Billed at ${ amount } for the first 2 years.${ supNotice }": [
-        ""
-      ],
-      "Billed at ${ amount } for the first month.${ supNotice }": [
-        ""
-      ],
-      "Billed at ${ amount } for the first year.${ supNotice }": [
-        ""
-      ],
-      "Get the special year-end offer on our Premium VPN PLUS plan": [
-        ""
       ]
     },
     "Bug category": {
@@ -652,123 +426,14 @@
         "Problema de acesso à página web"
       ]
     },
-    "Button": {
-      "Continue using ${ MAIL_APP_NAME }.": [
-        ""
-      ]
-    },
     "Calendar status": {
-      "Not synced": [
-        ""
-      ],
       "Syncing": [
         "A sincronizar"
-      ]
-    },
-    "Calendar subscription not synced error": {
-      "Calendar could not be decrypted": [
-        ""
-      ],
-      "Calendar is syncing": [
-        ""
-      ],
-      "Calendar is too big": [
-        ""
-      ],
-      "Calendar link is not accessible": [
-        ""
-      ],
-      "Calendar link is temporarily inaccessible": [
-        ""
-      ],
-      "Failed to sync calendar": [
-        ""
-      ],
-      "More than 12 hours passed since last update": [
-        ""
-      ],
-      "Unsupported calendar format": [
-        ""
-      ]
-    },
-    "Checkout row": {
-      "${ users } user": [
-        "",
-        ""
-      ],
-      "Total for ${ n } month": [
-        "",
-        ""
       ]
     },
     "Collapsible tooltip": {
       "Close": [
         "Fechar"
-      ],
-      "Open": [
-        ""
-      ]
-    },
-    "color": {
-      "carrot": [
-        ""
-      ],
-      "cerise": [
-        ""
-      ],
-      "cobalt": [
-        ""
-      ],
-      "copper": [
-        ""
-      ],
-      "enzian": [
-        ""
-      ],
-      "fern": [
-        ""
-      ],
-      "forest": [
-        ""
-      ],
-      "ocean": [
-        ""
-      ],
-      "olive": [
-        ""
-      ],
-      "pacific": [
-        ""
-      ],
-      "pickle": [
-        ""
-      ],
-      "pine": [
-        ""
-      ],
-      "pink": [
-        ""
-      ],
-      "plum": [
-        ""
-      ],
-      "purple": [
-        ""
-      ],
-      "reef": [
-        ""
-      ],
-      "sahara": [
-        ""
-      ],
-      "slateblue": [
-        ""
-      ],
-      "soil": [
-        ""
-      ],
-      "strawberry": [
-        ""
       ]
     },
     "Confirmation message to delete payment method": {
@@ -792,9 +457,6 @@
       ]
     },
     "Country name": {
-      "Abkhazia": [
-        ""
-      ],
       "Afghanistan": [
         "Afeganistão"
       ],
@@ -830,9 +492,6 @@
       ],
       "Aruba": [
         "Aruba"
-      ],
-      "Ascension Island": [
-        ""
       ],
       "Australia": [
         "Austrália"
@@ -951,17 +610,11 @@
       "Congo": [
         "Congo"
       ],
-      "Congo, Democratic Republic of the": [
-        ""
-      ],
       "Cook Islands": [
         "Ilhas Cook"
       ],
       "Costa Rica": [
         "Costa Rica"
-      ],
-      "Cote d'Ivoire\"": [
-        ""
       ],
       "Croatia": [
         "Croácia"
@@ -1011,14 +664,8 @@
       "Ethiopia": [
         "Etiópia"
       ],
-      "Falkland Islands": [
-        ""
-      ],
       "Faroe Islands": [
         "Ilhas Faroé"
-      ],
-      "Federated States of Micronesia": [
-        ""
       ],
       "Fiji": [
         "Ilhas Fiji"
@@ -1092,9 +739,6 @@
       "Heard Island and McDonald Islands": [
         "Ilha Heard e Ilhas McDonald"
       ],
-      "Holy See (Vatican City State)": [
-        ""
-      ],
       "Honduras": [
         "Honduras"
       ],
@@ -1112,9 +756,6 @@
       ],
       "Indonesia": [
         "Indonésia"
-      ],
-      "International": [
-        ""
       ],
       "Iran": [
         "Irão"
@@ -1154,9 +795,6 @@
       ],
       "Kiribati": [
         "Kiribati"
-      ],
-      "Kosovo": [
-        ""
       ],
       "Kuwait": [
         "Kuwait"
@@ -1338,9 +976,6 @@
       "Qatar": [
         "Qatar"
       ],
-      "Reunion": [
-        ""
-      ],
       "Romania": [
         "Roménia"
       ],
@@ -1353,17 +988,11 @@
       "Saint Barthélemy": [
         "São Bartolomeu"
       ],
-      "Saint Helena": [
-        ""
-      ],
       "Saint Kitts and Nevis": [
         "Saint Kitts e Nevis"
       ],
       "Saint Lucia": [
         "Santa Lúcia"
-      ],
-      "Saint Martin (French Part)": [
-        ""
       ],
       "Saint Pierre and Miquelon": [
         "Saint Pierre e Miquelon"
@@ -1398,9 +1027,6 @@
       "Singapore": [
         "Singapura"
       ],
-      "Sint Maarten": [
-        ""
-      ],
       "Slovakia": [
         "Eslováquia"
       ],
@@ -1422,9 +1048,6 @@
       "South Korea": [
         "Coreia do Sul"
       ],
-      "South Ossetia": [
-        ""
-      ],
       "South Sudan": [
         "Sudão Sul"
       ],
@@ -1443,17 +1066,11 @@
       "Svalbard and Jan Mayen": [
         "Svalbard e Jan Mayen"
       ],
-      "Swaziland": [
-        ""
-      ],
       "Sweden": [
         "Suécia"
       ],
       "Switzerland": [
         "Suíça"
-      ],
-      "Syria": [
-        ""
       ],
       "Taiwan": [
         "Taiwan"
@@ -1481,9 +1098,6 @@
       ],
       "Trinidad and Tobago": [
         "Trinidad e Tobago"
-      ],
-      "Tristan da Cunha": [
-        ""
       ],
       "Tunisia": [
         "Tunísia"
@@ -1553,9 +1167,6 @@
       ],
       "Zimbabwe": [
         "Zimbabué"
-      ],
-      "Åland Islands": [
-        ""
       ]
     },
     "CountryInfo": {
@@ -1563,22 +1174,9 @@
         "(via ${ entryCountryName })"
       ]
     },
-    "Coupon": {
-      "Coupon applied: ${ CouponCode }": [
-        ""
-      ]
-    },
     "Credits": {
       "Unused credits": [
         "Créditos não utilizados"
-      ]
-    },
-    "Cycle": {
-      "/month": [
-        ""
-      ],
-      "/user per month": [
-        ""
       ]
     },
     "Delinquent modal title": {
@@ -1587,34 +1185,8 @@
       ]
     },
     "Downgrade account reason": {
-      "Bugs or quality issue": [
-        ""
-      ],
       "I use a different Proton account": [
         "Utilizo uma conta Proton diferente"
-      ],
-      "Missing feature(s)": [
-        ""
-      ],
-      "My reason isn't listed, please comment": [
-        ""
-      ],
-      "Streaming service unsupported": [
-        ""
-      ],
-      "Subscription is too expensive": [
-        ""
-      ],
-      "Switching to a different provider": [
-        ""
-      ],
-      "Temporary need, may come back in the future": [
-        ""
-      ]
-    },
-    "Downgrade modal exit survey title": {
-      "Help us improve!": [
-        ""
       ]
     },
     "Error": {
@@ -1627,14 +1199,8 @@
       "Can't check username, try again later": [
         "Impossível verificar o utilizador, tente mais tarde"
       ],
-      "Checkout expired, please try again": [
-        ""
-      ],
       "Code wrong or not valid anymore": [
         "Código errado ou inválido"
-      ],
-      "Domain not available, try again later": [
-        ""
       ],
       "Email is not valid": [
         "Email inválido"
@@ -1647,12 +1213,6 @@
       ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "Se o tempo na sua TV expirou, clique em Actualizar na sua TV e insira o seu código novamente."
-      ],
-      "Incorrect login credentials. Please try again.": [
-        ""
-      ],
-      "Incorrect mailbox password. Please try again.": [
-        ""
       ],
       "Invalid ${ name } code": [
         "Código de ${ name } inválido"
@@ -1681,9 +1241,6 @@
       "Not a valid number": [
         "Número inválido"
       ],
-      "Organization not recognized. Try again.": [
-        ""
-      ],
       "Passwords do not match": [
         "As senhas não correspondem"
       ],
@@ -1702,20 +1259,11 @@
       "Payments are currently not available, please try again later": [
         "Os pagamentos não estão actualmente disponíveis, por favor tente mais tarde"
       ],
-      "Please generate keys before you try to change your password": [
-        ""
-      ],
-      "Please set a recovery email first": [
-        ""
-      ],
       "Please set a recovery phone number first": [
         "Por favor, defina um número de telefone de recuperação"
       ],
       "Process aborted": [
         "Processo abortado"
-      ],
-      "Request timed out": [
-        ""
       ],
       "Signature verification failed": [
         "Falha ao verificar a assinatura"
@@ -1750,14 +1298,8 @@
       "Unknown payment token status": [
         "Estado do símbolo de pagamento desconhecido"
       ],
-      "Wrong recovery phrase. Try again or use another recovery method.": [
-        ""
-      ],
       "You have no invoices.": [
         "Não tem facturas."
-      ],
-      "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
-        ""
       ]
     },
     "Error message": {
@@ -1778,11 +1320,6 @@
       ],
       "You may also ${ refresh } or try again later.": [
         "Também pode ${ refresh } ou tentar mais tarde."
-      ]
-    },
-    "Error notification": {
-      "Certificate ${ name } not found or already revoked": [
-        ""
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -1812,9 +1349,6 @@
       ]
     },
     "file size format": {
-      "bytes": [
-        "bytes"
-      ],
       "GB": [
         "GB"
       ],
@@ -1823,20 +1357,6 @@
       ],
       "MB": [
         "MB"
-      ]
-    },
-    "file size format, long": {
-      "Bytes": [
-        ""
-      ],
-      "Gigabytes": [
-        ""
-      ],
-      "Kilobytes": [
-        ""
-      ],
-      "Megabytes": [
-        ""
       ]
     },
     "Frequency of news": {
@@ -1893,12 +1413,6 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } precisa da sua permissão para ${ enableDesktopNotifications }."
       ],
-      "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
-        ""
-      ],
-      "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
-        ""
-      ],
       "${ number } city": [
         "${ number } cidade",
         "${ number } cidades"
@@ -1907,57 +1421,20 @@
         "${ number } servidor",
         "${ number } servidores"
       ],
-      "${ storageSize } storage": [
-        ""
-      ],
-      "${ strongAddressAvailable } You will use this email address to sign into all ${ BRAND_NAME } services.": [
-        ""
-      ],
-      "${ vpnBasic }, ${ vpnPlus } or ${ visionary } required for Country level connection.": [
-        ""
-      ],
-      "${ vpnPlus } or ${ visionary } required for Secure Core feature.": [
-        ""
-      ],
       "(Mail + VPN)": [
         "(Correio + VPN)"
-      ],
-      "* No credit card required.": [
-        ""
       ],
       "+${ bonusSpace } bonus storage": [
         "+ ${ bonusSpace } de armazenamento extra"
       ],
-      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
-        "",
-        ""
-      ],
-      "10 email addresses": [
-        ""
-      ],
       "20% discount applied to your subscription with coupon ${ code }": [
         "Foi aplicado um desconto de 20% com o cupão ${ code }"
-      ],
-      "30-day money-back guarantee.": [
-        ""
-      ],
-      "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
-        ""
-      ],
-      "A user is an account associated with a single username, mailbox, and person": [
-        ""
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Acesso à conta restringido devido a facturas por pagar. Por favor, contacte o administrador."
       ],
-      "Account size": [
-        ""
-      ],
       "Account successfully updated": [
         "Conta actualizada com sucesso"
-      ],
-      "Additional options": [
-        ""
       ],
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
         "Após efectuar o seu pagamento com BitCoin, por favor siga as instruções abaixo para actualizar."
@@ -1965,17 +1442,8 @@
       "Amount below minimum (${ amount }).": [
         "Quantia abaixo do mínimo (${ amount })."
       ],
-      "AOL reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
-        ""
-      ],
-      "Based in Switzerland, available globally": [
-        ""
-      ],
       "Basic, Plus or Visionary subscription required": [
         "Requerida subscrição Basic, Plus ou Visionary"
-      ],
-      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
-        ""
       ],
       "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
         "Facturado no termo do seu ciclo de facturação actual (renova a ${ renewalDate })"
@@ -1995,50 +1463,20 @@
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Ao reverter para um plano gratuito, perderá permanentemente estes benefícios, mesmo que venha a actualizar de novo no futuro."
       ],
-      "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
-        ""
-      ],
       "By leaving now, changes may not be saved": [
         "Se sair agora, as alterações podem não ficar gravadas"
-      ],
-      "Choose the look and feel of the application.": [
-        ""
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Clique em \"Pedir novo código\" para receber um novo código de verificação em ${ strong }. Se o número estiver incorrecto, clique em \"Editar\" para o corrigir."
       ],
-      "Continue anyway?": [
-        ""
-      ],
       "Creating your account": [
         "A criar a sua conta"
-      ],
-      "Credit for the unused portion of your previous plan subscription": [
-        ""
-      ],
-      "Custom email domains": [
-        ""
       ],
       "Discount applied to your subscription with coupon ${ code }": [
         "Foi aplicado um desconto com o cupão ${ code }"
       ],
-      "Do not use the OpenVPN / IKEv2 credentials in ${ VPN_APP_NAME } applications or on the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
-        ""
-      ],
-      "Done! We sent a code to ${ destination }.": [
-        ""
-      ],
-      "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
-        ""
-      ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Transfira hoje a sua aplicação favorita e usufrua de privacidade onde quer que vá."
-      ],
-      "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
-        ""
-      ],
-      "Email hosting is only available for domains you already own. Domain registration is not currently available through Proton. You can host email for domains registered on any domain registrar.": [
-        ""
       ],
       "Emailing preference saved": [
         "Preferências do email actualizadas"
@@ -2046,38 +1484,14 @@
       "Enter key manually instead": [
         "Inserir a chave manualmente"
       ],
-      "Enter the code sent to your phone number ${ phone }.": [
-        ""
-      ],
-      "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
-        ""
-      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Insira o código de verificação que foi enviado para ${ destinationText }."
-      ],
-      "Enter your ${ BRAND_NAME } Account details.": [
-        ""
-      ],
-      "Enter your ${ BRAND_NAME } Account email address or username.": [
-        ""
       ],
       "Enter your login password to confirm your identity.": [
         "Insira a senha de início de sessão para confirmar a sua identidade."
       ],
-      "Enter your own password (as organization admin) and new password for this user ${ Name } (${ Email }).": [
-        ""
-      ],
-      "Enter your recovery email address and we will send you your username or email address.": [
-        ""
-      ],
-      "Enter your recovery phone number and we will send you your username or email address.": [
-        ""
-      ],
       "Expired": [
         "Expirado"
-      ],
-      "expires ${ expirationDate }": [
-        ""
       ],
       "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
         "Para Visa e MasterCard, os 3 algarismos na parte de trás do seu cartão. Para American Express, os 4 algarismos na frente do seu cartão."
@@ -2090,9 +1504,6 @@
       ],
       "Free up some space or contact your administrator.": [
         "Liberte algum espaço ou contacte um administrador."
-      ],
-      "Google records your online activity and reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
-        ""
       ],
       "here": [
         "aqui"
@@ -2115,23 +1526,11 @@
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to log into your account. Each code can only be used once.": [
         "Se perder o seu dispositivo com autenticação em dois passos, poderá utilizar estes códigos em vez do código 2FA de 6 algarismos para entrar na conta. Cada código só pode ser utilizado uma vez."
       ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
-        ""
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } paid features, including additional storage and filters.": [
-        ""
-      ],
-      "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
-        ""
-      ],
       "If you wish to combine this account with another one, do NOT delete it.": [
         "Se deseja combinar esta conta com outra, NÃO a elimine."
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Importante: certifique-se de que dispõe dos códigos de recuperação. Senão, se perder o seu dispositivo 2FA, pode perder permanentemente o acesso à sua conta."
-      ],
-      "In case you lose your login details, we’ll send you recovery instructions via email or SMS.": [
-        ""
       ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
         "Instale um ficheiro de configuração do país para ligar a um servidor aleatório no país à sua escolha."
@@ -2145,26 +1544,14 @@
       "Install a Server configuration file to connect to a specific server in the country of your choice.": [
         "Instale um ficheiro de configuração do servidor para ligar a um servidor específico num país à sua escolha."
       ],
-      "Internet connection lost": [
-        ""
-      ],
       "Internet connection lost. Please check your device's connectivity.": [
         "Ligação à Internet perdida. Verifique a ligação do seu dispositivo."
       ],
       "Internet connection restored.": [
         "Ligação à Internet reposta."
       ],
-      "Issues signing in?": [
-        ""
-      ],
-      "Learn how to log in to ${ VPN_APP_NAME } with third-party VPN applications.": [
-        ""
-      ],
       "Learn more": [
         "Saiba mais"
-      ],
-      "Link copied to clipboard": [
-        ""
       ],
       "Loading": [
         "A carregar"
@@ -2175,23 +1562,8 @@
       "Loading preview": [
         "A carregar antevisão"
       ],
-      "Log in to ${ MAIL_APP_NAME } to activate your address": [
-        ""
-      ],
-      "lose access to all current encrypted data": [
-        ""
-      ],
-      "Mail.ru reads your personal data in order to provide access for advertisers, Russian government agencies and other third parties. For better privacy, create a secure email address.": [
-        ""
-      ],
-      "Make sure you remember the password to log in and decrypt emails. ${ boldAlert } We recommend adding a ${ recoveryLink } first.": [
-        ""
-      ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "Insira manualmente esta informação no seu dispositivo de autenticação em dois passos para configurar a sua conta. ${ _switchButton }."
-      ],
-      "No credit card required": [
-        ""
       ],
       "No payment is required at this time.": [
         "Não será necessário pagamento neste momento."
@@ -2205,20 +1577,8 @@
       "Not set": [
         "Não definido"
       ],
-      "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
-        ""
-      ],
-      "Number of users": [
-        ""
-      ],
       "of": [
         "de"
-      ],
-      "One account for all ${ BRAND_NAME } services.": [
-        ""
-      ],
-      "Or select a particular server:": [
-        ""
       ],
       "P2P": [
         "P2P"
@@ -2231,9 +1591,6 @@
       ],
       "Plan upgrade required": [
         "Requerida actualização do plano"
-      ],
-      "Please enter the 12-word recovery phrase associated with your account.": [
-        ""
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Ao clicar no botão Confirmar, a sua conta será creditada com ${ creditsRemaining }."
@@ -2259,23 +1616,8 @@
       "Preview": [
         "Antever"
       ],
-      "Priority support": [
-        ""
-      ],
-      "Proton can't help you recover any lost passwords.": [
-        ""
-      ],
-      "read our two-factor authentication guide first": [
-        ""
-      ],
-      "recovery method": [
-        ""
-      ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Actualizar a página ou ${ link } resolve automaticamente a maioria dos problemas."
-      ],
-      "Revoke certificate ${ name }": [
-        ""
       ],
       "Scan QR code instead": [
         "Ler antes código QR"
@@ -2283,44 +1625,20 @@
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Leia este código com o seu dispositivo de autenticação em dois passos para configurar a sua conta. ${ switchButton }."
       ],
-      "Securing your account": [
-        ""
-      ],
       "Server is currently down": [
         "O servidor está em baixo"
       ],
       "Server load": [
         "Carga do servidor"
       ],
-      "Servers are unreachable. Please try again in a few minutes": [
-        ""
-      ],
-      "Session timed out": [
-        ""
-      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Sendo utilizador(a) leal, a sua conta dispõe de funcionalidades adicionais."
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        ""
-      ],
-      "Support for 1 custom email domain": [
-        ""
       ],
       "support team": [
         "equipa de suporte"
       ],
       "Thank you for supporting our mission.": [
         "Obrigado por apoiar a nossa missão."
-      ],
-      "The securest way to browse, stream, and be online.": [
-        ""
-      ],
-      "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
-        ""
-      ],
-      "These configurations are provided to work with WireGuard routers and official clients.": [
-        ""
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Esta conta foi suspensa devido a uma potencial violação da política."
@@ -2331,9 +1649,6 @@
       "This can take a few seconds or a few minutes depending on your device": [
         "Pode levar alguns segundos ou alguns minutos, dependendo do seu dispositivo"
       ],
-      "This will also disable any two-factor authentication method associated with this account.": [
-        ""
-      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "Isto cancelará a sua assinatura paga actual e perderá qualquer benefício de fidelidade acumulado. O saldo restante da sua assinatura será devolvido como créditos na conta."
       ],
@@ -2343,32 +1658,14 @@
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "Isto vai eliminar permanentemente a sua conta e todos os seus dados. Não poderá reactivar esta conta."
       ],
-      "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
-        ""
-      ],
-      "This will sign you out of any active sessions and disable 2-factor authentication.": [
-        ""
-      ],
       "This wizard will enable Two-Factor Authentication (2FA) on your Proton account. Two-factor authentication will make your Proton account more secure so we recommend enabling it.": [
         "Este assistente vai activar a autenticação em dois passos (2FA) na sua conta Proton. O 2FA tornará a sua conta Proton mais segura, recomendamos a sua activação."
-      ],
-      "to continue to ${ toAppName }": [
-        ""
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Para combater o spam e o abuso, por favor confirme que é um ser humano."
       ],
       "To keep up with the latest development at Proton products, you can subscribe to our various emails and visit our blog from time to time.": [
         "Para acompanhar o mais recente desenvolvimento dos produtos Proton, pode subscrever os nossos vários emails e visitar o nosso blogue de tempos a tempos."
-      ],
-      "To proceed, select an account recovery method so we can verify the request.": [
-        ""
-      ],
-      "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a ${ VPN_APP_NAME } server.": [
-        ""
-      ],
-      "To use ${ toAppName }, please create an address.": [
-        ""
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Recarregue a sua conta com créditos que poderá utilizar para subscrever um novo plano ou renovar o plano actual. Recebe um crédito por cada ${ i18nCurrency } gasto."
@@ -2391,26 +1688,8 @@
       "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
         "O modo de senha dupla usa senhas separadas para iniciar a sessão e desencriptar a caixa do correio. Isto proporciona um pequeno benefício na segurança em algumas situações, no entanto, recomendamos o modo de senha única para a maioria dos utilizadores. Para mudar para o modo de senha dupla, insira primeiro a senha de início de sessão e depois a da caixa de correio."
       ],
-      "Unfortunately there is no recovery method saved for this account.": [
-        ""
-      ],
-      "Unlimited folders, labels, and filters": [
-        ""
-      ],
-      "Unlimited messages": [
-        ""
-      ],
       "Unsupported file": [
         "Ficheiro não suportado"
-      ],
-      "Update the URL in your password manager": [
-        ""
-      ],
-      "Use the best server according to current load and position: ${ formattedBestServerName }": [
-        ""
-      ],
-      "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
-        ""
       ],
       "Verification can take a few minutes.": [
         "A verificação pode levar alguns minutos."
@@ -2421,23 +1700,8 @@
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "A verificação abrirá um novo separador, por favor desactive os bloqueadores de janelas. Nada lhe será cobrado. Qualquer valor utilizado para verificar o cartão será imediatamente devolvido."
       ],
-      "Verifying your payment": [
-        ""
-      ],
-      "Version ${ version }": [
-        ""
-      ],
-      "Warning:": [
-        ""
-      ],
       "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
         "Aviso: a eliminação é permanente. Remove também o acesso a todos os serviços ligados e elimina todos os contactos."
-      ],
-      "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
-        ""
-      ],
-      "We recommend using your recovery phrase instead.": [
-        ""
       ],
       "We use 3-D Secure to protect your payments.": [
         "Utilizamos 3-D Secure para proteger os seus pagamentos."
@@ -2445,62 +1709,20 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "A página será redireccionada para um novo separador PayPal no seu navegador, para concluir a transacção. Se utiliza bloqueadores de janelas, por favor desactive-os."
       ],
-      "We'll send a new verification code to ${ strong }": [
-        ""
-      ],
-      "We're moving! Join us at our new site: ${ link }.": [
-        ""
-      ],
-      "We’ll send a reset code to the email address you provided for account recovery.": [
-        ""
-      ],
-      "We’ll send a reset code to the phone number you provided for account recovery.": [
-        ""
-      ],
-      "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
-        ""
-      ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Quando a subscrição for renovada, aplicaremos quaisquer créditos disponíveis antes de usarmos o método de pagamento acima."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Deseja receber um novo código de verificação ou usar um método de verificação alternativo?"
       ],
-      "Would you like to receive a new verification code?": [
-        ""
-      ],
-      "Yahoo reads your personal data in order to provide access for advertisers, US intelligence agencies and other third parties. For better privacy, create a secure email address.": [
-        ""
-      ],
-      "Yandex records your online activity and reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
-        ""
-      ],
       "You already have a free account": [
         "Já tem uma conta gratuita"
-      ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        ""
       ],
       "You can customize and download your invoices for accounting purposes.": [
         "Pode personalizar e transferir as suas facturas para efeitos contabilísticos."
       ],
-      "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
-        ""
-      ],
-      "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
-        ""
-      ],
-      "You cannot use the OpenVPN / IKEv2 credentials to log in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
-        ""
-      ],
-      "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
-        ""
-      ],
       "You have no saved payment methods.": [
         "Não tem métodos de pagamento gravados."
-      ],
-      "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
-        ""
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "Tem de ter um cartão de crédito ou conta bancária vinculada à sua conta PayPal para poder adicioná-la como método de pagamento."
@@ -2508,32 +1730,17 @@
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "Tem de ter um cartão de crédito ou uma conta bancária vinculados à sua conta PayPal. Se não o tem, clique no botão abaixo."
       ],
-      "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription.": [
-        ""
-      ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Atingiu ${ spaceDisplayed }% da sua capacidade de armazenamento. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
         "Atingiu os 100% da sua capacidade de armazenamento. Não pode enviar ou receber novos emails. ${ freeUpMessage } ${ upgradeLink }"
       ],
-      "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
-        ""
-      ],
       "You will be soon redirected to your bank to verify your payment.": [
         "Será brevemente redireccionado para o seu banco para verificar o pagamento."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Será brevemente redireccionado ao PayPal para verificar o seu pagamento."
-      ],
-      "You'll stay signed in even after you close the browser.": [
-        ""
-      ],
-      "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, please create an address.": [
-        ""
-      ],
-      "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
-        ""
       ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
         "A sua conta tem pelo menos uma factura em atraso. O acesso foi restringido. ${ payInvoiceLink }"
@@ -2553,9 +1760,6 @@
       "Your email will only be used for this one-time verification.": [
         "O seu email só será usado para esta verificação única."
       ],
-      "Your existing ${ BRAND_NAME } account can be used to access all ${ BRAND_NAME } services. Please sign in with ${ email }.": [
-        ""
-      ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "Os seus detalhes de pagamento estão protegidos por encriptação TLS e pelas leis de privacidade suíças."
       ],
@@ -2564,9 +1768,6 @@
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "A sua conta Proton está actualmente suspensa. Para continuar a usar a sua conta, por favor, pague quaisquer facturas em atraso."
-      ],
-      "Your recovery email address:": [
-        ""
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "A sua subscrição é gerida pela Mozilla. Por favor, contacte o suporte da Mozilla."
@@ -2595,9 +1796,6 @@
     "Invoice state display as badge": {
       "Billed": [
         "Facturado"
-      ],
-      "Gifted": [
-        ""
       ],
       "Paid": [
         "Paga"
@@ -2642,16 +1840,6 @@
       ]
     },
     "Label": {
-      "${ humanUsedSpace } of ${ humanMaxSpace }": [
-        ""
-      ],
-      "${ MAIL_APP_NAME } address": [
-        ""
-      ],
-      "${ n } month": [
-        "",
-        ""
-      ],
       "Allow recovery by email": [
         "Permitir recuperação por email"
       ],
@@ -2664,17 +1852,11 @@
       "Amount due": [
         "Quantia devida"
       ],
-      "Attach screenshot(s)": [
-        ""
-      ],
       "Billing cycle": [
         "Ciclo de facturação"
       ],
       "Block malware only": [
         "Bloquear apenas malware"
-      ],
-      "Block malware, ads and trackers": [
-        ""
       ],
       "bonus storage": [
         "bónus de armazenamento"
@@ -2703,17 +1885,8 @@
       "Category": [
         "Categoria"
       ],
-      "Choose a name for the generated certificate file": [
-        ""
-      ],
       "Code": [
         "Código"
-      ],
-      "Code is 6 digits without spaces": [
-        ""
-      ],
-      "Config to connect to ${ serverName }": [
-        ""
       ],
       "Confirm login password": [
         "Confirmar senha de início de sessão"
@@ -2730,23 +1903,11 @@
       "Copy": [
         "Copiar"
       ],
-      "Could you please let us know which provider?": [
-        ""
-      ],
-      "Could you please specify which streaming service?": [
-        ""
-      ],
-      "Could you please specify?": [
-        ""
-      ],
       "Country": [
         "País"
       ],
       "Credits used": [
         "Créditos usados"
-      ],
-      "Current login password": [
-        ""
       ],
       "Customize invoices": [
         "Personalizar facturas"
@@ -2757,32 +1918,17 @@
       "Delete": [
         "Eliminar"
       ],
-      "Device/certificate name": [
-        ""
-      ],
       "Digits": [
         "Algarismos"
       ],
       "Discount": [
         "Desconto"
       ],
-      "Do you have any suggestions for our team?": [
-        ""
-      ],
       "Email address": [
         "Endereço de email"
       ],
-      "Email or username": [
-        ""
-      ],
-      "Enter organization name to confirm": [
-        ""
-      ],
       "Enter the code displayed on your TV": [
         "Insira o código mostrado na sua TV"
-      ],
-      "Expiration date": [
-        ""
       ],
       "Expires": [
         "Expira"
@@ -2799,23 +1945,14 @@
       "Interval": [
         "Intervalo"
       ],
-      "Keep me signed in": [
-        ""
-      ],
       "Key": [
         "Chave"
-      ],
-      "Level for NetShield blocker filtering": [
-        ""
       ],
       "Login password": [
         "Senha de início de sessão"
       ],
       "Mailbox password": [
         "Senha da caixa de correio"
-      ],
-      "Moderate NAT": [
-        ""
       ],
       "Name": [
         "Nome"
@@ -2831,12 +1968,6 @@
       ],
       "New password": [
         "Nova senha"
-      ],
-      "No filter": [
-        ""
-      ],
-      "Non-standard ports": [
-        ""
       ],
       "Old login password": [
         "Senha de início antiga"
@@ -2856,9 +1987,6 @@
       "Operating system version": [
         "Versão do sistema operativo"
       ],
-      "Optional": [
-        ""
-      ],
       "Other amount": [
         "Outro valor"
       ],
@@ -2868,17 +1996,8 @@
       "Payer": [
         "Pagante"
       ],
-      "Payment details": [
-        ""
-      ],
-      "Payment method": [
-        ""
-      ],
       "Phone number": [
         "Número de telefone"
-      ],
-      "Phrase consists of 12 unique words in a specific order": [
-        ""
       ],
       "Postal code": [
         "Código postal"
@@ -2889,32 +2008,11 @@
       "Proton username": [
         "Nome de utilizador Proton"
       ],
-      "Recovery code": [
-        ""
-      ],
-      "Recovery email address": [
-        ""
-      ],
-      "Recovery phone number": [
-        ""
-      ],
-      "Recovery phrase": [
-        ""
-      ],
-      "Repeat password": [
-        ""
-      ],
       "Reveal password": [
         "Mostrar senha"
       ],
-      "Security code": [
-        ""
-      ],
       "Select your country": [
         "Escolha o seu país"
-      ],
-      "Subscription options": [
-        ""
       ],
       "System information": [
         "Informação do sistema"
@@ -2960,14 +2058,6 @@
       ],
       "Your password (admin)": [
         "A sua senha (admin)"
-      ],
-      "ZIP code": [
-        ""
-      ]
-    },
-    "label": {
-      "Recovery phone number": [
-        ""
       ]
     },
     "Label for news": {
@@ -2982,9 +2072,6 @@
       ],
       "Proton newsletter": [
         "Boletim do Proton"
-      ],
-      "Proton offers and promotions": [
-        ""
       ],
       "Proton product announcements": [
         "Anúncios de produtos Proton"
@@ -3007,12 +2094,6 @@
       ],
       "click here": [
         "clique aqui"
-      ],
-      "Common sign in issues": [
-        ""
-      ],
-      "Common sign up issues": [
-        ""
       ],
       "Forgot username?": [
         "Esqueceu-se do nome de utilizador?"
@@ -3044,12 +2125,6 @@
       "Sign in": [
         "Iniciar sessão"
       ],
-      "Terms": [
-        ""
-      ],
-      "Trouble signing in?": [
-        ""
-      ],
       "Upgrade": [
         "Actualizar"
       ],
@@ -3063,17 +2138,9 @@
         "Qual é a diferença entre os protocolos UDP e TCP?"
       ]
     },
-    "Member downgrade modal": {
-      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        ""
-      ]
-    },
     "Message": {
       "Are you sure you want to disable two-factor authentication?": [
         "Tem certeza de que deseja desactivar a autenticação em dois passos?"
-      ],
-      "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
-        ""
       ]
     },
     "Message display when a new app version is available": {
@@ -3092,681 +2159,50 @@
         "Franco suíço"
       ]
     },
-    "new_plans": {
-      "Highest VPN speed": [
-        ""
-      ],
-      "Keep your inbox organized with folders": [
-        ""
-      ],
-      "Medium VPN speed": [
-        ""
-      ]
-    },
     "new_plans: action": {
-      "Continue to review": [
-        ""
-      ],
       "Continue with free": [
         "Continue with Free"
       ],
       "Delete account": [
         "Eliminar conta"
       ],
-      "Downgrade account": [
-        ""
-      ],
-      "Get ${ BRAND_NAME } for free": [
-        ""
-      ],
-      "Get ${ planName }": [
-        ""
-      ],
-      "Get ${ upsellShortPlan.title }": [
-        ""
-      ],
       "Got it": [
         "Percebi"
-      ],
-      "Keep ${ plan }": [
-        ""
-      ],
-      "Keep account": [
-        ""
-      ],
-      "Switch or add account": [
-        ""
-      ],
-      "Switch plan": [
-        ""
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        ""
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        ""
-      ],
-      "From ${ _price }": [
-        ""
-      ],
-      "From ${ _price2 } per user": [
-        ""
-      ],
-      "From ${ price }": [
-        ""
-      ],
-      "Keep my ${ currentPlanName } account": [
-        ""
-      ],
-      "Upgrade now": [
-        ""
-      ]
-    },
-    "new_plans: attribute": {
-      "Get ${ connections } high-speed VPN connection": [
-        "",
-        ""
-      ],
-      "Get ${ connections } high-speed VPN connection per user": [
-        "",
-        ""
       ]
     },
     "new_plans: feature": {
-      "${ DRIVE_APP_NAME } (web beta)": [
-        ""
-      ],
-      "${ n } custom email domain": [
-        "",
-        ""
-      ],
-      "${ n } email address": [
-        "",
-        ""
-      ],
-      "${ n } email address per user": [
-        "",
-        ""
-      ],
-      "${ n } filter": [
-        "",
-        ""
-      ],
-      "${ n } folder": [
-        "",
-        ""
-      ],
-      "${ n } folder and label": [
-        "",
-        ""
-      ],
-      "${ n } label": [
-        "",
-        ""
-      ],
-      "${ n } message per day": [
-        "",
-        ""
-      ],
-      "${ n } personal calendar": [
-        "",
-        ""
-      ],
-      "${ n } VPN connection": [
-        "",
-        ""
-      ],
-      "${ n } VPN connection per user": [
-        "",
-        ""
-      ],
-      "${ size } attachment size": [
-        ""
-      ],
-      "${ size } storage per user": [
-        ""
-      ],
-      "${ size } total storage": [
-        ""
-      ],
-      "1 free VPN connection in total": [
-        ""
-      ],
-      "99.95% SLA": [
-        ""
-      ],
-      "Admin console": [
-        ""
-      ],
-      "Advanced sharing security": [
-        ""
-      ],
-      "Auto-reply": [
-        ""
-      ],
-      "Catch-all": [
-        ""
-      ],
-      "Centralized billing": [
-        ""
-      ],
-      "Contact groups": [
-        ""
-      ],
-      "Contact groups management": [
-        ""
-      ],
-      "Custom email domains": [
-        ""
-      ],
       "DNS leak prevention": [
         "Prevenção de fugas DNS"
-      ],
-      "Document editors (docs, sheets, slides)": [
-        ""
-      ],
-      "Easy Switch import assistant": [
-        ""
-      ],
-      "Email client support (via IMAP/SMTP)": [
-        ""
-      ],
-      "Enables HIPAA compliance": [
-        ""
-      ],
-      "Encrypted contact details": [
-        ""
-      ],
-      "Encrypted VPN servers": [
-        ""
-      ],
-      "End-to-end encryption": [
-        ""
-      ],
-      "Free VPN on a single device": [
-        ""
-      ],
-      "GDPR data processing agreement": [
-        ""
-      ],
-      "High-speed VPN on ${ n } device": [
-        "",
-        ""
-      ],
-      "HTML signatures": [
-        ""
-      ],
-      "Kill switch/always-on VPN": [
-        ""
-      ],
-      "Limited support": [
-        ""
-      ],
-      "Multiple admin roles": [
-        ""
-      ],
-      "NetShield malware and ad-blocker": [
-        ""
       ],
       "P2P/BitTorrent": [
         "P2P/BitTorrent"
       ],
-      "Password-protected Emails": [
-        ""
-      ],
-      "Phone support (6+ users)": [
-        ""
-      ],
-      "Priority email support": [
-        ""
-      ],
-      "Priority support": [
-        ""
-      ],
-      "Router support": [
-        ""
-      ],
       "Secure Core servers": [
         "Servidores Secure Core"
       ],
-      "Send & receive invitations": [
-        ""
-      ],
-      "Share calendar via link": [
-        ""
-      ],
-      "Share files and folders via link": [
-        ""
-      ],
-      "Sign in as user": [
-        ""
-      ],
-      "Split tunneling (Android and Windows)": [
-        ""
-      ],
       "Strict no-logs policy": [
         "Política estrita sem diários"
-      ],
-      "Team management": [
-        ""
       ],
       "Tor over VPN": [
         "Tor sobre VPN"
       ],
       "Two-factor authentication": [
         "Autenticação em dois passos"
-      ],
-      "Unlimited filters": [
-        ""
-      ],
-      "Unlimited folders": [
-        ""
-      ],
-      "Unlimited folders, labels and filters": [
-        ""
-      ],
-      "Unlimited labels": [
-        ""
-      ],
-      "Unlimited messages per day": [
-        ""
-      ],
-      "Unlimited volume/bandwidth": [
-        ""
-      ],
-      "Up to ${ totalStorageSize } total storage": [
-        ""
-      ],
-      "User credential management": [
-        ""
-      ],
-      "User session management": [
-        ""
-      ],
-      "Worldwide streaming services": [
-        ""
       ]
     },
     "new_plans: heading": {
       "Support": [
         "Suporte"
-      ],
-      "Team management": [
-        ""
-      ]
-    },
-    "new_plans: info": {
-      "${ brand } ending in ${ last4 }": [
-        ""
-      ],
-      "* With 1-month subscription. Other subscription options available at checkout.": [
-        ""
-      ],
-      "* With 12-month subscription. Other subscription options available at checkout.": [
-        ""
-      ],
-      "* With 24-month subscription. Other subscription options available at checkout.": [
-        ""
-      ],
-      "Applicable credits, proration, and coupons are applied in the next step": [
-        ""
-      ],
-      "Comprehensive privacy and security with all Proton services combined.": [
-        ""
-      ],
-      "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
-        ""
-      ],
-      "If you downgrade your account, you lose all ${ visionary } plan benefits and it won’t be available if you try to subscribe again.": [
-        ""
-      ],
-      "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
-        ""
-      ],
-      "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
-        ""
-      ],
-      "Popular": [
-        ""
-      ],
-      "Price for future renewal: includes all applicable non-expired coupons saved to your account": [
-        ""
-      ],
-      "Privacy and security suite for businesses, including all premium Proton services.": [
-        ""
-      ],
-      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        ""
-      ],
-      "Secure email and calendar for professionals and businesses.": [
-        ""
-      ],
-      "Secure email with advanced features for your everyday communications.": [
-        ""
-      ],
-      "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
-        ""
-      ],
-      "The no-cost starter account designed to empower everyone with privacy by default.": [
-        ""
-      ],
-      "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
-        ""
-      ],
-      "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
-        ""
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        ""
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        ""
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        ""
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        ""
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        ""
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        ""
-      ]
-    },
-    "new_plans: Label": {
-      "${ humanUsedSpace } of ${ humanMaxSpace }": [
-        ""
-      ]
-    },
-    "new_plans: Plan frequency": {
-      "/month": [
-        ""
-      ]
-    },
-    "new_plans: Plan time remaining": {
-      "You still have ${ daysRemaining } day left on your ${ currentPlanName } account.": [
-        "",
-        ""
       ]
     },
     "new_plans: signup": {
-      "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }.": [
-        ""
-      ],
-      "Payment details": [
-        ""
-      ],
-      "Save your email address or phone number to use for verification if you need to reset your account.": [
-        ""
-      ],
       "Subscription": [
         "Subscrição"
-      ],
-      "terms and conditions": [
-        ""
-      ],
-      "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
-        ""
-      ],
-      "Your ${ planName } subscription is now active.": [
-        ""
-      ],
-      "Your selected plan: ${ planName }": [
-        ""
-      ]
-    },
-    "new_plans: title": {
-      "Delete account?": [
-        ""
-      ],
-      "Downgrade account?": [
-        ""
-      ],
-      "Improved plans coming soon!": [
-        ""
-      ],
-      "Review subscription and pay": [
-        ""
-      ],
-      "Start exploring the Proton universe": [
-        ""
-      ],
-      "Switch plans?": [
-        ""
-      ]
-    },
-    "new_plans: Title": {
-      "${ mailPlanName } Trial": [
-        ""
-      ],
-      "Upgrade to ${ planName }": [
-        ""
-      ],
-      "Your account's usage": [
-        ""
-      ]
-    },
-    "new_plans: tooltip": {
-      "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
-        ""
-      ],
-      "Addresses have full sending and receiving capability. A user can have multiple addresses assigned to them; however, a single address cannot be assigned to multiple users.": [
-        ""
-      ],
-      "Advanced security VPN with global network": [
-        ""
-      ],
-      "Allows you to access more than one network at the same time, e.g., stream a film from another country while still getting local search results": [
-        ""
-      ],
-      "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
-        ""
-      ],
-      "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
-        ""
-      ],
-      "Control access to your shared files by adding password protection and link expiration dates": [
-        ""
-      ],
-      "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscription": [
-        ""
-      ],
-      "Create up to ${ n } custom calendar.": [
-        "",
-        ""
-      ],
-      "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
-        ""
-      ],
-      "Easily share your calendars with your colleagues, family, and friends via a link": [
-        ""
-      ],
-      "Easily share your calendars with your family, friends, or colleagues via a link": [
-        ""
-      ],
-      "End-to-end encrypted calendar": [
-        ""
-      ],
-      "End-to-end encrypted file storage": [
-        ""
-      ],
-      "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
-        ""
-      ],
-      "Force sign-out of user sessions when user credentials are believed to be compromised": [
-        ""
-      ],
-      "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
-        ""
-      ],
-      "Keeps you protected by blocking all network connections when you are accidentally disconnected from our VPN server": [
-        ""
-      ],
-      "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
-        ""
-      ],
-      "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
-        ""
-      ],
-      "On business days, receive support from the Proton Customer Support team within 24 hours of requests": [
-        ""
-      ],
-      "On top of that, add up to 5 calendars from colleagues, organizations, family, and friends.": [
-        ""
-      ],
-      "On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
-        ""
-      ],
-      "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections": [
-        ""
-      ],
-      "Option to view non-private user inboxes as the user would, including full message and contact details": [
-        ""
-      ],
-      "Organization management tool that lets admins add and remove users, allocate storage, configure domains, and perform other tasks": [
-        ""
-      ],
-      "Our robust infrastructure ensures you will be able to access your account when you need it": [
-        ""
-      ],
-      "Our servers’ hard disks are fully encrypted with multiple password layers so your data is protected even if our hardware is compromised": [
-        ""
-      ],
-      "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
-        ""
-      ],
-      "Phone support is available from the Proton Customer Success team during European business hours, for customers with 6 or more users": [
-        ""
-      ],
-      "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
-        ""
-      ],
-      "Protect every device connected to your WiFi network. It’s also useful if you have devices that do not support VPN settings directly.": [
-        ""
-      ],
-      "Quickly set up out-of-office messages": [
-        ""
-      ],
-      "Quickly transfer your emails, calendars or contacts from any provider": [
-        ""
-      ],
-      "Requires a code sent to a mobile phone to sign in. This ensures even if a password is compromised, the account stays secure.": [
-        ""
-      ],
-      "Reset user passwords and reset two-factor authentication on users": [
-        ""
-      ],
-      "Route your internet traffic through the Tor network with a single click": [
-        ""
-      ],
-      "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even Proton can't access them.": [
-        ""
-      ],
-      "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
-        ""
-      ],
-      "Set up filters to automatically reply to, sort, and/or label your emails": [
-        ""
-      ],
-      "Share your files or folders with anyone by using secure, shareable links": [
-        ""
-      ],
-      "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
-        ""
-      ],
-      "Start with ${ freeStorageSize } and unlock more storage along the way. Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        ""
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
-        ""
-      ],
-      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
-        ""
-      ],
-      "Support for file-sharing protocols like BitTorrent": [
-        ""
-      ],
-      "Use your own custom email domain addresses, e.g., you@yourname.com": [
-        ""
-      ],
-      "We keep no session usage logs of what you do online, and we do not log metadata that can compromise your privacy": [
-        ""
-      ],
-      "We’re committed to helping customers subject to HIPAA/HITECH regulations safeguard protected health information (PHI). Signed BAAs are available for all ${ BRAND_NAME } for Business customers.": [
-        ""
-      ],
-      "When connected to our VPN, your DNS queries through our encrypted VPN tunnel, adding to your online privacy and security": [
-        ""
-      ],
-      "When sending to other ${ MAIL_APP_NAME } users, encryption is automatic. Sending to non-${ MAIL_APP_NAME } users requires setting a password prior to sending.": [
-        ""
-      ],
-      "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
-        ""
-      ]
-    },
-    "new_plans: Upsell attribute": {
-      "${ storageSize } total storage": [
-        ""
-      ],
-      "10 email addresses/aliases": [
-        ""
-      ],
-      "Access advanced VPN features": [
-        ""
-      ],
-      "Add more personalization with 15 email addresses and support for 3 custom email domains": [
-        ""
-      ],
-      "Boost your storage space to ${ bundleStorage } total": [
-        ""
-      ],
-      "Boost your storage space to ${ businessStorage } per user": [
-        ""
-      ],
-      "Boost your storage space to ${ driveStorage } total": [
-        ""
-      ],
-      "Cover more ground with support for 10 custom email domains": [
-        ""
-      ],
-      "Create up to ${ numberOfPersonalCalendars } personal calendar": [
-        "",
-        ""
-      ],
-      "Everything in ${ vpnPlanName }": [
-        ""
-      ],
-      "Get 5 additional email addresses per user": [
-        ""
-      ],
-      "Priority support": [
-        ""
-      ],
-      "Support for 1 custom email domain": [
-        ""
-      ],
-      "Unlimited folders, labels, and filters": [
-        ""
-      ],
-      "Unlimited messages": [
-        ""
       ]
     },
     "Notification": {
       "OpenVPN / IKEv2 credentials regenerated": [
         "Credenciais OpenVPN/IKEv2 regeneradas"
-      ]
-    },
-    "Onboarding": {
-      "Welcome to ${ VPN_APP_NAME }": [
-        ""
       ]
     },
     "Option": {
@@ -3826,9 +2262,6 @@
       "Bitcoin": [
         "Bitcoin"
       ],
-      "Credit/debit card": [
-        ""
-      ],
       "New credit/debit card": [
         "Novo cartão de crédito/débito"
       ],
@@ -3885,18 +2318,6 @@
         "Adicione o seu nome (ou o da empresa) e morada às facturas"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        ""
-      ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
-        ""
-      ],
-      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
-        "",
-        ""
-      ]
-    },
     "Price": {
       "Free": [
         "Gratuito"
@@ -3906,26 +2327,8 @@
       "Cancel": [
         "Cancelar"
       ],
-      "Email address has been verified.": [
-        ""
-      ],
-      "Email address not yet verified.": [
-        ""
-      ],
-      "Send verification email": [
-        ""
-      ],
-      "Verification email sent to ${ email.Value }": [
-        ""
-      ],
-      "Verify now": [
-        ""
-      ],
-      "Verify recovery email?": [
-        ""
-      ],
-      "Verifying your email address increases your account security and allows additional options for recovery.": [
-        ""
+      "Verify with email": [
+        "Verificar com correio electrónico"
       ]
     },
     "Recovery method": {
@@ -3934,34 +2337,19 @@
       ],
       "Phone number": [
         "Número de telefone"
-      ],
-      "Phrase": [
-        ""
+      ]
+    },
+    "Recovery Phone": {
+      "Cancel": [
+        "Cancelar"
       ]
     },
     "Signup label": {
-      "Display name": [
-        ""
-      ],
       "Email": [
         "Email"
       ],
       "Username": [
         "Utilizador"
-      ]
-    },
-    "Spotlight": {
-      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        ""
-      ],
-      "Get up to 18 months of ${ planName } for free": [
-        ""
-      ],
-      "Invite friends and earn rewards!": [
-        ""
-      ],
-      "Try ${ DRIVE_APP_NAME }": [
-        ""
       ]
     },
     "State": {
@@ -3980,91 +2368,12 @@
         "O seu armazenamento actual:"
       ]
     },
-    "Subscription attribute": {
-      "${ _n } calendar per user": [
-        "",
-        ""
-      ],
-      "${ maxVpn } high-speed VPN connection": [
-        "",
-        ""
-      ],
-      "${ n } calendar": [
-        "",
-        ""
-      ],
-      "${ n } high-speed VPN connection": [
-        "",
-        ""
-      ],
-      "${ n } high-speed VPN connection per user": [
-        "",
-        ""
-      ],
-      "${ n } VPN connection": [
-        "",
-        ""
-      ],
-      "${ n } VPN connection per user": [
-        "",
-        ""
-      ],
-      "${ UsedAddresses } address": [
-        "",
-        ""
-      ],
-      "${ UsedAddresses } of ${ MaxAddresses } email address": [
-        "",
-        ""
-      ],
-      "${ UsedCalendars } calendar": [
-        "",
-        ""
-      ],
-      "${ UsedDomains } of ${ MaxDomains } custom domain": [
-        "",
-        ""
-      ],
-      "${ UsedMembers } of ${ MaxMembers } user": [
-        "",
-        ""
-      ],
-      "1 email address": [
-        ""
-      ],
-      "1 VPN connection": [
-        ""
-      ],
-      "Access to streaming services globally": [
-        ""
-      ],
-      "Built-in ad blocker (NetShield)": [
-        ""
-      ],
-      "High-speed VPN on ${ maxVpn } device": [
-        "",
-        ""
-      ]
-    },
-    "Subscription price": {
-      "For": [
-        ""
-      ]
-    },
     "Subscription saving": {
       "Save": [
         "Gravar"
       ]
     },
-    "Subtitle for trial plan": {
-      "The privacy-first Mail and Calendar solution for your everyday communications needs.": [
-        ""
-      ]
-    },
     "Success": {
-      "${ server.Domain } copied to your clipboard": [
-        ""
-      ],
       "Account deleted. Logging out...": [
         "Conta eliminada. A terminar sessão..."
       ],
@@ -4085,12 +2394,6 @@
       ],
       "Gift code applied": [
         "Código de oferta aplicado"
-      ],
-      "If you entered a valid recovery email we will send you an email with your usernames in the next minute.": [
-        ""
-      ],
-      "If you entered a valid recovery phone we will send you an sms with your usernames in the next minute.": [
-        ""
       ],
       "Invoice customized": [
         "Factura personalizada"
@@ -4123,42 +2426,9 @@
         "Subscrição removida com sucesso"
       ]
     },
-    "Success notification": {
-      "Certificate ${ name } revoked": [
-        ""
-      ],
-      "Certificate extended until ${ formattedExpirationDate }": [
-        ""
-      ],
-      "Config \"${ name }\" created, note that the private key is not stored and won't be shown again, you should copy or download this config.": [
-        ""
-      ],
-      "Creating config file for ${ serverName }": [
-        ""
-      ]
-    },
-    "Suffix": {
-      "/month": [
-        ""
-      ],
-      "/user per month": [
-        ""
-      ]
-    },
     "Suffix for price": {
-      "/month": [
-        ""
-      ],
       "per month": [
         "por mês"
-      ]
-    },
-    "Tab subscription modal": {
-      "For businesses": [
-        ""
-      ],
-      "For individuals": [
-        ""
       ]
     },
     "TableHeader": {
@@ -4178,27 +2448,9 @@
         "Estado"
       ]
     },
-    "Themes": {
-      "Themes": [
-        ""
-      ]
-    },
     "Title": {
-      "${ maxUsers } user": [
-        "",
-        ""
-      ],
-      "${ VPN_APP_NAME } clients": [
-        ""
-      ],
-      "1. Give a name to the config to be generated": [
-        ""
-      ],
       "1. Select platform": [
         "1. Seleccionar plataforma"
-      ],
-      "2. Select platform": [
-        ""
       ],
       "2. Select protocol": [
         "2. Seleccionar protocolo"
@@ -4208,12 +2460,6 @@
       ],
       "3. Select config file and download": [
         "3. Seleccione a configuração e transfira"
-      ],
-      "3. Select VPN options": [
-        ""
-      ],
-      "4. Select a server to connect to": [
-        ""
       ],
       "Account": [
         "Conta"
@@ -4235,9 +2481,6 @@
       ],
       "Add PayPal payment method": [
         "Adicionar pagamento com PayPal"
-      ],
-      "Address is available": [
-        ""
       ],
       "Amount": [
         "Quantia"
@@ -4284,15 +2527,6 @@
       "Confirm phone number": [
         "Confirmar número de telefone"
       ],
-      "Congratulations on choosing privacy!": [
-        ""
-      ],
-      "Create a ${ mailAppName } address": [
-        ""
-      ],
-      "Create your ${ BRAND_NAME } Account": [
-        ""
-      ],
       "Credits": [
         "Crédito"
       ],
@@ -4314,20 +2548,11 @@
       "Delete account": [
         "Eliminar conta"
       ],
-      "Delete organization?": [
-        ""
-      ],
       "Device connected!": [
         "Dispositivo ligado!"
       ],
       "Disable two-factor authentication": [
         "Desactivar autenticação em dois passos"
-      ],
-      "Downgrade account": [
-        ""
-      ],
-      "Download ${ VPN_APP_NAME }": [
-        ""
       ],
       "Downloads": [
         "Transferências"
@@ -4344,14 +2569,8 @@
       "Error": [
         "Erro"
       ],
-      "Find email or username": [
-        ""
-      ],
       "General": [
         "Geral"
-      ],
-      "Get ${ vpnPlus } to access all servers": [
-        ""
       ],
       "Gift code": [
         "Código de oferta"
@@ -4376,9 +2595,6 @@
       ],
       "Next": [
         "Seguinte"
-      ],
-      "No recovery method": [
-        ""
       ],
       "Open actions dropdown": [
         "Abrir lista de acções"
@@ -4419,9 +2635,6 @@
       "PayPal verification failed": [
         "A verificação PayPal falhou"
       ],
-      "Phone": [
-        ""
-      ],
       "Plan summary": [
         "Resumo do plano"
       ],
@@ -4440,9 +2653,6 @@
       "Recommended": [
         "Recomendado"
       ],
-      "Recovery": [
-        ""
-      ],
       "Report a problem": [
         "Relatar um problema"
       ],
@@ -4452,23 +2662,8 @@
       "Reset password": [
         "Repor senha"
       ],
-      "Reset password?": [
-        ""
-      ],
-      "Revoke certificate": [
-        ""
-      ],
-      "Save contact details": [
-        ""
-      ],
-      "Secure email based in Switzerland": [
-        ""
-      ],
       "Select a plan": [
         "Seleccione um plano"
-      ],
-      "Set new password": [
-        ""
       ],
       "Set up two-factor authentication": [
         "Configurar autenticação em dois passos"
@@ -4491,12 +2686,6 @@
       "Switch to two-password mode": [
         "Mudar para modo de senha dupla"
       ],
-      "This address might compromise your privacy.": [
-        ""
-      ],
-      "Try the best of ${ MAIL_APP_NAME } for free": [
-        ""
-      ],
       "TV log in": [
         "Iniciar sessão de TV"
       ],
@@ -4506,29 +2695,17 @@
       "Type": [
         "Tipo"
       ],
-      "Unlock your mailbox": [
-        ""
-      ],
       "Unsupported browser": [
         "Navegador não suportado"
       ],
       "Username": [
         "Utilizador"
       ],
-      "Verification": [
-        ""
-      ],
       "Warning": [
         "Aviso"
       ],
-      "Warning!": [
-        ""
-      ],
       "What's new": [
         "O que há de novo"
-      ],
-      "WireGuard configuration": [
-        ""
       ],
       "You already have a Proton account": [
         "Já tem uma conta Proton"
@@ -4538,9 +2715,6 @@
       ],
       "Your plan": [
         "O seu plano"
-      ],
-      "You’ve been invited to try ${ mailAppName }": [
-        ""
       ],
       "ZIP / postal code": [
         "Código postal"
@@ -4557,11 +2731,6 @@
         "Estado"
       ]
     },
-    "Title for PDF file": {
-      "${ MAIL_APP_NAME } invoice": [
-        ""
-      ]
-    },
     "Tooltip": {
       "Discount applied for annual billing cycle": [
         "Desconto aplicado a ciclos de facturação anual"
@@ -4573,14 +2742,6 @@
         "Se adquiriu um código de oferta ou recebeu um da nossa equipa de suporte, insira-o aqui."
       ]
     },
-    "Tor out of date": {
-      "stable release": [
-        ""
-      ],
-      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
-        ""
-      ]
-    },
     "Validation": {
       "Password must contain at least ${ length } character": [
         "A senha deve conter pelo menos ${ length } carácter",
@@ -4590,20 +2751,6 @@
     "VPN info": {
       "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, and more.": [
         "Netflix, Amazon Prime Vídeo, BBC iPlayer, ESPN+, Disney+, HBO Now e muito mais."
-      ]
-    },
-    "VPN Plan Feature": {
-      "${ n } server": [
-        "",
-        ""
-      ],
-      "${ n } VPN connection": [
-        "",
-        ""
-      ],
-      "${ numberOfServers } in ${ numberOfCountries } country": [
-        "",
-        ""
       ]
     },
     "VPNClient": {
@@ -4648,23 +2795,11 @@
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "Ao eliminar este número de telefone, já não poderá recuperar a sua conta."
       ],
-      "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
-        ""
-      ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Por favor, note que ao escolher este método de pagamento, a sua conta não poderá ser actualizada imediatamente. Faremos a actualização assim que o pagamento for aprovado."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Os relatórios não são encriptados de ponta-a-ponta. Por favor, não envie nenhuma informação sensível."
-      ],
-      "The date and time settings on your device are out of sync. ${ learnMore }": [
-        ""
-      ],
-      "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
-        ""
-      ],
-      "Your free trial ends on ${ textDate }. ${ action }": [
-        ""
       ]
     }
   }

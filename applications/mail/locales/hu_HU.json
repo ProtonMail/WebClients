@@ -1138,11 +1138,6 @@
         "Ha problémába ütközik, mindig lesz lehetősége letiltani a Béta hozzáférést."
       ]
     },
-    "blackfriday Action": {
-      "Get the offer": [
-        ""
-      ]
-    },
     "blackfriday Info": {
       "beta": [
         "béta"
@@ -1152,20 +1147,11 @@
       ],
       "Standard price: ${ regularPrice }": [
         "Normál ár: ${ regularPrice }"
-      ],
-      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
-        ""
       ]
     },
     "blackfriday Title": {
-      "Best deal": [
-        ""
-      ],
       "Most popular": [
         "Legnépszerűbb"
-      ],
-      "Save more when combining Mail and VPN": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer Action": {
@@ -1177,14 +1163,8 @@
       ]
     },
     "blackfriday: VPNspecialoffer Info": {
-      "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
-        ""
-      ],
       "Save ${ percentage }%": [
         "${ percentage } %"
-      ],
-      "Special offer Terms and Conditions": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer info": {
@@ -1198,15 +1178,6 @@
       ]
     },
     "blackfriday: VPNspecialoffer Title": {
-      "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
-        ""
-      ],
-      "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
-        ""
-      ],
-      "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
-        ""
-      ],
       "1 month": [
         "1 hónap"
       ],
@@ -1215,18 +1186,6 @@
       ],
       "24 months": [
         "24 hónap"
-      ],
-      "Billed at ${ amount } for the first 2 years.${ supNotice }": [
-        ""
-      ],
-      "Billed at ${ amount } for the first month.${ supNotice }": [
-        ""
-      ],
-      "Billed at ${ amount } for the first year.${ supNotice }": [
-        ""
-      ],
-      "Get the special year-end offer on our Premium VPN PLUS plan": [
-        ""
       ]
     },
     "Bug category": {
@@ -3538,9 +3497,6 @@
       ]
     },
     "file size format": {
-      "bytes": [
-        "bájt"
-      ],
       "GB": [
         "GB"
       ],
@@ -3549,20 +3505,6 @@
       ],
       "MB": [
         "MB"
-      ]
-    },
-    "file size format, long": {
-      "Bytes": [
-        "Bájt"
-      ],
-      "Gigabytes": [
-        "Gigabájt"
-      ],
-      "Kilobytes": [
-        "Kilobájt"
-      ],
-      "Megabytes": [
-        "Megabájt"
       ]
     },
     "Filter Actions": {
@@ -3947,14 +3889,6 @@
       "${ numContacts } contact": [
         "${ numContacts } névjegy",
         "${ numContacts } névjegy"
-      ],
-      "${ occurrencesInBody } occurrence found": [
-        "${ occurrencesInBody } előfordulás található",
-        "${ occurrencesInBody } előfordulás található"
-      ],
-      "${ occurrencesInBody } occurrence found in the mail content": [
-        "${ occurrencesInBody } előfordulás található a levél szövegében",
-        "${ occurrencesInBody } előfordulás található a levél szövegében"
       ],
       "${ pureAttachmentsCount } file attached": [
         "${ pureAttachmentsCount } fájl csatolva",
@@ -4569,12 +4503,6 @@
       "per month.": [
         "havonta."
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
-        "PGP/Inline is only compatible with Plain Text format. Please note that Proton Mail always signs encrypted messages."
-      ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
-        "PGP/MIME automatically sends the message using the current composer mode. Please note that Proton Mail always signs encrypted messages."
-      ],
       "Phone number": [
         "Telefonszám"
       ],
@@ -4644,9 +4572,6 @@
       ],
       "Request read receipt": [
         "Olvasási visszaigazolás igénylése"
-      ],
-      "Rich text": [
-        ""
       ],
       "Right to Left": [
         "Jobbról balra"

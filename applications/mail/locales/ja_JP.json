@@ -518,9 +518,6 @@
       "Messages from this sender": [
         "この差出人からのメッセージ"
       ],
-      "Messages to this recipient": [
-        ""
-      ],
       "Minimize composer": [
         "最小化"
       ],
@@ -1050,9 +1047,6 @@
       "Replied to": [
         "返信先"
       ],
-      "Replied to all": [
-        ""
-      ],
       "Star conversation": [
         "会話に星印をつける"
       ],
@@ -1133,11 +1127,6 @@
         "問題が発生するなどした場合、いつでもベータ版アクセスを無効にできます。"
       ]
     },
-    "blackfriday Action": {
-      "Get the offer": [
-        ""
-      ]
-    },
     "blackfriday Info": {
       "beta": [
         "ベータ"
@@ -1153,14 +1142,8 @@
       ]
     },
     "blackfriday Title": {
-      "Best deal": [
-        ""
-      ],
       "Most popular": [
         "最も人気"
-      ],
-      "Save more when combining Mail and VPN": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer Action": {
@@ -1172,14 +1155,8 @@
       ]
     },
     "blackfriday: VPNspecialoffer Info": {
-      "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
-        ""
-      ],
       "Save ${ percentage }%": [
         "${ percentage }%割引"
-      ],
-      "Special offer Terms and Conditions": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer info": {
@@ -1193,15 +1170,6 @@
       ]
     },
     "blackfriday: VPNspecialoffer Title": {
-      "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
-        ""
-      ],
-      "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
-        ""
-      ],
-      "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
-        ""
-      ],
       "1 month": [
         "1か月"
       ],
@@ -1210,18 +1178,6 @@
       ],
       "24 months": [
         "24か月"
-      ],
-      "Billed at ${ amount } for the first 2 years.${ supNotice }": [
-        ""
-      ],
-      "Billed at ${ amount } for the first month.${ supNotice }": [
-        ""
-      ],
-      "Billed at ${ amount } for the first year.${ supNotice }": [
-        ""
-      ],
-      "Get the special year-end offer on our Premium VPN PLUS plan": [
-        ""
       ]
     },
     "Bug category": {
@@ -1314,185 +1270,32 @@
       " This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar.": [
         " この新しい時間はあなたの招待の詳細と一致しません。カレンダーの招待の詳細を確認してください。"
       ],
-      "${ participantName } accepted an invitation and proposed a new time for one occurrence of this event.": [
-        ""
-      ],
-      "${ participantName } accepted an invitation and proposed a new time for this event.": [
-        ""
-      ],
-      "${ participantName } accepted an invitation to one occurrence of the event.": [
-        ""
-      ],
       "${ participantName } accepted an invitation to this event.": [
         "${ participantName } はこのイベントの招待を承認しました。"
-      ],
-      "${ participantName } accepted your invitation and proposed a new time for one occurrence of this event.": [
-        ""
-      ],
-      "${ participantName } accepted your invitation and proposed a new time for this event.": [
-        ""
-      ],
-      "${ participantName } accepted your invitation to one occurrence of the event.": [
-        ""
       ],
       "${ participantName } accepted your invitation.": [
         "${ participantName } は招待を受け入れました。"
       ],
-      "${ participantName } asked for the latest event updates.": [
-        ""
-      ],
-      "${ participantName } asked for the latest updates to an event which does not exist anymore. You have no calendars.": [
-        ""
-      ],
-      "${ participantName } asked for the latest updates to an event which does not exist in your calendar anymore.": [
-        ""
-      ],
-      "${ participantName } asked for the latest updates to an event which doesn't match your invitation details. Please verify the invitation details in your calendar.": [
-        ""
-      ],
-      "${ participantName } declined an invitation and proposed a new time for one occurrence of this event.": [
-        ""
-      ],
-      "${ participantName } declined an invitation and proposed a new time for this event.": [
-        ""
-      ],
-      "${ participantName } declined an invitation to one occurrence of the event.": [
-        ""
-      ],
       "${ participantName } declined an invitation to this event.": [
         "${ participantName } はこのイベントの招待を拒否しました。"
-      ],
-      "${ participantName } declined your invitation and proposed a new time for one occurrence of this event.": [
-        ""
-      ],
-      "${ participantName } declined your invitation and proposed a new time for this event.": [
-        ""
-      ],
-      "${ participantName } declined your invitation to one occurrence of the event.": [
-        ""
       ],
       "${ participantName } declined your invitation.": [
         "${ participantName } は招待を断りました。"
       ],
-      "${ participantName } had accepted an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
-        ""
-      ],
-      "${ participantName } had accepted an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
-        ""
-      ],
-      "${ participantName } had accepted an invitation to one occurrence of the event.": [
-        ""
-      ],
-      "${ participantName } had accepted an invitation to this event.": [
-        ""
-      ],
-      "${ participantName } had accepted your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
-        ""
-      ],
-      "${ participantName } had accepted your invitation and proposed a new time for this event. Answer and proposal are out of date.": [
-        ""
-      ],
-      "${ participantName } had declined an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
-        ""
-      ],
-      "${ participantName } had declined an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
-        ""
-      ],
-      "${ participantName } had declined an invitation to one occurrence of the event.": [
-        ""
-      ],
       "${ participantName } had declined an invitation to this event.": [
         "${ participantName } はこのイベントの招待を拒否していました。"
-      ],
-      "${ participantName } had declined your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
-        ""
-      ],
-      "${ participantName } had declined your invitation and proposed a new time for this event. Answer and proposal are out of date.": [
-        ""
-      ],
-      "${ participantName } had previously accepted your invitation to one occurrence of the event.": [
-        ""
       ],
       "${ participantName } had previously accepted your invitation.": [
         "${ participantName } は以前に招待を受け入れていました。"
       ],
-      "${ participantName } had previously declined your invitation to one occurrence of the event.": [
-        ""
-      ],
       "${ participantName } had previously declined your invitation.": [
         "${ participantName } は以前に招待を断っていました。"
-      ],
-      "${ participantName } had previously tentatively accepted your invitation to one occurrence of the event.": [
-        ""
-      ],
-      "${ participantName } had previously tentatively accepted your invitation.": [
-        ""
-      ],
-      "${ participantName } had proposed a new time for one occurrence of this event. This proposal is out of date.": [
-        ""
-      ],
-      "${ participantName } had proposed a new time for one occurrence of this event. This proposal is out of date. The event does not exist in your calendar anymore.": [
-        ""
-      ],
-      "${ participantName } had proposed a new time for one occurrence of this event. This proposal is out of date. You have no calendars.": [
-        ""
-      ],
-      "${ participantName } had proposed a new time for this event. This proposal is out of date.": [
-        ""
-      ],
-      "${ participantName } had proposed a new time for this event. This proposal is out of date. The event does not exist in your calendar anymore.": [
-        ""
-      ],
-      "${ participantName } had proposed a new time for this event. This proposal is out of date. You have no calendars.": [
-        ""
-      ],
-      "${ participantName } had tentatively accepted an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
-        ""
-      ],
-      "${ participantName } had tentatively accepted an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
-        ""
-      ],
-      "${ participantName } had tentatively accepted an invitation to one occurrence of the event.": [
-        ""
-      ],
-      "${ participantName } had tentatively accepted an invitation to this event.": [
-        ""
-      ],
-      "${ participantName } had tentatively accepted your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
-        ""
-      ],
-      "${ participantName } had tentatively accepted your invitation and proposed a new time for this event. Answer and proposal are out of date.": [
-        ""
       ],
       "${ participantName } is not in the participants list.": [
         "${ participantName } は招待リストにいません。"
       ],
-      "${ participantName } proposed a new time for one occurrence of this event.": [
-        ""
-      ],
-      "${ participantName } proposed a new time for this event.": [
-        ""
-      ],
-      "${ participantName } tentatively accepted an invitation and proposed a new time for one occurrence of this event.": [
-        ""
-      ],
-      "${ participantName } tentatively accepted an invitation and proposed a new time for this event.": [
-        ""
-      ],
-      "${ participantName } tentatively accepted an invitation to one occurrence of the event.": [
-        ""
-      ],
       "${ participantName } tentatively accepted an invitation to this event.": [
         "${ participantName } はこのイベントの招待を仮承認しました。"
-      ],
-      "${ participantName } tentatively accepted your invitation and proposed a new time for one occurrence of this event.": [
-        ""
-      ],
-      "${ participantName } tentatively accepted your invitation and proposed a new time for this event.": [
-        ""
-      ],
-      "${ participantName } tentatively accepted your invitation to one occurrence of the event.": [
-        ""
       ],
       "${ participantName } tentatively accepted your invitation.": [
         "${ participantName } はとりあえず招待を受け入れました。"
@@ -1500,17 +1303,11 @@
       "(Attendance optional)": [
         "(出席は任意です)"
       ],
-      "Adding occurrences to an event is not supported for the moment": [
-        ""
-      ],
       "Event refreshing is not supported for the moment": [
         "イベントの再リフレッシュは現在サポートされていません"
       ],
       "Event rescheduling is not supported for the moment": [
         "イベントの再スケジュールは現在サポートされていません"
-      ],
-      "This answer cannot be added to ${ calendarAppName } as we only support answers to all events of a series for the moment": [
-        ""
       ],
       "This event has been canceled.": [
         "このイベントは中止されました。"
@@ -1532,9 +1329,6 @@
       ],
       "This response is out of date.": [
         "このレスポンスは古くなっています。"
-      ],
-      "This response is out of date. The event does not exist in your calendar anymore.": [
-        ""
       ],
       "This response is out of date. You have no calendars.": [
         "レスポンスが古くなってます。カレンダーがありません。"
@@ -2782,9 +2576,6 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "連絡先の暗号化とインポート... これには数分かかることがあります。\n処理が完了すると、このモーダルを閉じることができます。"
       ],
-      "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
-        ""
-      ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "連絡先の統合しています... これには数分かかる場合があります。処理が完了したらこのモーダルを閉じることができます。"
       ],
@@ -2796,14 +2587,6 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "結合または保持する必要のない連絡先を削除するためにマークができます。 削除はマージボタンがクリックされた後にのみ行われます"
-      ]
-    },
-    "Description of the purpose of the import CSV modal": {
-      "Also, we have automatically matched CSV fields with vCard fields. You can review and change this matching manually.": [
-        ""
-      ],
-      "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
-        ""
       ]
     },
     "Desktop notification body": {
@@ -3127,9 +2910,6 @@
       "Primary address key is not decrypted.": [
         "プライマリーアドレス鍵が復号されていません。"
       ],
-      "Primary key is not valid for sending": [
-        ""
-      ],
       "Primary key retrieved for internal user is not valid for sending": [
         "内部ユーザー用に取得されたプライマリー鍵は送信に使用できません"
       ],
@@ -3275,11 +3055,6 @@
         "一致する項目が多すぎるため、検索対象をより絞り込んでもう一度お試しください。"
       ]
     },
-    "Error adding participants to a calendar event": {
-      "At most 100 participants are allowed per invitation": [
-        ""
-      ]
-    },
     "Error display when performing invalid move on message": {
       "Drafts cannot be moved to Inbox": [
         "下書きを受信トレイに移動することはできません"
@@ -3358,9 +3133,6 @@
       "Floating times not supported": [
         "浮動時間はサポートされていません"
       ],
-      "Free-busy time information": [
-        ""
-      ],
       "Invalid event": [
         "無効なイベントです"
       ],
@@ -3393,9 +3165,6 @@
       ],
       "Original recurring event could not be found": [
         "元の定期的な予定が見つかりませんでした"
-      ],
-      "Recurring event has no occurrences": [
-        ""
       ],
       "Recurring rule not supported": [
         "繰り返しルールはサポートされていません"
@@ -3442,11 +3211,6 @@
         "${ refresh } するか再度お試しください。"
       ]
     },
-    "Error notification": {
-      "First name and last name cannot be unchecked at the same time": [
-        ""
-      ]
-    },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "画像が選択されていません"
@@ -3478,9 +3242,6 @@
       "The event could not be added to your calendar. No answer was sent": [
         "イベントをカレンダーに追加できませんでした。回答は送信されません。"
       ],
-      "The event could not be updated in your calendar. No answer was sent": [
-        ""
-      ],
       "Unexpected error": [
         "予期しないエラー"
       ],
@@ -3492,9 +3253,6 @@
       ],
       "We could not cancel the event in your calendar": [
         "カレンダーのイベントをキャンセルすることができませんでした"
-      ],
-      "We could not retrieve the event from your calendar": [
-        ""
       ],
       "We could not update the event in your calendar": [
         "カレンダーのイベントを更新することができませんでした"
@@ -3517,7 +3275,7 @@
       ]
     },
     "file size format": {
-      "bytes": [
+      "byte": [
         "バイト"
       ],
       "GB": [
@@ -3531,16 +3289,16 @@
       ]
     },
     "file size format, long": {
-      "Bytes": [
+      "Byte": [
         "バイト"
       ],
-      "Gigabytes": [
+      "Gigabyte": [
         "ギガバイト"
       ],
-      "Kilobytes": [
+      "Kilobyte": [
         "キロバイト"
       ],
-      "Megabytes": [
+      "Megabyte": [
         "メガバイト"
       ]
     },
@@ -3756,9 +3514,6 @@
     "Hint": {
       "Found ${ items.length } suggestion, use keyboard to navigate.": [
         "${ items.length } つの提案が見つかりました。キーボードを使って操作します。"
-      ],
-      "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
-        ""
       ]
     },
     "Human verification method": {
@@ -3905,12 +3660,6 @@
       ],
       "${ numContacts } contact": [
         "${ numContacts } 件の連絡先"
-      ],
-      "${ occurrencesInBody } occurrence found": [
-        ""
-      ],
-      "${ occurrencesInBody } occurrence found in the mail content": [
-        ""
       ],
       "${ pureAttachmentsCount } file attached": [
         "${ pureAttachmentsCount } 件の添付ファイル"
@@ -4077,12 +3826,6 @@
       "Clear data": [
         "データをクリア"
       ],
-      "Clearing browser data also deactivates message content search on this device. All messages will need to be downloaded again to search within them.": [
-        ""
-      ],
-      "Clears browser data related to message content search including downloaded messages": [
-        ""
-      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "「新しいコードをリクエスト」をクリックすると新しい認証コードが ${ strong } に送信されます。電話番号が違う場合、「編集」をクリックして修正します。"
       ],
@@ -4242,9 +3985,6 @@
       "Expires soon": [
         "もうすぐ期限切れになります"
       ],
-      "Expiring message": [
-        ""
-      ],
       "file attached": [
         "個のファイル添付"
       ],
@@ -4256,9 +3996,6 @@
       ],
       "For increased security, activate 2FA.": [
         "さらなるセキュリティのため、2FA をアクティブにします。"
-      ],
-      "For messages newer than ${ oldestDate }": [
-        ""
       ],
       "Free up some space or add more storage space.": [
         "スペースを解放するか、ストレージのスペースをさらに増やしてください。"
@@ -4322,9 +4059,6 @@
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "データを ${ importedEmailAddress } から ${ toEmail } にインポートしています。"
-      ],
-      "Increase storage space starting at": [
-        ""
       ],
       "Indexing paused": [
         "処理が一時停止されました"
@@ -4397,9 +4131,6 @@
       ],
       "Merged": [
         "結合済み"
-      ],
-      "Message expiration works out-of-the-box when sending emails to other ${ MAIL_APP_NAME } users. To send expiring emails to non-${ BRAND_NAME } users, please cancel and add password protection to your email.": [
-        ""
       ],
       "Message headers": [
         "メッセージヘッダー"
@@ -4482,9 +4213,6 @@
       "of": [
         " / "
       ],
-      "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
-        ""
-      ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "この設定は、メールの宛先に PGP を使用している非 ${ BRAND_NAME } ユーザーがいる場合にのみ変更してください。"
       ],
@@ -4496,12 +4224,6 @@
       ],
       "per month.": [
         "毎月。"
-      ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
-        "PGP/Inline is only compatible with Plain Text format. Please note that Proton Mail always signs encrypted messages."
-      ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
-        "PGP/MIME automatically sends the message using the current composer mode. Please note that Proton Mail always signs encrypted messages."
       ],
       "Phone number": [
         "電話番号"
@@ -4692,12 +4414,6 @@
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "このページを離れると入力したデータの下書きは保存されません。"
       ],
-      "The original message you are trying to forward / reply to is in the process of being sent. If you continue, you will not be able to undo sending of the original message any longer.": [
-        ""
-      ],
-      "The original sender of this message is no longer valid. Your message will be sent from your default address ${ defaultEmail }.": [
-        ""
-      ],
       "The sender has requested a read receipt.": [
         "差出人が開封確認を要求しています。"
       ],
@@ -4709,9 +4425,6 @@
       ],
       "Themes can give your inbox a new look.": [
         "テーマで受信トレイを新しい見た目に変更できます。"
-      ],
-      "There has been an error with the signature used to verify the contact details, which may be the result of a password reset.": [
-        ""
       ],
       "This account has been suspended due to a potential policy violation.": [
         "このアカウントは、ポリシー違反の可能性があるため停止されています。"
@@ -4809,17 +4522,8 @@
       "To recover your data, you need to re-activate the contact encryption key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
         "データを復元するには、データが作成されたときに使用された連絡先の暗号鍵を再度有効にする必要があります。したがって、鍵が生成されたときに使用されたパスワードを覚えている必要があります。"
       ],
-      "To unsubscribe from this mailing list, an email will be sent from ${ boldFrom } with following details as defined by the sender of the newsletter:": [
-        ""
-      ],
-      "To unsubscribe from this mailing list, you will be taken to the following URL where instructions will be provided by the sender of the newsletter:": [
-        ""
-      ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "アドレスの検証を利用するには、送信で使う鍵を含む 1 つ以上の公開鍵を信頼する必要があります。これにより、暗号鍵の偽装を防ぐことができます。"
-      ],
-      "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
-        ""
       ],
       "Turn off content search. Activation progress won't be lost.": [
         "メッセージ内容の検索をオフにします。アクティベーションの進行状況は失われません。"
@@ -4896,9 +4600,6 @@
       "Visit our shop to get Proton merchandise.": [
         "ショップで Proton の商品を手に入れましょう。"
       ],
-      "We apologize. This might have been a mistake from our side. Can you please confirm that you want to mark this email as a legitimate one?": [
-        ""
-      ],
       "We could not verify the sender's trusted keys.": [
         "差出人の信頼された鍵を検証できませんでした。"
       ],
@@ -4947,9 +4648,6 @@
       "You can check the progress ${ importProgressLink }.": [
         "進捗を確認するには ${ importProgressLink }。"
       ],
-      "You can either update your search query or ${ button }": [
-        ""
-      ],
       "You can either update your search query or clear it": [
         "検索内容を変えるか、消去してください"
       ],
@@ -4989,9 +4687,6 @@
       "You have reached 100% of your storage capacity. Consider freeing up some space or upgrading your account with additional storage space to compose new messages.": [
         "ストレージ容量の100%に達しました。新しいメッセージを作成するために、ストレージ容量を増やしたり、容量追加のためにアカウントをアップグレードすることを検討してください。"
       ],
-      "You have reached the maximum number of 5 replies.": [
-        ""
-      ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "ストレージ容量の ${ spaceDisplayed }% に達しました。${ freeUpMessage } ${ upgradeLink }"
       ],
@@ -5024,15 +4719,6 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "メールアドレスは、この一度限りの認証にのみ使用されます。"
-      ],
-      "Your message will be deleted from the recipient's inbox and your sent folder on ${ dateString } at ${ formattedTime }": [
-        ""
-      ],
-      "Your message will be deleted from the recipient's inbox and your sent folder today at ${ formattedTime }": [
-        ""
-      ],
-      "Your message will be deleted from the recipient's inbox and your sent folder tomorrow at ${ formattedTime }": [
-        ""
       ],
       "Your message will expire in ${ numberOfDays } day.": [
         "メッセージの有効期限は残り ${ numberOfDays } 日です。"
@@ -5072,14 +4758,8 @@
       ]
     },
     "Key badge": {
-      "Compromised": [
-        ""
-      ],
       "Expired": [
         "有効期限切れ"
-      ],
-      "Obsolete": [
-        ""
       ],
       "Primary": [
         "プライマリー"
@@ -5103,9 +4783,6 @@
       ],
       "Do you want to trust the primary public key with the following fingerprint?": [
         "次のフィンガープリントのプライマリー鍵を信頼しますか？"
-      ],
-      "You have enabled Address Verification with Trusted Keys for this email address,\nbut no active encryption key has been trusted.\nYou must trust a key valid for sending in order to send a message to this email address.": [
-        ""
       ]
     },
     "Key validation warning": {
@@ -5343,6 +5020,9 @@
       ],
       "ANY": [
         "いずれか"
+      ],
+      "Apply filter to existing emails": [
+        "存在するメールにフィルターを適用"
       ],
       "Attach screenshot(s)": [
         "スクリーンショットを添付"
@@ -5811,12 +5491,6 @@
       "Enable an email address linked to one of your calendars.": [
         "カレンダーにリンクされたメールアドレスを有効にします"
       ],
-      "Enable the email address linked to the disabled calendar to cancel the event.": [
-        ""
-      ],
-      "Enable the email address linked to the disabled calendar to modify your answer.": [
-        ""
-      ],
       "Enable your address again to modify your answer.": [
         "再度アドレスを有効にして回答を変更します。"
       ],
@@ -5856,9 +5530,6 @@
       "Open updated event in ${ calendarAppName }": [
         "${ calendarAppName } で更新されたイベントを開く"
       ],
-      "Or you can delete one of your calendars and create a new one linked to an active email address.": [
-        ""
-      ],
       "Outbox": [
         "送信箱"
       ],
@@ -5867,12 +5538,6 @@
       ],
       "Privacy policy": [
         "プライバシーポリシー"
-      ],
-      "Re-enable the address linked to this calendar to manage your invitation.": [
-        ""
-      ],
-      "Re-enable the address linked to this calendar to update your invitation.": [
-        ""
       ],
       "Request an invite": [
         "登録を申請"
@@ -5894,9 +5559,6 @@
       ],
       "Terms": [
         "利用規約"
-      ],
-      "This ICS file contains more than one event. Please download it and import the events in ${ calendarAppName }": [
-        ""
       ],
       "Trash": [
         "ごみ箱"
@@ -6230,9 +5892,6 @@
     "Onboarding": {
       "Welcome to ${ appName }": [
         "${ appName } へようこそ"
-      ],
-      "Where privacy and security meet productivity and ease of use.": [
-        ""
       ]
     },
     "Onboarding Action": {
@@ -6324,19 +5983,8 @@
       ]
     },
     "PGP Key info": {
-      "${ emailAddress } has marked this key as compromised. This key cannot be used neither for encryption nor for signature verification.": [
-        ""
-      ],
-      "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
-        ""
-      ],
       "We recommend that you \"untrust\" this key.": [
         "この鍵を「信頼しない」ことをおすすめします。"
-      ]
-    },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        ""
       ]
     },
     "Placeholder": {
@@ -6540,9 +6188,6 @@
       ],
       "Cannot send to organizer address: ${ errorMessage }": [
         "主催者のアドレスに送信できません: ${ errorMessage }"
-      ],
-      "Re-encrypting invitation failed. Please try again": [
-        ""
       ]
     },
     "Search - no results": {
@@ -6564,11 +6209,6 @@
         "アップロード"
       ]
     },
-    "Send email with changed preferences": {
-      "The contacts for the following addresses have been deleted, so the corresponding encryption preferences have been updated accordingly:": [
-        ""
-      ]
-    },
     "Send email with errors": {
       "Do you want to send the email anyway?": [
         "とりあえずメールを送信しますか?"
@@ -6583,9 +6223,6 @@
     "Send email with warnings": {
       "Do you want to send the email anyway?": [
         "とりあえずメールを送信しますか?"
-      ],
-      "If you decide to send the message anyway, the following recipient will receive the email without expiration:": [
-        ""
       ],
       "The following address is not valid: ${ invalidAddresses }": [
         "次のアドレスは有効ではありません: ${ invalidAddresses }"
@@ -6673,9 +6310,6 @@
       ]
     },
     "Spotlight": {
-      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        ""
-      ],
       "Discover all Proton services": [
         "すべての Proton サービスがここに"
       ],
@@ -7455,9 +7089,6 @@
       "Trust new key?": [
         "新しい鍵を信頼しますか？"
       ],
-      "Trust pinned keys?": [
-        ""
-      ],
       "Trust public key?": [
         "公開鍵を信頼しますか?"
       ],
@@ -7521,9 +7152,6 @@
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "暗号化や署名の際に使用される PGP の方式を選択してください。 PGP/Inline はプレーンテキストのメッセージでしか使用できない事に注意してください"
-      ],
-      "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
-        ""
       ],
       "The import will start with the most recent messages.": [
         "インポートは新しいメッセージから始まります。"
@@ -7600,9 +7228,6 @@
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "レポートはエンドツーエンドで暗号化されていません。機密情報を送信しないでください。"
-      ],
-      "Some of the contacts to be merged display errors. Please review them individually": [
-        ""
       ],
       "The attachment's signature failed verification.\nYou can still download this attachment but it might have been tampered with.": [
         "添付ファイルの署名の検証に失敗しました。\n添付ファイルはダウンロードできますが、改ざんされている可能性があります。"

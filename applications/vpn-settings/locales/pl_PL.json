@@ -80,9 +80,6 @@
       "Create": [
         "Utwórz"
       ],
-      "Create a secure ProtonMail address instead": [
-        "Utwórz bezpieczny adres ProtonMail"
-      ],
       "Create account": [
         "Utwórz konto"
       ],
@@ -499,11 +496,6 @@
         "Co dwa lata"
       ]
     },
-    "blackfriday Action": {
-      "Get the offer": [
-        ""
-      ]
-    },
     "blackfriday Info": {
       "beta": [
         "beta"
@@ -519,14 +511,8 @@
       ]
     },
     "blackfriday Title": {
-      "Best deal": [
-        ""
-      ],
       "Most popular": [
         "Najpopularniejszy"
-      ],
-      "Save more when combining Mail and VPN": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer Action": {
@@ -537,20 +523,9 @@
         "Skorzystaj z oferty"
       ]
     },
-    "blackfriday: VPNspecialoffer Badge popup": {
-      "${ vpnPlus } Special Offer 2021 discount has been applied": [
-        ""
-      ]
-    },
     "blackfriday: VPNspecialoffer Info": {
-      "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
-        ""
-      ],
       "Save ${ percentage }%": [
         "${ percentage } %"
-      ],
-      "Special offer Terms and Conditions": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer info": {
@@ -564,15 +539,6 @@
       ]
     },
     "blackfriday: VPNspecialoffer Title": {
-      "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
-        ""
-      ],
-      "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
-        ""
-      ],
-      "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
-        ""
-      ],
       "1 month": [
         "1 miesiąc"
       ],
@@ -581,18 +547,6 @@
       ],
       "24 months": [
         "24 miesiące"
-      ],
-      "Billed at ${ amount } for the first 2 years.${ supNotice }": [
-        ""
-      ],
-      "Billed at ${ amount } for the first month.${ supNotice }": [
-        ""
-      ],
-      "Billed at ${ amount } for the first year.${ supNotice }": [
-        ""
-      ],
-      "Get the special year-end offer on our Premium VPN PLUS plan": [
-        ""
       ]
     },
     "Bug category": {
@@ -1836,9 +1790,6 @@
       ]
     },
     "file size format": {
-      "bytes": [
-        "bajtów"
-      ],
       "GB": [
         "GB"
       ],
@@ -1847,20 +1798,6 @@
       ],
       "MB": [
         "MB"
-      ]
-    },
-    "file size format, long": {
-      "Bytes": [
-        "bajty"
-      ],
-      "Gigabytes": [
-        "gigabajty"
-      ],
-      "Kilobytes": [
-        "kilobajty"
-      ],
-      "Megabytes": [
-        "megabajty"
       ]
     },
     "Frequency of news": {
@@ -3980,9 +3917,6 @@
       "Email address not yet verified.": [
         "Adres e-mail nie został zweryfikowany."
       ],
-      "Send verification email": [
-        "Wyślij e-mail weryfikacyjny"
-      ],
       "Verification email sent to ${ email.Value }": [
         "E-mail weryfikacyjny został wysłany do ${ email.Value }"
       ],
@@ -3991,6 +3925,9 @@
       ],
       "Verify recovery email?": [
         "Zweryfikować adres pomocniczy?"
+      ],
+      "Verify with email": [
+        "Zweryfikuj za pomocą poczty e-mail"
       ],
       "Verifying your email address increases your account security and allows additional options for recovery.": [
         "Weryfikacja adresu e-mail zwiększa bezpieczeństwo konta i umożliwia dodatkowe opcje odzyskiwania konta."
@@ -4005,6 +3942,23 @@
       ],
       "Phrase": [
         "Hasło odzyskiwania"
+      ]
+    },
+    "Recovery Phone": {
+      "Cancel": [
+        "Anuluj"
+      ],
+      "Phone number has been verified.": [
+        "Numer telefonu został zweryfikowany."
+      ],
+      "Verify by SMS": [
+        "Zweryfikuj za pomocą wiadomości SMS"
+      ],
+      "Verify now": [
+        "Zweryfikuj"
+      ],
+      "Verifying your phone number increases your account security and allows additional options for recovery.": [
+        "Weryfikacja numeru telefonu zwiększa bezpieczeństwo konta i umożliwia dodatkowe opcje odzyskiwania konta."
       ]
     },
     "Signup label": {

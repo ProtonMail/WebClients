@@ -539,18 +539,6 @@
       "Move": [
         "移动"
       ],
-      "Move all conversations from this folder": [
-        ""
-      ],
-      "Move all conversations from this label": [
-        ""
-      ],
-      "Move all messages from this folder": [
-        ""
-      ],
-      "Move all messages from this label": [
-        ""
-      ],
       "move emails to": [
         "将邮件移至"
       ],
@@ -1133,15 +1121,7 @@
         "如果使用过程中遇到问题，您可以随时关闭该选项。"
       ]
     },
-    "blackfriday Action": {
-      "Get the offer": [
-        ""
-      ]
-    },
     "blackfriday Info": {
-      "beta": [
-        ""
-      ],
       "Includes": [
         "包含"
       ],
@@ -1153,14 +1133,8 @@
       ]
     },
     "blackfriday Title": {
-      "Best deal": [
-        ""
-      ],
       "Most popular": [
         "人气最高"
-      ],
-      "Save more when combining Mail and VPN": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer Action": {
@@ -1172,14 +1146,8 @@
       ]
     },
     "blackfriday: VPNspecialoffer Info": {
-      "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
-        ""
-      ],
       "Save ${ percentage }%": [
         "${ percentage }%"
-      ],
-      "Special offer Terms and Conditions": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer info": {
@@ -1193,15 +1161,6 @@
       ]
     },
     "blackfriday: VPNspecialoffer Title": {
-      "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
-        ""
-      ],
-      "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
-        ""
-      ],
-      "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
-        ""
-      ],
       "1 month": [
         "1 个月"
       ],
@@ -1210,18 +1169,6 @@
       ],
       "24 months": [
         "24 个月"
-      ],
-      "Billed at ${ amount } for the first 2 years.${ supNotice }": [
-        ""
-      ],
-      "Billed at ${ amount } for the first month.${ supNotice }": [
-        ""
-      ],
-      "Billed at ${ amount } for the first year.${ supNotice }": [
-        ""
-      ],
-      "Get the special year-end offer on our Premium VPN PLUS plan": [
-        ""
       ]
     },
     "Bug category": {
@@ -1346,9 +1293,6 @@
       ],
       "${ participantName } asked for the latest updates to an event which does not exist in your calendar anymore.": [
         "${ participantName } 请求对您日历中已不存在的活动进行最新更新。"
-      ],
-      "${ participantName } asked for the latest updates to an event which doesn't match your invitation details. Please verify the invitation details in your calendar.": [
-        ""
       ],
       "${ participantName } declined an invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } 拒绝了参加一次该活动的邀请，并为其提议了一个新时间。"
@@ -1527,12 +1471,6 @@
       "This invitation is out of date. The event has been updated.": [
         "此邀请已过期。活动已更新。"
       ],
-      "This response doesn't match your invitation details. Please verify the invitation details in your calendar.": [
-        ""
-      ],
-      "This response is out of date.": [
-        ""
-      ],
       "This response is out of date. The event does not exist in your calendar anymore.": [
         "此回复已过期，该活动不再存在于您的日历中。"
       ],
@@ -1600,173 +1538,6 @@
       ],
       "Open": [
         "打开"
-      ]
-    },
-    "color": {
-      "Apple": [
-        ""
-      ],
-      "azureish white": [
-        ""
-      ],
-      "blanched almond": [
-        ""
-      ],
-      "blue-gray": [
-        ""
-      ],
-      "caramel": [
-        ""
-      ],
-      "carrot": [
-        ""
-      ],
-      "cerise": [
-        ""
-      ],
-      "cinnabar": [
-        ""
-      ],
-      "cobalt": [
-        ""
-      ],
-      "copper": [
-        ""
-      ],
-      "cyan-blue azure": [
-        ""
-      ],
-      "dandelion": [
-        ""
-      ],
-      "dark cerulean": [
-        ""
-      ],
-      "dark midnight blue": [
-        ""
-      ],
-      "dim gray": [
-        ""
-      ],
-      "enzian": [
-        ""
-      ],
-      "fern": [
-        ""
-      ],
-      "field drab": [
-        ""
-      ],
-      "forest": [
-        ""
-      ],
-      "gainsboro": [
-        ""
-      ],
-      "japanese laurel": [
-        ""
-      ],
-      "kiwi": [
-        ""
-      ],
-      "lemon yellow": [
-        ""
-      ],
-      "light carmine pink": [
-        ""
-      ],
-      "light moss green": [
-        ""
-      ],
-      "light red": [
-        ""
-      ],
-      "maize": [
-        ""
-      ],
-      "mughal green": [
-        ""
-      ],
-      "ocean": [
-        ""
-      ],
-      "olive": [
-        ""
-      ],
-      "outer space": [
-        ""
-      ],
-      "pacific": [
-        ""
-      ],
-      "palatinate blue": [
-        ""
-      ],
-      "pale cerulean": [
-        ""
-      ],
-      "pastel gray": [
-        ""
-      ],
-      "persian plum": [
-        ""
-      ],
-      "persian red": [
-        ""
-      ],
-      "philippine gray": [
-        ""
-      ],
-      "philippine silver": [
-        ""
-      ],
-      "pickle": [
-        ""
-      ],
-      "pine": [
-        ""
-      ],
-      "pink": [
-        ""
-      ],
-      "pistachio": [
-        ""
-      ],
-      "plum": [
-        ""
-      ],
-      "purple": [
-        ""
-      ],
-      "raisin black": [
-        ""
-      ],
-      "reef": [
-        ""
-      ],
-      "ruddy pink": [
-        ""
-      ],
-      "sahara": [
-        ""
-      ],
-      "satin sheen gold": [
-        ""
-      ],
-      "slateblue": [
-        ""
-      ],
-      "soil": [
-        ""
-      ],
-      "strawberry": [
-        ""
-      ],
-      "vivid auburn": [
-        ""
-      ],
-      "white": [
-        ""
       ]
     },
     "Composer email icon": {
@@ -2040,9 +1811,6 @@
       "Burkina Faso": [
         "布基纳法索"
       ],
-      "Burma": [
-        ""
-      ],
       "Burundi": [
         "布隆迪"
       ],
@@ -2154,9 +1922,6 @@
       "Faroe Islands": [
         "法罗群岛"
       ],
-      "Federated States of Micronesia": [
-        ""
-      ],
       "Fiji": [
         "斐济"
       ],
@@ -2168,9 +1933,6 @@
       ],
       "French Guiana": [
         "法属圭亚那"
-      ],
-      "French Polynesia": [
-        ""
       ],
       "French Southern Territories": [
         "法属南部领地"
@@ -2228,9 +1990,6 @@
       ],
       "Heard Island and McDonald Islands": [
         "赫德岛和麦克唐纳群岛"
-      ],
-      "Holy See (Vatican City State)": [
-        ""
       ],
       "Honduras": [
         "洪都拉斯"
@@ -2292,9 +2051,6 @@
       "Kiribati": [
         "基里巴斯"
       ],
-      "Kosovo": [
-        ""
-      ],
       "Kuwait": [
         "科威特"
       ],
@@ -2328,44 +2084,14 @@
       "Luxembourg": [
         "卢森堡"
       ],
-      "Macao": [
-        ""
-      ],
       "Madagascar": [
         "马达加斯加"
-      ],
-      "Malawi": [
-        ""
-      ],
-      "Malaysia": [
-        ""
-      ],
-      "Maldives": [
-        ""
-      ],
-      "Mali": [
-        ""
-      ],
-      "Malta": [
-        ""
       ],
       "Marshall Islands": [
         "马绍尔群岛"
       ],
-      "Martinique": [
-        ""
-      ],
-      "Mauritania": [
-        ""
-      ],
-      "Mauritius": [
-        ""
-      ],
       "Mayotte": [
         "马约特"
-      ],
-      "Mexico": [
-        ""
       ],
       "Moldova": [
         "摩尔多瓦"
@@ -2373,113 +2099,14 @@
       "Monaco": [
         "摩纳哥"
       ],
-      "Mongolia": [
-        ""
-      ],
       "Montenegro": [
         "黑山"
-      ],
-      "Montserrat": [
-        ""
       ],
       "Morocco": [
         "摩洛哥"
       ],
-      "Mozambique": [
-        ""
-      ],
-      "Namibia": [
-        ""
-      ],
-      "Nauru": [
-        ""
-      ],
-      "Nepal": [
-        ""
-      ],
-      "Netherlands": [
-        ""
-      ],
-      "New Caledonia": [
-        ""
-      ],
-      "New Zealand": [
-        ""
-      ],
-      "Nicaragua": [
-        ""
-      ],
-      "Niger": [
-        ""
-      ],
-      "Nigeria": [
-        ""
-      ],
-      "Niue": [
-        ""
-      ],
-      "Norfolk Island": [
-        ""
-      ],
       "North Korea": [
         "朝鲜"
-      ],
-      "North Macedonia": [
-        ""
-      ],
-      "Northern Mariana Islands": [
-        ""
-      ],
-      "Norway": [
-        ""
-      ],
-      "Oman": [
-        ""
-      ],
-      "Pakistan": [
-        ""
-      ],
-      "Palau": [
-        ""
-      ],
-      "Palestine": [
-        ""
-      ],
-      "Panama": [
-        ""
-      ],
-      "Papua New Guinea": [
-        ""
-      ],
-      "Paraguay": [
-        ""
-      ],
-      "Peru": [
-        ""
-      ],
-      "Philippines": [
-        ""
-      ],
-      "Pitcairn": [
-        ""
-      ],
-      "Poland": [
-        ""
-      ],
-      "Portugal": [
-        ""
-      ],
-      "Puerto Rico": [
-        ""
-      ],
-      "Qatar": [
-        ""
-      ],
-      "Reunion": [
-        ""
-      ],
-      "Romania": [
-        ""
       ],
       "Russia": [
         "俄罗斯"
@@ -2502,9 +2129,6 @@
       "Saint Martin (French Part)": [
         "法属圣马丁"
       ],
-      "Saint Pierre and Miquelon": [
-        ""
-      ],
       "Saint Vincent and the Grenadines": [
         "圣文森特和格林纳丁斯"
       ],
@@ -2522,9 +2146,6 @@
       ],
       "Senegal": [
         "塞内加尔"
-      ],
-      "Serbia": [
-        ""
       ],
       "Seychelles": [
         "塞舌尔"
@@ -2558,9 +2179,6 @@
       ],
       "South Korea": [
         "韩国"
-      ],
-      "South Ossetia": [
-        ""
       ],
       "South Sudan": [
         "南苏丹"
@@ -2618,9 +2236,6 @@
       ],
       "Trinidad and Tobago": [
         "特立尼达和多巴哥"
-      ],
-      "Tristan da Cunha": [
-        ""
       ],
       "Tunisia": [
         "突尼斯"
@@ -3517,9 +3132,6 @@
       ]
     },
     "file size format": {
-      "bytes": [
-        "字节"
-      ],
       "GB": [
         "GB"
       ],
@@ -3530,29 +3142,12 @@
         "MB"
       ]
     },
-    "file size format, long": {
-      "Bytes": [
-        "字节"
-      ],
-      "Gigabytes": [
-        "GB"
-      ],
-      "Kilobytes": [
-        "KB"
-      ],
-      "Megabytes": [
-        "MB"
-      ]
-    },
     "Filter Actions": {
       "Archive": [
         "存档"
       ],
       "Inbox": [
         "收件箱"
-      ],
-      "Inbox - Default": [
-        ""
       ],
       "Select a folder": [
         "选择文件夹"
@@ -3905,12 +3500,6 @@
       ],
       "${ numContacts } contact": [
         "${ numContacts } 名联系人"
-      ],
-      "${ occurrencesInBody } occurrence found": [
-        "找到 ${ occurrencesInBody } 条结果"
-      ],
-      "${ occurrencesInBody } occurrence found in the mail content": [
-        "邮件正文中找到 ${ occurrencesInBody } 条结果"
       ],
       "${ pureAttachmentsCount } file attached": [
         "${ pureAttachmentsCount } 个文件已添加到附件。"
@@ -4496,12 +4085,6 @@
       ],
       "per month.": [
         "/月。"
-      ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
-        "PGP/Inline is only compatible with Plain Text format. Please note that Proton Mail always signs encrypted messages."
-      ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
-        "PGP/MIME automatically sends the message using the current composer mode. Please note that Proton Mail always signs encrypted messages."
       ],
       "Phone number": [
         "电话号码"
@@ -6222,11 +5805,6 @@
         "接下来您需要登录 Google 账户并允许 Proton 获取您的数据。"
       ]
     },
-    "Oauth instructions video": {
-      "For the import to work, you must select all requested items as shown in the GIF.": [
-        ""
-      ]
-    },
     "Onboarding": {
       "Welcome to ${ appName }": [
         "欢迎来到 ${ appName }"
@@ -6540,9 +6118,6 @@
       ],
       "Cannot send to organizer address: ${ errorMessage }": [
         "无法发送到组织者地址：${ errorMessage }"
-      ],
-      "Re-encrypting invitation failed. Please try again": [
-        ""
       ]
     },
     "Search - no results": {

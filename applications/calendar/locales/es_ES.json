@@ -80,9 +80,6 @@
       "Close": [
         "Cerrar"
       ],
-      "Close event popover": [
-        ""
-      ],
       "Close modal": [
         "Cerrar ventana"
       ],
@@ -97,9 +94,6 @@
       ],
       "Confirm": [
         "Confirmar"
-      ],
-      "Confirm opening of link ${ linkToShow }": [
-        ""
       ],
       "Contact group": [
         "Grupo de contactos"
@@ -298,9 +292,6 @@
       "OK": [
         "OK"
       ],
-      "Open in a new tab": [
-        ""
-      ],
       "Open navigation": [
         "Abrir la navegación"
       ],
@@ -327,9 +318,6 @@
       ],
       "Recover data": [
         "Recuperar datos"
-      ],
-      "Refer a friend": [
-        ""
       ],
       "refresh the page": [
         "actualiza la página"
@@ -370,12 +358,6 @@
       "Send": [
         "Enviar"
       ],
-      "Send feedback": [
-        ""
-      ],
-      "Set recovery phrase": [
-        ""
-      ],
       "Share": [
         "Compartir"
       ],
@@ -405,9 +387,6 @@
       ],
       "Skip": [
         "Omitir"
-      ],
-      "Start import": [
-        ""
       ],
       "Start setup": [
         "Iniciar la configuración"
@@ -565,9 +544,6 @@
       "By leaving now, some contacts may not be imported": [
         "Al salir ahora, algunos contactos pueden no ser importados"
       ],
-      "By leaving now, some events may not be imported": [
-        ""
-      ],
       "By leaving now, you will lose your event.": [
         "Si sales ahora, perderás tu evento."
       ]
@@ -590,9 +566,6 @@
       "Invalid method": [
         "Método no válido"
       ],
-      "Unsupported calendar component": [
-        ""
-      ],
       "Unsupported event": [
         "Evento no soportado"
       ]
@@ -603,16 +576,8 @@
       ]
     },
     "Beta access description": {
-      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        ""
-      ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Si encuentras problemas, siempre puedes deshabilitar el acceso beta."
-      ]
-    },
-    "blackfriday Action": {
-      "Get the offer": [
-        ""
       ]
     },
     "blackfriday Info": {
@@ -630,14 +595,8 @@
       ]
     },
     "blackfriday Title": {
-      "Best deal": [
-        ""
-      ],
       "Most popular": [
         "Más popular"
-      ],
-      "Save more when combining Mail and VPN": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer Action": {
@@ -649,14 +608,8 @@
       ]
     },
     "blackfriday: VPNspecialoffer Info": {
-      "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
-        ""
-      ],
       "Save ${ percentage }%": [
         "${ percentage } %"
-      ],
-      "Special offer Terms and Conditions": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer info": {
@@ -670,15 +623,6 @@
       ]
     },
     "blackfriday: VPNspecialoffer Title": {
-      "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
-        ""
-      ],
-      "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
-        ""
-      ],
-      "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
-        ""
-      ],
       "1 month": [
         "1 mes"
       ],
@@ -687,18 +631,6 @@
       ],
       "24 months": [
         "24 meses"
-      ],
-      "Billed at ${ amount } for the first 2 years.${ supNotice }": [
-        ""
-      ],
-      "Billed at ${ amount } for the first month.${ supNotice }": [
-        ""
-      ],
-      "Billed at ${ amount } for the first year.${ supNotice }": [
-        ""
-      ],
-      "Get the special year-end offer on our Premium VPN PLUS plan": [
-        ""
       ]
     },
     "Bug category": {
@@ -772,11 +704,6 @@
         "Problema de acceso al sitio web"
       ]
     },
-    "Button": {
-      "Continue using ${ MAIL_APP_NAME }.": [
-        ""
-      ]
-    },
     "Calendar invite buttons label": {
       "Attending?": [
         "¿Asistirás?"
@@ -812,9 +739,6 @@
       ]
     },
     "Calendar sidebar dropdown item": {
-      "Add calendar from URL": [
-        ""
-      ],
       "More options": [
         "Más opciones"
       ]
@@ -828,9 +752,6 @@
       ]
     },
     "Calendar subscription not synced error": {
-      "Calendar could not be decrypted": [
-        ""
-      ],
       "Calendar is syncing": [
         "El calendario se está sincronizando"
       ],
@@ -848,9 +769,6 @@
       ],
       "More than 12 hours passed since last update": [
         "Han pasado más de 12 horas desde la última actualización"
-      ],
-      "Unsupported calendar format": [
-        ""
       ]
     },
     "Calendar view": {
@@ -864,11 +782,6 @@
         "Semana"
       ]
     },
-    "Calendar view selector": {
-      "Change time range to": [
-        ""
-      ]
-    },
     "Collapsible tooltip": {
       "Close": [
         "Cerrar"
@@ -880,73 +793,6 @@
     "colon": {
       ": ": [
         ": "
-      ]
-    },
-    "color": {
-      "carrot": [
-        ""
-      ],
-      "cerise": [
-        ""
-      ],
-      "cobalt": [
-        ""
-      ],
-      "copper": [
-        ""
-      ],
-      "enzian": [
-        ""
-      ],
-      "fern": [
-        ""
-      ],
-      "forest": [
-        ""
-      ],
-      "ocean": [
-        ""
-      ],
-      "olive": [
-        ""
-      ],
-      "pacific": [
-        ""
-      ],
-      "pickle": [
-        ""
-      ],
-      "pine": [
-        ""
-      ],
-      "pink": [
-        ""
-      ],
-      "plum": [
-        ""
-      ],
-      "purple": [
-        ""
-      ],
-      "reef": [
-        ""
-      ],
-      "sahara": [
-        ""
-      ],
-      "slateblue": [
-        ""
-      ],
-      "soil": [
-        ""
-      ],
-      "strawberry": [
-        ""
-      ]
-    },
-    "Confirm modal title": {
-      "Quit import customization?": [
-        ""
       ]
     },
     "Contact field label": {
@@ -1862,9 +1708,6 @@
       "Decrypting contacts... This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Descifrando contactos... Esto puede tardar unos minutos. Cuando el proceso se complete, podrás descargar el archivo con todos tus contactos exportados."
       ],
-      "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
-        ""
-      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Cifrando e importando contactos... Esto puede tardar unos minutos. Cuando el proceso se haya completado, puedes cerrar esta ventana."
       ],
@@ -1880,9 +1723,6 @@
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Usa arrastrar y soltar para clasificar la prioridad entre contactos. Desmarca los contactos que no deseas combinar."
-      ],
-      "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
-        ""
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Puedes marcar para eliminar los contactos que no deseas ni combinar ni mantener. La eliminación sólo tendrá lugar después de que el botón de combinar sea pulsado"
@@ -1901,19 +1741,9 @@
         "Deshabilitado"
       ]
     },
-    "Disabled calendar name suffix": {
-      "Disabled": [
-        ""
-      ]
-    },
     "Disabled calendar tooltip": {
       "The event belongs to a disabled calendar.": [
         "El evento pertenece a un calendario deshabilitado."
-      ]
-    },
-    "Don't ask to update timezone checkbox label": {
-      "Don't ask again": [
-        ""
       ]
     },
     "Dropdown action icon tooltip": {
@@ -1951,9 +1781,6 @@
       ]
     },
     "Email body for invitation": {
-      "${ eventTitle } has been canceled.": [
-        ""
-      ],
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } ha sido actualizado.\n${ eventDetailsText }"
       ],
@@ -2046,9 +1873,6 @@
       "Calendar limit reached": [
         "Se ha alcanzado el límite del calendario"
       ],
-      "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        ""
-      ],
       "Cancellation failed to be sent": [
         "No se ha podido enviar la cancelación"
       ],
@@ -2063,14 +1887,6 @@
       ],
       "Decryption error: Decryption of this event's content failed.": [
         "Error de descifrado: el descifrado del contenido de este evento ha fallado."
-      ],
-      "Deselect at least ${ calendarToFixCount } calendar": [
-        "",
-        ""
-      ],
-      "Deselect at least ${ calendarToFixCount } calendar or": [
-        "",
-        ""
       ],
       "Email address disabled": [
         "Dirección de correo electrónico deshabilitada"
@@ -2099,17 +1915,8 @@
       "Failed to get original occurrence in series": [
         "No se ha podido obtener la ocurrencia original de la serie"
       ],
-      "Folder name cannot be empty.": [
-        ""
-      ],
       "Image upload failed": [
         "La subida de la imagen ha fallado"
-      ],
-      "Incorrect login credentials. Please try again.": [
-        ""
-      ],
-      "Incorrect mailbox password. Please try again.": [
-        ""
       ],
       "Interval cannot be empty": [
         "El intervalo no puede estar vacío"
@@ -2138,13 +1945,6 @@
       "It is only possible to move events between ${ minDateString } - ${ maxDateString }": [
         "Solo es posible mover eventos entre ${ minDateString } y ${ maxDateString }"
       ],
-      "Label name cannot be empty.": [
-        ""
-      ],
-      "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
-        "",
-        ""
-      ],
       "Missing key packet": [
         "Paquete de claves perdido"
       ],
@@ -2153,9 +1953,6 @@
       ],
       "Name required": [
         "Nombre requerido"
-      ],
-      "No data to import": [
-        ""
       ],
       "No keys retrieved for internal user": [
         "No se recuperaron claves para el usuario interno"
@@ -2186,21 +1983,11 @@
       "Please create an address first.": [
         "Primero crea una dirección."
       ],
-      "Please fix the highlighted conflict to proceed.": [
-        "",
-        ""
-      ],
       "Primary address key is not decrypted": [
         "La clave principal no está descifrada"
       ],
       "Primary address key is not decrypted.": [
         "La clave principal no está descifrada."
-      ],
-      "Primary key is not valid for sending": [
-        ""
-      ],
-      "Primary key retrieved for internal user is not valid for sending": [
-        ""
       ],
       "Request timed out": [
         "Tiempo de espera agotado"
@@ -2217,12 +2004,6 @@
       "Some contacts could not be deleted": [
         "Algunos contactos no se han podido eliminar"
       ],
-      "Some groups could not be deleted": [
-        ""
-      ],
-      "Some of your label names are unavailable. Please customize the import to edit these names.": [
-        ""
-      ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Algunos de sus nombres de carpeta exceden el límite máximo de caracteres de ${ MAIL_APP_NAME }. Por favor, personalice la importación para editar estos nombres."
       ],
@@ -2232,23 +2013,8 @@
       "Start time must be before end time": [
         "La hora inicial debe ser antes de la hora final"
       ],
-      "The folder name is invalid. Please choose a different name.": [
-        ""
-      ],
-      "The folder name is too long. Please choose a different name.": [
-        ""
-      ],
-      "The label name is invalid. Please choose a different name.": [
-        ""
-      ],
-      "The label name is too long. Please choose a different name.": [
-        ""
-      ],
       "The sending key is not valid": [
         "La clave de envío no es válida"
-      ],
-      "There are too many folders in your external account. Please customize the import to delete some folders.": [
-        ""
       ],
       "There was an error when exporting the contacts vCards": [
         "Hubo un error al exportar los vCards de contactos"
@@ -2259,13 +2025,7 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Este campo requiere un mínimo de ${ minimumLength } caracteres."
       ],
-      "This folder name is not available. Please choose a different name.": [
-        ""
-      ],
-      "This label name is not available. Please choose a different name.": [
-        ""
-      ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser": [
+      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
         "Este mensaje puede contener algunos enlaces URL que no puedan abrirse correctamente por su navegador actual"
       ],
       "Trusted keys are not valid for sending": [
@@ -2288,35 +2048,8 @@
       ]
     },
     "Error importing calendar": {
-      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
-        ""
-      ],
-      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        ""
-      ],
-      "An error occurred uploading your file ${ formattedFilename }. Only ICS file formats are allowed.": [
-        ""
-      ],
-      "An error occurred uploading your file. No file has been selected.": [
-        ""
-      ],
       "An unexpected error occurred. Import must be restarted.": [
         "Ha ocurrido un error inesperado. La importación debe reiniciarse."
-      ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } events.": [
-        ""
-      ],
-      "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
-        ""
-      ],
-      "Your file ${ formattedFilename } has no events to be imported.": [
-        ""
-      ],
-      "Your file ${ formattedFilename } is empty.": [
-        ""
-      ],
-      "Your file ${ formattedFilename } is not a calendar.": [
-        ""
       ]
     },
     "Error importing contact": {
@@ -2357,89 +2090,23 @@
       "Calendar": [
         "Calendario"
       ],
-      "Calendar timezone not supported": [
-        ""
-      ],
-      "Component with wrong format": [
-        ""
-      ],
       "Custom timezone": [
         "Zona horaria personalizada"
-      ],
-      "Edited event not supported": [
-        ""
       ],
       "Element": [
         "Elemento"
       ],
-      "Encryption failed": [
-        ""
-      ],
-      "End time out of bounds": [
-        ""
-      ],
       "Event": [
         "Evento"
-      ],
-      "Event validation failed": [
-        ""
-      ],
-      "Floating times not supported": [
-        ""
-      ],
-      "Free-busy time information": [
-        ""
       ],
       "Invalid event": [
         "Evento no válido"
       ],
-      "Journal entry": [
-        ""
-      ],
-      "Malformed all-day event": [
-        ""
-      ],
-      "Malformed end time": [
-        ""
-      ],
-      "Malformed recurring event": [
-        ""
-      ],
-      "Malformed start time": [
-        ""
-      ],
-      "Missing start time": [
-        ""
-      ],
-      "No UID, title or start time": [
-        ""
-      ],
       "Non-Gregorian": [
         "No gregoriano"
       ],
-      "Notification out of bounds": [
-        ""
-      ],
-      "Original recurring event could not be found": [
-        ""
-      ],
-      "Recurring event has no occurrences": [
-        ""
-      ],
-      "Recurring rule not supported": [
-        ""
-      ],
-      "Start time out of bounds": [
-        ""
-      ],
       "Timezone": [
         "Zona horaria"
-      ],
-      "Timezone not supported": [
-        ""
-      ],
-      "To-do entry": [
-        ""
       ],
       "Unknown": [
         "Desconocido"
@@ -2469,9 +2136,6 @@
       ],
       "You may also ${ refresh } or try again later.": [
         "También puedes ${ refresh } o intentarlo de nuevo más tarde."
-      ],
-      "You need an active personal calendar to import events": [
-        ""
       ]
     },
     "Error notification": {
@@ -2521,47 +2185,11 @@
       ]
     },
     "Event invitation error": {
-      "Attached ICS file could not be decrypted": [
-        ""
-      ],
-      "Attached ICS file could not be read": [
-        ""
-      ],
       "Invalid invitation": [
         "Invitación no válida"
       ],
       "Invalid response": [
         "Respuesta no válida"
-      ],
-      "The event could not be added to your calendar. No answer was sent": [
-        ""
-      ],
-      "The event could not be updated in your calendar. No answer was sent": [
-        ""
-      ],
-      "Unexpected error": [
-        ""
-      ],
-      "Unsupported invitation": [
-        ""
-      ],
-      "Unsupported response": [
-        ""
-      ],
-      "We could not cancel the event in your calendar": [
-        ""
-      ],
-      "We could not retrieve the event from your calendar": [
-        ""
-      ],
-      "We could not update the event in your calendar": [
-        ""
-      ],
-      "Your answer was sent, but the event could not be added to your calendar": [
-        ""
-      ],
-      "Your answer was sent, but the event could not be updated in your calendar": [
-        ""
       ]
     },
     "Event popover close button": {
@@ -2588,15 +2216,7 @@
         "(sin título)"
       ]
     },
-    "Feedback Modal Title": {
-      "Your feedback": [
-        ""
-      ]
-    },
     "file size format": {
-      "bytes": [
-        "bytes"
-      ],
       "GB": [
         "GB"
       ],
@@ -2605,20 +2225,6 @@
       ],
       "MB": [
         "MB"
-      ]
-    },
-    "file size format, long": {
-      "Bytes": [
-        "Bytes"
-      ],
-      "Gigabytes": [
-        "Gigabytes"
-      ],
-      "Kilobytes": [
-        "Kilobytes"
-      ],
-      "Megabytes": [
-        "Megabytes"
       ]
     },
     "Filter notification": {
@@ -2684,54 +2290,13 @@
       ]
     },
     "Import calendar": {
-      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
-        "",
-        ""
-      ],
-      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
-        "",
-        ""
-      ],
-      "An error occurred while encrypting and adding your event. No event could be imported.": [
-        "",
-        ""
-      ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Cifrando y agregando contactos: ${ totalImported }/${ totalToImport }"
-      ],
-      "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
-        ""
-      ],
-      "Event successfully imported. The imported event will now appear in your calendar.": [
-        "",
-        ""
-      ],
-      "Please don't close the tab before the importing process is finished.": [
-        ""
       ]
     },
     "Import calendar warning": {
-      "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
-        ""
-      ],
       "vCard versions < 3.0": [
         "Versiones vCard menores a 3.0"
-      ]
-    },
-    "Import calendar; import invitation": {
-      "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your Proton email address.": [
-        ""
-      ],
-      "This file contains an event invitation:": [
-        "",
-        ""
-      ],
-      "This file contains an invitation response:": [
-        "",
-        ""
-      ],
-      "This file contains some data that we cannot import:": [
-        ""
       ]
     },
     "Import contact": {
@@ -2781,18 +2346,8 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } de ${ totalContacts } contactos no serán importados. Haz clic para obtener más detalles"
       ],
-      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
-        "",
-        ""
-      ],
       "No contact can be imported. Click for details": [
         "No se puede importar ningún contacto. Haz clic para obtener detalles"
-      ],
-      "No event can be imported. Expand for details.": [
-        ""
-      ],
-      "Part of your calendar content is not supported and will not be imported.": [
-        ""
       ]
     },
     "Info": {
@@ -2815,16 +2370,9 @@
         "${ calendarsToBeMergedCount } calendario fusionado",
         "${ calendarsToBeMergedCount } calendarios fusionados"
       ],
-      "${ contactCount } contact contains multiple email addresses.": [
-        "",
-        ""
-      ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } Miembro",
         "${ contactEmailsLength } Miembros"
-      ],
-      "${ contactName } contains multiple email addresses.": [
-        ""
       ],
       "${ contactsCount } contact found": [
         "${ contactsCount } contacto encontrado",
@@ -2909,9 +2457,6 @@
       "At most 100 participants are allowed per invitation": [
         "Se permiten hasta 100 participantes por invitación"
       ],
-      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
-        ""
-      ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "¿No puedes recordar tu contraseña? Podemos ayudarte a eliminar los datos cifrados de todos los contactos cifrados con esta clave, y, en el proceso desactivar la alerta."
       ],
@@ -2927,24 +2472,11 @@
       "Continue with ${ planName }": [
         "Continuar con ${ planName }"
       ],
-      "Create ${ calendarsToBeCreated } new calendar": [
-        "",
-        ""
-      ],
-      "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
-        ""
-      ],
-      "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
-        ""
-      ],
       "Create a new contact group": [
         "Crear un nuevo grupo de contactos"
       ],
       "Create in": [
         "Crear en"
-      ],
-      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
-        ""
       ],
       "Custom": [
         "Personalizado"
@@ -3025,9 +2557,6 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Importando tus datos desde ${ importedEmailAddress } a ${ toEmail }."
       ],
-      "Inherited from parent folder": [
-        ""
-      ],
       "Internet connection lost": [
         "Sin conexión a Internet"
       ],
@@ -3036,9 +2565,6 @@
       ],
       "Internet connection restored.": [
         "Se ha restablecido la conexión a Internet."
-      ],
-      "Just confirm your selection and we'll do the rest.": [
-        ""
       ],
       "Key fingerprint": [
         "Huella digital de la clave"
@@ -3070,9 +2596,6 @@
       "Monthly ${ onDayString }": [
         "Mensualmente ${ onDayString }"
       ],
-      "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
-        ""
-      ],
       "New": [
         "Nuevo"
       ],
@@ -3091,9 +2614,6 @@
       "None of the participants can be notified about your changes:": [
         "Ninguno de los participantes puede ser notificado de tus cambios:"
       ],
-      "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
-        ""
-      ],
       "Not a valid URL": [
         "No es una URL válida"
       ],
@@ -3103,20 +2623,8 @@
       "Occurrences previously updated by the organizer will be kept.": [
         "Se mantendrán las ocurrencias previamente actualizadas por el organizador."
       ],
-      "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
-        ""
-      ],
-      "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
-        ""
-      ],
       "Other options": [
         "Otras opciones"
-      ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
-        "PGP/Inline is only compatible with Plain Text format. Please note that Proton Mail always signs encrypted messages."
-      ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
-        "PGP/MIME automatically sends the message using the current composer mode. Please note that Proton Mail always signs encrypted messages."
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Ten en cuenta que las direcciones asignadas a este grupo NO se eliminarán."
@@ -3126,16 +2634,6 @@
       ],
       "Please remove the duplicates and try again.": [
         "Por favor, elimina los duplicados y vuelve a intentarlo."
-      ],
-      "Please select the folders you would like to import:": [
-        ""
-      ],
-      "Please select which email address or addresses to add to ${ groupCount } group.": [
-        "",
-        ""
-      ],
-      "Please select which email address or addresses to add to ${ groupName }.": [
-        ""
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Por favor, espera mientras buscamos contactos que puedan volver a firmarse con la clave de cifrado principal."
@@ -3164,17 +2662,8 @@
       "Select what you want to move from Google.": [
         "Select what you want to import from Google."
       ],
-      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        ""
-      ],
-      "Servers are unreachable. Please try again in a few minutes": [
-        ""
-      ],
       "Session timed out": [
         "El tiempo de la sesión ha expirado"
-      ],
-      "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
-        ""
       ],
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "Se perderán algunas de tus respuestas a ocurrencias previamente actualizadas por el organizador."
@@ -3196,12 +2685,6 @@
       ],
       "The organizer cannot be notified that you decline the invitation:": [
         "El organizador no puede ser notificado de que rechazas la invitación:"
-      ],
-      "The organizer cannot be notified that you want to change your answer:": [
-        ""
-      ],
-      "The organizer could not be notified that you changed your answer:": [
-        ""
       ],
       "The organizer has updated some of the events in this series. Changing the calendar is not supported yet for this type of recurring events.": [
         "El organizador ha actualizado algunos de los eventos de esta serie. Todavía no se admite cambiar el calendario para este tipo de eventos recurrentes."
@@ -3236,9 +2719,6 @@
       "This event has been updated. The organizer will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete this event anyway?": [
         "Este evento ha sido actualizado. El organizador no será notificado de que rechazas la invitación ya que no puedes enviar correos electrónicos desde la dirección invitada. ¿Deseas eliminar este evento de todos modos?"
       ],
-      "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
-        ""
-      ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Este enlace puede ser un ataque homógrafo y no puede abrirse por los navegadores Internet Explorer y Edge. Si está seguro de que el enlace es legítimo, utilice un navegador diferente para abrirlo."
       ],
@@ -3266,17 +2746,11 @@
       "Update recurring event": [
         "Actualizar evento recurrente"
       ],
-      "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        ""
-      ],
       "We'll notify you when the import is done.": [
         "Te avisaremos cuando la importación haya terminado."
       ],
       "We'll send a new verification code to ${ strong }": [
         "Enviaremos un código de verificación nuevo a ${ strong }"
-      ],
-      "We're moving! Join us at our new site: ${ link }.": [
-        ""
       ],
       "Week": [
         "Semana"
@@ -3320,26 +2794,14 @@
       "You are about to open another browser tab and visit:": [
         "Está a punto de abrir otra pestaña del navegador y visitar:"
       ],
-      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        ""
-      ],
-      "You can also merge imported calendars with existing Proton calendars.": [
-        ""
-      ],
       "You can check the progress ${ importProgressLink }.": [
         "Puedes comprobar el progreso ${ importProgressLink }."
       ],
       "You can only modify personal event properties as you can't send emails from the organizer address.": [
         "Solo puedes modificar las propiedades del evento personal ya que no puedes enviar correos electrónicos desde la dirección del organizador."
       ],
-      "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
-        ""
-      ],
       "You have reactivated your keys and events linked to the following calendars can now be decrypted.": [
         "Has reactivado tus claves y los eventos vinculados a los siguientes calendarios ahora se pueden descifrar."
-      ],
-      "You have reset your password and events linked to the following calendars couldn't be decrypted.\nAny shared calendar links you created previously will no longer work.\nAny active subscribed calendars will synchronize again after a few minutes.": [
-        ""
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Has alcanzado el${ spaceDisplayed }% de tu capacidad de almacenamiento. Libera algo de espacio o añade más espacio de almacenamiento.${ freeUpMessage } ${ upgradeLink }"
@@ -3380,14 +2842,8 @@
       "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete this event anyway?": [
         "Tu dirección está deshabilitada. No se puede enviar un correo electrónico de cancelación a los participantes del evento. ¿Quieres eliminar este evento de todos modos?"
       ],
-      "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
-        ""
-      ],
       "Your email will only be used for this one-time verification.": [
         "Tu correo electrónico sólo se utilizará para esta verificación única."
-      ],
-      "Your events will be encrypted and then saved.": [
-        ""
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Tu número de teléfono sólo se utilizará para esta verificación única."
@@ -3410,14 +2866,8 @@
       ]
     },
     "Key badge": {
-      "Compromised": [
-        ""
-      ],
       "Expired": [
         "Caducada"
-      ],
-      "Obsolete": [
-        ""
       ],
       "Primary": [
         "Principal"
@@ -3454,12 +2904,6 @@
       "Automatically save contacts": [
         "Guardar contactos automáticamente"
       ],
-      "Awful": [
-        ""
-      ],
-      "Bad": [
-        ""
-      ],
       "Browser": [
         "Navegador"
       ],
@@ -3495,18 +2939,6 @@
       ],
       "Date and time": [
         "Fecha y hora"
-      ],
-      "Default email address": [
-        ""
-      ],
-      "Default event duration": [
-        ""
-      ],
-      "Default full day notifications": [
-        ""
-      ],
-      "Default notifications": [
-        ""
       ],
       "Delete": [
         "Eliminar"
@@ -3556,14 +2988,8 @@
       "From: ${ importedEmail }": [
         "De: ${ importedEmail }"
       ],
-      "Good": [
-        ""
-      ],
       "Hide password": [
         "Ocultar contraseña"
-      ],
-      "How would you describe your experience with the new Proton?": [
-        ""
       ],
       "I understand the risk": [
         "Entiendo el riesgo"
@@ -3579,9 +3005,6 @@
       ],
       "Import to email address": [
         "Importar a la dirección de correo electrónico"
-      ],
-      "Import to:": [
-        ""
       ],
       "Label messages as": [
         "Etiquetar mensajes como"
@@ -3615,9 +3038,6 @@
       ],
       "Notifications": [
         "Notificaciones"
-      ],
-      "OK": [
-        ""
       ],
       "Operating system": [
         "Sistema operativo"
@@ -3665,9 +3085,6 @@
       "Repeat every": [
         "Repetir cada"
       ],
-      "Repeat on": [
-        ""
-      ],
       "Reveal password": [
         "Mostrar contraseña"
       ],
@@ -3700,9 +3117,6 @@
       ],
       "What happened?": [
         "¿Qué ha ocurrido?"
-      ],
-      "Wonderful": [
-        ""
       ]
     },
     "Label for contact group color": {
@@ -3773,9 +3187,6 @@
       "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
         "Cantidad de calendarios creados: ${ createdCalendars } de ${ calendarsToBeCreated }"
       ],
-      "Creating new calendars": [
-        ""
-      ],
       "Gathering your data": [
         "Obteniendo datos"
       ],
@@ -3786,25 +3197,12 @@
         "Tu importación está comenzando"
       ]
     },
-    "Mail import summary": {
-      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "",
-        ""
-      ],
-      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "",
-        ""
-      ]
-    },
     "Message": {
       "Fw:": [
         "Fw:"
       ],
       "Re:": [
         "Re:"
-      ],
-      "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
-        ""
       ]
     },
     "Message display when a new app version is available": {
@@ -3831,9 +3229,6 @@
     "Modal title": {
       "Time zone changed": [
         "Zona horaria cambiada"
-      ],
-      "Unable to add more calendars": [
-        ""
       ]
     },
     "Modal title and action": {
@@ -3995,11 +3390,6 @@
         "Introducing Proton’s refreshed look.${ br }Many services, one mission. Welcome to an internet where privacy is the default."
       ]
     },
-    "new_plans: label": {
-      "Tell us about your experience. (Optional)": [
-        ""
-      ]
-    },
     "new_plans: placeholder": {
       "Feedback": [
         "Comentarios"
@@ -4135,30 +3525,14 @@
         "Desconocido"
       ]
     },
-    "Oauth instructions": {
-      "Next you'll need to sign in to your Google account and grant Proton access to your data.": [
-        ""
-      ]
-    },
-    "Oauth instructions video": {
-      "For the import to work, you must select all requested items as shown in the GIF.": [
-        ""
-      ]
-    },
     "Onboarding": {
       "Welcome to ${ appName }": [
         "Bienvenido/a a ${ appName }"
-      ],
-      "Where you can take control of your time and your data.": [
-        ""
       ]
     },
     "Onboarding Action": {
       "Next": [
         "Siguiente"
-      ],
-      "Start using ${ appName }": [
-        ""
       ]
     },
     "Onboarding Proton": {
@@ -4220,9 +3594,6 @@
         "Mes",
         "Meses"
       ],
-      "No parent folder": [
-        ""
-      ],
       "This and future events": [
         "Este y futuros eventos"
       ],
@@ -4259,25 +3630,9 @@
         "Expandir lista de participantes"
       ]
     },
-    "Personal calendar limit reached modal body": {
-      "Unable to create more calendars. You have reached the maximum of personal calendars within your plan.": [
-        ""
-      ]
-    },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "Esta clave no puede utilizarse para cifrado"
-      ]
-    },
-    "PGP Key info": {
-      "${ emailAddress } has marked this key as compromised. This key cannot be used neither for encryption nor for signature verification.": [
-        ""
-      ],
-      "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
-        ""
-      ],
-      "We recommend that you \"untrust\" this key.": [
-        ""
       ]
     },
     "PGP key warning": {
@@ -4420,34 +3775,9 @@
         "No se han encontrado resultados"
       ]
     },
-    "Settings update growler warning": {
-      "Failed to update settings": [
-        ""
-      ]
-    },
     "Sidebar calendar edit tooltip": {
       "Manage calendar": [
         "Gestionar calendario"
-      ]
-    },
-    "Spotlight": {
-      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        ""
-      ],
-      "Get up to 18 months of ${ planName } for free": [
-        ""
-      ],
-      "Invite friends and earn rewards!": [
-        ""
-      ],
-      "No more missed appointments": [
-        ""
-      ],
-      "Try ${ DRIVE_APP_NAME }": [
-        ""
-      ],
-      "With email notifications, you decide which events to be notified about and when.": [
-        ""
       ]
     },
     "Storage": {
@@ -4464,32 +3794,6 @@
     "Subscribe to calendar modal": {
       "Calendar URL": [
         "URL del calendario"
-      ],
-      "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Subscribed calendars.\n${ kbLink }": [
-        ""
-      ]
-    },
-    "Subscribe to calendar modal description": {
-      "Learn how to get a private calendar link.": [
-        ""
-      ]
-    },
-    "Subscribed calendar extension warning": {
-      "By using this link, Google will make the calendar you are subscribing to public": [
-        ""
-      ],
-      "This link might be wrong": [
-        ""
-      ]
-    },
-    "Subscribed calendar feature unavailable error": {
-      "Subscribing to a calendar is unavailable at the moment": [
-        ""
-      ]
-    },
-    "Subscribed calendar limit reached modal body": {
-      "Unable to add more calendars. You have reached the maximum of subscribed calendars within your plan.": [
-        ""
       ]
     },
     "Subscribed calendar URL length warning": {
@@ -4783,9 +4087,6 @@
       "Clearing data": [
         "Limpiando datos"
       ],
-      "Contact details": [
-        ""
-      ],
       "Contact Details": [
         "Datos del contacto"
       ],
@@ -4794,9 +4095,6 @@
       ],
       "Contacts": [
         "Contactos"
-      ],
-      "Continue with partial import?": [
-        ""
       ],
       "Create calendar": [
         "Crear calendario"
@@ -4839,9 +4137,6 @@
       "Deleting contacts": [
         "Eliminando contactos"
       ],
-      "Drop to upload": [
-        ""
-      ],
       "Edit calendar": [
         "Editar calendario"
       ],
@@ -4865,9 +4160,6 @@
       ],
       "Enter your password": [
         "Introduce tu contraseña"
-      ],
-      "Enter your username or ${ MAIL_APP_NAME } email address": [
-        ""
       ],
       "Error": [
         "Error"
@@ -4893,18 +4185,11 @@
       "Human verification": [
         "Verificación humana"
       ],
-      "Import as simple event?": [
-        "",
-        ""
-      ],
       "Import contacts": [
         "Importar contactos"
       ],
       "Import events": [
         "Importar eventos"
-      ],
-      "Import failed": [
-        ""
       ],
       "Invalid verification code": [
         "Código de verificación no válido"
@@ -4959,9 +4244,6 @@
       ],
       "Report a problem": [
         "Notificar un problema"
-      ],
-      "Request new code": [
-        ""
       ],
       "Reset calendar keys": [
         "Restablecer las claves del calendario"
@@ -5038,9 +4320,6 @@
       "Sign in again to continue": [
         "Inicie sesión de nuevo para continuar"
       ],
-      "Sign in and grant access": [
-        ""
-      ],
       "Update event": [
         "Actualizar evento"
       ],
@@ -5056,20 +4335,11 @@
       "Warning": [
         "Advertencia"
       ],
-      "Warning: suspected fake website": [
-        ""
-      ],
-      "What would you like to import?": [
-        ""
-      ],
       "What's new": [
         "Novedades"
       ],
       "You have invited participants with equivalent emails": [
         "Has invitado a participantes con correos electrónicos equivalentes"
-      ],
-      "Your free trial ends soon, on ${ formattedEndDate }": [
-        ""
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -5089,9 +4359,6 @@
       "Digitally signing emails helps authenticating that messages are sent by you": [
         "Firmar correos digitalmente ayuda a autenticar que los mensajes son enviados por ti"
       ],
-      "Each imported email will have this label": [
-        ""
-      ],
       "Email encryption forces email signature to help authenticate your sent messages": [
         "El cifrado del correo electrónico obliga a la firma del correo electrónico a ayudar a autenticar tus mensajes enviados"
       ],
@@ -5103,12 +4370,6 @@
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Selecciona el esquema PGP a utilizar para firmar o cifrar a un usuario. Ten en cuenta que PGP/Inline obliga a mensajes de texto plano"
-      ],
-      "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
-        ""
-      ],
-      "The import will start with the most recent messages.": [
-        ""
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Sube una clave pública para permitir el envío de correos electrónicos cifrados de extremo a extremo a este correo electrónico"
@@ -5129,11 +4390,6 @@
       ],
       "Replay video": [
         "Volver a reproducir el vídeo"
-      ]
-    },
-    "View event button tooltip": {
-      "Open in a new tab": [
-        ""
       ]
     },
     "Warning": {
@@ -5157,26 +4413,14 @@
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Si no recuerdas tu contraseña, es imposible volver a activar tu clave. Podemos ayudarte a desactivar la alerta pero en el proceso perderás permanentemente el acceso a todos los datos cifrados con esa clave."
       ],
-      "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
-        ""
-      ],
-      "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
-        ""
-      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Los informes no están cifrados de extremo a extremo, no envíes ninguna información confidencial."
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Algunos de los contactos a combinar tienen errores. Revísalos individualmente"
       ],
-      "The contact data is corrupted and cannot be displayed.": [
-        ""
-      ],
       "The contact failed to load.": [
         "No se ha podido cargar el contacto."
-      ],
-      "The date and time settings on your device are out of sync. ${ learnMore }": [
-        ""
       ],
       "The decryption of the encrypted content failed.": [
         "El descifrado del contenido cifrado ha fallado."
@@ -5189,15 +4433,6 @@
       ],
       "This feature requires a paid Proton account": [
         "Esta función requiere una cuenta de pago de Proton"
-      ],
-      "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
-        ""
-      ],
-      "You will lose any customization you made so far.": [
-        ""
-      ],
-      "Your free trial ends on ${ textDate }. ${ action }": [
-        ""
       ]
     },
     "Weekly recurring event, frequency": {

@@ -93,7 +93,7 @@ const UpsellStep = ({
                                         setType('free');
                                         withLoading(onPlan({}));
                                     }}
-                                >{c('new_plans: action').t`Continue with free`}</Button>
+                                >{c('new_plans: action').t`Continue with Free`}</Button>
                             }
                             price={
                                 <Price

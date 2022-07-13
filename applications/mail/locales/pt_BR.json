@@ -521,9 +521,6 @@
       "Messages from this sender": [
         "Mensagens deste remetente"
       ],
-      "Messages to this recipient": [
-        ""
-      ],
       "Minimize composer": [
         "Minimizar compositor"
       ],
@@ -541,18 +538,6 @@
       ],
       "Move": [
         "Mover"
-      ],
-      "Move all conversations from this folder": [
-        ""
-      ],
-      "Move all conversations from this label": [
-        ""
-      ],
-      "Move all messages from this folder": [
-        ""
-      ],
-      "Move all messages from this label": [
-        ""
       ],
       "move emails to": [
         "mover e-mails para"
@@ -875,9 +860,6 @@
       "This message contains remote content.": [
         "Esta mensagem contém conteúdo remoto."
       ],
-      "Trash all": [
-        ""
-      ],
       "Trust": [
         "Confiar"
       ],
@@ -1138,11 +1120,6 @@
         "Se você tiver problemas, você pode sempre desativar o Acesso beta."
       ]
     },
-    "blackfriday Action": {
-      "Get the offer": [
-        ""
-      ]
-    },
     "blackfriday Info": {
       "beta": [
         "beta"
@@ -1158,14 +1135,8 @@
       ]
     },
     "blackfriday Title": {
-      "Best deal": [
-        ""
-      ],
       "Most popular": [
         "Mais popular"
-      ],
-      "Save more when combining Mail and VPN": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer Action": {
@@ -1177,14 +1148,8 @@
       ]
     },
     "blackfriday: VPNspecialoffer Info": {
-      "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
-        ""
-      ],
       "Save ${ percentage }%": [
         "${ percentage }%"
-      ],
-      "Special offer Terms and Conditions": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer info": {
@@ -1198,15 +1163,6 @@
       ]
     },
     "blackfriday: VPNspecialoffer Title": {
-      "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
-        ""
-      ],
-      "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
-        ""
-      ],
-      "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
-        ""
-      ],
       "1 month": [
         "1 mês"
       ],
@@ -1215,18 +1171,6 @@
       ],
       "24 months": [
         "24 meses"
-      ],
-      "Billed at ${ amount } for the first 2 years.${ supNotice }": [
-        ""
-      ],
-      "Billed at ${ amount } for the first month.${ supNotice }": [
-        ""
-      ],
-      "Billed at ${ amount } for the first year.${ supNotice }": [
-        ""
-      ],
-      "Get the special year-end offer on our Premium VPN PLUS plan": [
-        ""
       ]
     },
     "Bug category": {
@@ -1351,9 +1295,6 @@
       ],
       "${ participantName } asked for the latest updates to an event which does not exist in your calendar anymore.": [
         "${ participantName } solicitou as últimas atualizações de um evento que não existe mais no seu calendário."
-      ],
-      "${ participantName } asked for the latest updates to an event which doesn't match your invitation details. Please verify the invitation details in your calendar.": [
-        ""
       ],
       "${ participantName } declined an invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } recusou um convite e propôs um novo horário para uma ocorrência deste evento."
@@ -1611,9 +1552,6 @@
       "Apple": [
         "Apple"
       ],
-      "azureish white": [
-        ""
-      ],
       "blanched almond": [
         "amêndoa branqueada"
       ],
@@ -1629,9 +1567,6 @@
       "cerise": [
         "cereja"
       ],
-      "cinnabar": [
-        ""
-      ],
       "cobalt": [
         "cobalto"
       ],
@@ -1644,44 +1579,20 @@
       "dandelion": [
         "dente-de-leão"
       ],
-      "dark cerulean": [
-        ""
-      ],
-      "dark midnight blue": [
-        ""
-      ],
       "dim gray": [
         "cinza escuro"
-      ],
-      "enzian": [
-        ""
       ],
       "fern": [
         "samambaia"
       ],
-      "field drab": [
-        ""
-      ],
       "forest": [
         "floresta"
-      ],
-      "gainsboro": [
-        ""
       ],
       "japanese laurel": [
         "louro japonês"
       ],
-      "kiwi": [
-        ""
-      ],
       "lemon yellow": [
         "amarelo limão"
-      ],
-      "light carmine pink": [
-        ""
-      ],
-      "light moss green": [
-        ""
       ],
       "light red": [
         "vermelho claro"
@@ -1698,32 +1609,14 @@
       "olive": [
         "azeitona"
       ],
-      "outer space": [
-        ""
-      ],
-      "pacific": [
-        ""
-      ],
       "palatinate blue": [
         "azul palatinado"
-      ],
-      "pale cerulean": [
-        ""
-      ],
-      "pastel gray": [
-        ""
-      ],
-      "persian plum": [
-        ""
       ],
       "persian red": [
         "vermelho persa"
       ],
       "philippine gray": [
         "cinza filipino"
-      ],
-      "philippine silver": [
-        ""
       ],
       "pickle": [
         "salmoura"
@@ -1737,26 +1630,11 @@
       "pistachio": [
         "pistache"
       ],
-      "plum": [
-        ""
-      ],
       "purple": [
         "roxo"
       ],
-      "raisin black": [
-        ""
-      ],
       "reef": [
         "recife"
-      ],
-      "ruddy pink": [
-        ""
-      ],
-      "sahara": [
-        ""
-      ],
-      "satin sheen gold": [
-        ""
       ],
       "slateblue": [
         "azul ardósia"
@@ -1766,9 +1644,6 @@
       ],
       "strawberry": [
         "morango"
-      ],
-      "vivid auburn": [
-        ""
       ],
       "white": [
         "branco"
@@ -3538,7 +3413,8 @@
       ]
     },
     "file size format": {
-      "bytes": [
+      "byte": [
+        "byte",
         "bytes"
       ],
       "GB": [
@@ -3552,16 +3428,20 @@
       ]
     },
     "file size format, long": {
-      "Bytes": [
+      "Byte": [
+        "Byte",
         "Bytes"
       ],
-      "Gigabytes": [
+      "Gigabyte": [
+        "Gigabyte",
         "Gigabytes"
       ],
-      "Kilobytes": [
+      "Kilobyte": [
+        "Kilobyte",
         "Kilobytes"
       ],
-      "Megabytes": [
+      "Megabyte": [
+        "Megabyte",
         "Megabytes"
       ]
     },
@@ -3948,13 +3828,13 @@
         "${ numContacts } contato",
         "${ numContacts } contatos"
       ],
-      "${ occurrencesInBody } occurrence found": [
-        "${ occurrencesInBody } ocorrência encontrada",
-        "${ occurrencesInBody } ocorrências encontradas"
+      "${ numOccurrences } occurrence found": [
+        "${ numOccurrences } ocorrência encontrada",
+        "${ numOccurrences } ocorrências encontradas"
       ],
-      "${ occurrencesInBody } occurrence found in the mail content": [
-        "${ occurrencesInBody } ocorrência encontrada no conteúdo do e-mail",
-        "${ occurrencesInBody } ocorrências encontradas no conteúdo do e-mail"
+      "${ numOccurrences } occurrence found in the mail content": [
+        "${ numOccurrences } ocorrência encontrada no conteúdo do e-mail",
+        "${ numOccurrences } ocorrências encontradas no conteúdo do e-mail"
       ],
       "${ pureAttachmentsCount } file attached": [
         "${ pureAttachmentsCount } arquivo anexado",
@@ -4084,9 +3964,6 @@
       ],
       "Are you sure you want to discard your changes?": [
         "Você tem certeza que deseja descartar suas alterações?"
-      ],
-      "Are you sure you want to move all messages in this location to Trash?": [
-        ""
       ],
       "Are you sure you want to permanently delete ${ count } conversation?": [
         "Você tem certeza de que deseja excluir permanentemente ${ count } conversa?",
@@ -4495,7 +4372,7 @@
         "Mensal ${ onDayString }"
       ],
       "Moving a large amount of messages. This may take a while.": [
-        ""
+        "Movendo muitas mensagens. Isso pode demorar um pouco."
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Nomeie sua nova pasta e selecione a pasta superior onde deseja colocá-la. Se você não selecionar uma pasta superior, esta nova pasta será criada como uma pasta de nível superior."
@@ -4569,11 +4446,11 @@
       "per month.": [
         "por mês."
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
-        "PGP/Inline is only compatible with Plain Text format. Please note that Proton Mail always signs encrypted messages."
+      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        "O PGP/Incorporado só é compatível com o formato texto sem formatação. Observe que o ${ MAIL_APP_NAME } sempre assina mensagens criptografadas."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
-        "PGP/MIME automatically sends the message using the current composer mode. Please note that Proton Mail always signs encrypted messages."
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
+        "O PGP/MIME envia automaticamente a mensagem usando o modo de composição atual. Por favor, note que o ${ MAIL_APP_NAME } sempre assina mensagens criptografadas"
       ],
       "Phone number": [
         "Número do telefone"
@@ -4644,9 +4521,6 @@
       ],
       "Request read receipt": [
         "Solicitar confirmação de leitura"
-      ],
-      "Rich text": [
-        ""
       ],
       "Right to Left": [
         "Direita para esquerda"
@@ -5122,9 +4996,6 @@
       ],
       "Your message will expire today.": [
         "Sua mensagem vai expirar hoje."
-      ],
-      "Your message will expire tomorrow.": [
-        ""
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Seu número de telefone somente será utilizado nessa verificação única."
@@ -6097,9 +5968,6 @@
     "Message image": {
       "Image has not been loaded in order to protect your privacy.": [
         "A imagem não foi carregada para proteger a sua privacidade."
-      ],
-      "Your browser could not verify the remote server's identity. The image might be hosted using the http protocol.": [
-        ""
       ]
     },
     "Message notification": {
@@ -6320,9 +6188,6 @@
     "Onboarding": {
       "Welcome to ${ appName }": [
         "Bem-vindo ao ${ appName }"
-      ],
-      "Where privacy and security meet productivity and ease of use.": [
-        ""
       ]
     },
     "Onboarding Action": {
@@ -6632,9 +6497,6 @@
       ],
       "Cannot send to organizer address: ${ errorMessage }": [
         "Não é possível enviar para o endereço do organizador: ${ errorMessage }"
-      ],
-      "Re-encrypting invitation failed. Please try again": [
-        ""
       ]
     },
     "Search - no results": {
@@ -6771,9 +6633,6 @@
       ]
     },
     "Spotlight": {
-      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
-        ""
-      ],
       "Discover all Proton services": [
         "Descubra todos os serviços Proton"
       ],
@@ -6805,9 +6664,6 @@
     "Status": {
       "This message is from a mailing list.": [
         "Esta mensagem é de uma lista de endereços."
-      ],
-      "Unsubscribed": [
-        ""
       ]
     },
     "Step in filter modal": {
@@ -7438,9 +7294,6 @@
       ],
       "More selections": [
         "Mais seleções"
-      ],
-      "Move all messages to Trash": [
-        ""
       ],
       "Move to": [
         "Mover para"

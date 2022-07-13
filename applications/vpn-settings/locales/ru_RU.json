@@ -80,9 +80,6 @@
       "Create": [
         "Создать"
       ],
-      "Create a secure ProtonMail address instead": [
-        "Вместо этого создайте защищенный адрес ProtonMail"
-      ],
       "Create account": [
         "Создать учетную запись"
       ],
@@ -535,11 +532,6 @@
       ],
       "Get the deal now": [
         "Получить скидку"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Badge popup": {
-      "${ vpnPlus } Special Offer 2021 discount has been applied": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer Info": {
@@ -1836,9 +1828,6 @@
       ]
     },
     "file size format": {
-      "bytes": [
-        "байт"
-      ],
       "GB": [
         "ГБ"
       ],
@@ -1847,20 +1836,6 @@
       ],
       "MB": [
         "МБ"
-      ]
-    },
-    "file size format, long": {
-      "Bytes": [
-        "Байт"
-      ],
-      "Gigabytes": [
-        "Гигабайт"
-      ],
-      "Kilobytes": [
-        "Килобайт"
-      ],
-      "Megabytes": [
-        "Мегабайт"
       ]
     },
     "Frequency of news": {
@@ -3180,12 +3155,6 @@
       "Explore all ${ BRAND_NAME } plans": [
         "Ознакомиться со всеми тарифами ${ BRAND_NAME }"
       ],
-      "From ${ _price }": [
-        ""
-      ],
-      "From ${ _price2 } per user": [
-        ""
-      ],
       "From ${ price }": [
         "От: ${ price }"
       ],
@@ -3497,9 +3466,6 @@
       "Privacy and security suite for businesses, including all premium Proton services.": [
         "Пакет обеспечения конфиденциальности и безопасности для предприятий, включающий все платные услуги Proton."
       ],
-      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        ""
-      ],
       "Secure email and calendar for professionals and businesses.": [
         "Защищенные электронная почта и календарь для отдельных пользователей и компаний."
       ],
@@ -3520,9 +3486,6 @@
       ]
     },
     "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        ""
-      ],
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "В противном случае доступ к аккаунту будет ограничен, а затем аккаунт будет отключен."
       ],
@@ -3794,9 +3757,6 @@
       "Boost your storage space to ${ businessStorage } per user": [
         "Увеличьте объем хранилища до ${ businessStorage } на пользователя"
       ],
-      "Boost your storage space to ${ driveStorage } total": [
-        ""
-      ],
       "Cover more ground with support for 10 custom email domains": [
         "Расширьте возможности с поддержкой 10 пользовательских доменов электронной почты"
       ],
@@ -3980,9 +3940,6 @@
       "Email address not yet verified.": [
         "Адрес электронной почты еще не проверен."
       ],
-      "Send verification email": [
-        "Отправить электронное письмо для проверки"
-      ],
       "Verification email sent to ${ email.Value }": [
         "Электронное письмо с подтверждением отправлено на ${ email.Value }"
       ],
@@ -3991,6 +3948,9 @@
       ],
       "Verify recovery email?": [
         "Проверить резервный адрес электронной почты?"
+      ],
+      "Verify with email": [
+        "Подтвердить с помощью электронной почты"
       ],
       "Verifying your email address increases your account security and allows additional options for recovery.": [
         "Проверка адреса электронной почты повышает безопасность вашего аккаунта и дает дополнительные возможности для восстановления."
@@ -4005,6 +3965,14 @@
       ],
       "Phrase": [
         "Фраза"
+      ]
+    },
+    "Recovery Phone": {
+      "Cancel": [
+        "Отмена"
+      ],
+      "Verify now": [
+        "Проверить сейчас"
       ]
     },
     "Signup label": {

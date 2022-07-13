@@ -132,7 +132,7 @@
         "刪除"
       ],
       "Delete ${ selectedCount } contact": [
-        "刪除 ${ selectedCount } 個聯絡人"
+        "刪除 ${ selectedCount } 位聯絡人"
       ],
       "Delete ${ selectedCount } contact group": [
         "刪除 ${ selectedCount } 個聯絡人群組"
@@ -183,7 +183,7 @@
         "匯出"
       ],
       "Export contact group": [
-        "匯出聯絡人群組"
+        "匯出通訊群組"
       ],
       "Export contacts": [
         "匯出聯絡人"
@@ -201,7 +201,7 @@
         "跳至標籤"
       ],
       "Go to panel ${ index }": [
-        "到面板 ${ index }"
+        "前往面板 ${ index }"
       ],
       "Go to settings": [
         "前往設定"
@@ -327,10 +327,10 @@
         "恢復資料"
       ],
       "Refer a friend": [
-        "介紹朋友"
+        "推薦好友"
       ],
       "refresh the page": [
-        "刷新此頁"
+        "重新整理此頁面"
       ],
       "Refresh the page": [
         "重新整理此頁面"
@@ -363,13 +363,13 @@
         "全選"
       ],
       "Select timezone": [
-        "選擇時區"
+        "選取時區"
       ],
       "Send": [
         "送出"
       ],
       "Send feedback": [
-        "傳送意見回饋"
+        "傳送意見反饋"
       ],
       "Set recovery phrase": [
         "設定還原短語"
@@ -408,13 +408,13 @@
         "開始匯入"
       ],
       "Start setup": [
-        "開始設置"
+        "開始設定"
       ],
       "Stay": [
         "停留"
       ],
       "Submit": [
-        "送出"
+        "提交"
       ],
       "Theme": [
         "佈景主題"
@@ -426,7 +426,7 @@
         "信任"
       ],
       "Try another method": [
-        "嘗試其他方法"
+        "嘗試其他驗證方式"
       ],
       "Unlock data": [
         "解鎖資料"
@@ -471,7 +471,7 @@
         "檢視"
       ],
       "View invoice": [
-        "檢視發票"
+        "查看帳單"
       ],
       "Yes": [
         "是"
@@ -608,11 +608,6 @@
         "如果您遇到了問題，您還是可以停用測試版體驗。"
       ]
     },
-    "blackfriday Action": {
-      "Get the offer": [
-        ""
-      ]
-    },
     "blackfriday Info": {
       "beta": [
         "測試版"
@@ -628,14 +623,8 @@
       ]
     },
     "blackfriday Title": {
-      "Best deal": [
-        ""
-      ],
       "Most popular": [
         "最熱門"
-      ],
-      "Save more when combining Mail and VPN": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer Action": {
@@ -647,14 +636,8 @@
       ]
     },
     "blackfriday: VPNspecialoffer Info": {
-      "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
-        ""
-      ],
       "Save ${ percentage }%": [
         "省下 ${ percentage }%"
-      ],
-      "Special offer Terms and Conditions": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer info": {
@@ -668,15 +651,6 @@
       ]
     },
     "blackfriday: VPNspecialoffer Title": {
-      "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
-        ""
-      ],
-      "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
-        ""
-      ],
-      "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
-        ""
-      ],
       "1 month": [
         "一個月"
       ],
@@ -685,18 +659,6 @@
       ],
       "24 months": [
         "24 個月"
-      ],
-      "Billed at ${ amount } for the first 2 years.${ supNotice }": [
-        ""
-      ],
-      "Billed at ${ amount } for the first month.${ supNotice }": [
-        ""
-      ],
-      "Billed at ${ amount } for the first year.${ supNotice }": [
-        ""
-      ],
-      "Get the special year-end offer on our Premium VPN PLUS plan": [
-        ""
       ]
     },
     "Bug category": {
@@ -2247,7 +2209,7 @@
       "This label name is not available. Please choose a different name.": [
         "此標籤名稱無法使用。請換另一個名稱。"
       ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser": [
+      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
         "此郵件包含的某些連結 URL 或未能以您目前的瀏覽器正確開啟"
       ],
       "Trusted keys are not valid for sending": [
@@ -2575,7 +2537,7 @@
       ]
     },
     "file size format": {
-      "bytes": [
+      "byte": [
         "位元組"
       ],
       "GB": [
@@ -2589,16 +2551,16 @@
       ]
     },
     "file size format, long": {
-      "Bytes": [
+      "Byte": [
         "位元組"
       ],
-      "Gigabytes": [
+      "Gigabyte": [
         "十億位元組"
       ],
-      "Kilobytes": [
+      "Kilobyte": [
         "千位元組"
       ],
-      "Megabytes": [
+      "Megabyte": [
         "百萬位元組"
       ]
     },
@@ -3062,11 +3024,11 @@
       "Other options": [
         "其他選項"
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
-        "PGP/Inline is only compatible with Plain Text format. Please note that Proton Mail always signs encrypted messages."
+      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        "PGP/Inline 僅與純文字格式相容。請注意，${ MAIL_APP_NAME } 會一律簽署加密郵件。"
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
-        "PGP/MIME automatically sends the message using the current composer mode. Please note that Proton Mail always signs encrypted messages."
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
+        "PGP/MIME 會自動使用目前編輯器模式來傳送郵件。請注意，${ MAIL_APP_NAME } 會一律簽署加密郵件。"
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "請注意：指派到此群組中的電郵位址不會被刪除。"
@@ -4701,7 +4663,7 @@
         "聯絡人詳細資料"
       ],
       "Contact group": [
-        "聯絡人群組"
+        "通訊群組"
       ],
       "Contacts": [
         "聯絡人"
@@ -4731,7 +4693,7 @@
         "自訂您的郵件匯入"
       ],
       "Delete ${ count } contact": [
-        "刪除 ${ count } 個聯絡人"
+        "刪除 ${ count } 位聯絡人"
       ],
       "Delete ${ count } contact group": [
         "刪除 ${ count } 個聯絡人群組"

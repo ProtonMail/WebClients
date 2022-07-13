@@ -406,9 +406,6 @@
       "Skip": [
         "Ignorer"
       ],
-      "Start import": [
-        ""
-      ],
       "Start setup": [
         "Démarrer la configuration"
       ],
@@ -452,7 +449,7 @@
         "Changer d’offre"
       ],
       "Upload picture": [
-        "Télécharger une image"
+        "Charger une image"
       ],
       "Use ${ label } theme": [
         "Utiliser le thème « ${ label } »"
@@ -1893,7 +1890,7 @@
         "De plus, nous avons automatiquement identifié les champs CSV qui correspondent aux champs vCard. Vous pouvez vérifier et modifier cette correspondance manuellement."
       ],
       "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
-        "Nous avons détecté les champs suivants dans le fichier CSV que vous avez téléchargé. Vérifiez ceux que vous souhaitez importer."
+        "Nous avons détecté les champs suivants dans le fichier CSV que vous avez chargé. Vérifiez ceux que vous souhaitez importer."
       ]
     },
     "Disabled calendar": {
@@ -2103,7 +2100,7 @@
         "Le nom de dossier ne peut être vide."
       ],
       "Image upload failed": [
-        "Échec du téléchargement de l’image"
+        "Échec du chargement de l’image"
       ],
       "Incorrect login credentials. Please try again.": [
         "Identifiants de connexion incorrects. Veuillez réessayer."
@@ -2265,7 +2262,7 @@
       "This label name is not available. Please choose a different name.": [
         "Ce nom de label n'est pas disponible. Veuillez en choisir un autre."
       ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser": [
+      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
         "Il est possible que ce message contienne des liens URL qui pourraient ne pas être ouverts correctement par votre navigateur actuel"
       ],
       "Trusted keys are not valid for sending": [
@@ -2292,13 +2289,13 @@
         "Une erreur s'est produite lors de la lecture de votre fichier ${ formattedFilename }. Le fichier n'a pas le bon format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        "Une erreur s'est produite lors de l'importation de votre fichier ${ formattedFilename }. La taille maximale d'un fichier est de ${ MAX_IMPORT_FILE_SIZE_STRING }."
+        "Une erreur s'est produite lors du chargement de votre fichier ${ formattedFilename }. La taille maximale d'un fichier est de ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Only ICS file formats are allowed.": [
-        "Une erreur s'est produite lors de l'importation de votre fichier ${ formattedFilename }. Seuls les formats ICS sont autorisés."
+        "Une erreur s'est produite lors du chargement de votre fichier ${ formattedFilename }. Seuls les formats ICS sont autorisés."
       ],
       "An error occurred uploading your file. No file has been selected.": [
-        "Une erreur s'est produite lors de l'importation de votre fichier. Aucun fichier n'a été sélectionné."
+        "Une erreur s'est produite lors du chargement de votre fichier. Aucun fichier n'a été sélectionné."
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "Une erreur inattendue s’est produite. L’importation doit être relancée."
@@ -2332,13 +2329,13 @@
         "Une erreur s’est produite lors de la lecture de votre fichier ${ formattedFilename }. Le fichier n’a pas le bon format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        "Une erreur s’est produite lors de l’importation de votre fichier ${ formattedFilename }. La taille maximale d’un fichier doit être de ${ MAX_IMPORT_FILE_SIZE_STRING }."
+        "Une erreur s’est produite lors du chargement de votre fichier ${ formattedFilename }. La taille maximale d’un fichier doit être de ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
       "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
-        "Une erreur s’est produite lors du téléchargement de votre fichier ${ formattedFilename }. Aucun fichier .csv ou .vcf sélectionné"
+        "Une erreur s’est produite lors du chargement de votre fichier ${ formattedFilename }. Aucun fichier .csv ou .vcf sélectionné."
       ],
       "An error occurred uploading your file. No file has been selected.": [
-        "Une erreur s’est produite lors de l’importation de votre fichier. Aucun fichier n’a été sélectionné."
+        "Une erreur s’est produite lors du chargement de votre fichier. Aucun fichier n’a été sélectionné."
       ],
       "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
         "Votre fichier ${ formattedFilename } contient plus de ${ MAX_IMPORT_CONTACTS_STRING } contacts."
@@ -2594,7 +2591,8 @@
       ]
     },
     "file size format": {
-      "bytes": [
+      "byte": [
+        "octet",
         "octets"
       ],
       "GB": [
@@ -2608,17 +2606,21 @@
       ]
     },
     "file size format, long": {
-      "Bytes": [
+      "Byte": [
+        "Octet",
         "Octets"
       ],
-      "Gigabytes": [
-        "Giga-octets"
+      "Gigabyte": [
+        "Gigaoctet",
+        "Gigaoctets"
       ],
-      "Kilobytes": [
-        "Kilo-octets"
+      "Kilobyte": [
+        "Kilooctet",
+        "Kilooctets"
       ],
-      "Megabytes": [
-        "Mega-octets"
+      "Megabyte": [
+        "Megaoctet",
+        "Megaoctets"
       ]
     },
     "Filter notification": {
@@ -2968,7 +2970,7 @@
         "Abandonner les modifications ?"
       ],
       "Drop the file here to upload": [
-        "Déposez un fichier ici pour le télécharger"
+        "Déposez un fichier ici pour le charger."
       ],
       "Duplicate key updated": [
         "Clé dupliquée mise à jour"
@@ -3092,7 +3094,7 @@
         "Aucun des participants ne peut être informé de vos modifications :"
       ],
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
-        "Aucune des clés téléchargées n'est valide pour le chiffrement. Le chiffrement est automatiquement désactivé."
+        "Aucune des clés chargées n'est valide pour le chiffrement. Le chiffrement est automatiquement désactivé."
       ],
       "Not a valid URL": [
         "URL non valide"
@@ -3112,11 +3114,11 @@
       "Other options": [
         "Autres options"
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
-        "PGP/Inline is only compatible with Plain Text format. Please note that Proton Mail always signs encrypted messages."
+      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        "PGP/Inline est uniquement compatible avec le format texte brut. Veuillez noter que ${ MAIL_APP_NAME } signe toujours les messages chiffrés."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
-        "PGP/MIME automatically sends the message using the current composer mode. Please note that Proton Mail always signs encrypted messages."
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
+        "PGP/MIME envoie automatiquement le message en utilisant le mode actuel du composeur. Veuillez noter que ${ MAIL_APP_NAME } signe toujours les messages chiffrés"
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Veuillez noter que les adresses assignées à ce groupe ne seront PAS supprimées."
@@ -3687,7 +3689,7 @@
         "Code d’authentification à deux facteurs"
       ],
       "Upload picture": [
-        "Télécharger une image"
+        "Charger une image"
       ],
       "URL": [
         "URL"
@@ -4412,7 +4414,7 @@
     },
     "Select files": {
       "Upload": [
-        "Télécharger"
+        "Charger"
       ]
     },
     "Select search results": {
@@ -4840,7 +4842,7 @@
         "Suppression des contacts"
       ],
       "Drop to upload": [
-        "Déposer pour télécharger"
+        "Déposer pour charger"
       ],
       "Edit calendar": [
         "Modifier le calendrier"
@@ -5111,7 +5113,7 @@
         "L'importation commencera par les messages les plus récents."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
-        "Téléchargez une clé publique pour activer l’envoi de messages électroniques chiffrés de bout en bout vers cette adresse électronique"
+        "Chargez une clé publique pour activer l’envoi de messages électroniques chiffrés de bout en bout vers cette adresse électronique."
       ],
       "You do not have any contacts to export": [
         "Vous n’avez aucun contact à exporter"

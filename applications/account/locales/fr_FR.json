@@ -103,6 +103,9 @@
       "Apply": [
         "Appliquer"
       ],
+      "Apply to existing message": [
+        "Appliquer au message existant"
+      ],
       "Attach screenshot(s)": [
         "Joindre une ou plusieurs captures d’écran"
       ],
@@ -175,8 +178,8 @@
       "Continue to ${ name }": [
         "Continuer vers ${ name }"
       ],
-      "Continue with": [
-        "Continuer avec"
+      "Continue with ${ nameToDisplay } ${ maybeEmailInBrackets }": [
+        "Continuer avec ${ nameToDisplay } ${ maybeEmailInBrackets }"
       ],
       "Continue with Google": [
         "Continuer avec Google"
@@ -193,8 +196,8 @@
       "Create": [
         "Créer"
       ],
-      "Create a secure ProtonMail address instead": [
-        "Create a secure Proton Mail address instead"
+      "Create a secure ${ MAIL_APP_NAME } address instead": [
+        "Créez plutôt une adresse sécurisée ${ MAIL_APP_NAME }"
       ],
       "Create account": [
         "Créer un compte"
@@ -345,6 +348,9 @@
       ],
       "Extend": [
         "Prolonger"
+      ],
+      "Filters are being applied. This might take a few minutes.": [
+        "Les filtres sont en cours d'application. Cela peut prendre quelques minutes."
       ],
       "Font": [
         "Police"
@@ -679,17 +685,14 @@
       "Show preview": [
         "Afficher un aperçu"
       ],
-      "sign in": [
-        "connecter"
-      ],
       "Sign in": [
         "Se connecter"
       ],
       "Sign out": [
         "Se déconnecter"
       ],
-      "Sign out from": [
-        "Se déconnecter de"
+      "Sign out from ${ nameToDisplay } ${ maybeEmailInBrackets }": [
+        "Se déconnecter de ${ nameToDisplay } ${ maybeEmailInBrackets }"
       ],
       "Sign out of all accounts": [
         "Se déconnecter de tous les comptes"
@@ -755,7 +758,7 @@
         "Changer d'offre"
       ],
       "Upload picture": [
-        "Télécharger une image"
+        "Charger une image"
       ],
       "Use ${ label } theme": [
         "Utiliser le thème « ${ label } »"
@@ -1044,11 +1047,6 @@
         "Profitez de l'offre maintenant"
       ]
     },
-    "blackfriday: VPNspecialoffer Badge popup": {
-      "${ vpnPlus } Special Offer 2021 discount has been applied": [
-        ""
-      ]
-    },
     "blackfriday: VPNspecialoffer Info": {
       "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
         "Les réductions sont basées sur le prix mensuel standard de ${ standardMonthlyPricing }"
@@ -1207,9 +1205,9 @@
       "You have reached the maximum number of personal calendars you can create within your plan.": [
         "Vous avez atteint le nombre maximum d'agendas personnels que vous pouvez créer dans le cadre de votre abonnement."
       ],
-      "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } subscribed calendar.": [
-        "Vous avez atteint le maximum de ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } calendrier souscrit.",
-        "Vous avez atteint le maximum de ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } calendriers souscrits."
+      "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS } subscribed calendar.": [
+        "Vous avez atteint le maximum de ${ MAX_SUBSCRIBED_CALENDARS } calendrier souscrit.",
+        "Vous avez atteint le maximum de ${ MAX_SUBSCRIBED_CALENDARS } calendriers souscrits."
       ]
     },
     "Calendar link purpose update success message": {
@@ -2495,7 +2493,7 @@
         "De plus, nous avons automatiquement identifié les champs CSV qui correspondent aux champs vCard. Vous pouvez vérifier et modifier cette correspondance manuellement."
       ],
       "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
-        "Nous avons détecté les champs suivants dans le fichier CSV que vous avez téléchargé. Vérifiez ceux que vous souhaitez importer."
+        "Nous avons détecté les champs suivants dans le fichier CSV que vous avez chargé. Vérifiez ceux que vous souhaitez importer."
       ]
     },
     "Domain label": {
@@ -2638,9 +2636,6 @@
       ],
       "A group with this name already exists": [
         "Un groupe portant ce nom existe déjà."
-      ],
-      "Address already associated to a user": [
-        "L'adresse est déjà associée à un utilisateur."
       ],
       "Address primary private key not found": [
         "La clé privée principale de l'adresse n'a pas été trouvée."
@@ -2959,10 +2954,10 @@
         "Statut du jeton de paiement inconnu"
       ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
-        "Le fichier téléchargé n'est pas une clé privée valide. Veuillez vérifier et réessayer."
+        "Le fichier chargé n'est pas une clé privée valide. Veuillez vérifier et réessayer."
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
-        "Les fichiers téléchargés ne sont pas des clés privées valides. Veuillez vérifier et réessayer."
+        "Les fichiers chargés ne sont pas des clés privées valides. Veuillez vérifier et réessayer."
       ],
       "Verification did not succeed, please try again in an hour.": [
         "La vérification n'a pas réussi, veuillez réessayer dans une heure."
@@ -3015,13 +3010,13 @@
         "Une erreur s'est produite lors de la lecture de votre fichier ${ formattedFilename }. Le fichier n'a pas le bon format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        "Une erreur s'est produite lors de l'importation de votre fichier ${ formattedFilename }. La taille maximale d'un fichier doit être de ${ MAX_IMPORT_FILE_SIZE_STRING }."
+        "Une erreur s'est produite lors du chargement de votre fichier ${ formattedFilename }. La taille maximale d'un fichier doit être de ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Only ICS file formats are allowed.": [
-        "Une erreur s'est produite lors de l'importation de votre fichier ${ formattedFilename }. Seuls les formats ICS sont autorisés."
+        "Une erreur s'est produite lors du chargement de votre fichier ${ formattedFilename }. Seuls les formats ICS sont autorisés."
       ],
       "An error occurred uploading your file. No file has been selected.": [
-        "Une erreur s'est produite lors de l'importation de votre fichier. Aucun fichier n'a été sélectionné."
+        "Une erreur s'est produite lors du chargement de votre fichier. Aucun fichier n'a été sélectionné."
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "Une erreur inattendue s'est produite. L'importation doit être relancée."
@@ -3055,13 +3050,13 @@
         "Une erreur s'est produite lors de la lecture de votre fichier ${ formattedFilename }. Le fichier n'a pas le bon format."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        "Une erreur s'est produite lors de l'importation de votre fichier ${ formattedFilename }. La taille maximale d'un fichier doit être de ${ MAX_IMPORT_FILE_SIZE_STRING }."
+        "Une erreur s'est produite lors du chargement de votre fichier ${ formattedFilename }. La taille maximale d'un fichier doit être de ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
       "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
-        "Une erreur s'est produite lors du téléchargement de votre fichier ${ formattedFilename }. Aucun fichier .csv ou .vcf sélectionné"
+        "Une erreur s'est produite lors du chargement de votre fichier ${ formattedFilename }. Aucun fichier .csv ou .vcf sélectionné."
       ],
       "An error occurred uploading your file. No file has been selected.": [
-        "Une erreur s'est produite lors de l'importation de votre fichier. Aucun fichier n'a été sélectionné."
+        "Une erreur s'est produite lors du chargement de votre fichier. Aucun fichier n'a été sélectionné."
       ],
       "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
         "Votre fichier ${ formattedFilename } contient plus de ${ MAX_IMPORT_CONTACTS_STRING } contacts."
@@ -3187,20 +3182,36 @@
       "Please ${ refresh } or check your connection.": [
         "Veuillez ${ refresh } ou vérifier votre connexion."
       ],
-      "Please ${ signIn } to update your email subscription preferences.": [
-        "Veuillez vous ${ signIn } pour mettre à jour vos préférences d'abonnement par e-mail."
-      ],
       "There was a problem connecting to Proton.": [
         "Un problème s'est produit lors de la connexion à Proton."
-      ],
-      "There was a problem unsubscribing you.": [
-        "Un problème est survenu lors de votre désinscription."
       ],
       "Too many child sessions, please clear your cookies and sign back in.": [
         "Trop de sessions enfants, veuillez supprimer vos cookies et vous authentifier de nouveau."
       ],
       "You may also ${ refresh } or try again later.": [
         "Vous pouvez aussi ${ refresh } ou réessayer plus tard."
+      ]
+    },
+    "Error message, recovery": {
+      "Please ${ _signIn } to resend a recovery email verification request.": [
+        "Veuillez ${ _signIn } pour envoyer une nouvelle demande de vérification de l'adresse de récupération."
+      ],
+      "sign in": [
+        "se connecter"
+      ],
+      "There was a problem verifying your email address.": [
+        "Votre adresse e-mail n'a pas pu être vérifiée."
+      ]
+    },
+    "Error message, unsubscribe": {
+      "Please ${ signIn } to update your email subscription preferences.": [
+        "Veuillez vous ${ signIn } pour mettre à jour vos préférences d'abonnement par e-mail."
+      ],
+      "sign in": [
+        "se connecter"
+      ],
+      "There was a problem unsubscribing you.": [
+        "Un problème est survenu lors de votre désinscription."
       ]
     },
     "Error notification": {
@@ -3347,7 +3358,8 @@
       ]
     },
     "file size format": {
-      "bytes": [
+      "byte": [
+        "octet",
         "octets"
       ],
       "GB": [
@@ -3361,16 +3373,20 @@
       ]
     },
     "file size format, long": {
-      "Bytes": [
+      "Byte": [
+        "Octet",
         "Octets"
       ],
-      "Gigabytes": [
+      "Gigabyte": [
+        "Gigaoctet",
         "Gigaoctets"
       ],
-      "Kilobytes": [
+      "Kilobyte": [
+        "Kilooctet",
         "Kilooctets"
       ],
-      "Megabytes": [
+      "Megabyte": [
+        "Megaoctet",
         "Megaoctets"
       ]
     },
@@ -3440,7 +3456,7 @@
         "Ajoutez un filtre personnalisé pour que certaines actions soient exécutées automatiquement, comme appliquer un label ou archiver des messages. Les filtres peuvent être modifiés et créés directement via le langage de programmation Sieve."
       ],
       "Apply sender-specific spam rules. Messages from addresses or domains on the Allow List always go to your Inbox while messages from addresses or domains on the Block List always go to Spam. Marking a message as spam adds its address to the Block List. Marking a message as not spam adds it to the Allow List.": [
-        "Des règles anti-indésirables/spam spécifiques peuvent être appliquées ici. Les adresses en liste d'autorisation verront leurs messages dirigés vers votre boîte de réception tandis que ceux provenant des adresses en liste de blocage iront toujours dans le dossier indésirables/spam. Marquer un message comme indésirable/spam ajoute l'adresse à la liste de blocage. Marquer un message comme n'étant pas un indésirable/spam ajoute l'adresse à la liste d'autorisation."
+        "Des règles anti-indésirables/spam spécifiques peuvent être appliquées ici. Les adresses en liste d'autorisation seront toujours dirigés vers votre boîte de réception, tandis que ceux provenant des adresses en liste de blocage iront toujours dans le dossier indésirables/spam. Marquer un message comme indésirable/spam ajoute l'adresse à la liste de blocage. Marquer un message comme n'étant pas un indésirable/spam ajoute l'adresse à la liste d'autorisation."
       ],
       "Search in Allow List and Block List": [
         "Rechercher dans les listes d'autorisation et de blocage"
@@ -4051,8 +4067,8 @@
         "${ number } serveurs"
       ],
       "${ numberOfNonPrivateKeys } uploaded file is not a valid private key. Please verify and try again.": [
-        "${ numberOfNonPrivateKeys } fichier téléchargé n'est pas une clé privée valide. Veuillez vérifier et réessayer.",
-        "${ numberOfNonPrivateKeys } fichiers téléchargés ne sont pas des clés privées valides. Veuillez vérifier et réessayer."
+        "${ numberOfNonPrivateKeys } fichier chargé n'est pas une clé privée valide. Veuillez vérifier et réessayer.",
+        "${ numberOfNonPrivateKeys } fichiers chargés ne sont pas des clés privées valides. Veuillez vérifier et réessayer."
       ],
       "${ numContactGroups } contact group": [
         "${ numContactGroups } groupe de contacts",
@@ -4177,7 +4193,7 @@
         "Compte correctement mis à jour"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
-        "Ajoutez une adresse électronique @pm.me à votre compte. Ce domaine simple et court signifie « ${ MAIL_APP_NAME } me » ou « Private Message me » (envoyez-moi un message privé)."
+        "Ajoutez une adresse électronique @pm.me à votre compte. Ce domaine simple et court signifie « ${ MAIL_APP_NAME } me » ou « Private Message me » (envoyez-moi un message privé)."
       ],
       "Add a recovery email address": [
         "Ajoutez une adresse électronique de récupération"
@@ -4208,7 +4224,7 @@
         "Après une réinitialisation de mot de passe, vos données sont verrouillées sous forme chiffrée pour les protéger."
       ],
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
-        "Après avoir effectué votre paiement Bitcoin, veuillez suivre les instructions ci-dessous afin d'effectuer votre changement d'offre."
+        "Après avoir effectué votre paiement Bitcoin, veuillez suivre les instructions ci-dessous afin d'effectuer votre changement d'abonnement."
       ],
       "Align left": [
         "Aligner à gauche"
@@ -4336,10 +4352,10 @@
         "Les transactions en Bitcoin peuvent prendre un certain temps pour être validées (jusqu'à 24 heures). Une fois celles-ci confirmées, nous ajouterons les crédits sur votre compte. Après confirmation de la transaction, vous pourrez payer votre facture avec les crédits."
       ],
       "Black Friday 2018 applied to your subscription": [
-        "L'offre du Black Friday 2018 a été appliquée à votre abonnement"
+        "L'offre du Black Friday 2018 a été appliquée à votre abonnement."
       ],
       "Black Friday 2019 applied to your subscription": [
-        "L'offre du Black Friday 2019 a été appliquée à votre abonnement"
+        "L'offre du Black Friday 2019 a été appliquée à votre abonnement."
       ],
       "Black Friday 2020 newcomer discount has been applied": [
         "La réduction du Black Friday 2020 pour les nouveaux arrivants a été appliquée"
@@ -4363,7 +4379,7 @@
         "Centrer"
       ],
       "Check the status of current and previous imports.": [
-        "Vérifiez l'état des importations actuelles et précédentes."
+        "Consultez le statut des importations."
       ],
       "Choose the look and feel of the application.": [
         "Choisissez l'apparence de l'application."
@@ -4379,6 +4395,9 @@
       ],
       "Continue with ${ planName }": [
         "Continuer avec ${ planName }"
+      ],
+      "Continuing will connect your ${ ACCOUNT_APP_NAME } to ${ name }.": [
+        "Continuer connectera votre ${ ACCOUNT_APP_NAME } à ${ name }."
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Créer ${ calendarsToBeCreated } nouveau calendrier",
@@ -4482,10 +4501,10 @@
         "Téléchargez vos clés PGP pour les utiliser avec d'autres services compatibles PGP."
       ],
       "Drop a file here to upload": [
-        "Déposer ici un fichier à envoyer"
+        "Déposer ici un fichier à charger"
       ],
       "Drop the file here to upload": [
-        "Déposez un fichier ici pour l'importer"
+        "Déposer ici le fichier à charger"
       ],
       "Earned ${ rewards } of ${ rewardsLimit } ${ planName } months.": [
         "${ rewards } sur ${ rewardsLimit } mois de ${ planName } gagnés."
@@ -4687,7 +4706,7 @@
         "Importer une boîte aux lettres"
       ],
       "Import your emails, calendars, and contacts from another service to Proton. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
-        "Importez vos e-mails, calendriers et contacts d'un autre service vers Proton. Nous vous guiderons à chaque étape et chiffrerons vos données au fur et à mesure de leur déplacement. Bienvenue dans le monde de la confidentialité."
+        "Importez vos e-mails, calendriers et contacts depuis un autre service vers Proton. Nous vous guidons à chaque étape et chiffrons vos données pendant leur transfert. Bienvenue dans un monde respectueux de votre vie privée."
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Important : veuillez vous assurer de sauvegarder les codes de récupération. Sinon, vous pouvez perdre définitivement l'accès à votre compte si vous égarez votre appareil d'authentification à deux facteurs."
@@ -4699,7 +4718,7 @@
         "Importation de vos données de ${ importedEmailAddress } vers ${ toEmail }."
       ],
       "In case you lose your login details, we’ll send you recovery instructions via email or SMS.": [
-        "En cas de perte de vos données de connexion, nous vous enverrons des instructions de récupération par e-mail ou par SMS."
+        "Si vous perdez vos données de connexion, nous vous enverrons des instructions de récupération par e-mail ou par SMS."
       ],
       "Inherited from parent folder": [
         "Hérité du dossier parent"
@@ -4781,7 +4800,7 @@
         "De gauche à droite"
       ],
       "Let your contacts know you care about their privacy.": [
-        "Faites savoir à vos contacts que vous vous souciez de leur confidentialité."
+        "Faites savoir à vos contacts que vous utilisez une messagerie respectueuse de la vie privée."
       ],
       "Limited view: others see if you're busy. Full view: shows all event details, including name, location, or participants.": [
         "Vue limitée : montre vos moments occupés. Vue complète : montre tous les détails des événements, y compris le nom, le lieu ou les participants."
@@ -5088,10 +5107,7 @@
         "Sécurisation de votre compte"
       ],
       "Select a service provider to start": [
-        "Sélectionnez un fournisseur de services pour commencer"
-      ],
-      "Select Continue to ${ name } to open the app. This also creates a ${ name } account with your ${ MAIL_APP_NAME } address so you can sign in with one click in the future.": [
-        "Sélectionnez « Se connecter à ${ name } » pour ouvrir l'application. Cela va également créer un compte ${ name } avec votre adresse ${ MAIL_APP_NAME } afin que vous puissiez vous connecter en un clic la prochaine fois."
+        "Commencez par sélectionner un service"
       ],
       "Select what you want to move from Google.": [
         "Sélectionnez ce que vous souhaitez déplacer depuis Google."
@@ -5280,7 +5296,7 @@
         "Pour déchiffrer et afficher vos e-mails et autres données, vous avez besoin d'un fichier de récupération."
       ],
       "To decrypt and view your emails and other data, you need a recovery phrase or recovery file.": [
-        "Pour déchiffrer et afficher vos courriers électroniques et autres données, vous avez besoin d'une phrase ou d'un fichier de récupération."
+        "Pour déchiffrer et afficher vos e-mails et autres données, vous avez besoin d'une phrase ou d'un fichier de récupération."
       ],
       "To decrypt and view your emails and other data, you need a recovery phrase.": [
         "Pour déchiffrer et afficher vos e-mails et autres données, vous avez besoin d'une phrase de récupération."
@@ -5337,7 +5353,7 @@
         "Malheureusement, il n'y a pas de méthode de récupération enregistrée pour ce compte."
       ],
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
-        "Sauf si vous vous déconnectez explicitement ou modifiez votre mot de passe, votre session restera active. Les sessions n'expirent qu'après 60 jours d'inactivité."
+        "Si vous ne vous déconnectez pas de votre compte ou ne changez pas votre mot de passe, votre session restera active. Les sessions expirent après 60 jours d'inactivité."
       ],
       "Unlimited folders, labels, and filters": [
         "Dossiers, labels et filtres illimités"
@@ -5361,10 +5377,10 @@
         "Passez à l'offre supérieure dès aujourd'hui pour conserver les avantages suivants de ${ planName }."
       ],
       "Upload picture": [
-        "Télécharger une image"
+        "Charger une image"
       ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
-        "Le fichier téléchargé n'est pas une clé privée valide. Veuillez vérifier et réessayer."
+        "Le fichier chargé n'est pas une clé privée valide. Veuillez vérifier et réessayer."
       ],
       "URL link": [
         "Lien URL"
@@ -5493,7 +5509,7 @@
         "Vous pouvez importer un type de données à la fois."
       ],
       "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
-        "Vous pouvez maintenant recevoir des messages sur votre adresse @pm.me. Passez à une offre payante afin de pouvoir également envoyer des e-mails en utilisant votre adresse @pm.me et créer des adresses @pm.me supplémentaires."
+        "Vous pouvez désormais recevoir des messages sur votre adresse @pm.me. En passant à un abonnement payant, vous pourrez également envoyer des e-mails en utilisant votre adresse @pm.me et créer des adresses @pm.me supplémentaires."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Vous pouvez activer les notifications pour recevoir des alertes lorsque de nouveaux messages arrivent dans ce dossier."
@@ -5530,6 +5546,9 @@
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "Vous devez avoir une carte de crédit ou un compte bancaire lié à votre compte PayPal. Si votre compte PayPal n'en dispose pas, veuillez cliquer sur le lien ci-dessous."
+      ],
+      "You must remove any additional personal calendars and any shared calendar links before you can cancel your Mail subscription.": [
+        "Vous devez supprimer tout calendrier personnel supplémentaire et tout lien de calendrier partagé avant de pouvoir annuler votre abonnement."
       ],
       "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription.": [
         "Vous devez supprimer tout calendrier personnel supplémentaire et tout lien de calendrier partagé avant de pouvoir annuler votre abonnement."
@@ -5657,10 +5676,10 @@
     },
     "info": {
       "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Doublons détectés dans les clés supplémentaires. Veuillez télécharger individuellement pour plus d'informations."
+        "Doublons détectés dans les clés supplémentaires. Veuillez charger individuellement pour plus d'informations."
       ],
       "Key ${ fingerprint } has already been uploaded": [
-        "La clé ${ fingerprint } a déjà été téléchargée"
+        "La clé ${ fingerprint } a déjà été chargée."
       ],
       "Track your referral link activities here": [
         "Suivez l'activité de vos liens de parrainage ici"
@@ -6112,6 +6131,9 @@
       "App password": [
         "Mot de passe de l'application"
       ],
+      "Apply filter to existing emails": [
+        "Appliquer le filtre aux e-mails existants"
+      ],
       "Ask before loading remote content": [
         "Demander avant de charger le contenu distant"
       ],
@@ -6125,7 +6147,7 @@
         "Détection automatique du fuseau horaire principal"
       ],
       "Auto-load embedded images": [
-        "Charger automatiquement les images incorporées"
+        "Charger automatiquement les images intégrées"
       ],
       "Auto-reply": [
         "Réponse automatique"
@@ -6188,13 +6210,13 @@
         "Composeur"
       ],
       "Composer default font/size": [
-        "Taille de police par défaut du composeur"
+        "Taille de police par défaut"
       ],
       "Composer mode": [
         "Mode du composeur"
       ],
       "Composer text direction": [
-        "Orientation du texte dans le composeur"
+        "Orientation du texte"
       ],
       "Conditions": [
         "Conditions"
@@ -6224,7 +6246,7 @@
         "Contacts"
       ],
       "Conversation grouping": [
-        "Regroupement de conversations"
+        "Activer le mode conversation"
       ],
       "Copy": [
         "Copier"
@@ -6593,7 +6615,7 @@
         "Veuillez ajouter l'enregistrement TXT suivant. Notez que la mise à jour des enregistrements DNS peut prendre plusieurs heures."
       ],
       "Please select files to upload": [
-        "Veuillez sélectionner les fichiers à importer"
+        "Veuillez sélectionner les fichiers à charger."
       ],
       "Port": [
         "Port"
@@ -6683,7 +6705,7 @@
         "Requête"
       ],
       "Sticky labels": [
-        "Labels automatiques"
+        "Activer les labels automatiques pour les conversations"
       ],
       "Subscription options": [
         "Options de l'abonnement"
@@ -6734,13 +6756,13 @@
         "Mode deux mots de passe"
       ],
       "Undo send": [
-        "Annuler l'envoi"
+        "Délai d'annulation de l'envoi"
       ],
       "Upload 1 or more encryption keys": [
-        "Téléchargez 1 ou plusieurs clés de chiffrement"
+        "Chargez 1 ou plusieurs clés de chiffrement."
       ],
       "Upload 1 or more recovery files or encryption keys": [
-        "Téléchargez 1 ou plusieurs fichiers de récupération ou clés de chiffrement"
+        "Chargez 1 ou plusieurs fichiers de récupération ou clés de chiffrement."
       ],
       "URL": [
         "URL"
@@ -7103,6 +7125,9 @@
       ]
     },
     "Message": {
+      "All filter actions will be applied to all messages in your Proton Mail account. No auto-reply emails will be sent.": [
+        "Toutes les actions de filtrage seront appliquées à tous les messages de votre compte Proton Mail. Aucun e-mail de réponse automatique ne sera envoyé."
+      ],
       "Are you sure you want to disable two-factor authentication?": [
         "Êtes-vous sûr de vouloir désactiver l'authentification à deux facteurs ?"
       ],
@@ -7634,26 +7659,6 @@
         "Gestion de l'équipe"
       ]
     },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Protégez votre vie privée en matière de sauvegarde, de stockage, de partage et de récupération de fichiers."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Dans le cas contraire, l'accès à votre compte sera limité, et il sera par la suite désactivé."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Pour continuer à utiliser ${ MAIL_APP_NAME } avec les fonctionnalités premium, choisissez votre abonnement et votre mode de paiement."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Passez au pack pour entreprises avec l'accès à tous les services premium de Proton."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Passez au pack de confidentialité absolue en profitant de tous les services premium de Proton."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Votre essai se termine le ${ formattedTrialExpirationDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } se terminant par ${ last4 }"
@@ -7720,6 +7725,26 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Vous bénéficiez d'un prix promotionnel pour votre abonnement actuel. Si vous rétrogradez votre compte, vous perdrez ce prix promotionnel et il ne sera plus disponible si vous cherchez à vous réabonner."
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Protégez votre vie privée en matière de sauvegarde, de stockage, de partage et de récupération de fichiers."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Dans le cas contraire, l'accès à votre compte sera limité, et il sera par la suite désactivé."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Pour continuer à utiliser ${ MAIL_APP_NAME } avec les fonctionnalités premium, choisissez votre abonnement et votre mode de paiement."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Passez au pack pour entreprises avec l'accès à tous les services premium de Proton."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Passez au pack de confidentialité absolue en profitant de tous les services premium de Proton."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Votre essai se termine le ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -7843,7 +7868,7 @@
         "Stockage de fichiers chiffré de bout en bout"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
-        "Recevez tous les e-mails envoyés à votre domaine, y compris ceux envoyés à une adresse qui n'existe pas (ou plus), ou qui contient une faute de frappe."
+        "Recevez tous les e-mails envoyés à votre domaine, y compris ceux envoyés à une adresse qui n'existe pas (ou plus) ou contenant une faute de frappe."
       ],
       "Force sign-out of user sessions when user credentials are believed to be compromised": [
         "Forcez la déconnexion des sessions utilisateur lorsque les informations d'identification de l'utilisateur sont susceptibles d'être compromises."
@@ -8524,14 +8549,8 @@
       "Email address not yet verified.": [
         "Adresse e-mail non vérifiée."
       ],
-      "Please ${ signIn } to resend a recovery email verification request.": [
-        "Veuillez ${ signIn } pour envoyer une nouvelle demande de vérification de l'adresse de récupération."
-      ],
-      "Send verification email": [
-        "Envoyer l'e-mail de vérification"
-      ],
-      "There was a problem verifying your email address.": [
-        "Votre adresse e-mail n'a pas pu être vérifiée."
+      "sign in": [
+        "se connecter"
       ],
       "Verification email sent to ${ email.Value }": [
         "E-mail de vérification envoyé à ${ email.Value }"
@@ -8542,8 +8561,11 @@
       "Verify recovery email?": [
         "Vérifier l'e-mail de récupération ?"
       ],
+      "Verify with email": [
+        "Vérifier par e-mail"
+      ],
       "Verifying your email address increases your account security and allows additional options for recovery.": [
-        "Vérifier votre adresse e-mail améliore la sécurité de votre compte et offre des options de récupération supplémentaires."
+        "La vérification de votre e-mail renforce la sécurité de votre compte et vous offre des options supplémentaires de récupération."
       ],
       "You can safely close this tab.": [
         "Vous pouvez fermer cet onglet en toute sécurité."
@@ -8561,6 +8583,29 @@
       ],
       "Phrase": [
         "Phrase"
+      ]
+    },
+    "Recovery Phone": {
+      "Cancel": [
+        "Annuler"
+      ],
+      "Phone number has been verified.": [
+        "Numéro de téléphone vérifié."
+      ],
+      "Phone number not yet verified.": [
+        "Numéro de téléphone pas encore vérifié."
+      ],
+      "Verify by SMS": [
+        "Vérifier par SMS"
+      ],
+      "Verify now": [
+        "Vérifier maintenant"
+      ],
+      "Verify recovery phone?": [
+        "Vérifier le téléphone de récupération ?"
+      ],
+      "Verifying your phone number increases your account security and allows additional options for recovery.": [
+        "Vérifier votre numéro de téléphone améliore la sécurité de votre compte et offre des options de récupération supplémentaires."
       ]
     },
     "Remark about a key type option": {
@@ -8593,10 +8638,10 @@
         "Parcourir"
       ],
       "Upload": [
-        "Télécharger"
+        "Charger"
       ],
       "Upload additional files": [
-        "Importer des fichiers supplémentaires"
+        "Charger des fichiers supplémentaires"
       ]
     },
     "Select search results": {
@@ -8606,7 +8651,7 @@
     },
     "Settings description": {
       "Make the move to privacy. Effortlessly and securely.": [
-        "Faites la transition vers la vie privée. Sans effort et en toute sécurité."
+        "Passez à une messagerie qui respecte votre vie privée, sans effort et en toute sécurité."
       ],
       "You can apply multiple labels to a single message, but messages can usually only be in a single folder. Drag and drop to rearrange the order of your folders and labels.": [
         "Vous pouvez appliquer plusieurs labels à un seul message, mais les messages ne peuvent généralement être que dans un seul dossier. Glissez et déposez pour réorganiser l'ordre de vos dossiers et labels."
@@ -9264,6 +9309,9 @@
       "Appearance": [
         "Apparence"
       ],
+      "Apply filter to existing messages": [
+        "Appliquer le filtre aux messages existants"
+      ],
       "Apply gift code": [
         "Appliquer un code cadeau"
       ],
@@ -9293,6 +9341,9 @@
       ],
       "Bridge for ${ platform }": [
         "Bridge pour ${ platform }"
+      ],
+      "Cancel Mail subscription": [
+        "Annuler l'abonnement Mail"
       ],
       "Card verification": [
         "Vérification de la carte"
@@ -9394,7 +9445,7 @@
         "Personnalisez l’importation de votre courrier"
       ],
       "Customize your plan": [
-        "Personnalisez votre offre"
+        "Personnalisez votre abonnement"
       ],
       "Dashboard": [
         "Tableau de bord"
@@ -9845,7 +9896,7 @@
         "Passer au mode à deux mots de passe"
       ],
       "Take precautions to avoid data loss!": [
-        "Prenez des précautions pour éviter toute perte de données !"
+        "Évitez toute perte de données en prenant quelques précautions."
       ],
       "Theme": [
         "Thème"
@@ -9917,13 +9968,13 @@
         "Lien de votre calendrier"
       ],
       "Your current plan": [
-        "Votre offre actuelle"
+        "Votre abonnement actuel"
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         "Votre essai gratuit se termine bientôt, le ${ formattedEndDate }"
       ],
       "Your plan": [
-        "Votre offre"
+        "Votre abonnement"
       ],
       "Your recovery status": [
         "Votre statut de récupération"
@@ -9937,7 +9988,7 @@
     },
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
-        "Sélectionner un numéro"
+        "Sélectionner un nombre"
       ]
     },
     "Title for payment methods table": {
@@ -10109,7 +10160,7 @@
         "Lorsque vous ajoutez un label à un message dans une conversation, il sera automatiquement appliqué à tous les messages futurs que vous enverrez ou recevrez dans cette conversation."
       ],
       "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
-        "Lorsque vous cliquez sur un lien, cette fonction d'anti-hameçonnage vous demandera de confirmer l'URL de la page Web."
+        "Lorsque vous cliquez sur un lien, cette fonction anti-hameçonnage vous montre le détail de l'URL de la page web pour que vous puissiez la vérifier avant de l'ouvrir dans votre navigateur."
       ],
       "You have locally decrypted this key": [
         "Vous avez déchiffré localement cette clé"
@@ -10170,12 +10221,12 @@
       ]
     },
     "Upgrade notice": {
-      "Upgrade to a paid plan to create up to ${ MAX_CALENDARS_PER_USER } calendar, allowing you to make calendars for work, to share with friends, and just for yourself.": [
-        "En passant à un abonnement payant, vous pouvez créer jusqu'à ${ MAX_CALENDARS_PER_USER } calendrier et l'utiliser selon vos besoins : travail, loisirs... partagés ou non.",
-        "En passant à un abonnement payant, vous pouvez créer jusqu'à ${ MAX_CALENDARS_PER_USER } calendriers et les utiliser selon vos besoins : travail, loisirs... partagés ou non."
+      "Upgrade to a Mail paid plan to create up to ${ MAX_CALENDARS_PAID } calendar, allowing you to make calendars for work, to share with friends, and just for yourself.": [
+        "En passant à un abonnement Mail payant, vous pouvez créer ${ MAX_CALENDARS_PAID } calendrier et l'utiliser selon vos besoins : travail, loisirs...",
+        "En passant à un abonnement Mail payant, vous pouvez créer jusqu'à ${ MAX_CALENDARS_PAID } calendriers et les utiliser selon vos besoins : travail, loisirs..."
       ],
-      "Upgrade to a paid plan to share your personal calendar via link with anyone.": [
-        "Passez à un abonnement payant pour partager votre calendrier personnel avec qui vous voulez via un lien."
+      "Upgrade to a Mail paid plan to share your personal calendar via link with anyone.": [
+        "Passez à un abonnement payant Mail pour partager votre calendrier personnel avec qui vous voulez via un lien."
       ]
     },
     "User role": {
