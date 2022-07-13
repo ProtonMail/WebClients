@@ -134,7 +134,7 @@ export const getAccountAppRoutes = ({
                 ],
             },
             security: <SectionConfig>{
-                text: c('Title').t`Security`,
+                text: c('Title').t`Security and privacy`,
                 to: '/security',
                 icon: 'shield',
                 subsections: [
@@ -145,6 +145,10 @@ export const getAccountAppRoutes = ({
                     {
                         text: c('Title').t`Security logs`,
                         id: 'logs',
+                    },
+                    {
+                        text: c('Title').t`Privacy and data collection`,
+                        id: 'privacy',
                     },
                 ],
             },
