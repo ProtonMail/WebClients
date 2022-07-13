@@ -5,6 +5,7 @@ import { classnames } from '../../../helpers';
 export interface InputTwoProps extends Omit<ComponentPropsWithRef<'input'>, 'prefix'> {
     error?: ReactNode | boolean;
     disabled?: boolean;
+    unstyled?: boolean;
     prefix?: ReactNode;
     suffix?: ReactNode;
     containerRef?: Ref<HTMLDivElement>;
@@ -16,6 +17,7 @@ const InputTwo = (props: InputTwoProps, ref: Ref<HTMLInputElement>) => {
     const {
         error,
         disabled,
+        unstyled,
         prefix,
         suffix,
         className: classNameProp,
@@ -52,6 +54,7 @@ const InputTwo = (props: InputTwoProps, ref: Ref<HTMLInputElement>) => {
                 'field-two-input-wrapper flex flex-nowrap flex-align-items-stretch flex-item-fluid relative',
                 Boolean(error) && 'error',
                 disabled && 'disabled',
+                unstyled && 'unstyled',
             ])}
             ref={containerRef}
         >
