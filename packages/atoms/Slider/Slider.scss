@@ -1,7 +1,9 @@
 @import '~@proton/styles/scss/config';
 
 $height-track: 16 !default;
+$height-track-small: 8 !default;
 $size-track-thumb: 36 !default;
+$size-track-thumb-small: 28 !default;
 
 .slider {
 	/**
@@ -18,13 +20,6 @@ $size-track-thumb: 36 !default;
 	inline-size: 100%;
 	display: inline-block;
 
-	/**
-	 * Combined height of slider mark (12) + slider mark label line height (20).
-	 * If we don't provide a bottom margin anything added underneath the Slider
-	 * collapses into the marks / labels.
-	 */
-	margin-block-end: rem(32);
-
 	&-rail,
 	&-track,
 	&-thumb {
@@ -35,10 +30,17 @@ $size-track-thumb: 36 !default;
 		background: var(--background-strong);
 		inline-size: 100%;
 		block-size: 100%;
+		/*
+		 * The track is nested inside of the rail, so to make the
+		 * border-radius apply to both the rail & the track we clip
+		 * it with overflow: hidden.
+		 */
+		border-radius: rem($height-track / 2);
+		overflow: hidden;
 	}
 
 	&-track {
-		background: var(--signal-success);
+		background: var(--track-background);
 		block-size: 100%;
 	}
 
@@ -85,6 +87,37 @@ $size-track-thumb: 36 !default;
 				opacity: 1;
 				transform: scale(1);
 			}
+		}
+	}
+
+	&-small {
+		block-size: rem($height-track-small);
+
+		.slider-thumb {
+			block-size: rem($size-track-thumb-small);
+			inline-size: rem($size-track-thumb-small);
+			padding: 0;
+		}
+
+		.slider-rail {
+			border-radius: rem($height-track-small / 2);
+		}
+	}
+
+	&-marks {
+		/**
+		 * Combined height of slider mark (12) + slider mark label line height (20).
+		 * If we don't provide a bottom margin anything added underneath the Slider
+		 * collapses into the marks / labels.
+		 */
+		margin-block-end: rem(32);
+
+		.slider-rail {
+			/*
+			 * No border-radius when marks are applied so that the marks nicely align
+			 * with the corners of the non-rounded rail.
+			 */
+			border-radius: 0;
 		}
 	}
 }
