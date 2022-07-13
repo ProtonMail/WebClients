@@ -249,20 +249,51 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
                     data-prevent-arrow-navigation
                 />
             </div>
-            <div className="flex m1 mb0">
-                <Checkbox
-                    id={archiveCheckID}
-                    checked={alsoArchive}
-                    onChange={({ target }) => updateAlsoArchive(target.checked)}
-                    data-testid="label-dropdown:also-archive"
-                    data-prevent-arrow-navigation
-                />
-                <label htmlFor={archiveCheckID} className="flex-item-fluid">
-                    {c('Label').t`Also archive`}
-                </label>
+            <div
+                className="scroll-if-needed scroll-smooth-touch mt1 label-dropdown-list-container"
+                data-testid="label-dropdown-list"
+            >
+                <ul className="unstyled mt0 mb0">
+                    {list.map(({ ID = '', Name = '', Color = '' }) => (
+                        <li
+                            key={ID}
+                            className="dropdown-item dropdown-item-button relative cursor-pointer w100 flex flex-nowrap flex-align-items-center pt0-5 pb0-5 pl1 pr1"
+                        >
+                            <Checkbox
+                                className="flex-item-noshrink"
+                                id={labelCheckID(ID)}
+                                checked={selectedLabelIDs[ID] === LabelState.On}
+                                indeterminate={selectedLabelIDs[ID] === LabelState.Indeterminate}
+                                onChange={handleCheck(ID)}
+                                data-testid={`label-dropdown:label-checkbox-${Name}`}
+                            />
+                            <label
+                                htmlFor={labelCheckID(ID)}
+                                title={Name}
+                                className="flex flex-nowrap flex-align-items-center increase-click-surface flex-item-fluid"
+                                data-testid={`label-dropdown:label-${Name}`}
+                            >
+                                <Icon
+                                    name="circle-filled"
+                                    size={16}
+                                    color={Color}
+                                    className="flex-item-noshrink relative ml0-5 mr0-5"
+                                />
+                                <span className="text-ellipsis">
+                                    <Mark value={search}>{Name}</Mark>
+                                </span>
+                            </label>
+                        </li>
+                    ))}
+                    {list.length === 0 && (
+                        <li key="empty" className="dropdown-item w100 pt0-5 pb0-5 pl1 pr1">
+                            {c('Info').t`No label found`}
+                        </li>
+                    )}
+                </ul>
             </div>
             <Tooltip title={alwaysTooltip}>
-                <div className={classnames(['p1 border-bottom', alwaysDisabled && 'color-disabled'])}>
+                <div className={classnames(['p1 border-top', alwaysDisabled && 'color-disabled'])}>
                     <Checkbox
                         id={alwaysCheckID}
                         checked={always}
@@ -276,48 +307,17 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
                     </label>
                 </div>
             </Tooltip>
-            <div
-                className="scroll-if-needed scroll-smooth-touch mt1 label-dropdown-list-container"
-                data-testid="label-dropdown-list"
-            >
-                <ul className="unstyled mt0 mb0">
-                    {list.map(({ ID = '', Name = '', Color = '' }) => (
-                        <li
-                            key={ID}
-                            className="dropdown-item dropdown-item-button relative cursor-pointer w100 flex flex-nowrap flex-align-items-center pt0-5 pb0-5 pl1 pr1"
-                        >
-                            <label
-                                htmlFor={labelCheckID(ID)}
-                                title={Name}
-                                className="flex flex-nowrap flex-align-items-center increase-click-surface flex-item-fluid"
-                                data-testid={`label-dropdown:label-${Name}`}
-                            >
-                                <Icon
-                                    name="circle-filled"
-                                    size={16}
-                                    color={Color}
-                                    className="flex-item-noshrink relative ml0-25 mr0-5"
-                                />
-                                <span className="text-ellipsis">
-                                    <Mark value={search}>{Name}</Mark>
-                                </span>
-                            </label>
-                            <Checkbox
-                                className="flex-item-noshrink"
-                                id={labelCheckID(ID)}
-                                checked={selectedLabelIDs[ID] === LabelState.On}
-                                indeterminate={selectedLabelIDs[ID] === LabelState.Indeterminate}
-                                onChange={handleCheck(ID)}
-                                data-testid={`label-dropdown:label-checkbox-${Name}`}
-                            />
-                        </li>
-                    ))}
-                    {list.length === 0 && (
-                        <li key="empty" className="dropdown-item w100 pt0-5 pb0-5 pl1 pr1">
-                            {c('Info').t`No label found`}
-                        </li>
-                    )}
-                </ul>
+            <div className="flex ml1 mr1">
+                <Checkbox
+                    id={archiveCheckID}
+                    checked={alsoArchive}
+                    onChange={({ target }) => updateAlsoArchive(target.checked)}
+                    data-testid="label-dropdown:also-archive"
+                    data-prevent-arrow-navigation
+                />
+                <label htmlFor={archiveCheckID} className="flex-item-fluid">
+                    {c('Label').t`Also archive`}
+                </label>
             </div>
             <div className="m1">
                 <PrimaryButton
