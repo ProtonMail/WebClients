@@ -11438,10 +11438,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"colorette@npm:^2.0.10, colorette@npm:^2.0.14, colorette@npm:^2.0.16":
-  version: 2.0.16
-  resolution: "colorette@npm:2.0.16"
-  checksum: cd55596a3a2d1071c1a28eee7fd8a5387593ff1bd10a3e8d0a6221499311fe34a9f2b9272d77c391e0e003dcdc8934fb2f8d106e7ef1f7516f8060c901d41a27
+"colorette@npm:^2.0.10, colorette@npm:^2.0.14, colorette@npm:^2.0.16, colorette@npm:^2.0.17":
+  version: 2.0.19
+  resolution: "colorette@npm:2.0.19"
+  checksum: 888cf5493f781e5fcf54ce4d49e9d7d698f96ea2b2ef67906834bb319a392c667f9ec69f4a10e268d2946d13a9503d2d19b3abaaaf174e3451bfe91fb9d82427
   languageName: node
   linkType: hard
 
@@ -14461,7 +14461,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"execa@npm:^6.0.0":
+"execa@npm:^6.0.0, execa@npm:^6.1.0":
   version: 6.1.0
   resolution: "execa@npm:6.1.0"
   dependencies:
@@ -20219,27 +20219,26 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"lint-staged@npm:^12.5.0":
-  version: 12.5.0
-  resolution: "lint-staged@npm:12.5.0"
+"lint-staged@npm:^13.0.3":
+  version: 13.0.3
+  resolution: "lint-staged@npm:13.0.3"
   dependencies:
     cli-truncate: ^3.1.0
-    colorette: ^2.0.16
+    colorette: ^2.0.17
     commander: ^9.3.0
     debug: ^4.3.4
-    execa: ^5.1.1
+    execa: ^6.1.0
     lilconfig: 2.0.5
     listr2: ^4.0.5
     micromatch: ^4.0.5
     normalize-path: ^3.0.0
     object-inspect: ^1.12.2
-    pidtree: ^0.5.0
+    pidtree: ^0.6.0
     string-argv: ^0.3.1
-    supports-color: ^9.2.2
-    yaml: ^1.10.2
+    yaml: ^2.1.1
   bin:
     lint-staged: bin/lint-staged.js
-  checksum: ac203917be098305bc0aebd5f1a969e88ea0854e8fb2199ebcbbb059d8bce324cf97db8f3d25f7954dd48c0666ae13987fb4db569d5b6fecda06f9fb742278e1
+  checksum: 53d585007df06e162febab6b0836b55016d902586a267823c8a1158529d8c742dc7297e523f7023dff02250bef3eb0d6934f4ec4f9961adfc2ebbed5f54162d0
   languageName: node
   linkType: hard
 
@@ -23916,12 +23915,12 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"pidtree@npm:^0.5.0":
-  version: 0.5.0
-  resolution: "pidtree@npm:0.5.0"
+"pidtree@npm:^0.6.0":
+  version: 0.6.0
+  resolution: "pidtree@npm:0.6.0"
   bin:
     pidtree: bin/pidtree.js
-  checksum: 371cd14bbc9bdee2a6a44596dd521dd3565e223481e0b1afffdca3f1c29831850bfa7784114dc30d245d37e7d186cec035e036256b39f75d878d19498fe0df6a
+  checksum: 8fbc073ede9209dd15e80d616e65eb674986c93be49f42d9ddde8dbbd141bb53d628a7ca4e58ab5c370bb00383f67d75df59a9a226dede8fa801267a7030c27a
   languageName: node
   linkType: hard
 
@@ -27298,7 +27297,7 @@ fsevents@^1.2.7:
     "@proton/stylelint-config-proton": "workspace:packages/stylelint-config-proton"
     husky: ^8.0.1
     is-ci: ^3.0.1
-    lint-staged: ^12.5.0
+    lint-staged: ^13.0.3
     prettier: ^2.7.1
     sort-package-json: ^1.57.0
     typescript: ^4.7.4
@@ -29122,7 +29121,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"supports-color@npm:^9.0.0, supports-color@npm:^9.2.2":
+"supports-color@npm:^9.0.0":
   version: 9.2.2
   resolution: "supports-color@npm:9.2.2"
   checksum: 976d84877402fc38c1d43b1fde20b0a8dc0283273f21cfebe4ff7507d27543cdfbeec7db108a96b82d694465f06d64e8577562b05d0520b41710088e0a33cc50
@@ -32425,6 +32424,13 @@ typescript@^3.9.7:
   version: 1.10.2
   resolution: "yaml@npm:1.10.2"
   checksum: ce4ada136e8a78a0b08dc10b4b900936912d15de59905b2bf415b4d33c63df1d555d23acb2a41b23cf9fb5da41c256441afca3d6509de7247daa062fd2c5ea5f
+  languageName: node
+  linkType: hard
+
+"yaml@npm:^2.1.1":
+  version: 2.1.1
+  resolution: "yaml@npm:2.1.1"
+  checksum: f48bb209918aa57cfaf78ef6448d1a1f8187f45c746f933268b7023dc59e5456004611879126c9bb5ea55b0a2b1c2b392dfde436931ece0c703a3d754562bb96
   languageName: node
   linkType: hard
 
