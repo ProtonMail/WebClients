@@ -1,17 +1,28 @@
 {
-  "printWidth": 120,
-  "arrowParens": "always",
-  "singleQuote": true,
-  "tabWidth": 4,
-  "proseWrap": "never",
-  "overrides": [
-    {
-      "files": "*.scss",
-      "options": {
-        "tabWidth": 2,
-        "useTabs": true,
-        "singleQuote": true
-      }
-    }
-  ]
+    "printWidth": 120,
+    "arrowParens": "always",
+    "singleQuote": true,
+    "tabWidth": 4,
+    "proseWrap": "never",
+    "overrides": [
+        {
+            "files": "*.scss",
+            "options": {
+                "tabWidth": 2,
+                "useTabs": true,
+                "singleQuote": true
+            }
+        }
+    ],
+    "importOrder": [
+        "^react(.*)$",
+        "^react-dom(.*)$",
+        "^react-router-dom(.*)$",
+        "<THIRD_PARTY_MODULES>",
+        "^@proton/(.*)$",
+        "^[./].*(?<!\\.(c|sc)ss)$",
+        "(c|sc)ss$"
+    ],
+    "importOrderSeparation": true,
+    "importOrderSortSpecifiers": true
 }
