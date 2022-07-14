@@ -9,6 +9,10 @@ export interface Props<V> extends Omit<ComponentPropsWithoutRef<'button'>, 'valu
     onChange?: (value: V) => void;
     selected?: boolean;
     active?: boolean;
+    /**
+     * Truncates and adds an ellipsis if the text exceeds the width of the dropdown.
+     */
+    truncate?: boolean;
     title: string;
     disableFocusOnActive?: boolean;
     searchStrings?: string[];
@@ -19,6 +23,7 @@ const Option = <V,>({
     value,
     selected,
     active,
+    truncate,
     onChange,
     title,
     children = title,
@@ -51,7 +56,11 @@ const Option = <V,>({
                 isSelected={selected}
                 onClick={handleClick}
                 title={title}
-                className={classnames(['block w100 text-ellipsis text-left outline-none', active && 'active'])}
+                className={classnames([
+                    'block w100 text-left outline-none',
+                    active && 'active',
+                    truncate && 'text-ellipsis',
+                ])}
                 {...rest}
             >
                 {children}
