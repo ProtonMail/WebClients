@@ -13,7 +13,7 @@ import FileBrowser, {
 } from '../../FileBrowser';
 import { DriveFolder } from '../../../hooks/drive/useActiveShare';
 import EmptyFolder from './EmptyFolder';
-import { ItemContextMenu } from './ItemContextMenu';
+import { DriveItemContextMenu } from './DriveContextMenu';
 import useOpenModal from '../../useOpenModal';
 import { BrowserItemId, FileBrowserBaseItem, ListViewHeaderItem } from '../../FileBrowser/interface';
 import { ModifiedCell, NameCell, SizeCell, ShareOptionsCell } from '../FileBrowser/contentCells';
@@ -163,7 +163,7 @@ function Drive({ activeFolder, folderView }: Props) {
                 open={browserContextMenu.open}
                 position={browserContextMenu.position}
             />
-            <ItemContextMenu
+            <DriveItemContextMenu
                 shareId={shareId}
                 selectedLinks={selectedItems}
                 anchorRef={contextMenuAnchorRef}
