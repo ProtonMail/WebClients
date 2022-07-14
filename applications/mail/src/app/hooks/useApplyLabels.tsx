@@ -1,7 +1,7 @@
 import { Dispatch, SetStateAction, useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 import { c, msgid } from 'ttag';
-import { useApi, useNotifications, useEventManager, useLabels, useMailSettings } from '@proton/components';
+import { useApi, useNotifications, useEventManager, useLabels, useMailSettings, classnames } from '@proton/components';
 import { labelMessages, unlabelMessages } from '@proton/shared/lib/api/messages';
 import { labelConversations, unlabelConversations } from '@proton/shared/lib/api/conversations';
 import { undoActions } from '@proton/shared/lib/api/mailUndoActions';
