@@ -29,7 +29,7 @@ const Addresses = ({ message, messageSendInfo, disabled, onChange, addressesBlur
         cc: ccFocusRef,
     };
 
-    const { onEdit, onGroupDetails } = useContactModals({ onMailTo: noop });
+    const { onEdit, onGroupDetails, modals: contactModals } = useContactModals({ onMailTo: noop });
     const [contactSelectorModal, showContactSelector] = useModalTwo<ContactSelectorProps, Recipient[]>(
         ContactSelectorModal
     );
@@ -119,6 +119,7 @@ const Addresses = ({ message, messageSendInfo, disabled, onChange, addressesBlur
                 />
             )}
             {contactSelectorModal}
+            {contactModals}
         </>
     );
 };
