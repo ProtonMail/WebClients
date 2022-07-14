@@ -1,76 +1,49 @@
-import { ReactNode, useState, HTMLProps } from 'react';
-import { c } from 'ttag';
+import { Children, ElementType, useState } from 'react';
+import { Box, PolymorphicComponentProps } from 'react-polymorphic-box';
 
-import { Tooltip, ButtonLike, Icon } from '@proton/components';
+import { generateUID } from '../../helpers';
+import CollapsibleContext, { CollapsibleContextValue } from './CollapsibleContext';
 
-import { classnames, generateUID } from '../../helpers';
-import { ButtonLikeProps } from '../button';
-
-export interface Props extends HTMLProps<HTMLDivElement> {
-    headerContent: ReactNode;
-    openText?: string;
-    closeText?: string;
+export interface CollapsibleOwnProps {
+    /**
+     * Shows content by default if true.
+     */
     expandByDefault?: boolean;
-    hideButton?: boolean;
-    disableFullWidth?: boolean;
-    buttonLikeProps?: Omit<ButtonLikeProps<'button'>, 'ariaExpanded' | 'ariaControls' | 'icon' | 'type'>;
 }
 
-const Collapsible = ({
-    headerContent,
-    openText = c('Collapsible tooltip').t`Open`,
-    closeText = c('Collapsible tooltip').t`Close`,
+export type CollapsibleProps<E extends ElementType> = PolymorphicComponentProps<E, CollapsibleOwnProps>;
+
+const element = 'div';
+
+const Collapsible = <E extends ElementType = typeof element>({
     expandByDefault = false,
-    hideButton = false,
-    disableFullWidth = false,
-    buttonLikeProps = {},
-    children,
+    children: childrenProp,
     ...rest
-}: Props) => {
-    const [isExpanded, setIsExpanded] = useState<boolean>(expandByDefault);
-    const tooltipText = isExpanded ? closeText : openText;
+}: CollapsibleProps<E>) => {
+    const [isExpanded, setIsExpanded] = useState(expandByDefault);
+    const [header, content] = Children.toArray(childrenProp);
+
     const contentId = generateUID('collapsible');
     const headerId = generateUID('collapsible');
 
-    const { onClick, className: buttonClassName, ...buttonLikePropsRest } = buttonLikeProps;
+    const toggle = () => {
+        setIsExpanded((prevState) => !prevState);
+    };
+
+    const contextValue: CollapsibleContextValue = {
+        isExpanded,
+        toggle,
+        headerId,
+        contentId,
+    };
 
     return (
-        <div {...rest}>
-            <header className="flex flex-nowrap flex-align-items-center">
-                <div
-                    id={headerId}
-                    className={classnames([!disableFullWidth && 'flex-item-fluid'])}
-                    onClick={() => setIsExpanded((prevState) => !prevState)}
-                >
-                    {headerContent}
-                </div>
-                {!hideButton && (
-                    <Tooltip title={tooltipText}>
-                        <ButtonLike
-                            shape="ghost"
-                            color="weak"
-                            {...buttonLikePropsRest}
-                            aria-expanded={isExpanded}
-                            aria-controls={contentId}
-                            icon
-                            type="button"
-                            className={classnames([buttonClassName, 'flex flex-item-noshrink ml0-5'])}
-                            onClick={(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-                                setIsExpanded((prevState) => !prevState);
-                                onClick?.(e);
-                            }}
-                        >
-                            <Icon name="chevron-down" className="caret-like" />
-                            <span className="sr-only">{tooltipText}</span>
-                        </ButtonLike>
-                    </Tooltip>
-                )}
-            </header>
-            <div id={contentId} role="region" aria-labelledby={headerId} hidden={!isExpanded} aria-hidden={!isExpanded}>
-                {children}
-            </div>
-        </div>
+        <CollapsibleContext.Provider value={contextValue}>
+            <Box as={element} {...rest}>
+                {header}
+                {content}
+            </Box>
+        </CollapsibleContext.Provider>
     );
 };
-
 export default Collapsible;

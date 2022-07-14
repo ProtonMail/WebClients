@@ -1,7 +1,7 @@
 import { ElementType } from 'react';
 import { Box, PolymorphicComponentProps } from 'react-polymorphic-box';
 
-import clsx from '../clsx';
+import clsx from '@proton/utils/clsx';
 
 export interface CardOwnProps {
     bordered?: boolean;

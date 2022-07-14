@@ -1,12 +1,55 @@
 import { Canvas, Story, ArgsTable, Primary, PRIMARY_STORY } from '@storybook/addon-docs';
-import { Collapsible } from '@proton/components';
+
+import { Collapsible, CollapsibleHeader, CollapsibleContent } from '@proton/components';
 
 # Collapsible
 
-<Canvas>
+The `Collapsible`, `CollapsibleHeader`, and `CollapsibleContent` components allow showing and hiding sections of related content.
+
+<Canvas withSource="open">
     <Story id="components-collapsible--basic" />
 </Canvas>
 
-<Primary />
+## Default to showing content
+
+Use `expandByDefault` to show content by default.
+
+<Canvas>
+    <Story id="components-collapsible--expanded-by-default" />
+</Canvas>
+
+## Expand button
+
+The `CollapsibleHeader` suffix can be used to render buttons to toggle the collapsible component.
+
+<Canvas>
+    <Story id="components-collapsible--expand-button" />
+</Canvas>
+
+## Tooltip text
+
+The tooltip text can be customised using the `expandText` and `closeText` props.
+
+<Canvas>
+    <Story id="components-collapsible--tooltip-text" />
+</Canvas>
+
+## Full width
+
+By default the header content grows to fill space. This can be disabled using `disableFullWidth`.
+
+<Canvas>
+    <Story id="components-collapsible--full-width" />
+</Canvas>
+
+## Togglable container
+
+By default the header is clickable. This can be disabled using `disableContainerToggle` meaning the only way to toggle the content is by using the icon. It is advised not to set this prop to `true` if there is no expand icon.
+
+<Canvas>
+    <Story id="components-collapsible--togglable-container" />
+</Canvas>
+
+## Props
 
 <ArgsTable story={PRIMARY_STORY} />

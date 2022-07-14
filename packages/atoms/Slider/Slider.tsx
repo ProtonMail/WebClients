@@ -9,12 +9,12 @@ import {
 
 import clamp from '@proton/utils/clamp';
 import percentage from '@proton/utils/percentage';
+import clsx from '@proton/utils/clsx';
 import useSynchronizingState from '@proton/hooks/useSynchronizingState';
 import { useRightToLeft } from '@proton/components/containers/rightToLeft';
 import ButtonLike from '@proton/components/components/button/ButtonLike';
 import Icon from '@proton/components/components/icon/Icon';
 
-import clsx from '../clsx';
 import SliderMark from './SliderMark';
 
 import './Slider.scss';
