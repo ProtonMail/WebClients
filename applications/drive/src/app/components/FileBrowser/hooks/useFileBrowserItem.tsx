@@ -93,16 +93,12 @@ function useFileBrowserItem({
     );
 
     const handleTouchEnd = unlessDisabled(
-        useCallback(
-            (e: React.TouchEvent<HTMLTableRowElement>) => {
-                if (touchStarted.current) {
-                    onItemOpen?.(id);
-                    e.preventDefault();
-                }
-                touchStarted.current = false;
-            },
-            [touchStarted, onItemOpen]
-        )
+        useCallback(() => {
+            if (touchStarted.current) {
+                onItemOpen?.(id);
+            }
+            touchStarted.current = false;
+        }, [touchStarted, onItemOpen])
     );
 
     const onContextMenu = useCallback(
