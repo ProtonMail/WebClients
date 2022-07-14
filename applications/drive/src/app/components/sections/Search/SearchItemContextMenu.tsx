@@ -2,7 +2,7 @@ import { ContextSeparator } from '@proton/components';
 
 import { DecryptedLink } from '../../../store';
 import { ContextMenuProps } from '../../FileBrowser/interface';
-import { ItemContextMenu } from '../Drive/ItemContextMenu';
+import { DriveItemContextMenu } from '../Drive/DriveContextMenu';
 import { GoToParent } from './ContextMenuButtons';
 
 export function SearchItemContextMenu(
@@ -16,13 +16,13 @@ export function SearchItemContextMenu(
     const isOnlyOneItem = selectedLinks.length === 1;
 
     return (
-        <ItemContextMenu {...props}>
+        <DriveItemContextMenu {...props}>
             {isOnlyOneItem && (
                 <>
                     <ContextSeparator />
                     <GoToParent shareId={shareId} parentLinkId={selectedLinks[0].parentLinkId} close={close} />
                 </>
             )}
-        </ItemContextMenu>
+        </DriveItemContextMenu>
     );
 }
