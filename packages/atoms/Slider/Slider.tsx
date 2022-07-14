@@ -20,7 +20,7 @@ import SliderMark from './SliderMark';
 
 import './Slider.scss';
 
-interface SliderProps extends Omit<ComponentPropsWithoutRef<'input'>, 'value' | 'onChange' | 'onInput'> {
+interface SliderProps extends Omit<ComponentPropsWithoutRef<'input'>, 'value' | 'size' | 'onChange' | 'onInput'> {
     /**
      * The current value of the Slider. Allows for external control of the Slider.
      */
