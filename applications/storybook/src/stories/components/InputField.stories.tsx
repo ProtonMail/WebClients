@@ -38,7 +38,7 @@ export const Basic = () => (
     />
 );
 
-const toggles = ['dense', 'bigger', 'disabled'] as const;
+const toggles = ['dense', 'bigger', 'unstyled', 'disabled'] as const;
 
 const adornmentIds = ['none', 'text', 'select', 'icon', 'icons', 'icon button'] as const;
 
