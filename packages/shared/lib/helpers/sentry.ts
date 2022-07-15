@@ -1,5 +1,11 @@
-import * as Sentry from '@sentry/browser';
-import { TransportOptions } from '@sentry/types';
+import { BrowserTransportOptions } from '@sentry/browser/types/transports/types';
+import {
+    captureMessage as sentryCaptureMessage,
+    captureException,
+    configureScope,
+    init,
+    makeFetchTransport,
+} from '@sentry/browser';
 
 import { ProtonConfig } from '../interfaces';
 import { VPN_HOSTNAME } from '../constants';
@@ -53,11 +59,9 @@ const sentryFetch = (input: RequestInfo | URL, init?: RequestInit) => {
     });
 };
 
-class Transport extends Sentry.Transports.FetchTransport {
-    constructor(options: TransportOptions) {
-        super(options, sentryFetch);
-    }
-}
+const makeProtonFetchTransport = (options: BrowserTransportOptions) => {
+    return makeFetchTransport(options, sentryFetch);
+};
 
 interface Arguments {
     sessionTracking?: boolean;
@@ -81,12 +85,12 @@ function main({ config: { SENTRY_DSN, COMMIT, APP_VERSION }, uid, sessionTrackin
     // To get https://111b3eeaaec34cae8e812df705690a36@protonmail.com/api/core/v4/reports/sentry/11
     const dsn = SENTRY_DSN.replace('sentry', `${host}/api/core/v4/reports/sentry`);
 
-    Sentry.init({
+    init({
         dsn,
         release: isProduction(host) ? APP_VERSION : COMMIT,
         environment: host.split('.').splice(1).join('.'),
         normalizeDepth: 5,
-        transport: Transport,
+        transport: makeProtonFetchTransport,
         autoSessionTracking: sessionTracking,
         // Disable client reports. Client reports are used by sentry to retry events that failed to send on visibility change.
         // Unfortunately Sentry does not use the custom transport for those, and thus fails to add the headers the API requires.
@@ -153,20 +157,20 @@ function main({ config: { SENTRY_DSN, COMMIT, APP_VERSION }, uid, sessionTrackin
         ],
     });
 
-    Sentry.configureScope((scope) => {
+    configureScope((scope) => {
         scope.setTag('appVersion', APP_VERSION);
     });
 }
 
-export const traceError = (...args: Parameters<typeof Sentry.captureException>) => {
+export const traceError = (...args: Parameters<typeof captureException>) => {
     if (!isLocalhost(window.location.host)) {
-        Sentry.captureException(...args);
+        captureException(...args);
     }
 };
 
-export const captureMessage = (...args: Parameters<typeof Sentry.captureMessage>) => {
+export const captureMessage = (...args: Parameters<typeof sentryCaptureMessage>) => {
     if (!isLocalhost(window.location.host)) {
-        Sentry.captureMessage(...args);
+        sentryCaptureMessage(...args);
     }
 };
 
