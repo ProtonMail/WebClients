@@ -4,19 +4,16 @@ import { Location } from 'history';
 import { c, msgid } from 'ttag';
 
 import {
-    ButtonLike,
     FeatureCode,
     Href,
     Loader,
-    SettingsLink,
     useFeature,
-    useImporters,
     usePlans,
     useTheme,
     useUser,
     useUserSettings,
 } from '@proton/components';
-import { APPS, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { LabelCount } from '@proton/shared/lib/interfaces/Label';
 import appStore from '@proton/styles/assets/img/illustrations/app-store.svg';
@@ -53,9 +50,7 @@ const WelcomePane = ({ mailSettings, location, labelCount }: Props) => {
     const [plans = [], loadingPlans] = usePlans();
     const [theme] = useTheme();
     const [userSettings, loadingUserSettings] = useUserSettings();
-    const [imports = [], importsLoading] = useImporters();
-    const hasAlreadyImported = imports.length;
-    const loading = importsLoading || loadingUsedMailMobileApp || loadingUser || loadingPlans || loadingUserSettings;
+    const loading = loadingUsedMailMobileApp || loadingUser || loadingPlans || loadingUserSettings;
 
     const unread = labelCount?.Unread || 0;
     const total = labelCount?.Total || 0;
@@ -123,22 +118,6 @@ const WelcomePane = ({ mailSettings, location, labelCount }: Props) => {
                             >
                                 <img className="hauto" src={playStore} alt="Play Store" />
                             </Href>
-                        </div>
-                    </>
-                )}
-                {hasAlreadyImported ? null : (
-                    <>
-                        <div className="mb2 mt2" />
-                        <div className="text-rg">
-                            <ButtonLike
-                                as={SettingsLink}
-                                color="weak"
-                                shape="outline"
-                                path="/easy-switch"
-                                app={APPS.PROTONMAIL}
-                                target="_self"
-                                className="inline-block mtauto"
-                            >{c('Action').t`Import messages`}</ButtonLike>
                         </div>
                     </>
                 )}
