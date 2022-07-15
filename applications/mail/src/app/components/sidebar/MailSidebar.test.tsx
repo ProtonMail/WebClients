@@ -1,6 +1,7 @@
 import { act } from 'react-dom/test-utils';
 
 import { fireEvent } from '@testing-library/dom';
+import { removeItem, setItem } from '@proton/shared/lib/helpers/storage';
 import { Location } from 'history';
 import loudRejection from 'loud-rejection';
 
@@ -43,6 +44,9 @@ const folderMessages = { LabelID: folder.ID, Unread: 1, Total: 2 };
 const labelMessages = { LabelID: label.ID, Unread: 2, Total: 3 };
 
 const setupTest = (labels: any[] = [], messageCounts: any[] = [], conversationCounts: any[] = []) => {
+    // open the more section otherwise it's closed by default
+    setItem('item-display-more-items', 'true');
+
     minimalCache();
     addToCache('Labels', labels);
     addToCache('MessageCounts', messageCounts);
@@ -54,7 +58,12 @@ const setupScheduled = () => {
 };
 
 describe('MailSidebar', () => {
-    afterEach(clearAll);
+    afterEach(() => {
+        clearAll();
+        // We need to remove the item from the localStorage otherwise it will keep the previous state
+        removeItem('item-display-folders');
+        removeItem('item-display-labels');
+    });
 
     it('should show folder tree', async () => {
         setupTest([folder, subfolder]);
