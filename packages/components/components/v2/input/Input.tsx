@@ -44,7 +44,7 @@ const InputTwo = (props: InputTwoProps, ref: Ref<HTMLInputElement>) => {
                 onValue?.(e.target.value);
                 rest.onChange?.(e);
             }}
-            className={classnames(['field-two-input w100', classNameProp])}
+            className="field-two-input w100"
         />
     );
 
@@ -55,6 +55,7 @@ const InputTwo = (props: InputTwoProps, ref: Ref<HTMLInputElement>) => {
                 Boolean(error) && 'error',
                 disabled && 'disabled',
                 unstyled && 'unstyled',
+                classNameProp,
             ])}
             ref={containerRef}
         >
@@ -64,7 +65,7 @@ const InputTwo = (props: InputTwoProps, ref: Ref<HTMLInputElement>) => {
                 </div>
             )}
 
-            <div className="flex-item-fluid">{inputElement}</div>
+            <div className="flex flex-item-fluid">{inputElement}</div>
 
             {suffix && (
                 <div className="field-two-input-adornment mr0-5 flex flex-align-items-center flex-item-noshrink flex-nowrap flex-gap-0-5">
