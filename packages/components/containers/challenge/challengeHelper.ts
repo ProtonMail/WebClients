@@ -2,7 +2,6 @@ import ReactTestUtils from 'react-dom/test-utils';
 import { getBrowserLocale } from '@proton/shared/lib/i18n/helper';
 import { getTimezone } from '@proton/shared/lib/date/timezone';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
-import { Severity } from '@sentry/types';
 
 import { ChallengeLog } from './interface';
 
@@ -99,7 +98,7 @@ export const captureChallengeMessage = (message: string, logs: ChallengeLog[]) =
         return;
     }
     captureMessage(message, {
-        level: Severity.Error,
+        level: 'error',
         extra: {
             logs,
             locale: getBrowserLocale(),
