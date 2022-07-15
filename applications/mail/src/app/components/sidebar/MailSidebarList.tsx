@@ -50,11 +50,15 @@ const MailSidebarList = ({ labelID: currentLabelID }: Props) => {
     const [conversationCounts] = useConversationCounts();
     const [messageCounts] = useMessageCounts();
     const [mailSettings] = useMailSettings();
-    const [displayFolders, toggleFolders] = useLocalState(true, `${user.ID}-display-folders`);
-    const [displayLabels, toggleLabels] = useLocalState(true, `${user.ID}-display-labels`);
-    const [displayMoreItems, toggleDisplayMoreItems] = useLocalState(true, `${user.ID}-display-more-items`);
     const [labels] = useLabels();
     const [folders, loadingFolders] = useFolders();
+    const numFolders = folders?.length || 0;
+    const numLabels = labels?.length || 0;
+    // Use user.ID or item because in the tests user ID is undefined
+    const [displayFolders, toggleFolders] = useLocalState(numFolders > 0, `${user.ID || 'item'}-display-folders`);
+    const [displayLabels, toggleLabels] = useLocalState(numLabels > 0, `${user.ID || 'item'}-display-labels`);
+    const [displayMoreItems, toggleDisplayMoreItems] = useLocalState(false, `${user.ID || 'item'}-display-more-items`);
+
     const { feature: scheduledFeature } = useFeature(FeatureCode.ScheduledSend);
 
     const sidebarRef = useRef<HTMLDivElement>(null);
