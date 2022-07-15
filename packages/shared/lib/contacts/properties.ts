@@ -10,7 +10,8 @@ export const getStringContactValue = (value: ContactValue): string => {
     if (Array.isArray(value)) {
         return getStringContactValue(value[0]);
     }
-    return value;
+    // Shouldnt really happen but some boolean gets there as boolean instead of strings
+    return String(value);
 };
 
 /**
