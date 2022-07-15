@@ -20,7 +20,6 @@ import {
     Row,
     Summary,
     Toggle,
-    Tooltip,
     useNotifications,
 } from '@proton/components';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
@@ -209,23 +208,21 @@ function GeneratedLinkState({
                                     <Label htmlFor="passwordModeToggle">
                                         <span className="mr0-5">{c('Label').t`Protect with password`}</span>
                                     </Label>
-                                    <Tooltip>
-                                        <div className="flex flex-justify-start pt0-5 mr0-5 on-mobile-mr0">
-                                            <Toggle
-                                                id="passwordModeToggle"
-                                                className="on-mobile-mb0-5"
-                                                disabled={saving}
-                                                checked={passwordToggledOn}
-                                                onChange={() => {
-                                                    onIncludePasswordToggle();
-                                                    if (!passwordToggledOn) {
-                                                        setPassword(customPassword);
-                                                    }
-                                                }}
-                                                data-testid="sharing-modal-passwordModeToggle"
-                                            />
-                                        </div>
-                                    </Tooltip>
+                                    <div className="flex flex-justify-start pt0-5 mr0-5 on-mobile-mr0">
+                                        <Toggle
+                                            id="passwordModeToggle"
+                                            className="on-mobile-mb0-5"
+                                            disabled={saving}
+                                            checked={passwordToggledOn}
+                                            onChange={() => {
+                                                onIncludePasswordToggle();
+                                                if (!passwordToggledOn) {
+                                                    setPassword(customPassword);
+                                                }
+                                            }}
+                                            data-testid="sharing-modal-passwordModeToggle"
+                                        />
+                                    </div>
                                     <div className="flex-no-min-children flex-item-fluid on-mobile-mb0-5 field-two-icon-container-empty on-mobile-min-h0">
                                         {passwordToggledOn && (
                                             <>
