@@ -77,6 +77,7 @@ const ToolbarEmojiDropdown = ({ onInsert, openRef }: Props) => {
                 set="native"
                 skinTonePosition="none"
                 previewPosition="none"
+                perLine={8}
             />
         </ToolbarDropdown>
     );
