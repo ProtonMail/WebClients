@@ -1,7 +1,7 @@
 import { useState, useRef, ChangeEvent, MouseEvent, DragEvent, memo, useMemo } from 'react';
 import { classnames, ItemCheckbox } from '@proton/components';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { getRecipients as getMessageRecipients, getSender, isDraft, isSent } from '@proton/shared/lib/mail/messages';
+import { getRecipients as getMessageRecipients, getSender } from '@proton/shared/lib/mail/messages';
 import { MAILBOX_LABEL_IDS, VIEW_MODE } from '@proton/shared/lib/constants';
 import { Label } from '@proton/shared/lib/interfaces/Label';
 import { MailSettings } from '@proton/shared/lib/interfaces';
@@ -65,10 +65,7 @@ const Item = ({
     const useES = dbExists && esEnabled && shouldHighlight();
     const elementRef = useRef<HTMLDivElement>(null);
     const [hasFocus, setHasFocus] = useState(false);
-    const displayRecipients =
-        [SENT, ALL_SENT, DRAFTS, ALL_DRAFTS, SCHEDULED].includes(labelID as MAILBOX_LABEL_IDS) ||
-        isSent(element) ||
-        isDraft(element);
+    const displayRecipients = [SENT, ALL_SENT, DRAFTS, ALL_DRAFTS, SCHEDULED].includes(labelID as MAILBOX_LABEL_IDS);
     const { getRecipientLabel, getRecipientsOrGroups, getRecipientsOrGroupsLabels } = useRecipientLabel();
     const isConversationContentView = mailSettings.ViewMode === VIEW_MODE.GROUP;
     const isSelected =
