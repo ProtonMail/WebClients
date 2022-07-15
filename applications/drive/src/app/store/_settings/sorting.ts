@@ -16,8 +16,10 @@ export const settingsToSortParams: { [key in SortSetting]: UserSortParams } = {
     [SortSetting.SizeDesc]: { sortField: SortField.size, sortOrder: SORT_DIRECTION.DESC },
 };
 
+const DEFAULT_SORT_SETTING = settingsToSortParams[SortSetting.ModifiedDesc];
+
 export const parseSetting = (sortSetting: SortSetting): UserSortParams => {
-    return settingsToSortParams[sortSetting];
+    return settingsToSortParams[sortSetting] || DEFAULT_SORT_SETTING;
 };
 
 export const getSetting = ({ sortField, sortOrder }: UserSortParams): SortSetting | undefined => {
