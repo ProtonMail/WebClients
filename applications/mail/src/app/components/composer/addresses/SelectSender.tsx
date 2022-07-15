@@ -81,7 +81,7 @@ const SelectSender = ({ message, disabled, onChange, onChangeContent, addressesB
         <>
             <SelectTwo
                 disabled={disabled}
-                className="field-lighter select--inline-caret composer-meta-select-sender"
+                className="composer-light-field select--inline-caret composer-meta-select-sender"
                 id={`sender-${uid}`}
                 value={message.data?.Sender?.Address}
                 onChange={handleFromChange}

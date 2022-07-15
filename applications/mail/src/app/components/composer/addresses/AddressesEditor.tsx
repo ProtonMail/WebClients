@@ -48,7 +48,7 @@ const AddressesEditor = ({
                 </Label>
                 <div
                     className={classnames([
-                        'flex flex-nowrap field flex-align-items-center flex-nowrap flex-item-fluid composer-to-editor field-lighter',
+                        'flex flex-nowrap field flex-align-items-center flex-nowrap flex-item-fluid composer-to-editor composer-light-field',
                         expanded ? 'composer-editor-expanded' : 'composer-editor-collapsed',
                     ])}
                     ref={toListAnchorRef}
