@@ -1,3 +1,4 @@
+import { Fragment } from 'react';
 import { ContactEditProps } from '@proton/components/containers/contacts/edit/ContactEditModal';
 import { MapStatusIcons } from '../../../models/crypto';
 import RecipientItem from './RecipientItem';
@@ -23,28 +24,27 @@ const RecipientsList = ({
     isPrintModal,
     onContactDetails,
     onContactEdit,
-}: Props) => {
-    return (
-        <>
-            {recipientsOrGroup.map((recipientOrGroup, index) => (
-                <>
-                    <RecipientItem
-                        key={index} // eslint-disable-line react/no-array-index-key
-                        recipientOrGroup={recipientOrGroup}
-                        mapStatusIcons={mapStatusIcons}
-                        isLoading={isLoading}
-                        showDropdown={showDropdown}
-                        isOutside={isOutside}
-                        isRecipient={true}
-                        isExpanded={true}
-                        onContactDetails={onContactDetails}
-                        onContactEdit={onContactEdit}
-                    />
-                    {isPrintModal && index < recipientsOrGroup.length - 1 && <span>, </span>}
-                </>
-            ))}
-        </>
-    );
-};
+}: Props) => (
+    <Fragment>
+        {recipientsOrGroup.map((recipientOrGroup, index) => (
+            <Fragment
+                key={index} // eslint-disable-line react/no-array-index-key
+            >
+                <RecipientItem
+                    recipientOrGroup={recipientOrGroup}
+                    mapStatusIcons={mapStatusIcons}
+                    isLoading={isLoading}
+                    showDropdown={showDropdown}
+                    isOutside={isOutside}
+                    isRecipient={true}
+                    isExpanded={true}
+                    onContactDetails={onContactDetails}
+                    onContactEdit={onContactEdit}
+                />
+                {isPrintModal && index < recipientsOrGroup.length - 1 && <span>, </span>}
+            </Fragment>
+        ))}
+    </Fragment>
+);
 
 export default RecipientsList;
