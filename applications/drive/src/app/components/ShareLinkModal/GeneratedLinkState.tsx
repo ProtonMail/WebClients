@@ -238,7 +238,7 @@ function GeneratedLinkState({
                                                     error={
                                                         isPasswordInvalid &&
                                                         c('Info')
-                                                            .t`Only ${MAX_CUSTOM_PASSWORD_LENGTH} characters is allowed`
+                                                            .t`Only ${MAX_CUSTOM_PASSWORD_LENGTH} characters are allowed`
                                                     }
                                                     assistiveText={`${password.length}/${MAX_CUSTOM_PASSWORD_LENGTH}`}
                                                     onInput={handleChangePassword}
