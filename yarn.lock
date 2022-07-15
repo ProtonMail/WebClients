@@ -5833,15 +5833,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@transcend-io/conflux@npm:^3.2.3":
-  version: 3.2.3
-  resolution: "@transcend-io/conflux@npm:3.2.3"
+"@transcend-io/conflux@npm:^4.0.2":
+  version: 4.0.2
+  resolution: "@transcend-io/conflux@npm:4.0.2"
   dependencies:
     "@babel/runtime-corejs3": ^7.18.3
     jsbi: ^3.2.5
     pako: ^1.0.11
     web-streams-polyfill: ^3.2.1
-  checksum: 7fbea0a11f4fe0b7669a9b848e762187863882cba8bc80983373e814365daab1b01e9b176685cd14e2b985c5fcaf3f213b78ee4d77026e60674a16da0571a4e0
+  checksum: a1a438deabcfb40afb29bcb9b16e94fd82a97f21dd58add5bbf0766cf237263c566bc9434963df2ac032a6c01e654def8496f41ef82a2e4074da24d40edbb70c
   languageName: node
   linkType: hard
 
@@ -25302,7 +25302,7 @@ fsevents@^1.2.7:
     "@testing-library/jest-dom": ^5.16.4
     "@testing-library/react": ^12.1.5
     "@testing-library/react-hooks": ^8.0.1
-    "@transcend-io/conflux": ^3.2.3
+    "@transcend-io/conflux": ^4.0.2
     "@types/mime-types": ^2.1.1
     "@types/react": ^17.0.47
     "@types/react-dom": ^17.0.17
