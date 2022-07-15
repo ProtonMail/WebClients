@@ -29,6 +29,7 @@ const Option = <V,>({
     children = title,
     disableFocusOnActive,
     searchStrings,
+    className,
     ...rest
 }: Props<V>) => {
     const ref = useRef<HTMLButtonElement | null>(null);
@@ -57,6 +58,7 @@ const Option = <V,>({
                 onClick={handleClick}
                 title={title}
                 className={classnames([
+                    className,
                     'block w100 text-left outline-none',
                     active && 'active',
                     truncate && 'text-ellipsis',
