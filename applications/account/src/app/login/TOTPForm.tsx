@@ -13,19 +13,19 @@ const TOTPForm = ({ onSubmit }: Props) => {
     const [loading, withLoading] = useLoading();
     const [totp, setTotp] = useState('');
     const [isTotpRecovery, setIsRecovery] = useState(false);
-    const hasBeenSubmitted = useRef(false);
+    const hasBeenAutoSubmitted = useRef(false);
 
     const { validator, onFormSubmit } = useFormErrors();
 
     useEffect(() => {
-        if (isTotpRecovery || loading || validator([requiredValidator(totp)]) || hasBeenSubmitted.current) {
+        if (isTotpRecovery || loading || validator([requiredValidator(totp)]) || hasBeenAutoSubmitted.current) {
             return;
         }
 
         // Auto-submit the form once the user has entered the TOTP
         if (totp.length === 6) {
             // Do it just one time
-            hasBeenSubmitted.current = true;
+            hasBeenAutoSubmitted.current = true;
             withLoading(onSubmit(totp)).catch(noop);
         }
     }, [totp]);
