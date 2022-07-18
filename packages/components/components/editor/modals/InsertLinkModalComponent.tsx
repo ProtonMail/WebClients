@@ -121,6 +121,7 @@ const InsertLinkModalComponent = ({
                                     placeholder={i18n[type].placeholder}
                                     required
                                     autoFocus
+                                    title={c('Info').t`Please fill out this field.`}
                                 />
                             </Field>
                         </Row>
@@ -140,6 +141,7 @@ const InsertLinkModalComponent = ({
                                         }
                                         placeholder={c('Placeholder').t`Text`}
                                         required={!hasOnlyImageInSelection}
+                                        title={c('Info').t`Please fill out this field.`}
                                     />
                                 </Field>
                             </Row>
