@@ -593,11 +593,13 @@ export const getSupportedEventInvitation = async ({
     message,
     icsBinaryString,
     icsFileName,
+    primaryTimezone,
 }: {
     vcalComponent: VcalVcalendar;
     message: Message;
     icsBinaryString: string;
     icsFileName: string;
+    primaryTimezone: string;
 }): Promise<EventInvitation | undefined> => {
     const { calscale, 'x-wr-timezone': xWrTimezone, method } = vcalComponent;
     const supportedMethod = getIcalMethod(method);
@@ -641,7 +643,12 @@ export const getSupportedEventInvitation = async ({
     const calendarTzid = xWrTimezone ? getSupportedTimezone(xWrTimezone.value) : undefined;
     // At this stage, vtimezone did not undergo any surgery and might lack the RFC-mandatory TZID
     const invitationTzid = vtimezone?.tzid?.value;
-    const guessTzid = invitationTzid ? getSupportedTimezone(invitationTzid) : undefined;
+    const guessTzid = (() => {
+        if (!invitationTzid) {
+            return isImport ? primaryTimezone : undefined;
+        }
+        return getSupportedTimezone(invitationTzid);
+    })();
     try {
         const supportedEvent = getSupportedEvent({
             method: supportedMethod,
