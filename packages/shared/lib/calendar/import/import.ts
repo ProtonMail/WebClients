@@ -8,11 +8,11 @@ import { getSupportedTimezone, toUTCDate } from '../../date/timezone';
 
 import { readFileAsString } from '../../helpers/file';
 import { dateLocale } from '../../i18n';
-import { Api } from '../../interfaces';
+import { Api, SimpleMap } from '../../interfaces';
 import {
-    CalendarEvent,
-    EncryptedEvent,
+    CalendarEventWithMetadata,
     ImportCalendarModel,
+    ImportedEvent,
     VcalCalendarComponentOrError,
     VcalVeventComponent,
     VcalVtimezoneComponent,
@@ -125,13 +125,13 @@ const extractGuessTzid = (components: VcalCalendarComponentOrError[]) => {
     }
 };
 
-interface GetSupportedEventArgs {
+interface ExtractSupportedEventArgs {
     method: ICAL_METHOD;
     vcalComponent: VcalCalendarComponentOrError;
     hasXWrTimezone: boolean;
     formatOptions?: FormatOptions;
     calendarTzid?: string;
-    guessTzid?: string;
+    guessTzid: string;
 }
 export const extractSupportedEvent = async ({
     method,
@@ -140,7 +140,7 @@ export const extractSupportedEvent = async ({
     formatOptions,
     calendarTzid,
     guessTzid,
-}: GetSupportedEventArgs) => {
+}: ExtractSupportedEventArgs) => {
     const componentId = getComponentIdentifier(vcalComponent, formatOptions);
     const isInvitation = method !== ICAL_METHOD.PUBLISH;
     if (getParsedComponentHasError(vcalComponent)) {
@@ -172,6 +172,7 @@ export const extractSupportedEvent = async ({
     if (generateHashUid) {
         validVevent.uid = { value: await generateVeventHashUID(serialize(vcalComponent), vcalComponent?.uid?.value) };
     }
+
     return getSupportedEvent({
         vcalVeventComponent: validVevent,
         hasXWrTimezone,
@@ -190,19 +191,21 @@ export const getSupportedEvents = async ({
     formatOptions,
     calscale,
     xWrTimezone,
+    primaryTimezone,
 }: {
     components: VcalCalendarComponentOrError[];
     method: ICAL_METHOD;
     formatOptions?: FormatOptions;
     calscale?: string;
     xWrTimezone?: string;
+    primaryTimezone: string;
 }) => {
     if (calscale?.toLowerCase() !== 'gregorian') {
         return [new ImportEventError(IMPORT_EVENT_ERROR_TYPE.NON_GREGORIAN, 'vcalendar', '')];
     }
     const hasXWrTimezone = !!xWrTimezone;
     const calendarTzid = xWrTimezone ? getSupportedTimezone(xWrTimezone) : undefined;
-    const guessTzid = extractGuessTzid(components);
+    const guessTzid = extractGuessTzid(components) || primaryTimezone;
     const supportedEvents = await Promise.all(
         components.map(async (vcalComponent) => {
             try {
@@ -279,7 +282,7 @@ export const splitHiddenErrors = (errors: ImportEventError[]) => {
 
 const getParentEventFromApi = async (uid: string, api: Api, calendarId: string) => {
     try {
-        const { Events } = await api<{ Events: CalendarEvent[] }>({
+        const { Events } = await api<{ Events: CalendarEventWithMetadata[] }>({
             ...getEventByUID({
                 UID: uid,
                 Page: 0,
@@ -296,7 +299,10 @@ const getParentEventFromApi = async (uid: string, api: Api, calendarId: string) 
             // it wouldn't be a parent then
             return;
         }
-        return parentComponent;
+        return {
+            vcalComponent: parentComponent,
+            calendarEvent: parentEvent,
+        };
     } catch {
         return undefined;
     }
@@ -304,7 +310,7 @@ const getParentEventFromApi = async (uid: string, api: Api, calendarId: string) 
 
 interface GetSupportedEventsWithRecurrenceIdArgs {
     eventsWithRecurrenceId: (VcalVeventComponent & Required<Pick<VcalVeventComponent, 'recurrence-id'>>)[];
-    parentEvents: EncryptedEvent[];
+    parentEvents: ImportedEvent[];
     calendarId: string;
     api: Api;
 }
@@ -315,11 +321,17 @@ export const getSupportedEventsWithRecurrenceId = async ({
     api,
 }: GetSupportedEventsWithRecurrenceIdArgs) => {
     // map uid -> parent event
-    const mapParentEvents = parentEvents.reduce<{
-        [key: string]: VcalVeventComponent | undefined;
-    }>((acc, event) => {
-        const { component } = event;
-        acc[component.uid.value] = component;
+    const mapParentEvents = parentEvents.reduce<
+        SimpleMap<{
+            vcalComponent: VcalVeventComponent;
+            calendarEvent: CalendarEventWithMetadata;
+        }>
+    >((acc, event) => {
+        acc[event.component.uid.value] = {
+            vcalComponent: event.component,
+            calendarEvent: event.response.Response.Event,
+        };
+
         return acc;
     }, {});
     // complete the map with parent events in the DB
@@ -334,21 +346,22 @@ export const getSupportedEventsWithRecurrenceId = async ({
     return eventsWithRecurrenceId.map((event) => {
         const uid = event.uid.value;
         const componentId = getComponentIdentifier(event);
-        if (!mapParentEvents[uid]) {
+        const parentEvent = mapParentEvents[uid];
+        if (!parentEvent) {
             return new ImportEventError(IMPORT_EVENT_ERROR_TYPE.PARENT_EVENT_MISSING, 'vevent', componentId);
         }
-        const parentEvent = mapParentEvents[uid] as VcalVeventComponent;
-        if (!parentEvent.rrule) {
+        const parentComponent = parentEvent.vcalComponent;
+        if (!parentComponent.rrule) {
             return new ImportEventError(IMPORT_EVENT_ERROR_TYPE.SINGLE_EDIT_UNSUPPORTED, 'vevent', componentId);
         }
         const recurrenceId = event['recurrence-id'];
         try {
-            const parentDtstart = parentEvent.dtstart;
+            const parentDtstart = parentComponent.dtstart;
             const supportedRecurrenceId = getLinkedDateTimeProperty({
                 property: recurrenceId,
                 component: 'vevent',
-                isAllDay: getIsPropertyAllDay(parentDtstart),
-                tzid: getPropertyTzid(parentDtstart),
+                linkedIsAllDay: getIsPropertyAllDay(parentDtstart),
+                linkedTzid: getPropertyTzid(parentDtstart),
                 componentId,
             });
             return { ...event, 'recurrence-id': supportedRecurrenceId };
