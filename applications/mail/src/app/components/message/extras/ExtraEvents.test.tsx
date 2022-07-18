@@ -3,6 +3,7 @@ import userEvent from '@testing-library/user-event';
 import { concatArrays } from 'pmcrypto';
 
 import { useGetVtimezonesMap } from '@proton/components/hooks/useGetVtimezonesMap';
+import { useCalendarUserSettings } from '@proton/components/hooks/useCalendarUserSettings';
 
 import { generateAttendeeToken } from '@proton/shared/lib/calendar/attendees';
 import {
@@ -50,6 +51,10 @@ jest.mock('@proton/components/hooks/useSendIcs', () => {
         default: jest.fn(() => () => Promise.resolve(undefined)),
     };
 });
+jest.mock('@proton/components/hooks/useCalendarUserSettings', () => ({
+    ...jest.requireActual('@proton/components/hooks/useCalendarUserSettings'),
+    useCalendarUserSettings: jest.fn(),
+}));
 jest.mock('@proton/components/hooks/useGetVtimezonesMap');
 
 const nextYear = new Date().getFullYear() + 1;
@@ -274,6 +279,8 @@ const getSetup = async ({
 describe('ICS widget', () => {
     beforeEach(() => {
         jest.spyOn(inviteApi, 'createCalendarEventFromInvitation');
+        // @ts-ignore
+        useCalendarUserSettings.mockReturnValue([{}, false]);
     });
 
     afterEach(clearAll);

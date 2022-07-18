@@ -1,4 +1,5 @@
 import { ICAL_ATTENDEE_RSVP, ICAL_ATTENDEE_STATUS, ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
+import { generateVeventHashUID } from '@proton/shared/lib/calendar/helper';
 import {
     EVENT_INVITATION_ERROR_TYPE,
     EventInvitationError,
@@ -124,6 +125,7 @@ END:VCALENDAR`;
                 message,
                 icsBinaryString: invitation,
                 icsFileName: 'test.ics',
+                primaryTimezone: 'America/Sao_Paulo',
             })
         ).toMatchObject({
             method: 'REQUEST',
@@ -205,6 +207,7 @@ END:VCALENDAR`;
                 message,
                 icsBinaryString: invitation,
                 icsFileName: 'test.ics',
+                primaryTimezone: 'America/Sao_Paulo',
             })
         ).rejects.toMatchObject(
             new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_INVALID, { method: ICAL_METHOD.REQUEST })
@@ -241,6 +244,7 @@ END:VCALENDAR`;
                 message,
                 icsBinaryString: invitation,
                 icsFileName: 'test.ics',
+                primaryTimezone: 'America/Sao_Paulo',
             })
         ).rejects.toMatchObject(
             new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_INVALID, { method: ICAL_METHOD.REQUEST })
@@ -283,6 +287,7 @@ END:VCALENDAR`;
                 message,
                 icsBinaryString: invitation,
                 icsFileName: 'test.ics',
+                primaryTimezone: 'America/Sao_Paulo',
             })
         ).toMatchObject({
             method: 'PUBLISH',
@@ -330,6 +335,7 @@ END:VCALENDAR`;
                 message,
                 icsBinaryString: invitation,
                 icsFileName: 'test.ics',
+                primaryTimezone: 'America/Sao_Paulo',
             })
         ).resolves.not.toThrow();
     });
@@ -364,6 +370,7 @@ END:VCALENDAR`;
                 message,
                 icsBinaryString: invitation,
                 icsFileName: 'test.ics',
+                primaryTimezone: 'America/Sao_Paulo',
             })
         ).rejects.toMatchObject(
             new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_UNSUPPORTED, {
@@ -440,6 +447,7 @@ END:VCALENDAR`;
                 message,
                 icsBinaryString: invitation,
                 icsFileName: 'test.ics',
+                primaryTimezone: 'America/Sao_Paulo',
             })
         ).resolves.not.toThrow();
     });
@@ -479,6 +487,7 @@ END:VCALENDAR`;
                 message,
                 icsBinaryString: invitation,
                 icsFileName: 'test.ics',
+                primaryTimezone: 'America/Sao_Paulo',
             })
         ).toMatchObject({
             method: 'REQUEST',
@@ -524,15 +533,17 @@ END:VCALENDAR`;
     });
 });
 
-describe('getSupportedEventInvitation should guess a timezone to localize floating dates', () => {
+describe('getSupportedEventInvitation should guess a timezone to localize floating dates for invites', () => {
     const generateVcalSetup = ({
         method = ICAL_METHOD.REQUEST,
+        primaryTimezone = 'Asia/Seoul',
         xWrTimezone = '',
         vtimezonesTzids = [],
     }: {
         method?: ICAL_METHOD;
         xWrTimezone?: string;
         vtimezonesTzids?: string[];
+        primaryTimezone?: string;
     }) => {
         const xWrTimezoneString = xWrTimezone ? `X-WR-TIMEZONE:${xWrTimezone}` : '';
         const vtimezonesString = vtimezonesTzids
@@ -568,6 +579,7 @@ END:VCALENDAR`;
             message: { Time: Math.round(Date.now() / 1000) } as Message,
             icsBinaryString: vcal,
             icsFileName: 'test.ics',
+            primaryTimezone,
         };
     };
     const localizedVevent = (tzid: string) => ({
@@ -662,5 +674,127 @@ END:VCALENDAR`;
                 })
             )
         ).rejects.toThrowError('Unsupported response');
+    });
+});
+
+describe('getSupportedEventInvitation should guess a timezone to localize floating dates for invites for import PUBLISH', () => {
+    const generateVcalSetup = async ({
+        method = ICAL_METHOD.PUBLISH,
+        xWrTimezone = '',
+        vtimezonesTzids = [],
+        primaryTimezone,
+        uid = 'BA3017ED-889A-4BCB-B9CB-11CE30586021',
+    }: {
+        method?: ICAL_METHOD;
+        xWrTimezone?: string;
+        vtimezonesTzids?: string[];
+        primaryTimezone: string;
+        uid?: string;
+    }) => {
+        const xWrTimezoneString = xWrTimezone ? `X-WR-TIMEZONE:${xWrTimezone}` : '';
+        const vtimezonesString = vtimezonesTzids
+            .map(
+                (tzid) => `BEGIN:VTIMEZONE
+TZID:${tzid}
+END:VTIMEZONE`
+            )
+            .join('\n');
+        const vcal = `BEGIN:VCALENDAR
+CALSCALE:GREGORIAN
+VERSION:2.0
+METHOD:${method}
+${xWrTimezoneString}
+${vtimezonesString}
+BEGIN:VEVENT
+ATTENDEE;CUTYPE=INDIVIDUAL;EMAIL="testme@pm.me";PARTSTAT=NEED
+ S-ACTION;RSVP=TRUE:mailto:testme@pm.me
+ATTENDEE;CN="testKrt";CUTYPE=INDIVIDUAL;EMAIL="aGmailOne@gmail.co
+ m";PARTSTAT=ACCEPTED;ROLE=CHAIR:mailto:aGmailOne@gmail.com
+DTSTART:20200915T090000
+DTEND:20200915T100000
+ORGANIZER;CN="testKrt":mailto:aGmailOne@gmail.com
+UID:${uid}
+DTSTAMP:20200821T081914Z
+SEQUENCE:1
+SUMMARY:Floating date-time
+RRULE:FREQ=DAILY;INTERVAL=2;COUNT=5
+END:VEVENT
+END:VCALENDAR`;
+        const parsedVcal = parse(vcal) as VcalVcalendar;
+
+        return {
+            vcalComponent: parsedVcal,
+            message: { Time: Math.round(Date.now() / 1000) } as Message,
+            icsBinaryString: vcal,
+            icsFileName: 'test.ics',
+            primaryTimezone,
+            hashUid: await generateVeventHashUID(vcal, uid),
+        };
+    };
+    const localizedVevent = (tzid: string, hashUid: string) => ({
+        component: 'vevent',
+        uid: { value: hashUid },
+        dtstamp: {
+            value: { year: 2020, month: 8, day: 21, hours: 8, minutes: 19, seconds: 14, isUTC: true },
+        },
+        dtstart: {
+            value: { year: 2020, month: 9, day: 15, hours: 9, minutes: 0, seconds: 0, isUTC: false },
+            parameters: { tzid },
+        },
+        dtend: {
+            value: { year: 2020, month: 9, day: 15, hours: 10, minutes: 0, seconds: 0, isUTC: false },
+            parameters: { tzid },
+        },
+        summary: { value: 'Floating date-time' },
+        sequence: { value: 1 },
+        rrule: { value: { freq: 'DAILY', interval: 2, count: 5 } },
+    });
+
+    test('when there is both x-wr-timezone and single vtimezone (use x-wr-timezone)', async () => {
+        const setup = await generateVcalSetup({
+            primaryTimezone: 'Asia/Seoul',
+            xWrTimezone: 'Europe/Brussels',
+            vtimezonesTzids: ['America/New_York'],
+        });
+        const { vevent } = (await getSupportedEventInvitation(setup)) || {};
+        expect(vevent).toEqual(localizedVevent('Europe/Brussels', setup.hashUid));
+    });
+
+    test('when there is a single vtimezone and no x-wr-timezone', async () => {
+        const setup = await generateVcalSetup({
+            primaryTimezone: 'Asia/Seoul',
+            vtimezonesTzids: ['Europe/Vilnius'],
+        });
+        const { vevent } = (await getSupportedEventInvitation(setup)) || {};
+        expect(vevent).toEqual(localizedVevent('Europe/Vilnius', setup.hashUid));
+    });
+
+    test('when there is a single vtimezone and x-wr-timezone is not supported', async () => {
+        await expect(
+            getSupportedEventInvitation(
+                await generateVcalSetup({
+                    primaryTimezone: 'Asia/Seoul',
+                    xWrTimezone: 'Moon/Tranquility',
+                    vtimezonesTzids: ['Europe/Vilnius'],
+                })
+            )
+        ).rejects.toThrowError('Unsupported event');
+    });
+
+    test('when there is no vtimezone nor x-wr-timezone (use primary time zone)', async () => {
+        const setup = await generateVcalSetup({
+            primaryTimezone: 'Asia/Seoul',
+        });
+        const { vevent } = (await getSupportedEventInvitation(setup)) || {};
+        expect(vevent).toEqual(localizedVevent('Asia/Seoul', setup.hashUid));
+    });
+
+    test('when there is no x-wr-timezone and more than one vtimezone (use primary time zone)', async () => {
+        const setup = await generateVcalSetup({
+            primaryTimezone: 'Asia/Seoul',
+            vtimezonesTzids: ['Europe/Vilnius', 'America/New_York'],
+        });
+        const { vevent } = (await getSupportedEventInvitation(setup)) || {};
+        expect(vevent).toEqual(localizedVevent('Asia/Seoul', setup.hashUid));
     });
 });
