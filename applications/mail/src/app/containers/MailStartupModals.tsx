@@ -5,17 +5,13 @@ import {
     RebrandingFeedbackModal,
     ReferralModal,
     V5WelcomeModal,
-    getShouldOpenMnemonicModal,
     getShouldOpenReferralModal,
-    useAddresses,
     useFeature,
     useModalState,
     useRebrandingFeedback,
     useShouldOpenV5WelcomeModal,
     useSubscription,
-    useUser,
 } from '@proton/components';
-import { MnemonicPromptModal } from '@proton/components/containers/mnemonic';
 import { APPS } from '@proton/shared/lib/constants';
 
 import MailOnboardingModal from '../components/onboarding/MailOnboardingModal';
@@ -30,18 +26,6 @@ const MailStartupModals = ({ onboardingOpen, onOnboardingDone }: Props) => {
 
     // Onboarding modal
     const [onboardingModal, setOnboardingModal, renderOnboardingModal] = useModalState();
-
-    // Mnemonic modal
-    const [user] = useUser();
-    const [addresses] = useAddresses();
-    const seenMnemonicFeature = useFeature<boolean>(FeatureCode.SeenMnemonicPrompt);
-    const [mnemonicPromptModal, setMnemonicPromptModalOpen, renderMnemonicModal] = useModalState();
-    const shouldOpenMnemonicModal = getShouldOpenMnemonicModal({
-        user,
-        addresses,
-        feature: seenMnemonicFeature.feature,
-        app,
-    });
 
     // Referral modal
     const [subscription] = useSubscription();
@@ -69,8 +53,6 @@ const MailStartupModals = ({ onboardingOpen, onOnboardingDone }: Props) => {
 
         if (onboardingOpen) {
             openModal(setOnboardingModal);
-        } else if (shouldOpenMnemonicModal) {
-            openModal(setMnemonicPromptModalOpen);
         } else if (shouldOpenReferralModal.open) {
             openModal(setReferralModal);
         } else if (shouldOpenV5WelcomeModal) {
@@ -78,12 +60,7 @@ const MailStartupModals = ({ onboardingOpen, onOnboardingDone }: Props) => {
         } else if (handleRebrandingFeedbackModalDisplay) {
             openModal(setRebrandingFeedbackModal);
         }
-    }, [
-        shouldOpenMnemonicModal,
-        shouldOpenReferralModal.open,
-        shouldOpenV5WelcomeModal,
-        handleRebrandingFeedbackModalDisplay,
-    ]);
+    }, [shouldOpenReferralModal.open, shouldOpenV5WelcomeModal, handleRebrandingFeedbackModalDisplay]);
 
     return (
         <>
@@ -98,7 +75,6 @@ const MailStartupModals = ({ onboardingOpen, onOnboardingDone }: Props) => {
                 />
             )}
             {renderReferralModal && <ReferralModal endDate={shouldOpenReferralModal.endDate} {...referralModal} />}
-            {renderMnemonicModal && <MnemonicPromptModal {...mnemonicPromptModal} />}
             {renderV5WelcomeModal && <V5WelcomeModal app={app} {...v5WelcomeModal} />}
             {renderRebrandingFeedbackModal && (
                 <RebrandingFeedbackModal onMount={handleRebrandingFeedbackModalDisplay} {...rebrandingFeedbackModal} />
