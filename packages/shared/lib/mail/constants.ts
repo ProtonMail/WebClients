@@ -36,3 +36,7 @@ export const SIGNATURE_START = {
     USER: 1546300800,
     BULK: Infinity,
 };
+
+export enum BLOCK_SENDER_CONFIRMATION {
+    DO_NOT_ASK = 1,
+}

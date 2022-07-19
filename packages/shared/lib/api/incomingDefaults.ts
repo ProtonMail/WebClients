@@ -8,7 +8,7 @@ export const getIncomingDefaults = ({
     Page?: number;
     PageSize?: number;
     Keyword?: string;
-}) => ({
+} = {}) => ({
     method: 'get',
     url: 'mail/v4/incomingdefaults',
     params: { Location, Page, PageSize, Keyword },

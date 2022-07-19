@@ -4,6 +4,7 @@ import attachments from './attachments/attachmentsSlice';
 import contacts from './contacts/contactsSlice';
 import conversations from './conversations/conversationsSlice';
 import elements from './elements/elementsSlice';
+import incomingDefaults from './incomingDefaults/incomingDefaultsSlice';
 import messages from './messages/messagesSlice';
 
 export const store = configureStore({
@@ -13,6 +14,7 @@ export const store = configureStore({
         attachments,
         messages,
         contacts,
+        incomingDefaults,
     },
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware({

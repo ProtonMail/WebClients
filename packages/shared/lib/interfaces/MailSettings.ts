@@ -1,4 +1,5 @@
 import { DRAFT_MIME_TYPES, PACKAGE_TYPE } from '../constants';
+import { BLOCK_SENDER_CONFIRMATION } from '../mail/constants';
 
 export interface AutoResponder {
     StartTime: number;
@@ -56,4 +57,5 @@ export interface MailSettings {
     FontFace: string | null;
     FontSize: number | null;
     SpamAction: SpamAction | null;
+    BlockSenderConfirmation: BLOCK_SENDER_CONFIRMATION | null;
 }

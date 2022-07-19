@@ -19,6 +19,8 @@ import { MailUrlParams } from '../helpers/mailboxUrl';
 import { useContactsListener } from '../hooks/contact/useContactsListener';
 import { useConversationsEvent } from '../hooks/events/useConversationsEvents';
 import { useMessagesEvents } from '../hooks/events/useMessagesEvents';
+import useIncomingDefaultsEvents from '../hooks/incomingDefaults/useIncomingDefaultsEvents';
+import useIncomingDefaultsLoad from '../hooks/incomingDefaults/useIncomingDefaultsLoad';
 import { usePageHotkeys } from '../hooks/mailbox/usePageHotkeys';
 import { useDeepMemo } from '../hooks/useDeepMemo';
 import { Breakpoints } from '../models/utils';
@@ -43,6 +45,14 @@ const PageContainer = (
     useContactsListener();
     useConversationsEvent();
     useMessagesEvents();
+
+    /**
+     * Incoming defaults
+     * - cache loading
+     * - events subscription
+     */
+    useIncomingDefaultsLoad();
+    useIncomingDefaultsEvents();
 
     usePageHotkeys({ onOpenShortcutsModal: () => setMailShortcutsModalOpen(true) });
 
