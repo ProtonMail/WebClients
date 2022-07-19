@@ -5,6 +5,7 @@ import { getMessageHasData } from '../../../helpers/message/messages';
 import { MessageState } from '../../../logic/messages/messagesTypes';
 import ExtraAskResign from '../extras/ExtraAskResign';
 import ExtraAutoReply from '../extras/ExtraAutoReply';
+import ExtraBlockedSender from '../extras/ExtraBlockedSender';
 import ExtraDarkStyle from '../extras/ExtraDarkStyle';
 import ExtraDecryptedSubject from '../extras/ExtraDecryptedSubject';
 import ExtraErrors from '../extras/ExtraErrors';
@@ -53,6 +54,7 @@ const HeaderExtra = ({
             <ExtraErrors message={message} />
             <ExtraAutoReply message={message.data} />
             <ExtraUnsubscribe message={message.data} />
+            <ExtraBlockedSender message={message} />
             {message.verification && <ExtraPinKey message={message.data} messageVerification={message.verification} />}
             <ExtraAskResign
                 message={message.data}
