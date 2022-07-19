@@ -5,8 +5,6 @@ import { Plan, PlanIDs, Currency, PlansMap } from '@proton/shared/lib/interfaces
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { getSupportedAddons } from '@proton/shared/lib/helpers/planIDs';
 
-import './SubscriptionCycleSelector.scss';
-
 import { Option, Price, Radio, SelectTwo } from '../../../components';
 
 import { classnames } from '../../../helpers';
@@ -108,7 +106,6 @@ const SubscriptionCycleSelector = ({
                 label={c('Label').t`Billing cycle`}
                 as={SelectTwo}
                 bigger
-                className="billing-cycle-item"
                 value={cycleSelected}
                 onValue={(value: any) => onChangeCycle(value)}
                 assistiveText={
@@ -119,10 +116,15 @@ const SubscriptionCycleSelector = ({
             >
                 {cycles.map((cycle) => {
                     return (
-                        <Option value={cycle} title={getText(cycle)} key={cycle} className="billing-cycle-item">
+                        <Option value={cycle} title={getText(cycle)} key={cycle}>
                             <div className="flex flex-justify-space-between">
                                 <span className="flex-item-noshrink">{getText(cycle)}</span>
-                                <span className="discount flex-item-noshrink">
+                                <span
+                                    className={classnames([
+                                        'flex-item-noshrink',
+                                        cycle !== cycleSelected && 'color-success',
+                                    ])}
+                                >
                                     {getDiscountPrice(totals[cycle].discount)}
                                 </span>
                             </div>

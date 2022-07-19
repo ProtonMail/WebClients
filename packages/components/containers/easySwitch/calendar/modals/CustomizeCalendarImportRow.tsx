@@ -72,6 +72,7 @@ const CustomizeCalendarImportRow = ({
                                     key={calendarToBeCreatedValue}
                                     value={calendarToBeCreatedValue}
                                     title={calendar.Source}
+                                    truncate
                                 />,
 
                                 <hr key="separator" className="mt0-5 mb0-5" />,
