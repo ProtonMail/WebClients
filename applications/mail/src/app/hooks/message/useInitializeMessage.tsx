@@ -6,7 +6,6 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 import { useDispatch } from 'react-redux';
 import { DecryptResultPmcrypto } from 'pmcrypto';
 import { PayloadAction } from '@reduxjs/toolkit';
-import { extractContentValue } from '@proton/shared/lib/mail/send/helpers';
 import { loadMessage } from '../../helpers/message/messageRead';
 import { useGetMessageKeys } from './useGetMessageKeys';
 import { decryptMessage } from '../../helpers/message/messageDecrypt';
@@ -41,6 +40,7 @@ import {
 } from '../../logic/messages/images/messagesImagesActions';
 import { useGetAttachment } from '../useAttachment';
 import { updateAttachment } from '../../logic/attachments/attachmentsActions';
+import { getPureAttachments } from '../../helpers/attachment/attachment';
 
 export const useInitializeMessage = (localID: string, labelID?: string) => {
     const api = useApi();
@@ -95,20 +95,24 @@ export const useInitializeMessage = (localID: string, labelID?: string) => {
             const mimeAttachments = decryption.attachments || [];
 
             // Get Pure Mime Attachments to prevent display of embedded images in the attachment list
-            const pureMimeAttachments = mimeAttachments.filter(({ Headers }) => {
-                // If the attachment disposition is inline and has the header content-id it's an embedded image
-                if (Headers) {
-                    const contentDisposition = extractContentValue(Headers['content-disposition']);
-                    return Headers && !(contentDisposition === 'inline' && 'content-id' in Headers);
-                }
-                return true;
-            });
+            const pureMimeAttachments = getPureAttachments(mimeAttachments);
+
+            // The backend is supposed to filter embedded images,
+            // but we sometimes we receive messages with a NumAttachment = 0 which contains pure attachments,
+            // This leads to hide the attachment list, and the user is not able to see the message attachments
+            // We are doing an additional verification to update NumAttachments if needed
+            const pureAttachments = getPureAttachments(getData().Attachments);
+
+            // If we calculate a different NumAttachments than the one received,
+            // we need to update the message to display the attachment list
+            const numAttachments =
+                pureAttachments.length !== getData().NumAttachments ? pureAttachments.length : getData().NumAttachments;
 
             const allAttachments = [...getData().Attachments, ...mimeAttachments];
             dataChanges = {
                 ...dataChanges,
                 Attachments: allAttachments,
-                NumAttachments: getData().NumAttachments + pureMimeAttachments.length,
+                NumAttachments: numAttachments + pureMimeAttachments.length,
             };
 
             if (decryption.errors) {
