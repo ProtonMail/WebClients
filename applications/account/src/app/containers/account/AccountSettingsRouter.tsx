@@ -1,4 +1,4 @@
-import { ReactNode, useEffect } from 'react';
+import { ReactNode } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { c } from 'ttag';
 
@@ -12,7 +12,6 @@ import {
     DataRecoverySection,
     DeleteSection,
     EmailSubscriptionSection,
-    FeatureCode,
     GiftCodeSection,
     ImportListSection,
     InvoicesSection,
@@ -24,7 +23,6 @@ import {
     PlansSection,
     PrivateMainSettingsArea,
     SessionsSection,
-    useFeature,
     UsernameSection,
     YourPlanSection,
     SubscriptionModalProvider,
@@ -38,20 +36,6 @@ import { getIsSectionAvailable, getSectionPath } from '@proton/components/contai
 
 import { getAccountAppRoutes } from './routes';
 import { recoveryIds } from './recoveryIds';
-
-const RecoverySettingsPageVisited = () => {
-    const { feature: hasVisitedRecoveryPage, update: setVisitedRecoveryPage } = useFeature(
-        FeatureCode.VisitedRecoveryPage
-    );
-
-    useEffect(() => {
-        if (hasVisitedRecoveryPage?.Value === false) {
-            void setVisitedRecoveryPage(true);
-        }
-    }, [hasVisitedRecoveryPage]);
-
-    return null;
-};
 
 const AccountSettingsRouter = ({
     redirect,
@@ -104,7 +88,6 @@ const AccountSettingsRouter = ({
             )}
             {getIsSectionAvailable(recovery) && (
                 <Route path={getSectionPath(path, recovery)}>
-                    <RecoverySettingsPageVisited />
                     <PrivateMainSettingsArea config={recovery}>
                         <OverviewSection ids={recoveryIds} />
                         <AccountRecoverySection />

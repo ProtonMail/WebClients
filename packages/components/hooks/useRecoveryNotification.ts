@@ -18,7 +18,6 @@ import useHasOutdatedRecoveryFile from './useHasOutdatedRecoveryFile';
 const useRecoveryNotification = (
     isLessInvasive: boolean
 ): { path: string; text: string; color: ThemeColor } | undefined => {
-    const { feature: hasVisitedRecoveryPage } = useFeature(FeatureCode.VisitedRecoveryPage);
     const [user] = useUser();
     const [addresses, loadingAddresses] = useAddresses();
 
@@ -65,7 +64,7 @@ const useRecoveryNotification = (
         };
     }
 
-    if (isLessInvasive && hasVisitedRecoveryPage?.Value !== false) {
+    if (isLessInvasive) {
         return;
     }
 
