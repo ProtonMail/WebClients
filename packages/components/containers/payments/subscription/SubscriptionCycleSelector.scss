@@ -1,8 +1,0 @@
-@import '~@proton/styles/scss/config';
-
-// Special class to not have the success color tear with the the selected item's background color
-.billing-cycle-item:not(.dropdown-item--is-selected) {
-	.discount {
-		color: var(--signal-success);
-	}
-}
