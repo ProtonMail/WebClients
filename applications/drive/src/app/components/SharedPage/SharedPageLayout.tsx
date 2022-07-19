@@ -2,6 +2,8 @@ import React from 'react';
 import { c } from 'ttag';
 
 import { classnames, ButtonLike, Icon, MainLogo, Unauthenticated } from '@proton/components';
+import { getStaticURL } from '@proton/shared/lib/helpers/url';
+import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 
 import './Layout.scss';
 
@@ -46,8 +48,15 @@ function SharedPageGetDriveSidebar() {
                 <p>{c('Info')
                     .t`These files were shared using end-to-end encryption. To ensure their security — and the security of all your documents, photos, and files — store them in Proton Drive, the cloud storage service you can trust.`}</p>
                 <p>
-                    <ButtonLike color="norm" shape="outline" as="a" href="/">{c('Action')
-                        .t`Get Proton Drive`}</ButtonLike>
+                    <ButtonLike
+                        color="norm"
+                        shape="outline"
+                        as="a"
+                        href={getStaticURL('/pricing?product=drive')}
+                        target="_blank"
+                    >
+                        {c('Action').t`Get ${DRIVE_APP_NAME}`}
+                    </ButtonLike>
                 </p>
             </div>
             <div className="flex flex-justify-space-between on-mobile-flex-column">
