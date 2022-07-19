@@ -38,7 +38,7 @@ const EOMessageHeader = ({ message, messageLoaded, id, numberOfReplies }: Props)
             disabled={!canReply}
             data-testid="eoreply:button"
         >
-            <Icon name="arrow-up-and-left" className="on-rtl-mirror mr0-5" alt={c('Title').t`Reply`} />
+            <Icon name="arrow-up-and-left-big" className="on-rtl-mirror mr0-5" alt={c('Title').t`Reply`} />
             <span>{c('Action').t`Reply securely`}</span>
         </Button>
     );
