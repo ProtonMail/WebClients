@@ -8,3 +8,5 @@ export interface IncomingDefault {
     Type: number;
     Time: number;
 }
+
+export type IncomingDefaultStatus = 'not-loaded' | 'pending' | 'loaded' | 'rejected';

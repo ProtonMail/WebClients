@@ -1,5 +1,6 @@
 import { SpamAction } from '../interfaces';
 import { AutoResponder as tsAutoResponder } from '../interfaces/AutoResponder';
+import { BLOCK_SENDER_CONFIRMATION } from '../mail/constants';
 
 export const getMailSettings = () => ({
     url: 'mail/v4/settings',
@@ -196,4 +197,10 @@ export const updateSpamAction = (SpamAction: SpamAction | null) => ({
     url: 'mail/v4/settings/spam-action',
     method: 'put',
     data: { SpamAction },
+});
+
+export const updateBlockSenderConfirmation = (BlockSenderConfirmation: BLOCK_SENDER_CONFIRMATION | null) => ({
+    url: 'mail/v4/settings/block-sender-confirmation',
+    method: 'put',
+    data: { BlockSenderConfirmation },
 });
