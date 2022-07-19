@@ -11,7 +11,7 @@ const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const { SubresourceIntegrityPlugin } = require('webpack-subresource-integrity');
 
 const WriteWebpackPlugin = require('./write-webpack-plugin');
-const SriStripPlugin = require('./sri-strip-plugin');
+const HtmlEditPlugin = require('./html-edit-plugin');
 
 const defaultFaviconConfig = require('./favicon.config');
 const faviconConfig = require(path.resolve('./favicon.config.js'));
@@ -127,21 +127,39 @@ module.exports = ({ isProduction, publicPath, appMode, buildData, featureFlags, 
         ...(writeSRI
             ? [
                   new SubresourceIntegrityPlugin(),
-                  new SriStripPlugin({
-                      ignore: /\.(css|png|svg|ico|json)$/,
-                      handle: (tag) => {
-                          // With enabling the loadManifestWithCredentials option in the FaviconsWebpackPlugin the
-                          // crossorigin attribute for the manifest.json link is added correctly, however the SRI
-                          // plugin removes it and replaces it with SRI attributes. This plugin then removes the SRI
-                          // attributes for the tags which we're not interested to have SRI on, but it also adds
-                          // back the use-credentials crossorigin attribute for the manifest link.
-                          if (tag.tagName === 'link' && tag.attributes.href.endsWith('manifest.json')) {
-                              tag.attributes.crossorigin = 'use-credentials';
+                  new HtmlEditPlugin((tag) => {
+                      const src = tag.attributes.href || tag.attributes.src;
+                      // Remove the integrity and crossorigin attributes for these files because we don't
+                      // want to validate them since we may override the server response on these assets
+                      // for certain scenarios.
+                      if (/\.(css|png|svg|ico|json)$/.test(src)) {
+                          if (tag.attributes.integrity || tag.attributes.crossorigin) {
+                              delete tag.attributes.integrity;
+                              delete tag.attributes.crossorigin;
                           }
-                      },
-                  }),
+                      }
+                      return tag;
+                  }, HtmlWebpackPlugin),
               ]
             : []),
+
+        new HtmlEditPlugin((tag) => {
+            // Remove the favicon.ico tag that the FaviconsWebpackPlugin generates because:
+            // 1) We want it to be listed before the .svg icon that we manually inject
+            // 2) We want it to have the sizes="any" attribute because of this chrome bug
+            // https://twitter.com/subzey/status/1417099064949235712
+            if (tag.tagName === 'link' && tag.attributes.href.endsWith('favicon.ico')) {
+                return null;
+            }
+            // With enabling the loadManifestWithCredentials option in the FaviconsWebpackPlugin the
+            // crossorigin attribute for the manifest.json link is added correctly, however the SRI
+            // plugin removes it and replaces it with SRI attributes. This plugin adds back the use-credentials
+            // crossorigin attribute for the manifest link.
+            if (tag.tagName === 'link' && tag.attributes.href.endsWith('manifest.json')) {
+                tag.attributes.crossorigin = 'use-credentials';
+            }
+            return tag;
+        }, HtmlWebpackPlugin),
 
         new webpack.DefinePlugin({
             WEBPACK_APP_MODE: JSON.stringify(appMode),
