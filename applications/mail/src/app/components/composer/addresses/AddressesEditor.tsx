@@ -1,4 +1,4 @@
-import { useState, MutableRefObject, MouseEvent } from 'react';
+import { useState, MutableRefObject, MouseEvent, useRef } from 'react';
 import { c } from 'ttag';
 import { Label, generateUID, classnames, Button, Icon, Tooltip } from '@proton/components';
 import { Recipient } from '@proton/shared/lib/interfaces/Address';
@@ -32,6 +32,10 @@ const AddressesEditor = ({
 }: Props) => {
     const [uid] = useState(generateUID('composer'));
 
+    const toListAnchorRef = useRef<HTMLDivElement>(null);
+    const ccListAnchorRef = useRef<HTMLDivElement>(null);
+    const bccListAnchorRef = useRef<HTMLDivElement>(null);
+
     const handleChange = (type: RecipientType) => (value: Partial<Recipient>[]) => {
         onChange({ data: { [type]: value } });
     };
@@ -47,6 +51,7 @@ const AddressesEditor = ({
                         'flex flex-nowrap field flex-align-items-center flex-nowrap flex-item-fluid composer-to-editor field-lighter',
                         expanded ? 'composer-editor-expanded' : 'composer-editor-collapsed',
                     ])}
+                    ref={toListAnchorRef}
                 >
                     <AddressesInput
                         id={`to-${uid}`}
@@ -58,6 +63,7 @@ const AddressesEditor = ({
                         expanded={expanded}
                         dataTestId="composer:to"
                         classname="composer-editor-to"
+                        anchorRef={toListAnchorRef}
                     />
                     <span className="flex flex-nowrap flex-item-noshrink on-mobile-max-w33 on-tiny-mobile-max-w50 flex-align-self-start pt0-5 composer-to-ccbcc-buttons sticky-top">
                         <Button
@@ -93,7 +99,7 @@ const AddressesEditor = ({
             </div>
             {expanded && (
                 <>
-                    <div className="flex flex-row on-mobile-flex-column w100 mb0">
+                    <div className="flex flex-row on-mobile-flex-column w100 mb0" ref={ccListAnchorRef}>
                         <Label
                             htmlFor={`cc-${uid}`}
                             className="composer-meta-label text-semibold"
@@ -113,9 +119,10 @@ const AddressesEditor = ({
                             addContactAction={handleContactModal('CCList')}
                             classname="composer-editor-cc"
                             hasLighterFieldDesign
+                            anchorRef={ccListAnchorRef}
                         />
                     </div>
-                    <div className="flex flex-row on-mobile-flex-column w100">
+                    <div className="flex flex-row on-mobile-flex-column w100" ref={bccListAnchorRef}>
                         <Label
                             htmlFor={`bcc-${uid}`}
                             className="composer-meta-label text-semibold"
@@ -134,6 +141,7 @@ const AddressesEditor = ({
                             addContactAction={handleContactModal('BCCList')}
                             classname="composer-editor-bcc"
                             hasLighterFieldDesign
+                            anchorRef={bccListAnchorRef}
                         />
                     </div>
                 </>
