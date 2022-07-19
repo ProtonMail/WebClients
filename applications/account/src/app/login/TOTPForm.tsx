@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { c } from 'ttag';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import noop from '@proton/utils/noop';
@@ -13,8 +13,22 @@ const TOTPForm = ({ onSubmit }: Props) => {
     const [loading, withLoading] = useLoading();
     const [totp, setTotp] = useState('');
     const [isTotpRecovery, setIsRecovery] = useState(false);
+    const hasBeenAutoSubmitted = useRef(false);
 
     const { validator, onFormSubmit } = useFormErrors();
+
+    useEffect(() => {
+        if (isTotpRecovery || loading || validator([requiredValidator(totp)]) || hasBeenAutoSubmitted.current) {
+            return;
+        }
+
+        // Auto-submit the form once the user has entered the TOTP
+        if (totp.length === 6) {
+            // Do it just one time
+            hasBeenAutoSubmitted.current = true;
+            withLoading(onSubmit(totp)).catch(noop);
+        }
+    }, [totp]);
 
     return (
         <form
