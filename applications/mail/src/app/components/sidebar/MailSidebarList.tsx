@@ -292,8 +292,8 @@ const MailSidebarList = ({ labelID: currentLabelID }: Props) => {
                 <SimpleSidebarListItemHeader
                     toggle={displayMoreItems}
                     onToggle={(display: boolean) => toggleDisplayMoreItems(display)}
-                    text={c('Link').t`More`}
-                    title={c('Link').t`More`}
+                    text={displayMoreItems ? c('Link').t`Less` : c('Link').t`More`}
+                    title={displayMoreItems ? c('Link').t`Less` : c('Link').t`More`}
                     id="toggle-more-items"
                     onFocus={setFocusedItem}
                 />

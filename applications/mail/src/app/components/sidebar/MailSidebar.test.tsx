@@ -226,7 +226,7 @@ describe('MailSidebar', () => {
             const { getByTestId, getByTitle, container } = await render(<MailSidebar {...props} />, false);
 
             const sidebar = container.querySelector('nav > div') as HTMLDivElement;
-            const More = getByTitle('More');
+            const More = getByTitle('Less'); // When opened, it becomes "LESS"
             const Folders = getByTitle('Folders');
             const Labels = getByTitle('Labels');
 
