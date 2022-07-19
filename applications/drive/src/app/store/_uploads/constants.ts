@@ -63,3 +63,10 @@ export const WAIT_TIME = 50; // Milliseconds.
  * is already old and we should ask for new one.
  */
 export const TOKEN_EXPIRATION_TIME = 3 * 60 * 60 * 1000; // Milliseconds.
+
+/**
+ * MAX_TOO_MANY_REQUESTS_WAIT defines how many seconds is allowed to wait
+ * if server rate limits upload. If server asks to wait longer, we don't
+ * wait and fail right away instead.
+ */
+export const MAX_TOO_MANY_REQUESTS_WAIT = 60 * 60; // Seconds.

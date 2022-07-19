@@ -1,15 +1,16 @@
 import { create as createMutex } from '@protontech/mutex-browser';
 
-import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
 import noop from '@proton/utils/noop';
-import { RETRY_ATTEMPTS_MAX, RETRY_DELAY_MAX, OFFLINE_RETRY_ATTEMPTS_MAX, OFFLINE_RETRY_DELAY } from '../../constants';
+import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
+
 import { createOnceHandler } from '../../apiHandlers';
-import { wait } from '../../helpers/promise';
+import { OFFLINE_RETRY_ATTEMPTS_MAX, OFFLINE_RETRY_DELAY, RETRY_ATTEMPTS_MAX, RETRY_DELAY_MAX } from '../../constants';
 import { API_CUSTOM_ERROR_CODES, HTTP_ERROR_CODES } from '../../errors';
 import { getVerificationHeaders, withUIDHeaders } from '../../fetch/headers';
+import { getDateHeader } from '../../fetch/helpers';
+import { wait } from '../../helpers/promise';
 import { setRefreshCookies } from '../auth';
 import { getApiError } from './apiErrorHelper';
-import { getDateHeader } from '../../fetch/helpers';
 import { getLastRefreshDate, setLastRefreshDate } from './refreshStorage';
 
 export const InactiveSessionError = () => {
@@ -27,16 +28,15 @@ export const AppVersionBadError = () => {
 /**
  * Handle retry-after
  * @param {Error} e
+ * @param {number} maxDelay
  * @returns {Promise}
  */
-const retryHandler = (e) => {
-    const {
-        response: { headers },
-    } = e;
+export const retryHandler = (e, maxDelay = RETRY_DELAY_MAX) => {
+    const headers = e?.response?.headers;
 
-    const retryAfterSeconds = parseInt(headers.get('retry-after') || 0, 10);
+    const retryAfterSeconds = parseInt(headers?.get('retry-after') || 0, 10);
 
-    if (retryAfterSeconds < 0 || retryAfterSeconds >= RETRY_DELAY_MAX) {
+    if (retryAfterSeconds < 0 || retryAfterSeconds >= maxDelay) {
         return Promise.reject(e);
     }
 
