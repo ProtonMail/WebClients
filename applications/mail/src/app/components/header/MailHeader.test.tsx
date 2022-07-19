@@ -146,7 +146,7 @@ describe('MailHeader', () => {
 
             const upgradeLabel = getByText('Upgrade');
 
-            assertAppLink(upgradeLabel, '/mail/upgrade');
+            assertAppLink(upgradeLabel, '/mail/upgrade?ref=upsell_mail-button-1');
         });
 
         it('should show upgrade button', async () => {
@@ -154,7 +154,7 @@ describe('MailHeader', () => {
 
             const upgradeLabel = getByText('Upgrade');
 
-            assertAppLink(upgradeLabel, '/mail/upgrade');
+            assertAppLink(upgradeLabel, '/mail/upgrade?ref=upsell_mail-button-1');
         });
     });
 
