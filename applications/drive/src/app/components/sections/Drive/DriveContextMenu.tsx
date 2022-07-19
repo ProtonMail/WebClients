@@ -1,7 +1,5 @@
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
-import { useEffect } from 'react';
-
-import { ContextMenu, ContextSeparator } from '@proton/components';
+import { ContextSeparator } from '@proton/components';
 
 import { ContextMenuProps } from '../../FileBrowser/interface';
 import {
@@ -14,8 +12,9 @@ import {
 } from '../ContextMenu';
 import { MoveToFolderButton, MoveToTrashButton } from './ContextMenuButtons';
 import { DecryptedLink } from '../../../store';
+import { ItemContextMenu } from '../ContextMenu/ItemContextMenu';
 
-export function ItemContextMenu({
+export function DriveItemContextMenu({
     shareId,
     selectedLinks,
     anchorRef,
@@ -36,14 +35,14 @@ export function ItemContextMenu({
     const hasLink = isOnlyOneItem && selectedLink.shareUrl && !selectedLink.shareUrl.isExpired && !selectedLink.trashed;
     const selectedLinkIds = selectedLinks.map(({ linkId }) => linkId);
 
-    useEffect(() => {
-        if (position) {
-            open();
-        }
-    }, [position]);
-
     return (
-        <ContextMenu isOpen={isOpen} close={close} position={position} noMaxHeight anchorRef={anchorRef}>
+        <ItemContextMenu
+            isOpen={isOpen}
+            open={open}
+            close={close}
+            position={position}
+            anchorRef={anchorRef}
+        >
             {hasPreviewAvailable && <PreviewButton shareId={shareId} linkId={selectedLink.linkId} close={close} />}
             {hasPreviewAvailable && <ContextSeparator />}
             <DownloadButton shareId={shareId} selectedLinks={selectedLinks} close={close} />
@@ -56,6 +55,6 @@ export function ItemContextMenu({
             <ContextSeparator />
             <MoveToTrashButton shareId={shareId} selectedLinks={selectedLinks} close={close} />
             {children}
-        </ContextMenu>
+        </ItemContextMenu>
     );
 }

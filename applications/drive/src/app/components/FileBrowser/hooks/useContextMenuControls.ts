@@ -34,9 +34,9 @@ export function useContextMenuControls() {
     const handleContextMenuTouch = (e: React.TouchEvent<Element>) => {
         e.stopPropagation();
         e.preventDefault();
-        const touch = e.touches[0];
 
-        setPosition({ top: touch.clientY, left: touch.clientX });
+        const touchPosition = e.changedTouches[e.changedTouches.length - 1];
+        setPosition({ top: touchPosition.clientY, left: touchPosition.clientX });
     };
 
     const resetPosition = () => {
