@@ -68,7 +68,7 @@ export function GridViewItem({ item }: { item: DriveItem | TrashItem | SharedLin
                         selectionControls?.selectItem(item.id);
                         contextMenuControls.handleContextMenu(e);
                     }}
-                    onTouchStart={(e) => {
+                    onTouchEnd={(e) => {
                         selectionControls?.selectItem(item.id);
                         contextMenuControls.handleContextMenuTouch?.(e);
                     }}
