@@ -18,7 +18,7 @@ import { ERROR_CODE_INVALID_SRP_PARAMS, default as usePublicSession } from './us
 export default function usePublicAuth(token: string, urlPassword: string) {
     const { createNotification } = useNotifications();
 
-    const { initHandshake, initSession } = usePublicSession();
+    const { hasSession, initHandshake, initSession } = usePublicSession();
     const [isLoading, withLoading] = useLoading(true);
     const [error, setError] = useState<string | undefined>();
 
@@ -61,6 +61,10 @@ export default function usePublicAuth(token: string, urlPassword: string) {
     };
 
     useEffect(() => {
+        if (hasSession) {
+            return;
+        }
+
         void withLoading(
             initHandshake(token)
                 .then(({ handshakeInfo, hasCustomPassword }) => {
@@ -74,7 +78,7 @@ export default function usePublicAuth(token: string, urlPassword: string) {
                     handleInitialLoadError(error);
                 })
         );
-    }, []);
+    }, [hasSession]);
 
     const submitPassword = async (customPassword: string) => {
         await initHandshake(token)
