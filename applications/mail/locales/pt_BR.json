@@ -4450,7 +4450,7 @@
         "O PGP/Incorporado só é compatível com o formato texto sem formatação. Observe que o ${ MAIL_APP_NAME } sempre assina mensagens criptografadas."
       ],
       "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
-        "O PGP/MIME envia automaticamente a mensagem usando o modo de composição atual. Por favor, note que o ${ MAIL_APP_NAME } sempre assina mensagens criptografadas"
+        "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages."
       ],
       "Phone number": [
         "Número do telefone"
@@ -7846,8 +7846,8 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "A cada ${ interval } ano",
-        "A cada ${ interval } anos"
+        "Yearly",
+        ""
       ],
       "Every ${ interval } year, ${ timesString }": [
         "A cada ${ interval } ano, ${ timesString }",

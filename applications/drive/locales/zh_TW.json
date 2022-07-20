@@ -485,6 +485,9 @@
       "Skip": [
         "略過"
       ],
+      "Start import": [
+        "開始匯入"
+      ],
       "Start recovering": [
         "開始恢復"
       ],
@@ -2693,6 +2696,9 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "您的一或多個信任金鑰已被其擁有者標記為「已洩露」。我們建議您「取消信任」這些金鑰。"
       ],
+      "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters is allowed": [
+        "僅允許 ${ MAX_CUSTOM_PASSWORD_LENGTH } 個字元"
+      ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "僅當您使用 PGP 傳送郵件給非 ${ BRAND_NAME } 收件人時，才需要修改下列設定。"
       ],
@@ -3082,6 +3088,9 @@
       ],
       "name": [
         "名稱"
+      ],
+      "name hash": [
+        "名稱雜湊"
       ],
       "thumbnail": [
         "縮圖"

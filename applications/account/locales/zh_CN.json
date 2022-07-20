@@ -161,6 +161,9 @@
       "Continue to ${ name }": [
         "继续使用 ${ name }"
       ],
+      "Continue with ${ nameToDisplay } ${ maybeEmailInBrackets }": [
+        "继续使用 ${ nameToDisplay } ${ maybeEmailInBrackets }"
+      ],
       "Continue with Google": [
         "使用 Google 账号登录"
       ],
@@ -670,6 +673,9 @@
       ],
       "Sign out": [
         "退出账户"
+      ],
+      "Sign out from ${ nameToDisplay } ${ maybeEmailInBrackets }": [
+        "从 ${ nameToDisplay } ${ maybeEmailInBrackets } 中退出登录"
       ],
       "Sign out of all accounts": [
         "退出所有账户"
@@ -1485,6 +1491,20 @@
         "帮助我们改进产品！"
       ]
     },
+    "Duration": {
+      "120 minutes": [
+        "120 分钟"
+      ],
+      "30 minutes": [
+        "30 分钟"
+      ],
+      "60 minutes": [
+        "60 分钟"
+      ],
+      "90 minutes": [
+        "90 分钟"
+      ]
+    },
     "Email body for description (description part)": {
       "Description: ${ eventDescription }": [
         "描述：${ eventDescription }"
@@ -1808,6 +1828,9 @@
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "您使用的浏览器无法完成支付验证，请使用其他浏览器或电脑支付。"
       ],
+      "The folder name is invalid. Please choose a different name.": [
+        "文件夹名称无效，请更改。"
+      ],
       "The folder name is too long. Please choose a different name.": [
         "文件夹名称过长，请更改。"
       ],
@@ -1816,6 +1839,9 @@
       ],
       "The keys in your recovery files can't be validated. Please upload individually for more information.": [
         "无法验证您恢复文件中的密钥，请单独上传以获取更多信息。"
+      ],
+      "The label name is invalid. Please choose a different name.": [
+        "标签名称无效，请更改。"
       ],
       "The label name is too long. Please choose a different name.": [
         "标签名称过长，请选择一个不同的名字"
@@ -2155,8 +2181,23 @@
       ]
     },
     "Export calendar": {
+      "Due to a password reset, none of your events could be decrypted and exported.": [
+        "由于密码重置，您的任何日程都无法解密和导出。"
+      ],
       "Error decrypting event": [
         "解密日程时出错"
+      ],
+      "Loading events": [
+        "事件加载中"
+      ],
+      "None of the events could be exported.": [
+        "没有任何日程可以导出。"
+      ],
+      "Some of your events could not be exported.": [
+        "无法导出某些事件"
+      ],
+      "The internet connection was interrupted, causing the export process to fail. Please try again.": [
+        "导出过程由于网络中断无法导出，请重试。"
       ]
     },
     "Feature": {
@@ -2319,6 +2360,9 @@
       "Label": [
         "标签"
       ],
+      "Name": [
+        "名称"
+      ],
       "Notifications": [
         "通知"
       ],
@@ -2330,6 +2374,9 @@
       ],
       "Time": [
         "时间"
+      ],
+      "What others see": [
+        "对外显示"
       ]
     },
     "Header for addresses table": {
@@ -4109,6 +4156,9 @@
       "Yandex records your online activity and reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
         "Yandex 记录您的在线活动并读取您的个人数据，以便为广告商和其他第三方提供访问。为了更好地保护您的隐私，请创建一个安全的电子邮件地址。"
       ],
+      "Yearly": [
+        "按年"
+      ],
       "You already have a free account": [
         "您的账户已经是免费版了"
       ],
@@ -5363,6 +5413,9 @@
       "Upload 1 or more recovery files or encryption keys": [
         "上传一个或多个恢复文件或加密密钥"
       ],
+      "URL": [
+        "网址"
+      ],
       "Use folder colors": [
         "文件夹附带颜色"
       ],
@@ -5477,7 +5530,7 @@
         "Proton 公司公告"
       ],
       "Proton for business": [
-        "Proton 企业版"
+        "Proton for Business"
       ],
       "Proton for Business newsletter": [
         "Proton 商业通讯"
@@ -6308,13 +6361,13 @@
         "IMAP 仅支持桌面客户端（如 Outlook、Apple Mail、Thunderbird）配合 ${ MAIL_APP_NAME } Bridge 使用。目前不支持云服务接入 IMAP。"
       ],
       "Keeps you protected by blocking all network connections when you are accidentally disconnected from our VPN server": [
-        "连接意外中断时停止一切网络传输，确保数据安全"
+        "Keeps you protected by blocking all network connections when you are unexpectedly disconnected from our VPN server."
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "为邮件添加标签，方便查询与筛选"
       ],
       "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections": [
-        "例如手机和电脑同时连接就属于 2 台设备同时接入 Proton VPN"
+        "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections."
       ],
       "Our servers’ hard disks are fully encrypted with multiple password layers so your data is protected even if our hardware is compromised": [
         "我们的服务器硬盘均已使用多层密码全盘加密，即使硬件遭到掠夺，数据也不会泄露"
@@ -6440,9 +6493,25 @@
         "OpenVPN / IKEv2 账号密码已重新生成"
       ]
     },
+    "Notification time input": {
+      "at": [
+        "在"
+      ]
+    },
     "Notification type": {
+      "email": [
+        "电子邮件"
+      ],
       "notification": [
         "通知"
+      ]
+    },
+    "Notification when": {
+      "day before": [
+        "天前"
+      ],
+      "on the same day": [
+        "当天"
       ]
     },
     "Oauth instructions": {
@@ -6984,6 +7053,11 @@
       ],
       "Organization": [
         "机构"
+      ]
+    },
+    "Settings update growler warning": {
+      "Failed to update settings": [
+        "未能更新设置"
       ]
     },
     "Settings/filters": {

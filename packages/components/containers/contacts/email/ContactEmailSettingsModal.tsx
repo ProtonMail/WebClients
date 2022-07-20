@@ -270,7 +270,7 @@ const ContactEmailSettingsModal = ({ contactID, vCardContact, emailProperty, ...
                 {isMimeTypeFixed && !hasPGPInline ? (
                     <Alert className="mb1">
                         {c('Info')
-                            .t`PGP/MIME automatically sends the message using the current composer mode. Please note that ${MAIL_APP_NAME} always signs encrypted messages`}
+                            .t`PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.`}
                     </Alert>
                 ) : null}
                 <Row>

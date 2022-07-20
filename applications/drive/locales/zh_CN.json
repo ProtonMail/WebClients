@@ -240,7 +240,7 @@
         "作为附件转发"
       ],
       "Get link": [
-        "获取链接"
+        "生成共享链接"
       ],
       "Get started": [
         "开始入门"
@@ -441,7 +441,7 @@
         "设置恢复密语"
       ],
       "Share file": [
-        "分享文件"
+        "共享文件"
       ],
       "Share item": [
         "共享项目"
@@ -592,6 +592,9 @@
       ]
     },
     "Beta access description": {
+      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
+        "开启测试版功能后您将使用 ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME } 和 ${ DRIVE_APP_NAME } 未正式发布的公测版本，可以抢先体验新产品和新功能。"
+      ],
       "If you encounter issues, you can always disable Beta Access.": [
         "如果使用过程中遇到问题，您可以随时关闭该选项。"
       ]
@@ -1577,6 +1580,9 @@
       "(${ memberCount } member)": [
         "（${ memberCount } 位成员）"
       ],
+      "10 email addresses": [
+        "10 个电子邮件地址"
+      ],
       "A number will be added to the filename": [
         "将在文件名中添加一个编号"
       ],
@@ -1677,7 +1683,7 @@
         "创建于"
       ],
       "Create links and share your files with others.": [
-        "创建链接然后与他人共享您的文件。"
+        "创建共享链接即可将您的文件与他人分享。"
       ],
       "Create your first folder and start moving your files.": [
         "创建您的第一个文件夹并开始移动文件。"
@@ -1711,6 +1717,9 @@
       ],
       "Downloading": [
         "正在下载"
+      ],
+      "Drag and drop items here or browse for files to upload.": [
+        "将文件拖拽到这里或浏览文件以上传。"
       ],
       "Drop the file here to upload": [
         "请将文件拖拽至此处进行上传"
@@ -1844,11 +1853,23 @@
       "Link copied to clipboard": [
         "链接已复制到剪贴板"
       ],
+      "Link failed to be loaded": [
+        "链接加载失败"
+      ],
+      "Links failed to be loaded": [
+        "链接加载失败"
+      ],
       "Loading": [
         "加载中"
       ],
       "Loading ${ appName }": [
         "正在加载 ${ appName }"
+      ],
+      "Loading link": [
+        "链接加载中"
+      ],
+      "Loading links": [
+        "链接加载中"
       ],
       "Loading preview": [
         "正在载入预览"
@@ -1863,7 +1884,7 @@
         "正在移动文件"
       ],
       "My Links": [
-        "我的链接"
+        "我的共享链接"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "设置新文件夹的名称和位置，若不选取上层文件夹，则将创建顶层文件夹。"
@@ -1906,6 +1927,9 @@
       ],
       "of": [
         "/"
+      ],
+      "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters is allowed": [
+        "最多只允许 ${ MAX_CUSTOM_PASSWORD_LENGTH } 个字符"
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "只有在与非 ${ BRAND_NAME } 用户使用 PGP 通讯时才应更改下列选项。"
@@ -1973,6 +1997,9 @@
       "Search cannot be enabled in this browser": [
         "此浏览器无法启用搜索功能"
       ],
+      "Secure your documents and data": [
+        "选择您的文档和数据"
+      ],
       "Select an uploaded file or folder and create a link to it.": [
         "选择一个已上传的文件（夹）并为其创建链接。"
       ],
@@ -1997,6 +2024,9 @@
       "Share files with links": [
         "通过链接共享文件"
       ],
+      "Shareable link for ${ boldNameText }": [
+        "${ boldNameText } 的共享链接"
+      ],
       "Signature check will be ignored": [
         "将忽略签名校验"
       ],
@@ -2017,6 +2047,9 @@
       ],
       "support team": [
         "客服团队"
+      ],
+      "Tap the + button to upload a file or folder.": [
+        "点击按钮 + 来上传文件或文件夹。"
       ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "该账户可能有一个新密钥，或是以下内容可能已被篡改：${ items }。请务必在信任的情况下打开。"
@@ -2135,6 +2168,9 @@
       "We'll send a new verification code to ${ strong }": [
         "我们将向 ${ strong } 发送新的验证码"
       ],
+      "We're moving! Join us at our new site: ${ link }.": [
+        "我们改名了！欢迎造访我们的新域名：${ link }"
+      ],
       "Week": [
         "周"
       ],
@@ -2154,7 +2190,7 @@
         "想要恢复您的文件吗？"
       ],
       "Yes": [
-        "有"
+        "是"
       ],
       "You are about to open another browser tab and visit:": [
         "您即将在新标签页中打开："
@@ -2242,6 +2278,9 @@
       ]
     },
     "Label": {
+      "# of accesses": [
+        "下载次数"
+      ],
       "(Expired)": [
         "（已失效）"
       ],
@@ -2321,7 +2360,7 @@
         "删除网盘?"
       ],
       "Deleted": [
-        "已删除"
+        "删除时间"
       ],
       "Do not ask again": [
         "不再询问"
@@ -2410,6 +2449,9 @@
       "Last month only": [
         "仅上个月"
       ],
+      "Location": [
+        "位置"
+      ],
       "Mailbox password": [
         "邮箱密码"
       ],
@@ -2423,7 +2465,7 @@
         "合并文件夹"
       ],
       "Modified": [
-        "已修改"
+        "修改时间"
       ],
       "Name": [
         "名称"
@@ -2757,7 +2799,32 @@
         "您的旧文件将在 72 小时内删除"
       ],
       "Your settings have been changed successfully": [
-        "已成功更改您的设置"
+        "设置已更改"
+      ]
+    },
+    "Onboarding Action": {
+      "Enable Beta Access": [
+        "启用测试版功能"
+      ],
+      "Next": [
+        "下一步"
+      ],
+      "Start using ${ appName }": [
+        "开始使用 ${ appName }"
+      ],
+      "Upgrade account": [
+        "升级账户"
+      ]
+    },
+    "Onboarding Info": {
+      "${ appName } is currently in early access and only available to users with a paid plan.": [
+        "${ appName } 目前尚处于抢先体验阶段，仅适用于付费用户。"
+      ],
+      "${ appName } is currently only available if you enable Beta Access.": [
+        "目前您需要开启测试版功能才能使用 ${ appName }。"
+      ],
+      "Your trusty online vault for vital documents and precious memories.": [
+        "为您的重要文件和美好回忆而设的云端保险箱。"
       ]
     },
     "Onboarding Proton": {
@@ -2778,6 +2845,17 @@
       ],
       "You can change this anytime in your settings.": [
         "您可以随时在设置中更改。"
+      ]
+    },
+    "Onboarding Title": {
+      "${ appName } is in Beta": [
+        "${ appName } 尚处于测试阶段"
+      ],
+      "Upgrade to access ${ appName }": [
+        "升级账户即可使用 ${ appName }"
+      ],
+      "Welcome to ${ appName }": [
+        "欢迎来到 ${ appName }"
       ]
     },
     "Option": {
@@ -2924,6 +3002,9 @@
       ]
     },
     "Spotlight": {
+      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
+        "${ DRIVE_APP_NAME } 现已正式发布！您的文件也可以具备与邮件同等的安全性。"
+      ],
       "Get up to 18 months of ${ planName } for free": [
         "免费获得最长 18 个月的 ${ planName } 使用权"
       ],
@@ -3262,6 +3343,9 @@
       "Invalid verification code": [
         "无效的验证代码"
       ],
+      "Item details": [
+        "详细信息"
+      ],
       "Items details": [
         "项目详细信息"
       ],
@@ -3284,7 +3368,7 @@
         "MIME 类型"
       ],
       "Modified": [
-        "修改"
+        "修改时间"
       ],
       "My files": [
         "我的文件"
@@ -3428,7 +3512,7 @@
         "需要升级"
       ],
       "Uploaded": [
-        "已上传"
+        "上传时间"
       ],
       "Uploaded by": [
         "上传者"
@@ -3452,7 +3536,7 @@
         "存在无法访问的文件"
       ],
       "You have no files to share": [
-        "您没有要共享的文件"
+        "您没有可共享的文件"
       ],
       "You have no folders yet": [
         "您尚未添加文件夹"

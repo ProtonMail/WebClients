@@ -487,6 +487,9 @@
       "Skip": [
         "Omitir"
       ],
+      "Start import": [
+        "Iniciar importación"
+      ],
       "Start recovering": [
         "Empezar a recuperar"
       ],
@@ -625,6 +628,9 @@
       ]
     },
     "blackfriday Title": {
+      "Best deal": [
+        "Mejor oferta"
+      ],
       "Most popular": [
         "Más popular"
       ]
@@ -1872,7 +1878,7 @@
       ],
       "One of the groups has no contacts: ${ noContactGroupList }": [
         "Uno de los grupos no tiene contactos: ${ noContactGroupList }",
-        "Uno de los grupos no tiene contactos: ${ noContactGroupList }"
+        "Uno de los grupos no tiene contactos: ${ noContactGroupList } "
       ],
       "Passwords do not match": [
         "Las contraseñas no coinciden"
@@ -2741,6 +2747,9 @@
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Una o más de sus claves de confianza fueron marcadas como \"comprometidas\" por su propietario. Le recomendamos que \"desconfíe\" de estas claves."
+      ],
+      "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters is allowed": [
+        "Solo ${ MAX_CUSTOM_PASSWORD_LENGTH } caracteres está permitido"
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Solo cambie estos ajustes si está usando PGP con destinatarios que no son de ${ BRAND_NAME }."
