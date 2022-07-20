@@ -1,27 +1,29 @@
-import { useRef, useState, useEffect } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import * as React from 'react';
-import { c } from 'ttag';
+
 import { getUnixTime } from 'date-fns';
-import { textToClipboard } from '@proton/shared/lib/helpers/browser';
+import { c, msgid } from 'ttag';
+
 import {
     Alert,
     Button,
-    InputTwo,
-    InputFieldTwo,
-    PasswordInputTwo,
-    Label,
-    PrimaryButton,
-    Row,
-    Toggle,
-    useNotifications,
     Details,
-    Summary,
-    Tooltip,
     FileNameDisplay,
-    ModalTwoHeader,
+    InputFieldTwo,
+    InputTwo,
+    Label,
     ModalTwoContent,
     ModalTwoFooter,
+    ModalTwoHeader,
+    PasswordInputTwo,
+    PrimaryButton,
+    Row,
+    Summary,
+    Toggle,
+    Tooltip,
+    useNotifications,
 } from '@proton/components';
+import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 
 import ExpirationTimeDatePicker from './ExpirationTimeDatePicker';
 
@@ -237,8 +239,11 @@ function GeneratedLinkState({
                                                     value={password}
                                                     error={
                                                         isPasswordInvalid &&
-                                                        c('Info')
-                                                            .t`Only ${MAX_CUSTOM_PASSWORD_LENGTH} characters are allowed`
+                                                        c('Info').ngettext(
+                                                            msgid`Only ${MAX_CUSTOM_PASSWORD_LENGTH} character is allowed`,
+                                                            `Only ${MAX_CUSTOM_PASSWORD_LENGTH} characters are allowed`,
+                                                            MAX_CUSTOM_PASSWORD_LENGTH
+                                                        )
                                                     }
                                                     assistiveText={`${password.length}/${MAX_CUSTOM_PASSWORD_LENGTH}`}
                                                     onInput={handleChangePassword}
