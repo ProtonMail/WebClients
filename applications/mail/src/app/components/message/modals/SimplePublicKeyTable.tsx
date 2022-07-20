@@ -9,7 +9,6 @@ import {
     Loader,
 } from '@proton/components';
 import { c } from 'ttag';
-import { algorithmInfo } from 'pmcrypto';
 import { getFormattedAlgorithmName } from '@proton/shared/lib/keys';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import { isValid, format } from 'date-fns';
@@ -28,7 +27,7 @@ const SimplePublicKeyTable = ({ contact }: Props) => {
     const publicKey = contact.bePinnedPublicKey;
     const fingerprint = publicKey.getFingerprint();
     const creationDate = new Date(publicKey.getCreationTime());
-    const algorithmType = getFormattedAlgorithmName(publicKey.getAlgorithmInfo() as algorithmInfo);
+    const algorithmType = getFormattedAlgorithmName(publicKey.getAlgorithmInfo());
 
     useEffect(() => {
         const getExpirationTime = async () => {

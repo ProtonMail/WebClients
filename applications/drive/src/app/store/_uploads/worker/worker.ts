@@ -1,6 +1,4 @@
-import * as openpgp from 'openpgp';
-import { OpenPGPKey, SessionKey } from 'pmcrypto';
-import { init as initPmcrypto } from 'pmcrypto/lib/pmcrypto';
+import { PrivateKeyReference, SessionKey } from '@proton/crypto';
 
 import { sign as signMessage, generateNodeKeys, generateContentKeys } from '@proton/shared/lib/keys/driveKeys';
 
@@ -14,15 +12,13 @@ import UploadWorkerBuffer from './buffer';
 import generateEncryptedBlocks from './encryption';
 import startUploadJobs from './upload';
 
-initPmcrypto(openpgp);
-
 // eslint-disable-next-line no-restricted-globals
 const uploadWorker = new UploadWorker(self as any, { generateKeys, start, createdBlocks, pause, resume });
 
 const pauser = new Pauser();
 const buffer = new UploadWorkerBuffer();
 
-async function generateKeys(addressPrivateKey: OpenPGPKey, parentPrivateKey: OpenPGPKey) {
+async function generateKeys(addressPrivateKey: PrivateKeyReference, parentPrivateKey: PrivateKeyReference) {
     try {
         const {
             NodeKey: nodeKey,
@@ -41,7 +37,7 @@ async function generateKeys(addressPrivateKey: OpenPGPKey, parentPrivateKey: Ope
             return;
         }
 
-        uploadWorker.postKeysGenerated({
+        await uploadWorker.postKeysGenerated({
             nodeKey,
             nodePassphrase,
             nodePassphraseSignature,
@@ -68,9 +64,9 @@ async function generateKeys(addressPrivateKey: OpenPGPKey, parentPrivateKey: Ope
 async function start(
     file: File,
     thumbnailData: Uint8Array | undefined,
-    addressPrivateKey: OpenPGPKey,
+    addressPrivateKey: PrivateKeyReference,
     addressEmail: string,
-    privateKey: OpenPGPKey,
+    privateKey: PrivateKeyReference,
     sessionKey: SessionKey
 ) {
     buffer

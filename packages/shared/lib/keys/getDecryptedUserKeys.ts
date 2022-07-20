@@ -1,5 +1,4 @@
-import { decryptPrivateKey } from 'pmcrypto';
-
+import { CryptoProxy } from '@proton/crypto';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 import { DecryptedKey, Key as tsKey, KeyPair, User } from '../interfaces';
@@ -16,11 +15,15 @@ export const getUserKeyPassword = ({ Token }: tsKey, keyPassword: string, organi
 const getDecryptedUserKey = async (Key: tsKey, keyPassword: string, organizationKey?: KeyPair) => {
     const { ID, PrivateKey } = Key;
     const userKeyPassword = await getUserKeyPassword(Key, keyPassword, organizationKey);
-    const privateKey = await decryptPrivateKey(PrivateKey, userKeyPassword);
+    const privateKey = await CryptoProxy.importPrivateKey({ armoredKey: PrivateKey, passphrase: userKeyPassword });
+    const publicKey = await CryptoProxy.importPublicKey({
+        binaryKey: await CryptoProxy.exportPublicKey({ key: privateKey, format: 'binary' }),
+    });
+
     return {
         ID,
         privateKey,
-        publicKey: privateKey.toPublic(),
+        publicKey,
     };
 };
 

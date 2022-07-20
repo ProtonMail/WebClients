@@ -1,4 +1,4 @@
-import { OpenPGPKey } from 'pmcrypto';
+import { PrivateKeyReference } from '@proton/crypto';
 import { createMemberAddressKeysLegacy, createMemberAddressKeysV2, getDecryptedMemberKey } from './memberKeys';
 import { Api, Address, Member, EncryptionConfig } from '../interfaces';
 import { getHasMemberMigratedAddressKeys } from './keyMigration';
@@ -9,7 +9,7 @@ interface MissingKeysMemberProcessArguments {
     api: Api;
     encryptionConfig: EncryptionConfig;
     onUpdate: OnUpdateCallback;
-    organizationKey: OpenPGPKey;
+    organizationKey: PrivateKeyReference;
     ownerAddresses: Address[];
     member: Member;
     memberAddresses: Address[];

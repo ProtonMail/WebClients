@@ -1,7 +1,7 @@
 import { useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 import { PayloadAction } from '@reduxjs/toolkit';
-import { OpenPGPKey } from 'pmcrypto';
+import { PrivateKeyReference } from '@proton/crypto';
 
 import { useApi } from '@proton/components';
 import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
@@ -56,7 +56,7 @@ export const useInitializeEOMessage = () => {
 
         try {
             // Decryption
-            decryption = await decryptMessage(getData(), [] as OpenPGPKey[], undefined, undefined, password);
+            decryption = await decryptMessage(getData(), [] as PrivateKeyReference[], undefined, undefined, password);
 
             if (decryption.mimetype) {
                 dataChanges = { ...dataChanges, MIMEType: decryption.mimetype };

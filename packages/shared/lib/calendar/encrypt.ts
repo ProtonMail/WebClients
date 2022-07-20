@@ -1,30 +1,25 @@
-import {
-    encryptMessage,
-    encryptSessionKey,
-    generateSessionKey,
-    getPreferredAlgorithm,
-    OpenPGPKey,
-    SessionKey,
-    signMessage,
-    splitMessage,
-} from 'pmcrypto';
+import { CryptoProxy, PrivateKeyReference, PublicKeyReference, SessionKey } from '@proton/crypto';
 import { SimpleMap } from '../interfaces';
 import { EncryptPartResult, SignPartResult } from '../interfaces/calendar';
 
-export function signPart(dataToSign: string, signingKey: OpenPGPKey): Promise<SignPartResult>;
-export function signPart(dataToSign: string | undefined, signingKey: OpenPGPKey): Promise<SignPartResult | undefined>;
+export function signPart(dataToSign: string, signingKey: PrivateKeyReference): Promise<SignPartResult>;
+export function signPart(
+    dataToSign: string | undefined,
+    signingKey: PrivateKeyReference
+): Promise<SignPartResult | undefined>;
 
 export async function signPart(
     dataToSign: string | undefined,
-    signingKey: OpenPGPKey
+    signingKey: PrivateKeyReference
 ): Promise<SignPartResult | undefined> {
     if (!dataToSign) {
         return;
     }
-    const { signature } = await signMessage({
-        data: dataToSign,
-        privateKeys: [signingKey],
-        armor: false,
+
+    const signature = await CryptoProxy.signMessage({
+        textData: dataToSign,
+        stripTrailingSpaces: true,
+        signingKeys: [signingKey],
         detached: true,
     });
     return {
@@ -35,53 +30,55 @@ export async function signPart(
 
 export function encryptPart(
     dataToEncrypt: string,
-    signingKey: OpenPGPKey,
+    signingKey: PrivateKeyReference,
     sessionKey: SessionKey
 ): Promise<EncryptPartResult>;
 export function encryptPart(
     dataToEncrypt: string | undefined,
-    signingKey: OpenPGPKey,
+    signingKey: PrivateKeyReference,
     sessionKey: SessionKey
 ): Promise<EncryptPartResult | undefined>;
 
 export async function encryptPart(
     dataToEncrypt: string | undefined,
-    signingKey: OpenPGPKey,
+    signingKey: PrivateKeyReference,
     sessionKey: SessionKey
 ): Promise<EncryptPartResult | undefined> {
     if (!dataToEncrypt) {
         return;
     }
-    const { message, signature } = await encryptMessage({
-        data: dataToEncrypt,
-        privateKeys: [signingKey],
+    const { message: encryptedData, signature: binarySignature } = await CryptoProxy.encryptMessage({
+        textData: dataToEncrypt,
+        stripTrailingSpaces: true,
+        signingKeys: [signingKey],
         sessionKey,
-        armor: false,
+        format: 'binary',
         detached: true,
     });
-    const { encrypted } = await splitMessage(message);
+
     return {
-        dataPacket: encrypted[0],
-        signature,
+        dataPacket: encryptedData,
+        signature: await CryptoProxy.getArmoredSignature({ binarySignature }),
     };
 }
 
-export const getEncryptedSessionKey = async ({ data, algorithm }: SessionKey, publicKey: OpenPGPKey) => {
-    const { message } = await encryptSessionKey({ data, algorithm, publicKeys: [publicKey] });
-    const { asymmetric } = await splitMessage(message);
-    return asymmetric[0];
-};
-
-export const createSessionKey = async (publicKey: OpenPGPKey) => {
-    const algorithm = await getPreferredAlgorithm([publicKey]);
-    const sessionKey = await generateSessionKey(algorithm);
-    return {
-        data: sessionKey,
+export const getEncryptedSessionKey = async ({ data, algorithm }: SessionKey, publicKey: PublicKeyReference) => {
+    const encryptedSessionKey = await CryptoProxy.encryptSessionKey({
+        data,
         algorithm,
-    };
+        encryptionKeys: [publicKey],
+        format: 'binary',
+    });
+    return encryptedSessionKey;
 };
 
-export const getEncryptedSessionKeysMap = async (sessionKey: SessionKey, publicKeyMap: SimpleMap<OpenPGPKey> = {}) => {
+export const createSessionKey = async (publicKey: PublicKeyReference) =>
+    CryptoProxy.generateSessionKey({ recipientKeys: publicKey });
+
+export const getEncryptedSessionKeysMap = async (
+    sessionKey: SessionKey,
+    publicKeyMap: SimpleMap<PublicKeyReference> = {}
+) => {
     const emails = Object.keys(publicKeyMap);
     if (!emails.length) {
         return;

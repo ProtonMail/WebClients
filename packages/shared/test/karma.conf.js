@@ -1,5 +1,6 @@
 const karmaJasmine = require('karma-jasmine');
 const karmaWebpack = require('karma-webpack');
+const karmaSpecReporter = require('karma-spec-reporter');
 const karmaChromeLauncher = require('karma-chrome-launcher');
 process.env.CHROME_BIN = require('puppeteer').executablePath();
 
@@ -7,7 +8,7 @@ module.exports = (config) => {
     config.set({
         basePath: '..',
         frameworks: ['jasmine', 'webpack'],
-        plugins: [karmaJasmine, karmaWebpack, karmaChromeLauncher],
+        plugins: [karmaJasmine, karmaWebpack, karmaChromeLauncher, karmaSpecReporter],
         files: ['test/index.spec.js'],
         preprocessors: {
             'test/index.spec.js': ['webpack'],
@@ -19,6 +20,7 @@ module.exports = (config) => {
                 fallback: {
                     crypto: false,
                     buffer: false,
+                    stream: false,
                 },
             },
             module: {
@@ -31,7 +33,7 @@ module.exports = (config) => {
                                 options: { transpileOnly: true },
                             },
                         ],
-                        exclude: /node_modules\/(?!.*(bip39))/,
+                        exclude: /node_modules\/(?!.*(bip39|pmcrypto-v7))/,
                     },
                 ],
             },
@@ -40,7 +42,7 @@ module.exports = (config) => {
         mime: {
             'text/x-typescript': ['ts', 'tsx'],
         },
-        reporters: ['progress'],
+        reporters: ['spec'],
         port: 9876,
         colors: true,
         logLevel: config.LOG_INFO,
@@ -54,5 +56,10 @@ module.exports = (config) => {
         browsers: ['ChromeHeadlessCI'],
         singleRun: true,
         concurrency: Infinity,
+        client: {
+            jasmine: {
+                timeoutInterval: 10000,
+            },
+        },
     });
 };

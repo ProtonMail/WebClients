@@ -1,4 +1,4 @@
-import { DecryptResultPmcrypto } from 'pmcrypto';
+import { WorkerDecryptionResult } from '@proton/crypto';
 import { MIME_TYPES, PGP_SIGN } from '@proton/shared/lib/constants';
 import { fireEvent, getByTestId } from '@testing-library/dom';
 import { ROOSTER_EDITOR_ID } from '@proton/components/components/editor/constants';
@@ -12,10 +12,12 @@ import {
     addKeysToUserKeysCache,
     GeneratedKey,
     generateKeys,
+    releaseCryptoProxy,
+    setupCryptoProxyForTesting,
 } from '../../../helpers/test/crypto';
 import {
     addToCache,
-    decryptMessageLegacy,
+    decryptMessage,
     minimalCache,
     readSessionKey,
     decryptSessionKey,
@@ -45,9 +47,15 @@ describe('Composer sending', () => {
     let toKeys: GeneratedKey;
 
     beforeAll(async () => {
+        await setupCryptoProxyForTesting();
+
         fromKeys = await generateKeys('me', fromAddress);
         secondFromKeys = await generateKeys('secondme', fromAddress);
         toKeys = await generateKeys('someone', toAddress);
+    });
+
+    afterAll(async () => {
+        await releaseCryptoProxy();
     });
 
     beforeEach(() => {
@@ -80,7 +88,7 @@ describe('Composer sending', () => {
 
             const sessionKey = readSessionKey(pack.BodyKey);
 
-            const decryptResult = await decryptMessageLegacy(pack, fromKeys.privateKeys, sessionKey);
+            const decryptResult = await decryptMessage(pack, fromKeys.privateKeys, sessionKey);
 
             expect(decryptResult.data).toBe(message.messageDocument?.plainText);
         });
@@ -121,7 +129,7 @@ describe('Composer sending', () => {
 
             expect(sessionKey).toBeDefined();
 
-            const decryptResult = await decryptMessageLegacy(pack, fromKeys.privateKeys, sessionKey);
+            const decryptResult = await decryptMessage(pack, fromKeys.privateKeys, sessionKey);
 
             expect(decryptResult.data).toBe(message.messageDocument?.plainText);
         });
@@ -147,7 +155,7 @@ describe('Composer sending', () => {
 
             expect(sessionKey).toBeDefined();
 
-            const decryptResult = await decryptMessageLegacy(pack, toKeys.privateKeys, sessionKey);
+            const decryptResult = await decryptMessage(pack, toKeys.privateKeys, sessionKey);
 
             expect(decryptResult.data).toBe(message.messageDocument?.plainText);
         });
@@ -204,7 +212,7 @@ describe('Composer sending', () => {
 
             const sessionKey = readSessionKey(pack.BodyKey);
 
-            const decryptResult = await decryptMessageLegacy(pack, fromKeys.privateKeys, sessionKey);
+            const decryptResult = await decryptMessage(pack, fromKeys.privateKeys, sessionKey);
 
             expect(decryptResult.data).toBe(content);
         });
@@ -233,7 +241,7 @@ describe('Composer sending', () => {
 
             const sessionKey = readSessionKey(pack.BodyKey);
 
-            const decryptResult = await decryptMessageLegacy(pack, fromKeys.privateKeys, sessionKey);
+            const decryptResult = await decryptMessage(pack, fromKeys.privateKeys, sessionKey);
 
             expect(decryptResult.data).toBe(content);
         });
@@ -263,7 +271,7 @@ describe('Composer sending', () => {
 
             const sessionKey = readSessionKey(pack.BodyKey);
 
-            const decryptResult = await decryptMessageLegacy(pack, fromKeys.privateKeys, sessionKey);
+            const decryptResult = await decryptMessage(pack, fromKeys.privateKeys, sessionKey);
 
             expect(decryptResult.data).toBe(content);
         });
@@ -293,7 +301,7 @@ describe('Composer sending', () => {
 
             expect(sessionKey).toBeDefined();
 
-            const decryptResult = await decryptMessageLegacy(pack, toKeys.privateKeys, sessionKey);
+            const decryptResult = await decryptMessage(pack, toKeys.privateKeys, sessionKey);
 
             expect(decryptResult.data).toBe(content);
         });
@@ -323,7 +331,7 @@ describe('Composer sending', () => {
 
             expect(sessionKey).toBeDefined();
 
-            const decryptResult = await decryptMessageLegacy(pack, toKeys.privateKeys, sessionKey);
+            const decryptResult = await decryptMessage(pack, toKeys.privateKeys, sessionKey);
 
             expect(decryptResult.data).toBe(content);
         });
@@ -401,6 +409,7 @@ describe('Composer sending', () => {
                     ID: 'AttachmentID',
                     Name: 'image.png',
                     MIMEType: 'image/png',
+                    data: new Uint8Array(),
                 },
                 fromKeys.publicKeys
             );
@@ -410,7 +419,12 @@ describe('Composer sending', () => {
             });
 
             addApiKeys(false, toAddress, [toKeys]);
-            store.dispatch(addAttachment({ ID: attachment.ID as string, attachment: {} as DecryptResultPmcrypto }));
+            store.dispatch(
+                addAttachment({
+                    ID: attachment.ID as string,
+                    attachment: { data: attachment.data } as WorkerDecryptionResult<Uint8Array>,
+                })
+            );
 
             const sendRequest = await send(message);
 
@@ -476,7 +490,7 @@ describe('Composer sending', () => {
 
             expect(sessionKey).toBeDefined();
 
-            const decryptResult = await decryptMessageLegacy(pack, toKeys.privateKeys, sessionKey);
+            const decryptResult = await decryptMessage(pack, toKeys.privateKeys, sessionKey);
 
             expect(decryptResult.data).toBe(`<img src="cid:${cid}">`);
         });
@@ -501,7 +515,7 @@ describe('Composer sending', () => {
         const address = pack.Addresses[toAddress];
 
         const sessionKey = await decryptSessionKey(address.BodyKeyPacket, toKeys.privateKeys);
-        const decryptResult = await decryptMessageLegacy(pack, toKeys.privateKeys, sessionKey);
+        const decryptResult = await decryptMessage(pack, toKeys.privateKeys, sessionKey);
 
         // Having 2 signatures here would meen we used both private keys to encrypt
         // It's not "wrong", it works with OpenPGP and API accept it
@@ -542,7 +556,7 @@ describe('Composer sending', () => {
         const packages = sendRequest.data.Packages;
         const pack = packages['text/html'];
         const sessionKey = readSessionKey(pack.BodyKey);
-        const decryptResult = await decryptMessageLegacy(pack, fromKeys.privateKeys, sessionKey);
+        const decryptResult = await decryptMessage(pack, fromKeys.privateKeys, sessionKey);
 
         expect(decryptResult.data).toBe(editorContent);
     });

@@ -1,5 +1,3 @@
-import { OpenPGPKey } from 'pmcrypto';
-
 import { ADDRESS_STATUS } from '@proton/shared/lib/constants';
 import { DecryptedKey } from '@proton/shared/lib/interfaces';
 import { Address } from '@proton/shared/lib/interfaces/Address';
@@ -7,12 +5,13 @@ import { getPrimaryKey } from '@proton/shared/lib/keys';
 import { canonizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import { splitKeys } from '@proton/shared/lib/keys/keys';
 import { decryptPassphrase } from '@proton/shared/lib/keys/drivePassphrase';
+import { PrivateKeyReference, PublicKeyReference, toPublicKeyReference } from '@proton/crypto';
 
 import { ShareWithKey } from '../_shares';
 
 export interface PrimaryAddressKey {
-    privateKey: OpenPGPKey;
-    publicKey: OpenPGPKey | undefined;
+    privateKey: PrivateKeyReference;
+    publicKey: PublicKeyReference | undefined;
     address: Address;
 }
 
@@ -38,14 +37,16 @@ export const getPrimaryAddressKeyAsync = async (
 ) => {
     const activeAddress = await getPrimaryAddress();
     const addressKeys = await getAddressKeys(activeAddress.ID);
-    const { privateKey, publicKey } = getPrimaryKey(addressKeys) || {};
+    const { privateKey, publicKey: maybePublicKey } = getPrimaryKey(addressKeys) || {};
 
     if (!privateKey) {
         // Should never happen
         throw new Error('Primary private key is not available');
     }
 
-    return { privateKey, publicKey: publicKey || privateKey.toPublic(), address: activeAddress };
+    const publicKey = maybePublicKey || (await toPublicKeyReference(privateKey));
+
+    return { privateKey, publicKey, address: activeAddress };
 };
 
 export const getPrimaryAddressKeysAsync = async (
@@ -54,10 +55,12 @@ export const getPrimaryAddressKeysAsync = async (
 ) => {
     const activeAddress = await getPrimaryAddress();
     const addressKeys = await getAddressKeys(activeAddress.ID);
-    return addressKeys.map(({ privateKey, publicKey }) => ({
-        privateKey,
-        publicKey: publicKey || privateKey.toPublic(),
-    }));
+    return Promise.all(
+        addressKeys.map(async ({ privateKey, publicKey }) => ({
+            privateKey,
+            publicKey: publicKey || (await toPublicKeyReference(privateKey)),
+        }))
+    );
 };
 
 const getOwnAddressKeys = async (
@@ -87,7 +90,7 @@ export const getOwnAddressPrimaryKeyAsync = async (
         throw new Error('Primary private key is not available');
     }
 
-    return { privateKey, publicKey: publicKey || privateKey.toPublic() };
+    return { privateKey, publicKey: publicKey || (await toPublicKeyReference(privateKey)) };
 };
 
 export const getOwnAddressKeysAsync = async (
@@ -101,8 +104,8 @@ export const getOwnAddressKeysAsync = async (
 
 export const decryptSharePassphraseAsync = async (
     meta: ShareWithKey,
-    privateKeys: OpenPGPKey[],
-    getVerificationKey: (email: string) => Promise<OpenPGPKey[]>
+    privateKeys: PrivateKeyReference[],
+    getVerificationKey: (email: string) => Promise<PublicKeyReference[]>
 ) => {
     const publicKeys = await getVerificationKey(meta.creator);
     return decryptPassphrase({

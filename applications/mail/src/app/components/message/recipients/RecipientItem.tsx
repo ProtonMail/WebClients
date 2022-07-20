@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import { c } from 'ttag';
 import { Recipient } from '@proton/shared/lib/interfaces';
-import { OpenPGPKey } from 'pmcrypto';
+import { PublicKeyReference } from '@proton/crypto';
 import { ContactEditProps } from '@proton/components/containers/contacts/edit/ContactEditModal';
 import { MapStatusIcons, StatusIcon } from '../../../models/crypto';
 import { RecipientOrGroup } from '../../../models/address';
@@ -17,8 +17,8 @@ interface Props {
     mapStatusIcons?: MapStatusIcons;
     globalIcon?: StatusIcon;
     isLoading: boolean;
-    signingPublicKey?: OpenPGPKey;
-    attachedPublicKey?: OpenPGPKey;
+    signingPublicKey?: PublicKeyReference;
+    attachedPublicKey?: PublicKeyReference;
     isNarrow?: boolean;
     showDropdown?: boolean;
     isOutside?: boolean;

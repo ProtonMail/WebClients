@@ -1,4 +1,4 @@
-import { OpenPGPKey } from 'pmcrypto';
+import { PublicKeyReference } from '@proton/crypto';
 import { Address } from './Address';
 import {
     CONTACT_MIME_TYPES,
@@ -12,13 +12,13 @@ import { MailSettings } from './MailSettings';
 import { SignedKeyListEpochs } from './SignedKeyList';
 
 export interface PublicKeyWithPref {
-    publicKey: OpenPGPKey;
+    publicKey: PublicKeyReference;
     pref?: number;
 }
 
 export interface SelfSend {
     address: Address;
-    publicKey?: OpenPGPKey;
+    publicKey?: PublicKeyReference;
     canSend?: boolean;
 }
 
@@ -27,7 +27,7 @@ export type MimeTypeVcard = MIME_TYPES.PLAINTEXT;
 export interface ProcessedApiKey {
     armoredKey: string;
     flags: KEY_FLAG;
-    publicKey?: OpenPGPKey;
+    publicKey?: PublicKeyReference;
 }
 
 export interface ApiKeysConfig {
@@ -41,7 +41,7 @@ export interface ApiKeysConfig {
 }
 
 export interface PinnedKeysConfig {
-    pinnedKeys: OpenPGPKey[];
+    pinnedKeys: PublicKeyReference[];
     encrypt?: boolean;
     sign?: boolean;
     scheme?: PGP_SCHEMES;
@@ -62,9 +62,9 @@ export interface PublicKeyConfigs {
 export interface ContactPublicKeyModel {
     emailAddress: string;
     publicKeys: {
-        apiKeys: OpenPGPKey[];
-        pinnedKeys: OpenPGPKey[];
-        verifyingPinnedKeys: OpenPGPKey[]; // Subset of pinned keys not marked as compromised
+        apiKeys: PublicKeyReference[];
+        pinnedKeys: PublicKeyReference[];
+        verifyingPinnedKeys: PublicKeyReference[]; // Subset of pinned keys not marked as compromised
     };
     encrypt?: boolean;
     sign?: boolean;
@@ -88,7 +88,11 @@ export interface ContactPublicKeyModel {
 
 export interface PublicKeyModel {
     emailAddress: string;
-    publicKeys: { apiKeys: OpenPGPKey[]; pinnedKeys: OpenPGPKey[]; verifyingPinnedKeys: OpenPGPKey[] };
+    publicKeys: {
+        apiKeys: PublicKeyReference[];
+        pinnedKeys: PublicKeyReference[];
+        verifyingPinnedKeys: PublicKeyReference[];
+    };
     encrypt: boolean;
     sign: boolean;
     mimeType: CONTACT_MIME_TYPES;

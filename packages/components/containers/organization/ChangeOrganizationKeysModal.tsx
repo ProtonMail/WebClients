@@ -9,6 +9,7 @@ import {
     getReEncryptedPublicMemberTokensPayloadV2,
 } from '@proton/shared/lib/keys';
 import { CachedOrganizationKey, Member } from '@proton/shared/lib/interfaces';
+import { CryptoProxy } from '@proton/crypto';
 import noop from '@proton/utils/noop';
 import { confirmPasswordValidator, passwordLengthValidator } from '@proton/shared/lib/helpers/formValidators';
 import {
@@ -81,6 +82,7 @@ const ChangeOrganizationKeysModal = ({
         }
 
         const addresses = await getAddresses();
+        const publicKey = await CryptoProxy.importPublicKey({ armoredKey: privateKeyArmored });
 
         let apiConfig: any;
         if (getHasMigratedAddressKeys(addresses)) {
@@ -93,7 +95,7 @@ const ChangeOrganizationKeysModal = ({
                           api,
                           publicMembers,
                           oldOrganizationKey: organizationKey,
-                          newOrganizationKey: { privateKey, publicKey: privateKey.toPublic() },
+                          newOrganizationKey: { privateKey, publicKey },
                       })
                     : [],
             });
@@ -107,7 +109,7 @@ const ChangeOrganizationKeysModal = ({
                           api,
                           publicMembers,
                           oldOrganizationKey: organizationKey,
-                          newOrganizationKey: { privateKey, publicKey: privateKey.toPublic() },
+                          newOrganizationKey: { privateKey, publicKey },
                       })
                     : [],
             });

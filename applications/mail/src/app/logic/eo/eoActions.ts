@@ -1,6 +1,7 @@
 import { createAction, createAsyncThunk } from '@reduxjs/toolkit';
-import { decodeUtf8Base64, encodeUtf8Base64, getKeys } from 'pmcrypto';
 
+import { decodeUtf8Base64, encodeUtf8Base64 } from '@proton/crypto/lib/utils';
+import { CryptoProxy } from '@proton/crypto';
 import { getEOMessage, getEOToken } from '@proton/shared/lib/api/eo';
 import {
     EODocumentInitializeParams,
@@ -58,7 +59,7 @@ export const loadEOMessage = createAsyncThunk<{ eoMessage: EOMessage; messageSta
         try {
             const { Message, PublicKey } = await api(getEOMessage(token, id));
 
-            Message.PublicKey = await getKeys(PublicKey);
+            Message.PublicKey = await CryptoProxy.importPublicKey({ armoredKey: PublicKey });
 
             // Decrypt replies bodies (Useless for now, but might be needed if we want to display replies)
             await eoDecrypt(Message?.Body, password).then((body) => {

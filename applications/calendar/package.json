@@ -20,6 +20,7 @@
     },
     "dependencies": {
         "@proton/components": "workspace:packages/components",
+        "@proton/crypto": "workspace:packages/crypto",
         "@proton/pack": "workspace:packages/pack",
         "@proton/polyfill": "workspace:packages/polyfill",
         "@proton/shared": "workspace:packages/shared",

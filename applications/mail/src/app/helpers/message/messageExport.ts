@@ -1,11 +1,10 @@
+import { encodeBase64, arrayToBinaryString } from '@proton/crypto/lib/utils';
 import {
-    encryptSessionKey,
-    encryptMessage,
-    OpenPGPKey,
-    encodeBase64,
-    arrayToBinaryString,
-    DecryptResultPmcrypto,
-} from 'pmcrypto';
+    CryptoProxy,
+    PrivateKeyReference,
+    PublicKeyReference,
+    WorkerDecryptionResult,
+} from '@proton/crypto';
 import { createDraft, updateDraft } from '@proton/shared/lib/api/messages';
 import { Api } from '@proton/shared/lib/interfaces';
 import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
@@ -54,10 +53,11 @@ const encryptBody = async (content: string, messageKeys: PublicPrivateKey) => {
     const publicKeys = messageKeys.publicKeys.slice(0, 1);
     const privateKeys = messageKeys.privateKeys.slice(0, 1);
 
-    const { data } = await encryptMessage({
-        data: content,
-        publicKeys,
-        privateKeys,
+    const { message: data } = await CryptoProxy.encryptMessage({
+        textData: content,
+        stripTrailingSpaces: true,
+        encryptionKeys: publicKeys,
+        signingKeys: privateKeys,
     });
 
     return data;
@@ -71,8 +71,8 @@ export const prepareAndEncryptBody = async (message: MessageState, messageKeys: 
 
 export const encryptAttachmentKeyPackets = async (
     attachments: Attachment[],
-    previousAddressPrivateKeys: OpenPGPKey[] = [],
-    newAddressPublicKeys: OpenPGPKey[] = []
+    previousAddressPrivateKeys: PrivateKeyReference[] = [],
+    newAddressPublicKeys: PublicKeyReference[] = []
 ) => {
     return Object.fromEntries(
         await Promise.all(
@@ -80,15 +80,13 @@ export const encryptAttachmentKeyPackets = async (
                 .filter(({ ID = '' }) => ID.indexOf('PGPAttachment'))
                 .map(async (attachment) => {
                     const sessionKey = await getSessionKey(attachment, previousAddressPrivateKeys);
-                    const result = await encryptSessionKey({
+                    const encryptedSessionKey = await CryptoProxy.encryptSessionKey({
                         data: sessionKey.data,
                         algorithm: sessionKey.algorithm,
-                        publicKeys: newAddressPublicKeys,
+                        encryptionKeys: newAddressPublicKeys,
+                        format: 'binary',
                     });
-                    return [
-                        attachment.ID || '',
-                        encodeBase64(arrayToBinaryString(result.message.packets.write() as Uint8Array)),
-                    ];
+                    return [attachment.ID || '', encodeBase64(arrayToBinaryString(encryptedSessionKey))];
                 })
         )
     );
@@ -178,8 +176,8 @@ export const updateMessage = async (
 export const exportBlob = async (
     message: MessageState,
     messageKeys: MessageKeys,
-    getAttachment: (ID: string) => DecryptResultPmcrypto | undefined,
-    onUpdateAttachment: (ID: string, attachment: DecryptResultPmcrypto) => void,
+    getAttachment: (ID: string) => WorkerDecryptionResult<Uint8Array> | undefined,
+    onUpdateAttachment: (ID: string, attachment: WorkerDecryptionResult<Uint8Array>) => void,
     api: Api
 ) => {
     const mimeMessage = await constructMimeFromSource(message, messageKeys, getAttachment, onUpdateAttachment, api);

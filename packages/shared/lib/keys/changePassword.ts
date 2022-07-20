@@ -1,4 +1,4 @@
-import { encryptPrivateKey, OpenPGPKey } from 'pmcrypto';
+import { CryptoProxy, PrivateKeyReference } from '@proton/crypto';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 import { Address as tsAddress, DecryptedKey } from '../interfaces';
@@ -7,10 +7,10 @@ import { getHasMigratedAddressKeys } from './keyMigration';
 import { getEncryptedArmoredAddressKey } from './addressKeys';
 
 const getEncryptedArmoredUserKey = async ({ ID, privateKey }: DecryptedKey, newKeyPassword: string) => {
-    if (!privateKey || !privateKey.isDecrypted()) {
-        return;
-    }
-    const privateKeyArmored = await encryptPrivateKey(privateKey, newKeyPassword);
+    const privateKeyArmored = await CryptoProxy.exportPrivateKey({
+        privateKey,
+        passphrase: newKeyPassword,
+    });
     return {
         ID,
         PrivateKey: privateKeyArmored,
@@ -18,13 +18,13 @@ const getEncryptedArmoredUserKey = async ({ ID, privateKey }: DecryptedKey, newK
 };
 
 export const getEncryptedArmoredOrganizationKey = async (
-    organizationKey: OpenPGPKey | undefined,
+    organizationKey: PrivateKeyReference | undefined,
     newKeyPassword: string
 ) => {
-    if (!organizationKey || !organizationKey.isDecrypted()) {
+    if (!organizationKey) {
         return;
     }
-    return encryptPrivateKey(organizationKey, newKeyPassword);
+    return CryptoProxy.exportPrivateKey({ privateKey: organizationKey, passphrase: newKeyPassword });
 };
 
 export const getArmoredPrivateUserKeys = async (keys: DecryptedKey[], keyPassword: string) => {
@@ -92,7 +92,7 @@ export const getArmoredPrivateAddressesKeys = async (addressesWithKeysList: Addr
 export const getUpdateKeysPayload = async (
     addressesKeys: AddressesKeys[],
     userKeys: DecryptedKey[],
-    organizationKey: OpenPGPKey | undefined,
+    organizationKey: PrivateKeyReference | undefined,
     keyPassword: string,
     keySalt: string
 ) => {

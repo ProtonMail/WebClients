@@ -1,5 +1,5 @@
-import { decryptPrivateKey, encryptPrivateKey, generateKey, OpenPGPKey, reformatKey } from 'pmcrypto';
 import { computeKeyPassword, generateKeySalt } from '@proton/srp';
+import { CryptoProxy, PrivateKeyReference } from '@proton/crypto';
 
 import isTruthy from '@proton/utils/isTruthy';
 import { getAllMemberAddresses } from '../api/members';
@@ -15,11 +15,14 @@ export const getBackupKeyData = async ({
     organizationKey,
 }: {
     backupPassword: string;
-    organizationKey: OpenPGPKey;
+    organizationKey: PrivateKeyReference;
 }) => {
     const backupKeySalt = generateKeySalt();
     const backupKeyPassword = await computeKeyPassword(backupPassword, backupKeySalt);
-    const backupArmoredPrivateKey = await encryptPrivateKey(organizationKey, backupKeyPassword);
+    const backupArmoredPrivateKey = await CryptoProxy.exportPrivateKey({
+        privateKey: organizationKey,
+        passphrase: backupKeyPassword,
+    });
 
     return {
         backupKeySalt,
@@ -40,12 +43,11 @@ export const generateOrganizationKeys = async ({
     backupPassword,
     encryptionConfig,
 }: GenerateOrganizationKeysArguments) => {
-    const { key: privateKey, privateKeyArmored } = await generateKey({
-        userIds: [{ name: ORGANIZATION_USERID, email: ORGANIZATION_USERID }],
-        passphrase: keyPassword,
+    const privateKey = await CryptoProxy.generateKey({
+        userIDs: [{ name: ORGANIZATION_USERID, email: ORGANIZATION_USERID }],
         ...encryptionConfig,
     });
-    await privateKey.decrypt(keyPassword);
+    const privateKeyArmored = await CryptoProxy.exportPrivateKey({ privateKey: privateKey, passphrase: keyPassword });
     return {
         privateKey,
         privateKeyArmored,
@@ -53,13 +55,13 @@ export const generateOrganizationKeys = async ({
     };
 };
 
-export const reformatOrganizationKey = async (privateKey: OpenPGPKey, passphrase: string) => {
-    const { key: reformattedPrivateKey, privateKeyArmored } = await reformatKey({
-        userIds: [{ name: ORGANIZATION_USERID, email: ORGANIZATION_USERID }],
-        passphrase,
-        privateKey,
+export const reformatOrganizationKey = async (privateKey: PrivateKeyReference, passphrase: string) => {
+    const reformattedPrivateKey = await CryptoProxy.reformatKey({
+        userIDs: [{ name: ORGANIZATION_USERID, email: ORGANIZATION_USERID }],
+        privateKey: privateKey,
     });
-    await reformattedPrivateKey.decrypt(passphrase);
+
+    const privateKeyArmored = await CryptoProxy.exportPrivateKey({ privateKey: reformattedPrivateKey, passphrase });
     return { privateKey: reformattedPrivateKey, privateKeyArmored };
 };
 
@@ -100,11 +102,17 @@ export const getReEncryptedPublicMemberTokensPayloadV2 = async ({
                     memberKeyToken,
                     newOrganizationKey.privateKey
                 );
-                const privateKey = await decryptPrivateKey(PrivateKey, memberKeyToken);
+                const privateKey = await CryptoProxy.importPrivateKey({
+                    armoredKey: PrivateKey,
+                    passphrase: memberKeyToken,
+                });
+                const publicKey = await CryptoProxy.importPublicKey({
+                    armoredKey: await CryptoProxy.exportPublicKey({ key: privateKey }),
+                });
                 return {
                     ID,
                     privateKey,
-                    publicKey: privateKey.toPublic(),
+                    publicKey,
                     token: reEncryptedMemberKeyToken,
                 };
             })
@@ -134,7 +142,13 @@ export const getReEncryptedPublicMemberTokensPayloadV2 = async ({
                                 privateKeys: memberUserKeys.privateKeys,
                                 publicKeys: memberUserKeys.publicKeys,
                             });
-                            await decryptPrivateKey(PrivateKey, token); // To ensure it can get decrypted with this token.
+                            await CryptoProxy.clearKey({
+                                // To ensure it can get decrypted with this token
+                                key: await CryptoProxy.importPrivateKey({
+                                    armoredKey: PrivateKey,
+                                    passphrase: token,
+                                }),
+                            });
                             const result = await encryptAddressKeyToken({
                                 token,
                                 organizationKey: newOrganizationKey.privateKey,
@@ -221,8 +235,8 @@ export const getReEncryptedPublicMemberTokensPayloadLegacy = async ({
  */
 interface GenerateMemberAddressKeyArguments {
     email: string;
-    primaryKey: OpenPGPKey;
-    organizationKey: OpenPGPKey;
+    primaryKey: PrivateKeyReference;
+    organizationKey: PrivateKeyReference;
     encryptionConfig: EncryptionConfig;
 }
 
@@ -241,7 +255,10 @@ export const generateMemberAddressKey = async ({
         encryptionConfig,
     });
 
-    const privateKeyArmoredOrganization = await encryptPrivateKey(privateKey, orgKeyToken);
+    const privateKeyArmoredOrganization = await CryptoProxy.exportPrivateKey({
+        privateKey,
+        passphrase: orgKeyToken,
+    });
 
     const [activationToken, organizationToken] = await Promise.all([
         encryptMemberToken(memberKeyToken, primaryKey),

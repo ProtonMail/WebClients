@@ -1,4 +1,4 @@
-import { act, fireEvent } from '@testing-library/react';
+import { act, fireEvent, waitFor } from '@testing-library/react';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { EO_REPLY_NUM_ATTACHMENTS_LIMIT } from '@proton/shared/lib/mail/eo/constants';
 
@@ -6,8 +6,17 @@ import { EOClearAll, EOSubject } from '../../../../helpers/test/eo/helpers';
 import { setup } from './EOReply.test.helpers';
 import { tick } from '../../../../helpers/test/render';
 import { waitForNotification } from '../../../../helpers/test/helper';
+import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../../helpers/test/crypto';
 
 describe('EO Reply attachments', () => {
+    beforeAll(async () => {
+        await setupCryptoProxyForTesting();
+    });
+
+    afterAll(async () => {
+        await releaseCryptoProxy();
+    });
+
     afterEach(EOClearAll);
 
     const fileName = 'file.txt';
@@ -19,7 +28,7 @@ describe('EO Reply attachments', () => {
     it('should add attachments to a EO message and be able to preview them', async () => {
         const { getByText, getByTestId } = await setup();
 
-        getByText(EOSubject);
+        await waitFor(() => getByText(EOSubject));
 
         const inputAttachment = getByTestId('composer-attachments-button') as HTMLInputElement;
         await act(async () => {
@@ -27,7 +36,7 @@ describe('EO Reply attachments', () => {
             await wait(100);
         });
 
-        const toggleList = getByTestId('attachment-list-toggle');
+        const toggleList = await waitFor(() => getByTestId('attachment-list-toggle'));
         fireEvent.click(toggleList);
 
         await tick();
@@ -47,7 +56,7 @@ describe('EO Reply attachments', () => {
     it('should not be possible to add 10+ attachments', async () => {
         const { getByText, getByTestId } = await setup();
 
-        getByText(EOSubject);
+        await waitFor(() => getByText(EOSubject));
 
         // Add 11 files
         const inputAttachment = getByTestId('composer-attachments-button') as HTMLInputElement;

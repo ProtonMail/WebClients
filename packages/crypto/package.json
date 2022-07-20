@@ -1,0 +1,41 @@
+{
+    "name": "@proton/crypto",
+    "description": "",
+    "license": "MIT",
+    "author": "ProtonMail",
+    "sideEffects": false,
+    "main": "./lib/index.ts",
+    "scripts": {
+        "check-types": "tsc",
+        "lint": "eslint lib test --ext .js,.ts,tsx --quiet --cache",
+        "pretty": "prettier --write $(find lib -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx')",
+        "test": "karma start test/karma.conf.js"
+    },
+    "dependencies": {
+        "comlink": "^4.3.1",
+        "pmcrypto-v7": "npm:@protontech/pmcrypto@^7.0.0"
+    },
+    "devDependencies": {
+        "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton",
+        "@types/chai": "^4.3.0",
+        "@types/chai-as-promised": "^7.1.4",
+        "@types/mocha": "^9.0.0",
+        "@types/node": "^16.11.7",
+        "chai": "^4.3.4",
+        "chai-as-promised": "^7.1.1",
+        "eslint": "^8.14.0",
+        "eslint-plugin-chai-friendly": "^0.7.2",
+        "karma": "^6.3.19",
+        "karma-chrome-launcher": "^3.1.1",
+        "karma-mocha": "^2.0.1",
+        "karma-mocha-reporter": "^2.2.5",
+        "karma-webpack": "^5.0.0",
+        "mocha": "^9.2.2",
+        "prettier": "^2.6.2",
+        "puppeteer": "^14.3.0",
+        "ts-loader": "^9.3.0",
+        "typescript": "^4.6.4",
+        "webpack": "^5.72.0",
+        "webpack-cli": "^4.9.2"
+    }
+}

@@ -74,7 +74,7 @@ import { useGetCanonicalEmailsMap } from '@proton/components/hooks/useGetCanonic
 import { useGetCalendarKeys } from '@proton/components/hooks/useGetDecryptedPassphraseAndCalendarKeys';
 import { useGetVtimezonesMap } from '@proton/components/hooks/useGetVtimezonesMap';
 import useSendIcs from '@proton/components/hooks/useSendIcs';
-import { serverTime } from 'pmcrypto';
+import { serverTime } from '@proton/crypto';
 import eventImport from '@proton/styles/assets/img/illustrations/event-import.svg';
 import { ImportModal } from '@proton/components/containers/calendar/importModal';
 import { reencryptCalendarSharedEvent } from '@proton/shared/lib/calendar/sync/reencrypt';

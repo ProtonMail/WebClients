@@ -12,6 +12,7 @@ import {
     addApiKeys,
     createDocument,
 } from '../../../helpers/test/helper';
+import { setupCryptoProxyForTesting, releaseCryptoProxy } from '../../../helpers/test/crypto';
 import { ID, AddressID, prepareMessage, renderComposer, fromAddress, toAddress } from './Composer.test.helpers';
 
 jest.setTimeout(20000);
@@ -25,7 +26,13 @@ describe('Composer autosave', () => {
     let fromKeys: GeneratedKey;
 
     beforeAll(async () => {
+        await setupCryptoProxyForTesting();
+
         fromKeys = await generateKeys('me', fromAddress);
+    });
+
+    afterAll(async () => {
+        await releaseCryptoProxy();
     });
 
     beforeEach(() => {

@@ -10,65 +10,75 @@ import { getIsTimezoneComponent } from '@proton/shared/lib/calendar/vcalHelper';
 import { VcalVcalendar, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { RequireSome } from '@proton/shared/lib/interfaces/utils';
+import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../test/crypto';
 import { getSupportedEventInvitation, parseVcalendar } from './invite';
 
-describe('getIsRruleSupported for invitations', () => {
-    test('should accept events with daily recurring rules valid for invitations', () => {
-        const vevents = [
-            `BEGIN:VEVENT\r\nRRULE:FREQ=DAILY;UNTIL=20200330T150000Z;INTERVAL=100;BYMONTH=3\r\nEND:VEVENT`,
-            `BEGIN:VEVENT\r\nRRULE:FREQ=DAILY;INTERVAL=2;BYSECOND=30;BYMINUTE=5,10,15;BYHOUR=10\r\nEND:VEVENT`,
-            `BEGIN:VEVENT\r\nRRULE:FREQ=DAILY;INTERVAL=2;BYWEEKNO=13;COUNT=499;WKST=TH\r\nEND:VEVENT`,
-        ];
-        const rrules = vevents.map((vevent) => {
-            const parsedVevent = parse(vevent) as RequireSome<VcalVeventComponent, 'rrule'>;
-            return parsedVevent.rrule.value;
-        });
-        expect(rrules.map((rrule) => getIsRruleSupported(rrule, true))).toEqual(vevents.map(() => true));
+describe('Invitations', () => {
+    beforeAll(async () => {
+        await setupCryptoProxyForTesting();
     });
 
-    test('should refuse events with invalid daily recurring rules', () => {
-        const vevents = [
-            `BEGIN:VEVENT\r\nRRULE:FREQ=DAILY;COUNT=500\r\nEND:VEVENT`,
-            `BEGIN:VEVENT\r\nRRULE:FREQ=DAILY;INTERVAL=1000;BYMONTHDAY=11,22\r\nEND:VEVENT`,
-        ];
-        const rrules = vevents.map((vevent) => {
-            const parsedVevent = parse(vevent) as RequireSome<VcalVeventComponent, 'rrule'>;
-            return parsedVevent.rrule.value;
-        });
-        expect(rrules.map((rrule) => getIsRruleSupported(rrule, true))).toEqual(vevents.map(() => false));
+    afterAll(async () => {
+        await releaseCryptoProxy();
     });
 
-    test('should accept events with yearly recurring rules valid for invitations', () => {
-        const vevents = [
-            `BEGIN:VEVENT\r\nRRULE:FREQ=YEARLY;UNTIL=20200330T150000Z;INTERVAL=1;BYDAY=MO,SU,TH;BYMONTHDAY=30,31;BYMONTH=3\r\nEND:VEVENT`,
-            `BEGIN:VEVENT\r\nRRULE:FREQ=YEARLY;INTERVAL=2;BYSECOND=30;BYHOUR=10;BYMONTH=5\r\nEND:VEVENT`,
-            `BEGIN:VEVENT\r\nRRULE:FREQ=YEARLY;INTERVAL=2;BYMONTH=3;BYMONTHDAY=17,22;COUNT=499\r\nEND:VEVENT`,
-            `BEGIN:VEVENT\r\nRRULE:FREQ=YEARLY;INTERVAL=1;BYDAY=2TU;BYMONTH=7\r\nEND:VEVENT`,
-        ];
-        const rrules = vevents.map((vevent) => {
-            const parsedVevent = parse(vevent) as RequireSome<VcalVeventComponent, 'rrule'>;
-            return parsedVevent.rrule.value;
+    describe('getIsRruleSupported for invitations', () => {
+        test('should accept events with daily recurring rules valid for invitations', () => {
+            const vevents = [
+                `BEGIN:VEVENT\r\nRRULE:FREQ=DAILY;UNTIL=20200330T150000Z;INTERVAL=100;BYMONTH=3\r\nEND:VEVENT`,
+                `BEGIN:VEVENT\r\nRRULE:FREQ=DAILY;INTERVAL=2;BYSECOND=30;BYMINUTE=5,10,15;BYHOUR=10\r\nEND:VEVENT`,
+                `BEGIN:VEVENT\r\nRRULE:FREQ=DAILY;INTERVAL=2;BYWEEKNO=13;COUNT=499;WKST=TH\r\nEND:VEVENT`,
+            ];
+            const rrules = vevents.map((vevent) => {
+                const parsedVevent = parse(vevent) as RequireSome<VcalVeventComponent, 'rrule'>;
+                return parsedVevent.rrule.value;
+            });
+            expect(rrules.map((rrule) => getIsRruleSupported(rrule, true))).toEqual(vevents.map(() => true));
         });
-        expect(rrules.map((rrule) => getIsRruleSupported(rrule, true))).toEqual(vevents.map(() => true));
+
+        test('should refuse events with invalid daily recurring rules', () => {
+            const vevents = [
+                `BEGIN:VEVENT\r\nRRULE:FREQ=DAILY;COUNT=500\r\nEND:VEVENT`,
+                `BEGIN:VEVENT\r\nRRULE:FREQ=DAILY;INTERVAL=1000;BYMONTHDAY=11,22\r\nEND:VEVENT`,
+            ];
+            const rrules = vevents.map((vevent) => {
+                const parsedVevent = parse(vevent) as RequireSome<VcalVeventComponent, 'rrule'>;
+                return parsedVevent.rrule.value;
+            });
+            expect(rrules.map((rrule) => getIsRruleSupported(rrule, true))).toEqual(vevents.map(() => false));
+        });
+
+        test('should accept events with yearly recurring rules valid for invitations', () => {
+            const vevents = [
+                `BEGIN:VEVENT\r\nRRULE:FREQ=YEARLY;UNTIL=20200330T150000Z;INTERVAL=1;BYDAY=MO,SU,TH;BYMONTHDAY=30,31;BYMONTH=3\r\nEND:VEVENT`,
+                `BEGIN:VEVENT\r\nRRULE:FREQ=YEARLY;INTERVAL=2;BYSECOND=30;BYHOUR=10;BYMONTH=5\r\nEND:VEVENT`,
+                `BEGIN:VEVENT\r\nRRULE:FREQ=YEARLY;INTERVAL=2;BYMONTH=3;BYMONTHDAY=17,22;COUNT=499\r\nEND:VEVENT`,
+                `BEGIN:VEVENT\r\nRRULE:FREQ=YEARLY;INTERVAL=1;BYDAY=2TU;BYMONTH=7\r\nEND:VEVENT`,
+            ];
+            const rrules = vevents.map((vevent) => {
+                const parsedVevent = parse(vevent) as RequireSome<VcalVeventComponent, 'rrule'>;
+                return parsedVevent.rrule.value;
+            });
+            expect(rrules.map((rrule) => getIsRruleSupported(rrule, true))).toEqual(vevents.map(() => true));
+        });
+
+        test('should refuse events with invalid yearly recurring rules', () => {
+            const vevents = [
+                `BEGIN:VEVENT\r\nRRULE:FREQ=YEARLY;COUNT=500\r\nEND:VEVENT`,
+                `BEGIN:VEVENT\r\nRRULE:FREQ=YEARLY;INTERVAL=100;BYMONTHDAY=11,22\r\nEND:VEVENT`,
+                `BEGIN:VEVENT\r\nRRULE:FREQ=YEARLY;BYMONTHDAY=11\r\nEND:VEVENT`,
+            ];
+            const rrules = vevents.map((vevent) => {
+                const parsedVevent = parse(vevent) as RequireSome<VcalVeventComponent, 'rrule'>;
+                return parsedVevent.rrule.value;
+            });
+            expect(rrules.map((rrule) => getIsRruleSupported(rrule, true))).toEqual(vevents.map(() => false));
+        });
     });
 
-    test('should refuse events with invalid yearly recurring rules', () => {
-        const vevents = [
-            `BEGIN:VEVENT\r\nRRULE:FREQ=YEARLY;COUNT=500\r\nEND:VEVENT`,
-            `BEGIN:VEVENT\r\nRRULE:FREQ=YEARLY;INTERVAL=100;BYMONTHDAY=11,22\r\nEND:VEVENT`,
-            `BEGIN:VEVENT\r\nRRULE:FREQ=YEARLY;BYMONTHDAY=11\r\nEND:VEVENT`,
-        ];
-        const rrules = vevents.map((vevent) => {
-            const parsedVevent = parse(vevent) as RequireSome<VcalVeventComponent, 'rrule'>;
-            return parsedVevent.rrule.value;
-        });
-        expect(rrules.map((rrule) => getIsRruleSupported(rrule, true))).toEqual(vevents.map(() => false));
-    });
-});
-
-describe('getSupportedEvent for invitations', () => {
-    test('should not import alarms for invites and keep recurrence id', async () => {
-        const invitation = `BEGIN:VCALENDAR
+    describe('getSupportedEvent for invitations', () => {
+        test('should not import alarms for invites and keep recurrence id', async () => {
+            const invitation = `BEGIN:VCALENDAR
 CALSCALE:GREGORIAN
 VERSION:2.0
 METHOD:REQUEST
@@ -117,49 +127,47 @@ ACTION:EMAIL
 END:VALARM
 END:VEVENT
 END:VCALENDAR`;
-        const parsedInvitation = parseVcalendar(invitation) as VcalVcalendar;
-        const message = { Time: Math.round(Date.now() / 1000) } as Message;
-        expect(
-            await getSupportedEventInvitation({
-                vcalComponent: parsedInvitation,
-                message,
-                icsBinaryString: invitation,
-                icsFileName: 'test.ics',
-                primaryTimezone: 'America/Sao_Paulo',
-            })
-        ).toMatchObject({
-            method: 'REQUEST',
-            vevent: {
-                component: 'vevent',
-                uid: { value: 'BA3017ED-889A-4BCB-B9CB-11CE30586021' },
-                dtstamp: {
-                    value: { year: 2020, month: 8, day: 21, hours: 8, minutes: 19, seconds: 14, isUTC: true },
+            const parsedInvitation = parseVcalendar(invitation) as VcalVcalendar;
+            const message = { Time: Math.round(Date.now() / 1000) } as Message;
+            expect(
+                await getSupportedEventInvitation({
+                    vcalComponent: parsedInvitation,
+                    message,
+                    icsBinaryString: invitation,
+                    icsFileName: 'test.ics',
+                    primaryTimezone: 'America/Sao_Paulo',
+                })
+            ).toMatchObject({
+                method: 'REQUEST',
+                vevent: {
+                    component: 'vevent',
+                    uid: { value: 'BA3017ED-889A-4BCB-B9CB-11CE30586021' },
+                    dtstamp: {
+                        value: { year: 2020, month: 8, day: 21, hours: 8, minutes: 19, seconds: 14, isUTC: true },
+                    },
+                    dtstart: {
+                        value: { year: 2020, month: 9, day: 15, hours: 9, minutes: 0, seconds: 0, isUTC: false },
+                        parameters: { tzid: 'Europe/Vilnius' },
+                    },
+                    dtend: {
+                        value: { year: 2020, month: 9, day: 15, hours: 10, minutes: 0, seconds: 0, isUTC: false },
+                        parameters: { tzid: 'Europe/Vilnius' },
+                    },
+                    'recurrence-id': {
+                        value: { year: 2022, month: 9, day: 15, hours: 9, minutes: 0, seconds: 0, isUTC: false },
+                        parameters: { tzid: 'Europe/Vilnius' },
+                    },
                 },
-                dtstart: {
-                    value: { year: 2020, month: 9, day: 15, hours: 9, minutes: 0, seconds: 0, isUTC: false },
-                    parameters: { tzid: 'Europe/Vilnius' },
-                },
-                dtend: {
-                    value: { year: 2020, month: 9, day: 15, hours: 10, minutes: 0, seconds: 0, isUTC: false },
-                    parameters: { tzid: 'Europe/Vilnius' },
-                },
-                'recurrence-id': {
-                    value: { year: 2022, month: 9, day: 15, hours: 9, minutes: 0, seconds: 0, isUTC: false },
-                    parameters: { tzid: 'Europe/Vilnius' },
-                },
-                summary: { value: 'Yearly single edit' },
-                sequence: { value: 1 },
-            },
-            vtimezone: parsedInvitation.components?.find((component) => getIsTimezoneComponent(component)),
-            originalVcalInvitation: parsedInvitation,
-            originalUniqueIdentifier: 'BA3017ED-889A-4BCB-B9CB-11CE30586021',
-            hasMultipleVevents: false,
-            fileName: 'test.ics',
+                vtimezone: parsedInvitation.components?.find((component) => getIsTimezoneComponent(component)),
+                originalVcalInvitation: parsedInvitation,
+                originalUniqueIdentifier: 'BA3017ED-889A-4BCB-B9CB-11CE30586021',
+                hasMultipleVevents: false,
+                fileName: 'test.ics',
+            });
         });
-    });
 
-    test('should refuse invitations with inconsistent custom yearly recurrence rules', async () => {
-        const invitation = `BEGIN:VCALENDAR
+        test('should refuse invitations with inconsistent custom yearly recurrence rules', async () => {
+            const invitation = `BEGIN:VCALENDAR
 CALSCALE:GREGORIAN
 VERSION:2.0
 METHOD:REQUEST
@@ -199,23 +207,23 @@ CREATED:20200821T081842Z
 RRULE:FREQ=YEARLY;INTERVAL=1;BYMONTH=9;BYDAY=1TU
 END:VEVENT
 END:VCALENDAR`;
-        const parsedInvitation = parseVcalendar(invitation) as VcalVcalendar;
-        const message = { Time: Math.round(Date.now() / 1000) } as Message;
-        await expect(
-            getSupportedEventInvitation({
-                vcalComponent: parsedInvitation,
-                message,
-                icsBinaryString: invitation,
-                icsFileName: 'test.ics',
-                primaryTimezone: 'America/Sao_Paulo',
-            })
-        ).rejects.toMatchObject(
-            new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_INVALID, { method: ICAL_METHOD.REQUEST })
-        );
-    });
+            const parsedInvitation = parseVcalendar(invitation) as VcalVcalendar;
+            const message = { Time: Math.round(Date.now() / 1000) } as Message;
+            await expect(
+                getSupportedEventInvitation({
+                    vcalComponent: parsedInvitation,
+                    message,
+                    icsBinaryString: invitation,
+                    icsFileName: 'test.ics',
+                    primaryTimezone: 'America/Sao_Paulo',
+                })
+            ).rejects.toMatchObject(
+                new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_INVALID, { method: ICAL_METHOD.REQUEST })
+            );
+        });
 
-    test('should refuse invitations with non-yearly recurrence rules that contain a byyearday', async () => {
-        const invitation = `BEGIN:VCALENDAR
+        test('should refuse invitations with non-yearly recurrence rules that contain a byyearday', async () => {
+            const invitation = `BEGIN:VCALENDAR
 CALSCALE:GREGORIAN
 VERSION:2.0
 METHOD:REQUEST
@@ -236,23 +244,23 @@ CREATED:20200821T081842Z
 RRULE:FREQ=MONTHLY;INTERVAL=1;BYYEARDAY=21
 END:VEVENT
 END:VCALENDAR`;
-        const parsedInvitation = parseVcalendar(invitation) as VcalVcalendar;
-        const message = { Time: Math.round(Date.now() / 1000) } as Message;
-        await expect(
-            getSupportedEventInvitation({
-                vcalComponent: parsedInvitation,
-                message,
-                icsBinaryString: invitation,
-                icsFileName: 'test.ics',
-                primaryTimezone: 'America/Sao_Paulo',
-            })
-        ).rejects.toMatchObject(
-            new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_INVALID, { method: ICAL_METHOD.REQUEST })
-        );
-    });
+            const parsedInvitation = parseVcalendar(invitation) as VcalVcalendar;
+            const message = { Time: Math.round(Date.now() / 1000) } as Message;
+            await expect(
+                getSupportedEventInvitation({
+                    vcalComponent: parsedInvitation,
+                    message,
+                    icsBinaryString: invitation,
+                    icsFileName: 'test.ics',
+                    primaryTimezone: 'America/Sao_Paulo',
+                })
+            ).rejects.toMatchObject(
+                new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_INVALID, { method: ICAL_METHOD.REQUEST })
+            );
+        });
 
-    test('should generate a hash UID for invitations with no method and drop alarms and recurrence id', async () => {
-        const invitation = `BEGIN:VCALENDAR
+        test('should generate a hash UID for invitations with no method and drop alarms and recurrence id', async () => {
+            const invitation = `BEGIN:VCALENDAR
 CALSCALE:GREGORIAN
 VERSION:2.0
 PRODID:-//Apple Inc.//Mac OS X 10.13.6//EN
@@ -279,44 +287,42 @@ ACTION:EMAIL
 END:VALARM
 END:VEVENT
 END:VCALENDAR`;
-        const parsedInvitation = parseVcalendar(invitation) as VcalVcalendar;
-        const message = { Time: Math.round(Date.now() / 1000) } as Message;
-        expect(
-            await getSupportedEventInvitation({
-                vcalComponent: parsedInvitation,
-                message,
-                icsBinaryString: invitation,
-                icsFileName: 'test.ics',
-                primaryTimezone: 'America/Sao_Paulo',
-            })
-        ).toMatchObject({
-            method: 'PUBLISH',
-            vevent: {
-                component: 'vevent',
-                uid: { value: 'sha1-uid-cba317c4bb79e20bdca567bf6dc80dfce145712b-original-uid-test-event' },
-                dtstamp: {
-                    value: { year: 1998, month: 3, day: 9, hours: 23, minutes: 10, seconds: 0, isUTC: true },
+            const parsedInvitation = parseVcalendar(invitation) as VcalVcalendar;
+            const message = { Time: Math.round(Date.now() / 1000) } as Message;
+            expect(
+                await getSupportedEventInvitation({
+                    vcalComponent: parsedInvitation,
+                    message,
+                    icsBinaryString: invitation,
+                    icsFileName: 'test.ics',
+                    primaryTimezone: 'America/Sao_Paulo',
+                })
+            ).toMatchObject({
+                method: 'PUBLISH',
+                vevent: {
+                    component: 'vevent',
+                    uid: { value: 'sha1-uid-cba317c4bb79e20bdca567bf6dc80dfce145712b-original-uid-test-event' },
+                    dtstamp: {
+                        value: { year: 1998, month: 3, day: 9, hours: 23, minutes: 10, seconds: 0, isUTC: true },
+                    },
+                    dtstart: {
+                        value: { year: 2002, month: 12, day: 31, hours: 20, minutes: 30, seconds: 0, isUTC: false },
+                        parameters: { tzid: 'Europe/Brussels' },
+                    },
+                    dtend: {
+                        value: { year: 2003, month: 1, day: 1, hours: 0, minutes: 30, seconds: 0, isUTC: false },
+                        parameters: { tzid: 'Europe/Brussels' },
+                    },
                 },
-                dtstart: {
-                    value: { year: 2002, month: 12, day: 31, hours: 20, minutes: 30, seconds: 0, isUTC: false },
-                    parameters: { tzid: 'Europe/Brussels' },
-                },
-                dtend: {
-                    value: { year: 2003, month: 1, day: 1, hours: 0, minutes: 30, seconds: 0, isUTC: false },
-                    parameters: { tzid: 'Europe/Brussels' },
-                },
-                location: { value: '1CP Conference Room 4350' },
-                sequence: { value: 0 },
-            },
-            originalVcalInvitation: parsedInvitation,
-            originalUniqueIdentifier: 'test-event',
-            hasMultipleVevents: false,
-            fileName: 'test.ics',
+                originalVcalInvitation: parsedInvitation,
+                originalUniqueIdentifier: 'test-event',
+                hasMultipleVevents: false,
+                fileName: 'test.ics',
+            });
         });
-    });
 
-    test('should not throw without version, untrimmed calscale and duration', async () => {
-        const invitation = `BEGIN:VCALENDAR
+        test('should not throw without version, untrimmed calscale and duration', async () => {
+            const invitation = `BEGIN:VCALENDAR
 CALSCALE: Gregorian
 PRODID:-//Apple Inc.//Mac OS X 10.13.6//EN
 BEGIN:VEVENT
@@ -326,22 +332,22 @@ DTSTART;VALUE=DATE:20021231
 DURATION:PT2D
 END:VEVENT
 END:VCALENDAR`;
-        const parsedInvitation = parseVcalendar(invitation) as VcalVcalendar;
-        const message = { Time: Math.round(Date.now() / 1000) } as Message;
+            const parsedInvitation = parseVcalendar(invitation) as VcalVcalendar;
+            const message = { Time: Math.round(Date.now() / 1000) } as Message;
 
-        await expect(
-            getSupportedEventInvitation({
-                vcalComponent: parsedInvitation,
-                message,
-                icsBinaryString: invitation,
-                icsFileName: 'test.ics',
-                primaryTimezone: 'America/Sao_Paulo',
-            })
-        ).resolves.not.toThrow();
-    });
+            await expect(
+                getSupportedEventInvitation({
+                    vcalComponent: parsedInvitation,
+                    message,
+                    icsBinaryString: invitation,
+                    icsFileName: 'test.ics',
+                    primaryTimezone: 'America/Sao_Paulo',
+                })
+            ).resolves.not.toThrow();
+        });
 
-    test('should throw for unknown calscales', async () => {
-        const invitation = `BEGIN:VCALENDAR
+        test('should throw for unknown calscales', async () => {
+            const invitation = `BEGIN:VCALENDAR
 CALSCALE:GREGORIANU
 VERSION:2.0
 METHOD:REQUEST
@@ -362,25 +368,25 @@ CREATED:20200821T081842Z
 RRULE:FREQ=MONTHLY;INTERVAL=1;BYYEARDAY=21
 END:VEVENT
 END:VCALENDAR`;
-        const parsedInvitation = parseVcalendar(invitation) as VcalVcalendar;
-        const message = { Time: Math.round(Date.now() / 1000) } as Message;
-        await expect(
-            getSupportedEventInvitation({
-                vcalComponent: parsedInvitation,
-                message,
-                icsBinaryString: invitation,
-                icsFileName: 'test.ics',
-                primaryTimezone: 'America/Sao_Paulo',
-            })
-        ).rejects.toMatchObject(
-            new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_UNSUPPORTED, {
-                method: ICAL_METHOD.REQUEST,
-            })
-        );
-    });
+            const parsedInvitation = parseVcalendar(invitation) as VcalVcalendar;
+            const message = { Time: Math.round(Date.now() / 1000) } as Message;
+            await expect(
+                getSupportedEventInvitation({
+                    vcalComponent: parsedInvitation,
+                    message,
+                    icsBinaryString: invitation,
+                    icsFileName: 'test.ics',
+                    primaryTimezone: 'America/Sao_Paulo',
+                })
+            ).rejects.toMatchObject(
+                new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_UNSUPPORTED, {
+                    method: ICAL_METHOD.REQUEST,
+                })
+            );
+        });
 
-    test('should not throw when receiving a VTIMEZONE without TZID', async () => {
-        const invitation = `BEGIN:VCALENDAR
+        test('should not throw when receiving a VTIMEZONE without TZID', async () => {
+            const invitation = `BEGIN:VCALENDAR
 PRODID:-//Google Inc//Google Calendar 70.9054//EN
 VERSION:2.0
 CALSCALE:GREGORIAN
@@ -438,22 +444,22 @@ SUMMARY:Pacific / Niue (3)
 TRANSP:OPAQUE
 END:VEVENT
 END:VCALENDAR`;
-        const parsedInvitation = parseVcalendar(invitation) as VcalVcalendar;
-        const message = { Time: Math.round(Date.now() / 1000) } as Message;
+            const parsedInvitation = parseVcalendar(invitation) as VcalVcalendar;
+            const message = { Time: Math.round(Date.now() / 1000) } as Message;
 
-        await expect(
-            getSupportedEventInvitation({
-                vcalComponent: parsedInvitation,
-                message,
-                icsBinaryString: invitation,
-                icsFileName: 'test.ics',
-                primaryTimezone: 'America/Sao_Paulo',
-            })
-        ).resolves.not.toThrow();
-    });
+            await expect(
+                getSupportedEventInvitation({
+                    vcalComponent: parsedInvitation,
+                    message,
+                    icsBinaryString: invitation,
+                    icsFileName: 'test.ics',
+                    primaryTimezone: 'America/Sao_Paulo',
+                })
+            ).resolves.not.toThrow();
+        });
 
-    test('should reformat break lines properly', async () => {
-        const invitation = `BEGIN:VCALENDAR
+        test('should reformat break lines properly', async () => {
+            const invitation = `BEGIN:VCALENDAR
 PRODID:-//Google Inc//Google Calendar 70.9054//EN
 VERSION:2.0
 CALSCALE:GREGORIAN
@@ -479,81 +485,81 @@ SUMMARY:Attendees - 6 invited apple 2
 TRANSP:TRANSPARENT
 END:VEVENT
 END:VCALENDAR`;
-        const parsedInvitation = parseVcalendar(invitation) as VcalVcalendar;
-        const message = { Time: Math.round(Date.now() / 1000) } as Message;
-        expect(
-            await getSupportedEventInvitation({
-                vcalComponent: parsedInvitation,
-                message,
-                icsBinaryString: invitation,
-                icsFileName: 'test.ics',
-                primaryTimezone: 'America/Sao_Paulo',
-            })
-        ).toMatchObject({
-            method: 'REQUEST',
-            vevent: {
-                component: 'vevent',
-                uid: { value: 'case5544646879321797797898799' },
-                dtstamp: {
-                    value: { year: 2021, month: 1, day: 8, hours: 11, minutes: 32, seconds: 23, isUTC: true },
-                },
-                dtstart: {
-                    value: { year: 2022, month: 1, day: 11 },
-                    parameters: { type: 'date' },
-                },
-                summary: { value: 'Attendees - 6 invited apple 2' },
-                description: { value: 'Extracting attendee' },
-                sequence: { value: 0 },
-                organizer: { value: 'mailto:orgo@protonmail.com' },
-                attendee: [
-                    {
-                        value: 'mailto:att1@protonmail.com',
-                        parameters: {
-                            cn: 'att1@protonmail.com',
-                            rsvp: ICAL_ATTENDEE_RSVP.TRUE,
-                            partstat: ICAL_ATTENDEE_STATUS.NEEDS_ACTION,
-                        },
+            const parsedInvitation = parseVcalendar(invitation) as VcalVcalendar;
+            const message = { Time: Math.round(Date.now() / 1000) } as Message;
+            expect(
+                await getSupportedEventInvitation({
+                    vcalComponent: parsedInvitation,
+                    message,
+                    icsBinaryString: invitation,
+                    icsFileName: 'test.ics',
+                    primaryTimezone: 'America/Sao_Paulo',
+                })
+            ).toMatchObject({
+                method: 'REQUEST',
+                vevent: {
+                    component: 'vevent',
+                    uid: { value: 'case5544646879321797797898799' },
+                    dtstamp: {
+                        value: { year: 2021, month: 1, day: 8, hours: 11, minutes: 32, seconds: 23, isUTC: true },
                     },
-                    {
-                        value: 'mailto:att2@pm.me',
-                        parameters: {
-                            cn: 'att2@pm.me',
-                            rsvp: ICAL_ATTENDEE_RSVP.TRUE,
-                            partstat: ICAL_ATTENDEE_STATUS.NEEDS_ACTION,
-                        },
+                    dtstart: {
+                        value: { year: 2022, month: 1, day: 11 },
+                        parameters: { type: 'date' },
                     },
-                ],
-            },
-            vtimezone: parsedInvitation.components?.find((component) => getIsTimezoneComponent(component)),
-            originalVcalInvitation: parsedInvitation,
-            originalUniqueIdentifier: 'case5544646879321797797898799',
-            hasMultipleVevents: false,
-            fileName: 'test.ics',
+                    summary: { value: 'Attendees - 6 invited apple 2' },
+                    description: { value: 'Extracting attendee' },
+                    sequence: { value: 0 },
+                    organizer: { value: 'mailto:orgo@protonmail.com' },
+                    attendee: [
+                        {
+                            value: 'mailto:att1@protonmail.com',
+                            parameters: {
+                                cn: 'att1@protonmail.com',
+                                rsvp: ICAL_ATTENDEE_RSVP.TRUE,
+                                partstat: ICAL_ATTENDEE_STATUS.NEEDS_ACTION,
+                            },
+                        },
+                        {
+                            value: 'mailto:att2@pm.me',
+                            parameters: {
+                                cn: 'att2@pm.me',
+                                rsvp: ICAL_ATTENDEE_RSVP.TRUE,
+                                partstat: ICAL_ATTENDEE_STATUS.NEEDS_ACTION,
+                            },
+                        },
+                    ],
+                },
+                vtimezone: parsedInvitation.components?.find((component) => getIsTimezoneComponent(component)),
+                originalVcalInvitation: parsedInvitation,
+                originalUniqueIdentifier: 'case5544646879321797797898799',
+                hasMultipleVevents: false,
+                fileName: 'test.ics',
+            });
         });
     });
-});
 
-describe('getSupportedEventInvitation should guess a timezone to localize floating dates for invites', () => {
-    const generateVcalSetup = ({
-        method = ICAL_METHOD.REQUEST,
-        primaryTimezone = 'Asia/Seoul',
-        xWrTimezone = '',
-        vtimezonesTzids = [],
-    }: {
-        method?: ICAL_METHOD;
-        xWrTimezone?: string;
-        vtimezonesTzids?: string[];
-        primaryTimezone?: string;
-    }) => {
-        const xWrTimezoneString = xWrTimezone ? `X-WR-TIMEZONE:${xWrTimezone}` : '';
-        const vtimezonesString = vtimezonesTzids
-            .map(
-                (tzid) => `BEGIN:VTIMEZONE
+    describe('getSupportedEventInvitation should guess a timezone to localize floating dates for invites', () => {
+        const generateVcalSetup = ({
+            method = ICAL_METHOD.REQUEST,
+            primaryTimezone = 'Asia/Seoul',
+            xWrTimezone = '',
+            vtimezonesTzids = [],
+        }: {
+            method?: ICAL_METHOD;
+            xWrTimezone?: string;
+            vtimezonesTzids?: string[];
+            primaryTimezone?: string;
+        }) => {
+            const xWrTimezoneString = xWrTimezone ? `X-WR-TIMEZONE:${xWrTimezone}` : '';
+            const vtimezonesString = vtimezonesTzids
+                .map(
+                    (tzid) => `BEGIN:VTIMEZONE
 TZID:${tzid}
 END:VTIMEZONE`
-            )
-            .join('\n');
-        const vcal = `BEGIN:VCALENDAR
+                )
+                .join('\n');
+            const vcal = `BEGIN:VCALENDAR
 CALSCALE:GREGORIAN
 VERSION:2.0
 METHOD:${method}
@@ -574,127 +580,127 @@ SUMMARY:Floating date-time
 RRULE:FREQ=DAILY;INTERVAL=2;COUNT=5
 END:VEVENT
 END:VCALENDAR`;
-        return {
-            vcalComponent: parse(vcal) as VcalVcalendar,
-            message: { Time: Math.round(Date.now() / 1000) } as Message,
-            icsBinaryString: vcal,
-            icsFileName: 'test.ics',
-            primaryTimezone,
+            return {
+                vcalComponent: parse(vcal) as VcalVcalendar,
+                message: { Time: Math.round(Date.now() / 1000) } as Message,
+                icsBinaryString: vcal,
+                icsFileName: 'test.ics',
+                primaryTimezone,
+            }
         };
-    };
-    const localizedVevent = (tzid: string) => ({
-        component: 'vevent',
-        uid: { value: 'BA3017ED-889A-4BCB-B9CB-11CE30586021' },
-        dtstamp: {
-            value: { year: 2020, month: 8, day: 21, hours: 8, minutes: 19, seconds: 14, isUTC: true },
-        },
-        dtstart: {
-            value: { year: 2020, month: 9, day: 15, hours: 9, minutes: 0, seconds: 0, isUTC: false },
-            parameters: { tzid },
-        },
-        dtend: {
-            value: { year: 2020, month: 9, day: 15, hours: 10, minutes: 0, seconds: 0, isUTC: false },
-            parameters: { tzid },
-        },
-        summary: { value: 'Floating date-time' },
-        sequence: { value: 1 },
-        rrule: { value: { freq: 'DAILY', interval: 2, count: 5 } },
-        organizer: {
-            value: 'mailto:aGmailOne@gmail.com',
-            parameters: { cn: 'testKrt' },
-        },
-        attendee: [
-            {
-                value: 'mailto:testme@pm.me',
-                parameters: {
-                    partstat: 'NEEDS-ACTION',
-                    rsvp: 'TRUE',
-                    cn: 'testme@pm.me',
-                },
+        const localizedVevent = (tzid: string) => ({
+            component: 'vevent',
+            uid: { value: 'BA3017ED-889A-4BCB-B9CB-11CE30586021' },
+            dtstamp: {
+                value: { year: 2020, month: 8, day: 21, hours: 8, minutes: 19, seconds: 14, isUTC: true },
             },
-            {
+            dtstart: {
+                value: { year: 2020, month: 9, day: 15, hours: 9, minutes: 0, seconds: 0, isUTC: false },
+                parameters: { tzid },
+            },
+            dtend: {
+                value: { year: 2020, month: 9, day: 15, hours: 10, minutes: 0, seconds: 0, isUTC: false },
+                parameters: { tzid },
+            },
+            summary: { value: 'Floating date-time' },
+            sequence: { value: 1 },
+            rrule: { value: { freq: 'DAILY', interval: 2, count: 5 } },
+            organizer: {
                 value: 'mailto:aGmailOne@gmail.com',
-                parameters: {
-                    partstat: 'ACCEPTED',
-                    cn: 'testKrt',
-                },
+                parameters: { cn: 'testKrt' },
             },
-        ],
+            attendee: [
+                {
+                    value: 'mailto:testme@pm.me',
+                    parameters: {
+                        partstat: 'NEEDS-ACTION',
+                        rsvp: 'TRUE',
+                        cn: 'testme@pm.me',
+                    },
+                },
+                {
+                    value: 'mailto:aGmailOne@gmail.com',
+                    parameters: {
+                        partstat: 'ACCEPTED',
+                        cn: 'testKrt',
+                    },
+                },
+            ],
+        });
+
+        test('when there is both x-wr-timezone and single vtimezone (use x-wr-timezone)', async () => {
+            const { vevent } =
+                (await getSupportedEventInvitation(
+                    generateVcalSetup({
+                        xWrTimezone: 'Europe/Brussels',
+                        vtimezonesTzids: ['America/New_York'],
+                    })
+                )) || {};
+            expect(vevent).toEqual(localizedVevent('Europe/Brussels'));
+        });
+
+        test('when there is a single vtimezone and no x-wr-timezone', async () => {
+            const { vevent } =
+                (await getSupportedEventInvitation(
+                    generateVcalSetup({
+                        vtimezonesTzids: ['Europe/Vilnius'],
+                    })
+                )) || {};
+            expect(vevent).toEqual(localizedVevent('Europe/Vilnius'));
+        });
+
+        test('when there is a single vtimezone and x-wr-timezone is not supported', async () => {
+            await expect(
+                getSupportedEventInvitation(
+                    generateVcalSetup({
+                        method: ICAL_METHOD.REPLY,
+                        xWrTimezone: 'Moon/Tranquility',
+                        vtimezonesTzids: ['Europe/Vilnius'],
+                    })
+                )
+            ).rejects.toThrowError('Unsupported response');
+        });
+
+        test('when there is no vtimezone nor x-wr-timezone (reject unsupported event)', async () => {
+            await expect(
+                getSupportedEventInvitation(
+                    generateVcalSetup({
+                        method: ICAL_METHOD.CANCEL,
+                    })
+                )
+            ).rejects.toThrowError('Unsupported invitation');
+        });
+
+        test('when there is no x-wr-timezone and more than one vtimezone (reject unsupported event)', async () => {
+            await expect(
+                getSupportedEventInvitation(
+                    generateVcalSetup({
+                        method: ICAL_METHOD.COUNTER,
+                        vtimezonesTzids: ['Europe/Vilnius', 'America/New_York'],
+                    })
+                )
+            ).rejects.toThrowError('Unsupported response');
+        });
     });
 
-    test('when there is both x-wr-timezone and single vtimezone (use x-wr-timezone)', async () => {
-        const { vevent } =
-            (await getSupportedEventInvitation(
-                generateVcalSetup({
-                    xWrTimezone: 'Europe/Brussels',
-                    vtimezonesTzids: ['America/New_York'],
-                })
-            )) || {};
-        expect(vevent).toEqual(localizedVevent('Europe/Brussels'));
-    });
-
-    test('when there is a single vtimezone and no x-wr-timezone', async () => {
-        const { vevent } =
-            (await getSupportedEventInvitation(
-                generateVcalSetup({
-                    vtimezonesTzids: ['Europe/Vilnius'],
-                })
-            )) || {};
-        expect(vevent).toEqual(localizedVevent('Europe/Vilnius'));
-    });
-
-    test('when there is a single vtimezone and x-wr-timezone is not supported', async () => {
-        await expect(
-            getSupportedEventInvitation(
-                generateVcalSetup({
-                    method: ICAL_METHOD.REPLY,
-                    xWrTimezone: 'Moon/Tranquility',
-                    vtimezonesTzids: ['Europe/Vilnius'],
-                })
-            )
-        ).rejects.toThrowError('Unsupported response');
-    });
-
-    test('when there is no vtimezone nor x-wr-timezone (reject unsupported event)', async () => {
-        await expect(
-            getSupportedEventInvitation(
-                generateVcalSetup({
-                    method: ICAL_METHOD.CANCEL,
-                })
-            )
-        ).rejects.toThrowError('Unsupported invitation');
-    });
-
-    test('when there is no x-wr-timezone and more than one vtimezone (reject unsupported event)', async () => {
-        await expect(
-            getSupportedEventInvitation(
-                generateVcalSetup({
-                    method: ICAL_METHOD.COUNTER,
-                    vtimezonesTzids: ['Europe/Vilnius', 'America/New_York'],
-                })
-            )
-        ).rejects.toThrowError('Unsupported response');
-    });
-});
-
-describe('getSupportedEventInvitation should guess a timezone to localize floating dates for invites for import PUBLISH', () => {
-    const generateVcalSetup = async ({
-        method = ICAL_METHOD.PUBLISH,
-        xWrTimezone = '',
-        vtimezonesTzids = [],
-        primaryTimezone,
-        uid = 'BA3017ED-889A-4BCB-B9CB-11CE30586021',
-    }: {
-        method?: ICAL_METHOD;
-        xWrTimezone?: string;
-        vtimezonesTzids?: string[];
-        primaryTimezone: string;
-        uid?: string;
-    }) => {
-        const xWrTimezoneString = xWrTimezone ? `X-WR-TIMEZONE:${xWrTimezone}` : '';
-        const vtimezonesString = vtimezonesTzids
-            .map(
-                (tzid) => `BEGIN:VTIMEZONE
+    describe('getSupportedEventInvitation should guess a timezone to localize floating dates for invites for import PUBLISH', () => {
+        const generateVcalSetup = async ({
+            method = ICAL_METHOD.PUBLISH,
+            xWrTimezone = '',
+            vtimezonesTzids = [],
+            primaryTimezone,
+            uid = 'BA3017ED-889A-4BCB-B9CB-11CE30586021',
+        }: {
+            method?: ICAL_METHOD;
+            xWrTimezone?: string;
+            vtimezonesTzids?: string[];
+            primaryTimezone: string;
+            uid?: string;
+        }) => {
+            const xWrTimezoneString = xWrTimezone ? `X-WR-TIMEZONE:${xWrTimezone}` : '';
+            const vtimezonesString = vtimezonesTzids
+                .map(
+                    (tzid) => `BEGIN:VTIMEZONE
 TZID:${tzid}
 END:VTIMEZONE`
             )
@@ -720,81 +726,82 @@ SUMMARY:Floating date-time
 RRULE:FREQ=DAILY;INTERVAL=2;COUNT=5
 END:VEVENT
 END:VCALENDAR`;
-        const parsedVcal = parse(vcal) as VcalVcalendar;
+            const parsedVcal = parse(vcal) as VcalVcalendar;
 
-        return {
-            vcalComponent: parsedVcal,
-            message: { Time: Math.round(Date.now() / 1000) } as Message,
-            icsBinaryString: vcal,
-            icsFileName: 'test.ics',
-            primaryTimezone,
-            hashUid: await generateVeventHashUID(vcal, uid),
+            return {
+                vcalComponent: parsedVcal,
+                message: { Time: Math.round(Date.now() / 1000) } as Message,
+                icsBinaryString: vcal,
+                icsFileName: 'test.ics',
+                primaryTimezone,
+                hashUid: await generateVeventHashUID(vcal, uid),
+            };
         };
-    };
-    const localizedVevent = (tzid: string, hashUid: string) => ({
-        component: 'vevent',
-        uid: { value: hashUid },
-        dtstamp: {
-            value: { year: 2020, month: 8, day: 21, hours: 8, minutes: 19, seconds: 14, isUTC: true },
-        },
-        dtstart: {
-            value: { year: 2020, month: 9, day: 15, hours: 9, minutes: 0, seconds: 0, isUTC: false },
-            parameters: { tzid },
-        },
-        dtend: {
-            value: { year: 2020, month: 9, day: 15, hours: 10, minutes: 0, seconds: 0, isUTC: false },
-            parameters: { tzid },
-        },
-        summary: { value: 'Floating date-time' },
-        sequence: { value: 1 },
-        rrule: { value: { freq: 'DAILY', interval: 2, count: 5 } },
-    });
-
-    test('when there is both x-wr-timezone and single vtimezone (use x-wr-timezone)', async () => {
-        const setup = await generateVcalSetup({
-            primaryTimezone: 'Asia/Seoul',
-            xWrTimezone: 'Europe/Brussels',
-            vtimezonesTzids: ['America/New_York'],
+        const localizedVevent = (tzid: string, hashUid: string) => ({
+            component: 'vevent',
+            uid: { value: hashUid },
+            dtstamp: {
+                value: { year: 2020, month: 8, day: 21, hours: 8, minutes: 19, seconds: 14, isUTC: true },
+            },
+            dtstart: {
+                value: { year: 2020, month: 9, day: 15, hours: 9, minutes: 0, seconds: 0, isUTC: false },
+                parameters: { tzid },
+            },
+            dtend: {
+                value: { year: 2020, month: 9, day: 15, hours: 10, minutes: 0, seconds: 0, isUTC: false },
+                parameters: { tzid },
+            },
+            summary: { value: 'Floating date-time' },
+            sequence: { value: 1 },
+            rrule: { value: { freq: 'DAILY', interval: 2, count: 5 } },
         });
-        const { vevent } = (await getSupportedEventInvitation(setup)) || {};
-        expect(vevent).toEqual(localizedVevent('Europe/Brussels', setup.hashUid));
-    });
 
-    test('when there is a single vtimezone and no x-wr-timezone', async () => {
-        const setup = await generateVcalSetup({
-            primaryTimezone: 'Asia/Seoul',
-            vtimezonesTzids: ['Europe/Vilnius'],
+        test('when there is both x-wr-timezone and single vtimezone (use x-wr-timezone)', async () => {
+            const setup = await generateVcalSetup({
+                primaryTimezone: 'Asia/Seoul',
+                xWrTimezone: 'Europe/Brussels',
+                vtimezonesTzids: ['America/New_York'],
+            });
+            const { vevent } = (await getSupportedEventInvitation(setup)) || {};
+            expect(vevent).toEqual(localizedVevent('Europe/Brussels', setup.hashUid));
         });
-        const { vevent } = (await getSupportedEventInvitation(setup)) || {};
-        expect(vevent).toEqual(localizedVevent('Europe/Vilnius', setup.hashUid));
-    });
 
-    test('when there is a single vtimezone and x-wr-timezone is not supported', async () => {
-        await expect(
-            getSupportedEventInvitation(
-                await generateVcalSetup({
-                    primaryTimezone: 'Asia/Seoul',
-                    xWrTimezone: 'Moon/Tranquility',
-                    vtimezonesTzids: ['Europe/Vilnius'],
-                })
-            )
-        ).rejects.toThrowError('Unsupported event');
-    });
-
-    test('when there is no vtimezone nor x-wr-timezone (use primary time zone)', async () => {
-        const setup = await generateVcalSetup({
-            primaryTimezone: 'Asia/Seoul',
+        test('when there is a single vtimezone and no x-wr-timezone', async () => {
+            const setup = await generateVcalSetup({
+                primaryTimezone: 'Asia/Seoul',
+                vtimezonesTzids: ['Europe/Vilnius'],
+            });
+            const { vevent } = (await getSupportedEventInvitation(setup)) || {};
+            expect(vevent).toEqual(localizedVevent('Europe/Vilnius', setup.hashUid));
         });
-        const { vevent } = (await getSupportedEventInvitation(setup)) || {};
-        expect(vevent).toEqual(localizedVevent('Asia/Seoul', setup.hashUid));
-    });
 
-    test('when there is no x-wr-timezone and more than one vtimezone (use primary time zone)', async () => {
-        const setup = await generateVcalSetup({
-            primaryTimezone: 'Asia/Seoul',
-            vtimezonesTzids: ['Europe/Vilnius', 'America/New_York'],
+        test('when there is a single vtimezone and x-wr-timezone is not supported', async () => {
+            await expect(
+                getSupportedEventInvitation(
+                    await generateVcalSetup({
+                        primaryTimezone: 'Asia/Seoul',
+                        xWrTimezone: 'Moon/Tranquility',
+                        vtimezonesTzids: ['Europe/Vilnius'],
+                    })
+                )
+            ).rejects.toThrowError('Unsupported event');
         });
-        const { vevent } = (await getSupportedEventInvitation(setup)) || {};
-        expect(vevent).toEqual(localizedVevent('Asia/Seoul', setup.hashUid));
+
+        test('when there is no vtimezone nor x-wr-timezone (use primary time zone)', async () => {
+            const setup = await generateVcalSetup({
+                primaryTimezone: 'Asia/Seoul',
+            });
+            const { vevent } = (await getSupportedEventInvitation(setup)) || {};
+            expect(vevent).toEqual(localizedVevent('Asia/Seoul', setup.hashUid));
+        });
+
+        test('when there is no x-wr-timezone and more than one vtimezone (use primary time zone)', async () => {
+            const setup = await generateVcalSetup({
+                primaryTimezone: 'Asia/Seoul',
+                vtimezonesTzids: ['Europe/Vilnius', 'America/New_York'],
+            });
+            const { vevent } = (await getSupportedEventInvitation(setup)) || {};
+            expect(vevent).toEqual(localizedVevent('Asia/Seoul', setup.hashUid));
+        });
     });
 });

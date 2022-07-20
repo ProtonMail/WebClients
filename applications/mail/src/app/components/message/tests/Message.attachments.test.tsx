@@ -1,23 +1,25 @@
 import { fireEvent, within } from '@testing-library/dom';
-import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
-import humanSize from '@proton/shared/lib/helpers/humanSize';
+
 import { MIME_TYPES } from '@proton/shared/lib/constants';
+import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 
 import { assertIcon } from '../../../helpers/test/assertion';
+import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../helpers/test/crypto';
 import {
+    GeneratedKey,
     addApiKeys,
     addApiMock,
     clearAll,
     createEmbeddedImage,
     createMessageImages,
     encryptMessage,
-    GeneratedKey,
     generateKeys,
     tick,
 } from '../../../helpers/test/helper';
-import { addressID, body, initMessage, messageID, setup, subject } from './Message.test.helpers';
 import { store } from '../../../logic/store';
+import { addressID, body, initMessage, messageID, setup, subject } from './Message.test.helpers';
 
 const cid = 'cid';
 const attachment1 = {
@@ -122,8 +124,14 @@ describe('NumAttachments from message initialization', () => {
     let fromKeys: GeneratedKey;
 
     beforeAll(async () => {
+        await setupCryptoProxyForTesting();
+
         toKeys = await generateKeys('me', toAddress);
         fromKeys = await generateKeys('someone', fromAddress);
+    });
+
+    afterAll(async () => {
+        await releaseCryptoProxy();
     });
 
     it('should have the correct NumAttachments', async () => {

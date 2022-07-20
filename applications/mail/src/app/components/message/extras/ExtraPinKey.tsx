@@ -5,8 +5,8 @@ import { ContactWithBePinnedPublicKey } from '@proton/shared/lib/interfaces/cont
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import { isInternal } from '@proton/shared/lib/mail/messages';
+import { PublicKeyReference } from '@proton/crypto';
 import { useMemo } from 'react';
-import { OpenPGPKey } from 'pmcrypto';
 import {
     Button,
     Href,
@@ -64,9 +64,9 @@ const getPromptKeyPinningType = ({
     const senderHasPinnedKeys = !!senderPinnedKeys.length;
     const firstAttachedPublicKey = attachedPublicKeys.length ? attachedPublicKeys[0] : undefined;
     const isSignedByAttachedKey =
-        !!signingPublicKey && attachedPublicKeys?.map((key) => key.armor()).includes(signingPublicKey?.armor());
+        !!signingPublicKey && attachedPublicKeys?.some((key) => signingPublicKey?.equals(key));
     const isAttachedKeyPinned =
-        firstAttachedPublicKey && senderPinnedKeys.map((key) => key.armor()).includes(firstAttachedPublicKey.armor());
+        firstAttachedPublicKey && senderPinnedKeys.some((key) => firstAttachedPublicKey.equals(key));
 
     if (verificationStatus === SIGNED_AND_INVALID || verificationStatus === NOT_VERIFIED) {
         if (!signingPublicKey) {
@@ -159,8 +159,8 @@ const ExtraPinKey = ({ message, messageVerification }: Props) => {
 
     // Prevent to propose an already pinned key even if for a strange reason,
     // the suggested key is already pinned yet the verification still fails
-    const signingPublicKeyAlreadyPinned = messageVerification?.senderPinnedKeys?.some(
-        (pinKey) => pinKey.armor() === bePinnedPublicKey?.armor()
+    const signingPublicKeyAlreadyPinned = messageVerification?.senderPinnedKeys?.some((pinKey) =>
+        bePinnedPublicKey?.equals(pinKey)
     );
 
     const contact = useMemo<ContactWithBePinnedPublicKey>(() => {
@@ -169,7 +169,7 @@ const ExtraPinKey = ({ message, messageVerification }: Props) => {
             name,
             contactID,
             isInternal: isSenderInternal,
-            bePinnedPublicKey: bePinnedPublicKey || ({} as OpenPGPKey),
+            bePinnedPublicKey: bePinnedPublicKey as PublicKeyReference,
         };
     }, [senderAddress, name, contactID, isSenderInternal, bePinnedPublicKey]);
 

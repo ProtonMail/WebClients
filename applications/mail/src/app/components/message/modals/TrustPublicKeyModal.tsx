@@ -16,7 +16,7 @@ import {
     useNotifications,
 } from '@proton/components';
 import { c } from 'ttag';
-import { OpenPGPKey } from 'pmcrypto';
+import { PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
 import { addContacts, getContact, updateContact } from '@proton/shared/lib/api/contacts';
 import { pinKeyCreateContact, pinKeyUpdateContact } from '@proton/shared/lib/contacts/keyPinning';
 import { Api } from '@proton/shared/lib/interfaces';
@@ -29,8 +29,8 @@ import SimplePublicKeyTable from './SimplePublicKeyTable';
 interface ParamsUpdate {
     contact: Required<ContactWithBePinnedPublicKey>;
     api: Api;
-    publicKeys: OpenPGPKey[];
-    privateKeys: OpenPGPKey[];
+    publicKeys: PublicKeyReference[];
+    privateKeys: PrivateKeyReference[];
 }
 
 const updateContactPinnedKeys = async ({ contact, api, publicKeys, privateKeys }: ParamsUpdate) => {
@@ -68,7 +68,7 @@ const updateContactPinnedKeys = async ({ contact, api, publicKeys, privateKeys }
 interface ParamsCreate {
     contact: ContactWithBePinnedPublicKey;
     api: Api;
-    privateKeys: OpenPGPKey[];
+    privateKeys: PrivateKeyReference[];
 }
 
 const createContactPinnedKeys = async ({ contact, api, privateKeys }: ParamsCreate) => {

@@ -1,11 +1,11 @@
 import { c } from 'ttag';
 import { getEmailMismatchWarning } from '@proton/shared/lib/keys/publicKeys';
+import { PublicKeyReference } from '@proton/crypto';
 
-import { OpenPGPKey } from 'pmcrypto';
 import WarningIcon from './WarningIcon';
 
 interface Props {
-    publicKey: OpenPGPKey;
+    publicKey: PublicKeyReference;
     emailAddress: string;
     isInternal: boolean;
     supportsEncryption?: boolean;

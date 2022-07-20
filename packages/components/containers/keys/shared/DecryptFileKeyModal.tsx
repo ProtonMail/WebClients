@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { c } from 'ttag';
-import { decryptPrivateKey, OpenPGPKey } from 'pmcrypto';
+import { ArmoredKeyWithInfo } from '@proton/shared/lib/keys';
+import { CryptoProxy, PrivateKeyReference } from '@proton/crypto';
 import noop from '@proton/utils/noop';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import {
@@ -19,13 +20,13 @@ import { generateUID } from '../../../helpers';
 import { useLoading } from '../../../hooks';
 
 interface Props extends ModalProps {
-    privateKey: OpenPGPKey;
-    onSuccess: (privateKey: OpenPGPKey) => void;
+    privateKeyInfo: ArmoredKeyWithInfo;
+    onSuccess: (privateKey: PrivateKeyReference) => void;
 }
 
-const DecryptFileKeyModal = ({ privateKey, onSuccess, onClose, ...rest }: Props) => {
+const DecryptFileKeyModal = ({ privateKeyInfo, onSuccess, onClose, ...rest }: Props) => {
     const id = generateUID('decryptKey');
-    const fingerprint = privateKey.getFingerprint();
+    const { fingerprint, armoredKey } = privateKeyInfo;
     const fingerprintCode = <code key="0">{fingerprint}</code>;
 
     const [password, setPassword] = useState('');
@@ -36,7 +37,7 @@ const DecryptFileKeyModal = ({ privateKey, onSuccess, onClose, ...rest }: Props)
 
     const handleSubmit = async () => {
         try {
-            const decryptedPrivateKey = await decryptPrivateKey(privateKey.armor(), password);
+            const decryptedPrivateKey = await CryptoProxy.importPrivateKey({ armoredKey, passphrase: password });
             onSuccess(decryptedPrivateKey);
             onClose?.();
         } catch (e: any) {

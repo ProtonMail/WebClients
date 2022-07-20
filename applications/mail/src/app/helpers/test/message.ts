@@ -1,11 +1,12 @@
-import {
-    decryptMessageLegacy as realDecryptMessageLegacy,
-    decryptMIMEMessage,
-    SessionKey,
-    OpenPGPKey,
-    encryptMessage as realEncryptMessage,
-} from 'pmcrypto';
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
+import {
+    CryptoProxy,
+    PrivateKeyReference,
+    PublicKeyReference,
+    SessionKey,
+    VERIFICATION_STATUS,
+    WorkerDecryptionOptions,
+} from '@proton/crypto';
 import { base64ToArray, arrayToBase64 } from '../base64';
 import { generateSessionKey, encryptSessionKey, GeneratedKey } from './crypto';
 import { readContentIDandLocation } from '../message/messageEmbeddeds';
@@ -38,22 +39,56 @@ const readBlob = async (blob: Blob) =>
         fileReader.readAsArrayBuffer(blob);
     });
 
-export const decryptMessageLegacy = async (pack: any, privateKeys: OpenPGPKey[], sessionKey: SessionKey) => {
-    const decryptResult = await realDecryptMessageLegacy({
-        message: (await readBlob(pack.Body)) as any,
-        messageDate: new Date(),
-        privateKeys,
+/**
+ * Decrypt non-legacy message.
+ */
+export const decryptMessage = async (pack: any, privateKeys: PrivateKeyReference[], sessionKey: SessionKey) => {
+    const decryptResult = await CryptoProxy.decryptMessage({
+        binaryMessage: await readBlob(pack.Body),
+        decryptionKeys: privateKeys,
         sessionKeys: [sessionKey],
     });
 
     return { data: decryptResult.data, signatures: decryptResult.signatures };
 };
 
-export const decryptMessageMultipart = async (pack: any, privateKeys: OpenPGPKey[], sessionKey: SessionKey) => {
+/**
+ * Decrypts the mime message and parses the body and attachments in the right structure.
+ * @param options
+ * @return {Promise<{getBody: (function(): Promise<{body, mimetype}>), getAttachments: (function(): Promise<any>), getEncryptedSubject: (function(): Promise<any>), verify: (function(): Promise<any>), errors: (function(): Promise<any>), stop: stop}>}
+ */
+export async function decryptMIMEMessage(options: WorkerDecryptionOptions) {
+    const { data: rawData, verified, signatures } = await CryptoProxy.decryptMessage({ ...options, format: 'utf8' });
+
+    const {
+        body,
+        mimetype,
+        verified: pgpMimeVerified,
+        attachments,
+        encryptedSubject,
+        signatures: pgpMimeSignatures,
+    } = await CryptoProxy.processMIME({ ...options, data: rawData });
+
+    const combinedVerified = verified === VERIFICATION_STATUS.NOT_SIGNED ? pgpMimeVerified : verified;
+
+    return {
+        getBody: () => Promise.resolve(body ? { body, mimetype } : undefined),
+        getAttachments: () => Promise.resolve(attachments),
+        getEncryptedSubject: () => Promise.resolve(encryptedSubject),
+        verify: () => Promise.resolve(combinedVerified),
+        stop() {},
+        signatures: [...signatures, ...pgpMimeSignatures],
+    };
+}
+
+export const decryptMessageMultipart = async (
+    pack: any,
+    privateKeys: PrivateKeyReference[],
+    sessionKey: SessionKey
+) => {
     const decryptResult = await decryptMIMEMessage({
-        message: (await readBlob(pack.Body)) as any,
-        messageDate: new Date(),
-        privateKeys,
+        binaryMessage: await readBlob(pack.Body),
+        decryptionKeys: privateKeys,
         sessionKeys: [sessionKey],
     });
 
@@ -63,7 +98,7 @@ export const decryptMessageMultipart = async (pack: any, privateKeys: OpenPGPKey
     return { data: bodyResult?.body, mimeType: bodyResult?.mimetype, attachments };
 };
 
-export const createAttachment = async (inputAttachment: Partial<Attachment>, publicKeys: OpenPGPKey[]) => {
+export const createAttachment = async (inputAttachment: Partial<Attachment>, publicKeys: PublicKeyReference[]) => {
     const attachment = { ...inputAttachment };
 
     const sessionKey = await generateSessionKey(publicKeys[0]);
@@ -75,12 +110,13 @@ export const createAttachment = async (inputAttachment: Partial<Attachment>, pub
 };
 
 export const encryptMessage = async (body: string, fromKeys: GeneratedKey, toKeys: GeneratedKey) => {
-    const { data } = await realEncryptMessage({
-        data: body,
-        publicKeys: [toKeys.publicKeys?.[0]],
-        privateKeys: [fromKeys.privateKeys?.[0]],
+    const { message } = await CryptoProxy.encryptMessage({
+        textData: body,
+        stripTrailingSpaces: true,
+        encryptionKeys: [toKeys.publicKeys?.[0]],
+        signingKeys: [fromKeys.privateKeys?.[0]],
     });
-    return data;
+    return message;
 };
 
 export const createEmbeddedImage = (attachment: Attachment) =>

@@ -1,4 +1,4 @@
-import { encryptMessage } from 'pmcrypto';
+import { CryptoProxy } from '@proton/crypto';
 
 import { usePreventLeave } from '@proton/components';
 import runInQueue from '@proton/shared/lib/helpers/runInQueue';
@@ -79,11 +79,12 @@ export default function useLinksActions() {
             data: link.encryptedName,
             privateKeys: currentParentPrivateKey,
         });
-        const { data: encryptedName } = await encryptMessage({
-            data: link.name,
+        const { message: encryptedName } = await CryptoProxy.encryptMessage({
+            textData: link.name,
+            stripTrailingSpaces: true,
             sessionKey: sessionKeyName,
-            publicKeys: newParentPrivateKey.toPublic(),
-            privateKeys: addressKey,
+            encryptionKeys: newParentPrivateKey,
+            signingKeys: addressKey,
         });
 
         await debouncedRequest(

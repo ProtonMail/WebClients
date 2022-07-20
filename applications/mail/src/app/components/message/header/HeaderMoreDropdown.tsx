@@ -22,7 +22,7 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { useDispatch } from 'react-redux';
-import { DecryptResultPmcrypto } from 'pmcrypto';
+import { WorkerDecryptionResult } from '@proton/crypto';
 import { ContactEditProps } from '@proton/components/containers/contacts/edit/ContactEditModal';
 import MessageHeadersModal from '../modals/MessageHeadersModal';
 import { getDate, isStarred as IsMessageStarred } from '../../../helpers/elements';
@@ -124,7 +124,7 @@ const HeaderMoreDropdown = ({
         await call();
     };
 
-    const onUpdateAttachment = (ID: string, attachment: DecryptResultPmcrypto) => {
+    const onUpdateAttachment = (ID: string, attachment: WorkerDecryptionResult<Uint8Array>) => {
         dispatch(updateAttachment({ ID, attachment }));
     };
 

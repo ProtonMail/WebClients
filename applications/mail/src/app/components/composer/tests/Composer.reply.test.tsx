@@ -3,10 +3,17 @@ import { act } from '@testing-library/react';
 import loudRejection from 'loud-rejection';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { MailSettings } from '@proton/shared/lib/interfaces';
-import { addApiKeys, addKeysToAddressKeysCache, GeneratedKey, generateKeys } from '../../../helpers/test/crypto';
+import {
+    addApiKeys,
+    addKeysToAddressKeysCache,
+    GeneratedKey,
+    generateKeys,
+    releaseCryptoProxy,
+    setupCryptoProxyForTesting,
+} from '../../../helpers/test/crypto';
 import {
     addToCache,
-    decryptMessageLegacy,
+    decryptMessage,
     minimalCache,
     decryptSessionKey,
     createDocument,
@@ -38,8 +45,13 @@ describe('Composer reply and forward', () => {
     let toKeys: GeneratedKey;
 
     beforeAll(async () => {
+        await setupCryptoProxyForTesting();
         fromKeys = await generateKeys('me', fromAddress);
         toKeys = await generateKeys('someone', toAddress);
+    });
+
+    afterAll(async () => {
+        await releaseCryptoProxy();
     });
 
     beforeEach(() => {
@@ -71,7 +83,7 @@ describe('Composer reply and forward', () => {
         const pack = packages['text/html'];
         const address = pack.Addresses[toAddress];
         const sessionKey = await decryptSessionKey(address.BodyKeyPacket, toKeys.privateKeys);
-        const decryptResult = await decryptMessageLegacy(pack, toKeys.privateKeys, sessionKey);
+        const decryptResult = await decryptMessage(pack, toKeys.privateKeys, sessionKey);
 
         expect(decryptResult.data).toContain(bodyContent);
         expect(decryptResult.data).toContain(blockquoteContent);
@@ -106,7 +118,7 @@ describe('Composer reply and forward', () => {
         const pack = packages['text/html'];
         const address = pack.Addresses[toAddress];
         const sessionKey = await decryptSessionKey(address.BodyKeyPacket, toKeys.privateKeys);
-        const decryptResult = await decryptMessageLegacy(pack, toKeys.privateKeys, sessionKey);
+        const decryptResult = await decryptMessage(pack, toKeys.privateKeys, sessionKey);
 
         expect(decryptResult.data).toContain(bodyContent);
         expect(decryptResult.data).toContain(blockquoteContent);

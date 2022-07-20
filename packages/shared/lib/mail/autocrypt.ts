@@ -1,4 +1,4 @@
-import { binaryStringToArray, decodeBase64 } from 'pmcrypto';
+import { binaryStringToArray, decodeBase64 } from '@proton/crypto/lib/utils';
 
 const MANDATORY_FIELDS = ['keydata', 'addr'];
 const OPTIONAL_FIELDS = ['prefer-encrypt'];

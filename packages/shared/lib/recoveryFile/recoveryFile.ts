@@ -1,34 +1,24 @@
-import {
-    concatArrays,
-    createCleartextMessage,
-    decryptMessage,
-    encryptMessage,
-    getKeys,
-    getMessage,
-    getSignature,
-    OpenPGPKey,
-    signMessage,
-    verifyMessage,
-    VERIFICATION_STATUS,
-} from 'pmcrypto';
 import getRandomValues from '@proton/get-random-values';
+import { PublicKeyReference, CryptoProxy, PrivateKeyReference, VERIFICATION_STATUS } from '@proton/crypto';
 import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
+import { concatArrays } from '@proton/crypto/lib/utils';
 import isTruthy from '@proton/utils/isTruthy';
 import { DecryptedKey, KeyWithRecoverySecret } from '../interfaces';
 import downloadFile from '../helpers/downloadFile';
 import { KEY_FILE_EXTENSION } from '../constants';
+import { ArmoredKeyWithInfo } from '../keys';
 
 const decryptRecoveryFile = (recoverySecrets: KeyWithRecoverySecret[]) => async (file: string) => {
     try {
         return await Promise.any(
             recoverySecrets.map(async ({ RecoverySecret }) => {
-                const { data } = await decryptMessage({
-                    message: await getMessage(file),
+                const { data } = await CryptoProxy.decryptMessage({
+                    armoredMessage: file,
                     passwords: RecoverySecret,
                     format: 'binary',
                 });
 
-                return data as Uint8Array;
+                return data;
             })
         );
     } catch (error: any) {
@@ -40,17 +30,33 @@ export const parseRecoveryFiles = async (filesAsStrings: string[] = [], recovery
     const decryptedFiles = (await Promise.all(filesAsStrings.map(decryptRecoveryFile(recoverySecrets)))).filter(
         isTruthy
     );
-    return (await Promise.all(decryptedFiles.map(getKeys))).flat();
+    const decryptedArmoredKeys = (
+        await Promise.all(
+            decryptedFiles.map((concatenatedBinaryKeys) =>
+                CryptoProxy.getArmoredKeys({ binaryKeys: concatenatedBinaryKeys })
+            )
+        )
+    ).flat();
+
+    return Promise.all(
+        decryptedArmoredKeys.map(
+            async (armoredKey): Promise<ArmoredKeyWithInfo> => ({
+                ...(await CryptoProxy.getKeyInfo({ armoredKey })),
+                armoredKey,
+            })
+        )
+    );
 };
 
-export const generateRecoverySecret = async (privateKey: OpenPGPKey) => {
+export const generateRecoverySecret = async (privateKey: PrivateKeyReference) => {
     const length = 32;
     const randomValues = getRandomValues(new Uint8Array(length));
     const recoverySecret = uint8ArrayToBase64String(randomValues);
 
-    const { signature } = await signMessage({
-        data: recoverySecret,
-        privateKeys: privateKey,
+    const signature = await CryptoProxy.signMessage({
+        textData: recoverySecret,
+        stripTrailingSpaces: true,
+        signingKeys: privateKey,
         detached: true,
     });
 
@@ -67,24 +73,29 @@ export const exportRecoveryFile = async ({
     recoverySecret: string;
     userKeys: DecryptedKey[];
 }) => {
-    const userKeysArray = userKeys.map(({ privateKey }) => privateKey.toPacketlist().write()); // to get uint8array version of the key)
+    const userKeysArray = await Promise.all(
+        userKeys.map(({ privateKey }) =>
+            CryptoProxy.exportPrivateKey({ privateKey: privateKey, passphrase: null, format: 'binary' })
+        )
+    );
 
-    const { data } = await encryptMessage({
-        data: concatArrays(userKeysArray),
+    const { message } = await CryptoProxy.encryptMessage({
+        binaryData: concatArrays(userKeysArray),
         passwords: [recoverySecret],
     });
 
-    const blob = new Blob([data], { type: 'text/plain' });
+    const blob = new Blob([message], { type: 'text/plain' });
     downloadFile(blob, `proton_recovery${KEY_FILE_EXTENSION}`);
 };
 
-export const validateRecoverySecret = async (recoverySecret: KeyWithRecoverySecret, publicKey: OpenPGPKey) => {
+export const validateRecoverySecret = async (recoverySecret: KeyWithRecoverySecret, publicKey: PublicKeyReference) => {
     const { RecoverySecret, RecoverySecretSignature } = recoverySecret;
 
-    const { verified } = await verifyMessage({
-        message: await createCleartextMessage(RecoverySecret),
-        publicKeys: publicKey,
-        signature: await getSignature(RecoverySecretSignature),
+    const { verified } = await CryptoProxy.verifyMessage({
+        textData: RecoverySecret,
+        stripTrailingSpaces: true,
+        verificationKeys: publicKey,
+        armoredSignature: RecoverySecretSignature,
     });
 
     return verified === VERIFICATION_STATUS.SIGNED_AND_VALID;

@@ -1,4 +1,4 @@
-import { getKeys } from 'pmcrypto';
+import { CryptoProxy } from '@proton/crypto';
 import { getResetAddressesKeys, getResetAddressesKeysV2 } from '../../lib/keys';
 import { ENCRYPTION_CONFIGS, ENCRYPTION_TYPES } from '../../lib/constants';
 import { Address } from '../../lib/interfaces';
@@ -33,12 +33,12 @@ describe('reset keys v1', () => {
             throw new Error('Missing address keys');
         }
         await Promise.all(
-            [userKeyPayload, ...addressKeysPayload.map(({ PrivateKey }) => PrivateKey)].map(async (x) => {
-                if (!x) {
+            [userKeyPayload, ...addressKeysPayload.map(({ PrivateKey }) => PrivateKey)].map(async (armoredKey) => {
+                if (!armoredKey) {
                     throw new Error('Missing key');
                 }
-                const [key] = await getKeys(x);
-                if (key.isDecrypted()) {
+                const { keyIsDecrypted } = await CryptoProxy.getKeyInfo({ armoredKey });
+                if (keyIsDecrypted) {
                     throw new Error('Invalid key');
                 }
             })
@@ -85,12 +85,12 @@ describe('reset keys v2', () => {
             throw new Error('Missing address keys');
         }
         await Promise.all(
-            [userKeyPayload, ...addressKeysPayload.map(({ PrivateKey }) => PrivateKey)].map(async (x) => {
-                if (!x) {
+            [userKeyPayload, ...addressKeysPayload.map(({ PrivateKey }) => PrivateKey)].map(async (armoredKey) => {
+                if (!armoredKey) {
                     throw new Error('Missing key');
                 }
-                const [key] = await getKeys(x);
-                if (key.isDecrypted()) {
+                const { keyIsDecrypted } = await CryptoProxy.getKeyInfo({ armoredKey });
+                if (keyIsDecrypted) {
                     throw new Error('Invalid key');
                 }
             })

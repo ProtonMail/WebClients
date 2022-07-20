@@ -1,4 +1,4 @@
-import { OpenPGPKey, OpenPGPSignature, DecryptResultPmcrypto } from 'pmcrypto';
+import type { PrivateKeyReference, PublicKeyReference, WorkerDecryptionResult } from '@proton/crypto';
 import { Api, RequireSome, SimpleMap } from '@proton/shared/lib/interfaces';
 import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
@@ -16,8 +16,8 @@ export interface OutsideKey {
 
 export interface PublicPrivateKey {
     type: 'publicPrivate';
-    publicKeys: OpenPGPKey[];
-    privateKeys: OpenPGPKey[];
+    publicKeys: PublicKeyReference[];
+    privateKeys: PrivateKeyReference[];
 }
 
 export type MessageKeys = PublicPrivateKey | OutsideKey;
@@ -47,12 +47,12 @@ export interface MessageVerification {
     /**
      * Pinned public keys of the sender which can verify, if any
      */
-    senderPinnedKeys: OpenPGPKey[] | undefined;
+    senderPinnedKeys: PublicKeyReference[] | undefined;
 
     /**
      * Sender public keys retrieved from API which can are not pinned
      */
-    senderPinnableKeys: OpenPGPKey[] | undefined;
+    senderPinnableKeys: PublicKeyReference[] | undefined;
 
     /**
      * If the sender is in the list of contacts, whether its contact signature has been verified
@@ -62,12 +62,12 @@ export interface MessageVerification {
     /**
      * If the message is signed, the public key that verifies the signature
      */
-    signingPublicKey: OpenPGPKey | undefined;
+    signingPublicKey: PublicKeyReference | undefined;
 
     /**
      * Attached public key, if the message contains any
      */
-    attachedPublicKeys: OpenPGPKey[] | undefined;
+    attachedPublicKeys: PublicKeyReference[] | undefined;
 }
 
 export interface AbstractMessageImage {
@@ -118,7 +118,7 @@ export interface MessageDecryption {
      * Message signature obtained after decryption, if any
      * Warning, there could also be a signature in the mime content which is different
      */
-    signature?: OpenPGPSignature;
+    signature?: Uint8Array;
 
     /**
      * Decrypted subject
@@ -297,11 +297,11 @@ export interface VerificationParams {
     encryptionPreferences?: EncryptionPreferences;
     verification?: {
         verified: VERIFICATION_STATUS;
-        signature?: OpenPGPSignature;
+        signature?: Uint8Array;
         verificationErrors?: Error[];
     };
-    signingPublicKey?: OpenPGPKey;
-    attachedPublicKeys?: OpenPGPKey[];
+    signingPublicKey?: PublicKeyReference;
+    attachedPublicKeys?: PublicKeyReference[];
     errors?: MessageErrors;
 }
 
@@ -311,8 +311,8 @@ export interface LoadEmbeddedParams {
     api: Api;
     messageVerification?: MessageVerification;
     messageKeys: MessageKeys;
-    getAttachment: (ID: string) => DecryptResultPmcrypto | undefined;
-    onUpdateAttachment: (ID: string, attachment: DecryptResultPmcrypto) => void;
+    getAttachment: (ID: string) => WorkerDecryptionResult<Uint8Array> | undefined;
+    onUpdateAttachment: (ID: string, attachment: WorkerDecryptionResult<Uint8Array>) => void;
 }
 
 export type LoadEmbeddedResults = { attachment: Attachment; blob: string }[];

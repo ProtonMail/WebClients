@@ -1,16 +1,14 @@
 import { useRef, useEffect, forwardRef, ReactNode, Ref } from 'react';
 import { c } from 'ttag';
-import { OpenPGPKey } from 'pmcrypto';
-
 import { ThemeColorUnion } from '@proton/colors';
-import { parseKeyFiles } from '@proton/shared/lib/keys';
+import { parseKeyFiles, ArmoredKeyWithInfo } from '@proton/shared/lib/keys';
 
 import FileInput from '../../../components/input/FileInput';
 import useCombinedRefs from '../../../hooks/useCombinedRefs';
 import { Shape } from '../../../components/button';
 
 interface Props {
-    onUpload: (keys: OpenPGPKey[]) => void;
+    onUpload: (keys: ArmoredKeyWithInfo[]) => void;
     autoClick?: boolean;
     multiple?: boolean;
     className?: string;

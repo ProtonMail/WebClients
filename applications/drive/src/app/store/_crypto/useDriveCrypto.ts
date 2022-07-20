@@ -1,7 +1,7 @@
-import { OpenPGPKey } from 'pmcrypto';
 import { useCallback } from 'react';
 import { c } from 'ttag';
 
+import { PrivateKeyReference } from '@proton/crypto';
 import { useGetAddresses, useGetAddressKeys, useNotifications, useAuthentication } from '@proton/components';
 import { Address } from '@proton/shared/lib/interfaces/Address';
 import { ADDRESS_STATUS } from '@proton/shared/lib/constants';
@@ -80,7 +80,7 @@ function useDriveCrypto() {
     );
 
     const sign = useCallback(
-        async (payload: string | Uint8Array, keys?: { privateKey: OpenPGPKey; address: Address }) => {
+        async (payload: string | Uint8Array, keys?: { privateKey: PrivateKeyReference; address: Address }) => {
             const { privateKey, address } = keys || (await getPrimaryAddressKey());
             const signature = await signMessage(payload, [privateKey]);
             return { signature, address };
@@ -94,7 +94,7 @@ function useDriveCrypto() {
      * @param meta share metadata
      * @param privateKeys keys to use, when the user is not the same who encrypted
      */
-    const decryptSharePassphrase = async (meta: ShareWithKey, privateKeys?: OpenPGPKey[]) => {
+    const decryptSharePassphrase = async (meta: ShareWithKey, privateKeys?: PrivateKeyReference[]) => {
         if (!privateKeys) {
             const keys = await getOwnAddressKeys(meta.creator);
             if (!keys) {

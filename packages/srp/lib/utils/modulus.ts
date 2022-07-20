@@ -1,38 +1,37 @@
-import {
-    getKeys,
-    // @ts-expect-error getCleartextMessage is not exported
-    getCleartextMessage,
-    createCleartextMessage,
-    binaryStringToArray,
-    decodeBase64,
-    verifyMessage,
-    OpenPGPKey,
-} from 'pmcrypto';
+import { binaryStringToArray, decodeBase64 } from '@proton/crypto/lib/utils';
+import { CryptoProxy, PublicKeyReference } from '@proton/crypto';
 
 import { VERIFICATION_STATUS, SRP_MODULUS_KEY } from '../constants';
 
 const { NOT_SIGNED, SIGNED_AND_VALID } = VERIFICATION_STATUS;
 
 /**
- * Get modulus keys.
- * @return {Promise}
+ * Get key to verify the modulus
  */
-export const getModulusKeys = (() => {
-    let cachedPromise: Promise<OpenPGPKey[]> | undefined;
+export const getModulusKey = (() => {
+    let cachedKeyReference: PublicKeyReference | undefined;
 
     const get = async () => {
         try {
-            cachedPromise = getKeys(SRP_MODULUS_KEY);
-            return await cachedPromise;
+            const keyReference = await CryptoProxy.importPublicKey({ armoredKey: SRP_MODULUS_KEY });
+            cachedKeyReference = keyReference;
+            return cachedKeyReference;
         } catch (e) {
-            cachedPromise = undefined;
+            cachedKeyReference = undefined;
             throw e;
         }
     };
 
-    return () => {
-        if (cachedPromise) {
-            return cachedPromise;
+    return async () => {
+        const isValidKeyReference =
+            cachedKeyReference &&
+            // after logging out, the key store is cleared, and the key reference becomes invalid.
+            // try and export the key to see if it's still valid
+            (await CryptoProxy.exportPublicKey({ key: cachedKeyReference, format: 'binary' })
+                .then(() => true)
+                .catch(() => false));
+        if (isValidKeyReference) {
+            return cachedKeyReference as PublicKeyReference;
         }
         return get();
     };
@@ -40,17 +39,21 @@ export const getModulusKeys = (() => {
 
 /**
  * Verify the modulus signature with the SRP public key
+ * @returns modulus value if verification is successful
+ * @throws on verification error
  */
-export const verifyModulus = async (keys: OpenPGPKey[], modulus: ReturnType<typeof createCleartextMessage>) => {
+export const verifyModulus = async (publicKey: PublicKeyReference, modulus: string) => {
     try {
-        const { verified = NOT_SIGNED } = await verifyMessage({
-            message: modulus,
-            publicKeys: keys,
+        const { data: modulusData, verified = NOT_SIGNED } = await CryptoProxy.verifyCleartextMessage({
+            armoredCleartextMessage: modulus,
+            verificationKeys: publicKey,
         });
 
         if (verified !== SIGNED_AND_VALID) {
             throw new Error();
         }
+
+        return modulusData;
     } catch (e) {
         throw new Error('Unable to verify server identity');
     }
@@ -60,7 +63,7 @@ export const verifyModulus = async (keys: OpenPGPKey[], modulus: ReturnType<type
  * Verify modulus from the API and get the value.
  */
 export const verifyAndGetModulus = async (modulus: string) => {
-    const [publicKeys, modulusParsed] = await Promise.all([getModulusKeys(), getCleartextMessage(modulus)]);
-    await verifyModulus(publicKeys, modulusParsed);
-    return binaryStringToArray(decodeBase64(modulusParsed.getText()));
+    const publicKey = await getModulusKey();
+    const modulusData = await verifyModulus(publicKey, modulus);
+    return binaryStringToArray(decodeBase64(modulusData));
 };

@@ -1,4 +1,4 @@
-import { encryptPrivateKey } from 'pmcrypto';
+import { CryptoProxy } from '@proton/crypto';
 import { KeyImportData, OnKeyImportCallback } from './interface';
 import { Address, Api, DecryptedKey } from '../../interfaces';
 import { getSignedKeyList } from '../signedKeyList';
@@ -43,7 +43,10 @@ const importKeysProcessLegacy = async ({
     for (const keyImportRecord of keysToImport) {
         try {
             const { privateKey } = keyImportRecord;
-            const privateKeyArmored = await encryptPrivateKey(privateKey, keyPassword);
+            const privateKeyArmored = await CryptoProxy.exportPrivateKey({
+                privateKey,
+                passphrase: keyPassword,
+            });
 
             const newActiveKey = await getActiveKeyObject(privateKey, {
                 ID: 'tmp',
