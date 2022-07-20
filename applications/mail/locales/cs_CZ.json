@@ -1349,7 +1349,7 @@
         "${ participantName } odmítl/a vaší pozvánku na jeden výskyt události."
       ],
       "${ participantName } declined your invitation.": [
-        "${ participantName } byla odmítnuta Vaše pozvánka."
+        "${ participantName } odmítl(a) vaši pozvánku."
       ],
       "${ participantName } had accepted an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "${ participantName } přijal/a pozvánku a navrhl/a nový čas jednoho výskytu této události. Odpověď a návrh jsou zastaralé."
@@ -1358,10 +1358,10 @@
         "${ participantName } přijal/a pozvánku a navrhl/a nový čas této události. Odpověď a návrh jsou zastaralé."
       ],
       "${ participantName } had accepted an invitation to one occurrence of the event.": [
-        "${ participantName } byla přijata pozvánka na jeden výskyt události."
+        "${ participantName } přijal(a) pozvánku na jeden výskyt události."
       ],
       "${ participantName } had accepted an invitation to this event.": [
-        "${ participantName } přijal pozvání na tuto událost."
+        "${ participantName } přijal(a) pozvání na tuto událost."
       ],
       "${ participantName } had accepted your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "${ participantName } přijatá pozvánka a navržen nový čas pro výskyt této události. Odpověď a návrhy jsou zastaralé."
@@ -1388,10 +1388,10 @@
         "${ participantName } odmítl/a vaší pozvánku a navrhl/a nový čas této události. Odpověď a návrh jsou zastaralé."
       ],
       "${ participantName } had previously accepted your invitation to one occurrence of the event.": [
-        "${ participantName } byla předčasně přiata pozvánka na vyskytující se událost."
+        "${ participantName } v minulosti přijal(a) vaše pozvání na jeden výskyt události."
       ],
       "${ participantName } had previously accepted your invitation.": [
-        "${ participantName } byla předběžně předčasně přijata pozvánka."
+        "${ participantName } v minulosti přijal(a) vaše pozvání."
       ],
       "${ participantName } had previously declined your invitation to one occurrence of the event.": [
         "${ participantName } v minulosti odmítl/a pozvánku na jeden výskyt události."
@@ -1460,7 +1460,7 @@
         "${ participantName } předběžně přijal/a pozvánku na jeden výskyt události."
       ],
       "${ participantName } tentatively accepted an invitation to this event.": [
-        "${ participantName } předběžně přijal pozvání na tuto událost."
+        "${ participantName } předběžně přijal(a) pozvání na tuto událost."
       ],
       "${ participantName } tentatively accepted your invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } předběžně přijal/a vaší pozvánku a navrhl/a nový čas pro jeden výskyt této události."
@@ -1472,7 +1472,7 @@
         "${ participantName } předběžně přijal/a vaší pozvánku na jeden výskyt události."
       ],
       "${ participantName } tentatively accepted your invitation.": [
-        "${ participantName } byla předběžně přijata Vaše pozvánka."
+        "${ participantName } předběžně přijal(a) vaši pozvánku."
       ],
       "(Attendance optional)": [
         "(Účast není povinná)"
@@ -1511,7 +1511,7 @@
         "Tato odpověď je zastaralá."
       ],
       "This response is out of date. The event does not exist in your calendar anymore.": [
-        "Tato odpověď je zastaralá. Událost již neexistuje ve Vašem kalendáři."
+        "Tato odpověď je zastaralá. Událost již neexistuje ve vašem kalendáři."
       ],
       "This response is out of date. You have no calendars.": [
         "Tato odpověď je zastaralá. Nemáte žádný kalendář."
@@ -3542,6 +3542,12 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "bajt",
+        "bajty",
+        "bajtů",
+        "bajtů"
+      ],
       "GB": [
         "GB"
       ],
@@ -3550,6 +3556,32 @@
       ],
       "MB": [
         "MB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Bajt",
+        "Bajty",
+        "Bajtů",
+        "Bajtů"
+      ],
+      "Gigabyte": [
+        "Gigabajt",
+        "Gigabajty",
+        "Gigabajtů",
+        "Gigabajtů"
+      ],
+      "Kilobyte": [
+        "Kilobajt",
+        "Kilobajty",
+        "Kilobajtů",
+        "Kilobajtů"
+      ],
+      "Megabyte": [
+        "Megabajt",
+        "Megabajty",
+        "Megabajtů",
+        "Megabajtů"
       ]
     },
     "Filter Actions": {
@@ -3816,7 +3848,7 @@
     "Import contact": {
       "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
         "${ totalImported }/${ totalToImport } kontaktu šifrován a přidán do vašeho seznamu kontaktů",
-        "${ totalImported }/${ totalToImport } kontaktů šifrováno a přidáno do vašeho seznamu kontaktů",
+        "${ totalImported }/${ totalToImport } kontakty šifrovány a přidány do Vašeho listu kontaktů",
         "${ totalImported }/${ totalToImport } kontaktů šifrováno a přidáno do vašeho seznamu kontaktů",
         "${ totalImported }/${ totalToImport } kontaktů šifrováno a přidáno do vašeho seznamu kontaktů"
       ],
@@ -3996,7 +4028,7 @@
         "${ pureAttachmentsCount } souborů připojeno"
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
-        "${ selectedCalendarsTotal } z ${ providerCalendars.length } kalendářů",
+        "${ selectedCalendarsTotal } z ${ providerCalendars.length } kalendáře",
         "${ selectedCalendarsTotal } z ${ providerCalendars.length } kalendářů",
         "${ selectedCalendarsTotal } z ${ providerCalendars.length } kalendářů",
         "${ selectedCalendarsTotal } z ${ providerCalendars.length } kalendářů"
@@ -4036,9 +4068,9 @@
       ],
       "${ unread } unread conversation": [
         "${ unread } nepřečtená konverzace",
-        "${ unread } nepřečtených konverzací",
         "${ unread } nepřečtené konverzace",
-        "${ unread } nepřečtené konverzace"
+        "${ unread } nepřečtených konverzací",
+        "${ unread } nepřečtených konverzací"
       ],
       "${ unread } unread message": [
         "${ unread } nepřečtená zpráva",
@@ -4662,7 +4694,7 @@
         "PGP/Inline je kompatibilní pouze s formátem prostého textu. Vezměte na vědomí, že ${ MAIL_APP_NAME } vždy podepisuje šifrované zprávy."
       ],
       "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
-        "PGP/MIME automaticky odesílá zprávy pomocí aktuálně zvoleného režimu editoru. Vezměte na vědomí, že ${ MAIL_APP_NAME } vždy podepisuje šifrované zprávy"
+        "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages."
       ],
       "Phone number": [
         "Telefonní číslo"
@@ -6221,7 +6253,7 @@
         "Obrázek nebyl nahrán kvůli ochraně vašeho soukromí."
       ],
       "Your browser could not verify the remote server's identity. The image might be hosted using the http protocol.": [
-        "Prohlížeči se nepodařilo ověřit identitu vzdáleného serveru. Obrázek může být hostován pomocí protokolu http."
+        "Váš prohlížeč nemohl ověřit identitu vzdáleného serveru. Obrázek může být přístupný přes http protokol."
       ]
     },
     "Message notification": {
@@ -6790,7 +6822,7 @@
     },
     "Send email with changed preferences": {
       "The contacts for the following addresses have been deleted, so the corresponding encryption preferences have been updated accordingly:": [
-        "Kontakty pro následující adresy byly vymazíny, tak odpovídající šifrovací preference byly podle toho aktualizovány:"
+        "Kontakty pro následující adresy byly smazány, odpovídající volby šifrování byly tedy aktualizovány:"
       ]
     },
     "Send email with errors": {
@@ -7016,8 +7048,8 @@
       "${ elementsCount } conversation marked as Starred.": [
         "${ elementsCount } konverzace označena hvězdičkou.",
         "${ elementsCount } konverzace označené hvězdičkou.",
-        "${ elementsCount } konverzací označené hvězdičkou.",
-        "${ elementsCount } konverzací označené hvězdičkou."
+        "${ elementsCount } konverzací označeno hvězdičkou.",
+        "${ elementsCount } konverzací označeno hvězdičkou."
       ],
       "${ elementsCount } conversation marked as unread.": [
         "${ elementsCount } konverzace označená jako nepřečtená.",
@@ -8273,10 +8305,8 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "${ interval }",
-        "Každé ${ interval } roky",
-        "Každých ${ interval } roků",
-        "Každých ${ interval } roků"
+        "Yearly",
+        ""
       ],
       "Every ${ interval } year, ${ timesString }": [
         "${ interval }, ${ timesString }",

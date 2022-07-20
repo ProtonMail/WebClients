@@ -80,6 +80,9 @@
       "Create": [
         "Utwórz"
       ],
+      "Create a secure ${ MAIL_APP_NAME } address instead": [
+        "Utwórz bezpieczny adres ${ MAIL_APP_NAME }"
+      ],
       "Create account": [
         "Utwórz konto"
       ],
@@ -1790,6 +1793,12 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "bajt",
+        "bajty",
+        "bajtów",
+        "bajtów"
+      ],
       "GB": [
         "GB"
       ],
@@ -1798,6 +1807,32 @@
       ],
       "MB": [
         "MB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "bajt",
+        "bajty",
+        "bajtów",
+        "bajtów"
+      ],
+      "Gigabyte": [
+        "gigabajt",
+        "gigabajty",
+        "gigabajtów",
+        "gigabajtów"
+      ],
+      "Kilobyte": [
+        "kilobajt",
+        "kilobajty",
+        "kilobajtów",
+        "kilobajtów"
+      ],
+      "Megabyte": [
+        "megabajt",
+        "megabajty",
+        "megabajtów",
+        "megabajtów"
       ]
     },
     "Frequency of news": {
@@ -2475,6 +2510,9 @@
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "Twoje konto PayPal musi być powiązane z kartą płatniczą lub kontem bankowym. Jeśli nie posiada tej funkcji, kliknij przycisk poniżej."
       ],
+      "You must remove any additional personal calendars and any shared calendar links before you can cancel your Mail subscription.": [
+        "Musisz usunąć wszystkie dodatkowe kalendarze i udostępnione linki kalendarzy, zanim anulujesz subskrypcję poczty."
+      ],
       "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription.": [
         "Musisz usunąć wszystkie dodatkowe kalendarze i udostępnione linki kalendarzy, zanim anulujesz subskrypcję."
       ],
@@ -3076,7 +3114,7 @@
       "Continue to review": [
         "Przejdź do przeglądu"
       ],
-      "Continue with free": [
+      "Continue with Free": [
         "Continue with Free"
       ],
       "Delete account": [
@@ -3951,11 +3989,17 @@
       "Phone number has been verified.": [
         "Numer telefonu został zweryfikowany."
       ],
+      "Phone number not yet verified.": [
+        "Numer telefonu nie został zweryfikowany."
+      ],
       "Verify by SMS": [
         "Zweryfikuj za pomocą wiadomości SMS"
       ],
       "Verify now": [
         "Zweryfikuj"
+      ],
+      "Verify recovery phone?": [
+        "Zweryfikować numer pomocniczy?"
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "Weryfikacja numeru telefonu zwiększa bezpieczeństwo konta i umożliwia dodatkowe opcje odzyskiwania konta."
@@ -4306,6 +4350,9 @@
       ],
       "Billing cycle": [
         "Cykl rozliczeniowy"
+      ],
+      "Cancel Mail subscription": [
+        "Anuluj subskrypcję poczty"
       ],
       "Card verification": [
         "Weryfikacja karty płatniczej"

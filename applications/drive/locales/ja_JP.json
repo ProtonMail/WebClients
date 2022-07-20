@@ -485,6 +485,9 @@
       "Skip": [
         "スキップ"
       ],
+      "Start import": [
+        "インポートを開始"
+      ],
       "Start recovering": [
         "リカバリーを始める"
       ],
@@ -632,7 +635,7 @@
     },
     "blackfriday: VPNspecialoffer Action": {
       "Get the deal": [
-        "割引を入手"
+        "割引価格で入手"
       ],
       "Get the deal now": [
         "今すぐ割引を入手"
@@ -640,7 +643,7 @@
     },
     "blackfriday: VPNspecialoffer Info": {
       "Save ${ percentage }%": [
-        "${ percentage }%割引"
+        "${ percentage }%"
       ]
     },
     "blackfriday: VPNspecialoffer info": {
@@ -2652,6 +2655,9 @@
       "of": [
         " / "
       ],
+      "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters is allowed": [
+        "${ MAX_CUSTOM_PASSWORD_LENGTH } 文字まで利用できます"
+      ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "この設定は、メールの宛先に PGP を使用している非 ${ BRAND_NAME } ユーザーがいる場合にのみ変更してください。"
       ],
@@ -2763,11 +2769,20 @@
       "Share files with links": [
         "リンクでファイルを共有"
       ],
+      "Shareable link for ${ boldNameText }": [
+        "${ boldNameText } のシェア可能なリンク"
+      ],
       "Signature check will be ignored": [
         "署名確認は無視されました"
       ],
       "Signature issue": [
         "署名の問題"
+      ],
+      "Some files failed to download. Try downloading the files again.": [
+        "いくつかのファイルのダウンロードに失敗しました。再度ファイルをダウンロードしてください。"
+      ],
+      "Some files failed to upload. Try uploading the files again.": [
+        "いくつかのファイルのアップロードに失敗しました。再度ファイルをアップロードしてください。"
       ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "いくつかのファイルにはアクセスできません。ファイルへのアクセスを復元します。${ StartRecoveryButton }"
@@ -4169,6 +4184,9 @@
       "Discard changes?": [
         "変更を破棄しますか?"
       ],
+      "Download shared file": [
+        "共有されたファイルをダウンロード"
+      ],
       "Download unverified file?": [
         "未検証のファイルをダウンロードしますか?"
       ],
@@ -4414,6 +4432,9 @@
       ],
       "This folder has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "フォルダーが利用できないか、無効な署名です。メニュー (⋮) に移動し、詳細の情報を表示します。"
+      ],
+      "This link is password protected": [
+        "このリンクはパスワード保護されています"
       ],
       "Total size": [
         "合計サイズ"

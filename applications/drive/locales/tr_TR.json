@@ -631,13 +631,16 @@
       ]
     },
     "blackfriday Title": {
+      "Best deal": [
+        "En iyi teklif"
+      ],
       "Most popular": [
         "En popüler olanlar"
       ]
     },
     "blackfriday: VPNspecialoffer Action": {
       "Get the deal": [
-        "Tekliften yararlan"
+        "Tekliften yararlanın"
       ],
       "Get the deal now": [
         "Tekliften şimdi yararlan"
@@ -645,7 +648,7 @@
     },
     "blackfriday: VPNspecialoffer Info": {
       "Save ${ percentage }%": [
-        "- %${ percentage }"
+        "${ percentage }%"
       ]
     },
     "blackfriday: VPNspecialoffer info": {
@@ -667,6 +670,9 @@
       ],
       "24 months": [
         "24 ay"
+      ],
+      "Get the special year-end offer on our Premium VPN PLUS plan": [
+        "Ücretli Proton VPN Plus tarifemizi özel yıl sonu teklifi ile alın"
       ]
     },
     "Bug category": {
@@ -2744,6 +2750,9 @@
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Güvenilir anahtarlarınızın bir ya da birkaçı sahipleri tarafından \"ele geçirilmiş\" olarak işaretlenmiş. Bu anahtarla \"güvenmemeniz\" önerilir."
+      ],
+      "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters is allowed": [
+        "En fazla ${ MAX_CUSTOM_PASSWORD_LENGTH } karakter yazılabilir"
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Bu ayarları yalnızca ${ BRAND_NAME } dışındaki alıcılar ile PGP kullanıyorsanız değiştirin."

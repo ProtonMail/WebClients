@@ -103,6 +103,9 @@
       "Apply": [
         "Toepassen"
       ],
+      "Apply to existing message": [
+        "Toepassen op alle bestaande berichten"
+      ],
       "Attach screenshot(s)": [
         "Schermafdruk(ken) toevoegen"
       ],
@@ -175,6 +178,9 @@
       "Continue to ${ name }": [
         "Doorgaan naar ${ name }"
       ],
+      "Continue with ${ nameToDisplay } ${ maybeEmailInBrackets }": [
+        "Doorgaan met ${ nameToDisplay } ${ maybeEmailInBrackets }"
+      ],
       "Continue with Google": [
         "Ga verder met Google"
       ],
@@ -189,6 +195,9 @@
       ],
       "Create": [
         "Aanmaken"
+      ],
+      "Create a secure ${ MAIL_APP_NAME } address instead": [
+        "Maak in plaats daarvan een veilig ${ MAIL_APP_NAME }-adres"
       ],
       "Create account": [
         "Account aanmaken"
@@ -339,6 +348,9 @@
       ],
       "Extend": [
         "Verlengen"
+      ],
+      "Filters are being applied. This might take a few minutes.": [
+        "Filters worden toegepast. Dit kan enkele minuten duren."
       ],
       "Font": [
         "Lettertype"
@@ -678,6 +690,9 @@
       ],
       "Sign out": [
         "Uitloggen"
+      ],
+      "Sign out from ${ nameToDisplay } ${ maybeEmailInBrackets }": [
+        "Uitloggen van ${ nameToDisplay } ${ maybeEmailInBrackets }"
       ],
       "Sign out of all accounts": [
         "Alle accounts uitloggen"
@@ -1151,6 +1166,10 @@
     "Calendar limit warning": {
       "You have reached the maximum number of personal calendars you can create within your plan.": [
         "U hebt het maximale aantal persoonlijke agenda's bereikt dat u binnen uw abonnement kunt aanmaken."
+      ],
+      "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS } subscribed calendar.": [
+        "U hebt het maximum van ${ MAX_SUBSCRIBED_CALENDARS } geabonneerde agenda bereikt.",
+        "U hebt het maximum van ${ MAX_SUBSCRIBED_CALENDARS } geabonneerde agenda's bereikt."
       ]
     },
     "Calendar link purpose update success message": {
@@ -3146,6 +3165,17 @@
         "Er was een probleem bij het verifiëren van uw e-mailadres."
       ]
     },
+    "Error message, unsubscribe": {
+      "Please ${ signIn } to update your email subscription preferences.": [
+        "${ signIn } om de voorkeuren van uw e-mailabonnement bij te werken."
+      ],
+      "sign in": [
+        "inloggen"
+      ],
+      "There was a problem unsubscribing you.": [
+        "Er is een probleem opgetreden bij het uitschrijven van u."
+      ]
+    },
     "Error notification": {
       "Certificate ${ name } not found or already revoked": [
         "Certificaat ${ name } niet gevonden of reeds ingetrokken"
@@ -3290,6 +3320,10 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "byte",
+        "bytes"
+      ],
       "GB": [
         "GB"
       ],
@@ -3298,6 +3332,24 @@
       ],
       "MB": [
         "MB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Byte",
+        "Bytes"
+      ],
+      "Gigabyte": [
+        "Gigabyte",
+        "Gigabytes"
+      ],
+      "Kilobyte": [
+        "Kilobyte",
+        "Kilobytes"
+      ],
+      "Megabyte": [
+        "Megabyte",
+        "Megabytes"
       ]
     },
     "Filter Actions": {
@@ -4184,7 +4236,7 @@
         "Iedereen met deze link kan zien of u beschikbaar of bezet bent op uw agenda. Ze zien geen afspraakgegevens, zoals titel, locatie of deelnemers."
       ],
       "Anyone with this link won't be able to sync or get future updates for your calendar. If you want to give them access again, you will have to create a new link.": [
-        "Iedereen met deze link kan niet synchroniseren of toekomstige updates voor uw agenda krijgen. Als u hen weer toegang wilt geven, moet u een nieuwe link aanmaken."
+        "Iedereen met deze koppeling kan niet synchroniseren of toekomstige updates voor uw agenda krijgen. Als u hen weer toegang wilt geven, moet u een nieuwe link aanmaken."
       ],
       "AOL reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
         "AOL leest uw persoonlijke gegevens om adverteerders en andere derden toegang te geven. Maak een veilig e-mailadres aan voor betere privacy."
@@ -4306,6 +4358,9 @@
       "Continue with ${ planName }": [
         "Ga door met ${ planName }"
       ],
+      "Continuing will connect your ${ ACCOUNT_APP_NAME } to ${ name }.": [
+        "Als u doorgaat zal uw ${ ACCOUNT_APP_NAME } verbinden met ${ name }."
+      ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Maak één nieuwe agenda",
         "Maak ${ calendarsToBeCreated } nieuwe agenda's"
@@ -4317,7 +4372,7 @@
         "Maak een label aan voor de geïmporteerde berichten, een tijdbereik voor deze import, en de labels die u wilt importeren."
       ],
       "Create a link to your calendar and share it with anyone outside Proton. Only you can add or remove events.": [
-        "Maak een link naar uw agenda en deel deze met iedereen buiten uw Proton. Alleen u kunt afspraken toevoegen of verwijderen."
+        "Maak een koppeling naar uw agenda en deel deze met iedereen buiten uw Proton. Alleen u kunt afspraken toevoegen of verwijderen."
       ],
       "Create a new account and share the email address and password with the user.": [
         "Nieuw account aanmaken en het e-mailadres en wachtwoord delen met de gebruiker."
@@ -4368,7 +4423,7 @@
         "Verwijder alle andere MX records of zorg ervoor dat ${ MAIL_APP_NAME } zijn prioriteit het laagste getal is."
       ],
       "Delete link?": [
-        "Link verwijderen?"
+        "Koppeling verwijderen?"
       ],
       "Discount applied to your subscription with coupon ${ code }": [
         "Korting toegepast op uw abonnement met kortingscode ${ code }"
@@ -4713,13 +4768,13 @@
         "Beperkte weergave: anderen zien of u bezig bent. Volledige weergave: toont alle afspraakgegevens, inclusief naam, locatie of deelnemers."
       ],
       "Link copied to clipboard": [
-        "Link gekopieerd naar klembord"
+        "Koppeling gekopieerd naar klembord"
       ],
       "Link created": [
-        "Link aangemaakt"
+        "Koppeling aangemaakt"
       ],
       "Link deleted": [
-        "Link verwijderd"
+        "Koppeling verwijderd"
       ],
       "Link type": [
         "Linktype"
@@ -4958,6 +5013,9 @@
       ],
       "Queued": [
         "In de wachtrij"
+      ],
+      "read our two-factor authentication guide first": [
+        "lees eerst de instructies over tweestapsverificatie (2FA)"
       ],
       "Recovery file downloaded": [
         "Herstelbestand gedownload"
@@ -5450,6 +5508,9 @@
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "U moet een creditcard of bankrekening gekoppeld hebben aan uw PayPal-account. Als uw PayPal-account dat niet heeft, klik dan op de knop hieronder."
+      ],
+      "You must remove any additional personal calendars and any shared calendar links before you can cancel your Mail subscription.": [
+        "U moet alle extra persoonlijke agenda's en gedeelde agenda-koppelingen verwijderen voordat u uw Mail abonnement kunt opzeggen."
       ],
       "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription.": [
         "U moet alle extra persoonlijke agenda's en gedeelde agenda-koppelingen verwijderen voordat u uw abonnement kunt opzeggen."
@@ -6031,6 +6092,9 @@
       ],
       "App password": [
         "App-wachtwoord"
+      ],
+      "Apply filter to existing emails": [
+        "Filter toepassen op bestaande e-mails"
       ],
       "Ask before loading remote content": [
         "Vraag voordat externe inhoud wordt geladen"
@@ -6784,7 +6848,7 @@
         "Proton bedrijfsaankondigingen"
       ],
       "Proton for business": [
-        "Proton voor bedrijven"
+        "Proton for Business"
       ],
       "Proton for Business newsletter": [
         "Proton voor Bedrijven-nieuwsbrief"
@@ -6907,6 +6971,9 @@
       "Learn more": [
         "Meer informatie"
       ],
+      "Need help?": [
+        "Hulp nodig?"
+      ],
       "Not activated": [
         "Niet geactiveerd"
       ],
@@ -6933,6 +7000,9 @@
       ],
       "Terms and conditions": [
         "Algemene voorwaarden"
+      ],
+      "Trouble signing in?": [
+        "Problemen met inloggen?"
       ],
       "Upgrade": [
         "Upgraden"
@@ -7017,6 +7087,9 @@
       ]
     },
     "Message": {
+      "All filter actions will be applied to all messages in your Proton Mail account. No auto-reply emails will be sent.": [
+        "Alle filteracties worden toegepast op alle berichten in uw Proton Mail-account. Er worden geen automatische antwoorden verstuurd."
+      ],
       "Are you sure you want to disable two-factor authentication?": [
         "Weet u zeker dat u tweestapsverificatie wil uitschakelen?"
       ],
@@ -7260,6 +7333,12 @@
       ],
       "Explore all ${ BRAND_NAME } plans": [
         "Bekijk alle ${ BRAND_NAME }-abonnementen"
+      ],
+      "From ${ _price }": [
+        "Vanaf ${ _price }"
+      ],
+      "From ${ _price2 } per user": [
+        "Vanaf ${ _price2 } per gebruiker"
       ],
       "From ${ price }": [
         "Vanaf ${ price }"
@@ -7585,6 +7664,9 @@
       "Privacy and security suite for businesses, including all premium Proton services.": [
         "Privacy- en beveiligingssuite voor bedrijven, inclusief alle premium Proton-services."
       ],
+      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
+        "Veilige cloudopslag die u alles laat opslaan, synchroniseren, en u makkelijk en veilig bestanden laat delen."
+      ],
       "Secure email and calendar for professionals and businesses.": [
         "Veilige e-mail en agenda voor professionals en bedrijven."
       ],
@@ -7608,6 +7690,9 @@
       ]
     },
     "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Maak privacy uw standaard voor back-ups, opslag, delen en herstel van bestanden."
+      ],
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "Anders zal de toegang tot uw account worden beperkt en wordt uw account uiteindelijk uitgeschakeld."
       ],
@@ -7754,7 +7839,7 @@
         "IMAP-ondersteuning is beperkt tot het gebruik van desktop-apps (zoals Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. IMAP-integraties in de cloud worden op dit moment niet ondersteund."
       ],
       "Keeps you protected by blocking all network connections when you are accidentally disconnected from our VPN server": [
-        "Houdt u veilig door alle netwerkverbindingen te blokkeren als de verbinding met onze VPN-server onbedoeld is verbroken"
+        "Keeps you protected by blocking all network connections when you are unexpectedly disconnected from our VPN server."
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Labels zijn simpele tags die u kunt toevoegen aan berichten zodat u ze makkelijker kunt vinden of filteren"
@@ -7772,7 +7857,7 @@
         "Voeg daarnaast tot 5 agenda's toe van vrienden, familieleden, collega's en organisaties."
       ],
       "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections": [
-        "Met één VPN-verbinding kunt u één apparaat per keer verbinden met Proton VPN. Als u bijvoorbeeld tegelijkertijd een telefoon en een laptop met Proton VPN wilt verbinden, hebt u twee VPN-verbindingen nodig"
+        "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Optie om openbare gebruikersinboxen te bekijken zoals de gebruiker ze ziet, inclusief volledige bericht- en contactpersonengegevens"
@@ -7885,6 +7970,9 @@
       ],
       "Boost your storage space to ${ businessStorage } per user": [
         "Breid uw opslagruimte uit naar ${ businessStorage } per gebruiker"
+      ],
+      "Boost your storage space to ${ driveStorage } total": [
+        "Verhoog uw opslagruimte tot ${ driveStorage } totaal"
       ],
       "Cover more ground with support for 10 custom email domains": [
         "Doe meer met ondersteuning voor 10 aangepaste e-maildomeinen"
@@ -8423,6 +8511,9 @@
       "Email address not yet verified.": [
         "E-mailadres nog niet geverifieerd."
       ],
+      "sign in": [
+        "inloggen"
+      ],
       "Verification email sent to ${ email.Value }": [
         "Verificatiemail verzonden naar ${ email.Value }"
       ],
@@ -8431,6 +8522,9 @@
       ],
       "Verify recovery email?": [
         "Herstel-e-mailadres verifiëren?"
+      ],
+      "Verify with email": [
+        "Verifieer via e-mail"
       ],
       "Verifying your email address increases your account security and allows additional options for recovery.": [
         "Uw e-mailadres verifiëren verhoogt uw accountbeveiliging en laat extra opties voor herstel toe."
@@ -8451,6 +8545,29 @@
       ],
       "Phrase": [
         "Zin"
+      ]
+    },
+    "Recovery Phone": {
+      "Cancel": [
+        "Annuleren"
+      ],
+      "Phone number has been verified.": [
+        "Telefoonnummer is geverifieerd."
+      ],
+      "Phone number not yet verified.": [
+        "Telefoonnummer is nog niet geverifieerd."
+      ],
+      "Verify by SMS": [
+        "Verifiëren met sms"
+      ],
+      "Verify now": [
+        "Verifieer nu"
+      ],
+      "Verify recovery phone?": [
+        "Hersteltelefoon verifiëren?"
+      ],
+      "Verifying your phone number increases your account security and allows additional options for recovery.": [
+        "Uw telefoonnummer verifiëren verhoogt uw accountbeveiliging en laat extra opties voor herstel toe."
       ]
     },
     "Remark about a key type option": {
@@ -8589,6 +8706,9 @@
       ]
     },
     "Spotlight": {
+      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
+        "${ DRIVE_APP_NAME } is uit de bèta! Geef uw bestanden dezelfde beveiliging als uw e-mails."
+      ],
       "Get up to 18 months of ${ planName } for free": [
         "Krijg tot 18 maanden ${ planName } gratis"
       ],
@@ -8597,6 +8717,9 @@
       ],
       "No more missed appointments": [
         "Geen gemiste afspraken meer"
+      ],
+      "Try ${ DRIVE_APP_NAME }": [
+        "Probeer ${ DRIVE_APP_NAME }"
       ],
       "With email notifications, you decide which events to be notified about and when.": [
         "Met e-mailmeldingen, beslist u zelf over welke afspraken u een melding ontvangt en wanneer."
@@ -8642,15 +8765,15 @@
     },
     "Subscribe to calendar modal description": {
       "Learn how to get a private calendar link.": [
-        "Leer hoe u een persoonlijkge agendalink krijgt."
+        "Leer hoe u een persoonlijkge agendakoppeling krijgt."
       ]
     },
     "Subscribed calendar extension warning": {
       "By using this link, Google will make the calendar you are subscribing to public": [
-        "Door deze link te gebruiken, maakt Google de agenda waarop u zich abonneert openbaar"
+        "Door deze koppeling te gebruiken, maakt Google de agenda waarop u zich abonneert openbaar"
       ],
       "This link might be wrong": [
-        "Deze link kan fout zijn"
+        "Deze koppeling kan fout zijn"
       ]
     },
     "Subscribed calendar section description": {
@@ -9148,6 +9271,9 @@
       "Appearance": [
         "Uiterlijk"
       ],
+      "Apply filter to existing messages": [
+        "Filter toepassen op bestaande berichten"
+      ],
       "Apply gift code": [
         "Geschenkcode toepassen"
       ],
@@ -9177,6 +9303,9 @@
       ],
       "Bridge for ${ platform }": [
         "Bridge voor ${ platform }"
+      ],
+      "Cancel Mail subscription": [
+        "Mail-abonnement opzeggen"
       ],
       "Card verification": [
         "Kaartverificatie"
@@ -9798,7 +9927,7 @@
         "Uw ${ domain }-adres is actief"
       ],
       "Your calendar link": [
-        "Uw agendalink"
+        "Uw agendakoppeling"
       ],
       "Your current plan": [
         "Uw huidige abonnement"
@@ -10051,6 +10180,15 @@
       "Upgrade to ${ planName } to connect up to ${ n } device to the VPN at once": [
         "Upgrade naar ${ planName } om tot ${ n } apparaat tegelijkertijd met VPN te verbinden",
         "Upgrade naar ${ planName } om tot ${ n } apparaten tegelijkertijd met VPN te verbinden"
+      ]
+    },
+    "Upgrade notice": {
+      "Upgrade to a Mail paid plan to create up to ${ MAX_CALENDARS_PAID } calendar, allowing you to make calendars for work, to share with friends, and just for yourself.": [
+        "Upgrade naar een betaald Mail-abonnement om tot ${ MAX_CALENDARS_PAID } kalender te maken, waardoor u kalenders kunt aanmaken voor werk, om te delen met vrienden of gewoon voor uzelf.",
+        "Upgrade naar een betaald Mail-abonnement om tot ${ MAX_CALENDARS_PAID } kalenders te maken, waardoor u kalenders kunt aanmaken voor werk, om te delen met vrienden of gewoon voor uzelf."
+      ],
+      "Upgrade to a Mail paid plan to share your personal calendar via link with anyone.": [
+        "Upgrade naar een betaald Mail-abonnement om uw persoonlijke agenda via een link met iedereen te delen."
       ]
     },
     "User role": {

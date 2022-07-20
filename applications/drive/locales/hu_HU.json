@@ -622,13 +622,16 @@
       ]
     },
     "blackfriday Title": {
+      "Best deal": [
+        "Legjobb üzlet"
+      ],
       "Most popular": [
         "Legnépszerűbb"
       ]
     },
     "blackfriday: VPNspecialoffer Action": {
       "Get the deal": [
-        "Érdekel az ajánlat"
+        "Szerezze meg az ajánlatot"
       ],
       "Get the deal now": [
         "Érdekel az ajánlat"
@@ -636,7 +639,7 @@
     },
     "blackfriday: VPNspecialoffer Info": {
       "Save ${ percentage }%": [
-        "${ percentage } %"
+        "${ percentage }%"
       ]
     },
     "blackfriday: VPNspecialoffer info": {
@@ -2710,6 +2713,9 @@
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Egy vagy több megbízható kulcsát a tulajdonosa \"kompromittáltként\" jelölt meg. Javasoljuk, hogy távolítsa el a kulcsok megbízhatóságát."
+      ],
+      "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters is allowed": [
+        "Csak ${ MAX_CUSTOM_PASSWORD_LENGTH } számú karakter engedélyezett"
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Csak akkor változtassa meg ezeket a beállításokat, ha PGP-t használ a nem ${ BRAND_NAME } címzettekhez."

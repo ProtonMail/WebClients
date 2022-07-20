@@ -4463,7 +4463,7 @@
         "PGP/Inline hanya kompatibel dengan format Plain Text. Mohon diperhatikan bahwa ${ MAIL_APP_NAME } akan selalu menandatangani pesan yang terenkripsi."
       ],
       "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
-        "PGP/MIME mengirim pesan dengan mode komposer saat ini secara otomatis. Mohon diperhatikan bahwa ${ MAIL_APP_NAME } akan selalu menandatangani pesan yang terenkripsi"
+        "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages."
       ],
       "Phone number": [
         "Nomor telepon"
@@ -7792,7 +7792,8 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "Setiap ${ interval } tahun"
+        "Yearly",
+        ""
       ],
       "Every ${ interval } year, ${ timesString }": [
         "Setiap ${ interval } tahun, ${ timesString }"

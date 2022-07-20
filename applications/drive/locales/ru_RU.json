@@ -660,7 +660,7 @@
         "Скидки рассчитываются исходя из стандартной платы за 1 месяц в размере ${ standardMonthlyPricing }"
       ],
       "Save ${ percentage }%": [
-        "– ${ percentage } %"
+        "${ percentage }%"
       ],
       "Special offer Terms and Conditions": [
         "Условия специального предложения"
@@ -2877,6 +2877,9 @@
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Один или несколько ваших доверенных ключей были отмечены их владельцем как «раскрытые». Мы рекомендуем вам «отозвать доверие» у этих ключей."
+      ],
+      "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters is allowed": [
+        "Максимальное количество символов: ${ MAX_CUSTOM_PASSWORD_LENGTH }"
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Изменяйте эти настройки только в том случае, если используете PGP для переписки с получателями вне ${ BRAND_NAME }."

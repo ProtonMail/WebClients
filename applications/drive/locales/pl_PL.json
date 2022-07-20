@@ -491,6 +491,9 @@
       "Skip": [
         "Pomiń"
       ],
+      "Start import": [
+        "Rozpocznij importowanie"
+      ],
       "Start recovering": [
         "Rozpocznij odzyskiwanie"
       ],
@@ -632,6 +635,9 @@
       ]
     },
     "blackfriday Title": {
+      "Best deal": [
+        "Najlepsza oferta"
+      ],
       "Most popular": [
         "Najpopularniejszy"
       ]
@@ -646,7 +652,7 @@
     },
     "blackfriday: VPNspecialoffer Info": {
       "Save ${ percentage }%": [
-        "${ percentage } %"
+        "${ percentage }%"
       ]
     },
     "blackfriday: VPNspecialoffer info": {
@@ -2839,6 +2845,9 @@
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Co najmniej jeden z zaufanych kluczy został oznaczony przez właściciela jako zagrożony. Zalecamy przestać ufać tym kluczom."
+      ],
+      "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters is allowed": [
+        "Przekroczono maksymalną liczbę znaków (${ MAX_CUSTOM_PASSWORD_LENGTH })"
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Zmień te ustawienia tylko, gdy używasz PGP z odbiorcami spoza ${ BRAND_NAME }."

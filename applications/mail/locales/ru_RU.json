@@ -3599,8 +3599,8 @@
     "file size format, long": {
       "Byte": [
         "Байт",
-        "Байты",
-        "",
+        "Байтов",
+        "Байтов",
         "Байтов"
       ],
       "Gigabyte": [
@@ -3611,14 +3611,14 @@
       ],
       "Kilobyte": [
         "Килобайт",
-        "Килобайты",
-        "",
+        "Килобайтов",
+        "Килобайтов",
         "Килобайтов"
       ],
       "Megabyte": [
         "Мегабайт",
-        "Мегабайты",
-        "",
+        "Мегабайтов",
+        "Мегабайтов",
         "Мегабайтов"
       ]
     },
@@ -4048,16 +4048,16 @@
         "${ numContacts } контакт(а,ов)"
       ],
       "${ numOccurrences } occurrence found": [
-        "Найден ${ numOccurrences } повтор",
-        "Найден ${ numOccurrences } повтор",
-        "",
-        ""
+        "Найдено ${ numOccurrences } повторение",
+        "Найдено ${ numOccurrences } повторений",
+        "Найдено ${ numOccurrences } повторений",
+        "Найдено ${ numOccurrences } повторений"
       ],
       "${ numOccurrences } occurrence found in the mail content": [
-        "${ numOccurrences } В содержимом письма найдено вхождение",
-        "${ numOccurrences } вхождение найдено в содержимом письма",
-        "",
-        ""
+        "Найдено ${ numOccurrences } повторение в содержимом почты",
+        "Найдено ${ numOccurrences } повторений в содержимом письма",
+        "Найдено ${ numOccurrences } повторений в содержимом письма",
+        "Найдено ${ numOccurrences } повторений в содержимом письма"
       ],
       "${ pureAttachmentsCount } file attached": [
         "${ pureAttachmentsCount } файл прикреплён",
@@ -4732,7 +4732,7 @@
         "PGP/Inline совместим только с форматом Обычного текста. Обратите внимание, что ${ MAIL_APP_NAME } всегда подписывает зашифрованные сообщения."
       ],
       "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
-        "PGP/MIME автоматически отправляет сообщение, используя текущий режим редактора писем. Обратите внимание, что ${ MAIL_APP_NAME } всегда подписывает зашифрованные сообщения"
+        "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages."
       ],
       "Phone number": [
         "Hомер телефона"
@@ -8343,10 +8343,8 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "Каждый ${ interval }-й год",
-        "Каждый ${ interval }-й год",
-        "Каждый ${ interval }-й год",
-        "Каждый ${ interval }-й год"
+        "Yearly",
+        ""
       ],
       "Every ${ interval } year, ${ timesString }": [
         "Каждый ${ interval } год, ${ timesString }",

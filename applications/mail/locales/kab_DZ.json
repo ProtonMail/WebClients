@@ -4063,6 +4063,9 @@
       "per month.": [
         "deg wayyur."
       ],
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
+        "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages."
+      ],
       "Phone number": [
         "Uṭṭun n tiliɣri"
       ],
@@ -7224,8 +7227,8 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "Yal ${ interval } n useggas",
-        "Yal ${ interval } n yiseggasen"
+        "Yearly",
+        ""
       ],
       "Every ${ interval } year, ${ timesString }": [
         "Yal ${ interval } n useggas, ${ timesString }",
