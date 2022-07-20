@@ -182,6 +182,9 @@
       "Create": [
         "作成"
       ],
+      "Create a secure ${ MAIL_APP_NAME } address instead": [
+        "代わりに安全な ${ MAIL_APP_NAME } アドレスを作成"
+      ],
       "Create account": [
         "アカウントを作成"
       ],
@@ -1156,8 +1159,14 @@
       ]
     },
     "Calendar status": {
+      "Active": [
+        "有効"
+      ],
       "Default": [
         "既定"
+      ],
+      "Disabled": [
+        "無効"
       ],
       "Not synced": [
         "同期されていません"
@@ -3168,6 +3177,9 @@
       "Due to a password reset, none of your events could be decrypted and exported.": [
         "パスワードをリセットしたため、どのイベントも復号およびエクスポートができませんでした。"
       ],
+      "Due to a password reset, some of your events could not be decrypted and exported.": [
+        "パスワードをリセットしたため、いくつかのイベントは復号およびエクスポートができませんでした。"
+      ],
       "Error decrypting event": [
         "イベントの復号時にエラーが発生しました"
       ],
@@ -3179,6 +3191,9 @@
       ],
       "None of the events could be exported.": [
         "どのイベントもエクスポートできませんでした。"
+      ],
+      "Password reset - event cannot be decrypted": [
+        "パスワードリセット - イベントを複合できませんでした"
       ],
       "Please don't close the tab before the exporting process is finished.": [
         "出力が完了するまでタブを閉じないでください。"
@@ -4073,6 +4088,9 @@
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
         "このリンクを持っている人は誰でもカレンダー上であなたの予定の有無を確認できます。タイトル、場所、参加者などのイベント詳細は表示されません。"
       ],
+      "Anyone with this link won't be able to sync or get future updates for your calendar. If you want to give them access again, you will have to create a new link.": [
+        "このリンクを持っている人は、あなたのカレンダーの同期や今後の更新を取得することはできません。 再度アクセスを許可したい場合は、新しいリンクを作成する必要があります。"
+      ],
       "AOL reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
         "AOL はあなたの個人情報を収集しており、広告主や、その他の第三者に情報を提供しています。プライバシーを守るため、安全なメールアドレスを作成しましょう。"
       ],
@@ -4289,6 +4307,9 @@
       "Download your PGP keys for use with other PGP-compatible services.": [
         "ほかの PGP 互換サービスで使用するために PGP キーをダウンロードします。"
       ],
+      "Drop a file here to upload": [
+        "アップロードするファイルをここにドロップしてください"
+      ],
       "Drop the file here to upload": [
         "アップロードするファイルをここにドロップしてください"
       ],
@@ -4309,6 +4330,9 @@
       ],
       "Emailing preference saved": [
         "メール設定が保存されました"
+      ],
+      "Emails stored in this folder will not be deleted and can still be found in the All Mail folder.": [
+        "このフォルダーに保管されたメールは削除されず、すべてのメールフォルダーから見つけることができます。"
       ],
       "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
         "このラベルが付いたメールは削除されず、各フォルダで見つけることができます。"
@@ -4555,6 +4579,9 @@
       ],
       "Learn more": [
         "詳細"
+      ],
+      "learn more about Sieve programming language": [
+        "Sieve プログラミング言語の詳細について学ぶ"
       ],
       "Left to Right": [
         "左から右"
@@ -4807,6 +4834,9 @@
       ],
       "Queued": [
         "処理待ち"
+      ],
+      "read our two-factor authentication guide first": [
+        "はじめに 2 要素認証ガイドをお読みください"
       ],
       "Recovery file downloaded": [
         "回復用ファイルをダウンロードしました"
@@ -5062,6 +5092,9 @@
       ],
       "To use ${ toAppName }, please create an address.": [
         "${ toAppName } を利用するには、アドレスを作成します。"
+      ],
+      "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
+        "正常に動作させるには、それぞれのフィルターに正しい名前と有効な Sieve スクリプトが含まれている必要があります。${ link }ことができます。"
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "新規プランに登録したり、現在のプランを更新するときに使えるクレジットをアカウントにチャージします。1 ${ i18nCurrency } ごとに 1 クレジットを取得できます。"
@@ -6595,7 +6628,7 @@
         "Proton からのお知らせ"
       ],
       "Proton for business": [
-        "ビジネス向け Proton"
+        "Proton for Business"
       ],
       "Proton for Business newsletter": [
         "ビジネス向け Proton のニュースレター"
@@ -7117,7 +7150,7 @@
         "アカウントを削除しない"
       ],
       "Switch or add account": [
-        "アカウントを追加、切り替え"
+        "アカウントを追加・切り替え"
       ],
       "Switch plan": [
         "プランを変更"
@@ -7311,6 +7344,9 @@
       ],
       "Up to ${ totalStorageSize } total storage": [
         "最大合計 ${ totalStorageSize } のストレージ"
+      ],
+      "Worldwide streaming services": [
+        "世界的なストリーミングサービス"
       ]
     },
     "new_plans: heading": {
@@ -7455,11 +7491,17 @@
       "End-to-end encrypted file storage": [
         "エンドツーエンド暗号化されたファイルストレージ"
       ],
+      "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
+        "IMAP サポートは ${ MAIL_APP_NAME } Bridge を経由したデスクトップアプリ (Outlook、メール (Apple)、Thunderbird) のみに制限されます。クラウドベースの IMAP 統合は現在サポートされていません。"
+      ],
       "Keeps you protected by blocking all network connections when you are accidentally disconnected from our VPN server": [
-        "誤って VPN サーバーから切断してしまってもネットワーク接続をブロックすることであなたを保護します"
+        "Keeps you protected by blocking all network connections when you are unexpectedly disconnected from our VPN server."
       ],
       "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
         "プランのカスタマイズなど、サブスクリプションを管理することができます。お支払い方法は、クレジットカード、PayPal、暗号通貨、電信送金に対応しています。"
+      ],
+      "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections": [
+        "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections."
       ],
       "Organization management tool that lets admins add and remove users, allocate storage, configure domains, and perform other tasks": [
         "管理者がユーザーの追加と削除、ストレージの割り当て、ドメインの構成、およびその他のタスクを実行できるようにする組織管理ツール"
@@ -8231,6 +8273,9 @@
       ],
       "No more missed appointments": [
         "予定を通知する"
+      ],
+      "Try ${ DRIVE_APP_NAME }": [
+        "${ DRIVE_APP_NAME } を試す"
       ],
       "With email notifications, you decide which events to be notified about and when.": [
         "メール通知で、予定をいつ通知するかを選択できます。"
@@ -9638,6 +9683,14 @@
     "Upgrade": {
       "Upgrade to ${ planName } to connect up to ${ n } device to the VPN at once": [
         "${ planName } にアップグレードして同時に ${ n } のデバイスを VPN に接続します"
+      ]
+    },
+    "Upgrade notice": {
+      "Upgrade to a Mail paid plan to create up to ${ MAX_CALENDARS_PAID } calendar, allowing you to make calendars for work, to share with friends, and just for yourself.": [
+        "${ MAX_CALENDARS_PAID } カレンダーまで作成するには、Mail の有料プランにアップグレードしてください。カレンダーを作って友達と共有することができます"
+      ],
+      "Upgrade to a Mail paid plan to share your personal calendar via link with anyone.": [
+        "Mail の有料プランにアップグレードすると、リンク経由で誰にでも自分のカレンダーを共有することができます。"
       ]
     },
     "User role": {

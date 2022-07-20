@@ -66,16 +66,16 @@
         "Ausrichtung"
       ],
       "All Read": [
-        "Alle als gelesen kennzeichnen"
+        "Alle gelesenen auswählen"
       ],
       "All Starred": [
-        "Alle gekennzeichneten"
+        "Alle gekennzeichneten auswählen"
       ],
       "All Unread": [
-        "Alle als ungelesen kennzeichnen"
+        "Alle ungelesenen auswählen"
       ],
       "All Unstarred": [
-        "Alle Kennzeichnungen entfernen"
+        "Alle nicht gekennzeichneten auswählen"
       ],
       "Apply": [
         "Übernehmen"
@@ -1234,7 +1234,7 @@
         "Anwendungsproblem"
       ],
       "Bridge problem": [
-        "Problem mit „ProtonMail Bridge”"
+        "Problem mit „Bridge”"
       ],
       "Calendar problem": [
         "Kalenderproblem"
@@ -4262,7 +4262,7 @@
         "Stunden"
       ],
       "I'm sending this message to a non-ProtonMail user.": [
-        "Ich sende diese Nachricht an einen Nicht-ProtonMail-Benutzer."
+        "Ich sende diese Nachricht an einen Nicht-Proton Mail-Benutzer."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Wenn Sie Probleme bei der Erstellung Ihres Kontos haben, stellen Sie bitte eine Anfrage, und wir werden Ihnen innerhalb eines Werktages antworten."
@@ -4323,7 +4323,7 @@
         "Internetverbindung wiederhergestellt."
       ],
       "Just confirm your selection and we'll do the rest.": [
-        "Bestätigen Sie einfach Ihre Auswahl und ProtonMail übernimmt den Rest."
+        "Bestätige einfach deine Auswahl und wir übernehmen den Rest."
       ],
       "Key fingerprint": [
         "Schlüssel-Fingerabdruck"
@@ -4476,7 +4476,7 @@
         "PGP/Inline ist nur mit dem Klartext-Format kompatibel. Bitte beachte, dass ${ MAIL_APP_NAME } verschlüsselte Nachrichten immer signiert."
       ],
       "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
-        "PGP/MIME sendet die Nachricht automatisch unter Verwendung des aktuellen Verfassen-Modus. Bitte beachte, dass ${ MAIL_APP_NAME } verschlüsselte Nachrichten immer signiert."
+        "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages."
       ],
       "Phone number": [
         "Telefonnummer"
@@ -5942,7 +5942,7 @@
         "Ihre Daten werden zusammengestellt"
       ],
       "We're gathering your data from your provider": [
-        "ProtonMail erfasst Ihre Daten bei Ihrem Anbieter"
+        "Wir erfassen deine Daten bei deinem Anbieter"
       ],
       "Your import is starting": [
         "Ihr Datenimport wurde gestartet"
@@ -7899,8 +7899,8 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "Alle ${ interval } Jahre",
-        "Alle ${ interval } Jahre"
+        "Yearly",
+        ""
       ],
       "Every ${ interval } year, ${ timesString }": [
         "Alle ${ interval } Jahre, ${ timesString }",

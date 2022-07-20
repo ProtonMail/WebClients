@@ -616,6 +616,9 @@
       ]
     },
     "blackfriday Title": {
+      "Best deal": [
+        "Mejor oferta"
+      ],
       "Most popular": [
         "Más popular"
       ]
@@ -630,7 +633,7 @@
     },
     "blackfriday: VPNspecialoffer Info": {
       "Save ${ percentage }%": [
-        "${ percentage } %"
+        "${ percentage }%"
       ]
     },
     "blackfriday: VPNspecialoffer info": {
@@ -2663,6 +2666,9 @@
       "Not a valid URL": [
         "No es una URL válida"
       ],
+      "Not all files were transferred. Try uploading or downloading the files again.": [
+        "No se transfirieron todos los archivos. Intenta subir o descargar los archivos de nuevo."
+      ],
       "Note: Data may still be available locally on devices where you have installed ${ appName }.": [
         "Nota: Los datos pueden seguir estando disponibles localmente en los dispositivos en los que hayas instalado ${ appName }."
       ],
@@ -2674,6 +2680,9 @@
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Una o más de tus claves de confianza fueron marcadas como \"comprometidas\" por su propietario. Te recomendamos que las consideres \"no fiables\"."
+      ],
+      "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters is allowed": [
+        "Sólo se permiten ${ MAX_CUSTOM_PASSWORD_LENGTH } caracteres"
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Modifique esta configuración únicamente si está usando PGP con destinatarios no-${ BRAND_NAME }."
@@ -2783,6 +2792,12 @@
       ],
       "Signature issue": [
         "Problema de firma"
+      ],
+      "Some files failed to download. Try downloading the files again.": [
+        "Algunos archivos fallaron al descargar. Intenta descargar los archivos de nuevo."
+      ],
+      "Some files failed to upload. Try uploading the files again.": [
+        "Algunos archivos fallaron al subir. Intenta subir los archivos de nuevo."
       ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "Algunos de tus archivos ya no son accesibles. Restablece el acceso a tus archivos. ${ StartRecoveryButton }"

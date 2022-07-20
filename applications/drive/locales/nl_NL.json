@@ -193,6 +193,12 @@
       "Download": [
         "Downloaden"
       ],
+      "Download (${ count })": [
+        "Download (${ count })"
+      ],
+      "Download all": [
+        "Alles downloaden"
+      ],
       "Download anyway": [
         "Toch downloaden"
       ],
@@ -243,6 +249,9 @@
       ],
       "Get link": [
         "Link krijgen"
+      ],
+      "Get Proton Drive": [
+        "Proton Drive nemen"
       ],
       "Get started": [
         "Aan de slag"
@@ -424,6 +433,9 @@
       "Resume upload": [
         "Upload hervatten"
       ],
+      "Retry": [
+        "Opnieuw proberen"
+      ],
       "Save": [
         "Opslaan"
       ],
@@ -474,6 +486,9 @@
       ],
       "Skip": [
         "Overslaan"
+      ],
+      "Start import": [
+        "Begin met importeren"
       ],
       "Start recovering": [
         "Herstellen starten"
@@ -616,6 +631,9 @@
       ]
     },
     "blackfriday Title": {
+      "Best deal": [
+        "Beste deal"
+      ],
       "Most popular": [
         "Populairste keuze"
       ]
@@ -630,7 +648,7 @@
     },
     "blackfriday: VPNspecialoffer Info": {
       "Save ${ percentage }%": [
-        "${ percentage } %"
+        "${ percentage }%"
       ]
     },
     "blackfriday: VPNspecialoffer info": {
@@ -2730,6 +2748,9 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Eén of meerdere van uw vertrouwde sleutels zijn gemarkeerd als \"gecompromitteerd\" door hun eigenaars. We adviseren u deze sleutel niet meer te vertrouwen."
       ],
+      "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters is allowed": [
+        "Maximum ${ MAX_CUSTOM_PASSWORD_LENGTH } tekens toegelaten"
+      ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Wijzig deze instellingen alleen als u PGP met niet-${ BRAND_NAME }-ontvangers gebruikt."
       ],
@@ -3339,6 +3360,9 @@
       ],
       "Last month only": [
         "Alleen vorige maand"
+      ],
+      "Location": [
+        "Locatie"
       ],
       "Mailbox password": [
         "Mailboxwachtwoord"
@@ -4050,6 +4074,9 @@
       ]
     },
     "Spotlight": {
+      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
+        "${ DRIVE_APP_NAME } is uit de bèta! Geef uw bestanden dezelfde beveiliging als uw e-mails."
+      ],
       "Encrypted search is here": [
         "Versleuteld zoeken is hier"
       ],
@@ -4061,6 +4088,9 @@
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "U kan nu eenvoudig Drive-bestanden zoeken terwijl u uw gegevens veilig houdt."
+      ],
+      "Try ${ DRIVE_APP_NAME }": [
+        "Probeer ${ DRIVE_APP_NAME }"
       ]
     },
     "Storage": {
@@ -4339,6 +4369,9 @@
       "Discard changes?": [
         "Wijzigingen annuleren?"
       ],
+      "Download shared file": [
+        "Gedeeld bestand downloaden"
+      ],
       "Download unverified file?": [
         "Ongeverifieerd bestand downloaden?"
       ],
@@ -4588,6 +4621,9 @@
       ],
       "This folder has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "De map heeft een ontbrekende of ongeldige handtekening. Ga naar Menu (⋮) → Details voor info."
+      ],
+      "This link is password protected": [
+        "Deze koppeling is beveiligd met een wachtwoord"
       ],
       "Total size": [
         "Totale grootte"

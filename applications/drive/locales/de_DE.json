@@ -72,7 +72,7 @@
         "Hochladen abbrechen"
       ],
       "Chat with us": [
-        "Chatten Sie mit uns"
+        "Chatte mit uns"
       ],
       "Check import progress": [
         "Importfortschritt prüfen"
@@ -93,7 +93,7 @@
         "Suchanfrage löschen"
       ],
       "Click here.": [
-        "Klicken Sie hier."
+        "Hier klicken."
       ],
       "Close": [
         "Schließen"
@@ -589,18 +589,18 @@
         "Keine Suchergebnisse gefunden."
       ],
       "Please try another search term.": [
-        "Bitte versuchen Sie einen anderen Suchbegriff."
+        "Bitte versuche es mit einem anderen Suchbegriff."
       ],
       "You don't have any contacts.": [
-        "Sie haben keine Kontakte."
+        "Du hast keine Kontakte."
       ],
       "You don't have any groups.": [
-        "Sie haben keine Gruppen."
+        "Du hast keine Gruppen."
       ]
     },
     "Alert": {
       "By leaving now, some contacts may not be imported": [
-        "Wenn Sie jetzt verlassen, können einige Kontakte nicht importiert werden."
+        "Wenn du jetzt beendest, können einige Kontakte nicht importiert werden."
       ]
     },
     "Apps dropdown": {
@@ -613,7 +613,7 @@
         "Mit dem Beta-Zugang kannst du die Beta-Version von ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } und ${ DRIVE_APP_NAME } nutzen, bevor sie für die Öffentlichkeit freigegeben werden. Dies bedeutet, dass du als Erster neue Produkte ausprobieren, neue Aktualisierungen erhalten und neue Funktionen nutzen kannst."
       ],
       "If you encounter issues, you can always disable Beta Access.": [
-        "Wenn Sie auf Probleme stoßen, können Sie den Beta-Zugang jederzeit deaktivieren."
+        "Wenn Probleme auftreten, kannst du den Beta-Zugang jederzeit deaktivieren."
       ]
     },
     "blackfriday Action": {
@@ -659,7 +659,7 @@
         "Rabatte werden auf Grundlage des monatlichen Standardpreises von ${ standardMonthlyPricing } berechnet"
       ],
       "Save ${ percentage }%": [
-        "${ percentage } %"
+        "${ percentage }%"
       ],
       "Special offer Terms and Conditions": [
         "Allgemeine Geschäftsbedingungen des Sonderangebots"
@@ -1758,37 +1758,37 @@
     },
     "Description": {
       "Decrypting contacts... This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
-        "Kontakte werden entschlüsselt… Dies kann einige Minuten dauern. Wenn der Prozess abgeschlossen ist, können Sie die Datei mit allen Ihren exportierten Kontakten herunterladen."
+        "Kontakte werden entschlüsselt… Dies kann einige Minuten dauern. Wenn der Prozess abgeschlossen ist, kannst du die Datei mit all deinen exportierten Kontakten herunterladen."
       ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
-        "Kontakte werden gelöscht… Dies kann ein paar Minuten dauern. Wenn der Vorgang abgeschlossen ist, können Sie dieses Dialogfenster schließen."
+        "Kontakte werden gelöscht… Dies kann ein paar Minuten dauern. Wenn der Vorgang abgeschlossen ist, kannst du dieses Dialogfenster schließen."
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
-        "Kontakte werden verschlüsselt und importiert… Dies kann einige Minuten dauern. Wenn der Prozess abgeschlossen ist, können Sie diesen Dialog schließen."
+        "Kontakte werden verschlüsselt und importiert… Dies kann einige Minuten dauern. Wenn der Prozess abgeschlossen ist, kannst du diesen Dialog schließen."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
-        "Es scheint, dass die von Ihnen importierte Kontaktliste einige Gruppen enthält. Bitte überprüfen Sie, wie diese Gruppen importiert werden sollen."
+        "Es scheint, dass die von dir importierte Kontaktliste einige Gruppen enthält. Bitte überprüfe, wie diese Gruppen importiert werden sollen."
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
-        "Kontakte werden zusammengeführt… Dies kann einige Minuten dauern. Wenn der Prozess abgeschlossen ist, können Sie diesen Dialog schließen."
+        "Kontakte werden zusammengeführt… Dies kann einige Minuten dauern. Wenn der Prozess abgeschlossen ist, kannst du diesen Dialog schließen."
       ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "Die Datei darf eine maximale Größe von ${ MAX_IMPORT_FILE_SIZE_STRING } nicht überschreiten und höchstens ${ MAX_IMPORT_CONTACTS_STRING } Kontakt enthalten. Sollte Ihre Datei größer sein, teilen Sie sie bitte in kleinere Dateien auf.",
-        "Die Datei darf eine maximale Größe von ${ MAX_IMPORT_FILE_SIZE_STRING } nicht überschreiten und höchstens ${ MAX_IMPORT_CONTACTS_STRING } Kontakte enthalten. Sollte Ihre Datei größer sein, teilen Sie sie bitte in kleinere Dateien auf."
+        "Die Datei darf eine maximale Größe von ${ MAX_IMPORT_FILE_SIZE_STRING } nicht überschreiten und höchstens ${ MAX_IMPORT_CONTACTS_STRING } Kontakt enthalten. Sollte deine Datei größer sein, teile sie bitte in kleinere Dateien auf.",
+        "Die Datei darf eine maximale Größe von ${ MAX_IMPORT_FILE_SIZE_STRING } nicht überschreiten und höchstens ${ MAX_IMPORT_CONTACTS_STRING } Kontakte enthalten. Sollte deine Datei größer sein, teile sie bitte in kleinere Dateien auf."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
-        "Verwenden Sie Ziehen und Ablegen, um die Priorität der Zusammenführung zwischen den Kontakten zu bewerten. Wählen Sie jene Kontakte ab, die Sie nicht zusammenführen möchten."
+        "Verwende Ziehen und Ablegen, um die Priorität der Zusammenführung zwischen den Kontakten zu bewerten. Wähle jene Kontakte ab, die du nicht zusammenführen möchten."
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
-        "Sie können die Kontakte, die Sie weder zusammenführen noch behalten möchten, zum Löschen vormerken. Das Löschen erfolgt erst nach dem Klicken auf die Schaltfläche „Zusammenführen”"
+        "Du kannst die Kontakte, die du weder zusammenführen noch behalten möchtest, zum Löschen vormerken. Das Löschen erfolgt erst nach dem Klicken auf die Schaltfläche „Zusammenführen”"
       ]
     },
     "Description of the purpose of the import CSV modal": {
       "Also, we have automatically matched CSV fields with vCard fields. You can review and change this matching manually.": [
-        "Außerdem haben wir automatisch CSV-Felder mit vCard-Feldern abgeglichen. Sie können diese Übereinstimmung manuell überprüfen und ändern."
+        "Außerdem haben wir automatisch CSV-Felder mit vCard-Feldern abgeglichen. Du kannst diese Übereinstimmung manuell überprüfen und ändern."
       ],
       "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
-        "In der hochgeladenen CSV-Datei haben wir den folgenden Felder erkannt. Wählen Sie diejenigen aus, die Sie importieren möchten."
+        "In der hochgeladenen CSV-Datei haben wir die folgenden Felder erkannt. Wähle diejenigen aus, die du importieren möchtest."
       ]
     },
     "Early Access Disabled": {
@@ -1850,7 +1850,7 @@
         "Datei „${ item.name }” kann aufgrund des Fehlers „${ error }” nicht hochgeladen werden"
       ],
       "File \"${ name }\" is already downloading": [
-        "Die Datei \"${ name }\" wird bereits heruntergeladen"
+        "Die Datei „${ name }“ wird bereits heruntergeladen"
       ],
       "File cannot be merged with folder": [
         "Eine Datei kann nicht mit einem Ordner zusammengeführt werden"
@@ -1859,7 +1859,7 @@
         "Die ausgewählten Dateien werden bereits heruntergeladen"
       ],
       "Folder \"${ name }\" is already downloading": [
-        "Der Ordner \"${ name }\" wird bereits heruntergeladen"
+        "Der Ordner „${ name }“ wird bereits heruntergeladen"
       ],
       "Folder name cannot be empty.": [
         "Name des Ordners muss angegeben werden."
@@ -1922,8 +1922,8 @@
         "Bitte aktiviere deine Inhalts-Suche erneut"
       ],
       "Please fix the highlighted conflict to proceed.": [
-        "Bitte beheben Sie den hervorgehobenen Konflikt, um fortfahren zu können.",
-        "Bitte beheben Sie die hervorgehobenen Konflikte, um fortfahren zu können."
+        "Bitte behebe den hervorgehobenen Konflikt, um fortzufahren.",
+        "Bitte behebe die hervorgehobenen Konflikte, um fortzufahren."
       ],
       "Primary address key is not decrypted": [
         "Der Schlüssel der primären Adresse ist nicht entschlüsselt"
@@ -1953,7 +1953,7 @@
         "Einige Gruppen konnten nicht gelöscht werden"
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
-        "Einige Ihrer Kategorienamen sind nicht verfügbar. Bitte passen Sie den Import an, um diese Namen zu bearbeiten."
+        "Einige deiner Kategorienamen sind nicht verfügbar. Bitte passe den Import an, um diese Namen zu bearbeiten."
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Einige deiner Kategorienamen überschreiten die maximale Zeichenanzahl von ${ MAIL_APP_NAME }. Bitte passe den Import an, um diese Namen zu bearbeiten."
@@ -1965,16 +1965,16 @@
         "Der Name des Ordners ist ungültig. Bitte wähle einen anderen Namen."
       ],
       "The folder name is too long. Please choose a different name.": [
-        "Der Name des Ordners ist zu lang. Bitte wählen Sie einen kürzeren Namen."
+        "Der Name des Ordners ist zu lang. Bitte wähle einen kürzeren Namen."
       ],
       "The label name is invalid. Please choose a different name.": [
         "Der Name der Kategorie ist ungültig. Bitte wähle einen anderen Namen."
       ],
       "The label name is too long. Please choose a different name.": [
-        "Der Name der Kategorie ist zu lang. Bitte wählen Sie einen kürzeren Namen."
+        "Der Name der Kategorie ist zu lang. Bitte wähle einen kürzeren Namen."
       ],
       "The new revision of original file is not uploaded yet, please try again later": [
-        "Die neue Revision der Originaldatei ist noch nicht hochgeladen, bitte versuchen Sie es später noch einmal"
+        "Die neue Revision der Originaldatei ist noch nicht hochgeladen, bitte versuche es später noch einmal"
       ],
       "The original file has missing active revision": [
         "Die Originaldatei fehlt eine aktive Revision"
@@ -1986,7 +1986,7 @@
         "In der Originaldatei fehlt ein Sitzungsschlüssel"
       ],
       "The original file is not uploaded yet, please try again later": [
-        "Die Originaldatei ist noch nicht hochgeladen, bitte versuchen Sie es später noch einmal"
+        "Die Originaldatei ist noch nicht hochgeladen, bitte versuche es später noch einmal"
       ],
       "The original folder not found": [
         "Der ursprüngliche Ordner wurde nicht gefunden"
@@ -1995,7 +1995,7 @@
         "Der ursprüngliche Ordner oder die Datei wurde nicht gefunden"
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
-        "Es gibt zu viele Ordner in Ihrem externen Konto. Bitte passen Sie den Import an, um einige Ordner zu löschen."
+        "Es gibt zu viele Ordner in deinem externen Konto. Bitte passe den Import an, um einige Ordner zu löschen."
       ],
       "There was an error when exporting the contacts vCards": [
         "Es gab einen Fehler beim Exportieren der vCards der Kontakte"
@@ -2013,19 +2013,19 @@
         "Dieser Kategoriename ist nicht verfügbar. Bitte wähle einen anderen Namen."
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
-        "Diese Nachricht enthält möglicherweise Internetadressen, die von Ihrem aktuellen Browser nicht ordnungsgemäß geöffnet werden können."
+        "Diese Nachricht enthält möglicherweise Internetadressen, die von deinem aktuellen Browser nicht ordnungsgemäß geöffnet werden können."
       ],
       "Unknown error": [
         "Unbekannter Fehler"
       ],
       "You can't send a mail to more than 100 recipients": [
-        "Sie können eine E-Mail nicht an mehr als 100 Empfänger senden"
+        "Du kannst eine E-Mail nicht an mehr als 100 Empfänger senden"
       ],
       "You can't send vCards of more than 10 contacts": [
-        "Sie können vCards nicht an mehr als 10 Kontakte senden"
+        "Du kannst vCards nicht an mehr als 10 Kontakte senden"
       ],
       "You must set a name": [
-        "Sie müssen einen Namen festlegen"
+        "Du musst einen Namen festlegen"
       ],
       "Your browser does not support uploading folders": [
         "Ihr Browser unterstützt kein Hochladen von Ordnern"
@@ -2049,25 +2049,25 @@
     },
     "Error importing contacts": {
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "Beim Lesen Ihrer Datei ist ein Fehler aufgetreten ${ formattedFilename }. Dateiformat ist ungültig."
+        "Beim Lesen deiner Datei ist ein Fehler aufgetreten ${ formattedFilename }. Dateiformat ist ungültig."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        "Das Hochladen Ihrer Datei ist fehlgeschlagen ${ formattedFilename }. Die maximale Dateigröße beträgt ${ MAX_IMPORT_FILE_SIZE_STRING }."
+        "Das Hochladen deiner Datei ist fehlgeschlagen ${ formattedFilename }. Die maximale Dateigröße beträgt ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
       "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
-        "Beim Hochladen Ihrer Datei „${ formattedFilename }” ist ein Fehler aufgetreten. Keine CSV- oder VFC-Datei ausgewählt."
+        "Beim Hochladen deiner Datei „${ formattedFilename }” ist ein Fehler aufgetreten. Keine CSV- oder VCF-Datei ausgewählt."
       ],
       "An error occurred uploading your file. No file has been selected.": [
-        "Das Hochladen Ihrer Datei ist fehlgeschlagen. Es wurde keine Datei ausgewählt."
+        "Das Hochladen deiner Datei ist fehlgeschlagen. Es wurde keine Datei ausgewählt."
       ],
       "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_CONTACTS_STRING } contacts.": [
         "Die Datei „${ formattedFilename }” enthält mehr als ${ MAX_IMPORT_CONTACTS_STRING } Kontakte."
       ],
       "Your file ${ formattedFilename } has no contacts to be imported.": [
-        "Ihre Datei „${ formattedFilename }” enthält keine zu importierenden Kontakte."
+        "Deine Datei „${ formattedFilename }” enthält keine Kontakte zum importieren."
       ],
       "Your file ${ formattedFilename } is empty.": [
-        "Ihre Datei „${ formattedFilename }” ist leer."
+        "Deine Datei „${ formattedFilename }” ist leer."
       ]
     },
     "Error message": {
@@ -2075,7 +2075,7 @@
         "Zugriff verweigert"
       ],
       "Brace yourself till we get the error fixed.": [
-        "Bitte haben Sie Geduld, bis wir den Fehler beheben."
+        "Bitte habe etwas Geduld, bis wir den Fehler behoben haben."
       ],
       "Error: ${ errorMessage }": [
         "Fehler: ${ errorMessage }"
@@ -2090,16 +2090,16 @@
         "Ups, etwas ist schiefgelaufen"
       ],
       "Please ${ refresh } or check your connection.": [
-        "Bitte ${ refresh } oder Ihre Verbindung überprüfen."
+        "Bitte ${ refresh } oder überprüfe deine Verbindung."
       ],
       "There was a problem connecting to Proton.": [
         "Es gab ein Problem beim Aufbau der Verbindung zu Proton."
       ],
       "You may also ${ refresh } or try again later.": [
-        "Sie können auch ${ refresh } oder später erneut versuchen."
+        "Du kannst auch ${ refresh } oder es später erneut versuchen."
       ],
       "You may also refresh the page or try again later.": [
-        "Sie können auch die Seite aktualisieren oder später erneut versuchen."
+        "Du kannst auch die Seite aktualisieren oder es später erneut versuchen."
       ]
     },
     "Error notification": {
@@ -2190,11 +2190,11 @@
     },
     "Hint": {
       "Found ${ items.length } suggestion, use keyboard to navigate.": [
-        "${ items.length } Vorschlag gefunden. Verwenden Sie die Tastatur zum Navigieren.",
-        "${ items.length } Vorschläge gefunden. Verwenden Sie die Tastatur zum Navigieren."
+        "${ items.length } Vorschlag gefunden. Verwende die Tastatur zum Navigieren.",
+        "${ items.length } Vorschläge gefunden. Verwende die Tastatur zum Navigieren."
       ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
-        "Verwenden Sie die Pfeiltasten aufwärts/abwärts, um nach der Eingabe auf die Vorschläge zuzugreifen und diese zu durchsuchen. Drücken Sie die „Eingabetaste”, um Ihre Auswahl zu bestätigen, oder die „ESC”-Taste, um das Vorschlagsfeld zu schließen."
+        "Verwende die Pfeiltasten aufwärts/abwärts, um nach der Eingabe auf die Vorschläge zuzugreifen und diese zu durchsuchen. Drücke die „Eingabetaste”, um deine Auswahl zu bestätigen, oder die „ESC”-Taste, um das Vorschlagsfeld zu schließen."
       ]
     },
     "Human verification method": {
@@ -2226,12 +2226,12 @@
     },
     "Import contact": {
       "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
-        "${ totalImported }/${ totalToImport } Kontakt verschlüsselt und zu Ihrer Kontaktliste hinzugefügt",
-        "${ totalImported }/${ totalToImport } Kontakte verschlüsselt und zu Ihrer Kontaktliste hinzugefügt"
+        "${ totalImported }/${ totalToImport } Kontakt verschlüsselt und zu deiner Kontaktliste hinzugefügt",
+        "${ totalImported }/${ totalToImport } Kontakte verschlüsselt und zu deiner Kontaktliste hinzugefügt"
       ],
       "An error occurred while encrypting and adding your contact. No contact could be imported.": [
-        "Beim Verschlüsseln und Hinzufügen Ihres Kontakts ist ein Fehler aufgetreten. Kein Kontakt konnte importiert werden.",
-        "Beim Verschlüsseln und Hinzufügen Ihrer Kontakte ist ein Fehler aufgetreten. Kein Kontakt konnte importiert werden."
+        "Beim Verschlüsseln und Hinzufügen deines Kontakts ist ein Fehler aufgetreten. Es konnte kein Kontakt importiert werden.",
+        "Beim Verschlüsseln und Hinzufügen deiner Kontakte ist ein Fehler aufgetreten. Es konnten keine Kontakte importiert werden."
       ]
     },
     "Import contact error": {
@@ -2252,11 +2252,11 @@
     },
     "Import contacts": {
       "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
-        "Beim Verschlüsseln und Hinzufügen Ihrer Kontakte ist ein Fehler aufgetreten. ${ totalImported } von ${ totalToImport } Kontakten erfolgreich importiert."
+        "Beim Verschlüsseln und Hinzufügen deiner Kontakte ist ein Fehler aufgetreten. ${ totalImported } von ${ totalToImport } Kontakte erfolgreich importiert."
       ],
       "Contact successfully imported. The imported contact will now appear in your contact list.": [
-        "Kontakt erfolgreich importiert. Der importierte Kontakte wird nun in Ihrer Kontaktliste angezeigt.",
-        "Kontakt erfolgreich importiert. Die importierten Kontakte werden nun in Ihrer Kontaktliste angezeigt."
+        "Kontakt erfolgreich importiert. Der importierte Kontakt wird nun in Ihrer Kontaktliste angezeigt.",
+        "Kontakte erfolgreich importiert. Die importierten Kontakte werden nun in deiner Kontaktliste angezeigt."
       ]
     },
     "Import contacts warning": {
@@ -2397,17 +2397,17 @@
         "Dem Ordnernamen wird eine Zahl hinzugefügt"
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "Der Zugriff auf das Konto wurde aufgrund noch offener Rechnungen eingeschränkt. Bitte wenden Sie sich an Ihren Administrator."
+        "Der Zugriff auf das Konto wurde aufgrund noch offener Rechnungen eingeschränkt. Bitte wende dich an deinen Administrator."
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
-        "Die Adressprüfung mit vertrauenswürdigen Schlüsseln ist für diese Adresse aktiviert. Um an diese Adresse senden zu können, müssen Sie zunächst den öffentlichen Schlüsseln vertrauen, die für das Senden verwendet werden können."
+        "Die Adressprüfung mit vertrauenswürdigen Schlüsseln ist für diese Adresse aktiviert. Um an diese Adresse senden zu können, musst du zunächst öffentlichen Schlüsseln vertrauen, die für den Versand verwendet werden können."
       ],
       "All (${ totalFoldersCount } folder)": [
         "Alle (${ totalFoldersCount } Ordner)",
         "Alle (${ totalFoldersCount } Ordner)"
       ],
       "All (${ totalFoldersCount } label)": [
-        "Alle (${ totalFoldersCount } Kategorie(n))",
+        "Alle (${ totalFoldersCount } Kategorie)",
         "Alle (${ totalFoldersCount } Kategorien)"
       ],
       "An active recovery file": [
@@ -2417,22 +2417,22 @@
         "und"
       ],
       "Anyone with this link can access your file.": [
-        "Jeder mit diesem Link kann auf Ihre Datei zugreifen."
+        "Jeder mit diesem Link kann auf deine Datei zugreifen."
       ],
       "Anyone with this link can access your folder.": [
         "Jeder mit diesem Link kann auf deinen Ordner zugreifen."
       ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
-        "Möchten Sie den Papierkorb wirklich leeren und alle Elemente dauerhaft löschen?"
+        "Möchtest du den Papierkorb wirklich leeren und alle Elemente dauerhaft löschen?"
       ],
       "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
-        "Möchtest du \"${ itemName }\" unwiderruflich aus dem Papierkorb löschen?"
+        "Möchtest du „${ itemName }“ unwiderruflich aus dem Papierkorb löschen?"
       ],
       "Are you sure you want to permanently delete selected items from trash?": [
         "Bist du sicher, dass die ausgewählten Elemente dauerhaft aus dem Papierkorb gelöscht werden sollen?"
       ],
       "Because ${ appName } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
-        "Da ${ appName } Ende-zu-Ende verschlüsselt ist, haben wir keinen Zugriff oder Ihre Dateien und können sie auch nicht für Sie entschlüsseln. Um Ihr Laufwerk nach einem Zurücksetzen des Passworts zu entsperren, müssen Sie einen der folgenden Punkte erfüllen:"
+        "Da ${ appName } Ende-zu-Ende verschlüsselt ist, haben wir keinen Zugriff auf deine Dateien und können sie auch nicht für dich entschlüsseln. Um dein Laufwerk nach einem Zurücksetzen des Passworts zu entsperren, musst du einen der folgenden Punkte erfüllen:"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Bevor du einen neuen Bestätigungscode anforderst, überprüfe deinen Spam-Ordner und stelle sicher, dass ${ strong } die richtige Adresse ist."
@@ -2444,7 +2444,7 @@
         "Abgebrochen"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
-        "Sie können sich nicht mehr an Ihr Passwort erinnern? Wir können Ihnen helfen, die verschlüsselten Daten aller mit diesem Schlüssel verschlüsselten Kontakte zu löschen und dabei den Alarm zu deaktivieren."
+        "Du kannst dich nicht mehr an dein Passwort erinnern? Wir können dir dabei helfen die verschlüsselten Daten aller Kontakte, die mit diesem Schlüssel verschlüsselt wurden zu löschen, der Hinweis deaktiviert wird."
       ],
       "Checking contact ${ progress } of ${ max }...": [
         "${ progress } von ${ max } Kontakten wurden geprüft …"
@@ -2465,10 +2465,10 @@
         "Löscht die Browserdaten im Zusammenhang mit der verschlüsselten Suche."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "Klicken Sie auf „Neuen Code anfordern”, um einen neuen Verifizierungscode an ${ strong } senden zu lassen. Wenn diese die Telefonnummer falsch ist, klicken Sie auf „Bearbeiten”, um sie zu korrigieren."
+        "Klicke auf „Neuen Code anfordern”, um einen neuen Verifizierungscode an ${ strong } senden zu lassen. Wenn diese Telefonnummer nicht stimmt, klicke auf „Bearbeiten”, um sie zu korrigieren."
       ],
       "Close this screen to exit.": [
-        "Zum Beenden schließen Sie das Fenster."
+        "Schließe dieses Fenster, um den Vorgang zu beenden."
       ],
       "Conflict": [
         "Konflikt"
@@ -2484,10 +2484,10 @@
         "${ calendarsToBeCreated } neue Kalender erstellen"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
-        "Erstellen Sie eine Kategorie für die importierten Nachrichten, einen Zeitbereich für diesen Import und die Ordner, die Sie importieren möchten."
+        "Erstelle eine Kategorie für die importierten Nachrichten, einen Zeitbereich für diesen Import und die Ordner, die du importieren möchtest."
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
-        "Erstellen Sie eine Kategorie für die importierten Nachrichten, einen Zeitbereich für diesen Import und die Kategorien (Labels), die Sie importieren möchten."
+        "Erstelle eine Kategorie für die importierten Nachrichten, einen Zeitbereich für diesen Import und die Kategorien (Labels), die du importieren möchtest."
       ],
       "Create a new contact group": [
         "Neue Kontaktgruppe erstellen"
@@ -2496,10 +2496,10 @@
         "Erstellen in"
       ],
       "Create links and share your files with others.": [
-        "Links erstellen und Ihre Dateien mit anderen teilen."
+        "Links erstellen und deine Dateien mit anderen teilen."
       ],
       "Create your first folder and start moving your files.": [
-        "Erstellen Sie Ihren ersten Ordner und beginnen Sie mit dem Verschieben Ihrer Dateien."
+        "Erstelle deinen ersten Ordner und beginne mit dem Verschieben deiner Dateien."
       ],
       "Creating": [
         "Wird erstellt"
@@ -2582,13 +2582,13 @@
         "Fehlgeschlagen"
       ],
       "Failed to generate a secure link. Try again later.": [
-        "Generieren eines sicheren Links fehlgeschlagen. Versuchen Sie es später erneut."
+        "Generieren eines sicheren Links fehlgeschlagen. Versuche es später erneut."
       ],
       "Failed to open a secure link. The reason is: ${ error }": [
         "Sicherer Link konnte nicht geöffnet werden. Fehler: ${ error }"
       ],
       "File \"${ name }\" was deleted during download": [
-        "Die Datei \"${ name }\" wurde während dem herunterladen gelöscht"
+        "Die Datei „${ name }“ wurde während dem herunterladen gelöscht"
       ],
       "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "Bei der Datei fehlt die Signatur. Wir konnten nicht verifizieren, dass ${ emailAddress } ${ fileName } hochgeladen hat."
@@ -2603,7 +2603,7 @@
         "Wird abgeschlossen"
       ],
       "Folder \"${ link.name }\" was deleted during download": [
-        "Der Ordner \"${ link.name }\" wurde während dem herunterladen gelöscht"
+        "Der Ordner „${ link.name }“ wurde während dem herunterladen gelöscht"
       ],
       "Folder contents will merge into a single folder": [
         "Die Inhalte der Ordner werden in einem einzigen Ordner zusammengeführt"
@@ -2618,13 +2618,13 @@
         "Ordner wird nicht hochgeladen"
       ],
       "Free up some space or add more storage space.": [
-        "Geben Sie etwas Speicherplatz frei oder fügen Sie zusätzlichen Speicherplatz hinzu."
+        "Gib etwas Speicherplatz frei oder füge zusätzlichen Speicherplatz hinzu."
       ],
       "Free up some space or contact your administrator.": [
-        "Geben Sie etwas Speicherplatz frei oder wenden Sie sich an Ihren Administrator."
+        "Gib etwas Speicherplatz frei oder wende dich an deinen Administrator."
       ],
       "Go to \"My files\" and upload some files first.": [
-        "Wechseln Sie zu „Meine Dateien” und laden Sie zunächst einige Dateien hoch."
+        "Wechsle zu „Meine Dateien” und lade zunächst einige Dateien hoch."
       ],
       "Group assignment applied": [
         "Gruppenzuordnung übernommen"
@@ -2636,13 +2636,13 @@
         "Wie funktioniert die verschlüsselte Suche?"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
-        "Wenn Sie Probleme bei der Erstellung Ihres Kontos haben, stellen Sie bitte eine Anfrage, und wir werden Ihnen innerhalb eines Arbeitstages antworten."
+        "Wenn du Probleme bei der Erstellung deines Kontos hast, stelle bitte eine Anfrage, und wir werden dir innerhalb eines Arbeitstages antworten."
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Wenn Sie glauben, dass dies ein Fehler ist, kontaktieren Sie uns bitte ${ contactLink }."
+        "Wenn du glaubst, dass dies ungerechtfertigt ist, kontaktieren uns bitte ${ contactLink }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
-        "Wenn Sie die E-Mail nicht in Ihrem Posteingang finden, überprüfen Sie bitte Ihren Spam-Ordner."
+        "Solltest du die E-Mail nicht in deinem Posteingang vorfinden, überprüfe bitte deinen Spam-Ordner."
       ],
       "If you have one of these, continue to Proton account setting to\nstart the unblock process.": [
         "Wenn eines davon auf dich zutrifft, fahre mit den Proton-Kontoeinstellungen fort,\num den Entsperrungsprozess zu starten."
@@ -2652,7 +2652,7 @@
       ],
       "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendar": [
         "${ selectedCalendarsCount }/${ totalCalendarsCount } Kalender importieren",
-        "${ selectedCalendarsCount }/${ totalCalendarsCount } Kalendern importieren"
+        "${ selectedCalendarsCount }/${ totalCalendarsCount } Kalender importieren"
       ],
       "Import from": [
         "Importieren aus"
@@ -2661,7 +2661,7 @@
         "Datenimport wird ausgeführt"
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        "Ihrer Daten werden von ${ importedEmailAddress } nach ${ toEmail } importiert."
+        "Deine Daten werden von ${ importedEmailAddress } nach ${ toEmail } importiert."
       ],
       "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
         "${ esProgress } von ${ totalProgressToShow } Elementen wurden indexiert…"
@@ -2679,13 +2679,13 @@
         "Internetverbindung unterbrochen"
       ],
       "Internet connection lost. Please check your device's connectivity.": [
-        "Internetverbindung unterbrochen. Bitte überprüfen Sie die Konnektivität Ihres Geräts."
+        "Internetverbindung unterbrochen. Bitte überprüfe die Konnektivität deines Geräts."
       ],
       "Internet connection restored.": [
         "Internetverbindung wiederhergestellt."
       ],
       "Just confirm your selection and we'll do the rest.": [
-        "Bestätigen Sie einfach Ihre Auswahl und ProtonMail übernimmt den Rest."
+        "Bestätige einfach deine Auswahl und wir übernehmen den Rest."
       ],
       "Key fingerprint": [
         "Schlüssel-Fingerabdruck"
@@ -2733,7 +2733,7 @@
         "Meine Links"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
-        "Benennen Sie Ihren neuen Ordner und wählen Sie den übergeordneten Ordner, in den Sie ihn einfügen möchten. Wenn Sie keinen übergeordneten Ordner auswählen, wird dieser neue Ordner als Hauptordner erstellt."
+        "Benenne deinen neuen Ordner und wähle den übergeordneten Ordner, in den du ihn einfügen möchtest. Wenn du keinen übergeordneten Ordner auswählst, wird dieser neue Ordner auf der obersten Ebene erstellt."
       ],
       "Network issue": [
         "Netzwerkproblem"
@@ -2783,6 +2783,9 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Einer oder mehrere deiner vertrauenswürdigen Schlüssel wurden durch dessen Besitzer als „kompromittiert“ gemeldet. Wir empfehlen dir, die betroffenen Schlüssel als „nicht vertrauenswürdig“ zu markieren."
       ],
+      "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters is allowed": [
+        "Es sind höchstens ${ MAX_CUSTOM_PASSWORD_LENGTH } Zeichen erlaubt"
+      ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Ändere diese Einstellungen nur, wenn du PGP mit Nicht-${ BRAND_NAME }-Empfängern verwendest."
       ],
@@ -2799,7 +2802,7 @@
         "Angehalten"
       ],
       "Permanently delete all files in your drive": [
-        "Alle Dateien auf Ihrem Laufwerk dauerhaft löschen"
+        "Alle Dateien auf deinem Laufwerk dauerhaft löschen"
       ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
         "PGP/Inline ist nur mit dem Klartext-Format kompatibel. Bitte beachte, dass ${ MAIL_APP_NAME } verschlüsselte Nachrichten immer signiert."
@@ -2811,10 +2814,10 @@
         "Bitte gib das Passwort ein, um den Inhalt zu entschlüsseln und anzuzeigen."
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
-        "Bitte beachten Sie, dass die dieser Gruppe zugewiesenen E-Mail-Adressen NICHT gelöscht werden."
+        "Bitte beachte, dass die dieser Gruppe zugewiesenen E-Mail-Adressen NICHT gelöscht werden."
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
-        "Bitte beachten Sie, dass dieser Prozess (je nach Größe Ihres Adressbuchs) einige Zeit dauern kann."
+        "Bitte beachte, dass dieser Prozess (je nach Größe deines Adressbuchs) einige Zeit dauern kann."
       ],
       "Please select the folders you would like to import:": [
         "Bitte die zu importierenden Ordner auswählen:"
@@ -2827,10 +2830,10 @@
         "Bitte auswählen, welche E-Mail-Adresse(n) zu ${ groupName } hinzugefügt werden sollen."
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
-        "Bitte warten Sie, während wir nach Kontakten suchen, die mit dem primären Verschlüsselungsschlüssel neu signiert werden können."
+        "Bitte warte, während nach Kontakten gesucht wird, die mit dem primären Verschlüsselungsschlüssel neu signiert werden können."
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
-        "Bitte warten Sie, während wir nach Kontakten mit Daten suchen, die mit dem inaktiven Schlüssel verschlüsselt sind."
+        "Bitte warte, während nach Kontakten gesucht wird, die Daten enthalten, welche mit dem inaktiven Schlüssel verschlüsselt sind."
       ],
       "Preparing link to file": [
         "Link zur Datei wird vorbereitet"
@@ -2881,13 +2884,13 @@
         "Wähle eine hochgeladene Datei oder einen Ordner aus und erstelle einen Link dazu."
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
-        "Wählen Sie das Nachrichtenformat, das standardmäßig verwendet werden soll, wenn Sie eine E-Mail an diese E-Mail-Adresse senden."
+        "Wähle das Nachrichtenformat, das standardmäßig verwendet werden soll, wenn du eine E-Mail an diese E-Mail-Adresse sendest."
       ],
       "Select what you want to move from Google.": [
         "Wähle aus, was du von Google verschieben möchtest."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        "Bitte wählen Sie die zu importierenden Kalender aus. Für jeden importierten Kalender wird ein neuer Kalender erstellt, bis die Grenze von 20 Kalendern erreicht ist."
+        "Bitte wähle die zu importierenden Kalender aus. Für jeden importierten Kalender wird ein neuer Kalender erstellt, bis die Grenze von 20 Kalendern erreicht ist."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Die Server sind unerreichbar. Bitte versuche es in ein paar Minuten erneut"
@@ -2917,10 +2920,10 @@
         "Einige Dateien konnten nicht hochgeladen werden. Versuche, die Dateien erneut hochzuladen."
       ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
-        "Einige Ihrer Dateien sind nicht mehr zugänglich. Stellen Sie den Zugriff auf Ihre Dateien wieder her. ${ StartRecoveryButton }"
+        "Einige deiner Dateien sind nicht mehr zugänglich. Stelle den Zugriff auf deine Dateien wieder her. ${ StartRecoveryButton }"
       ],
       "Something went wrong, please try again later.": [
-        "Ein Problem ist aufgetreten. Bitte versuchen Sie es später noch einmal."
+        "Ein Problem ist aufgetreten, bitte versuche es später noch einmal."
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         "Der Speicherplatz wird von ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } und ${ DRIVE_APP_NAME } gemeinsam genutzt."
@@ -2941,7 +2944,7 @@
         "Das Konto hat möglicherweise einen neuen Schlüssel, oder die folgenden Daten wurden manipuliert: ${ items }. Öffne sie nur, wenn du sie für vertrauenswürdig hältst."
       ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
-        "Die Anwendung muss Ihre Kontakte lokal entschlüsseln, bevor diese exportiert werden können. Am Ende des Prozesses wird eine VCF-Datei generiert, die Sie anschließend herunterladen können."
+        "Die Anwendung muss deine Kontakte lokal entschlüsseln, bevor diese exportiert werden können. Am Ende des Prozesses wird eine VCF-Datei generiert, die du anschließend herunterladen kannst."
       ],
       "The following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Folgendes könnte manipuliert worden sein: ${ items }. Öffne es nur, wenn du es für vertrauenswürdig hältst."
@@ -2962,7 +2965,7 @@
         "Diese Adresse ist deaktiviert. Um an diese Adresse senden zu können, muss der Besitzer die Adresse zuerst aktivieren."
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
-        "Dieser Browser unterstützt keine Vorschau von PDF-Dokumenten. Bitte laden Sie die Datei herunter."
+        "Dieser Browser unterstützt keine Vorschau von PDF-Dokumenten. Bitte lade die Datei herunter."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Dieser Link führt zu einer Website, die möglicherweise versucht, deine Informationen wie Passwörter und Kreditkartendaten zu stehlen."
@@ -2974,17 +2977,17 @@
         "Dieser Link ist möglicherweise ein homographischer Angriff (Vortäuschung einer falschen Identität). Bitte vergewissern Sie sich, dass dies der Link ist, den Sie besuchen möchten, oder öffnen Sie ihn nicht."
       ],
       "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
-        "Dieser Link wurde mit einer alten Drive-Version erstellt und kann nicht geändert werden. Lösche diese Verknüpfung und erstelle eine neue, um die Einstellungen zu ändern."
+        "Dieser Link wurde mit einer alten Drive-Version erstellt und kann nicht geändert werden. Lösche diesen Link und erstelle eine neuen, um die Einstellungen zu ändern."
       ],
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
-        "Dieser Link wird dauerhaft deaktiviert. Niemand mit diesem Link wird auf Ihre Datei zugreifen können. Um die Datei erneut freizugeben, muss ein neuer Link erstellt werden."
+        "Dieser Link wird dauerhaft deaktiviert. Niemand mit diesem Link wird auf deine Datei zugreifen können. Um die Datei erneut freizugeben, muss ein neuer Link erstellt werden."
       ],
       "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
         "Dieser Link wird dauerhaft deaktiviert. Niemand mit diesem Link wird auf deinen Ordner zugreifen können. Um den Ordner erneut freizugeben, muss ein neuer Link erstellt werden."
       ],
       "This will delete the link and remove access to your file or folder for anyone with the link.": [
         "Dadurch wird der Link gelöscht und der Zugriff auf deine Datei oder deinen Ordner für jeden, der über den Link verfügt, unterbunden.",
-        "Dadurch werden die Links gelöscht und der Zugriff auf deine Dateien oder deine Ordner für jeden, der über den Link verfügt, unterbunden."
+        "Dadurch werden die Links gelöscht und der Zugriff auf deine Dateien oder deine Ordner für jeden, der über die Links verfügt, unterbunden."
       ],
       "This will overwrite the existing file": [
         "Dadurch wird die vorhandene Datei überschrieben"
@@ -2996,16 +2999,16 @@
         "Um eine wirklich private Suche zu ermöglichen, muss ${ DRIVE_APP_NAME } deine Dateien lokal indizieren. Du kannst ${ DRIVE_APP_NAME } wie gewohnt weiternutzen - wir informieren dich, sobald die Indexierung erfolgt ist."
       ],
       "To fight spam and abuse, please verify you are human.": [
-        "Um Spam und Missbrauch zu bekämpfen, bestätigen Sie bitte, dass Sie ein Mensch sind."
+        "Um Spam und Missbrauch zu bekämpfen, bestätige bitte, dass du ein Mensch sind."
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
-        "Um Ihre Kontakte erneut zu unterzeichnen, müssen wir jeden Kontakt mit der Liste der in Ihrem Konto verfügbaren Verschlüsselungsschlüssel überprüfen. Wenn keine Übereinstimmung gefunden wird, wird Ihr Kontakt mit dem primären Verschlüsselungsschlüssel neu signiert."
+        "Um deine Kontakte neu zu signieren, muss jeder Kontakt mit der Liste der in deinem Konto verfügbaren Verschlüsselungsschlüssel verglichen werden. Wenn keine Übereinstimmung gefunden wird, wird der Kontakt mit dem primären Verschlüsselungsschlüssel neu signiert."
       ],
       "To recover your data, you need to re-activate the contact encryption key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
-        "Um Ihre Daten wiederherzustellen, müssen Sie den Kontakt-Verschlüsselungsschlüssel, der zum Zeitpunkt der Erstellung der Daten verwendet wurde, erneut aktivieren. Dazu müssen Sie sich an das Passwort erinnern, das bei der Erzeugung des Schlüssels verwendet wurde."
+        "Um deine Daten wiederherzustellen, musst du den Kontaktverschlüsselungsschlüssel, der zum Zeitpunkt der Erstellung der Daten verwendet wurde, erneut aktivieren. Dazu brauchst du das Passwort, das bei der Erzeugung des Schlüssels verwendet wurde."
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
-        "Um die Adressprüfung verwenden zu können, müssen Sie einem oder mehreren verfügbaren öffentlichen Schlüsseln vertrauen, einschließlich desjenigen, den Sie zum Senden verwenden möchten. Dadurch wird verhindert, dass die Verschlüsselungsschlüssel gefälscht werden."
+        "Um die Adressprüfung verwenden zu können, musst du einem oder mehreren verfügbaren öffentlichen Schlüsseln vertrauen, einschließlich desjenigen, den du zum Senden verwenden möchtest. Dadurch wird verhindert, dass die Verschlüsselungsschlüssel gefälscht werden können."
       ],
       "Transfer canceled for file \"${ name }\"": [
         "Übertragung der Datei „${ name }” wurde abgebrochen"
@@ -3014,7 +3017,7 @@
         "Übertragung des Ordners „${ name }” wurde abgebrochen"
       ],
       "Transfer skipped for file \"${ file.name }\"": [
-        "Übertragung für Datei „${ file.name }” übersprungen"
+        "Übertragung der Datei „${ file.name }” übersprungen"
       ],
       "Transfer skipped for folder \"${ folderName }\"": [
         "Übertragung des Ordners „${ folderName }” wurde übersprungen"
@@ -3059,7 +3062,7 @@
         "Wir konnten nicht überprüfen, wer ${ fileName } hochgeladen hat."
       ],
       "We'll notify you when the import is done.": [
-        "Sie werden benachrichtigt, sobald der Datenimport abgeschlossen ist."
+        "Du wirst benachrichtigt, sobald der Datenimport abgeschlossen ist."
       ],
       "We'll send a new verification code to ${ strong }": [
         "Wir senden einen neuen Verifizierungscode an ${ strong }"
@@ -3071,19 +3074,19 @@
         "Woche"
       ],
       "What do you want to do?": [
-        "Was möchten Sie tun?"
+        "Was willst du tun?"
       ],
       "What would you like to do?": [
-        "Was möchten Sie tun?"
+        "Was möchtest du tun?"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
-        "Möchten Sie einen neuen Verifizierungscode erhalten oder eine alternative Verifizierungsmethode verwenden?"
+        "Möchtest du einen neuen Verifizierungscode erhalten oder eine alternative Verifizierungsmethode verwenden?"
       ],
       "Would you like to receive a new verification code?": [
         "Möchtest du einen neuen Verifizierungscode erhalten?"
       ],
       "Would you like to restore your files?": [
-        "Möchten Sie Ihre Dateien wiederherstellen?"
+        "Möchtest du deine Dateien wiederherstellen?"
       ],
       "Yes": [
         "Ja"
@@ -3092,13 +3095,13 @@
         "Es wird nun ein neuer Tab im Browser geöffnet und folgende Adresse aufgerufen:"
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "Du bist derzeit als „${ user.Name }” (${ user.Email }) angemeldet."
+        "Du bist derzeit als „${ user.Name }“ (${ user.Email }) angemeldet."
       ],
       "You can also merge imported calendars with existing Proton calendars.": [
-        "Sie können zudem importierte Kalender mit bestehenden Proton-Kalendern zusammenführen."
+        "Du kannst zudem importierte Kalender mit bestehenden Proton-Kalendern zusammenführen."
       ],
       "You can check the progress ${ importProgressLink }.": [
-        "Sie können den Fortschritt hier ${ importProgressLink } überprüfen."
+        "Du kannst den Fortschritt ${ importProgressLink } überprüfen."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Du kannst Mitteilungen aktivieren, um Benachrichtigungen zu erhalten, sobald neue E-Mail-Nachrichten in diesem Ordner eingehen."
@@ -3107,10 +3110,10 @@
         "Diese Aktion kann nicht widerrufen werden."
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
-        "Sie haben ${ spaceDisplayed }% Ihrer Speicherkapazität aufgebraucht. ${ freeUpMessage } ${ upgradeLink }"
+        "Du hast ${ spaceDisplayed } % deiner Speicherkapazität aufgebraucht. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "Sie haben 100% Ihrer Speicherkapazität aufgebraucht. Sie können keine neuen E-Mails senden oder empfangen. ${ freeUpMessage } ${ upgradeLink }"
+        "Du hast 100 % deiner Speicherkapazität aufgebraucht. Du kannst keine neuen E-Mails senden oder empfangen. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You will lose all unsaved changes.": [
         "Alle nicht gespeicherten Änderungen werden verworfen."
@@ -3125,28 +3128,28 @@
         "Dein aktueller Browser unterstützt das Herunterladen großer Dateien nicht, da keine Service Worker zur Verfügung stehen. Beim Herunterladen großer Dateien kann es dazu kommen, dass der Browser einfriert oder nicht mehr reagiert. Bitte verwende die neuesten Versionen eines ${ recommendedBrowser } und versuche es erneut."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
-        "Ihre Daten von ${ importedEmailAddressStrong } können nun in Ihr Proton-Konto übertragen werden."
+        "Deine Daten von ${ importedEmailAddressStrong } können nun in dein Proton-Konto übertragen werden."
       ],
       "Your email will only be used for this one-time verification.": [
-        "Ihre E-Mail-Adresse wird nur für diese einmalige Verifizierung verwendet."
+        "Deine E-Mail-Adresse wird nur für diese einmalige Überprüfung verwendet."
       ],
       "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
-        "Ihre Dateien sind aufgrund eines Zurücksetzens des Passworts nicht mehr zugänglich. Laden Sie den alten Verschlüsselungsschlüssel erneut hoch. ${ KeyReactivationButton }"
+        "Deine Dateien sind aufgrund eines Zurücksetzens des Passworts nicht mehr zugänglich. Lade den alten Verschlüsselungsschlüssel erneut hoch. ${ KeyReactivationButton }"
       ],
       "Your files will be encrypted and then saved.": [
-        "Ihre Dateien werden verschlüsselt und anschließend gespeichert."
+        "Deine Dateien werden verschlüsselt und anschließend gespeichert."
       ],
       "Your phone number will only be used for this one-time verification.": [
-        "Ihre Telefonnummer wird nur für diese einmalige Verfizierung verwendet."
+        "Deine Rufnummer wird nur für diese einmalige Überprüfung verwendet."
       ],
       "Your previous password": [
         "Ihr bisheriges Passwort"
       ],
       "Your previous recovery phrase": [
-        "Ihre bisherige Wiederherstellungsphrase"
+        "Deine bisherige Wiederherstellungsphrase"
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "Ihr Proton-Konto ist derzeit gesperrt. Um Ihr Konto weiter nutzen zu können, begleichen Sie bitte alle überfälligen Rechnungen."
+        "Dein Proton-Konto ist derzeit gesperrt. Um es weiter nutzen zu können, begleiche bitte alle überfälligen Rechnungen."
       ]
     },
     "Info on errors": {
@@ -3590,7 +3593,7 @@
     },
     "Link": {
       "clearing your browser cache": [
-        "Ihren Browser-Cache leeren"
+        "Browser-Cache leeren"
       ],
       "Go to subscription plans": [
         "Zu den Abonnement-Plänen"
@@ -3628,10 +3631,10 @@
         "Neue Kalender werden angelegt"
       ],
       "Gathering your data": [
-        "Ihre Daten werden zusammengestellt"
+        "Deine Daten werden zusammengestellt"
       ],
       "We're gathering your data from your provider": [
-        "ProtonMail erfasst Ihre Daten bei Ihrem Anbieter"
+        "Wir erfassen deine Daten bei deinem Anbieter"
       ],
       "Your import is starting": [
         "Ihr Datenimport wurde gestartet"
@@ -3798,7 +3801,7 @@
         "Herunterladen der Dateien fehlgeschlagen: ${ err }"
       ],
       "Failed to move, please try again": [
-        "Verschieben fehlgeschlagen, bitte versuchen Sie es erneut"
+        "Verschieben fehlgeschlagen, bitte versuche es erneut"
       ],
       "Failed to upload files: ${ err }": [
         "Hochladen von Dateien fehlgeschlagen: ${ err }"
@@ -3871,13 +3874,13 @@
         "Der Papierkorb konnte nicht geleert werden"
       ],
       "Your old files will be deleted in 72 hours": [
-        "Ihre alten Dateien werden innerhalb der nächsten 72 Stunden gelöscht"
+        "Deine alten Dateien werden innerhalb der nächsten 72 Stunden gelöscht"
       ],
       "Your settings failed to be saved": [
         "Deine Einstellungen konnten nicht gespeichert werden"
       ],
       "Your settings have been changed successfully": [
-        "Ihre Einstellungen wurden erfolgreich geändert"
+        "Deine Einstellungen wurden erfolgreich geändert"
       ]
     },
     "Oauth instructions": {
@@ -3917,7 +3920,7 @@
     },
     "Onboarding Proton": {
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
-        "Konfigurieren Sie Ihre Organisation, verknüpfen Sie Ihren Domainnamen und erstellen Sie Konten, um sicherzustellen, dass alle Mitglieder Ihrer Organisation geschützt sind."
+        "Konfiguriere deine Organisation, verknüpfe deinen Domainnamen und erstelle Konten, um sicherzustellen, dass alle Mitglieder deiner Organisation geschützt sind."
       ],
       "Discover all Proton services": [
         "Alle Proton-Dienste kennenlernen"
@@ -3926,13 +3929,13 @@
         "Farbschema auswählen"
       ],
       "Set up your organization": [
-        "Ihre Organisation einrichten"
+        "Richte deine Organisation ein"
       ],
       "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
-        "Verwenden Sie die App-Auswahl oben links, um auf andere Proton-Dienste zuzugreifen, einschließlich VPN, Kalender und Drive."
+        "Verwende die App-Auswahl oben links, um auf andere Proton-Dienste zuzugreifen, einschließlich VPN, Kalender und Drive."
       ],
       "You can change this anytime in your settings.": [
-        "Sie können das jederzeit in Ihren Einstellungen ändern."
+        "Du kannst dies jederzeit in deinen Einstellungen ändern."
       ]
     },
     "Onboarding Title": {
@@ -3991,7 +3994,7 @@
     },
     "Placeholder": {
       "A way to contact you": [
-        "Eine Möglichkeit, wie wir Sie kontaktieren können"
+        "Eine Möglichkeit, wie wir dich kontaktieren können"
       ],
       "E.g., ": [
         "z.B."
@@ -4021,7 +4024,7 @@
         "Passwort"
       ],
       "Please describe the problem and include any error messages": [
-        "Bitte beschreiben Sie das Problem und fügen Sie alle Fehlermeldungen hinzu"
+        "Bitte beschreibe Problem und füge alle Fehlermeldungen hinzu"
       ],
       "Search for group name": [
         "Nach Gruppennamen suchen"
@@ -4097,7 +4100,7 @@
     },
     "Refresh on apply warning": {
       "Note: the service will reload after you click the Apply button.": [
-        "Hinweis: Der Dienst wird neu geladen, nachdem Sie auf die Schaltfläche „Übernehmen“ klicken."
+        "Hinweis: Der Dienst wird neu geladen, nachdem du auf die Schaltfläche „Übernehmen“ geklickt hast."
       ]
     },
     "Select files": {
@@ -4179,7 +4182,7 @@
         "Wiederherstellung wurde gestartet"
       ],
       "The link to your file was successfully copied": [
-        "Der Link zu Ihrer Datei wurde erfolgreich kopiert"
+        "Der Link zu deiner Datei wurde erfolgreich kopiert"
       ],
       "Verification successful": [
         "Verifizierung erfolgreich"
@@ -4722,7 +4725,7 @@
         "Alle importierten Nachrichten werden dieser Kategorie zugeordnet"
       ],
       "Email encryption forces email signature to help authenticate your sent messages": [
-        "E-Mail-Verschlüsselung erzwingt eine E-Mail-Signatur zur Authentifizierung Ihrer gesendeten Nachrichten"
+        "Die E-Mail-Verschlüsselung erzwingt eine E-Mail-Signatur zur Authentifizierung deiner gesendeten Nachrichten"
       ],
       "Encrypted data": [
         "Verschlüsselte Daten"
@@ -4731,7 +4734,7 @@
         "Verschlüsselte Daten mit bestätigter digitaler Signatur"
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
-        "Wählen Sie das PGP-Schema, das beim Signieren oder Verschlüsseln für einen Benutzer verwendet werden soll. Beachten Sie, dass PGP/Inline das Senden von Klartextnachrichten erzwingt."
+        "Wähle das PGP-Schema, das beim Signieren oder Verschlüsseln für einen Benutzer verwendet werden soll. Beachte, dass PGP/Inline das Senden von Klartextnachrichten erzwingt."
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Systemunterordner werden in ${ MAIL_APP_NAME } als separate Ordner angezeigt"
@@ -4743,7 +4746,7 @@
         "Das Hochladen eines öffentlichen Schlüssels ermöglicht das Senden von Ende-zu-Ende verschlüsselten E-Mails an diese E-Mail-Adresse"
       ],
       "You do not have any contacts to export": [
-        "Sie haben keine Kontakte zum exportieren"
+        "Sie haben keine Kontakte zum Exportieren"
       ]
     },
     "Validation": {
@@ -4782,36 +4785,36 @@
     },
     "Warning": {
       "Are you sure you want to permanently delete ${ count } contact group?": [
-        "Möchten Sie wirklich ${ count } Kontaktgruppe dauerhaft löschen?",
-        "Möchten Sie wirklich ${ count } Kontaktgruppen dauerhaft löschen?"
+        "Bist du sicher, dass du ${ count } Kontaktgruppe dauerhaft löschen willst?",
+        "Bist du sicher, dass du ${ count } Kontaktgruppen dauerhaft löschen willst?"
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
-        "Sind Sie sicher, dass Sie ${ count } Kontakt dauerhaft löschen möchten?",
-        "Sind Sie sicher, dass Sie ${ count } Kontakte dauerhaft löschen möchten?"
+        "Bist du sicher, dass du ${ count } Kontakt dauerhaft löschen willst?",
+        "Bist du sicher, dass du ${ count } Kontakte dauerhaft löschen willst?"
       ],
       "Are you sure you want to permanently delete this contact group?": [
-        "Möchten Sie diese Kontaktgruppe wirklich dauerhaft löschen?"
+        "Möchtest du diese Kontaktgruppe wirklich dauerhaft löschen?"
       ],
       "Are you sure you want to permanently delete this contact?": [
-        "Sind Sie sicher, dass Sie diesen Kontakt dauerhaft löschen möchten?"
+        "Bist du sicher, dass du diesen Kontakt dauerhaft löschen willst?"
       ],
       "Contacts could not be merged": [
         "Kontakte konnten nicht zusammengeführt werden"
       ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
-        "Wenn Sie sich nicht mehr an Ihr Passwort erinnern, ist es unmöglich, Ihren Schlüssel wieder zu aktivieren. Wir können Ihnen helfen, den Warnhinweis zu deaktivieren, aber dabei verlieren Sie dauerhaft den Zugriff auf alle Daten, die Sie mit diesem Schlüssel verschlüsselt haben."
+        "Wenn du dich nicht mehr an dein Passwort erinnern kannst, ist es unmöglich, den Schlüssel wieder zu aktivieren. Wir können den Warnhinweis deaktivieren, aber dabei verlierst du dauerhaft den Zugriff auf alle Daten, die mit diesem Schlüssel verschlüsselt wurden."
       ],
       "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
         "Der Live-Chat ist eine Premium-Funktion, die nur für Kunden mit kostenpflichtigen ${ VPN_APP_NAME }-Abonnements verfügbar ist. Bitte öffne stattdessen ein Ticket."
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
-        "Proton wird alle Ordner mit dem gleichen Namen zusammenführen. Um dies zu vermeiden, ändern Sie vor dem Import deren Namen."
+        "Proton wird alle Ordner mit dem gleichen Namen zusammenführen. Um dies zu vermeiden, ändere vor dem Import deren Namen."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
-        "Berichte sind nicht Ende-zu-Ende-verschlüsselt. Bitte senden Sie daher keine sensiblen Informationen."
+        "Berichte sind nicht Ende-zu-Ende-verschlüsselt. Bitte sende daher keine sensiblen Informationen."
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
-        "Einige der zusammenzuführenden Kontakte enthalten Fehler. Bitte überprüfen Sie diese einzeln."
+        "Einige der zusammenzuführenden Kontakte enthalten Fehler. Bitte überprüfe diese einzeln."
       ],
       "The contact data is corrupted and cannot be displayed.": [
         "Die Kontaktdaten sind beschädigt und können nicht angezeigt werden."
@@ -4820,7 +4823,7 @@
         "Der Kontakt konnte nicht geladen werden."
       ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
-        "Die Datums- und Zeiteinstellungen auf Ihrem Gerät sind nicht synchronisiert. ${ learnMore }"
+        "Die Datums- und Zeiteinstellungen auf deinem Gerät sind nicht synchronisiert. ${ learnMore }"
       ],
       "The decryption of the encrypted content failed.": [
         "Die Entschlüsselung des verschlüsselten Inhalts ist fehlgeschlagen."
@@ -4829,13 +4832,13 @@
         "Die Verifizierung der Signatur der Kontaktdaten ist fehlgeschlagen."
       ],
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
-        "Diese Aktion kann nicht rückgängig gemacht werden. Bitte geben Sie das Wort ${ boldDanger } in das Feld ein, um fortzufahren."
+        "Diese Aktion kann nicht rückgängig gemacht werden. Bitte gib das Wort ${ boldDanger } in das Feld ein, um fortzufahren."
       ],
       "This feature requires a paid Proton account": [
         "Diese Funktion erfordert ein kostenpflichtiges Proton-Konto"
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
-        "Leider ist unser Team derzeit nicht online. Bitte füllen Sie das nachstehende Formular aus, um Ihr Problem zu beschreiben. Wir werden es prüfen und uns melden, sobald wir wieder online sind."
+        "Leider ist unser Team derzeit nicht online. Bitte fülle das nachstehende Formular aus, um dein Problem zu beschreiben. Wir werden es prüfen und uns melden, sobald wir wieder online sind."
       ],
       "You will lose any customization you made so far.": [
         "Dabei gehen alle bisher vorgenommenen Anpassungen verloren."
