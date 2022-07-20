@@ -387,13 +387,13 @@
         "Зрозуміло"
       ],
       "Hide": [
-        "Приховати"
+        "Сховати"
       ],
       "Hide advanced PGP settings": [
         "Приховати розширені налаштування PGP"
       ],
       "Hide attachment details": [
-        "Приховати подробиці вкладення"
+        "Сховати подробиці вкладення"
       ],
       "Hide details": [
         "Приховати подробиці"
@@ -621,7 +621,7 @@
         "Не збережено"
       ],
       "OK": [
-        "OK"
+        "Застосувати"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
         "Відкрити ${ CALENDAR_APP_NAME }"
@@ -639,7 +639,7 @@
         "Відкрити магазин"
       ],
       "Ordered list": [
-        "Впорядкований список"
+        "Нумерований список"
       ],
       "Page ${ pageNumber }": [
         "Сторінка ${ pageNumber }"
@@ -918,7 +918,7 @@
         "Прибрати позначку для видалення"
       ],
       "Unordered list": [
-        "Невпорядкований список"
+        "Маркований список"
       ],
       "Unstar": [
         "Прибрати зірочку"
@@ -2887,7 +2887,7 @@
         "Подію було скасовано"
       ],
       "Event was updated. This reminder is out-of-date.": [
-        "Подую було оновлено. Це нагадування застаріло."
+        "Подію було оновлено. Це нагадування застаріло."
       ]
     },
     "Email subject": {
@@ -4680,7 +4680,7 @@
         "PGP/Inline сумісний лише з форматом звичайного тексту. Зверніть увагу, що ${ MAIL_APP_NAME } завжди підписує зашифровані повідомлення."
       ],
       "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
-        "PGP/MIME автоматично надсилає повідомлення з використанням поточного режиму редактора. Зверніть увагу, що ${ MAIL_APP_NAME } завжди підписує зашифровані повідомлення"
+        "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages."
       ],
       "Phone number": [
         "Номер телефону"
@@ -8291,10 +8291,8 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "Кожен ${ interval } рік",
-        "Кожні ${ interval } роки",
-        "Кожні ${ interval } років",
-        "Кожні ${ interval } років"
+        "Yearly",
+        ""
       ],
       "Every ${ interval } year, ${ timesString }": [
         "Кожен ${ interval } рік, ${ timesString }",

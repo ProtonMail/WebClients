@@ -3132,6 +3132,9 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "B"
+      ],
       "GB": [
         "GB"
       ],
@@ -3139,6 +3142,20 @@
         "KB"
       ],
       "MB": [
+        "MB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "字节"
+      ],
+      "Gigabyte": [
+        "GB"
+      ],
+      "Kilobyte": [
+        "KB"
+      ],
+      "Megabyte": [
         "MB"
       ]
     },
@@ -4086,6 +4103,12 @@
       "per month.": [
         "/月。"
       ],
+      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        "PGP/Inline 只能用于纯文本邮件。请注意 ${ MAIL_APP_NAME } 会对所有加密邮件予以数字签名。"
+      ],
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
+        "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages."
+      ],
       "Phone number": [
         "电话号码"
       ],
@@ -4926,6 +4949,9 @@
       ],
       "ANY": [
         "或"
+      ],
+      "Apply filter to existing emails": [
+        "对现有邮件执行筛选规则"
       ],
       "Attach screenshot(s)": [
         "截图"
@@ -5803,6 +5829,11 @@
     "Oauth instructions": {
       "Next you'll need to sign in to your Google account and grant Proton access to your data.": [
         "接下来您需要登录 Google 账户并允许 Proton 获取您的数据。"
+      ]
+    },
+    "Oauth instructions video": {
+      "For the import to work, you must select all requested items as shown in the GIF.": [
+        "为顺利完成导入，您需要如下图所示勾选所有权限。"
       ]
     },
     "Onboarding": {
@@ -7402,7 +7433,8 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "每 ${ interval } 年"
+        "Yearly",
+        ""
       ],
       "Every ${ interval } year, ${ timesString }": [
         "每 ${ interval } 年，${ timesString }"

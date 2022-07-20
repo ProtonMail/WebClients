@@ -135,7 +135,7 @@ const getVPNConnectionsB2B = (n = 0, fire?: boolean): PlanCardFeatureDefinition 
                       n
                   ),
         tooltip: c('new_plans: tooltip')
-            .t`One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections`,
+            .t`One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections..`,
         included: true,
         fire,
         icon: 'brand-proton-vpn',
@@ -179,7 +179,7 @@ const getKillSwitch = (): PlanCardFeatureDefinition => {
     return {
         featureName: c('new_plans: feature').t`Kill switch/always-on VPN`,
         tooltip: c('new_plans: tooltip')
-            .t`Keeps you protected by blocking all network connections when you are accidentally disconnected from our VPN server`,
+            .t`Keeps you protected by blocking all network connections when you are unexpectedly disconnected from our VPN server.`,
         included: true,
     };
 };

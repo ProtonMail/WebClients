@@ -4540,7 +4540,7 @@
         "PGP/Inline solo es compatible con formato de texto plano. Tome en cuenta que ${ MAIL_APP_NAME } siempre firma los mensajes cifrados."
       ],
       "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
-        "PGP/MIME envía automáticamente el mensaje usando el modo de redacción actual. Tome en cuenta que ${ MAIL_APP_NAME } siempre firma los mensajes cifrados."
+        "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages."
       ],
       "Phone number": [
         "Número de teléfono"
@@ -7963,8 +7963,8 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "Cada año ${ interval }",
-        "Cada año ${ interval }"
+        "Yearly",
+        ""
       ],
       "Every ${ interval } year, ${ timesString }": [
         "Cada año, ${ timesString } ${ interval }",

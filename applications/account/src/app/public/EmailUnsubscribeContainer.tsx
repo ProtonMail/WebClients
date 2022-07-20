@@ -45,7 +45,7 @@ const EmailUnsubscribeContainer = () => {
     const newsTypeToWording = {
         [NEWS.ANNOUNCEMENTS]: c('Label for news').t`Proton announcements`,
         [NEWS.FEATURES]: c('Label for news').t`Proton major features`,
-        [NEWS.BUSINESS]: c('Label for news').t`Proton for business`,
+        [NEWS.BUSINESS]: c('Label for news').t`Proton for Business`,
         [NEWS.NEWSLETTER]: c('Label for news').t`Proton newsletter`,
         [NEWS.BETA]: c('Label for news').t`Proton Beta`,
         [NEWS.OFFERS]: c('Label for news').t`Proton offers and promotions`,

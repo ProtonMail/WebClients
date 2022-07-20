@@ -77,7 +77,7 @@
         "Добавить ярлык"
       ],
       "Add notification": [
-        "Проверить уведомление"
+        "Добавить уведомление"
       ],
       "Add PayPal": [
         "Добавить PayPal"
@@ -218,7 +218,7 @@
         "Создать ярлык"
       ],
       "Create link": [
-        "Обновить ссылку"
+        "Создать ссылку"
       ],
       "Current plan": [
         "Текущий тариф"
@@ -338,7 +338,7 @@
         "Экспортировать"
       ],
       "Export ICS": [
-        "Экспорт в ICS"
+        "Экспортировать ICS"
       ],
       "Export key": [
         "Экспортировать ключ"
@@ -398,10 +398,10 @@
         "Импортировать контакты"
       ],
       "Import emails": [
-        "Импортировать электронные письма"
+        "Импортировать электронную почту"
       ],
       "Import from .ics": [
-        "Импорт из .ics"
+        "Импортировать из .ics"
       ],
       "Import key": [
         "Импортировать ключ"
@@ -554,7 +554,7 @@
         "Удалить этот ярлык"
       ],
       "Remove this notification": [
-        "Удалить уведомление"
+        "Удалить это уведомление"
       ],
       "Rename": [
         "Переименовать"
@@ -632,7 +632,7 @@
         "Выбрать ${ planTitle }"
       ],
       "Select calendar view": [
-        "Выберите вид календаря"
+        "Выбрать вид календаря"
       ],
       "Select files": [
         "Выбрать файлы"
@@ -1220,10 +1220,10 @@
         "Вы достигли максимального количества личных календарей, которые можно создать в рамках вашего тарифа."
       ],
       "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS } subscribed calendar.": [
+        "Вы достигли максимального количества ${ MAX_SUBSCRIBED_CALENDARS } подписанного календаря.",
         "Вы достигли максимального количества ${ MAX_SUBSCRIBED_CALENDARS } подписанных календарей.",
-        "Вы достигли максимального количества подписанных календарей ${ MAX_SUBSCRIBED_CALENDARS }.",
-        "",
-        ""
+        "Вы достигли максимального количества ${ MAX_SUBSCRIBED_CALENDARS } подписанных календарей.",
+        "Вы достигли максимального количества ${ MAX_SUBSCRIBED_CALENDARS } подписанных календарей."
       ]
     },
     "Calendar link purpose update success message": {
@@ -7026,7 +7026,7 @@
         "Объявления компании Proton"
       ],
       "Proton for business": [
-        "Proton для бизнеса"
+        "Proton for Business"
       ],
       "Proton for Business newsletter": [
         "Новостная рассылка Proton для бизнеса"
@@ -8061,7 +8061,7 @@
         "Поддержка IMAP ограничена возможностями приложений для ПК (Outlook, Apple Mail, Thunderbird и др.) через ${ MAIL_APP_NAME } Bridge. Облачные средства интеграции IMAP сейчас не поддерживаются."
       ],
       "Keeps you protected by blocking all network connections when you are accidentally disconnected from our VPN server": [
-        "Защищает вас, блокируя все подключения к сети при случайном отключении от нашего сервера VPN"
+        "Keeps you protected by blocking all network connections when you are unexpectedly disconnected from our VPN server."
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Ярлыки - это простые метки, которые можно добавлять к сообщениям, чтобы облегчить их поиск или применить к ним фильтры"
@@ -8079,7 +8079,7 @@
         "Кроме того, можно добавить до 5 календарей коллег, организаций, семьи и друзей."
       ],
       "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections": [
-        "Одно подключение к VPN позволяет одному устройству в любое время подключаться к Proton VPN. Например, для одновременного подключения к Proton VPN телефона и ноутбука вам потребуется два подключения к VPN"
+        "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Возможность просмотра публичных папок входящих сообщений пользователей, как это делает сам пользователь, включая полную информацию о сообщениях и контактах"
@@ -8786,22 +8786,22 @@
         "Отменить"
       ],
       "Phone number has been verified.": [
-        "Номер телефона уже подтвержден."
+        "Номер телефона подтвержден."
       ],
       "Phone number not yet verified.": [
-        "Номер телефона уже подтвержден."
+        "Номер телефона еще не подтвержден."
       ],
       "Verify by SMS": [
         "Подтвердить с помощью СМС"
       ],
       "Verify now": [
-        "Проверить сейчас"
+        "Подтвердить сейчас"
       ],
       "Verify recovery phone?": [
-        "Проверить резервный адрес электронной почты?"
+        "Проверить резервный номер телефона?"
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
-        "Проверка адреса электронной почты повышает безопасность вашего аккаунта и дает дополнительные возможности для восстановления."
+        "Проверка номера телефона повышает безопасность вашего аккаунта и дает дополнительные возможности для восстановления."
       ]
     },
     "Remark about a key type option": {
@@ -10454,10 +10454,10 @@
     },
     "Upgrade notice": {
       "Upgrade to a Mail paid plan to create up to ${ MAX_CALENDARS_PAID } calendar, allowing you to make calendars for work, to share with friends, and just for yourself.": [
-        "Перейдите на платный тарифный план Mail, чтобы создавать до ${ MAX_CALENDARS_PAID } календарей, что позволит вам создавать календари для работы, для обмена с друзьями и просто для себя.",
-        "Перейдите на платный тарифный план Mail, чтобы создавать до ${ MAX_CALENDARS_PAID } календарей, что позволит вам создавать календари для работы, для обмена с друзьями и просто для себя.",
-        "",
-        ""
+        "Перейдите на платный тарифный план Почты, чтобы создавать до ${ MAX_CALENDARS_PAID } календаря, что позволит вам создавать календари для работы, обмена с друзьями и просто для себя.",
+        "Перейдите на платный тарифный план Почты, чтобы создавать до ${ MAX_CALENDARS_PAID } календарей и иметь отдельные календари для работы, обмена с друзьями и просто для себя.",
+        "Перейдите на платный тарифный план Почты, чтобы создавать до ${ MAX_CALENDARS_PAID } календарей и иметь отдельные календари для работы, обмена с друзьями и просто для себя.",
+        "Перейдите на платный тарифный план Почты, чтобы создавать до ${ MAX_CALENDARS_PAID } календарей и иметь отдельные календари для работы, обмена с друзьями и просто для себя."
       ],
       "Upgrade to a Mail paid plan to share your personal calendar via link with anyone.": [
         "Перейдите на платный тарифный план Mail, чтобы делиться личным календарем по ссылке с кем угодно."
@@ -10648,7 +10648,7 @@
         "Каждые ${ interval } недель по ${ multipleDaysString } до ${ timesString }"
       ],
       "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
-        "Каждую ${ interval } неделю по ${ multipleDaysString } до ${ untilString }",
+        "Каждую ${ interval } неделю в ${ multipleDaysString }, ${ untilString }",
         "Каждые ${ interval } недели по ${ multipleDaysString } до ${ untilString }",
         "",
         "Каждую ${ interval } неделю по ${ multipleDaysString }, по ${ untilString }"

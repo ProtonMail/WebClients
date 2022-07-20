@@ -487,6 +487,9 @@
       "Skip": [
         "Ignorer"
       ],
+      "Start import": [
+        "Commencer l'importation"
+      ],
       "Start recovering": [
         "Commencer la récupération"
       ],
@@ -656,7 +659,7 @@
         "Les réductions sont basées sur le prix mensuel standard de ${ standardMonthlyPricing }"
       ],
       "Save ${ percentage }%": [
-        "- ${ percentage } %"
+        "${ percentage }%"
       ],
       "Special offer Terms and Conditions": [
         "Conditions générales des offres spéciales"
@@ -796,7 +799,7 @@
         "Synchronisation du calendrier"
       ],
       "Calendar is too big": [
-        "Le calendrier est trop gros"
+        "Le calendrier est trop volumineux"
       ],
       "Calendar link is not accessible": [
         "Le lien du calendrier n’est pas accessible."
@@ -2780,6 +2783,9 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Une ou plusieurs de vos clés de confiance ont été marquées comme « compromises » par leur propriétaire. Nous vous recommandons de ne plus faire confiance à ces clés."
       ],
+      "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters is allowed": [
+        "Seuls ${ MAX_CUSTOM_PASSWORD_LENGTH } caractères sont autorisés"
+      ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Ne modifiez ces paramètres que si vous utilisez PGP avec des destinataires qui n'utilisent pas ${ BRAND_NAME }."
       ],
@@ -3113,10 +3119,10 @@
         "Vous perdrez toutes les modifications non enregistrées."
       ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
-        "Votre compte possède au moins une facture impayée. Votre accès a été restreint. ${ payInvoiceLink }"
+        "Votre compte a une ou plusieurs factures en retard. Votre accès a été restreint. ${ payInvoiceLink }"
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
-        "Votre compte a au moins une facture en retard. Votre accès sera bientôt restreint. ${ payInvoiceLink }"
+        "Votre compte a une ou plusieurs factures en retard. Votre accès sera bientôt restreint. ${ payInvoiceLink }"
       ],
       "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
         "Votre navigateur actuel ne prend pas en charge le téléchargement de fichiers volumineux en raison de l'indisponibilité des prestataires de services. Le téléchargement de fichiers volumineux peut entraîner un gel ou une perte de réactivité du navigateur. Veuillez utiliser la dernière version d'un ${ recommendedBrowser } et essayer à nouveau."

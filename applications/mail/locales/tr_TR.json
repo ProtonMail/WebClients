@@ -4540,7 +4540,7 @@
         "PGP/Inline yalnızca düz metin biçimiyle uyumludur. Lütfen ${ MAIL_APP_NAME } uygulamasının şifrelenmiş iletileri her zaman imzaladığını unutmayın."
       ],
       "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
-        "PGP/MIME, geçerli oluşturucu kipini kullanarak iletiyi otomatik olarak gönderir. Lütfen şifrelenmiş iletilerin her zaman ${ MAIL_APP_NAME } tarafından imzalandığını unutmayın"
+        "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages."
       ],
       "Phone number": [
         "Telefon numarası"
@@ -7963,8 +7963,8 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "${ interval } yılda bir",
-        "${ interval } yılda bir"
+        "Yearly",
+        ""
       ],
       "Every ${ interval } year, ${ timesString }": [
         "${ interval } yılda bir, ${ timesString }",

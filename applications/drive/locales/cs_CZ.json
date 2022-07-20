@@ -491,6 +491,9 @@
       "Skip": [
         "Přeskočít"
       ],
+      "Start import": [
+        "Spustit import"
+      ],
       "Start recovering": [
         "Začít obnovu"
       ],
@@ -632,6 +635,9 @@
       ]
     },
     "blackfriday Title": {
+      "Best deal": [
+        "Nejlepší nabídka"
+      ],
       "Most popular": [
         "Nejoblíbenější"
       ]
@@ -646,7 +652,7 @@
     },
     "blackfriday: VPNspecialoffer Info": {
       "Save ${ percentage }%": [
-        "${ percentage } %"
+        "${ percentage }%"
       ]
     },
     "blackfriday: VPNspecialoffer info": {
@@ -2100,6 +2106,12 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "bajt",
+        "bajty",
+        "bajtů",
+        "bajtů"
+      ],
       "GB": [
         "GB"
       ],
@@ -2108,6 +2120,32 @@
       ],
       "MB": [
         "MB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Bajt",
+        "Bajty",
+        "Bajtů",
+        "Bajtů"
+      ],
+      "Gigabyte": [
+        "Gigabajt",
+        "Gigabajty",
+        "Gigabajtů",
+        "Gigabajtů"
+      ],
+      "Kilobyte": [
+        "Kilobajt",
+        "Kilobajty",
+        "Kilobajtů",
+        "Kilobajtů"
+      ],
+      "Megabyte": [
+        "Megabajt",
+        "Megabajty",
+        "Megabajtů",
+        "Megabajtů"
       ]
     },
     "Filter notification": {
@@ -2808,6 +2846,9 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Jeden nebo více důvěryhodných klíčů byl vlastníkem označen jako \"kompromitovaný\". Doporučujeme, abyste takovým klíčům \"nedůvěřovali\"."
       ],
+      "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters is allowed": [
+        "Je povoleno pouze ${ MAX_CUSTOM_PASSWORD_LENGTH } znaků"
+      ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Tato nastavení změňte, pouze pokud používáte PGP s příjemci, kteří nepoužívají službu ${ BRAND_NAME }."
       ],
@@ -3203,6 +3244,9 @@
       ],
       "name": [
         "název"
+      ],
+      "name hash": [
+        "hash názvu"
       ],
       "thumbnail": [
         "náhled"
