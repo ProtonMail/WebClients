@@ -290,7 +290,7 @@ const EasySwitchOauthModal = ({
 
                         if (Products.includes(ImportType.MAIL)) {
                             createImportPayload[ImportType.MAIL] = {
-                                Email: Account,
+                                Account,
                                 ImapHost: IMAPS[Provider],
                                 ImapPort: DEFAULT_IMAP_PORT,
                                 Sasl: AuthenticationMethod.OAUTH,
