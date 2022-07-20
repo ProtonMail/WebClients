@@ -1,16 +1,8 @@
 import { useEffect, useState } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 
-import {
-    LoaderPage,
-    LocationErrorBoundary,
-    ModalsChildren,
-    useLoading,
-    useWelcomeFlags,
-    useEarlyAccess,
-} from '@proton/components';
+import { LoaderPage, LocationErrorBoundary, ModalsChildren, useLoading, useWelcomeFlags } from '@proton/components';
 import noop from '@proton/utils/noop';
-import { RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
 
 import { DriveProvider, useDriveEventManager, useDefaultShare, useSearchControl } from '../store';
 import { ActiveShareProvider } from '../hooks/drive/useActiveShare';
@@ -19,18 +11,11 @@ import ConflictModal from '../components/uploads/ConflictModal';
 import SignatureIssueModal from '../components/SignatureIssueModal';
 import DriveWindow from '../components/layout/DriveWindow';
 import FolderContainer from './FolderContainer';
-import NoAccessContainer from './NoAccessContainer';
 import OnboardingContainer from './OnboardingContainer';
 import SharedURLsContainer from './SharedLinksContainer';
 import TrashContainer from './TrashContainer';
 import { SearchContainer } from './SearchContainer';
 import DriveStartupModals from './DriveStartupModals';
-
-enum ERROR_TYPES {
-    STANDARD,
-    NO_ACCESS,
-    ONBOARDING,
-}
 
 // Empty shared root for blurred container.
 const DEFAULT_SHARE_VALUE = {
@@ -42,28 +27,14 @@ const InitContainer = () => {
     const { getDefaultShare } = useDefaultShare();
     const [loading, withLoading] = useLoading(true);
     const [defaultShareRoot, setDefaultShareRoot] = useState<{ shareId: string; linkId: string }>(DEFAULT_SHARE_VALUE);
-    const [errorType, setErrorType] = useState<ERROR_TYPES>(ERROR_TYPES.STANDARD);
     const [welcomeFlags, setWelcomeFlagsDone] = useWelcomeFlags();
-    const earlyAccess = useEarlyAccess();
     const driveEventManager = useDriveEventManager();
     const { searchEnabled } = useSearchControl();
 
     useEffect(() => {
-        const initPromise = getDefaultShare()
-            .then(({ shareId, rootLinkId: linkId }) => {
-                setDefaultShareRoot({ shareId, linkId });
-            })
-            .catch((error) => {
-                if (
-                    error?.data?.Code === RESPONSE_CODE.NOT_ALLOWED ||
-                    error?.data?.Details?.MissingScopes?.includes('drive')
-                ) {
-                    return setErrorType(ERROR_TYPES.NO_ACCESS);
-                }
-                setErrorType(() => {
-                    throw error;
-                });
-            });
+        const initPromise = getDefaultShare().then(({ shareId, rootLinkId: linkId }) => {
+            setDefaultShareRoot({ shareId, linkId });
+        });
         withLoading(initPromise).catch(noop);
     }, []);
 
@@ -87,23 +58,6 @@ const InitContainer = () => {
                 <ModalsChildren />
                 <LoaderPage />
             </>
-        );
-    }
-
-    if (errorType === ERROR_TYPES.NO_ACCESS) {
-        return (
-            <ActiveShareProvider defaultShareRoot={defaultShareRoot}>
-                <NoAccessContainer reason="notpaid" />
-            </ActiveShareProvider>
-        );
-    }
-
-    // user does not have early access.
-    if (earlyAccess.value === false) {
-        return (
-            <ActiveShareProvider defaultShareRoot={defaultShareRoot}>
-                <NoAccessContainer reason="notbeta" />
-            </ActiveShareProvider>
         );
     }
 
