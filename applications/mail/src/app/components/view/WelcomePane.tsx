@@ -6,7 +6,6 @@ import {
     Href,
     Loader,
     useImporters,
-    useCalendars,
     useFeature,
     usePlans,
     useTheme,
@@ -52,16 +51,9 @@ const WelcomePane = ({ mailSettings, location, labelCount }: Props) => {
     const [plans = [], loadingPlans] = usePlans();
     const [theme] = useTheme();
     const [userSettings, loadingUserSettings] = useUserSettings();
-    const [calendars, loadingCalendars] = useCalendars();
     const [imports = [], importsLoading] = useImporters();
     const hasAlreadyImported = imports.length;
-    const loading =
-        importsLoading ||
-        loadingUsedMailMobileApp ||
-        loadingUser ||
-        loadingPlans ||
-        loadingUserSettings ||
-        loadingCalendars;
+    const loading = importsLoading || loadingUsedMailMobileApp || loadingUser || loadingPlans || loadingUserSettings;
 
     const unread = labelCount?.Unread || 0;
     const total = labelCount?.Total || 0;
@@ -104,14 +96,7 @@ const WelcomePane = ({ mailSettings, location, labelCount }: Props) => {
 
     return (
         <>
-            {user.isFree ? (
-                <WelcomePaneBanner
-                    plans={plans}
-                    userSettings={userSettings}
-                    theme={theme}
-                    calendars={calendars || undefined}
-                />
-            ) : null}
+            {user.isFree ? <WelcomePaneBanner plans={plans} userSettings={userSettings} theme={theme} /> : null}
             <Container>
                 <h1>{user.DisplayName ? c('Title').jt`Welcome ${userName}` : c('Title').t`Welcome`}</h1>
                 <p className="text-keep-space">{labelCount ? counterMessage : null}</p>
