@@ -1,10 +1,11 @@
-import { ChangeEvent, FormEvent, useState } from 'react';
+import { ChangeEvent, FormEvent, useCallback, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
 import { CONTACT_IMG_SIZE } from '@proton/shared/lib/contacts/constants';
 import { resizeImage } from '@proton/shared/lib/helpers/image';
 import { isValidHttpUrl } from '@proton/shared/lib/helpers/url';
+import debounce from '@proton/utils/debounce';
 
 import {
     Button,
@@ -44,17 +45,43 @@ const ContactImageModal = ({ url: initialUrl = '', onSubmit, ...rest }: Props) =
     const title = c('Title').t`Edit image`;
     const isBase64Str = imageUrl.startsWith('data:image');
 
-    const imageState = (() => {
-        if (!imageUrl) {
-            return ImageState.Initial;
+    const [imageState, setImageState] = useState(ImageState.Initial);
+    const [isImageLoading, setIsImageLoading] = useState(false);
+
+    const handleSuccess = () => {
+        setImageState(ImageState.Ok);
+        setIsImageLoading(false);
+    };
+    const handleError = () => {
+        setImageState(ImageState.Error);
+        setIsImageLoading(false);
+    };
+
+    // Check if the image url is valid
+    const checkImageUrl = (url: string) => {
+        if (!isValidHttpUrl(url)) {
+            setImageState(ImageState.Error);
         } else {
-            if (isValidHttpUrl(imageUrl)) {
-                return ImageState.Ok;
-            } else {
-                return ImageState.Error;
-            }
+            setIsImageLoading(true);
+            const image = new Image();
+            image.onload = () => handleSuccess();
+            image.onerror = () => handleError();
+            image.src = url;
         }
-    })();
+    };
+
+    const debouncedCheckImage = useCallback(
+        debounce((url) => {
+            checkImageUrl(url);
+        }, 200),
+        []
+    );
+
+    useEffect(() => {
+        if (imageUrl) {
+            debouncedCheckImage(imageUrl);
+        }
+    }, [imageUrl]);
 
     const error = !isPristine && imageState !== ImageState.Ok ? c('Info').t`Not a valid URL` : undefined;
 
@@ -130,8 +157,12 @@ const ContactImageModal = ({ url: initialUrl = '', onSubmit, ...rest }: Props) =
             </ModalTwoContent>
             <ModalTwoFooter>
                 <Button onClick={rest.onClose}>{c('Action').t`Cancel`}</Button>
-                <Button color="norm" type="submit" disabled={imageState === ImageState.Error}>{c('Action')
-                    .t`Save`}</Button>
+                <Button
+                    color="norm"
+                    type="submit"
+                    disabled={imageState === ImageState.Error}
+                    loading={isImageLoading}
+                >{c('Action').t`Save`}</Button>
             </ModalTwoFooter>
         </ModalTwo>
     );
