@@ -1,4 +1,4 @@
-import { OpenPGPKey } from 'pmcrypto';
+import { PrivateKeyReference } from '@proton/crypto';
 import { ActiveKey, Address, Api, EncryptionConfig } from '../../interfaces';
 import { createAddressKeyRoute, createAddressKeyRouteV2 } from '../../api/keys';
 import { DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS } from '../../constants';
@@ -55,7 +55,7 @@ export const createAddressKeyLegacy = async ({
 
 interface CreateAddressKeyV2Arguments {
     api: Api;
-    userKey: OpenPGPKey;
+    userKey: PrivateKeyReference;
     encryptionConfig?: EncryptionConfig;
     address: Address;
     activeKeys: ActiveKey[];

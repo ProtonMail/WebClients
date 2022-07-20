@@ -8,7 +8,6 @@ import {
     LabelsModel,
 } from '@proton/shared/lib/models';
 import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
-import { openpgpConfig } from './openpgpConfig';
 import { useUserSettings, SettingsProvider } from './store';
 import UserSettingsProvider from './components/sections/UserSettingsProvider';
 
@@ -25,7 +24,6 @@ const PrivateAppInner = ({ onLogout, locales }: Props) => {
     return (
         <StandardPrivateApp
             locales={locales}
-            openpgpConfig={openpgpConfig}
             onLogout={onLogout}
             preloadModels={[UserModel, AddressesModel]}
             eventModels={[UserModel, UserSettingsModel, AddressesModel, ContactsModel, ContactEmailsModel, LabelsModel]}

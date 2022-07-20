@@ -1,7 +1,8 @@
 import { API_CODES, CONTACT_CARD_TYPE } from '@proton/shared/lib/constants';
+import { CryptoProxy } from '@proton/crypto';
 import { parseToVCard } from '@proton/shared/lib/contacts/vcard';
 import { fireEvent, waitFor } from '@testing-library/react';
-import { api, clearAll, notificationManager, render } from '../tests/render';
+import { api, clearAll, mockedCryptoApi, notificationManager, render } from '../tests/render';
 import ContactEditModal, { ContactEditModalProps, ContactEditProps } from './ContactEditModal';
 
 describe('ContactEditModal', () => {
@@ -13,7 +14,15 @@ describe('ContactEditModal', () => {
         onGroupEdit: jest.fn(),
     };
 
+    beforeAll(() => {
+        CryptoProxy.setEndpoint(mockedCryptoApi);
+    });
+
     beforeEach(clearAll);
+
+    afterAll(async () => {
+        await CryptoProxy.releaseEndpoint();
+    });
 
     it('should prefill all fields with contact values', async () => {
         const vcard = `BEGIN:VCARD

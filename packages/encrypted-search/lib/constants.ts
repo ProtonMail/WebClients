@@ -1,14 +1,6 @@
 import { EncryptedSearchFunctions } from './models';
 
 /**
- * Number of batches of items to process during indexing before
- * refreshing openpgp workers. This is done to address some memory
- * leaks in the latter and is a trade-off between the performance
- * penalty of refreshing the workers and the magnitude of the leak
- */
-export const OPENPGP_REFRESH_CUTOFF = 10;
-
-/**
  * Number of items to add to the search results list during
  * a partial search. It corresponds to one page of results in mail
  */

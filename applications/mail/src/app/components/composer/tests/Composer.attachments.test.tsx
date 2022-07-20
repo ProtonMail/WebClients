@@ -22,6 +22,7 @@ import {
     parseFormData,
     waitForNoNotification,
 } from '../../../helpers/test/helper';
+import { setupCryptoProxyForTesting, releaseCryptoProxy } from '../../../helpers/test/crypto';
 import Composer from '../Composer';
 import { ID, props, prepareMessage, toAddress } from './Composer.test.helpers';
 import { arrayToBase64 } from '../../../helpers/base64';
@@ -111,8 +112,14 @@ describe('Composer attachments', () => {
     };
 
     beforeAll(async () => {
+        await setupCryptoProxyForTesting();
+
         address1Keys = await generateKeys('1', address1.Email);
         address2Keys = await generateKeys('2', address2.Email);
+    });
+
+    afterAll(async () => {
+        await releaseCryptoProxy();
     });
 
     beforeEach(() => {

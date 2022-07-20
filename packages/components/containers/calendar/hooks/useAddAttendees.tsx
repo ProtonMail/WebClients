@@ -25,7 +25,7 @@ import {
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import { SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
 import getSendPreferences from '@proton/shared/lib/mail/send/getSendPreferences';
-import { serverTime } from 'pmcrypto';
+import { serverTime } from '@proton/crypto';
 import { useCallback } from 'react';
 import {
     useAddresses,

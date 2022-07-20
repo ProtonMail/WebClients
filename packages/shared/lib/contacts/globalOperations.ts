@@ -1,4 +1,4 @@
-import { createCleartextMessage, getSignature, signMessage, VERIFICATION_STATUS, verifyMessage } from 'pmcrypto';
+import { CryptoProxy, VERIFICATION_STATUS } from '@proton/crypto';
 import { getContact, updateContact } from '../api/contacts';
 import { CONTACT_CARD_TYPE } from '../constants';
 import { Api, DecryptedKey, Key } from '../interfaces';
@@ -35,10 +35,10 @@ export const dropDataEncryptedWithAKey = async (
                 ).map(async (card) => {
                     let { Signature } = card;
                     if (card.Type === CONTACT_CARD_TYPE.SIGNED) {
-                        const { signature } = await signMessage({
-                            data: card.Data,
-                            privateKeys: [privateKeys[0]],
-                            armor: true,
+                        const signature = await CryptoProxy.signMessage({
+                            textData: card.Data,
+                            stripTrailingSpaces: true,
+                            signingKeys: [privateKeys[0]],
                             detached: true,
                         });
                         Signature = signature;
@@ -78,11 +78,11 @@ export const resignAllContacts = async (
             continue;
         }
 
-        const signature = await getSignature(signedCard.Signature);
-        const { verified } = await verifyMessage({
-            message: createCleartextMessage(signedCard.Data),
-            publicKeys,
-            signature,
+        const { verified } = await CryptoProxy.verifyMessage({
+            textData: signedCard.Data,
+            stripTrailingSpaces: true,
+            verificationKeys: publicKeys,
+            armoredSignature: signedCard.Signature,
         });
 
         if (verified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {

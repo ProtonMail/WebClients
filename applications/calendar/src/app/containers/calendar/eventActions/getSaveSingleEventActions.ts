@@ -8,7 +8,7 @@ import { Address, SimpleMap } from '@proton/shared/lib/interfaces';
 import { SyncMultipleApiResponse, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
 import { GetCalendarKeys } from '@proton/shared/lib/interfaces/hooks/GetCalendarKeys';
 import { SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
-import { OpenPGPKey } from 'pmcrypto';
+import { PublicKeyReference } from '@proton/crypto';
 import { getHasStartChanged } from '@proton/shared/lib/calendar/vcalConverter';
 import {
     CleanSendIcsActionData,
@@ -191,7 +191,7 @@ const getSaveSingleEventActions = async ({
             method
         );
         let updatedInviteActions = inviteActions;
-        let addedAttendeesPublicKeysMap: SimpleMap<OpenPGPKey> | undefined;
+        let addedAttendeesPublicKeysMap: SimpleMap<PublicKeyReference> | undefined;
         if (isSendType) {
             await onSaveConfirmation({
                 type: SAVE_CONFIRMATION_TYPES.SINGLE,
@@ -241,7 +241,7 @@ const getSaveSingleEventActions = async ({
     let updatedVeventComponent = newVeventComponent;
     let updatedInviteActions = inviteActions;
     let intermediateEvent;
-    let addedAttendeesPublicKeysMap: SimpleMap<OpenPGPKey> | undefined;
+    let addedAttendeesPublicKeysMap: SimpleMap<PublicKeyReference> | undefined;
     if (inviteType === SEND_INVITATION) {
         if (!selfAddress) {
             throw new Error('Cannot create an event without user address');

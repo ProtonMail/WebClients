@@ -1,4 +1,4 @@
-import { DecryptResultPmcrypto, VERIFICATION_STATUS } from 'pmcrypto';
+import { WorkerDecryptionResult, VERIFICATION_STATUS } from '@proton/crypto';
 import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { ENCRYPTED_STATUS } from '../../constants';
 import { AttachmentMime } from '../../models/attachment';
@@ -44,7 +44,7 @@ const convertSingle = (
     parsedAttachment: AttachmentMime,
     number: number,
     verified: number,
-    onUpdateAttachment: (ID: string, attachment: DecryptResultPmcrypto) => void
+    onUpdateAttachment: (ID: string, attachment: WorkerDecryptionResult<Uint8Array>) => void
 ): Attachment => {
     const ID = getId(message, parsedAttachment, number);
 
@@ -58,7 +58,7 @@ const convertSingle = (
         Encrypted: ENCRYPTED_STATUS.PGP_MIME,
     };
 
-    const attachmentData: DecryptResultPmcrypto = {
+    const attachmentData: WorkerDecryptionResult<Uint8Array> = {
         data: parsedAttachment.content,
         filename: '',
         signatures: [],
@@ -77,7 +77,7 @@ export const convert = (
     message: Message,
     attachments: AttachmentMime[],
     verified: number,
-    onUpdateAttachment: (ID: string, attachment: DecryptResultPmcrypto) => void
+    onUpdateAttachment: (ID: string, attachment: WorkerDecryptionResult<Uint8Array>) => void
 ): Attachment[] => {
     return attachments.map((attachment, number) =>
         convertSingle(message, attachment, number, verified, onUpdateAttachment)
@@ -90,16 +90,15 @@ export const convert = (
  */
 export const convertToFile = (
     attachments: Attachment[],
-    getAttachment: (ID: string) => DecryptResultPmcrypto | undefined
+    getAttachment: (ID: string) => WorkerDecryptionResult<Uint8Array> | undefined
 ) => {
     return attachments.reduce<[Attachment[], File[]]>(
         (acc, attachment) => {
             if (attachment.ID?.startsWith(ID_PREFIX)) {
-                acc[1].push(
-                    new File([getAttachment(attachment.ID as string)?.data], attachment.Name || '', {
-                        type: attachment.MIMEType,
-                    })
-                );
+                const attachmentData = getAttachment(attachment.ID as string)?.data;
+                if (attachmentData) {
+                    acc[1].push(new File([attachmentData], attachment.Name || '', { type: attachment.MIMEType }));
+                }
             } else {
                 acc[0].push(attachment);
             }

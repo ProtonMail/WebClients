@@ -1,4 +1,4 @@
-import { OpenPGPKey } from 'pmcrypto';
+import { PublicKeyReference } from '@proton/crypto';
 import isTruthy from '@proton/utils/isTruthy';
 import unique from '@proton/utils/unique';
 import { canonizeInternalEmail } from '../helpers/email';
@@ -37,7 +37,7 @@ export const getAuthorPublicKeysMap = async ({
     getAddressKeys,
     getEncryptionPreferences,
 }: GetAuthorPublicKeysMap) => {
-    const publicKeysMap: SimpleMap<OpenPGPKey | OpenPGPKey[]> = {};
+    const publicKeysMap: SimpleMap<PublicKeyReference | PublicKeyReference[]> = {};
     const authors = unique(
         [...event.SharedEvents, ...event.CalendarEvents]
             .map(({ Author, Type }) => {

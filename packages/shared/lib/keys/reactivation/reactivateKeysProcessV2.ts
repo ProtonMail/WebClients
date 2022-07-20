@@ -1,4 +1,4 @@
-import { encryptPrivateKey, OpenPGPKey } from 'pmcrypto';
+import { CryptoProxy, PrivateKeyReference } from '@proton/crypto';
 import { Api, User as tsUser, Address as tsAddress, DecryptedKey, Address, ActiveKey } from '../../interfaces';
 import { KeyReactivationData, KeyReactivationRecord, OnKeyReactivationCallback } from './interface';
 import { getPrimaryKey } from '../getPrimaryKey';
@@ -56,7 +56,10 @@ export const reactivateUserKeys = async ({
 
             await resetUserId(Key, reactivatedKey);
 
-            const privateKeyArmored = await encryptPrivateKey(reactivatedKey, keyPassword);
+            const privateKeyArmored = await CryptoProxy.exportPrivateKey({
+                privateKey: reactivatedKey,
+                passphrase: keyPassword,
+            });
             const newActiveKey = await getActiveKeyObject(reactivatedKey, {
                 ID,
                 primary: getPrimaryFlag(mutableActiveKeys),
@@ -133,7 +136,7 @@ interface ReactivateAddressKeysV2Arguments {
     api: Api;
     address: Address;
     activeKeys: ActiveKey[];
-    userKey: OpenPGPKey;
+    userKey: PrivateKeyReference;
     onReactivation: OnKeyReactivationCallback;
     keysToReactivate: KeyReactivationData[];
 }
@@ -158,7 +161,10 @@ export const reactivateAddressKeysV2 = async ({
             await resetUserId(Key, reactivatedKey);
 
             const { token, encryptedToken, signature } = await generateAddressKeyTokens(userKey);
-            const privateKeyArmored = await encryptPrivateKey(reactivatedKey, token);
+            const privateKeyArmored = await CryptoProxy.exportPrivateKey({
+                privateKey: reactivatedKey,
+                passphrase: token,
+            });
             const newActiveKey = await getActiveKeyObject(reactivatedKey, {
                 ID,
                 primary: getPrimaryFlag(mutableActiveKeys),

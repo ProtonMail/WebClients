@@ -18,7 +18,7 @@ import {
     UpdateCalendarEventSyncData,
 } from '@proton/shared/lib/interfaces/calendar/Api';
 import { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
-import { OpenPGPKey } from 'pmcrypto';
+import { PublicKeyReference } from '@proton/crypto';
 
 export enum SyncOperationTypes {
     DELETE,
@@ -37,7 +37,7 @@ export interface CreateEventActionOperation {
     type: SyncOperationTypes.CREATE;
     data: {
         veventComponent: VcalVeventComponent;
-        addedAttendeesPublicKeysMap?: SimpleMap<OpenPGPKey>;
+        addedAttendeesPublicKeysMap?: SimpleMap<PublicKeyReference>;
     };
 }
 export interface UpdateEventActionOperation {
@@ -46,7 +46,7 @@ export interface UpdateEventActionOperation {
         calendarEvent: CalendarEvent;
         veventComponent: VcalVeventComponent;
         removedAttendeesEmails?: string[];
-        addedAttendeesPublicKeysMap?: SimpleMap<OpenPGPKey>;
+        addedAttendeesPublicKeysMap?: SimpleMap<PublicKeyReference>;
     };
 }
 
@@ -80,7 +80,7 @@ export const getIsCreateSyncOperation = (
 
 export const getCreateSyncOperation = (data: {
     veventComponent: VcalVeventComponent;
-    addedAttendeesPublicKeysMap?: SimpleMap<OpenPGPKey>;
+    addedAttendeesPublicKeysMap?: SimpleMap<PublicKeyReference>;
 }): CreateEventActionOperation => ({
     type: SyncOperationTypes.CREATE,
     data,
@@ -89,7 +89,7 @@ export const getUpdateSyncOperation = (data: {
     veventComponent: VcalVeventComponent;
     calendarEvent: CalendarEvent;
     removedAttendeesEmails?: string[];
-    addedAttendeesPublicKeysMap?: SimpleMap<OpenPGPKey>;
+    addedAttendeesPublicKeysMap?: SimpleMap<PublicKeyReference>;
 }): UpdateEventActionOperation => ({
     type: SyncOperationTypes.UPDATE,
     data,

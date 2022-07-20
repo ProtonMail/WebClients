@@ -1,10 +1,10 @@
 import { MIME_TYPES, PACKAGE_TYPE } from '@proton/shared/lib/constants';
+import { WorkerDecryptionResult } from '@proton/crypto';
 import isTruthy from '@proton/utils/isTruthy';
 import { Api } from '@proton/shared/lib/interfaces';
 import { Package, Packages, PackageStatus, SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import { addReceived } from '@proton/shared/lib/mail/messages';
-import { DecryptResultPmcrypto } from 'pmcrypto';
 import { MessageKeys, MessageState } from '../../logic/messages/messagesTypes';
 import { getPlainText } from '../message/messageContent';
 import { prepareExport } from '../message/messageExport';
@@ -22,8 +22,8 @@ const { PLAINTEXT, DEFAULT, MIME } = MIME_TYPES;
 const generateMimePackage = async (
     message: MessageState,
     messageKeys: MessageKeys,
-    getAttachment: (ID: string) => DecryptResultPmcrypto | undefined,
-    onUpdateAttachment: (ID: string, attachment: DecryptResultPmcrypto) => void,
+    getAttachment: (ID: string) => WorkerDecryptionResult<Uint8Array> | undefined,
+    onUpdateAttachment: (ID: string, attachment: WorkerDecryptionResult<Uint8Array>) => void,
     api: Api
 ): Promise<Package> => ({
     Flags: addReceived(message.data?.Flags),
@@ -56,8 +56,8 @@ export const generateTopPackages = async (
     message: MessageState,
     messageKeys: MessageKeys,
     mapSendPrefs: SimpleMap<SendPreferences>,
-    getAttachment: (ID: string) => DecryptResultPmcrypto | undefined,
-    onUpdateAttachment: (ID: string, attachment: DecryptResultPmcrypto) => void,
+    getAttachment: (ID: string) => WorkerDecryptionResult<Uint8Array> | undefined,
+    onUpdateAttachment: (ID: string, attachment: WorkerDecryptionResult<Uint8Array>) => void,
     api: Api
 ): Promise<Packages> => {
     const packagesStatus: PackageStatus = Object.values(mapSendPrefs)

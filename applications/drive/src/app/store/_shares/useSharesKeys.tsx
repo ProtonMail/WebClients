@@ -1,12 +1,12 @@
 import { createContext, useContext } from 'react';
-import { OpenPGPKey, SessionKey } from 'pmcrypto';
+import { PrivateKeyReference, SessionKey } from '@proton/crypto';
 
 type SharesKeys = {
     [shareId: string]: ShareKeys;
 };
 
 export type ShareKeys = {
-    privateKey: OpenPGPKey;
+    privateKey: PrivateKeyReference;
     sessionKey?: SessionKey;
 };
 
@@ -25,7 +25,7 @@ export class SharesKeysStorage {
         return this.keys[shareId];
     }
 
-    set(shareId: string, privateKey: OpenPGPKey, sessionKey?: SessionKey) {
+    set(shareId: string, privateKey: PrivateKeyReference, sessionKey?: SessionKey) {
         this.keys[shareId] = {
             privateKey,
             sessionKey,

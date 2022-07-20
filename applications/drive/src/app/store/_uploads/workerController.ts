@@ -1,6 +1,4 @@
-import * as openpgp from 'openpgp';
-// @ts-ignore
-import { OpenPGPKey, SessionKey, updateServerTime, serverTime } from 'pmcrypto';
+import { CryptoProxy, SessionKey, updateServerTime, serverTime, PrivateKeyReference } from '@proton/crypto';
 
 import {
     FileKeys,
@@ -17,7 +15,7 @@ type GenerateKeysMessage = {
     command: 'generate_keys';
     addressPrivateKey: Uint8Array;
     parentPrivateKey: Uint8Array;
-    pmcryptoTime: Date;
+    serverTime: Date;
 };
 
 type StartMessage = {
@@ -44,12 +42,16 @@ type ResumeMessage = {
     command: 'resume';
 };
 
+type CloseMessage = {
+    command: 'close';
+};
+
 /**
  * WorkerControllerEvent contains all possible events which can come from
  * the main thread to the upload web worker.
  */
 type WorkerControllerEvent = {
-    data: GenerateKeysMessage | StartMessage | CreatedBlocksMessage | PauseMessage | ResumeMessage;
+    data: GenerateKeysMessage | StartMessage | CreatedBlocksMessage | PauseMessage | ResumeMessage | CloseMessage;
 };
 
 /**
@@ -57,13 +59,13 @@ type WorkerControllerEvent = {
  * web worker to messages from the main thread defined in WorkerControllerEvent.
  */
 interface WorkerHandlers {
-    generateKeys: (addressPrivateKey: OpenPGPKey, parentPrivateKey: OpenPGPKey) => void;
+    generateKeys: (addressPrivateKey: PrivateKeyReference, parentPrivateKey: PrivateKeyReference) => void;
     start: (
         file: File,
         thumbnailData: Uint8Array | undefined,
-        addressPrivateKey: OpenPGPKey,
+        addressPrivateKey: PrivateKeyReference,
         addressEmail: string,
-        privateKey: OpenPGPKey,
+        privateKey: PrivateKeyReference,
         sessionKey: SessionKey
     ) => void;
     createdBlocks: (fileLinks: Link[], thumbnailLink?: Link) => void;
@@ -140,17 +142,6 @@ interface WorkerControllerHandlers {
     onCancel: () => void;
 }
 
-async function readOpenPGPKey(binaryKey: Uint8Array): Promise<OpenPGPKey> {
-    const keys = await openpgp.key.read(binaryKey);
-    if (keys.err) {
-        throw new Error(keys.err.join(', '));
-    }
-    if (keys.keys.length === 0) {
-        throw new Error('Missing key');
-    }
-    return keys.keys[0];
-}
-
 /**
  * UploadWorker provides communication between the main thread and upload web
  * worker. The class ensures type safety as much as possible.
@@ -165,9 +156,21 @@ export class UploadWorker {
             switch (data.command) {
                 case 'generate_keys':
                     (async (data) => {
-                        updateServerTime(data.pmcryptoTime);
-                        const addressPrivateKey = await readOpenPGPKey(data.addressPrivateKey);
-                        const parentPrivateKey = await readOpenPGPKey(data.parentPrivateKey);
+                        // Setup CryptoProxy
+                        // Dynamic import is needed since we want pmcrypto (incl. openpgpjs) to be loaded inside the worker, not in the main thread.
+                        const { Api: CryptoApi } = await import('@proton/crypto/lib/worker/api');
+                        CryptoApi.init();
+                        CryptoProxy.setEndpoint(new CryptoApi(), (endpoint) => endpoint.clearKeyStore());
+                        updateServerTime(data.serverTime); // align serverTime in worker with that of the main thread (received from API)
+
+                        const addressPrivateKey = await CryptoProxy.importPrivateKey({
+                            binaryKey: data.addressPrivateKey,
+                            passphrase: null,
+                        });
+                        const parentPrivateKey = await CryptoProxy.importPrivateKey({
+                            binaryKey: data.parentPrivateKey,
+                            passphrase: null,
+                        });
                         generateKeys(addressPrivateKey, parentPrivateKey);
                     })(data).catch((err) => {
                         this.postError(err);
@@ -175,8 +178,14 @@ export class UploadWorker {
                     break;
                 case 'start':
                     (async (data) => {
-                        const addressPrivateKey = await readOpenPGPKey(data.addressPrivateKey);
-                        const privateKey = await readOpenPGPKey(data.privateKey);
+                        const addressPrivateKey = await CryptoProxy.importPrivateKey({
+                            binaryKey: data.addressPrivateKey,
+                            passphrase: null,
+                        });
+                        const privateKey = await CryptoProxy.importPrivateKey({
+                            binaryKey: data.privateKey,
+                            passphrase: null,
+                        });
                         start(
                             data.file,
                             data.thumbnailData,
@@ -198,6 +207,9 @@ export class UploadWorker {
                 case 'resume':
                     resume();
                     break;
+                case 'close':
+                    void CryptoProxy.releaseEndpoint().then(() => self.close());
+                    break;
                 default:
                     // Type linters should prevent this error.
                     throw new Error('Unexpected message');
@@ -213,11 +225,15 @@ export class UploadWorker {
         });
     }
 
-    postKeysGenerated(keys: FileKeys) {
+    async postKeysGenerated(keys: FileKeys) {
         this.worker.postMessage({
             command: 'keys_generated',
             ...keys,
-            privateKey: keys.privateKey.toPacketlist().write(),
+            privateKey: await CryptoProxy.exportPrivateKey({
+                privateKey: keys.privateKey,
+                passphrase: null,
+                format: 'binary',
+            }),
         } as KeysGeneratedMessage);
     }
 
@@ -299,7 +315,10 @@ export class UploadWorkerController {
             switch (data.command) {
                 case 'keys_generated':
                     (async (data) => {
-                        const privateKey = await readOpenPGPKey(data.privateKey);
+                        const privateKey = await CryptoProxy.importPrivateKey({
+                            binaryKey: data.privateKey,
+                            passphrase: null,
+                        });
                         keysGenerated({
                             nodeKey: data.nodeKey,
                             nodePassphrase: data.nodePassphrase,
@@ -346,31 +365,46 @@ export class UploadWorkerController {
         this.onCancel();
     }
 
-    postGenerateKeys(addressPrivateKey: OpenPGPKey, parentPrivateKey: OpenPGPKey) {
-        const pmcryptoTime = serverTime();
+    async postGenerateKeys(addressPrivateKey: PrivateKeyReference, parentPrivateKey: PrivateKeyReference) {
         this.worker.postMessage({
             command: 'generate_keys',
-            addressPrivateKey: addressPrivateKey.toPacketlist().write(),
-            parentPrivateKey: parentPrivateKey.toPacketlist().write(),
-            pmcryptoTime,
+            addressPrivateKey: await CryptoProxy.exportPrivateKey({
+                privateKey: addressPrivateKey,
+                passphrase: null,
+                format: 'binary',
+            }),
+            parentPrivateKey: await CryptoProxy.exportPrivateKey({
+                privateKey: parentPrivateKey,
+                passphrase: null,
+                format: 'binary',
+            }),
+            serverTime: serverTime(),
         } as GenerateKeysMessage);
     }
 
-    postStart(
+    async postStart(
         file: File,
         thumbnailData: Uint8Array | undefined,
-        addressPrivateKey: OpenPGPKey,
+        addressPrivateKey: PrivateKeyReference,
         addressEmail: string,
-        privateKey: OpenPGPKey,
+        privateKey: PrivateKeyReference,
         sessionKey: SessionKey
     ) {
         this.worker.postMessage({
             command: 'start',
             file,
             thumbnailData,
-            addressPrivateKey: addressPrivateKey.toPacketlist().write(),
+            addressPrivateKey: await CryptoProxy.exportPrivateKey({
+                privateKey: addressPrivateKey,
+                passphrase: null,
+                format: 'binary',
+            }),
             addressEmail,
-            privateKey: privateKey.toPacketlist().write(),
+            privateKey: await CryptoProxy.exportPrivateKey({
+                privateKey: privateKey,
+                passphrase: null,
+                format: 'binary',
+            }),
             sessionKey,
         } as StartMessage);
     }
@@ -393,5 +427,11 @@ export class UploadWorkerController {
         this.worker.postMessage({
             command: 'resume',
         } as ResumeMessage);
+    }
+
+    postClose() {
+        this.worker.postMessage({
+            command: 'close',
+        });
     }
 }

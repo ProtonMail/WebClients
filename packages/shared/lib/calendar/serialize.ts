@@ -1,4 +1,4 @@
-import { OpenPGPKey, SessionKey } from 'pmcrypto';
+import { PrivateKeyReference, PublicKeyReference, SessionKey } from '@proton/crypto';
 import { CalendarCreateEventBlobData } from '../interfaces/calendar/Api';
 import { RequireSome, SimpleMap } from '../interfaces/utils';
 
@@ -7,7 +7,7 @@ import { getVeventParts } from './veventHelper';
 import { createSessionKey, encryptPart, getEncryptedSessionKey, getEncryptedSessionKeysMap, signPart } from './encrypt';
 import { SignPartResult, VcalVeventComponent } from '../interfaces/calendar';
 import { getIsEventComponent } from './vcalHelper';
-import { formatData, getArmoredSignatureString } from './formatData';
+import { formatData } from './formatData';
 
 const { ENCRYPTED_AND_SIGNED, SIGNED, CLEAR_TEXT } = CALENDAR_CARD_TYPE;
 
@@ -34,15 +34,15 @@ const getParts = (eventComponent: VcalVeventComponent) => {
  */
 interface CreateCalendarEventArguments {
     eventComponent: VcalVeventComponent;
-    publicKey: OpenPGPKey;
-    privateKey: OpenPGPKey;
+    publicKey: PublicKeyReference;
+    privateKey: PrivateKeyReference;
     sharedSessionKey?: SessionKey;
     calendarSessionKey?: SessionKey;
     isCreateEvent: boolean;
     isSwitchCalendar: boolean;
     isInvitation?: boolean;
     removedAttendeesEmails?: string[];
-    addedAttendeesPublicKeysMap?: SimpleMap<OpenPGPKey>;
+    addedAttendeesPublicKeysMap?: SimpleMap<PublicKeyReference>;
 }
 export const createCalendarEvent = async ({
     eventComponent,
@@ -124,7 +124,7 @@ export const formatPersonalData = (personalSignedPart?: SignPartResult) => {
     return {
         Type: SIGNED,
         Data: personalSignedPart.data,
-        Signature: getArmoredSignatureString(personalSignedPart.signature),
+        Signature: personalSignedPart.signature,
     };
 };
 
@@ -133,7 +133,7 @@ export const formatPersonalData = (personalSignedPart?: SignPartResult) => {
  */
 interface CreatePersonalEventArguments {
     eventComponent: VcalVeventComponent;
-    signingKey: OpenPGPKey;
+    signingKey: PrivateKeyReference;
 }
 export const createPersonalEvent = async ({ eventComponent, signingKey }: CreatePersonalEventArguments) => {
     const { personalPart } = getParts(eventComponent);

@@ -1,5 +1,5 @@
 import JSZip from 'jszip';
-import { DecryptResultPmcrypto } from 'pmcrypto';
+import type { WorkerDecryptionResult } from '@proton/crypto';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { splitExtension } from '@proton/shared/lib/helpers/file';
 import { Api } from '@proton/shared/lib/interfaces';
@@ -23,9 +23,9 @@ export const formatDownload = async (
     attachment: Attachment,
     verification: MessageVerification | undefined,
     messageKeys: MessageKeys,
-    onUpdateAttachment: (ID: string, attachment: DecryptResultPmcrypto) => void,
+    onUpdateAttachment: (ID: string, attachment: WorkerDecryptionResult<Uint8Array>) => void,
     api: Api,
-    getAttachment?: (ID: string) => DecryptResultPmcrypto | undefined
+    getAttachment?: (ID: string) => WorkerDecryptionResult<Uint8Array> | undefined
 ): Promise<Download> => {
     try {
         const reverify = !!(verification?.senderVerified && verification.senderPinnedKeys?.length);
@@ -93,9 +93,9 @@ export const formatDownloadAll = async (
     attachments: Attachment[],
     verification: MessageVerification | undefined,
     messageKeys: MessageKeys,
-    onUpdateAttachment: (ID: string, attachment: DecryptResultPmcrypto) => void,
+    onUpdateAttachment: (ID: string, attachment: WorkerDecryptionResult<Uint8Array>) => void,
     api: Api,
-    getAttachment?: (ID: string) => DecryptResultPmcrypto | undefined
+    getAttachment?: (ID: string) => WorkerDecryptionResult<Uint8Array> | undefined
 ): Promise<Download[]> => {
     const { list }: { list: Attachment[] } = attachments.reduce(
         (acc: any, att) => {

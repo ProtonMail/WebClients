@@ -1,7 +1,8 @@
-import { decryptPrivateKey, OpenPGPKey, getKeys } from 'pmcrypto';
 import { computeKeyPassword, generateKeySalt } from '@proton/srp';
+import { CryptoProxy, PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
 
 import { Key, KeyPair, KeySalt as tsKeySalt } from '../interfaces';
+import { extractEmailFromUserID } from '../helpers/email';
 
 export const generateKeySaltAndPassphrase = async (password: string) => {
     const salt = generateKeySalt();
@@ -28,7 +29,7 @@ export const getPrimaryKeyWithSalt = (Keys: Key[] = [], KeySalts: tsKeySalt[] = 
 };
 
 export const splitKeys = (keys: Partial<KeyPair>[] = []) => {
-    return keys.reduce<{ privateKeys: OpenPGPKey[]; publicKeys: OpenPGPKey[] }>(
+    return keys.reduce<{ privateKeys: PrivateKeyReference[]; publicKeys: PublicKeyReference[] }>(
         (acc, { privateKey, publicKey }) => {
             if (!privateKey || !publicKey) {
                 return acc;
@@ -51,17 +52,9 @@ export const decryptPrivateKeyWithSalt = async ({
     PrivateKey: string;
 }) => {
     const keyPassword = keySalt ? await computeKeyPassword(password, keySalt) : password;
-    return decryptPrivateKey(PrivateKey, keyPassword);
+    return CryptoProxy.importPrivateKey({ armoredKey: PrivateKey, passphrase: keyPassword });
 };
 
-export const getOldUserIDEmailHelper = (privateKey: OpenPGPKey) => {
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore - openpgp typings are incorrect, todo
-    const { email } = privateKey.users[0].userId;
-    return email;
-};
-
-export const getOldUserIDEmail = async (PrivateKey: string): Promise<string> => {
-    const [privateKey] = await getKeys(PrivateKey);
-    return getOldUserIDEmailHelper(privateKey);
+export const getOldUserIDEmail = (privateKey: PrivateKeyReference) => {
+    return extractEmailFromUserID(privateKey.getUserIDs()[0]);
 };

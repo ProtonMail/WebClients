@@ -1,6 +1,5 @@
+import { CryptoProxy, PrivateKeyReference } from '@proton/crypto';
 import { computeKeyPassword, generateKeySalt } from '@proton/srp';
-import { decryptPrivateKey, encryptPrivateKey, OpenPGPKey } from 'pmcrypto';
-
 import {
     Address as tsAddress,
     Api,
@@ -46,7 +45,7 @@ export const getHasV2KeysToUpgrade = (User: tsUser, Addresses: tsAddress[]) => {
     );
 };
 
-const reEncryptOrReformatKey = async (privateKey: OpenPGPKey, Key: Key, email: string, passphrase: string) => {
+const reEncryptOrReformatKey = async (privateKey: PrivateKeyReference, Key: Key, email: string, passphrase: string) => {
     if (Key && getV2KeyToUpgrade(Key)) {
         return reformatAddressKey({
             email,
@@ -54,7 +53,7 @@ const reEncryptOrReformatKey = async (privateKey: OpenPGPKey, Key: Key, email: s
             privateKey,
         });
     }
-    const privateKeyArmored = await encryptPrivateKey(privateKey, passphrase);
+    const privateKeyArmored = await CryptoProxy.exportPrivateKey({ privateKey: privateKey, passphrase });
     return { privateKey, privateKeyArmored };
 };
 
@@ -74,7 +73,12 @@ const getReEncryptedKeys = (keys: DecryptedKey[], Keys: Key[], email: string, pa
     );
 };
 
-const getReformattedAddressKeysV2 = (keys: DecryptedKey[], Keys: Key[], email: string, userKey: OpenPGPKey) => {
+const getReformattedAddressKeysV2 = (
+    keys: DecryptedKey[],
+    Keys: Key[],
+    email: string,
+    userKey: PrivateKeyReference
+) => {
     const keysMap = Keys.reduce<{ [key: string]: Key }>((acc, Key) => {
         acc[Key.ID] = Key;
         return acc;
@@ -88,11 +92,14 @@ const getReformattedAddressKeysV2 = (keys: DecryptedKey[], Keys: Key[], email: s
                 email,
                 token
             );
+            const publicKey = await CryptoProxy.importPublicKey({
+                binaryKey: await CryptoProxy.exportPublicKey({ key: privateKey, format: 'binary' }),
+            });
             return {
                 decryptedKey: {
                     ID,
                     privateKey,
-                    publicKey: privateKey.toPublic(),
+                    publicKey,
                 },
                 Key: {
                     ID,
@@ -183,7 +190,10 @@ export const upgradeV2KeysV2 = async ({
         organizationKey?.privateKey ? reformatOrganizationKey(organizationKey.privateKey, newKeyPassword) : undefined,
     ]);
 
-    const primaryUserKey = await decryptPrivateKey(reformattedUserKeys[0].PrivateKey, newKeyPassword);
+    const primaryUserKey = await CryptoProxy.importPrivateKey({
+        armoredKey: reformattedUserKeys[0].PrivateKey,
+        passphrase: newKeyPassword,
+    });
 
     const reformattedAddressesKeys = await Promise.all(
         addressesKeys.map(async ({ address, keys }) => {

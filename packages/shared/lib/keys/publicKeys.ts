@@ -1,7 +1,7 @@
-import { OpenPGPKey, serverTime, canKeyEncrypt, checkKeyStrength } from 'pmcrypto';
+import { CryptoProxy, PublicKeyReference, serverTime } from '@proton/crypto';
 import { c } from 'ttag';
 import { KEY_FLAG, MIME_TYPES_MORE, PGP_SCHEMES_MORE, RECIPIENT_TYPES } from '../constants';
-import { canonizeEmailByGuess, canonizeInternalEmail } from '../helpers/email';
+import { canonizeEmailByGuess, canonizeInternalEmail, extractEmailFromUserID } from '../helpers/email';
 import { toBitMap } from '../helpers/object';
 import { ApiKeysConfig, ContactPublicKeyModel, ProcessedApiKey, PublicKeyConfigs, PublicKeyModel } from '../interfaces';
 import { hasBit } from '../helpers/bitset';
@@ -24,15 +24,15 @@ export const getIsInternalUser = ({ RecipientType }: ApiKeysConfig): boolean => 
 export const isDisabledUser = (config: ApiKeysConfig): boolean =>
     getIsInternalUser(config) && config.publicKeys.every(({ flags }) => !getKeyHasFlagsToEncrypt(flags));
 
-export const getEmailMismatchWarning = (publicKey: OpenPGPKey, emailAddress: string, isInternal: boolean): string[] => {
+export const getEmailMismatchWarning = (
+    publicKey: PublicKeyReference,
+    emailAddress: string,
+    isInternal: boolean
+): string[] => {
     const canonicalEmail = isInternal ? canonizeInternalEmail(emailAddress) : canonizeEmailByGuess(emailAddress);
-    const users = publicKey.users || [];
-    const keyEmails = users.reduce<string[]>((acc, { userId = {} } = {}) => {
-        if (!userId?.userid) {
-            // userId can be set to null
-            return acc;
-        }
-        const [, email = userId.userid] = /<([^>]*)>/.exec(userId.userid) || [];
+    const userIDs = publicKey.getUserIDs();
+    const keyEmails = userIDs.reduce<string[]>((acc, userID) => {
+        const email = extractEmailFromUserID(userID) || userID;
         // normalize the email
         acc.push(email);
         return acc;
@@ -48,18 +48,6 @@ export const getEmailMismatchWarning = (publicKey: OpenPGPKey, emailAddress: str
 };
 
 /**
- * Check whether the key is considered weak, based on its type and size.
- */
-export const getIsWeakKey = (key: OpenPGPKey): boolean => {
-    try {
-        checkKeyStrength(key);
-        return false;
-    } catch {
-        return true;
-    }
-};
-
-/**
  * Sort list of keys retrieved from the API. Trusted keys take preference.
  * For two keys such that both are either trusted or not, non-verify-only keys take preference
  */
@@ -69,13 +57,13 @@ export const sortApiKeys = ({
     compromisedFingerprints,
     trustedFingerprints,
 }: {
-    keys: OpenPGPKey[];
+    keys: PublicKeyReference[];
     obsoleteFingerprints: Set<string>;
     compromisedFingerprints: Set<string>;
     trustedFingerprints: Set<string>;
-}): OpenPGPKey[] =>
+}): PublicKeyReference[] =>
     keys
-        .reduce<OpenPGPKey[][]>(
+        .reduce<PublicKeyReference[][]>(
             (acc, key) => {
                 const fingerprint = key.getFingerprint();
                 // calculate order through a bitmap
@@ -100,13 +88,13 @@ export const sortPinnedKeys = ({
     compromisedFingerprints,
     encryptionCapableFingerprints,
 }: {
-    keys: OpenPGPKey[];
+    keys: PublicKeyReference[];
     obsoleteFingerprints: Set<string>;
     compromisedFingerprints: Set<string>;
     encryptionCapableFingerprints: Set<string>;
-}): OpenPGPKey[] =>
+}): PublicKeyReference[] =>
     keys
-        .reduce<OpenPGPKey[][]>(
+        .reduce<PublicKeyReference[][]>(
             (acc, key) => {
                 const fingerprint = key.getFingerprint();
                 // calculate order through a bitmap
@@ -126,9 +114,9 @@ export const sortPinnedKeys = ({
  * Given a public key, return true if it is capable of encrypting messages.
  * This includes checking that the key is neither expired nor revoked.
  */
-export const getKeyEncryptionCapableStatus = async (publicKey: OpenPGPKey, timestamp?: number) => {
+export const getKeyEncryptionCapableStatus = async (publicKey: PublicKeyReference, timestamp?: number) => {
     const now = timestamp || +serverTime();
-    return canKeyEncrypt(publicKey, new Date(now));
+    return CryptoProxy.canKeyEncrypt({ key: publicKey, date: new Date(now) });
 };
 
 /**
@@ -148,7 +136,7 @@ const getIsValidForVerifying = (fingerprint: string, compromisedFingerprints: Se
     return !compromisedFingerprints.has(fingerprint);
 };
 
-export const getVerifyingKeys = (keys: OpenPGPKey[], compromisedFingerprints: Set<string>) => {
+export const getVerifyingKeys = (keys: PublicKeyReference[], compromisedFingerprints: Set<string>) => {
     return keys.filter((key) => getIsValidForVerifying(key.getFingerprint(), compromisedFingerprints));
 };
 

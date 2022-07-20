@@ -66,7 +66,7 @@ import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message'
 import { RequireSome, Unwrap } from '@proton/shared/lib/interfaces/utils';
 import { getOriginalTo } from '@proton/shared/lib/mail/messages';
 import { getUnixTime } from 'date-fns';
-import { serverTime } from 'pmcrypto';
+import { serverTime } from '@proton/crypto';
 import { getSupportedCalscale } from '@proton/shared/lib/calendar/icsSurgery/vcal';
 import { MessageStateWithData } from '../../logic/messages/messagesTypes';
 import { FetchAllEventsByUID } from './inviteApi';

@@ -1,5 +1,4 @@
-import { decryptPrivateKey } from 'pmcrypto';
-
+import { CryptoProxy } from '@proton/crypto';
 import { DecryptableKey } from './keys.data';
 import { decryptPassphrase } from '../../lib/keys/calendarKeys';
 
@@ -52,14 +51,20 @@ AHuAp3/jX0kawmQsHXK9Bg==
 
 describe('keys', () => {
     it('should prepare calendar keys for owner', async () => {
-        const decryptedPrivateKey = await decryptPrivateKey(DecryptableKey.PrivateKey, '123');
+        const decryptedPrivateKey = await CryptoProxy.importPrivateKey({
+            armoredKey: DecryptableKey.PrivateKey,
+            passphrase: '123',
+        });
         const decryptedPassphrase = await decryptPassphrase({
             armoredPassphrase,
             armoredSignature,
             privateKeys: decryptedPrivateKey,
-            publicKeys: decryptedPrivateKey.toPublic()
+            publicKeys: decryptedPrivateKey,
         });
-        const decryptedCalendarKey = await decryptPrivateKey(calendarKey, decryptedPassphrase);
-        expect(decryptedCalendarKey.isDecrypted()).toBeTruthy();
+        const decryptedCalendarKey = await CryptoProxy.importPrivateKey({
+            armoredKey: calendarKey,
+            passphrase: decryptedPassphrase,
+        });
+        expect(decryptedCalendarKey.isPrivate()).toBeTruthy();
     });
 });

@@ -1,23 +1,19 @@
 import { c } from 'ttag';
-import {
-    OpenPGPKey,
-    VERIFICATION_STATUS,
-    decryptMessage,
-    getMessage,
-    decryptSessionKey,
-    getSignature,
-    OpenPGPMessage,
-} from 'pmcrypto';
+
+import { CryptoProxy, PrivateKeyReference, PublicKeyReference, VERIFICATION_STATUS } from '@proton/crypto';
 
 export const getDecryptedSessionKey = async ({
-    data,
+    data: serializedMessage,
     privateKeys,
 }: {
-    data: string | OpenPGPMessage | Uint8Array;
-    privateKeys: OpenPGPKey | OpenPGPKey[];
+    data: string | Uint8Array;
+    privateKeys: PrivateKeyReference | PrivateKeyReference[];
 }) => {
-    const message = await getMessage(data);
-    const sessionKey = await decryptSessionKey({ message, privateKeys });
+    const messageType = serializedMessage instanceof Uint8Array ? 'binaryMessage' : 'armoredMessage';
+    const sessionKey = await CryptoProxy.decryptSessionKey({
+        [messageType]: serializedMessage,
+        decryptionKeys: privateKeys,
+    });
     if (!sessionKey) {
         throw new Error('Could not decrypt session key');
     }
@@ -34,20 +30,17 @@ export const decryptPassphrase = async ({
 }: {
     armoredPassphrase: string;
     armoredSignature?: string;
-    privateKeys: OpenPGPKey[];
-    publicKeys: OpenPGPKey[];
+    privateKeys: PrivateKeyReference[];
+    publicKeys: PublicKeyReference[];
     validateSignature?: boolean;
 }) => {
-    const [message, sessionKey] = await Promise.all([
-        getMessage(armoredPassphrase),
-        getDecryptedSessionKey({ data: armoredPassphrase, privateKeys }),
-    ]);
+    const sessionKey = await getDecryptedSessionKey({ data: armoredPassphrase, privateKeys });
 
-    const { data: decryptedPassphrase, verified } = await decryptMessage({
-        message,
-        signature: armoredSignature ? await getSignature(armoredSignature) : undefined,
+    const { data: decryptedPassphrase, verified } = await CryptoProxy.decryptMessage({
+        armoredMessage: armoredPassphrase,
+        armoredSignature,
         sessionKeys: sessionKey,
-        publicKeys,
+        verificationKeys: publicKeys,
     });
 
     if (validateSignature && verified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
@@ -56,5 +49,5 @@ export const decryptPassphrase = async ({
         throw error;
     }
 
-    return { decryptedPassphrase: decryptedPassphrase as string, sessionKey, verified };
+    return { decryptedPassphrase, sessionKey, verified };
 };

@@ -1,4 +1,4 @@
-import { encodeUtf8Base64, decodeUtf8Base64 } from 'pmcrypto';
+import { encodeUtf8Base64, decodeUtf8Base64 } from '@proton/crypto/lib/utils';
 
 import { MAILBOX_PASSWORD_KEY, UID_KEY, LOCAL_ID_KEY, PERSIST_SESSION_KEY } from '../constants';
 
@@ -19,7 +19,7 @@ const createAuthenticationStore = ({ set, get }: Arguments) => {
         set(MAILBOX_PASSWORD_KEY, encodeUtf8Base64(password));
     };
     const getPassword = () => {
-        const value = get(MAILBOX_PASSWORD_KEY);
+        const value: string | undefined = get(MAILBOX_PASSWORD_KEY);
         if (value === undefined) {
             return '';
         }

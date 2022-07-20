@@ -1,10 +1,9 @@
 import { useRef, useEffect, forwardRef, ReactNode, Ref } from 'react';
 import { c, msgid } from 'ttag';
 import { parseRecoveryFiles } from '@proton/shared/lib/recoveryFile/recoveryFile';
-import { parseKeys } from '@proton/shared/lib/keys';
+import { ArmoredKeyWithInfo, parseKeys } from '@proton/shared/lib/keys';
 import { readFileAsString } from '@proton/shared/lib/helpers/file';
 import { KEY_FILE_EXTENSION } from '@proton/shared/lib/constants';
-import { OpenPGPKey } from 'pmcrypto';
 import { KeyWithRecoverySecret } from '@proton/shared/lib/interfaces';
 import FileInput from '../../../components/input/FileInput';
 import useCombinedRefs from '../../../hooks/useCombinedRefs';
@@ -18,7 +17,7 @@ const BACKUP_PRIVATE_KEY_EXPR =
 
 export interface Props {
     recoverySecrets: KeyWithRecoverySecret[];
-    onUpload: (keys: OpenPGPKey[]) => void;
+    onUpload: (keys: ArmoredKeyWithInfo[]) => void;
     autoClick?: boolean;
     multiple?: boolean;
     className?: string;
@@ -51,7 +50,7 @@ const SelectRecoveryFiles = (
         }
     }, [autoClick]);
 
-    const displayRecoveryFileNotifications = (keys: OpenPGPKey[], numberOfFilesUploaded: number) => {
+    const displayRecoveryFileNotifications = (keys: ArmoredKeyWithInfo[], numberOfFilesUploaded: number) => {
         if (numberOfFilesUploaded === 0) {
             return;
         }
@@ -68,12 +67,12 @@ const SelectRecoveryFiles = (
         }
     };
 
-    const displayBackupKeyNotifications = (keys: OpenPGPKey[], numberOfFilesUploaded: number) => {
+    const displayBackupKeyNotifications = (keys: ArmoredKeyWithInfo[], numberOfFilesUploaded: number) => {
         if (numberOfFilesUploaded === 0) {
             return;
         }
 
-        const privateKeys = keys.filter((key) => key.isPrivate());
+        const privateKeys = keys.filter(({ keyIsPrivate }) => keyIsPrivate);
         if (privateKeys.length === 0) {
             createNotification({
                 type: 'error',

@@ -1,11 +1,13 @@
-import { OpenPGPKey, decryptPrivateKey } from 'pmcrypto';
-
+import { CryptoProxy, PrivateKeyReference } from '@proton/crypto';
 import { LinkType, ShareMapLink } from '@proton/shared/lib/interfaces/drive/link';
 import { decryptUnsigned } from '@proton/shared/lib/keys/driveKeys';
 import { decryptPassphrase } from '@proton/shared/lib/keys/drivePassphrase';
 
-export type DecryptAndCacheLink = (linkMeta: ShareMapLink, parentPrivateKey: OpenPGPKey) => Promise<{ name: string }>;
-export type GetCachedParentPrivateKey = (linkId: string | null) => OpenPGPKey | undefined;
+export type DecryptAndCacheLink = (
+    linkMeta: ShareMapLink,
+    parentPrivateKey: PrivateKeyReference
+) => Promise<{ name: string }>;
+export type GetCachedParentPrivateKey = (linkId: string | null) => PrivateKeyReference | undefined;
 
 export const LINK_KEYS_NOT_FOUND_MESSAGE = "ES Indexing: parent link key wasn't not found.";
 
@@ -14,8 +16,8 @@ export interface KeyCache {
     decryptAndCacheLink: DecryptAndCacheLink;
 }
 
-export const createKeysCache = (rootKey: OpenPGPKey): KeyCache => {
-    const keyCache = new Map<string | null, OpenPGPKey>();
+export const createKeysCache = (rootKey: PrivateKeyReference): KeyCache => {
+    const keyCache = new Map<string | null, PrivateKeyReference>();
     keyCache.set(null, rootKey);
 
     const getCachedPrivateKey: GetCachedParentPrivateKey = (linkId) => {
@@ -37,7 +39,10 @@ export const createKeysCache = (rootKey: OpenPGPKey): KeyCache => {
                 validateSignature: false,
             });
 
-            const linkPrivateKey = await decryptPrivateKey(linkMeta.NodeKey!, decryptedPassphrase);
+            const linkPrivateKey = await CryptoProxy.importPrivateKey({
+                armoredKey: linkMeta.NodeKey!,
+                passphrase: decryptedPassphrase,
+            });
             keyCache.set(linkMeta.LinkID, linkPrivateKey);
         }
 

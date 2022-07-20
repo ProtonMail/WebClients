@@ -1,4 +1,4 @@
-import { VERIFICATION_STATUS } from 'pmcrypto';
+import { VERIFICATION_STATUS } from '@proton/crypto';
 
 /**
  * Link should not be used directly. It is general set of attributes

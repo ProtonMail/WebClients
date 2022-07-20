@@ -1,4 +1,4 @@
-import { OpenPGPKey, SessionKey } from 'pmcrypto';
+import { PrivateKeyReference, PublicKeyReference, SessionKey } from '@proton/crypto';
 import unary from '@proton/utils/unary';
 import { getIsAddressDisabled } from '../helpers/address';
 import { canonizeInternalEmail } from '../helpers/email';
@@ -27,7 +27,10 @@ import { parse } from './vcal';
 import { getAttendeePartstat, getIsEventComponent } from './vcalHelper';
 import { toSessionKey } from '../keys/sessionKey';
 
-export const readSessionKey = (KeyPacket: Nullable<string>, privateKeys?: OpenPGPKey | OpenPGPKey[]) => {
+export const readSessionKey = (
+    KeyPacket?: Nullable<string>,
+    privateKeys?: PrivateKeyReference | PrivateKeyReference[]
+) => {
     if (!KeyPacket || !privateKeys) {
         return;
     }
@@ -44,7 +47,7 @@ export const readSessionKeys = async ({
 }: {
     calendarEvent: CalendarEvent;
     decryptedSharedKeyPacket?: string;
-    privateKeys?: OpenPGPKey | OpenPGPKey[];
+    privateKeys?: PrivateKeyReference | PrivateKeyReference[];
 }) => {
     const sharedsessionKeyPromise = decryptedSharedKeyPacket
         ? Promise.resolve(toSessionKey(decryptedSharedKeyPacket))
@@ -59,7 +62,7 @@ export const readSessionKeys = async ({
 interface ReadCalendarEventArguments {
     isOrganizer: boolean;
     event: Pick<CalendarEvent, 'SharedEvents' | 'CalendarEvents' | 'AttendeesEvents' | 'Attendees'>;
-    publicKeysMap?: SimpleMap<OpenPGPKey | OpenPGPKey[]>;
+    publicKeysMap?: SimpleMap<PublicKeyReference | PublicKeyReference[]>;
     sharedSessionKey?: SessionKey;
     calendarSessionKey?: SessionKey;
     addresses: Address[];
@@ -226,7 +229,7 @@ export const readCalendarEvent = async ({
 
 export const readPersonalPart = async (
     { Data, Signature }: CalendarEventData,
-    publicKeys: OpenPGPKey | OpenPGPKey[]
+    publicKeys: PublicKeyReference | PublicKeyReference[]
 ) => {
     const { data, verificationStatus } = await verifySignedCard(Data, Signature, publicKeys);
     return { veventComponent: parse(unwrap(data)) as VcalVeventComponent, verificationStatus };

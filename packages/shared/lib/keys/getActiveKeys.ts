@@ -1,4 +1,4 @@
-import { getSHA256Fingerprints, OpenPGPKey } from 'pmcrypto';
+import { CryptoProxy, PrivateKeyReference } from '@proton/crypto';
 import isTruthy from '@proton/utils/isTruthy';
 import { ActiveKey, DecryptedKey, Key, SignedKeyList } from '../interfaces';
 import { KEY_FLAG } from '../constants';
@@ -16,16 +16,19 @@ export const getReactivatedKeyFlag = (Flags?: number) => {
 };
 
 export const getActiveKeyObject = async (
-    privateKey: OpenPGPKey,
+    privateKey: PrivateKeyReference,
     partial: Partial<ActiveKey> & { ID: string }
 ): Promise<ActiveKey> => {
+    const publicKey = await CryptoProxy.importPublicKey({
+        binaryKey: await CryptoProxy.exportPublicKey({ key: privateKey, format: 'binary' }),
+    });
     return {
         privateKey,
-        publicKey: privateKey.toPublic(),
+        publicKey,
         flags: getDefaultKeyFlags(),
         primary: 0,
         fingerprint: privateKey.getFingerprint(),
-        sha256Fingerprints: await getSHA256Fingerprints(privateKey),
+        sha256Fingerprints: await CryptoProxy.getSHA256Fingerprints({ key: privateKey }),
         ...partial,
     };
 };

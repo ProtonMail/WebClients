@@ -1,5 +1,5 @@
-import { arrayToHexString, binaryStringToArray, unsafeSHA1 } from 'pmcrypto';
-
+import { arrayToHexString, binaryStringToArray } from '@proton/crypto/lib/utils';
+import { CryptoProxy } from '@proton/crypto';
 import isTruthy from '@proton/utils/isTruthy';
 import unary from '@proton/utils/unary';
 import groupWith from '@proton/utils/groupWith';
@@ -23,7 +23,7 @@ import { CONTACT_NAME_MAX_LENGTH } from '../contacts/constants';
 export const generateAttendeeToken = async (normalizedEmail: string, uid: string) => {
     const uidEmail = `${uid}${normalizedEmail}`;
     const byteArray = binaryStringToArray(uidEmail);
-    const hash = await unsafeSHA1(byteArray);
+    const hash = await CryptoProxy.computeHash({ algorithm: 'unsafeSHA1', data: byteArray });
     return arrayToHexString(hash);
 };
 

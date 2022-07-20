@@ -1,4 +1,4 @@
-import { arrayToBinaryString, encodeBase64, encryptMessage, generateSessionKey } from 'pmcrypto';
+import { arrayToBinaryString, encodeBase64 } from '@proton/crypto/lib/utils';
 import { MIME_TYPES, PACKAGE_TYPE, PACKAGE_SIGNATURES_MODE, AES256 } from '@proton/shared/lib/constants';
 import { Package, Packages, SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
@@ -6,6 +6,7 @@ import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import { getAttachments, isEO } from '@proton/shared/lib/mail/messages';
 import { Api } from '@proton/shared/lib/interfaces';
 import { srpGetVerify } from '@proton/shared/lib/srp';
+import { CryptoProxy } from '@proton/crypto';
 import { MessageStateWithData } from '../../logic/messages/messagesTypes';
 
 const { PLAINTEXT, DEFAULT, MIME } = MIME_TYPES;
@@ -29,11 +30,15 @@ const sendPM = async (sendPrefs: SendPreferences, message: Message) => ({
  */
 const sendPMEncryptedOutside = async (message: Message, api: Api) => {
     try {
-        const sessionKey = await generateSessionKey(AES256);
+        const sessionKey = await CryptoProxy.generateSessionKeyForAlgorithm(AES256);
         const Token = encodeBase64(arrayToBinaryString(sessionKey));
 
-        const [{ data: EncToken }, { Auth }] = await Promise.all([
-            encryptMessage({ data: Token, publicKeys: [], passwords: [message.Password] }),
+        const [{ message: EncToken }, { Auth }] = await Promise.all([
+            CryptoProxy.encryptMessage({
+                textData: Token,
+                stripTrailingSpaces: true,
+                passwords: [message.Password || ''], // TODO can password actually be undefined?
+            }),
             srpGetVerify({ api, credentials: { password: message.Password || '' } }),
         ]);
 

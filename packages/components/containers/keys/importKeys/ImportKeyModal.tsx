@@ -1,6 +1,7 @@
 import { useRef, useState } from 'react';
 import { c } from 'ttag';
-import { OpenPGPKey } from 'pmcrypto';
+import { ArmoredKeyWithInfo } from '@proton/shared/lib/keys';
+import { CryptoProxy, PrivateKeyReference } from '@proton/crypto';
 import getRandomString from "@proton/utils/getRandomString";
 import { OnKeyImportCallback } from '@proton/shared/lib/keys';
 
@@ -22,7 +23,7 @@ import DecryptFileKeyModal from '../shared/DecryptFileKeyModal';
 import { ImportKey, Status } from './interface';
 import { updateKey } from './state';
 
-const getNewKey = (privateKey: OpenPGPKey) => {
+const getNewKey = (privateKey: PrivateKeyReference): ImportKey => {
     return {
         id: getRandomString(12),
         privateKey,
@@ -63,10 +64,10 @@ const ImportKeyModal = ({ onProcess, ...rest }: Props) => {
             });
     };
 
-    const handleUpload = (privateKeys: ImportKey[], acc: ImportKey[]) => {
-        const [first, ...rest] = privateKeys;
+    const handleUpload = (privateKeyInfos: ArmoredKeyWithInfo[], acc: ImportKey[]) => {
+        const [first, ...rest] = privateKeyInfos;
 
-        if (privateKeys.length === 0) {
+        if (privateKeyInfos.length === 0) {
             handleSubmit(
                 onProcess(acc, (id: string, result) => {
                     setState((oldKeys) => {
@@ -80,20 +81,15 @@ const ImportKeyModal = ({ onProcess, ...rest }: Props) => {
             return;
         }
 
-        const handleAddKey = (decryptedPrivateKey: OpenPGPKey) => {
+        const handleAddKey = (decryptedPrivateKey: PrivateKeyReference) => {
             const newList = [...acc, getNewKey(decryptedPrivateKey)];
             setState(newList);
             handleUpload(rest, newList);
         };
 
-        if (first.privateKey.isDecrypted()) {
-            first.privateKey
-                // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-                // @ts-ignore - validate does not exist in the openpgp typings, todo
-                .validate()
-                .then(() => {
-                    handleAddKey(first.privateKey);
-                })
+        if (first.keyIsDecrypted) {
+            CryptoProxy.importPrivateKey({ armoredKey: first.armoredKey, passphrase: null })
+                .then(handleAddKey)
                 .catch((e: Error) => {
                     createNotification({
                         type: 'error',
@@ -105,7 +101,7 @@ const ImportKeyModal = ({ onProcess, ...rest }: Props) => {
 
         createModal(
             <DecryptFileKeyModal
-                privateKey={first.privateKey}
+                privateKeyInfo={first}
                 onSuccess={(decryptedPrivateKey) => {
                     handleAddKey(decryptedPrivateKey);
                 }}
@@ -113,18 +109,16 @@ const ImportKeyModal = ({ onProcess, ...rest }: Props) => {
         );
     };
 
-    const handleUploadKeys = (keys: OpenPGPKey[]) => {
-        const privateKeys = keys.filter((key) => key.isPrivate());
-        if (privateKeys.length === 0) {
+    const handleUploadKeys = (keys: ArmoredKeyWithInfo[]) => {
+        const privateKeyInfos = keys.filter(({ keyIsPrivate }) => keyIsPrivate);
+        if (privateKeyInfos.length === 0) {
             return createNotification({
                 type: 'error',
                 text: c('Error').t`Invalid private key file`,
             });
         }
-        const list = privateKeys.map<ImportKey>((privateKey) => {
-            return getNewKey(privateKey);
-        });
-        handleUpload(list, []);
+
+        handleUpload(privateKeyInfos, []);
     };
 
     const { children, submit, onNext, loading } = (() => {

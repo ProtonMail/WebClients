@@ -1,6 +1,7 @@
 import { createCalendarEvent } from '@proton/shared/lib/calendar/serialize';
 import { getDtendProperty, propertyToUTCDate } from '@proton/shared/lib/calendar/vcalConverter';
 import { getIsAllDay, getPropertyTzid } from '@proton/shared/lib/calendar/vcalHelper';
+import { PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
 import {
     Attendee,
     CalendarEventData,
@@ -9,7 +10,6 @@ import {
     VcalVeventComponent,
 } from '@proton/shared/lib/interfaces/calendar';
 import { getUnixTime } from 'date-fns';
-import { OpenPGPKey } from 'pmcrypto';
 
 const withAuthorCard = (card: Omit<CalendarEventData, 'Author'>, author: string): CalendarEventData => {
     return {
@@ -52,8 +52,8 @@ export const generateApiCalendarEvent = async ({
     eventComponent: VcalVeventComponent;
     author: string;
     memberID: string;
-    publicKey: OpenPGPKey;
-    privateKey: OpenPGPKey;
+    publicKey: PublicKeyReference;
+    privateKey: PrivateKeyReference;
     eventID: string;
     sharedEventID: string;
     calendarID: string;

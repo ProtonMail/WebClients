@@ -1,12 +1,5 @@
-import {
-    createCleartextMessage,
-    decryptMessage,
-    getMessage,
-    getSignature,
-    VERIFICATION_STATUS,
-    verifyMessage,
-} from 'pmcrypto';
 import { c } from 'ttag';
+import { CryptoProxy, VERIFICATION_STATUS } from '@proton/crypto';
 
 import { CONTACT_CARD_TYPE } from '../constants';
 import { KeysPair } from '../interfaces';
@@ -16,7 +9,7 @@ import { CRYPTO_PROCESSING_TYPES } from './constants';
 import { mergeVCard } from './properties';
 import { parseToVCard } from './vcard';
 
-const { SUCCESS, SIGNATURE_NOT_VERIFIED, FAIL_TO_READ, FAIL_TO_LOAD, FAIL_TO_DECRYPT } = CRYPTO_PROCESSING_TYPES;
+const { SUCCESS, SIGNATURE_NOT_VERIFIED, FAIL_TO_READ, FAIL_TO_DECRYPT } = CRYPTO_PROCESSING_TYPES;
 
 const { CLEAR_TEXT, ENCRYPTED_AND_SIGNED, ENCRYPTED, SIGNED } = CONTACT_CARD_TYPE;
 
@@ -33,15 +26,8 @@ interface ProcessedContactData {
 }
 
 export const decrypt = async ({ Data }: ContactCard, { privateKeys }: Pick<KeysPair, 'privateKeys'>) => {
-    let message;
     try {
-        message = await getMessage(Data);
-    } catch (error: any) {
-        return { type: FAIL_TO_READ, error };
-    }
-
-    try {
-        const { data } = await decryptMessage({ message, privateKeys });
+        const { data } = await CryptoProxy.decryptMessage({ armoredMessage: Data, decryptionKeys: privateKeys });
 
         if (data && typeof data !== 'string') {
             throw new Error('Unknown data');
@@ -60,11 +46,11 @@ export const readSigned = async (
         if (!Signature) {
             throw new Error(c('Error').t`Missing signature`);
         }
-        const signature = await getSignature(Signature);
-        const { verified, signatureTimestamp } = await verifyMessage({
-            message: createCleartextMessage(Data),
-            publicKeys,
-            signature,
+        const { verified, signatureTimestamp } = await CryptoProxy.verifyMessage({
+            textData: Data,
+            stripTrailingSpaces: true,
+            verificationKeys: publicKeys,
+            armoredSignature: Signature,
         });
 
         if (verified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
@@ -87,24 +73,12 @@ export const readSigned = async (
 };
 
 export const decryptSigned = async ({ Data, Signature }: ContactCard, { publicKeys, privateKeys }: KeysPair) => {
-    let message;
-    let signature;
-
     try {
-        if (!Signature) {
-            return { type: FAIL_TO_LOAD, error: new Error(c('Error').t`Missing signature`) };
-        }
-        [message, signature] = await Promise.all([getMessage(Data), getSignature(Signature)]);
-    } catch (error: any) {
-        return { type: FAIL_TO_READ, error };
-    }
-
-    try {
-        const { data, verified } = await decryptMessage({
-            message,
-            privateKeys,
-            publicKeys,
-            signature,
+        const { data, verified } = await CryptoProxy.decryptMessage({
+            armoredMessage: Data,
+            decryptionKeys: privateKeys,
+            verificationKeys: publicKeys,
+            armoredSignature: Signature || undefined,
         });
 
         if (data && typeof data !== 'string') {

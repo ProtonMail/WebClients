@@ -1,45 +1,24 @@
+import { stringToUtf8Array, utf8ArrayToString } from '@proton/crypto/lib/utils';
 import {
-    decryptMessageLegacy,
-    OpenPGPKey,
-    OpenPGPSignature,
-    verifyMessage as pmcryptoVerifyMessage,
-    createMessage,
-    DecryptResultPmcrypto,
-    getKeys,
-    getMessage,
-} from 'pmcrypto';
-import processMIMESource from 'pmcrypto/lib/message/processMIME';
+    CryptoProxy,
+    PrivateKeyReference,
+    PublicKeyReference,
+    WorkerDecryptionResult,
+    WorkerProcessMIMEResult as MimeProcessResult
+} from '@proton/crypto';
 import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { getDate, getParsedHeadersFirstValue, getSender, isMIME } from '@proton/shared/lib/mail/messages';
 import { c } from 'ttag';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
-import { KeyId } from '@proton/shared/lib/contacts/keyVerifications';
-import { Address, Key } from '@proton/shared/lib/interfaces';
-import { utf8ArrayToString } from 'pmcrypto/lib/utils';
-import { AttachmentMime } from '../../models/attachment';
+import { Address } from '@proton/shared/lib/interfaces';
 import { convert } from '../attachment/attachmentConverter';
 import { MessageErrors, MessageStateWithData } from '../../logic/messages/messagesTypes';
 
 const { NOT_VERIFIED, NOT_SIGNED } = VERIFICATION_STATUS;
 
-interface DecryptBinaryResult extends DecryptResultPmcrypto {
-    data: Uint8Array;
-}
-interface MimeProcessOptions {
-    headerFilename?: string;
-    sender?: string;
-    publicKeys?: OpenPGPKey[];
-}
-interface MimeProcessResult {
-    body: string;
-    attachments: AttachmentMime[];
-    verified: VERIFICATION_STATUS;
-    encryptedSubject: string;
-    mimetype: MIME_TYPES;
-    signatures: OpenPGPSignature[];
-}
-const processMIME = processMIMESource as (options: MimeProcessOptions, data: string) => Promise<MimeProcessResult>;
+// decrypted data is always a string for legacy message, regardless of 'format' input option
+interface MaybeLegacyDecryptResult extends WorkerDecryptionResult<string | Uint8Array> {}
 
 const binaryToString = (data: Uint8Array) =>
     utf8ArrayToString(data)
@@ -52,60 +31,61 @@ export interface DecryptMessageResult {
     decryptedRawContent: Uint8Array;
     attachments?: Attachment[];
     decryptedSubject?: string;
-    signature?: OpenPGPSignature;
+    signature?: Uint8Array;
     errors?: MessageErrors;
     mimetype?: MIME_TYPES;
 }
 
 const decryptMimeMessage = async (
     message: Message,
-    privateKeys: OpenPGPKey[],
-    getAttachment?: (ID: string) => DecryptResultPmcrypto | undefined,
-    onUpdateAttachment?: (ID: string, attachment: DecryptResultPmcrypto) => void,
+    privateKeys: PrivateKeyReference[],
+    getAttachment?: (ID: string) => WorkerDecryptionResult<Uint8Array> | undefined,
+    onUpdateAttachment?: (ID: string, attachment: WorkerDecryptionResult<Uint8Array>) => void,
     password?: string
 ): Promise<DecryptMessageResult> => {
     const headerFilename = c('Encrypted Headers').t`Encrypted Headers filename`;
     const sender = getSender(message)?.Address;
 
-    let decryption: DecryptBinaryResult;
+    let decryption: MaybeLegacyDecryptResult;
     let processing: MimeProcessResult;
 
     try {
         if (!password) {
-            decryption = await decryptMessageLegacy({
-                message: message?.Body,
+            decryption = await CryptoProxy.decryptMessageLegacy({
+                armoredMessage: message?.Body,
                 messageDate: getDate(message),
-                privateKeys,
-                publicKeys: [],
+                decryptionKeys: privateKeys,
+                verificationKeys: [],
                 format: 'binary',
             });
         } else {
-            decryption = await decryptMessageLegacy({
-                message: message?.Body,
+            decryption = await CryptoProxy.decryptMessageLegacy({
+                armoredMessage: message?.Body,
                 messageDate: getDate(message),
                 passwords: [...password],
                 format: 'binary',
             });
         }
 
-        processing = await processMIME(
-            {
-                headerFilename,
-                sender,
-            },
-            binaryToString(decryption.data)
-        );
+        const decryptedStringData =
+            decryption.data instanceof Uint8Array ? binaryToString(decryption.data) : decryption.data;
+        processing = await CryptoProxy.processMIME({
+            data: decryptedStringData,
+            headerFilename,
+            sender,
+        });
 
+        const decryptedRawContent =
+            decryption.data instanceof Uint8Array ? decryption.data : stringToUtf8Array(decryption.data);
         return {
             decryptedBody: processing.body,
-            decryptedRawContent: decryption.data,
+            decryptedRawContent,
             attachments: !onUpdateAttachment
                 ? undefined
                 : convert(message, processing.attachments, 0, onUpdateAttachment),
             decryptedSubject: processing.encryptedSubject,
             signature: decryption.signatures[0],
-            mimetype: processing.mimetype,
-            errors: decryption.errors?.length ? { decryption: decryption.errors } : undefined,
+            mimetype: processing.mimetype as MIME_TYPES,
         };
     } catch (error: any) {
         return {
@@ -121,23 +101,23 @@ const decryptMimeMessage = async (
 
 const decryptLegacyMessage = async (
     message: Message,
-    privateKeys: OpenPGPKey[],
+    privateKeys: PrivateKeyReference[],
     password?: string
 ): Promise<DecryptMessageResult> => {
-    let result: DecryptBinaryResult;
+    let result: MaybeLegacyDecryptResult;
 
     try {
         if (!password) {
-            result = await decryptMessageLegacy({
-                message: message?.Body,
+            result = await CryptoProxy.decryptMessageLegacy({
+                armoredMessage: message?.Body,
                 messageDate: getDate(message),
-                privateKeys,
-                publicKeys: [],
+                decryptionKeys: privateKeys,
+                verificationKeys: [],
                 format: 'binary',
             });
         } else {
-            result = await decryptMessageLegacy({
-                message: message?.Body,
+            result = await CryptoProxy.decryptMessageLegacy({
+                armoredMessage: message?.Body,
                 messageDate: getDate(message),
                 passwords: [password],
                 format: 'binary',
@@ -150,9 +130,10 @@ const decryptLegacyMessage = async (
         } = result;
 
         // Very old messages outputs as string
-        const decryptedBody = typeof data === 'string' ? data : binaryToString(data);
+        const decryptedBody = data instanceof Uint8Array ? binaryToString(data) : data;
+        const decryptedRawContent = data instanceof Uint8Array ? data : stringToUtf8Array(data);
 
-        return { decryptedBody, decryptedRawContent: data, signature };
+        return { decryptedBody, decryptedRawContent, signature };
     } catch (error: any) {
         return {
             decryptedBody: '',
@@ -171,9 +152,9 @@ const decryptLegacyMessage = async (
  */
 export const decryptMessage = async (
     message: Message,
-    privateKeys: OpenPGPKey[],
-    getAttachment?: (ID: string) => DecryptResultPmcrypto | undefined,
-    onUpdateAttachment?: (ID: string, attachment: DecryptResultPmcrypto) => void,
+    privateKeys: PrivateKeyReference[],
+    getAttachment?: (ID: string) => WorkerDecryptionResult<Uint8Array> | undefined,
+    onUpdateAttachment?: (ID: string, attachment: WorkerDecryptionResult<Uint8Array>) => void,
     password?: string
 ): Promise<DecryptMessageResult> => {
     if (isMIME(message)) {
@@ -190,32 +171,35 @@ export const decryptMessage = async (
  */
 export const verifyMessage = async (
     decryptedRawContent: Uint8Array,
-    cryptoSignature: OpenPGPSignature | undefined,
+    cryptoSignature: Uint8Array | undefined,
     message: Message,
-    publicKeys: OpenPGPKey[]
+    publicKeys: PublicKeyReference[]
 ): Promise<{
     verified: VERIFICATION_STATUS;
-    signature?: OpenPGPSignature;
+    signature?: Uint8Array;
     verificationErrors?: Error[];
 }> => {
     try {
         let cryptoVerified: VERIFICATION_STATUS | undefined;
-        let mimeSignature: OpenPGPSignature | undefined;
+        let mimeSignature: Uint8Array | undefined;
         let mimeVerified: VERIFICATION_STATUS | undefined;
 
         const contentType = getParsedHeadersFirstValue(message, 'Content-Type');
 
         if (publicKeys.length && cryptoSignature) {
-            const cryptoVerify = await pmcryptoVerifyMessage({
-                message: createMessage(decryptedRawContent),
-                signature: cryptoSignature,
-                publicKeys,
+            const cryptoVerify = await CryptoProxy.verifyMessage({
+                binaryData: decryptedRawContent,
+                binarySignature: cryptoSignature,
+                verificationKeys: publicKeys,
             });
             cryptoVerified = cryptoVerify.verified;
         }
 
         if (contentType === MIME_TYPES.MIME) {
-            const mimeVerify = await processMIME({ publicKeys }, binaryToString(decryptedRawContent));
+            const mimeVerify = await CryptoProxy.processMIME({
+                data: binaryToString(decryptedRawContent),
+                verificationKeys: publicKeys,
+            });
             [mimeSignature] = mimeVerify.signatures;
             mimeVerified = mimeVerify.verified;
         }
@@ -247,34 +231,17 @@ export const verifyMessage = async (
  * keyFound contains the address, the key and keyIds of the key in case we need to display which key is needed to the user
  * matchingKey is the keyID of the key that we need to store in localStorage
  */
-export const getMessageDecryptionKeyFromAddress = async (address: Address, message: MessageStateWithData) => {
-    const cryptoMessage = await getMessage(message.data.Body);
-    const encryptionKeyIDs = cryptoMessage.getEncryptionKeyIds() as KeyId[];
-
-    const addressKeyIDs: { address: Address; key: Key; keyIDs: KeyId[] }[] = [];
-    await Promise.all(
-        address.Keys.map(async (key) => {
-            const compiled = await getKeys(key.PrivateKey);
-            compiled.forEach((openPGPKey) => {
-                const keyIDs = openPGPKey.getKeyIds() as KeyId[];
-                addressKeyIDs.push({ address, key, keyIDs });
-            });
-        })
-    );
-
-    let matchingKey: KeyId | undefined;
-
-    const keyFound = addressKeyIDs.find(({ keyIDs }) => {
-        return keyIDs.some((keyID) =>
-            encryptionKeyIDs.some((encryptionKeyID) => {
-                const isFound = encryptionKeyID.equals(keyID);
-                if (isFound) {
-                    matchingKey = keyID;
-                }
-                return isFound;
-            })
-        );
+export const getMessageDecryptionKeyIDFromAddress = async (address: Address, message: MessageStateWithData) => {
+    const { encryptionKeyIDs } = await CryptoProxy.getMessageInfo({
+        armoredMessage: message.data.Body,
     });
 
-    return { keyFound, matchingKey };
+    for (const { PrivateKey: armoredKey } of address.Keys) {
+        const { keyIDs: addressKeyIDs } = await CryptoProxy.getKeyInfo({ armoredKey });
+        const matchingKeyID = addressKeyIDs.find((keyID) => encryptionKeyIDs.includes(keyID));
+
+        if (matchingKeyID) {
+            return matchingKeyID;
+        }
+    }
 };

@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { c } from 'ttag';
 import { useHistory } from 'react-router';
-import { OpenPGPKey } from 'pmcrypto';
 
+import { PublicKeyReference } from '@proton/crypto';
 import { Button, Tooltip } from '@proton/components';
 import { EO_REPLY_NUM_ATTACHMENTS_LIMIT } from '@proton/shared/lib/mail/eo/constants';
 
@@ -15,7 +15,7 @@ interface Props {
     id: string;
     onAddAttachments: (files: File[]) => void;
     message: MessageState;
-    publicKeys?: OpenPGPKey[];
+    publicKeys?: PublicKeyReference[];
     outsideKey?: MessageKeys;
     numberOfReplies: number;
 }

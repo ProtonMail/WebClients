@@ -1,8 +1,6 @@
-import { enums } from 'openpgp';
-import { encryptMessage, OpenPGPKey, VERIFICATION_STATUS } from 'pmcrypto';
-
 import { decryptSigned } from '@proton/shared/lib/keys/driveKeys';
 import { FILE_CHUNK_SIZE } from '@proton/shared/lib/drive/constants';
+import { CryptoProxy, PrivateKeyReference, PublicKeyReference, VERIFICATION_STATUS } from '@proton/crypto';
 
 interface ExtendedAttributes {
     Common: {
@@ -22,8 +20,8 @@ interface ParsedExtendedAttributes {
 
 export async function ecryptFolderExtendedAttributes(
     modificationTime: Date,
-    nodePrivateKey: OpenPGPKey,
-    addressPrivateKey: OpenPGPKey
+    nodePrivateKey: PrivateKeyReference,
+    addressPrivateKey: PrivateKeyReference
 ) {
     const xattr = {
         Common: {
@@ -35,8 +33,8 @@ export async function ecryptFolderExtendedAttributes(
 
 export async function ecryptFileExtendedAttributes(
     file: File,
-    nodePrivateKey: OpenPGPKey,
-    addressPrivateKey: OpenPGPKey
+    nodePrivateKey: PrivateKeyReference,
+    addressPrivateKey: PrivateKeyReference
 ) {
     const xattr = createFileExtendedAttributes(file);
     return encryptExtendedAttributes(xattr, nodePrivateKey, addressPrivateKey);
@@ -57,23 +55,23 @@ export function createFileExtendedAttributes(file: File): ExtendedAttributes {
 
 async function encryptExtendedAttributes(
     xattr: ExtendedAttributes,
-    nodePrivateKey: OpenPGPKey,
-    addressPrivateKey: OpenPGPKey
+    nodePrivateKey: PrivateKeyReference,
+    addressPrivateKey: PrivateKeyReference
 ) {
     const xattrString = JSON.stringify(xattr);
-    const { data } = await encryptMessage({
-        data: xattrString,
-        publicKeys: nodePrivateKey,
-        privateKeys: addressPrivateKey,
-        compression: enums.compression.zlib,
+    const { message } = await CryptoProxy.encryptMessage({
+        textData: xattrString,
+        encryptionKeys: nodePrivateKey,
+        signingKeys: addressPrivateKey,
+        compress: true,
     });
-    return data;
+    return message;
 }
 
 export async function decryptExtendedAttributes(
     encryptedXAttr: string,
-    nodePrivateKey: OpenPGPKey,
-    addressPublicKey: OpenPGPKey | OpenPGPKey[]
+    nodePrivateKey: PrivateKeyReference,
+    addressPublicKey: PublicKeyReference | PublicKeyReference[]
 ): Promise<{ xattrs: ParsedExtendedAttributes; verified: VERIFICATION_STATUS }> {
     const { data: xattrString, verified } = await decryptSigned({
         armoredMessage: encryptedXAttr,

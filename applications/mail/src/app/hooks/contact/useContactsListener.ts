@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
-import { OpenPGPKey } from 'pmcrypto';
-import { useDispatch } from 'react-redux';
+import { PublicKeyReference } from '@proton/crypto';
 import { canonizeEmail } from '@proton/shared/lib/helpers/email';
+import { useDispatch } from 'react-redux';
 import { useEventManager, useUserKeys, useCache, useContactEmails, useContactGroups } from '@proton/components';
 import { Cache } from '@proton/shared/lib/helpers/cache';
 import { CONTACT_CARD_TYPE } from '@proton/shared/lib/constants';
@@ -25,7 +25,7 @@ import { refresh } from '../../logic/contacts/contactsActions';
  */
 const processContactUpdate = async (
     contact: Contact | undefined,
-    publicKeys: OpenPGPKey[],
+    publicKeys: PublicKeyReference[],
     globalCache: Cache<string, any>,
     onResetMessageForEmails: (emails: string[]) => void
 ) => {

@@ -1,4 +1,4 @@
-import { OpenPGPKey } from 'pmcrypto';
+import { PublicKeyReference } from '@proton/crypto';
 import { Api, Recipient } from '@proton/shared/lib/interfaces';
 import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
@@ -90,7 +90,7 @@ export type EOMessage = {
     SenderName: string;
     SenderAddress: string;
     MIMEType: MIME_TYPES;
-    PublicKey?: OpenPGPKey[];
+    PublicKey?: PublicKeyReference[];
 };
 
 export type EOState = {

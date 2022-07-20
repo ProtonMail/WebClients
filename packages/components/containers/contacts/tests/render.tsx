@@ -5,36 +5,53 @@ import { RenderResult, render as originalRender } from '@testing-library/react';
 import { prepareVCardContact } from '@proton/shared/lib/contacts/encrypt';
 import { parseToVCard } from '@proton/shared/lib/contacts/vcard';
 import { CONTACT_CARD_TYPE } from '@proton/shared/lib/constants';
+import { CryptoApiInterface, CryptoProxy, VERIFICATION_STATUS } from '@proton/crypto';
 import { CacheProvider } from '../../cache';
 import ApiContext from '../../api/apiContext';
 import { NotificationsContext } from '../../notifications';
 import EventManagerContext from '../../eventManager/context';
 import ContactProvider from '../ContactProvider';
 
-jest.mock('pmcrypto', () => {
-    return {
-        signMessage: async ({ data }: { data: any }) => {
-            return { signature: data };
-        },
-        encryptMessage: async ({ data }: { data: any }) => {
-            return { data, signature: data };
-        },
-        getSignature: async (signature: any) => signature,
-        getMessage: async (message: any) => message,
-        createCleartextMessage: (data: any) => data,
-        verifyMessage: async () => {
-            return { verified: 1, signatureTimestamp: new Date() };
-        },
-        decryptMessage: async ({ message }: { message: any }) => {
-            return { data: message, verified: 1 };
-        },
-        VERIFICATION_STATUS: {
-            NOT_SIGNED: 0,
-            SIGNED_AND_VALID: 1,
-            SIGNED_AND_INVALID: 2,
-        },
-    };
-});
+// probably better to instead let the tests explicitly set the crypto proxy, since it needs releasing anyway to avoid memory leaks
+export const mockCryptoApi = () => {
+    const mockedApi = {
+        encryptMessage: jest.fn().mockImplementation(async ({ textData }) => ({
+            signature: `mocked signature over ${textData}`,
+            message: `${textData}`,
+        })),
+        decryptMessage: jest.fn().mockImplementation(async ({ armoredMessage }) => ({
+            data: `${armoredMessage}`,
+            verified: VERIFICATION_STATUS.SIGNED_AND_VALID,
+        })),
+        signMessage: jest
+            .fn()
+            .mockImplementation(async ({ textData }) => ({ signature: `mocked signature over ${textData}` })),
+        verifyMessage: jest.fn().mockImplementation(async () => ({
+            verified: VERIFICATION_STATUS.SIGNED_AND_VALID,
+            signatureTimestamp: new Date(),
+        })),
+    } as any as CryptoApiInterface;
+
+    CryptoProxy.setEndpoint(mockedApi);
+};
+
+export const mockedCryptoApi = {
+    encryptMessage: jest.fn().mockImplementation(async ({ textData }) => ({
+        signature: `mocked signature over ${textData}`,
+        message: `${textData}`,
+    })),
+    decryptMessage: jest.fn().mockImplementation(async ({ armoredMessage }) => ({
+        data: `${armoredMessage}`,
+        verified: VERIFICATION_STATUS.SIGNED_AND_VALID,
+    })),
+    signMessage: jest
+        .fn()
+        .mockImplementation(async ({ textData }) => ({ signature: `mocked signature over ${textData}` })),
+    verifyMessage: jest.fn().mockImplementation(async () => ({
+        verified: VERIFICATION_STATUS.SIGNED_AND_VALID,
+        signatureTimestamp: new Date(),
+    })),
+} as any as CryptoApiInterface;
 
 window.ResizeObserver = jest.fn(() => ({
     observe: jest.fn(),

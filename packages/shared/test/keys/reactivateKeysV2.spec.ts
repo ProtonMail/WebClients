@@ -1,4 +1,4 @@
-import { OpenPGPKey } from 'pmcrypto';
+import { PrivateKeyReference } from '@proton/crypto';
 import { User as tsUser, Address as tsAddress, Key, User, DecryptedKey, Address } from '../../lib/interfaces';
 import {
     getHasMigratedAddressKey,
@@ -13,7 +13,7 @@ const DEFAULT_KEYPASSWORD = '1';
 
 interface FullKey {
     key: {
-        privateKey: OpenPGPKey;
+        privateKey: PrivateKeyReference;
     };
     Key: Key;
     uploadedKey?: boolean;

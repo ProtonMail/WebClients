@@ -1,7 +1,7 @@
 import { ReadableStream } from 'web-streams-polyfill';
-import { decryptMessage, getMessage, getSignature, VERIFICATION_STATUS } from 'pmcrypto';
-
-import { getStreamMessage } from '@proton/shared/lib/keys/driveKeys';
+import { CryptoProxy, VERIFICATION_STATUS } from '@proton/crypto';
+// @ts-ignore missing `toStream` TS definitions
+import { readToEnd, toStream } from '@openpgp/web-stream-tools';
 
 import { LinkDownload, DownloadCallbacks, DownloadStreamControls, DecryptFileKeys } from '../interface';
 import initDownloadBlocks from './downloadBlocks';
@@ -29,31 +29,23 @@ export default function initDownloadLinkFile(link: LinkDownload, callbacks: Down
             keysPromise = callbacks.getKeys(abortSignal, link.shareId, link.linkId);
         }
 
-        const [keys, signatureMessage] = await Promise.all([keysPromise, getMessage(encSignature)]);
-        const decryptedSignature = await decryptMessage({
-            privateKeys: keys.privateKey,
-            message: signatureMessage,
+        const keys = await keysPromise;
+        const { data: decryptedSignature } = await CryptoProxy.decryptMessage({
+            armoredMessage: encSignature,
+            decryptionKeys: keys.privateKey,
             format: 'binary',
         });
-        const [message, signature] = await Promise.all([
-            getStreamMessage(stream),
-            getSignature(decryptedSignature.data),
-        ]);
-        // When streaming is used, verified is actually Promise.
-        const { data, verified: verifiedPromise } = await decryptMessage({
-            message,
-            signature,
+
+        const { data, verified } = await CryptoProxy.decryptMessage({
+            binaryMessage: await readToEnd(stream),
+            binarySignature: decryptedSignature,
             sessionKeys: keys.sessionKeys,
-            publicKeys: keys.addressPublicKeys,
-            streaming: 'web',
+            verificationKeys: keys.addressPublicKeys,
             format: 'binary',
         });
         return {
-            data,
-            verifiedPromise,
-        } as unknown as {
-            data: ReadableStream<Uint8Array>;
-            verifiedPromise: Promise<VERIFICATION_STATUS>;
+            data: toStream(data) as ReadableStream<Uint8Array>,
+            verifiedPromise: Promise.resolve(verified), // TODO lara/michal: refactor this since we no longer use streaming on decryption, hence verified is no longer a promise
         };
     };
 

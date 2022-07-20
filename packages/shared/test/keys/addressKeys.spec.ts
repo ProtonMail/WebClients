@@ -15,7 +15,7 @@ describe('address keys', () => {
             Token: result.encryptedToken,
             Signature: result.signature,
             privateKeys: privateKey,
-            publicKeys: privateKey.toPublic(),
+            publicKeys: privateKey,
         });
         expect(decryptedResult).toEqual(result.token);
     });
@@ -38,14 +38,14 @@ describe('address keys', () => {
             Token: result.encryptedToken,
             Signature: result.signature,
             privateKeys: privateKey,
-            publicKeys: privateKey.toPublic(),
+            publicKeys: privateKey,
         });
         expect(decryptedResult).toEqual(result.token);
         const decryptedResult2 = await decryptAddressKeyToken({
             Token: result.encryptedToken,
             Signature: result.organizationSignature,
             privateKeys: organizationKey,
-            publicKeys: organizationKey.toPublic(),
+            publicKeys: organizationKey,
         });
         expect(decryptedResult2).toEqual(result.token);
     });

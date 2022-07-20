@@ -1,4 +1,5 @@
-import { clearAll, render, api, prepareContact } from '../tests/render';
+import { CryptoProxy } from '@proton/crypto';
+import { clearAll, render, api, prepareContact, mockedCryptoApi } from '../tests/render';
 import ContactDetailsModal, { ContactDetailsProps } from './ContactDetailsModal';
 
 describe('ContactDetailsModal', () => {
@@ -15,7 +16,15 @@ describe('ContactDetailsModal', () => {
         onSignatureError: jest.fn(),
     };
 
+    beforeAll(() => {
+        CryptoProxy.setEndpoint(mockedCryptoApi);
+    });
+
     beforeEach(clearAll);
+
+    afterAll(async () => {
+        await CryptoProxy.releaseEndpoint();
+    });
 
     it('should show basic contact informations', async () => {
         const vcard = `BEGIN:VCARD

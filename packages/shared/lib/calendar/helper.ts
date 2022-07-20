@@ -1,6 +1,7 @@
 import getRandomValues from '@proton/get-random-values';
-import { arrayToHexString, binaryStringToArray, unsafeSHA1 } from 'pmcrypto';
 import { c } from 'ttag';
+import { CryptoProxy } from '@proton/crypto';
+import { arrayToHexString, binaryStringToArray } from '@proton/crypto/lib/utils';
 import { API_CODES } from '../constants';
 import { getDaysInMonth } from '../date-fns-utc';
 import { encodeBase64URL, uint8ArrayToString } from '../helpers/encoding';
@@ -39,7 +40,9 @@ export const generateProtonCalendarUID = () => {
 };
 
 export const generateVeventHashUID = async (binaryString: string, uid = '') => {
-    const hash = arrayToHexString(await unsafeSHA1(binaryStringToArray(binaryString)));
+    const hash = arrayToHexString(
+        await CryptoProxy.computeHash({ algorithm: 'unsafeSHA1', data: binaryStringToArray(binaryString) })
+    );
     if (!uid) {
         return `${HASH_UID_PREFIX}${hash}`;
     }

@@ -1,4 +1,4 @@
-import { OpenPGPKey, signMessage } from 'pmcrypto';
+import { CryptoProxy, PrivateKeyReference } from '@proton/crypto';
 import { CONTACT_CARD_TYPE } from '../constants';
 import { ContactCard } from '../interfaces/contacts';
 
@@ -9,14 +9,19 @@ import { ContactCard } from '../interfaces/contacts';
  */
 interface Params {
     contactCards: ContactCard[];
-    privateKeys: OpenPGPKey[];
+    privateKeys: PrivateKeyReference[];
 }
 export const resignCards = async ({ contactCards, privateKeys }: Params): Promise<ContactCard[]> => {
     const signedCards = contactCards.filter((card) => card.Type === CONTACT_CARD_TYPE.SIGNED);
     const otherCards = contactCards.filter((card) => card.Type !== CONTACT_CARD_TYPE.SIGNED);
     const reSignedCards = await Promise.all(
         signedCards.map(async ({ Data }) => {
-            const { signature } = await signMessage({ data: Data, privateKeys, armor: true, detached: true });
+            const signature = await CryptoProxy.signMessage({
+                textData: Data,
+                stripTrailingSpaces: true,
+                signingKeys: privateKeys,
+                detached: true,
+            });
             return {
                 Type: CONTACT_CARD_TYPE.SIGNED,
                 Data,

@@ -1,18 +1,27 @@
 import { Address } from '@proton/shared/lib/interfaces';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
-import { fireEvent } from '@testing-library/dom';
+import { fireEvent, waitFor } from '@testing-library/dom';
 import { render, tick } from '../../../helpers/test/render';
 import ContactResignModal from './ContactResignModal';
 import { addKeysToUserKeysCache } from '../../../helpers/test/crypto';
 import { contactID, receiver, sender, setupContactsForPinKeys } from '../../../helpers/test/pinKeys';
 import { addToCache, minimalCache } from '../../../helpers/test/cache';
 import { addApiMock } from '../../../helpers/test/api';
+import { setupCryptoProxyForTesting, releaseCryptoProxy } from '../../../helpers/test/crypto';
 
 const contacts = [{ contactID: contactID }];
 const title = 'Contact Resign Modal title';
 const children = 'Contact Resign Modal children';
 
 describe('Contact resign modal', () => {
+    beforeAll(async () => {
+        await setupCryptoProxyForTesting();
+    });
+
+    afterAll(async () => {
+        await releaseCryptoProxy();
+    });
+
     const setup = async (hasFingerprint: boolean) => {
         minimalCache();
         addToCache('Addresses', [{ Email: receiver.Address } as Address]);
@@ -58,7 +67,7 @@ describe('Contact resign modal', () => {
         getByText(children);
 
         // Email rows are rendered (Email + fingerprints)
-        getByText(`${sender.Address}:`);
+        await waitFor(() => getByText(`${sender.Address}:`));
         const expectedFingerPrint = senderKeys.publicKeys[0].getFingerprint();
         getByText(expectedFingerPrint);
 

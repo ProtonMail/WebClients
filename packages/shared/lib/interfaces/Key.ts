@@ -1,4 +1,4 @@
-import { OpenPGPKey } from 'pmcrypto';
+import { PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
 import { RequireSome } from './utils';
 
 export interface KeyWithRecoverySecret extends Key {
@@ -26,13 +26,13 @@ export interface Key {
 export type AddressKey = RequireSome<Key, 'Flags'>;
 
 export interface KeyPair {
-    privateKey: OpenPGPKey;
-    publicKey: OpenPGPKey;
+    privateKey: PrivateKeyReference;
+    publicKey: PublicKeyReference;
 }
 
 export interface KeysPair {
-    privateKeys: OpenPGPKey[];
-    publicKeys: OpenPGPKey[];
+    privateKeys: PrivateKeyReference[];
+    publicKeys: PublicKeyReference[];
 }
 
 export interface DecryptedKey extends KeyPair {
@@ -41,8 +41,7 @@ export interface DecryptedKey extends KeyPair {
 
 export interface InactiveKey {
     Key: Key;
-    privateKey?: OpenPGPKey;
-    publicKey?: OpenPGPKey;
+    publicKey?: PublicKeyReference;
     fingerprint?: string;
 }
 

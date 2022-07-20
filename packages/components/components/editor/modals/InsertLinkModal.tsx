@@ -12,7 +12,13 @@ interface Props extends ModalLinkProps {
 }
 
 const InsertLinkModal = ({ editor, createLink, modalStateProps, mailSettings }: Props) => {
-    const values = useMemo<Pick<InsertLinkModalProps, 'cursorLinkElement' | 'selectionRangeFragment'>>(() => {
+    const values = useMemo<
+        Pick<InsertLinkModalProps, 'cursorLinkElement' | 'selectionRangeFragment'> | undefined
+    >(() => {
+        if (editor.isDisposed()) {
+            return;
+        }
+
         if (!editor.hasFocus()) {
             editor.focus();
         }
@@ -30,7 +36,7 @@ const InsertLinkModal = ({ editor, createLink, modalStateProps, mailSettings }: 
         createLink(editor, url, altAttribute, textToDisplay);
     };
 
-    return (
+    return values ? (
         <InsertLinkModalComponent
             selectionRangeFragment={values.selectionRangeFragment}
             cursorLinkElement={values.cursorLinkElement}
@@ -38,7 +44,7 @@ const InsertLinkModal = ({ editor, createLink, modalStateProps, mailSettings }: 
             modalStateProps={modalStateProps}
             mailSettings={mailSettings}
         />
-    );
+    ) : null;
 };
 
 export default InsertLinkModal;

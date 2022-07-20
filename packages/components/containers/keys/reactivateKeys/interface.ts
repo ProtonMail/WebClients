@@ -1,12 +1,9 @@
-import { OpenPGPKey } from 'pmcrypto';
 import { Address, DecryptedKey, Key, UserModel } from '@proton/shared/lib/interfaces';
 
 export interface KeyReactivationRequestStateData {
     id: string;
     Key: Key;
-    key?: OpenPGPKey;
     fingerprint: string;
-    uploadedPrivateKey?: OpenPGPKey;
     result?: 'ok' | Error;
 }
 

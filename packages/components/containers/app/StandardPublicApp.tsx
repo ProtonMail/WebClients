@@ -1,7 +1,7 @@
 import { ReactNode, useEffect, useState } from 'react';
 import { c } from 'ttag';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import { loadOpenPGP } from '@proton/shared/lib/openpgp';
+import { loadCryptoWorker } from '@proton/shared/lib/helpers/setupCryptoWorker';
 import { loadDateLocale, loadLocale } from '@proton/shared/lib/i18n/loadLocale';
 import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 import { getBrowserLocale, getClosestLocaleCode, getClosestLocaleMatch } from '@proton/shared/lib/i18n/helper';
@@ -15,11 +15,10 @@ import { wrapUnloadError } from './errorRefresh';
 
 interface Props {
     locales?: TtagLocaleMap;
-    openpgpConfig?: any;
     children: ReactNode;
 }
 
-const StandardPublicApp = ({ locales = {}, openpgpConfig, children }: Props) => {
+const StandardPublicApp = ({ locales = {}, children }: Props) => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<{ message?: string } | null>(null);
     const history = useHistory();
@@ -34,7 +33,7 @@ const StandardPublicApp = ({ locales = {}, openpgpConfig, children }: Props) => 
                 getClosestLocaleMatch(languageParams || languageCookie || '', locales) ||
                 getClosestLocaleCode(browserLocale, locales);
             return Promise.all([
-                loadOpenPGP(openpgpConfig),
+                loadCryptoWorker(),
                 loadLocale(localeCode, locales),
                 loadDateLocale(localeCode, browserLocale),
             ]);

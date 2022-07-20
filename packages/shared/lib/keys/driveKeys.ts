@@ -1,78 +1,71 @@
-import {
-    decryptMessage,
-    getMessage,
-    encryptMessage,
-    generateKey,
-    stringToUtf8Array,
-    signMessage,
-    arrayToHexString,
-    SHA256,
-    OpenPGPKey,
-    SessionKey,
-} from 'pmcrypto';
-import { openpgp } from 'pmcrypto/lib/openpgp';
-import { ReadableStream as PolyfillReadableStream } from 'web-streams-polyfill';
-import { createReadableStreamWrapper } from '@mattiasbuelens/web-streams-adapter';
-
+import { stringToUtf8Array, arrayToHexString } from '@proton/crypto/lib/utils';
+import { CryptoProxy, PrivateKeyReference, PublicKeyReference, SessionKey } from '@proton/crypto';
 import { ENCRYPTION_CONFIGS, ENCRYPTION_TYPES } from '../constants';
 import { generatePassphrase } from './calendarKeys';
 import { createSessionKey, getEncryptedSessionKey } from '../calendar/encrypt';
 import { uint8ArrayToBase64String } from '../helpers/encoding';
 
-const toPolyfillReadable = createReadableStreamWrapper(PolyfillReadableStream);
-
 interface UnsignedEncryptionPayload {
     message: string | Uint8Array;
-    publicKey: OpenPGPKey;
+    publicKey: PublicKeyReference;
 }
 
-export const sign = async (data: string | Uint8Array, privateKeys: OpenPGPKey | OpenPGPKey[]) => {
-    const { signature } = await signMessage({
-        data,
-        privateKeys,
-        armor: true,
+export const sign = async (data: string | Uint8Array, privateKeys: PrivateKeyReference | PrivateKeyReference[]) => {
+    const dataType = data instanceof Uint8Array ? 'binaryData' : 'textData';
+    const signature = await CryptoProxy.signMessage({
+        [dataType]: data,
+        stripTrailingSpaces: dataType === 'textData',
+        signingKeys: privateKeys,
         detached: true,
     });
     return signature;
 };
 
 export const encryptUnsigned = async ({ message, publicKey }: UnsignedEncryptionPayload) => {
-    const { data: encryptedToken } = await encryptMessage({
-        data: message,
-        publicKeys: publicKey,
+    const dataType = message instanceof Uint8Array ? 'binaryData' : 'textData';
+    const { message: encryptedToken } = await CryptoProxy.encryptMessage({
+        [dataType]: message,
+        stripTrailingSpaces: dataType === 'textData',
+        encryptionKeys: publicKey,
     });
-    return encryptedToken as string;
+    return encryptedToken;
 };
 
-export const encryptName = async (name: string, parentPublicKey: OpenPGPKey, addressPrivateKey: OpenPGPKey) => {
-    const { data: Name } = await encryptMessage({
-        data: name,
-        publicKeys: parentPublicKey,
-        privateKeys: addressPrivateKey,
+export const encryptName = async (
+    name: string,
+    parentPublicKey: PublicKeyReference,
+    addressPrivateKey: PrivateKeyReference
+) => {
+    const { message: Name } = await CryptoProxy.encryptMessage({
+        textData: name,
+        stripTrailingSpaces: true,
+        encryptionKeys: parentPublicKey,
+        signingKeys: addressPrivateKey,
     });
 
     return Name;
 };
 
-export const getStreamMessage = (stream: ReadableStream<Uint8Array> | PolyfillReadableStream<Uint8Array>) => {
-    return openpgp.message.read(toPolyfillReadable(stream) as ReadableStream<Uint8Array>);
-};
-
 interface UnsignedDecryptionPayload {
-    armoredMessage: string | Uint8Array;
-    privateKey: OpenPGPKey | OpenPGPKey[];
+    armoredMessage: string;
+    privateKey: PrivateKeyReference | PrivateKeyReference[];
 }
 
-interface SignedDecryptionPayload extends UnsignedDecryptionPayload {
-    publicKey: OpenPGPKey | OpenPGPKey[];
-    format?: 'utf8' | 'binary';
+interface SignedDecryptionPayload<F extends 'utf8' | 'binary'> extends UnsignedDecryptionPayload {
+    publicKey: PublicKeyReference | PublicKeyReference[];
+    format?: F;
 }
 
-export const decryptSigned = async ({ armoredMessage, privateKey, publicKey, format }: SignedDecryptionPayload) => {
-    const { data, verified } = await decryptMessage({
-        message: await getMessage(armoredMessage),
-        privateKeys: privateKey,
-        publicKeys: publicKey,
+export const decryptSigned = async <F extends 'utf8' | 'binary' = 'utf8'>({
+    armoredMessage,
+    privateKey,
+    publicKey,
+    format,
+}: SignedDecryptionPayload<F>) => {
+    const { data, verified } = await CryptoProxy.decryptMessage({
+        armoredMessage,
+        decryptionKeys: privateKey,
+        verificationKeys: publicKey,
         format,
     });
     return { data, verified };
@@ -82,23 +75,25 @@ export const decryptSigned = async ({ armoredMessage, privateKey, publicKey, for
  * Decrypts unsigned armored message, in the context of drive it's share's passphrase and folder's contents.
  */
 export const decryptUnsigned = async ({ armoredMessage, privateKey }: UnsignedDecryptionPayload) => {
-    const { data: decryptedMessage } = await decryptMessage({
-        message: await getMessage(armoredMessage),
-        privateKeys: privateKey,
+    const { data: decryptedMessage } = await CryptoProxy.decryptMessage({
+        armoredMessage,
+        decryptionKeys: privateKey,
     });
 
-    return decryptedMessage as string;
+    return decryptedMessage;
 };
 
 export const generateDriveKey = async (rawPassphrase: string) => {
     const encryptionConfigs = ENCRYPTION_CONFIGS[ENCRYPTION_TYPES.CURVE25519];
-    const { key: privateKey, privateKeyArmored } = await generateKey({
-        userIds: [{ name: 'Drive key' }],
-        passphrase: rawPassphrase,
+    const privateKey = await CryptoProxy.generateKey({
+        userIDs: [{ name: 'Drive key' }],
         ...encryptionConfigs,
     });
 
-    await privateKey.decrypt(rawPassphrase);
+    const privateKeyArmored = await CryptoProxy.exportPrivateKey({
+        privateKey,
+        passphrase: rawPassphrase,
+    });
 
     return { privateKey, privateKeyArmored };
 };
@@ -117,44 +112,41 @@ export const generateLookupHash = async (name: string, parentHashKey: Uint8Array
     return arrayToHexString(new Uint8Array(signature));
 };
 
-export const generateNodeHashKey = async (publicKey: OpenPGPKey, addressPrivateKey: OpenPGPKey) => {
-    const { data: NodeHashKey } = await encryptMessage({
+export const generateNodeHashKey = async (publicKey: PublicKeyReference, addressPrivateKey: PrivateKeyReference) => {
+    const { message: NodeHashKey } = await CryptoProxy.encryptMessage({
         // Once all clients can use non-ascii bytes, switch to simple
         // generating of random bytes without encoding it into base64:
         //import getRandomValues from '@proton/get-random-values';
-        //data: getRandomValues(new Uint8Array(32)),
-        data: generatePassphrase(),
-        publicKeys: publicKey,
-        privateKeys: addressPrivateKey,
-        detached: false,
+        //binaryData: getRandomValues(new Uint8Array(32)),
+        textData: generatePassphrase(),
+        encryptionKeys: publicKey,
+        signingKeys: addressPrivateKey,
     });
 
     return { NodeHashKey };
 };
 
 export const encryptPassphrase = async (
-    parentKey: OpenPGPKey,
-    addressKey: OpenPGPKey = parentKey,
+    parentKey: PrivateKeyReference,
+    addressKey: PrivateKeyReference = parentKey,
     rawPassphrase = generatePassphrase(),
     passphraseSessionKey?: SessionKey
 ) => {
-    const {
-        data: NodePassphrase,
-        signature: NodePassphraseSignature,
+    const sessionKey = passphraseSessionKey
+        ? passphraseSessionKey
+        : await CryptoProxy.generateSessionKey({ recipientKeys: parentKey });
+    const { message: NodePassphrase, signature: NodePassphraseSignature } = await CryptoProxy.encryptMessage({
+        textData: rawPassphrase,
         sessionKey,
-    } = await encryptMessage({
-        data: rawPassphrase,
-        privateKeys: addressKey,
-        publicKeys: parentKey.toPublic(),
+        signingKeys: addressKey,
+        encryptionKeys: parentKey,
         detached: true,
-        returnSessionKey: true,
-        ...(passphraseSessionKey && { sessionKey: passphraseSessionKey }),
     });
 
     return { NodePassphrase, NodePassphraseSignature, sessionKey };
 };
 
-export const generateNodeKeys = async (parentKey: OpenPGPKey, addressKey: OpenPGPKey = parentKey) => {
+export const generateNodeKeys = async (parentKey: PrivateKeyReference, addressKey: PrivateKeyReference = parentKey) => {
     const rawPassphrase = generatePassphrase();
     const [{ NodePassphrase, NodePassphraseSignature, sessionKey }, { privateKey, privateKeyArmored: NodeKey }] =
         await Promise.all([encryptPassphrase(parentKey, addressKey, rawPassphrase), generateDriveKey(rawPassphrase)]);
@@ -163,12 +155,12 @@ export const generateNodeKeys = async (parentKey: OpenPGPKey, addressKey: OpenPG
 };
 
 export const generateContentHash = async (content: Uint8Array) => {
-    const data = await SHA256(content);
+    const data = await CryptoProxy.computeHash({ algorithm: 'SHA256', data: content });
     return { HashType: 'sha256', BlockHash: data };
 };
 
-export const generateContentKeys = async (nodeKey: OpenPGPKey) => {
-    const publicKey = nodeKey.toPublic();
+export const generateContentKeys = async (nodeKey: PrivateKeyReference) => {
+    const publicKey: PublicKeyReference = nodeKey; // no need to get a separate public key reference in this case
     const sessionKey = await createSessionKey(publicKey);
     const sessionKeySignature = await sign(sessionKey.data, nodeKey);
     const contentKeys = await getEncryptedSessionKey(sessionKey, publicKey);
@@ -176,7 +168,7 @@ export const generateContentKeys = async (nodeKey: OpenPGPKey) => {
     return { sessionKey, ContentKeyPacket, ContentKeyPacketSignature: sessionKeySignature };
 };
 
-export const generateDriveBootstrap = async (addressPrivateKey: OpenPGPKey) => {
+export const generateDriveBootstrap = async (addressPrivateKey: PrivateKeyReference) => {
     const {
         NodeKey: ShareKey,
         NodePassphrase: SharePassphrase,
@@ -191,7 +183,7 @@ export const generateDriveBootstrap = async (addressPrivateKey: OpenPGPKey) => {
         NodePassphraseSignature: FolderPassphraseSignature,
     } = await generateNodeKeys(sharePrivateKey, addressPrivateKey);
 
-    const FolderName = await encryptName('root', sharePrivateKey.toPublic(), addressPrivateKey);
+    const FolderName = await encryptName('root', sharePrivateKey, addressPrivateKey);
 
     return {
         bootstrap: {

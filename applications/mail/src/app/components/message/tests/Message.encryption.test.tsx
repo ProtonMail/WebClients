@@ -14,6 +14,7 @@ import {
     addKeysToUserKeysCache,
     assertIcon,
 } from '../../../helpers/test/helper';
+import { setupCryptoProxyForTesting, releaseCryptoProxy } from '../../../helpers/test/crypto';
 import { constructMime } from '../../../helpers/send/sendMimeBuilder';
 import { parseInDiv } from '../../../helpers/dom';
 import { X_PM_HEADERS } from '../../../models/crypto';
@@ -35,6 +36,8 @@ describe('MessageView encryption', () => {
     let publicPrivateKey: MessageKeys;
 
     beforeAll(async () => {
+        await setupCryptoProxyForTesting();
+
         toKeys = await generateKeys('me', toAddress);
         fromKeys = await generateKeys('someone', fromAddress);
         otherKeys = await generateKeys('other', otherAddress);
@@ -44,6 +47,10 @@ describe('MessageView encryption', () => {
             publicKeys: toKeys.publicKeys,
             privateKeys: toKeys.privateKeys,
         };
+    });
+
+    afterAll(async () => {
+        await releaseCryptoProxy();
     });
 
     afterEach(clearAll);

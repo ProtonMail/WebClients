@@ -1,6 +1,6 @@
-import { OpenPGPKey, signMessage } from 'pmcrypto';
 import { c } from 'ttag';
 import isTruthy from '@proton/utils/isTruthy';
+import { PrivateKeyReference, PublicKeyReference, CryptoProxy } from '@proton/crypto';
 import { CONTACT_CARD_TYPE } from '../constants';
 import { CANONIZE_SCHEME, canonizeEmail } from '../helpers/email';
 import { generateProtonWebUID } from '../helpers/uid';
@@ -21,9 +21,9 @@ interface ParamsUpdate {
     contactCards: ContactCard[];
     emailAddress: string;
     isInternal: boolean;
-    bePinnedPublicKey: OpenPGPKey;
-    publicKeys: OpenPGPKey[];
-    privateKeys: OpenPGPKey[];
+    bePinnedPublicKey: PublicKeyReference;
+    publicKeys: PublicKeyReference[];
+    privateKeys: PrivateKeyReference[];
 }
 export const pinKeyUpdateContact = async ({
     contactCards,
@@ -77,7 +77,7 @@ export const pinKeyUpdateContact = async ({
         },
     }));
     const newKeyProperties = [
-        toKeyProperty({ publicKey: bePinnedPublicKey, group: emailGroup, index: 0 }),
+        await toKeyProperty({ publicKey: bePinnedPublicKey, group: emailGroup, index: 0 }),
         ...shiftedPrefKeyProperties,
     ];
     const untouchedSignedProperties = signedProperties.filter(
@@ -86,8 +86,13 @@ export const pinKeyUpdateContact = async ({
     const newSignedProperties = [...untouchedSignedProperties, ...newKeyProperties];
 
     // sign the new properties
-    const toSignVcard = vCardPropertiesToICAL(newSignedProperties).toString();
-    const { signature } = await signMessage({ data: toSignVcard, privateKeys, armor: true, detached: true });
+    const toSignVcard: string = vCardPropertiesToICAL(newSignedProperties).toString();
+    const signature = await CryptoProxy.signMessage({
+        textData: toSignVcard,
+        stripTrailingSpaces: true,
+        signingKeys: privateKeys,
+        detached: true,
+    });
     const newSignedCard = {
         Type: CONTACT_CARD_TYPE.SIGNED,
         Data: toSignVcard,
@@ -104,8 +109,8 @@ interface ParamsCreate {
     emailAddress: string;
     name?: string;
     isInternal: boolean;
-    bePinnedPublicKey: OpenPGPKey;
-    privateKeys: OpenPGPKey[];
+    bePinnedPublicKey: PublicKeyReference;
+    privateKeys: PrivateKeyReference[];
 }
 export const pinKeyCreateContact = async ({
     emailAddress,
@@ -120,11 +125,16 @@ export const pinKeyCreateContact = async ({
         { field: 'email', value: emailAddress, group: 'item1', uid: createContactPropertyUid() },
         !isInternal && { field: 'x-pm-encrypt', value: 'true', group: 'item1', uid: createContactPropertyUid() },
         !isInternal && { field: 'x-pm-sign', value: 'true', group: 'item1', uid: createContactPropertyUid() },
-        toKeyProperty({ publicKey: bePinnedPublicKey, group: 'item1', index: 0 }),
+        await toKeyProperty({ publicKey: bePinnedPublicKey, group: 'item1', index: 0 }),
     ].filter(isTruthy);
     // sign the properties
-    const toSignVcard = vCardPropertiesToICAL(properties).toString();
-    const { signature } = await signMessage({ data: toSignVcard, privateKeys, armor: true, detached: true });
+    const toSignVcard: string = vCardPropertiesToICAL(properties).toString();
+    const signature = await CryptoProxy.signMessage({
+        textData: toSignVcard,
+        stripTrailingSpaces: true,
+        signingKeys: privateKeys,
+        detached: true,
+    });
     const newSignedCard = {
         Type: CONTACT_CARD_TYPE.SIGNED,
         Data: toSignVcard,

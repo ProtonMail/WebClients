@@ -1,5 +1,5 @@
 import { describe, it } from 'mocha';
-import { binaryStringToArray } from 'pmcrypto';
+import { binaryStringToArray } from '@proton/crypto/lib/utils';
 import assert from 'assert';
 
 import '../test/setup';

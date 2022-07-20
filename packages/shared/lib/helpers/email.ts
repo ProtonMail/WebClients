@@ -217,3 +217,8 @@ export const getEmailTo = (str: string, decode?: boolean) => {
         return str;
     }
 };
+
+export function extractEmailFromUserID(userID: string): string | undefined {
+    const [, email] = /<([^>]*)>/.exec(userID) || [];
+    return email;
+}

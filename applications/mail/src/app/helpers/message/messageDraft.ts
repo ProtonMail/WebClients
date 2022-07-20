@@ -19,7 +19,7 @@ import {
 } from '@proton/shared/lib/mail/messages';
 import { generateUID } from '@proton/components';
 import { c } from 'ttag';
-import { DecryptResultPmcrypto } from 'pmcrypto';
+import { WorkerDecryptionResult } from '@proton/crypto';
 import { defaultFontStyle } from '@proton/components/components/editor/helpers';
 import { MESSAGE_ACTIONS } from '../../constants';
 import { getFromAddress } from '../addresses';
@@ -190,7 +190,7 @@ export const createNewDraft = (
     mailSettings: MailSettings,
     userSettings: UserSettings,
     addresses: Address[],
-    getAttachment: (ID: string) => DecryptResultPmcrypto | undefined,
+    getAttachment: (ID: string) => WorkerDecryptionResult<Uint8Array> | undefined,
     isOutside = false
 ): PartialMessageState => {
     const MIMEType = isOutside

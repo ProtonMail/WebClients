@@ -1,4 +1,4 @@
-import { SessionKey } from 'pmcrypto';
+import { SessionKey } from '@proton/crypto';
 import { Address } from '../Address';
 import { VcalAttendeeProperty, VcalVeventComponent } from './VcalModel';
 import { EVENT_VERIFICATION_STATUS } from '../../calendar/constants';

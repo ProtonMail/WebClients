@@ -1,4 +1,4 @@
-import { encryptPrivateKey, OpenPGPKey } from 'pmcrypto';
+import { CryptoProxy, PrivateKeyReference, toPublicKeyReference } from '@proton/crypto';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 import { User, Address, OrganizationKey, DecryptedKey, SignedKeyList, Member, Api, Organization } from '../interfaces';
@@ -70,20 +70,20 @@ interface AddressesKeys {
 
 export async function getAddressKeysMigrationPayload(
     addressesKeys: AddressesKeys[],
-    userKey: OpenPGPKey,
-    organizationKey: OpenPGPKey
+    userKey: PrivateKeyReference,
+    organizationKey: PrivateKeyReference
 ): Promise<MigrationOrgResult>;
 
 export async function getAddressKeysMigrationPayload(
     addressesKeys: AddressesKeys[],
-    userKey: OpenPGPKey,
-    organizationKey?: OpenPGPKey
+    userKey: PrivateKeyReference,
+    organizationKey?: PrivateKeyReference
 ): Promise<MigrationResult>;
 
 export async function getAddressKeysMigrationPayload(
     addressesKeys: AddressesKeys[],
-    userKey: OpenPGPKey,
-    organizationKey?: OpenPGPKey
+    userKey: PrivateKeyReference,
+    organizationKey?: PrivateKeyReference
 ) {
     const result = await Promise.all<
         | {
@@ -104,7 +104,10 @@ export async function getAddressKeysMigrationPayload(
                         userKey,
                         organizationKey
                     );
-                    const privateKeyArmored = await encryptPrivateKey(privateKey, token);
+                    const privateKeyArmored = await CryptoProxy.exportPrivateKey({
+                        privateKey,
+                        passphrase: token,
+                    });
                     return {
                         encryptedToken,
                         signature,
@@ -115,15 +118,14 @@ export async function getAddressKeysMigrationPayload(
                     };
                 })
             );
-            const activeKeys = await getActiveKeys(
-                address.SignedKeyList,
-                address.Keys,
-                migratedKeys.map(({ ID, privateKey }) => ({
+            const migratedDecryptedKeys = await Promise.all(
+                migratedKeys.map(async ({ ID, privateKey }) => ({
                     ID,
                     privateKey,
-                    publicKey: privateKey.toPublic(),
+                    publicKey: await toPublicKeyReference(privateKey),
                 }))
             );
+            const activeKeys = await getActiveKeys(address.SignedKeyList, address.Keys, migratedDecryptedKeys);
             return {
                 Address: address,
                 SignedKeyList: activeKeys.length > 0 ? await getSignedKeyList(activeKeys) : (undefined as any),

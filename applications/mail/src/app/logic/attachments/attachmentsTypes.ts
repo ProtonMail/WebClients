@@ -1,4 +1,4 @@
+import { WorkerDecryptionResult } from '@proton/crypto';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
-import { DecryptResultPmcrypto } from 'pmcrypto';
 
-export type AttachmentsState = SimpleMap<DecryptResultPmcrypto>;
+export type AttachmentsState = SimpleMap<WorkerDecryptionResult<Uint8Array>>;

@@ -1,8 +1,8 @@
-import { decryptMessage, VERIFICATION_STATUS } from 'pmcrypto';
 import { ReadableStream } from 'web-streams-polyfill';
+// @ts-ignore missing `toStream` TS defs
+import { readToEnd, toStream } from '@openpgp/web-stream-tools';
 
-import { getStreamMessage } from '@proton/shared/lib/keys/driveKeys';
-
+import { CryptoProxy, VERIFICATION_STATUS } from '@proton/crypto';
 import { streamToBuffer } from '../../../utils/stream';
 import { DecryptFileKeys } from '../interface';
 import downloadBlock from './downloadBlock';
@@ -27,17 +27,14 @@ async function decryptThumbnail(
 ): Promise<{ data: ReadableStream<Uint8Array>; verifiedPromise: Promise<VERIFICATION_STATUS> }> {
     const { sessionKeys, addressPublicKeys } = await getKeys();
 
-    const message = await getStreamMessage(stream);
-    // When streaming is used, verified is actually Promise.
-    const { data, verified: verifiedPromise } = await decryptMessage({
-        message,
+    const { data, verified } = await CryptoProxy.decryptMessage({
+        binaryMessage: await readToEnd(stream),
         sessionKeys,
-        publicKeys: addressPublicKeys,
-        streaming: 'web',
+        verificationKeys: addressPublicKeys,
         format: 'binary',
     });
-    return { data, verifiedPromise } as unknown as {
-        data: ReadableStream<Uint8Array>;
-        verifiedPromise: Promise<VERIFICATION_STATUS>;
+    return {
+        data: toStream(data) as ReadableStream<Uint8Array>,
+        verifiedPromise: Promise.resolve(verified), // TODO lara/michal: refactor this since we no longer use streaming on decryption, hence verified is no longer a promise
     };
 }

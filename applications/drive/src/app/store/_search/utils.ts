@@ -1,6 +1,6 @@
-import { unsafeMD5 } from 'pmcrypto';
 import { Location } from 'history';
 
+import { CryptoProxy } from '@proton/crypto';
 import { ShareMapLink } from '@proton/shared/lib/interfaces/drive/link';
 
 import { ESLink } from './types';
@@ -16,7 +16,7 @@ export const parseItemId = (esItemId: string) => {
 
 export const generateOrder = async (ID: string) => {
     const numericalID = ID.split('').map((char) => char.charCodeAt(0));
-    const digest = await unsafeMD5(Uint8Array.from(numericalID));
+    const digest = await CryptoProxy.computeHash({ algorithm: 'unsafeMD5', data: Uint8Array.from(numericalID) });
     const orderArray = new Uint32Array(digest.buffer);
 
     return orderArray[0];
