@@ -83,7 +83,9 @@ export const useCreateFilters = () => {
             const newFilters = createDefaultLabelsFilter(senders, appliedLabels, filters);
 
             const results = await Promise.all(
-                newFilters.map((filter) => api<{ Filter: Filter }>(addTreeFilter(filter)))
+                newFilters.map((filter) =>
+                    api<{ Filter: Filter }>(addTreeFilter(filter, isFolder ? 'AutoFolder' : 'AutoLabel'))
+                )
             );
             createdFilters = results.map((result) => result.Filter);
 
