@@ -316,7 +316,7 @@ const WelcomePaneBanner = ({ plans, theme, userSettings }: Props) => {
                 </Href>
             ),
         },
-        !userSettings.AppWelcome.Calendar?.length && {
+        (userSettings.AppWelcome.Calendar?.length ?? 0) === 0 && {
             id: 21,
             text: c('Info').t`Use ${calendarAppName} to keep your agenda private.`,
             cta: (
