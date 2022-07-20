@@ -1,8 +1,9 @@
-import { ChangeEvent, useState } from 'react';
+import { ChangeEvent, useCallback, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
 import { isValidHttpUrl } from '@proton/shared/lib/helpers/url';
+import debounce from '@proton/utils/debounce';
 
 import { generateUID } from '../../../helpers';
 import { Button, PrimaryButton } from '../../button';
@@ -28,18 +29,43 @@ interface Props {
 const InsertImageModal = ({ onAddUrl, onAddImages, onClose, ...rest }: Props) => {
     const [uid] = useState(generateUID('editor-image-modal'));
     const [imageSrc, setImageSrc] = useState<string>();
+    const [imageState, setImageState] = useState(ImageState.Initial);
+    const [isImageLoading, setIsImageLoading] = useState(false);
 
-    const imageState = (() => {
-        if (!imageSrc) {
-            return ImageState.Initial;
+    const handleSuccess = () => {
+        setImageState(ImageState.Ok);
+        setIsImageLoading(false);
+    };
+    const handleError = () => {
+        setImageState(ImageState.Error);
+        setIsImageLoading(false);
+    };
+
+    // Check if the image url is valid
+    const checkImageUrl = (url: string) => {
+        if (!isValidHttpUrl(url)) {
+            setImageState(ImageState.Error);
         } else {
-            if (isValidHttpUrl(imageSrc)) {
-                return ImageState.Ok;
-            } else {
-                return ImageState.Error;
-            }
+            setIsImageLoading(true);
+            const image = new Image();
+            image.onload = () => handleSuccess();
+            image.onerror = () => handleError();
+            image.src = url;
         }
-    })();
+    };
+
+    const debouncedCheckImage = useCallback(
+        debounce((url) => {
+            checkImageUrl(url);
+        }, 200),
+        []
+    );
+
+    useEffect(() => {
+        if (imageSrc) {
+            debouncedCheckImage(imageSrc);
+        }
+    }, [imageSrc]);
 
     const handleChange = async (event: ChangeEvent<HTMLInputElement>) => {
         setImageSrc(event.target.value);
@@ -92,7 +118,12 @@ const InsertImageModal = ({ onAddUrl, onAddImages, onClose, ...rest }: Props) =>
             <ModalTwoFooter>
                 <Button type="reset" data-testid="insert-image:cancel" onClick={onClose}>{c('Action')
                     .t`Cancel`}</Button>
-                <PrimaryButton type="submit" disabled={imageState !== ImageState.Ok} data-testid="insert-image:save">
+                <PrimaryButton
+                    type="submit"
+                    disabled={imageState !== ImageState.Ok}
+                    data-testid="insert-image:save"
+                    loading={isImageLoading}
+                >
                     {c('Action').t`Save`}
                 </PrimaryButton>
             </ModalTwoFooter>
