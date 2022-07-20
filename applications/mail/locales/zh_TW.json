@@ -4090,6 +4090,9 @@
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "此郵件已被我們的系統標註為帶有網路釣魚的企圖。請檢查這是否正當郵件。"
       ],
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
+        "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages."
+      ],
       "Phone number": [
         "手機號碼"
       ],
@@ -7192,7 +7195,8 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "每${ interval }年"
+        "Yearly",
+        ""
       ],
       "Every ${ interval } year, ${ timesString }": [
         "每${ interval }年，${ timesString }"

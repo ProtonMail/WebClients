@@ -4503,6 +4503,9 @@
       "per month.": [
         "havonta."
       ],
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
+        "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages."
+      ],
       "Phone number": [
         "Telefonszám"
       ],
@@ -7918,8 +7921,8 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "Minden ${ interval }. évben",
-        "Minden ${ interval }. évben"
+        "Yearly",
+        ""
       ],
       "Every ${ interval } year, ${ timesString }": [
         "Minden ${ interval }. évben, ${ timesString }",

@@ -4320,7 +4320,7 @@
         "PGP/Inline sólo es compatible con texto sin formato. Ten en cuenta que ${ MAIL_APP_NAME } siempre firma los mensajes cifrados."
       ],
       "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
-        "PGP/MIME envía automáticamente el mensaje usando el modo de composición actual. Ten en cuenta que ${ MAIL_APP_NAME } siempre firma los mensajes cifrados"
+        "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages."
       ],
       "Phone number": [
         "Número de teléfono"
@@ -7705,8 +7705,8 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "Cada año ${ interval }",
-        "Cada ${ interval } años"
+        "Yearly",
+        ""
       ],
       "Every ${ interval } year, ${ timesString }": [
         "Cada año, ${ timesString } ${ interval }",

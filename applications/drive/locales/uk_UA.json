@@ -491,6 +491,9 @@
       "Skip": [
         "Пропустити"
       ],
+      "Start import": [
+        "Розпочати імпорт"
+      ],
       "Start recovering": [
         "Почати відновлення"
       ],
@@ -619,10 +622,13 @@
     },
     "blackfriday Info": {
       "Includes": [
-        "Включає"
+        "Включає в себе"
       ]
     },
     "blackfriday Title": {
+      "Best deal": [
+        "Найкраща пропозиція"
+      ],
       "Most popular": [
         "Найпопулярніша"
       ]
@@ -632,7 +638,7 @@
         "Скористатися пропозицією"
       ],
       "Get the deal now": [
-        "Скористатися пропозицією"
+        "Скористатися пропозицією зараз"
       ]
     },
     "blackfriday: VPNspecialoffer Info": {
@@ -654,6 +660,9 @@
       ],
       "24 months": [
         "24 місяці"
+      ],
+      "Get the special year-end offer on our Premium VPN PLUS plan": [
+        "Отримайте спеціальну пропозицію наприкінці року на наш платний тариф Proton VPN PLUS прямо зараз"
       ]
     },
     "Bug category": {
@@ -2825,6 +2834,9 @@
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Один або кілька ваших довірених ключів були позначені «скомпрометованими» їх власником. Ми радимо вам не довіряти цим ключам."
+      ],
+      "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters is allowed": [
+        "Дозволено лише ${ MAX_CUSTOM_PASSWORD_LENGTH } символів"
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Змінюйте ці налаштування лише якщо ви використовуєте PGP з отримувачами поза ${ BRAND_NAME }."
