@@ -3,11 +3,8 @@ import { useHistory, useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import { ExperimentCode, FeatureCode, HumanVerificationSteps, OnLoginCallback } from '@proton/components/containers';
 import {
-    ExperimentCode,
-    FeatureCode,
-    HumanVerificationSteps,
-    OnLoginCallback,
     useApi,
     useErrorHandler,
     useExperiment,
@@ -17,7 +14,7 @@ import {
     useMyLocation,
     useVPNCountriesCount,
     useVPNServersCount,
-} from '@proton/components';
+} from '@proton/components/hooks';
 import { checkReferrer } from '@proton/shared/lib/api/core/referrals';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { getPaymentMethodStatus, queryPlans } from '@proton/shared/lib/api/payments';
@@ -260,7 +257,7 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType }: Prop
         throw new Error('Missing dependencies');
     }
 
-    const hasAppExternalSignup = externalSignupFeature.feature?.Value && getHasAppExternalSignup(toApp);
+    const hasAppExternalSignup = externalSignupFeature.feature?.Value && (!toApp || getHasAppExternalSignup(toApp));
 
     const defaultCountry = myLocation?.Country?.toUpperCase();
 

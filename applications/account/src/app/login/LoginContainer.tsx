@@ -1,38 +1,34 @@
 import { useEffect, useRef, useState } from 'react';
-import { c } from 'ttag';
-import noop from '@proton/utils/noop';
-import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
-import { APPS, BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
-import { Address as tsAddress, UserType } from '@proton/shared/lib/interfaces';
-import { withUIDHeaders } from '@proton/shared/lib/fetch/headers';
-import { queryAddresses } from '@proton/shared/lib/api/addresses';
-import { revoke } from '@proton/shared/lib/api/auth';
-import { removePersistedSession } from '@proton/shared/lib/authentication/persistedSessionStorage';
-import { getAppName } from '@proton/shared/lib/apps/helper';
-import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
-import { handleCreateInternalAddressAndKey } from '@proton/shared/lib/keys';
-import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 
-import { AbuseModal, OnLoginCallback, OnLoginCallbackArguments, useApi, useErrorHandler } from '@proton/components';
+import { c } from 'ttag';
+
+import { AbuseModal, OnLoginCallback, useApi, useErrorHandler } from '@proton/components';
+import { AuthActionResponse, AuthCacheResult, AuthStep } from '@proton/components/containers/login/interface';
 import {
     handleLogin,
+    handleSetupInternalAddress,
     handleSetupPassword,
     handleTotp,
     handleUnlock,
 } from '@proton/components/containers/login/loginActions';
-import { AuthActionResponse, AuthCacheResult, AuthStep } from '@proton/components/containers/login/interface';
+import { revoke } from '@proton/shared/lib/api/auth';
+import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
+import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
+import noop from '@proton/utils/noop';
 
-import LoginForm from './LoginForm';
-import Header from '../public/Header';
 import Content from '../public/Content';
-import Text from '../public/Text';
+import Header from '../public/Header';
 import Layout from '../public/Layout';
-import LoginSupportDropdown from './LoginSupportDropdown';
-import TOTPForm from './TOTPForm';
 import Main from '../public/Main';
-import UnlockForm from './UnlockForm';
+import Text from '../public/Text';
+import GenerateInternalAddressStep from './GenerateInternalAddressStep';
+import LoginForm from './LoginForm';
+import LoginSupportDropdown from './LoginSupportDropdown';
 import SetPasswordForm from './SetPasswordForm';
-import GenerateInternalAddressStep, { InternalAddressGeneration } from './GenerateInternalAddressStep';
+import TOTPForm from './TOTPForm';
+import UnlockForm from './UnlockForm';
 
 interface Props {
     onLogin: OnLoginCallback;
@@ -63,7 +59,6 @@ const LoginContainer = ({
 
     const cacheRef = useRef<AuthCacheResult | undefined>(undefined);
     const previousUsernameRef = useRef('');
-    const generateInternalAddressRef = useRef<InternalAddressGeneration | undefined>(undefined);
     const [step, setStep] = useState(AuthStep.LOGIN);
 
     useEffect(() => {
@@ -71,56 +66,18 @@ const LoginContainer = ({
         void silentApi(queryAvailableDomains('login'));
         return () => {
             cacheRef.current = undefined;
-            generateInternalAddressRef.current = undefined;
         };
     }, []);
-
-    const handleDone = async (args: OnLoginCallbackArguments) => {
-        const { UID, User } = args;
-        const uidApi = <T,>(config: any) => silentApi<T>(withUIDHeaders(UID, config));
-
-        if (shouldSetupInternalAddress) {
-            const Addresses =
-                args.Addresses ||
-                (await uidApi<{ Addresses: tsAddress[] }>(queryAddresses()).then(({ Addresses }) => Addresses));
-            const { keyPassword, LocalID, UID } = args;
-            if (keyPassword && User.Type === UserType.EXTERNAL) {
-                const { Domains = [] } = await uidApi<{ Domains: string[] }>(queryAvailableDomains());
-                generateInternalAddressRef.current = {
-                    externalEmailAddress: Addresses?.[0],
-                    availableDomains: Domains,
-                    keyPassword,
-                    onDone: () => {
-                        // Remove addresses since a new one was created
-                        const { Addresses, ...restAuthSession } = args;
-                        return onLogin(restAuthSession);
-                    },
-                    revoke: () => {
-                        // Since the session gets persisted, it has to be logged out if cancelling.
-                        uidApi(revoke()).catch(noop);
-                        if (LocalID !== undefined) {
-                            removePersistedSession(LocalID, UID);
-                        }
-                    },
-                    api: uidApi,
-                };
-                setStep(AuthStep.GENERATE_INTERNAL);
-                return;
-            }
-        }
-        return onLogin(args);
-    };
 
     const handleCancel = () => {
         previousUsernameRef.current = cacheRef.current?.username ?? '';
         cacheRef.current = undefined;
-        generateInternalAddressRef.current = undefined;
         setStep(AuthStep.LOGIN);
     };
 
     const handleResult = (result: AuthActionResponse) => {
         if (result.to === AuthStep.DONE) {
-            return handleDone(result.session);
+            return onLogin(result.session);
         }
         cacheRef.current = result.cache;
         setStep(result.to);
@@ -134,10 +91,8 @@ const LoginContainer = ({
         }
     };
 
-    const mailAppName = getAppName(APPS.PROTONMAIL);
-
     const cache = cacheRef.current;
-    const generateInternalAddress = generateInternalAddressRef.current;
+    const generateInternalAddress = cache?.internalAddressSetup;
     const externalEmailAddress = generateInternalAddress?.externalEmailAddress?.Email;
 
     const handleBackStep = (() => {
@@ -146,7 +101,7 @@ const LoginContainer = ({
         }
         if (step === AuthStep.GENERATE_INTERNAL) {
             return () => {
-                generateInternalAddress?.revoke?.();
+                cache?.authApi(revoke()).catch(noop);
                 handleCancel();
             };
         }
@@ -185,6 +140,7 @@ const LoginContainer = ({
                                     api: silentApi,
                                     hasGenerateKeys,
                                     ignoreUnlock: false,
+                                    hasInternalAddressSetup: !!shouldSetupInternalAddress,
                                     payload,
                                 })
                                     .then(handleResult)
@@ -270,25 +226,22 @@ const LoginContainer = ({
             )}
             {step === AuthStep.GENERATE_INTERNAL && generateInternalAddress && (
                 <GenerateInternalAddressStep
+                    api={cache?.authApi}
                     onBack={handleBackStep}
-                    api={silentApi}
-                    mailAppName={mailAppName}
                     toAppName={toAppName || MAIL_APP_NAME}
                     availableDomains={generateInternalAddress.availableDomains}
                     externalEmailAddress={externalEmailAddress}
+                    setup={generateInternalAddress.setup}
                     onSubmit={async (payload) => {
-                        try {
-                            await handleCreateInternalAddressAndKey({
-                                api: generateInternalAddress.api,
-                                keyPassword: generateInternalAddress.keyPassword,
-                                domain: payload.domain,
-                                username: payload.username,
+                        return handleSetupInternalAddress({
+                            cache,
+                            payload,
+                        })
+                            .then(handleResult)
+                            .catch((e: any) => {
+                                handleError(e);
+                                handleCancel();
                             });
-                            await generateInternalAddress.onDone();
-                        } catch (e: any) {
-                            handleError(e);
-                            handleCancel();
-                        }
                     }}
                 />
             )}
