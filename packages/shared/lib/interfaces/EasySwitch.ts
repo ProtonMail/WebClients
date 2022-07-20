@@ -71,6 +71,7 @@ export type CheckedProductMap = {
 
 export interface CreateImportPayload {
     TokenID?: string;
+    Source?: string;
     [ImportType.MAIL]?: {
         Account: string;
         ImapHost: string;
