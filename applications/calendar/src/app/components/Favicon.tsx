@@ -6,7 +6,7 @@ import { MINUTE } from '@proton/shared/lib/constants';
 import favicons from '../../assets/favicons';
 
 const Favicon = () => {
-    const [date, setDate] = useState(new Date().getDate());
+    const [date, setDate] = useState(() => new Date().getDate());
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -24,7 +24,7 @@ const Favicon = () => {
 
     return (
         <Helmet>
-            <link rel="icon" type="image/png" href={favicons[date]} />
+            <link rel="icon" href={favicons[date]} type="image/svg+xml" />
         </Helmet>
     );
 };
