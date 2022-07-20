@@ -154,6 +154,7 @@ export const Search = ({ shareId, searchView }: Props) => {
                 onItemContextMenu={browserItemContextMenu.handleContextMenu}
                 onItemRender={handleItemRender}
                 onSort={setSorting}
+                onScroll={browserItemContextMenu.close}
                 getDragMoveControls={getDragMoveControls}
             />
         </>

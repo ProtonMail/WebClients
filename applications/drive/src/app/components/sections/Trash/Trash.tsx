@@ -163,6 +163,7 @@ function Trash({ shareId, trashView }: Props) {
                 onItemContextMenu={browserItemContextMenu.handleContextMenu}
                 onItemRender={handleItemRender}
                 onSort={setSorting}
+                onScroll={browserItemContextMenu.close}
             />
         </>
     );
