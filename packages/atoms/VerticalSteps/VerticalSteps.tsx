@@ -1,6 +1,6 @@
 import { ComponentPropsWithoutRef } from 'react';
+import clsx from '@proton/utils/clsx';
 
-import clsx from '../clsx';
 import './VerticalSteps.scss';
 
 export interface VerticalStepsProps extends ComponentPropsWithoutRef<'ul'> {}
