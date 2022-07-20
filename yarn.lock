@@ -3959,7 +3959,6 @@ __metadata:
     "@types/chai": ^4.3.0
     "@types/chai-as-promised": ^7.1.4
     "@types/mocha": ^9.0.0
-    "@types/node": ^16.11.7
     chai: ^4.3.4
     chai-as-promised: ^7.1.1
     comlink: ^4.3.1
@@ -3971,7 +3970,7 @@ __metadata:
     karma-mocha-reporter: ^2.2.5
     karma-webpack: ^5.0.0
     mocha: ^9.2.2
-    pmcrypto-v7: "npm:@protontech/pmcrypto@^7.0.0"
+    pmcrypto-v7: "npm:@protontech/pmcrypto@^7.0.1"
     prettier: ^2.6.2
     puppeteer: ^14.3.0
     ts-loader: ^9.3.0
@@ -6689,13 +6688,6 @@ __metadata:
   version: 16.11.43
   resolution: "@types/node@npm:16.11.43"
   checksum: 96d09e68347c49ebf84fe1443360edc3f98336f0794256abc8e4f29ef3070546357cae17083d6fd9767b631239367c4f245fe64accff4af057d17bd6694f0b2b
-  languageName: node
-  linkType: hard
-
-"@types/node@npm:^16.11.7":
-  version: 16.11.39
-  resolution: "@types/node@npm:16.11.39"
-  checksum: bc97b9773ac6b3194800f990b349fad7f66c6126dacef59291b10a2c8b6813d6f67f947b7e12a6c9952790f7065d576fe38355b8fe034a6af60f317cfc570f69
   languageName: node
   linkType: hard
 
@@ -23328,6 +23320,15 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"openpgp@npm:@protontech/openpgp@~5.3.0":
+  version: 5.3.1
+  resolution: "@protontech/openpgp@npm:5.3.1"
+  dependencies:
+    asn1.js: ^5.0.0
+  checksum: cd26f19a4f207d21cf1b7707acfa4445215f14d923867e747bb41cc7e7cfbcb78f7966c6c5090919dd9d62890962e02f0ee2412cadd5b5f781e120aa52e953e0
+  languageName: node
+  linkType: hard
+
 "openpgp@npm:^4.10.8":
   version: 4.10.10
   resolution: "openpgp@npm:4.10.10"
@@ -23336,15 +23337,6 @@ fsevents@^1.2.7:
     node-fetch: ^2.1.2
     node-localstorage: ~1.3.0
   checksum: 9d38c879fa9af437125da9f1a33be3a667509668ff18583bb2c48f882237425bcd6c372d7e740f62cbe4daf97ef780e007f427aa42dc0f50722bdde4e61c3433
-  languageName: node
-  linkType: hard
-
-"openpgp@npm:~5.3.0":
-  version: 5.3.0
-  resolution: "openpgp@npm:5.3.0"
-  dependencies:
-    asn1.js: ^5.0.0
-  checksum: 7f3b605556120e1547ee756a9a868533ec7eba9b1bf3e2b17ff7d4318bc487d7085078264dfc8e92bf32caa9a5351130318c38b25c1f80370c223d0a097f73f5
   languageName: node
   linkType: hard
 
@@ -24408,15 +24400,15 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"pmcrypto-v7@npm:@protontech/pmcrypto@^7.0.0":
-  version: 7.0.0
-  resolution: "@protontech/pmcrypto@npm:7.0.0"
+"pmcrypto-v7@npm:@protontech/pmcrypto@^7.0.1":
+  version: 7.0.1
+  resolution: "@protontech/pmcrypto@npm:7.0.1"
   dependencies:
     "@openpgp/asmcrypto.js": ^2.3.2
     "@openpgp/tweetnacl": ^1.0.3
     "@openpgp/web-stream-tools": ^0.0.10
-    openpgp: ~5.3.0
-  checksum: b54440a97f5e32ad9772e32305cc58e8e9547add63a5fc46358fc41b2c36d41c5018e61d111599effef7b3c4f3c433455f399f4d8c5a2f7097c586e8c57cb3ea
+    openpgp: "npm:@protontech/openpgp@~5.3.0"
+  checksum: 641802bb12c7d7256ef9411dd83737a4b434aa01c8852426e1b62eac571ce01b0da34757532db67be20084f4da1a6d204cbc920111e7fc73646034100f6a45cf
   languageName: node
   linkType: hard
 
