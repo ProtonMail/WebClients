@@ -1,4 +1,4 @@
-import { VERIFICATION_STATUS } from 'pmcrypto';
+import { VERIFICATION_STATUS } from '@proton/crypto';
 import { c } from 'ttag';
 
 import { Alert, TextLoader } from '@proton/components';

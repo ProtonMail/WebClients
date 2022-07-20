@@ -1,7 +1,7 @@
-import { encryptMessage } from 'pmcrypto';
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { Recipient } from '@proton/shared/lib/interfaces';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
+import { CryptoProxy } from '@proton/crypto';
 
 import { addApiMock, api, clearApiMocks } from '../api';
 import { store } from '../../../logic/eo/eoStore';
@@ -37,11 +37,11 @@ export const mockConsole = (level: keyof Console = 'error') => {
 };
 
 export const getEOEncryptedMessage = async (decryptedToken: string, password: string) => {
-    const { data } = await encryptMessage({
-        data: decryptedToken,
+    const { message } = await CryptoProxy.encryptMessage({
+        textData: decryptedToken,
         passwords: [password],
     });
-    return data;
+    return message;
 };
 
 export interface EOOriginalMessageOptions {

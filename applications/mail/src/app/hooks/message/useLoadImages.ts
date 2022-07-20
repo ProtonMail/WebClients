@@ -1,7 +1,7 @@
 import { useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 import { useApi, useMailSettings } from '@proton/components';
-import { DecryptResultPmcrypto } from 'pmcrypto';
+import { WorkerDecryptionResult } from '@proton/crypto';
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { transformEmbedded } from '../../helpers/transforms/transformEmbedded';
 import { transformRemote } from '../../helpers/transforms/transformRemote';
@@ -69,7 +69,7 @@ export const useLoadEmbeddedImages = (localID: string) => {
     const getMessageKeys = useGetMessageKeys();
     const [mailSettings] = useMailSettings();
 
-    const onUpdateAttachment = (ID: string, attachment: DecryptResultPmcrypto) => {
+    const onUpdateAttachment = (ID: string, attachment: WorkerDecryptionResult<Uint8Array>) => {
         dispatch(updateAttachment({ ID, attachment }));
     };
 

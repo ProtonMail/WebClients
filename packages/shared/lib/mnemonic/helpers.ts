@@ -1,5 +1,5 @@
 import { generateKeySalt, computeKeyPassword } from '@proton/srp';
-import { encryptPrivateKey } from 'pmcrypto';
+import { CryptoProxy } from '@proton/crypto';
 import { srpGetVerify } from '../srp';
 import { Api, DecryptedKey } from '../interfaces';
 import { generateMnemonicBase64RandomBytes, generateMnemonicFromBase64RandomBytes } from './bip39Wrapper';
@@ -40,7 +40,10 @@ export const generateMnemonicPayload = async ({
     const hashedPassphrase = await computeKeyPassword(randomBytes, salt);
     const reEncryptedKeys = await Promise.all(
         userKeys.map(async ({ ID, privateKey }) => {
-            const PrivateKey = await encryptPrivateKey(privateKey, hashedPassphrase);
+            const PrivateKey = await CryptoProxy.exportPrivateKey({
+                privateKey,
+                passphrase: hashedPassphrase,
+            });
             return {
                 ID,
                 PrivateKey,

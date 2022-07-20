@@ -29,7 +29,7 @@ import { useCallback } from 'react';
 import { useApi, useConfig, useRelocalizeText, useGetCalendarUserSettings } from '@proton/components';
 import { useGetCanonicalEmailsMap } from '@proton/components/hooks/useGetCanonicalEmailsMap';
 import useSendIcs from '@proton/components/hooks/useSendIcs';
-import { serverTime } from 'pmcrypto';
+import { serverTime } from '@proton/crypto';
 import { getHasFullCalendarData } from '../helpers/calendar/invite';
 import {
     createCalendarEventFromInvitation,

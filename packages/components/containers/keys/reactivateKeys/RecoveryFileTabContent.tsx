@@ -1,14 +1,14 @@
 import { Dispatch, SetStateAction } from 'react';
 import { c } from 'ttag';
-import { OpenPGPKey } from 'pmcrypto';
 import { KeyWithRecoverySecret } from '@proton/shared/lib/interfaces';
+import { PrivateKeyReference } from '@proton/crypto';
 import KeyUploadContent from './KeyUploadContent';
 import SelectRecoveryFiles, { Props as SelectRecoveryFilesProps } from './SelectRecoveryFiles';
 
 interface Props {
     recoverySecrets: KeyWithRecoverySecret[];
-    uploadedKeys: OpenPGPKey[];
-    setUploadedKeys: Dispatch<SetStateAction<OpenPGPKey[]>>;
+    uploadedKeys: PrivateKeyReference[];
+    setUploadedKeys: Dispatch<SetStateAction<PrivateKeyReference[]>>;
     disabled?: boolean;
     error?: string;
 }

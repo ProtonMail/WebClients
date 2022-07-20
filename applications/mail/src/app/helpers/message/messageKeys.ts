@@ -1,4 +1,5 @@
-import { getKeys, arrayToBinaryString, DecryptResultPmcrypto } from 'pmcrypto';
+import { arrayToBinaryString } from '@proton/crypto/lib/utils';
+import { CryptoProxy, WorkerDecryptionResult } from '@proton/crypto';
 import { splitExtension } from '@proton/shared/lib/helpers/file';
 import isTruthy from '@proton/utils/isTruthy';
 import { Api } from '@proton/shared/lib/interfaces';
@@ -14,8 +15,8 @@ import { MessageKeys } from '../../logic/messages/messagesTypes';
 export const extractKeysFromAttachments = async (
     attachments: Attachment[] | undefined = [],
     messageKeys: MessageKeys,
-    getAttachment: (ID: string) => DecryptResultPmcrypto | undefined,
-    onUpdateAttachment: (ID: string, attachment: DecryptResultPmcrypto) => void,
+    getAttachment: (ID: string) => WorkerDecryptionResult<Uint8Array> | undefined,
+    onUpdateAttachment: (ID: string, attachment: WorkerDecryptionResult<Uint8Array>) => void,
     api: Api
 ) => {
     const keyAttachments =
@@ -33,7 +34,7 @@ export const extractKeysFromAttachments = async (
                         getAttachment,
                         onUpdateAttachment
                     );
-                    const [key] = await getKeys(arrayToBinaryString(data));
+                    const key = await CryptoProxy.importPublicKey({ armoredKey: arrayToBinaryString(data) });
                     return key;
                 } catch (e: any) {
                     // Nothing
@@ -67,7 +68,7 @@ export const extractKeysFromAutocrypt = async (
                     if (!result) {
                         return;
                     }
-                    const [key] = await getKeys(result.keydata);
+                    const key = await CryptoProxy.importPublicKey({ binaryKey: result.keydata });
                     return key;
                 } catch (e: any) {
                     // not encoded correctly

@@ -1,6 +1,6 @@
 import { useHistory } from 'react-router';
 import { useDispatch } from 'react-redux';
-import { encryptMessage, OpenPGPKey } from 'pmcrypto';
+import { CryptoProxy, PublicKeyReference } from '@proton/crypto';
 import { c } from 'ttag';
 
 import { useApi, useNotifications } from '@proton/components';
@@ -31,7 +31,7 @@ interface EOAttachment {
 
 interface Props {
     message: MessageState;
-    publicKeys?: OpenPGPKey[];
+    publicKeys?: PublicKeyReference[];
     outsideKey?: MessageKeys;
 }
 
@@ -82,9 +82,21 @@ export const useSendEO = ({ message, publicKeys, outsideKey }: Props) => {
         try {
             const replyContent = prepareExport(message);
 
-            const Body = (await encryptMessage({ data: replyContent, publicKeys })).data;
+            const Body = (
+                await CryptoProxy.encryptMessage({
+                    textData: replyContent,
+                    stripTrailingSpaces: true,
+                    encryptionKeys: publicKeys,
+                })
+            ).message;
 
-            const ReplyBody = (await encryptMessage({ data: replyContent, passwords: [password] })).data;
+            const ReplyBody = (
+                await CryptoProxy.encryptMessage({
+                    textData: replyContent,
+                    stripTrailingSpaces: true,
+                    passwords: [password],
+                })
+            ).message;
 
             const Packages = {
                 Filename: [],

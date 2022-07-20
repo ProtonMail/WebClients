@@ -45,8 +45,8 @@ export function initUploadFileWorker(
                             return createFileRevision(abortController.signal, mimeType, keys).then(
                                 async (fileRevision) => {
                                     onInit?.(mimeType, fileRevision.fileName);
-                                    return thumbnailDataPromise.then((thumbnailData) => {
-                                        workerApi.postStart(
+                                    return thumbnailDataPromise.then(async (thumbnailData) => {
+                                        await workerApi.postStart(
                                             file,
                                             thumbnailData,
                                             fileRevision.address.privateKey,
@@ -84,8 +84,8 @@ export function initUploadFileWorker(
             });
 
             initialize(abortController.signal)
-                .then(({ addressPrivateKey, parentPrivateKey }) => {
-                    workerApi.postGenerateKeys(addressPrivateKey, parentPrivateKey);
+                .then(async ({ addressPrivateKey, parentPrivateKey }) => {
+                    await workerApi.postGenerateKeys(addressPrivateKey, parentPrivateKey);
                 })
                 .catch(reject);
         });
@@ -113,7 +113,13 @@ export function initUploadFileWorker(
                     throw err;
                 })
                 .finally(() => {
-                    workerApi?.terminate();
+                    workerApi?.postClose();
+                    // We give some time to the worker to `close()` itself, to safely erase the stored private keys.
+                    // We still forcefully terminate it after a few seconds, in case the worker is unexpectedly stuck
+                    // in a bad state, hence couldn't close itself.
+                    setTimeout(() => {
+                        workerApi?.terminate();
+                    }, 5000);
                 }),
         cancel,
         pause,

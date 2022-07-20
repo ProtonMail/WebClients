@@ -1,9 +1,9 @@
 import { getVerifyingKeys } from '@proton/shared/lib/keys/publicKeys';
 import { Fragment, useState, useEffect, Dispatch, SetStateAction } from 'react';
-import { algorithmInfo, OpenPGPKey, isExpiredKey, isRevokedKey } from 'pmcrypto';
 import { isValid, format } from 'date-fns';
 import { c } from 'ttag';
 
+import { PublicKeyReference, CryptoProxy } from '@proton/crypto';
 import uniqueBy from '@proton/utils/uniqueBy';
 import move from '@proton/utils/move';
 import { dateLocale } from '@proton/shared/lib/i18n';
@@ -22,7 +22,8 @@ interface Props {
 }
 
 type LocalKeyModel = {
-    publicKey: OpenPGPKey;
+    publicKey: PublicKeyReference;
+    armoredPublicKey: string;
     fingerprint: string;
     algo: string;
     creationTime: Date;
@@ -58,13 +59,20 @@ const ContactKeysTable = ({ model, setModel }: Props) => {
         const uniqueKeys = uniqueBy(allKeys, (publicKey) => publicKey.getFingerprint());
         const parsedKeys = await Promise.all(
             uniqueKeys.map(async (publicKey, index) => {
+                const armoredPublicKey = await CryptoProxy.exportPublicKey({
+                    key: publicKey,
+                    format: 'armored',
+                });
                 const fingerprint = publicKey.getFingerprint();
                 const creationTime = publicKey.getCreationTime();
                 const expirationTime = await publicKey.getExpirationTime();
-                const algoInfos = publicKey.getKeys().map((key) => key.getAlgorithmInfo() as algorithmInfo);
+                const algoInfos = [
+                    publicKey.getAlgorithmInfo(),
+                    ...publicKey.subkeys.map((subkey) => subkey.getAlgorithmInfo()),
+                ];
                 const algo = getFormattedAlgorithmNames(algoInfos);
-                const isExpired = await isExpiredKey(publicKey);
-                const isRevoked = await isRevokedKey(publicKey);
+                const isExpired = await CryptoProxy.isExpiredKey({ key: publicKey });
+                const isRevoked = await CryptoProxy.isRevokedKey({ key: publicKey });
                 const isTrusted = model.trustedFingerprints.has(fingerprint);
                 const supportsEncryption = model.encryptionCapableFingerprints.has(fingerprint);
                 const isObsolete = model.obsoleteFingerprints.has(fingerprint);
@@ -87,6 +95,7 @@ const ContactKeysTable = ({ model, setModel }: Props) => {
                 const canBeUntrusted = isTrusted && !isUploaded;
                 return {
                     publicKey,
+                    armoredPublicKey,
                     fingerprint,
                     algo,
                     creationTime,
@@ -153,6 +162,7 @@ const ContactKeysTable = ({ model, setModel }: Props) => {
                         isPrimary,
                         isWKD,
                         publicKey,
+                        armoredPublicKey,
                         isExpired,
                         isRevoked,
                         isTrusted,
@@ -179,7 +189,7 @@ const ContactKeysTable = ({ model, setModel }: Props) => {
                             {
                                 text: c('Action').t`Download`,
                                 onClick: () => {
-                                    const blob = new Blob([publicKey.armor()], {
+                                    const blob = new Blob([armoredPublicKey], {
                                         type: 'text/plain',
                                     });
                                     const filename = `publickey - ${model.emailAddress} - 0x${fingerprint

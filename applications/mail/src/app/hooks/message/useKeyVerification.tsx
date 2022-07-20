@@ -1,9 +1,9 @@
-import { KeyId } from '@proton/shared/lib/contacts/keyVerifications';
 import { useAddresses, useNotifications } from '@proton/components';
 import { getItem, setItem } from '@proton/shared/lib/helpers/storage';
+import type { KeyID } from '@proton/crypto';
 import * as React from 'react';
 import DecryptionErrorNotification from '../../components/notifications/DecryptionErrorNotification';
-import { getMessageDecryptionKeyFromAddress } from '../../helpers/message/messageDecrypt';
+import { getMessageDecryptionKeyIDFromAddress } from '../../helpers/message/messageDecrypt';
 import { MessageStateWithData } from '../../logic/messages/messagesTypes';
 
 export const useKeyVerification = () => {
@@ -23,9 +23,9 @@ export const useKeyVerification = () => {
         }
 
         // Get the key used to encrypt the message
-        const { matchingKey } = await getMessageDecryptionKeyFromAddress(address, message);
+        const matchingKeyID = await getMessageDecryptionKeyIDFromAddress(address, message);
 
-        if (matchingKey) {
+        if (matchingKeyID) {
             const encounteredDecryptionErrorKeys = getItem('DecryptionErrorEncounteredKeys');
             const encounteredDecryptionErrorKeysArray = encounteredDecryptionErrorKeys
                 ? JSON.parse(encounteredDecryptionErrorKeys)
@@ -33,7 +33,7 @@ export const useKeyVerification = () => {
 
             // If the key is not already in the localStorage, we display a notification
             if (
-                !encounteredDecryptionErrorKeysArray.some((encounteredKey: KeyId) => matchingKey.equals(encounteredKey))
+                !encounteredDecryptionErrorKeysArray.some((encounteredKey: KeyID) => matchingKeyID === encounteredKey)
             ) {
                 const notification = createNotification({
                     text: <DecryptionErrorNotification onDiscard={() => hideNotification(notification)} keyFound />,
@@ -42,7 +42,7 @@ export const useKeyVerification = () => {
                     disableAutoClose: true,
                 });
 
-                const updatedEncounteredKeys = JSON.stringify([...encounteredDecryptionErrorKeysArray, matchingKey]);
+                const updatedEncounteredKeys = JSON.stringify([...encounteredDecryptionErrorKeysArray, matchingKeyID]);
                 setItem('DecryptionErrorEncounteredKeys', updatedEncounteredKeys);
             }
         } else {

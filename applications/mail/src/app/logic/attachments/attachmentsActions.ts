@@ -1,6 +1,10 @@
+import { WorkerDecryptionResult } from '@proton/crypto';
 import { createAction } from '@reduxjs/toolkit';
-import { DecryptResultPmcrypto } from 'pmcrypto';
 
-export const addAttachment = createAction<{ ID: string; attachment: DecryptResultPmcrypto }>('attachments/add');
+export const addAttachment = createAction<{ ID: string; attachment: WorkerDecryptionResult<Uint8Array> }>(
+    'attachments/add'
+);
 
-export const updateAttachment = createAction<{ ID: string; attachment: DecryptResultPmcrypto }>('attachments/update');
+export const updateAttachment = createAction<{ ID: string; attachment: WorkerDecryptionResult<Uint8Array> }>(
+    'attachments/update'
+);

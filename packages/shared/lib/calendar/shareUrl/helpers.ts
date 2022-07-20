@@ -1,15 +1,6 @@
-import {
-    arrayToBinaryString,
-    createMessage,
-    decodeBase64,
-    decryptMessage,
-    encryptMessage,
-    generateSessionKey,
-    getMessage,
-    OpenPGPKey,
-} from 'pmcrypto';
+import { arrayToBinaryString, decodeBase64, encodeBase64 } from '@proton/crypto/lib/utils';
+import { CryptoProxy, PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
 import { AES256, EVENT_ACTIONS } from '../../constants';
-import { encodeBase64 } from '../../helpers/base64';
 import { generateRandomBytes, getSHA256Base64String, xorEncryptDecrypt } from '../../helpers/crypto';
 import { stringToUint8Array, uint8ArrayToPaddedBase64URLString, uint8ArrayToString } from '../../helpers/encoding';
 import { Nullable } from '../../interfaces';
@@ -42,12 +33,12 @@ export const decryptPurpose = async ({
     privateKeys,
 }: {
     encryptedPurpose: string;
-    privateKeys: OpenPGPKey[];
+    privateKeys: PrivateKeyReference[];
 }) =>
     (
-        await decryptMessage({
-            message: await getMessage(encryptedPurpose),
-            privateKeys,
+        await CryptoProxy.decryptMessage({
+            armoredMessage: encryptedPurpose,
+            decryptionKeys: privateKeys,
         })
     ).data;
 export const generateEncryptedPurpose = async ({
@@ -55,13 +46,15 @@ export const generateEncryptedPurpose = async ({
     publicKeys,
 }: {
     purpose?: string;
-    publicKeys: OpenPGPKey[];
+    publicKeys: PublicKeyReference[];
 }) => {
     if (!purpose) {
         return null;
     }
 
-    return (await encryptMessage({ data: purpose, publicKeys })).data;
+    return (
+        await CryptoProxy.encryptMessage({ textData: purpose, stripTrailingSpaces: true, encryptionKeys: publicKeys })
+    ).message;
 };
 export const generateEncryptedPassphrase = ({
     passphraseKey,
@@ -83,26 +76,26 @@ export const generateEncryptedCacheKey = async ({
     publicKeys,
 }: {
     cacheKey: string;
-    publicKeys: OpenPGPKey[];
+    publicKeys: PublicKeyReference[];
 }) =>
     (
-        await encryptMessage({
-            message: createMessage(cacheKey),
-            publicKeys,
+        await CryptoProxy.encryptMessage({
+            textData: cacheKey, // stripTrailingSpaces: false
+            encryptionKeys: publicKeys,
         })
-    ).data;
+    ).message;
 
 export const decryptCacheKey = async ({
     encryptedCacheKey,
     privateKeys,
 }: {
     encryptedCacheKey: string;
-    privateKeys: OpenPGPKey[];
+    privateKeys: PrivateKeyReference[];
 }) =>
     (
-        await decryptMessage({
-            message: await getMessage(encryptedCacheKey),
-            privateKeys,
+        await CryptoProxy.decryptMessage({
+            armoredMessage: encryptedCacheKey,
+            decryptionKeys: privateKeys,
         })
     ).data;
 
@@ -153,12 +146,12 @@ export const getCreatePublicLinkPayload = async ({
     passphraseID,
 }: {
     accessLevel: ACCESS_LEVEL;
-    publicKeys: OpenPGPKey[];
+    publicKeys: PublicKeyReference[];
     passphrase: string;
     passphraseID: string;
 }) => {
     const encryptedPurpose = null;
-    const passphraseKey = await generateSessionKey(AES256);
+    const passphraseKey = await CryptoProxy.generateSessionKeyForAlgorithm(AES256);
     const encryptedPassphrase =
         accessLevel === ACCESS_LEVEL.FULL ? generateEncryptedPassphrase({ passphraseKey, passphrase }) : null;
 
@@ -189,7 +182,7 @@ export const transformLinkFromAPI = async ({
     onError,
 }: {
     calendarUrl: CalendarUrl;
-    privateKeys: OpenPGPKey[];
+    privateKeys: PrivateKeyReference[];
     calendarPassphrase: string;
     onError: (e: Error) => void;
 }): Promise<CalendarLink> => {
@@ -244,7 +237,7 @@ export const transformLinksFromAPI = async ({
     onError,
 }: {
     calendarUrls: CalendarUrl[];
-    privateKeys: OpenPGPKey[];
+    privateKeys: PrivateKeyReference[];
     calendarPassphrase: string;
     onError: (e: Error) => void;
 }) => {

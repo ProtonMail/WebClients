@@ -1,6 +1,6 @@
 import { RefObject, useState } from 'react';
-import { OpenPGPKey } from 'pmcrypto';
 
+import { PublicKeyReference } from '@proton/crypto';
 import { useHandler, useNotifications } from '@proton/components';
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { getAttachments, isPlainText } from '@proton/shared/lib/mail/messages';
@@ -22,7 +22,7 @@ interface Props {
     message: MessageState;
     onChange: MessageChange;
     editorActionsRef: RefObject<ExternalEditorActions | undefined>;
-    publicKey?: OpenPGPKey[];
+    publicKey?: PublicKeyReference[];
 }
 
 export const useEOAttachments = ({ message, onChange, editorActionsRef, publicKey }: Props) => {

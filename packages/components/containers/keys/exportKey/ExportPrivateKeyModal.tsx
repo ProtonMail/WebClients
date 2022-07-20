@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { c } from 'ttag';
 import noop from '@proton/utils/noop';
-import { OpenPGPKey, encryptPrivateKey } from 'pmcrypto';
+import { PrivateKeyReference, CryptoProxy } from '@proton/crypto';
 import { KEY_FILE_EXTENSION } from '@proton/shared/lib/constants';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { passwordLengthValidator } from '@proton/shared/lib/helpers/formValidators';
@@ -22,17 +22,17 @@ import { useLoading, useModals } from '../../../hooks';
 import UnlockModal from '../../login/UnlockModal';
 import { generateUID } from '../../../helpers';
 
-const handleExport = async (name: string, privateKey: OpenPGPKey, password: string) => {
+const handleExport = async (name: string, privateKey: PrivateKeyReference, password: string) => {
     const fingerprint = privateKey.getFingerprint();
     const filename = ['privatekey.', name, '-', fingerprint, KEY_FILE_EXTENSION].join('');
-    const armoredEncryptedKey = await encryptPrivateKey(privateKey, password);
+    const armoredEncryptedKey = await CryptoProxy.exportPrivateKey({ privateKey: privateKey, passphrase: password });
     const blob = new Blob([armoredEncryptedKey], { type: 'text/plain' });
     downloadFile(blob, filename);
 };
 
 interface Props extends ModalProps {
     name: string;
-    privateKey: OpenPGPKey;
+    privateKey: PrivateKeyReference;
     onSuccess?: () => void;
 }
 

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { c } from 'ttag';
-import { algorithmInfo } from 'pmcrypto';
+import { AlgorithmInfo } from '@proton/crypto';
 import { getAlgorithmExists } from '@proton/shared/lib/keys';
 import { DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS, ENCRYPTION_TYPES } from '@proton/shared/lib/constants';
 import { EncryptionConfig } from '@proton/shared/lib/interfaces';
@@ -26,7 +26,7 @@ enum STEPS {
 
 interface Props extends ModalProps {
     type: 'user' | 'address';
-    existingAlgorithms: algorithmInfo[];
+    existingAlgorithms: AlgorithmInfo[];
     onAdd: (config: EncryptionConfig) => Promise<string>;
 }
 

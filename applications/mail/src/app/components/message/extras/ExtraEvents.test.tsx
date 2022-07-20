@@ -1,6 +1,6 @@
 import { screen, waitForElementToBeRemoved } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { concatArrays } from 'pmcrypto';
+import { waitFor } from '@testing-library/dom';
 
 import { useGetVtimezonesMap } from '@proton/components/hooks/useGetVtimezonesMap';
 import { useCalendarUserSettings } from '@proton/components/hooks/useCalendarUserSettings';
@@ -28,6 +28,7 @@ import {
 } from '@proton/shared/lib/interfaces/calendar';
 import { encryptAttachment } from '@proton/shared/lib/mail/send/attachments';
 import { getAppName } from '@proton/shared/lib/apps/helper';
+import { concatArrays } from '@proton/crypto/lib/utils';
 
 import { generateApiCalendarEvent } from '../../../helpers/test/calendar';
 import {
@@ -44,6 +45,9 @@ import {
 import ExtraEvents from './ExtraEvents';
 import { MessageStateWithData } from '../../../logic/messages/messagesTypes';
 import * as inviteApi from '../../../helpers/calendar/inviteApi';
+import { setupCryptoProxyForTesting, releaseCryptoProxy } from '../../../helpers/test/crypto';
+
+jest.setTimeout(20000);
 
 jest.mock('@proton/components/hooks/useSendIcs', () => {
     return {
@@ -104,8 +108,8 @@ const dummySharedEventID = 'shared-event-id';
 const dummyPassphraseID = 'passphrase-id';
 const dummyFileName = 'invite.ics';
 
-const dummyAddressKeyPromise = generateAddressKeys(dummyUserName, dummyUserEmailAddress);
-const dummyCalendarKeysAndPassphrasePromise = generateCalendarKeysAndPassphrase(dummyAddressKeyPromise);
+let dummyAddressKey: GeneratedKey;
+let dummyCalendarKeysAndPassphrasePromise: ReturnType<typeof generateCalendarKeysAndPassphrase>;
 
 const getSetup = async ({
     userEmailAddress = dummyUserEmailAddress,
@@ -144,7 +148,7 @@ const getSetup = async ({
     alternativeCalendarKeysAndPassphrasePromise?: ReturnType<typeof generateCalendarKeysAndPassphrase>;
     alternativeAddressKeyPromise?: ReturnType<typeof generateAddressKeys>;
 }) => {
-    const addressKey = userAddressKey || (await dummyAddressKeyPromise);
+    const addressKey = userAddressKey || dummyAddressKey;
     const alternativeAddressKey = await alternativeAddressKeyPromise;
     const { calendarKey, passphrase } = await dummyCalendarKeysAndPassphrasePromise;
     const { calendarKey: alternativeCalendarKey } = (await alternativeCalendarKeysAndPassphrasePromise) || {};
@@ -277,6 +281,17 @@ const getSetup = async ({
 };
 
 describe('ICS widget', () => {
+    beforeAll(async () => {
+        await setupCryptoProxyForTesting();
+
+        dummyAddressKey = await generateAddressKeys(dummyUserName, dummyUserEmailAddress);
+        dummyCalendarKeysAndPassphrasePromise = generateCalendarKeysAndPassphrase(dummyAddressKey);
+    });
+
+    afterAll(async () => {
+        await releaseCryptoProxy();
+    });
+
     beforeEach(() => {
         jest.spyOn(inviteApi, 'createCalendarEventFromInvitation');
         // @ts-ignore
@@ -341,7 +356,7 @@ END:VCALENDAR`;
         await render(<ExtraEvents message={message} />, false);
 
         // test event title
-        expect(screen.getByText('Walk on the moon')).toBeInTheDocument();
+        await waitFor(() => expect(screen.queryByText('Walk on the moon')).toBeInTheDocument());
 
         // test event date
         /**
@@ -442,7 +457,7 @@ END:VCALENDAR`;
         await render(<ExtraEvents message={message} />, false);
 
         // test event title
-        expect(screen.getByText('Walk on Mars')).toBeInTheDocument();
+        await waitFor(() => expect(screen.queryByText('Walk on Mars')).toBeInTheDocument());
 
         // test event warning
         expect(screen.getByText('Event already ended')).toBeInTheDocument();
@@ -489,7 +504,7 @@ END:VCALENDAR`;
         await render(<ExtraEvents message={message} />, false);
 
         expect(screen.queryByTestId('ics-widget-summary')).not.toBeInTheDocument();
-        expect(screen.getByText('Unsupported event')).toBeInTheDocument();
+        await waitFor(() => expect(screen.getByText('Unsupported event')).toBeInTheDocument());
     });
 
     it('should not duplicate error banners', async () => {
@@ -565,8 +580,7 @@ END:VCALENDAR`;
         });
 
         it('method=counter: decryption error', async () => {
-            const alternativeCalendarKeysAndPassphrasePromise =
-                generateCalendarKeysAndPassphrase(dummyAddressKeyPromise);
+            const alternativeCalendarKeysAndPassphrasePromise = generateCalendarKeysAndPassphrase(dummyAddressKey);
 
             const dummyUID = 'testUID@example.domain';
             const dummyToken = await generateAttendeeToken(canonizeInternalEmail(dummySenderEmailAddress), dummyUID);
@@ -630,8 +644,10 @@ END:VCALENDAR`;
             await render(<ExtraEvents message={message} />, false);
 
             expect(
-                screen.getByText(
-                    `${dummySenderEmailAddress} accepted your invitation and proposed a new time for this event.`
+                await waitFor(() =>
+                    screen.getByText(
+                        `${dummySenderEmailAddress} accepted your invitation and proposed a new time for this event.`
+                    )
                 )
             ).toBeInTheDocument();
         });
@@ -669,7 +685,9 @@ END:VCALENDAR`;
             await render(<ExtraEvents message={message} />, false);
 
             expect(
-                screen.getByText(/This response is out of date. The event does not exist in your calendar anymore./)
+                await waitFor(() =>
+                    screen.getByText(/This response is out of date. The event does not exist in your calendar anymore./)
+                )
             ).toBeInTheDocument();
         });
 
@@ -732,8 +750,10 @@ END:VCALENDAR`;
             await render(<ExtraEvents message={message} />, false);
 
             expect(
-                screen.getByText(
-                    `${dummySenderEmailAddress} asked for the latest updates to an event which doesn't match your invitation details. Please verify the invitation details in your calendar.`
+                await waitFor(() =>
+                    screen.getByText(
+                        `${dummySenderEmailAddress} asked for the latest updates to an event which doesn't match your invitation details. Please verify the invitation details in your calendar.`
+                    )
                 )
             ).toBeInTheDocument();
         });
@@ -797,7 +817,9 @@ END:VCALENDAR`;
             await render(<ExtraEvents message={message} />, false);
 
             expect(
-                screen.getByText(`${dummySenderEmailAddress} had previously accepted your invitation.`)
+                await waitFor(() =>
+                    screen.getByText(`${dummySenderEmailAddress} had previously accepted your invitation.`)
+                )
             ).toBeInTheDocument();
         });
     });
@@ -881,7 +903,11 @@ END:VCALENDAR`;
 
             await render(<ExtraEvents message={message} />, false);
 
-            expect(screen.getByText(/This invitation is out of date. The event has been updated./)).toBeInTheDocument();
+            expect(
+                await waitFor(() =>
+                    screen.getByText(/This invitation is out of date. The event has been updated./)
+                )
+            ).toBeInTheDocument();
         });
 
         it('does not display a summary when responding to an invitation', async () => {
@@ -984,7 +1010,7 @@ END:VCALENDAR`;
                 author: dummyUserEmailAddress,
                 memberID: dummyMemberID,
                 publicKey: (await dummyCalendarKeysAndPassphrasePromise).calendarKey.publicKeys[0],
-                privateKey: (await dummyAddressKeyPromise).privateKeys[0],
+                privateKey: dummyAddressKey.privateKeys[0],
                 eventID: dummyEventID,
                 sharedEventID:
                     'CDr63-NYMQl8L_dbp9qzbaSXmb9e6L8shmaxZfF3hWz9vVD3FX0j4lkmct4zKnoOX7KgYBPbcZFccjIsD34lAZXTuO99T1XXd7WE8B36T7s=',
@@ -1008,7 +1034,7 @@ END:VCALENDAR`;
 
             await render(<ExtraEvents message={message} />, false);
 
-            userEvent.click(screen.getByTitle(`Yes, I'll attend`));
+            userEvent.click(await waitFor(() => screen.getByTitle(`Yes, I'll attend`)));
 
             await waitForElementToBeRemoved(() => screen.getByText(/Loading/));
 

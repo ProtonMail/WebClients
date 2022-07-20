@@ -1,20 +1,21 @@
-import { arrayToBinaryString, arrayToHexString, binaryStringToArray, SHA256 } from 'pmcrypto';
 import getRandomValues from '@proton/get-random-values';
+import { CryptoProxy } from '@proton/crypto';
+import { binaryStringToArray, arrayToHexString, arrayToBinaryString } from '@proton/crypto/lib/utils';
 
 import { stringToUint8Array, uint8ArrayToBase64String, uint8ArrayToString } from './encoding';
 
 export const getSHA256String = async (data: string) => {
-    const value = await SHA256(binaryStringToArray(data));
+    const value = await CryptoProxy.computeHash({ algorithm: 'SHA256', data: binaryStringToArray(data) });
     return arrayToHexString(value);
 };
 
 export const getSHA256BinaryString = async (data: string) => {
-    const value = await SHA256(binaryStringToArray(data));
+    const value = await CryptoProxy.computeHash({ algorithm: 'SHA256', data: binaryStringToArray(data) });
     return arrayToBinaryString(value);
 };
 
 export const getSHA256Base64String = async (data: string) => {
-    const value = await SHA256(binaryStringToArray(data));
+    const value = await CryptoProxy.computeHash({ algorithm: 'SHA256', data: binaryStringToArray(data) });
     return uint8ArrayToBase64String(value);
 };
 

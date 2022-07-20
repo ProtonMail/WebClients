@@ -1,11 +1,11 @@
-import { OpenPGPKey } from 'pmcrypto';
+import { PrivateKeyReference } from '@proton/crypto';
 
 import { Address, DecryptedKey, Key, User } from '../../interfaces';
 
 export interface KeyReactivationData {
     id: string;
     Key: Key;
-    privateKey?: OpenPGPKey;
+    privateKey?: PrivateKeyReference;
 }
 
 export type KeyReactivationRecord =

@@ -1,4 +1,4 @@
-import { decryptPrivateKey } from 'pmcrypto';
+import { CryptoProxy, toPublicKeyReference } from '@proton/crypto';
 import { createCalendarEvent } from '../../lib/calendar/serialize';
 import { readCalendarEvent, readPersonalPart, readSessionKeys } from '../../lib/calendar/deserialize';
 import { setVcalProdId } from '../../lib/calendar/vcalConfig';
@@ -96,12 +96,15 @@ describe('calendar encryption', () => {
     it('should encrypt and sign calendar events', async () => {
         const dummyProdId = 'Proton Calendar';
         setVcalProdId(dummyProdId);
-        const calendarKey = await decryptPrivateKey(DecryptableKey.PrivateKey, '123');
-        const addressKey = await decryptPrivateKey(DecryptableKey2, '123');
+        const calendarKey = await CryptoProxy.importPrivateKey({
+            armoredKey: DecryptableKey.PrivateKey,
+            passphrase: '123',
+        });
+        const addressKey = await CryptoProxy.importPrivateKey({ armoredKey: DecryptableKey2, passphrase: '123' });
         const data = await createCalendarEvent({
             eventComponent: veventComponent,
             privateKey: addressKey,
-            publicKey: calendarKey.toPublic(),
+            publicKey: calendarKey,
             isCreateEvent: true,
             isSwitchCalendar: false,
         });
@@ -121,7 +124,7 @@ describe('calendar encryption', () => {
                     Type: 3,
                     // the following check is just to ensure some stability in the process generating the signatures
                     // i.e. given the same input, we produce the same encrypted data
-                    Data: jasmine.stringMatching(/0sAKAfKRArUuTJnXofqQYdEjeY\+U6lg.*/g),
+                    Data: jasmine.stringMatching(/0sADAfKRArUuTJnXofqQYdEjeY\+U6lg.*/g),
                     Signature: jasmine.stringMatching(/-----BEGIN PGP SIGNATURE-----.*/g),
                 },
             ],
@@ -132,7 +135,7 @@ describe('calendar encryption', () => {
                     Type: 3,
                     // the following check is just to ensure some stability in the process generating the signatures
                     // i.e. given the same input, we produce the same encrypted data
-                    Data: jasmine.stringMatching(/0sAIAfKRArUuTJnXofqQYdEjeY\+U6lg.*/g),
+                    Data: jasmine.stringMatching(/0sABAfKRArUuTJnXofqQYdEjeY\+U6lg.*/g),
                     Signature: jasmine.stringMatching(/-----BEGIN PGP SIGNATURE-----.*/g),
                 },
             ],
@@ -149,7 +152,7 @@ describe('calendar encryption', () => {
                     Type: 3,
                     // the following check is just to ensure some stability in the process generating the signatures
                     // i.e. given the same input, we produce the same encrypted data
-                    Data: jasmine.stringMatching(/0sFDAfKRArUuTJnXofqQYdEjeY\+U6lhOwi.*/g),
+                    Data: jasmine.stringMatching(/0sE8AfKRArUuTJnXofqQYdEjeY\+U6lh.*/g),
                     Signature: jasmine.stringMatching(/-----BEGIN PGP SIGNATURE-----.*/g),
                 },
             ],
@@ -165,10 +168,13 @@ describe('calendar encryption', () => {
     });
 
     it('should roundtrip', async () => {
-        const addressKey = await decryptPrivateKey(DecryptableKey2, '123');
-        const calendarKey = await decryptPrivateKey(DecryptableKey.PrivateKey, '123');
-        const publicKey = calendarKey.toPublic();
-        const publicAddressKey = addressKey.toPublic();
+        const addressKey = await CryptoProxy.importPrivateKey({ armoredKey: DecryptableKey2, passphrase: '123' });
+        const calendarKey = await CryptoProxy.importPrivateKey({
+            armoredKey: DecryptableKey.PrivateKey,
+            passphrase: '123',
+        });
+        const publicKey = await toPublicKeyReference(calendarKey);
+        const publicAddressKey = await toPublicKeyReference(addressKey);
 
         const data = await createCalendarEvent({
             eventComponent: veventComponent,

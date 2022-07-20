@@ -4,6 +4,7 @@ import MailRecipientItemSingle from '../MailRecipientItemSingle';
 import { render, tick } from '../../../../helpers/test/render';
 import { GeneratedKey, generateKeys } from '../../../../helpers/test/crypto';
 import { clearAll } from '../../../../helpers/test/helper';
+import { setupCryptoProxyForTesting, releaseCryptoProxy } from '../../../../helpers/test/crypto';
 
 const senderAddress = 'sender@outside.com';
 
@@ -21,7 +22,12 @@ describe('MailRecipientItemSingle trust public key item in dropdown', () => {
     let senderKeys: GeneratedKey;
 
     beforeAll(async () => {
+        await setupCryptoProxyForTesting();
         senderKeys = await generateKeys('sender', senderAddress);
+    });
+
+    afterAll(async () => {
+        await releaseCryptoProxy();
     });
 
     afterEach(clearAll);

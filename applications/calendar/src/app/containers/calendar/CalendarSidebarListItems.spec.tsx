@@ -53,6 +53,11 @@ jest.mock('@proton/components/hooks/useConfig', () => ({
     default: jest.fn(() => ({ APP_NAME: 'proton-calendar' })),
 }));
 
+jest.mock('@proton/shared/lib/helpers/setupCryptoWorker', () => ({
+    __esModule: true,
+    loadCryptoWorker: jest.fn(),
+}));
+
 const mockedUseUser = useUser as jest.Mock<ReturnType<typeof useUser>>;
 const mockedGetCalendarHasSubscriptionParameters = getCalendarHasSubscriptionParameters as unknown as jest.Mock<
     ReturnType<typeof getCalendarHasSubscriptionParameters>

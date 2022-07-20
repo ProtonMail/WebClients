@@ -23,6 +23,7 @@
         "safe-buffer": "^5.2.1"
     },
     "dependencies": {
+        "@openpgp/web-stream-tools": "^0.0.10",
         "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton",
         "@proton/stylelint-config-proton": "workspace:packages/stylelint-config-proton",
         "is-ci": "^3.0.1",

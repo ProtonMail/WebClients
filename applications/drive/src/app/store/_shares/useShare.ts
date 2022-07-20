@@ -1,5 +1,4 @@
-import { OpenPGPKey, SessionKey, decryptPrivateKey } from 'pmcrypto';
-
+import { CryptoProxy, PrivateKeyReference, SessionKey } from '@proton/crypto';
 import { ShareMeta } from '@proton/shared/lib/interfaces/drive/share';
 import { queryShareMeta } from '@proton/shared/lib/api/drive/share';
 
@@ -65,7 +64,10 @@ export default function useShare() {
 
         const share = await getShareWithKey(abortSignal, shareId);
         const { decryptedPassphrase, sessionKey } = await driveCrypto.decryptSharePassphrase(share);
-        const privateKey = await decryptPrivateKey(share.key, decryptedPassphrase);
+        const privateKey = await CryptoProxy.importPrivateKey({
+            armoredKey: share.key,
+            passphrase: decryptedPassphrase,
+        });
 
         sharesKeys.set(shareId, privateKey, sessionKey);
         return {
@@ -77,7 +79,7 @@ export default function useShare() {
     /**
      * getSharePrivateKey returns private key used for link private key encryption.
      */
-    const getSharePrivateKey = async (abortSignal: AbortSignal, shareId: string): Promise<OpenPGPKey> => {
+    const getSharePrivateKey = async (abortSignal: AbortSignal, shareId: string): Promise<PrivateKeyReference> => {
         const keys = await getShareKeys(abortSignal, shareId);
         return keys.privateKey;
     };

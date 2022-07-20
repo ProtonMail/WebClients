@@ -1,5 +1,6 @@
-import { encryptMessage, signMessage } from 'pmcrypto';
 import { c } from 'ttag';
+import { CryptoProxy } from '@proton/crypto';
+
 import { generateProtonWebUID } from '../helpers/uid';
 import { vCardPropertiesToICAL } from './vcard';
 import { hasCategories, getVCardProperties, createContactPropertyUid } from './properties';
@@ -66,19 +67,23 @@ export const prepareCardsFromVCard = (
     const { toEncryptAndSign = [], toSign = [], toClearText = [] } = splitVCardProperties(properties);
 
     if (toEncryptAndSign.length > 0) {
-        const data = vCardPropertiesToICAL(toEncryptAndSign).toString();
+        const textData: string = vCardPropertiesToICAL(toEncryptAndSign).toString();
 
         promises.push(
-            encryptMessage({ data, publicKeys, privateKeys, armor: true, detached: true }).then(
-                ({ data: Data, signature: Signature }) => {
-                    const card: ContactCard = {
-                        Type: ENCRYPTED_AND_SIGNED,
-                        Data,
-                        Signature,
-                    };
-                    return card;
-                }
-            )
+            CryptoProxy.encryptMessage({
+                textData,
+                stripTrailingSpaces: true,
+                encryptionKeys: publicKeys,
+                signingKeys: privateKeys,
+                detached: true,
+            }).then(({ message: Data, signature: Signature }) => {
+                const card: ContactCard = {
+                    Type: ENCRYPTED_AND_SIGNED,
+                    Data,
+                    Signature,
+                };
+                return card;
+            })
         );
     }
 
@@ -96,13 +101,18 @@ export const prepareCardsFromVCard = (
             toSign.push({ field: 'fn', value: defaultFN, uid: createContactPropertyUid() });
         }
 
-        const data = vCardPropertiesToICAL(toSign).toString();
+        const textData: string = vCardPropertiesToICAL(toSign).toString();
 
         promises.push(
-            signMessage({ data, privateKeys, armor: true, detached: true }).then(({ signature: Signature }) => {
+            CryptoProxy.signMessage({
+                textData,
+                stripTrailingSpaces: true,
+                signingKeys: privateKeys,
+                detached: true,
+            }).then((Signature) => {
                 const card: ContactCard = {
                     Type: SIGNED,
-                    Data: data,
+                    Data: textData,
                     Signature,
                 };
                 return card;

@@ -1,13 +1,20 @@
-import { getKeys } from 'pmcrypto';
-
+import { CryptoProxy, KeyInfo } from '@proton/crypto';
 import isTruthy from '@proton/utils/isTruthy';
 import { readFileAsString } from '../helpers/file';
 
-const PRIVATE_KEY_EXPR =
+export interface ArmoredKeyWithInfo extends KeyInfo {
+    /**
+     * Armored key corresponding to the key info.
+     * This could be a decrypted private key (see `this.keyIsDecrypted`), so handle with care.
+     */
+    armoredKey: string;
+}
+
+const ARMORED_KEY_EXPR =
     /-----BEGIN PGP (PRIVATE|PUBLIC) KEY BLOCK-----(?:(?!-----)[\s\S])*-----END PGP (PRIVATE|PUBLIC) KEY BLOCK-----/g;
 
 export const parseArmoredKeys = (fileString: string) => {
-    return fileString.match(PRIVATE_KEY_EXPR) || [];
+    return fileString.match(ARMORED_KEY_EXPR) || [];
 };
 
 export const parseKeys = (filesAsStrings: string[] = []) => {
@@ -17,15 +24,19 @@ export const parseKeys = (filesAsStrings: string[] = []) => {
     }
 
     return Promise.all(
-        armoredKeys.map(async (armoredPrivateKey) => {
+        armoredKeys.map(async (armoredKey) => {
             try {
-                const [key] = await getKeys(armoredPrivateKey);
-                return key;
+                const keyInfo = await CryptoProxy.getKeyInfo({ armoredKey });
+                const ArmoredKeyWithInfo = {
+                    ...keyInfo,
+                    armoredKey,
+                };
+                return ArmoredKeyWithInfo;
             } catch (e: any) {
                 // ignore errors
             }
         })
-    ).then((result) => result.filter(isTruthy));
+    ).then((result) => result.filter<ArmoredKeyWithInfo>(isTruthy));
 };
 
 export const parseKeyFiles = async (files: File[] = []) => {

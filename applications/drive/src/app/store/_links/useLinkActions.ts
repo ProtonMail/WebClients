@@ -1,5 +1,4 @@
-import { encryptMessage } from 'pmcrypto';
-
+import { CryptoProxy } from '@proton/crypto';
 import { usePreventLeave } from '@proton/components';
 import { queryRenameLink } from '@proton/shared/lib/api/drive/share';
 import { queryCreateFolder } from '@proton/shared/lib/api/drive/folder';
@@ -52,13 +51,13 @@ export default function useLinkActions() {
             await Promise.all([
                 generateLookupHash(name, parentHashKey),
                 generateNodeKeys(parentPrivateKey, addressKey),
-                encryptName(name, parentPrivateKey.toPublic(), addressKey),
+                encryptName(name, parentPrivateKey, addressKey),
             ]);
 
         // We use private key instead of address key to sign the hash key
         // because its internal property of the folder. We use address key for
         // name or content to have option to trust some users more or less.
-        const { NodeHashKey } = await generateNodeHashKey(privateKey.toPublic(), privateKey);
+        const { NodeHashKey } = await generateNodeHashKey(privateKey, privateKey);
 
         const xattr = !modificationTime
             ? undefined
@@ -104,12 +103,13 @@ export default function useLinkActions() {
             getPrimaryAddressKey(),
         ]);
 
-        const [Hash, { data: encryptedName }] = await Promise.all([
+        const [Hash, { message: encryptedName }] = await Promise.all([
             generateLookupHash(newName, parentHashKey),
-            encryptMessage({
-                data: newName,
+            CryptoProxy.encryptMessage({
+                textData: newName,
+                stripTrailingSpaces: true,
                 sessionKey,
-                privateKeys: addressKey,
+                signingKeys: addressKey,
             }),
         ]);
 

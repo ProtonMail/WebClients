@@ -5,10 +5,10 @@ module.exports = {
     collectCoverageFrom: ['src/**/*.{js,jsx,ts,tsx}'],
     testEnvironment: './jest.env.js',
     transformIgnorePatterns: [
-        'node_modules/(?!(@proton/shared|@proton/components|@protontech/mutex-browser|pmcrypto|@protontech/bip39)/)',
+        'node_modules/(?!(@proton/shared|@proton/components|@protontech/mutex-browser|pmcrypto-v7|openpgp|@openpgp/web-stream-tools|@openpgp/asmcrypto.js|@protontech/bip39)/)',
     ],
     transform: {
-        '^.+\\.(js|tsx?)$': '<rootDir>/jest.transform.js',
+        '^.+\\.(m?js|tsx?)$': '<rootDir>/jest.transform.js',
     },
     moduleNameMapper: {
         '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm)$': '@proton/components/__mocks__/fileMock.js',

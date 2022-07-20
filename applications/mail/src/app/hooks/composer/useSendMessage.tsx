@@ -12,7 +12,7 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { useDispatch } from 'react-redux';
-import { DecryptResultPmcrypto } from 'pmcrypto';
+import { WorkerDecryptionResult } from '@proton/crypto';
 import { generateTopPackages } from '../../helpers/send/sendTopPackages';
 import { attachSubPackages } from '../../helpers/send/sendSubPackages';
 import { sendFormatter } from '../../helpers/send/sendFormatter';
@@ -54,7 +54,7 @@ export const useSendMessage = () => {
     const { createNotification, hideNotification } = useNotifications();
     const sendModification = useSendModifications();
 
-    const onUpdateAttachment = (ID: string, attachment: DecryptResultPmcrypto) => {
+    const onUpdateAttachment = (ID: string, attachment: WorkerDecryptionResult<Uint8Array>) => {
         dispatch(updateAttachment({ ID, attachment }));
     };
 

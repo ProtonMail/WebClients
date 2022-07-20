@@ -1,7 +1,7 @@
 import { c } from 'ttag';
-import { algorithmInfo } from 'pmcrypto';
 import { addUserKeysProcess } from '@proton/shared/lib/keys';
 import { EncryptionConfig } from '@proton/shared/lib/interfaces';
+import { AlgorithmInfo } from '@proton/crypto';
 
 import { Button, Loader, useModalState } from '../../components';
 import { useUser, useModals, useUserKeys, useApi, useEventManager, useAuthentication } from '../../hooks';
@@ -24,7 +24,7 @@ const UserKeysSections = () => {
     const [userKeys, loadingUserKeys] = useUserKeys();
     const userKeysDisplay = useDisplayKeys({ keys: userKeys, User });
 
-    const existingAlgorithms = userKeysDisplay.reduce<algorithmInfo[]>(
+    const existingAlgorithms = userKeysDisplay.reduce<AlgorithmInfo[]>(
         (acc, { algorithmInfos }) => acc.concat(algorithmInfos),
         []
     );

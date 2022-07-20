@@ -12,19 +12,11 @@ const { SubresourceIntegrityPlugin } = require('webpack-subresource-integrity');
 
 const WriteWebpackPlugin = require('./write-webpack-plugin');
 const SriStripPlugin = require('./sri-strip-plugin');
-const transformOpenpgpFiles = require('./helpers/openpgp');
-const { OPENPGP_FILES } = require('./constants');
 
 const defaultFaviconConfig = require('./favicon.config');
 const faviconConfig = require(path.resolve('./favicon.config.js'));
 
 module.exports = ({ isProduction, publicPath, appMode, buildData, featureFlags, writeSRI, warningLogs, errorLogs }) => {
-    const { main, worker, elliptic, compat, definition } = transformOpenpgpFiles(
-        OPENPGP_FILES,
-        publicPath,
-        isProduction
-    );
-
     return [
         ...(isProduction
             ? []
@@ -70,13 +62,6 @@ module.exports = ({ isProduction, publicPath, appMode, buildData, featureFlags, 
                 },
             ],
         }),
-
-        new WriteWebpackPlugin(
-            [main, compat, elliptic, worker].map(({ filepath, contents }) => ({
-                name: filepath,
-                data: Buffer.from(contents),
-            }))
-        ),
 
         new WriteWebpackPlugin([
             {
@@ -159,7 +144,6 @@ module.exports = ({ isProduction, publicPath, appMode, buildData, featureFlags, 
             : []),
 
         new webpack.DefinePlugin({
-            WEBPACK_OPENPGP: JSON.stringify(definition),
             WEBPACK_APP_MODE: JSON.stringify(appMode),
             WEBPACK_PUBLIC_PATH: JSON.stringify(publicPath),
             WEBPACK_FEATURE_FLAGS: JSON.stringify(featureFlags),

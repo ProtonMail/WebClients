@@ -25,10 +25,16 @@ const getRoosterEditorActions = (
             editorInstance.setContent(value);
         },
         focus() {
+            if (editorInstance.isDisposed()) {
+                return;
+            }
+
             // Didn't find more elegant
             if (!isJSDom()) {
                 iframeRef.current?.contentWindow?.focus();
+                return;
             }
+
             editorInstance.focus();
         },
         insertImage(url: string, attrs: { [key: string]: string } = {}) {

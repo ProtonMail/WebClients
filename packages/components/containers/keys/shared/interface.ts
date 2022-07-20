@@ -1,4 +1,4 @@
-import { algorithmInfo } from 'pmcrypto';
+import type { AlgorithmInfo } from '@proton/crypto';
 
 export interface KeyPermissions {
     canExportPublicKey: boolean;
@@ -37,7 +37,7 @@ export interface KeyDisplay {
     flags: number;
     primary: 0 | 1;
     algorithm: string;
-    algorithmInfos: algorithmInfo[];
+    algorithmInfos: AlgorithmInfo[];
     status: KeyStatus;
     permissions: KeyPermissions;
     isWeak: boolean;

@@ -1,4 +1,4 @@
-import { SessionKey } from 'pmcrypto';
+import { SessionKey } from '@proton/crypto';
 import { AuthVersion } from '../../authentication/interface';
 import { DriveFileBlock } from './file';
 import { LinkType } from './link';

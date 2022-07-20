@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { c } from 'ttag';
-import { encryptPrivateKey } from 'pmcrypto';
 
+import { CryptoProxy } from '@proton/crypto';
 import { activateOrganizationKey, getOrganizationBackupKeys } from '@proton/shared/lib/api/organization';
 import { OrganizationModel } from '@proton/shared/lib/models';
 import { decryptPrivateKeyWithSalt } from '@proton/shared/lib/keys';
@@ -82,7 +82,10 @@ const ReactivateOrganizationKeysModal = ({ onResetKeys, mode, onClose, ...rest }
                 password: backupPassword,
                 keySalt: KeySalt,
             });
-            const armoredPrivateKey = await encryptPrivateKey(decryptedPrivateKey, authentication.getPassword());
+            const armoredPrivateKey = await CryptoProxy.exportPrivateKey({
+                privateKey: decryptedPrivateKey,
+                passphrase: authentication.getPassword(),
+            });
             await api(activateOrganizationKey(armoredPrivateKey));
             await call();
             // Warning: The organization model is deleted because there is no event manager notification for when the

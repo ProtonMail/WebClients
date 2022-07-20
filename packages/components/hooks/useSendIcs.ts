@@ -1,5 +1,5 @@
 import { ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
-import { concatArrays } from 'pmcrypto';
+import { concatArrays } from '@proton/crypto/lib/utils';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 import isTruthy from '@proton/utils/isTruthy';

@@ -1,4 +1,4 @@
-import { OpenPGPKey } from 'pmcrypto';
+import { CryptoProxy, PrivateKeyReference, CryptoApiInterface } from '@proton/crypto';
 
 import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 
@@ -21,9 +21,9 @@ const linkMock = {
 const DECRYPTED_NAME = 'a smell of petroleum prevails throughout';
 const PRIVATE_KEY = 'private-key';
 
-jest.mock('pmcrypto', () => ({
-    decryptPrivateKey: jest.fn().mockImplementation(() => PRIVATE_KEY),
-}));
+const mockedCryptoApi = {
+    importPrivateKey: jest.fn().mockImplementation(() => PRIVATE_KEY),
+} as any as CryptoApiInterface;
 
 jest.mock('@proton/shared/lib/keys/driveKeys', () => ({
     decryptUnsigned: jest.fn().mockImplementation(() => DECRYPTED_NAME),
@@ -38,12 +38,20 @@ jest.mock('@proton/shared/lib/keys/drivePassphrase', () => ({
 describe('useKeysCache', () => {
     let keyCache: KeyCache;
 
+    beforeAll(() => {
+        CryptoProxy.setEndpoint(mockedCryptoApi);
+    });
+
+    afterAll(async () => {
+        await CryptoProxy.releaseEndpoint();
+    });
+
     beforeEach(() => {
-        keyCache = createKeysCache('key' as unknown as OpenPGPKey);
+        keyCache = createKeysCache('key' as unknown as PrivateKeyReference);
     });
 
     it('caches decrypted links', async () => {
-        const { name } = await keyCache.decryptAndCacheLink(linkMock, {} as unknown as OpenPGPKey);
+        const { name } = await keyCache.decryptAndCacheLink(linkMock, {} as unknown as PrivateKeyReference);
 
         expect(name).toEqual(DECRYPTED_NAME);
         const key = keyCache.getCachedPrivateKey(linkMock.LinkID);

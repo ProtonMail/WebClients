@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { OpenPGPKey } from 'pmcrypto';
 
+import { PublicKeyReference } from '@proton/crypto';
 import noop from '@proton/utils/noop';
 import { EditorMetadata, EditorTextDirection, useHandler } from '@proton/components';
 import { eoDefaultMailSettings, eoDefaultUserSettings } from '@proton/shared/lib/mail/eo/constants';
@@ -22,7 +22,7 @@ import { ExternalEditorActions } from '../../composer/editor/EditorWrapper';
 interface Props {
     referenceMessage: MessageState;
     id: string;
-    publicKey?: OpenPGPKey[];
+    publicKey?: PublicKeyReference[];
     outsideKey?: OutsideKey;
     numberOfReplies: number;
 }

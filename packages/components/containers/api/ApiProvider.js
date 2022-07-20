@@ -4,7 +4,7 @@ import xhr from '@proton/shared/lib/fetch/fetch';
 import configureApi from '@proton/shared/lib/api';
 import withApiHandlers from '@proton/shared/lib/api/helpers/withApiHandlers';
 import { getDateHeader } from '@proton/shared/lib/fetch/helpers';
-import { updateServerTime } from 'pmcrypto';
+import { updateServerTime } from '@proton/crypto';
 import {
     getApiError,
     getApiErrorMessage,

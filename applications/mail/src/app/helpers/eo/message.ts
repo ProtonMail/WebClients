@@ -1,14 +1,13 @@
-import { decryptMessage, getMessage } from 'pmcrypto';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { Recipient } from '@proton/shared/lib/interfaces';
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
+import { CryptoProxy } from '@proton/crypto';
 
 import { EOMessage } from '../../logic/eo/eoType';
 import { MessageState } from '../../logic/messages/messagesTypes';
 
 export const eoDecrypt = async (encryptedValue: string, password: string) => {
-    const message = await getMessage(encryptedValue);
-    const { data } = await decryptMessage({ message, passwords: [password] });
+    const { data } = await CryptoProxy.decryptMessage({ armoredMessage: encryptedValue, passwords: [password] });
 
     return data;
 };

@@ -1,6 +1,7 @@
 import useGetCalendarEventPersonal from '@proton/components/hooks/useGetCalendarEventPersonal';
 import { useGetCanonicalEmailsMap } from '@proton/components/hooks/useGetCanonicalEmailsMap';
-import { arrayToBinaryString, decodeUtf8, DecryptResultPmcrypto } from 'pmcrypto';
+import { WorkerDecryptionResult } from '@proton/crypto';
+import { arrayToBinaryString, decodeUtf8 } from '@proton/crypto/lib/utils';
 import {
     getCanCreateCalendar,
     getDefaultCalendar,
@@ -145,7 +146,7 @@ const ExtraEvents = ({ message }: Props) => {
                         return 0;
                     });
 
-                    const onUpdateAttachment = (ID: string, attachment: DecryptResultPmcrypto) => {
+                    const onUpdateAttachment = (ID: string, attachment: WorkerDecryptionResult<Uint8Array>) => {
                         dispatch(updateAttachment({ ID, attachment }));
                     };
 

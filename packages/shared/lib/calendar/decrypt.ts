@@ -1,14 +1,4 @@
-import {
-    createCleartextMessage,
-    decryptMessage,
-    decryptSessionKey,
-    getMessage,
-    getSignature,
-    OpenPGPKey,
-    SessionKey,
-    VERIFICATION_STATUS,
-    verifyMessage,
-} from 'pmcrypto';
+import { CryptoProxy, PrivateKeyReference, PublicKeyReference, SessionKey, VERIFICATION_STATUS } from '@proton/crypto';
 
 import { base64StringToUint8Array } from '../helpers/encoding';
 import { CalendarEventData } from '../interfaces/calendar';
@@ -41,22 +31,25 @@ export const getAggregatedEventVerificationStatus = (arr: (EVENT_VERIFICATION_ST
     return EVENT_VERIFICATION_STATUS.NOT_VERIFIED;
 };
 
-export const getDecryptedSessionKey = async (data: Uint8Array, privateKeys: OpenPGPKey | OpenPGPKey[]) => {
-    return decryptSessionKey({ message: await getMessage(data), privateKeys });
+export const getDecryptedSessionKey = async (
+    data: Uint8Array,
+    privateKeys: PrivateKeyReference | PrivateKeyReference[]
+) => {
+    return CryptoProxy.decryptSessionKey({ binaryMessage: data, decryptionKeys: privateKeys });
 };
 
 export const verifySignedCard = async (
     dataToVerify: string,
     signature: string | null,
-    publicKeys: OpenPGPKey | OpenPGPKey[]
+    publicKeys: PublicKeyReference | PublicKeyReference[]
 ) => {
     const verified = signature
         ? (
-              await verifyMessage({
-                  message: await createCleartextMessage(dataToVerify),
-                  publicKeys,
-                  signature: await getSignature(signature),
-                  detached: true,
+              await CryptoProxy.verifyMessage({
+                  textData: dataToVerify,
+                  stripTrailingSpaces: true,
+                  verificationKeys: publicKeys,
+                  armoredSignature: signature,
               })
           ).verified
         : undefined;
@@ -69,13 +62,13 @@ export const verifySignedCard = async (
 export const decryptCard = async (
     dataToDecrypt: Uint8Array,
     signature: string | null,
-    publicKeys: OpenPGPKey | OpenPGPKey[],
+    publicKeys: PublicKeyReference | PublicKeyReference[],
     sessionKey: SessionKey
 ) => {
-    const { data: decryptedData, verified } = await decryptMessage({
-        message: await getMessage(dataToDecrypt),
-        publicKeys,
-        signature: signature ? await getSignature(signature) : undefined,
+    const { data: decryptedData, verified } = await CryptoProxy.decryptMessage({
+        binaryMessage: dataToDecrypt,
+        verificationKeys: publicKeys,
+        armoredSignature: signature || undefined,
         sessionKeys: [sessionKey],
     });
     const hasPublicKeys = Array.isArray(publicKeys) ? !!publicKeys.length : !!publicKeys;
@@ -90,7 +83,7 @@ export const decryptCard = async (
 
 export const decryptAndVerifyCalendarEvent = (
     { Type, Data, Signature, Author }: CalendarEventData,
-    publicKeysMap: SimpleMap<OpenPGPKey | OpenPGPKey[]>,
+    publicKeysMap: SimpleMap<PublicKeyReference | PublicKeyReference[]>,
     sessionKey: SessionKey | undefined
 ): Promise<{ data: string; verificationStatus: EVENT_VERIFICATION_STATUS }> => {
     const publicKeys = publicKeysMap[Author] || [];

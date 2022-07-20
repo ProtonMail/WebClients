@@ -9,6 +9,7 @@ import {
     getHasUpdatedInviteData,
 } from '@proton/shared/lib/calendar/integration/invite';
 import { getAttendeePartstat, getHasAttendees } from '@proton/shared/lib/calendar/vcalHelper';
+import { PublicKeyReference } from '@proton/crypto';
 import { getIsAddressActive } from '@proton/shared/lib/helpers/address';
 import { canonizeEmailByGuess } from '@proton/shared/lib/helpers/email';
 import unary from '@proton/utils/unary';
@@ -20,7 +21,6 @@ import { RelocalizeText } from '@proton/shared/lib/interfaces/hooks/RelocalizeTe
 import { SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
 import { RequireSome, SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import { getSupportedPlusAlias } from '@proton/shared/lib/mail/addresses';
-import { OpenPGPKey } from 'pmcrypto';
 import { INVITE_ACTION_TYPES, InviteActions } from '../../../interfaces/Invite';
 import { withIncrementedSequence } from './sequence';
 
@@ -119,7 +119,7 @@ export const getAddedAttendeesPublicKeysMap = ({
     sendPreferencesMap: SimpleMap<SendPreferences>;
 }) => {
     const addedAttendeesEmails = extractNewInvitedAttendeeEmails(veventComponent, inviteActions);
-    return addedAttendeesEmails.reduce<SimpleMap<OpenPGPKey>>((acc, email) => {
+    return addedAttendeesEmails.reduce<SimpleMap<PublicKeyReference>>((acc, email) => {
         const publicKey = extractProtonAttendeePublicKey(email, sendPreferencesMap);
         if (!publicKey) {
             return acc;

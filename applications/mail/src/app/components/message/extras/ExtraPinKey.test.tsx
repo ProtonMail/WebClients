@@ -1,5 +1,5 @@
 import { Address, MailSettings } from '@proton/shared/lib/interfaces';
-import { OpenPGPKey } from 'pmcrypto';
+import { PublicKeyReference } from '@proton/crypto';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import { fireEvent, Matcher } from '@testing-library/dom';
@@ -16,6 +16,7 @@ import {
 import ExtraPinKey from './ExtraPinKey';
 import { MessageVerification } from '../../../logic/messages/messagesTypes';
 import { message } from '../../../helpers/test/pinKeys';
+import { setupCryptoProxyForTesting, releaseCryptoProxy } from '../../../helpers/test/crypto';
 
 const { SIGNED_AND_VALID, SIGNED_AND_INVALID, NOT_SIGNED, NOT_VERIFIED } = VERIFICATION_STATUS;
 
@@ -41,6 +42,14 @@ const setup = async (
 };
 
 describe('Extra pin key banner not displayed', () => {
+    beforeAll(async () => {
+        await setupCryptoProxyForTesting();
+    });
+
+    afterAll(async () => {
+        await releaseCryptoProxy();
+    });
+
     afterEach(clearAll);
 
     it('should not render the banner when sender has a PM address', async () => {
@@ -49,7 +58,7 @@ describe('Extra pin key banner not displayed', () => {
 
         const messageVerification = {
             signingPublicKey: signingKey.publicKeys[0],
-            senderPinnedKeys: [...senderKey.publicKeys] as OpenPGPKey[],
+            senderPinnedKeys: [...senderKey.publicKeys] as PublicKeyReference[],
             verificationStatus: SIGNED_AND_VALID,
         } as MessageVerification;
 
@@ -68,8 +77,8 @@ describe('Extra pin key banner not displayed', () => {
         const senderKey = await generateKeys('sender', message.Sender.Address);
 
         const messageVerification = {
-            senderPinnedKeys: [...senderKey.publicKeys] as OpenPGPKey[],
-            attachedPublicKeys: [...senderKey.publicKeys] as OpenPGPKey[],
+            senderPinnedKeys: [...senderKey.publicKeys] as PublicKeyReference[],
+            attachedPublicKeys: [...senderKey.publicKeys] as PublicKeyReference[],
             verificationStatus,
         } as MessageVerification;
 
@@ -81,6 +90,14 @@ describe('Extra pin key banner not displayed', () => {
 });
 
 describe('Extra pin key banner displayed', () => {
+    beforeAll(async () => {
+        await setupCryptoProxyForTesting();
+    });
+
+    afterAll(async () => {
+        await releaseCryptoProxy();
+    });
+
     afterEach(clearAll);
 
     const openTrustKeyModal = async (getByText: (text: Matcher) => HTMLElement) => {
@@ -138,8 +155,8 @@ describe('Extra pin key banner displayed', () => {
 
         const messageVerification = {
             signingPublicKey: signingKey.publicKeys[0],
-            senderPinnedKeys: [...senderKey.publicKeys] as OpenPGPKey[],
-            senderPinnableKeys: [...signingKey.publicKeys] as OpenPGPKey[],
+            senderPinnedKeys: [...senderKey.publicKeys] as PublicKeyReference[],
+            senderPinnableKeys: [...signingKey.publicKeys] as PublicKeyReference[],
             verificationStatus: NOT_VERIFIED,
         } as MessageVerification;
 
@@ -157,7 +174,7 @@ describe('Extra pin key banner displayed', () => {
 
         const messageVerification = {
             signingPublicKey: signingKey.publicKeys[0],
-            senderPinnedKeys: [...senderKey.publicKeys] as OpenPGPKey[],
+            senderPinnedKeys: [...senderKey.publicKeys] as PublicKeyReference[],
             verificationStatus: SIGNED_AND_INVALID,
         } as MessageVerification;
 
@@ -175,7 +192,7 @@ describe('Extra pin key banner displayed', () => {
 
         const messageVerification = {
             signingPublicKey: signingKey.publicKeys[0],
-            attachedPublicKeys: [...signingKey.publicKeys] as OpenPGPKey[],
+            attachedPublicKeys: [...signingKey.publicKeys] as PublicKeyReference[],
             verificationStatus,
         } as MessageVerification;
 
@@ -201,7 +218,7 @@ describe('Extra pin key banner displayed', () => {
 
             const messageVerification = {
                 signingPublicKey: hasSigningKey ? signingKey.publicKeys[0] : undefined,
-                attachedPublicKeys: [...signingKey.publicKeys] as OpenPGPKey[],
+                attachedPublicKeys: [...signingKey.publicKeys] as PublicKeyReference[],
                 verificationStatus,
             } as MessageVerification;
 
