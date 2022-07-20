@@ -621,7 +621,7 @@
     },
     "blackfriday: VPNspecialoffer Info": {
       "Save ${ percentage }%": [
-        "- ${ percentage }%"
+        "${ percentage }%"
       ]
     },
     "blackfriday: VPNspecialoffer info": {
@@ -2599,6 +2599,9 @@
       ],
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
         "Μια κρυπτογραφημένη αρχειοθήκη σας είναι κλειδωμένη, πιθανότατα λόγω πρόσφατης επαναφοράς κωδικού πρόσβασης."
+      ],
+      "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters is allowed": [
+        "Επιτρέπονται μόνο ${ MAX_CUSTOM_PASSWORD_LENGTH } χαρακτήρες"
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Αλλάξτε αυτές τις ρυθμίσεις μόνο αν χρησιμοποιείτε PGP με παραλήπτες εκτός ${ BRAND_NAME }."

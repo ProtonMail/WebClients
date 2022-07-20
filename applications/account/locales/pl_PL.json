@@ -178,6 +178,9 @@
       "Continue to ${ name }": [
         "Przejdź do aplikacji ${ name }"
       ],
+      "Continue with ${ nameToDisplay } ${ maybeEmailInBrackets }": [
+        "Kontynuuj z ${ nameToDisplay } ${ maybeEmailInBrackets }"
+      ],
       "Continue with Google": [
         "Kontynuuj z Google"
       ],
@@ -224,7 +227,7 @@
         "Dostosuj"
       ],
       "Customize import": [
-        "Dostosuj proces importowana"
+        "Dostosuj proces importowania"
       ],
       "Customize plan": [
         "Dostosuj plan"
@@ -687,6 +690,9 @@
       ],
       "Sign out": [
         "Wyloguj"
+      ],
+      "Sign out from ${ nameToDisplay } ${ maybeEmailInBrackets }": [
+        "Wyloguj się z ${ nameToDisplay } ${ maybeEmailInBrackets }"
       ],
       "Sign out of all accounts": [
         "Wyloguj się ze wszystkich kont"
@@ -1174,6 +1180,12 @@
     "Calendar limit warning": {
       "You have reached the maximum number of personal calendars you can create within your plan.": [
         "Osiągnięto maksymalną liczbę osobistych kalendarzy."
+      ],
+      "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS } subscribed calendar.": [
+        "Osiągnięto maksymalną liczbę ${ MAX_SUBSCRIBED_CALENDARS } subskrybowanego kalendarza.",
+        "Osiągnięto maksymalną liczbę ${ MAX_SUBSCRIBED_CALENDARS } subskrybowanych kalendarzy.",
+        "Osiągnięto maksymalną liczbę ${ MAX_SUBSCRIBED_CALENDARS } subskrybowanych kalendarzy.",
+        "Osiągnięto maksymalną liczbę ${ MAX_SUBSCRIBED_CALENDARS } subskrybowanych kalendarzy."
       ]
     },
     "Calendar link purpose update success message": {
@@ -3185,11 +3197,23 @@
       ]
     },
     "Error message, recovery": {
+      "Please ${ _signIn } to resend a recovery email verification request.": [
+        "${ _signIn }, aby ponownie wysłać żądanie weryfikacji adresu pomocniczego."
+      ],
+      "sign in": [
+        "Zaloguj się"
+      ],
       "There was a problem verifying your email address.": [
         "Wystąpił problem podczas weryfikowania adresu e-mail."
       ]
     },
     "Error message, unsubscribe": {
+      "Please ${ signIn } to update your email subscription preferences.": [
+        "${ signIn }, aby zaktualizować ustawienia list mailingowych."
+      ],
+      "sign in": [
+        "Zaloguj się"
+      ],
       "There was a problem unsubscribing you.": [
         "Wystąpił problem z anulowaniem subskrypcji."
       ]
@@ -4457,6 +4481,9 @@
       ],
       "Continue with ${ planName }": [
         "Kontynuuj z planem ${ planName }"
+      ],
+      "Continuing will connect your ${ ACCOUNT_APP_NAME } to ${ name }.": [
+        "Kontynuowanie połączy konto ${ ACCOUNT_APP_NAME } z ${ name }."
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Utwórz ${ calendarsToBeCreated } nowy kalendarz",
@@ -6961,7 +6988,7 @@
         "Ogłoszenia firmy Proton"
       ],
       "Proton for business": [
-        "Proton dla biznesu"
+        "Proton for Business"
       ],
       "Proton for Business newsletter": [
         "Newsletter Proton dla biznesu"
@@ -7996,7 +8023,7 @@
         "Obsługa IMAP jest dostępna na aplikacjach desktopowych (np. Outlook, Apple Mail, Thunderbird) za pomocą ${ MAIL_APP_NAME } Bridge. Integracje IMAP oparte na chmurze nie są obsługiwane."
       ],
       "Keeps you protected by blocking all network connections when you are accidentally disconnected from our VPN server": [
-        "Chroni Cię, blokując wszystkie połączenia sieciowe, gdy przypadkowo utracisz połączenie z naszym serwerem VPN"
+        "Keeps you protected by blocking all network connections when you are unexpectedly disconnected from our VPN server."
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Etykiety to proste znaczniki, które możesz dodawać do wiadomości, aby ułatwić ich wyszukiwanie lub filtrowanie"
@@ -8014,7 +8041,7 @@
         "Ponadto możesz dodać do 5 kalendarzy od znajomych, rodziny, współpracowników i organizacji."
       ],
       "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections": [
-        "Jedno połączenie VPN pozwala jednemu urządzeniu połączyć się z usługą Proton VPN w danym momencie. Na przykład, aby podłączyć telefon i laptop do Proton VPN w tym samym czasie, potrzebujesz 2 połączenia VPN"
+        "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Możliwość przeglądania służbowych skrzynek odbiorczych użytkowników w taki sam sposób, w jaki robi to użytkownik, łącznie z pełnymi wiadomościami i szczegółami kontaktu"
@@ -8679,6 +8706,9 @@
       ],
       "Email address not yet verified.": [
         "Adres e-mail nie został zweryfikowany."
+      ],
+      "sign in": [
+        "logowania"
       ],
       "Verification email sent to ${ email.Value }": [
         "Wiadomość weryfikacyjna została wysłana do ${ email.Value }"
@@ -9599,10 +9629,10 @@
         "Dostosuj i potwierdź"
       ],
       "Customize calendar import": [
-        "Dostosuj proces importowana kalendarza"
+        "Dostosuj proces importowania kalendarza"
       ],
       "Customize your mail import": [
-        "Dostosuj proces importowana poczty"
+        "Dostosuj proces importowania poczty"
       ],
       "Customize your plan": [
         "Dostosuj plan"
@@ -10385,6 +10415,12 @@
       ]
     },
     "Upgrade notice": {
+      "Upgrade to a Mail paid plan to create up to ${ MAX_CALENDARS_PAID } calendar, allowing you to make calendars for work, to share with friends, and just for yourself.": [
+        "Ulepsz do płatnego planu poczty, aby utworzyć do ${ MAX_CALENDARS_PAID } kalendarza, który przyda się podczas pracy, kontaktów z przyjaciółmi i własnych celów.",
+        "Ulepsz do płatnego planu poczty, aby utworzyć do ${ MAX_CALENDARS_PAID } kalendarzy, które przydadzą się podczas pracy, kontaktów z przyjaciółmi i własnych celów.",
+        "Ulepsz do płatnego planu poczty, aby utworzyć do ${ MAX_CALENDARS_PAID } kalendarzy, które przydadzą się podczas pracy, kontaktów z przyjaciółmi i własnych celów.",
+        "Ulepsz do płatnego planu poczty, aby utworzyć do ${ MAX_CALENDARS_PAID } kalendarzy, które przydadzą się podczas pracy, kontaktów z przyjaciółmi i własnych celów."
+      ],
       "Upgrade to a Mail paid plan to share your personal calendar via link with anyone.": [
         "Ulepsz do płatnego planu poczty, aby udostępniać osobisty kalendarz za pomocą linku."
       ]

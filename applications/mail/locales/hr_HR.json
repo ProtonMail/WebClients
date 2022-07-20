@@ -2605,6 +2605,9 @@
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Naš je sustav ovu e-poruku označio kao pokušaj krađe identiteta. Molimo provjerite je li legitimna poruka."
       ],
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
+        "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages."
+      ],
       "Phone number": [
         "Broj telefona"
       ],
@@ -5188,9 +5191,8 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "Svaku ${ interval } godinu",
-        "Svake ${ interval } godine",
-        "Svakih ${ interval } godina"
+        "Yearly",
+        ""
       ],
       "Every ${ interval } year, ${ timesString }": [
         "Svaku ${ interval } godinu, ${ timesString }",

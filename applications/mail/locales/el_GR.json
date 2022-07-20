@@ -4232,6 +4232,9 @@
       "per month.": [
         "ανά μήνα."
       ],
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
+        "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages."
+      ],
       "Phone number": [
         "Αριθμός τηλεφώνου"
       ],
@@ -7548,8 +7551,8 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "Κάθε ${ interval } χρόνο",
-        "Κάθε ${ interval } χρόνια"
+        "Yearly",
+        ""
       ],
       "Every ${ interval } year, ${ timesString }": [
         "Κάθε ${ interval } χρόνο, ${ timesString }",

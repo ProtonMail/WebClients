@@ -193,6 +193,12 @@
       "Download": [
         "Hent"
       ],
+      "Download (${ count })": [
+        "Hent (${ count })"
+      ],
+      "Download all": [
+        "Hent alle"
+      ],
       "Download anyway": [
         "Download alligevel"
       ],
@@ -243,6 +249,9 @@
       ],
       "Get link": [
         "Få link"
+      ],
+      "Get Proton Drive": [
+        "Få Proton Drive"
       ],
       "Get started": [
         "Kom godt i gang"
@@ -424,6 +433,9 @@
       "Resume upload": [
         "Genoptag overførsel"
       ],
+      "Retry": [
+        "Prøv igen"
+      ],
       "Save": [
         "Gem"
       ],
@@ -435,6 +447,9 @@
       ],
       "Select all": [
         "Vælg alle"
+      ],
+      "Send feedback": [
+        "Send feedback"
       ],
       "Set recovery phrase": [
         "Opsæt gendannelsessætning"
@@ -471,6 +486,9 @@
       ],
       "Skip": [
         "Spring over"
+      ],
+      "Start import": [
+        "Start importering"
       ],
       "Start recovering": [
         "Start gendannelse"
@@ -613,7 +631,7 @@
     },
     "blackfriday: VPNspecialoffer Action": {
       "Get the deal": [
-        "Få tilbuddet"
+        "Gør brug af tilbuddet"
       ],
       "Get the deal now": [
         "Gør brug af tilduddet nu"
@@ -761,6 +779,68 @@
       ],
       "Open": [
         "Åbn"
+      ]
+    },
+    "color": {
+      "carrot": [
+        "gulerod"
+      ],
+      "cerise": [
+        "kirsebærrød"
+      ],
+      "cobalt": [
+        "kobolt"
+      ],
+      "copper": [
+        "kobber"
+      ],
+      "enzian": [
+        "ensian"
+      ],
+      "fern": [
+        "bregne"
+      ],
+      "forest": [
+        "skov"
+      ],
+      "ocean": [
+        "hav"
+      ],
+      "olive": [
+        "oliven"
+      ],
+      "pacific": [
+        "stillehav"
+      ],
+      "pickle": [
+        "syltet agurk"
+      ],
+      "pine": [
+        "fyr"
+      ],
+      "pink": [
+        "pink"
+      ],
+      "plum": [
+        "blomme"
+      ],
+      "purple": [
+        "lilla"
+      ],
+      "reef": [
+        "rev"
+      ],
+      "sahara": [
+        "sahara"
+      ],
+      "slateblue": [
+        "skiferblå"
+      ],
+      "soil": [
+        "jord"
+      ],
+      "strawberry": [
+        "jordbær"
       ]
     },
     "Confirm modal title": {
@@ -1988,7 +2068,21 @@
         "Intet billede valgt"
       ]
     },
+    "Error notification when score is missing in user feedback form modal": {
+      "Score is required": [
+        "Bedømmelse er påkrævet"
+      ]
+    },
+    "Feedback Modal Title": {
+      "Your feedback": [
+        "Din feedback"
+      ]
+    },
     "file size format": {
+      "byte": [
+        "byte",
+        "bytes"
+      ],
       "GB": [
         "GB"
       ],
@@ -1997,6 +2091,24 @@
       ],
       "MB": [
         "MB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Byte",
+        "Bytes"
+      ],
+      "Gigabyte": [
+        "Gigabyte",
+        "Gigabytes"
+      ],
+      "Kilobyte": [
+        "Kilobyte",
+        "Kilobytes"
+      ],
+      "Megabyte": [
+        "Megabyte",
+        "Megabytes"
       ]
     },
     "Filter notification": {
@@ -2281,6 +2393,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Før du anmoder om en ny bekræftelseskode, bør du tjekke din spam-mappe samt kontrollere, at ${ strong } er den korrekte adresse."
       ],
+      "Bulk uploads may reduce your computer’s performance. Consider limiting memory-intensive activities like streaming during upload. Or try uploading in batches.": [
+        "Overførsel af mange filer kan reducere din computers ydeevne. Overvej at begrænse hukommelsestunge aktiviteter, så som streaming, under overførslen. Ellers prøv at overføre lidt ad gangen."
+      ],
       "Canceled": [
         "Annulleret"
       ],
@@ -2364,8 +2479,23 @@
       "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
         "Digital signatur verificeret. Denne mappe blev uploaded sikkert af ${ emailAddress }."
       ],
+      "Download canceled": [
+        "Overførslen afbrudt"
+      ],
+      "Download failed": [
+        "Overførslen fejlede"
+      ],
+      "Download failed due to ${ error }": [
+        "Overførslen fejlede på grund af ${ error }"
+      ],
+      "Download finished": [
+        "Overførslen er færdig"
+      ],
       "Download of ${ downloadFileName } will be aborted": [
         "Hentning af ${ downloadFileName } vil blive afbrudt"
+      ],
+      "Download paused due to connection issue; it will resume automatically": [
+        "Overførslen er pauset på grund af forbindelsesproblemer - den vil fortsætte automatisk"
       ],
       "Downloaded": [
         "Downloadet"
@@ -2373,11 +2503,20 @@
       "Downloading": [
         "Downloader"
       ],
+      "Drag and drop items here or browse for files to upload.": [
+        "Træk og slip elementer her eller find filer til overførsel."
+      ],
       "Drop the file here to upload": [
         "Slip filen her for at uploade"
       ],
       "Duplicate key updated": [
         "Duplikeret nøgle opdateret"
+      ],
+      "Enabling drive search": [
+        "Aktiverer søgning på drev"
+      ],
+      "Encrypted": [
+        "Krypteret"
       ],
       "Encrypted search is here": [
         "Nu med krypteret søgning"
@@ -2480,6 +2619,9 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Importerer dine data fra ${ importedEmailAddress } til ${ toEmail }."
       ],
+      "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
+        "Indekserer ${ esProgress } elementer out of ${ totalProgressToShow }"
+      ],
       "Indexing search results…": [
         "Indexerer søgeresultater…"
       ],
@@ -2513,11 +2655,23 @@
       "Link copied to clipboard": [
         "Link kopieret til udklipsholder"
       ],
+      "Link failed to be loaded": [
+        "Linket kunne ikke indlæses"
+      ],
+      "Links failed to be loaded": [
+        "Linkene kunne ikke indlæses"
+      ],
       "Loading": [
         "Indlæser"
       ],
       "Loading ${ appName }": [
         "Indlæser ${ appName }"
+      ],
+      "Loading link": [
+        "Indlæser link"
+      ],
+      "Loading links": [
+        "Indlæser links"
       ],
       "Loading preview": [
         "Indlæser forhåndsvisning"
@@ -2570,6 +2724,9 @@
       "Not a valid URL": [
         "Ikke en gyldig URL"
       ],
+      "Not all files were transferred. Try uploading or downloading the files again.": [
+        "Nogle filer blev ikke overført. Prøv at overføre eller hente filerne igen."
+      ],
       "Note: Data may still be available locally on devices where you have installed ${ appName }.": [
         "Bemærk: Data kan stadig være tilgængelige lokalt på enheder, hvor du har installeret ${ appName }."
       ],
@@ -2581,6 +2738,9 @@
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "En eller flere af dine betroede nøgler er blevet markeret som \"kompromitteret\" af deres ejer. Vi anbefaler, at du ikke længere har tillid til disse nøgler."
+      ],
+      "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters is allowed": [
+        "Kun ${ MAX_CUSTOM_PASSWORD_LENGTH } tegn er tilladt"
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Ændr kun disse indstillinger, hvis du benytter PGP ifm. ikke-${ BRAND_NAME }-modtagere."
@@ -2599,6 +2759,15 @@
       ],
       "Permanently delete all files in your drive": [
         "Slet alle filer på dit drev permanent"
+      ],
+      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        "PGP/Inline er kun kompatibelt med simpelt tekstformat. Bemærk at ${ MAIL_APP_NAME } altid signerer krypterede beskeder."
+      ],
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
+        "PGP/MIME sender automatisk beskeden med den aktuelle skrivetilstand. Bemærk at ${ MAIL_APP_NAME } altid signerer krypterede beskeder"
+      ],
+      "Please enter the password to decrypt and view content.": [
+        "Indtast venligst kodeordet for, at dekryptere og se indholdet."
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Bemærk venligst at adresser tildelt til denne gruppe IKKE vil blive slettet."
@@ -2637,6 +2806,9 @@
       "Priority support": [
         "Prioriteret support"
       ],
+      "Private search enabled. You may now close this dialogue and search for files and folders.": [
+        "Privat søgning aktiveret. Du kan nu lukke dialogen og søger efter filer og mapper."
+      ],
       "Queued": [
         "Sat i kø"
       ],
@@ -2654,6 +2826,15 @@
       ],
       "Search cannot be enabled in this browser": [
         "Søgning kan ikke aktiveres i denne browser"
+      ],
+      "Search Enabled": [
+        "Søgning aktiveret"
+      ],
+      "Secure sharing": [
+        "Sikker deling"
+      ],
+      "Secure your documents and data": [
+        "Beskyt dine dokumenter og data"
       ],
       "Select an uploaded file or folder and create a link to it.": [
         "Vælg en uploadet fil eller mappe og opret et link til den."
@@ -2679,11 +2860,20 @@
       "Share files with links": [
         "Del filer med links"
       ],
+      "Shareable link for ${ boldNameText }": [
+        "Delbart link til ${ boldNameText }"
+      ],
       "Signature check will be ignored": [
         "Tjek af signatur ignoreres"
       ],
       "Signature issue": [
         "Signatur problem"
+      ],
+      "Some files failed to download. Try downloading the files again.": [
+        "Nogle filer kunne ikke hentes. Prøv at hente dem igen."
+      ],
+      "Some files failed to upload. Try uploading the files again.": [
+        "Nogle filer kunne ikke overføres. Prøv at overføre dem igen."
       ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "Nogle af dine filer er ikke længere tilgængelige. Gendan adgangen til dine filer. ${ StartRecoveryButton }"
@@ -2700,6 +2890,12 @@
       "support team": [
         "supportteam"
       ],
+      "Swiss privacy": [
+        "Schweizisk fortrolighed"
+      ],
+      "Tap the + button to upload a file or folder.": [
+        "Tryk på + knappen for at overføre en fil eller mappe."
+      ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Kontoen kan have fået en ny nøgle, eller følgende kan være blevet manipuleret: ${ items }. Åbn kun, hvis du har tillid til den."
       ],
@@ -2714,6 +2910,9 @@
       ],
       "There are no files yet": [
         "Der er ingen filer endnu"
+      ],
+      "These files were shared using end-to-end encryption. To ensure their security — and the security of all your documents, photos, and files — store them in Proton Drive, the cloud storage service you can trust.": [
+        "Disse filer blev delt med ende til ende kryptering. For at sikre deres sikkerhed - og sikkerheden for alle dine dokumenter, billeder og filer - gem dem i Proton Drive, skylageret du kan stole på."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Denne konto er blevet suspenderet på grund af en potentiel overtrædelse af politik."
@@ -2732,6 +2931,9 @@
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Dette link kan være et homografisk angreb og kan ikke åbnes af Internet Explorer og Edge browsere. Tjek at dette faktisk er det link, du ønsker at besøge, eller undlad at åbne det."
+      ],
+      "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
+        "Linket blev oprettet i en ældre Drive-version og kan ikke ændres. Slet linket og opret et nyt for at ændre indstillingerne."
       ],
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
         "Dette link vil blive permanent deaktiveret. Ingen med dette link vil kunne tilgå din fil. For at gendele filen, skal du bruge et nyt link."
@@ -2999,6 +3201,12 @@
       "Automatically save contacts": [
         "Gem automatisk kontakter"
       ],
+      "Awful": [
+        "Forfærdelig"
+      ],
+      "Bad": [
+        "Dårlig"
+      ],
       "Browser": [
         "Browser"
       ],
@@ -3105,8 +3313,14 @@
       "From: ${ importedEmail }": [
         "Fra: ${ importedEmail }"
       ],
+      "Good": [
+        "God"
+      ],
       "Hide password": [
         "Skjul adgangskode"
+      ],
+      "How would you describe your experience with the new Proton?": [
+        "Hvordan vil du beskrive din oplevelse med det nye Proton?"
       ],
       "I understand the risk": [
         "Jeg er indforstået med risikoen"
@@ -3138,6 +3352,9 @@
       "Last month only": [
         "Kun seneste måned"
       ],
+      "Location": [
+        "Placering"
+      ],
       "Mailbox password": [
         "Postkasseadgangskode"
       ],
@@ -3164,6 +3381,9 @@
       ],
       "Notification": [
         "Notifikation"
+      ],
+      "OK": [
+        "Nogenlunde"
       ],
       "Operating system": [
         "Operativsystem"
@@ -3290,6 +3510,9 @@
       ],
       "What happened?": [
         "Hvad skete der?"
+      ],
+      "Wonderful": [
+        "Vidunderlig"
       ],
       "Yes, I want to permanently delete\nmy old files": [
         "Ja, jeg ønsker at slette\nmine gamle filer permanent"
@@ -3420,6 +3643,16 @@
     "new_plans: info": {
       "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
         "Vi præsenterer Proton's nye udseende.${ br } Mange tjenester, én mission. Velkommen til et internet, hvor privatlivsbeskyttelse er standard."
+      ]
+    },
+    "new_plans: label": {
+      "Tell us about your experience. (Optional)": [
+        "Fortæl os om din oplevelse. (Valgfrit)"
+      ]
+    },
+    "new_plans: placeholder": {
+      "Feedback": [
+        "Feedback"
       ]
     },
     "new_plans: title": {
@@ -3832,6 +4065,9 @@
       ]
     },
     "Spotlight": {
+      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
+        "${ DRIVE_APP_NAME } er ude af dens prøveversion! Giv dine filer den samme sikkerhed som dine emails får."
+      ],
       "Encrypted search is here": [
         "Nu med krypteret søgning"
       ],
@@ -3843,6 +4079,9 @@
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "Nu kan du nemt søge i Drive-filer, mens dine data forbliver sikre."
+      ],
+      "Try ${ DRIVE_APP_NAME }": [
+        "Prøv ${ DRIVE_APP_NAME }"
       ]
     },
     "Storage": {
@@ -3903,6 +4142,11 @@
       ],
       "Verification successful": [
         "Bekræftelse gennemført"
+      ]
+    },
+    "Success notification when user send feedback": {
+      "Feedback sent": [
+        "Feedback sendt"
       ]
     },
     "Suffix for price": {
@@ -3999,6 +4243,18 @@
         "${ emailsCount } medlem",
         "${ emailsCount } medlemmer"
       ],
+      "${ numberOfFailedTransfer.total } failed download": [
+        "${ numberOfFailedTransfer.total } fejlende overførsel",
+        "${ numberOfFailedTransfer.total } fejlende overførsler"
+      ],
+      "${ numberOfFailedTransfer.total } failed transfer": [
+        "${ numberOfFailedTransfer.total } fejlende overførsel",
+        "${ numberOfFailedTransfer.total } fejlende overførsler"
+      ],
+      "${ numberOfFailedTransfer.total } failed upload": [
+        "${ numberOfFailedTransfer.total } fejlende overførsel",
+        "${ numberOfFailedTransfer.total } fejlende overførsler"
+      ],
       "Account suspended": [
         "Konto suspenderet"
       ],
@@ -4023,6 +4279,9 @@
       ],
       "Back": [
         "Tilbage"
+      ],
+      "Based in Switzerland, available globally": [
+        "Baseret i Schweiz, globalt tilgængelig"
       ],
       "Beta Access": [
         "Beta-adgang"
@@ -4075,6 +4334,9 @@
       "Date": [
         "Date"
       ],
+      "Decrypting": [
+        "Dekrypterer"
+      ],
       "Delete ${ count } contact": [
         "Slet ${ count } kontakt",
         "Slet ${ count } kontakter"
@@ -4097,6 +4359,9 @@
       ],
       "Discard changes?": [
         "Kassér ændringer?"
+      ],
+      "Download shared file": [
+        "Hent delt fil"
       ],
       "Download unverified file?": [
         "Hent ubekræftet fil?"
@@ -4149,6 +4414,9 @@
       "Failed": [
         "Mislykkedes"
       ],
+      "Feedback": [
+        "Feedback"
+      ],
       "File details": [
         "Fildetaljer"
       ],
@@ -4168,6 +4436,9 @@
         "Fandt ${ searchView.numberOfResults } resultat",
         "Fandt ${ searchView.numberOfResults } resultater"
       ],
+      "Getting files": [
+        "Modtager filer"
+      ],
       "Groups": [
         "Grupper"
       ],
@@ -4179,6 +4450,9 @@
       ],
       "Invalid verification code": [
         "Ugyldig bekræftelseskode"
+      ],
+      "Item details": [
+        "Elementdetaljer"
       ],
       "Items details": [
         "Elementdetaljer"
@@ -4243,6 +4517,9 @@
       "Phone numbers": [
         "Telefonnumre"
       ],
+      "Privacy settings": [
+        "Fortrolighedsindstillinger"
+      ],
       "Re-sign all contacts": [
         "Gensignér alle kontakter"
       ],
@@ -4287,6 +4564,9 @@
       ],
       "Select link expiration time": [
         "Vælg link-udløbstid"
+      ],
+      "Send feedback": [
+        "Send feedback"
       ],
       "Settings": [
         "Indstillinger"
@@ -4333,6 +4613,9 @@
       "This folder has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "Denne mappe har en manglende eller ugyldig signatur. Gå til Menu (⋮) → Detaljer for info."
       ],
+      "This link is password protected": [
+        "Linket er adgangskodebeskyttet"
+      ],
       "Total size": [
         "Samlet størrelse"
       ],
@@ -4374,6 +4657,9 @@
       ],
       "You have no folders yet": [
         "Du har ingen mapper endnu"
+      ],
+      "You've got files": [
+        "Du har fået filer"
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         "Din gratis prøveperiode udløber snart, ${ formattedEndDate }"

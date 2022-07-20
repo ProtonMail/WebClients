@@ -67,6 +67,9 @@
       "copper": [
         "cobre"
       ],
+      "enzian": [
+        "enzian"
+      ],
       "fern": [
         "samambaia"
       ],
@@ -82,14 +85,26 @@
       "pacific": [
         "pacífico"
       ],
+      "pickle": [
+        "salmoura"
+      ],
+      "pine": [
+        "pinheiro"
+      ],
       "pink": [
         "rosa"
+      ],
+      "plum": [
+        "ameixa"
       ],
       "purple": [
         "roxo"
       ],
       "reef": [
         "recife"
+      ],
+      "sahara": [
+        "saara"
       ],
       "slateblue": [
         "azul ardósia"
@@ -127,7 +142,7 @@
         "Anguilla"
       ],
       "Antarctica": [
-        "Antártica"
+        "Antártida"
       ],
       "Antigua and Barbuda": [
         "Antígua e Barbuda"
@@ -157,10 +172,10 @@
         "Bahamas"
       ],
       "Bahrain": [
-        "Bahrein"
+        "Reino do Barém"
       ],
       "Bangladesh": [
-        "Banglasdesh"
+        "Bangladesh"
       ],
       "Barbados": [
         "Barbados"
@@ -211,7 +226,7 @@
         "Bulgária"
       ],
       "Burkina Faso": [
-        "Burkina Faso"
+        "Burquina Fasso"
       ],
       "Burma": [
         "Myanmar"
@@ -280,19 +295,19 @@
         "Cuba"
       ],
       "Curaçao": [
-        "Curaçao"
+        "Curaçau"
       ],
       "Cyprus": [
         "Chipre"
       ],
       "Czech Republic": [
-        "República Tcheca"
+        "República Checa"
       ],
       "Denmark": [
         "Dinamarca"
       ],
       "Djibouti": [
-        "Djibouti"
+        "Djibuti"
       ],
       "Dominica": [
         "Dominica"
@@ -673,7 +688,7 @@
         "Santa Lúcia"
       ],
       "Saint Martin (French Part)": [
-        "São Martim (Parte Francesa)"
+        "São Martinho (Parte Francesa)"
       ],
       "Saint Pierre and Miquelon": [
         "São Pedro e Miquelão"
@@ -847,7 +862,7 @@
         "Ilhas Virgens Britânicas"
       ],
       "Virgin Islands, U.S.": [
-        "Ilhas Virgens Americanas."
+        "Ilhas Virgens Americanas"
       ],
       "Wallis and Futuna": [
         "Wallis e Futuna"
@@ -950,7 +965,7 @@
         "Digite o código de verificação que foi enviado para ${ destinationText }."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
-        "Se você estiver tendo problemas para criar sua conta, solicite um convite e nós responderemos no prazo de um dia útil."
+        "Se estiver com problemas para criar sua conta, abra um chamado e responderemos no prazo de um dia útil."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Se você não encontrar o e-mail na caixa de entrada. Por favor, verifique a pasta de spam."
@@ -994,7 +1009,7 @@
     },
     "Label": {
       "Code is 6 digits without spaces": [
-        "O código é de 6 dígitos sem espaços"
+        "O código deve ter 6 dígitos sem espaços"
       ],
       "Email address": [
         "Endereço de e-mail"

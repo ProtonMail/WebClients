@@ -518,6 +518,9 @@
       "Messages from this sender": [
         "この差出人からのメッセージ"
       ],
+      "Messages to this recipient": [
+        "この宛先へのメッセージ"
+      ],
       "Minimize composer": [
         "最小化"
       ],
@@ -4225,6 +4228,9 @@
       "per month.": [
         "毎月。"
       ],
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
+        "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages."
+      ],
       "Phone number": [
         "電話番号"
       ],
@@ -5842,7 +5848,7 @@
     },
     "new_plans: action": {
       "Switch or add account": [
-        "アカウントを追加、切り替え"
+        "アカウントを追加・切り替え"
       ]
     },
     "new_plans: info": {
@@ -5892,6 +5898,9 @@
     "Onboarding": {
       "Welcome to ${ appName }": [
         "${ appName } へようこそ"
+      ],
+      "Where privacy and security meet productivity and ease of use.": [
+        "プライバシーとセキュリティを保護しつつ、生産性と使いやすさも満たせる場所です。"
       ]
     },
     "Onboarding Action": {
@@ -7452,7 +7461,8 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "${ interval } 年毎"
+        "Yearly",
+        ""
       ],
       "Every ${ interval } year, ${ timesString }": [
         "${ interval } 年毎、${ timesString }"

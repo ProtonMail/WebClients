@@ -4694,7 +4694,7 @@
         "Schemat PGP/Inline jest kompatybilny tylko z trybem zwykłego tekstu. Pamiętaj, że ${ MAIL_APP_NAME } zawsze podpisuje zaszyfrowane wiadomości."
       ],
       "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
-        "Schemat PGP/MIME automatycznie wysyła wiadomości przy użyciu obecnego trybu edytora. Pamiętaj, że ${ MAIL_APP_NAME } zawsze podpisuje zaszyfrowane wiadomości"
+        "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages."
       ],
       "Phone number": [
         "Numer telefonu"
@@ -8302,10 +8302,8 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "Co rok",
-        "Co ${ interval } lata",
-        "Co ${ interval } lat",
-        "Co ${ interval } roku"
+        "Yearly",
+        ""
       ],
       "Every ${ interval } year, ${ timesString }": [
         "Co rok, ${ timesString }",
