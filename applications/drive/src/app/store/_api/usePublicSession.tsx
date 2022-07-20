@@ -1,11 +1,11 @@
-import { createContext, useContext, useRef } from 'react';
+import { createContext, useContext, useRef, useState } from 'react';
 
 import { useApi } from '@proton/components';
-import { queryShareURLAuth, queryInitSRPHandshake } from '@proton/shared/lib/api/drive/sharing';
-import { srpAuth } from '@proton/shared/lib/srp';
+import { queryInitSRPHandshake, queryShareURLAuth } from '@proton/shared/lib/api/drive/sharing';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import { SRPHandshakeInfo } from '@proton/shared/lib/interfaces/drive/sharing';
 import { withAuthHeaders } from '@proton/shared/lib/fetch/headers';
+import { SRPHandshakeInfo } from '@proton/shared/lib/interfaces/drive/sharing';
+import { srpAuth } from '@proton/shared/lib/srp';
 
 import retryOnError from '../../utils/retryOnError';
 import { hasCustomPassword, hasGeneratedPasswordIncluded } from '../_shares';
@@ -31,6 +31,7 @@ interface SessionInfo {
 function usePublicSessionProvider() {
     const api = useApi();
     const debouncedRequest = useDebouncedRequest();
+    const [hasSession, setHasSession] = useState(false);
     const sessionInfo = useRef<SessionInfo>();
 
     const initHandshake = async (token: string) => {
@@ -61,6 +62,7 @@ function usePublicSessionProvider() {
 
     const initSession = async (token: string, password: string, handshakeInfo: SRPHandshakeInfo) => {
         return getSessionToken(token, password, handshakeInfo).then(({ AccessToken, UID }) => {
+            setHasSession(true);
             sessionInfo.current = {
                 token,
                 password,
@@ -92,7 +94,13 @@ function usePublicSessionProvider() {
         }
 
         const { handshakeInfo } = await initHandshake(sessionInfo.current.token);
-        await initSession(sessionInfo.current.token, sessionInfo.current.password, handshakeInfo);
+        await initSession(sessionInfo.current.token, sessionInfo.current.password, handshakeInfo).catch((err) => {
+            // Custom password was changed probably, lets refresh and ask again.
+            if (err?.data?.Code === ERROR_CODE_INVALID_SRP_PARAMS) {
+                setHasSession(false);
+            }
+            throw err;
+        });
     };
 
     const request = <T,>(args: any, abortSignal?: AbortSignal) => {
@@ -109,6 +117,7 @@ function usePublicSessionProvider() {
     const getSessionInfo = () => sessionInfo.current;
 
     return {
+        hasSession,
         initHandshake,
         initSession,
         request,
