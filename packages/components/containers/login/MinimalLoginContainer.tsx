@@ -1,15 +1,16 @@
 import { ReactNode, useEffect, useRef, useState } from 'react';
+
 import { c } from 'ttag';
-import noop from '@proton/utils/noop';
-import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
+
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { EMAIL_PLACEHOLDER, MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
+import noop from '@proton/utils/noop';
 
+import { CircleLoader, Input, Label, PasswordInput, PrimaryButton, UnderlineButton } from '../../components';
 import { useApi, useErrorHandler, useLoading, useNotifications } from '../../hooks';
-import { Input, Label, UnderlineButton, PasswordInput, PrimaryButton, CircleLoader } from '../../components';
 import { OnLoginCallback } from '../app/interface';
 import { Challenge, ChallengeError, ChallengeRef, ChallengeResult } from '../challenge';
-
 import AbuseModal from './AbuseModal';
 import { AuthActionResponse, AuthCacheResult, AuthStep } from './interface';
 import { handleLogin, handleTotp, handleUnlock } from './loginActions';
@@ -294,6 +295,7 @@ const MinimalLoginContainer = ({ onLogin, hasChallenge = false, ignoreUnlock = f
                             api: silentApi,
                             hasGenerateKeys: false,
                             ignoreUnlock,
+                            hasInternalAddressSetup: false,
                             persistent: false,
                         })
                             .then(handleResult)

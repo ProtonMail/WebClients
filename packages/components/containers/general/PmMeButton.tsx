@@ -1,21 +1,23 @@
 import { c } from 'ttag';
+
 import { setupAddress } from '@proton/shared/lib/api/addresses';
-import { missingKeysSelfProcess } from '@proton/shared/lib/keys';
 import { DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS } from '@proton/shared/lib/constants';
+import { missingKeysSelfProcess } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
+
+import { Button } from '../../components';
 import {
-    useApi,
     useAddresses,
-    useLoading,
+    useApi,
+    useAuthentication,
     useEventManager,
+    useGetUserKeys,
+    useLoading,
     useModals,
     useNotifications,
     usePremiumDomains,
     useUser,
-    useAuthentication,
-    useGetUserKeys,
 } from '../../hooks';
-import { Button } from '../../components';
 import UnlockModal from '../login/UnlockModal';
 
 const PmMeButton = () => {
@@ -34,7 +36,7 @@ const PmMeButton = () => {
 
     const createPremiumAddress = async () => {
         const [{ DisplayName = '', Signature = '' } = {}] = addresses || [];
-        await new Promise<void>((resolve, reject) => {
+        await new Promise<string>((resolve, reject) => {
             createModal(<UnlockModal onClose={() => reject()} onSuccess={resolve} />);
         });
         const { Address } = await api(

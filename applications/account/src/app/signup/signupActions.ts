@@ -131,9 +131,17 @@ export const handleDisplayName = async ({
     const authApi = <T>(config: any) => api<T>(withAuthHeaders(authResponse.UID, authResponse.AccessToken, config));
 
     await authApi(updateAddress(firstAddress.ID, { DisplayName: displayName, Signature: firstAddress.Signature }));
+    // Re-fetch the user to get the updated display name
+    const user = await authApi<{ User: User }>(getUser()).then(({ User }) => User);
 
     return {
-        cache,
+        cache: {
+            ...cache,
+            setupData: {
+                ...setupData!,
+                user,
+            },
+        },
         to: SIGNUP_STEPS.SAVE_RECOVERY,
     };
 };

@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
+
 import { c } from 'ttag';
+
 import {
     AuthenticatedBugModal,
     DropdownMenuButton,
@@ -14,22 +16,25 @@ import {
     useModalState,
     useTheme,
 } from '@proton/components';
-import { PROTON_DEFAULT_THEME } from '@proton/shared/lib/themes/themes';
+import { InternalAddressGeneration } from '@proton/components/containers/login/interface';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
-import { handleCreateInternalAddressAndKey } from '@proton/shared/lib/keys';
-import { getAppHref, getAppName } from '@proton/shared/lib/apps/helper';
-import { APP_NAMES, APPS } from '@proton/shared/lib/constants';
-import { getValidatedApp } from '@proton/shared/lib/authentication/sessionForkValidation';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import { UserType } from '@proton/shared/lib/interfaces';
+import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
+import { persistSessionWithPassword } from '@proton/shared/lib/authentication/persistedSessionHelper';
+import { getValidatedApp } from '@proton/shared/lib/authentication/sessionForkValidation';
+import { APPS, APP_NAMES } from '@proton/shared/lib/constants';
+import { PASSWORD_CHANGE_MESSAGE_TYPE, sendMessageToTabs } from '@proton/shared/lib/helpers/crossTab';
+import { UserType } from '@proton/shared/lib/interfaces';
+import { getInternalAddressSetupMode, handleInternalAddressGeneration } from '@proton/shared/lib/keys';
+import { PROTON_DEFAULT_THEME } from '@proton/shared/lib/themes/themes';
 
-import { getToAppName } from '../public/helper';
-import GenerateInternalAddressStep, { InternalAddressGeneration } from '../login/GenerateInternalAddressStep';
-import Main from '../public/Main';
-import Layout from '../public/Layout';
+import GenerateInternalAddressStep from '../login/GenerateInternalAddressStep';
 import Footer from '../public/Footer';
+import Layout from '../public/Layout';
+import Main from '../public/Main';
 import SupportDropdown from '../public/SupportDropdown';
+import { getToAppName } from '../public/helper';
 
 const SetupSupportDropdown = () => {
     const [authenticatedBugReportModal, setAuthenticatedBugReportModal, render] = useModalState();
@@ -72,6 +77,10 @@ const SetupInternalAccountContainer = () => {
         );
     };
 
+    const handleToApp = (toApp: APP_NAMES) => {
+        document.location.assign(getAppHref('/', toApp, authentication.getLocalID()));
+    };
+
     useEffect(() => {
         return () => {
             generateInternalAddressRef.current = undefined;
@@ -81,9 +90,9 @@ const SetupInternalAccountContainer = () => {
     useEffect(() => {
         const run = async () => {
             const searchParams = new URLSearchParams(window.location.search);
-            const app = getValidatedApp(searchParams.get('app') || '');
+            const toApp = getValidatedApp(searchParams.get('app') || '');
 
-            if (!app) {
+            if (!toApp) {
                 return handleBack();
             }
 
@@ -94,22 +103,23 @@ const SetupInternalAccountContainer = () => {
             ]);
 
             if (user.Type !== UserType.EXTERNAL) {
-                return handleBack();
+                return handleToApp(toApp);
             }
 
             // Special case to reset the user's theme since it's logged in at this point. Does not care about resetting it back since it always redirects back to the application.
             setTheme(PROTON_DEFAULT_THEME);
 
-            toAppRef.current = app;
+            // Stop the event manager since we're setting a new password (and it'd automatically log out) and we refresh once we're done
+            stop();
+            toAppRef.current = toApp;
             generateInternalAddressRef.current = {
                 externalEmailAddress: addresses?.[0],
                 availableDomains: domains,
-                keyPassword: authentication.getPassword(),
-                api: silentApi,
-                onDone: async () => {
-                    document.location.assign(getAppHref('/', app, authentication.getLocalID()));
-                },
-                revoke: () => {},
+                setup: getInternalAddressSetupMode({
+                    User: user,
+                    loginPassword: undefined,
+                    keyPassword: authentication.getPassword(),
+                }),
             };
             setLoading(false);
         };
@@ -136,7 +146,6 @@ const SetupInternalAccountContainer = () => {
 
     const toApp = toAppRef.current!;
     const toAppName = getToAppName(toApp);
-    const mailAppName = getAppName(APPS.PROTONMAIL);
 
     const generateInternalAddress = generateInternalAddressRef.current;
     const externalEmailAddress = generateInternalAddress?.externalEmailAddress?.Email;
@@ -151,19 +160,33 @@ const SetupInternalAccountContainer = () => {
                 <GenerateInternalAddressStep
                     onBack={handleBack}
                     api={silentApi}
-                    mailAppName={mailAppName}
                     toAppName={toAppName}
                     availableDomains={generateInternalAddress.availableDomains}
                     externalEmailAddress={externalEmailAddress}
+                    setup={generateInternalAddress.setup}
                     onSubmit={async (payload) => {
                         try {
-                            await handleCreateInternalAddressAndKey({
-                                api: generateInternalAddress.api,
-                                keyPassword: generateInternalAddress.keyPassword,
+                            const keyPassword = await handleInternalAddressGeneration({
+                                api: silentApi,
+                                setup: payload.setup,
                                 domain: payload.domain,
                                 username: payload.username,
                             });
-                            await generateInternalAddress.onDone();
+
+                            const user = await getUser();
+                            authentication.setPassword(keyPassword);
+                            const localID = authentication.getLocalID();
+                            await persistSessionWithPassword({
+                                api: silentApi,
+                                keyPassword,
+                                User: user,
+                                UID: authentication.getUID(),
+                                LocalID: localID,
+                                persistent: authentication.getPersistent(),
+                            });
+                            sendMessageToTabs(PASSWORD_CHANGE_MESSAGE_TYPE, { localID, status: true });
+
+                            handleToApp(toApp);
                         } catch (e: any) {
                             errorHandler(e);
                             handleBack();
