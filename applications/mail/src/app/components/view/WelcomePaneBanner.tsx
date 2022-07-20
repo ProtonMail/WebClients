@@ -6,7 +6,6 @@ import ThemesModal from '@proton/components/containers/themes/ThemesModal';
 import { PROTON_DEFAULT_THEME, ThemeTypes } from '@proton/shared/lib/themes/themes';
 import { Plan, UserSettings } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
-import { Calendar } from '@proton/shared/lib/interfaces/calendar';
 import { getItem, setItem } from '@proton/shared/lib/helpers/storage';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS, DRIVE_APP_NAME, MAIL_APP_NAME, PLANS, VPN_APP_NAME } from '@proton/shared/lib/constants';
@@ -24,9 +23,8 @@ interface Props {
     plans: Plan[];
     theme: ThemeTypes;
     userSettings: UserSettings;
-    calendars?: Calendar[];
 }
-const WelcomePaneBanner = ({ plans, theme, userSettings, calendars = [] }: Props) => {
+const WelcomePaneBanner = ({ plans, theme, userSettings }: Props) => {
     const { createModal } = useModals();
     const [option, setOption] = useState<MessageOption>();
     const [{ Currency } = { Currency: undefined }] = plans;
@@ -318,7 +316,7 @@ const WelcomePaneBanner = ({ plans, theme, userSettings, calendars = [] }: Props
                 </Href>
             ),
         },
-        calendars?.length === 0 && {
+        !userSettings.AppWelcome.Calendar?.length && {
             id: 21,
             text: c('Info').t`Use ${calendarAppName} to keep your agenda private.`,
             cta: (
