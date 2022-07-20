@@ -48,6 +48,16 @@ module.exports = {
 
         return {
             ...config,
+            resolve: {
+                ...config.resolve,
+                fallback: {
+                    ...config.resolve.fallback,
+                    // For some reason storybook brings in openpgp as a dependency and we need to
+                    // explicitly disable these in the webpack config
+                    stream: false,
+                    crypto: false,
+                },
+            },
             module: {
                 ...config.module,
                 rules: [
