@@ -13,14 +13,13 @@
     },
     "dependencies": {
         "comlink": "^4.3.1",
-        "pmcrypto-v7": "npm:@protontech/pmcrypto@^7.0.0"
+        "pmcrypto-v7": "npm:@protontech/pmcrypto@^7.0.1"
     },
     "devDependencies": {
         "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton",
         "@types/chai": "^4.3.0",
         "@types/chai-as-promised": "^7.1.4",
         "@types/mocha": "^9.0.0",
-        "@types/node": "^16.11.7",
         "chai": "^4.3.4",
         "chai-as-promised": "^7.1.1",
         "eslint": "^8.14.0",
