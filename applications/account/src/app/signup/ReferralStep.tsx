@@ -1,9 +1,18 @@
 import { useState } from 'react';
 import { c } from 'ttag';
-import { Button, ReferralFeaturesList, useLoading } from '@proton/components';
+import {
+    Button,
+    ExperimentCode,
+    Loader,
+    ReferralFeaturesList,
+    ReferralHowItWorks,
+    useExperiment,
+    useLoading,
+} from '@proton/components';
 import { APPS, PLANS } from '@proton/shared/lib/constants';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { PlanIDs } from '@proton/shared/lib/interfaces';
+
 import Header from '../public/Header';
 import Content from '../public/Content';
 import Text from '../public/Text';
@@ -21,6 +30,52 @@ interface Props {
 const ReferralStep = ({ onPlan, onBack }: Props) => {
     const [type, setType] = useState<PlanType | undefined>(undefined);
     const [loading, withLoading] = useLoading();
+    const { experiment, loading: loadingExperiment } = useExperiment(ExperimentCode.ReferralProgramSignup);
+
+    if (loadingExperiment) {
+        return <Loader />;
+    }
+
+    if (experiment === 'B') {
+        return (
+            <Main>
+                <Header title={c('Title').t`How your free trial works`} onBack={onBack} />
+                <Content>
+                    <Text>
+                        {c('Subtitle for trial plan')
+                            .t`This offer is for those new to Proton only. No credit card required.`}
+                    </Text>
+                    <ReferralHowItWorks />
+                    <Button
+                        loading={loading && type === 'trial'}
+                        disabled={loading}
+                        color="norm"
+                        shape="solid"
+                        size="large"
+                        className="mb0-5"
+                        onClick={() => {
+                            setType('trial');
+                            withLoading(onPlan({ [PLANS.MAIL]: 1 }));
+                        }}
+                        fullWidth
+                    >{c('Action in trial plan').t`Start my 30-day free trial`}</Button>
+                    <Button
+                        loading={loading && type === 'free'}
+                        disabled={loading}
+                        size="large"
+                        color="norm"
+                        shape="ghost"
+                        onClick={() => {
+                            setType('free');
+                            withLoading(onPlan({}));
+                        }}
+                        fullWidth
+                    >{c('Action in trial plan').t`Continue with free plan`}</Button>
+                </Content>
+            </Main>
+        );
+    }
+
     return (
         <Main>
             <Header title={c('Title').t`Try the best of ${MAIL_APP_NAME} for free`} onBack={onBack} />
