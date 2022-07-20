@@ -1,5 +1,7 @@
+const path = require('path');
+
 module.exports = {
-    logo: 'public/assets/favicon.svg',
+    logo: path.resolve('./src/favicon.svg'),
     favicons: {
         appName: 'Proton VPN',
         appDescription:
