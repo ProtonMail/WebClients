@@ -1,6 +1,5 @@
 import { ComponentPropsWithoutRef, ReactNode } from 'react';
-
-import clsx from '../clsx';
+import clsx from '@proton/utils/clsx';
 
 export interface VerticalStepProps extends ComponentPropsWithoutRef<'li'> {
     description?: ReactNode;
