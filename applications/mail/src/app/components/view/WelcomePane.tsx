@@ -96,7 +96,7 @@ const WelcomePane = ({ mailSettings, location, labelCount }: Props) => {
 
     return (
         <>
-            {user.isFree ? <WelcomePaneBanner plans={plans} userSettings={userSettings} theme={theme} /> : null}
+            {user.hasPaidMail ? null : <WelcomePaneBanner plans={plans} userSettings={userSettings} theme={theme} />}
             <Container>
                 <h1>{user.DisplayName ? c('Title').jt`Welcome ${userName}` : c('Title').t`Welcome`}</h1>
                 <p className="text-keep-space">{labelCount ? counterMessage : null}</p>
