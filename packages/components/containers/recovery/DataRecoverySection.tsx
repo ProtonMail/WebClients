@@ -183,7 +183,11 @@ const DataRecoverySection = () => {
                                             withLoadingDeviceRecovery(handleChangeDeviceRecoveryToggle(checked))
                                         }
                                     />
-                                    <label htmlFor="deviceRecoveryToggle" className="flex-item-fluid">
+                                    <label
+                                        htmlFor="deviceRecoveryToggle"
+                                        className="flex-item-fluid"
+                                        data-testid="account:recovery:trustedDevice"
+                                    >
                                         {c('Label').t`Allow recovery using a trusted device`}
                                     </label>
                                 </div>
