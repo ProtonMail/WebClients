@@ -1,25 +1,28 @@
 import { useMemo } from 'react';
+
 import { c, msgid } from 'ttag';
+
 import { classnames } from '@proton/components';
-import { Label } from '@proton/shared/lib/interfaces/Label';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
+import { Label } from '@proton/shared/lib/interfaces/Label';
 import { getHasOnlyIcsAttachments } from '@proton/shared/lib/mail/messages';
 
-import ItemStar from './ItemStar';
-import ItemLabels from './ItemLabels';
-import ItemAttachmentIcon from './ItemAttachmentIcon';
-import ItemLocation from './ItemLocation';
-import ItemDate from './ItemDate';
-import NumMessages from '../conversation/NumMessages';
-import { Element } from '../../models/element';
-import ItemExpiration from './ItemExpiration';
-import ItemAction from './ItemAction';
-import { ESMessage } from '../../models/encryptedSearch';
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
+import { Element } from '../../models/element';
+import { ESMessage } from '../../models/encryptedSearch';
+import NumMessages from '../conversation/NumMessages';
+import ItemAction from './ItemAction';
+import ItemAttachmentIcon from './ItemAttachmentIcon';
+import ItemDate from './ItemDate';
+import ItemExpiration from './ItemExpiration';
 import ItemHoverButtons from './ItemHoverButtons';
+import ItemLabels from './ItemLabels';
+import ItemLocation from './ItemLocation';
+import ItemStar from './ItemStar';
 import ItemUnread from './ItemUnread';
 
 interface Props {
+    isCompactView: boolean;
     labelID: string;
     elementID?: string;
     labels?: Label[];
@@ -35,6 +38,7 @@ interface Props {
 }
 
 const ItemRowLayout = ({
+    isCompactView,
     labelID,
     elementID,
     labels,
@@ -157,12 +161,12 @@ const ItemRowLayout = ({
 
             <span className="ml1 flex w13e flex-nowrap flex-align-items-center flex-justify-end">
                 <ItemHoverButtons
-                    className="mr1fdfsdfds"
                     element={element}
                     labelID={labelID}
                     elementID={elementID}
                     onBack={onBack}
                     hasStar={false}
+                    size={isCompactView ? 'small' : 'medium'}
                 />
                 <span className="opacity-on-hover-hide flex flex-nowrap item-senddate-row ml0-5 flex-justify-end flex-align-items-center">
                     <ItemDate
