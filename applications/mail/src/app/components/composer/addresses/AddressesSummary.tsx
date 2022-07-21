@@ -35,7 +35,7 @@ const AddressesSummary = ({ message, disabled, mapSendInfo, toggleExpanded, onFo
             </Label>
             <div
                 className={classnames([
-                    'field flex composer-addresses-fakefield composer-meta-fakefield-summary field-lighter flex-row flex-align-items-center flex-nowrap flex-item-fluid w100',
+                    'field flex composer-addresses-fakefield composer-meta-fakefield-summary composer-light-field flex-row flex-align-items-center flex-nowrap flex-item-fluid w100',
                     disabled && 'disabled',
                 ])}
                 onClick={onFocus}

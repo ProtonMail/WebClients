@@ -2,11 +2,19 @@ import { Canvas, Story, ArgsTable, Primary, PRIMARY_STORY } from '@storybook/add
 
 # InputField
 
-`InputField` is a wrapper taking [any input component](#custom-elements) and adding decoration around it.
+An `InputField` is a wrapper taking [any input component](#custom-elements) and adding decoration around it.
+
+## How to use
 
 <Canvas withSource="open">
     <Story id="components-inputfield--basic" />
 </Canvas>
+
+## Playground
+
+<Story id="components-inputfield--sandbox" />
+
+## Options
 
 The `placeholder`, `hint`, `assistiveText`, and `disabled` props provide additional configuration.
 
@@ -14,7 +22,7 @@ The `placeholder`, `hint`, `assistiveText`, and `disabled` props provide additio
     <Story id="components-inputfield--intermediate" />
 </Canvas>
 
-### Validation
+## Validation
 
 The `error` and `warning` props toggle the error state. If a node is provided, the `assistiveText` will be replaced.
 
@@ -22,13 +30,13 @@ The `error` and `warning` props toggle the error state. If a node is provided, t
     <Story id="components-inputfield--validation" />
 </Canvas>
 
-### Adornments
+## Adornments
 
 <Canvas>
     <Story id="components-inputfield--adornments" />
 </Canvas>
 
-### Sizes
+## Sizes
 
 The `bigger` prop to increases the size.
 
@@ -36,7 +44,7 @@ The `bigger` prop to increases the size.
     <Story id="components-inputfield--sizes" />
 </Canvas>
 
-### Dense inputs
+## Dense inputs
 
 The `dense` prop removes assistive text and shows errors and warnings as a tooltip. Can be used when space is scarce.
 
@@ -44,7 +52,7 @@ The `dense` prop removes assistive text and shows errors and warnings as a toolt
     <Story id="components-inputfield--dense" />
 </Canvas>
 
-### Custom elements
+## Custom elements
 
 The `as` prop allows for `InputField` to render as another element such as a `PasswordInput`, `PhoneInput`, `TextArea`, `Select`, `Toggle`, or `ColorPicker`. Defaults to `Input`.
 
@@ -52,7 +60,7 @@ The `as` prop allows for `InputField` to render as another element such as a `Pa
     <Story id="components-inputfield--custom-elements" />
 </Canvas>
 
-### Playground
+## Playground
 
 <Primary />
 

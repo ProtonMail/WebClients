@@ -52,14 +52,14 @@ const CountrySelect = ({ value, options, onChange, embedded, onClosed }: Props) 
                     pickRef.current = false;
                     setIsOpen(!isOpen);
                 }}
-                className="ml0-5 unstyled inputform-prefix-phone border-right pr0-5"
+                className="unstyled flex-align-self-stretch my0-25 pr0-5 border-right"
                 ref={anchorRef}
                 caretClassName="mtauto mbauto"
                 aria-live="assertive"
                 aria-atomic="true"
                 aria-label={value?.countryName}
             >
-                <span className="mr0-5">
+                <span className="flex mr0-5">
                     {!value ? (
                         <Icon name="globe" className="align-middle inline-flex" />
                     ) : (
@@ -127,7 +127,7 @@ const CountrySelect = ({ value, options, onChange, embedded, onClosed }: Props) 
                         onValue={setSearch}
                         autoFocus={!embedded}
                         placeholder="Country"
-                        icon={<Icon name="magnifier" />}
+                        prefix={<Icon name="magnifier" alt={c('Action').t`Search countries`} />}
                     />
                 </form>
 

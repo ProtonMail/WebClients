@@ -175,8 +175,8 @@ describe('MailHeader', () => {
 
             await rerender(<MailHeader {...props} />);
 
-            const searchKeyword = getByTestId('search-keyword');
-            expect(searchKeyword.textContent).toBe(searchTerm);
+            const searchKeyword = getByTestId('search-keyword') as HTMLInputElement;
+            expect(searchKeyword.value).toBe(searchTerm);
         });
 
         it('should search with keyword and location', async () => {

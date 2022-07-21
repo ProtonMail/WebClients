@@ -1,32 +1,37 @@
 import { c } from 'ttag';
-import { Button, classnames, Icon, InputTwo, Label } from '@proton/components';
-import { ChangeEventHandler, MouseEventHandler } from 'react';
+import { Button, Icon, InputFieldTwo } from '@proton/components';
+import { ChangeEventHandler, MouseEventHandler, ReactNode } from 'react';
 
 interface Props {
     onSubmit: MouseEventHandler<HTMLButtonElement>;
     onChange: ChangeEventHandler<HTMLInputElement>;
     value: string;
     showSearchIcon?: boolean;
+    suffix?: ReactNode;
+    unstyled?: boolean;
 }
 
-const SearchField = ({ onSubmit, onChange, value, showSearchIcon = true }: Props) => (
+const SearchField = ({ onSubmit, onChange, value, showSearchIcon = true, suffix, unstyled }: Props) => (
     <div className="relative flex-item-fluid">
-        <Label className="advanced-search-label p0" htmlFor="search-keyword" title={c('Label').t`Keyword`}>
-            <InputTwo
-                id="search-keyword"
-                className={classnames(['advanced-search-field', showSearchIcon ? 'pl3' : 'pl0'])}
-                placeholder={c('Placeholder').t`Search messages`}
-                value={value}
-                autoFocus
-                onChange={onChange}
-                data-shorcut-target="searchbox-field"
-            />
-            {showSearchIcon && (
-                <Button className="searchbox-search-button" onClick={onSubmit} shape="ghost" color="weak" icon>
-                    <Icon name="magnifier" alt={c('action').t`Search messages`} />
-                </Button>
-            )}
-        </Label>
+        <InputFieldTwo
+            id="search-keyword"
+            unstyled={unstyled}
+            title={c('Label').t`Keyword`}
+            prefix={
+                showSearchIcon && (
+                    <Button onClick={onSubmit} shape="ghost" color="weak" size="small" icon>
+                        <Icon name="magnifier" alt={c('action').t`Search messages`} />
+                    </Button>
+                )
+            }
+            dense
+            placeholder={c('Placeholder').t`Search messages`}
+            value={value}
+            autoFocus
+            onChange={onChange}
+            data-shorcut-target="searchbox-field"
+            suffix={suffix}
+        />
     </div>
 );
 

@@ -77,7 +77,7 @@ const ComposerMeta = ({
                     onChange={handleSubjectChange}
                     onFocus={addressesBlurRef.current}
                     data-testid="composer:subject"
-                    className="field-lighter composer-meta-input-subject"
+                    className="composer-light-field composer-meta-input-subject"
                 />
             </div>
             <ExtraExpirationTime marginBottom message={message} onEditExpiration={onEditExpiration} />

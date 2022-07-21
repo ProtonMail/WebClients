@@ -186,7 +186,7 @@ const AddressesInput = ({
                 className={classnames([
                     'composer-addresses-container flex-no-min-children flex-item-fluid',
                     !expanded && 'composer-addresses-container-closed field',
-                    hasLighterFieldDesign && 'field-lighter',
+                    hasLighterFieldDesign && 'composer-light-field',
                 ])}
                 onClick={handleClick}
                 {...containerDragHandlers}

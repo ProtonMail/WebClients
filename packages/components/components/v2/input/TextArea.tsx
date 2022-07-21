@@ -25,7 +25,7 @@ const TextAreaTwo = (props: TextAreaTwoProps, ref: Ref<HTMLTextAreaElement>) => 
         ...rest
     } = props;
 
-    const className = classnames([classNameProp, 'w100 inputform-field', Boolean(error) && 'error']);
+    const className = classnames([classNameProp, 'w100 textarea', Boolean(error) && 'error']);
     const { rows, updateTextArea } = useAutoGrow({ maxRows, minRows, autoGrow });
 
     useEffect(() => {
