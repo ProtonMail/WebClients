@@ -1,3 +1,4 @@
+import { FormEvent } from 'react';
 import { c, msgid } from 'ttag';
 import { PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
 import { getContact, updateContact } from '@proton/shared/lib/api/contacts';
@@ -67,8 +68,9 @@ const AskForKeyPinningModal = ({ contacts, onNotTrust, onError, onResolve, onRej
 
     const { onClose } = rest;
 
-    const handleSubmit = async () => {
+    const handleSubmit = async (event: FormEvent) => {
         try {
+            event.preventDefault();
             const requests = contacts.map(
                 (contact) => () => updateContactPinnedKeys({ contact, api, publicKeys, privateKeys })
             );
@@ -89,7 +91,13 @@ const AskForKeyPinningModal = ({ contacts, onNotTrust, onError, onResolve, onRej
     };
 
     return (
-        <ModalTwo size="large" {...rest} onClose={handleClose} onSubmit={() => withLoading(handleSubmit())}>
+        <ModalTwo
+            size="large"
+            as="form"
+            {...rest}
+            onClose={handleClose}
+            onSubmit={(e: FormEvent) => withLoading(handleSubmit(e))}
+        >
             <ModalTwoHeader title={c('Title').ngettext(msgid`Trust new key?`, `Trust new keys?`, contacts.length)} />
             <ModalTwoContent>
                 {c('Key pinning').ngettext(
