@@ -51,7 +51,6 @@ import { useApplyEncryptedSearch } from '../../hooks/mailbox/useApplyEncryptedSe
 import { MailboxContainerContextProvider } from './MailboxContainerProvider';
 import ItemContextMenu from '../../components/list/ItemContextMenu';
 import { MARK_AS_STATUS, useMarkAs } from '../../hooks/useMarkAs';
-import { useMoveToFolder } from '../../hooks/useApplyLabels';
 import { usePermanentDelete } from '../../hooks/usePermanentDelete';
 import { getFolderName } from '../../helpers/labels';
 
@@ -82,7 +81,6 @@ const MailboxContainer = ({
     const [contextMenuPosition, setContextMenuPosition] = useState<{ top: number; left: number }>();
     const getElementsFromIDs = useGetElementsFromIDs();
     const markAs = useMarkAs();
-    const { moveToFolder } = useMoveToFolder();
     const { feature: mailContextMenuFeature } = useFeature<boolean>(FeatureCode.MailContextMenu);
     const listRef = useRef<HTMLDivElement>(null);
     const forceRowMode = breakpoints.isNarrow || breakpoints.isTablet;
@@ -234,19 +232,6 @@ const MailboxContainer = ({
         [selectedIDs, labelID, handleBack]
     );
 
-    const handleMove = useCallback(
-        async (LabelID: string) => {
-            const folderName = getFolderName(LabelID, folders);
-            const fromLabelID = labelIDs.includes(labelID) ? MAILBOX_LABEL_IDS.INBOX : labelID;
-            const elements = getElementsFromIDs(selectedIDs);
-            await moveToFolder(elements, LabelID, folderName, fromLabelID);
-            if (selectedIDs.includes(elementID || '')) {
-                handleBack();
-            }
-        },
-        [selectedIDs, elementID, labelID, labelIDs, folders, handleBack]
-    );
-
     const handleDelete = useCallback(async () => {
         await permanentDelete(selectedIDs);
     }, [selectedIDs, permanentDelete]);
@@ -277,7 +262,9 @@ const MailboxContainer = ({
         moveDropdownToggleRef,
         moveScheduledModal,
         moveAllModal,
+        moveToSpamModal,
         permanentDeleteModal,
+        moveToFolder,
     } = useMailboxHotkeys(
         {
             labelID,
@@ -303,6 +290,19 @@ const MailboxContainer = ({
             handleCheckAll,
             setFocusIndex,
         }
+    );
+
+    const handleMove = useCallback(
+        async (LabelID: string) => {
+            const folderName = getFolderName(LabelID, folders);
+            const fromLabelID = labelIDs.includes(labelID) ? MAILBOX_LABEL_IDS.INBOX : labelID;
+            const elements = getElementsFromIDs(selectedIDs);
+            await moveToFolder(elements, LabelID, folderName, fromLabelID);
+            if (selectedIDs.includes(elementID || '')) {
+                handleBack();
+            }
+        },
+        [selectedIDs, elementID, labelID, labelIDs, folders, handleBack]
     );
 
     return (
@@ -440,6 +440,7 @@ const MailboxContainer = ({
             {permanentDeleteModal}
             {moveScheduledModal}
             {moveAllModal}
+            {moveToSpamModal}
             {deleteModal}
             {mailContextMenuFeature?.Value ? (
                 <ItemContextMenu

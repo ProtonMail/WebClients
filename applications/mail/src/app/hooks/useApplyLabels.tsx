@@ -1,26 +1,32 @@
 import { Dispatch, SetStateAction, useCallback } from 'react';
 import { useDispatch } from 'react-redux';
+
 import { c, msgid } from 'ttag';
-import { useApi, useNotifications, useEventManager, useLabels, classnames } from '@proton/components';
-import { labelMessages, unlabelMessages } from '@proton/shared/lib/api/messages';
-import { labelConversations, unlabelConversations } from '@proton/shared/lib/api/conversations';
-import { undoActions } from '@proton/shared/lib/api/mailUndoActions';
-import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+
+import { classnames, useApi, useEventManager, useLabels, useMailSettings, useNotifications } from '@proton/components';
 import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
+import { labelConversations, unlabelConversations } from '@proton/shared/lib/api/conversations';
+import { updateSpamAction } from '@proton/shared/lib/api/mailSettings';
+import { undoActions } from '@proton/shared/lib/api/mailUndoActions';
+import { labelMessages, unlabelMessages } from '@proton/shared/lib/api/messages';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { SpamAction } from '@proton/shared/lib/interfaces';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import isTruthy from '@proton/utils/isTruthy';
-import { PAGE_SIZE } from '../constants';
+
+import MoveScheduledModal from '../components/message/modals/MoveScheduledModal';
+import MoveToSpamModal from '../components/message/modals/MoveToSpamModal';
+import MoveAllButton from '../components/notifications/MoveAllButton';
 import UndoActionNotification from '../components/notifications/UndoActionNotification';
+import { PAGE_SIZE } from '../constants';
+import { SUCCESS_NOTIFICATION_EXPIRATION } from '../constants';
 import { isMessage as testIsMessage } from '../helpers/elements';
+import { isLabel } from '../helpers/labels';
 import { getMessagesAuthorizedToMove } from '../helpers/message/messages';
+import { backendActionFinished, backendActionStarted } from '../logic/elements/elementsActions';
+import { Conversation } from '../models/conversation';
 import { Element } from '../models/element';
 import { useOptimisticApplyLabels } from './optimistic/useOptimisticApplyLabels';
-import { SUCCESS_NOTIFICATION_EXPIRATION } from '../constants';
-import { Conversation } from '../models/conversation';
-import { backendActionFinished, backendActionStarted } from '../logic/elements/elementsActions';
-import MoveAllButton from '../components/notifications/MoveAllButton';
-import { isLabel } from '../helpers/labels';
-import MoveScheduledModal from '../components/message/modals/MoveScheduledModal';
 import { useMoveAll } from './useMoveAll';
 
 const { SPAM, TRASH, SCHEDULED, SENT, ALL_SENT, DRAFTS, ALL_DRAFTS, INBOX } = MAILBOX_LABEL_IDS;
@@ -287,12 +293,17 @@ export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolea
     const { createNotification } = useNotifications();
     const [labels = []] = useLabels();
     const optimisticApplyLabels = useOptimisticApplyLabels();
+    const [mailSettings] = useMailSettings();
     const dispatch = useDispatch();
     let canUndo = true; // Used to not display the Undo button if moving only scheduled messages/conversations to trash
 
     const { moveAll, modal: moveAllModal } = useMoveAll();
 
     const [moveScheduledModal, handleShowModal] = useModalTwo(MoveScheduledModal);
+    const [moveToSpamModal, handleShowSpamModal] = useModalTwo<
+        { isMessage: boolean; elements: Element[] },
+        { unsubscribe: boolean; remember: boolean }
+    >(MoveToSpamModal);
 
     /*
      * Opens a modal when finding scheduled messages that are moved to trash.
@@ -324,6 +335,24 @@ export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolea
         }
     };
 
+    const askToUnsubscribe = async (folderID: string, isMessage: boolean, elements: Element[]) => {
+        if (folderID === SPAM) {
+            if (mailSettings?.SpamAction === null) {
+                const { unsubscribe, remember } = await handleShowSpamModal({ isMessage, elements });
+                const spamAction = unsubscribe ? SpamAction.SpamAndUnsub : SpamAction.JustSpam;
+
+                if (remember) {
+                    // Don't waste time
+                    void api(updateSpamAction(spamAction));
+                }
+
+                return spamAction;
+            }
+
+            return mailSettings?.SpamAction;
+        }
+    };
+
     const moveToFolder = useCallback(
         async (elements: Element[], folderID: string, folderName: string, fromLabelID: string, silent = false) => {
             if (!elements.length) {
@@ -334,8 +363,12 @@ export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolea
 
             const isMessage = testIsMessage(elements[0]);
 
-            // Open a modal when moving a scheduled message/conversation to trash to inform the user that it will be cancelled
-            await searchForScheduled(folderID, isMessage, elements);
+            const [, spamAction] = await Promise.all([
+                // Open a modal when moving a scheduled message/conversation to trash to inform the user that it will be cancelled
+                searchForScheduled(folderID, isMessage, elements),
+                // Open a modal when moving items to spam to propose to unsubscribe them
+                askToUnsubscribe(folderID, isMessage, elements),
+            ]);
 
             const action = isMessage ? labelMessages : labelConversations;
             const authorizedToMove = isMessage
@@ -384,7 +417,9 @@ export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolea
                     stop();
                     dispatch(backendActionStarted());
                     rollback = optimisticApplyLabels(authorizedToMove, { [folderID]: true }, true, [], fromLabelID);
-                    const { UndoToken } = await api(action({ LabelID: folderID, IDs: elementIDs }));
+                    const { UndoToken } = await api(
+                        action({ LabelID: folderID, IDs: elementIDs, SpamAction: spamAction })
+                    );
                     // We are not checking ValidUntil since notification stay for few seconds after this action
                     token = UndoToken.Token;
                 } catch (error: any) {
@@ -455,7 +490,7 @@ export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolea
         [labels]
     );
 
-    return { moveToFolder, moveScheduledModal, moveAllModal };
+    return { moveToFolder, moveScheduledModal, moveAllModal, moveToSpamModal };
 };
 
 export const useStar = () => {
@@ -481,7 +516,12 @@ export const useStar = () => {
             stop();
             dispatch(backendActionStarted());
             rollback = optimisticApplyLabels(elements, { [MAILBOX_LABEL_IDS.STARRED]: value });
-            await api(action({ LabelID: MAILBOX_LABEL_IDS.STARRED, IDs: elements.map((element) => element.ID) }));
+            await api(
+                action({
+                    LabelID: MAILBOX_LABEL_IDS.STARRED,
+                    IDs: elements.map((element) => element.ID),
+                })
+            );
         } catch (error: any) {
             rollback();
             throw error;

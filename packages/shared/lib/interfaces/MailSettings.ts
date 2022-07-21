@@ -11,6 +11,11 @@ export interface AutoResponder {
     Zone: string;
 }
 
+export enum SpamAction {
+    JustSpam = 0,
+    SpamAndUnsub = 1,
+}
+
 export interface MailSettings {
     DisplayName: string;
     Signature: string;
@@ -50,4 +55,5 @@ export interface MailSettings {
     InheritParentFolderColor: number;
     FontFace: string | null;
     FontSize: number | null;
+    SpamAction: SpamAction | null;
 }
