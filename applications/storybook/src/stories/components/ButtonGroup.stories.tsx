@@ -57,7 +57,7 @@ export const Sandbox = () => {
     );
 
     return (
-        <div className="p2">
+        <div className="my2">
             <div className="flex flex-align-items-stretch">
                 <div className="mr2">
                     <strong className="block mb1">Color</strong>

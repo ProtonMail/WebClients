@@ -1,0 +1,159 @@
+.field-two {
+	&-container {
+		position: relative;
+		display: block;
+		inline-size: 100%;
+		max-inline-size: 100%;
+		cursor: default;
+	}
+
+	&-lable-container {
+		margin-block-end: rem(4);
+	}
+
+	&-label {
+		font-weight: var(--font-weight-semibold);
+		cursor: pointer;
+	}
+
+	&-hint {
+		margin-block-end: rem(1);
+		text-align: end;
+		font-size: rem(12);
+		color: var(--text-weak);
+	}
+
+	&-assist {
+		margin-block-start: rem(4);
+		font-size: rem(12);
+		color: var(--text-weak);
+
+		&:not(:empty) {
+			cursor: pointer;
+		}
+
+		&:empty::before {
+			content: ' ';
+			white-space: pre;
+		}
+	}
+
+	&--invalid &-assist {
+		color: var(--signal-danger);
+		font-weight: var(--font-weight-semibold);
+	}
+
+	&--warning &-assist {
+		color: var(--signal-warning);
+		font-weight: var(--font-weight-semibold);
+	}
+
+	&--disabled {
+		color: var(--field-disabled-text-color);
+	}
+
+	&--disabled &-label,
+	&--disabled &-hint,
+	&--disabled &-assist {
+		color: inherit;
+		cursor: default;
+	}
+
+	&--bigger &-input,
+	&--bigger .select {
+		padding-block: rem(11); // 44px height, same as buttons
+	}
+
+	&-input-wrapper {
+		border-radius: var(--border-radius-md);
+		border: 1px solid var(--field-norm);
+		background-color: var(--field-background-color);
+		color: var(--field-text-color);
+		transition: 0.15s easing(easeOutQuint), background-position 0s;
+
+		&:hover,
+		&.hover {
+			border-color: var(--field-hover);
+			background-color: var(--field-hover-background-color);
+			color: var(--field-hover-text-color);
+		}
+
+		&.focus,
+		&:not(.disabled):focus-within {
+			border-color: var(--field-focus);
+			box-shadow: 0 0 0 #{$fields-focus-ring-size} var(--field-highlight);
+			background-color: var(--field-focus-background-color);
+			color: var(--field-focus-text-color);
+		}
+
+		&.error {
+			border-color: var(--signal-danger);
+		}
+
+		&.disabled {
+			border-color: var(--field-disabled);
+			background-color: var(--field-disabled-background-color);
+			color: var(--field-disabled-text-color);
+		}
+
+		&.unstyled {
+			&#{&} {
+				border-color: transparent;
+				border-radius: 0;
+				box-shadow: none;
+				background-color: transparent;
+			}
+		}
+	}
+
+	&-input-wrapper.disabled &-input::placeholder,
+	&-input-wrapper.disabled &-input-adornment {
+		color: inherit;
+	}
+
+	&-input {
+		min-block-size: rem(34);
+		padding-block: em(7); // 36px height with wrapper borders, same as buttons
+		padding-inline: em(16);
+		border-radius: var(--border-radius-md);
+		background: none;
+		color: inherit;
+		outline: none;
+		filter: none; // fixes Firefox autofill color
+
+		&:-moz-ui-invalid {
+			// fixes some Firefox issues with HTML5 validation
+			box-shadow: none;
+		}
+
+		&[type='search']::-webkit-search-cancel-button {
+			display: none;
+		}
+
+		select#{&}::-ms-expand {
+			display: none;
+		}
+	}
+
+	&-input-wrapper > *:not(:only-child, :first-child) > &-input {
+		padding-inline-start: 0.5em;
+	}
+
+	&-input-wrapper > *:not(:only-child, :last-child) > &-input {
+		padding-inline-end: 0.5em;
+	}
+
+	&-input-adornment {
+		color: var(--text-weak);
+
+		.button:not([class*='button-underline']) {
+			&:first-child {
+				margin-inline-start: -0.25em;
+			}
+
+			&:last-child {
+				margin-inline-end: -0.25em;
+			}
+		}
+	}
+}

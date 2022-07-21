@@ -218,51 +218,6 @@ textarea.field {
 	}
 }
 
-/*
- * Composer new inputs
- * Only for composer for the moment
- */
-.field-lighter {
-	&#{&} {
-		border-radius: 0;
-		border-block-start-width: 0;
-		border-inline-width: 0;
-
-		min-block-size: em(44);
-		&:focus,
-		&:focus-within {
-			box-shadow: none;
-		}
-	}
-	// normal select
-	& + svg.right-icon {
-		inset-block-start: 0.5em;
-	}
-
-	// new select
-	&.select {
-		border-block-start: 0;
-		box-shadow: none;
-		border-inline: 0;
-		border-radius: 0;
-		&[aria-expanded='true'] {
-			border-color: var(--interaction-norm);
-			background-color: var(--field-focus-background-color);
-			color: var(--field-focus-text-color);
-			box-shadow: none;
-		}
-		// no need outline for this field, already provided by styles
-		&#{&} {
-			&:focus-visible {
-				outline: 0;
-			}
-		}
-	}
-	// new selectTwo without caret
-	&.select--inline-caret > svg {
-		display: none;
-	}
-}
 .dropdown-content .select--inline-caret-option {
 	display: none;
 }
