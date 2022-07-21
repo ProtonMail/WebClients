@@ -1,12 +1,14 @@
-import { c } from 'ttag';
-import { ButtonGroup, Button, classnames, Tooltip, Icon, useLoading } from '@proton/components';
-import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { MouseEvent } from 'react';
-import { Element } from '../../models/element';
-import { isUnread as testIsUnread } from '../../helpers/conversation';
-import { useMarkAs, MARK_AS_STATUS } from '../../hooks/useMarkAs';
+
+import { c } from 'ttag';
+
+import { Button, ButtonGroup, Icon, Tooltip, classnames, useLoading } from '@proton/components';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+
+import { isMessage, isStarred as testIsStarred, isUnread as testIsUnread } from '../../helpers/elements';
 import { useMoveToFolder, useStar } from '../../hooks/useApplyLabels';
-import { isMessage, isStarred as testIsStarred } from '../../helpers/elements';
+import { MARK_AS_STATUS, useMarkAs } from '../../hooks/useMarkAs';
+import { Element } from '../../models/element';
 
 const { READ, UNREAD } = MARK_AS_STATUS;
 const { ARCHIVE, TRASH } = MAILBOX_LABEL_IDS;
@@ -18,9 +20,18 @@ interface Props {
     className?: string;
     onBack: () => void;
     hasStar?: boolean;
+    size?: 'small' | 'medium';
 }
 
-const ItemHoverButtons = ({ element, labelID, elementID, className, onBack, hasStar = true }: Props) => {
+const ItemHoverButtons = ({
+    element,
+    labelID,
+    elementID,
+    className,
+    onBack,
+    hasStar = true,
+    size = 'small',
+}: Props) => {
     const markAs = useMarkAs();
     const { moveToFolder, moveScheduledModal } = useMoveToFolder();
     const star = useStar();
@@ -71,7 +82,7 @@ const ItemHoverButtons = ({ element, labelID, elementID, className, onBack, hasS
     return (
         <>
             <ButtonGroup
-                size="small"
+                size={size}
                 className={classnames([
                     'opacity-on-hover opacity-on-hover-no-width relative item-hover-action-buttons no-mobile',
                     className,

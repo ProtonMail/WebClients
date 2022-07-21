@@ -1,47 +1,50 @@
-import { ChangeEvent, Ref, memo, forwardRef, RefObject } from 'react';
+import { ChangeEvent, Ref, RefObject, forwardRef, memo } from 'react';
 import { useSelector } from 'react-redux';
+
 import { c, msgid } from 'ttag';
+
 import {
-    classnames,
     MnemonicPromptModal,
     PaginationRow,
-    useItemsDraggable,
-    useModals,
-    useIsMnemonicAvailable,
-    useModalState,
-    useSettingsLink,
-    useUser,
+    classnames,
     getCanReactiveMnemonic,
     useEventManager,
-    useUserSettings,
+    useIsMnemonicAvailable,
+    useItemsDraggable,
     useMailSettings,
+    useModalState,
+    useModals,
+    useSettingsLink,
+    useUser,
+    useUserSettings,
 } from '@proton/components';
-import { ChecklistKey } from '@proton/shared/lib/interfaces';
 import { DENSITY } from '@proton/shared/lib/constants';
-import Item from './Item';
-import { Element } from '../../models/element';
-import EmptyView from '../view/EmptyView';
-import { isMessage as testIsMessage } from '../../helpers/elements';
-import { usePlaceholders } from '../../hooks/usePlaceholders';
-import { Breakpoints } from '../../models/utils';
-import { Filter } from '../../models/tools';
-import { usePaging } from '../../hooks/usePaging';
-import ESSlowToolbar from './ESSlowToolbar';
-import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
-import useEncryptedSearchList from './useEncryptedSearchList';
-import GetStartedChecklist from '../checklist/GetStartedChecklist';
-import PaidUserGetStartedChecklist from '../checklist/PaidUserGetStartedChecklist';
-import { isColumnMode } from '../../helpers/mailSettings';
+import { ChecklistKey } from '@proton/shared/lib/interfaces';
+
 import { MESSAGE_ACTIONS } from '../../constants';
 import { useOnCompose } from '../../containers/ComposeProvider';
+import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { useGetStartedChecklist, usePaidUserChecklist } from '../../containers/checklists';
-import ModalImportEmails from '../checklist/ModalImportEmails';
+import { isMessage as testIsMessage } from '../../helpers/elements';
+import { isColumnMode } from '../../helpers/mailSettings';
+import { MARK_AS_STATUS } from '../../hooks/useMarkAs';
+import { usePaging } from '../../hooks/usePaging';
+import { usePlaceholders } from '../../hooks/usePlaceholders';
+import { showLabelTaskRunningBanner } from '../../logic/elements/elementsSelectors';
+import { Element } from '../../models/element';
+import { Filter } from '../../models/tools';
+import { Breakpoints } from '../../models/utils';
+import GetStartedChecklist from '../checklist/GetStartedChecklist';
 import ModalGetMobileApp from '../checklist/ModalGetMobileApp';
+import ModalImportEmails from '../checklist/ModalImportEmails';
+import PaidUserGetStartedChecklist from '../checklist/PaidUserGetStartedChecklist';
+import EmptyView from '../view/EmptyView';
+import ESSlowToolbar from './ESSlowToolbar';
+import Item from './Item';
 import { ResizeHandle } from './ResizeHandle';
 import TaskRunningBanner from './TaskRunningBanner';
-import { showLabelTaskRunningBanner } from '../../logic/elements/elementsSelectors';
+import useEncryptedSearchList from './useEncryptedSearchList';
 import { useItemContextMenu } from './useItemContextMenu';
-import { MARK_AS_STATUS } from '../../hooks/useMarkAs';
 
 const defaultCheckedIDs: string[] = [];
 const defaultElements: Element[] = [];
@@ -187,16 +190,6 @@ const List = (
                     {conversationMode ? c('Title').t`Conversation list` : c('Title').t`Message list`}
                 </h1>
                 <div className="items-column-list-inner opacity-on-hover-supercontainer flex flex-nowrap flex-column relative items-column-list-inner--mail">
-                    {/* <ListSettings
-                        sort={sort}
-                        onSort={onSort}
-                        onFilter={onFilter}
-                        filter={filter}
-                        conversationMode={conversationMode}
-                        mailSettings={mailSettings}
-                        isSearch={isSearch}
-                        labelID={labelID}
-                    /> */}
                     {showESSlowToolbar && <ESSlowToolbar />}
                     {showTaskRunningBanner && <TaskRunningBanner className={showESSlowToolbar ? '' : 'mt1'} />}
                     {elements.length === 0 ? (
@@ -209,6 +202,7 @@ const List = (
                                     <Item
                                         key={element.ID}
                                         conversationMode={conversationMode}
+                                        isCompactView={isCompactView}
                                         labelID={labelID}
                                         loading={loading}
                                         columnLayout={columnLayout}
