@@ -1,4 +1,4 @@
-import { ComponentPropsWithRef, forwardRef, ReactNode, Ref } from 'react';
+import { ComponentPropsWithRef, ReactNode, Ref, forwardRef } from 'react';
 
 import { classnames } from '../../../helpers';
 
@@ -11,6 +11,7 @@ export interface InputTwoProps extends Omit<ComponentPropsWithRef<'input'>, 'pre
     containerRef?: Ref<HTMLDivElement>;
     disableChange?: boolean;
     onValue?: (value: string) => void;
+    inputClassName?: string;
 }
 
 const InputTwo = (props: InputTwoProps, ref: Ref<HTMLInputElement>) => {
@@ -21,6 +22,7 @@ const InputTwo = (props: InputTwoProps, ref: Ref<HTMLInputElement>) => {
         prefix,
         suffix,
         className: classNameProp,
+        inputClassName,
         onValue,
         disableChange,
         containerRef,
@@ -44,7 +46,7 @@ const InputTwo = (props: InputTwoProps, ref: Ref<HTMLInputElement>) => {
                 onValue?.(e.target.value);
                 rest.onChange?.(e);
             }}
-            className="field-two-input w100"
+            className={classnames(['field-two-input w100', inputClassName])}
         />
     );
 
