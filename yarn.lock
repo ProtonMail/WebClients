@@ -12443,7 +12443,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"data-uri-to-buffer@npm:3, data-uri-to-buffer@npm:^3.0.1":
+"data-uri-to-buffer@npm:3":
   version: 3.0.1
   resolution: "data-uri-to-buffer@npm:3.0.1"
   checksum: c59c3009686a78c071806b72f4810856ec28222f0f4e252aa495ec027ed9732298ceea99c50328cf59b151dd34cbc3ad6150bbb43e41fc56fa19f48c99e9fc30
@@ -14934,16 +14934,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fetch-blob@npm:^3.1.2":
-  version: 3.1.3
-  resolution: "fetch-blob@npm:3.1.3"
-  dependencies:
-    web-streams-polyfill: ^3.0.3
-  checksum: 7be20e9c9a936601c280ef3cfed1968dbcfb35e31564b9bdc807b48de73587cd358b7c3965a3f03483f5268dc373ae8526608947750f22eb214e20c94efab9c1
-  languageName: node
-  linkType: hard
-
-"fetch-blob@npm:^3.1.4":
+"fetch-blob@npm:^3.1.2, fetch-blob@npm:^3.1.4":
   version: 3.2.0
   resolution: "fetch-blob@npm:3.2.0"
   dependencies:
@@ -22381,17 +22372,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"node-fetch@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "node-fetch@npm:3.0.0"
-  dependencies:
-    data-uri-to-buffer: ^3.0.1
-    fetch-blob: ^3.1.2
-  checksum: 50224bf682a0bc3d44faee0f38df6269d8ae646de343595ef37f9d94b4322d3763a49819fb7b2df9330fcae16e0a20e5fb129dfed8725cf0e8f720277db7611c
-  languageName: node
-  linkType: hard
-
-"node-fetch@npm:^3.2.9":
+"node-fetch@npm:^3.0.0, node-fetch@npm:^3.2.9":
   version: 3.2.9
   resolution: "node-fetch@npm:3.2.9"
   dependencies:
@@ -30455,7 +30436,7 @@ typescript@^3.9.7:
 
 "typescript@patch:typescript@^3.9.7#~builtin<compat/typescript>":
   version: 3.9.10
-  resolution: "typescript@patch:typescript@npm%3A3.9.10#~builtin<compat/typescript>::version=3.9.10&hash=7ad353"
+  resolution: "typescript@patch:typescript@npm%3A3.9.10#~builtin<compat/typescript>::version=3.9.10&hash=f456af"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
@@ -30465,7 +30446,7 @@ typescript@^3.9.7:
 
 "typescript@patch:typescript@^4.5.4#~builtin<compat/typescript>, typescript@patch:typescript@^4.7.4#~builtin<compat/typescript>":
   version: 4.7.4
-  resolution: "typescript@patch:typescript@npm%3A4.7.4#~builtin<compat/typescript>::version=4.7.4&hash=7ad353"
+  resolution: "typescript@patch:typescript@npm%3A4.7.4#~builtin<compat/typescript>::version=4.7.4&hash=f456af"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
