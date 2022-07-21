@@ -1,9 +1,12 @@
-import { forwardRef, Ref } from 'react';
-import { c } from 'ttag';
+import { Ref, forwardRef } from 'react';
 import { useHistory } from 'react-router-dom';
+
+import { c } from 'ttag';
+
 import { Button, Icon, InputTwo } from '@proton/components';
-import { SearchParameters } from '../../../models/tools';
+
 import { isSearch as testIsSearch } from '../../../helpers/elements';
+import { SearchParameters } from '../../../models/tools';
 
 import './SearchInput.scss';
 
@@ -25,7 +28,7 @@ const SearchInput = ({ searchParams, onOpen }: Props, ref: Ref<HTMLInputElement>
         <div className="searchbox flex">
             <div ref={ref} className="w100 mauto">
                 <InputTwo
-                    className="cursor-pointer"
+                    inputClassName="cursor-text"
                     value={searchParams.keyword ? searchParams.keyword : ''}
                     placeholder={c('Placeholder').t`Search messages`}
                     onClick={onOpen}
@@ -38,7 +41,7 @@ const SearchInput = ({ searchParams, onOpen }: Props, ref: Ref<HTMLInputElement>
                             shape="ghost"
                             color="weak"
                             size="small"
-                            className="no-pointer-events"
+                            className="rounded-sm no-pointer-events"
                             title={c('Action').t`Search`}
                             onClick={onOpen}
                             data-shorcut-target="searchbox-button"
