@@ -1,9 +1,13 @@
+import { createReadableStreamWrapper } from '@mattiasbuelens/web-streams-adapter';
 import { ReadableStream } from 'web-streams-polyfill';
 
-import { createApiError, createOfflineError } from '@proton/shared/lib/fetch/ApiError';
-import { DOWNLOAD_TIMEOUT, DOWNLOAD_RETRIES_ON_TIMEOUT, RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
+import { retryHandler } from '@proton/shared/lib/api/helpers/withApiHandlers';
 import { HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
-import { createReadableStreamWrapper } from '@mattiasbuelens/web-streams-adapter';
+import { DOWNLOAD_RETRIES_ON_TIMEOUT, DOWNLOAD_TIMEOUT, RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
+import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
+import { createApiError, createOfflineError } from '@proton/shared/lib/fetch/ApiError';
+
+import { MAX_TOO_MANY_REQUESTS_WAIT } from '../constants';
 
 const toPolyfillReadable = createReadableStreamWrapper(ReadableStream);
 
@@ -56,6 +60,15 @@ export default async function downloadBlock(
     };
 
     const response = await doFetch();
+
+    // Download can be rate limited. Lets wait defined time by server
+    // before making another attempt.
+    if (response.status === HTTP_ERROR_CODES.TOO_MANY_REQUESTS) {
+        return retryHandler({ response } as any, MAX_TOO_MANY_REQUESTS_WAIT).then(() =>
+            downloadBlock(abortController, url, token)
+        );
+    }
+
     if (!response.body) {
         throw Error(`Response has no data`);
     }

@@ -1,9 +1,7 @@
-import { ApiError } from '@proton/shared/lib/fetch/ApiError';
-
 import { MAX_RETRIES_BEFORE_FAIL } from '../constants';
 import { UploadingBlockControl } from './interface';
 import { createUploadingBlockControl } from './testHelpers';
-import startUploadJobs from './upload';
+import startUploadJobs, { XHRError } from './upload';
 import { Pauser } from './pauser';
 
 describe('upload jobs', () => {
@@ -164,7 +162,7 @@ describe('upload jobs', () => {
             yield createUploadingBlockControl(1, mockUploadBlockFinishCallback, mockUploadBlockExpiredCallback);
         }
 
-        const err = new ApiError('Token expired', 404, 'Token expired');
+        const err = new XHRError('Token expired', 2501, 404);
         const mockUploadBlockCallback = jest.fn(() => {
             throw err;
         });
@@ -178,5 +176,32 @@ describe('upload jobs', () => {
         expect(mockUploadBlockCallback).toBeCalledTimes(1);
         expect(mockUploadBlockFinishCallback).not.toBeCalled();
         expect(mockUploadBlockExpiredCallback).toBeCalledTimes(1);
+    });
+
+    it('waits specified time when rate limited', async () => {
+        async function* generator(): AsyncGenerator<UploadingBlockControl> {
+            yield createUploadingBlockControl(1, mockUploadBlockFinishCallback, mockUploadBlockExpiredCallback);
+        }
+
+        const err = new XHRError('Too many requests', 0, 429, {
+            headers: new Headers({ 'retry-after': '1' }),
+        } as Response);
+        const mockUploadBlockCallback = jest.fn(() => {
+            // Fail only once.
+            if (mockUploadBlockCallback.mock.calls.length === 1) {
+                throw err;
+            }
+            return Promise.resolve();
+        });
+        await startUploadJobs(
+            pauser,
+            generator(),
+            mockProgressCallback,
+            mockNetworkErrorCallback,
+            mockUploadBlockCallback
+        );
+        expect(mockUploadBlockCallback).toBeCalledTimes(2);
+        expect(mockUploadBlockFinishCallback).toBeCalled();
+        expect(mockUploadBlockExpiredCallback).not.toBeCalled();
     });
 });
