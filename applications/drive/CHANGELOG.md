@@ -1,3 +1,14 @@
+# Release 5.0.4.0 - 2022-07-28
+
+## Improved
+
+-   Improved the performance and security of crypto operations
+-   Improved handling of uploads and downloads when client is rate limited
+
+## Fixed
+
+-   Fix several download page issues on mobiles
+
 # Release beta 30 - 2022-07-13
 
 ## Added
