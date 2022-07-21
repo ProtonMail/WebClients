@@ -2,9 +2,10 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { SHOW_IMAGES, STICKY_LABELS, VIEW_MODE } from '@proton/shared/lib/constants';
-import { updateStickyLabels, updateViewMode } from '@proton/shared/lib/api/mailSettings';
+import { updateSpamAction, updateStickyLabels, updateViewMode } from '@proton/shared/lib/api/mailSettings';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
+import { SpamAction } from '@proton/shared/lib/interfaces';
 import { Info } from '../../components';
 import { useApi, useEventManager, useFeature, useLoading, useMailSettings, useNotifications } from '../../hooks';
 import EmbeddedToggle from './EmbeddedToggle';
@@ -17,11 +18,12 @@ import { FeatureCode } from '../features';
 import { RemoteToggle } from '../emailPrivacy';
 import ViewModeToggle from '../layouts/ViewModeToggle';
 import StickyLabelsToggle from '../layouts/StickyLabelsToggle';
+import SpamActionSelect from './SpamActionSelect';
 
 const { EMBEDDED } = SHOW_IMAGES;
 
 const MessagesSection = () => {
-    const [{ ViewMode = 0, StickyLabels = 0, ShowImages = EMBEDDED, ConfirmLink = 1 } = {}] = useMailSettings();
+    const [{ ViewMode = 0, StickyLabels = 0, ShowImages = EMBEDDED, ConfirmLink = 1, SpamAction = null, } = {}] = useMailSettings();
     const [showImages, setShowImages] = useState(ShowImages);
     const handleChange = (newValue: number) => setShowImages(newValue);
     const { feature: spyTrackerFeature } = useFeature(FeatureCode.SpyTrackerProtection);
@@ -31,6 +33,7 @@ const MessagesSection = () => {
 
     const [loadingViewMode, withLoadingViewMode] = useLoading();
     const [loadingStickyLabels, withLoadingStickyLabels] = useLoading();
+    const [loadingSpamAction, withLoadingSpamAction] = useLoading();
 
     const handleChangeShowImage = (newValue: number) => setShowImages(newValue);
 
@@ -47,6 +50,12 @@ const MessagesSection = () => {
             await api(updateStickyLabels(STICKY_LABELS.OFF));
         }
         await api(updateViewMode(mode));
+        await call();
+        notifyPreferenceSaved();
+    };
+
+    const handleChangeSpamAction = async (spamAction: SpamAction | null) => {
+        await api(updateSpamAction(spamAction));
         await call();
         notifyPreferenceSaved();
     };
@@ -154,6 +163,26 @@ const MessagesSection = () => {
                         onToggle={(value) => withLoadingStickyLabels(handleToggleStickyLabels(value))}
                         data-testid="appearance:sticky-labels-toggle"
                         disabled={ViewMode !== VIEW_MODE.GROUP}
+                    />
+                </SettingsLayoutRight>
+            </SettingsLayout>
+
+            <SettingsLayout>
+                <SettingsLayoutLeft>
+                    <label htmlFor="spamActionLabelSelect" className="text-semibold">
+                        <span className="mr0-5">{c('Label').t`Auto-unsubscribe`}</span>
+                        <Info
+                            title={c('Tooltip')
+                                .t`When you move an email to spam, you’ll automatically be unsubscribed from the sender’s mailing lists.`}
+                        />
+                    </label>
+                </SettingsLayoutLeft>
+                <SettingsLayoutRight className="pt0-5">
+                    <SpamActionSelect
+                        id="spamActionLabelSelect"
+                        value={SpamAction}
+                        onChange={(value) => withLoadingSpamAction(handleChangeSpamAction(value))}
+                        loading={loadingSpamAction}
                     />
                 </SettingsLayoutRight>
             </SettingsLayout>

@@ -20,6 +20,7 @@ export const MESSAGE_FLAGS = {
     FLAG_DMARC_FAIL: 1 << 26, // Incoming mail failed dmarc authentication.
     FLAG_UNSUBSCRIBED: 1 << 19, // Unsubscribed from newsletter
     FLAG_SCHEDULED_SEND: 1 << 20, // Messages that have been delayed send
+    FLAG_UNSUBSCRIBABLE: 1 << 21, // Messages that are unsubscribable
 };
 
 export enum VERIFICATION_STATUS {
