@@ -1,31 +1,33 @@
 import { Dispatch, SetStateAction, useCallback } from 'react';
 import { useDispatch } from 'react-redux';
+
 import { c, msgid } from 'ttag';
-import { useApi, useNotifications, useEventManager, useLabels, useMailSettings, classnames } from '@proton/components';
-import { labelMessages, unlabelMessages } from '@proton/shared/lib/api/messages';
-import { labelConversations, unlabelConversations } from '@proton/shared/lib/api/conversations';
-import { undoActions } from '@proton/shared/lib/api/mailUndoActions';
-import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+
+import { classnames, useApi, useEventManager, useLabels, useMailSettings, useNotifications } from '@proton/components';
 import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
+import { labelConversations, unlabelConversations } from '@proton/shared/lib/api/conversations';
+import { updateSpamAction } from '@proton/shared/lib/api/mailSettings';
+import { undoActions } from '@proton/shared/lib/api/mailUndoActions';
+import { labelMessages, unlabelMessages } from '@proton/shared/lib/api/messages';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { SpamAction } from '@proton/shared/lib/interfaces';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import isTruthy from '@proton/utils/isTruthy';
-import { SpamAction } from '@proton/shared/lib/interfaces';
-import { updateSpamAction } from '@proton/shared/lib/api/mailSettings';
 
-import { PAGE_SIZE } from '../constants';
+import MoveScheduledModal from '../components/message/modals/MoveScheduledModal';
+import MoveToSpamModal from '../components/message/modals/MoveToSpamModal';
+import MoveAllButton from '../components/notifications/MoveAllButton';
 import UndoActionNotification from '../components/notifications/UndoActionNotification';
+import { PAGE_SIZE } from '../constants';
+import { SUCCESS_NOTIFICATION_EXPIRATION } from '../constants';
 import { isMessage as testIsMessage } from '../helpers/elements';
+import { isLabel } from '../helpers/labels';
 import { getMessagesAuthorizedToMove } from '../helpers/message/messages';
+import { backendActionFinished, backendActionStarted } from '../logic/elements/elementsActions';
+import { Conversation } from '../models/conversation';
 import { Element } from '../models/element';
 import { useOptimisticApplyLabels } from './optimistic/useOptimisticApplyLabels';
-import { SUCCESS_NOTIFICATION_EXPIRATION } from '../constants';
-import { Conversation } from '../models/conversation';
-import { backendActionFinished, backendActionStarted } from '../logic/elements/elementsActions';
-import MoveAllButton from '../components/notifications/MoveAllButton';
-import { isLabel } from '../helpers/labels';
-import MoveScheduledModal from '../components/message/modals/MoveScheduledModal';
 import { useMoveAll } from './useMoveAll';
-import MoveToSpamModal from '../components/message/modals/MoveToSpamModal';
 
 const { SPAM, TRASH, SCHEDULED, SENT, ALL_SENT, DRAFTS, ALL_DRAFTS, INBOX } = MAILBOX_LABEL_IDS;
 
@@ -220,9 +222,7 @@ export const useApplyLabels = () => {
                             rollbacks[LabelID] = optimisticApplyLabels(elements, { [LabelID]: changes[LabelID] });
                             try {
                                 const action = changes[LabelID] ? labelAction : unlabelAction;
-                                const { UndoToken } = await api(
-                                    action({ LabelID, IDs: elementIDs, SpamAction: undefined })
-                                );
+                                const { UndoToken } = await api(action({ LabelID, IDs: elementIDs }));
                                 return UndoToken.Token;
                             } catch (error: any) {
                                 rollbacks[LabelID]();
@@ -520,7 +520,6 @@ export const useStar = () => {
                 action({
                     LabelID: MAILBOX_LABEL_IDS.STARRED,
                     IDs: elements.map((element) => element.ID),
-                    SpamAction: undefined,
                 })
             );
         } catch (error: any) {

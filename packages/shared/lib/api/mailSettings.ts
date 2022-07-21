@@ -193,7 +193,7 @@ export const updateImageProxy = (ImageProxy: number, Action: 'add' | 'remove') =
 });
 
 export const updateSpamAction = (SpamAction: SpamAction | null) => ({
-    url: 'mail/v4/settings/spamaction',
+    url: 'mail/v4/settings/spam-action',
     method: 'put',
     data: { SpamAction },
 });
