@@ -59,9 +59,9 @@ const CardNumberInput = ({ value, onChange, ...rest }: Props) => {
             value={valueWithGaps}
             prefix={
                 value && bankIcon ? (
-                    <img src={bankIcon} className="ml0-5" title={niceType} alt={niceType} width="20" />
+                    <img src={bankIcon} title={niceType} alt={niceType} width="20" />
                 ) : (
-                    <Icon className="ml0-5" name="credit-card" />
+                    <Icon name="credit-card" />
                 )
             }
             {...rest}

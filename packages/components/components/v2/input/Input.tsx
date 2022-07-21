@@ -4,9 +4,10 @@ import { classnames } from '../../../helpers';
 
 export interface InputTwoProps extends Omit<ComponentPropsWithRef<'input'>, 'prefix'> {
     error?: ReactNode | boolean;
-    suffix?: ReactNode;
+    disabled?: boolean;
+    unstyled?: boolean;
     prefix?: ReactNode;
-    icon?: ReactNode;
+    suffix?: ReactNode;
     containerRef?: Ref<HTMLDivElement>;
     disableChange?: boolean;
     onValue?: (value: string) => void;
@@ -15,17 +16,16 @@ export interface InputTwoProps extends Omit<ComponentPropsWithRef<'input'>, 'pre
 const InputTwo = (props: InputTwoProps, ref: Ref<HTMLInputElement>) => {
     const {
         error,
-        icon,
-        suffix,
+        disabled,
+        unstyled,
         prefix,
+        suffix,
         className: classNameProp,
         onValue,
         disableChange,
         containerRef,
         ...rest
     } = props;
-
-    const className = classnames([classNameProp, 'w100 inputform-field', Boolean(error) && 'error']);
 
     const inputElement = (
         <input
@@ -34,6 +34,7 @@ const InputTwo = (props: InputTwoProps, ref: Ref<HTMLInputElement>) => {
             autoCorrect="off"
             spellCheck="false"
             aria-invalid={!!error}
+            disabled={disabled}
             {...rest}
             ref={ref}
             onChange={(e) => {
@@ -43,28 +44,32 @@ const InputTwo = (props: InputTwoProps, ref: Ref<HTMLInputElement>) => {
                 onValue?.(e.target.value);
                 rest.onChange?.(e);
             }}
-            className={className}
+            className="field-two-input w100"
         />
     );
 
     return (
         <div
             className={classnames([
-                'flex flex-nowrap flex-align-items-center flex-item-fluid relative',
-                Boolean(icon) && 'text-left relative inputform-icon-container',
-                (suffix || prefix) && 'inputform-suffix-container',
+                'field-two-input-wrapper flex flex-nowrap flex-align-items-stretch flex-item-fluid relative',
+                Boolean(error) && 'error',
+                disabled && 'disabled',
+                unstyled && 'unstyled',
+                classNameProp,
             ])}
             ref={containerRef}
         >
-            {prefix && <div className="inputform-prefix pr0-5 flex">{prefix}</div>}
+            {prefix && (
+                <div className="field-two-input-adornment ml0-5 flex flex-align-items-center flex-item-noshrink flex-nowrap flex-gap-0-5">
+                    {prefix}
+                </div>
+            )}
 
-            <div className="flex-item-fluid">{inputElement}</div>
-
-            {icon && <span className="right-icon absolute flex">{icon}</span>}
+            <div className="flex flex-item-fluid">{inputElement}</div>
 
             {suffix && (
-                <div className="inputform-suffix right-icon pr0-5 flex">
-                    <span className="mauto flex">{suffix}</span>
+                <div className="field-two-input-adornment mr0-5 flex flex-align-items-center flex-item-noshrink flex-nowrap flex-gap-0-5">
+                    {suffix}
                 </div>
             )}
         </div>

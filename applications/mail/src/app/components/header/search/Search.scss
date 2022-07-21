@@ -61,9 +61,9 @@
 	}
 
 	@include respond-to($breakpoint-small, 'min') {
-		inset-block-start: calc(var(--top) * 1px);
+		inset-block-start: calc(var(--top) * 1px - 1px);
 		/* stylelint-disable */
-		inset-inline-start: calc(var(--left) * 1px);
+		inset-inline-start: calc(var(--left) * 1px - 1px);
 		/* stylelint-enable */
 		margin-inline: -1em -0.5em;
 		margin-block-start: -0.5em;
@@ -133,11 +133,5 @@
 			flex: 0 0 rem(3);
 			background: var(--background-norm);
 		}
-	}
-
-	.advanced-search-field {
-		border-color: transparent;
-		box-shadow: none;
-		padding-inline-start: 0.5em;
 	}
 }

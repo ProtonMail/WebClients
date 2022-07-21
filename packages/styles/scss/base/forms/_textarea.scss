@@ -1,0 +1,47 @@
+.textarea {
+	min-block-size: rem(36);
+	padding-block: em(7); // 36px height with wrapper borders, same as buttons
+	padding-inline: em(16);
+	border: 1px solid var(--field-norm);
+	border-radius: var(--border-radius-md);
+	background-color: var(--field-background-color);
+	color: var(--field-text-color);
+	outline: none;
+	filter: none; // fixes Firefox autofill color
+	transition: 0.15s easing(easeOutQuint), height 0s;
+
+	&:hover,
+	&.hover {
+		border-color: var(--field-hover);
+		background-color: var(--field-hover-background-color);
+		color: var(--field-hover-text-color);
+	}
+
+	&:focus,
+	&.focus {
+		border-color: var(--field-focus);
+		box-shadow: 0 0 0 #{$fields-focus-ring-size} var(--field-highlight);
+		background-color: var(--field-focus-background-color);
+		color: var(--field-focus-text-color);
+	}
+
+	&.error {
+		border-color: var(--signal-danger);
+	}
+
+	&.disabled {
+		border-color: var(--field-disabled);
+		background-color: var(--field-disabled-background-color);
+		color: var(--field-disabled-text-color);
+		pointer-events: none;
+
+		&::placeholder {
+			color: inherit;
+		}
+	}
+
+	&:-moz-ui-invalid {
+		// fixes some Firefox issues with HTML5 validation
+		box-shadow: none;
+	}
+}

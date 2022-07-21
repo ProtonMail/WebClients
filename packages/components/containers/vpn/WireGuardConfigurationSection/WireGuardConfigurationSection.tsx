@@ -751,11 +751,11 @@ const WireGuardConfigurationSection = () => {
                         <h3 className="mt2">{c('Title').t`3. Select VPN options`}</h3>
                         {getFeatureKeys().map((key) => (
                             <div className="my1" key={'feature-' + key}>
-                                <label className="inputform-container w100" htmlFor={'feature-' + key}>
+                                <label className="field-two-container w100" htmlFor={'feature-' + key}>
                                     {isFeatureSelection(featuresConfig[key]) ? (
                                         <>
-                                            <div className="flex inputform-label flex-justify-space-between flex-nowrap flex-align-items-end">
-                                                <span className="inputform-label-text">
+                                            <div className="flex field-two-label-container flex-justify-space-between flex-nowrap flex-align-items-end">
+                                                <span className="field-two-label">
                                                     {featuresConfig[key].name}
                                                     {getFeatureLink(featuresConfig[key])}
                                                 </span>

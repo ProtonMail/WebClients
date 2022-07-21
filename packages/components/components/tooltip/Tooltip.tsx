@@ -11,10 +11,24 @@ import { TooltipExclusiveContext } from './TooltipExclusive';
 
 export type TooltipType = 'info' | 'error' | 'warning';
 
+export type TooltipPlacement =
+    | 'bottom'
+    | 'bottom-left'
+    | 'bottom-right'
+    | 'top'
+    | 'top-left'
+    | 'top-right'
+    | 'left'
+    | 'left-bottom'
+    | 'left-top'
+    | 'right'
+    | 'right-bottom'
+    | 'right-top';
+
 interface Props extends Omit<HTMLProps<HTMLElement>, 'title' | 'children'> {
     children: ReactElement;
     title?: ReactNode;
-    originalPlacement?: 'top' | 'bottom' | 'left' | 'right';
+    originalPlacement?: TooltipPlacement;
     type?: TooltipType;
     anchorOffset?: { x: number; y: number };
     isOpen?: boolean;
