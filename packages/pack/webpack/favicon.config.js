@@ -20,6 +20,8 @@ module.exports = {
         // because we default to a .svg favicon (with our own custom implementation because
         // the favicons library (6.x) doesn't support it by default)
         favicons: ['favicon.ico'],
+        coast: false,
+        firefox: false,
         windows: offsetIcon,
         yandex: offsetIcon,
     },
