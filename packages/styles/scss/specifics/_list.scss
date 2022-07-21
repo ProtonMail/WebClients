@@ -55,7 +55,7 @@ $item-container-margin-inline: em(12) !default;
 $item-container-height-compact-mode: rem(56) !default;
 $item-container-row-height-compact-mode: rem(36) !default;
 
-$item-container-row-padding-block: em(6) !default; // design wants 44px
+$item-container-row-padding-block: em(5) !default; // design wants 48px
 
 .item-container,
 .item-container-row {
@@ -258,7 +258,7 @@ $item-container-row-padding-block: em(6) !default; // design wants 44px
 		}
 
 		// just a 12 margin only for first element, not on mobile
-		&-wrapper:first-child {
+		&-wrapper:first-child .item-container {
 			@include respond-to($breakpoint-small, 'min') {
 				margin-block-start: em(12);
 			}

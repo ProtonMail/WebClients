@@ -1,9 +1,11 @@
 import { c } from 'ttag';
-import { classnames, Icon } from '@proton/components';
+
+import { Icon, classnames } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+
 import { Sort } from '../../models/tools';
-import ToolbarDropdown from './ToolbarDropdown';
 import SortDropdownMenu from './SortDropdownMenu';
+import ToolbarDropdown from './ToolbarDropdown';
 
 const TIME = 'Time';
 const SIZE = 'Size';
@@ -36,14 +38,11 @@ const SortDropdown = ({
         OLD_TO_NEW: c('Sort option').t`Oldest first`,
     };
 
+    const hasSpecialSort = sort !== TIME || !desc;
+
     const getTextContent = () => {
         if (icon) {
-            return (
-                <Icon
-                    className={classnames(['toolbar-icon', (sort !== TIME || !desc) && 'color-primary'])}
-                    name="arrow-down-arrow-up"
-                />
-            );
+            return <Icon className="toolbar-icon" name="arrow-down-arrow-up" />;
         }
 
         if (sort === SIZE && !desc) {
@@ -63,7 +62,7 @@ const SortDropdown = ({
         <ToolbarDropdown
             shape="ghost"
             size="small"
-            className={className}
+            className={classnames([className, hasSpecialSort && 'is-active'])}
             content={getTextContent()}
             title={conversationMode ? c('Title').t`Sort conversations` : c('Title').t`Sort messages`}
             hasCaret={!icon}

@@ -1,17 +1,19 @@
-import { useState, useRef, ChangeEvent, MouseEvent, DragEvent, memo, useMemo } from 'react';
-import { classnames, ItemCheckbox, useMailSettings, useLabels } from '@proton/components';
+import { ChangeEvent, DragEvent, MouseEvent, memo, useMemo, useRef, useState } from 'react';
+
+import { ItemCheckbox, classnames, useLabels, useMailSettings } from '@proton/components';
+import { MAILBOX_LABEL_IDS, VIEW_MODE } from '@proton/shared/lib/constants';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { getRecipients as getMessageRecipients, getSender, isDraft, isSent } from '@proton/shared/lib/mail/messages';
-import { MAILBOX_LABEL_IDS, VIEW_MODE } from '@proton/shared/lib/constants';
-import { isUnread, isMessage } from '../../helpers/elements';
+
+import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
+import { getRecipients as getConversationRecipients, getSenders } from '../../helpers/conversation';
+import { isMessage, isUnread } from '../../helpers/elements';
+import { isCustomLabel } from '../../helpers/labels';
+import { useRecipientLabel } from '../../hooks/contact/useRecipientLabel';
+import { Element } from '../../models/element';
+import { Breakpoints } from '../../models/utils';
 import ItemColumnLayout from './ItemColumnLayout';
 import ItemRowLayout from './ItemRowLayout';
-import { Element } from '../../models/element';
-import { getSenders, getRecipients as getConversationRecipients } from '../../helpers/conversation';
-import { isCustomLabel } from '../../helpers/labels';
-import { Breakpoints } from '../../models/utils';
-import { useRecipientLabel } from '../../hooks/contact/useRecipientLabel';
-import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 
 const { SENT, ALL_SENT, ALL_MAIL, STARRED, DRAFTS, ALL_DRAFTS, SCHEDULED } = MAILBOX_LABEL_IDS;
 
@@ -19,6 +21,7 @@ const labelsWithIcons = [ALL_MAIL, STARRED, ALL_SENT, ALL_DRAFTS] as string[];
 
 interface Props {
     conversationMode: boolean;
+    isCompactView: boolean;
     labelID: string;
     loading: boolean;
     elementID?: string;
@@ -39,6 +42,7 @@ interface Props {
 
 const Item = ({
     conversationMode,
+    isCompactView,
     labelID,
     loading,
     element,
@@ -120,7 +124,7 @@ const Item = ({
     };
 
     return (
-        <div className={classnames(['item-container-wrapper flex flex-nowrap relative', !unread && 'read'])}>
+        <div className={classnames(['item-container-wrapper relative', !unread && 'read'])}>
             <div
                 onContextMenu={(event) => onContextMenu(event, element)}
                 onClick={handleClick}
@@ -129,7 +133,7 @@ const Item = ({
                 onDragEnd={onDragEnd}
                 className={classnames([
                     'flex-item-fluid flex flex-nowrap cursor-pointer opacity-on-hover-container',
-                    columnLayout ? 'item-container' : 'item-container-row',
+                    columnLayout ? 'item-container' : 'item-container-row flex-align-items-center',
                     isSelected && 'item-is-selected',
                     !unread && 'read',
                     unread && 'unread',
@@ -157,6 +161,7 @@ const Item = ({
                     normalClassName={classnames(['ml0-1', columnLayout ? 'mr0-6 mt0-1' : 'mr0-5'])}
                 />
                 <ItemLayout
+                    isCompactView={isCompactView}
                     labelID={labelID}
                     elementID={elementID}
                     labels={labels}

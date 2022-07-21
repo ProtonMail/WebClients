@@ -1,20 +1,23 @@
-import { memo, Ref, useRef } from 'react';
+import { Ref, memo, useRef } from 'react';
+
 import { c } from 'ttag';
-import { Icon, ToolbarButton } from '@proton/components';
+
 import { Vr } from '@proton/atoms';
-import ReadUnreadButtons from './ReadUnreadButtons';
-import MoveButtons from './MoveButtons';
-import MoreDropdown from './MoreDropdown';
-import SelectAll from './SelectAll';
-import PagingControls from './PagingControls';
-import { Breakpoints } from '../../models/utils';
-import NavigationControls from './NavigationControls';
-import { MARK_AS_STATUS } from '../../hooks/useMarkAs';
-import LabelsAndFolders from './LabelsAndFolders';
-import FilterActions from './FilterActions';
-import { Filter, Sort } from '../../models/tools';
-import SortDropdown from './SortDropdown';
+import { Icon, ToolbarButton } from '@proton/components';
+
 import { useElementBreakpoints } from '../../hooks/useElementBreakpoints';
+import { MARK_AS_STATUS } from '../../hooks/useMarkAs';
+import { Filter, Sort } from '../../models/tools';
+import { Breakpoints } from '../../models/utils';
+import FilterActions from './FilterActions';
+import LabelsAndFolders from './LabelsAndFolders';
+import MoreDropdown from './MoreDropdown';
+import MoveButtons from './MoveButtons';
+import NavigationControls from './NavigationControls';
+import PagingControls from './PagingControls';
+import ReadUnreadButtons from './ReadUnreadButtons';
+import SelectAll from './SelectAll';
+import SortDropdown from './SortDropdown';
 
 const defaultSelectedIDs: string[] = [];
 
@@ -88,6 +91,7 @@ const Toolbar = ({
 
     const isTiny = breakpoint === 'extratiny' || breakpoint === 'tiny';
     const isNarrow = breakpoint === 'extratiny' || breakpoint === 'tiny' || breakpoint === 'small';
+    const isMedium = breakpoint === 'medium' || breakpoint === 'large';
 
     const listInView = columnMode || !elementID;
 
@@ -132,7 +136,6 @@ const Toolbar = ({
                         onBack={onBack}
                     />
                 ) : null}
-                {breakpoint === 'large' ? <FilterActions icon={false} filter={filter} onFilter={onFilter} /> : null}
                 <MoreDropdown
                     labelID={labelID}
                     elementIDs={elementIDs}
@@ -149,22 +152,28 @@ const Toolbar = ({
                 />
             </div>
             <div className="flex toolbar-inner">
-                {breakpoint !== 'large' ? (
-                    <FilterActions icon={breakpoint !== 'large'} filter={filter} onFilter={onFilter} />
-                ) : null}
-                <SortDropdown
-                    labelID={labelID}
-                    conversationMode={conversationMode}
-                    icon={breakpoint !== 'large'}
-                    sort={sort}
-                    onSort={onSort}
-                    isSearch={isSearch}
-                />
                 {listInView ? (
-                    <PagingControls narrowMode={isNarrow} loading={loading} page={page} total={total} onPage={onPage} />
+                    <>
+                        <FilterActions icon={!isMedium} filter={filter} onFilter={onFilter} />
+                        <SortDropdown
+                            labelID={labelID}
+                            conversationMode={conversationMode}
+                            icon={!isMedium}
+                            sort={sort}
+                            onSort={onSort}
+                            isSearch={isSearch}
+                        />
+                        <PagingControls
+                            narrowMode={isNarrow}
+                            loading={loading}
+                            page={page}
+                            total={total}
+                            onPage={onPage}
+                        />
+                    </>
                 ) : (
                     <>
-                        {(breakpoint === 'large' || breakpoint === 'medium') && <Vr />}
+                        {isMedium && <Vr />}
                         <NavigationControls
                             loading={loading}
                             conversationMode={conversationMode}
