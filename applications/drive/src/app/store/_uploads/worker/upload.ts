@@ -1,9 +1,11 @@
 import { getIsConnectionIssue } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import { serializeFormData } from '@proton/shared/lib/fetch/helpers';
-import { RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
+import { retryHandler } from '@proton/shared/lib/api/helpers/withApiHandlers';
 import { HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
+import { RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
+import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
+import { serializeFormData } from '@proton/shared/lib/fetch/helpers';
 
-import { MAX_UPLOAD_JOBS, MAX_RETRIES_BEFORE_FAIL } from '../constants';
+import { MAX_RETRIES_BEFORE_FAIL, MAX_TOO_MANY_REQUESTS_WAIT, MAX_UPLOAD_JOBS } from '../constants';
 import { UploadingBlockControl } from './interface';
 import { Pauser } from './pauser';
 
@@ -87,6 +89,14 @@ async function uploadBlock(
         if (pauser.isPaused) {
             await pauser.waitIfPaused();
             return uploadBlock(block, pauser, progressCallback, networkErrorCallback, uploadBlockDataCallback, 0);
+        }
+
+        // Upload can be rate limited. Lets wait defined time by server
+        // before making another attempt.
+        if (err.statusCode === HTTP_ERROR_CODES.TOO_MANY_REQUESTS) {
+            return retryHandler(err, MAX_TOO_MANY_REQUESTS_WAIT).then(() =>
+                uploadBlock(block, pauser, progressCallback, networkErrorCallback, uploadBlockDataCallback, numRetries)
+            );
         }
 
         // Upload can be cancelled at the moment when the block is already
@@ -186,7 +196,9 @@ async function uploadBlockData(
             if (xhr.status >= HTTP_STATUS_CODE.OK && xhr.status < HTTP_STATUS_CODE.BAD_REQUEST) {
                 resolve();
             } else {
-                reject(new XHRError(xhr.response?.Error || xhr.statusText, xhr.response?.Code, xhr.status));
+                reject(
+                    new XHRError(xhr.response?.Error || xhr.statusText, xhr.response?.Code, xhr.status, xhr.response)
+                );
             }
         };
 
@@ -219,14 +231,17 @@ async function uploadBlockData(
     });
 }
 
-class XHRError extends Error {
+export class XHRError extends Error {
     errorCode: number; // API error code.
 
     statusCode: number; // XHR status code.
 
-    constructor(message: string, code: number, status: number) {
+    response?: Response;
+
+    constructor(message: string, code: number, status: number, response?: Response) {
         super(message);
         this.errorCode = code;
         this.statusCode = status;
+        this.response = response;
     }
 }
