@@ -1,37 +1,41 @@
 import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 
-import { MAILBOX_IDENTIFIERS } from '@proton/shared/lib/constants';
+import { useApi } from '@proton/components/hooks';
 
-import { useGetConversation } from '../conversation/useConversation';
+import { load as loadConversation } from '../../logic/conversations/conversationsActions';
 import { useGetMessage } from '../message/useMessage';
 
-const NUM_ELEMENT_TO_PRE_LOADED = 5;
+const NUM_ELEMENT_TO_PRELOADED = 5;
 
-const usePreLoadElements = (elementIDs: string[], labelID: string, isConversation: boolean) => {
+const usePreloadElements = (elementIDs: string[], isConversation: boolean) => {
+    // TODO review logic to preload messages
+    const api = useApi();
+    const dispatch = useDispatch();
     const getMessage = useGetMessage();
-    const getConversation = useGetConversation();
-    const firstElementIDs = elementIDs.slice(0, NUM_ELEMENT_TO_PRE_LOADED);
+    const firstElementIDs = elementIDs.slice(0, NUM_ELEMENT_TO_PRELOADED);
 
     useEffect(() => {
         const preload = async () => {
             try {
-                await Promise.all(
+                const elements = await Promise.all(
                     firstElementIDs.map(async (ID) => {
                         if (isConversation) {
-                            return getConversation(ID);
+                            return dispatch(loadConversation({ api, conversationID: ID, messageID: undefined }));
                         }
                         return getMessage(ID);
                     })
                 );
+                console.log(elements);
             } catch {
                 // ignore
             }
         };
 
-        if (firstElementIDs.length > 0 && labelID === MAILBOX_IDENTIFIERS.inbox) {
+        if (firstElementIDs.length > 0) {
             void preload();
         }
     }, [elementIDs, isConversation]);
 };
 
-export default usePreLoadElements;
+export default usePreloadElements;
