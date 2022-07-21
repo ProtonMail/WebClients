@@ -40,3 +40,10 @@ export const TIME_TO_RESET_RETRIES = 2 * 60 * 1000; // Milliseconds.
  * still full or not, or if the upload is paused, and so on.
  */
 export const WAIT_TIME = 50; // Milliseconds.
+
+/**
+ * MAX_TOO_MANY_REQUESTS_WAIT defines how many seconds is allowed to wait
+ * if server rate limits upload. If server asks to wait longer, we don't
+ * wait and fail right away instead.
+ */
+export const MAX_TOO_MANY_REQUESTS_WAIT = 60 * 60; // Seconds.
