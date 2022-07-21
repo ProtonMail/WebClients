@@ -1,7 +1,9 @@
 import { KeyboardEvent, useEffect, useRef, useState } from 'react';
 import { flushSync } from 'react-dom';
+import { Link } from 'react-router-dom';
+
 import { c } from 'ttag';
-import { APPS, BRAND_NAME, CLIENT_TYPES, MAIL_APP_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
+
 import {
     AlertModal,
     Button,
@@ -21,10 +23,7 @@ import {
     useLoading,
     useModalState,
 } from '@proton/components';
-import noop from '@proton/utils/noop';
-import { hasProtonDomain } from '@proton/shared/lib/helpers/string';
-import { getPrivacyPolicyURL } from '@proton/shared/lib/helpers/url';
-import { Link } from 'react-router-dom';
+import { APPS, BRAND_NAME, CLIENT_TYPES, MAIL_APP_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
 import {
     confirmPasswordValidator,
     emailValidator,
@@ -32,13 +31,16 @@ import {
     passwordLengthValidator,
     requiredValidator,
 } from '@proton/shared/lib/helpers/formValidators';
+import { hasProtonDomain } from '@proton/shared/lib/helpers/string';
+import { getTermsURL } from '@proton/shared/lib/helpers/url';
+import noop from '@proton/utils/noop';
 
-import InsecureEmailInfo from './InsecureEmailInfo';
-import { SignupType } from './interfaces';
-import Header from '../public/Header';
 import Content from '../public/Content';
+import Header from '../public/Header';
 import Main from '../public/Main';
+import InsecureEmailInfo from './InsecureEmailInfo';
 import Loader from './Loader';
+import { SignupType } from './interfaces';
 
 import './AccountStep.scss';
 
@@ -227,10 +229,9 @@ const AccountStep = ({
     }
 
     const terms = (
-        <Href
-            key="terms"
-            url={getPrivacyPolicyURL(clientType === CLIENT_TYPES.VPN ? APPS.PROTONVPN_SETTINGS : undefined)}
-        >{c('new_plans: signup').t`terms and conditions`}</Href>
+        <Href key="terms" url={getTermsURL(clientType === CLIENT_TYPES.VPN ? APPS.PROTONVPN_SETTINGS : undefined)}>{c(
+            'new_plans: signup'
+        ).t`terms and conditions`}</Href>
     );
 
     return (
