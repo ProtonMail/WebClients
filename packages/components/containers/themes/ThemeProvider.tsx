@@ -1,8 +1,9 @@
-import { createContext, ReactNode, useContext, useEffect, useState } from 'react';
+import { ReactNode, createContext, useContext, useEffect, useState } from 'react';
+
+import { getCookie, setCookie } from '@proton/shared/lib/helpers/cookies';
+import { getSecondLevelDomain } from '@proton/shared/lib/helpers/url';
 import { PROTON_DEFAULT_THEME, PROTON_THEMES_MAP, ThemeTypes } from '@proton/shared/lib/themes/themes';
 import noop from '@proton/utils/noop';
-import { getSecondLevelDomain } from '@proton/shared/lib/helpers/url';
-import { getCookie, setCookie } from '@proton/shared/lib/helpers/cookies';
 
 export const THEME_ID = 'theme-root';
 
@@ -10,6 +11,7 @@ export const ThemeContext = createContext<[ThemeTypes, (theme: ThemeTypes) => vo
 
 interface Props {
     children: ReactNode;
+    initial?: ThemeTypes;
 }
 
 export const getThemeStyle = (themeType: ThemeTypes = PROTON_DEFAULT_THEME) => {
@@ -24,8 +26,18 @@ const THEME_COOKIE_NAME = 'Theme';
 
 const storedTheme = getCookie(THEME_COOKIE_NAME);
 
-const ThemeProvider = ({ children }: Props) => {
-    const [theme, setThemeBase] = useState<ThemeTypes>(storedTheme ? Number(storedTheme) : PROTON_DEFAULT_THEME);
+const ThemeProvider = ({ children, initial }: Props) => {
+    const [theme, setThemeBase] = useState<ThemeTypes>(() => {
+        if (initial !== undefined) {
+            return initial;
+        }
+
+        if (storedTheme) {
+            return Number(storedTheme);
+        }
+
+        return PROTON_DEFAULT_THEME;
+    });
 
     useEffect(() => {
         setCookie({
