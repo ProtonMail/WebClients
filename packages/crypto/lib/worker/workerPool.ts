@@ -58,7 +58,13 @@ export const CryptoWorkerPool: WorkerPoolInterface = (() => {
             if (workerPool !== null) {
                 throw new Error('worker pool already initialised');
             }
-            workerPool = await Promise.all(new Array(poolSize).fill(null).map(() => initWorker()));
+            // We load one worker early to ensure the browser serves the cached resources to the rest of the pool
+            workerPool = [await initWorker()];
+            if (poolSize > 1) {
+                workerPool = workerPool.concat(
+                    await Promise.all(new Array(poolSize - 1).fill(null).map(() => initWorker()))
+                );
+            }
             mainThreadTransferHandlers.forEach(({ name, handler }) => transferHandlers.set(name, handler));
         },
         destroy: async () => {
