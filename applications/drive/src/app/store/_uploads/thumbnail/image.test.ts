@@ -73,8 +73,8 @@ describe('calculateThumbnailSize', () => {
     });
 
     it('always returns integer', () => {
-        expect(calculateThumbnailSize({ width: 1000, height: 123 })).toEqual([512, 31]);
-        expect(calculateThumbnailSize({ width: 123, height: 1000 })).toEqual([31, 512]);
+        expect(calculateThumbnailSize({ width: 2000, height: 123 })).toEqual([512, 31]);
+        expect(calculateThumbnailSize({ width: 123, height: 2000 })).toEqual([31, 512]);
     });
 
     it('never returns zero even for extreme aspect ratio', () => {
