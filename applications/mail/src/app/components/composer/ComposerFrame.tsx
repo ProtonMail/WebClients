@@ -93,11 +93,16 @@ const ComposerFrame = ({
     };
 
     const handleClick = () => {
-        document.dispatchEvent(new CustomEvent(ADVANCED_SEARCH_OVERLAY_CLOSE_EVENT));
-
         if (minimized && !isDragging) {
             toggleMinimized();
         }
+        onFocus();
+    };
+
+    const handleFocus = () => {
+        document.dispatchEvent(new CustomEvent(ADVANCED_SEARCH_OVERLAY_CLOSE_EVENT));
+        document.dispatchEvent(new CustomEvent('dropdownclose'));
+
         onFocus();
     };
 
@@ -111,7 +116,7 @@ const ComposerFrame = ({
                 maximized && 'composer--is-maximized',
             ])}
             style={{ ...style, '--composer-drag-offset': `${dragOffset}px` }}
-            onFocus={onFocus}
+            onFocus={handleFocus}
             onClick={handleClick}
             onDragEnter={handleDragEnter}
             tabIndex={-1}

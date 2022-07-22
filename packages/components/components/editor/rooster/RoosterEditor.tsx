@@ -24,6 +24,7 @@ interface Props {
     showModalLink: (props: ModalLinkProps) => void;
     onFocus?: () => void;
     className?: string;
+    openEmojiPicker: () => void;
 }
 
 const RoosterEditor = ({
@@ -38,6 +39,7 @@ const RoosterEditor = ({
     onFocus,
     mailSettings,
     className,
+    openEmojiPicker,
 }: Props) => {
     const iframeRef = useRef<HTMLIFrameElement>(null);
 
@@ -56,6 +58,7 @@ const RoosterEditor = ({
         onFocus,
         mailSettings,
         onPasteImage,
+        openEmojiPicker,
     });
 
     useBubbleIframeEvents(iframeRef);

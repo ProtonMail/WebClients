@@ -14,6 +14,7 @@ export const editorShortcuts: Record<string, KeyboardKeyType[]> = {
     minimize: ['Meta', 'M'],
     save: ['Meta', 'S'],
     send: ['Meta', 'Enter'],
+    emojiPicker: ['Meta', 'E'] as KeyboardKeyType[],
 };
 
 export const getShortcuts = () => {

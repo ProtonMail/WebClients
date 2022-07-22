@@ -11,3 +11,6 @@ window.ResizeObserver = jest.fn().mockImplementation(() => ({
 }));
 
 configure({ testIdAttribute: 'data-test-id' });
+
+// Silence JDOM warnings triggered by emoji-mart
+HTMLCanvasElement.prototype.getContext = jest.fn();
