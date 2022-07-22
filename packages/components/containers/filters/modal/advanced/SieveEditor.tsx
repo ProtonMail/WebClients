@@ -1,17 +1,18 @@
 import { useEffect, useRef } from 'react';
-import { Editor, EditorChange, EditorConfiguration } from 'codemirror';
-import { Annotation, Linter } from 'codemirror/addon/lint/lint';
 import { Controlled as CodeMirror } from 'react-codemirror2';
-import { normalize } from '../../utils';
 
+import { Editor, EditorChange, EditorConfiguration } from 'codemirror';
 import 'codemirror/addon/display/autorefresh';
+import { Annotation, Linter } from 'codemirror/addon/lint/lint';
 import 'codemirror/addon/lint/lint';
 import 'codemirror/mode/sieve/sieve';
-import 'codemirror/lib/codemirror.css';
-import 'codemirror/addon/lint/lint.css';
-import 'codemirror/theme/base16-dark.css';
+
+import { normalize } from '../../utils';
 
 import './SieveEditor.scss';
+import 'codemirror/addon/lint/lint.css';
+import 'codemirror/lib/codemirror.css';
+import 'codemirror/theme/base16-dark.css';
 
 interface Props {
     value: string;
