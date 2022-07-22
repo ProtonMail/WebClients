@@ -112,7 +112,7 @@ async function uploadBlock(
         // time configuration on server and client, or there might be tiny
         // window because of different start of expiration measurmement.
         // Anyway, we can simply ask for new tokens here as well.
-        if (err.errorCode === RESPONSE_CODE.NOT_FOUND || err.status === HTTP_STATUS_CODE.NOT_FOUND) {
+        if (err.errorCode === RESPONSE_CODE.NOT_FOUND || err.statusCode === HTTP_STATUS_CODE.NOT_FOUND) {
             console.warn(`Expired block token #${block.index}. Asking for new upload token.`);
             block.onTokenExpiration();
             return;
@@ -217,6 +217,7 @@ async function uploadBlockData(
             // ontimeout can happen during switching proxy, for example.
             reject(new Error('Upload timed out'));
         };
+
         xhr.open('POST', url);
         xhr.setRequestHeader('pm-storage-token', token);
         xhr.send(

@@ -1,9 +1,9 @@
 import noop from '@proton/utils/noop';
 
+import { MAX_ENCRYPTED_BLOCKS, MAX_UPLOADING_BLOCKS, MAX_UPLOAD_JOBS } from '../constants';
 import { EncryptedBlock, EncryptedThumbnailBlock } from '../interface';
 import UploadWorkerBuffer from './buffer';
-import { MAX_ENCRYPTED_BLOCKS, MAX_UPLOADING_BLOCKS, MAX_UPLOAD_JOBS } from '../constants';
-import { waitFor, createBlock, createUploadingBlock, createLink } from './testHelpers';
+import { createBlock, createLink, createUploadingBlock, waitFor } from './testHelpers';
 
 function mockGenerator(start: number, end: number) {
     let position = 0;
@@ -199,6 +199,30 @@ describe('upload worker buffer', () => {
         expect(buffer.encryptedBlocks).toMatchObject(new Map([[1, block.block]]));
         expect(buffer.blockHashes).toMatchObject([]);
         expect(buffer.blockTokens).toMatchObject([]);
+    });
+
+    it('waits for blocks to be processed', async () => {
+        buffer.encryptionFinished = true;
+        buffer.uploadingBlocks.push(createUploadingBlock(1));
+
+        const generator = buffer.generateUploadingBlocks();
+        const {
+            value: { finish },
+        } = await generator.next();
+
+        // Ask for next item to make the generator run the check if all blocks
+        // are finished. It should not be finished until all blocks are done
+        // and finish callback for each of them was called.
+        const finishedGenerator = generator.next();
+        expect(buffer.uploadingFinished).toBeFalsy();
+
+        finish();
+
+        // Await just to be sure it was finished. If there is nothing in the
+        // queue, it runs a loop until anything appears in the queue or all
+        // blocks are completed (finish was called).
+        await finishedGenerator;
+        expect(buffer.uploadingFinished).toBeTruthy();
     });
 
     it('gets hash in proper order', () => {
