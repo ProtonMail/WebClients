@@ -28,6 +28,7 @@ export interface EditorActions {
     /** Tells if Editor is unmounted */
     isDisposed: () => boolean;
     showModalLink?: () => void;
+    openEmojiPicker?: () => void;
 }
 
 export type OnEditorEventListened = (editorEvent: PluginEvent, editor: IEditor) => void;

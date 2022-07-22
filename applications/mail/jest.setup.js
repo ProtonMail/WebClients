@@ -50,3 +50,6 @@ jest.mock('@proton/components/components/modalTwo/BackdropContainer', () => ({
     __esModule: true,
     default: () => null,
 }));
+
+// Silence JDOM warnings triggered by emoji-mart
+HTMLCanvasElement.prototype.getContext = jest.fn();

@@ -1,10 +1,13 @@
-import { Alignment, Direction, IEditor, FormatState } from 'roosterjs-editor-types';
+import { Alignment, Direction, FormatState, IEditor } from 'roosterjs-editor-types';
+
 import { Optional } from '@proton/shared/lib/interfaces';
 
 import { DEFAULT_BACKGROUND, DEFAULT_FONT_COLOR } from '../constants';
 import { EditorMetadata } from '../interface';
 import rgbToHex from './rgbToHex';
+
 import { ModalDefaultFontProps, ModalImageProps, ModalLinkProps } from '../hooks/interface';
+import { Emoji } from '../toolbar/ToolbarEmojiDropdown';
 
 interface ItemToggle {
     isActive: boolean;
@@ -39,6 +42,9 @@ export interface ToolbarConfig {
         clear: () => void;
     };
     textDirection: Pick<ItemValue<Direction>, 'setValue'>;
+    emoji: {
+        insert: (emoji: Emoji) => void;
+    };
 }
 
 interface Options {
@@ -195,6 +201,11 @@ export const getToolbarConfig = async (editorInstance: IEditor | undefined, opti
             setValue: (nextDirection) => {
                 setDirection(editorInstance, nextDirection);
                 options.onChangeMetadata?.({ rightToLeft: nextDirection });
+            },
+        },
+        emoji: {
+            insert: (emoji) => {
+                editorInstance.insertContent(emoji.native);
             },
         },
     };

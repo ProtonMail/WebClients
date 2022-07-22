@@ -25,6 +25,7 @@ interface Props {
     mailSettings?: MailSettings;
     showModalLink: (props: ModalLinkProps) => void;
     onPasteImage: (image: File) => void;
+    openEmojiPicker: () => void;
 }
 
 const useInitRooster = ({
@@ -36,6 +37,7 @@ const useInitRooster = ({
     onFocus,
     mailSettings,
     onPasteImage,
+    openEmojiPicker,
 }: Props) => {
     const editorRef = useRef<IEditor>();
     const isMounted = useIsMounted();
@@ -92,6 +94,7 @@ const useInitRooster = ({
             iframeRef,
             mailSettings,
             onPasteImage,
+            openEmojiPicker,
         });
 
         // Prevent setState execution in case component is unmounted

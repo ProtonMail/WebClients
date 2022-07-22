@@ -21,6 +21,7 @@ const ToolbarMoreDropdown = ({ metadata, isNarrow = false, config }: Props) => (
         className="flex-item-noshrink mlauto editor-toolbar-more-dropdown"
         title={c('Action').t`More`}
         data-testid="editor-toolbar-more"
+        hasCaret={false}
     >
         <DropdownMenu className="editor-toolbar-more-menu flex-item-noshrink">
             {isNarrow && [
