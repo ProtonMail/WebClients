@@ -7,6 +7,7 @@ import {
     ChangeEvent,
 } from 'react';
 
+import { ThemeColorUnion } from '@proton/colors';
 import clamp from '@proton/utils/clamp';
 import percentage from '@proton/utils/percentage';
 import clsx from '@proton/utils/clsx';
@@ -19,7 +20,7 @@ import SliderMark from './SliderMark';
 
 import './Slider.scss';
 
-interface SliderProps extends Omit<ComponentPropsWithoutRef<'input'>, 'value' | 'onChange' | 'onInput'> {
+interface SliderProps extends Omit<ComponentPropsWithoutRef<'input'>, 'value' | 'size' | 'onChange' | 'onInput'> {
     /**
      * The current value of the Slider. Allows for external control of the Slider.
      */
@@ -36,6 +37,20 @@ interface SliderProps extends Omit<ComponentPropsWithoutRef<'input'>, 'value' | 
      * Minimum numeric interval / unit in which the Slider should operate
      */
     step?: number;
+    /**
+     * Size of the Slider.
+     */
+    size?: 'small' | 'medium';
+    /**
+     * Adds marks to the beginning and end of the Slider's rail indicating
+     * min and max values visually.
+     */
+    marks?: boolean;
+    /**
+     * Controls the color of the track (filled out portion of the Slider rail)
+     * And maybe the color of other things in the future, hehe. #future-proof-docs
+     */
+    color?: ThemeColorUnion;
     /**
      * Allows for custom formatting of the value that is displayed in the
      * Slider's label. By default, unless `step` is specified the number shown
@@ -57,7 +72,19 @@ interface SliderProps extends Omit<ComponentPropsWithoutRef<'input'>, 'value' | 
     onInput?: (value: number) => void;
 }
 
-const Slider = ({ value, min = 0, max = 100, step, getDisplayedValue, onChange, onInput, ...rest }: SliderProps) => {
+const Slider = ({
+    value,
+    min = 0,
+    max = 100,
+    marks = false,
+    size = 'medium',
+    color = 'success',
+    step,
+    getDisplayedValue,
+    onChange,
+    onInput,
+    ...rest
+}: SliderProps) => {
     const [rtl] = useRightToLeft();
     const [internalValue, setInternalValue] = useSynchronizingState(value || min);
     const [dragging, setDragging] = useState(false);
@@ -250,21 +277,31 @@ const Slider = ({ value, min = 0, max = 100, step, getDisplayedValue, onChange, 
         <div
             dir={rtl ? 'rtl' : 'ltr'}
             ref={rootRef}
-            className="slider relative"
+            className={clsx('slider', marks && 'slider-marks', size === 'small' && 'slider-small', 'relative')}
             onMouseDown={handleMouseDown}
             onTouchStart={handleTouchStart}
         >
-            <div className="slider-rail" />
+            <div className="slider-rail">
+                <div
+                    className="slider-track"
+                    style={{
+                        width: `${valueInPercent}%`,
+                        '--track-background': `var(--signal-${color}, var(--interaction-${color}))`,
+                    }}
+                />
+            </div>
 
-            <div style={{ width: `${valueInPercent}%` }} className="slider-track" />
+            {marks && (
+                <>
+                    <SliderMark className="slider-mark-min" aria-hidden="true" data-testid="slider-mark-min">
+                        {min}
+                    </SliderMark>
 
-            <SliderMark className="slider-mark-min" aria-hidden="true" data-testid="slider-mark-min">
-                {min}
-            </SliderMark>
-
-            <SliderMark className="slider-mark-max" aria-hidden="true" data-testid="slider-mark-max">
-                {max}
-            </SliderMark>
+                    <SliderMark className="slider-mark-max" aria-hidden="true" data-testid="slider-mark-max">
+                        {max}
+                    </SliderMark>
+                </>
+            )}
 
             <ButtonLike
                 icon
@@ -273,7 +310,7 @@ const Slider = ({ value, min = 0, max = 100, step, getDisplayedValue, onChange, 
                 as="span"
                 style={{ '--left-custom': `${valueInPercent}%` }}
                 data-testid="slider-thumb"
-                className={clsx(['slider-thumb left-custom shadow-norm relative', dragging && 'slider-thumb-dragging'])}
+                className={clsx('slider-thumb left-custom shadow-norm relative', dragging && 'slider-thumb-dragging')}
             >
                 <input
                     type="range"
