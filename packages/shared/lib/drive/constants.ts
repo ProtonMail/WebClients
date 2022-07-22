@@ -1,5 +1,5 @@
-import { isMobile } from '../helpers/browser';
 import { SORT_DIRECTION } from '../constants';
+import { isMobile } from '../helpers/browser';
 import { LayoutSetting, SortSetting, UserSettings } from '../interfaces/drive/userSettings';
 
 export const MB = 1024 * 1024;
@@ -47,8 +47,8 @@ export const MAX_SAFE_UPLOADING_FILE_SIZE = 5 * 1024 * 1024 * 1024; // GB
 
 export const CUSTOM_DATA_FORMAT = 'pd-custom';
 
-export const THUMBNAIL_MAX_SIDE = 256; // in pixels
-export const THUMBNAIL_MAX_SIZE = 16 * 1024; // in bytes, 16kB
+export const THUMBNAIL_MAX_SIDE = 512; // in pixels
+export const THUMBNAIL_MAX_SIZE = 60 * 1024; // in bytes, 60kB
 export const THUMBNAIL_QUALITIES = [0.7, 0.5, 0.3, 0.1, 0]; // Used qualities to stick under THUMBNAIL_MAX_SIZE.
 
 export enum LinkURLType {
