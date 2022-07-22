@@ -9,5 +9,6 @@
             "matchPackagePatterns": ["^roosterjs"],
             "groupName": "roosterjs packages"
         }
-    ]
+    ],
+    "ignorePaths": ["**/node_modules/**"]
 }
