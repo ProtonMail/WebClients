@@ -27533,6 +27533,7 @@ fsevents@^1.2.7:
   dependencies:
     "@manypkg/find-root": ^1.1.0
     "@manypkg/get-packages": ^1.1.3
+    "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
     chalk: ^5.0.1
     commander: ^9.4.0
     execa: ^5.1.1
