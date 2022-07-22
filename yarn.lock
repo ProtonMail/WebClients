@@ -1865,6 +1865,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@emoji-mart/data@npm:^1.0.2":
+  version: 1.0.2
+  resolution: "@emoji-mart/data@npm:1.0.2"
+  checksum: a833df2da511cc27243591be4ac787a0a334cff5b0093523f9eaa5f8ab1daeb25cb5437a67fcac7a84d212b5af93250f91532ad55c90e184268d06e5bb3e029b
+  languageName: node
+  linkType: hard
+
 "@eslint/eslintrc@npm:^1.3.0":
   version: 1.3.0
   resolution: "@eslint/eslintrc@npm:1.3.0"
@@ -3700,6 +3707,7 @@ __metadata:
     codemirror: ^5.65.7
     date-fns: ^2.28.0
     dompurify: ^2.3.10
+    emoji-mart: ^5.1.0
     eslint: ^8.20.0
     intersection-observer: ^0.12.2
     jest: ^28.1.3
@@ -13570,6 +13578,13 @@ __metadata:
   version: 0.10.2
   resolution: "emittery@npm:0.10.2"
   checksum: ee3e21788b043b90885b18ea756ec3105c1cedc50b29709c92b01e239c7e55345d4bb6d3aef4ddbaf528eef448a40b3bb831bad9ee0fc9c25cbf1367ab1ab5ac
+  languageName: node
+  linkType: hard
+
+"emoji-mart@npm:^5.1.0":
+  version: 5.1.0
+  resolution: "emoji-mart@npm:5.1.0"
+  checksum: 4b1f8c3ee54253dfc089630e2c8dab217da91e8c638636d0513f4ecdb53e8757a8d671998c641c85ef688464c715b8b694b62d38a2e52fae17b88c72e4101353
   languageName: node
   linkType: hard
 
@@ -27295,6 +27310,7 @@ fsevents@^1.2.7:
   version: 0.0.0-use.local
   resolution: "root@workspace:."
   dependencies:
+    "@emoji-mart/data": ^1.0.2
     "@openpgp/web-stream-tools": ^0.0.11
     "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
     "@proton/stylelint-config-proton": "workspace:packages/stylelint-config-proton"

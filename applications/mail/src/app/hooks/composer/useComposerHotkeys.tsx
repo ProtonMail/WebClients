@@ -93,6 +93,11 @@ export const useComposerHotkeys = ({
             e.stopPropagation();
             editorActionsRef.current?.showLinkModal();
         },
+        emojiPicker: (e: KeyboardEvent) => {
+            e.preventDefault();
+            e.stopPropagation();
+            editorActionsRef.current?.openEmojiPicker();
+        },
     };
 
     const hotKeysActions: HotkeyTuple[] = [
@@ -120,6 +125,7 @@ export const useComposerHotkeys = ({
         [editorShortcuts.addEncryption, keyHandlers.encrypt],
         [editorShortcuts.addExpiration, keyHandlers.addExpiration],
         [editorShortcuts.addLink, keyHandlers.linkModal],
+        [editorShortcuts.emojiPicker, keyHandlers.emojiPicker],
     ];
 
     useHotkeys(composerRef, hotKeysActions);
