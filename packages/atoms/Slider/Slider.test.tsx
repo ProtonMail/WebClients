@@ -3,8 +3,8 @@ import { render, fireEvent } from '@testing-library/react';
 import Slider from './Slider';
 
 describe('<Slider />', () => {
-    it('renders min and max labels', () => {
-        const { getByTestId } = render(<Slider min={10} max={100} />);
+    it('renders min and max mark labels', () => {
+        const { getByTestId } = render(<Slider marks min={10} max={100} />);
 
         expect(getByTestId('slider-mark-min').textContent).toBe('10');
         expect(getByTestId('slider-mark-max').textContent).toBe('100');
@@ -14,7 +14,7 @@ describe('<Slider />', () => {
      * Again, rather a safeguard than a recommended use-case
      */
     it("inverts directionality (and doesn't break) if min is larger than max", () => {
-        const { getByTestId } = render(<Slider min={100} max={10} />);
+        const { getByTestId } = render(<Slider marks min={100} max={10} />);
 
         expect(getByTestId('slider-mark-min').textContent).toBe('100');
         expect(getByTestId('slider-mark-max').textContent).toBe('10');
