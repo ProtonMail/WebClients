@@ -1,30 +1,29 @@
-import { ReadableStream } from 'web-streams-polyfill';
-import { VERIFICATION_STATUS } from '@proton/crypto';
 import { c } from 'ttag';
+import { ReadableStream } from 'web-streams-polyfill';
 
-import orderBy from '@proton/utils/orderBy';
-import isArrayOfUint8Array from '@proton/utils/isArrayOfUint8Array';
-import runInQueue from '@proton/shared/lib/helpers/runInQueue';
+import { VERIFICATION_STATUS } from '@proton/crypto';
 import { getIsConnectionIssue } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import { DriveFileBlock } from '@proton/shared/lib/interfaces/drive/file';
-import { MAX_THREADS_PER_DOWNLOAD, BATCH_REQUEST_SIZE, RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
 import { HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
+import { BATCH_REQUEST_SIZE, MAX_THREADS_PER_DOWNLOAD, RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
+import runInQueue from '@proton/shared/lib/helpers/runInQueue';
+import { DriveFileBlock } from '@proton/shared/lib/interfaces/drive/file';
+import isArrayOfUint8Array from '@proton/utils/isArrayOfUint8Array';
+import orderBy from '@proton/utils/orderBy';
 
 import { TransferCancel } from '../../../components/TransferManager/transfer';
-import { ObserverStream, untilStreamEnd } from '../../../utils/stream';
 import { waitUntil } from '../../../utils/async';
+import { ObserverStream, untilStreamEnd } from '../../../utils/stream';
 import { isTransferCancelError } from '../../../utils/transfer';
 import { logError } from '../../_utils';
 import { ValidationError } from '../../_utils';
-import { MAX_RETRIES_BEFORE_FAIL, MAX_DOWNLOADING_BLOCKS, TIME_TO_RESET_RETRIES } from '../constants';
-import { DownloadStreamControls, DownloadCallbacks } from '../interface';
+import { MAX_DOWNLOADING_BLOCKS, MAX_RETRIES_BEFORE_FAIL, TIME_TO_RESET_RETRIES } from '../constants';
+import { DownloadCallbacks, DownloadStreamControls } from '../interface';
 import downloadBlock from './downloadBlock';
 
 export type DownloadBlocksCallbacks = Omit<
     DownloadCallbacks,
     'getBlocks' | 'onInit' | 'onSignatureIssue' | 'getChildren' | 'getKeys' | 'onProgress'
 > & {
-    checkFileSignatures?: (abortSignal: AbortSignal) => Promise<void>;
     getBlocks: (
         abortSignal: AbortSignal,
         pagination: {
@@ -53,7 +52,6 @@ export type DownloadBlocksCallbacks = Omit<
 export default function initDownloadBlocks(
     name: string,
     {
-        checkFileSignatures,
         getBlocks,
         transformBlockStream,
         checkBlockSignature,
@@ -351,8 +349,6 @@ export default function initDownloadBlocks(
         };
 
         const run = async () => {
-            await checkFileSignatures?.(abortController.signal);
-
             // Downloads initial page
             if (!(await getBlocksPaged({ FromBlockIndex: fromBlockIndex, PageSize: BATCH_REQUEST_SIZE }))) {
                 return;
