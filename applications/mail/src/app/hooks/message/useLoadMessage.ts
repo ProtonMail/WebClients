@@ -18,10 +18,10 @@ export const useLoadMessage = (inputMessage: Message) => {
 
 export const useReloadMessage = (localID: string) => {
     const dispatch = useDispatch();
-    const initializeMessage = useInitializeMessage(localID);
+    const initializeMessage = useInitializeMessage();
 
     return useCallback(async () => {
         dispatch(reload({ ID: localID }));
-        await initializeMessage();
+        await initializeMessage(localID);
     }, [localID]);
 };

@@ -42,7 +42,7 @@ import { useMailboxFocus } from '../../hooks/mailbox/useMailboxFocus';
 import { useMailboxHotkeys } from '../../hooks/mailbox/useMailboxHotkeys';
 import { useMailboxPageTitle } from '../../hooks/mailbox/useMailboxPageTitle';
 import useNewEmailNotification from '../../hooks/mailbox/useNewEmailNotification';
-import usePreloadElements from '../../hooks/mailbox/usePreloadElements';
+import usePreLoadElements from '../../hooks/mailbox/usePreLoadElements';
 import { useWelcomeFlag } from '../../hooks/mailbox/useWelcomeFlag';
 import { useDeepMemo } from '../../hooks/useDeepMemo';
 import { MARK_AS_STATUS, useMarkAs } from '../../hooks/useMarkAs';
@@ -232,7 +232,7 @@ const MailboxContainer = ({
 
     const conversationMode = isConversationMode(labelID, mailSettings, location);
 
-    usePreloadElements(elementIDs, conversationMode);
+    usePreLoadElements(elementIDs, conversationMode, labelID);
 
     const {
         elementRef,
