@@ -1,31 +1,32 @@
 import { CryptoProxy, PrivateKeyReference } from '@proton/crypto';
 import { computeKeyPassword, generateKeySalt } from '@proton/srp';
-import {
-    Address as tsAddress,
-    Api,
-    Key as tsKey,
-    User as tsUser,
-    OrganizationKey as tsOrganizationKey,
-    CachedOrganizationKey,
-    DecryptedKey,
-    SignedKeyList,
-    User,
-    Key,
-} from '../interfaces';
+
+import { UpgradeAddressKeyPayload, upgradeKeysRoute } from '../api/keys';
 import { getOrganizationKeys } from '../api/organization';
 import { USER_ROLES } from '../constants';
+import { toMap } from '../helpers/object';
+import {
+    Api,
+    CachedOrganizationKey,
+    DecryptedKey,
+    Key,
+    SignedKeyList,
+    User,
+    Address as tsAddress,
+    Key as tsKey,
+    OrganizationKey as tsOrganizationKey,
+    User as tsUser,
+} from '../interfaces';
 import { srpVerify } from '../srp';
 import { generateAddressKeyTokens, reformatAddressKey } from './addressKeys';
-import { getCachedOrganizationKey } from './getDecryptedOrganizationKey';
-import { reformatOrganizationKey } from './organizationKeys';
-import { UpgradeAddressKeyPayload, upgradeKeysRoute } from '../api/keys';
-import { getDecryptedUserKeysHelper } from './getDecryptedUserKeys';
+import { getActiveKeys, getNormalizedActiveKeys } from './getActiveKeys';
 import { getDecryptedAddressKeysHelper } from './getDecryptedAddressKeys';
-import { toMap } from '../helpers/object';
-import { USER_KEY_USERID } from './userKeys';
-import { getActiveKeys } from './getActiveKeys';
-import { getSignedKeyList } from './signedKeyList';
+import { getCachedOrganizationKey } from './getDecryptedOrganizationKey';
+import { getDecryptedUserKeysHelper } from './getDecryptedUserKeys';
 import { getHasMigratedAddressKeys } from './keyMigration';
+import { reformatOrganizationKey } from './organizationKeys';
+import { getSignedKeyList } from './signedKeyList';
+import { USER_KEY_USERID } from './userKeys';
 
 export const getV2KeyToUpgrade = (Key: tsKey) => {
     return Key.Version < 3;
@@ -213,7 +214,10 @@ export const upgradeV2KeysV2 = async ({
                 },
                 [[], []]
             );
-            const activeKeys = await getActiveKeys(address.SignedKeyList, address.Keys, decryptedKeys);
+            const activeKeys = getNormalizedActiveKeys(
+                address,
+                await getActiveKeys(address, address.SignedKeyList, address.Keys, decryptedKeys)
+            );
             return {
                 address,
                 addressKeys,

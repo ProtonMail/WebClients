@@ -1,17 +1,25 @@
 import { CryptoProxy, PrivateKeyReference } from '@proton/crypto';
-import { Api, User as tsUser, Address as tsAddress, DecryptedKey, Address, ActiveKey } from '../../interfaces';
-import { KeyReactivationData, KeyReactivationRecord, OnKeyReactivationCallback } from './interface';
-import { getPrimaryKey } from '../getPrimaryKey';
-import { getAddressReactivationPayload, getReactivatedAddressesKeys, resetUserId } from './reactivateKeyHelper';
-import { reactivateUserKeyRouteV2, reactiveLegacyAddressKeyRouteV2 } from '../../api/keys';
-import { getHasMigratedAddressKey } from '../keyMigration';
-import { getDecryptedAddressKeysHelper } from '../getDecryptedAddressKeys';
-import { getSignedKeyList } from '../signedKeyList';
-import { generateAddressKeyTokens } from '../addressKeys';
-import { getActiveKeyObject, getActiveKeys, getPrimaryFlag, getReactivatedKeyFlag } from '../getActiveKeys';
-import { SimpleMap } from '../../interfaces/utils';
+import { getDefaultKeyFlags } from '@proton/shared/lib/keys';
+
 import { getApiError } from '../../api/helpers/apiErrorHelper';
+import { reactivateUserKeyRouteV2, reactiveLegacyAddressKeyRouteV2 } from '../../api/keys';
 import { HTTP_STATUS_CODE } from '../../constants';
+import { ActiveKey, Address, Api, DecryptedKey, Address as tsAddress, User as tsUser } from '../../interfaces';
+import { SimpleMap } from '../../interfaces/utils';
+import { generateAddressKeyTokens } from '../addressKeys';
+import {
+    getActiveKeyObject,
+    getActiveKeys,
+    getPrimaryFlag,
+    getReactivatedKeyFlag,
+    getNormalizedActiveKeys,
+} from '../getActiveKeys';
+import { getDecryptedAddressKeysHelper } from '../getDecryptedAddressKeys';
+import { getPrimaryKey } from '../getPrimaryKey';
+import { getHasMigratedAddressKey } from '../keyMigration';
+import { getSignedKeyList } from '../signedKeyList';
+import { KeyReactivationData, KeyReactivationRecord, OnKeyReactivationCallback } from './interface';
+import { getAddressReactivationPayload, getReactivatedAddressesKeys, resetUserId } from './reactivateKeyHelper';
 
 interface ReactivateUserKeysArguments {
     addressRecordsInV2Format: KeyReactivationRecord[];
@@ -63,8 +71,9 @@ export const reactivateUserKeys = async ({
             const newActiveKey = await getActiveKeyObject(reactivatedKey, {
                 ID,
                 primary: getPrimaryFlag(mutableActiveKeys),
+                flags: getDefaultKeyFlags(undefined),
             });
-            const updatedActiveKeys = [...mutableActiveKeys, newActiveKey];
+            const updatedActiveKeys = getNormalizedActiveKeys(undefined, [...mutableActiveKeys, newActiveKey]);
 
             const reactivatedAddressKeysResult = await getReactivatedAddressesKeys({
                 addresses,
@@ -73,7 +82,7 @@ export const reactivateUserKeys = async ({
                 user,
                 keyPassword,
             });
-            const addressReactivationPayload = await getAddressReactivationPayload(reactivatedAddressKeysResult);
+            const addressReactivationPayload = getAddressReactivationPayload(reactivatedAddressKeysResult);
             mutableAddresses = mutableAddresses.map((address) => {
                 const updatedSignedKeyList = addressReactivationPayload.SignedKeyLists[address.ID];
                 if (updatedSignedKeyList) {
@@ -143,6 +152,7 @@ interface ReactivateAddressKeysV2Arguments {
 
 export const reactivateAddressKeysV2 = async ({
     api,
+    address,
     activeKeys,
     keysToReactivate,
     onReactivation,
@@ -168,9 +178,9 @@ export const reactivateAddressKeysV2 = async ({
             const newActiveKey = await getActiveKeyObject(reactivatedKey, {
                 ID,
                 primary: getPrimaryFlag(mutableActiveKeys),
-                flags: getReactivatedKeyFlag(Flags),
+                flags: getReactivatedKeyFlag(address, Flags),
             });
-            const updatedActiveKeys = [...mutableActiveKeys, newActiveKey];
+            const updatedActiveKeys = getNormalizedActiveKeys(address, [...mutableActiveKeys, newActiveKey]);
             await api(
                 reactiveLegacyAddressKeyRouteV2({
                     ID,
@@ -257,7 +267,7 @@ const reactivateKeysProcessV2 = async ({
     let allReactivatedAddressKeysMap: SimpleMap<boolean> = {};
     if (userRecord) {
         try {
-            const activeUserKeys = await getActiveKeys(null, user.Keys, userKeys);
+            const activeUserKeys = await getActiveKeys(undefined, null, user.Keys, userKeys);
             const userKeysReactivationResult = await reactivateUserKeys({
                 api,
                 user,
@@ -300,7 +310,7 @@ const reactivateKeysProcessV2 = async ({
             }
 
             const addressKeys = await getDecryptedAddressKeysHelper(address.Keys, user, userKeys, '');
-            const activeAddressKeys = await getActiveKeys(address.SignedKeyList, address.Keys, addressKeys);
+            const activeAddressKeys = await getActiveKeys(address, address.SignedKeyList, address.Keys, addressKeys);
 
             await reactivateAddressKeysV2({
                 api,
