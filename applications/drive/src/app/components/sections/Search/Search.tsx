@@ -10,7 +10,7 @@ import { EncryptedLink, LinkShareUrl, useSearchView, useThumbnailsDownload } fro
 import { SortField } from '../../../store/_views/utils/useSorting';
 import FileBrowser, { Cells, GridHeader, useItemContextMenu, useSelection } from '../../FileBrowser';
 import { BrowserItemId, FileBrowserBaseItem, ListViewHeaderItem } from '../../FileBrowser/interface';
-import { GridViewItem } from '../FileBrowser/GridViewItem';
+import { GridViewItem } from '../FileBrowser/GridViewItemLink';
 import { LocationCell, ModifiedCell, NameCell, SizeCell } from '../FileBrowser/contentCells';
 import headerItems from '../FileBrowser/headerCells';
 import { translateSortField } from '../SortDropdown';

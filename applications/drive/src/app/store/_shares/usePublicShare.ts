@@ -60,6 +60,7 @@ export default function usePublicShare() {
                     nodeKey: Token.NodeKey,
                     nodePassphrase: Token.NodePassphrase,
                     contentKeyPacket: Token.ContentKeyPacket,
+                    rootShareId: '',
                     xAttr: '',
                 },
             },

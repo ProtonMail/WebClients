@@ -1,3 +1,9 @@
+export enum ShareType {
+    default = 1,
+    standart,
+    device,
+}
+
 export interface Share {
     shareId: string;
     rootLinkId: string;
@@ -7,6 +13,7 @@ export interface Share {
     isDefault: boolean;
     isVolumeSoftDeleted: boolean;
     possibleKeyPackets: string[];
+    type: ShareType;
 }
 
 export interface ShareWithKey extends Share {

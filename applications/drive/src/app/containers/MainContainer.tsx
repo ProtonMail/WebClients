@@ -12,6 +12,7 @@ import GiftFloatingButton from '../components/onboarding/GiftFloatingButton';
 import ConflictModal from '../components/uploads/ConflictModal';
 import { ActiveShareProvider } from '../hooks/drive/useActiveShare';
 import { DriveProvider, useDefaultShare, useDriveEventManager, useSearchControl } from '../store';
+import DevicesContainer from './DevicesContainer';
 import DriveStartupModals from './DriveStartupModals';
 import FolderContainer from './FolderContainer';
 import OnboardingContainer from './OnboardingContainer';
@@ -81,6 +82,7 @@ const InitContainer = () => {
             <GiftFloatingButton />
             <DriveWindow>
                 <Switch>
+                    <Route path="/devices" component={DevicesContainer} />
                     <Route path="/trash" component={TrashContainer} />
                     <Route path="/shared-urls" component={SharedURLsContainer} />
                     {searchEnabled && <Route path="/search" component={SearchContainer} />}
