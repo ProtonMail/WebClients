@@ -138,7 +138,7 @@ const Composer = (
     });
 
     // All message actions
-    const initialize = useInitializeMessage(syncedMessage.localID);
+    const initialize = useInitializeMessage();
 
     // Computed composer status
     const hasRecipients = getRecipients(modelMessage.data).length > 0;
@@ -195,7 +195,7 @@ const Composer = (
             syncedMessage.messageDocument?.initialized === undefined &&
             modelMessage.messageDocument?.initialized === undefined
         ) {
-            void initialize();
+            void initialize(syncedMessage.localID);
         }
     }, [
         pendingSave.isPending,

@@ -111,7 +111,7 @@ const MessageView = (
 
     const { message, messageLoaded, bodyLoaded } = useMessage(inputMessage.ID, conversationID);
     const load = useLoadMessage(inputMessage);
-    const initialize = useInitializeMessage(message.localID, labelID);
+    const initialize = useInitializeMessage();
     const verify = useVerifyMessage(message.localID);
     const loadRemoteImages = useLoadRemoteImages(message.localID);
     const loadEmbeddedImages = useLoadEmbeddedImages(message.localID);
@@ -236,9 +236,9 @@ const MessageView = (
                 return;
             }
 
-            void initialize();
+            void initialize(message.localID, labelID);
         }
-    }, [loading, expanded, message.messageDocument?.initialized]);
+    }, [loading, expanded, message.messageDocument?.initialized, message.localID, labelID]);
 
     // Manage recomputing signature verification (happens when invalidated after initial load)
     useEffect(() => {
