@@ -61,24 +61,24 @@ describe('calculateThumbnailSize', () => {
     });
 
     it('resize bigger images', () => {
-        expect(calculateThumbnailSize({ width: 2560, height: 20 })).toEqual([256, 2]);
-        expect(calculateThumbnailSize({ width: 2560, height: 200 })).toEqual([256, 20]);
-        expect(calculateThumbnailSize({ width: 2560, height: 2000 })).toEqual([256, 200]);
+        expect(calculateThumbnailSize({ width: 5120, height: 20 })).toEqual([512, 2]);
+        expect(calculateThumbnailSize({ width: 5120, height: 200 })).toEqual([512, 20]);
+        expect(calculateThumbnailSize({ width: 5120, height: 2000 })).toEqual([512, 200]);
 
-        expect(calculateThumbnailSize({ width: 20, height: 2560 })).toEqual([2, 256]);
-        expect(calculateThumbnailSize({ width: 200, height: 2560 })).toEqual([20, 256]);
-        expect(calculateThumbnailSize({ width: 2000, height: 2560 })).toEqual([200, 256]);
+        expect(calculateThumbnailSize({ width: 20, height: 5120 })).toEqual([2, 512]);
+        expect(calculateThumbnailSize({ width: 200, height: 5120 })).toEqual([20, 512]);
+        expect(calculateThumbnailSize({ width: 2000, height: 5120 })).toEqual([200, 512]);
 
-        expect(calculateThumbnailSize({ width: 2560, height: 2560 })).toEqual([256, 256]);
+        expect(calculateThumbnailSize({ width: 5120, height: 5120 })).toEqual([512, 512]);
     });
 
     it('always returns integer', () => {
-        expect(calculateThumbnailSize({ width: 1000, height: 123 })).toEqual([256, 31]);
-        expect(calculateThumbnailSize({ width: 123, height: 1000 })).toEqual([31, 256]);
+        expect(calculateThumbnailSize({ width: 2000, height: 123 })).toEqual([512, 31]);
+        expect(calculateThumbnailSize({ width: 123, height: 2000 })).toEqual([31, 512]);
     });
 
     it('never returns zero even for extreme aspect ratio', () => {
-        expect(calculateThumbnailSize({ width: 2560, height: 1 })).toEqual([256, 1]);
-        expect(calculateThumbnailSize({ width: 1, height: 2560 })).toEqual([1, 256]);
+        expect(calculateThumbnailSize({ width: 5120, height: 1 })).toEqual([512, 1]);
+        expect(calculateThumbnailSize({ width: 1, height: 5120 })).toEqual([1, 512]);
     });
 });
