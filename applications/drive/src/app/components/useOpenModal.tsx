@@ -1,11 +1,13 @@
 import { useModals } from '@proton/components';
 
 import useNavigate from '../hooks/drive/useNavigate';
-import { DecryptedLink } from '../store';
+import { DecryptedLink, Device } from '../store';
 import CreateFolderModal from './CreateFolderModal';
 import DetailsModal from './DetailsModal';
 import FilesDetailsModal from './FilesDetailsModal';
 import MoveToFolderModal from './MoveToFolderModal/MoveToFolderModal';
+import RemoveDeviceModal from './RemoveDeviceModal';
+import RenameDeviceModal from './RenameDeviceModal';
 import RenameModal from './RenameModal';
 import SelectedFileToShareModal from './SelectedFileToShareModal/SelectedFileToShareModal';
 import ShareLinkModal from './ShareLinkModal/ShareLinkModal';
@@ -29,8 +31,8 @@ export default function useOpenModal() {
         createModal(<DetailsModal shareId={shareId} linkId={linkId} />);
     };
 
-    const openFilesDetails = (shareId: string, linkIds: string[]) => {
-        createModal(<FilesDetailsModal shareId={shareId} linkIds={linkIds} />);
+    const openFilesDetails = (selectedItems: DecryptedLink[]) => {
+        createModal(<FilesDetailsModal selectedItems={selectedItems} />);
     };
 
     const openMoveToFolder = (shareId: string, itemsToMove: DecryptedLink[]) => {
@@ -42,7 +44,7 @@ export default function useOpenModal() {
     };
 
     const openRename = (shareId: string, item: DecryptedLink) => {
-        createModal(<RenameModal shareId={shareId} item={item} />);
+        createModal(<RenameModal item={item} />);
     };
 
     const openFileSharing = (shareId: string) => {
@@ -51,6 +53,14 @@ export default function useOpenModal() {
 
     const openLinkSharing = (shareId: string, linkId: string) => {
         createModal(<ShareLinkModal shareId={shareId} linkId={linkId} />);
+    };
+
+    const openRemoveDevice = (device: Device) => {
+        createModal(<RemoveDeviceModal device={device} />);
+    };
+
+    const openRenameDevice = (device: Device) => {
+        createModal(<RenameDeviceModal device={device} />);
     };
 
     return {
@@ -62,5 +72,7 @@ export default function useOpenModal() {
         openRename,
         openFileSharing,
         openLinkSharing,
+        openRemoveDevice,
+        openRenameDevice,
     };
 }

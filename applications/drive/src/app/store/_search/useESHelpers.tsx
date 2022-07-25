@@ -151,6 +151,8 @@ export const useESHelpers = ({
             }
         }
 
+        const resolvedShareId = await shareId;
+
         const shouldRefresh = newEvents.some((event) => {
             return hasBit(event.Refresh, 1);
         });
@@ -158,8 +160,8 @@ export const useESHelpers = ({
         return {
             newEvents: await Promise.all(
                 newEvents
-                    .map(driveEventsResultToDriveEvents)
-                    .map(async (events) => convertDriveEventsToSearchEvents(await shareId, events, getLinkPrivateKey))
+                    .map((event) => driveEventsResultToDriveEvents(event, resolvedShareId))
+                    .map((events) => convertDriveEventsToSearchEvents(resolvedShareId, events, getLinkPrivateKey))
             ),
             shouldRefresh,
             eventToStore: newEvents[newEvents.length - 1].EventID,

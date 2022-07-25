@@ -1,3 +1,5 @@
+import { useRouteMatch } from 'react-router-dom';
+
 import { c } from 'ttag';
 
 import { FloatingButton, Icon, SidebarPrimaryButton, classnames } from '@proton/components';
@@ -30,6 +32,7 @@ export const UploadButton = ({
 };
 
 const UploadMobileButton = () => {
+    const match = useRouteMatch();
     const { activeFolder } = useActiveShare();
     const {
         inputRef: fileInput,
@@ -40,6 +43,10 @@ const UploadMobileButton = () => {
     const { downloads } = useDownload();
     const { hasUploads } = useUpload();
     const isTransferring = hasUploads || downloads.length > 0;
+
+    if (match.url === '/devices') {
+        return null;
+    }
 
     return (
         <>

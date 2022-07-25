@@ -11,4 +11,5 @@ export { default as useSearchView } from './useSearchView';
 export { default as useSharedLinksView } from './useSharedLinksView';
 export { default as useTransfersView } from './useTransfersView';
 export { default as useTrashView } from './useTrashView';
+export { default as useDevicesView } from './useDevicesView';
 export * from './useTree';

@@ -8,11 +8,10 @@ import useOpenModal from '../../useOpenModal';
 import { hasFoldersSelected, isMultiSelect } from './utils';
 
 interface Props {
-    shareId: string;
     selectedLinks: DecryptedLink[];
 }
 
-const PreviewButton = ({ shareId, selectedLinks }: Props) => {
+const PreviewButton = ({ selectedLinks }: Props) => {
     const { openPreview } = useOpenModal();
 
     const disabled =
@@ -30,7 +29,7 @@ const PreviewButton = ({ shareId, selectedLinks }: Props) => {
             icon={<Icon name="eye" />}
             onClick={() => {
                 if (selectedLinks.length) {
-                    openPreview(shareId, selectedLinks[0].linkId);
+                    openPreview(selectedLinks[0].rootShareId, selectedLinks[0].linkId);
                 }
             }}
             data-testid="toolbar-preview"

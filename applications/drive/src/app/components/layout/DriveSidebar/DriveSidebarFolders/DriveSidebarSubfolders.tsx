@@ -7,14 +7,15 @@ interface Props {
     shareId: string;
     rootFolder?: TreeItem;
     toggleExpand: (linkId: string) => void;
+    defaultLevel?: number;
 }
 
-export default function DriveSidebarSubfolders({ shareId, rootFolder, toggleExpand }: Props) {
+export default function DriveSidebarSubfolders({ shareId, rootFolder, toggleExpand, defaultLevel = 0 }: Props) {
     if (!rootFolder || !rootFolder.isExpanded || !rootFolder.children?.length) {
         return null;
     }
 
-    const folderReducer = (acc: ReactNode[], folder: TreeItem, level = 0): any[] => {
+    const folderReducer = (acc: ReactNode[], folder: TreeItem, level = defaultLevel): any[] => {
         acc.push(
             <DriveSidebarSubfolder
                 key={folder.link.linkId}

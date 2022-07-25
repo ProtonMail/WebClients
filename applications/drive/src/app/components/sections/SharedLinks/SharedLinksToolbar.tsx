@@ -41,14 +41,14 @@ const SharedLinksToolbar = ({ shareId, items }: Props) => {
 
         return (
             <>
-                <PreviewButton shareId={shareId} selectedLinks={selectedItems} />
-                <DownloadButton shareId={shareId} selectedLinks={selectedItems} />
+                <PreviewButton selectedLinks={selectedItems} />
+                <DownloadButton selectedLinks={selectedItems} />
                 <Vr />
-                <RenameButton shareId={shareId} selectedLinks={selectedItems} />
-                <DetailsButton shareId={shareId} linkIds={selectionControls.selectedItemIds} />
+                <RenameButton selectedLinks={selectedItems} />
+                <DetailsButton selectedLinks={selectedItems} />
                 <Vr />
-                <ShareLinkButton shareId={shareId} selectedLinks={selectedItems} />
-                <StopSharingButton shareId={shareId} selectedLinks={selectedItems} />
+                <ShareLinkButton selectedLinks={selectedItems} />
+                <StopSharingButton selectedLinks={selectedItems} />
             </>
         );
     };

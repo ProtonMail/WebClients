@@ -64,19 +64,19 @@ const DriveToolbar = ({ shareId, items, showOptionsForNoSelection = true }: Prop
 
         return (
             <>
-                <PreviewButton shareId={shareId} selectedLinks={selectedItems} />
-                <DownloadButton shareId={shareId} selectedLinks={selectedItems} />
+                <PreviewButton selectedLinks={selectedItems} />
+                <DownloadButton selectedLinks={selectedItems} />
                 {isNarrow ? (
                     <ActionsDropdown shareId={shareId} selectedLinks={selectedItems} />
                 ) : (
                     <>
-                        <ShareLinkButton shareId={shareId} selectedLinks={selectedItems} />
+                        <ShareLinkButton selectedLinks={selectedItems} />
                         <Vr />
                         <MoveToFolderButton shareId={shareId} selectedLinks={selectedItems} />
-                        <RenameButton shareId={shareId} selectedLinks={selectedItems} />
-                        <DetailsButton shareId={shareId} linkIds={selectedItems.map(({ linkId }) => linkId)} />
+                        <RenameButton selectedLinks={selectedItems} />
+                        <DetailsButton selectedLinks={selectedItems} />
                         <Vr />
-                        <MoveToTrashButton shareId={shareId} selectedLinks={selectedItems} />
+                        <MoveToTrashButton selectedLinks={selectedItems} />
                     </>
                 )}
             </>
