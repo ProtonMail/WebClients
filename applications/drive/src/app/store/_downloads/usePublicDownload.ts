@@ -1,11 +1,11 @@
+import { querySharedURLFileRevision } from '@proton/shared/lib/api/drive/sharing';
 import { DriveFileBlock } from '@proton/shared/lib/interfaces/drive/file';
 import { SharedURLRevision } from '@proton/shared/lib/interfaces/drive/sharing';
-import { querySharedURLFileRevision } from '@proton/shared/lib/api/drive/sharing';
 
 import { usePublicSession } from '../_api';
 import { DecryptedLink, useLink, usePublicLinksListing } from '../_links';
 import initDownloadPure from './download/download';
-import { LinkDownload, DownloadControls, DownloadEventCallbacks, Pagination } from './interface';
+import { DownloadControls, DownloadEventCallbacks, LinkDownload, Pagination } from './interface';
 
 /**
  * usePublicDownload provides pure initDownload enhanced by retrieving
@@ -61,7 +61,12 @@ export default function usePublicDownload() {
         return initDownloadPure(name, list, {
             getChildren,
             getBlocks,
-            getKeys,
+            getKeys: (abortSignal: AbortSignal, link: LinkDownload) =>
+                getKeys(
+                    abortSignal,
+                    link.shareId, // Token in this context.
+                    link.linkId
+                ),
             ...eventCallbacks,
             onSignatureIssue: undefined,
         });
