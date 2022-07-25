@@ -69,7 +69,7 @@
 		border: 1px solid var(--field-norm);
 		background-color: var(--field-background-color);
 		color: var(--field-text-color);
-		transition: 0.15s easing(easeOutQuint), background-position 0s;
+		transition: 0.15s easing(easeOutQuint), visibility 0s; // Disable visibility transition due to auto focus, e.g. login form
 
 		&:hover,
 		&.hover {
