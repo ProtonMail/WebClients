@@ -3,21 +3,32 @@ import { useDispatch } from 'react-redux';
 
 import { useApi } from '@proton/components/hooks';
 
+import { findMessageToExpand } from '../../helpers/message/messageExpandable';
 import { load as loadConversation } from '../../logic/conversations/conversationsActions';
+import { useGetConversation } from '../conversation/useConversation';
+import { useInitializeMessage } from '../message/useInitializeMessage';
 
 const NUM_ELEMENT_TO_PRELOADED = 5;
 
-const usePreloadElements = (elementIDs: string[], isConversation: boolean) => {
+const usePreLoadElements = (elementIDs: string[], isConversation: boolean, labelID: string) => {
     const api = useApi();
     const dispatch = useDispatch();
     const firstElementIDs = elementIDs.slice(0, NUM_ELEMENT_TO_PRELOADED);
+    const initialize = useInitializeMessage();
+    const getConversation = useGetConversation();
 
     useEffect(() => {
         const preload = async () => {
             try {
                 await Promise.all(
                     firstElementIDs.map(async (ID) => {
-                        return dispatch(loadConversation({ api, conversationID: ID, messageID: undefined }));
+                        await dispatch(loadConversation({ api, conversationID: ID, messageID: undefined }));
+                        const conversation = getConversation(ID);
+                        const message = findMessageToExpand(labelID, conversation?.Messages);
+
+                        if (message) {
+                            return initialize(message.ID, labelID);
+                        }
                     })
                 );
             } catch {
@@ -31,4 +42,4 @@ const usePreloadElements = (elementIDs: string[], isConversation: boolean) => {
     }, [elementIDs, isConversation]);
 };
 
-export default usePreloadElements;
+export default usePreLoadElements;
