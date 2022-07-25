@@ -35,7 +35,7 @@ $field-container: rem(260) !default;
 	color: var(--field-text-color);
 	outline: none;
 	filter: none; // fixes Firefox autofill color
-	transition: 0.15s easing(easeOutQuint), background-position 0s;
+	transition: 0.15s easing(easeOutQuint), visibility 0s; // Disable visibility transition due to auto focus, e.g. login form
 
 	@at-root {
 		details & {
