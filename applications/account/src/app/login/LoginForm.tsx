@@ -1,7 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
+
 import { c } from 'ttag';
-import noop from '@proton/utils/noop';
+
+import { Card } from '@proton/atoms';
 import {
     Button,
     ButtonLike,
@@ -19,15 +21,15 @@ import {
     useLoading,
     useLocalState,
 } from '@proton/components';
+import { Icon } from '@proton/components';
+import { SECOND, SSO_PATHS } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { SECOND, SSO_PATHS } from '@proton/shared/lib/constants';
-import { Icon } from '@proton/components';
-import { Card } from '@proton/atoms';
+import noop from '@proton/utils/noop';
 
-import Loader from '../signup/Loader';
-import { defaultPersistentKey } from '../public/helper';
 import SupportDropdown from '../public/SupportDropdown';
+import { defaultPersistentKey } from '../public/helper';
+import Loader from '../signup/Loader';
 
 interface Props {
     signInText?: string;
@@ -82,11 +84,7 @@ const LoginForm = ({
         if (challengeLoading) {
             return;
         }
-        // Special focus management for challenge
-        // challengeRefLogin.current?.focus('#username');
-        setTimeout(() => {
-            usernameRef.current?.focus();
-        }, 0);
+        usernameRef.current?.focus();
     }, [challengeLoading]);
 
     const { validator, onFormSubmit } = useFormErrors();
