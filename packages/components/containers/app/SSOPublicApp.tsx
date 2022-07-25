@@ -1,16 +1,18 @@
 import { useEffect, useState } from 'react';
+
 import { c } from 'ttag';
+
+import { getApiErrorMessage, getIs401Error } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { InvalidPersistentSessionError } from '@proton/shared/lib/authentication/error';
 import { getLocalIDFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
 import { resumeSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
-import { getApiErrorMessage, getIs401Error } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 
 import { useApi } from '../../hooks';
-import LoaderPage from './LoaderPage';
 import ModalsChildren from '../modals/Children';
+import LoaderPage from './LoaderPage';
 import StandardLoadErrorPage from './StandardLoadErrorPage';
-import { ProtonLoginCallback } from './interface';
 import { wrapUnloadError } from './errorRefresh';
+import { ProtonLoginCallback } from './interface';
 
 interface Props {
     onLogin: ProtonLoginCallback;

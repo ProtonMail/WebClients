@@ -1,9 +1,21 @@
+import { updateVersionCookie, versionCookieAtLoad } from '@proton/components/hooks/useEarlyAccess';
 import getRandomValues from '@proton/get-random-values';
 import getRandomString from '@proton/utils/getRandomString';
-import { withAuthHeaders, withUIDHeaders } from '../fetch/headers';
+
 import { getLocalKey, getLocalSessions, setCookies, setLocalKey } from '../api/auth';
-import { getUser } from '../api/user';
 import { getIs401Error } from '../api/helpers/apiErrorHelper';
+import { InactiveSessionError } from '../api/helpers/withApiHandlers';
+import { getUser } from '../api/user';
+import { getAppFromPathnameSafe } from '../apps/slugHelper';
+import { SECOND, isSSOMode } from '../constants';
+import { withAuthHeaders, withUIDHeaders } from '../fetch/headers';
+import { base64StringToUint8Array, uint8ArrayToBase64String } from '../helpers/encoding';
+import { Api, User as tsUser } from '../interfaces';
+import { getIsAuthorizedApp, postMessageFromIframe } from '../sideApp/helpers';
+import { SIDE_APP_ACTION, SIDE_APP_EVENTS } from '../sideApp/models';
+import { getKey } from './cryptoHelper';
+import { InvalidPersistentSessionError } from './error';
+import { LocalKeyResponse, LocalSessionResponse } from './interface';
 import {
     getDecryptedPersistedSessionBlob,
     getPersistedSession,
@@ -12,16 +24,6 @@ import {
     setPersistedSession,
     setPersistedSessionWithBlob,
 } from './persistedSessionStorage';
-import { isSSOMode, SECOND } from '../constants';
-import { Api, User as tsUser } from '../interfaces';
-import { LocalKeyResponse, LocalSessionResponse } from './interface';
-import { InvalidPersistentSessionError } from './error';
-import { InactiveSessionError } from '../api/helpers/withApiHandlers';
-import { base64StringToUint8Array, uint8ArrayToBase64String } from '../helpers/encoding';
-import { getKey } from './cryptoHelper';
-import { getAppFromPathnameSafe } from '../apps/slugHelper';
-import { getIsAuthorizedApp, postMessageFromIframe } from '../sideApp/helpers';
-import { SIDE_APP_ACTION, SIDE_APP_EVENTS } from '../sideApp/models';
 
 export type ResumedSessionResult = {
     UID: string;
@@ -44,11 +46,18 @@ const handleSideApp = (localID: number) => {
 
     const handler = (event: MessageEvent<SIDE_APP_ACTION>) => {
         if (event.data.type === SIDE_APP_EVENTS.SIDE_APP_SESSION) {
-            const { UID, keyPassword, User, persistent } = event.data.payload;
+            const { UID, keyPassword, User, persistent, tag } = event.data.payload;
             window.removeEventListener('message', handler);
 
             if (timeout) {
                 clearTimeout(timeout);
+            }
+
+            // When opening the side panel, we might need to set the tag of the app we are opening
+            // Otherwise we will not open the correct version of the app (default instead of beta or alpha)
+            if (tag && versionCookieAtLoad !== tag) {
+                updateVersionCookie(tag, undefined);
+                window.location.reload();
             }
 
             resolve({ UID, keyPassword, User, persistent, LocalID: localID });
