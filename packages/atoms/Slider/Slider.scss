@@ -1,3 +1,4 @@
+@use 'sass:math';
 @import '~@proton/styles/scss/config';
 
 $height-track: 16 !default;
@@ -35,7 +36,7 @@ $size-track-thumb-small: 28 !default;
 		 * border-radius apply to both the rail & the track we clip
 		 * it with overflow: hidden.
 		 */
-		border-radius: rem($height-track / 2);
+		border-radius: rem(math.div($height-track, 2));
 		overflow: hidden;
 	}
 
@@ -100,7 +101,7 @@ $size-track-thumb-small: 28 !default;
 		}
 
 		.slider-rail {
-			border-radius: rem($height-track-small / 2);
+			border-radius: rem(math.div($height-track-small, 2));
 		}
 	}
 
