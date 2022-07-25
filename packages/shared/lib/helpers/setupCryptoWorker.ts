@@ -1,17 +1,14 @@
 import { CryptoProxy } from '@proton/crypto';
 import { CryptoWorkerPool } from '@proton/crypto/lib/worker/workerPool';
-import { hasModulesSupport, getOS } from './browser';
+
+import { hasModulesSupport, isIos11, isSafari11 } from './browser';
 
 let promise: undefined | Promise<void>;
 
-/**
- * There is a bug in iOS that prevents the openpgp worker from functioning properly.
- * It's on all browsers there because they use the webkit engine.
- * See https://github.com/ProtonMail/Angular/issues/8444
- */
 const isUnsupportedWorker = () => {
-    const { name, version } = getOS();
-    return name.toLowerCase() === 'ios' && parseInt(version, 10) === 11;
+    // In safari 11 there's an unknown problem with comlink.
+    // In iOS there's a bug that prevents the worker from functioning properly.
+    return isSafari11() || isIos11();
 };
 
 /**
