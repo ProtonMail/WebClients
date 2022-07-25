@@ -1,5 +1,7 @@
-import { ThemeTypes } from '../themes/themes';
+import { Environment } from '@proton/components/hooks/useEarlyAccess';
+
 import { User as tsUser } from '../interfaces';
+import { ThemeTypes } from '../themes/themes';
 
 export enum SIDE_APP_EVENTS {
     // Global inside iframe events
@@ -59,6 +61,7 @@ interface SESSION {
         keyPassword?: string;
         User: tsUser;
         persistent: boolean;
+        tag?: Environment;
     };
 }
 

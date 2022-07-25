@@ -1,26 +1,29 @@
 import {
-    createContext,
     Dispatch,
     ReactNode,
     SetStateAction,
+    createContext,
     useCallback,
     useContext,
     useEffect,
     useState,
 } from 'react';
-import { APP_NAMES } from '@proton/shared/lib/constants';
-import { getLocalIDFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
+
+import { versionCookieAtLoad } from '@proton/components/hooks/useEarlyAccess';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
-import { SIDE_APP_ACTION, SIDE_APP_EVENTS } from '@proton/shared/lib/sideApp/models';
 import { getAppFromHostname } from '@proton/shared/lib/apps/slugHelper';
+import { getLocalIDFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
+import { APP_NAMES } from '@proton/shared/lib/constants';
 import {
     addParentAppToUrl,
     getIsAuthorizedApp,
     isAuthorizedSideAppUrl,
     postMessageToIframe,
 } from '@proton/shared/lib/sideApp/helpers';
-import useApiStatus from './useApiStatus';
+import { SIDE_APP_ACTION, SIDE_APP_EVENTS } from '@proton/shared/lib/sideApp/models';
+
 import { useApi, useAuthentication, useGetUser, useOnline } from './index';
+import useApiStatus from './useApiStatus';
 import useConfig from './useConfig';
 
 type SideAppOpenedUrl = {
@@ -161,6 +164,7 @@ export const SideAppUrlProvider = ({ children }: { children: ReactNode }) => {
                                         keyPassword: getPassword(),
                                         persistent: getPersistent(),
                                         User: user,
+                                        tag: versionCookieAtLoad,
                                     },
                                 },
                                 sideApp
