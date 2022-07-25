@@ -17,7 +17,7 @@ interface Props {
 const SieveForm = ({ model, userSettings, onChange }: Props) => {
     const theme = useMemo(() => (isDarkTheme() ? 'base16-dark' : ''), [userSettings.Theme]);
     return (
-        <Suspense fallback={<Loader />}>
+        <Suspense fallback={<Loader size="large" />}>
             <LazySieveEditor
                 value={model.sieve}
                 issues={model.issues}
