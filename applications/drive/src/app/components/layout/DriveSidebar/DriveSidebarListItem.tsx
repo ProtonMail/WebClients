@@ -20,9 +20,10 @@ interface Props {
     to: string;
     rightIcon?: React.ReactNode;
     onDoubleClick?: () => void;
+    style?: React.CSSProperties;
 }
 
-const DriveSidebarListItem = ({ to, children, icon, shareId, isActive, rightIcon, onDoubleClick }: Props) => {
+const DriveSidebarListItem = ({ to, children, icon, shareId, isActive, rightIcon, onDoubleClick, style }: Props) => {
     const driveEventManager = useDriveEventManager();
     const [refreshing, withRefreshing] = useLoading(false);
 
@@ -31,7 +32,7 @@ const DriveSidebarListItem = ({ to, children, icon, shareId, isActive, rightIcon
     const handleDoubleClick = () => {
         onDoubleClick?.();
         if (!refreshing && shareId) {
-            withRefreshing(Promise.all([driveEventManager.pollAllShareEvents(shareId), wait(1000)])).catch(
+            withRefreshing(Promise.all([driveEventManager.pollAllShareEvents([shareId]), wait(1000)])).catch(
                 console.warn
             );
         }
@@ -40,14 +41,16 @@ const DriveSidebarListItem = ({ to, children, icon, shareId, isActive, rightIcon
     return (
         <SidebarListItem>
             <SidebarListItemLink to={to} isActive={() => isActive}>
-                <SidebarListItemContent
-                    onDoubleClick={handleDoubleClick}
-                    left={left}
-                    right={rightIcon}
-                    title={typeof children === 'string' ? children : undefined}
-                >
-                    {children}
-                </SidebarListItemContent>
+                <div className="flex flex-nowrap" style={style}>
+                    <SidebarListItemContent
+                        onDoubleClick={handleDoubleClick}
+                        left={left}
+                        right={rightIcon}
+                        title={typeof children === 'string' ? children : undefined}
+                    >
+                        {children}
+                    </SidebarListItemContent>
+                </div>
             </SidebarListItemLink>
         </SidebarListItem>
     );

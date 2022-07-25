@@ -1,4 +1,5 @@
 import { PublicSessionProvider } from './_api';
+import { DevicesProvider } from './_devices';
 import { DownloadsProvider, PublicDownloadsProvider } from './_downloads';
 import { DownloadSignatureIssueModal } from './_downloads/interface';
 import { DriveEventManagerProvider } from './_events';
@@ -19,11 +20,13 @@ export function DriveProvider({ DownloadSignatureIssueModal, UploadConflictModal
         <DriveEventManagerProvider>
             <SharesProvider>
                 <LinksProvider>
-                    <DownloadsProvider DownloadSignatureIssueModal={DownloadSignatureIssueModal}>
-                        <UploadProvider UploadConflictModal={UploadConflictModal}>
-                            <SearchProvider>{children}</SearchProvider>
-                        </UploadProvider>
-                    </DownloadsProvider>
+                    <DevicesProvider>
+                        <DownloadsProvider DownloadSignatureIssueModal={DownloadSignatureIssueModal}>
+                            <UploadProvider UploadConflictModal={UploadConflictModal}>
+                                <SearchProvider>{children}</SearchProvider>
+                            </UploadProvider>
+                        </DownloadsProvider>
+                    </DevicesProvider>
                 </LinksProvider>
             </SharesProvider>
         </DriveEventManagerProvider>

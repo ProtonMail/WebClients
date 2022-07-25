@@ -10,11 +10,10 @@ import { getSelectedItems } from '../helpers';
 import { DeletePermanentlyButton, RestoreFromTrashButton } from './ToolbarButtons';
 
 interface Props {
-    shareId: string;
     items: DecryptedLink[];
 }
 
-const TrashToolbar = ({ shareId, items }: Props) => {
+const TrashToolbar = ({ items }: Props) => {
     const selectionControls = useSelection()!;
 
     const selectedItems = useMemo(
@@ -29,13 +28,13 @@ const TrashToolbar = ({ shareId, items }: Props) => {
 
         return (
             <>
-                <PreviewButton shareId={shareId} selectedLinks={selectedItems} />
-                <DownloadButton shareId={shareId} selectedLinks={selectedItems} disabledFolders />
+                <PreviewButton selectedLinks={selectedItems} />
+                <DownloadButton selectedLinks={selectedItems} disabledFolders />
                 <Vr />
-                <DetailsButton shareId={shareId} linkIds={selectionControls.selectedItemIds} />
+                <DetailsButton selectedLinks={selectedItems} />
                 <Vr />
-                <RestoreFromTrashButton shareId={shareId} selectedLinks={selectedItems} />
-                <DeletePermanentlyButton shareId={shareId} selectedLinks={selectedItems} />
+                <RestoreFromTrashButton selectedLinks={selectedItems} />
+                <DeletePermanentlyButton selectedLinks={selectedItems} />
             </>
         );
     };

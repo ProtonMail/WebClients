@@ -14,6 +14,7 @@ import { RestoreFromTrashResult } from '@proton/shared/lib/interfaces/drive/rest
 import { encryptPassphrase, generateLookupHash } from '@proton/shared/lib/keys/driveKeys';
 import { getDecryptedSessionKey } from '@proton/shared/lib/keys/drivePassphrase';
 import chunk from '@proton/utils/chunk';
+import groupWith from '@proton/utils/groupWith';
 
 import { useDebouncedRequest } from '../_api';
 import { useDriveCrypto } from '../_crypto';
@@ -28,7 +29,17 @@ const INVALID_REQUEST_ERROR_CODES = [RESPONSE_CODE.ALREADY_EXISTS, RESPONSE_CODE
 /**
  * useLinksActions provides actions for manipulating with links in batches.
  */
-export default function useLinksActions() {
+export function useLinksActions({
+    queries,
+}: {
+    queries: {
+        queryDeleteChildrenLinks: typeof queryDeleteChildrenLinks;
+        queryDeleteTrashedLinks: typeof queryDeleteTrashedLinks;
+        queryEmptyTrashOfShare: typeof queryEmptyTrashOfShare;
+        queryRestoreLinks: typeof queryRestoreLinks;
+        queryTrashLinks: typeof queryTrashLinks;
+    };
+}) {
     const { preventLeave } = usePreventLeave();
     const debouncedRequest = useDebouncedRequest();
     const events = useDriveEventManager();
@@ -135,7 +146,7 @@ export default function useLinksActions() {
         abortSignal: AbortSignal,
         shareId: string,
         linkIds: string[],
-        query: (batchLinkIds: string[]) => any
+        query: (batchLinkIds: string[], shareId: string) => any
     ) => {
         return withLinkLock(shareId, linkIds, async () => {
             const responses: { batchLinkIds: string[]; response: T }[] = [];
@@ -143,9 +154,10 @@ export default function useLinksActions() {
             const failures: { [linkId: string]: any } = {};
 
             const batches = chunk(linkIds, BATCH_REQUEST_SIZE);
+
             const queue = batches.map(
                 (batchLinkIds) => () =>
-                    debouncedRequest<T>(query(batchLinkIds), abortSignal)
+                    debouncedRequest<T>(query(batchLinkIds, shareId), abortSignal)
                         .then((response) => {
                             responses.push({ batchLinkIds, response });
                             batchLinkIds.forEach((linkId) => successes.push(linkId));
@@ -163,41 +175,71 @@ export default function useLinksActions() {
         });
     };
 
-    const trashLinks = async (abortSignal: AbortSignal, shareId: string, parentLinkId: string, linkIds: string[]) => {
-        return batchHelper(abortSignal, shareId, linkIds, (batchLinkIds) =>
-            queryTrashLinks(shareId, parentLinkId, batchLinkIds)
+    const batchHelperMultipleShares = async <T>(
+        abortSignal: AbortSignal,
+        ids: { shareId: string; linkId: string }[],
+        query: (batchLinkIds: string[], shareId: string) => any
+    ) => {
+        const groupedByShareId = groupWith((a, b) => a.shareId === b.shareId, ids);
+
+        const results = await Promise.all(
+            groupedByShareId.map((group) => {
+                return batchHelper<T>(
+                    abortSignal,
+                    group[0].shareId,
+                    group.map(({ linkId }) => linkId),
+                    query
+                );
+            })
         );
+
+        return accumulateResults(results);
     };
 
-    const restoreLinks = async (abortSignal: AbortSignal, shareId: string, linkIds: string[]) => {
-        // Make sure to restore the most freshly trashed links first to ensure
-        // the potential parents are restored first because it is not possible
-        // to restore child if the parent stays in the trash.
-        // If user does not select the parent anyway, it is fine, it will just
-        // show error notification that some link(s) were not restored.
-        const links = await getLinks(abortSignal, shareId, linkIds);
-        const sortedLinks = links.sort((a, b) => (b.trashed || 0) - (a.trashed || 0));
-        const sortedLinkIds = sortedLinks.map(({ linkId }) => linkId);
+    const trashLinks = async (
+        abortSignal: AbortSignal,
+        ids: { shareId: string; linkId: string; parentLinkId: string }[]
+    ) => {
+        const linksByParentIds = groupWith((a, b) => a.parentLinkId === b.parentLinkId, ids);
 
-        return batchHelper<RestoreFromTrashResult>(abortSignal, shareId, sortedLinkIds, (batchLinkIds) =>
-            queryRestoreLinks(shareId, batchLinkIds)
-        ).then(({ responses, failures }) => {
-            const successes: string[] = [];
-            responses.forEach(({ batchLinkIds, response }) => {
-                response.Responses.forEach(({ Response }, index) => {
-                    const linkId = batchLinkIds[index];
-                    if (!Response.Error) {
-                        successes.push(linkId);
-                    } else if (INVALID_REQUEST_ERROR_CODES.includes(Response.Code)) {
-                        failures[linkId] = new ValidationError(Response.Error);
-                    } else {
-                        failures[linkId] = Response.Error;
+        const results = await Promise.all(
+            linksByParentIds.map((linksGroup) => {
+                const groupParentLinkId = linksGroup[0].parentLinkId;
+
+                return batchHelperMultipleShares<RestoreFromTrashResult>(
+                    abortSignal,
+                    linksGroup,
+                    (batchLinkIds, shareId) => {
+                        return queries.queryTrashLinks(shareId, groupParentLinkId, batchLinkIds);
                     }
-                });
-            });
+                );
+            })
+        );
 
-            return { successes, failures };
-        });
+        return accumulateResults(results);
+    };
+
+    const restoreLinks = async (abortSignal: AbortSignal, ids: { shareId: string; linkId: string }[]) => {
+        /*
+            Make sure to restore the most freshly trashed links first to ensure
+            the potential parents are restored first because it is not possible
+            to restore child if the parent stays in the trash.
+            If user does not select the parent anyway, it is fine, it will just
+            show error notification that some link(s) were not restored.
+        */
+        const links = await getLinks(abortSignal, ids);
+        const sortedLinks = links.sort((a, b) => (b.trashed || 0) - (a.trashed || 0));
+        const sortedLinkIds = sortedLinks.map(({ linkId, rootShareId }) => ({ linkId, shareId: rootShareId }));
+
+        const results = await batchHelperMultipleShares<RestoreFromTrashResult>(
+            abortSignal,
+            sortedLinkIds,
+            (batchLinkIds, shareId) => {
+                return queries.queryRestoreLinks(shareId, batchLinkIds);
+            }
+        );
+
+        return results;
     };
 
     const deleteChildrenLinks = async (
@@ -211,13 +253,13 @@ export default function useLinksActions() {
         );
     };
 
-    const deleteTrashedLinks = async (abortSignal: AbortSignal, shareId: string, linkIds: string[]) => {
-        return batchHelper(abortSignal, shareId, linkIds, (batchLinkIds) =>
-            queryDeleteTrashedLinks(shareId, batchLinkIds)
-        );
+    const deleteTrashedLinks = async (abortSignal: AbortSignal, ids: { linkId: string; shareId: string }[]) => {
+        return batchHelperMultipleShares(abortSignal, ids, (batchLinkIds, shareId) => {
+            return queries.queryDeleteTrashedLinks(shareId, batchLinkIds);
+        });
     };
 
-    const deleteTrash = async (abortSignal: AbortSignal, shareId: string) => {
+    const emptyTrash = async (abortSignal: AbortSignal, shareId: string) => {
         lockTrash(shareId);
         await debouncedRequest(queryEmptyTrashOfShare(shareId), abortSignal);
         await events.pollShare(shareId);
@@ -229,6 +271,45 @@ export default function useLinksActions() {
         restoreLinks,
         deleteChildrenLinks,
         deleteTrashedLinks,
-        deleteTrash,
+        emptyTrash,
     };
+}
+
+export default function useLinksActionsWithQuieries() {
+    return useLinksActions({
+        queries: {
+            queryTrashLinks,
+            queryDeleteChildrenLinks,
+            queryDeleteTrashedLinks,
+            queryEmptyTrashOfShare,
+            queryRestoreLinks,
+        },
+    });
+}
+
+interface Result<T> {
+    responses: {
+        batchLinkIds: string[];
+        response: T;
+    }[];
+    successes: string[];
+    failures: {
+        [linkId: string]: any;
+    };
+}
+
+function accumulateResults<T>(results: Result<T>[]): Result<T> {
+    return results.reduce(
+        (acc, result) => {
+            acc.responses.push(...result.responses);
+            acc.successes.push(...result.successes);
+            acc.failures = { ...acc.failures, ...result.failures };
+            return acc;
+        },
+        {
+            responses: [],
+            successes: [],
+            failures: {},
+        }
+    );
 }

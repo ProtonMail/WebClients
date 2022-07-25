@@ -2,34 +2,32 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { CollapsingBreadcrumbs, useNotifications } from '@proton/components';
+import { CollapsingBreadcrumbs, Loader, useNotifications } from '@proton/components';
 import { BreadcrumbInfo } from '@proton/components/components/collapsingBreadcrumbs/interfaces';
 
-import { DriveFolder } from '../hooks/drive/useActiveShare';
-import { useDriveDragMoveTarget } from '../hooks/drive/useDriveDragMove';
-import useNavigate from '../hooks/drive/useNavigate';
-import { useLinkPath } from '../store';
-import SignatureIcon from './SignatureIcon';
+import { DriveFolder } from '../../hooks/drive/useActiveShare';
+import { useDriveDragMoveTarget } from '../../hooks/drive/useDriveDragMove';
+import useNavigate from '../../hooks/drive/useNavigate';
+import { useLinkPath } from '../../store';
+import { Share, ShareType, useShare } from '../../store/_shares';
+import { reportError } from '../../store/_utils';
+import SignatureIcon from '../SignatureIcon';
 
 interface Props {
     activeFolder: DriveFolder;
 }
 
 const DriveBreadcrumbs = ({ activeFolder }: Props) => {
-    const { navigateToLink } = useNavigate();
+    const { navigateToLink, navigateToDevices } = useNavigate();
     const { createNotification } = useNotifications();
     const { getHandleItemDrop } = useDriveDragMoveTarget(activeFolder.shareId);
     const { traverseLinksToRoot } = useLinkPath(); // TODO: Get data using useFolderView instead one day.
+
     const [dropTarget, setDropTarget] = useState<string>();
-    const defaultBreadcrumbs: BreadcrumbInfo[] = [
-        {
-            key: 'default',
-            title: c('Title').t`My files`,
-            text: c('Title').t`My files`,
-            noShrink: true,
-        },
-    ];
-    const [breadcrumbs, setBreadcrumbs] = useState(defaultBreadcrumbs);
+    const [rootShare, setRootShare] = useState<Share>();
+    const { getShare } = useShare();
+
+    const [breadcrumbs, setBreadcrumbs] = useState<BreadcrumbInfo[]>([]);
 
     useEffect(() => {
         const abortController = new AbortController();
@@ -52,7 +50,7 @@ const DriveBreadcrumbs = ({ activeFolder }: Props) => {
                                 <span className="text-pre text-ellipsis">{name}</span>
                             </span>
                         ),
-                        noShrink: !isRoot, // Keep root (My files) to be always fully visible.
+                        noShrink: isRoot && rootShare?.type !== ShareType.device, // Keep root (My files) to be always fully visible.
                         highlighted: dropTarget === linkId,
                         collapsedText: name,
                         onClick:
@@ -87,15 +85,33 @@ const DriveBreadcrumbs = ({ activeFolder }: Props) => {
                 setBreadcrumbs(breadcrumbs);
             })
             .catch((err: any) => {
-                if (err.name !== 'AbortError') {
-                    setBreadcrumbs(defaultBreadcrumbs);
-                }
+                reportError(err);
             });
 
         return () => {
             abortController.abort();
         };
-    }, [traverseLinksToRoot, activeFolder.shareId, activeFolder.linkId, dropTarget]);
+    }, [activeFolder.shareId, activeFolder.linkId, dropTarget, rootShare]);
+
+    useEffect(() => {
+        const abortController = new AbortController();
+        void getShare(abortController.signal, activeFolder.shareId).then((share) => {
+            setRootShare(share);
+        });
+    }, [activeFolder.shareId]);
+
+    if (breadcrumbs.length === 0) {
+        return <Loader className="pt0-5 pb0-5 pl0-75 pr0-75" />;
+    }
+
+    if (rootShare?.type === ShareType.device) {
+        breadcrumbs.unshift({
+            key: 'devices-root',
+            text: c('Title').t`Synced devices`,
+            noShrink: true,
+            onClick: navigateToDevices,
+        });
+    }
 
     return <CollapsingBreadcrumbs breadcrumbs={breadcrumbs} />;
 };

@@ -13,18 +13,17 @@ import {
 } from '@proton/components';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 
-import { useLinksDetailsView } from '../store';
+import { DecryptedLink, useLinksDetailsView } from '../store';
 import ModalContentLoader from './ModalContentLoader';
 
 interface Props {
-    shareId: string;
-    linkIds: string[];
+    selectedItems: DecryptedLink[];
     onClose?: () => void;
     open?: boolean;
 }
 
-const FilesDetailsModal = ({ shareId, linkIds, onClose, open }: Props) => {
-    const { isLoading, error, hasFile, hasFolder, count, size } = useLinksDetailsView(shareId, linkIds);
+const FilesDetailsModal = ({ selectedItems, onClose, open }: Props) => {
+    const { isLoading, error, hasFile, hasFolder, count, size } = useLinksDetailsView(selectedItems);
 
     let title = c('Title').t`Items details`;
     let labelCount = c('Title').t`Number of items`;

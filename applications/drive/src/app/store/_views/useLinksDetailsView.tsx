@@ -9,7 +9,7 @@ import { reportError } from '../_utils';
  * useLinksDetailsView loads links if not cached yet and provides some
  * aggregated information such as their count or size.
  */
-export default function useLinksDetailsView(shareId: string, linkIds: string[]) {
+export default function useLinksDetailsView(selectedLinks: DecryptedLink[]) {
     const { getLinks } = useLinks();
 
     const [links, setLinks] = useState<DecryptedLink[]>([]);
@@ -19,7 +19,10 @@ export default function useLinksDetailsView(shareId: string, linkIds: string[]) 
     useEffect(() => {
         const abortController = new AbortController();
         void withLoading(
-            getLinks(abortController.signal, shareId, linkIds)
+            getLinks(
+                abortController.signal,
+                selectedLinks.map(({ linkId, rootShareId }) => ({ linkId, shareId: rootShareId }))
+            )
                 .then((links) => {
                     setLinks(links);
                 })
@@ -31,7 +34,7 @@ export default function useLinksDetailsView(shareId: string, linkIds: string[]) 
         return () => {
             abortController.abort();
         };
-    }, [shareId, linkIds]);
+    }, [selectedLinks]);
 
     const hasFile = links.some(({ isFile }) => isFile);
     const hasFolder = links.some(({ isFile }) => !isFile);

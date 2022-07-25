@@ -6,11 +6,10 @@ import { DecryptedLink, useActions } from '../../../../store';
 import { noSelection } from '../../ToolbarButtons/utils';
 
 interface Props {
-    shareId: string;
     selectedLinks: DecryptedLink[];
 }
 
-const StopSharingButton = ({ shareId, selectedLinks }: Props) => {
+const StopSharingButton = ({ selectedLinks }: Props) => {
     const { stopSharingLinks } = useActions();
 
     if (noSelection(selectedLinks)) {
@@ -21,7 +20,7 @@ const StopSharingButton = ({ shareId, selectedLinks }: Props) => {
         <ToolbarButton
             title={c('Action').t`Stop sharing`}
             icon={<Icon name="link-slash" />}
-            onClick={() => stopSharingLinks(new AbortController().signal, shareId, selectedLinks)}
+            onClick={() => stopSharingLinks(new AbortController().signal, selectedLinks)}
             data-testid="toolbar-button-stop-sharing"
         />
     );
