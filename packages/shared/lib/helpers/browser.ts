@@ -26,8 +26,14 @@ export const getOS = () => {
     return { name, version };
 };
 
+export const isIos11 = () => {
+    const { name, version } = getOS();
+    return name.toLowerCase() === 'ios' && parseInt(version, 10) === 11;
+};
+
 export const isDuckDuckGo = () => navigator.userAgent.includes('DuckDuckGo');
 export const isSafari = () => ua.browser.name === 'Safari' || ua.browser.name === 'Mobile Safari';
+export const isSafari11 = () => isSafari() && ua.browser.major === '11';
 export const isSafariMobile = () => ua.browser.name === 'Mobile Safari';
 export const isIE11 = () => ua.browser.name === 'IE' && ua.browser.major === '11';
 export const isEdge = () => ua.browser.name === 'Edge';
