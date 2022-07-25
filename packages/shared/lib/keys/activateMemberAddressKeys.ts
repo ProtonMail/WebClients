@@ -1,12 +1,13 @@
 import { CryptoProxy } from '@proton/crypto';
-import { Address, Api, DecryptedKey, UserModel as tsUserModel } from '../interfaces';
-import { MEMBER_PRIVATE } from '../constants';
-import { getSignedKeyList } from './signedKeyList';
+
 import { activateKeyRoute, activateKeyRouteV2 } from '../api/keys';
-import { getActiveKeys } from './getActiveKeys';
-import { getHasMigratedAddressKeys } from './keyMigration';
-import { getPrimaryKey } from './getPrimaryKey';
+import { MEMBER_PRIVATE } from '../constants';
+import { Address, Api, DecryptedKey, UserModel as tsUserModel } from '../interfaces';
 import { generateAddressKeyTokens } from './addressKeys';
+import { getActiveKeys, getNormalizedActiveKeys } from './getActiveKeys';
+import { getPrimaryKey } from './getPrimaryKey';
+import { getHasMigratedAddressKeys } from './keyMigration';
+import { getSignedKeyList } from './signedKeyList';
 
 export const getAddressesWithKeysToActivate = (user: tsUserModel, addresses: Address[]) => {
     // If signed in as subuser, or not a readable member
@@ -42,7 +43,10 @@ export const activateMemberAddressKeys = async ({
         throw new Error('Password required to generate keys');
     }
 
-    const activeKeys = await getActiveKeys(address.SignedKeyList, address.Keys, addressKeys);
+    const activeKeys = getNormalizedActiveKeys(
+        address,
+        await getActiveKeys(address, address.SignedKeyList, address.Keys, addressKeys)
+    );
 
     const primaryUserKey = getPrimaryKey(userKeys)?.privateKey;
     if (!primaryUserKey) {

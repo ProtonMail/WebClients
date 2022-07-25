@@ -1,7 +1,10 @@
-import { Api, HumanVerificationMethodType, User } from '@proton/shared/lib/interfaces';
-import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
+import { VerificationModel } from '@proton/components/containers/api/humanVerification/interface';
+import { AppIntent } from '@proton/components/containers/login/interface';
+import { getAllAddresses, updateAddress } from '@proton/shared/lib/api/addresses';
+import { auth } from '@proton/shared/lib/api/auth';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
+import { subscribe } from '@proton/shared/lib/api/payments';
+import { updateEmail, updateLocale, updatePhone } from '@proton/shared/lib/api/settings';
 import {
     getUser,
     queryCheckEmailAvailability,
@@ -9,20 +12,18 @@ import {
     queryCreateUser,
     queryCreateUserExternal,
 } from '@proton/shared/lib/api/user';
-import { withAuthHeaders, withVerificationHeaders } from '@proton/shared/lib/fetch/headers';
-import { srpAuth, srpVerify } from '@proton/shared/lib/srp';
-import { VerificationModel } from '@proton/components/containers/api/humanVerification/interface';
-import { COUPON_CODES, TOKEN_TYPES } from '@proton/shared/lib/constants';
-import { localeCode } from '@proton/shared/lib/i18n';
-import { handleSetupKeys } from '@proton/shared/lib/keys';
-import { getAllAddresses, updateAddress } from '@proton/shared/lib/api/addresses';
-import { updateEmail, updateLocale, updatePhone } from '@proton/shared/lib/api/settings';
-import { subscribe } from '@proton/shared/lib/api/payments';
-import noop from '@proton/utils/noop';
-import { auth } from '@proton/shared/lib/api/auth';
-import { persistSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { AuthResponse } from '@proton/shared/lib/authentication/interface';
-import { AppIntent } from '@proton/components/containers/login/interface';
+import { persistSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
+import { COUPON_CODES, TOKEN_TYPES } from '@proton/shared/lib/constants';
+import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
+import { withAuthHeaders, withVerificationHeaders } from '@proton/shared/lib/fetch/headers';
+import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
+import { localeCode } from '@proton/shared/lib/i18n';
+import { Api, HumanVerificationMethodType, User } from '@proton/shared/lib/interfaces';
+import { handleSetupKeys } from '@proton/shared/lib/keys';
+import { srpAuth, srpVerify } from '@proton/shared/lib/srp';
+import noop from '@proton/utils/noop';
+
 import {
     HumanVerificationData,
     HumanVerificationTrigger,
@@ -162,14 +163,14 @@ export const handleSetupUser = async ({
     } = cache;
 
     const userEmail = (() => {
-        if (signupType === SignupType.Username || generateKeys) {
+        if (signupType === SignupType.Username || (signupType === SignupType.VPN && generateKeys)) {
             return `${username}@${domain}`;
-        }
-        if (signupType === SignupType.Email) {
-            return email;
         }
         if (signupType === SignupType.VPN) {
             return username;
+        }
+        if (signupType === SignupType.Email) {
+            return email;
         }
         throw new Error('Unknown type');
     })();
@@ -440,17 +441,21 @@ export const handleCreateAccount = async ({
     cache: SignupCacheResult;
     api: Api;
 }): Promise<SignupActionResponse> => {
-    if (cache.accountData.signupType === SignupType.Username || cache.generateKeys) {
-        await api(queryCheckUsernameAvailability(`${cache.accountData.username}@${cache.accountData.domain}`, true));
-    } else if (cache.accountData.signupType === SignupType.VPN) {
-        await api(queryCheckUsernameAvailability(cache.accountData.username));
-    } else if (cache.accountData.signupType === SignupType.Email) {
+    const {
+        accountData: { username, email, domain, signupType },
+        humanVerificationResult,
+    } = cache;
+    if (signupType === SignupType.Username || (signupType === SignupType.VPN && cache.generateKeys)) {
+        await api(queryCheckUsernameAvailability(`${username}@${domain}`, true));
+    } else if (signupType === SignupType.VPN) {
+        await api(queryCheckUsernameAvailability(username));
+    } else if (signupType === SignupType.Email) {
         try {
             await api(
                 withVerificationHeaders(
-                    cache.humanVerificationResult?.token,
-                    cache.humanVerificationResult?.tokenType,
-                    queryCheckEmailAvailability(cache.accountData.email)
+                    humanVerificationResult?.token,
+                    humanVerificationResult?.tokenType,
+                    queryCheckEmailAvailability(email)
                 )
             );
         } catch (error) {

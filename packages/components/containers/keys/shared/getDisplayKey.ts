@@ -1,10 +1,9 @@
 import type { AlgorithmInfo } from '@proton/crypto';
-
-import { getFormattedAlgorithmNames, getDefaultKeyFlags } from '@proton/shared/lib/keys';
 import { KEY_FLAG } from '@proton/shared/lib/constants';
-import { Address, Key, SignedKeyListItem, UserModel } from '@proton/shared/lib/interfaces';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
+import { Address, Key, SignedKeyListItem, UserModel } from '@proton/shared/lib/interfaces';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
+import { getDefaultKeyFlags, getFormattedAlgorithmNames } from '@proton/shared/lib/keys';
 
 import { KeyDisplay } from './interface';
 
@@ -36,7 +35,7 @@ export const getDisplayKey = ({
 
     const { ID, Flags, Primary } = Key;
 
-    const flags = signedKeyListItem?.Flags ?? Flags ?? getDefaultKeyFlags();
+    const flags = signedKeyListItem?.Flags ?? Flags ?? getDefaultKeyFlags(Address);
     const primary = signedKeyListItem?.Primary ?? Primary ?? 0;
 
     const isAddressDisabled = Address?.Status === 0;

@@ -1,9 +1,11 @@
 import { CryptoProxy } from '@proton/crypto';
-import { Address, Api, DecryptedKey, Key } from '../../interfaces';
+import { getDefaultKeyFlags } from '@proton/shared/lib/keys';
+
 import { reactivateKeyRoute } from '../../api/keys';
+import { Address, Api, DecryptedKey, Key } from '../../interfaces';
+import { getActiveKeyObject, getActiveKeys, getPrimaryFlag, getNormalizedActiveKeys } from '../getActiveKeys';
 import { getSignedKeyList } from '../signedKeyList';
 import { KeyReactivationData, KeyReactivationRecord, OnKeyReactivationCallback } from './interface';
-import { getActiveKeyObject, getActiveKeys, getPrimaryFlag } from '../getActiveKeys';
 import { resetUserId } from './reactivateKeyHelper';
 
 interface ReactivateKeysProcessArguments {
@@ -25,7 +27,7 @@ export const reactivateKeysProcess = async ({
     keys,
     Keys,
 }: ReactivateKeysProcessArguments) => {
-    const activeKeys = await getActiveKeys(address?.SignedKeyList, Keys, keys);
+    const activeKeys = await getActiveKeys(address, address?.SignedKeyList, Keys, keys);
 
     let mutableActiveKeys = activeKeys;
 
@@ -46,8 +48,9 @@ export const reactivateKeysProcess = async ({
             const newActiveKey = await getActiveKeyObject(reactivatedKey, {
                 ID,
                 primary: getPrimaryFlag(mutableActiveKeys),
+                flags: getDefaultKeyFlags(address),
             });
-            const updatedActiveKeys = [...mutableActiveKeys, newActiveKey];
+            const updatedActiveKeys = getNormalizedActiveKeys(address, [...mutableActiveKeys, newActiveKey]);
             const SignedKeyList = address ? await getSignedKeyList(updatedActiveKeys) : undefined;
 
             await api(
