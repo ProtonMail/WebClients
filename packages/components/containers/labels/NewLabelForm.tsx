@@ -1,14 +1,13 @@
 import { c } from 'ttag';
 
-import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { LABEL_TYPE } from '@proton/shared/lib/constants';
-import { Label as tsLabel } from '@proton/shared/lib/interfaces/Label';
+import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { Folder } from '@proton/shared/lib/interfaces/Folder';
+import { Label as tsLabel } from '@proton/shared/lib/interfaces/Label';
 
-import { Label, Row, Field, ColorPicker, Toggle, Info, InputFieldTwo } from '../../components';
-
-import ParentFolderSelector from './ParentFolderSelector';
+import { ColorPicker, Field, Info, InputFieldTwo, Label, Row, Toggle } from '../../components';
 import { useMailSettings } from '../../hooks';
+import ParentFolderSelector from './ParentFolderSelector';
 
 interface Props {
     label: Partial<tsLabel | Folder>;
@@ -98,14 +97,14 @@ function NewLabelForm({
                 </div>
             ) : null}
             <Row>
-                <Label htmlFor="accountName">
+                <Label htmlFor="folder">
                     {labelOrFolder.Type === LABEL_TYPE.MESSAGE_FOLDER
                         ? c('New Label form').t`Folder name`
                         : c('New Label form').t`Label name`}
                 </Label>
                 <Field>
                     <InputFieldTwo
-                        id="accountName"
+                        id="folder"
                         value={labelOrFolder.Name}
                         onValue={onChangeName}
                         placeholder={
