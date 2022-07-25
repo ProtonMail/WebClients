@@ -1,11 +1,11 @@
 import { DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS } from '../constants';
 import { Address, AddressKeyPayload, AddressKeyPayloadV2, EncryptionConfig } from '../interfaces';
 import { generateAddressKey, generateAddressKeyTokens } from './addressKeys';
-import { getSignedKeyList } from './signedKeyList';
+import { getActiveKeyObject, getNormalizedActiveKeys } from './getActiveKeys';
 import { getDefaultKeyFlags } from './keyFlags';
-import { generateUserKey } from './userKeys';
-import { getActiveKeyObject } from './getActiveKeys';
 import { getHasMigratedAddressKeys } from './keyMigration';
+import { getSignedKeyList } from './signedKeyList';
+import { generateUserKey } from './userKeys';
 
 interface Arguments {
     addresses: Address[];
@@ -37,10 +37,10 @@ export const getResetAddressesKeysLegacy = async ({
             const newPrimaryKey = await getActiveKeyObject(privateKey, {
                 ID: 'tmp',
                 primary: 1,
-                flags: getDefaultKeyFlags(),
+                flags: getDefaultKeyFlags(address),
             });
 
-            const signedKeyList = await getSignedKeyList([newPrimaryKey]);
+            const signedKeyList = await getSignedKeyList(getNormalizedActiveKeys(address, [newPrimaryKey]));
             return {
                 AddressID,
                 PrivateKey: privateKeyArmored,
@@ -87,10 +87,10 @@ export const getResetAddressesKeysV2 = async ({
             const newPrimaryKey = await getActiveKeyObject(privateKey, {
                 ID: 'tmp',
                 primary: 1,
-                flags: getDefaultKeyFlags(),
+                flags: getDefaultKeyFlags(address),
             });
 
-            const signedKeyList = await getSignedKeyList([newPrimaryKey]);
+            const signedKeyList = await getSignedKeyList(getNormalizedActiveKeys(address, [newPrimaryKey]));
             return {
                 AddressID,
                 PrivateKey: privateKeyArmored,

@@ -1,12 +1,14 @@
 import { CryptoProxy } from '@proton/crypto';
-import { KeyImportData, OnKeyImportCallback } from './interface';
-import { Address, Api, DecryptedKey } from '../../interfaces';
-import { getSignedKeyList } from '../signedKeyList';
-import reactivateKeysProcessLegacy from '../reactivation/reactivateKeysProcessLegacy';
+import { getDefaultKeyFlags } from '@proton/shared/lib/keys';
+
 import { createAddressKeyRoute } from '../../api/keys';
+import { Address, Api, DecryptedKey } from '../../interfaces';
+import { getActiveKeyObject, getActiveKeys, getPrimaryFlag, getNormalizedActiveKeys } from '../getActiveKeys';
 import { getInactiveKeys } from '../getInactiveKeys';
-import { getActiveKeyObject, getActiveKeys, getPrimaryFlag } from '../getActiveKeys';
+import reactivateKeysProcessLegacy from '../reactivation/reactivateKeysProcessLegacy';
+import { getSignedKeyList } from '../signedKeyList';
 import { getFilteredImportRecords } from './helper';
+import { KeyImportData, OnKeyImportCallback } from './interface';
 
 export interface ImportKeysProcessLegacyArguments {
     api: Api;
@@ -25,7 +27,7 @@ const importKeysProcessLegacy = async ({
     address,
     addressKeys,
 }: ImportKeysProcessLegacyArguments) => {
-    const activeKeys = await getActiveKeys(address.SignedKeyList, address.Keys, addressKeys);
+    const activeKeys = await getActiveKeys(address, address.SignedKeyList, address.Keys, addressKeys);
     const inactiveKeys = await getInactiveKeys(address.Keys, activeKeys);
 
     const [keysToReactivate, keysToImport, existingKeys] = getFilteredImportRecords(
@@ -51,8 +53,9 @@ const importKeysProcessLegacy = async ({
             const newActiveKey = await getActiveKeyObject(privateKey, {
                 ID: 'tmp',
                 primary: getPrimaryFlag(mutableActiveKeys),
+                flags: getDefaultKeyFlags(address),
             });
-            const updatedActiveKeys = [...mutableActiveKeys, newActiveKey];
+            const updatedActiveKeys = getNormalizedActiveKeys(address, [...mutableActiveKeys, newActiveKey]);
             const SignedKeyList = await getSignedKeyList(updatedActiveKeys);
 
             const { Key } = await api(

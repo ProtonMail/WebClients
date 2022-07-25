@@ -1,9 +1,11 @@
 import { PrivateKeyReference } from '@proton/crypto';
-import { ActiveKey, Address, Api, EncryptionConfig } from '../../interfaces';
+import { getDefaultKeyFlags } from '@proton/shared/lib/keys';
+
 import { createAddressKeyRoute, createAddressKeyRouteV2 } from '../../api/keys';
 import { DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS } from '../../constants';
+import { ActiveKey, Address, Api, EncryptionConfig } from '../../interfaces';
 import { generateAddressKey, generateAddressKeyTokens } from '../addressKeys';
-import { getActiveKeyObject } from '../getActiveKeys';
+import { getActiveKeyObject, getNormalizedActiveKeys } from '../getActiveKeys';
 import { getSignedKeyList } from '../signedKeyList';
 
 interface CreateAddressKeyLegacyArguments {
@@ -36,8 +38,12 @@ export const createAddressKeyLegacy = async ({
         passphrase,
         encryptionConfig,
     });
-    const newActiveKey = await getActiveKeyObject(privateKey, { ID: 'tmp', primary: 1 });
-    const updatedActiveKeys = [newActiveKey, ...activeKeys.map(removePrimary)];
+    const newActiveKey = await getActiveKeyObject(privateKey, {
+        ID: 'tmp',
+        primary: 1,
+        flags: getDefaultKeyFlags(address),
+    });
+    const updatedActiveKeys = getNormalizedActiveKeys(address, [newActiveKey, ...activeKeys.map(removePrimary)]);
     const SignedKeyList = await getSignedKeyList(updatedActiveKeys);
 
     const { Key } = await api(
@@ -74,8 +80,12 @@ export const createAddressKeyV2 = async ({
         passphrase: token,
         encryptionConfig,
     });
-    const newActiveKey = await getActiveKeyObject(privateKey, { ID: 'tmp', primary: 1 });
-    const updatedActiveKeys = [newActiveKey, ...activeKeys.map(removePrimary)];
+    const newActiveKey = await getActiveKeyObject(privateKey, {
+        ID: 'tmp',
+        primary: 1,
+        flags: getDefaultKeyFlags(address),
+    });
+    const updatedActiveKeys = getNormalizedActiveKeys(address, [newActiveKey, ...activeKeys.map(removePrimary)]);
     const SignedKeyList = await getSignedKeyList(updatedActiveKeys);
 
     const { Key } = await api(
