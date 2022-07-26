@@ -17,10 +17,22 @@ module.exports = (...env) => {
 
     config.plugins.splice(
         htmlIndex,
+        1,
+        new HtmlWebpackPlugin({
+            filename: 'index.html',
+            template: 'ejs-webpack-loader!src/app.ejs',
+            templateParameters: htmlPlugin.userOptions.templateParameters,
+            scriptLoading: 'defer',
+            inject: 'body',
+        })
+    );
+
+    config.plugins.splice(
+        htmlIndex,
         0,
         new HtmlWebpackPlugin({
             filename: 'urls.html',
-            template: path.resolve('./src/urls.ejs'),
+            template: `ejs-webpack-loader!src/urls.ejs`,
             templateParameters: htmlPlugin.userOptions.templateParameters,
             scriptLoading: 'defer',
             excludeChunks: ['index'],
