@@ -1,9 +1,9 @@
-import { CryptoProxy } from '@proton/crypto';
 import { useApi } from '@proton/components';
-import { computeKeyPassword } from '@proton/srp';
+import { CryptoProxy } from '@proton/crypto';
+import { querySharedURLInformation, querySubmitAbuseReport } from '@proton/shared/lib/api/drive/sharing';
 import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 import { SharedURLInfo } from '@proton/shared/lib/interfaces/drive/sharing';
-import { querySharedURLInformation, querySubmitAbuseReport } from '@proton/shared/lib/api/drive/sharing';
+import { computeKeyPassword } from '@proton/srp';
 
 import { usePublicSession } from '../_api';
 import { useLink } from '../_links';
@@ -83,7 +83,8 @@ export default function usePublicShare() {
             throw new Error('Unauthenticated session');
         }
         const { token, password } = sessionInfo;
-        const { passphrase } = await getLinkPassphraseAndSessionKey(new AbortSignal(), token, params.linkId);
+        const ac = new AbortController();
+        const { passphrase } = await getLinkPassphraseAndSessionKey(ac.signal, token, params.linkId);
 
         return api(
             querySubmitAbuseReport({
