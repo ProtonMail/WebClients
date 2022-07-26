@@ -1,25 +1,27 @@
 import React, { useState } from 'react';
+
 import { c } from 'ttag';
 
-import { emailValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
-import noop from '@proton/utils/noop';
 import {
-    SelectTwo,
-    useLoading,
-    useNotifications,
-    Option,
-    TextAreaTwo,
+    Button,
+    Form,
+    InputFieldTwo,
     ModalTwo,
-    ModalTwoHeader,
     ModalTwoContent,
     ModalTwoFooter,
+    ModalTwoHeader,
+    Option,
     PrimaryButton,
-    Button,
-    InputFieldTwo,
+    SelectTwo,
+    TextAreaTwo,
     useFormErrors,
-    Form,
+    useLoading,
+    useNotifications,
 } from '@proton/components';
+import { emailValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
+import noop from '@proton/utils/noop';
 
+import { reportError } from '../../store/_utils';
 import { FileCard } from './FileCard';
 import { AbuseCategory, AbuseCateroryType, AbuseFormProps, ReportAbuseRequestPayload } from './types';
 
@@ -96,6 +98,7 @@ const ReportAbuseModal = ({ onClose = noop, linkInfo, onSubmit, open }: AbuseFor
             onClose?.();
         } catch (e) {
             createNotification({ text: c('Error').t`Report failed to be sent`, type: 'error' });
+            reportError(e);
         }
     };
 
