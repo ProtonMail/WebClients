@@ -4,17 +4,27 @@
     "language": "en_US"
   },
   "contexts": {
-    "Country name": {
-      "Cote d'Ivoire\"": [
-        "Côte d'Ivoire"
-      ],
-      "Swaziland": [
-        "Eswatini"
+    "color": {
+      "Apple": [
+        "apple"
+      ]
+    },
+    "Description": {
+      "Decrypting contacts... This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
+        "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported."
       ]
     },
     "Info": {
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
-        "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages."
+      "Don't forget to share your password with the recipient": [
+        "Don't forget to share the password with the recipient"
+      ],
+      "I'm sending this message to a non-ProtonMail user.": [
+        "I'm sending this message to a non-Proton Mail user."
+      ]
+    },
+    "Reply to calendar invitation": {
+      "Re-encrypting invitation failed. Please try again": [
+        "Re-encrypting invitation failed. Please try again."
       ]
     },
     "Yearly recurring event, frequency": {

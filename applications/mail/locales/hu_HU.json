@@ -1558,17 +1558,9 @@
         "Az esemény folyamatban van"
       ]
     },
-    "Collapsible tooltip": {
-      "Close": [
-        "Bezárás"
-      ],
-      "Open": [
-        "Megnyitás"
-      ]
-    },
     "color": {
       "Apple": [
-        "Alma"
+        "apple"
       ],
       "azureish white": [
         "azúrkék fehér"
@@ -2004,9 +1996,6 @@
       "Burkina Faso": [
         "Burkina Faso"
       ],
-      "Burma": [
-        "Mianmar"
-      ],
       "Burundi": [
         "Burundi"
       ],
@@ -2060,9 +2049,6 @@
       ],
       "Costa Rica": [
         "Costa Rica"
-      ],
-      "Cote d'Ivoire\"": [
-        "Côte d'Ivoire"
       ],
       "Croatia": [
         "Horvátország"
@@ -2544,9 +2530,6 @@
       "Svalbard and Jan Mayen": [
         "Svalbard és Jan Mayen-szigetek"
       ],
-      "Swaziland": [
-        "Eswatini"
-      ],
       "Sweden": [
         "Svédország"
       ],
@@ -2742,7 +2725,7 @@
     },
     "Description": {
       "Decrypting contacts... This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
-        "Névjegyek visszafejtése. Ez eltarthat néhány percig. A folyamat végeztével letölthető lesz az exportált névjegy lista."
+        "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported."
       ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Névjegyek törlése. Ez eltarthat néhány percig. A folyamat befejezésekor bezárhatja ezt az ablakot."
@@ -3314,9 +3297,6 @@
       ]
     },
     "Error importing event": {
-      "Calendar timezone not supported": [
-        "Naptár időzóna nem támogatott"
-      ],
       "Component with wrong format": [
         "A komponens formátuma hibás"
       ],
@@ -3383,9 +3363,6 @@
       "Start time out of bounds": [
         "Kezdő időpont a korlátokon kívül"
       ],
-      "Timezone not supported": [
-        "Időzóna nem támogatott"
-      ],
       "To-do entry": [
         "Tennivaló elem"
       ],
@@ -3394,9 +3371,6 @@
       ]
     },
     "Error message": {
-      "Brace yourself till we get the error fixed.": [
-        "Kérjük várjon, amíg a hibát elhárítjuk."
-      ],
       "Error: ${ errorMessage }": [
         "Hiba: ${ errorMessage }"
       ],
@@ -4155,7 +4129,7 @@
         "Aláírja újra a névjegyet?"
       ],
       "Don't forget to share your password with the recipient": [
-        "Ne felejtse el megosztani a jelszavát a címzettel"
+        "Don't forget to share the password with the recipient"
       ],
       "Download our mobile application from your favorite app store to communicate securely on-the-go.": [
         "Töltse le a mobil alkalmazásunkat a kedvenc alkalmazásboltjából, hogy út közben is biztonságosan kommunikálhasson."
@@ -4293,7 +4267,7 @@
         "Óra"
       ],
       "I'm sending this message to a non-ProtonMail user.": [
-        "Egy nem-Proton Mail címzettnek küldöm ezt az üzenetet."
+        "I'm sending this message to a non-Proton Mail user."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Ha problémába ütközik a fiók létrehozásakor, kérjen egy meghívót és egy munkanapon belül segítséget nyújtunk."
@@ -4503,9 +4477,6 @@
       "per month.": [
         "havonta."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
-        "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages."
-      ],
       "Phone number": [
         "Telefonszám"
       ],
@@ -4608,9 +4579,6 @@
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Válassza ki az e-mail alapértelmezett formátumát, erre a címre való küldéshez."
-      ],
-      "Select what you want to move from Google.": [
-        "Válassza ki, mit szeretne a Google-ból áthozni."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Válassza ki az importálandó naptárakat. Minden importált naptárhoz egy új naptár kerül létrehozásra, a maximum 20-as korlátig."
@@ -5857,9 +5825,6 @@
       "Manage your labels": [
         "Címkék kezelése"
       ],
-      "More": [
-        "Továbbiak"
-      ],
       "More about recovery": [
         "Több információ a helyreállításról"
       ],
@@ -6199,11 +6164,6 @@
     "new_plans: action": {
       "Switch or add account": [
         "Váltás vagy fiók hozzáadása"
-      ]
-    },
-    "new_plans: info": {
-      "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
-        "A Proton új megjelenésének bemutatása.${ br } Sok szolgáltatás, egy küldetés. Üdvözli az az internet, amelyen az adatvédelem alapértelmezett."
       ]
     },
     "new_plans: label": {
@@ -6562,7 +6522,7 @@
         "Nem sikerült a szervező címére küldeni: ${ errorMessage }"
       ],
       "Re-encrypting invitation failed. Please try again": [
-        "Az újra-titkosítási meghívás sikertelen. Kérjük, próbálja újra"
+        "Re-encrypting invitation failed. Please try again."
       ]
     },
     "Search - no results": {

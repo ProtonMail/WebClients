@@ -365,6 +365,9 @@
       "Save": [
         "Zapisz"
       ],
+      "Search countries": [
+        "Szukaj krajów"
+      ],
       "Select all": [
         "Zaznacz wszystkie"
       ],
@@ -409,6 +412,9 @@
       ],
       "Skip": [
         "Pomiń"
+      ],
+      "Start import": [
+        "Rozpocznij importowanie"
       ],
       "Start setup": [
         "Rozpocznij konfigurację"
@@ -833,11 +839,11 @@
       ]
     },
     "Collapsible tooltip": {
-      "Close": [
-        "Zamknij"
+      "Collapse": [
+        "Zwiń"
       ],
-      "Open": [
-        "Otwórz"
+      "Expand": [
+        "Rozwiń"
       ]
     },
     "colon": {
@@ -1106,9 +1112,6 @@
       "Burkina Faso": [
         "Burkina Faso"
       ],
-      "Burma": [
-        "Mjanma"
-      ],
       "Burundi": [
         "Burundi"
       ],
@@ -1163,9 +1166,6 @@
       "Costa Rica": [
         "Kostaryka"
       ],
-      "Cote d'Ivoire\"": [
-        "Wybrzeże Kości Słoniowej"
-      ],
       "Croatia": [
         "Chorwacja"
       ],
@@ -1180,6 +1180,9 @@
       ],
       "Czech Republic": [
         "Czechy"
+      ],
+      "Côte d'Ivoire": [
+        "Wybrzeże Kości Słoniowej"
       ],
       "Denmark": [
         "Dania"
@@ -1210,6 +1213,9 @@
       ],
       "Estonia": [
         "Estonia"
+      ],
+      "Eswatini": [
+        "Eswatini"
       ],
       "Ethiopia": [
         "Etiopia"
@@ -1454,6 +1460,9 @@
       "Mozambique": [
         "Mozambik"
       ],
+      "Myanmar": [
+        "Mjanma"
+      ],
       "Namibia": [
         "Namibia"
       ],
@@ -1645,9 +1654,6 @@
       ],
       "Svalbard and Jan Mayen": [
         "Svalbard i Jan Mayen"
-      ],
-      "Swaziland": [
-        "Eswatini"
       ],
       "Sweden": [
         "Szwecja"
@@ -1842,7 +1848,7 @@
         "Trwa importowanie i szyfrowanie kontaktów... Proces może potrwać kilka minut. Kiedy się zakończy, możesz zamknąć okno."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
-        "Lista kontaktów, którą importujesz, zawiera grupy. Sprawdź jak te grupy powinny zostać zaimportowane."
+        "Lista kontaktów, którą importujesz, zawiera grupy. Sprawdź, jak te grupy powinny zostać zaimportowane."
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Trwa scalanie kontaktów... Proces może potrwać kilka minut. Kiedy się zakończy, możesz zamknąć okno."
@@ -2260,8 +2266,8 @@
       "This label name is not available. Please choose a different name.": [
         "Nazwa etykiety nie jest dostępna. Wpisz inną nazwę."
       ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "Ta wiadomość może zawierać adresy URL, które nie mogą być poprawnie otwarte przez obecną przeglądarkę"
+      "This message may contain some link's URL that cannot be properly opened by your current browser": [
+        "This message may contain some link's URL that cannot be properly opened by your current browser."
       ],
       "Trusted keys are not valid for sending": [
         "Zaufane klucze nie są przeznaczone do wysyłania wiadomości"
@@ -2352,7 +2358,7 @@
       "Calendar": [
         "Kalendarz"
       ],
-      "Calendar timezone not supported": [
+      "Calendar time zone not supported": [
         "Strefa czasowa kalendarza nie jest obsługiwana"
       ],
       "Component with wrong format": [
@@ -2427,11 +2433,11 @@
       "Start time out of bounds": [
         "Czas rozpoczęcia jest poza zakresem"
       ],
+      "Time zone not supported": [
+        "Strefa czasowa nie jest obsługiwana"
+      ],
       "Timezone": [
         "Strefa czasowa"
-      ],
-      "Timezone not supported": [
-        "Strefa czasowa nie jest obsługiwana"
       ],
       "To-do entry": [
         "Wpis w formacie listy zadań"
@@ -2444,9 +2450,6 @@
       ]
     },
     "Error message": {
-      "Brace yourself till we get the error fixed.": [
-        "Poczekaj chwilę, naprawiamy ten błąd."
-      ],
       "Error: ${ errorMessage }": [
         "Błąd: ${ errorMessage }"
       ],
@@ -2458,6 +2461,9 @@
       ],
       "Please ${ refresh } or check your connection.": [
         "${ refresh } lub sprawdź swoje połączenie."
+      ],
+      "Something went wrong. Please refresh the page or try again later.": [
+        "Coś poszło nie tak. Odśwież stronę lub spróbuj ponownie później."
       ],
       "There was a problem connecting to Proton.": [
         "Wystąpił problem z połączeniem z usługą Proton."
@@ -3189,8 +3195,8 @@
       "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
         "Schemat PGP/Inline jest kompatybilny tylko z trybem zwykłego tekstu. Pamiętaj, że ${ MAIL_APP_NAME } zawsze podpisuje zaszyfrowane wiadomości."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
-        "Schemat PGP/MIME automatycznie wysyła wiadomości przy użyciu obecnego trybu edytora. Pamiętaj, że ${ MAIL_APP_NAME } zawsze podpisuje zaszyfrowane wiadomości"
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        "Schemat PGP/MIME automatycznie wysyła wiadomości przy użyciu obecnego trybu edytora. Pamiętaj, że ${ MAIL_APP_NAME } zawsze podpisuje zaszyfrowane wiadomości."
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Pamiętaj, że adresy przypisane do tej grupy NIE zostaną usunięte."
@@ -3237,8 +3243,8 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Wybierz domyślny format wiadomości, który ma zostać użyty podczas wysyłania wiadomości na ten adres e-mail."
       ],
-      "Select what you want to move from Google.": [
-        "Select what you want to import from Google."
+      "Select what you want to import from Google.": [
+        "Wybierz, co chcesz zaimportować z konta Google."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Wybierz, które kalendarze chcesz zaimportować. Dla każdego importowanego kalendarza zostanie utworzony nowy kalendarz, aż do osiągnięcia limitu 20 kalendarzy."
@@ -4079,8 +4085,8 @@
       ]
     },
     "new_plans: info": {
-      "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
-        "Introducing Proton’s refreshed look.${ br }Many services, one mission. Welcome to an internet where privacy is the default."
+      "Introducing Proton’s refreshed look.${ br }Many services, one mission. Welcome to an internet where privacy is the default.": [
+        "Przedstawiamy odświeżony wygląd usługi Proton.${ br }Wiele usług, jedna misja. Witaj w Internecie, w którym prywatność jest standardem."
       ]
     },
     "new_plans: label": {
@@ -4387,10 +4393,12 @@
         "Ty"
       ]
     },
-    "Participants expand button label": {
+    "Participants collapse button label": {
       "Collapse participants list": [
         "Zwiń listę uczestników"
-      ],
+      ]
+    },
+    "Participants expand button label": {
       "Expand participants list": [
         "Rozwiń listę uczestników"
       ]
@@ -4966,10 +4974,10 @@
         "Dostosuj i potwierdź"
       ],
       "Customize calendar import": [
-        "Dostosuj proces importowania kalendarza"
+        "Dostosuj proces importowana kalendarza"
       ],
       "Customize your mail import": [
-        "Dostosuj proces importowania poczty"
+        "Dostosuj proces importowana poczty"
       ],
       "Delete ${ count } contact": [
         "Usuń kontakt",

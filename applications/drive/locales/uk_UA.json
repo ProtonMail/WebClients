@@ -251,11 +251,11 @@
       "Forward as attachment": [
         "Переслати як вкладення"
       ],
+      "Get ${ DRIVE_APP_NAME }": [
+        "Отримати ${ DRIVE_APP_NAME }"
+      ],
       "Get link": [
         "Отримати посилання"
-      ],
-      "Get Proton Drive": [
-        "Отримати Proton Drive"
       ],
       "Get started": [
         "Розпочнімо"
@@ -446,6 +446,9 @@
       "Search": [
         "Пошук"
       ],
+      "Search countries": [
+        "Пошук країн"
+      ],
       "Search drive": [
         "Пошук диска"
       ],
@@ -622,13 +625,10 @@
     },
     "blackfriday Info": {
       "Includes": [
-        "Включає в себе"
+        "Включає"
       ]
     },
     "blackfriday Title": {
-      "Best deal": [
-        "Найкраща пропозиція"
-      ],
       "Most popular": [
         "Найпопулярніша"
       ]
@@ -638,7 +638,7 @@
         "Скористатися пропозицією"
       ],
       "Get the deal now": [
-        "Скористатися пропозицією зараз"
+        "Скористатися пропозицією"
       ]
     },
     "blackfriday: VPNspecialoffer Info": {
@@ -660,9 +660,6 @@
       ],
       "24 months": [
         "24 місяці"
-      ],
-      "Get the special year-end offer on our Premium VPN PLUS plan": [
-        "Отримайте спеціальну пропозицію наприкінці року на наш платний тариф Proton VPN PLUS прямо зараз"
       ]
     },
     "Bug category": {
@@ -776,11 +773,11 @@
       ]
     },
     "Collapsible tooltip": {
-      "Close": [
-        "Закрити"
+      "Collapse": [
+        "Згорнути"
       ],
-      "Open": [
-        "Відкрити"
+      "Expand": [
+        "Розгорнути"
       ]
     },
     "color": {
@@ -1044,9 +1041,6 @@
       "Burkina Faso": [
         "Буркіна-Фасо"
       ],
-      "Burma": [
-        "М’янма"
-      ],
       "Burundi": [
         "Бурунді"
       ],
@@ -1101,9 +1095,6 @@
       "Costa Rica": [
         "Коста-Рика"
       ],
-      "Cote d'Ivoire\"": [
-        "Кот-д'Івуар\""
-      ],
       "Croatia": [
         "Хорватія"
       ],
@@ -1118,6 +1109,9 @@
       ],
       "Czech Republic": [
         "Чеська Республіка"
+      ],
+      "Côte d'Ivoire": [
+        "Кот-д'Івуар"
       ],
       "Denmark": [
         "Данія"
@@ -1148,6 +1142,9 @@
       ],
       "Estonia": [
         "Естонія"
+      ],
+      "Eswatini": [
+        "Есватіні"
       ],
       "Ethiopia": [
         "Ефіопія"
@@ -1392,6 +1389,9 @@
       "Mozambique": [
         "Мозамбік"
       ],
+      "Myanmar": [
+        "М'янма"
+      ],
       "Namibia": [
         "Намібія"
       ],
@@ -1583,9 +1583,6 @@
       ],
       "Svalbard and Jan Mayen": [
         "Свальбард і Ян-Маєн"
-      ],
-      "Swaziland": [
-        "Есватіні"
       ],
       "Sweden": [
         "Швеція"
@@ -2063,6 +2060,9 @@
       ],
       "Please ${ refresh } or check your connection.": [
         "Будь ласка, ${ refresh } або перевірте ваше з'єднання."
+      ],
+      "Something went wrong. Please refresh the page or try again later.": [
+        "Щось пішло не так. Будь ласка, оновіть сторінку або повторіть спробу пізніше."
       ],
       "There was a problem connecting to Proton.": [
         "Виникла проблема під час з'єднання з Proton."
@@ -2835,7 +2835,10 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Один або кілька ваших довірених ключів були позначені «скомпрометованими» їх власником. Ми радимо вам не довіряти цим ключам."
       ],
-      "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters is allowed": [
+      "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } character is allowed": [
+        "Дозволено лише ${ MAX_CUSTOM_PASSWORD_LENGTH } символ",
+        "Дозволено лише ${ MAX_CUSTOM_PASSWORD_LENGTH } символи",
+        "Дозволено лише ${ MAX_CUSTOM_PASSWORD_LENGTH } символів",
         "Дозволено лише ${ MAX_CUSTOM_PASSWORD_LENGTH } символів"
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
@@ -2859,8 +2862,8 @@
       "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
         "PGP/Inline сумісний лише з форматом звичайного тексту. Зверніть увагу, що ${ MAIL_APP_NAME } завжди підписує зашифровані повідомлення."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
-        "PGP/MIME автоматично надсилає повідомлення з використанням поточного режиму редактора. Зверніть увагу, що ${ MAIL_APP_NAME } завжди підписує зашифровані повідомлення"
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        "PGP/MIME автоматично надсилає повідомлення з використанням поточного режиму редактора. Зверніть увагу, що ${ MAIL_APP_NAME } завжди підписує зашифровані повідомлення."
       ],
       "Please enter the password to decrypt and view content.": [
         "Введіть пароль, щоб розшифрувати та переглянути вміст."
@@ -2940,8 +2943,8 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Оберіть формат повідомлення, який ви хочете використовувати при надсиланні на цю адресу е-пошти."
       ],
-      "Select what you want to move from Google.": [
-        "Виберіть, що ви хочете перемістити з Google."
+      "Select what you want to import from Google.": [
+        "Виберіть, що ви хочете імпортувати з Google."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Виберіть, які календарі імпортувати. Для кожного імпортованого календаря буде створено новий календар з обмеженням у 20 календарів."
@@ -3747,8 +3750,8 @@
       ]
     },
     "new_plans: info": {
-      "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
-        "Представляємо оновлений вигляд.${ br } Багато служб, одна місія. Ласкаво просимо до Інтернету, де приватність — це стандарт."
+      "Introducing Proton’s refreshed look.${ br }Many services, one mission. Welcome to an internet where privacy is the default.": [
+        "Представляємо оновлений вигляд.${ br }Багато служб, одна місія. Ласкаво просимо до Інтернету, де приватність — це стандарт."
       ]
     },
     "new_plans: label": {
@@ -3992,26 +3995,14 @@
       ]
     },
     "Onboarding Action": {
-      "Enable Beta Access": [
-        "Увімкнути бета-доступ"
-      ],
       "Next": [
         "Далі"
       ],
       "Start using ${ appName }": [
         "Розпочніть користуватися ${ appName }"
-      ],
-      "Upgrade account": [
-        "Оновити тарифний план облікового запису"
       ]
     },
     "Onboarding Info": {
-      "${ appName } is currently in early access and only available to users with a paid plan.": [
-        "${ appName } наразі перебуває в ранньому доступі й лише для користувачів з платним тарифним планом."
-      ],
-      "${ appName } is currently only available if you enable Beta Access.": [
-        "${ appName } наразі доступний лише через бета-доступ."
-      ],
       "Your trusty online vault for vital documents and precious memories.": [
         "Ваше надійне онлайн-сховище для життєво важливих документів і дорогоцінних спогадів."
       ]
@@ -4037,12 +4028,6 @@
       ]
     },
     "Onboarding Title": {
-      "${ appName } is in Beta": [
-        "${ appName } у бета-версії"
-      ],
-      "Upgrade to access ${ appName }": [
-        "Передплатіть для доступу до ${ appName }"
-      ],
       "Welcome to ${ appName }": [
         "Вітаємо у ${ appName }"
       ]

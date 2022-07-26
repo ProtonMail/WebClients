@@ -363,6 +363,9 @@
       "Save": [
         "Salvare"
       ],
+      "Search countries": [
+        "Căutare țări"
+      ],
       "Select all": [
         "Selectare toate"
       ],
@@ -407,6 +410,9 @@
       ],
       "Skip": [
         "Omitere"
+      ],
+      "Start import": [
+        "Pornire importare"
       ],
       "Start setup": [
         "Pornire configurare"
@@ -831,11 +837,11 @@
       ]
     },
     "Collapsible tooltip": {
-      "Close": [
-        "Închidere"
+      "Collapse": [
+        "Restrângere"
       ],
-      "Open": [
-        "Deschidere"
+      "Expand": [
+        "Extindere"
       ]
     },
     "colon": {
@@ -1104,9 +1110,6 @@
       "Burkina Faso": [
         "Burkina Faso"
       ],
-      "Burma": [
-        "Burma"
-      ],
       "Burundi": [
         "Burundi"
       ],
@@ -1161,9 +1164,6 @@
       "Costa Rica": [
         "Costa Rica"
       ],
-      "Cote d'Ivoire\"": [
-        "Coasta de Fildeș"
-      ],
       "Croatia": [
         "Croația"
       ],
@@ -1178,6 +1178,9 @@
       ],
       "Czech Republic": [
         "Republica Cehă"
+      ],
+      "Côte d'Ivoire": [
+        "Coasta de Fildeș"
       ],
       "Denmark": [
         "Danemarca"
@@ -1208,6 +1211,9 @@
       ],
       "Estonia": [
         "Estonia"
+      ],
+      "Eswatini": [
+        "Eswatini"
       ],
       "Ethiopia": [
         "Etiopia"
@@ -1452,6 +1458,9 @@
       "Mozambique": [
         "Mozambic"
       ],
+      "Myanmar": [
+        "Myanmar"
+      ],
       "Namibia": [
         "Namibia"
       ],
@@ -1643,9 +1652,6 @@
       ],
       "Svalbard and Jan Mayen": [
         "Svalbard și Jan Mayen"
-      ],
-      "Swaziland": [
-        "Eswatini"
       ],
       "Sweden": [
         "Suedia"
@@ -2242,8 +2248,8 @@
       "This label name is not available. Please choose a different name.": [
         "Acest nume de etichetă nu este disponibil. Alegeți un nume diferit."
       ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "Acest mesaj poate conține unele legături care nu pot fi deschise corect de navigatorul actual."
+      "This message may contain some link's URL that cannot be properly opened by your current browser": [
+        "This message may contain some link's URL that cannot be properly opened by your current browser."
       ],
       "Trusted keys are not valid for sending": [
         "Cheile de încredere nu sunt valide pentru trimitere."
@@ -2334,8 +2340,8 @@
       "Calendar": [
         "Calendar"
       ],
-      "Calendar timezone not supported": [
-        "Fus orar calendar neacceptat."
+      "Calendar time zone not supported": [
+        "Fusul orar al calendarului nu este suportat."
       ],
       "Component with wrong format": [
         "Componentă cu format greșit"
@@ -2409,11 +2415,11 @@
       "Start time out of bounds": [
         "Timpul de start în afara limitelor."
       ],
+      "Time zone not supported": [
+        "Fus orar nesuportat."
+      ],
       "Timezone": [
         "Fus orar"
-      ],
-      "Timezone not supported": [
-        "Fus orar nesuportat."
       ],
       "To-do entry": [
         "Intrare de făcut"
@@ -2426,9 +2432,6 @@
       ]
     },
     "Error message": {
-      "Brace yourself till we get the error fixed.": [
-        "Așteptați până când vom rezolva eroarea."
-      ],
       "Error: ${ errorMessage }": [
         "Eroare: ${ errorMessage }"
       ],
@@ -2440,6 +2443,9 @@
       ],
       "Please ${ refresh } or check your connection.": [
         "Verificați conexiunea sau ${ refresh }."
+      ],
+      "Something went wrong. Please refresh the page or try again later.": [
+        "Ceva nu a mers bine. Reîmprospătați pagina sau reîncercați mai târziu."
       ],
       "There was a problem connecting to Proton.": [
         "A apărut o problemă la conectarea la Proton."
@@ -3134,7 +3140,7 @@
       "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
         "PGP/Inline este compatibil doar cu formatul de text simplu. Rețineți că ${ MAIL_APP_NAME } întotdeauna semnează mesajele criptate."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
         "PGP/MIME trimite automat mesajele folosind modul actual de compunere. Rețineți că ${ MAIL_APP_NAME } întotdeauna semnează mesajele criptate."
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
@@ -3181,8 +3187,8 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Selectați formatul de e-mail care doriți să fie folosit implicit când trimiteți mesaje la această adresă."
       ],
-      "Select what you want to move from Google.": [
-        "Select what you want to import from Google."
+      "Select what you want to import from Google.": [
+        "Selectați ce doriți să importați din Google."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Selectați calendarele de importat. Va fi creat un nou calendar pentru fiecare calendar importat până la limita de 20 de calendare."
@@ -4017,8 +4023,8 @@
       ]
     },
     "new_plans: info": {
-      "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
-        "Introducing Proton’s refreshed look.${ br }Many services, one mission. Welcome to an internet where privacy is the default."
+      "Introducing Proton’s refreshed look.${ br }Many services, one mission. Welcome to an internet where privacy is the default.": [
+        "Vă prezentăm aspectul împrospătat al Proton.${ br }Multe servicii, o singură misiune. Bine ați venit la un internet în care confidențialitatea este implicită."
       ]
     },
     "new_plans: label": {
@@ -4301,10 +4307,12 @@
         "Dvs."
       ]
     },
-    "Participants expand button label": {
+    "Participants collapse button label": {
       "Collapse participants list": [
         "Restrângere listă participanți"
-      ],
+      ]
+    },
+    "Participants expand button label": {
       "Expand participants list": [
         "Extindere listă participanți"
       ]

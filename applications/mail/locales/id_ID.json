@@ -155,6 +155,9 @@
       "Close this banner": [
         "Tutup spanduk ini"
       ],
+      "Collapse URL": [
+        "Ciutkan URL"
+      ],
       "Color": [
         "Warna"
       ],
@@ -298,6 +301,9 @@
       ],
       "Email settings": [
         "Pengaturan email"
+      ],
+      "Emoji": [
+        "Emoji"
       ],
       "Enable": [
         "Aktifkan"
@@ -569,6 +575,9 @@
       "Move to spam": [
         "Pindah ke spam"
       ],
+      "Move to spam and unsubscribe": [
+        "Pindahkan ke spam dan batalkan langganan"
+      ],
       "Move to trash": [
         "Pindahkan ke sampah"
       ],
@@ -751,6 +760,9 @@
       ],
       "Search": [
         "Pencarian"
+      ],
+      "Search countries": [
+        "Cari negara"
       ],
       "Search in ${ option.text }": [
         "Cari di ${ option.text }"
@@ -1557,16 +1569,16 @@
       ]
     },
     "Collapsible tooltip": {
-      "Close": [
-        "Tutup"
+      "Collapse": [
+        "Ciutkan"
       ],
-      "Open": [
-        "Buka"
+      "Expand": [
+        "Lebarkan"
       ]
     },
     "color": {
       "Apple": [
-        "hijau apel"
+        "apple"
       ],
       "azureish white": [
         "putih kebiruan"
@@ -2002,9 +2014,6 @@
       "Burkina Faso": [
         "Burkina Faso"
       ],
-      "Burma": [
-        "Myanmar"
-      ],
       "Burundi": [
         "Burundi"
       ],
@@ -2059,9 +2068,6 @@
       "Costa Rica": [
         "Kosta Rika"
       ],
-      "Cote d'Ivoire\"": [
-        "Côte d'Ivoire"
-      ],
       "Croatia": [
         "Kroasia"
       ],
@@ -2076,6 +2082,9 @@
       ],
       "Czech Republic": [
         "Republik Ceko"
+      ],
+      "Côte d'Ivoire": [
+        "Pantai Gading"
       ],
       "Denmark": [
         "Denmark"
@@ -2106,6 +2115,9 @@
       ],
       "Estonia": [
         "Estonia"
+      ],
+      "Eswatini": [
+        "Eswatini"
       ],
       "Ethiopia": [
         "Ethiopia"
@@ -2350,6 +2362,9 @@
       "Mozambique": [
         "Mozambik"
       ],
+      "Myanmar": [
+        "Myanmar"
+      ],
       "Namibia": [
         "Namibia"
       ],
@@ -2542,9 +2557,6 @@
       "Svalbard and Jan Mayen": [
         "Svalbard dan Jan Mayen"
       ],
-      "Swaziland": [
-        "Eswatini"
-      ],
       "Sweden": [
         "Swedia"
       ],
@@ -2736,7 +2748,7 @@
     },
     "Description": {
       "Decrypting contacts... This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
-        "Dekripsi kontak memakan beberapa menit. Anda dapat mengunduh kontak yang diekspor setelah proses ini selesai."
+        "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported."
       ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Menghapus kontak... Ini perlu beberapa menit. Saat proses selesai, Anda dapat menutup jendela ini."
@@ -3296,7 +3308,7 @@
       ]
     },
     "Error importing event": {
-      "Calendar timezone not supported": [
+      "Calendar time zone not supported": [
         "Zona waktu kalender tidak didukung"
       ],
       "Component with wrong format": [
@@ -3330,16 +3342,16 @@
         "Entri jurnal"
       ],
       "Malformed all-day event": [
-        "Acara sepanjang hari salah format"
+        "Acara sepanjang hari tidak diformat dengan benar"
       ],
       "Malformed end time": [
-        "Waktu akhir salah format"
+        "Waktu akhir tidak diformat dengan benar"
       ],
       "Malformed recurring event": [
-        "Acara berulang salah format"
+        "Acara berulang tidak diformat dengan benar"
       ],
       "Malformed start time": [
-        "Waktu mulai salah format"
+        "Waktu mulai tidak diformat dengan benar"
       ],
       "Missing start time": [
         "Waktu mulai hilang"
@@ -3365,7 +3377,7 @@
       "Start time out of bounds": [
         "Waktu mulai di luar batas"
       ],
-      "Timezone not supported": [
+      "Time zone not supported": [
         "Zona waktu tidak didukung"
       ],
       "To-do entry": [
@@ -3376,9 +3388,6 @@
       ]
     },
     "Error message": {
-      "Brace yourself till we get the error fixed.": [
-        "Kami sedang perbaiki. Mohon bersabar."
-      ],
       "Error: ${ errorMessage }": [
         "Kesalahan: ${ errorMessage }"
       ],
@@ -3393,6 +3402,9 @@
       ],
       "Please ${ refresh } or check your connection.": [
         "Mohon ${ refresh } atau cek koneksi Anda."
+      ],
+      "Something went wrong. Please refresh the page or try again later.": [
+        "Terjadi suatu kesalahan. Silakan muat ulang halaman ini atau coba lagi nanti."
       ],
       "There was a problem connecting to Proton.": [
         "Ada masalah saat menyambung ke Proton."
@@ -4118,7 +4130,7 @@
         "Anda ingin menandatangani ulang rincian kontak?"
       ],
       "Don't forget to share your password with the recipient": [
-        "Jangan lupa untuk membagikan kata sandi Anda dengan penerima pesan"
+        "Don't forget to share the password with the recipient"
       ],
       "Download our mobile application from your favorite app store to communicate securely on-the-go.": [
         "Unduh aplikasi mobile kami dari app store favorit Anda untuk dapat berkomunikasi dengan aman saat bepergian."
@@ -4250,7 +4262,7 @@
         "Jam"
       ],
       "I'm sending this message to a non-ProtonMail user.": [
-        "Saya mengirimkan pesan ini kepada pengguna non-Proton Mail."
+        "I'm sending this message to a non-Proton Mail user."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Jika Anda menemui masalah saat membuat akun, silakan minta undangan dan kami akan meresponnya satu hari kerja."
@@ -4462,8 +4474,8 @@
       "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
         "PGP/Inline hanya kompatibel dengan format Plain Text. Mohon diperhatikan bahwa ${ MAIL_APP_NAME } akan selalu menandatangani pesan yang terenkripsi."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
-        "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages."
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        "Enkripsi PGP/MIME akan mengirim pesan dengan format yang sesuai dengan mode komposer saat ini secara otomatis. Mohon dicatat bahwa ${ MAIL_APP_NAME } akan selalu menandatangani pesan yang terenkripsi."
       ],
       "Phone number": [
         "Nomor telepon"
@@ -4473,6 +4485,9 @@
       ],
       "Please add at least one recipient.": [
         "Harap tentukan setidaknya satu orang penerima."
+      ],
+      "Please fill out this field.": [
+        "Mohon isi kolom ini."
       ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
         "Harap simpan frasa pemulihan ini sebaik-baiknya. Anda akan memerlukan frasa pemulihan ini untuk dapat mengakses akun Anda apabila di kemudian waktu Anda harus mengatur ulang kata sandi Anda."
@@ -4570,8 +4585,8 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Pilih format email yang akan digunakan setiap kali Anda mengirim email ke alamat ini."
       ],
-      "Select what you want to move from Google.": [
-        "Pilih hal-hal apa saja yang hendak Anda pindahkan dari Google."
+      "Select what you want to import from Google.": [
+        "Pilih hal-hal apa saja yang hendak Anda impor dari Google."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Pilih kalender-kalender mana saja yang akan diimpor. Untuk setiap kalender yang Anda impor, sistem kami akan membuat kalender baru hingga batas maksimum 20 kalender."
@@ -4696,6 +4711,9 @@
       "This conversation contains trashed messages.": [
         "Percakapan ini berisi pesan yang dibuang."
       ],
+      "This conversation will be marked as spam. Would you also like to unsubscribe from future emails?": [
+        "Percakapan ini akan ditandai sebagai spam. Apakah Anda ingin membatalkan langganan milis ini?"
+      ],
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded!": [
         "Email ini tidak memenuhi syarat otentikasi domainnya. Email ini mungkin telah dipalsukan atau tidak diteruskan dengan benar!"
       ],
@@ -4728,6 +4746,9 @@
       ],
       "This message is signed by the key attached, that has not been trusted yet.": [
         "Pesan ini ditandatangani dengan kunci terlampir yang belum dipercaya."
+      ],
+      "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
+        "Pesan ini akan ditandai sebagai spam. Apakah Anda ingin membatalkan langganan milis ini?"
       ],
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
         "Pesan ini akan secara otomatis berpindah ke Draf agar Anda dapat menyunting isi pesan ini di kemudian waktu. Anda harus mengatur ulang waktu pengiriman pesan ini."
@@ -5567,6 +5588,9 @@
       "Region": [
         "Provinsi"
       ],
+      "Remember my choice": [
+        "Ingat pilihan saya"
+      ],
       "Reveal password": [
         "Perlihatkan kata sandi"
       ],
@@ -5802,6 +5826,9 @@
       ],
       "Learn more": [
         "Lebih lanjut"
+      ],
+      "Less": [
+        "Lebih sedikit"
       ],
       "Manage your folders": [
         "Kelola folder Anda"
@@ -6149,8 +6176,8 @@
       ]
     },
     "new_plans: info": {
-      "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
-        "Memperkenalkan tampilan Proton yang baru.${ br } Berbagai layanan, satu misi. Selamat datang di Internet yang menjunjung privasi sebagai hal yang baku."
+      "Introducing Proton’s refreshed look.${ br }Many services, one mission. Welcome to an internet where privacy is the default.": [
+        "Memperkenalkan tampilan Proton yang baru.${ br }Berbagai layanan, satu misi. Selamat datang di Internet yang menjunjung privasi sebagai hal yang baku."
       ]
     },
     "new_plans: label": {
@@ -6507,7 +6534,7 @@
         "Tidak dapat mengirim ke alamat penyelenggara: ${ errorMessage }"
       ],
       "Re-encrypting invitation failed. Please try again": [
-        "Proses enkripsi ulang undangan gagal. Silakan coba lagi"
+        "Re-encrypting invitation failed. Please try again."
       ]
     },
     "Search - no results": {
@@ -7281,6 +7308,9 @@
       ],
       "Move to inbox (not spam)": [
         "Pindahkan ke kotak masuk (bukan spam)"
+      ],
+      "Move to spam": [
+        "Pindahkan ke spam"
       ],
       "Move to trash": [
         "Pindahkan ke sampah"

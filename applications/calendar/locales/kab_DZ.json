@@ -650,14 +650,6 @@
         "Dduṛt"
       ]
     },
-    "Collapsible tooltip": {
-      "Close": [
-        "Mdel"
-      ],
-      "Open": [
-        "Ldi"
-      ]
-    },
     "Contact field label": {
       "Address": [
         "Tansa"
@@ -1129,8 +1121,8 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Urti-a isra ma drus ${ minimumLength } n yizamulen."
       ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "Izen-a igber kra n tansiwin URL ahat ur neldi ara akken iwata deg iminig-innek amiran"
+      "This message may contain some link's URL that cannot be properly opened by your current browser": [
+        "This message may contain some link's URL that cannot be properly opened by your current browser."
       ],
       "Trusted keys are not valid for sending": [
         "Tisura yettwasentmen ur ɣtint ara i tuzna"
@@ -1196,9 +1188,6 @@
       ]
     },
     "Error message": {
-      "Brace yourself till we get the error fixed.": [
-        "Ttxil rǧu simara ad yefru ugur."
-      ],
       "Error: ${ errorMessage }": [
         "Tuccḍa: ${ errorMessage }"
       ],
@@ -1620,9 +1609,6 @@
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Fren amasal n yimayl i tebɣiḍ ad yettwaseqdec d amezwer mi ara tazneḍ imayl ɣer tansa-a imayl."
-      ],
-      "Select what you want to move from Google.": [
-        "Select what you want to import from Google."
       ],
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "Kra seg tririyin-inek·inem ɣef tneḍruyin yettwaleqqmen yakan sɣur amsuddes ad ṛuḥen."
@@ -2218,11 +2204,6 @@
       ],
       "Label name": [
         "Isem n tebzimt"
-      ]
-    },
-    "new_plans: info": {
-      "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
-        "Introducing Proton’s refreshed look.${ br }Many services, one mission. Welcome to an internet where privacy is the default."
       ]
     },
     "Notification": {

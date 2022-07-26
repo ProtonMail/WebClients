@@ -1041,8 +1041,8 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Este campo requer um mínimo de ${ minimumLength } caracteres."
       ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "Esta mensagem pode conter hiperligações que não podem ser abertas correctamente pelo seu navegador actual"
+      "This message may contain some link's URL that cannot be properly opened by your current browser": [
+        "This message may contain some link's URL that cannot be properly opened by your current browser."
       ],
       "Trusted keys are not valid for sending": [
         "As chaves confiadas não são válidas para o envio"
@@ -1100,9 +1100,6 @@
       ]
     },
     "Error message": {
-      "Brace yourself till we get the error fixed.": [
-        "Por favor, aguarde até que o erro seja corrigido."
-      ],
       "Error: ${ errorMessage }": [
         "Erro: ${ errorMessage }"
       ],
@@ -1495,9 +1492,6 @@
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Seleccione o formato de correio predefinido a utilizar para este endereço electrónico."
-      ],
-      "Select what you want to move from Google.": [
-        "Select what you want to import from Google."
       ],
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "Algumas das suas respostas a ocorrências previamente actualizadas pelo organizador serão perdidas."
@@ -2043,11 +2037,6 @@
       ],
       "on the third Wednesday": [
         "na terceira Quarta-feira"
-      ]
-    },
-    "new_plans: info": {
-      "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
-        "Introducing Proton’s refreshed look.${ br }Many services, one mission. Welcome to an internet where privacy is the default."
       ]
     },
     "Notification": {

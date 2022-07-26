@@ -38,9 +38,6 @@
       "Add address": [
         "加入電郵位址"
       ],
-      "Add calendar": [
-        "加入行事曆"
-      ],
       "Add condition": [
         "加入條件"
       ],
@@ -61,9 +58,6 @@
       ],
       "Add label": [
         "加入標籤"
-      ],
-      "Add notification": [
-        "加入通知"
       ],
       "Add PayPal": [
         "加入 PayPal"
@@ -164,17 +158,11 @@
       "Continue to ${ name }": [
         "繼續使用 ${ name }"
       ],
-      "Continue with Google": [
-        "使用 Google 繼續"
-      ],
       "Copy": [
         "複製"
       ],
       "Copy email to clipboard": [
         "複製電郵位址至剪貼簿"
-      ],
-      "Copy link": [
-        "複製連結"
       ],
       "Create": [
         "加入"
@@ -185,9 +173,6 @@
       "Create address": [
         "建立電郵位址"
       ],
-      "Create calendar": [
-        "創建行事曆"
-      ],
       "Create folder": [
         "建立資料夾"
       ],
@@ -196,9 +181,6 @@
       ],
       "Create label": [
         "建立標籤"
-      ],
-      "Create link": [
-        "創建連結"
       ],
       "Current plan": [
         "現行方案"
@@ -220,9 +202,6 @@
       ],
       "Delete": [
         "刪除"
-      ],
-      "Delete link": [
-        "刪除連結"
       ],
       "Delete permanently": [
         "永久刪除"
@@ -302,6 +281,9 @@
       "Edit subscription": [
         "更換授權約期"
       ],
+      "Emoji": [
+        "表情符號"
+      ],
       "enable desktop notifications": [
         "啟用桌面通知"
       ],
@@ -316,9 +298,6 @@
       ],
       "Export": [
         "匯出"
-      ],
-      "Export ICS": [
-        "匯出 ICS"
       ],
       "Export key": [
         "匯出金鑰"
@@ -379,9 +358,6 @@
       ],
       "Import emails": [
         "匯入電郵"
-      ],
-      "Import from .ics": [
-        "從 .ics 匯入"
       ],
       "Import key": [
         "匯入金鑰"
@@ -524,17 +500,11 @@
       "Remove bonuses": [
         "移除贈品"
       ],
-      "Remove calendar": [
-        "移除行事曆"
-      ],
       "Remove gift code": [
         "移除禮品代碼"
       ],
       "Remove this label": [
         "移除此標籤"
-      ],
-      "Remove this notification": [
-        "移除此通知"
       ],
       "Rename": [
         "重新命名"
@@ -602,26 +572,20 @@
       "Save address": [
         "儲存電郵位址"
       ],
-      "Save ICS file": [
-        "儲存 ICS 檔案"
-      ],
       "Save selected": [
         "儲存選定項目"
+      ],
+      "Search countries": [
+        "搜尋國家與地區"
+      ],
+      "Search settings": [
+        "搜尋的設定值"
       ],
       "Select ${ planTitle }": [
         "選擇方案 ${ planTitle }"
       ],
-      "Select calendar view": [
-        "選擇行事曆檢視方式"
-      ],
       "Select files": [
         "選取檔案"
-      ],
-      "Select language for invitation emails": [
-        "選取邀請電郵的語言"
-      ],
-      "Select timezone": [
-        "選擇時區"
       ],
       "send auto-reply email": [
         "傳送自動回覆電郵"
@@ -655,12 +619,6 @@
       ],
       "Show labels": [
         "顯示標籤"
-      ],
-      "Show less": [
-        "顯示更少"
-      ],
-      "Show more": [
-        "顯示更多"
       ],
       "Show preview": [
         "顯示預覽"
@@ -1135,14 +1093,6 @@
         "不支援的行事曆格式"
       ]
     },
-    "Calendar view": {
-      "Month": [
-        "月"
-      ],
-      "Week": [
-        "週"
-      ]
-    },
     "Checkout row": {
       "${ users } user": [
         "${ users } 個使用者"
@@ -1444,9 +1394,6 @@
       "Burkina Faso": [
         "有吉納法索"
       ],
-      "Burma": [
-        "緬甸"
-      ],
       "Burundi": [
         "蒲隆地"
       ],
@@ -1500,9 +1447,6 @@
       ],
       "Costa Rica": [
         "哥斯大黎加"
-      ],
-      "Cote d'Ivoire\"": [
-        "象牙海岸"
       ],
       "Croatia": [
         "克羅埃西亞"
@@ -1984,9 +1928,6 @@
       "Svalbard and Jan Mayen": [
         "斯瓦巴和揚馬延"
       ],
-      "Swaziland": [
-        "史瓦濟蘭"
-      ],
       "Sweden": [
         "瑞典"
       ],
@@ -2148,7 +2089,7 @@
       ]
     },
     "Description": {
-      "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }": [
+      "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }..": [
         "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }."
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
@@ -2217,20 +2158,6 @@
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "協助我們改善！"
-      ]
-    },
-    "Duration": {
-      "120 minutes": [
-        "120 分鐘"
-      ],
-      "30 minutes": [
-        "30 分鐘"
-      ],
-      "60 minutes": [
-        "60 分鐘"
-      ],
-      "90 minutes": [
-        "90 分鐘"
       ]
     },
     "Email body for description (description part)": {
@@ -2453,9 +2380,6 @@
       ],
       "Name on card required": [
         "持卡人姓名必須填寫"
-      ],
-      "Name required": [
-        "名稱為必填"
       ],
       "No active sessions": [
         "無使用中工作階段"
@@ -2735,9 +2659,6 @@
       "Calendar": [
         "行事曆"
       ],
-      "Calendar timezone not supported": [
-        "行事曆時區不受支援"
-      ],
       "Component with wrong format": [
         "元件的格式有誤"
       ],
@@ -2813,9 +2734,6 @@
       "Timezone": [
         "時區"
       ],
-      "Timezone not supported": [
-        "時區不受支援"
-      ],
       "To-do entry": [
         "待辦事項"
       ],
@@ -2827,9 +2745,6 @@
       ]
     },
     "Error message": {
-      "Brace yourself till we get the error fixed.": [
-        "不好意思，這個錯誤有待修正。我們將會處理。"
-      ],
       "Error: ${ errorMessage }": [
         "錯誤：${ errorMessage }"
       ],
@@ -3050,9 +2965,6 @@
       "Actions": [
         "動作"
       ],
-      "Calendar": [
-        "行事曆"
-      ],
       "Event": [
         "事件"
       ],
@@ -3065,17 +2977,11 @@
       "Key type": [
         "金鑰類型"
       ],
-      "Label": [
-        "標籤"
-      ],
       "Notifications": [
         "通知"
       ],
       "Organization key fingerprint": [
         "組織金鑰指紋"
-      ],
-      "Status": [
-        "狀態"
       ],
       "Time": [
         "時間"
@@ -3502,9 +3408,6 @@
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } 若你選擇繼續，你會遺失所有的已加密資料。"
       ],
-      "${ calendarName } will be set as default calendar.": [
-        "${ calendarName } 將設成預設行事曆。"
-      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } 個加入行事曆"
       ],
@@ -3625,9 +3528,6 @@
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "一個好記且讓您很快辨識它用在何處，如此一來就可輕鬆將其撤銷或是延展。"
       ],
-      "A recovery file lets you unlock and view your data after an account reset. ": [
-        "A recovery file lets you unlock and view your data after an account reset."
-      ],
       "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password.": [
         "如果您忘記密碼，復原短語將讓您可以存取您的帳號並復原您的加密訊息。"
       ],
@@ -3660,9 +3560,6 @@
       ],
       "Add image URL": [
         "加入圖像 URL"
-      ],
-      "Add label": [
-        "加入標籤"
       ],
       "Additional options": [
         "額外設定"
@@ -3721,23 +3618,11 @@
       "and": [
         "和"
       ],
-      "Anyone with this link can see all the event details of this calendar such as title, location or participants.": [
-        "任何人憑此連結可見到此行事曆中所有的事件詳情，例如標題、地點或參與者。"
-      ],
-      "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
-        "任何人憑此連結可見到您在行事曆上是空閒還是忙碌，惟見不到事件詳情，例如標題、地點或參與者。"
-      ],
-      "Anyone with this link won't be able to sync or get future updates for your calendar. If you want to give them access again, you will have to create a new link.": [
-        "將無人可再由此連結同步或更新您未來的行程。 若您想要讓他們能再次與您同步，您需要產生一組新的連。節"
-      ],
       "AOL reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
         "AOL 讀取您的個人資料以供給廣告商及其它第三方。為更好保障隱私，請建立一個安全的電郵位址。"
       ],
       "Are you sure you want to delete this address?": [
         "您確定要刪除此電郵位址嗎？"
-      ],
-      "Are you sure you want to delete this calendar?": [
-        "您確定要刪除此行事曆嗎？"
       ],
       "Are you sure you want to delete this domain?": [
         "您確定要刪除此網域嗎？"
@@ -3823,9 +3708,6 @@
       "By leaving now, changes may not be saved": [
         "若現在離開，所作變更將不儲存"
       ],
-      "By sharing the full event details of this calendar, you accept to grant Proton access to this calendar's encrypted information.": [
-        "當共享此行事曆的完整事件詳情時，您同意授予 Proton 存取此行事曆中的加密資訊。"
-      ],
       "Center": [
         "置中"
       ],
@@ -3856,9 +3738,6 @@
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "為匯入的郵件建立標籤、設定這次匯入的時間範圍以及要匯入的標籤。"
       ],
-      "Create a link to your calendar and share it with anyone outside Proton. Only you can add or remove events.": [
-        "為您的行事曆建立連結，並共享給 Proton 外的任何人。只有您可以加入或移除事件。"
-      ],
       "Create a new account and share the email address and password with the user.": [
         "創建一組新帳號，並將電郵位址與密碼分配給使用者。"
       ],
@@ -3880,20 +3759,11 @@
       "Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.": [
         "目前所有可用的儲存空間已分配給系統管理員帳號。請減少系統管理員帳號的分配，以釋出空間給額外的使用者。您可隨時升級您的帳號，以增加總儲存空間。"
       ],
-      "Custom": [
-        "自訂"
-      ],
       "Custom email domains": [
         "自訂電郵網域"
       ],
-      "Daily": [
-        "每日"
-      ],
       "Data locked": [
         "資料已上鎖"
-      ],
-      "Delete link?": [
-        "刪除連結?"
       ],
       "Discount applied to your subscription with coupon ${ code }": [
         "您使用優惠券 ${ code } 的訂閱已享用折扣"
@@ -3939,9 +3809,6 @@
       ],
       "Earned ${ rewards } of ${ rewardsLimit } ${ planName } months.": [
         "已賺取 ${ rewards } 個月，最多 ${ rewardsLimit } 個月 ${ planName } $。"
-      ],
-      "Edit label": [
-        "編輯標籤"
       ],
       "Edit link": [
         "編輯連結"
@@ -4003,9 +3870,6 @@
       "Enter your recovery phone number and we will send you your username or email address.": [
         "請輸入您的復原手機號碼，我們將向您發送您的使用者名稱或電郵位址。"
       ],
-      "Event invitations and RSVPs will be sent in this language.": [
-        "活動邀請與回函將會以此語言寄送。"
-      ],
       "Expired": [
         "已過期"
       ],
@@ -4050,9 +3914,6 @@
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "如果另一位系統管理員更改了此密碼，您將需要向其索取新的組織密碼。"
-      ],
-      "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
-        "若系統時區與目前時區偏好設定不符，將詢問您是否更新 (最多每天一次)。"
       ],
       "If this domain is currently receiving emails, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "如果此網域目前正在接收電郵，請選取 ${ boldAddresses } 分頁並加入所有作用中的電郵位址，然後再更動 MX 紀錄以確保平穩過渡。"
@@ -4228,17 +4089,8 @@
       "Let your contacts know you care about their privacy.": [
         "讓您的聯絡人知道您在乎他們的隱私。"
       ],
-      "Limited view: others see if you're busy. Full view: shows all event details, including name, location, or participants.": [
-        "有限檢視：其他人見到您是否忙碌。完整檢視：顯示所有事件詳情，包括名稱、地點或參與者。"
-      ],
       "Link copied to clipboard": [
         "連結已複製到剪貼簿"
-      ],
-      "Link created": [
-        "連結已建立"
-      ],
-      "Link deleted": [
-        "連結已刪除"
       ],
       "Link type": [
         "連結類型"
@@ -4272,9 +4124,6 @@
       ],
       "Merged": [
         "合併"
-      ],
-      "Monthly ${ onDayString }": [
-        "每月 ${ onDayString } 日"
       ],
       "more": [
         "更多"
@@ -4350,9 +4199,6 @@
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "只有當您使用 PGP 寄送給非 ${ BRAND_NAME } 收件人時，才需修改這些設定。"
-      ],
-      "Only you can see the labels.": [
-        "只有您可以見到標籤。"
       ],
       "Or select a particular server:": [
         "或挑選特定的伺服器："
@@ -4534,9 +4380,6 @@
       "Select a service provider to start": [
         "選取您的服務提供者以開始"
       ],
-      "Select what you want to move from Google.": [
-        "選取您要從 Google 移動的項目"
-      ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "選取哪一個行事曆要匯入。我們將建立對應匯入行事曆的新行事曆，直到20個為限。"
       ],
@@ -4617,9 +4460,6 @@
       ],
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "這個 ${ boldDataLocked } 將不會再顯示，但您仍然可以解鎖您的資料在 ${ encryptionAndKeysLink }。"
-      ],
-      "The calendar will be removed from your account.": [
-        "該行事曆將會從您的帳號中移除。"
       ],
       "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
         "清單首列為您預設的電郵位址。請拖放以重新排序您的電郵位址。"
@@ -4813,9 +4653,6 @@
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "根據目前的負載與地理位置挑選最佳的伺服器： ${ formattedBestServerName }"
       ],
-      "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
-        "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux."
-      ],
       "Verification can take a few minutes.": [
         "驗證或需時數分鐘。"
       ],
@@ -4867,9 +4704,6 @@
       "Week": [
         "週"
       ],
-      "Week and month views only apply to desktop.": [
-        "週和月檢視僅適用於電腦版。"
-      ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "我們將會傳送重設代碼到您先前所提供的電郵位址。"
       ],
@@ -4905,9 +4739,6 @@
       ],
       "Yandex records your online activity and reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
         "Yandex 記錄您的線上活動並讀取您的個人資料，以供給廣告商及其它第三方。為更好保障隱私，請建立一個安全的電郵位址。"
-      ],
-      "Yearly": [
-        "每年"
       ],
       "You already have a free account": [
         "您已有一個免費帳號"
@@ -4975,12 +4806,6 @@
       "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription.": [
         "您需移除其它額外添加的個人行事曆，以及共享行事曆的連結後，即可進行取消訂購授權。"
       ],
-      "You need to have a personal calendar to create a link.": [
-        "建立連結需要有個人行事曆。"
-      ],
-      "You need to have an active personal calendar to import your events from .ics.": [
-        "您需要有使用中的個人行事曆才可以從 .ics 匯入您的事件。"
-      ],
       "You need to have an active personal calendar to import your events.": [
         "您需要有使用中的個人行事曆才可匯入您的事件。"
       ],
@@ -4992,9 +4817,6 @@
       ],
       "You should export a backup of this key in case you need to restore data it encrypted.": [
         "您最好匯出一份此金鑰的備份，以備用於還原加密的資料。"
-      ],
-      "You still need to reply to invitations for the host to see your response.": [
-        "您仍需回覆邀請以便主辦者了解您的回覆。"
       ],
       "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
         "您將會 ${ loseAllData } 在您的 ${ BRAND_NAME } 帳號。要復原，您將需要輸入您的舊密碼。"
@@ -5554,14 +5376,14 @@
       "Attach screenshot(s)": [
         "附加螢幕截圖（多個）"
       ],
-      "Auto-detect primary time zone": [
-        "自動偵測主要時區"
-      ],
       "Auto-load embedded images": [
         "自動載入嵌入圖像"
       ],
       "Auto-reply": [
         "自動回覆"
+      ],
+      "Auto-unsubscribe": [
+        "自動解除訂閱"
       ],
       "Billing cycle": [
         "帳單週期"
@@ -5613,9 +5435,6 @@
       ],
       "Code is 6 digits without spaces": [
         "驗證碼為六位數且無空格"
-      ],
-      "Color": [
-        "顏色"
       ],
       "Composer": [
         "撰寫器"
@@ -5701,32 +5520,17 @@
       "Days of the week": [
         "星期"
       ],
-      "Default email address": [
-        "預設電郵位址"
-      ],
       "Default language": [
         "預設語言"
       ],
-      "Default language (${ defaultLanguage })": [
-        "預設語言 (${ defaultLanguage })"
-      ],
-      "Default notifications": [
-        "預設通知"
-      ],
       "Default PGP scheme": [
         "預設 PGP 格式"
-      ],
-      "Default view": [
-        "預設檢視"
       ],
       "Delete": [
         "刪除"
       ],
       "Density": [
         "密度"
-      ],
-      "Description": [
-        "描述"
       ],
       "Device/certificate name": [
         "裝置/憑證 名稱"
@@ -5736,9 +5540,6 @@
       ],
       "Discount": [
         "折扣"
-      ],
-      "Display": [
-        "顯示"
       ],
       "Display name": [
         "顯示名稱"
@@ -6076,15 +5877,6 @@
       "Send auto-reply": [
         "發送自動回覆"
       ],
-      "Send in": [
-        "傳送語言"
-      ],
-      "Show secondary time zone": [
-        "顯示次要時區"
-      ],
-      "Show week numbers": [
-        "顯示週數"
-      ],
       "Sign external messages": [
         "簽署外部郵件"
       ],
@@ -6169,9 +5961,6 @@
       "Upload 1 or more recovery files or encryption keys": [
         "上載一個或更多的帳號救援檔案或是加密金鑰"
       ],
-      "URL": [
-        "網址"
-      ],
       "Use folder colors": [
         "使用資料夾顏色"
       ],
@@ -6229,9 +6018,6 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "是的，我要永久刪除此帳號以及當中所有的資料。"
       ],
-      "Your calendar URL": [
-        "您的行事曆網址"
-      ],
       "Your password (admin)": [
         "您的密碼（管理員）"
       ],
@@ -6278,9 +6064,6 @@
       ],
       "Proton company announcements": [
         "Proton 公司公告"
-      ],
-      "Proton for business": [
-        "Proton for Business"
       ],
       "Proton for Business newsletter": [
         "Proton 企業版電子報"
@@ -6566,50 +6349,6 @@
         "瑞士法郎"
       ]
     },
-    "Monthly recurring event, repeats on": {
-      "on the first Friday": [
-        "第一個週五"
-      ],
-      "on the first Monday": [
-        "第一個週一"
-      ],
-      "on the first Saturday": [
-        "第一個週六"
-      ],
-      "on the first Sunday": [
-        "第一個週日"
-      ],
-      "on the first Thursday": [
-        "第一個週四"
-      ],
-      "on the first Tuesday": [
-        "第一個週二"
-      ],
-      "on the first Wednesday": [
-        "第一個週三"
-      ],
-      "on the second Friday": [
-        "第二個週五"
-      ],
-      "on the second Monday": [
-        "第二個週一"
-      ],
-      "on the second Saturday": [
-        "第二個週六"
-      ],
-      "on the second Sunday": [
-        "第二個週日"
-      ],
-      "on the second Thursday": [
-        "第二個週四"
-      ],
-      "on the second Tuesday": [
-        "第二個週二"
-      ],
-      "on the second Wednesday": [
-        "第二個週三"
-      ]
-    },
     "Moved to black/whitelist": {
       "${ Domain } removed": [
         "${ Domain } 已移除"
@@ -6691,10 +6430,7 @@
       ]
     },
     "new_plans: tooltip": {
-      "Keeps you protected by blocking all network connections when you are accidentally disconnected from our VPN server": [
-        "Keeps you protected by blocking all network connections when you are unexpectedly disconnected from our VPN server."
-      ],
-      "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections": [
+      "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections..": [
         "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections."
       ],
       "Our servers’ hard disks are fully encrypted with multiple password layers so your data is protected even if our hardware is compromised": [
@@ -6710,14 +6446,6 @@
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "OpenVPN / IKEv2 認證已重新生成"
-      ]
-    },
-    "Notification type": {
-      "email": [
-        "電郵"
-      ],
-      "notification": [
-        "通知"
       ]
     },
     "Option": {
@@ -6820,6 +6548,9 @@
       "Android": [
         "Android"
       ],
+      "Ask each time": [
+        "每一次都詢問我"
+      ],
       "Automatic (${ defaultDay })": [
         "自動 (${ defaultDay })"
       ],
@@ -6873,6 +6604,12 @@
       ],
       "Normal": [
         "一般"
+      ],
+      "Off": [
+        "關"
+      ],
+      "On": [
+        "開"
       ],
       "Permanent": [
         "永久"
@@ -6985,11 +6722,6 @@
         "PayPal"
       ]
     },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "寄送金鑰所定義的使用者識別碼 (${ keyUserIds }) 中找不到電郵位址"
-      ]
-    },
     "Placeholder": {
       "A way to contact you": [
         "有甚麼途徑可以聯絡您"
@@ -7095,14 +6827,6 @@
     "Price": {
       "Free": [
         "免費"
-      ]
-    },
-    "Primary timezone": {
-      "Primary time zone": [
-        "主要時區"
-      ],
-      "Secondary time zone": [
-        "次要時區"
       ]
     },
     "Private Member": {
@@ -7393,18 +7117,6 @@
       ],
       "Bug reported": [
         "錯誤已回報"
-      ],
-      "Calendar added. It might take a few minutes to sync.": [
-        "行事曆已加入。同步或需時幾分鐘。"
-      ],
-      "Calendar created": [
-        "行事曆已創建"
-      ],
-      "Calendar removed": [
-        "行事曆已移除"
-      ],
-      "Calendar updated": [
-        "行事曆已更新"
       ],
       "Canceling import": [
         "正在取消匯入"
@@ -7839,9 +7551,6 @@
       "Create a ${ mailAppName } address": [
         "建立 ${ mailAppName } 電郵位址"
       ],
-      "Create calendar": [
-        "創建行事曆"
-      ],
       "Create your ${ BRAND_NAME } Account": [
         "創建您的 ${ BRAND_NAME } 帳號"
       ],
@@ -7905,9 +7614,6 @@
       "Delete account": [
         "刪除帳號"
       ],
-      "Delete calendar": [
-        "刪除行事曆"
-      ],
       "Delete key permanently?": [
         "永久刪除金鑰?"
       ],
@@ -7947,9 +7653,6 @@
       "Edit Block List": [
         "編輯封鎖清單"
       ],
-      "Edit calendar": [
-        "編輯行事曆"
-      ],
       "Edit credit/debit card": [
         "編輯信用卡/扣帳卡"
       ],
@@ -7985,9 +7688,6 @@
       ],
       "Error": [
         "錯誤"
-      ],
-      "Export calendar": [
-        "匯出行事曆"
       ],
       "Export private key": [
         "匯出私鑰"
@@ -8196,9 +7896,6 @@
       "Referral tracker": [
         "推介追蹤"
       ],
-      "Remove calendar": [
-        "移除行事曆"
-      ],
       "Report a problem": [
         "回報問題"
       ],
@@ -8225,9 +7922,6 @@
       ],
       "Secure email based in Switzerland": [
         "總部設於瑞士的安全電郵"
-      ],
-      "Security": [
-        "安全性"
       ],
       "Security logs": [
         "安全記錄檔"
@@ -8375,9 +8069,6 @@
       ],
       "Your ${ domain } address is active": [
         "您的 ${ domain } 位址已啟用"
-      ],
-      "Your calendar link": [
-        "您的行事曆連結"
       ],
       "Your current plan": [
         "您目前的方案"
@@ -8554,6 +8245,9 @@
       ],
       "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
         "當您按下一則連結時，此防釣魚功能將詢問您以確認網頁的 URL。"
+      ],
+      "When you move an email to spam, you’ll automatically be unsubscribed from the sender’s mailing lists.": [
+        "當您將電郵移動至垃圾信件時，您將會自動地從寄件者的傳送清單中移除。"
       ],
       "You have locally decrypted this key": [
         "您已在本機解密此金鑰"

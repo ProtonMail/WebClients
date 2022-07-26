@@ -4,20 +4,6 @@
     "language": "kab_DZ"
   },
   "contexts": {
-    "Access level": {
-      "Full": [
-        "Ummid"
-      ],
-      "Full view": [
-        "Timeẓri yemmden"
-      ],
-      "Limited": [
-        "S talast"
-      ],
-      "Limited view": [
-        "Timeẓri s talast"
-      ]
-    },
     "Action": {
       "${ address } is available.": [
         "${ address } tella."
@@ -52,9 +38,6 @@
       "Add address": [
         "Rnu tansa"
       ],
-      "Add calendar": [
-        "Rnu awitay"
-      ],
       "Add condition": [
         "Rnu tawtilt"
       ],
@@ -75,9 +58,6 @@
       ],
       "Add label": [
         "Rnu tabzimt"
-      ],
-      "Add notification": [
-        "Rnu alɣu"
       ],
       "Add PayPal": [
         "Rnu PayPal"
@@ -175,17 +155,11 @@
       "Continue to ${ name }": [
         "Kemmel ɣer ${ name }"
       ],
-      "Continue with Google": [
-        "Kemmel s Google"
-      ],
       "Copy": [
         "Nɣel"
       ],
       "Copy email to clipboard": [
         "Nɣel imayl ɣef afus"
-      ],
-      "Copy link": [
-        "Nɣel aseɣwen"
       ],
       "Create": [
         "Snulfu-d"
@@ -196,9 +170,6 @@
       "Create address": [
         "Snulfu-d tansa"
       ],
-      "Create calendar": [
-        "Snulfu-d awitay"
-      ],
       "Create folder": [
         "Snulfu-d akaram"
       ],
@@ -207,9 +178,6 @@
       ],
       "Create label": [
         "Rnu tabzimt"
-      ],
-      "Create link": [
-        "Rnu aseɣwen"
       ],
       "Current plan": [
         "Aɣawas amiran"
@@ -231,9 +199,6 @@
       ],
       "Delete": [
         "Ekkes"
-      ],
-      "Delete link": [
-        "Kkes aseɣwen"
       ],
       "Delete permanently": [
         "Kkes i lebda"
@@ -328,9 +293,6 @@
       "Export": [
         "Sifeḍ"
       ],
-      "Export ICS": [
-        "Sifeḍ ICS"
-      ],
       "Export key": [
         "Sifeḍ tasarut"
       ],
@@ -387,9 +349,6 @@
       ],
       "Import emails": [
         "Kter imaylen"
-      ],
-      "Import from .ics": [
-        "Kter seg .ics"
       ],
       "Import key": [
         "Kter tasarut"
@@ -532,17 +491,11 @@
       "Remove bonuses": [
         "Kkes ibunusen"
       ],
-      "Remove calendar": [
-        "Kkes awitay"
-      ],
       "Remove gift code": [
         "Kkes tangalt n usefk"
       ],
       "Remove this label": [
         "Kkes tabzimt-a"
-      ],
-      "Remove this notification": [
-        "Kkes talɣut-a"
       ],
       "Rename": [
         "Semi"
@@ -610,26 +563,14 @@
       "Save address": [
         "Sekles tansa"
       ],
-      "Save ICS file": [
-        "Sekles ifuyla ICS"
-      ],
       "Save selected": [
         "Sekles tafrant"
       ],
       "Select ${ planTitle }": [
         "Fren ${ planTitle }"
       ],
-      "Select calendar view": [
-        "Fren askan n uwitay"
-      ],
       "Select files": [
         "Fren ifuyla"
-      ],
-      "Select language for invitation emails": [
-        "Fren tutlayt i yimaylen n tinnubga"
-      ],
-      "Select timezone": [
-        "Fren izḍi usrid"
       ],
       "send auto-reply email": [
         "azen imayl n tririt tawurmant"
@@ -663,12 +604,6 @@
       ],
       "Show labels": [
         "Sken tibzimin"
-      ],
-      "Show less": [
-        "Sken cwiṭ"
-      ],
-      "Show more": [
-        "Sken ugar"
       ],
       "Show preview": [
         "Sken taskant"
@@ -1116,32 +1051,7 @@
         "Tweet"
       ]
     },
-    "Calendar import section description": {
-      "You can import ICS files from another calendar to ${ CALENDAR_APP_NAME }. This lets you quickly import one event or your entire agenda.": [
-        "Tzemreḍ ad d-tketreḍ ifuyla ICS seg uwitay-nniḍen ɣer ${ CALENDAR_APP_NAME }. Aya ad ak·akem-yeǧǧ ad d-tketreḍ s tɣawla yiwe n uneḍru neɣ akk awitay-inek·inem."
-      ]
-    },
-    "Calendar link purpose update success message": {
-      "Label added": [
-        "Tabzimt tettwarna"
-      ],
-      "Label deleted": [
-        "Tabzimt tettwakkes"
-      ],
-      "Label edited": [
-        "Tabzimt tettwaẓreg"
-      ]
-    },
     "Calendar status": {
-      "Active": [
-        "Urmid"
-      ],
-      "Default": [
-        "Amezwer"
-      ],
-      "Disabled": [
-        "Yensa"
-      ],
       "Not synced": [
         "Ur yemtawi ara"
       ],
@@ -1169,29 +1079,10 @@
         "Amasal n uwitay ur nettusefrak ara"
       ]
     },
-    "Calendar view": {
-      "Day": [
-        "Ass"
-      ],
-      "Month": [
-        "Ayyur"
-      ],
-      "Week": [
-        "Imalas"
-      ]
-    },
     "Checkout row": {
       "${ users } user": [
         "${ users } n useqdac",
         "${ users } n yiseqdacen"
-      ]
-    },
-    "Collapsible tooltip": {
-      "Close": [
-        "Mdel"
-      ],
-      "Open": [
-        "Ldi"
       ]
     },
     "color": {
@@ -1471,9 +1362,6 @@
       "Burkina Faso": [
         "Burkina Fasu"
       ],
-      "Burma": [
-        "Birmani"
-      ],
       "Burundi": [
         "Burundi"
       ],
@@ -1527,9 +1415,6 @@
       ],
       "Costa Rica": [
         "Kusta Rika"
-      ],
-      "Cote d'Ivoire\"": [
-        "Kuṭ Divwar\""
       ],
       "Croatia": [
         "Karwaṣya"
@@ -1996,9 +1881,6 @@
       "Svalbard and Jan Mayen": [
         "Svalbard d Jan Mayen"
       ],
-      "Swaziland": [
-        "Swaṭini"
-      ],
       "Sweden": [
         "Sswid"
       ],
@@ -2129,36 +2011,6 @@
         "/useqdac i waggur"
       ]
     },
-    "Daily recurring event, frequency": {
-      "${ count } time": [
-        "${ count } n tikkelt",
-        "${ count } n tikkal"
-      ],
-      "Daily": [
-        "Yal ass"
-      ],
-      "Daily, ${ timesString }": [
-        "Yal ass, ${ timesString }"
-      ],
-      "Daily, ${ untilString }": [
-        "Yal ass, ${ untilString }"
-      ],
-      "Every ${ interval } day": [
-        "Yal ${ interval } ass",
-        "Yal ${ interval } n wussan"
-      ],
-      "Every ${ interval } day, ${ timesString }": [
-        "Yal ${ interval } ass, ${ timesString }",
-        "Yal ${ interval } n wussan, ${ timesString }"
-      ],
-      "Every ${ interval } day, ${ untilString }": [
-        "Yal ${ interval } ass, ${ untilString }",
-        "Yal ${ interval } n wussan, ${ untilString }"
-      ],
-      "until ${ dateString }": [
-        "alamma d ${ dateString }"
-      ]
-    },
     "Day": {
       "Friday": [
         "Sem"
@@ -2193,7 +2045,7 @@
       ]
     },
     "Description": {
-      "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }": [
+      "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }..": [
         "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }."
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
@@ -2245,20 +2097,6 @@
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "Ɛawen-aɣ ad nennarni!"
-      ]
-    },
-    "Duration": {
-      "120 minutes": [
-        "120 n tesdatin"
-      ],
-      "30 minutes": [
-        "30 n tesdatin"
-      ],
-      "60 minutes": [
-        "60 n tesdatin"
-      ],
-      "90 minutes": [
-        "90 n tesdatin"
       ]
     },
     "Email body for description (description part)": {
@@ -2469,9 +2307,6 @@
       ],
       "Name on card required": [
         "Isem n tkarḍa ilaq"
-      ],
-      "Name required": [
-        "Isem yettwasra"
       ],
       "No active sessions": [
         "Ulac tiɣimiyin turmidin"
@@ -2748,9 +2583,6 @@
       "Calendar": [
         "Awitay"
       ],
-      "Calendar timezone not supported": [
-        "Izḍi usrid n uwitay ur yettusefrak ara"
-      ],
       "Component with wrong format": [
         "Asuddis s yir amasal"
       ],
@@ -2823,9 +2655,6 @@
       "Timezone": [
         "Iẓdi n wakud"
       ],
-      "Timezone not supported": [
-        "Izḍi usrid ur yettusefrak ara"
-      ],
       "To-do entry": [
         "Anekcum n twuriwin"
       ],
@@ -2837,14 +2666,8 @@
       ]
     },
     "Error message": {
-      "Brace yourself till we get the error fixed.": [
-        "Ttxil rǧu simara ad yefru ugur."
-      ],
       "Error: ${ errorMessage }": [
         "Tuccḍa: ${ errorMessage }"
-      ],
-      "Invalid URL": [
-        "Yir URL"
       ],
       "Oops, something went wrong": [
         "Ihuh, yeḍran-d wugur"
@@ -2870,14 +2693,6 @@
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Ulac tugna yettwafernen"
-      ]
-    },
-    "Error when exporting event from calendar": {
-      "Event @ ${ timeString }": [
-        "Aneḍru @ ${ timeString }"
-      ],
-      "Event from ${ timeString }, ${ rruleString }": [
-        "Aneḍru si ${ timeString }, ${ rruleString }"
       ]
     },
     "Event invitation error": {
@@ -2921,54 +2736,6 @@
     "Event title": {
       "(no title)": [
         "(ulac azwel)"
-      ]
-    },
-    "Export calendar": {
-      "${ totalProcessed }/${ totalToProcess } event exported": [
-        "${ totalProcessed }/${ totalToProcess } n tedyant yettwasifḍen",
-        "${ totalProcessed }/${ totalToProcess } n tedyanin yettwasifḍen"
-      ],
-      "Calendar successfully exported. You can now save the ICS file.": [
-        "Awitay yettusifeḍ akken iwata. Tzemreḍ tura ad teskelseḍ afaylu ICS."
-      ],
-      "Decrypting events from your calendar: ${ totalProcessed }/${ totalToProcess }": [
-        "Awgelhen n tedyanin seg uwitay-ik·im: ${ totalProcessed }/${ totalToProcess }"
-      ],
-      "Due to a password reset, none of your events could be decrypted and exported.": [
-        "Imi awal uffir yules awennez, ulac yineḍruyen ara yettuwglehnen neɣ ara i ttusifḍen."
-      ],
-      "Due to a password reset, some of your events could not be decrypted and exported.": [
-        "Imi awal uffir yules awennez, kra n yineḍruyen ahat ulamek ara ttwawglehnen neɣ ara ttusifḍen."
-      ],
-      "Error decrypting event": [
-        "Tuccḍa deg uzmak n tedyant"
-      ],
-      "Learn how to restore encrypted events with old password": [
-        "Issin amek ara d-terreḍ ineḍruyen iwgelhanen s wawal uffir aqbur"
-      ],
-      "Loading events": [
-        "Asali n tedyanin"
-      ],
-      "None of the events could be exported.": [
-        "Ulac yiwet n tedyant ur tezmir ad d-tettwasifeḍ."
-      ],
-      "Password reset - event cannot be decrypted": [
-        "Awal uffir yules awennez - aneḍru ulamek ara ittuwgelhen"
-      ],
-      "Password reset - multiple events cannot be decrypted": [
-        "Awal uffir yules awennez - aṭas n yineḍruyen ulamek ara ttuwglehnen"
-      ],
-      "Please don't close the tab before the exporting process is finished.": [
-        "Ttxil-k·m ur ttamdal ara iccer seld ad yekfu ukala n usifeḍ."
-      ],
-      "Some of your events could not be exported.": [
-        "Kra n tedyanin-ik·im ur zmirent ara ad ttwasifḍent."
-      ],
-      "The internet connection was interrupted, causing the export process to fail. Please try again.": [
-        "Tuqqna n internet tegzem, tegla-d s truẓi n ukala n uisfeḍTtxil-k·m εreḍ tikkelt-nniḍen."
-      ],
-      "You can save an ICS file of the events that were successfully exported.": [
-        "Tzemreḍ ad teskelseḍ afaylu ICS n tedyanin i d-yettwasifḍen akken iwata."
       ]
     },
     "Feature": {
@@ -3115,9 +2882,6 @@
       "Actions": [
         "Tigawin"
       ],
-      "Calendar": [
-        "Awitay"
-      ],
       "Event": [
         "Amaynut"
       ],
@@ -3130,26 +2894,14 @@
       "Key type": [
         "Anaw n tsarutt"
       ],
-      "Label": [
-        "Tabzimt"
-      ],
-      "Name": [
-        "Isem"
-      ],
       "Notifications": [
         "Ilɣa"
       ],
       "Organization key fingerprint": [
         "Adsil umdin n tsarutt n tuddsa"
       ],
-      "Status": [
-        "Addad"
-      ],
       "Time": [
         "Akud"
-      ],
-      "What others see": [
-        "Ayen ttwalin wiyaḍ"
       ]
     },
     "Header for addresses table": {
@@ -3664,9 +3416,6 @@
       "30-day money-back guarantee.": [
         "Aɣram ɣef 30 n wussan yettwaḍmen."
       ],
-      "A recovery file lets you unlock and view your data after an account reset. ": [
-        "A recovery file lets you unlock and view your data after an account reset."
-      ],
       "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password.": [
         "Tafyirt n tririt ad k·kem-teǧǧ ad tkecmeḍ ɣer umiḍan-ik·im rnu ad d-tarreḍ iznan yettwawgelhen ma tettuḍ awal-ik·im uffir."
       ],
@@ -3696,9 +3445,6 @@
       ],
       "Add image URL": [
         "Rnu URL n tugna"
-      ],
-      "Add label": [
-        "Rnu tabzimt"
       ],
       "Additional options": [
         "Tixtiṛiyin-nniḍen"
@@ -3753,9 +3499,6 @@
       ],
       "and": [
         "akked"
-      ],
-      "Anyone with this link won't be able to sync or get future updates for your calendar. If you want to give them access again, you will have to create a new link.": [
-        "Yal win yesεan aseɣwen-a ur yettizmir ara ad yemtawi neɣ ad yawi ileqman i d-iteddun n uwitay-inek·inem. Ma yella tebɣiḍ ad asen-tmuddeḍ anekcum i tikkelt-nniḍen, ilaq ad ternuḍ aseɣwen amaynut-nniḍen."
       ],
       "AOL reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
         "Yahoo yeɣɣar isefka-inek·inem udmawanen akken ad yefk tasiregt n unekcum i wid iqeddcen deg udellel, tisnurayin n wumlan n Marikan akked yiḥricen-niḍen n wis kraḍ. I tbaḍnit igerrzen, rnu tansa n yimayl taɣellsant."
@@ -3869,9 +3612,6 @@
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "Rnu tabzimt i yiznan i d-yettwaketren, azilal n wakud i uktar-a akked tebzimin i tebɣiḍ ad tketreḍ."
       ],
-      "Create a link to your calendar and share it with anyone outside Proton. Only you can add or remove events.": [
-        "Rnu aseɣwen ɣer uwitay-inek·inem syen bḍu-t akked yal win yella beṛṛa n Proton. Ala kečč·kemm i izemren neɣ ad yekkes tidyanin."
-      ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Rnu udiɣ sefrek imiḍanen isnawanen sakin mudd-asen tansiwin-nsen n yimayl ɣef taɣulit-ik tudmawant."
       ],
@@ -3887,35 +3627,14 @@
       "Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.": [
         "Akka tura, akk amḍiq n usekles yellan yettunefk i unmidan anedbal. Ttxil-k, senɣes amḍiq n usekles n umiḍan anedbal akken ad tserrḥeḍ cwiṭ i yimiḍanen-nniḍen. Ad tizmireḍ ad ternuḍ amḍiq n usekles amatu melmi tebɣiḍ ticki yuli uswir n umiḍan-ik."
       ],
-      "Custom": [
-        "Yugen"
-      ],
-      "Custom daily": [
-        "Udmawan n yal ass"
-      ],
       "Custom email domains": [
         "Tiɣula n yimayl tudmawanin"
-      ],
-      "Custom monthly": [
-        "Udmawan n yal ayyur"
-      ],
-      "Custom weekly": [
-        "Udmawan n yal amalas"
-      ],
-      "Custom yearly": [
-        "Udmawan n yal aseggas"
-      ],
-      "Daily": [
-        "Yal ass"
       ],
       "Data locked": [
         "Isefka sekkṛen"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Kkes ikalasen nniḍen MX neq ḍmen d akken amḍan n tezwart n ${ MAIL_APP_NAME } d tameẓyant."
-      ],
-      "Delete link?": [
-        "Kkes aseɣwen?"
       ],
       "Discount applied to your subscription with coupon ${ code }": [
         "Yettwag usenqes ɣef umulteɣ-inek·inem s ukupun ${ code }"
@@ -3959,9 +3678,6 @@
       ],
       "Drop the file here to upload": [
         "Sers dagi afaylu ara tessaliḍ"
-      ],
-      "Edit label": [
-        "Ẓreg tabzimt"
       ],
       "Edit link": [
         "Ẓreg aseɣwen"
@@ -4186,12 +3902,6 @@
       "Link copied to clipboard": [
         "Aseɣwen yettwanɣel ɣer ɣefwafus"
       ],
-      "Link created": [
-        "Yettwarna useɣwen"
-      ],
-      "Link deleted": [
-        "Aseɣwen yettwakkes"
-      ],
       "Link type": [
         "Anaw n useɣwen"
       ],
@@ -4221,9 +3931,6 @@
       ],
       "Merged": [
         "Ttusmezdin"
-      ],
-      "Monthly ${ onDayString }": [
-        "Yal aggur ${ onDayString }"
       ],
       "more": [
         "ugar"
@@ -4597,9 +4304,6 @@
       "URL link": [
         "Aseɣwen URL"
       ],
-      "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
-        "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux."
-      ],
       "Verification can take a few minutes.": [
         "Asenqed yezmer ad yeṭṭef kra n tesdatin."
       ],
@@ -4665,9 +4369,6 @@
       ],
       "Yandex records your online activity and reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
         "Yandex yesseklas tigawt-inek·inem srid rnu yeqqar isefka-inek·inem udmawanen i wakken ad imudd tisiregt n unekcum i wid i iqeddcen deg udellel d yihricen wiyaḍ n wis tlata. I tbaḍnit igerrzen, rnu tansa n yimayl taɣelsant."
-      ],
-      "Yearly": [
-        "S useggas"
       ],
       "You already have a free account": [
         "Tesɛiḍ yakan amiḍan baṭṭel"
@@ -5181,11 +4882,6 @@
         "Creḍ-it d aqbur"
       ]
     },
-    "Knowledge base link label": {
-      "Here's how": [
-        "Ha-t-a wamek"
-      ]
-    },
     "Label": {
       " and ": [
         " akked "
@@ -5270,9 +4966,6 @@
       "Attach screenshot(s)": [
         "Seddu tuṭṭfa(win) n ugdil"
       ],
-      "Auto-detect primary time zone": [
-        "Suter aleqqem n yiẓdi usrid agejdan"
-      ],
       "Auto-load embedded images": [
         "Sali tugniwin tusliɣin s wudem awurman"
       ],
@@ -5329,9 +5022,6 @@
       ],
       "Code is 6 digits without spaces": [
         "Tangalt tesɛa 6 n yizwilen war tallunin"
-      ],
-      "Color": [
-        "Ini"
       ],
       "Composer": [
         "Amaẓrag"
@@ -5405,38 +5095,17 @@
       "Days of the week": [
         "Ussan n dduṛt"
       ],
-      "Default email address": [
-        "Tansa yimayl n lexṣas"
-      ],
-      "Default event duration": [
-        "Tanzagt n tedyant tamezwert"
-      ],
-      "Default full day notifications": [
-        "Alɣuten n wass meṛṛa imezwar"
-      ],
       "Default language": [
         "Tutlayt tamezwert"
       ],
-      "Default language (${ defaultLanguage })": [
-        "Tutlayt tamezwert (${ defaultLanguage })"
-      ],
-      "Default notifications": [
-        "Ilɣa imezwer"
-      ],
       "Default PGP scheme": [
         "Azenziɣ PGP amezwer"
-      ],
-      "Default view": [
-        "Asken amezwer"
       ],
       "Delete": [
         "Kkes"
       ],
       "Density": [
         "Taneẓẓi"
-      ],
-      "Description": [
-        "Aglam"
       ],
       "Device/certificate name": [
         "Isem n umeɣri/uselkin"
@@ -5446,9 +5115,6 @@
       ],
       "Discount": [
         "Asaεed"
-      ],
-      "Display": [
-        "Sken"
       ],
       "Display name": [
         "Isem ara d-yettwaskanen"
@@ -5771,15 +5437,6 @@
       "Send auto-reply": [
         "Azen tiririt tawurmant"
       ],
-      "Send in": [
-        "Azen deg"
-      ],
-      "Show secondary time zone": [
-        "Sken izḍi usrid wis sin"
-      ],
-      "Show week numbers": [
-        "Sken-d imḍanen n dduṛt"
-      ],
       "Sign external messages": [
         "Zmel iznan uffiɣen"
       ],
@@ -5864,9 +5521,6 @@
       "Upload 1 or more recovery files or encryption keys": [
         "Sali 1 neɣ ugar n yifuyla n tririt neɣ tisura n uwgelhen"
       ],
-      "URL": [
-        "URL"
-      ],
       "Use folder colors": [
         "Seqdec initen n ukaram"
       ],
@@ -5921,12 +5575,6 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "Ih, bɣiɣ ad kkseɣ amiḍan-a i lebda akked meṛṛa isefka-ines."
       ],
-      "Your calendar URL": [
-        "Tansiwin URL n uwitay-ik·im"
-      ],
-      "Your calendar URL label": [
-        "Tabzimt n tansiwin URL n uwitay-ik·im"
-      ],
       "Your password (admin)": [
         "Awal-ik uffir (anedbal)"
       ],
@@ -5975,9 +5623,6 @@
       ],
       "Proton company announcements": [
         "Ilɣa n tkebbanit n Proton"
-      ],
-      "Proton for business": [
-        "Proton for Business"
       ],
       "Proton for Business newsletter": [
         "Proton n uɣmis n umahel"
@@ -6162,12 +5807,6 @@
         "Rmed iɣmisen n wulɣu"
       ]
     },
-    "Maximum calendar links reached warning": {
-      "You can create up to ${ MAX_LINKS_PER_CALENDAR } link per calendar. To create a new link to this calendar, delete one from the list below.": [
-        "Tzemreḍ ad ternuḍ arma d ${ MAX_LINKS_PER_CALENDAR } n useɣwen i yiwen n uwitay. Akken ad ternuḍ aseɣwen amaynut i uwitay-a, kkes yiwen seg tebdert ddaw-a.",
-        "Tzemreḍ ad ternuḍ arma d ${ MAX_LINKS_PER_CALENDAR } n yiseɣwan i yiwen n uwitay. Akken ad ternuḍ aseɣwen amaynut i uwitay-a, kkes yiwen seg tebdert ddaw-a."
-      ]
-    },
     "Member action": {
       "Delete": [
         "Kkes"
@@ -6221,11 +5860,6 @@
         "Amek ara tketreḍ imaylen si Yahoo"
       ]
     },
-    "Modal title and action": {
-      "Add calendar": [
-        "Rnu awitay"
-      ]
-    },
     "Monetary unit": {
       "Dollar": [
         "Dollar"
@@ -6235,139 +5869,6 @@
       ],
       "Swiss franc": [
         "Afrank n Swis"
-      ]
-    },
-    "Monthly recurring event, frequency": {
-      "Every ${ interval } month ${ onDayString }": [
-        "Yal ${ interval } n wayyur ${ onDayString }",
-        "Yal ${ interval } n wayyuren ${ onDayString }"
-      ],
-      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
-        "Yal ${ interval } n wayyur ${ onDayString }, ${ timesString }",
-        "Yal ${ interval } n wayyuren ${ onDayString }, ${ timesString }"
-      ],
-      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
-        "Yal ${ interval } n wayyuren ${ onDayString }, ${ untilString }",
-        "Yal ${ interval } n wayyuren ${ onDayString }, ${ untilString }"
-      ],
-      "Monthly ${ onDayString }": [
-        "Yal aggur ${ onDayString }"
-      ],
-      "Monthly ${ onDayString }, ${ timesString }": [
-        "Yal ayyur ${ onDayString }, ${ timesString }"
-      ],
-      "Monthly ${ onDayString }, ${ untilString }": [
-        "Yal ayyur ${ onDayString }, ${ untilString }"
-      ]
-    },
-    "Monthly recurring event, repeats on": {
-      "on day ${ dayOfMonth }": [
-        "deg wass ${ dayOfMonth }"
-      ],
-      "on the first Friday": [
-        "deg sem amezwaru"
-      ],
-      "on the first Monday": [
-        "deg Letniyen amezwaru"
-      ],
-      "on the first Saturday": [
-        "deg sed amezwaru"
-      ],
-      "on the first Sunday": [
-        "deg Lḥed amezwaru"
-      ],
-      "on the first Thursday": [
-        "deg umhad amezwaru"
-      ],
-      "on the first Tuesday": [
-        "deg Ttlata amezwaru"
-      ],
-      "on the first Wednesday": [
-        "deg wahad amezwaru"
-      ],
-      "on the fourth Friday": [
-        "yal Lǧemɛa tis ukuẓ"
-      ],
-      "on the fourth Monday": [
-        "yal Letniyen wis ukuẓ"
-      ],
-      "on the fourth Saturday": [
-        "yal Ssebt wis ukuẓ"
-      ],
-      "on the fourth Sunday": [
-        "yal Lḥed wis ukuẓ"
-      ],
-      "on the fourth Thursday": [
-        "yal Lexmis wis ukuẓ"
-      ],
-      "on the fourth Tuesday": [
-        "yal Ttlata wis ukuẓ"
-      ],
-      "on the fourth Wednesday": [
-        "yal Laṛebɛa wis ukuẓ"
-      ],
-      "on the last Friday": [
-        "yal Lǧemɛa taneggarut"
-      ],
-      "on the last Monday": [
-        "yal Letniyen aneggaru"
-      ],
-      "on the last Saturday": [
-        "yal Ssebt aneggaru"
-      ],
-      "on the last Sunday": [
-        "yal Lḥed aneggaru"
-      ],
-      "on the last Thursday": [
-        "yal Lexmis aneggaru"
-      ],
-      "on the last Tuesday": [
-        "yal Ttlata aneggaru"
-      ],
-      "on the last Wednesday": [
-        "yal Laṛebɛa aneggaru"
-      ],
-      "on the second Friday": [
-        "deg sem wis sin"
-      ],
-      "on the second Monday": [
-        "deg warim wis sin"
-      ],
-      "on the second Saturday": [
-        "deg sed wis sin"
-      ],
-      "on the second Sunday": [
-        "deg acer wis sin"
-      ],
-      "on the second Thursday": [
-        "deg Lexmis wis sin"
-      ],
-      "on the second Tuesday": [
-        "deg waram wis sin"
-      ],
-      "on the second Wednesday": [
-        "deg wahad wis sin"
-      ],
-      "on the third Friday": [
-        "yal Lǧemɛa tis kṛad"
-      ],
-      "on the third Monday": [
-        "deg Letniyen wis kṛad"
-      ],
-      "on the third Saturday": [
-        "deg Ssebt wis kṛad"
-      ],
-      "on the third Sunday": [
-        "deg wacer wis kṛad"
-      ],
-      "on the third Thursday": [
-        "deg umhad wis kṛad"
-      ],
-      "on the third Tuesday": [
-        "deg waram wis kṛad"
-      ],
-      "on the third Wednesday": [
-        "deg wahad wis kṛad"
       ]
     },
     "Moved to black/whitelist": {
@@ -6432,9 +5933,6 @@
       ]
     },
     "new_plans: action": {
-      "Continue with free": [
-        "Kemmel baṭel"
-      ],
       "Delete account": [
         "Kkes amiḍan"
       ],
@@ -6628,10 +6126,7 @@
       "End-to-end encrypted calendar": [
         "Awitay ittwawegelhen seg yixef ɣer yixef"
       ],
-      "Keeps you protected by blocking all network connections when you are accidentally disconnected from our VPN server": [
-        "Keeps you protected by blocking all network connections when you are unexpectedly disconnected from our VPN server."
-      ],
-      "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections": [
+      "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections..": [
         "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections."
       ]
     },
@@ -6664,43 +6159,6 @@
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "Turagin n OpenVPN / IKEv2 yettusirew"
-      ]
-    },
-    "Notification time input": {
-      "at": [
-        "ar"
-      ]
-    },
-    "Notification type": {
-      "email": [
-        "imayl"
-      ],
-      "notification": [
-        "alɣu"
-      ]
-    },
-    "Notification when": {
-      "at time of event": [
-        "lawan-nni n tedyant"
-      ],
-      "day before": [
-        "ass send",
-        "ussan send"
-      ],
-      "hour before": [
-        "asrag send",
-        "isragen send"
-      ],
-      "minute before": [
-        "tasdat send",
-        "tisdatin send"
-      ],
-      "on the same day": [
-        "deg yiwen n wass"
-      ],
-      "week before": [
-        "dduṛt send",
-        "dduṛtat send"
       ]
     },
     "Onboarding": {
@@ -6968,20 +6426,9 @@
         "PayPal"
       ]
     },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "Tansa n yimayl ur tettwaf ara gar yisulay n yiseqdacen yettusbadun i tsarut n tuzna (${ keyUserIds })"
-      ]
-    },
     "Placeholder": {
       "A way to contact you": [
         "Ttawil akken ad ken-nermes"
-      ],
-      "Add a calendar description": [
-        "Rnu aglam n uwitay"
-      ],
-      "Add a calendar name": [
-        "Rnu isem n uwitay"
       ],
       "Add gift code": [
         "Rnu tangalt n usefk"
@@ -7073,14 +6520,6 @@
     "Price": {
       "Free": [
         "Baṭel"
-      ]
-    },
-    "Primary timezone": {
-      "Primary time zone": [
-        "Izḍi usrig agejdan"
-      ],
-      "Secondary time zone": [
-        "Izḍi usrid wis sin"
       ]
     },
     "Private Member": {
@@ -7217,11 +6656,6 @@
         "Tuddsa"
       ]
     },
-    "Settings update growler warning": {
-      "Failed to update settings": [
-        "Aleqqem n yiɣewwaren yecceḍ"
-      ]
-    },
     "Settings/filters": {
       "Filters": [
         "Imzizdigen"
@@ -7325,34 +6759,6 @@
         "Aklas-ik amiran:"
       ]
     },
-    "Subscribe to calendar modal": {
-      "Calendar URL": [
-        "URL n uwitay"
-      ]
-    },
-    "Subscribe to calendar modal description": {
-      "Learn how to get a private calendar link.": [
-        "Issin amek ara d-tawiḍ aseɣwen n uwitay uslig."
-      ]
-    },
-    "Subscribed calendar extension warning": {
-      "By using this link, Google will make the calendar you are subscribing to public": [
-        "S useqdec n useɣwen-a, Google ad yerr awitay iɣer tjerrdeḍ d azayez"
-      ],
-      "This link might be wrong": [
-        "Aseɣwen-a izmer d arameɣtu"
-      ]
-    },
-    "Subscribed calendar section description": {
-      "Add public, external, or shared calendars using a URL.": [
-        "Rnu iwitayen izuyaz, iẓɣarayen neɣ yettwabḍan s useqdec n URL."
-      ]
-    },
-    "Subscribed calendar URL length warning": {
-      "URL is too long": [
-        "URL ɣezzif aṭas"
-      ]
-    },
     "Subscription attribute": {
       "${ _n } calendar per user": [
         "${ _n } uwitay i useqdac",
@@ -7444,18 +6850,6 @@
       "Bug reported": [
         "Abug yettwazen"
       ],
-      "Calendar added. It might take a few minutes to sync.": [
-        "Awitay yerna. Izmer ad yeṭṭef kra n tesdatin akken ad yemtawi."
-      ],
-      "Calendar created": [
-        "Awitay yettwasnulfa-d"
-      ],
-      "Calendar removed": [
-        "Awitay yettwakkes"
-      ],
-      "Calendar updated": [
-        "Awitay yettwasnifel"
-      ],
       "Canceling import": [
         "Asefsex n tektert"
       ],
@@ -7467,9 +6861,6 @@
       ],
       "Credits added": [
         "Ismaden ttwarnan"
-      ],
-      "Default calendar updated": [
-        "Awitay amezwer yettwalqem"
       ],
       "DMARC value copied to clipboard": [
         "Azal DMARC yettwanɣel ɣef afus"
@@ -7622,11 +7013,6 @@
         "i waggur"
       ]
     },
-    "Summary of errors during export calendar": {
-      "Details about events that couldn't be exported": [
-        "Talqayt ɣef yineḍruyen ur nezmir ara ad ttusifḍen"
-      ]
-    },
     "Tab in domain modal": {
       "Addresses": [
         "Tansiwin"
@@ -7739,9 +7125,6 @@
       ],
       "Add address": [
         "Rnu tansa"
-      ],
-      "Add another notification to remind you of this event": [
-        "Rnu alɣu-nniḍen i wakken ad ak·akem-d-yesmekti s uneḍru-a"
       ],
       "Add contact group name": [
         "Rnu isem n ugraw n unermes"
@@ -7899,9 +7282,6 @@
       "Create a ${ mailAppName } address": [
         "Rnu tansa ${ mailAppName }"
       ],
-      "Create calendar": [
-        "Snulfu-d awitay"
-      ],
       "Create your ${ BRAND_NAME } Account": [
         "Rnu amiḍan-ik ${ BRAND_NAME }"
       ],
@@ -7965,9 +7345,6 @@
       "Delete account": [
         "Kkes amiḍan"
       ],
-      "Delete calendar": [
-        "Kkes awitay"
-      ],
       "Delete key permanently?": [
         "Kkes tasarut i lebda?"
       ],
@@ -8007,9 +7384,6 @@
       "Edit Block List": [
         "Ẓreg tabdart n usewḥel"
       ],
-      "Edit calendar": [
-        "Ẓreg awitay"
-      ],
       "Edit credit/debit card": [
         "Ẓreg takarḍa n usmad/uxelleṣ"
       ],
@@ -8045,9 +7419,6 @@
       ],
       "Error": [
         "Anezri"
-      ],
-      "Export calendar": [
-        "Sifeḍ awitay"
       ],
       "Export private key": [
         "Sifeḍ tasarut tusligt"
@@ -8248,9 +7619,6 @@
       "Refer a friend": [
         "Snubget-d ameddakkel"
       ],
-      "Remove calendar": [
-        "Kkes awitay"
-      ],
       "Report a problem": [
         "Azen aneqqis n wugur"
       ],
@@ -8278,9 +7646,6 @@
       "Secure email based in Switzerland": [
         "Imayl aɣelsan yellan di Swis"
       ],
-      "Security": [
-        "Taɣellist"
-      ],
       "Security logs": [
         "Iɣmisen n tɣellist"
       ],
@@ -8292,15 +7657,6 @@
       ],
       "Select contact group": [
         "Fren agraw n unermes"
-      ],
-      "Select the time to send this notification": [
-        "Fren akud ideg ara yettwazen walɣu-a"
-      ],
-      "Select the way to send this notification": [
-        "Fren abrid swayes ara yettwazen walɣu-a"
-      ],
-      "Select when you want this notification to be sent": [
-        "Fren melmi i tebɣiḍ ad yettwazen walɣu-a"
       ],
       "Session management": [
         "Amsefrak n tɣimit"
@@ -8437,9 +7793,6 @@
       "Your ${ domain } address is active": [
         "Tansa-inek•inem ${ domain } d turmidt"
       ],
-      "Your calendar link": [
-        "Iwitayen-ik"
-      ],
       "Your current plan": [
         "Aɣawas-ik·im amiran"
       ],
@@ -8454,11 +7807,6 @@
       ],
       "ZIP / postal code": [
         "ZIP / tangalt n lbuṣṭa"
-      ]
-    },
-    "Title (number of minutes/hours/days/weeks)": {
-      "Choose a number": [
-        "Fren uṭṭun"
       ]
     },
     "Title for payment methods table": {
@@ -8607,9 +7955,6 @@
       ],
       "This feature is only available for paid users": [
         "Tamahilt-agi tella kan i yiseqdacen s lexlaṣ"
-      ],
-      "This feature is unavailable for the moment": [
-        "Tawuri-agi ur tewjid ara akka tura"
       ],
       "This key cannot be used for encryption": [
         "Tasarut-agi ulamek ara tettwaseqdec i uwgelhen"
@@ -8828,243 +8173,6 @@
       ],
       "It can take up to a day for DNS changes to update.": [
         "Asnifel n DNS izmer ad yeṭṭef yiwen wass akken ad yettwaleqqem."
-      ]
-    },
-    "Weekly recurring event, frequency": {
-      "Every ${ interval } week on ${ multipleDaysString }": [
-        "Yal ${ interval } n dduṛt deg ${ multipleDaysString }",
-        "Yal ${ interval } n dduṛtat deg ${ multipleDaysString }"
-      ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
-        "Yal ${ interval } n umalas deg ${ multipleDaysString }, ${ timesString }",
-        "Yal ${ interval } n yimalasen deg ${ multipleDaysString }, ${ timesString }"
-      ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
-        "Yal ${ interval } n umalas deg ${ multipleDaysString }, ${ untilString }",
-        "Yal ${ interval } n yimalasen deg ${ multipleDaysString }, ${ untilString }"
-      ],
-      "Every ${ interval } week on all days": [
-        "Yal dduṛṭ ${ interval } deg meṛṛa ussan",
-        "Yal ${ interval } ledwaṛ deg meṛṛa ussan"
-      ],
-      "Every ${ interval } week on all days, ${ timesString }": [
-        "Yal ${ interval } n dduṛt deg wussan akk, ${ timesString }",
-        "Yal ${ interval } n ledwaṛ deg wussan akk, ${ timesString }"
-      ],
-      "Every ${ interval } week on all days, ${ untilString }": [
-        "Yal ${ interval } n umalas deg wussan akk, ${ untilString }",
-        "Yal ${ interval } n yimalasen deg wussan akk, ${ untilString }"
-      ],
-      "Every ${ interval } week on Friday": [
-        "Yal ${ interval } n dduṛt deg wass n sem",
-        "Yal ${ interval } n yimalasen, deg wass n sem"
-      ],
-      "Every ${ interval } week on Friday, ${ timesString }": [
-        "Yal ${ interval } n dduṛt deg wass n sem, ${ timesString }",
-        "Yal ${ interval } n ledwar deg wass n sem, ${ timesString }"
-      ],
-      "Every ${ interval } week on Friday, ${ untilString }": [
-        "Yal ${ interval } n umalas deg wass sem, ${ untilString }",
-        "Yal ${ interval } n yimalasen deg wass sem, ${ untilString }"
-      ],
-      "Every ${ interval } week on Monday": [
-        "Yal ${ interval } n dduṛt deg wass n warim",
-        "Yal ${ interval } n yimalsen, deg wass n warim"
-      ],
-      "Every ${ interval } week on Monday, ${ timesString }": [
-        "Yal ${ interval } n dduṛt deg wass n warim, ${ timesString }",
-        "Yal ${ interval } n ledwaṛ deg wass n warim, ${ timesString }"
-      ],
-      "Every ${ interval } week on Monday, ${ untilString }": [
-        "Yal ${ interval } n umalas deg wass n warim, ${ untilString }",
-        "Yal ${ interval } n yimalasen deg wass n warim, ${ untilString }"
-      ],
-      "Every ${ interval } week on Saturday": [
-        "Yal ${ interval } n dduṛt deg wass n sed",
-        "Yal ${ interval } n yimalasen, deg wass n sed"
-      ],
-      "Every ${ interval } week on Saturday, ${ timesString }": [
-        "Yal ${ interval } n dduṛt deg wass n sed, ${ timesString }",
-        "Yal ${ interval } n ledwaṛ deg wass n sed, ${ timesString }"
-      ],
-      "Every ${ interval } week on Saturday, ${ untilString }": [
-        "Yal ${ interval } n umalas deg wass n sed, ${ untilString }",
-        "Yal ${ interval } n yimalasen deg wass n sed, ${ untilString }"
-      ],
-      "Every ${ interval } week on Sunday": [
-        "Yal ${ interval } n dduṛt deg wass n acer",
-        "Yal ${ interval } n ledwaṛ deg wussan n acer"
-      ],
-      "Every ${ interval } week on Sunday, ${ timesString }": [
-        "Yal ${ interval } n dduṛt deg wass n wacer, ${ timesString }",
-        "Yal ${ interval } n ledwaṛ deg wass n wacer, ${ timesString }"
-      ],
-      "Every ${ interval } week on Sunday, ${ untilString }": [
-        "Yal ${ interval } n umalas deg wass n wacer, ${ untilString }",
-        "Yal ${ interval } n yimalasen deg wass n wacer, ${ untilString }"
-      ],
-      "Every ${ interval } week on Thursday": [
-        "Yal ${ interval } n dduṛt deg wass n wamhad",
-        "Yal ${ interval } n yimalasen, deg wass n umhad"
-      ],
-      "Every ${ interval } week on Thursday, ${ timesString }": [
-        "Yal ${ interval } n dduṛt deg wass n umhad, ${ timesString }",
-        "Yal ${ interval } n ledwaṛ deg wass n umhad, ${ timesString }"
-      ],
-      "Every ${ interval } week on Thursday, ${ untilString }": [
-        "Yal ${ interval } n umalas deg wass n umhad, ${ untilString }",
-        "Yal ${ interval } n yimalasen deg wass n umhad, ${ untilString }"
-      ],
-      "Every ${ interval } week on Tuesday": [
-        "Yal ${ interval } n dduṛt deg wass n waram",
-        "Yal ${ interval } n ledwaṛ deg wass n warim"
-      ],
-      "Every ${ interval } week on Tuesday, ${ timesString }": [
-        "Yal ${ interval } n dduṛt deg wass n waram, ${ timesString }",
-        "Yal ${ interval } n ledwaṛ deg wass n waram, ${ timesString }"
-      ],
-      "Every ${ interval } week on Tuesday, ${ untilString }": [
-        "Yal ${ interval } n umalas deg wass n waram, ${ untilString }",
-        "Yal ${ interval } n yimalasen deg wass n waram, ${ untilString }"
-      ],
-      "Every ${ interval } week on Wednesday": [
-        "Yal ${ interval } n dduṛt deg wass n wahad",
-        "Yal ${ interval } n ledwaṛ deg wass n wahad"
-      ],
-      "Every ${ interval } week on Wednesday, ${ timesString }": [
-        "Yal ${ interval } n dduṛt deg wass n wahad, ${ timesString }",
-        "Yal ${ interval } n ledwaṛ deg wass n wahad, ${ timesString }"
-      ],
-      "Every ${ interval } week on Wednesday, ${ untilString }": [
-        "Yal ${ interval } n umalas deg wass n wahad, ${ untilString }",
-        "Yal ${ interval } n yimalasen deg wass n wahad, ${ untilString }"
-      ],
-      "Weekly on ${ multipleDaysString }": [
-        "Yal imalas deg ${ multipleDaysString }"
-      ],
-      "Weekly on ${ multipleDaysString }, ${ timesString }": [
-        "Yal imalas deg ${ multipleDaysString }, ${ timesString }"
-      ],
-      "Weekly on ${ multipleDaysString }, ${ untilString }": [
-        "Yal imalas deg ${ multipleDaysString }, ${ untilString }"
-      ],
-      "Weekly on all days": [
-        "Yal imalas deg wussan akk"
-      ],
-      "Weekly on all days, ${ timesString }": [
-        "Yal imalas deg wussan akk, ${ timesString }"
-      ],
-      "Weekly on all days, ${ untilString }": [
-        "Yal imalas deg wussan akk, ${ untilString }"
-      ],
-      "Weekly on Friday": [
-        "Lǧemɛa n yal dduṛt"
-      ],
-      "Weekly on Friday, ${ timesString }": [
-        "Yal imalas deg wass n sem, ${ timesString }"
-      ],
-      "Weekly on Friday, ${ untilString }": [
-        "Yal imalas deg wass n sem, ${ untilString }"
-      ],
-      "Weekly on Monday": [
-        "Letniyen n yal dduṛt"
-      ],
-      "Weekly on Monday, ${ timesString }": [
-        "Yal imalas deg wass n warim, ${ timesString }"
-      ],
-      "Weekly on Monday, ${ untilString }": [
-        "Yal imalas deg wass n warim, ${ untilString }"
-      ],
-      "Weekly on Saturday": [
-        "Yal imalas deg wass n sed"
-      ],
-      "Weekly on Saturday, ${ timesString }": [
-        "Yal imalas deg wass n sed, ${ timesString }"
-      ],
-      "Weekly on Saturday, ${ untilString }": [
-        "Yal imalas deg wass n sed, ${ untilString }"
-      ],
-      "Weekly on Sunday": [
-        "Acer n yal imalas"
-      ],
-      "Weekly on Sunday, ${ timesString }": [
-        "Yal imalas deg wass n acer, ${ timesString }"
-      ],
-      "Weekly on Sunday, ${ untilString }": [
-        "Yal imalas deg wass n acer, ${ untilString }"
-      ],
-      "Weekly on Thursday": [
-        "Lexmis n yal dduṛt"
-      ],
-      "Weekly on Thursday, ${ timesString }": [
-        "Yal imalas deg wass n umhad, ${ timesString }"
-      ],
-      "Weekly on Thursday, ${ untilString }": [
-        "Yal imalas deg wass n umhad, ${ untilString }"
-      ],
-      "Weekly on Tuesday": [
-        "Yal imalas deg wass n waram"
-      ],
-      "Weekly on Tuesday, ${ timesString }": [
-        "Yal imalas deg wass n waram, ${ timesString }"
-      ],
-      "Weekly on Tuesday, ${ untilString }": [
-        "Yal imalas deg wass n waram, ${ untilString }"
-      ],
-      "Weekly on Wednesday": [
-        "Yal imalas deg wass n wahad"
-      ],
-      "Weekly on Wednesday, ${ timesString }": [
-        "Yal imalas deg wass n wahad, ${ timesString }"
-      ],
-      "Weekly on Wednesday, ${ untilString }": [
-        "Yal imalas deg wass n wahad, ${ untilString }"
-      ]
-    },
-    "Weekly recurring event, repeats on (multiple days), frequency": {
-      "Friday": [
-        "Sem"
-      ],
-      "Monday": [
-        "Arim"
-      ],
-      "Saturday": [
-        "Sed"
-      ],
-      "Sunday": [
-        "Acer"
-      ],
-      "Thursday": [
-        "Amhad"
-      ],
-      "Tuesday": [
-        "Aram"
-      ],
-      "Wednesday": [
-        "Ahad"
-      ]
-    },
-    "Yearly recurring event, frequency": {
-      "Every ${ interval } year": [
-        "Yal ${ interval } n useggas",
-        "Yal ${ interval } n yiseggasen"
-      ],
-      "Every ${ interval } year, ${ timesString }": [
-        "Yal ${ interval } n useggas, ${ timesString }",
-        "Yal ${ interval } n yiseggasen, ${ timesString }"
-      ],
-      "Every ${ interval } year, ${ untilString }": [
-        "Yal ${ interval } n useggas, ${ untilString }",
-        "Yal ${ interval } n yiseggasen, ${ untilString }"
-      ],
-      "Yearly": [
-        "S useggas"
-      ],
-      "Yearly, ${ timesString }": [
-        "S useggas, ${ timesString }"
-      ],
-      "Yearly, ${ untilString }": [
-        "S useggas, ${ untilString }"
       ]
     }
   }
