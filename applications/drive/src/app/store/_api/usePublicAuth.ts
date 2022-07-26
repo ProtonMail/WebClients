@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+
 import { c } from 'ttag';
 
 import { useLoading, useNotifications } from '@proton/components';
@@ -6,7 +7,7 @@ import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
 import { RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
 
-import { default as usePublicSession, ERROR_CODE_INVALID_SRP_PARAMS } from './usePublicSession';
+import { ERROR_CODE_INVALID_SRP_PARAMS, default as usePublicSession } from './usePublicSession';
 
 /**
  * usePublicAuth automatically starts SRP handshake and if not password is
@@ -37,9 +38,15 @@ export default function usePublicAuth(token: string, urlPassword: string) {
             return;
         }
 
-        // for the cases when user removes generated password from shared url
+        // Code 2026 can happen for different reasons.
+        // During initHandshake, it can happen when "volume is not available"
+        // or "file has reached the download limit".
+        // During initSession, it can mean the custom password is needed. This
+        // case is handled manually in useEffect below and doesn't have to be
+        // taken care of here as here would not be possible to distinguish the
+        // situation anyway.
         if (apiError.code === ERROR_CODE_INVALID_SRP_PARAMS) {
-            setIsPasswordNeeded(true);
+            setError(c('Title').t`The link expired`);
             return;
         }
 
