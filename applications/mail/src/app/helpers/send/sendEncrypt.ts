@@ -1,13 +1,14 @@
-import { CryptoProxy, SessionKey, PublicKeyReference } from '@proton/crypto';
-import isTruthy from '@proton/utils/isTruthy';
-import { Package, Packages } from '@proton/shared/lib/interfaces/mail/crypto';
-import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
+import { CryptoProxy, PublicKeyReference, SessionKey } from '@proton/crypto';
+import { AES256, MIME_TYPES, PACKAGE_TYPE } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
+import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
+import { Package, Packages } from '@proton/shared/lib/interfaces/mail/crypto';
 import { getAttachments } from '@proton/shared/lib/mail/messages';
 import { getSessionKey } from '@proton/shared/lib/mail/send/attachments';
-import { AES256, MIME_TYPES, PACKAGE_TYPE } from '@proton/shared/lib/constants';
-import { arrayToBase64 } from '../base64';
+import isTruthy from '@proton/utils/isTruthy';
+
 import { MessageState, PublicPrivateKey } from '../../logic/messages/messagesTypes';
+import { arrayToBase64 } from '../base64';
 
 const MEGABYTE = 1024 * 1024;
 
@@ -166,7 +167,8 @@ const encryptDraftBodyPackage = async (
     scheduledTime?: number,
     canUseScheduledTime = false
 ) => {
-    const cleanPublicKeys = [...messageKeys.publicKeys, ...publicKeys].filter(isTruthy);
+    const cleanPublicAndMessageKeys = [...messageKeys.publicKeys, ...publicKeys].filter(isTruthy);
+    const cleanPublicKeys = publicKeys.filter(isTruthy);
 
     // Always encrypt with a single private key
     const privateKeys = messageKeys.privateKeys.slice(0, 1);
@@ -178,7 +180,7 @@ const encryptDraftBodyPackage = async (
     const canUseScheduledTimeInSignature = scheduledTime && canUseScheduledTime;
 
     // pass both messageKeys and publicKeys to make sure the generated session key is compatible with them all
-    const sessionKey = await CryptoProxy.generateSessionKey({ recipientKeys: cleanPublicKeys });
+    const sessionKey = await CryptoProxy.generateSessionKey({ recipientKeys: cleanPublicAndMessageKeys });
 
     const data = pack.Body || '';
     const dataType = data instanceof Uint8Array ? 'binaryData' : 'textData';
@@ -194,7 +196,7 @@ const encryptDraftBodyPackage = async (
 
     // Encrypt to each recipient's public key separetely to get separate serialized session keys.
     const encryptedSessionKeys = await Promise.all(
-        publicKeys.map((publicKey) =>
+        cleanPublicKeys.map((publicKey) =>
             CryptoProxy.encryptSessionKey({
                 ...sessionKey,
                 encryptionKeys: publicKey,
