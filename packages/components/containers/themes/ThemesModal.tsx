@@ -1,13 +1,14 @@
 import { c } from 'ttag';
-import { PROTON_THEMES, ThemeTypes } from '@proton/shared/lib/themes/themes';
+
 import { updateThemeType } from '@proton/shared/lib/api/settings';
+import { getAppFromHostname } from '@proton/shared/lib/apps/slugHelper';
 import { postMessageToIframe } from '@proton/shared/lib/sideApp/helpers';
 import { SIDE_APP_EVENTS } from '@proton/shared/lib/sideApp/models';
-import { getAppFromHostname } from '@proton/shared/lib/apps/slugHelper';
+import { PROTON_THEMES, ThemeTypes } from '@proton/shared/lib/themes/themes';
 
-import { ModalTwo, ModalTwoHeader, ModalTwoContent, ModalTwoFooter, Button, ModalProps } from '../../components';
-import { useApi, useSideApp } from '../../hooks';
 import { ThemeCards, useTheme } from '.';
+import { Button, ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../components';
+import { useApi, useSideApp } from '../../hooks';
 
 const ThemesModal = (props: ModalProps) => {
     const api = useApi();
@@ -20,12 +21,14 @@ const ThemesModal = (props: ModalProps) => {
 
         // If the side panel is open, we need to make the app inside the iframe to call the event manager
         // Otherwise, the theme is not updated before the next event manager call
-        const sideApp = getAppFromHostname(new URL(sideAppUrl || '').hostname);
-        if (sideApp) {
-            postMessageToIframe(
-                { type: SIDE_APP_EVENTS.SIDE_APP_UPDATE_THEME, payload: { theme: newThemeType } },
-                sideApp
-            );
+        if (sideAppUrl) {
+            const sideApp = getAppFromHostname(new URL(sideAppUrl).hostname);
+            if (sideApp) {
+                postMessageToIframe(
+                    { type: SIDE_APP_EVENTS.SIDE_APP_UPDATE_THEME, payload: { theme: newThemeType } },
+                    sideApp
+                );
+            }
         }
     };
 
