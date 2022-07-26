@@ -79,11 +79,13 @@ export interface MigrateMemberAddressKeyPayload {
     OrgSignature: string;
     PrivateKey: string;
 }
+
 interface MigrateMemberAddressKeysPayload {
     MemberID: string;
     AddressKeys: MigrateMemberAddressKeyPayload[];
     SignedKeyLists: { [key: string]: SignedKeyList };
 }
+
 export const migrateMembersAddressKeysRoute = ({ MemberID, ...data }: MigrateMemberAddressKeysPayload) => ({
     url: `members/${MemberID}/keys/migrate`,
     method: 'post',
@@ -94,6 +96,7 @@ interface RestoreBrokenSKLPayload {
     MemberID: string;
     SignedKeyLists: { [key: string]: SignedKeyList };
 }
+
 export const restoreBrokenSKLRoute = ({ MemberID, ...data }: RestoreBrokenSKLPayload) => ({
     url: `members/${MemberID}/keys/signedkeylists`,
     method: 'post',
