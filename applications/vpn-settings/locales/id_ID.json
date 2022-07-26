@@ -275,6 +275,9 @@
       "Save selected": [
         "Simpan pilihan"
       ],
+      "Search countries": [
+        "Cari negara"
+      ],
       "Select ${ planTitle }": [
         "Pilih ${ planTitle }"
       ],
@@ -397,8 +400,14 @@
       ]
     },
     "Action in trial plan": {
+      "Continue with free plan": [
+        "Lanjutkan dengan akun gratis"
+      ],
       "No, thanks": [
         "Tidak, terima kasih"
+      ],
+      "Start my 30-day free trial": [
+        "Mulai masa uji coba 30 hari saya"
       ],
       "Try free for 30 days": [
         "Coba gratis selama 30 hari"
@@ -650,11 +659,11 @@
       ]
     },
     "Collapsible tooltip": {
-      "Close": [
-        "Tutup"
+      "Collapse": [
+        "Ciutkan"
       ],
-      "Open": [
-        "Buka"
+      "Expand": [
+        "Lebarkan"
       ]
     },
     "color": {
@@ -849,9 +858,6 @@
       "Burkina Faso": [
         "Burkina Faso"
       ],
-      "Burma": [
-        "Myanmar"
-      ],
       "Burundi": [
         "Burundi"
       ],
@@ -906,9 +912,6 @@
       "Costa Rica": [
         "Kosta Rika"
       ],
-      "Cote d'Ivoire\"": [
-        "Pantai Gading"
-      ],
       "Croatia": [
         "Kroasia"
       ],
@@ -923,6 +926,9 @@
       ],
       "Czech Republic": [
         "Republik Ceko"
+      ],
+      "Côte d'Ivoire": [
+        "Pantai Gading"
       ],
       "Denmark": [
         "Denmark"
@@ -953,6 +959,9 @@
       ],
       "Estonia": [
         "Estonia"
+      ],
+      "Eswatini": [
+        "Eswatini"
       ],
       "Ethiopia": [
         "Ethiopia"
@@ -1197,6 +1206,9 @@
       "Mozambique": [
         "Mozambik"
       ],
+      "Myanmar": [
+        "Myanmar"
+      ],
       "Namibia": [
         "Namibia"
       ],
@@ -1388,9 +1400,6 @@
       ],
       "Svalbard and Jan Mayen": [
         "Svalbard dan Jan Mayen"
-      ],
-      "Swaziland": [
-        "Swaziland"
       ],
       "Sweden": [
         "Swedia"
@@ -1707,9 +1716,6 @@
       ]
     },
     "Error message": {
-      "Brace yourself till we get the error fixed.": [
-        "Kami sedang perbaiki. Mohon bersabar."
-      ],
       "Error: ${ errorMessage }": [
         "Kesalahan: ${ errorMessage }"
       ],
@@ -1718,6 +1724,9 @@
       ],
       "Please ${ refresh } or check your connection.": [
         "Mohon ${ refresh } atau cek koneksi Anda."
+      ],
+      "Something went wrong. Please refresh the page or try again later.": [
+        "Terjadi suatu kesalahan. Silakan muat ulang halaman ini atau coba lagi nanti."
       ],
       "There was a problem connecting to Proton.": [
         "Ada masalah saat menyambung ke Proton."
@@ -2351,8 +2360,8 @@
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Gunakan server terbaik berdasarkan muatan dan posisi sekarang: ${ formattedBestServerName }"
       ],
-      "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
-        "Gunakan informasi kredensial berikut pada saat Anda hendak terhubung ke server ${ VPN_APP_NAME } tanpa aplikasi. Beberapa contoh situasi yang demikian meliputi: Tunnelblick di macOS, OpenVPN di GNU/Linux."
+      "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
+        "Gunakan informasi kredensial berikut pada saat Anda hendak terhubung ke server ${ VPN_APP_NAME } tanpa melalui aplikasi resmi kami, semisal dengan menggunakan Tunnelblick di macOS atau OpenVPN di GNU/Linux."
       ],
       "Verification can take a few minutes.": [
         "Verifikasi dapat berlangsung dalam beberapa menit."
@@ -2515,6 +2524,32 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Langganan Anda dikelola oleh Mozilla. Harap hubungi layanan dukungan Mozilla."
+      ]
+    },
+    "info": {
+      "Create an email address": [
+        "Buat alamat email"
+      ],
+      "Day 27: Trial reminder": [
+        "Hari ke-27: Pengingat akhir masa uji coba"
+      ],
+      "Day 30: Trial ends": [
+        "Hari ke-30: Akhir masa uji coba"
+      ],
+      "Enjoy secure, easy-to-use emailing with plenty of premium features.": [
+        "Nikmati layanan email yang aman dan mudah digunakan dengan berbagai fitur premium."
+      ],
+      "Try Mail Plus": [
+        "Coba Mail Plus"
+      ],
+      "We’ll email you before your trial ends. Cancel anytime.": [
+        "Kami akan mengirimkan Anda email sebelum masa uji coba Anda berakhir, yang dapat Anda batalkan kapan saja."
+      ],
+      "Your new email address is ready to go!": [
+        "Alamat email baru Anda siap digunakan!"
+      ],
+      "Your subscription starts on ${ startText }.": [
+        "Langganan Anda akan dimulai pada ${ startText }."
       ]
     },
     "Info for cash payment method": {
@@ -3533,8 +3568,8 @@
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
         "Dukungan IMAP terbatas hanya pada aplikasi desktop (cth. Outlook, Apple Mail, dan Thunderbird) via ${ MAIL_APP_NAME } Bridge. Integrasi IMAP berbasis Cloud saat ini tidak didukung."
       ],
-      "Keeps you protected by blocking all network connections when you are accidentally disconnected from our VPN server": [
-        "Menjaga Anda agar tetap terlindung sepanjang waktu dengan memblokir seluruh koneksi jaringan apabila Anda secara tidak sengaja terputus dari server VPN kami"
+      "Keeps you protected by blocking all network connections when you are unexpectedly disconnected from our VPN server.": [
+        "Menjaga Anda agar tetap terlindung sepanjang waktu dengan memblokir seluruh koneksi jaringan apabila Anda secara tidak sengaja terputus dari server VPN kami."
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Label merupakan penanda yang dapat Anda sematkan kepada pesan tertentu agar mereka dapat dicari atau difilter dengan mudah"
@@ -3551,8 +3586,8 @@
       "On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
         "Di samping itu, Anda juga dapat menambahkan hingga 5 kalender dari teman, keluarga, rekan kerja, dan organisasi Anda."
       ],
-      "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections": [
-        "Satu koneksi VPN memungkinkan Anda untuk menghubungkan satu perangkat ke Proton VPN dalam satu waktu. Semisal Anda ingin menyambungkan ponsel dan laptop anda ke Proton VPN secara bersamaan, Anda akan butuh dua koneksi VPN"
+      "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections..": [
+        "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Opsi untuk melihat kotak masuk para pengguna non-privat sebagaimana yang mereka lihat, termasuk seluruh isi pesan dan rincian kontak mereka"
@@ -3995,6 +4030,9 @@
     "Subtitle for trial plan": {
       "The privacy-first Mail and Calendar solution for your everyday communications needs.": [
         "Solusi Mail dan Calendar yang mengedepankan privasi untuk berbagai keperluan komunikasi Anda sehari-hari."
+      ],
+      "This offer is for those new to Proton only. No credit card required.": [
+        "Penawaran ini hanya berlaku bagi para pengguna baru Proton. Tidak ada kartu kredit yang diperlukan."
       ]
     },
     "Success": {
@@ -4293,6 +4331,9 @@
       ],
       "Gift code": [
         "Kode hadiah"
+      ],
+      "How your free trial works": [
+        "Bagaimana masa uji coba gratis Anda bekerja"
       ],
       "Human verification": [
         "Pembuktian manusia"

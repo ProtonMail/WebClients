@@ -247,11 +247,11 @@
       "Forward as attachment": [
         "Als Anhang weiterleiten"
       ],
+      "Get ${ DRIVE_APP_NAME }": [
+        "Hol dir ${ DRIVE_APP_NAME }"
+      ],
       "Get link": [
         "Link abrufen"
-      ],
-      "Get Proton Drive": [
-        "Hol dir Proton Drive"
       ],
       "Get started": [
         "Erste Schritte"
@@ -441,6 +441,9 @@
       ],
       "Search": [
         "Suchen"
+      ],
+      "Search countries": [
+        "Länder durchsuchen"
       ],
       "Search drive": [
         "Drive durchsuchen"
@@ -659,7 +662,7 @@
         "Rabatte werden auf Grundlage des monatlichen Standardpreises von ${ standardMonthlyPricing } berechnet"
       ],
       "Save ${ percentage }%": [
-        "${ percentage }%"
+        "${ percentage } %"
       ],
       "Special offer Terms and Conditions": [
         "Allgemeine Geschäftsbedingungen des Sonderangebots"
@@ -818,11 +821,11 @@
       ]
     },
     "Collapsible tooltip": {
-      "Close": [
-        "Schließen"
+      "Collapse": [
+        "Reduzieren"
       ],
-      "Open": [
-        "Öffnen"
+      "Expand": [
+        "Erweitern"
       ]
     },
     "color": {
@@ -1086,9 +1089,6 @@
       "Burkina Faso": [
         "Burkina Faso"
       ],
-      "Burma": [
-        "Myanmar"
-      ],
       "Burundi": [
         "Burundi"
       ],
@@ -1143,9 +1143,6 @@
       "Costa Rica": [
         "Costa Rica"
       ],
-      "Cote d'Ivoire\"": [
-        "Elfenbeinküste"
-      ],
       "Croatia": [
         "Kroatien"
       ],
@@ -1160,6 +1157,9 @@
       ],
       "Czech Republic": [
         "Tschechische Republik"
+      ],
+      "Côte d'Ivoire": [
+        "Elfenbeinküste"
       ],
       "Denmark": [
         "Dänemark"
@@ -1190,6 +1190,9 @@
       ],
       "Estonia": [
         "Estland"
+      ],
+      "Eswatini": [
+        "Königreich Eswatini (vormals Swasiland)"
       ],
       "Ethiopia": [
         "Äthiopien"
@@ -1434,6 +1437,9 @@
       "Mozambique": [
         "Mosambik"
       ],
+      "Myanmar": [
+        "Myanmar"
+      ],
       "Namibia": [
         "Namibia"
       ],
@@ -1625,9 +1631,6 @@
       ],
       "Svalbard and Jan Mayen": [
         "Spitzbergen und Jan Mayen"
-      ],
-      "Swaziland": [
-        "Königreich Eswatini (vormals Swasiland)"
       ],
       "Sweden": [
         "Schweden"
@@ -2091,6 +2094,9 @@
       ],
       "Please ${ refresh } or check your connection.": [
         "Bitte ${ refresh } oder überprüfe deine Verbindung."
+      ],
+      "Something went wrong. Please refresh the page or try again later.": [
+        "Etwas ist schiefgelaufen. Bitte aktualisiere die Seite oder versuche es später erneut."
       ],
       "There was a problem connecting to Proton.": [
         "Es gab ein Problem beim Aufbau der Verbindung zu Proton."
@@ -2783,7 +2789,8 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Einer oder mehrere deiner vertrauenswürdigen Schlüssel wurden durch dessen Besitzer als „kompromittiert“ gemeldet. Wir empfehlen dir, die betroffenen Schlüssel als „nicht vertrauenswürdig“ zu markieren."
       ],
-      "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters is allowed": [
+      "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } character is allowed": [
+        "Es ist höchstens ${ MAX_CUSTOM_PASSWORD_LENGTH } Zeichen erlaubt",
         "Es sind höchstens ${ MAX_CUSTOM_PASSWORD_LENGTH } Zeichen erlaubt"
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
@@ -2807,7 +2814,7 @@
       "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
         "PGP/Inline ist nur mit dem Klartext-Format kompatibel. Bitte beachte, dass ${ MAIL_APP_NAME } verschlüsselte Nachrichten immer signiert."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
         "PGP/MIME sendet die Nachricht automatisch unter Verwendung des aktuellen Verfassen-Modus. Bitte beachte, dass ${ MAIL_APP_NAME } verschlüsselte Nachrichten immer signiert."
       ],
       "Please enter the password to decrypt and view content.": [
@@ -2886,8 +2893,8 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Wähle das Nachrichtenformat, das standardmäßig verwendet werden soll, wenn du eine E-Mail an diese E-Mail-Adresse sendest."
       ],
-      "Select what you want to move from Google.": [
-        "Wähle aus, was du von Google verschieben möchtest."
+      "Select what you want to import from Google.": [
+        "Wähle aus, was du von Google importieren möchtest."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Bitte wähle die zu importierenden Kalender aus. Für jeden importierten Kalender wird ein neuer Kalender erstellt, bis die Grenze von 20 Kalendern erreicht ist."
@@ -3685,7 +3692,7 @@
       ]
     },
     "new_plans: info": {
-      "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
+      "Introducing Proton’s refreshed look.${ br }Many services, one mission. Welcome to an internet where privacy is the default.": [
         "Proton präsentiert sein neues Design.${ br } Viele Dienste, eine Mission. Willkommen bei einem Internet, bei dem der Schutz der Privatsphäre Standard ist."
       ]
     },
@@ -3894,26 +3901,14 @@
       ]
     },
     "Onboarding Action": {
-      "Enable Beta Access": [
-        "Beta-Zugang aktivieren"
-      ],
       "Next": [
         "Weiter"
       ],
       "Start using ${ appName }": [
         "Beginne, ${ appName } zu verwenden"
-      ],
-      "Upgrade account": [
-        "Konto-Upgrade durchführen"
       ]
     },
     "Onboarding Info": {
-      "${ appName } is currently in early access and only available to users with a paid plan.": [
-        "${ appName } ist derzeit noch in der Entwicklungsphase und nur für Benutzer mit einem kostenpflichtigen Abonnement verfügbar."
-      ],
-      "${ appName } is currently only available if you enable Beta Access.": [
-        "${ appName } ist derzeit nur verfügbar, wenn du den Beta-Zugriff aktivierst."
-      ],
       "Your trusty online vault for vital documents and precious memories.": [
         "Dein zuverlässiger Online-Tresor für wichtige Dokumente und wertvolle Erinnerungen."
       ]
@@ -3939,12 +3934,6 @@
       ]
     },
     "Onboarding Title": {
-      "${ appName } is in Beta": [
-        "${ appName } befindet sich im Beta-Stadium"
-      ],
-      "Upgrade to access ${ appName }": [
-        "Führe ein Upgrade durch, um Zugriff auf ${ appName } zu erhalten"
-      ],
       "Welcome to ${ appName }": [
         "Willkommen bei ${ appName }"
       ]

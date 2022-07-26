@@ -243,7 +243,7 @@ const ComposerExpirationModal = ({ message, onClose, onChange }: Props) => {
                         onChange={() => setIsSendOutside(!isSendOutside)}
                     />
                     <span>
-                        {c('Info').t`I'm sending this message to a non-ProtonMail user.`}
+                        {c('Info').t`I'm sending this message to a non-Proton Mail user.`}
                         <Href href={getKnowledgeBaseUrl('/expiration/')} className="ml0-25">{c('Link')
                             .t`Learn more`}</Href>
                     </span>

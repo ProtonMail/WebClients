@@ -35,6 +35,9 @@
       "Request new code": [
         "Запросить новый код"
       ],
+      "Search countries": [
+        "Поиск стран"
+      ],
       "Submit": [
         "Отправить"
       ],
@@ -56,13 +59,13 @@
     },
     "color": {
       "carrot": [
-        "рыже"
+        "морковный"
       ],
       "cerise": [
         "вишневый"
       ],
       "cobalt": [
-        "кобальт"
+        "кобальтовый"
       ],
       "copper": [
         "медный"
@@ -71,7 +74,7 @@
         "энзианский"
       ],
       "fern": [
-        "папоротник"
+        "папоротниковый"
       ],
       "forest": [
         "лес"
@@ -80,16 +83,16 @@
         "океан"
       ],
       "olive": [
-        "оливковое"
+        "оливковый"
       ],
       "pacific": [
         "спокойный"
       ],
       "pickle": [
-        "соленье"
+        "огуречный"
       ],
       "pine": [
-        "сосна"
+        "сосновый"
       ],
       "pink": [
         "розовый"
@@ -101,19 +104,19 @@
         "фиолетовый"
       ],
       "reef": [
-        "риф"
+        "коралловый"
       ],
       "sahara": [
-        "Сахара"
+        "сахара"
       ],
       "slateblue": [
         "сланцево-синий"
       ],
       "soil": [
-        "почва"
+        "землистый"
       ],
       "strawberry": [
-        "клубника"
+        "клубничный"
       ]
     },
     "Country name": {
@@ -228,9 +231,6 @@
       "Burkina Faso": [
         "Буркина-Фасо"
       ],
-      "Burma": [
-        "Бирма"
-      ],
       "Burundi": [
         "Бурунди"
       ],
@@ -285,9 +285,6 @@
       "Costa Rica": [
         "Коста-Рика"
       ],
-      "Cote d'Ivoire\"": [
-        "Cote d'Ivoire"
-      ],
       "Croatia": [
         "Хорватия"
       ],
@@ -302,6 +299,9 @@
       ],
       "Czech Republic": [
         "Чешская Республика"
+      ],
+      "Côte d'Ivoire": [
+        "Кот-д'Ивуар"
       ],
       "Denmark": [
         "Дания"
@@ -332,6 +332,9 @@
       ],
       "Estonia": [
         "Эстония"
+      ],
+      "Eswatini": [
+        "Эсватини"
       ],
       "Ethiopia": [
         "Эфиопия"
@@ -576,6 +579,9 @@
       "Mozambique": [
         "Мозамбик"
       ],
+      "Myanmar": [
+        "Мьянма"
+      ],
       "Namibia": [
         "Намибия"
       ],
@@ -768,9 +774,6 @@
       "Svalbard and Jan Mayen": [
         "Шпицберген и Ян-Майен"
       ],
-      "Swaziland": [
-        "Свазиленд"
-      ],
       "Sweden": [
         "Швеция"
       ],
@@ -918,9 +921,6 @@
       ]
     },
     "Error message": {
-      "Brace yourself till we get the error fixed.": [
-        "Something went wrong. Please refresh the page or try again later."
-      ],
       "Error: ${ errorMessage }": [
         "Ошибка: ${ errorMessage }"
       ],
@@ -929,6 +929,9 @@
       ],
       "Please ${ refresh } or check your connection.": [
         "Пожалуйста, ${ refresh } или проверьте Ваше подключение."
+      ],
+      "Something went wrong. Please refresh the page or try again later.": [
+        "Что-то пошло не так. Пожалуйста, обновите страницу или повторите попытку позже."
       ],
       "There was a problem connecting to Proton.": [
         "Возникла проблема при подключении к Proton."

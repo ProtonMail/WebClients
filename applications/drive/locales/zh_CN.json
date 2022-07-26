@@ -191,6 +191,9 @@
       "Download": [
         "下載"
       ],
+      "Download all": [
+        "全部下载"
+      ],
       "Download anyway": [
         "仍要下载"
       ],
@@ -238,6 +241,9 @@
       ],
       "Forward as attachment": [
         "作为附件转发"
+      ],
+      "Get ${ DRIVE_APP_NAME }": [
+        "获得 ${ DRIVE_APP_NAME }"
       ],
       "Get link": [
         "生成共享链接"
@@ -422,11 +428,17 @@
       "Resume upload": [
         "恢复上传"
       ],
+      "Retry": [
+        "重试"
+      ],
       "Save": [
         "保存"
       ],
       "Search": [
         "搜索"
+      ],
+      "Search countries": [
+        "搜索国家/地区"
       ],
       "Search drive": [
         "搜索网盘"
@@ -472,6 +484,9 @@
       ],
       "Skip": [
         "跳过"
+      ],
+      "Start import": [
+        "开始导入"
       ],
       "Start recovering": [
         "开始恢复"
@@ -759,6 +774,14 @@
         "不受支持的日历格式"
       ]
     },
+    "Collapsible tooltip": {
+      "Collapse": [
+        "收起"
+      ],
+      "Expand": [
+        "展开"
+      ]
+    },
     "Confirm modal title": {
       "Quit import customization?": [
         "退出导入定制？"
@@ -924,9 +947,6 @@
       ],
       "Costa Rica": [
         "哥斯达黎加"
-      ],
-      "Cote d'Ivoire\"": [
-        "科特迪瓦"
       ],
       "Cuba": [
         "古巴"
@@ -1342,6 +1362,9 @@
       "Please ${ refresh } or check your connection.": [
         "请${ refresh }或检查网络连接。"
       ],
+      "Something went wrong. Please refresh the page or try again later.": [
+        "出错了，请刷新页面或稍后重试。"
+      ],
       "There was a problem connecting to Proton.": [
         "连接到 Proton 时出现问题。"
       ],
@@ -1709,6 +1732,12 @@
       "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
         "数字签名已验证，此文件夹是由 ${ emailAddress } 用户安全上传。"
       ],
+      "Download canceled": [
+        "下载已取消"
+      ],
+      "Download failed": [
+        "下载失败"
+      ],
       "Download of ${ downloadFileName } will be aborted": [
         "${ downloadFileName } 的下载进程将被中止"
       ],
@@ -1726,6 +1755,9 @@
       ],
       "Duplicate key updated": [
         "重复的密钥已更新"
+      ],
+      "Enabling drive search": [
+        "正在启用网盘搜索"
       ],
       "Encrypted search is here": [
         "已推出加密搜索功能"
@@ -1928,8 +1960,8 @@
       "of": [
         "/"
       ],
-      "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters is allowed": [
-        "最多只允许 ${ MAX_CUSTOM_PASSWORD_LENGTH } 个字符"
+      "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } character is allowed": [
+        "最多只能允许 ${ MAX_CUSTOM_PASSWORD_LENGTH } 个字符"
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "只有在与非 ${ BRAND_NAME } 用户使用 PGP 通讯时才应更改下列选项。"
@@ -1979,6 +2011,9 @@
       "Priority support": [
         "优先客服支持"
       ],
+      "Private search enabled. You may now close this dialogue and search for files and folders.": [
+        "隐私搜索已启用，您可以关闭对话框并开始搜索文件和文件夹了。"
+      ],
       "Queued": [
         "等待中"
       ],
@@ -1997,6 +2032,12 @@
       "Search cannot be enabled in this browser": [
         "此浏览器无法启用搜索功能"
       ],
+      "Search Enabled": [
+        "搜索已启用"
+      ],
+      "Secure sharing": [
+        "安全分享"
+      ],
       "Secure your documents and data": [
         "选择您的文档和数据"
       ],
@@ -2006,8 +2047,8 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "选择向该地址发送邮件的首选格式。"
       ],
-      "Select what you want to move from Google.": [
-        "请选择你要从 Google 账户导入的内容。"
+      "Select what you want to import from Google.": [
+        "请选择您要从 Google 账户导入的内容。"
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "请选择要导入的日历。将为每个导入的日历创建一个新日历（最多 20 个）。"
@@ -2714,11 +2755,6 @@
         "切换或添加账户"
       ]
     },
-    "new_plans: info": {
-      "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
-        "Proton 界面现已焕然一新。${ br }服务繁多，使命不变。欢迎进入隐私优先的互联网。"
-      ]
-    },
     "new_plans: label": {
       "Tell us about your experience. (Optional)": [
         "您可以详细叙述您的使用体验。（非必填）"
@@ -2803,26 +2839,14 @@
       ]
     },
     "Onboarding Action": {
-      "Enable Beta Access": [
-        "启用测试版功能"
-      ],
       "Next": [
         "下一步"
       ],
       "Start using ${ appName }": [
         "开始使用 ${ appName }"
-      ],
-      "Upgrade account": [
-        "升级账户"
       ]
     },
     "Onboarding Info": {
-      "${ appName } is currently in early access and only available to users with a paid plan.": [
-        "${ appName } 目前尚处于抢先体验阶段，仅适用于付费用户。"
-      ],
-      "${ appName } is currently only available if you enable Beta Access.": [
-        "目前您需要开启测试版功能才能使用 ${ appName }。"
-      ],
       "Your trusty online vault for vital documents and precious memories.": [
         "为您的重要文件和美好回忆而设的云端保险箱。"
       ]
@@ -2848,12 +2872,6 @@
       ]
     },
     "Onboarding Title": {
-      "${ appName } is in Beta": [
-        "${ appName } 尚处于测试阶段"
-      ],
-      "Upgrade to access ${ appName }": [
-        "升级账户即可使用 ${ appName }"
-      ],
       "Welcome to ${ appName }": [
         "欢迎来到 ${ appName }"
       ]
@@ -3190,6 +3208,9 @@
       "Back": [
         "后退"
       ],
+      "Based in Switzerland, available globally": [
+        "扎根瑞士，惠及全球"
+      ],
       "Beta Access": [
         "测试版功能"
       ],
@@ -3409,6 +3430,9 @@
       "Phone numbers": [
         "电话号码"
       ],
+      "Privacy settings": [
+        "隐私设置"
+      ],
       "Re-sign all contacts": [
         "重新签署所有联系人"
       ],
@@ -3453,6 +3477,9 @@
       ],
       "Select link expiration time": [
         "选择链接失效时间"
+      ],
+      "Send feedback": [
+        "提交反馈"
       ],
       "Settings": [
         "设置"

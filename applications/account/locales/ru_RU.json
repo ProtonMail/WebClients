@@ -12,10 +12,10 @@
         "Полный вид"
       ],
       "Limited": [
-        "Ограничено"
+        "Ограниченный"
       ],
       "Limited view": [
-        "Ограниченный вид"
+        "Ограниченный обзор"
       ]
     },
     "Action": {
@@ -191,7 +191,7 @@
         "Скопировать адрес эл. почты в буфер обмена"
       ],
       "Copy link": [
-        "Скопировать ссылку"
+        "Копировать ссылку"
       ],
       "Create": [
         "Создать"
@@ -322,6 +322,9 @@
       "Edit subscription": [
         "Изменить подписку"
       ],
+      "Emoji": [
+        "Эмоджи"
+      ],
       "enable desktop notifications": [
         "включить уведомления на рабочем столе"
       ],
@@ -338,7 +341,7 @@
         "Экспортировать"
       ],
       "Export ICS": [
-        "Экспортировать ICS"
+        "Экспорт ICS"
       ],
       "Export key": [
         "Экспортировать ключ"
@@ -401,7 +404,7 @@
         "Импортировать электронную почту"
       ],
       "Import from .ics": [
-        "Импортировать из .ics"
+        "Импорт из .ics"
       ],
       "Import key": [
         "Импортировать ключ"
@@ -623,22 +626,28 @@
         "Сохранить адрес"
       ],
       "Save ICS file": [
-        "Сохранить ICS файл"
+        "Сохранить файл ICS"
       ],
       "Save selected": [
         "Сохранить выбранное"
+      ],
+      "Search countries": [
+        "Поиск стран"
+      ],
+      "Search settings": [
+        "Настройки поиска"
       ],
       "Select ${ planTitle }": [
         "Выбрать ${ planTitle }"
       ],
       "Select calendar view": [
-        "Выбрать вид календаря"
+        "Выберите вид календаря"
       ],
       "Select files": [
         "Выбрать файлы"
       ],
       "Select language for invitation emails": [
-        "Выберите язык для писем с приглашением"
+        "Выберите язык для писем с приглашениями"
       ],
       "Select timezone": [
         "Выберите часовой пояс"
@@ -677,7 +686,7 @@
         "Показать ярлыки"
       ],
       "Show less": [
-        "Свернуть"
+        "Показать меньше"
       ],
       "Show more": [
         "Показать больше"
@@ -830,8 +839,14 @@
       ]
     },
     "Action in trial plan": {
+      "Continue with free plan": [
+        "Продолжить использовать бесплатный тариф"
+      ],
       "No, thanks": [
         "Нет, спасибо"
+      ],
+      "Start my 30-day free trial": [
+        "Начать мой 30-дневный бесплатный пробный период"
       ],
       "Try free for 30 days": [
         "Бесплатный пробный период 30 дней"
@@ -960,7 +975,7 @@
     },
     "Auto import invitations setting": {
       "Add to calendar and mark as pending": [
-        "Добавить в календарь и отметить, как ожидающее рассмотрения"
+        "Добавить в календарь и отметить как ожидающее рассмотрения"
       ]
     },
     "Autoresponse": {
@@ -1212,7 +1227,7 @@
     },
     "Calendar import section description": {
       "You can import ICS files from another calendar to ${ CALENDAR_APP_NAME }. This lets you quickly import one event or your entire agenda.": [
-        "Вы можете импортировать файлы ICS из другого календаря в ${ CALENDAR_APP_NAME }. Это позволяет быстро импортировать одно событие или весь календарь."
+        "Вы можете импортировать файлы ICS из другого календаря в ${ CALENDAR_APP_NAME }. Это позволяет быстро импортировать одно событие или всю повестку дня."
       ]
     },
     "Calendar limit warning": {
@@ -1239,7 +1254,7 @@
     },
     "Calendar status": {
       "Active": [
-        "Активен"
+        "Активный"
       ],
       "Default": [
         "По умолчанию"
@@ -1306,11 +1321,11 @@
       ]
     },
     "Collapsible tooltip": {
-      "Close": [
-        "Закрыть"
+      "Collapse": [
+        "Свернуть"
       ],
-      "Open": [
-        "Открыть"
+      "Expand": [
+        "Развернуть"
       ]
     },
     "color": {
@@ -1744,9 +1759,6 @@
       "Burkina Faso": [
         "Буркина-Фасо"
       ],
-      "Burma": [
-        "Бирма"
-      ],
       "Burundi": [
         "Бурунди"
       ],
@@ -1801,9 +1813,6 @@
       "Costa Rica": [
         "Коста-Рика"
       ],
-      "Cote d'Ivoire\"": [
-        "Берег Слоновой Кости"
-      ],
       "Croatia": [
         "Хорватия"
       ],
@@ -1818,6 +1827,9 @@
       ],
       "Czech Republic": [
         "Чешская Республика"
+      ],
+      "Côte d'Ivoire": [
+        "Кот-д'Ивуар"
       ],
       "Denmark": [
         "Дания"
@@ -1848,6 +1860,9 @@
       ],
       "Estonia": [
         "Эстония"
+      ],
+      "Eswatini": [
+        "Эсватини"
       ],
       "Ethiopia": [
         "Эфиопия"
@@ -2092,6 +2107,9 @@
       "Mozambique": [
         "Мозамбик"
       ],
+      "Myanmar": [
+        "Мьянма"
+      ],
       "Namibia": [
         "Намибия"
       ],
@@ -2284,9 +2302,6 @@
       "Svalbard and Jan Mayen": [
         "Шпицберген и Ян-Майен"
       ],
-      "Swaziland": [
-        "Свазиленд"
-      ],
       "Sweden": [
         "Швеция"
       ],
@@ -2427,7 +2442,7 @@
         "${ count } раз",
         "${ count } раза",
         "${ count } раз",
-        "${ count } раза"
+        "${ count } раз"
       ],
       "Daily": [
         "Ежедневно"
@@ -2442,19 +2457,19 @@
         "Каждый ${ interval } день",
         "Каждые ${ interval } дня",
         "Каждые ${ interval } дней",
-        "Каждые ${ interval } дня"
+        "Каждые ${ interval } дней"
       ],
       "Every ${ interval } day, ${ timesString }": [
         "Каждый ${ interval } день, ${ timesString }",
         "Каждые ${ interval } дня, ${ timesString }",
         "Каждые ${ interval } дней, ${ timesString }",
-        "Каждые ${ interval } дня, ${ timesString }"
+        "Каждые ${ interval } дней, ${ timesString }"
       ],
       "Every ${ interval } day, ${ untilString }": [
         "Каждый ${ interval } день, ${ untilString }",
         "Каждые ${ interval } дня, ${ untilString }",
         "Каждые ${ interval } дней, ${ untilString }",
-        "Каждые ${ interval } дня, ${ untilString }"
+        "Каждые ${ interval } дней, ${ untilString }"
       ],
       "until ${ dateString }": [
         "до ${ dateString }"
@@ -2494,7 +2509,7 @@
       ]
     },
     "Description": {
-      "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }": [
+      "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }..": [
         "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }."
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
@@ -2816,7 +2831,7 @@
         "Требуется ввести имя, указанное на карте"
       ],
       "Name required": [
-        "Требуется имя"
+        "Необходимо название"
       ],
       "No active sessions": [
         "Нет активных сеансов"
@@ -3117,7 +3132,7 @@
       "Calendar": [
         "Календарь"
       ],
-      "Calendar timezone not supported": [
+      "Calendar time zone not supported": [
         "Часовой пояс календаря не поддерживается"
       ],
       "Component with wrong format": [
@@ -3192,11 +3207,11 @@
       "Start time out of bounds": [
         "Время начала вне границ"
       ],
+      "Time zone not supported": [
+        "Часовой пояс не поддерживается"
+      ],
       "Timezone": [
         "Часовой пояс"
-      ],
-      "Timezone not supported": [
-        "Часовой пояс не поддерживается"
       ],
       "To-do entry": [
         "Запись списка задач"
@@ -3209,20 +3224,20 @@
       ]
     },
     "Error message": {
-      "Brace yourself till we get the error fixed.": [
-        "Держитесь, пока мы исправляем ошибку."
-      ],
       "Error: ${ errorMessage }": [
         "Ошибка: ${ errorMessage }"
       ],
       "Invalid URL": [
-        "Неверный URL"
+        "Недействительный URL"
       ],
       "Oops, something went wrong": [
         "Хм. Что-то пошло не так"
       ],
       "Please ${ refresh } or check your connection.": [
         "Пожалуйста, ${ refresh } или проверьте подключение."
+      ],
+      "Something went wrong. Please refresh the page or try again later.": [
+        "Что-то пошло не так. Пожалуйста, обновите страницу или повторите попытку позже."
       ],
       "There was a problem connecting to Proton.": [
         "Возникла проблема при подключении к Proton."
@@ -3271,7 +3286,7 @@
     },
     "Error when exporting event from calendar": {
       "Event @ ${ timeString }": [
-        "Событие в ${ timeString }"
+        "Событие @ ${ timeString }"
       ],
       "Event from ${ timeString }, ${ rruleString }": [
         "Событие с ${ timeString }, ${ rruleString }"
@@ -3328,22 +3343,22 @@
     },
     "Export calendar": {
       "${ totalProcessed }/${ totalToProcess } event exported": [
-        "${ totalProcessed } событий из ${ totalToProcess } экспортированы",
-        "${ totalProcessed } события из ${ totalToProcess } экспортированы",
-        "${ totalProcessed } событие из ${ totalToProcess } экспортировано",
+        "${ totalProcessed }/${ totalToProcess } событие экспортировано",
+        "${ totalProcessed }/${ totalToProcess } события экспортированы",
+        "${ totalProcessed }/${ totalToProcess } события экспортированы",
         "${ totalProcessed } событий из ${ totalToProcess } экспортированы"
       ],
       "Calendar successfully exported. You can now save the ICS file.": [
-        "Календарь успешно экспортирован. Теперь вы можете сохранить ICS файл."
+        "Календарь успешно экспортирован. Теперь вы можете сохранить файл ICS."
       ],
       "Decrypting events from your calendar: ${ totalProcessed }/${ totalToProcess }": [
-        "Расшифровано событий из вашего календаря: ${ totalProcessed } из ${ totalToProcess }"
+        "Расшифровка событий из календаря: ${ totalProcessed }/${ totalToProcess }"
       ],
       "Due to a password reset, none of your events could be decrypted and exported.": [
-        "Ваши события не могут быть расшифрованы и экспортированы из-за сброса пароля."
+        "Из-за сброса пароля ни одно из ваших событий не удалось расшифровать и экспортировать."
       ],
       "Due to a password reset, some of your events could not be decrypted and exported.": [
-        "Ваши события не могут быть расшифрованы и экспортированы из-за сброса пароля."
+        "Из-за сброса пароля некоторые из ваших событий не удалось расшифровать и экспортировать."
       ],
       "Error decrypting event": [
         "Ошибка расшифровки события"
@@ -3352,28 +3367,28 @@
         "Узнайте, как восстановить зашифрованные события со старым паролем"
       ],
       "Loading events": [
-        "Загрузка события"
+        "Скачивание событий"
       ],
       "None of the events could be exported.": [
-        "Не удалось экспортировать некоторые события."
+        "Ни одно из событий не может быть экспортировано."
       ],
       "Password reset - event cannot be decrypted": [
-        "Сброс пароля: невозможно расшифровать событие"
+        "Сброс пароля - событие не может быть расшифровано"
       ],
       "Password reset - multiple events cannot be decrypted": [
-        "Сброс пароля: невозможно расшифровать событие"
+        "Сброс пароля - несколько событий не могут быть расшифрованы"
       ],
       "Please don't close the tab before the exporting process is finished.": [
-        "Пожалуйста, не закрывайте вкладку до завершения импорта."
+        "Пожалуйста, не закрывайте вкладку до завершения процесса экспорта."
       ],
       "Some of your events could not be exported.": [
         "Не удалось экспортировать некоторые события."
       ],
       "The internet connection was interrupted, causing the export process to fail. Please try again.": [
-        "Процесс экспорта завершился неудачно из-за прерванного соединения с интернет. Пожалуйста, попробуйте еще раз."
+        "Подключение к Интернету было прервано, что привело к сбою процесса экспорта. Пожалуйста, попробуйте еще раз."
       ],
       "You can save an ICS file of the events that were successfully exported.": [
-        "Вы можете сохранить ICS файл событий, которые были успешно экспортированы."
+        "Вы можете сохранить ICS-файл событий, которые были успешно экспортированы."
       ]
     },
     "Feature": {
@@ -3590,7 +3605,7 @@
         "Отпечаток ключа организации"
       ],
       "Status": [
-        "Статус"
+        "Состояние"
       ],
       "Time": [
         "Время"
@@ -4110,7 +4125,7 @@
         "${ boldWarning } Если вы продолжите, то потеряете доступ ко всем текущим зашифрованным данным в вашего аккаунта."
       ],
       "${ calendarName } will be set as default calendar.": [
-        "${ calendarName } будет установлен как календарь по умолчанию."
+        "${ calendarName } будет установлен в качестве календаря по умолчанию."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } новый календарь",
@@ -4286,8 +4301,8 @@
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Имя, которое поможет вам определить, где вы его используете, чтобы вы могли легко отозвать или продлить его позже."
       ],
-      "A recovery file lets you unlock and view your data after an account reset. ": [
-        "A recovery file lets you unlock and view your data after an account reset."
+      "A recovery file lets you unlock and view your data after an account reset.": [
+        "Файл восстановления позволяет разблокировать и просмотреть данные после сброса учетной записи."
       ],
       "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password.": [
         "Фразу для восстановления доступа к учетной записи позволит вам зайти в ваш аккаунт и восстановить ваши зашифрованные сообщения, если вы забудете ваш пароль."
@@ -4392,13 +4407,13 @@
         "и"
       ],
       "Anyone with this link can see all the event details of this calendar such as title, location or participants.": [
-        "Любой, у кого есть эта ссылка, может увидеть всю информацию о событии в этом календаре, такую как название, местоположение или участники."
+        "Каждый, кто имеет эту ссылку, может увидеть все подробности события из этого календаря, такие как название, местоположение или участников."
       ],
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
-        "Любой, у кого есть эта ссылка, может увидеть в вашем календаре, свободны вы или заняты. Они не могут видеть детали событий, такие как название, местоположение или участников."
+        "Каждый, кто имеет эту ссылку, может увидеть все подробности события из этого календаря, такие как название, местоположение или участников."
       ],
       "Anyone with this link won't be able to sync or get future updates for your calendar. If you want to give them access again, you will have to create a new link.": [
-        "Никто с этой ссылкой не сможет синхронизировать или получать будущие обновления для вашего календаря. Если вы хотите дать им доступ еще раз, вам придется создать новую ссылку."
+        "Каждый, кто имеет эту ссылку, не сможет синхронизировать или получать будущие обновления для вашего календаря. Если вы захотите снова предоставить им доступ, вам придется создать новую ссылку."
       ],
       "AOL reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
         "AOL читает ваши личные данные, чтобы предоставить доступ рекламодателям и другим третьим лицам. Для большей конфиденциальности создайте защищенный адрес электронной почты."
@@ -4497,7 +4512,7 @@
         "Если выйти сейчас, изменения могут не сохраниться"
       ],
       "By sharing the full event details of this calendar, you accept to grant Proton access to this calendar's encrypted information.": [
-        "Поделившись полной информацией о событии этого календаря, вы соглашаетесь предоставить Proton доступ к зашифрованной информации этого календаря."
+        "Предоставляя полную информацию о подробностях события из этого календаря, вы соглашаетесь предоставить компании Proton доступ к зашифрованной информации этого календаря."
       ],
       "Center": [
         "Центрировать"
@@ -4536,7 +4551,7 @@
         "Создайте ярлык для импортированных сообщений, укажите диапазон времени для этого импорта и ярлыки, которые вы хотите импортировать."
       ],
       "Create a link to your calendar and share it with anyone outside Proton. Only you can add or remove events.": [
-        "Создайте ссылку на свой календарь и поделитесь ею с тем, кто не использует Proton. Только вы можете добавлять или удалять события."
+        "Создайте ссылку на свой календарь и делитесь ею с кем-либо за пределами Proton. Только вы можете добавлять или удалять события."
       ],
       "Create a new account and share the email address and password with the user.": [
         "Создайте новый аккаунт и сообщите пользователю адрес электронной почты и пароль."
@@ -4563,19 +4578,19 @@
         "Пользовательский"
       ],
       "Custom daily": [
-        "Настраиваемое ежедневное"
+        "Пользовательское ежедневно"
       ],
       "Custom email domains": [
         "Пользовательские домены электронной почты"
       ],
       "Custom monthly": [
-        "Настраиваемое ежемесячное"
+        "Пользовательское ежемесячно"
       ],
       "Custom weekly": [
-        "Настраиваемое еженедельное"
+        "Пользовательское еженедельно"
       ],
       "Custom yearly": [
-        "Настраиваемое ежегодное"
+        "Пользовательское ежегодно"
       ],
       "Daily": [
         "Ежедневно"
@@ -4752,7 +4767,7 @@
         "Если другой администратор изменил этот пароль, вам нужно будет спросить у него новый пароль организации."
       ],
       "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
-        "Если компьютерный часовой пояс не совпадает с текущими настройками часового пояса, то вам будет предложено обновить его (максимум один раз в день)."
+        "Если системный часовой пояс не соответствует текущему предпочтению часового пояса, вам будет предложено обновить его (не чаще одного раза в день)."
       ],
       "If this domain is currently receiving emails, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Если этот домен в настоящее время получает письма, выберите вкладку ${ boldAddresses } и добавьте все активные адреса электронной почты перед изменением записи MX для обеспечения плавного перехода."
@@ -5117,6 +5132,9 @@
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Введите фразу восстановления из 12 слов, связанную с вашим аккаунтом."
       ],
+      "Please fill out this field.": [
+        "Пожалуйста, заполните это поле."
+      ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
         "Пожалуйста, храните его в безопасности. Он понадобится вам для доступа к вашей учетной записи и расшифровки данных в случае сброса пароля."
       ],
@@ -5243,8 +5261,8 @@
       "Select a service provider to start": [
         "Выберите поставщика услуг для начала работы"
       ],
-      "Select what you want to move from Google.": [
-        "Выберите, что вы хотите перенести из Google."
+      "Select what you want to import from Google.": [
+        "Выберите, что вы хотите импортировать из Google."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Выберите, какие календари необходимо импортировать. Для каждого импортированного календаря будет создан новый календарь, не превышающий лимит в 20 календарей."
@@ -5426,6 +5444,9 @@
       "to continue to ${ toAppName }": [
         "чтобы продолжить в ${ toAppName }"
       ],
+      "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
+        "Для постоянного совершенствования наших услуг мы иногда собираем данные для контроля надлежащего функционирования наших приложений. Эта информация не передается никаким сторонним службам."
+      ],
       "To decrypt and view your emails and other data, you need a recovery file.": [
         "Для расшифровки и просмотра писем и других данных необходим файл восстановления."
       ],
@@ -5522,8 +5543,8 @@
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Использовать лучший сервер в соответствии с текущей нагрузкой и местоположением: ${ formattedBestServerName }"
       ],
-      "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
-        "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux."
+      "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
+        "Используйте следующие учетные данные при подключении к серверам ${ VPN_APP_NAME } без приложения. Примеры использования включают: Tunnelblick на macOS, OpenVPN на GNU/Linux."
       ],
       "Verification can take a few minutes.": [
         "Проверка может занять несколько минут."
@@ -5577,7 +5598,7 @@
         "Неделя"
       ],
       "Week and month views only apply to desktop.": [
-        "Отображение недели и месяца применяются только к рабочему столу."
+        "Отображение недели и месяца применяется только для рабочего стола."
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "Мы отправим код сброса на адрес электронной почты, который вы указали для восстановления аккаунта."
@@ -5688,7 +5709,7 @@
         "Вы должны удалить все дополнительные личные календари и все ссылки на общие календари, прежде чем вы сможете отменить подписку."
       ],
       "You need to have a personal calendar to create a link.": [
-        "У вас должен быть личный календарь, чтобы создать ссылку."
+        "Для создания ссылки необходимо иметь личный календарь."
       ],
       "You need to have an active personal calendar to import your events from .ics.": [
         "Для импорта событий из .ics необходимо иметь активный личный календарь."
@@ -5812,11 +5833,35 @@
       "Additional duplicate keys detected. Please upload individually for more information.": [
         "Обнаружены дополнительные дубликаты ключей. Для получения дополнительной информации загрузите, пожалуйста, по отдельности."
       ],
+      "Create an email address": [
+        "Создайте адрес электронной почты"
+      ],
+      "Day 27: Trial reminder": [
+        "День 27: Напоминание о пробном периоде"
+      ],
+      "Day 30: Trial ends": [
+        "День 30: Пробный период заканчивается"
+      ],
+      "Enjoy secure, easy-to-use emailing with plenty of premium features.": [
+        "Наслаждайтесь защищенной, простой в использовании электронной почтой с множеством функций премиум-класса."
+      ],
       "Key ${ fingerprint } has already been uploaded": [
         "Ключ ${ fingerprint } уже был загружен"
       ],
       "Track your referral link activities here": [
         "Отслеживайте активность ваших реферальных ссылок здесь"
+      ],
+      "Try Mail Plus": [
+        "Попробуйте Почту Plus"
+      ],
+      "We’ll email you before your trial ends. Cancel anytime.": [
+        "Мы отправим вам электронное письмо до окончания пробного периода. Вы можете это отменить в любое время."
+      ],
+      "Your new email address is ready to go!": [
+        "Ваш новый адрес электронной почты готов к работе!"
+      ],
+      "Your subscription starts on ${ startText }.": [
+        "Ваша подписка начинается с ${ startText }."
       ]
     },
     "Info - folder colouring feature": {
@@ -6292,6 +6337,9 @@
       "Auto-reply": [
         "Автоответчик"
       ],
+      "Auto-unsubscribe": [
+        "Автоподписка"
+      ],
       "Billing cycle": [
         "Платежный цикл"
       ],
@@ -6342,6 +6390,9 @@
       ],
       "Code is 6 digits without spaces": [
         "Код состоит из 6 цифр без пробелов"
+      ],
+      "Collect usage diagnostics": [
+        "Собирайте диагностику использования"
       ],
       "Color": [
         "Цвет"
@@ -6431,19 +6482,19 @@
         "Дни недели"
       ],
       "Default email address": [
-        "Адрес эл. почты по умолчанию"
+        "Адрес электронной почты по умолчанию"
       ],
       "Default event duration": [
         "Длительность события по умолчанию"
       ],
       "Default full day notifications": [
-        "Уведомления для событий на весь день по умолчанию"
+        "Уведомления в течение дня по умолчанию"
       ],
       "Default language": [
         "Язык по умолчанию"
       ],
       "Default language (${ defaultLanguage })": [
-        "Язык по умолчанию: ${ defaultLanguage }"
+        "Язык по умолчанию: (${ defaultLanguage })"
       ],
       "Default notifications": [
         "Уведомления по умолчанию"
@@ -6811,8 +6862,11 @@
       "Send auto-reply": [
         "Отправить автоответ"
       ],
+      "Send crash reports": [
+        "Отправлять отчеты об ошибках"
+      ],
       "Send in": [
-        "Язык отправки"
+        "Отправить в"
       ],
       "Show secondary time zone": [
         "Отображать дополнительный часовой пояс"
@@ -6968,7 +7022,7 @@
         "URL вашего календаря"
       ],
       "Your calendar URL label": [
-        "Текст ссылки на календарь"
+        "Ярлык URL календаря"
       ],
       "Your password (admin)": [
         "Ваш пароль (admin)"
@@ -7025,8 +7079,8 @@
       "Proton company announcements": [
         "Объявления компании Proton"
       ],
-      "Proton for business": [
-        "Proton for Business"
+      "Proton for Business": [
+        "Proton для бизнеса"
       ],
       "Proton for Business newsletter": [
         "Новостная рассылка Proton для бизнеса"
@@ -7245,10 +7299,10 @@
     },
     "Maximum calendar links reached warning": {
       "You can create up to ${ MAX_LINKS_PER_CALENDAR } link per calendar. To create a new link to this calendar, delete one from the list below.": [
-        "Вы можете создать до ${ MAX_LINKS_PER_CALENDAR } ссылки на календарь. Чтобы создать новую ссылку на этот календарь, удалите одну ссылку из списка ниже.",
-        "Вы можете создать до ${ MAX_LINKS_PER_CALENDAR } ссылок на календарь. Чтобы создать новую ссылку на этот календарь, удалите одну ссылку из списка ниже.",
-        "Вы можете создать до ${ MAX_LINKS_PER_CALENDAR } ссылок на календарь. Чтобы создать новую ссылку на этот календарь, удалите одну ссылку из списка ниже.",
-        "Вы можете создать до ${ MAX_LINKS_PER_CALENDAR } ссылок на календарь. Чтобы создать новую ссылку на этот календарь, удалите одну ссылку из списка ниже."
+        "Вы можете создать до ${ MAX_LINKS_PER_CALENDAR } ссылки на один календарь. Чтобы создать новую ссылку на этот календарь, удалите одну из ссылок из списка ниже.",
+        "Вы можете создать до ${ MAX_LINKS_PER_CALENDAR } ссылок на один календарь. Чтобы создать новую ссылку на этот календарь, удалите одну из списка ниже.",
+        "Вы можете создать до ${ MAX_LINKS_PER_CALENDAR } ссылок на один календарь. Чтобы создать новую ссылку на этот календарь, удалите одну из списка ниже.",
+        "Вы можете создать до ${ MAX_LINKS_PER_CALENDAR } ссылок на один календарь. Чтобы создать новую ссылку на этот календарь, удалите одну из списка ниже."
       ]
     },
     "Member action": {
@@ -7336,36 +7390,36 @@
     },
     "Monthly recurring event, frequency": {
       "Every ${ interval } month ${ onDayString }": [
-        "Каждый ${ interval } месяц ${ onDayString } числа",
-        "Каждые ${ interval } месяца ${ onDayString } числа",
-        "Каждые ${ interval } месяцев ${ onDayString } числа",
-        "Каждые ${ interval } месяца(ев) ${ onDayString } числа"
+        "Каждый ${ interval } месяц в ${ onDayString }",
+        "Каждые ${ interval } месяца в ${ onDayString }",
+        "Каждые ${ interval } месяцев в ${ onDayString }",
+        "Каждые ${ interval } месяцев в ${ onDayString }"
       ],
       "Every ${ interval } month ${ onDayString }, ${ timesString }": [
-        "",
-        "Каждые ${ interval } месяца ${ onDayString } числа, в ${ timesString }",
-        "Каждые ${ interval } месяцев ${ onDayString } числа, в ${ timesString }",
-        "Каждые ${ interval } месяца(ев) ${ onDayString } числа, в ${ timesString }"
+        "Каждый ${ interval } месяц в ${ onDayString } в ${ timesString }",
+        "Каждые ${ interval } месяца в ${ onDayString } в ${ timesString }",
+        "Каждые ${ interval } месяцев в ${ onDayString } в ${ timesString }",
+        "Каждые ${ interval } месяцев в ${ onDayString } в ${ timesString }"
       ],
       "Every ${ interval } month ${ onDayString }, ${ untilString }": [
-        "Каждый ${ interval } месяц ${ onDayString } числа, по ${ untilString }",
-        "Каждые ${ interval } месяца ${ onDayString } числа, до ${ untilString }",
-        "Каждые ${ interval } месяцев ${ onDayString } числа, до ${ untilString }",
-        "Каждые ${ interval } месяца(ев) ${ onDayString } числа, по ${ untilString }"
+        "Каждый ${ interval } месяц в ${ onDayString } до ${ untilString }",
+        "Каждые ${ interval } месяца в ${ onDayString } до ${ untilString }",
+        "Каждые ${ interval } месяцев в ${ onDayString } до ${ untilString }",
+        "Каждые ${ interval } месяцев в ${ onDayString } до ${ untilString }"
       ],
       "Monthly ${ onDayString }": [
-        "Каждый месяц ${ onDayString } числа"
+        "Ежемесячно в ${ onDayString }"
       ],
       "Monthly ${ onDayString }, ${ timesString }": [
-        "Ежемесячно ${ onDayString } числа, в ${ timesString }"
+        "Ежемесячно в ${ onDayString } в ${ timesString }"
       ],
       "Monthly ${ onDayString }, ${ untilString }": [
-        "Ежемесячно ${ onDayString } числа, по ${ untilString }"
+        "Ежемесячно в ${ onDayString } до ${ untilString }"
       ]
     },
     "Monthly recurring event, repeats on": {
       "on day ${ dayOfMonth }": [
-        "в ${ dayOfMonth } день"
+        "${ dayOfMonth } числа"
       ],
       "on the first Friday": [
         "в первую пятницу"
@@ -7544,8 +7598,8 @@
       "Continue to review": [
         "Перейти к обзору"
       ],
-      "Continue with free": [
-        "Продолжить использовать бесплатную версию"
+      "Continue with Free": [
+        "Продолжить с Free"
       ],
       "Delete account": [
         "Удалить аккаунт"
@@ -7580,10 +7634,10 @@
     },
     "new_plans: attribute": {
       "Get ${ connections } high-speed VPN connection": [
-        "Получить ${ connections } высокоскоростное подключение к VPN",
-        "Получить ${ connections } высокоскоростных подключения к VPN",
-        "Получить ${ connections } высокоскоростных подключения к VPN",
-        "Получить ${ connections } высокоскоростного подключения к VPN"
+        "Получите ${ connections } высокоскоростное подключение к VPN",
+        "Получите ${ connections } высокоскоростных подключений к VPN",
+        "Получите ${ connections } высокоскоростных подключений к VPN",
+        "Получите ${ connections } высокоскоростных подключений к VPN"
       ],
       "Get ${ connections } high-speed VPN connection per user": [
         "Получите ${ connections } высокоскоростное подключение к VPN на пользователя",
@@ -7839,6 +7893,26 @@
         "Управление командами"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Сделайте резервное копирование, хранение, совместное использование и извлечение файлов конфиденциальным по умолчанию."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "В противном случае доступ к вашему аккаунту будет ограничен, и в конечном итоге ваш аккаунт будет отключен."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Чтобы продолжить использование ${ MAIL_APP_NAME } с платными функциями, выберите подписку и способ оплаты."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Перейдите на пакет для предприятий с доступом ко всем платным службам Proton."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Улучшите до пакета максимальной конфиденциальности и получите доступ ко всем платным службам Proton."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Ваш пробный период заканчивается ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } заканчивающийся на ${ last4 }"
@@ -7905,26 +7979,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Вы пользуетесь акционной ценой на свой текущий тариф. Если вы перейдете на более дешевую версию аккаунта, то потеряете возмоножность пользоваться акционной ценой, которая также будет недоступна, если вы попробуете повторно подписаться на тариф."
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Сделайте резервное копирование, хранение, совместное использование и извлечение файлов конфиденциальным по умолчанию."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "В противном случае доступ к вашему аккаунту будет ограничен, и в конечном итоге ваш аккаунт будет отключен."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Чтобы продолжить использование ${ MAIL_APP_NAME } с платными функциями, выберите подписку и способ оплаты."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Перейдите на пакет для предприятий с доступом ко всем платным службам Proton."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Улучшите до пакета максимальной конфиденциальности и получите доступ ко всем платным службам Proton."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Ваш пробный период заканчивается ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -8060,8 +8114,8 @@
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
         "Поддержка IMAP ограничена возможностями приложений для ПК (Outlook, Apple Mail, Thunderbird и др.) через ${ MAIL_APP_NAME } Bridge. Облачные средства интеграции IMAP сейчас не поддерживаются."
       ],
-      "Keeps you protected by blocking all network connections when you are accidentally disconnected from our VPN server": [
-        "Keeps you protected by blocking all network connections when you are unexpectedly disconnected from our VPN server."
+      "Keeps you protected by blocking all network connections when you are unexpectedly disconnected from our VPN server.": [
+        "Защищает вас, блокируя все сетевые подключения, когда вы неожиданно отключаетесь от нашего сервера VPN."
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Ярлыки - это простые метки, которые можно добавлять к сообщениям, чтобы облегчить их поиск или применить к ним фильтры"
@@ -8078,7 +8132,7 @@
       "On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
         "Кроме того, можно добавить до 5 календарей коллег, организаций, семьи и друзей."
       ],
-      "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections": [
+      "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections..": [
         "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
@@ -8248,7 +8302,7 @@
         "электронная почта"
       ],
       "notification": [
-        "уведомления"
+        "уведомление"
       ]
     },
     "Notification when": {
@@ -8257,27 +8311,27 @@
       ],
       "day before": [
         "день до",
-        "дней до",
+        "дня до",
         "дней до",
         "дней до"
       ],
       "hour before": [
-        "часов до",
         "час до",
+        "часа до",
         "часов до",
-        "часа до"
+        "часов до"
       ],
       "minute before": [
         "минуту до",
-        "минуту до",
         "минуты до",
+        "минут до",
         "минут до"
       ],
       "on the same day": [
         "в тот же день"
       ],
       "week before": [
-        "недель до",
+        "неделя до",
         "недели до",
         "недель до",
         "недель до"
@@ -8398,6 +8452,9 @@
       "Android": [
         "Android"
       ],
+      "Ask each time": [
+        "Спрашивайте каждый раз"
+      ],
       "Automatic (${ defaultDay })": [
         "Автоматически (${ defaultDay })"
       ],
@@ -8451,6 +8508,12 @@
       ],
       "Normal": [
         "Обычный"
+      ],
+      "Off": [
+        "Выключено"
+      ],
+      "On": [
+        "Включено"
       ],
       "Permanent": [
         "Постоянно"
@@ -8566,20 +8629,15 @@
         "PayPal"
       ]
     },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "Адрес электронной почты не найден среди идентификаторов пользователей, определенных в ключе отправки (${ keyUserIds })"
-      ]
-    },
     "Placeholder": {
       "A way to contact you": [
         "Способ связаться с вами"
       ],
       "Add a calendar description": [
-        "Добавьте описание календаря"
+        "Добавить описание календаря"
       ],
       "Add a calendar name": [
-        "Добавьте название календаря"
+        "Добавить название календаря"
       ],
       "Add gift code": [
         "Добавить подарочный код"
@@ -8991,33 +9049,33 @@
     },
     "Subscribe to calendar modal": {
       "Calendar URL": [
-        "Адрес календаря"
+        "URL календаря"
       ],
       "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Subscribed calendars.\n${ kbLink }": [
-        "Чтобы подписаться на внешний или публичный календарь и его обновления, введите URL-адрес. Версия календаря, доступная только для чтения, будет добавлена в список подписанных календарей.\n${ kbLink }"
+        "Чтобы подписаться на внешний или публичный календарь и его обновления, введите URL. Версия календаря, доступная только для чтения, будет добавлена в список подписанных календарей.\n${ kbLink }"
       ]
     },
     "Subscribe to calendar modal description": {
       "Learn how to get a private calendar link.": [
-        "Узнайте как создать приватную ссылку на календарь."
+        "Узнайте как получить конфиденциальную ссылку на календарь."
       ]
     },
     "Subscribed calendar extension warning": {
       "By using this link, Google will make the calendar you are subscribing to public": [
-        "Используя эту ссылку, Google сделает публичным календарь, на который вы подписываетесь"
+        "Используя эту ссылку, Google сделает календарь, на который вы подписаны, общедоступным."
       ],
       "This link might be wrong": [
-        "Эта ссылка может быть нерабочей"
+        "Эта ссылка может быть ошибочной"
       ]
     },
     "Subscribed calendar section description": {
       "Add public, external, or shared calendars using a URL.": [
-        "Добавляйте публичные, внешние мли общие календари, используя URL-адерса."
+        "Добавляйте публичные, внешние мли общие календари, используя URL."
       ]
     },
     "Subscribed calendar URL length warning": {
       "URL is too long": [
-        "PIN-код слишком длинный"
+        "URL слишком длинный"
       ]
     },
     "Subscription attribute": {
@@ -9125,6 +9183,9 @@
     "Subtitle for trial plan": {
       "The privacy-first Mail and Calendar solution for your everyday communications needs.": [
         "Почта и календарь - это решение для повседневных коммуникаций с приоритетом конфиденциальности."
+      ],
+      "This offer is for those new to Proton only. No credit card required.": [
+        "Это предложение только для новичков в Proton. Кредитная карта не требуется."
       ]
     },
     "Success": {
@@ -9150,13 +9211,13 @@
         "Отчёт об ошибке отправлен"
       ],
       "Calendar added. It might take a few minutes to sync.": [
-        "Календарь создан. Синхронизация может занять несколько минут."
+        "Добавлен календарь. Синхронизация может занять несколько минут."
       ],
       "Calendar created": [
         "Календарь создан"
       ],
       "Calendar removed": [
-        "Календарь удалён"
+        "Календарь удален"
       ],
       "Calendar updated": [
         "Календарь обновлен"
@@ -9174,7 +9235,7 @@
         "Кредиты добавлены"
       ],
       "Default calendar updated": [
-        "Основной календарь обновлен"
+        "Календарь по умолчанию обновлен"
       ],
       "DMARC value copied to clipboard": [
         "Значение DMARC скопировано в буфер обмена"
@@ -9341,7 +9402,7 @@
     },
     "Summary of errors during export calendar": {
       "Details about events that couldn't be exported": [
-        "Подробности о событиях, которые не могут быть экспортированы"
+        "Подробности о событиях, которые не удалось экспортировать"
       ]
     },
     "Tab in domain modal": {
@@ -9834,6 +9895,9 @@
       "How does it work?": [
         "Как это работает?"
       ],
+      "How your free trial works": [
+        "Как работает бесплатная пробная версия"
+      ],
       "Human verification": [
         "Проверка пользователя"
       ],
@@ -9975,6 +10039,9 @@
       "Previous": [
         "Назад"
       ],
+      "Privacy and data collection": [
+        "Конфиденциальность и сбор данных"
+      ],
       "Processing": [
         "Обработка"
       ],
@@ -10032,8 +10099,8 @@
       "Secure email based in Switzerland": [
         "Безопасная почта, находящаяся в Швейцарии"
       ],
-      "Security": [
-        "Безопасность"
+      "Security and privacy": [
+        "Безопасность и конфиденциальность"
       ],
       "Security logs": [
         "Журнал безопасности"
@@ -10218,7 +10285,7 @@
     },
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
-        "Задайте имя"
+        "Выберите номер"
       ]
     },
     "Title for payment methods table": {
@@ -10392,6 +10459,9 @@
       "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
         "При нажатии на ссылку эта функция антифишинга попросит подтвердить URL веб-страницы."
       ],
+      "When you move an email to spam, you’ll automatically be unsubscribed from the sender’s mailing lists.": [
+        "Когда вы перемещаете письмо в спам, вы автоматически отписываетесь от списков рассылки отправителя."
+      ],
       "You have locally decrypted this key": [
         "Вы расшифровали этот ключ локально"
       ],
@@ -10454,13 +10524,13 @@
     },
     "Upgrade notice": {
       "Upgrade to a Mail paid plan to create up to ${ MAX_CALENDARS_PAID } calendar, allowing you to make calendars for work, to share with friends, and just for yourself.": [
-        "Перейдите на платный тарифный план Почты, чтобы создавать до ${ MAX_CALENDARS_PAID } календаря, что позволит вам создавать календари для работы, обмена с друзьями и просто для себя.",
-        "Перейдите на платный тарифный план Почты, чтобы создавать до ${ MAX_CALENDARS_PAID } календарей и иметь отдельные календари для работы, обмена с друзьями и просто для себя.",
-        "Перейдите на платный тарифный план Почты, чтобы создавать до ${ MAX_CALENDARS_PAID } календарей и иметь отдельные календари для работы, обмена с друзьями и просто для себя.",
-        "Перейдите на платный тарифный план Почты, чтобы создавать до ${ MAX_CALENDARS_PAID } календарей и иметь отдельные календари для работы, обмена с друзьями и просто для себя."
+        "Перейдите на платный тариф Почты, чтобы создавать до ${ MAX_CALENDARS_PAID } календаря, что позволит вам создавать календари для работы, обмена с друзьями и просто для себя.",
+        "Перейдите на платный тариф Почты, чтобы создавать до ${ MAX_CALENDARS_PAID } календарей, что позволит вам создавать календари для работы, обмена с друзьями и просто для себя.",
+        "Перейдите на платный тариф Почты, чтобы создавать до ${ MAX_CALENDARS_PAID } календарей, что позволит вам создавать календари для работы, обмена с друзьями и просто для себя.",
+        "Перейдите на платный тариф Почты, чтобы создавать до ${ MAX_CALENDARS_PAID } календарей, что позволит вам создавать календари для работы, обмена с друзьями и просто для себя."
       ],
       "Upgrade to a Mail paid plan to share your personal calendar via link with anyone.": [
-        "Перейдите на платный тарифный план Mail, чтобы делиться личным календарем по ссылке с кем угодно."
+        "Перейдите на платный тариф Почты, чтобы делиться личным календарем по ссылке с кем угодно."
       ]
     },
     "User role": {
@@ -10636,247 +10706,247 @@
     },
     "Weekly recurring event, frequency": {
       "Every ${ interval } week on ${ multipleDaysString }": [
-        "Каждую ${ interval } неделю по следующим дням: ${ multipleDaysString }",
         "Каждую ${ interval } неделю в ${ multipleDaysString }",
-        "Каждую ${ interval } неделю по ${ multipleDaysString }",
-        "Каждую ${ interval } неделю по ${ multipleDaysString }"
+        "Каждые ${ interval } недели в ${ multipleDaysString }",
+        "Каждые ${ interval } недель в ${ multipleDaysString }",
+        "Каждые ${ interval } недель в ${ multipleDaysString }"
       ],
       "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
-        "Каждую ${ interval } неделю по ${ multipleDaysString }, ${ timesString }",
-        "Каждые ${ interval } недели по ${ multipleDaysString }, ${ timesString }",
-        "Каждые ${ interval } недель по ${ multipleDaysString } до ${ timesString }",
-        "Каждые ${ interval } недель по ${ multipleDaysString } до ${ timesString }"
+        "Каждую ${ interval } неделю в ${ multipleDaysString } в ${ timesString }",
+        "Каждые ${ interval } недели в ${ multipleDaysString } в ${ timesString }",
+        "Каждые ${ interval } недель в ${ multipleDaysString } в ${ timesString }",
+        "Каждые ${ interval } недель в ${ multipleDaysString } в ${ timesString }"
       ],
       "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
-        "Каждую ${ interval } неделю в ${ multipleDaysString }, ${ untilString }",
-        "Каждые ${ interval } недели по ${ multipleDaysString } до ${ untilString }",
-        "",
-        "Каждую ${ interval } неделю по ${ multipleDaysString }, по ${ untilString }"
+        "Каждую ${ interval } неделю в ${ multipleDaysString } до ${ untilString }",
+        "Каждые ${ interval } недели в ${ multipleDaysString } до ${ untilString }",
+        "Каждые ${ interval } недель в ${ multipleDaysString } до ${ untilString }",
+        "Каждые ${ interval } недель в ${ multipleDaysString } до ${ untilString }"
       ],
       "Every ${ interval } week on all days": [
-        "Все дни каждой ${ interval } недели",
-        "Все дни каждой ${ interval } недели",
-        "Все дни каждой ${ interval } недели",
-        "Все дни каждой ${ interval } недели"
+        "Каждую ${ interval } неделю во все дни недели",
+        "Каждые ${ interval } недели во все дни недели",
+        "Каждые ${ interval } недель во все дни недели",
+        "Каждые ${ interval } недели во все дни недели"
       ],
       "Every ${ interval } week on all days, ${ timesString }": [
-        "Каждую ${ interval } неделю во все дни, ${ timesString }",
-        "Каждые ${ interval } недели каждый день, ${ timesString }",
-        "Каждые ${ interval } недель во все дни, ${ timesString }",
-        "Каждые ${ interval } недель во все дни, ${ timesString }"
+        "Каждую ${ interval } неделю во все дни недели в ${ timesString }",
+        "Каждую ${ interval } недели во все дни недели в ${ timesString }",
+        "Каждые ${ interval } недель во все дни недели в ${ timesString }",
+        "Каждые ${ interval } недель во все дни недели в ${ timesString }"
       ],
       "Every ${ interval } week on all days, ${ untilString }": [
-        "Каждую ${ interval } неделю каждый день ${ untilString }",
-        "Каждые ${ interval } недели каждый день, ${ untilString }",
-        "Каждые ${ interval } недель каждый день, ${ untilString }",
-        "Каждые ${ interval } недели каждый день до ${ untilString }"
+        "Каждую ${ interval } неделю во все дни недели до ${ untilString }",
+        "Каждые ${ interval } недели во все дни недели до ${ untilString }",
+        "Каждые ${ interval } недель во все дни недели до ${ untilString }",
+        "Каждые ${ interval } недель во все дни недели до ${ untilString }"
       ],
       "Every ${ interval } week on Friday": [
-        "Каждую ${ interval } неделю по пятницам",
         "Каждую ${ interval } неделю в пятницу",
-        "Каждые ${ interval } недели по пятницам",
-        "Каждые ${ interval } недель по пятницам"
+        "Каждые ${ interval } недели в пятницу",
+        "Каждые ${ interval } недель в пятницу",
+        "Каждые ${ interval } недель в пятницу"
       ],
       "Every ${ interval } week on Friday, ${ timesString }": [
-        "Каждую ${ interval } неделю по пятницам, ${ timesString }",
-        "Каждые ${ interval } недели по пятницам, ${ timesString }",
-        "Каждые ${ interval } недель по пятницам, ${ timesString }",
-        "Каждые ${ interval } недель по пятницам в ${ timesString }"
+        "Каждую ${ interval } неделю в пятницу в ${ timesString }",
+        "Каждые ${ interval } недели в пятницу в ${ timesString }",
+        "Каждые ${ interval } недель в пятницу в ${ timesString }",
+        "Каждые ${ interval } недель в пятницу в ${ timesString }"
       ],
       "Every ${ interval } week on Friday, ${ untilString }": [
-        "Каждую ${ interval } неделю по пятницам ${ untilString }",
-        "Каждые ${ interval } недели по пятницам, ${ untilString }",
-        "Каждые ${ interval } недель по пятницам, ${ untilString }",
-        "Каждые ${ interval } недель по пятницам, ${ untilString }"
+        "Каждую ${ interval } неделю в пятницу до ${ untilString }",
+        "Каждые ${ interval } недели в пятницу до ${ untilString }",
+        "Каждые ${ interval } недель в пятницу до ${ untilString }",
+        "Каждые ${ interval } недель в пятницу до ${ untilString }"
       ],
       "Every ${ interval } week on Monday": [
-        "Каждую ${ interval } неделю по понедельникам",
-        "Каждые ${ interval } недели по понедельникам",
-        "Каждые ${ interval } недели по понедельникам",
-        "Каждые ${ interval } недели по понедельникам"
+        "Каждую ${ interval } неделю в понедельник",
+        "Каждые ${ interval } недели в понедельник",
+        "Каждые ${ interval } недель в понедельник",
+        "Каждые ${ interval } недель в понедельник"
       ],
       "Every ${ interval } week on Monday, ${ timesString }": [
-        "Каждую ${ interval } неделю по понедельникам, ${ timesString }",
-        "Каждые ${ interval } недели по понедельникам, ${ timesString }",
-        "Каждые ${ interval } недель по понедельникам, ${ timesString }",
-        "Каждую ${ interval } неделю по понедельникам, ${ timesString }"
+        "Каждую ${ interval } неделю в понедельник в ${ timesString }",
+        "Каждые ${ interval } недели в понедельник в ${ timesString }",
+        "Каждые ${ interval } недель в понедельник в ${ timesString }",
+        "Каждые ${ interval } недель в понедельник в ${ timesString }"
       ],
       "Every ${ interval } week on Monday, ${ untilString }": [
-        "Каждую ${ interval } неделю по понедельникам ${ untilString }",
-        "Каждые ${ interval } недели по понедельникам, ${ untilString }",
+        "Каждую ${ interval } неделю в понедельник до ${ untilString }",
+        "Каждые ${ interval } недели в понедельник до ${ untilString }",
         "Каждые ${ interval } недель в понедельник до ${ untilString }",
-        "Каждую неделю по понедельникам, ${ untilString }"
+        "Каждые ${ interval } недель в понедельник до ${ untilString }"
       ],
       "Every ${ interval } week on Saturday": [
-        "Каждую ${ interval } неделю по субботам",
         "Каждую ${ interval } неделю в субботу",
-        "Каждые ${ interval } недели по субботам",
-        "Каждую ${ interval } неделю по субботам"
+        "Каждые ${ interval } недели в субботу",
+        "Каждые ${ interval } недель в субботу",
+        "Каждые ${ interval } недель в субботу"
       ],
       "Every ${ interval } week on Saturday, ${ timesString }": [
-        "Каждую ${ interval } неделю по субботам, ${ timesString }",
-        "Каждые ${ interval } недели по субботам, ${ timesString }",
-        "Каждые ${ interval } недель по субботам, ${ timesString }",
-        "Каждые ${ interval } недель по субботам в ${ timesString }"
+        "Каждую ${ interval } неделю в субботу в ${ timesString }",
+        "Каждые ${ interval } недели в субботу в ${ timesString }",
+        "Каждые ${ interval } недель в субботу в ${ timesString }",
+        "Каждые ${ interval } недель в субботу в ${ timesString }"
       ],
       "Every ${ interval } week on Saturday, ${ untilString }": [
-        "Каждую ${ interval } неделю по субботам ${ untilString }",
-        "Каждые ${ interval } недели по субботам, ${ untilString }",
-        "Каждые ${ interval } недель по субботам, ${ untilString }",
-        "Каждые ${ interval } недель по субботам в ${ untilString }"
+        "Каждую ${ interval } неделю в субботу до ${ untilString }",
+        "Каждые ${ interval } недели в субботу до ${ untilString }",
+        "Каждые ${ interval } недель в субботу до ${ untilString }",
+        "Каждые ${ interval } недель в субботу до ${ untilString }"
       ],
       "Every ${ interval } week on Sunday": [
-        "Каждую ${ interval } неделю по воскресеньям",
-        "Каждые ${ interval } недели по воскресеньям",
-        "Каждые ${ interval } недели по воскресеньям",
-        "Каждую ${ interval } неделю по воскресеньям"
+        "Каждую ${ interval } неделю в воскресенье",
+        "Каждые ${ interval } недели в воскресенье",
+        "Каждые ${ interval } недель в воскресенье",
+        "Каждые ${ interval } недель в воскресенье"
       ],
       "Every ${ interval } week on Sunday, ${ timesString }": [
-        "Каждую ${ interval } неделю по воскресеньям, ${ timesString }",
-        "Каждые ${ interval } недели по воскресеньям, ${ timesString }",
-        "Каждые ${ interval } недель по воскресеньям, ${ timesString }",
-        "Каждые ${ interval } недель по воскресеньям, ${ timesString }"
+        "Каждую ${ interval } неделю в воскресенье в ${ timesString }",
+        "Каждые ${ interval } недели в воскресенье в ${ timesString }",
+        "Каждые ${ interval } недель в воскресенье в ${ timesString }",
+        "Каждые ${ interval } недель в воскресенье в ${ timesString }"
       ],
       "Every ${ interval } week on Sunday, ${ untilString }": [
-        "Каждую ${ interval } неделю по воскресеньям ${ untilString }",
-        "Каждые ${ interval } недели по воскресеньям, ${ untilString }",
-        "Каждые ${ interval } недель по воскресеньям ${ untilString }",
-        "Каждые ${ interval } недель по воскресеньям, ${ untilString }"
+        "Каждую ${ interval } неделю в воскресенье до ${ untilString }",
+        "Каждые ${ interval } недели в воскресенье до ${ untilString }",
+        "Каждые ${ interval } недель в воскресенье до ${ untilString }",
+        "Каждые ${ interval } недель в воскресенье до ${ untilString }"
       ],
       "Every ${ interval } week on Thursday": [
-        "Каждую ${ interval } неделю по четвергам",
-        "Каждые ${ interval } недели по четвергам",
+        "Каждую ${ interval } неделю в четверг",
+        "Каждые ${ interval } недели в четверг",
         "Каждые ${ interval } недель в четверг",
-        "Каждую ${ interval } неделю по четвергам"
+        "Каждые ${ interval } недель в четверг"
       ],
       "Every ${ interval } week on Thursday, ${ timesString }": [
-        "Каждую ${ interval } неделю по четвергам, ${ timesString }",
-        "Каждые ${ interval } недели по четвергам, ${ timesString }",
-        "Каждые ${ interval } недель по четвергам, ${ timesString }",
-        "Каждые ${ interval } недель по четвергам, ${ timesString }"
+        "Каждую ${ interval } неделю в четверг в ${ timesString }",
+        "Каждые ${ interval } недели в четверг в ${ timesString }",
+        "Каждые ${ interval } недель в четверг в ${ timesString }",
+        "Каждые ${ interval } недель в четверг в ${ timesString }"
       ],
       "Every ${ interval } week on Thursday, ${ untilString }": [
-        "Каждую ${ interval } неделю по четвергам ${ untilString }",
-        "Каждые ${ interval } недели по четвергам, ${ untilString }",
-        "Каждые ${ interval } недель по четвергам ${ untilString }",
-        "Каждые ${ interval } недель по четвергам, ${ untilString }"
+        "Каждую ${ interval } неделю в четверг до ${ untilString }",
+        "Каждые ${ interval } недели в четверг до ${ untilString }",
+        "Каждые ${ interval } недель в четверг до ${ untilString }",
+        "Каждые ${ interval } недель в четверг до ${ untilString }"
       ],
       "Every ${ interval } week on Tuesday": [
-        "Каждую ${ interval } неделю по вторникам",
-        "Каждые ${ interval } недели по вторникам",
-        "Каждые ${ interval } недели по вторникам",
-        "Каждые ${ interval } недели по вторникам"
+        "Каждую ${ interval } неделю во вторник",
+        "Каждые ${ interval } недели во вторник",
+        "Каждые ${ interval } недель во вторник",
+        "Каждые ${ interval } недель во вторник"
       ],
       "Every ${ interval } week on Tuesday, ${ timesString }": [
-        "Каждую ${ interval } неделю по вторникам, ${ timesString }",
-        "Каждые ${ interval } недели по вторникам, ${ timesString }",
-        "Каждые ${ interval } недель по вторникам, ${ timesString }",
-        "Каждые ${ interval } недель по вторникам, ${ timesString }"
+        "Каждую ${ interval } неделю во вторник в ${ timesString }",
+        "Каждые ${ interval } недели во вторник в ${ timesString }",
+        "Каждые ${ interval } недель во вторник в ${ timesString }",
+        "Каждые ${ interval } недель во вторник в ${ timesString }"
       ],
       "Every ${ interval } week on Tuesday, ${ untilString }": [
-        "Каждую ${ interval } неделю по вторникам ${ untilString }",
-        "Каждые ${ interval } недели по вторникам, ${ untilString }",
-        "Каждые ${ interval } недель по вторникам, ${ untilString }",
-        "Каждые ${ interval } недель по вторникам, ${ untilString }"
+        "Каждую ${ interval } неделю во вторник до ${ untilString }",
+        "Каждые ${ interval } недели во вторник до ${ untilString }",
+        "Каждые ${ interval } недель во вторник до ${ untilString }",
+        "Каждые ${ interval } недель во вторник до ${ untilString }"
       ],
       "Every ${ interval } week on Wednesday": [
-        "Каждую ${ interval } неделю по средам",
         "Каждую ${ interval } неделю в среду",
-        "Каждые ${ interval } недель по средам",
-        "Каждую ${ interval } неделю по средам"
+        "Каждые ${ interval } недели в среду",
+        "Каждые ${ interval } недель в среду",
+        "Каждые ${ interval } недель в среду"
       ],
       "Every ${ interval } week on Wednesday, ${ timesString }": [
-        "Каждую ${ interval } неделю по средам, ${ timesString }",
-        "Каждые ${ interval } недели по средам, ${ timesString }",
-        "Каждые ${ interval } недель по средам, ${ timesString }",
-        "Каждые ${ interval } недели по средам, ${ timesString }"
+        "Каждую ${ interval } неделю в среду в ${ timesString }",
+        "Каждые ${ interval } недели в среду в ${ timesString }",
+        "Каждые ${ interval } недель в среду в ${ timesString }",
+        "Каждые ${ interval } недель в среду в ${ timesString }"
       ],
       "Every ${ interval } week on Wednesday, ${ untilString }": [
-        "Каждую ${ interval } неделю по средам ${ untilString }",
-        "Каждую ${ interval } неделю по средам, ${ untilString }",
-        "Каждые ${ interval } недель по средам, ${ untilString }",
-        "Каждые ${ interval } недель по средам, ${ untilString }"
+        "Каждую ${ interval } неделю в среду до ${ untilString }",
+        "Каждые ${ interval } недели в среду до ${ untilString }",
+        "Каждые ${ interval } недель в среду до ${ untilString }",
+        "Каждые ${ interval } недель в среду до ${ untilString }"
       ],
       "Weekly on ${ multipleDaysString }": [
-        "Еженедельно по следующим дням: ${ multipleDaysString }"
+        "Еженедельно в ${ multipleDaysString }"
       ],
       "Weekly on ${ multipleDaysString }, ${ timesString }": [
-        "Еженедельно по следующим дням: ${ multipleDaysString } в ${ timesString }"
+        "Еженедельно в ${ multipleDaysString } в ${ timesString }"
       ],
       "Weekly on ${ multipleDaysString }, ${ untilString }": [
-        "Еженедельно по следующим дням: ${ multipleDaysString } ${ untilString }"
+        "Еженедельно в ${ multipleDaysString } до ${ untilString }"
       ],
       "Weekly on all days": [
-        "Еженедельно каждый день"
+        "Еженедельно каждый день недели"
       ],
       "Weekly on all days, ${ timesString }": [
-        "Еженедельно во все дни в ${ timesString }"
+        "Еженедельно во все дни недели в ${ timesString }"
       ],
       "Weekly on all days, ${ untilString }": [
-        "Еженедельно, каждый день ${ untilString }"
+        "Еженедельно во все дни недели до ${ untilString }"
       ],
       "Weekly on Friday": [
         "Еженедельно в пятницу"
       ],
       "Weekly on Friday, ${ timesString }": [
-        "Еженедельно по пятницам, ${ timesString }"
+        "Еженедельно в пятницу в ${ timesString }"
       ],
       "Weekly on Friday, ${ untilString }": [
-        "Еженедельно по пятницам ${ untilString }"
+        "Еженедельно в пятницу до ${ untilString }"
       ],
       "Weekly on Monday": [
-        "Еженедельно по понедельникам"
+        "Еженедельно в понедельник"
       ],
       "Weekly on Monday, ${ timesString }": [
-        "Еженедельно по понедельникам, ${ timesString }"
+        "Еженедельно в понедельник в ${ timesString }"
       ],
       "Weekly on Monday, ${ untilString }": [
-        "Еженедельно по понедельникам, ${ untilString }"
+        "Еженедельно в понедельник, ${ untilString }"
       ],
       "Weekly on Saturday": [
         "Еженедельно в субботу"
       ],
       "Weekly on Saturday, ${ timesString }": [
-        "Еженедельно по субботам, ${ timesString }"
+        "Еженедельно в субботу в ${ timesString }"
       ],
       "Weekly on Saturday, ${ untilString }": [
-        "Еженедельно по субботам ${ untilString }"
+        "Еженедельно в субботу до ${ untilString }"
       ],
       "Weekly on Sunday": [
-        "Каждое воскресенье"
+        "Еженедельно в воскресенье"
       ],
       "Weekly on Sunday, ${ timesString }": [
-        "Еженедельно по воскресеньям, ${ timesString }"
+        "Еженедельно в воскресенье в ${ timesString }"
       ],
       "Weekly on Sunday, ${ untilString }": [
-        "Еженедельно по воскресеньям, ${ untilString }"
+        "Еженедельно в воскресенье до ${ untilString }"
       ],
       "Weekly on Thursday": [
-        "Еженедельно по четвергам"
+        "Еженедельно в четверг"
       ],
       "Weekly on Thursday, ${ timesString }": [
-        "Еженедельно по четвергам, ${ timesString }"
+        "Еженедельно в четверг в ${ timesString }"
       ],
       "Weekly on Thursday, ${ untilString }": [
-        "Еженедельно по четвергам ${ untilString }"
+        "Еженедельно в четверг до ${ untilString }"
       ],
       "Weekly on Tuesday": [
-        "Еженедельно по вторникам"
+        "Еженедельно во вторник"
       ],
       "Weekly on Tuesday, ${ timesString }": [
-        "Еженедельно по вторникам в ${ timesString }"
+        "Еженедельно во вторник в ${ timesString }"
       ],
       "Weekly on Tuesday, ${ untilString }": [
-        "Еженедельно по вторникам ${ untilString }"
+        "Еженедельно во вторник ${ untilString }"
       ],
       "Weekly on Wednesday": [
         "Еженедельно в среду"
       ],
       "Weekly on Wednesday, ${ timesString }": [
-        "Еженедельно по средам в ${ timesString }"
+        "Еженедельно в среду в ${ timesString }"
       ],
       "Weekly on Wednesday, ${ untilString }": [
-        "Еженедельно по средам ${ untilString }"
+        "Еженедельно в среду в ${ untilString }"
       ]
     },
     "Weekly recurring event, repeats on (multiple days), frequency": {
@@ -10907,19 +10977,19 @@
         "Каждый ${ interval } год",
         "Каждые ${ interval } года",
         "Каждые ${ interval } лет",
-        "Каждые ${ interval } года (лет)"
+        "Каждые ${ interval } лет"
       ],
       "Every ${ interval } year, ${ timesString }": [
-        "",
-        "Каждые ${ interval } года, в ${ timesString }",
-        "Каждые ${ interval } лет, в ${ timesString }",
-        "Каждые ${ interval } года (лет), в ${ timesString }"
+        "Каждый ${ interval } год в ${ timesString }",
+        "Каждые ${ interval } года в ${ timesString }",
+        "Каждые ${ interval } лет в ${ timesString }",
+        "Каждые ${ interval } лет в ${ timesString }"
       ],
       "Every ${ interval } year, ${ untilString }": [
-        "Каждый ${ interval } год, по ${ untilString }",
-        "Каждые ${ interval } года, по ${ untilString }",
-        "Каждые ${ interval } лет, по ${ untilString }",
-        "Каждые ${ interval } года (лет), по ${ untilString }"
+        "Каждый ${ interval } год до ${ untilString }",
+        "Каждые ${ interval } года до ${ untilString }",
+        "Каждые ${ interval } лет до ${ untilString }",
+        "Каждые ${ interval } лет до ${ untilString }"
       ],
       "Yearly": [
         "Ежегодно"
@@ -10928,7 +10998,7 @@
         "Ежегодно в ${ timesString }"
       ],
       "Yearly, ${ untilString }": [
-        "Ежегодно, по ${ untilString }"
+        "Ежегодно до ${ untilString }"
       ]
     }
   }

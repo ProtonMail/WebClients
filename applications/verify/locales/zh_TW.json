@@ -35,6 +35,9 @@
       "Request new code": [
         "申請新驗證碼"
       ],
+      "Search countries": [
+        "搜尋國家"
+      ],
       "Submit": [
         "送出"
       ],
@@ -228,9 +231,6 @@
       "Burkina Faso": [
         "布吉納法索"
       ],
-      "Burma": [
-        "緬甸"
-      ],
       "Burundi": [
         "蒲隆地"
       ],
@@ -285,9 +285,6 @@
       "Costa Rica": [
         "哥斯大黎加"
       ],
-      "Cote d'Ivoire\"": [
-        "Cote d'Ivoire"
-      ],
       "Croatia": [
         "克羅埃西亞"
       ],
@@ -302,6 +299,9 @@
       ],
       "Czech Republic": [
         "捷克"
+      ],
+      "Côte d'Ivoire": [
+        "象牙海岸"
       ],
       "Denmark": [
         "丹麥"
@@ -332,6 +332,9 @@
       ],
       "Estonia": [
         "愛沙尼亞"
+      ],
+      "Eswatini": [
+        "史瓦帝尼"
       ],
       "Ethiopia": [
         "衣索比亞"
@@ -576,6 +579,9 @@
       "Mozambique": [
         "莫三比克"
       ],
+      "Myanmar": [
+        "緬甸"
+      ],
       "Namibia": [
         "納米比亞"
       ],
@@ -768,9 +774,6 @@
       "Svalbard and Jan Mayen": [
         "挪威屬斯瓦巴及尖棉"
       ],
-      "Swaziland": [
-        "史瓦帝尼"
-      ],
       "Sweden": [
         "瑞典"
       ],
@@ -918,9 +921,6 @@
       ]
     },
     "Error message": {
-      "Brace yourself till we get the error fixed.": [
-        "Something went wrong. Please refresh the page or try again later."
-      ],
       "Error: ${ errorMessage }": [
         "錯誤：${ errorMessage }"
       ],
@@ -929,6 +929,9 @@
       ],
       "Please ${ refresh } or check your connection.": [
         "請 ${ refresh } 或檢查您的連線。"
+      ],
+      "Something went wrong. Please refresh the page or try again later.": [
+        "不好意思，這個錯誤有待修正。我們將會處理。"
       ],
       "There was a problem connecting to Proton.": [
         "連線至 Proton 時發生問題。"

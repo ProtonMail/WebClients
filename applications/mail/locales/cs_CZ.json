@@ -155,6 +155,9 @@
       "Close this banner": [
         "Zavřít tento banner"
       ],
+      "Collapse URL": [
+        "Sbalit URL"
+      ],
       "Color": [
         "Barva"
       ],
@@ -304,6 +307,9 @@
       ],
       "Email settings": [
         "Nastavení e-mailu"
+      ],
+      "Emoji": [
+        "Emoji"
       ],
       "Enable": [
         "Zapnout"
@@ -578,6 +584,9 @@
       "Move to spam": [
         "Přesunout do Nevyžádané pošty"
       ],
+      "Move to spam and unsubscribe": [
+        "Přesunout do spamu a odhlásit"
+      ],
       "Move to trash": [
         "Přesunout do koše"
       ],
@@ -761,6 +770,9 @@
       "Search": [
         "Vyhledat"
       ],
+      "Search countries": [
+        "Vyhledat země"
+      ],
       "Search in ${ option.text }": [
         "Hledat v ${ option.text }"
       ],
@@ -882,7 +894,7 @@
         "Tato zpráva obsahuje vzdálený obsah."
       ],
       "Trash all": [
-        "Hodit vše do koše"
+        "Vyhodit vše"
       ],
       "Trust": [
         "Důvěřovat"
@@ -1292,31 +1304,31 @@
         " Nově navržený čas, neodpovídá Vašim údajům v pozvánce. Zkontrolujte prosím detaily pozvánky ve Vašem kalendáři."
       ],
       "${ participantName } accepted an invitation and proposed a new time for one occurrence of this event.": [
-        "${ participantName } přijal/a pozvánku a navrhl/a nový čas pro jeden výskyt této události."
+        "${ participantName } přijal(a) pozvání a navrhl(a) nový čas pro jeden výskyt této události."
       ],
       "${ participantName } accepted an invitation and proposed a new time for this event.": [
-        "${ participantName } přijal/a pozvánku a navrhl/a nový čas této události."
+        "${ participantName } přijal(a) pozvání a navrhl(a) nový čas této události."
       ],
       "${ participantName } accepted an invitation to one occurrence of the event.": [
-        "${ participantName } přijal/a pozvánku na jeden výskyt události."
+        "${ participantName } přijal(a) pozvání na jeden výskyt události."
       ],
       "${ participantName } accepted an invitation to this event.": [
-        "${ participantName } přijal(a) pozvánku na tuto událost."
+        "${ participantName } přijal(a) pozvání na tuto událost."
       ],
       "${ participantName } accepted your invitation and proposed a new time for one occurrence of this event.": [
-        "${ participantName } přijal/a vaší pozvánku a navrhl/a nový čas jednoho výskytu této události."
+        "${ participantName } přijal(a) vaše pozvání a navrhl(a) nový čas jednoho výskytu této události."
       ],
       "${ participantName } accepted your invitation and proposed a new time for this event.": [
-        "${ participantName } přijal/a vaší pozvánku a navrhl/a nový čas této události."
+        "${ participantName } přijal(a) vaše pozvání a navrhl(a) nový čas této události."
       ],
       "${ participantName } accepted your invitation to one occurrence of the event.": [
-        "${ participantName } přijal/a vaší pozvánku na jeden výskyt události."
+        "${ participantName } přijal(a) vaše pozvání na jeden výskyt události."
       ],
       "${ participantName } accepted your invitation.": [
-        "${ participantName } přijal(a) vaši pozvánku."
+        "${ participantName } přijal(a) vaše pozvání."
       ],
       "${ participantName } asked for the latest event updates.": [
-        "${ participantName } požádal/a o nejnovější aktualizaci události."
+        "${ participantName } požádal(a) o nejnovější aktualizaci události."
       ],
       "${ participantName } asked for the latest updates to an event which does not exist anymore. You have no calendars.": [
         "${ participantName } požádal/a o nejnovější aktualizaci události, která již neexistuje. Nemáte žádné kalendáře."
@@ -1328,37 +1340,37 @@
         "${ participantName } požádal/a o nejnovější aktualizace události, která neodpovídá detailům pozvánky. Ověřte prosím detaily pozvánky ve svém kalendáři."
       ],
       "${ participantName } declined an invitation and proposed a new time for one occurrence of this event.": [
-        "${ participantName } odmítl/a pozvánku a navrhl/a nový čas pro jeden výskyt této události."
+        "${ participantName } odmítl(a) pozvání a navrhl(a) nový čas pro jeden výskyt této události."
       ],
       "${ participantName } declined an invitation and proposed a new time for this event.": [
-        "${ participantName } zamítl/a pozvánku a navrhl/a nový čas pro tuto událost."
+        "${ participantName } odmítl(a) pozvání a navrhl(a) nový čas pro tuto událost."
       ],
       "${ participantName } declined an invitation to one occurrence of the event.": [
-        "${ participantName } odmítl/a pozvánku na jeden výskyt události."
+        "${ participantName } odmítl(a) pozvání na jeden výskyt události."
       ],
       "${ participantName } declined an invitation to this event.": [
-        "${ participantName } odmítl(a) pozvánku na tuto událost."
+        "${ participantName } odmítl(a) pozvání na tuto událost."
       ],
       "${ participantName } declined your invitation and proposed a new time for one occurrence of this event.": [
-        "${ participantName } zamítl/a vaší pozvánku a navrhl/a nový čas pro jeden výskyt této události."
+        "${ participantName } odmítl(a) vaše pozvání a navrhl(a) nový čas pro jeden výskyt této události."
       ],
       "${ participantName } declined your invitation and proposed a new time for this event.": [
-        "${ participantName } zamítl/a vaší pozvánku a navrhl/a nový čas pro tuto událost."
+        "${ participantName } odmítl(a) vaše pozvání a navrhl(a) nový čas pro tuto událost."
       ],
       "${ participantName } declined your invitation to one occurrence of the event.": [
-        "${ participantName } odmítl/a vaší pozvánku na jeden výskyt události."
+        "${ participantName } odmítl(a) vaše pozvání na jeden výskyt události."
       ],
       "${ participantName } declined your invitation.": [
-        "${ participantName } odmítl(a) vaši pozvánku."
+        "${ participantName } odmítl(a) vaše pozvání."
       ],
       "${ participantName } had accepted an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
-        "${ participantName } přijal/a pozvánku a navrhl/a nový čas jednoho výskytu této události. Odpověď a návrh jsou zastaralé."
+        "${ participantName } přijal(a) pozvání a navrhl(a) nový čas jednoho výskytu této události. Odpověď a návrh jsou zastaralé."
       ],
       "${ participantName } had accepted an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
-        "${ participantName } přijal/a pozvánku a navrhl/a nový čas této události. Odpověď a návrh jsou zastaralé."
+        "${ participantName } přijal(a) pozvání a navrhl(a) nový čas této události. Odpověď a návrh jsou zastaralé."
       ],
       "${ participantName } had accepted an invitation to one occurrence of the event.": [
-        "${ participantName } přijal(a) pozvánku na jeden výskyt události."
+        "${ participantName } přijal(a) pozvání na jeden výskyt události."
       ],
       "${ participantName } had accepted an invitation to this event.": [
         "${ participantName } přijal(a) pozvání na tuto událost."
@@ -1367,25 +1379,25 @@
         "${ participantName } přijatá pozvánka a navržen nový čas pro výskyt této události. Odpověď a návrhy jsou zastaralé."
       ],
       "${ participantName } had accepted your invitation and proposed a new time for this event. Answer and proposal are out of date.": [
-        "${ participantName } přijal/a vaší pozvánku a navrhl/a nový čas této události. Odpověď a návrh je zastaralý."
+        "${ participantName } přijal(a) vaše pozvání a navrhl(a) nový čas této události. Odpověď a návrh je zastaralý."
       ],
       "${ participantName } had declined an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
-        "${ participantName } odmítl/a pozvánku a navrhl/a nový čas pro jeden výskyt této události. Odpověď a návrh jsou zastaralé."
+        "${ participantName } odmítl(a) pozvání a navrhl(a) nový čas pro jeden výskyt této události. Odpověď a návrh jsou zastaralé."
       ],
       "${ participantName } had declined an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
-        "${ participantName } odmítl/a pozvánku a navrhl/a nový čas této události. Odpověď a návrh jsou zastaralé."
+        "${ participantName } odmítl(a) pozvání a navrhl(a) nový čas této události. Odpověď a návrh jsou zastaralé."
       ],
       "${ participantName } had declined an invitation to one occurrence of the event.": [
-        "${ participantName } odmítl/a pozvánku na jednorázovou událost."
+        "${ participantName } odmítl(a) pozvání na jeden výskyt události."
       ],
       "${ participantName } had declined an invitation to this event.": [
-        "${ participantName } odmítl/a pozvánku na tuto událost."
+        "${ participantName } odmítl(a) pozvání na tuto událost."
       ],
       "${ participantName } had declined your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
-        "${ participantName } zamítl/a vaší pozvánku a navrhl/a nový čas pro jeden výskyt této události. Odpověď a návrh jsou zastaralé."
+        "${ participantName } odmítl(a) vaše pozvání a navrhl(a) nový čas pro jeden výskyt této události. Odpověď a návrh jsou zastaralé."
       ],
       "${ participantName } had declined your invitation and proposed a new time for this event. Answer and proposal are out of date.": [
-        "${ participantName } odmítl/a vaší pozvánku a navrhl/a nový čas této události. Odpověď a návrh jsou zastaralé."
+        "${ participantName } odmítl(a) vaše pozvání a navrhl(a) nový čas této události. Odpověď a návrh jsou zastaralé."
       ],
       "${ participantName } had previously accepted your invitation to one occurrence of the event.": [
         "${ participantName } v minulosti přijal(a) vaše pozvání na jeden výskyt události."
@@ -1394,19 +1406,19 @@
         "${ participantName } v minulosti přijal(a) vaše pozvání."
       ],
       "${ participantName } had previously declined your invitation to one occurrence of the event.": [
-        "${ participantName } v minulosti odmítl/a pozvánku na jeden výskyt události."
+        "${ participantName } v minulosti odmítl(a) pozvání na jeden výskyt události."
       ],
       "${ participantName } had previously declined your invitation.": [
-        "${ participantName } v minulosti odmítl/a vaší pozvánku."
+        "${ participantName } v minulosti odmítl(a) vaše pozvání."
       ],
       "${ participantName } had previously tentatively accepted your invitation to one occurrence of the event.": [
-        "${ participantName } v minulosti předběžně přijal/a pozvánku na jeden výskyt události."
+        "${ participantName } v minulosti předběžně přijal(a) pozvání na jeden výskyt události."
       ],
       "${ participantName } had previously tentatively accepted your invitation.": [
-        "${ participantName } v minulosti předběžně přijal/a vaší pozvánku."
+        "${ participantName } v minulosti předběžně přijal(a) vaše pozvání."
       ],
       "${ participantName } had proposed a new time for one occurrence of this event. This proposal is out of date.": [
-        "${ participantName } navrhl/a nový čas pro jeden výskyt této události. Tento návrh je zastaralý."
+        "${ participantName } navrhl(a) nový čas pro jeden výskyt této události. Tento návrh je zastaralý."
       ],
       "${ participantName } had proposed a new time for one occurrence of this event. This proposal is out of date. The event does not exist in your calendar anymore.": [
         "${ participantName } navrhl/a nový čas pro jeden výskyt této události. Tento návrh je zastaralý. Událost již neexistuje ve vašem kalendáři."
@@ -1415,7 +1427,7 @@
         "${ participantName } navrhl/a nový čas pro jeden výskyt této události. Tento návrh je zastaralý. Nemáte žádné kalendáře."
       ],
       "${ participantName } had proposed a new time for this event. This proposal is out of date.": [
-        "${ participantName } navrhl/a nový čas pro tuto událost. Tento návrh je zastaralý."
+        "${ participantName } navrhl(a) nový čas pro tuto událost. Tento návrh je zastaralý."
       ],
       "${ participantName } had proposed a new time for this event. This proposal is out of date. The event does not exist in your calendar anymore.": [
         "${ participantName } navrhl/a nový čas pro tuto událost. Tento návrh je zastaralý. Událost již neexistuje ve vašem kalendáři."
@@ -1424,22 +1436,22 @@
         "${ participantName } navrhl/a nový čas pro tuto událost. Tento návrh je zastaralý. Nemáte žádné kalendáře."
       ],
       "${ participantName } had tentatively accepted an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
-        "${ participantName } předběžně přijal/a pozvánku a navrhl/a nový čas pro jeden výskyt události. Odpověď a návrh jsou zastaralé."
+        "${ participantName } předběžně přijal(a) pozvání a navrhl(a) nový čas pro jeden výskyt události. Odpověď a návrh jsou zastaralé."
       ],
       "${ participantName } had tentatively accepted an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
-        "${ participantName } předběžně přijal/a pozvánku a navrhl/a nový čas této události. Odpověď a návrh jsou zastaralé."
+        "${ participantName } předběžně přijal(a) pozvání a navrhl(a) nový čas této události. Odpověď a návrh jsou zastaralé."
       ],
       "${ participantName } had tentatively accepted an invitation to one occurrence of the event.": [
-        "${ participantName } předběžně přijal/a pozvánku na jeden výskyt události."
+        "${ participantName } předběžně přijal(a) pozvání na jeden výskyt události."
       ],
       "${ participantName } had tentatively accepted an invitation to this event.": [
-        "${ participantName } předběžně přijal/a pozvání na tuto událost."
+        "${ participantName } předběžně přijal(a) pozvání na tuto událost."
       ],
       "${ participantName } had tentatively accepted your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
-        "${ participantName } předběžně přijal/a vaší pozvánku a navrhl/a nový čas pro jeden výskyt události. Odpověď a návrh jsou zastaralé."
+        "${ participantName } předběžně přijal(a) vaše pozvání a navrhl(a) nový čas pro jeden výskyt události. Odpověď a návrh jsou zastaralé."
       ],
       "${ participantName } had tentatively accepted your invitation and proposed a new time for this event. Answer and proposal are out of date.": [
-        "${ participantName } předběžně přijal/a vaší pozvánku a navrhl/a nový čas této události. Odpověď a návrh jsou zastaralé."
+        "${ participantName } předběžně přijal(a) vaší pozvánku a navrhl(a) nový čas této události. Odpověď a návrh jsou zastaralé."
       ],
       "${ participantName } is not in the participants list.": [
         "${ participantName } není v seznamu účastníků."
@@ -1451,28 +1463,28 @@
         "${ participantName } navrhl/a nový čas pro tuto událost."
       ],
       "${ participantName } tentatively accepted an invitation and proposed a new time for one occurrence of this event.": [
-        "${ participantName } předběžně přijal/a pozvánku a navrhl/a nový čas pro jeden výskyt této události."
+        "${ participantName } předběžně přijal(a) pozvání a navrhl(a) nový čas pro jeden výskyt této události."
       ],
       "${ participantName } tentatively accepted an invitation and proposed a new time for this event.": [
-        "${ participantName } předběžně přijal/a pozvánku a navrhl/a nový čas pro tuto událost."
+        "${ participantName } předběžně přijal(a) pozvání a navrhl(a) nový čas pro tuto událost."
       ],
       "${ participantName } tentatively accepted an invitation to one occurrence of the event.": [
-        "${ participantName } předběžně přijal/a pozvánku na jeden výskyt události."
+        "${ participantName } předběžně přijal(a) pozvání na jeden výskyt události."
       ],
       "${ participantName } tentatively accepted an invitation to this event.": [
         "${ participantName } předběžně přijal(a) pozvání na tuto událost."
       ],
       "${ participantName } tentatively accepted your invitation and proposed a new time for one occurrence of this event.": [
-        "${ participantName } předběžně přijal/a vaší pozvánku a navrhl/a nový čas pro jeden výskyt této události."
+        "${ participantName } předběžně přijal(a) vaše pozvání a navrhl(a) nový čas pro jeden výskyt této události."
       ],
       "${ participantName } tentatively accepted your invitation and proposed a new time for this event.": [
-        "${ participantName } předběžně přijal/a vaší pozvánku a navrhl/a nový čas pro tuto událost."
+        "${ participantName } předběžně přijal(a) vaše pozvání a navrhl(a) nový čas pro tuto událost."
       ],
       "${ participantName } tentatively accepted your invitation to one occurrence of the event.": [
-        "${ participantName } předběžně přijal/a vaší pozvánku na jeden výskyt události."
+        "${ participantName } předběžně přijal(a) vaše pozvání na jeden výskyt události."
       ],
       "${ participantName } tentatively accepted your invitation.": [
-        "${ participantName } předběžně přijal(a) vaši pozvánku."
+        "${ participantName } předběžně přijal(a) vaše pozvání."
       ],
       "(Attendance optional)": [
         "(Účast není povinná)"
@@ -1511,7 +1523,7 @@
         "Tato odpověď je zastaralá."
       ],
       "This response is out of date. The event does not exist in your calendar anymore.": [
-        "Tato odpověď je zastaralá. Událost již neexistuje ve vašem kalendáři."
+        "Platnost odpovědi vypršela. Událost ve vašem kalendáři již neexistuje."
       ],
       "This response is out of date. You have no calendars.": [
         "Tato odpověď je zastaralá. Nemáte žádný kalendář."
@@ -1572,16 +1584,16 @@
       ]
     },
     "Collapsible tooltip": {
-      "Close": [
-        "Zavřít"
+      "Collapse": [
+        "Sbalit"
       ],
-      "Open": [
-        "Otevřít"
+      "Expand": [
+        "Rozbalit"
       ]
     },
     "color": {
       "Apple": [
-        "Apple"
+        "apple"
       ],
       "azureish white": [
         "azurově bílá"
@@ -2017,9 +2029,6 @@
       "Burkina Faso": [
         "Burkina Faso"
       ],
-      "Burma": [
-        "Barma"
-      ],
       "Burundi": [
         "Burundi"
       ],
@@ -2074,9 +2083,6 @@
       "Costa Rica": [
         "Kostarika"
       ],
-      "Cote d'Ivoire\"": [
-        "Côte d'Ivoire"
-      ],
       "Croatia": [
         "Chorvatsko"
       ],
@@ -2091,6 +2097,9 @@
       ],
       "Czech Republic": [
         "Česká republika"
+      ],
+      "Côte d'Ivoire": [
+        "Pobřeží slonoviny"
       ],
       "Denmark": [
         "Dánsko"
@@ -2121,6 +2130,9 @@
       ],
       "Estonia": [
         "Estonsko"
+      ],
+      "Eswatini": [
+        "Svazijsko"
       ],
       "Ethiopia": [
         "Etiopie"
@@ -2365,6 +2377,9 @@
       "Mozambique": [
         "Mosambik"
       ],
+      "Myanmar": [
+        "Myanmar"
+      ],
       "Namibia": [
         "Namibie"
       ],
@@ -2556,9 +2571,6 @@
       ],
       "Svalbard and Jan Mayen": [
         "Špicberky a Jan Mayen"
-      ],
-      "Swaziland": [
-        "Eswatini"
       ],
       "Sweden": [
         "Švédsko"
@@ -2763,7 +2775,7 @@
     },
     "Description": {
       "Decrypting contacts... This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
-        "Dešifrování kontaktů... Může to trvat několik minut. Po dokončení procesu si budete moci stáhnout soubor se všemi exportovanými kontakty."
+        "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported."
       ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Mazání kontaktů... Tento proces může trvat několik minut. Po dokončení můžete okno zavřít."
@@ -2857,13 +2869,13 @@
     },
     "Email body for response to invitation": {
       "${ emailAddress } has accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } přijal/a pozvání na ${ eventTitle }"
+        "${ emailAddress } přijal(a) pozvání na ${ eventTitle }"
       ],
       "${ emailAddress } has declined your invitation to ${ eventTitle }": [
         "${ emailAddress } odmítl/a pozvání na ${ eventTitle }"
       ],
       "${ emailAddress } has tentatively accepted your invitation to ${ eventTitle }": [
-        "${ emailAddress } předběžně přijal/a pozvání na ${ eventTitle }"
+        "${ emailAddress } předběžně přijal(a) pozvání na ${ eventTitle }"
       ]
     },
     "Email reminder banner": {
@@ -3123,7 +3135,7 @@
         "Hesla se neshodují"
       ],
       "Please activate your content search again": [
-        "Prosím, aktivujte znovu vyhledávání v obsah"
+        "Prosím, aktivujte znovu vyhledávání obsahu"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Chcete-li pokračovat, opravte zvýrazněný konflikt.",
@@ -3297,7 +3309,7 @@
         "Váš import nebude zpracován."
       ],
       "Your search matched too many results. Please limit your search and try again.": [
-        "Vyhledávání našlo příliš mnoho výsledků. Zkraťte hledaný výraz a zkuste to prosím znovu."
+        "Vyhledávání našlo příliš mnoho výsledků. Upřesněte hledání a zkuste to prosím znovu."
       ]
     },
     "Error adding participants to a calendar event": {
@@ -3359,7 +3371,7 @@
       ]
     },
     "Error importing event": {
-      "Calendar timezone not supported": [
+      "Calendar time zone not supported": [
         "Časové pásmo kalendáře není podporováno"
       ],
       "Component with wrong format": [
@@ -3428,7 +3440,7 @@
       "Start time out of bounds": [
         "Čas zahájení mimo hranice"
       ],
-      "Timezone not supported": [
+      "Time zone not supported": [
         "Časové pásmo není podporováno"
       ],
       "To-do entry": [
@@ -3439,9 +3451,6 @@
       ]
     },
     "Error message": {
-      "Brace yourself till we get the error fixed.": [
-        "Počkejte, prosím, než chybu opravíme."
-      ],
       "Error: ${ errorMessage }": [
         "Chyba: ${ errorMessage }"
       ],
@@ -3457,6 +3466,9 @@
       "Please ${ refresh } or check your connection.": [
         "Prosím ${ refresh } nebo zkontrolujte své připojení."
       ],
+      "Something went wrong. Please refresh the page or try again later.": [
+        "Něco se pokazilo. Obnovte prosím stránku nebo to zkuste později."
+      ],
       "There was a problem connecting to Proton.": [
         "Při připojování k Proton došlo k chybě."
       ],
@@ -3469,7 +3481,7 @@
     },
     "Error notification": {
       "First name and last name cannot be unchecked at the same time": [
-        "Je potřeba vybrat křestní jméno, příjmení a nebo oboje"
+        "Je potřeba vybrat křestní jméno a nebo příjmení"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -4093,7 +4105,7 @@
       "${ updated } contact updated successfully.": [
         "${ updated } kontakt úspěšně aktualizován.",
         "${ updated } kontakty úspěšně aktualizovány.",
-        "${ updated } kontakt úspěšně aktualizován.",
+        "${ updated } kontaktů úspěšně aktualizováno.",
         "${ updated } kontaktů úspěšně aktualizováno."
       ],
       "(${ memberCount } member)": [
@@ -4328,7 +4340,7 @@
         "Chcete znovu podepsat detaily kontaktu?"
       ],
       "Don't forget to share your password with the recipient": [
-        "Nezapomeňte příjemci sdělit své heslo"
+        "Don't forget to share the password with the recipient"
       ],
       "Download our mobile application from your favorite app store to communicate securely on-the-go.": [
         "Stáhněte si naší mobilní aplikaci z vašeho oblíbeného obchodu s aplikacemi pro bezpečnou komunikaci na cestách."
@@ -4478,7 +4490,7 @@
         "Hodin"
       ],
       "I'm sending this message to a non-ProtonMail user.": [
-        "Tuto zprávu posílám uživateli, který není uživatelem služby ProtonMail."
+        "I'm sending this message to a non-Proton Mail user."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Pokud máte potíže s vytvořením účtu, požádejte prosím o pozvánku a my odpovíme do jednoho pracovního dne."
@@ -4568,7 +4580,7 @@
         "Načítání aplikace ${ appName }"
       ],
       "Loading message": [
-        "Nahrávám zprávu"
+        "Načítání zprávy"
       ],
       "Loading preview": [
         "Načítání náhledu"
@@ -4693,8 +4705,8 @@
       "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
         "PGP/Inline je kompatibilní pouze s formátem prostého textu. Vezměte na vědomí, že ${ MAIL_APP_NAME } vždy podepisuje šifrované zprávy."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
-        "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages."
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        "PGP/MIME automaticky odesílá zprávy pomocí aktuálně zvoleného režimu editoru. Vezměte na vědomí, že ${ MAIL_APP_NAME } vždy podepisuje šifrované zprávy."
       ],
       "Phone number": [
         "Telefonní číslo"
@@ -4704,6 +4716,9 @@
       ],
       "Please add at least one recipient.": [
         "Zadejte alespoň jednoho příjemce."
+      ],
+      "Please fill out this field.": [
+        "Prosíme vyplňte toto pole."
       ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
         "Dbejte na její bezpečnost. Budete jí potřebovat pro přístup ke svému účtu a dešifrování dat v případě nutnosti resetovat heslo."
@@ -4769,7 +4784,7 @@
         "Požádat o potvrzení přečtení"
       ],
       "Rich text": [
-        "Rich text"
+        "Formátovaný text"
       ],
       "Right to Left": [
         "Zprava doleva"
@@ -4804,8 +4819,8 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Vyberte formát e-mailu, který chcete aby byl použit jako výchozí pro zasílání e-mailu na tuto e-mailovou adresu."
       ],
-      "Select what you want to move from Google.": [
-        "Vyberte co chcete přesunout z Googlu."
+      "Select what you want to import from Google.": [
+        "Vyberte co chcete importovat z Google."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Vyberte kalendáře, které chcete importovat. Pro každý importovaný kalendář bude vytvořen nový kalendář až do limitu 20 kalendářů."
@@ -4820,7 +4835,7 @@
         "Odesílání zprávy..."
       ],
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
-        "Odesílání zpráv z @pm.me adresy je placená služba. Vaše zpráva bude odeslána z vaší standardní adresy ${ email }"
+        "Odesílání zpráv z adresy @pm.me je placená funkce. Vaše zpráva bude odeslána z vaší výchozí adresy ${ email }"
       ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "Odesláno z bezpečného <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
@@ -4933,6 +4948,12 @@
       "This conversation contains trashed messages.": [
         "Tato konverzace obsahuje zprávy vyhozené do koše."
       ],
+      "This conversation will be marked as spam. Would you also like to unsubscribe from future emails?": [
+        "Tato konverzace bude označena jako spam. Chcete také odhlásit příjem budoucích e-mailů?",
+        "Tyto konverzace budou označeny jako spam. Chcete také odhlásit příjem budoucích e-mailů?",
+        "Tyto konverzace budou označeny jako spam. Chcete také odhlásit příjem budoucích e-mailů?",
+        "Tyto konverzace budou označeny jako spam. Chcete také odhlásit příjem budoucích e-mailů?"
+      ],
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded!": [
         "Zpráva nesplňuje požadavky na ověření domény odesílatele. Může být falešná, nebo špatně přeposlaná!"
       ],
@@ -4965,6 +4986,12 @@
       ],
       "This message is signed by the key attached, that has not been trusted yet.": [
         "Tato zpráva je podepsána přiloženým klíčem, který nebyl dosud označen jako důvěryhodný."
+      ],
+      "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
+        "Tato zpráva bude označena jako spam. Chcete také odhlásit příjem budoucích e-mailů?",
+        "Tyto zprávy budou označeny jako spam. Chcete také odhlásit příjem budoucích e-mailů?",
+        "Tyto zprávy budou označeny jako spam. Chcete také odhlásit příjem budoucích e-mailů?",
+        "Tyto zprávy budou označeny jako spam. Chcete také odhlásit příjem budoucích e-mailů?"
       ],
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
         "Tato zpráva bude přesunuta do konceptů, takže ji budete moci měnit. Bude potřeba znovu naplánovat její odeslání."
@@ -5328,10 +5355,10 @@
         "Kliknutím na \"Důvěřovat klíči\" vytvoříte nový kontakt a přiřadí tento veřejný klíč k tomuto odesílateli. E-maily z této adresy budou automaticky kryptograficky ověřovány."
       ],
       "Do you want to trust the primary public key with the following fingerprint?": [
-        "Chcete důvěřovat hlavnímu veřejnému klíči s následujícím otiskem prstu?",
-        "Chcete důvěřovat hlavním veřejným klíčům s následujícími otisky prstů?",
-        "Chcete důvěřovat hlavním veřejným klíčům s následujícími otisky prstů?",
-        "Chcete důvěřovat hlavním veřejným klíčům s následujícími otisky prstů?"
+        "Chcete důvěřovat primárnímu veřejnému klíči s následujícím otiskem prstu?",
+        "Chcete důvěřovat primárním veřejným klíčům s následujícími otisky prstů?",
+        "Chcete důvěřovat primárním veřejným klíčům s následujícími otisky prstů?",
+        "Chcete důvěřovat primárním veřejným klíčům s následujícími otisky prstů?"
       ],
       "You have enabled Address Verification with Trusted Keys for this email address,\nbut no active encryption key has been trusted.\nYou must trust a key valid for sending in order to send a message to this email address.": [
         "Povolili jste Ověření Adresy pomocí Důvěryhodných klíčů pro tuto e-mailovou adresu, ale žádný aktivní šifrovací klíč nebyl označen jako důvěryhodný.\nMusíte nejprve důvěřovat klíči platnému pro odesílání, abyste odeslali zprávu na tuto e-mailovou adresu.",
@@ -5712,10 +5739,10 @@
         "Rozumím rizikům"
       ],
       "IF": [
-        "POKUD"
+        "KDYŽ"
       ],
       "If": [
-        "Jestli"
+        "Když"
       ],
       "Import all messages": [
         "Importovat všechny zprávy"
@@ -5836,6 +5863,9 @@
       ],
       "Region": [
         "Kraj"
+      ],
+      "Remember my choice": [
+        "Zapamatovat si volbu"
       ],
       "Reveal password": [
         "Zobrazit heslo"
@@ -6072,6 +6102,9 @@
       ],
       "Learn more": [
         "Zjistit více"
+      ],
+      "Less": [
+        "Méně"
       ],
       "Manage your folders": [
         "Spravovat složky"
@@ -6434,8 +6467,8 @@
       ]
     },
     "new_plans: info": {
-      "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
-        "Představujeme nový vzhled Protonu.${ br } Mnoho služeb, jedno poslání. Vítejte na internetu, kde je soukromí standardem."
+      "Introducing Proton’s refreshed look.${ br }Many services, one mission. Welcome to an internet where privacy is the default.": [
+        "Představujeme nový vzhled Protonu.${ br }Mnoho služeb, jedno poslání. Vítejte na internetu, kde je soukromí standardem."
       ]
     },
     "new_plans: label": {
@@ -6575,10 +6608,10 @@
     },
     "PGP Key info": {
       "${ emailAddress } has marked this key as compromised. This key cannot be used neither for encryption nor for signature verification.": [
-        "${ emailAddress } označil/a tento klíč jako kompromitovaný/prolomený. Tento klíč nelze použít ani pro šifrování, ani pro ověření podpisu."
+        "${ emailAddress } označil(a) tento klíč jako kompromitovaný/prolomený. Tento klíč nelze použít ani pro šifrování, ani pro ověření podpisu."
       ],
       "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
-        "${ emailAddress } označil/a tento klíč jako zastaralý. Tento klíč lze použít pouze pro ověření podpisu."
+        "${ emailAddress } označil(a) tento klíč jako zastaralý. Tento klíč lze použít pouze pro ověření podpisu."
       ],
       "We recommend that you \"untrust\" this key.": [
         "Doporučujeme, abyste tomuto klíči \"nedůvěřovali\"."
@@ -6798,7 +6831,7 @@
         "Nelze odeslat na adresu organizátora: ${ errorMessage }"
       ],
       "Re-encrypting invitation failed. Please try again": [
-        "Pozvánka znovu-zašifrování selhala. Prosím zkuste to znovu"
+        "Re-encrypting invitation failed. Please try again."
       ]
     },
     "Search - no results": {
@@ -7698,6 +7731,9 @@
       ],
       "Move to inbox (not spam)": [
         "Přesunout do Doručené pošty (není spam)"
+      ],
+      "Move to spam": [
+        "Přesunout do spamu"
       ],
       "Move to trash": [
         "Přesunout do koše"

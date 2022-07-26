@@ -361,6 +361,9 @@
       "Save": [
         "Opslaan"
       ],
+      "Search countries": [
+        "Zoek landen"
+      ],
       "Select all": [
         "Alles selecteren"
       ],
@@ -832,11 +835,11 @@
       ]
     },
     "Collapsible tooltip": {
-      "Close": [
-        "Sluiten"
+      "Collapse": [
+        "Inklappen"
       ],
-      "Open": [
-        "Open"
+      "Expand": [
+        "Uitvouwen"
       ]
     },
     "colon": {
@@ -1105,9 +1108,6 @@
       "Burkina Faso": [
         "Burkina Faso"
       ],
-      "Burma": [
-        "Myanmar"
-      ],
       "Burundi": [
         "Boeroendi"
       ],
@@ -1162,9 +1162,6 @@
       "Costa Rica": [
         "Costa Rica"
       ],
-      "Cote d'Ivoire\"": [
-        "Ivoorkust"
-      ],
       "Croatia": [
         "Kroatië"
       ],
@@ -1179,6 +1176,9 @@
       ],
       "Czech Republic": [
         "Tsjechië"
+      ],
+      "Côte d'Ivoire": [
+        "Ivoorkust"
       ],
       "Denmark": [
         "Denemarken"
@@ -1209,6 +1209,9 @@
       ],
       "Estonia": [
         "Estland"
+      ],
+      "Eswatini": [
+        "Swaziland"
       ],
       "Ethiopia": [
         "Ethiopië"
@@ -1453,6 +1456,9 @@
       "Mozambique": [
         "Mozambique"
       ],
+      "Myanmar": [
+        "Myanmar"
+      ],
       "Namibia": [
         "Namibië"
       ],
@@ -1644,9 +1650,6 @@
       ],
       "Svalbard and Jan Mayen": [
         "Spitsbergen en Jan Mayen"
-      ],
-      "Swaziland": [
-        "Swaziland"
       ],
       "Sweden": [
         "Zweden"
@@ -2227,8 +2230,8 @@
       "This label name is not available. Please choose a different name.": [
         "Deze labelnaam is niet beschikbaar. Gelieve een andere naam te kiezen."
       ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "Dit bericht kan links bevatten die niet op de juiste wijze geopend worden door uw huidige browser"
+      "This message may contain some link's URL that cannot be properly opened by your current browser": [
+        "This message may contain some link's URL that cannot be properly opened by your current browser."
       ],
       "Trusted keys are not valid for sending": [
         "Vertrouwde sleutels zijn niet geldig om mee te verzenden"
@@ -2319,7 +2322,7 @@
       "Calendar": [
         "Agenda"
       ],
-      "Calendar timezone not supported": [
+      "Calendar time zone not supported": [
         "Agenda-tijdzone niet ondersteund"
       ],
       "Component with wrong format": [
@@ -2394,11 +2397,11 @@
       "Start time out of bounds": [
         "Begintijd valt buiten de grenzen"
       ],
+      "Time zone not supported": [
+        "Tijdzone niet ondersteund"
+      ],
       "Timezone": [
         "Tijdzone"
-      ],
-      "Timezone not supported": [
-        "Tijdzone niet ondersteund"
       ],
       "To-do entry": [
         "To-do item"
@@ -2411,9 +2414,6 @@
       ]
     },
     "Error message": {
-      "Brace yourself till we get the error fixed.": [
-        "Hou u vast tot we de fout hebben opgelost."
-      ],
       "Error: ${ errorMessage }": [
         "Fout: ${ errorMessage }"
       ],
@@ -2425,6 +2425,9 @@
       ],
       "Please ${ refresh } or check your connection.": [
         "${ refresh } alstublieft of controleer uw verbinding."
+      ],
+      "Something went wrong. Please refresh the page or try again later.": [
+        "Er is iets misgegaan. Vernieuw de pagina of probeer het later opnieuw."
       ],
       "There was a problem connecting to Proton.": [
         "Fout bij het verbinden met Proton."
@@ -3057,6 +3060,9 @@
       "Other options": [
         "Andere opties"
       ],
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        "PGP/MIME stuurt de berichten automatisch aan de hand van de opmaak in het opstelvenster. Denk eraan dat ${ MAIL_APP_NAME } versleutelde berichten ook altijd ondertekent."
+      ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Houd er rekening mee dat de adressen die aan deze groep zijn toegewezen NIET zullen worden verwijderd."
       ],
@@ -3100,8 +3106,8 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Selecteer het e-mailformaat dat u standaard wilt gebruiken bij het verzenden van dit e-mailadres."
       ],
-      "Select what you want to move from Google.": [
-        "Select what you want to import from Google."
+      "Select what you want to import from Google.": [
+        "Selecteer wat u wil importeren vanaf Google."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Selecteer welke agenda's u wilt importeren. Voor elke geïmporteerde agenda wordt een nieuwe agenda aangemaakt, tot de limiet van 20 agenda's is bereikt."
@@ -3930,8 +3936,8 @@
       ]
     },
     "new_plans: info": {
-      "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
-        "Introducing Proton’s refreshed look.${ br }Many services, one mission. Welcome to an internet where privacy is the default."
+      "Introducing Proton’s refreshed look.${ br }Many services, one mission. Welcome to an internet where privacy is the default.": [
+        "Ontdek de nieuwe look van Proton.${ br }Veel diensten, één missie. Welkom in een internetomgeving waar privacy de standaard is."
       ]
     },
     "new_plans: label": {
@@ -4190,10 +4196,12 @@
         "U"
       ]
     },
-    "Participants expand button label": {
+    "Participants collapse button label": {
       "Collapse participants list": [
         "Lijst deelnemers samenvouwen"
-      ],
+      ]
+    },
+    "Participants expand button label": {
       "Expand participants list": [
         "Lijst deelnemers uitbreiden"
       ]

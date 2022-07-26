@@ -4,20 +4,6 @@
     "language": "el_GR"
   },
   "contexts": {
-    "Access level": {
-      "Full": [
-        "Πλήρης"
-      ],
-      "Full view": [
-        "Πλήρης προβολή"
-      ],
-      "Limited": [
-        "Περιορισμένη"
-      ],
-      "Limited view": [
-        "Περιορισμένη προβολή"
-      ]
-    },
     "Action": {
       "${ address } is available.": [
         "${ address } είναι διαθέσιμη."
@@ -52,9 +38,6 @@
       "Add address": [
         "Προσθήκη διεύθυνσης"
       ],
-      "Add calendar": [
-        "Προσθήκη ημερολογίου"
-      ],
       "Add condition": [
         "Προσθήκη συνθήκης"
       ],
@@ -75,9 +58,6 @@
       ],
       "Add label": [
         "Προσθήκη ετικέτας"
-      ],
-      "Add notification": [
-        "Προσθήκη ειδοποίησης"
       ],
       "Add PayPal": [
         "Προσθήκη PayPal"
@@ -178,17 +158,11 @@
       "Continue to ${ name }": [
         "Συνέχεια στο ${ name }"
       ],
-      "Continue with Google": [
-        "Συνεχίστε με Google"
-      ],
       "Copy": [
         "Αντιγραφή"
       ],
       "Copy email to clipboard": [
         "Αντίγραψε το email στο πρόχειρο"
-      ],
-      "Copy link": [
-        "Αντιγραφή συνδέσμου"
       ],
       "Create": [
         "Δημιουργία"
@@ -202,9 +176,6 @@
       "Create address": [
         "Δημιουργία διεύθυνσης"
       ],
-      "Create calendar": [
-        "Δημιουργία ημερολογίου"
-      ],
       "Create folder": [
         "Δημιουργία φακέλου"
       ],
@@ -213,9 +184,6 @@
       ],
       "Create label": [
         "Δημιουργία ετικέτας"
-      ],
-      "Create link": [
-        "Δημιουργία συνδέσμου"
       ],
       "Current plan": [
         "Τρέχον πρόγραμμα"
@@ -237,9 +205,6 @@
       ],
       "Delete": [
         "Διαγραφή"
-      ],
-      "Delete link": [
-        "Διαγραφή συνδέσμου"
       ],
       "Delete permanently": [
         "Οριστική διαγραφή"
@@ -334,9 +299,6 @@
       "Export": [
         "Εξαγωγή"
       ],
-      "Export ICS": [
-        "Εξαγωγή ICS"
-      ],
       "Export key": [
         "Εξαγωγή κλειδιού"
       ],
@@ -396,9 +358,6 @@
       ],
       "Import emails": [
         "Εισαγωγή email"
-      ],
-      "Import from .ics": [
-        "Εισαγωγή από αρχείο .ics"
       ],
       "Import key": [
         "Εισαγωγή κλειδιού"
@@ -541,17 +500,11 @@
       "Remove bonuses": [
         "Αφαιρέστε τα μπόνους"
       ],
-      "Remove calendar": [
-        "Αφαίρεση ημερολογίου"
-      ],
       "Remove gift code": [
         "Αφαιρέστε τον κωδικό δώρου"
       ],
       "Remove this label": [
         "Αφαίρεση αυτής της ετικέτας"
-      ],
-      "Remove this notification": [
-        "Αφαίρεση ειδοποίησης"
       ],
       "Rename": [
         "Μετονομασία"
@@ -619,26 +572,14 @@
       "Save address": [
         "Αποθήκευση διεύθυνσης"
       ],
-      "Save ICS file": [
-        "Αποθήκευση αρχείου ICS"
-      ],
       "Save selected": [
         "Αποθήκευση επιλεγμένων"
       ],
       "Select ${ planTitle }": [
         "Επιλογή ${ planTitle }"
       ],
-      "Select calendar view": [
-        "Επιλέξτε προβολή ημερολογίου"
-      ],
       "Select files": [
         "Επιλέξτε αρχεία"
-      ],
-      "Select language for invitation emails": [
-        "Επιλέξτε γλώσσα για τα προσκλητήρια email"
-      ],
-      "Select timezone": [
-        "Επιλογή ζώνης ώρας"
       ],
       "send auto-reply email": [
         "αποστολή μηνύματος αυτόματης απάντησης"
@@ -672,12 +613,6 @@
       ],
       "Show labels": [
         "Εμφάνιση ετικετών"
-      ],
-      "Show less": [
-        "Εμφάνιση λιγότερων"
-      ],
-      "Show more": [
-        "Εμφάνιση περισσοτέρων"
       ],
       "Show preview": [
         "Εμφάνιση προεπισκόπησης"
@@ -934,11 +869,6 @@
         "Μη υποστηριζόμενη εκδήλωση"
       ]
     },
-    "Auto import invitations setting": {
-      "Add to calendar and mark as pending": [
-        "Προσθήκη στο ημερολόγιο και σήμανση σε εκκρεμότητα"
-      ]
-    },
     "Autoresponse": {
       "I'm out of the office with limited access to my email.": [
         "Είμαι εκτός γραφείου με περιορισμένη πρόσβαση στο email μου."
@@ -1134,32 +1064,7 @@
         "Tweet"
       ]
     },
-    "Calendar limit warning": {
-      "You have reached the maximum number of personal calendars you can create within your plan.": [
-        "Έχετε φθάσει τον μέγιστο αριθμό προσωπικών ημερολογίων που μπορείτε να δημιουργήσετε στο πρόγραμμά σας."
-      ]
-    },
-    "Calendar link purpose update success message": {
-      "Label added": [
-        "Η ετικέτα προστέθηκε"
-      ],
-      "Label deleted": [
-        "Η ετικέτα διαγράφηκε"
-      ],
-      "Label edited": [
-        "Η ετικέτα διορθώθηκε"
-      ]
-    },
     "Calendar status": {
-      "Active": [
-        "Ενεργό"
-      ],
-      "Default": [
-        "Προεπιλογή"
-      ],
-      "Disabled": [
-        "Απενεργοποιημένο"
-      ],
       "Not synced": [
         "Δεν συγχρονίστηκαν"
       ],
@@ -1191,25 +1096,6 @@
       ],
       "Unsupported calendar format": [
         "Μη υποστηριζόμενη μορφή ημερολογίου"
-      ]
-    },
-    "Calendar view": {
-      "Day": [
-        "Ημέρα"
-      ],
-      "Month": [
-        "Μήνας"
-      ],
-      "Week": [
-        "Εβδομάδα"
-      ]
-    },
-    "Collapsible tooltip": {
-      "Close": [
-        "Κλείσιμο"
-      ],
-      "Open": [
-        "Άνοιγμα"
       ]
     },
     "color": {
@@ -1585,9 +1471,6 @@
       "Burkina Faso": [
         "Μπουρκίνα Φάσο"
       ],
-      "Burma": [
-        "Βιρμανία"
-      ],
       "Burundi": [
         "Μπουρούντι"
       ],
@@ -1641,9 +1524,6 @@
       ],
       "Costa Rica": [
         "Κόστα Ρίκα"
-      ],
-      "Cote d'Ivoire\"": [
-        "Ακτή Ελεφαντοστού"
       ],
       "Croatia": [
         "Κροατία"
@@ -2125,9 +2005,6 @@
       "Svalbard and Jan Mayen": [
         "Σβάλμπαρντ"
       ],
-      "Swaziland": [
-        "Σουαζιλάνδη"
-      ],
       "Sweden": [
         "Σουηδία"
       ],
@@ -2250,36 +2127,6 @@
         "Αχρησιμοποίητες πιστώσεις"
       ]
     },
-    "Daily recurring event, frequency": {
-      "${ count } time": [
-        "${ count } φορά",
-        "${ count } φορές"
-      ],
-      "Daily": [
-        "Καθημερινά"
-      ],
-      "Daily, ${ timesString }": [
-        "Καθημερινά, ${ timesString }"
-      ],
-      "Daily, ${ untilString }": [
-        "Καθημερινά, ${ untilString }"
-      ],
-      "Every ${ interval } day": [
-        "Κάθε ${ interval } ημέρα",
-        "Κάθε ${ interval } ημέρες"
-      ],
-      "Every ${ interval } day, ${ timesString }": [
-        "Κάθε ${ interval } ημέρα, ${ timesString }",
-        "Κάθε ${ interval } ημέρες, ${ timesString }"
-      ],
-      "Every ${ interval } day, ${ untilString }": [
-        "Κάθε ${ interval } ημέρα, ${ untilString }",
-        "Κάθε ${ interval } ημέρες, ${ untilString }"
-      ],
-      "until ${ dateString }": [
-        "μέχρι ${ dateString }"
-      ]
-    },
     "Day": {
       "Friday": [
         "Παρασκευή"
@@ -2314,7 +2161,7 @@
       ]
     },
     "Description": {
-      "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }": [
+      "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }..": [
         "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }."
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
@@ -2378,20 +2225,6 @@
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "Βοηθήστε μας να βελτιωθούμε!"
-      ]
-    },
-    "Duration": {
-      "120 minutes": [
-        "120 λεπτά"
-      ],
-      "30 minutes": [
-        "30 λεπτά"
-      ],
-      "60 minutes": [
-        "60 λεπτά"
-      ],
-      "90 minutes": [
-        "90 λεπτά"
       ]
     },
     "Email body for description (description part)": {
@@ -2614,9 +2447,6 @@
       ],
       "Name on card required": [
         "Απαιτείται το όνομα κατόχου της κάρτας"
-      ],
-      "Name required": [
-        "Απαιτείται όνομα"
       ],
       "No active sessions": [
         "Δεν υπάρχουν ενεργές συνεδρίες"
@@ -2912,9 +2742,6 @@
       "Calendar": [
         "Ημερολόγιο"
       ],
-      "Calendar timezone not supported": [
-        "Δεν υποστηρίζεται η ζώνη ώρας ημερολογίου"
-      ],
       "Component with wrong format": [
         "Συνθετικό λανθασμένης μορφής"
       ],
@@ -2990,9 +2817,6 @@
       "Timezone": [
         "Ζώνη ώρας"
       ],
-      "Timezone not supported": [
-        "Η ζώνη ώρας δεν υποστηρίζεται"
-      ],
       "To-do entry": [
         "Εγγραφή προς υλοποίηση"
       ],
@@ -3004,14 +2828,8 @@
       ]
     },
     "Error message": {
-      "Brace yourself till we get the error fixed.": [
-        "Φροντίστε τον εαυτό σας μέχρι να επιδιορθώσουμε το πρόβλημα."
-      ],
       "Error: ${ errorMessage }": [
         "Σφάλμα: ${ errorMessage }"
-      ],
-      "Invalid URL": [
-        "Μη έγκυρη διεύθυνση URL"
       ],
       "Oops, something went wrong": [
         "Ωχ, κάτι πήγε στραβά"
@@ -3080,20 +2898,6 @@
     "Event title": {
       "(no title)": [
         "(χωρίς τίτλο)"
-      ]
-    },
-    "Export calendar": {
-      "Calendar successfully exported. You can now save the ICS file.": [
-        "Το ημερολόγιο εξήχθη με επιτυχία. Μπορείτε τώρα να αποθηκεύσετε το αρχείο ICS."
-      ],
-      "Decrypting events from your calendar: ${ totalProcessed }/${ totalToProcess }": [
-        "Γίνεται αποκρυπτογράφηση εκδηλώσεων από το ημερολόγιό σας: ${ totalProcessed }/${ totalToProcess }"
-      ],
-      "Please don't close the tab before the exporting process is finished.": [
-        "Παρακαλούμε μην κλείσετε την καρτέλα πριν ολοκληρωθεί η διαδικασία εξαγωγής."
-      ],
-      "The internet connection was interrupted, causing the export process to fail. Please try again.": [
-        "Η σύνδεση στο διαδίκτυο διακόπηκε, προκαλώντας την αποτυχία της διαδικασίας εξαγωγής. Παρακαλούμε προσπαθήστε ξανά."
       ]
     },
     "Feature": {
@@ -3246,9 +3050,6 @@
       "Actions": [
         "Ενέργειες"
       ],
-      "Calendar": [
-        "Ημερολόγιο"
-      ],
       "Event": [
         "Γεγονός"
       ],
@@ -3261,26 +3062,14 @@
       "Key type": [
         "Τύπος κλειδιού"
       ],
-      "Label": [
-        "Ετικέτα"
-      ],
-      "Name": [
-        "Όνομα"
-      ],
       "Notifications": [
         "Ειδοποιήσεις"
       ],
       "Organization key fingerprint": [
         "Αποτύπωμα κλειδιού οργανισμού"
       ],
-      "Status": [
-        "Κατάσταση"
-      ],
       "Time": [
         "Ώρα"
-      ],
-      "What others see": [
-        "Τι βλέπουν οι άλλοι"
       ]
     },
     "Header for addresses table": {
@@ -3724,9 +3513,6 @@
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Αν συνεχίσετε, θα χάσετε την πρόσβαση σε όλα τα τωρινά κρυπτογραφημένα δεδομένα εντός του λογαριασμού σας."
       ],
-      "${ calendarName } will be set as default calendar.": [
-        "Το ${ calendarName } θα οριστεί ως προεπιλεγμένο ημερολόγιο."
-      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } νέο ημερολόγιο",
         "${ calendarsToBeCreatedCount } νέα ημερολόγια"
@@ -3865,9 +3651,6 @@
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Ένα όνομα που σας βοηθά να αναγνωρίζετε πού το χρησιμοποιείτε, ώστε αργότερα να μπορείτε εύκολα να το ανακαλέσετε ή επεκτείνετε."
       ],
-      "A recovery file lets you unlock and view your data after an account reset. ": [
-        "A recovery file lets you unlock and view your data after an account reset."
-      ],
       "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password.": [
         "Μια φράση ανάκτησης, σας επιτρέπει να έχετε πρόσβαση στο λογαριασμό σας και να ανακτήσετε τα κρυπτογραφημένα μηνύματά σας εάν ξεχάσετε τον κωδικό πρόσβασής σας."
       ],
@@ -3900,9 +3683,6 @@
       ],
       "Add image URL": [
         "Προσθήκη εικόνας με URL"
-      ],
-      "Add label": [
-        "Προσθήκη ετικέτας"
       ],
       "Additional options": [
         "Πρόσθετες επιλογές"
@@ -3964,17 +3744,11 @@
       "and": [
         "και"
       ],
-      "Anyone with this link won't be able to sync or get future updates for your calendar. If you want to give them access again, you will have to create a new link.": [
-        "Όποιος έχει αυτόν τον σύνδεσμο, δεν θα μπορεί να συγχρονίσει ή να λάβει μελλοντικές ενημερώσεις για το ημερολόγιό σας. Αν θέλετε να τους ξαναδώσετε πρόσβαση, θα πρέπει να δημιουργήσετε νέο σύνδεσμο."
-      ],
       "AOL reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
         "Το AOL διαβάζει τα προσωπικά σας δεδομένα προκειμένου να παρέχει πρόσβαση σε διαφημιστές και άλλα τρίτα μέρη. Για καλύτερο απόρρητο, δημιουργήστε μια ασφαλή διεύθυνση email."
       ],
       "Are you sure you want to delete this address?": [
         "Θέλετε σίγουρα να διαγράψετε αυτήν τη διεύθυνση;"
-      ],
-      "Are you sure you want to delete this calendar?": [
-        "Θέλετε σίγουρα να διαγράψετε αυτό το ημερολόγιο;"
       ],
       "Are you sure you want to delete this domain?": [
         "Θέλετε σίγουρα να διαγράψετε αυτόν τον τομέα;"
@@ -4115,35 +3889,14 @@
       "Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.": [
         "Προς το παρόν, όλος ο διαθέσιμος αποθηκευτικός χώρος, διατίθεται στο λογαριασμό διαχειριστή. Μειώστε την κατανομή λογαριασμού διαχειριστή για να ελευθερώσετε χώρο για επιπλέον χρήστες. Μπορείτε να αυξήσετε το συνολικό χώρο αποθήκευσης ανά πάσα στιγμή, αναβαθμίζοντας το λογαριασμό σας."
       ],
-      "Custom": [
-        "Προσαρμοσμένη"
-      ],
-      "Custom daily": [
-        "Προσαρμοσμένη καθημερινή"
-      ],
       "Custom email domains": [
         "Προσαρμοσμένοι τομείς"
-      ],
-      "Custom monthly": [
-        "Προσαρμοσμένη μηνιαία"
-      ],
-      "Custom weekly": [
-        "Προσαρμοσμένη εβδομαδιαία"
-      ],
-      "Custom yearly": [
-        "Προσαρμοσμένη ετήσια"
-      ],
-      "Daily": [
-        "Καθημερινά"
       ],
       "Data locked": [
         "Τα δεδομένα κλειδώθηκαν"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Διαγράψτε κάθε άλλη εγγραφή MX ή βεβαιωθείτε ότι η Προτεραιότητα του ${ MAIL_APP_NAME } είναι ο μικρότερος αριθμός."
-      ],
-      "Delete link?": [
-        "Διαγραφή συνδέσμου;"
       ],
       "Discount applied to your subscription with coupon ${ code }": [
         "Εφαρμόστηκε έκπτωση στη συνδρομή σας, με το κουπόνι ${ code }"
@@ -4190,9 +3943,6 @@
       ],
       "Earned ${ rewards } of ${ rewardsLimit } ${ planName } months.": [
         "Κερδήθηκαν ${ rewards } από ${ rewardsLimit } μήνες ${ planName }."
-      ],
-      "Edit label": [
-        "Επεξεργασία ετικέτας"
       ],
       "Edit link": [
         "Επεξεργασία συνδέσμου"
@@ -4481,12 +4231,6 @@
       "Link copied to clipboard": [
         "Ο σύνδεσμος αντιγράφηκε στο πρόχειρο"
       ],
-      "Link created": [
-        "Ο σύνδεσμος δημιουργήθηκε"
-      ],
-      "Link deleted": [
-        "Ο σύνδεσμος διαγράφηκε"
-      ],
       "Link type": [
         "Τύπος σύνδεσης"
       ],
@@ -4519,9 +4263,6 @@
       ],
       "Merged": [
         "Συγχωνευμένα"
-      ],
-      "Monthly ${ onDayString }": [
-        "Μηνιαίως ${ onDayString }"
       ],
       "more": [
         "περισσότερα"
@@ -4597,9 +4338,6 @@
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Αλλάξτε αυτές τις ρυθμίσεις μόνο αν χρησιμοποιείτε PGP με παραλήπτες εκτός ${ BRAND_NAME }."
-      ],
-      "Only you can see the labels.": [
-        "Μόνο εσείς μπορείτε να δείτε τις ετικέτες."
       ],
       "Or select a particular server:": [
         "Ή επιλέξτε συγκεκριμένο διακομιστή:"
@@ -4782,9 +4520,6 @@
       "Select a service provider to start": [
         "Επιλογή παρόχου υπηρεσίας για ξεκίνημα"
       ],
-      "Select what you want to move from Google.": [
-        "Επιλέξτε τι θέλετε να εισάγετε από την Google."
-      ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Επιλέξτε ποια ημερολόγια θα εισαχθούν. Για κάθε εισαγόμενο, ένα νέο ημερολόγιο θα δημιουργηθεί, μέχρι το όριο των 20."
       ],
@@ -4865,9 +4600,6 @@
       ],
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "Το μήνυμα ${ boldDataLocked } δεν θα εμφανίζεται πλέον, ωστόσο μπορείτε να ξεκλειδώσετε τα δεδομένα σας στο ${ encryptionAndKeysLink }."
-      ],
-      "The calendar will be removed from your account.": [
-        "Το ημερολόγιο θα αφαιρεθεί από τον λογαριασμό σας."
       ],
       "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
         "Η διεύθυνση ηλεκτρονικού ταχυδρομείου που τοποθετείτε στην κορυφή της λίστας είναι η προεπιλεγμένη διεύθυνσή σας. Σύρετε και αφήστε για να αναδιατάξετε τις διευθύνσεις σας."
@@ -5061,9 +4793,6 @@
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Χρησιμοποιείστε τον βέλτιστο διακομιστή για το τρέχον φορτίο και θέση: ${ formattedBestServerName }"
       ],
-      "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
-        "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux."
-      ],
       "Verification can take a few minutes.": [
         "Η επαλήθευση μπορεί να πάρει μερικά λεπτά."
       ],
@@ -5151,9 +4880,6 @@
       "Yandex records your online activity and reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
         "Το Yandex καταγράφει τη διαδικτυακή σας δραστηριότητα και διαβάζει τα προσωπικά σας δεδομένα προκειμένου να παρέχει πρόσβαση σε διαφημιζόμενους και άλλα τρίτα μέρη. Για καλύτερο απόρρητο, δημιουργήστε μια ασφαλή διεύθυνση email."
       ],
-      "Yearly": [
-        "Ετησίως"
-      ],
       "You already have a free account": [
         "Έχετε ήδη έναν δωρεάν λογαριασμό"
       ],
@@ -5219,9 +4945,6 @@
       ],
       "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription.": [
         "Για να μπορέσετε να ακυρώσετε τη συνδρομή σας, πρέπει πρώτα να αφαιρέσετε τυχόν πρόσθετα προσωπικά ημερολόγια και τυχόν κοινοποιημένους συνδέσμους ημερολογίου."
-      ],
-      "You need to have a personal calendar to create a link.": [
-        "Για να δημιουργήσετε έναν σύνδεσμο, πρέπει να έχετε προσωπικό ημερολόγιο."
       ],
       "You need to have an active personal calendar to import your events.": [
         "Πρέπει να έχετε ένα ενεργό προσωπικό ημερολόγιο για να εισαγάγετε τις εκδηλώσεις σας."
@@ -5705,11 +5428,6 @@
         "Επισήμανση ως ξεπερασμένο"
       ]
     },
-    "Knowledge base link label": {
-      "Here's how": [
-        "Δείτε πώς"
-      ]
-    },
     "Label": {
       " and ": [
         " και "
@@ -5798,9 +5516,6 @@
       "Attach screenshot(s)": [
         "Επισύναψη στιγμιότυπου/ων οθόνης"
       ],
-      "Auto-detect primary time zone": [
-        "Αυτόματη ανίχνευση κύριας ζώνης ώρας"
-      ],
       "Auto-load embedded images": [
         "Αυτόματη φόρτωση ενσωματωμένων εικόνων"
       ],
@@ -5857,9 +5572,6 @@
       ],
       "Code is 6 digits without spaces": [
         "Ο κωδικός είναι 6 ψηφία χωρίς κενά"
-      ],
-      "Color": [
-        "Χρώμα"
       ],
       "Composer": [
         "Συντάκτης"
@@ -5945,35 +5657,17 @@
       "Days of the week": [
         "Ημέρα της εβδομάδας"
       ],
-      "Default email address": [
-        "Προεπιλεγμένη ηλ. διεύθυνση"
-      ],
-      "Default full day notifications": [
-        "Προεπιλεγμένες ολοήμερες ειδοποιήσεις"
-      ],
       "Default language": [
         "Προεπιλεγμένη γλώσσα"
       ],
-      "Default language (${ defaultLanguage })": [
-        "Προεπιλεγμένη γλώσσα (${ defaultLanguage })"
-      ],
-      "Default notifications": [
-        "Προεπιλεγμένες ειδοποιήσεις"
-      ],
       "Default PGP scheme": [
         "Προεπιλεγμένο σχήμα PGP"
-      ],
-      "Default view": [
-        "Προεπιλεγμένη προβολή"
       ],
       "Delete": [
         "Διαγραφή"
       ],
       "Density": [
         "Πυκνότητα"
-      ],
-      "Description": [
-        "Περιγραφή"
       ],
       "Device/certificate name": [
         "Όνομα συσκευής/πιστοποιητικού"
@@ -5983,9 +5677,6 @@
       ],
       "Discount": [
         "Έκπτωση"
-      ],
-      "Display": [
-        "Εμφάνιση"
       ],
       "Display name": [
         "Εμφανιζόμενο Όνομα"
@@ -6323,15 +6014,6 @@
       "Send auto-reply": [
         "Αποστολή αυτόματης απάντησης"
       ],
-      "Send in": [
-        "Αποστολή στα"
-      ],
-      "Show secondary time zone": [
-        "Εμφάνιση δευτερεύουσας ζώνης ώρας"
-      ],
-      "Show week numbers": [
-        "Εμφάνιση αριθμών εβδομάδων"
-      ],
       "Sign external messages": [
         "Υπογράψτε εξωτερικά μηνύματα"
       ],
@@ -6524,9 +6206,6 @@
       ],
       "Proton company announcements": [
         "Ανακοινώσεις εταιρείας του Proton"
-      ],
-      "Proton for business": [
-        "Proton for Business"
       ],
       "Proton for Business newsletter": [
         "Ενημερωτικό δελτίο Proton για επιχειρήσεις"
@@ -6733,12 +6412,6 @@
         "Εισαγάγετε όλα τα μηνύματα από ${ totalLabelsCount } ετικέτες από ${ periodFragment } και επισημάνετε τα με ετικέτα ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
-    "Maximum calendar links reached warning": {
-      "You can create up to ${ MAX_LINKS_PER_CALENDAR } link per calendar. To create a new link to this calendar, delete one from the list below.": [
-        "Μπορείτε να δημιουργήσετε μόνο ${ MAX_LINKS_PER_CALENDAR } σύνδεσμο ανά ημερολόγιο. Για τη δημιουργία νέου συνδέσμου σε αυτό το ημερολόγιο, διαγράψτε τον παρακάτω.",
-        "Μπορείτε να δημιουργήσετε έως ${ MAX_LINKS_PER_CALENDAR } συνδέσμους ανά ημερολόγιο. Για τη δημιουργία νέου συνδέσμου σε αυτό το ημερολόγιο, διαγράψτε έναν από την παρακάτω λίστα."
-      ]
-    },
     "Member action": {
       "Delete": [
         "Διαγραφή"
@@ -6797,11 +6470,6 @@
         "Πώς να εισάγετε email από το Yahoo"
       ]
     },
-    "Modal title and action": {
-      "Add calendar": [
-        "Προσθήκη ημερολογίου"
-      ]
-    },
     "Monetary unit": {
       "Dollar": [
         "Δολάριο"
@@ -6811,139 +6479,6 @@
       ],
       "Swiss franc": [
         "Ελβετικό Φράγκο"
-      ]
-    },
-    "Monthly recurring event, frequency": {
-      "Every ${ interval } month ${ onDayString }": [
-        "Κάθε ${ interval } μήνα, ${ onDayString }",
-        "Κάθε ${ interval } μήνες, ${ onDayString }"
-      ],
-      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
-        "Κάθε ${ interval } μήνα, ${ onDayString }, ${ timesString }",
-        "Κάθε ${ interval } μήνες, ${ onDayString }, ${ timesString }"
-      ],
-      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
-        "Κάθε ${ interval } μήνα, ${ onDayString }, ${ untilString }",
-        "Κάθε ${ interval } μήνες, ${ onDayString }, ${ untilString }"
-      ],
-      "Monthly ${ onDayString }": [
-        "Μηνιαίως ${ onDayString }"
-      ],
-      "Monthly ${ onDayString }, ${ timesString }": [
-        "Μηνιαίως ${ onDayString }, ${ timesString }"
-      ],
-      "Monthly ${ onDayString }, ${ untilString }": [
-        "Μηνιαίως ${ onDayString }, ${ untilString }"
-      ]
-    },
-    "Monthly recurring event, repeats on": {
-      "on day ${ dayOfMonth }": [
-        "στην ημέρα ${ dayOfMonth }"
-      ],
-      "on the first Friday": [
-        "κάθε πρώτη Παρασκευή"
-      ],
-      "on the first Monday": [
-        "κάθε πρώτη Δευτέρα"
-      ],
-      "on the first Saturday": [
-        "κάθε πρώτο Σάββατο"
-      ],
-      "on the first Sunday": [
-        "κάθε πρώτη Κυριακή"
-      ],
-      "on the first Thursday": [
-        "κάθε πρώτη Πέμπτη"
-      ],
-      "on the first Tuesday": [
-        "κάθε πρώτη Τρίτη"
-      ],
-      "on the first Wednesday": [
-        "κάθε πρώτη Τετάρτη"
-      ],
-      "on the fourth Friday": [
-        "κάθε τέταρτη Παρασκευή"
-      ],
-      "on the fourth Monday": [
-        "κάθε τέταρτη Δευτέρα"
-      ],
-      "on the fourth Saturday": [
-        "κάθε τέταρτο Σάββατο"
-      ],
-      "on the fourth Sunday": [
-        "κάθε τέταρτη Κυριακή"
-      ],
-      "on the fourth Thursday": [
-        "κάθε τέταρτη Πέμπτη"
-      ],
-      "on the fourth Tuesday": [
-        "κάθε τέταρτη Τρίτη"
-      ],
-      "on the fourth Wednesday": [
-        "κάθε τέταρτη Τετάρτη"
-      ],
-      "on the last Friday": [
-        "κάθε τελευταία Παρασκευή"
-      ],
-      "on the last Monday": [
-        "κάθε τελευταία Δευτέρα"
-      ],
-      "on the last Saturday": [
-        "κάθε τελευταίο Σάββατο"
-      ],
-      "on the last Sunday": [
-        "κάθε τελευταία Κυριακή"
-      ],
-      "on the last Thursday": [
-        "κάθε τελευταία Πέμπτη"
-      ],
-      "on the last Tuesday": [
-        "κάθε τελευταία Τρίτη"
-      ],
-      "on the last Wednesday": [
-        "κάθε τελευταία Τετάρτη"
-      ],
-      "on the second Friday": [
-        "κάθε δεύτερη Παρασκευή"
-      ],
-      "on the second Monday": [
-        "κάθε δεύτερη Δευτέρα"
-      ],
-      "on the second Saturday": [
-        "κάθε δεύτερο Σάββατο"
-      ],
-      "on the second Sunday": [
-        "κάθε δεύτερη Κυριακή"
-      ],
-      "on the second Thursday": [
-        "κάθε δεύτερη Πέμπτη"
-      ],
-      "on the second Tuesday": [
-        "κάθε δεύτερη Τρίτη"
-      ],
-      "on the second Wednesday": [
-        "κάθε δεύτερη Τετάρτη"
-      ],
-      "on the third Friday": [
-        "κάθε τρίτη Παρασκευή"
-      ],
-      "on the third Monday": [
-        "κάθε τρίτη Δευτέρα"
-      ],
-      "on the third Saturday": [
-        "κάθε τρίτο Σάββατο"
-      ],
-      "on the third Sunday": [
-        "κάθε τρίτη Κυριακή"
-      ],
-      "on the third Thursday": [
-        "κάθε τρίτη Πέμπτη"
-      ],
-      "on the third Tuesday": [
-        "κάθε τρίτη Τρίτη"
-      ],
-      "on the third Wednesday": [
-        "κάθε τρίτη Τετάρτη"
       ]
     },
     "Moved to black/whitelist": {
@@ -7008,9 +6543,6 @@
       ]
     },
     "new_plans: action": {
-      "Continue with free": [
-        "Συνέχεια με δωρεάν"
-      ],
       "Delete account": [
         "Διαγραφή λογαριασμού"
       ],
@@ -7209,6 +6741,17 @@
         "Διαχείριση ομάδας"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Κάντε την ιδιωτικότητα προεπιλογή σας, για αντίγραφα ασφαλείας, αποθήκευση, κοινοποίηση και ανάκτηση αρχείων."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Για συνέχιση της χρήσης του ${ MAIL_APP_NAME } με προνομιακά χαρακτηριστικά, επιλέξτε τη συνδρομή και τον τρόπο πληρωμής σας."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Η δοκιμαστική σας περίοδος λήγει στις ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } που λήγει σε ${ last4 }"
@@ -7227,17 +6770,6 @@
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Διασφαλισμένος αποθηκευτικός χώρος νέφους που επιτρέπει αποθήκευση, συγχρονισμό και κοινοποίηση αρχείων, εύκολα και διασφαλισμένα."
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Κάντε την ιδιωτικότητα προεπιλογή σας, για αντίγραφα ασφαλείας, αποθήκευση, κοινοποίηση και ανάκτηση αρχείων."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Για συνέχιση της χρήσης του ${ MAIL_APP_NAME } με προνομιακά χαρακτηριστικά, επιλέξτε τη συνδρομή και τον τρόπο πληρωμής σας."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Η δοκιμαστική σας περίοδος λήγει στις ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -7303,10 +6835,7 @@
       "End-to-end encrypted file storage": [
         "Διατερματικά κρυπτογραφημένη αποθήκευση αρχείων"
       ],
-      "Keeps you protected by blocking all network connections when you are accidentally disconnected from our VPN server": [
-        "Keeps you protected by blocking all network connections when you are unexpectedly disconnected from our VPN server."
-      ],
-      "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections": [
+      "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections..": [
         "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections."
       ],
       "Quickly set up out-of-office messages": [
@@ -7363,40 +6892,6 @@
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "Τα διαπιστευτήρια του OpenVPN / IKEv2 επαναδημιουργήθηκαν"
-      ]
-    },
-    "Notification time input": {
-      "at": [
-        "στις"
-      ]
-    },
-    "Notification type": {
-      "email": [
-        "ηλ. μήνυμα"
-      ],
-      "notification": [
-        "ειδοποίηση"
-      ]
-    },
-    "Notification when": {
-      "day before": [
-        "ημέρα πριν",
-        "ημέρες πριν"
-      ],
-      "hour before": [
-        "ώρα πριν",
-        "ώρες πριν"
-      ],
-      "minute before": [
-        "λεπτό πριν",
-        "λεπτά πριν"
-      ],
-      "on the same day": [
-        "την ίδια ημέρα"
-      ],
-      "week before": [
-        "εβδομάδα πριν",
-        "εβδομάδες πριν"
       ]
     },
     "Oauth instructions": {
@@ -7679,20 +7174,9 @@
         "PayPal"
       ]
     },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "Η ηλ. διεύθυνση δεν βρέθηκε μεταξύ των αναγνωριστικών χρήστη που ορίζονται στο κλειδί αποστολής (${ keyUserIds })"
-      ]
-    },
     "Placeholder": {
       "A way to contact you": [
         "Ένας τρόπος να επικοινωνήσουμε μαζί σας"
-      ],
-      "Add a calendar description": [
-        "Προσθέστε μια περιγραφή ημερολογίου"
-      ],
-      "Add a calendar name": [
-        "Προσθέστε ένα όνομα ημερολογίου"
       ],
       "Add gift code": [
         "Προσθήκη κωδικού δώρου"
@@ -7796,14 +7280,6 @@
     "Price": {
       "Free": [
         "Δωρεάν"
-      ]
-    },
-    "Primary timezone": {
-      "Primary time zone": [
-        "Κύρια ζώνη ώρας"
-      ],
-      "Secondary time zone": [
-        "Δευτερεύουσα ζώνη ώρας"
       ]
     },
     "Private Member": {
@@ -7922,11 +7398,6 @@
         "Ανέβασμα πρόσθετων αρχείων"
       ]
     },
-    "Select search results": {
-      "No results found": [
-        "Κανένα αποτέλεσμα"
-      ]
-    },
     "Settings description": {
       "You can apply multiple labels to a single message, but messages can usually only be in a single folder. Drag and drop to rearrange the order of your folders and labels.": [
         "Μπορείτε να εφαρμόσετε πολλαπλές ετικέτες σε ένα μήνυμα, αλλά τα μηνύματα μπορούν συνήθως να βρίσκονται μόνο σε έναν φάκελο. Σύρετε και αφήστε για να αναδιατάξετε τη σειρά των φακέλων και των ετικετών σας."
@@ -7938,11 +7409,6 @@
       ],
       "Organization": [
         "Οργανισμός"
-      ]
-    },
-    "Settings update growler warning": {
-      "Failed to update settings": [
-        "Αποτυχία ενημέρωσης ρυθμίσεων"
       ]
     },
     "Settings/filters": {
@@ -8016,9 +7482,6 @@
       ]
     },
     "Spotlight": {
-      "No more missed appointments": [
-        "Όχι άλλα χαμένα ραντεβού"
-      ],
       "Try ${ DRIVE_APP_NAME }": [
         "Δοκιμή ${ DRIVE_APP_NAME }"
       ]
@@ -8051,26 +7514,6 @@
       ],
       "Your current storage:": [
         "Ο τρέχων χώρος αποθήκευσης:"
-      ]
-    },
-    "Subscribe to calendar modal description": {
-      "Learn how to get a private calendar link.": [
-        "Μάθετε πώς να αποκτήσετε έναν σύνδεσμο ιδιωτικού ημερολογίου."
-      ]
-    },
-    "Subscribed calendar extension warning": {
-      "This link might be wrong": [
-        "Αυτός ο σύνδεσμος ίσως είναι λανθασμένος"
-      ]
-    },
-    "Subscribed calendar section description": {
-      "Add public, external, or shared calendars using a URL.": [
-        "Προσθέστε δημόσια, εξωτερικά ή κοινόχρηστα ημερολόγια χρησιμοποιώντας μια διεύθυνση URL."
-      ]
-    },
-    "Subscribed calendar URL length warning": {
-      "URL is too long": [
-        "Υπερβολικά μεγάλο URL"
       ]
     },
     "Subscription attribute": {
@@ -8110,18 +7553,6 @@
       "Bug reported": [
         "Το σφάλμα αναφέρθηκε"
       ],
-      "Calendar added. It might take a few minutes to sync.": [
-        "Το ημερολόγιο προστέθηκε. Ίσως περάσουν μερικά λεπτά για συγχρονισμό."
-      ],
-      "Calendar created": [
-        "Το ημερολόγιο δημιουργήθηκε"
-      ],
-      "Calendar removed": [
-        "Το ημερολόγιο αφαιρέθηκε"
-      ],
-      "Calendar updated": [
-        "Το ημερολόγιο ενημερώθηκε"
-      ],
       "Canceling import": [
         "Γίνεται ακύρωση εισαγωγής"
       ],
@@ -8133,9 +7564,6 @@
       ],
       "Credits added": [
         "Οι μονάδες προστέθηκαν"
-      ],
-      "Default calendar updated": [
-        "Το προεπιλεγμένο ημερολόγιο ενημερώθηκε"
       ],
       "DMARC value copied to clipboard": [
         "Η τιμή DMARC αντιγράφηκε στο πρόχειρο"
@@ -8340,11 +7768,6 @@
       "${ minutes } minute": [
         "${ minutes } λεπτό",
         "${ minutes } λεπτά"
-      ]
-    },
-    "Timezone search placeholder": {
-      "Search timezones": [
-        "Αναζήτηση ζώνης ώρας"
       ]
     },
     "Title": {
@@ -8559,9 +7982,6 @@
       "Create a ${ mailAppName } address": [
         "Δημιουργήστε μια διεύθυνση ${ mailAppName }"
       ],
-      "Create calendar": [
-        "Δημιουργία ημερολογίου"
-      ],
       "Create your ${ BRAND_NAME } Account": [
         "Δημιουργία Λογαριασμού ${ BRAND_NAME }"
       ],
@@ -8625,9 +8045,6 @@
       "Delete account": [
         "Διαγραφή λογαριασμού"
       ],
-      "Delete calendar": [
-        "Διαγραφή ημερολογίου"
-      ],
       "Delete key permanently?": [
         "Οριστική διαγραφή κλειδιού;"
       ],
@@ -8667,9 +8084,6 @@
       "Edit Block List": [
         "Επεξεργασία Λίστας Φραγμένων"
       ],
-      "Edit calendar": [
-        "Επεξεργασία ημερολογίου"
-      ],
       "Edit credit/debit card": [
         "Επεξεργασία πιστωτικής/χρεωστικής κάρτας"
       ],
@@ -8705,9 +8119,6 @@
       ],
       "Error": [
         "Σφάλμα"
-      ],
-      "Export calendar": [
-        "Εξαγωγή ημερολογίου"
       ],
       "Export private key": [
         "Εξαγωγή ιδιωτικού κλειδιού"
@@ -8917,9 +8328,6 @@
       "Referral tracker": [
         "Ιχνηλάτης παραπομπών"
       ],
-      "Remove calendar": [
-        "Αφαίρεση ημερολογίου"
-      ],
       "Report a problem": [
         "Αναφορά προβλήματος"
       ],
@@ -8947,9 +8355,6 @@
       "Secure email based in Switzerland": [
         "Ασφαλές email με έδρα την Ελεβετία"
       ],
-      "Security": [
-        "Διασφάλιση"
-      ],
       "Security logs": [
         "Καταγραφές διασφάλισης"
       ],
@@ -8961,15 +8366,6 @@
       ],
       "Select contact group": [
         "Επιλογή ομάδας επαφών"
-      ],
-      "Select the time to send this notification": [
-        "Επιλέξτε την ώρα αποστολής αυτής της ειδοποίησης"
-      ],
-      "Select the way to send this notification": [
-        "Επιλέξτε τον τρόπο αποστολής αυτής της ειδοποίησης"
-      ],
-      "Select when you want this notification to be sent": [
-        "Επιλέξτε πότε θέλετε να σταλεί αυτή η ειδοποίηση"
       ],
       "Session management": [
         "Διαχείριση συνεδρίας"
@@ -9109,9 +8505,6 @@
       "Your ${ domain } address is active": [
         "Η διεύθυνσή σας τομέα ${ domain } είναι ενεργή"
       ],
-      "Your calendar link": [
-        "Ο σύνδεσμος ημερολογίου σας"
-      ],
       "Your current plan": [
         "Το τρέχον πακέτο σας"
       ],
@@ -9129,11 +8522,6 @@
       ],
       "ZIP / postal code": [
         "Τ.Κ / Ταχυδρομικός κώδικας"
-      ]
-    },
-    "Title (number of minutes/hours/days/weeks)": {
-      "Choose a number": [
-        "Επιλέξτε έναν αριθμό"
       ]
     },
     "Title for payment methods table": {
@@ -9285,9 +8673,6 @@
       ],
       "This feature is only available for paid users": [
         "Αυτή η λειτουργία είναι διαθέσιμη μόνο για χρήστες επί πληρωμή"
-      ],
-      "This feature is unavailable for the moment": [
-        "Αυτό το χαρακτηριστικό είναι μη διαθέσιμο επί του παρόντος"
       ],
       "This key cannot be used for encryption": [
         "Αυτό το κλειδί δεν μπορεί να χρησιμοποιηθεί για κρυπτογράφηση"
@@ -9517,243 +8902,6 @@
     "Weak personal key warning": {
       "This key no longer meets our security standards. We suggest you mark it as obsolete and generate a new key.": [
         "Αυτό το κλειδί δεν πληρεί πλέον τα πρότυπα ασφαλείας μας. Σας συστήνουμε τη σήμανσή του ως παρωχημένου και τη δημιουργία νέου κλειδιού."
-      ]
-    },
-    "Weekly recurring event, frequency": {
-      "Every ${ interval } week on ${ multipleDaysString }": [
-        "Κάθε ${ interval } εβδομάδα, ${ multipleDaysString }",
-        "Κάθε ${ interval } εβδομάδες, ${ multipleDaysString }"
-      ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
-        "Κάθε ${ interval } εβδομάδα, ${ multipleDaysString }, ${ timesString }",
-        "Κάθε ${ interval } εβδομάδες, ${ multipleDaysString }, ${ timesString }"
-      ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
-        "Κάθε ${ interval } εβδομάδα, ${ multipleDaysString }, ${ untilString }",
-        "Κάθε ${ interval } εβδομάδες, ${ multipleDaysString }, ${ untilString }"
-      ],
-      "Every ${ interval } week on all days": [
-        "Κάθε ${ interval } εβδομάδα, όλες τις ημέρες",
-        "Κάθε ${ interval } εβδομάδες, όλες τις ημέρες"
-      ],
-      "Every ${ interval } week on all days, ${ timesString }": [
-        "Κάθε ${ interval } εβδομάδα, όλες τις ημέρες, ${ timesString }",
-        "Κάθε ${ interval } εβδομάδες, όλες τις ημέρες, ${ timesString }"
-      ],
-      "Every ${ interval } week on all days, ${ untilString }": [
-        "Κάθε ${ interval } εβδομάδα, όλες τις ημέρες, ${ untilString }",
-        "Κάθε ${ interval } εβδομάδες, όλες τις ημέρες, ${ untilString }"
-      ],
-      "Every ${ interval } week on Friday": [
-        "Κάθε ${ interval } εβδομάδα, την Παρασκευή",
-        "Κάθε ${ interval } εβδομάδες, την Παρασκευή"
-      ],
-      "Every ${ interval } week on Friday, ${ timesString }": [
-        "Κάθε ${ interval } εβδομάδα, την Παρασκευή, ${ timesString }",
-        "Κάθε ${ interval } εβδομάδες, την Παρασκευή, ${ timesString }"
-      ],
-      "Every ${ interval } week on Friday, ${ untilString }": [
-        "Κάθε ${ interval } εβδομάδα, την Παρασκευή, ${ untilString }",
-        "Κάθε ${ interval } εβδομάδες, την Παρασκευή, ${ untilString }"
-      ],
-      "Every ${ interval } week on Monday": [
-        "Κάθε ${ interval } εβδομάδα, τη Δευτέρα",
-        "Κάθε ${ interval } εβδομάδες, τη Δευτέρα"
-      ],
-      "Every ${ interval } week on Monday, ${ timesString }": [
-        "Κάθε ${ interval } εβδομάδα, τη Δευτέρα, ${ timesString }",
-        "Κάθε ${ interval } εβδομάδες, τη Δευτέρα, ${ timesString }"
-      ],
-      "Every ${ interval } week on Monday, ${ untilString }": [
-        "Κάθε ${ interval } εβδομάδα, τη Δευτέρα, ${ untilString }",
-        "Κάθε ${ interval } εβδομάδες, τη Δευτέρα, ${ untilString }"
-      ],
-      "Every ${ interval } week on Saturday": [
-        "Κάθε ${ interval } εβδομάδα, το Σάββατο",
-        "Κάθε ${ interval } εβδομάδες, το Σάββατο"
-      ],
-      "Every ${ interval } week on Saturday, ${ timesString }": [
-        "Κάθε ${ interval } εβδομάδα, το Σάββατο, ${ timesString }",
-        "Κάθε ${ interval } εβδομάδες, το Σάββατο, ${ timesString }"
-      ],
-      "Every ${ interval } week on Saturday, ${ untilString }": [
-        "Κάθε ${ interval } εβδομάδα, το Σάββατο, ${ untilString }",
-        "Κάθε ${ interval } εβδομάδες, το Σάββατο, ${ untilString }"
-      ],
-      "Every ${ interval } week on Sunday": [
-        "Κάθε ${ interval } εβδομάδα, την Κυριακή",
-        "Κάθε ${ interval } εβδομάδες, την Κυριακή"
-      ],
-      "Every ${ interval } week on Sunday, ${ timesString }": [
-        "Κάθε ${ interval } εβδομάδα, την Κυριακή, ${ timesString }",
-        "Κάθε ${ interval } εβδομάδες, την Κυριακή, ${ timesString }"
-      ],
-      "Every ${ interval } week on Sunday, ${ untilString }": [
-        "Κάθε ${ interval } εβδομάδα, την Κυριακή, ${ untilString }",
-        "Κάθε ${ interval } εβδομάδες, την Κυριακή, ${ untilString }"
-      ],
-      "Every ${ interval } week on Thursday": [
-        "Κάθε ${ interval } εβδομάδα, την Πέμπτη",
-        "Κάθε ${ interval } εβδομάδες, την Πέμπτη"
-      ],
-      "Every ${ interval } week on Thursday, ${ timesString }": [
-        "Κάθε ${ interval } εβδομάδα την Πέμπτη, ${ timesString }",
-        "Κάθε ${ interval } εβδομάδες την Πέμπτη, ${ timesString }"
-      ],
-      "Every ${ interval } week on Thursday, ${ untilString }": [
-        "Κάθε ${ interval } εβδομάδα, την Πέμπτη, ${ untilString }",
-        "Κάθε ${ interval } εβδομάδες, την Πέμπτη, ${ untilString }"
-      ],
-      "Every ${ interval } week on Tuesday": [
-        "Κάθε ${ interval } εβδομάδα, την Τρίτη",
-        "Κάθε ${ interval } εβδομάδες, την Τρίτη"
-      ],
-      "Every ${ interval } week on Tuesday, ${ timesString }": [
-        "Κάθε ${ interval } εβδομάδα, την Τρίτη, ${ timesString }",
-        "Κάθε ${ interval } εβδομάδες, την Τρίτη, ${ timesString }"
-      ],
-      "Every ${ interval } week on Tuesday, ${ untilString }": [
-        "Κάθε ${ interval } εβδομάδα, την Τρίτη, ${ untilString }",
-        "Κάθε ${ interval } εβδομάδες, την Τρίτη, ${ untilString }"
-      ],
-      "Every ${ interval } week on Wednesday": [
-        "Κάθε ${ interval } εβδομάδα, την Τετάρτη",
-        "Κάθε ${ interval } εβδομάδες, την Τετάρτη"
-      ],
-      "Every ${ interval } week on Wednesday, ${ timesString }": [
-        "Κάθε ${ interval } εβδομάδα, την Τετάρτη, ${ timesString }",
-        "Κάθε ${ interval } εβδομάδες, την Τετάρτη, ${ timesString }"
-      ],
-      "Every ${ interval } week on Wednesday, ${ untilString }": [
-        "Κάθε ${ interval } εβδομάδα, την Τετάρτη, ${ untilString }",
-        "Κάθε ${ interval } εβδομάδες, την Τετάρτη, ${ untilString }"
-      ],
-      "Weekly on ${ multipleDaysString }": [
-        "Εβδομαδιαία στις ${ multipleDaysString }"
-      ],
-      "Weekly on ${ multipleDaysString }, ${ timesString }": [
-        "Εβδομαδιαία στις ${ multipleDaysString }, ${ timesString }"
-      ],
-      "Weekly on ${ multipleDaysString }, ${ untilString }": [
-        "Εβδομαδιαία στις ${ multipleDaysString }, ${ untilString }"
-      ],
-      "Weekly on all days": [
-        "Εβδομαδιαία, όλες τις ημέρες"
-      ],
-      "Weekly on all days, ${ timesString }": [
-        "Εβδομαδιαία, όλες τις ημέρες, ${ timesString }"
-      ],
-      "Weekly on all days, ${ untilString }": [
-        "Εβδομαδιαία, όλες τις μέρες, ${ untilString }"
-      ],
-      "Weekly on Friday": [
-        "Εβδομαδιαία την Παρασκευή"
-      ],
-      "Weekly on Friday, ${ timesString }": [
-        "Εβδομαδιαία την Παρασκευή, ${ timesString }"
-      ],
-      "Weekly on Friday, ${ untilString }": [
-        "Εβδομαδιαία την Παρασκευή, ${ untilString }"
-      ],
-      "Weekly on Monday": [
-        "Εβδομαδιαία τη Δευτέρα"
-      ],
-      "Weekly on Monday, ${ timesString }": [
-        "Εβδομαδιαία τη Δευτέρα, ${ timesString }"
-      ],
-      "Weekly on Monday, ${ untilString }": [
-        "Εβδομαδιαία τη Δευτέρα, ${ untilString }"
-      ],
-      "Weekly on Saturday": [
-        "Εβδομαδιαία το Σάββατο"
-      ],
-      "Weekly on Saturday, ${ timesString }": [
-        "Εβδομαδιαία το Σάββατο, ${ timesString }"
-      ],
-      "Weekly on Saturday, ${ untilString }": [
-        "Εβδομαδιαία το Σάββατο, ${ untilString }"
-      ],
-      "Weekly on Sunday": [
-        "Εβδομαδιαία την Κυριακή"
-      ],
-      "Weekly on Sunday, ${ timesString }": [
-        "Εβδομαδιαία την Κυριακή, ${ timesString }"
-      ],
-      "Weekly on Sunday, ${ untilString }": [
-        "Εβδομαδιαία την Κυριακή, ${ untilString }"
-      ],
-      "Weekly on Thursday": [
-        "Εβδομαδιαία την Πέμπτη"
-      ],
-      "Weekly on Thursday, ${ timesString }": [
-        "Εβδομαδιαία την Πέμπτη, ${ timesString }"
-      ],
-      "Weekly on Thursday, ${ untilString }": [
-        "Εβδομαδιαία την Πέμπτη, ${ untilString }"
-      ],
-      "Weekly on Tuesday": [
-        "Εβδομαδιαία την Τρίτη"
-      ],
-      "Weekly on Tuesday, ${ timesString }": [
-        "Εβδομαδιαία την Τρίτη, ${ timesString }"
-      ],
-      "Weekly on Tuesday, ${ untilString }": [
-        "Εβδομαδιαία την Τρίτη, ${ untilString }"
-      ],
-      "Weekly on Wednesday": [
-        "Εβδομαδιαία την Τετάρτη"
-      ],
-      "Weekly on Wednesday, ${ timesString }": [
-        "Εβδομαδιαία την Τετάρτη, ${ timesString }"
-      ],
-      "Weekly on Wednesday, ${ untilString }": [
-        "Εβδομαδιαία την Τετάρτη, ${ untilString }"
-      ]
-    },
-    "Weekly recurring event, repeats on (multiple days), frequency": {
-      "Friday": [
-        "Παρασκευή"
-      ],
-      "Monday": [
-        "Δευτέρα"
-      ],
-      "Saturday": [
-        "Σάββατο"
-      ],
-      "Sunday": [
-        "Κυριακή"
-      ],
-      "Thursday": [
-        "Πέμπτη"
-      ],
-      "Tuesday": [
-        "Τρίτη"
-      ],
-      "Wednesday": [
-        "Τετάρτη"
-      ]
-    },
-    "Yearly recurring event, frequency": {
-      "Every ${ interval } year": [
-        "Κάθε ${ interval } χρόνο",
-        "Κάθε ${ interval } χρόνια"
-      ],
-      "Every ${ interval } year, ${ timesString }": [
-        "Κάθε ${ interval } χρόνο, ${ timesString }",
-        "Κάθε ${ interval } χρόνια, ${ timesString }"
-      ],
-      "Every ${ interval } year, ${ untilString }": [
-        "Κάθε ${ interval } χρόνο, ${ untilString }",
-        "Κάθε ${ interval } χρόνια, ${ untilString }"
-      ],
-      "Yearly": [
-        "Ετησίως"
-      ],
-      "Yearly, ${ timesString }": [
-        "Ετησίως, ${ timesString }"
-      ],
-      "Yearly, ${ untilString }": [
-        "Ετησίως, ${ untilString }"
       ]
     }
   }

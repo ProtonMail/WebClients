@@ -830,8 +830,14 @@
       ]
     },
     "Action in trial plan": {
+      "Continue with free plan": [
+        "Continua con il piano gratuito"
+      ],
       "No, thanks": [
         "No, grazie"
+      ],
+      "Start my 30-day free trial": [
+        "Inizia la mia prova gratuita di 30 giorni"
       ],
       "Try free for 30 days": [
         "Prova gratis per 30 giorni"
@@ -1185,13 +1191,13 @@
     },
     "Calendar status": {
       "Active": [
-        "Attivo"
+        "Attiva"
       ],
       "Default": [
         "Predefinito"
       ],
       "Disabled": [
-        "Disabilitato"
+        "Disabilitata"
       ],
       "Not synced": [
         "Non sincronizzato"
@@ -1248,11 +1254,11 @@
       ]
     },
     "Collapsible tooltip": {
-      "Close": [
-        "Chiudi"
+      "Collapse": [
+        "Comprimi"
       ],
-      "Open": [
-        "Apri"
+      "Expand": [
+        "Espandi"
       ]
     },
     "color": {
@@ -1682,9 +1688,6 @@
       "Burkina Faso": [
         "Burkina Faso"
       ],
-      "Burma": [
-        "Birmania"
-      ],
       "Burundi": [
         "Burundi"
       ],
@@ -1739,9 +1742,6 @@
       "Costa Rica": [
         "Costa Rica"
       ],
-      "Cote d'Ivoire\"": [
-        "Costa d'Avorio"
-      ],
       "Croatia": [
         "Croazia"
       ],
@@ -1756,6 +1756,9 @@
       ],
       "Czech Republic": [
         "Repubblica Ceca"
+      ],
+      "Côte d'Ivoire": [
+        "Costa d'Avorio"
       ],
       "Denmark": [
         "Danimarca"
@@ -1786,6 +1789,9 @@
       ],
       "Estonia": [
         "Estonia"
+      ],
+      "Eswatini": [
+        "Eswatini"
       ],
       "Ethiopia": [
         "Etiopia"
@@ -2030,6 +2036,9 @@
       "Mozambique": [
         "Mozambico"
       ],
+      "Myanmar": [
+        "Birmania"
+      ],
       "Namibia": [
         "Namibia"
       ],
@@ -2221,9 +2230,6 @@
       ],
       "Svalbard and Jan Mayen": [
         "Svalbard e Jan Mayen"
-      ],
-      "Swaziland": [
-        "Swaziland"
       ],
       "Sweden": [
         "Svezia"
@@ -2424,7 +2430,7 @@
       ]
     },
     "Description": {
-      "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }": [
+      "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }..": [
         "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }."
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
@@ -3037,7 +3043,7 @@
       "Calendar": [
         "Calendario"
       ],
-      "Calendar timezone not supported": [
+      "Calendar time zone not supported": [
         "Fuso orario del calendario non supportato"
       ],
       "Component with wrong format": [
@@ -3112,11 +3118,11 @@
       "Start time out of bounds": [
         "Ora di inizio fuori dai limiti"
       ],
+      "Time zone not supported": [
+        "Fuso orario non supportato"
+      ],
       "Timezone": [
         "Fuso orario"
-      ],
-      "Timezone not supported": [
-        "Fuso orario non supportato"
       ],
       "To-do entry": [
         "Voce da fare"
@@ -3129,9 +3135,6 @@
       ]
     },
     "Error message": {
-      "Brace yourself till we get the error fixed.": [
-        "Tieniti forte finché non risolviamo l'errore."
-      ],
       "Error: ${ errorMessage }": [
         "Errore: ${ errorMessage }"
       ],
@@ -3143,6 +3146,9 @@
       ],
       "Please ${ refresh } or check your connection.": [
         "Per favore ${ refresh } o controlla la tua connessione."
+      ],
+      "Something went wrong. Please refresh the page or try again later.": [
+        "Tieniti forte finché non risolviamo l'errore."
       ],
       "There was a problem connecting to Proton.": [
         "Si è verificato un problema di connessione a Proton."
@@ -4130,8 +4136,8 @@
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Un nome che aiuti a ricordarne l'utilizzo, in modo da facilitare la revoca o l'estensione in un secondo momento."
       ],
-      "A recovery file lets you unlock and view your data after an account reset. ": [
-        "A recovery file lets you unlock and view your data after an account reset."
+      "A recovery file lets you unlock and view your data after an account reset.": [
+        "Un file di ripristino ti consente di sbloccare e visualizzare i tuoi dati dopo il ripristino dell'account."
       ],
       "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password.": [
         "Una frase di recupero ti consente di accedere al tuo account e recuperare i tuoi messaggi crittografati se dimentichi la password."
@@ -4945,6 +4951,9 @@
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Inserisci la frase di recupero di 12 parole associata al tuo account."
       ],
+      "Please fill out this field.": [
+        "Compila questo campo."
+      ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
         "Per favore, tienilo al sicuro. Ti servirà per accedere al tuo account e decrittografare i tuoi dati in caso di reimpostazione della password."
       ],
@@ -5071,8 +5080,8 @@
       "Select a service provider to start": [
         "Seleziona un fornitore di servizi per iniziare"
       ],
-      "Select what you want to move from Google.": [
-        "Seleziona cosa vuoi spostare da Google."
+      "Select what you want to import from Google.": [
+        "Seleziona cosa vuoi importare da Google."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Seleziona quali calendari importare. Verrà creato un nuovo calendario per ogni calendario importato fino al limite di 20 calendari."
@@ -5254,6 +5263,9 @@
       "to continue to ${ toAppName }": [
         "continua su ${ toAppName }"
       ],
+      "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
+        "Per migliorare continuamente i nostri servizi, a volte raccogliamo dati per monitorare il corretto funzionamento delle nostre applicazioni. Queste informazioni non sono condivise con servizi di terze parti."
+      ],
       "To decrypt and view your emails and other data, you need a recovery file.": [
         "Per decrittografare e visualizzare le tue e-mail e altri dati, hai bisogno di un file di ripristino."
       ],
@@ -5350,8 +5362,8 @@
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Usa il miglior server in base al carico corrente e alla posizione: ${ formattedBestServerName }"
       ],
-      "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
-        "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux."
+      "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
+        "Usa le seguenti credenziali quando ti connetti ai server ${ VPN_APP_NAME } senza applicazione. Esempi di utilizzo includono: Tunnelblick su macOS, OpenVPN su GNU/Linux."
       ],
       "Verification can take a few minutes.": [
         "La verifica può richiedere alcuni minuti."
@@ -5640,11 +5652,35 @@
       "Additional duplicate keys detected. Please upload individually for more information.": [
         "Rilevate chiavi aggiuntive duplicate. Si prega di caricare singolarmente per ulteriori informazioni."
       ],
+      "Create an email address": [
+        "Crea un indirizzo email"
+      ],
+      "Day 27: Trial reminder": [
+        "Giorno 27: Promemoria della prova"
+      ],
+      "Day 30: Trial ends": [
+        "Giorno 30: La prova finisce"
+      ],
+      "Enjoy secure, easy-to-use emailing with plenty of premium features.": [
+        "Goditi l'invio di email sicuro e facile da usare con molte funzionalità premium."
+      ],
       "Key ${ fingerprint } has already been uploaded": [
         "La chiave ${ fingerprint } è già stata caricata"
       ],
       "Track your referral link activities here": [
         "Tieni traccia delle attività del tuo link di riferimento qui"
+      ],
+      "Try Mail Plus": [
+        "Prova Mail Plus"
+      ],
+      "We’ll email you before your trial ends. Cancel anytime.": [
+        "Ti invieremo un'email prima della fine del periodo di prova. Annulla in qualsiasi momento."
+      ],
+      "Your new email address is ready to go!": [
+        "Il tuo nuovo indirizzo email è pronto per partire!"
+      ],
+      "Your subscription starts on ${ startText }.": [
+        "Il tuo abbonamento inizia da ${ startText }."
       ]
     },
     "Info - folder colouring feature": {
@@ -6165,6 +6201,9 @@
       "Code is 6 digits without spaces": [
         "Il codice è di 6 cifre senza spazi"
       ],
+      "Collect usage diagnostics": [
+        "Raccogli la diagnostica di utilizzo"
+      ],
       "Color": [
         "Colore"
       ],
@@ -6633,6 +6672,9 @@
       "Send auto-reply": [
         "Invia risposta automatica"
       ],
+      "Send crash reports": [
+        "Invia rapporti sugli arresti anomali"
+      ],
       "Send in": [
         "Invio in"
       ],
@@ -6847,8 +6889,8 @@
       "Proton company announcements": [
         "Annunci dall'azienda Proton"
       ],
-      "Proton for business": [
-        "Proton for Business"
+      "Proton for Business": [
+        "ProtonMail per le Aziende"
       ],
       "Proton for Business newsletter": [
         "Newsletter Proton per le Aziende"
@@ -7178,109 +7220,109 @@
         "il giorno ${ dayOfMonth }"
       ],
       "on the first Friday": [
-        "il primo venerdì"
+        "il primo Venerdì"
       ],
       "on the first Monday": [
-        "il primo lunedì"
+        "il primo Lunedì"
       ],
       "on the first Saturday": [
-        "il primo sabato"
+        "il primo Sabato"
       ],
       "on the first Sunday": [
-        "la prima domenica"
+        "la prima Domenica"
       ],
       "on the first Thursday": [
-        "il primo giovedì"
+        "il primo Giovedì"
       ],
       "on the first Tuesday": [
-        "il primo martedì"
+        "il primo Martedì"
       ],
       "on the first Wednesday": [
-        "il primo mercoledì"
+        "il primo Mercoledì"
       ],
       "on the fourth Friday": [
-        "il quarto venerdì"
+        "il quarto Venerdì"
       ],
       "on the fourth Monday": [
-        "il quarto lunedì"
+        "il quarto Lunedì"
       ],
       "on the fourth Saturday": [
-        "il quarto sabato"
+        "il quarto Sabato"
       ],
       "on the fourth Sunday": [
-        "la quarta domenica"
+        "la quarta Domenica"
       ],
       "on the fourth Thursday": [
-        "il quarto giovedì"
+        "il quarto Giovedì"
       ],
       "on the fourth Tuesday": [
-        "il quarto martedì"
+        "il quarto Martedì"
       ],
       "on the fourth Wednesday": [
-        "il quarto mercoledì"
+        "il quarto Mercoledì"
       ],
       "on the last Friday": [
-        "l'ultimo venerdì"
+        "l'ultimo Venerdì"
       ],
       "on the last Monday": [
-        "l'ultimo lunedì"
+        "l'ultimo Lunedì"
       ],
       "on the last Saturday": [
-        "l'ultimo sabato"
+        "l'ultimo Sabato"
       ],
       "on the last Sunday": [
-        "l'ultima domenica"
+        "l'ultima Domenica"
       ],
       "on the last Thursday": [
         "l'ultimo Giovedì"
       ],
       "on the last Tuesday": [
-        "l'ultimo martedì"
+        "l'ultimo Martedì"
       ],
       "on the last Wednesday": [
-        "l'ultimo mercoledì"
+        "l'ultimo Mercoledì"
       ],
       "on the second Friday": [
-        "il secondo venerdì"
+        "il secondo Venerdì"
       ],
       "on the second Monday": [
-        "il secondo lunedì"
+        "il secondo Lunedì"
       ],
       "on the second Saturday": [
-        "il secondo sabato"
+        "il secondo Sabato"
       ],
       "on the second Sunday": [
-        "la seconda domenica"
+        "la seconda Domenica"
       ],
       "on the second Thursday": [
-        "il secondo giovedì"
+        "il secondo Giovedì"
       ],
       "on the second Tuesday": [
-        "il secondo martedì"
+        "il secondo Martedì"
       ],
       "on the second Wednesday": [
-        "il secondo mercoledì"
+        "il secondo Mercoledì"
       ],
       "on the third Friday": [
-        "il terzo venerdì"
+        "il terzo Venerdì"
       ],
       "on the third Monday": [
-        "il terzo lunedì"
+        "il terzo Lunedì"
       ],
       "on the third Saturday": [
-        "il terzo sabato"
+        "il terzo Sabato"
       ],
       "on the third Sunday": [
-        "la terza domenica"
+        "la terza Domenica"
       ],
       "on the third Thursday": [
-        "il terzo giovedì"
+        "il terzo Giovedì"
       ],
       "on the third Tuesday": [
-        "il terzo martedì"
+        "il terzo Martedì"
       ],
       "on the third Wednesday": [
-        "il terzo mercoledì"
+        "il terzo Mercoledì"
       ]
     },
     "Moved to black/whitelist": {
@@ -7354,8 +7396,8 @@
       "Continue to review": [
         "Continua per controllare"
       ],
-      "Continue with free": [
-        "Continua gratis"
+      "Continue with Free": [
+        "Continua Gratis"
       ],
       "Delete account": [
         "Elimina l'account"
@@ -7621,6 +7663,26 @@
         "Gestione del team"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Rendi la privacy la tua impostazione predefinita per il backup, l'archiviazione, la condivisione e il recupero dei file."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "In caso contrario, l'accesso al tuo account sarà limitato e il tuo account verrà di seguito disabilitato."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Per continuare a utilizzare ${ MAIL_APP_NAME } con le funzionalità premium, scegli l'abbonamento e le opzioni di pagamento."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Effettua l'upgrade al pacchetto per le aziende con accesso a tutti i servizi premium di Proton."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Effettua l'upgrade al pacchetto per la privacy definitivo e accedi a tutti i servizi premium di Proton."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Il periodo di prova termina il ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } che termina con ${ last4 }"
@@ -7687,26 +7749,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Stai godendo di un prezzo promozionale sul tuo piano attuale. Se esegui il downgrade del tuo account, perderai la possibilità di usufruire di questa promozione e non sarà più disponibile se provi ad abbonarti di nuovo."
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Rendi la privacy la tua impostazione predefinita per il backup, l'archiviazione, la condivisione e il recupero dei file."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "In caso contrario, l'accesso al tuo account sarà limitato e il tuo account verrà di seguito disabilitato."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Per continuare a utilizzare ${ MAIL_APP_NAME } con le funzionalità premium, scegli l'abbonamento e le opzioni di pagamento."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Effettua l'upgrade al pacchetto per le aziende con accesso a tutti i servizi premium di Proton."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Effettua l'upgrade al pacchetto per la privacy definitivo e accedi a tutti i servizi premium di Proton."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Il periodo di prova termina il ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -7838,8 +7880,8 @@
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
         "Il supporto IMAP è limitato all'uso di applicazioni desktop (ad esempio, Outlook, Apple Mail, Thunderbird) tramite ${ MAIL_APP_NAME } Bridge. Le integrazioni IMAP basate sul cloud non sono attualmente supportate."
       ],
-      "Keeps you protected by blocking all network connections when you are accidentally disconnected from our VPN server": [
-        "Keeps you protected by blocking all network connections when you are unexpectedly disconnected from our VPN server."
+      "Keeps you protected by blocking all network connections when you are unexpectedly disconnected from our VPN server.": [
+        "Ti mantiene protetto bloccando tutte le connessioni di rete quando sei inaspettatamente disconnesso dal nostro server VPN."
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Le etichette sono semplici tag che puoi aggiungere ai messaggi per renderli più facili da trovare o per applicare filtri"
@@ -7856,7 +7898,7 @@
       "On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
         "Inoltre, aggiungi fino a 5 calendari di amici, familiari, colleghi e organizzazioni."
       ],
-      "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections": [
+      "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections..": [
         "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
@@ -8332,11 +8374,6 @@
       ],
       "PayPal": [
         "PayPal"
-      ]
-    },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "Indirizzo email non trovato tra gli id utente definiti nell'invio della chiave (${ keyUserIds })"
       ]
     },
     "Placeholder": {
@@ -8865,6 +8902,9 @@
     "Subtitle for trial plan": {
       "The privacy-first Mail and Calendar solution for your everyday communications needs.": [
         "La soluzione Mail e Calendar al primo posto per la privacy per le tue esigenze di comunicazione quotidiane."
+      ],
+      "This offer is for those new to Proton only. No credit card required.": [
+        "Questa offerta è riservata ai nuovi utenti di Proton. Nessuna carta di credito richiesta."
       ]
     },
     "Success": {
@@ -9568,6 +9608,9 @@
       "How does it work?": [
         "Come funziona?"
       ],
+      "How your free trial works": [
+        "Come funziona la tua prova gratuita"
+      ],
       "Human verification": [
         "Verifica umana"
       ],
@@ -9707,6 +9750,9 @@
       "Previous": [
         "Precedente"
       ],
+      "Privacy and data collection": [
+        "Privacy e raccolta dati"
+      ],
       "Processing": [
         "Elaborazione"
       ],
@@ -9764,8 +9810,8 @@
       "Secure email based in Switzerland": [
         "Email sicura con sede in Svizzera"
       ],
-      "Security": [
-        "Sicurezza"
+      "Security and privacy": [
+        "Sicurezza e privacy"
       ],
       "Security logs": [
         "Registro di sicurezza"

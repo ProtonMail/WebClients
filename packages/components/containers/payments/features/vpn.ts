@@ -135,7 +135,7 @@ const getVPNConnectionsB2B = (n = 0, fire?: boolean): PlanCardFeatureDefinition 
                       n
                   ),
         tooltip: c('new_plans: tooltip')
-            .t`One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections..`,
+            .t`One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections.`,
         included: true,
         fire,
         icon: 'brand-proton-vpn',

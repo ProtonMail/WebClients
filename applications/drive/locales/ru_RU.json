@@ -186,7 +186,7 @@
         "Снять выделение"
       ],
       "Details": [
-        "Подробности"
+        "Информация"
       ],
       "Didn't receive the code?": [
         "Не получили код?"
@@ -251,17 +251,17 @@
       "Forward as attachment": [
         "Переслать как вложение"
       ],
+      "Get ${ DRIVE_APP_NAME }": [
+        "Получить ${ DRIVE_APP_NAME }"
+      ],
       "Get link": [
         "Получить ссылку"
-      ],
-      "Get Proton Drive": [
-        "Получить Proton Drive"
       ],
       "Get started": [
         "Приступить к работе"
       ],
       "Get verification code": [
-        "Получить проверочный код"
+        "Получить код подтверждения"
       ],
       "Go to label": [
         "Перейти к ярлыку"
@@ -414,7 +414,7 @@
         "Запросить новый код"
       ],
       "Reset zoom": [
-        "Сбросить масштабирование"
+        "Сбросить масштаб"
       ],
       "Restart all": [
         "Перезапустить все"
@@ -446,6 +446,9 @@
       "Search": [
         "Поиск"
       ],
+      "Search countries": [
+        "Поиск стран"
+      ],
       "Search drive": [
         "Искать в Drive"
       ],
@@ -462,7 +465,7 @@
         "Поделиться файлом"
       ],
       "Share item": [
-        "Поделиться файлом"
+        "Поделиться элементом"
       ],
       "Share via link": [
         "Поделиться с помощью ссылки"
@@ -490,6 +493,9 @@
       ],
       "Skip": [
         "Пропустить"
+      ],
+      "Start import": [
+        "Начать импорт"
       ],
       "Start recovering": [
         "Начать восстановление"
@@ -567,7 +573,7 @@
         "Подтвердить аккаунт"
       ],
       "Verify email": [
-        "Подтвердить эл. почту"
+        "Подтвердить электронную почту"
       ],
       "View": [
         "Посмотреть"
@@ -660,7 +666,7 @@
         "Скидки рассчитываются исходя из стандартной платы за 1 месяц в размере ${ standardMonthlyPricing }"
       ],
       "Save ${ percentage }%": [
-        "${ percentage }%"
+        "– ${ percentage } %"
       ],
       "Special offer Terms and Conditions": [
         "Условия специального предложения"
@@ -819,11 +825,11 @@
       ]
     },
     "Collapsible tooltip": {
-      "Close": [
-        "Закрыть"
+      "Collapse": [
+        "Свернуть"
       ],
-      "Open": [
-        "Открыть"
+      "Expand": [
+        "Развернуть"
       ]
     },
     "color": {
@@ -834,7 +840,7 @@
         "вишневый"
       ],
       "cobalt": [
-        "кобальт"
+        "кобальтовый"
       ],
       "copper": [
         "медный"
@@ -843,13 +849,13 @@
         "горечавка"
       ],
       "fern": [
-        "папоротник"
+        "папоротниковый"
       ],
       "forest": [
         "лесной"
       ],
       "ocean": [
-        "океан"
+        "океанический"
       ],
       "olive": [
         "оливковый"
@@ -1087,9 +1093,6 @@
       "Burkina Faso": [
         "Буркина-Фасо"
       ],
-      "Burma": [
-        "Бирма"
-      ],
       "Burundi": [
         "Бурунди"
       ],
@@ -1144,9 +1147,6 @@
       "Costa Rica": [
         "Коста-Рика"
       ],
-      "Cote d'Ivoire\"": [
-        "Берег Слоновой Кости"
-      ],
       "Croatia": [
         "Хорватия"
       ],
@@ -1161,6 +1161,9 @@
       ],
       "Czech Republic": [
         "Чешская Республика"
+      ],
+      "Côte d'Ivoire": [
+        "Кот-д'Ивуар"
       ],
       "Denmark": [
         "Дания"
@@ -1191,6 +1194,9 @@
       ],
       "Estonia": [
         "Эстония"
+      ],
+      "Eswatini": [
+        "Эсватини"
       ],
       "Ethiopia": [
         "Эфиопия"
@@ -1435,6 +1441,9 @@
       "Mozambique": [
         "Мозамбик"
       ],
+      "Myanmar": [
+        "Мьянма"
+      ],
       "Namibia": [
         "Намибия"
       ],
@@ -1627,9 +1636,6 @@
       "Svalbard and Jan Mayen": [
         "Шпицберген и Ян-Майен"
       ],
-      "Swaziland": [
-        "Свазиленд"
-      ],
       "Sweden": [
         "Швеция"
       ],
@@ -1818,10 +1824,10 @@
         "Ошибка аутентификации."
       ],
       "Calendar limit reached": [
-        "Достигнут лимит календаря"
+        "Достигнут предел количества календарей"
       ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        "Невозможно создать новые календари для всех импортированных календарей из-за персонального лимита календарей."
+        "Невозможно создать новые календари для всех импортированных календарей из-за ограничения на количество личных календарей."
       ],
       "Contact could not be saved": [
         "Контакт не может быть сохранён"
@@ -1830,7 +1836,7 @@
         "Подпись контакта не проверена"
       ],
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
-        "Поиск содержимого невозможен в этом браузере. Пожалуйста, выйдите из режима приватного просмотра или используйте другой браузер."
+        "Поиск содержимого невозможен в этом браузере. Пожалуйста, выйдите из режима инкогнито или используйте другой браузер."
       ],
       "Deselect at least ${ calendarToFixCount } calendar": [
         "Отмените выбор по крайней мере ${ calendarToFixCount } календаря",
@@ -1839,13 +1845,13 @@
         "Отмените выбор по крайней мере ${ calendarToFixCount } календарей"
       ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
-        "Отмените выбор по крайней мере ${ calendarToFixCount } календарь или",
+        "Отмените выбор по крайней мере ${ calendarToFixCount } календаря или",
         "Отмените выбор по крайней мере ${ calendarToFixCount } календарей или",
         "Отмените выбор по крайней мере ${ calendarToFixCount } календарей или",
-        "Отмените выбор по крайней мере ${ calendarToFixCount } календаря(ей) или"
+        "Отмените выбор по крайней мере ${ calendarToFixCount } календарей или"
       ],
       "Email address invalid": [
-        "Неверный адрес электронной почты"
+        "Недействительный адрес электронной почты"
       ],
       "Email is not valid": [
         "Эл. почта недействительна"
@@ -1869,7 +1875,7 @@
         "Папка \"${ name }\" уже скачивается"
       ],
       "Folder name cannot be empty.": [
-        "Название папки не может быть пустым."
+        "Имя папки не может быть пустым."
       ],
       "Image upload failed": [
         "Сбой загрузки изображения"
@@ -1881,25 +1887,25 @@
         "Неверный пароль почтового ящика. Пожалуйста, попробуйте снова."
       ],
       "Incorrect password. Please try again.": [
-        "Неверный пароль. Пожалуйста, попробуйте еще раз."
+        "Неверный пароль. Пожалуйста, попробуйте снова."
       ],
       "Invalid name": [
         "Недопустимое имя"
       ],
       "Invalid public key file": [
-        "Недействительный файл публичного ключа"
+        "Недействительный файл открытого ключа"
       ],
       "Invalid verification code": [
-        "Неверный проверочный код"
+        "Недействительный код подтверждения"
       ],
       "Label name cannot be empty.": [
-        "Название ярлыка не может быть пустым."
+        "Имя ярлыка не может быть пустым."
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "Объедините по крайней мере ${ calendarToFixCount } календарь с существующим календарем Proton",
-        "Объединить по крайней мере ${ calendarToFixCount } календарей с существующим календарем Proton",
-        "Объединить по крайней мере ${ calendarToFixCount } календарей с существующим календарем Proton",
-        "Объединить по крайней мере ${ calendarToFixCount } календарь(ей) с существующим календарем Proton"
+        "Объедините по крайней мере ${ calendarToFixCount } календаря с существующим календарем Proton",
+        "Объедините по крайней мере ${ calendarToFixCount } календарей с существующим календарем Proton",
+        "Объедините по крайней мере ${ calendarToFixCount } календарей с существующим календарем Proton"
       ],
       "Missing key packet": [
         "Отсутствует пакет ключей"
@@ -1932,7 +1938,7 @@
         "Пароли не совпадают"
       ],
       "Please activate your content search again": [
-        "Активируйте поиск по содержимому еще раз"
+        "Пожалуйста, активируйте поиск содержимого снова"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Пожалуйста, исправьте выделенный конфликт, чтобы продолжить.",
@@ -1968,10 +1974,10 @@
         "Некоторые группы не могут быть удалены"
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
-        "Некоторые имена ваших ярлыков недоступны. Пожалуйста, настройте импорт для редактирования этих имен."
+        "Некоторые имена ваших ярлыков недоступны. Пожалуйста, настройте импорт для изменения этих имен."
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
-        "Некоторые из ваших имен ярлыков превышают максимальный лимит символов ${ MAIL_APP_NAME }. Пожалуйста, настройте импорт для изменения этих имен."
+        "Некоторые из ваших имен ярлыков превышают максимальное ограничение количества символов в ${ MAIL_APP_NAME }. Пожалуйста, настройте импорт для редактирования этих имен."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Что-то пошло не так, пожалуйста ${ refresh } чтобы продолжить. Если вы все еще видите сообщение об ошибке, свяжитесь с нашей ${ supportTeam }."
@@ -1980,28 +1986,28 @@
         "Недопустимое название папки. Пожалуйста, выберите другое название."
       ],
       "The folder name is too long. Please choose a different name.": [
-        "Название папки слишком длинное. Пожалуйста, выберите другое название."
+        "Имя папки слишком длинное. Пожалуйста, выберите другое имя."
       ],
       "The label name is invalid. Please choose a different name.": [
         "Недопустимое название ярлыка. Пожалуйста, выберите другое название."
       ],
       "The label name is too long. Please choose a different name.": [
-        "Название ярлыка слишком длинное. Пожалуйста, выберите другое название."
+        "Имя ярлыка слишком длинное. Пожалуйста, выберите другое имя."
       ],
       "The new revision of original file is not uploaded yet, please try again later": [
-        "Новая редакция исходного файла еще не выгружена, пожалуйста, повторите попытку позже"
+        "Новая версия исходного файла еще не загружена, пожалуйста, повторите попытку позже"
       ],
       "The original file has missing active revision": [
-        "Отсутствует активная редакция исходного файла"
+        "В исходном файле отсутствует активная версия"
       ],
       "The original file has missing hash key": [
-        "У исходного файла отсутствует хэш-ключ"
+        "У исходного файла отсутствует ключ хэша"
       ],
       "The original file has missing session key": [
         "В исходном файле отсутствует ключ сеанса"
       ],
       "The original file is not uploaded yet, please try again later": [
-        "Исходный файл еще не выгружен, пожалуйста, повторите попытку позже"
+        "Исходный файл еще не загружен, пожалуйста, повторите попытку позже"
       ],
       "The original folder not found": [
         "Исходная папка не найдена"
@@ -2019,13 +2025,13 @@
         "Это обязательное поле"
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
-        "Минимальная длина для этого поля ${ minimumLength } символов."
+        "В этом поле следует ввести минимум ${ minimumLength } символов."
       ],
       "This folder name is not available. Please choose a different name.": [
-        "Это имя папки недоступно. Пожалуйста, выберите другое название."
+        "Это имя папки недоступно. Пожалуйста, выберите другое имя."
       ],
       "This label name is not available. Please choose a different name.": [
-        "Это название ярлыка недоступно. Пожалуйста, выберите другое название."
+        "Это имя ярлыка недоступно. Пожалуйста, выберите другое имя."
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Это сообщение может содержать ссылки, которые не могут быть правильно открыты вашим текущим браузером"
@@ -2107,6 +2113,9 @@
       "Please ${ refresh } or check your connection.": [
         "Пожалуйста, ${ refresh } или проверьте подключение."
       ],
+      "Something went wrong. Please refresh the page or try again later.": [
+        "Что-то пошло не так. Пожалуйста, обновите страницу или повторите попытку позже."
+      ],
       "There was a problem connecting to Proton.": [
         "Возникла проблема при подключении к Proton."
       ],
@@ -2145,44 +2154,44 @@
         "байтов"
       ],
       "GB": [
-        "Гбайт"
+        "ГБ"
       ],
       "KB": [
-        "Кбайт"
+        "КБ"
       ],
       "MB": [
-        "Мбайт"
+        "MБ"
       ]
     },
     "file size format, long": {
       "Byte": [
         "Байт",
         "Байты",
-        "",
+        "Байтов",
         "Байтов"
       ],
       "Gigabyte": [
         "Гигабайт",
-        "Гигабайт",
-        "",
+        "Гигабайта",
+        "Гигабайтов",
         "Гигабайтов"
       ],
       "Kilobyte": [
         "Килобайт",
         "Килобайты",
-        "",
+        "Килобайтов",
         "Килобайтов"
       ],
       "Megabyte": [
         "Мегабайт",
-        "Мегабайты",
-        "",
+        "Мегабайта",
+        "Мегабайтов",
         "Мегабайтов"
       ]
     },
     "Filter notification": {
       "${ Label.Name } updated": [
-        "${ Label.Name } обновлён"
+        "${ Label.Name } обновлена"
       ]
     },
     "Group": {
@@ -2226,10 +2235,10 @@
     },
     "Human verification method": {
       "CAPTCHA": [
-        "Капча"
+        "CAPTCHA"
       ],
       "Email": [
-        "Эл. почта"
+        "Электронная почта"
       ],
       "Manual": [
         "Вручную"
@@ -2238,7 +2247,7 @@
         "Нет доступных способов проверки"
       ],
       "SMS": [
-        "Короткое сообщение на телефон"
+        "SMS"
       ]
     },
     "Import calendar": {
@@ -2522,7 +2531,7 @@
         "Поскольку ${ appName } зашифрован из конца в конец, мы не можем получить доступ\nили расшифровать ваши файлы. Чтобы разблокировать диск после сброса пароля,\nвы должны иметь одно из следующих устройств:"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
-        "Прежде чем запросить новый код подтверждения, проверьте свою папку спама и убедитесь, что ${ strong } - это корректный адрес."
+        "Прежде чем запросить новый код подтверждения, проверьте свою папку \"Спам\" и убедитесь, что ${ strong } - это корректный адрес."
       ],
       "Bulk uploads may reduce your computer’s performance. Consider limiting memory-intensive activities like streaming during upload. Or try uploading in batches.": [
         "Массовая загрузка может снизить производительность вашего компьютера. Рассмотрите возможность ограничения действий, интенсивно использующих память, таких как потоковая передача во время загрузки. Или попробуйте загружать в пакетном режиме."
@@ -2605,8 +2614,8 @@
       "Delete drive": [
         "Удалить хранилище",
         "Удалить хранилища",
-        "Удалить хранилища",
-        "Удалить хранилища"
+        "Удалить хранилищ",
+        "Удалить хранилищ"
       ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "ЭЦП проверена. Этот файл был безопасно загружен ${ emailAddress }."
@@ -2648,7 +2657,7 @@
         "Дубликат ключа обновлен"
       ],
       "Enabling drive search": [
-        "Включаем поиск по хранилищу"
+        "Включается поиск по хранилищу"
       ],
       "Encrypted": [
         "Зашифровано"
@@ -2699,7 +2708,7 @@
         "Папка \"${ link.name }\" была удалена во время загрузки"
       ],
       "Folder contents will merge into a single folder": [
-        "Содержимое папки объединяется в одну папку"
+        "Содержимое папок объединяется в одну папку"
       ],
       "Folder is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "У папки отсутствует подпись. Мы не смогли проверить, что ${ emailAddress } загрузил ${ fileName }."
@@ -2735,7 +2744,7 @@
         "Если вы считаете, что это ошибка, пожалуйста, свяжитесь с нами ${ contactLink }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
-        "Если сообщения нет в папке \"Входящие\" — проверьте, не попало ли оно в папку «спам»."
+        "Если сообщения нет в папке \"Входящие\", проверьте, не попало ли оно в папку «Спам»."
       ],
       "If you have one of these, continue to Proton account setting to\nstart the unblock process.": [
         "Если у вас есть один из них, перейдите к настройкам учетной записи Proton, чтобы\nначать процесс разблокировки."
@@ -2878,7 +2887,10 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Один или несколько ваших доверенных ключей были отмечены их владельцем как «раскрытые». Мы рекомендуем вам «отозвать доверие» у этих ключей."
       ],
-      "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters is allowed": [
+      "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } character is allowed": [
+        "Максимальное количество символов: ${ MAX_CUSTOM_PASSWORD_LENGTH }",
+        "Максимальное количество символов: ${ MAX_CUSTOM_PASSWORD_LENGTH }",
+        "Максимальное количество символов: ${ MAX_CUSTOM_PASSWORD_LENGTH }",
         "Максимальное количество символов: ${ MAX_CUSTOM_PASSWORD_LENGTH }"
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
@@ -2902,8 +2914,8 @@
       "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
         "PGP/Inline совместим только с форматом Обычного текста. Обратите внимание, что ${ MAIL_APP_NAME } всегда подписывает зашифрованные сообщения."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
-        "PGP/MIME автоматически отправляет сообщение, используя текущий режим редактора писем. Обратите внимание, что ${ MAIL_APP_NAME } всегда подписывает зашифрованные сообщения"
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        "PGP/MIME автоматически отправляет сообщение, используя текущий режим редактора писем. Обратите внимание, что ${ MAIL_APP_NAME } всегда подписывает зашифрованные сообщения."
       ],
       "Please enter the password to decrypt and view content.": [
         "Для расшифровки и просмотра содержимого введите пароль."
@@ -2983,8 +2995,8 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Выберите формат письма, который вы хотите использовать по умолчанию при отправке почты на этот адрес."
       ],
-      "Select what you want to move from Google.": [
-        "Выберите, что вы хотите перенести из Google."
+      "Select what you want to import from Google.": [
+        "Выберите данные, которые вы хотите импортировать из Google."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Выберите, какие календари необходимо импортировать. Для каждого импортированного календаря будет создан новый календарь, не превышающий лимит в 20 календарей."
@@ -3023,7 +3035,7 @@
         "Что-то пошло не так. Пожалуйста, повторите попытку позже."
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        "Место для хранения совместно используется ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } и ${ DRIVE_APP_NAME }."
+        "Хранилище совместно используется ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } и ${ DRIVE_APP_NAME }."
       ],
       "Support for 1 custom email domain": [
         "Поддержка 1 пользовательского домена электронной почты"
@@ -3062,7 +3074,7 @@
         "Этот адрес отключен. Чтобы иметь возможность отправки на этот адрес, сначала он должен быть включен его владельцем."
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
-        "Браузер не поддерживает предпросмотр PDF-документов. Пожалуйста, скачайте файл."
+        "Браузер не поддерживает предпросмотр документов PDF. Пожалуйста, скачайте файл."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Эта ссылка ведет на сайт, который может пытаться украсть вашу информацию, например, пароли и данные кредитной карты."
@@ -3125,7 +3137,7 @@
         "Корзина"
       ],
       "Unlimited folders, labels, and filters": [
-        "Неограниченное количество папок, меток и фильтров"
+        "Неограниченное количество папок, ярлыков и фильтров"
       ],
       "Unlimited messages": [
         "Неограниченное количество сообщений"
@@ -3179,7 +3191,7 @@
         "Что вы хотели бы сделать?"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
-        "Вы хотите получить новый проверочный код или использовать другой метод проверки?"
+        "Вы хотите получить новый код подтверждения или использовать другой метод проверки?"
       ],
       "Would you like to receive a new verification code?": [
         "Хотите ли вы получить новый код подтверждения?"
@@ -3390,7 +3402,7 @@
         "Страна"
       ],
       "Created": [
-        "Создано"
+        "Создан"
       ],
       "Delete": [
         "Удалить"
@@ -3398,11 +3410,11 @@
       "Delete drive?": [
         "Удалить хранилище?",
         "Удалить хранилища?",
-        "Удалить хранилища?",
+        "Удалить хранилищ?",
         "Удалить хранилища?"
       ],
       "Deleted": [
-        "Удаленные"
+        "Удален"
       ],
       "Do not ask again": [
         "Больше не спрашивать"
@@ -3429,7 +3441,7 @@
         "Шифровать письма"
       ],
       "Expired": [
-        "Истёк"
+        "Истек"
       ],
       "Expires": [
         "Срок действия"
@@ -3453,7 +3465,7 @@
         "Размещение папки"
       ],
       "Folder name": [
-        "Название папки"
+        "Имя папки"
       ],
       "From: ${ importedEmail }": [
         "От: ${ importedEmail }"
@@ -3495,7 +3507,7 @@
         "Только последние 3 месяца"
       ],
       "Last month only": [
-        "Только за последний месяц"
+        "Только последний месяц"
       ],
       "Location": [
         "Местоположение"
@@ -3516,7 +3528,7 @@
         "Объединить папку"
       ],
       "Modified": [
-        "Изменено"
+        "Изменен"
       ],
       "Name": [
         "Имя"
@@ -3639,16 +3651,16 @@
         "Разблокировать позже"
       ],
       "Upload anyway": [
-        "Всё равно загрузить"
+        "Все равно загрузить"
       ],
       "Upload picture": [
         "Загрузить картинку"
       ],
       "Username or ${ MAIL_APP_NAME } address": [
-        "Имя пользователя или адрес ${ MAIL_APP_NAME }"
+        "Имя пользователя или адреса ${ MAIL_APP_NAME }"
       ],
       "Verification code": [
-        "Проверочный код"
+        "Код подтверждения"
       ],
       "Video file": [
         "Видео файл"
@@ -3689,7 +3701,7 @@
     },
     "label/folder notification": {
       "${ Label.Name } created": [
-        "${ Label.Name } создан"
+        "${ Label.Name } создана"
       ]
     },
     "Link": {
@@ -3700,7 +3712,7 @@
         "Перейти на страницу подписки"
       ],
       "Learn more": [
-        "Узнать больше"
+        "Подробнее"
       ],
       "Pay invoice": [
         "Оплатить счёт"
@@ -3723,7 +3735,7 @@
     },
     "Loading info": {
       "Almost there": [
-        "Почти там"
+        "Почти готово"
       ],
       "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
         "Количество созданных календарей: ${ createdCalendars } из ${ calendarsToBeCreated }"
@@ -3778,10 +3790,10 @@
         "Цвет"
       ],
       "Folder name": [
-        "Название папки"
+        "Имя папки"
       ],
       "Label name": [
-        "Название ярлыка"
+        "Имя ярлыка"
       ]
     },
     "new_plans: action": {
@@ -3790,8 +3802,8 @@
       ]
     },
     "new_plans: info": {
-      "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
-        "Представляем обновленный вид Proton.${ br } Много служб, одна миссия. Добро пожаловать в Интернет, конфиденциальный по умолчанию."
+      "Introducing Proton’s refreshed look.${ br }Many services, one mission. Welcome to an internet where privacy is the default.": [
+        "Мы освежили внешний вид Proton.${ br }У наших сервисов общая миссия — создать Интернет, где конфиденциальность на первом месте."
       ]
     },
     "new_plans: label": {
@@ -4035,26 +4047,14 @@
       ]
     },
     "Onboarding Action": {
-      "Enable Beta Access": [
-        "Включить доступ к бета-версии"
-      ],
       "Next": [
         "Далее"
       ],
       "Start using ${ appName }": [
         "Начните использовать ${ appName }"
-      ],
-      "Upgrade account": [
-        "Улучшить аккаунт"
       ]
     },
     "Onboarding Info": {
-      "${ appName } is currently in early access and only available to users with a paid plan.": [
-        "Ранний доступ к ${ appName } можно получить только в рамках платного тарифа."
-      ],
-      "${ appName } is currently only available if you enable Beta Access.": [
-        "Доступ к ${ appName } возможен, только если вы включите доступ к бета-версии."
-      ],
       "Your trusty online vault for vital documents and precious memories.": [
         "Ваше надежное онлайн-хранилище для жизненно важных документов и драгоценных воспоминаний."
       ]
@@ -4080,12 +4080,6 @@
       ]
     },
     "Onboarding Title": {
-      "${ appName } is in Beta": [
-        "${ appName } в бета-версии"
-      ],
-      "Upgrade to access ${ appName }": [
-        "Чтобы получить доступ к ${ appName }, смените тариф"
-      ],
       "Welcome to ${ appName }": [
         "Добро пожаловать в ${ appName }"
       ]
@@ -4114,7 +4108,7 @@
     },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
-        "Ключ не может быть зашифрован"
+        "Ключ не может быть использован для шифрования"
       ]
     },
     "PGP Key info": {
@@ -4141,7 +4135,7 @@
         "Например, "
       ],
       "Enter a new folder name": [
-        "Введите имя новой папки"
+        "Введите новое имя папки"
       ],
       "Enter your email address": [
         "Введите адрес вашей электронной почты"
@@ -4443,22 +4437,22 @@
         "${ emailsCount } участника"
       ],
       "${ numberOfFailedTransfer.total } failed download": [
-        "Не удалось скачать: ${ numberOfFailedTransfer.total }",
-        "${ numberOfFailedTransfer.total } не удалось передать\n\n${ numberOfFailedTransfer.total } неудачных переводов",
-        "",
-        ""
+        "${ numberOfFailedTransfer.total } неудавшееся скачивание",
+        "${ numberOfFailedTransfer.total } неудавшихся скачивания",
+        "${ numberOfFailedTransfer.total } неудавшихся скачиваний",
+        "${ numberOfFailedTransfer.total } неудавшихся скачиваний"
       ],
       "${ numberOfFailedTransfer.total } failed transfer": [
-        "Не удалось передать: ${ numberOfFailedTransfer.total }",
-        "",
-        "",
-        ""
+        "${ numberOfFailedTransfer.total } неудавшаяся передача",
+        "${ numberOfFailedTransfer.total } неудавшихся передачи",
+        "${ numberOfFailedTransfer.total } неудавшихся передач",
+        "${ numberOfFailedTransfer.total } неудавшихся передач"
       ],
       "${ numberOfFailedTransfer.total } failed upload": [
-        "Не удалось загрузить: ${ numberOfFailedTransfer.total }",
-        "${ numberOfFailedTransfer.total } не удалось передать\n\n${ numberOfFailedTransfer.total } неудачных переводов",
-        "",
-        ""
+        "${ numberOfFailedTransfer.total } неудавшаяся загрузка",
+        "${ numberOfFailedTransfer.total } неудавшихся загрузки",
+        "${ numberOfFailedTransfer.total } неудавшаяся загрузок",
+        "${ numberOfFailedTransfer.total } неудавшаяся загрузок"
       ],
       "Account suspended": [
         "Аккаунт отключен"
@@ -4662,7 +4656,7 @@
         "Импорт контактов"
       ],
       "Invalid verification code": [
-        "Неверный проверочный код"
+        "Недействительный код подтверждения"
       ],
       "Item details": [
         "Информация об элементе"

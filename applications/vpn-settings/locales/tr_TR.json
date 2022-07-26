@@ -275,6 +275,9 @@
       "Save selected": [
         "Seçilmişleri kaydet"
       ],
+      "Search countries": [
+        "Ülke ara"
+      ],
       "Select ${ planTitle }": [
         "${ planTitle } seçin"
       ],
@@ -397,8 +400,14 @@
       ]
     },
     "Action in trial plan": {
+      "Continue with free plan": [
+        "Ücretsiz Free tarifesini kullanmayı sürdür"
+      ],
       "No, thanks": [
         "Hayır, teşekkürler"
+      ],
+      "Start my 30-day free trial": [
+        "30 günlük ücretsiz denememi başlat"
       ],
       "Try free for 30 days": [
         "30 gün ücretsiz olarak deneyin"
@@ -659,11 +668,11 @@
       ]
     },
     "Collapsible tooltip": {
-      "Close": [
-        "Kapat"
+      "Collapse": [
+        "Daralt"
       ],
-      "Open": [
-        "Aç"
+      "Expand": [
+        "Genişlet"
       ]
     },
     "color": {
@@ -860,9 +869,6 @@
       "Burkina Faso": [
         "Burkina Faso"
       ],
-      "Burma": [
-        "Myanmar"
-      ],
       "Burundi": [
         "Burundi"
       ],
@@ -917,9 +923,6 @@
       "Costa Rica": [
         "Kosta Rika"
       ],
-      "Cote d'Ivoire\"": [
-        "Fildişi Sahili"
-      ],
       "Croatia": [
         "Hırvatistan"
       ],
@@ -934,6 +937,9 @@
       ],
       "Czech Republic": [
         "Çekya"
+      ],
+      "Côte d'Ivoire": [
+        "Fildişi Sahili"
       ],
       "Denmark": [
         "Danimarka"
@@ -964,6 +970,9 @@
       ],
       "Estonia": [
         "Estonya"
+      ],
+      "Eswatini": [
+        "Esvatini"
       ],
       "Ethiopia": [
         "Etiyopya"
@@ -1208,6 +1217,9 @@
       "Mozambique": [
         "Mozambik"
       ],
+      "Myanmar": [
+        "Myanmar"
+      ],
       "Namibia": [
         "Namibya"
       ],
@@ -1399,9 +1411,6 @@
       ],
       "Svalbard and Jan Mayen": [
         "Svalbard ve Jan Mayen"
-      ],
-      "Swaziland": [
-        "Svaziland"
       ],
       "Sweden": [
         "İsveç"
@@ -1718,9 +1727,6 @@
       ]
     },
     "Error message": {
-      "Brace yourself till we get the error fixed.": [
-        "Lütfen biz hatayı düzeltene kadar bekleyin."
-      ],
       "Error: ${ errorMessage }": [
         "Hata: ${ errorMessage }"
       ],
@@ -1729,6 +1735,9 @@
       ],
       "Please ${ refresh } or check your connection.": [
         "Lütfen ${ refresh } ya da bağlantınızı denetleyin."
+      ],
+      "Something went wrong. Please refresh the page or try again later.": [
+        "Bir şeyler ters gitti. Lütfen sayfayı yenileyin ya da bir süre sonra yeniden deneyin."
       ],
       "There was a problem connecting to Proton.": [
         "Proton bağlantısı kurulurken bir sorun çıktı."
@@ -2371,7 +2380,7 @@
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Güncel yük ve konuma göre en iyi sunucuyu kullanın: ${ formattedBestServerName }"
       ],
-      "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
+      "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "${ VPN_APP_NAME } sunucularına uygulama olmadan bağlanmak için şu kimlik doğrulama bilgilerini kullanın. Kullanım örnekleri: macOS üzerinde Tunnelblick, GNU/Linux üzerinde OpenVPN."
       ],
       "Verification can take a few minutes.": [
@@ -2535,6 +2544,32 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Aboneliğiniz Mozilla tarafından yönetiliyor. Lütfen Mozilla destek ekibi ile görüşün."
+      ]
+    },
+    "info": {
+      "Create an email address": [
+        "Bir e-posta adresi oluşturun"
+      ],
+      "Day 27: Trial reminder": [
+        "27. gün: Deneme hatırlatıcı"
+      ],
+      "Day 30: Trial ends": [
+        "30. gün: Deneme sona erer"
+      ],
+      "Enjoy secure, easy-to-use emailing with plenty of premium features.": [
+        "Bir çok ücretli özellikle birlikte güvenli ve kolay kullanılan e-postanın tadını çıkarın."
+      ],
+      "Try Mail Plus": [
+        "Mail Plus tarifesini deneyin"
+      ],
+      "We’ll email you before your trial ends. Cancel anytime.": [
+        "Deneme süreniz bitmeden önce size bir e-posta göndeririz. İstediğiniz zaman iptal edebilirsiniz."
+      ],
+      "Your new email address is ready to go!": [
+        "Yeni e-posta adresiniz kullanılmaya hazır!"
+      ],
+      "Your subscription starts on ${ startText }.": [
+        "Aboneliğiniz ${ startText } tarihinde başlar."
       ]
     },
     "Info for cash payment method": {
@@ -3570,8 +3605,8 @@
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
         "IMAP desteği, ${ MAIL_APP_NAME } Bridge üzerinden masaüstü uygulamalarının (Outlook, Apple Mail, Thunderbird gibi) kullanımıyla sınırlıdır. Bulut tabanlı IMAP bütünleştirmeleri şu anda desteklenmiyor."
       ],
-      "Keeps you protected by blocking all network connections when you are accidentally disconnected from our VPN server": [
-        "VPN sunucumuzla bağlantınız yanlışlıkla kesildiğinde tüm ağ bağlantılarını engelleyerek korunmanızı sağlar"
+      "Keeps you protected by blocking all network connections when you are unexpectedly disconnected from our VPN server.": [
+        "VPN sunucumuzla bağlantınız beklenmedik şekilde kesildiğinde tüm ağ bağlantılarını engelleyerek korunmanızı sağlar."
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Etiketler, bulunmalarını kolaylaştırmak ya da süzmek için iletilere ekleyebileceğiniz basit notlardır"
@@ -3588,8 +3623,8 @@
       "On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
         "Buna ek olarak, arkadaşlarınız, aileniz, iş arkadaşlarınız ve kuruluşunuz için 5 taneye kadar takvim ekleyebilirsiniz."
       ],
-      "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections": [
-        "Bir VPN bağlantısı, herhangi bir zamanda bir aygıtın Proton VPN hizmetine bağlanmasını sağlar. Örneğin, bir telefon ve bir dizüstü bilgisayardan aynı anda Proton VPN bağlantısı kurmakj için iki VPN bağlantınız olması gerekir"
+      "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections..": [
+        "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Kişisel olmayan kullanıcı e-posta kutularını, tam ileti ve kişi bilgileri ile birlikte kullanıcının yaptığı gibi görüntüleme seçeneği"
@@ -4047,6 +4082,9 @@
     "Subtitle for trial plan": {
       "The privacy-first Mail and Calendar solution for your everyday communications needs.": [
         "Günlük iletişim gereksinimleriniz için kişisel gizliliğe öncelik veren e-posta ve takvim çözümü."
+      ],
+      "This offer is for those new to Proton only. No credit card required.": [
+        "Bu teklif yalnızca yeni Proton kullanıcıları için geçerlidir. Kredi kartı gerekmez."
       ]
     },
     "Success": {
@@ -4346,6 +4384,9 @@
       ],
       "Gift code": [
         "Hediye kodu"
+      ],
+      "How your free trial works": [
+        "Ücretsiz deneme nasıl işler"
       ],
       "Human verification": [
         "İnsan olduğunuzu doğrulayın"

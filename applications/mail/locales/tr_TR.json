@@ -155,6 +155,9 @@
       "Close this banner": [
         "Bu uyarıyı kapat"
       ],
+      "Collapse URL": [
+        "Adresi daralt"
+      ],
       "Color": [
         "Renk"
       ],
@@ -300,6 +303,9 @@
       ],
       "Email settings": [
         "E-posta ayarları"
+      ],
+      "Emoji": [
+        "Emoji"
       ],
       "Enable": [
         "Etkinleştir"
@@ -572,6 +578,9 @@
       "Move to spam": [
         "İstenmeyen kutusuna taşı"
       ],
+      "Move to spam and unsubscribe": [
+        "İstenmeyen kutusuna taşı ve abonelikten ayrıl"
+      ],
       "Move to trash": [
         "Çöpe at"
       ],
@@ -754,6 +763,9 @@
       ],
       "Search": [
         "Arama"
+      ],
+      "Search countries": [
+        "Ülke ara"
       ],
       "Search in ${ option.text }": [
         "${ option.text } içinde ara"
@@ -1562,16 +1574,16 @@
       ]
     },
     "Collapsible tooltip": {
-      "Close": [
-        "Kapat"
+      "Collapse": [
+        "Daralt"
       ],
-      "Open": [
-        "Aç"
+      "Expand": [
+        "Genişlet"
       ]
     },
     "color": {
       "Apple": [
-        "elma"
+        "apple"
       ],
       "azureish white": [
         "masmavi beyaz"
@@ -2007,9 +2019,6 @@
       "Burkina Faso": [
         "Burkina Faso"
       ],
-      "Burma": [
-        "Burma"
-      ],
       "Burundi": [
         "Burundi"
       ],
@@ -2064,9 +2073,6 @@
       "Costa Rica": [
         "Kosta Rika"
       ],
-      "Cote d'Ivoire\"": [
-        "Côte d'Ivoire"
-      ],
       "Croatia": [
         "Hırvatistan"
       ],
@@ -2081,6 +2087,9 @@
       ],
       "Czech Republic": [
         "Çekya"
+      ],
+      "Côte d'Ivoire": [
+        "Fildişi Sahili"
       ],
       "Denmark": [
         "Danimarka"
@@ -2111,6 +2120,9 @@
       ],
       "Estonia": [
         "Estonya"
+      ],
+      "Eswatini": [
+        "Esvatini"
       ],
       "Ethiopia": [
         "Etiyopya"
@@ -2355,6 +2367,9 @@
       "Mozambique": [
         "Mozambik"
       ],
+      "Myanmar": [
+        "Burma"
+      ],
       "Namibia": [
         "Namibya"
       ],
@@ -2546,9 +2561,6 @@
       ],
       "Svalbard and Jan Mayen": [
         "Svalbard ve Jan Mayen"
-      ],
-      "Swaziland": [
-        "Eswatini"
       ],
       "Sweden": [
         "İsveç"
@@ -2745,7 +2757,7 @@
     },
     "Description": {
       "Decrypting contacts... This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
-        "Kişilerin şifresi çözülüyor... Bu işlem birkaç dakika sürebilir. İşlem tamamlandığında dışa aktardığınız tüm kişilerin bulunduğu dosyayı indirebilirsiniz."
+        "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported."
       ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Kişiler siliniyor... Bu işlem birkaç dakika sürebilir. İşlem tamamlandığında bu pencereyi kapatabilirsiniz."
@@ -3317,7 +3329,7 @@
       ]
     },
     "Error importing event": {
-      "Calendar timezone not supported": [
+      "Calendar time zone not supported": [
         "Takvimin saat dilimi desteklenmiyor"
       ],
       "Component with wrong format": [
@@ -3386,7 +3398,7 @@
       "Start time out of bounds": [
         "Başlangıç zamanı sınırların dışında"
       ],
-      "Timezone not supported": [
+      "Time zone not supported": [
         "Saat dilimi desteklenmiyor"
       ],
       "To-do entry": [
@@ -3397,9 +3409,6 @@
       ]
     },
     "Error message": {
-      "Brace yourself till we get the error fixed.": [
-        "Lütfen biz hatayı düzeltene kadar bekleyin."
-      ],
       "Error: ${ errorMessage }": [
         "Hata: ${ errorMessage }"
       ],
@@ -3414,6 +3423,9 @@
       ],
       "Please ${ refresh } or check your connection.": [
         "Lütfen ${ refresh }yin ya da bağlantınızı denetleyin."
+      ],
+      "Something went wrong. Please refresh the page or try again later.": [
+        "Bir şeyler ters gitti. Lütfen sayfayı yenileyin ya da bir süre sonra yeniden deneyin."
       ],
       "There was a problem connecting to Proton.": [
         "Proton bağlantısı kurulurken bir sorun çıktı."
@@ -4188,7 +4200,7 @@
         "Kişi bilgilerini yeniden imzalamak istiyor musunuz?"
       ],
       "Don't forget to share your password with the recipient": [
-        "Parolanızı alıcı ile paylaşmayı unutmayın"
+        "Don't forget to share the password with the recipient"
       ],
       "Download our mobile application from your favorite app store to communicate securely on-the-go.": [
         "Hareket halindeyken güvenli bir şekilde iletişim kurmak için uygulama mağazanızdan mobil uygulamamızı indirin."
@@ -4326,7 +4338,7 @@
         "saat"
       ],
       "I'm sending this message to a non-ProtonMail user.": [
-        "Bu iletiyi ProtonMail kullanmayan bir alıcıya gönderiyorum."
+        "I'm sending this message to a non-Proton Mail user."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Hesap açmakta sorun yaşıyorsanız, lütfen bir davet isteyin. Bir iş günü içinde size yanıt vereceğiz."
@@ -4539,8 +4551,8 @@
       "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
         "PGP/Inline yalnızca düz metin biçimiyle uyumludur. Lütfen ${ MAIL_APP_NAME } uygulamasının şifrelenmiş iletileri her zaman imzaladığını unutmayın."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
-        "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages."
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        "PGP/MIME, geçerli oluşturucu kipini kullanarak iletiyi otomatik olarak gönderir. Lütfen şifrelenmiş iletilerin her zaman ${ MAIL_APP_NAME } tarafından imzalandığını unutmayın."
       ],
       "Phone number": [
         "Telefon numarası"
@@ -4550,6 +4562,9 @@
       ],
       "Please add at least one recipient.": [
         "Lütfen en az bir alıcı ekleyin."
+      ],
+      "Please fill out this field.": [
+        "Lütfen bu alanı doldurun."
       ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
         "Lütfen güvenli bir yerde saklayın. Parolanızı sıfırlamanız durumunda hesabınıza erişmek ve verilerinizin şifresini çözmek için bu ifadeye gerek duyacaksınız."
@@ -4648,8 +4663,8 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Bu adrese, bir e-posta gönderilirken varsayılan olarak kullanılmasını istediğiniz e-posta biçimini seçin."
       ],
-      "Select what you want to move from Google.": [
-        "Google üzerinden aktarmak istediklerinizi seçin."
+      "Select what you want to import from Google.": [
+        "Google üzerinden içe aktarmak istediklerinizi seçin."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "İçe aktarılacak takvimleri seçin. En fazla 20 tane olmak üzere içe aktarılan her takvim için yeni bir takvim oluşturulur."
@@ -4775,6 +4790,10 @@
       "This conversation contains trashed messages.": [
         "Bu yazışmada, çöpe atılmış iletiler var."
       ],
+      "This conversation will be marked as spam. Would you also like to unsubscribe from future emails?": [
+        "Bu yazışma istenmeyen olarak işaretlenecek. Gelecekte bu e-postaları almamak için abonelikten çıkmayı da ister misiniz?",
+        "Bu yazışmalar istenmeyen olarak işaretlenecek. Gelecekte bu e-postaları almamak için abonelikten çıkmayı da ister misiniz?"
+      ],
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded!": [
         "Bu e-posta, etki alanının doğrulama gereksinimlerini karşılayamadı. E-posta, sahte ya da hatalı iletilmiş olabilir!"
       ],
@@ -4807,6 +4826,10 @@
       ],
       "This message is signed by the key attached, that has not been trusted yet.": [
         "Bu ileti, ekteki henüz güvenilmemiş anahtar ile imzalanmış."
+      ],
+      "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
+        "Bu ileti istenmeyen olarak işaretlenecek. Gelecekte bu e-postaları almamak için abonelikten çıkmayı da ister misiniz?",
+        "Bu iletiler istenmeyen olarak işaretlenecek. Gelecekte bu e-postaları almamak için abonelikten çıkmayı da ister misiniz?"
       ],
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
         "Bu ileti, Taslaklar kutusuna taşınacak. Böylece onu düzenlebilirsiniz. Ne zaman gönderileceğini yeniden zamanlamanız gerekecek."
@@ -5657,6 +5680,9 @@
       "Region": [
         "Bölge"
       ],
+      "Remember my choice": [
+        "Seçimimi hatırla"
+      ],
       "Reveal password": [
         "Parolayı göster"
       ],
@@ -5892,6 +5918,9 @@
       ],
       "Learn more": [
         "Ayrıntılı bilgi alın"
+      ],
+      "Less": [
+        "Daha az göster"
       ],
       "Manage your folders": [
         "Klasörlerinizi yönetin"
@@ -6244,7 +6273,7 @@
       ]
     },
     "new_plans: info": {
-      "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
+      "Introducing Proton’s refreshed look.${ br }Many services, one mission. Welcome to an internet where privacy is the default.": [
         "Yenilenmiş Proton böyle görünüyor.${ br }Birçok hizmet, tek amaç. Kişisel gizliliğin doğal sayıldığı internet fikrine hoş geldiniz."
       ]
     },
@@ -6604,7 +6633,7 @@
         "Düzenleyici adresine gönderilemedi: ${ errorMessage }"
       ],
       "Re-encrypting invitation failed. Please try again": [
-        "Yeniden şşifreleme çağrısı yapılamadı. Lütfen yeniden deneyin"
+        "Re-encrypting invitation failed. Please try again."
       ]
     },
     "Search - no results": {
@@ -7111,7 +7140,7 @@
         "son 3 ay"
       ],
       "the last month": [
-        "geçen ay"
+        "son bir ay"
       ]
     },
     "Time unit": {
@@ -7420,6 +7449,9 @@
       ],
       "Move to inbox (not spam)": [
         "Gelen kutusuna taşı (istenmeyen değil)"
+      ],
+      "Move to spam": [
+        "İstenmeyen kutusuna taşı"
       ],
       "Move to trash": [
         "Çöpe at"

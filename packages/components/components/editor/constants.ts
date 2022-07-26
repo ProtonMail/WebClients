@@ -124,7 +124,7 @@ export const FONT_COLORNAMES = {
     '#B3D6A9': () => c('color').t`light moss green`,
     '#8FC380': () => c('color').t`pistachio`,
     '#77F241': () => c('color').t`kiwi`,
-    '#66A657': () => c('color').t`Apple`,
+    '#66A657': () => c('color').t`apple`,
     '#3A762B': () => c('color').t`japanese laurel`,
     '#29501F': () => c('color').t`mughal green`,
     /* yellow */

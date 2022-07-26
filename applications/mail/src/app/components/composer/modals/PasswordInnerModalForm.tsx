@@ -78,7 +78,7 @@ const PasswordInnerModalForm = ({
     const passwordLabel = (
         <div>
             <span className="mr0-25">{c('Label').t`Password`}</span>
-            <Info className="mb0-25" title={c('Info').t`Don't forget to share your password with the recipient`} />
+            <Info className="mb0-25" title={c('Info').t`Don't forget to share the password with the recipient`} />
         </div>
     );
 
