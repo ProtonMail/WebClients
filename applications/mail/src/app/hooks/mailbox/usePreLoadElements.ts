@@ -49,7 +49,7 @@ const usePreLoadElements = (elementIDs: string[], isConversation: boolean, label
         if (isConversation && firstElementIDs.length > 0) {
             void preload();
         }
-    }, [elementIDs, isConversation]);
+    }, [firstElementIDs.join(' '), isConversation, labelID]); // firstElementIDs.join(' ') makes this dependency stable
 };
 
 export default usePreLoadElements;
