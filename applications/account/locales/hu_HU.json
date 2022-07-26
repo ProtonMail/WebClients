@@ -4,20 +4,6 @@
     "language": "hu_HU"
   },
   "contexts": {
-    "Access level": {
-      "Full": [
-        "Teljes"
-      ],
-      "Full view": [
-        "Teljes megtekintés"
-      ],
-      "Limited": [
-        "Korlátozott"
-      ],
-      "Limited view": [
-        "Korlátozott megtekintés"
-      ]
-    },
     "Action": {
       "${ address } is available.": [
         "${ address } elérhező."
@@ -52,9 +38,6 @@
       "Add address": [
         "Cím hozzáadása"
       ],
-      "Add calendar": [
-        "Naptár hozzáadása"
-      ],
       "Add condition": [
         "Új feltétel"
       ],
@@ -75,9 +58,6 @@
       ],
       "Add label": [
         "Új címke"
-      ],
-      "Add notification": [
-        "Új emlékeztető"
       ],
       "Add PayPal": [
         "PayPal hozzáadása"
@@ -175,17 +155,11 @@
       "Continue to ${ name }": [
         "Folytatás itt: ${ name }"
       ],
-      "Continue with Google": [
-        "Folytatás Google fiókkal"
-      ],
       "Copy": [
         "Másolás"
       ],
       "Copy email to clipboard": [
         "E-mail másolása a vágólapra"
-      ],
-      "Copy link": [
-        "Hivatkozás másolása"
       ],
       "Create": [
         "Létrehozás"
@@ -196,9 +170,6 @@
       "Create address": [
         "Cím létrehozása"
       ],
-      "Create calendar": [
-        "Naptár létrehozása"
-      ],
       "Create folder": [
         "Mappa létrehozása"
       ],
@@ -207,9 +178,6 @@
       ],
       "Create label": [
         "Címke létrehozása"
-      ],
-      "Create link": [
-        "Hivatkozás létrehozása"
       ],
       "Current plan": [
         "Jelenlegi csomag"
@@ -231,9 +199,6 @@
       ],
       "Delete": [
         "Törlés"
-      ],
-      "Delete link": [
-        "Hivatkozás törlése"
       ],
       "Delete permanently": [
         "Végleges törlés"
@@ -328,9 +293,6 @@
       "Export": [
         "Exportálás"
       ],
-      "Export ICS": [
-        "ICS exportálása"
-      ],
       "Export key": [
         "Kulcs exportálása"
       ],
@@ -387,9 +349,6 @@
       ],
       "Import emails": [
         "E-mailek importálása"
-      ],
-      "Import from .ics": [
-        "Importálás .ics fájlból"
       ],
       "Import key": [
         "Kulcs importálása"
@@ -532,17 +491,11 @@
       "Remove bonuses": [
         "Kedvezmények törlése"
       ],
-      "Remove calendar": [
-        "Naptár eltávolítása"
-      ],
       "Remove gift code": [
         "Ajándék kód törlése"
       ],
       "Remove this label": [
         "Címke eltávolítása"
-      ],
-      "Remove this notification": [
-        "Emlékeztető törlése"
       ],
       "Rename": [
         "Átnevezés"
@@ -610,26 +563,14 @@
       "Save address": [
         "Cím mentése"
       ],
-      "Save ICS file": [
-        "ICS fájl mentése"
-      ],
       "Save selected": [
         "Kiválasztott mentése"
       ],
       "Select ${ planTitle }": [
         "${ planTitle } választása"
       ],
-      "Select calendar view": [
-        "Naptár nézet kiválasztása"
-      ],
       "Select files": [
         "Fájlok kiválasztása"
-      ],
-      "Select language for invitation emails": [
-        "A meghívók nyelvének kiválasztása"
-      ],
-      "Select timezone": [
-        "Időzóna kiválasztása"
       ],
       "send auto-reply email": [
         "automatikus válasz küldése"
@@ -663,12 +604,6 @@
       ],
       "Show labels": [
         "Címkék megjelenítése"
-      ],
-      "Show less": [
-        "Kevesebb megjelenítése"
-      ],
-      "Show more": [
-        "Több megjelenítése"
       ],
       "Show preview": [
         "Előnézet megmutatása"
@@ -929,11 +864,6 @@
         "Nem támogatott esemény"
       ]
     },
-    "Auto import invitations setting": {
-      "Add to calendar and mark as pending": [
-        "Adja a naptárhoz és állítsa be őket függőnek"
-      ]
-    },
     "Autoresponse": {
       "I'm out of the office with limited access to my email.": [
         "Nem vagyok az irodában, ezért korlátozott a hozzáférésem az e-mailjeimhez."
@@ -1140,37 +1070,7 @@
         "Tweet"
       ]
     },
-    "Calendar import section description": {
-      "You can import ICS files from another calendar to ${ CALENDAR_APP_NAME }. This lets you quickly import one event or your entire agenda.": [
-        "Más naptárakból kimentett ICS fájlokat importálhat a ${ CALENDAR_APP_NAME } naptárba. Így egy vagy több eseményt is könnyen áthozhat."
-      ]
-    },
-    "Calendar limit warning": {
-      "You have reached the maximum number of personal calendars you can create within your plan.": [
-        "Elérte a csomagjában maximálisan létrehozható személyes naptárak számát."
-      ]
-    },
-    "Calendar link purpose update success message": {
-      "Label added": [
-        "Címke hozzáadva"
-      ],
-      "Label deleted": [
-        "Címke törölve"
-      ],
-      "Label edited": [
-        "Címke szerkesztve"
-      ]
-    },
     "Calendar status": {
-      "Active": [
-        "Aktív"
-      ],
-      "Default": [
-        "Alapértelmezett"
-      ],
-      "Disabled": [
-        "Letiltva"
-      ],
       "Not synced": [
         "Nincs szinkronizálva"
       ],
@@ -1204,17 +1104,6 @@
         "Nem támogatott naptár formátum"
       ]
     },
-    "Calendar view": {
-      "Day": [
-        "Nap"
-      ],
-      "Month": [
-        "Hónap"
-      ],
-      "Week": [
-        "Hét"
-      ]
-    },
     "Checkout row": {
       "${ users } user": [
         "${ users } felhasználó",
@@ -1223,14 +1112,6 @@
       "Total for ${ n } month": [
         "Összesen ${ n } hónapra",
         "Összesen ${ n } hónapra"
-      ]
-    },
-    "Collapsible tooltip": {
-      "Close": [
-        "Bezárás"
-      ],
-      "Open": [
-        "Megnyitás"
       ]
     },
     "color": {
@@ -1657,9 +1538,6 @@
       "Burkina Faso": [
         "Burkina Faso"
       ],
-      "Burma": [
-        "Mianmar"
-      ],
       "Burundi": [
         "Burundi"
       ],
@@ -1713,9 +1591,6 @@
       ],
       "Costa Rica": [
         "Costa Rica"
-      ],
-      "Cote d'Ivoire\"": [
-        "Elefántcsontpart\""
       ],
       "Croatia": [
         "Horvátország"
@@ -2197,9 +2072,6 @@
       "Svalbard and Jan Mayen": [
         "Svalbard és Jan Mayen-szigetek"
       ],
-      "Swaziland": [
-        "Szváziföld"
-      ],
       "Sweden": [
         "Svédország"
       ],
@@ -2335,36 +2207,6 @@
         "/felhasználó havonta"
       ]
     },
-    "Daily recurring event, frequency": {
-      "${ count } time": [
-        "${ count } alkalommal",
-        "${ count } alkalommal"
-      ],
-      "Daily": [
-        "Naponta"
-      ],
-      "Daily, ${ timesString }": [
-        "Naponta, ${ timesString }"
-      ],
-      "Daily, ${ untilString }": [
-        "Naponta, ${ untilString }"
-      ],
-      "Every ${ interval } day": [
-        "Minden ${ interval }. napon",
-        "Minden ${ interval }. napon"
-      ],
-      "Every ${ interval } day, ${ timesString }": [
-        "Minden ${ interval }. napon, ${ timesString }",
-        "Minden ${ interval }. napon, ${ timesString }"
-      ],
-      "Every ${ interval } day, ${ untilString }": [
-        "Minden ${ interval }. napon, ${ untilString }",
-        "Minden ${ interval }. napon, ${ untilString }"
-      ],
-      "until ${ dateString }": [
-        "eddig: ${ dateString }"
-      ]
-    },
     "Day": {
       "Friday": [
         "Péntek"
@@ -2399,7 +2241,7 @@
       ]
     },
     "Description": {
-      "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }": [
+      "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }..": [
         "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }."
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
@@ -2472,20 +2314,6 @@
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "Segítsen fejlődni!"
-      ]
-    },
-    "Duration": {
-      "120 minutes": [
-        "120 perc"
-      ],
-      "30 minutes": [
-        "30 perc"
-      ],
-      "60 minutes": [
-        "60 perc"
-      ],
-      "90 minutes": [
-        "90 perc"
       ]
     },
     "Email body for description (description part)": {
@@ -2711,9 +2539,6 @@
       ],
       "Name on card required": [
         "Kártyára írt név megadása kötelező"
-      ],
-      "Name required": [
-        "Név megadása kötelező"
       ],
       "No active sessions": [
         "Nincs aktív munkamenet"
@@ -3012,9 +2837,6 @@
       "Calendar": [
         "Naptár"
       ],
-      "Calendar timezone not supported": [
-        "Naptár időzóna nem támogatott"
-      ],
       "Component with wrong format": [
         "A komponens formátuma hibás"
       ],
@@ -3090,9 +2912,6 @@
       "Timezone": [
         "Időzóna"
       ],
-      "Timezone not supported": [
-        "Időzóna nem támogatott"
-      ],
       "To-do entry": [
         "Tennivaló elem"
       ],
@@ -3104,14 +2923,8 @@
       ]
     },
     "Error message": {
-      "Brace yourself till we get the error fixed.": [
-        "Kérjük várjon, amíg a hibát elhárítjuk."
-      ],
       "Error: ${ errorMessage }": [
         "Hiba: ${ errorMessage }"
-      ],
-      "Invalid URL": [
-        "Érvénytelen URL"
       ],
       "Oops, something went wrong": [
         "Hoppá, valami hiba történt"
@@ -3140,14 +2953,6 @@
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Nincs kép kiválasztva"
-      ]
-    },
-    "Error when exporting event from calendar": {
-      "Event @ ${ timeString }": [
-        "Esemény @ ${ timeString }"
-      ],
-      "Event from ${ timeString }, ${ rruleString }": [
-        "Ekkortól: ${ timeString }, ${ rruleString }"
       ]
     },
     "Event invitation error": {
@@ -3197,54 +3002,6 @@
     "Event title": {
       "(no title)": [
         "(névtelen)"
-      ]
-    },
-    "Export calendar": {
-      "${ totalProcessed }/${ totalToProcess } event exported": [
-        "${ totalProcessed }/${ totalToProcess } esemény exportálva",
-        "${ totalProcessed }/${ totalToProcess } esemény exportálva"
-      ],
-      "Calendar successfully exported. You can now save the ICS file.": [
-        "A naptár sikeresen exportálva. Most letöltheti az ICS fájlt."
-      ],
-      "Decrypting events from your calendar: ${ totalProcessed }/${ totalToProcess }": [
-        "Naptár események visszafejtése: ${ totalProcessed }/${ totalToProcess }"
-      ],
-      "Due to a password reset, none of your events could be decrypted and exported.": [
-        "A jelszó visszaállítás miatt, egyetlen eseményt sem lehet visszafejteni vagy exportálni."
-      ],
-      "Due to a password reset, some of your events could not be decrypted and exported.": [
-        "A jelszó-helyreállítás következtében néhány eseményt nem lehet visszafejteni vagy exportálni."
-      ],
-      "Error decrypting event": [
-        "Hiba az esemény visszafejtésekor"
-      ],
-      "Learn how to restore encrypted events with old password": [
-        "Tudja meg hogyan állíthat vissza eseményeket régi jelszavával"
-      ],
-      "Loading events": [
-        "Események betöltése"
-      ],
-      "None of the events could be exported.": [
-        "Egyetlen eseményt sem sikerült exportálni."
-      ],
-      "Password reset - event cannot be decrypted": [
-        "Jelszó visszaállítás - az eseményt nem lehet visszafejteni"
-      ],
-      "Password reset - multiple events cannot be decrypted": [
-        "Jelszó visszaállítás - több eseményt nem lehet visszafejteni"
-      ],
-      "Please don't close the tab before the exporting process is finished.": [
-        "Ne zárja be a böngészőfület mielőtt az exportálás befejeződik."
-      ],
-      "Some of your events could not be exported.": [
-        "Néhány eseményt nem sikerült exportálni."
-      ],
-      "The internet connection was interrupted, causing the export process to fail. Please try again.": [
-        "Az exportálási folyamat megszakadt az internetkapcsolat megszakadása miatt. Próbálja meg újra."
-      ],
-      "You can save an ICS file of the events that were successfully exported.": [
-        "A sikeresen exportált eseményeket tartalmazó ICS fájlt lementheti."
       ]
     },
     "Feature": {
@@ -3397,9 +3154,6 @@
       "Actions": [
         "Műveletek"
       ],
-      "Calendar": [
-        "Naptár"
-      ],
       "Event": [
         "Esemény"
       ],
@@ -3412,26 +3166,14 @@
       "Key type": [
         "Kulcs típusa"
       ],
-      "Label": [
-        "Címke"
-      ],
-      "Name": [
-        "Név"
-      ],
       "Notifications": [
         "Emlékeztetők"
       ],
       "Organization key fingerprint": [
         "Szervezeti kulcs ujjlenyomata"
       ],
-      "Status": [
-        "Állapot"
-      ],
       "Time": [
         "Időpont"
-      ],
-      "What others see": [
-        "Ahogy másoknál megjelenik"
       ]
     },
     "Header for addresses table": {
@@ -3920,9 +3662,6 @@
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } A fiókjában lévő összes titkosított adathoz elveszti a hozzáférést ha folytatja."
       ],
-      "${ calendarName } will be set as default calendar.": [
-        "${ calendarName } lesz az alapértelmezett naptár."
-      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } új naptár",
         "${ calendarsToBeCreatedCount } új naptár"
@@ -4061,9 +3800,6 @@
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Egy név, ami segít azonosítani, hogy hol használja, így később könnyedén visszavonhatja vagy kiterjesztheti."
       ],
-      "A recovery file lets you unlock and view your data after an account reset. ": [
-        "A recovery file lets you unlock and view your data after an account reset."
-      ],
       "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password.": [
         "A helyreállító jelmondat segít visszaszerezni ez elérését a fiókjához és helyreállítani a titkosított leveleit, ha elfelejtené a jelszavát."
       ],
@@ -4096,9 +3832,6 @@
       ],
       "Add image URL": [
         "Kép URL megadása"
-      ],
-      "Add label": [
-        "Új címke"
       ],
       "Additional options": [
         "További lehetőségek"
@@ -4160,23 +3893,11 @@
       "and": [
         "és"
       ],
-      "Anyone with this link can see all the event details of this calendar such as title, location or participants.": [
-        "Bárki a link birtokában megtekintheti a naptár összes eseményének részleteit, beleértve a címét, helyét és résztvevőket."
-      ],
-      "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
-        "A link birtokában bárki láthatja, hogy a naptára szerint elfoglalt vagy szabad. Nem láthatják viszont az események adatait, mint például címét, helyét vagy résztvevőit."
-      ],
-      "Anyone with this link won't be able to sync or get future updates for your calendar. If you want to give them access again, you will have to create a new link.": [
-        "A hivatkozást ismerők nem fognak hozzáférni a naptár szinkronizálásához vagy további frissítéseihez. Ha ismét elérést szeretne biztosítani, új hivatkozást kell majd készítenie."
-      ],
       "AOL reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
         "Az AOL olvassa az ön személyes adatait, hogy hirdetőknek és más külső feleknek adja át. A személyes adatai védelme érdekében, hozza létre titkosított e-mail címét."
       ],
       "Are you sure you want to delete this address?": [
         "Biztosan törli ezt a címet?"
-      ],
-      "Are you sure you want to delete this calendar?": [
-        "Biztos, hogy törölni szeretné ezt a naptárat?"
       ],
       "Are you sure you want to delete this domain?": [
         "Biztosan törölni szeretné ezt a domain nevet?"
@@ -4265,9 +3986,6 @@
       "By leaving now, changes may not be saved": [
         "Ha most kilép, a módosítások elveszhetnek"
       ],
-      "By sharing the full event details of this calendar, you accept to grant Proton access to this calendar's encrypted information.": [
-        "A naptár teljes esemény részletekkel való megosztásakor elfogadja, hogy elérést biztosít a Proton számára a naptár titkosított tartalmához."
-      ],
       "Center": [
         "Középre"
       ],
@@ -4299,9 +4017,6 @@
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "Hozzon létre egy címkét az importált levelekhez, válassza ki a kívánt idő intervallumot és adja meg az importálandó címkéket."
       ],
-      "Create a link to your calendar and share it with anyone outside Proton. Only you can add or remove events.": [
-        "Hozzon létre egy hivatkozást a naptárra és ossza meg bárkivel a Protonon kívül. Csak ön fog tudni eseményeket létrehozni vagy törölni."
-      ],
       "Create a new account and share the email address and password with the user.": [
         "Hozzon létre egy új fiókot és juttassa el az e-mail címet és a jelszót a felhasználóhoz."
       ],
@@ -4323,35 +4038,14 @@
       "Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.": [
         "Jelenleg az összes tárhely kiosztásra került az adminisztrátor fiókhoz. Kérjük csökkentse az adminisztrátor fiókhoz kiosztott tárhelyet, hogy helyet szabadítson fel a többi felhasználónak. Bármikor növelheti a rendelkezésre álló tárhelyet nagyobb csomagra váltással."
       ],
-      "Custom": [
-        "Egyéni"
-      ],
-      "Custom daily": [
-        "Egyéni, naponta"
-      ],
       "Custom email domains": [
         "Saját domain nevek"
-      ],
-      "Custom monthly": [
-        "Egyéni, havonta"
-      ],
-      "Custom weekly": [
-        "Egyéni, hetente"
-      ],
-      "Custom yearly": [
-        "Egyéni, évente"
-      ],
-      "Daily": [
-        "Naponta"
       ],
       "Data locked": [
         "Adatok zárolva"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Töröljön le minden más MX rekordot vagy bizonyosodjon meg róla, hogy a ${ MAIL_APP_NAME } prioritása a legalacsonyabb szám."
-      ],
-      "Delete link?": [
-        "Hivatkozás törlése?"
       ],
       "Discount applied to your subscription with coupon ${ code }": [
         "Az előfizetésre érvényes árengedmény a kuponnal ${ code }"
@@ -4398,9 +4092,6 @@
       ],
       "Earned ${ rewards } of ${ rewardsLimit } ${ planName } months.": [
         "Szerzett ${ rewards } hónap jóváírást a lehetséges ${ rewardsLimit } ${ planName } hónapból."
-      ],
-      "Edit label": [
-        "Címke szerkesztése"
       ],
       "Edit link": [
         "Hivatkozás szerkesztése"
@@ -4465,9 +4156,6 @@
       "Enter your recovery phone number and we will send you your username or email address.": [
         "Írja be a helyreállítási telefonszámát és elküldjük a felhasználónevét vagy e-mail címét."
       ],
-      "Event invitations and RSVPs will be sent in this language.": [
-        "Esemény meghívók és jelentkezések ezen a nyelven kerülnek elküldésre."
-      ],
       "Expired": [
         "Lejárt"
       ],
@@ -4512,9 +4200,6 @@
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Ha egy másik adminisztrátor megváltoztatná ezt a jelszót, el kell kérni tőle az új Szervezeti Jelszót."
-      ],
-      "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
-        "Amikor a rendszer időzónája eltér az aktuális időzóna beállításától, rákérdez, hogy frissítse-e a beállítást (maximum naponta egyszer)."
       ],
       "If this domain is currently receiving emails, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Ha erre a domain névre jelenleg is érkeznek levelek, a zökkenőmentes átálláshoz, válassza ki a ${ boldAddresses } fület és hozza létre az összes már létező e-mail címet, mielőtt megváltoztatná az MX rekordokat."
@@ -4692,17 +4377,8 @@
       "Let your contacts know you care about their privacy.": [
         "Tudassa kapcsolataival hogy Ön törődik személyes adataik védelmével!"
       ],
-      "Limited view: others see if you're busy. Full view: shows all event details, including name, location, or participants.": [
-        "Korlátozott nézet: mások láthatják, ha elfoglalt. Teljes nézet: megjeleníti az esemény összes részletét, beleértve a nevét, helyét és a résztvevőket."
-      ],
       "Link copied to clipboard": [
         "Link a vágólapra másolva"
-      ],
-      "Link created": [
-        "Link létrehozva"
-      ],
-      "Link deleted": [
-        "Hivatkozás törölve"
       ],
       "Link type": [
         "Link típusa"
@@ -4736,9 +4412,6 @@
       ],
       "Merged": [
         "Egyesítve"
-      ],
-      "Monthly ${ onDayString }": [
-        "Havonta: ${ onDayString }"
       ],
       "more": [
         "több"
@@ -4814,9 +4487,6 @@
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Csak akkor változtassa meg ezeket a beállításokat, ha PGP-t használ a nem ${ BRAND_NAME } címzettekhez."
-      ],
-      "Only you can see the labels.": [
-        "Csak ön láthatja a címkéket."
       ],
       "Or select a particular server:": [
         "Vagy válasszon ki egy adott szervert:"
@@ -4999,9 +4669,6 @@
       "Select a service provider to start": [
         "Válaszon ki egy szolgáltatót a kezdéshez"
       ],
-      "Select what you want to move from Google.": [
-        "Válassza ki, mit szeretne a Google-ból áthozni."
-      ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Válassza ki az importálandó naptárakat. Minden importált naptárhoz egy új naptár kerül létrehozásra, a maximum 20-as korlátig."
       ],
@@ -5082,9 +4749,6 @@
       ],
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "A ${ boldDataLocked } üzenetet többé nem mutatjuk, de az adatait továbbra is feloldhatja ezen a linken keresztül: ${ encryptionAndKeysLink } ."
-      ],
-      "The calendar will be removed from your account.": [
-        "Ez a naptár eltávolításra kerül a fiókjából."
       ],
       "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
         "Az e-mail cím, amit a lista tetejére helyez lesz az alapértelmezett címe. Húzással mozgassa a címeket annak érdekében hogy módosíthassa a sorrendet."
@@ -5278,9 +4942,6 @@
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Használja a legjobb szervert, jelenlegi terhelés és pozíció szerint: ${ formattedBestServerName }"
       ],
-      "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
-        "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux."
-      ],
       "Verification can take a few minutes.": [
         "Az ellenőrzés néhány percet is igénybe vehet."
       ],
@@ -5332,9 +4993,6 @@
       "Week": [
         "Hét"
       ],
-      "Week and month views only apply to desktop.": [
-        "A heti és havi nézet csak számítógépen érhető el."
-      ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "A fiók helyreállítási célra megadott e-mail címére fog kapni egy visszaállító kódot."
       ],
@@ -5370,9 +5028,6 @@
       ],
       "Yandex records your online activity and reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
         "A Yandex rögzíti az ön online tevékenységét és olvassa a személyes adatait, hogy ezt hirdetők és más külső felek felhasználhassák. A személyes adatai védelme érdekében, hozza létre titkosított e-mail címét."
-      ],
-      "Yearly": [
-        "Évente"
       ],
       "You already have a free account": [
         "Már van egy ingyenes fiókja"
@@ -5440,12 +5095,6 @@
       "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription.": [
         "Az előfizetés lemondása előtt törölnie kell minden személyes naptárat és megosztott naptár hivatkozást."
       ],
-      "You need to have a personal calendar to create a link.": [
-        "Hivatkozás létrehozásához rendelkeznie kell egy személyes naptárral."
-      ],
-      "You need to have an active personal calendar to import your events from .ics.": [
-        "A .ics fájlból való importáláshoz szükséges, hogy legyen egy aktív személyes naptára."
-      ],
       "You need to have an active personal calendar to import your events.": [
         "Az importáláshoz szükséges, hogy legyen egy aktív személyes naptára."
       ],
@@ -5457,9 +5106,6 @@
       ],
       "You should export a backup of this key in case you need to restore data it encrypted.": [
         "Exportáljon egy biztonsági mentést erről a kulcsról, abban az esetben, ha szüksége lenne visszaállítani azokat az adatokat, amelyeket titkosított vele."
-      ],
-      "You still need to reply to invitations for the host to see your response.": [
-        "Még válaszolnia kell a meghívókra, hogy a házigazda lássa a válaszát."
       ],
       "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
         "A ${ BRAND_NAME } fiókban ${ loseAllData }. A helyreállításhoz meg kell adnia a régi jelszavát."
@@ -5934,11 +5580,6 @@
         "Megjelölés elavultként"
       ]
     },
-    "Knowledge base link label": {
-      "Here's how": [
-        "További információk"
-      ]
-    },
     "Label": {
       " and ": [
         " és "
@@ -6027,9 +5668,6 @@
       "Attach screenshot(s)": [
         "Képernyőkép(ek) csatolása"
       ],
-      "Auto-detect primary time zone": [
-        "Az elsődleges időzóna automatikus detektálása"
-      ],
       "Auto-load embedded images": [
         "Beágyazott képek automatikus betöltése"
       ],
@@ -6086,9 +5724,6 @@
       ],
       "Code is 6 digits without spaces": [
         "A kód hatjegyű, szóközök nélkül"
-      ],
-      "Color": [
-        "Szín"
       ],
       "Composer": [
         "Szerkesztő"
@@ -6174,38 +5809,17 @@
       "Days of the week": [
         "A hét napjai"
       ],
-      "Default email address": [
-        "Alapértelmezett email cím"
-      ],
-      "Default event duration": [
-        "Események alapértelmezett hossza"
-      ],
-      "Default full day notifications": [
-        "Alapértelmezett emlékeztetők (egész napos)"
-      ],
       "Default language": [
         "Alapértelmezett nyelv"
       ],
-      "Default language (${ defaultLanguage })": [
-        "Alapértelmezett nyelv (${ defaultLanguage })"
-      ],
-      "Default notifications": [
-        "Alapértelmezett emlékeztetők"
-      ],
       "Default PGP scheme": [
         "Alapértelmezett PGP séma"
-      ],
-      "Default view": [
-        "Alapértelmezett nézet"
       ],
       "Delete": [
         "Törlés"
       ],
       "Density": [
         "Sűrűség"
-      ],
-      "Description": [
-        "Leírás"
       ],
       "Device/certificate name": [
         "Eszköz/tanúsítvány neve"
@@ -6215,9 +5829,6 @@
       ],
       "Discount": [
         "Kedvezmény"
-      ],
-      "Display": [
-        "Megjelenítés"
       ],
       "Display name": [
         "Megjelenített név"
@@ -6555,15 +6166,6 @@
       "Send auto-reply": [
         "Automatikus válasz küldése"
       ],
-      "Send in": [
-        "Küldés így:"
-      ],
-      "Show secondary time zone": [
-        "Másodlagos időzóna megjelenítése"
-      ],
-      "Show week numbers": [
-        "Hetek sorszámának megjelenítése"
-      ],
       "Sign external messages": [
         "Külső üzenetek aláírása"
       ],
@@ -6648,9 +6250,6 @@
       "Upload 1 or more recovery files or encryption keys": [
         "Töltsön fel egy vagy több helyreállító fájlt vagy titkosítási kulcsot"
       ],
-      "URL": [
-        "URL"
-      ],
       "Use folder colors": [
         "Mappa színek használata"
       ],
@@ -6708,12 +6307,6 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "Igen, törölni szeretném a fiókomat és az összes adatát."
       ],
-      "Your calendar URL": [
-        "Az ön naptárának URL-je"
-      ],
-      "Your calendar URL label": [
-        "Az ön naptárának URL neve"
-      ],
       "Your password (admin)": [
         "Jelszó (adminisztrátor)"
       ],
@@ -6768,9 +6361,6 @@
       ],
       "Proton company announcements": [
         "Proton céges hírek"
-      ],
-      "Proton for business": [
-        "Proton for Business"
       ],
       "Proton for Business newsletter": [
         "Proton Üzleti hírlevél"
@@ -6983,12 +6573,6 @@
         "Minden üzenet importálása ${ totalLabelsCount } címkéből, ${ periodFragment } időponttól és megjelölés ezzel a címkével: ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
-    "Maximum calendar links reached warning": {
-      "You can create up to ${ MAX_LINKS_PER_CALENDAR } link per calendar. To create a new link to this calendar, delete one from the list below.": [
-        "Egy naptárhoz maximum ${ MAX_LINKS_PER_CALENDAR } hivatkozást hozhat létre. Újabb hivatkozás létrehozásához töröljön egyet az alábbi listáról.",
-        "Egy naptárhoz maximum ${ MAX_LINKS_PER_CALENDAR } hivatkozást hozhat létre. Újabb hivatkozás létrehozásához töröljön egyet az alábbi listáról."
-      ]
-    },
     "Member action": {
       "Delete": [
         "Törlés"
@@ -7053,11 +6637,6 @@
         "E-mailek importálása a Yahoo-tól"
       ]
     },
-    "Modal title and action": {
-      "Add calendar": [
-        "Naptár hozzáadása"
-      ]
-    },
     "Monetary unit": {
       "Dollar": [
         "Dollár"
@@ -7067,139 +6646,6 @@
       ],
       "Swiss franc": [
         "Svájci frank"
-      ]
-    },
-    "Monthly recurring event, frequency": {
-      "Every ${ interval } month ${ onDayString }": [
-        "Minden ${ interval }. hónapban, ${ onDayString }",
-        "Minden ${ interval }. hónapban, ${ onDayString }"
-      ],
-      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
-        "Minden ${ interval }. hónapban, ${ onDayString }, ${ timesString }",
-        "Minden ${ interval }. hónapban, ${ onDayString }, ${ timesString }"
-      ],
-      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
-        "Minden ${ interval }. hónapban, ${ onDayString }, ${ untilString }",
-        "Minden ${ interval }. hónapban, ${ onDayString }, ${ untilString }"
-      ],
-      "Monthly ${ onDayString }": [
-        "Havonta: ${ onDayString }"
-      ],
-      "Monthly ${ onDayString }, ${ timesString }": [
-        "Havonta ${ onDayString }, ${ timesString }"
-      ],
-      "Monthly ${ onDayString }, ${ untilString }": [
-        "Havonta ${ onDayString }, ${ untilString }"
-      ]
-    },
-    "Monthly recurring event, repeats on": {
-      "on day ${ dayOfMonth }": [
-        "${ dayOfMonth }. napon"
-      ],
-      "on the first Friday": [
-        "első pénteken"
-      ],
-      "on the first Monday": [
-        "első hétfőn"
-      ],
-      "on the first Saturday": [
-        "első szombaton"
-      ],
-      "on the first Sunday": [
-        "első vasárnap"
-      ],
-      "on the first Thursday": [
-        "első csütörtökön"
-      ],
-      "on the first Tuesday": [
-        "első kedden"
-      ],
-      "on the first Wednesday": [
-        "első szerdán"
-      ],
-      "on the fourth Friday": [
-        "negyedik pénteken"
-      ],
-      "on the fourth Monday": [
-        "negyedik hétfőn"
-      ],
-      "on the fourth Saturday": [
-        "negyedik szombaton"
-      ],
-      "on the fourth Sunday": [
-        "negyedik vasárnap"
-      ],
-      "on the fourth Thursday": [
-        "negyedik csütörtökön"
-      ],
-      "on the fourth Tuesday": [
-        "negyedik kedden"
-      ],
-      "on the fourth Wednesday": [
-        "negyedik szerdán"
-      ],
-      "on the last Friday": [
-        "utolsó pénteken"
-      ],
-      "on the last Monday": [
-        "utolsó hétfőn"
-      ],
-      "on the last Saturday": [
-        "utolsó szombaton"
-      ],
-      "on the last Sunday": [
-        "utolsó vasárnap"
-      ],
-      "on the last Thursday": [
-        "utolsó csütörtökön"
-      ],
-      "on the last Tuesday": [
-        "utolsó kedden"
-      ],
-      "on the last Wednesday": [
-        "utolsó szerdán"
-      ],
-      "on the second Friday": [
-        "második pénteken"
-      ],
-      "on the second Monday": [
-        "második hétfőn"
-      ],
-      "on the second Saturday": [
-        "második szombaton"
-      ],
-      "on the second Sunday": [
-        "második vasárnap"
-      ],
-      "on the second Thursday": [
-        "második csütörtökön"
-      ],
-      "on the second Tuesday": [
-        "második kedden"
-      ],
-      "on the second Wednesday": [
-        "második szerdán"
-      ],
-      "on the third Friday": [
-        "harmadik pénteken"
-      ],
-      "on the third Monday": [
-        "harmadik hétfőn"
-      ],
-      "on the third Saturday": [
-        "harmadik szombaton"
-      ],
-      "on the third Sunday": [
-        "harmadik vasárnap"
-      ],
-      "on the third Thursday": [
-        "harmadik csütörtökön"
-      ],
-      "on the third Tuesday": [
-        "harmadik kedden"
-      ],
-      "on the third Wednesday": [
-        "harmadik szerdán"
       ]
     },
     "Moved to black/whitelist": {
@@ -7272,9 +6718,6 @@
     "new_plans: action": {
       "Continue to review": [
         "Tovább az áttekintéshez"
-      ],
-      "Continue with free": [
-        "Folytatás az ingyenessel"
       ],
       "Delete account": [
         "Fiók törlése"
@@ -7540,6 +6983,26 @@
         "Csoport menedzsment"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Tegye az adatbiztonságot alapértelmezetté biztonsági mentésekhez, tároláshoz, megosztáshoz és visszakereséshez."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Máskülönben a fiókjához való hozzáférése korlátozott lesz, és a fiókja végül letiltásra kerül."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Ahhoz, hogy tudja folytatni a ${ MAIL_APP_NAME } használatát a prémium funkciókkal, válassza ki előfizetési csomagját és a fizetés módját."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Váltson az üzleti csomagra, a Proton összes prémium szolgáltatásának eléréshez."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Váltson a legnagyobb adatvédelmi csomagra, a Proton összes prémium szolgáltatásának eléréshez."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Próbaideje véget ér: ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand }, szám vége: ${ last4 }"
@@ -7606,26 +7069,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Önnek kedvezményes ára van a jelenlegi csomagjához, Ha kisebb csomagra vált, elveszíti a kedvezményes árat és ezt nem fogja tudni igénybe venni, ha újra előfizet."
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Tegye az adatbiztonságot alapértelmezetté biztonsági mentésekhez, tároláshoz, megosztáshoz és visszakereséshez."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Máskülönben a fiókjához való hozzáférése korlátozott lesz, és a fiókja végül letiltásra kerül."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Ahhoz, hogy tudja folytatni a ${ MAIL_APP_NAME } használatát a prémium funkciókkal, válassza ki előfizetési csomagját és a fizetés módját."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Váltson az üzleti csomagra, a Proton összes prémium szolgáltatásának eléréshez."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Váltson a legnagyobb adatvédelmi csomagra, a Proton összes prémium szolgáltatásának eléréshez."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Próbaideje véget ér: ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -7757,9 +7200,6 @@
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
         "Az IMAP támogatás asztali alkalmazásokra korlátozódik (pl. Outlook, Apple Mail, Thunderbird) a ${ MAIL_APP_NAME } Bridge-en keresztül. Felhő alapú IMAP megoldások jelenleg nem támogatottak."
       ],
-      "Keeps you protected by blocking all network connections when you are accidentally disconnected from our VPN server": [
-        "Keeps you protected by blocking all network connections when you are unexpectedly disconnected from our VPN server."
-      ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "A címkék egyszerű jelölők amelyet az e-mailhez rendelhet, hogy könnyebben megtalálhassa vagy leszűrhesse"
       ],
@@ -7775,7 +7215,7 @@
       "On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
         "Ezen kívül hozzáadhat 5 naptárt barátaitól, családjától, kollégáitól vagy szervezeteitől is."
       ],
-      "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections": [
+      "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections..": [
         "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
@@ -7931,43 +7371,6 @@
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "OpenVPN / IKEv2 azonosító frissítve"
-      ]
-    },
-    "Notification time input": {
-      "at": [
-        "ekkor:"
-      ]
-    },
-    "Notification type": {
-      "email": [
-        "email"
-      ],
-      "notification": [
-        "emlékeztető"
-      ]
-    },
-    "Notification when": {
-      "at time of event": [
-        "az esemény időpontjában"
-      ],
-      "day before": [
-        "nappal előtte",
-        "nappal előtte"
-      ],
-      "hour before": [
-        "órával előtte",
-        "órával előtte"
-      ],
-      "minute before": [
-        "perccel előtte",
-        "perccel előtte"
-      ],
-      "on the same day": [
-        "ugyanazon a napon"
-      ],
-      "week before": [
-        "héttel előtte",
-        "héttel előtte"
       ]
     },
     "Oauth instructions": {
@@ -8253,20 +7656,9 @@
         "PayPal"
       ]
     },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "Az e-mail cím nem található meg a küldő kulcsban definiált felhasználói azonosítók közt (${ keyUserIds })"
-      ]
-    },
     "Placeholder": {
       "A way to contact you": [
         "Kapcsolatfelvételi lehetőség önnel"
-      ],
-      "Add a calendar description": [
-        "Adja meg a naptár leírását"
-      ],
-      "Add a calendar name": [
-        "Adja meg a naptár nevét"
       ],
       "Add gift code": [
         "Ajándék kód hozzáadása"
@@ -8370,14 +7762,6 @@
     "Price": {
       "Free": [
         "Ingyenes"
-      ]
-    },
-    "Primary timezone": {
-      "Primary time zone": [
-        "Elsődleges időzóna"
-      ],
-      "Secondary time zone": [
-        "Másodlagos időzóna"
       ]
     },
     "Private Member": {
@@ -8496,11 +7880,6 @@
         "További fájlok feltöltése"
       ]
     },
-    "Select search results": {
-      "No results found": [
-        "Nincs találat"
-      ]
-    },
     "Settings description": {
       "Make the move to privacy. Effortlessly and securely.": [
         "Tegye bizalmassá a magánszféráját. Könnyedén és biztonságosan."
@@ -8515,11 +7894,6 @@
       ],
       "Organization": [
         "Szervezet"
-      ]
-    },
-    "Settings update growler warning": {
-      "Failed to update settings": [
-        "Beállítások frissítése sikertelen"
       ]
     },
     "Settings/filters": {
@@ -8605,14 +7979,8 @@
       "Invite friends and earn rewards!": [
         "Hívja meg barátait és szerezzen nyereményeket!"
       ],
-      "No more missed appointments": [
-        "Nincs több lekésett találkozó"
-      ],
       "Try ${ DRIVE_APP_NAME }": [
         "Próbálja ki a ${ DRIVE_APP_NAME }-ot"
-      ],
-      "With email notifications, you decide which events to be notified about and when.": [
-        "Az email értesítésekkel ön dönti el, mely eseményekről kapjon értesítést és mikor."
       ]
     },
     "State": {
@@ -8643,37 +8011,6 @@
       ],
       "Your current storage:": [
         "Jelenlegi tárhelye:"
-      ]
-    },
-    "Subscribe to calendar modal": {
-      "Calendar URL": [
-        "Naptár URL"
-      ],
-      "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Subscribed calendars.\n${ kbLink }": [
-        "Egy külső vagy nyilvános naptárra és annak eseményeire való feliratkozáshoz, írja be annak URL címét. Egy csak olvasható naptárként fog megjelenni a feliratkozott naptárainál.\n${ kbLink }"
-      ]
-    },
-    "Subscribe to calendar modal description": {
-      "Learn how to get a private calendar link.": [
-        "Olvassa el hogyan kaphat személyes naptár hivatkozást."
-      ]
-    },
-    "Subscribed calendar extension warning": {
-      "By using this link, Google will make the calendar you are subscribing to public": [
-        "Ezzel a hivatkozással, a Google nyilvánossá fogja tenni azt a naptárat amelyre fel van iratkozva"
-      ],
-      "This link might be wrong": [
-        "Ez a hivatkozás valószínűleg hibás"
-      ]
-    },
-    "Subscribed calendar section description": {
-      "Add public, external, or shared calendars using a URL.": [
-        "Vegyen fel nyilvános, külső vagy megosztott naptárat URL megadásával."
-      ]
-    },
-    "Subscribed calendar URL length warning": {
-      "URL is too long": [
-        "Az URL túl hosszú"
       ]
     },
     "Subscription attribute": {
@@ -8779,18 +8116,6 @@
       "Bug reported": [
         "Hiba bejelentve"
       ],
-      "Calendar added. It might take a few minutes to sync.": [
-        "Naptár létrehozva. Egy pár percbe telhet a szinkronizálás."
-      ],
-      "Calendar created": [
-        "Naptár létrehozva"
-      ],
-      "Calendar removed": [
-        "Naptár eltávolítva"
-      ],
-      "Calendar updated": [
-        "Naptár frissítve"
-      ],
       "Canceling import": [
         "Importálás megszakítása"
       ],
@@ -8802,9 +8127,6 @@
       ],
       "Credits added": [
         "Kredit hozzáadva"
-      ],
-      "Default calendar updated": [
-        "Alapértelmezett naptár frissítve"
       ],
       "DMARC value copied to clipboard": [
         "A DMARC érték a vágólapra másolva"
@@ -8969,11 +8291,6 @@
         "havonta"
       ]
     },
-    "Summary of errors during export calendar": {
-      "Details about events that couldn't be exported": [
-        "Azon események részletei, melyeket nem sikerült exportálni"
-      ]
-    },
     "Tab in domain modal": {
       "Addresses": [
         "Címek"
@@ -9040,11 +8357,6 @@
         "${ minutes } perc"
       ]
     },
-    "Timezone search placeholder": {
-      "Search timezones": [
-        "Időzóna keresése"
-      ]
-    },
     "Title": {
       "${ appName } Keyboard Shortcuts": [
         "${ appName } gyorsbillentyűk"
@@ -9097,9 +8409,6 @@
       ],
       "Add address": [
         "Cím hozzáadása"
-      ],
-      "Add another notification to remind you of this event": [
-        "További emlékeztető hozzáadása az eseményhez"
       ],
       "Add contact group name": [
         "Adjon nevet a névjegy csoportnak"
@@ -9260,9 +8569,6 @@
       "Create a ${ mailAppName } address": [
         "${ mailAppName } cím létrehozása"
       ],
-      "Create calendar": [
-        "Naptár létrehozása"
-      ],
       "Create your ${ BRAND_NAME } Account": [
         "${ BRAND_NAME } fiók létrehozása"
       ],
@@ -9326,9 +8632,6 @@
       "Delete account": [
         "Fiók törlése"
       ],
-      "Delete calendar": [
-        "Naptár törlése"
-      ],
       "Delete key permanently?": [
         "Kulcs végleges törlése?"
       ],
@@ -9368,9 +8671,6 @@
       "Edit Block List": [
         "Tiltólista szerkesztése"
       ],
-      "Edit calendar": [
-        "Naptár szerkesztése"
-      ],
       "Edit credit/debit card": [
         "Bankkártya szerkesztése"
       ],
@@ -9406,9 +8706,6 @@
       ],
       "Error": [
         "Hiba"
-      ],
-      "Export calendar": [
-        "Naptár exportálása"
       ],
       "Export private key": [
         "Privát kulcs exportálása"
@@ -9618,9 +8915,6 @@
       "Referral tracker": [
         "Meghívás követő"
       ],
-      "Remove calendar": [
-        "Naptár eltávolítása"
-      ],
       "Report a problem": [
         "Probléma jelentése"
       ],
@@ -9648,9 +8942,6 @@
       "Secure email based in Switzerland": [
         "Biztonságos e-mail svájci székhellyel"
       ],
-      "Security": [
-        "Biztonság"
-      ],
       "Security logs": [
         "Biztonsági napló"
       ],
@@ -9662,15 +8953,6 @@
       ],
       "Select contact group": [
         "Névjegy csoport kiválasztása"
-      ],
-      "Select the time to send this notification": [
-        "Válassza ki az emlékeztető elküldésének időpontját"
-      ],
-      "Select the way to send this notification": [
-        "Válassza ki az emlékeztető elküldésének módját"
-      ],
-      "Select when you want this notification to be sent": [
-        "Válassza ki az emlékeztető elküldésének időpontját"
       ],
       "Session management": [
         "Munkamenet-kezelés"
@@ -9810,9 +9092,6 @@
       "Your ${ domain } address is active": [
         "${ domain } címe aktív"
       ],
-      "Your calendar link": [
-        "Az ön naptárának hivatkozása"
-      ],
       "Your current plan": [
         "Jelenlegi csomag"
       ],
@@ -9830,11 +9109,6 @@
       ],
       "ZIP / postal code": [
         "Irányítószám"
-      ]
-    },
-    "Title (number of minutes/hours/days/weeks)": {
-      "Choose a number": [
-        "Válasszon egy számot"
       ]
     },
     "Title for payment methods table": {
@@ -9986,9 +9260,6 @@
       ],
       "This feature is only available for paid users": [
         "Ez a lehetőség csak előfizetéses csomagokban érhető érhető el"
-      ],
-      "This feature is unavailable for the moment": [
-        "Ez a lehetőség jelenleg nem érhető el"
       ],
       "This key cannot be used for encryption": [
         "Ez a kulcs nem használható titkosításhoz"
@@ -10227,243 +9498,6 @@
     "Weak personal key warning": {
       "This key no longer meets our security standards. We suggest you mark it as obsolete and generate a new key.": [
         "Ez a kulcs már nem felel meg a mai biztonsági igényeknek. Javasoljuk, hogy jelölje meg elavultként és hozzon létre új kulcsot."
-      ]
-    },
-    "Weekly recurring event, frequency": {
-      "Every ${ interval } week on ${ multipleDaysString }": [
-        "Minden ${ interval }. héten, ${ multipleDaysString }",
-        "Minden ${ interval }. héten, ${ multipleDaysString }"
-      ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
-        "Minden ${ interval }. héten, ${ multipleDaysString }, ${ timesString }",
-        "Minden ${ interval }. héten, ${ multipleDaysString }, ${ timesString }"
-      ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
-        "Minden ${ interval }. héten, ${ multipleDaysString }, ${ untilString }",
-        "Minden ${ interval }. héten, ${ multipleDaysString }, ${ untilString }"
-      ],
-      "Every ${ interval } week on all days": [
-        "Minden ${ interval }. héten, minden nap",
-        "Minden ${ interval } héten, minden nap"
-      ],
-      "Every ${ interval } week on all days, ${ timesString }": [
-        "Minden ${ interval }. héten, minden nap, ${ timesString }",
-        "Minden ${ interval }. héten, minden nap, ${ timesString }"
-      ],
-      "Every ${ interval } week on all days, ${ untilString }": [
-        "Minden ${ interval }. héten, minden nap, ${ untilString }",
-        "Minden ${ interval }. héten, minden nap, ${ untilString }"
-      ],
-      "Every ${ interval } week on Friday": [
-        "Minden ${ interval }. héten, pénteken",
-        "Minden ${ interval }. héten, pénteken"
-      ],
-      "Every ${ interval } week on Friday, ${ timesString }": [
-        "Minden ${ interval }. héten, pénteken, ${ timesString }",
-        "Minden ${ interval }. héten, pénteken, ${ timesString }"
-      ],
-      "Every ${ interval } week on Friday, ${ untilString }": [
-        "Minden ${ interval }. héten, pénteken, ${ untilString }",
-        "Minden ${ interval }. héten, pénteken, ${ untilString }"
-      ],
-      "Every ${ interval } week on Monday": [
-        "Minden ${ interval }. héten, hétfőn",
-        "Minden ${ interval } héten, hétfőn"
-      ],
-      "Every ${ interval } week on Monday, ${ timesString }": [
-        "Minden ${ interval }. héten, hétfőn, ${ timesString }",
-        "Minden ${ interval }. héten, hétfőn, ${ timesString }"
-      ],
-      "Every ${ interval } week on Monday, ${ untilString }": [
-        "Minden ${ interval }. héten, hétfőn, ${ untilString }",
-        "Minden ${ interval }. héten, hétfőn, ${ untilString }"
-      ],
-      "Every ${ interval } week on Saturday": [
-        "Minden ${ interval }. héten, szombaton",
-        "Minden ${ interval }. héten, szombaton"
-      ],
-      "Every ${ interval } week on Saturday, ${ timesString }": [
-        "Minden ${ interval }. héten, szombaton, ${ timesString }",
-        "Minden ${ interval }. héten, szombaton, ${ timesString }"
-      ],
-      "Every ${ interval } week on Saturday, ${ untilString }": [
-        "Minden ${ interval }. héten, szombaton, ${ untilString }",
-        "Minden ${ interval }. héten, szombaton, ${ untilString }"
-      ],
-      "Every ${ interval } week on Sunday": [
-        "Minden ${ interval }. héten, vasárnap",
-        "Minden ${ interval } héten, vasárnap"
-      ],
-      "Every ${ interval } week on Sunday, ${ timesString }": [
-        "Minden ${ interval }. héten, vasárnap, ${ timesString }",
-        "Minden ${ interval }. héten, vasárnap, ${ timesString }"
-      ],
-      "Every ${ interval } week on Sunday, ${ untilString }": [
-        "Minden ${ interval }. héten, vasárnap, ${ untilString }",
-        "Minden ${ interval }. héten, vasárnap, ${ untilString }"
-      ],
-      "Every ${ interval } week on Thursday": [
-        "Minden ${ interval }. héten, csütörtökön",
-        "Minden ${ interval }. héten, csütörtökön"
-      ],
-      "Every ${ interval } week on Thursday, ${ timesString }": [
-        "Minden ${ interval }. héten, csütörtökön, ${ timesString }",
-        "Minden ${ interval }. héten, csütörtökön, ${ timesString }"
-      ],
-      "Every ${ interval } week on Thursday, ${ untilString }": [
-        "Minden ${ interval }. héten, csütörtökön, ${ untilString }",
-        "Minden ${ interval }. héten, csütörtökön, ${ untilString }"
-      ],
-      "Every ${ interval } week on Tuesday": [
-        "Minden ${ interval }. héten, kedden",
-        "Minden ${ interval }. héten, kedden"
-      ],
-      "Every ${ interval } week on Tuesday, ${ timesString }": [
-        "Minden ${ interval }. héten, kedden, ${ timesString }",
-        "Minden ${ interval }. héten, kedden, ${ timesString }"
-      ],
-      "Every ${ interval } week on Tuesday, ${ untilString }": [
-        "Minden ${ interval }. héten, kedden, ${ untilString }",
-        "Minden ${ interval }. héten, kedden, ${ untilString }"
-      ],
-      "Every ${ interval } week on Wednesday": [
-        "Minden ${ interval }. héten, szerdán",
-        "Minden ${ interval }. héten, szerdán"
-      ],
-      "Every ${ interval } week on Wednesday, ${ timesString }": [
-        "Minden ${ interval }. héten, szerdán, ${ timesString }",
-        "Minden ${ interval }. héten, szerdán, ${ timesString }"
-      ],
-      "Every ${ interval } week on Wednesday, ${ untilString }": [
-        "Minden ${ interval }. héten, szerdán, ${ untilString }",
-        "Minden ${ interval }. héten, szerdán, ${ untilString }"
-      ],
-      "Weekly on ${ multipleDaysString }": [
-        "Hetente ${ multipleDaysString }"
-      ],
-      "Weekly on ${ multipleDaysString }, ${ timesString }": [
-        "Hetente ${ multipleDaysString }, ${ timesString }"
-      ],
-      "Weekly on ${ multipleDaysString }, ${ untilString }": [
-        "Hetente ${ multipleDaysString }, ${ untilString }"
-      ],
-      "Weekly on all days": [
-        "Hetente, minden nap"
-      ],
-      "Weekly on all days, ${ timesString }": [
-        "Hetente minden nap, ${ timesString }"
-      ],
-      "Weekly on all days, ${ untilString }": [
-        "Hetente minden nap, ${ untilString }"
-      ],
-      "Weekly on Friday": [
-        "Minden pénteken"
-      ],
-      "Weekly on Friday, ${ timesString }": [
-        "Minden pénteken, ${ timesString }"
-      ],
-      "Weekly on Friday, ${ untilString }": [
-        "Hetente, péntekenként, ${ untilString }"
-      ],
-      "Weekly on Monday": [
-        "Minden hétfőn"
-      ],
-      "Weekly on Monday, ${ timesString }": [
-        "Minden hétfőn, ${ timesString }"
-      ],
-      "Weekly on Monday, ${ untilString }": [
-        "Minden hétfőn, ${ untilString }"
-      ],
-      "Weekly on Saturday": [
-        "Minden szombaton"
-      ],
-      "Weekly on Saturday, ${ timesString }": [
-        "Minden szombaton, ${ timesString }"
-      ],
-      "Weekly on Saturday, ${ untilString }": [
-        "Hetente, szombatonként, ${ untilString }"
-      ],
-      "Weekly on Sunday": [
-        "Minden vasárnap"
-      ],
-      "Weekly on Sunday, ${ timesString }": [
-        "Minden vasárnap, ${ timesString }"
-      ],
-      "Weekly on Sunday, ${ untilString }": [
-        "Minden vasárnap, ${ untilString }"
-      ],
-      "Weekly on Thursday": [
-        "Minden csütörtökön"
-      ],
-      "Weekly on Thursday, ${ timesString }": [
-        "Minden csütörtökön, ${ timesString }"
-      ],
-      "Weekly on Thursday, ${ untilString }": [
-        "Hetente, csütörtökönként, ${ untilString }"
-      ],
-      "Weekly on Tuesday": [
-        "Minden kedden"
-      ],
-      "Weekly on Tuesday, ${ timesString }": [
-        "Minden kedden, ${ timesString }"
-      ],
-      "Weekly on Tuesday, ${ untilString }": [
-        "Minden kedden, ${ untilString }"
-      ],
-      "Weekly on Wednesday": [
-        "Minden szerdán"
-      ],
-      "Weekly on Wednesday, ${ timesString }": [
-        "Minden szerdán, ${ timesString }"
-      ],
-      "Weekly on Wednesday, ${ untilString }": [
-        "Hetente, szerdánként, ${ untilString }"
-      ]
-    },
-    "Weekly recurring event, repeats on (multiple days), frequency": {
-      "Friday": [
-        "Péntek"
-      ],
-      "Monday": [
-        "Hétfő"
-      ],
-      "Saturday": [
-        "Szombat"
-      ],
-      "Sunday": [
-        "Vasárnap"
-      ],
-      "Thursday": [
-        "Csütörtök"
-      ],
-      "Tuesday": [
-        "Kedd"
-      ],
-      "Wednesday": [
-        "Szerda"
-      ]
-    },
-    "Yearly recurring event, frequency": {
-      "Every ${ interval } year": [
-        "Minden ${ interval }. évben",
-        "Minden ${ interval }. évben"
-      ],
-      "Every ${ interval } year, ${ timesString }": [
-        "Minden ${ interval }. évben, ${ timesString }",
-        "Minden ${ interval }. évben, ${ timesString }"
-      ],
-      "Every ${ interval } year, ${ untilString }": [
-        "Minden ${ interval }. évben, ${ untilString }",
-        "Minden ${ interval }. évben, ${ untilString }"
-      ],
-      "Yearly": [
-        "Évente"
-      ],
-      "Yearly, ${ timesString }": [
-        "Évente, ${ timesString }"
-      ],
-      "Yearly, ${ untilString }": [
-        "Évente, ${ untilString }"
       ]
     }
   }

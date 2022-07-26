@@ -440,11 +440,6 @@
         "Sinkronizacija"
       ]
     },
-    "Collapsible tooltip": {
-      "Close": [
-        "Zatvori"
-      ]
-    },
     "Confirmation message to delete payment method": {
       "Are you sure you want to delete this payment method?": [
         "Jeste li sigurni da želite ukloniti ovaj način plaćanja?"
@@ -573,9 +568,6 @@
       "Burkina Faso": [
         "Burkina Faso"
       ],
-      "Burma": [
-        "Myanmar"
-      ],
       "Burundi": [
         "Burundi"
       ],
@@ -642,6 +634,9 @@
       "Czech Republic": [
         "Češka"
       ],
+      "Côte d'Ivoire": [
+        "Obala Bjelokosti"
+      ],
       "Denmark": [
         "Danska"
       ],
@@ -671,6 +666,9 @@
       ],
       "Estonia": [
         "Estonija"
+      ],
+      "Eswatini": [
+        "Svazi"
       ],
       "Ethiopia": [
         "Etiopija"
@@ -899,6 +897,9 @@
       ],
       "Mozambique": [
         "Mozambik"
+      ],
+      "Myanmar": [
+        "Mjanmar"
       ],
       "Namibia": [
         "Namibija"
@@ -1314,9 +1315,6 @@
       ]
     },
     "Error message": {
-      "Brace yourself till we get the error fixed.": [
-        "Molimo pričekajte dok ne popravimo pogrešku."
-      ],
       "Error: ${ errorMessage }": [
         "Pogreška: ${ errorMessage }"
       ],
@@ -2203,6 +2201,11 @@
     "new_plans: signup": {
       "Subscription": [
         "Pretplata"
+      ]
+    },
+    "new_plans: tooltip": {
+      "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections..": [
+        "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections."
       ]
     },
     "Notification": {

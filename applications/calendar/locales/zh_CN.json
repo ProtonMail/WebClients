@@ -753,14 +753,6 @@
         "周"
       ]
     },
-    "Collapsible tooltip": {
-      "Close": [
-        "关闭"
-      ],
-      "Open": [
-        "打开"
-      ]
-    },
     "Contact field label": {
       "Address": [
         "地址"
@@ -1228,8 +1220,8 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "此字段至少需要 ${ minimumLength } 个字符。"
       ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "此邮件含有浏览器不能打开的链接"
+      "This message may contain some link's URL that cannot be properly opened by your current browser": [
+        "This message may contain some link's URL that cannot be properly opened by your current browser."
       ],
       "Trusted keys are not valid for sending": [
         "已信任的密钥对发送无效"
@@ -1319,9 +1311,6 @@
       ]
     },
     "Error message": {
-      "Brace yourself till we get the error fixed.": [
-        "别担心，我们会解决的。"
-      ],
       "Error: ${ errorMessage }": [
         "错误：${ errorMessage }"
       ],
@@ -1808,9 +1797,6 @@
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "选择向该地址发送邮件的首选格式"
-      ],
-      "Select what you want to move from Google.": [
-        "Select what you want to import from Google."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "服务器无法访问，请过几分钟后再试"
@@ -2484,11 +2470,6 @@
         "标签名称"
       ]
     },
-    "new_plans: info": {
-      "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
-        "Introducing Proton’s refreshed look.${ br }Many services, one mission. Welcome to an internet where privacy is the default."
-      ]
-    },
     "Notification": {
       "Contact group created": [
         "群组已创建"
@@ -2675,9 +2656,6 @@
       ]
     },
     "Participants expand button label": {
-      "Collapse participants list": [
-        "收起参与者名单"
-      ],
       "Expand participants list": [
         "展开参与者列表"
       ]
@@ -2829,7 +2807,7 @@
         "版本说明"
       ],
       "Upgrade storage": [
-        "升级存储空间"
+        "付费扩容"
       ],
       "Your current storage:": [
         "您当前的存储空间："

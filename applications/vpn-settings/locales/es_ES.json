@@ -466,11 +466,6 @@
         "Han pasado más de 12 horas desde la última actualización"
       ]
     },
-    "Collapsible tooltip": {
-      "Close": [
-        "Cerrar"
-      ]
-    },
     "Confirmation message to delete payment method": {
       "Are you sure you want to delete this payment method?": [
         "¿Está seguro que desea eliminar esta forma de pago?"
@@ -597,9 +592,6 @@
       "Burkina Faso": [
         "Burkina Faso"
       ],
-      "Burma": [
-        "Myanmar"
-      ],
       "Burundi": [
         "Burundi"
       ],
@@ -666,6 +658,9 @@
       "Czech Republic": [
         "República Checa"
       ],
+      "Côte d'Ivoire": [
+        "Costa de Marfil"
+      ],
       "Denmark": [
         "Dinamarca"
       ],
@@ -695,6 +690,9 @@
       ],
       "Estonia": [
         "Estonia"
+      ],
+      "Eswatini": [
+        "Eswatini"
       ],
       "Ethiopia": [
         "Etiopía"
@@ -929,6 +927,9 @@
       ],
       "Mozambique": [
         "Mozambique"
+      ],
+      "Myanmar": [
+        "Myanmar"
       ],
       "Namibia": [
         "Namibia"
@@ -1358,9 +1359,6 @@
       ]
     },
     "Error message": {
-      "Brace yourself till we get the error fixed.": [
-        "Espera un tiempo hasta que corrijamos el error."
-      ],
       "Error: ${ errorMessage }": [
         "Error: ${ errorMessage }"
       ],
@@ -2724,9 +2722,6 @@
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
         "Solo se puede usar IMAP con aplicaciones de escritorio (Outlook, Mail de Apple o Thunderbird) mediante ${ MAIL_APP_NAME } Bridge. De momento, no existe compatibilidad con integraciones IMAP en la nube."
       ],
-      "Keeps you protected by blocking all network connections when you are accidentally disconnected from our VPN server": [
-        "Te protege bloqueando todas las conexiones de red si se produce una desconexión accidental de nuestro servidor VPN"
-      ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Las etiquetas son muy fáciles de añadir a los mensajes y te permiten encontrarlos fácilmente o aplicar filtros"
       ],
@@ -2742,8 +2737,8 @@
       "On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
         "Es más, puedes añadir hasta 5 calendarios de amigos, familiares, compañeros y organizaciones."
       ],
-      "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections": [
-        "Cada conexión VPN permite que un solo dispositivo se conecte a Proton VPN en cualquier momento; por ejemplo, para conectar un teléfono y un portátil a la vez necesitas dos conexiones VPN"
+      "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections..": [
+        "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Opción para ver las bandejas de entrada de los usuarios no privados como ellos lo hacen, incluidos el mensaje completo y los datos de contacto"

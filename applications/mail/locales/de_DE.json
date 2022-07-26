@@ -155,6 +155,9 @@
       "Close this banner": [
         "Dieses Banner schließen"
       ],
+      "Collapse URL": [
+        "URL ausblenden"
+      ],
       "Color": [
         "Farbe"
       ],
@@ -300,6 +303,9 @@
       ],
       "Email settings": [
         "E-Mail-Einstellungen"
+      ],
+      "Emoji": [
+        "Emoji"
       ],
       "Enable": [
         "Aktivieren"
@@ -572,6 +578,9 @@
       "Move to spam": [
         "In Spam-Ordner verschieben"
       ],
+      "Move to spam and unsubscribe": [
+        "In den Spam verschieben und abbestellen"
+      ],
       "Move to trash": [
         "In den Papierkorb verschieben"
       ],
@@ -754,6 +763,9 @@
       ],
       "Search": [
         "Suchen"
+      ],
+      "Search countries": [
+        "Länder durchsuchen"
       ],
       "Search in ${ option.text }": [
         "Suchen in ${ option.text }"
@@ -1600,14 +1612,17 @@
       ]
     },
     "Collapsible tooltip": {
-      "Close": [
-        "Schließen"
+      "Collapse": [
+        "Reduzieren"
       ],
-      "Open": [
-        "Öffnen"
+      "Expand": [
+        "Erweitern"
       ]
     },
     "color": {
+      "Apple": [
+        "apple"
+      ],
       "carrot": [
         "Karotte"
       ],
@@ -1943,9 +1958,6 @@
       "Burkina Faso": [
         "Burkina Faso"
       ],
-      "Burma": [
-        "Myanmar"
-      ],
       "Burundi": [
         "Burundi"
       ],
@@ -2000,9 +2012,6 @@
       "Costa Rica": [
         "Costa Rica"
       ],
-      "Cote d'Ivoire\"": [
-        "Côte d'Ivoire"
-      ],
       "Croatia": [
         "Kroatien"
       ],
@@ -2017,6 +2026,9 @@
       ],
       "Czech Republic": [
         "Tschechische Republik"
+      ],
+      "Côte d'Ivoire": [
+        "Elfenbeinküste"
       ],
       "Denmark": [
         "Dänemark"
@@ -2047,6 +2059,9 @@
       ],
       "Estonia": [
         "Estland"
+      ],
+      "Eswatini": [
+        "Königreich Eswatini (vormals Swasiland)"
       ],
       "Ethiopia": [
         "Äthiopien"
@@ -2291,6 +2306,9 @@
       "Mozambique": [
         "Mosambik"
       ],
+      "Myanmar": [
+        "Myanmar"
+      ],
       "Namibia": [
         "Namibia"
       ],
@@ -2482,9 +2500,6 @@
       ],
       "Svalbard and Jan Mayen": [
         "Spitzbergen und Jan Mayen"
-      ],
-      "Swaziland": [
-        "Eswatini"
       ],
       "Sweden": [
         "Schweden"
@@ -2681,7 +2696,7 @@
     },
     "Description": {
       "Decrypting contacts... This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
-        "Kontakte werden entschlüsselt… Dies kann einige Minuten dauern. Wenn der Vorgang abgeschlossen ist, kannst du die Datei mit den exportierten Kontakten herunterladen."
+        "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported."
       ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Kontakte werden gelöscht… Dies kann ein paar Minuten dauern. Wenn der Vorgang abgeschlossen ist, können Sie dieses Dialogfenster schließen."
@@ -3253,7 +3268,7 @@
       ]
     },
     "Error importing event": {
-      "Calendar timezone not supported": [
+      "Calendar time zone not supported": [
         "Kalenderzeitzone wird nicht unterstützt"
       ],
       "Component with wrong format": [
@@ -3322,8 +3337,8 @@
       "Start time out of bounds": [
         "Startzeit außerhalb des Bereichs"
       ],
-      "Timezone not supported": [
-        "Zeitzone nicht unterstützt"
+      "Time zone not supported": [
+        "Zeitzone wird nicht unterstützt"
       ],
       "To-do entry": [
         "Eintrag „Zu erledigen”"
@@ -3333,9 +3348,6 @@
       ]
     },
     "Error message": {
-      "Brace yourself till we get the error fixed.": [
-        "Bitte gedulde dich, bis der Fehler behoben wurde."
-      ],
       "Error: ${ errorMessage }": [
         "Fehler: ${ errorMessage }"
       ],
@@ -3350,6 +3362,9 @@
       ],
       "Please ${ refresh } or check your connection.": [
         "Bitte ${ refresh } oder überprüfen Sie Ihre Verbindung."
+      ],
+      "Something went wrong. Please refresh the page or try again later.": [
+        "Ein Problem ist aufgetreten. Bitte die Seite aktualisieren oder später erneut versuchen."
       ],
       "There was a problem connecting to Proton.": [
         "Es gab ein Problem bei der Verbindung zu Proton."
@@ -4124,7 +4139,7 @@
         "Möchten Sie den Kontakt neu signieren?"
       ],
       "Don't forget to share your password with the recipient": [
-        "Vergessen Sie nicht, dem Empfänger das neue Passwort mitzuteilen"
+        "Don't forget to share the password with the recipient"
       ],
       "Download our mobile application from your favorite app store to communicate securely on-the-go.": [
         "Laden Sie unsere mobile App aus Ihrem bevorzugten App-Store herunter, um auch von unterwegs sicher zu kommunizieren."
@@ -4262,7 +4277,7 @@
         "Stunden"
       ],
       "I'm sending this message to a non-ProtonMail user.": [
-        "Ich sende diese Nachricht an einen Nicht-Proton Mail-Benutzer."
+        "I'm sending this message to a non-Proton Mail user."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Wenn Sie Probleme bei der Erstellung Ihres Kontos haben, stellen Sie bitte eine Anfrage, und wir werden Ihnen innerhalb eines Werktages antworten."
@@ -4475,8 +4490,8 @@
       "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
         "PGP/Inline ist nur mit dem Klartext-Format kompatibel. Bitte beachte, dass ${ MAIL_APP_NAME } verschlüsselte Nachrichten immer signiert."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
-        "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages."
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        "PGP/MIME sendet die Nachricht automatisch unter Verwendung des aktuellen Verfassen-Modus. Bitte beachte, dass ${ MAIL_APP_NAME } verschlüsselte Nachrichten immer signiert."
       ],
       "Phone number": [
         "Telefonnummer"
@@ -4486,6 +4501,9 @@
       ],
       "Please add at least one recipient.": [
         "Bitte mindestens einen Empfänger angeben."
+      ],
+      "Please fill out this field.": [
+        "Bitte fülle dieses Feld aus."
       ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
         "Bitte bewahre sie sicher auf. Du benötigst sie, um auf dein Konto zuzugreifen und deine Daten zu entschlüsseln, falls du dein Passwort zurücksetzen musst."
@@ -4584,8 +4602,8 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Wähle das Nachrichtenformat, das standardmäßig verwendet werden soll, wenn eine Nachricht an diese E-Mail-Adresse gesendet wird."
       ],
-      "Select what you want to move from Google.": [
-        "Wähle aus, was du von Google verschieben möchtest."
+      "Select what you want to import from Google.": [
+        "Auswählen, was aus Google importieren werden soll."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Bitte wählen Sie die zu importierenden Kalender aus. Für jeden importierten Kalender wird ein neuer Kalender erstellt, bis die Grenze von 20 Kalendern erreicht ist."
@@ -4711,6 +4729,10 @@
       "This conversation contains trashed messages.": [
         "Diese Unterhaltung enthält gelöschte Nachrichten."
       ],
+      "This conversation will be marked as spam. Would you also like to unsubscribe from future emails?": [
+        "Diese Unterhaltung wird als Spam markiert. Möchtest du dich auch von zukünftigen E-Mails abmelden?",
+        "Diese Unterhaltungen werden als Spam markiert. Möchtest du dich auch von zukünftigen E-Mails abmelden?"
+      ],
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded!": [
         "Diese E-Mail hat die Domain-Authentifizierungsanforderungen nicht bestanden. Sie könnte gefälscht oder unsachgemäß weitergeleitet worden sein!"
       ],
@@ -4743,6 +4765,10 @@
       ],
       "This message is signed by the key attached, that has not been trusted yet.": [
         "Diese Nachricht ist mit dem beigefügten Schlüssel signiert, dem noch nicht vertraut wurde."
+      ],
+      "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
+        "Diese Nachricht wird als Spam markiert. Möchtest du dich auch von zukünftigen E-Mails abmelden?",
+        "Diese Nachrichten werden als Spam markiert. Möchtest du dich auch von zukünftigen E-Mails abmelden?"
       ],
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
         "Diese Nachricht wird in den Ordner „Entwürfe” verschoben, damit Sie diese bearbeiten können. Sie müssen den Zeitpunkt zum Versenden der Nachricht neu festlegen."
@@ -5593,6 +5619,9 @@
       "Region": [
         "Region"
       ],
+      "Remember my choice": [
+        "Auswahl merken"
+      ],
       "Reveal password": [
         "Passwort anzeigen"
       ],
@@ -5828,6 +5857,9 @@
       ],
       "Learn more": [
         "Mehr erfahren"
+      ],
+      "Less": [
+        "Weniger"
       ],
       "Manage your folders": [
         "Ordner verwalten"
@@ -6180,7 +6212,7 @@
       ]
     },
     "new_plans: info": {
-      "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
+      "Introducing Proton’s refreshed look.${ br }Many services, one mission. Welcome to an internet where privacy is the default.": [
         "Proton präsentiert sein neues Design.${ br } Viele Dienste, eine Mission. Willkommen bei einem Internet, bei dem der Schutz der Privatsphäre Standard ist."
       ]
     },
@@ -6540,7 +6572,7 @@
         "An die E-Mail-Adresse des Organisators konnte nicht gesendet werden: ${ errorMessage }"
       ],
       "Re-encrypting invitation failed. Please try again": [
-        "Das Neuverschlüsseln der Einladung ist fehlgeschlagen. Bitte versuche es erneut"
+        "Re-encrypting invitation failed. Please try again."
       ]
     },
     "Search - no results": {
@@ -7356,6 +7388,9 @@
       ],
       "Move to inbox (not spam)": [
         "In den Posteingang verschieben (kein Spam)"
+      ],
+      "Move to spam": [
+        "In Spam-Ordner verschieben"
       ],
       "Move to trash": [
         "In den Papierkorb verschieben"

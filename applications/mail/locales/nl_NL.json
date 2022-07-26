@@ -155,6 +155,9 @@
       "Close this banner": [
         "Sluit deze banner"
       ],
+      "Collapse URL": [
+        "URL inklappen"
+      ],
       "Color": [
         "Kleur"
       ],
@@ -300,6 +303,9 @@
       ],
       "Email settings": [
         "E-mailinstellingen"
+      ],
+      "Emoji": [
+        "Emoji"
       ],
       "Enable": [
         "Inschakelen"
@@ -572,6 +578,9 @@
       "Move to spam": [
         "Naar spam verplaatsen"
       ],
+      "Move to spam and unsubscribe": [
+        "Verplaatsen naar spam en afmelden"
+      ],
       "Move to trash": [
         "Naar prullenbak verplaatsen"
       ],
@@ -754,6 +763,9 @@
       ],
       "Search": [
         "Zoeken"
+      ],
+      "Search countries": [
+        "Zoek landen"
       ],
       "Search in ${ option.text }": [
         "Zoeken in ${ option.text }"
@@ -1538,10 +1550,10 @@
         "De agenda is te groot"
       ],
       "Calendar link is not accessible": [
-        "Agendalink is niet toegankelijk"
+        "Agendakoppeling is niet toegankelijk"
       ],
       "Calendar link is temporarily inaccessible": [
-        "Agendalink is tijdelijk ontoegankelijk"
+        "Agendakoppeling is tijdelijk ontoegankelijk"
       ],
       "Failed to sync calendar": [
         "Synchronisatie van de agenda is mislukt"
@@ -1562,16 +1574,16 @@
       ]
     },
     "Collapsible tooltip": {
-      "Close": [
-        "Sluiten"
+      "Collapse": [
+        "Inklappen"
       ],
-      "Open": [
-        "Open"
+      "Expand": [
+        "Uitvouwen"
       ]
     },
     "color": {
       "Apple": [
-        "Apple"
+        "apple"
       ],
       "azureish white": [
         "azuurwit"
@@ -2007,9 +2019,6 @@
       "Burkina Faso": [
         "Burkina Faso"
       ],
-      "Burma": [
-        "Myanmar"
-      ],
       "Burundi": [
         "Boeroendi"
       ],
@@ -2064,9 +2073,6 @@
       "Costa Rica": [
         "Costa Rica"
       ],
-      "Cote d'Ivoire\"": [
-        "Côte d'Ivoire"
-      ],
       "Croatia": [
         "Kroatië"
       ],
@@ -2081,6 +2087,9 @@
       ],
       "Czech Republic": [
         "Tsjechië"
+      ],
+      "Côte d'Ivoire": [
+        "Ivoorkust"
       ],
       "Denmark": [
         "Denemarken"
@@ -2111,6 +2120,9 @@
       ],
       "Estonia": [
         "Estland"
+      ],
+      "Eswatini": [
+        "Swaziland"
       ],
       "Ethiopia": [
         "Ethiopië"
@@ -2355,6 +2367,9 @@
       "Mozambique": [
         "Mozambique"
       ],
+      "Myanmar": [
+        "Myanmar"
+      ],
       "Namibia": [
         "Namibië"
       ],
@@ -2546,9 +2561,6 @@
       ],
       "Svalbard and Jan Mayen": [
         "Spitsbergen en Jan Mayen"
-      ],
-      "Swaziland": [
-        "Eswatini"
       ],
       "Sweden": [
         "Zweden"
@@ -2745,7 +2757,7 @@
     },
     "Description": {
       "Decrypting contacts... This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
-        "Contactpersonen decoderen... Dit kan enkele minuten duren. Wanneer het proces is voltooid, kunt u het bestand downloaden met al uw contacten geëxporteerd."
+        "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported."
       ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Contactpersonen verwijderen... Dit kan enkele minuten duren. Wanneer het proces is voltooid, kunt u dit venster sluiten."
@@ -3212,7 +3224,7 @@
         "Dit bericht is al verzonden. Er is een nieuw concept opgeslagen."
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
-        "Dit bericht kan links bevatten die niet op de juiste wijze geopend worden door uw huidige browser"
+        "Dit bericht kan koppelingen bevatten die niet op de juiste wijze geopend worden door uw huidige browser"
       ],
       "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
         "Te veel actieve filters. Upgrade naar een betaald abonnement om meer filters te activeren."
@@ -3317,8 +3329,8 @@
       ]
     },
     "Error importing event": {
-      "Calendar timezone not supported": [
-        "Agendatijdzone niet ondersteund"
+      "Calendar time zone not supported": [
+        "Agenda-tijdzone niet ondersteund"
       ],
       "Component with wrong format": [
         "Component met verkeerde indeling"
@@ -3386,7 +3398,7 @@
       "Start time out of bounds": [
         "Begintijd valt buiten de grenzen"
       ],
-      "Timezone not supported": [
+      "Time zone not supported": [
         "Tijdzone niet ondersteund"
       ],
       "To-do entry": [
@@ -3397,9 +3409,6 @@
       ]
     },
     "Error message": {
-      "Brace yourself till we get the error fixed.": [
-        "Wacht rustig af terwijl wij de fout herstellen."
-      ],
       "Error: ${ errorMessage }": [
         "Fout: ${ errorMessage }"
       ],
@@ -3414,6 +3423,9 @@
       ],
       "Please ${ refresh } or check your connection.": [
         "${ refresh } alstublieft of controleer uw verbinding."
+      ],
+      "Something went wrong. Please refresh the page or try again later.": [
+        "Er is iets misgegaan. Vernieuw de pagina of probeer het later opnieuw."
       ],
       "There was a problem connecting to Proton.": [
         "Fout bij het verbinden met Proton."
@@ -4188,7 +4200,7 @@
         "Wilt u de contactgegevens opnieuw ondertekenen?"
       ],
       "Don't forget to share your password with the recipient": [
-        "Vergeet uw wachtwoord niet te delen met de ontvanger"
+        "Don't forget to share the password with the recipient"
       ],
       "Download our mobile application from your favorite app store to communicate securely on-the-go.": [
         "Download onze mobiele applicatie van uw favoriete app store om veilig onderweg te communiceren."
@@ -4326,7 +4338,7 @@
         "Uren"
       ],
       "I'm sending this message to a non-ProtonMail user.": [
-        "Ik verzend dit bericht naar een niet-ProtonMail-gebruiker."
+        "I'm sending this message to a non-Proton Mail user."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Als u problemen ondervindt met het aanmaken van uw account, vraag dan een uitnodiging aan. Wij reageren op uw verzoek binnen een werkdag."
@@ -4539,8 +4551,8 @@
       "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
         "PGP/Inline is alleen compatibel met tekst zonder opmaak. Houd er rekening mee dat ${ MAIL_APP_NAME } altijd versleutelde berichten tekent."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
-        "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages."
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        "PGP/MIME stuurt de berichten automatisch aan de hand van de opmaak in het opstelvenster. Denk eraan dat ${ MAIL_APP_NAME } versleutelde berichten ook altijd ondertekent."
       ],
       "Phone number": [
         "Telefoonnummer"
@@ -4550,6 +4562,9 @@
       ],
       "Please add at least one recipient.": [
         "Vul minstens één ontvanger in."
+      ],
+      "Please fill out this field.": [
+        "Gelieve dit veld in te vullen."
       ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
         "Bewaar het veilig. U hebt het nodig om toegang te krijgen tot uw account en om uw gegevens te decoderen in geval van een nieuw wachtwoord."
@@ -4648,7 +4663,7 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Selecteer het e-mailformaat dat u standaard wil gebruiken wanneer u een e-mail stuurt aan deze geadresseerde."
       ],
-      "Select what you want to move from Google.": [
+      "Select what you want to import from Google.": [
         "Selecteer wat u wil importeren vanaf Google."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
@@ -4676,7 +4691,7 @@
         "Sessie verlopen"
       ],
       "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
-        "Stel ${ MAIL_APP_NAME } in als uw standaard e-mailapplicatie voor deze browser. ${ MAIL_APP_NAME } wordt automatisch geopend wanneer u op een e-maillink klikt."
+        "Stel ${ MAIL_APP_NAME } in als uw standaard e-mailapplicatie voor deze browser. ${ MAIL_APP_NAME } wordt automatisch geopend wanneer u op een e-mailkoppeling klikt."
       ],
       "Set a recovery phrase": [
         "Stel een herstelzin in"
@@ -4718,7 +4733,7 @@
         "ondersteuningsteam"
       ],
       "Test link": [
-        "Link testen"
+        "Koppeling testen"
       ],
       "Text color": [
         "Tekstkleur"
@@ -4775,6 +4790,10 @@
       "This conversation contains trashed messages.": [
         "Dit gesprek bevat berichten die zich in de prullenbak bevinden."
       ],
+      "This conversation will be marked as spam. Would you also like to unsubscribe from future emails?": [
+        "Dit gesprek wordt gemarkeerd als spam. Wilt u zich ook afmelden van toekomstige e-mails?",
+        "Deze gesprekken worden gemarkeerd als spam. Wilt u zich ook afmelden van toekomstige e-mails?"
+      ],
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded!": [
         "Dit e-mailadres gebruikt foutieve domeininstellingen. Het kan een nepbericht zijn, of het is op de verkeerde manier doorgestuurd!"
       ],
@@ -4782,13 +4801,13 @@
         "Deze uitnodiging is opgeslagen in een uitgeschakelde agenda."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
-        "Deze link leidt naar een website die mogelijk uw informatie, zoals wachtwoorden en kredietkaartgegevens, tracht te stelen."
+        "Deze koppeling leidt naar een website die mogelijk uw informatie, zoals wachtwoorden en kredietkaartgegevens, tracht te stelen."
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Deze link kan een homografie-aanval zijn en kan niet geopend worden in Internet Explorer en Edge. Als u zeker bent dat de link legitiem is, gebruik dan een andere browser om het te bezoeken."
+        "Deze koppeling kan een homografie-aanval zijn en kan niet geopend worden in Internet Explorer en Edge. Als u zeker bent dat de link legitiem is, gebruik dan een andere browser om het te bezoeken."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
-        "Deze link kan een homografie-aanval zijn. Controleer eerst of de link juist is, of open hem niet."
+        "Deze koppeling kan een homografie-aanval zijn. Controleer eerst of de koppeling juist is, of open hem niet."
       ],
       "This message has been adjusted to comply with a dark background.": [
         "Dit bericht werd gewijzigd om overeen te komen met een donkere achtergrond."
@@ -4807,6 +4826,10 @@
       ],
       "This message is signed by the key attached, that has not been trusted yet.": [
         "Dit bericht is ondertekend door de bijgevoegde sleutel, die nog niet als vertrouwd is aangemerkt."
+      ],
+      "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
+        "Dit bericht wordt gemarkeerd als spam. Wilt u zich ook afmelden van toekomstige e-mails?",
+        "Deze berichten worden gemarkeerd als spam. Wilt u zich ook afmelden van toekomstige e-mails?"
       ],
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
         "Dit bericht zal worden verplaatst naar Concepten, zodat u het kunt bewerken. U zult opnieuw moeten plannen wanneer het verzonden wordt."
@@ -5224,7 +5247,7 @@
         "Ga naar Prullenbak"
       ],
       "Insert link": [
-        "Link invoegen"
+        "Koppeling invoegen"
       ],
       "Jump to first": [
         "Spring naar eerste"
@@ -5657,6 +5680,9 @@
       "Region": [
         "Regio/Provincie"
       ],
+      "Remember my choice": [
+        "Mijn keuze onthouden"
+      ],
       "Reveal password": [
         "Wachtwoord tonen"
       ],
@@ -5892,6 +5918,9 @@
       ],
       "Learn more": [
         "Meer informatie"
+      ],
+      "Less": [
+        "Minder"
       ],
       "Manage your folders": [
         "Mappen beheren"
@@ -6244,8 +6273,8 @@
       ]
     },
     "new_plans: info": {
-      "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
-        "Ontdek de nieuwe look van Proton.${ br } Veel diensten, één missie. Welkom in een internetomgeving waar privacy de standaard is."
+      "Introducing Proton’s refreshed look.${ br }Many services, one mission. Welcome to an internet where privacy is the default.": [
+        "Ontdek de nieuwe look van Proton.${ br }Veel diensten, één missie. Welkom in een internetomgeving waar privacy de standaard is."
       ]
     },
     "new_plans: label": {
@@ -6431,7 +6460,7 @@
         "Afbeeldings-URL"
       ],
       "Link": [
-        "Link"
+        "Koppeling"
       ],
       "Mailbox password": [
         "Mailboxwachtwoord"
@@ -6604,7 +6633,7 @@
         "Kan niet verzenden naar organisatieadres: ${ errorMessage }"
       ],
       "Re-encrypting invitation failed. Please try again": [
-        "Uitnodiging voor herversleuteling mislukt. Probeer het opnieuw"
+        "Re-encrypting invitation failed. Please try again."
       ]
     },
     "Search - no results": {
@@ -7420,6 +7449,9 @@
       ],
       "Move to inbox (not spam)": [
         "Verplaatsen naar inbox (geen spam)"
+      ],
+      "Move to spam": [
+        "Naar spam verplaatsen"
       ],
       "Move to trash": [
         "Naar prullenbak verplaatsen"

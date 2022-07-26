@@ -296,6 +296,9 @@
       "OK": [
         "OK"
       ],
+      "Open in a new tab": [
+        "新しいタブで開く"
+      ],
       "Open navigation": [
         "ナビゲーションを開く"
       ],
@@ -400,6 +403,9 @@
       ],
       "Skip": [
         "スキップ"
+      ],
+      "Start import": [
+        "インポート開始"
       ],
       "Start setup": [
         "セットアップを開始"
@@ -823,14 +829,6 @@
         "時間範囲の変更"
       ]
     },
-    "Collapsible tooltip": {
-      "Close": [
-        "閉じる"
-      ],
-      "Open": [
-        "開く"
-      ]
-    },
     "colon": {
       ": ": [
         ": "
@@ -1097,9 +1095,6 @@
       "Burkina Faso": [
         "ブルキナファソ"
       ],
-      "Burma": [
-        "ビルマ"
-      ],
       "Burundi": [
         "ブルンジ"
       ],
@@ -1153,9 +1148,6 @@
       ],
       "Costa Rica": [
         "コスタリカ"
-      ],
-      "Cote d'Ivoire\"": [
-        "コートジボワール"
       ],
       "Croatia": [
         "クロアチア"
@@ -1636,9 +1628,6 @@
       ],
       "Svalbard and Jan Mayen": [
         "スヴァールバル諸島およびヤンマイエン島"
-      ],
-      "Swaziland": [
-        "スワジランド"
       ],
       "Sweden": [
         "スウェーデン"
@@ -2168,8 +2157,8 @@
       "This label name is not available. Please choose a different name.": [
         "このラベル名は利用できません。別の名前を選択してください。"
       ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "このメッセージは、現在お使いのブラウザでは適切に開くことができないリンクのURLを含んでいる可能性があります。"
+      "This message may contain some link's URL that cannot be properly opened by your current browser": [
+        "This message may contain some link's URL that cannot be properly opened by your current browser."
       ],
       "Trusted keys are not valid for sending": [
         "信頼された鍵は送信に有効ではありません"
@@ -2260,9 +2249,6 @@
       "Calendar": [
         "カレンダー"
       ],
-      "Calendar timezone not supported": [
-        "カレンダーのタイムゾーンはサポートされていません"
-      ],
       "Component with wrong format": [
         "無効なコンポーネント形式です"
       ],
@@ -2326,9 +2312,6 @@
       "Timezone": [
         "タイムゾーン"
       ],
-      "Timezone not supported": [
-        "タイムゾーンはサポートされていません"
-      ],
       "To-do entry": [
         "To-do のエントリー"
       ],
@@ -2340,9 +2323,6 @@
       ]
     },
     "Error message": {
-      "Brace yourself till we get the error fixed.": [
-        "エラーが解消されるまでお待ちください。"
-      ],
       "Error: ${ errorMessage }": [
         "エラー: ${ errorMessage }"
       ],
@@ -2473,6 +2453,9 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "バイト"
+      ],
       "GB": [
         "GB"
       ],
@@ -2481,6 +2464,20 @@
       ],
       "MB": [
         "MB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "バイト"
+      ],
+      "Gigabyte": [
+        "ギガバイト"
+      ],
+      "Kilobyte": [
+        "キロバイト"
+      ],
+      "Megabyte": [
+        "メガバイト"
       ]
     },
     "Filter notification": {
@@ -2641,8 +2638,14 @@
       "${ calendarsToBeMergedCount } merged calendar": [
         "${ calendarsToBeMergedCount } 個の結合されたカレンダー"
       ],
+      "${ contactCount } contact contains multiple email addresses.": [
+        "${ contactCount } 件の連絡先に複数のメールアドレスが含まれています。"
+      ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } メンバー"
+      ],
+      "${ contactName } contains multiple email addresses.": [
+        "連絡先 ${ contactName } に複数のメールアドレスが含まれています。"
       ],
       "${ contactsCount } contact found": [
         "${ contactsCount } の連絡先が見つかりました"
@@ -2911,9 +2914,6 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "このメールアドレスにメールを送信する際に既定で使用するメールの形式を選択できます。"
       ],
-      "Select what you want to move from Google.": [
-        "Select what you want to import from Google."
-      ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "インポートするカレンダーを選択してください。インポートするカレンダーは最大 20 件までに制限されます。"
       ],
@@ -3030,6 +3030,9 @@
       ],
       "Would you like to receive a new verification code?": [
         "新しい認証コードを受け取りますか?"
+      ],
+      "Would you like to update all events in this series?": [
+        "この一連のすべての予定を更新してよろしいですか?"
       ],
       "Would you like to update this event?": [
         "この予定を更新してよろしいですか？"
@@ -3257,6 +3260,12 @@
       ],
       "Import contacts": [
         "連絡先のインポート"
+      ],
+      "Import interval": [
+        "インポートの間隔"
+      ],
+      "Import to email address": [
+        "メールアドレスへインポート"
       ],
       "Import to:": [
         "インポート先:"
@@ -3656,11 +3665,6 @@
         "アカウントを追加・切り替え"
       ]
     },
-    "new_plans: info": {
-      "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
-        "Introducing Proton’s refreshed look.${ br }Many services, one mission. Welcome to an internet where privacy is the default."
-      ]
-    },
     "new_plans: label": {
       "Tell us about your experience. (Optional)": [
         "あなたのご意見をお聞かせください (任意)"
@@ -4048,6 +4052,9 @@
       "No more missed appointments": [
         "予定を通知する"
       ],
+      "Try ${ DRIVE_APP_NAME }": [
+        "${ DRIVE_APP_NAME } を試す"
+      ],
       "With email notifications, you decide which events to be notified about and when.": [
         "メール通知で、予定をいつ通知するかを選択できます。"
       ]
@@ -4269,6 +4276,9 @@
       "Account suspended": [
         "アカウントが停止されました"
       ],
+      "Add another notification to remind you of this event": [
+        "このイベントを思い出させるために、別の通知を追加"
+      ],
       "Add contact group name": [
         "連絡先グループの名前を追加"
       ],
@@ -4322,6 +4332,9 @@
       ],
       "Contacts": [
         "連絡先"
+      ],
+      "Continue with partial import?": [
+        "部分的なインポートを続行しますか?"
       ],
       "Create calendar": [
         "カレンダーの作成"
@@ -4467,6 +4480,9 @@
       "Recover data": [
         "データを復元"
       ],
+      "Remove participants": [
+        "参加者を削除"
+      ],
       "Report a problem": [
         "問題を報告"
       ],
@@ -4496,6 +4512,9 @@
       ],
       "Select event frequency": [
         "この予定の繰り返し条件を選択してください"
+      ],
+      "Select event frequency interval": [
+        "イベントの繰り返し間隔を選択"
       ],
       "Select event start date": [
         "イベントの開始日を選択"
@@ -4623,6 +4642,11 @@
       ],
       "Replay video": [
         "ビデオを再度再生"
+      ]
+    },
+    "View event button tooltip": {
+      "Open in a new tab": [
+        "新しいタブで開く"
       ]
     },
     "Warning": {

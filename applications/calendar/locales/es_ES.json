@@ -80,6 +80,9 @@
       "Close": [
         "Cerrar"
       ],
+      "Close event popover": [
+        "Cerrar evento de ventana emergente"
+      ],
       "Close modal": [
         "Cerrar ventana"
       ],
@@ -94,6 +97,9 @@
       ],
       "Confirm": [
         "Confirmar"
+      ],
+      "Confirm opening of link ${ linkToShow }": [
+        "Confirmar apertura del enlace ${ linkToShow }"
       ],
       "Contact group": [
         "Grupo de contactos"
@@ -292,6 +298,9 @@
       "OK": [
         "OK"
       ],
+      "Open in a new tab": [
+        "Abrir en una pestaña nueva"
+      ],
       "Open navigation": [
         "Abrir la navegación"
       ],
@@ -318,6 +327,9 @@
       ],
       "Recover data": [
         "Recuperar datos"
+      ],
+      "Refer a friend": [
+        "Recomendar a un amigo"
       ],
       "refresh the page": [
         "actualiza la página"
@@ -349,6 +361,9 @@
       "Save": [
         "Guardar"
       ],
+      "Search countries": [
+        "Buscar países"
+      ],
       "Select all": [
         "Seleccionar todo"
       ],
@@ -357,6 +372,12 @@
       ],
       "Send": [
         "Enviar"
+      ],
+      "Send feedback": [
+        "Enviar comentarios"
+      ],
+      "Set recovery phrase": [
+        "Establecer frase de recuperación"
       ],
       "Share": [
         "Compartir"
@@ -387,6 +408,9 @@
       ],
       "Skip": [
         "Omitir"
+      ],
+      "Start import": [
+        "Iniciar importación"
       ],
       "Start setup": [
         "Iniciar la configuración"
@@ -783,11 +807,11 @@
       ]
     },
     "Collapsible tooltip": {
-      "Close": [
-        "Cerrar"
+      "Collapse": [
+        "Minimizar tamaño"
       ],
-      "Open": [
-        "Abrir"
+      "Expand": [
+        "Expandir"
       ]
     },
     "colon": {
@@ -989,9 +1013,6 @@
       "Burkina Faso": [
         "Burkina Faso"
       ],
-      "Burma": [
-        "Myanmar"
-      ],
       "Burundi": [
         "Burundi"
       ],
@@ -1046,9 +1067,6 @@
       "Costa Rica": [
         "Costa Rica"
       ],
-      "Cote d'Ivoire\"": [
-        "Costa de Marfil"
-      ],
       "Croatia": [
         "Croacia"
       ],
@@ -1063,6 +1081,9 @@
       ],
       "Czech Republic": [
         "República Checa"
+      ],
+      "Côte d'Ivoire": [
+        "Costa de Marfil"
       ],
       "Denmark": [
         "Dinamarca"
@@ -1093,6 +1114,9 @@
       ],
       "Estonia": [
         "Estonia"
+      ],
+      "Eswatini": [
+        "Suazilandia"
       ],
       "Ethiopia": [
         "Etiopía"
@@ -1337,6 +1361,9 @@
       "Mozambique": [
         "Mozambique"
       ],
+      "Myanmar": [
+        "Myanmar"
+      ],
       "Namibia": [
         "Namibia"
       ],
@@ -1528,9 +1555,6 @@
       ],
       "Svalbard and Jan Mayen": [
         "Svalbard y Jan Mayen"
-      ],
-      "Swaziland": [
-        "Suazilandia"
       ],
       "Sweden": [
         "Suecia"
@@ -2025,8 +2049,8 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Este campo requiere un mínimo de ${ minimumLength } caracteres."
       ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "Este mensaje puede contener algunos enlaces URL que no puedan abrirse correctamente por su navegador actual"
+      "This message may contain some link's URL that cannot be properly opened by your current browser": [
+        "This message may contain some link's URL that cannot be properly opened by your current browser."
       ],
       "Trusted keys are not valid for sending": [
         "Las claves confiadas no son válidas para enviar"
@@ -2090,6 +2114,9 @@
       "Calendar": [
         "Calendario"
       ],
+      "Calendar time zone not supported": [
+        "Zona horaria del calendario no admitida"
+      ],
       "Custom timezone": [
         "Zona horaria personalizada"
       ],
@@ -2105,6 +2132,9 @@
       "Non-Gregorian": [
         "No gregoriano"
       ],
+      "Time zone not supported": [
+        "Zona horaria no admitida"
+      ],
       "Timezone": [
         "Zona horaria"
       ],
@@ -2116,9 +2146,6 @@
       ]
     },
     "Error message": {
-      "Brace yourself till we get the error fixed.": [
-        "Espera un tiempo hasta que arreglemos el error."
-      ],
       "Error: ${ errorMessage }": [
         "Error: ${ errorMessage }"
       ],
@@ -2130,6 +2157,9 @@
       ],
       "Please ${ refresh } or check your connection.": [
         "Por favor, ${ refresh } o comprueba tu conexión."
+      ],
+      "Something went wrong. Please refresh the page or try again later.": [
+        "Algo ha ido mal. Por favor, actualiza la página o inténtalo más tarde."
       ],
       "There was a problem connecting to Proton.": [
         "Ha ocurrido un problema al conectarse a Proton."
@@ -2370,9 +2400,16 @@
         "${ calendarsToBeMergedCount } calendario fusionado",
         "${ calendarsToBeMergedCount } calendarios fusionados"
       ],
+      "${ contactCount } contact contains multiple email addresses.": [
+        "El contacto ${ contactCount } contiene múltiples direcciones de correo.",
+        "Los contactos ${ contactCount } contienen múltiples direcciones de correo."
+      ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } Miembro",
         "${ contactEmailsLength } Miembros"
+      ],
+      "${ contactName } contains multiple email addresses.": [
+        "${ contactName } contiene múltiples direcciones de correo."
       ],
       "${ contactsCount } contact found": [
         "${ contactsCount } contacto encontrado",
@@ -2457,6 +2494,9 @@
       "At most 100 participants are allowed per invitation": [
         "Se permiten hasta 100 participantes por invitación"
       ],
+      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
+        "Antes de solicitar un nuevo código de verificación, revisa tu carpeta de spam y comprueba que ${ strong } es la dirección correcta."
+      ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "¿No puedes recordar tu contraseña? Podemos ayudarte a eliminar los datos cifrados de todos los contactos cifrados con esta clave, y, en el proceso desactivar la alerta."
       ],
@@ -2477,6 +2517,9 @@
       ],
       "Create in": [
         "Crear en"
+      ],
+      "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
+        "Se admiten archivos CSV de Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora y algunas otras aplicaciones, así como los formatos vCard 3.1 y 4.0 (codificación UTF-8)."
       ],
       "Custom": [
         "Personalizado"
@@ -2614,6 +2657,9 @@
       "None of the participants can be notified about your changes:": [
         "Ninguno de los participantes puede ser notificado de tus cambios:"
       ],
+      "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
+        "Ninguna de las claves cargadas es válida para cifrado. El cifrado se ha deshabilitado automáticamente."
+      ],
       "Not a valid URL": [
         "No es una URL válida"
       ],
@@ -2623,8 +2669,17 @@
       "Occurrences previously updated by the organizer will be kept.": [
         "Se mantendrán las ocurrencias previamente actualizadas por el organizador."
       ],
+      "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
+        "Una o más de tus claves de confianza fueron marcadas como \"comprometidas\" por su propietario. Te recomendamos que las consideres \"no fiables\"."
+      ],
+      "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
+        "Modifica esta configuración únicamente si estás usando PGP con destinatarios no-${ BRAND_NAME }."
+      ],
       "Other options": [
         "Otras opciones"
+      ],
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        "PGP/MIME envía automáticamente el mensaje usando el modo de composición actual. Ten en cuenta que ${ MAIL_APP_NAME } siempre firma los mensajes cifrados."
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Ten en cuenta que las direcciones asignadas a este grupo NO se eliminarán."
@@ -2634,6 +2689,13 @@
       ],
       "Please remove the duplicates and try again.": [
         "Por favor, elimina los duplicados y vuelve a intentarlo."
+      ],
+      "Please select which email address or addresses to add to ${ groupCount } group.": [
+        "Selecciona qué dirección o direcciones de correo añadir al grupo ${ groupCount }.",
+        "Selecciona qué dirección o direcciones de correo añadir a los grupos ${ groupCount }."
+      ],
+      "Please select which email address or addresses to add to ${ groupName }.": [
+        "Selecciona qué dirección o direcciones de correo añadir a ${ groupName }."
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Por favor, espera mientras buscamos contactos que puedan volver a firmarse con la clave de cifrado principal."
@@ -2659,11 +2721,14 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Selecciona el formato de correo electrónico que deseas utilizar por defecto al enviar un correo electrónico a esta dirección."
       ],
-      "Select what you want to move from Google.": [
-        "Select what you want to import from Google."
+      "Select what you want to import from Google.": [
+        "Selecciona lo que quieres importar de Google."
       ],
       "Session timed out": [
         "El tiempo de la sesión ha expirado"
+      ],
+      "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
+        "La configuración de PGP permite el envío de correos cifrados de extremo a extremo con un usuario no-${ BRAND_NAME } que use un servicio PGP compatible."
       ],
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "Se perderán algunas de tus respuestas a ocurrencias previamente actualizadas por el organizador."
@@ -2719,6 +2784,9 @@
       "This event has been updated. The organizer will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete this event anyway?": [
         "Este evento ha sido actualizado. El organizador no será notificado de que rechazas la invitación ya que no puedes enviar correos electrónicos desde la dirección invitada. ¿Deseas eliminar este evento de todos modos?"
       ],
+      "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
+        "Este enlace conduce a un sitio web que podría estar intentando robar tu información, como contraseñas y datos de tarjetas de crédito."
+      ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Este enlace puede ser un ataque homógrafo y no puede abrirse por los navegadores Internet Explorer y Edge. Si está seguro de que el enlace es legítimo, utilice un navegador diferente para abrirlo."
       ],
@@ -2751,6 +2819,9 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Enviaremos un código de verificación nuevo a ${ strong }"
+      ],
+      "We're moving! Join us at our new site: ${ link }.": [
+        "¡Nos hemos mudado! Únete a nosotros en nuestro nuevo sitio: ${ link }."
       ],
       "Week": [
         "Semana"
@@ -2793,6 +2864,9 @@
       ],
       "You are about to open another browser tab and visit:": [
         "Está a punto de abrir otra pestaña del navegador y visitar:"
+      ],
+      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
+        "Has iniciado sesión como ${ user.Name } (${ user.Email })."
       ],
       "You can check the progress ${ importProgressLink }.": [
         "Puedes comprobar el progreso ${ importProgressLink }."
@@ -3386,8 +3460,8 @@
       ]
     },
     "new_plans: info": {
-      "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
-        "Introducing Proton’s refreshed look.${ br }Many services, one mission. Welcome to an internet where privacy is the default."
+      "Introducing Proton’s refreshed look.${ br }Many services, one mission. Welcome to an internet where privacy is the default.": [
+        "Presentamos el aspecto renovado de Proton.${ br }Muchos servicios, una misión. Bienvenido a una Internet en la que la privacidad es la norma."
       ]
     },
     "new_plans: placeholder": {
@@ -3622,10 +3696,12 @@
         "Tú"
       ]
     },
-    "Participants expand button label": {
+    "Participants collapse button label": {
       "Collapse participants list": [
         "Contraer lista de participantes"
-      ],
+      ]
+    },
+    "Participants expand button label": {
       "Expand participants list": [
         "Expandir lista de participantes"
       ]
@@ -4087,6 +4163,9 @@
       "Clearing data": [
         "Limpiando datos"
       ],
+      "Contact details": [
+        "Detalles de contacto"
+      ],
       "Contact Details": [
         "Datos del contacto"
       ],
@@ -4095,6 +4174,9 @@
       ],
       "Contacts": [
         "Contactos"
+      ],
+      "Continue with partial import?": [
+        "¿Continuar con la importación parcial?"
       ],
       "Create calendar": [
         "Crear calendario"
@@ -4137,6 +4219,9 @@
       "Deleting contacts": [
         "Eliminando contactos"
       ],
+      "Drop to upload": [
+        "Arrastrar para subir"
+      ],
       "Edit calendar": [
         "Editar calendario"
       ],
@@ -4160,6 +4245,9 @@
       ],
       "Enter your password": [
         "Introduce tu contraseña"
+      ],
+      "Enter your username or ${ MAIL_APP_NAME } email address": [
+        "Ingresa tu nombre de usuario o tu dirección de correo de ${ MAIL_APP_NAME }"
       ],
       "Error": [
         "Error"
@@ -4185,11 +4273,18 @@
       "Human verification": [
         "Verificación humana"
       ],
+      "Import as simple event?": [
+        "¿Importar como evento simple?",
+        "¿Importar como eventos simples?"
+      ],
       "Import contacts": [
         "Importar contactos"
       ],
       "Import events": [
         "Importar eventos"
+      ],
+      "Import failed": [
+        "Fallo en la importación"
       ],
       "Invalid verification code": [
         "Código de verificación no válido"
@@ -4244,6 +4339,9 @@
       ],
       "Report a problem": [
         "Notificar un problema"
+      ],
+      "Request new code": [
+        "Solicitar nuevo código"
       ],
       "Reset calendar keys": [
         "Restablecer las claves del calendario"
@@ -4320,6 +4418,9 @@
       "Sign in again to continue": [
         "Inicie sesión de nuevo para continuar"
       ],
+      "Sign in and grant access": [
+        "Iniciar sesión y otorgar acceso"
+      ],
       "Update event": [
         "Actualizar evento"
       ],
@@ -4335,11 +4436,20 @@
       "Warning": [
         "Advertencia"
       ],
+      "Warning: suspected fake website": [
+        "Atención: sospecha de sitio web falso"
+      ],
+      "What would you like to import?": [
+        "¿Qué te gustaría importar?"
+      ],
       "What's new": [
         "Novedades"
       ],
       "You have invited participants with equivalent emails": [
         "Has invitado a participantes con correos electrónicos equivalentes"
+      ],
+      "Your free trial ends soon, on ${ formattedEndDate }": [
+        "Tu periodo de prueba gratuita termina pronto, el ${ formattedEndDate }"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -4390,6 +4500,11 @@
       ],
       "Replay video": [
         "Volver a reproducir el vídeo"
+      ]
+    },
+    "View event button tooltip": {
+      "Open in a new tab": [
+        "Abrir en una pestaña nueva"
       ]
     },
     "Warning": {

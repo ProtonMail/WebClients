@@ -35,6 +35,9 @@
       "Request new code": [
         "Neuen Code anfordern"
       ],
+      "Search countries": [
+        "Länder durchsuchen"
+      ],
       "Submit": [
         "Senden"
       ],
@@ -228,9 +231,6 @@
       "Burkina Faso": [
         "Burkina Faso"
       ],
-      "Burma": [
-        "Myanmar"
-      ],
       "Burundi": [
         "Burundi"
       ],
@@ -285,9 +285,6 @@
       "Costa Rica": [
         "Costa Rica"
       ],
-      "Cote d'Ivoire\"": [
-        "Cote d'Ivoire"
-      ],
       "Croatia": [
         "Kroatien"
       ],
@@ -302,6 +299,9 @@
       ],
       "Czech Republic": [
         "Tschechische Republik"
+      ],
+      "Côte d'Ivoire": [
+        "Elfenbeinküste"
       ],
       "Denmark": [
         "Dänemark"
@@ -332,6 +332,9 @@
       ],
       "Estonia": [
         "Estland"
+      ],
+      "Eswatini": [
+        "Königreich Eswatini (vormals Swasiland)"
       ],
       "Ethiopia": [
         "Äthiopien"
@@ -576,6 +579,9 @@
       "Mozambique": [
         "Mosambik"
       ],
+      "Myanmar": [
+        "Myanmar"
+      ],
       "Namibia": [
         "Namibia"
       ],
@@ -768,9 +774,6 @@
       "Svalbard and Jan Mayen": [
         "Spitzbergen und Jan Mayen"
       ],
-      "Swaziland": [
-        "Königreich Eswatini (vormals Swasiland)"
-      ],
       "Sweden": [
         "Schweden"
       ],
@@ -918,9 +921,6 @@
       ]
     },
     "Error message": {
-      "Brace yourself till we get the error fixed.": [
-        "Something went wrong. Please refresh the page or try again later."
-      ],
       "Error: ${ errorMessage }": [
         "Fehler: ${ errorMessage }"
       ],
@@ -929,6 +929,9 @@
       ],
       "Please ${ refresh } or check your connection.": [
         "Bitte ${ refresh } oder überprüfen Sie Ihre Verbindung."
+      ],
+      "Something went wrong. Please refresh the page or try again later.": [
+        "Etwas ist schiefgelaufen. Bitte aktualisiere die Seite oder versuche es später erneut."
       ],
       "There was a problem connecting to Proton.": [
         "Es gab ein Problem mit der Verbindung zu Proton."

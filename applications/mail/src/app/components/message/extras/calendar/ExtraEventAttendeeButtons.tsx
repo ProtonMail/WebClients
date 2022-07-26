@@ -179,7 +179,7 @@ const ExtraEventAttendeeButtons = ({ model, setModel, message, reloadWidget }: P
         // A retry should fix this error, so we display to the user a custom message asking to retry
         createNotification({
             type: 'error',
-            text: c('Reply to calendar invitation').t`Re-encrypting invitation failed. Please try again`,
+            text: c('Reply to calendar invitation').t`Re-encrypting invitation failed. Please try again.`,
         });
         // we console.log the real error in case there's a systematic problem
         const errorMessage = error instanceof ApiError ? getApiErrorMessage(error) : error.message;

@@ -35,6 +35,9 @@
       "Request new code": [
         "Vyžádejte si nový kód"
       ],
+      "Search countries": [
+        "Vyhledat země"
+      ],
       "Submit": [
         "Předložit"
       ],
@@ -228,9 +231,6 @@
       "Burkina Faso": [
         "Burkina Faso"
       ],
-      "Burma": [
-        "Barma"
-      ],
       "Burundi": [
         "Burundi"
       ],
@@ -285,9 +285,6 @@
       "Costa Rica": [
         "Kostarika"
       ],
-      "Cote d'Ivoire\"": [
-        "Cote d'Ivoire"
-      ],
       "Croatia": [
         "Chorvatsko"
       ],
@@ -302,6 +299,9 @@
       ],
       "Czech Republic": [
         "Česká republika"
+      ],
+      "Côte d'Ivoire": [
+        "Pobřeží slonoviny"
       ],
       "Denmark": [
         "Dánsko"
@@ -332,6 +332,9 @@
       ],
       "Estonia": [
         "Estonsko"
+      ],
+      "Eswatini": [
+        "Svazijsko"
       ],
       "Ethiopia": [
         "Etiopie"
@@ -576,6 +579,9 @@
       "Mozambique": [
         "Mosambik"
       ],
+      "Myanmar": [
+        "Barma"
+      ],
       "Namibia": [
         "Namibie"
       ],
@@ -768,9 +774,6 @@
       "Svalbard and Jan Mayen": [
         "Špicberky a Jan Mayen"
       ],
-      "Swaziland": [
-        "Svazijsko"
-      ],
       "Sweden": [
         "Švédsko"
       ],
@@ -918,9 +921,6 @@
       ]
     },
     "Error message": {
-      "Brace yourself till we get the error fixed.": [
-        "Something went wrong. Please refresh the page or try again later."
-      ],
       "Error: ${ errorMessage }": [
         "Chyba: ${ errorMessage }"
       ],
@@ -974,7 +974,7 @@
         "Připojení k internetu bylo ztraceno"
       ],
       "Loading": [
-        "Načítá se"
+        "Načítání"
       ],
       "No results found": [
         "Nebyly nalezeny žádné výsledky"
@@ -1067,10 +1067,10 @@
     },
     "Validation": {
       "Password must contain at least ${ length } character": [
-        "Heslo musí alespoň obsahovat ${ length } znak",
-        "Hesla musí obsahovat alespoň ${ length } znaků",
-        "Hesla musí obsahovat alespoň ${ length } znaků",
-        "Hesla musí obsahovat alespoň ${ length } znaků"
+        "Heslo musí obsahovat alespoň ${ length } znak",
+        "Heslo musí obsahovat alespoň ${ length } znaky",
+        "Heslo musí obsahovat alespoň ${ length } znaků",
+        "Heslo musí obsahovat alespoň ${ length } znaků"
       ]
     }
   }

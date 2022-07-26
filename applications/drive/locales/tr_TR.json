@@ -247,11 +247,11 @@
       "Forward as attachment": [
         "Ek dosya olarak ilet"
       ],
+      "Get ${ DRIVE_APP_NAME }": [
+        "${ DRIVE_APP_NAME } alın"
+      ],
       "Get link": [
         "Bağlantı oluştur"
-      ],
-      "Get Proton Drive": [
-        "Proton Drive edinin"
       ],
       "Get started": [
         "Başlayalım"
@@ -442,6 +442,9 @@
       "Search": [
         "Arama"
       ],
+      "Search countries": [
+        "Ülke ara"
+      ],
       "Search drive": [
         "Drive içinde ara"
       ],
@@ -631,16 +634,13 @@
       ]
     },
     "blackfriday Title": {
-      "Best deal": [
-        "En iyi teklif"
-      ],
       "Most popular": [
         "En popüler olanlar"
       ]
     },
     "blackfriday: VPNspecialoffer Action": {
       "Get the deal": [
-        "Tekliften yararlanın"
+        "Tekliften yararlan"
       ],
       "Get the deal now": [
         "Tekliften şimdi yararlan"
@@ -648,7 +648,7 @@
     },
     "blackfriday: VPNspecialoffer Info": {
       "Save ${ percentage }%": [
-        "${ percentage }%"
+        "- %${ percentage }"
       ]
     },
     "blackfriday: VPNspecialoffer info": {
@@ -670,9 +670,6 @@
       ],
       "24 months": [
         "24 ay"
-      ],
-      "Get the special year-end offer on our Premium VPN PLUS plan": [
-        "Ücretli Proton VPN Plus tarifemizi özel yıl sonu teklifi ile alın"
       ]
     },
     "Bug category": {
@@ -786,11 +783,11 @@
       ]
     },
     "Collapsible tooltip": {
-      "Close": [
-        "Kapat"
+      "Collapse": [
+        "Daralt"
       ],
-      "Open": [
-        "Aç"
+      "Expand": [
+        "Genişlet"
       ]
     },
     "color": {
@@ -1054,9 +1051,6 @@
       "Burkina Faso": [
         "Burkina Faso"
       ],
-      "Burma": [
-        "Burma"
-      ],
       "Burundi": [
         "Burundi"
       ],
@@ -1111,9 +1105,6 @@
       "Costa Rica": [
         "Kosta Rika"
       ],
-      "Cote d'Ivoire\"": [
-        "Fildişi Sahili"
-      ],
       "Croatia": [
         "Hırvatistan"
       ],
@@ -1128,6 +1119,9 @@
       ],
       "Czech Republic": [
         "Çekya"
+      ],
+      "Côte d'Ivoire": [
+        "Fildişi Sahili"
       ],
       "Denmark": [
         "Danimarka"
@@ -1158,6 +1152,9 @@
       ],
       "Estonia": [
         "Estonya"
+      ],
+      "Eswatini": [
+        "Esvatini"
       ],
       "Ethiopia": [
         "Etiyopya"
@@ -1402,6 +1399,9 @@
       "Mozambique": [
         "Mozambik"
       ],
+      "Myanmar": [
+        "Burma"
+      ],
       "Namibia": [
         "Namibya"
       ],
@@ -1593,9 +1593,6 @@
       ],
       "Svalbard and Jan Mayen": [
         "Svalbard ve Jan Mayen"
-      ],
-      "Swaziland": [
-        "Svaziland"
       ],
       "Sweden": [
         "İsveç"
@@ -2059,6 +2056,9 @@
       ],
       "Please ${ refresh } or check your connection.": [
         "Lütfen ${ refresh }yin ya da bağlantınızı denetleyin."
+      ],
+      "Something went wrong. Please refresh the page or try again later.": [
+        "Bir şeyler ters gitti. Lütfen sayfayı yenileyin ya da bir süre sonra yeniden deneyin."
       ],
       "There was a problem connecting to Proton.": [
         "Proton bağlantısı kurulurken bir sorun çıktı."
@@ -2751,7 +2751,8 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Güvenilir anahtarlarınızın bir ya da birkaçı sahipleri tarafından \"ele geçirilmiş\" olarak işaretlenmiş. Bu anahtarla \"güvenmemeniz\" önerilir."
       ],
-      "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters is allowed": [
+      "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } character is allowed": [
+        "En fazla ${ MAX_CUSTOM_PASSWORD_LENGTH } karakter yazılabilir",
         "En fazla ${ MAX_CUSTOM_PASSWORD_LENGTH } karakter yazılabilir"
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
@@ -2775,8 +2776,8 @@
       "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
         "PGP/Inline yalnızca düz metin biçimiyle uyumludur. Lütfen ${ MAIL_APP_NAME } uygulamasının şifrelenmiş iletileri her zaman imzaladığını unutmayın."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
-        "PGP/MIME, geçerli oluşturucu kipini kullanarak iletiyi otomatik olarak gönderir. Lütfen şifrelenmiş iletilerin her zaman ${ MAIL_APP_NAME } tarafından imzalandığını unutmayın"
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        "PGP/MIME, geçerli oluşturucu kipini kullanarak iletiyi otomatik olarak gönderir. Lütfen şifrelenmiş iletilerin her zaman ${ MAIL_APP_NAME } tarafından imzalandığını unutmayın."
       ],
       "Please enter the password to decrypt and view content.": [
         "Lütfen şifreyi çözmek ve içeriği görüntülemek için parolayı yazın."
@@ -2854,8 +2855,8 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Bu adrese, bir e-posta gönderilirken varsayılan olarak kullanılmasını istediğiniz e-posta biçimini seçin."
       ],
-      "Select what you want to move from Google.": [
-        "Google üzerinden aktarmak istediklerinizi seçin."
+      "Select what you want to import from Google.": [
+        "Google üzerinden içe aktarmak istediklerinizi seçin."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "İçe aktarılacak takvimleri seçin. En fazla 20 tane olmak üzere içe aktarılan her takvim için yeni bir takvim oluşturulur."
@@ -3653,7 +3654,7 @@
       ]
     },
     "new_plans: info": {
-      "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
+      "Introducing Proton’s refreshed look.${ br }Many services, one mission. Welcome to an internet where privacy is the default.": [
         "Yenilenmiş Proton böyle görünüyor.${ br }Birçok hizmet, tek amaç. Kişisel gizliliğin doğal sayıldığı internet fikrine hoş geldiniz."
       ]
     },
@@ -3862,26 +3863,14 @@
       ]
     },
     "Onboarding Action": {
-      "Enable Beta Access": [
-        "Beta erişimini etkinleştir"
-      ],
       "Next": [
         "Sonraki"
       ],
       "Start using ${ appName }": [
         "${ appName } kullanmaya başlayın"
-      ],
-      "Upgrade account": [
-        "Hesabı yükselt"
       ]
     },
     "Onboarding Info": {
-      "${ appName } is currently in early access and only available to users with a paid plan.": [
-        "${ appName } şu anda yalnızca erken erişim özelliğini kullanabilen ücretli tarife kullanıcılarına açık."
-      ],
-      "${ appName } is currently only available if you enable Beta Access.": [
-        "${ appName } uygulamasını şu anda yalnızca Beta erişimini etkinleştirerek kullanabilirsiniz."
-      ],
       "Your trusty online vault for vital documents and precious memories.": [
         "Yaşamsal belgelerinizin ve kıymetli anılarınızın güvende olduğu yer."
       ]
@@ -3907,12 +3896,6 @@
       ]
     },
     "Onboarding Title": {
-      "${ appName } is in Beta": [
-        "${ appName } Beta aşamasında"
-      ],
-      "Upgrade to access ${ appName }": [
-        "${ appName } uygulamasına erişmek için yükseltin"
-      ],
       "Welcome to ${ appName }": [
         "${ appName } hoş geldiniz"
       ]
@@ -4234,7 +4217,7 @@
         "son 3 ay"
       ],
       "the last month": [
-        "geçen ay"
+        "son bir ay"
       ]
     },
     "Time unit": {

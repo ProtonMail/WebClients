@@ -53,7 +53,7 @@
         "Tambah alamat"
       ],
       "Add calendar": [
-        "Tambahkan kalender"
+        "Tambah kalender"
       ],
       "Add condition": [
         "Tambahkan syarat"
@@ -77,7 +77,7 @@
         "Tambah label"
       ],
       "Add notification": [
-        "Tambahkan pemberitahuan"
+        "Tambah notifikasi"
       ],
       "Add PayPal": [
         "Tambahkan PayPal"
@@ -321,6 +321,9 @@
       ],
       "Edit subscription": [
         "Sunting jenis langganan"
+      ],
+      "Emoji": [
+        "Emoji"
       ],
       "enable desktop notifications": [
         "mengaktifkan pemberitahuan desktop"
@@ -628,6 +631,12 @@
       "Save selected": [
         "Simpan pilihan"
       ],
+      "Search countries": [
+        "Cari negara"
+      ],
+      "Search settings": [
+        "Cari di pengaturan"
+      ],
       "Select ${ planTitle }": [
         "Pilih ${ planTitle }"
       ],
@@ -806,7 +815,7 @@
         "Anulir seluruh berkas pemulihan"
       ],
       "Void all recovery files?": [
-        "Anulir seluruh berkas pemulihan yang ada?"
+        "Anulir seluruh berkas pemulihan?"
       ],
       "Void anyway": [
         "Tetap anulir"
@@ -830,8 +839,14 @@
       ]
     },
     "Action in trial plan": {
+      "Continue with free plan": [
+        "Lanjutkan dengan akun gratis"
+      ],
       "No, thanks": [
         "Tidak, terima kasih"
+      ],
+      "Start my 30-day free trial": [
+        "Mulai masa uji coba 30 hari saya"
       ],
       "Try free for 30 days": [
         "Coba gratis selama 30 hari"
@@ -1183,7 +1198,7 @@
         "Default"
       ],
       "Disabled": [
-        "Nonaktif"
+        "Dinonaktifkan"
       ],
       "Not synced": [
         "Tidak disinkronkan"
@@ -1238,11 +1253,11 @@
       ]
     },
     "Collapsible tooltip": {
-      "Close": [
-        "Tutup"
+      "Collapse": [
+        "Ciutkan"
       ],
-      "Open": [
-        "Buka"
+      "Expand": [
+        "Lebarkan"
       ]
     },
     "color": {
@@ -1670,9 +1685,6 @@
       "Burkina Faso": [
         "Burkina Faso"
       ],
-      "Burma": [
-        "Myanmar"
-      ],
       "Burundi": [
         "Burundi"
       ],
@@ -1727,9 +1739,6 @@
       "Costa Rica": [
         "Kosta Rika"
       ],
-      "Cote d'Ivoire\"": [
-        "Pantai Gading"
-      ],
       "Croatia": [
         "Kroasia"
       ],
@@ -1744,6 +1753,9 @@
       ],
       "Czech Republic": [
         "Republik Ceko"
+      ],
+      "Côte d'Ivoire": [
+        "Pantai Gading"
       ],
       "Denmark": [
         "Denmark"
@@ -1774,6 +1786,9 @@
       ],
       "Estonia": [
         "Estonia"
+      ],
+      "Eswatini": [
+        "Eswatini"
       ],
       "Ethiopia": [
         "Ethiopia"
@@ -2018,6 +2033,9 @@
       "Mozambique": [
         "Mozambik"
       ],
+      "Myanmar": [
+        "Myanmar"
+      ],
       "Namibia": [
         "Namibia"
       ],
@@ -2210,9 +2228,6 @@
       "Svalbard and Jan Mayen": [
         "Svalbard dan Jan Mayen"
       ],
-      "Swaziland": [
-        "Swaziland"
-      ],
       "Sweden": [
         "Swedia"
       ],
@@ -2348,32 +2363,6 @@
         "/pengguna per bulan"
       ]
     },
-    "Daily recurring event, frequency": {
-      "${ count } time": [
-        "${ count } kali"
-      ],
-      "Daily": [
-        "Harian"
-      ],
-      "Daily, ${ timesString }": [
-        "Harian, ${ timesString }"
-      ],
-      "Daily, ${ untilString }": [
-        "Harian, ${ untilString }"
-      ],
-      "Every ${ interval } day": [
-        "Setiap ${ interval } hari"
-      ],
-      "Every ${ interval } day, ${ timesString }": [
-        "Setiap ${ interval } hari, ${ timesString }"
-      ],
-      "Every ${ interval } day, ${ untilString }": [
-        "Setiap ${ interval } hari, ${ untilString }"
-      ],
-      "until ${ dateString }": [
-        "hingga ${ dateString }"
-      ]
-    },
     "Day": {
       "Friday": [
         "Jumat"
@@ -2408,7 +2397,7 @@
       ]
     },
     "Description": {
-      "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }": [
+      "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }..": [
         "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }."
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
@@ -2769,7 +2758,7 @@
         "Harap aktifkan dukungan multi-pengguna sebelum menambahkan pengguna ke organisasi Anda."
       ],
       "Please fix the highlighted conflict to proceed.": [
-        "Harap selesaikan permasalahan yang ada terlebih dahulu sebelum melanjutkan."
+        "Harap selesaikan permasalahan yang ada sebelum melanjutkan."
       ],
       "Please generate keys before you try to change your password": [
         "Harap buat kunci terlebih dahulu sebelum Anda mengubah kata sandi Anda"
@@ -3016,7 +3005,7 @@
       "Calendar": [
         "Kalender"
       ],
-      "Calendar timezone not supported": [
+      "Calendar time zone not supported": [
         "Zona waktu kalender tidak didukung"
       ],
       "Component with wrong format": [
@@ -3056,16 +3045,16 @@
         "Entri Jurnal"
       ],
       "Malformed all-day event": [
-        "Acara sepanjang hari salah format"
+        "Acara sepanjang hari tidak diformat dengan benar"
       ],
       "Malformed end time": [
-        "Waktu akhir salah format"
+        "Waktu akhir tidak diformat dengan benar"
       ],
       "Malformed recurring event": [
-        "Acara berulang salah format"
+        "Acara berulang tidak diformat dengan benar"
       ],
       "Malformed start time": [
-        "Waktu mulai salah format"
+        "Waktu mulai tidak diformat dengan benar"
       ],
       "Missing start time": [
         "Waktu mulai hilang"
@@ -3091,11 +3080,11 @@
       "Start time out of bounds": [
         "Waktu mulai di luar batas"
       ],
+      "Time zone not supported": [
+        "Zona waktu tidak didukung"
+      ],
       "Timezone": [
         "Zona waktu"
-      ],
-      "Timezone not supported": [
-        "Zona waktu tidak didukung"
       ],
       "To-do entry": [
         "Entri to-do"
@@ -3108,9 +3097,6 @@
       ]
     },
     "Error message": {
-      "Brace yourself till we get the error fixed.": [
-        "Kami sedang perbaiki. Mohon bersabar."
-      ],
       "Error: ${ errorMessage }": [
         "Kesalahan: ${ errorMessage }"
       ],
@@ -3122,6 +3108,9 @@
       ],
       "Please ${ refresh } or check your connection.": [
         "Mohon ${ refresh } atau cek koneksi Anda."
+      ],
+      "Something went wrong. Please refresh the page or try again later.": [
+        "Terjadi suatu kesalahan. Silakan muat ulang halaman ini atau coba lagi nanti."
       ],
       "There was a problem connecting to Proton.": [
         "Ada masalah saat menyambung ke Proton."
@@ -3245,7 +3234,7 @@
         "Kesalahan dalam mendekripsi acara"
       ],
       "Learn how to restore encrypted events with old password": [
-        "Pelajari cara untuk memulihkan acara yang terenkripsi dengan kata sandi Anda terdahulu"
+        "Pelajari cara untuk memulihkan acara yang terenkripsi dengan menggunakan kata sandi lama Anda"
       ],
       "Loading events": [
         "Memuat acara"
@@ -3260,10 +3249,10 @@
         "Kata sandi telah diatur ulang - beberapa acara tidak dapat didekripsi"
       ],
       "Please don't close the tab before the exporting process is finished.": [
-        "Jangan tutup tab sebelum proses impor selesai."
+        "Mohon untuk tidak menutup tab ini sebelum proses ekspor selesai."
       ],
       "Some of your events could not be exported.": [
-        "Beberapa acara Anda tidak dapat diekspor."
+        "Beberapa acara milik Anda tidak dapat diekspor."
       ],
       "The internet connection was interrupted, causing the export process to fail. Please try again.": [
         "Koneksi internet Anda terputus, yang menyebabkan proses ekspor gagal. Silakan coba lagi."
@@ -4071,8 +4060,8 @@
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Sebuah nama untuk membantu Anda mengidentifikasi di mana Anda menggunakannya sehingga dapat dengan mudah mencabut atau memperpanjangnya nanti."
       ],
-      "A recovery file lets you unlock and view your data after an account reset. ": [
-        "A recovery file lets you unlock and view your data after an account reset."
+      "A recovery file lets you unlock and view your data after an account reset.": [
+        "Berkas pemulihan akan memungkinkan Anda untuk dapat mengakses dan melihat data yang ada pada akun yang telah disetel ulang."
       ],
       "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password.": [
         "Frasa pemulihan memungkinkan Anda untuk dapat mengakses akun dan memulihkan pesan terenkripsi seandainya Anda lupa kata sandi."
@@ -4108,7 +4097,7 @@
         "Tambah URL gambar"
       ],
       "Add label": [
-        "Tambahkan label"
+        "Tambah label"
       ],
       "Additional options": [
         "Pengaturan tambahan"
@@ -4168,13 +4157,13 @@
         "dan"
       ],
       "Anyone with this link can see all the event details of this calendar such as title, location or participants.": [
-        "Semua orang dengan tautan ini akan dapat melihat seluruh rincian acara kalender ini seperti judul, lokasi, atau daftar peserta."
+        "Semua orang yang memiliki tautan ini akan dapat melihat seluruh rincian acara yang terdapat pada kalender ini seperti judul acara, lokasi acara, atau daftar peserta."
       ],
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
-        "Semua orang yang memiliki tautan ini akan dapat melihat apakah Anda sedang sibuk atau tidak pada kalender Anda. Meskipun demikian, mereka tidak akan dapat melihat berbagai rincian acara yang ada seperti nama, lokasi, atau daftar peserta."
+        "Semua orang yang memiliki tautan ini akan dapat melihat apakah Anda sedang sibuk atau tidak pada kalender Anda. Meskipun demikian, mereka tidak akan dapat melihat berbagai rincian yang ada seperti judul acara, lokasi acara, atau daftar peserta."
       ],
       "Anyone with this link won't be able to sync or get future updates for your calendar. If you want to give them access again, you will have to create a new link.": [
-        "Semua orang yang memiliki tautan ini tidak akan lagi dapat menyinkronkan atau mendapatkan pembaruan mengenai kalender Anda ke depannya. Apabila Anda ingin kembali memberikan akses kepada mereka, Anda harus membuat tautan baru."
+        "Semua orang yang memiliki tautan ini tidak akan lagi dapat menyinkronkan atau mendapatkan pembaruan seputar kalender Anda ke depannya. Apabila Anda ingin kembali memberikan akses kepada mereka, Anda harus membuat tautan baru."
       ],
       "AOL reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
         "AOL membaca data pribadi Anda untuk kepentingan para pengiklan dan pihak ketiga lainnya. Demi privasi yang lebih baik, buatlah alamat email yang aman."
@@ -4273,7 +4262,7 @@
         "Dengan keluar sekarang, perubahan mungkin tidak tersimpan"
       ],
       "By sharing the full event details of this calendar, you accept to grant Proton access to this calendar's encrypted information.": [
-        "Dengan membagikan detail acara kalender ini secara menyeluruh, Anda mengizinkan Proton untuk mengakses informasi terenkripsi yang ada pada kalender ini."
+        "Dengan membagikan detail acara milik kalender ini secara menyeluruh, Anda mengizinkan Proton untuk mengakses informasi terenkripsi yang terdapat pada kalender ini."
       ],
       "Center": [
         "Tengah"
@@ -4792,7 +4781,7 @@
         "Belum ada log."
       ],
       "No payment is required at this time.": [
-        "Pembayaran tidak diperlukan saat ini."
+        "Tidak ada pembayaran yang diperlukan untuk saat ini."
       ],
       "No preview available": [
         "Pratinjau tidak tersedia"
@@ -4878,6 +4867,9 @@
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Harap masukkan frasa pemulihan (12 kata) yang terhubung dengan akun Anda."
       ],
+      "Please fill out this field.": [
+        "Mohon isi kolom ini."
+      ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
         "Harap simpan frasa pemulihan ini sebaik-baiknya. Anda akan memerlukan frasa pemulihan ini untuk dapat mengakses akun Anda apabila di kemudian waktu Anda harus mengatur ulang kata sandi Anda."
       ],
@@ -4891,7 +4883,7 @@
         "Harap dicatat bahwa dengan menghapus filter ini, kami tidak akan lagi memproses seluruh tindakan otomatis yang terhubung dengan filter ini."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
-        "Harap diperhatikan bahwa dengan mengklik tombol Konfirmasi, sisa saldo Anda akan menjadi ${ creditsRemaining }."
+        "Harap diperhatikan bahwa dengan mengklik tombol Konfirmasi, total saldo Anda akan berkurang menjadi ${ creditsRemaining }."
       ],
       "Please provide an email address in case we need to contact you.": [
         "Harap sertakan alamat email seandainya kami perlu menghubungi Anda."
@@ -5004,8 +4996,8 @@
       "Select a service provider to start": [
         "Pilih layanan email yang Anda gunakan untuk memulai"
       ],
-      "Select what you want to move from Google.": [
-        "Pilih hal-hal apa saja yang hendak Anda pindahkan dari Google."
+      "Select what you want to import from Google.": [
+        "Pilih hal-hal apa saja yang hendak Anda impor dari Google."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Pilih kalender-kalender mana saja yang akan diimpor. Untuk setiap kalender yang Anda impor, sistem kami akan membuat kalender baru hingga batas maksimum 20 kalender."
@@ -5187,6 +5179,9 @@
       "to continue to ${ toAppName }": [
         "untuk melanjutkan ke ${ toAppName }"
       ],
+      "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
+        "Agar layanan kami dapat terus berkembang, kami mengumpulkan berbagai data yang akan digunakan untuk memonitor kinerja aplikasi kami dari waktu ke waktu. Seluruh informasi yang kami kumpulkan tidak akan dibagikan kepada layanan pihak ketiga manapun."
+      ],
       "To decrypt and view your emails and other data, you need a recovery file.": [
         "Untuk dapat mendekripsi dan mengakses kembali seluruh email dan data lainnya yang Anda miliki, Anda akan membutuhkan berkas keamanan."
       ],
@@ -5283,8 +5278,8 @@
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Gunakan server terbaik berdasarkan beban jaringan dan posisi Anda saat ini: ${ formattedBestServerName }"
       ],
-      "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
-        "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux."
+      "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
+        "Gunakan informasi kredensial berikut pada saat Anda hendak terhubung ke server ${ VPN_APP_NAME } di luar aplikasi resmi kami, semisal melalui Tunnelblick di macOS atau OpenVPN di GNU/Linux."
       ],
       "Verification can take a few minutes.": [
         "Proses verifikasi dapat memakan waktu hingga beberapa menit."
@@ -5573,11 +5568,35 @@
       "Additional duplicate keys detected. Please upload individually for more information.": [
         "Kami menemukan beberapa kunci duplikat. Mohon unggah satu per satu."
       ],
+      "Create an email address": [
+        "Buat alamat email"
+      ],
+      "Day 27: Trial reminder": [
+        "Hari ke-27: Pengingat akhir masa uji coba"
+      ],
+      "Day 30: Trial ends": [
+        "Hari ke-30: Akhir masa uji coba"
+      ],
+      "Enjoy secure, easy-to-use emailing with plenty of premium features.": [
+        "Nikmati layanan email yang aman dan mudah digunakan dengan berbagai fitur premium."
+      ],
       "Key ${ fingerprint } has already been uploaded": [
         "Kunci ${ fingerprint } sudah diunggah"
       ],
       "Track your referral link activities here": [
         "Lacak aktivitas tautan rujukan Anda di sini"
+      ],
+      "Try Mail Plus": [
+        "Coba Mail Plus"
+      ],
+      "We’ll email you before your trial ends. Cancel anytime.": [
+        "Kami akan mengirimkan Anda email sebelum masa uji coba Anda berakhir, yang dapat Anda batalkan kapan saja."
+      ],
+      "Your new email address is ready to go!": [
+        "Alamat email baru Anda siap digunakan!"
+      ],
+      "Your subscription starts on ${ startText }.": [
+        "Langganan Anda akan dimulai pada ${ startText }."
       ]
     },
     "Info - folder colouring feature": {
@@ -6044,6 +6063,9 @@
       "Auto-reply": [
         "Pesan balasan otomatis"
       ],
+      "Auto-unsubscribe": [
+        "Batalkan langganan secara otomatis"
+      ],
       "Billing cycle": [
         "Siklus tagihan"
       ],
@@ -6094,6 +6116,9 @@
       ],
       "Code is 6 digits without spaces": [
         "Kode tersusun atas 6 digit angka tanpa spasi"
+      ],
+      "Collect usage diagnostics": [
+        "Kumpulkan informasi diagnostik"
       ],
       "Color": [
         "Warna"
@@ -6189,7 +6214,7 @@
         "Durasi acara default"
       ],
       "Default full day notifications": [
-        "Notifikasi sehari penuh default"
+        "Notifikasi sepanjang hari default"
       ],
       "Default language": [
         "Bahasa bawaan"
@@ -6563,6 +6588,9 @@
       "Send auto-reply": [
         "Kirim pesan balasan otomatis"
       ],
+      "Send crash reports": [
+        "Kirim laporan crash"
+      ],
       "Send in": [
         "Kirim dalam"
       ],
@@ -6777,7 +6805,7 @@
       "Proton company announcements": [
         "Pengumuman perusahaan Proton"
       ],
-      "Proton for business": [
+      "Proton for Business": [
         "Proton for Business"
       ],
       "Proton for Business newsletter": [
@@ -7063,7 +7091,7 @@
     },
     "Modal title and action": {
       "Add calendar": [
-        "Tambahkan kalender"
+        "Tambah kalender"
       ]
     },
     "Monetary unit": {
@@ -7098,9 +7126,6 @@
       ]
     },
     "Monthly recurring event, repeats on": {
-      "on day ${ dayOfMonth }": [
-        "pada hari ${ dayOfMonth }"
-      ],
       "on the first Friday": [
         "pada hari Jumat pertama"
       ],
@@ -7121,48 +7146,6 @@
       ],
       "on the first Wednesday": [
         "pada hari Rabu pertama"
-      ],
-      "on the fourth Friday": [
-        "pada hari Jumat keempat"
-      ],
-      "on the fourth Monday": [
-        "pada hari Senin keempat"
-      ],
-      "on the fourth Saturday": [
-        "pada hari Sabtu keempat"
-      ],
-      "on the fourth Sunday": [
-        "pada hari Minggu keempat"
-      ],
-      "on the fourth Thursday": [
-        "pada hari Kamis keempat"
-      ],
-      "on the fourth Tuesday": [
-        "pada hari Selasa keempat"
-      ],
-      "on the fourth Wednesday": [
-        "pada hari Rabu keempat"
-      ],
-      "on the last Friday": [
-        "pada hari Jumat terakhir"
-      ],
-      "on the last Monday": [
-        "pada hari Senin terakhir"
-      ],
-      "on the last Saturday": [
-        "pada hari Sabtu terakhir"
-      ],
-      "on the last Sunday": [
-        "pada hari Minggu terakhir"
-      ],
-      "on the last Thursday": [
-        "pada hari Kamis terakhir"
-      ],
-      "on the last Tuesday": [
-        "pada hari Selasa terakhir"
-      ],
-      "on the last Wednesday": [
-        "pada hari Rabu terakhir"
       ],
       "on the second Friday": [
         "pada hari Jumat kedua"
@@ -7185,26 +7168,14 @@
       "on the second Wednesday": [
         "pada hari Rabu kedua"
       ],
-      "on the third Friday": [
-        "pada hari Jumat ketiga"
-      ],
       "on the third Monday": [
         "pada hari Senin ketiga"
-      ],
-      "on the third Saturday": [
-        "pada hari Sabtu ketiga"
       ],
       "on the third Sunday": [
         "pada hari Minggu ketiga"
       ],
-      "on the third Thursday": [
-        "pada hari Kamis ketiga"
-      ],
       "on the third Tuesday": [
         "pada hari Selasa ketiga"
-      ],
-      "on the third Wednesday": [
-        "pada hari Rabu ketiga"
       ]
     },
     "Moved to black/whitelist": {
@@ -7278,8 +7249,8 @@
       "Continue to review": [
         "Lanjut ke proses peninjauan"
       ],
-      "Continue with free": [
-        "Lanjutkan dengan akun gratis"
+      "Continue with Free": [
+        "Lanjut dengan akun Free"
       ],
       "Delete account": [
         "Hapus akun"
@@ -7531,6 +7502,26 @@
         "Manajemen tim"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Jadikan privasi sebagai hal yang baku dalam hal penyimpanan, pencadangan, pembagian, dan penerimaan berkas."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Apabila tidak, akses menuju akun Anda akan dibatasi dan akun Anda akan dinonaktifkan ke depannya."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Untuk dapat tetap menggunakan ${ MAIL_APP_NAME } dengan berbagai fitur premium, pilih jenis langganan dan metode pembayaran yang Anda kehendaki."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Tingkatkan akun Anda ke paket bisnis dengan akses ke seluruh layanan premium Proton."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Tingkatkan akun Anda ke paket privasi menyeluruh dan akses seluruh layanan premium yang Proton miliki."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Masa uji coba Anda akan berakhir ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } akan berakhir dalam ${ last4 }"
@@ -7597,26 +7588,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Anda sedang berlangganan ke paket Anda saat ini dengan harga diskon. Dengan menurunkan jenis akun Anda, Anda tidak akan lagi dapat membeli langganan dengan harga diskon ke depannya."
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Jadikan privasi sebagai hal yang baku dalam hal penyimpanan, pencadangan, pembagian, dan penerimaan berkas."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Apabila tidak, akses menuju akun Anda akan dibatasi dan akun Anda akan dinonaktifkan ke depannya."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Untuk dapat tetap menggunakan ${ MAIL_APP_NAME } dengan berbagai fitur premium, pilih jenis langganan dan metode pembayaran yang Anda kehendaki."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Tingkatkan akun Anda ke paket bisnis dengan akses ke seluruh layanan premium Proton."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Tingkatkan akun Anda ke paket privasi menyeluruh dan akses seluruh layanan premium yang Proton miliki."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Masa uji coba Anda akan berakhir ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -7746,8 +7717,8 @@
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
         "Dukungan IMAP terbatas hanya pada aplikasi desktop (cth. Outlook, Apple Mail, dan Thunderbird) via ${ MAIL_APP_NAME } Bridge. Integrasi IMAP berbasis Cloud saat ini tidak didukung."
       ],
-      "Keeps you protected by blocking all network connections when you are accidentally disconnected from our VPN server": [
-        "Keeps you protected by blocking all network connections when you are unexpectedly disconnected from our VPN server."
+      "Keeps you protected by blocking all network connections when you are unexpectedly disconnected from our VPN server.": [
+        "Menjaga Anda agar tetap terlindung sepanjang waktu dengan memblokir seluruh koneksi jaringan apabila Anda secara tidak sengaja terputus dari server VPN kami."
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Label merupakan penanda yang dapat Anda sematkan kepada pesan tertentu agar mereka dapat dicari atau difilter dengan mudah"
@@ -7764,7 +7735,7 @@
       "On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
         "Di samping itu, Anda juga akan dapat menambahkan hingga 5 kalender dari teman, keluarga, rekan kerja, dan organisasi Anda."
       ],
-      "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections": [
+      "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections..": [
         "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
@@ -8069,6 +8040,9 @@
       "Android": [
         "Android"
       ],
+      "Ask each time": [
+        "Tanyakan setiap kali"
+      ],
       "Automatic (${ defaultDay })": [
         "Otomatis (${ defaultDay })"
       ],
@@ -8122,6 +8096,12 @@
       ],
       "Normal": [
         "Normal"
+      ],
+      "Off": [
+        "Nonaktif"
+      ],
+      "On": [
+        "Aktif"
       ],
       "Permanent": [
         "Permanen"
@@ -8235,11 +8215,6 @@
       ],
       "PayPal": [
         "PayPal"
-      ]
-    },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "Alamat email tidak ditemukan di antara id-id pengguna yang terhubung dengan kunci pengiriman (${ keyUserIds })"
       ]
     },
     "Placeholder": {
@@ -8670,14 +8645,6 @@
         "Pelajari cara untuk mendapatkan tautan kalender pribadi."
       ]
     },
-    "Subscribed calendar extension warning": {
-      "By using this link, Google will make the calendar you are subscribing to public": [
-        "Dengan menggunakan tautan ini, Google akan membuat daftar kalender yang Anda langgan publik"
-      ],
-      "This link might be wrong": [
-        "Tautan ini mungkin salah"
-      ]
-    },
     "Subscribed calendar section description": {
       "Add public, external, or shared calendars using a URL.": [
         "Tambahkan kalender publik, eksternal, atau bersama melalui URL."
@@ -8754,6 +8721,9 @@
     "Subtitle for trial plan": {
       "The privacy-first Mail and Calendar solution for your everyday communications needs.": [
         "Solusi Mail dan Calendar yang mengedepankan privasi untuk kebutuhan komunikasi Anda sehari-hari."
+      ],
+      "This offer is for those new to Proton only. No credit card required.": [
+        "Penawaran ini hanya berlaku bagi para pengguna baru Proton. Tidak ada kartu kredit yang diperlukan."
       ]
     },
     "Success": {
@@ -8968,11 +8938,6 @@
         "per bulan"
       ]
     },
-    "Summary of errors during export calendar": {
-      "Details about events that couldn't be exported": [
-        "Rincian mengenai acara yang tidak dapat diekspor"
-      ]
-    },
     "Tab in domain modal": {
       "Addresses": [
         "Alamat"
@@ -9095,7 +9060,7 @@
         "Tambah alamat"
       ],
       "Add another notification to remind you of this event": [
-        "Tambahkan notifikasi lain untuk mengingatkan Anda pada acara ini"
+        "Tambah notifikasi lain untuk mengingatkan Anda pada acara ini"
       ],
       "Add contact group name": [
         "Tambah nama grup kontak"
@@ -9454,6 +9419,9 @@
       "How does it work?": [
         "Bagaimana caranya ini bekerja?"
       ],
+      "How your free trial works": [
+        "Bagaimana masa uji coba gratis Anda bekerja"
+      ],
       "Human verification": [
         "Verifikasi manusia"
       ],
@@ -9592,6 +9560,9 @@
       "Previous": [
         "Sebelumnya"
       ],
+      "Privacy and data collection": [
+        "Privasi dan pengumpulan data"
+      ],
       "Processing": [
         "Memproses"
       ],
@@ -9649,8 +9620,8 @@
       "Secure email based in Switzerland": [
         "Email aman berbasis di Swiss"
       ],
-      "Security": [
-        "Keamanan"
+      "Security and privacy": [
+        "Keamanan dan privasi"
       ],
       "Security logs": [
         "Catatan keamanan"
@@ -9668,7 +9639,7 @@
         "Pilih waktu pengiriman notifikasi"
       ],
       "Select the way to send this notification": [
-        "Pilih bagaimana notifikasi ini akan dikirimkan"
+        "Pilih cara untuk mengirim notifikasi ini"
       ],
       "Select when you want this notification to be sent": [
         "Tentukan kapan Anda ingin notifikasi ini dikirim"
@@ -10009,6 +9980,9 @@
       "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
         "Ketika Anda mengklik sebuah tautan, fitur anti-phishing ini akan meminta Anda untuk mengonfirmasi alamat URL dari halaman web yang bersangkutan."
       ],
+      "When you move an email to spam, you’ll automatically be unsubscribed from the sender’s mailing lists.": [
+        "Pada saat Anda memindahkan email ke spam, Anda akan secara otomatis membatalkan langganan milis Anda."
+      ],
       "You have locally decrypted this key": [
         "Anda mendekripsi kunci ini secara lokal"
       ],
@@ -10243,9 +10217,6 @@
       "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
         "Setiap ${ interval } pekan pada ${ multipleDaysString }, ${ untilString }"
       ],
-      "Every ${ interval } week on all days": [
-        "Setiap ${ interval } pekan pada seluruh hari"
-      ],
       "Every ${ interval } week on all days, ${ timesString }": [
         "Setiap ${ interval } pekan pada seluruh hari, ${ timesString }"
       ],
@@ -10261,9 +10232,6 @@
       "Every ${ interval } week on Friday, ${ untilString }": [
         "Setiap ${ interval } pekan pada hari Jumat, ${ untilString }"
       ],
-      "Every ${ interval } week on Monday": [
-        "Setiap ${ interval } pekan pada hari Senin"
-      ],
       "Every ${ interval } week on Monday, ${ timesString }": [
         "Setiap ${ interval } pekan pada hari Senin, ${ timesString }"
       ],
@@ -10278,9 +10246,6 @@
       ],
       "Every ${ interval } week on Saturday, ${ untilString }": [
         "Setiap ${ interval } pekan pada hari Sabtu, ${ untilString }"
-      ],
-      "Every ${ interval } week on Sunday": [
-        "Setiap ${ interval } pekan pada hari Minggu"
       ],
       "Every ${ interval } week on Sunday, ${ timesString }": [
         "Setiap ${ interval } pekan pada hari Minggu, ${ timesString }"
@@ -10324,9 +10289,6 @@
       "Weekly on ${ multipleDaysString }, ${ untilString }": [
         "Mingguan pada ${ multipleDaysString }, ${ untilString }"
       ],
-      "Weekly on all days": [
-        "Mingguan pada seluruh hari"
-      ],
       "Weekly on all days, ${ timesString }": [
         "Mingguan pada seluruh hari, ${ timesString }"
       ],
@@ -10341,9 +10303,6 @@
       ],
       "Weekly on Friday, ${ untilString }": [
         "Mingguan pada hari Jumat, ${ untilString }"
-      ],
-      "Weekly on Monday": [
-        "Mingguan pada hari Senin"
       ],
       "Weekly on Monday, ${ timesString }": [
         "Mingguan pada hari Senin, ${ timesString }"
@@ -10360,9 +10319,6 @@
       "Weekly on Saturday, ${ untilString }": [
         "Mingguan pada hari Sabtu, ${ untilString }"
       ],
-      "Weekly on Sunday": [
-        "Mingguan pada hari Minggu"
-      ],
       "Weekly on Sunday, ${ timesString }": [
         "Mingguan pada hari Minggu, ${ timesString }"
       ],
@@ -10378,9 +10334,6 @@
       "Weekly on Thursday, ${ untilString }": [
         "Mingguan pada hari Kamis, ${ untilString }"
       ],
-      "Weekly on Tuesday": [
-        "Mingguan pada hari Selasa"
-      ],
       "Weekly on Tuesday, ${ timesString }": [
         "Mingguan pada hari Selasa, ${ timesString }"
       ],
@@ -10395,29 +10348,6 @@
       ],
       "Weekly on Wednesday, ${ untilString }": [
         "Mingguan pada hari Rabu, ${ untilString }"
-      ]
-    },
-    "Weekly recurring event, repeats on (multiple days), frequency": {
-      "Friday": [
-        "Jumat"
-      ],
-      "Monday": [
-        "Senin"
-      ],
-      "Saturday": [
-        "Sabtu"
-      ],
-      "Sunday": [
-        "Minggu"
-      ],
-      "Thursday": [
-        "Kamis"
-      ],
-      "Tuesday": [
-        "Selasa"
-      ],
-      "Wednesday": [
-        "Rabu"
       ]
     },
     "Yearly recurring event, frequency": {

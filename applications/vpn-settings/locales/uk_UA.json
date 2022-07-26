@@ -275,6 +275,9 @@
       "Save selected": [
         "Зберегти вибране"
       ],
+      "Search countries": [
+        "Пошук країн"
+      ],
       "Select ${ planTitle }": [
         "Оберіть ${ planTitle }"
       ],
@@ -397,8 +400,14 @@
       ]
     },
     "Action in trial plan": {
+      "Continue with free plan": [
+        "Залишити безплатний тарифний план"
+      ],
       "No, thanks": [
         "Ні, дякую"
+      ],
+      "Start my 30-day free trial": [
+        "Розпочати 30-денний безплатний пробний період"
       ],
       "Try free for 30 days": [
         "Спробуйте безплатно протягом 30 днів"
@@ -663,11 +672,11 @@
       ]
     },
     "Collapsible tooltip": {
-      "Close": [
-        "Закрити"
+      "Collapse": [
+        "Згорнути"
       ],
-      "Open": [
-        "Відкрити"
+      "Expand": [
+        "Розгорнути"
       ]
     },
     "color": {
@@ -862,9 +871,6 @@
       "Burkina Faso": [
         "Буркіна-Фасо"
       ],
-      "Burma": [
-        "Myanmar"
-      ],
       "Burundi": [
         "Бурунді"
       ],
@@ -919,9 +925,6 @@
       "Costa Rica": [
         "Коста-Рика"
       ],
-      "Cote d'Ivoire\"": [
-        "Кот-д'Івуар\""
-      ],
       "Croatia": [
         "Хорватія"
       ],
@@ -936,6 +939,9 @@
       ],
       "Czech Republic": [
         "Чеська Республіка"
+      ],
+      "Côte d'Ivoire": [
+        "Кот-д'Івуар"
       ],
       "Denmark": [
         "Данія"
@@ -966,6 +972,9 @@
       ],
       "Estonia": [
         "Естонія"
+      ],
+      "Eswatini": [
+        "Есватіні"
       ],
       "Ethiopia": [
         "Ефіопія"
@@ -1210,6 +1219,9 @@
       "Mozambique": [
         "Мозамбік"
       ],
+      "Myanmar": [
+        "М'янма"
+      ],
       "Namibia": [
         "Намібія"
       ],
@@ -1401,9 +1413,6 @@
       ],
       "Svalbard and Jan Mayen": [
         "Свальбард і Ян-Маєн"
-      ],
-      "Swaziland": [
-        "Есватіні"
       ],
       "Sweden": [
         "Швеція"
@@ -1720,9 +1729,6 @@
       ]
     },
     "Error message": {
-      "Brace yourself till we get the error fixed.": [
-        "Дочекайтеся, доки ми виправимо помилку."
-      ],
       "Error: ${ errorMessage }": [
         "Помилка: ${ errorMessage }"
       ],
@@ -1731,6 +1737,9 @@
       ],
       "Please ${ refresh } or check your connection.": [
         "${ refresh } або перевірте своє з'єднання."
+      ],
+      "Something went wrong. Please refresh the page or try again later.": [
+        "Щось пішло не так. Будь ласка, оновіть сторінку або повторіть спробу пізніше."
       ],
       "There was a problem connecting to Proton.": [
         "Виникла проблема при з'єднанні з Proton."
@@ -2388,8 +2397,8 @@
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Використовуйте найкращий сервер відповідно до поточного навантаження та розташування: ${ formattedBestServerName }"
       ],
-      "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
-        "Використовуйте ці облікові дані за з'єднання з серверами ${ VPN_APP_NAME } без застосунку. Приклади використовування таких з'єднань включають: Tunnelblick на macOS, OpenVPN на GNU/Linux."
+      "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
+        "Використовуйте ці облікові дані за з'єднання з серверами ${ VPN_APP_NAME } без застосунку. Приклад використовування таких з'єднань включає: Tunnelblick на macOS, OpenVPN на GNU/Linux."
       ],
       "Verification can take a few minutes.": [
         "Перевірка може тривати декілька хвилин."
@@ -2552,6 +2561,32 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Ваша передплата керується Mozilla. Зв'яжіться зі службою підтримки Mozilla."
+      ]
+    },
+    "info": {
+      "Create an email address": [
+        "Створіть адресу електронної пошти"
+      ],
+      "Day 27: Trial reminder": [
+        "День 27: Нагадування про пробний період"
+      ],
+      "Day 30: Trial ends": [
+        "День 30: Пробний період закінчився"
+      ],
+      "Enjoy secure, easy-to-use emailing with plenty of premium features.": [
+        "Насолоджуйтеся безпечною, простою для користування електронною поштою з великою кількістю преміумфункцій."
+      ],
+      "Try Mail Plus": [
+        "Спробувати Mail Plus"
+      ],
+      "We’ll email you before your trial ends. Cancel anytime.": [
+        "Ми надішлемо вам електронний лист до закінчення пробного періоду. Скасовуйте будь-коли."
+      ],
+      "Your new email address is ready to go!": [
+        "Ваша нова адреса електронної пошти готова до користування!"
+      ],
+      "Your subscription starts on ${ startText }.": [
+        "Ваша передплата розпочата ${ startText }."
       ]
     },
     "Info for cash payment method": {
@@ -3621,8 +3656,8 @@
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
         "Підтримка IMAP доступна лише для комп'ютерних програм (як-от Outlook, Apple Mail, Thunderbird) через ${ MAIL_APP_NAME } Bridge. Хмарна інтеграція IMAP наразі не підтримується."
       ],
-      "Keeps you protected by blocking all network connections when you are accidentally disconnected from our VPN server": [
-        "Захищає вас, блокуючи всі мережеві з'єднання під час випадкового відключення від нашого VPN-сервера"
+      "Keeps you protected by blocking all network connections when you are unexpectedly disconnected from our VPN server.": [
+        "Захищає вас, блокуючи всі мережеві з'єднання під час неочікуваного відімкнення від нашого VPN-сервера."
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Мітки – це прості позначки, які можна застосовувати до повідомлень для спрощення пошуку чи створення фільтрів"
@@ -3639,8 +3674,8 @@
       "On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
         "Крім того, додавайте до 5 календарів від друзів, сім'ї, колег та організацій."
       ],
-      "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections": [
-        "Одне VPN-з'єднання дає змогу користуватися Proton VPN одному пристрою в будь-який час. Наприклад, щоб під'єднати до Proton VPN телефон і комп'ютер одночасно, необхідно два VPN-з'єднання"
+      "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections..": [
+        "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Можливість перегляду не приватних вхідних скриньок користувача, включно з усіма повідомленнями та подробицями контактів"
@@ -4125,6 +4160,9 @@
     "Subtitle for trial plan": {
       "The privacy-first Mail and Calendar solution for your everyday communications needs.": [
         "Створені для приватності електронна пошта й календар для ваших повсякденних потреб спілкування."
+      ],
+      "This offer is for those new to Proton only. No credit card required.": [
+        "Ця пропозиція лише для новачків у Proton. Кредитна картка не потрібна."
       ]
     },
     "Success": {
@@ -4426,6 +4464,9 @@
       ],
       "Gift code": [
         "Подарунковий код"
+      ],
+      "How your free trial works": [
+        "Як працює безплатний пробний період"
       ],
       "Human verification": [
         "Перевірка \"Я не робот\""

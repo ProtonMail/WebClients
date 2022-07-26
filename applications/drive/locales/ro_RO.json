@@ -249,11 +249,11 @@
       "Forward as attachment": [
         "Redirecționare ca atașament"
       ],
+      "Get ${ DRIVE_APP_NAME }": [
+        "Luați ${ DRIVE_APP_NAME }"
+      ],
       "Get link": [
         "Obțineținere legătură"
-      ],
-      "Get Proton Drive": [
-        "Luați Proton Drive"
       ],
       "Get started": [
         "Să începem"
@@ -444,6 +444,9 @@
       "Search": [
         "Căutare"
       ],
+      "Search countries": [
+        "Căutare țări"
+      ],
       "Search drive": [
         "Căutare"
       ],
@@ -633,9 +636,6 @@
       ]
     },
     "blackfriday Title": {
-      "Best deal": [
-        "Cel mai bun"
-      ],
       "Most popular": [
         "Cel mai popular"
       ]
@@ -785,11 +785,11 @@
       ]
     },
     "Collapsible tooltip": {
-      "Close": [
-        "Închidere"
+      "Collapse": [
+        "Restrângere"
       ],
-      "Open": [
-        "Deschidere"
+      "Expand": [
+        "Extindere"
       ]
     },
     "color": {
@@ -1053,9 +1053,6 @@
       "Burkina Faso": [
         "Burkina Faso"
       ],
-      "Burma": [
-        "Burma"
-      ],
       "Burundi": [
         "Burundi"
       ],
@@ -1110,9 +1107,6 @@
       "Costa Rica": [
         "Costa Rica"
       ],
-      "Cote d'Ivoire\"": [
-        "Coasta de Fildeș"
-      ],
       "Croatia": [
         "Croația"
       ],
@@ -1127,6 +1121,9 @@
       ],
       "Czech Republic": [
         "Republica Cehă"
+      ],
+      "Côte d'Ivoire": [
+        "Coasta de Fildeș"
       ],
       "Denmark": [
         "Danemarca"
@@ -1157,6 +1154,9 @@
       ],
       "Estonia": [
         "Estonia"
+      ],
+      "Eswatini": [
+        "Eswatini"
       ],
       "Ethiopia": [
         "Etiopia"
@@ -1401,6 +1401,9 @@
       "Mozambique": [
         "Mozambic"
       ],
+      "Myanmar": [
+        "Burma"
+      ],
       "Namibia": [
         "Namibia"
       ],
@@ -1592,9 +1595,6 @@
       ],
       "Svalbard and Jan Mayen": [
         "Svalbard și Jan Mayen"
-      ],
-      "Swaziland": [
-        "Eswatini"
       ],
       "Sweden": [
         "Suedia"
@@ -2065,6 +2065,9 @@
       ],
       "Please ${ refresh } or check your connection.": [
         "Verificați conexiunea sau ${ refresh }."
+      ],
+      "Something went wrong. Please refresh the page or try again later.": [
+        "Ceva nu a mers bine. Reîmprospătați pagina sau reîncercați mai târziu."
       ],
       "There was a problem connecting to Proton.": [
         "A apărut o problemă la conectarea la Proton."
@@ -2797,8 +2800,10 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Una sau mai multe chei de încredere au fost marcate ca fiind „compromise” de către proprietar. Vă recomandăm să „nu aprobați” aceste chei."
       ],
-      "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters is allowed": [
-        "Sunt permise doar ${ MAX_CUSTOM_PASSWORD_LENGTH } caractere."
+      "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } character is allowed": [
+        "Este permis doar un caracter.",
+        "Sunt permise doar ${ MAX_CUSTOM_PASSWORD_LENGTH } caractere.",
+        "Sunt permise doar ${ MAX_CUSTOM_PASSWORD_LENGTH } de caractere."
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Modificați aceste setări numai dacă utilizați PGP cu destinatari care nu sunt utilizatori ai ${ BRAND_NAME }."
@@ -2821,7 +2826,7 @@
       "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
         "PGP/Inline este compatibil doar cu formatul de text simplu. Rețineți că ${ MAIL_APP_NAME } întotdeauna semnează mesajele criptate."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
         "PGP/MIME trimite automat mesajele folosind modul actual de compunere. Rețineți că ${ MAIL_APP_NAME } întotdeauna semnează mesajele criptate."
       ],
       "Please enter the password to decrypt and view content.": [
@@ -2901,7 +2906,7 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Selectați formatul de e-mail care doriți să fie folosit implicit când trimiteți mesaje la această adresă."
       ],
-      "Select what you want to move from Google.": [
+      "Select what you want to import from Google.": [
         "Selectați ce doriți să importați din Google."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
@@ -3704,7 +3709,7 @@
       ]
     },
     "new_plans: info": {
-      "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
+      "Introducing Proton’s refreshed look.${ br }Many services, one mission. Welcome to an internet where privacy is the default.": [
         "Vă prezentăm aspectul împrospătat al Proton.${ br }Multe servicii, o singură misiune. Bine ați venit la un internet în care confidențialitatea este implicită."
       ]
     },
@@ -3931,26 +3936,14 @@
       ]
     },
     "Onboarding Action": {
-      "Enable Beta Access": [
-        "Activare acces la Beta"
-      ],
       "Next": [
         "Înainte"
       ],
       "Start using ${ appName }": [
         "Începere utilizare ${ appName }"
-      ],
-      "Upgrade account": [
-        "Migrare cont"
       ]
     },
     "Onboarding Info": {
-      "${ appName } is currently in early access and only available to users with a paid plan.": [
-        "${ appName } se află în prezent în faza de acces timpuriu și este disponibil doar pentru utilizatorii cu un plan plătit."
-      ],
-      "${ appName } is currently only available if you enable Beta Access.": [
-        "${ appName } este disponibilă momentan doar dacă activați accesul la versiunea Beta."
-      ],
       "Your trusty online vault for vital documents and precious memories.": [
         "Seiful de încredere online pentru documente vitale și amintiri prețioase."
       ]
@@ -3976,12 +3969,6 @@
       ]
     },
     "Onboarding Title": {
-      "${ appName } is in Beta": [
-        "${ appName } este în versiunea Beta"
-      ],
-      "Upgrade to access ${ appName }": [
-        "Schimbați planul pentru a accesa ${ appName }"
-      ],
       "Welcome to ${ appName }": [
         "Bun venit la ${ appName }"
       ]

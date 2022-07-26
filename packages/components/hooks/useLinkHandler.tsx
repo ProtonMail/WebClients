@@ -68,7 +68,7 @@ export const useLinkHandler: UseLinkHandler = (
         } catch (e: any) {
             createNotification({
                 text: c('Error')
-                    .t`This message may contain some link's URL that cannot be properly opened by your current browser`,
+                    .t`This message may contain some link's URL that cannot be properly opened by your current browser.`,
                 type: 'error',
             });
             return { raw: '' };
