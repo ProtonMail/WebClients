@@ -359,6 +359,9 @@
       "Save": [
         "儲存"
       ],
+      "Search countries": [
+        "搜尋國家與地區"
+      ],
       "Select all": [
         "全選"
       ],
@@ -830,11 +833,11 @@
       ]
     },
     "Collapsible tooltip": {
-      "Close": [
-        "關閉"
+      "Collapse": [
+        "收合"
       ],
-      "Open": [
-        "開啟"
+      "Expand": [
+        "展開"
       ]
     },
     "colon": {
@@ -1103,9 +1106,6 @@
       "Burkina Faso": [
         "布吉納法索"
       ],
-      "Burma": [
-        "緬甸"
-      ],
       "Burundi": [
         "蒲隆地"
       ],
@@ -1159,9 +1159,6 @@
       ],
       "Costa Rica": [
         "哥斯大黎加"
-      ],
-      "Cote d'Ivoire\"": [
-        "科特迪瓦 (象牙海岸)"
       ],
       "Croatia": [
         "克羅埃西亞"
@@ -1642,9 +1639,6 @@
       ],
       "Svalbard and Jan Mayen": [
         "挪威屬斯瓦巴及尖棉"
-      ],
-      "Swaziland": [
-        "史瓦帝尼"
       ],
       "Sweden": [
         "瑞典"
@@ -2209,8 +2203,8 @@
       "This label name is not available. Please choose a different name.": [
         "此標籤名稱無法使用。請換另一個名稱。"
       ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "此郵件包含的某些連結 URL 或未能以您目前的瀏覽器正確開啟"
+      "This message may contain some link's URL that cannot be properly opened by your current browser": [
+        "This message may contain some link's URL that cannot be properly opened by your current browser."
       ],
       "Trusted keys are not valid for sending": [
         "信任的金鑰用於寄送時無效"
@@ -2301,9 +2295,6 @@
       "Calendar": [
         "行事曆"
       ],
-      "Calendar timezone not supported": [
-        "行事曆時區不受支援"
-      ],
       "Component with wrong format": [
         "元件的格式有誤"
       ],
@@ -2379,9 +2370,6 @@
       "Timezone": [
         "時區"
       ],
-      "Timezone not supported": [
-        "時區不受支援"
-      ],
       "To-do entry": [
         "待辦事項"
       ],
@@ -2393,9 +2381,6 @@
       ]
     },
     "Error message": {
-      "Brace yourself till we get the error fixed.": [
-        "不好意思，這個錯誤有待修正。我們將會處理。"
-      ],
       "Error: ${ errorMessage }": [
         "錯誤：${ errorMessage }"
       ],
@@ -3027,9 +3012,6 @@
       "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
         "PGP/Inline 僅與純文字格式相容。請注意，${ MAIL_APP_NAME } 會一律簽署加密郵件。"
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
-        "PGP/MIME 會自動使用目前編輯器模式來傳送郵件。請注意，${ MAIL_APP_NAME } 會一律簽署加密郵件。"
-      ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "請注意：指派到此群組中的電郵位址不會被刪除。"
       ],
@@ -3071,9 +3053,6 @@
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "當寄送電郵到此電郵位址時，預設使用選取的電郵格式。"
-      ],
-      "Select what you want to move from Google.": [
-        "Select what you want to import from Google."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "請選取要匯入的行事曆。將為每個匯入的行事曆創建一個新的行事曆，上限為 20 個行事曆。"
@@ -3895,11 +3874,6 @@
         "切換或是加入帳號"
       ]
     },
-    "new_plans: info": {
-      "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
-        "Introducing Proton’s refreshed look.${ br }Many services, one mission. Welcome to an internet where privacy is the default."
-      ]
-    },
     "new_plans: label": {
       "Tell us about your experience. (Optional)": [
         "與我們分享您的使用體驗。（選填）"
@@ -4132,10 +4106,12 @@
         "您"
       ]
     },
-    "Participants expand button label": {
+    "Participants collapse button label": {
       "Collapse participants list": [
-        "折疊參與者清單"
-      ],
+        "收合參與者清單"
+      ]
+    },
+    "Participants expand button label": {
       "Expand participants list": [
         "展開參與者清單"
       ]

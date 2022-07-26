@@ -1007,7 +1007,7 @@
       ]
     },
     "Description": {
-      "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }": [
+      "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }..": [
         "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }."
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
@@ -1442,9 +1442,6 @@
       "Calendar": [
         "Agenda"
       ],
-      "Calendar timezone not supported": [
-        "Fuso horário da agenda não suportado"
-      ],
       "Component with wrong format": [
         "Componente com formato errado"
       ],
@@ -1514,9 +1511,6 @@
       "Timezone": [
         "Fuso horário"
       ],
-      "Timezone not supported": [
-        "Fuso horário não suportado"
-      ],
       "To-do entry": [
         "Entrada A fazer"
       ],
@@ -1528,9 +1522,6 @@
       ]
     },
     "Error message": {
-      "Brace yourself till we get the error fixed.": [
-        "Aguente-se até que o erro seja corrigido."
-      ],
       "Error: ${ errorMessage }": [
         "Erro: ${ errorMessage }"
       ],
@@ -2045,9 +2036,6 @@
       ],
       "20% discount applied to your subscription with coupon ${ code }": [
         "Foi aplicado um desconto de 20% com o cupão ${ code }"
-      ],
-      "A recovery file lets you unlock and view your data after an account reset. ": [
-        "A recovery file lets you unlock and view your data after an account reset."
       ],
       "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password.": [
         "Uma frase de recuperação permite o acesso à conta e recuperação das mensagens encriptadas, caso se esqueça da senha."
@@ -2709,9 +2697,6 @@
       ],
       "URL link": [
         "Ligação do URL"
-      ],
-      "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
-        "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux."
       ],
       "Verification can take a few minutes.": [
         "A verificação pode levar alguns minutos."
@@ -3754,9 +3739,6 @@
       "Proton company announcements": [
         "Anúncios da Proton"
       ],
-      "Proton for business": [
-        "Proton for Business"
-      ],
       "Proton for Business newsletter": [
         "Boletim do ProtonMail para empresas"
       ],
@@ -3976,10 +3958,7 @@
       ]
     },
     "new_plans: tooltip": {
-      "Keeps you protected by blocking all network connections when you are accidentally disconnected from our VPN server": [
-        "Keeps you protected by blocking all network connections when you are unexpectedly disconnected from our VPN server."
-      ],
-      "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections": [
+      "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections..": [
         "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections."
       ]
     },

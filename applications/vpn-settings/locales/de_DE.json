@@ -275,6 +275,9 @@
       "Save selected": [
         "Auswahl speichern"
       ],
+      "Search countries": [
+        "Länder durchsuchen"
+      ],
       "Select ${ planTitle }": [
         "${ planTitle } auswählen"
       ],
@@ -397,8 +400,14 @@
       ]
     },
     "Action in trial plan": {
+      "Continue with free plan": [
+        "Mit dem kostenlosen Abonnement fortfahren"
+      ],
       "No, thanks": [
         "Nein, danke"
+      ],
+      "Start my 30-day free trial": [
+        "Meine 30-tägige kostenlose Testversion starten"
       ],
       "Try free for 30 days": [
         "30 Tage lang kostenlos testen"
@@ -697,11 +706,11 @@
       ]
     },
     "Collapsible tooltip": {
-      "Close": [
-        "Schließen"
+      "Collapse": [
+        "Einklappen"
       ],
-      "Open": [
-        "Öffnen"
+      "Expand": [
+        "Erweitern"
       ]
     },
     "color": {
@@ -898,9 +907,6 @@
       "Burkina Faso": [
         "Burkina Faso"
       ],
-      "Burma": [
-        "Myanmar"
-      ],
       "Burundi": [
         "Burundi"
       ],
@@ -955,9 +961,6 @@
       "Costa Rica": [
         "Costa Rica"
       ],
-      "Cote d'Ivoire\"": [
-        "Elfenbeinküste"
-      ],
       "Croatia": [
         "Kroatien"
       ],
@@ -972,6 +975,9 @@
       ],
       "Czech Republic": [
         "Tschechische Republik"
+      ],
+      "Côte d'Ivoire": [
+        "Elfenbeinküste"
       ],
       "Denmark": [
         "Dänemark"
@@ -1002,6 +1008,9 @@
       ],
       "Estonia": [
         "Estland"
+      ],
+      "Eswatini": [
+        "Swasiland"
       ],
       "Ethiopia": [
         "Äthiopien"
@@ -1246,6 +1255,9 @@
       "Mozambique": [
         "Mosambik"
       ],
+      "Myanmar": [
+        "Myanmar"
+      ],
       "Namibia": [
         "Namibia"
       ],
@@ -1437,9 +1449,6 @@
       ],
       "Svalbard and Jan Mayen": [
         "Spitzbergen und Jan Mayen"
-      ],
-      "Swaziland": [
-        "Königreich Eswatini (vormals Swasiland)"
       ],
       "Sweden": [
         "Schweden"
@@ -1756,9 +1765,6 @@
       ]
     },
     "Error message": {
-      "Brace yourself till we get the error fixed.": [
-        "Bitte gedulde dich, bis der Fehler behoben wurde."
-      ],
       "Error: ${ errorMessage }": [
         "Fehler: ${ errorMessage }"
       ],
@@ -1767,6 +1773,9 @@
       ],
       "Please ${ refresh } or check your connection.": [
         "Bitte ${ refresh } oder überprüfe deine Verbindung."
+      ],
+      "Something went wrong. Please refresh the page or try again later.": [
+        "Etwas ist schiefgelaufen. Bitte aktualisiere die Seite oder versuche es später erneut."
       ],
       "There was a problem connecting to Proton.": [
         "Es gab ein Problem mit der Verbindung zu Proton."
@@ -2409,8 +2418,8 @@
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Verwende den besten Server je nach aktueller Auslastung und Position: ${ formattedBestServerName }"
       ],
-      "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
-        "Verwende die folgenden Anmeldedaten, wenn du dich ohne Anwendung mit ${ VPN_APP_NAME }-Servern verbinden möchtest. Beispiele für Anwendungsfälle sind: „Tunnelblick” unter macOS, „OpenVPN” unter GNU/Linux."
+      "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
+        "Verwende die folgenden Anmeldedaten, wenn du dich ohne Anwendung mit ${ VPN_APP_NAME }-Servern verbinden möchtest. Beispiele für Anwendungsfälle sind: „Tunnelblick“ unter macOS, „OpenVPN“ unter GNU/Linux."
       ],
       "Verification can take a few minutes.": [
         "Die Überprüfung kann einige Minuten dauern."
@@ -2573,6 +2582,32 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Dein Abonnement wird von Mozilla verwaltet. Bitte kontaktiere den Mozilla‐Kundendienst."
+      ]
+    },
+    "info": {
+      "Create an email address": [
+        "Neue E-Mail-Adresse erstellen"
+      ],
+      "Day 27: Trial reminder": [
+        "Tag 27: Testversion Erinnerung"
+      ],
+      "Day 30: Trial ends": [
+        "Tag 30: Testversion endet"
+      ],
+      "Enjoy secure, easy-to-use emailing with plenty of premium features.": [
+        "Genieße sicheren, benutzerfreundlichen E-Mail-Versand mit zahlreichen Premium-Funktionen."
+      ],
+      "Try Mail Plus": [
+        "Probiere Mail Plus aus"
+      ],
+      "We’ll email you before your trial ends. Cancel anytime.": [
+        "Wir senden dir eine E-Mail, bevor deine Testversion endet. Du kannst jederzeit kündigen."
+      ],
+      "Your new email address is ready to go!": [
+        "Deine neue E-Mail-Adresse ist jetzt einsatzbereit!"
+      ],
+      "Your subscription starts on ${ startText }.": [
+        "Dein Abonnement beginnt am ${ startText }."
       ]
     },
     "Info for cash payment method": {
@@ -3608,8 +3643,8 @@
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
         "Die IMAP-Unterstützung ist auf die Nutzung von Desktop-Apps (z. B. Outlook, Apple Mail, Thunderbird) über ${ MAIL_APP_NAME } Bridge beschränkt. Cloud-basierte IMAP-Integrationen werden derzeit nicht unterstützt."
       ],
-      "Keeps you protected by blocking all network connections when you are accidentally disconnected from our VPN server": [
-        "Diese Funktion schützt dich durch das Blockieren aller Netzwerkverbindungen, wenn deine Verbindung mit unserem VPN-Server versehentlich getrennt wurde."
+      "Keeps you protected by blocking all network connections when you are unexpectedly disconnected from our VPN server.": [
+        "Diese Funktion schützt dich durch das Blockieren aller Netzwerkverbindungen, wenn deine Verbindung mit unserem VPN-Server unerwartet getrennt wurde."
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Kategorien sind einfache Tags, die du zu Nachrichten hinzufügen kannst, um sie leichter zu finden oder zu filtern."
@@ -3626,8 +3661,8 @@
       "On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
         "Darüber hinaus kannst du bis zu 5 Kalender von Freunden, Verwandten, Kollegen und Organisationen hinzufügen."
       ],
-      "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections": [
-        "Eine VPN-Verbindung ermöglicht es einem Gerät, sich zu einem bestimmten Zeitpunkt mit dem Proton VPN zu verbinden. Wenn du etwa ein Telefon und einen Laptop gleichzeitig mit dem Proton VPN verbinden möchtest, benötigst du zwei VPN-Verbindungen."
+      "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections..": [
+        "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Option zum Anzeigen der Posteingänge nicht privater Benutzer aus dessen Sicht, einschließlich aller Nachrichten- und Kontaktdetails"
@@ -4085,6 +4120,9 @@
     "Subtitle for trial plan": {
       "The privacy-first Mail and Calendar solution for your everyday communications needs.": [
         "Die datenschutzfreundliche E-Mail- und Kalenderlösung für deine täglichen kommunikationbedürfnisse."
+      ],
+      "This offer is for those new to Proton only. No credit card required.": [
+        "Dieses Angebot gilt nur für Neukunden von Proton. Keine Kreditkarte erforderlich."
       ]
     },
     "Success": {
@@ -4384,6 +4422,9 @@
       ],
       "Gift code": [
         "Gutscheincode"
+      ],
+      "How your free trial works": [
+        "So funktioniert deine kostenlose Testversion"
       ],
       "Human verification": [
         "Menschliche Verifizierung"

@@ -334,6 +334,9 @@
       "External encryption": [
         "Ekstern kryptering"
       ],
+      "Fewer search options": [
+        "Færre søgemuligheder"
+      ],
       "Filter on...": [
         "Filtrer efter..."
       ],
@@ -814,6 +817,9 @@
       ],
       "Show details": [
         "Vis detaljer"
+      ],
+      "Show fewer search options": [
+        "Vis færre søgemuligheder"
       ],
       "Show folders": [
         "Vis mapper"
@@ -1549,12 +1555,12 @@
         "Begivenhed i gang"
       ]
     },
-    "Collapsible tooltip": {
-      "Close": [
-        "Luk"
+    "color": {
+      "Apple": [
+        "apple"
       ],
-      "Open": [
-        "Åbn"
+      "white": [
+        "hvid"
       ]
     },
     "Composer email icon": {
@@ -1828,9 +1834,6 @@
       "Burkina Faso": [
         "Burkina Faso"
       ],
-      "Burma": [
-        "Burma"
-      ],
       "Burundi": [
         "Burundi"
       ],
@@ -1884,9 +1887,6 @@
       ],
       "Costa Rica": [
         "Costa Rica"
-      ],
-      "Cote d'Ivoire\"": [
-        "Côte d'Ivoire"
       ],
       "Croatia": [
         "Kroatien"
@@ -2368,9 +2368,6 @@
       "Svalbard and Jan Mayen": [
         "Svalbard og Jan Mayen"
       ],
-      "Swaziland": [
-        "Eswatini"
-      ],
       "Sweden": [
         "Sverige"
       ],
@@ -2566,7 +2563,7 @@
     },
     "Description": {
       "Decrypting contacts... This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
-        "Dekrypterer kontakter... Dette kan tage et par minutter. Når processen er afsluttet, vil du kunne downloade filen med alle dine eksporterede kontakter."
+        "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported."
       ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Sletter kontakter... Dette kan tage et par minutter. Når processen er afsluttet, kan du lukke dette vindue."
@@ -3138,9 +3135,6 @@
       ]
     },
     "Error importing event": {
-      "Calendar timezone not supported": [
-        "Kalendertidszone understøttes ikke"
-      ],
       "Component with wrong format": [
         "Komponent med forkert format"
       ],
@@ -3207,9 +3201,6 @@
       "Start time out of bounds": [
         "Starttid uden for grænserne"
       ],
-      "Timezone not supported": [
-        "Tidszone understøttes ikke"
-      ],
       "To-do entry": [
         "Gøremålindlæg"
       ],
@@ -3218,9 +3209,6 @@
       ]
     },
     "Error message": {
-      "Brace yourself till we get the error fixed.": [
-        "Fejlen rettes hurtigst muligt, Tak for din tålmodighed."
-      ],
       "Error: ${ errorMessage }": [
         "Fejl: ${ errorMessage }"
       ],
@@ -3316,6 +3304,10 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "byte",
+        "bytes"
+      ],
       "GB": [
         "GB"
       ],
@@ -3326,12 +3318,33 @@
         "MB"
       ]
     },
+    "file size format, long": {
+      "Byte": [
+        "Byte",
+        "Bytes"
+      ],
+      "Gigabyte": [
+        "Gigabyte",
+        "Gigabytes"
+      ],
+      "Kilobyte": [
+        "Kilobyte",
+        "Kilobytes"
+      ],
+      "Megabyte": [
+        "Megabyte",
+        "Megabytes"
+      ]
+    },
     "Filter Actions": {
       "Archive": [
         "Arkivér"
       ],
       "Inbox": [
         "Indbakke"
+      ],
+      "Inbox - Default": [
+        "Indbakke - Standard"
       ],
       "Select a folder": [
         "Vælg en mappe"
@@ -3706,6 +3719,14 @@
         "${ numContacts } kontakt",
         "${ numContacts } kontakter"
       ],
+      "${ numOccurrences } occurrence found": [
+        "${ numOccurrences } forekomst fundet",
+        "${ numOccurrences } forekomster fundet"
+      ],
+      "${ numOccurrences } occurrence found in the mail content": [
+        "${ numOccurrences } forekomst fundet i mail-indholdet",
+        "${ numOccurrences } forekomster fundet i mail-indholdet"
+      ],
       "${ pureAttachmentsCount } file attached": [
         "${ pureAttachmentsCount } fil vedhæftet",
         "${ pureAttachmentsCount } filer vedhæftet"
@@ -3971,7 +3992,7 @@
         "Vil du gensignere kontaktdetaljerne?"
       ],
       "Don't forget to share your password with the recipient": [
-        "Glem ikke at dele din adgangskode med modtageren"
+        "Don't forget to share the password with the recipient"
       ],
       "Download our mobile application from your favorite app store to communicate securely on-the-go.": [
         "Download vores mobil-app fra din foretrukne app-butik for at kommunikere sikkert på farten."
@@ -4109,7 +4130,7 @@
         "Timer"
       ],
       "I'm sending this message to a non-ProtonMail user.": [
-        "Jeg sender denne besked til en ikke-ProtonMail bruger."
+        "I'm sending this message to a non-Proton Mail user."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Hvis du har problemer med at oprette din konto, bedes du anmode om en invitation. Så vil vi svare inden for en arbejdsdag."
@@ -4244,6 +4265,9 @@
       "Monthly ${ onDayString }": [
         "Månedlig ${ onDayString }"
       ],
+      "Moving a large amount of messages. This may take a while.": [
+        "Flytter en stor mængde beskeder. Dette kan tage et stykke tid."
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Navngiv din nye mappe og vælg den overordnede mappe, du vil placere den i. Hvis du ikke vælger en overordnet mappe, vil denne nye mappe blive oprettet som en topniveaumappe."
       ],
@@ -4316,8 +4340,8 @@
       "per month.": [
         "pr. måned."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
-        "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages."
+      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        "PGP/Inline er kun kompatibelt med simpelt tekstformat. Bemærk at ${ MAIL_APP_NAME } altid signerer krypterede beskeder."
       ],
       "Phone number": [
         "Telefonnummer"
@@ -4389,6 +4413,9 @@
       "Request read receipt": [
         "Anmod om kvittering for læsning"
       ],
+      "Rich text": [
+        "Rich text"
+      ],
       "Right to Left": [
         "Højre mod venstre"
       ],
@@ -4421,9 +4448,6 @@
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Vælg det e-mail-format, der som standard skal benyttes, når du sender en e-mail til denne e-mailadresse."
-      ],
-      "Select what you want to move from Google.": [
-        "Vælg, hvad du vil overflytte fra Google."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Vælg, hvilke kalendere der skal importeres. Der oprettes en ny kalender for hver importeret kalender op til grænsen på 20 kalendere."
@@ -5170,6 +5194,9 @@
       "ANY": [
         "ANY"
       ],
+      "Apply filter to existing emails": [
+        "Anvend filter på eksisterende e-mails"
+      ],
       "Attach screenshot(s)": [
         "Vedhæft skærmfoto(s)"
       ],
@@ -5670,9 +5697,6 @@
       "Manage your labels": [
         "Administrer dine etiketter"
       ],
-      "More": [
-        "Mere"
-      ],
       "More about recovery": [
         "Mere om gendannelse"
       ],
@@ -6012,11 +6036,6 @@
     "new_plans: action": {
       "Switch or add account": [
         "Skift eller tilføj konto"
-      ]
-    },
-    "new_plans: info": {
-      "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
-        "Vi præsenterer Proton's nye udseende.${ br } Mange tjenester, én mission. Velkommen til et internet, hvor privatlivsbeskyttelse er standard."
       ]
     },
     "new_plans: placeholder": {
@@ -6368,6 +6387,9 @@
       ],
       "Cannot send to organizer address: ${ errorMessage }": [
         "Kan ikke sende til organisatoradresse: ${ errorMessage }"
+      ],
+      "Re-encrypting invitation failed. Please try again": [
+        "Re-encrypting invitation failed. Please try again."
       ]
     },
     "Search - no results": {

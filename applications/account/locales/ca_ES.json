@@ -1171,7 +1171,7 @@
       ]
     },
     "Description": {
-      "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }": [
+      "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }..": [
         "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }."
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
@@ -1643,9 +1643,6 @@
       "Calendar": [
         "Calendari"
       ],
-      "Calendar timezone not supported": [
-        "Fus horari del calendari no compatible"
-      ],
       "Component with wrong format": [
         "Component amb format erroni"
       ],
@@ -1715,9 +1712,6 @@
       "Timezone": [
         "Zona Horària"
       ],
-      "Timezone not supported": [
-        "Fus horari no compatible"
-      ],
       "To-do entry": [
         "Entrada a Per-Fer"
       ],
@@ -1729,9 +1723,6 @@
       ]
     },
     "Error message": {
-      "Brace yourself till we get the error fixed.": [
-        "Prepareu-vos fins que no es resolgui l’error."
-      ],
       "Error: ${ errorMessage }": [
         "Error: ${ errorMessage }"
       ],
@@ -2297,9 +2288,6 @@
       ],
       "3. You earn credits": [
         "3. Guanyeu crèdits"
-      ],
-      "A recovery file lets you unlock and view your data after an account reset. ": [
-        "A recovery file lets you unlock and view your data after an account reset."
       ],
       "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password.": [
         "Una frase de recuperació us permet accedir al compte i recuperar els missatges xifrats si oblideu la contrasenya."
@@ -3065,9 +3053,6 @@
       ],
       "URL link": [
         "Enllaç URL"
-      ],
-      "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
-        "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux."
       ],
       "Verification can take a few minutes.": [
         "La verificació pot trigar uns minuts."
@@ -4276,9 +4261,6 @@
       "Proton company announcements": [
         "Anuncis de l'organització Proton"
       ],
-      "Proton for business": [
-        "Proton for Business"
-      ],
       "Proton for Business newsletter": [
         "Butlletí de Proton per a Empreses"
       ],
@@ -4501,10 +4483,7 @@
       ]
     },
     "new_plans: tooltip": {
-      "Keeps you protected by blocking all network connections when you are accidentally disconnected from our VPN server": [
-        "Keeps you protected by blocking all network connections when you are unexpectedly disconnected from our VPN server."
-      ],
-      "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections": [
+      "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections..": [
         "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections."
       ]
     },
@@ -5092,15 +5071,6 @@
       "Bug reported": [
         "Error notificat"
       ],
-      "Calendar added. It might take a few minutes to sync.": [
-        "Calendari afegit. Pot trigar uns minuts a sincronitzar-se."
-      ],
-      "Calendar created": [
-        "Calendari creat"
-      ],
-      "Calendar removed": [
-        "Calendari suprimit"
-      ],
       "Canceling import": [
         "Cancel·lar importació"
       ],
@@ -5112,9 +5082,6 @@
       ],
       "Credits added": [
         "Crèdits afegits"
-      ],
-      "Default calendar updated": [
-        "Calendari per defecte actualitzat"
       ],
       "DMARC value copied to clipboard": [
         "Valor DMARC copiat al portaretalls"
@@ -5799,9 +5766,6 @@
       ],
       "Secure email based in Switzerland": [
         "Correu electrònic segur amb seu a Suïssa"
-      ],
-      "Security": [
-        "Seguretat"
       ],
       "Security logs": [
         "Registres de seguretat"

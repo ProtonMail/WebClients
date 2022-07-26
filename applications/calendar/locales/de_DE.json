@@ -361,6 +361,9 @@
       "Save": [
         "Speichern"
       ],
+      "Search countries": [
+        "Länder durchsuchen"
+      ],
       "Select all": [
         "Alle auswählen"
       ],
@@ -870,11 +873,11 @@
       ]
     },
     "Collapsible tooltip": {
-      "Close": [
-        "Schließen"
+      "Collapse": [
+        "Reduzieren"
       ],
-      "Open": [
-        "Öffnen"
+      "Expand": [
+        "Erweitern"
       ]
     },
     "colon": {
@@ -1143,9 +1146,6 @@
       "Burkina Faso": [
         "Burkina Faso"
       ],
-      "Burma": [
-        "Myanmar"
-      ],
       "Burundi": [
         "Burundi"
       ],
@@ -1200,9 +1200,6 @@
       "Costa Rica": [
         "Costa Rica"
       ],
-      "Cote d'Ivoire\"": [
-        "Elfenbeinküste"
-      ],
       "Croatia": [
         "Kroatien"
       ],
@@ -1217,6 +1214,9 @@
       ],
       "Czech Republic": [
         "Tschechische Republik"
+      ],
+      "Côte d'Ivoire": [
+        "Elfenbeinküste"
       ],
       "Denmark": [
         "Dänemark"
@@ -1247,6 +1247,9 @@
       ],
       "Estonia": [
         "Estland"
+      ],
+      "Eswatini": [
+        "Königreich Eswatini (vormals Swasiland)"
       ],
       "Ethiopia": [
         "Äthiopien"
@@ -1491,6 +1494,9 @@
       "Mozambique": [
         "Mosambik"
       ],
+      "Myanmar": [
+        "Myanmar"
+      ],
       "Namibia": [
         "Namibia"
       ],
@@ -1682,9 +1688,6 @@
       ],
       "Svalbard and Jan Mayen": [
         "Spitzbergen und Jan Mayen"
-      ],
-      "Swaziland": [
-        "Königreich Eswatini (vormals Swasiland)"
       ],
       "Sweden": [
         "Schweden"
@@ -2265,8 +2268,8 @@
       "This label name is not available. Please choose a different name.": [
         "Dieser Kategoriename ist nicht verfügbar. Bitte wähle einen anderen Namen."
       ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "Diese Nachricht enthält möglicherweise Internetadressen, die von deinem aktuellen Browser nicht ordnungsgemäß geöffnet werden können."
+      "This message may contain some link's URL that cannot be properly opened by your current browser": [
+        "This message may contain some link's URL that cannot be properly opened by your current browser."
       ],
       "Trusted keys are not valid for sending": [
         "Vertrauenswürdige Schlüssel sind für das Senden ungeeignet"
@@ -2357,7 +2360,7 @@
       "Calendar": [
         "Kalender"
       ],
-      "Calendar timezone not supported": [
+      "Calendar time zone not supported": [
         "Kalenderzeitzone wird nicht unterstützt"
       ],
       "Component with wrong format": [
@@ -2432,11 +2435,11 @@
       "Start time out of bounds": [
         "Startzeit außerhalb der Vorgaben"
       ],
+      "Time zone not supported": [
+        "Zeitzone wird nicht unterstützt"
+      ],
       "Timezone": [
         "Zeitzone"
-      ],
-      "Timezone not supported": [
-        "Zeitzone nicht unterstützt"
       ],
       "To-do entry": [
         "Eintrag „Zu erledigen”"
@@ -2449,9 +2452,6 @@
       ]
     },
     "Error message": {
-      "Brace yourself till we get the error fixed.": [
-        "Bitte gedulde dich, bis der Fehler behoben wurde."
-      ],
       "Error: ${ errorMessage }": [
         "Fehler: ${ errorMessage }"
       ],
@@ -2463,6 +2463,9 @@
       ],
       "Please ${ refresh } or check your connection.": [
         "Bitte ${ refresh } oder die Verbindung überprüfen."
+      ],
+      "Something went wrong. Please refresh the page or try again later.": [
+        "Etwas ist schiefgelaufen. Bitte aktualisiere die Seite oder versuche es später erneut."
       ],
       "There was a problem connecting to Proton.": [
         "Es gab ein Problem mit der Verbindung zu Proton."
@@ -2918,13 +2921,13 @@
         "Bevor du einen neuen Bestätigungscode anforderst, überprüfe deinen Spam-Ordner und stelle sicher, dass ${ strong } die richtige Adresse ist."
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
-        "Du kannst dich nicht mehr an dein Passwort erinnern? Wir können dir dabei helfen die verschlüsselten Daten aller Kontakte, die mit diesem Schlüssel verschlüsselt wurden zu löschen, der Hinweis deaktiviert wird."
+        "Du kannst dich nicht mehr an dein Passwort erinnern? Wir können dir dabei helfen die verschlüsselten Daten aller Kontakte, die mit diesem Schlüssel verschlüsselt wurden zu löschen, damit der Hinweis deaktiviert wird."
       ],
       "Checking contact ${ progress } of ${ max }...": [
         "Kontakte werden geprüft... (${ progress } von ${ max })"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "Klicke auf „Neuen Code anfordern”, um einen neuen Verifizierungscode an ${ strong } senden zu lassen. Wenn diese Telefonnummer nicht stimmt, klicke auf „Bearbeiten”, um sie zu korrigieren."
+        "Klicke auf „Neuen Code anfordern“, um einen neuen Verifizierungscode an ${ strong } senden zu lassen. Wenn diese Telefonnummer nicht stimmt, klicke auf „Bearbeiten“, um sie zu korrigieren."
       ],
       "Close this screen to exit.": [
         "Schließe dieses Fenster, um den Vorgang zu beenden."
@@ -3120,7 +3123,7 @@
       "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
         "PGP/Inline ist nur mit dem Klartext-Format kompatibel. Bitte beachte, dass ${ MAIL_APP_NAME } verschlüsselte Nachrichten immer signiert."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
         "PGP/MIME sendet die Nachricht automatisch unter Verwendung des aktuellen Verfassen-Modus. Bitte beachte, dass ${ MAIL_APP_NAME } verschlüsselte Nachrichten immer signiert."
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
@@ -3166,8 +3169,8 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Wähle das Nachrichtenformat, das standardmäßig verwendet werden soll, wenn du eine E-Mail an diese E-Mail-Adresse sendest."
       ],
-      "Select what you want to move from Google.": [
-        "Select what you want to import from Google."
+      "Select what you want to import from Google.": [
+        "Auswählen, was aus Google importieren werden soll."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Bitte wähle die zu importierenden Kalender aus. Für jeden importierten Kalender wird ein neuer Kalender erstellt, bis die Grenze von 20 Kalendern erreicht ist."
@@ -3251,7 +3254,7 @@
         "Dieser Link ist möglicherweise ein homographischer Angriff (Vortäuschung einer falschen Identität). Bitte vergewissere dich, dass dies der Link ist, den du besuchen möchtest, oder öffne ihn nicht."
       ],
       "To fight spam and abuse, please verify you are human.": [
-        "Um Spam und Missbrauch zu bekämpfen, wird überprüft, ob du ein Mensch bist."
+        "Um Spam und Missbrauch zu bekämpfen, beweise bitte, ob du ein Mensch bist."
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Um deine Kontakte neu zu signieren, muss jeder Kontakt mit der Liste der in deinem Konto verfügbaren Verschlüsselungsschlüssel verglichen werden. Wenn keine Übereinstimmung gefunden wird, wird der Kontakt mit dem primären Verschlüsselungsschlüssel neu signiert."
@@ -3996,8 +3999,8 @@
       ]
     },
     "new_plans: info": {
-      "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
-        "Introducing Proton’s refreshed look.${ br }Many services, one mission. Welcome to an internet where privacy is the default."
+      "Introducing Proton’s refreshed look.${ br }Many services, one mission. Welcome to an internet where privacy is the default.": [
+        "Proton präsentiert sein neues Design.${ br } Viele Dienste, eine Mission. Willkommen bei einem Internet, bei dem der Schutz der Privatsphäre Standard ist."
       ]
     },
     "new_plans: label": {
@@ -4256,10 +4259,12 @@
         "Du"
       ]
     },
-    "Participants expand button label": {
+    "Participants collapse button label": {
       "Collapse participants list": [
         "Teilnehmerliste minimieren"
-      ],
+      ]
+    },
+    "Participants expand button label": {
       "Expand participants list": [
         "Teilnehmerliste vollständig anzeigen"
       ]

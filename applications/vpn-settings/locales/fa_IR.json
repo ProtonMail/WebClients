@@ -11,6 +11,9 @@
       "${ BRAND_NAME } shop": [
         "فروشگاه ${ BRAND_NAME }"
       ],
+      "Activate recovery": [
+        "فعال سازی بازیابی"
+      ],
       "Add credit / debit card": [
         "افزودن کارت اعتباری / دبیت"
       ],
@@ -37,6 +40,9 @@
       ],
       "Change password": [
         "تغییر رمز عبور"
+      ],
+      "Chat with us": [
+        "با ما گفتگو کنید"
       ],
       "Close": [
         "بستن"
@@ -68,8 +74,17 @@
       "Create account": [
         "ایجاد حساب‌کاربری"
       ],
+      "Create address": [
+        "ایجاد آدرس"
+      ],
+      "Current plan": [
+        "طرح فعلی"
+      ],
       "Customize": [
         "سفارشی"
+      ],
+      "Customize plan": [
+        "طرح خود را شخصی سازی کنید"
       ],
       "Decrease": [
         "کاستن"
@@ -82,6 +97,9 @@
       ],
       "Details": [
         "جزئیات"
+      ],
+      "Didn't receive the code?": [
+        "کد را دریافت نکردید؟"
       ],
       "Done": [
         "انجام شد"
@@ -98,11 +116,17 @@
       "Edit": [
         "ویرایش"
       ],
+      "Edit billing details": [
+        "ویرایش جزئیات صورتحساب"
+      ],
       "Edit email address": [
         "ویرایش نشانی ایمیل"
       ],
       "Edit phone number": [
         "ویرایش شماره‌تلفن"
+      ],
+      "Edit subscription": [
+        "ویرایش اشتراک ایمیل"
       ],
       "enable desktop notifications": [
         "فعا‌ل‌سازی اعلان‌های دسکتاپ"
@@ -152,8 +176,14 @@
       "Pay": [
         "پرداخت"
       ],
+      "Pay ${ price }": [
+        "پرداخت ${ price }"
+      ],
       "Previous": [
         "قبلی"
+      ],
+      "Refer a friend": [
+        "معرفی به یک دوست"
       ],
       "Refresh the page": [
         "نوسازی صفحه"
@@ -188,8 +218,23 @@
       "Retry": [
         "تلاش مجدد"
       ],
+      "Return to sign in": [
+        "بازگشت به فرم ورود"
+      ],
       "Save": [
         "ذخیره"
+      ],
+      "Select ${ planTitle }": [
+        "انتخاب ${ planTitle }"
+      ],
+      "Send code": [
+        "ارسال کد"
+      ],
+      "Send my username": [
+        "نام کاربری من را ارسال کنید"
+      ],
+      "Set recovery phrase": [
+        "تنظیم عبارت بازیابی"
       ],
       "Share via link": [
         "هم‌رسانی با پیوند"
@@ -205,6 +250,9 @@
       ],
       "Sign out": [
         "خروج"
+      ],
+      "Signing in": [
+        "در حال ورود به حساب"
       ],
       "Signing out": [
         "در حال خارج شدن"
@@ -224,6 +272,15 @@
       "Try another method": [
         "روش دیگری را امتحان کنید"
       ],
+      "Unlock": [
+        "بازکردن"
+      ],
+      "Update recovery file": [
+        "به‌روزرسانی فایل بازیابی"
+      ],
+      "Update recovery phrase": [
+        "به‌روزرسانی عبارت بازیابی"
+      ],
       "Upgrade": [
         "ارتقا"
       ],
@@ -233,17 +290,26 @@
       "Use a different payment method": [
         "از روش پرداخت دیگری استفاده کنید"
       ],
+      "Use recovery code": [
+        "از کد بازیابی استفاده کنید"
+      ],
       "User": [
         "کاربر"
       ],
       "Verify": [
         "تایید"
       ],
+      "Verify account": [
+        "تأييد حساب"
+      ],
       "Verify code": [
         "تایید کد"
       ],
       "Verify code again": [
         "تایید دوباره کد"
+      ],
+      "Verify email": [
+        "تأييد آدرس ایمیل"
       ],
       "View": [
         "نمایش"
@@ -437,11 +503,6 @@
         "در حال همگام‌سازی"
       ]
     },
-    "Collapsible tooltip": {
-      "Close": [
-        "بستن"
-      ]
-    },
     "Confirmation message to delete payment method": {
       "Are you sure you want to delete this payment method?": [
         "مطمئن هستید که می خواهید این نحوه پرداخت را حذف کنید؟"
@@ -574,9 +635,6 @@
       "Burkina Faso": [
         "برکینافاسو"
       ],
-      "Burma": [
-        "Myanmar"
-      ],
       "Burundi": [
         "بوروندی"
       ],
@@ -631,9 +689,6 @@
       "Costa Rica": [
         "کاستاریکا"
       ],
-      "Cote d'Ivoire\"": [
-        "ساحل عاج"
-      ],
       "Croatia": [
         "کرواسی"
       ],
@@ -648,6 +703,9 @@
       ],
       "Czech Republic": [
         "جمهوری چک"
+      ],
+      "Côte d'Ivoire": [
+        "ساحل عاج"
       ],
       "Denmark": [
         "دانمارک"
@@ -678,6 +736,9 @@
       ],
       "Estonia": [
         "استونی"
+      ],
+      "Eswatini": [
+        "سوازیلند"
       ],
       "Ethiopia": [
         "اتیوپی"
@@ -918,6 +979,9 @@
       ],
       "Mozambique": [
         "موزامبیک"
+      ],
+      "Myanmar": [
+        "میانمار"
       ],
       "Namibia": [
         "نامیبی"
@@ -1354,9 +1418,6 @@
       ]
     },
     "Error message": {
-      "Brace yourself till we get the error fixed.": [
-        "لطفاً تا رفع شدن خطا، شکیبا باشید."
-      ],
       "Error: ${ errorMessage }": [
         "خطا: ${ errorMessage }"
       ],
@@ -2271,6 +2332,11 @@
     "new_plans: signup": {
       "Subscription": [
         "اشتراک"
+      ]
+    },
+    "new_plans: tooltip": {
+      "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections..": [
+        "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections."
       ]
     },
     "Notification": {

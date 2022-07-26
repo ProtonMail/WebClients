@@ -1459,17 +1459,9 @@
         "Tadyant tetteddu"
       ]
     },
-    "Collapsible tooltip": {
-      "Close": [
-        "Mdel"
-      ],
-      "Open": [
-        "Ldi"
-      ]
-    },
     "color": {
       "Apple": [
-        "Apple"
+        "apple"
       ],
       "carrot": [
         "zṛudyya"
@@ -1770,9 +1762,6 @@
       "Burkina Faso": [
         "Burkina Fasu"
       ],
-      "Burma": [
-        "Birmani"
-      ],
       "Burundi": [
         "Burundi"
       ],
@@ -1826,9 +1815,6 @@
       ],
       "Costa Rica": [
         "Kusta Rika"
-      ],
-      "Cote d'Ivoire\"": [
-        "Côte d'Ivoire"
       ],
       "Croatia": [
         "Karwaṣya"
@@ -2295,9 +2281,6 @@
       "Svalbard and Jan Mayen": [
         "Svalbard d Jan Mayen"
       ],
-      "Swaziland": [
-        "Eswatini"
-      ],
       "Sweden": [
         "Sswid"
       ],
@@ -2490,7 +2473,7 @@
     },
     "Description": {
       "Decrypting contacts... This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
-        "Tukksa n uwgelhen i yinermasen... Ayagi yezmer ad yeṭṭef kra n tsedidin.\nMi yekfa ukala-agi, ad tizmireḍ ad tsidreḍ afaylu s yinermisen-inek m meṛṛa ttusifḍen."
+        "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported."
       ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Tukksa n yinermasen... Ayagi yezmer ad yeṭṭef kra n tsedidin.\nMi yekfa ukala-agi, ad tizmireḍ ad tmedleḍ tankult-agi n udiwenni."
@@ -2990,9 +2973,6 @@
       ]
     },
     "Error importing event": {
-      "Calendar timezone not supported": [
-        "Izḍi usrid n uwitay ur yettusefrak ara"
-      ],
       "Component with wrong format": [
         "Asuddis s yir amasal"
       ],
@@ -3056,9 +3036,6 @@
       "Start time out of bounds": [
         "Akud n beddu akkin i tlisa"
       ],
-      "Timezone not supported": [
-        "Izḍi usrid ur yettusefrak ara"
-      ],
       "To-do entry": [
         "Anekcum n twuriwin"
       ],
@@ -3067,9 +3044,6 @@
       ]
     },
     "Error message": {
-      "Brace yourself till we get the error fixed.": [
-        "Ttxil rǧu simara ad yefru ugur."
-      ],
       "Error: ${ errorMessage }": [
         "Tuccḍa: ${ errorMessage }"
       ],
@@ -3763,6 +3737,9 @@
       "Do you want to re-sign the contact details?": [
         "Tebɣiḍ ad talseḍ azmul i telqayt n unermis?"
       ],
+      "Don't forget to share your password with the recipient": [
+        "Don't forget to share the password with the recipient"
+      ],
       "Download our mobile application from your favorite app store to communicate securely on-the-go.": [
         "Sader asnas-nneɣ n uziraz seg app store tesmenyafayeḍ i wakken ad temmeslayeḍ s wudem aɣellsan mi ara tettedduḍ."
       ],
@@ -3869,6 +3846,9 @@
       "Hour": [
         "Asrag",
         "Isragen"
+      ],
+      "I'm sending this message to a non-ProtonMail user.": [
+        "I'm sending this message to a non-Proton Mail user."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Ma tufiḍ ugur deg usnulfu n umiḍan-inek/m, ttxil-k/m suter tinnubga ad d-nerr deg yiwen n wass uxeddim."
@@ -4062,9 +4042,6 @@
       ],
       "per month.": [
         "deg wayyur."
-      ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
-        "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages."
       ],
       "Phone number": [
         "Uṭṭun n tiliɣri"
@@ -5303,9 +5280,6 @@
       "Manage your labels": [
         "Sefrek tibzimin-ik·im"
       ],
-      "More": [
-        "Ugar"
-      ],
       "More about recovery": [
         "Ugar ɣef tririt"
       ],
@@ -5928,6 +5902,9 @@
       ],
       "Cannot send to organizer address: ${ errorMessage }": [
         "D awezɣi ad tettwazen tansa n umsuddes: ${ errorMessage }"
+      ],
+      "Re-encrypting invitation failed. Please try again": [
+        "Re-encrypting invitation failed. Please try again."
       ]
     },
     "Search - no results": {

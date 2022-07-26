@@ -1210,6 +1210,11 @@
         "Ovaj je odgovor zastario. Nemate kalendara."
       ]
     },
+    "color": {
+      "Apple": [
+        "apple"
+      ]
+    },
     "Composer email icon": {
       "End-to-end encrypted": [
         "End-to-End šifriranje"
@@ -1366,14 +1371,6 @@
         "Yomi"
       ]
     },
-    "Country name": {
-      "Cote d'Ivoire\"": [
-        "Côte d'Ivoire"
-      ],
-      "Swaziland": [
-        "Eswatini"
-      ]
-    },
     "CustomFilter": {
       "Filter on": [
         "Filtar za"
@@ -1458,7 +1455,7 @@
     },
     "Description": {
       "Decrypting contacts... This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
-        "Dešifriranje kontakata... Ovo može potrajati nekoliko minuta. Nakon dovršetka možete preuzeti datoteku koja sadrži vaše sve kontakte."
+        "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported."
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Šifriranje i uvoz kontakata... To može potrajati nekoliko minuta. Kad je postupak dovršen, ovaj modal možete zatvoriti."
@@ -1799,9 +1796,6 @@
       ]
     },
     "Error importing event": {
-      "Calendar timezone not supported": [
-        "Vremenska zona kalendara nije podržana"
-      ],
       "Component with wrong format": [
         "Komponenta s pogrešnim formatom"
       ],
@@ -1862,9 +1856,6 @@
       "Start time out of bounds": [
         "Početno vrijeme je van granica"
       ],
-      "Timezone not supported": [
-        "Vremenska zona nije podržana"
-      ],
       "To-do entry": [
         "Stavka liste zadataka"
       ],
@@ -1873,9 +1864,6 @@
       ]
     },
     "Error message": {
-      "Brace yourself till we get the error fixed.": [
-        "Molimo pričekajte dok ne popravimo pogrešku."
-      ],
       "Error: ${ errorMessage }": [
         "Pogreška: ${ errorMessage }"
       ],
@@ -2397,6 +2385,9 @@
       "Do you want to re-sign the contact details?": [
         "Želite li ponovno potpisati detalje kontakta?"
       ],
+      "Don't forget to share your password with the recipient": [
+        "Don't forget to share the password with the recipient"
+      ],
       "Download our mobile application from your favorite app store to communicate securely on-the-go.": [
         "Preuzmite našu mobilnu aplikaciju iz vaše omiljene trgovine aplikacija da biste sigurno komunicirali u pokretu."
       ],
@@ -2484,6 +2475,9 @@
         "Sat",
         "Sati",
         "Sati"
+      ],
+      "I'm sending this message to a non-ProtonMail user.": [
+        "I'm sending this message to a non-Proton Mail user."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Ako imate poteškoća s otvaranjem računa, zatražite pozivnicu i odgovorit ćemo vam u roku jednog radnog dana."
@@ -2604,9 +2598,6 @@
       ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Naš je sustav ovu e-poruku označio kao pokušaj krađe identiteta. Molimo provjerite je li legitimna poruka."
-      ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
-        "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages."
       ],
       "Phone number": [
         "Broj telefona"
@@ -4064,6 +4055,9 @@
       ],
       "Cannot send to organizer address: ${ errorMessage }": [
         "Nije moguće poslati na adresu organizatora: ${ errorMessage }"
+      ],
+      "Re-encrypting invitation failed. Please try again": [
+        "Re-encrypting invitation failed. Please try again."
       ]
     },
     "Search - no results": {

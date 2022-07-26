@@ -35,6 +35,9 @@
       "Request new code": [
         "Poproś o nowy kod"
       ],
+      "Search countries": [
+        "Szukaj krajów"
+      ],
       "Submit": [
         "Wyślij"
       ],
@@ -228,9 +231,6 @@
       "Burkina Faso": [
         "Burkina Faso"
       ],
-      "Burma": [
-        "Mjanma"
-      ],
       "Burundi": [
         "Burundi"
       ],
@@ -285,9 +285,6 @@
       "Costa Rica": [
         "Kostaryka"
       ],
-      "Cote d'Ivoire\"": [
-        "Cote d'Ivoire"
-      ],
       "Croatia": [
         "Chorwacja"
       ],
@@ -302,6 +299,9 @@
       ],
       "Czech Republic": [
         "Czechy"
+      ],
+      "Côte d'Ivoire": [
+        "Wybrzeże Kości Słoniowej"
       ],
       "Denmark": [
         "Dania"
@@ -332,6 +332,9 @@
       ],
       "Estonia": [
         "Estonia"
+      ],
+      "Eswatini": [
+        "Eswatini"
       ],
       "Ethiopia": [
         "Etiopia"
@@ -576,6 +579,9 @@
       "Mozambique": [
         "Mozambik"
       ],
+      "Myanmar": [
+        "Mjanma"
+      ],
       "Namibia": [
         "Namibia"
       ],
@@ -768,9 +774,6 @@
       "Svalbard and Jan Mayen": [
         "Svalbard i Jan Mayen"
       ],
-      "Swaziland": [
-        "Eswatini"
-      ],
       "Sweden": [
         "Szwecja"
       ],
@@ -918,9 +921,6 @@
       ]
     },
     "Error message": {
-      "Brace yourself till we get the error fixed.": [
-        "Something went wrong. Please refresh the page or try again later."
-      ],
       "Error: ${ errorMessage }": [
         "Błąd: ${ errorMessage }"
       ],
@@ -929,6 +929,9 @@
       ],
       "Please ${ refresh } or check your connection.": [
         "${ refresh } lub sprawdź swoje połączenie."
+      ],
+      "Something went wrong. Please refresh the page or try again later.": [
+        "Coś poszło nie tak. Odśwież stronę lub spróbuj ponownie później."
       ],
       "There was a problem connecting to Proton.": [
         "Wystąpił problem z połączeniem z usługą Proton."

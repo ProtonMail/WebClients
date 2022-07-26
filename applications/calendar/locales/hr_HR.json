@@ -1047,8 +1047,8 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Ovo polje zahtjeva najmanje ${ minimumLength } znakova."
       ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "Ova poruka može sadržavati URL poveznice koje trenutačni preglednik ne može ispravno otvoriti"
+      "This message may contain some link's URL that cannot be properly opened by your current browser": [
+        "This message may contain some link's URL that cannot be properly opened by your current browser."
       ],
       "Trusted keys are not valid for sending": [
         "Pouzdani ključevi nisu valjani za slanje"
@@ -1106,9 +1106,6 @@
       ]
     },
     "Error message": {
-      "Brace yourself till we get the error fixed.": [
-        "Molimo pričekajte dok ne popravimo pogrešku."
-      ],
       "Error: ${ errorMessage }": [
         "Pogreška: ${ errorMessage }"
       ],
@@ -1510,9 +1507,6 @@
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Odaberite zadani format e-pošte koji želite da se koristi prilikom slanja e-pošte na ovu adresu e-pošte."
-      ],
-      "Select what you want to move from Google.": [
-        "Select what you want to import from Google."
       ],
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "Ukloniti će se neki vaši odgovori na događaje koje je organizator prethodno ažurirao."
@@ -2058,11 +2052,6 @@
       ],
       "on the third Wednesday": [
         "na treću srijedu"
-      ]
-    },
-    "new_plans: info": {
-      "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
-        "Introducing Proton’s refreshed look.${ br }Many services, one mission. Welcome to an internet where privacy is the default."
       ]
     },
     "Notification": {

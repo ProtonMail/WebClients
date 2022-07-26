@@ -1391,17 +1391,9 @@
         "イベントが開催中です"
       ]
     },
-    "Collapsible tooltip": {
-      "Close": [
-        "閉じる"
-      ],
-      "Open": [
-        "開く"
-      ]
-    },
     "color": {
       "Apple": [
-        "グレーな緑"
+        "apple"
       ],
       "azureish white": [
         "かなり白い青"
@@ -1837,9 +1829,6 @@
       "Burkina Faso": [
         "ブルキナファソ"
       ],
-      "Burma": [
-        "ビルマ"
-      ],
       "Burundi": [
         "ブルンジ"
       ],
@@ -1893,9 +1882,6 @@
       ],
       "Costa Rica": [
         "コスタリカ"
-      ],
-      "Cote d'Ivoire\"": [
-        "Côte d'Ivoire"
       ],
       "Croatia": [
         "クロアチア"
@@ -2377,9 +2363,6 @@
       "Svalbard and Jan Mayen": [
         "スヴァールバル諸島およびヤンマイエン島"
       ],
-      "Swaziland": [
-        "Eswatini"
-      ],
       "Sweden": [
         "スウェーデン"
       ],
@@ -2571,7 +2554,7 @@
     },
     "Description": {
       "Decrypting contacts... This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
-        "連絡先を復号しています。この処理には数分かかる場合があります。処理が完了すると、すべての連絡先をエクスポートしてファイルとしてダウンロードできます。"
+        "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported."
       ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "連絡先を削除しています... これには数分かかる場合があります。処理が完了したらこのモーダルを閉じることができます。"
@@ -3112,9 +3095,6 @@
       ]
     },
     "Error importing event": {
-      "Calendar timezone not supported": [
-        "カレンダーのタイムゾーンはサポートされていません"
-      ],
       "Component with wrong format": [
         "無効なコンポーネント形式です"
       ],
@@ -3175,9 +3155,6 @@
       "Start time out of bounds": [
         "開始日時が指定可能な範囲を超えています"
       ],
-      "Timezone not supported": [
-        "タイムゾーンはサポートされていません"
-      ],
       "To-do entry": [
         "To-do のエントリー"
       ],
@@ -3186,9 +3163,6 @@
       ]
     },
     "Error message": {
-      "Brace yourself till we get the error fixed.": [
-        "エラーが解消されるまでお待ちください。"
-      ],
       "Error: ${ errorMessage }": [
         "エラー: ${ errorMessage }"
       ],
@@ -3902,7 +3876,7 @@
         "連絡先の詳細に再署名しますか?"
       ],
       "Don't forget to share your password with the recipient": [
-        "宛先にパスワードを伝えることを忘れないでください"
+        "Don't forget to share the password with the recipient"
       ],
       "Download our mobile application from your favorite app store to communicate securely on-the-go.": [
         "お好みのアプリストアからモバイルアプリをダウンロードして、外出先でも安全に会話しましょう。"
@@ -4028,7 +4002,7 @@
         "時間"
       ],
       "I'm sending this message to a non-ProtonMail user.": [
-        "このメッセージを非 ProtonMail ユーザーに送信しています。"
+        "I'm sending this message to a non-Proton Mail user."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "アカウントの作成に問題がある場合は、招待をリクエストしてください。1 営業日以内に対応します。"
@@ -4228,9 +4202,6 @@
       "per month.": [
         "毎月。"
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
-        "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages."
-      ],
       "Phone number": [
         "電話番号"
       ],
@@ -4335,9 +4306,6 @@
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "このメールアドレスにメールを送信する際に既定で使用するメールの形式を選択できます。"
-      ],
-      "Select what you want to move from Google.": [
-        "Google から移動したいものを選択してください。"
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "インポートするカレンダーを選択してください。インポートするカレンダーは最大 20 件までに制限されます。"
@@ -5524,9 +5492,6 @@
       "Manage your labels": [
         "ラベルを管理"
       ],
-      "More": [
-        "さらに"
-      ],
       "More about recovery": [
         "回復について"
       ],
@@ -5849,11 +5814,6 @@
     "new_plans: action": {
       "Switch or add account": [
         "アカウントを追加・切り替え"
-      ]
-    },
-    "new_plans: info": {
-      "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
-        "新しい外観になった Proton をご紹介します。${ br }たくさんのサービス、1 つのミッション。どこでもプライベートなインターネットへようこそ。"
       ]
     },
     "new_plans: label": {
@@ -6197,6 +6157,9 @@
       ],
       "Cannot send to organizer address: ${ errorMessage }": [
         "主催者のアドレスに送信できません: ${ errorMessage }"
+      ],
+      "Re-encrypting invitation failed. Please try again": [
+        "Re-encrypting invitation failed. Please try again."
       ]
     },
     "Search - no results": {
