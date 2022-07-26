@@ -60,7 +60,7 @@ describe('Mailbox elements list reacting to events', () => {
         });
 
         expectElements(getItems, total, false);
-        expect(api.mock.calls.length).toBe(7);
+        expect(api.mock.calls.length).toBe(10);
     });
 
     it('should not reload the list on an update event if has list from start', async () => {
@@ -73,7 +73,7 @@ describe('Mailbox elements list reacting to events', () => {
         });
 
         expectElements(getItems, total, false);
-        expect(api.mock.calls.length).toBe(7);
+        expect(api.mock.calls.length).toBe(10);
     });
 
     it('should reload the list on an update event if has not list from start', async () => {
@@ -91,7 +91,7 @@ describe('Mailbox elements list reacting to events', () => {
         });
 
         expectElements(getItems, PAGE_SIZE, false);
-        expect(api.mock.calls.length).toBe(8);
+        expect(api.mock.calls.length).toBe(18);
     });
 
     it('should reload the list on an delete event if a search is active', async () => {
