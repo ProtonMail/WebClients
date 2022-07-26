@@ -1,5 +1,13 @@
 import { FormEvent, useState } from 'react';
+
 import { c } from 'ttag';
+
+import {
+    checkMemberAddressAvailability,
+    createMember,
+    createMemberAddress,
+    updateRole,
+} from '@proton/shared/lib/api/members';
 import {
     DEFAULT_ENCRYPTION_CONFIG,
     ENCRYPTION_CONFIGS,
@@ -8,38 +16,32 @@ import {
     VPN_CONNECTIONS,
 } from '@proton/shared/lib/constants';
 import {
-    checkMemberAddressAvailability,
-    createMember,
-    createMemberAddress,
-    updateRole,
-} from '@proton/shared/lib/api/members';
-import {
     confirmPasswordValidator,
     passwordLengthValidator,
     requiredValidator,
 } from '@proton/shared/lib/helpers/formValidators';
+import { CachedOrganizationKey, Domain, Organization } from '@proton/shared/lib/interfaces';
+import { setupMemberKeys } from '@proton/shared/lib/keys';
 import { srpVerify } from '@proton/shared/lib/srp';
-import { Domain, Organization, CachedOrganizationKey } from '@proton/shared/lib/interfaces';
 import clamp from '@proton/utils/clamp';
-import { setupMemberKey } from '@proton/shared/lib/keys';
-import { useApi, useNotifications, useEventManager, useGetAddresses, useLoading } from '../../hooks';
+
 import {
     Button,
     InputFieldTwo,
-    ModalProps,
     ModalTwo as Modal,
     ModalTwoContent as ModalContent,
     ModalTwoFooter as ModalFooter,
     ModalTwoHeader as ModalHeader,
+    ModalProps,
     Option,
     PasswordInputTwo,
     SelectTwo,
     Toggle,
     useFormErrors,
 } from '../../components';
-
-import MemberStorageSelector, { getStorageRange, getTotalStorage } from './MemberStorageSelector';
+import { useApi, useEventManager, useGetAddresses, useLoading, useNotifications } from '../../hooks';
 import SelectEncryption from '../keys/addKey/SelectEncryption';
+import MemberStorageSelector, { getStorageRange, getTotalStorage } from './MemberStorageSelector';
 
 interface Props extends ModalProps {
     organization: Organization;
@@ -110,11 +112,11 @@ const MemberModal = ({ organization, organizationKey, domains, ...rest }: Props)
                 throw new Error('Organization key is not decrypted');
             }
             const ownerAddresses = await getAddresses();
-            await setupMemberKey({
+            await setupMemberKeys({
                 api,
                 ownerAddresses,
                 member: Member,
-                address: Address,
+                memberAddresses: [Address],
                 organizationKey: organizationKey.privateKey,
                 encryptionConfig: ENCRYPTION_CONFIGS[encryptionType],
                 password: model.password,
@@ -161,10 +163,11 @@ const MemberModal = ({ organization, organizationKey, domains, ...rest }: Props)
         >
             <ModalHeader title={c('Title').t`Add user`} />
             <ModalContent>
-                <p>{c('Info').t`Create a new account and share the email address and password with the user.`}</p>
+                <p className="color-weak">{c('Info')
+                    .t`Create a new account and share the email address and password with the user.`}</p>
                 <InputFieldTwo
-                    autoFocus
                     id="name"
+                    autoFocus
                     value={model.name}
                     error={validator([requiredValidator(model.name)])}
                     onValue={handleChange('name')}
