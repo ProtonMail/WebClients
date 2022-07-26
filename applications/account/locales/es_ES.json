@@ -4,20 +4,6 @@
     "language": "es_ES"
   },
   "contexts": {
-    "Access level": {
-      "Full": [
-        "Completo"
-      ],
-      "Full view": [
-        "Vista completa"
-      ],
-      "Limited": [
-        "Limitado"
-      ],
-      "Limited view": [
-        "Vista limitada"
-      ]
-    },
     "Action": {
       "${ address } is available.": [
         "${ address } está disponible."
@@ -52,9 +38,6 @@
       "Add address": [
         "Añadir dirección"
       ],
-      "Add calendar": [
-        "Añadir calendario"
-      ],
       "Add condition": [
         "Añadir condición"
       ],
@@ -75,9 +58,6 @@
       ],
       "Add label": [
         "Añadir etiqueta"
-      ],
-      "Add notification": [
-        "Añadir notificación"
       ],
       "Add PayPal": [
         "Añadir PayPal"
@@ -181,17 +161,11 @@
       "Continue with ${ nameToDisplay } ${ maybeEmailInBrackets }": [
         "Continuar con ${ nameToDisplay } ${ maybeEmailInBrackets }"
       ],
-      "Continue with Google": [
-        "Continuar con Google"
-      ],
       "Copy": [
         "Copiar"
       ],
       "Copy email to clipboard": [
         "Copiar correo al portapapeles"
-      ],
-      "Copy link": [
-        "Copiar enlace"
       ],
       "Create": [
         "Crear"
@@ -205,9 +179,6 @@
       "Create address": [
         "Crear dirección"
       ],
-      "Create calendar": [
-        "Crear calendario"
-      ],
       "Create folder": [
         "Crear carpeta"
       ],
@@ -216,9 +187,6 @@
       ],
       "Create label": [
         "Crear etiqueta"
-      ],
-      "Create link": [
-        "Crear enlace"
       ],
       "Current plan": [
         "Plan actual"
@@ -240,9 +208,6 @@
       ],
       "Delete": [
         "Eliminar"
-      ],
-      "Delete link": [
-        "Eliminar enlace"
       ],
       "Delete permanently": [
         "Eliminar permanentemente"
@@ -337,9 +302,6 @@
       "Export": [
         "Exportar"
       ],
-      "Export ICS": [
-        "Exportar ICS"
-      ],
       "Export key": [
         "Exportar clave"
       ],
@@ -399,9 +361,6 @@
       ],
       "Import emails": [
         "Importar correos electrónicos"
-      ],
-      "Import from .ics": [
-        "Importar desde .ics"
       ],
       "Import key": [
         "Importar clave"
@@ -544,17 +503,11 @@
       "Remove bonuses": [
         "Eliminar bonificaciones"
       ],
-      "Remove calendar": [
-        "Eliminar calendario"
-      ],
       "Remove gift code": [
         "Eliminar código promocional"
       ],
       "Remove this label": [
         "Eliminar esta etiqueta"
-      ],
-      "Remove this notification": [
-        "Eliminar esta notificación"
       ],
       "Rename": [
         "Renombrar"
@@ -622,26 +575,14 @@
       "Save address": [
         "Guardar dirección"
       ],
-      "Save ICS file": [
-        "Guardar archivo ICS"
-      ],
       "Save selected": [
         "Guardar seleccionados"
       ],
       "Select ${ planTitle }": [
         "Selecciona ${ planTitle }"
       ],
-      "Select calendar view": [
-        "Seleccionar vista de calendario"
-      ],
       "Select files": [
         "Seleccionar archivos"
-      ],
-      "Select language for invitation emails": [
-        "Selecciona idioma para los correos de invitación"
-      ],
-      "Select timezone": [
-        "Seleccionar zona horaria"
       ],
       "send auto-reply email": [
         "enviar correo de respuesta automática"
@@ -675,12 +616,6 @@
       ],
       "Show labels": [
         "Mostrar etiquetas"
-      ],
-      "Show less": [
-        "Mostrar menos"
-      ],
-      "Show more": [
-        "Mostrar más"
       ],
       "Show preview": [
         "Mostrar vista previa"
@@ -1153,23 +1088,6 @@
         "Tweet"
       ]
     },
-    "Calendar limit warning": {
-      "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS } subscribed calendar.": [
-        "Has alcanzado el máximo de ${ MAX_SUBSCRIBED_CALENDARS } calendario suscrito.",
-        "Has alcanzado el máximo de ${ MAX_SUBSCRIBED_CALENDARS } calendarios suscritos."
-      ]
-    },
-    "Calendar link purpose update success message": {
-      "Label added": [
-        "Etiqueta añadida"
-      ],
-      "Label deleted": [
-        "Etiqueta eliminada"
-      ],
-      "Label edited": [
-        "Etiqueta editada"
-      ]
-    },
     "Calendar status": {
       "Not synced": [
         "No sincronizado"
@@ -1212,14 +1130,6 @@
       "Total for ${ n } month": [
         "Total por ${ n } mes",
         "Total para ${ n } meses"
-      ]
-    },
-    "Collapsible tooltip": {
-      "Close": [
-        "Cerrar"
-      ],
-      "Open": [
-        "Abrir"
       ]
     },
     "Condition for custom filter": {
@@ -1482,9 +1392,6 @@
       "Burkina Faso": [
         "Burkina Faso"
       ],
-      "Burma": [
-        "Myanmar"
-      ],
       "Burundi": [
         "Burundi"
       ],
@@ -1538,9 +1445,6 @@
       ],
       "Costa Rica": [
         "Costa Rica"
-      ],
-      "Cote d'Ivoire\"": [
-        "Costa de Marfil"
       ],
       "Croatia": [
         "Croacia"
@@ -2022,9 +1926,6 @@
       "Svalbard and Jan Mayen": [
         "Svalbard y Jan Mayen"
       ],
-      "Swaziland": [
-        "Suazilandia"
-      ],
       "Sweden": [
         "Suecia"
       ],
@@ -2160,36 +2061,6 @@
         "/usuario por mes"
       ]
     },
-    "Daily recurring event, frequency": {
-      "${ count } time": [
-        "${ count } vez",
-        "${ count } veces"
-      ],
-      "Daily": [
-        "Diariamente"
-      ],
-      "Daily, ${ timesString }": [
-        "Diariamente, ${ timesString }"
-      ],
-      "Daily, ${ untilString }": [
-        "Diariamente, ${ untilString }"
-      ],
-      "Every ${ interval } day": [
-        "Cada ${ interval } día",
-        "Cada ${ interval } días"
-      ],
-      "Every ${ interval } day, ${ timesString }": [
-        "Cada ${ interval } día, ${ timesString }",
-        "Cada ${ interval } días, ${ timesString }"
-      ],
-      "Every ${ interval } day, ${ untilString }": [
-        "Cada ${ interval } día, ${ untilString }",
-        "Cada ${ interval } días, ${ untilString }"
-      ],
-      "until ${ dateString }": [
-        "hasta el ${ dateString }"
-      ]
-    },
     "Day": {
       "Friday": [
         "Viernes"
@@ -2224,7 +2095,7 @@
       ]
     },
     "Description": {
-      "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }": [
+      "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }..": [
         "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }."
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
@@ -2297,17 +2168,6 @@
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "¡Ayúdanos a mejorar!"
-      ]
-    },
-    "Duration": {
-      "120 minutes": [
-        "120 minutos"
-      ],
-      "60 minutes": [
-        "60 minutos"
-      ],
-      "90 minutes": [
-        "90 minutos"
       ]
     },
     "Email body for description (description part)": {
@@ -2533,9 +2393,6 @@
       ],
       "Name on card required": [
         "El titular de la tarjeta es obligatorio"
-      ],
-      "Name required": [
-        "Nombre obligatorio"
       ],
       "No active sessions": [
         "No hay sesiones activas"
@@ -2834,9 +2691,6 @@
       "Calendar": [
         "Calendario"
       ],
-      "Calendar timezone not supported": [
-        "Zona horaria del calendario no admitida"
-      ],
       "Component with wrong format": [
         "Componente con formato incorrecto"
       ],
@@ -2912,9 +2766,6 @@
       "Timezone": [
         "Zona horaria"
       ],
-      "Timezone not supported": [
-        "Zona horaria no admitida"
-      ],
       "To-do entry": [
         "Entrada de tareas"
       ],
@@ -2926,9 +2777,6 @@
       ]
     },
     "Error message": {
-      "Brace yourself till we get the error fixed.": [
-        "Espera un tiempo hasta que arreglemos el error."
-      ],
       "Error: ${ errorMessage }": [
         "Error: ${ errorMessage }"
       ],
@@ -3030,54 +2878,6 @@
     "Event title": {
       "(no title)": [
         "(sin título)"
-      ]
-    },
-    "Export calendar": {
-      "${ totalProcessed }/${ totalToProcess } event exported": [
-        "${ totalProcessed }/${ totalToProcess } evento exportado",
-        "${ totalProcessed }/${ totalToProcess } eventos exportados"
-      ],
-      "Calendar successfully exported. You can now save the ICS file.": [
-        "Calendario exportado con éxito. Ahora puedes guardar el archivo ICS."
-      ],
-      "Decrypting events from your calendar: ${ totalProcessed }/${ totalToProcess }": [
-        "Descifrando eventos de tu calendario: ${ totalProcessed }/${ totalToProcess }"
-      ],
-      "Due to a password reset, none of your events could be decrypted and exported.": [
-        "Debido a un restablecimiento de contraseña, ninguno de tus eventos se ha podido descifrar y exportar."
-      ],
-      "Due to a password reset, some of your events could not be decrypted and exported.": [
-        "Debido a un restablecimiento de contraseña, algunos de sus eventos no han podido ser descifrados y exportados."
-      ],
-      "Error decrypting event": [
-        "Error al descifrar el evento"
-      ],
-      "Learn how to restore encrypted events with old password": [
-        "Aprende a restaurar eventos cifrados con una contraseña antigua"
-      ],
-      "Loading events": [
-        "Cargando eventos"
-      ],
-      "None of the events could be exported.": [
-        "Ninguno de los eventos ha podido ser exportado."
-      ],
-      "Password reset - event cannot be decrypted": [
-        "Restablecimiento de contraseña - no se puede descifrar el evento"
-      ],
-      "Password reset - multiple events cannot be decrypted": [
-        "Restablecimiento de contraseña - no se pueden descifrar eventos múltiples"
-      ],
-      "Please don't close the tab before the exporting process is finished.": [
-        "No cierres la pestaña hasta que el proceso de exportación haya terminado."
-      ],
-      "Some of your events could not be exported.": [
-        "Algunos de tus eventos no se han podido exportar."
-      ],
-      "The internet connection was interrupted, causing the export process to fail. Please try again.": [
-        "La conexión a internet fue interrumpida, causando el fallo del proceso de exportación. Por favor, inténtalo de nuevo."
-      ],
-      "You can save an ICS file of the events that were successfully exported.": [
-        "Puedes guardar un archivo ICS de los eventos que han sido exportados con éxito."
       ]
     },
     "Feature": {
@@ -3757,9 +3557,6 @@
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Si continuas perderás el acceso a todos los datos cifrados actuales en tu cuenta."
       ],
-      "${ calendarName } will be set as default calendar.": [
-        "${ calendarName } se establecerá como calendario predeterminado."
-      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } calendario nuevo",
         "${ calendarsToBeCreatedCount } calendarios nuevos"
@@ -3898,9 +3695,6 @@
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Un nombre que te ayude a identificar dónde lo utilizas para poder revocarlo o ampliarlo fácilmente más adelante."
       ],
-      "A recovery file lets you unlock and view your data after an account reset. ": [
-        "A recovery file lets you unlock and view your data after an account reset."
-      ],
       "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password.": [
         "Una frase de recuperación te permite acceder a tu cuenta y recuperar tus mensajes cifrados si olvidas tu contraseña."
       ],
@@ -3933,9 +3727,6 @@
       ],
       "Add image URL": [
         "Agregar URL de imagen"
-      ],
-      "Add label": [
-        "Añadir etiqueta"
       ],
       "Additional options": [
         "Opciones adicionales"
@@ -3997,23 +3788,11 @@
       "and": [
         "y"
       ],
-      "Anyone with this link can see all the event details of this calendar such as title, location or participants.": [
-        "Cualquiera en posesión de este enlace puede ver todos los detalles de los eventos de este calendario, como título, ubicación o participantes."
-      ],
-      "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
-        "Cualquiera en posesión de este enlace puede ver si estás libre u ocupado en tu calendario. No pueden ver detalles de eventos, como título, ubicación o participantes."
-      ],
-      "Anyone with this link won't be able to sync or get future updates for your calendar. If you want to give them access again, you will have to create a new link.": [
-        "Cualquiera en posesión de este enlace no podrá sincronizar ni obtener actualizaciones futuras para tu calendario. Si quieres darles acceso de nuevo, tendrás que crear un nuevo enlace."
-      ],
       "AOL reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
         "AOL lee tus datos personales con el fin de facilitar el acceso a anunciantes y a terceros. Para una mejor privacidad, crea una dirección de correo electrónico segura."
       ],
       "Are you sure you want to delete this address?": [
         "¿Estás seguro de que quieres eliminar esta dirección?"
-      ],
-      "Are you sure you want to delete this calendar?": [
-        "¿Seguro que quieres eliminar este calendario?"
       ],
       "Are you sure you want to delete this domain?": [
         "¿Estás seguro de que quieres eliminar este dominio?"
@@ -4102,9 +3881,6 @@
       "By leaving now, changes may not be saved": [
         "Al salir ahora, los cambios podrían no ser guardados"
       ],
-      "By sharing the full event details of this calendar, you accept to grant Proton access to this calendar's encrypted information.": [
-        "Al compartir todos los detalles de los eventos de este calendario, aceptas conceder a Proton acceso a la información cifrada del calendario."
-      ],
       "Center": [
         "Centrar"
       ],
@@ -4139,9 +3915,6 @@
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "Crea una etiqueta para los mensajes importados, un intervalo de tiempo para esta importación y las etiquetas que te gustaría importar."
       ],
-      "Create a link to your calendar and share it with anyone outside Proton. Only you can add or remove events.": [
-        "Crea un enlace a tu calendario y compártelo con cualquier persona fuera de Proton. Sólo tú puedes agregar o eliminar eventos."
-      ],
       "Create a new account and share the email address and password with the user.": [
         "Crear una nueva cuenta y compartir la dirección de correo electrónico y la contraseña con el usuario."
       ],
@@ -4163,35 +3936,14 @@
       "Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.": [
         "Actualmente todo el almacenamiento disponible está asignado a la cuenta del administrador. Por favor, reduce la asignación de la cuenta del administrador para liberar espacio para usuarios adicionales. Puedes aumentar el almacenamiento total en cualquier momento mejorando tu cuenta."
       ],
-      "Custom": [
-        "Personalizar"
-      ],
-      "Custom daily": [
-        "Personalización diaria"
-      ],
       "Custom email domains": [
         "Dominios de correo personalizados"
-      ],
-      "Custom monthly": [
-        "Personalización mensual"
-      ],
-      "Custom weekly": [
-        "Personalización semanal"
-      ],
-      "Custom yearly": [
-        "Personalización anual"
-      ],
-      "Daily": [
-        "Diariamente"
       ],
       "Data locked": [
         "Datos bloqueados"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Elimina cualquier otro registro MX o asegúrate de que la Prioridad de ${ MAIL_APP_NAME } es el número más bajo."
-      ],
-      "Delete link?": [
-        "¿Eliminar enlace?"
       ],
       "Discount applied to your subscription with coupon ${ code }": [
         "Descuento aplicado a tu suscripción con el cupón ${ code }"
@@ -4238,9 +3990,6 @@
       ],
       "Earned ${ rewards } of ${ rewardsLimit } ${ planName } months.": [
         "Ganó ${ rewards } de ${ rewardsLimit } ${ planName } meses."
-      ],
-      "Edit label": [
-        "Editar etiqueta"
       ],
       "Edit link": [
         "Editar enlace"
@@ -4305,9 +4054,6 @@
       "Enter your recovery phone number and we will send you your username or email address.": [
         "Introduce tu número de teléfono de recuperación y te enviaremos tu nombre de usuario o dirección de correo electrónico."
       ],
-      "Event invitations and RSVPs will be sent in this language.": [
-        "Las invitaciones a eventos y las confirmaciones de asistencia (RSVP) se enviarán en este idioma."
-      ],
       "Expired": [
         "Expirado"
       ],
@@ -4352,9 +4098,6 @@
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Si otro administrador ha cambiado esta contraseña, necesitarás pedir la nueva contraseña de la organización."
-      ],
-      "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
-        "Si la zona horaria del sistema no coincide con la preferencia actual de zona horaria, se te pedirá que la actualices (como máximo una vez al día)."
       ],
       "If this domain is currently receiving emails, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Si este dominio está recibiendo correos electrónicos, selecciona la pestaña ${ boldAddresses } y agrega todas las direcciones activas antes de cambiar el registro MX para asegurar una transición suave."
@@ -4529,17 +4272,8 @@
       "Let your contacts know you care about their privacy.": [
         "Indica a tus contactos que te preocupas por su privacidad."
       ],
-      "Limited view: others see if you're busy. Full view: shows all event details, including name, location, or participants.": [
-        "Vista limitada: otros ven si estás ocupado. Vista completa: muestra todos los detalles del evento, incluyendo nombre, ubicación o participantes."
-      ],
       "Link copied to clipboard": [
         "Enlace copiado al portapapeles"
-      ],
-      "Link created": [
-        "Enlace creado"
-      ],
-      "Link deleted": [
-        "Enlace eliminado"
       ],
       "Link type": [
         "Tipo de enlace"
@@ -4573,9 +4307,6 @@
       ],
       "Merged": [
         "Fusionado"
-      ],
-      "Monthly ${ onDayString }": [
-        "Mensualmente ${ onDayString }"
       ],
       "more": [
         "más"
@@ -4651,9 +4382,6 @@
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Cambie esta configuración solo si utiliza PGP con destinatarios que no sean de ${ BRAND_NAME }."
-      ],
-      "Only you can see the labels.": [
-        "Sólo tú puedes ver las etiquetas."
       ],
       "Or select a particular server:": [
         "O seleccione un servidor particular:"
@@ -4833,9 +4561,6 @@
       "Select a service provider to start": [
         "Selecciona un proveedor de servicios para empezar"
       ],
-      "Select what you want to move from Google.": [
-        "Seleccione lo que desea mover de Google."
-      ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Seleccione los calendarios que desea importar. Se creará uno nuevo para cada calendario importado, hasta el límite de 20 calendarios."
       ],
@@ -4916,9 +4641,6 @@
       ],
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "El mensaje ${ boldDataLocked } ya no se mostrará, pero podrá seguir desbloqueando sus datos en ${ encryptionAndKeysLink }."
-      ],
-      "The calendar will be removed from your account.": [
-        "El calendario se eliminará de tu cuenta."
       ],
       "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
         "La dirección de correo electrónico que has colocado en la parte superior de la lista es tu dirección de correo electrónico predeterminada. Arrastra y suelta para reordenar tus direcciones."
@@ -5109,9 +4831,6 @@
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Utilice el mejor servidor según la carga actual y la posición: ${ formattedBestServerName }"
       ],
-      "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
-        "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux."
-      ],
       "Verification can take a few minutes.": [
         "La verificación puede tardar unos minutos."
       ],
@@ -5163,9 +4882,6 @@
       "Week": [
         "Semana"
       ],
-      "Week and month views only apply to desktop.": [
-        "Las vistas semanales y mensuales sólo se aplican al escritorio."
-      ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "Te enviaremos un código de restablecimiento a la dirección de correo electrónico que nos has proporcionado para recuperar la cuenta."
       ],
@@ -5201,9 +4917,6 @@
       ],
       "Yandex records your online activity and reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
         "Yandex registra tu actividad en línea y lee tus datos personales con el fin de facilitar el acceso a los anunciantes y a terceros. Para una mejor privacidad, crea una dirección de correo electrónico segura."
-      ],
-      "Yearly": [
-        "Anualmente"
       ],
       "You already have a free account": [
         "Ya tienes una cuenta gratuita"
@@ -5274,12 +4987,6 @@
       "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription.": [
         "Debes eliminar cualquier calendario personal adicional y cualquier enlace a calendarios compartidos antes de cancelar tu suscripción."
       ],
-      "You need to have a personal calendar to create a link.": [
-        "Necesitas tener un calendario personal para crear un enlace."
-      ],
-      "You need to have an active personal calendar to import your events from .ics.": [
-        "Necesitas tener un calendario personal activo para importar tus eventos desde .ics."
-      ],
       "You need to have an active personal calendar to import your events.": [
         "Tienes a disposición un calendario personal activo donde apuntar todos tus eventos."
       ],
@@ -5291,9 +4998,6 @@
       ],
       "You should export a backup of this key in case you need to restore data it encrypted.": [
         "Deberías exportar una copia de seguridad de esta clave por si necesitas restaurar los datos que encriptó."
-      ],
-      "You still need to reply to invitations for the host to see your response.": [
-        "Todavía tienes que responder a las invitaciones para que el anfitrión vea tu respuesta."
       ],
       "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
         "Perderás ${ loseAllData } en tu cuenta ${ BRAND_NAME }. Para restaurarlos, deberás introducir la contraseña anterior."
@@ -5859,9 +5563,6 @@
       "Attach screenshot(s)": [
         "Adjuntar captura(s) de pantalla"
       ],
-      "Auto-detect primary time zone": [
-        "Autodetectar zona horaria principal"
-      ],
       "Auto-load embedded images": [
         "Cargar automáticamente las imágenes incrustadas"
       ],
@@ -6360,12 +6061,6 @@
       "Send auto-reply": [
         "Enviar respuesta automática"
       ],
-      "Send in": [
-        "Enviar"
-      ],
-      "Show secondary time zone": [
-        "Mostrar zona horaria secundaria"
-      ],
       "Sign external messages": [
         "Firmar mensajes externos"
       ],
@@ -6561,9 +6256,6 @@
       ],
       "Proton company announcements": [
         "Anuncios de la compañía Proton"
-      ],
-      "Proton for business": [
-        "Proton for Business"
       ],
       "Proton for Business newsletter": [
         "Boletín de Proton para Negocios"
@@ -6770,12 +6462,6 @@
         "Importar todos los mensajes de ${ totalLabelsCount } etiquetas desde ${ periodFragment } y etiquetarlos como ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
-    "Maximum calendar links reached warning": {
-      "You can create up to ${ MAX_LINKS_PER_CALENDAR } link per calendar. To create a new link to this calendar, delete one from the list below.": [
-        "Puedes crear hasta ${ MAX_LINKS_PER_CALENDAR } enlaces por calendario. Para crear un nuevo enlace a este calendario, elimina uno de la lista de abajo.",
-        "Puedes crear hasta ${ MAX_LINKS_PER_CALENDAR } enlaces por calendario. Para crear un nuevo enlace a este calendario, elimina uno de la lista de abajo."
-      ]
-    },
     "Member action": {
       "Delete": [
         "Eliminar"
@@ -6843,11 +6529,6 @@
         "Cómo importar correos electrónicos desde Yahoo"
       ]
     },
-    "Modal title and action": {
-      "Add calendar": [
-        "Añadir calendario"
-      ]
-    },
     "Monetary unit": {
       "Dollar": [
         "Dólar"
@@ -6857,116 +6538,6 @@
       ],
       "Swiss franc": [
         "Franco suizo"
-      ]
-    },
-    "Monthly recurring event, repeats on": {
-      "on day ${ dayOfMonth }": [
-        "el día ${ dayOfMonth }"
-      ],
-      "on the first Friday": [
-        "el primer viernes"
-      ],
-      "on the first Monday": [
-        "el primer lunes"
-      ],
-      "on the first Saturday": [
-        "el primer sábado"
-      ],
-      "on the first Sunday": [
-        "el primer domingo"
-      ],
-      "on the first Thursday": [
-        "el primer jueves"
-      ],
-      "on the first Tuesday": [
-        "el primer martes"
-      ],
-      "on the first Wednesday": [
-        "el primer miércoles"
-      ],
-      "on the fourth Friday": [
-        "el cuarto viernes"
-      ],
-      "on the fourth Monday": [
-        "el cuarto lunes"
-      ],
-      "on the fourth Saturday": [
-        "el cuarto sábado"
-      ],
-      "on the fourth Sunday": [
-        "el cuarto domingo"
-      ],
-      "on the fourth Thursday": [
-        "el cuarto jueves"
-      ],
-      "on the fourth Tuesday": [
-        "el cuarto martes"
-      ],
-      "on the fourth Wednesday": [
-        "el cuarto miércoles"
-      ],
-      "on the last Friday": [
-        "el último viernes"
-      ],
-      "on the last Monday": [
-        "el último lunes"
-      ],
-      "on the last Saturday": [
-        "el último sábado"
-      ],
-      "on the last Sunday": [
-        "el último domingo"
-      ],
-      "on the last Thursday": [
-        "el último jueves"
-      ],
-      "on the last Tuesday": [
-        "el último martes"
-      ],
-      "on the last Wednesday": [
-        "el último miércoles"
-      ],
-      "on the second Friday": [
-        "el segundo viernes"
-      ],
-      "on the second Monday": [
-        "el segundo lunes"
-      ],
-      "on the second Saturday": [
-        "el segundo sábado"
-      ],
-      "on the second Sunday": [
-        "el segundo domingo"
-      ],
-      "on the second Thursday": [
-        "el segundo jueves"
-      ],
-      "on the second Tuesday": [
-        "el segundo martes"
-      ],
-      "on the second Wednesday": [
-        "el segundo miércoles"
-      ],
-      "on the third Friday": [
-        "el tercer viernes"
-      ],
-      "on the third Monday": [
-        "el tercer lunes"
-      ],
-      "on the third Saturday": [
-        "el tercer sábado"
-      ],
-      "on the third Sunday": [
-        "el tercer domingo"
-      ],
-      "on the third Thursday": [
-        "el tercer jueves"
-      ],
-      "on the third Tuesday": [
-        "el tercer martes"
-      ],
-      "on the third Wednesday": [
-        "el tercer miércoles"
       ]
     },
     "Moved to black/whitelist": {
@@ -7033,9 +6604,6 @@
     "new_plans: action": {
       "Continue to review": [
         "Pasar a la revisión"
-      ],
-      "Continue with free": [
-        "Seguir con el plan gratuito"
       ],
       "Delete account": [
         "Eliminar cuenta"
@@ -7298,6 +6866,23 @@
         "Administración de equipos"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Si no lo haces, dejarás de tener acceso a tu cuenta y, finalmente, se desactivará."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Para seguir usando ${ MAIL_APP_NAME } con las funciones prémium, suscríbete y elige el método de pago."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Pásate al plan para empresas y disfruta de todos los servicios prémium de Proton."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Pásate al plan de privacidad definitivo y disfruta de todos los servicios prémium de Proton."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "La prueba acaba el ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } que acaba en ${ last4 }"
@@ -7361,23 +6946,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Ahora mismo pagas un precio especial por tu plan. Si te pasas a un plan inferior, perderás esta ventaja y no la recuperarás suscribiéndote de nuevo."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Si no lo haces, dejarás de tener acceso a tu cuenta y, finalmente, se desactivará."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Para seguir usando ${ MAIL_APP_NAME } con las funciones prémium, suscríbete y elige el método de pago."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Pásate al plan para empresas y disfruta de todos los servicios prémium de Proton."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Pásate al plan de privacidad definitivo y disfruta de todos los servicios prémium de Proton."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "La prueba acaba el ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -7503,9 +7071,6 @@
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
         "Solo se puede usar IMAP con aplicaciones de escritorio (Outlook, Mail de Apple o Thunderbird) mediante ${ MAIL_APP_NAME } Bridge. De momento, no existe compatibilidad con integraciones IMAP en la nube."
       ],
-      "Keeps you protected by blocking all network connections when you are accidentally disconnected from our VPN server": [
-        "Keeps you protected by blocking all network connections when you are unexpectedly disconnected from our VPN server."
-      ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Las etiquetas son muy fáciles de añadir a los mensajes y te permiten encontrarlos fácilmente o aplicar filtros"
       ],
@@ -7521,7 +7086,7 @@
       "On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
         "Es más, puedes añadir hasta 5 calendarios de amigos, familiares, compañeros y organizaciones."
       ],
-      "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections": [
+      "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections..": [
         "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
@@ -7674,43 +7239,6 @@
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "Credenciales OpenVPN / IKEv2 regeneradas"
-      ]
-    },
-    "Notification time input": {
-      "at": [
-        "a las"
-      ]
-    },
-    "Notification type": {
-      "email": [
-        "correo electrónico"
-      ],
-      "notification": [
-        "notificación"
-      ]
-    },
-    "Notification when": {
-      "at time of event": [
-        "en el momento del evento"
-      ],
-      "day before": [
-        "día antes",
-        "días antes"
-      ],
-      "hour before": [
-        "hora antes",
-        "horas antes"
-      ],
-      "minute before": [
-        "minuto antes",
-        "minutos antes"
-      ],
-      "on the same day": [
-        "el mismo día"
-      ],
-      "week before": [
-        "semana antes",
-        "semanas antes"
       ]
     },
     "Oauth instructions": {
@@ -7996,11 +7524,6 @@
         "PayPal"
       ]
     },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "Dirección de correo electrónico no encontrada entre los identificadores de usuario definidos en la clave de envío (${ keyUserIds })"
-      ]
-    },
     "Placeholder": {
       "A way to contact you": [
         "Una forma de contactar contigo"
@@ -8254,11 +7777,6 @@
         "Subir archivos adicionales"
       ]
     },
-    "Select search results": {
-      "No results found": [
-        "No se han encontrado resultados"
-      ]
-    },
     "Settings description": {
       "Make the move to privacy. Effortlessly and securely.": [
         "Haz el cambio a la privacidad. Sin esfuerzo y de forma segura."
@@ -8273,11 +7791,6 @@
       ],
       "Organization": [
         "Organización"
-      ]
-    },
-    "Settings update growler warning": {
-      "Failed to update settings": [
-        "Fallo en la actualización de la configuración"
       ]
     },
     "Settings/filters": {
@@ -8391,32 +7904,6 @@
         "Tu almacenamiento actual:"
       ]
     },
-    "Subscribe to calendar modal": {
-      "Calendar URL": [
-        "URL del calendario"
-      ],
-      "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Subscribed calendars.\n${ kbLink }": [
-        "Para suscribirte a un calendario externo o público y a sus actualizaciones, introduce la URL. Se añadirá una versión de sólo lectura del calendario a tus calendarios suscritos.\n${ kbLink }"
-      ]
-    },
-    "Subscribe to calendar modal description": {
-      "Learn how to get a private calendar link.": [
-        "Aprende a obtener un enlace de calendario privado."
-      ]
-    },
-    "Subscribed calendar extension warning": {
-      "By using this link, Google will make the calendar you are subscribing to public": [
-        "Al utilizar este enlace, Google hará público el calendario al que te estás suscribiendo"
-      ],
-      "This link might be wrong": [
-        "Este enlace puede ser erróneo"
-      ]
-    },
-    "Subscribed calendar URL length warning": {
-      "URL is too long": [
-        "La URL es demasiado larga"
-      ]
-    },
     "Subscription attribute": {
       "${ _n } calendar per user": [
         "${ _n } calendario por usuario",
@@ -8520,18 +8007,6 @@
       "Bug reported": [
         "Error notificado"
       ],
-      "Calendar added. It might take a few minutes to sync.": [
-        "Calendario añadido. La sincronización puede tardar unos minutos."
-      ],
-      "Calendar created": [
-        "Calendario creado"
-      ],
-      "Calendar removed": [
-        "Calendario eliminado"
-      ],
-      "Calendar updated": [
-        "Calendario actualizado"
-      ],
       "Canceling import": [
         "Cancelando importación"
       ],
@@ -8543,9 +8018,6 @@
       ],
       "Credits added": [
         "Créditos añadidos"
-      ],
-      "Default calendar updated": [
-        "Calendario predeterminado actualizado"
       ],
       "DMARC value copied to clipboard": [
         "Valor DMARC copiado en el portapapeles"
@@ -8710,11 +8182,6 @@
         "por mes"
       ]
     },
-    "Summary of errors during export calendar": {
-      "Details about events that couldn't be exported": [
-        "Detalles de los eventos que no se han podido exportar"
-      ]
-    },
     "Tab in domain modal": {
       "Addresses": [
         "Direcciones"
@@ -8779,11 +8246,6 @@
       "${ minutes } minute": [
         "${ minutes } minuto",
         "${ minutes } minutos"
-      ]
-    },
-    "Timezone search placeholder": {
-      "Search timezones": [
-        "Buscar zonas horarias"
       ]
     },
     "Title": {
@@ -9004,9 +8466,6 @@
       "Create a ${ mailAppName } address": [
         "Crear una dirección de ${ mailAppName }"
       ],
-      "Create calendar": [
-        "Crear calendario"
-      ],
       "Create your ${ BRAND_NAME } Account": [
         "Crear su cuenta de ${ BRAND_NAME }"
       ],
@@ -9108,9 +8567,6 @@
       ],
       "Edit Block List": [
         "Editar Lista Negra"
-      ],
-      "Edit calendar": [
-        "Editar calendario"
       ],
       "Edit credit/debit card": [
         "Editar tarjeta de crédito/débito"
@@ -9383,9 +8839,6 @@
       "Secure email based in Switzerland": [
         "Correo electrónico seguro con sede en Suiza"
       ],
-      "Security": [
-        "Seguridad"
-      ],
       "Security logs": [
         "Registros de seguridad"
       ],
@@ -9553,11 +9006,6 @@
       ],
       "ZIP / postal code": [
         "CP / código postal"
-      ]
-    },
-    "Title (number of minutes/hours/days/weeks)": {
-      "Choose a number": [
-        "Elige un número"
       ]
     },
     "Title for payment methods table": {
@@ -9786,15 +9234,6 @@
         "Actualizar a ${ planName } para conectar hasta ${ n } dispositivos a la VPN a la vez"
       ]
     },
-    "Upgrade notice": {
-      "Upgrade to a Mail paid plan to create up to ${ MAX_CALENDARS_PAID } calendar, allowing you to make calendars for work, to share with friends, and just for yourself.": [
-        "Actualiza a un plan de pago para crear hasta ${ MAX_CALENDARS_PAID } calendario, permitiéndote hacer calendarios para el trabajo, para compartir con tus amigos y sólo para ti.",
-        "Actualiza a un plan de pago para crear hasta ${ MAX_CALENDARS_PAID } calendarios, permitiéndote hacer calendarios para el trabajo, para compartir con tus amigos y sólo para ti."
-      ],
-      "Upgrade to a Mail paid plan to share your personal calendar via link with anyone.": [
-        "Actualiza a un plan de pago para compartir tu calendario personal a través de un enlace con cualquier persona."
-      ]
-    },
     "User role": {
       "Admin": [
         "Administrador"
@@ -9956,104 +9395,6 @@
     "Weak personal key warning": {
       "This key no longer meets our security standards. We suggest you mark it as obsolete and generate a new key.": [
         "Esta clave ya no cumple con nuestros estándares de seguridad. Le sugerimos que la marque como obsoleta y genere una nueva clave."
-      ]
-    },
-    "Weekly recurring event, frequency": {
-      "Every ${ interval } week on ${ multipleDaysString }": [
-        "Cada ${ interval } semana los ${ multipleDaysString }",
-        "Cada ${ interval } semanas el ${ multipleDaysString }"
-      ],
-      "Every ${ interval } week on all days": [
-        "Cada ${ interval } semana todos los días",
-        "Cada ${ interval } semanas todos los días"
-      ],
-      "Every ${ interval } week on all days, ${ timesString }": [
-        "Cada ${ interval } semana todos los días, ${ timesString }",
-        "Cada ${ interval } semanas todos los días, ${ timesString }"
-      ],
-      "Every ${ interval } week on Friday": [
-        "Cada ${ interval } semana los viernes",
-        "Cada ${ interval } semanas los viernes"
-      ],
-      "Every ${ interval } week on Monday": [
-        "Cada semana los lunes ${ interval }",
-        "Cada ${ interval } semanas los lunes"
-      ],
-      "Every ${ interval } week on Saturday": [
-        "Cada ${ interval } semana los sábados",
-        "Cada ${ interval } semanas los sábados"
-      ],
-      "Every ${ interval } week on Sunday": [
-        "Cada ${ interval } semana los domingos",
-        "Cada ${ interval } semanas los domingos"
-      ],
-      "Every ${ interval } week on Thursday": [
-        "Cada ${ interval } semana los jueves",
-        "Cada ${ interval } semanas los jueves"
-      ],
-      "Every ${ interval } week on Tuesday": [
-        "Cada ${ interval } semana los martes",
-        "Cada ${ interval } semanas los martes"
-      ],
-      "Every ${ interval } week on Wednesday": [
-        "Cada ${ interval } semana los miércoles",
-        "Cada ${ interval } semanas los miércoles"
-      ],
-      "Weekly on ${ multipleDaysString }": [
-        "Semanalmente el ${ multipleDaysString }"
-      ],
-      "Weekly on all days": [
-        "Semanalmente todos los días"
-      ],
-      "Weekly on all days, ${ timesString }": [
-        "Semanalmente todos los días, ${ timesString }"
-      ],
-      "Weekly on Friday": [
-        "Semanalmente los viernes"
-      ],
-      "Weekly on Monday": [
-        "Semanalmente los lunes"
-      ],
-      "Weekly on Saturday": [
-        "Semanalmente los sábados"
-      ],
-      "Weekly on Sunday": [
-        "Semanalmente los domingos"
-      ],
-      "Weekly on Sunday, ${ timesString }": [
-        "Semanalmente los domingos, ${ timesString }"
-      ],
-      "Weekly on Thursday": [
-        "Semanalmente los jueves"
-      ],
-      "Weekly on Tuesday": [
-        "Semanalmente los martes"
-      ],
-      "Weekly on Wednesday": [
-        "Semanalmente los miércoles"
-      ]
-    },
-    "Weekly recurring event, repeats on (multiple days), frequency": {
-      "Friday": [
-        "Viernes"
-      ],
-      "Monday": [
-        "Lunes"
-      ],
-      "Saturday": [
-        "Sábado"
-      ],
-      "Sunday": [
-        "Domingo"
-      ],
-      "Thursday": [
-        "Jueves"
-      ],
-      "Tuesday": [
-        "Martes"
-      ],
-      "Wednesday": [
-        "Miércoles"
       ]
     }
   }

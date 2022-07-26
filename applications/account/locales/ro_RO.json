@@ -322,6 +322,9 @@
       "Edit subscription": [
         "Editare abonament"
       ],
+      "Emoji": [
+        "Emoticon"
+      ],
       "enable desktop notifications": [
         "activare notificări pe desktop"
       ],
@@ -628,6 +631,12 @@
       "Save selected": [
         "Salvare selectate"
       ],
+      "Search countries": [
+        "Căutare țări"
+      ],
+      "Search settings": [
+        "Setări căutare"
+      ],
       "Select ${ planTitle }": [
         "Selectare ${ planTitle }"
       ],
@@ -830,8 +839,14 @@
       ]
     },
     "Action in trial plan": {
+      "Continue with free plan": [
+        "Continuare cu planul gratuit"
+      ],
       "No, thanks": [
         "Nu, mulțumesc"
+      ],
+      "Start my 30-day free trial": [
+        "Începere încercare gratuită 30 de zile"
       ],
       "Try free for 30 days": [
         "Încercați gratuit 30 de zile"
@@ -1193,13 +1208,13 @@
     },
     "Calendar status": {
       "Active": [
-        "Activat"
+        "Activă"
       ],
       "Default": [
-        "Implicit"
+        "Implicită"
       ],
       "Disabled": [
-        "Dezactivat"
+        "Dezactivată"
       ],
       "Not synced": [
         "Nesincronizat"
@@ -1236,13 +1251,13 @@
     },
     "Calendar view": {
       "Day": [
-        "zi"
+        "Zi"
       ],
       "Month": [
-        "lună"
+        "Lună"
       ],
       "Week": [
-        "săptămână"
+        "Săptămână"
       ]
     },
     "Checkout row": {
@@ -1258,11 +1273,11 @@
       ]
     },
     "Collapsible tooltip": {
-      "Close": [
-        "Închidere"
+      "Collapse": [
+        "Restrângere"
       ],
-      "Open": [
-        "Deschidere"
+      "Expand": [
+        "Extindere"
       ]
     },
     "color": {
@@ -1694,9 +1709,6 @@
       "Burkina Faso": [
         "Burkina Faso"
       ],
-      "Burma": [
-        "Burma"
-      ],
       "Burundi": [
         "Burundi"
       ],
@@ -1751,9 +1763,6 @@
       "Costa Rica": [
         "Costa Rica"
       ],
-      "Cote d'Ivoire\"": [
-        "Coasta de Fildeș"
-      ],
       "Croatia": [
         "Croația"
       ],
@@ -1768,6 +1777,9 @@
       ],
       "Czech Republic": [
         "Republica Cehă"
+      ],
+      "Côte d'Ivoire": [
+        "Coasta de Fildeș"
       ],
       "Denmark": [
         "Danemarca"
@@ -1798,6 +1810,9 @@
       ],
       "Estonia": [
         "Estonia"
+      ],
+      "Eswatini": [
+        "Eswatini"
       ],
       "Ethiopia": [
         "Etiopia"
@@ -2042,6 +2057,9 @@
       "Mozambique": [
         "Mozambic"
       ],
+      "Myanmar": [
+        "Burma"
+      ],
       "Namibia": [
         "Namibia"
       ],
@@ -2234,9 +2252,6 @@
       "Svalbard and Jan Mayen": [
         "Svalbard și Jan Mayen"
       ],
-      "Swaziland": [
-        "Eswatini"
-      ],
       "Sweden": [
         "Suedia"
       ],
@@ -2379,7 +2394,7 @@
         "de ${ count } de ori"
       ],
       "Daily": [
-        "zilnic"
+        "Zilnic"
       ],
       "Daily, ${ timesString }": [
         "Zilnic, ${ timesString }"
@@ -2440,7 +2455,7 @@
       ]
     },
     "Description": {
-      "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }": [
+      "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }..": [
         "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }."
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
@@ -3058,8 +3073,8 @@
       "Calendar": [
         "Calendar"
       ],
-      "Calendar timezone not supported": [
-        "Fus orar calendar neacceptat"
+      "Calendar time zone not supported": [
+        "Fus orar calendar nesuportat"
       ],
       "Component with wrong format": [
         "Componentă cu format greșit"
@@ -3133,11 +3148,11 @@
       "Start time out of bounds": [
         "Timpul de start în afara limitelor"
       ],
+      "Time zone not supported": [
+        "Fus orar nesuportat"
+      ],
       "Timezone": [
         "Fus orar"
-      ],
-      "Timezone not supported": [
-        "Fus orar nesuportat"
       ],
       "To-do entry": [
         "Intrare de făcut"
@@ -3150,20 +3165,20 @@
       ]
     },
     "Error message": {
-      "Brace yourself till we get the error fixed.": [
-        "Așteptați până când vom rezolva eroarea."
-      ],
       "Error: ${ errorMessage }": [
         "Eroare: ${ errorMessage }"
       ],
       "Invalid URL": [
-        "Adresă URL nevalidă"
+        "Adresă URL nevalidă."
       ],
       "Oops, something went wrong": [
         "Hopa, ceva nu a mers bine!"
       ],
       "Please ${ refresh } or check your connection.": [
         "Verificați conexiunea sau ${ refresh }."
+      ],
+      "Something went wrong. Please refresh the page or try again later.": [
+        "Ceva nu a mers bine. Reîmprospătați pagina sau reîncercați mai târziu."
       ],
       "There was a problem connecting to Proton.": [
         "A apărut o problemă la conectarea la Proton."
@@ -3269,15 +3284,15 @@
     },
     "Export calendar": {
       "${ totalProcessed }/${ totalToProcess } event exported": [
-        "S-a exportat un eveniment",
-        "S-au exportat ${ totalProcessed }/${ totalToProcess } evenimente",
-        "S-au exportat ${ totalProcessed }/${ totalToProcess } de evenimente"
+        "S-a exportat un eveniment.",
+        "S-au exportat ${ totalProcessed }/${ totalToProcess } evenimente.",
+        "S-au exportat ${ totalProcessed }/${ totalToProcess } de evenimente."
       ],
       "Calendar successfully exported. You can now save the ICS file.": [
         "Calendarul a fost exportat cu succes. Acum puteți salva fișierul ICS."
       ],
       "Decrypting events from your calendar: ${ totalProcessed }/${ totalToProcess }": [
-        "Se decriptează evenimentele din calendar: ${ totalProcessed }/${ totalToProcess }"
+        "Se decriptează evenimentele din calendar: ${ totalProcessed }/${ totalToProcess }."
       ],
       "Due to a password reset, none of your events could be decrypted and exported.": [
         "Datorită resetării parolei, nici unul dintre evenimente nu a putut fi decriptat și exportat."
@@ -3286,22 +3301,22 @@
         "Datorită resetării parolei, unele dintre evenimente nu au putut fi decriptate și exportate."
       ],
       "Error decrypting event": [
-        "Eroare la decriptarea evenimentului"
+        "Eroare la decriptarea evenimentului."
       ],
       "Learn how to restore encrypted events with old password": [
         "Aflați cum să restaurați evenimentele criptate cu vechea parolă"
       ],
       "Loading events": [
-        "Se încarcă evenimentele"
+        "Se încarcă evenimentele."
       ],
       "None of the events could be exported.": [
         "Niciunul dintre evenimente nu a putut fi exportat."
       ],
       "Password reset - event cannot be decrypted": [
-        "Resetare parolă - evenimentul nu poate fi decriptat"
+        "Resetare parolă - evenimentul nu poate fi decriptat."
       ],
       "Password reset - multiple events cannot be decrypted": [
-        "Resetare parolă - mai multe evenimente nu pot fi decriptate"
+        "Resetare parolă - mai multe evenimente nu pot fi decriptate."
       ],
       "Please don't close the tab before the exporting process is finished.": [
         "Nu închideţi fila înainte de terminarea procesului de exportare."
@@ -4189,8 +4204,8 @@
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Un nume care vă ajută să identificați unde o folosiți pentru a o anula sau extinde mai târziu."
       ],
-      "A recovery file lets you unlock and view your data after an account reset. ": [
-        "A recovery file lets you unlock and view your data after an account reset."
+      "A recovery file lets you unlock and view your data after an account reset.": [
+        "Un fișier de recuperare vă permite să vă deblocați și să vă accesați datele după o resetare a contului."
       ],
       "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password.": [
         "O frază de recuperare vă permite să vă accesați contul și să vă recuperați mesajele criptate dacă vă uitați parola."
@@ -5012,6 +5027,9 @@
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Vă rugăm să introduceți fraza de recuperare de 12 cuvinte asociată acestui cont."
       ],
+      "Please fill out this field.": [
+        "Vă rugăm să completați acest câmp."
+      ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
         "Vă rugăm să o păstrați în siguranță. Veți avea nevoie de ea pentru a vă accesa contul și pentru a vă decripta datele în cazul unei resetări a parolei."
       ],
@@ -5138,7 +5156,7 @@
       "Select a service provider to start": [
         "Selectați un furnizor de servicii pentru a începe"
       ],
-      "Select what you want to move from Google.": [
+      "Select what you want to import from Google.": [
         "Selectați ce doriți să importați din Google."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
@@ -5321,6 +5339,9 @@
       "to continue to ${ toAppName }": [
         "pentru a continua cu ${ toAppName }"
       ],
+      "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
+        "Pentru a îmbunătăți continuu serviciile noastre, uneori colectăm date pentru a monitoriza buna funcționare a aplicațiilor noastre. Aceste informații nu sunt partajate cu niciun serviciu terț."
+      ],
       "To decrypt and view your emails and other data, you need a recovery file.": [
         "Pentru a decripta și vedea mesajele și alte date aveți nevoie de un fișier de recuperare."
       ],
@@ -5417,8 +5438,8 @@
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Folosire cel mai bun server ținând cont de încărcarea și poziția sa: ${ formattedBestServerName }"
       ],
-      "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
-        "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux."
+      "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
+        "Utilizați următoarele date atunci când vă conectați la serverele ${ VPN_APP_NAME } fără aplicație. Exemplu de utilizare include: Tunnelblick pe macOS, OpenVPN pe GNU/Linux."
       ],
       "Verification can take a few minutes.": [
         "Verificarea poate dura câteva minute."
@@ -5707,11 +5728,35 @@
       "Additional duplicate keys detected. Please upload individually for more information.": [
         "Au fost detectate chei duplicate suplimentare. Încărcați-le individual pentru mai multe informații."
       ],
+      "Create an email address": [
+        "Creare adresă de e-mail"
+      ],
+      "Day 27: Trial reminder": [
+        "Ziua 27: reamintire perioadă de încercare."
+      ],
+      "Day 30: Trial ends": [
+        "Ziua 30: încercarea se încheie."
+      ],
+      "Enjoy secure, easy-to-use emailing with plenty of premium features.": [
+        "Bucurați-vă de mesaje pe e-mail sigure, ușor de folosit cu o mulțime de funcții speciale."
+      ],
       "Key ${ fingerprint } has already been uploaded": [
         "Cheia ${ fingerprint } a fost deja încărcată."
       ],
       "Track your referral link activities here": [
         "Urmăriți-vă aici activitatea de recomandare"
+      ],
+      "Try Mail Plus": [
+        "Încercați Mail Plus"
+      ],
+      "We’ll email you before your trial ends. Cancel anytime.": [
+        "Veți primi mesaj pe e-mail înainte de expirarea perioadei de încercare. Puteți anula oricând."
+      ],
+      "Your new email address is ready to go!": [
+        "Noua adresă de e-mail este gata de utilizare!"
+      ],
+      "Your subscription starts on ${ startText }.": [
+        "Abonamentul începe ${ startText }."
       ]
     },
     "Info - folder colouring feature": {
@@ -6184,6 +6229,9 @@
       "Auto-reply": [
         "Autorăspuns"
       ],
+      "Auto-unsubscribe": [
+        "Autodezabonare"
+      ],
       "Billing cycle": [
         "Ciclu de facturare"
       ],
@@ -6234,6 +6282,9 @@
       ],
       "Code is 6 digits without spaces": [
         "Codul este format din 6 cifre fără spații"
+      ],
+      "Collect usage diagnostics": [
+        "Colectare diagnostic de utilizare"
       ],
       "Color": [
         "Culoare"
@@ -6323,7 +6374,7 @@
         "Ziua săptămânii"
       ],
       "Default email address": [
-        "Adresa implicită"
+        "Adresa de e-mail implicită"
       ],
       "Default event duration": [
         "Durată implicită eveniment"
@@ -6703,6 +6754,9 @@
       "Send auto-reply": [
         "Trimitere autorăspuns"
       ],
+      "Send crash reports": [
+        "Trimitere rapoarte de erori"
+      ],
       "Send in": [
         "Trimitere în"
       ],
@@ -6917,8 +6971,8 @@
       "Proton company announcements": [
         "Anunțurile companiei Proton"
       ],
-      "Proton for business": [
-        "Proton for Business"
+      "Proton for Business": [
+        "Proton pentru afaceri"
       ],
       "Proton for Business newsletter": [
         "Buletin informativ Proton pentru întreprinderi"
@@ -7430,8 +7484,8 @@
       "Continue to review": [
         "Continuare revizuire"
       ],
-      "Continue with free": [
-        "Continuare cu gratuit"
+      "Continue with Free": [
+        "Continuare cu Free"
       ],
       "Delete account": [
         "Ștergere cont"
@@ -7711,6 +7765,26 @@
         "Gestionare echipă"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Faceți confidențialitatea ca implicită pentru conservarea fișierelor, stocarea, partajarea și recuperarea lor."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Altfel accesul la cont va fi limitat și eventual va fi dezactivat."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Pentru a continua să utilizați ${ MAIL_APP_NAME } cu funcțiile premium, alegeți tipul de abonament și opțiunea de plată."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Treceți la pachetul de afaceri cu acces la toate serviciile premium Proton."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Treceți la pachetul de confidențialitate complet și accesați toate serviciile premium Proton."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Perioada de probă se termină ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } care se termină cu ${ last4 }"
@@ -7777,26 +7851,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Vă bucurați de un preț promoțional la planul dvs. actual. Dacă vă retrogradați contul, veți pierde prețul promoțional și nu va fi disponibil dacă încercați să vă abonați din nou."
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Faceți confidențialitatea ca implicită pentru conservarea fișierelor, stocarea, partajarea și recuperarea lor."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Altfel accesul la cont va fi limitat și eventual va fi dezactivat."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Pentru a continua să utilizați ${ MAIL_APP_NAME } cu funcțiile premium, alegeți tipul de abonament și opțiunea de plată."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Treceți la pachetul de afaceri cu acces la toate serviciile premium Proton."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Treceți la pachetul de confidențialitate complet și accesați toate serviciile premium Proton."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Perioada de probă se termină ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -7930,8 +7984,8 @@
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
         "Suportul IMAP este limitat la utilizarea aplicațiilor desktop (de ex., Outlook, Apple Mail, Thunderbird) prin ${ MAIL_APP_NAME } Bridge. În prezent, integrările IMAP bazate pe cloud nu sunt acceptate."
       ],
-      "Keeps you protected by blocking all network connections when you are accidentally disconnected from our VPN server": [
-        "Keeps you protected by blocking all network connections when you are unexpectedly disconnected from our VPN server."
+      "Keeps you protected by blocking all network connections when you are unexpectedly disconnected from our VPN server.": [
+        "Vă protejează blocând toate conexiunile din rețea atunci când conexiunea la serverul nostru VPN cade neașteptat."
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Etichetele sunt etichete simple pe care le puteți adăuga la mesaje pentru a le face mai ușor de găsit sau de aplicat filtre."
@@ -7948,7 +8002,7 @@
       "On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
         "În plus, adăugați până la 5 calendare de la prieteni, familie, colegi sau organizații."
       ],
-      "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections": [
+      "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections..": [
         "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
@@ -8263,6 +8317,9 @@
       "Android": [
         "Android"
       ],
+      "Ask each time": [
+        "Întrebare de fiecare dată"
+      ],
       "Automatic (${ defaultDay })": [
         "Automat (${ defaultDay })"
       ],
@@ -8316,6 +8373,12 @@
       ],
       "Normal": [
         "Normal"
+      ],
+      "Off": [
+        "Dezactivat"
+      ],
+      "On": [
+        "Activat"
       ],
       "Permanent": [
         "Permanent"
@@ -8429,11 +8492,6 @@
       ],
       "PayPal": [
         "PayPal"
-      ]
-    },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "Adresa de e-mail nu a fost găsită printre identificatorii de utilizatori definiți în cheia de trimitere (${ keyUserIds })."
       ]
     },
     "Placeholder": {
@@ -8727,7 +8785,7 @@
     },
     "Settings update growler warning": {
       "Failed to update settings": [
-        "Nu s-a reușit actualizarea setărilor"
+        "Nu s-a reușit actualizarea setărilor."
       ]
     },
     "Settings/filters": {
@@ -8871,7 +8929,7 @@
         "Utilizând această legătură, Google va face public calendarul la care vă abonați."
       ],
       "This link might be wrong": [
-        "Această legătură ar putea fi greșită"
+        "Această legătură ar putea fi greșită."
       ]
     },
     "Subscribed calendar section description": {
@@ -8881,7 +8939,7 @@
     },
     "Subscribed calendar URL length warning": {
       "URL is too long": [
-        "Adresa URL este prea lungă"
+        "Adresa URL este prea lungă."
       ]
     },
     "Subscription attribute": {
@@ -8976,6 +9034,9 @@
     "Subtitle for trial plan": {
       "The privacy-first Mail and Calendar solution for your everyday communications needs.": [
         "Soluția de e-mail și calendar focalizate pe intimitate pentru nevoile zilnice de comunicații."
+      ],
+      "This offer is for those new to Proton only. No credit card required.": [
+        "Această ofertă este doar pentru utilizatorii noi. Nu trebuie card de credit."
       ]
     },
     "Success": {
@@ -9682,6 +9743,9 @@
       "How does it work?": [
         "Cum funcționează?"
       ],
+      "How your free trial works": [
+        "Cum funcționează încercarea gratuită"
+      ],
       "Human verification": [
         "Verificare persoană"
       ],
@@ -9822,6 +9886,9 @@
       "Previous": [
         "Anterioară"
       ],
+      "Privacy and data collection": [
+        "Confidențialitate și colectare de date"
+      ],
       "Processing": [
         "Se procesează"
       ],
@@ -9879,8 +9946,8 @@
       "Secure email based in Switzerland": [
         "E-mail securizat găzduit în Elveția"
       ],
-      "Security": [
-        "Securitate"
+      "Security and privacy": [
+        "Securitate și confidențialitate"
       ],
       "Security logs": [
         "Jurnale de securitate"
@@ -10238,6 +10305,9 @@
       ],
       "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
         "Când faceți clic pe o legătură, această funcție antiînșelăciune vă va cere să confirmați adresa URL a paginii web."
+      ],
+      "When you move an email to spam, you’ll automatically be unsubscribed from the sender’s mailing lists.": [
+        "Când mutați un mesaj în folderul «Nedorite», se va face și dezabonarea automată de la lista de adrese a expeditorului."
       ],
       "You have locally decrypted this key": [
         "Ați decriptat local această cheie."

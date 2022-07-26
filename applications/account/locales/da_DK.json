@@ -38,9 +38,6 @@
       "Add address": [
         "Tilføj adresse"
       ],
-      "Add calendar": [
-        "Tilføj kalender"
-      ],
       "Add condition": [
         "Tilføj betingelse"
       ],
@@ -61,9 +58,6 @@
       ],
       "Add label": [
         "Tilføj etiket"
-      ],
-      "Add notification": [
-        "Tilføj notifikation"
       ],
       "Add PayPal": [
         "Tilføj PayPal"
@@ -164,17 +158,11 @@
       "Continue to ${ name }": [
         "Fortsæt til ${ name }"
       ],
-      "Continue with Google": [
-        "Fortsæt med Google"
-      ],
       "Copy": [
         "Kopiér"
       ],
       "Copy email to clipboard": [
         "Kopiér e-mail til upklipsholder"
-      ],
-      "Copy link": [
-        "Kopiér link"
       ],
       "Create": [
         "Opret"
@@ -185,9 +173,6 @@
       "Create address": [
         "Opret adresse"
       ],
-      "Create calendar": [
-        "Opret kalender"
-      ],
       "Create folder": [
         "Opret mappe"
       ],
@@ -196,9 +181,6 @@
       ],
       "Create label": [
         "Opret etiket"
-      ],
-      "Create link": [
-        "Opret link"
       ],
       "Current plan": [
         "Nuværende abonnement"
@@ -220,9 +202,6 @@
       ],
       "Delete": [
         "Slet"
-      ],
-      "Delete link": [
-        "Slet link"
       ],
       "Delete permanently": [
         "Slet permanent"
@@ -302,6 +281,9 @@
       "Edit subscription": [
         "Rediger abonnement"
       ],
+      "Emoji": [
+        "Emoji"
+      ],
       "enable desktop notifications": [
         "aktivér skrivebordsmeddelelser"
       ],
@@ -316,9 +298,6 @@
       ],
       "Export": [
         "Exportér"
-      ],
-      "Export ICS": [
-        "Eksportér ICS"
       ],
       "Export key": [
         "Eksportér nøgle"
@@ -379,9 +358,6 @@
       ],
       "Import emails": [
         "Importer e-mails"
-      ],
-      "Import from .ics": [
-        "Importér fra .ics"
       ],
       "Import key": [
         "Importér nøgle"
@@ -524,17 +500,11 @@
       "Remove bonuses": [
         "Fjern bonusser"
       ],
-      "Remove calendar": [
-        "Fjern kalender"
-      ],
       "Remove gift code": [
         "Fjern gavekode"
       ],
       "Remove this label": [
         "Fjern denne etiket"
-      ],
-      "Remove this notification": [
-        "Fjern denne notifikation"
       ],
       "Rename": [
         "Omdøb"
@@ -602,26 +572,20 @@
       "Save address": [
         "Gem adresse"
       ],
-      "Save ICS file": [
-        "Gem ICS-fil"
-      ],
       "Save selected": [
         "Gem valgte"
+      ],
+      "Search countries": [
+        "Søg lande"
+      ],
+      "Search settings": [
+        "Søg indstillinger"
       ],
       "Select ${ planTitle }": [
         "Vælg ${ planTitle }"
       ],
-      "Select calendar view": [
-        "Vælg kalendervisning"
-      ],
       "Select files": [
         "Vælg filer"
-      ],
-      "Select language for invitation emails": [
-        "Vælg sprog for invitationsmails"
-      ],
-      "Select timezone": [
-        "Vælg tidszone"
       ],
       "send auto-reply email": [
         "send e-mail med auto-svar"
@@ -655,12 +619,6 @@
       ],
       "Show labels": [
         "Vis etiketter"
-      ],
-      "Show less": [
-        "Vis mindre"
-      ],
-      "Show more": [
-        "Vis mere"
       ],
       "Show preview": [
         "Vis en forhåndsvisning"
@@ -1158,17 +1116,6 @@
         "Ikke-understøttet kalenderformat"
       ]
     },
-    "Calendar view": {
-      "Day": [
-        "Dag"
-      ],
-      "Month": [
-        "Måned"
-      ],
-      "Week": [
-        "Uge"
-      ]
-    },
     "Checkout row": {
       "${ users } user": [
         "${ users } bruger",
@@ -1177,14 +1124,6 @@
       "Total for ${ n } month": [
         "I alt for ${ n } måned",
         "I alt for ${ n } måneder"
-      ]
-    },
-    "Collapsible tooltip": {
-      "Close": [
-        "Luk"
-      ],
-      "Open": [
-        "Åbn"
       ]
     },
     "color": {
@@ -1506,9 +1445,6 @@
       "Burkina Faso": [
         "Burkina Faso"
       ],
-      "Burma": [
-        "Burma"
-      ],
       "Burundi": [
         "Burundi"
       ],
@@ -1562,9 +1498,6 @@
       ],
       "Costa Rica": [
         "Costa Rica"
-      ],
-      "Cote d'Ivoire\"": [
-        "Elfenbenskysten"
       ],
       "Croatia": [
         "Kroatien"
@@ -2046,9 +1979,6 @@
       "Svalbard and Jan Mayen": [
         "Svalbard og Jan Mayen"
       ],
-      "Swaziland": [
-        "Swaziland"
-      ],
       "Sweden": [
         "Sverige"
       ],
@@ -2184,36 +2114,6 @@
         "/bruger pr. måned"
       ]
     },
-    "Daily recurring event, frequency": {
-      "${ count } time": [
-        "${ count } gang",
-        "${ count } gange"
-      ],
-      "Daily": [
-        "Dagligt"
-      ],
-      "Daily, ${ timesString }": [
-        "Daglig, ${ timesString }"
-      ],
-      "Daily, ${ untilString }": [
-        "Dagligt, ${ untilString }"
-      ],
-      "Every ${ interval } day": [
-        "Hver ${ interval } dag",
-        "Hver ${ interval } dag"
-      ],
-      "Every ${ interval } day, ${ timesString }": [
-        "Hver ${ interval } dag, ${ timesString }",
-        "Hver ${ interval } dag, ${ timesString }"
-      ],
-      "Every ${ interval } day, ${ untilString }": [
-        "Hver ${ interval } dag, ${ untilString }",
-        "Hver ${ interval } dag, ${ untilString }"
-      ],
-      "until ${ dateString }": [
-        "indtil ${ dateString }"
-      ]
-    },
     "Day": {
       "Friday": [
         "Fredag"
@@ -2248,7 +2148,7 @@
       ]
     },
     "Description": {
-      "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }": [
+      "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }..": [
         "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }."
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
@@ -2547,9 +2447,6 @@
       "Name on card required": [
         "Navn på kort kræves"
       ],
-      "Name required": [
-        "Navn påkrævet"
-      ],
       "No active sessions": [
         "Ingen aktive sessioner"
       ],
@@ -2847,9 +2744,6 @@
       "Calendar": [
         "Kalender"
       ],
-      "Calendar timezone not supported": [
-        "Kalendertidszone understøttes ikke"
-      ],
       "Component with wrong format": [
         "Komponent med forkert format"
       ],
@@ -2925,9 +2819,6 @@
       "Timezone": [
         "Tidszone"
       ],
-      "Timezone not supported": [
-        "Tidszone understøttes ikke"
-      ],
       "To-do entry": [
         "Gøremålsoptegnelse"
       ],
@@ -2939,9 +2830,6 @@
       ]
     },
     "Error message": {
-      "Brace yourself till we get the error fixed.": [
-        "Fejlen rettes hurtigst muligt. Tak for din tålmodighed."
-      ],
       "Error: ${ errorMessage }": [
         "Fejl: ${ errorMessage }"
       ],
@@ -3167,9 +3055,6 @@
       "Actions": [
         "Handlinger"
       ],
-      "Calendar": [
-        "Kalender"
-      ],
       "Event": [
         "Begivenhed"
       ],
@@ -3182,26 +3067,14 @@
       "Key type": [
         "Nøgletype"
       ],
-      "Label": [
-        "Etiket"
-      ],
-      "Name": [
-        "Navn"
-      ],
       "Notifications": [
         "Notifikationer"
       ],
       "Organization key fingerprint": [
         "Organisationsnøgle-fingeraftryk"
       ],
-      "Status": [
-        "Status"
-      ],
       "Time": [
         "Tid"
-      ],
-      "What others see": [
-        "Hvad andre ser"
       ]
     },
     "Header for addresses table": {
@@ -3625,9 +3498,6 @@
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Du mister adgangen til alle nuværende krypterede data på din konto, hvis du fortsætter."
       ],
-      "${ calendarName } will be set as default calendar.": [
-        "${ calendarName } vil blive sat som standardkalender."
-      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } ny kalender",
         "${ calendarsToBeCreatedCount } nye kalendere"
@@ -3766,9 +3636,6 @@
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Et navn, så du kan fastslå, hvor du bruger den, så du nemt kan tilbagekalde den eller forlænge den senere."
       ],
-      "A recovery file lets you unlock and view your data after an account reset. ": [
-        "A recovery file lets you unlock and view your data after an account reset."
-      ],
       "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password.": [
         "Med en gendannelsessætning kan du få adgang til din konto igen og gendanne dine krypterede beskeder, hvis du glemmer din adgangskode."
       ],
@@ -3801,9 +3668,6 @@
       ],
       "Add image URL": [
         "Tilføj billed-URL"
-      ],
-      "Add label": [
-        "Tilføj etiket"
       ],
       "Additional options": [
         "Yderligere indstillinger"
@@ -3870,9 +3734,6 @@
       ],
       "Are you sure you want to delete this address?": [
         "Er du sikker på, at du vil slette denne adresse?"
-      ],
-      "Are you sure you want to delete this calendar?": [
-        "Er du sikker på, at du vil slette denne kalender?"
       ],
       "Are you sure you want to delete this domain?": [
         "Er du sikker på, at du vil slette dette domæne?"
@@ -3992,9 +3853,6 @@
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "Opret en etikette til de importerede beskeder, et tidsinterval for denne import og de etiketter, du gerne vil importere."
       ],
-      "Create a link to your calendar and share it with anyone outside Proton. Only you can add or remove events.": [
-        "Opret et link til din kalender og del det med enhver uden for Proton. Kun du kan tilføje eller fjerne begivenheder."
-      ],
       "Create a new account and share the email address and password with the user.": [
         "Opret en ny konto, og del e-mailadressen og adgangskoden med brugeren."
       ],
@@ -4024,9 +3882,6 @@
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Slet eventuelle andre MX-poster eller sørg for, at ${ MAIL_APP_NAME }'s prioritet har det laveste tal."
-      ],
-      "Delete link?": [
-        "Slet link?"
       ],
       "Discount applied to your subscription with coupon ${ code }": [
         "Rabat anvendt på dit abonnement med rabatkupon ${ code }"
@@ -4070,9 +3925,6 @@
       ],
       "Earned ${ rewards } of ${ rewardsLimit } ${ planName } months.": [
         "Optjente ${ rewards } af ${ rewardsLimit } ${ planName } måneder."
-      ],
-      "Edit label": [
-        "Redigér etiket"
       ],
       "Edit link": [
         "Rediger link"
@@ -4181,9 +4033,6 @@
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Hvis en anden administrator ændrede denne adgangskode, må du bede dem om den nye Organisationsadgangskode."
-      ],
-      "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
-        "Matcher computerens tidszone ikke den aktuelle tidszonepræference, bliver du bedt om at opdatere den (højst én gang dagligt)."
       ],
       "If this domain is currently receiving emails, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Hvis dette domæne i øjeblikket modtager e-mails, vælg fanen ${ boldAddresses } og tilføj alle aktive e-mailadresser, før du ændrer MX-posten for at sikre en jævn overgang."
@@ -4360,12 +4209,6 @@
       ],
       "Link copied to clipboard": [
         "Link kopieret til udklipsholder"
-      ],
-      "Link created": [
-        "Link oprettet"
-      ],
-      "Link deleted": [
-        "Linket slettet"
       ],
       "Link type": [
         "Link type"
@@ -4653,9 +4496,6 @@
       "Select a service provider to start": [
         "Vælg en tjenesteudbyder for at starte"
       ],
-      "Select what you want to move from Google.": [
-        "Vælg, hvad du vil overflytte fra Google."
-      ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Vælg, hvilke kalendere der skal importeres. Der oprettes en ny kalender for hver importeret kalender op til grænsen på 20 kalendere."
       ],
@@ -4736,9 +4576,6 @@
       ],
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "Den ${ boldDataLocked } besked vil ikke længere blive vist, men du kan stadig låse dine data op under ${ encryptionAndKeysLink }."
-      ],
-      "The calendar will be removed from your account.": [
-        "Kalenderen vil blive fjernet fra din konto."
       ],
       "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
         "Den e-mailadresse, du placerer øverst på listen, er din standard e-mailadresse. Træk og slip for at omarrangere dine adresser."
@@ -4929,9 +4766,6 @@
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Brug den bedste server i henhold til den aktuelle belastning og placering: ${ formattedBestServerName }"
       ],
-      "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
-        "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux."
-      ],
       "Verification can take a few minutes.": [
         "Bekærftelsen kan tage et par minutter."
       ],
@@ -4982,9 +4816,6 @@
       ],
       "Week": [
         "Uge"
-      ],
-      "Week and month views only apply to desktop.": [
-        "Uge- og månedsvisninger gælder kun på desktop."
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "Vi sender en nulstillingskode til den e-mailadresse, du angav til kontogendannelse."
@@ -5666,6 +5497,9 @@
       ],
       "Auto-reply": [
         "Autosvar"
+      ],
+      "Auto-unsubscribe": [
+        "Auto-afmelding"
       ],
       "Billing cycle": [
         "Faktureringsperiode"
@@ -6355,9 +6189,6 @@
       "Proton company announcements": [
         "Proton-virksomhedsmeddelelser"
       ],
-      "Proton for business": [
-        "Proton for Business"
-      ],
       "Proton for Business newsletter": [
         "Proton til erhverv-nyhedsbrev"
       ],
@@ -6638,116 +6469,6 @@
         "Schweizer franc"
       ]
     },
-    "Monthly recurring event, repeats on": {
-      "on day ${ dayOfMonth }": [
-        "på dag ${ dayOfMonth }"
-      ],
-      "on the first Friday": [
-        "på den første fredag"
-      ],
-      "on the first Monday": [
-        "på den første mandag"
-      ],
-      "on the first Saturday": [
-        "på den første lørdag"
-      ],
-      "on the first Sunday": [
-        "på den første søndag"
-      ],
-      "on the first Thursday": [
-        "på den første torsdag"
-      ],
-      "on the first Tuesday": [
-        "på den første tirsdag"
-      ],
-      "on the first Wednesday": [
-        "på den første onsdag"
-      ],
-      "on the fourth Friday": [
-        "på den fjerde fredag"
-      ],
-      "on the fourth Monday": [
-        "på den fjerde mandag"
-      ],
-      "on the fourth Saturday": [
-        "på den fjerde lørdag"
-      ],
-      "on the fourth Sunday": [
-        "på den fjerde søndag"
-      ],
-      "on the fourth Thursday": [
-        "på den fjerde torsdag"
-      ],
-      "on the fourth Tuesday": [
-        "på den fjerde tirsdag"
-      ],
-      "on the fourth Wednesday": [
-        "på den fjerde onsdag"
-      ],
-      "on the last Friday": [
-        "på den sidste fredag"
-      ],
-      "on the last Monday": [
-        "på den sidste mandag"
-      ],
-      "on the last Saturday": [
-        "på den sidste lørdag"
-      ],
-      "on the last Sunday": [
-        "på den sidste søndag"
-      ],
-      "on the last Thursday": [
-        "på den sidste torsdag"
-      ],
-      "on the last Tuesday": [
-        "på den sidste tirsdag"
-      ],
-      "on the last Wednesday": [
-        "på den sidste onsdag"
-      ],
-      "on the second Friday": [
-        "på den anden fredag"
-      ],
-      "on the second Monday": [
-        "på den anden mandag"
-      ],
-      "on the second Saturday": [
-        "på den anden lørdag"
-      ],
-      "on the second Sunday": [
-        "på den første søndag"
-      ],
-      "on the second Thursday": [
-        "på den anden torsdag"
-      ],
-      "on the second Tuesday": [
-        "på den anden tirsdag"
-      ],
-      "on the second Wednesday": [
-        "på den anden onsdag"
-      ],
-      "on the third Friday": [
-        "på den tredje fredag"
-      ],
-      "on the third Monday": [
-        "på den tredje mandag"
-      ],
-      "on the third Saturday": [
-        "på den tredje lørdag"
-      ],
-      "on the third Sunday": [
-        "på den tredje søndag"
-      ],
-      "on the third Thursday": [
-        "på den tredje torsdag"
-      ],
-      "on the third Tuesday": [
-        "på den tredje tirsdag"
-      ],
-      "on the third Wednesday": [
-        "på den tredje onsdag"
-      ]
-    },
     "Moved to black/whitelist": {
       "${ Domain } removed": [
         "${ Domain } fjernet"
@@ -6790,10 +6511,7 @@
       ]
     },
     "new_plans: tooltip": {
-      "Keeps you protected by blocking all network connections when you are accidentally disconnected from our VPN server": [
-        "Keeps you protected by blocking all network connections when you are unexpectedly disconnected from our VPN server."
-      ],
-      "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections": [
+      "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections..": [
         "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections."
       ]
     },
@@ -6926,6 +6644,9 @@
       "Android": [
         "Android"
       ],
+      "Ask each time": [
+        "Spørg hver gang"
+      ],
       "Automatic (${ defaultDay })": [
         "Automatisk (${ defaultDay })"
       ],
@@ -6979,6 +6700,12 @@
       ],
       "Normal": [
         "Normal"
+      ],
+      "Off": [
+        "Fra"
+      ],
+      "On": [
+        "Til"
       ],
       "Permanent": [
         "Permanent"
@@ -7094,11 +6821,6 @@
         "Paypal"
       ]
     },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "E-mailadresse ikke fundet blandt bruger-id'er defineret i afsendelsesnøgle (${ keyUserIds })"
-      ]
-    },
     "Placeholder": {
       "A way to contact you": [
         "En måde at kontakte dig på"
@@ -7193,14 +6915,6 @@
     "Price": {
       "Free": [
         "Gratis"
-      ]
-    },
-    "Primary timezone": {
-      "Primary time zone": [
-        "Primær tidszone"
-      ],
-      "Secondary time zone": [
-        "Sekundær tidszone"
       ]
     },
     "Private Member": {
@@ -7843,9 +7557,6 @@
       "Add address": [
         "Tilføj adresse"
       ],
-      "Add another notification to remind you of this event": [
-        "Tilføj endnu en notifikation for at minde dig om denne begivenhed"
-      ],
       "Add contact group name": [
         "Tilføj kontaktgruppenavn"
       ],
@@ -8005,9 +7716,6 @@
       "Create a ${ mailAppName } address": [
         "Opret en ${ mailAppName } adresse"
       ],
-      "Create calendar": [
-        "Opret kalender"
-      ],
       "Create your ${ BRAND_NAME } Account": [
         "Opret din ${ BRAND_NAME }-konto"
       ],
@@ -8071,9 +7779,6 @@
       "Delete account": [
         "Slet konto"
       ],
-      "Delete calendar": [
-        "Slet kalender"
-      ],
       "Delete key permanently?": [
         "Slet nøgle permanent?"
       ],
@@ -8113,9 +7818,6 @@
       "Edit Block List": [
         "Rediger blokeringsliste"
       ],
-      "Edit calendar": [
-        "Rediger kalender"
-      ],
       "Edit credit/debit card": [
         "Redigér kredit / betalingskort"
       ],
@@ -8151,9 +7853,6 @@
       ],
       "Error": [
         "Fejl"
-      ],
-      "Export calendar": [
-        "Eksportér kalender"
       ],
       "Export private key": [
         "Importér privat nøgle"
@@ -8390,9 +8089,6 @@
       "Secure email based in Switzerland": [
         "Sikker e-mail-tjeneste baseret i Schweiz"
       ],
-      "Security": [
-        "Sikkerhed"
-      ],
       "Security logs": [
         "Sikkerhedslog"
       ],
@@ -8404,15 +8100,6 @@
       ],
       "Select contact group": [
         "Vælg kontaktgruppe"
-      ],
-      "Select the time to send this notification": [
-        "Vælg tidspunkt for afsendelse af denne notifikation"
-      ],
-      "Select the way to send this notification": [
-        "Vælg måden at sende denne notifikation på"
-      ],
-      "Select when you want this notification to be sent": [
-        "Vælg hvornår du ønsker, at denne notifikation skal sendes"
       ],
       "Session management": [
         "Sessionshåndtering"
@@ -8551,9 +8238,6 @@
       ],
       "Your ${ domain } address is active": [
         "Din ${ domain }-adresse er aktiv"
-      ],
-      "Your calendar link": [
-        "Dit kalender link"
       ],
       "Your current plan": [
         "Dit nuværende abonnement"
@@ -8741,6 +8425,9 @@
       ],
       "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
         "Når du klikker på et link, vil denne anti-phishing-funktion bede dig om at bekræfte webadressen (URL) på websiden."
+      ],
+      "When you move an email to spam, you’ll automatically be unsubscribed from the sender’s mailing lists.": [
+        "Når du flytter en e-mail til spam, bliver du automatisk afmeldt fra afsenderens mailinglister."
       ],
       "You have locally decrypted this key": [
         "Du har dekrypteres denne nøgle lokalt"
@@ -8961,93 +8648,6 @@
     "Weak personal key warning": {
       "This key no longer meets our security standards. We suggest you mark it as obsolete and generate a new key.": [
         "Denne nøgle opfylder ikke længere vores sikkerhedsstandarder. Vi foreslår, at du markerer den som forældet og genererer en ny nøgle."
-      ]
-    },
-    "Weekly recurring event, frequency": {
-      "Every ${ interval } week on all days": [
-        "Hver ${ interval } uge på alle dage",
-        "Hver ${ interval } uge på alle dage"
-      ],
-      "Every ${ interval } week on Friday": [
-        "Hver ${ interval } uge om fredagen",
-        "Hver ${ interval } uge om fredagen"
-      ],
-      "Every ${ interval } week on Monday": [
-        "Hver ${ interval } uge om mandagen",
-        "Hver ${ interval } uge om mandagen"
-      ],
-      "Every ${ interval } week on Saturday": [
-        "Hver ${ interval } uge om lørdagen",
-        "Hver ${ interval } uge om lørdagen"
-      ],
-      "Every ${ interval } week on Sunday": [
-        "Hver ${ interval } uge om søndagen",
-        "Hver ${ interval } uge om søndagen"
-      ],
-      "Every ${ interval } week on Thursday": [
-        "Hver ${ interval } uge om torsdagen",
-        "Hver ${ interval } uge om torsdagen"
-      ],
-      "Every ${ interval } week on Tuesday": [
-        "Hver ${ interval } uge om tirsdagen",
-        "Hver ${ interval } uge om tirsdagen"
-      ],
-      "Every ${ interval } week on Wednesday": [
-        "Hver ${ interval } uge om onsdagen",
-        "Hver ${ interval } uge om onsdagen"
-      ],
-      "Weekly on ${ multipleDaysString }": [
-        "Ugentlig på ${ multipleDaysString }"
-      ],
-      "Weekly on all days": [
-        "Ugentligt på alle dage"
-      ],
-      "Weekly on Friday": [
-        "Ugentligt om fredagen"
-      ],
-      "Weekly on Friday, ${ untilString }": [
-        "Ugentligt om fredagen, ${ untilString }"
-      ],
-      "Weekly on Monday": [
-        "Ugentligt om mandagen"
-      ],
-      "Weekly on Saturday": [
-        "Ugentligt om lørdagen"
-      ],
-      "Weekly on Sunday": [
-        "Ugentligt om søndagen"
-      ],
-      "Weekly on Thursday": [
-        "Ugentligt om torsdagen"
-      ],
-      "Weekly on Tuesday": [
-        "Ugentligt om tirsdagen"
-      ],
-      "Weekly on Wednesday": [
-        "Ugentligt om onsdagen"
-      ]
-    },
-    "Weekly recurring event, repeats on (multiple days), frequency": {
-      "Friday": [
-        "Fredag"
-      ],
-      "Monday": [
-        "Mandag"
-      ],
-      "Saturday": [
-        "Lørdag"
-      ],
-      "Sunday": [
-        "Søndag"
-      ],
-      "Thursday": [
-        "Torsdag"
-      ],
-      "Tuesday": [
-        "Tirsdag"
-      ],
-      "Wednesday": [
-        "Onsdag"
       ]
     }
   }

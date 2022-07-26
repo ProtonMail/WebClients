@@ -322,6 +322,9 @@
       "Edit subscription": [
         "Aboneliği düzenle"
       ],
+      "Emoji": [
+        "Emoji"
+      ],
       "enable desktop notifications": [
         "masaüstü bildirimlerini etkinleştir"
       ],
@@ -628,6 +631,12 @@
       "Save selected": [
         "Seçilmişleri kaydet"
       ],
+      "Search countries": [
+        "Ülke ara"
+      ],
+      "Search settings": [
+        "Arama ayarları"
+      ],
       "Select ${ planTitle }": [
         "${ planTitle } seçin"
       ],
@@ -830,8 +839,14 @@
       ]
     },
     "Action in trial plan": {
+      "Continue with free plan": [
+        "Ücretsiz Free tarifesini kullanmayı sürdür"
+      ],
       "No, thanks": [
         "Hayır, teşekkürler"
+      ],
+      "Start my 30-day free trial": [
+        "30 günlük ücretsiz denememi başlat"
       ],
       "Try free for 30 days": [
         "30 gün ücretsiz olarak deneyin"
@@ -1248,11 +1263,11 @@
       ]
     },
     "Collapsible tooltip": {
-      "Close": [
-        "Kapat"
+      "Collapse": [
+        "Daralt"
       ],
-      "Open": [
-        "Aç"
+      "Expand": [
+        "Genişlet"
       ]
     },
     "color": {
@@ -1682,9 +1697,6 @@
       "Burkina Faso": [
         "Burkina Faso"
       ],
-      "Burma": [
-        "Burma"
-      ],
       "Burundi": [
         "Burundi"
       ],
@@ -1739,9 +1751,6 @@
       "Costa Rica": [
         "Kosta Rika"
       ],
-      "Cote d'Ivoire\"": [
-        "Fildişi Sahili"
-      ],
       "Croatia": [
         "Hırvatistan"
       ],
@@ -1756,6 +1765,9 @@
       ],
       "Czech Republic": [
         "Çekya"
+      ],
+      "Côte d'Ivoire": [
+        "Fildişi Sahili"
       ],
       "Denmark": [
         "Danimarka"
@@ -1786,6 +1798,9 @@
       ],
       "Estonia": [
         "Estonya"
+      ],
+      "Eswatini": [
+        "Esvatini"
       ],
       "Ethiopia": [
         "Etiyopya"
@@ -2030,6 +2045,9 @@
       "Mozambique": [
         "Mozambik"
       ],
+      "Myanmar": [
+        "Burma"
+      ],
       "Namibia": [
         "Namibya"
       ],
@@ -2222,9 +2240,6 @@
       "Svalbard and Jan Mayen": [
         "Svalbard ve Jan Mayen"
       ],
-      "Swaziland": [
-        "Svaziland"
-      ],
       "Sweden": [
         "İsveç"
       ],
@@ -2369,7 +2384,7 @@
         "Günlük"
       ],
       "Daily, ${ timesString }": [
-        "Günde bir, ${ timesString }"
+        "Günde bir ${ timesString }"
       ],
       "Daily, ${ untilString }": [
         "Günde bir, ${ untilString }"
@@ -2424,7 +2439,7 @@
       ]
     },
     "Description": {
-      "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }": [
+      "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }..": [
         "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }."
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
@@ -3037,7 +3052,7 @@
       "Calendar": [
         "Takvim"
       ],
-      "Calendar timezone not supported": [
+      "Calendar time zone not supported": [
         "Takvimin saat dilimi desteklenmiyor"
       ],
       "Component with wrong format": [
@@ -3112,11 +3127,11 @@
       "Start time out of bounds": [
         "Başlangıç zamanı sınırların dışında"
       ],
+      "Time zone not supported": [
+        "Saat dilimi desteklenmiyor"
+      ],
       "Timezone": [
         "Saat dilimi"
-      ],
-      "Timezone not supported": [
-        "Saat dilimi desteklenmiyor"
       ],
       "To-do entry": [
         "Yapılacak iş kaydı"
@@ -3129,9 +3144,6 @@
       ]
     },
     "Error message": {
-      "Brace yourself till we get the error fixed.": [
-        "Lütfen biz hatayı düzeltene kadar bekleyin."
-      ],
       "Error: ${ errorMessage }": [
         "Hata: ${ errorMessage }"
       ],
@@ -3143,6 +3155,9 @@
       ],
       "Please ${ refresh } or check your connection.": [
         "Lütfen ${ refresh }yin ya da bağlantınızı denetleyin."
+      ],
+      "Something went wrong. Please refresh the page or try again later.": [
+        "Bir şeyler ters gitti. Lütfen sayfayı yenileyin ya da bir süre sonra yeniden deneyin."
       ],
       "There was a problem connecting to Proton.": [
         "Proton bağlantısı kurulurken bir sorun çıktı."
@@ -4130,8 +4145,8 @@
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Daha sonra sertifikayı kolayca geçersiz kılmaya ya da uzatmaya yardımcı olacak bir ad."
       ],
-      "A recovery file lets you unlock and view your data after an account reset. ": [
-        "A recovery file lets you unlock and view your data after an account reset."
+      "A recovery file lets you unlock and view your data after an account reset.": [
+        "Bir kurtarma dosyası, bir hesabı sıfırladığınızda verilerinizin kilidini açmanızı ve görüntülemenizi sağlar."
       ],
       "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password.": [
         "Kurtarma ifadesi, parolanızı unutursanız hesabınıza erişmenizi sağlar ve şifrelenmiş iletilerinizi kurtarır."
@@ -4810,7 +4825,7 @@
         "Birleştirilmiş"
       ],
       "Monthly ${ onDayString }": [
-        "Ayda bir ${ onDayString }"
+        "Aylık ${ onDayString }"
       ],
       "more": [
         "diğer"
@@ -4945,6 +4960,9 @@
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Lütfen hesabınızın 12 sözcüklü kurtarma ifadesini yazın."
       ],
+      "Please fill out this field.": [
+        "Lütfen bu alanı doldurun."
+      ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
         "Lütfen güvenli bir yerde saklayın. Parolanızı sıfırlamanız durumunda hesabınıza erişmek ve verilerinizin şifresini çözmek için bu ifadeye gerek duyacaksınız."
       ],
@@ -5071,8 +5089,8 @@
       "Select a service provider to start": [
         "Başlamak için bir hizmet sağlayıcı seçin"
       ],
-      "Select what you want to move from Google.": [
-        "Google üzerinden aktarmak istediklerinizi seçin."
+      "Select what you want to import from Google.": [
+        "Google üzerinden içe aktarmak istediklerinizi seçin."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "İçe aktarılacak takvimleri seçin. En fazla 20 tane olmak üzere içe aktarılan her takvim için yeni bir takvim oluşturulur."
@@ -5254,6 +5272,9 @@
       "to continue to ${ toAppName }": [
         "${ toAppName } uygulamasına devam etmek için"
       ],
+      "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
+        "Hizmetlerimizi sürekli olarak geliştirmek için bazen uygulamalarımızın düzgün çalışıp çalışmadığını izlemek amacıyla veri topluyoruz. Bu bilgiler herhangi bir 3. taraf ile paylaşılmıyor."
+      ],
       "To decrypt and view your emails and other data, you need a recovery file.": [
         "E-postalarınızın ve diğer verilerinizin şifresini çözmek ve görüntülemek için bir kurtarma dosyanız olmalıdır."
       ],
@@ -5350,8 +5371,8 @@
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Güncel yük ve konuma göre en iyi sunucuyu kullanın: ${ formattedBestServerName }"
       ],
-      "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
-        "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux."
+      "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
+        "${ VPN_APP_NAME } sunucularına uygulama olmadan bağlanmak için şu kimlik doğrulama bilgilerini kullanın. Kullanım örnekleri: macOS üzerinde Tunnelblick, GNU/Linux üzerinde OpenVPN."
       ],
       "Verification can take a few minutes.": [
         "Doğrulama işlemi birkaç dakika sürebilir."
@@ -5640,11 +5661,35 @@
       "Additional duplicate keys detected. Please upload individually for more information.": [
         "Ek çift anahtar algılandı. Ayrıntılı bilgi almak için lütfen tek tek yükleyin."
       ],
+      "Create an email address": [
+        "Bir e-posta adresi oluşturun"
+      ],
+      "Day 27: Trial reminder": [
+        "27. gün: Deneme hatırlatıcı"
+      ],
+      "Day 30: Trial ends": [
+        "30. gün: Deneme sona erer"
+      ],
+      "Enjoy secure, easy-to-use emailing with plenty of premium features.": [
+        "Bir çok ücretli özellikle birlikte güvenli ve kolay kullanılan e-postanın tadını çıkarın."
+      ],
       "Key ${ fingerprint } has already been uploaded": [
         "${ fingerprint } anahtarı zaten yüklenmiş"
       ],
       "Track your referral link activities here": [
         "Öneri bağlantınızla yapılan işlemleri izleyin"
+      ],
+      "Try Mail Plus": [
+        "Mail Plus tarifesini deneyin"
+      ],
+      "We’ll email you before your trial ends. Cancel anytime.": [
+        "Deneme süreniz bitmeden önce size bir e-posta göndeririz. İstediğiniz zaman iptal edebilirsiniz."
+      ],
+      "Your new email address is ready to go!": [
+        "Yeni e-posta adresiniz kullanılmaya hazır!"
+      ],
+      "Your subscription starts on ${ startText }.": [
+        "Aboneliğiniz ${ startText } tarihinde başlar."
       ]
     },
     "Info - folder colouring feature": {
@@ -6114,6 +6159,9 @@
       "Auto-reply": [
         "Otomatik yanıt"
       ],
+      "Auto-unsubscribe": [
+        "Otomatik abonelikten ayrılma"
+      ],
       "Billing cycle": [
         "Fatura dönemi"
       ],
@@ -6164,6 +6212,9 @@
       ],
       "Code is 6 digits without spaces": [
         "Doğrulama kodu boşluk içermeyen 6 rakamdan oluşur"
+      ],
+      "Collect usage diagnostics": [
+        "Kullanım tanılama verileri toplansın"
       ],
       "Color": [
         "Renk"
@@ -6633,6 +6684,9 @@
       "Send auto-reply": [
         "Otomatik yanıtlansın"
       ],
+      "Send crash reports": [
+        "Çökme bildirimleri gönderilsin"
+      ],
       "Send in": [
         "Şu zamanda gönder"
       ],
@@ -6847,8 +6901,8 @@
       "Proton company announcements": [
         "Proton şirket duyuruları"
       ],
-      "Proton for business": [
-        "Proton for Business"
+      "Proton for Business": [
+        "İş için Proton"
       ],
       "Proton for Business newsletter": [
         "İş için Proton bülteni"
@@ -7220,25 +7274,25 @@
         "dördüncü Çarşamba günü"
       ],
       "on the last Friday": [
-        "geçen Cuma günü"
+        "son Cuma günü"
       ],
       "on the last Monday": [
-        "geçen Pazartesi günü"
+        "son Pazartesi günü"
       ],
       "on the last Saturday": [
-        "geçen Cumartesi günü"
+        "son Cumartesi günü"
       ],
       "on the last Sunday": [
-        "geçen Pazar günü"
+        "son Pazar günü"
       ],
       "on the last Thursday": [
-        "geçen Perşembe günü"
+        "son Perşembe günü"
       ],
       "on the last Tuesday": [
-        "geçen Salı günü"
+        "son Salı günü"
       ],
       "on the last Wednesday": [
-        "geçen Çarşamba günü"
+        "son Çarşamba günü"
       ],
       "on the second Friday": [
         "ikinci Cuma günü"
@@ -7354,8 +7408,8 @@
       "Continue to review": [
         "Gözden geçirmeyi sürdür"
       ],
-      "Continue with free": [
-        "Ücretsiz olarak devam et"
+      "Continue with Free": [
+        "Free tarifesi ile devam et"
       ],
       "Delete account": [
         "Hesabı sil"
@@ -7621,6 +7675,26 @@
         "Ekip yönetimi"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Dosya yedekleme, depolama, paylaşma ve alma işlemlerinizde kişisel gizliliği standardınız yapın."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Yoksa hesabınıza erişim sınırlanacak ve sonunda hesabınız devre dışı bırakılacak."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "${ MAIL_APP_NAME } uygulamasını ücretli tarife özellikleriyle kullanmayı sürdürmek istiyorsanız, abonelik ve ödeme seçeneklerinizi belirleyin."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Tüm ücretli Proton hizmetlerine erişim sağlayan kurumsal kişisel gizililik paketine yükseltin."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Tüm ücretli Proton hizmetlerine erişim sağlayan en üst düzey kişisel gizililik paketine yükseltin."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Deneme süreniz ${ formattedTrialExpirationDate } tarihinde sona eriyor"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand }, ${ last4 } içinde sona erecek"
@@ -7687,26 +7761,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Geçerli tarifenizde bir fırsat fiyatından yararlanıyorsunuz. Hesap tarifenizi düşürürseniz, fırsat fiyatınızı kaybedersiniz ve bu tarifeye yeniden abone olamazsınız."
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Dosya yedekleme, depolama, paylaşma ve alma işlemlerinizde kişisel gizliliği standardınız yapın."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Yoksa hesabınıza erişim sınırlanacak ve sonunda hesabınız devre dışı bırakılacak."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "${ MAIL_APP_NAME } uygulamasını ücretli tarife özellikleriyle kullanmayı sürdürmek istiyorsanız, abonelik ve ödeme seçeneklerinizi belirleyin."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Tüm ücretli Proton hizmetlerine erişim sağlayan kurumsal kişisel gizililik paketine yükseltin."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Tüm ücretli Proton hizmetlerine erişim sağlayan en üst düzey kişisel gizililik paketine yükseltin."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Deneme süreniz ${ formattedTrialExpirationDate } tarihinde sona eriyor"
       ]
     },
     "new_plans: Label": {
@@ -7838,8 +7892,8 @@
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
         "IMAP desteği, ${ MAIL_APP_NAME } Bridge üzerinden masaüstü uygulamalarının (Outlook, Apple Mail, Thunderbird gibi) kullanımıyla sınırlıdır. Bulut tabanlı IMAP bütünleştirmeleri şu anda desteklenmiyor."
       ],
-      "Keeps you protected by blocking all network connections when you are accidentally disconnected from our VPN server": [
-        "Keeps you protected by blocking all network connections when you are unexpectedly disconnected from our VPN server."
+      "Keeps you protected by blocking all network connections when you are unexpectedly disconnected from our VPN server.": [
+        "VPN sunucumuzla bağlantınız beklenmedik şekilde kesildiğinde tüm ağ bağlantılarını engelleyerek korunmanızı sağlar."
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Etiketler, bulunmalarını kolaylaştırmak ya da süzmek için iletilere ekleyebileceğiniz basit notlardır"
@@ -7856,7 +7910,7 @@
       "On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
         "Buna ek olarak, arkadaşlarınız, aileniz, iş arkadaşlarınız ve kuruluşunuz için 5 taneye kadar takvim ekleyebilirsiniz."
       ],
-      "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections": [
+      "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections..": [
         "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
@@ -8166,6 +8220,9 @@
       "Android": [
         "Android"
       ],
+      "Ask each time": [
+        "Her defasında sorulsun"
+      ],
       "Automatic (${ defaultDay })": [
         "Otomatik (${ defaultDay })"
       ],
@@ -8219,6 +8276,12 @@
       ],
       "Normal": [
         "Normal"
+      ],
+      "Off": [
+        "Kapalı"
+      ],
+      "On": [
+        "Açık"
       ],
       "Permanent": [
         "Kalıcı"
@@ -8332,11 +8395,6 @@
       ],
       "PayPal": [
         "PayPal"
-      ]
-    },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "E-posta adresi, gönderme anahtarında tanımlanmış kullanıcı kimlikleri arasında bulunamadı (${ keyUserIds })"
       ]
     },
     "Placeholder": {
@@ -8865,6 +8923,9 @@
     "Subtitle for trial plan": {
       "The privacy-first Mail and Calendar solution for your everyday communications needs.": [
         "Günlük iletişim gereksinimleriniz için kişisel gizliliğe öncelik veren e-posta ve takvim çözümü."
+      ],
+      "This offer is for those new to Proton only. No credit card required.": [
+        "Bu teklif yalnızca yeni Proton kullanıcıları için geçerlidir. Kredi kartı gerekmez."
       ]
     },
     "Success": {
@@ -9568,6 +9629,9 @@
       "How does it work?": [
         "Nasıl çalışır?"
       ],
+      "How your free trial works": [
+        "Ücretsiz deneme nasıl işler"
+      ],
       "Human verification": [
         "İnsan olduğunuzu doğrulayın"
       ],
@@ -9707,6 +9771,9 @@
       "Previous": [
         "Önceki"
       ],
+      "Privacy and data collection": [
+        "Kişisel gizlilik ve veri toplama"
+      ],
       "Processing": [
         "İşleniyor"
       ],
@@ -9764,8 +9831,8 @@
       "Secure email based in Switzerland": [
         "İsviçre merkezli güvenli e-posta"
       ],
-      "Security": [
-        "Güvenlik"
+      "Security and privacy": [
+        "Güvenlik ve kişisel gizlilik"
       ],
       "Security logs": [
         "Güvenlik günlükleri"
@@ -10123,6 +10190,9 @@
       ],
       "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
         "Bir bağlantıya tıkladığınızda, bu kimlik avını önleme özelliği web sayfasının adresini onaylamanızı ister."
+      ],
+      "When you move an email to spam, you’ll automatically be unsubscribed from the sender’s mailing lists.": [
+        "Bir e-postayı istenmeyen kutusuna taşıdığınızda göndericinin e-posta listesinden otomatik olarak ayrılmanızı sağlar."
       ],
       "You have locally decrypted this key": [
         "Bu anahtarın şifresini yerel olarak çözdünüz"

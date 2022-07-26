@@ -15,7 +15,7 @@
         "Fermer"
       ],
       "Didn't receive the code?": [
-        "Vous n'avez pas reçu le code ?"
+        "Vous n'avez pas reçu le code ?"
       ],
       "Edit email address": [
         "Modifier l’adresse électronique"
@@ -24,16 +24,19 @@
         "Modifier le numéro de téléphone"
       ],
       "Edit sign-in details": [
-        "Modifier les détails de connexion"
+        "Modifier les informations de connexion"
       ],
       "Get verification code": [
         "Obtenir un code de vérification"
       ],
       "refresh the page": [
-        "actualiser la page"
+        "rafraîchir la page"
       ],
       "Request new code": [
         "Demander un nouveau code"
+      ],
+      "Search countries": [
+        "Rechercher dans les pays"
       ],
       "Submit": [
         "Envoyer"
@@ -42,7 +45,7 @@
         "Essayer une autre méthode"
       ],
       "Verify": [
-        "Vérifier "
+        "Vérifier"
       ],
       "Verify account": [
         "Vérifier le compte"
@@ -51,7 +54,7 @@
         "Vérifier l'e-mail"
       ],
       "View invoice": [
-        "Afficher la facture"
+        "Voir la facture"
       ]
     },
     "color": {
@@ -228,9 +231,6 @@
       "Burkina Faso": [
         "Burkina Faso"
       ],
-      "Burma": [
-        "Birmanie"
-      ],
       "Burundi": [
         "Burundi"
       ],
@@ -285,9 +285,6 @@
       "Costa Rica": [
         "Costa Rica"
       ],
-      "Cote d'Ivoire\"": [
-        "Cote d'Ivoire"
-      ],
       "Croatia": [
         "Croatie"
       ],
@@ -302,6 +299,9 @@
       ],
       "Czech Republic": [
         "Tchéquie"
+      ],
+      "Côte d'Ivoire": [
+        "Côte d'Ivoire"
       ],
       "Denmark": [
         "Danemark"
@@ -332,6 +332,9 @@
       ],
       "Estonia": [
         "Estonie"
+      ],
+      "Eswatini": [
+        "Eswatini"
       ],
       "Ethiopia": [
         "Éthiopie"
@@ -576,6 +579,9 @@
       "Mozambique": [
         "Mozambique"
       ],
+      "Myanmar": [
+        "Birmanie"
+      ],
       "Namibia": [
         "Namibie"
       ],
@@ -768,9 +774,6 @@
       "Svalbard and Jan Mayen": [
         "Svalbard et Jan Mayen"
       ],
-      "Swaziland": [
-        "Eswatini"
-      ],
       "Sweden": [
         "Suède"
       ],
@@ -890,25 +893,25 @@
     },
     "Error": {
       "Email is not valid": [
-        "L’adresse électronique n’est pas valide"
+        "L’adresse électronique n’est pas valide."
       ],
       "Enter 6 digits": [
         "Saisissez 6 chiffres"
       ],
       "Invalid verification code": [
-        "Code de vérification invalide"
+        "Code de vérification non valide"
       ],
       "Not a valid number": [
         "Numéro non valide"
       ],
       "Passwords do not match": [
-        "Les mots de passe ne correspondent pas"
+        "Les mots de passe ne correspondent pas."
       ],
       "Request timed out": [
-        "La requête a expiré"
+        "La requête a expiré."
       ],
       "This field is required": [
-        "Ce champ est requis"
+        "Ce champ est requis."
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Ce champ nécessite un minimum de ${ minimumLength } caractères."
@@ -918,9 +921,6 @@
       ]
     },
     "Error message": {
-      "Brace yourself till we get the error fixed.": [
-        "Something went wrong. Please refresh the page or try again later."
-      ],
       "Error: ${ errorMessage }": [
         "Erreur : ${ errorMessage }"
       ],
@@ -929,6 +929,9 @@
       ],
       "Please ${ refresh } or check your connection.": [
         "Veuillez ${ refresh } ou vérifier votre connexion."
+      ],
+      "Something went wrong. Please refresh the page or try again later.": [
+        "Une erreur s'est produite. Veuillez rafraîchir la page ou réessayer plus tard."
       ],
       "There was a problem connecting to Proton.": [
         "Un problème s’est produit lors de la connexion à Proton."
@@ -956,19 +959,19 @@
     },
     "Info": {
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
-        "Avant de demander un nouveau code de vérification, vérifiez s'il n'est pas dans votre dossier indésirables/spam et si ${ strong } est la bonne adresse."
+        "Avant de demander un nouveau code de vérification, vérifiez s'il n'est pas dans votre dossier Indésirables/spam et si ${ strong } est la bonne adresse."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "Cliquez sur « Demander un nouveau code » pour qu'un nouveau code de vérification soit envoyé à ${ strong }. Si ce numéro de téléphone est incorrect, cliquez sur « Modifier » pour le corriger."
+        "Cliquez sur <strong>Demander un nouveau code</strong> pour qu'un nouveau code de vérification soit envoyé à ${ strong }. Si ce numéro de téléphone est incorrect, cliquez sur <strong>Modifier</strong> pour le corriger."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Entrez le code de vérification qui a été envoyé à ${ destinationText }."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
-        "Si vous rencontrez des difficultés à créer votre compte, veuillez demander une invitation et nous vous répondrons dans un délai d'un jour ouvrable."
+        "Si vous avez des difficultés à créer votre compte, vous pouvez demander une invitation et nous vous répondrons dans un délai d'un jour ouvrable."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
-        "Si vous ne trouvez pas le message dans votre boîte de réception, vérifiez dans votre dossier indésirables/spam."
+        "Si vous ne trouvez pas le message dans votre boîte de réception, vérifiez dans votre dossier Indésirables/spam."
       ],
       "Internet connection lost": [
         "Connexion internet perdue"
@@ -980,19 +983,19 @@
         "Aucun résultat trouvé"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
-        "Les serveurs sont inaccessibles. Veuillez réessayer dans quelques minutes"
+        "Les serveurs sont inaccessibles. Veuillez réessayer dans quelques minutes."
       ],
       "Session timed out": [
         "Session expirée"
       ],
       "To fight spam and abuse, please verify you are human.": [
-        "Pour lutter contre les messages indésirables/spam et les abus, veuillez prouver que vous êtes humain."
+        "Pour lutter contre les messages indésirables/spam et les abus, nous vous invitons à prouver que vous êtes humain."
       ],
       "We'll send a new verification code to ${ strong }": [
-        "Nous enverrons un nouveau code de vérification à ${ strong }"
+        "Nous enverrons un nouveau code de vérification à ${ strong }."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
-        "Souhaitez-vous recevoir un nouveau code de vérification ou utiliser une autre méthode de vérification ?"
+        "Souhaitez-vous recevoir un nouveau code de vérification ou utiliser une autre méthode de vérification ?"
       ],
       "Would you like to receive a new verification code?": [
         "Souhaitez-vous recevoir un nouveau code de vérification ?"
@@ -1004,12 +1007,12 @@
         "Votre numéro de téléphone ne sera utilisé que pour cette vérification unique."
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "Votre compte Proton est actuellement suspendu. Pour continuer à utiliser votre compte, veuillez régler les factures impayées."
+        "Votre compte Proton est momentanément suspendu. Nous vous invitons à régler les factures en retard afin de pouvoir continuer à utiliser votre compte."
       ]
     },
     "Label": {
       "Code is 6 digits without spaces": [
-        "Le code est composé de 6 chiffres sans espaces"
+        "Le code est composé de 6 chiffres sans espaces."
       ],
       "Email address": [
         "Adresse électronique"
@@ -1024,7 +1027,7 @@
         "Numéro de téléphone"
       ],
       "Reveal password": [
-        "Révéler le mot de passe"
+        "Afficher le mot de passe"
       ],
       "Verification code": [
         "Code de vérification"
@@ -1056,7 +1059,7 @@
         "Vérification humaine"
       ],
       "Invalid verification code": [
-        "Code de vérification invalide"
+        "Code de vérification non valide"
       ],
       "Request new code": [
         "Demander un nouveau code"
@@ -1067,8 +1070,8 @@
     },
     "Validation": {
       "Password must contain at least ${ length } character": [
-        "Le mot de passe doit comporter au moins ${ length } caractère",
-        "Le mot de passe doit comporter au moins ${ length } caractères"
+        "Le mot de passe doit comporter au moins ${ length } caractère.",
+        "Le mot de passe doit comporter au moins ${ length } caractères."
       ]
     }
   }

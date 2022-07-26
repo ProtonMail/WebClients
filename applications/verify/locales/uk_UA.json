@@ -35,6 +35,9 @@
       "Request new code": [
         "Отримати новий код"
       ],
+      "Search countries": [
+        "Пошук країн"
+      ],
       "Submit": [
         "Надіслати"
       ],
@@ -228,9 +231,6 @@
       "Burkina Faso": [
         "Буркіна-Фасо"
       ],
-      "Burma": [
-        "М’янма"
-      ],
       "Burundi": [
         "Бурунді"
       ],
@@ -285,9 +285,6 @@
       "Costa Rica": [
         "Коста-Рика"
       ],
-      "Cote d'Ivoire\"": [
-        "Cote d'Ivoire"
-      ],
       "Croatia": [
         "Хорватія"
       ],
@@ -302,6 +299,9 @@
       ],
       "Czech Republic": [
         "Чеська Республіка"
+      ],
+      "Côte d'Ivoire": [
+        "Кот-д'Івуар"
       ],
       "Denmark": [
         "Данія"
@@ -332,6 +332,9 @@
       ],
       "Estonia": [
         "Естонія"
+      ],
+      "Eswatini": [
+        "Есватіні"
       ],
       "Ethiopia": [
         "Ефіопія"
@@ -576,6 +579,9 @@
       "Mozambique": [
         "Мозамбік"
       ],
+      "Myanmar": [
+        "М'янма"
+      ],
       "Namibia": [
         "Намібія"
       ],
@@ -768,9 +774,6 @@
       "Svalbard and Jan Mayen": [
         "Свальбард і Ян-Маєн"
       ],
-      "Swaziland": [
-        "Есватіні"
-      ],
       "Sweden": [
         "Швеція"
       ],
@@ -918,9 +921,6 @@
       ]
     },
     "Error message": {
-      "Brace yourself till we get the error fixed.": [
-        "Something went wrong. Please refresh the page or try again later."
-      ],
       "Error: ${ errorMessage }": [
         "Помилка: ${ errorMessage }"
       ],
@@ -929,6 +929,9 @@
       ],
       "Please ${ refresh } or check your connection.": [
         "${ refresh } або перевірте своє з'єднання."
+      ],
+      "Something went wrong. Please refresh the page or try again later.": [
+        "Щось пішло не так. Будь ласка, оновіть сторінку або повторіть спробу пізніше."
       ],
       "There was a problem connecting to Proton.": [
         "Виникла проблема під час з'єднання з Proton."

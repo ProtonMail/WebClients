@@ -247,11 +247,11 @@
       "Forward as attachment": [
         "Doorsturen als bijlage"
       ],
+      "Get ${ DRIVE_APP_NAME }": [
+        "Kies ${ DRIVE_APP_NAME }"
+      ],
       "Get link": [
         "Link krijgen"
-      ],
-      "Get Proton Drive": [
-        "Proton Drive nemen"
       ],
       "Get started": [
         "Aan de slag"
@@ -442,6 +442,9 @@
       "Search": [
         "Zoeken"
       ],
+      "Search countries": [
+        "Zoek landen"
+      ],
       "Search drive": [
         "Drive doorzoeken"
       ],
@@ -631,9 +634,6 @@
       ]
     },
     "blackfriday Title": {
-      "Best deal": [
-        "Beste deal"
-      ],
       "Most popular": [
         "Populairste keuze"
       ]
@@ -648,7 +648,7 @@
     },
     "blackfriday: VPNspecialoffer Info": {
       "Save ${ percentage }%": [
-        "${ percentage }%"
+        "${ percentage } %"
       ]
     },
     "blackfriday: VPNspecialoffer info": {
@@ -783,11 +783,11 @@
       ]
     },
     "Collapsible tooltip": {
-      "Close": [
-        "Sluiten"
+      "Collapse": [
+        "Inklappen"
       ],
-      "Open": [
-        "Openen"
+      "Expand": [
+        "Uitvouwen"
       ]
     },
     "color": {
@@ -1051,9 +1051,6 @@
       "Burkina Faso": [
         "Burkina Faso"
       ],
-      "Burma": [
-        "Myanmar"
-      ],
       "Burundi": [
         "Boeroendi"
       ],
@@ -1108,9 +1105,6 @@
       "Costa Rica": [
         "Costa Rica"
       ],
-      "Cote d'Ivoire\"": [
-        "Ivoorkust"
-      ],
       "Croatia": [
         "Kroatië"
       ],
@@ -1125,6 +1119,9 @@
       ],
       "Czech Republic": [
         "Tsjechië"
+      ],
+      "Côte d'Ivoire": [
+        "Ivoorkust"
       ],
       "Denmark": [
         "Denemarken"
@@ -1155,6 +1152,9 @@
       ],
       "Estonia": [
         "Estland"
+      ],
+      "Eswatini": [
+        "Swaziland"
       ],
       "Ethiopia": [
         "Ethiopië"
@@ -1399,6 +1399,9 @@
       "Mozambique": [
         "Mozambique"
       ],
+      "Myanmar": [
+        "Myanmar"
+      ],
       "Namibia": [
         "Namibië"
       ],
@@ -1590,9 +1593,6 @@
       ],
       "Svalbard and Jan Mayen": [
         "Spitsbergen en Jan Mayen"
-      ],
-      "Swaziland": [
-        "Swaziland"
       ],
       "Sweden": [
         "Zweden"
@@ -2056,6 +2056,9 @@
       ],
       "Please ${ refresh } or check your connection.": [
         "${ refresh } alstublieft of controleer uw verbinding."
+      ],
+      "Something went wrong. Please refresh the page or try again later.": [
+        "Er ging iets mis. Vernieuw de pagina of probeer later opnieuw."
       ],
       "There was a problem connecting to Proton.": [
         "Fout tijdens het verbinden met Proton."
@@ -2748,7 +2751,8 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Eén of meerdere van uw vertrouwde sleutels zijn gemarkeerd als \"gecompromitteerd\" door hun eigenaars. We adviseren u deze sleutel niet meer te vertrouwen."
       ],
-      "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters is allowed": [
+      "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } character is allowed": [
+        "Maximum ${ MAX_CUSTOM_PASSWORD_LENGTH } teken toegelaten",
         "Maximum ${ MAX_CUSTOM_PASSWORD_LENGTH } tekens toegelaten"
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
@@ -2772,8 +2776,8 @@
       "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
         "PGP/Inline is alleen compatibel met tekst zonder opmaak. Houd er rekening mee dat ${ MAIL_APP_NAME } altijd versleutelde berichten tekent."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
-        "PGP/MIME stuurt de berichten automatisch aan de hand van de opmaak in het opstelvenster. Denk eraan dat ${ MAIL_APP_NAME } versleutelde berichten ook altijd ondertekent"
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        "PGP/MIME stuurt de berichten automatisch aan de hand van de opmaak in het opstelvenster. Denk eraan dat ${ MAIL_APP_NAME } versleutelde berichten ook altijd ondertekent."
       ],
       "Please enter the password to decrypt and view content.": [
         "Voer een wachtwoord in om de content te ontsleutelen en te bekijken."
@@ -2851,7 +2855,7 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Selecteer het e-mailformaat dat u standaard wilt gebruiken bij het verzenden van dit e-mailadres."
       ],
-      "Select what you want to move from Google.": [
+      "Select what you want to import from Google.": [
         "Selecteer wat u wil importeren vanaf Google."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
@@ -3650,8 +3654,8 @@
       ]
     },
     "new_plans: info": {
-      "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
-        "Ontdek de nieuwe look van Proton.${ br } Veel diensten, één missie. Welkom in een internetomgeving waar privacy de standaard is."
+      "Introducing Proton’s refreshed look.${ br }Many services, one mission. Welcome to an internet where privacy is the default.": [
+        "Ontdek de nieuwe look van Proton.${ br }Veel diensten, één missie. Welkom in een internetomgeving waar privacy de standaard is."
       ]
     },
     "new_plans: label": {
@@ -3859,26 +3863,14 @@
       ]
     },
     "Onboarding Action": {
-      "Enable Beta Access": [
-        "Bèta-toegang inschakelen"
-      ],
       "Next": [
         "Volgende"
       ],
       "Start using ${ appName }": [
         "Begin met ${ appName }"
-      ],
-      "Upgrade account": [
-        "Account upgraden"
       ]
     },
     "Onboarding Info": {
-      "${ appName } is currently in early access and only available to users with a paid plan.": [
-        "${ appName } is alleen beschikbaar voor betalende gebruikers met vroegtijdige toegang."
-      ],
-      "${ appName } is currently only available if you enable Beta Access.": [
-        "${ appName } is momenteel alleen beschikbaar als je Bèta Toegang inschakelt."
-      ],
       "Your trusty online vault for vital documents and precious memories.": [
         "Uw vertrouwde online kluis voor vitale documenten en te koesteren herinneringen."
       ]
@@ -3904,12 +3896,6 @@
       ]
     },
     "Onboarding Title": {
-      "${ appName } is in Beta": [
-        "${ appName } is in bèta"
-      ],
-      "Upgrade to access ${ appName }": [
-        "Upgrade om toegang te krijgen tot ${ appName }"
-      ],
       "Welcome to ${ appName }": [
         "Welkom bij ${ appName }"
       ]

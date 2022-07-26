@@ -1062,6 +1062,11 @@
         "Esta resposta está desactualizada. Não tem agendamentos."
       ]
     },
+    "color": {
+      "Apple": [
+        "apple"
+      ]
+    },
     "Composer email icon": {
       "End-to-end encrypted": [
         "Encriptado de ponta-a-ponta"
@@ -1210,14 +1215,6 @@
         "Yomi"
       ]
     },
-    "Country name": {
-      "Cote d'Ivoire\"": [
-        "Côte d'Ivoire"
-      ],
-      "Swaziland": [
-        "Eswatini"
-      ]
-    },
     "CustomFilter": {
       "Filter on": [
         "Filtrar por"
@@ -1298,7 +1295,7 @@
     },
     "Description": {
       "Decrypting contacts... This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
-        "A desencriptar contactos... Pode levar alguns minutos. Quando o processo terminar, poderá transferir o ficheiro com todos os seus contactos exportados."
+        "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported."
       ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "A eliminar contactos... Isto pode levar alguns minutos. Quando o processo for concluído, pode fechar esta janela."
@@ -1645,9 +1642,6 @@
       ]
     },
     "Error importing event": {
-      "Calendar timezone not supported": [
-        "Fuso horário da agenda não suportado"
-      ],
       "Component with wrong format": [
         "Componente com formato errado"
       ],
@@ -1708,9 +1702,6 @@
       "Start time out of bounds": [
         "Hora inicial fora dos limites"
       ],
-      "Timezone not supported": [
-        "Fuso horário não suportado"
-      ],
       "To-do entry": [
         "Entrada de tarefas"
       ],
@@ -1719,9 +1710,6 @@
       ]
     },
     "Error message": {
-      "Brace yourself till we get the error fixed.": [
-        "Aguente-se até que o erro seja corrigido."
-      ],
       "Error: ${ errorMessage }": [
         "Erro: ${ errorMessage }"
       ],
@@ -2223,6 +2211,9 @@
       "Do you want to re-sign the contact details?": [
         "Deseja assinar novamente os detalhes do contacto?"
       ],
+      "Don't forget to share your password with the recipient": [
+        "Don't forget to share the password with the recipient"
+      ],
       "Download our mobile application from your favorite app store to communicate securely on-the-go.": [
         "Transfira a nossa aplicação móvel da sua loja favorita para comunicar sempre com segurança."
       ],
@@ -2302,6 +2293,9 @@
       "Hour": [
         "Hora",
         "Horas"
+      ],
+      "I'm sending this message to a non-ProtonMail user.": [
+        "I'm sending this message to a non-Proton Mail user."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Se tiver problemas ao criar a conta, por favor solicite um convite e responderemos dentro de um dia útil."
@@ -2422,9 +2416,6 @@
       ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "O nosso sistema sinalizou esta mensagem como uma tentativa de phishing. Por favor, verifique se é legítima."
-      ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
-        "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages."
       ],
       "Phone number": [
         "Número de telefone"
@@ -3897,6 +3888,9 @@
       ],
       "Cannot send to organizer address: ${ errorMessage }": [
         "Impossível enviar para o endereço do organizador: ${ errorMessage }"
+      ],
+      "Re-encrypting invitation failed. Please try again": [
+        "Re-encrypting invitation failed. Please try again."
       ]
     },
     "Search - no results": {

@@ -830,8 +830,14 @@
       ]
     },
     "Action in trial plan": {
+      "Continue with free plan": [
+        "Залишити безплатний тарифний план"
+      ],
       "No, thanks": [
         "Ні, дякую"
+      ],
+      "Start my 30-day free trial": [
+        "Розпочати 30-денний безплатний пробний період"
       ],
       "Try free for 30 days": [
         "Спробуйте безплатно протягом 30 днів"
@@ -1190,7 +1196,7 @@
         "Активний"
       ],
       "Default": [
-        "Типовий"
+        "Типово"
       ],
       "Disabled": [
         "Вимкнений"
@@ -1254,11 +1260,11 @@
       ]
     },
     "Collapsible tooltip": {
-      "Close": [
-        "Закрити"
+      "Collapse": [
+        "Згорнути"
       ],
-      "Open": [
-        "Відкрити"
+      "Expand": [
+        "Розгорнути"
       ]
     },
     "color": {
@@ -1561,6 +1567,9 @@
       ],
       "Work": [
         "Робота"
+      ],
+      "Yomi": [
+        "Йомі"
       ]
     },
     "Countdown unit": {
@@ -1689,9 +1698,6 @@
       "Burkina Faso": [
         "Буркіна-Фасо"
       ],
-      "Burma": [
-        "М’янма"
-      ],
       "Burundi": [
         "Бурунді"
       ],
@@ -1746,9 +1752,6 @@
       "Costa Rica": [
         "Коста-Рика"
       ],
-      "Cote d'Ivoire\"": [
-        "Кот-д'Івуар\""
-      ],
       "Croatia": [
         "Хорватія"
       ],
@@ -1763,6 +1766,9 @@
       ],
       "Czech Republic": [
         "Чеська Республіка"
+      ],
+      "Côte d'Ivoire": [
+        "Кот-д'Івуар"
       ],
       "Denmark": [
         "Данія"
@@ -1793,6 +1799,9 @@
       ],
       "Estonia": [
         "Естонія"
+      ],
+      "Eswatini": [
+        "Есватіні"
       ],
       "Ethiopia": [
         "Ефіопія"
@@ -2037,6 +2046,9 @@
       "Mozambique": [
         "Мозамбік"
       ],
+      "Myanmar": [
+        "М'янма"
+      ],
       "Namibia": [
         "Намібія"
       ],
@@ -2229,9 +2241,6 @@
       "Svalbard and Jan Mayen": [
         "Свальбард і Ян-Маєн"
       ],
-      "Swaziland": [
-        "Есватіні"
-      ],
       "Sweden": [
         "Швеція"
       ],
@@ -2372,7 +2381,7 @@
         "${ count } раз",
         "${ count } рази",
         "${ count } разів",
-        "${ count } разів"
+        "${ count } раза"
       ],
       "Daily": [
         "Щодня"
@@ -2387,19 +2396,19 @@
         "Щодня",
         "Кожні ${ interval } дні",
         "Кожні ${ interval } днів",
-        "Кожні ${ interval } днів"
+        "Кожні ${ interval } дня"
       ],
       "Every ${ interval } day, ${ timesString }": [
         "Щодня, ${ timesString }",
         "Кожні ${ interval } дні, ${ timesString }",
         "Кожні ${ interval } днів, ${ timesString }",
-        "Кожні ${ interval } днів, ${ timesString }"
+        "Кожні ${ interval } дня, ${ timesString }"
       ],
       "Every ${ interval } day, ${ untilString }": [
         "Щодня, ${ untilString }",
         "Кожні ${ interval } дні, ${ untilString }",
         "Кожні ${ interval } днів, ${ untilString }",
-        "Кожні ${ interval } днів, ${ untilString }"
+        "Кожні ${ interval } дня, ${ untilString }"
       ],
       "until ${ dateString }": [
         "до ${ dateString }"
@@ -2439,7 +2448,7 @@
       ]
     },
     "Description": {
-      "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }": [
+      "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }..": [
         "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }."
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
@@ -3062,7 +3071,7 @@
       "Calendar": [
         "Календар"
       ],
-      "Calendar timezone not supported": [
+      "Calendar time zone not supported": [
         "Часовий пояс календаря не підтримується"
       ],
       "Component with wrong format": [
@@ -3137,11 +3146,11 @@
       "Start time out of bounds": [
         "Час початку поза припустимим діапазоном"
       ],
+      "Time zone not supported": [
+        "Часовий пояс не підтримується"
+      ],
       "Timezone": [
         "Часовий пояс"
-      ],
-      "Timezone not supported": [
-        "Часовий пояс не підтримується"
       ],
       "To-do entry": [
         "Запис завдання"
@@ -3154,9 +3163,6 @@
       ]
     },
     "Error message": {
-      "Brace yourself till we get the error fixed.": [
-        "Дочекайтеся, доки ми виправимо помилку."
-      ],
       "Error: ${ errorMessage }": [
         "Помилка: ${ errorMessage }"
       ],
@@ -3168,6 +3174,9 @@
       ],
       "Please ${ refresh } or check your connection.": [
         "${ refresh } або перевірте своє з'єднання."
+      ],
+      "Something went wrong. Please refresh the page or try again later.": [
+        "Щось пішло не так. Будь ласка, оновіть сторінку або повторіть спробу пізніше."
       ],
       "There was a problem connecting to Proton.": [
         "Виникла проблема при з'єднанні з Proton."
@@ -3276,7 +3285,7 @@
         "${ totalProcessed }/${ totalToProcess } подію експортовано",
         "${ totalProcessed }/${ totalToProcess } події експортовано",
         "${ totalProcessed }/${ totalToProcess } подій експортовано",
-        "${ totalProcessed }/${ totalToProcess } події експортовано"
+        "${ totalProcessed }/${ totalToProcess } подій експортовано"
       ],
       "Calendar successfully exported. You can now save the ICS file.": [
         "Календар успішно експортовано. Тепер ви можете зберегти ICS файл."
@@ -4231,8 +4240,8 @@
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Назва, яка допоможе вам визначити, де ви використовуєте його, щоб ви могли легко відкликати його або продовжити його пізніше."
       ],
-      "A recovery file lets you unlock and view your data after an account reset. ": [
-        "A recovery file lets you unlock and view your data after an account reset."
+      "A recovery file lets you unlock and view your data after an account reset.": [
+        "Файл відновлення дає змогу розблокувати й переглянути дані після скидання облікового запису."
       ],
       "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password.": [
         "Фраза відновлення дає вам змогу отримати доступ до облікового запису та відновити зашифровані повідомлення, якщо ви забудете пароль."
@@ -4697,7 +4706,7 @@
         "Якщо інший адміністратор змінив цей пароль, вам необхідно запитати в нього новий пароль організації."
       ],
       "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
-        "Якщо системний часовий пояс відрізняється від поточного часового поясу, вам буде запропоновано його оновити (не частіше ніж раз на день)."
+        "Якщо часовий пояс системи не збігається з налаштуваннями поточного часового поясу, вам буде запропоновано його оновити (не частіше ніж один раз на день)."
       ],
       "If this domain is currently receiving emails, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Якщо цей домен зараз отримує електронну пошту, виберіть вкладку ${ boldAddresses } і додайте всі активні електронні адреси перед зміною MX запису для безперебійного переходу."
@@ -5062,6 +5071,9 @@
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Введіть фразу відновлення з 12 слів, пов'язану з вашим обліковим записом."
       ],
+      "Please fill out this field.": [
+        "Будь ласка, заповніть це поле."
+      ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
         "Збережіть її в надійному місці. Вона знадобиться вам для доступу до облікового запису та розшифрування ваших даних у разі скидання пароля."
       ],
@@ -5188,8 +5200,8 @@
       "Select a service provider to start": [
         "Виберіть постачальника послуг, щоб розпочати"
       ],
-      "Select what you want to move from Google.": [
-        "Виберіть, що ви хочете перемістити з Google."
+      "Select what you want to import from Google.": [
+        "Виберіть, що ви хочете імпортувати з Google."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Виберіть, які календарі імпортувати. Для кожного імпортованого календаря буде створено новий календар з обмеженням у 20 календарів."
@@ -5371,6 +5383,9 @@
       "to continue to ${ toAppName }": [
         "щоб продовжити в ${ toAppName }"
       ],
+      "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
+        "Щоб постійно вдосконалювати наші служби, ми іноді збираємо дані для моніторингу належного функціонування наших застосунків. Ці дані не передаються жодним стороннім службам."
+      ],
       "To decrypt and view your emails and other data, you need a recovery file.": [
         "Щоб розшифрувати й переглядати свої дані, вам необхідний файл відновлення."
       ],
@@ -5467,8 +5482,8 @@
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Використовуйте найкращий сервер відповідно до поточного навантаження та розташування: ${ formattedBestServerName }"
       ],
-      "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
-        "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux."
+      "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
+        "Використовуйте ці облікові дані за з'єднання з серверами ${ VPN_APP_NAME } без застосунку. Приклад використовування таких з'єднань включає: Tunnelblick на macOS, OpenVPN на GNU/Linux."
       ],
       "Verification can take a few minutes.": [
         "Перевірка може тривати декілька хвилин."
@@ -5522,7 +5537,7 @@
         "Тиждень"
       ],
       "Week and month views only apply to desktop.": [
-        "Вигляд тижня і місяця застосовуються лише на комп'ютері."
+        "Подання тижня і місяця застосовуються лише на комп'ютері."
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "Для відновлення облікового запису ми надішлемо код відновлення на вказану електронну пошту."
@@ -5757,11 +5772,35 @@
       "Additional duplicate keys detected. Please upload individually for more information.": [
         "Виявлено додаткові дублікати ключів. Завантажте індивідуально для отримання додаткової інформації."
       ],
+      "Create an email address": [
+        "Створіть адресу електронної пошти"
+      ],
+      "Day 27: Trial reminder": [
+        "День 27: Нагадування про пробний період"
+      ],
+      "Day 30: Trial ends": [
+        "День 30: Пробний період закінчився"
+      ],
+      "Enjoy secure, easy-to-use emailing with plenty of premium features.": [
+        "Насолоджуйтеся безпечною, простою для користування електронною поштою з великою кількістю преміумфункцій."
+      ],
       "Key ${ fingerprint } has already been uploaded": [
         "Ключ ${ fingerprint } вже вивантажено"
       ],
       "Track your referral link activities here": [
         "Стежте за діями з вашими запрошувальними посиланнями тут"
+      ],
+      "Try Mail Plus": [
+        "Спробувати Mail Plus"
+      ],
+      "We’ll email you before your trial ends. Cancel anytime.": [
+        "Ми надішлемо вам електронний лист до закінчення пробного періоду. Скасовуйте будь-коли."
+      ],
+      "Your new email address is ready to go!": [
+        "Ваша нова адреса електронної пошти готова до користування!"
+      ],
+      "Your subscription starts on ${ startText }.": [
+        "Ваша передплата розпочата ${ startText }."
       ]
     },
     "Info - folder colouring feature": {
@@ -6288,6 +6327,9 @@
       "Code is 6 digits without spaces": [
         "Код складається з 6 цифр без пробілів"
       ],
+      "Collect usage diagnostics": [
+        "Збирати діагностику користування"
+      ],
       "Color": [
         "Колір"
       ],
@@ -6756,6 +6798,9 @@
       "Send auto-reply": [
         "Надіслати автовідповідь"
       ],
+      "Send crash reports": [
+        "Надсилати звіти про збої"
+      ],
       "Send in": [
         "Надіслати у"
       ],
@@ -6970,8 +7015,8 @@
       "Proton company announcements": [
         "Оголошення від компанії Proton"
       ],
-      "Proton for business": [
-        "Proton for Business"
+      "Proton for Business": [
+        "Proton для бізнесу"
       ],
       "Proton for Business newsletter": [
         "Інформаційний бюлетень Proton для бізнесу"
@@ -7284,19 +7329,19 @@
         "Щомісяця ${ onDayString }",
         "Кожні ${ interval } місяці ${ onDayString }",
         "Кожні ${ interval } місяців ${ onDayString }",
-        "Кожні ${ interval } місяців ${ onDayString }"
+        "Кожні ${ interval } місяця ${ onDayString }"
       ],
       "Every ${ interval } month ${ onDayString }, ${ timesString }": [
         "Щомісяця ${ onDayString }, ${ timesString }",
         "Кожні ${ interval } місяці ${ onDayString }, ${ timesString }",
         "Кожні ${ interval } місяців ${ onDayString }, ${ timesString }",
-        "Кожні ${ interval } місяців ${ onDayString }, ${ timesString }"
+        "Кожні ${ interval } місяця ${ onDayString }, ${ timesString }"
       ],
       "Every ${ interval } month ${ onDayString }, ${ untilString }": [
         "Щомісяця ${ onDayString }, ${ untilString }",
         "Кожні ${ interval } місяці ${ onDayString }, ${ untilString }",
         "Кожні ${ interval } місяців ${ onDayString }, ${ untilString }",
-        "Кожні ${ interval } місяців ${ onDayString }, ${ untilString }"
+        "Кожні ${ interval } місяця ${ onDayString }, ${ untilString }"
       ],
       "Monthly ${ onDayString }": [
         "Щомісяця ${ onDayString }"
@@ -7489,7 +7534,7 @@
       "Continue to review": [
         "Переглядати далі"
       ],
-      "Continue with free": [
+      "Continue with Free": [
         "Залишити безплатний"
       ],
       "Delete account": [
@@ -7784,6 +7829,26 @@
         "Керування командою"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Зробіть приватність усталеною для резервних копій, зберігання, обміну та отримання файлів."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "В іншому випадку доступ до вашого облікового запису буде обмежено, а з часом деактивовано."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Щоб і надалі користуватися ${ MAIL_APP_NAME } з преміумфункціями, оберіть тарифний план та спосіб оплати."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Оновіться до комплекту для бізнесу й користуйтеся всіма преміумфункціями служб Proton."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Оновіться до виняткового комплекту приватності й користуйтеся всіма преміумфункціями служб Proton."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Ваш пробний період завершується ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand }, що закінчується на ${ last4 }"
@@ -7850,26 +7915,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Ви користуєтеся спеціальною ціною чинного тарифного плану. Якщо ви понизите свій обліковий запис, то втратите спеціальну ціну передплати й більше не зможете скористатися нею, коли вирішите знову його передплатити."
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Зробіть приватність усталеною для резервних копій, зберігання, обміну та отримання файлів."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "В іншому випадку доступ до вашого облікового запису буде обмежено, а з часом деактивовано."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Щоб і надалі користуватися ${ MAIL_APP_NAME } з преміумфункціями, оберіть тарифний план та спосіб оплати."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Оновіться до комплекту для бізнесу й користуйтеся всіма преміумфункціями служб Proton."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Оновіться до виняткового комплекту приватності й користуйтеся всіма преміумфункціями служб Proton."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Ваш пробний період завершується ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -8005,8 +8050,8 @@
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
         "Підтримка IMAP доступна лише для комп'ютерних програм (як-от Outlook, Apple Mail, Thunderbird) через ${ MAIL_APP_NAME } Bridge. Хмарна інтеграція IMAP наразі не підтримується."
       ],
-      "Keeps you protected by blocking all network connections when you are accidentally disconnected from our VPN server": [
-        "Keeps you protected by blocking all network connections when you are unexpectedly disconnected from our VPN server."
+      "Keeps you protected by blocking all network connections when you are unexpectedly disconnected from our VPN server.": [
+        "Захищає вас, блокуючи всі мережеві з'єднання під час неочікуваного відімкнення від нашого VPN-сервера."
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Мітки – це прості позначки, які можна застосовувати до повідомлень для спрощення пошуку чи створення фільтрів"
@@ -8023,7 +8068,7 @@
       "On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
         "Крім того, додавайте до 5 календарів від друзів, сім'ї, колег та організацій."
       ],
-      "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections": [
+      "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections..": [
         "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
@@ -8210,13 +8255,13 @@
         "година до",
         "години до",
         "годин до",
-        "години до"
+        "годин до"
       ],
       "minute before": [
         "хвилина до",
         "хвилини до",
         "хвилин до",
-        "хвилини до"
+        "хвилин до"
       ],
       "on the same day": [
         "того ж дня"
@@ -8509,11 +8554,6 @@
       ],
       "PayPal": [
         "PayPal"
-      ]
-    },
-    "PGP key warning": {
-      "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "Адресу е-пошти не знайдено серед ідентифікаторів користувачів, визначених у ключі надсилання (${ keyUserIds })"
       ]
     },
     "Placeholder": {
@@ -9070,6 +9110,9 @@
     "Subtitle for trial plan": {
       "The privacy-first Mail and Calendar solution for your everyday communications needs.": [
         "Створена для приватності електронна пошта й календар для ваших повсякденних потреб спілкування."
+      ],
+      "This offer is for those new to Proton only. No credit card required.": [
+        "Ця пропозиція лише для новачків у Proton. Кредитна картка не потрібна."
       ]
     },
     "Success": {
@@ -9779,6 +9822,9 @@
       "How does it work?": [
         "Як це працює?"
       ],
+      "How your free trial works": [
+        "Як працює безплатний пробний період"
+      ],
       "Human verification": [
         "Перевірка \"Я не робот\""
       ],
@@ -9920,6 +9966,9 @@
       "Previous": [
         "Назад"
       ],
+      "Privacy and data collection": [
+        "Приватність і збір даних"
+      ],
       "Processing": [
         "Обробка"
       ],
@@ -9977,8 +10026,8 @@
       "Secure email based in Switzerland": [
         "Захищена електронна пошта, що розташована у Швейцарії"
       ],
-      "Security": [
-        "Безпека"
+      "Security and privacy": [
+        "Безпека й приватність"
       ],
       "Security logs": [
         "Журнал безпеки"
@@ -10581,16 +10630,16 @@
     },
     "Weekly recurring event, frequency": {
       "Every ${ interval } week on ${ multipleDaysString }": [
-        "Кожен ${ interval } тиждень ${ multipleDaysString }",
+        "Щотижня у ${ multipleDaysString }",
         "Кожні ${ interval } тижні ${ multipleDaysString }",
         "Кожні ${ interval } тижнів ${ multipleDaysString }",
-        "Кожні ${ interval } тижнів ${ multipleDaysString }"
+        "Кожні ${ interval } тижня ${ multipleDaysString }"
       ],
       "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
-        "Кожен ${ interval } тиждень ${ multipleDaysString }, ${ timesString }",
-        "Кожні ${ interval } тижні ${ multipleDaysString }, ${ timesString }",
-        "Кожні ${ interval } тижнів ${ multipleDaysString }, ${ timesString }",
-        "Кожні ${ interval } тижнів ${ multipleDaysString }, ${ timesString }"
+        "Кожен ${ interval } тиждень у ${ multipleDaysString }, ${ timesString }",
+        "Кожні ${ interval } тижні у ${ multipleDaysString }, ${ timesString }",
+        "Кожні ${ interval } тижнів у ${ multipleDaysString }, ${ timesString }",
+        "Кожні ${ interval } тижня у ${ multipleDaysString }, ${ timesString }"
       ],
       "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
         "Щотижня у ${ multipleDaysString }, ${ untilString }",
@@ -10599,154 +10648,154 @@
         "Кожні ${ interval } тижня у ${ multipleDaysString }, ${ untilString }"
       ],
       "Every ${ interval } week on all days": [
-        "Кожен ${ interval } тиждень в усі дні",
+        "Щотижня в усі дні",
         "Кожні ${ interval } тижні в усі дні",
         "Кожні ${ interval } тижнів в усі дні",
-        "Кожні ${ interval } тижнів в усі дні"
+        "Кожні ${ interval } тижня в усі дні"
       ],
       "Every ${ interval } week on all days, ${ timesString }": [
-        "Кожен ${ interval } тиждень щодня, ${ timesString }",
+        "Щотижня кожен день, ${ timesString }",
         "Кожні ${ interval } тижні щодня, ${ timesString }",
         "Кожні ${ interval } тижнів щодня, ${ timesString }",
-        "Кожні ${ interval } тижнів щодня, ${ timesString }"
+        "Кожні ${ interval } тижня щодня, ${ timesString }"
       ],
       "Every ${ interval } week on all days, ${ untilString }": [
-        "Кожен ${ interval } тиждень щодня, ${ untilString }",
+        "Щотижня, щодня, ${ untilString }",
         "Кожні ${ interval } тижні щодня, ${ untilString }",
         "Кожні ${ interval } тижнів щодня, ${ untilString }",
-        "Кожні ${ interval } тижнів щодня, ${ untilString }"
+        "Кожні ${ interval } тижня щодня, ${ untilString }"
       ],
       "Every ${ interval } week on Friday": [
-        "Кожен ${ interval } тиждень у п'ятницю",
-        "Кожні ${ interval } тижні у п'ятницю",
-        "Кожні ${ interval } тижнів у п'ятницю",
-        "Кожні ${ interval } тижнів у п'ятницю"
+        "Щоп'ятниці впродовж ${ interval } тижня",
+        "Щоп'ятниці впродовж ${ interval } тижнів",
+        "Щоп'ятниці впродовж ${ interval } тижнів",
+        "Щоп'ятниці впродовж ${ interval } тижнів"
       ],
       "Every ${ interval } week on Friday, ${ timesString }": [
-        "Кожен ${ interval } тиждень у п'ятницю, ${ timesString }",
+        "Щотижня у п'ятницю, ${ timesString }",
         "Кожні ${ interval } тижні у п'ятницю, ${ timesString }",
         "Кожні ${ interval } тижнів у п'ятницю, ${ timesString }",
-        "Кожні ${ interval } тижнів у п'ятницю, ${ timesString }"
+        "Кожні ${ interval } тижня у п'ятницю, ${ timesString }"
       ],
       "Every ${ interval } week on Friday, ${ untilString }": [
         "Щотижня у п'ятницю, ${ untilString }",
         "Кожні ${ interval } тижні у п'ятницю, ${ untilString }",
         "Кожні ${ interval } тижнів у п'ятницю, ${ untilString }",
-        "Кожні ${ interval } тижнів у п'ятницю, ${ untilString }"
+        "Кожні ${ interval } тижня у п'ятницю, ${ untilString }"
       ],
       "Every ${ interval } week on Monday": [
-        "Кожен ${ interval } тиждень у понеділок",
-        "Кожні ${ interval } тижні у понеділок",
-        "Кожні ${ interval } тижнів у понеділок",
-        "Кожні ${ interval } тижнів у понеділок"
+        "Щопонеділка впродовж ${ interval } тижня",
+        "Щопонеділка впродовж ${ interval } тижнів",
+        "Щопонеділка впродовж ${ interval } тижнів",
+        "Щопонеділка впродовж ${ interval } тижнів"
       ],
       "Every ${ interval } week on Monday, ${ timesString }": [
-        "Кожен ${ interval } тиждень у понеділок, ${ timesString }",
-        "Кожні ${ interval } тижні у понеділок, ${ timesString }",
+        "Щотижня у понеділок, ${ timesString }",
+        "Кожні ${ interval } тижні в понеділок, ${ timesString }",
         "Кожні ${ interval } тижнів у понеділок, ${ timesString }",
-        "Кожні ${ interval } тижнів у понеділок, ${ timesString }"
+        "Кожні ${ interval } тижня в понеділок, ${ timesString }"
       ],
       "Every ${ interval } week on Monday, ${ untilString }": [
-        "Кожен ${ interval } тиждень у понеділок, ${ untilString }",
-        "Кожні ${ interval } тижні у понеділок, ${ untilString }",
+        "Щотижня в понеділок, ${ untilString }",
+        "Кожні ${ interval } тижні в понеділок, ${ untilString }",
         "Кожні ${ interval } тижнів у понеділок, ${ untilString }",
-        "Кожні ${ interval } тижнів у понеділок, ${ untilString }"
+        "Кожні ${ interval } тижня в понеділок, ${ untilString }"
       ],
       "Every ${ interval } week on Saturday": [
-        "Кожен ${ interval } тиждень у суботу",
-        "Кожні ${ interval } тижні у суботу",
-        "Кожні ${ interval } тижнів у суботу",
-        "Кожні ${ interval } тижнів у суботу"
+        "Щосуботи впродовж ${ interval } тижня",
+        "Щосуботи впродовж ${ interval } тижнів",
+        "Щосуботи впродовж ${ interval } тижнів",
+        "Щосуботи впродовж ${ interval } тижнів"
       ],
       "Every ${ interval } week on Saturday, ${ timesString }": [
-        "Кожен ${ interval } тиждень у суботу, ${ timesString }",
-        "Кожні ${ interval } тижні у суботу, ${ timesString }",
+        "Щотижня в суботу, ${ timesString }",
+        "Кожні ${ interval } тижні в суботу, ${ timesString }",
         "Кожні ${ interval } тижнів у суботу, ${ timesString }",
-        "Кожні ${ interval } тижнів у суботу, ${ timesString }"
+        "Кожні ${ interval } тижня в суботу, ${ timesString }"
       ],
       "Every ${ interval } week on Saturday, ${ untilString }": [
-        "Щотижня у суботу, ${ untilString }",
-        "Кожні ${ interval } тижні у суботу, ${ untilString }",
+        "Щотижня в суботу, ${ untilString }",
+        "Кожні ${ interval } тижні в суботу, ${ untilString }",
         "Кожні ${ interval } тижнів у суботу, ${ untilString }",
-        "Кожні ${ interval } тижнів у суботу, ${ untilString }"
+        "Кожні ${ interval } тижня в суботу, ${ untilString }"
       ],
       "Every ${ interval } week on Sunday": [
-        "Кожен ${ interval } тиждень у неділю",
+        "Щотижня в неділю",
         "Кожні ${ interval } тижні у неділю",
         "Кожні ${ interval } тижнів у неділю",
-        "Кожні ${ interval } тижнів у неділю"
+        "Кожні ${ interval } тижня у неділю"
       ],
       "Every ${ interval } week on Sunday, ${ timesString }": [
-        "Кожен ${ interval } тиждень у неділю, ${ timesString }",
-        "Кожні ${ interval } тижні у неділю, ${ timesString }",
+        "Щотижня в неділю, ${ timesString }",
+        "Кожні ${ interval } тижні в неділю, ${ timesString }",
         "Кожні ${ interval } тижнів у неділю, ${ timesString }",
-        "Кожні ${ interval } тижнів у неділю, ${ timesString }"
+        "Кожні ${ interval } тижня в неділю, ${ timesString }"
       ],
       "Every ${ interval } week on Sunday, ${ untilString }": [
-        "Кожен ${ interval } тиждень у неділю, ${ untilString }",
-        "Кожні ${ interval } тижні у неділю, ${ untilString }",
+        "Щотижня в неділю, ${ untilString }",
+        "Кожні ${ interval } тижні в неділю, ${ untilString }",
         "Кожні ${ interval } тижнів у неділю, ${ untilString }",
-        "Кожні ${ interval } тижнів у неділю, ${ untilString }"
+        "Кожні ${ interval } тижня в неділю, ${ untilString }"
       ],
       "Every ${ interval } week on Thursday": [
-        "Кожен ${ interval } тиждень у четвер",
-        "Кожні ${ interval } тижні у четвер",
-        "Кожні ${ interval } тижнів у четвер",
-        "Кожні ${ interval } тижнів у четвер"
+        "Щочетверга впродовж ${ interval } тижня",
+        "Щочетверга впродовж ${ interval } тижнів",
+        "Щочетверга впродовж ${ interval } тижнів",
+        "Щочетверга впродовж ${ interval } тижнів"
       ],
       "Every ${ interval } week on Thursday, ${ timesString }": [
-        "Кожен ${ interval } тиждень у четвер, ${ timesString }",
-        "Кожні ${ interval } тижні у четвер, ${ timesString }",
+        "Щотижня в четвер, ${ timesString }",
+        "Кожні ${ interval } тижні в четвер, ${ timesString }",
         "Кожні ${ interval } тижнів у четвер, ${ timesString }",
-        "Кожні ${ interval } тижнів у четвер, ${ timesString }"
+        "Кожні ${ interval } тижня в четвер, ${ timesString }"
       ],
       "Every ${ interval } week on Thursday, ${ untilString }": [
-        "Кожен ${ interval } тиждень у четвер, ${ untilString }",
-        "Кожні ${ interval } тижні у четвер, ${ untilString }",
+        "Щотижня в четвер, ${ untilString }",
+        "Кожні ${ interval } тижні в четвер, ${ untilString }",
         "Кожні ${ interval } тижнів у четвер, ${ untilString }",
-        "Кожні ${ interval } тижнів у четвер, ${ untilString }"
+        "Кожні ${ interval } тижня в четвер, ${ untilString }"
       ],
       "Every ${ interval } week on Tuesday": [
-        "Кожен ${ interval } тиждень у вівторок",
-        "Кожні ${ interval } тижні у вівторок",
-        "Кожні ${ interval } тижнів у вівторок",
-        "Кожні ${ interval } тижнів у вівторок"
+        "Щовівторка впродовж ${ interval } тижня",
+        "Щовівторка впродовж ${ interval } тижнів",
+        "Щовівторка впродовж ${ interval } тижнів",
+        "Щовівторка впродовж ${ interval } тижнів"
       ],
       "Every ${ interval } week on Tuesday, ${ timesString }": [
-        "Кожен ${ interval } тиждень у вівторок, ${ timesString }",
+        "Щотижня у вівторок, ${ timesString }",
         "Кожні ${ interval } тижні у вівторок, ${ timesString }",
         "Кожні ${ interval } тижнів у вівторок, ${ timesString }",
-        "Кожні ${ interval } тижнів у вівторок, ${ timesString }"
+        "Кожні ${ interval } тижня у вівторок, ${ timesString }"
       ],
       "Every ${ interval } week on Tuesday, ${ untilString }": [
-        "Кожен ${ interval } тиждень у вівторок, ${ untilString }",
+        "Щотижня у вівторок, ${ untilString }",
         "Кожні ${ interval } тижні у вівторок, ${ untilString }",
         "Кожні ${ interval } тижнів у вівторок, ${ untilString }",
-        "Кожні ${ interval } тижнів у вівторок, ${ untilString }"
+        "Кожні ${ interval } тижня у вівторок, ${ untilString }"
       ],
       "Every ${ interval } week on Wednesday": [
-        "Кожен ${ interval } тиждень у середу",
-        "Кожні ${ interval } тижні у середу",
-        "Кожні ${ interval } тижнів у середу",
-        "Кожні ${ interval } тижнів у середу"
+        "Щосереди впродовж ${ interval } тижня",
+        "Щосереди впродовж ${ interval } тижнів",
+        "Щосереди впродовж ${ interval } тижнів",
+        "Щосереди впродовж ${ interval } тижнів"
       ],
       "Every ${ interval } week on Wednesday, ${ timesString }": [
-        "Кожен ${ interval } тиждень у середу, ${ timesString }",
-        "Кожні ${ interval } тижні у середу, ${ timesString }",
+        "Щотижня у середу, ${ timesString }",
+        "Кожні ${ interval } тижні в середу, ${ timesString }",
         "Кожні ${ interval } тижнів у середу, ${ timesString }",
-        "Кожні ${ interval } тижнів у середу, ${ timesString }"
+        "Кожні ${ interval } тижня у середу, ${ timesString }"
       ],
       "Every ${ interval } week on Wednesday, ${ untilString }": [
-        "Кожен ${ interval } тиждень у середу, ${ untilString }",
-        "Кожні ${ interval } тижні у середу, ${ untilString }",
+        "Щотижня в середу, ${ untilString }",
+        "Кожні ${ interval } тижні в середу, ${ untilString }",
         "Кожні ${ interval } тижнів у середу, ${ untilString }",
-        "Кожні ${ interval } тижнів у середу, ${ untilString }"
+        "Кожні ${ interval } тижня в середу, ${ untilString }"
       ],
       "Weekly on ${ multipleDaysString }": [
         "Щотижня ${ multipleDaysString }"
       ],
       "Weekly on ${ multipleDaysString }, ${ timesString }": [
-        "Щотижня ${ multipleDaysString }, ${ timesString }"
+        "Щотижня у ${ multipleDaysString }, ${ timesString }"
       ],
       "Weekly on ${ multipleDaysString }, ${ untilString }": [
         "Щотижня в ${ multipleDaysString }, ${ untilString }"
@@ -10761,16 +10810,16 @@
         "Щотижня кожен день, ${ untilString }"
       ],
       "Weekly on Friday": [
-        "Щотижня у п'ятницю"
+        "Щоп'ятниці"
       ],
       "Weekly on Friday, ${ timesString }": [
         "Щотижня у п'ятницю, ${ timesString }"
       ],
       "Weekly on Friday, ${ untilString }": [
-        "Щотижня в п'ятницю, ${ untilString }"
+        "Щотижня у п'ятницю, ${ untilString }"
       ],
       "Weekly on Monday": [
-        "Щотижня в понеділок"
+        "Щопонеділка"
       ],
       "Weekly on Monday, ${ timesString }": [
         "Щотижня у понеділок, ${ timesString }"
@@ -10779,10 +10828,10 @@
         "Щотижня в понеділок, ${ untilString }"
       ],
       "Weekly on Saturday": [
-        "Щотижня в суботу"
+        "Щосуботи"
       ],
       "Weekly on Saturday, ${ timesString }": [
-        "Щотижня у суботу, ${ timesString }"
+        "Щотижня в суботу, ${ timesString }"
       ],
       "Weekly on Saturday, ${ untilString }": [
         "Щотижня в суботу, ${ untilString }"
@@ -10797,16 +10846,16 @@
         "Щотижня в неділю, ${ untilString }"
       ],
       "Weekly on Thursday": [
-        "Щотижня у четвер"
+        "Щочетверга"
       ],
       "Weekly on Thursday, ${ timesString }": [
-        "Щотижня у четвер, ${ timesString }"
+        "Щотижня в четвер, ${ timesString }"
       ],
       "Weekly on Thursday, ${ untilString }": [
-        "Щотижня у четвер, ${ untilString }"
+        "Щотижня в четвер, ${ untilString }"
       ],
       "Weekly on Tuesday": [
-        "Щотижня у вівторок"
+        "Щовівторка"
       ],
       "Weekly on Tuesday, ${ timesString }": [
         "Щотижня у вівторок, ${ timesString }"
@@ -10815,13 +10864,13 @@
         "Щотижня у вівторок, ${ untilString }"
       ],
       "Weekly on Wednesday": [
-        "Щотижня в середу"
+        "Щосереди"
       ],
       "Weekly on Wednesday, ${ timesString }": [
-        "Щотижня у середу, ${ timesString }"
+        "Щотижня в середу, ${ timesString }"
       ],
       "Weekly on Wednesday, ${ untilString }": [
-        "Щотижня у середу, ${ untilString }"
+        "Щотижня в середу, ${ untilString }"
       ]
     },
     "Weekly recurring event, repeats on (multiple days), frequency": {
@@ -10852,19 +10901,19 @@
         "Щороку",
         "Кожні ${ interval } роки",
         "Кожні ${ interval } років",
-        "Кожні ${ interval } років"
+        "Кожні ${ interval } року"
       ],
       "Every ${ interval } year, ${ timesString }": [
         "Щороку, ${ timesString }",
         "Кожні ${ interval } роки, ${ timesString }",
         "Кожні ${ interval } років, ${ timesString }",
-        "Кожні ${ interval } років, ${ timesString }"
+        "Кожні ${ interval } року, ${ timesString }"
       ],
       "Every ${ interval } year, ${ untilString }": [
         "Щороку, ${ untilString }",
         "Кожні ${ interval } роки, ${ untilString }",
         "Кожні ${ interval } років, ${ untilString }",
-        "Кожні ${ interval } років, ${ untilString }"
+        "Кожні ${ interval } року, ${ untilString }"
       ],
       "Yearly": [
         "Щороку"

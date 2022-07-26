@@ -1439,17 +1439,9 @@
         "Μη υποστηριζόμενη μορφή ημερολογίου"
       ]
     },
-    "Collapsible tooltip": {
-      "Close": [
-        "Κλείσιμο"
-      ],
-      "Open": [
-        "Άνοιγμα"
-      ]
-    },
     "color": {
       "Apple": [
-        "μήλο"
+        "apple"
       ],
       "azureish white": [
         "λευκό γαλαζωπό"
@@ -1828,9 +1820,6 @@
       "Burkina Faso": [
         "Μπουρκίνα Φάσο"
       ],
-      "Burma": [
-        "Βιρμανία"
-      ],
       "Burundi": [
         "Μπουρούντι"
       ],
@@ -1881,9 +1870,6 @@
       ],
       "Costa Rica": [
         "Κόστα Ρίκα"
-      ],
-      "Cote d'Ivoire\"": [
-        "Côte d'Ivoire"
       ],
       "Croatia": [
         "Κροατία"
@@ -2344,9 +2330,6 @@
       "Svalbard and Jan Mayen": [
         "Σβάλμπαρντ"
       ],
-      "Swaziland": [
-        "Eswatini"
-      ],
       "Sweden": [
         "Σουηδία"
       ],
@@ -2536,7 +2519,7 @@
     },
     "Description": {
       "Decrypting contacts... This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
-        "Γίνεται αποκρυπτογράφηση επαφών... Αυτή η διαδικασία ίσως πάρει μερικά λεπτά. Όταν ολοκληρωθεί, θα μπορείτε να κατεβάσετε το αρχείο με όλες τις επαφές σας εξαγμένες."
+        "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported."
       ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Γίνεται διαγραφή επαφών... Αυτή η διαδικασία ίσως πάρει μερικά λεπτά. Όταν ολοκληρωθεί, μπορείτε να κλείσετε αυτό το παράθυρο."
@@ -3100,9 +3083,6 @@
       ]
     },
     "Error importing event": {
-      "Calendar timezone not supported": [
-        "Δεν υποστηρίζεται η ζώνη ώρας ημερολογίου"
-      ],
       "Component with wrong format": [
         "Συνθετικό λανθασμένης μορφής"
       ],
@@ -3169,9 +3149,6 @@
       "Start time out of bounds": [
         "Ώρα έναρξης εκτός ορίων"
       ],
-      "Timezone not supported": [
-        "Η ζώνη ώρας δεν υποστηρίζεται"
-      ],
       "To-do entry": [
         "Εγγραφή προς υλοποίηση"
       ],
@@ -3180,9 +3157,6 @@
       ]
     },
     "Error message": {
-      "Brace yourself till we get the error fixed.": [
-        "Φροντίστε τον εαυτό σας μέχρι να επιδιορθώσουμε το πρόβλημα."
-      ],
       "Error: ${ errorMessage }": [
         "Σφάλμα: ${ errorMessage }"
       ],
@@ -3914,7 +3888,7 @@
         "Θέλετε να υπογράψετε ξανά τα στοιχεία της επαφής;"
       ],
       "Don't forget to share your password with the recipient": [
-        "Μην ξεχάσετε να κοινοποιήσετε τον κωδικό πρόσβασης στον παραλήπτη"
+        "Don't forget to share the password with the recipient"
       ],
       "Download our mobile application from your favorite app store to communicate securely on-the-go.": [
         "Κατεβάστε την εφαρμογή μας για κινητά από το αγαπημένο σας app store για να επικοινωνείτε με ασφάλεια εν κινήσει."
@@ -4040,7 +4014,7 @@
         "Ώρες"
       ],
       "I'm sending this message to a non-ProtonMail user.": [
-        "Στέλνω αυτό το μήνυμα σε έναν χρήστη εκτός Proton Mail."
+        "I'm sending this message to a non-Proton Mail user."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Αν αντιμετωπίζετε προβλήματα με τη δημιουργία του λογαριασμού σας, ζητήστε μια πρόσκληση και θα απαντήσουμε εντός μίας εργάσιμης ημέρας."
@@ -4232,9 +4206,6 @@
       "per month.": [
         "ανά μήνα."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
-        "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages."
-      ],
       "Phone number": [
         "Αριθμός τηλεφώνου"
       ],
@@ -4330,9 +4301,6 @@
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Επιλέξτε τη μορφή ηλεκτρονικού ταχυδρομείου που θέλετε να χρησιμοποιηθεί από προεπιλογή κατά την αποστολή ενός E-mail σε αυτό το E-mail."
-      ],
-      "Select what you want to move from Google.": [
-        "Επιλέξτε τι θέλετε να εισάγετε από την Google."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Επιλέξτε ποια ημερολόγια θα εισαχθούν. Για κάθε εισαγόμενο, ένα νέο ημερολόγιο θα δημιουργηθεί, μέχρι το όριο των 20."
@@ -5534,9 +5502,6 @@
       "Manage your labels": [
         "Διαχείρηση των ετικετών σας"
       ],
-      "More": [
-        "Περισσότερα"
-      ],
       "More about recovery": [
         "Περισσότερα περί ανάκτησης"
       ],
@@ -5870,11 +5835,6 @@
     "new_plans: action": {
       "Switch or add account": [
         "Εναλλαγή ή προσθήκη λογαριασμού"
-      ]
-    },
-    "new_plans: info": {
-      "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
-        "Παρουσίαση ανανεωμένης όψης του Proton.${ br }Πολλές υπηρεσίες, μία αποστολή. Καλώς ήρθατε σε ένα διαδίκτυο όπου η ιδιωτικότητα είναι η προεπιλογή."
       ]
     },
     "new_plans: label": {
@@ -6219,7 +6179,7 @@
         "Αδυναμία αποστολής στη διεύθυνση του διοργανωτή: ${ errorMessage }"
       ],
       "Re-encrypting invitation failed. Please try again": [
-        "Αποτυχία επανακρυπτογράφησης της πρόσκλησης. Παρακαλούμε δοκιμάστε ξανά"
+        "Re-encrypting invitation failed. Please try again."
       ]
     },
     "Search - no results": {

@@ -616,9 +616,6 @@
       ]
     },
     "blackfriday Title": {
-      "Best deal": [
-        "Mejor oferta"
-      ],
       "Most popular": [
         "Más popular"
       ]
@@ -633,7 +630,7 @@
     },
     "blackfriday: VPNspecialoffer Info": {
       "Save ${ percentage }%": [
-        "${ percentage }%"
+        "${ percentage } %"
       ]
     },
     "blackfriday: VPNspecialoffer info": {
@@ -765,14 +762,6 @@
       ],
       "Unsupported calendar format": [
         "Formato de calendario no soportado"
-      ]
-    },
-    "Collapsible tooltip": {
-      "Close": [
-        "Cerrar"
-      ],
-      "Open": [
-        "Abrir"
       ]
     },
     "color": {
@@ -1036,9 +1025,6 @@
       "Burkina Faso": [
         "Burkina Faso"
       ],
-      "Burma": [
-        "Myanmar"
-      ],
       "Burundi": [
         "Burundi"
       ],
@@ -1092,9 +1078,6 @@
       ],
       "Costa Rica": [
         "Costa Rica"
-      ],
-      "Cote d'Ivoire\"": [
-        "Costa de Marfil"
       ],
       "Croatia": [
         "Croacia"
@@ -1575,9 +1558,6 @@
       ],
       "Svalbard and Jan Mayen": [
         "Svalbard y Jan Mayen"
-      ],
-      "Swaziland": [
-        "Suazilandia"
       ],
       "Sweden": [
         "Suecia"
@@ -2681,9 +2661,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Una o más de tus claves de confianza fueron marcadas como \"comprometidas\" por su propietario. Te recomendamos que las consideres \"no fiables\"."
       ],
-      "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters is allowed": [
-        "Sólo se permiten ${ MAX_CUSTOM_PASSWORD_LENGTH } caracteres"
-      ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Modifique esta configuración únicamente si está usando PGP con destinatarios no-${ BRAND_NAME }."
       ],
@@ -2704,9 +2681,6 @@
       ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
         "PGP/Inline sólo es compatible con texto sin formato. Ten en cuenta que ${ MAIL_APP_NAME } siempre firma los mensajes cifrados."
-      ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
-        "PGP/MIME envía automáticamente el mensaje usando el modo de composición actual. Ten en cuenta que ${ MAIL_APP_NAME } siempre firma los mensajes cifrados"
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Ten en cuenta que las direcciones asignadas a este grupo NO se eliminarán."
@@ -2768,9 +2742,6 @@
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Selecciona el formato de correo electrónico que deseas utilizar por defecto al enviar un correo electrónico a esta dirección."
-      ],
-      "Select what you want to move from Google.": [
-        "Seleccione lo que desea mover de Google."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Seleccione qué calendarios quiere importar. Se creará un nuevo calendario por cada uno importado, hasta alcanzar el límite de 20 calendarios."
@@ -3528,11 +3499,6 @@
         "Cambiar o añadir cuenta"
       ]
     },
-    "new_plans: info": {
-      "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
-        "Presentamos la nueva imagen de Proton.${ br } Varios servicios, pero una misma misión. Estás ante una nueva era de Internet que se cimenta sobre la base de la privacidad."
-      ]
-    },
     "new_plans: title": {
       "Updated Proton, unified protection": [
         "Proton actualizado, protección unificada"
@@ -3728,26 +3694,14 @@
       ]
     },
     "Onboarding Action": {
-      "Enable Beta Access": [
-        "Activar el acceso a la versión beta"
-      ],
       "Next": [
         "Siguiente"
       ],
       "Start using ${ appName }": [
         "Comienza a usar ${ appName }"
-      ],
-      "Upgrade account": [
-        "Mejorar cuenta"
       ]
     },
     "Onboarding Info": {
-      "${ appName } is currently in early access and only available to users with a paid plan.": [
-        "${ appName } se encuentra en fase de acceso anticipado y sólo está disponible para usuarios con un plan de pago."
-      ],
-      "${ appName } is currently only available if you enable Beta Access.": [
-        "${ appName } sólo está disponible si habilitas el acceso Beta."
-      ],
       "Your trusty online vault for vital documents and precious memories.": [
         "Su fiable bóveda en línea para los documentos vitales y los recuerdos más preciados."
       ]
@@ -3773,12 +3727,6 @@
       ]
     },
     "Onboarding Title": {
-      "${ appName } is in Beta": [
-        "${ appName } está en beta"
-      ],
-      "Upgrade to access ${ appName }": [
-        "Actualiza para acceder a ${ appName }"
-      ],
       "Welcome to ${ appName }": [
         "Bienvenido/a a ${ appName }"
       ]

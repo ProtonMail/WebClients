@@ -365,6 +365,9 @@
       "Save": [
         "Зберегти"
       ],
+      "Search countries": [
+        "Пошук країн"
+      ],
       "Select all": [
         "Вибрати все"
       ],
@@ -822,11 +825,11 @@
       ]
     },
     "Collapsible tooltip": {
-      "Close": [
-        "Закрити"
+      "Collapse": [
+        "Згорнути"
       ],
-      "Open": [
-        "Відкрити"
+      "Expand": [
+        "Розгорнути"
       ]
     },
     "colon": {
@@ -1095,9 +1098,6 @@
       "Burkina Faso": [
         "Буркіна-Фасо"
       ],
-      "Burma": [
-        "М’янма"
-      ],
       "Burundi": [
         "Бурунді"
       ],
@@ -1152,9 +1152,6 @@
       "Costa Rica": [
         "Коста-Рика"
       ],
-      "Cote d'Ivoire\"": [
-        "Кот-д'Івуар\""
-      ],
       "Croatia": [
         "Хорватія"
       ],
@@ -1169,6 +1166,9 @@
       ],
       "Czech Republic": [
         "Чеська Республіка"
+      ],
+      "Côte d'Ivoire": [
+        "Кот-дʼІвуар"
       ],
       "Denmark": [
         "Данія"
@@ -1199,6 +1199,9 @@
       ],
       "Estonia": [
         "Естонія"
+      ],
+      "Eswatini": [
+        "Есватіні"
       ],
       "Ethiopia": [
         "Ефіопія"
@@ -1443,6 +1446,9 @@
       "Mozambique": [
         "Мозамбік"
       ],
+      "Myanmar": [
+        "Мʼянма"
+      ],
       "Namibia": [
         "Намібія"
       ],
@@ -1634,9 +1640,6 @@
       ],
       "Svalbard and Jan Mayen": [
         "Свальбард і Ян-Маєн"
-      ],
-      "Swaziland": [
-        "Есватіні"
       ],
       "Sweden": [
         "Швеція"
@@ -2249,8 +2252,8 @@
       "This label name is not available. Please choose a different name.": [
         "Назва мітки недоступна. Оберіть іншу назву."
       ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "Це повідомлення може містити URL-посилання, які неможливо правильно відкрити у цьому браузері"
+      "This message may contain some link's URL that cannot be properly opened by your current browser": [
+        "This message may contain some link's URL that cannot be properly opened by your current browser."
       ],
       "Trusted keys are not valid for sending": [
         "Довірені ключі недійсні для надсилання"
@@ -2341,8 +2344,8 @@
       "Calendar": [
         "Календар"
       ],
-      "Calendar timezone not supported": [
-        "Часовий пояс календаря не підтримується"
+      "Calendar time zone not supported": [
+        "Календарний часовий пояс не підтримується"
       ],
       "Component with wrong format": [
         "Компонент з неправильним форматом"
@@ -2416,11 +2419,11 @@
       "Start time out of bounds": [
         "Час початку поза припустимим діапазоном"
       ],
+      "Time zone not supported": [
+        "Часовий пояс не підтримується"
+      ],
       "Timezone": [
         "Часовий пояс"
-      ],
-      "Timezone not supported": [
-        "Часовий пояс не підтримується"
       ],
       "To-do entry": [
         "Запис завдання"
@@ -2433,9 +2436,6 @@
       ]
     },
     "Error message": {
-      "Brace yourself till we get the error fixed.": [
-        "Дочекайтеся, доки ми виправимо помилку."
-      ],
       "Error: ${ errorMessage }": [
         "Помилка: ${ errorMessage }"
       ],
@@ -2447,6 +2447,9 @@
       ],
       "Please ${ refresh } or check your connection.": [
         "${ refresh } або перевірте своє з'єднання."
+      ],
+      "Something went wrong. Please refresh the page or try again later.": [
+        "Щось пішло не так. Будь ласка, оновіть сторінку і спробуйте пізніше."
       ],
       "There was a problem connecting to Proton.": [
         "Виникла проблема під час з'єднання з Proton."
@@ -2683,7 +2686,7 @@
         "Немає доступних способів перевірки"
       ],
       "SMS": [
-        "SMS"
+        "СМС"
       ]
     },
     "Import calendar": {
@@ -3178,8 +3181,8 @@
       "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
         "PGP/Inline сумісний лише з форматом звичайного тексту. Зверніть увагу, що ${ MAIL_APP_NAME } завжди підписує зашифровані повідомлення."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
-        "PGP/MIME автоматично надсилає повідомлення з використанням поточного режиму редактора. Зверніть увагу, що ${ MAIL_APP_NAME } завжди підписує зашифровані повідомлення"
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        "PGP/MIME автоматично надсилає повідомлення за допомогою поточного режиму написання листа. Будь ласка, зауважте, що ${ MAIL_APP_NAME } завжди підписує зашифровані листи."
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Зауважте, що адреси, призначені цій групі, не будуть видалені."
@@ -3226,8 +3229,8 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Оберіть формат повідомлення, який ви хочете використовувати при надсиланні на цю адресу е-пошти."
       ],
-      "Select what you want to move from Google.": [
-        "Select what you want to import from Google."
+      "Select what you want to import from Google.": [
+        "Виберіть те, що бажаєте імпортувати з Google."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Виберіть, які календарі імпортувати. Для кожного імпортованого календаря буде створено новий календар з обмеженням у 20 календарів."
@@ -4068,8 +4071,8 @@
       ]
     },
     "new_plans: info": {
-      "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
-        "Introducing Proton’s refreshed look.${ br }Many services, one mission. Welcome to an internet where privacy is the default."
+      "Introducing Proton’s refreshed look.${ br }Many services, one mission. Welcome to an internet where privacy is the default.": [
+        "Представляємо оновлений вигляд Proton.${ br }Багато сервісів, одна місія. Ласкаво просимо до інтернету, де приватність є за замовчуванням."
       ]
     },
     "new_plans: label": {
@@ -4376,10 +4379,12 @@
         "Ви"
       ]
     },
-    "Participants expand button label": {
+    "Participants collapse button label": {
       "Collapse participants list": [
         "Згорнути список учасників"
-      ],
+      ]
+    },
+    "Participants expand button label": {
       "Expand participants list": [
         "Розгорнути список учасників"
       ]
