@@ -26,8 +26,8 @@ import noop from '@proton/utils/noop';
 
 import {
     Button,
+    CircleLoader,
     InputFieldTwo,
-    Loader,
     ModalTwo as Modal,
     ModalTwoContent as ModalContent,
     ModalTwoFooter as ModalFooter,
@@ -219,7 +219,7 @@ const AddressModal = ({ member, members, organizationKey, ...rest }: Props) => {
                     data-testid="settings:identity-section:add-address:address"
                     suffix={
                         loadingDomains ? (
-                            <Loader />
+                            <CircleLoader />
                         ) : domainOptions.length === 1 ? (
                             <span className="text-ellipsis" title={`@${domainOptions[0].value}`}>
                                 @{domainOptions[0].value}
