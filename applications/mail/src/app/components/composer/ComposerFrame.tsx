@@ -1,13 +1,15 @@
-import { useEffect, DragEvent, useState, useRef } from 'react';
-import { classnames, useToggle, useMailSettings, useHandler, ErrorBoundary, useSideApp } from '@proton/components';
+import { DragEvent, useEffect, useRef, useState } from 'react';
+
+import { ErrorBoundary, classnames, useHandler, useMailSettings, useSideApp, useToggle } from '@proton/components';
 import { COMPOSER_MODE } from '@proton/shared/lib/constants';
 import { SIDE_APP_WIDTH } from '@proton/shared/lib/sideApp/constants';
-import ComposerTitleBar from './ComposerTitleBar';
-import { computeComposerStyle, shouldBeMaximized } from '../../helpers/composerPositioning';
-import { WindowSize, Breakpoints } from '../../models/utils';
+
 import { ADVANCED_SEARCH_OVERLAY_CLOSE_EVENT, DRAG_ADDRESS_KEY } from '../../constants';
-import Composer, { ComposerAction } from './Composer';
+import { computeComposerStyle, shouldBeMaximized } from '../../helpers/composerPositioning';
 import useComposerDrag from '../../hooks/composer/useComposerDrag';
+import { Breakpoints, WindowSize } from '../../models/utils';
+import Composer, { ComposerAction } from './Composer';
+import ComposerTitleBar from './ComposerTitleBar';
 
 interface Props {
     messageID: string;
@@ -100,8 +102,10 @@ const ComposerFrame = ({
     };
 
     const handleFocus = () => {
-        document.dispatchEvent(new CustomEvent(ADVANCED_SEARCH_OVERLAY_CLOSE_EVENT));
-        document.dispatchEvent(new CustomEvent('dropdownclose'));
+        if (!focus) {
+            document.dispatchEvent(new CustomEvent(ADVANCED_SEARCH_OVERLAY_CLOSE_EVENT));
+            document.dispatchEvent(new CustomEvent('dropdownclose'));
+        }
 
         onFocus();
     };
