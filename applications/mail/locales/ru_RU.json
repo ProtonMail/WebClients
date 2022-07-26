@@ -155,6 +155,9 @@
       "Close this banner": [
         "Закрыть этот баннер"
       ],
+      "Collapse URL": [
+        "Свернуть URL"
+      ],
       "Color": [
         "Цвет"
       ],
@@ -304,6 +307,9 @@
       ],
       "Email settings": [
         "Настройки эл. почты"
+      ],
+      "Emoji": [
+        "Эмоджи"
       ],
       "Enable": [
         "Активировать"
@@ -578,6 +584,9 @@
       "Move to spam": [
         "Переместить в спам"
       ],
+      "Move to spam and unsubscribe": [
+        "Переместить в спам и отказаться от подписки"
+      ],
       "Move to trash": [
         "Переместить в Корзину"
       ],
@@ -761,6 +770,9 @@
       "Search": [
         "Поиск"
       ],
+      "Search countries": [
+        "Поиск стран"
+      ],
       "Search in ${ option.text }": [
         "Искать в ${ option.text }"
       ],
@@ -882,7 +894,7 @@
         "В этом сообщении есть внешнее содержимое."
       ],
       "Trash all": [
-        "Выбросить все"
+        "Переместить все в корзину"
       ],
       "Trust": [
         "Доверять"
@@ -1610,16 +1622,16 @@
       ]
     },
     "Collapsible tooltip": {
-      "Close": [
-        "Закрыть"
+      "Collapse": [
+        "Свернуть"
       ],
-      "Open": [
-        "Открыть"
+      "Expand": [
+        "Развернуть"
       ]
     },
     "color": {
       "Apple": [
-        "яблочный"
+        "apple"
       ],
       "azureish white": [
         "лазурно-белый"
@@ -2055,9 +2067,6 @@
       "Burkina Faso": [
         "Буркина-Фасо"
       ],
-      "Burma": [
-        "Бирма"
-      ],
       "Burundi": [
         "Бурунди"
       ],
@@ -2112,9 +2121,6 @@
       "Costa Rica": [
         "Коста-Рика"
       ],
-      "Cote d'Ivoire\"": [
-        "Côte d'Ivoire"
-      ],
       "Croatia": [
         "Хорватия"
       ],
@@ -2129,6 +2135,9 @@
       ],
       "Czech Republic": [
         "Чешская Республика"
+      ],
+      "Côte d'Ivoire": [
+        "Берег Слоновой Кости"
       ],
       "Denmark": [
         "Дания"
@@ -2159,6 +2168,9 @@
       ],
       "Estonia": [
         "Эстония"
+      ],
+      "Eswatini": [
+        "Эсватини"
       ],
       "Ethiopia": [
         "Эфиопия"
@@ -2403,6 +2415,9 @@
       "Mozambique": [
         "Мозамбик"
       ],
+      "Myanmar": [
+        "Мьянма"
+      ],
       "Namibia": [
         "Намибия"
       ],
@@ -2594,9 +2609,6 @@
       ],
       "Svalbard and Jan Mayen": [
         "Шпицберген и Ян-Майен"
-      ],
-      "Swaziland": [
-        "Eswatini"
       ],
       "Sweden": [
         "Швеция"
@@ -2801,7 +2813,7 @@
     },
     "Description": {
       "Decrypting contacts... This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
-        "Идет расшифровка контактов. Это может занять несколько минут. Когда процесс завершится, вы сможете скачать файл со всеми своими контактами."
+        "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported."
       ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Удаляем контакты... Это может занять несколько минут. Когда процесс завершится, вы можете закрыть это окно."
@@ -3095,7 +3107,7 @@
         "Недопустимое имя"
       ],
       "Invalid public key file": [
-        "Неверный файл открытого ключа"
+        "Недействительный файл публичного ключа"
       ],
       "Invalid verification code": [
         "Неверный код подтверждения"
@@ -3397,7 +3409,7 @@
       ]
     },
     "Error importing event": {
-      "Calendar timezone not supported": [
+      "Calendar time zone not supported": [
         "Часовой пояс календаря не поддерживается"
       ],
       "Component with wrong format": [
@@ -3466,7 +3478,7 @@
       "Start time out of bounds": [
         "Время начала находится вне границ"
       ],
-      "Timezone not supported": [
+      "Time zone not supported": [
         "Часовой пояс не поддерживается"
       ],
       "To-do entry": [
@@ -3477,9 +3489,6 @@
       ]
     },
     "Error message": {
-      "Brace yourself till we get the error fixed.": [
-        "Держитесь, пока мы исправляем ошибку."
-      ],
       "Error: ${ errorMessage }": [
         "Ошибка: ${ errorMessage }"
       ],
@@ -3494,6 +3503,9 @@
       ],
       "Please ${ refresh } or check your connection.": [
         "Пожалуйста, ${ refresh } или проверьте подключение."
+      ],
+      "Something went wrong. Please refresh the page or try again later.": [
+        "Что-то пошло не так. Пожалуйста, обновите страницу или повторите попытку позже."
       ],
       "There was a problem connecting to Proton.": [
         "Возникла проблема при подключении к Proton."
@@ -4366,7 +4378,7 @@
         "Вы хотите повторно подписать контакт?"
       ],
       "Don't forget to share your password with the recipient": [
-        "Не забудьте сообщить свой пароль получателю"
+        "Don't forget to share the password with the recipient"
       ],
       "Download our mobile application from your favorite app store to communicate securely on-the-go.": [
         "Скачайте наше мобильное приложение из предпочитаемого магазина, чтобы общаться безопасно, где бы вы ни были."
@@ -4516,7 +4528,7 @@
         "Час(а, ов)"
       ],
       "I'm sending this message to a non-ProtonMail user.": [
-        "Я отправляю это сообщение пользователю, не являющемуся пользователем ProtonMail."
+        "I'm sending this message to a non-Proton Mail user."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Если у вас возникли проблемы с созданием аккаунта, пожалуйста, запросите приглашение и мы ответим в течение одного рабочего дня."
@@ -4731,8 +4743,8 @@
       "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
         "PGP/Inline совместим только с форматом Обычного текста. Обратите внимание, что ${ MAIL_APP_NAME } всегда подписывает зашифрованные сообщения."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
-        "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages."
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        "PGP/MIME автоматически отправляет сообщение, используя текущий режим редактора писем. Обратите внимание, что ${ MAIL_APP_NAME } всегда подписывает зашифрованные сообщения"
       ],
       "Phone number": [
         "Hомер телефона"
@@ -4742,6 +4754,9 @@
       ],
       "Please add at least one recipient.": [
         "Пожалуйста, добавьте хотя бы одного получателя."
+      ],
+      "Please fill out this field.": [
+        "Пожалуйста, заполните это поле."
       ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
         "Пожалуйста, храните её в безопасности. Она понадобится вам для доступа к вашей учетной записи и расшифровки данных в случае сброса пароля."
@@ -4842,8 +4857,8 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Выберите формат писем, который вы хотите использовать по умолчанию для отправки сообщений этим адресатам."
       ],
-      "Select what you want to move from Google.": [
-        "Выберите, что вы хотите перенести из Google."
+      "Select what you want to import from Google.": [
+        "Выберите, что вы хотите импортировать из Google."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Выберите, какие календари необходимо импортировать. Для каждого импортированного календаря будет создан новый календарь, не превышающий лимит в 20 календарей."
@@ -4971,6 +4986,12 @@
       "This conversation contains trashed messages.": [
         "В этой цепочке писем есть удаленные сообщения."
       ],
+      "This conversation will be marked as spam. Would you also like to unsubscribe from future emails?": [
+        "This conversation will be marked as spam. Would you also like to unsubscribe from future emails?",
+        "This conversation will be marked as spam. Would you also like to unsubscribe from future emails?",
+        "Эти разговоры будут помечены как спам. Вы также хотите отписаться от будущих писем?",
+        "Эти разговоры будут помечены как спам. Вы также хотите отписаться от будущих писем?"
+      ],
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded!": [
         "Это письмо не соответствует требованиям подтверждения подлинности домена. Оно может быть поддельным, либо было переслано ненадлежащим образом!"
       ],
@@ -5003,6 +5024,12 @@
       ],
       "This message is signed by the key attached, that has not been trusted yet.": [
         "Это сообщение подписано при помощи приложенного ключа, который еще не отмечен как доверенный."
+      ],
+      "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
+        "Это сообщение будет помечено как спам. Вы также хотите отписаться от будущих писем?",
+        "Это сообщение будет помечено как спам. Вы также хотите отписаться от будущих писем?",
+        "These messages will be marked as spam. Would you also like to unsubscribe from future emails?",
+        "These messages will be marked as spam. Would you also like to unsubscribe from future emails?"
       ],
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
         "Это сообщение будет перемещено в Черновики, поэтому вы можете его редактировать. Его нужно будет снова запланировать перед отправкой."
@@ -5875,6 +5902,9 @@
       "Region": [
         "Регион/область"
       ],
+      "Remember my choice": [
+        "Запомнить мой выбор"
+      ],
       "Reveal password": [
         "Показать пароль"
       ],
@@ -6110,6 +6140,9 @@
       ],
       "Learn more": [
         "Подробнее"
+      ],
+      "Less": [
+        "Меньше"
       ],
       "Manage your folders": [
         "Управлять вашими папками"
@@ -6472,8 +6505,8 @@
       ]
     },
     "new_plans: info": {
-      "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
-        "Представляем обновленный вид Proton.${ br } Много служб, одна миссия. Добро пожаловать в Интернет, конфиденциальный по умолчанию."
+      "Introducing Proton’s refreshed look.${ br }Many services, one mission. Welcome to an internet where privacy is the default.": [
+        "Мы освежили внешний вид Proton.\nУ наших сервисов общая миссия — создать Интернет, где конфиденциальность на первом месте."
       ]
     },
     "new_plans: label": {
@@ -6638,7 +6671,7 @@
         "Например, "
       ],
       "Email address": [
-        "Адреса электронной почты"
+        "Адрес электронной почты"
       ],
       "End date": [
         "Дата окончания"
@@ -6836,7 +6869,7 @@
         "Не удается отправить на адрес организатора: ${ errorMessage }"
       ],
       "Re-encrypting invitation failed. Please try again": [
-        "Ошибка повторного шифрования приглашения. Пожалуйста, попробуйте еще раз"
+        "Re-encrypting invitation failed. Please try again."
       ]
     },
     "Search - no results": {
@@ -7736,6 +7769,9 @@
       ],
       "Move to inbox (not spam)": [
         "Переместить во входящие (не спам)"
+      ],
+      "Move to spam": [
+        "Переместить в Спам"
       ],
       "Move to trash": [
         "Переместить в корзину"

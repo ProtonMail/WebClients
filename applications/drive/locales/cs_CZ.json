@@ -251,11 +251,11 @@
       "Forward as attachment": [
         "Přeposlat jako přílohu"
       ],
+      "Get ${ DRIVE_APP_NAME }": [
+        "Získejte ${ DRIVE_APP_NAME }"
+      ],
       "Get link": [
         "Získat odkaz"
-      ],
-      "Get Proton Drive": [
-        "Získat Proton Drive"
       ],
       "Get started": [
         "Začínáme"
@@ -446,6 +446,9 @@
       "Search": [
         "Vyhledat"
       ],
+      "Search countries": [
+        "Vyhledat země"
+      ],
       "Search drive": [
         "Prohledat disk"
       ],
@@ -635,9 +638,6 @@
       ]
     },
     "blackfriday Title": {
-      "Best deal": [
-        "Nejlepší nabídka"
-      ],
       "Most popular": [
         "Nejoblíbenější"
       ]
@@ -652,7 +652,7 @@
     },
     "blackfriday: VPNspecialoffer Info": {
       "Save ${ percentage }%": [
-        "${ percentage }%"
+        "${ percentage } %"
       ]
     },
     "blackfriday: VPNspecialoffer info": {
@@ -787,11 +787,11 @@
       ]
     },
     "Collapsible tooltip": {
-      "Close": [
-        "Zavřít"
+      "Collapse": [
+        "Sbalit"
       ],
-      "Open": [
-        "Otevřít"
+      "Expand": [
+        "Rozbalit"
       ]
     },
     "color": {
@@ -1055,9 +1055,6 @@
       "Burkina Faso": [
         "Burkina Faso"
       ],
-      "Burma": [
-        "Barma"
-      ],
       "Burundi": [
         "Burundi"
       ],
@@ -1112,9 +1109,6 @@
       "Costa Rica": [
         "Kostarika"
       ],
-      "Cote d'Ivoire\"": [
-        "Pobřeží slonoviny"
-      ],
       "Croatia": [
         "Chorvatsko"
       ],
@@ -1129,6 +1123,9 @@
       ],
       "Czech Republic": [
         "Česká republika"
+      ],
+      "Côte d'Ivoire": [
+        "Pobřeží slonoviny"
       ],
       "Denmark": [
         "Dánsko"
@@ -1159,6 +1156,9 @@
       ],
       "Estonia": [
         "Estonsko"
+      ],
+      "Eswatini": [
+        "Svazijsko"
       ],
       "Ethiopia": [
         "Etiopie"
@@ -1403,6 +1403,9 @@
       "Mozambique": [
         "Mosambik"
       ],
+      "Myanmar": [
+        "Barma"
+      ],
       "Namibia": [
         "Namibie"
       ],
@@ -1594,9 +1597,6 @@
       ],
       "Svalbard and Jan Mayen": [
         "Svalbard a Jan Mayen"
-      ],
-      "Swaziland": [
-        "Svazijsko"
       ],
       "Sweden": [
         "Švédsko"
@@ -2074,6 +2074,9 @@
       ],
       "Please ${ refresh } or check your connection.": [
         "Prosím ${ refresh } nebo zkontrolujte své připojení."
+      ],
+      "Something went wrong. Please refresh the page or try again later.": [
+        "Něco se pokazilo. Obnovte prosím stránku nebo to zkuste později."
       ],
       "There was a problem connecting to Proton.": [
         "Při připojování ke službě Proton došlo k chybě."
@@ -2846,7 +2849,10 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Jeden nebo více důvěryhodných klíčů byl vlastníkem označen jako \"kompromitovaný\". Doporučujeme, abyste takovým klíčům \"nedůvěřovali\"."
       ],
-      "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters is allowed": [
+      "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } character is allowed": [
+        "Je povolen pouze ${ MAX_CUSTOM_PASSWORD_LENGTH } znak",
+        "Jsou povoleny pouze ${ MAX_CUSTOM_PASSWORD_LENGTH } znaky",
+        "Je povoleno pouze ${ MAX_CUSTOM_PASSWORD_LENGTH } znaků",
         "Je povoleno pouze ${ MAX_CUSTOM_PASSWORD_LENGTH } znaků"
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
@@ -2870,8 +2876,8 @@
       "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
         "PGP/Inline je kompatibilní pouze s formátem prostého textu. Vezměte na vědomí, že ${ MAIL_APP_NAME } vždy podepisuje šifrované zprávy."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
-        "PGP/MIME automaticky odesílá zprávy pomocí aktuálně zvoleného režimu editoru. Vezměte na vědomí, že ${ MAIL_APP_NAME } vždy podepisuje šifrované zprávy"
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        "PGP/MIME automaticky odesílá zprávy pomocí aktuálně zvoleného režimu editoru. Vezměte na vědomí, že ${ MAIL_APP_NAME } vždy podepisuje šifrované zprávy."
       ],
       "Please enter the password to decrypt and view content.": [
         "Prosím zadejte heslo pro dešifrování a zobrazení obsahu."
@@ -2951,8 +2957,8 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Vyberte formát e-mailu, který chcete aby byl použit jako výchozí pro zasílání e-mailu na tuto e-mailovou adresu."
       ],
-      "Select what you want to move from Google.": [
-        "Vyberte co chcete přesunout z Googlu."
+      "Select what you want to import from Google.": [
+        "Vyberte co chcete imprtovat z Googlu."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Vyberte kalendáře, které chcete importovat. Pro každý importovaný kalendář bude vytvořen nový kalendář až do limitu 20 kalendářů."
@@ -3758,8 +3764,8 @@
       ]
     },
     "new_plans: info": {
-      "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
-        "Představujeme osvěžený vzhled Protonu.${ br } Mnoho služeb, jedno poslání. Vítejte na internetu, kde je soukromí standardem."
+      "Introducing Proton’s refreshed look.${ br }Many services, one mission. Welcome to an internet where privacy is the default.": [
+        "Představujeme nový vzhled Protonu.${ br } Mnoho služeb, jedno poslání. Vítejte na internetu, kde je soukromí standardem."
       ]
     },
     "new_plans: label": {
@@ -4003,26 +4009,14 @@
       ]
     },
     "Onboarding Action": {
-      "Enable Beta Access": [
-        "Zapnout přístup do beta verze"
-      ],
       "Next": [
         "Další"
       ],
       "Start using ${ appName }": [
         "Začněte používat ${ appName }"
-      ],
-      "Upgrade account": [
-        "Přejít na vyšší tarif"
       ]
     },
     "Onboarding Info": {
-      "${ appName } is currently in early access and only available to users with a paid plan.": [
-        "${ appName } je v současné době v předběžném přístupu a je k dispozici pouze uživatelům s placeným tarifem."
-      ],
-      "${ appName } is currently only available if you enable Beta Access.": [
-        "${ appName } je v současné době k dispozici pouze v případě, že povolíte přístup do betaverze."
-      ],
       "Your trusty online vault for vital documents and precious memories.": [
         "Váš spolehlivý online trezor pro důležité dokumenty a vzácné vzpomínky."
       ]
@@ -4048,12 +4042,6 @@
       ]
     },
     "Onboarding Title": {
-      "${ appName } is in Beta": [
-        "${ appName } je ve verzi Beta"
-      ],
-      "Upgrade to access ${ appName }": [
-        "Rozšířit pro přístup k ${ appName }"
-      ],
       "Welcome to ${ appName }": [
         "Vítejte v ${ appName }"
       ]

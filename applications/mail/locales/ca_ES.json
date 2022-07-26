@@ -572,6 +572,9 @@
       "Move to spam": [
         "Moure a correu brossa"
       ],
+      "Move to spam and unsubscribe": [
+        "Mou a correu brossa i cancel·la la subscripció"
+      ],
       "Move to trash": [
         "Moure a la paperera"
       ],
@@ -1552,12 +1555,57 @@
         "Esdeveniment en curs"
       ]
     },
-    "Collapsible tooltip": {
-      "Close": [
-        "Tancar"
+    "color": {
+      "Apple": [
+        "apple"
       ],
-      "Open": [
-        "Obrir"
+      "caramel": [
+        "caramel"
+      ],
+      "carrot": [
+        "pastanaga"
+      ],
+      "cobalt": [
+        "cobalt"
+      ],
+      "copper": [
+        "coure"
+      ],
+      "forest": [
+        "bosc"
+      ],
+      "kiwi": [
+        "kiwi"
+      ],
+      "light red": [
+        "vermell clar"
+      ],
+      "ocean": [
+        "oceà"
+      ],
+      "olive": [
+        "oliva"
+      ],
+      "pine": [
+        "pi"
+      ],
+      "pink": [
+        "rosa"
+      ],
+      "plum": [
+        "pruna"
+      ],
+      "purple": [
+        "porpra"
+      ],
+      "sahara": [
+        "sahara"
+      ],
+      "strawberry": [
+        "maduixa"
+      ],
+      "white": [
+        "blanc"
       ]
     },
     "Composer email icon": {
@@ -1831,9 +1879,6 @@
       "Burkina Faso": [
         "Burkina Faso"
       ],
-      "Burma": [
-        "Myanmar"
-      ],
       "Burundi": [
         "Burundi"
       ],
@@ -1887,9 +1932,6 @@
       ],
       "Costa Rica": [
         "Costa Rica"
-      ],
-      "Cote d'Ivoire\"": [
-        "Côte d'Ivoire"
       ],
       "Croatia": [
         "Croàcia"
@@ -2365,9 +2407,6 @@
       "Svalbard and Jan Mayen": [
         "Svalbard i Jan Mayen"
       ],
-      "Swaziland": [
-        "Eswatini"
-      ],
       "Sweden": [
         "Suècia"
       ],
@@ -2551,7 +2590,7 @@
     },
     "Description": {
       "Decrypting contacts... This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
-        "Desxifrant contactes... Pot trigar uns minuts. Quan el procés s'hagi completat, podreu descarregar el fitxer amb tots els vostres contactes exportats."
+        "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported."
       ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Eliminant contactes... Pot trigar uns minuts. Quan el procés s'hagi completat, podreu tancar aquest diàleg."
@@ -3105,9 +3144,6 @@
       ]
     },
     "Error importing event": {
-      "Calendar timezone not supported": [
-        "Fus horari del calendari no compatible"
-      ],
       "Component with wrong format": [
         "Component amb format erroni"
       ],
@@ -3174,9 +3210,6 @@
       "Start time out of bounds": [
         "Hora d’inici fora de límits"
       ],
-      "Timezone not supported": [
-        "Fus horari no compatible"
-      ],
       "To-do entry": [
         "Entrada de tasques"
       ],
@@ -3185,9 +3218,6 @@
       ]
     },
     "Error message": {
-      "Brace yourself till we get the error fixed.": [
-        "Prepareu-vos fins que no es resolgui l’error."
-      ],
       "Error: ${ errorMessage }": [
         "Error: ${ errorMessage }"
       ],
@@ -3294,6 +3324,9 @@
       ],
       "Inbox": [
         "Bústia d’entrada"
+      ],
+      "Inbox - Default": [
+        "Safata d'entrada - Per defecte"
       ],
       "Select a folder": [
         "Selecció de carpeta"
@@ -3919,6 +3952,9 @@
       "Do you want to re-sign the contact details?": [
         "Voleu tornar a signar els detalls de contacte?"
       ],
+      "Don't forget to share your password with the recipient": [
+        "Don't forget to share the password with the recipient"
+      ],
       "Download our mobile application from your favorite app store to communicate securely on-the-go.": [
         "Descarregueu la nostra aplicació mòbil des de la vostra botiga d'aplicacions preferida per comunicar-vos de manera segura en qualsevol moment."
       ],
@@ -4052,7 +4088,7 @@
         "Hores"
       ],
       "I'm sending this message to a non-ProtonMail user.": [
-        "Envio aquest missatge a un usuari que no és de Proton Mail."
+        "I'm sending this message to a non-Proton Mail user."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Si teniu problemes per crear el vostre compte, sol·liciteu una invitació i us respondrem en un dia laborable."
@@ -4243,9 +4279,6 @@
       ],
       "per month.": [
         "al mes."
-      ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
-        "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages."
       ],
       "Phone number": [
         "Número de telèfon"
@@ -4783,8 +4816,14 @@
       ]
     },
     "Key badge": {
+      "Compromised": [
+        "Compromesa"
+      ],
       "Expired": [
         "Vençuda"
+      ],
+      "Obsolete": [
+        "Obsolet"
       ],
       "Primary": [
         "Primari"
@@ -5051,6 +5090,9 @@
       "ANY": [
         "CUALSEVOL"
       ],
+      "Apply filter to existing emails": [
+        "Aplica el filtre als correus electrònics existents"
+      ],
       "Attach screenshot(s)": [
         "Adjunta captura/es de pantalla"
       ],
@@ -5176,6 +5218,9 @@
       ],
       "Hide password": [
         "Amaga la contrasenya"
+      ],
+      "How would you describe your experience with the new Proton?": [
+        "Com descriuríeu la vostra experiència amb el nou Proton?"
       ],
       "I understand the risk": [
         "Entenc el risc"
@@ -5548,9 +5593,6 @@
       "Manage your labels": [
         "Gestioneu les vostres etiquetes"
       ],
-      "More": [
-        "Més"
-      ],
       "More about recovery": [
         "Més sobre la recuperació"
       ],
@@ -5884,6 +5926,16 @@
         "Nom de etiqueta"
       ]
     },
+    "new_plans: action": {
+      "Switch or add account": [
+        "Canvia o afegeix un compte"
+      ]
+    },
+    "new_plans: placeholder": {
+      "Feedback": [
+        "Comentaris"
+      ]
+    },
     "Notification": {
       "${ _Filter.Name } created": [
         "${ _Filter.Name } creat"
@@ -6196,6 +6248,9 @@
       ],
       "Cannot send to organizer address: ${ errorMessage }": [
         "No es pot enviar a l'adreça de l'organitzador: ${ errorMessage }"
+      ],
+      "Re-encrypting invitation failed. Please try again": [
+        "Re-encrypting invitation failed. Please try again."
       ]
     },
     "Search - no results": {

@@ -80,6 +80,9 @@
       "Create": [
         "Создать"
       ],
+      "Create a secure ${ MAIL_APP_NAME } address instead": [
+        "Вместо этого создайте защищенный адрес ${ MAIL_APP_NAME }"
+      ],
       "Create account": [
         "Создать учетную запись"
       ],
@@ -272,6 +275,9 @@
       "Save selected": [
         "Сохранить выбранное"
       ],
+      "Search countries": [
+        "Поиск стран"
+      ],
       "Select ${ planTitle }": [
         "Выбрать ${ planTitle }"
       ],
@@ -394,8 +400,14 @@
       ]
     },
     "Action in trial plan": {
+      "Continue with free plan": [
+        "Продолжайте пользоваться бесплатным планом"
+      ],
       "No, thanks": [
         "Нет, спасибо"
+      ],
+      "Start my 30-day free trial": [
+        "Начните мою 30-дневную бесплатную пробную версию"
       ],
       "Try free for 30 days": [
         "Попробуйте бесплатно в течение 30 дней"
@@ -712,11 +724,11 @@
       ]
     },
     "Collapsible tooltip": {
-      "Close": [
-        "Закрыть"
+      "Collapse": [
+        "обрушение"
       ],
-      "Open": [
-        "Открыть"
+      "Expand": [
+        "Развернуть"
       ]
     },
     "color": {
@@ -917,9 +929,6 @@
       "Burkina Faso": [
         "Буркина-Фасо"
       ],
-      "Burma": [
-        "Myanmar"
-      ],
       "Burundi": [
         "Бурунди"
       ],
@@ -974,9 +983,6 @@
       "Costa Rica": [
         "Коста-Рика"
       ],
-      "Cote d'Ivoire\"": [
-        "Берег Слоновой Кости"
-      ],
       "Croatia": [
         "Хорватия"
       ],
@@ -991,6 +997,9 @@
       ],
       "Czech Republic": [
         "Чешская Республика"
+      ],
+      "Côte d'Ivoire": [
+        "Кот-д'Ивуар"
       ],
       "Denmark": [
         "Дания"
@@ -1021,6 +1030,9 @@
       ],
       "Estonia": [
         "Эстония"
+      ],
+      "Eswatini": [
+        "Эсватини"
       ],
       "Ethiopia": [
         "Эфиопия"
@@ -1265,6 +1277,9 @@
       "Mozambique": [
         "Мозамбик"
       ],
+      "Myanmar": [
+        "Мьянма"
+      ],
       "Namibia": [
         "Намибия"
       ],
@@ -1456,9 +1471,6 @@
       ],
       "Svalbard and Jan Mayen": [
         "Шпицберген и Ян-Майен"
-      ],
-      "Swaziland": [
-        "Свазиленд"
       ],
       "Sweden": [
         "Швеция"
@@ -1775,9 +1787,6 @@
       ]
     },
     "Error message": {
-      "Brace yourself till we get the error fixed.": [
-        "Держитесь, пока мы исправляем ошибку."
-      ],
       "Error: ${ errorMessage }": [
         "Ошибка: ${ errorMessage }."
       ],
@@ -1786,6 +1795,9 @@
       ],
       "Please ${ refresh } or check your connection.": [
         "Пожалуйста, ${ refresh } или проверьте Ваше подключение."
+      ],
+      "Something went wrong. Please refresh the page or try again later.": [
+        "Что-то пошло не так. Пожалуйста, обновите страницу или повторите попытку позже."
       ],
       "There was a problem connecting to Proton.": [
         "Возникла проблема при подключении к Proton."
@@ -1828,6 +1840,12 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "байт",
+        "байта",
+        "байтов",
+        "байтов"
+      ],
       "GB": [
         "ГБ"
       ],
@@ -1836,6 +1854,32 @@
       ],
       "MB": [
         "МБ"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Байт",
+        "Байта",
+        "Байтов",
+        "Байтов"
+      ],
+      "Gigabyte": [
+        "Гигабайт",
+        "Гигабайта",
+        "Гигабайтов",
+        "Гигабайтов"
+      ],
+      "Kilobyte": [
+        "Килобайт",
+        "Килобайта",
+        "Килобайтов",
+        "Килобайтов"
+      ],
+      "Megabyte": [
+        "Мегабайт",
+        "Мегабайта",
+        "Мегабайтов",
+        "Мегабайтов"
       ]
     },
     "Frequency of news": {
@@ -2414,8 +2458,8 @@
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Использовать лучший сервер в соответствии с текущей нагрузкой и местоположением: ${ formattedBestServerName }"
       ],
-      "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
-        "Используйте следующие учетные данные для подключения к ${ VPN_APP_NAME } через сторонние приложения, например, Tunnelblick на MacOS или OpenVPN на GNU/Linux."
+      "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
+        "Используйте следующие учетные данные при подключении к серверам ${ VPN_APP_NAME } без приложения. Примеры использования включают: Tunnelblick на macOS, OpenVPN на GNU/Linux."
       ],
       "Verification can take a few minutes.": [
         "Проверка может занять несколько минут."
@@ -2513,6 +2557,9 @@
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "У вас должна быть кредитная карта или банковский счет, связанный с вашим счетом PayPal. Если ваш счет PayPal не имеет такой привязки, пожалуйста, нажмите на кнопку ниже."
       ],
+      "You must remove any additional personal calendars and any shared calendar links before you can cancel your Mail subscription.": [
+        "Прежде чем отменить подписку на Почту, вы должны удалить все дополнительные личные календари и все ссылки на общие календари."
+      ],
       "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription.": [
         "Вы должны удалить все дополнительные личные календари и все ссылки на общие календаря, прежде чем вы сможете отменить подписку."
       ],
@@ -2575,6 +2622,32 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Ваша подписка находится под управлением Mozilla. Пожалуйста, свяжитесь со службой поддержки Mozilla."
+      ]
+    },
+    "info": {
+      "Create an email address": [
+        "Создайте адрес электронной почты"
+      ],
+      "Day 27: Trial reminder": [
+        "День 27: Напоминание об испытании"
+      ],
+      "Day 30: Trial ends": [
+        "День 30: Испытание заканчивается"
+      ],
+      "Enjoy secure, easy-to-use emailing with plenty of premium features.": [
+        "Наслаждайтесь безопасной, простой в использовании электронной почтой с множеством функций премиум-класса."
+      ],
+      "Try Mail Plus": [
+        "Попробуйте Mail Plus"
+      ],
+      "We’ll email you before your trial ends. Cancel anytime.": [
+        "Мы отправим вам электронное письмо до окончания пробного периода. Отмена в любое время."
+      ],
+      "Your new email address is ready to go!": [
+        "Ваш новый адрес электронной почты готов к работе!"
+      ],
+      "Your subscription starts on ${ startText }.": [
+        "Ваша подписка начинается с ${ startText }."
       ]
     },
     "Info for cash payment method": {
@@ -3155,6 +3228,12 @@
       "Explore all ${ BRAND_NAME } plans": [
         "Ознакомиться со всеми тарифами ${ BRAND_NAME }"
       ],
+      "From ${ _price }": [
+        "От ${ _price }"
+      ],
+      "From ${ _price2 } per user": [
+        "От ${ _price2 } за пользователя"
+      ],
       "From ${ price }": [
         "От: ${ price }"
       ],
@@ -3466,6 +3545,9 @@
       "Privacy and security suite for businesses, including all premium Proton services.": [
         "Пакет обеспечения конфиденциальности и безопасности для предприятий, включающий все платные услуги Proton."
       ],
+      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
+        "Защищенное облачное хранилище, позволяющее легко и защищенно хранить, синхронизировать и обмениваться файлами."
+      ],
       "Secure email and calendar for professionals and businesses.": [
         "Защищенные электронная почта и календарь для отдельных пользователей и компаний."
       ],
@@ -3486,6 +3568,9 @@
       ]
     },
     "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Обеспечьте конфиденциальность по умолчанию для резервного копирования, хранения, обмена и извлечения файлов."
+      ],
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "В противном случае доступ к аккаунту будет ограничен, а затем аккаунт будет отключен."
       ],
@@ -3632,8 +3717,8 @@
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
         "Поддержка IMAP ограничена использованием приложений для ПК (Outlook, Apple Mail, Thunderbird и др.) через ${ MAIL_APP_NAME } Bridge. Облачные средства интеграции IMAP сейчас не поддерживаются"
       ],
-      "Keeps you protected by blocking all network connections when you are accidentally disconnected from our VPN server": [
-        "Защищает вас, блокируя все подключения к сети при случайном отключении от нашего сервера VPN"
+      "Keeps you protected by blocking all network connections when you are unexpectedly disconnected from our VPN server.": [
+        "Защищает вас, блокируя все сетевые подключения, когда вы неожиданно отключаетесь от нашего VPN-сервера."
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Ярлыки — это простые теги, которые можно добавлять к сообщениям. С их помощью удобнее находить нужные письма и применять фильтры"
@@ -3650,8 +3735,8 @@
       "On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
         "Еще вы можете добавить до 5 календарей от друзей, родственников, коллег и организаций"
       ],
-      "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections": [
-        "Одно VPN-подключение позволяет одному устройству в любое время подключаться к Proton VPN. Например, для одновременного подключения к Proton VPN телефона и ноутбука вам потребуется два VPN-подключения."
+      "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections..": [
+        "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Возможность просматривать публичные папки со входящими сообщениями пользователей, включая полный текст писем и контактную информацию"
@@ -3756,6 +3841,9 @@
       ],
       "Boost your storage space to ${ businessStorage } per user": [
         "Увеличьте объем хранилища до ${ businessStorage } на пользователя"
+      ],
+      "Boost your storage space to ${ driveStorage } total": [
+        "Увеличьте объем дискового пространства до ${ driveStorage } в целом"
       ],
       "Cover more ground with support for 10 custom email domains": [
         "Расширьте возможности с поддержкой 10 пользовательских доменов электронной почты"
@@ -3971,8 +4059,23 @@
       "Cancel": [
         "Отмена"
       ],
+      "Phone number has been verified.": [
+        "Номер телефона подтвержден."
+      ],
+      "Phone number not yet verified.": [
+        "Номер телефона еще не подтвержден."
+      ],
+      "Verify by SMS": [
+        "Подтвердить с помощью СМС"
+      ],
       "Verify now": [
         "Проверить сейчас"
+      ],
+      "Verify recovery phone?": [
+        "Подтвердить телефон для восстановления?"
+      ],
+      "Verifying your phone number increases your account security and allows additional options for recovery.": [
+        "Подтверждение номера телефона повышает защищенность вашего аккаунта и дает дополнительные возможности для восстановления."
       ]
     },
     "Signup label": {
@@ -4121,6 +4224,9 @@
     "Subtitle for trial plan": {
       "The privacy-first Mail and Calendar solution for your everyday communications needs.": [
         "Почта и календарь - это решение для повседневных коммуникаций с приоритетом конфиденциальности."
+      ],
+      "This offer is for those new to Proton only. No credit card required.": [
+        "Это предложение только для новичков в Proton. Кредитная карта не требуется."
       ]
     },
     "Success": {
@@ -4321,6 +4427,9 @@
       "Billing cycle": [
         "Оплачиваемый период"
       ],
+      "Cancel Mail subscription": [
+        "Отменить подписку на почту"
+      ],
       "Card verification": [
         "Проверка карты"
       ],
@@ -4419,6 +4528,9 @@
       ],
       "Gift code": [
         "Подарочный код"
+      ],
+      "How your free trial works": [
+        "Как работает бесплатная пробная версия"
       ],
       "Human verification": [
         "Проверка \"Я не робот\""

@@ -275,6 +275,9 @@
       "Save selected": [
         "Zapisz zaznaczone"
       ],
+      "Search countries": [
+        "Szukaj krajów"
+      ],
       "Select ${ planTitle }": [
         "Wybierz ${ planTitle }"
       ],
@@ -397,8 +400,14 @@
       ]
     },
     "Action in trial plan": {
+      "Continue with free plan": [
+        "Kontynuuj z planem Free"
+      ],
       "No, thanks": [
         "Nie, dziękuję"
+      ],
+      "Start my 30-day free trial": [
+        "Rozpocznij 30-dniową darmową wersję próbną"
       ],
       "Try free for 30 days": [
         "Wypróbuj za darmo przez 30 dni"
@@ -677,11 +686,11 @@
       ]
     },
     "Collapsible tooltip": {
-      "Close": [
-        "Zamknij"
+      "Collapse": [
+        "Zwiń"
       ],
-      "Open": [
-        "Otwórz"
+      "Expand": [
+        "Rozwiń"
       ]
     },
     "color": {
@@ -882,9 +891,6 @@
       "Burkina Faso": [
         "Burkina Faso"
       ],
-      "Burma": [
-        "Myanmar"
-      ],
       "Burundi": [
         "Burundi"
       ],
@@ -939,9 +945,6 @@
       "Costa Rica": [
         "Kostaryka"
       ],
-      "Cote d'Ivoire\"": [
-        "Wybrzeże Kości Słoniowej"
-      ],
       "Croatia": [
         "Chorwacja"
       ],
@@ -956,6 +959,9 @@
       ],
       "Czech Republic": [
         "Czechy"
+      ],
+      "Côte d'Ivoire": [
+        "Wybrzeże Kości Słoniowej"
       ],
       "Denmark": [
         "Dania"
@@ -986,6 +992,9 @@
       ],
       "Estonia": [
         "Estonia"
+      ],
+      "Eswatini": [
+        "Eswatini"
       ],
       "Ethiopia": [
         "Etiopia"
@@ -1230,6 +1239,9 @@
       "Mozambique": [
         "Mozambik"
       ],
+      "Myanmar": [
+        "Mjanma"
+      ],
       "Namibia": [
         "Namibia"
       ],
@@ -1421,9 +1433,6 @@
       ],
       "Svalbard and Jan Mayen": [
         "Svalbard i Jan Mayen"
-      ],
-      "Swaziland": [
-        "Eswatini"
       ],
       "Sweden": [
         "Szwecja"
@@ -1740,9 +1749,6 @@
       ]
     },
     "Error message": {
-      "Brace yourself till we get the error fixed.": [
-        "Poczekaj chwilę, naprawiamy ten błąd."
-      ],
       "Error: ${ errorMessage }": [
         "Błąd: ${ errorMessage }"
       ],
@@ -1751,6 +1757,9 @@
       ],
       "Please ${ refresh } or check your connection.": [
         "${ refresh } lub sprawdź swoje połączenie."
+      ],
+      "Something went wrong. Please refresh the page or try again later.": [
+        "Coś poszło nie tak. Odśwież stronę lub spróbuj ponownie później."
       ],
       "There was a problem connecting to Proton.": [
         "Wystąpił problem z połączeniem z usługą Proton."
@@ -2411,7 +2420,7 @@
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Użyj najlepszego serwera w zależności od obciążenia i lokalizacji: ${ formattedBestServerName }"
       ],
-      "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
+      "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Użyj następujących danych logowania, podczas łączenia się z serwerami ${ VPN_APP_NAME } poza aplikacją. Przykładowe użycie: Tunnelblick na macOS, OpenVPN na GNU/Linuksie."
       ],
       "Verification can take a few minutes.": [
@@ -2575,6 +2584,32 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Twoja subskrypcja jest zarządzana przez Mozillę. Skontaktuj się z pomocą techniczną Mozilli."
+      ]
+    },
+    "info": {
+      "Create an email address": [
+        "Utwórz adres e-mail"
+      ],
+      "Day 27: Trial reminder": [
+        "Dzień 27: Przypomnienie o końcu wersji próbnej"
+      ],
+      "Day 30: Trial ends": [
+        "Dzień 30: Zakończenie wersji próbnej"
+      ],
+      "Enjoy secure, easy-to-use emailing with plenty of premium features.": [
+        "Ciesz się bezpieczną, łatwą w użyciu pocztą z wieloma funkcjami premium."
+      ],
+      "Try Mail Plus": [
+        "Wypróbuj plan Mail Plus"
+      ],
+      "We’ll email you before your trial ends. Cancel anytime.": [
+        "Powiadomimy Cię przed zakończeniem wersji próbnej. Możesz anulować subskrypcję w dowolnym momencie."
+      ],
+      "Your new email address is ready to go!": [
+        "Twój nowy adres e-mail jest gotowy!"
+      ],
+      "Your subscription starts on ${ startText }.": [
+        "Subskrypcja rozpocznie się ${ startText }."
       ]
     },
     "Info for cash payment method": {
@@ -3644,8 +3679,8 @@
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
         "Obsługa IMAP jest dostępna na aplikacjach desktopowych (np. Outlook, Apple Mail, Thunderbird) za pomocą ${ MAIL_APP_NAME } Bridge. Integracje IMAP oparte na chmurze nie są obsługiwane."
       ],
-      "Keeps you protected by blocking all network connections when you are accidentally disconnected from our VPN server": [
-        "Chroni Cię, blokując wszystkie połączenia sieciowe, gdy przypadkowo utracisz połączenie z naszym serwerem VPN"
+      "Keeps you protected by blocking all network connections when you are unexpectedly disconnected from our VPN server.": [
+        "Chroni Cię, blokując wszystkie połączenia sieciowe, gdy niespodziewanie utracisz połączenie z naszym serwerem VPN."
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Etykiety to proste znaczniki, które możesz dodawać do wiadomości, aby ułatwić ich wyszukiwanie lub filtrowanie"
@@ -3662,8 +3697,8 @@
       "On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
         "Ponadto możesz dodać do 5 kalendarzy od znajomych, rodziny, współpracowników i organizacji."
       ],
-      "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections": [
-        "Jedno połączenie VPN pozwala jednemu urządzeniu połączyć się z usługą Proton VPN w danym momencie. Na przykład, aby podłączyć telefon i laptop do Proton VPN w tym samym czasie, potrzebujesz 2 połączenia VPN"
+      "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections..": [
+        "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Możliwość przeglądania służbowych skrzynek odbiorczych użytkowników w taki sam sposób, w jaki robi to użytkownik, łącznie z pełnymi wiadomościami i szczegółami kontaktu"
@@ -4151,6 +4186,9 @@
     "Subtitle for trial plan": {
       "The privacy-first Mail and Calendar solution for your everyday communications needs.": [
         "Prywatna poczta i kalendarz do codziennej komunikacji."
+      ],
+      "This offer is for those new to Proton only. No credit card required.": [
+        "Oferta dla nowych użytkowników usług Proton. Karta płatnicza nie jest wymagana."
       ]
     },
     "Success": {
@@ -4452,6 +4490,9 @@
       ],
       "Gift code": [
         "Kod podarunkowy"
+      ],
+      "How your free trial works": [
+        "Jak działa darmowa wersja próbna"
       ],
       "Human verification": [
         "Weryfikacja antyspamowa"

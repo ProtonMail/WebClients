@@ -302,6 +302,9 @@
       "OK": [
         "ОК"
       ],
+      "Open in a new tab": [
+        "Открыть в новой вкладке"
+      ],
       "Open navigation": [
         "Показать панель навигации"
       ],
@@ -362,6 +365,9 @@
       "Save": [
         "Сохранить"
       ],
+      "Search countries": [
+        "Поиск стран"
+      ],
       "Select all": [
         "Выбрать всё"
       ],
@@ -370,6 +376,9 @@
       ],
       "Send": [
         "Отправить"
+      ],
+      "Send feedback": [
+        "Отправить отзыв"
       ],
       "Set recovery phrase": [
         "Установить фразу для восстановления"
@@ -403,6 +412,9 @@
       ],
       "Skip": [
         "Пропустить"
+      ],
+      "Start import": [
+        "Начать импортировать"
       ],
       "Start setup": [
         "Приступить к настройкам"
@@ -865,16 +877,78 @@
       ]
     },
     "Collapsible tooltip": {
-      "Close": [
-        "Закрыть"
+      "Collapse": [
+        "Свернуть"
       ],
-      "Open": [
-        "Открыть"
+      "Expand": [
+        "Развернуть"
       ]
     },
     "colon": {
       ": ": [
         ": "
+      ]
+    },
+    "color": {
+      "carrot": [
+        "морковный"
+      ],
+      "cerise": [
+        "вишневый"
+      ],
+      "cobalt": [
+        "кобальтовый"
+      ],
+      "copper": [
+        "медный"
+      ],
+      "enzian": [
+        "генциана"
+      ],
+      "fern": [
+        "папоротник"
+      ],
+      "forest": [
+        "лесной"
+      ],
+      "ocean": [
+        "океанический"
+      ],
+      "olive": [
+        "оливковый"
+      ],
+      "pacific": [
+        "тихоокеанский"
+      ],
+      "pickle": [
+        "огурец"
+      ],
+      "pine": [
+        "сосновый"
+      ],
+      "pink": [
+        "розовый"
+      ],
+      "plum": [
+        "сливовый"
+      ],
+      "purple": [
+        "фиолетовый"
+      ],
+      "reef": [
+        "рифовый"
+      ],
+      "sahara": [
+        "сахара"
+      ],
+      "slateblue": [
+        "синий"
+      ],
+      "soil": [
+        "земляной"
+      ],
+      "strawberry": [
+        "клубничный"
       ]
     },
     "Confirm modal title": {
@@ -1076,9 +1150,6 @@
       "Burkina Faso": [
         "Буркина-Фасо"
       ],
-      "Burma": [
-        "Бирма"
-      ],
       "Burundi": [
         "Бурунди"
       ],
@@ -1132,9 +1203,6 @@
       ],
       "Costa Rica": [
         "Коста-Рика"
-      ],
-      "Cote d'Ivoire\"": [
-        "Берег Слоновой Кости"
       ],
       "Croatia": [
         "Хорватия"
@@ -1616,9 +1684,6 @@
       "Svalbard and Jan Mayen": [
         "Шпицберген и Ян-Майен"
       ],
-      "Swaziland": [
-        "Свазиленд"
-      ],
       "Sweden": [
         "Швеция"
       ],
@@ -1854,6 +1919,11 @@
     "Disabled calendar tooltip": {
       "The event belongs to a disabled calendar.": [
         "Событие принадлежит отключенному календарю."
+      ]
+    },
+    "Don't ask to update timezone checkbox label": {
+      "Don't ask again": [
+        "Не спрашивать снова"
       ]
     },
     "Dropdown action icon tooltip": {
@@ -2225,8 +2295,8 @@
       "This label name is not available. Please choose a different name.": [
         "Это название ярлыка недоступно. Пожалуйста, выберите другое название."
       ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "Это сообщение может содержать ссылки, которые не могут быть правильно открыты в вашем текущем браузере"
+      "This message may contain some link's URL that cannot be properly opened by your current browser": [
+        "This message may contain some link's URL that cannot be properly opened by your current browser."
       ],
       "Trusted keys are not valid for sending": [
         "Доверенные ключи не действительны для отправки"
@@ -2317,9 +2387,6 @@
       "Calendar": [
         "Календарь"
       ],
-      "Calendar timezone not supported": [
-        "Часовой пояс календаря не поддерживается"
-      ],
       "Component with wrong format": [
         "Компонент с неправильным форматом"
       ],
@@ -2395,9 +2462,6 @@
       "Timezone": [
         "Часовой пояс"
       ],
-      "Timezone not supported": [
-        "Часовой пояс не поддерживается"
-      ],
       "To-do entry": [
         "Запись списка задач"
       ],
@@ -2409,9 +2473,6 @@
       ]
     },
     "Error message": {
-      "Brace yourself till we get the error fixed.": [
-        "Держитесь, пока мы исправляем ошибку."
-      ],
       "Error: ${ errorMessage }": [
         "Ошибка: ${ errorMessage }"
       ],
@@ -2550,7 +2611,18 @@
         "(без названия)"
       ]
     },
+    "Feedback Modal Title": {
+      "Your feedback": [
+        "Ваш отзыв"
+      ]
+    },
     "file size format": {
+      "byte": [
+        "байт",
+        "байтов",
+        "байтов",
+        "байтов"
+      ],
       "GB": [
         "Гбайт"
       ],
@@ -2559,6 +2631,32 @@
       ],
       "MB": [
         "Мбайт"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Байт",
+        "Байтов",
+        "Байтов",
+        "Байтов"
+      ],
+      "Gigabyte": [
+        "Гигабайт",
+        "Гигабайтов",
+        "Гигабайтов",
+        "Гигабайтов"
+      ],
+      "Kilobyte": [
+        "Килобайт",
+        "Килобайтов",
+        "Килобайтов",
+        "Килобайтов"
+      ],
+      "Megabyte": [
+        "Мегабайт",
+        "Мегабайтов",
+        "Мегабайтов",
+        "Мегабайтов"
       ]
     },
     "Filter notification": {
@@ -3114,6 +3212,9 @@
       "Other options": [
         "Другие возможности"
       ],
+      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        "PGP/Inline совместим только с форматом Plain Text. Обратите внимание, что ${ MAIL_APP_NAME } всегда подписывает зашифрованные сообщения."
+      ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Пожалуйста, обратите внимание, что адреса, назначенные этой группе, НЕ будут удалены."
       ],
@@ -3158,9 +3259,6 @@
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Выберите формат письма, который вы хотите использовать по умолчанию при отправке почты на этот адрес."
-      ],
-      "Select what you want to move from Google.": [
-        "Select what you want to import from Google."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Выберите, какие календари необходимо импортировать. Для каждого импортированного календаря будет создан новый календарь, до достижения лимита в 20 календарей."
@@ -3452,6 +3550,12 @@
       "Automatically save contacts": [
         "Автоматически сохранять контакты"
       ],
+      "Awful": [
+        "Ужасно"
+      ],
+      "Bad": [
+        "Плохо"
+      ],
       "Browser": [
         "Браузер"
       ],
@@ -3548,8 +3652,14 @@
       "From: ${ importedEmail }": [
         "От: ${ importedEmail }"
       ],
+      "Good": [
+        "Хорошо"
+      ],
       "Hide password": [
         "Скрыть пароль"
+      ],
+      "How would you describe your experience with the new Proton?": [
+        "Как вы бы описали свои впечатления от нового Proton?"
       ],
       "I understand the risk": [
         "Я понимаю риск"
@@ -3601,6 +3711,9 @@
       ],
       "Notifications": [
         "Уведомления"
+      ],
+      "OK": [
+        "Нормально"
       ],
       "Operating system": [
         "Операционная система"
@@ -3685,6 +3798,9 @@
       ],
       "What happened?": [
         "Что случилось?"
+      ],
+      "Wonderful": [
+        "Замечательно"
       ]
     },
     "Label for contact group color": {
@@ -3982,9 +4098,9 @@
         "Переключить или добавить аккаунт"
       ]
     },
-    "new_plans: info": {
-      "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
-        "Introducing Proton’s refreshed look.${ br }Many services, one mission. Welcome to an internet where privacy is the default."
+    "new_plans: label": {
+      "Tell us about your experience. (Optional)": [
+        "Расскажите нам о своем впечатлении. (Необязательно)"
       ]
     },
     "new_plans: placeholder": {
@@ -4286,10 +4402,12 @@
         "Вы"
       ]
     },
-    "Participants expand button label": {
+    "Participants collapse button label": {
       "Collapse participants list": [
         "Свернуть список участников"
-      ],
+      ]
+    },
+    "Participants expand button label": {
       "Expand participants list": [
         "Развернуть список участников"
       ]
@@ -4470,6 +4588,9 @@
       ]
     },
     "Spotlight": {
+      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
+        "Завершилось тестирование ${ DRIVE_APP_NAME }! Обеспечьте свои файлы такой же безопасностью, которой обладает ваша электронная почта."
+      ],
       "Get up to 18 months of ${ planName } for free": [
         "Получите до 18 месяцев ${ planName } бесплатно"
       ],
@@ -4478,6 +4599,9 @@
       ],
       "No more missed appointments": [
         "Больше никаких пропущенных встреч"
+      ],
+      "Try ${ DRIVE_APP_NAME }": [
+        "Попробовать ${ DRIVE_APP_NAME }"
       ],
       "With email notifications, you decide which events to be notified about and when.": [
         "При использовании уведомлений по электронной почте вы сами решаете, о каких событиях и когда получать уведомления."
@@ -5182,6 +5306,11 @@
       ],
       "Replay video": [
         "Воспроизвести видео"
+      ]
+    },
+    "View event button tooltip": {
+      "Open in a new tab": [
+        "Открыть в новой вкладке"
       ]
     },
     "Warning": {

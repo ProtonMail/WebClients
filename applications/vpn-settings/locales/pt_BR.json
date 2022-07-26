@@ -272,6 +272,9 @@
       "Save selected": [
         "Salvar selecionado"
       ],
+      "Search countries": [
+        "Pesquisar países"
+      ],
       "Select ${ planTitle }": [
         "Selecione ${ planTitle }"
       ],
@@ -394,6 +397,9 @@
       ]
     },
     "Action in trial plan": {
+      "Continue with free plan": [
+        "Continuar com o plano grátis"
+      ],
       "No, thanks": [
         "Não, obrigado"
       ],
@@ -656,11 +662,8 @@
       ]
     },
     "Collapsible tooltip": {
-      "Close": [
-        "Fechar"
-      ],
-      "Open": [
-        "Abrir"
+      "Expand": [
+        "Expandir"
       ]
     },
     "color": {
@@ -839,9 +842,6 @@
       "Burkina Faso": [
         "Burkina Faso"
       ],
-      "Burma": [
-        "Myanmar"
-      ],
       "Burundi": [
         "Burúndi"
       ],
@@ -896,9 +896,6 @@
       "Costa Rica": [
         "Costa Rica"
       ],
-      "Cote d'Ivoire\"": [
-        "Costa do Marfim"
-      ],
       "Croatia": [
         "Croácia"
       ],
@@ -913,6 +910,9 @@
       ],
       "Czech Republic": [
         "República Tcheca"
+      ],
+      "Côte d'Ivoire": [
+        "Costa do Marfim"
       ],
       "Denmark": [
         "Dinamarca"
@@ -943,6 +943,9 @@
       ],
       "Estonia": [
         "Estônia"
+      ],
+      "Eswatini": [
+        "Suazilândia"
       ],
       "Ethiopia": [
         "Etiópia"
@@ -1187,6 +1190,9 @@
       "Mozambique": [
         "Moçambique"
       ],
+      "Myanmar": [
+        "Myanmar"
+      ],
       "Namibia": [
         "Namíbia"
       ],
@@ -1378,9 +1384,6 @@
       ],
       "Svalbard and Jan Mayen": [
         "Svalbard e Jan Mayen"
-      ],
-      "Swaziland": [
-        "Suazilândia"
       ],
       "Sweden": [
         "Suécia"
@@ -1697,9 +1700,6 @@
       ]
     },
     "Error message": {
-      "Brace yourself till we get the error fixed.": [
-        "Fique tranquilo, logo iremos corrigir este erro."
-      ],
       "Error: ${ errorMessage }": [
         "Erro: ${ errorMessage }"
       ],
@@ -1708,6 +1708,9 @@
       ],
       "Please ${ refresh } or check your connection.": [
         "Por favor, ${ refresh } ou verifique sua conexão."
+      ],
+      "Something went wrong. Please refresh the page or try again later.": [
+        "Fique tranquilo, logo iremos corrigir este erro."
       ],
       "There was a problem connecting to Proton.": [
         "Houve um problema de conexão com a Proton."
@@ -2332,8 +2335,8 @@
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Use o melhor servidor de acordo com a carga atual e a posição: ${ formattedBestServerName }"
       ],
-      "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
-        "Use as credenciais a seguir ao se conectar aos servidores ${ VPN_APP_NAME } sem o aplicativo. Exemplos: Tunnelblick no macOS, OpenVPN no GNU/Linux."
+      "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
+        "Use as credenciais a seguir ao se conectar aos servidores ${ VPN_APP_NAME } sem o aplicativo. Exemplo: Tunnelblick no macOS, OpenVPN no GNU/Linux."
       ],
       "Verification can take a few minutes.": [
         "A verificação pode levar alguns minutos."
@@ -2490,6 +2493,11 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Sua assinatura é gerenciada pela Mozilla. Por favor, entre em contato com o suporte da Mozilla."
+      ]
+    },
+    "info": {
+      "Try Mail Plus": [
+        "Testar o Mail Plus"
       ]
     },
     "Info for cash payment method": {
@@ -3510,8 +3518,8 @@
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
         "O suporte a IMAP está limitado ao uso de apps para desktop (por exemplo, Outlook, Apple Mail, Thunderbird) por meio do ${ MAIL_APP_NAME } Bridge. Integrações de IMAP baseadas na nuvem não são compatíveis no momento."
       ],
-      "Keeps you protected by blocking all network connections when you are accidentally disconnected from our VPN server": [
-        "Mantém você protegido ao bloquear todas as conexões de rede quando você é desconectado acidentalmente do nosso servidor VPN"
+      "Keeps you protected by blocking all network connections when you are unexpectedly disconnected from our VPN server.": [
+        "Mantém você protegido ao bloquear todas as conexões de rede quando você é desconectado inesperadamente do nosso servidor VPN."
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Marcadores são tags simples que podem ser adicionadas a mensagens para que fique mais fácil encontrá-las ou aplicar filtros a elas"
@@ -3528,8 +3536,8 @@
       "On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
         "Além disso, adicione até 5 calendários de amigos, familiares, colegas e organizações."
       ],
-      "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections": [
-        "Uma conexão VPN permite que um dispositivo se conecte ao Proton VPN de cada vez. Por exemplo, para conectar um smartphone e um laptop ao Proton VPN ao mesmo tempo, você precisa de duas conexões VPN"
+      "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections..": [
+        "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Opção para visualizar caixas de entrada de usuários não privados da mesma forma que o próprio usuário, incluindo a mensagem completa e os detalhes de contato"

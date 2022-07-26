@@ -88,7 +88,7 @@ const ContactExportingModal = ({ contactGroupID: LabelID, onSave = noop, ...rest
             <ModalTwoContent>
                 <Alert className="mb1">
                     {c('Description')
-                        .t`Decrypting contacts... This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.`}
+                        .t`Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.`}
                 </Alert>
                 <DynamicProgress
                     id="progress-export-contacts"

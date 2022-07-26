@@ -155,6 +155,9 @@
       "Close this banner": [
         "Zamknij powiadomienie"
       ],
+      "Collapse URL": [
+        "Zwiń adres URL"
+      ],
       "Color": [
         "Kolor"
       ],
@@ -304,6 +307,9 @@
       ],
       "Email settings": [
         "Ustawienia poczty e-mail"
+      ],
+      "Emoji": [
+        "Emoji"
       ],
       "Enable": [
         "Włącz"
@@ -578,6 +584,9 @@
       "Move to spam": [
         "Przenieś do Spamu"
       ],
+      "Move to spam and unsubscribe": [
+        "Przenieś do Spamu i anuluj subskrypcję"
+      ],
       "Move to trash": [
         "Przenieś do Kosza"
       ],
@@ -760,6 +769,9 @@
       ],
       "Search": [
         "Szukaj"
+      ],
+      "Search countries": [
+        "Szukaj krajów"
       ],
       "Search in ${ option.text }": [
         "Przeszukaj ${ option.text }"
@@ -1572,16 +1584,16 @@
       ]
     },
     "Collapsible tooltip": {
-      "Close": [
-        "Zamknij"
+      "Collapse": [
+        "Zwiń"
       ],
-      "Open": [
-        "Otwórz"
+      "Expand": [
+        "Rozwiń"
       ]
     },
     "color": {
       "Apple": [
-        "jabłkowy"
+        "apple"
       ],
       "azureish white": [
         "lazurowa biel"
@@ -2017,9 +2029,6 @@
       "Burkina Faso": [
         "Burkina Faso"
       ],
-      "Burma": [
-        "Mjanma"
-      ],
       "Burundi": [
         "Burundi"
       ],
@@ -2074,9 +2083,6 @@
       "Costa Rica": [
         "Kostaryka"
       ],
-      "Cote d'Ivoire\"": [
-        "Côte d'Ivoire"
-      ],
       "Croatia": [
         "Chorwacja"
       ],
@@ -2091,6 +2097,9 @@
       ],
       "Czech Republic": [
         "Czechy"
+      ],
+      "Côte d'Ivoire": [
+        "Wybrzeże Kości Słoniowej"
       ],
       "Denmark": [
         "Dania"
@@ -2121,6 +2130,9 @@
       ],
       "Estonia": [
         "Estonia"
+      ],
+      "Eswatini": [
+        "Eswatini"
       ],
       "Ethiopia": [
         "Etiopia"
@@ -2365,6 +2377,9 @@
       "Mozambique": [
         "Mozambik"
       ],
+      "Myanmar": [
+        "Mjanma"
+      ],
       "Namibia": [
         "Namibia"
       ],
@@ -2556,9 +2571,6 @@
       ],
       "Svalbard and Jan Mayen": [
         "Svalbard i Jan Mayen"
-      ],
-      "Swaziland": [
-        "Eswatini"
       ],
       "Sweden": [
         "Szwecja"
@@ -2763,7 +2775,7 @@
     },
     "Description": {
       "Decrypting contacts... This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
-        "Trwa odszyfrowywanie kontaktów... Proces może potrwać kilka minut. Kiedy się zakończy, będziesz mógł pobrać plik z wyeksportowanymi kontaktami."
+        "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported."
       ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Trwa usuwanie kontaktów... Proces może potrwać kilka minut. Kiedy się zakończy, możesz zamknąć okno."
@@ -2772,7 +2784,7 @@
         "Trwa importowanie i szyfrowanie kontaktów... Proces może potrwać kilka minut. Kiedy się zakończy, możesz zamknąć okno."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
-        "Lista kontaktów, którą importujesz, zawiera grupy. Sprawdź jak te grupy powinny zostać zaimportowane."
+        "Lista kontaktów, którą importujesz, zawiera grupy. Sprawdź, jak te grupy powinny zostać zaimportowane."
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Trwa scalanie kontaktów... Proces może potrwać kilka minut. Kiedy się zakończy, możesz zamknąć okno."
@@ -3359,7 +3371,7 @@
       ]
     },
     "Error importing event": {
-      "Calendar timezone not supported": [
+      "Calendar time zone not supported": [
         "Strefa czasowa kalendarza nie jest obsługiwana"
       ],
       "Component with wrong format": [
@@ -3428,7 +3440,7 @@
       "Start time out of bounds": [
         "Czas rozpoczęcia jest poza zakresem"
       ],
-      "Timezone not supported": [
+      "Time zone not supported": [
         "Strefa czasowa nie jest obsługiwana"
       ],
       "To-do entry": [
@@ -3439,9 +3451,6 @@
       ]
     },
     "Error message": {
-      "Brace yourself till we get the error fixed.": [
-        "Poczekaj chwilę, naprawiamy ten błąd."
-      ],
       "Error: ${ errorMessage }": [
         "Błąd: ${ errorMessage }"
       ],
@@ -3456,6 +3465,9 @@
       ],
       "Please ${ refresh } or check your connection.": [
         "${ refresh } lub sprawdź swoje połączenie."
+      ],
+      "Something went wrong. Please refresh the page or try again later.": [
+        "Coś poszło nie tak. Odśwież stronę lub spróbuj ponownie później."
       ],
       "There was a problem connecting to Proton.": [
         "Wystąpił problem z połączeniem z usługą Proton."
@@ -4328,7 +4340,7 @@
         "Czy chcesz ponownie podpisać szczegóły kontaktu?"
       ],
       "Don't forget to share your password with the recipient": [
-        "Nie zapomnij o udostępnieniu hasła odbiorcy"
+        "Don't forget to share the password with the recipient"
       ],
       "Download our mobile application from your favorite app store to communicate securely on-the-go.": [
         "Pobierz naszą aplikację mobilną ze swojego ulubionego sklepu z aplikacjami, aby bezpiecznie komunikować się w trakcie podróży."
@@ -4478,7 +4490,7 @@
         "godziny"
       ],
       "I'm sending this message to a non-ProtonMail user.": [
-        "Wysyłam wiadomość dla użytkownika spoza Proton Mail."
+        "I'm sending this message to a non-Proton Mail user."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Jeśli masz problem z utworzeniem konta, poproś o zaproszenie, a my odpowiemy w ciągu jednego dnia roboczego."
@@ -4693,8 +4705,8 @@
       "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
         "Schemat PGP/Inline jest kompatybilny tylko z trybem zwykłego tekstu. Pamiętaj, że ${ MAIL_APP_NAME } zawsze podpisuje zaszyfrowane wiadomości."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
-        "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages."
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        "Schemat PGP/MIME automatycznie wysyła wiadomości przy użyciu obecnego trybu edytora. Pamiętaj, że ${ MAIL_APP_NAME } zawsze podpisuje zaszyfrowane wiadomości."
       ],
       "Phone number": [
         "Numer telefonu"
@@ -4704,6 +4716,9 @@
       ],
       "Please add at least one recipient.": [
         "Wpisz co najmniej jednego odbiorcę."
+      ],
+      "Please fill out this field.": [
+        "Wypełnij pole."
       ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
         "Zachowaj to hasło. Jeśli zresetujesz hasło, będziesz go potrzebować do odzyskania dostępu do konta i odszyfrowania danych."
@@ -4801,8 +4816,8 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Wybierz domyślny format wiadomości, który ma zostać użyty podczas wysyłania wiadomości na ten adres e-mail."
       ],
-      "Select what you want to move from Google.": [
-        "Wybierz, co chcesz przenieść z konta Google."
+      "Select what you want to import from Google.": [
+        "Wybierz, co chcesz zaimportować z konta Google."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Wybierz, które kalendarze chcesz zaimportować. Dla każdego importowanego kalendarza zostanie utworzony nowy kalendarz, aż do osiągnięcia limitu 20 kalendarzy."
@@ -4930,6 +4945,12 @@
       "This conversation contains trashed messages.": [
         "Ten wątek zawiera usunięte wiadomości."
       ],
+      "This conversation will be marked as spam. Would you also like to unsubscribe from future emails?": [
+        "Wątek zostanie oznaczony jako spam. Czy chcesz anulować subskrypcję przyszłych wiadomości?",
+        "Wątki zostaną oznaczone jako spam. Czy chcesz anulować subskrypcję przyszłych wiadomości?",
+        "Wątki zostaną oznaczone jako spam. Czy chcesz anulować subskrypcję przyszłych wiadomości?",
+        "Wątki zostaną oznaczone jako spam. Czy chcesz anulować subskrypcję przyszłych wiadomości?"
+      ],
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded!": [
         "Ta wiadomość nie spełnia wymogów weryfikacyjnych domeny nadawcy. Może być sfałszowana lub nieprawidłowo przesłana!"
       ],
@@ -4962,6 +4983,12 @@
       ],
       "This message is signed by the key attached, that has not been trusted yet.": [
         "Ta wiadomość jest podpisana przy pomocy dołączonego klucza, który nie został jeszcze dodany do zaufanych."
+      ],
+      "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
+        "Wiadomość zostanie oznaczona jako spam. Czy chcesz anulować subskrypcję przyszłych wiadomości?",
+        "Wiadomości zostaną oznaczone jako spam. Czy chcesz anulować subskrypcję przyszłych wiadomości?",
+        "Wiadomości zostaną oznaczone jako spam. Czy chcesz anulować subskrypcję przyszłych wiadomości?",
+        "Wiadomości zostaną oznaczone jako spam. Czy chcesz anulować subskrypcję przyszłych wiadomości?"
       ],
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
         "Wiadomość zostanie przeniesiona do Szkiców i będzie możliwa do edycji. Musisz zaplanować ponownie wysłanie wiadomości."
@@ -5834,6 +5861,9 @@
       "Region": [
         "Województwo"
       ],
+      "Remember my choice": [
+        "Zapamiętaj wybór"
+      ],
       "Reveal password": [
         "Pokaż hasło"
       ],
@@ -6069,6 +6099,9 @@
       ],
       "Learn more": [
         "Dowiedz się więcej"
+      ],
+      "Less": [
+        "Mniej"
       ],
       "Manage your folders": [
         "Zarządzaj folderami"
@@ -6431,8 +6464,8 @@
       ]
     },
     "new_plans: info": {
-      "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
-        "Przedstawiamy odświeżony wygląd usługi Proton.${ br } Wiele usług, jedna misja. Witaj w Internecie, w którym prywatność jest standardem."
+      "Introducing Proton’s refreshed look.${ br }Many services, one mission. Welcome to an internet where privacy is the default.": [
+        "Przedstawiamy odświeżony wygląd usługi Proton.${ br }Wiele usług, jedna misja. Witaj w Internecie, w którym prywatność jest standardem."
       ]
     },
     "new_plans: label": {
@@ -6795,7 +6828,7 @@
         "Nie można wysłać odpowiedzi na adres organizatora: ${ errorMessage }"
       ],
       "Re-encrypting invitation failed. Please try again": [
-        "Ponowne szyfrowanie zaproszeń nie powiodło się. Spróbuj ponownie"
+        "Re-encrypting invitation failed. Please try again."
       ]
     },
     "Search - no results": {
@@ -7508,10 +7541,10 @@
         "Dostosuj i potwierdź"
       ],
       "Customize calendar import": [
-        "Dostosuj proces importowana kalendarza"
+        "Dostosuj proces importowania kalendarza"
       ],
       "Customize your mail import": [
-        "Dostosuj proces importowana poczty"
+        "Dostosuj proces importowania poczty"
       ],
       "Decryption error": [
         "Błąd odszyfrowywania"
@@ -7695,6 +7728,9 @@
       ],
       "Move to inbox (not spam)": [
         "Przenieś do Odebranych (to nie jest spam)"
+      ],
+      "Move to spam": [
+        "Przenieś do Spamu"
       ],
       "Move to trash": [
         "Przenieś do Kosza"

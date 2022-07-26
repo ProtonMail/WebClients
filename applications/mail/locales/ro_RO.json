@@ -155,6 +155,9 @@
       "Close this banner": [
         "Închidere norificare"
       ],
+      "Collapse URL": [
+        "Restrângere URL"
+      ],
       "Color": [
         "Culoare"
       ],
@@ -302,6 +305,9 @@
       ],
       "Email settings": [
         "Setări e-mail"
+      ],
+      "Emoji": [
+        "Emoticon"
       ],
       "Enable": [
         "Activare"
@@ -575,6 +581,9 @@
       "Move to spam": [
         "Mutare în «Nedorite»"
       ],
+      "Move to spam and unsubscribe": [
+        "Mutare în «Nedorite» și dezabonare"
+      ],
       "Move to trash": [
         "Mutare în «Gunoi»"
       ],
@@ -757,6 +766,9 @@
       ],
       "Search": [
         "Căutare"
+      ],
+      "Search countries": [
+        "Căutare țări"
       ],
       "Search in ${ option.text }": [
         "Căutare în ${ option.text }"
@@ -1567,16 +1579,16 @@
       ]
     },
     "Collapsible tooltip": {
-      "Close": [
-        "Închidere"
+      "Collapse": [
+        "Restrângere"
       ],
-      "Open": [
-        "Deschidere"
+      "Expand": [
+        "Extindere"
       ]
     },
     "color": {
       "Apple": [
-        "verde măr"
+        "apple"
       ],
       "azureish white": [
         "alb azuric"
@@ -2012,9 +2024,6 @@
       "Burkina Faso": [
         "Burkina Faso"
       ],
-      "Burma": [
-        "Burma"
-      ],
       "Burundi": [
         "Burundi"
       ],
@@ -2069,9 +2078,6 @@
       "Costa Rica": [
         "Costa Rica"
       ],
-      "Cote d'Ivoire\"": [
-        "Côte d'Ivoire"
-      ],
       "Croatia": [
         "Croația"
       ],
@@ -2086,6 +2092,9 @@
       ],
       "Czech Republic": [
         "Republica Cehă"
+      ],
+      "Côte d'Ivoire": [
+        "Coasta de Fildeș"
       ],
       "Denmark": [
         "Danemarca"
@@ -2116,6 +2125,9 @@
       ],
       "Estonia": [
         "Estonia"
+      ],
+      "Eswatini": [
+        "Eswatini"
       ],
       "Ethiopia": [
         "Etiopia"
@@ -2360,6 +2372,9 @@
       "Mozambique": [
         "Mozambic"
       ],
+      "Myanmar": [
+        "Myanmar"
+      ],
       "Namibia": [
         "Namibia"
       ],
@@ -2551,9 +2566,6 @@
       ],
       "Svalbard and Jan Mayen": [
         "Svalbard și Jan Mayen"
-      ],
-      "Swaziland": [
-        "Eswatini"
       ],
       "Sweden": [
         "Suedia"
@@ -2754,7 +2766,7 @@
     },
     "Description": {
       "Decrypting contacts... This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
-        "Se decriptează contactele... Ar putea dura câteva minute. După finalizarea operației, veți putea descărca fișierul cu contactele exportate."
+        "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported."
       ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Se șterg contactele... Ar putea dura câteva minute. După finalizarea operației, veți putea închide această fereastră."
@@ -3338,8 +3350,8 @@
       ]
     },
     "Error importing event": {
-      "Calendar timezone not supported": [
-        "Fus orar calendar neacceptat"
+      "Calendar time zone not supported": [
+        "Fusul orar al calendarului nu este suportat."
       ],
       "Component with wrong format": [
         "Componentă cu format greșit"
@@ -3407,8 +3419,8 @@
       "Start time out of bounds": [
         "Timp de start în afara limitelor"
       ],
-      "Timezone not supported": [
-        "Fus orar nesuportat"
+      "Time zone not supported": [
+        "Fus orar nesuportat."
       ],
       "To-do entry": [
         "Intrare de făcut"
@@ -3418,9 +3430,6 @@
       ]
     },
     "Error message": {
-      "Brace yourself till we get the error fixed.": [
-        "Trebuie să așteptați până când vom rezolva eroarea."
-      ],
       "Error: ${ errorMessage }": [
         "Eroare: ${ errorMessage }"
       ],
@@ -3435,6 +3444,9 @@
       ],
       "Please ${ refresh } or check your connection.": [
         "Verificați conexiunea sau ${ refresh }."
+      ],
+      "Something went wrong. Please refresh the page or try again later.": [
+        "Ceva nu a mers bine. Reîmprospătați pagina sau reîncercați mai târziu."
       ],
       "There was a problem connecting to Proton.": [
         "A apărut o problemă la conectarea la Proton."
@@ -4258,7 +4270,7 @@
         "Doriți să reînregistrați datele contactului?"
       ],
       "Don't forget to share your password with the recipient": [
-        "Nu uitați să partajați parola cu destinatarul."
+        "Don't forget to share the password with the recipient"
       ],
       "Download our mobile application from your favorite app store to communicate securely on-the-go.": [
         "Descărcați aplicația mobilă din magazinul preferat de aplicații pentru a comunica în siguranță la distanță."
@@ -4402,7 +4414,7 @@
         "de ore"
       ],
       "I'm sending this message to a non-ProtonMail user.": [
-        "Trimit acest mesaj unui utilizator non-Proton Mail."
+        "I'm sending this message to a non-Proton Mail user."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Dacă aveți probleme cu crearea contului, solicitați o invitație și vom răspunde în termen de o zi lucrătoare."
@@ -4616,8 +4628,8 @@
       "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
         "PGP/Inline este compatibil doar cu formatul de text simplu. Rețineți că ${ MAIL_APP_NAME } întotdeauna semnează mesajele criptate."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
-        "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages."
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        "PGP/MIME trimite automat mesajele folosind modul actual de compunere. Rețineți că ${ MAIL_APP_NAME } întotdeauna semnează mesajele criptate."
       ],
       "Phone number": [
         "Număr de telefon"
@@ -4627,6 +4639,9 @@
       ],
       "Please add at least one recipient.": [
         "Adăugați cel puțin un destinatar."
+      ],
+      "Please fill out this field.": [
+        "Trebuie să completați acest câmp."
       ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
         "Vă rugăm să o păstrați în siguranță. Veți avea nevoie de ea pentru a vă accesa contul și pentru a vă decripta datele în cazul unei resetări a parolei."
@@ -4726,7 +4741,7 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Selectați formatul de e-mail care doriți să fie folosit implicit când trimiteți mesaje la această adresă."
       ],
-      "Select what you want to move from Google.": [
+      "Select what you want to import from Google.": [
         "Selectați ce doriți să importați din Google."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
@@ -4854,6 +4869,11 @@
       "This conversation contains trashed messages.": [
         "Această conversație conține mesaje șterse."
       ],
+      "This conversation will be marked as spam. Would you also like to unsubscribe from future emails?": [
+        "Această conversație va fi marcată ca nedorită. Doriți să vă dezabonați și de la mesajele ulterioare?",
+        "Aceste conversații vor fi marcate ca nedorite. Doriți să vă dezabonați și de la mesajele ulterioare?",
+        "Aceste conversații vor fi marcate ca nedorite. Doriți să vă dezabonați și de la mesajele ulterioare?"
+      ],
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded!": [
         "Acest e-mail nu respectă cerințele de autentificare ale domeniul său. Ar putea fi falsificat sau redirecționat eronat!"
       ],
@@ -4886,6 +4906,11 @@
       ],
       "This message is signed by the key attached, that has not been trusted yet.": [
         "Acest mesaj este semnat cu o cheie atașată care încă nu a fost încă aprobată."
+      ],
+      "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
+        "Acest mesaj va fi marcat ca nedorit. Doriți să vă dezabonați și de la mesajele ulterioare?",
+        "Aceste mesaje vor fi marcate ca nedorite. Doriți să vă dezabonați și de la mesajele ulterioare?",
+        "Aceste mesaje vor fi marcate ca nedorite. Doriți să vă dezabonați și de la mesajele ulterioare?"
       ],
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
         "Acest mesaj va fi mutat în «Ciorne» pentru a putea fi editat. Va trebui să-l reprogramați când va fi trimis."
@@ -5747,6 +5772,9 @@
       "Region": [
         "Județ"
       ],
+      "Remember my choice": [
+        "Memorează alegerea mea"
+      ],
       "Reveal password": [
         "Afișare parolă"
       ],
@@ -5983,6 +6011,9 @@
       "Learn more": [
         "Detalii"
       ],
+      "Less": [
+        "Mai puține"
+      ],
       "Manage your folders": [
         "Gestionare foldere"
       ],
@@ -5990,7 +6021,7 @@
         "Gestionare etichete"
       ],
       "More": [
-        "Detalii"
+        "Mai multe"
       ],
       "More about recovery": [
         "Mai multe despre recuperare"
@@ -6339,7 +6370,7 @@
       ]
     },
     "new_plans: info": {
-      "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
+      "Introducing Proton’s refreshed look.${ br }Many services, one mission. Welcome to an internet where privacy is the default.": [
         "Vă prezentăm aspectul împrospătat al Proton.${ br }Multe servicii, o singură misiune. Bine ați venit la un internet în care confidențialitatea este implicită."
       ]
     },
@@ -6701,7 +6732,7 @@
         "Nu se poate trimite la adresa organizatorului: ${ errorMessage }"
       ],
       "Re-encrypting invitation failed. Please try again": [
-        "Recriptarea invitației a eșuat. Mai încercați."
+        "Re-encrypting invitation failed. Please try again."
       ]
     },
     "Search - no results": {
@@ -7559,6 +7590,9 @@
       ],
       "Move to inbox (not spam)": [
         "Mutare în «Primite» (nu e nesolicitat)"
+      ],
+      "Move to spam": [
+        "Mutare în «Nesolicitate»"
       ],
       "Move to trash": [
         "Mutare în «Gunoi»"

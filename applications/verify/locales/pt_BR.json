@@ -35,6 +35,9 @@
       "Request new code": [
         "Solicitar um novo código"
       ],
+      "Search countries": [
+        "Pesquisar países"
+      ],
       "Submit": [
         "Enviar"
       ],
@@ -228,9 +231,6 @@
       "Burkina Faso": [
         "Burquina Fasso"
       ],
-      "Burma": [
-        "Myanmar"
-      ],
       "Burundi": [
         "Burundi"
       ],
@@ -285,9 +285,6 @@
       "Costa Rica": [
         "Costa Rica"
       ],
-      "Cote d'Ivoire\"": [
-        "Cote d'Ivoire"
-      ],
       "Croatia": [
         "Croácia"
       ],
@@ -302,6 +299,9 @@
       ],
       "Czech Republic": [
         "República Checa"
+      ],
+      "Côte d'Ivoire": [
+        "Costa do Marfim"
       ],
       "Denmark": [
         "Dinamarca"
@@ -332,6 +332,9 @@
       ],
       "Estonia": [
         "Estônia"
+      ],
+      "Eswatini": [
+        "Suazilândia"
       ],
       "Ethiopia": [
         "Etiópia"
@@ -576,6 +579,9 @@
       "Mozambique": [
         "Moçambique"
       ],
+      "Myanmar": [
+        "Myanmar"
+      ],
       "Namibia": [
         "Namíbia"
       ],
@@ -768,9 +774,6 @@
       "Svalbard and Jan Mayen": [
         "Svalbard e Jan Mayen"
       ],
-      "Swaziland": [
-        "Suazilândia"
-      ],
       "Sweden": [
         "Suécia"
       ],
@@ -918,9 +921,6 @@
       ]
     },
     "Error message": {
-      "Brace yourself till we get the error fixed.": [
-        "Something went wrong. Please refresh the page or try again later."
-      ],
       "Error: ${ errorMessage }": [
         "Erro: ${ errorMessage }"
       ],
@@ -929,6 +929,9 @@
       ],
       "Please ${ refresh } or check your connection.": [
         "Por favor, ${ refresh } ou verifique sua conexão."
+      ],
+      "Something went wrong. Please refresh the page or try again later.": [
+        "Fique tranquilo, logo iremos corrigir este erro."
       ],
       "There was a problem connecting to Proton.": [
         "Ocorreu um problema ao conectar à Proton."
@@ -968,7 +971,7 @@
         "Se estiver com problemas para criar sua conta, abra um chamado e responderemos no prazo de um dia útil."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
-        "Se você não encontrar o e-mail na caixa de entrada. Por favor, verifique a pasta de spam."
+        "Se você não encontrar o e-mail na caixa de entrada, por favor, verifique a pasta de spam."
       ],
       "Internet connection lost": [
         "Perda de conexão com a internet"

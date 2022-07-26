@@ -250,9 +250,6 @@
       "Get link": [
         "Få link"
       ],
-      "Get Proton Drive": [
-        "Få Proton Drive"
-      ],
       "Get started": [
         "Kom godt i gang"
       ],
@@ -631,7 +628,7 @@
     },
     "blackfriday: VPNspecialoffer Action": {
       "Get the deal": [
-        "Gør brug af tilbuddet"
+        "Få tilbuddet"
       ],
       "Get the deal now": [
         "Gør brug af tilduddet nu"
@@ -771,14 +768,6 @@
       ],
       "Unsupported calendar format": [
         "Kalenderformat understøttes ikke"
-      ]
-    },
-    "Collapsible tooltip": {
-      "Close": [
-        "Luk"
-      ],
-      "Open": [
-        "Åbn"
       ]
     },
     "color": {
@@ -1042,9 +1031,6 @@
       "Burkina Faso": [
         "Burkina Faso"
       ],
-      "Burma": [
-        "Burma"
-      ],
       "Burundi": [
         "Burundi"
       ],
@@ -1098,9 +1084,6 @@
       ],
       "Costa Rica": [
         "Costa Rica"
-      ],
-      "Cote d'Ivoire\"": [
-        "Elfenbenskysten"
       ],
       "Croatia": [
         "Kroatien"
@@ -1581,9 +1564,6 @@
       ],
       "Svalbard and Jan Mayen": [
         "Svalbard og Jan Mayen"
-      ],
-      "Swaziland": [
-        "Swaziland"
       ],
       "Sweden": [
         "Sverige"
@@ -2739,9 +2719,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "En eller flere af dine betroede nøgler er blevet markeret som \"kompromitteret\" af deres ejer. Vi anbefaler, at du ikke længere har tillid til disse nøgler."
       ],
-      "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters is allowed": [
-        "Kun ${ MAX_CUSTOM_PASSWORD_LENGTH } tegn er tilladt"
-      ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Ændr kun disse indstillinger, hvis du benytter PGP ifm. ikke-${ BRAND_NAME }-modtagere."
       ],
@@ -2762,9 +2739,6 @@
       ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
         "PGP/Inline er kun kompatibelt med simpelt tekstformat. Bemærk at ${ MAIL_APP_NAME } altid signerer krypterede beskeder."
-      ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
-        "PGP/MIME sender automatisk beskeden med den aktuelle skrivetilstand. Bemærk at ${ MAIL_APP_NAME } altid signerer krypterede beskeder"
       ],
       "Please enter the password to decrypt and view content.": [
         "Indtast venligst kodeordet for, at dekryptere og se indholdet."
@@ -2841,9 +2815,6 @@
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Vælg det e-mail-format, der som standard skal benyttes, når du sender en e-mail til denne e-mailadresse."
-      ],
-      "Select what you want to move from Google.": [
-        "Vælg, hvad du vil overflytte fra Google."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Vælg, hvilke kalendere der skal importeres. Der oprettes en ny kalender for hver importeret kalender op til grænsen på 20 kalendere."
@@ -3640,11 +3611,6 @@
         "Skift eller tilføj konto"
       ]
     },
-    "new_plans: info": {
-      "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
-        "Vi præsenterer Proton's nye udseende.${ br } Mange tjenester, én mission. Velkommen til et internet, hvor privatlivsbeskyttelse er standard."
-      ]
-    },
     "new_plans: label": {
       "Tell us about your experience. (Optional)": [
         "Fortæl os om din oplevelse. (Valgfrit)"
@@ -3850,26 +3816,14 @@
       ]
     },
     "Onboarding Action": {
-      "Enable Beta Access": [
-        "Aktiver Betaadgang"
-      ],
       "Next": [
         "Næste"
       ],
       "Start using ${ appName }": [
         "Begynd at bruge ${ appName }"
-      ],
-      "Upgrade account": [
-        "Opgrader konto"
       ]
     },
     "Onboarding Info": {
-      "${ appName } is currently in early access and only available to users with a paid plan.": [
-        "${ appName } er i øjeblikket i 'tidlig adgang' og er kun tilgængelig for brugere med et betalt abonnement."
-      ],
-      "${ appName } is currently only available if you enable Beta Access.": [
-        "${ appName } er i øjeblikket kun tilgængelig, hvis du aktiverer betaadgang."
-      ],
       "Your trusty online vault for vital documents and precious memories.": [
         "Din pålidelige online boks til vigtige dokumenter og dyrebare minder."
       ]
@@ -3895,12 +3849,6 @@
       ]
     },
     "Onboarding Title": {
-      "${ appName } is in Beta": [
-        "${ appName } er i Beta"
-      ],
-      "Upgrade to access ${ appName }": [
-        "Opgrader for at få adgang til ${ appName }"
-      ],
       "Welcome to ${ appName }": [
         "Velkommen til ${ appName }"
       ]

@@ -248,9 +248,6 @@
       "Get link": [
         "リンクを作成"
       ],
-      "Get Proton Drive": [
-        "Proton Drive を入手"
-      ],
       "Get started": [
         "利用開始"
       ],
@@ -635,7 +632,7 @@
     },
     "blackfriday: VPNspecialoffer Action": {
       "Get the deal": [
-        "割引価格で入手"
+        "割引を入手"
       ],
       "Get the deal now": [
         "今すぐ割引を入手"
@@ -643,7 +640,7 @@
     },
     "blackfriday: VPNspecialoffer Info": {
       "Save ${ percentage }%": [
-        "${ percentage }%"
+        "${ percentage }%割引"
       ]
     },
     "blackfriday: VPNspecialoffer info": {
@@ -775,14 +772,6 @@
       ],
       "Unsupported calendar format": [
         "非対応のカレンダー形式です"
-      ]
-    },
-    "Collapsible tooltip": {
-      "Close": [
-        "閉じる"
-      ],
-      "Open": [
-        "開く"
       ]
     },
     "color": {
@@ -1046,9 +1035,6 @@
       "Burkina Faso": [
         "ブルキナファソ"
       ],
-      "Burma": [
-        "ビルマ"
-      ],
       "Burundi": [
         "ブルンジ"
       ],
@@ -1102,9 +1088,6 @@
       ],
       "Costa Rica": [
         "コスタリカ"
-      ],
-      "Cote d'Ivoire\"": [
-        "コートジボワール"
       ],
       "Croatia": [
         "クロアチア"
@@ -1585,9 +1568,6 @@
       ],
       "Svalbard and Jan Mayen": [
         "スヴァールバル諸島およびヤンマイエン島"
-      ],
-      "Swaziland": [
-        "スワジランド"
       ],
       "Sweden": [
         "スウェーデン"
@@ -2655,9 +2635,6 @@
       "of": [
         " / "
       ],
-      "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters is allowed": [
-        "${ MAX_CUSTOM_PASSWORD_LENGTH } 文字まで利用できます"
-      ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "この設定は、メールの宛先に PGP を使用している非 ${ BRAND_NAME } ユーザーがいる場合にのみ変更してください。"
       ],
@@ -2678,9 +2655,6 @@
       ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
         "PGP/Inline はプレーンテキスト形式としか互換性がありません。${ MAIL_APP_NAME } は暗号化されたメッセージに常に署名することに注意してください。"
-      ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
-        "PGP/MIME は自動的に現在の書式を使用してメッセージを送信します。${ MAIL_APP_NAME } は暗号化されたメッセージに常に署名することに注意してください。"
       ],
       "Please enter the password to decrypt and view content.": [
         "パスワードを入力して復号しコンテンツを閲覧します。"
@@ -2750,9 +2724,6 @@
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "このメールアドレスにメールを送信する際に既定で使用するメールの形式を選択できます。"
-      ],
-      "Select what you want to move from Google.": [
-        "Google から移動したいものを選択してください。"
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "インポートするカレンダーを選択してください。インポートするカレンダーは最大 20 件までに制限されます。"
@@ -3512,11 +3483,6 @@
         "アカウントを追加、切り替え"
       ]
     },
-    "new_plans: info": {
-      "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
-        "新しい外観になった Proton をご紹介します。${ br }たくさんのサービス、1 つのミッション。どこでもプライベートなインターネットへようこそ。"
-      ]
-    },
     "new_plans: label": {
       "Tell us about your experience. (Optional)": [
         "あなたのご意見をお聞かせください (任意)"
@@ -3704,25 +3670,11 @@
       ]
     },
     "Onboarding Action": {
-      "Enable Beta Access": [
-        "ベータ版アクセスを有効化"
-      ],
       "Next": [
         "次へ"
       ],
       "Start using ${ appName }": [
         "${ appName } を使ってみる"
-      ],
-      "Upgrade account": [
-        "アカウントをアップグレード"
-      ]
-    },
-    "Onboarding Info": {
-      "${ appName } is currently in early access and only available to users with a paid plan.": [
-        "${ appName } は現在早期アクセスで有料プランのみが利用できます。"
-      ],
-      "${ appName } is currently only available if you enable Beta Access.": [
-        "${ appName } はベータアクセスを有効にしている場合のみ利用できます。"
       ]
     },
     "Onboarding Proton": {
@@ -3746,12 +3698,6 @@
       ]
     },
     "Onboarding Title": {
-      "${ appName } is in Beta": [
-        "${ appName } はベータ版です"
-      ],
-      "Upgrade to access ${ appName }": [
-        "アップグレードして ${ appName } にアクセス"
-      ],
       "Welcome to ${ appName }": [
         "${ appName } へようこそ"
       ]
@@ -4259,6 +4205,9 @@
       "Found ${ searchView.numberOfResults } result": [
         "${ searchView.numberOfResults } 件見つかりました"
       ],
+      "Getting files": [
+        "ファイルを取得中"
+      ],
       "Groups": [
         "グループ"
       ],
@@ -4477,6 +4426,9 @@
       ],
       "You have no folders yet": [
         "フォルダーがありません"
+      ],
+      "You've got files": [
+        "ファイルを取得しました"
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         "無料トライアルは ${ formattedEndDate } に終了します。"
