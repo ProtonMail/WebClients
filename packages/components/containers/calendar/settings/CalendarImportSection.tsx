@@ -1,20 +1,19 @@
 import { useState } from 'react';
+
 import { c } from 'ttag';
 
+import { CALENDAR_APP_NAME, IMPORT_CALENDAR_FAQ_URL } from '@proton/shared/lib/calendar/constants';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { UserModel } from '@proton/shared/lib/interfaces';
 import { EASY_SWITCH_SOURCE, EasySwitchFeatureFlag, ImportType } from '@proton/shared/lib/interfaces/EasySwitch';
 import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
-import { CALENDAR_APP_NAME } from '@proton/shared/lib/calendar/constants';
-import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { Alert, GoogleButton, Href, Loader, PrimaryButton } from '../../../components';
-
 import { useAddresses, useFeature, useModals } from '../../../hooks';
-
-import { ImportModal } from '../importModal';
 import { SettingsParagraph, SettingsSection } from '../../account';
 import { EasySwitchOauthModal } from '../../easySwitch';
 import { FeatureCode } from '../../features';
+import { ImportModal } from '../importModal';
 
 interface Props {
     defaultCalendar?: VisualCalendar;
@@ -76,9 +75,8 @@ const CalendarImportSection = ({ activeCalendars, defaultCalendar, user }: Props
                 {c('Calendar import section description')
                     .t`You can import ICS files from another calendar to ${CALENDAR_APP_NAME}. This lets you quickly import one event or your entire agenda.`}
                 <br />
-                <Href url={getKnowledgeBaseUrl('/how-to-import-calendar-to-proton-calendar')}>{c(
-                    'Knowledge base link label'
-                ).t`Here's how`}</Href>
+                <Href url={getKnowledgeBaseUrl(IMPORT_CALENDAR_FAQ_URL)}>{c('Knowledge base link label')
+                    .t`Here's how`}</Href>
             </SettingsParagraph>
 
             {!easySwitchFeatureLoading && easySwitchFeatureValue?.GoogleCalendar && (

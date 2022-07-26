@@ -1,4 +1,6 @@
 import { c } from 'ttag';
+
+import { IMPORT_CALENDAR_FAQ_URL } from '@proton/shared/lib/calendar/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { Href } from '../../../link';
@@ -6,7 +8,7 @@ import { Href } from '../../../link';
 const OutlookCalendarInstructions = () => {
     // translator: full sentence: "To import a calendar to Proton, you need the ICS file. Download it from Outlook in 3 easy steps:"
     const knowledgeBaseLink = (
-        <Href url={getKnowledgeBaseUrl('/how-to-import-calendar-to-proton-calendar')} key="knowledgeBaseLink">
+        <Href url={getKnowledgeBaseUrl(IMPORT_CALENDAR_FAQ_URL)} key="knowledgeBaseLink">
             {c('Import instructions link').t`ICS file`}
         </Href>
     );

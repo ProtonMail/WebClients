@@ -1,5 +1,5 @@
-import { ACCENT_COLORS, APPS, BASE_SIZE } from '../constants';
 import { getAppName } from '../apps/helper';
+import { ACCENT_COLORS, APPS, BASE_SIZE } from '../constants';
 
 export const CALENDAR_APP_NAME = getAppName(APPS.PROTONCALENDAR);
 
@@ -238,7 +238,7 @@ export const MAX_IMPORT_FILE_SIZE = 10 * BASE_SIZE ** 2;
 export const MAX_IMPORT_FILE_SIZE_STRING = '10 MB';
 export const MAX_UID_CHARS_DISPLAY = 43;
 export const MAX_FILENAME_CHARS_DISPLAY = 100;
-export const IMPORT_CALENDAR_FAQ_URL = '/import-calendar-to-protoncalendar';
+export const IMPORT_CALENDAR_FAQ_URL = '/how-to-import-calendar-to-proton-calendar';
 export const IMPORT_CALENDAR_UNSUPPORTED_FAQ_URL = `${IMPORT_CALENDAR_FAQ_URL}/#items_not_supported`;
 
 export const MAX_LINKS_PER_CALENDAR = 5;
