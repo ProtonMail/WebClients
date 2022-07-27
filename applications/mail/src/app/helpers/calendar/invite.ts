@@ -1,17 +1,20 @@
+import { getUnixTime } from 'date-fns';
+
+import { serverTime } from '@proton/crypto';
 import { getAttendeeEmail } from '@proton/shared/lib/calendar/attendees';
 import { getDoesCalendarNeedUserAction, getIsCalendarDisabled } from '@proton/shared/lib/calendar/calendar';
 import { ICAL_EXTENSIONS, ICAL_METHOD, ICAL_METHODS_ATTENDEE } from '@proton/shared/lib/calendar/constants';
 import { getSelfAddressData } from '@proton/shared/lib/calendar/deserialize';
 import { generateVeventHashUID } from '@proton/shared/lib/calendar/helper';
 import {
-    cloneEventInvitationErrorWithConfig,
     EVENT_INVITATION_ERROR_TYPE,
     EventInvitationError,
+    cloneEventInvitationErrorWithConfig,
 } from '@proton/shared/lib/calendar/icsSurgery/EventInvitationError';
+import { getSupportedCalscale } from '@proton/shared/lib/calendar/icsSurgery/vcal';
 import { getSupportedEvent } from '@proton/shared/lib/calendar/icsSurgery/vevent';
 import { findAttendee, getParticipant } from '@proton/shared/lib/calendar/integration/invite';
 import { getOccurrencesBetween } from '@proton/shared/lib/calendar/recurring';
-
 import { parseWithErrors, serialize } from '@proton/shared/lib/calendar/vcal';
 import {
     buildVcalOrganizer,
@@ -43,11 +46,10 @@ import { fromUTCDate, getSupportedTimezone } from '@proton/shared/lib/date/timez
 import { getIsAddressActive, getIsAddressDisabled } from '@proton/shared/lib/helpers/address';
 import { canonizeEmailByGuess, canonizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import { splitExtension } from '@proton/shared/lib/helpers/file';
-import unary from '@proton/utils/unary';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { Address } from '@proton/shared/lib/interfaces';
 import {
-    VisualCalendar,
+    CalendarEventEncryptionData,
     CalendarEventWithMetadata,
     CalendarWidgetData,
     Participant,
@@ -59,15 +61,14 @@ import {
     VcalVeventComponent,
     VcalVtimezoneComponent,
     VcalXOrIanaComponent,
-    CalendarEventEncryptionData,
+    VisualCalendar,
 } from '@proton/shared/lib/interfaces/calendar';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { RequireSome, Unwrap } from '@proton/shared/lib/interfaces/utils';
 import { getOriginalTo } from '@proton/shared/lib/mail/messages';
-import { getUnixTime } from 'date-fns';
-import { serverTime } from '@proton/crypto';
-import { getSupportedCalscale } from '@proton/shared/lib/calendar/icsSurgery/vcal';
+import unary from '@proton/utils/unary';
+
 import { MessageStateWithData } from '../../logic/messages/messagesTypes';
 import { FetchAllEventsByUID } from './inviteApi';
 
@@ -259,7 +260,7 @@ export const getIsInvitationOutdated = ({
     const timestampApi = veventApi.dtstamp ? getUnixTime(propertyToUTCDate(veventApi.dtstamp)) : undefined;
     const timestampDiff = timestampIcs !== undefined && timestampApi !== undefined ? timestampIcs - timestampApi : 0;
     const updateTimeDiff =
-        timestampIcs !== undefined && updateTime !== undefined ? timestampIcs - updateTime : timestampDiff;
+        timestampIcs !== undefined && updateTime !== undefined ? timestampIcs - (updateTime || 0) : timestampDiff;
     const sequenceDiff = getSequence(veventIcs) - getSequence(veventApi);
 
     if (isOrganizerMode) {
