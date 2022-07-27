@@ -1271,7 +1271,7 @@
       ]
     },
     "color": {
-      "Apple": [
+      "apple": [
         "Elma"
       ],
       "azureish white": [
@@ -2439,8 +2439,8 @@
       ]
     },
     "Description": {
-      "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }..": [
-        "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }."
+      "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
+        "Tebrikler! En yüksek hediye sınırı olan ${ rewardsLimit } ay ücretsiz ${ plusPlanName } kazandınız."
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Kişiler şifreleniyor ve içe aktarılıyor... Bu işlem birkaç dakika sürebilir. İşlem tamamlandığında, bu pencereyi kapatabilirsiniz."
@@ -2921,8 +2921,8 @@
       "This label name is not available. Please choose a different name.": [
         "Bu etiket adı kullanılamaz. Lütfen farklı bir ad seçin."
       ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser": [
-        "Bu iletide, geçerli tarayıcınızda açılamayacak bazı bağlantı adresleri bulunuyor olabilir"
+      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
+        "Bu iletide, geçerli tarayıcınızda açılamayacak bazı bağlantı adresleri bulunuyor olabilir."
       ],
       "Unknown error": [
         "Bilinmeyen hata"
@@ -4312,6 +4312,12 @@
       ],
       "Basic, Plus or Visionary subscription required": [
         "Basic, Plus veya Visionary aboneliği gerekli"
+      ],
+      "Before creating this address you need to provide a password and create encryption keys for it.": [
+        "Bu adresi oluşturmadan önce bir parola belirtmeli ve adresin şifreleme anahtarlarını üretmelisiniz."
+      ],
+      "Before enabling the account you need to provide a password and create encryption keys for the new addresses.": [
+        "Hesabı etkinleştirmeden önce bir parola belirtmeli ve yeni adresin şifreleme anahtarlarını üretmelisiniz."
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Yeni bir doğrulama kodu istemeden önce istenmeyen e-postalar kutunuza bakın ve ${ strong } adresinin doğru olduğundan emin olun."
@@ -7910,8 +7916,8 @@
       "On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
         "Buna ek olarak, arkadaşlarınız, aileniz, iş arkadaşlarınız ve kuruluşunuz için 5 taneye kadar takvim ekleyebilirsiniz."
       ],
-      "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections..": [
-        "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections."
+      "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections.": [
+        "Bir VPN bağlantısı, herhangi bir zamanda bir aygıtın Proton VPN hizmetine bağlanmasını sağlar. Örneğin, bir telefon ve bir dizüstü bilgisayardan aynı anda Proton VPN bağlantısı kurmak için iki VPN bağlantınız olması gerekir."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Kişisel olmayan kullanıcı e-posta kutularını, tam ileti ve kişi bilgileri ile birlikte kullanıcının yaptığı gibi görüntüleme seçeneği"
@@ -9262,6 +9268,9 @@
       ],
       "Action": [
         "İşlem"
+      ],
+      "Activate account and generate keys": [
+        "Hesabı etkinleştir ve anahtarları üret"
       ],
       "Activate organization key": [
         "Kuruluş anahtarını etkinleştir"

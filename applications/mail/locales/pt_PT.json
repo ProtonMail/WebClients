@@ -1062,11 +1062,6 @@
         "Esta resposta está desactualizada. Não tem agendamentos."
       ]
     },
-    "color": {
-      "Apple": [
-        "apple"
-      ]
-    },
     "Composer email icon": {
       "End-to-end encrypted": [
         "Encriptado de ponta-a-ponta"
@@ -1294,9 +1289,6 @@
       ]
     },
     "Description": {
-      "Decrypting contacts... This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
-        "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported."
-      ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "A eliminar contactos... Isto pode levar alguns minutos. Quando o processo for concluído, pode fechar esta janela."
       ],
@@ -1571,9 +1563,6 @@
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Este campo requer um mínimo de ${ minimumLength } caracteres."
-      ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser": [
-        "Esta mensagem pode conter hiperligações que não podem ser abertas correctamente pelo seu navegador actual"
       ],
       "Trusted keys are not valid for sending": [
         "Chaves confiáveis não são válidas para enviar"
@@ -2211,9 +2200,6 @@
       "Do you want to re-sign the contact details?": [
         "Deseja assinar novamente os detalhes do contacto?"
       ],
-      "Don't forget to share your password with the recipient": [
-        "Don't forget to share the password with the recipient"
-      ],
       "Download our mobile application from your favorite app store to communicate securely on-the-go.": [
         "Transfira a nossa aplicação móvel da sua loja favorita para comunicar sempre com segurança."
       ],
@@ -2293,9 +2279,6 @@
       "Hour": [
         "Hora",
         "Horas"
-      ],
-      "I'm sending this message to a non-ProtonMail user.": [
-        "I'm sending this message to a non-Proton Mail user."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Se tiver problemas ao criar a conta, por favor solicite um convite e responderemos dentro de um dia útil."
@@ -3888,9 +3871,6 @@
       ],
       "Cannot send to organizer address: ${ errorMessage }": [
         "Impossível enviar para o endereço do organizador: ${ errorMessage }"
-      ],
-      "Re-encrypting invitation failed. Please try again": [
-        "Re-encrypting invitation failed. Please try again."
       ]
     },
     "Search - no results": {

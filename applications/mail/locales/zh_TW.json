@@ -1542,9 +1542,6 @@
       ]
     },
     "color": {
-      "Apple": [
-        "apple"
-      ],
       "carrot": [
         "胡蘿蔔"
       ]
@@ -2538,9 +2535,6 @@
       ]
     },
     "Description": {
-      "Decrypting contacts... This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
-        "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported."
-      ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "正在刪除聯絡人…該過程或需時數分鐘。完成後您即可以關閉此交談方塊。"
       ],
@@ -2978,9 +2972,6 @@
       ],
       "This message has already been sent. A new draft has been saved.": [
         "這個郵件已經傳送。新的草稿已儲存。"
-      ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser": [
-        "此郵件包含的某些連結 URL 或未能以您目前的瀏覽器正確開啟"
       ],
       "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
         "使用中的篩選器以達上限，請升級至付費方案以建立更多的篩選器。"
@@ -3869,9 +3860,6 @@
       "Do you want to re-sign the contact details?": [
         "您要重新簽署此聯絡人詳細資料嗎？"
       ],
-      "Don't forget to share your password with the recipient": [
-        "Don't forget to share the password with the recipient"
-      ],
       "Download our mobile application from your favorite app store to communicate securely on-the-go.": [
         "到您喜愛的應用程式商店，下載我們的行動應用程式，安全通訊帶著走。"
       ],
@@ -4000,9 +3988,6 @@
       ],
       "Hour": [
         "小時"
-      ],
-      "I'm sending this message to a non-ProtonMail user.": [
-        "I'm sending this message to a non-Proton Mail user."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "若您在建立帳號時遇上問題，請聯絡我們。我們將會於一個工作天內處理您的申請。"
@@ -6124,9 +6109,6 @@
       ],
       "Cannot send to organizer address: ${ errorMessage }": [
         "無法傳送到召集人電郵位址：${ errorMessage }"
-      ],
-      "Re-encrypting invitation failed. Please try again": [
-        "Re-encrypting invitation failed. Please try again."
       ]
     },
     "Search - no results": {
@@ -6851,8 +6833,14 @@
       "Merging contacts": [
         "正在合併聯絡人"
       ],
+      "Message details": [
+        "訊息詳細資料"
+      ],
       "Message list": [
         "郵件清單"
+      ],
+      "Message will expire": [
+        "訊息將過期"
       ],
       "More": [
         "更多"
@@ -6992,6 +6980,9 @@
       "Sign in again to continue": [
         "請重新登入以繼續"
       ],
+      "Sign in and grant access": [
+        "登入並授予存取權"
+      ],
       "Sort conversations": [
         "交談排序"
       ],
@@ -7040,8 +7031,14 @@
       "Welcome ${ userName }": [
         "歡迎 ${ userName }"
       ],
+      "What would you like to import?": [
+        "您打算要匯入什麼資料呢？"
+      ],
       "What's new": [
         "最新功能"
+      ],
+      "Your free trial ends soon, on ${ formattedEndDate }": [
+        "您專屬的免費試用即將結束，到期日為 ${ formattedEndDate }"
       ]
     },
     "Today icon tooltip in mini calendar": {

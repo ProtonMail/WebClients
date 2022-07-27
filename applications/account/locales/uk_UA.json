@@ -322,6 +322,9 @@
       "Edit subscription": [
         "Керувати передплатою"
       ],
+      "Emoji": [
+        "Емоджі"
+      ],
       "enable desktop notifications": [
         "увімкнути сповіщення стільниці"
       ],
@@ -627,6 +630,12 @@
       ],
       "Save selected": [
         "Зберегти вибране"
+      ],
+      "Search countries": [
+        "Пошук країн"
+      ],
+      "Search settings": [
+        "Шукати налаштування"
       ],
       "Select ${ planTitle }": [
         "Оберіть ${ planTitle }"
@@ -1268,7 +1277,7 @@
       ]
     },
     "color": {
-      "Apple": [
+      "apple": [
         "яблуневий"
       ],
       "azureish white": [
@@ -2448,8 +2457,8 @@
       ]
     },
     "Description": {
-      "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }..": [
-        "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }."
+      "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
+        "Вітаємо! Ви зібрали максимум з ${ rewardsLimit } безплатних місяців користування ${ plusPlanName }."
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Шифрування та імпортування контактів... Це може тривати кілька хвилин. Коли процес завершиться, ви можете закрити це вікно."
@@ -2940,8 +2949,8 @@
       "This label name is not available. Please choose a different name.": [
         "Назва мітки недоступна. Оберіть іншу назву."
       ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser": [
-        "Це повідомлення може містити URL-посилання, які неможливо правильно відкрити у цьому браузері"
+      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
+        "Це повідомлення може містити URL-посилання, які неможливо правильно відкрити у цьому браузері."
       ],
       "Unknown error": [
         "Невідома помилка"
@@ -6276,6 +6285,9 @@
       "Auto-reply": [
         "Автоматична відповідь"
       ],
+      "Auto-unsubscribe": [
+        "Автовідписка"
+      ],
       "Billing cycle": [
         "Платіжний цикл"
       ],
@@ -8068,8 +8080,8 @@
       "On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
         "Крім того, додавайте до 5 календарів від друзів, сім'ї, колег та організацій."
       ],
-      "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections..": [
-        "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections."
+      "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections.": [
+        "Одне VPN-з'єднання дає змогу користуватися Proton VPN на одному пристрої в будь-який час. Наприклад, щоб під'єднати до Proton VPN телефон і ноутбук одночасно, необхідно два VPN-з'єднання."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Можливість перегляду не приватних вхідних скриньок користувача, включно з усіма повідомленнями та подробицями контактів"
@@ -8388,6 +8400,9 @@
       "Android": [
         "Android"
       ],
+      "Ask each time": [
+        "Запитувати щоразу"
+      ],
       "Automatic (${ defaultDay })": [
         "Автоматично (${ defaultDay })"
       ],
@@ -8441,6 +8456,12 @@
       ],
       "Normal": [
         "Звичайний"
+      ],
+      "Off": [
+        "Вимкнути"
+      ],
+      "On": [
+        "Увімкнути"
       ],
       "Permanent": [
         "Постійно"
@@ -10385,6 +10406,9 @@
       ],
       "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
         "При переході за посиланням ця захисна функція попросить вас підтвердити URL-адресу вебсторінки."
+      ],
+      "When you move an email to spam, you’ll automatically be unsubscribed from the sender’s mailing lists.": [
+        "Коли ви переміщуєте електронний лист у спам, ви автоматично будете вилучені зі списків розсилки відправника."
       ],
       "You have locally decrypted this key": [
         "Ви локально розшифрували цей ключ"
