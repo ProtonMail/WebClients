@@ -996,17 +996,35 @@
       "Finland": [
         "芬兰"
       ],
+      "France": [
+        "法国"
+      ],
       "Germany": [
         "德国"
+      ],
+      "Greece": [
+        "希腊"
       ],
       "Hong Kong": [
         "中国香港特别行政区"
       ],
+      "Japan": [
+        "日本"
+      ],
       "Macao": [
         "中国澳门特别行政区"
       ],
+      "Mongolia": [
+        "蒙古"
+      ],
+      "New Zealand": [
+        "新西兰"
+      ],
       "North Korea": [
         "朝鲜"
+      ],
+      "Singapore": [
+        "新加坡"
       ],
       "South Korea": [
         "韩国"
@@ -1017,8 +1035,14 @@
       "Switzerland": [
         "瑞士"
       ],
+      "Ukraine": [
+        "乌克兰"
+      ],
       "United Arab Emirates": [
         "阿联酋"
+      ],
+      "United States": [
+        "美国"
       ],
       "Western Sahara": [
         "西撒哈拉"
@@ -1040,9 +1064,6 @@
       ]
     },
     "Description": {
-      "Decrypting contacts... This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
-        "正在解密联系人，可能需要几分钟的时间。完成后您就可以下载导出的联系人了。"
-      ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "正在删除联系人... 该过程可能需要几分钟，完成后您就可以关闭此对话框了"
       ],
@@ -1237,8 +1258,14 @@
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "发生错误，请${ refresh }后重试。若仍出现此错误，请联系我们的${ supportTeam }。"
       ],
+      "The folder name is invalid. Please choose a different name.": [
+        "文件夹名称无效，请修改。"
+      ],
       "The folder name is too long. Please choose a different name.": [
         "文件夹名称过长，请重新填写。"
+      ],
+      "The label name is invalid. Please choose a different name.": [
+        "标签名称无效，请修改。"
       ],
       "The label name is too long. Please choose a different name.": [
         "标签名称过长，请重新填写。"
@@ -1282,8 +1309,8 @@
       "This label name is not available. Please choose a different name.": [
         "标签名称不可用，请重新填写。"
       ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser": [
-        "此邮件含有浏览器不能打开的链接"
+      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
+        "此邮件可能含有当前浏览器无法正确打开的链接。"
       ],
       "Unknown error": [
         "未知错误"
@@ -1738,8 +1765,17 @@
       "Download failed": [
         "下载失败"
       ],
+      "Download failed due to ${ error }": [
+        "由于 ${ error }，下载失败。"
+      ],
+      "Download finished": [
+        "下载已完成"
+      ],
       "Download of ${ downloadFileName } will be aborted": [
         "${ downloadFileName } 的下载进程将被中止"
+      ],
+      "Download paused due to connection issue; it will resume automatically": [
+        "由于网络连接问题，下载已中断，将尝试自动恢复连接。"
       ],
       "Downloaded": [
         "已下载"
@@ -1764,6 +1800,12 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "验证码已发至 ${ destinationText }，请在下方输入。"
+      ],
+      "Estimated time remaining: ${ estimatedMinutes } minute": [
+        "预计剩余时间：${ estimatedMinutes } 分钟"
+      ],
+      "Estimated time remaining: Less than a minute": [
+        "预计剩余时间：不到一分钟"
       ],
       "Estimating time remaining...": [
         "正在估算剩余时间..."
@@ -1981,6 +2023,9 @@
       "Permanently delete all files in your drive": [
         "永久删除网盘中的所有文件"
       ],
+      "Please enter the password to decrypt and view content.": [
+        "请输入密码解锁并查看内容。"
+      ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "请注意，分配给此组的地址将不会被删除。"
       ],
@@ -2197,6 +2242,9 @@
       "Uploading hundreds of files at once may have a performance impact.": [
         "一次上传数百个文件可能会影响性能。"
       ],
+      "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
+        "使用这张表单通知我们有不合适、非法或恶意分享的文件，您将要举报以下行为："
+      ],
       "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "我们无法验证 ${ fileName } 由 ${ emailAddress } 上传。"
       ],
@@ -2301,6 +2349,14 @@
         "多名联系人重复。${ mergeAction }"
       ]
     },
+    "Item": {
+      "file attributes": [
+        "文件属性"
+      ],
+      "thumbnail": [
+        "缩略图"
+      ]
+    },
     "Key badge": {
       "Expired": [
         "已失效"
@@ -2376,17 +2432,26 @@
       "Category": [
         "类别"
       ],
+      "Child sexual abuse material": [
+        "儿童色情滥用材料"
+      ],
       "City": [
         "城市"
       ],
       "Code is 6 digits without spaces": [
         "验证码是无空格的六位数"
       ],
+      "Comment": [
+        "评论"
+      ],
       "Contacts": [
         "通讯录"
       ],
       "Copy": [
         "复制"
+      ],
+      "Copyright infringement": [
+        "侵犯权利"
       ],
       "Country": [
         "国家"
@@ -2408,6 +2473,9 @@
       ],
       "Download anyway": [
         "仍要下载"
+      ],
+      "Email": [
+        "邮件"
       ],
       "Email address": [
         "邮箱地址"
@@ -2463,6 +2531,9 @@
       "How would you describe your experience with the new Proton?": [
         "您认为新版 Proton 的使用体验如何？"
       ],
+      "I understand the risk": [
+        "我已知悉风险"
+      ],
       "Image": [
         "图片"
       ],
@@ -2496,6 +2567,9 @@
       "Mailbox password": [
         "邮箱密码"
       ],
+      "Malware": [
+        "恶意软件"
+      ],
       "Manage folders": [
         "管理文件夹"
       ],
@@ -2526,6 +2600,9 @@
       "Operating system version": [
         "操作系统版本"
       ],
+      "Other": [
+        "其他"
+      ],
       "Password": [
         "密码"
       ],
@@ -2534,6 +2611,9 @@
       ],
       "Phone number": [
         "手机号码"
+      ],
+      "Please provide full details to help us take appropriate action": [
+        "请尽可能提供全部细节来让我们更好地做出决定"
       ],
       "Post office box": [
         "邮局信箱"
@@ -2559,8 +2639,14 @@
       "Replace folder": [
         "替换文件夹"
       ],
+      "Report Abuse": [
+        "举报违规行为"
+      ],
       "Reveal password": [
         "显示密码"
+      ],
+      "Select type of abuse": [
+        "选择滥用类型"
       ],
       "Set expiration date": [
         "设置有效期"
@@ -2576,6 +2662,12 @@
       ],
       "Skip folder": [
         "跳过文件夹"
+      ],
+      "Spam": [
+        "垃圾"
+      ],
+      "Stolen data": [
+        "偷窃"
       ],
       "Street address": [
         "街道地址"
@@ -2918,6 +3010,9 @@
       "Enter a new folder name": [
         "输入新文件夹名称"
       ],
+      "Enter your email address": [
+        "输入您的邮箱地址"
+      ],
       "Filter groups": [
         "查找群组"
       ],
@@ -3028,6 +3123,9 @@
       ],
       "Invite friends and earn rewards!": [
         "邀请好友注册赢取奖励！"
+      ],
+      "Try ${ DRIVE_APP_NAME }": [
+        "体验 ${ DRIVE_APP_NAME }"
       ]
     },
     "Storage": {
@@ -3184,6 +3282,12 @@
       "${ emailsCount } member": [
         "${ emailsCount } 位成员"
       ],
+      "${ numberOfFailedTransfer.total } failed download": [
+        "${ numberOfFailedTransfer.total } 个失败的下载"
+      ],
+      "${ numberOfFailedTransfer.total } failed upload": [
+        "${ numberOfFailedTransfer.total } 个失败的上传"
+      ],
       "Account suspended": [
         "账号已被冻结"
       ],
@@ -3333,6 +3437,9 @@
       ],
       "Failed": [
         "失败"
+      ],
+      "Feedback": [
+        "反馈"
       ],
       "File details": [
         "文件详细信息"

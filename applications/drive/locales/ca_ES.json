@@ -814,9 +814,6 @@
       ]
     },
     "Description": {
-      "Decrypting contacts... This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
-        "Desxifrant contactes... Pot trigar uns minuts. Quan el procés s'hagi completat, podreu descarregar el fitxer amb tots els vostres contactes exportats."
-      ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Eliminant contactes... Pot trigar uns minuts. Quan el procés s'hagi completat, podreu tancar aquest diàleg."
       ],
@@ -974,9 +971,6 @@
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Aquest camp requereix un mínim de ${ minimumLength } caràcters."
-      ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser": [
-        "Aquest missatge pot contenir algunes adreces URL que no es poden obrir amb el vostre navegador actual"
       ],
       "Unknown error": [
         "Error desconegut"
@@ -1372,6 +1366,12 @@
       ],
       "Loading ${ appName }": [
         "Carregant ${ appName }"
+      ],
+      "Loading link": [
+        "S'està carregant l'enllaç"
+      ],
+      "Loading links": [
+        "S'estan carregant els enllaços"
       ],
       "Loading preview": [
         "S'està carregant la previsualització"
@@ -2278,6 +2278,9 @@
       ],
       "Date": [
         "Cita"
+      ],
+      "Decrypting": [
+        "S'està desxifrant"
       ],
       "Delete ${ count } contact": [
         "Suprimir ${ count } contacte",
