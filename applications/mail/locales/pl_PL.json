@@ -1592,8 +1592,8 @@
       ]
     },
     "color": {
-      "Apple": [
-        "apple"
+      "apple": [
+        "jabłkowy"
       ],
       "azureish white": [
         "lazurowa biel"
@@ -2774,8 +2774,8 @@
       ]
     },
     "Description": {
-      "Decrypting contacts... This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
-        "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported."
+      "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
+        "Trwa odszyfrowywanie kontaktów… Proces może potrwać kilka minut. Kiedy się zakończy, będziesz mógł pobrać plik z wyeksportowanymi kontaktami."
       ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Trwa usuwanie kontaktów... Proces może potrwać kilka minut. Kiedy się zakończy, możesz zamknąć okno."
@@ -3263,8 +3263,8 @@
       "This message has already been sent. A new draft has been saved.": [
         "Wiadomość została wysłana. Nowy szkic został zapisany."
       ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser": [
-        "Ta wiadomość może zawierać adresy URL, które nie mogą być poprawnie otwarte przez obecną przeglądarkę"
+      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
+        "Ta wiadomość może zawierać adresy URL, które nie mogą być poprawnie otwarte przez obecną przeglądarkę."
       ],
       "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
         "Posiadasz zbyt dużo aktywnych filtrów. Ulepsz do płatnego planu, aby aktywować więcej filtrów."
@@ -4339,8 +4339,8 @@
       "Do you want to re-sign the contact details?": [
         "Czy chcesz ponownie podpisać szczegóły kontaktu?"
       ],
-      "Don't forget to share your password with the recipient": [
-        "Don't forget to share the password with the recipient"
+      "Don't forget to share the password with the recipient": [
+        "Nie zapomnij o udostępnieniu hasła odbiorcy"
       ],
       "Download our mobile application from your favorite app store to communicate securely on-the-go.": [
         "Pobierz naszą aplikację mobilną ze swojego ulubionego sklepu z aplikacjami, aby bezpiecznie komunikować się w trakcie podróży."
@@ -4489,8 +4489,8 @@
         "godzin",
         "godziny"
       ],
-      "I'm sending this message to a non-ProtonMail user.": [
-        "I'm sending this message to a non-Proton Mail user."
+      "I'm sending this message to a non-Proton Mail user.": [
+        "Wysyłam wiadomość do użytkownika spoza Proton Mail."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Jeśli masz problem z utworzeniem konta, poproś o zaproszenie, a my odpowiemy w ciągu jednego dnia roboczego."
@@ -4676,7 +4676,7 @@
         "Brak elementów śledzących, ale niektóre obrazy nie mogły zostać załadowane z ochroną przed śledzeniem"
       ],
       "non-Proton Mail": [
-        "użytkowników spoza Proton Mail"
+        "użytkownika spoza Proton Mail"
       ],
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         "Żaden z przesłanych kluczy nie jest przeznaczony do szyfrowania. Szyfrowanie zostało automatycznie wyłączone."
@@ -4823,7 +4823,7 @@
         "Wybierz, które kalendarze chcesz zaimportować. Dla każdego importowanego kalendarza zostanie utworzony nowy kalendarz, aż do osiągnięcia limitu 20 kalendarzy."
       ],
       "Send an encrypted, password protected message to a ${ boldText } email address.": [
-        "Wyślij zaszyfrowaną, chronioną hasłem wiadomość dla ${ boldText }."
+        "Wyślij zaszyfrowaną, chronioną hasłem wiadomość do ${ boldText }."
       ],
       "Sending": [
         "Wysyłanie"
@@ -6827,8 +6827,8 @@
       "Cannot send to organizer address: ${ errorMessage }": [
         "Nie można wysłać odpowiedzi na adres organizatora: ${ errorMessage }"
       ],
-      "Re-encrypting invitation failed. Please try again": [
-        "Re-encrypting invitation failed. Please try again."
+      "Re-encrypting invitation failed. Please try again.": [
+        "Ponowne szyfrowanie zaproszenia nie powiodło się. Spróbuj ponownie."
       ]
     },
     "Search - no results": {

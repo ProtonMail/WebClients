@@ -155,6 +155,9 @@
       "Close this banner": [
         "このバナーを閉じる"
       ],
+      "Collapse URL": [
+        "URL を折りたたむ"
+      ],
       "Color": [
         "色"
       ],
@@ -298,6 +301,9 @@
       ],
       "Email settings": [
         "メールの設定"
+      ],
+      "Emoji": [
+        "絵文字"
       ],
       "Enable": [
         "有効化"
@@ -569,6 +575,9 @@
       "Move to spam": [
         "迷惑メールに移動"
       ],
+      "Move to spam and unsubscribe": [
+        "迷惑メールに移動し購読解除"
+      ],
       "Move to trash": [
         "ごみ箱に移動"
       ],
@@ -751,6 +760,9 @@
       ],
       "Search": [
         "検索"
+      ],
+      "Search countries": [
+        "国を検索"
       ],
       "Search in ${ option.text }": [
         "検索対象: ${ option.text }"
@@ -1285,6 +1297,9 @@
       "${ participantName } declined your invitation.": [
         "${ participantName } は招待を断りました。"
       ],
+      "${ participantName } had accepted an invitation to this event.": [
+        "${ participantName } は以前にこのイベントの招待を承認していました。"
+      ],
       "${ participantName } had declined an invitation to this event.": [
         "${ participantName } はこのイベントの招待を拒否していました。"
       ],
@@ -1392,9 +1407,6 @@
       ]
     },
     "color": {
-      "Apple": [
-        "apple"
-      ],
       "azureish white": [
         "かなり白い青"
       ],
@@ -1898,6 +1910,9 @@
       "Czech Republic": [
         "チェコ共和国"
       ],
+      "Côte d'Ivoire": [
+        "コートジボワール"
+      ],
       "Denmark": [
         "デンマーク"
       ],
@@ -1927,6 +1942,9 @@
       ],
       "Estonia": [
         "エストニア"
+      ],
+      "Eswatini": [
+        "スワジランド"
       ],
       "Ethiopia": [
         "エチオピア"
@@ -2170,6 +2188,9 @@
       ],
       "Mozambique": [
         "モザンビーク"
+      ],
+      "Myanmar": [
+        "ビルマ"
       ],
       "Namibia": [
         "ナミビア"
@@ -2553,14 +2574,17 @@
       ]
     },
     "Description": {
-      "Decrypting contacts... This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
-        "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported."
+      "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
+        "連絡先を復号しています… これには数分かかります。完了するとエクスポートされたすべての連絡先がダウンロードできるようになります。"
       ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "連絡先を削除しています... これには数分かかる場合があります。処理が完了したらこのモーダルを閉じることができます。"
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "連絡先の暗号化とインポート... これには数分かかることがあります。\n処理が完了すると、このモーダルを閉じることができます。"
+      ],
+      "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
+        "インポートしようとしている連絡先リストにはいくつかのグループが含まれています。どのようにグループのインポートするか確認してください。"
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "連絡先の統合しています... これには数分かかる場合があります。処理が完了したらこのモーダルを閉じることができます。"
@@ -2995,8 +3019,8 @@
       "This message has already been sent. A new draft has been saved.": [
         "このメッセージは送信されています。下書きが保存されました。"
       ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser": [
-        "このメッセージは、現在お使いのブラウザーでは適切に開くことができないリンクの URL を含んでいる可能性があります"
+      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
+        "このメッセージには現在のブラウザーで正しく開けない URL を含んでいる可能性があります。"
       ],
       "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
         "有効なフィルターが多すぎます。さらに有効なフィルターを使用するには有料プランにアップグレードしてください。"
@@ -3095,6 +3119,9 @@
       ]
     },
     "Error importing event": {
+      "Calendar time zone not supported": [
+        "カレンダーのタイムゾーンはサポートされていません"
+      ],
       "Component with wrong format": [
         "無効なコンポーネント形式です"
       ],
@@ -3155,6 +3182,9 @@
       "Start time out of bounds": [
         "開始日時が指定可能な範囲を超えています"
       ],
+      "Time zone not supported": [
+        "タイムゾーンはサポートされていません"
+      ],
       "To-do entry": [
         "To-do のエントリー"
       ],
@@ -3178,6 +3208,9 @@
       "Please ${ refresh } or check your connection.": [
         "${ refresh } または接続を確認してください。"
       ],
+      "Something went wrong. Please refresh the page or try again later.": [
+        "問題が発生しました。ページを更新するか再度お試しください。"
+      ],
       "There was a problem connecting to Proton.": [
         "Proton への接続に問題がありました。"
       ],
@@ -3186,6 +3219,11 @@
       ],
       "You may also ${ refresh } or try again later.": [
         "${ refresh } するか再度お試しください。"
+      ]
+    },
+    "Error notification": {
+      "First name and last name cannot be unchecked at the same time": [
+        "姓と名のチェックを同時にはずすことはできません"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -3875,8 +3913,8 @@
       "Do you want to re-sign the contact details?": [
         "連絡先の詳細に再署名しますか?"
       ],
-      "Don't forget to share your password with the recipient": [
-        "Don't forget to share the password with the recipient"
+      "Don't forget to share the password with the recipient": [
+        "宛先にパスワードを伝えることを忘れないでください"
       ],
       "Download our mobile application from your favorite app store to communicate securely on-the-go.": [
         "お好みのアプリストアからモバイルアプリをダウンロードして、外出先でも安全に会話しましょう。"
@@ -3962,6 +4000,9 @@
       "Expires soon": [
         "もうすぐ期限切れになります"
       ],
+      "Expiring message": [
+        "有効期限付きメッセージ"
+      ],
       "file attached": [
         "個のファイル添付"
       ],
@@ -4001,8 +4042,8 @@
       "Hour": [
         "時間"
       ],
-      "I'm sending this message to a non-ProtonMail user.": [
-        "I'm sending this message to a non-Proton Mail user."
+      "I'm sending this message to a non-Proton Mail user.": [
+        "このメッセージを非 Proton ユーザーに送信しています。"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "アカウントの作成に問題がある場合は、招待をリクエストしてください。1 営業日以内に対応します。"
@@ -4202,6 +4243,12 @@
       "per month.": [
         "毎月。"
       ],
+      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        "PGP/Inline はプレーンテキスト形式としか互換性がありません。${ MAIL_APP_NAME } は暗号化されたメッセージに常に署名することに注意してください。"
+      ],
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        "PGP/MIME は自動的に現在の書式を使用してメッセージを送信します。${ MAIL_APP_NAME } は暗号化されたメッセージに常に署名することに注意してください。"
+      ],
       "Phone number": [
         "電話番号"
       ],
@@ -4210,6 +4257,9 @@
       ],
       "Please add at least one recipient.": [
         "少なくとも 1 件の宛先を追加してください。"
+      ],
+      "Please fill out this field.": [
+        "このフィールドに入力してください。"
       ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
         "パスワードをリセットした場合、アカウントへのアクセスとデータの復号に必要になります。安全な場所に保管してください。"
@@ -4306,6 +4356,9 @@
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "このメールアドレスにメールを送信する際に既定で使用するメールの形式を選択できます。"
+      ],
+      "Select what you want to import from Google.": [
+        "Google からインポートしたいものを選択してください。"
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "インポートするカレンダーを選択してください。インポートするカレンダーは最大 20 件までに制限されます。"
@@ -4421,6 +4474,9 @@
       "This conversation contains trashed messages.": [
         "この会話には、ごみ箱に入れたメッセージが含まれています。"
       ],
+      "This conversation will be marked as spam. Would you also like to unsubscribe from future emails?": [
+        "この会話を迷惑メールとして扱います。将来のメールから購読を解除しますか?"
+      ],
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded!": [
         "メールのドメイン認証に失敗しました。このメールは不適切に転送されたものか、なりすましの恐れがあります!"
       ],
@@ -4453,6 +4509,9 @@
       ],
       "This message is signed by the key attached, that has not been trusted yet.": [
         "このメッセージはまだ信頼されていない添付された鍵で署名されています。"
+      ],
+      "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
+        "このメッセージを迷惑メールとして扱います。将来のメールから購読を解除しますか?"
       ],
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
         "このメッセージは下書きへ移動され編集することができます。送信するには再スケジュールする必要があります。"
@@ -4732,8 +4791,14 @@
       ]
     },
     "Key badge": {
+      "Compromised": [
+        "侵害"
+      ],
       "Expired": [
         "有効期限切れ"
+      ],
+      "Obsolete": [
+        "廃止"
       ],
       "Primary": [
         "プライマリー"
@@ -5256,6 +5321,9 @@
       "Region": [
         "都道府県"
       ],
+      "Remember my choice": [
+        "選択を記憶する"
+      ],
       "Reveal password": [
         "パスワードを表示する"
       ],
@@ -5486,11 +5554,17 @@
       "Learn more": [
         "詳細"
       ],
+      "Less": [
+        "隠す"
+      ],
       "Manage your folders": [
         "フォルダーを管理"
       ],
       "Manage your labels": [
         "ラベルを管理"
+      ],
+      "More": [
+        "さらに"
       ],
       "More about recovery": [
         "回復について"
@@ -6158,8 +6232,8 @@
       "Cannot send to organizer address: ${ errorMessage }": [
         "主催者のアドレスに送信できません: ${ errorMessage }"
       ],
-      "Re-encrypting invitation failed. Please try again": [
-        "Re-encrypting invitation failed. Please try again."
+      "Re-encrypting invitation failed. Please try again.": [
+        "招待の再暗号化に失敗しました。再度お試しください。"
       ]
     },
     "Search - no results": {
@@ -6195,6 +6269,9 @@
     "Send email with warnings": {
       "Do you want to send the email anyway?": [
         "とりあえずメールを送信しますか?"
+      ],
+      "If you decide to send the message anyway, the following recipient will receive the email without expiration:": [
+        "このままメッセージを送信すると、以下の連絡先は有効期限なしでメッセージを受け取ることになります:"
       ],
       "The following address is not valid: ${ invalidAddresses }": [
         "次のアドレスは有効ではありません: ${ invalidAddresses }"
@@ -6282,6 +6359,9 @@
       ]
     },
     "Spotlight": {
+      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
+        "${ DRIVE_APP_NAME } はベータ版を卒業しました! メールと変わらないセキュリティをファイルでも体感しましょう。"
+      ],
       "Discover all Proton services": [
         "すべての Proton サービスがここに"
       ],
@@ -6923,6 +7003,9 @@
       "Move to inbox (not spam)": [
         "受信トレイに移動 (迷惑メールではない)"
       ],
+      "Move to spam": [
+        "迷惑メールに移動"
+      ],
       "Move to trash": [
         "ごみ箱に移動"
       ],
@@ -7060,6 +7143,9 @@
       ],
       "Trust new key?": [
         "新しい鍵を信頼しますか？"
+      ],
+      "Trust pinned keys?": [
+        "固定されたキーを信頼しますか?"
       ],
       "Trust public key?": [
         "公開鍵を信頼しますか?"

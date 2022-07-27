@@ -684,7 +684,7 @@
         "Citar"
       ],
       "Re-sign": [
-        "Re-firmar"
+        "Volver a firmar"
       ],
       "Read message": [
         "Leer mensaje"
@@ -946,7 +946,7 @@
         "Actualizar frase de recuperación"
       ],
       "Upgrade": [
-        "Mejorar"
+        "Actualizar"
       ],
       "Upgrade now": [
         "Actualizar ahora"
@@ -1582,8 +1582,8 @@
       ]
     },
     "color": {
-      "Apple": [
-        "apple"
+      "apple": [
+        "manzana"
       ],
       "azureish white": [
         "blanco azulado"
@@ -2756,8 +2756,8 @@
       ]
     },
     "Description": {
-      "Decrypting contacts... This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
-        "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported."
+      "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
+        "Descifrando contactos… esto puede tardar unos minutos. Cuando el proceso se complete, podrá descargar el archivo con todos sus contactos exportados."
       ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Eliminando contactos... Esto puede tardar unos minutos. Cuando el proceso se complete, puede cerrar esta ventana."
@@ -2967,7 +2967,7 @@
         "Firma del contacto no verificada"
       ],
       "Contact your organization’s administrator to resolve this": [
-        "Contacte con el administrador de su organización para resolver esto"
+        "Contacte con la administración de su organización para resolver esto"
       ],
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "La búsqueda de contenido no se puede habilitar en este navegador. Salga del modo de navegación privada o use otro navegador."
@@ -3017,7 +3017,7 @@
         "Error al subir los archivos adjuntos. El mensaje no se ha enviado."
       ],
       "Failed to encrypt attachment. Please try again.": [
-        "Falló al cifrar el adjunto. Intente nuevamente."
+        "Error al cifrar el adjunto. Intente nuevamente."
       ],
       "Filter with this name already exists": [
         "Ya existe un filtro con este nombre"
@@ -3157,7 +3157,7 @@
         "Algunos contactos no se pudieron eliminar"
       ],
       "Some groups could not be deleted": [
-        "Algunos grupos no pudieron ser eliminados"
+        "Algunos grupos no se pudieron eliminar"
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "Algunos de los nombres de las etiquetas no están disponibles. Personalice la importación para editar estos nombres."
@@ -3166,7 +3166,7 @@
         "Algunos nombres de etiquetas exceden el límite máximo de caracteres de ${ MAIL_APP_NAME }. Personalice la importación y edite estos nombres."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Algo salió mal, por favor ${ refresh } para continuar. Si aún ve este mensaje de error, por favor contacte a nuestro ${ supportTeam }."
+        "Algo salió mal, por favor ${ refresh } para continuar. Si aún ve este mensaje de error, contacte a nuestro ${ supportTeam }."
       ],
       "Sorry, Proton can't decrypt your message. Please check that all your keys are active.": [
         "Lo sentimos, Proton no puede descifrar su mensaje. Compruebe que todas sus claves están activas."
@@ -3223,8 +3223,8 @@
       "This message has already been sent. A new draft has been saved.": [
         "Este mensaje ya fue enviado. Se guardó un borrador nuevo."
       ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser": [
-        "Este mensaje puede contener la URL de un enlace que no puede abrirse correctamente en el navegador actual"
+      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
+        "Este mensaje puede contener la URL de un enlace que no puede abrirse correctamente en el navegador actual."
       ],
       "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
         "Demasiados filtros activos. Actualice a un plan de pago para activar más filtros."
@@ -3277,13 +3277,13 @@
     },
     "Error display when performing invalid move on message": {
       "Drafts cannot be moved to Inbox": [
-        "Los borradores no se pueden mover a la bandeja de entrada"
+        "Los borradores no se pueden mover al buzón"
       ],
       "Drafts cannot be moved to Spam": [
         "Los borradores no se pueden mover a spam"
       ],
       "Sent messages cannot be moved to Inbox": [
-        "Los mensajes enviados no se pueden mover a la bandeja de entrada"
+        "Los mensajes enviados no se pueden mover al buzón"
       ],
       "Sent messages cannot be moved to Spam": [
         "Los mensajes enviados no se pueden mover a spam"
@@ -4009,7 +4009,7 @@
         "Se enviará una solicitud para darse de baja de esta lista de correo y se procesará automáticamente."
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "Acceso restringido a la cuenta por falta de pago. Contacte con su administrador."
+        "Acceso restringido a la cuenta por falta de pago. Contacte con la administración."
       ],
       "Activation in progress": [
         "Activación en proceso"
@@ -4056,10 +4056,10 @@
         "y"
       ],
       "Are you sure you want to delete all messages in this folder?": [
-        "¿Está seguro que desea eliminar todos los mensajes en esta carpeta?"
+        "¿En verdad desea eliminar todos los mensajes en esta carpeta?"
       ],
       "Are you sure you want to delete all messages with this label?": [
-        "¿Está seguro que desea eliminar todos los mensajes con esta etiqueta?"
+        "¿En verdad desea eliminar todos los mensajes con esta etiqueta?"
       ],
       "Are you sure you want to discard your changes?": [
         "¿Está seguro que desea descartar los cambios?"
@@ -4068,25 +4068,25 @@
         "¿Está seguro que desea mover todos los mensajes de esta ubicación a la papelera?"
       ],
       "Are you sure you want to permanently delete ${ count } conversation?": [
-        "¿Está seguro que desea eliminar permanentemente ${ count } conversación?",
-        "¿Está seguro que desea eliminar permanentemente ${ count } conversaciones?"
+        "¿En verdad desea eliminar permanentemente ${ count } conversación?",
+        "¿En verdad desea eliminar permanentemente ${ count } conversaciones?"
       ],
       "Are you sure you want to permanently delete ${ count } draft?": [
-        "¿Está seguro que desea eliminar permanentemente ${ count } borrador?",
-        "¿Está seguro que desea eliminar permanentemente ${ count } borradores?"
+        "¿En verdad desea eliminar permanentemente ${ count } borrador?",
+        "¿En verdad desea eliminar permanentemente ${ count } borradores?"
       ],
       "Are you sure you want to permanently delete ${ count } message?": [
-        "¿Está seguro que desea eliminar permanentemente ${ count } mensaje?",
-        "¿Está seguro que desea eliminar permanentemente ${ count } mensajes?"
+        "¿En verdad desea eliminar permanentemente ${ count } mensaje?",
+        "¿En verdad desea eliminar permanentemente ${ count } mensajes?"
       ],
       "Are you sure you want to permanently delete this conversation?": [
-        "¿Está seguro que desea eliminar permanentemente esta conversación?"
+        "¿En verdad desea eliminar permanentemente esta conversación?"
       ],
       "Are you sure you want to permanently delete this draft?": [
-        "¿Está seguro que desea eliminar permanentemente este borrador?"
+        "¿En verdad desea eliminar permanentemente este borrador?"
       ],
       "Are you sure you want to permanently delete this message?": [
-        "¿Está seguro que desea eliminar permanentemente este mensaje?"
+        "¿En verdad desea eliminar permanentemente este mensaje?"
       ],
       "Attach public key": [
         "Adjuntar clave pública"
@@ -4199,8 +4199,8 @@
       "Do you want to re-sign the contact details?": [
         "¿Desea volver a firmar los datos del contacto?"
       ],
-      "Don't forget to share your password with the recipient": [
-        "Don't forget to share the password with the recipient"
+      "Don't forget to share the password with the recipient": [
+        "No olvide compartir la contraseña con el destinatario"
       ],
       "Download our mobile application from your favorite app store to communicate securely on-the-go.": [
         "Descargue nuestra aplicación móvil desde su tienda de aplicaciones favorita para comunicarse de forma segura en cualquier momento."
@@ -4312,7 +4312,7 @@
         "Libere algo de espacio o añada más espacio de almacenamiento."
       ],
       "Free up some space or contact your administrator.": [
-        "Libere algo de espacio o contacte con su administrador."
+        "Libere algo de espacio o contacte con la administración."
       ],
       "From": [
         "De"
@@ -4337,8 +4337,8 @@
         "hora",
         "horas"
       ],
-      "I'm sending this message to a non-ProtonMail user.": [
-        "I'm sending this message to a non-Proton Mail user."
+      "I'm sending this message to a non-Proton Mail user.": [
+        "Estoy enviando este mensaje a una persona fuera de Proton Mail."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Si tiene problemas para crear su cuenta, solicite una invitación y responderemos dentro de un día hábil."
@@ -4661,7 +4661,7 @@
         "Parece que está al corriente por ahora"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
-        "Seleccione el formato de correo electrónico que desea utilizar por defecto al enviar un correo a esta dirección."
+        "Seleccione el formato de correo que desea usar por defecto al enviar un correo a esta dirección."
       ],
       "Select what you want to import from Google.": [
         "Seleccione lo que desea importar de Google."
@@ -4877,7 +4877,7 @@
         "Para darse de baja de esta lista de correo, se enviará un correo desde ${ boldFrom } con los siguientes detalles definidos por el remitente del boletín:"
       ],
       "To unsubscribe from this mailing list, you will be taken to the following URL where instructions will be provided by the sender of the newsletter:": [
-        "Para darse de baja de esta lista de correo, será llevado a la siguiente URL donde el remitente del boletín le dará las instrucciones:"
+        "Para darse de baja de esta lista de correo, se le llevará a la siguiente URL donde el remitente del boletín le dará las instrucciones:"
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Para usar Verificación de Dirección, debe confiar una o más claves públicas disponibles, incluyendo la clave que desea usar para enviar. Esto impedirá que las claves de cifrado sean falsificadas."
@@ -5986,7 +5986,7 @@
         "Papelera"
       ],
       "Upgrade": [
-        "Mejorar"
+        "Actualizar"
       ],
       "Upgrade account": [
         "Mejorar cuenta"
@@ -6632,8 +6632,8 @@
       "Cannot send to organizer address: ${ errorMessage }": [
         "No se puede enviar a la dirección del organizador: ${ errorMessage }"
       ],
-      "Re-encrypting invitation failed. Please try again": [
-        "Re-encrypting invitation failed. Please try again."
+      "Re-encrypting invitation failed. Please try again.": [
+        "Error al volver a cifrar la invitación. Intente de nuevo."
       ]
     },
     "Search - no results": {
@@ -7197,7 +7197,7 @@
         "Direcciones"
       ],
       "Are you sure you want to close?": [
-        "¿Está seguro de que desea cerrar?"
+        "¿En verdad desea cerrar?"
       ],
       "Attachments": [
         "Archivos adjuntos"
@@ -7496,13 +7496,13 @@
         "Mensaje anterior"
       ],
       "Re-sign all contacts": [
-        "Refirmando todos los contactos"
+        "Volver a firmar todos los contactos"
       ],
       "Re-sign contact": [
         "Re-firmar contacto"
       ],
       "Re-signing contacts": [
-        "Refirmando contactos"
+        "Volviendo a firmar los contactos"
       ],
       "Recipient missing": [
         "Falta el destinatario"
@@ -7713,18 +7713,18 @@
     },
     "Warning": {
       "Are you sure you want to permanently delete ${ count } contact group?": [
-        "¿Está seguro que desea eliminar permanentemente ${ count } grupo de contactos?",
-        "¿Está seguro que desea eliminar permanentemente ${ count } grupos de contactos?"
+        "¿En verdad desea eliminar permanentemente ${ count } grupo de contactos?",
+        "¿En verdad desea eliminar permanentemente ${ count } grupos de contactos?"
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
-        "¿Está seguro que desea eliminar permanentemente ${ count } contacto?",
-        "¿Está seguro que desea eliminar permanentemente ${ count } contactos?"
+        "¿En verdad desea eliminar permanentemente ${ count } contacto?",
+        "¿En verdad desea eliminar permanentemente ${ count } contactos?"
       ],
       "Are you sure you want to permanently delete this contact group?": [
-        "¿Está seguro que desea eliminar permanentemente este grupo de contactos?"
+        "¿En verdad desea eliminar permanentemente este grupo de contactos?"
       ],
       "Are you sure you want to permanently delete this contact?": [
-        "¿Seguro que desea eliminar permanentemente este contacto?"
+        "¿En verdad desea eliminar permanentemente este contacto?"
       ],
       "Contacts could not be merged": [
         "No se pudieron combinar los contactos"
