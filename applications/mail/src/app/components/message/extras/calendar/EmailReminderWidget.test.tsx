@@ -1,33 +1,34 @@
-import { FeaturesProvider, useAddresses } from '@proton/components';
-import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
+
+import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { mocked } from 'jest-mock';
 
-import createCache from '@proton/shared/lib/helpers/cache';
+import { FeaturesProvider, useAddresses } from '@proton/components';
+import AuthenticationProvider from '@proton/components/containers/authentication/Provider';
 import { CacheProvider } from '@proton/components/containers/cache';
 import useApi from '@proton/components/hooks/useApi';
 import useGetCalendarEventRaw from '@proton/components/hooks/useGetCalendarEventRaw';
+import useNotifications from '@proton/components/hooks/useNotifications';
 import { CALENDAR_APP_NAME } from '@proton/shared/lib/calendar/constants';
+import { addDays } from '@proton/shared/lib/date-fns-utc';
+import { toUTCDate } from '@proton/shared/lib/date/timezone';
+import createCache from '@proton/shared/lib/helpers/cache';
+import { Nullable } from '@proton/shared/lib/interfaces';
+import { VERIFICATION_STATUS } from '@proton/srp/lib/constants';
 import {
+    addressBuilder,
+    calendarBuilder,
     calendarEventBuilder,
-    veventBuilder,
     messageBuilder,
     mockApi,
     mockNotifications,
-    server,
-    calendarBuilder,
     rest,
-    addressBuilder,
+    server,
+    veventBuilder,
 } from '@proton/testing';
-import useNotifications from '@proton/components/hooks/useNotifications';
-import AuthenticationProvider from '@proton/components/containers/authentication/Provider';
-import { VERIFICATION_STATUS } from '@proton/srp/lib/constants';
 
-import { Nullable } from '@proton/shared/lib/interfaces';
-import { addDays } from '@proton/shared/lib/date-fns-utc';
-import { toUTCDate } from '@proton/shared/lib/date/timezone';
-import EmailReminderWidget from './EmailReminderWidget';
 import { authentication, tick } from '../../../../helpers/test/render';
+import EmailReminderWidget from './EmailReminderWidget';
 
 jest.mock('@proton/components/hooks/useNotifications');
 jest.mock('@proton/components/hooks/useModals');
@@ -301,18 +302,19 @@ describe('EmailReminderWidget', () => {
                 Promise.resolve({
                     verificationStatus: VERIFICATION_STATUS.SIGNED_AND_VALID,
                     selfAddressData: {},
-                    veventComponent: veventBuilder({
-                        overrides: {
-                            rrule: {
-                                value: {
-                                    until: {
-                                        ...veventBuilder().dtstart.value,
-                                        day: addDays(toUTCDate(veventBuilder().dtstart.value), -1).getDate(),
-                                    },
+                    veventComponent: {
+                        ...veventBuilder(),
+                        // override manually as overrides does not work for undefined properties in the builder
+                        rrule: {
+                            value: {
+                                freq: 'DAILY',
+                                until: {
+                                    ...veventBuilder().dtstart.value,
+                                    day: addDays(toUTCDate(veventBuilder().dtstart.value), -1).getDate(),
                                 },
                             },
                         },
-                    }),
+                    },
                     encryptionData: {
                         encryptingAddressID: undefined,
                         sharedSessionKey: undefined,
@@ -332,18 +334,16 @@ describe('EmailReminderWidget', () => {
                 Promise.resolve({
                     verificationStatus: VERIFICATION_STATUS.SIGNED_AND_VALID,
                     selfAddressData: {},
-                    veventComponent: veventBuilder({
-                        overrides: {
-                            rrule: {
-                                value: {
-                                    freq: 'DAILY',
-                                    count: {
-                                        value: 1,
-                                    },
-                                },
+                    veventComponent: {
+                        ...veventBuilder(),
+                        // override manually as overrides does not work for undefined properties in the builder
+                        rrule: {
+                            value: {
+                                freq: 'DAILY',
+                                count: 1,
                             },
                         },
-                    }),
+                    },
                     encryptionData: {
                         encryptingAddressID: undefined,
                         sharedSessionKey: undefined,
