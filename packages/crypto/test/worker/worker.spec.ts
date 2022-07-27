@@ -1,40 +1,39 @@
-import { expect, use as chaiUse } from 'chai';
+import { use as chaiUse, expect } from 'chai';
 import chaiAsPromised from 'chai-as-promised';
-
 import {
-    readPrivateKey as openpgp_readPrivateKey,
+    CompressedDataPacket,
+    enums,
     decryptKey as openpgp_decryptKey,
     encryptKey as openpgp_encryptKey,
     readKey as openpgp_readKey,
-    revokeKey as openpgp_revokeKey,
     readMessage as openpgp_readMessage,
-    enums,
-    CompressedDataPacket,
+    readPrivateKey as openpgp_readPrivateKey,
+    revokeKey as openpgp_revokeKey,
 } from 'pmcrypto-v7/lib/openpgp';
-import { generateKey, SessionKey, reformatKey, getSHA256Fingerprints } from 'pmcrypto-v7/lib/pmcrypto';
+import { SessionKey, generateKey, getSHA256Fingerprints, reformatKey } from 'pmcrypto-v7/lib/pmcrypto';
 import {
     testMessageEncryptedLegacy,
-    testPrivateKeyLegacy,
-    testMessageResult,
     testMessageEncryptedStandard,
+    testMessageResult,
+    testPrivateKeyLegacy,
 } from 'pmcrypto-v7/test/message/decryptMessageLegacy.data';
 import {
+    key as mimeKey,
+    multipartMessageWithAttachment,
     multipartSignedMessage,
     multipartSignedMessageBody,
-    multipartMessageWithAttachment,
-    key as mimeKey,
 } from 'pmcrypto-v7/test/message/processMIME.data';
-import { rsa512BitsKey, ecc25519Key, eddsaElGamalSubkey } from './keys.data';
 
-import { CryptoWorkerPool as CryptoWorker } from '../../lib/worker/workerPool';
 import { VERIFICATION_STATUS } from '../../lib';
 import {
-    hexStringToArray,
-    utf8ArrayToString,
-    stringToUtf8Array,
-    binaryStringToArray,
     arrayToHexString,
+    binaryStringToArray,
+    hexStringToArray,
+    stringToUtf8Array,
+    utf8ArrayToString,
 } from '../../lib/utils';
+import { CryptoWorkerPool as CryptoWorker } from '../../lib/worker/workerPool';
+import { ecc25519Key, eddsaElGamalSubkey, rsa512BitsKey } from './keys.data';
 
 chaiUse(chaiAsPromised);
 
@@ -205,6 +204,7 @@ tBiO7HKQxoGj3FnUTJnI52Y0pIg=
         const { message: encryptedArmoredMessage } = await CryptoWorker.encryptMessage({
             textData: 'hello world',
             encryptionKeys: privateKeyRef,
+            signingKeys: undefined, // redundant; test that the option can still be serialized correctly
         });
 
         const textDecryptionResult = await CryptoWorker.decryptMessage({
