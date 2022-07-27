@@ -11,7 +11,7 @@ const useExperiment = (code: ExperimentCode) => {
     }, []);
 
     return {
-        experiment: experiments[code] || DEFAULT_EXPERIMENT_VALUE,
+        value: experiments[code] || DEFAULT_EXPERIMENT_VALUE,
         loading: !!loading,
     };
 };
