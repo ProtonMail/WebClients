@@ -3,7 +3,7 @@ import { getTitle } from '../../helpers/title';
 
 <Meta title={getTitle(__filename)} />
 
-# MISC: Lists/Click, Tap zone/Print/Dark mode
+# MISC: Lists/Click, Tap zone/Print/light mode
 
 ## Lists
 
@@ -28,7 +28,7 @@ import { getTitle } from '../../helpers/title';
   <div class="w49">
 <Source
   language='html'
-  dark
+  light
   format
   code={`
 <ul className="unstyled"> … </ul>
@@ -54,7 +54,7 @@ import { getTitle } from '../../helpers/title';
   <div class="w49">
 <Source
   language='html'
-  dark
+  light
   format
   code={`
 <ul className="list-2columns on-tablet-list-1column">
@@ -77,7 +77,7 @@ import { getTitle } from '../../helpers/title';
   <div class="w49">
 <Source
   language='html'
-  dark
+  light
   format
   code={`
 <div className="relative">
@@ -106,7 +106,7 @@ This version below make an element with `className="opacity-on-hover"` appearing
   <div class="w49">
 <Source
   language='html'
-  dark
+  light
   format
   code={`
 <div class="opacity-on-hover-container">
@@ -129,7 +129,7 @@ This version below make an element with `className="opacity-on-hover"` appearing
   <div class="w49">
 <Source
   language='html'
-  dark
+  light
   format
   code={`
 <span className="reset4print">Lorem ipsum dolor</span>
@@ -148,7 +148,7 @@ This version below make an element with `className="opacity-on-hover"` appearing
   <div class="w49">
 <Source
   language='html'
-  dark
+  light
   format
   code={`
 <span className="no-print">Lorem ipsum dolor</span>
@@ -167,7 +167,7 @@ This version below make an element with `className="opacity-on-hover"` appearing
   <div class="w49">
 <Source
   language='html'
-  dark
+  light
   format
   code={`
 <span className="on-print">Lorem ipsum dolor</span>
@@ -177,8 +177,8 @@ This version below make an element with `className="opacity-on-hover"` appearing
   </div>
 </div>
 
-## Dark Mode
+## light Mode
 
-For React applications, a <code>isDarkMode</code> (<code>appConfigBody-darkmode</code> for Angular) class is applied to the <code>body</code> when dark mode is triggered.
+For React applications, a <code>islightMode</code> (<code>appConfigBody-lightmode</code> for Angular) class is applied to the <code>body</code> when light mode is triggered.
 
-Then you have two helpers: <code>hide-on-darkmode</code> will hide something when dark mode is triggered, and <code>display-on-darkmode</code> (which is hidden by default) will be displayed when dark mode is triggered.
+Then you have two helpers: <code>hide-on-lightmode</code> will hide something when light mode is triggered, and <code>display-on-lightmode</code> (which is hidden by default) will be displayed when light mode is triggered.
