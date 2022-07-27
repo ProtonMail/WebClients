@@ -1,6 +1,8 @@
+import { Nullable } from '@proton/shared/lib/interfaces';
+
 import { ICAL_ATTENDEE_ROLE, ICAL_ATTENDEE_STATUS } from '../../calendar/constants';
 import { DecryptedKey } from '../Key';
-import { VisualCalendar, CalendarSettings } from './Calendar';
+import { CalendarSettings, VisualCalendar } from './Calendar';
 import { DecryptedCalendarKey } from './CalendarKey';
 import { CalendarEvent, CalendarEventWithMetadata } from './Event';
 import { VcalAttendeeProperty, VcalOrganizerProperty, VcalVeventComponent } from './VcalModel';
@@ -57,7 +59,7 @@ export interface Participant {
     addressID?: string;
     attendeeIndex?: number;
     token?: string;
-    updateTime?: number;
+    updateTime?: Nullable<number>;
     attendeeID?: string;
 }
 
