@@ -1944,15 +1944,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jackfranklin/test-data-bot@npm:^1.4.0":
-  version: 1.4.0
-  resolution: "@jackfranklin/test-data-bot@npm:1.4.0"
-  dependencies:
-    "@types/faker": 5.5.9
-    "@types/lodash": 4.14.178
-    faker: 5.5.3
-    lodash: 4.17.21
-  checksum: f7f42ab00cb6f324a64ee1a21559d3fa5a1cb93cb5de6bc64062103b84dc5c16040af8fc1c1065b7c318e939571c710928caa4812219d560e26b238c3b48e75b
+"@jackfranklin/test-data-bot@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "@jackfranklin/test-data-bot@npm:2.0.0"
+  checksum: 28438d8260876d9a63b47e9d117c60a1aa2e0a4cd6b6bbe6749004af6f75896ec7454f33b17868cf39b3b124db34a4ded01d658bacb3cbf57028f6ac8e935f32
   languageName: node
   linkType: hard
 
@@ -4082,11 +4077,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@proton/testing@workspace:packages/testing"
   dependencies:
-    "@jackfranklin/test-data-bot": ^1.4.0
+    "@jackfranklin/test-data-bot": ^2.0.0
     "@proton/shared": "workspace:packages/shared"
-    "@types/faker": ^5.5.9
     cross-fetch: ^3.1.5
-    faker: 5.5.3
     msw: ^0.44.2
   languageName: unknown
   linkType: soft
@@ -6171,13 +6164,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/faker@npm:5.5.9, @types/faker@npm:^5.5.9":
-  version: 5.5.9
-  resolution: "@types/faker@npm:5.5.9"
-  checksum: c2cbd082abe29047c89cf29b86257e582d2a177a9d1ed3abf99aa1cc025d5e8a3d201dfaddf8441bfcc57ed43e4da80e666951e1c23a5b759ac441a5855b5c36
-  languageName: node
-  linkType: hard
-
 "@types/favicons@npm:5.5.0":
   version: 5.5.0
   resolution: "@types/favicons@npm:5.5.0"
@@ -6384,13 +6370,6 @@ __metadata:
   version: 3.0.1
   resolution: "@types/linkify-it@npm:3.0.1"
   checksum: 01c74a1391a7e09b51ca1a745a4b5c0522594077c464089b825943faa4f181e2753d31b0e349fdb57f7e034985a1f874efad75f9a0006d489125af7b0f4509a8
-  languageName: node
-  linkType: hard
-
-"@types/lodash@npm:4.14.178":
-  version: 4.14.178
-  resolution: "@types/lodash@npm:4.14.178"
-  checksum: a69a04a60bfc5257c3130a554b4efa0c383f0141b7b3db8ab7cf07ad2a46ea085fce66d0242da41da7e5647b133d5dfb2c15add9cbed8d7fef955e4a1e5b3128
   languageName: node
   linkType: hard
 
@@ -14733,13 +14712,6 @@ __metadata:
   version: 1.4.0
   resolution: "extsprintf@npm:1.4.0"
   checksum: 184dc8a413eb4b1ff16bdce797340e7ded4d28511d56a1c9afa5a95bcff6ace154063823eaf0206dbbb0d14059d74f382a15c34b7c0636fa74a7e681295eb67e
-  languageName: node
-  linkType: hard
-
-"faker@npm:5.5.3":
-  version: 5.5.3
-  resolution: "faker@npm:5.5.3"
-  checksum: 684fd64c8d3897e54248f95b4f6319f75d97691b8500cd13adf4af2c28f9204f766c1d1aaa6b41338f0beaaa87256c3132f8708a1a8f189d122b92f6b98081c3
   languageName: node
   linkType: hard
 
