@@ -1,17 +1,18 @@
-import React, { useRef, useCallback } from 'react';
+import React, { useCallback, useRef } from 'react';
+
 import { c } from 'ttag';
 
-import { Href, Searchbox, Spotlight, usePopperAnchor } from '@proton/components';
+import { Button, Href, Icon, InputTwo, Spotlight, usePopperAnchor } from '@proton/components';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import esSpotlightIcon from '@proton/styles/assets/img/illustrations/spotlight-stars.svg';
 
-import { useSearchControl } from '../../../store';
 import useNavigate from '../../../hooks/drive/useNavigate';
+import { useSearchControl } from '../../../store';
+import { useSearchResults } from '../../../store/_search';
+import { reportError } from '../../../store/_utils';
+import { useSpotlight } from '../../useSpotlight';
 import { SearchDropdown } from './SearchDropdown';
 import { useSearchParams } from './useSearchParams';
-import { useSpotlight } from '../../useSpotlight';
-import { reportError } from '../../../store/_utils';
-import { useSearchResults } from '../../../store/_search';
 
 import './SearchField.scss';
 
@@ -34,6 +35,10 @@ export const SearchField = () => {
         }
     }, []);
 
+    const handleFieldFocus = () => {
+        return prepareSearchData().catch(reportError);
+    };
+
     const handleInputClick = () => {
         if (dbExists && !isBuilding) {
             return;
@@ -46,10 +51,8 @@ export const SearchField = () => {
             return;
         }
         indexingDropdownControl.open();
-    };
 
-    const handleFieldFocus = () => {
-        return prepareSearchData().catch(reportError);
+        return handleFieldFocus();
     };
 
     const handleClosedDropdown = (e?: Event) => {
@@ -90,19 +93,59 @@ export const SearchField = () => {
             >
                 <>
                     <div onClick={handleInputClick}>
-                        <Searchbox
-                            delay={0}
-                            className="w100"
-                            placeholder={placeholderText}
+                        <InputTwo
                             value={searchParams}
-                            onSearch={handleSearch}
-                            onChange={setSearchParams}
-                            // this handler had to be passed with `onFocus` prop, as before it used to trigger
+                            placeholder={placeholderText}
+                            // this handler has to be passed with `onFocus` prop, as before it used to trigger
                             // caching twice in certain cases (the focus stayed on the searchbar after
                             // indexing, the prepareSearchData is not called until the user hits enter
                             // to do the search.)
                             onFocus={handleFieldFocus}
+                            onChange={(e) => setSearchParams(e.target.value)}
+                            onKeyDown={(e) => {
+                                if (e.key === 'Enter') {
+                                    handleSearch(searchParams);
+                                }
+                                if (e.key === 'Escape') {
+                                    setSearchParams('');
+                                    e.currentTarget.blur();
+                                }
+                            }}
                             disabled={isDisabled}
+                            prefix={
+                                <Button
+                                    icon
+                                    disabled={!searchParams || isDisabled}
+                                    shape="ghost"
+                                    color="weak"
+                                    size="small"
+                                    className="rounded-sm"
+                                    title={c('Action').t`Search`}
+                                    onClick={() => {
+                                        handleSearch(searchParams);
+                                    }}
+                                >
+                                    <Icon name="magnifier" alt={c('Action').t`Search`} />
+                                </Button>
+                            }
+                            suffix={
+                                searchParams ? (
+                                    <Button
+                                        type="button"
+                                        shape="ghost"
+                                        color="weak"
+                                        size="small"
+                                        className="rounded-sm"
+                                        title={c('Action').t`Clear`}
+                                        onClick={() => {
+                                            setSearchParams('');
+                                            handleSearch('');
+                                        }}
+                                    >
+                                        {c('Action').t`Clear`}
+                                    </Button>
+                                ) : null
+                            }
                         />
                     </div>
                     <SearchDropdown

@@ -1,13 +1,13 @@
 import { ReadableStream } from 'web-streams-polyfill';
 
-import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { MEMORY_DOWNLOAD_LIMIT } from '@proton/shared/lib/drive/constants';
+import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 
-import { TransferMeta, TransferCancel } from '../../../components/TransferManager/transfer';
+import { TransferCancel, TransferMeta } from '../../../components/TransferManager/transfer';
 import { streamToBuffer } from '../../../utils/stream';
 import { isTransferCancelError } from '../../../utils/transfer';
 import { isValidationError } from '../../_utils';
-import { openDownloadStream, initDownloadSW } from './download';
+import { initDownloadSW, openDownloadStream } from './download';
 
 // FileSaver provides functionality to start download to file. This class does
 // not deal with API or anything else. Files which fit the memory (see
