@@ -99,7 +99,6 @@ export const addressKeyBuilder = build<AddressKey>('AddressKey', {
         RecoverySecretSignature: null,
         Active: 1,
         Version: 3,
-        Activation: null,
     },
 });
 
@@ -114,9 +113,7 @@ export const addressBuilder = build<Address>('Address', {
         SignedKeyList: {
             MinEpochID: null,
             MaxEpochID: null,
-            ExpectedMinEpochID: 2,
             Data: '[{"Primary":1,"Flags":3,"Fingerprint":"dbae8b8bb94db1b8cce9d7d2d683831eeedb3e32","SHA256Fingerprints":["41964058156a2d90c1f0e65a38f5752fb2921b9666ea3b17f781787b6ef55f8f","d82271d5deec94e65862ca759f3c24a263512f00bf67864cac71c8b14f0dc744"]}]',
-            ObsolescenceToken: null,
             Signature:
                 '-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v4.10.10\r\nComment: https://openpgpjs.org\r\n\r\nwnUEARYKAAYFAmGWL38AIQkQ1oODHu7bPjIWIQTbrouLuU2xuMzp19LWg4Me\r\n7ts+MmKdAQDGpH8FevWQE32waPgqx+1EqjGmEdywZdZkilUEwb0VswEAgdrS\r\noustAwFTu4E5PubZz7H7tN0SqM9p5GiKSYJSCQg=\r\n=gK8A\r\n-----END PGP SIGNATURE-----\r\n',
         },
@@ -326,7 +323,6 @@ export const veventBuilder = build<VcalVeventComponent>('vevent', {
                 },
             },
         ],
-        rrule: {},
     },
 });
 
