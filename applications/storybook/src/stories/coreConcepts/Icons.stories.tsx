@@ -1,4 +1,5 @@
-import { useState, useMemo } from 'react';
+import { useMemo, useState } from 'react';
+
 import { Button, ButtonGroup, Icon, IconName, InputTwo, Mark } from '@proton/components';
 import iconSvg from '@proton/styles/assets/img/icons/sprite-icons.svg';
 
@@ -18,7 +19,7 @@ type IconProps = React.ComponentProps<typeof Icon>;
 
 const sizes: Required<IconProps>['size'][] = [16, 20, 28, 40, 60];
 
-export const PrimaryIcons = () => {
+export const Icons = () => {
     const [selectedSize, setSelectedSize] = useState<Required<IconProps>['size']>(40);
     const primaryIconNames: IconName[] = iconSvg.match(/id="ic-([^"]+)/g).map((x: string) => x.replace('id="ic-', ''));
     const [search, setSearch] = useState('');
