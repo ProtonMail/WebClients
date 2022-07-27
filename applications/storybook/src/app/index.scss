@@ -110,3 +110,79 @@ table {
 		@extend .link;
 	}
 }
+
+// Theme support
+.sbdocs {
+	background: var(--background-norm) !important;
+	color: var(--text-norm) !important;
+}
+
+.sbdocs-title {
+	color: var(--text-norm) !important;
+}
+
+.sbdocs-preview {
+	border-color: var(--border-weak) !important;
+}
+
+.docblock-code-toggle {
+	background: var(--background-strong) !important;
+	color: var(--text-norm) !important;
+	border-color: var(--border-weak) !important;
+}
+
+.docs-story > div:last-child {
+	background: none !important;
+}
+
+.sbdocs-preview > .os-host {
+	background: var(--background-strong) !important;
+	border: none !important;
+	box-shadow: none !important;
+
+	button,
+	a {
+		color: var(--text-norm) !important;
+	}
+}
+
+.docblock-source {
+	color: black !important;
+	background: white !important;
+	border-color: var(--border-weak) !important;
+
+	.prismjs {
+		background: white !important;
+	}
+}
+
+.docblock-argstable-head {
+	background: var(--background-strong) !important;
+
+	th {
+		color: var(--text-norm) !important;
+	}
+}
+
+.docblock-argstable-body {
+	border: none !important;
+
+	tr {
+		border-color: var(--border-weak) !important;
+	}
+
+	td {
+		background: var(--background-weak) !important;
+		color: var(--text-weak) !important;
+	}
+}
+
+.docblock-emptyblock {
+	color: var(--text-weak) !important;
+	border-color: var(--border-weak) !important;
+}
+
+// props content when multiple tabs are shown
+#panel-tab-content {
+	background: none !important;
+}
