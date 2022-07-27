@@ -1,4 +1,5 @@
 import type { TransferHandler } from 'comlink';
+
 import type { KeyReference } from './api.models';
 
 // return interface with same non-function fields as T, and with function fields type converted to their return type
@@ -75,7 +76,7 @@ const KeyOptionsSerializer = {
     serialize: (options: any) => {
         const serializedOptions = { ...options };
         KeyOptionsSerializer._optionNames.forEach((name) => {
-            if (name in options) {
+            if (options[name]) {
                 serializedOptions[name] = Array.isArray(options[name])
                     ? options[name].map(KeyReferenceSerializer.serialize)
                     : KeyReferenceSerializer.serialize(options[name]);
@@ -87,7 +88,7 @@ const KeyOptionsSerializer = {
     deserialize: (serializedOptions: any) => {
         const options = { ...serializedOptions };
         KeyOptionsSerializer._optionNames.forEach((name) => {
-            if (name in serializedOptions) {
+            if (serializedOptions[name]) {
                 options[name] = Array.isArray(options[name])
                     ? serializedOptions[name].map(KeyReferenceSerializer.deserialize)
                     : KeyReferenceSerializer.deserialize(serializedOptions[name]);
@@ -128,7 +129,7 @@ const ResultTranferer = {
     },
     getTransferables: (result: any) => {
         const transferables = ResultTranferer._binaryFieldNames
-            .filter((name) => name in result && result[name] instanceof Uint8Array)
+            .filter((name) => result[name] instanceof Uint8Array)
             .map((name) => result[name].buffer);
         // 'signatures' are always in binary form
         return transferables.concat(result.signatures ? result.signatures.map((sig: Uint8Array) => sig.buffer) : []);
