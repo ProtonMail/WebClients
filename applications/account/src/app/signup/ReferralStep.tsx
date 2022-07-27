@@ -1,22 +1,16 @@
 import { useState } from 'react';
+
 import { c } from 'ttag';
-import {
-    Button,
-    ExperimentCode,
-    Loader,
-    ReferralFeaturesList,
-    ReferralHowItWorks,
-    useExperiment,
-    useLoading,
-} from '@proton/components';
-import { APPS, PLANS } from '@proton/shared/lib/constants';
+
+import { Button, Loader, ReferralFeaturesList, ReferralHowItWorks, useLoading } from '@proton/components';
 import { getAppName } from '@proton/shared/lib/apps/helper';
+import { APPS, PLANS } from '@proton/shared/lib/constants';
 import { PlanIDs } from '@proton/shared/lib/interfaces';
 
-import Header from '../public/Header';
 import Content from '../public/Content';
-import Text from '../public/Text';
+import Header from '../public/Header';
 import Main from '../public/Main';
+import Text from '../public/Text';
 
 const MAIL_APP_NAME = getAppName(APPS.PROTONMAIL);
 
@@ -25,18 +19,18 @@ type PlanType = 'free' | 'trial';
 interface Props {
     onPlan: (planIDs: PlanIDs) => Promise<void>;
     onBack?: () => void;
+    experiment: { loading: boolean; value: string };
 }
 
-const ReferralStep = ({ onPlan, onBack }: Props) => {
+const ReferralStep = ({ experiment, onPlan, onBack }: Props) => {
     const [type, setType] = useState<PlanType | undefined>(undefined);
     const [loading, withLoading] = useLoading();
-    const { experiment, loading: loadingExperiment } = useExperiment(ExperimentCode.ReferralProgramSignup);
 
-    if (loadingExperiment) {
+    if (experiment.loading) {
         return <Loader />;
     }
 
-    if (experiment === 'B') {
+    if (experiment.value === 'B') {
         return (
             <Main>
                 <Header title={c('Title').t`How your free trial works`} onBack={onBack} />
