@@ -1824,8 +1824,8 @@
       ]
     },
     "Description": {
-      "Decrypting contacts... This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
-        "Descifrando contactos... Esto puede tardar unos minutos. Cuando el proceso se complete, podrá descargar el archivo con todos sus contactos exportados."
+      "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
+        "Descifrando contactos… esto puede tardar unos minutos. Cuando el proceso se complete, podrá descargar el archivo con todos sus contactos exportados."
       ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Eliminando contactos... Esto puede tardar unos minutos. Cuando el proceso se complete, puede cerrar esta ventana."
@@ -1923,7 +1923,7 @@
         "${ eventTitle } ha sido actualizado.\n${ eventDetailsText }"
       ],
       "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
-        "Está invitado a ${ eventTitle }\n${ eventDetailsText }"
+        "Tiene una invitación a ${ eventTitle }\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -2143,7 +2143,7 @@
       ],
       "One of the groups has no contacts: ${ noContactGroupList }": [
         "Uno de los grupos no tiene contactos: ${ noContactGroupList }",
-        "Uno de los grupos no tiene contactos: ${ noContactGroupList }"
+        "Uno de los grupos no tiene contactos: ${ noContactGroupList } "
       ],
       "Passwords do not match": [
         "Las contraseñas no coinciden"
@@ -2192,7 +2192,7 @@
         "Algunos nombres de etiquetas exceden el límite máximo de caracteres de ${ MAIL_APP_NAME }. Personalice la importación y edite estos nombres."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Algo salió mal, por favor ${ refresh } para continuar. Si aún ve este mensaje de error, por favor contacte a nuestro ${ supportTeam }."
+        "Algo salió mal, por favor ${ refresh } para continuar. Si aún ve este mensaje de error, contacte a nuestro ${ supportTeam }."
       ],
       "Start time must be before end time": [
         "La hora inicial debe ser antes de la hora final"
@@ -2230,8 +2230,8 @@
       "This label name is not available. Please choose a different name.": [
         "Este nombre de etiqueta no está disponible. Elija un nombre diferente."
       ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser": [
-        "This message may contain some link's URL that cannot be properly opened by your current browser."
+      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
+        "Este mensaje puede contener la URL de un enlace que no puede abrirse correctamente en el navegador actual."
       ],
       "Trusted keys are not valid for sending": [
         "Las claves confiadas no son válidas para enviar"
@@ -2300,7 +2300,7 @@
         "Ocurrió un error al cargar el archivo ${ formattedFilename }. El tamaño máximo del archivo es ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
       "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
-        "Ocurrió un error al subir el archivo ${ formattedFilename }. No se seleccionó un archivo .csv o .vcf"
+        "Ocurrió un error al cargar el archivo ${ formattedFilename }. No se seleccionó un archivo .csv o .vcf"
       ],
       "An error occurred uploading your file. No file has been selected.": [
         "Ocurrió un error al cargar el archivo. Ningún archivo fue seleccionado."
@@ -2848,7 +2848,7 @@
         "Se enviará un correo electrónico de cancelación a los participantes del evento. ¿Desea eliminar este evento?"
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "Acceso restringido a la cuenta por falta de pago. Contacte con su administrador."
+        "Acceso restringido a la cuenta por falta de pago. Contacte con su administración."
       ],
       "Added and removed participants will be notified about all the events in this series.": [
         "Los participantes añadidos y eliminados serán notificados de todos los eventos de esta serie."
@@ -2938,7 +2938,7 @@
         "¿Descartar los cambios?"
       ],
       "Drop the file here to upload": [
-        "Arrastre el archivo aquí para subir"
+        "Arrastre el archivo aquí para cargar"
       ],
       "Duplicate key updated": [
         "Clave duplicada actualizada"
@@ -2959,7 +2959,7 @@
         "Libere algo de espacio o añada más espacio de almacenamiento."
       ],
       "Free up some space or contact your administrator.": [
-        "Libere algo de espacio o contacte con su administrador."
+        "Libere algo de espacio o contacte con su administración."
       ],
       "Frequency modifications will be lost.": [
         "Se perderán las modificaciones de frecuencia."
@@ -3108,7 +3108,7 @@
         "Seleccione qué dirección o direcciones de correo añadir a ${ groupName }."
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
-        "Espere mientras buscamos contactos que puedan ser refirmados con la clave de cifrado principal."
+        "Espere mientras buscamos contactos que puedan volver a ser firmados con la clave de cifrado principal."
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Espere mientras se buscan contactos que contengan datos cifrados con la clave inactiva."
@@ -3730,7 +3730,7 @@
         "Calendarios suscritos"
       ],
       "Upgrade": [
-        "Mejorar"
+        "Actualizar"
       ],
       "Upgrade account": [
         "Mejorar cuenta"
@@ -4915,10 +4915,10 @@
         "Números de teléfono"
       ],
       "Re-sign all contacts": [
-        "Refirmando todos los contactos"
+        "Volver a firmar todos los contactos"
       ],
       "Re-signing contacts": [
-        "Refirmando contactos"
+        "Volviendo a firmar los contactos"
       ],
       "Reactivate calendar keys": [
         "Reactivar claves del calendario"
@@ -5110,18 +5110,18 @@
     },
     "Warning": {
       "Are you sure you want to permanently delete ${ count } contact group?": [
-        "¿Está seguro que desea eliminar permanentemente ${ count } grupo de contactos?",
-        "¿Está seguro que desea eliminar permanentemente ${ count } grupos de contactos?"
+        "¿En verdad desea eliminar permanentemente ${ count } grupo de contactos?",
+        "¿En verdad desea eliminar permanentemente ${ count } grupos de contactos?"
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
-        "¿Está seguro que desea eliminar permanentemente ${ count } contacto?",
-        "¿Está seguro que desea eliminar permanentemente ${ count } contactos?"
+        "¿En verdad desea eliminar permanentemente ${ count } contacto?",
+        "¿En verdad desea eliminar permanentemente ${ count } contactos?"
       ],
       "Are you sure you want to permanently delete this contact group?": [
-        "¿Está seguro que desea eliminar permanentemente este grupo de contactos?"
+        "¿En verdad desea eliminar permanentemente este grupo de contactos?"
       ],
       "Are you sure you want to permanently delete this contact?": [
-        "¿Seguro que desea eliminar permanentemente este contacto?"
+        "¿En verdad desea eliminar permanentemente este contacto?"
       ],
       "Contacts could not be merged": [
         "No se pudieron combinar los contactos"

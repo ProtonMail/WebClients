@@ -1309,7 +1309,7 @@
       ]
     },
     "color": {
-      "Apple": [
+      "apple": [
         "pomme"
       ],
       "azureish white": [
@@ -2477,8 +2477,8 @@
       ]
     },
     "Description": {
-      "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }..": [
-        "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }."
+      "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
+        "Toutes nos félicitations ! Vous avez gagné le maximum de ${ rewardsLimit } mois gratuits de ${ plusPlanName }."
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Chiffrement et importation des contacts… Ceci peut prendre quelques minutes. Une fois le processus terminé, vous pourrez fermer cette boîte de dialogue."
@@ -2959,8 +2959,8 @@
       "This label name is not available. Please choose a different name.": [
         "Ce nom de label n'est pas disponible. Veuillez en choisir un autre."
       ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser": [
-        "Ce message peut contenir des liens URL que votre navigateur actuel ne peut pas ouvrir correctement."
+      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
+        "Il est possible que ce message contienne des liens URL qui pourraient ne pas être ouverts correctement par votre navigateur actuel."
       ],
       "Unknown error": [
         "Erreur inconnue"
@@ -4061,17 +4061,17 @@
         "${ emailAddress } n'est pas valide"
       ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
-        "${ MAIL_APP_NAME } peut également être utilisé avec un mot de passe unique qui remplace le mot de passe de connexion et celui de la boîte de réception. Pour basculer vers le mode à mot de passe simple, saisissez le mot de passe unique que vous souhaitez utiliser et cliquez sur <strong>Enregistrer</strong>."
+        "${ MAIL_APP_NAME } peut également être utilisé avec un mot de passe unique qui remplace le mot de passe de connexion et celui de la boîte de réception. Pour basculer vers le mode à mot de passe simple, saisissez le mot de passe unique que vous souhaitez utiliser et cliquez sur Enregistrer."
       ],
       "${ MAIL_APP_NAME } supports DKIM signing for custom domains. To use DKIM authentication, please add the following CNAME record into your DNS settings for this domain. This can typically be done in the control panel of your domain name registrar.": [
-        "${ MAIL_APP_NAME } prend en charge les signatures DKIM pour les domaines personnalisés. Afin de pouvoir utiliser l'authentification DKIM, veuillez ajouter l'enregistrement CNAME suivant dans les paramètres DNS de votre domaine. Ceci peut généralement être réalisé depuis le panneau de contrôle du registraire de votre nom de domaine."
+        "${ MAIL_APP_NAME } prend en charge les signatures DKIM pour les domaines personnalisés. Pour utiliser l'authentification DKIM, vous devez ajouter l'enregistrement CNAME suivant dans les paramètres DNS de votre domaine. Cela se fait généralement dans le panneau de contrôle de votre registraire de nom de domaine."
       ],
       "${ n } address": [
         "${ n } adresse",
         "${ n } adresses"
       ],
       "${ none } has no effect on email delivery, but we recommend ${ quarantine } for better security.": [
-        "${ none } n'a aucun effet sur la livraison, mais nous recommandons ${ quarantine } pour une meilleure sécurité."
+        "${ none } n'a aucun effet sur la distribution, mais nous recommandons ${ quarantine } pour une meilleure sécurité."
       ],
       "${ number } city": [
         "${ number } ville",
@@ -4253,7 +4253,7 @@
       ],
       "All (${ totalFoldersCount } label)": [
         "Tous (${ totalFoldersCount } label)",
-        "Tout (${ totalFoldersCount } labels)"
+        "Tous (${ totalFoldersCount } labels)"
       ],
       "All keys successfully reactivated": [
         "Toutes les clés ont été correctement réactivées."
@@ -4292,7 +4292,7 @@
         "Toute personne disposant de ce lien ne pourra pas synchroniser ou obtenir les futures mises à jour de votre calendrier. Pour redonner accès, vous devrez créer un nouveau lien."
       ],
       "AOL reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
-        "AOL lit vos données personnelles afin de permettre aux annonceurs et autres tiers d'y accéder. Pour une meilleure protection de la vie privée, créez une adresse électronique sécurisée."
+        "AOL lit vos données personnelles pour permettre à des annonceurs et d'autres tiers d'y accéder. Vous pouvez protéger vos données en utilisant une messagerie sécurisée."
       ],
       "Are you sure you want to delete this address?": [
         "Êtes-vous sûr de vouloir supprimer cette adresse ?"
@@ -4352,10 +4352,10 @@
         "Abonnement Basic, Plus ou Visionary requis"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
-        "Avant de demander un nouveau code de vérification, vérifiez votre dossier indésirables/spam, ainsi que ${ strong } est la bonne adresse."
+        "Avant de demander un nouveau code de vérification, vérifiez s'il n'est pas dans votre dossier Indésirables/spam et si ${ strong } est la bonne adresse."
       ],
       "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following MX records to your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        "Avant de pouvoir recevoir des e-mails sur les adresses de vos domaines personnels depuis ${ MAIL_APP_NAME }, vous devez ajouter les valeurs MX suivantes à votre DNS. Cet ajout peut généralement être fait depuis le panneau de contrôle de votre domaine sur le site de votre registraire."
+        "Pour recevoir des e-mails sur les adresses de vos domaines personnels depuis ${ MAIL_APP_NAME }, vous devez ajouter les valeurs MX suivantes à votre DNS. Cela se fait généralement dans le panneau de contrôle de votre registraire de nom de domaine."
       ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Avant de pouvoir envoyer et recevoir des e-mails avec vos nouvelles adresses, vous avez besoin de leur créer des clés de chiffrement."
@@ -4400,7 +4400,7 @@
         "Choisissez l'apparence de l'application."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "Cliquez sur « Demander un nouveau code » pour envoyer un nouveau code de vérification à ${ strong }. Si ce numéro de téléphone est incorrect, cliquez sur « Modifier » pour le corriger."
+        "Cliquez sur Demander un nouveau code pour qu'un nouveau code de vérification soit envoyé à ${ strong }. Si ce numéro de téléphone est incorrect, cliquez sur Modifier pour le corriger."
       ],
       "Close this screen to exit.": [
         "Fermez cet écran pour quitter."
@@ -4419,10 +4419,10 @@
         "Créer ${ calendarsToBeCreated } nouveaux calendriers"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
-        "Choisissez un label pour les messages importés, une plage de temps pour cette importation et les dossiers que vous souhaitez importer."
+        "Choisissez un label pour les messages importés, une plage de temps pour cette importation et les dossiers que vous voulez importer."
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
-        "Choisissez un label pour les messages importés, une plage de temps pour cette importation et les dossiers que vous souhaitez importer."
+        "Choisissez un label pour les messages importés, une plage de temps pour cette importation et les dossiers que vous voulez importer."
       ],
       "Create a link to your calendar and share it with anyone outside Proton. Only you can add or remove events.": [
         "Créez un lien vers votre calendrier et partagez-le avec des personnes qui n'utilisent pas Proton. Personne d'autre que vous ne peut ajouter ou supprimer des événements."
@@ -4446,7 +4446,7 @@
         "Crédit non utilisé de votre précédent abonnement"
       ],
       "Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.": [
-        "Actuellement tout le stockage disponible est alloué au compte administrateur. Veuillez réduire le stockage du compte admin afin de libérer de l'espace pour les autres utilisateurs. Vous pouvez augmenter le stockage total à tout moment en améliorant votre compte."
+        "Tout l'espace de stockage est alloué au compte administrateur. Vous pouvez réduire l'espace alloué à ce compte et libérer de l'espace pour d'autres utilisateurs. Vous pouvez également augmenter l'espace de stockage en passant à un abonnement supérieur."
       ],
       "Custom": [
         "Personnalisé"
@@ -4501,7 +4501,7 @@
         "Terminé"
       ],
       "Done! We sent a code to ${ destination }.": [
-        "C'est fait ! Nous avons envoyé un code à ${ destination }."
+        "C'est fait, nous avons envoyé un code à ${ destination }."
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Rétrograder mettra fin à toutes les connexions vers les serveurs payants ${ VPN_APP_NAME }."
@@ -4543,7 +4543,7 @@
         "Préférences de communication enregistrées"
       ],
       "Emails stored in this folder will not be deleted and can still be found in the All Mail folder.": [
-        "Les messages stockés dans ce dossier ne seront pas effacés et pourront toujours être retrouvés dans le dossier <strong>Tous les messages</strong>."
+        "Les messages stockés dans ce dossier ne seront pas effacés et pourront toujours être retrouvés dans le dossier Tous les messages."
       ],
       "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
         "Les messages marqués avec ce label ne seront pas effacés et pourront toujours être retrouvés dans leurs dossiers respectifs."
@@ -4561,7 +4561,7 @@
         "Saisissez le code envoyé à votre numéro de téléphone ${ phone }."
       ],
       "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
-        "Saisissez le code qui a été envoyé à ${ email }. Si vous ne trouvez pas le message dans votre boîte de réception, vérifiez votre dossier indésirables/spam."
+        "Saisissez le code qui a été envoyé à ${ email }. Si vous ne trouvez pas le message dans votre boîte de réception, vérifiez dans votre dossier Indésirables/spam."
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Saisissez les identifiants du compte de messagerie depuis lequel vous souhaitez importer."
@@ -4627,7 +4627,7 @@
         "Donnez votre clé publique à vos amis, ou publiez-la en ligne, afin que chacun puisse vous envoyer un e-mail chiffré de bout en bout."
       ],
       "Google records your online activity and reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
-        "Google enregistre votre activité en ligne et lit vos données personnelles afin de permettre aux annonceurs et à d’autres tiers d'y accéder. Pour une meilleure protection de la vie privée, créez une adresse électronique sécurisée."
+        "Google enregistre votre activité en ligne et lit vos données personnelles pour permettre aux annonceurs et à d’autres tiers d'y accéder. Vous pouvez protéger vos données en utilisant une messagerie sécurisée."
       ],
       "here": [
         "ici"
@@ -4654,10 +4654,10 @@
         "Si vous pensez qu'il s'agit d'une erreur, nous vous invitons à nous contacter ${ contactLink }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
-        "Si vous ne trouvez pas le message dans votre boîte de réception, vérifiez votre dossier indésirables/spam."
+        "Si vous ne trouvez pas le message dans votre boîte de réception, vérifiez votre dossier Indésirables/spam."
       ],
       "If you have a custom domain with ${ MAIL_APP_NAME }, you can set a catch-all email address to receive messages sent to your domain but to an invalid email address (e.g., because of typos).": [
-        "Si vous avez un domaine personnalisé avec ${ MAIL_APP_NAME }, vous pouvez définir une adresse électronique attrape-tout (catch-all) qui recevra les messages envoyés à votre domaine, mais à une adresse e-mail non valide (p. ex., en cas de faute de frappe)."
+        "Si vous avez un domaine personnalisé avec ${ MAIL_APP_NAME }, vous pouvez configurer une adresse électronique catch-all qui recevra les messages envoyés à votre domaine, à une adresse inexistante ou avec une faute de frappe."
       ],
       "If you have a gift code, enter it below to apply your discount.": [
         "Si vous avez un code cadeau, saisissez-le ci-dessous pour appliquer votre réduction."
@@ -4666,7 +4666,7 @@
         "Si vous n'avez jamais utilisé l'authentification à deux facteurs auparavant, nous vous recommandons vivement de ${ guideButton }."
       ],
       "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
-        "Si vous avez configuré SPF et DKIM, DMARC vous permet de spécifier comment les autres services de messagerie devraient envoyer des e-mails pour votre domaine si les vérifications SPF et DKIM échouent. Ceci peut compliquer la tâche des spammeurs qui se font passer pour vous, mais peut aussi causer des problèmes de livraison si ce n'est pas fait correctement."
+        "Si vous avez configuré SPF et DKIM, DMARC vous permet de spécifier comment les autres services de messagerie devraient envoyer des e-mails pour votre domaine si les vérifications SPF et DKIM échouent. Ceci peut compliquer la tâche des spammeurs qui se font passer pour vous, mais peut aussi causer des problèmes de distribution si ce n'est pas fait correctement."
       ],
       "If you lose your login details and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
         "Si vous perdez vos informations de connexion et devez réinitialiser votre compte, ${ boldImperative } que vous ayez ${ boldAccountRecovery } en place."
@@ -4690,7 +4690,7 @@
         "Si vous avez récemment réinitialisé votre mot de passe, vous pouvez utiliser une méthode de récupération de données pour déverrouiller vos données."
       ],
       "If you want to keep an existing SPF record, you can just add ${ spf } to it after the ${ spfValue }. Do not create multiple SPF records.": [
-        "Si vous voulez sauvegarder un enregistrement SPF existant, vous pouvez simplement lui ajouter ${ spf } après le ${ spfValue }. Veuillez ne pas créer d'enregistrements SPF multiples."
+        "Si vous voulez sauvegarder un enregistrement SPF existant, vous pouvez simplement lui ajouter ${ spf } après le ${ spfValue }. Ne créez pas plusieurs enregistrements SPF."
       ],
       "If you wish to combine this account with another one, do NOT delete it.": [
         "Si vous souhaitez combiner ce compte avec un autre, ne le supprimez PAS."
@@ -4718,7 +4718,7 @@
         "Importation en cours"
       ],
       "Import mailbox": [
-        "Importer une boîte aux lettres"
+        "Importer une messagerie"
       ],
       "Import your emails, calendars, and contacts from another service to Proton. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
         "Importez vos e-mails, calendriers et contacts depuis un autre service vers Proton. Nous vous guidons à chaque étape et chiffrons vos données pendant leur transfert. Bienvenue dans un monde respectueux de votre vie privée."
@@ -4727,7 +4727,7 @@
         "Important : veuillez vous assurer de sauvegarder les codes de récupération. Sinon, vous pouvez perdre définitivement l'accès à votre compte si vous égarez votre appareil d'authentification à deux facteurs."
       ],
       "IMPORTANT: Some registrars do not accept CNAME values with a period at the end (while others require it). If your registrar does not accept your CNAME records, please delete the period at the end of each CNAME value and try again.": [
-        "IMPORTANT : certains registraires n'acceptent pas les valeurs CNAME avec un point à la fin (tandis que d’autres le requièrent). Si votre registraire n'accepte pas vos enregistrements CNAME, veuillez supprimer le point à la fin de chaque valeur CNAME et réessayer."
+        "IMPORTANT : certains registraires n'acceptent pas les valeurs CNAME avec un point à la fin (alors que d'autres l'exigent). Si votre registraire n'accepte pas vos enregistrements CNAME, supprimez le point à la fin de chaque valeur CNAME et réessayez."
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Importation de vos données de ${ importedEmailAddress } vers ${ toEmail }."
@@ -4800,7 +4800,7 @@
         "Labelliser tous les messages importés comme"
       ],
       "Large imports can take several days.": [
-        "Les importations importantes peuvent prendre plusieurs jours."
+        "Les importations volumineuses peuvent prendre plusieurs jours."
       ],
       "Learn how to log in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Apprenez comment vous connecter à ${ VPN_APP_NAME } avec des applications VPN tierces."
@@ -4851,7 +4851,7 @@
         "perdre l'accès à toutes les données actuellement chiffrées"
       ],
       "Mail.ru reads your personal data in order to provide access for advertisers, Russian government agencies and other third parties. For better privacy, create a secure email address.": [
-        "Mail.ru lit vos données personnelles afin de permettre aux annonceurs, aux agences de renseignements russes et à d'autres tiers d’y accéder. Pour une meilleure protection de la vie privée, créez une adresse électronique sécurisée."
+        "Mail.ru lit vos données personnelles pour permettre à des annonceurs, des agences de renseignements russes et d'autres tiers d’y accéder. Vous pouvez protéger vos données en utilisant une messagerie sécurisée."
       ],
       "Make sure you remember the password to log in and decrypt emails. ${ boldAlert } We recommend adding a ${ recoveryLink } first.": [
         "Veillez à bien mémoriser le mot de passe pour vous connecter et déchiffrer les e-mails. ${ boldAlert } Nous vous recommandons d'ajouter d'abord une ${ recoveryLink }."
@@ -4872,7 +4872,7 @@
         "Plus d'informations"
       ],
       "Multi-user support not enabled.": [
-        "Prise en charge du multiutilisateur non activée."
+        "Prise en charge multi-utilisateur non activée."
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Nommez votre nouveau dossier et sélectionnez éventuellement un dossier dans lequel vous souhaitez en faire un sous-dossier. Si vous ne sélectionnez aucun dossier, votre nouveau dossier sera créé comme un dossier de premier niveau."
@@ -4953,7 +4953,7 @@
         "Clés de l'organisation restaurées"
       ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
-        "Il existe d'autres administrateurs dans votre organisation. Il est de votre responsabilité de leur communiquer le nouveau mot de passe."
+        "Il y a d'autres administrateurs dans votre organisation, vous devez leur communiquer le nouveau mot de passe."
       ],
       "Other options": [
         "Autres options"
@@ -5008,22 +5008,22 @@
         "Veuillez noter que si vous supprimez cette adresse, vous ne pourrez plus l'utiliser pour envoyer ou recevoir des messages."
       ],
       "Please note that if you delete this domain, all the addresses associated with it will be disabled.": [
-        "Veuillez noter que si vous supprimez ce domaine, toutes les adresses qui y sont associées seront désactivées."
+        "Notez que si vous supprimez ce domaine, toutes les adresses qui lui sont associées seront désactivées."
       ],
       "Please note that if you delete this filter, we will stop processing all the automated actions it triggers.": [
         "Veuillez noter que si vous supprimez ce filtre, nous cesserons de traiter toutes les actions automatisées qu'il déclenche."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
-        "Veuillez noter qu'en cliquant sur le bouton <strong>Confirmer</strong>, votre compte disposera de ${ creditsRemaining } crédits restants."
+        "Veuillez noter qu'en cliquant sur le bouton Confirmer, votre compte disposera de ${ creditsRemaining } crédits restants."
       ],
       "Please provide an email address in case we need to contact you.": [
         "Veuillez fournir une adresse électronique pour les cas où nous aurions besoin de vous contacter."
       ],
       "Please select the folders you would like to import:": [
-        "Veuillez sélectionner les dossiers que vous souhaitez importer :"
+        "Veuillez sélectionner les dossiers que vous voulez importer :"
       ],
       "Please select the type of link you want to insert and fill in all the fields.": [
-        "Veuillez sélectionner le type de lien que vous souhaitez insérer et remplir tous les champs."
+        "Sélectionnez le type de lien que vous voulez insérer et remplissez tous les champs."
       ],
       "Please try again, use a different payment method, or call your bank for assistance.": [
         "Nous vous invitons à réessayer, à utiliser un autre mode de paiement ou à contacter votre banque pour obtenir de l'aide."
@@ -5089,7 +5089,7 @@
         "Phrase de récupération téléchargée"
       ],
       "Recovery phrase has been disabled": [
-        "La phrase de récupération a été désactivée"
+        "La phrase de récupération a été désactivée."
       ],
       "Recovery phrase is not associated with any keys.": [
         "La phrase de récupération n'est associée à aucune clé."
@@ -5167,7 +5167,7 @@
         "Certaines clés ont été correctement réactivées."
       ],
       "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ${ MAIL_APP_NAME } in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        "SPF est utilisé pour spécifier qui est autorisé à envoyer des e-mails depuis ce domaine. Ainsi, nous vous recommandons vivement d'inclure ${ MAIL_APP_NAME }. Pour cela, ajoutez l'enregistrement TXT suivant dans votre configuration DNS. Cette modification peut généralement être effectuée depuis le panneau de contrôle de votre domaine sur le site de votre registraire."
+        "SPF est utilisé pour spécifier qui est autorisé à envoyer des e-mails depuis ce domaine. Ainsi, nous vous recommandons vivement d'inclure ${ MAIL_APP_NAME }. Pour cela, ajoutez l'enregistrement TXT suivant dans votre configuration DNS. Cela se fait généralement dans le panneau de contrôle de votre registraire de nom de domaine."
       ],
       "Storage allocated to other users in this organisation": [
         "Espace de stockage alloué à d'autres utilisateurs de cette organisation"
@@ -5242,7 +5242,7 @@
         "Ce navigateur ne prend pas en charge l'aperçu des documents PDF. Veuillez télécharger le fichier."
       ],
       "This can take a few seconds or a few minutes depending on your device": [
-        "Ceci peut prendre quelques secondes ou quelques minutes selon votre appareil"
+        "Ceci peut prendre quelques secondes ou quelques minutes selon votre appareil."
       ],
       "This is a 12-word phrase that you were prompted to set.": [
         "Il s'agit d'une phrase de 12 mots que nous vous avons demandé de définir."
@@ -5257,16 +5257,16 @@
         "Il s'agit du mot de passe que vous avez utilisé avant la réinitialisation du mot de passe."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
-        "Ce lien mène à un site Web qui pourrait essayer de voler vos informations, comme les mots de passe et les détails de carte de crédit."
+        "Ce lien mène à un site web qui pourrait essayer de voler vos informations, comme des mots de passe et des informations de carte bancaire."
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Ce lien pourrait être une attaque homographique et ne peut pas être ouvert avec les navigateurs Internet Explorer et Edge. Si vous êtes certain de la légitimité de ce lien, veuillez utiliser un autre navigateur pour l'ouvrir."
+        "Ce lien pourrait être une attaque homographique et ne peut pas être ouvert avec le navigateur Microsoft Edge. Si vous êtes certain de la légitimité de ce lien, veuillez utiliser un autre navigateur pour l'ouvrir."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
-        "Ce lien pourrait être une attaque homographique. Veuillez vous assurer qu'il s'agit bien du lien que vous souhaitez visiter ou ne l'ouvrez pas."
+        "Ce lien est peut-être une attaque homographique. Assurez-vous qu'il s'agit bien du lien que vous souhaitez consulter, ou ne l'ouvrez pas."
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
-        "Ce membre est actuellement responsable des paiements pour votre organisation. En le rétrogradant, vous devenez garant de ceux-ci."
+        "Cet utilisateur est actuellement responsable des paiements pour votre organisation. Si vous le rétrogradez, vous deviendrez responsable des paiements pour votre organisation."
       ],
       "This will also disable any two-factor authentication method associated with this account.": [
         "Ceci désactivera également toute méthode d'authentification à deux facteurs associée à ce compte."
@@ -5371,7 +5371,7 @@
         "Impossible de vérifier la signature du fichier de récupération. Veuillez contacter le support."
       ],
       "Unfortunately there is no recovery method saved for this account.": [
-        "Malheureusement, il n'y a pas de méthode de récupération enregistrée pour ce compte."
+        "Il n'y a malheureusement pas de méthode de récupération enregistrée pour ce compte."
       ],
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "Si vous ne vous déconnectez pas de votre compte ou ne changez pas votre mot de passe, votre session restera active. Les sessions expirent après 60 jours d'inactivité."
@@ -5392,7 +5392,7 @@
         "Mettre à jour la phrase de récupération"
       ],
       "Update the URL in your password manager": [
-        "Mettez à jour l'URL dans votre gestionnaire de mots de passe"
+        "Mettez à jour l'URL dans votre gestionnaire de mots de passe."
       ],
       "Upgrade today to avoid losing the following ${ planName } benefits.": [
         "Passez à l'offre supérieure dès aujourd'hui pour conserver les avantages suivants de ${ planName }."
@@ -5452,13 +5452,13 @@
         "Nous vous informerons lorsque l'importation sera terminée."
       ],
       "We'll send a new verification code to ${ strong }": [
-        "Nous enverrons un nouveau code de vérification à ${ strong }"
+        "Nous enverrons un nouveau code de vérification à ${ strong }."
       ],
       "We're moving! Join us at our new site: ${ link }.": [
         "Nous déménageons, rejoignez-nous sur notre nouveau site : ${ link }."
       ],
       "Web URL": [
-        "URL Web"
+        "URL web"
       ],
       "Week": [
         "Semaine"
@@ -5491,16 +5491,16 @@
         "Sans activation, vous ne pourrez pas créer de nouveaux utilisateurs, ajouter des adresses aux utilisateurs existants ou accéder aux comptes d'utilisateurs non privés."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
-        "Souhaitez-vous recevoir un nouveau code de vérification ou utiliser une autre méthode de vérification ?"
+        "Voulez-vous recevoir un nouveau code de vérification ou utiliser une autre méthode de vérification ?"
       ],
       "Would you like to receive a new verification code?": [
-        "Souhaiteriez-vous recevoir un nouveau code de vérification ?"
+        "Voulez-vous recevoir un nouveau code de vérification ?"
       ],
       "Yahoo reads your personal data in order to provide access for advertisers, US intelligence agencies and other third parties. For better privacy, create a secure email address.": [
-        "Yahoo lit vos données personnelles afin de permettre aux annonceurs, aux agences de renseignements américaines et à d'autres tiers d’y accéder. Pour une meilleure protection de la vie privée, créez une adresse électronique sécurisée."
+        "Yahoo lit vos données personnelles pour permettre à des annonceurs, des agences de renseignements américaines et d'autres tiers d’y accéder. Vous pouvez protéger vos données en utilisant une messagerie sécurisée."
       ],
       "Yandex records your online activity and reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
-        "Yandex enregistre votre activité en ligne et lit vos données personnelles afin de permettre aux annonceurs et à d’autres tiers d'y accéder. Pour une meilleure protection de la vie privée, créez une adresse électronique sécurisée."
+        "Yandex enregistre votre activité en ligne et lit vos données personnelles pour permettre à des annonceurs et d’autres tiers d'y accéder. Vous pouvez protéger vos données en utilisant une messagerie sécurisée."
       ],
       "Yearly": [
         "Chaque année"
@@ -5524,7 +5524,7 @@
         "Vous pouvez personnaliser et télécharger vos factures à des fins comptables."
       ],
       "You can enable authentication logging to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
-        "Vous pouvez activer la journalisation des connexions à votre compte afin de visualiser les accès à celui-ci ainsi que les adresses IP à l'origine de la connexion. Pour chaque tentative de connexion, nous enregistrons l'adresse IP source, la date et l'heure, ainsi que les connexions ayant échoué."
+        "Vous pouvez activer la journalisation des connexions pour savoir quand votre compte est utilisé et à partir de quelle adresse IP. Nous enregistrerons l'adresse IP qui accède au compte et l'heure, ainsi que les tentatives qui ont échoué."
       ],
       "You can import one data type at a time.": [
         "Vous pouvez importer un type de données à la fois."
@@ -5551,7 +5551,7 @@
         "Vous ne pouvez pas utiliser les identifiants OpenVPN/IKEv2 pour vous connecter aux applications ${ VPN_APP_NAME } ou au tableau de bord ${ VPN_APP_NAME }. ${ learnMore }"
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
-        "Vous n'avez pas configuré de méthode de récupération, si vous oubliez votre mot de passe la récupération du compte sera donc impossible. Voulez-vous poursuivre sans méthode de récupération ?"
+        "Vous n'avez pas défini de méthode de récupération. Cela signifie que si vous oubliez votre mot de passe, la récupération de votre compte ne sera pas possible. Voulez-vous continuer sans méthode de récupération ?"
       ],
       "You have no saved payment methods.": [
         "Vous n'avez actuellement aucun mode de paiement enregistré."
@@ -5656,7 +5656,7 @@
         "Votre adresse électronique ne sera utilisée que pour cette vérification unique."
       ],
       "Your existing ${ BRAND_NAME } account can be used to access all ${ BRAND_NAME } services. Please sign in with ${ email }.": [
-        "Votre compte ${ BRAND_NAME } existant peut être utilisé pour accéder à tous les services ${ BRAND_NAME }. Veuillez vous connecter avec ${ email }."
+        "Votre compte ${ BRAND_NAME } peut être utilisé pour accéder à tous les services ${ BRAND_NAME }. Connectez-vous avec ${ email }."
       ],
       "Your import from ${ delayedImport.Account } is temporarily delayed.": [
         "Votre importation à partir de ${ delayedImport.Account } est temporairement retardée."
@@ -5680,7 +5680,7 @@
         "Votre numéro de téléphone ne sera utilisé que pour cette vérification unique."
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "Votre compte Proton est actuellement suspendu. Pour continuer à utiliser votre compte, veuillez régler les factures impayées."
+        "Votre compte Proton est momentanément suspendu. Nous vous invitons à régler les factures en retard afin de pouvoir continuer à utiliser votre compte."
       ],
       "Your recovery email address:": [
         "Votre adresse électronique de récupération :"
@@ -6126,7 +6126,7 @@
         "${ UsedAddresses } sur ${ MaxAddresses } adresses électroniques"
       ],
       "(Temporarily unavailable. Please check back later.)": [
-        "(temporairement indisponible. Veuillez vérifier plus tard)"
+        "(temporairement indisponible, veuillez vérifier plus tard)"
       ],
       "Account storage": [
         "Espace de stockage du compte"
@@ -6213,7 +6213,7 @@
         "Bloquez les programmes malveillants, les publicités et les traqueurs"
       ],
       "bonus storage": [
-        "stockage bonus"
+        "espace de stockage en bonus"
       ],
       "Browser": [
         "Navigateur"
@@ -6243,13 +6243,13 @@
         "Catégorie"
       ],
       "Choose a name for the generated certificate file": [
-        "Choisissez un nom pour le fichier de certificat à générer"
+        "Choisissez un nom pour le fichier de certificat à générer."
       ],
       "Code": [
         "Code"
       ],
       "Code is 6 digits without spaces": [
-        "Le code est composé de 6 chiffres sans espaces"
+        "Le code est composé de 6 chiffres sans espaces."
       ],
       "Color": [
         "Couleur"
@@ -6300,13 +6300,13 @@
         "Copier"
       ],
       "Could you please let us know which provider?": [
-        "Pourriez-vous s'il vous plaît nous indiquer quel fournisseur ?"
+        "Pouvez-vous nous préciser quel fournisseur ?"
       ],
       "Could you please specify which streaming service?": [
-        "Pourriez-vous s'il vous plaît préciser quel service de streaming ?"
+        "Pouvez-vous préciser quel service de streaming ?"
       ],
       "Could you please specify?": [
-        "Pourriez-vous s'il vous plaît préciser ?"
+        "Pouvez-vous préciser ?"
       ],
       "Country": [
         "Pays"
@@ -6441,7 +6441,7 @@
         "Expire le"
       ],
       "extra storage": [
-        "stockage supplémentaire"
+        "espace de stockage supplémentaire"
       ],
       "File": [
         "Fichier"
@@ -6465,13 +6465,13 @@
         "Code cadeau"
       ],
       "Here is a basic DMARC record that does nothing except email you reports.": [
-        "Voici un enregistrement DMARC qui ne fait rien hormis vous envoyer des rapports par e-mail."
+        "Voici un enregistrement DMARC dont la seule fonction est de vous envoyer des rapports par e-mail."
       ],
       "Hide password": [
         "Masquer le mot de passe"
       ],
       "I understand the risk": [
-        "Je comprends le risque"
+        "Je comprends le risque."
       ],
       "IF": [
         "SI"
@@ -6507,7 +6507,7 @@
         "Gardez-moi connecté"
       ],
       "Keep messages in Sent/Drafts": [
-        "Conserver les messages dans Envoyés/Brouillons"
+        "Conserver les messages dans les dossiers Envoyés et Brouillons."
       ],
       "Key": [
         "Clé"
@@ -6531,7 +6531,7 @@
         "Seulement les 3 derniers mois"
       ],
       "Last month only": [
-        "Le mois dernier seulement"
+        "Seulement le mois dernier"
       ],
       "Level for NetShield blocker filtering": [
         "Niveau pour le blocage par filtrage NetShield"
@@ -6651,7 +6651,7 @@
         "Phrase"
       ],
       "Phrase consists of 12 unique words in a specific order": [
-        "La phrase se compose de 12 mots uniques dans un ordre spécifique"
+        "La phrase se compose de 12 mots uniques dans un ordre spécifique."
       ],
       "Please add all 3 of the following CNAME records. Note, DNS records can take several hours to update.": [
         "Veuillez ajouter les 3 enregistrements CNAME suivants. Notez que la mise à jour des enregistrements DNS peut prendre plusieurs heures."
@@ -6840,7 +6840,7 @@
         "À ajouter"
       ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
-        "Nous sommes désolés de vous voir partir. Afin de nous aider à nous améliorer pourriez-vous s’il-vous-plaît nous expliquer pourquoi vous partez."
+        "Nous sommes désolés de vous voir partir. Pour nous permettre de nous améliorer, pouvez-vous nous préciser la raison de votre départ ?"
       ],
       "Week start": [
         "Début de la semaine"
@@ -6849,7 +6849,7 @@
         "Que s'est-il passé ?"
       ],
       "What is the main reason you are cancelling?": [
-        "Quelle est la principale raison pour laquelle vous annulez ?"
+        "Quelle est la raison principale de votre annulation ?"
       ],
       "What is the main reason you are deleting your account?": [
         "Quelle est la principale raison pour laquelle vous supprimez votre compte ?"
@@ -6867,7 +6867,7 @@
         "sans pièce jointe"
       ],
       "without attachments": [
-        "sans pièces jointes"
+        "sans pièce jointe"
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Oui, je veux supprimer définitivement ce compte et toutes ses données."
@@ -7942,8 +7942,8 @@
       "On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
         "En plus de cela, ajoutez jusqu'à 5 calendriers d'amis, de famille, de collègues et d'organisations."
       ],
-      "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections..": [
-        "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections."
+      "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections.": [
+        "Une connexion VPN permet à un seul appareil de se connecter à Proton VPN à tout moment. Par exemple, pour connecter un téléphone et un ordinateur portable à Proton VPN en même temps, vous avez besoin de deux connexions VPN."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Possibilité d'afficher les boîtes de réception des utilisateurs non privés telles qu'ils les voient, y compris tous les détails des messages et des contacts."
@@ -9295,6 +9295,9 @@
       "Action": [
         "Action"
       ],
+      "Activate account and generate keys": [
+        "Activer le compte et générer les clés"
+      ],
       "Activate organization key": [
         "Activer la clé de l'organisation"
       ],
@@ -9446,7 +9449,7 @@
         "Confirmer l'adresse"
       ],
       "Confirm downgrade": [
-        "Confirmer le passage à une offre inférieure"
+        "Confirmer le passage à un abonnement inférieur"
       ],
       "Confirm loss of Proton bonuses": [
         "Confirmer la perte des bonus Proton"
@@ -9581,7 +9584,7 @@
         "Modifier le calendrier"
       ],
       "Edit credit/debit card": [
-        "Modifier la carte de crédit / débit"
+        "Modifier la carte de crédit/débit"
       ],
       "Edit domain": [
         "Modifier le domaine"
@@ -9650,7 +9653,7 @@
         "Générer une nouvelle phrase de récupération ?"
       ],
       "Get ${ vpnPlus } to access all servers": [
-        "Obtenir ${ vpnPlus } pour accéder à tous les serveurs"
+        "Obtenir ${ vpnPlus } pour accéder à tous les serveurs."
       ],
       "Get up to 18 months of ${ planName } for free": [
         "Obtenez jusqu'à 18 mois de ${ planName } gratuitement"
@@ -9798,7 +9801,7 @@
         "Téléphone"
       ],
       "Plan summary": [
-        "Résumé de l'offre"
+        "Récapitulatif de l'abonnement"
       ],
       "Previous": [
         "Précédent"
@@ -9870,7 +9873,7 @@
         "Journaux de sécurité"
       ],
       "Select a plan": [
-        "Choisir une offre"
+        "Choisir un abonnement"
       ],
       "Select action to take on contact group": [
         "Sélectionnez l'action à effectuer sur le groupe de contacts"
@@ -10023,7 +10026,7 @@
         "Vous avez déjà un compte Proton"
       ],
       "Your ${ domain } address is active": [
-        "Votre adresse ${ domain } est active"
+        "Votre adresse ${ domain } est active."
       ],
       "Your calendar link": [
         "Lien de votre calendrier"
@@ -10044,7 +10047,7 @@
         "Vous avez été invité à essayer ${ mailAppName }"
       ],
       "ZIP / postal code": [
-        "ZIP / code postal"
+        "Code postal"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -10131,16 +10134,16 @@
     },
     "Tooltip": {
       "${ MAIL_APP_NAME } users will use this key by default for sending": [
-        "Les utilisateurs ${ MAIL_APP_NAME } utiliseront cette clé par défaut pour l'envoi"
+        "Les utilisateurs ${ MAIL_APP_NAME } utiliseront cette clé par défaut pour l'envoi."
       ],
       "Account is disconnected": [
         "Compte déconnecté"
       ],
       "Customize import to reduce the number of folders": [
-        "Personnalisez l'importation pour réduire le nombre de dossiers"
+        "Personnalisez l'importation pour réduire le nombre de dossiers."
       ],
       "Customize import to reduce the number of labels": [
-        "Personnalisez l'importation pour réduire le nombre de labels"
+        "Personnalisez l'importation pour réduire le nombre de labels."
       ],
       "Discount applied for annual billing cycle": [
         "Remise appliquée pour un cycle de facturation annuel"
@@ -10149,16 +10152,16 @@
         "Remise appliquée pour un cycle de facturation bisannuel"
       ],
       "Each imported email will have this label": [
-        "Chaque e-mail importé aura ce label"
+        "Chaque e-mail importé aura ce label."
       ],
       "Edit folder names": [
-        "Modifiez les noms des dossiers"
+        "Modifiez les noms des dossiers."
       ],
       "Edit label names": [
-        "Modifiez les noms des labels"
+        "Modifiez les noms des labels."
       ],
       "Enable/disable desktop and mobile notifications": [
-        "Activer/Désactiver les notifications mobiles et de bureau"
+        "Activer/Désactiver les notifications mobiles et de bureau."
       ],
       "Enabling advanced logs records the IP address for each event in the security log.": [
         "L'activation des journaux avancés enregistre l'adresse IP de chaque événement dans le journal de sécurité."
@@ -10167,7 +10170,7 @@
         "Groupez les e-mails dans la même conversation dans votre boîte de réception ou affichez-les séparément."
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
-        "Si vous avez acheté un code cadeau ou en avez reçu un de notre équipe d'assistance, vous pouvez le saisir ici."
+        "Si vous avez acheté un code cadeau ou en avez reçu un de notre équipe support, vous pouvez le saisir ici."
       ],
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "Les messages dans le dossier Envoyés ou Brouillons continueront à apparaître dans ce dossier, même si vous les déplacez vers un autre dossier."
@@ -10176,49 +10179,49 @@
         "Sélectionnez l'apparence par défaut de votre liste de messages."
       ],
       "Set the default Composer popup size as small or full screen.": [
-        "Définissez la taille par défaut de la fenêtre contextuelle du composeur comme devant être petite ou en plein écran."
+        "Choisissez la taille par défaut de la fenêtre contextuelle du composeur : petite ou plein écran."
       ],
       "Set the default layout for your Inbox.": [
         "Définissez la disposition par défaut de votre boîte de réception."
       ],
       "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalise your signature anytime in the settings.": [
-        "Ajoutez la signature suivante en bas des e-mails que vous envoyez : ${ signature } C'est votre lien de parrainage. Ce message apparaîtra sous votre signature. Vous pouvez personnaliser votre signature à tout moment depuis les paramètres."
+        "Ajoute le message suivant sous votre signature d'e-mail : ${ signature } Le lien pointe vers votre lien de parrainage. Vous pouvez toujours personnaliser votre signature dans les paramètres."
       ],
       "Signatures produced by this key are treated as invalid and this key cannot be used for encryption": [
-        "Les signatures produites par cette clé sont considérées comme non valides et cette clé ne peut pas être utilisée pour le chiffrement"
+        "Les signatures produites par cette clé sont considérées comme non valides et cette clé ne peut pas être utilisée pour le chiffrement."
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
-        "Les sous-dossiers système apparaîtront sous la forme de dossiers séparés dans ${ MAIL_APP_NAME }"
+        "Les sous-dossiers système apparaîtront sous la forme de dossiers séparés dans ${ MAIL_APP_NAME }."
       ],
       "The import will start with the most recent messages.": [
         "L'importation commencera par les messages les plus récents."
       ],
       "This address has been disabled": [
-        "Cette adresse a été désactivée"
+        "Cette adresse a été désactivée."
       ],
       "This feature delays sending your emails, giving you the opportunity to undo send during the selected time frame.": [
-        "Cette fonctionnalité retarde l'envoi de vos e-mails. Vous pouvez annuler l'envoi pendant la période sélectionnée."
+        "Cette fonction retarde l'envoi de vos e-mails, vous donnant la possibilité d'annuler l'envoi pendant le délai choisi."
       ],
       "This feature is only available for paid users": [
-        "Cette fonctionnalité est disponible uniquement pour les utilisateurs payants"
+        "Cette fonctionnalité est exclusivement disponible pour les utilisateurs ayant un abonnement payants."
       ],
       "This feature is unavailable for the moment": [
         "Cette fonction n’est pas disponible pour le moment."
       ],
       "This key cannot be used for encryption": [
-        "Cette clé ne peut pas être utilisée pour le chiffrement"
+        "Cette clé ne peut pas être utilisée pour le chiffrement."
       ],
       "This key is encrypted with an old password": [
-        "Cette clé est chiffrée avec un ancien mot de passe"
+        "Cette clé est chiffrée avec un ancien mot de passe."
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Nous avons détecté un problème avec votre configuration DNS. Veuillez vous assurer que vos enregistrements correspondent aux instructions ci-dessous. Si le problème persiste, nous devrons annuler la signature DKIM."
       ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
-        "Nous avons arrêté la signature DKIM en raison de problèmes avec votre configuration DNS. Veuillez suivre les instructions ci-dessous pour la reprendre."
+        "Nous avons arrêté la signature DKIM en raison de problèmes avec votre configuration DNS. Vous pouvez suivre les instructions ci-dessous pour l'utiliser à nouveau."
       ],
       "When you add a label to a message in a conversation, it will automatically be applied to all future messages you send or receive in that conversation.": [
-        "Lorsque vous ajoutez un label à un message dans une conversation, il sera automatiquement appliqué à tous les messages futurs que vous enverrez ou recevrez dans cette conversation."
+        "Lorsque vous ajoutez un label à un message dans une conversation, il sera automatiquement appliqué à tous les futurs messages que vous enverrez ou recevrez dans cette conversation."
       ],
       "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
         "Lorsque vous cliquez sur un lien, cette fonction anti-hameçonnage vous montre le détail de l'URL de la page web pour que vous puissiez la vérifier avant de l'ouvrir dans votre navigateur."
@@ -10227,10 +10230,10 @@
         "Lorsque vous déplacez un message vers les Indésirables/spam, vous êtes automatiquement désinscrit des listes de diffusion de l'expéditeur."
       ],
       "You have locally decrypted this key": [
-        "Vous avez déchiffré localement cette clé"
+        "Vous avez déchiffré localement cette clé."
       ],
       "Your ${ MAIL_APP_NAME } inbox is almost full": [
-        "Votre boîte de réception ${ MAIL_APP_NAME } est presque pleine"
+        "Votre boîte de réception ${ MAIL_APP_NAME } est presque pleine."
       ],
       "Your DKIM signing is working.": [
         "Votre signature DKIM fonctionne."

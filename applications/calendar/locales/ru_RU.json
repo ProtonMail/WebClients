@@ -1219,6 +1219,9 @@
       "Czech Republic": [
         "Чешская Республика"
       ],
+      "Côte d'Ivoire": [
+        "Кот-д'Ивуар"
+      ],
       "Denmark": [
         "Дания"
       ],
@@ -1248,6 +1251,9 @@
       ],
       "Estonia": [
         "Эстония"
+      ],
+      "Eswatini": [
+        "Эсватини"
       ],
       "Ethiopia": [
         "Эфиопия"
@@ -1491,6 +1497,9 @@
       ],
       "Mozambique": [
         "Мозамбик"
+      ],
+      "Myanmar": [
+        "Мьянма"
       ],
       "Namibia": [
         "Намибия"
@@ -1867,8 +1876,8 @@
       ]
     },
     "Description": {
-      "Decrypting contacts... This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
-        "Идет расшифровка контактов. Это может занять несколько минут. Когда процесс завершится, вы сможете скачать файл со всеми своими контактами."
+      "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
+        "Расшифровка контактов... Это может занять несколько минут. По завершении процесса вы сможете загрузить файл с экспортированными контактами."
       ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Удаляем контакты... Это может занять несколько минут. Когда процесс завершится, вы можете закрыть это окно."
@@ -2295,8 +2304,8 @@
       "This label name is not available. Please choose a different name.": [
         "Это название ярлыка недоступно. Пожалуйста, выберите другое название."
       ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser": [
-        "This message may contain some link's URL that cannot be properly opened by your current browser."
+      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
+        "Это сообщение может содержать URL какой-то ссылки, которая не может быть правильно открыта вашим текущим браузером."
       ],
       "Trusted keys are not valid for sending": [
         "Доверенные ключи не действительны для отправки"
@@ -2387,6 +2396,9 @@
       "Calendar": [
         "Календарь"
       ],
+      "Calendar time zone not supported": [
+        "Часовой пояс календаря не поддерживается"
+      ],
       "Component with wrong format": [
         "Компонент с неправильным форматом"
       ],
@@ -2459,6 +2471,9 @@
       "Start time out of bounds": [
         "Время начала находится вне границ"
       ],
+      "Time zone not supported": [
+        "Часовой пояс не поддерживается"
+      ],
       "Timezone": [
         "Часовой пояс"
       ],
@@ -2484,6 +2499,9 @@
       ],
       "Please ${ refresh } or check your connection.": [
         "Пожалуйста, ${ refresh } или проверьте подключение."
+      ],
+      "Something went wrong. Please refresh the page or try again later.": [
+        "Что-то пошло не так. Пожалуйста, обновите страницу или повторите попытку позже."
       ],
       "There was a problem connecting to Proton.": [
         "Возникла проблема при подключении к Proton."
@@ -3215,6 +3233,9 @@
       "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
         "PGP/Inline совместим только с форматом Plain Text. Обратите внимание, что ${ MAIL_APP_NAME } всегда подписывает зашифрованные сообщения."
       ],
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        "PGP/MIME автоматически отправляет сообщение, используя текущий режим редактора писем. Обратите внимание, что ${ MAIL_APP_NAME } всегда подписывает зашифрованные сообщения."
+      ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Пожалуйста, обратите внимание, что адреса, назначенные этой группе, НЕ будут удалены."
       ],
@@ -3259,6 +3280,9 @@
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Выберите формат письма, который вы хотите использовать по умолчанию при отправке почты на этот адрес."
+      ],
+      "Select what you want to import from Google.": [
+        "Выберите, какие данные вы хотите импортировать из Google."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Выберите, какие календари необходимо импортировать. Для каждого импортированного календаря будет создан новый календарь, до достижения лимита в 20 календарей."
@@ -4096,6 +4120,11 @@
     "new_plans: action": {
       "Switch or add account": [
         "Переключить или добавить аккаунт"
+      ]
+    },
+    "new_plans: info": {
+      "Introducing Proton’s refreshed look.${ br }Many services, one mission. Welcome to an internet where privacy is the default.": [
+        "Мы освежили внешний вид Proton.${ br }У наших сервисов общая миссия — создать Интернет, где конфиденциальность на первом месте."
       ]
     },
     "new_plans: label": {

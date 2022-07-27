@@ -301,6 +301,9 @@
       "Email settings": [
         "Configuració del correu"
       ],
+      "Emoji": [
+        "Emoji"
+      ],
       "Enable": [
         "Habilitar"
       ],
@@ -757,6 +760,9 @@
       ],
       "Search": [
         "Cerca"
+      ],
+      "Search countries": [
+        "Cerca països"
       ],
       "Search in ${ option.text }": [
         "Cercar a ${ option.text }"
@@ -1555,10 +1561,12 @@
         "Esdeveniment en curs"
       ]
     },
+    "Collapsible tooltip": {
+      "Expand": [
+        "Amplia"
+      ]
+    },
     "color": {
-      "Apple": [
-        "apple"
-      ],
       "caramel": [
         "caramel"
       ],
@@ -1947,6 +1955,9 @@
       ],
       "Czech Republic": [
         "República Txeca"
+      ],
+      "Côte d'Ivoire": [
+        "Costa d'Ivori"
       ],
       "Denmark": [
         "Dinamarca"
@@ -2589,9 +2600,6 @@
       ]
     },
     "Description": {
-      "Decrypting contacts... This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
-        "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported."
-      ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Eliminant contactes... Pot trigar uns minuts. Quan el procés s'hagi completat, podreu tancar aquest diàleg."
       ],
@@ -3038,9 +3046,6 @@
       "This message has already been sent. A new draft has been saved.": [
         "Aquest missatge ja s'ha enviat. S'ha guardat un esborrany nou."
       ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser": [
-        "Aquest missatge pot incloure enllaços d’URL que no es puguin obrir correctament al vostre navegador actual"
-      ],
       "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
         "Massa filtres actius. Actualitzeu a un pla de pagament per activar més filtres."
       ],
@@ -3308,6 +3313,10 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "byte",
+        "bytes"
+      ],
       "GB": [
         "GB"
       ],
@@ -3952,9 +3961,6 @@
       "Do you want to re-sign the contact details?": [
         "Voleu tornar a signar els detalls de contacte?"
       ],
-      "Don't forget to share your password with the recipient": [
-        "Don't forget to share the password with the recipient"
-      ],
       "Download our mobile application from your favorite app store to communicate securely on-the-go.": [
         "Descarregueu la nostra aplicació mòbil des de la vostra botiga d'aplicacions preferida per comunicar-vos de manera segura en qualsevol moment."
       ],
@@ -4086,9 +4092,6 @@
       "Hour": [
         "Hora",
         "Hores"
-      ],
-      "I'm sending this message to a non-ProtonMail user.": [
-        "I'm sending this message to a non-Proton Mail user."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Si teniu problemes per crear el vostre compte, sol·liciteu una invitació i us respondrem en un dia laborable."
@@ -5587,11 +5590,17 @@
       "Learn more": [
         "Més informació"
       ],
+      "Less": [
+        "Menys"
+      ],
       "Manage your folders": [
         "Gestioneu les vostres carpetes"
       ],
       "Manage your labels": [
         "Gestioneu les vostres etiquetes"
+      ],
+      "More": [
+        "Més"
       ],
       "More about recovery": [
         "Més sobre la recuperació"
@@ -6248,9 +6257,6 @@
       ],
       "Cannot send to organizer address: ${ errorMessage }": [
         "No es pot enviar a l'adreça de l'organitzador: ${ errorMessage }"
-      ],
-      "Re-encrypting invitation failed. Please try again": [
-        "Re-encrypting invitation failed. Please try again."
       ]
     },
     "Search - no results": {

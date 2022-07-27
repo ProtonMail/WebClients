@@ -4,6 +4,11 @@
     "language": "de_DE"
   },
   "contexts": {
+    "Access level": {
+      "Full view": [
+        "Vollständige Ansicht"
+      ]
+    },
     "Action": {
       "${ address } is available.": [
         "${ address } ist verfügbar."
@@ -61,6 +66,9 @@
       ],
       "Add label": [
         "Kategorie hinzuf."
+      ],
+      "Add notification": [
+        "Benachrichtigung hinzufügen"
       ],
       "Add PayPal": [
         "Paypal hinzufügen"
@@ -164,11 +172,17 @@
       "Continue with ${ nameToDisplay } ${ maybeEmailInBrackets }": [
         "Weiter mit ${ nameToDisplay } ${ maybeEmailInBrackets }"
       ],
+      "Continue with Google": [
+        "Mit Google anmelden"
+      ],
       "Copy": [
         "Kopieren"
       ],
       "Copy email to clipboard": [
         "E-Mail in Zwischenablage kopieren"
+      ],
+      "Copy link": [
+        "Link kopieren"
       ],
       "Create": [
         "Erstellen"
@@ -194,6 +208,9 @@
       "Create label": [
         "Kategorie erstellen"
       ],
+      "Create link": [
+        "Link erstellen"
+      ],
       "Current plan": [
         "Aktuelles Abonnement"
       ],
@@ -214,6 +231,9 @@
       ],
       "Delete": [
         "Löschen"
+      ],
+      "Delete link": [
+        "Link löschen"
       ],
       "Delete permanently": [
         "Unwiederbringlich löschen"
@@ -527,6 +547,9 @@
       "Remove this label": [
         "Kategorie entfernen"
       ],
+      "Remove this notification": [
+        "Diese Benachrichtigung entfernen"
+      ],
       "Rename": [
         "Umbenennen"
       ],
@@ -593,6 +616,9 @@
       "Save address": [
         "E-Mail-Adresse speichern"
       ],
+      "Save ICS file": [
+        "ICS-Datei speichern"
+      ],
       "Save selected": [
         "Auswahl speichern"
       ],
@@ -610,6 +636,12 @@
       ],
       "Select files": [
         "Dateien auswählen"
+      ],
+      "Select language for invitation emails": [
+        "Sprache für E-Mail-Einladungen auswählen"
+      ],
+      "Select timezone": [
+        "Zeitzone wählen"
       ],
       "send auto-reply email": [
         "automatische E-Mail-Antwort senden"
@@ -643,6 +675,12 @@
       ],
       "Show labels": [
         "Kategorien anzeigen"
+      ],
+      "Show less": [
+        "Weniger anzeigen"
+      ],
+      "Show more": [
+        "Mehr anzeigen"
       ],
       "Show preview": [
         "Vorschau anzeigen"
@@ -906,6 +944,11 @@
         "Nicht unterstütztes Ereignis"
       ]
     },
+    "Auto import invitations setting": {
+      "Add to calendar and mark as pending": [
+        "Zum Kalender hinzufügen und als ausstehend kennzeichnen"
+      ]
+    },
     "Autoresponse": {
       "I'm out of the office with limited access to my email.": [
         "Ich bin nicht im Büro und habe nur begrenzten Zugriff auf mein Postfach."
@@ -1153,7 +1196,27 @@
         "Twittern"
       ]
     },
+    "Calendar link purpose update success message": {
+      "Label added": [
+        "Kategorie hinzugefügt"
+      ],
+      "Label deleted": [
+        "Kategorie gelöscht"
+      ],
+      "Label edited": [
+        "Kategorie bearbeitet"
+      ]
+    },
     "Calendar status": {
+      "Active": [
+        "Aktiv"
+      ],
+      "Default": [
+        "Standard"
+      ],
+      "Disabled": [
+        "Deaktiviert"
+      ],
       "Not synced": [
         "Nicht synchronisiert"
       ],
@@ -1187,6 +1250,17 @@
         "Nicht unterstütztes Kalender-Format"
       ]
     },
+    "Calendar view": {
+      "Day": [
+        "Tag"
+      ],
+      "Month": [
+        "Monat"
+      ],
+      "Week": [
+        "Woche"
+      ]
+    },
     "Checkout row": {
       "${ users } user": [
         "${ users } Benutzer",
@@ -1206,6 +1280,9 @@
       ]
     },
     "color": {
+      "apple": [
+        "Apfel"
+      ],
       "carrot": [
         "Karotte"
       ],
@@ -2242,8 +2319,8 @@
       ]
     },
     "Description": {
-      "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }..": [
-        "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }."
+      "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
+        "Herzlichen Glückwunsch! Du hast das Maximum von ${ rewardsLimit } kostenlosen Monaten von ${ plusPlanName } verdient."
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Kontakte werden verschlüsselt und importiert … Dies kann einige Minuten dauern. Wenn der Prozess abgeschlossen ist, können Sie dieses Fenster schließen."
@@ -2315,6 +2392,20 @@
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "Helfen Sie uns, besser zu werden!"
+      ]
+    },
+    "Duration": {
+      "120 minutes": [
+        "120 Minuten"
+      ],
+      "30 minutes": [
+        "30 Minuten"
+      ],
+      "60 minutes": [
+        "60 Minuten"
+      ],
+      "90 minutes": [
+        "90 Minuten"
       ]
     },
     "Email body for description (description part)": {
@@ -2541,6 +2632,9 @@
       "Name on card required": [
         "Karteninhaber erforderlich"
       ],
+      "Name required": [
+        "Name erforderlich"
+      ],
       "No active sessions": [
         "Keine aktiven Sitzungen"
       ],
@@ -2707,8 +2801,8 @@
       "This label name is not available. Please choose a different name.": [
         "Dieser Kategoriename ist nicht verfügbar. Bitte wähle einen anderen Namen."
       ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser": [
-        "Diese Nachricht enthält möglicherweise Internetadressen, die von Ihrem aktuellen Browser nicht ordnungsgemäß geöffnet werden können."
+      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
+        "Diese Nachricht enthält möglicherweise Internetadressen, die von deinem aktuellen Browser nicht ordnungsgemäß geöffnet werden können."
       ],
       "Unknown error": [
         "Unbekannter Fehler"
@@ -3036,6 +3130,11 @@
         "(Kein Titel)"
       ]
     },
+    "Export calendar": {
+      "Loading events": [
+        "Ereignisse werden geladen"
+      ]
+    },
     "Feature": {
       "${ MaxVPN } VPN connection": [
         "${ MaxVPN } VPN-Verbindung",
@@ -3208,6 +3307,9 @@
       "Actions": [
         "Aktionen"
       ],
+      "Calendar": [
+        "Kalender"
+      ],
       "Event": [
         "Ereignis"
       ],
@@ -3220,14 +3322,26 @@
       "Key type": [
         "Schlüsseltyp"
       ],
+      "Label": [
+        "Kategorie"
+      ],
+      "Name": [
+        "Name"
+      ],
       "Notifications": [
         "Benachrichtigungen"
       ],
       "Organization key fingerprint": [
         "Fingerabdruck des Organisationsschlüssels"
       ],
+      "Status": [
+        "Status"
+      ],
       "Time": [
         "Zeit"
+      ],
+      "What others see": [
+        "Was andere sehen"
       ]
     },
     "Header for addresses table": {
@@ -3716,6 +3830,9 @@
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Wenn Sie fortfahren, verlieren Sie den Zugriff auf alle derzeit verschlüsselten Daten in Ihrem Konto."
       ],
+      "${ calendarName } will be set as default calendar.": [
+        "${ calendarName } wird als Standardkalender festgelegt."
+      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } neuer Kalender",
         "${ calendarsToBeCreatedCount } neue Kalender"
@@ -3890,6 +4007,9 @@
       "Add image URL": [
         "Bild-URL hinzufügen"
       ],
+      "Add label": [
+        "Kategorie hinzufügen"
+      ],
       "Additional options": [
         "Zusätzliche Optionen"
       ],
@@ -3956,6 +4076,9 @@
       "Are you sure you want to delete this address?": [
         "Möchten Sie diese Adresse wirklich löschen?"
       ],
+      "Are you sure you want to delete this calendar?": [
+        "Soll dieser Kalender wirklich gelöscht werden?"
+      ],
       "Are you sure you want to delete this domain?": [
         "Möchtest du diese Domain wirklich löschen?"
       ],
@@ -4006,6 +4129,12 @@
       ],
       "Basic, Plus or Visionary subscription required": [
         "Basic-, Plus‐ oder Visionary‐Abonnement benötigt"
+      ],
+      "Before creating this address you need to provide a password and create encryption keys for it.": [
+        "Vor dem Anlegen dieser Adresse musst du ein Kennwort angeben und Verschlüsselungsschlüssel für die Adresse erstellen."
+      ],
+      "Before enabling the account you need to provide a password and create encryption keys for the new addresses.": [
+        "Vor dem Aktivieren dieses Kontos musst du ein Kennwort angeben und Verschlüsselungsschlüssel für die neuen Adressen erstellen."
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Bevor du einen neuen Bestätigungscode anforderst, überprüfe deinen Spam-Ordner und stelle sicher, dass ${ strong } die richtige Adresse ist."
@@ -4098,14 +4227,35 @@
       "Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.": [
         "Derzeit ist der gesamte verfügbare Speicher dem Administratorkonto zugeordnet. Bitte reduzieren Sie den dem Administrator-Konto zugewiesenen Speicher, um Platz für zusätzliche Benutzer freizugeben. Sie können den Gesamtspeicherplatz jederzeit durch ein Hochstufen Ihres Kontos erhöhen."
       ],
+      "Custom": [
+        "Benutzerdefiniert"
+      ],
+      "Custom daily": [
+        "Benutzerdefiniert: täglich"
+      ],
       "Custom email domains": [
         "Benutzerdefinierte E-Mail-Domains"
+      ],
+      "Custom monthly": [
+        "Benutzerdefiniert: monatlich"
+      ],
+      "Custom weekly": [
+        "Benutzerdefiniert: wöchentlich"
+      ],
+      "Custom yearly": [
+        "Benutzerdefiniert: jährlich"
+      ],
+      "Daily": [
+        "Täglich"
       ],
       "Data locked": [
         "Daten gesperrt"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Lösche alle anderen MX-Einträge oder stelle sicher, dass ${ MAIL_APP_NAME } die geringste Priorität hat."
+      ],
+      "Delete link?": [
+        "Link löschen?"
       ],
       "Discount applied to your subscription with coupon ${ code }": [
         "Rabatt auf Ihr Abonnement mit Gutschein ${ code } eingelöst"
@@ -4152,6 +4302,9 @@
       ],
       "Earned ${ rewards } of ${ rewardsLimit } ${ planName } months.": [
         "${ rewards } von ${ rewardsLimit } ${ planName } Monaten verdient."
+      ],
+      "Edit label": [
+        "Kategorie bearbeiten"
       ],
       "Edit link": [
         "Link bearbeiten"
@@ -4215,6 +4368,9 @@
       ],
       "Enter your recovery phone number and we will send you your username or email address.": [
         "Geben Sie Ihre Wiederherstellungs-Rufnummer ein und es wird Ihnen Ihr Benutzername oder Ihre E-Mail-Adresse zugeschickt."
+      ],
+      "Event invitations and RSVPs will be sent in this language.": [
+        "Termin-Einladungen und Antwortschreiben werden in dieser Sprache versendet."
       ],
       "Expired": [
         "Abgelaufen"
@@ -4440,6 +4596,12 @@
       "Link copied to clipboard": [
         "Link in die Zwischenablage kopiert"
       ],
+      "Link created": [
+        "Link erstellt"
+      ],
+      "Link deleted": [
+        "Link gelöscht"
+      ],
       "Link type": [
         "Linktyp"
       ],
@@ -4472,6 +4634,9 @@
       ],
       "Merged": [
         "Zusammengeführt"
+      ],
+      "Monthly ${ onDayString }": [
+        "Monatlich am ${ onDayString }"
       ],
       "more": [
         "mehr"
@@ -4816,6 +4981,9 @@
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "Die Meldung ${ boldDataLocked } wird nicht mehr angezeigt, aber du kannst deine Daten weiterhin unter ${ encryptionAndKeysLink } entsperren."
       ],
+      "The calendar will be removed from your account.": [
+        "Der Kalender wird aus deinem Konto entfernt."
+      ],
       "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
         "Die E-Mail-Adresse, die du an den Anfang der Liste setzt, ist deine Standard-E-Mail-Adresse. Durch Ziehen und Ablegen kannst du deine Adressen neu anordnen."
       ],
@@ -5065,6 +5233,9 @@
       "Week": [
         "Woche"
       ],
+      "Week and month views only apply to desktop.": [
+        "Wochen- und Monatsansichten gelten nur für die Desktop-Version."
+      ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "Sie erhalten dann einen Rücksetzungscode an die E-Mail-Adresse, die Sie für die Wiederherstellung Ihres Kontos angegeben haben."
       ],
@@ -5100,6 +5271,9 @@
       ],
       "Yandex records your online activity and reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
         "Yandex zeichnet Ihre Online-Aktivitäten auf und liest Ihre persönlichen Daten, um Werbetreibenden und anderen Dritten Zugang zu gewähren. Für eine bessere Privatsphäre, erstellen Sie eine sichere E-Mail-Adresse."
+      ],
+      "Yearly": [
+        "Jährlich"
       ],
       "You already have a free account": [
         "Sie verfügen bereits über ein kostenloses Konto"
@@ -5286,11 +5460,17 @@
       "Additional duplicate keys detected. Please upload individually for more information.": [
         "Doppelt vorhandene Schlüssel erkannt. Für weitere Informationen laden Sie diese bitte einzeln hoch."
       ],
+      "Create an email address": [
+        "Neue E-Mail-Adresse erstellen"
+      ],
       "Key ${ fingerprint } has already been uploaded": [
         "Schlüssel ${ fingerprint } wurde bereits hochgeladen"
       ],
       "Track your referral link activities here": [
         "Verfolge hier deine Empfehlungslink-Aktivitäten"
+      ],
+      "Try Mail Plus": [
+        "Mail Plus ausprobieren"
       ]
     },
     "Info - folder colouring feature": {
@@ -5655,6 +5835,11 @@
         "Als „Veraltet” kennzeichnen"
       ]
     },
+    "Knowledge base link label": {
+      "Here's how": [
+        "Und so geht's"
+      ]
+    },
     "Label": {
       " and ": [
         " und "
@@ -5746,6 +5931,9 @@
       "Attach screenshot(s)": [
         "Bildschirmfoto(s) anhängen"
       ],
+      "Auto-detect primary time zone": [
+        "Primäre Zeitzone automatisch erkennen"
+      ],
       "Auto-load embedded images": [
         "Eingebettete Grafiken automatisch laden"
       ],
@@ -5808,6 +5996,9 @@
       ],
       "Collect usage diagnostics": [
         "Nutzungsdiagnosedaten sammeln"
+      ],
+      "Color": [
+        "Farbe"
       ],
       "Composer": [
         "Verfassen-Fenster"
@@ -5893,17 +6084,38 @@
       "Days of the week": [
         "Tage der Woche"
       ],
+      "Default email address": [
+        "Standard E-Mail-Adresse"
+      ],
+      "Default event duration": [
+        "Standarddauer für Termine"
+      ],
+      "Default full day notifications": [
+        "Standardbenachrichtigungen für ganztägige Ereignisse"
+      ],
       "Default language": [
         "Standardsprache"
       ],
+      "Default language (${ defaultLanguage })": [
+        "Standardsprache (${ defaultLanguage })"
+      ],
+      "Default notifications": [
+        "Standard-Benachrichtigungen"
+      ],
       "Default PGP scheme": [
         "Standard PGP-Schema"
+      ],
+      "Default view": [
+        "Standardansicht"
       ],
       "Delete": [
         "Löschen"
       ],
       "Density": [
         "Dichte"
+      ],
+      "Description": [
+        "Beschreibung"
       ],
       "Device/certificate name": [
         "Name des Geräts/Zertifikats"
@@ -5913,6 +6125,9 @@
       ],
       "Discount": [
         "Rabatt"
+      ],
+      "Display": [
+        "Anzeigen"
       ],
       "Display name": [
         "Anzeigename"
@@ -6253,6 +6468,15 @@
       "Send crash reports": [
         "Absturzberichte senden"
       ],
+      "Send in": [
+        "Senden in"
+      ],
+      "Show secondary time zone": [
+        "Zweite Zeitzone anzeigen"
+      ],
+      "Show week numbers": [
+        "Kalenderwochen anzeigen"
+      ],
       "Sign external messages": [
         "Externe Nachrichten signieren"
       ],
@@ -6336,6 +6560,9 @@
       ],
       "Upload 1 or more recovery files or encryption keys": [
         "Laden Sie eine(n) oder mehrere Wiederherstellungsdateien oder Verschlüsselungsschlüssel hoch"
+      ],
+      "URL": [
+        "URL"
       ],
       "Use folder colors": [
         "Farben für Ordner verwenden"
@@ -7314,8 +7541,8 @@
       "On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
         "Darüber hinaus kannst du bis zu 5 Kalender von Freunden, Verwandten, Kollegen und Organisationen hinzufügen."
       ],
-      "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections..": [
-        "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections."
+      "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections.": [
+        "Eine VPN-Verbindung ermöglicht es einem Gerät, sich zu einem bestimmten Zeitpunkt mit dem Proton VPN zu verbinden. Um zum Beispiel ein Telefon und einen Laptop gleichzeitig mit Proton VPN zu verbinden, werden zwei VPN Verbindungen benötigt."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Option zum Anzeigen der Posteingänge nicht privater Benutzer aus seiner Sicht einschließlich aller Nachrichten- und Kontaktdetails"
@@ -7470,6 +7697,43 @@
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "OpenVPN/IKEv2-Zugangsdaten wiederhergestellt"
+      ]
+    },
+    "Notification time input": {
+      "at": [
+        "um"
+      ]
+    },
+    "Notification type": {
+      "email": [
+        "E-Mail"
+      ],
+      "notification": [
+        "Benachrichtigung"
+      ]
+    },
+    "Notification when": {
+      "at time of event": [
+        "zum Zeitpunkt des Ereignisses"
+      ],
+      "day before": [
+        "Tag vorher",
+        "Tage vorher"
+      ],
+      "hour before": [
+        "Stunde vorher",
+        "Stunden vorher"
+      ],
+      "minute before": [
+        "Minute vorher",
+        "Minuten vorher"
+      ],
+      "on the same day": [
+        "am selben Tag"
+      ],
+      "week before": [
+        "Woche vorher",
+        "Wochen vorher"
       ]
     },
     "Oauth instructions": {
@@ -7768,6 +8032,12 @@
       "A way to contact you": [
         "Eine Möglichkeit, Sie zu kontaktieren"
       ],
+      "Add a calendar description": [
+        "Kalenderbeschreibung hinzufügen"
+      ],
+      "Add a calendar name": [
+        "Kalendername hinzufügen"
+      ],
       "Add gift code": [
         "Gutscheincode hinzufügen"
       ],
@@ -7870,6 +8140,14 @@
     "Price": {
       "Free": [
         "Kostenlos"
+      ]
+    },
+    "Primary timezone": {
+      "Primary time zone": [
+        "Hauptzeitzone"
+      ],
+      "Secondary time zone": [
+        "Zweite Zeitzone"
       ]
     },
     "Private Member": {
@@ -8033,6 +8311,11 @@
         "Organisation"
       ]
     },
+    "Settings update growler warning": {
+      "Failed to update settings": [
+        "Aktualisierung der Einstellungen fehlgeschlagen"
+      ]
+    },
     "Settings/filters": {
       "Filters": [
         "Filter"
@@ -8115,6 +8398,9 @@
       ],
       "Invite friends and earn rewards!": [
         "Lade Freunde ein und verdiene Belohnungen!"
+      ],
+      "No more missed appointments": [
+        "Keine weiteren verpassten Termine"
       ],
       "Try ${ DRIVE_APP_NAME }": [
         "${ DRIVE_APP_NAME } ausprobieren"
@@ -8253,6 +8539,18 @@
       "Bug reported": [
         "Fehler gemeldet"
       ],
+      "Calendar added. It might take a few minutes to sync.": [
+        "Kalender hinzugefügt. Die Synchronisation kann einige Minuten dauern."
+      ],
+      "Calendar created": [
+        "Kalender erstellt"
+      ],
+      "Calendar removed": [
+        "Kalender entfernt"
+      ],
+      "Calendar updated": [
+        "Kalender aktualisiert"
+      ],
       "Canceling import": [
         "Import wird abgebrochen"
       ],
@@ -8264,6 +8562,9 @@
       ],
       "Credits added": [
         "Guthaben hinzugefügt"
+      ],
+      "Default calendar updated": [
+        "Standardkalender aktualisiert"
       ],
       "DMARC value copied to clipboard": [
         "DMARC-Wert wurde in die Zwischenablage kopiert"
@@ -8541,6 +8842,9 @@
       "Action": [
         "Aktion"
       ],
+      "Activate account and generate keys": [
+        "Konto aktivieren und Schlüssel erzeugen"
+      ],
       "Activate organization key": [
         "Organisationsschlüssel aktivieren"
       ],
@@ -8712,6 +9016,9 @@
       "Create a ${ mailAppName } address": [
         "Erstellen Sie eine ${ mailAppName }-E-Mail-Adresse"
       ],
+      "Create calendar": [
+        "Kalender erstellen"
+      ],
       "Create your ${ BRAND_NAME } Account": [
         "Erstelle dein ${ BRAND_NAME }-Konto"
       ],
@@ -8775,6 +9082,9 @@
       "Delete account": [
         "Konto löschen"
       ],
+      "Delete calendar": [
+        "Kalender löschen"
+      ],
       "Delete key permanently?": [
         "Schlüssel unwiederbringlich löschen?"
       ],
@@ -8814,6 +9124,9 @@
       "Edit Block List": [
         "Sperrliste bearbeiten"
       ],
+      "Edit calendar": [
+        "Kalender bearbeiten"
+      ],
       "Edit credit/debit card": [
         "Kredit-/Debitkarte bearbeiten"
       ],
@@ -8849,6 +9162,9 @@
       ],
       "Error": [
         "Fehler"
+      ],
+      "Export calendar": [
+        "Kalender exportieren"
       ],
       "Export private key": [
         "Privaten Schlüssel exportieren"
@@ -9061,6 +9377,9 @@
       "Referral tracker": [
         "Empfehlungs-Tracker"
       ],
+      "Remove calendar": [
+        "Kalender entfernen"
+      ],
       "Report a problem": [
         "Ein Problem melden"
       ],
@@ -9102,6 +9421,15 @@
       ],
       "Select contact group": [
         "Kontaktgruppe auswählen"
+      ],
+      "Select the time to send this notification": [
+        "Auswählen, wann diese Benachrichtigung gesendet werden soll"
+      ],
+      "Select the way to send this notification": [
+        "Auswählen, wie diese Benachrichtigung gesendet werden soll"
+      ],
+      "Select when you want this notification to be sent": [
+        "Auswählen, wann diese Benachrichtigung gesendet werden soll"
       ],
       "Session management": [
         "Sitzungsverwaltung"
@@ -9409,6 +9737,9 @@
       ],
       "This feature is only available for paid users": [
         "Diese Funktion ist nur für zahlende Benutzer verfügbar"
+      ],
+      "This feature is unavailable for the moment": [
+        "Diese Funktion steht zur Zeit nicht zur Verfügung"
       ],
       "This key cannot be used for encryption": [
         "Dieser Schlüssel kann nicht zur Verschlüsselung verwendet werden."

@@ -1532,11 +1532,6 @@
         "活动正在进行中"
       ]
     },
-    "color": {
-      "Apple": [
-        "apple"
-      ]
-    },
     "Composer email icon": {
       "End-to-end encrypted": [
         "已端到端加密"
@@ -2379,9 +2374,6 @@
       ]
     },
     "Description": {
-      "Decrypting contacts... This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
-        "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported."
-      ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "正在删除联系人... 该过程可能需要几分钟，完成后您就可以关闭此对话框了"
       ],
@@ -2834,9 +2826,6 @@
       ],
       "This message has already been sent. A new draft has been saved.": [
         "此邮件已发送，已保存新草稿。"
-      ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser": [
-        "此邮件含有浏览器不能打开的链接"
       ],
       "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
         "启用的规则数量已达上限，开通付费账户即可使用更多筛选规则。"
@@ -3743,9 +3732,6 @@
       "Do you want to re-sign the contact details?": [
         "确定要重新对联系人详细信息签名吗？"
       ],
-      "Don't forget to share your password with the recipient": [
-        "Don't forget to share the password with the recipient"
-      ],
       "Download our mobile application from your favorite app store to communicate securely on-the-go.": [
         "从应用商店下载我们的移动应用即可随时随地安全通信。"
       ],
@@ -3874,9 +3860,6 @@
       ],
       "Hour": [
         "小时"
-      ],
-      "I'm sending this message to a non-ProtonMail user.": [
-        "I'm sending this message to a non-Proton Mail user."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "若您创建账户存在困难，请提交注册申请，我们将在一个工作日内回复。"
@@ -6117,9 +6100,6 @@
       ],
       "Cannot send to organizer address: ${ errorMessage }": [
         "无法发送到组织者地址：${ errorMessage }"
-      ],
-      "Re-encrypting invitation failed. Please try again": [
-        "Re-encrypting invitation failed. Please try again."
       ]
     },
     "Search - no results": {
