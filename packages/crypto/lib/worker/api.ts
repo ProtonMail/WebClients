@@ -164,7 +164,7 @@ class KeyStore {
      * NB: key references may be stored by webapps even after the worker has been destroyed (e.g. after closing the browser window),
      * hence we want to keep using different identifiers even after restarting the worker, to also invalidate those stale key references.
      */
-    private nextIdx = Math.floor(Math.random() * (Number.MAX_SAFE_INTEGER / 2));
+    private nextIdx = crypto.getRandomValues(new Uint32Array(1))[0];
 
     /**
      * Add a key to the key store.
@@ -177,7 +177,7 @@ class KeyStore {
     add(key: Key, customIdx?: number) {
         const idx = customIdx !== undefined ? customIdx : this.nextIdx;
         if (this.store.has(idx)) {
-            throw new Error('Idx already in use');
+            throw new Error(`Idx ${idx} already in use`);
         }
         this.store.set(idx, key);
         this.nextIdx++; // increment regardless of customIdx, for code simplicity
