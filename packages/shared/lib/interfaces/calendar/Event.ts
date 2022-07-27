@@ -38,7 +38,7 @@ export interface Attendee {
     ID: string;
     Token: string;
     Status: ATTENDEE_STATUS_API;
-    UpdateTime: number;
+    UpdateTime: Nullable<number>;
 }
 
 export interface CalendarEventBlobData {
