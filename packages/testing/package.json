@@ -12,10 +12,8 @@
         "@proton/shared": "workspace:packages/shared"
     },
     "devDependencies": {
-        "@jackfranklin/test-data-bot": "^1.4.0",
-        "@types/faker": "^5.5.9",
+        "@jackfranklin/test-data-bot": "^2.0.0",
         "cross-fetch": "^3.1.5",
-        "faker": "5.5.3",
         "msw": "^0.44.2"
     }
 }
