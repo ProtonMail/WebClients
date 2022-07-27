@@ -1,4 +1,10 @@
+import { useCallback } from 'react';
+
+import { useApi, useConfig, useGetCalendarUserSettings, useRelocalizeText } from '@proton/components';
+import { useGetCanonicalEmailsMap } from '@proton/components/hooks/useGetCanonicalEmailsMap';
 import { useGetVtimezonesMap } from '@proton/components/hooks/useGetVtimezonesMap';
+import useSendIcs from '@proton/components/hooks/useSendIcs';
+import { serverTime } from '@proton/crypto';
 import { withPartstat } from '@proton/shared/lib/calendar/attendees';
 import { ICAL_ATTENDEE_STATUS, ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
 import { getInviteLocale } from '@proton/shared/lib/calendar/getSettings';
@@ -25,11 +31,7 @@ import {
     SavedInviteData,
 } from '@proton/shared/lib/interfaces/calendar';
 import { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
-import { useCallback } from 'react';
-import { useApi, useConfig, useRelocalizeText, useGetCalendarUserSettings } from '@proton/components';
-import { useGetCanonicalEmailsMap } from '@proton/components/hooks/useGetCanonicalEmailsMap';
-import useSendIcs from '@proton/components/hooks/useSendIcs';
-import { serverTime } from '@proton/crypto';
+
 import { getHasFullCalendarData } from '../helpers/calendar/invite';
 import {
     createCalendarEventFromInvitation,
@@ -277,11 +279,13 @@ const useInviteButtons = ({
                 if (!result) {
                     return;
                 }
-                const attendeeApi = result.savedEvent.Attendees.find(({ Token }) => Token === attendee?.token);
-                if (!attendeeApi) {
-                    throw new Error('Could not retrieve attendee');
+                const updateTime = result.savedEvent.Attendees.find(
+                    ({ Token }) => Token === attendee?.token
+                )?.UpdateTime;
+                if (!updateTime) {
+                    throw new Error('Failed to retrieve attendee update time');
                 }
-                await sendReplyEmail(partstat, attendeeApi.UpdateTime * SECOND);
+                await sendReplyEmail(partstat, updateTime * SECOND);
                 onSuccess(result);
                 return;
             }
