@@ -1,10 +1,30 @@
 import { useEffect, useRef, useState } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
-import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
-import { checkReferrer } from '@proton/shared/lib/api/core/referrals';
+
+import { c } from 'ttag';
+
 import {
-    APP_NAMES,
+    ExperimentCode,
+    FeatureCode,
+    HumanVerificationSteps,
+    OnLoginCallback,
+    useApi,
+    useErrorHandler,
+    useExperiment,
+    useFeature,
+    useLoading,
+    useLocalState,
+    useMyLocation,
+    useVPNCountriesCount,
+    useVPNServersCount,
+} from '@proton/components';
+import { checkReferrer } from '@proton/shared/lib/api/core/referrals';
+import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
+import { getPaymentMethodStatus, queryPlans } from '@proton/shared/lib/api/payments';
+import { getAppName } from '@proton/shared/lib/apps/helper';
+import {
     APPS,
+    APP_NAMES,
     BRAND_NAME,
     CLIENT_TYPES,
     CYCLE,
@@ -12,9 +32,8 @@ import {
     PLANS,
     SSO_PATHS,
 } from '@proton/shared/lib/constants';
-import { getPaymentMethodStatus, queryPlans } from '@proton/shared/lib/api/payments';
+import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
-import { c } from 'ttag';
 import {
     Api,
     Currency,
@@ -23,23 +42,22 @@ import {
     PaymentMethodStatus,
     Plan,
 } from '@proton/shared/lib/interfaces';
-import {
-    FeatureCode,
-    HumanVerificationSteps,
-    OnLoginCallback,
-    useApi,
-    useErrorHandler,
-    useFeature,
-    useLoading,
-    useLocalState,
-    useMyLocation,
-    useVPNCountriesCount,
-    useVPNServersCount,
-} from '@proton/components';
-import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
 
-import { getAppName } from '@proton/shared/lib/apps/helper';
+import Layout from '../public/Layout';
+import { defaultPersistentKey, getHasAppExternalSignup } from '../public/helper';
+import AccountStep from './AccountStep';
+import CongratulationsStep from './CongratulationsStep';
+import ExploreStep from './ExploreStep';
+import LoadingStep from './LoadingStep';
+import PaymentStep from './PaymentStep';
+import RecoveryStep from './RecoveryStep';
+import ReferralStep from './ReferralStep';
+import SignupSupportDropdown from './SignupSupportDropdown';
+import UpsellStep from './UpsellStep';
+import VerificationStep from './VerificationStep';
+import { DEFAULT_SIGNUP_MODEL } from './constants';
+import { getPlanFromPlanIDs, getSubscriptionPrices } from './helper';
 import {
     InviteData,
     PlanIDs,
@@ -50,10 +68,7 @@ import {
     SignupType,
     SubscriptionData,
 } from './interfaces';
-import { DEFAULT_SIGNUP_MODEL } from './constants';
-import { defaultPersistentKey, getHasAppExternalSignup } from '../public/helper';
-import SignupSupportDropdown from './SignupSupportDropdown';
-import Layout from '../public/Layout';
+import { SignupParameters, getPlanIDsFromParams, getSignupSearchParams } from './searchParams';
 import {
     handleCreateAccount,
     handleDisplayName,
@@ -64,17 +79,6 @@ import {
     handleSelectPlan,
     handleSetupUser,
 } from './signupActions';
-import { getPlanIDsFromParams, getSignupSearchParams, SignupParameters } from './searchParams';
-import { getPlanFromPlanIDs, getSubscriptionPrices } from './helper';
-import AccountStep from './AccountStep';
-import RecoveryStep from './RecoveryStep';
-import ReferralStep from './ReferralStep';
-import UpsellStep from './UpsellStep';
-import LoadingStep from './LoadingStep';
-import CongratulationsStep from './CongratulationsStep';
-import PaymentStep from './PaymentStep';
-import VerificationStep from './VerificationStep';
-import ExploreStep from './ExploreStep';
 
 const {
     ACCOUNT_CREATION_USERNAME,
@@ -115,6 +119,7 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType }: Prop
     const [vpnServers] = useVPNServersCount();
     const [loading, withLoading] = useLoading();
     const externalSignupFeature = useFeature(FeatureCode.ExternalSignup);
+    const referralExperiment = useExperiment(ExperimentCode.ReferralProgramSignup);
     const mailAppName = getAppName(APPS.PROTONMAIL);
     const [[steps, step], setStep] = useState<[SIGNUP_STEPS[], SIGNUP_STEPS]>([
         [],
@@ -452,6 +457,7 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType }: Prop
             )}
             {step === TRIAL_PLAN && (
                 <ReferralStep
+                    experiment={referralExperiment}
                     onBack={handleBackStep}
                     onPlan={async (planIDs) => {
                         // Referral is always free even if there's a plan, and 1 month cycle
