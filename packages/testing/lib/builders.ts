@@ -1,10 +1,9 @@
 import { build } from '@jackfranklin/test-data-bot';
-import * as faker from 'faker';
 
-import { Address, AddressKey } from '@proton/shared/lib/interfaces';
-import { ADDRESS_TYPE } from '@proton/shared/lib/constants';
-import { VisualCalendar, CalendarEventWithMetadata, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
 import { CALENDAR_FLAGS } from '@proton/shared/lib/calendar/constants';
+import { ADDRESS_TYPE } from '@proton/shared/lib/constants';
+import { Address, AddressKey } from '@proton/shared/lib/interfaces';
+import { CalendarEventWithMetadata, VcalVeventComponent, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
 export const messageBuilder = build<Pick<Message, 'ID' | 'ParsedHeaders'>>('Message', {
@@ -121,8 +120,8 @@ export const addressBuilder = build<Address>('Address', {
             Signature:
                 '-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v4.10.10\r\nComment: https://openpgpjs.org\r\n\r\nwnUEARYKAAYFAmGWL38AIQkQ1oODHu7bPjIWIQTbrouLuU2xuMzp19LWg4Me\r\n7ts+MmKdAQDGpH8FevWQE32waPgqx+1EqjGmEdywZdZkilUEwb0VswEAgdrS\r\noustAwFTu4E5PubZz7H7tN0SqM9p5GiKSYJSCQg=\r\n=gK8A\r\n-----END PGP SIGNATURE-----\r\n',
         },
-        Order: faker.datatype.number(),
-        Priority: faker.datatype.number(),
+        Order: 1,
+        Priority: 1,
         Receive: 1,
         Send: 1,
         Signature: '',
