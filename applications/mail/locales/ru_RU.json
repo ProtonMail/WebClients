@@ -585,7 +585,7 @@
         "Переместить в спам"
       ],
       "Move to spam and unsubscribe": [
-        "Переместить в спам и отказаться от подписки"
+        "Переместить в Спам и отписаться"
       ],
       "Move to trash": [
         "Переместить в Корзину"
@@ -1630,7 +1630,7 @@
       ]
     },
     "color": {
-      "Apple": [
+      "apple": [
         "apple"
       ],
       "azureish white": [
@@ -2812,8 +2812,8 @@
       ]
     },
     "Description": {
-      "Decrypting contacts... This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
-        "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported."
+      "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
+        "Расшифровка контактов... Это может занять несколько минут. По завершении процесса вы сможете загрузить файл с экспортированными контактами."
       ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Удаляем контакты... Это может занять несколько минут. Когда процесс завершится, вы можете закрыть это окно."
@@ -3301,8 +3301,8 @@
       "This message has already been sent. A new draft has been saved.": [
         "Это сообщение уже было отправлено. Сохранён новый черновик."
       ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser": [
-        "Это сообщение может содержать ссылки, которые не могут быть правильно открыты вашим текущим браузером"
+      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
+        "Это сообщение может содержать ссылки, которые не могут быть правильно открыты в вашем текущем браузере."
       ],
       "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
         "Слишком много активных фильтров. Пожалуйста, улучшите до платного тарифа для активации дополнительных фильтров."
@@ -4377,8 +4377,8 @@
       "Do you want to re-sign the contact details?": [
         "Вы хотите повторно подписать контакт?"
       ],
-      "Don't forget to share your password with the recipient": [
-        "Don't forget to share the password with the recipient"
+      "Don't forget to share the password with the recipient": [
+        "Не забудьте сообщить свой пароль получателю"
       ],
       "Download our mobile application from your favorite app store to communicate securely on-the-go.": [
         "Скачайте наше мобильное приложение из предпочитаемого магазина, чтобы общаться безопасно, где бы вы ни были."
@@ -4527,8 +4527,8 @@
         "Часов",
         "Час(а, ов)"
       ],
-      "I'm sending this message to a non-ProtonMail user.": [
-        "I'm sending this message to a non-Proton Mail user."
+      "I'm sending this message to a non-Proton Mail user.": [
+        "Я отправляю это сообщение пользователю, не являющемуся пользователем Proton Mail."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Если у вас возникли проблемы с созданием аккаунта, пожалуйста, запросите приглашение и мы ответим в течение одного рабочего дня."
@@ -4987,10 +4987,10 @@
         "В этой цепочке писем есть удаленные сообщения."
       ],
       "This conversation will be marked as spam. Would you also like to unsubscribe from future emails?": [
-        "This conversation will be marked as spam. Would you also like to unsubscribe from future emails?",
-        "This conversation will be marked as spam. Would you also like to unsubscribe from future emails?",
-        "Эти разговоры будут помечены как спам. Вы также хотите отписаться от будущих писем?",
-        "Эти разговоры будут помечены как спам. Вы также хотите отписаться от будущих писем?"
+        "Эта беседа будет помечена как спам. Вы также хотите отписаться от будущих писем?",
+        "Эти беседы будут помечены как спам. Вы также хотите отписаться от будущих писем?",
+        "Эти беседы будут помечены как спам. Вы также хотите отписаться от будущих писем?",
+        "Эти беседы будут помечены как спам. Вы также хотите отписаться от будущих писем?"
       ],
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded!": [
         "Это письмо не соответствует требованиям подтверждения подлинности домена. Оно может быть поддельным, либо было переслано ненадлежащим образом!"
@@ -5026,10 +5026,10 @@
         "Это сообщение подписано при помощи приложенного ключа, который еще не отмечен как доверенный."
       ],
       "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
-        "Это сообщение будет помечено как спам. Вы также хотите отписаться от будущих писем?",
-        "Это сообщение будет помечено как спам. Вы также хотите отписаться от будущих писем?",
-        "These messages will be marked as spam. Would you also like to unsubscribe from future emails?",
-        "These messages will be marked as spam. Would you also like to unsubscribe from future emails?"
+        "Это сообщение будет помечено как спам. Вы хотите также отписаться от будущих писем?",
+        "Эти сообщения будут помечены как спам. Вы также хотите отписаться от будущих писем?",
+        "Эти сообщения будут помечены как спам. Вы также хотите отписаться от будущих писем?",
+        "Эти сообщения будут помечены как спам. Вы также хотите отписаться от будущих писем?"
       ],
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
         "Это сообщение будет перемещено в Черновики, поэтому вы можете его редактировать. Его нужно будет снова запланировать перед отправкой."
@@ -6868,8 +6868,8 @@
       "Cannot send to organizer address: ${ errorMessage }": [
         "Не удается отправить на адрес организатора: ${ errorMessage }"
       ],
-      "Re-encrypting invitation failed. Please try again": [
-        "Re-encrypting invitation failed. Please try again."
+      "Re-encrypting invitation failed. Please try again.": [
+        "Повторное шифрование приглашения не удалось. Попробуйте еще раз."
       ]
     },
     "Search - no results": {

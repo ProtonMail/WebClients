@@ -2148,9 +2148,6 @@
       ]
     },
     "Description": {
-      "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }..": [
-        "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }."
-      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Krypterer og importerer kontakter... Dette kan tage et par minutter. Når processen er afsluttet, kan du lukke dette vindue."
       ],
@@ -2612,9 +2609,6 @@
       ],
       "This label name is not available. Please choose a different name.": [
         "Dette etikettenavn er ikke tilgængeligt. Vælg venligst et andet navn."
-      ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser": [
-        "Denne besked kan indeholde links, som ikke kan åbnes korrekt af din aktuelle browser"
       ],
       "Unknown error": [
         "Ukendt fejl"
@@ -3785,6 +3779,12 @@
       ],
       "Basic, Plus or Visionary subscription required": [
         "Basic, Plus eller Visionary abonnement kræves"
+      ],
+      "Before creating this address you need to provide a password and create encryption keys for it.": [
+        "Før du opretter denne adresse, skal du angive en adgangskode og oprette krypteringsnøgler til den."
+      ],
+      "Before enabling the account you need to provide a password and create encryption keys for the new addresses.": [
+        "Før du aktiverer kontoen, skal du angive en adgangskode og oprette krypteringsnøgler til de nye adresser."
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Før du anmoder om en ny bekræftelseskode, bør du tjekke din spam-mappe samt kontrollere, at ${ strong } er den korrekte adresse."
@@ -6510,11 +6510,6 @@
         "Din kontos forbrug"
       ]
     },
-    "new_plans: tooltip": {
-      "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections..": [
-        "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections."
-      ]
-    },
     "Notification": {
       "${ _Filter.Name } created": [
         "${ _Filter.Name } oprettet"
@@ -7550,6 +7545,9 @@
       ],
       "Action": [
         "Handling"
+      ],
+      "Activate account and generate keys": [
+        "Aktiver konto og generer nøgler"
       ],
       "Activate organization key": [
         "Aktivér organisationsnøgle"
