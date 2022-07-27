@@ -14,7 +14,8 @@ const usePreLoadElements = (elementIDs: string[], isConversation: boolean, label
     const api = useApi();
     const dispatch = useDispatch();
     const { feature } = useFeature(FeatureCode.NumberOfPreloadedConversations);
-    const firstElementIDs = elementIDs.slice(0, feature?.Value || 0);
+    const numberOfPreloadedConversations = feature?.Value || 0;
+    const firstElementIDs = elementIDs.slice(0, numberOfPreloadedConversations);
     const getConversation = useGetConversation();
     const getMessage = useGetMessage();
 
