@@ -102,13 +102,13 @@
         "Закрыть окно"
       ],
       "Close navigation": [
-        "Cкрыть панель навигации"
+        "Закрыть навигацию"
       ],
       "Close this banner": [
         "Закрыть этот баннер"
       ],
       "Close transfers": [
-        "Закрыть окно с загрузками"
+        "Закрыть окно скачиваний"
       ],
       "Collapse": [
         "Свернуть"
@@ -324,7 +324,7 @@
         "Объединить контакты"
       ],
       "Minimize transfers": [
-        "Свернуть окно с загрузками"
+        "Свернуть окно скачиваний"
       ],
       "More info: ${ safeTitle }": [
         "Больше информации: ${ safeTitle }"
@@ -354,7 +354,7 @@
         "OK"
       ],
       "Open navigation": [
-        "Показать панель навигации"
+        "Открыть навигацию"
       ],
       "Pause all": [
         "Приостановить все"
@@ -450,7 +450,7 @@
         "Поиск стран"
       ],
       "Search drive": [
-        "Искать в Drive"
+        "Искать в хранилище"
       ],
       "Select all": [
         "Выделить всё"
@@ -1764,8 +1764,8 @@
       ]
     },
     "Description": {
-      "Decrypting contacts... This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
-        "Идет расшифровка контактов. Это может занять несколько минут. Когда процесс завершится, вы сможете скачать файл со всеми своими контактами."
+      "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
+        "Расшифровка контактов... Это может занять несколько минут. По завершении процесса вы сможете загрузить файл с экспортированными контактами."
       ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Удаление контактов... Это может занять несколько минут. Когда процесс завершится, вы можете закрыть это окно."
@@ -2033,8 +2033,8 @@
       "This label name is not available. Please choose a different name.": [
         "Это имя ярлыка недоступно. Пожалуйста, выберите другое имя."
       ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser": [
-        "Это сообщение может содержать ссылки, которые не могут быть правильно открыты вашим текущим браузером"
+      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
+        "Это сообщение может содержать URL какой-то ссылки, которая не может быть правильно открыта вашим текущим браузером."
       ],
       "Unknown error": [
         "Неизвестная ошибка"
@@ -2138,7 +2138,7 @@
     },
     "Error notification when score is missing in user feedback form modal": {
       "Score is required": [
-        "Поставьте оценку"
+        "Оценка обязательна"
       ]
     },
     "Feedback Modal Title": {
@@ -2191,7 +2191,7 @@
     },
     "Filter notification": {
       "${ Label.Name } updated": [
-        "${ Label.Name } обновлена"
+        "${ Label.Name } обновлен"
       ]
     },
     "Group": {
@@ -2345,7 +2345,7 @@
         "${ addressCount } адреса электронной почты"
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
-        "${ appName } нужно ваше разрешение на ${ enableDesktopNotifications }."
+        "${ appName } требуется ваше разрешение на ${ enableDesktopNotifications }."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } новый календарь",
@@ -2424,13 +2424,13 @@
       ],
       "${ numContactGroups } contact group": [
         "${ numContactGroups } группа контактов",
+        "${ numContactGroups } группы контактов",
         "${ numContactGroups } групп контактов",
-        "${ numContactGroups } групп контактов",
-        "${ numContactGroups } групп(а,ы) контактов"
+        "${ numContactGroups } групп контактов"
       ],
       "${ numContacts } contact": [
         "${ numContacts } контакт",
-        "${ numContacts } контактов",
+        "${ numContacts } контакта",
         "${ numContacts } контактов",
         "${ numContacts } контакт(а,ов)"
       ],
@@ -2627,7 +2627,7 @@
         "Скачивание отменено"
       ],
       "Download failed": [
-        "Сбой скачивания"
+        "Скачивание не удалось"
       ],
       "Download failed due to ${ error }": [
         "Сбой скачивания: ${ error }"
@@ -2903,7 +2903,7 @@
         "Только люди со ссылкой и паролем могут получить доступ к этой папке."
       ],
       "Other options": [
-        "Другие возможности"
+        "Другие параметры"
       ],
       "Paused": [
         "Приостановлено"
@@ -3236,7 +3236,7 @@
         "Ваша учетная запись имеет по крайней мере один просроченный счет. Ваш доступ скоро будет ограничен. ${ payInvoiceLink }"
       ],
       "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
-        "Ваш текущий браузер не поддерживает загрузку больших файлов из-за недоступности сервисных служб. Загрузка больших файлов может стать причиной зависания браузера. Пожалуйста, воспользуйтесь последней версией ${ recommendedBrowser } и попробуйте снова."
+        "Ваш текущий браузер не поддерживает загрузку больших файлов из-за недоступности работников службы. Загрузка больших файлов может привести к зависанию или отсутствию реакции браузера. Используйте последние версии ${ recommendedBrowser } и повторите попытку."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Ваши данные готовы к импорту из ${ importedEmailAddressStrong } в ваш аккаунт Proton."
@@ -3701,7 +3701,7 @@
     },
     "label/folder notification": {
       "${ Label.Name } created": [
-        "${ Label.Name } создана"
+        "${ Label.Name } создан"
       ]
     },
     "Link": {
@@ -3803,12 +3803,12 @@
     },
     "new_plans: info": {
       "Introducing Proton’s refreshed look.${ br }Many services, one mission. Welcome to an internet where privacy is the default.": [
-        "Мы освежили внешний вид Proton.${ br }У наших сервисов общая миссия — создать Интернет, где конфиденциальность на первом месте."
+        "Представляем обновленный облик Proton.${ br }Множество услуг, одна миссия. Добро пожаловать в интернет, конфиденциальный по умолчанию."
       ]
     },
     "new_plans: label": {
       "Tell us about your experience. (Optional)": [
-        "Расскажите нам о вашем опыте (не обязательно)"
+        "Расскажите нам о вашем опыте. (Не обязательно)"
       ]
     },
     "new_plans: placeholder": {
@@ -4056,7 +4056,7 @@
     },
     "Onboarding Info": {
       "Your trusty online vault for vital documents and precious memories.": [
-        "Ваше надежное онлайн-хранилище для жизненно важных документов и драгоценных воспоминаний."
+        "Ваше надежное онлайновое хранилище для жизненно важных документов и драгоценных воспоминаний."
       ]
     },
     "Onboarding Proton": {
@@ -4095,7 +4095,7 @@
         "Игнорировать группу"
       ],
       "No parent folder": [
-        "Без родительской папки"
+        "Нет родительской папки"
       ]
     },
     "Option group label": {
@@ -4116,7 +4116,7 @@
         "${ emailAddress } пометил этот ключ как раскрытый. Этот ключ нельзя использовать ни для шифрования, ни для проверки подписи."
       ],
       "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
-        "${ emailAddress } пометил этот ключ как раскрытый. Этот ключ может быть использован для проверки подписи."
+        "${ emailAddress } пометил этот ключ как устаревший. Этот ключ можно использовать только для проверки подписи."
       ],
       "We recommend that you \"untrust\" this key.": [
         "Мы рекомендуем вам \"отозвать доверие\" у этого ключа."
@@ -4184,15 +4184,15 @@
         "${ contactsExported.length } из ${ countContacts } контактов успешно экспортировано."
       ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
-        "Успешно удален ${ model.deleted.length } из ${ totalBeDeleted }.",
-        "Успешно удалены ${ model.deleted.length } из ${ totalBeDeleted }.",
-        "Успешно удалены ${ model.deleted.length } из ${ totalBeDeleted }.",
-        "Успешно удалено ${ model.deleted.length } из ${ totalBeDeleted }."
+        "${ model.deleted.length } из ${ totalBeDeleted } контакта успеншно удален.",
+        "${ model.deleted.length } из ${ totalBeDeleted } контактов успеншно удалены.",
+        "${ model.deleted.length } из ${ totalBeDeleted } контактов успеншно удалены.",
+        "${ model.deleted.length } из ${ totalBeDeleted } контактов успеншно удалены."
       ],
       "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
         "${ model.submitted.length } из ${ totalBeMerged } контактов успешно объединен.",
-        "${ model.submitted.length } из ${ totalBeMerged } контакта успешно объединены.",
-        "${ model.submitted.length } из ${ totalBeMerged } контактов успешно объединено.",
+        "${ model.submitted.length } из ${ totalBeMerged } контактов успешно объединены.",
+        "${ model.submitted.length } из ${ totalBeMerged } контактов успешно объединены.",
         "${ model.submitted.length } из ${ totalBeMerged } контактов успешно объединено."
       ],
       "No contacts exported.": [
@@ -4560,10 +4560,10 @@
         "Удаление контактов"
       ],
       "Discard": [
-        "Отменить"
+        "Сбросить"
       ],
       "Discard changes?": [
-        "Отменить изменения?"
+        "Сбросить изменения?"
       ],
       "Download shared file": [
         "Скачать общий файл"
@@ -4575,7 +4575,7 @@
         "Скачать непроверенную папку?"
       ],
       "Drive": [
-        "Диск"
+        "Хранилище"
       ],
       "Drop to upload": [
         "Перетащите для загрузки"
@@ -4662,7 +4662,7 @@
         "Информация об элементе"
       ],
       "Items details": [
-        "Информация о папке"
+        "Информация об элементах"
       ],
       "Link confirmation": [
         "Подтверждение ссылки"
@@ -4701,7 +4701,7 @@
         "Количество папок"
       ],
       "Number of items": [
-        "Количество файлов"
+        "Количество элементов"
       ],
       "Open actions dropdown": [
         "Показать список доступных действий"
@@ -4848,19 +4848,19 @@
         "Предупреждение"
       ],
       "Warning: suspected fake website": [
-        "Предупреждение: предполагаемый поддельный сайт"
+        "Предупреждение: возможно поддельный сайт"
       ],
       "What would you like to import?": [
         "Что бы вы хотели импортировать?"
       ],
       "What's new": [
-        "Список изменений"
+        "Что нового"
       ],
       "You have inaccessible files": [
         "Имеются недоступные файлы"
       ],
       "You have no files to share": [
-        "У вас нет файлов"
+        "У вас нет файлов, которыми можно поделиться"
       ],
       "You have no folders yet": [
         "У вас пока что нет папок"

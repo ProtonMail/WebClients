@@ -4,6 +4,20 @@
     "language": "cs_CZ"
   },
   "contexts": {
+    "Access level": {
+      "Full": [
+        "Plný"
+      ],
+      "Full view": [
+        "Plné zobrazení"
+      ],
+      "Limited": [
+        "Omezený"
+      ],
+      "Limited view": [
+        "Omezené zobrazení"
+      ]
+    },
     "Action": {
       "${ address } is available.": [
         "${ address } je k dispozici."
@@ -307,6 +321,9 @@
       ],
       "Edit subscription": [
         "Změnit předplatné"
+      ],
+      "Emoji": [
+        "Emoji"
       ],
       "enable desktop notifications": [
         "povolit oznámení na ploše"
@@ -614,6 +631,12 @@
       "Save selected": [
         "Uložit vybrané"
       ],
+      "Search countries": [
+        "Vyhledat země"
+      ],
+      "Search settings": [
+        "Nastavení vyhledávání"
+      ],
       "Select ${ planTitle }": [
         "Vybrat ${ planTitle }"
       ],
@@ -816,8 +839,14 @@
       ]
     },
     "Action in trial plan": {
+      "Continue with free plan": [
+        "Pokračovat s bezplatným plánem"
+      ],
       "No, thanks": [
         "Ne, děkuji"
+      ],
+      "Start my 30-day free trial": [
+        "Začít 30denní zkušební dobu zdarma"
       ],
       "Try free for 30 days": [
         "Vyzkoušejte zdarma na 30 dní"
@@ -942,6 +971,11 @@
       ],
       "Unsupported event": [
         "Událost není podporována"
+      ]
+    },
+    "Auto import invitations setting": {
+      "Add to calendar and mark as pending": [
+        "Přidat do kalendáře a označit jako čekající"
       ]
     },
     "Autoresponse": {
@@ -1153,6 +1187,33 @@
         "Tweetnout"
       ]
     },
+    "Calendar import section description": {
+      "You can import ICS files from another calendar to ${ CALENDAR_APP_NAME }. This lets you quickly import one event or your entire agenda.": [
+        "Soubory ICS můžete importovat z jiného kalendáře do ${ CALENDAR_APP_NAME }. To vám umožní rychle importovat jednu událost nebo celý váš program."
+      ]
+    },
+    "Calendar limit warning": {
+      "You have reached the maximum number of personal calendars you can create within your plan.": [
+        "Dosáhli jste maximálního počtu osobních kalendářů, které můžete v rámci svého tarifu vytvořit."
+      ],
+      "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS } subscribed calendar.": [
+        "Dosáhli jste maxima ${ MAX_SUBSCRIBED_CALENDARS } odebíraného kalendáře.",
+        "Dosáhli jste maxima ${ MAX_SUBSCRIBED_CALENDARS } odebíraných kalendářů.",
+        "Dosáhli jste maxima ${ MAX_SUBSCRIBED_CALENDARS } odebíraných kalendářů.",
+        "Dosáhli jste maxima ${ MAX_SUBSCRIBED_CALENDARS } odebíraných kalendářů."
+      ]
+    },
+    "Calendar link purpose update success message": {
+      "Label added": [
+        "Štítek přidán"
+      ],
+      "Label deleted": [
+        "Štítek smazán"
+      ],
+      "Label edited": [
+        "Štítek změněn"
+      ]
+    },
     "Calendar status": {
       "Active": [
         "Aktivní"
@@ -1221,9 +1282,17 @@
         "Celkem za ${ n } měsíců"
       ]
     },
+    "Collapsible tooltip": {
+      "Collapse": [
+        "Sbalit"
+      ],
+      "Expand": [
+        "Rozbalit"
+      ]
+    },
     "color": {
-      "Apple": [
-        "Apple"
+      "apple": [
+        "apple"
       ],
       "azureish white": [
         "azurově bílá"
@@ -1721,6 +1790,9 @@
       "Czech Republic": [
         "Česká republika"
       ],
+      "Côte d'Ivoire": [
+        "Pobřeží slonoviny"
+      ],
       "Denmark": [
         "Dánsko"
       ],
@@ -1750,6 +1822,9 @@
       ],
       "Estonia": [
         "Estonsko"
+      ],
+      "Eswatini": [
+        "Svazijsko"
       ],
       "Ethiopia": [
         "Etiopie"
@@ -1993,6 +2068,9 @@
       ],
       "Mozambique": [
         "Mosambik"
+      ],
+      "Myanmar": [
+        "Myanmar"
       ],
       "Namibia": [
         "Namibie"
@@ -2321,6 +2399,44 @@
         "/uživatel měsíčně"
       ]
     },
+    "Daily recurring event, frequency": {
+      "${ count } time": [
+        "${ count } krát",
+        "${ count } krát",
+        "${ count } krát",
+        "${ count } krát"
+      ],
+      "Daily": [
+        "Denně"
+      ],
+      "Daily, ${ timesString }": [
+        "Denně, ${ timesString }"
+      ],
+      "Daily, ${ untilString }": [
+        "Denně, ${ untilString }"
+      ],
+      "Every ${ interval } day": [
+        "Každý ${ interval } den",
+        "Každé ${ interval } dny",
+        "Každých ${ interval } dnů",
+        "Každých ${ interval } dnů"
+      ],
+      "Every ${ interval } day, ${ timesString }": [
+        "Každý ${ interval } den, ${ timesString }",
+        "Každé ${ interval } dny, ${ timesString }",
+        "Každých ${ interval } dnů, ${ timesString }",
+        "Každých ${ interval } dnů, ${ timesString }"
+      ],
+      "Every ${ interval } day, ${ untilString }": [
+        "Každý ${ interval } den, ${ untilString }",
+        "Každé ${ interval } dny, ${ untilString }",
+        "Každých ${ interval } dnů, ${ untilString }",
+        "Každých ${ interval } dnů, ${ untilString }"
+      ],
+      "until ${ dateString }": [
+        "do ${ dateString }"
+      ]
+    },
     "Day": {
       "Friday": [
         "Pátek"
@@ -2355,8 +2471,8 @@
       ]
     },
     "Description": {
-      "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }..": [
-        "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }."
+      "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
+        "Blahopřejeme! Získali jste maximálního počtu ${ rewardsLimit } měsíců zdarma ${ plusPlanName }."
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Šifrování a import kontaktů... Tato akce může trvat několik minut. Jakmile bude proces ukončen, můžete zavřít tento modul."
@@ -2430,6 +2546,20 @@
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "Pomozte nám se zlepšit!"
+      ]
+    },
+    "Duration": {
+      "120 minutes": [
+        "120 minut"
+      ],
+      "30 minutes": [
+        "30 minut"
+      ],
+      "60 minutes": [
+        "60 minut"
+      ],
+      "90 minutes": [
+        "90 minut"
       ]
     },
     "Email body for description (description part)": {
@@ -2662,6 +2792,9 @@
       "Name on card required": [
         "Jméno držitele karty je povinná položka"
       ],
+      "Name required": [
+        "Název je povinný"
+      ],
       "No active sessions": [
         "Žádné aktivní relace"
       ],
@@ -2830,8 +2963,8 @@
       "This label name is not available. Please choose a different name.": [
         "Tento název štítku není k dispozici. Zvolte prosím jiný název."
       ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser": [
-        "Tato zpráva může obsahovat některé URL odkazy, které nelze otevřít Vaším současným prohlížečem"
+      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
+        "Tato zpráva může obsahovat URL odkazy, které nelze bez problému otevřít vaším aktuálním prohlížečem."
       ],
       "Unknown error": [
         "Neznámá chyba"
@@ -2961,6 +3094,9 @@
       "Calendar": [
         "Kalendář"
       ],
+      "Calendar time zone not supported": [
+        "Časové pásmo kalendáře není podporováno"
+      ],
       "Component with wrong format": [
         "Komponenta s nesprávným formátem"
       ],
@@ -3033,6 +3169,9 @@
       "Start time out of bounds": [
         "Čas zahájení mimo hranice"
       ],
+      "Time zone not supported": [
+        "Časové pásmo není podporováno"
+      ],
       "Timezone": [
         "Časové pásmo"
       ],
@@ -3050,11 +3189,17 @@
       "Error: ${ errorMessage }": [
         "Chyba: ${ errorMessage }"
       ],
+      "Invalid URL": [
+        "Neplatná URL"
+      ],
       "Oops, something went wrong": [
         "Jejda, něco se pokazilo"
       ],
       "Please ${ refresh } or check your connection.": [
         "Prosím ${ refresh } nebo zkontrolujte své připojení."
+      ],
+      "Something went wrong. Please refresh the page or try again later.": [
+        "Něco se pokazilo. Obnovte prosím stránku nebo to zkuste později."
       ],
       "There was a problem connecting to Proton.": [
         "Při připojování k Proton došlo k chybě."
@@ -3099,6 +3244,14 @@
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Není vybrán žádný obrázek"
+      ]
+    },
+    "Error when exporting event from calendar": {
+      "Event @ ${ timeString }": [
+        "Událost @ ${ timeString }"
+      ],
+      "Event from ${ timeString }, ${ rruleString }": [
+        "Událost od ${ timeString }, ${ rruleString }"
       ]
     },
     "Event invitation error": {
@@ -3148,6 +3301,56 @@
     "Event title": {
       "(no title)": [
         "(bez názvu)"
+      ]
+    },
+    "Export calendar": {
+      "${ totalProcessed }/${ totalToProcess } event exported": [
+        "${ totalProcessed }/${ totalToProcess } události exportována",
+        "${ totalProcessed }/${ totalToProcess } událostí exportováno",
+        "${ totalProcessed }/${ totalToProcess } událostí exportováno",
+        "${ totalProcessed }/${ totalToProcess } událostí exportováno"
+      ],
+      "Calendar successfully exported. You can now save the ICS file.": [
+        "Kalendář úspěšně exportován. Můžete uložit ICS soubor."
+      ],
+      "Decrypting events from your calendar: ${ totalProcessed }/${ totalToProcess }": [
+        "Dešifrování událostí z kalendáře: ${ totalProcessed }/${ totalToProcess }"
+      ],
+      "Due to a password reset, none of your events could be decrypted and exported.": [
+        "Z důvodu resetu hesla, nemohla být dešifrována a exportována ani jedna událost."
+      ],
+      "Due to a password reset, some of your events could not be decrypted and exported.": [
+        "Z důvodu resetu hesla, nebylo možné některé události dešifrovat a exportovat."
+      ],
+      "Error decrypting event": [
+        "Chyba při dešifrování události"
+      ],
+      "Learn how to restore encrypted events with old password": [
+        "Zjistěte jak obnovit události zašifrované starým heslem"
+      ],
+      "Loading events": [
+        "Načítání událostí"
+      ],
+      "None of the events could be exported.": [
+        "Žádné z událostí nemohly být exportovány."
+      ],
+      "Password reset - event cannot be decrypted": [
+        "Reset hesla - událost nemůže být dešifrována"
+      ],
+      "Password reset - multiple events cannot be decrypted": [
+        "Reset hesla - některé události nemohou být dešifrovány"
+      ],
+      "Please don't close the tab before the exporting process is finished.": [
+        "Prosíme nezavírejte kartu před dokončením exportu."
+      ],
+      "Some of your events could not be exported.": [
+        "Některé události nemohly být exportovány."
+      ],
+      "The internet connection was interrupted, causing the export process to fail. Please try again.": [
+        "Internetové připojení bylo přerušeno a export díky tomu selhal. Prosím, zuste to znovu."
+      ],
+      "You can save an ICS file of the events that were successfully exported.": [
+        "Můžete uložit ICS soubor s událostmi, které byly úspěšně exportovány."
       ]
     },
     "Feature": {
@@ -4060,6 +4263,9 @@
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Název, který vám pomůže zapamatovat si jeho použití, abyste později mohli konfiguraci snadno zrušit nebo rozšířit."
       ],
+      "A recovery file lets you unlock and view your data after an account reset.": [
+        "Soubor pro obnovení vám umožňuje odemknout a zobrazit data po resetování účtu."
+      ],
       "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password.": [
         "V případě, že zapomenete heslo, obnovovací fráze umožňuje přístup k účtu a obnovu zašifrovaných zpráv."
       ],
@@ -4333,8 +4539,20 @@
       "Custom": [
         "Vlastní"
       ],
+      "Custom daily": [
+        "Vlastní denně"
+      ],
       "Custom email domains": [
         "Vlastní e-mailové domény"
+      ],
+      "Custom monthly": [
+        "Vlastní měsíčně"
+      ],
+      "Custom weekly": [
+        "Vlastní týdně"
+      ],
+      "Custom yearly": [
+        "Vlastní ročně"
       ],
       "Daily": [
         "Denně"
@@ -4876,6 +5094,9 @@
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Zadejte 12-slovnou frázi pro obnovení spojenou s vaším účtem."
       ],
+      "Please fill out this field.": [
+        "Prosíme vyplňte toto pole."
+      ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
         "Dbejte na bezpečnost. Budete ho potřebovat pro přístup ke svému účtu a dešifrování dat v případě obnovení hesla."
       ],
@@ -5185,6 +5406,9 @@
       "to continue to ${ toAppName }": [
         "pokračovat do ${ toAppName }"
       ],
+      "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
+        "Abychom průběžně vylepšovali naše služby, shromažďujeme data kvůli monitorování funkčnosti našich aplikací. Tato data nejsou sdílena se službami třetích stran."
+      ],
       "To decrypt and view your emails and other data, you need a recovery file.": [
         "K dešifrování a zobrazení e-mailů a dalších dat potřebujete soubor pro obnovení."
       ],
@@ -5281,6 +5505,9 @@
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Použijte nejlepší server podle aktuálního zatížení a polohy: ${ formattedBestServerName }"
       ],
+      "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
+        "Při připojování k serverům ${ VPN_APP_NAME } bez aplikace použijte následující přihlašovací údaje. Příklady použití zahrnují: Tunnelblick na macOS, OpenVPN na GNU/Linux."
+      ],
       "Verification can take a few minutes.": [
         "Ověřování může trvat několik minut."
       ],
@@ -5331,6 +5558,9 @@
       ],
       "Week": [
         "Týden"
+      ],
+      "Week and month views only apply to desktop.": [
+        "Zobrazení týdne a měsíce platí pouze pro stolní počítače."
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "Na zadanou e-mailovou adresu Vám zašleme kód pro obnovení účtu."
@@ -5565,11 +5795,35 @@
       "Additional duplicate keys detected. Please upload individually for more information.": [
         "Byly zjištěny další duplicitní klíče. Pro více informací je prosím nahrajte jednotlivě."
       ],
+      "Create an email address": [
+        "Vytvořit e-mailovou adresu"
+      ],
+      "Day 27: Trial reminder": [
+        "Den 27: Připomenutí zkušební doby"
+      ],
+      "Day 30: Trial ends": [
+        "Den 30: Zkušební doba končí"
+      ],
+      "Enjoy secure, easy-to-use emailing with plenty of premium features.": [
+        "Užívejte si bezpečné a snadno použitelné odesílání e-mailů se spoustou prémiových funkcí."
+      ],
       "Key ${ fingerprint } has already been uploaded": [
         "${ fingerprint } klíče byl již nahrán"
       ],
       "Track your referral link activities here": [
         "Sledujte aktivitu vašeho doporučujícího odkazu zde"
+      ],
+      "Try Mail Plus": [
+        "Vyzkoušejte Mail Plus"
+      ],
+      "We’ll email you before your trial ends. Cancel anytime.": [
+        "Před koncem zkušebního období vám zašleme e-mail. Zrušit to můžete kdykoli."
+      ],
+      "Your new email address is ready to go!": [
+        "Vaše nová e-mailová adresa je připravena k použití!"
+      ],
+      "Your subscription starts on ${ startText }.": [
+        "Vaše předplatné začne ${ startText }."
       ]
     },
     "Info - folder colouring feature": {
@@ -5934,6 +6188,11 @@
         "Označit jako zastaralé"
       ]
     },
+    "Knowledge base link label": {
+      "Here's how": [
+        "Jak na to"
+      ]
+    },
     "Label": {
       " and ": [
         " a "
@@ -6040,6 +6299,9 @@
       "Auto-reply": [
         "Automatická odpověď"
       ],
+      "Auto-unsubscribe": [
+        "Odhlásit odběr"
+      ],
       "Billing cycle": [
         "Fakturační období"
       ],
@@ -6090,6 +6352,9 @@
       ],
       "Code is 6 digits without spaces": [
         "Kód je 6 číslic bez mezer"
+      ],
+      "Collect usage diagnostics": [
+        "Sbírat diagnostická data o používání"
       ],
       "Color": [
         "Barva"
@@ -6559,6 +6824,9 @@
       "Send auto-reply": [
         "Poslat automatickou odpověď"
       ],
+      "Send crash reports": [
+        "Odesílat hlášení pádů"
+      ],
       "Send in": [
         "Odeslat v"
       ],
@@ -6772,6 +7040,9 @@
       ],
       "Proton company announcements": [
         "Oznámení společnosti Proton"
+      ],
+      "Proton for Business": [
+        "Proton pro firmy"
       ],
       "Proton for Business newsletter": [
         "Proton novinky pro firmy"
@@ -6988,6 +7259,14 @@
         "Importovat všechny zprávy ${ totalLabelsCount } štítků za ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
+    "Maximum calendar links reached warning": {
+      "You can create up to ${ MAX_LINKS_PER_CALENDAR } link per calendar. To create a new link to this calendar, delete one from the list below.": [
+        "Můžete vytvořit až ${ MAX_LINKS_PER_CALENDAR } odkaz na kalendář. Chcete-li vytvořit nový odkaz na tento kalendář, odstraňte jeden z níže uvedených odkazů.",
+        "Můžete vytvořit až ${ MAX_LINKS_PER_CALENDAR } odkazy na kalendář. Chcete-li vytvořit nový odkaz na tento kalendář, odstraňte jeden z níže uvedených odkazů.",
+        "Můžete vytvořit až ${ MAX_LINKS_PER_CALENDAR } odkazů na kalendář. Chcete-li vytvořit nový odkaz na tento kalendář, odstraňte jeden z níže uvedených odkazů.",
+        "Můžete vytvořit až ${ MAX_LINKS_PER_CALENDAR } odkazů na kalendář. Chcete-li vytvořit nový odkaz na tento kalendář, odstraňte jeden z níže uvedených odkazů."
+      ]
+    },
     "Member action": {
       "Delete": [
         "Odstranit"
@@ -7055,6 +7334,11 @@
         "Jak importovat e-maily z Yahoo"
       ]
     },
+    "Modal title and action": {
+      "Add calendar": [
+        "Přidat kalendář"
+      ]
+    },
     "Monetary unit": {
       "Dollar": [
         "Dolar"
@@ -7064,6 +7348,145 @@
       ],
       "Swiss franc": [
         "Švýcarský frank"
+      ]
+    },
+    "Monthly recurring event, frequency": {
+      "Every ${ interval } month ${ onDayString }": [
+        "Každý ${ interval } měsíc ${ onDayString }",
+        "Každé ${ interval } měsíce ${ onDayString }",
+        "Každých ${ interval } měsíců ${ onDayString }",
+        "Každých ${ interval } měsíců ${ onDayString }"
+      ],
+      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
+        "Každý ${ interval } měsíc ${ onDayString }, ${ timesString }",
+        "Každé ${ interval } měsíce ${ onDayString }, ${ timesString }",
+        "Každých ${ interval } měsíců ${ onDayString }, ${ timesString }",
+        "Každých ${ interval } měsíců ${ onDayString }, ${ timesString }"
+      ],
+      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
+        "Každý ${ interval } měsíc ${ onDayString }, ${ untilString }",
+        "Každé ${ interval } měsíce ${ onDayString }, ${ untilString }",
+        "Každých ${ interval } měsíců ${ onDayString }, ${ untilString }",
+        "Každých ${ interval } měsíců ${ onDayString }, ${ untilString }"
+      ],
+      "Monthly ${ onDayString }": [
+        "Každý měsíc ${ onDayString }"
+      ],
+      "Monthly ${ onDayString }, ${ timesString }": [
+        "Každý měsíc ${ onDayString }, ${ timesString }"
+      ],
+      "Monthly ${ onDayString }, ${ untilString }": [
+        "Každý měsíc ${ onDayString }, ${ untilString }"
+      ]
+    },
+    "Monthly recurring event, repeats on": {
+      "on day ${ dayOfMonth }": [
+        "v ${ dayOfMonth }"
+      ],
+      "on the first Friday": [
+        "první pátek"
+      ],
+      "on the first Monday": [
+        "první pondělí"
+      ],
+      "on the first Saturday": [
+        "první sobotu"
+      ],
+      "on the first Sunday": [
+        "první neděli"
+      ],
+      "on the first Thursday": [
+        "první čtvrtek"
+      ],
+      "on the first Tuesday": [
+        "první úterý"
+      ],
+      "on the first Wednesday": [
+        "první středu"
+      ],
+      "on the fourth Friday": [
+        "čtvrtý pátek"
+      ],
+      "on the fourth Monday": [
+        "čtvrté pondělí"
+      ],
+      "on the fourth Saturday": [
+        "čtvrtou sobotu"
+      ],
+      "on the fourth Sunday": [
+        "čtvrtou neděli"
+      ],
+      "on the fourth Thursday": [
+        "čtvrtý čtvrtek"
+      ],
+      "on the fourth Tuesday": [
+        "čtvrté úterý"
+      ],
+      "on the fourth Wednesday": [
+        "čtvrtou středu"
+      ],
+      "on the last Friday": [
+        "poslední pátek"
+      ],
+      "on the last Monday": [
+        "poslední pondělí"
+      ],
+      "on the last Saturday": [
+        "poslední sobotu"
+      ],
+      "on the last Sunday": [
+        "poslední neděli"
+      ],
+      "on the last Thursday": [
+        "poslední čtvrtek"
+      ],
+      "on the last Tuesday": [
+        "poslední úterý"
+      ],
+      "on the last Wednesday": [
+        "poslední středu"
+      ],
+      "on the second Friday": [
+        "druhý pátek"
+      ],
+      "on the second Monday": [
+        "druhé pondělí"
+      ],
+      "on the second Saturday": [
+        "druhou sobotu"
+      ],
+      "on the second Sunday": [
+        "druhou neděli"
+      ],
+      "on the second Thursday": [
+        "druhý čtvrtek"
+      ],
+      "on the second Tuesday": [
+        "druhé úterý"
+      ],
+      "on the second Wednesday": [
+        "druhou středu"
+      ],
+      "on the third Friday": [
+        "třetí pátek"
+      ],
+      "on the third Monday": [
+        "třetí pondělí"
+      ],
+      "on the third Saturday": [
+        "třetí sobotu"
+      ],
+      "on the third Sunday": [
+        "třetí neděli"
+      ],
+      "on the third Thursday": [
+        "třetí čtvrtek"
+      ],
+      "on the third Tuesday": [
+        "třetí úterý"
+      ],
+      "on the third Wednesday": [
+        "třetí středu"
       ]
     },
     "Moved to black/whitelist": {
@@ -7136,6 +7559,9 @@
     "new_plans: action": {
       "Continue to review": [
         "Pokračovat na rekapitulaci"
+      ],
+      "Continue with Free": [
+        "Pokračovat zdarma"
       ],
       "Delete account": [
         "Smazat účet"
@@ -7650,6 +8076,9 @@
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
         "IMAP podpora je omezená na využití v desktop aplikacích (např. Outlook, Apple Mail, Thunderbird) přes ${ MAIL_APP_NAME } Most. Kloudové IMAP integrace momentálně nejsou podporovány."
       ],
+      "Keeps you protected by blocking all network connections when you are unexpectedly disconnected from our VPN server.": [
+        "Chrání vás blokováním všech síťových připojení, když se náhodou odpojíte od našeho VPN serveru."
+      ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         "Jmenovky jsou jednoduché štítky, které můžete přidat ke zprávám aby se vám lépe hledaly a používaly filtry"
       ],
@@ -7665,8 +8094,8 @@
       "On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
         "Kromě toho, přidejte až 5 kalendářů od přátel, rodiny, kolegů, organizací."
       ],
-      "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections..": [
-        "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections."
+      "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections.": [
+        "Jedno VPN připojení umožňuje v jednom okamžiku použít Proton VPN pouze jednomu zařízení. Například pro připojení telefonu a notebooku k Proton VPN v jeden okamžik, budete potřebovat dvě VPN připojení."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Možnost zobrazit ne-soukromé schránky uživatele, včetně zpráv a kontaktních detailů"
@@ -7825,6 +8254,51 @@
         "OpenVPN / IKEv2 údaje byly obnoveny"
       ]
     },
+    "Notification time input": {
+      "at": [
+        "v"
+      ]
+    },
+    "Notification type": {
+      "email": [
+        "e-mail"
+      ],
+      "notification": [
+        "oznámení"
+      ]
+    },
+    "Notification when": {
+      "at time of event": [
+        "v čase události"
+      ],
+      "day before": [
+        "den předem",
+        "dny předem",
+        "dnů předem",
+        "dnů předem"
+      ],
+      "hour before": [
+        "hodinu předem",
+        "hodiny předem",
+        "hodin předem",
+        "hodin předem"
+      ],
+      "minute before": [
+        "minutu předem",
+        "minuty předem",
+        "minut předem",
+        "minut předem"
+      ],
+      "on the same day": [
+        "ve stejný den"
+      ],
+      "week before": [
+        "týden předem",
+        "týdny předem",
+        "týdnů předem",
+        "týdnů předem"
+      ]
+    },
     "Oauth instructions": {
       "Next you'll need to sign in to your Google account and grant Proton access to your data.": [
         "Dále se potřebujete přihlásit ke svému účtu Google a udělit společnosti Proton přístup k vašim datům."
@@ -7940,6 +8414,9 @@
       "Android": [
         "Android"
       ],
+      "Ask each time": [
+        "Vždy se ptát"
+      ],
       "Automatic (${ defaultDay })": [
         "Automatické (${ defaultDay })"
       ],
@@ -7993,6 +8470,12 @@
       ],
       "Normal": [
         "Normální"
+      ],
+      "Off": [
+        "Vypnuto"
+      ],
+      "On": [
+        "Zapnuto"
       ],
       "Permanent": [
         "Trvalý"
@@ -8111,6 +8594,12 @@
     "Placeholder": {
       "A way to contact you": [
         "Způsob, jak vás kontaktovat"
+      ],
+      "Add a calendar description": [
+        "Přidat popis kalendáře"
+      ],
+      "Add a calendar name": [
+        "Přidat název kalendáře"
       ],
       "Add gift code": [
         "Přidat dárkový kód"
@@ -8371,6 +8860,11 @@
         "Nahrát další soubory"
       ]
     },
+    "Select search results": {
+      "No results found": [
+        "Nebyly nalezeny žádné výsledky"
+      ]
+    },
     "Settings description": {
       "Make the move to privacy. Effortlessly and securely.": [
         "Přesuňte se do soukromí. Bez námahy a bezpečně."
@@ -8385,6 +8879,11 @@
       ],
       "Organization": [
         "Organizace"
+      ]
+    },
+    "Settings update growler warning": {
+      "Failed to update settings": [
+        "Aktualizace nastavení se nezdařila"
       ]
     },
     "Settings/filters": {
@@ -8470,8 +8969,14 @@
       "Invite friends and earn rewards!": [
         "Pozvěte přátele a získejte odměny!"
       ],
+      "No more missed appointments": [
+        "Žádné další zmeškané schůzky"
+      ],
       "Try ${ DRIVE_APP_NAME }": [
         "Vyzkoušejte ${ DRIVE_APP_NAME }"
+      ],
+      "With email notifications, you decide which events to be notified about and when.": [
+        "U e-mailových oznámení rozhodujete o tom, na které události a kdy chcete být upozorněni."
       ]
     },
     "State": {
@@ -8502,6 +9007,37 @@
       ],
       "Your current storage:": [
         "Vaše současné úložiště:"
+      ]
+    },
+    "Subscribe to calendar modal": {
+      "Calendar URL": [
+        "URL kalendáře"
+      ],
+      "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Subscribed calendars.\n${ kbLink }": [
+        "Chcete-li se přihlásit k odběru externího nebo veřejného kalendáře a jeho aktualizací, zadejte adresu URL. Verze kalendáře pouze pro čtení bude přidána do Vašich odebíraných kalendářů.\n${ kbLink }"
+      ]
+    },
+    "Subscribe to calendar modal description": {
+      "Learn how to get a private calendar link.": [
+        "Zjistěte, jak získat odkaz na soukromý kalendář."
+      ]
+    },
+    "Subscribed calendar extension warning": {
+      "By using this link, Google will make the calendar you are subscribing to public": [
+        "Pomocí tohoto odkazu Google zveřejní kalendář, k jehož odběru se přihlašujete"
+      ],
+      "This link might be wrong": [
+        "Tento odkaz může být chybný"
+      ]
+    },
+    "Subscribed calendar section description": {
+      "Add public, external, or shared calendars using a URL.": [
+        "Přidání veřejných, externích nebo sdílených kalendářů pomocí URL adresy."
+      ]
+    },
+    "Subscribed calendar URL length warning": {
+      "URL is too long": [
+        "URL je příliš dlouhá"
       ]
     },
     "Subscription attribute": {
@@ -8609,6 +9145,9 @@
     "Subtitle for trial plan": {
       "The privacy-first Mail and Calendar solution for your everyday communications needs.": [
         "Řešení pošty a kalendáře pro každodenní komunikaci s ohledem na soukromí."
+      ],
+      "This offer is for those new to Proton only. No credit card required.": [
+        "Tato nabídka je určena pouze pro nové zákazníky společnosti Proton. Kreditní karta není vyžadována."
       ]
     },
     "Success": {
@@ -8823,6 +9362,11 @@
         "za měsíc"
       ]
     },
+    "Summary of errors during export calendar": {
+      "Details about events that couldn't be exported": [
+        "Záznam o událostech, které nemohly být exportovány"
+      ]
+    },
     "Tab in domain modal": {
       "Addresses": [
         "Adresy"
@@ -8893,6 +9437,11 @@
         "${ minutes } minut"
       ]
     },
+    "Timezone search placeholder": {
+      "Search timezones": [
+        "Hledat časová pásma"
+      ]
+    },
     "Title": {
       "${ appName } Keyboard Shortcuts": [
         "${ appName } Klávesové zkratky"
@@ -8947,6 +9496,9 @@
       ],
       "Add address": [
         "Přidat adresu"
+      ],
+      "Add another notification to remind you of this event": [
+        "Přidat další oznámení pro připomenutí této události"
       ],
       "Add contact group name": [
         "Přidat název skupiny kontaktů"
@@ -9113,6 +9665,9 @@
       "Create a ${ mailAppName } address": [
         "Vytvořit ${ mailAppName } adresu"
       ],
+      "Create calendar": [
+        "Vytvořit kalendář"
+      ],
       "Create your ${ BRAND_NAME } Account": [
         "Vytvořit účet ${ BRAND_NAME }"
       ],
@@ -9176,6 +9731,9 @@
       "Delete account": [
         "Smazat účet"
       ],
+      "Delete calendar": [
+        "Smazat kalendář"
+      ],
       "Delete key permanently?": [
         "Navždy smazat klíč?"
       ],
@@ -9215,6 +9773,9 @@
       "Edit Block List": [
         "Upravit černou listinu"
       ],
+      "Edit calendar": [
+        "Upravit kalendář"
+      ],
       "Edit credit/debit card": [
         "Editovat kreditní/debetní kartu"
       ],
@@ -9250,6 +9811,9 @@
       ],
       "Error": [
         "Chyba"
+      ],
+      "Export calendar": [
+        "Exportovat kalendář"
       ],
       "Export private key": [
         "Exportovat soukromý klíč"
@@ -9437,6 +10001,9 @@
       "Previous": [
         "Předchozí"
       ],
+      "Privacy and data collection": [
+        "Soukromí a sběr dat"
+      ],
       "Processing": [
         "Zpracovává se"
       ],
@@ -9463,6 +10030,9 @@
       ],
       "Referral tracker": [
         "Sledování doporučení"
+      ],
+      "Remove calendar": [
+        "Odstranit kalendář"
       ],
       "Report a problem": [
         "Nahlásit problém"
@@ -9491,6 +10061,9 @@
       "Secure email based in Switzerland": [
         "Bezpečný e-mail se sídlem ve Švýcarsku"
       ],
+      "Security and privacy": [
+        "Bezpečnost a soukromí"
+      ],
       "Security logs": [
         "Bezpečnostní protokoly"
       ],
@@ -9502,6 +10075,15 @@
       ],
       "Select contact group": [
         "Vybrat skupinu kontaktů"
+      ],
+      "Select the time to send this notification": [
+        "Vyberte čas pro odeslání tohoto oznámení"
+      ],
+      "Select the way to send this notification": [
+        "Vyberte způsob, jak odeslat toto oznámení"
+      ],
+      "Select when you want this notification to be sent": [
+        "Vyberte, kdy chcete, aby bylo toto oznámení odesláno"
       ],
       "Session management": [
         "Správce relací"
@@ -9641,6 +10223,9 @@
       "Your ${ domain } address is active": [
         "Vaše ${ domain } adresa je aktivní"
       ],
+      "Your calendar link": [
+        "URL adresa kalendáře"
+      ],
       "Your current plan": [
         "Váš aktuální plán"
       ],
@@ -9658,6 +10243,11 @@
       ],
       "ZIP / postal code": [
         "ZIP / PSČ"
+      ]
+    },
+    "Title (number of minutes/hours/days/weeks)": {
+      "Choose a number": [
+        "Vyberte číslo"
       ]
     },
     "Title for payment methods table": {
@@ -9810,6 +10400,9 @@
       "This feature is only available for paid users": [
         "Tato funkce je k dispozici pouze uživatelům s prémiovým účtem"
       ],
+      "This feature is unavailable for the moment": [
+        "Tato funkce není momentálně k dispozici"
+      ],
       "This key cannot be used for encryption": [
         "Tento klíč nelze použít pro šifrování"
       ],
@@ -9827,6 +10420,9 @@
       ],
       "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
         "Po kliknutí na odkaz vás tato funkce proti phishingu požádá o potvrzení adresy URL webové stránky."
+      ],
+      "When you move an email to spam, you’ll automatically be unsubscribed from the sender’s mailing lists.": [
+        "Jakmile přesunete e-mail do složky spam, budete automaticky odhlášeni z e-mailových seznamů odesílatele."
       ],
       "You have locally decrypted this key": [
         "Tento klíč jste dešifrovali lokálně"
@@ -9886,6 +10482,17 @@
         "Upgrade na ${ planName } pro připojení až ${ n } zařízení k VPN najednou",
         "Upgrade na ${ planName } pro připojení až ${ n } zařízení k VPN najednou",
         "Upgrade na ${ planName } pro připojení až ${ n } zařízení k VPN najednou"
+      ]
+    },
+    "Upgrade notice": {
+      "Upgrade to a Mail paid plan to create up to ${ MAX_CALENDARS_PAID } calendar, allowing you to make calendars for work, to share with friends, and just for yourself.": [
+        "Přejděte na placený tarif Mailu pro vytvoření až ${ MAX_CALENDARS_PAID } kalendáře, který můžete používat pro práci, sdílet s přáteli a také pro sebe.",
+        "Přejděte na placený tarif Mailu pro vytvoření až ${ MAX_CALENDARS_PAID } kalendářů, které můžete používat pro práci, sdílet s přáteli a také pro sebe.",
+        "Přejděte na placený tarif Mailu pro vytvoření až ${ MAX_CALENDARS_PAID } kalendářů, které můžete používat pro práci, sdílet s přáteli a také pro sebe.",
+        "Přejděte na placený tarif Mailu pro vytvoření až ${ MAX_CALENDARS_PAID } kalendářů, které můžete používat pro práci, sdílet s přáteli a také pro sebe."
+      ],
+      "Upgrade to a Mail paid plan to share your personal calendar via link with anyone.": [
+        "Přejděte na placený tarif Mailu pro možnost sdílet osobní kalendář s kýmkoliv pomocí odkazu."
       ]
     },
     "User role": {
@@ -10057,6 +10664,303 @@
     "Weak personal key warning": {
       "This key no longer meets our security standards. We suggest you mark it as obsolete and generate a new key.": [
         "Tento klíč již nesplňuje naše bezpečnostní standardy. Doporučujeme jej označit jako zastaralý a vygenerovat nový klíč."
+      ]
+    },
+    "Weekly recurring event, frequency": {
+      "Every ${ interval } week on ${ multipleDaysString }": [
+        "Každý ${ interval } týden v ${ multipleDaysString }",
+        "Každé ${ interval } týdny v ${ multipleDaysString }",
+        "Každých ${ interval } týdnů v ${ multipleDaysString }",
+        "Každých ${ interval } týdnů v ${ multipleDaysString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
+        "Každý ${ interval } týden v ${ multipleDaysString }, ${ timesString }",
+        "Každé ${ interval } týdny v ${ multipleDaysString }, ${ timesString }",
+        "Každých ${ interval } týdnů v ${ multipleDaysString }, ${ timesString }",
+        "Každých ${ interval } týdnů v ${ multipleDaysString }, ${ timesString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
+        "Každý ${ interval } týden v ${ multipleDaysString }, ${ untilString }",
+        "Každé ${ interval } týdny v ${ multipleDaysString }, ${ untilString }",
+        "Každých ${ interval } týdnů v ${ multipleDaysString }, ${ untilString }",
+        "Každých ${ interval } týdnů v ${ multipleDaysString }, ${ untilString }"
+      ],
+      "Every ${ interval } week on all days": [
+        "Každý ${ interval } týden všechny dny",
+        "Každé ${ interval } týdny všechny dny",
+        "Každých ${ interval } týdnů všechny dny",
+        "Každých ${ interval } týdnů všechny dny"
+      ],
+      "Every ${ interval } week on all days, ${ timesString }": [
+        "Každý ${ interval } týden všechny dny, ${ timesString }",
+        "Každé ${ interval } týdny všechny dny, ${ timesString }",
+        "Každých ${ interval } týdnů všechny dny, ${ timesString }",
+        "Každých ${ interval } týdnů všechny dny, ${ timesString }"
+      ],
+      "Every ${ interval } week on all days, ${ untilString }": [
+        "Každý ${ interval } týden všechny dny, ${ untilString }",
+        "Každé ${ interval } týdny všechny dny, ${ untilString }",
+        "Každých ${ interval } týdnů všechny dny, ${ untilString }",
+        "Každých ${ interval } týdnů všechny dny, ${ untilString }"
+      ],
+      "Every ${ interval } week on Friday": [
+        "Každý ${ interval } týden v pátek",
+        "Každé ${ interval } týdny v pátek",
+        "Každých ${ interval } týdnů v pátek",
+        "Každých ${ interval } týdnů v pátek"
+      ],
+      "Every ${ interval } week on Friday, ${ timesString }": [
+        "Každý ${ interval } týden v pátek, ${ timesString }",
+        "Každé ${ interval } týdny v pátek, ${ timesString }",
+        "Každých ${ interval } týdnů v pátek, ${ timesString }",
+        "Každých ${ interval } týdnů v pátek, ${ timesString }"
+      ],
+      "Every ${ interval } week on Friday, ${ untilString }": [
+        "Každý ${ interval } týden v pátek, ${ untilString }",
+        "Každé ${ interval } týdny v pátek, ${ untilString }",
+        "Každých ${ interval } týdnů v pátek, ${ untilString }",
+        "Každých ${ interval } týdnů v pátek, ${ untilString }"
+      ],
+      "Every ${ interval } week on Monday": [
+        "Každý ${ interval } týden v pondělí",
+        "Každé ${ interval } týdny v pondělí",
+        "Každých ${ interval } týdnů v pondělí",
+        "Každých ${ interval } týdnů v pondělí"
+      ],
+      "Every ${ interval } week on Monday, ${ timesString }": [
+        "Každý ${ interval } týden v pondělí, ${ timesString }",
+        "Každé ${ interval } týdny v pondělí, ${ timesString }",
+        "Každých ${ interval } týdnů v pondělí, ${ timesString }",
+        "Každých ${ interval } týdnů v pondělí, ${ timesString }"
+      ],
+      "Every ${ interval } week on Monday, ${ untilString }": [
+        "Každý ${ interval } týden v pondělí, ${ untilString }",
+        "Každé ${ interval } týdny v pondělí, ${ untilString }",
+        "Každých ${ interval } týdnů v pondělí, ${ untilString }",
+        "Každých ${ interval } týdnů v pondělí, ${ untilString }"
+      ],
+      "Every ${ interval } week on Saturday": [
+        "Každý ${ interval } týden v sobotu",
+        "Každé ${ interval } týdny v sobotu",
+        "Každých ${ interval } týdnů v sobotu",
+        "Každých ${ interval } týdnů v sobotu"
+      ],
+      "Every ${ interval } week on Saturday, ${ timesString }": [
+        "Každý ${ interval } týden v sobotu, ${ timesString }",
+        "Každé ${ interval } týdny v sobotu, ${ timesString }",
+        "Každých ${ interval } týdnů v sobotu, ${ timesString }",
+        "Každých ${ interval } týdnů v sobotu, ${ timesString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ untilString }": [
+        "Každý ${ interval } týden v sobotu, ${ untilString }",
+        "Každé ${ interval } týdny v sobotu, ${ untilString }",
+        "Každých ${ interval } týdnů v sobotu, ${ untilString }",
+        "Každých ${ interval } týdnů v sobotu, ${ untilString }"
+      ],
+      "Every ${ interval } week on Sunday": [
+        "Každý ${ interval } týden v neděli",
+        "Každé ${ interval } týdny v neděli",
+        "Každých ${ interval } týdnů v neděli",
+        "Každých ${ interval } týdnů v neděli"
+      ],
+      "Every ${ interval } week on Sunday, ${ timesString }": [
+        "Každý ${ interval } týden v neděli, ${ timesString }",
+        "Každé ${ interval } týdny v neděli, ${ timesString }",
+        "Každých ${ interval } týdnů v neděli, ${ timesString }",
+        "Každých ${ interval } týdnů v neděli, ${ timesString }"
+      ],
+      "Every ${ interval } week on Sunday, ${ untilString }": [
+        "Každý ${ interval } týden v neděli, ${ untilString }",
+        "Každé ${ interval } týdny v neděli, ${ untilString }",
+        "Každých ${ interval } týdnů v neděli, ${ untilString }",
+        "Každých ${ interval } týdnů v neděli, ${ untilString }"
+      ],
+      "Every ${ interval } week on Thursday": [
+        "Každý ${ interval } týden ve čtvrtek",
+        "Každé ${ interval } týdny ve čtvrtek",
+        "Každých ${ interval } týdnů ve čtvrtek",
+        "Každých ${ interval } týdnů ve čtvrtek"
+      ],
+      "Every ${ interval } week on Thursday, ${ timesString }": [
+        "Každý ${ interval } týden ve čvrtek, ${ timesString }",
+        "Každé ${ interval } týdny ve čtvrtek, ${ timesString }",
+        "Každých ${ interval } týdnů ve čtvrtek, ${ timesString }",
+        "Každých ${ interval } týdnů ve čtvrtek, ${ timesString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ untilString }": [
+        "Každý ${ interval } týden ve čtvrtek, ${ untilString }",
+        "Každé ${ interval } týdny ve čtvrtek, ${ untilString }",
+        "Každých ${ interval } týdnů ve čtvrtek, ${ untilString }",
+        "Každých ${ interval } týdnů ve čtvrtek, ${ untilString }"
+      ],
+      "Every ${ interval } week on Tuesday": [
+        "Každý ${ interval } týden v úterý",
+        "Každé ${ interval } týdny v úterý",
+        "Každých ${ interval } týdnů v úterý",
+        "Každých ${ interval } týdnů v úterý"
+      ],
+      "Every ${ interval } week on Tuesday, ${ timesString }": [
+        "Každý ${ interval } týden v úterý, ${ timesString }",
+        "Každé ${ interval } týdny v úterý, ${ timesString }",
+        "Každých ${ interval } týdnů v úterý, ${ timesString }",
+        "Každých ${ interval } týdnů v úterý, ${ timesString }"
+      ],
+      "Every ${ interval } week on Tuesday, ${ untilString }": [
+        "Každý ${ interval } týden v úterý, ${ untilString }",
+        "Každé ${ interval } týdny v úterý, ${ untilString }",
+        "Každých ${ interval } týdnů v úterý, ${ untilString }",
+        "Každých ${ interval } týdnů v úterý, ${ untilString }"
+      ],
+      "Every ${ interval } week on Wednesday": [
+        "Každý ${ interval } týden ve středu",
+        "Každé ${ interval } týdny ve středu",
+        "Každých ${ interval } týdnů ve středu",
+        "Každých ${ interval } týdnů ve středu"
+      ],
+      "Every ${ interval } week on Wednesday, ${ timesString }": [
+        "Každý ${ interval } týden ve středu, ${ timesString }",
+        "Každé ${ interval } týdny ve středu, ${ timesString }",
+        "Každých ${ interval } týdnů ve středu, ${ timesString }",
+        "Každých ${ interval } týdnů ve středu, ${ timesString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ untilString }": [
+        "Každý ${ interval } týden ve středu, ${ untilString }",
+        "Každé ${ interval } týdny ve středu, ${ untilString }",
+        "Každých ${ interval } týdnů ve středu, ${ untilString }",
+        "Každých ${ interval } týdnů ve středu, ${ untilString }"
+      ],
+      "Weekly on ${ multipleDaysString }": [
+        "Každý týdev v ${ multipleDaysString }"
+      ],
+      "Weekly on ${ multipleDaysString }, ${ timesString }": [
+        "Každý týden v ${ multipleDaysString }, ${ timesString }"
+      ],
+      "Weekly on ${ multipleDaysString }, ${ untilString }": [
+        "Každý týden v ${ multipleDaysString }, ${ untilString }"
+      ],
+      "Weekly on all days": [
+        "Každý týden denně"
+      ],
+      "Weekly on all days, ${ timesString }": [
+        "Každý týden všechny dny, ${ timesString }"
+      ],
+      "Weekly on all days, ${ untilString }": [
+        "Každý týden všechny dny, ${ untilString }"
+      ],
+      "Weekly on Friday": [
+        "Každý týden v pátek"
+      ],
+      "Weekly on Friday, ${ timesString }": [
+        "Každý týden v pátek, ${ timesString }"
+      ],
+      "Weekly on Friday, ${ untilString }": [
+        "Každý týden v pátek, ${ untilString }"
+      ],
+      "Weekly on Monday": [
+        "Každý týden v pondělí"
+      ],
+      "Weekly on Monday, ${ timesString }": [
+        "Každý týden v pondělí, ${ timesString }"
+      ],
+      "Weekly on Monday, ${ untilString }": [
+        "Každý týden v pondělí, ${ untilString }"
+      ],
+      "Weekly on Saturday": [
+        "Každý týden v sobotu"
+      ],
+      "Weekly on Saturday, ${ timesString }": [
+        "Každý týden v sobotu, ${ timesString }"
+      ],
+      "Weekly on Saturday, ${ untilString }": [
+        "Každý týden v sobotu, ${ untilString }"
+      ],
+      "Weekly on Sunday": [
+        "Každý týden v neděli"
+      ],
+      "Weekly on Sunday, ${ timesString }": [
+        "Každý týden v neděli, ${ timesString }"
+      ],
+      "Weekly on Sunday, ${ untilString }": [
+        "Každý týden v neděli, ${ untilString }"
+      ],
+      "Weekly on Thursday": [
+        "Každý týden ve čtvrtek"
+      ],
+      "Weekly on Thursday, ${ timesString }": [
+        "Každý týden ve čtvrtek, ${ timesString }"
+      ],
+      "Weekly on Thursday, ${ untilString }": [
+        "Každý týden ve čtvrtek, ${ untilString }"
+      ],
+      "Weekly on Tuesday": [
+        "Každý týden v úterý"
+      ],
+      "Weekly on Tuesday, ${ timesString }": [
+        "Každý týden v úterý, ${ timesString }"
+      ],
+      "Weekly on Tuesday, ${ untilString }": [
+        "Každý týden v úterý, ${ untilString }"
+      ],
+      "Weekly on Wednesday": [
+        "Každý týden ve středu"
+      ],
+      "Weekly on Wednesday, ${ timesString }": [
+        "Každý týden ve středu, ${ timesString }"
+      ],
+      "Weekly on Wednesday, ${ untilString }": [
+        "Každý týden ve středu, ${ untilString }"
+      ]
+    },
+    "Weekly recurring event, repeats on (multiple days), frequency": {
+      "Friday": [
+        "Pátek"
+      ],
+      "Monday": [
+        "Pondělí"
+      ],
+      "Saturday": [
+        "Sobota"
+      ],
+      "Sunday": [
+        "Neděle"
+      ],
+      "Thursday": [
+        "Čtvrtek"
+      ],
+      "Tuesday": [
+        "Úterý"
+      ],
+      "Wednesday": [
+        "Středa"
+      ]
+    },
+    "Yearly recurring event, frequency": {
+      "Every ${ interval } year": [
+        "Každý ${ interval } rok",
+        "Každé ${ interval } roky",
+        "Každých ${ interval } let",
+        "Každých ${ interval } let"
+      ],
+      "Every ${ interval } year, ${ timesString }": [
+        "Každý ${ interval } rok, ${ timesString }",
+        "Každé ${ interval } roky, ${ timesString }",
+        "Každých ${ interval } let, ${ timesString }",
+        "Každých ${ interval } let, ${ timesString }"
+      ],
+      "Every ${ interval } year, ${ untilString }": [
+        "Každý ${ interval } rok, ${ untilString }",
+        "Každé ${ interval } roky, ${ untilString }",
+        "Každých ${ interval } let, ${ untilString }",
+        "Každých ${ interval } let, ${ untilString }"
+      ],
+      "Yearly": [
+        "Každý rok"
+      ],
+      "Yearly, ${ timesString }": [
+        "Každý rok, ${ timesString }"
+      ],
+      "Yearly, ${ untilString }": [
+        "Každý rok, ${ untilString }"
       ]
     }
   }

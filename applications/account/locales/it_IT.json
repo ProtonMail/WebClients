@@ -322,6 +322,9 @@
       "Edit subscription": [
         "Modifica abbonamento"
       ],
+      "Emoji": [
+        "Emoji"
+      ],
       "enable desktop notifications": [
         "abilitare le notifiche desktop"
       ],
@@ -627,6 +630,12 @@
       ],
       "Save selected": [
         "Salva selezionato"
+      ],
+      "Search countries": [
+        "Cerca paesi"
+      ],
+      "Search settings": [
+        "Impostazioni di ricerca"
       ],
       "Select ${ planTitle }": [
         "Seleziona ${ planTitle }"
@@ -1262,8 +1271,8 @@
       ]
     },
     "color": {
-      "Apple": [
-        "Apple"
+      "apple": [
+        "apple"
       ],
       "azureish white": [
         "bianco azzurro"
@@ -2430,8 +2439,8 @@
       ]
     },
     "Description": {
-      "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }..": [
-        "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }."
+      "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
+        "Congratulazioni! Hai guadagnato il massimo di ${ rewardsLimit } mesi gratuiti di ${ plusPlanName }."
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Crittografia e importazione dei contatti... L'operazione potrebbe richiedere alcuni minuti. Quando il processo sarà completato, potrai chiudere questa finestra."
@@ -2912,8 +2921,8 @@
       "This label name is not available. Please choose a different name.": [
         "Questo nome dell'etichetta non è disponibile. Scegli un nome diverso."
       ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser": [
-        "Questo messaggio potrebbe contenere alcuni link URL che non possono essere aperti correttamente dal browser corrente"
+      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
+        "Questo messaggio potrebbe contenere alcuni link URL che potrebbero non essere aperti correttamente dal browser corrente."
       ],
       "Unknown error": [
         "Errore sconosciuto"
@@ -4303,6 +4312,12 @@
       ],
       "Basic, Plus or Visionary subscription required": [
         "Abbonamento Base, Plus o Visionary richiesto"
+      ],
+      "Before creating this address you need to provide a password and create encryption keys for it.": [
+        "Prima di creare questo indirizzo è necessario fornire una password e creare chiavi di crittografia per essa."
+      ],
+      "Before enabling the account you need to provide a password and create encryption keys for the new addresses.": [
+        "Prima di abilitare l'account è necessario fornire una password e creare chiavi di crittografia per i nuovi indirizzi."
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Prima di richiedere un nuovo codice di verifica, controlla la tua cartella spam e verifica che ${ strong } sia l'indirizzo corretto."
@@ -6150,6 +6165,9 @@
       "Auto-reply": [
         "Risposta automatica"
       ],
+      "Auto-unsubscribe": [
+        "Disattivazione automatica"
+      ],
       "Billing cycle": [
         "Ciclo di fatturazione"
       ],
@@ -7898,8 +7916,8 @@
       "On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
         "Inoltre, aggiungi fino a 5 calendari di amici, familiari, colleghi e organizzazioni."
       ],
-      "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections..": [
-        "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections."
+      "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections.": [
+        "Una connessione VPN permette a un dispositivo di connettersi a Proton VPN in qualsiasi momento. Ad esempio, per collegare un telefono e un computer portatile a Proton VPN allo stesso tempo, sono necessarie due connessioni VPN."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Opzione di visualizzare le caselle di posta degli utenti non privati come farebbe l'utente, compresi i dettagli completi dei messaggi e dei contatti"
@@ -8208,6 +8226,9 @@
       "Android": [
         "Android"
       ],
+      "Ask each time": [
+        "Chiedi ogni volta"
+      ],
       "Automatic (${ defaultDay })": [
         "Automatico (${ defaultDay })"
       ],
@@ -8261,6 +8282,12 @@
       ],
       "Normal": [
         "Normale"
+      ],
+      "Off": [
+        "Disattivato"
+      ],
+      "On": [
+        "Attivato"
       ],
       "Permanent": [
         "Permanente"
@@ -9242,6 +9269,9 @@
       "Action": [
         "Azione"
       ],
+      "Activate account and generate keys": [
+        "Attiva account e genera chiavi"
+      ],
       "Activate organization key": [
         "Attiva la chiave dell'organizzazione"
       ],
@@ -10169,6 +10199,9 @@
       ],
       "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
         "Quando clicchi su un link, questa funzione anti-phishing ti chiederà di confermare l'URL della pagina web."
+      ],
+      "When you move an email to spam, you’ll automatically be unsubscribed from the sender’s mailing lists.": [
+        "Quando sposti un'email nello spam, verrà automaticamente annulata l'iscrizione alle mailing list del mittente."
       ],
       "You have locally decrypted this key": [
         "Hai decifrato localmente questa chiave"

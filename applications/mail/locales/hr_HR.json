@@ -1210,11 +1210,6 @@
         "Ovaj je odgovor zastario. Nemate kalendara."
       ]
     },
-    "color": {
-      "Apple": [
-        "apple"
-      ]
-    },
     "Composer email icon": {
       "End-to-end encrypted": [
         "End-to-End šifriranje"
@@ -1454,9 +1449,6 @@
       ]
     },
     "Description": {
-      "Decrypting contacts... This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
-        "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported."
-      ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Šifriranje i uvoz kontakata... To može potrajati nekoliko minuta. Kad je postupak dovršen, ovaj modal možete zatvoriti."
       ],
@@ -1725,9 +1717,6 @@
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Ovo polje zahtjeva najmanje ${ minimumLength } znakova."
-      ],
-      "This message may contain some link's URL that cannot be properly opened by your current browser": [
-        "Ova poruka može sadržavati URL poveznice koje trenutačni preglednik ne može ispravno otvoriti"
       ],
       "Trusted keys are not valid for sending": [
         "Pouzdani ključevi nisu valjani za slanje"
@@ -2385,9 +2374,6 @@
       "Do you want to re-sign the contact details?": [
         "Želite li ponovno potpisati detalje kontakta?"
       ],
-      "Don't forget to share your password with the recipient": [
-        "Don't forget to share the password with the recipient"
-      ],
       "Download our mobile application from your favorite app store to communicate securely on-the-go.": [
         "Preuzmite našu mobilnu aplikaciju iz vaše omiljene trgovine aplikacija da biste sigurno komunicirali u pokretu."
       ],
@@ -2475,9 +2461,6 @@
         "Sat",
         "Sati",
         "Sati"
-      ],
-      "I'm sending this message to a non-ProtonMail user.": [
-        "I'm sending this message to a non-Proton Mail user."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Ako imate poteškoća s otvaranjem računa, zatražite pozivnicu i odgovorit ćemo vam u roku jednog radnog dana."
@@ -4055,9 +4038,6 @@
       ],
       "Cannot send to organizer address: ${ errorMessage }": [
         "Nije moguće poslati na adresu organizatora: ${ errorMessage }"
-      ],
-      "Re-encrypting invitation failed. Please try again": [
-        "Re-encrypting invitation failed. Please try again."
       ]
     },
     "Search - no results": {
