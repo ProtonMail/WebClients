@@ -1,4 +1,5 @@
 import { StandardPrivateApp, useApi } from '@proton/components';
+import { getEvents } from '@proton/shared/lib/api/events';
 import { loadAllowedTimeZones } from '@proton/shared/lib/date/timezone';
 import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 import { Model } from '@proton/shared/lib/interfaces/Model';
@@ -69,6 +70,7 @@ const PrivateApp = ({ onLogout, locales }: Props) => {
                 PaymentMethodsModel,
                 ImportersModel,
             ]}
+            eventQuery={(eventID: string) => getEvents(eventID, { ConversationCounts: 1, MessageCounts: 1 })}
             hasPrivateMemberKeyGeneration
             hasReadableMemberKeyActivation
             hasMemberKeyMigration
