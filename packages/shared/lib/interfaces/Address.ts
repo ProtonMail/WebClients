@@ -1,6 +1,6 @@
 import { ADDRESS_TYPE } from '../constants';
-import { SignedKeyListEpochs } from './SignedKeyList';
 import { AddressKey } from './Key';
+import { SignedKeyListEpochs } from './SignedKeyList';
 
 export interface Address {
     DisplayName: string;
@@ -17,6 +17,10 @@ export interface Address {
     Signature: string;
     Status: number;
     Type: ADDRESS_TYPE;
+}
+
+export interface DomainAddress extends Omit<Address, 'SignedKeyList' | 'Keys'> {
+    CatchAll: 1 | 0;
 }
 
 export interface AddressKeyPayload {

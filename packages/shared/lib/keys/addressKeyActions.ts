@@ -11,12 +11,14 @@ export const setPrimaryAddressKey = async (api: Api, address: Address, keys: Dec
     }
     const updatedActiveKeys = getNormalizedActiveKeys(
         address,
-        activeKeys.map((activeKey) => {
-            return {
-                ...activeKey,
-                primary: activeKey.ID === ID ? 1 : 0,
-            } as const;
-        })
+        activeKeys
+            .map((activeKey) => {
+                return {
+                    ...activeKey,
+                    primary: activeKey.ID === ID ? 1 : 0,
+                } as const;
+            })
+            .sort((a, b) => b.primary - a.primary)
     );
     const signedKeyList = await getSignedKeyList(updatedActiveKeys);
     await api(setKeyPrimaryRoute({ ID, SignedKeyList: signedKeyList }));
