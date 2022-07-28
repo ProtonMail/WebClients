@@ -1,47 +1,47 @@
 import { FunctionComponent, ReactNode, useEffect, useRef, useState } from 'react';
+
 import { c } from 'ttag';
-import { getHasNonDelinquentScope } from '@proton/shared/lib/user/helpers';
-import { UserModel, UserSettingsModel } from '@proton/shared/lib/models';
-import unique from '@proton/utils/unique';
-import { loadDateLocale, loadLocale } from '@proton/shared/lib/i18n/loadLocale';
+
+import { getFeatures } from '@proton/shared/lib/api/features';
+import { getApiErrorMessage, getIs401Error } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { APPS, REQUIRES_INTERNAL_EMAIL_ADDRESS, REQUIRES_NONDELINQUENT } from '@proton/shared/lib/constants';
 import createEventManager from '@proton/shared/lib/eventManager/eventManager';
-import { loadModels } from '@proton/shared/lib/models/helper';
-import { loadCryptoWorker, destroyCryptoWorker } from '@proton/shared/lib/helpers/setupCryptoWorker';
-import { Model } from '@proton/shared/lib/interfaces/Model';
+import { setMetricsEnabled } from '@proton/shared/lib/helpers/metrics';
+import { setSentryEnabled } from '@proton/shared/lib/helpers/sentry';
+import { destroyCryptoWorker, loadCryptoWorker } from '@proton/shared/lib/helpers/setupCryptoWorker';
+import { getBrowserLocale, getClosestLocaleCode } from '@proton/shared/lib/i18n/helper';
+import { loadDateLocale, loadLocale } from '@proton/shared/lib/i18n/loadLocale';
 import { User, UserSettings, UserType } from '@proton/shared/lib/interfaces';
 import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
-import { getApiErrorMessage, getIs401Error } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import { getBrowserLocale, getClosestLocaleCode } from '@proton/shared/lib/i18n/helper';
-import { APPS, REQUIRES_INTERNAL_EMAIL_ADDRESS, REQUIRES_NONDELINQUENT } from '@proton/shared/lib/constants';
-import { getFeatures } from '@proton/shared/lib/api/features';
-import { setSentryEnabled } from '@proton/shared/lib/helpers/sentry';
-import { setMetricsEnabled } from '@proton/shared/lib/helpers/metrics';
+import { Model } from '@proton/shared/lib/interfaces/Model';
+import { UserModel, UserSettingsModel } from '@proton/shared/lib/models';
+import { loadModels } from '@proton/shared/lib/models/helper';
+import { getHasNonDelinquentScope } from '@proton/shared/lib/user/helpers';
+import unique from '@proton/utils/unique';
 
-import { getWelcomeFlagsValue, useApi, useCache, useConfig, WELCOME_FLAGS_CACHE_KEY } from '../../hooks';
-
+import { useAppLink } from '../../components';
+import { handleEarlyAccessDesynchronization } from '../../helpers/earlyAccessDesynchronization';
+import { WELCOME_FLAGS_CACHE_KEY, getWelcomeFlagsValue, useApi, useCache, useConfig } from '../../hooks';
+import { ContactProvider } from '../contacts';
 import {
     CalendarModelEventManagerProvider,
     EventManagerProvider,
     EventModelListener,
     EventNotices,
 } from '../eventManager';
+import { ExperimentsProvider } from '../experiments';
+import { Feature, FeatureCode, FeaturesProvider } from '../features';
 import ForceRefreshProvider from '../forceRefresh/Provider';
+import { DensityInjector } from '../layouts';
 import { ModalsChildren } from '../modals';
 import { ThemeInjector } from '../themes';
-import { DensityInjector } from '../layouts';
-import { ContactProvider } from '../contacts';
-import { Feature, FeatureCode, FeaturesProvider } from '../features';
-import { useAppLink } from '../../components';
-import { handleEarlyAccessDesynchronization } from '../../helpers/earlyAccessDesynchronization';
-
-import loadEventID from './loadEventID';
+import DelinquentContainer from './DelinquentContainer';
+import KeyBackgroundManager from './KeyBackgroundManager';
 import LoaderPage from './LoaderPage';
 import StandardLoadErrorPage from './StandardLoadErrorPage';
-import KeyBackgroundManager from './KeyBackgroundManager';
 import StorageListener from './StorageListener';
-import DelinquentContainer from './DelinquentContainer';
 import { wrapUnloadError } from './errorRefresh';
-import { ExperimentsProvider } from '../experiments';
+import loadEventID from './loadEventID';
 
 interface Props<T, M extends Model<T>, E, EvtM extends Model<E>> {
     locales?: TtagLocaleMap;
@@ -55,6 +55,7 @@ interface Props<T, M extends Model<T>, E, EvtM extends Model<E>> {
     hasReadableMemberKeyActivation?: boolean;
     hasMemberKeyMigration?: boolean;
     app: () => Promise<{ default: FunctionComponent }>;
+    eventQuery?: (eventID: string) => object;
 }
 
 const StandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>>({
@@ -69,6 +70,7 @@ const StandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>>({
     hasReadableMemberKeyActivation = false,
     hasMemberKeyMigration = false,
     app: appFactory,
+    eventQuery,
 }: Props<T, M, E, EvtM>) => {
     const { APP_NAME } = useConfig();
     const [loading, setLoading] = useState(true);
@@ -83,7 +85,7 @@ const StandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>>({
 
     useEffect(() => {
         const eventManagerPromise = loadEventID(silentApi, cache).then((eventID) => {
-            eventManagerRef.current = createEventManager({ api: silentApi, eventID });
+            eventManagerRef.current = createEventManager({ api: silentApi, eventID, query: eventQuery });
         });
 
         const loadModelsArgs = {
@@ -135,19 +137,15 @@ const StandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>>({
         });
 
         const run = () => {
-            return Promise.all([
-                eventManagerPromise,
-                setupPromise,
-                onInit?.(),
-                loadCryptoWorker(),
-                appPromise,
-            ]).catch((error) => {
-                if (getIs401Error(error)) {
-                    // Trigger onLogout early, ignoring the unload wrapper
-                    onLogout();
+            return Promise.all([eventManagerPromise, setupPromise, onInit?.(), loadCryptoWorker(), appPromise]).catch(
+                (error) => {
+                    if (getIs401Error(error)) {
+                        // Trigger onLogout early, ignoring the unload wrapper
+                        onLogout();
+                    }
+                    throw error;
                 }
-                throw error;
-            });
+            );
         };
 
         wrapUnloadError(run())
