@@ -2,22 +2,7 @@
 
 .sub-settings-section {
 	&-anchor {
-		color: var(--link-norm);
 		inset-inline-start: rem(-22);
-		padding-inline-end: rem(6); // just to cover the title to avoid it disappearing and reappearing when hovering
-		display: flex;
-		align-items: center;
-		height: 100%;
-	}
-
-	&-link {
-		color: var(--text-norm);
-		text-decoration: none;
-
-		&:hover,
-		&:active,
-		&:focus {
-			color: var(--text-norm);
-		}
+		padding-inline-end: rem(6); // Cover the title to avoid it disappearing and reappearing when hovering
 	}
 }
