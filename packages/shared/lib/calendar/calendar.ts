@@ -59,8 +59,11 @@ export const getVisualCalendar = <T>(calendar: CalendarWithMembers & T, addressI
     if (!member) {
         throw new Error('Calendar member could not be found');
     }
+
     return {
         ...calendar,
+        Email: member.Email,
+        Flags: member.Flags,
         Color: member.Color,
         Display: member.Display,
     };
@@ -81,6 +84,8 @@ export const getVisualCalendars = <T>(
             }
             return {
                 ...calendar,
+                Email: member.Email,
+                Flags: member.Flags,
                 Color: member.Color,
                 Display: member.Display,
             };
@@ -106,7 +111,7 @@ export const getMaxUserCalendarsDisabled = (disabledCalendars: Calendar[], isFre
     return disabledCalendars.length === calendarLimit;
 };
 
-export const getCalendarWithReactivatedKeys = async <T extends Calendar>({
+export const getCalendarWithReactivatedKeys = async ({
     calendar,
     api,
     silenceApi = true,
@@ -115,7 +120,7 @@ export const getCalendarWithReactivatedKeys = async <T extends Calendar>({
     successCallback,
     handleError,
 }: {
-    calendar: T;
+    calendar: VisualCalendar;
     api: Api;
     silenceApi?: boolean;
     addresses: Address[];
@@ -139,6 +144,13 @@ export const getCalendarWithReactivatedKeys = async <T extends Calendar>({
             return {
                 ...calendar,
                 Flags: toggleBit(calendar.Flags, CALENDAR_FLAGS.UPDATE_PASSPHRASE),
+                Members: calendar.Members.map((member) => {
+                    const newMember = { ...member };
+                    if (newMember.Email === calendar.Email) {
+                        newMember.Flags = toggleBit(calendar.Flags, CALENDAR_FLAGS.UPDATE_PASSPHRASE);
+                    }
+                    return newMember;
+                }),
             };
         } catch (e) {
             handleError?.(e);

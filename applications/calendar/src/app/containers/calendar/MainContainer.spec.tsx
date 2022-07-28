@@ -7,7 +7,7 @@ import createCache from '@proton/shared/lib/helpers/cache';
 import { CacheProvider } from '@proton/components/containers/cache';
 import useCalendars from '@proton/components/hooks/useCalendars';
 import { CalendarDisplay, CALENDAR_TYPE } from '@proton/shared/lib/interfaces/calendar';
-import { CALENDAR_FLAGS, MAX_LENGTHS_API } from '@proton/shared/lib/calendar/constants';
+import { MAX_LENGTHS_API } from '@proton/shared/lib/calendar/constants';
 import ModalsProvider from '@proton/components/containers/modals/Provider';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 
@@ -64,6 +64,7 @@ jest.mock('@proton/components/hooks/useGetCalendarBootstrap', () => ({
                     Permissions: 127,
                     Email: 'test@pm.gg',
                     CalendarID: 'id3',
+                    Flags: 1,
                     Color: '#f00',
                     Display: 1,
                 },
@@ -125,6 +126,7 @@ jest.mock('@proton/components/hooks/useGetCalendarBootstrap', () => ({
                     Permissions: 127,
                     Email: 'test@pm.gg',
                     CalendarID: 'id3',
+                    Flags: 1,
                     Color: '#f00',
                     Display: 1,
                 },
@@ -216,6 +218,7 @@ jest.mock('@proton/components/hooks/useCalendars', () =>
                         Permissions: 127,
                         Email: 'test@pm.gg',
                         CalendarID: 'id1',
+                        Flags: 1,
                         Color: '#f00',
                         Display: 1,
                     },
@@ -250,13 +253,14 @@ const mockedCreatableCalendar = {
     Description: 'description3',
     Display: CalendarDisplay.VISIBLE,
     Color: '#f00',
-    Flags: CALENDAR_FLAGS.ACTIVE,
+
     Type: CALENDAR_TYPE.PERSONAL,
     Members: [
         {
             ID: 'memberId',
             Email: 'test@pm.gg',
             Permissions: 127,
+            Flags: 1,
             AddressID: 'addressId',
             Color: '#f00',
             Display: CalendarDisplay.VISIBLE,
@@ -278,12 +282,12 @@ describe('MainContainer', () => {
                 ID: 'id1',
                 Name: 'calendar1',
                 Description: 'description1',
-                Flags: CALENDAR_FLAGS.INACTIVE,
                 Type: CALENDAR_TYPE.PERSONAL,
                 Members: [
                     {
                         ID: 'memberId1',
                         Email: 'test@pm.gg',
+                        Flags: 0,
                         Permissions: 127,
                         AddressID: 'addressId1',
                         Color: '#f00',
@@ -298,12 +302,12 @@ describe('MainContainer', () => {
                 Description: 'description2',
                 Display: CalendarDisplay.VISIBLE,
                 Color: '#f00',
-                Flags: CALENDAR_FLAGS.ACTIVE,
                 Type: CALENDAR_TYPE.SUBSCRIPTION,
                 Members: [
                     {
                         ID: 'memberId2',
                         Email: 'test@pm.gg',
+                        Flags: 1,
                         Permissions: 127,
                         AddressID: 'addressId2',
                         Color: '#f00',
@@ -565,6 +569,7 @@ describe('MainContainer', () => {
                                 CalendarID: 'id3',
                                 Color: '#f00',
                                 Display: CalendarDisplay.VISIBLE,
+                                Flags: 1,
                                 Email: 'test@pm.gg',
                                 ID: 'memberId',
                                 AddressID: 'addressId',
@@ -603,6 +608,7 @@ describe('MainContainer', () => {
                             Description: 'description3',
                             Display: 1,
                             Flags: 1,
+                            Email: 'test@pm.gg',
                             ID: 'id3',
                             Name: 'calendar3',
                             Type: 0,
@@ -615,6 +621,7 @@ describe('MainContainer', () => {
                                     ID: 'memberId',
                                     AddressID: 'addressId',
                                     Permissions: 127,
+                                    Flags: 1,
                                 },
                             ],
                         },

@@ -50,6 +50,7 @@ export const calendarBuilder = build<VisualCalendar>('Calendar', {
     fields: {
         ID: testCalendarId,
         Name: 'My calendar',
+        Email: testEmail,
         Description: '',
         Type: 0,
         Flags: CALENDAR_FLAGS.ACTIVE,
@@ -61,6 +62,7 @@ export const calendarBuilder = build<VisualCalendar>('Calendar', {
                 Email: testEmail,
                 Permissions: 127,
                 AddressID: testAdddressId,
+                Flags: CALENDAR_FLAGS.ACTIVE,
                 Color: '#F00',
                 Display: 1,
                 CalendarID: testCalendarId,
@@ -70,12 +72,34 @@ export const calendarBuilder = build<VisualCalendar>('Calendar', {
     traits: {
         resetNeeded: {
             overrides: {
-                Flags: CALENDAR_FLAGS.RESET_NEEDED,
+                Members: [
+                    {
+                        ID: 'otkpEZzG--8dMXvwyLXLQWB72hhBhNGzINjH14rUDfywvOyeN01cDxDrS3Koifxf6asA7Xcwtldm0r_MCmWiAQ==',
+                        Email: testEmail,
+                        Permissions: 127,
+                        AddressID: testAdddressId,
+                        Flags: CALENDAR_FLAGS.RESET_NEEDED,
+                        Color: '#F00',
+                        Display: 1,
+                        CalendarID: testCalendarId,
+                    },
+                ],
             },
         },
         updatePassphrase: {
             overrides: {
-                Flags: CALENDAR_FLAGS.UPDATE_PASSPHRASE,
+                Members: [
+                    {
+                        ID: 'otkpEZzG--8dMXvwyLXLQWB72hhBhNGzINjH14rUDfywvOyeN01cDxDrS3Koifxf6asA7Xcwtldm0r_MCmWiAQ==',
+                        Email: testEmail,
+                        Permissions: 127,
+                        AddressID: testAdddressId,
+                        Flags: CALENDAR_FLAGS.UPDATE_PASSPHRASE,
+                        Color: '#F00',
+                        Display: 1,
+                        CalendarID: testCalendarId,
+                    },
+                ],
             },
         },
     },
