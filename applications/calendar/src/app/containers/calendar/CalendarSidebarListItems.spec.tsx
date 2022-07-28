@@ -7,14 +7,14 @@ import { createMemoryHistory } from 'history';
 import { CacheProvider } from '@proton/components/containers/cache';
 import useUser from '@proton/components/hooks/useUser';
 import { getIsCalendarDisabled } from '@proton/shared/lib/calendar/calendar';
-import { CALENDAR_FLAGS } from '@proton/shared/lib/calendar/constants';
+import { CALENDAR_FLAGS, CALENDAR_SETTINGS_SUBSECTION_ID } from '@proton/shared/lib/calendar/constants';
+import { CALENDAR_TYPE, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import {
     getCalendarHasSubscriptionParameters,
     getCalendarIsNotSyncedInfo,
 } from '@proton/shared/lib/calendar/subscribe/helpers';
 import createCache from '@proton/shared/lib/helpers/cache';
 import { UserModel } from '@proton/shared/lib/interfaces';
-import { CALENDAR_TYPE, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
 import CalendarSidebarListItems, { CalendarSidebarListItemsProps } from './CalendarSidebarListItems';
 
@@ -192,7 +192,7 @@ describe('CalendarSidebarListItems', () => {
         expect(shareLink.href).toBe('http://localhost/calendar/calendars?share=id2');
         const moreOptionsLink = screen.getByText(/More options/) as HTMLAnchorElement;
         expect(moreOptionsLink).toBeInTheDocument();
-        expect(moreOptionsLink.href).toBe('http://localhost/calendar/calendars');
+        expect(moreOptionsLink.href).toBe(`http://localhost/calendar/calendars#${CALENDAR_SETTINGS_SUBSECTION_ID.PERSONAL_CALENDARS}`);
         expect(getImportButton()).toBeInTheDocument();
 
         const getCalendarModal = () => screen.queryByText(/CalendarModal/);
@@ -250,7 +250,7 @@ describe('CalendarSidebarListItems', () => {
         expect(screen.queryByText(/Import events/)).not.toBeInTheDocument();
         const moreOptionsLink = screen.getByText(/More options/) as HTMLAnchorElement;
         expect(moreOptionsLink).toBeInTheDocument();
-        expect(moreOptionsLink.href).toBe('http://localhost/calendar/calendars#other-calendars-section');
+        expect(moreOptionsLink.href).toBe(`http://localhost/calendar/calendars#${CALENDAR_SETTINGS_SUBSECTION_ID.SUBSCRIBED_CALENDARS}`);
     });
 
     it(`doesn't let you open the dropdown when actions are disabled`, () => {
