@@ -1,13 +1,13 @@
 import { c } from 'ttag';
-import { Address, Domain } from '@proton/shared/lib/interfaces';
+
+import { Domain, DomainAddress } from '@proton/shared/lib/interfaces';
 
 import { Button, ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../components';
-
 import AddressesTable from './AddressesTable';
 
 interface Props extends ModalProps {
     domain: Domain;
-    domainAddresses: Address[];
+    domainAddresses: DomainAddress[];
 }
 
 const CatchAllModal = ({ domain, domainAddresses, ...rest }: Props) => {
