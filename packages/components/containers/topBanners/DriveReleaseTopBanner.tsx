@@ -1,11 +1,13 @@
 import { useState } from 'react';
-import { c } from 'ttag';
-import { APPS, DRIVE_APP_NAME } from '@proton/shared/lib/constants';
-import { isBefore, fromUnixTime } from 'date-fns';
 
-import TopBanner from './TopBanner';
+import { fromUnixTime, isBefore } from 'date-fns';
+import { c } from 'ttag';
+
+import { APPS, DRIVE_APP_NAME } from '@proton/shared/lib/constants';
+
 import { AppLink, useConfig, useFeature, useUser } from '../..';
 import { FeatureCode } from '../features';
+import TopBanner from './TopBanner';
 
 const ACCOUNT_CREATION_DATE_LIMIT = new Date('2022-07-15');
 
@@ -45,8 +47,13 @@ const DriveReleaseTopBanner = () => {
         <TopBanner className="bg-primary" onClose={handleClose}>
             <span className="mr0-5">{c('Spotlight')
                 .t`${DRIVE_APP_NAME} is out of beta! Give your files the same security your emails get.`}</span>
-            <AppLink to="/?ref=drive-launch-top-banner" toApp={APPS.PROTONDRIVE}>{c('Spotlight')
-                .t`Try ${DRIVE_APP_NAME}`}</AppLink>
+            <AppLink
+                onClick={() => {
+                    handleClose();
+                }}
+                to="/?ref=drive-launch-top-banner"
+                toApp={APPS.PROTONDRIVE}
+            >{c('Spotlight').t`Try ${DRIVE_APP_NAME}`}</AppLink>
         </TopBanner>
     ) : null;
 };
