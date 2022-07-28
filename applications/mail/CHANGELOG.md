@@ -1,8 +1,8 @@
-## Release 5.0.5.0 - August 3, 2022
+## Release 5.0.5.0 - July 27, 2022
 
-### Improvements
+### Bug fixes
 
--   Added the ability to apply filters on existing emails
+-   Fixed some minor display & alignment issues
 
 ## Release 5.0.4.0 - July 20, 2022
 
