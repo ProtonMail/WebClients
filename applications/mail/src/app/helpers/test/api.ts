@@ -1,6 +1,7 @@
 import { matchPath } from 'react-router';
-import noop from '@proton/utils/noop';
+
 import { FeatureCode } from '@proton/components';
+import noop from '@proton/utils/noop';
 
 type HttpMethod = 'get' | 'post' | 'put' | 'delete';
 

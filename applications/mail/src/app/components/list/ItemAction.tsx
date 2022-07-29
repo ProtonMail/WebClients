@@ -1,9 +1,10 @@
-import { Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { classnames, Icon, Tooltip } from '@proton/components';
 import { c } from 'ttag';
 
-import { Element } from '../../models/element';
+import { Icon, Tooltip, classnames } from '@proton/components';
+import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+
 import { isMessage } from '../../helpers/elements';
+import { Element } from '../../models/element';
 
 interface Props {
     element?: Element;

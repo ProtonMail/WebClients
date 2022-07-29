@@ -1,17 +1,20 @@
+import { Dispatch, SetStateAction, useCallback } from 'react';
+
+import { c } from 'ttag';
+
+import { Button, useLoading, useNotifications, useSideApp } from '@proton/components';
 import { useAddEvents } from '@proton/components/containers/calendar/hooks';
 import { CALENDAR_APP_NAME } from '@proton/shared/lib/calendar/constants';
 import { getEventWithCalendarAlarms } from '@proton/shared/lib/calendar/integration/invite';
-import noop from '@proton/utils/noop';
+import { APPS } from '@proton/shared/lib/constants';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { RequireSome } from '@proton/shared/lib/interfaces';
 import { ImportedEvent } from '@proton/shared/lib/interfaces/calendar';
 import { postMessageToIframe } from '@proton/shared/lib/sideApp/helpers';
 import { SIDE_APP_EVENTS } from '@proton/shared/lib/sideApp/models';
-import { APPS } from '@proton/shared/lib/constants';
-import { useCallback, Dispatch, SetStateAction } from 'react';
-import { c } from 'ttag';
-import { useNotifications, useLoading, Button, useSideApp } from '@proton/components';
-import { getDisableButtons, InvitationModel, UPDATE_ACTION } from '../../../../helpers/calendar/invite';
+import noop from '@proton/utils/noop';
+
+import { InvitationModel, UPDATE_ACTION, getDisableButtons } from '../../../../helpers/calendar/invite';
 
 interface Props {
     model: RequireSome<InvitationModel, 'invitationIcs'>;

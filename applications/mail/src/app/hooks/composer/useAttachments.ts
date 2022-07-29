@@ -1,33 +1,35 @@
-import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
-import { getAttachments, isPlainText } from '@proton/shared/lib/mail/messages';
 import { MutableRefObject, useState } from 'react';
-import { useApi, useNotifications, useAuthentication, useHandler } from '@proton/components';
+import { useDispatch } from 'react-redux';
+
+import { useApi, useAuthentication, useHandler, useNotifications } from '@proton/components';
 import { removeAttachment } from '@proton/shared/lib/api/attachments';
 import { readFileAsBuffer } from '@proton/shared/lib/helpers/file';
-import { useDispatch } from 'react-redux';
-import { Upload } from '../../helpers/upload';
-import {
-    UploadResult,
-    ATTACHMENT_ACTION,
-    upload,
-    checkSizeAndLength,
-} from '../../helpers/attachment/attachmentUploader';
+import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
+import { getAttachments, isPlainText } from '@proton/shared/lib/mail/messages';
+
 import { MessageChange } from '../../components/composer/Composer';
-import { useGetMessageKeys } from '../message/useGetMessageKeys';
-import { useLongLivingState } from '../useLongLivingState';
-import { usePromise } from '../usePromise';
-import { getEmbeddedImages, updateImages } from '../../helpers/message/messageImages';
+import { ExternalEditorActions } from '../../components/composer/editor/EditorWrapper';
+import { ATTACHMENT_MAX_COUNT, MESSAGE_ALREADY_SENT_INTERNAL_ERROR } from '../../constants';
+import {
+    ATTACHMENT_ACTION,
+    UploadResult,
+    checkSizeAndLength,
+    upload,
+} from '../../helpers/attachment/attachmentUploader';
 import {
     createEmbeddedImageFromUpload,
     isEmbeddable,
     matchSameCidOrLoc,
     readContentIDandLocation,
 } from '../../helpers/message/messageEmbeddeds';
-import { ATTACHMENT_MAX_COUNT, MESSAGE_ALREADY_SENT_INTERNAL_ERROR } from '../../constants';
+import { getEmbeddedImages, updateImages } from '../../helpers/message/messageImages';
+import { Upload } from '../../helpers/upload';
 import { addAttachment } from '../../logic/attachments/attachmentsActions';
 import { MessageState, MessageStateWithData } from '../../logic/messages/messagesTypes';
+import { useGetMessageKeys } from '../message/useGetMessageKeys';
 import { useGetMessage } from '../message/useMessage';
-import { ExternalEditorActions } from '../../components/composer/editor/EditorWrapper';
+import { useLongLivingState } from '../useLongLivingState';
+import { usePromise } from '../usePromise';
 
 export interface PendingUpload {
     file: File;

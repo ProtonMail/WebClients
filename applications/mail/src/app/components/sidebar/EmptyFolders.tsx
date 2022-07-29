@@ -3,8 +3,8 @@ import { c } from 'ttag';
 import {
     SidebarListItem,
     SidebarListItemButton,
-    SidebarListItemContentIcon,
     SidebarListItemContent,
+    SidebarListItemContentIcon,
     useModalState,
 } from '@proton/components';
 import EditLabelModal from '@proton/components/containers/labels/modals/EditLabelModal';

@@ -1,13 +1,14 @@
 import { c } from 'ttag';
 
+import { Button, EmptyViewContainer } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import noResultSearchSvg from '@proton/styles/assets/img/illustrations/empty-search.svg';
 import noResultInboxSvg from '@proton/styles/assets/img/illustrations/empty-mailbox.svg';
+import noResultSearchSvg from '@proton/styles/assets/img/illustrations/empty-search.svg';
 import noSpamSvg from '@proton/styles/assets/img/illustrations/no-messages-in-spam.svg';
 import noUnreadSvg from '@proton/styles/assets/img/illustrations/no-unread-messages.svg';
-import { Button, EmptyViewContainer } from '@proton/components';
-import { useOnCompose } from '../../containers/ComposeProvider';
+
 import { MESSAGE_ACTIONS } from '../../constants';
+import { useOnCompose } from '../../containers/ComposeProvider';
 
 interface Props {
     labelID: string;

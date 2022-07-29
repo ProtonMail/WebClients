@@ -1,8 +1,9 @@
 import { AppLink, Button, FeatureCode, useAuthentication, useFeature, useSideApp } from '@proton/components';
-import { APPS } from '@proton/shared/lib/constants';
-import './OpenInCalendarButton.scss';
-import { openCalendarEventInSideApp } from '@proton/shared/lib/sideApp/calendar';
 import { getLinkToCalendarEvent } from '@proton/shared/lib/calendar/helper';
+import { APPS } from '@proton/shared/lib/constants';
+import { openCalendarEventInSideApp } from '@proton/shared/lib/sideApp/calendar';
+
+import './OpenInCalendarButton.scss';
 
 interface Props {
     linkString: string;

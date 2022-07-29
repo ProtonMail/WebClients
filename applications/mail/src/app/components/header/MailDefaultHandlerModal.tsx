@@ -1,4 +1,5 @@
 import { c } from 'ttag';
+
 import { AlertModal, Button, ModalProps } from '@proton/components';
 import { Href } from '@proton/components/components/link';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';

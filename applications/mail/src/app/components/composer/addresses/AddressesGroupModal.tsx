@@ -1,26 +1,27 @@
-import { useState, ChangeEvent, useMemo } from 'react';
+import { ChangeEvent, useMemo, useState } from 'react';
+
 import { c } from 'ttag';
+
 import {
+    Button,
     Checkbox,
-    generateUID,
-    Label,
-    classnames,
-    PrimaryButton,
-    ModalTwo,
     Form,
-    ModalTwoHeader,
+    Label,
+    ModalTwo,
     ModalTwoContent,
     ModalTwoFooter,
-    Button,
+    ModalTwoHeader,
+    PrimaryButton,
+    classnames,
+    generateUID,
 } from '@proton/components';
-
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import { contactToInput } from '@proton/shared/lib/mail/recipient';
 
+import { MessageSendInfo } from '../../../hooks/useSendInfo';
 import { RecipientGroup } from '../../../models/address';
 import { STATUS_ICONS_FILLS } from '../../../models/crypto';
 import EncryptionStatusIcon from '../../message/EncryptionStatusIcon';
-import { MessageSendInfo } from '../../../hooks/useSendInfo';
 
 interface Props {
     recipientGroup: RecipientGroup;

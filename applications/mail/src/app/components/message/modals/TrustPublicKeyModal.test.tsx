@@ -1,13 +1,15 @@
 import { fireEvent } from '@testing-library/dom';
-import { ContactWithBePinnedPublicKey } from '@proton/shared/lib/interfaces/contacts';
+
 import { PublicKeyReference } from '@proton/crypto';
-import { addKeysToUserKeysCache, GeneratedKey, generateKeys } from '../../../helpers/test/crypto';
-import TrustPublicKeyModal from './TrustPublicKeyModal';
-import { render, tick } from '../../../helpers/test/render';
+import { ContactWithBePinnedPublicKey } from '@proton/shared/lib/interfaces/contacts';
+
 import { addApiMock } from '../../../helpers/test/api';
+import { GeneratedKey, addKeysToUserKeysCache, generateKeys } from '../../../helpers/test/crypto';
+import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../helpers/test/crypto';
 import { clearAll, waitForNotification } from '../../../helpers/test/helper';
 import { receiver, sender, setupContactsForPinKeys } from '../../../helpers/test/pinKeys';
-import { setupCryptoProxyForTesting, releaseCryptoProxy } from '../../../helpers/test/crypto';
+import { render, tick } from '../../../helpers/test/render';
+import TrustPublicKeyModal from './TrustPublicKeyModal';
 
 const senderAddress = 'sender@outside.com';
 

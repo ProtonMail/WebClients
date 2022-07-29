@@ -1,14 +1,16 @@
 import mimemessage from '@protontech/mimemessage';
+
+import { WorkerDecryptionResult } from '@proton/crypto';
 import { arrayToBinaryString } from '@proton/crypto/lib/utils';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { Api } from '@proton/shared/lib/interfaces';
 import { getAttachments, isPlainText as testIsPlainText } from '@proton/shared/lib/mail/messages';
-import { WorkerDecryptionResult } from '@proton/crypto';
-import { getPlainText } from '../message/messageContent';
-import { prepareExport } from '../message/messageExport';
-import { Download, formatDownload } from '../attachment/attachmentDownloader';
-import { readContentIDandLocation } from '../message/messageEmbeddeds';
+
 import { MessageEmbeddedImage, MessageImages, MessageKeys, MessageState } from '../../logic/messages/messagesTypes';
+import { Download, formatDownload } from '../attachment/attachmentDownloader';
+import { getPlainText } from '../message/messageContent';
+import { readContentIDandLocation } from '../message/messageEmbeddeds';
+import { prepareExport } from '../message/messageExport';
 
 // Reference: Angular/src/app/composer/services/mimeMessageBuilder.js
 

@@ -1,27 +1,30 @@
-import { GetEncryptionPreferences } from '@proton/shared/lib/interfaces/hooks/GetEncryptionPreferences';
 import { Dispatch, SetStateAction, useCallback, useEffect, useMemo, useState } from 'react';
-import { useGetEncryptionPreferences } from '@proton/components';
-import useIsMounted from '@proton/hooks/useIsMounted';
+
 import { c, msgid } from 'ttag';
+
+import { useGetEncryptionPreferences } from '@proton/components';
+import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
 import { PublicKeyReference } from '@proton/crypto';
-import { getRecipientsAddresses } from '@proton/shared/lib/mail/messages';
+import useIsMounted from '@proton/hooks/useIsMounted';
 import { processApiRequestsSafe } from '@proton/shared/lib/api/helpers/safeApiRequests';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
-import noop from '@proton/utils/noop';
-import isTruthy from '@proton/utils/isTruthy';
 import { omit } from '@proton/shared/lib/helpers/object';
-import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
-import { ENCRYPTION_PREFERENCES_ERROR_TYPES } from '@proton/shared/lib/mail/encryptionPreferences';
 import { Recipient } from '@proton/shared/lib/interfaces/Address';
+import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+import { GetEncryptionPreferences } from '@proton/shared/lib/interfaces/hooks/GetEncryptionPreferences';
+import { ENCRYPTION_PREFERENCES_ERROR_TYPES } from '@proton/shared/lib/mail/encryptionPreferences';
+import { getRecipientsAddresses } from '@proton/shared/lib/mail/messages';
 import getSendPreferences from '@proton/shared/lib/mail/send/getSendPreferences';
-import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
+import isTruthy from '@proton/utils/isTruthy';
+import noop from '@proton/utils/noop';
+
 import AskForKeyPinningModal from '../components/composer/addresses/AskForKeyPinningModal';
 import ContactResignModal from '../components/message/modals/ContactResignModal';
 import { getSendStatusIcon } from '../helpers/message/icon';
-import { MapSendInfo, STATUS_ICONS_FILLS } from '../models/crypto';
-import { MessageState } from '../logic/messages/messagesTypes';
-import { useContactsMap } from './contact/useContacts';
 import { ContactsMap } from '../logic/contacts/contactsTypes';
+import { MessageState } from '../logic/messages/messagesTypes';
+import { MapSendInfo, STATUS_ICONS_FILLS } from '../models/crypto';
+import { useContactsMap } from './contact/useContacts';
 
 const { PRIMARY_NOT_PINNED, CONTACT_SIGNATURE_NOT_VERIFIED } = ENCRYPTION_PREFERENCES_ERROR_TYPES;
 

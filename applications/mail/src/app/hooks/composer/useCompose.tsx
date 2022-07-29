@@ -1,30 +1,33 @@
-import { c, msgid } from 'ttag';
-import {
-    useHandler,
-    useNotifications,
-    useAddresses,
-    useGetUser,
-    useApi,
-    useSettingsLink,
-    useEventManager,
-    useModalState,
-    Href,
-    AlertModal,
-    ErrorButton,
-    Button,
-} from '@proton/components';
-import { isOutbox, isScheduledSend } from '@proton/shared/lib/mail/messages';
-import { forceSend } from '@proton/shared/lib/api/messages';
-import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
-import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { useDispatch } from 'react-redux';
-import { useDraft } from '../useDraft';
-import { isDirtyAddress } from '../../helpers/addresses';
+
+import { c, msgid } from 'ttag';
+
+import {
+    AlertModal,
+    Button,
+    ErrorButton,
+    Href,
+    useAddresses,
+    useApi,
+    useEventManager,
+    useGetUser,
+    useHandler,
+    useModalState,
+    useNotifications,
+    useSettingsLink,
+} from '@proton/components';
+import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
+import { forceSend } from '@proton/shared/lib/api/messages';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import { isOutbox, isScheduledSend } from '@proton/shared/lib/mail/messages';
+
+import SendingOriginalMessageModal from '../../components/composer/modals/SendingOriginalMessageModal';
 import { MESSAGE_ACTIONS } from '../../constants';
+import { isDirtyAddress } from '../../helpers/addresses';
+import { openDraft } from '../../logic/messages/draft/messagesDraftActions';
 import { MessageState, PartialMessageState } from '../../logic/messages/messagesTypes';
 import { useGetLocalID, useGetMessage } from '../message/useMessage';
-import { openDraft } from '../../logic/messages/draft/messagesDraftActions';
-import SendingOriginalMessageModal from '../../components/composer/modals/SendingOriginalMessageModal';
+import { useDraft } from '../useDraft';
 
 export interface ComposeExisting {
     existingDraft: MessageState;

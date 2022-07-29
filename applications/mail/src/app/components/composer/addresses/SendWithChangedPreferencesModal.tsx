@@ -1,13 +1,14 @@
+import { c } from 'ttag';
+
 import {
     Button,
-    classnames,
     Form,
     ModalTwo,
     ModalTwoContent,
     ModalTwoFooter,
     ModalTwoHeader,
+    classnames,
 } from '@proton/components';
-import { c } from 'ttag';
 
 interface Props {
     emails: string[];

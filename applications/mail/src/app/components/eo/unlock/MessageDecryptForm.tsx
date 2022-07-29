@@ -1,5 +1,7 @@
 import { KeyboardEvent, useState } from 'react';
+
 import { c } from 'ttag';
+
 import { Button, InputFieldTwo, PasswordInputTwo } from '@proton/components';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 

@@ -1,11 +1,14 @@
+import { useCallback } from 'react';
+import { useDispatch } from 'react-redux';
+
+import { FeatureCode, useApi, useFeature } from '@proton/components';
+import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
+import { WorkerDecryptionResult } from '@proton/crypto';
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import { getAttachments } from '@proton/shared/lib/mail/messages';
-import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
-import { useCallback } from 'react';
-import { FeatureCode, useApi, useFeature } from '@proton/components';
-import { useDispatch } from 'react-redux';
-import { WorkerDecryptionResult } from '@proton/crypto';
+
+import ConfirmDownloadAttachments from '../components/attachment/modals/ConfirmDownloadAttachments';
 import {
     Download,
     formatDownload,
@@ -13,13 +16,12 @@ import {
     generateDownload,
     generateDownloadAll,
 } from '../helpers/attachment/attachmentDownloader';
-import { useGetMessageKeys } from './message/useGetMessageKeys';
-import { updateAttachment } from '../logic/attachments/attachmentsActions';
-import { useGetAttachment } from './useAttachment';
-import { MessageKeys, MessageStateWithData, OutsideKey } from '../logic/messages/messagesTypes';
-import { useGetMessage } from './message/useMessage';
 import { getAttachmentCounts } from '../helpers/message/messages';
-import ConfirmDownloadAttachments from '../components/attachment/modals/ConfirmDownloadAttachments';
+import { updateAttachment } from '../logic/attachments/attachmentsActions';
+import { MessageKeys, MessageStateWithData, OutsideKey } from '../logic/messages/messagesTypes';
+import { useGetMessageKeys } from './message/useGetMessageKeys';
+import { useGetMessage } from './message/useMessage';
+import { useGetAttachment } from './useAttachment';
 
 /**
  * Returns the keys from the sender of the message version in cache

@@ -1,7 +1,9 @@
 import { c, msgid } from 'ttag';
+
 import { Button } from '@proton/components';
-import ComposerInnerModal from './ComposerInnerModal';
+
 import { ATTACHMENT_ACTION } from '../../../helpers/attachment/attachmentUploader';
+import ComposerInnerModal from './ComposerInnerModal';
 
 interface Props {
     files: File[];

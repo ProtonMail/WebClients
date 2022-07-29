@@ -1,7 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
+
 import { globalReset } from '../actions';
 import { refresh } from './contactsActions';
-import { reset, refresh as refreshReducer } from './contactsReducers';
+import { refresh as refreshReducer, reset } from './contactsReducers';
 import { ContactsState } from './contactsTypes';
 
 export const initialState: ContactsState = {

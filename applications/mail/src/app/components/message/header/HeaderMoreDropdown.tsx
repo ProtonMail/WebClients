@@ -1,51 +1,53 @@
 import { useRef } from 'react';
-import { c } from 'ttag';
+import { useDispatch } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 
+import { c } from 'ttag';
+
 import {
-    Icon,
+    Button,
+    ButtonGroup,
     DropdownMenu,
     DropdownMenuButton,
+    Icon,
+    Tooltip,
     useApi,
     useEventManager,
     useFolders,
-    ButtonGroup,
-    Button,
-    Tooltip,
-    useMailSettings,
     useLoading,
+    useMailSettings,
     useModalState,
 } from '@proton/components';
-import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { ContactEditProps } from '@proton/components/containers/contacts/edit/ContactEditModal';
+import { WorkerDecryptionResult } from '@proton/crypto';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { MailSettings } from '@proton/shared/lib/interfaces';
-import { useDispatch } from 'react-redux';
-import { WorkerDecryptionResult } from '@proton/crypto';
-import { ContactEditProps } from '@proton/components/containers/contacts/edit/ContactEditModal';
-import MessageHeadersModal from '../modals/MessageHeadersModal';
-import { getDate, isStarred as IsMessageStarred } from '../../../helpers/elements';
+import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+
 import { formatFileNameDate } from '../../../helpers/date';
-import MessagePrintModal from '../modals/MessagePrintModal';
+import { isStarred as IsMessageStarred, getDate } from '../../../helpers/elements';
+import { getCurrentFolderID, getFolderName } from '../../../helpers/labels';
+import { isConversationMode } from '../../../helpers/mailSettings';
+import { MessageViewIcons } from '../../../helpers/message/icon';
 import { exportBlob } from '../../../helpers/message/messageExport';
-import HeaderDropdown, { DropdownRender } from './HeaderDropdown';
+import { useGetMessageKeys } from '../../../hooks/message/useGetMessageKeys';
 import { useMoveToFolder, useStar } from '../../../hooks/useApplyLabels';
-import { getFolderName, getCurrentFolderID } from '../../../helpers/labels';
-import { useMarkAs, MARK_AS_STATUS } from '../../../hooks/useMarkAs';
+import { useGetAttachment } from '../../../hooks/useAttachment';
+import { MARK_AS_STATUS, useMarkAs } from '../../../hooks/useMarkAs';
+import { updateAttachment } from '../../../logic/attachments/attachmentsActions';
+import { MessageState, MessageStateWithData } from '../../../logic/messages/messagesTypes';
 import { Element } from '../../../models/element';
 import { Breakpoints } from '../../../models/utils';
 import CustomFilterDropdown from '../../dropdown/CustomFilterDropdown';
-import MoveDropdown from '../../dropdown/MoveDropdown';
 import LabelDropdown from '../../dropdown/LabelDropdown';
-import { useGetMessageKeys } from '../../../hooks/message/useGetMessageKeys';
-import { isConversationMode } from '../../../helpers/mailSettings';
-import { updateAttachment } from '../../../logic/attachments/attachmentsActions';
-import { useGetAttachment } from '../../../hooks/useAttachment';
-import { MessageState, MessageStateWithData } from '../../../logic/messages/messagesTypes';
+import MoveDropdown from '../../dropdown/MoveDropdown';
 import MessageDetailsModal from '../modals/MessageDetailsModal';
-import { MessageViewIcons } from '../../../helpers/message/icon';
-import MessagePhishingModal from '../modals/MessagePhishingModal';
+import MessageHeadersModal from '../modals/MessageHeadersModal';
 import MessagePermanentDeleteModal from '../modals/MessagePermanentDeleteModal';
+import MessagePhishingModal from '../modals/MessagePhishingModal';
+import MessagePrintModal from '../modals/MessagePrintModal';
+import HeaderDropdown, { DropdownRender } from './HeaderDropdown';
 
 const { INBOX, TRASH, SPAM, ARCHIVE } = MAILBOX_LABEL_IDS;
 

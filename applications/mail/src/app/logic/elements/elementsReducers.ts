@@ -1,14 +1,19 @@
-import { toMap } from '@proton/shared/lib/helpers/object';
-import { Draft } from 'immer';
 import { PayloadAction } from '@reduxjs/toolkit';
+import { Draft } from 'immer';
+
+import { toMap } from '@proton/shared/lib/helpers/object';
+import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import diff from '@proton/utils/diff';
 import isTruthy from '@proton/utils/isTruthy';
 import range from '@proton/utils/range';
-import diff from '@proton/utils/diff';
-import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+
+import { MAX_ELEMENT_LIST_LOAD_RETRIES, PAGE_SIZE } from '../../constants';
+import { parseLabelIDsInEvent, isMessage as testIsMessage } from '../../helpers/elements';
+import { Element } from '../../models/element';
 import { newState } from './elementsSlice';
 import {
-    ElementsState,
     ESResults,
+    ElementsState,
     EventUpdates,
     NewStateParams,
     OptimisticDelete,
@@ -17,10 +22,7 @@ import {
     QueryResults,
     TaskRunningInfo,
 } from './elementsTypes';
-import { Element } from '../../models/element';
-import { isMessage as testIsMessage, parseLabelIDsInEvent } from '../../helpers/elements';
 import { newRetry } from './helpers/elementQuery';
-import { MAX_ELEMENT_LIST_LOAD_RETRIES, PAGE_SIZE } from '../../constants';
 
 export const globalReset = (state: Draft<ElementsState>) => {
     Object.assign(state, newState());

@@ -1,9 +1,10 @@
 import { Address, MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
-import { formatSubject, FW_PREFIX, RE_PREFIX } from '@proton/shared/lib/mail/messages';
-import { handleActions, createNewDraft } from './messageDraft';
+import { FW_PREFIX, RE_PREFIX, formatSubject } from '@proton/shared/lib/mail/messages';
+
 import { MESSAGE_ACTIONS } from '../../constants';
 import { MessageStateWithData } from '../../logic/messages/messagesTypes';
+import { createNewDraft, handleActions } from './messageDraft';
 
 const ID = 'ID';
 const Time = 0;

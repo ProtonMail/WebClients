@@ -1,11 +1,13 @@
 import { RefObject, useEffect, useMemo } from 'react';
 import { useDispatch } from 'react-redux';
+
 import { FeatureCode, useFeature, useTheme } from '@proton/components';
-import { DARK_THEMES } from '@proton/shared/lib/themes/themes';
 import { isNewsLetter, isPlainText } from '@proton/shared/lib/mail/messages';
-import { applyDarkStyle } from '../../../logic/messages/read/messagesReadActions';
-import { MessageState } from '../../../logic/messages/messagesTypes';
+import { DARK_THEMES } from '@proton/shared/lib/themes/themes';
+
 import { canSupportDarkStyle } from '../../../helpers/message/messageContent';
+import { MessageState } from '../../../logic/messages/messagesTypes';
+import { applyDarkStyle } from '../../../logic/messages/read/messagesReadActions';
 
 const useMessageDarkStyles = (
     message: MessageState,

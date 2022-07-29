@@ -1,20 +1,23 @@
+import { useDispatch } from 'react-redux';
+
 import { c } from 'ttag';
+
 import { useEventManager, useHandler, useMailSettings, useNotifications } from '@proton/components';
 import { Abortable } from '@proton/components/hooks/useHandler';
-import { useDispatch } from 'react-redux';
+
 import SendingMessageNotification, {
-    createSendingMessageNotificationManager,
     SendingMessageNotificationManager,
+    createSendingMessageNotificationManager,
 } from '../../components/notifications/SendingMessageNotification';
+import { MESSAGE_ALREADY_SENT_INTERNAL_ERROR, SAVE_DRAFT_ERROR_CODES, SEND_EMAIL_ERROR_CODES } from '../../constants';
+import { useOnCompose } from '../../containers/ComposeProvider';
+import { endSending, startSending } from '../../logic/messages/draft/messagesDraftActions';
+import { MessageState, MessageStateWithData } from '../../logic/messages/messagesTypes';
+import { MapSendInfo } from '../../models/crypto';
+import { useGetMessage } from '../message/useMessage';
+import { PromiseHandlers } from '../usePromise';
 import { useSendMessage } from './useSendMessage';
 import { useSendVerifications } from './useSendVerifications';
-import { useOnCompose } from '../../containers/ComposeProvider';
-import { MapSendInfo } from '../../models/crypto';
-import { SAVE_DRAFT_ERROR_CODES, SEND_EMAIL_ERROR_CODES, MESSAGE_ALREADY_SENT_INTERNAL_ERROR } from '../../constants';
-import { PromiseHandlers } from '../usePromise';
-import { MessageState, MessageStateWithData } from '../../logic/messages/messagesTypes';
-import { endSending, startSending } from '../../logic/messages/draft/messagesDraftActions';
-import { useGetMessage } from '../message/useMessage';
 
 export interface UseSendHandlerParameters {
     // Composer will be unmounted and modelMessage will continue changing after sending start

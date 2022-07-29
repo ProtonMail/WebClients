@@ -1,23 +1,25 @@
-import { useEffect, useState, useRef, useCallback, memo, SetStateAction, Dispatch } from 'react';
+import { Dispatch, SetStateAction, memo, useCallback, useEffect, useRef, useState } from 'react';
+
 import { c } from 'ttag';
 
-import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
-import { isPlainText as testIsPlainText } from '@proton/shared/lib/mail/messages';
-import { useHandler, Editor, EditorMetadata, EditorTextDirection, EditorActions } from '@proton/components';
-import diff from '@proton/utils/diff';
+import { Editor, EditorActions, EditorMetadata, EditorTextDirection, useHandler } from '@proton/components';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import { MailSettings } from '@proton/shared/lib/interfaces';
-import { MessageChange } from '../Composer';
-import { getContent } from '../../../helpers/message/messageContent';
+import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
+import { isPlainText as testIsPlainText } from '@proton/shared/lib/mail/messages';
+import diff from '@proton/utils/diff';
+
 import { locateBlockquote } from '../../../helpers/message/messageBlockquote';
-import { getEmbeddedImages } from '../../../helpers/message/messageImages';
+import { getContent } from '../../../helpers/message/messageContent';
 import {
     createBlob,
     findCIDsInContent,
     readContentIDandLocation,
     removeEmbeddedHTML,
 } from '../../../helpers/message/messageEmbeddeds';
+import { getEmbeddedImages } from '../../../helpers/message/messageImages';
 import { MessageState } from '../../../logic/messages/messagesTypes';
+import { MessageChange } from '../Composer';
 
 export interface ExternalEditorActions {
     getContent: () => string;

@@ -1,5 +1,6 @@
-import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import { ESEvent } from '@proton/encrypted-search';
+import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
+
 import { ESItemChangesMail } from '../../models/encryptedSearch';
 import { Event } from '../../models/event';
 

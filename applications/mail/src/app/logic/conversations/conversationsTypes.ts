@@ -1,5 +1,6 @@
-import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { Api, SimpleMap } from '@proton/shared/lib/interfaces';
+import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+
 import { Conversation } from '../../models/conversation';
 
 export interface ConversationResult {

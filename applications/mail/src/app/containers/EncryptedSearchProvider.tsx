@@ -1,6 +1,8 @@
-import { createContext, ReactNode, useContext, useEffect, useRef, useState } from 'react';
+import { ReactNode, createContext, useContext, useEffect, useRef, useState } from 'react';
 import { useHistory } from 'react-router-dom';
+
 import { c } from 'ttag';
+
 import {
     FeatureCode,
     useApi,
@@ -10,30 +12,31 @@ import {
     useUser,
     useWelcomeFlags,
 } from '@proton/components';
+import { useEncryptedSearch } from '@proton/encrypted-search';
 import { EVENT_ERRORS } from '@proton/shared/lib/errors';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { useEncryptedSearch } from '@proton/encrypted-search';
+
 import {
-    EncryptedSearchFunctionsMail,
+    defaultESContextMail,
+    defaultESMailStatus,
+    indexKeyNames,
+    indexName,
+    primaryKeyName,
+    storeName,
+} from '../constants';
+import { getESHelpers } from '../helpers/encryptedSearch/encryptedSearchMailHelpers';
+import { convertEventType } from '../helpers/encryptedSearch/esSync';
+import { parseSearchParams } from '../helpers/encryptedSearch/esUtils';
+import { useGetMessageKeys } from '../hooks/message/useGetMessageKeys';
+import {
     ESDBStatusMail,
     ESItemChangesMail,
     ESMessage,
+    EncryptedSearchFunctionsMail,
     NormalizedSearchParams,
     StoredCiphertext,
 } from '../models/encryptedSearch';
-import { useGetMessageKeys } from '../hooks/message/useGetMessageKeys';
-import { getESHelpers } from '../helpers/encryptedSearch/encryptedSearchMailHelpers';
 import { Event } from '../models/event';
-import { convertEventType } from '../helpers/encryptedSearch/esSync';
-import {
-    defaultESMailStatus,
-    indexKeyNames,
-    primaryKeyName,
-    storeName,
-    indexName,
-    defaultESContextMail,
-} from '../constants';
-import { parseSearchParams } from '../helpers/encryptedSearch/esUtils';
 
 const EncryptedSearchContext = createContext<EncryptedSearchFunctionsMail>(defaultESContextMail);
 export const useEncryptedSearchContext = () => useContext(EncryptedSearchContext);

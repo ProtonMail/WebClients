@@ -1,35 +1,38 @@
 import { ReactElement, ReactNode, useRef } from 'react';
 import * as React from 'react';
+import { Provider as ReduxProvider } from 'react-redux';
+import { Route, Router } from 'react-router';
+
+import { RenderResult as OriginalRenderResult, act, render as originalRender } from '@testing-library/react';
+import { act as actHook, renderHook as originalRenderHook } from '@testing-library/react-hooks';
+import { MemoryHistory, createMemoryHistory } from 'history';
+
 import {
     CacheProvider,
-    ModalsProvider,
-    PrivateAuthenticationStore,
-    ModalsChildren,
     EventModelListener,
     ExperimentsProvider,
+    ModalsChildren,
+    ModalsProvider,
+    PrivateAuthenticationStore,
 } from '@proton/components';
-import { Router, Route } from 'react-router';
-import { createMemoryHistory, MemoryHistory } from 'history';
-import { render as originalRender, RenderResult as OriginalRenderResult, act } from '@testing-library/react';
-import { renderHook as originalRenderHook, act as actHook } from '@testing-library/react-hooks';
 import ApiContext from '@proton/components/containers/api/apiContext';
-import ConfigProvider from '@proton/components/containers/config/Provider';
-import { wait } from '@proton/shared/lib/helpers/promise';
-import { APPS } from '@proton/shared/lib/constants';
-import { ProtonConfig } from '@proton/shared/lib/interfaces';
 import AuthenticationProvider from '@proton/components/containers/authentication/Provider';
+import ConfigProvider from '@proton/components/containers/config/Provider';
 import FeaturesProvider from '@proton/components/containers/features/FeaturesProvider';
+import { APPS } from '@proton/shared/lib/constants';
+import { wait } from '@proton/shared/lib/helpers/promise';
+import { ProtonConfig } from '@proton/shared/lib/interfaces';
 import { ConversationCountsModel, MessageCountsModel } from '@proton/shared/lib/models';
-import { Provider as ReduxProvider } from 'react-redux';
-import { minimalCache, cache } from './cache';
-import { api, registerFeatureFlagsApiMock, registerMinimalFlags, mockDomApi } from './api';
-import EncryptedSearchProvider from '../../containers/EncryptedSearchProvider';
-import { MailContentRefProvider } from '../../hooks/useClickMailContent';
-import { ComposeProvider } from '../../containers/ComposeProvider';
-import { MailboxContainerContextProvider } from '../../containers/mailbox/MailboxContainerProvider';
-import NotificationsTestProvider from './notifications';
-import { store } from '../../logic/store';
+
 import { MAIN_ROUTE_PATH } from '../../constants';
+import { ComposeProvider } from '../../containers/ComposeProvider';
+import EncryptedSearchProvider from '../../containers/EncryptedSearchProvider';
+import { MailboxContainerContextProvider } from '../../containers/mailbox/MailboxContainerProvider';
+import { MailContentRefProvider } from '../../hooks/useClickMailContent';
+import { store } from '../../logic/store';
+import { api, mockDomApi, registerFeatureFlagsApiMock, registerMinimalFlags } from './api';
+import { cache, minimalCache } from './cache';
+import NotificationsTestProvider from './notifications';
 
 interface RenderResult extends OriginalRenderResult {
     rerender: (ui: React.ReactElement) => Promise<void>;

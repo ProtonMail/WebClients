@@ -1,7 +1,8 @@
-import { getAttachments } from '@proton/shared/lib/mail/messages';
 import { classnames } from '@proton/components';
-import AttachmentList, { AttachmentAction } from '../attachment/AttachmentList';
+import { getAttachments } from '@proton/shared/lib/mail/messages';
+
 import { MessageState, MessageStateWithData, OutsideKey } from '../../logic/messages/messagesTypes';
+import AttachmentList, { AttachmentAction } from '../attachment/AttachmentList';
 
 interface Props {
     message: MessageState;

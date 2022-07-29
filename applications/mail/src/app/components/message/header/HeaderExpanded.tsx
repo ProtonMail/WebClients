@@ -1,55 +1,58 @@
 import { MouseEvent } from 'react';
-import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+
 import { c } from 'ttag';
+
 import {
-    classnames,
-    Icon,
-    ButtonGroup,
-    useToggle,
-    useFolders,
-    Tooltip,
-    useAddresses,
-    useMailSettings,
     Button,
-    useFeature,
+    ButtonGroup,
     FeatureCode,
+    Icon,
+    Tooltip,
+    classnames,
+    useAddresses,
     useContactModals,
+    useFeature,
+    useFolders,
+    useMailSettings,
+    useToggle,
 } from '@proton/components';
-import { Label } from '@proton/shared/lib/interfaces/Label';
+import { shiftKey } from '@proton/shared/lib/helpers/browser';
+import { scrollIntoView } from '@proton/shared/lib/helpers/dom';
 import { MailSettings } from '@proton/shared/lib/interfaces';
+import { Label } from '@proton/shared/lib/interfaces/Label';
+import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import {
+    getHasOnlyIcsAttachments,
+    getRecipients,
     isInternal,
     isOutbox,
     isScheduled,
-    getHasOnlyIcsAttachments,
-    getRecipients,
 } from '@proton/shared/lib/mail/messages';
-import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
-import { shiftKey } from '@proton/shared/lib/helpers/browser';
-import { scrollIntoView } from '@proton/shared/lib/helpers/dom';
-import ItemStar from '../../list/ItemStar';
+
+import { MESSAGE_ACTIONS } from '../../../constants';
+import { useOnCompose, useOnMailTo } from '../../../containers/ComposeProvider';
+import { isSelfAddress } from '../../../helpers/addresses';
+import { getCurrentFolderID } from '../../../helpers/labels';
+import { MessageViewIcons } from '../../../helpers/message/icon';
+import { useRecipientLabel } from '../../../hooks/contact/useRecipientLabel';
+import { MessageState } from '../../../logic/messages/messagesTypes';
+import { Breakpoints } from '../../../models/utils';
+import CustomFilterDropdown from '../../dropdown/CustomFilterDropdown';
+import LabelDropdown from '../../dropdown/LabelDropdown';
+import MoveDropdown from '../../dropdown/MoveDropdown';
+import ItemAttachmentIcon from '../../list/ItemAttachmentIcon';
 import ItemDate from '../../list/ItemDate';
 import ItemLabels from '../../list/ItemLabels';
 import ItemLocation from '../../list/ItemLocation';
-import MoveDropdown from '../../dropdown/MoveDropdown';
-import LabelDropdown from '../../dropdown/LabelDropdown';
-import CustomFilterDropdown from '../../dropdown/CustomFilterDropdown';
-import { MessageViewIcons } from '../../../helpers/message/icon';
-import { getCurrentFolderID } from '../../../helpers/labels';
-import HeaderExtra from './HeaderExtra';
-import ItemAttachmentIcon from '../../list/ItemAttachmentIcon';
-import HeaderDropdown from './HeaderDropdown';
-import HeaderMoreDropdown from './HeaderMoreDropdown';
-import RecipientItem from '../recipients/RecipientItem';
-import { Breakpoints } from '../../../models/utils';
-import { isSelfAddress } from '../../../helpers/addresses';
-import { useOnCompose, useOnMailTo } from '../../../containers/ComposeProvider';
-import { MESSAGE_ACTIONS } from '../../../constants';
+import ItemStar from '../../list/ItemStar';
 import ItemSpyTrackerIcon from '../../list/spy-tracker/ItemSpyTrackerIcon';
-import { MessageState } from '../../../logic/messages/messagesTypes';
 import MailRecipients from '../recipients/MailRecipients';
+import RecipientItem from '../recipients/RecipientItem';
 import RecipientType from '../recipients/RecipientType';
-import { useRecipientLabel } from '../../../hooks/contact/useRecipientLabel';
+import HeaderDropdown from './HeaderDropdown';
+import HeaderExtra from './HeaderExtra';
+import HeaderMoreDropdown from './HeaderMoreDropdown';
 
 interface Props {
     labelID: string;

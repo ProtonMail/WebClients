@@ -1,6 +1,7 @@
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { LabelCount } from '@proton/shared/lib/interfaces/Label';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+
 import { updateCounters, updateCountersForMarkAs } from './counter';
 
 describe('counters', () => {

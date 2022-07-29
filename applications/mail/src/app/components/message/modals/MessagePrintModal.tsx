@@ -1,4 +1,7 @@
 import { RefObject, useEffect, useRef } from 'react';
+
+import { c } from 'ttag';
+
 import {
     Button,
     Form,
@@ -8,10 +11,10 @@ import {
     ModalTwoFooter,
     ModalTwoHeader,
 } from '@proton/components';
-import { c } from 'ttag';
-import MessageBody from '../MessageBody';
-import { MessageStateWithData } from '../../../logic/messages/messagesTypes';
+
 import { MailboxContainerContextProvider } from '../../../containers/mailbox/MailboxContainerProvider';
+import { MessageStateWithData } from '../../../logic/messages/messagesTypes';
+import MessageBody from '../MessageBody';
 
 import './MessagePrint.scss';
 

@@ -1,10 +1,12 @@
 import { fireEvent } from '@testing-library/dom';
 import { act } from '@testing-library/react';
-import { wait } from '@proton/shared/lib/helpers/promise';
+
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { wait } from '@proton/shared/lib/helpers/promise';
+
 import { PAGE_SIZE } from '../../../constants';
-import { clearAll, addApiMock, tick } from '../../../helpers/test/helper';
-import { getElements, setup, expectElements } from './Mailbox.test.helpers';
+import { addApiMock, clearAll, tick } from '../../../helpers/test/helper';
+import { expectElements, getElements, setup } from './Mailbox.test.helpers';
 
 jest.setTimeout(20000);
 

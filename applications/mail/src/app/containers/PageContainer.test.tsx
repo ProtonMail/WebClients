@@ -1,16 +1,18 @@
+import { fireEvent } from '@testing-library/dom';
+
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
-import { fireEvent } from '@testing-library/dom';
+
 import {
-    clearAll,
-    render,
     addApiMock,
-    assertFocus,
-    minimalCache,
     addToCache,
+    assertFocus,
+    clearAll,
+    minimalCache,
     onCompose,
-    tick,
+    render,
     setFeatureFlags,
+    tick,
 } from '../helpers/test/helper';
 import { Breakpoints } from '../models/utils';
 import PageContainer from './PageContainer';

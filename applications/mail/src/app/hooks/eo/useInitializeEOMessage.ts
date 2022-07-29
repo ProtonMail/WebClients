@@ -1,15 +1,26 @@
 import { useCallback } from 'react';
 import { useDispatch } from 'react-redux';
+
 import { PayloadAction } from '@reduxjs/toolkit';
-import { PrivateKeyReference } from '@proton/crypto';
 
 import { useApi } from '@proton/components';
-import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { PrivateKeyReference } from '@proton/crypto';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import { isPlainText } from '@proton/shared/lib/mail/messages';
+import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { eoDefaultMailSettings } from '@proton/shared/lib/mail/eo/constants';
-import { useGetEODecryptedToken, useGetEOMessageState, useGetEOPassword } from './useLoadEOMessage';
-import { useBase64Cache } from '../useBase64Cache';
+import { isPlainText } from '@proton/shared/lib/mail/messages';
+
+import { LOAD_RETRY_COUNT, LOAD_RETRY_DELAY } from '../../constants';
+import { isNetworkError } from '../../helpers/errors';
+import { decryptMessage } from '../../helpers/message/messageDecrypt';
+import { Preparation, prepareHtml, preparePlainText } from '../../helpers/transforms/transforms';
+import {
+    EODocumentInitializeFulfilled,
+    EODocumentInitializePending,
+    EOLoadEmbedded,
+    EOLoadRemote,
+} from '../../logic/eo/eoActions';
+import { EOLoadEmbeddedParams, EOLoadRemoteResults } from '../../logic/eo/eoType';
 import {
     LoadEmbeddedResults,
     MessageErrors,
@@ -18,17 +29,8 @@ import {
     MessageState,
     MessageStateWithData,
 } from '../../logic/messages/messagesTypes';
-import {
-    EODocumentInitializeFulfilled,
-    EODocumentInitializePending,
-    EOLoadEmbedded,
-    EOLoadRemote,
-} from '../../logic/eo/eoActions';
-import { Preparation, prepareHtml, preparePlainText } from '../../helpers/transforms/transforms';
-import { decryptMessage } from '../../helpers/message/messageDecrypt';
-import { EOLoadEmbeddedParams, EOLoadRemoteResults } from '../../logic/eo/eoType';
-import { isNetworkError } from '../../helpers/errors';
-import { LOAD_RETRY_COUNT, LOAD_RETRY_DELAY } from '../../constants';
+import { useBase64Cache } from '../useBase64Cache';
+import { useGetEODecryptedToken, useGetEOMessageState, useGetEOPassword } from './useLoadEOMessage';
 
 export const useInitializeEOMessage = () => {
     const api = useApi();

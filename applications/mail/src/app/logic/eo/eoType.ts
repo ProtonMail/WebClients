@@ -1,7 +1,10 @@
 import { PublicKeyReference } from '@proton/crypto';
+import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { Api, Recipient } from '@proton/shared/lib/interfaces';
 import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { MIME_TYPES } from '@proton/shared/lib/constants';
+
+import { DecryptMessageResult } from '../../helpers/message/messageDecrypt';
+import { Preparation } from '../../helpers/transforms/transforms';
 import {
     MessageErrors,
     MessageImages,
@@ -9,8 +12,6 @@ import {
     MessageState,
     MessageVerification,
 } from '../messages/messagesTypes';
-import { Preparation } from '../../helpers/transforms/transforms';
-import { DecryptMessageResult } from '../../helpers/message/messageDecrypt';
 
 export interface EOInitResult {
     token: string | undefined;

@@ -1,7 +1,8 @@
+import { ESDBStatus, ESStoredItem, EncryptedSearchFunctions } from '@proton/encrypted-search';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { EncryptedSearchFunctions, ESDBStatus, ESStoredItem } from '@proton/encrypted-search';
-import { Filter, SearchParameters, Sort } from './tools';
+
 import { LabelIDsChanges } from './event';
+import { Filter, SearchParameters, Sort } from './tools';
 
 export type ESBaseMessage = Pick<
     Message,

@@ -1,31 +1,34 @@
-import { useState, ChangeEvent, useMemo, useEffect } from 'react';
+import { ChangeEvent, useEffect, useMemo, useState } from 'react';
 import * as React from 'react';
+
 import { c } from 'ttag';
+
 import {
-    SearchInput,
+    Button,
+    Checkbox,
     Icon,
     Mark,
     PrimaryButton,
+    SearchInput,
     Tooltip,
-    useLoading,
-    Checkbox,
     generateUID,
-    Button,
-    useModalState,
     useLabels,
+    useLoading,
+    useModalState,
 } from '@proton/components';
-import { normalize } from '@proton/shared/lib/helpers/string';
-import { ACCENT_COLORS, LABEL_TYPE, MAILBOX_IDENTIFIERS } from '@proton/shared/lib/constants';
-import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
-import { Label } from '@proton/shared/lib/interfaces/Label';
-import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import EditLabelModal from '@proton/components/containers/labels/modals/EditLabelModal';
-import { Element } from '../../models/element';
+import { ACCENT_COLORS, LABEL_TYPE, MAILBOX_IDENTIFIERS } from '@proton/shared/lib/constants';
+import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
+import { normalize } from '@proton/shared/lib/helpers/string';
+import { Label } from '@proton/shared/lib/interfaces/Label';
+import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
+
 import { getLabelIDs } from '../../helpers/elements';
-import { useApplyLabels, useMoveToFolder } from '../../hooks/useApplyLabels';
 import { getStandardFolders } from '../../helpers/labels';
-import { Breakpoints } from '../../models/utils';
 import { useGetElementsFromIDs } from '../../hooks/mailbox/useElements';
+import { useApplyLabels, useMoveToFolder } from '../../hooks/useApplyLabels';
+import { Element } from '../../models/element';
+import { Breakpoints } from '../../models/utils';
 
 import './LabelDropdown.scss';
 

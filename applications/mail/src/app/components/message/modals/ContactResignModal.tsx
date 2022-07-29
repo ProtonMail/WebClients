@@ -1,28 +1,30 @@
-import { LoadingMap } from '@proton/shared/lib/interfaces/utils';
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import * as React from 'react';
+
+import { c } from 'ttag';
+
 import {
-    Loader,
-    useGetEncryptionPreferences,
-    useApi,
-    useLoading,
-    useGetUserKeys,
-    PrimaryButton,
-    useNotifications,
-    ModalProps,
-    ModalTwo,
-    ModalTwoHeader,
-    ModalTwoContent,
-    ModalTwoFooter,
     Button,
     Form,
+    Loader,
+    ModalProps,
+    ModalTwo,
+    ModalTwoContent,
+    ModalTwoFooter,
+    ModalTwoHeader,
+    PrimaryButton,
+    useApi,
+    useGetEncryptionPreferences,
+    useGetUserKeys,
+    useLoading,
+    useNotifications,
 } from '@proton/components';
+import { getContact, updateContact } from '@proton/shared/lib/api/contacts';
 import { processApiRequestsSafe } from '@proton/shared/lib/api/helpers/safeApiRequests';
 import { resignCards } from '@proton/shared/lib/contacts/resign';
+import { ContactCard, ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+import { LoadingMap } from '@proton/shared/lib/interfaces/utils';
 import { splitKeys } from '@proton/shared/lib/keys/keys';
-import { updateContact, getContact } from '@proton/shared/lib/api/contacts';
-import { ContactEmail, ContactCard } from '@proton/shared/lib/interfaces/contacts';
-import { c } from 'ttag';
 
 interface Props extends ModalProps {
     title: string;

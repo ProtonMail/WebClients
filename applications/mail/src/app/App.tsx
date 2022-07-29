@@ -1,20 +1,19 @@
 import { useState } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
-import { getSessionTrackingEnabled, LoaderPage, ProtonApp, StandardSetup } from '@proton/components';
+import { LoaderPage, ProtonApp, StandardSetup, getSessionTrackingEnabled } from '@proton/components';
 import { G_OAUTH_REDIRECT_PATH } from '@proton/components/containers/easySwitch/constants';
-
+import authentication from '@proton/shared/lib/authentication/authentication';
 import { newVersionUpdater } from '@proton/shared/lib/busy';
+import { getProdId, setVcalProdId } from '@proton/shared/lib/calendar/vcalConfig';
 import sentry from '@proton/shared/lib/helpers/sentry';
 import { initLocales } from '@proton/shared/lib/i18n/locales';
-import { getProdId, setVcalProdId } from '@proton/shared/lib/calendar/vcalConfig';
-import authentication from '@proton/shared/lib/authentication/authentication';
 
-import * as config from './config';
 import PrivateApp from './PrivateApp';
+import * as config from './config';
+import { registerMailToProtocolHandler } from './helpers/url';
 
 import './app.scss';
-import { registerMailToProtocolHandler } from './helpers/url';
 
 const locales = initLocales(require.context('../../locales', true, /.json$/, 'lazy'));
 

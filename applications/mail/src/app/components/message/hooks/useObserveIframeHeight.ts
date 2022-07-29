@@ -1,6 +1,7 @@
+import { RefObject, useCallback, useEffect, useRef } from 'react';
+
 import useIsMounted from '@proton/hooks/useIsMounted';
 import debounce from '@proton/utils/debounce';
-import { RefObject, useCallback, useEffect, useRef } from 'react';
 
 import { MESSAGE_IFRAME_ROOT_ID } from '../constants';
 

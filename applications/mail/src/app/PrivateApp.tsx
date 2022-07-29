@@ -3,22 +3,22 @@ import { loadAllowedTimeZones } from '@proton/shared/lib/date/timezone';
 import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 import { Model } from '@proton/shared/lib/interfaces/Model';
 import {
-    UserModel,
-    MailSettingsModel,
-    UserSettingsModel,
-    SubscriptionModel,
-    OrganizationModel,
-    LabelsModel,
     AddressesModel,
-    ConversationCountsModel,
-    MessageCountsModel,
-    ContactsModel,
     ContactEmailsModel,
+    ContactsModel,
+    ConversationCountsModel,
     DomainsModel,
     FiltersModel,
-    MembersModel,
-    PaymentMethodsModel,
     ImportersModel,
+    LabelsModel,
+    MailSettingsModel,
+    MembersModel,
+    MessageCountsModel,
+    OrganizationModel,
+    PaymentMethodsModel,
+    SubscriptionModel,
+    UserModel,
+    UserSettingsModel,
 } from '@proton/shared/lib/models';
 import noop from '@proton/utils/noop';
 

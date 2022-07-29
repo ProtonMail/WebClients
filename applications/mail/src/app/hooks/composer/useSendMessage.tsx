@@ -1,35 +1,38 @@
 import { useCallback } from 'react';
-import { SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
+import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router';
+
+import { c } from 'ttag';
+
+import { useApi, useEventManager, useNotifications } from '@proton/components';
+import { WorkerDecryptionResult } from '@proton/crypto';
+import { cancelSend } from '@proton/shared/lib/api/messages';
+import { MIME_TYPES } from '@proton/shared/lib/constants';
+import { wait } from '@proton/shared/lib/helpers/promise';
+import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import { getRecipientsAddresses } from '@proton/shared/lib/mail/messages';
-import { useHistory } from 'react-router';
-import { c } from 'ttag';
 import unique from '@proton/utils/unique';
-import { cancelSend } from '@proton/shared/lib/api/messages';
-import { useApi, useEventManager, useNotifications } from '@proton/components';
-import { wait } from '@proton/shared/lib/helpers/promise';
-import { MIME_TYPES } from '@proton/shared/lib/constants';
-import { captureMessage } from '@proton/shared/lib/helpers/sentry';
-import { useDispatch } from 'react-redux';
-import { WorkerDecryptionResult } from '@proton/crypto';
-import { generateTopPackages } from '../../helpers/send/sendTopPackages';
-import { attachSubPackages } from '../../helpers/send/sendSubPackages';
-import { sendFormatter } from '../../helpers/send/sendFormatter';
-import { encryptPackages } from '../../helpers/send/sendEncrypt';
-import { SendingMessageNotificationManager } from '../../components/notifications/SendingMessageNotification';
-import { OnCompose } from './useCompose';
-import useDelaySendSeconds from '../useDelaySendSeconds';
-import { useGetMessageKeys } from '../message/useGetMessageKeys';
-import { getParamsFromPathname, setParamsInLocation } from '../../helpers/mailboxUrl';
-import { useSendModifications } from './useSendModifications';
-import { MIN_DELAY_SENT_NOTIFICATION, SAVE_DRAFT_ERROR_CODES, SEND_EMAIL_ERROR_CODES } from '../../constants';
-import { updateAttachment } from '../../logic/attachments/attachmentsActions';
-import { useGetAttachment } from '../useAttachment';
-import { MessageStateWithData } from '../../logic/messages/messagesTypes';
-import { useGetMessage } from '../message/useMessage';
-import { cancelScheduled, endUndo, sent } from '../../logic/messages/draft/messagesDraftActions';
+
 import LoadingNotificationContent from '../../components/notifications/LoadingNotificationContent';
+import { SendingMessageNotificationManager } from '../../components/notifications/SendingMessageNotification';
+import { MIN_DELAY_SENT_NOTIFICATION, SAVE_DRAFT_ERROR_CODES, SEND_EMAIL_ERROR_CODES } from '../../constants';
+import { getParamsFromPathname, setParamsInLocation } from '../../helpers/mailboxUrl';
+import { encryptPackages } from '../../helpers/send/sendEncrypt';
+import { sendFormatter } from '../../helpers/send/sendFormatter';
+import { attachSubPackages } from '../../helpers/send/sendSubPackages';
+import { generateTopPackages } from '../../helpers/send/sendTopPackages';
+import { updateAttachment } from '../../logic/attachments/attachmentsActions';
+import { cancelScheduled, endUndo, sent } from '../../logic/messages/draft/messagesDraftActions';
+import { MessageStateWithData } from '../../logic/messages/messagesTypes';
+import { useGetMessageKeys } from '../message/useGetMessageKeys';
+import { useGetMessage } from '../message/useMessage';
+import { useGetAttachment } from '../useAttachment';
+import useDelaySendSeconds from '../useDelaySendSeconds';
+import { OnCompose } from './useCompose';
+import { useSendModifications } from './useSendModifications';
 
 // Reference: Angular/src/app/composer/services/sendMessage.js
 

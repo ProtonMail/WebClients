@@ -1,5 +1,9 @@
+import { c } from 'ttag';
+
+import { generateUID } from '@proton/components';
+import { defaultFontStyle } from '@proton/components/components/editor/helpers';
+import { WorkerDecryptionResult } from '@proton/crypto';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
-import unique from '@proton/utils/unique';
 import { setBit } from '@proton/shared/lib/helpers/bitset';
 import { canonizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import { Address, MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
@@ -8,29 +12,27 @@ import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 import {
     DRAFT_ID_PREFIX,
-    formatSubject,
     FW_PREFIX,
+    ORIGINAL_MESSAGE,
+    RE_PREFIX,
+    formatSubject,
     getOriginalTo,
     isPlainText,
     isSent,
     isSentAndReceived,
-    ORIGINAL_MESSAGE,
-    RE_PREFIX,
 } from '@proton/shared/lib/mail/messages';
-import { generateUID } from '@proton/components';
-import { c } from 'ttag';
-import { WorkerDecryptionResult } from '@proton/crypto';
-import { defaultFontStyle } from '@proton/components/components/editor/helpers';
+import unique from '@proton/utils/unique';
+
 import { MESSAGE_ACTIONS } from '../../constants';
+import { MessageStateWithData, PartialMessageState } from '../../logic/messages/messagesTypes';
 import { getFromAddress } from '../addresses';
+import { convertToFile } from '../attachment/attachmentConverter';
 import { formatFullDate } from '../date';
 import { parseInDiv } from '../dom';
 import { getDate } from '../elements';
 import { exportPlainText, getDocumentContent, plainTextToHTML } from './messageContent';
 import { getEmbeddedImages, restoreImages, updateImages } from './messageImages';
 import { insertSignature } from './messageSignature';
-import { convertToFile } from '../attachment/attachmentConverter';
-import { MessageStateWithData, PartialMessageState } from '../../logic/messages/messagesTypes';
 
 // Reference: Angular/src/app/message/services/messageBuilder.js
 

@@ -1,17 +1,19 @@
 import { useCallback, useEffect, useState } from 'react';
-import { wait } from '@proton/shared/lib/helpers/promise';
 import { useDispatch, useSelector, useStore } from 'react-redux';
-import useIsMounted from '@proton/hooks/useIsMounted';
+
 import { useApi } from '@proton/components';
+import useIsMounted from '@proton/hooks/useIsMounted';
+import { wait } from '@proton/shared/lib/helpers/promise';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { Conversation } from '../../models/conversation';
-import { useGetElementsFromIDs } from '../mailbox/useElements';
+
 import { LOAD_RETRY_COUNT, LOAD_RETRY_DELAY } from '../../constants';
 import { hasError, hasErrorType } from '../../helpers/errors';
-import { ConversationErrors, ConversationState } from '../../logic/conversations/conversationsTypes';
-import { allConversations, conversationByID } from '../../logic/conversations/conversationsSelectors';
-import { RootState } from '../../logic/store';
 import { initialize, load as loadAction, retryLoading } from '../../logic/conversations/conversationsActions';
+import { allConversations, conversationByID } from '../../logic/conversations/conversationsSelectors';
+import { ConversationErrors, ConversationState } from '../../logic/conversations/conversationsTypes';
+import { RootState } from '../../logic/store';
+import { Conversation } from '../../models/conversation';
+import { useGetElementsFromIDs } from '../mailbox/useElements';
 
 export interface ConversationStateOptional {
     Conversation?: Conversation;

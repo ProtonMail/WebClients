@@ -1,9 +1,12 @@
 import { memo, useMemo } from 'react';
+
 import { c } from 'ttag';
+
 import { Icon, InlineLinkButton, useUser } from '@proton/components';
 import { sendSlowSearchReport } from '@proton/encrypted-search';
-import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
+
 import { storeName } from '../../constants';
+import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 
 const ESSlowToolbar = () => {
     const [{ ID: userID }] = useUser();

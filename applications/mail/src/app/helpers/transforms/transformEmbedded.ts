@@ -1,20 +1,21 @@
 import generateUID from '@proton/shared/lib/helpers/generateUID';
 import { MailSettings } from '@proton/shared/lib/interfaces';
-import { getAttachments, isDraft } from '@proton/shared/lib/mail/messages';
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
-import { hasShowEmbedded } from '../mailSettings';
-import { getEmbeddedImages, insertImageAnchor } from '../message/messageImages';
-import {
-    findEmbedded,
-    readContentIDandLocation,
-    decryptEmbeddedImages,
-    markEmbeddedImagesAsLoaded,
-    insertBlobImages,
-    setEmbeddedAttr,
-    matchSameCidOrLoc,
-} from '../message/messageEmbeddeds';
-import { LoadEmbeddedResults, MessageEmbeddedImage, MessageState } from '../../logic/messages/messagesTypes';
+import { getAttachments, isDraft } from '@proton/shared/lib/mail/messages';
+
 import { WHITE_LISTED_ADDRESSES } from '../../constants';
+import { LoadEmbeddedResults, MessageEmbeddedImage, MessageState } from '../../logic/messages/messagesTypes';
+import { hasShowEmbedded } from '../mailSettings';
+import {
+    decryptEmbeddedImages,
+    findEmbedded,
+    insertBlobImages,
+    markEmbeddedImagesAsLoaded,
+    matchSameCidOrLoc,
+    readContentIDandLocation,
+    setEmbeddedAttr,
+} from '../message/messageEmbeddeds';
+import { getEmbeddedImages, insertImageAnchor } from '../message/messageImages';
 
 export const transformEmbedded = async (
     message: MessageState,

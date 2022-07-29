@@ -1,4 +1,5 @@
 import { createSelector } from 'reselect';
+
 import { RootState } from '../store';
 
 const conversations = (state: RootState) => state.conversations;

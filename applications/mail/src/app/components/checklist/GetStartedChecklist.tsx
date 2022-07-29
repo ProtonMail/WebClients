@@ -1,13 +1,14 @@
 import { useEffect } from 'react';
+
 import { c, msgid } from 'ttag';
 
+import { ButtonLike, ChecklistItem, Loader, SettingsLink, classnames, useApi } from '@proton/components';
 import { useDateCountdown } from '@proton/hooks';
-import { ButtonLike, ChecklistItem, SettingsLink, useApi, Loader, classnames } from '@proton/components';
 import { seenCompletedChecklist } from '@proton/shared/lib/api/checklist';
 import { APPS } from '@proton/shared/lib/constants';
-import isTruthy from '@proton/utils/isTruthy';
-import gift from '@proton/styles/assets/img/illustrations/gift.svg';
 import { ChecklistKey } from '@proton/shared/lib/interfaces';
+import gift from '@proton/styles/assets/img/illustrations/gift.svg';
+import isTruthy from '@proton/utils/isTruthy';
 
 import { useGetStartedChecklist } from '../../containers/checklists';
 import GetStartedChecklistHeader from './GetStartedChecklistHeader';

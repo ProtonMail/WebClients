@@ -1,10 +1,12 @@
 import { useRef } from 'react';
+
+import { HotkeyTuple, useHotkeys, useMailSettings } from '@proton/components';
 import { KeyboardKey } from '@proton/shared/lib/interfaces';
 import { isTargetEditable } from '@proton/shared/lib/shortcuts/helpers';
-import { HotkeyTuple, useHotkeys, useMailSettings } from '@proton/components';
-import { useFolderNavigationHotkeys } from './useFolderNavigationHotkeys';
-import { useOnCompose } from '../../containers/ComposeProvider';
+
 import { MESSAGE_ACTIONS } from '../../constants';
+import { useOnCompose } from '../../containers/ComposeProvider';
+import { useFolderNavigationHotkeys } from './useFolderNavigationHotkeys';
 
 export interface PageHotkeysHandlers {
     onOpenShortcutsModal: () => void;

@@ -1,5 +1,6 @@
 // import { useCallback } from 'react';
 import { useCache } from '@proton/components';
+
 // import { verify as verifySignature } from '../helpers/signatures';
 
 const CACHE_KEY = 'Signatures';

@@ -1,4 +1,5 @@
 import { c } from 'ttag';
+
 import { InlineLinkButton } from '@proton/components';
 
 interface Props {

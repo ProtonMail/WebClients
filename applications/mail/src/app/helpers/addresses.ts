@@ -1,16 +1,18 @@
+import { c } from 'ttag';
+
 import { ADDRESS_STATUS } from '@proton/shared/lib/constants';
-import unique from '@proton/utils/unique';
 import { canonizeEmail, canonizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import { Address, Key } from '@proton/shared/lib/interfaces';
 import { Recipient } from '@proton/shared/lib/interfaces/Address';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { c } from 'ttag';
 import { getAddressFromPlusAlias, getByEmail } from '@proton/shared/lib/mail/addresses';
+import unique from '@proton/utils/unique';
+
+import { ContactGroupsMap, ContactsMap } from '../logic/contacts/contactsTypes';
 import { RecipientGroup, RecipientOrGroup } from '../models/address';
 import { Conversation } from '../models/conversation';
 import { Element } from '../models/element';
 import { isMessage } from './elements';
-import { ContactGroupsMap, ContactsMap } from '../logic/contacts/contactsTypes';
 
 /**
  * Return the matching ContactEmail in the map taking care of email normalization

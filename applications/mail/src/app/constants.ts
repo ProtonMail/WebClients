@@ -1,8 +1,10 @@
-import { defaultESContext } from '@proton/encrypted-search';
-import { APPS, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { c } from 'ttag';
-import { getKnowledgeBaseUrl, getShopURL, getStaticURL } from '@proton/shared/lib/helpers/url';
+
+import { defaultESContext } from '@proton/encrypted-search';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
+import { APPS, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { getKnowledgeBaseUrl, getShopURL, getStaticURL } from '@proton/shared/lib/helpers/url';
+
 import { EncryptedSearchFunctionsMail } from './models/encryptedSearch';
 
 export const MAIN_ROUTE_PATH = '/:labelID?/:elementID?/:messageID?';

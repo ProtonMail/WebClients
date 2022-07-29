@@ -1,18 +1,19 @@
 import { useDispatch } from 'react-redux';
-import { useApi, useSubscribeEventManager } from '@proton/components';
-import { Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
-import { useGetConversation } from '../conversation/useConversation';
-import { LabelIDsChanges , Event } from '../../models/event';
-import { parseLabelIDsInEvent } from '../../helpers/elements';
-import { Conversation } from '../../models/conversation';
 
+import { useApi, useSubscribeEventManager } from '@proton/components';
+import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
+import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+
+import { parseLabelIDsInEvent } from '../../helpers/elements';
 import {
     eventConversationUpdate,
     eventDelete,
     eventMessageUpdate,
     load as loadAction,
 } from '../../logic/conversations/conversationsActions';
+import { Conversation } from '../../models/conversation';
+import { Event, LabelIDsChanges } from '../../models/event';
+import { useGetConversation } from '../conversation/useConversation';
 
 export const useConversationsEvent = () => {
     const api = useApi();
