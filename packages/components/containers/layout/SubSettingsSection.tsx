@@ -1,12 +1,14 @@
 import { ComponentPropsWithoutRef, ReactNode, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+
 import { c } from 'ttag';
+
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 
-import { SettingsSectionTitle } from '../account';
 import { Icon } from '../../components';
 import { classnames } from '../../helpers';
 import { useNotifications } from '../../hooks';
+import { SettingsSectionTitle } from '../account';
 
 export interface SubSettingsSectionProps extends ComponentPropsWithoutRef<'div'> {
     id: string;
@@ -56,18 +58,18 @@ const SubSettingsSection = ({ id, observer, title, children, className, ...rest 
                 className={classnames([className, 'sub-settings-section'])}
             >
                 {title && (
-                    <Link to={`#${id}`} onClick={handleLinkClick} className="sub-settings-section-link">
-                        <SettingsSectionTitle className="opacity-on-hover-container relative">
-                            <span
-                                className="sub-settings-section-anchor absolute opacity-on-hover"
-                                aria-hidden="true"
-                                tabIndex={-1}
-                            >
-                                <Icon name="link" />
-                            </span>
-                            {title}
-                        </SettingsSectionTitle>
-                    </Link>
+                    <SettingsSectionTitle className="opacity-on-hover-container relative">
+                        <Link
+                            to={`#${id}`}
+                            onClick={handleLinkClick}
+                            className="sub-settings-section-anchor absolute opacity-on-hover"
+                            aria-hidden="true"
+                            tabIndex={-1}
+                        >
+                            <Icon name="link" />
+                        </Link>
+                        {title}
+                    </SettingsSectionTitle>
                 )}
                 {children}
             </section>
