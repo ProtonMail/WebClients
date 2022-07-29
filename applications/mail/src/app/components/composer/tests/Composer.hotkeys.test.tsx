@@ -1,18 +1,30 @@
-import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { fireEvent } from '@testing-library/dom';
+
+import { MIME_TYPES } from '@proton/shared/lib/constants';
+
+import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../helpers/test/crypto';
 import {
-    clearAll,
-    createDocument,
+    GeneratedKey,
     addApiKeys,
     addApiMock,
-    waitForNotification,
-    generateKeys,
     addKeysToAddressKeysCache,
-    GeneratedKey,
+    clearAll,
+    createDocument,
+    generateKeys,
     tick,
+    waitForNotification,
 } from '../../../helpers/test/helper';
-import { setupCryptoProxyForTesting, releaseCryptoProxy } from '../../../helpers/test/crypto';
-import { ID, prepareMessage, renderComposer, toAddress, AddressID, fromAddress } from './Composer.test.helpers';
+import { AddressID, ID, fromAddress, prepareMessage, renderComposer, toAddress } from './Composer.test.helpers';
+
+const orignalGetSelection = global.getSelection;
+
+beforeAll(() => {
+    global.getSelection = jest.fn();
+});
+
+afterAll(() => {
+    global.getSelection = orignalGetSelection;
+});
 
 describe('Composer hotkeys', () => {
     let fromKeys: GeneratedKey;
