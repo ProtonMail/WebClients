@@ -20,9 +20,9 @@
 
 	&-fakecheck {
 		display: inline-flex;
-		min-inline-size: em(20);
-		inline-size: em(20);
-		block-size: em(20);
+		min-inline-size: rem(20);
+		inline-size: rem(20);
+		block-size: rem(20);
 		margin-block: auto;
 		margin-inline: 0 0.5em;
 		border-radius: var(--border-radius-sm);

@@ -226,7 +226,7 @@ describe('Mailbox labels actions', () => {
             const moreDropdown = getByTestId('toolbar:more-dropdown');
             fireEvent.click(moreDropdown);
 
-            const emptyButton = await findByTestId('toolbar:empty');
+            const emptyButton = await findByTestId('toolbar:more-empty');
             fireEvent.click(emptyButton);
 
             const confirmButton = await findByTestId('confirm-empty-folder');

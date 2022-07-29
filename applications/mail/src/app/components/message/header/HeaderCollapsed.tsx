@@ -12,6 +12,7 @@ import { classnames } from '@proton/components';
 import { Label } from '@proton/shared/lib/interfaces/Label';
 import noop from '@proton/utils/noop';
 import ItemStar from '../../list/ItemStar';
+import ItemUnread from '../../list/ItemUnread';
 import ItemDate from '../../list/ItemDate';
 import ItemLabels from '../../list/ItemLabels';
 import ItemLocation from '../../list/ItemLocation';
@@ -132,6 +133,8 @@ const HeaderCollapsed = ({
                         <span className="text-sm">
                             <ItemDate element={message.data} labelID={labelID} useTooltip />
                         </span>
+
+                        {isUnreadMessage && <ItemUnread element={message.data} labelID={labelID} className="ml0-5" />}
                     </>
                 ) : (
                     <span className="message-header-metas ml0-5 flex" />

@@ -1,8 +1,6 @@
 import { Icon, ToolbarButton, useMailSettings } from '@proton/components';
 import { c } from 'ttag';
-import { Location } from 'history';
-import { MailSettings } from '@proton/shared/lib/interfaces';
-
+import { useLocation } from 'react-router';
 import { isConversationMode } from '../../helpers/mailSettings';
 
 interface Props {
@@ -13,8 +11,6 @@ interface Props {
     elementIDs: string[];
     onElement: (elementID?: string, preventComposer?: boolean) => void;
     labelID: string;
-    mailSettings: MailSettings;
-    location: Location;
 }
 
 const NavigationControls = ({
@@ -25,16 +21,16 @@ const NavigationControls = ({
     elementIDs,
     onElement,
     labelID,
-    mailSettings,
-    location,
 }: Props) => {
+    const location = useLocation();
+    const [mailSettings] = useMailSettings();
+    const { Shortcuts = 1 } = mailSettings || {};
+
     const ID = !isConversationMode(labelID, mailSettings, location) && messageID ? messageID : elementID;
     const index = elementIDs.findIndex((id) => id === ID);
 
     const handleNext = () => onElement(elementIDs[index + 1], true);
     const handlePrevious = () => onElement(elementIDs[index - 1], true);
-
-    const [{ Shortcuts = 1 } = {}] = useMailSettings();
 
     const titlePreviousConversation = Shortcuts ? (
         <>

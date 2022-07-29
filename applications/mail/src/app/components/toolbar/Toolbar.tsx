@@ -1,24 +1,23 @@
-import { memo } from 'react';
-import * as React from 'react';
-import { c } from 'ttag';
-import { Location } from 'history';
-import { Vr } from '@proton/atoms';
-import { Icon, useMailSettings, ToolbarButton } from '@proton/components';
-import { MailSettings } from '@proton/shared/lib/interfaces';
-import { Label } from '@proton/shared/lib/interfaces/Label';
-import { Folder } from '@proton/shared/lib/interfaces/Folder';
+import { Ref, memo, useRef } from 'react';
 
-import ReadUnreadButtons from './ReadUnreadButtons';
-import ToolbarDropdown from './ToolbarDropdown';
-import MoveButtons from './MoveButtons';
-import MoreDropdown from './MoreDropdown';
-import SelectAll from './SelectAll';
-import MoveDropdown from '../dropdown/MoveDropdown';
-import LabelDropdown from '../dropdown/LabelDropdown';
-import PagingControls from './PagingControls';
-import { Breakpoints } from '../../models/utils';
-import NavigationControls from './NavigationControls';
+import { c } from 'ttag';
+
+import { Vr } from '@proton/atoms';
+import { Icon, ToolbarButton } from '@proton/components';
+
+import { useElementBreakpoints } from '../../hooks/useElementBreakpoints';
 import { MARK_AS_STATUS } from '../../hooks/useMarkAs';
+import { Filter, Sort } from '../../models/tools';
+import { Breakpoints } from '../../models/utils';
+import FilterActions from './FilterActions';
+import LabelsAndFolders from './LabelsAndFolders';
+import MoreDropdown from './MoreDropdown';
+import MoveButtons from './MoveButtons';
+import NavigationControls from './NavigationControls';
+import PagingControls from './PagingControls';
+import ReadUnreadButtons from './ReadUnreadButtons';
+import SelectAll from './SelectAll';
+import SortDropdown from './SortDropdown';
 
 const defaultSelectedIDs: string[] = [];
 
@@ -31,23 +30,24 @@ interface Props {
     selectedIDs: string[];
     checkedIDs: string[];
     elementIDs: string[];
-    mailSettings: MailSettings;
     columnMode: boolean;
     conversationMode: boolean;
     breakpoints: Breakpoints;
     page: number;
     total: number | undefined;
+    filter: Filter;
+    sort: Sort;
+    isSearch: boolean;
     onPage: (page: number) => void;
     onBack: () => void;
     onElement: (elementID: string | undefined) => void;
-    labelDropdownToggleRef: React.MutableRefObject<() => void>;
-    moveDropdownToggleRef: React.MutableRefObject<() => void>;
-    location: Location;
-    labels?: Label[];
-    folders?: Folder[];
+    onFilter: (filter: Filter) => void;
+    onSort: (sort: Sort) => void;
     onMarkAs: (status: MARK_AS_STATUS) => Promise<void>;
     onMove: (labelID: string) => Promise<void>;
     onDelete: () => Promise<void>;
+    labelDropdownToggleRef: Ref<() => void>;
+    moveDropdownToggleRef: Ref<() => void>;
 }
 
 const Toolbar = ({
@@ -55,7 +55,6 @@ const Toolbar = ({
     messageID,
     elementID,
     onCheck,
-    mailSettings,
     columnMode,
     conversationMode,
     breakpoints,
@@ -66,44 +65,42 @@ const Toolbar = ({
     onBack,
     page,
     total,
+    filter,
+    sort,
+    isSearch,
     onPage,
     onElement,
-    labelDropdownToggleRef,
-    moveDropdownToggleRef,
-    location,
-    labels,
-    folders,
+    onFilter,
+    onSort,
     onMarkAs,
     onMove,
     onDelete,
+    labelDropdownToggleRef,
+    moveDropdownToggleRef,
 }: Props) => {
+    const toolbarRef = useRef<HTMLDivElement>(null);
+
+    // Using local breakpoints to be more precise and to deal with sidebar being there or not
+    const breakpoint = useElementBreakpoints(toolbarRef, {
+        extratiny: 0,
+        tiny: 330,
+        small: 500,
+        medium: 700,
+        large: 1100,
+    });
+
+    const isTiny = breakpoint === 'extratiny' || breakpoint === 'tiny';
+    const isNarrow = breakpoint === 'extratiny' || breakpoint === 'tiny' || breakpoint === 'small';
+    const isMedium = breakpoint === 'medium' || breakpoint === 'large';
+
     const listInView = columnMode || !elementID;
 
-    const [{ Shortcuts = 0 } = {}] = useMailSettings();
-
-    const titleMove = Shortcuts ? (
-        <>
-            {c('Title').t`Move to`}
-            <br />
-            <kbd className="border-none">M</kbd>
-        </>
-    ) : (
-        c('Title').t`Move to`
-    );
-
-    const titleLabel = Shortcuts ? (
-        <>
-            {c('Title').t`Label as`}
-            <br />
-            <kbd className="border-none">L</kbd>
-        </>
-    ) : (
-        c('Title').t`Label as`
-    );
-
     return (
-        <nav className="toolbar toolbar--heavy flex flex-item-noshrink no-print flex-justify-space-between">
-            <div className="flex">
+        <nav
+            ref={toolbarRef}
+            className="toolbar toolbar--heavy flex flex-item-noshrink no-print flex-justify-space-between"
+        >
+            <div className="flex toolbar-inner">
                 {listInView ? (
                     <SelectAll
                         labelID={labelID}
@@ -119,84 +116,74 @@ const Toolbar = ({
                         data-testid="toolbar:back-button"
                     />
                 )}
-                <Vr />
-                <ReadUnreadButtons mailSettings={mailSettings} selectedIDs={selectedIDs} onMarkAs={onMarkAs} />
-                <Vr />
+                <ReadUnreadButtons selectedIDs={selectedIDs} onMarkAs={onMarkAs} />
                 <MoveButtons
                     labelID={labelID}
-                    labels={labels}
-                    folders={folders}
-                    breakpoints={breakpoints}
+                    isExtraTiny={breakpoint === 'extratiny'}
+                    isNarrow={isNarrow}
                     selectedIDs={selectedIDs}
                     onMove={onMove}
                     onDelete={onDelete}
-                    mailSettings={mailSettings}
                 />
-                <Vr />
-                <ToolbarDropdown
-                    autoClose={false}
-                    noMaxSize
-                    disabled={!selectedIDs || !selectedIDs.length}
-                    content={<Icon className="toolbar-icon" name="folder" />}
-                    dropDownClassName="move-dropdown"
-                    className="move-dropdown-button"
-                    title={titleMove}
-                    data-testid="toolbar:moveto"
-                    externalToggleRef={moveDropdownToggleRef}
-                >
-                    {({ onClose, onLock }) => (
-                        <MoveDropdown
-                            labelID={labelID}
-                            selectedIDs={selectedIDs}
-                            conversationMode={conversationMode}
-                            onClose={onClose}
-                            onLock={onLock}
-                            onBack={onBack}
-                            breakpoints={breakpoints}
-                        />
-                    )}
-                </ToolbarDropdown>
-                <ToolbarDropdown
-                    autoClose={false}
-                    noMaxSize
-                    disabled={!selectedIDs || !selectedIDs.length}
-                    content={<Icon className="toolbar-icon" name="tag" />}
-                    dropDownClassName="label-dropdown"
-                    className="label-dropdown-button"
-                    title={titleLabel}
-                    data-testid="toolbar:labelas"
-                    externalToggleRef={labelDropdownToggleRef}
-                >
-                    {({ onClose, onLock }) => (
-                        <LabelDropdown
-                            labelID={labelID}
-                            labels={labels}
-                            selectedIDs={selectedIDs}
-                            onClose={onClose}
-                            onLock={onLock}
-                            breakpoints={breakpoints}
-                        />
-                    )}
-                </ToolbarDropdown>
-            </div>
-            <div className="flex">
-                {breakpoints.isDesktop && (
-                    <MoreDropdown labelID={labelID} elementIDs={elementIDs} selectedIDs={selectedIDs} />
-                )}
-                {listInView ? (
-                    <PagingControls loading={loading} page={page} total={total} onPage={onPage} />
-                ) : (
-                    <NavigationControls
-                        loading={loading}
-                        conversationMode={conversationMode}
-                        elementID={elementID}
-                        messageID={messageID}
-                        elementIDs={elementIDs}
-                        onElement={onElement}
+                {!isTiny ? (
+                    <LabelsAndFolders
                         labelID={labelID}
-                        mailSettings={mailSettings}
-                        location={location}
+                        selectedIDs={selectedIDs}
+                        conversationMode={conversationMode}
+                        breakpoints={breakpoints}
+                        labelDropdownToggleRef={labelDropdownToggleRef}
+                        moveDropdownToggleRef={moveDropdownToggleRef}
+                        onBack={onBack}
                     />
+                ) : null}
+                <MoreDropdown
+                    labelID={labelID}
+                    elementIDs={elementIDs}
+                    selectedIDs={selectedIDs}
+                    isSearch={isSearch}
+                    isNarrow={isNarrow}
+                    isTiny={isTiny}
+                    isExtraTiny={breakpoint === 'extratiny'}
+                    onMove={onMove}
+                    onDelete={onDelete}
+                    onBack={onBack}
+                    breakpoints={breakpoints}
+                    conversationMode={conversationMode}
+                />
+            </div>
+            <div className="flex toolbar-inner">
+                {listInView ? (
+                    <>
+                        <FilterActions icon={!isMedium} filter={filter} onFilter={onFilter} />
+                        <SortDropdown
+                            labelID={labelID}
+                            conversationMode={conversationMode}
+                            icon={!isMedium}
+                            sort={sort}
+                            onSort={onSort}
+                            isSearch={isSearch}
+                        />
+                        <PagingControls
+                            narrowMode={isNarrow}
+                            loading={loading}
+                            page={page}
+                            total={total}
+                            onPage={onPage}
+                        />
+                    </>
+                ) : (
+                    <>
+                        {isMedium && <Vr />}
+                        <NavigationControls
+                            loading={loading}
+                            conversationMode={conversationMode}
+                            elementID={elementID}
+                            messageID={messageID}
+                            elementIDs={elementIDs}
+                            onElement={onElement}
+                            labelID={labelID}
+                        />
+                    </>
                 )}
             </div>
         </nav>

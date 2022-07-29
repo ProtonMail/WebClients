@@ -12,10 +12,14 @@ const CalendarToolbar = ({ dateCursorButtons, timezoneSelector, viewSelector }: 
     return (
         <Toolbar>
             {dateCursorButtons}
-            <Vr className="mlauto" />
-            <span className="flex no-tablet no-mobile w24e">{timezoneSelector}</span>
-            <Vr className="no-tablet no-mobile" />
-            <span className="no-mobile flex flex-item-noshrink">{viewSelector}</span>
+            <span className="ml1 no-mobile flex flex-nowrap flex-item-fluid">
+                <Vr className="mlauto" />
+                <span className="no-tablet flex flex-nowrap">
+                    <span className="flex w24e">{timezoneSelector}</span>
+                    <Vr />
+                </span>
+                <span className="flex flex-item-noshrink">{viewSelector}</span>
+            </span>
         </Toolbar>
     );
 };

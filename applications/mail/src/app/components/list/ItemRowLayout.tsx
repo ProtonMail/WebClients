@@ -1,24 +1,30 @@
 import { useMemo } from 'react';
+
 import { c, msgid } from 'ttag';
+
 import { classnames } from '@proton/components';
-import { Label } from '@proton/shared/lib/interfaces/Label';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
+import { Label } from '@proton/shared/lib/interfaces/Label';
 import { getHasOnlyIcsAttachments } from '@proton/shared/lib/mail/messages';
 
-import ItemStar from './ItemStar';
-import ItemLabels from './ItemLabels';
-import ItemAttachmentIcon from './ItemAttachmentIcon';
-import ItemLocation from './ItemLocation';
-import ItemDate from './ItemDate';
-import NumMessages from '../conversation/NumMessages';
-import { Element } from '../../models/element';
-import ItemExpiration from './ItemExpiration';
-import ItemAction from './ItemAction';
-import { ESMessage } from '../../models/encryptedSearch';
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
+import { Element } from '../../models/element';
+import { ESMessage } from '../../models/encryptedSearch';
+import NumMessages from '../conversation/NumMessages';
+import ItemAction from './ItemAction';
+import ItemAttachmentIcon from './ItemAttachmentIcon';
+import ItemDate from './ItemDate';
+import ItemExpiration from './ItemExpiration';
+import ItemHoverButtons from './ItemHoverButtons';
+import ItemLabels from './ItemLabels';
+import ItemLocation from './ItemLocation';
+import ItemStar from './ItemStar';
+import ItemUnread from './ItemUnread';
 
 interface Props {
+    isCompactView: boolean;
     labelID: string;
+    elementID?: string;
     labels?: Label[];
     element: Element;
     conversationMode: boolean;
@@ -28,10 +34,13 @@ interface Props {
     unread: boolean;
     displayRecipients: boolean;
     loading: boolean;
+    onBack: () => void;
 }
 
 const ItemRowLayout = ({
+    isCompactView,
     labelID,
+    elementID,
     labels,
     element,
     conversationMode,
@@ -41,6 +50,7 @@ const ItemRowLayout = ({
     unread,
     displayRecipients,
     loading,
+    onBack,
 }: Props) => {
     const { shouldHighlight, highlightMetadata } = useEncryptedSearchContext();
     const highlightData = shouldHighlight();
@@ -78,29 +88,17 @@ const ItemRowLayout = ({
 
     return (
         <div className="flex-item-fluid flex flex-align-items-center flex-nowrap flex-row item-titlesender">
-            <div className="mtauto mbauto flex mr0-5" data-testid={unread}>
+            <div className="mtauto mbauto flex w2e" data-testid={unread}>
                 <ItemStar element={element} />
             </div>
-
-            <div className={classnames(['item-senders w20 flex flex-nowrap mauto pr1', unread && 'text-bold'])}>
+            <div className={classnames(['item-senders flex flex-nowrap mauto pr1', unread && 'text-bold'])}>
+                <ItemAction element={element} className="mr0-5 flex-item-noshrink mtauto mbauto" />
                 <span className="max-w100 text-ellipsis" title={addresses} data-testid="message-row:sender-address">
                     {sendersContent}
                 </span>
-                <ItemAction element={element} className="ml0-5 flex-item-noshrink mtauto mbauto" />
             </div>
 
             <div className="item-subject flex-item-fluid flex flex-align-items-center flex-nowrap mauto">
-                {showIcon && (
-                    <span className="mr0-25 inline-flex flex-item-noshrink">
-                        <ItemLocation element={element} labelID={labelID} />
-                    </span>
-                )}
-                {conversationMode && (
-                    <NumMessages
-                        className={classnames(['mr0-25 flex-item-noshrink', unread && 'text-bold'])}
-                        conversation={element}
-                    />
-                )}
                 <div className="flex flex-column inline-block">
                     <span
                         role="heading"
@@ -109,8 +107,20 @@ const ItemRowLayout = ({
                         title={Subject}
                         data-testid="message-row:subject"
                     >
+                        {conversationMode && (
+                            <NumMessages
+                                className={classnames(['mr0-25', unread && 'text-bold'])}
+                                conversation={element}
+                            />
+                        )}
+                        {showIcon && (
+                            <span className="mr0-25 inline-flex flex-item-noshrink">
+                                <ItemLocation element={element} labelID={labelID} />
+                            </span>
+                        )}
                         {subjectContent}
                     </span>
+
                     {!!resultJSX && highlightData && (
                         <>
                             <span
@@ -130,16 +140,18 @@ const ItemRowLayout = ({
                 labels={labels}
                 element={element}
                 labelID={labelID}
-                maxNumber={5}
+                maxNumber={1}
                 className="flex-item-noshrink mlauto"
                 showDropdown={false}
+                isCollapsed={false}
             />
 
             <span className="item-weight mtauto mbauto ml1 text-right" data-testid="message-row:item-size">
                 {!loading && size}
             </span>
 
-            <span className="flex w2e ml0-5 text-center">
+            <span className="flex w3e ml0-5 text-center flex-justify-end">
+                {!!element.ExpirationTime && <ItemExpiration element={element} />}
                 <ItemAttachmentIcon
                     icon={hasOnlyIcsAttachments ? 'calendar-grid' : undefined}
                     element={element}
@@ -147,9 +159,26 @@ const ItemRowLayout = ({
                 />
             </span>
 
-            <span className="item-senddate-row w13e ml1 flex flex-nowrap flex-align-items-center flex-justify-end">
-                {!!element.ExpirationTime && <ItemExpiration element={element} className="mr0-5" />}
-                <ItemDate element={element} labelID={labelID} className={unread ? 'text-bold' : undefined} useTooltip />
+            <span className="ml1 flex w13e flex-nowrap flex-align-items-center flex-justify-end">
+                <ItemHoverButtons
+                    element={element}
+                    labelID={labelID}
+                    elementID={elementID}
+                    onBack={onBack}
+                    hasStar={false}
+                    size={isCompactView ? 'small' : 'medium'}
+                />
+                <span className="opacity-on-hover-hide flex flex-nowrap item-senddate-row ml0-5 flex-justify-end flex-align-items-center">
+                    <ItemDate
+                        element={element}
+                        labelID={labelID}
+                        className={unread ? 'text-bold' : undefined}
+                        useTooltip
+                    />
+                </span>
+            </span>
+            <span className="flex w2e ml0-5 text-center flex-align-items-center">
+                <ItemUnread element={element} labelID={labelID} className="ml0-5" />
             </span>
         </div>
     );

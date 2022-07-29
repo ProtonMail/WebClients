@@ -1,0 +1,9 @@
+@import '~@proton/styles/scss/config';
+
+.number-elements {
+	height: 1.5em;
+	border: 1px solid;
+	.message-conversation-summary-header & {
+		font-size: em(16, 20); // we want 16 in an element with 20
+	}
+}
