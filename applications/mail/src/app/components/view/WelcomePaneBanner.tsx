@@ -1,14 +1,16 @@
 import { useEffect, useState } from 'react';
 import * as React from 'react';
+
 import { c } from 'ttag';
-import { Href, MailShortcutsModal, Price, SettingsLink, useModals, useModalState } from '@proton/components';
+
+import { Href, MailShortcutsModal, Price, SettingsLink, useModalState, useModals } from '@proton/components';
 import ThemesModal from '@proton/components/containers/themes/ThemesModal';
-import { PROTON_DEFAULT_THEME, ThemeTypes } from '@proton/shared/lib/themes/themes';
-import { Plan, UserSettings } from '@proton/shared/lib/interfaces';
-import isTruthy from '@proton/utils/isTruthy';
-import { getItem, setItem } from '@proton/shared/lib/helpers/storage';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS, DRIVE_APP_NAME, MAIL_APP_NAME, PLANS, VPN_APP_NAME } from '@proton/shared/lib/constants';
+import { getItem, setItem } from '@proton/shared/lib/helpers/storage';
+import { Plan, UserSettings } from '@proton/shared/lib/interfaces';
+import { PROTON_DEFAULT_THEME, ThemeTypes } from '@proton/shared/lib/themes/themes';
+import isTruthy from '@proton/utils/isTruthy';
 
 import { WELCOME_PANE_OPTIONS_URLS } from '../../constants';
 
@@ -316,7 +318,7 @@ const WelcomePaneBanner = ({ plans, theme, userSettings }: Props) => {
                 </Href>
             ),
         },
-        !userSettings.AppWelcome.Calendar?.length && {
+        !userSettings.AppWelcome?.Calendar?.length && {
             id: 21,
             text: c('Info').t`Use ${calendarAppName} to keep your agenda private.`,
             cta: (
