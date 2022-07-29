@@ -11,7 +11,7 @@ const Toolbar = ({ children, className, ...rest }: Props) => (
         className={classnames(['toolbar flex flex-nowrap no-scroll flex-item-noshrink no-print', className])}
         {...rest}
     >
-        {children}
+        <div className="flex toolbar-inner w100">{children}</div>
     </div>
 );
 

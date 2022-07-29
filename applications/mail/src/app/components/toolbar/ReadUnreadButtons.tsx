@@ -1,22 +1,31 @@
-import { MESSAGE_BUTTONS } from '@proton/shared/lib/constants';
-import { MailSettings } from '@proton/shared/lib/interfaces';
-import { Icon, useLoading, ToolbarButton } from '@proton/components';
+import { useMemo } from 'react';
 import { c } from 'ttag';
-
+import { useSelector } from 'react-redux';
+import { Icon, ToolbarButton, useMailSettings } from '@proton/components';
+import { Vr } from '@proton/atoms';
 import { MARK_AS_STATUS } from '../../hooks/useMarkAs';
+import { elementsAreUnread as elementsAreUnreadSelector } from '../../logic/elements/elementsSelectors';
 
 const { READ, UNREAD } = MARK_AS_STATUS;
 
 interface Props {
-    mailSettings: MailSettings;
     selectedIDs: string[];
     onMarkAs: (status: MARK_AS_STATUS) => Promise<void>;
 }
 
-const ReadUnreadButtons = ({ mailSettings, selectedIDs, onMarkAs }: Props) => {
-    // INFO MessageButtons cannot be changed in setting anymore but we keep the logic for people using it
-    const { MessageButtons = MESSAGE_BUTTONS.READ_UNREAD, Shortcuts = 0 } = mailSettings;
-    const [loading, withLoading] = useLoading();
+const ReadUnreadButtons = ({ selectedIDs, onMarkAs }: Props) => {
+    const [{ Shortcuts = 0 } = {}] = useMailSettings();
+
+    const elementsAreUnread = useSelector(elementsAreUnreadSelector);
+
+    const buttonMarkAsRead = useMemo(() => {
+        const allRead = selectedIDs.every((elementID) => !elementsAreUnread[elementID]);
+        return !allRead;
+    }, [selectedIDs, elementsAreUnread]);
+
+    if (!selectedIDs.length) {
+        return null;
+    }
 
     const titleRead = Shortcuts ? (
         <>
@@ -38,32 +47,30 @@ const ReadUnreadButtons = ({ mailSettings, selectedIDs, onMarkAs }: Props) => {
         c('Action').t`Mark as unread`
     );
 
-    const buttons = [
-        <ToolbarButton
-            key="read"
-            title={titleRead}
-            disabled={loading || !selectedIDs.length}
-            onClick={() => withLoading(onMarkAs(READ))}
-            className="no-tablet no-mobile"
-            data-testid="toolbar:read"
-            icon={<Icon name="eye" alt={c('Action').t`Mark as read`} />}
-        />,
-        <ToolbarButton
-            key="unread"
-            title={titleUnread}
-            disabled={loading || !selectedIDs.length}
-            onClick={() => withLoading(onMarkAs(UNREAD))}
-            data-testid="toolbar:unread"
-            icon={<Icon name="eye-slash" alt={c('Action').t`Mark as unread`} />}
-        />,
-    ];
-
-    if (MessageButtons === MESSAGE_BUTTONS.UNREAD_READ) {
-        buttons.reverse();
-    }
-
-    // https://github.com/DefinitelyTyped/DefinitelyTyped/issues/20356
-    return <>{buttons}</>;
+    return (
+        <>
+            <Vr />
+            {buttonMarkAsRead ? (
+                <ToolbarButton
+                    key="read"
+                    title={titleRead}
+                    disabled={!selectedIDs.length}
+                    onClick={() => onMarkAs(READ)}
+                    data-testid="toolbar:read"
+                    icon={<Icon name="envelope-open" alt={c('Action').t`Mark as read`} />}
+                />
+            ) : (
+                <ToolbarButton
+                    key="unread"
+                    title={titleUnread}
+                    disabled={!selectedIDs.length}
+                    onClick={() => onMarkAs(UNREAD)}
+                    data-testid="toolbar:unread"
+                    icon={<Icon name="envelope-dot" alt={c('Action').t`Mark as unread`} />}
+                />
+            )}
+        </>
+    );
 };
 
 export default ReadUnreadButtons;

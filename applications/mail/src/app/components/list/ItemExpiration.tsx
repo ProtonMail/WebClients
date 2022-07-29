@@ -6,6 +6,8 @@ import { fromUnixTime } from 'date-fns';
 import { Element } from '../../models/element';
 import { formatFullDate } from '../../helpers/date';
 
+import './ItemExpiration.scss';
+
 interface Props {
     element?: Element;
     className?: string;

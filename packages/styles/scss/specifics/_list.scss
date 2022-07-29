@@ -4,8 +4,6 @@
  * For conversations and contacts lists
  */
 
-$container-to-width: 4em !default;
-
 .items-column-list {
 	inline-size: var(--width-conversation-column, calc(100vw * #{math.div($conversations-column-width, 100%)}));
 	min-inline-size: 320px; // Subjective value
@@ -45,18 +43,25 @@ $container-to-width: 4em !default;
 	background-color: var(--email-message-view-background-color);
 }
 
-$item-container-height: rem(64) !default;
-$item-container-padding-block: em(8.5) !default;
-$item-container-padding-inline: em(12) !default;
+$item-container-height: rem(66) !default;
+$item-container-padding-block: em(11) !default;
 
-$item-container-height-compact-mode: rem(48) !default;
-$item-container-row-height-compact-mode: rem(40) !default;
+$item-container-padding-inline-start: em(9) !default;
+$item-container-padding-inline-end: em(12) !default;
+$item-container-padding-inline: $item-container-padding-inline-start $item-container-padding-inline-end;
+
+$item-container-margin-inline: em(12) !default;
+
+$item-container-height-compact-mode: rem(56) !default;
+$item-container-row-height-compact-mode: rem(36) !default;
+
+$item-container-row-padding-block: em(5) !default; // design wants 48px
 
 .item-container,
 .item-container-row {
 	@extend %appearing-container;
 	position: relative;
-	padding-block: $item-container-padding-block; // design wants ~64 height
+	padding-block: $item-container-padding-block; // design wants ~66 height
 	padding-inline: $item-container-padding-inline;
 	border-block-end: 1px solid var(--border-weak);
 	scroll-margin-block-start: $item-container-height;
@@ -64,10 +69,13 @@ $item-container-row-height-compact-mode: rem(40) !default;
 	// no transition, otherwhise there's a flash on page loading
 	// because of theme file loading after applying default theme colors
 
-	&::after {
+	&::after,
+	&-wrapper::after {
 		content: '';
 		position: absolute;
 		inset: 0;
+		inset-inline-start: -$item-container-margin-inline;
+		inset-block-end: 1px;
 		z-index: 1;
 		pointer-events: none;
 		transition: 0.15s easing(easeOutQuart);
@@ -78,7 +86,8 @@ $item-container-row-height-compact-mode: rem(40) !default;
 		outline: none;
 	}
 
-	&.read {
+	&.read,
+	&-wrapper.read {
 		background-color: var(--email-item-read-background-color);
 		color: var(--email-item-read-text-color);
 
@@ -108,7 +117,7 @@ $item-container-row-height-compact-mode: rem(40) !default;
 		}
 	}
 
-	&:hover::after {
+	&-wrapper:hover::after {
 		box-shadow: var(--shadow-norm);
 	}
 
@@ -120,18 +129,28 @@ $item-container-row-height-compact-mode: rem(40) !default;
 	&.item-is-selected,
 	// alias for Angular
 	&.item-container.active {
-		background-color: var(--email-item-selected-background-color);
-		color: var(--email-item-selected-text-color);
+		&#{&} {
+			background-color: var(--email-item-selected-background-color);
+			color: var(--email-item-selected-text-color);
 
-		&:focus::after,
-		&.item-is-focused::after {
-			border-inline-start-color: var(--email-item-selected-focus-marker-color);
-		}
+			&:focus::after,
+			&.item-is-focused::after {
+				border-inline-start-color: var(--email-item-selected-focus-marker-color);
+			}
 
-		.item-icon,
-		.item-icon-compact:hover {
-			background-color: var(--email-item-selected-icon-background-color);
-			color: var(--email-item-selected-icon-text-color);
+			.item-icon,
+			.item-icon-compact:hover {
+				background-color: var(--email-item-selected-icon-background-color);
+				color: var(--email-item-selected-icon-text-color);
+			}
+
+			.item-firstline {
+				color: var(--email-item-selected-text-color);
+			}
+
+			.item-titlesender {
+				border-block-end-color: transparent;
+			}
 		}
 	}
 
@@ -155,7 +174,39 @@ $item-container-row-height-compact-mode: rem(40) !default;
 }
 
 .item-container {
-	block-size: $item-container-height;
+	border-block-end: 0;
+	padding-block-end: 0; // design wants ~66 height
+	margin-inline: $item-container-margin-inline;
+	border-radius: var(--border-radius-lg);
+	@include respond-to($breakpoint-small) {
+		margin-inline: em(2);
+	}
+}
+
+.item-container-row {
+	padding-block: $item-container-row-padding-block;
+
+	// fix pseudo element for row layout
+	.item-checkbox {
+		&::after {
+			inset-block: -#{$item-container-padding-block};
+		}
+	}
+
+	.item-weight {
+		min-inline-size: 5em;
+		@include respond-to(1200) {
+			display: none;
+		}
+	}
+
+	.item-senders {
+		inline-size: rem(200);
+		color: var(--text-norm);
+		@include respond-to($breakpoint-medium-landscape) {
+			inline-size: rem(128);
+		}
+	}
 }
 
 .item-checkbox-label {
@@ -180,29 +231,80 @@ $item-container-row-height-compact-mode: rem(40) !default;
 	block-size: em(20);
 	line-height: calc(20 * 1.5 / 21);
 }
-
+.item-firstline {
+	color: var(--text-norm);
+	&-infos {
+		transform: translateY(-0.5ex);
+	}
+}
 .item-secondline:empty {
 	min-block-size: 1.5em;
 }
 
+.item-hover-action-buttons {
+	inset-inline-start: rem(6); // magic number to get perfect hover :D
+}
+
+/* Comfortable view */
+
+.is-comfortable {
+	// should apply this background only for comfortable view, NOT on mobile or Row mode
+	.item-container {
+		&.read,
+		&-wrapper.read {
+			@include respond-to($breakpoint-small, 'min') {
+				background-color: var(--email-item-read-comfort-background-color);
+			}
+		}
+
+		// just a 12 margin only for first element, not on mobile
+		&-wrapper:first-child .item-container {
+			@include respond-to($breakpoint-small, 'min') {
+				margin-block-start: em(12);
+			}
+		}
+
+		&-row {
+			padding-inline-start: em(21);
+		}
+	}
+}
+
 /* Compact view */
-.is-shown-when-compact {
-	display: none;
-}
+.item-icon-compact {
+	inline-size: rem($conversation-icon-size);
+	block-size: rem($conversation-icon-size);
+	border-radius: 50%;
+	font-size: rem(12);
+	transition: background-color 0.25s ease-out;
+	margin-block-start: em(-5); // to align with first line
 
-.item-senddate-col {
-	font-size: em(12);
-}
+	&::after {
+		content: '';
+		position: absolute;
+		inset-inline: -#{em(12)};
+		inset-block-start: calc(-1 * (#{$item-container-height-compact-mode} - #{rem($conversation-icon-size)}) / 2);
+		block-size: $item-container-height-compact-mode;
+	}
 
-.item-subject {
-	font-size: em(13);
+	.checkbox-fakecheck {
+		margin: auto;
+		background: var(--background-norm);
+	}
 }
 
 .list-compact {
 	.item-container,
 	.item-container-row {
-		block-size: $item-container-height-compact-mode;
-		scroll-margin-block-start: $item-container-height-compact-mode;
+		// block-size: $item-container-height-compact-mode;
+		// scroll-margin-block-start: $item-container-height-compact-mode;
+		padding-block: em(8); // put this in a var
+		padding-inline: em(6) em(12);
+		margin-inline: 0;
+		border-radius: 0;
+		@include respond-to($breakpoint-small) {
+			padding-inline-start: em(12);
+		}
 
 		.item-container-inner {
 			padding-block: em(0);
@@ -210,10 +312,25 @@ $item-container-row-height-compact-mode: rem(40) !default;
 		}
 	}
 
+	.item-container {
+		border-block-end: 1px solid var(--border-weak);
+
+		// center hover action vertically, did this to keep more space available for content
+		&:hover,
+		&:focus-within {
+			.item-hover-action-buttons {
+				margin-block-start: -1.5em;
+			}
+		}
+	}
+
 	.item-container-row {
 		block-size: $item-container-row-height-compact-mode;
 		scroll-margin-block-start: $item-container-row-height-compact-mode;
+		padding-block: 0;
 		.item-icon-compact {
+			// margin-block-start: 0;
+			margin-block: auto;
 			&::after {
 				block-size: $item-container-row-height-compact-mode;
 			}
@@ -224,13 +341,8 @@ $item-container-row-height-compact-mode: rem(40) !default;
 	.item-secondline {
 		margin: 0;
 	}
-
-	.is-hidden-when-compact {
-		display: none;
-	}
-
-	.is-shown-when-compact {
-		display: flex;
+	.item-firstline-infos {
+		transform: none;
 	}
 }
 
@@ -252,6 +364,7 @@ $item-container-row-height-compact-mode: rem(40) !default;
 	.item-checkbox-label,
 	.item-icon-compact {
 		position: relative;
+		margin-block: auto;
 
 		&::before {
 			content: '';
@@ -267,6 +380,9 @@ $item-container-row-height-compact-mode: rem(40) !default;
 		.checkbox-fakecheck {
 			opacity: 0;
 		}
+	}
+	.item-checkbox-label {
+		margin-block-start: 0;
 	}
 
 	.item-senders,
@@ -314,27 +430,6 @@ $item-container-row-height-compact-mode: rem(40) !default;
 	}
 }
 
-.item-icon-compact {
-	inline-size: rem($conversation-icon-size);
-	block-size: rem($conversation-icon-size);
-	border-radius: 50%;
-	font-size: rem(12);
-	transition: background-color 0.25s ease-out;
-
-	&::after {
-		content: '';
-		position: absolute;
-		inset-inline: -#{em(12)};
-		inset-block-start: calc(-1 * (#{$item-container-height-compact-mode} - #{rem($conversation-icon-size)}) / 2);
-		block-size: $item-container-height-compact-mode;
-	}
-
-	.checkbox-fakecheck {
-		margin: auto;
-		background: var(--background-norm);
-	}
-}
-
 .item-checkbox {
 	// for allowing hovering larger than fake circle
 	&::after {
@@ -342,7 +437,7 @@ $item-container-row-height-compact-mode: rem(40) !default;
 		position: absolute;
 		inset-block: calc(-1 * ((#{$item-container-height} - #{rem($conversation-icon-size)}) / 2));
 		inset-inline-start: em(-12);
-		inline-size: calc(#{rem($conversation-icon-size)} + #{$item-container-padding-inline} + #{rem(5)});
+		inline-size: calc(#{rem($conversation-icon-size)} + #{$item-container-padding-inline-start} + #{rem(5)});
 		// icon size + padding container + tiny margin for comfort
 	}
 
@@ -395,44 +490,4 @@ $item-container-row-height-compact-mode: rem(40) !default;
 			fill: var(--interaction-norm-contrast);
 		}
 	}
-}
-
-// fix pseudo element for row layout
-.item-container-row {
-	.item-checkbox {
-		&::after {
-			inset-block: -#{$item-container-padding-block};
-		}
-	}
-
-	.item-weight {
-		min-inline-size: 5em;
-	}
-}
-
-.item-sender--smaller,
-.item-date {
-	font-size: em(12);
-}
-
-// NEEDED?
-// .message-header-metas-container {
-// 	block-size: rem($conversation-icon-size);
-// }
-
-.starbutton {
-	// no focus state, only focus-visible
-	&:focus-visible,
-	&:hover,
-	&--is-starred {
-		color: var(--favorite-icon-color);
-	}
-}
-
-.pill-icon {
-	display: inline-flex;
-	padding-block: 0.125em;
-	padding-inline: 0.5em;
-	border-radius: 1em;
-	line-height: 1;
 }
