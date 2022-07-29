@@ -1,22 +1,24 @@
-import { Dispatch, DragEvent, SetStateAction, useCallback, useRef  } from 'react';
+import { Dispatch, DragEvent, SetStateAction, useCallback, useRef } from 'react';
+
 import { c } from 'ttag';
-import noop from '@proton/utils/noop';
+
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import dragAndDrop from '@proton/styles/assets/img/illustrations/drag-and-drop-img.svg';
+import noop from '@proton/utils/noop';
 
 import { classnames } from '../../helpers';
-import EditorToolbar from './toolbar/Toolbar';
-import { EditorActions, EditorMetadata } from './interface';
+import { onlyDragFiles } from '../dropzone';
 import { EDITOR_DEFAULT_METADATA } from './constants';
+import { ModalDefaultFontProps, ModalImageProps, ModalLinkProps } from './hooks/interface';
+import useEditorModal from './hooks/useEditorModal';
 import useToolbarConfig from './hooks/useToolbarConfig';
-import RoosterEditor from './rooster/RoosterEditor';
-import PlainTextEditor from './plainTextEditor/PlainTextEditor';
+import { EditorActions, EditorMetadata } from './interface';
 import DefaultFontModal from './modals/DefaultFontModal';
 import InsertImageModal from './modals/InsertImageModal';
-import useEditorModal from './hooks/useEditorModal';
-import { ModalDefaultFontProps, ModalImageProps, ModalLinkProps } from './hooks/interface';
 import InsertLinkModal from './modals/InsertLinkModal';
-import { onlyDragFiles } from '../dropzone';
+import PlainTextEditor from './plainTextEditor/PlainTextEditor';
+import RoosterEditor from './rooster/RoosterEditor';
+import EditorToolbar from './toolbar/Toolbar';
 
 interface Props {
     className?: string;
@@ -181,6 +183,7 @@ const Editor = ({
                     mailSettings={mailSettings}
                     className={editorToolbarClassname}
                     openEmojiPickerRef={openEmojiPickerRef}
+                    simple={simple}
                 />
             </div>
             {modalDefaultFont.render && metadata.supportDefaultFontSelector && (

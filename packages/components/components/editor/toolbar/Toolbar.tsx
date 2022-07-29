@@ -1,23 +1,24 @@
+import { Ref } from 'react';
+
 import { c } from 'ttag';
 
-import { MailSettings } from '@proton/shared/lib/interfaces';
 import { Vr } from '@proton/atoms';
+import { MailSettings } from '@proton/shared/lib/interfaces';
 
-import { Ref } from 'react';
 import { classnames } from '../../../helpers';
-import Icon from '../../icon/Icon';
-import { ButtonGroup } from '../../button';
 import { useActiveBreakpoint } from '../../../hooks';
-import { ToolbarConfig } from '../helpers/getToolbarConfig';
+import { ButtonGroup } from '../../button';
+import Icon from '../../icon/Icon';
 import { DEFAULT_FONT_FACE, DEFAULT_FONT_SIZE } from '../constants';
+import { ToolbarConfig } from '../helpers/getToolbarConfig';
 import { EditorMetadata } from '../interface';
+import ToolbarAlignmentDropdown from './ToolbarAlignmentDropdown';
 import ToolbarButton from './ToolbarButton';
+import ToolbarColorsDropdown from './ToolbarColorsDropdown';
+import ToolbarEmojiDropdown from './ToolbarEmojiDropdown';
 import ToolbarFontFaceDropdown from './ToolbarFontFaceDropdown';
 import ToolbarFontSizeDropdown from './ToolbarFontSizeDropdown';
-import ToolbarColorsDropdown from './ToolbarColorsDropdown';
-import ToolbarAlignmentDropdown from './ToolbarAlignmentDropdown';
 import ToolbarMoreDropdown from './ToolbarMoreDropdown';
-import ToolbarEmojiDropdown from './ToolbarEmojiDropdown';
 
 interface ToolbarProps {
     config: ToolbarConfig | undefined;
@@ -25,9 +26,10 @@ interface ToolbarProps {
     mailSettings: MailSettings | undefined;
     className?: string;
     openEmojiPickerRef: Ref<() => void>;
+    simple?: boolean;
 }
 
-const Toolbar = ({ config, metadata, mailSettings, openEmojiPickerRef, className }: ToolbarProps) => {
+const Toolbar = ({ config, metadata, mailSettings, openEmojiPickerRef, className, simple }: ToolbarProps) => {
     const { isNarrow } = useActiveBreakpoint();
 
     const showMoreDropdown = metadata.supportRightToLeft || metadata.supportPlainText || isNarrow;
@@ -113,8 +115,12 @@ const Toolbar = ({ config, metadata, mailSettings, openEmojiPickerRef, className
                     </ToolbarButton>
                     <Vr aria-hidden="true" />
                     <ToolbarAlignmentDropdown setAlignment={config.alignment.setValue} />
-                    <Vr aria-hidden="true" />
-                    <ToolbarEmojiDropdown onInsert={config.emoji.insert} openRef={openEmojiPickerRef} />
+                    {!simple && (
+                        <>
+                            <Vr aria-hidden="true" />{' '}
+                            <ToolbarEmojiDropdown onInsert={config.emoji.insert} openRef={openEmojiPickerRef} />
+                        </>
+                    )}
                     <ToolbarButton
                         onClick={config.blockquote.toggle}
                         aria-pressed={config.blockquote.isActive}
@@ -140,15 +146,22 @@ const Toolbar = ({ config, metadata, mailSettings, openEmojiPickerRef, className
                     >
                         <Icon name="eraser" className="mauto" alt={c('Action').t`Clear all formatting`} />
                     </ToolbarButton>
+                    {simple && metadata.supportImages && (
+                        <>
+                            <Vr aria-hidden="true" />
+                            <ToolbarButton
+                                onClick={config.image.showModal}
+                                className="flex-item-noshrink"
+                                title={c('Action').t`Insert image`}
+                                tabIndex={-1}
+                            >
+                                <Icon name="file-image" className="mauto" alt={c('Action').t`Insert image`} />
+                            </ToolbarButton>
+                        </>
+                    )}
                 </>
             ) : null}
-            {showMoreDropdown && (
-                <ToolbarMoreDropdown
-                    config={config}
-                    metadata={metadata}
-                    isNarrow={isNarrow}
-                />
-            )}
+            {showMoreDropdown && <ToolbarMoreDropdown config={config} metadata={metadata} isNarrow={isNarrow} />}
         </ButtonGroup>
     );
 };
