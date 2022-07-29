@@ -1,15 +1,18 @@
-import { wait } from '@proton/shared/lib/helpers/promise';
 import { useRef, useState } from 'react';
-import useIsMounted from '@proton/hooks/useIsMounted';
+
+import { c } from 'ttag';
+
 import { useHandler, useNotifications } from '@proton/components';
 import { Abortable } from '@proton/components/hooks/useHandler';
-import { c } from 'ttag';
+import useIsMounted from '@proton/hooks/useIsMounted';
+import { wait } from '@proton/shared/lib/helpers/promise';
+
 import SavingDraftNotification, {
     SavingDraftNotificationAction,
 } from '../../components/notifications/SavingDraftNotification';
 import { useOnCompose } from '../../containers/ComposeProvider';
-import { PromiseHandlers } from '../usePromise';
 import { MessageState } from '../../logic/messages/messagesTypes';
+import { PromiseHandlers } from '../usePromise';
 
 export interface UseCloseHandlerParameters {
     modelMessage: MessageState;

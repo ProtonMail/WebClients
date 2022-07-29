@@ -1,22 +1,24 @@
 import { useCallback, useMemo, useState } from 'react';
 import { useDispatch } from 'react-redux';
+
 import { c } from 'ttag';
+
 import {
-    ErrorButton,
-    useNotifications,
-    useEventManager,
-    useApi,
-    useLabels,
-    useFolders,
     AlertModal,
-    useModalState,
     Button,
+    ErrorButton,
+    useApi,
+    useEventManager,
+    useFolders,
+    useLabels,
+    useModalState,
+    useNotifications,
 } from '@proton/components';
 import { emptyLabel as emptyLabelRequest } from '@proton/shared/lib/api/messages';
 
-import { useOptimisticEmptyLabel } from './optimistic/useOptimisticEmptyLabel';
 import { isCustomLabel } from '../helpers/labels';
 import { backendActionFinished, backendActionStarted } from '../logic/elements/elementsActions';
+import { useOptimisticEmptyLabel } from './optimistic/useOptimisticEmptyLabel';
 
 export const useEmptyLabel = () => {
     const { createNotification } = useNotifications();

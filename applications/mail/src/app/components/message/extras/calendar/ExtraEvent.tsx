@@ -1,4 +1,15 @@
+import { useCallback, useEffect, useState } from 'react';
+
+import { c } from 'ttag';
+
+import { Banner, InlineLinkButton, useApi, useLoading } from '@proton/components';
+import { BannerBackgroundColor } from '@proton/components/components/banner/Banner';
+import useIsMounted from '@proton/hooks/useIsMounted';
 import { generateAttendeeToken } from '@proton/shared/lib/calendar/attendees';
+import {
+    EVENT_INVITATION_ERROR_TYPE,
+    EventInvitationError,
+} from '@proton/shared/lib/calendar/icsSurgery/EventInvitationError';
 import { canonizeEmailByGuess } from '@proton/shared/lib/helpers/email';
 import { Address, UserSettings } from '@proton/shared/lib/interfaces';
 import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
@@ -9,40 +20,33 @@ import { GetCalendarEventRaw } from '@proton/shared/lib/interfaces/hooks/GetCale
 import { GetCalendarInfo } from '@proton/shared/lib/interfaces/hooks/GetCalendarInfo';
 import { GetCanonicalEmailsMap } from '@proton/shared/lib/interfaces/hooks/GetCanonicalEmailsMap';
 import { getWeekStartsOn } from '@proton/shared/lib/settings/helper';
-import {
-    EVENT_INVITATION_ERROR_TYPE,
-    EventInvitationError,
-} from '@proton/shared/lib/calendar/icsSurgery/EventInvitationError';
-import { useCallback, useEffect, useState } from 'react';
-import { Banner, InlineLinkButton, useApi, useLoading } from '@proton/components';
-import { c } from 'ttag';
-import { BannerBackgroundColor } from '@proton/components/components/banner/Banner';
-import useIsMounted from '@proton/hooks/useIsMounted';
+
 import {
     EventInvitation,
+    InvitationModel,
+    UPDATE_ACTION,
     getEventTimeStatus,
     getHasFullCalendarData,
     getHasInvitationIcs,
     getInitialInvitationModel,
     getInvitationHasEventID,
     getIsInvitationFromFuture,
-    getIsReinvite,
     getIsInvitationOutdated,
-    InvitationModel,
-    UPDATE_ACTION,
     getIsProtonInvite,
+    getIsReinvite,
 } from '../../../../helpers/calendar/invite';
 import { fetchEventInvitation, updateEventInvitation } from '../../../../helpers/calendar/inviteApi';
+import { MessageStateWithData } from '../../../../logic/messages/messagesTypes';
+import EmailReminderWidgetSkeleton from './EmailReminderWidgetSkeleton';
 import ExtraEventButtons from './ExtraEventButtons';
 import ExtraEventDetails from './ExtraEventDetails';
 import ExtraEventHeader from './ExtraEventHeader';
 import ExtraEventSummary from './ExtraEventSummary';
 import ExtraEventTimeStatus from './ExtraEventTimeStatus';
 import ExtraEventWarning from './ExtraEventWarning';
-import EmailReminderWidgetSkeleton from './EmailReminderWidgetSkeleton';
-import { MessageStateWithData } from '../../../../logic/messages/messagesTypes';
-import './CalendarWidget.scss';
 import useCalendarWidgetSideAppEvents from './useCalendarWidgetSideAppEvents';
+
+import './CalendarWidget.scss';
 
 const {
     DECRYPTION_ERROR,

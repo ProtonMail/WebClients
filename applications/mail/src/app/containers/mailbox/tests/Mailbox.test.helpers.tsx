@@ -1,13 +1,15 @@
 import { act } from '@testing-library/react';
 import loudRejection from 'loud-rejection';
-import range from '@proton/utils/range';
+
+import { LABEL_TYPE, VIEW_MODE } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
-import { LABEL_TYPE, VIEW_MODE } from '@proton/shared/lib/constants';
-import { Label } from '@proton/shared/lib/interfaces/Label';
 import { Folder } from '@proton/shared/lib/interfaces/Folder';
+import { Label } from '@proton/shared/lib/interfaces/Label';
+import range from '@proton/utils/range';
+
 import { filterToString, keywordToString, sortToString } from '../../../helpers/mailboxUrl';
-import { triggerEvent, getHistory, render, addToCache, minimalCache, addApiMock } from '../../../helpers/test/helper';
+import { addApiMock, addToCache, getHistory, minimalCache, render, triggerEvent } from '../../../helpers/test/helper';
 import { ConversationLabel } from '../../../models/conversation';
 import { Element } from '../../../models/element';
 import { Event } from '../../../models/event';

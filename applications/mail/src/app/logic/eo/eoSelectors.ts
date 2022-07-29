@@ -1,4 +1,5 @@
 import { createSelector } from 'reselect';
+
 import { RootState } from './eoStore';
 
 const eoState = (state: RootState) => state.eo;

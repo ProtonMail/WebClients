@@ -1,5 +1,6 @@
-import { AlertModal, Button, ErrorButton } from '@proton/components';
 import { c } from 'ttag';
+
+import { AlertModal, Button, ErrorButton } from '@proton/components';
 
 interface Props {
     onResolve: () => void;

@@ -1,13 +1,15 @@
+import { fireEvent, waitFor } from '@testing-library/dom';
+
 import { Address } from '@proton/shared/lib/interfaces';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
-import { fireEvent, waitFor } from '@testing-library/dom';
+
+import { addApiMock } from '../../../helpers/test/api';
+import { addToCache, minimalCache } from '../../../helpers/test/cache';
+import { addKeysToUserKeysCache } from '../../../helpers/test/crypto';
+import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../helpers/test/crypto';
+import { contactID, receiver, sender, setupContactsForPinKeys } from '../../../helpers/test/pinKeys';
 import { render, tick } from '../../../helpers/test/render';
 import ContactResignModal from './ContactResignModal';
-import { addKeysToUserKeysCache } from '../../../helpers/test/crypto';
-import { contactID, receiver, sender, setupContactsForPinKeys } from '../../../helpers/test/pinKeys';
-import { addToCache, minimalCache } from '../../../helpers/test/cache';
-import { addApiMock } from '../../../helpers/test/api';
-import { setupCryptoProxyForTesting, releaseCryptoProxy } from '../../../helpers/test/crypto';
 
 const contacts = [{ contactID: contactID }];
 const title = 'Contact Resign Modal title';

@@ -1,19 +1,21 @@
-import { stringToUtf8Array, utf8ArrayToString } from '@proton/crypto/lib/utils';
+import { c } from 'ttag';
+
 import {
     CryptoProxy,
+    WorkerProcessMIMEResult as MimeProcessResult,
     PrivateKeyReference,
     PublicKeyReference,
     WorkerDecryptionResult,
-    WorkerProcessMIMEResult as MimeProcessResult
 } from '@proton/crypto';
-import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
-import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { getDate, getParsedHeadersFirstValue, getSender, isMIME } from '@proton/shared/lib/mail/messages';
-import { c } from 'ttag';
+import { stringToUtf8Array, utf8ArrayToString } from '@proton/crypto/lib/utils';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { Address } from '@proton/shared/lib/interfaces';
-import { convert } from '../attachment/attachmentConverter';
+import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
+import { getDate, getParsedHeadersFirstValue, getSender, isMIME } from '@proton/shared/lib/mail/messages';
+
 import { MessageErrors, MessageStateWithData } from '../../logic/messages/messagesTypes';
+import { convert } from '../attachment/attachmentConverter';
 
 const { NOT_VERIFIED, NOT_SIGNED } = VERIFICATION_STATUS;
 

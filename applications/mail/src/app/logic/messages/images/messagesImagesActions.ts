@@ -1,5 +1,7 @@
-import { getImage } from '@proton/shared/lib/api/images';
 import { createAsyncThunk } from '@reduxjs/toolkit';
+
+import { getImage } from '@proton/shared/lib/api/images';
+
 import { get } from '../../../helpers/attachment/attachmentLoader';
 import { preloadImage } from '../../../helpers/dom';
 import { createBlob } from '../../../helpers/message/messageEmbeddeds';

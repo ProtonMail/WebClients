@@ -1,7 +1,9 @@
 import { Address } from '@proton/shared/lib/interfaces';
 import { Recipient } from '@proton/shared/lib/interfaces/Address';
-import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { ContactGroup } from '@proton/shared/lib/interfaces/contacts';
+import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+
+import { Element } from '../models/element';
 import {
     findSender,
     getNumParticipants,
@@ -9,7 +11,6 @@ import {
     getRecipientLabel,
     recipientsToRecipientOrGroup,
 } from './addresses';
-import { Element } from '../models/element';
 
 const recipient1: Recipient = { Name: '', Address: 'address1' };
 const recipient2: Recipient = { Name: 'recipient2', Address: 'address2' };

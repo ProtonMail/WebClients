@@ -1,7 +1,8 @@
-import unique from '@proton/utils/unique';
 import { getEmailParts } from '@proton/shared/lib/helpers/email';
 import generateUID from '@proton/shared/lib/helpers/generateUID';
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
+import unique from '@proton/utils/unique';
+
 import { ENCRYPTED_STATUS } from '../../constants';
 import { LoadEmbeddedResults, MessageEmbeddedImage, PartialMessageState } from '../../logic/messages/messagesTypes';
 import { hash, toUnsignedString } from '../string';

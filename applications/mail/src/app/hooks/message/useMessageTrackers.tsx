@@ -1,11 +1,14 @@
+import { useEffect, useMemo, useState } from 'react';
+
+import { c, msgid } from 'ttag';
+
 import { useMailSettings } from '@proton/components';
 import { IMAGE_PROXY_FLAGS, SHOW_IMAGES } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
-import { c, msgid } from 'ttag';
-import { useEffect, useState, useMemo } from 'react';
-import { MessageState } from '../../logic/messages/messagesTypes';
+
 import { locateBlockquote } from '../../helpers/message/messageBlockquote';
 import { hasToSkipProxy } from '../../helpers/message/messageRemotes';
+import { MessageState } from '../../logic/messages/messagesTypes';
 
 export interface Tracker {
     name: string;

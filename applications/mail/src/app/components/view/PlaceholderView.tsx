@@ -1,11 +1,13 @@
 import { useMemo } from 'react';
 import { useLocation } from 'react-router';
+
 import { useConversationCounts, useMailSettings, useMessageCounts } from '@proton/components';
 import { LabelCount } from '@proton/shared/lib/interfaces/Label';
-import WelcomePane from './WelcomePane';
-import SelectionPane from './SelectionPane';
+
 import { ELEMENT_TYPES } from '../../constants';
 import { getCurrentType } from '../../helpers/elements';
+import SelectionPane from './SelectionPane';
+import WelcomePane from './WelcomePane';
 
 interface Props {
     welcomeFlag: boolean;

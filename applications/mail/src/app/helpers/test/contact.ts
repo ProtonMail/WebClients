@@ -1,9 +1,9 @@
-import { ContactEmail, Contact } from '@proton/shared/lib/interfaces/contacts';
-
-import { toKeyProperty } from '@proton/shared/lib/contacts/keyProperties';
-import { VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
-import { createContactPropertyUid, fromVCardProperties } from '@proton/shared/lib/contacts/properties';
 import { prepareCardsFromVCard } from '@proton/shared/lib/contacts/encrypt';
+import { toKeyProperty } from '@proton/shared/lib/contacts/keyProperties';
+import { createContactPropertyUid, fromVCardProperties } from '@proton/shared/lib/contacts/properties';
+import { Contact, ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+import { VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
+
 import { addApiMock } from './api';
 import { GeneratedKey } from './crypto';
 

@@ -1,12 +1,13 @@
+import { CryptoProxy } from '@proton/crypto';
 import { arrayToBinaryString, encodeBase64 } from '@proton/crypto/lib/utils';
-import { MIME_TYPES, PACKAGE_TYPE, PACKAGE_SIGNATURES_MODE, AES256 } from '@proton/shared/lib/constants';
-import { Package, Packages, SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
+import { AES256, MIME_TYPES, PACKAGE_SIGNATURES_MODE, PACKAGE_TYPE } from '@proton/shared/lib/constants';
+import { Api } from '@proton/shared/lib/interfaces';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { Package, Packages, SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import { getAttachments, isEO } from '@proton/shared/lib/mail/messages';
-import { Api } from '@proton/shared/lib/interfaces';
 import { srpGetVerify } from '@proton/shared/lib/srp';
-import { CryptoProxy } from '@proton/crypto';
+
 import { MessageStateWithData } from '../../logic/messages/messagesTypes';
 
 const { PLAINTEXT, DEFAULT, MIME } = MIME_TYPES;

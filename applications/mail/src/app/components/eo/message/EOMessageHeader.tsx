@@ -1,11 +1,12 @@
 import * as React from 'react';
-import { c } from 'ttag';
 import { useHistory } from 'react-router';
 
-import { Button, classnames, Icon, Loader, Tooltip } from '@proton/components';
+import { c } from 'ttag';
 
-import { MessageState } from '../../../logic/messages/messagesTypes';
+import { Button, Icon, Loader, Tooltip, classnames } from '@proton/components';
+
 import { EO_MAX_REPLIES_NUMBER, EO_REPLY_REDIRECT_PATH } from '../../../constants';
+import { MessageState } from '../../../logic/messages/messagesTypes';
 
 interface Props {
     message: MessageState;

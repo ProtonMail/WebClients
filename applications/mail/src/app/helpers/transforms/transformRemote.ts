@@ -1,10 +1,13 @@
+import { IMAGE_PROXY_FLAGS } from '@proton/shared/lib/constants';
+import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import generateUID from '@proton/shared/lib/helpers/generateUID';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { isDraft } from '@proton/shared/lib/mail/messages';
-import { hasBit } from '@proton/shared/lib/helpers/bitset';
-import { IMAGE_PROXY_FLAGS } from '@proton/shared/lib/constants';
-import { querySelectorAll } from '../message/messageContent';
+
+import { WHITE_LISTED_ADDRESSES } from '../../constants';
+import { MessageRemoteImage, MessageState } from '../../logic/messages/messagesTypes';
 import { hasShowRemote } from '../mailSettings';
+import { querySelectorAll } from '../message/messageContent';
 import { getRemoteImages, insertImageAnchor } from '../message/messageImages';
 import {
     ATTRIBUTES_TO_FIND,
@@ -15,8 +18,6 @@ import {
     loadSkipProxyImages,
     removeProtonPrefix,
 } from '../message/messageRemotes';
-import { MessageRemoteImage, MessageState } from '../../logic/messages/messagesTypes';
-import { WHITE_LISTED_ADDRESSES } from '../../constants';
 
 const SELECTOR = ATTRIBUTES_TO_FIND.map((name) => {
     if (name === 'src') {

@@ -1,5 +1,7 @@
+import { useMemo, useState } from 'react';
+
 import { c, msgid } from 'ttag';
-import { useState, useMemo } from 'react';
+
 import { AlertModal, Button, Checkbox, Label, ModalProps } from '@proton/components';
 
 import { Element } from '../../../models/element';

@@ -1,8 +1,10 @@
 import { useDispatch } from 'react-redux';
+
 import { useSubscribeEventManager } from '@proton/components';
+
+import { event } from '../../logic/messages/read/messagesReadActions';
 import { Event } from '../../models/event';
 import { useGetMessage } from '../message/useMessage';
-import { event } from '../../logic/messages/read/messagesReadActions';
 
 export const useMessagesEvents = () => {
     const dispatch = useDispatch();

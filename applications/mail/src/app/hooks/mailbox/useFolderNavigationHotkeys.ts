@@ -1,8 +1,10 @@
 import { useHistory } from 'react-router-dom';
-import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import { isTargetEditable } from '@proton/shared/lib/shortcuts/helpers';
-import { KeyboardKey } from '@proton/shared/lib/interfaces';
+
 import { HotkeyTuple, useMailSettings } from '@proton/components';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { KeyboardKey } from '@proton/shared/lib/interfaces';
+import { isTargetEditable } from '@proton/shared/lib/shortcuts/helpers';
+
 import { LABEL_IDS_TO_HUMAN } from '../../constants';
 
 const { DRAFTS, SENT, TRASH, SPAM, ARCHIVE, INBOX, STARRED, ALL_MAIL } = MAILBOX_LABEL_IDS;

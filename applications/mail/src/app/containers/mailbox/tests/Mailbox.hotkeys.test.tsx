@@ -1,9 +1,11 @@
+import { fireEvent } from '@testing-library/react';
+
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { fireEvent } from '@testing-library/react';
-import { clearAll, assertFocus, assertCheck, getHistory, addApiMock, tick } from '../../../helpers/test/helper';
+
+import { addApiMock, assertCheck, assertFocus, clearAll, getHistory, tick } from '../../../helpers/test/helper';
 import MailboxContainer from '../MailboxContainer';
-import { getElements, props, setup as generalSetup, SetupArgs } from './Mailbox.test.helpers';
+import { SetupArgs, setup as generalSetup, getElements, props } from './Mailbox.test.helpers';
 
 describe('Mailbox hotkeys', () => {
     const conversations = getElements(4);

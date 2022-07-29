@@ -1,10 +1,11 @@
+import { waitFor } from '@testing-library/dom';
 import { screen, waitForElementToBeRemoved } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { waitFor } from '@testing-library/dom';
 
-import { useGetVtimezonesMap } from '@proton/components/hooks/useGetVtimezonesMap';
 import { useCalendarUserSettings } from '@proton/components/hooks/useCalendarUserSettings';
-
+import { useGetVtimezonesMap } from '@proton/components/hooks/useGetVtimezonesMap';
+import { concatArrays } from '@proton/crypto/lib/utils';
+import { getAppName } from '@proton/shared/lib/apps/helper';
 import { generateAttendeeToken } from '@proton/shared/lib/calendar/attendees';
 import {
     CALENDAR_FLAGS,
@@ -16,7 +17,6 @@ import {
 import { ACCENT_COLORS, API_CODES, APPS } from '@proton/shared/lib/constants';
 import { canonizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
-import isTruthy from '@proton/utils/isTruthy';
 import { SETTINGS_WEEK_START } from '@proton/shared/lib/interfaces';
 import {
     CALENDAR_TYPE,
@@ -27,25 +27,24 @@ import {
     VcalVeventComponent,
 } from '@proton/shared/lib/interfaces/calendar';
 import { encryptAttachment } from '@proton/shared/lib/mail/send/attachments';
-import { getAppName } from '@proton/shared/lib/apps/helper';
-import { concatArrays } from '@proton/crypto/lib/utils';
+import isTruthy from '@proton/utils/isTruthy';
 
+import * as inviteApi from '../../../helpers/calendar/inviteApi';
 import { generateApiCalendarEvent } from '../../../helpers/test/calendar';
+import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../helpers/test/crypto';
 import {
+    GeneratedKey,
     addAddressToCache,
     addApiMock,
     addKeysToAddressKeysCache,
     clearAll,
-    generateCalendarKeysAndPassphrase,
-    GeneratedKey,
     generateKeys as generateAddressKeys,
+    generateCalendarKeysAndPassphrase,
     minimalCache,
     render,
 } from '../../../helpers/test/helper';
-import ExtraEvents from './ExtraEvents';
 import { MessageStateWithData } from '../../../logic/messages/messagesTypes';
-import * as inviteApi from '../../../helpers/calendar/inviteApi';
-import { setupCryptoProxyForTesting, releaseCryptoProxy } from '../../../helpers/test/crypto';
+import ExtraEvents from './ExtraEvents';
 
 jest.setTimeout(20000);
 
@@ -904,9 +903,7 @@ END:VCALENDAR`;
             await render(<ExtraEvents message={message} />, false);
 
             expect(
-                await waitFor(() =>
-                    screen.getByText(/This invitation is out of date. The event has been updated./)
-                )
+                await waitFor(() => screen.getByText(/This invitation is out of date. The event has been updated./))
             ).toBeInTheDocument();
         });
 

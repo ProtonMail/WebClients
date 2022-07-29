@@ -1,11 +1,12 @@
+import { ContactGroup } from '@proton/shared/lib/interfaces/contacts';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import noop from '@proton/utils/noop';
-import { ContactGroup } from '@proton/shared/lib/interfaces/contacts';
-import { clearAll, render } from '../../../helpers/test/helper';
-import AddressesSummary from './AddressesSummary';
+
 import { getRecipientLabel } from '../../../helpers/addresses';
-import { store } from '../../../logic/store';
+import { clearAll, render } from '../../../helpers/test/helper';
 import { refresh } from '../../../logic/contacts/contactsActions';
+import { store } from '../../../logic/store';
+import AddressesSummary from './AddressesSummary';
 
 const message = {} as Message;
 const props = {

@@ -1,31 +1,33 @@
+import { fireEvent, getByTitle, waitFor } from '@testing-library/dom';
+import { act } from '@testing-library/react';
+import loudRejection from 'loud-rejection';
+
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { Address, Key } from '@proton/shared/lib/interfaces';
-import { fireEvent, getByTitle, waitFor } from '@testing-library/dom';
-import loudRejection from 'loud-rejection';
-import { act } from '@testing-library/react';
+
+import { arrayToBase64 } from '../../../helpers/base64';
+import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../helpers/test/crypto';
 import {
-    clearAll,
-    render,
-    tick,
     GeneratedKey,
-    generateKeys,
-    addKeysToAddressKeysCache,
-    addApiResolver,
-    addApiMock,
-    addApiKeys,
-    getDropdown,
     addAddressToCache,
-    minimalCache,
+    addApiKeys,
+    addApiMock,
+    addApiResolver,
+    addKeysToAddressKeysCache,
+    clearAll,
     createAttachment,
     decryptSessionKey,
-    waitForNotification,
+    generateKeys,
+    getDropdown,
+    minimalCache,
     parseFormData,
+    render,
+    tick,
     waitForNoNotification,
+    waitForNotification,
 } from '../../../helpers/test/helper';
-import { setupCryptoProxyForTesting, releaseCryptoProxy } from '../../../helpers/test/crypto';
 import Composer from '../Composer';
-import { ID, props, prepareMessage, toAddress } from './Composer.test.helpers';
-import { arrayToBase64 } from '../../../helpers/base64';
+import { ID, prepareMessage, props, toAddress } from './Composer.test.helpers';
 
 loudRejection();
 

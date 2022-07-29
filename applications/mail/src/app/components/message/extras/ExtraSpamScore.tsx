@@ -1,20 +1,22 @@
-import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
-import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import {
-    Icon,
-    Href,
-    Button,
-    useLoading,
-    useEventManager,
-    useApi,
-    useNotifications,
-    AlertModal,
-    useModalState,
-} from '@proton/components';
 import { c } from 'ttag';
-import { hasBit } from '@proton/shared/lib/helpers/bitset';
+
+import {
+    AlertModal,
+    Button,
+    Href,
+    Icon,
+    useApi,
+    useEventManager,
+    useLoading,
+    useModalState,
+    useNotifications,
+} from '@proton/components';
 import { markAsHam } from '@proton/shared/lib/api/messages';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { getBlogURL, getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
+
 import { MessageState } from '../../../logic/messages/messagesTypes';
 
 interface Props {

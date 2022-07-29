@@ -1,14 +1,15 @@
-import { RequireSome } from '@proton/shared/lib/interfaces';
-import { ICAL_ATTENDEE_STATUS, ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
-import { c } from 'ttag';
-import { APPS } from '@proton/shared/lib/constants';
-import { getAppName } from '@proton/shared/lib/apps/helper';
-import { propertyToUTCDate } from '@proton/shared/lib/calendar/vcalConverter';
-import { AppLink, SettingsLink } from '@proton/components';
 import { getUnixTime } from 'date-fns';
-import { InvitationModel } from './invite';
+import { c } from 'ttag';
+
+import { AppLink, SettingsLink } from '@proton/components';
+import { getAppName } from '@proton/shared/lib/apps/helper';
+import { ICAL_ATTENDEE_STATUS, ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
+import { propertyToUTCDate } from '@proton/shared/lib/calendar/vcalConverter';
+import { APPS } from '@proton/shared/lib/constants';
+import { RequireSome } from '@proton/shared/lib/interfaces';
 
 import OpenInCalendarButton from '../../components/message/extras/calendar/OpenInCalendarButton';
+import { InvitationModel } from './invite';
 
 const calendarAppName = getAppName(APPS.PROTONCALENDAR);
 

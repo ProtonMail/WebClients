@@ -1,13 +1,14 @@
-import { MailSettings, Address, UserSettings } from '@proton/shared/lib/interfaces';
-import { isPlainText } from '@proton/shared/lib/mail/messages';
-import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { checkContrast } from '@proton/shared/lib/helpers/dom';
-import { toText } from '../parserHtml';
-import { findSender } from '../addresses';
-import { textToHtml } from '../textToHtml';
-import { parseInDiv } from '../dom';
-import { MessageState, PartialMessageState } from '../../logic/messages/messagesTypes';
+import { Address, MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
+import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { isPlainText } from '@proton/shared/lib/mail/messages';
+
 import { MESSAGE_IFRAME_ROOT_ID } from '../../components/message/constants';
+import { MessageState, PartialMessageState } from '../../logic/messages/messagesTypes';
+import { findSender } from '../addresses';
+import { parseInDiv } from '../dom';
+import { toText } from '../parserHtml';
+import { textToHtml } from '../textToHtml';
 
 export const getPlainTextContent = (message: PartialMessageState) => {
     return message.messageDocument?.plainText || '';

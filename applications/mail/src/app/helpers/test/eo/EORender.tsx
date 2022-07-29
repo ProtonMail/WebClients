@@ -1,10 +1,12 @@
 import { ReactElement, ReactNode } from 'react';
 import * as React from 'react';
 import { Provider as ReduxProvider } from 'react-redux';
-import { Route } from 'react-router-dom';
 import { Router } from 'react-router';
-import { createMemoryHistory, MemoryHistory } from 'history';
-import { render as originalRender, RenderResult as OriginalRenderResult } from '@testing-library/react';
+import { Route } from 'react-router-dom';
+
+import { RenderResult as OriginalRenderResult, render as originalRender } from '@testing-library/react';
+import { MemoryHistory, createMemoryHistory } from 'history';
+
 import {
     CacheProvider,
     ConfigProvider,
@@ -14,12 +16,13 @@ import {
     ModalsProvider,
 } from '@proton/components';
 import ApiContext from '@proton/components/containers/api/apiContext';
-import { config, tick } from '../render';
-import { api, mockDomApi, registerFeatureFlagsApiMock } from '../api';
-import NotificationsTestProvider from '../notifications';
-import { cache } from '../cache';
-import { store } from '../../../logic/eo/eoStore';
+
 import { EO_REDIRECT_PATH } from '../../../constants';
+import { store } from '../../../logic/eo/eoStore';
+import { api, mockDomApi, registerFeatureFlagsApiMock } from '../api';
+import { cache } from '../cache';
+import NotificationsTestProvider from '../notifications';
+import { config, tick } from '../render';
 
 interface RenderResult extends OriginalRenderResult {
     rerender: (ui: React.ReactElement) => Promise<void>;

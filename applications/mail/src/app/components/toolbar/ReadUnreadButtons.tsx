@@ -1,8 +1,11 @@
 import { useMemo } from 'react';
-import { c } from 'ttag';
 import { useSelector } from 'react-redux';
-import { Icon, ToolbarButton, useMailSettings } from '@proton/components';
+
+import { c } from 'ttag';
+
 import { Vr } from '@proton/atoms';
+import { Icon, ToolbarButton, useMailSettings } from '@proton/components';
+
 import { MARK_AS_STATUS } from '../../hooks/useMarkAs';
 import { elementsAreUnread as elementsAreUnreadSelector } from '../../logic/elements/elementsSelectors';
 

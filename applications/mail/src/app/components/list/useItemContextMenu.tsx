@@ -1,8 +1,10 @@
 import { RefObject, useCallback, useState } from 'react';
+
 import { FeatureCode, useFeature } from '@proton/components';
+
+import { MARK_AS_STATUS } from '../../hooks/useMarkAs';
 import { Element } from '../../models/element';
 import ItemContextMenu from './ItemContextMenu';
-import { MARK_AS_STATUS } from '../../hooks/useMarkAs';
 
 interface Props {
     elementID?: string;

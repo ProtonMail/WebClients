@@ -1,26 +1,29 @@
-import { c } from 'ttag';
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import { useApi, useNotifications, useEventManager } from '@proton/components';
-import { useEffect } from 'react';
+
+import { c } from 'ttag';
+
+import { useApi, useEventManager, useNotifications } from '@proton/components';
+
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { isSearch } from '../../helpers/elements';
+import { parseSearchParams } from '../../helpers/encryptedSearch/esUtils';
 import {
-    manualPending,
+    addESResults,
     load as loadAction,
     manualFulfilled,
-    addESResults,
+    manualPending,
     updatePage,
 } from '../../logic/elements/elementsActions';
-import { Element } from '../../models/element';
-import { RootState } from '../../logic/store';
 import {
     isES as isESSelector,
     messagesToLoadMoreES as messagesToLoadMoreESSelector,
     shouldSendRequest as shouldSendRequestSelector,
 } from '../../logic/elements/elementsSelectors';
+import { RootState } from '../../logic/store';
+import { Element } from '../../models/element';
 import { Filter, SearchParameters, Sort } from '../../models/tools';
-import { parseSearchParams } from '../../helpers/encryptedSearch/esUtils';
 
 interface EncryptedSearchParams {
     conversationMode: boolean;

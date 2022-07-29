@@ -1,4 +1,5 @@
 import ReactDOM from 'react-dom';
+
 import '@proton/polyfill';
 
 import EOApp from './EOApp';

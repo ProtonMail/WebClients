@@ -1,4 +1,5 @@
-import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { c } from 'ttag';
+
 import {
     Button,
     Form,
@@ -8,8 +9,8 @@ import {
     ModalTwoFooter,
     ModalTwoHeader,
 } from '@proton/components';
-import { c } from 'ttag';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
+import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
 import './MessageHeadersModal.scss';
 

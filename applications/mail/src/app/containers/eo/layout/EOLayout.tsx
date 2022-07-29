@@ -1,7 +1,21 @@
 import { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
+
 import { c } from 'ttag';
-import { locales } from '@proton/shared/lib/i18n/locales';
+
+import {
+    AppLink,
+    ButtonLike,
+    CalendarLogo,
+    DriveLogo,
+    Href,
+    Logo,
+    MailLogo,
+    PublicTopBanners,
+    VpnLogo,
+    getAppVersion,
+    useConfig,
+} from '@proton/components';
 import {
     APP_NAMES,
     CALENDAR_APP_NAME,
@@ -10,20 +24,7 @@ import {
     VPN_APP_NAME,
 } from '@proton/shared/lib/constants';
 import { getPrivacyPolicyURL, getStaticURL, getTermsURL } from '@proton/shared/lib/helpers/url';
-
-import {
-    getAppVersion,
-    useConfig,
-    PublicTopBanners,
-    Href,
-    Logo,
-    AppLink,
-    ButtonLike,
-    MailLogo,
-    CalendarLogo,
-    VpnLogo,
-    DriveLogo,
-} from '@proton/components';
+import { locales } from '@proton/shared/lib/i18n/locales';
 
 import LanguageSelect from './EOLanguageSelect';
 

@@ -1,11 +1,14 @@
 import { Ref } from 'react';
+
 import { c } from 'ttag';
-import { Icon, useMailSettings } from '@proton/components';
+
 import { Vr } from '@proton/atoms';
-import ToolbarDropdown from './ToolbarDropdown';
-import MoveDropdown from '../dropdown/MoveDropdown';
-import LabelDropdown from '../dropdown/LabelDropdown';
+import { Icon, useMailSettings } from '@proton/components';
+
 import { Breakpoints } from '../../models/utils';
+import LabelDropdown from '../dropdown/LabelDropdown';
+import MoveDropdown from '../dropdown/MoveDropdown';
+import ToolbarDropdown from './ToolbarDropdown';
 
 interface Props {
     labelID: string;

@@ -1,12 +1,15 @@
-import { useState, ChangeEvent, MutableRefObject } from 'react';
+import { ChangeEvent, MutableRefObject, useState } from 'react';
+
 import { c } from 'ttag';
-import { Label, InputTwo, generateUID, classnames } from '@proton/components';
-import ComposerAddresses from './addresses/Addresses';
-import { MessageChange } from './Composer';
+
+import { InputTwo, Label, classnames, generateUID } from '@proton/components';
+
 import { MessageSendInfo } from '../../hooks/useSendInfo';
-import SelectSender from './addresses/SelectSender';
-import ExtraExpirationTime from '../message/extras/ExtraExpirationTime';
 import { MessageState } from '../../logic/messages/messagesTypes';
+import ExtraExpirationTime from '../message/extras/ExtraExpirationTime';
+import { MessageChange } from './Composer';
+import ComposerAddresses from './addresses/Addresses';
+import SelectSender from './addresses/SelectSender';
 
 interface Props {
     message: MessageState;

@@ -1,10 +1,12 @@
-import { useState, useEffect, ReactNode, useCallback, forwardRef, Ref } from 'react';
-import { PrivateAppContainer, NewDomainTopBanner, TopBanners, useSideApp } from '@proton/components';
-import SideAppIframe from '@proton/components/components/sideApp/SideAppIframe';
+import { ReactNode, Ref, forwardRef, useCallback, useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
+
+import { NewDomainTopBanner, PrivateAppContainer, TopBanners, useSideApp } from '@proton/components';
+import SideAppIframe from '@proton/components/components/sideApp/SideAppIframe';
+
+import { Breakpoints } from '../../models/utils';
 import MailHeader from '../header/MailHeader';
 import MailSidebar from '../sidebar/MailSidebar';
-import { Breakpoints } from '../../models/utils';
 
 interface Props {
     children: ReactNode;

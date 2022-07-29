@@ -1,13 +1,14 @@
 import { useEffect, useRef, useState } from 'react';
+
 import { useUser } from '@proton/components';
-import { wait } from '@proton/shared/lib/helpers/promise';
-import { SECOND } from '@proton/shared/lib/constants';
 import {
-    defaultESIndexingState,
     ESIndexingState,
+    defaultESIndexingState,
     estimateIndexingProgress,
     wasIndexingDone,
 } from '@proton/encrypted-search';
+import { SECOND } from '@proton/shared/lib/constants';
+import { wait } from '@proton/shared/lib/helpers/promise';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { getOldestTimeMail } from '../../helpers/encryptedSearch/esUtils';

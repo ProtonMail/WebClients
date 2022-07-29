@@ -1,10 +1,12 @@
+import { useRef } from 'react';
+
 import { useHandler } from '@proton/components';
 import { Abortable } from '@proton/components/hooks/useHandler';
-import { useRef } from 'react';
+
 import { isDecryptionError, isNetworkError } from '../../helpers/errors';
+import { MessageState, MessageStateWithData } from '../../logic/messages/messagesTypes';
 import { useDeleteDraft, useSaveDraft } from '../message/useSaveDraft';
 import { usePromise } from '../usePromise';
-import { MessageState, MessageStateWithData } from '../../logic/messages/messagesTypes';
 
 interface AutoSaveArgs {
     onMessageAlreadySent?: () => void;

@@ -1,11 +1,13 @@
 import { c } from 'ttag';
-import { classnames, Icon, Button } from '@proton/components';
+
+import { Button, Icon, classnames } from '@proton/components';
 import { ContactEditProps } from '@proton/components/containers/contacts/edit/ContactEditModal';
+
 import { MessageState } from '../../../logic/messages/messagesTypes';
-import { MapStatusIcons } from '../../../models/crypto';
-import RecipientsDetails from './RecipientsDetails';
-import RecipientSimple from './RecipientSimple';
 import { RecipientOrGroup } from '../../../models/address';
+import { MapStatusIcons } from '../../../models/crypto';
+import RecipientSimple from './RecipientSimple';
+import RecipientsDetails from './RecipientsDetails';
 
 interface Props {
     message: MessageState;

@@ -1,15 +1,18 @@
 import { useRef } from 'react';
+
 import { c } from 'ttag';
-import { Recipient } from '@proton/shared/lib/interfaces';
-import { PublicKeyReference } from '@proton/crypto';
+
 import { ContactEditProps } from '@proton/components/containers/contacts/edit/ContactEditModal';
-import { MapStatusIcons, StatusIcon } from '../../../models/crypto';
-import { RecipientOrGroup } from '../../../models/address';
-import RecipientItemLayout from './RecipientItemLayout';
-import RecipientItemGroup from './RecipientItemGroup';
-import MailRecipientItemSingle from './MailRecipientItemSingle';
-import EORecipientSingle from '../../eo/message/recipients/EORecipientSingle';
+import { PublicKeyReference } from '@proton/crypto';
+import { Recipient } from '@proton/shared/lib/interfaces';
+
 import { MessageState } from '../../../logic/messages/messagesTypes';
+import { RecipientOrGroup } from '../../../models/address';
+import { MapStatusIcons, StatusIcon } from '../../../models/crypto';
+import EORecipientSingle from '../../eo/message/recipients/EORecipientSingle';
+import MailRecipientItemSingle from './MailRecipientItemSingle';
+import RecipientItemGroup from './RecipientItemGroup';
+import RecipientItemLayout from './RecipientItemLayout';
 
 interface Props {
     message?: MessageState;

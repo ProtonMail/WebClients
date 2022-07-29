@@ -1,8 +1,9 @@
 import { useEffect } from 'react';
-import { isAuthorizedSideAppUrl, postMessageToIframe } from '@proton/shared/lib/sideApp/helpers';
-import { SIDE_APP_ACTION, SIDE_APP_EVENTS } from '@proton/shared/lib/sideApp/models';
+
 import { APPS } from '@proton/shared/lib/constants';
 import { CalendarEventWithMetadata } from '@proton/shared/lib/interfaces/calendar';
+import { isAuthorizedSideAppUrl, postMessageToIframe } from '@proton/shared/lib/sideApp/helpers';
+import { SIDE_APP_ACTION, SIDE_APP_EVENTS } from '@proton/shared/lib/sideApp/models';
 
 interface Props {
     messageID: string;

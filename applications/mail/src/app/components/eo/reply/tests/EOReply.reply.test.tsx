@@ -1,7 +1,8 @@
 import { waitFor } from '@testing-library/dom';
-import { setup } from './EOReply.test.helpers';
-import { EOClearAll, reply } from '../../../../helpers/test/eo/helpers';
+
 import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../../helpers/test/crypto';
+import { EOClearAll, reply } from '../../../../helpers/test/eo/helpers';
+import { setup } from './EOReply.test.helpers';
 
 describe('EO Reply if max replies has been reached', function () {
     beforeAll(async () => {

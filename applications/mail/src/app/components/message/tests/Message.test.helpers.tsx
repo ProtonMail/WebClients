@@ -1,18 +1,21 @@
 import { MutableRefObject } from 'react';
-import noop from '@proton/utils/noop';
+
+import { findByTestId, fireEvent, waitFor } from '@testing-library/dom';
+import { act } from '@testing-library/react';
+import loudRejection from 'loud-rejection';
+
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { act } from '@testing-library/react';
-import { findByTestId, fireEvent, waitFor } from '@testing-library/dom';
-import loudRejection from 'loud-rejection';
-import { render } from '../../../helpers/test/render';
-import { Breakpoints } from '../../../models/utils';
-import MessageView, { MessageViewRef } from '../MessageView';
+import noop from '@proton/utils/noop';
+
 import * as messageDecrypt from '../../../helpers/message/messageDecrypt';
 import { mergeMessages } from '../../../helpers/message/messages';
+import { render } from '../../../helpers/test/render';
 import { MessageState, PartialMessageState } from '../../../logic/messages/messagesTypes';
-import { store } from '../../../logic/store';
 import { initialize } from '../../../logic/messages/read/messagesReadActions';
+import { store } from '../../../logic/store';
+import { Breakpoints } from '../../../models/utils';
+import MessageView, { MessageViewRef } from '../MessageView';
 import { MESSAGE_IFRAME_ROOT_ID } from '../constants';
 
 loudRejection();

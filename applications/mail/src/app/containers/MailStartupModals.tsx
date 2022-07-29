@@ -1,21 +1,22 @@
 import { useEffect, useRef } from 'react';
-import { APPS } from '@proton/shared/lib/constants';
+
 import {
-    useModalState,
-    ReferralModal,
-    useSubscription,
-    useUser,
-    useFeature,
     FeatureCode,
+    RebrandingFeedbackModal,
+    ReferralModal,
+    V5WelcomeModal,
+    getShouldOpenMnemonicModal,
     getShouldOpenReferralModal,
     useAddresses,
-    getShouldOpenMnemonicModal,
-    V5WelcomeModal,
-    useShouldOpenV5WelcomeModal,
-    RebrandingFeedbackModal,
+    useFeature,
+    useModalState,
     useRebrandingFeedback,
+    useShouldOpenV5WelcomeModal,
+    useSubscription,
+    useUser,
 } from '@proton/components';
 import { MnemonicPromptModal } from '@proton/components/containers/mnemonic';
+import { APPS } from '@proton/shared/lib/constants';
 
 import MailOnboardingModal from '../components/onboarding/MailOnboardingModal';
 

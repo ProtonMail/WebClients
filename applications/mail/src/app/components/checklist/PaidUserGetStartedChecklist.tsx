@@ -1,13 +1,15 @@
-import { c } from 'ttag';
 import { useEffect } from 'react';
 
+import { c } from 'ttag';
+
 import { ChecklistItem, Loader, classnames, useApi } from '@proton/components';
-import isTruthy from '@proton/utils/isTruthy';
-import { ChecklistKey } from '@proton/shared/lib/interfaces';
 import { seenCompletedChecklist } from '@proton/shared/lib/api/checklist';
+import { ChecklistKey } from '@proton/shared/lib/interfaces';
+import isTruthy from '@proton/utils/isTruthy';
 
 import { usePaidUserChecklist } from '../../containers/checklists';
 import GetStartedChecklistHeader from './GetStartedChecklistHeader';
+
 import './GetStartedChecklist.scss';
 
 interface Props {

@@ -1,24 +1,24 @@
-import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { useEffect, useMemo, useState } from 'react';
 import * as React from 'react';
-import {
-    PrimaryButton,
-    Checkbox,
-    useUser,
-    useFilters,
-    useNotifications,
-    FilterUtils,
-    FilterConstants,
-    useModalState,
-} from '@proton/components';
+
 import { c } from 'ttag';
 
-import identity from '@proton/utils/identity';
-import { isPaid } from '@proton/shared/lib/user/helpers';
-import { FILTER_STATUS } from '@proton/shared/lib/constants';
+import {
+    Checkbox,
+    FilterConstants,
+    FilterUtils,
+    PrimaryButton,
+    useFilters,
+    useModalState,
+    useNotifications,
+    useUser,
+} from '@proton/components';
+import { ConditionComparator, ConditionType, Filter } from '@proton/components/containers/filters/interfaces';
 import FilterModal from '@proton/components/containers/filters/modal/FilterModal';
-
-import { Filter, ConditionType, ConditionComparator } from '@proton/components/containers/filters/interfaces';
+import { FILTER_STATUS } from '@proton/shared/lib/constants';
+import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { isPaid } from '@proton/shared/lib/user/helpers';
+import identity from '@proton/utils/identity';
 
 const { computeTree, newFilter } = FilterUtils;
 const { OPERATORS } = FilterConstants;

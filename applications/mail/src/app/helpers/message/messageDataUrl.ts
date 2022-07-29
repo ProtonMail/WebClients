@@ -1,7 +1,8 @@
-import { generateProtonWebUID } from '@proton/shared/lib/helpers/uid';
 import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
-import { generateCid, setEmbeddedAttr } from './messageEmbeddeds';
+import { generateProtonWebUID } from '@proton/shared/lib/helpers/uid';
+
 import { MessageState } from '../../logic/messages/messagesTypes';
+import { generateCid, setEmbeddedAttr } from './messageEmbeddeds';
 
 // Reference Angular/src/app/composer/services/extractDataURI.js
 

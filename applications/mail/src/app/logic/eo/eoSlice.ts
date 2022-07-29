@@ -1,17 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { EOState } from './eoType';
-import {
-    reset as globalResetReducer,
-    initFulfilled,
-    loadEOMessageFulfilled,
-    loadEOTokenFulfilled,
-    EODocumentInitializePending as EODocumentInitializePendingReducer,
-    EODocumentInitializeFulfilled as EODocumentInitializeFulfilledReducer,
-    EOLoadEmbeddedFulfilled,
-    EOLoadRemotePending,
-    EOLoadRemoteFulfilled,
-    EOAddReply as EOAddReplyReducer,
-} from './eoReducers';
+
+import { globalReset } from '../actions';
 import {
     EOAddReply,
     EODocumentInitializeFulfilled,
@@ -22,7 +11,19 @@ import {
     loadEOMessage,
     loadEOToken,
 } from './eoActions';
-import { globalReset } from '../actions';
+import {
+    EOAddReply as EOAddReplyReducer,
+    EODocumentInitializeFulfilled as EODocumentInitializeFulfilledReducer,
+    EODocumentInitializePending as EODocumentInitializePendingReducer,
+    EOLoadEmbeddedFulfilled,
+    EOLoadRemoteFulfilled,
+    EOLoadRemotePending,
+    reset as globalResetReducer,
+    initFulfilled,
+    loadEOMessageFulfilled,
+    loadEOTokenFulfilled,
+} from './eoReducers';
+import { EOState } from './eoType';
 
 export const initialState = {
     encryptedToken: '',

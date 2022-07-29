@@ -1,3 +1,9 @@
+import { MouseEvent } from 'react';
+
+import { c } from 'ttag';
+
+import { classnames } from '@proton/components';
+import { Label } from '@proton/shared/lib/interfaces/Label';
 import {
     getHasOnlyIcsAttachments,
     hasAttachments,
@@ -6,21 +12,18 @@ import {
     isOutbox,
     isScheduled,
 } from '@proton/shared/lib/mail/messages';
-import { MouseEvent } from 'react';
-import { c } from 'ttag';
-import { classnames } from '@proton/components';
-import { Label } from '@proton/shared/lib/interfaces/Label';
 import noop from '@proton/utils/noop';
-import ItemStar from '../../list/ItemStar';
-import ItemUnread from '../../list/ItemUnread';
+
+import { useExpiration } from '../../../hooks/useExpiration';
+import { MessageState } from '../../../logic/messages/messagesTypes';
+import { Breakpoints } from '../../../models/utils';
+import ItemAttachmentIcon from '../../list/ItemAttachmentIcon';
 import ItemDate from '../../list/ItemDate';
 import ItemLabels from '../../list/ItemLabels';
 import ItemLocation from '../../list/ItemLocation';
-import ItemAttachmentIcon from '../../list/ItemAttachmentIcon';
-import { Breakpoints } from '../../../models/utils';
+import ItemStar from '../../list/ItemStar';
+import ItemUnread from '../../list/ItemUnread';
 import RecipientItem from '../recipients/RecipientItem';
-import { MessageState } from '../../../logic/messages/messagesTypes';
-import { useExpiration } from '../../../hooks/useExpiration';
 
 interface Props {
     labelID: string;

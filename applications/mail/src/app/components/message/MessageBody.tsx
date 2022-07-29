@@ -1,15 +1,16 @@
 import { RefObject, useEffect, useMemo, useRef, useState } from 'react';
-import { isPlainText } from '@proton/shared/lib/mail/messages';
-import { scrollIntoView } from '@proton/shared/lib/helpers/dom';
-import { DARK_THEMES } from '@proton/shared/lib/themes/themes';
-import { classnames, useMailSettings, useTheme } from '@proton/components';
 
-import { locateBlockquote } from '../../helpers/message/messageBlockquote';
+import { classnames, useMailSettings, useTheme } from '@proton/components';
+import { scrollIntoView } from '@proton/shared/lib/helpers/dom';
+import { isPlainText } from '@proton/shared/lib/mail/messages';
+import { DARK_THEMES } from '@proton/shared/lib/themes/themes';
+
+import { useOnMailTo } from '../../containers/ComposeProvider';
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
+import { locateBlockquote } from '../../helpers/message/messageBlockquote';
 import { MessageState } from '../../logic/messages/messagesTypes';
 import MessageBodyIframe from './MessageBodyIframe';
 import useMessageDarkStyles from './hooks/useMessageDarkStyles';
-import { useOnMailTo } from '../../containers/ComposeProvider';
 
 interface Props {
     labelID: string;

@@ -1,6 +1,7 @@
 import { normalizeKeyword } from '@proton/encrypted-search';
-import { Filter, SearchParameters, Sort } from '../../models/tools';
+
 import { ESMessage, NormalizedSearchParams } from '../../models/encryptedSearch';
+import { Filter, SearchParameters, Sort } from '../../models/tools';
 
 /**
  * Remove wildcard, normalise keyword and recipients

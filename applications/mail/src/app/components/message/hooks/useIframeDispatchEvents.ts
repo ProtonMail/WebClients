@@ -1,5 +1,6 @@
-import { cloneEvent, isKeyboardEvent } from '@proton/shared/lib/helpers/events';
 import { RefObject, useCallback, useEffect } from 'react';
+
+import { cloneEvent, isKeyboardEvent } from '@proton/shared/lib/helpers/events';
 
 const IFRAME_EVENTS_LIST: Event['type'][] = ['focus', 'keydown', 'click'];
 

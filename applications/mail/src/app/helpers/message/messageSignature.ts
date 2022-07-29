@@ -1,15 +1,16 @@
 import { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 import { isPlainText } from '@proton/shared/lib/mail/messages';
+import { getProtonMailSignature } from '@proton/shared/lib/mail/signature';
 import { message } from '@proton/shared/lib/sanitize';
 import isTruthy from '@proton/utils/isTruthy';
-import { getProtonMailSignature } from '@proton/shared/lib/mail/signature';
-import { dedentTpl } from '../dedent';
-import { replaceLineBreaks } from '../string';
-import { parseInDiv, isHTMLEmpty } from '../dom';
-import { getPlainTextContent, exportPlainText } from './messageContent';
-import { CLASSNAME_BLOCKQUOTE } from './messageDraft';
+
 import { MESSAGE_ACTIONS } from '../../constants';
 import { MessageState } from '../../logic/messages/messagesTypes';
+import { dedentTpl } from '../dedent';
+import { isHTMLEmpty, parseInDiv } from '../dom';
+import { replaceLineBreaks } from '../string';
+import { exportPlainText, getPlainTextContent } from './messageContent';
+import { CLASSNAME_BLOCKQUOTE } from './messageDraft';
 
 export const CLASSNAME_SIGNATURE_CONTAINER = 'protonmail_signature_block';
 export const CLASSNAME_SIGNATURE_USER = 'protonmail_signature_block-user';

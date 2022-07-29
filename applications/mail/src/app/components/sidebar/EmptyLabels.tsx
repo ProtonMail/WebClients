@@ -2,16 +2,15 @@ import { c } from 'ttag';
 
 import {
     SidebarListItem,
-    SidebarListItemContent,
     SidebarListItemButton,
+    SidebarListItemContent,
     SidebarListItemContentIcon,
     useModalState,
 } from '@proton/components';
-import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
-import { ACCENT_COLORS, LABEL_TYPE } from '@proton/shared/lib/constants';
-
-import { Label } from '@proton/shared/lib/interfaces/Label';
 import EditLabelModal from '@proton/components/containers/labels/modals/EditLabelModal';
+import { ACCENT_COLORS, LABEL_TYPE } from '@proton/shared/lib/constants';
+import { Label } from '@proton/shared/lib/interfaces/Label';
+import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
 
 interface Props {
     onFocus: () => void;

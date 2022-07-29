@@ -1,6 +1,8 @@
 import { MouseEvent, createElement } from 'react';
+
 import { c, msgid } from 'ttag';
-import { classnames, Icon, IconName, Tooltip } from '@proton/components';
+
+import { Icon, IconName, Tooltip, classnames } from '@proton/components';
 
 import { getNumAttachments } from '../../helpers/elements';
 import { Element } from '../../models/element';

@@ -1,11 +1,12 @@
 import { PayloadAction } from '@reduxjs/toolkit';
 import { Draft } from 'immer';
+
 import { hasLabel } from '../../../helpers/elements';
-import { applyLabelChangesOnMessage, LabelChanges } from '../../../helpers/labels';
+import { LabelChanges, applyLabelChangesOnMessage } from '../../../helpers/labels';
 import { applyMarkAsChangesOnMessage } from '../../../helpers/message/messages';
 import { MarkAsChanges } from '../../../hooks/optimistic/useOptimisticMarkAs';
 import { getLocalID, getMessage } from '../helpers/messagesReducer';
-import { MessagesState, MessageState } from '../messagesTypes';
+import { MessageState, MessagesState } from '../messagesTypes';
 
 export const optimisticApplyLabels = (
     state: Draft<MessagesState>,

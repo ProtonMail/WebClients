@@ -1,8 +1,9 @@
-import { fireEvent, RenderResult } from '@testing-library/react';
-import { EOInitStore, EOOriginalMessageOptions } from '../../../../helpers/test/eo/helpers';
+import { RenderResult, fireEvent } from '@testing-library/react';
+
 import { EORender } from '../../../../helpers/test/eo/EORender';
-import EOReply from '../EOReply';
+import { EOInitStore, EOOriginalMessageOptions } from '../../../../helpers/test/eo/helpers';
 import { addApiMock, waitForNoNotification, waitForNotification } from '../../../../helpers/test/helper';
+import EOReply from '../EOReply';
 
 export const setup = async (options?: EOOriginalMessageOptions) => {
     await EOInitStore('reply', options);

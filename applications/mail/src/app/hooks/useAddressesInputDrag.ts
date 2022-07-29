@@ -1,10 +1,11 @@
-import { useState, DragEvent, RefObject, Dispatch, SetStateAction, useEffect } from 'react';
+import { Dispatch, DragEvent, RefObject, SetStateAction, useEffect, useState } from 'react';
+
 import { generateUID, useCache, useDragOver, useHandler } from '@proton/components';
 import { Recipient } from '@proton/shared/lib/interfaces';
 
-import { RecipientOrGroup } from '../models/address';
 import { DRAG_ADDRESS_KEY } from '../constants';
 import { matchRecipientOrGroup, recipientOrGroupToRecipients } from '../helpers/addresses';
+import { RecipientOrGroup } from '../models/address';
 
 export const ADDRESS_DRAG_CACHE_KEY = 'ADDRESS_DRAG';
 

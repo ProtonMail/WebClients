@@ -1,20 +1,23 @@
+import { useLocation } from 'react-router';
+
+import { c } from 'ttag';
+
+import { Vr } from '@proton/atoms';
 import {
-    Icon,
     DropdownMenu,
     DropdownMenuButton,
     EllipsisLoader,
-    ToolbarButton,
+    Icon,
     Scroll,
+    ToolbarButton,
     classnames,
 } from '@proton/components';
-import { c } from 'ttag';
-import { useLocation } from 'react-router';
-import { Vr } from '@proton/atoms';
-import ToolbarDropdown from './ToolbarDropdown';
-import { usePaging } from '../../hooks/usePaging';
+
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
-import { extractSearchParameters } from '../../helpers/mailboxUrl';
 import { isSearch as testIsSearch } from '../../helpers/elements';
+import { extractSearchParameters } from '../../helpers/mailboxUrl';
+import { usePaging } from '../../hooks/usePaging';
+import ToolbarDropdown from './ToolbarDropdown';
 
 interface Props {
     loading: boolean;

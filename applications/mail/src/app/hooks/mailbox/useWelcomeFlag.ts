@@ -1,6 +1,7 @@
-import { useEffect, DependencyList, useState } from 'react';
+import { DependencyList, useEffect, useState } from 'react';
+
 import { useAuthentication } from '@proton/components';
-import { setItem, getItem } from '@proton/shared/lib/helpers/sessionStorage';
+import { getItem, setItem } from '@proton/shared/lib/helpers/sessionStorage';
 
 /**
  * Returns true the first time (depending on deps) it's called after a login, false every time after

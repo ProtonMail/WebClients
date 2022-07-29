@@ -1,15 +1,16 @@
 import { useState } from 'react';
-import { c } from 'ttag';
 import { useHistory } from 'react-router';
 
-import { PublicKeyReference } from '@proton/crypto';
+import { c } from 'ttag';
+
 import { Button, Tooltip } from '@proton/components';
+import { PublicKeyReference } from '@proton/crypto';
 import { EO_REPLY_NUM_ATTACHMENTS_LIMIT } from '@proton/shared/lib/mail/eo/constants';
 
-import AttachmentsButton from '../../attachment/AttachmentsButton';
-import { MessageKeys, MessageState } from '../../../logic/messages/messagesTypes';
-import { useSendEO } from '../../../hooks/eo/useSendEO';
 import { EO_MAX_REPLIES_NUMBER, EO_MESSAGE_REDIRECT_PATH } from '../../../constants';
+import { useSendEO } from '../../../hooks/eo/useSendEO';
+import { MessageKeys, MessageState } from '../../../logic/messages/messagesTypes';
+import AttachmentsButton from '../../attachment/AttachmentsButton';
 
 interface Props {
     id: string;

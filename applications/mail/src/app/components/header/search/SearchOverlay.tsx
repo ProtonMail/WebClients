@@ -1,25 +1,27 @@
 import {
-    useRef,
-    CSSProperties,
-    useLayoutEffect,
     AnimationEvent,
+    CSSProperties,
     HTMLAttributes,
-    RefObject,
-    ReactNode,
     MouseEvent as ReactMouseEvent,
+    ReactNode,
+    RefObject,
+    useLayoutEffect,
+    useRef,
 } from 'react';
+
 import { c } from 'ttag';
-import noop from '@proton/utils/noop';
+
 import {
+    HotkeyTuple,
     classnames,
     getCustomSizingClasses,
-    HotkeyTuple,
     useDropdownArrowNavigation,
     useFocusTrap,
     useHotkeys,
     useIsClosing,
 } from '@proton/components';
 import { Portal } from '@proton/components/components/portal';
+import noop from '@proton/utils/noop';
 
 interface ContentProps extends HTMLAttributes<HTMLDivElement> {
     ref?: RefObject<HTMLDivElement>;

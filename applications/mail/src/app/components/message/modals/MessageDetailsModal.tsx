@@ -12,21 +12,22 @@ import {
     useFeatures,
     useFolders,
 } from '@proton/components';
-import { getAttachments } from '@proton/shared/lib/mail/messages';
+import { ContactEditProps } from '@proton/components/containers/contacts/edit/ContactEditModal';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { MailSettings } from '@proton/shared/lib/interfaces';
-import { ContactEditProps } from '@proton/components/containers/contacts/edit/ContactEditModal';
+import { getAttachments } from '@proton/shared/lib/mail/messages';
+
+import { getSize } from '../../../helpers/elements';
+import { getCurrentFolders } from '../../../helpers/labels';
+import { MessageViewIcons } from '../../../helpers/message/icon';
+import { getAttachmentCounts } from '../../../helpers/message/messages';
+import { useMessageTrackers } from '../../../hooks/message/useMessageTrackers';
+import { MessageState } from '../../../logic/messages/messagesTypes';
+import { Element } from '../../../models/element';
+import ItemAttachmentIcon from '../../list/ItemAttachmentIcon';
 import ItemDate from '../../list/ItemDate';
 import ItemLocation from '../../list/ItemLocation';
-import ItemAttachmentIcon from '../../list/ItemAttachmentIcon';
 import SpyTrackerIcon from '../../list/spy-tracker/SpyTrackerIcon';
-import { getCurrentFolders } from '../../../helpers/labels';
-import { getSize } from '../../../helpers/elements';
-import { Element } from '../../../models/element';
-import { useMessageTrackers } from '../../../hooks/message/useMessageTrackers';
-import { getAttachmentCounts } from '../../../helpers/message/messages';
-import { MessageState } from '../../../logic/messages/messagesTypes';
-import { MessageViewIcons } from '../../../helpers/message/icon';
 import EncryptionStatusIcon from '../EncryptionStatusIcon';
 import RecipientItem from '../recipients/RecipientItem';
 import RecipientsDetails from '../recipients/RecipientsDetails';

@@ -1,8 +1,9 @@
-import { Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { Api } from '@proton/shared/lib/interfaces';
+import { ES_MAX_PARALLEL_ITEMS, apiHelper } from '@proton/encrypted-search';
 import { getEvents, getLatestID } from '@proton/shared/lib/api/events';
 import { getMessage, queryMessageMetadata } from '@proton/shared/lib/api/messages';
-import { apiHelper, ES_MAX_PARALLEL_ITEMS } from '@proton/encrypted-search';
+import { Api } from '@proton/shared/lib/interfaces';
+import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+
 import { Event } from '../../models/event';
 
 /**

@@ -1,11 +1,14 @@
 import { useState } from 'react';
-import { AlertModal, Button, useAddresses, useModalState } from '@proton/components';
-import { Address } from '@proton/shared/lib/interfaces';
-import { getIsAddressActive } from '@proton/shared/lib/helpers/address';
+
 import { c } from 'ttag';
+
+import { AlertModal, Button, useAddresses, useModalState } from '@proton/components';
+import { getIsAddressActive } from '@proton/shared/lib/helpers/address';
+import { Address } from '@proton/shared/lib/interfaces';
+
 import { MessageChange } from '../../components/composer/Composer';
-import { MessageState } from '../../logic/messages/messagesTypes';
 import { getAddressFromEmail, getFromAddress } from '../../helpers/addresses';
+import { MessageState } from '../../logic/messages/messagesTypes';
 
 interface Props {
     onChange: MessageChange;

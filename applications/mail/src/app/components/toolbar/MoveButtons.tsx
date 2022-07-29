@@ -1,9 +1,11 @@
 import { c } from 'ttag';
-import { Icon, useLoading, useMailSettings, ToolbarButton } from '@proton/components';
-import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+
 import { Vr } from '@proton/atoms';
-import DeleteButton from './DeleteButton';
+import { Icon, ToolbarButton, useLoading, useMailSettings } from '@proton/components';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+
 import { useLabelActions } from '../../hooks/useLabelActions';
+import DeleteButton from './DeleteButton';
 
 const { TRASH, SPAM, ARCHIVE, INBOX } = MAILBOX_LABEL_IDS;
 

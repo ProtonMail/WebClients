@@ -1,27 +1,29 @@
-import { useHandler, useCache } from '@proton/components';
-import { MessageCountsModel, ConversationCountsModel } from '@proton/shared/lib/models';
+import { useDispatch, useStore } from 'react-redux';
+
+import { useCache, useHandler } from '@proton/components';
 import { LabelCount } from '@proton/shared/lib/interfaces/Label';
-import { useStore, useDispatch } from 'react-redux';
-import { hasLabel } from '../../helpers/elements';
+import { ConversationCountsModel, MessageCountsModel } from '@proton/shared/lib/models';
+
 import { replaceCounter } from '../../helpers/counter';
-import { CacheEntry } from '../../models/tools';
-import {
-    optimisticEmptyLabel as optimisticEmptyLabelElements,
-    optimisticRestoreEmptyLabel as optimisticRestoreEmptyLabelElements,
-} from '../../logic/elements/elementsActions';
+import { hasLabel } from '../../helpers/elements';
 import {
     optimisticDelete as optimisticDeleteConversationAction,
     optimisticDeleteConversationMessages as optimisticDeleteConversationMessagesAction,
     optimisticRestore as optimisticRestoreConversationsAction,
 } from '../../logic/conversations/conversationsActions';
-import { RootState } from '../../logic/store';
 import { ConversationState } from '../../logic/conversations/conversationsTypes';
-import { useGetAllConversations } from '../conversation/useConversation';
+import {
+    optimisticEmptyLabel as optimisticEmptyLabelElements,
+    optimisticRestoreEmptyLabel as optimisticRestoreEmptyLabelElements,
+} from '../../logic/elements/elementsActions';
 import { MessageState } from '../../logic/messages/messagesTypes';
 import {
     optimisticEmptyLabel as optimisticEmptyLabelMessage,
     optimisticRestore as optimisticRestoreMessage,
 } from '../../logic/messages/optimistic/messagesOptimisticActions';
+import { RootState } from '../../logic/store';
+import { CacheEntry } from '../../models/tools';
+import { useGetAllConversations } from '../conversation/useConversation';
 
 export const useOptimisticEmptyLabel = () => {
     const store = useStore<RootState>();

@@ -1,9 +1,11 @@
+import { PayloadAction } from '@reduxjs/toolkit';
+import { Draft } from 'immer';
+
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import { canonizeEmail } from '@proton/shared/lib/helpers/email';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { isScheduledSend, isSent, isDraft as testIsDraft } from '@proton/shared/lib/mail/messages';
-import { PayloadAction } from '@reduxjs/toolkit';
-import { Draft } from 'immer';
+
 import { parseLabelIDsInEvent } from '../../../helpers/elements';
 import { LabelIDsChanges, MessageEvent } from '../../../models/event';
 import { getLocalID, getMessage } from '../helpers/messagesReducer';
@@ -11,8 +13,8 @@ import {
     DocumentInitializeParams,
     LoadParams,
     MessageErrors,
-    MessagesState,
     MessageState,
+    MessagesState,
     VerificationParams,
 } from '../messagesTypes';
 

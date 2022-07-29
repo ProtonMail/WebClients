@@ -1,5 +1,6 @@
+import { DependencyList, useMemo, useRef } from 'react';
+
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
-import { useRef, useMemo, DependencyList } from 'react';
 
 /**
  * Special performance oriented useMemo which will store the previous value,

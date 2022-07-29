@@ -1,6 +1,6 @@
 import { Recipient } from '@proton/shared/lib/interfaces';
-import { protonizer, sanitizeString } from '@proton/shared/lib/sanitize';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { protonizer, sanitizeString } from '@proton/shared/lib/sanitize';
 import { unescapeFromString } from '@proton/shared/lib/sanitize/escape';
 
 import { MAILTO_PROTOCOL_HANDLER_PATH } from '../constants';

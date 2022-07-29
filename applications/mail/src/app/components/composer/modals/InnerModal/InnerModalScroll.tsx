@@ -1,5 +1,6 @@
-import { forwardRef, ReactNode, Ref } from 'react';
-import { classnames, ScrollShadows } from '@proton/components';
+import { ReactNode, Ref, forwardRef } from 'react';
+
+import { ScrollShadows, classnames } from '@proton/components';
 
 interface Props {
     children: ReactNode;
