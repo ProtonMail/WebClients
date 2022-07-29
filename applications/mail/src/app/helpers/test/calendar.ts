@@ -1,7 +1,9 @@
+import { getUnixTime } from 'date-fns';
+
+import { PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
 import { createCalendarEvent } from '@proton/shared/lib/calendar/serialize';
 import { getDtendProperty, propertyToUTCDate } from '@proton/shared/lib/calendar/vcalConverter';
 import { getIsAllDay, getPropertyTzid } from '@proton/shared/lib/calendar/vcalHelper';
-import { PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
 import {
     Attendee,
     CalendarEventData,
@@ -9,7 +11,6 @@ import {
     CalendarPersonalEventData,
     VcalVeventComponent,
 } from '@proton/shared/lib/interfaces/calendar';
-import { getUnixTime } from 'date-fns';
 
 const withAuthorCard = (card: Omit<CalendarEventData, 'Author'>, author: string): CalendarEventData => {
     return {

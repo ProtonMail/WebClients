@@ -1,5 +1,6 @@
-import { Api } from '@proton/shared/lib/interfaces';
 import { getMessage } from '@proton/shared/lib/api/messages';
+import { Api } from '@proton/shared/lib/interfaces';
+
 import { MessageState, MessageStateWithData } from '../../logic/messages/messagesTypes';
 
 export const loadMessage = async (message: MessageState, api: Api): Promise<MessageStateWithData> => {

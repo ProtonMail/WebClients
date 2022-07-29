@@ -1,16 +1,18 @@
-import { IMAGE_PROXY_FLAGS, SHOW_IMAGES } from '@proton/shared/lib/constants';
 import { fireEvent } from '@testing-library/dom';
 import {
-    getByText as getByTextDefault,
-    queryByTestId as queryByTestIdDefault,
-    queryAllByTestId as queryAllByTestIdDefault,
     findByText as findByTextDefault,
+    getByText as getByTextDefault,
+    queryAllByTestId as queryAllByTestIdDefault,
+    queryByTestId as queryByTestIdDefault,
 } from '@testing-library/react';
-import { render } from '../../../helpers/test/render';
-import ItemSpyTrackerIcon from './ItemSpyTrackerIcon';
-import { addToCache, minimalCache } from '../../../helpers/test/cache';
+
+import { IMAGE_PROXY_FLAGS, SHOW_IMAGES } from '@proton/shared/lib/constants';
+
 import { setFeatureFlags } from '../../../helpers/test/api';
+import { addToCache, minimalCache } from '../../../helpers/test/cache';
+import { render } from '../../../helpers/test/render';
 import { MessageState } from '../../../logic/messages/messagesTypes';
+import ItemSpyTrackerIcon from './ItemSpyTrackerIcon';
 
 const messageWithTrackers: MessageState = {
     localID: 'messageWithTrackerId',

@@ -1,7 +1,8 @@
 import { c } from 'ttag';
-import { APPS } from '@proton/shared/lib/constants';
+
+import { DialogModal, Href, InnerModal, ModalCloseButton, ModalPropsInjection, QRCode } from '@proton/components';
 import { getAppName } from '@proton/shared/lib/apps/helper';
-import { DialogModal, ModalCloseButton, InnerModal, ModalPropsInjection, QRCode, Href } from '@proton/components';
+import { APPS } from '@proton/shared/lib/constants';
 
 const protonMailAppName = getAppName(APPS.PROTONMAIL);
 

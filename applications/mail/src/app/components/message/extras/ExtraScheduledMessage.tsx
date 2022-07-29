@@ -1,24 +1,27 @@
 import { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
+
+import { isToday, isTomorrow } from 'date-fns';
+import { c } from 'ttag';
+
 import {
     AlertModal,
     Button,
     Icon,
+    classnames,
     useApi,
     useEventManager,
     useModalState,
     useNotifications,
-    classnames,
 } from '@proton/components';
-import { c } from 'ttag';
 import { cancelSend } from '@proton/shared/lib/api/messages';
 import { isScheduled } from '@proton/shared/lib/mail/messages';
-import { useDispatch } from 'react-redux';
-import { isToday, isTomorrow } from 'date-fns';
+
 import { PREVENT_CANCEL_SEND_INTERVAL } from '../../../constants';
-import { formatDateToHuman } from '../../../helpers/date';
 import { useOnCompose } from '../../../containers/ComposeProvider';
-import { MessageState } from '../../../logic/messages/messagesTypes';
+import { formatDateToHuman } from '../../../helpers/date';
 import { cancelScheduled } from '../../../logic/messages/draft/messagesDraftActions';
+import { MessageState } from '../../../logic/messages/messagesTypes';
 
 interface Props {
     message: MessageState;

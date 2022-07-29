@@ -1,3 +1,5 @@
+import { c } from 'ttag';
+
 import {
     AlertModal,
     Button,
@@ -7,8 +9,8 @@ import {
     useEventManager,
     useNotifications,
 } from '@proton/components';
-import { c } from 'ttag';
 import { deleteMessages } from '@proton/shared/lib/api/messages';
+
 import { getDeleteTitle, getModalText, getNotificationText } from '../../../hooks/usePermanentDelete';
 import { MessageState } from '../../../logic/messages/messagesTypes';
 

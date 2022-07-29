@@ -1,6 +1,8 @@
-import { c } from 'ttag';
-import { Button, Icon, InputFieldTwo } from '@proton/components';
 import { ChangeEventHandler, MouseEventHandler, ReactNode } from 'react';
+
+import { c } from 'ttag';
+
+import { Button, Icon, InputFieldTwo } from '@proton/components';
 
 interface Props {
     onSubmit: MouseEventHandler<HTMLButtonElement>;

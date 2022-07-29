@@ -1,7 +1,7 @@
-import { ReactNode, FormEvent } from 'react';
+import { FormEvent, ReactNode } from 'react';
 
-import noop from '@proton/utils/noop';
 import { classnames } from '@proton/components';
+import noop from '@proton/utils/noop';
 
 interface Props {
     children: ReactNode;

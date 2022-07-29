@@ -1,4 +1,5 @@
 import { createAction } from '@reduxjs/toolkit';
+
 import { LabelChanges } from '../../../helpers/labels';
 import { MarkAsChanges } from '../../../hooks/optimistic/useOptimisticMarkAs';
 import { MessageState } from '../messagesTypes';

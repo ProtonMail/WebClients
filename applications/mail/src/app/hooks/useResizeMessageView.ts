@@ -1,7 +1,8 @@
 import { RefObject, useCallback, useEffect, useState } from 'react';
-import { useHotkeys, useWindowSize, useHandler } from '@proton/components';
-import throttle from '@proton/utils/throttle';
+
+import { useHandler, useHotkeys, useWindowSize } from '@proton/components';
 import { getItem, setItem } from '@proton/shared/lib/helpers/storage';
+import throttle from '@proton/utils/throttle';
 
 export const useResizeMessageView = (
     containerRef: RefObject<HTMLDivElement>,

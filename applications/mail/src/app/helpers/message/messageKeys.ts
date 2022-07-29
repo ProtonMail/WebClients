@@ -1,13 +1,14 @@
-import { arrayToBinaryString } from '@proton/crypto/lib/utils';
 import { CryptoProxy, WorkerDecryptionResult } from '@proton/crypto';
+import { arrayToBinaryString } from '@proton/crypto/lib/utils';
 import { splitExtension } from '@proton/shared/lib/helpers/file';
-import isTruthy from '@proton/utils/isTruthy';
 import { Api } from '@proton/shared/lib/interfaces';
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { getParsedAutocryptHeader } from '@proton/shared/lib/mail/autocrypt';
+import isTruthy from '@proton/utils/isTruthy';
+
 import { LARGE_KEY_SIZE } from '../../constants';
-import { get } from '../attachment/attachmentLoader';
 import { MessageKeys } from '../../logic/messages/messagesTypes';
+import { get } from '../attachment/attachmentLoader';
 
 /**
  * Look through a message attachments if there are keys

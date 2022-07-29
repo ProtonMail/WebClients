@@ -1,17 +1,9 @@
 import { FormEvent } from 'react';
+
 import { c, msgid } from 'ttag';
-import { PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
-import { getContact, updateContact } from '@proton/shared/lib/api/contacts';
-import { processApiRequestsSafe } from '@proton/shared/lib/api/helpers/safeApiRequests';
-import { pinKeyUpdateContact } from '@proton/shared/lib/contacts/keyPinning';
-import { Api } from '@proton/shared/lib/interfaces';
-import { ContactCard, ContactWithBePinnedPublicKey } from '@proton/shared/lib/interfaces/contacts';
-import { RequireSome } from '@proton/shared/lib/interfaces/utils';
-import { splitKeys } from '@proton/shared/lib/keys/keys';
-import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+
 import {
     Button,
-    classnames,
     Href,
     ModalProps,
     ModalTwo,
@@ -19,11 +11,21 @@ import {
     ModalTwoFooter,
     ModalTwoHeader,
     PrimaryButton,
+    classnames,
     useApi,
     useLoading,
     useNotifications,
     useUserKeys,
 } from '@proton/components';
+import { PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
+import { getContact, updateContact } from '@proton/shared/lib/api/contacts';
+import { processApiRequestsSafe } from '@proton/shared/lib/api/helpers/safeApiRequests';
+import { pinKeyUpdateContact } from '@proton/shared/lib/contacts/keyPinning';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import { Api } from '@proton/shared/lib/interfaces';
+import { ContactCard, ContactWithBePinnedPublicKey } from '@proton/shared/lib/interfaces/contacts';
+import { RequireSome } from '@proton/shared/lib/interfaces/utils';
+import { splitKeys } from '@proton/shared/lib/keys/keys';
 
 interface Params {
     contact: RequireSome<ContactWithBePinnedPublicKey, 'contactID'>;

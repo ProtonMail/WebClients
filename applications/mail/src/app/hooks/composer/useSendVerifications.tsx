@@ -1,28 +1,31 @@
+import { useCallback } from 'react';
+
+import { c, msgid } from 'ttag';
+
+import { useGetEncryptionPreferences, useModals, useNotifications } from '@proton/components';
+import { serverTime } from '@proton/crypto';
+import { HOUR } from '@proton/shared/lib/constants';
+import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
+import { normalize } from '@proton/shared/lib/helpers/string';
+import { languageCode, localeCode } from '@proton/shared/lib/i18n';
 import { SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import { EncryptionPreferencesError } from '@proton/shared/lib/mail/encryptionPreferences';
 import { getRecipients, getRecipientsAddresses } from '@proton/shared/lib/mail/messages';
-import { useCallback } from 'react';
-import { c, msgid } from 'ttag';
-import unique from '@proton/utils/unique';
-import { useGetEncryptionPreferences, useModals, useNotifications } from '@proton/components';
-import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import getSendPreferences from '@proton/shared/lib/mail/send/getSendPreferences';
-import { normalize } from '@proton/shared/lib/helpers/string';
-import { HOUR } from '@proton/shared/lib/constants';
-import { serverTime } from '@proton/crypto';
-import { languageCode, localeCode } from '@proton/shared/lib/i18n';
-import SendWithErrorsModal from '../../components/composer/addresses/SendWithErrorsModal';
-import { removeMessageRecipients, uniqueMessageRecipients } from '../../helpers/message/cleanMessage';
-import SendWithWarningsModal from '../../components/composer/addresses/SendWithWarningsModal';
-import SendWithExpirationModal from '../../components/composer/addresses/SendWithExpirationModal';
+import unique from '@proton/utils/unique';
+
 import SendWithChangedPreferencesModal from '../../components/composer/addresses/SendWithChangedPreferencesModal';
-import { MapSendInfo } from '../../models/crypto';
-import { locateBlockquote } from '../../helpers/message/messageBlockquote';
+import SendWithErrorsModal from '../../components/composer/addresses/SendWithErrorsModal';
+import SendWithExpirationModal from '../../components/composer/addresses/SendWithExpirationModal';
+import SendWithWarningsModal from '../../components/composer/addresses/SendWithWarningsModal';
 import { MESSAGE_ALREADY_SENT_INTERNAL_ERROR } from '../../constants';
+import { removeMessageRecipients, uniqueMessageRecipients } from '../../helpers/message/cleanMessage';
+import { locateBlockquote } from '../../helpers/message/messageBlockquote';
 import { MessageStateWithData } from '../../logic/messages/messagesTypes';
-import { useGetMessage } from '../message/useMessage';
+import { MapSendInfo } from '../../models/crypto';
 import { useContactsMap } from '../contact/useContacts';
+import { useGetMessage } from '../message/useMessage';
 
 const FR_REGEX =
     /voir pi\u00e8ce jointe|voir pi\u00e8ces jointes|voir fichier joint|voir fichiers joints|voir fichier associ\u00e9|voir fichiers associ\u00e9s|joint|joints|jointe|jointes|joint \u00e0 cet e-mail|jointe \u00e0 cet e-mail|joints \u00e0 cet e-mail|jointes \u00e0 cet e-mail|joint \u00e0 ce message|jointe \u00e0 ce message|joints \u00e0 ce message|jointes \u00e0 ce message|je joins|j'ai joint|ci-joint|pi\u00e8ce jointe|pi\u00e8ces jointes|fichier joint|fichiers joints|voir le fichier joint|voir les fichiers joints|voir la pi\u00e8ce jointe|voir les pi\u00e8ces jointes/gi;

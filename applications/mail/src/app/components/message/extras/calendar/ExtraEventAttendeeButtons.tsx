@@ -1,34 +1,37 @@
+import { Dispatch, SetStateAction, useCallback } from 'react';
+
+import { c } from 'ttag';
+
+import {
+    CalendarInviteButtons,
+    InlineLinkButton,
+    Loader,
+    useLoading,
+    useNotifications,
+    useSideApp,
+} from '@proton/components';
+import Banner, { BannerBackgroundColor } from '@proton/components/components/banner/Banner';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { ICAL_ATTENDEE_STATUS, ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
 import { reformatApiErrorMessage } from '@proton/shared/lib/calendar/helper';
+import {
+    EVENT_INVITATION_ERROR_TYPE,
+    EventInvitationError,
+    getErrorMessage,
+} from '@proton/shared/lib/calendar/icsSurgery/EventInvitationError';
 import { getAttendeePartstat, getAttendeeToken } from '@proton/shared/lib/calendar/vcalHelper';
+import { APPS } from '@proton/shared/lib/constants';
 import { ApiError } from '@proton/shared/lib/fetch/ApiError';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { Participant, SavedInviteData } from '@proton/shared/lib/interfaces/calendar';
 import { RequireSome } from '@proton/shared/lib/interfaces/utils';
 import { EncryptionPreferencesError } from '@proton/shared/lib/mail/encryptionPreferences';
-import { formatSubject, RE_PREFIX } from '@proton/shared/lib/mail/messages';
-import {
-    EVENT_INVITATION_ERROR_TYPE,
-    EventInvitationError,
-    getErrorMessage,
-} from '@proton/shared/lib/calendar/icsSurgery/EventInvitationError';
+import { RE_PREFIX, formatSubject } from '@proton/shared/lib/mail/messages';
 import { postMessageToIframe } from '@proton/shared/lib/sideApp/helpers';
 import { SIDE_APP_EVENTS } from '@proton/shared/lib/sideApp/models';
-import { APPS } from '@proton/shared/lib/constants';
-import { useCallback, Dispatch, SetStateAction } from 'react';
-import {
-    InlineLinkButton,
-    Loader,
-    useLoading,
-    useNotifications,
-    CalendarInviteButtons,
-    useSideApp,
-} from '@proton/components';
-import { c } from 'ttag';
-import Banner, { BannerBackgroundColor } from '@proton/components/components/banner/Banner';
-import { getDisableButtons, InvitationModel, UPDATE_ACTION } from '../../../../helpers/calendar/invite';
+
+import { InvitationModel, UPDATE_ACTION, getDisableButtons } from '../../../../helpers/calendar/invite';
 import useInviteButtons from '../../../../hooks/useInviteButtons';
 import { MessageState } from '../../../../logic/messages/messagesTypes';
 

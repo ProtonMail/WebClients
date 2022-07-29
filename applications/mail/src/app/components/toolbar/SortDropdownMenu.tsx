@@ -1,8 +1,10 @@
-import { classnames, DropdownMenu, DropdownMenuButton, Icon } from '@proton/components';
 import { c } from 'ttag';
+
+import { DropdownMenu, DropdownMenuButton, Icon, classnames } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import { Sort } from '../../models/tools';
+
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
+import { Sort } from '../../models/tools';
 
 const TIME = 'Time';
 const SIZE = 'Size';

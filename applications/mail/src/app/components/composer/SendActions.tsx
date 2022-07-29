@@ -1,8 +1,9 @@
-import { forwardRef, ReactNode, Ref } from 'react';
+import { ReactNode, Ref, forwardRef } from 'react';
+
 import { c } from 'ttag';
 
-import ButtonGroup, { Color, Shape } from '@proton/components/components/button/ButtonGroup';
 import Button from '@proton/components/components/button/Button';
+import ButtonGroup, { Color, Shape } from '@proton/components/components/button/ButtonGroup';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import SimpleDropdown from '@proton/components/components/dropdown/SimpleDropdown';
 

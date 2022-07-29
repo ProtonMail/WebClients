@@ -1,5 +1,7 @@
 import { ReactNode } from 'react';
+
 import { classnames } from '@proton/components';
+
 import UndoButton from './UndoButton';
 
 interface Props {

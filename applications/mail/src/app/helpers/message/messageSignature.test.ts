@@ -1,14 +1,14 @@
 import { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
-import { message } from '@proton/shared/lib/sanitize';
 import { getProtonMailSignature } from '@proton/shared/lib/mail/signature';
+import { message } from '@proton/shared/lib/sanitize';
 
-import {
-    insertSignature,
-    CLASSNAME_SIGNATURE_CONTAINER,
-    CLASSNAME_SIGNATURE_USER,
-    CLASSNAME_SIGNATURE_EMPTY,
-} from './messageSignature';
 import { MESSAGE_ACTIONS } from '../../constants';
+import {
+    CLASSNAME_SIGNATURE_CONTAINER,
+    CLASSNAME_SIGNATURE_EMPTY,
+    CLASSNAME_SIGNATURE_USER,
+    insertSignature,
+} from './messageSignature';
 
 const content = '<p>test</p>';
 const signature = `

@@ -1,16 +1,17 @@
-import { binaryStringToArray, concatArrays, decodeBase64 } from '@proton/crypto/lib/utils';
 import {
     CryptoProxy,
     PublicKeyReference,
-    WorkerDecryptionResult,
     SessionKey,
     VERIFICATION_STATUS,
+    WorkerDecryptionResult,
 } from '@proton/crypto';
+import { binaryStringToArray, concatArrays, decodeBase64 } from '@proton/crypto/lib/utils';
 import { getAttachment } from '@proton/shared/lib/api/attachments';
+import { getEOAttachment } from '@proton/shared/lib/api/eo';
 import { Api } from '@proton/shared/lib/interfaces';
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { getEOSessionKey, getSessionKey } from '@proton/shared/lib/mail/send/attachments';
-import { getEOAttachment } from '@proton/shared/lib/api/eo';
+
 import { MessageKeys, MessageVerification } from '../../logic/messages/messagesTypes';
 
 // Reference: Angular/src/app/attachments/services/AttachmentLoader.js

@@ -1,46 +1,49 @@
+import { useCallback } from 'react';
+import { useDispatch } from 'react-redux';
+
+import { PayloadAction } from '@reduxjs/toolkit';
+
+import { useApi, useMailSettings } from '@proton/components';
+import { WorkerDecryptionResult } from '@proton/crypto';
+import { wait } from '@proton/shared/lib/helpers/promise';
 import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { isDraft, isPlainText } from '@proton/shared/lib/mail/messages';
-import { useCallback } from 'react';
-import { useApi, useMailSettings } from '@proton/components';
-import { wait } from '@proton/shared/lib/helpers/promise';
-import { useDispatch } from 'react-redux';
-import { WorkerDecryptionResult } from '@proton/crypto';
-import { PayloadAction } from '@reduxjs/toolkit';
-import { loadMessage } from '../../helpers/message/messageRead';
-import { useGetMessageKeys } from './useGetMessageKeys';
-import { decryptMessage } from '../../helpers/message/messageDecrypt';
-import { Preparation, prepareHtml, preparePlainText } from '../../helpers/transforms/transforms';
-import { isNetworkError } from '../../helpers/errors';
-import { useBase64Cache } from '../useBase64Cache';
-import { useMarkAs, MARK_AS_STATUS } from '../useMarkAs';
-import { isUnreadMessage } from '../../helpers/elements';
+
 import { LOAD_RETRY_COUNT, LOAD_RETRY_DELAY } from '../../constants';
-import { useKeyVerification } from './useKeyVerification';
-import {
-    MessageErrors,
-    MessageImages,
-    MessageState,
-    MessageStateWithData,
-    LoadEmbeddedResults,
-    MessageRemoteImage,
-    LoadRemoteResults,
-    LoadEmbeddedParams,
-} from '../../logic/messages/messagesTypes';
-import { useGetMessage } from './useMessage';
-import {
-    documentInitializePending,
-    documentInitializeFulfilled,
-    load,
-} from '../../logic/messages/read/messagesReadActions';
+import { getPureAttachments } from '../../helpers/attachment/attachment';
+import { isUnreadMessage } from '../../helpers/elements';
+import { isNetworkError } from '../../helpers/errors';
+import { decryptMessage } from '../../helpers/message/messageDecrypt';
+import { loadMessage } from '../../helpers/message/messageRead';
+import { Preparation, prepareHtml, preparePlainText } from '../../helpers/transforms/transforms';
+import { updateAttachment } from '../../logic/attachments/attachmentsActions';
 import {
     loadEmbedded,
-    loadRemoteProxy,
-    loadRemoteDirect,
     loadFakeProxy,
+    loadRemoteDirect,
+    loadRemoteProxy,
 } from '../../logic/messages/images/messagesImagesActions';
+import {
+    LoadEmbeddedParams,
+    LoadEmbeddedResults,
+    LoadRemoteResults,
+    MessageErrors,
+    MessageImages,
+    MessageRemoteImage,
+    MessageState,
+    MessageStateWithData,
+} from '../../logic/messages/messagesTypes';
+import {
+    documentInitializeFulfilled,
+    documentInitializePending,
+    load,
+} from '../../logic/messages/read/messagesReadActions';
 import { useGetAttachment } from '../useAttachment';
-import { updateAttachment } from '../../logic/attachments/attachmentsActions';
-import { getPureAttachments } from '../../helpers/attachment/attachment';
+import { useBase64Cache } from '../useBase64Cache';
+import { MARK_AS_STATUS, useMarkAs } from '../useMarkAs';
+import { useGetMessageKeys } from './useGetMessageKeys';
+import { useKeyVerification } from './useKeyVerification';
+import { useGetMessage } from './useMessage';
 
 export const useInitializeMessage = (localID: string, labelID?: string) => {
     const api = useApi();

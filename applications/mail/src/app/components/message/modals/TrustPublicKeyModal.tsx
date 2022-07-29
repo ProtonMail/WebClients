@@ -1,4 +1,5 @@
-import { API_CODES, CONTACT_CARD_TYPE } from '@proton/shared/lib/constants';
+import { c } from 'ttag';
+
 import {
     Button,
     Form,
@@ -15,14 +16,14 @@ import {
     useLoading,
     useNotifications,
 } from '@proton/components';
-import { c } from 'ttag';
 import { PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
 import { addContacts, getContact, updateContact } from '@proton/shared/lib/api/contacts';
+import { API_CODES, CONTACT_CARD_TYPE } from '@proton/shared/lib/constants';
 import { pinKeyCreateContact, pinKeyUpdateContact } from '@proton/shared/lib/contacts/keyPinning';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { Api } from '@proton/shared/lib/interfaces';
 import { ContactCard, ContactWithBePinnedPublicKey } from '@proton/shared/lib/interfaces/contacts';
 import { splitKeys } from '@proton/shared/lib/keys/keys';
-import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import SimplePublicKeyTable from './SimplePublicKeyTable';
 

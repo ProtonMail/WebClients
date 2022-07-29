@@ -1,26 +1,27 @@
 import { findByText } from '@testing-library/dom';
 
-import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
-import {
-    clearAll,
-    addApiMock,
-    generateKeys,
-    addKeysToAddressKeysCache,
-    encryptMessage,
-    GeneratedKey,
-    api,
-    addApiKeys,
-    addKeysToUserKeysCache,
-    assertIcon,
-} from '../../../helpers/test/helper';
-import { setupCryptoProxyForTesting, releaseCryptoProxy } from '../../../helpers/test/crypto';
-import { constructMime } from '../../../helpers/send/sendMimeBuilder';
+import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
+
 import { parseInDiv } from '../../../helpers/dom';
-import { X_PM_HEADERS } from '../../../models/crypto';
+import { constructMime } from '../../../helpers/send/sendMimeBuilder';
 import { addApiContact } from '../../../helpers/test/contact';
-import { localID, addressID, body, messageID, setup, subject, getIframeRootDiv } from './Message.test.helpers';
+import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../helpers/test/crypto';
+import {
+    GeneratedKey,
+    addApiKeys,
+    addApiMock,
+    addKeysToAddressKeysCache,
+    addKeysToUserKeysCache,
+    api,
+    assertIcon,
+    clearAll,
+    encryptMessage,
+    generateKeys,
+} from '../../../helpers/test/helper';
 import { MessageKeys } from '../../../logic/messages/messagesTypes';
+import { X_PM_HEADERS } from '../../../models/crypto';
+import { addressID, body, getIframeRootDiv, localID, messageID, setup, subject } from './Message.test.helpers';
 
 jest.setTimeout(20000);
 

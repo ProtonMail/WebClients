@@ -1,8 +1,10 @@
 import { Fragment } from 'react';
+
 import { ContactEditProps } from '@proton/components/containers/contacts/edit/ContactEditModal';
+
+import { RecipientOrGroup } from '../../../models/address';
 import { MapStatusIcons } from '../../../models/crypto';
 import RecipientItem from './RecipientItem';
-import { RecipientOrGroup } from '../../../models/address';
 
 interface Props {
     recipientsOrGroup: RecipientOrGroup[];

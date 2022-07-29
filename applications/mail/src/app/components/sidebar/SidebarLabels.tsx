@@ -2,9 +2,9 @@ import { memo } from 'react';
 
 import { Label } from '@proton/shared/lib/interfaces/Label';
 
-import SidebarItem from './SidebarItem';
 import EmptyLabels from './EmptyLabels';
 import { UnreadCounts } from './MailSidebarList';
+import SidebarItem from './SidebarItem';
 
 interface Props {
     currentLabelID: string;

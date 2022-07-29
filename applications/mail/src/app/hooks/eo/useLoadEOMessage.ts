@@ -2,7 +2,8 @@ import { useCallback, useEffect, useMemo } from 'react';
 import { useDispatch, useSelector, useStore } from 'react-redux';
 
 import { useApi } from '@proton/components';
-import { RootState } from '../../logic/eo/eoStore';
+
+import { loadEOToken } from '../../logic/eo/eoActions';
 import {
     eoDecryptedTokenSelector,
     eoMessageSelector,
@@ -11,7 +12,7 @@ import {
     isStoreInitializedSelector,
     passwordSelector,
 } from '../../logic/eo/eoSelectors';
-import { loadEOToken } from '../../logic/eo/eoActions';
+import { RootState } from '../../logic/eo/eoStore';
 import { OutsideKey } from '../../logic/messages/messagesTypes';
 
 export const useGetEOMessage = () => {

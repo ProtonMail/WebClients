@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+
 import { Icons } from '@proton/components';
 
 const PublicLayout = ({ children }) => {

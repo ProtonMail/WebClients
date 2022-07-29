@@ -1,10 +1,12 @@
 import { fireEvent } from '@testing-library/dom';
+
 import { MIME_TYPES } from '@proton/shared/lib/constants';
+
 import { clearAll, createDocument, waitForSpyCall } from '../../../helpers/test/helper';
 import { render } from '../../../helpers/test/render';
+import * as useSaveDraft from '../../../hooks/message/useSaveDraft';
 import Composer from '../Composer';
 import { ID, prepareMessage, props } from './Composer.test.helpers';
-import * as useSaveDraft from '../../../hooks/message/useSaveDraft';
 
 jest.setTimeout(20000);
 

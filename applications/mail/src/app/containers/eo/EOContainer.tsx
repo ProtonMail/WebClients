@@ -1,9 +1,9 @@
 import { useCallback, useState } from 'react';
 import { Provider as ReduxProvider } from 'react-redux';
 
-import { APPS } from '@proton/shared/lib/constants';
 import { ExperimentsProvider, FeaturesProvider, ModalsChildren } from '@proton/components';
 import ForceRefreshContext from '@proton/components/containers/forceRefresh/context';
+import { APPS } from '@proton/shared/lib/constants';
 
 import { store } from '../../logic/eo/eoStore';
 import EOPageContainer from './EOPageContainer';

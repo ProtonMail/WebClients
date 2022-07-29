@@ -1,10 +1,12 @@
 import { useCallback } from 'react';
-import { useApi, useGetEncryptionPreferences } from '@proton/components';
 import { useDispatch } from 'react-redux';
+
+import { useApi, useGetEncryptionPreferences } from '@proton/components';
+
 import { loadMessage } from '../../helpers/message/messageRead';
-import { useGetMessage } from './useMessage';
 import { MessageState } from '../../logic/messages/messagesTypes';
 import { resign } from '../../logic/messages/read/messagesReadActions';
+import { useGetMessage } from './useMessage';
 
 export const useResignContact = (localID: string) => {
     const getEncryptionPreferences = useGetEncryptionPreferences();

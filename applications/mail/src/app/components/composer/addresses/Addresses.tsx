@@ -1,15 +1,17 @@
-import { MutableRefObject, useEffect, useRef, MouseEvent, useCallback } from 'react';
-import noop from '@proton/utils/noop';
-import { ContactSelectorModal, useToggle, useContactModals } from '@proton/components';
-import { Recipient } from '@proton/shared/lib/interfaces';
+import { MouseEvent, MutableRefObject, useCallback, useEffect, useRef } from 'react';
+
+import { ContactSelectorModal, useContactModals, useToggle } from '@proton/components';
 import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
 import { ContactSelectorProps } from '@proton/components/containers/contacts/selector/ContactSelectorModal';
+import { Recipient } from '@proton/shared/lib/interfaces';
+import noop from '@proton/utils/noop';
+
+import { MessageSendInfo } from '../../../hooks/useSendInfo';
+import { MessageState } from '../../../logic/messages/messagesTypes';
+import { RecipientType } from '../../../models/address';
+import { MessageChange } from '../Composer';
 import AddressesEditor from './AddressesEditor';
 import AddressesSummary from './AddressesSummary';
-import { MessageChange } from '../Composer';
-import { MessageSendInfo } from '../../../hooks/useSendInfo';
-import { RecipientType } from '../../../models/address';
-import { MessageState } from '../../../logic/messages/messagesTypes';
 
 interface Props {
     message: MessageState;

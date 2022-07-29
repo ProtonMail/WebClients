@@ -1,13 +1,16 @@
-import { memo, Fragment, MouseEvent, FocusEvent } from 'react';
+import { FocusEvent, Fragment, MouseEvent, memo } from 'react';
+
+import { c } from 'ttag';
+
+import { Button, Icon, Label, Tooltip, classnames } from '@proton/components';
+import { Recipient } from '@proton/shared/lib/interfaces/Address';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { getRecipients } from '@proton/shared/lib/mail/messages';
-import { c } from 'ttag';
-import { Label, classnames, Button, Icon, Tooltip } from '@proton/components';
-import { Recipient } from '@proton/shared/lib/interfaces/Address';
-import { MapSendInfo, STATUS_ICONS_FILLS } from '../../../models/crypto';
-import { RecipientType, recipientTypes } from '../../../models/address';
-import EncryptionStatusIcon from '../../message/EncryptionStatusIcon';
+
 import { useRecipientLabel } from '../../../hooks/contact/useRecipientLabel';
+import { RecipientType, recipientTypes } from '../../../models/address';
+import { MapSendInfo, STATUS_ICONS_FILLS } from '../../../models/crypto';
+import EncryptionStatusIcon from '../../message/EncryptionStatusIcon';
 
 interface Props {
     message: Message | undefined;

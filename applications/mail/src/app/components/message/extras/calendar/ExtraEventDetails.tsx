@@ -1,18 +1,19 @@
 import { useMemo, useRef } from 'react';
 
-import CalendarSelectIcon from '@proton/components/components/calendarSelect/CalendarSelectIcon';
-import { restrictedCalendarSanitize } from '@proton/shared/lib/calendar/sanitize';
-import urlify from '@proton/shared/lib/calendar/urlify';
-import { RequireSome } from '@proton/shared/lib/interfaces/utils';
+import { c } from 'ttag';
+
 import { IconRow, useMailSettings } from '@proton/components';
+import CalendarSelectIcon from '@proton/components/components/calendarSelect/CalendarSelectIcon';
+import { useLinkHandler } from '@proton/components/hooks/useLinkHandler';
 import { ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
 import { getFrequencyString } from '@proton/shared/lib/calendar/integration/getFrequencyString';
-import { dateLocale } from '@proton/shared/lib/i18n';
+import { restrictedCalendarSanitize } from '@proton/shared/lib/calendar/sanitize';
+import urlify from '@proton/shared/lib/calendar/urlify';
 import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
-import { useLinkHandler } from '@proton/components/hooks/useLinkHandler';
+import { dateLocale } from '@proton/shared/lib/i18n';
+import { RequireSome } from '@proton/shared/lib/interfaces/utils';
 
-import { c } from 'ttag';
-import { getParticipantsList, InvitationModel } from '../../../../helpers/calendar/invite';
+import { InvitationModel, getParticipantsList } from '../../../../helpers/calendar/invite';
 import ExtraEventParticipants from './ExtraEventParticipants';
 
 const { REFRESH, REPLY } = ICAL_METHOD;

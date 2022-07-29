@@ -1,6 +1,8 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { c } from 'ttag';
 import { useLocation } from 'react-router-dom';
+
+import { c } from 'ttag';
+
 import {
     FeatureCode,
     HotkeyTuple,
@@ -19,20 +21,20 @@ import {
     useModalState,
     useUser,
 } from '@proton/components';
-import { APPS, MAILBOX_LABEL_IDS, SHOW_MOVED } from '@proton/shared/lib/constants';
-import isTruthy from '@proton/utils/isTruthy';
-import { buildTreeview } from '@proton/shared/lib/helpers/folder';
-import { Folder, FolderWithSubFolders } from '@proton/shared/lib/interfaces/Folder';
-import { getItem, setItem } from '@proton/shared/lib/helpers/storage';
-import { scrollIntoView } from '@proton/shared/lib/helpers/dom';
 import EditLabelModal from '@proton/components/containers/labels/modals/EditLabelModal';
+import { APPS, MAILBOX_LABEL_IDS, SHOW_MOVED } from '@proton/shared/lib/constants';
+import { scrollIntoView } from '@proton/shared/lib/helpers/dom';
+import { buildTreeview } from '@proton/shared/lib/helpers/folder';
+import { getItem, setItem } from '@proton/shared/lib/helpers/storage';
+import { Folder, FolderWithSubFolders } from '@proton/shared/lib/interfaces/Folder';
+import isTruthy from '@proton/utils/isTruthy';
 
 import { getCounterMap } from '../../helpers/elements';
 import { isConversationMode } from '../../helpers/mailSettings';
-import SidebarItem from './SidebarItem';
-import SidebarFolders from './SidebarFolders';
-import SidebarLabels from './SidebarLabels';
 import { useDeepMemo } from '../../hooks/useDeepMemo';
+import SidebarFolders from './SidebarFolders';
+import SidebarItem from './SidebarItem';
+import SidebarLabels from './SidebarLabels';
 
 export type UnreadCounts = { [labelID: string]: number | undefined };
 

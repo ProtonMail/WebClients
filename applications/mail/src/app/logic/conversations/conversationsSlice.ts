@@ -1,41 +1,42 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { ConversationsState } from './conversationsTypes';
+
+import { globalReset } from '../actions';
 import {
     applyLabelsOnConversation,
     applyLabelsOnConversationMessages,
     deleteConversation,
+    eventConversationUpdate,
+    eventDelete,
+    eventMessageUpdate,
     initialize,
     load,
     optimisticDelete,
     optimisticDeleteConversationMessages,
+    optimisticMarkAsConversation,
+    optimisticMarkAsConversationMessages,
     optimisticRestore,
     retryLoading,
-    optimisticMarkAsConversationMessages,
-    optimisticMarkAsConversation,
     updateConversation,
-    eventDelete,
-    eventMessageUpdate,
-    eventConversationUpdate,
 } from './conversationsActions';
 import {
+    applyLabelsOnConversationMessages as applyLabelsOnConversationMessagesReducer,
+    applyLabelsOnConversation as applyLabelsOnConversationReducer,
+    deleteConversation as deleteConversationReducer,
+    eventConversationUpdate as eventConversationUpdateReducer,
+    eventMessagesUpdates as eventMessageUpdateReducer,
     globalReset as globalResetReducer,
     initialize as initializeReducer,
     loadFulfilled,
     loadRejected,
-    retryLoading as retryLoadingReducer,
-    applyLabelsOnConversationMessages as applyLabelsOnConversationMessagesReducer,
-    applyLabelsOnConversation as applyLabelsOnConversationReducer,
-    deleteConversation as deleteConversationReducer,
-    optimisticDelete as optimisticDeleteReducer,
     optimisticDeleteConversationMessages as optimisticDeleteConversationMessagesReducer,
-    optimisticRestore as optimisticRestoreReducer,
+    optimisticDelete as optimisticDeleteReducer,
     optimisticMarkAsConversationMessages as optimisticMarkAsConversationMessagesReducer,
     optimisticMarkAsConversation as optimisticMarkAsConversationReducer,
+    optimisticRestore as optimisticRestoreReducer,
+    retryLoading as retryLoadingReducer,
     updateConversation as updateConversationReducer,
-    eventMessagesUpdates as eventMessageUpdateReducer,
-    eventConversationUpdate as eventConversationUpdateReducer,
 } from './conversationsReducers';
-import { globalReset } from '../actions';
+import { ConversationsState } from './conversationsTypes';
 
 const conversationSlice = createSlice({
     name: 'conversations',

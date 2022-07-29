@@ -1,5 +1,7 @@
-import { Message, Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { createAction } from '@reduxjs/toolkit';
+
+import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
+
 import { MessageEmbeddedImage, MessageState } from '../messagesTypes';
 
 export const createDraft = createAction<MessageState>('message/draft/create');
@@ -16,10 +18,11 @@ export const updateExpires = createAction<{ ID: string; expiresIn: number }>('me
 
 export const startSending = createAction<string>('messages/send/start');
 
-export const sendModifications =
-    createAction<{ ID: string; attachments: Attachment[]; images: MessageEmbeddedImage[] }>(
-        'messages/send/modifications'
-    );
+export const sendModifications = createAction<{
+    ID: string;
+    attachments: Attachment[];
+    images: MessageEmbeddedImage[];
+}>('messages/send/modifications');
 
 export const endUndo = createAction<string>('message/send/endUndo');
 

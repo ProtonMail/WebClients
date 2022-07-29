@@ -1,7 +1,8 @@
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
+
 import { clearAll, getHistory } from '../../../helpers/test/helper';
-import { sendEvent, setup, getElements } from './Mailbox.test.helpers';
 import * as useApplyLabels from '../../../hooks/useApplyLabels';
+import { getElements, sendEvent, setup } from './Mailbox.test.helpers';
 
 jest.spyOn(useApplyLabels, 'useStar');
 

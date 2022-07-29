@@ -1,25 +1,28 @@
-import { useState, MouseEvent } from 'react';
+import { MouseEvent, useState } from 'react';
+
 import { c } from 'ttag';
+
 import {
-    usePopperAnchor,
-    Icon,
-    generateUID,
     Dropdown,
     DropdownMenu,
     DropdownMenuButton,
+    Icon,
+    generateUID,
     useModals,
     useNotifications,
+    usePopperAnchor,
 } from '@proton/components';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
-import { RecipientGroup } from '../../../models/address';
-import RecipientItemLayout from './RecipientItemLayout';
-import GroupModal from '../modals/GroupModal';
-import { MapStatusIcons, StatusIcon } from '../../../models/crypto';
-import { useRecipientLabel } from '../../../hooks/contact/useRecipientLabel';
-import { useOnCompose } from '../../../containers/ComposeProvider';
+
 import { MESSAGE_ACTIONS } from '../../../constants';
+import { useOnCompose } from '../../../containers/ComposeProvider';
 import { useGroupsWithContactsMap } from '../../../hooks/contact/useContacts';
+import { useRecipientLabel } from '../../../hooks/contact/useRecipientLabel';
+import { RecipientGroup } from '../../../models/address';
+import { MapStatusIcons, StatusIcon } from '../../../models/crypto';
+import GroupModal from '../modals/GroupModal';
 import RecipientDropdownItem from './RecipientDropdownItem';
+import RecipientItemLayout from './RecipientItemLayout';
 
 interface Props {
     group: RecipientGroup;

@@ -1,8 +1,9 @@
-import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
-import { Contact } from '@proton/shared/lib/interfaces/contacts';
-import { LabelCount } from '@proton/shared/lib/interfaces/Label';
 import { Address, ChecklistKey } from '@proton/shared/lib/interfaces';
+import { LabelCount } from '@proton/shared/lib/interfaces/Label';
+import { Contact } from '@proton/shared/lib/interfaces/contacts';
+import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+
 import { Conversation } from './conversation';
 
 interface EventType {

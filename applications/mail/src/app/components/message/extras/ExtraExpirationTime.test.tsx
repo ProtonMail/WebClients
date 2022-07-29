@@ -1,5 +1,6 @@
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { render, clearAll } from '../../../helpers/test/helper';
+
+import { clearAll, render } from '../../../helpers/test/helper';
 import ExtraExpirationTime from './ExtraExpirationTime';
 
 const getExpirationTime = (numberOfSeconds: number) => {

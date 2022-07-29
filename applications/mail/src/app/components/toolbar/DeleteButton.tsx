@@ -1,5 +1,6 @@
 import { c } from 'ttag';
-import { Icon, useLoading, ToolbarButton, useMailSettings } from '@proton/components';
+
+import { Icon, ToolbarButton, useLoading, useMailSettings } from '@proton/components';
 import { metaKey } from '@proton/shared/lib/helpers/browser';
 
 interface Props {

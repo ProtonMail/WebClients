@@ -1,16 +1,19 @@
 import React, { useCallback } from 'react';
 import { useDispatch } from 'react-redux';
+
 import { c, msgid } from 'ttag';
+
 import { useApi, useEventManager, useNotifications } from '@proton/components';
-import { markMessageAsRead, markMessageAsUnread } from '@proton/shared/lib/api/messages';
 import { markConversationsAsRead, markConversationsAsUnread } from '@proton/shared/lib/api/conversations';
 import { undoActions } from '@proton/shared/lib/api/mailUndoActions';
-import { isMessage as testIsMessage } from '../helpers/elements';
-import { Element } from '../models/element';
+import { markMessageAsRead, markMessageAsUnread } from '@proton/shared/lib/api/messages';
+
 import UndoActionNotification from '../components/notifications/UndoActionNotification';
-import { useOptimisticMarkAs } from './optimistic/useOptimisticMarkAs';
 import { SUCCESS_NOTIFICATION_EXPIRATION } from '../constants';
+import { isMessage as testIsMessage } from '../helpers/elements';
 import { backendActionFinished, backendActionStarted } from '../logic/elements/elementsActions';
+import { Element } from '../models/element';
+import { useOptimisticMarkAs } from './optimistic/useOptimisticMarkAs';
 
 export enum MARK_AS_STATUS {
     READ = 'read',

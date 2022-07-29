@@ -1,24 +1,26 @@
-import { useEffect, useCallback } from 'react';
+import { useCallback, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+
 import {
-    useCache,
     generateUID,
-    useGetMailSettings,
-    useGetAddresses,
-    useGetUser,
     useAddresses,
+    useCache,
+    useGetAddresses,
+    useGetMailSettings,
+    useGetUser,
     useMailSettings,
     useUserSettings,
 } from '@proton/components';
 import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
 import { isPaid } from '@proton/shared/lib/user/helpers';
-import { useDispatch } from 'react-redux';
-import { createNewDraft, cloneDraft } from '../helpers/message/messageDraft';
-import { findSender } from '../helpers/addresses';
-import { MESSAGE_ACTIONS } from '../constants';
-import { useGetAttachment } from './useAttachment';
-import { MessageState, MessageStateWithData, PartialMessageState } from '../logic/messages/messagesTypes';
-import { createDraft as createDraftAction } from '../logic/messages/draft/messagesDraftActions';
+
 import SendingFromDefaultAddressModal from '../components/composer/modals/SendingFromDefaultAddressModal';
+import { MESSAGE_ACTIONS } from '../constants';
+import { findSender } from '../helpers/addresses';
+import { cloneDraft, createNewDraft } from '../helpers/message/messageDraft';
+import { createDraft as createDraftAction } from '../logic/messages/draft/messagesDraftActions';
+import { MessageState, MessageStateWithData, PartialMessageState } from '../logic/messages/messagesTypes';
+import { useGetAttachment } from './useAttachment';
 
 const CACHE_KEY = 'Draft';
 

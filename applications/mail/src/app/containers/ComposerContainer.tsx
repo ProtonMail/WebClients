@@ -1,15 +1,19 @@
-import { ReactNode, useState, useEffect, memo, useRef } from 'react';
-import { useWindowSize, useBeforeUnload, useHandler } from '@proton/components';
-import { c } from 'ttag';
+import { ReactNode, memo, useEffect, useRef, useState } from 'react';
 import { useStore } from 'react-redux';
-import { Breakpoints, WindowSize } from '../models/utils';
-import { MAX_ACTIVE_COMPOSER_MOBILE, MAX_ACTIVE_COMPOSER_DESKTOP } from '../helpers/composerPositioning';
-import { useCompose } from '../hooks/composer/useCompose';
+
+import { c } from 'ttag';
+
+import { useBeforeUnload, useHandler, useWindowSize } from '@proton/components';
+
 import ComposerFrame from '../components/composer/ComposerFrame';
-import { useClickMailContent } from '../hooks/useClickMailContent';
-import { ComposeProvider } from './ComposeProvider';
-import '../components/composer/composer.scss';
+import { MAX_ACTIVE_COMPOSER_DESKTOP, MAX_ACTIVE_COMPOSER_MOBILE } from '../helpers/composerPositioning';
+import { useCompose } from '../hooks/composer/useCompose';
 import { useGetMessage } from '../hooks/message/useMessage';
+import { useClickMailContent } from '../hooks/useClickMailContent';
+import { Breakpoints, WindowSize } from '../models/utils';
+import { ComposeProvider } from './ComposeProvider';
+
+import '../components/composer/composer.scss';
 
 interface Props {
     breakpoints: Breakpoints;
@@ -77,12 +81,8 @@ const ComposerContainer = ({ breakpoints, children }: Props) => {
         }
     };
 
-    const { handleCompose, storageCapacityModal, sendingFromDefaultAddressModal, sendingOriginalMessageModal } = useCompose(
-        messageIDs,
-        openComposer,
-        setFocusedMessageID,
-        maxActiveComposer
-    );
+    const { handleCompose, storageCapacityModal, sendingFromDefaultAddressModal, sendingOriginalMessageModal } =
+        useCompose(messageIDs, openComposer, setFocusedMessageID, maxActiveComposer);
 
     const handleFocus = (messageID: string) => () => {
         setFocusedMessageID(messageID);

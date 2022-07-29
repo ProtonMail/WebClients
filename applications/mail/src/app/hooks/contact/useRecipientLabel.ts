@@ -1,12 +1,12 @@
 import { Recipient } from '@proton/shared/lib/interfaces';
 
-import { RecipientOrGroup, RecipientGroup } from '../../models/address';
 import {
+    getRecipientGroupLabel as computeRecipientGroupLabel,
     getRecipientLabel as computeRecipientLabel,
     getRecipientLabelDetailed as computeRecipientLabelDetailed,
-    getRecipientGroupLabel as computeRecipientGroupLabel,
     recipientsToRecipientOrGroup,
 } from '../../helpers/addresses';
+import { RecipientGroup, RecipientOrGroup } from '../../models/address';
 import {
     useContactGroupsMap,
     useContactsMap,

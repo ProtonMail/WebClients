@@ -1,30 +1,31 @@
-import { Draft } from 'immer';
 import { PayloadAction } from '@reduxjs/toolkit';
-import { RootState } from './eoStore';
-import { eoMessageSelector, eoMessageStateSelector } from './eoSelectors';
-import {
-    EOState,
-    EOMessageParams,
-    EOTokenParams,
-    EOInitResult,
-    EOInitParams,
-    EOMessage,
-    EODocumentInitializeParams,
-    EOLoadEmbeddedResults,
-    EOLoadEmbeddedParams,
-    EOLoadRemoteParams,
-    EOLoadRemoteResults,
-    EOMessageReply,
-} from './eoType';
-import { MessageRemoteImage, MessageState } from '../messages/messagesTypes';
-import { getEmbeddedImages, getRemoteImages, updateImages } from '../../helpers/message/messageImages';
+import { Draft } from 'immer';
+
 import { markEmbeddedImagesAsLoaded } from '../../helpers/message/messageEmbeddeds';
+import { getEmbeddedImages, getRemoteImages, updateImages } from '../../helpers/message/messageImages';
 import {
     loadBackgroundImages,
     loadElementOtherThanImages,
     removeProtonPrefix,
 } from '../../helpers/message/messageRemotes';
+import { MessageRemoteImage, MessageState } from '../messages/messagesTypes';
+import { eoMessageSelector, eoMessageStateSelector } from './eoSelectors';
 import { initialState } from './eoSlice';
+import { RootState } from './eoStore';
+import {
+    EODocumentInitializeParams,
+    EOInitParams,
+    EOInitResult,
+    EOLoadEmbeddedParams,
+    EOLoadEmbeddedResults,
+    EOLoadRemoteParams,
+    EOLoadRemoteResults,
+    EOMessage,
+    EOMessageParams,
+    EOMessageReply,
+    EOState,
+    EOTokenParams,
+} from './eoType';
 
 export const getMessageState = (state: Draft<EOState>) => eoMessageStateSelector({ eo: state } as RootState);
 

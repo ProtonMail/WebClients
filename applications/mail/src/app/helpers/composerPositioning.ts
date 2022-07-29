@@ -1,4 +1,5 @@
 import { getCustomSizingClasses } from '@proton/components';
+
 import { WindowSize } from '../models/utils';
 
 export const MAX_ACTIVE_COMPOSER_DESKTOP = 3;

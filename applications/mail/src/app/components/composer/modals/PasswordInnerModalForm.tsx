@@ -1,16 +1,20 @@
+import { ChangeEvent, useEffect, useState } from 'react';
+
+import { c } from 'ttag';
+
 import {
     Copy,
     FeatureCode,
-    generateUID,
     Info,
     InputFieldTwo,
     PasswordInputTwo,
+    generateUID,
     useFeatures,
     useNotifications,
 } from '@proton/components';
-import { c } from 'ttag';
-import { ChangeEvent, useEffect, useState } from 'react';
+
 import { MessageState } from '../../../logic/messages/messagesTypes';
+
 import './PasswordInnerModal.scss';
 
 interface Props {

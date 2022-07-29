@@ -1,9 +1,10 @@
 import { c } from 'ttag';
+
 import { Button, Icon } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
-import { useLocationFieldOptions } from './useLocationFieldOptions';
 import LocationFieldDropdown from './LocationFieldDropdown';
+import { useLocationFieldOptions } from './useLocationFieldOptions';
 
 interface Props {
     value: string;

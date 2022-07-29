@@ -1,30 +1,32 @@
-import { useHandler, useCache } from '@proton/components';
-import { MessageCountsModel, ConversationCountsModel } from '@proton/shared/lib/models';
-import { LabelCount } from '@proton/shared/lib/interfaces/Label';
 import { useDispatch } from 'react-redux';
+
+import { useCache, useHandler } from '@proton/components';
+import { LabelCount } from '@proton/shared/lib/interfaces/Label';
+import { ConversationCountsModel, MessageCountsModel } from '@proton/shared/lib/models';
 import isTruthy from '@proton/utils/isTruthy';
-import { Element } from '../../models/element';
+
 import { replaceCounter } from '../../helpers/counter';
 import { isConversation, isUnread } from '../../helpers/elements';
-import { CacheEntry } from '../../models/tools';
-import {
-    optimisticDelete as optimisticDeleteElementAction,
-    optimisticRestoreDelete as optimisticRestoreDeleteElementAction,
-} from '../../logic/elements/elementsActions';
 import {
     optimisticDelete as optimisticDeleteConversationAction,
     optimisticDeleteConversationMessages,
     optimisticRestore as optimisticRestoreConversationsAction,
 } from '../../logic/conversations/conversationsActions';
-import { useGetElementByID } from '../mailbox/useElements';
 import { ConversationState } from '../../logic/conversations/conversationsTypes';
-import { useGetAllConversations } from '../conversation/useConversation';
+import {
+    optimisticDelete as optimisticDeleteElementAction,
+    optimisticRestoreDelete as optimisticRestoreDeleteElementAction,
+} from '../../logic/elements/elementsActions';
 import { MessageState } from '../../logic/messages/messagesTypes';
-import { useGetMessage } from '../message/useMessage';
 import {
     optimisticDelete as optimisticDeleteMessageAction,
     optimisticRestore as optimisticRestoreMessageAction,
 } from '../../logic/messages/optimistic/messagesOptimisticActions';
+import { Element } from '../../models/element';
+import { CacheEntry } from '../../models/tools';
+import { useGetAllConversations } from '../conversation/useConversation';
+import { useGetElementByID } from '../mailbox/useElements';
+import { useGetMessage } from '../message/useMessage';
 
 const useOptimisticDelete = () => {
     const dispatch = useDispatch();

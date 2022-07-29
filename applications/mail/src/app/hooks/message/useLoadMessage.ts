@@ -1,9 +1,11 @@
-import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { useCallback } from 'react';
 import { useDispatch } from 'react-redux';
+
 import { useApi } from '@proton/components';
-import { useInitializeMessage } from './useInitializeMessage';
+import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+
 import { load, reload } from '../../logic/messages/read/messagesReadActions';
+import { useInitializeMessage } from './useInitializeMessage';
 
 export const useLoadMessage = (inputMessage: Message) => {
     const dispatch = useDispatch();

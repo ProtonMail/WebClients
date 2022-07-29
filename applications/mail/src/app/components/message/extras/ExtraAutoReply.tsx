@@ -1,7 +1,9 @@
-import { Icon, Href } from '@proton/components';
 import { c } from 'ttag';
-import { isAutoReply } from '@proton/shared/lib/mail/messages';
+
+import { Href, Icon } from '@proton/components';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import { isAutoReply } from '@proton/shared/lib/mail/messages';
+
 import { MessageState } from '../../../logic/messages/messagesTypes';
 
 interface Props {

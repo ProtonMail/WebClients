@@ -1,10 +1,12 @@
 import { useMemo, useRef } from 'react';
+
 import { classnames } from '@proton/components';
-import { isPlainText } from '@proton/shared/lib/mail/messages';
 import { eoDefaultMailSettings } from '@proton/shared/lib/mail/eo/constants';
-import { MessageState } from '../../../logic/messages/messagesTypes';
-import { locateBlockquote } from '../../../helpers/message/messageBlockquote';
+import { isPlainText } from '@proton/shared/lib/mail/messages';
+
 import { MailboxContainerContextProvider } from '../../../containers/mailbox/MailboxContainerProvider';
+import { locateBlockquote } from '../../../helpers/message/messageBlockquote';
+import { MessageState } from '../../../logic/messages/messagesTypes';
 import MessageBodyIframe from '../../message/MessageBodyIframe';
 
 interface Props {

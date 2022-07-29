@@ -1,23 +1,23 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
-import { PublicKeyReference } from '@proton/crypto';
-import noop from '@proton/utils/noop';
 import { EditorMetadata, EditorTextDirection, useHandler } from '@proton/components';
+import { PublicKeyReference } from '@proton/crypto';
 import { eoDefaultMailSettings, eoDefaultUserSettings } from '@proton/shared/lib/mail/eo/constants';
 import { isPlainText as testIsPlainText } from '@proton/shared/lib/mail/messages';
+import noop from '@proton/utils/noop';
 
-import ComposerContent from '../../composer/ComposerContent';
-import { MessageState, OutsideKey } from '../../../logic/messages/messagesTypes';
-import { createNewDraft } from '../../../helpers/message/messageDraft';
 import { MESSAGE_ACTIONS } from '../../../constants';
-import { MessageChange } from '../../composer/Composer';
 import { setContent } from '../../../helpers/message/messageContent';
+import { createNewDraft } from '../../../helpers/message/messageDraft';
 import { mergeMessages } from '../../../helpers/message/messages';
-import EOReplyFooter from './EOReplyFooter';
 import { useEOAttachments } from '../../../hooks/eo/useEOAttachments';
-import ComposerInsertImageModal from '../../composer/modals/ComposerInsertImageModal';
-import EOReplyHeader from './EOReplyHeader';
+import { MessageState, OutsideKey } from '../../../logic/messages/messagesTypes';
+import { MessageChange } from '../../composer/Composer';
+import ComposerContent from '../../composer/ComposerContent';
 import { ExternalEditorActions } from '../../composer/editor/EditorWrapper';
+import ComposerInsertImageModal from '../../composer/modals/ComposerInsertImageModal';
+import EOReplyFooter from './EOReplyFooter';
+import EOReplyHeader from './EOReplyHeader';
 
 interface Props {
     referenceMessage: MessageState;

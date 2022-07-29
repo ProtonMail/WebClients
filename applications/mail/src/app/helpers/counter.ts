@@ -1,8 +1,9 @@
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { LabelCount } from '@proton/shared/lib/interfaces';
-import { hasLabel, isUnread as testIsUnread } from './elements';
+
 import { Element } from '../models/element';
-import { isAutoRead, isUnmodifiableByUser, LabelChanges } from './labels';
+import { hasLabel, isUnread as testIsUnread } from './elements';
+import { LabelChanges, isAutoRead, isUnmodifiableByUser } from './labels';
 
 export const replaceCounter = (counters: LabelCount[], counter: LabelCount) =>
     counters.map((existingCounter: any) => {

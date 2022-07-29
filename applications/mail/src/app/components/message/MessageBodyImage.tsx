@@ -1,8 +1,11 @@
 import { CSSProperties, RefObject, useEffect, useRef } from 'react';
-import { SimpleMap } from '@proton/shared/lib/interfaces';
-import { classnames, Icon, Tooltip } from '@proton/components';
 import { createPortal } from 'react-dom';
+
 import { c } from 'ttag';
+
+import { Icon, Tooltip, classnames } from '@proton/components';
+import { SimpleMap } from '@proton/shared/lib/interfaces';
+
 import { getAnchor } from '../../helpers/message/messageImages';
 import { MessageImage } from '../../logic/messages/messagesTypes';
 import { IframeOffsetType } from './interface';
