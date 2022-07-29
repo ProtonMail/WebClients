@@ -202,17 +202,14 @@ const ComposerActions = ({
                         }
                         secondAction={
                             hasScheduleSendAccess ? (
-                                <Tooltip>
-                                    <DropdownMenuButton
-                                        className="text-left flex flex-align-items-center"
-                                        onClick={handleScheduleSend}
-                                        data-testid="composer:schedule-send-button"
-                                    >
-                                        <Icon name="clock" className="flex-item-noshrink" />
-                                        <span className="pl0-5 pr0-5 flex-item-fluid">{c('Action')
-                                            .t`Schedule send`}</span>
-                                    </DropdownMenuButton>
-                                </Tooltip>
+                                <DropdownMenuButton
+                                    className="text-left flex flex-align-items-center"
+                                    onClick={handleScheduleSend}
+                                    data-testid="composer:schedule-send-button"
+                                >
+                                    <Icon name="clock" className="flex-item-noshrink" />
+                                    <span className="pl0-5 pr0-5 flex-item-fluid">{c('Action').t`Schedule send`}</span>
+                                </DropdownMenuButton>
                             ) : undefined
                         }
                         dropdownRef={dropdownRef}
