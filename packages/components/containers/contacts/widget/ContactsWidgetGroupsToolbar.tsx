@@ -78,13 +78,12 @@ const ContactsWidgetGroupsToolbar = ({
             {customActions.map((action) =>
                 action.render({ groupsEmailsMap, recipients, noSelection, onClose, selected })
             )}
-            <Tooltip>
+            <Tooltip title={deleteText}>
                 <Button
                     icon
                     className="inline-flex pt0-5 pb0-5"
                     onClick={onDelete}
                     disabled={noSelection}
-                    title={deleteText}
                     data-testid="contacts:delete-contact-group"
                 >
                     <Icon name="trash" />
