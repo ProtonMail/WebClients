@@ -1,10 +1,14 @@
-import { ReactNode, useState, useEffect } from 'react';
-import * as React from 'react';
+import { ReactNode, useState, Ref, useImperativeHandle } from 'react';
 import { classnames, usePopperAnchor, DropdownButton, Dropdown, generateUID, Tooltip } from '@proton/components';
 
-interface LockableDropdownProps {
+export interface DropdownRenderProps {
     onClose: () => void;
     onLock: (lock: boolean) => void;
+    onOpenAdditionnal: (index: number) => void;
+}
+
+export interface DropdownRender {
+    (props: DropdownRenderProps): ReactNode;
 }
 
 interface Props {
@@ -14,11 +18,16 @@ interface Props {
     className?: string;
     dropDownClassName?: string;
     content?: ReactNode;
-    children: (props: LockableDropdownProps) => ReactNode;
+    children: DropdownRender;
     disabled?: boolean;
     noMaxSize?: boolean;
+    /**
+     * Used on mobile to open an additional dropdown from the dropdown
+     * The handler onOpenAdditionnal is passed to use them
+     */
+    additionalDropdowns?: DropdownRender[];
+    externalToggleRef?: Ref<() => void>;
     [rest: string]: any;
-    externalToggleRef?: React.MutableRefObject<() => void>;
 }
 
 const ToolbarDropdown = ({
@@ -31,19 +40,21 @@ const ToolbarDropdown = ({
     autoClose = true,
     disabled = false,
     noMaxSize = false,
+    additionalDropdowns,
     externalToggleRef,
     ...rest
 }: Props) => {
     const [uid] = useState(generateUID('dropdown'));
     const [lock, setLock] = useState(false);
+    const [additionalOpen, setAdditionalOpen] = useState<number>();
 
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
 
-    useEffect(() => {
-        if (externalToggleRef) {
-            externalToggleRef.current = toggle;
-        }
-    }, []);
+    const handleAdditionalClose = () => {
+        setAdditionalOpen(undefined);
+    };
+
+    useImperativeHandle(externalToggleRef, () => toggle, []);
 
     return (
         <>
@@ -58,7 +69,8 @@ const ToolbarDropdown = ({
                     disabled={disabled}
                     caretClassName="toolbar-icon"
                     className={classnames([
-                        'toolbar-button toolbar-button--dropdown flex flex-align-items-center',
+                        'toolbar-button flex flex-align-items-center',
+                        hasCaret && 'toolbar-button--dropdown',
                         className,
                     ])}
                     {...rest}
@@ -66,7 +78,6 @@ const ToolbarDropdown = ({
                     {content}
                 </DropdownButton>
             </Tooltip>
-
             <Dropdown
                 id={uid}
                 originalPlacement="bottom"
@@ -78,8 +89,29 @@ const ToolbarDropdown = ({
                 onClose={close}
                 className={classnames(['toolbar-dropdown', dropDownClassName])}
             >
-                {children({ onClose: close, onLock: setLock })}
+                {children({ onClose: close, onLock: setLock, onOpenAdditionnal: setAdditionalOpen })}
             </Dropdown>
+            {additionalDropdowns?.map((additionalDropdown, index) => {
+                return (
+                    <Dropdown
+                        key={index} // eslint-disable-line react/no-array-index-key
+                        id={`${uid}-${index}`}
+                        className={dropDownClassName}
+                        originalPlacement="bottom"
+                        autoClose={false}
+                        isOpen={additionalOpen === index}
+                        noMaxSize
+                        anchorRef={anchorRef}
+                        onClose={handleAdditionalClose}
+                    >
+                        {additionalDropdown({
+                            onClose: handleAdditionalClose,
+                            onLock: setLock,
+                            onOpenAdditionnal: setAdditionalOpen,
+                        })}
+                    </Dropdown>
+                );
+            })}
         </>
     );
 };

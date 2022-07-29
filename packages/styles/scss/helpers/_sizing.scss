@@ -48,7 +48,7 @@
 // }
 
 // .w16e { width: 16em; }
-@each $width in (2, 3, 4, 5, 6, 8, 10, 11, 13, 14, 16, 20, 24) {
+@each $width in (2, 3, 4, 5, 6, 8, 10, 11, 13, 14, 15, 16, 20, 24) {
 	.w#{$width}e {
 		inline-size: #{$width}em;
 	}

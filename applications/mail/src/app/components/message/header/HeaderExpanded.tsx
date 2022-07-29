@@ -427,7 +427,6 @@ const HeaderExpanded = ({
                                 {({ onClose, onLock }) => (
                                     <LabelDropdown
                                         labelID={labelID}
-                                        labels={labels}
                                         selectedIDs={selectedIDs}
                                         onClose={onClose}
                                         onLock={onLock}

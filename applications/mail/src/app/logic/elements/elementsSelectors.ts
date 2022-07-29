@@ -73,6 +73,13 @@ export const elementIDs = createSelector(elements, (elements): string[] =>
 
 export const elementsLength = createSelector(elements, (elements) => elements.length);
 
+export const elementsAreUnread = createSelector([params, elements], (params, elements) => {
+    return elements.reduce<{ [elementID: string]: boolean }>((acc, element) => {
+        acc[element.ID] = isUnread(element, params.labelID);
+        return acc;
+    }, {});
+});
+
 /**
  * Define when we need to request the API to get more elements
  * Dynamic computations (dynamicTotal and dynamicPageLength) have been proved not to be reliable enough

@@ -1,0 +1,12 @@
+// star button
+.starbutton {
+	&#{&} {
+		// need to have higher specificity than buttons
+		// no focus state, only focus-visible
+		&:focus-visible,
+		&:hover,
+		&--is-starred {
+			color: var(--favorite-icon-color);
+		}
+	}
+}

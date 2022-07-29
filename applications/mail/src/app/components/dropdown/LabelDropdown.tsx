@@ -12,6 +12,7 @@ import {
     generateUID,
     Button,
     useModalState,
+    useLabels,
 } from '@proton/components';
 import { normalize } from '@proton/shared/lib/helpers/string';
 import { ACCENT_COLORS, LABEL_TYPE, MAILBOX_IDENTIFIERS } from '@proton/shared/lib/constants';
@@ -19,7 +20,6 @@ import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
 import { Label } from '@proton/shared/lib/interfaces/Label';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import EditLabelModal from '@proton/components/containers/labels/modals/EditLabelModal';
-
 import { Element } from '../../models/element';
 import { getLabelIDs } from '../../helpers/elements';
 import { useApplyLabels, useMoveToFolder } from '../../hooks/useApplyLabels';
@@ -69,14 +69,15 @@ const getInitialState = (labels: Label[] = [], elements: Element[] = []) => {
 
 interface Props {
     selectedIDs: string[];
-    labels?: Label[];
     labelID: string;
     onClose: () => void;
     onLock: (lock: boolean) => void;
     breakpoints: Breakpoints;
 }
 
-const LabelDropdown = ({ selectedIDs, labelID, labels = [], onClose, onLock, breakpoints }: Props) => {
+const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: Props) => {
+    const [labels = []] = useLabels();
+
     const labelIDs = labels.map(({ ID }) => ID);
     const [uid] = useState(generateUID('label-dropdown'));
     const [loading, withLoading] = useLoading();

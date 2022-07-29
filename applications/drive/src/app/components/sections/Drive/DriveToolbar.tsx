@@ -77,7 +77,6 @@ const DriveToolbar = ({ shareId, items, showOptionsForNoSelection = true }: Prop
                         <DetailsButton shareId={shareId} linkIds={selectedItems.map(({ linkId }) => linkId)} />
                         <Vr />
                         <MoveToTrashButton shareId={shareId} selectedLinks={selectedItems} />
-
                     </>
                 )}
             </>

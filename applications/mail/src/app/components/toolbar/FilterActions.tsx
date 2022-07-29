@@ -1,28 +1,23 @@
 import { c } from 'ttag';
-import {
-    Button,
-    classnames,
-    DropdownMenu,
-    DropdownMenuButton,
-    SimpleDropdown,
-    useActiveBreakpoint,
-    Icon,
-} from '@proton/components';
-import { MailSettings } from '@proton/shared/lib/interfaces';
+
+import { DropdownMenu, DropdownMenuButton, Icon, classnames, useMailSettings } from '@proton/components';
 import { MESSAGE_BUTTONS } from '@proton/shared/lib/constants';
 
 import { Filter } from '../../models/tools';
+import ToolbarDropdown from './ToolbarDropdown';
+
+const { READ_UNREAD } = MESSAGE_BUTTONS;
 
 interface Props {
-    loading?: boolean;
+    icon: boolean;
     filter: Filter;
     onFilter: (filter: Filter) => void;
-    mailSettings: MailSettings;
 }
 
-const FilterActions = ({ loading, filter = {}, mailSettings, onFilter }: Props) => {
+const FilterActions = ({ icon, filter, onFilter }: Props) => {
+    const [{ MessageButtons = READ_UNREAD } = {}] = useMailSettings();
+
     const noFilterApply = !Object.values(filter).length;
-    const { isDesktop } = useActiveBreakpoint();
 
     const FILTER_OPTIONS = {
         SHOW_ALL: c('Filter option').t`All`,
@@ -66,31 +61,27 @@ const FilterActions = ({ loading, filter = {}, mailSettings, onFilter }: Props) 
                 }
             },
         },
-        ...(mailSettings.MessageButtons === MESSAGE_BUTTONS.READ_UNREAD
-            ? readUnreadButtons
-            : readUnreadButtons.reverse()),
+        ...(MessageButtons === READ_UNREAD ? readUnreadButtons : readUnreadButtons.reverse()),
     ];
 
-    if (!isDesktop) {
-        const getTextContent = () => {
-            const { text = '' } = buttons.find(({ isActive }) => isActive) || {};
-            return text;
-        };
+    const { text = '' } = buttons.find(({ isActive }) => isActive) || {};
 
-        return (
-            <SimpleDropdown
-                as={Button}
-                shape="ghost"
-                size="small"
-                hasCaret={false}
-                content={
-                    <span className="flex flex-align-items-center flex-nowrap" data-testid="toolbar:filter-dropdown">
-                        <Icon className="toolbar-icon mr0-5" name="filter" />
-                        <span className="text-sm m0">{getTextContent()}</span>
-                    </span>
-                }
-            >
+    const dropdownButton = icon ? <Icon className="toolbar-icon" name="lines-long-to-small" /> : text;
+
+    return (
+        <ToolbarDropdown
+            hasCaret={!icon}
+            title={text}
+            content={
+                <span className="flex flex-align-items-center flex-nowrap" data-testid="toolbar:filter-dropdown">
+                    {dropdownButton}
+                </span>
+            }
+            className={classnames([icon && !noFilterApply && 'is-active'])}
+        >
+            {() => (
                 <DropdownMenu>
+                    <div className="text-bold w100 pr1 pl1 pt0-5 pb0-5">{c('Filter').t`Show`}</div>
                     {buttons.map(({ ID, text, isActive, onClick }) => {
                         return (
                             <DropdownMenuButton
@@ -99,38 +90,14 @@ const FilterActions = ({ loading, filter = {}, mailSettings, onFilter }: Props) 
                                 onClick={onClick}
                                 className="text-left"
                                 isSelected={isActive}
-                                loading={loading}
                             >
                                 {text}
                             </DropdownMenuButton>
                         );
                     })}
                 </DropdownMenu>
-            </SimpleDropdown>
-        );
-    }
-    return (
-        <div className="flex">
-            {buttons.map(({ ID, text, isActive, onClick }) => {
-                return (
-                    <Button
-                        key={ID}
-                        data-testid={ID}
-                        size="small"
-                        shape="ghost"
-                        loading={loading}
-                        aria-pressed={isActive}
-                        className={classnames([
-                            'text-sm mt0 mb0 mr0-25 ml0-25',
-                            isActive && 'no-pointer-events bg-strong',
-                        ])}
-                        onClick={onClick}
-                    >
-                        {text}
-                    </Button>
-                );
-            })}
-        </div>
+            )}
+        </ToolbarDropdown>
     );
 };
 

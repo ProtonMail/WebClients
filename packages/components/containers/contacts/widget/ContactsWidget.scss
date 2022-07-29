@@ -21,6 +21,13 @@
 			padding-inline: 5%;
 		}
 	}
+
+	.item-container {
+		border-block-end: 1px solid var(--border-weak);
+		border-radius: 0;
+		margin-inline: 0;
+		padding-block-start: 0;
+	}
 }
 
 .contacts-modal {

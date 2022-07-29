@@ -1,19 +1,19 @@
-import { useState, useRef, ChangeEvent, MouseEvent, DragEvent, memo, useMemo } from 'react';
-import { classnames, ItemCheckbox } from '@proton/components';
-import { Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { getRecipients as getMessageRecipients, getSender } from '@proton/shared/lib/mail/messages';
+import { ChangeEvent, DragEvent, MouseEvent, memo, useMemo, useRef, useState } from 'react';
+
+import { ItemCheckbox, classnames, useLabels, useMailSettings } from '@proton/components';
 import { MAILBOX_LABEL_IDS, VIEW_MODE } from '@proton/shared/lib/constants';
-import { Label } from '@proton/shared/lib/interfaces/Label';
-import { MailSettings } from '@proton/shared/lib/interfaces';
-import { isUnread, isMessage } from '../../helpers/elements';
+import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { getRecipients as getMessageRecipients, getSender, isDraft, isSent } from '@proton/shared/lib/mail/messages';
+
+import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
+import { getRecipients as getConversationRecipients, getSenders } from '../../helpers/conversation';
+import { isMessage, isUnread } from '../../helpers/elements';
+import { isCustomLabel } from '../../helpers/labels';
+import { useRecipientLabel } from '../../hooks/contact/useRecipientLabel';
+import { Element } from '../../models/element';
+import { Breakpoints } from '../../models/utils';
 import ItemColumnLayout from './ItemColumnLayout';
 import ItemRowLayout from './ItemRowLayout';
-import { Element } from '../../models/element';
-import { getSenders, getRecipients as getConversationRecipients } from '../../helpers/conversation';
-import { isCustomLabel } from '../../helpers/labels';
-import { Breakpoints } from '../../models/utils';
-import { useRecipientLabel } from '../../hooks/contact/useRecipientLabel';
-import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 
 const { SENT, ALL_SENT, ALL_MAIL, STARRED, DRAFTS, ALL_DRAFTS, SCHEDULED } = MAILBOX_LABEL_IDS;
 
@@ -21,11 +21,10 @@ const labelsWithIcons = [ALL_MAIL, STARRED, ALL_SENT, ALL_DRAFTS] as string[];
 
 interface Props {
     conversationMode: boolean;
-    labels?: Label[];
+    isCompactView: boolean;
     labelID: string;
     loading: boolean;
     elementID?: string;
-    mailSettings: MailSettings;
     columnLayout: boolean;
     element: Element;
     checked?: boolean;
@@ -34,6 +33,7 @@ interface Props {
     onContextMenu: (event: React.MouseEvent<HTMLDivElement>, element: Element) => void;
     onDragStart: (event: DragEvent, element: Element) => void;
     onDragEnd: (event: DragEvent) => void;
+    onBack: () => void;
     dragged: boolean;
     index: number;
     breakpoints: Breakpoints;
@@ -42,32 +42,41 @@ interface Props {
 
 const Item = ({
     conversationMode,
+    isCompactView,
     labelID,
-    labels,
     loading,
     element,
     elementID,
     columnLayout,
-    mailSettings,
     checked = false,
     onCheck,
     onClick,
     onContextMenu,
     onDragStart,
     onDragEnd,
+    onBack,
     dragged,
     index,
     breakpoints,
     onFocus,
 }: Props) => {
+    const [mailSettings] = useMailSettings();
+    const [labels] = useLabels();
+
     const { shouldHighlight, getESDBStatus } = useEncryptedSearchContext();
     const { dbExists, esEnabled } = getESDBStatus();
     const useES = dbExists && esEnabled && shouldHighlight();
+
     const elementRef = useRef<HTMLDivElement>(null);
+
     const [hasFocus, setHasFocus] = useState(false);
-    const displayRecipients = [SENT, ALL_SENT, DRAFTS, ALL_DRAFTS, SCHEDULED].includes(labelID as MAILBOX_LABEL_IDS);
+
+    const displayRecipients =
+        [SENT, ALL_SENT, DRAFTS, ALL_DRAFTS, SCHEDULED].includes(labelID as MAILBOX_LABEL_IDS) ||
+        isSent(element) ||
+        isDraft(element);
     const { getRecipientLabel, getRecipientsOrGroups, getRecipientsOrGroupsLabels } = useRecipientLabel();
-    const isConversationContentView = mailSettings.ViewMode === VIEW_MODE.GROUP;
+    const isConversationContentView = mailSettings?.ViewMode === VIEW_MODE.GROUP;
     const isSelected =
         isConversationContentView && isMessage(element)
             ? elementID === (element as Message).ConversationID
@@ -115,54 +124,59 @@ const Item = ({
     };
 
     return (
-        <div
-            onContextMenu={(event) => onContextMenu(event, element)}
-            onClick={handleClick}
-            draggable
-            onDragStart={(event) => onDragStart(event, element)}
-            onDragEnd={onDragEnd}
-            className={classnames([
-                'flex flex-nowrap flex-align-items-center cursor-pointer',
-                columnLayout ? 'item-container' : 'item-container-row',
-                isSelected && 'item-is-selected',
-                !unread && 'read',
-                unread && 'unread',
-                dragged && 'item-dragging',
-                loading && 'item-is-loading',
-                hasFocus && 'item-is-focused',
-                useES && columnLayout && 'es-three-rows',
-            ])}
-            style={{ '--index': index }}
-            ref={elementRef}
-            onFocus={handleFocus}
-            onBlur={handleBlur}
-            tabIndex={-1}
-            data-element-id={element.ID}
-            data-shortcut-target="item-container"
-            data-shortcut-target-selected={isSelected}
-            data-testid={`message-item:${element.Subject}`}
-        >
-            <ItemCheckbox
-                ID={element.ID}
-                name={displayRecipients ? recipientsLabels[0] : sendersLabels[0]}
-                checked={checked}
-                onChange={handleCheck}
-                compactClassName="mr0-75 stop-propagation"
-                normalClassName={classnames(['ml0-1', columnLayout ? 'mr0-6' : 'mr0-5'])}
-            />
-            <ItemLayout
-                labelID={labelID}
-                labels={labels}
-                element={element}
-                conversationMode={conversationMode}
-                showIcon={showIcon}
-                senders={(displayRecipients ? recipientsLabels : sendersLabels).join(', ')}
-                addresses={(displayRecipients ? recipientsAddresses : sendersAddresses).join(', ')}
-                unread={unread}
-                displayRecipients={displayRecipients}
-                loading={loading}
-                breakpoints={breakpoints}
-            />
+        <div className={classnames(['item-container-wrapper relative', !unread && 'read'])}>
+            <div
+                onContextMenu={(event) => onContextMenu(event, element)}
+                onClick={handleClick}
+                draggable
+                onDragStart={(event) => onDragStart(event, element)}
+                onDragEnd={onDragEnd}
+                className={classnames([
+                    'flex-item-fluid flex flex-nowrap cursor-pointer opacity-on-hover-container',
+                    columnLayout ? 'item-container' : 'item-container-row flex-align-items-center',
+                    isSelected && 'item-is-selected',
+                    !unread && 'read',
+                    unread && 'unread',
+                    dragged && 'item-dragging',
+                    loading && 'item-is-loading',
+                    hasFocus && 'item-is-focused',
+                    useES && columnLayout && 'es-three-rows',
+                ])}
+                style={{ '--index': index }}
+                ref={elementRef}
+                onFocus={handleFocus}
+                onBlur={handleBlur}
+                tabIndex={-1}
+                data-element-id={element.ID}
+                data-shortcut-target="item-container"
+                data-shortcut-target-selected={isSelected}
+                data-testid={`message-item:${element.Subject}`}
+            >
+                <ItemCheckbox
+                    ID={element.ID}
+                    name={displayRecipients ? recipientsLabels[0] : sendersLabels[0]}
+                    checked={checked}
+                    onChange={handleCheck}
+                    compactClassName="mr0-75 stop-propagation"
+                    normalClassName={classnames(['ml0-1', columnLayout ? 'mr0-6 mt0-1' : 'mr0-5'])}
+                />
+                <ItemLayout
+                    isCompactView={isCompactView}
+                    labelID={labelID}
+                    elementID={elementID}
+                    labels={labels}
+                    element={element}
+                    conversationMode={conversationMode}
+                    showIcon={showIcon}
+                    senders={(displayRecipients ? recipientsLabels : sendersLabels).join(', ')}
+                    addresses={(displayRecipients ? recipientsAddresses : sendersAddresses).join(', ')}
+                    unread={unread}
+                    displayRecipients={displayRecipients}
+                    loading={loading}
+                    breakpoints={breakpoints}
+                    onBack={onBack}
+                />
+            </div>
         </div>
     );
 };

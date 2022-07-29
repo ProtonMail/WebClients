@@ -1,5 +1,7 @@
 @import '~@proton/styles/scss/config';
 
+$container-to-width: 4em !default;
+
 .message-conversation-summary {
 	.is-appearing-content {
 		@extend %appearing-container;
@@ -46,10 +48,24 @@
 }
 
 .message-container {
-	border: 1px solid var(--border-norm);
+	border: 1px solid var(--border-weak);
 	border-radius: var(--border-radius-md);
 	@extend %appearing-container;
 	transition: 0.15s easing(easeOutQuint);
+
+	/* states classes */
+	&.is-opened {
+		& .message-header {
+			border-block-end: 1px solid var(--border-weak);
+			border-end-start-radius: 0;
+			border-end-end-radius: 0;
+			color: var(--text-norm);
+			background-color: var(--email-message-view-background-color);
+		}
+	}
+	&.is-unread {
+		border-color: var(--border-norm);
+	}
 }
 
 .message-header {
@@ -308,16 +324,6 @@
 }
 
 /* states classes */
-.message-container.is-opened {
-	& .message-header {
-		border-block-end: 1px solid var(--border-weak);
-		border-end-start-radius: 0;
-		border-end-end-radius: 0;
-		color: var(--text-norm);
-		background-color: var(--email-message-view-background-color);
-	}
-}
-
 .trashed-messages:focus,
 .message-container.is-focused {
 	border-color: var(--field-focus);
