@@ -1,24 +1,27 @@
 import { useMemo } from 'react';
+
 import { c, msgid } from 'ttag';
-import { Label } from '@proton/shared/lib/interfaces/Label';
-import { getHasOnlyIcsAttachments } from '@proton/shared/lib/mail/messages';
-import { DENSITY } from '@proton/shared/lib/constants';
+
 import { classnames } from '@proton/components';
 import { useUserSettings } from '@proton/components/hooks/';
-import ItemStar from './ItemStar';
-import ItemLabels from './ItemLabels';
-import ItemAttachmentIcon from './ItemAttachmentIcon';
-import ItemLocation from './ItemLocation';
-import ItemDate from './ItemDate';
-import NumMessages from '../conversation/NumMessages';
-import { Element } from '../../models/element';
-import ItemExpiration from './ItemExpiration';
-import ItemAction from './ItemAction';
-import { Breakpoints } from '../../models/utils';
-import { ESMessage } from '../../models/encryptedSearch';
+import { DENSITY } from '@proton/shared/lib/constants';
+import { Label } from '@proton/shared/lib/interfaces/Label';
+import { getHasOnlyIcsAttachments } from '@proton/shared/lib/mail/messages';
+
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
-import ItemHoverButtons from './ItemHoverButtons';
 import { getLabelIDs, isStarred as testIsStarred } from '../../helpers/elements';
+import { Element } from '../../models/element';
+import { ESMessage } from '../../models/encryptedSearch';
+import { Breakpoints } from '../../models/utils';
+import NumMessages from '../conversation/NumMessages';
+import ItemAction from './ItemAction';
+import ItemAttachmentIcon from './ItemAttachmentIcon';
+import ItemDate from './ItemDate';
+import ItemExpiration from './ItemExpiration';
+import ItemHoverButtons from './ItemHoverButtons';
+import ItemLabels from './ItemLabels';
+import ItemLocation from './ItemLocation';
+import ItemStar from './ItemStar';
 import ItemUnread from './ItemUnread';
 
 interface Props {

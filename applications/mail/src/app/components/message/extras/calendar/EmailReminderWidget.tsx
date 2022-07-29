@@ -1,60 +1,62 @@
-import { getSelfAddressData } from '@proton/shared/lib/calendar/deserialize';
-import { useState, useEffect, useMemo, useCallback, useRef } from 'react';
-import { c } from 'ttag';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+
 import { getUnixTime } from 'date-fns';
-import { getParsedHeadersFirstValue } from '@proton/shared/lib/mail/messages';
-import useIsMounted from '@proton/hooks/useIsMounted';
+import { c } from 'ttag';
+
 import {
     AppLink,
     Banner,
     ButtonLike,
+    CalendarEventDateHeader,
     Href,
     Icon,
     IconRow,
     useAddresses,
     useApi,
     useContactEmails,
-    useGetCalendarEventRaw,
-    useNotifications,
-    CalendarEventDateHeader,
-    useGetCalendars,
     useGetAddressKeys,
+    useGetCalendarEventRaw,
+    useGetCalendars,
     useMailSettings,
+    useNotifications,
 } from '@proton/components';
-import { VisualCalendar, CalendarEventWithMetadata, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
-import { getEvent } from '@proton/shared/lib/api/calendars';
-import { getDisplayTitle } from '@proton/shared/lib/calendar/helper';
+import { BannerBackgroundColor } from '@proton/components/components/banner/Banner';
 import CalendarSelectIcon from '@proton/components/components/calendarSelect/CalendarSelectIcon';
-import { CALENDAR_APP_NAME } from '@proton/shared/lib/calendar/constants';
-import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
-import { getParticipant } from '@proton/shared/lib/calendar/integration/invite';
-import { APPS, SECOND } from '@proton/shared/lib/constants';
-import { getIsEventCancelled } from '@proton/shared/lib/calendar/veventHelper';
+import { useLinkHandler } from '@proton/components/hooks/useLinkHandler';
+import useIsMounted from '@proton/hooks/useIsMounted';
+import { getEvent } from '@proton/shared/lib/api/calendars';
 import {
     getCalendarWithReactivatedKeys,
     getDoesCalendarNeedUserAction,
     getVisualCalendars,
 } from '@proton/shared/lib/calendar/calendar';
-import { BannerBackgroundColor } from '@proton/components/components/banner/Banner';
+import { CALENDAR_APP_NAME } from '@proton/shared/lib/calendar/constants';
+import { getSelfAddressData } from '@proton/shared/lib/calendar/deserialize';
+import { getDisplayTitle } from '@proton/shared/lib/calendar/helper';
+import getPaginatedEventsByUID from '@proton/shared/lib/calendar/integration/getPaginatedEventsByUID';
+import { getParticipant } from '@proton/shared/lib/calendar/integration/invite';
+import { getOccurrencesBetween } from '@proton/shared/lib/calendar/recurring';
 import { restrictedCalendarSanitize } from '@proton/shared/lib/calendar/sanitize';
 import urlify from '@proton/shared/lib/calendar/urlify';
+import { getIsEventCancelled } from '@proton/shared/lib/calendar/veventHelper';
+import { APPS, SECOND } from '@proton/shared/lib/constants';
 import { toUTCDate } from '@proton/shared/lib/date/timezone';
-import { getOccurrencesBetween } from '@proton/shared/lib/calendar/recurring';
-import getPaginatedEventsByUID from '@proton/shared/lib/calendar/integration/getPaginatedEventsByUID';
-import { Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { useLinkHandler } from '@proton/components/hooks/useLinkHandler';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import { CalendarEventWithMetadata, VcalVeventComponent, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { getParsedHeadersFirstValue } from '@proton/shared/lib/mail/messages';
 
 import { getEventLocalStartEndDates } from '../../../../helpers/calendar/emailReminder';
+import { getParticipantsList } from '../../../../helpers/calendar/invite';
+import { MessageErrors } from '../../../../logic/messages/messagesTypes';
+import EmailReminderWidgetSkeleton from './EmailReminderWidgetSkeleton';
 import EventReminderBanner from './EventReminderBanner';
 import ExtraEventParticipants from './ExtraEventParticipants';
-import { getParticipantsList } from '../../../../helpers/calendar/invite';
-import EmailReminderWidgetSkeleton from './EmailReminderWidgetSkeleton';
-import { MessageErrors } from '../../../../logic/messages/messagesTypes';
-
-import './CalendarWidget.scss';
 import OpenInCalendarButton from './OpenInCalendarButton';
 import useCalendarWidgetSideAppEvents from './useCalendarWidgetSideAppEvents';
+
+import './CalendarWidget.scss';
 
 const EVENT_NOT_FOUND_ERROR = 'EVENT_NOT_FOUND';
 const DECRYPTION_ERROR = 'DECRYPTION_ERROR';

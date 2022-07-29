@@ -1,9 +1,10 @@
 import { useMemo } from 'react';
-import { Button, useLabels, useFolders } from '@proton/components';
-import { c, msgid } from 'ttag';
-import { MailSettings } from '@proton/shared/lib/interfaces';
-import { Location } from 'history';
 
+import { Location } from 'history';
+import { c, msgid } from 'ttag';
+
+import { Button, useFolders, useLabels } from '@proton/components';
+import { MailSettings } from '@proton/shared/lib/interfaces';
 import { LabelCount } from '@proton/shared/lib/interfaces/Label';
 import conversationSvg from '@proton/styles/assets/img/illustrations/selected-emails.svg';
 

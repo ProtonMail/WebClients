@@ -3,9 +3,10 @@ import { Api, RequireSome, SimpleMap } from '@proton/shared/lib/interfaces';
 import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import { EncryptionPreferences } from '@proton/shared/lib/mail/encryptionPreferences';
+
 import { MESSAGE_ACTIONS } from '../../constants';
-import { Preparation } from '../../helpers/transforms/transforms';
 import { DecryptMessageResult } from '../../helpers/message/messageDecrypt';
+import { Preparation } from '../../helpers/transforms/transforms';
 
 export interface OutsideKey {
     type: 'outside';

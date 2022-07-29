@@ -1,62 +1,65 @@
 import {
-    useState,
-    useEffect,
-    useRef,
-    useCallback,
     DragEvent,
     Ref,
     RefObject,
     forwardRef,
+    useCallback,
+    useEffect,
     useImperativeHandle,
     useMemo,
+    useRef,
+    useState,
 } from 'react';
+import { useDispatch } from 'react-redux';
+
 import { c } from 'ttag';
+
+import {
+    EditorMetadata,
+    EditorTextDirection,
+    classnames,
+    useHandler,
+    useMailSettings,
+    useNotifications,
+    useSubscribeEventManager,
+} from '@proton/components';
+import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
+import { clearBit, setBit } from '@proton/shared/lib/helpers/bitset';
+import { canonizeEmail } from '@proton/shared/lib/helpers/email';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { getRecipients, isPlainText as testIsPlainText } from '@proton/shared/lib/mail/messages';
-import {
-    classnames,
-    useNotifications,
-    useHandler,
-    useSubscribeEventManager,
-    useMailSettings,
-    EditorTextDirection,
-    EditorMetadata,
-} from '@proton/components';
 import noop from '@proton/utils/noop';
-import { setBit, clearBit } from '@proton/shared/lib/helpers/bitset';
-import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
-import { canonizeEmail } from '@proton/shared/lib/helpers/email';
-import { useDispatch } from 'react-redux';
-import { mergeMessages } from '../../helpers/message/messages';
-import { getContent, setContent } from '../../helpers/message/messageContent';
-import { useMessage, useGetMessage } from '../../hooks/message/useMessage';
-import { useInitializeMessage } from '../../hooks/message/useInitializeMessage';
-import { isNewDraft } from '../../helpers/message/messageDraft';
-import { useAttachments } from '../../hooks/composer/useAttachments';
-import { getDate } from '../../helpers/elements';
-import { useHasScroll } from '../../hooks/useHasScroll';
-import { useReloadSendInfo, useMessageSendInfo } from '../../hooks/useSendInfo';
+
 import { DRAG_ADDRESS_KEY } from '../../constants';
-import { useComposerHotkeys } from '../../hooks/composer/useComposerHotkeys';
-import { ATTACHMENT_ACTION } from '../../helpers/attachment/attachmentUploader';
-import { useSendHandler } from '../../hooks/composer/useSendHandler';
-import { useCloseHandler } from '../../hooks/composer/useCloseHandler';
 import { updateKeyPackets } from '../../helpers/attachment/attachment';
-import { Event } from '../../models/event';
+import { ATTACHMENT_ACTION } from '../../helpers/attachment/attachmentUploader';
+import { getDate } from '../../helpers/elements';
+import { getContent, setContent } from '../../helpers/message/messageContent';
+import { isNewDraft } from '../../helpers/message/messageDraft';
 import { replaceEmbeddedAttachments } from '../../helpers/message/messageEmbeddeds';
-import { useScheduleSend } from '../../hooks/composer/useScheduleSend';
-import { useHandleMessageAlreadySent } from '../../hooks/composer/useHandleMessageAlreadySent';
+import { mergeMessages } from '../../helpers/message/messages';
+import { useAttachments } from '../../hooks/composer/useAttachments';
 import { useAutoSave } from '../../hooks/composer/useAutoSave';
-import { useLongLivingState } from '../../hooks/useLongLivingState';
-import ComposerInnerModals from './modals/ComposerInnerModals';
+import { useCloseHandler } from '../../hooks/composer/useCloseHandler';
+import { useComposerHotkeys } from '../../hooks/composer/useComposerHotkeys';
 import { ComposerInnerModalStates, useComposerInnerModals } from '../../hooks/composer/useComposerInnerModals';
-import { MessageState, MessageStateWithData, PartialMessageState } from '../../logic/messages/messagesTypes';
-import { removeInitialAttachments } from '../../logic/messages/draft/messagesDraftActions';
-import ComposerMeta from './ComposerMeta';
-import ComposerContent from './ComposerContent';
-import ComposerActions from './actions/ComposerActions';
 import { useDraftSenderVerification } from '../../hooks/composer/useDraftSenderVerification';
+import { useHandleMessageAlreadySent } from '../../hooks/composer/useHandleMessageAlreadySent';
+import { useScheduleSend } from '../../hooks/composer/useScheduleSend';
+import { useSendHandler } from '../../hooks/composer/useSendHandler';
+import { useInitializeMessage } from '../../hooks/message/useInitializeMessage';
+import { useGetMessage, useMessage } from '../../hooks/message/useMessage';
+import { useHasScroll } from '../../hooks/useHasScroll';
+import { useLongLivingState } from '../../hooks/useLongLivingState';
+import { useMessageSendInfo, useReloadSendInfo } from '../../hooks/useSendInfo';
+import { removeInitialAttachments } from '../../logic/messages/draft/messagesDraftActions';
+import { MessageState, MessageStateWithData, PartialMessageState } from '../../logic/messages/messagesTypes';
+import { Event } from '../../models/event';
+import ComposerContent from './ComposerContent';
+import ComposerMeta from './ComposerMeta';
+import ComposerActions from './actions/ComposerActions';
 import { ExternalEditorActions } from './editor/EditorWrapper';
+import ComposerInnerModals from './modals/ComposerInnerModals';
 
 export type MessageUpdate = PartialMessageState | ((message: MessageState) => PartialMessageState);
 

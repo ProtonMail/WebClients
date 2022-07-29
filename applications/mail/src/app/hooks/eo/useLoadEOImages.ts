@@ -1,17 +1,17 @@
-import { useDispatch } from 'react-redux';
 import { useCallback } from 'react';
+import { useDispatch } from 'react-redux';
 
 import { useApi } from '@proton/components';
-import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { MailSettings } from '@proton/shared/lib/interfaces';
+import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 
-import { useGetEODecryptedToken, useGetEOMessageState, useGetEOPassword } from './useLoadEOMessage';
-import { MessageRemoteImage, MessageState } from '../../logic/messages/messagesTypes';
-import { EOLoadEmbedded, EOLoadRemote } from '../../logic/eo/eoActions';
-import { EOLoadEmbeddedResults, EOLoadRemoteResults } from '../../logic/eo/eoType';
-import { transformRemote } from '../../helpers/transforms/transformRemote';
 import { updateImages } from '../../helpers/message/messageImages';
 import { transformEmbedded } from '../../helpers/transforms/transformEmbedded';
+import { transformRemote } from '../../helpers/transforms/transformRemote';
+import { EOLoadEmbedded, EOLoadRemote } from '../../logic/eo/eoActions';
+import { EOLoadEmbeddedResults, EOLoadRemoteResults } from '../../logic/eo/eoType';
+import { MessageRemoteImage, MessageState } from '../../logic/messages/messagesTypes';
+import { useGetEODecryptedToken, useGetEOMessageState, useGetEOPassword } from './useLoadEOMessage';
 
 export const useLoadEORemoteImages = (mailSettings: MailSettings) => {
     const dispatch = useDispatch();

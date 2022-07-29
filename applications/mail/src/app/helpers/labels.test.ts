@@ -1,8 +1,9 @@
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+
 import { Conversation } from '../models/conversation';
 import {
-    applyLabelChangesOnMessage,
     applyLabelChangesOnConversation,
+    applyLabelChangesOnMessage,
     applyLabelChangesOnOneMessageOfAConversation,
 } from './labels';
 

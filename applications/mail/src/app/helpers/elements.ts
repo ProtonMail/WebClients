@@ -1,27 +1,29 @@
+import { format, formatRelative } from 'date-fns';
 import { Location } from 'history';
-import { formatRelative, format } from 'date-fns';
-import { toMap, omit } from '@proton/shared/lib/helpers/object';
-import { Label, LabelCount } from '@proton/shared/lib/interfaces/Label';
-import unique from '@proton/utils/unique';
-import diff from '@proton/utils/diff';
+
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { omit, toMap } from '@proton/shared/lib/helpers/object';
 import { MailSettings } from '@proton/shared/lib/interfaces';
+import { Folder } from '@proton/shared/lib/interfaces/Folder';
+import { Label, LabelCount } from '@proton/shared/lib/interfaces/Label';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { hasAttachments as messageHasAttachments } from '@proton/shared/lib/mail/messages';
-import { Folder } from '@proton/shared/lib/interfaces/Folder';
+import diff from '@proton/utils/diff';
+import unique from '@proton/utils/unique';
+
 import { ELEMENT_TYPES } from '../constants';
+import { Conversation } from '../models/conversation';
 import { Element } from '../models/element';
-import { Sort, SearchParameters, Filter } from '../models/tools';
-import { isConversationMode } from './mailSettings';
+import { LabelIDsChanges } from '../models/event';
+import { Filter, SearchParameters, Sort } from '../models/tools';
 import {
-    isUnread as conversationIsUnread,
-    hasAttachments as conversationHasAttachments,
-    getNumAttachments as conversationNumAttachments,
     getLabelIDs as conversationGetLabelIDs,
     getTime as conversationGetTime,
+    hasAttachments as conversationHasAttachments,
+    isUnread as conversationIsUnread,
+    getNumAttachments as conversationNumAttachments,
 } from './conversation';
-import { LabelIDsChanges } from '../models/event';
-import { Conversation } from '../models/conversation';
+import { isConversationMode } from './mailSettings';
 
 const { INBOX, TRASH, SPAM, ARCHIVE, SCHEDULED } = MAILBOX_LABEL_IDS;
 

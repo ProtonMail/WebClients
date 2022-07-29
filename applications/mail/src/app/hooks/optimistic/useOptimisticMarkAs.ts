@@ -1,27 +1,29 @@
-import { Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { RequireSome } from '@proton/shared/lib/interfaces/utils';
-import { useCache, useHandler, useMailSettings } from '@proton/components';
-import { ConversationCountsModel, MessageCountsModel } from '@proton/shared/lib/models';
-import { LabelCount } from '@proton/shared/lib/interfaces/Label';
-import { STATUS } from '@proton/shared/lib/models/cache';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import { Conversation } from '../../models/conversation';
-import { Element } from '../../models/element';
-import { isMessage as testIsMessage, isUnread } from '../../helpers/elements';
-import { MARK_AS_STATUS } from '../useMarkAs';
-import { CacheEntry } from '../../models/tools';
+
+import { useCache, useHandler, useMailSettings } from '@proton/components';
+import { LabelCount } from '@proton/shared/lib/interfaces/Label';
+import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { RequireSome } from '@proton/shared/lib/interfaces/utils';
+import { ConversationCountsModel, MessageCountsModel } from '@proton/shared/lib/models';
+import { STATUS } from '@proton/shared/lib/models/cache';
+
 import { updateCountersForMarkAs } from '../../helpers/counter';
-import { useGetElementByID } from '../mailbox/useElements';
-import { optimisticMarkAs as optimisticMarkAsElementAction } from '../../logic/elements/elementsActions';
+import { isUnread, isMessage as testIsMessage } from '../../helpers/elements';
+import { isConversationMode } from '../../helpers/mailSettings';
+import { applyMarkAsChangesOnMessage } from '../../helpers/message/messages';
 import {
     optimisticMarkAsConversation,
     optimisticMarkAsConversationMessages,
 } from '../../logic/conversations/conversationsActions';
+import { optimisticMarkAs as optimisticMarkAsElementAction } from '../../logic/elements/elementsActions';
 import { optimisticMarkAs as optimisticMarkAsMessageAction } from '../../logic/messages/optimistic/messagesOptimisticActions';
-import { isConversationMode } from '../../helpers/mailSettings';
+import { Conversation } from '../../models/conversation';
+import { Element } from '../../models/element';
+import { CacheEntry } from '../../models/tools';
 import { useGetConversation } from '../conversation/useConversation';
-import { applyMarkAsChangesOnMessage } from '../../helpers/message/messages';
+import { useGetElementByID } from '../mailbox/useElements';
+import { MARK_AS_STATUS } from '../useMarkAs';
 
 export type MarkAsChanges = { status: MARK_AS_STATUS };
 

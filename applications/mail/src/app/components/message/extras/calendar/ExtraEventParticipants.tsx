@@ -1,7 +1,10 @@
+import { useState } from 'react';
+
+import { c, msgid } from 'ttag';
+
 import { UnderlineButton } from '@proton/components';
 import { Participant } from '@proton/shared/lib/interfaces/calendar';
-import { useState } from 'react';
-import { c, msgid } from 'ttag';
+
 import ExtraEventParticipant from './ExtraEventParticipant';
 
 interface Props {

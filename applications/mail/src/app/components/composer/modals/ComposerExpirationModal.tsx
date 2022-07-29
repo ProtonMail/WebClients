@@ -1,20 +1,22 @@
-import { useState, ChangeEvent, useMemo } from 'react';
+import { ChangeEvent, useMemo, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { c, msgid } from 'ttag';
-import { isToday, isTomorrow } from 'date-fns';
-import { Href, generateUID, useNotifications, useFeatures, FeatureCode, Checkbox } from '@proton/components';
-import range from '@proton/utils/range';
-import { setBit } from '@proton/shared/lib/helpers/bitset';
-import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
-import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
-import ComposerInnerModal from './ComposerInnerModal';
+import { isToday, isTomorrow } from 'date-fns';
+import { c, msgid } from 'ttag';
+
+import { Checkbox, FeatureCode, Href, generateUID, useFeatures, useNotifications } from '@proton/components';
+import { setBit } from '@proton/shared/lib/helpers/bitset';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
+import range from '@proton/utils/range';
+
 import { MAX_EXPIRATION_TIME } from '../../../constants';
-import { MessageChange } from '../Composer';
-import { MessageState } from '../../../logic/messages/messagesTypes';
-import { updateExpires } from '../../../logic/messages/draft/messagesDraftActions';
-import { useExternalExpiration } from '../../../hooks/composer/useExternalExpiration';
 import { formatDateToHuman } from '../../../helpers/date';
+import { useExternalExpiration } from '../../../hooks/composer/useExternalExpiration';
+import { updateExpires } from '../../../logic/messages/draft/messagesDraftActions';
+import { MessageState } from '../../../logic/messages/messagesTypes';
+import { MessageChange } from '../Composer';
+import ComposerInnerModal from './ComposerInnerModal';
 import PasswordInnerModalForm from './PasswordInnerModalForm';
 
 // expiresIn value is in seconds and default is 7 days

@@ -1,8 +1,11 @@
-import { useState, ChangeEvent } from 'react';
+import { ChangeEvent, useState } from 'react';
+
 import { c } from 'ttag';
-import { Table, TableHeader, Checkbox, TableRow, TableBody, FormModal, SearchInput } from '@proton/components';
-import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+
+import { Checkbox, FormModal, SearchInput, Table, TableBody, TableHeader, TableRow } from '@proton/components';
 import { Recipient } from '@proton/shared/lib/interfaces/Address';
+import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+
 import { MessageSendInfo } from '../../../hooks/useSendInfo';
 import AddressesRecipientItem from './AddressesRecipientItem';
 

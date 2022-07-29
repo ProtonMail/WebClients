@@ -1,4 +1,5 @@
 import { DetailedHTMLProps, HTMLAttributes, ReactNode } from 'react';
+
 import { classnames } from '@proton/components';
 
 interface Props extends DetailedHTMLProps<HTMLAttributes<HTMLHeadingElement>, HTMLHeadingElement> {

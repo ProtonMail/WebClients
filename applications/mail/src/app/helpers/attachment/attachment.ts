@@ -1,5 +1,6 @@
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { extractContentValue } from '@proton/shared/lib/mail/send/helpers';
+
 import { MessageState } from '../../logic/messages/messagesTypes';
 
 export const updateKeyPackets = (modelMessage: MessageState, syncedMessage: MessageState) => {

@@ -1,28 +1,30 @@
-import { useState, useEffect, MutableRefObject, useRef, MouseEvent, Fragment, RefObject } from 'react';
+import { Fragment, MouseEvent, MutableRefObject, RefObject, useEffect, useRef, useState } from 'react';
 import * as React from 'react';
+
 import { c, msgid } from 'ttag';
+
 import {
     AddressesAutocomplete,
+    Button,
+    Icon,
+    Tooltip,
     classnames,
     useContactEmails,
     useContactGroups,
     useNotifications,
-    Button,
-    Icon,
-    Tooltip,
 } from '@proton/components';
-import noop from '@proton/utils/noop';
-import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import { Recipient } from '@proton/shared/lib/interfaces/Address';
+import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+import noop from '@proton/utils/noop';
 
-import AddressesRecipientItem from './AddressesRecipientItem';
-import { recipientsWithoutGroup, getRecipientOrGroupKey } from '../../../helpers/addresses';
-import AddressesGroupItem from './AddressesGroupItem';
-import { RecipientGroup } from '../../../models/address';
-import { MessageSendInfo } from '../../../hooks/useSendInfo';
-import { useAddressesInputDrag } from '../../../hooks/useAddressesInputDrag';
-import { useRecipientLabel } from '../../../hooks/contact/useRecipientLabel';
+import { getRecipientOrGroupKey, recipientsWithoutGroup } from '../../../helpers/addresses';
 import { useContactsMap, useGroupsWithContactsMap } from '../../../hooks/contact/useContacts';
+import { useRecipientLabel } from '../../../hooks/contact/useRecipientLabel';
+import { useAddressesInputDrag } from '../../../hooks/useAddressesInputDrag';
+import { MessageSendInfo } from '../../../hooks/useSendInfo';
+import { RecipientGroup } from '../../../models/address';
+import AddressesGroupItem from './AddressesGroupItem';
+import AddressesRecipientItem from './AddressesRecipientItem';
 
 interface Props {
     id: string;

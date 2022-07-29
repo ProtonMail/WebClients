@@ -1,10 +1,11 @@
 import { useMemo } from 'react';
+
 import { classnames } from '@proton/components';
 
-import NumMessages from './NumMessages';
+import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { isConversation as testIsConversation } from '../../helpers/elements';
 import { Element } from '../../models/element';
-import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
+import NumMessages from './NumMessages';
 
 interface Props {
     className?: string;

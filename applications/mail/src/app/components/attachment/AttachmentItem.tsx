@@ -1,19 +1,22 @@
-import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
+
 import { c } from 'ttag';
-import useIsMounted from '@proton/hooks/useIsMounted';
+
 import {
+    CircleLoader,
+    CircularProgress,
+    FileIcon,
+    FileNameDisplay,
     Icon,
     classnames,
     useLoading,
-    FileIcon,
-    CircleLoader,
-    FileNameDisplay,
-    CircularProgress,
 } from '@proton/components';
+import useIsMounted from '@proton/hooks/useIsMounted';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
-import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import { rtlSanitize } from '@proton/shared/lib/helpers/string';
+import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
+import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
+
 import { PendingUpload } from '../../hooks/composer/useAttachments';
 import { AttachmentAction, AttachmentHandler } from './AttachmentList';
 

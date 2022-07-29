@@ -1,26 +1,26 @@
-import { useEffect, memo, useRef } from 'react';
+import { memo, useEffect, useRef } from 'react';
 import * as React from 'react';
-import { useLabels, useToggle, classnames, Scroll } from '@proton/components';
-import { Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { MailSettings } from '@proton/shared/lib/interfaces';
+
+import { Scroll, classnames, useLabels, useToggle } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { MailSettings } from '@proton/shared/lib/interfaces';
+import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { isDraft } from '@proton/shared/lib/mail/messages';
 
-import MessageView, { MessageViewRef } from '../message/MessageView';
-import { useConversation } from '../../hooks/conversation/useConversation';
-import { findMessageToExpand } from '../../helpers/message/messageExpandable';
-import TrashWarning from './TrashWarning';
+import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { hasLabel } from '../../helpers/elements';
-import { useShouldMoveOut } from '../../hooks/useShouldMoveOut';
-import { usePlaceholders } from '../../hooks/usePlaceholders';
-import ConversationHeader from './ConversationHeader';
-import { Breakpoints } from '../../models/utils';
-
-import UnreadMessages from './UnreadMessages';
+import { findMessageToExpand } from '../../helpers/message/messageExpandable';
+import { useConversation } from '../../hooks/conversation/useConversation';
 import { useConversationFocus } from '../../hooks/conversation/useConversationFocus';
 import { useConversationHotkeys } from '../../hooks/conversation/useConversationHotkeys';
+import { usePlaceholders } from '../../hooks/usePlaceholders';
+import { useShouldMoveOut } from '../../hooks/useShouldMoveOut';
+import { Breakpoints } from '../../models/utils';
+import MessageView, { MessageViewRef } from '../message/MessageView';
 import ConversationErrorBanner from './ConversationErrorBanner';
-import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
+import ConversationHeader from './ConversationHeader';
+import TrashWarning from './TrashWarning';
+import UnreadMessages from './UnreadMessages';
 
 const { TRASH } = MAILBOX_LABEL_IDS;
 

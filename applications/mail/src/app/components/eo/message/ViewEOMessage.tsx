@@ -4,14 +4,14 @@ import { useRouteMatch } from 'react-router-dom';
 import { useActiveBreakpoint } from '@proton/components';
 import { eoDefaultMailSettings } from '@proton/shared/lib/mail/eo/constants';
 
-import EOMessageHeader from './EOMessageHeader';
-import EOHeaderExpanded from './EOHeaderExpanded';
-import EOMessageBody from './EOMessageBody';
 import { EOUrlParams } from '../../../helpers/eo/eoUrl';
-import { useLoadEOMessage } from '../../../hooks/eo/useLoadEOMessage';
 import { useLoadEOEmbeddedImages, useLoadEORemoteImages } from '../../../hooks/eo/useLoadEOImages';
+import { useLoadEOMessage } from '../../../hooks/eo/useLoadEOMessage';
 import MessageFooter from '../../message/MessageFooter';
 import EORedirect from '../EORedirect';
+import EOHeaderExpanded from './EOHeaderExpanded';
+import EOMessageBody from './EOMessageBody';
+import EOMessageHeader from './EOMessageHeader';
 
 import './EOMessage.scss';
 

@@ -1,4 +1,5 @@
 import { Icon } from '@proton/components';
+
 import { isUnread } from '../../helpers/elements';
 import { Element } from '../../models/element';
 

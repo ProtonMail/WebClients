@@ -1,16 +1,18 @@
 import { useCallback } from 'react';
 import { useDispatch } from 'react-redux';
+
+import { useAuthentication } from '@proton/components';
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { isAttachPublicKey } from '@proton/shared/lib/mail/messages';
-import { useAuthentication } from '@proton/components';
+
 import { ATTACHMENT_ACTION, upload } from '../../helpers/attachment/attachmentUploader';
 import { attachPublicKey } from '../../helpers/message/messageAttachPublicKey';
 import { replaceDataUrl } from '../../helpers/message/messageDataUrl';
 import { createEmbeddedImageFromUpload } from '../../helpers/message/messageEmbeddeds';
-import { useGetMessageKeys } from '../message/useGetMessageKeys';
-import { MessageStateWithData, MessageEmbeddedImage } from '../../logic/messages/messagesTypes';
-import { useGetMessage } from '../message/useMessage';
 import { sendModifications } from '../../logic/messages/draft/messagesDraftActions';
+import { MessageEmbeddedImage, MessageStateWithData } from '../../logic/messages/messagesTypes';
+import { useGetMessageKeys } from '../message/useGetMessageKeys';
+import { useGetMessage } from '../message/useMessage';
 
 export const useSendModifications = () => {
     const getMessage = useGetMessage();

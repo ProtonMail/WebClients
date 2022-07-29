@@ -1,7 +1,9 @@
-import { AlertModal, Button, Href, ModalProps, PrimaryButton } from '@proton/components';
-import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import { c, msgid } from 'ttag';
+
+import { AlertModal, Button, Href, ModalProps, PrimaryButton } from '@proton/components';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
+
 import { Download } from '../../../helpers/attachment/attachmentDownloader';
 
 interface Props extends ModalProps {

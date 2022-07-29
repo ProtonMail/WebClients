@@ -1,4 +1,5 @@
 import { c } from 'ttag';
+
 import { Href, Spotlight, useSpotlightShow } from '@proton/components/components';
 import { FeatureCode } from '@proton/components/containers';
 import { useSpotlightOnFeature, useWelcomeFlags } from '@proton/components/hooks';

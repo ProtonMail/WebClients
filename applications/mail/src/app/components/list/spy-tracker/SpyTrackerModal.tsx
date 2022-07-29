@@ -1,7 +1,7 @@
 import { c, msgid } from 'ttag';
+
 import {
     Button,
-    classnames,
     Collapsible,
     CollapsibleContent,
     CollapsibleHeader,
@@ -13,14 +13,15 @@ import {
     ModalTwoContent,
     ModalTwoFooter,
     ModalTwoHeader,
+    classnames,
     useMailSettings,
 } from '@proton/components';
 import PreventTrackingToggle from '@proton/components/containers/emailPrivacy/PreventTrackingToggle';
 
 import { emailTrackerProtectionURL } from '../../../constants';
-import NumberOfElementsBubble from './NumberOfElementsBubble';
 import { Tracker, useMessageTrackers } from '../../../hooks/message/useMessageTrackers';
 import { MessageState } from '../../../logic/messages/messagesTypes';
+import NumberOfElementsBubble from './NumberOfElementsBubble';
 
 interface Props extends ModalProps {
     message: MessageState;

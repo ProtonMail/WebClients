@@ -1,13 +1,13 @@
 import {
-    useModals,
+    ModalTwo as Modal,
+    ModalTwoContent as ModalContent,
+    ModalTwoHeader as ModalHeader,
+    ModalProps,
+    getCanReactiveMnemonic,
     useIsMnemonicAvailable,
+    useModals,
     useSettingsLink,
     useUser,
-    getCanReactiveMnemonic,
-    ModalProps,
-    ModalTwo as Modal,
-    ModalTwoHeader as ModalHeader,
-    ModalTwoContent as ModalContent,
 } from '@proton/components';
 import { ChecklistKey } from '@proton/shared/lib/interfaces';
 

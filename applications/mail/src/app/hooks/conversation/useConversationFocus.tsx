@@ -1,5 +1,7 @@
 import { FocusEvent, RefObject, useCallback, useEffect, useState } from 'react';
+
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+
 import useClickOutsideFocusedMessage from './useClickOutsideFocusedMessage';
 
 export const useConversationFocus = (messages: Message[]) => {

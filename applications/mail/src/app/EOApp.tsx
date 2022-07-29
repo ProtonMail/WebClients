@@ -1,34 +1,33 @@
 import { useRef } from 'react';
-import createCache, { Cache } from '@proton/shared/lib/helpers/cache';
-import noop from '@proton/utils/noop';
-
-import { newVersionUpdater } from '@proton/shared/lib/busy';
-import sentry from '@proton/shared/lib/helpers/sentry';
-import { initLocales } from '@proton/shared/lib/i18n/locales';
-import { getProdId, setVcalProdId } from '@proton/shared/lib/calendar/vcalConfig';
-import {
-    ApiProvider,
-    ConfigProvider,
-    ThemeProvider,
-    Icons,
-    ModalsProvider,
-    PreventLeaveProvider,
-    RightToLeftProvider,
-    CompatibilityCheck,
-    NotificationsChildren,
-    NotificationsProvider,
-    CacheProvider,
-    StandardPublicApp,
-    getSessionTrackingEnabled,
-} from '@proton/components';
 import { BrowserRouter as Router } from 'react-router-dom';
 
-import * as config from './config';
+import {
+    ApiProvider,
+    CacheProvider,
+    CompatibilityCheck,
+    ConfigProvider,
+    Icons,
+    ModalsProvider,
+    NotificationsChildren,
+    NotificationsProvider,
+    PreventLeaveProvider,
+    RightToLeftProvider,
+    StandardPublicApp,
+    ThemeProvider,
+    getSessionTrackingEnabled,
+} from '@proton/components';
+import { newVersionUpdater } from '@proton/shared/lib/busy';
+import { getProdId, setVcalProdId } from '@proton/shared/lib/calendar/vcalConfig';
+import createCache, { Cache } from '@proton/shared/lib/helpers/cache';
+import sentry from '@proton/shared/lib/helpers/sentry';
+import { initLocales } from '@proton/shared/lib/i18n/locales';
+import noop from '@proton/utils/noop';
 
-import './app.scss';
+import * as config from './config';
+import EOContainer from './containers/eo/EOContainer';
 import { registerMailToProtocolHandler } from './helpers/url';
 
-import EOContainer from './containers/eo/EOContainer';
+import './app.scss';
 
 const locales = initLocales(require.context('../../locales', true, /.json$/, 'lazy'));
 

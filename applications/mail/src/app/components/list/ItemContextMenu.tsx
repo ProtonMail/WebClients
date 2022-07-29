@@ -1,11 +1,14 @@
-import { c } from 'ttag';
 import { RefObject, useMemo } from 'react';
-import { ContextMenu, ContextSeparator, ContextMenuButton } from '@proton/components';
 import { useSelector } from 'react-redux';
+
+import { c } from 'ttag';
+
+import { ContextMenu, ContextMenuButton, ContextSeparator } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+
+import { useLabelActions } from '../../hooks/useLabelActions';
 import { MARK_AS_STATUS } from '../../hooks/useMarkAs';
 import { elementsAreUnread as elementsAreUnreadSelector } from '../../logic/elements/elementsSelectors';
-import { useLabelActions } from '../../hooks/useLabelActions';
 
 interface Props {
     checkedIDs: string[];

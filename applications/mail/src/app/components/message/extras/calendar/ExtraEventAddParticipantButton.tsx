@@ -1,20 +1,23 @@
+import { Dispatch, SetStateAction } from 'react';
+
+import { c } from 'ttag';
+
 import { Button, useLoading, useNotifications, useSideApp } from '@proton/components';
 import useAddAttendees from '@proton/components/containers/calendar/hooks/useAddAttendees';
 import { getAttendeeEmail, withPartstat } from '@proton/shared/lib/calendar/attendees';
 import { ICAL_ATTENDEE_STATUS } from '@proton/shared/lib/calendar/constants';
 import { getIsSuccessSyncApiResponse, reformatApiErrorMessage } from '@proton/shared/lib/calendar/helper';
 import { AddAttendeeError } from '@proton/shared/lib/calendar/integration/AddAttendeeError';
-import noop from '@proton/utils/noop';
+import { APPS } from '@proton/shared/lib/constants';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { RequireSome } from '@proton/shared/lib/interfaces';
 import { SyncMultipleApiSuccessResponses } from '@proton/shared/lib/interfaces/calendar';
 import { EncryptionPreferencesError } from '@proton/shared/lib/mail/encryptionPreferences';
 import { postMessageToIframe } from '@proton/shared/lib/sideApp/helpers';
-import { APPS } from '@proton/shared/lib/constants';
 import { SIDE_APP_EVENTS } from '@proton/shared/lib/sideApp/models';
-import { Dispatch, SetStateAction } from 'react';
-import { c } from 'ttag';
-import { getDisableButtons, InvitationModel, UPDATE_ACTION } from '../../../../helpers/calendar/invite';
+import noop from '@proton/utils/noop';
+
+import { InvitationModel, UPDATE_ACTION, getDisableButtons } from '../../../../helpers/calendar/invite';
 import { useContactsMap } from '../../../../hooks/contact/useContacts';
 
 interface Props {

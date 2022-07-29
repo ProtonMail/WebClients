@@ -1,20 +1,22 @@
-import { c } from 'ttag';
 import { useEffect, useRef, useState } from 'react';
+
+import { c } from 'ttag';
+
 import {
-    classnames,
     Dropdown,
     DropdownButton,
     DropdownMenu,
     DropdownMenuButton,
     FolderIcon,
-    generateUID,
     Icon,
     Mark,
     SearchInput,
+    classnames,
+    generateUID,
     usePopperAnchor,
 } from '@proton/components';
 
-import { useLocationFieldOptions, ItemsGroup } from './useLocationFieldOptions';
+import { ItemsGroup, useLocationFieldOptions } from './useLocationFieldOptions';
 
 interface Props {
     value: string;

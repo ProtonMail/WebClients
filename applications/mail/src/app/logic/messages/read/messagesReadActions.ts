@@ -1,7 +1,9 @@
+import { createAction, createAsyncThunk } from '@reduxjs/toolkit';
+
 import { getMessage } from '@proton/shared/lib/api/messages';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { createAction, createAsyncThunk } from '@reduxjs/toolkit';
+
 import { LOAD_RETRY_DELAY } from '../../../constants';
 import { MessageEvent } from '../../../models/event';
 import { RootState } from '../../store';

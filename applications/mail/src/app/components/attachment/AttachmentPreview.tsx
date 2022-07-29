@@ -1,8 +1,10 @@
-import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
-import { forwardRef, MutableRefObject, Ref, useEffect, useState, useRef } from 'react';
+import { MutableRefObject, Ref, forwardRef, useEffect, useRef, useState } from 'react';
+
 import { FilePreview, NavigationControl } from '@proton/components';
-import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import Portal from '@proton/components/components/portal/Portal';
+import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
+import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
+
 import { useDownload, usePreview } from '../../hooks/useDownload';
 import { MessageStateWithData, OutsideKey } from '../../logic/messages/messagesTypes';
 

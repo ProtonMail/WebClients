@@ -1,4 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
+
 import eo from './eoSlice';
 
 export const store = configureStore({

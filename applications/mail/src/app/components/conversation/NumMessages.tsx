@@ -1,4 +1,5 @@
 import { classnames } from '@proton/components';
+
 import { Conversation } from '../../models/conversation';
 
 import './NumMessages.scss';

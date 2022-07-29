@@ -1,5 +1,7 @@
 import { c } from 'ttag';
+
 import { AlertModal, Button, ModalProps } from '@proton/components';
+
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 
 const ClearBrowserDataModal = (rest: ModalProps) => {

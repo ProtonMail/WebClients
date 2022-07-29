@@ -1,7 +1,8 @@
 import { c } from 'ttag';
-import { classnames, Icon, HotkeyTuple, FolderIcon } from '@proton/components';
-import { FolderWithSubFolders } from '@proton/shared/lib/interfaces/Folder';
+
+import { FolderIcon, HotkeyTuple, Icon, classnames } from '@proton/components';
 import { formatFolderName } from '@proton/shared/lib/helpers/folder';
+import { FolderWithSubFolders } from '@proton/shared/lib/interfaces/Folder';
 
 import SidebarItem from './SidebarItem';
 

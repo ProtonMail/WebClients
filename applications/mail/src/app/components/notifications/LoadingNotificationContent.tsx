@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+
 import { useLoading } from '@proton/components';
 
 interface Props {

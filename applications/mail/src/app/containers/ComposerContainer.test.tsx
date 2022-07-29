@@ -1,16 +1,18 @@
 import { act } from '@testing-library/react';
+
+import { getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS, MIME_TYPES } from '@proton/shared/lib/constants';
 import { Recipient } from '@proton/shared/lib/interfaces';
-import { getAppName } from '@proton/shared/lib/apps/helper';
-import { addAddressToCache, clearAll, minimalCache, render, tick } from '../helpers/test/helper';
-import { OnCompose } from '../hooks/composer/useCompose';
-import { Breakpoints } from '../models/utils';
-import ComposerContainer from './ComposerContainer';
-import { preparePlainText } from '../helpers/transforms/transforms';
-import { formatFullDate } from '../helpers/date';
+
 import { MESSAGE_ACTIONS } from '../constants';
-import { useOnCompose } from './ComposeProvider';
+import { formatFullDate } from '../helpers/date';
+import { addAddressToCache, clearAll, minimalCache, render, tick } from '../helpers/test/helper';
+import { preparePlainText } from '../helpers/transforms/transforms';
+import { OnCompose } from '../hooks/composer/useCompose';
 import { MessageState } from '../logic/messages/messagesTypes';
+import { Breakpoints } from '../models/utils';
+import { useOnCompose } from './ComposeProvider';
+import ComposerContainer from './ComposerContainer';
 
 const ID = 'ID';
 const Email = 'me@test.com';

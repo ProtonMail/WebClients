@@ -1,7 +1,9 @@
 import { MouseEvent } from 'react';
-import { getInitials } from '@proton/shared/lib/helpers/string';
-import { Copy, useNotifications } from '@proton/components';
+
 import { c } from 'ttag';
+
+import { Copy, useNotifications } from '@proton/components';
+import { getInitials } from '@proton/shared/lib/helpers/string';
 import { Recipient } from '@proton/shared/lib/interfaces';
 
 interface Props {

@@ -1,20 +1,22 @@
-import { useState, useMemo, useEffect } from 'react';
-import { c, msgid } from 'ttag';
-import { useInterval, useHandler } from '@proton/components';
+import { useEffect, useMemo, useState } from 'react';
+
 import {
+    addSeconds,
+    differenceInHours,
+    differenceInSeconds,
     fromUnixTime,
     isAfter,
-    differenceInSeconds,
-    addSeconds,
     isToday,
     isTomorrow,
-    differenceInHours,
 } from 'date-fns';
+import { c, msgid } from 'ttag';
 
-import { Element } from '../models/element';
+import { useHandler, useInterval } from '@proton/components';
+
 import { EXPIRATION_CHECK_FREQUENCY } from '../constants';
 import { formatDateToHuman } from '../helpers/date';
 import { MessageState } from '../logic/messages/messagesTypes';
+import { Element } from '../models/element';
 
 const getDateCount = (
     daysCountLeft: number,

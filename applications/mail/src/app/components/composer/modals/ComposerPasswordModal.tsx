@@ -1,17 +1,19 @@
-import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 import { useDispatch } from 'react-redux';
+
 import { c, msgid } from 'ttag';
-import { Href, useNotifications, useFeatures, FeatureCode } from '@proton/components';
+
+import { FeatureCode, Href, useFeatures, useNotifications } from '@proton/components';
 import { setBit } from '@proton/shared/lib/helpers/bitset';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 
-import ComposerInnerModal from './ComposerInnerModal';
-import { MessageChange } from '../Composer';
-import { MessageState } from '../../../logic/messages/messagesTypes';
-import { updateExpires } from '../../../logic/messages/draft/messagesDraftActions';
-import PasswordInnerModalForm from './PasswordInnerModalForm';
-import { useExternalExpiration } from '../../../hooks/composer/useExternalExpiration';
 import { DEFAULT_EO_EXPIRATION_DAYS } from '../../../constants';
+import { useExternalExpiration } from '../../../hooks/composer/useExternalExpiration';
+import { updateExpires } from '../../../logic/messages/draft/messagesDraftActions';
+import { MessageState } from '../../../logic/messages/messagesTypes';
+import { MessageChange } from '../Composer';
+import ComposerInnerModal from './ComposerInnerModal';
+import PasswordInnerModalForm from './PasswordInnerModalForm';
 
 const getNumberOfExpirationDays = (message?: MessageState) => {
     const expirationInSeconds = message?.draftFlags?.expiresIn || 0;

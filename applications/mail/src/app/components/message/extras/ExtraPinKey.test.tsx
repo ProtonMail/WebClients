@@ -1,9 +1,11 @@
-import { Address, MailSettings } from '@proton/shared/lib/interfaces';
+import { Matcher, fireEvent } from '@testing-library/dom';
+
 import { PublicKeyReference } from '@proton/crypto';
+import { Address, MailSettings } from '@proton/shared/lib/interfaces';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
-import { fireEvent, Matcher } from '@testing-library/dom';
 
+import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../helpers/test/crypto';
 import {
     addApiMock,
     addToCache,
@@ -13,10 +15,9 @@ import {
     render,
     tick,
 } from '../../../helpers/test/helper';
-import ExtraPinKey from './ExtraPinKey';
-import { MessageVerification } from '../../../logic/messages/messagesTypes';
 import { message } from '../../../helpers/test/pinKeys';
-import { setupCryptoProxyForTesting, releaseCryptoProxy } from '../../../helpers/test/crypto';
+import { MessageVerification } from '../../../logic/messages/messagesTypes';
+import ExtraPinKey from './ExtraPinKey';
 
 const { SIGNED_AND_VALID, SIGNED_AND_INVALID, NOT_SIGNED, NOT_VERIFIED } = VERIFICATION_STATUS;
 

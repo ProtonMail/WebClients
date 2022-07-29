@@ -1,8 +1,10 @@
 import React, { useRef } from 'react';
-import createNotificationManager from '@proton/components/containers/notifications/manager';
-import NotificationsContext from '@proton/components/containers/notifications/notificationsContext';
+
 import NotificationsContainer from '@proton/components/containers/notifications/Container';
 import { NotificationOptions } from '@proton/components/containers/notifications/interfaces';
+import createNotificationManager from '@proton/components/containers/notifications/manager';
+import NotificationsContext from '@proton/components/containers/notifications/notificationsContext';
+
 import { useLongLivingState } from '../../hooks/useLongLivingState';
 
 interface Props {

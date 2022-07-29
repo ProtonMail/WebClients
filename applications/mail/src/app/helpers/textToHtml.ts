@@ -1,7 +1,8 @@
 import markdownit from 'markdown-it';
-import { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 
 import { defaultFontStyle } from '@proton/components/components/editor/helpers';
+import { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
+
 import { templateBuilder } from './message/messageSignature';
 import { toText } from './parserHtml';
 

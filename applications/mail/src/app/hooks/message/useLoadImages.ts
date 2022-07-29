@@ -1,27 +1,29 @@
 import { useCallback } from 'react';
 import { useDispatch } from 'react-redux';
+
 import { useApi, useMailSettings } from '@proton/components';
 import { WorkerDecryptionResult } from '@proton/crypto';
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
+
+import { updateImages } from '../../helpers/message/messageImages';
 import { transformEmbedded } from '../../helpers/transforms/transformEmbedded';
 import { transformRemote } from '../../helpers/transforms/transformRemote';
-import { useGetMessageKeys } from './useGetMessageKeys';
-import { updateImages } from '../../helpers/message/messageImages';
 import { updateAttachment } from '../../logic/attachments/attachmentsActions';
-import { useGetAttachment } from '../useAttachment';
 import {
-    loadRemoteProxy,
-    loadRemoteDirect,
     loadEmbedded,
     loadFakeProxy,
+    loadRemoteDirect,
+    loadRemoteProxy,
 } from '../../logic/messages/images/messagesImagesActions';
 import {
-    MessageState,
-    MessageRemoteImage,
-    LoadRemoteResults,
     LoadEmbeddedResults,
+    LoadRemoteResults,
+    MessageRemoteImage,
+    MessageState,
     MessageStateWithData,
 } from '../../logic/messages/messagesTypes';
+import { useGetAttachment } from '../useAttachment';
+import { useGetMessageKeys } from './useGetMessageKeys';
 import { useGetMessage } from './useMessage';
 
 export const useLoadRemoteImages = (localID: string) => {

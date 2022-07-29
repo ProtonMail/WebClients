@@ -1,4 +1,5 @@
 import { classnames } from '@proton/components';
+
 import './NumberOfElementsBubble.scss';
 
 interface Props {

@@ -1,7 +1,10 @@
-import { createContext, ReactNode, useContext, useState } from 'react';
+import { ReactNode, createContext, useContext, useState } from 'react';
+
 import { addDays, fromUnixTime } from 'date-fns';
-import { ChecklistKey } from '@proton/shared/lib/interfaces';
+
 import * as sessionStorage from '@proton/shared/lib/helpers/sessionStorage';
+import { ChecklistKey } from '@proton/shared/lib/interfaces';
+
 import useChecklist, { GetStartedChecklistApiResponse } from './useChecklist';
 
 const GET_STARTED_CHECKLIST_DISMISSED_STORAGE_KEY = 'GET_STARTED_CHECKLIST_DISMISSED_STORAGE_KEY';

@@ -1,24 +1,27 @@
-import { useState, RefObject, DragEvent, MouseEvent } from 'react';
+import { DragEvent, MouseEvent, RefObject, useState } from 'react';
+
 import { c } from 'ttag';
+
 import {
-    Icon,
-    Tooltip,
-    classnames,
-    usePopperAnchor,
     ContextMenu,
     DropdownMenu,
     DropdownMenuButton,
-    useNotifications,
+    Icon,
+    Tooltip,
+    classnames,
     useDragOver,
     useModalState,
+    useNotifications,
+    usePopperAnchor,
 } from '@proton/components';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
-import AddressesGroupModal from './AddressesGroupModal';
-import { RecipientGroup } from '../../../models/address';
-import { useUpdateGroupSendInfo, MessageSendInfo } from '../../../hooks/useSendInfo';
+
 import { DRAG_ADDRESS_KEY } from '../../../constants';
-import { useRecipientLabel } from '../../../hooks/contact/useRecipientLabel';
 import { useGroupsWithContactsMap } from '../../../hooks/contact/useContacts';
+import { useRecipientLabel } from '../../../hooks/contact/useRecipientLabel';
+import { MessageSendInfo, useUpdateGroupSendInfo } from '../../../hooks/useSendInfo';
+import { RecipientGroup } from '../../../models/address';
+import AddressesGroupModal from './AddressesGroupModal';
 
 interface Props {
     recipientGroup: RecipientGroup;

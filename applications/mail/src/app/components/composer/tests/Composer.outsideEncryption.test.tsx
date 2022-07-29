@@ -1,7 +1,10 @@
-import loudRejection from 'loud-rejection';
-import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { fireEvent, getByTestId as getByTestIdDefault } from '@testing-library/dom';
 import { act } from '@testing-library/react';
+import loudRejection from 'loud-rejection';
+
+import { MIME_TYPES } from '@proton/shared/lib/constants';
+
+import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../helpers/test/crypto';
 import {
     addApiKeys,
     addApiMock,
@@ -14,8 +17,7 @@ import {
     tick,
 } from '../../../helpers/test/helper';
 import Composer from '../Composer';
-import { AddressID, fromAddress, ID, prepareMessage, props, toAddress } from './Composer.test.helpers';
-import { setupCryptoProxyForTesting, releaseCryptoProxy } from '../../../helpers/test/crypto';
+import { AddressID, ID, fromAddress, prepareMessage, props, toAddress } from './Composer.test.helpers';
 
 loudRejection();
 

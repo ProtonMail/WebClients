@@ -1,39 +1,41 @@
-import { canonizeInternalEmail } from '@proton/shared/lib/helpers/email';
-import { getOriginalTo, isUnsubscribed } from '@proton/shared/lib/mail/messages';
+import { c } from 'ttag';
+
 import {
-    Icon,
-    Tooltip,
     Button,
-    generateUID,
-    useNotifications,
-    useAddresses,
-    useLoading,
-    useApi,
-    useEventManager,
-    Label,
     Field,
-    Row,
-    useModalState,
     Href,
+    Icon,
+    Label,
     ModalTwo,
-    ModalTwoHeader,
     ModalTwoContent,
     ModalTwoFooter,
+    ModalTwoHeader,
     PrimaryButton,
+    Row,
+    Tooltip,
+    generateUID,
+    useAddresses,
+    useApi,
+    useEventManager,
+    useLoading,
+    useModalState,
+    useNotifications,
 } from '@proton/components';
+import { markAsUnsubscribed, oneClickUnsubscribe } from '@proton/shared/lib/api/messages';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
-import { c } from 'ttag';
 import { openNewTab } from '@proton/shared/lib/helpers/browser';
+import { canonizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { oneClickUnsubscribe, markAsUnsubscribed } from '@proton/shared/lib/api/messages';
+import { getOriginalTo, isUnsubscribed } from '@proton/shared/lib/mail/messages';
 import isTruthy from '@proton/utils/isTruthy';
-import { useSaveDraft } from '../../../hooks/message/useSaveDraft';
-import { useSendMessage } from '../../../hooks/composer/useSendMessage';
-import { findSender } from '../../../helpers/addresses';
-import { useSendVerifications } from '../../../hooks/composer/useSendVerifications';
+
 import { useOnCompose } from '../../../containers/ComposeProvider';
-import { MessageState, MessageStateWithData, PartialMessageState } from '../../../logic/messages/messagesTypes';
+import { findSender } from '../../../helpers/addresses';
+import { useSendMessage } from '../../../hooks/composer/useSendMessage';
+import { useSendVerifications } from '../../../hooks/composer/useSendVerifications';
 import { useGetMessage } from '../../../hooks/message/useMessage';
+import { useSaveDraft } from '../../../hooks/message/useSaveDraft';
+import { MessageState, MessageStateWithData, PartialMessageState } from '../../../logic/messages/messagesTypes';
 
 interface Props {
     message: MessageState;

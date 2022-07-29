@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState } from 'react';
+
 import { pageCount } from '../helpers/paging';
 
 export const usePaging = (inputPage: number, inputTotal: number | undefined, onPage: (page: number) => void) => {

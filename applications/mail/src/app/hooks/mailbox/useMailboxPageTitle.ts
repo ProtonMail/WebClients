@@ -1,16 +1,19 @@
-import { Location } from 'history';
 import { useEffect } from 'react';
+
+import { Location } from 'history';
+
 import {
-    useLabels,
-    useUser,
     useConversationCounts,
-    useMessageCounts,
-    useMailSettings,
     useFolders,
+    useLabels,
+    useMailSettings,
+    useMessageCounts,
+    useUser,
 } from '@proton/components';
+import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { LabelCount } from '@proton/shared/lib/interfaces';
-import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
+
 import { getLabelName } from '../../helpers/labels';
 import { isConversationMode } from '../../helpers/mailSettings';
 

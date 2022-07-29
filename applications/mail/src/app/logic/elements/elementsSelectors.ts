@@ -1,20 +1,22 @@
 import { createSelector } from 'reselect';
+
+import { ESDBStatus, ES_EXTRA_RESULTS_LIMIT } from '@proton/encrypted-search';
 import { LabelCount } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
-import { ESDBStatus, ES_EXTRA_RESULTS_LIMIT } from '@proton/encrypted-search';
+
 import {
-    PAGE_SIZE,
-    MAX_ELEMENT_LIST_LOAD_RETRIES,
-    ELEMENTS_CACHE_REQUEST_SIZE,
     DEFAULT_PLACEHOLDERS_COUNT,
+    ELEMENTS_CACHE_REQUEST_SIZE,
+    MAX_ELEMENT_LIST_LOAD_RETRIES,
+    PAGE_SIZE,
 } from '../../constants';
 import { hasLabel, isFilter, isSearch, isUnread, sort as sortElements } from '../../helpers/elements';
+import { expectedPageLength } from '../../helpers/paging';
+import { ESMessage, NormalizedSearchParams } from '../../models/encryptedSearch';
+import { SearchParameters } from '../../models/tools';
 import { RootState } from '../store';
 import { ElementsStateParams } from './elementsTypes';
-import { ESMessage, NormalizedSearchParams } from '../../models/encryptedSearch';
 import { getTotal } from './helpers/elementTotal';
-import { expectedPageLength } from '../../helpers/paging';
-import { SearchParameters } from '../../models/tools';
 
 const beforeFirstLoad = (state: RootState) => state.elements.beforeFirstLoad;
 export const elementsMap = (state: RootState) => state.elements.elements;

@@ -1,14 +1,15 @@
 import { useEffect, useState } from 'react';
 import { useRouteMatch } from 'react-router';
+
 import { c } from 'ttag';
 
 import { Href, Loader } from '@proton/components';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
-import MessageDecryptForm from './MessageDecryptForm';
 import { EOUrlParams } from '../../../helpers/eo/eoUrl';
 import { useLoadEOMessage } from '../../../hooks/eo/useLoadEOMessage';
 import { useLoadEOToken } from '../../../hooks/eo/useLoadEOToken';
+import MessageDecryptForm from './MessageDecryptForm';
 
 interface Props {
     setSessionStorage: (key: string, data: any) => void;

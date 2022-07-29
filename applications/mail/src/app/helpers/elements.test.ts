@@ -1,8 +1,9 @@
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import { isConversation, isMessage, sort, getCounterMap, getDate, isUnread } from './elements';
+
 import { Conversation, ConversationLabel } from '../models/conversation';
+import { getCounterMap, getDate, isConversation, isMessage, isUnread, sort } from './elements';
 
 describe('elements', () => {
     describe('isConversation / isMessage', () => {

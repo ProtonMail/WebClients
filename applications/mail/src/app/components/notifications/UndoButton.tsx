@@ -1,4 +1,5 @@
 import { c } from 'ttag';
+
 import { InlineLinkButton } from '@proton/components';
 
 interface Props {
@@ -8,7 +9,8 @@ interface Props {
 }
 
 const UndoButton = ({ onUndo, disabled, className }: Props) => (
-    <InlineLinkButton onClick={onUndo} disabled={disabled} className={className}>{c('Action').t`Undo`}</InlineLinkButton>
+    <InlineLinkButton onClick={onUndo} disabled={disabled} className={className}>{c('Action')
+        .t`Undo`}</InlineLinkButton>
 );
 
 export default UndoButton;

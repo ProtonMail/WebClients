@@ -1,7 +1,7 @@
-import { useEffect, useState, MutableRefObject, useRef, useCallback } from 'react';
-import useIsMounted from '@proton/hooks/useIsMounted';
+import { MutableRefObject, useCallback, useEffect, useRef, useState } from 'react';
 
 import { useHandler } from '@proton/components';
+import useIsMounted from '@proton/hooks/useIsMounted';
 
 export interface MailboxFocusContext {
     elementIDs: string[];

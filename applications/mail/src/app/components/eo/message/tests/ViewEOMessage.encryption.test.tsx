@@ -1,8 +1,9 @@
 import { findByText, waitFor } from '@testing-library/dom';
-import { setup } from './ViewEOMessage.test.helpers';
-import { getIframeRootDiv } from '../../../message/tests/Message.test.helpers';
-import { EOBody, EOClearAll, EOSubject } from '../../../../helpers/test/eo/helpers';
+
 import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../../helpers/test/crypto';
+import { EOBody, EOClearAll, EOSubject } from '../../../../helpers/test/eo/helpers';
+import { getIframeRootDiv } from '../../../message/tests/Message.test.helpers';
+import { setup } from './ViewEOMessage.test.helpers';
 
 describe('Encrypted Outside message view encryption', () => {
     beforeAll(async () => {

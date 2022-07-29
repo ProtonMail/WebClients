@@ -1,21 +1,22 @@
-import { isReceived, isScheduled } from '@proton/shared/lib/mail/messages';
 import { FeatureCode, useFeature, useMailSettings } from '@proton/components';
-import ExtraImages from '../extras/ExtraImages';
-import ExtraUnsubscribe from '../extras/ExtraUnsubscribe';
-import ExtraSpamScore from '../extras/ExtraSpamScore';
-import ExtraReadReceipt from '../extras/ExtraReadReceipt';
-import ExtraAutoReply from '../extras/ExtraAutoReply';
-import ExtraExpirationTime from '../extras/ExtraExpirationTime';
-import ExtraEvents from '../extras/ExtraEvents';
-import ExtraPinKey from '../extras/ExtraPinKey';
-import ExtraAskResign from '../extras/ExtraAskResign';
-import ExtraErrors from '../extras/ExtraErrors';
-import ExtraDecryptedSubject from '../extras/ExtraDecryptedSubject';
-import ExtraScheduledMessage from '../extras/ExtraScheduledMessage';
-import EmailReminderWidget from '../extras/calendar/EmailReminderWidget';
-import ExtraDarkStyle from '../extras/ExtraDarkStyle';
-import { MessageState } from '../../../logic/messages/messagesTypes';
+import { isReceived, isScheduled } from '@proton/shared/lib/mail/messages';
+
 import { getMessageHasData } from '../../../helpers/message/messages';
+import { MessageState } from '../../../logic/messages/messagesTypes';
+import ExtraAskResign from '../extras/ExtraAskResign';
+import ExtraAutoReply from '../extras/ExtraAutoReply';
+import ExtraDarkStyle from '../extras/ExtraDarkStyle';
+import ExtraDecryptedSubject from '../extras/ExtraDecryptedSubject';
+import ExtraErrors from '../extras/ExtraErrors';
+import ExtraEvents from '../extras/ExtraEvents';
+import ExtraExpirationTime from '../extras/ExtraExpirationTime';
+import ExtraImages from '../extras/ExtraImages';
+import ExtraPinKey from '../extras/ExtraPinKey';
+import ExtraReadReceipt from '../extras/ExtraReadReceipt';
+import ExtraScheduledMessage from '../extras/ExtraScheduledMessage';
+import ExtraSpamScore from '../extras/ExtraSpamScore';
+import ExtraUnsubscribe from '../extras/ExtraUnsubscribe';
+import EmailReminderWidget from '../extras/calendar/EmailReminderWidget';
 
 interface Props {
     message: MessageState;

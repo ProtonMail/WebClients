@@ -1,12 +1,7 @@
-import { updatePromptPin } from '@proton/shared/lib/api/mailSettings';
-import { canonizeInternalEmail } from '@proton/shared/lib/helpers/email';
-import { Address, MailSettings } from '@proton/shared/lib/interfaces';
-import { ContactWithBePinnedPublicKey } from '@proton/shared/lib/interfaces/contacts';
-import { Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
-import { isInternal } from '@proton/shared/lib/mail/messages';
-import { PublicKeyReference } from '@proton/crypto';
 import { useMemo } from 'react';
+
+import { c } from 'ttag';
+
 import {
     Button,
     Href,
@@ -20,12 +15,20 @@ import {
     useModalState,
     useNotifications,
 } from '@proton/components';
-import { c } from 'ttag';
+import { PublicKeyReference } from '@proton/crypto';
+import { updatePromptPin } from '@proton/shared/lib/api/mailSettings';
+import { canonizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import { Address, MailSettings } from '@proton/shared/lib/interfaces';
+import { ContactWithBePinnedPublicKey } from '@proton/shared/lib/interfaces/contacts';
+import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
+import { isInternal } from '@proton/shared/lib/mail/messages';
+
 import { getContactEmail } from '../../../helpers/addresses';
-import TrustPublicKeyModal from '../modals/TrustPublicKeyModal';
-import { MessageVerification } from '../../../logic/messages/messagesTypes';
 import { useContactsMap } from '../../../hooks/contact/useContacts';
+import { MessageVerification } from '../../../logic/messages/messagesTypes';
+import TrustPublicKeyModal from '../modals/TrustPublicKeyModal';
 
 const { NOT_VERIFIED, SIGNED_AND_INVALID } = VERIFICATION_STATUS;
 

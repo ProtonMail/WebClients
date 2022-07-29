@@ -1,25 +1,26 @@
-import { useHistory } from 'react-router';
 import { useDispatch } from 'react-redux';
-import { CryptoProxy, PublicKeyReference } from '@proton/crypto';
+import { useHistory } from 'react-router';
+
 import { c } from 'ttag';
 
 import { useApi, useNotifications } from '@proton/components';
+import { CryptoProxy, PublicKeyReference } from '@proton/crypto';
 import { EOReply } from '@proton/shared/lib/api/eo';
 import { blobURLtoBlob } from '@proton/shared/lib/helpers/file';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 
-import { MessageKeys, MessageState } from '../../logic/messages/messagesTypes';
-import { prepareExport } from '../../helpers/message/messageExport';
-import { createBlob, readContentIDandLocation } from '../../helpers/message/messageEmbeddeds';
-import { getDecryptedAttachment } from '../../helpers/attachment/attachmentLoader';
-import { encryptFile } from '../../helpers/attachment/attachmentUploader';
 import SendingMessageNotification, {
     createSendingMessageNotificationManager,
 } from '../../components/notifications/SendingMessageNotification';
 import { EO_MESSAGE_REDIRECT_PATH, MIN_DELAY_SENT_NOTIFICATION } from '../../constants';
+import { getDecryptedAttachment } from '../../helpers/attachment/attachmentLoader';
+import { encryptFile } from '../../helpers/attachment/attachmentUploader';
+import { createBlob, readContentIDandLocation } from '../../helpers/message/messageEmbeddeds';
+import { prepareExport } from '../../helpers/message/messageExport';
 import { EOAddReply } from '../../logic/eo/eoActions';
 import { EOMessageReply } from '../../logic/eo/eoType';
+import { MessageKeys, MessageState } from '../../logic/messages/messagesTypes';
 
 interface EOAttachment {
     Filename: string[];

@@ -1,6 +1,8 @@
 import { useMemo, useState } from 'react';
-import { c, msgid } from 'ttag';
 import { useDispatch } from 'react-redux';
+
+import { c, msgid } from 'ttag';
+
 import {
     AlertModal,
     Button,
@@ -13,10 +15,11 @@ import {
 import { deleteConversations } from '@proton/shared/lib/api/conversations';
 import { deleteMessages } from '@proton/shared/lib/api/messages';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import { useGetElementsFromIDs } from './mailbox/useElements';
+
 import { isConversation } from '../helpers/elements';
-import useOptimisticDelete from './optimistic/useOptimisticDelete';
 import { backendActionFinished, backendActionStarted } from '../logic/elements/elementsActions';
+import { useGetElementsFromIDs } from './mailbox/useElements';
+import useOptimisticDelete from './optimistic/useOptimisticDelete';
 
 const { DRAFTS, ALL_DRAFTS } = MAILBOX_LABEL_IDS;
 

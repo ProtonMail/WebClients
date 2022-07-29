@@ -1,10 +1,11 @@
 import { IMAGE_PROXY_FLAGS, SHOW_IMAGES } from '@proton/shared/lib/constants';
+import { wait } from '@proton/shared/lib/helpers/promise';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { wait } from '@proton/shared/lib/helpers/promise';
-import { transformRemote } from '../transformRemote';
-import { createDocument } from '../../test/message';
+
 import { MessageState } from '../../../logic/messages/messagesTypes';
+import { createDocument } from '../../test/message';
+import { transformRemote } from '../transformRemote';
 
 describe('transformRemote', () => {
     let onLoadRemoteImagesProxy: jest.Mock;

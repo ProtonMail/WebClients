@@ -1,43 +1,46 @@
 import { memo } from 'react';
-import { c } from 'ttag';
 import { useLocation } from 'react-router-dom';
+
+import { c } from 'ttag';
+
 import {
-    useLabels,
-    useFolders,
-    PrivateHeader,
-    FloatingButton,
-    MainLogo,
-    Tooltip,
-    TopNavbarListItemSettingsDropdown,
-    TopNavbarListItemContactsDropdown,
-    Icon,
-    DropdownMenuButton,
-    useUserSettings,
-    useMailSettings,
-    MailShortcutsModal,
-    MailDensityModal,
-    MailViewLayoutModal,
-    MailComposerModeModal,
     AppsDropdownWithDiscoverySpotlight,
-    useModalState,
-    UserDropdown,
-    TopNavbarListItemFeedbackButton,
+    DropdownMenuButton,
+    FloatingButton,
+    Icon,
+    MailComposerModeModal,
+    MailDensityModal,
+    MailShortcutsModal,
+    MailViewLayoutModal,
+    MainLogo,
+    PrivateHeader,
     RebrandingFeedbackModal,
+    Tooltip,
+    TopNavbarListItemContactsDropdown,
+    TopNavbarListItemFeedbackButton,
+    TopNavbarListItemSettingsDropdown,
+    UserDropdown,
+    useFolders,
     useHasRebrandingFeedback,
+    useLabels,
+    useMailSettings,
+    useModalState,
+    useUserSettings,
 } from '@proton/components';
-import { APPS, VIEW_LAYOUT, DENSITY, COMPOSER_MODE } from '@proton/shared/lib/constants';
-import { Recipient } from '@proton/shared/lib/interfaces';
+import { APPS, COMPOSER_MODE, DENSITY, VIEW_LAYOUT } from '@proton/shared/lib/constants';
 import { isFirefox } from '@proton/shared/lib/helpers/browser';
+import { Recipient } from '@proton/shared/lib/interfaces';
+
+import { MESSAGE_ACTIONS } from '../../constants';
+import { useOnCompose, useOnMailTo } from '../../containers/ComposeProvider';
+import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
+import { getLabelName } from '../../helpers/labels';
 import { setParamsInUrl } from '../../helpers/mailboxUrl';
 import { Breakpoints } from '../../models/utils';
-import { getLabelName } from '../../helpers/labels';
-import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
-import { useOnCompose, useOnMailTo } from '../../containers/ComposeProvider';
-import { MESSAGE_ACTIONS } from '../../constants';
-import MailDefaultHandlerModal from './MailDefaultHandlerModal';
-import ClearBrowserDataModal from './ClearBrowserDataModal';
-import MailSearch from './search/MailSearch';
 import MailOnboardingModal from '../onboarding/MailOnboardingModal';
+import ClearBrowserDataModal from './ClearBrowserDataModal';
+import MailDefaultHandlerModal from './MailDefaultHandlerModal';
+import MailSearch from './search/MailSearch';
 
 interface Props {
     labelID: string;

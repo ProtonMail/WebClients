@@ -1,12 +1,13 @@
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router';
+
 import { c } from 'ttag';
 
 import { useApi, useNotifications } from '@proton/components';
 
+import { EO_MESSAGE_REDIRECT_PATH } from '../../constants';
 import { eoDecrypt } from '../../helpers/eo/message';
 import { loadEOMessage } from '../../logic/eo/eoActions';
-import { EO_MESSAGE_REDIRECT_PATH } from '../../constants';
 
 interface Props {
     id?: string;

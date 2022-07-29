@@ -1,19 +1,19 @@
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { attachmentsSize } from '@proton/shared/lib/mail/messages';
 import uniqueBy from '@proton/utils/uniqueBy';
-import humanSize from '@proton/shared/lib/helpers/humanSize';
 
-import { getContent, setContent } from './messageContent';
-import { getEmbeddedImages } from './messageImages';
+import { MarkAsChanges } from '../../hooks/optimistic/useOptimisticMarkAs';
+import { MARK_AS_STATUS } from '../../hooks/useMarkAs';
 import {
     MessageImages,
     MessageState,
     MessageStateWithData,
     PartialMessageState,
 } from '../../logic/messages/messagesTypes';
-import { MARK_AS_STATUS } from '../../hooks/useMarkAs';
-import { MarkAsChanges } from '../../hooks/optimistic/useOptimisticMarkAs';
+import { getContent, setContent } from './messageContent';
+import { getEmbeddedImages } from './messageImages';
 
 const { ALL_DRAFTS, ALL_SENT, DRAFTS, SENT, SPAM, INBOX } = MAILBOX_LABEL_IDS;
 

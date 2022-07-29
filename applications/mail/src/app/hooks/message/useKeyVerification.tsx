@@ -1,7 +1,9 @@
-import { useAddresses, useNotifications } from '@proton/components';
-import { getItem, setItem } from '@proton/shared/lib/helpers/storage';
-import type { KeyID } from '@proton/crypto';
 import * as React from 'react';
+
+import { useAddresses, useNotifications } from '@proton/components';
+import type { KeyID } from '@proton/crypto';
+import { getItem, setItem } from '@proton/shared/lib/helpers/storage';
+
 import DecryptionErrorNotification from '../../components/notifications/DecryptionErrorNotification';
 import { getMessageDecryptionKeyIDFromAddress } from '../../helpers/message/messageDecrypt';
 import { MessageStateWithData } from '../../logic/messages/messagesTypes';

@@ -1,27 +1,29 @@
 import * as React from 'react';
+
+import { Location } from 'history';
+import { c, msgid } from 'ttag';
+
 import {
-    SettingsLink,
     ButtonLike,
     FeatureCode,
     Href,
     Loader,
-    useImporters,
+    SettingsLink,
     useFeature,
+    useImporters,
     usePlans,
     useTheme,
     useUser,
     useUserSettings,
 } from '@proton/components';
-import { c, msgid } from 'ttag';
-import { Location } from 'history';
-import { MailSettings } from '@proton/shared/lib/interfaces';
 import { APPS, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import capitalize from '@proton/utils/capitalize';
+import { MailSettings } from '@proton/shared/lib/interfaces';
 import { LabelCount } from '@proton/shared/lib/interfaces/Label';
-import envelope from '@proton/styles/assets/img/illustrations/welcome-pane.svg';
-import mobileMailApp from '@proton/styles/assets/img/illustrations/app-teaser.svg';
 import appStore from '@proton/styles/assets/img/illustrations/app-store.svg';
+import mobileMailApp from '@proton/styles/assets/img/illustrations/app-teaser.svg';
 import playStore from '@proton/styles/assets/img/illustrations/play-store.svg';
+import envelope from '@proton/styles/assets/img/illustrations/welcome-pane.svg';
+import capitalize from '@proton/utils/capitalize';
 
 import { isConversationMode } from '../../helpers/mailSettings';
 import WelcomePaneBanner from './WelcomePaneBanner';

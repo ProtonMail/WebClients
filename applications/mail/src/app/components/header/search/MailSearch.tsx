@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
+
 import {
     FeatureCode,
-    generateUID,
     TopNavbarListItemSearchButton,
+    generateUID,
     useAddresses,
     useFeature,
     useFolders,
@@ -15,18 +16,19 @@ import {
 } from '@proton/components';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 import { isPaid } from '@proton/shared/lib/user/helpers';
-import SearchOverlay from './SearchOverlay';
-import AdvancedSearch from './AdvancedSearch';
-import SearchInput from './SearchInput';
-import { Breakpoints } from '../../../models/utils';
+
+import { ADVANCED_SEARCH_OVERLAY_CLOSE_EVENT } from '../../../constants';
 import { useEncryptedSearchContext } from '../../../containers/EncryptedSearchProvider';
-import useEncryptedSearchToggleState from '../useEncryptedSearchToggleState';
 import { extractSearchParameters } from '../../../helpers/mailboxUrl';
 import { useClickMailContent } from '../../../hooks/useClickMailContent';
-import { ADVANCED_SEARCH_OVERLAY_CLOSE_EVENT } from '../../../constants';
+import { Breakpoints } from '../../../models/utils';
+import useEncryptedSearchToggleState from '../useEncryptedSearchToggleState';
+import AdvancedSearch from './AdvancedSearch';
+import MailSearchSpotlight from './MailSearchSpotlight';
+import SearchInput from './SearchInput';
+import SearchOverlay from './SearchOverlay';
 
 import './Search.scss';
-import MailSearchSpotlight from './MailSearchSpotlight';
 
 interface Props {
     breakpoints: Breakpoints;

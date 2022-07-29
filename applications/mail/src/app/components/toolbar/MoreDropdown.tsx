@@ -1,15 +1,17 @@
 import { c } from 'ttag';
-import { Icon, DropdownMenu, DropdownMenuButton } from '@proton/components';
-import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+
 import { Vr } from '@proton/atoms';
-import ToolbarDropdown, { DropdownRender } from './ToolbarDropdown';
-import { useEmptyLabel } from '../../hooks/useEmptyLabel';
-import { useMoveAll } from '../../hooks/useMoveAll';
+import { DropdownMenu, DropdownMenuButton, Icon } from '@proton/components';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+
 import { labelIncludes } from '../../helpers/labels';
+import { useEmptyLabel } from '../../hooks/useEmptyLabel';
 import { useLabelActions } from '../../hooks/useLabelActions';
-import MoveDropdown from '../dropdown/MoveDropdown';
+import { useMoveAll } from '../../hooks/useMoveAll';
 import { Breakpoints } from '../../models/utils';
 import LabelDropdown from '../dropdown/LabelDropdown';
+import MoveDropdown from '../dropdown/MoveDropdown';
+import ToolbarDropdown, { DropdownRender } from './ToolbarDropdown';
 
 const { DRAFTS, ALL_DRAFTS, ALL_MAIL, INBOX, SENT, ALL_SENT, ARCHIVE, STARRED, SCHEDULED, TRASH, SPAM } =
     MAILBOX_LABEL_IDS;

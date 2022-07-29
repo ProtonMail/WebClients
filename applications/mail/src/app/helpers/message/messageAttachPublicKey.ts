@@ -1,7 +1,8 @@
 import { CryptoProxy } from '@proton/crypto';
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
-import { upload, ATTACHMENT_ACTION } from '../attachment/attachmentUploader';
+
 import { MessageState, MessageStateWithData, PublicPrivateKey } from '../../logic/messages/messagesTypes';
+import { ATTACHMENT_ACTION, upload } from '../attachment/attachmentUploader';
 
 interface KeyInfoForFile {
     fingerprint: string;

@@ -1,7 +1,9 @@
+import { Dispatch, SetStateAction } from 'react';
+
 import { ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
 import { RequireSome } from '@proton/shared/lib/interfaces/utils';
-import { Dispatch, SetStateAction } from 'react';
-import { getHasInvitationApi, InvitationModel } from '../../../../helpers/calendar/invite';
+
+import { InvitationModel, getHasInvitationApi } from '../../../../helpers/calendar/invite';
 import ExtraEventAddParticipantButton from './ExtraEventAddParticipantButton';
 
 interface Props {
@@ -11,7 +13,7 @@ interface Props {
 const ExtraEventOrganizerButtons = ({ model, setModel }: Props) => {
     const {
         invitationIcs: { method },
-        isPartyCrasher
+        isPartyCrasher,
     } = model;
 
     if (!getHasInvitationApi(model)) {

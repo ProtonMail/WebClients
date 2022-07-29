@@ -1,8 +1,7 @@
 import { RefObject, useEffect, useRef } from 'react';
 
-import MessageBodyImage from './MessageBodyImage';
-
 import { MessageImages } from '../../logic/messages/messagesTypes';
+import MessageBodyImage from './MessageBodyImage';
 import { IframeOffsetType } from './interface';
 
 interface Props {

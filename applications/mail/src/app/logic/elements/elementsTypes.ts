@@ -1,4 +1,5 @@
 import { Api } from '@proton/shared/lib/interfaces';
+
 import { Element } from '../../models/element';
 import { LabelIDsChanges } from '../../models/event';
 import { Filter, SearchParameters, Sort } from '../../models/tools';

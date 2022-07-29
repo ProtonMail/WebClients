@@ -1,7 +1,10 @@
 import { useState } from 'react';
-import { Button, Icon, SettingsLink } from '@proton/components';
+
 import { c } from 'ttag';
+
+import { Button, Icon, SettingsLink } from '@proton/components';
 import { APPS } from '@proton/shared/lib/constants';
+
 import { useReloadMessage } from '../../../hooks/message/useLoadMessage';
 import { MessageErrors, MessageState } from '../../../logic/messages/messagesTypes';
 

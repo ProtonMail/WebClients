@@ -1,6 +1,8 @@
+import { c } from 'ttag';
+
 import { Banner } from '@proton/components';
 import { BannerBackgroundColor } from '@proton/components/components/banner/Banner';
-import { c } from 'ttag';
+
 import { EVENT_TIME_STATUS, InvitationModel } from '../../../../helpers/calendar/invite';
 
 interface Props {

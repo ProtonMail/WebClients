@@ -1,6 +1,8 @@
-import { Draft } from 'immer';
 import { PayloadAction } from '@reduxjs/toolkit';
+import { Draft } from 'immer';
+
 import { WorkerDecryptionResult } from '@proton/crypto';
+
 import { AttachmentsState } from './attachmentsTypes';
 
 export const globalReset = (state: Draft<AttachmentsState>) => {
