@@ -1,12 +1,15 @@
 import { useState } from 'react';
+
 import { c } from 'ttag';
-import { Checkbox, FormModal, generateUID, Label } from '@proton/components';
+
+import { Checkbox, FormModal, Label, generateUID } from '@proton/components';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import { contactToInput } from '@proton/shared/lib/mail/recipient';
+
+import { GroupWithContacts } from '../../../logic/contacts/contactsTypes';
 import { RecipientGroup } from '../../../models/address';
 import { MapStatusIcons, StatusIcon } from '../../../models/crypto';
 import EncryptionStatusIcon from '../EncryptionStatusIcon';
-import { GroupWithContacts } from '../../../logic/contacts/contactsTypes';
 
 interface Props {
     recipientGroup: RecipientGroup;

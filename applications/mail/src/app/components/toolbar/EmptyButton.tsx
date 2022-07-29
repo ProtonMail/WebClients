@@ -1,12 +1,13 @@
-import { Vr } from '@proton/atoms';
-import { Icon, useLoading, useLabels, useMailSettings, ToolbarButton } from '@proton/components';
-import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import { metaKey, shiftKey } from '@proton/shared/lib/helpers/browser';
 import { c } from 'ttag';
 
-import { Breakpoints } from '../../models/utils';
-import { labelIncludes, isCustomLabel } from '../../helpers/labels';
+import { Vr } from '@proton/atoms';
+import { Icon, ToolbarButton, useLabels, useLoading, useMailSettings } from '@proton/components';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { metaKey, shiftKey } from '@proton/shared/lib/helpers/browser';
+
+import { isCustomLabel, labelIncludes } from '../../helpers/labels';
 import { useEmptyLabel } from '../../hooks/useEmptyLabel';
+import { Breakpoints } from '../../models/utils';
 
 const { DRAFTS, ALL_DRAFTS, ALL_MAIL, INBOX, SENT, ALL_SENT, ARCHIVE, STARRED, TRASH, SPAM } = MAILBOX_LABEL_IDS;
 

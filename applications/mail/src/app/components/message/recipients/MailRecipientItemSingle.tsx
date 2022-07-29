@@ -1,24 +1,27 @@
 import { MouseEvent, useMemo } from 'react';
-import { c } from 'ttag';
-import { DropdownMenuButton, Icon, usePopperAnchor, useModalState, useMailSettings } from '@proton/components';
 import { useHistory } from 'react-router-dom';
+
+import { c } from 'ttag';
+
+import { DropdownMenuButton, Icon, useMailSettings, useModalState, usePopperAnchor } from '@proton/components';
+import { ContactEditProps } from '@proton/components/containers/contacts/edit/ContactEditModal';
 import { PublicKeyReference } from '@proton/crypto';
-import { ContactWithBePinnedPublicKey } from '@proton/shared/lib/interfaces/contacts';
-import { Recipient } from '@proton/shared/lib/interfaces';
-import { changeSearchParams } from '@proton/shared/lib/helpers/url';
 import { MAILBOX_LABEL_IDS, VIEW_LAYOUT } from '@proton/shared/lib/constants';
 import { createContactPropertyUid } from '@proton/shared/lib/contacts/properties';
-import { ContactEditProps } from '@proton/components/containers/contacts/edit/ContactEditModal';
+import { changeSearchParams } from '@proton/shared/lib/helpers/url';
+import { Recipient } from '@proton/shared/lib/interfaces';
+import { ContactWithBePinnedPublicKey } from '@proton/shared/lib/interfaces/contacts';
+
+import { MESSAGE_ACTIONS } from '../../../constants';
+import { useOnCompose } from '../../../containers/ComposeProvider';
+import { getContactEmail } from '../../../helpers/addresses';
+import { getHumanLabelID } from '../../../helpers/labels';
+import { useContactsMap } from '../../../hooks/contact/useContacts';
+import { useRecipientLabel } from '../../../hooks/contact/useRecipientLabel';
+import { MessageState } from '../../../logic/messages/messagesTypes';
 import { MapStatusIcons, StatusIcon } from '../../../models/crypto';
 import TrustPublicKeyModal from '../modals/TrustPublicKeyModal';
-import { useRecipientLabel } from '../../../hooks/contact/useRecipientLabel';
-import { getContactEmail } from '../../../helpers/addresses';
-import { useOnCompose } from '../../../containers/ComposeProvider';
-import { MESSAGE_ACTIONS } from '../../../constants';
-import { useContactsMap } from '../../../hooks/contact/useContacts';
 import RecipientItemSingle from './RecipientItemSingle';
-import { MessageState } from '../../../logic/messages/messagesTypes';
-import { getHumanLabelID } from '../../../helpers/labels';
 
 interface Props {
     message?: MessageState;

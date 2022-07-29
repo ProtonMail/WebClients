@@ -1,7 +1,10 @@
 import { useEffect, useState } from 'react';
+
 import { c } from 'ttag';
-import { SECOND } from '@proton/shared/lib/constants';
+
 import { EllipsisLoader } from '@proton/components';
+import { SECOND } from '@proton/shared/lib/constants';
+
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 
 const useEncryptedSearchList = (isSearch: boolean, loading: boolean, page: number, total: number) => {

@@ -1,13 +1,16 @@
 import { DragEvent, useState } from 'react';
+
+import { c } from 'ttag';
+
+import { EditorMetadata, EllipsisLoader, classnames, onlyDragFiles } from '@proton/components';
+import { MailSettings } from '@proton/shared/lib/interfaces';
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { getAttachments } from '@proton/shared/lib/mail/messages';
-import { c } from 'ttag';
-import { classnames, EditorMetadata, EllipsisLoader, onlyDragFiles } from '@proton/components';
-import { MailSettings } from '@proton/shared/lib/interfaces';
+
 import { PendingUpload } from '../../hooks/composer/useAttachments';
-import { MessageChange } from './Composer';
 import { MessageState, MessageStateWithData, OutsideKey } from '../../logic/messages/messagesTypes';
 import AttachmentList, { AttachmentAction } from '../attachment/AttachmentList';
+import { MessageChange } from './Composer';
 import EditorWrapper, { ExternalEditorActions } from './editor/EditorWrapper';
 
 interface Props {

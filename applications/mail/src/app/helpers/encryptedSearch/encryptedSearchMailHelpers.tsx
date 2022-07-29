@@ -1,5 +1,6 @@
 import { History } from 'history';
-import { queryMessageMetadata } from '@proton/shared/lib/api/messages';
+
+import { Feature, WelcomeFlagsState } from '@proton/components';
 import {
     AesGcmCiphertext,
     ESEvent,
@@ -7,26 +8,27 @@ import {
     ES_MAX_PARALLEL_ITEMS,
     apiHelper,
     esSentryReport,
+    esStorageHelpers,
     indexKeyExists,
     testKeywords,
-    esStorageHelpers,
 } from '@proton/encrypted-search';
+import { queryMessageMetadata } from '@proton/shared/lib/api/messages';
+import { EVENT_ERRORS } from '@proton/shared/lib/errors';
+import { hasBit } from '@proton/shared/lib/helpers/bitset';
+import { isMobile } from '@proton/shared/lib/helpers/browser';
 import { Api, LabelCount, Recipient, UserModel } from '@proton/shared/lib/interfaces';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { getRecipients } from '@proton/shared/lib/mail/messages';
-import { hasBit } from '@proton/shared/lib/helpers/bitset';
-import { EVENT_ERRORS } from '@proton/shared/lib/errors';
-import { Feature, WelcomeFlagsState } from '@proton/components';
-import { isMobile } from '@proton/shared/lib/helpers/browser';
 import { isPaid } from '@proton/shared/lib/user/helpers';
+
 import { GetMessageKeys } from '../../hooks/message/useGetMessageKeys';
 import { ESItemChangesMail, ESMessage, NormalizedSearchParams, StoredCiphertext } from '../../models/encryptedSearch';
 import { Event } from '../../models/event';
 import { queryEvents } from './esAPI';
 import { fetchMessage } from './esBuild';
 import { normaliseSearchParams, shouldOnlySortResults, testMetadata } from './esSearch';
-import { getTotalMessages, parseSearchParams as parseSearchParamsMail, resetSort } from './esUtils';
 import { convertEventType } from './esSync';
+import { getTotalMessages, parseSearchParams as parseSearchParamsMail, resetSort } from './esUtils';
 
 interface Props {
     getMessageKeys: GetMessageKeys;

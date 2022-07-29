@@ -1,4 +1,5 @@
 import { fireEvent } from '@testing-library/react';
+
 import { clearAll } from '../../../helpers/test/helper';
 import { props, setup } from './Mailbox.test.helpers';
 

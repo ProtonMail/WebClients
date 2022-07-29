@@ -1,19 +1,21 @@
+import { fireEvent, waitFor } from '@testing-library/dom';
 import { act } from '@testing-library/react';
+
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { fireEvent, waitFor } from '@testing-library/dom';
 import range from '@proton/utils/range';
-import { render, clearAll, addApiMock, assertFocus, tick, mockConsole, addApiKeys } from '../../helpers/test/helper';
-import { Breakpoints } from '../../models/utils';
-import ConversationView from './ConversationView';
-import { Conversation } from '../../models/conversation';
-import { ConversationState } from '../../logic/conversations/conversationsTypes';
-import { store } from '../../logic/store';
+
+import { addApiKeys, addApiMock, assertFocus, clearAll, mockConsole, render, tick } from '../../helpers/test/helper';
 import {
     initialize as initializeConversation,
     updateConversation,
 } from '../../logic/conversations/conversationsActions';
+import { ConversationState } from '../../logic/conversations/conversationsTypes';
 import { initialize as initializeMessage } from '../../logic/messages/read/messagesReadActions';
+import { store } from '../../logic/store';
+import { Conversation } from '../../models/conversation';
+import { Breakpoints } from '../../models/utils';
+import ConversationView from './ConversationView';
 
 jest.setTimeout(20000);
 

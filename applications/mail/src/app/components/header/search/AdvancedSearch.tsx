@@ -1,34 +1,37 @@
-import { useState, FormEvent, useMemo, useRef } from 'react';
-import { History } from 'history';
+import { FormEvent, useMemo, useRef, useState } from 'react';
 import { useHistory } from 'react-router-dom';
+
+import { add, fromUnixTime, getUnixTime, isAfter, isBefore, sub } from 'date-fns';
+import { History } from 'history';
 import { c } from 'ttag';
-import { getUnixTime, fromUnixTime, isBefore, isAfter, add, sub } from 'date-fns';
+
 import {
-    DateInput,
-    Radio,
     Button,
-    PrimaryButton,
+    DateInput,
     Label,
-    useUser,
-    SelectTwo,
     Option,
-    useAddresses,
+    PrimaryButton,
+    Radio,
+    SelectTwo,
     classnames,
+    useAddresses,
+    useUser,
 } from '@proton/components';
+import { ESIndexingState, wasIndexingDone } from '@proton/encrypted-search';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
-import { changeSearchParams, getSearchParams } from '@proton/shared/lib/helpers/url';
-import { Recipient } from '@proton/shared/lib/interfaces/Address';
-import { ESIndexingState, wasIndexingDone } from '@proton/encrypted-search';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { omit } from '@proton/shared/lib/helpers/object';
-import { getHumanLabelID } from '../../../helpers/labels';
-import AddressesInput from '../../composer/addresses/AddressesInput';
-import { extractSearchParameters, keywordToString } from '../../../helpers/mailboxUrl';
+import { changeSearchParams, getSearchParams } from '@proton/shared/lib/helpers/url';
+import { Recipient } from '@proton/shared/lib/interfaces/Address';
+
 import { getOldestTimeMail } from '../../../helpers/encryptedSearch/esUtils';
-import SearchField from './AdvancedSearchFields/SearchField';
-import LocationField from './AdvancedSearchFields/LocationField';
+import { getHumanLabelID } from '../../../helpers/labels';
+import { extractSearchParameters, keywordToString } from '../../../helpers/mailboxUrl';
+import AddressesInput from '../../composer/addresses/AddressesInput';
 import EncryptedSearchField from './AdvancedSearchFields/EncryptedSearchField';
+import LocationField from './AdvancedSearchFields/LocationField';
+import SearchField from './AdvancedSearchFields/SearchField';
 
 interface SearchModel {
     keyword: string;

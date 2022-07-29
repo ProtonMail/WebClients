@@ -1,5 +1,5 @@
-import { MessageErrors } from '../logic/messages/messagesTypes';
 import { ConversationErrors } from '../logic/conversations/conversationsTypes';
+import { MessageErrors } from '../logic/messages/messagesTypes';
 
 /**
  * Define wether or not the error comes from a network error

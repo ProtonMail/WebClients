@@ -1,7 +1,8 @@
-import { createContext, ReactNode, useContext, useState } from 'react';
+import { ReactNode, createContext, useContext, useState } from 'react';
+
 import { useApi } from '@proton/components';
-import { ChecklistKey } from '@proton/shared/lib/interfaces';
 import { hidePaidUserChecklist } from '@proton/shared/lib/api/checklist';
+import { ChecklistKey } from '@proton/shared/lib/interfaces';
 
 import useChecklist from './useChecklist';
 

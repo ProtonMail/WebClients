@@ -1,20 +1,21 @@
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { transformLinkify } from '@proton/shared/lib/mail/transformLinkify';
-import { transformEscape, attachBase64 } from './transformEscape';
+
 import { Base64Cache } from '../../hooks/useBase64Cache';
-import { transformBase } from './transformBase';
-import { transformLinks } from './transformLinks';
-import { transformEmbedded } from './transformEmbedded';
-import { transformWelcome } from './transformWelcome';
-import { transformStylesheet } from './transformStylesheet';
-import { transformRemote } from './transformRemote';
 import {
     LoadEmbeddedResults,
     MessageImage,
     MessageRemoteImage,
     MessageState,
 } from '../../logic/messages/messagesTypes';
+import { transformBase } from './transformBase';
+import { transformEmbedded } from './transformEmbedded';
+import { attachBase64, transformEscape } from './transformEscape';
+import { transformLinks } from './transformLinks';
+import { transformRemote } from './transformRemote';
+import { transformStylesheet } from './transformStylesheet';
+import { transformWelcome } from './transformWelcome';
 
 export interface Preparation {
     plainText?: string;

@@ -1,7 +1,9 @@
-import { isReadReceiptSent, requireReadReceipt } from '@proton/shared/lib/mail/messages';
 import { c } from 'ttag';
-import { Icon, Tooltip, Button, useApi, useEventManager, useNotifications, useLoading } from '@proton/components';
+
+import { Button, Icon, Tooltip, useApi, useEventManager, useLoading, useNotifications } from '@proton/components';
 import { readReceipt } from '@proton/shared/lib/api/messages';
+import { isReadReceiptSent, requireReadReceipt } from '@proton/shared/lib/mail/messages';
+
 import { MessageState } from '../../../logic/messages/messagesTypes';
 
 interface Props {

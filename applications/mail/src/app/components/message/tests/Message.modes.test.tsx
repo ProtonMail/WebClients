@@ -1,4 +1,5 @@
 import { act } from '@testing-library/react';
+
 import { addApiResolver, clearAll } from '../../../helpers/test/helper';
 import { initMessage, messageID, setup } from './Message.test.helpers';
 

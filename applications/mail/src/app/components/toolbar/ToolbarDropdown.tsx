@@ -1,5 +1,6 @@
-import { ReactNode, useState, Ref, useImperativeHandle } from 'react';
-import { classnames, usePopperAnchor, DropdownButton, Dropdown, generateUID, Tooltip } from '@proton/components';
+import { ReactNode, Ref, useImperativeHandle, useState } from 'react';
+
+import { Dropdown, DropdownButton, Tooltip, classnames, generateUID, usePopperAnchor } from '@proton/components';
 
 export interface DropdownRenderProps {
     onClose: () => void;

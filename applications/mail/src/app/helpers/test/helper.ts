@@ -1,14 +1,16 @@
-import { act } from '@testing-library/react';
 import { waitFor } from '@testing-library/dom';
+import { act } from '@testing-library/react';
+
 import { useEventManager } from '@proton/components';
-import { clearCache, addressKeysCache, base64Cache } from './cache';
-import { api, clearApiMocks } from './api';
-import { eventManagerListeners } from './event-manager';
-import { clearApiKeys } from './crypto';
-import { clearApiContacts } from './contact';
-import { resetHistory } from './render';
-import { store } from '../../logic/store';
+
 import { globalReset } from '../../logic/actions';
+import { store } from '../../logic/store';
+import { api, clearApiMocks } from './api';
+import { addressKeysCache, base64Cache, clearCache } from './cache';
+import { clearApiContacts } from './contact';
+import { clearApiKeys } from './crypto';
+import { eventManagerListeners } from './event-manager';
+import { resetHistory } from './render';
 
 export * from './cache';
 export * from './crypto';

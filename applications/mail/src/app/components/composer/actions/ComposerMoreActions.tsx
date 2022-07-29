@@ -1,12 +1,15 @@
-import { classnames, EditorMetadata, Icon } from '@proton/components';
-import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
-import { c } from 'ttag';
 import { MutableRefObject, useMemo } from 'react';
-import ComposerMoreOptionsDropdown from './ComposerMoreOptionsDropdown';
+
+import { c } from 'ttag';
+
+import { EditorMetadata, Icon, classnames } from '@proton/components';
+import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
+
 import { MessageState } from '../../../logic/messages/messagesTypes';
 import { MessageChange, MessageChangeFlag } from '../Composer';
-import MoreActionsExtension from './MoreActionsExtension';
 import { ExternalEditorActions } from '../editor/EditorWrapper';
+import ComposerMoreOptionsDropdown from './ComposerMoreOptionsDropdown';
+import MoreActionsExtension from './MoreActionsExtension';
 
 interface Props {
     isExpiration: boolean;

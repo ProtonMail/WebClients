@@ -1,10 +1,12 @@
+import { PayloadAction } from '@reduxjs/toolkit';
+import { Draft } from 'immer';
+
 import { canonizeEmail } from '@proton/shared/lib/helpers/email';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
-import { PayloadAction } from '@reduxjs/toolkit';
-import { Draft } from 'immer';
+
 import { initialState } from './contactsSlice';
-import { ContactsMap, ContactsState, ContactsMapWithDuplicates, GroupsWithContactsMap } from './contactsTypes';
+import { ContactsMap, ContactsMapWithDuplicates, ContactsState, GroupsWithContactsMap } from './contactsTypes';
 
 const toMapWithDuplicates = (contacts: ContactEmail[]) => {
     const contactsMapWithDuplicates = contacts.reduce<ContactsMapWithDuplicates>((acc, contact) => {

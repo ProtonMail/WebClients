@@ -1,6 +1,7 @@
 import { DetailedHTMLProps, HTMLAttributes, ReactNode } from 'react';
 
 import { classnames } from '@proton/components';
+
 import InnerModalModalCloseButton from './InnerModalCloseButton';
 import InnerModalTitle from './InnerModalTitle';
 

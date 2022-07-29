@@ -1,41 +1,43 @@
 import { useCallback, useEffect, useRef } from 'react';
-import { useApi, useCache, useEventManager, useConversationCounts, useMessageCounts } from '@proton/components';
+import { useDispatch, useSelector, useStore } from 'react-redux';
+
+import { useApi, useCache, useConversationCounts, useEventManager, useMessageCounts } from '@proton/components';
 import { omit } from '@proton/shared/lib/helpers/object';
-import { ConversationCountsModel, MessageCountsModel } from '@proton/shared/lib/models';
-import { LabelCount } from '@proton/shared/lib/interfaces/Label';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
-import { useStore, useDispatch, useSelector } from 'react-redux';
+import { LabelCount } from '@proton/shared/lib/interfaces/Label';
+import { ConversationCountsModel, MessageCountsModel } from '@proton/shared/lib/models';
 import isTruthy from '@proton/utils/isTruthy';
-import { isSearch } from '../../helpers/elements';
-import { Element } from '../../models/element';
-import { Filter, Sort, SearchParameters } from '../../models/tools';
-import { pageCount } from '../../helpers/paging';
+
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
-import { reset, removeExpired, load as loadAction, updatePage } from '../../logic/elements/elementsActions';
+import { isSearch } from '../../helpers/elements';
+import { pageCount } from '../../helpers/paging';
+import { conversationByID } from '../../logic/conversations/conversationsSelectors';
+import { load as loadAction, removeExpired, reset, updatePage } from '../../logic/elements/elementsActions';
 import {
-    params as paramsSelector,
+    dynamicTotal as dynamicTotalSelector,
+    elementIDs as elementIDsSelector,
     elementsMap as elementsMapSelector,
     elements as elementsSelector,
-    elementIDs as elementIDsSelector,
+    expectingEmpty as expectingEmptySelector,
+    loadedEmpty as loadedEmptySelector,
+    loading as loadingSelector,
     messagesToLoadMoreES as messagesToLoadMoreESSelector,
+    params as paramsSelector,
+    partialESSearch as partialESSearchSelector,
+    pendingActions as pendingActionsSelector,
+    placeholderCount as placeholderCountSelector,
     shouldResetCache as shouldResetCacheSelector,
     shouldSendRequest as shouldSendRequestSelector,
     shouldUpdatePage as shouldUpdatePageSelector,
-    dynamicTotal as dynamicTotalSelector,
-    placeholderCount as placeholderCountSelector,
-    loading as loadingSelector,
-    totalReturned as totalReturnedSelector,
-    expectingEmpty as expectingEmptySelector,
-    loadedEmpty as loadedEmptySelector,
-    partialESSearch as partialESSearchSelector,
     stateInconsistency as stateInconsistencySelector,
-    pendingActions as pendingActionsSelector,
+    totalReturned as totalReturnedSelector,
 } from '../../logic/elements/elementsSelectors';
-import { useElementsEvents } from '../events/useElementsEvents';
-import { RootState } from '../../logic/store';
-import { useExpirationCheck } from '../useExpiration';
-import { conversationByID } from '../../logic/conversations/conversationsSelectors';
 import { messageByID } from '../../logic/messages/messagesSelectors';
+import { RootState } from '../../logic/store';
+import { Element } from '../../models/element';
+import { Filter, SearchParameters, Sort } from '../../models/tools';
+import { useElementsEvents } from '../events/useElementsEvents';
+import { useExpirationCheck } from '../useExpiration';
 
 interface Options {
     conversationMode: boolean;

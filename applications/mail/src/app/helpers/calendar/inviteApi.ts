@@ -1,8 +1,5 @@
-import { getLinkedDateTimeProperty } from '@proton/shared/lib/calendar/icsSurgery/vevent';
-import { getIsPersonalCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
-import { GetCalendarEventRaw } from '@proton/shared/lib/interfaces/hooks/GetCalendarEventRaw';
-import { GetCalendarInfo } from '@proton/shared/lib/interfaces/hooks/GetCalendarInfo';
 import { getUnixTime } from 'date-fns';
+
 import { syncMultipleEvents, updateAttendeePartstat, updatePersonalEventPart } from '@proton/shared/lib/api/calendars';
 import { processApiRequestsSafe } from '@proton/shared/lib/api/helpers/safeApiRequests';
 import {
@@ -19,12 +16,10 @@ import {
 } from '@proton/shared/lib/calendar/calendar';
 import { ICAL_ATTENDEE_STATUS, ICAL_EVENT_STATUS, ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
 import {
-    CreateCalendarEventSyncData,
-    CreateLinkedCalendarEventsSyncData,
-    CreateSinglePersonalEventData,
-    DeleteCalendarEventSyncData,
-    UpdateCalendarEventSyncData,
-} from '@proton/shared/lib/interfaces/calendar/Api';
+    EVENT_INVITATION_ERROR_TYPE,
+    EventInvitationError,
+} from '@proton/shared/lib/calendar/icsSurgery/EventInvitationError';
+import { getLinkedDateTimeProperty } from '@proton/shared/lib/calendar/icsSurgery/vevent';
 import getCreationKeys from '@proton/shared/lib/calendar/integration/getCreationKeys';
 import getPaginatedEventsByUID from '@proton/shared/lib/calendar/integration/getPaginatedEventsByUID';
 import {
@@ -32,6 +27,7 @@ import {
     getInvitedEventWithAlarms,
     getResetPartstatActions,
 } from '@proton/shared/lib/calendar/integration/invite';
+import setupCalendarHelper from '@proton/shared/lib/calendar/keys/setupCalendarHelper';
 import { getIsRruleEqual } from '@proton/shared/lib/calendar/rruleEqual';
 import {
     createCalendarEvent,
@@ -39,6 +35,7 @@ import {
     getHasSharedEventContent,
     getHasSharedKeyPacket,
 } from '@proton/shared/lib/calendar/serialize';
+import { getIsPersonalCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
 import {
     getHasModifiedAttendees,
     getHasModifiedDateTimes,
@@ -54,13 +51,9 @@ import {
 } from '@proton/shared/lib/calendar/vcalHelper';
 import { getIsEventCancelled, withDtstamp } from '@proton/shared/lib/calendar/veventHelper';
 import { API_CODES } from '@proton/shared/lib/constants';
-import unary from '@proton/utils/unary';
-import noop from '@proton/utils/noop';
-import isTruthy from '@proton/utils/isTruthy';
 import { omit, pick } from '@proton/shared/lib/helpers/object';
 import { Address, Api } from '@proton/shared/lib/interfaces';
 import {
-    VisualCalendar,
     CalendarEvent,
     CalendarEventEncryptionData,
     CalendarEventWithMetadata,
@@ -75,19 +68,30 @@ import {
     VcalAttendeeProperty,
     VcalDateOrDateTimeProperty,
     VcalVeventComponent,
+    VisualCalendar,
 } from '@proton/shared/lib/interfaces/calendar';
+import {
+    CreateCalendarEventSyncData,
+    CreateLinkedCalendarEventsSyncData,
+    CreateSinglePersonalEventData,
+    DeleteCalendarEventSyncData,
+    UpdateCalendarEventSyncData,
+} from '@proton/shared/lib/interfaces/calendar/Api';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+import { GetAddressKeys } from '@proton/shared/lib/interfaces/hooks/GetAddressKeys';
+import { GetCalendarEventRaw } from '@proton/shared/lib/interfaces/hooks/GetCalendarEventRaw';
+import { GetCalendarInfo } from '@proton/shared/lib/interfaces/hooks/GetCalendarInfo';
 import { GetCanonicalEmailsMap } from '@proton/shared/lib/interfaces/hooks/GetCanonicalEmailsMap';
 import { RequireSome, Unwrap } from '@proton/shared/lib/interfaces/utils';
 import { getPrimaryKey } from '@proton/shared/lib/keys';
-import {
-    EVENT_INVITATION_ERROR_TYPE,
-    EventInvitationError,
-} from '@proton/shared/lib/calendar/icsSurgery/EventInvitationError';
-import { GetAddressKeys } from '@proton/shared/lib/interfaces/hooks/GetAddressKeys';
-import setupCalendarHelper from '@proton/shared/lib/calendar/keys/setupCalendarHelper';
+import isTruthy from '@proton/utils/isTruthy';
+import noop from '@proton/utils/noop';
+import unary from '@proton/utils/unary';
+
+import { MessageStateWithData } from '../../logic/messages/messagesTypes';
 import {
     EventInvitation,
+    UPDATE_ACTION,
     getCanCreateSingleEdit,
     getInvitationHasAttendee,
     getIsInvitationFromFuture,
@@ -96,9 +100,7 @@ import {
     getIsProtonInvite,
     getSingleEditWidgetData,
     processEventInvitation,
-    UPDATE_ACTION,
 } from './invite';
-import { MessageStateWithData } from '../../logic/messages/messagesTypes';
 
 const { CANCELLED } = ICAL_EVENT_STATUS;
 const { NONE, KEEP_PARTSTAT, RESET_PARTSTAT, UPDATE_PARTSTAT, CANCEL } = UPDATE_ACTION;

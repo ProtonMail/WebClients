@@ -1,16 +1,18 @@
 import { c } from 'ttag';
+
 import { Alert, ErrorButton } from '@proton/components';
 import { Abortable } from '@proton/components/hooks/useHandler';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import ComposerPasswordModal from './ComposerPasswordModal';
-import ComposerExpirationModal from './ComposerExpirationModal';
-import ComposerScheduleSendModal from './ComposerScheduleSendModal';
-import ComposerInsertImageModal from './ComposerInsertImageModal';
-import ComposerInnerModal from './ComposerInnerModal';
-import { MessageChange } from '../Composer';
+
 import { ATTACHMENT_ACTION } from '../../../helpers/attachment/attachmentUploader';
 import { ComposerInnerModalStates } from '../../../hooks/composer/useComposerInnerModals';
 import { MessageState } from '../../../logic/messages/messagesTypes';
+import { MessageChange } from '../Composer';
+import ComposerExpirationModal from './ComposerExpirationModal';
+import ComposerInnerModal from './ComposerInnerModal';
+import ComposerInsertImageModal from './ComposerInsertImageModal';
+import ComposerPasswordModal from './ComposerPasswordModal';
+import ComposerScheduleSendModal from './ComposerScheduleSendModal';
 
 interface Props {
     innerModal: ComposerInnerModalStates;

@@ -1,12 +1,14 @@
 import { c } from 'ttag';
-import { getSender } from '@proton/shared/lib/mail/messages';
+
 import { Recipient } from '@proton/shared/lib/interfaces';
+import { getSender } from '@proton/shared/lib/mail/messages';
 import noop from '@proton/utils/noop';
+
 import { useRecipientLabel } from '../../hooks/contact/useRecipientLabel';
 import { MessageState } from '../../logic/messages/messagesTypes';
 import ItemDate from '../list/ItemDate';
-import RecipientsDetails from './recipients/RecipientsDetails';
 import RecipientType from './recipients/RecipientType';
+import RecipientsDetails from './recipients/RecipientsDetails';
 
 interface Props {
     message: MessageState;

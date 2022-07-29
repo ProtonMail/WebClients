@@ -1,13 +1,15 @@
 import JSZip from 'jszip';
+
 import type { WorkerDecryptionResult } from '@proton/crypto';
+import { isFirefox } from '@proton/shared/lib/helpers/browser';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { splitExtension } from '@proton/shared/lib/helpers/file';
 import { Api } from '@proton/shared/lib/interfaces';
 import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
-import { isFirefox } from '@proton/shared/lib/helpers/browser';
-import { getAndVerify } from './attachmentLoader';
+
 import { MessageKeys, MessageVerification } from '../../logic/messages/messagesTypes';
+import { getAndVerify } from './attachmentLoader';
 
 export interface Download {
     attachment: Attachment;

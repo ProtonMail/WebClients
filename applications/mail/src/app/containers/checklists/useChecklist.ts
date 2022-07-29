@@ -1,7 +1,8 @@
+import { useEffect, useState } from 'react';
+
 import { useApi, useEventManager, useLoading, useUserSettings } from '@proton/components';
 import { getChecklist } from '@proton/shared/lib/api/checklist';
 import { ChecklistId, ChecklistKey } from '@proton/shared/lib/interfaces';
-import { useEffect, useState } from 'react';
 
 import { Event } from '../../models/event';
 

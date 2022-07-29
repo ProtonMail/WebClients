@@ -1,16 +1,18 @@
-import loudRejection from 'loud-rejection';
 import { fireEvent, getAllByText, getByText } from '@testing-library/dom';
 import { screen } from '@testing-library/react';
-import { APPS, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import loudRejection from 'loud-rejection';
+
 import { getAppName } from '@proton/shared/lib/apps/helper';
+import { APPS, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+
 import {
     addApiMock,
+    addToCache,
     clearAll,
     getDropdown,
     getHistory,
-    render,
     minimalCache,
-    addToCache,
+    render,
     tick,
 } from '../../helpers/test/helper';
 import { Breakpoints } from '../../models/utils';

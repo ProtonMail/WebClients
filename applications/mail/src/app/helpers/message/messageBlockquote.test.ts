@@ -1,5 +1,5 @@
-import { locateBlockquote } from './messageBlockquote';
 import mails from './__fixtures__/messageBlockquote.fixtures';
+import { locateBlockquote } from './messageBlockquote';
 
 /**
  * Creating a whole document each time is needed because locate blockquote is using xpath request

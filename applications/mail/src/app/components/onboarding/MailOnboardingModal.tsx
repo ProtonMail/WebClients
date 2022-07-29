@@ -1,5 +1,5 @@
 import { c } from 'ttag';
-import onboardingMailWelcome from '@proton/styles/assets/img/onboarding/mail-welcome.svg';
+
 import {
     Button,
     OnboardingContent,
@@ -8,6 +8,7 @@ import {
     OnboardingStepRenderCallback,
 } from '@proton/components';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import onboardingMailWelcome from '@proton/styles/assets/img/onboarding/mail-welcome.svg';
 
 interface Props {
     showGenericSteps?: boolean;

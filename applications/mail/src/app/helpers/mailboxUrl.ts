@@ -1,11 +1,14 @@
+import { generatePath, match, matchPath } from 'react-router';
+
 import { Location } from 'history';
-import { match, matchPath, generatePath } from 'react-router';
-import { isNumber } from '@proton/shared/lib/helpers/validators';
-import { getSearchParams, changeSearchParams } from '@proton/shared/lib/helpers/url';
+
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import { Sort, Filter, SearchParameters } from '../models/tools';
-import { getHumanLabelID } from './labels';
+import { changeSearchParams, getSearchParams } from '@proton/shared/lib/helpers/url';
+import { isNumber } from '@proton/shared/lib/helpers/validators';
+
 import { MAIN_ROUTE_PATH } from '../constants';
+import { Filter, SearchParameters, Sort } from '../models/tools';
+import { getHumanLabelID } from './labels';
 
 // No interface to comply with generatePath argument type
 export type MailUrlParams = {

@@ -1,5 +1,6 @@
-import { classnames } from '@proton/components';
 import { c } from 'ttag';
+
+import { classnames } from '@proton/components';
 import { buildMailTo } from '@proton/shared/lib/helpers/email';
 import { Participant } from '@proton/shared/lib/interfaces/calendar';
 

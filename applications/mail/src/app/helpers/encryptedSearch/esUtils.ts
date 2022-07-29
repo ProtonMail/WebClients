@@ -1,7 +1,12 @@
-import { Location, History } from 'history';
+import { History, Location } from 'history';
+
+import { getOldestTime } from '@proton/encrypted-search';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { LabelCount } from '@proton/shared/lib/interfaces';
-import { getOldestTime } from '@proton/encrypted-search';
+
+import { LABEL_IDS_TO_HUMAN, indexName, storeName } from '../../constants';
+import { StoredCiphertext } from '../../models/encryptedSearch';
+import { isSearch as checkIsSearch } from '../elements';
 import {
     extractSearchParameters,
     filterFromUrl,
@@ -10,9 +15,6 @@ import {
     setSortInUrl,
     sortFromUrl,
 } from '../mailboxUrl';
-import { isSearch as checkIsSearch } from '../elements';
-import { StoredCiphertext } from '../../models/encryptedSearch';
-import { indexName, LABEL_IDS_TO_HUMAN, storeName } from '../../constants';
 import { getTimePoint } from './encryptedSearchMailHelpers';
 import { normaliseSearchParams } from './esSearch';
 

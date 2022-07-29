@@ -1,6 +1,7 @@
-import { format, formatDistanceToNow as dateFnsFormatDistanceToNow, isToday, isYesterday, isThisWeek } from 'date-fns';
-import { dateLocale } from '@proton/shared/lib/i18n';
+import { formatDistanceToNow as dateFnsFormatDistanceToNow, format, isThisWeek, isToday, isYesterday } from 'date-fns';
 import { c } from 'ttag';
+
+import { dateLocale } from '@proton/shared/lib/i18n';
 
 export const formatSimpleDate = (date: Date) => {
     if (isToday(date)) {

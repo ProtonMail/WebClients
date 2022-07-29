@@ -1,18 +1,20 @@
+import { useCallback } from 'react';
+import { useDispatch } from 'react-redux';
+
+import { useApi, useGetEncryptionPreferences } from '@proton/components';
 import { PublicKeyReference, WorkerDecryptionResult, getMatchingSigningKey } from '@proton/crypto';
 import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
-import { useCallback } from 'react';
-import { useApi, useGetEncryptionPreferences } from '@proton/components';
-import { useDispatch } from 'react-redux';
-import { verifyMessage } from '../../helpers/message/messageDecrypt';
-import { useGetMessageKeys } from './useGetMessageKeys';
-import { extractKeysFromAttachments, extractKeysFromAutocrypt } from '../../helpers/message/messageKeys';
+
 import { isNetworkError } from '../../helpers/errors';
+import { verifyMessage } from '../../helpers/message/messageDecrypt';
+import { extractKeysFromAttachments, extractKeysFromAutocrypt } from '../../helpers/message/messageKeys';
 import { updateAttachment } from '../../logic/attachments/attachmentsActions';
-import { useGetAttachment } from '../useAttachment';
 import { MessageErrors, MessageStateWithData } from '../../logic/messages/messagesTypes';
-import { useGetMessage } from './useMessage';
 import { verificationComplete } from '../../logic/messages/read/messagesReadActions';
 import { useContactsMap } from '../contact/useContacts';
+import { useGetAttachment } from '../useAttachment';
+import { useGetMessageKeys } from './useGetMessageKeys';
+import { useGetMessage } from './useMessage';
 
 export const useVerifyMessage = (localID: string) => {
     const api = useApi();

@@ -10,6 +10,7 @@ import { getIsTimezoneComponent } from '@proton/shared/lib/calendar/vcalHelper';
 import { VcalVcalendar, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { RequireSome } from '@proton/shared/lib/interfaces/utils';
+
 import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../test/crypto';
 import { getSupportedEventInvitation, parseVcalendar } from './invite';
 
@@ -218,7 +219,9 @@ END:VCALENDAR`;
                     primaryTimezone: 'America/Sao_Paulo',
                 })
             ).rejects.toMatchObject(
-                new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_INVALID, { method: ICAL_METHOD.REQUEST })
+                new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_INVALID, {
+                    method: ICAL_METHOD.REQUEST,
+                })
             );
         });
 
@@ -255,7 +258,9 @@ END:VCALENDAR`;
                     primaryTimezone: 'America/Sao_Paulo',
                 })
             ).rejects.toMatchObject(
-                new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_INVALID, { method: ICAL_METHOD.REQUEST })
+                new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_INVALID, {
+                    method: ICAL_METHOD.REQUEST,
+                })
             );
         });
 
@@ -586,7 +591,7 @@ END:VCALENDAR`;
                 icsBinaryString: vcal,
                 icsFileName: 'test.ics',
                 primaryTimezone,
-            }
+            };
         };
         const localizedVevent = (tzid: string) => ({
             component: 'vevent',
@@ -703,9 +708,9 @@ END:VCALENDAR`;
                     (tzid) => `BEGIN:VTIMEZONE
 TZID:${tzid}
 END:VTIMEZONE`
-            )
-            .join('\n');
-        const vcal = `BEGIN:VCALENDAR
+                )
+                .join('\n');
+            const vcal = `BEGIN:VCALENDAR
 CALSCALE:GREGORIAN
 VERSION:2.0
 METHOD:${method}

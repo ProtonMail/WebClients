@@ -1,19 +1,22 @@
 import React, { useRef } from 'react';
+
 import { c } from 'ttag';
+
 import {
     FeatureCode,
-    Spotlight,
-    useSpotlightOnFeature,
-    classnames,
     Href,
+    Spotlight,
     Tooltip,
-    useSpotlightShow,
+    classnames,
     useModalState,
+    useSpotlightOnFeature,
+    useSpotlightShow,
 } from '@proton/components';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { isSent } from '@proton/shared/lib/mail/messages';
-import { MessageState } from '../../../logic/messages/messagesTypes';
+
 import { useMessageTrackers } from '../../../hooks/message/useMessageTrackers';
+import { MessageState } from '../../../logic/messages/messagesTypes';
 import SpyTrackerIcon from './SpyTrackerIcon';
 import SpyTrackerModal from './SpyTrackerModal';
 

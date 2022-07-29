@@ -1,23 +1,26 @@
 import { act } from 'react-dom/test-utils';
-import { fireEvent, RenderResult } from '@testing-library/react';
-import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+
+import { RenderResult, fireEvent } from '@testing-library/react';
+
 import { wait } from '@proton/shared/lib/helpers/promise';
+import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+
 import { mergeMessages } from '../../../helpers/message/messages';
-import Composer from '../Composer';
 import {
-    render,
+    addApiKeys,
     addApiMock,
+    apiKeys,
     parseFormData,
+    render,
+    tick,
     waitForNoNotification,
     waitForNotification,
-    addApiKeys,
-    apiKeys,
-    tick,
 } from '../../../helpers/test/helper';
-import { Breakpoints } from '../../../models/utils';
 import { MessageState, MessageStateWithData, PartialMessageState } from '../../../logic/messages/messagesTypes';
-import { store } from '../../../logic/store';
 import { initialize } from '../../../logic/messages/read/messagesReadActions';
+import { store } from '../../../logic/store';
+import { Breakpoints } from '../../../models/utils';
+import Composer from '../Composer';
 
 // Fake timers fails for the complexe send action
 // These more manual trick is used to skip undo timing

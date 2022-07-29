@@ -1,8 +1,10 @@
 import { MouseEventHandler, Reducer, useCallback, useEffect, useReducer, useRef } from 'react';
-import throttle from '@proton/utils/throttle';
-import debounce from '@proton/utils/debounce';
+
 import { useMailSettings } from '@proton/components';
 import { COMPOSER_MODE } from '@proton/shared/lib/constants';
+import debounce from '@proton/utils/debounce';
+import throttle from '@proton/utils/throttle';
+
 import { COMPOSER_GUTTER, COMPOSER_WIDTH, computeLeftPosition } from '../../helpers/composerPositioning';
 
 interface Props {

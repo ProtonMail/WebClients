@@ -1,29 +1,32 @@
-import { ReactNode, useRef, memo } from 'react';
+import { ReactNode, memo, useRef } from 'react';
+import { useHistory } from 'react-router-dom';
+
+import { c, msgid } from 'ttag';
+
 import {
-    classnames,
+    HotkeyTuple,
+    IconName,
+    IconSize,
     SidebarListItem,
     SidebarListItemContent,
     SidebarListItemContentIcon,
-    IconSize,
-    useEventManager,
     SidebarListItemLink,
-    useLoading,
-    HotkeyTuple,
+    classnames,
+    useEventManager,
     useHotkeys,
-    useMailSettings,
     useItemsDroppable,
-    IconName,
+    useLoading,
+    useMailSettings,
 } from '@proton/components';
-import { useHistory } from 'react-router-dom';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import noop from '@proton/utils/noop';
 import isTruthy from '@proton/utils/isTruthy';
-import { c, msgid } from 'ttag';
-import LocationAside from './LocationAside';
+import noop from '@proton/utils/noop';
+
 import { LABEL_IDS_TO_HUMAN } from '../../constants';
-import { useApplyLabels, useMoveToFolder } from '../../hooks/useApplyLabels';
 import { useGetElementsFromIDs } from '../../hooks/mailbox/useElements';
+import { useApplyLabels, useMoveToFolder } from '../../hooks/useApplyLabels';
+import LocationAside from './LocationAside';
 
 const { ALL_MAIL, DRAFTS, ALL_DRAFTS, SENT, ALL_SENT, SCHEDULED } = MAILBOX_LABEL_IDS;
 

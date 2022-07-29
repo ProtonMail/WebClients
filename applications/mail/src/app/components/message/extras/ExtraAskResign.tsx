@@ -1,12 +1,15 @@
 import { useMemo, useState } from 'react';
-import { Icon, Href, Button, useModalState } from '@proton/components';
+
 import { c } from 'ttag';
-import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+
+import { Button, Href, Icon, useModalState } from '@proton/components';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import ContactResignModal from '../modals/ContactResignModal';
+import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+
 import { getContactEmail } from '../../../helpers/addresses';
-import { MessageVerification } from '../../../logic/messages/messagesTypes';
 import { useContactsMap } from '../../../hooks/contact/useContacts';
+import { MessageVerification } from '../../../logic/messages/messagesTypes';
+import ContactResignModal from '../modals/ContactResignModal';
 
 interface Props {
     message: Message | undefined;

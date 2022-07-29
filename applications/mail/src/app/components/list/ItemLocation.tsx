@@ -1,10 +1,10 @@
-import { useFolders, Tooltip, useMailSettings, classnames } from '@proton/components';
-
+import { Tooltip, classnames, useFolders, useMailSettings } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+
+import { getLabelIDsToI18N } from '../../constants';
 import { getCurrentFolders } from '../../helpers/labels';
 import { Element } from '../../models/element';
 import ItemIcon from './ItemIcon';
-import { getLabelIDsToI18N } from '../../constants';
 
 const { ALL_SENT, ALL_DRAFTS } = MAILBOX_LABEL_IDS;
 

@@ -1,29 +1,32 @@
-import { useEffect, useRef, DragEvent, KeyboardEvent, RefObject, useState, MouseEvent } from 'react';
+import { DragEvent, KeyboardEvent, MouseEvent, RefObject, useEffect, useRef, useState } from 'react';
+
+import { c } from 'ttag';
+
 import {
-    classnames,
+    ContextMenu,
+    DropdownMenu,
+    DropdownMenuButton,
     Icon,
     Tooltip,
-    usePopperAnchor,
-    ContextMenu,
-    DropdownMenuButton,
-    DropdownMenu,
-    useNotifications,
-    useDragOver,
+    classnames,
     useContactModals,
+    useDragOver,
+    useNotifications,
+    usePopperAnchor,
 } from '@proton/components';
-import { c } from 'ttag';
-import noop from '@proton/utils/noop';
-import { Recipient } from '@proton/shared/lib/interfaces/Address';
-import { textToClipboard } from '@proton/shared/lib/helpers/browser';
-import { inputToRecipient, recipientToInput } from '@proton/shared/lib/mail/recipient';
 import { createContactPropertyUid } from '@proton/shared/lib/contacts/properties';
-import { getContactEmail } from '../../../helpers/addresses';
-import { STATUS_ICONS_FILLS } from '../../../models/crypto';
-import EncryptionStatusIcon from '../../message/EncryptionStatusIcon';
-import { useUpdateRecipientSendInfo, MessageSendInfo } from '../../../hooks/useSendInfo';
+import { textToClipboard } from '@proton/shared/lib/helpers/browser';
+import { Recipient } from '@proton/shared/lib/interfaces/Address';
+import { inputToRecipient, recipientToInput } from '@proton/shared/lib/mail/recipient';
+import noop from '@proton/utils/noop';
+
 import { DRAG_ADDRESS_KEY } from '../../../constants';
 import { useOnMailTo } from '../../../containers/ComposeProvider';
+import { getContactEmail } from '../../../helpers/addresses';
 import { useContactsMap } from '../../../hooks/contact/useContacts';
+import { MessageSendInfo, useUpdateRecipientSendInfo } from '../../../hooks/useSendInfo';
+import { STATUS_ICONS_FILLS } from '../../../models/crypto';
+import EncryptionStatusIcon from '../../message/EncryptionStatusIcon';
 
 interface Props {
     recipient: Recipient;

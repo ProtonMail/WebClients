@@ -1,6 +1,9 @@
-import { Icon, ToolbarButton, useMailSettings } from '@proton/components';
-import { c } from 'ttag';
 import { useLocation } from 'react-router';
+
+import { c } from 'ttag';
+
+import { Icon, ToolbarButton, useMailSettings } from '@proton/components';
+
 import { isConversationMode } from '../../helpers/mailSettings';
 
 interface Props {

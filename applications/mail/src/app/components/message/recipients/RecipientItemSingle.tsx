@@ -1,12 +1,14 @@
 import { ReactNode, RefObject, useState } from 'react';
-import { generateUID, Dropdown, DropdownMenu } from '@proton/components';
+
+import { Dropdown, DropdownMenu, generateUID } from '@proton/components';
 import { Recipient } from '@proton/shared/lib/interfaces';
-import { MapStatusIcons, StatusIcon } from '../../../models/crypto';
-import EncryptionStatusIcon from '../EncryptionStatusIcon';
-import RecipientItemLayout from './RecipientItemLayout';
-import RecipientDropdownItem from './RecipientDropdownItem';
+
 import { MessageState } from '../../../logic/messages/messagesTypes';
+import { MapStatusIcons, StatusIcon } from '../../../models/crypto';
 import ItemAction from '../../list/ItemAction';
+import EncryptionStatusIcon from '../EncryptionStatusIcon';
+import RecipientDropdownItem from './RecipientDropdownItem';
+import RecipientItemLayout from './RecipientItemLayout';
 
 interface Props {
     message?: MessageState;

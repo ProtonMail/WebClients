@@ -1,10 +1,12 @@
+import { findByText } from '@testing-library/dom';
+
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { findByText } from '@testing-library/dom';
+
 import { addApiKeys, addApiMock, clearAll } from '../../../helpers/test/helper';
 import { initialize } from '../../../logic/messages/read/messagesReadActions';
 import { store } from '../../../logic/store';
-import { messageID, addressID, setup, initMessage, getIframeRootDiv } from './Message.test.helpers';
+import { addressID, getIframeRootDiv, initMessage, messageID, setup } from './Message.test.helpers';
 
 describe('message state', () => {
     afterEach(clearAll);

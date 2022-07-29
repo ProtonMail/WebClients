@@ -1,14 +1,17 @@
-import { useState, useRef, useLayoutEffect } from 'react';
+import { useLayoutEffect, useRef, useState } from 'react';
+
+import { isToday, isTomorrow } from 'date-fns';
 import { c } from 'ttag';
+
+import { AppLink } from '@proton/components';
+import useIsMounted from '@proton/hooks/useIsMounted';
+import { VIEW_MODE } from '@proton/shared/lib/constants';
 import createListeners from '@proton/shared/lib/helpers/listeners';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import useIsMounted from '@proton/hooks/useIsMounted';
-import { AppLink } from '@proton/components';
-import { VIEW_MODE } from '@proton/shared/lib/constants';
-import { isToday, isTomorrow } from 'date-fns';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
-import UndoButton from './UndoButton';
+
 import { formatDateToHuman } from '../../helpers/date';
+import UndoButton from './UndoButton';
 
 export const createSendingMessageNotificationManager = () => {
     const listeners = createListeners();

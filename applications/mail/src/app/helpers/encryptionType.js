@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import {
     inSigningPeriod,
     isAuto,
@@ -10,7 +11,6 @@ import {
     isSent,
     isSentEncrypted,
 } from '@proton/shared/lib/mail/messages';
-import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 
 const I18N = {
     pm: [

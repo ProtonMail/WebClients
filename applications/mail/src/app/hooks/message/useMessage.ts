@@ -1,12 +1,14 @@
-import { useEffect, useState, useCallback } from 'react';
+import { useCallback, useEffect, useState } from 'react';
+import { useDispatch, useSelector, useStore } from 'react-redux';
+
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { useStore, useDispatch, useSelector } from 'react-redux';
-import { useGetElementsFromIDs } from '../mailbox/useElements';
-import { useGetConversation } from '../conversation/useConversation';
-import { MessageState } from '../../logic/messages/messagesTypes';
-import { RootState } from '../../logic/store';
+
 import { localID, messageByID } from '../../logic/messages/messagesSelectors';
+import { MessageState } from '../../logic/messages/messagesTypes';
 import { initialize } from '../../logic/messages/read/messagesReadActions';
+import { RootState } from '../../logic/store';
+import { useGetConversation } from '../conversation/useConversation';
+import { useGetElementsFromIDs } from '../mailbox/useElements';
 
 export const useGetLocalID = () => {
     const store = useStore<RootState>();

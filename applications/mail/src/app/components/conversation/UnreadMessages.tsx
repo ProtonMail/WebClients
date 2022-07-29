@@ -1,7 +1,10 @@
-import { Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
+
 import { c, msgid } from 'ttag';
+
 import { Button, Icon } from '@proton/components';
+import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+
 import { isUnread } from '../../helpers/elements';
 
 interface Props {

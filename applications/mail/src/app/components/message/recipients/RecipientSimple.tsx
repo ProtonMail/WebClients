@@ -1,8 +1,10 @@
 import { c } from 'ttag';
+
 import { ContactEditProps } from '@proton/components/containers/contacts/edit/ContactEditModal';
-import RecipientType from './RecipientType';
-import RecipientItem from './RecipientItem';
+
 import { RecipientOrGroup } from '../../../models/address';
+import RecipientItem from './RecipientItem';
+import RecipientType from './RecipientType';
 
 interface Props {
     recipientsOrGroup: RecipientOrGroup[];

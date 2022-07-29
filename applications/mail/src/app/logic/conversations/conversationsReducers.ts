@@ -1,28 +1,30 @@
-import { Draft } from 'immer';
 import { PayloadAction } from '@reduxjs/toolkit';
+import { Draft } from 'immer';
+
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+
+import { mergeConversations } from '../../helpers/conversation';
+import { parseLabelIDsInEvent } from '../../helpers/elements';
+import { isNetworkError, isNotExistError } from '../../helpers/errors';
+import {
+    LabelChanges,
+    UnreadStatus,
+    applyLabelChangesOnConversation,
+    applyLabelChangesOnMessage,
+} from '../../helpers/labels';
+import { applyMarkAsChangesOnMessage } from '../../helpers/message/messages';
+import { MarkAsChanges, applyMarkAsChangesOnConversation } from '../../hooks/optimistic/useOptimisticMarkAs';
+import { Conversation } from '../../models/conversation';
+import { RootState } from '../store';
+import { allConversations, conversationByID } from './conversationsSelectors';
 import {
     ConversationErrors,
     ConversationEvent,
     ConversationParams,
     ConversationResult,
-    ConversationsState,
     ConversationState,
+    ConversationsState,
 } from './conversationsTypes';
-import { allConversations, conversationByID } from './conversationsSelectors';
-import { RootState } from '../store';
-import { Conversation } from '../../models/conversation';
-import { isNetworkError, isNotExistError } from '../../helpers/errors';
-import {
-    applyLabelChangesOnConversation,
-    applyLabelChangesOnMessage,
-    LabelChanges,
-    UnreadStatus,
-} from '../../helpers/labels';
-import { applyMarkAsChangesOnConversation, MarkAsChanges } from '../../hooks/optimistic/useOptimisticMarkAs';
-import { mergeConversations } from '../../helpers/conversation';
-import { parseLabelIDsInEvent } from '../../helpers/elements';
-import { applyMarkAsChangesOnMessage } from '../../helpers/message/messages';
 
 export const globalReset = (state: Draft<ConversationsState>) => {
     Object.keys(state).forEach((key) => delete state[key]);

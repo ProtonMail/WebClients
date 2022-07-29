@@ -1,20 +1,21 @@
 import { useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 
+import { HotkeyTuple, useEventManager, useFolders, useHotkeys, useMailSettings } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import noop from '@proton/utils/noop';
 import { KeyboardKey, MailSettings } from '@proton/shared/lib/interfaces';
-import { useFolders, useHotkeys, useMailSettings, HotkeyTuple, useEventManager } from '@proton/components';
+import noop from '@proton/utils/noop';
+
+import { MESSAGE_ACTIONS } from '../../constants';
+import { useOnCompose } from '../../containers/ComposeProvider';
 import { isStarred } from '../../helpers/elements';
 import { getFolderName } from '../../helpers/labels';
-import { Element } from '../../models/element';
-import { useMoveToFolder, useStar } from '../useApplyLabels';
-import { MARK_AS_STATUS, useMarkAs } from '../useMarkAs';
-import { useFolderNavigationHotkeys } from '../mailbox/useFolderNavigationHotkeys';
-import { useOnCompose } from '../../containers/ComposeProvider';
-import { MESSAGE_ACTIONS } from '../../constants';
 import { isConversationMode } from '../../helpers/mailSettings';
 import { MessageState } from '../../logic/messages/messagesTypes';
+import { Element } from '../../models/element';
+import { useFolderNavigationHotkeys } from '../mailbox/useFolderNavigationHotkeys';
+import { useMoveToFolder, useStar } from '../useApplyLabels';
+import { MARK_AS_STATUS, useMarkAs } from '../useMarkAs';
 
 const { TRASH, SPAM, ARCHIVE, INBOX } = MAILBOX_LABEL_IDS;
 

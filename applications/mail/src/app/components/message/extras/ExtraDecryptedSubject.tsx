@@ -1,6 +1,9 @@
 import { useMemo } from 'react';
-import { Icon, Tooltip } from '@proton/components';
+
 import { c } from 'ttag';
+
+import { Icon, Tooltip } from '@proton/components';
+
 import { useEncryptedSearchContext } from '../../../containers/EncryptedSearchProvider';
 import { MessageState } from '../../../logic/messages/messagesTypes';
 

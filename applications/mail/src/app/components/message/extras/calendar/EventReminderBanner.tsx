@@ -1,7 +1,10 @@
+import React from 'react';
+
+import { c } from 'ttag';
+
 import { Banner } from '@proton/components';
 import { BannerBackgroundColor } from '@proton/components/components/banner/Banner';
-import React from 'react';
-import { c } from 'ttag';
+
 import EventReminderText from './EventReminderText';
 
 interface Props {

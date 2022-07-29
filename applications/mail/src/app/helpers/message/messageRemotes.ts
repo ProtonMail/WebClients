@@ -1,4 +1,5 @@
 import { wait } from '@proton/shared/lib/helpers/promise';
+
 import { MessageImage, MessageRemoteImage } from '../../logic/messages/messagesTypes';
 
 export const ATTRIBUTES_TO_FIND = ['url', 'xlink:href', 'src', 'srcset', 'svg', 'background', 'poster'];

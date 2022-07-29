@@ -2,8 +2,8 @@ import { useRouteMatch } from 'react-router-dom';
 
 import { EOUrlParams } from '../../../helpers/eo/eoUrl';
 import { useLoadEOMessage } from '../../../hooks/eo/useLoadEOMessage';
-import EOComposer from './EOComposer';
 import EORedirect from '../EORedirect';
+import EOComposer from './EOComposer';
 
 import './EOreply.scss';
 

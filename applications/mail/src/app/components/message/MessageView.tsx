@@ -1,43 +1,45 @@
 import {
+    FocusEvent,
+    FocusEventHandler,
+    Ref,
+    RefObject,
+    forwardRef,
+    memo,
     useEffect,
+    useImperativeHandle,
     useMemo,
     useRef,
     useState,
-    memo,
-    forwardRef,
-    Ref,
-    useImperativeHandle,
-    FocusEventHandler,
-    RefObject,
-    FocusEvent,
 } from 'react';
-import { hasAttachments, isDraft, isSent, isOutbox } from '@proton/shared/lib/mail/messages';
-import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+
 import { classnames } from '@proton/components';
-import { Label } from '@proton/shared/lib/interfaces/Label';
-import { MailSettings } from '@proton/shared/lib/interfaces';
-import noop from '@proton/utils/noop';
 import createScrollIntoView from '@proton/components/helpers/createScrollIntoView';
-import { getSentStatusIconInfo, getReceivedStatusIcon, MessageViewIcons } from '../../helpers/message/icon';
-import MessageBody from './MessageBody';
-import HeaderCollapsed from './header/HeaderCollapsed';
-import HeaderExpanded from './header/HeaderExpanded';
-import MessageFooter from './MessageFooter';
-import { Element } from '../../models/element';
-import { useMessage } from '../../hooks/message/useMessage';
-import { useMarkAs, MARK_AS_STATUS } from '../../hooks/useMarkAs';
+import { MailSettings } from '@proton/shared/lib/interfaces';
+import { Label } from '@proton/shared/lib/interfaces/Label';
+import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { hasAttachments, isDraft, isOutbox, isSent } from '@proton/shared/lib/mail/messages';
+import noop from '@proton/utils/noop';
+
+import { LOAD_RETRY_COUNT } from '../../constants';
+import { useOnCompose } from '../../containers/ComposeProvider';
+import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { isUnread } from '../../helpers/elements';
-import { Breakpoints } from '../../models/utils';
-import { useLoadMessage } from '../../hooks/message/useLoadMessage';
+import { isMessageForwarded } from '../../helpers/encryptedSearch/esBuild';
+import { MessageViewIcons, getReceivedStatusIcon, getSentStatusIconInfo } from '../../helpers/message/icon';
 import { useInitializeMessage } from '../../hooks/message/useInitializeMessage';
 import { useLoadEmbeddedImages, useLoadRemoteImages } from '../../hooks/message/useLoadImages';
+import { useLoadMessage } from '../../hooks/message/useLoadMessage';
+import { useMessage } from '../../hooks/message/useMessage';
+import { useMessageHotkeys } from '../../hooks/message/useMessageHotkeys';
 import { useResignContact } from '../../hooks/message/useResignContact';
 import { useVerifyMessage } from '../../hooks/message/useVerifyMessage';
-import { useMessageHotkeys } from '../../hooks/message/useMessageHotkeys';
-import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
-import { isMessageForwarded } from '../../helpers/encryptedSearch/esBuild';
-import { useOnCompose } from '../../containers/ComposeProvider';
-import { LOAD_RETRY_COUNT } from '../../constants';
+import { MARK_AS_STATUS, useMarkAs } from '../../hooks/useMarkAs';
+import { Element } from '../../models/element';
+import { Breakpoints } from '../../models/utils';
+import MessageBody from './MessageBody';
+import MessageFooter from './MessageFooter';
+import HeaderCollapsed from './header/HeaderCollapsed';
+import HeaderExpanded from './header/HeaderExpanded';
 
 import './MessageView.scss';
 
@@ -281,30 +283,36 @@ const MessageView = (
         }
     }, [hasProcessingErrors]);
 
-    const { labelDropdownToggleRef, moveDropdownToggleRef, filterDropdownToggleRef, moveScheduledModal, moveAllModal, moveToSpamModal } =
-        useMessageHotkeys(
-            elementRef,
-            {
-                labelID,
-                conversationIndex,
-                message,
-                bodyLoaded,
-                expanded,
-                messageLoaded,
-                draft,
-                conversationMode,
-                mailSettings,
-                messageRef: elementRef,
-            },
-            {
-                hasFocus: !!hasFocus,
-                setExpanded,
-                toggleOriginalMessage,
-                handleLoadRemoteImages,
-                handleLoadEmbeddedImages,
-                onBack,
-            }
-        );
+    const {
+        labelDropdownToggleRef,
+        moveDropdownToggleRef,
+        filterDropdownToggleRef,
+        moveScheduledModal,
+        moveAllModal,
+        moveToSpamModal,
+    } = useMessageHotkeys(
+        elementRef,
+        {
+            labelID,
+            conversationIndex,
+            message,
+            bodyLoaded,
+            expanded,
+            messageLoaded,
+            draft,
+            conversationMode,
+            mailSettings,
+            messageRef: elementRef,
+        },
+        {
+            hasFocus: !!hasFocus,
+            setExpanded,
+            toggleOriginalMessage,
+            handleLoadRemoteImages,
+            handleLoadEmbeddedImages,
+            onBack,
+        }
+    );
 
     function handleFocus(context: 'IFRAME'): () => void;
     function handleFocus(context: 'BUBBLED_EVENT'): (event: FocusEvent) => void;

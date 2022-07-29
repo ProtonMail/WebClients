@@ -1,6 +1,8 @@
 import { c } from 'ttag';
+
 import { classnames } from '@proton/components';
 import noop from '@proton/utils/noop';
+
 import { MessageState } from '../../../logic/messages/messagesTypes';
 import RecipientItem from '../../message/recipients/RecipientItem';
 import RecipientType from '../../message/recipients/RecipientType';

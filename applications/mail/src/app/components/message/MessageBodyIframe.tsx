@@ -1,24 +1,27 @@
 import { RefObject, useEffect } from 'react';
 import { createPortal } from 'react-dom';
+
 import { c } from 'ttag';
-import { hasAttachments } from '@proton/shared/lib/mail/messages';
+
+import { Icon, Tooltip, classnames } from '@proton/components';
 import { useLinkHandler } from '@proton/components/hooks/useLinkHandler';
-import { classnames, Tooltip, Icon } from '@proton/components';
-import { MailSettings } from '@proton/shared/lib/interfaces';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
+import { MailSettings } from '@proton/shared/lib/interfaces';
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
+import { hasAttachments } from '@proton/shared/lib/mail/messages';
+
 import { useMailboxContainerContext } from '../../containers/mailbox/MailboxContainerProvider';
 import { MessageState } from '../../logic/messages/messagesTypes';
-import useInitIframeContent from './hooks/useInitIframeContent';
-import useIframeDispatchEvents from './hooks/useIframeDispatchEvents';
-import useIframeShowBlockquote from './hooks/useIframeShowBlockquote';
-import { MESSAGE_IFRAME_PRINT_FOOTER_ID, MESSAGE_IFRAME_PRINT_HEADER_ID } from './constants';
-import MessagePrintHeader from './MessagePrintHeader';
 import MessageBodyImages from './MessageBodyImages';
-import useIframeOffset from './hooks/useIframeOffset';
-import useObserveIframeHeight from './hooks/useObserveIframeHeight';
-import getIframeSandboxAttributes from './helpers/getIframeSandboxAttributes';
 import MessagePrintFooter from './MessagePrintFooter';
+import MessagePrintHeader from './MessagePrintHeader';
+import { MESSAGE_IFRAME_PRINT_FOOTER_ID, MESSAGE_IFRAME_PRINT_HEADER_ID } from './constants';
+import getIframeSandboxAttributes from './helpers/getIframeSandboxAttributes';
+import useIframeDispatchEvents from './hooks/useIframeDispatchEvents';
+import useIframeOffset from './hooks/useIframeOffset';
+import useIframeShowBlockquote from './hooks/useIframeShowBlockquote';
+import useInitIframeContent from './hooks/useInitIframeContent';
+import useObserveIframeHeight from './hooks/useObserveIframeHeight';
 
 interface Props {
     iframeRef: RefObject<HTMLIFrameElement>;

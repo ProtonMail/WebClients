@@ -1,11 +1,13 @@
+import { findByTestId, fireEvent } from '@testing-library/dom';
+
 import { IMAGE_PROXY_FLAGS, SHOW_IMAGES } from '@proton/shared/lib/constants';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { findByTestId, fireEvent } from '@testing-library/dom';
+
+import { addApiMock, addToCache, assertIcon, clearAll, minimalCache } from '../../../helpers/test/helper';
 import { createDocument } from '../../../helpers/test/message';
-import { defaultProps, getIframeRootDiv, initMessage, setup } from './Message.test.helpers';
-import { addToCache, minimalCache, addApiMock, assertIcon, clearAll } from '../../../helpers/test/helper';
-import MessageView from '../MessageView';
 import { MessageState } from '../../../logic/messages/messagesTypes';
+import MessageView from '../MessageView';
+import { defaultProps, getIframeRootDiv, initMessage, setup } from './Message.test.helpers';
 
 const imageURL = 'imageURL';
 const blobURL = 'blobURL';

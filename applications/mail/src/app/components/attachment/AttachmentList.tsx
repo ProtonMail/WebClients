@@ -1,15 +1,18 @@
 import { useEffect, useRef, useState } from 'react';
+
 import { c, msgid } from 'ttag';
+
+import { Button, FeatureCode, Icon, Tooltip, classnames, useFeature } from '@proton/components';
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
-import { Icon, classnames, useFeature, FeatureCode, Button, Tooltip } from '@proton/components';
-import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
-import AttachmentItem from './AttachmentItem';
+import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
+
+import { getAttachmentCounts } from '../../helpers/message/messages';
 import { PendingUpload } from '../../hooks/composer/useAttachments';
 import { useDownload, useDownloadAll } from '../../hooks/useDownload';
-import AttachmentPreview, { AttachmentPreviewControls } from './AttachmentPreview';
-import { getAttachmentCounts } from '../../helpers/message/messages';
 import { MessageStateWithData, OutsideKey } from '../../logic/messages/messagesTypes';
+import AttachmentItem from './AttachmentItem';
+import AttachmentPreview, { AttachmentPreviewControls } from './AttachmentPreview';
 
 export enum AttachmentAction {
     Download,

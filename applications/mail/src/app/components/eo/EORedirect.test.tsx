@@ -1,7 +1,7 @@
-import { EOClearAll } from '../../helpers/test/eo/helpers';
 import { EOGetHistory, EORender } from '../../helpers/test/eo/EORender';
-import EORedirect from './EORedirect';
+import { EOClearAll } from '../../helpers/test/eo/helpers';
 import { MessageState } from '../../logic/messages/messagesTypes';
+import EORedirect from './EORedirect';
 
 describe('Encrypted Outside Redirection', () => {
     afterEach(EOClearAll);

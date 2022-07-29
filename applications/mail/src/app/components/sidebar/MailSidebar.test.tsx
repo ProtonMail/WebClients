@@ -1,20 +1,23 @@
-import { Location } from 'history';
-import { fireEvent } from '@testing-library/dom';
 import { act } from 'react-dom/test-utils';
+
+import { fireEvent } from '@testing-library/dom';
+import { Location } from 'history';
+import loudRejection from 'loud-rejection';
+
 import { getAppVersion } from '@proton/components';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import { LABEL_TYPE, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import loudRejection from 'loud-rejection';
 import range from '@proton/utils/range';
+
 import {
-    render,
-    clearAll,
     addToCache,
-    minimalCache,
+    assertFocus,
+    clearAll,
     config,
     getHistory,
+    minimalCache,
+    render,
     setFeatureFlags,
-    assertFocus,
 } from '../../helpers/test/helper';
 import MailSidebar from './MailSidebar';
 

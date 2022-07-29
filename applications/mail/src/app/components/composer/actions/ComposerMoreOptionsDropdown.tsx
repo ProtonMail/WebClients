@@ -1,8 +1,9 @@
-import Tooltip from '@proton/components/components/tooltip/Tooltip';
-import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
+import { ReactNode, useState } from 'react';
+
 import { classnames, generateUID, usePopperAnchor } from '@proton/components';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
-import { ReactNode, useState } from 'react';
+import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
+import Tooltip from '@proton/components/components/tooltip/Tooltip';
 
 interface Props {
     autoClose?: boolean;
@@ -59,7 +60,7 @@ const ComposerMoreOptionsDropdown = ({
                         className,
                     ])}
                     title={title}
-                    data-testid='composer:more-options-button'
+                    data-testid="composer:more-options-button"
                     {...rest}
                 >
                     {content}

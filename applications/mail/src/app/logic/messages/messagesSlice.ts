@@ -1,89 +1,90 @@
 import { createSlice } from '@reduxjs/toolkit';
+
+import { globalReset } from '../actions';
 import {
-    documentInitializeFulfilled,
-    documentInitializePending,
-    event,
-    initialize,
-    errors,
-    load,
-    verificationComplete,
-    resign,
-    resetVerification,
-    applyDarkStyle,
-    removeDarkStyle,
-    reload,
-} from './read/messagesReadActions';
-import { loadEmbedded, loadFakeProxy, loadRemoteDirect, loadRemoteProxy } from './images/messagesImagesActions';
-import {
-    optimisticApplyLabels,
-    optimisticMarkAs,
-    optimisticDelete,
-    optimisticEmptyLabel,
-    optimisticRestore,
-} from './optimistic/messagesOptimisticActions';
-import {
+    cancelScheduled,
     createDraft,
     deleteDraft,
+    draftSaved,
     endSending,
     endUndo,
     openDraft,
     removeInitialAttachments,
-    draftSaved,
     sendModifications,
     sent,
     startSending,
-    updateScheduled,
     updateExpires,
-    cancelScheduled,
+    updateScheduled,
 } from './draft/messagesDraftActions';
 import {
-    initialize as initializeReducer,
-    reload as reloadReducer,
-    errors as errorsReducer,
-    event as eventReducer,
-    loadFulfilled,
-    loadRejected,
-    verificationComplete as verificationCompleteReducer,
-    documentInitializePending as documentInitializePendingReducer,
-    documentInitializeFulfilled as documentInitializeFulfilledReducer,
-    resign as resignReducer,
-    resetVerification as resetVerificationReducer,
-    reset as globalResetReducer,
-    applyDarkStyle as applyDarkStyleReducer,
-    removeDarkStyle as removeDarkStyleReducer,
-} from './read/messagesReadReducers';
+    cancelScheduled as cancelScheduledReducer,
+    createDraft as createDraftReducer,
+    deleteDraft as deleteDraftReducer,
+    draftSaved as draftSavedSelector,
+    endSending as endSendingReducer,
+    endUndo as endUndoReducer,
+    openDraft as openDraftReducer,
+    removeInitialAttachments as removeInitialAttachmentsReducer,
+    sendModifications as sendModificationsReducer,
+    sent as sentReducer,
+    startSending as startSendingReducer,
+    updateExpires as updateExpiresReducer,
+    updateScheduled as updateScheduledReducer,
+} from './draft/messagesDraftReducers';
+import { loadEmbedded, loadFakeProxy, loadRemoteDirect, loadRemoteProxy } from './images/messagesImagesActions';
 import {
     loadEmbeddedFulfilled,
-    loadRemotePending,
-    loadRemoteDirectFulFilled,
     loadFakeProxyFulFilled,
-    loadRemoteProxyFulFilled,
     loadFakeProxyPending,
+    loadRemoteDirectFulFilled,
+    loadRemotePending,
+    loadRemoteProxyFulFilled,
 } from './images/messagesImagesReducers';
+import { MessagesState } from './messagesTypes';
+import {
+    optimisticApplyLabels,
+    optimisticDelete,
+    optimisticEmptyLabel,
+    optimisticMarkAs,
+    optimisticRestore,
+} from './optimistic/messagesOptimisticActions';
 import {
     optimisticApplyLabels as optimisticApplyLabelsReducer,
-    optimisticMarkAs as optimisticMarkAsReducer,
     optimisticDelete as optimisticDeleteReducer,
     optimisticEmptyLabel as optimisticEmptyLabelReducer,
+    optimisticMarkAs as optimisticMarkAsReducer,
     optimisticRestore as optimisticRestoreReducer,
 } from './optimistic/messagesOptimisticReducers';
 import {
-    createDraft as createDraftReducer,
-    openDraft as openDraftReducer,
-    removeInitialAttachments as removeInitialAttachmentsReducer,
-    draftSaved as draftSavedSelector,
-    startSending as startSendingReducer,
-    sendModifications as sendModificationsReducer,
-    endUndo as endUndoReducer,
-    sent as sentReducer,
-    endSending as endSendingReducer,
-    deleteDraft as deleteDraftReducer,
-    updateScheduled as updateScheduledReducer,
-    updateExpires as updateExpiresReducer,
-    cancelScheduled as cancelScheduledReducer,
-} from './draft/messagesDraftReducers';
-import { MessagesState } from './messagesTypes';
-import { globalReset } from '../actions';
+    applyDarkStyle,
+    documentInitializeFulfilled,
+    documentInitializePending,
+    errors,
+    event,
+    initialize,
+    load,
+    reload,
+    removeDarkStyle,
+    resetVerification,
+    resign,
+    verificationComplete,
+} from './read/messagesReadActions';
+import {
+    applyDarkStyle as applyDarkStyleReducer,
+    documentInitializeFulfilled as documentInitializeFulfilledReducer,
+    documentInitializePending as documentInitializePendingReducer,
+    errors as errorsReducer,
+    event as eventReducer,
+    reset as globalResetReducer,
+    initialize as initializeReducer,
+    loadFulfilled,
+    loadRejected,
+    reload as reloadReducer,
+    removeDarkStyle as removeDarkStyleReducer,
+    resetVerification as resetVerificationReducer,
+    resign as resignReducer,
+    verificationComplete as verificationCompleteReducer,
+} from './read/messagesReadReducers';
 
 const messagesSlice = createSlice({
     name: 'messages',

@@ -1,14 +1,14 @@
 import { ReactNode, useEffect } from 'react';
-import { Redirect } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 
 import { Loader, useApi } from '@proton/components';
 
-import { MessageState } from '../../logic/messages/messagesTypes';
-import { useGetEODecryptedToken, useGetEOPassword } from '../../hooks/eo/useLoadEOMessage';
 import { EO_REDIRECT_PATH, LOAD_RETRY_COUNT } from '../../constants';
-import { loadEOMessage } from '../../logic/eo/eoActions';
 import { useInitializeEOMessage } from '../../hooks/eo/useInitializeEOMessage';
+import { useGetEODecryptedToken, useGetEOPassword } from '../../hooks/eo/useLoadEOMessage';
+import { loadEOMessage } from '../../logic/eo/eoActions';
+import { MessageState } from '../../logic/messages/messagesTypes';
 
 interface Props {
     id?: string;

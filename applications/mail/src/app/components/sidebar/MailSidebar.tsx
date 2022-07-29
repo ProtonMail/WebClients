@@ -1,28 +1,30 @@
-import { useCallback, memo, useState } from 'react';
+import { memo, useCallback, useState } from 'react';
+
 import { c } from 'ttag';
+
 import {
-    Sidebar,
-    SidebarPrimaryButton,
-    SidebarNav,
-    MainLogo,
-    useMailSettings,
-    Tooltip,
-    useUserSettings,
-    Spotlight,
-    useSpotlightOnFeature,
     FeatureCode,
-    useSpotlightShow,
+    MainLogo,
+    Sidebar,
+    SidebarNav,
+    SidebarPrimaryButton,
+    Spotlight,
+    Tooltip,
+    useMailSettings,
     useModalState,
+    useSpotlightOnFeature,
+    useSpotlightShow,
+    useUserSettings,
 } from '@proton/components';
 import { MnemonicPromptModal } from '@proton/components/containers/mnemonic';
 import giftSvg from '@proton/styles/assets/img/illustrations/gift.svg';
 
-import { useOnCompose } from '../../containers/ComposeProvider';
 import { MESSAGE_ACTIONS } from '../../constants';
+import { useOnCompose } from '../../containers/ComposeProvider';
+import { useGetStartedChecklist } from '../../containers/checklists';
 import MailGetStartedChecklistModal from '../checklist/GetStartedChecklistModal';
 import MailSidebarList from './MailSidebarList';
 import SidebarVersion from './SidebarVersion';
-import { useGetStartedChecklist } from '../../containers/checklists';
 
 interface Props {
     labelID: string;

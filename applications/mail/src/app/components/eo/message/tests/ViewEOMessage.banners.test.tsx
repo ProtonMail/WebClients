@@ -1,7 +1,8 @@
 import { waitFor } from '@testing-library/dom';
-import { setup } from './ViewEOMessage.test.helpers';
-import { EOClearAll } from '../../../../helpers/test/eo/helpers';
+
 import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../../helpers/test/crypto';
+import { EOClearAll } from '../../../../helpers/test/eo/helpers';
+import { setup } from './ViewEOMessage.test.helpers';
 
 describe('Encrypted Outside message banners', () => {
     beforeAll(async () => {
