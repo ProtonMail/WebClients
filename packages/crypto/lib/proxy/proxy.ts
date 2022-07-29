@@ -54,33 +54,39 @@ export const CryptoProxy: CryptoProxyInterface = {
         return onEndpointRelease(assertNotNull(tmp));
     },
 
-    encryptMessage: async (opts) => assertNotNull(endpoint).encryptMessage({ date: serverTime(), ...opts }),
-    decryptMessage: async (opts) => assertNotNull(endpoint).decryptMessage({ date: serverTime(), ...opts }),
-    decryptMessageLegacy: async (opts) => assertNotNull(endpoint).decryptMessageLegacy({ date: serverTime(), ...opts }),
-    signMessage: async (opts) => assertNotNull(endpoint).signMessage({ date: serverTime(), ...opts }),
-    verifyMessage: async (opts) => assertNotNull(endpoint).verifyMessage({ date: serverTime(), ...opts }),
-    verifyCleartextMessage: async (opts) =>
-        assertNotNull(endpoint).verifyCleartextMessage({ date: serverTime(), ...opts }),
-    processMIME: async (opts) => assertNotNull(endpoint).processMIME({ date: serverTime(), ...opts }),
+    encryptMessage: async ({ date = serverTime(), ...opts }) =>
+        assertNotNull(endpoint).encryptMessage({ ...opts, date }),
+    decryptMessage: async ({ date = serverTime(), ...opts }) =>
+        assertNotNull(endpoint).decryptMessage({ ...opts, date }),
+    decryptMessageLegacy: async ({ date = serverTime(), ...opts }) =>
+        assertNotNull(endpoint).decryptMessageLegacy({ ...opts, date }),
+    signMessage: async ({ date = serverTime(), ...opts }) => assertNotNull(endpoint).signMessage({ ...opts, date }),
+    verifyMessage: async ({ date = serverTime(), ...opts }) => assertNotNull(endpoint).verifyMessage({ ...opts, date }),
+    verifyCleartextMessage: async ({ date = serverTime(), ...opts }) =>
+        assertNotNull(endpoint).verifyCleartextMessage({ ...opts, date }),
+    processMIME: async ({ date = serverTime(), ...opts }) => assertNotNull(endpoint).processMIME({ ...opts, date }),
 
-    generateSessionKey: async (opts) => assertNotNull(endpoint).generateSessionKey({ date: serverTime(), ...opts }),
+    generateSessionKey: async ({ date = serverTime(), ...opts }) =>
+        assertNotNull(endpoint).generateSessionKey({ ...opts, date }),
     generateSessionKeyForAlgorithm: async (opts) => assertNotNull(endpoint).generateSessionKeyForAlgorithm(opts),
-    encryptSessionKey: async (opts) => assertNotNull(endpoint).encryptSessionKey({ date: serverTime(), ...opts }),
-    decryptSessionKey: async (opts) => assertNotNull(endpoint).decryptSessionKey({ date: serverTime(), ...opts }),
+    encryptSessionKey: async ({ date = serverTime(), ...opts }) =>
+        assertNotNull(endpoint).encryptSessionKey({ ...opts, date }),
+    decryptSessionKey: async ({ date = serverTime(), ...opts }) =>
+        assertNotNull(endpoint).decryptSessionKey({ ...opts, date }),
 
     importPrivateKey: async (opts) => assertNotNull(endpoint).importPrivateKey(opts),
     importPublicKey: async (opts) => assertNotNull(endpoint).importPublicKey(opts),
-    generateKey: async (opts) => assertNotNull(endpoint).generateKey({ date: serverTime(), ...opts }),
-    reformatKey: async (opts) => assertNotNull(endpoint).reformatKey({ date: serverTime(), ...opts }),
+    generateKey: async ({ date = serverTime(), ...opts }) => assertNotNull(endpoint).generateKey({ ...opts, date }),
+    reformatKey: async ({ date = serverTime(), ...opts }) => assertNotNull(endpoint).reformatKey({ ...opts, date }),
     exportPublicKey: async (opts) => assertNotNull(endpoint).exportPublicKey(opts),
     exportPrivateKey: async (opts) => assertNotNull(endpoint).exportPrivateKey(opts),
     clearKeyStore: () => assertNotNull(endpoint).clearKeyStore(),
     clearKey: async (opts) => assertNotNull(endpoint).clearKey(opts),
     replaceUserIDs: async (opts) => assertNotNull(endpoint).replaceUserIDs(opts),
 
-    isRevokedKey: async (opts) => assertNotNull(endpoint).isRevokedKey({ date: serverTime(), ...opts }),
-    isExpiredKey: async (opts) => assertNotNull(endpoint).isExpiredKey({ date: serverTime(), ...opts }),
-    canKeyEncrypt: async (opts) => assertNotNull(endpoint).canKeyEncrypt({ date: serverTime(), ...opts }),
+    isRevokedKey: async ({ date = serverTime(), ...opts }) => assertNotNull(endpoint).isRevokedKey({ ...opts, date }),
+    isExpiredKey: async ({ date = serverTime(), ...opts }) => assertNotNull(endpoint).isExpiredKey({ ...opts, date }),
+    canKeyEncrypt: async ({ date = serverTime(), ...opts }) => assertNotNull(endpoint).canKeyEncrypt({ ...opts, date }),
     getSHA256Fingerprints: async (opts) => assertNotNull(endpoint).getSHA256Fingerprints(opts),
     computeHash: async (opts) => assertNotNull(endpoint).computeHash(opts),
 
