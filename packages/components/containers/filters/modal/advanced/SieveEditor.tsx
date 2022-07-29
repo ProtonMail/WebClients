@@ -1,17 +1,17 @@
 import { useEffect, useRef } from 'react';
+import { Controlled as CodeMirror } from 'react-codemirror2';
+
 import { Editor, EditorChange, EditorConfiguration } from 'codemirror';
 import { Annotation, Linter } from 'codemirror/addon/lint/lint';
-import { Controlled as CodeMirror } from 'react-codemirror2';
-import { normalize } from '../../utils';
-
-import 'codemirror/addon/display/autorefresh';
 import 'codemirror/addon/lint/lint';
 import 'codemirror/mode/sieve/sieve';
-import 'codemirror/lib/codemirror.css';
-import 'codemirror/addon/lint/lint.css';
-import 'codemirror/theme/base16-dark.css';
+
+import { normalize } from '../../utils';
 
 import './SieveEditor.scss';
+import 'codemirror/addon/lint/lint.css';
+import 'codemirror/lib/codemirror.css';
+import 'codemirror/theme/base16-dark.css';
 
 interface Props {
     value: string;
@@ -56,6 +56,22 @@ const SieveEditor = ({ value, issues = [], onChange, theme }: Props) => {
             uglyGlobalLintRef = undefined;
         };
     }, [issues]);
+
+    useEffect(() => {
+        /**
+         * Autorefresh addon does not fix the initial rendering issue correctly
+         * cf. https://codemirror.net/5/doc/manual.html#addon_autorefresh
+         *
+         * We need to manually trigger it manually
+         */
+        const timeoutId = setTimeout(() => {
+            editorRef.current?.refresh();
+        }, 500);
+
+        return () => {
+            clearTimeout(timeoutId);
+        };
+    }, []);
 
     return (
         <CodeMirror
