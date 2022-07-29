@@ -1,4 +1,4 @@
-import { useEffect, RefObject, useMemo, useState } from 'react';
+import { RefObject, useEffect, useMemo, useState } from 'react';
 
 export const useElementBreakpoints = (ref: RefObject<HTMLElement>, breakpoints: { [key: string]: number }) => {
     const [breakpoint, setBreakpoint] = useState<string>();

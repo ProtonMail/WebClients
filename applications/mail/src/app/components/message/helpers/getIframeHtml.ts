@@ -1,7 +1,8 @@
 import svg from '@proton/styles/assets/img/icons/email-sprite-icons.svg';
+
 import { locateHead } from '../../../helpers/message/messageHead';
 import { MessageState } from '../../../logic/messages/messagesTypes';
-import { MESSAGE_IFRAME_ROOT_ID, MESSAGE_IFRAME_PRINT_HEADER_ID, MESSAGE_IFRAME_PRINT_FOOTER_ID } from '../constants';
+import { MESSAGE_IFRAME_PRINT_FOOTER_ID, MESSAGE_IFRAME_PRINT_HEADER_ID, MESSAGE_IFRAME_ROOT_ID } from '../constants';
 
 import cssStyles from '../MessageIframe.raw.scss';
 

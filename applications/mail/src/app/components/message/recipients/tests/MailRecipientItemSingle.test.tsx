@@ -1,10 +1,12 @@
+import { Matcher, fireEvent } from '@testing-library/dom';
+
 import { Recipient } from '@proton/shared/lib/interfaces';
-import { fireEvent, Matcher } from '@testing-library/dom';
-import MailRecipientItemSingle from '../MailRecipientItemSingle';
-import { render, tick } from '../../../../helpers/test/render';
+
 import { GeneratedKey, generateKeys } from '../../../../helpers/test/crypto';
+import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../../helpers/test/crypto';
 import { clearAll } from '../../../../helpers/test/helper';
-import { setupCryptoProxyForTesting, releaseCryptoProxy } from '../../../../helpers/test/crypto';
+import { render, tick } from '../../../../helpers/test/render';
+import MailRecipientItemSingle from '../MailRecipientItemSingle';
 
 const senderAddress = 'sender@outside.com';
 

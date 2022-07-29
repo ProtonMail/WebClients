@@ -1,8 +1,9 @@
 import { CryptoProxy } from '@proton/crypto';
-import { send } from './EOReply.test.helpers';
-import { EOClearAll, EOPassword, validID } from '../../../../helpers/test/eo/helpers';
-import { EOGetHistory } from '../../../../helpers/test/eo/EORender';
+
 import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../../helpers/test/crypto';
+import { EOGetHistory } from '../../../../helpers/test/eo/EORender';
+import { EOClearAll, EOPassword, validID } from '../../../../helpers/test/eo/helpers';
+import { send } from './EOReply.test.helpers';
 
 describe('EO Reply send', () => {
     beforeAll(async () => {

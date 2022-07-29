@@ -1,15 +1,15 @@
+import { c, msgid } from 'ttag';
+
 import {
     Button,
-    classnames,
     Form,
     Href,
     ModalTwo,
     ModalTwoContent,
     ModalTwoFooter,
     ModalTwoHeader,
+    classnames,
 } from '@proton/components';
-import { c, msgid } from 'ttag';
-
 import { BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 

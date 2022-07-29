@@ -1,9 +1,13 @@
 import { createAction, createAsyncThunk } from '@reduxjs/toolkit';
-import noop from '@proton/utils/noop';
-import { Api } from '@proton/shared/lib/interfaces';
+
 import { moveAll as moveAllRequest, queryMessageMetadata } from '@proton/shared/lib/api/messages';
+import { Api } from '@proton/shared/lib/interfaces';
 import diff from '@proton/utils/diff';
+import noop from '@proton/utils/noop';
 import unique from '@proton/utils/unique';
+
+import { Element } from '../../models/element';
+import { RootState } from '../store';
 import {
     ESResults,
     EventUpdates,
@@ -14,14 +18,12 @@ import {
     QueryResults,
     TaskRunningInfo,
 } from './elementsTypes';
-import { Element } from '../../models/element';
 import {
     getQueryElementsParameters,
     queryElement,
     queryElements,
     refreshTaskRunningTimeout,
 } from './helpers/elementQuery';
-import { RootState } from '../store';
 
 export const reset = createAction<NewStateParams>('elements/reset');
 

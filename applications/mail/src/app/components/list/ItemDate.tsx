@@ -1,9 +1,9 @@
-import { useState, useEffect, useMemo } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 import { Tooltip } from '@proton/components';
 
+import { formatDistanceToNow, formatFullDate, formatSimpleDate } from '../../helpers/date';
 import { getDate } from '../../helpers/elements';
-import { formatSimpleDate, formatFullDate, formatDistanceToNow } from '../../helpers/date';
 import { Element } from '../../models/element';
 
 const REFRESH_DATE_INTERVAL = 60 * 1000;

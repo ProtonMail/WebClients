@@ -1,10 +1,12 @@
+import { fireEvent } from '@testing-library/dom';
+
 import { queryConversations } from '@proton/shared/lib/api/conversations';
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
-import { fireEvent } from '@testing-library/dom';
+
+import { ELEMENTS_CACHE_REQUEST_SIZE, PAGE_SIZE } from '../../../constants';
+import { addApiMock, api, apiMocks, clearAll, getHistory, tick, waitForSpyCall } from '../../../helpers/test/helper';
 import { Element } from '../../../models/element';
 import { Sort } from '../../../models/tools';
-import { clearAll, api, addApiMock, apiMocks, waitForSpyCall, tick, getHistory } from '../../../helpers/test/helper';
-import { ELEMENTS_CACHE_REQUEST_SIZE, PAGE_SIZE } from '../../../constants';
 import { getElements, props, sendEvent, setup } from './Mailbox.test.helpers';
 
 describe('Mailbox element list', () => {

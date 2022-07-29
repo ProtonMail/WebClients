@@ -1,5 +1,6 @@
-import { AlertModal, Button, ModalProps, PrimaryButton } from '@proton/components';
 import { c } from 'ttag';
+
+import { AlertModal, Button, ModalProps, PrimaryButton } from '@proton/components';
 
 interface Props extends ModalProps {
     email: string;

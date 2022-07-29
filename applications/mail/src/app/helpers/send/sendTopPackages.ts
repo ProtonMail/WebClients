@@ -1,10 +1,11 @@
-import { MIME_TYPES, PACKAGE_TYPE } from '@proton/shared/lib/constants';
 import { WorkerDecryptionResult } from '@proton/crypto';
-import isTruthy from '@proton/utils/isTruthy';
+import { MIME_TYPES, PACKAGE_TYPE } from '@proton/shared/lib/constants';
 import { Api } from '@proton/shared/lib/interfaces';
-import { Package, Packages, PackageStatus, SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
+import { Package, PackageStatus, Packages, SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import { addReceived } from '@proton/shared/lib/mail/messages';
+import isTruthy from '@proton/utils/isTruthy';
+
 import { MessageKeys, MessageState } from '../../logic/messages/messagesTypes';
 import { getPlainText } from '../message/messageContent';
 import { prepareExport } from '../message/messageExport';

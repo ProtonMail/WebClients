@@ -1,17 +1,19 @@
+import { useDispatch, useSelector, useStore } from 'react-redux';
+
 import { useApi, useSubscribeEventManager } from '@proton/components';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
-import { useDispatch, useSelector, useStore } from 'react-redux';
-import { EventUpdates } from '../../logic/elements/elementsTypes';
-import { ElementEvent, Event, ConversationEvent, MessageEvent } from '../../models/event';
+
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { eventUpdates, invalidate } from '../../logic/elements/elementsActions';
 import {
-    isLive as isLiveSelector,
     isES as isESSelector,
+    isLive as isLiveSelector,
     taskRunning as taskRunningSelector,
 } from '../../logic/elements/elementsSelectors';
-import { Element } from '../../models/element';
+import { EventUpdates } from '../../logic/elements/elementsTypes';
 import { RootState } from '../../logic/store';
+import { Element } from '../../models/element';
+import { ConversationEvent, ElementEvent, Event, MessageEvent } from '../../models/event';
 import { SearchParameters } from '../../models/tools';
 
 export const useElementsEvents = (conversationMode: boolean, search: SearchParameters) => {

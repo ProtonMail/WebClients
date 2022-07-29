@@ -1,31 +1,33 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
+
 import { c } from 'ttag';
+
 import {
-    SearchInput,
-    useFolders,
-    Mark,
-    Tooltip,
-    useLoading,
-    generateUID,
+    Button,
     FolderIcon,
     Icon,
-    Button,
-    useModalState,
     IconName,
+    Mark,
+    SearchInput,
+    Tooltip,
+    generateUID,
+    useFolders,
+    useLoading,
+    useModalState,
 } from '@proton/components';
-import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import { normalize } from '@proton/shared/lib/helpers/string';
-import { buildTreeview } from '@proton/shared/lib/helpers/folder';
-import { Folder, FolderWithSubFolders } from '@proton/shared/lib/interfaces/Folder';
-import isTruthy from '@proton/utils/isTruthy';
-import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import EditLabelModal from '@proton/components/containers/labels/modals/EditLabelModal';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { buildTreeview } from '@proton/shared/lib/helpers/folder';
+import { normalize } from '@proton/shared/lib/helpers/string';
+import { Folder, FolderWithSubFolders } from '@proton/shared/lib/interfaces/Folder';
+import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import isTruthy from '@proton/utils/isTruthy';
 
 import { isMessage as testIsMessage } from '../../helpers/elements';
+import { getMessagesAuthorizedToMove } from '../../helpers/message/messages';
+import { useGetElementsFromIDs } from '../../hooks/mailbox/useElements';
 import { useMoveToFolder } from '../../hooks/useApplyLabels';
 import { Breakpoints } from '../../models/utils';
-import { useGetElementsFromIDs } from '../../hooks/mailbox/useElements';
-import { getMessagesAuthorizedToMove } from '../../helpers/message/messages';
 
 import './MoveDropdown.scss';
 

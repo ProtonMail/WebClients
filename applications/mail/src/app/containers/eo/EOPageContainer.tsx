@@ -8,8 +8,8 @@ import createSecureSessionStorage from '@proton/shared/lib/authentication/create
 import ViewEOMessage from '../../components/eo/message/ViewEOMessage';
 import EOReply from '../../components/eo/reply/EOReply';
 import EOUnlock from '../../components/eo/unlock/EOUnlock';
-import { init } from '../../logic/eo/eoActions';
 import { EO_MESSAGE_REDIRECT_PATH, EO_REDIRECT_PATH, EO_REPLY_REDIRECT_PATH } from '../../constants';
+import { init } from '../../logic/eo/eoActions';
 
 const { set, get } = createSecureSessionStorage();
 

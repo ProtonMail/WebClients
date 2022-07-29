@@ -1,4 +1,5 @@
 import { ComponentPropsWithoutRef, ReactNode } from 'react';
+
 import { classnames } from '@proton/components';
 
 interface Props extends ComponentPropsWithoutRef<'footer'> {

@@ -1,36 +1,39 @@
-import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
-import { hasFlag } from '@proton/shared/lib/mail/messages';
 import { MutableRefObject, useRef } from 'react';
-import { c } from 'ttag';
+
 import { isToday, isYesterday } from 'date-fns';
+import { c } from 'ttag';
+
 import {
     Button,
-    classnames,
-    Tooltip,
-    Icon,
-    EllipsisLoader,
-    useMailSettings,
-    FeatureCode,
-    useUser,
-    Spotlight,
-    Href,
-    useSpotlightOnFeature,
-    useFeatures,
-    useSpotlightShow,
     EditorMetadata,
+    EllipsisLoader,
+    FeatureCode,
+    Href,
+    Icon,
+    Spotlight,
+    Tooltip,
+    classnames,
+    useFeatures,
+    useMailSettings,
+    useSpotlightOnFeature,
+    useSpotlightShow,
+    useUser,
 } from '@proton/components';
-import { metaKey, shiftKey, altKey } from '@proton/shared/lib/helpers/browser';
-import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
-import ComposerPasswordActions from './ComposerPasswordActions';
-import ComposerMoreActions from './ComposerMoreActions';
-import { MessageState } from '../../../logic/messages/messagesTypes';
-import { MessageChange, MessageChangeFlag } from '../Composer';
-import { ExternalEditorActions } from '../editor/EditorWrapper';
-import { getAttachmentCounts } from '../../../helpers/message/messages';
+import { altKey, metaKey, shiftKey } from '@proton/shared/lib/helpers/browser';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
+import { hasFlag } from '@proton/shared/lib/mail/messages';
+
 import { formatSimpleDate } from '../../../helpers/date';
-import SendActions from '../SendActions';
+import { getAttachmentCounts } from '../../../helpers/message/messages';
+import { MessageState } from '../../../logic/messages/messagesTypes';
 import AttachmentsButton from '../../attachment/AttachmentsButton';
+import { MessageChange, MessageChangeFlag } from '../Composer';
+import SendActions from '../SendActions';
+import { ExternalEditorActions } from '../editor/EditorWrapper';
+import ComposerMoreActions from './ComposerMoreActions';
+import ComposerPasswordActions from './ComposerPasswordActions';
 
 interface Props {
     className?: string;

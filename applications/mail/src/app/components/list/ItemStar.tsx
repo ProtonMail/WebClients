@@ -1,10 +1,12 @@
 import { MouseEvent } from 'react';
-import { c } from 'ttag';
-import { Icon, IconSize, useLoading, classnames, Tooltip, useMailSettings } from '@proton/components';
 
-import { Element } from '../../models/element';
-import { isStarred as testIsStarred, isMessage } from '../../helpers/elements';
+import { c } from 'ttag';
+
+import { Icon, IconSize, Tooltip, classnames, useLoading, useMailSettings } from '@proton/components';
+
+import { isMessage, isStarred as testIsStarred } from '../../helpers/elements';
 import { useStar } from '../../hooks/useApplyLabels';
+import { Element } from '../../models/element';
 
 interface Props {
     element?: Element;

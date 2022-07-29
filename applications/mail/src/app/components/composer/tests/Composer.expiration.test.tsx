@@ -1,9 +1,11 @@
-import loudRejection from 'loud-rejection';
 import { fireEvent } from '@testing-library/dom';
-import { act, getByText as getByTextDefault, getByTestId as getByTestIdDefault } from '@testing-library/react';
+import { act, getByTestId as getByTestIdDefault, getByText as getByTextDefault } from '@testing-library/react';
+import loudRejection from 'loud-rejection';
+
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { addDays } from '@proton/shared/lib/date-fns-utc';
 
+import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../helpers/test/crypto';
 import {
     addApiKeys,
     addKeysToAddressKeysCache,
@@ -13,8 +15,7 @@ import {
     render,
 } from '../../../helpers/test/helper';
 import Composer from '../Composer';
-import { AddressID, fromAddress, ID, prepareMessage, props, toAddress } from './Composer.test.helpers';
-import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../helpers/test/crypto';
+import { AddressID, ID, fromAddress, prepareMessage, props, toAddress } from './Composer.test.helpers';
 
 loudRejection();
 

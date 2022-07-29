@@ -1,5 +1,6 @@
-import { WorkerDecryptionResult, VERIFICATION_STATUS } from '@proton/crypto';
+import { VERIFICATION_STATUS, WorkerDecryptionResult } from '@proton/crypto';
 import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
+
 import { ENCRYPTED_STATUS } from '../../constants';
 import { AttachmentMime } from '../../models/attachment';
 

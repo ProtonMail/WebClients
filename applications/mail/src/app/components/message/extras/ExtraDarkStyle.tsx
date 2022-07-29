@@ -1,9 +1,12 @@
-import { Icon, Button, useApi, Tooltip } from '@proton/components';
-import { sendMetricsReport } from '@proton/shared/lib/helpers/metrics';
-import { METRICS_LOG } from '@proton/shared/lib/constants';
-import { c } from 'ttag';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
+
+import { c } from 'ttag';
+
+import { Button, Icon, Tooltip, useApi } from '@proton/components';
+import { METRICS_LOG } from '@proton/shared/lib/constants';
+import { sendMetricsReport } from '@proton/shared/lib/helpers/metrics';
+
 import { MessageState } from '../../../logic/messages/messagesTypes';
 import { removeDarkStyle } from '../../../logic/messages/read/messagesReadActions';
 

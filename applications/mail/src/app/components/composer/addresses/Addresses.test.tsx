@@ -1,14 +1,17 @@
 import { MutableRefObject } from 'react';
-import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+
 import { fireEvent, getAllByRole } from '@testing-library/dom';
 import { act, getByText } from '@testing-library/react';
-import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+
 import { Recipient } from '@proton/shared/lib/interfaces';
-import { addApiMock, addToCache, clearAll, minimalCache, render } from '../../../helpers/test/helper';
-import Addresses from './Addresses';
-import { MessageSendInfo } from '../../../hooks/useSendInfo';
+import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+
 import { mergeMessages } from '../../../helpers/message/messages';
+import { addApiMock, addToCache, clearAll, minimalCache, render } from '../../../helpers/test/helper';
+import { MessageSendInfo } from '../../../hooks/useSendInfo';
 import { MessageState } from '../../../logic/messages/messagesTypes';
+import Addresses from './Addresses';
 
 const email1 = 'test@test.com';
 const email2 = 'test2@test.com';

@@ -1,37 +1,39 @@
+import { fireEvent, getByTestId } from '@testing-library/dom';
+import loudRejection from 'loud-rejection';
+
+import { ROOSTER_EDITOR_ID } from '@proton/components/components/editor/constants';
 import { WorkerDecryptionResult } from '@proton/crypto';
 import { MIME_TYPES, PGP_SIGN } from '@proton/shared/lib/constants';
-import { fireEvent, getByTestId } from '@testing-library/dom';
-import { ROOSTER_EDITOR_ID } from '@proton/components/components/editor/constants';
 import { MailSettings } from '@proton/shared/lib/interfaces';
-import loudRejection from 'loud-rejection';
+
 import { arrayToBase64 } from '../../../helpers/base64';
 import { addApiContact } from '../../../helpers/test/contact';
 import {
+    GeneratedKey,
     addApiKeys,
     addKeysToAddressKeysCache,
     addKeysToUserKeysCache,
-    GeneratedKey,
     generateKeys,
     releaseCryptoProxy,
     setupCryptoProxyForTesting,
 } from '../../../helpers/test/crypto';
 import {
-    addToCache,
-    decryptMessage,
-    minimalCache,
-    readSessionKey,
-    decryptSessionKey,
-    decryptMessageMultipart,
-    createDocument,
-    createAttachment,
-    clearAll,
     addApiMock,
+    addToCache,
+    clearAll,
+    createAttachment,
+    createDocument,
     createEmbeddedImage,
     createMessageImages,
+    decryptMessage,
+    decryptMessageMultipart,
+    decryptSessionKey,
+    minimalCache,
+    readSessionKey,
 } from '../../../helpers/test/helper';
-import { clickSend, ID, prepareMessage, renderComposer, send } from './Composer.test.helpers';
 import { addAttachment } from '../../../logic/attachments/attachmentsActions';
 import { store } from '../../../logic/store';
+import { ID, clickSend, prepareMessage, renderComposer, send } from './Composer.test.helpers';
 
 loudRejection();
 

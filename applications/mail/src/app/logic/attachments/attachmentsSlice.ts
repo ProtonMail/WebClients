@@ -1,8 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { AttachmentsState } from './attachmentsTypes';
+
+import { globalReset } from '../actions';
 import { addAttachment, updateAttachment } from './attachmentsActions';
 import { globalReset as globalResetReducer, setAttachment as setAttachmentReducer } from './attachmentsReducers';
-import { globalReset } from '../actions';
+import { AttachmentsState } from './attachmentsTypes';
 
 const attachmentsSlice = createSlice({
     name: 'attachments',

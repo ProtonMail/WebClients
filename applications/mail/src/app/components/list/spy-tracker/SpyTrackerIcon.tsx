@@ -1,6 +1,9 @@
-import { classnames, Icon } from '@proton/components';
-import { c, msgid } from 'ttag';
 import * as React from 'react';
+
+import { c, msgid } from 'ttag';
+
+import { Icon, classnames } from '@proton/components';
+
 import NumberOfElementsBubble from './NumberOfElementsBubble';
 
 interface Props {

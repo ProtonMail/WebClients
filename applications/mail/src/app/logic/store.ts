@@ -1,9 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
-import elements from './elements/elementsSlice';
+
 import attachments from './attachments/attachmentsSlice';
-import conversations from './conversations/conversationsSlice';
-import messages from './messages/messagesSlice';
 import contacts from './contacts/contactsSlice';
+import conversations from './conversations/conversationsSlice';
+import elements from './elements/elementsSlice';
+import messages from './messages/messagesSlice';
 
 export const store = configureStore({
     reducer: {

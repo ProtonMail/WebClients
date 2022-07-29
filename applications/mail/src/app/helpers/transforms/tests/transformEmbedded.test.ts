@@ -1,9 +1,10 @@
-import { MailSettings } from '@proton/shared/lib/interfaces';
 import { SHOW_IMAGES } from '@proton/shared/lib/constants';
+import { MailSettings } from '@proton/shared/lib/interfaces';
 import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { transformEmbedded } from '../transformEmbedded';
-import { createDocument } from '../../test/message';
+
 import { MessageImage, MessageState } from '../../../logic/messages/messagesTypes';
+import { createDocument } from '../../test/message';
+import { transformEmbedded } from '../transformEmbedded';
 
 const mailSettings = {
     ShowImages: SHOW_IMAGES.EMBEDDED,

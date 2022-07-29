@@ -1,4 +1,5 @@
 import { MAILBOX_LABEL_IDS, VIEW_MODE } from '@proton/shared/lib/constants';
+
 import { isConversationMode } from './mailSettings';
 
 describe('mailSettings', () => {

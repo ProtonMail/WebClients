@@ -1,19 +1,21 @@
-import noop from '@proton/utils/noop';
-import { act } from '@testing-library/react';
 import { fireEvent, getByTestId, waitFor } from '@testing-library/dom';
-import { MIME_TYPES } from '@proton/shared/lib/constants';
+import { act } from '@testing-library/react';
+
 import { ROOSTER_EDITOR_ID } from '@proton/components/components/editor/constants';
+import { MIME_TYPES } from '@proton/shared/lib/constants';
+import noop from '@proton/utils/noop';
+
+import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../helpers/test/crypto';
 import {
-    clearAll,
     GeneratedKey,
-    generateKeys,
-    addKeysToAddressKeysCache,
-    addApiMock,
     addApiKeys,
+    addApiMock,
+    addKeysToAddressKeysCache,
+    clearAll,
     createDocument,
+    generateKeys,
 } from '../../../helpers/test/helper';
-import { setupCryptoProxyForTesting, releaseCryptoProxy } from '../../../helpers/test/crypto';
-import { ID, AddressID, prepareMessage, renderComposer, fromAddress, toAddress } from './Composer.test.helpers';
+import { AddressID, ID, fromAddress, prepareMessage, renderComposer, toAddress } from './Composer.test.helpers';
 
 jest.setTimeout(20000);
 

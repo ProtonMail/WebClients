@@ -1,9 +1,10 @@
 import { c, msgid } from 'ttag';
+
 import { FeatureCode, FileNameDisplay, useFeature } from '@proton/components';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { rtlSanitize } from '@proton/shared/lib/helpers/string';
-import { getAttachments } from '@proton/shared/lib/mail/messages';
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
+import { getAttachments } from '@proton/shared/lib/mail/messages';
 
 import { getAttachmentCounts } from '../../helpers/message/messages';
 import { MessageState } from '../../logic/messages/messagesTypes';

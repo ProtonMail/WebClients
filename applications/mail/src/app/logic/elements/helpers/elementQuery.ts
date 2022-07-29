@@ -2,6 +2,7 @@ import { getConversation, queryConversations } from '@proton/shared/lib/api/conv
 import { getMessage, queryMessageMetadata } from '@proton/shared/lib/api/messages';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { Api } from '@proton/shared/lib/interfaces';
+
 import { ELEMENTS_CACHE_REQUEST_SIZE, PAGE_SIZE } from '../../../constants';
 import { Element } from '../../../models/element';
 import { RootState } from '../../store';

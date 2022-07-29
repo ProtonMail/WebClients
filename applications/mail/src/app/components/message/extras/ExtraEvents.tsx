@@ -1,7 +1,25 @@
+import { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
+
+import {
+    useAddresses,
+    useApi,
+    useContactEmails,
+    useEventManager,
+    useGetAddressKeys,
+    useGetCalendarEventRaw,
+    useGetCalendarInfo,
+    useGetCalendarUserSettings,
+    useGetCalendars,
+    useLoading,
+    useUser,
+    useUserSettings,
+} from '@proton/components';
 import useGetCalendarEventPersonal from '@proton/components/hooks/useGetCalendarEventPersonal';
 import { useGetCanonicalEmailsMap } from '@proton/components/hooks/useGetCanonicalEmailsMap';
 import { WorkerDecryptionResult } from '@proton/crypto';
 import { arrayToBinaryString, decodeUtf8 } from '@proton/crypto/lib/utils';
+import useIsMounted from '@proton/hooks/useIsMounted';
 import {
     getCanCreateCalendar,
     getDefaultCalendar,
@@ -10,32 +28,16 @@ import {
     getProbablyActiveCalendars,
 } from '@proton/shared/lib/calendar/calendar';
 import { ICAL_MIME_TYPE } from '@proton/shared/lib/calendar/constants';
-import unary from '@proton/utils/unary';
-import isTruthy from '@proton/utils/isTruthy';
-import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
-import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
-import { getAttachments, isBounced } from '@proton/shared/lib/mail/messages';
 import {
     EVENT_INVITATION_ERROR_TYPE,
     EventInvitationError,
 } from '@proton/shared/lib/calendar/icsSurgery/EventInvitationError';
-import { useEffect, useState } from 'react';
-import useIsMounted from '@proton/hooks/useIsMounted';
-import {
-    useAddresses,
-    useGetAddressKeys,
-    useApi,
-    useContactEmails,
-    useGetCalendars,
-    useGetCalendarUserSettings,
-    useLoading,
-    useUser,
-    useUserSettings,
-    useGetCalendarInfo,
-    useGetCalendarEventRaw,
-    useEventManager,
-} from '@proton/components';
-import { useDispatch } from 'react-redux';
+import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
+import { getAttachments, isBounced } from '@proton/shared/lib/mail/messages';
+import isTruthy from '@proton/utils/isTruthy';
+import unary from '@proton/utils/unary';
+
 import { formatDownload } from '../../../helpers/attachment/attachmentDownloader';
 import {
     EventInvitation,
@@ -43,15 +45,15 @@ import {
     getSupportedEventInvitation,
     parseVcalendar,
 } from '../../../helpers/calendar/invite';
+import { getOrCreatePersonalCalendarsAndSettings } from '../../../helpers/calendar/inviteApi';
 import { isNetworkError } from '../../../helpers/errors';
 import { getMessageHasData } from '../../../helpers/message/messages';
 import { useGetMessageKeys } from '../../../hooks/message/useGetMessageKeys';
-import ExtraEvent from './calendar/ExtraEvent';
-import { updateAttachment } from '../../../logic/attachments/attachmentsActions';
 import { useGetAttachment } from '../../../hooks/useAttachment';
-import { getOrCreatePersonalCalendarsAndSettings } from '../../../helpers/calendar/inviteApi';
-import { MessageStateWithData, MessageErrors } from '../../../logic/messages/messagesTypes';
+import { updateAttachment } from '../../../logic/attachments/attachmentsActions';
+import { MessageErrors, MessageStateWithData } from '../../../logic/messages/messagesTypes';
 import { errors as errorsAction } from '../../../logic/messages/read/messagesReadActions';
+import ExtraEvent from './calendar/ExtraEvent';
 
 interface Props {
     message: MessageStateWithData;

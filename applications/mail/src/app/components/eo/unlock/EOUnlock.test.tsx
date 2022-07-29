@@ -1,22 +1,24 @@
 import { act, fireEvent } from '@testing-library/react';
+
 import { wait } from '@proton/shared/lib/helpers/promise';
+
+import { addApiMock } from '../../../helpers/test/api';
+import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../helpers/test/crypto';
+import { EOGetHistory, EORender, EOResetHistory } from '../../../helpers/test/eo/EORender';
 import {
     EOClearAll,
     EODecryptedToken,
     EOInvalidPassword,
     EOPassword,
     getEOEncryptedMessage,
-    validID,
     mockConsole,
+    validID,
 } from '../../../helpers/test/eo/helpers';
-import { setupCryptoProxyForTesting, releaseCryptoProxy } from '../../../helpers/test/crypto';
-import { EOGetHistory, EORender, EOResetHistory } from '../../../helpers/test/eo/EORender';
-import EOUnlock from './EOUnlock';
-import { store } from '../../../logic/eo/eoStore';
-import { init } from '../../../logic/eo/eoActions';
-import { addApiMock } from '../../../helpers/test/api';
 import { waitForNotification } from '../../../helpers/test/helper';
+import { init } from '../../../logic/eo/eoActions';
+import { store } from '../../../logic/eo/eoStore';
 import { EOMessage } from '../../../logic/eo/eoType';
+import EOUnlock from './EOUnlock';
 
 const props = {
     setSessionStorage: jest.fn(),

@@ -1,31 +1,33 @@
+import { useDispatch } from 'react-redux';
+
+import { useCache, useFolders, useHandler } from '@proton/components';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { LabelCount } from '@proton/shared/lib/interfaces/Label';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { RequireSome } from '@proton/shared/lib/interfaces/utils';
-import { useHandler, useFolders, useCache } from '@proton/components';
-import { MessageCountsModel, ConversationCountsModel } from '@proton/shared/lib/models';
-import { LabelCount } from '@proton/shared/lib/interfaces/Label';
+import { ConversationCountsModel, MessageCountsModel } from '@proton/shared/lib/models';
 import { STATUS } from '@proton/shared/lib/models/cache';
-import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import { useDispatch } from 'react-redux';
-import { useGetElementByID } from '../mailbox/useElements';
-import { Conversation } from '../../models/conversation';
-import { Element } from '../../models/element';
-import { isMessage as testIsMessage, hasLabel, getCurrentFolderIDs } from '../../helpers/elements';
+
 import { updateCounters } from '../../helpers/counter';
+import { getCurrentFolderIDs, hasLabel, isMessage as testIsMessage } from '../../helpers/elements';
 import {
     LabelChanges,
-    applyLabelChangesOnMessage,
-    applyLabelChangesOnConversation,
-    applyLabelChangesOnOneMessageOfAConversation,
     UnreadStatus,
+    applyLabelChangesOnConversation,
+    applyLabelChangesOnMessage,
+    applyLabelChangesOnOneMessageOfAConversation,
 } from '../../helpers/labels';
-import { CacheEntry } from '../../models/tools';
-import { optimisticApplyLabels as optimisticApplyLabelsElementsAction } from '../../logic/elements/elementsActions';
 import {
     applyLabelsOnConversation,
     applyLabelsOnConversationMessages,
 } from '../../logic/conversations/conversationsActions';
-import { useGetConversation } from '../conversation/useConversation';
+import { optimisticApplyLabels as optimisticApplyLabelsElementsAction } from '../../logic/elements/elementsActions';
 import { optimisticApplyLabels as optimisticApplyLabelsMessageAction } from '../../logic/messages/optimistic/messagesOptimisticActions';
+import { Conversation } from '../../models/conversation';
+import { Element } from '../../models/element';
+import { CacheEntry } from '../../models/tools';
+import { useGetConversation } from '../conversation/useConversation';
+import { useGetElementByID } from '../mailbox/useElements';
 
 const { SENT, DRAFTS } = MAILBOX_LABEL_IDS;
 

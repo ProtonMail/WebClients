@@ -1,5 +1,6 @@
+import { RefObject, createContext, useContext, useEffect, useState } from 'react';
+
 import debounce from '@proton/utils/debounce';
-import { createContext, RefObject, useContext, useEffect, useState } from 'react';
 
 interface ContextProps {
     /**

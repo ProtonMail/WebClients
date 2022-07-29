@@ -1,9 +1,12 @@
 import { ReactNode, useRef } from 'react';
+
 import { c } from 'ttag';
+
 import { Button, PrimaryButton, useFocusTrap, useHotkeys } from '@proton/components';
-import InnerModalHeader from './InnerModal/InnerModalHeader';
+
 import InnerModalContent from './InnerModal/InnerModalContent';
 import InnerModalFooter from './InnerModal/InnerModalFooter';
+import InnerModalHeader from './InnerModal/InnerModalHeader';
 import InnerModalScroll from './InnerModal/InnerModalScroll';
 
 import './InnerModal/InnerModal.scss';

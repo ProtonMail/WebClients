@@ -1,5 +1,6 @@
 import { Recipient } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
+
 import { recipientsToRecipientOrGroup } from '../../../../helpers/addresses';
 import RecipientsList from '../../../message/recipients/RecipientsList';
 

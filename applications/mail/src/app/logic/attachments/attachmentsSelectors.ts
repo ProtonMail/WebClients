@@ -1,4 +1,5 @@
 import { createSelector } from 'reselect';
+
 import { RootState } from '../store';
 
 const attachments = (state: RootState) => state.attachments;

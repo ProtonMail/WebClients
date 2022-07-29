@@ -1,21 +1,23 @@
-import { PublicKeyReference, PrivateKeyReference } from '@proton/crypto';
+import { c } from 'ttag';
+
+import { PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
 import { uploadAttachment } from '@proton/shared/lib/api/attachments';
 import { readFileAsBuffer } from '@proton/shared/lib/helpers/file';
+import generateUID from '@proton/shared/lib/helpers/generateUID';
 import { generateProtonWebUID } from '@proton/shared/lib/helpers/uid';
-import { Packets } from '@proton/shared/lib/interfaces/mail/crypto';
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
+import { Packets } from '@proton/shared/lib/interfaces/mail/crypto';
 import { getAttachments } from '@proton/shared/lib/mail/messages';
 import { encryptAttachment } from '@proton/shared/lib/mail/send/attachments';
-import generateUID from '@proton/shared/lib/helpers/generateUID';
-import { c } from 'ttag';
+
 import {
     ATTACHMENT_MAX_SIZE,
     MESSAGE_ALREADY_SENT_INTERNAL_ERROR,
     UPLOAD_ATTACHMENT_ERROR_CODES,
 } from '../../constants';
-import { generateCid, isEmbeddable } from '../message/messageEmbeddeds';
-import { RequestParams, upload as uploadHelper, Upload } from '../upload';
 import { MessageState, MessageStateWithData, PublicPrivateKey } from '../../logic/messages/messagesTypes';
+import { generateCid, isEmbeddable } from '../message/messageEmbeddeds';
+import { RequestParams, Upload, upload as uploadHelper } from '../upload';
 
 // Reference: Angular/src/app/attachments/factories/attachmentModel.js
 

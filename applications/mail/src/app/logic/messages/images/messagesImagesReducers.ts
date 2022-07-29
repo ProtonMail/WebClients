@@ -1,5 +1,6 @@
 import { PayloadAction } from '@reduxjs/toolkit';
 import { Draft } from 'immer';
+
 import { markEmbeddedImagesAsLoaded } from '../../../helpers/message/messageEmbeddeds';
 import { getEmbeddedImages, getRemoteImages, updateImages } from '../../../helpers/message/messageImages';
 import { loadBackgroundImages, loadElementOtherThanImages, urlCreator } from '../../../helpers/message/messageRemotes';
@@ -10,8 +11,8 @@ import {
     LoadRemoteParams,
     LoadRemoteResults,
     MessageRemoteImage,
-    MessagesState,
     MessageState,
+    MessagesState,
 } from '../messagesTypes';
 
 // Get image refs in the state for those in data

@@ -1,10 +1,13 @@
-import { c } from 'ttag';
-import { useHandler, useNotifications } from '@proton/components';
 import { useDispatch } from 'react-redux';
-import { useCreateDraft } from '../message/useSaveDraft';
+
+import { c } from 'ttag';
+
+import { useHandler, useNotifications } from '@proton/components';
+
+import { deleteDraft } from '../../logic/messages/draft/messagesDraftActions';
 import { MessageState, MessageStateWithData } from '../../logic/messages/messagesTypes';
 import { useGetMessage } from '../message/useMessage';
-import { deleteDraft } from '../../logic/messages/draft/messagesDraftActions';
+import { useCreateDraft } from '../message/useSaveDraft';
 
 interface UseHandleMessageAlreadySentParameters {
     modelMessage: MessageState;

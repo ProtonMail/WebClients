@@ -1,5 +1,7 @@
-import { DRAFT_ID_PREFIX } from '@proton/shared/lib/mail/messages';
 import { createSelector } from 'reselect';
+
+import { DRAFT_ID_PREFIX } from '@proton/shared/lib/mail/messages';
+
 import { RootState } from '../store';
 
 const messages = (state: RootState) => state.messages;

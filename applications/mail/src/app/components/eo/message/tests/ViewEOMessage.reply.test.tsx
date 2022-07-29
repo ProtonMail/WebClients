@@ -1,8 +1,9 @@
 import { waitFor } from '@testing-library/dom';
-import { setup } from './ViewEOMessage.test.helpers';
-import { EOMessageReply } from '../../../../logic/eo/eoType';
+
+import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../../helpers/test/crypto';
 import { EOClearAll, reply } from '../../../../helpers/test/eo/helpers';
-import { setupCryptoProxyForTesting, releaseCryptoProxy } from '../../../../helpers/test/crypto';
+import { EOMessageReply } from '../../../../logic/eo/eoType';
+import { setup } from './ViewEOMessage.test.helpers';
 
 describe('Encrypted Outside message reply', () => {
     beforeAll(async () => {

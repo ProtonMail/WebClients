@@ -1,19 +1,22 @@
-import { useState, MutableRefObject } from 'react';
+import { MutableRefObject, useState } from 'react';
+
+import { c } from 'ttag';
+
 import {
+    Icon,
+    Option,
+    SelectTwo,
+    SettingsLink,
     generateUID,
     useAddresses,
     useMailSettings,
-    SelectTwo,
-    Option,
-    Icon,
-    SettingsLink,
     useUser,
     useUserSettings,
 } from '@proton/components';
-import { c } from 'ttag';
-import { APPS } from '@proton/shared/lib/constants';
-import { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
 import { defaultFontStyle } from '@proton/components/components/editor/helpers';
+import { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
+import { APPS } from '@proton/shared/lib/constants';
+
 import { getAddressFromEmail, getFromAddresses } from '../../../helpers/addresses';
 import { changeSignature } from '../../../helpers/message/messageSignature';
 import { MessageState } from '../../../logic/messages/messagesTypes';

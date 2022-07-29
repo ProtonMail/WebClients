@@ -1,11 +1,13 @@
 import { c } from 'ttag';
+
 import { FeatureCode, IconName, useFeature, useFolders, useLabels, useMailSettings } from '@proton/components';
 import { MAILBOX_LABEL_IDS, SHOW_MOVED } from '@proton/shared/lib/constants';
+import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { buildTreeview, formatFolderName } from '@proton/shared/lib/helpers/folder';
 import { FolderWithSubFolders } from '@proton/shared/lib/interfaces/Folder';
-import { hasBit } from '@proton/shared/lib/helpers/bitset';
-import { getStandardFolders } from '../../../../helpers/labels';
+
 import { getLabelIDsToI18N } from '../../../../constants';
+import { getStandardFolders } from '../../../../helpers/labels';
 
 interface ItemBase {
     text: string;

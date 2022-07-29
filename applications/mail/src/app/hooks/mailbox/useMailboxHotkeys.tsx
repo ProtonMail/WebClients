@@ -1,22 +1,25 @@
 import { useRef } from 'react';
+import { useHistory } from 'react-router-dom';
+
+import { Location } from 'history';
+
+import { HotkeyTuple, useFolders, useHotkeys, useLabels, useMailSettings } from '@proton/components';
 import { MAILBOX_LABEL_IDS, VIEW_LAYOUT } from '@proton/shared/lib/constants';
 import { KeyboardKey } from '@proton/shared/lib/interfaces';
-import { HotkeyTuple, useFolders, useHotkeys, useLabels, useMailSettings } from '@proton/components';
-import { useHistory } from 'react-router-dom';
-import { Location } from 'history';
-import noop from '@proton/utils/noop';
 import isTruthy from '@proton/utils/isTruthy';
+import noop from '@proton/utils/noop';
+
+import { isStarred } from '../../helpers/elements';
 import { getFolderName, labelIncludes } from '../../helpers/labels';
+import { isConversationMode } from '../../helpers/mailSettings';
+import { setParamsInLocation } from '../../helpers/mailboxUrl';
+import { Element } from '../../models/element';
+import { Filter } from '../../models/tools';
 import { useMoveToFolder, useStar } from '../useApplyLabels';
 import { MARK_AS_STATUS, useMarkAs } from '../useMarkAs';
 import { usePermanentDelete } from '../usePermanentDelete';
-import { setParamsInLocation } from '../../helpers/mailboxUrl';
-import { isStarred } from '../../helpers/elements';
 import { useGetElementsFromIDs } from './useElements';
-import { Element } from '../../models/element';
-import { Filter } from '../../models/tools';
 import { useFolderNavigationHotkeys } from './useFolderNavigationHotkeys';
-import { isConversationMode } from '../../helpers/mailSettings';
 
 const { TRASH, SPAM, ARCHIVE, INBOX, DRAFTS, ALL_DRAFTS, SENT, ALL_SENT } = MAILBOX_LABEL_IDS;
 
@@ -445,5 +448,14 @@ export const useMailboxHotkeys = (
 
     useHotkeys(elementRef, shortcutHandlers);
 
-    return { elementRef, labelDropdownToggleRef, moveToFolder, moveDropdownToggleRef, moveScheduledModal, permanentDeleteModal, moveAllModal, moveToSpamModal };
+    return {
+        elementRef,
+        labelDropdownToggleRef,
+        moveToFolder,
+        moveDropdownToggleRef,
+        moveScheduledModal,
+        permanentDeleteModal,
+        moveAllModal,
+        moveToSpamModal,
+    };
 };

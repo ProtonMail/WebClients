@@ -1,16 +1,19 @@
 import React from 'react';
-import { MAILBOX_LABEL_IDS, MIME_TYPES } from '@proton/shared/lib/constants';
+
 import { fireEvent } from '@testing-library/dom';
-import { getByText as getByTextDefault, getByTestId as getByTestIdDefault, act } from '@testing-library/react';
-import { Recipient } from '@proton/shared/lib/interfaces';
-import { addDays, addMinutes } from '@proton/shared/lib/date-fns-utc';
+import { act, getByTestId as getByTestIdDefault, getByText as getByTextDefault } from '@testing-library/react';
 import { format } from 'date-fns';
 import { enUS } from 'date-fns/locale';
 import loudRejection from 'loud-rejection';
-import { render } from '../../../helpers/test/render';
+
+import { MAILBOX_LABEL_IDS, MIME_TYPES } from '@proton/shared/lib/constants';
+import { addDays, addMinutes } from '@proton/shared/lib/date-fns-utc';
+import { Recipient } from '@proton/shared/lib/interfaces';
+
 import { setFeatureFlags } from '../../../helpers/test/api';
 import { addToCache, minimalCache } from '../../../helpers/test/cache';
 import { addApiKeys, clearAll, getDropdown } from '../../../helpers/test/helper';
+import { render } from '../../../helpers/test/render';
 import Composer from '../Composer';
 import { ID, prepareMessage, props } from './Composer.test.helpers';
 

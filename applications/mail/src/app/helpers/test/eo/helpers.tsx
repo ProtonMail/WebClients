@@ -1,18 +1,18 @@
-import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
-import { Recipient } from '@proton/shared/lib/interfaces';
-import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { CryptoProxy } from '@proton/crypto';
+import { MIME_TYPES } from '@proton/shared/lib/constants';
+import { Recipient } from '@proton/shared/lib/interfaces';
+import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 
-import { addApiMock, api, clearApiMocks } from '../api';
-import { store } from '../../../logic/eo/eoStore';
 import { globalReset } from '../../../logic/actions';
-import { base64Cache, clearCache } from '../cache';
-import { resetHistory } from '../render';
-import { generateKeys } from '../crypto';
-import { EOResetHistory } from './EORender';
-import { EOMessage, EOMessageReply } from '../../../logic/eo/eoType';
 import { init, loadEOMessage, loadEOToken } from '../../../logic/eo/eoActions';
+import { store } from '../../../logic/eo/eoStore';
+import { EOMessage, EOMessageReply } from '../../../logic/eo/eoType';
 import { convertEOtoMessageState } from '../../eo/message';
+import { addApiMock, api, clearApiMocks } from '../api';
+import { base64Cache, clearCache } from '../cache';
+import { generateKeys } from '../crypto';
+import { resetHistory } from '../render';
+import { EOResetHistory } from './EORender';
 
 const savedConsole = { ...console };
 

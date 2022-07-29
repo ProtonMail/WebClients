@@ -1,13 +1,14 @@
-import { Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { Api } from '@proton/shared/lib/interfaces';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
-import { decryptMessage } from '../message/messageDecrypt';
-import { GetMessageKeys } from '../../hooks/message/useGetMessageKeys';
-import { locateBlockquote } from '../message/messageBlockquote';
-import { ESMessage, ESBaseMessage } from '../../models/encryptedSearch';
+import { Api } from '@proton/shared/lib/interfaces';
+import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+
 import { localisedForwardFlags } from '../../constants';
-import { queryMessage } from './esAPI';
+import { GetMessageKeys } from '../../hooks/message/useGetMessageKeys';
+import { ESBaseMessage, ESMessage } from '../../models/encryptedSearch';
+import { locateBlockquote } from '../message/messageBlockquote';
+import { decryptMessage } from '../message/messageDecrypt';
 import { toText } from '../parserHtml';
+import { queryMessage } from './esAPI';
 
 /**
  * Remove the specified tag from the given HTML element

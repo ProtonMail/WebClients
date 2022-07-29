@@ -1,11 +1,13 @@
-import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import { fireEvent, waitFor, within } from '@testing-library/dom';
+
 import humanSize from '@proton/shared/lib/helpers/humanSize';
-import { setup } from './ViewEOMessage.test.helpers';
-import { EOClearAll } from '../../../../helpers/test/eo/helpers';
+import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
+
 import { assertIcon } from '../../../../helpers/test/assertion';
+import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../../helpers/test/crypto';
+import { EOClearAll } from '../../../../helpers/test/eo/helpers';
 import { tick } from '../../../../helpers/test/render';
-import { setupCryptoProxyForTesting, releaseCryptoProxy } from '../../../../helpers/test/crypto';
+import { setup } from './ViewEOMessage.test.helpers';
 
 describe('Encrypted Outside message attachments', () => {
     const cid = 'cid';

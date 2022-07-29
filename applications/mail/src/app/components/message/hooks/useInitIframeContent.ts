@@ -1,13 +1,13 @@
 import { RefObject, useEffect, useRef, useState } from 'react';
 
-import debounce from '@proton/utils/debounce';
-import useIsMounted from '@proton/hooks/useIsMounted';
 import { useTheme } from '@proton/components';
+import useIsMounted from '@proton/hooks/useIsMounted';
 import { PROTON_THEMES_MAP } from '@proton/shared/lib/themes/themes';
+import debounce from '@proton/utils/debounce';
 
+import { MessageState } from '../../../logic/messages/messagesTypes';
 import { MESSAGE_IFRAME_BLOCKQUOTE_ID, MESSAGE_IFRAME_ROOT_ID, MESSAGE_IFRAME_TOGGLE_ID } from '../constants';
 import getIframeHtml from '../helpers/getIframeHtml';
-import { MessageState } from '../../../logic/messages/messagesTypes';
 
 interface Props {
     messageID: string | undefined;

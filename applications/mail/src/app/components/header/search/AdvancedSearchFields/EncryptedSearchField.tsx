@@ -1,26 +1,28 @@
 import { add } from 'date-fns';
 import { c, msgid } from 'ttag';
+
 import {
+    AlertModal,
     Button,
-    classnames,
     Info,
     Label,
     Progress,
     Toggle,
     Tooltip,
-    useUser,
-    AlertModal,
+    classnames,
     useModalState,
+    useUser,
 } from '@proton/components';
 import {
+    ESIndexingState,
+    esStorageHelpers,
     getESCurrentProgress,
     getESTotal,
-    ESIndexingState,
     indexKeyExists,
     isDBReadyAfterBuilding,
     wasIndexingDone,
-    esStorageHelpers,
 } from '@proton/encrypted-search';
+
 import { useEncryptedSearchContext } from '../../../../containers/EncryptedSearchProvider';
 import { formatSimpleDate } from '../../../../helpers/date';
 

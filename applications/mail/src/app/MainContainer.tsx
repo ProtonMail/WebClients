@@ -1,23 +1,25 @@
-import { useCalendarsInfoCoreListener } from '@proton/components/containers/eventManager/calendar/useCalendarsInfoListener';
 import { useEffect, useRef } from 'react';
-import { Route, Switch } from 'react-router-dom';
 import { Provider as ReduxProvider } from 'react-redux';
+import { Route, Switch } from 'react-router-dom';
+
 import {
-    useActiveBreakpoint,
-    ModalsChildren,
     ErrorBoundary,
-    StandardErrorPage,
     FeatureCode,
+    Logo,
+    ModalsChildren,
+    StandardErrorPage,
+    Tooltip,
+    useActiveBreakpoint,
     useFeatures,
     useSideApp,
-    Logo,
-    Tooltip,
 } from '@proton/components';
+import { useCalendarsInfoCoreListener } from '@proton/components/containers/eventManager/calendar/useCalendarsInfoListener';
 import { APPS, CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
-import ComposerContainer from './containers/ComposerContainer';
-import PageContainer from './containers/PageContainer';
+
 import { MAIN_ROUTE_PATH } from './constants';
+import ComposerContainer from './containers/ComposerContainer';
 import EncryptedSearchProvider from './containers/EncryptedSearchProvider';
+import PageContainer from './containers/PageContainer';
 import { ChecklistsProvider } from './containers/checklists';
 import { MailContentRefProvider } from './hooks/useClickMailContent';
 import { store } from './logic/store';

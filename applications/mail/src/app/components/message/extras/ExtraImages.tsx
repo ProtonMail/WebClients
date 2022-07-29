@@ -1,11 +1,12 @@
 import { c } from 'ttag';
-import { Icon, Tooltip, Button } from '@proton/components';
+
+import { Button, Icon, Tooltip } from '@proton/components';
 import { shiftKey } from '@proton/shared/lib/helpers/browser';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 
 import { hasShowEmbedded, hasShowRemote } from '../../../helpers/mailSettings';
-import { MessageState } from '../../../logic/messages/messagesTypes';
 import { hasToSkipProxy } from '../../../helpers/message/messageRemotes';
+import { MessageState } from '../../../logic/messages/messagesTypes';
 
 interface Props {
     message: MessageState;

@@ -1,25 +1,27 @@
+import { MutableRefObject, memo, useCallback } from 'react';
+
+import { c } from 'ttag';
+
+import {
+    DropdownMenuButton,
+    EditorMetadata,
+    Icon,
+    classnames,
+    useAddresses,
+    useMailSettings,
+    useUserSettings,
+} from '@proton/components';
+import { defaultFontStyle } from '@proton/components/components/editor/helpers';
+import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 import {
     isAttachPublicKey as testIsAttachPublicKey,
     isRequestReadReceipt as testIsRequestReadReceipt,
 } from '@proton/shared/lib/mail/messages';
-import { MIME_TYPES } from '@proton/shared/lib/constants';
-import { defaultFontStyle } from '@proton/components/components/editor/helpers';
-import { memo, MutableRefObject, useCallback } from 'react';
-import {
-    DropdownMenuButton,
-    Icon,
-    classnames,
-    EditorMetadata,
-    useMailSettings,
-    useAddresses,
-    useUserSettings,
-} from '@proton/components';
-import { c } from 'ttag';
 
-import { MessageChange, MessageChangeFlag } from '../Composer';
-import { MessageState } from '../../../logic/messages/messagesTypes';
 import { exportPlainText, plainTextToHTML, setDocumentContent } from '../../../helpers/message/messageContent';
+import { MessageState } from '../../../logic/messages/messagesTypes';
+import { MessageChange, MessageChangeFlag } from '../Composer';
 import { ExternalEditorActions } from '../editor/EditorWrapper';
 
 const { FLAG_PUBLIC_KEY, FLAG_RECEIPT_REQUEST } = MESSAGE_FLAGS;

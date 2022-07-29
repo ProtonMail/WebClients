@@ -1,5 +1,6 @@
-import { Icon, classnames, useMailSettings } from '@proton/components';
 import { c, msgid } from 'ttag';
+
+import { Icon, classnames, useMailSettings } from '@proton/components';
 import { VIEW_MODE } from '@proton/shared/lib/constants';
 
 import './RefreshRotation.scss';

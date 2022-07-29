@@ -1,17 +1,19 @@
-import { useSelector } from 'react-redux';
 import { useEffect, useRef } from 'react';
+import { useSelector } from 'react-redux';
+
 import { useFolders } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
-import { hasLabel, getCurrentFolderIDs } from '../helpers/elements';
+
+import { getCurrentFolderIDs, hasLabel } from '../helpers/elements';
 import { hasErrorType } from '../helpers/errors';
-import { ConversationState } from '../logic/conversations/conversationsTypes';
-import { useGetConversation } from './conversation/useConversation';
 import { conversationByID } from '../logic/conversations/conversationsSelectors';
-import { RootState } from '../logic/store';
-import { MessageState } from '../logic/messages/messagesTypes';
-import { useGetMessage } from './message/useMessage';
+import { ConversationState } from '../logic/conversations/conversationsTypes';
 import { messageByID } from '../logic/messages/messagesSelectors';
+import { MessageState } from '../logic/messages/messagesTypes';
+import { RootState } from '../logic/store';
+import { useGetConversation } from './conversation/useConversation';
+import { useGetMessage } from './message/useMessage';
 
 const { ALL_MAIL } = MAILBOX_LABEL_IDS;
 

@@ -1,4 +1,3 @@
-import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import {
     CryptoProxy,
     PrivateKeyReference,
@@ -7,10 +6,12 @@ import {
     VERIFICATION_STATUS,
     WorkerDecryptionOptions,
 } from '@proton/crypto';
-import { base64ToArray, arrayToBase64 } from '../base64';
-import { generateSessionKey, encryptSessionKey, GeneratedKey } from './crypto';
-import { readContentIDandLocation } from '../message/messageEmbeddeds';
+import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
+
 import { MessageEmbeddedImage, MessageImage } from '../../logic/messages/messagesTypes';
+import { arrayToBase64, base64ToArray } from '../base64';
+import { readContentIDandLocation } from '../message/messageEmbeddeds';
+import { GeneratedKey, encryptSessionKey, generateSessionKey } from './crypto';
 
 export const createDocument = (content: string): Element => {
     const document = window.document.createElement('div');

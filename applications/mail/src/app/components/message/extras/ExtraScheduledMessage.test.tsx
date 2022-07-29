@@ -1,14 +1,17 @@
 import React from 'react';
-import { addDays } from '@proton/shared/lib/date-fns-utc';
-import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import { addHours, addSeconds } from 'date-fns';
+
 import { fireEvent } from '@testing-library/dom';
 import { act } from '@testing-library/react';
-import { render } from '../../../helpers/test/render';
-import ExtraScheduledMessage from './ExtraScheduledMessage';
+import { addHours, addSeconds } from 'date-fns';
+
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { addDays } from '@proton/shared/lib/date-fns-utc';
+
 import { formatDateToHuman } from '../../../helpers/date';
 import { addApiMock, clearAll } from '../../../helpers/test/helper';
+import { render } from '../../../helpers/test/render';
 import { MessageState } from '../../../logic/messages/messagesTypes';
+import ExtraScheduledMessage from './ExtraScheduledMessage';
 
 const getMessage = (sendingDate: Date) => {
     return {

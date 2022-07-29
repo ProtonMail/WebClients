@@ -1,24 +1,20 @@
-import { encodeBase64, arrayToBinaryString } from '@proton/crypto/lib/utils';
-import {
-    CryptoProxy,
-    PrivateKeyReference,
-    PublicKeyReference,
-    WorkerDecryptionResult,
-} from '@proton/crypto';
+import { CryptoProxy, PrivateKeyReference, PublicKeyReference, WorkerDecryptionResult } from '@proton/crypto';
+import { arrayToBinaryString, encodeBase64 } from '@proton/crypto/lib/utils';
 import { createDraft, updateDraft } from '@proton/shared/lib/api/messages';
 import { Api } from '@proton/shared/lib/interfaces';
 import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { CREATE_DRAFT_MESSAGE_ACTION } from '@proton/shared/lib/interfaces/message';
 import { getAttachments, isPlainText } from '@proton/shared/lib/mail/messages';
 import { getSessionKey } from '@proton/shared/lib/mail/send/attachments';
-import { CREATE_DRAFT_MESSAGE_ACTION } from '@proton/shared/lib/interfaces/message';
-import { getDocumentContent, getPlainTextContent } from './messageContent';
-import { constructMimeFromSource } from '../send/sendMimeBuilder';
-import { splitMail, combineHeaders } from '../mail';
-import { GetMessageKeys } from '../../hooks/message/useGetMessageKeys';
+
 import { MESSAGE_ACTIONS } from '../../constants';
-import { restoreAllPrefixedAttributes } from './messageImages';
-import { insertActualEmbeddedImages } from './messageEmbeddeds';
+import { GetMessageKeys } from '../../hooks/message/useGetMessageKeys';
 import { MessageKeys, MessageState, MessageStateWithData, PublicPrivateKey } from '../../logic/messages/messagesTypes';
+import { combineHeaders, splitMail } from '../mail';
+import { constructMimeFromSource } from '../send/sendMimeBuilder';
+import { getDocumentContent, getPlainTextContent } from './messageContent';
+import { insertActualEmbeddedImages } from './messageEmbeddeds';
+import { restoreAllPrefixedAttributes } from './messageImages';
 
 const removePasswordFromRequests: Pick<Message, 'Password' | 'PasswordHint'> = {
     Password: undefined,

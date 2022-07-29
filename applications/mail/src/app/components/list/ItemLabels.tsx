@@ -1,13 +1,14 @@
-import isTruthy from '@proton/utils/isTruthy';
-import { classnames, LabelStack } from '@proton/components';
-import { toMap } from '@proton/shared/lib/helpers/object';
-import orderBy from '@proton/utils/orderBy';
-import { Label } from '@proton/shared/lib/interfaces/Label';
 import { useHistory } from 'react-router-dom';
 
-import { Element } from '../../models/element';
+import { LabelStack, classnames } from '@proton/components';
+import { toMap } from '@proton/shared/lib/helpers/object';
+import { Label } from '@proton/shared/lib/interfaces/Label';
+import isTruthy from '@proton/utils/isTruthy';
+import orderBy from '@proton/utils/orderBy';
+
 import { getLabelIDs } from '../../helpers/elements';
 import { useApplyLabels } from '../../hooks/useApplyLabels';
+import { Element } from '../../models/element';
 
 interface Props {
     element?: Element;

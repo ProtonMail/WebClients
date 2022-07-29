@@ -1,7 +1,7 @@
-import { Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { Recipient } from '@proton/shared/lib/interfaces';
-import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 import { CryptoProxy } from '@proton/crypto';
+import { Recipient } from '@proton/shared/lib/interfaces';
+import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 
 import { EOMessage } from '../../logic/eo/eoType';
 import { MessageState } from '../../logic/messages/messagesTypes';

@@ -1,16 +1,17 @@
 import { useEffect, useRef, useState } from 'react';
-import { Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { useLabels, classnames, useHotkeys, Scroll } from '@proton/components';
-import { MailSettings } from '@proton/shared/lib/interfaces';
 
+import { Scroll, classnames, useHotkeys, useLabels } from '@proton/components';
+import { MailSettings } from '@proton/shared/lib/interfaces';
+import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { isDraft } from '@proton/shared/lib/mail/messages';
-import MessageView, { MessageViewRef } from './MessageView';
+
+import useClickOutsideFocusedMessage from '../../hooks/conversation/useClickOutsideFocusedMessage';
+import { useLoadMessage } from '../../hooks/message/useLoadMessage';
 import { useMessage } from '../../hooks/message/useMessage';
 import { useShouldMoveOut } from '../../hooks/useShouldMoveOut';
-import { useLoadMessage } from '../../hooks/message/useLoadMessage';
-import ConversationHeader from '../conversation/ConversationHeader';
 import { Breakpoints } from '../../models/utils';
-import useClickOutsideFocusedMessage from '../../hooks/conversation/useClickOutsideFocusedMessage';
+import ConversationHeader from '../conversation/ConversationHeader';
+import MessageView, { MessageViewRef } from './MessageView';
 
 interface Props {
     hidden: boolean;

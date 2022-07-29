@@ -1,22 +1,23 @@
-import loudRejection from 'loud-rejection';
 import { getByText as getByTextDefault } from '@testing-library/react';
-import { Address, Recipient } from '@proton/shared/lib/interfaces';
-import { MIME_TYPES } from '@proton/shared/lib/constants';
+import loudRejection from 'loud-rejection';
 
+import { MIME_TYPES } from '@proton/shared/lib/constants';
+import { Address, Recipient } from '@proton/shared/lib/interfaces';
+
+import { addToCache, minimalCache } from '../../../helpers/test/cache';
+import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../helpers/test/crypto';
 import {
+    GeneratedKey,
     addApiKeys,
     addApiMock,
     addKeysToAddressKeysCache,
     clearAll,
-    GeneratedKey,
     generateKeys,
     render,
 } from '../../../helpers/test/helper';
-import { setupCryptoProxyForTesting, releaseCryptoProxy } from '../../../helpers/test/crypto';
-import { ID, prepareMessage, props, saveNow, toAddress } from './Composer.test.helpers';
-import { addToCache, minimalCache } from '../../../helpers/test/cache';
-import Composer from '../Composer';
 import { messageID } from '../../message/tests/Message.test.helpers';
+import Composer from '../Composer';
+import { ID, prepareMessage, props, saveNow, toAddress } from './Composer.test.helpers';
 
 loudRejection();
 

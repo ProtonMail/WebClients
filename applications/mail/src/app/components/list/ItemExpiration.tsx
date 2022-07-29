@@ -1,10 +1,12 @@
 import { useMemo } from 'react';
-import { Icon, Tooltip, classnames } from '@proton/components';
-import { c } from 'ttag';
-import { fromUnixTime } from 'date-fns';
 
-import { Element } from '../../models/element';
+import { fromUnixTime } from 'date-fns';
+import { c } from 'ttag';
+
+import { Icon, Tooltip, classnames } from '@proton/components';
+
 import { formatFullDate } from '../../helpers/date';
+import { Element } from '../../models/element';
 
 import './ItemExpiration.scss';
 

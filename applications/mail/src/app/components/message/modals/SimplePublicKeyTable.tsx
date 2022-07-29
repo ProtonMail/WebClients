@@ -1,19 +1,20 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
+
+import { format, isValid } from 'date-fns';
+import { c } from 'ttag';
+
 import {
+    ContactKeyWarningIcon,
+    Loader,
     Table,
     TableBody,
     TableRow,
-    ContactKeyWarningIcon,
     useActiveBreakpoint,
     useLoading,
-    Loader,
 } from '@proton/components';
-import { c } from 'ttag';
-import { getFormattedAlgorithmName } from '@proton/shared/lib/keys';
 import { dateLocale } from '@proton/shared/lib/i18n';
-import { isValid, format } from 'date-fns';
-
 import { ContactWithBePinnedPublicKey } from '@proton/shared/lib/interfaces/contacts';
+import { getFormattedAlgorithmName } from '@proton/shared/lib/keys';
 
 interface Props {
     contact: ContactWithBePinnedPublicKey;

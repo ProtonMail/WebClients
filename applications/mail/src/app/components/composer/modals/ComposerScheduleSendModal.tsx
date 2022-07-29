@@ -1,26 +1,29 @@
-import { useState, useMemo, useEffect } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useDispatch } from 'react-redux';
+
 import {
     addDays,
     addMinutes,
     addSeconds,
+    endOfDay,
+    endOfToday,
+    format,
     getHours,
     getMinutes,
-    isToday,
     getUnixTime,
-    format,
-    startOfToday,
-    endOfDay,
+    isToday,
     isTomorrow,
-    endOfToday,
+    startOfToday,
 } from 'date-fns';
 import { c, msgid } from 'ttag';
-import { DateInput, ErrorZone, generateUID, Label, TimeInput, Href } from '@proton/components';
+
+import { DateInput, ErrorZone, Href, Label, TimeInput, generateUID } from '@proton/components';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import ComposerInnerModal from './ComposerInnerModal';
+
 import { SCHEDULED_MAX_DATE_DAYS } from '../../../constants';
-import { MessageState } from '../../../logic/messages/messagesTypes';
 import { updateScheduled } from '../../../logic/messages/draft/messagesDraftActions';
+import { MessageState } from '../../../logic/messages/messagesTypes';
+import ComposerInnerModal from './ComposerInnerModal';
 
 const formatDateInput = (value: Date, locale: Locale) => {
     if (isToday(value)) {

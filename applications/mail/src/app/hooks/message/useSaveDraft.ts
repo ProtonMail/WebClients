@@ -1,21 +1,24 @@
-import { useDispatch } from 'react-redux';
 import { useCallback } from 'react';
+import { useDispatch } from 'react-redux';
+
+import { c } from 'ttag';
+
 import { useApi, useEventManager, useFolders, useMailSettings, useNotifications } from '@proton/components';
 import { deleteMessages } from '@proton/shared/lib/api/messages';
-import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { MAILBOX_LABEL_IDS, SHOW_MOVED } from '@proton/shared/lib/constants';
-import { c } from 'ttag';
+import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
-import { useGetMessageKeys } from './useGetMessageKeys';
-import { createMessage, updateMessage } from '../../helpers/message/messageExport';
+
 import { SAVE_DRAFT_ERROR_CODES } from '../../constants';
 import { isDecryptionError, isNetworkError } from '../../helpers/errors';
 import { getCurrentFolderID } from '../../helpers/labels';
+import { createMessage, updateMessage } from '../../helpers/message/messageExport';
 import { deleteConversation } from '../../logic/conversations/conversationsActions';
-import { useGetConversation } from '../conversation/useConversation';
-import { MessageState, MessageStateWithData } from '../../logic/messages/messagesTypes';
-import { useGetMessage } from './useMessage';
 import { deleteDraft, draftSaved } from '../../logic/messages/draft/messagesDraftActions';
+import { MessageState, MessageStateWithData } from '../../logic/messages/messagesTypes';
+import { useGetConversation } from '../conversation/useConversation';
+import { useGetMessageKeys } from './useGetMessageKeys';
+import { useGetMessage } from './useMessage';
 
 const { ALL_DRAFTS } = MAILBOX_LABEL_IDS;
 

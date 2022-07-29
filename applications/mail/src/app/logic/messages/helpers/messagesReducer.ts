@@ -1,8 +1,10 @@
-import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { Draft } from 'immer';
+
+import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+
 import { RootState } from '../../store';
-import { MessagesState } from '../messagesTypes';
 import { localID as localIDSelector, messageByID } from '../messagesSelectors';
+import { MessagesState } from '../messagesTypes';
 
 /**
  * Only takes technical stuff from the updated message

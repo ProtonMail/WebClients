@@ -1,22 +1,23 @@
-import { classnames, Icon, useToggle } from '@proton/components';
 import { MouseEvent } from 'react';
+
 import { c } from 'ttag';
 
+import { Icon, classnames, useToggle } from '@proton/components';
 import { scrollIntoView } from '@proton/shared/lib/helpers/dom';
-import { getRecipients } from '@proton/shared/lib/mail/messages';
 import { eoDefaultMailSettings } from '@proton/shared/lib/mail/eo/constants';
-
+import { getRecipients } from '@proton/shared/lib/mail/messages';
 import noop from '@proton/utils/noop';
+
+import { recipientsToRecipientOrGroup } from '../../../helpers/addresses';
 import { MessageState } from '../../../logic/messages/messagesTypes';
 import { Breakpoints } from '../../../models/utils';
-import { recipientsToRecipientOrGroup } from '../../../helpers/addresses';
-import RecipientItem from '../../message/recipients/RecipientItem';
-import RecipientType from '../../message/recipients/RecipientType';
-import ItemDate from '../../list/ItemDate';
 import ItemAttachmentIcon from '../../list/ItemAttachmentIcon';
+import ItemDate from '../../list/ItemDate';
 import ExtraExpirationTime from '../../message/extras/ExtraExpirationTime';
 import ExtraImages from '../../message/extras/ExtraImages';
 import MailRecipients from '../../message/recipients/MailRecipients';
+import RecipientItem from '../../message/recipients/RecipientItem';
+import RecipientType from '../../message/recipients/RecipientType';
 
 interface Props {
     labelID: string;

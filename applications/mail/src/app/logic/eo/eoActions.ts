@@ -1,8 +1,15 @@
 import { createAction, createAsyncThunk } from '@reduxjs/toolkit';
 
-import { decodeUtf8Base64, encodeUtf8Base64 } from '@proton/crypto/lib/utils';
 import { CryptoProxy } from '@proton/crypto';
+import { decodeUtf8Base64, encodeUtf8Base64 } from '@proton/crypto/lib/utils';
 import { getEOMessage, getEOToken } from '@proton/shared/lib/api/eo';
+
+import { EO_DECRYPTED_TOKEN_KEY, EO_PASSWORD_KEY, EO_TOKEN_KEY } from '../../constants';
+import { get } from '../../helpers/attachment/attachmentLoader';
+import { preloadImage } from '../../helpers/dom';
+import { convertEOtoMessageState, eoDecrypt } from '../../helpers/eo/message';
+import { createBlob } from '../../helpers/message/messageEmbeddeds';
+import { MessageState, OutsideKey } from '../messages/messagesTypes';
 import {
     EODocumentInitializeParams,
     EOInitParams,
@@ -16,12 +23,6 @@ import {
     EOMessageReply,
     EOTokenParams,
 } from './eoType';
-import { EO_DECRYPTED_TOKEN_KEY, EO_PASSWORD_KEY, EO_TOKEN_KEY } from '../../constants';
-import { MessageState, OutsideKey } from '../messages/messagesTypes';
-import { convertEOtoMessageState, eoDecrypt } from '../../helpers/eo/message';
-import { createBlob } from '../../helpers/message/messageEmbeddeds';
-import { preloadImage } from '../../helpers/dom';
-import { get } from '../../helpers/attachment/attachmentLoader';
 
 export const init = createAsyncThunk<EOInitResult, EOInitParams>('eo/init', async ({ get }) => {
     try {

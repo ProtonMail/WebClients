@@ -1,7 +1,8 @@
-import createCache from '@proton/shared/lib/helpers/cache';
-import { STATUS } from '@proton/shared/lib/models/cache';
-import { Address, DecryptedKey, Key } from '@proton/shared/lib/interfaces';
 import { ADDRESS_STATUS } from '@proton/shared/lib/constants';
+import createCache from '@proton/shared/lib/helpers/cache';
+import { Address, DecryptedKey, Key } from '@proton/shared/lib/interfaces';
+import { STATUS } from '@proton/shared/lib/models/cache';
+
 import { Base64Cache } from '../../hooks/useBase64Cache';
 import { addKeysToAddressKeysCache } from './crypto';
 

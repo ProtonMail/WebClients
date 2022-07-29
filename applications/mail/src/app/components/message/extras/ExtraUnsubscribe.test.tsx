@@ -1,8 +1,11 @@
 import { fireEvent } from '@testing-library/dom';
 import loudRejection from 'loud-rejection';
+
 import { openNewTab } from '@proton/shared/lib/helpers/browser';
+
 import { mergeMessages } from '../../../helpers/message/messages';
 import { addAddressToCache, minimalCache } from '../../../helpers/test/cache';
+import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../helpers/test/crypto';
 import {
     addApiKeys,
     addApiMock,
@@ -13,9 +16,8 @@ import {
     waitForEventManagerCall,
     waitForNotification,
 } from '../../../helpers/test/helper';
-import { setupCryptoProxyForTesting, releaseCryptoProxy } from '../../../helpers/test/crypto';
-import ExtraUnsubscribe from './ExtraUnsubscribe';
 import { MessageState } from '../../../logic/messages/messagesTypes';
+import ExtraUnsubscribe from './ExtraUnsubscribe';
 
 loudRejection();
 

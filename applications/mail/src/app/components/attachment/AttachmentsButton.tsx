@@ -1,7 +1,9 @@
-import { ChangeEvent, useRef, useEffect, forwardRef, Ref } from 'react';
+import { ChangeEvent, Ref, forwardRef, useEffect, useRef } from 'react';
 import * as React from 'react';
+
 import { c } from 'ttag';
-import { ButtonLike, ButtonLikeProps, classnames, Icon } from '@proton/components';
+
+import { ButtonLike, ButtonLikeProps, Icon, classnames } from '@proton/components';
 
 interface Props extends ButtonLikeProps<'label'> {
     disabled?: boolean;
