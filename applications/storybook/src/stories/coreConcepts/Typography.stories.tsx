@@ -12,38 +12,49 @@ export default {
     },
 };
 
+// Storybooks <code> styling is not available inside stories, so we have to use a custom component
+type CodeProps = {
+    children: React.ReactNode;
+};
+
+const Code = ({ children }: CodeProps) => (
+    <code className="inline-block user-select rounded-sm p0-25 px0-5 border bg-weak text-norm text-sm">{children}</code>
+);
+
 export const Font = () => (
     <>
         <Table>
             <TableHeader>
                 <TableRow>
-                    <TableCell type="header">Demonstration</TableCell>
-                    <TableCell type="header" className="w50">
+                    <TableCell type="header" className="w30">
                         Usage
                     </TableCell>
+                    <TableCell type="header">Demonstration</TableCell>
                 </TableRow>
             </TableHeader>
             <TableBody>
                 <TableRow>
                     <TableCell>
+                        <Code>.text-no-bold</Code>
+                    </TableCell>
+                    <TableCell>
                         <p>Lorem ipsum</p>
                     </TableCell>
-                    <TableCell>regular</TableCell>
                 </TableRow>
                 <TableRow>
+                    <TableCell>
+                        <Code>.text-semibold</Code>
+                    </TableCell>
                     <TableCell>
                         <p className="text-semibold">Lorem ipsum</p>
                     </TableCell>
-                    <TableCell>
-                        <code>.text-semibold</code>
-                    </TableCell>
                 </TableRow>
                 <TableRow>
                     <TableCell>
-                        <p className="text-bold">Lorem ipsum</p>
+                        <Code>.text-bold</Code> <Code>strong</Code>
                     </TableCell>
                     <TableCell>
-                        <code>.text-bold</code>
+                        <p className="text-bold">Lorem ipsum</p>
                     </TableCell>
                 </TableRow>
             </TableBody>
@@ -56,48 +67,60 @@ export const Headings = () => (
         <Table>
             <TableHeader>
                 <TableRow>
-                    <TableCell type="header">Demonstration</TableCell>
-                    <TableCell type="header" className="w50">
+                    <TableCell type="header" className="w30">
                         Usage
                     </TableCell>
+                    <TableCell type="header">Demonstration</TableCell>
                 </TableRow>
             </TableHeader>
             <TableBody>
                 <TableRow>
                     <TableCell>
+                        <Code>h1</Code> <Code>.h1</Code>
+                    </TableCell>
+                    <TableCell>
                         <h1>Lorem ipsum</h1>
                     </TableCell>
-                    <TableCell>H1</TableCell>
                 </TableRow>
                 <TableRow>
+                    <TableCell>
+                        <Code>h2</Code> <Code>.h2</Code>
+                    </TableCell>
                     <TableCell>
                         <h2>Lorem ipsum</h2>
                     </TableCell>
-                    <TableCell>H2</TableCell>
                 </TableRow>
                 <TableRow>
+                    <TableCell>
+                        <Code>h3</Code> <Code>.h3</Code>
+                    </TableCell>
                     <TableCell>
                         <h3>Lorem ipsum</h3>
                     </TableCell>
-                    <TableCell>H3</TableCell>
                 </TableRow>
                 <TableRow>
+                    <TableCell>
+                        <Code>h4</Code> <Code>.h4</Code>
+                    </TableCell>
                     <TableCell>
                         <h4>Lorem ipsum</h4>
                     </TableCell>
-                    <TableCell>H4</TableCell>
                 </TableRow>
                 <TableRow>
+                    <TableCell>
+                        <Code>h5</Code> <Code>.h5</Code>
+                    </TableCell>
                     <TableCell>
                         <h5>Lorem ipsum</h5>
                     </TableCell>
-                    <TableCell>H5</TableCell>
                 </TableRow>
                 <TableRow>
                     <TableCell>
+                        <Code>h6</Code> <Code>.h6</Code>
+                    </TableCell>
+                    <TableCell>
                         <h6>Lorem ipsum</h6>
                     </TableCell>
-                    <TableCell>H6</TableCell>
                 </TableRow>
             </TableBody>
         </Table>
@@ -109,109 +132,89 @@ export const Text = () => (
         <Table>
             <TableHeader>
                 <TableRow>
-                    <TableCell type="header">Demonstration</TableCell>
-                    <TableCell type="header" className="w50">
+                    <TableCell type="header" className="w30">
                         Usage
                     </TableCell>
+                    <TableCell type="header">Demonstration</TableCell>
                 </TableRow>
             </TableHeader>
             <TableBody>
                 <TableRow>
+                    <TableCell>base</TableCell>
                     <TableCell>
                         <p>Lorem ipsum</p>
                     </TableCell>
-                    <TableCell>
-                        <span className="block">14px ($base-font-size)</span>
-                    </TableCell>
                 </TableRow>
                 <TableRow>
+                    <TableCell>
+                        <Code>.text-4xl</Code>
+                    </TableCell>
                     <TableCell>
                         <p className="text-4xl">Lorem ipsum</p>
                     </TableCell>
-                    <TableCell>
-                        <span className="block">
-                            Class: <code>.text-4xl</code>
-                        </span>
-                    </TableCell>
                 </TableRow>
                 <TableRow>
+                    <TableCell>
+                        <Code>.text-3xl</Code>
+                    </TableCell>
                     <TableCell>
                         <p className="text-3xl">Lorem ipsum</p>
                     </TableCell>
-                    <TableCell>
-                        <span className="block">
-                            Class: <code>.text-3xl</code>
-                        </span>
-                    </TableCell>
                 </TableRow>
                 <TableRow>
+                    <TableCell>
+                        <Code>.text-2xl</Code>
+                    </TableCell>
                     <TableCell>
                         <p className="text-2xl">Lorem ipsum</p>
                     </TableCell>
-                    <TableCell>
-                        <span className="block">
-                            Class: <code>.text-2xl</code>
-                        </span>
-                    </TableCell>
                 </TableRow>
                 <TableRow>
+                    <TableCell>
+                        <Code>.text-xl</Code>
+                    </TableCell>
                     <TableCell>
                         <p className="text-xl">Lorem ipsum</p>
                     </TableCell>
-                    <TableCell>
-                        <span className="block">
-                            Class: <code>.text-xl</code>
-                        </span>
-                    </TableCell>
                 </TableRow>
                 <TableRow>
+                    <TableCell>
+                        <Code>.text-lg</Code>
+                    </TableCell>
                     <TableCell>
                         <p className="text-lg">Lorem ipsum</p>
                     </TableCell>
-                    <TableCell>
-                        <span className="block">
-                            Class: <code>.text-lg</code>
-                        </span>
-                    </TableCell>
                 </TableRow>
                 <TableRow>
+                    <TableCell>
+                        <Code>.text-rg</Code>
+                    </TableCell>
                     <TableCell>
                         <p className="text-rg">Lorem ipsum</p>
                     </TableCell>
-                    <TableCell>
-                        <span className="block">
-                            Class: <code>.text-rg</code>
-                        </span>
-                    </TableCell>
                 </TableRow>
                 <TableRow>
+                    <TableCell>
+                        <Code>.text-sm</Code>
+                    </TableCell>
                     <TableCell>
                         <p className="text-sm">Lorem ipsum</p>
                     </TableCell>
-                    <TableCell>
-                        <span className="block">
-                            Class: <code>.text-sm</code>
-                        </span>
-                    </TableCell>
                 </TableRow>
                 <TableRow>
+                    <TableCell>
+                        <Code>.text-xs</Code>
+                    </TableCell>
                     <TableCell>
                         <p className="text-xs">Lorem ipsum</p>
                     </TableCell>
-                    <TableCell>
-                        <span className="block">
-                            Class: <code>.text-xs</code>
-                        </span>
-                    </TableCell>
                 </TableRow>
                 <TableRow>
                     <TableCell>
-                        <p className="text-2xs">Lorem ipsum</p>
+                        <Code>.text-2xs</Code>
                     </TableCell>
                     <TableCell>
-                        <span className="block">
-                            Class: <code>.text-2xs</code>
-                        </span>
+                        <p className="text-2xs">Lorem ipsum</p>
                     </TableCell>
                 </TableRow>
             </TableBody>
@@ -219,133 +222,67 @@ export const Text = () => (
     </>
 );
 
+const TypoColorsTable = () => (
+    <Table>
+        <TableHeader>
+            <TableRow>
+                <TableCell type="header" className="w30">
+                    Usage
+                </TableCell>
+                <TableCell type="header">Demonstration</TableCell>
+            </TableRow>
+        </TableHeader>
+        <TableBody>
+            <TableRow>
+                <TableCell>
+                    <Code>.color-norm</Code>
+                    <br />
+                    <Code>var(--text-norm)</Code>
+                </TableCell>
+                <TableCell>Lorem ipsum</TableCell>
+            </TableRow>
+            <TableRow>
+                <TableCell>
+                    <Code>.color-weak</Code>
+                    <br />
+                    <Code>var(--text-weak)</Code>
+                </TableCell>
+                <TableCell>
+                    <span className="color-weak">Lorem ipsum</span>
+                </TableCell>
+            </TableRow>
+            <TableRow>
+                <TableCell>
+                    <Code>.color-hint</Code>
+                    <br />
+                    <Code>var(--text-hint)</Code>
+                </TableCell>
+                <TableCell>
+                    <span className="color-hint">Lorem ipsum</span>
+                </TableCell>
+            </TableRow>
+            <TableRow>
+                <TableCell>
+                    <Code>.color-disabled</Code>
+                    <br />
+                    <Code>var(--text-disabled)</Code>
+                </TableCell>
+                <TableCell>
+                    <span className="color-disabled">Lorem ipsum</span>
+                </TableCell>
+            </TableRow>
+        </TableBody>
+    </Table>
+);
+
 export const Colors = () => (
     <>
         <h4>On ui-standard background</h4>
-        <Table>
-            <TableHeader>
-                <TableRow>
-                    <TableCell type="header">Demonstration</TableCell>
-                    <TableCell type="header" className="w50">
-                        Usage
-                    </TableCell>
-                </TableRow>
-            </TableHeader>
-            <TableBody>
-                <TableRow>
-                    <TableCell>Lorem ipsum</TableCell>
-                    <TableCell>
-                        <span className="block">
-                            Class: <code>.color-norm</code>
-                        </span>
-                        <span className="block">
-                            Variable: <code>--text-norm</code>
-                        </span>
-                    </TableCell>
-                </TableRow>
-                <TableRow>
-                    <TableCell>
-                        <span className="color-weak">Lorem ipsum</span>
-                    </TableCell>
-                    <TableCell>
-                        <span className="block">
-                            Class: <code>.color-weak</code>
-                        </span>
-                        <span className="block">
-                            Variable: <code>--text-weak</code>
-                        </span>
-                    </TableCell>
-                </TableRow>
-                <TableRow>
-                    <TableCell>
-                        <span className="color-hint">Lorem ipsum</span>
-                    </TableCell>
-                    <TableCell>
-                        <span className="block">
-                            Class: <code>.color-hint</code>
-                        </span>
-                        <span className="block">
-                            Variable: <code>--text-hint</code>
-                        </span>
-                    </TableCell>
-                </TableRow>
-                <TableRow>
-                    <TableCell>
-                        <span className="color-disabled">Lorem ipsum</span>
-                    </TableCell>
-                    <TableCell>
-                        <span className="block">
-                            Class: <code>.color-disabled</code>
-                        </span>
-                        <span className="block">
-                            Variable: <code>--text-disabled</code>
-                        </span>
-                    </TableCell>
-                </TableRow>
-            </TableBody>
-        </Table>
+        <TypoColorsTable />
+
         <h4>On ui-prominent background</h4>
-        <Table className="ui-prominent">
-            <TableHeader>
-                <TableRow>
-                    <TableCell type="header">Demonstration</TableCell>
-                    <TableCell type="header" className="w50">
-                        Usage
-                    </TableCell>
-                </TableRow>
-            </TableHeader>
-            <TableBody>
-                <TableRow>
-                    <TableCell>Lorem ipsum</TableCell>
-                    <TableCell>
-                        <span className="block">
-                            Class: <code>.color-norm</code>
-                        </span>
-                        <span className="block">
-                            Variable: <code>--text-norm</code>
-                        </span>
-                    </TableCell>
-                </TableRow>
-                <TableRow>
-                    <TableCell>
-                        <span className="color-weak">Lorem ipsum</span>
-                    </TableCell>
-                    <TableCell>
-                        <span className="block">
-                            Class: <code>.color-weak</code>
-                        </span>
-                        <span className="block">
-                            Variable: <code>--text-weak</code>
-                        </span>
-                    </TableCell>
-                </TableRow>
-                <TableRow>
-                    <TableCell>
-                        <span className="color-hint">Lorem ipsum</span>
-                    </TableCell>
-                    <TableCell>
-                        <span className="block">
-                            Class: <code>.color-hint</code>
-                        </span>
-                        <span className="block">
-                            Variable: <code>--text-hint</code>
-                        </span>
-                    </TableCell>
-                </TableRow>
-                <TableRow>
-                    <TableCell>
-                        <span className="color-disabled">Lorem ipsum</span>
-                    </TableCell>
-                    <TableCell>
-                        <span className="block">
-                            Class: <code>.color-disabled</code>
-                        </span>
-                        <span className="block">
-                            Variable: <code>--text-disabled</code>
-                        </span>
-                    </TableCell>
-                </TableRow>
-            </TableBody>
-        </Table>
+        <div className="ui-prominent rounded p1">
+            <TypoColorsTable />
+        </div>
     </>
 );

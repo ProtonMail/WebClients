@@ -1,4 +1,5 @@
 import { useState } from 'react';
+
 import { Checkbox, InputFieldTwo, Label } from '@proton/components';
 
 import { getTitle } from '../../helpers/title';
@@ -15,21 +16,19 @@ export default {
 };
 
 export const Basic = () => {
-    const [isChecked, setIsChecked] = useState(false);
-
     return (
         <div>
             Whachu wanna eat?
             <Label htmlFor="chicken" className="block mb1 mt1">
-                <Checkbox id="chicken" checked={isChecked} onChange={() => setIsChecked(!isChecked)} />
+                <Checkbox id="chicken" />
                 Chicken
             </Label>
             <Label htmlFor="spaghetti" className="block mb1">
-                <Checkbox id="spaghetti" checked={isChecked} onChange={() => setIsChecked(!isChecked)} />
+                <Checkbox id="spaghetti" />
                 Spaghetti
             </Label>
-            <Label htmlFor="upsetti">
-                <Checkbox id="upsetti" checked={isChecked} onChange={() => setIsChecked(!isChecked)} />
+            <Label htmlFor="upsetti" className="block">
+                <Checkbox id="upsetti" />
                 Upsetti
             </Label>
         </div>

@@ -1,6 +1,6 @@
 import { CircleLoader } from '@proton/components';
-import { getTitle } from '../../helpers/title';
 
+import { getTitle } from '../../helpers/title';
 import mdx from './CircleLoader.mdx';
 
 export default {
@@ -17,7 +17,7 @@ export const Basic = () => (
     <>
         <CircleLoader />
         <br />
-        <CircleLoader size="medium" />
+        <CircleLoader size="medium" className="color-primary" />
         <br />
         <CircleLoader size="large" />
     </>
