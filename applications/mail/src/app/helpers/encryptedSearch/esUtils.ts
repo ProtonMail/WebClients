@@ -1,11 +1,9 @@
 import { History, Location } from 'history';
 
-import { getOldestTime } from '@proton/encrypted-search';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { LabelCount } from '@proton/shared/lib/interfaces';
 
-import { LABEL_IDS_TO_HUMAN, indexName, storeName } from '../../constants';
-import { StoredCiphertext } from '../../models/encryptedSearch';
+import { LABEL_IDS_TO_HUMAN } from '../../constants';
 import { isSearch as checkIsSearch } from '../elements';
 import {
     extractSearchParameters,
@@ -15,7 +13,6 @@ import {
     setSortInUrl,
     sortFromUrl,
 } from '../mailboxUrl';
-import { getTimePoint } from './encryptedSearchMailHelpers';
 import { normaliseSearchParams } from './esSearch';
 
 /**
@@ -73,11 +70,4 @@ export const parseSearchParams = (location: Location) => {
  */
 export const resetSort = (history: History) => {
     history.push(setSortInUrl(history.location, { sort: 'Time', desc: true }));
-};
-
-/**
- * Fetch Time of the oldest message from IDB, eventually corrected by a given factor
- */
-export const getOldestTimeMail = (userID: string, correctionFactor?: number) => {
-    return getOldestTime<StoredCiphertext>(userID, storeName, indexName, getTimePoint, correctionFactor);
 };
