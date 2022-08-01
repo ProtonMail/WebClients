@@ -1,18 +1,19 @@
 import { useState } from 'react';
+
 import {
     Button,
-    Table,
-    TableHeader,
-    TableRow,
-    TableCell,
-    TableBody,
-    RadioGroup,
     ButtonLike,
     Checkbox,
     Icon,
+    RadioGroup,
+    Table,
+    TableBody,
+    TableCell,
+    TableHeader,
+    TableRow,
 } from '@proton/components';
-import { getTitle } from '../../helpers/title';
 
+import { getTitle } from '../../helpers/title';
 import mdx from './Button.mdx';
 
 export default {
@@ -24,6 +25,12 @@ export default {
         },
     },
 };
+
+export const Example = () => (
+    <Button color="norm" size="large">
+        Loremium
+    </Button>
+);
 
 export const Basic = ({ ...args }) => <Button {...args}>Loremium</Button>;
 

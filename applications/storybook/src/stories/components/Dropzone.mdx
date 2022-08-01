@@ -1,4 +1,4 @@
-import { ArgsTable, Primary, PRIMARY_STORY } from '@storybook/addon-docs';
+import { Canvas, Story, ArgsTable, Primary, PRIMARY_STORY } from '@storybook/addon-docs';
 import { Dropzone } from '@proton/components';
 
 # Dropzone
@@ -7,6 +7,8 @@ The Dropzone component provides an area to drag and drop files onto, most likely
 
 Extra props are spread on the container element, not the overlay.
 
-<Primary />
+<Canvas withSource="open">
+    <Story id="components-dropzone--basic" />
+</Canvas>
 
 <ArgsTable story={PRIMARY_STORY} />
