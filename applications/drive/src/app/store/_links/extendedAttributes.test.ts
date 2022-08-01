@@ -1,7 +1,11 @@
 import { FILE_CHUNK_SIZE } from '@proton/shared/lib/drive/constants';
 
 import { mockGlobalFile, testFile } from '../../utils/test/file';
-import { createFileExtendedAttributes, parseExtendedAttributes } from './extendedAttributes';
+import {
+    createFileExtendedAttributes,
+    createFolderExtendedAttributes,
+    parseExtendedAttributes,
+} from './extendedAttributes';
 
 const emptyExtendedAttributes = {
     Common: {
@@ -14,6 +18,24 @@ const emptyExtendedAttributes = {
 describe('extended attrbiutes', () => {
     beforeEach(() => {
         mockGlobalFile();
+    });
+
+    it('creates the struct from the folder', () => {
+        const testCases: [Date, object][] = [
+            [
+                new Date(1234567890000),
+                {
+                    Common: {
+                        ModificationTime: '2009-02-13T23:31:30.000Z',
+                    },
+                },
+            ],
+            [new Date('2022-22-22'), {}],
+        ];
+        testCases.forEach(([input, expectedAttributes]) => {
+            const xattrs = createFolderExtendedAttributes(input);
+            expect(xattrs).toMatchObject(expectedAttributes);
+        });
     });
 
     it('creates the struct from the file', () => {
