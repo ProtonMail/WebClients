@@ -6,8 +6,8 @@ import { DecryptedLink, useDownload } from '../../store';
 import { SortField } from '../../store/_views/utils/useSorting';
 import { isTransferActive } from '../../utils/transfer';
 import FileBrowser, { BrowserItemId, SortParams } from '../FileBrowser';
+import { contentCells, headerCells } from './cells';
 import { PublicLink } from './interface';
-import { headerCells, contentCells } from './cells';
 
 interface Props {
     folderName: string;
@@ -63,7 +63,7 @@ export default function SharedFileBrowser({ folderName, items, isLoading, sortPa
                     itemRowStyle: !progress
                         ? undefined
                         : {
-                              background: `linear-gradient(90deg, var(--interaction-norm-minor-2) ${percent}%, rgb(255, 255, 255, 0) ${percent}%)`,
+                              background: `linear-gradient(90deg, var(--interaction-norm-minor-2) ${percent}%, var(--background-norm) ${percent}%)`,
                           },
                 };
             })
