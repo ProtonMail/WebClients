@@ -5,7 +5,6 @@ import { c } from 'ttag';
 import { Icon, InlineLinkButton, useUser } from '@proton/components';
 import { sendSlowSearchReport } from '@proton/encrypted-search';
 
-import { storeName } from '../../constants';
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 
 const ESSlowToolbar = () => {
@@ -13,7 +12,7 @@ const ESSlowToolbar = () => {
     const { openDropdown, setTemporaryToggleOff } = useEncryptedSearchContext();
 
     useMemo(() => {
-        void sendSlowSearchReport(userID, storeName);
+        void sendSlowSearchReport(userID);
     }, []);
 
     const dropdownButton = (
