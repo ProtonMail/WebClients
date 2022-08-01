@@ -11,6 +11,7 @@ import { isMessage, isUnread } from '../../helpers/elements';
 import { isCustomLabel } from '../../helpers/labels';
 import { useRecipientLabel } from '../../hooks/contact/useRecipientLabel';
 import { Element } from '../../models/element';
+import { ESMessage } from '../../models/encryptedSearch';
 import { Breakpoints } from '../../models/utils';
 import ItemColumnLayout from './ItemColumnLayout';
 import ItemRowLayout from './ItemRowLayout';
@@ -64,9 +65,9 @@ const Item = ({
     const [labels] = useLabels();
 
     const { shouldHighlight, getESDBStatus } = useEncryptedSearchContext();
-    const { dbExists, esEnabled } = getESDBStatus();
-    const useES = dbExists && esEnabled && shouldHighlight();
-
+    const { dbExists, esEnabled, contentIndexingDone } = getESDBStatus();
+    const useContentSearch =
+        dbExists && esEnabled && shouldHighlight() && contentIndexingDone && !!(element as ESMessage)?.decryptedBody;
     const elementRef = useRef<HTMLDivElement>(null);
 
     const [hasFocus, setHasFocus] = useState(false);
@@ -140,7 +141,7 @@ const Item = ({
                     dragged && 'item-dragging',
                     loading && 'item-is-loading',
                     hasFocus && 'item-is-focused',
-                    useES && columnLayout && 'es-three-rows',
+                    useContentSearch && columnLayout && 'es-three-rows',
                 ])}
                 style={{ '--index': index }}
                 ref={elementRef}

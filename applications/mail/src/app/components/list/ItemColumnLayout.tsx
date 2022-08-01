@@ -56,10 +56,11 @@ const ItemColumnLayout = ({
     onBack,
 }: Props) => {
     const [userSettings] = useUserSettings();
-    const { shouldHighlight, highlightMetadata } = useEncryptedSearchContext();
+    const { shouldHighlight, highlightMetadata, getESDBStatus } = useEncryptedSearchContext();
     const highlightData = shouldHighlight();
+    const { contentIndexingDone } = getESDBStatus();
 
-    const body = (element as ESMessage).decryptedBody;
+    const body = contentIndexingDone ? (element as ESMessage).decryptedBody : undefined;
     const { Subject } = element;
 
     const sendersContent = useMemo(

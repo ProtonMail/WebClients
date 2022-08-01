@@ -5,7 +5,7 @@ import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl, getShopURL, getStaticURL } from '@proton/shared/lib/helpers/url';
 
-import { EncryptedSearchFunctionsMail } from './models/encryptedSearch';
+import { ESDBStatusMail, EncryptedSearchFunctionsMail } from './models/encryptedSearch';
 
 export const MAIN_ROUTE_PATH = '/:labelID?/:elementID?/:messageID?';
 
@@ -129,48 +129,21 @@ export const DRAG_ADDRESS_SIZE_KEY = 'drag-address-size';
 export const MAX_ELEMENT_LIST_LOAD_RETRIES = 3;
 
 // ES constants
-export const storeName = 'messages';
-export const indexName = 'byTime';
-export const primaryKeyName = 'ID';
-export const indexKeyNames: [string, string] = ['Time', 'Order'];
-export const localisedForwardFlags = [
-    'fw:',
-    'fwd:',
-    'vs:',
-    'προώθ:',
-    'tr :',
-    'trs:',
-    'áfram:',
-    'welleh:',
-    'en:',
-    'enc:',
-    'redir:',
-    'vb:',
-    '转发：',
-    '轉寄：',
-    '转发:',
-    '轉寄:',
-    'doorst:',
-    'wg:',
-    'πρθ:',
-    'továbbítás:',
-    'i:',
-    'fs:',
-    'rv:',
-    'pd:',
-    'i̇lt:',
-];
-export const defaultESMailStatus = {
+export const defaultESMailStatus: ESDBStatusMail = {
     dropdownOpened: false,
     temporaryToggleOff: false,
+    metadataIndexingPromise: Promise.resolve(),
+    lastContentTime: 0,
 };
 export const defaultESContextMail: EncryptedSearchFunctionsMail = {
     ...defaultESContext,
     openDropdown: () => {},
     closeDropdown: () => {},
     setTemporaryToggleOff: () => {},
+    cacheOrIndexMetadata: async () => {},
     getESDBStatus: () => ({ ...defaultESContext.getESDBStatus(), ...defaultESMailStatus }),
 };
+export const MAIL_EVENTLOOP_NAME = 'core';
 
 export const WELCOME_PANE_OPTIONS_URLS = {
     plansSelection: '/upgrade',
