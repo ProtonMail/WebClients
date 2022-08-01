@@ -1,9 +1,10 @@
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
 
-import { AlertModal, AppLink, Button, ModalProps } from '../../../components';
+import { AlertModal, AppLink, ModalProps } from '../../../components';
 
 interface Props extends ModalProps {
     onConfirm: () => void;

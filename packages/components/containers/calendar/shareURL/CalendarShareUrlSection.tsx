@@ -2,6 +2,7 @@ import { ComponentPropsWithoutRef, MouseEvent, useEffect, useState } from 'react
 
 import { c, msgid } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { SettingsParagraph } from '@proton/components/containers';
 import { deletePublicLink, editPublicLink, getPublicLinks } from '@proton/shared/lib/api/calendars';
 import { CALENDAR_SETTINGS_SUBSECTION_ID, MAX_LINKS_PER_CALENDAR } from '@proton/shared/lib/calendar/constants';
@@ -13,7 +14,7 @@ import { ACCESS_LEVEL, CalendarLink, CalendarUrl, VisualCalendar } from '@proton
 import { Nullable } from '@proton/shared/lib/interfaces/utils';
 import { splitKeys } from '@proton/shared/lib/keys';
 
-import { Alert, Button, Loader } from '../../../components';
+import { Alert, Loader } from '../../../components';
 import { useApi, useGetCalendarInfo, useLoading, useNotifications } from '../../../hooks';
 import { useModalsMap } from '../../../hooks/useModalsMap';
 import DeleteLinkConfirmationModal from './DeleteLinkConfirmationModal';

@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { getContact } from '@proton/shared/lib/api/contacts';
 import { CRYPTO_PROCESSING_TYPES } from '@proton/shared/lib/contacts/constants';
 import { CryptoProcessingError, prepareVCardContact } from '@proton/shared/lib/contacts/decrypt';
@@ -11,15 +12,7 @@ import { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';
 import { splitKeys } from '@proton/shared/lib/keys/keys';
 import noop from '@proton/utils/noop';
 
-import {
-    Button,
-    Loader,
-    ModalProps,
-    ModalTwo,
-    ModalTwoContent,
-    ModalTwoFooter,
-    ModalTwoHeader,
-} from '../../../components';
+import { Loader, ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../../components';
 import { useAddresses, useApi, useContactEmails, useContactGroups, useLoading, useUserKeys } from '../../../hooks';
 import ContactView from '../view/ContactView';
 

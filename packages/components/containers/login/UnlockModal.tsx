@@ -2,6 +2,7 @@ import { useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { PASSWORD_WRONG_ERROR } from '@proton/shared/lib/api/auth';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { queryUnlock } from '@proton/shared/lib/api/user';
@@ -9,7 +10,6 @@ import { srpAuth } from '@proton/shared/lib/srp';
 import noop from '@proton/utils/noop';
 
 import {
-    Button,
     Form,
     InputFieldTwo,
     ModalTwo as Modal,

@@ -2,7 +2,8 @@ import { ReactNode, useEffect, useState } from 'react';
 
 import { fireEvent, render, screen } from '@testing-library/react';
 
-import { Button } from '../button';
+import { Button } from '@proton/atoms';
+
 import ModalTwo from './Modal';
 
 // Mocked so that the modal renders in the same container

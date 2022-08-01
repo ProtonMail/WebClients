@@ -3,8 +3,8 @@ import { useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { AlertModal, useModalState } from '@proton/components';
-import { Button } from '@proton/components/components/button';
 import { useConversationCounts, useMessageCounts } from '@proton/components/hooks';
 import { useMailSettings } from '@proton/components/hooks/useMailSettings';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';

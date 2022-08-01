@@ -3,6 +3,7 @@ import { flushSync } from 'react-dom';
 
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import AuthSecurityKeyContent from '@proton/components/containers/account/fido/AuthSecurityKeyContent';
 import { PASSWORD_WRONG_ERROR, getInfo } from '@proton/shared/lib/api/auth';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
@@ -15,7 +16,6 @@ import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
 import {
-    Button,
     Form,
     InlineLinkButton,
     InputFieldTwo,

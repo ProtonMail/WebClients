@@ -3,8 +3,9 @@ import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms/';
+
 import useToggle from '../../hooks/useToggle';
-import { Button } from '../button';
 import { Icon } from '../icon';
 import Input from '../input/Input';
 

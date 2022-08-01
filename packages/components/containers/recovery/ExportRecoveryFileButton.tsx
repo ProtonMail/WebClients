@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { Button, ButtonProps } from '@proton/atoms';
 import { setNewRecoverySecret } from '@proton/shared/lib/api/settingsRecovery';
 import {
     exportRecoveryFile,
@@ -7,7 +8,6 @@ import {
     validateRecoverySecret,
 } from '@proton/shared/lib/recoveryFile/recoveryFile';
 
-import Button, { ButtonProps } from '../../components/button/Button';
 import {
     useApi,
     useEventManager,

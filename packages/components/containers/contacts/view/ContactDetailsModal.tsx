@@ -2,13 +2,13 @@ import { useEffect, useMemo, useRef } from 'react';
 
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { singleExport } from '@proton/shared/lib/contacts/helpers/export';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';
 
 import { Loader } from '../../../components';
-import { Button } from '../../../components/button';
 import { ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../../components/modalTwo';
 import { useAddresses, useContactGroups, useMailSettings, useUserKeys } from '../../../hooks';
 import { useLinkHandler } from '../../../hooks/useLinkHandler';

@@ -1,9 +1,9 @@
 import { c } from 'ttag';
 
+import { Button, ButtonProps } from '@proton/atoms';
 import googleLogo from '@proton/styles/assets/img/import/providers/google.svg';
 
 import { classnames } from '../../helpers';
-import { Button, ButtonProps } from '../button';
 
 const GoogleButton = ({ className, ...rest }: ButtonProps) => (
     <Button className={classnames(['inline-flex flex-justify-center', className])} {...rest}>

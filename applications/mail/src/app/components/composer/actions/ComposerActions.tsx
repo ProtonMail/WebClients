@@ -3,8 +3,8 @@ import { MutableRefObject, useRef } from 'react';
 import { isToday, isYesterday } from 'date-fns';
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import {
-    Button,
     EditorMetadata,
     EllipsisLoader,
     FeatureCode,

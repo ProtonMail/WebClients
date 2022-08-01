@@ -1,14 +1,7 @@
 import { c } from 'ttag';
 
-import {
-    BugModal,
-    Button,
-    DropdownMenu,
-    DropdownMenuButton,
-    DropdownMenuLink,
-    Icon,
-    useModalState,
-} from '@proton/components';
+import { Button } from '@proton/atoms';
+import { BugModal, DropdownMenu, DropdownMenuButton, DropdownMenuLink, Icon, useModalState } from '@proton/components';
 import SimpleDropdown, { Props as SimpleDropdownProps } from '@proton/components/components/dropdown/SimpleDropdown';
 
 interface Props extends Omit<SimpleDropdownProps<typeof Button>, 'as' | 'content'> {}

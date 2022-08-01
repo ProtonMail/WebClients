@@ -1,8 +1,9 @@
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { ContactFormatted } from '@proton/shared/lib/interfaces/contacts';
 
-import { Block, Button, OrderableTable, TableCell } from '../../../../components';
+import { Block, OrderableTable, TableCell } from '../../../../components';
 import MergeTableBody from './MergeTableBody';
 
 import '../../../../components/orderableTable/OrderableTableHeader.scss';

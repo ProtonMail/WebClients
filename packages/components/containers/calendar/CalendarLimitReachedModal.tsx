@@ -2,11 +2,10 @@ import React from 'react';
 
 import { c } from 'ttag';
 
-import { ButtonLike } from '@proton/atoms';
+import { Button, ButtonLike } from '@proton/atoms';
 import { CALENDAR_TYPE, CALENDAR_TYPE_EXTENDED, EXTENDED_CALENDAR_TYPE } from '@proton/shared/lib/interfaces/calendar';
 
 import { AlertModal } from '../../components/alertModal';
-import { Button } from '../../components/button';
 import { SettingsLink } from '../../components/link';
 
 const getText = (type: EXTENDED_CALENDAR_TYPE) => {

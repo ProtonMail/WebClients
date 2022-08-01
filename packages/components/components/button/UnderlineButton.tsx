@@ -1,6 +1,6 @@
 import { Ref, forwardRef } from 'react';
 
-import Button, { ButtonProps } from './Button';
+import { Button, ButtonProps } from '@proton/atoms';
 
 export type UnderlineButtonProps = Omit<ButtonProps, 'shape'>;
 

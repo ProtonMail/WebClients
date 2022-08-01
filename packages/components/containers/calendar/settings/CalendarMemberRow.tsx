@@ -2,8 +2,8 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Avatar } from '@proton/atoms/Avatar';
-import { Button, Icon, Option, SelectTwo, Tooltip } from '@proton/components/components';
+import { Avatar, Button } from '@proton/atoms';
+import { Icon, Option, SelectTwo, Tooltip } from '@proton/components/components';
 import { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
 import { useLoading } from '@proton/components/hooks';
 import { MEMBER_PERMISSIONS } from '@proton/shared/lib/calendar/permissions';

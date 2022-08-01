@@ -2,13 +2,13 @@ import { ReactNode, Ref, forwardRef, useEffect, useRef } from 'react';
 
 import { c, msgid } from 'ttag';
 
+import { ButtonProps } from '@proton/atoms';
 import { KEY_FILE_EXTENSION } from '@proton/shared/lib/constants';
 import { readFileAsString } from '@proton/shared/lib/helpers/file';
 import { KeyWithRecoverySecret } from '@proton/shared/lib/interfaces';
 import { ArmoredKeyWithInfo, parseKeys } from '@proton/shared/lib/keys';
 import { parseRecoveryFiles } from '@proton/shared/lib/recoveryFile/recoveryFile';
 
-import { ButtonProps } from '../../../components';
 import FileInput from '../../../components/input/FileInput';
 import { useNotifications } from '../../../hooks';
 import useCombinedRefs from '../../../hooks/useCombinedRefs';

@@ -1,4 +1,5 @@
-import { Button, Icon, Tooltip, classnames } from '@proton/components';
+import { Button } from '@proton/atoms';
+import { Icon, Tooltip, classnames } from '@proton/components';
 
 import { TransfersManagerButtonsProps } from './interfaces';
 

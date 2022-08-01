@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { CryptoProxy } from '@proton/crypto';
 import { updateOrganizationKeysLegacy, updateOrganizationKeysV2 } from '@proton/shared/lib/api/organization';
 import { DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS } from '@proton/shared/lib/constants';
@@ -17,7 +18,6 @@ import noop from '@proton/utils/noop';
 
 import {
     Alert,
-    Button,
     Form,
     InputFieldTwo,
     ModalTwo as Modal,

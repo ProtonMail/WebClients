@@ -2,9 +2,9 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import {
     AddressesAutocomplete,
-    Button,
     Icon,
     useApi,
     useContactEmails,

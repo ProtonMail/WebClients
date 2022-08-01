@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { BasicModal, Button, PrimaryButton } from '@proton/components';
+import { Button } from '@proton/atoms';
+import { BasicModal, PrimaryButton } from '@proton/components';
 
 type Props = {
     open?: boolean;

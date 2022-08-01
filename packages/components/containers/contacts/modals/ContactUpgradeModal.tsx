@@ -1,6 +1,8 @@
 import { c } from 'ttag';
 
-import { Alert, Button, ModalProps, ModalTwo, ModalTwoHeader, useSettingsLink } from '../../../components';
+import { Button } from '@proton/atoms';
+
+import { Alert, ModalProps, ModalTwo, ModalTwoHeader, useSettingsLink } from '../../../components';
 import ModalContent from '../../../components/modalTwo/ModalContent';
 import ModalFooter from '../../../components/modalTwo/ModalFooter';
 

@@ -2,6 +2,7 @@ import { ChangeEvent, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { AlgorithmInfo } from '@proton/crypto';
 import { EncryptionConfig } from '@proton/shared/lib/interfaces';
 import {
@@ -14,7 +15,7 @@ import {
     setPrimaryAddressKey,
 } from '@proton/shared/lib/keys';
 
-import { Button, Loader, useModalState } from '../../components';
+import { Loader, useModalState } from '../../components';
 import {
     useAddresses,
     useAddressesKeys,

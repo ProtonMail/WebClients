@@ -2,7 +2,8 @@ import * as React from 'react';
 
 import { c } from 'ttag';
 
-import { Button, Dropdown, useUser } from '@proton/components';
+import { Button } from '@proton/atoms';
+import { Dropdown, useUser } from '@proton/components';
 import { indexKeyExists, isDBReadyAfterBuilding } from '@proton/encrypted-search';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 

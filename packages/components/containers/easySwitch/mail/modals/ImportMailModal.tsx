@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import {
     createImport,
     getAuthenticationMethod,
@@ -29,7 +30,6 @@ import noop from '@proton/utils/noop';
 
 import {
     Alert,
-    Button,
     ConfirmModal,
     FormModal,
     PrimaryButton,

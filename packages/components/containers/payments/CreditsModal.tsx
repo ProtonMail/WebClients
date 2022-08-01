@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { buyCredit } from '@proton/shared/lib/api/payments';
 import {
     APPS,
@@ -15,7 +16,6 @@ import { Currency } from '@proton/shared/lib/interfaces';
 
 import {
     Alert,
-    Button,
     Form,
     ModalProps,
     ModalTwo,

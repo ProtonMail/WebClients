@@ -2,7 +2,8 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, Icon, Logo, classnames, useLoading } from '@proton/components';
+import { Button } from '@proton/atoms';
+import { Icon, Logo, classnames, useLoading } from '@proton/components';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS, APP_NAMES } from '@proton/shared/lib/constants';
 

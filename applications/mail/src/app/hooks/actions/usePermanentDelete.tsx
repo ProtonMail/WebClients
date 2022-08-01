@@ -3,15 +3,8 @@ import { useDispatch } from 'react-redux';
 
 import { c, msgid } from 'ttag';
 
-import {
-    AlertModal,
-    Button,
-    ErrorButton,
-    useApi,
-    useEventManager,
-    useModalState,
-    useNotifications,
-} from '@proton/components';
+import { Button } from '@proton/atoms';
+import { AlertModal, ErrorButton, useApi, useEventManager, useModalState, useNotifications } from '@proton/components';
 import { deleteConversations } from '@proton/shared/lib/api/conversations';
 import { deleteMessages } from '@proton/shared/lib/api/messages';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';

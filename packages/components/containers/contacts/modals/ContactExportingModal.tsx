@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { format } from 'date-fns';
 import { c, msgid } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { exportContactsFromLabel } from '@proton/shared/lib/contacts/helpers/export';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { Contact } from '@proton/shared/lib/interfaces/contacts';
@@ -10,7 +11,6 @@ import noop from '@proton/utils/noop';
 
 import {
     Alert,
-    Button,
     DynamicProgress,
     ModalProps,
     ModalTwo,

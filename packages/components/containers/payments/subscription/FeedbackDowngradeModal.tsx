@@ -2,6 +2,7 @@ import { Fragment, ReactNode, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { SUBSCRIPTION_CANCELLATION_REASONS } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { UserModel } from '@proton/shared/lib/interfaces';
@@ -9,7 +10,6 @@ import isTruthy from '@proton/utils/isTruthy';
 import shuffle from '@proton/utils/shuffle';
 
 import {
-    Button,
     Form,
     InputFieldTwo,
     ModalTwo as Modal,

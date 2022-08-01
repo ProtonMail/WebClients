@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { APPS } from '@proton/shared/lib/constants';
 import { getKeyUsedForContact } from '@proton/shared/lib/contacts/keyVerifications';
 import { Key } from '@proton/shared/lib/interfaces';
@@ -9,7 +10,6 @@ import { Contact } from '@proton/shared/lib/interfaces/contacts';
 
 import {
     Alert,
-    Button,
     Copy,
     ModalProps,
     ModalTwo,

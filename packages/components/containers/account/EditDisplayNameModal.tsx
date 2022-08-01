@@ -2,12 +2,12 @@ import { FormEvent, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { updateAddress } from '@proton/shared/lib/api/addresses';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { Address } from '@proton/shared/lib/interfaces';
 
 import {
-    Button,
     InputFieldTwo,
     ModalTwo as Modal,
     ModalTwoContent as ModalContent,

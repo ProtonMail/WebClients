@@ -2,7 +2,8 @@ import { useDispatch } from 'react-redux';
 
 import { c } from 'ttag';
 
-import { Button, Icon, useApi, useNotifications } from '@proton/components';
+import { Button } from '@proton/atoms';
+import { Icon, useApi, useNotifications } from '@proton/components';
 import { getBlockedIncomingDefaultByAddress } from '@proton/shared/lib/helpers/incomingDefaults';
 import { getSender } from '@proton/shared/lib/mail/messages';
 

@@ -1,9 +1,10 @@
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { deleteDomain } from '@proton/shared/lib/api/domains';
 import { Domain } from '@proton/shared/lib/interfaces';
 
-import { Alert, AlertModal, AlertModalProps, Button, ErrorButton } from '../../components';
+import { Alert, AlertModal, AlertModalProps, ErrorButton } from '../../components';
 import { useApi, useEventManager, useLoading, useNotifications } from '../../hooks';
 
 interface Props extends Omit<AlertModalProps, 'title' | 'buttons' | 'children'> {

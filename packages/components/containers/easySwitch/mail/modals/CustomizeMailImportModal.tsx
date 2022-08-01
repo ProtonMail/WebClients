@@ -3,6 +3,7 @@ import { ChangeEvent, useMemo, useState } from 'react';
 import { subMonths, subYears } from 'date-fns';
 import { c, msgid } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { ADDRESS_STATUS } from '@proton/shared/lib/constants';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { Address, Label } from '@proton/shared/lib/interfaces';
@@ -19,7 +20,6 @@ import noop from '@proton/utils/noop';
 
 import {
     Alert,
-    Button,
     ConfirmModal,
     Field,
     Label as FormLabel,

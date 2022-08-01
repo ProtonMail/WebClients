@@ -3,7 +3,8 @@ import { useDispatch } from 'react-redux';
 
 import { c } from 'ttag';
 
-import { Button, Icon, Tooltip, useApi } from '@proton/components';
+import { Button } from '@proton/atoms';
+import { Icon, Tooltip, useApi } from '@proton/components';
 import { METRICS_LOG } from '@proton/shared/lib/constants';
 import { sendMetricsReport } from '@proton/shared/lib/helpers/metrics';
 

@@ -2,11 +2,11 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { Key } from '@proton/shared/lib/interfaces';
 
 import {
     Alert,
-    Button,
     InputTwo,
     ModalProps,
     ModalTwo,

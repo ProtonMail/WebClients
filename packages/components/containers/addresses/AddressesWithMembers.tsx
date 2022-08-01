@@ -2,10 +2,11 @@ import { useMemo, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { ALL_MEMBERS_ID, MEMBER_PRIVATE } from '@proton/shared/lib/constants';
 import { Member, Organization, UserModel } from '@proton/shared/lib/interfaces';
 
-import { Alert, Button, Loader, SettingsLink, useModalState } from '../../components';
+import { Alert, Loader, SettingsLink, useModalState } from '../../components';
 import { useAddresses, useMemberAddresses, useMembers, useNotifications, useOrganizationKey } from '../../hooks';
 import { SettingsParagraph } from '../account';
 import AddressModal from './AddressModal';

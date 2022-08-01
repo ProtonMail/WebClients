@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/components/components';
+import { Button } from '@proton/atoms';
 
 import { useDealContext } from './DealContext';
 

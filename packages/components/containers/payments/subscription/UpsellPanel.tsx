@@ -4,6 +4,7 @@ import { format, fromUnixTime } from 'date-fns';
 import { c, msgid } from 'ttag';
 
 import { generateUID } from '@proton/components/helpers';
+import { Button } from '@proton/atoms';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { MAX_CALENDARS_PAID } from '@proton/shared/lib/calendar/constants';
 import {
@@ -27,8 +28,8 @@ import {
 import { Currency, Plan, Subscription, UserModel } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { Button, Icon, IconName, Price, StripedItem, StripedList } from '../../../components';
 import { getDrivePlan } from '../features/plan';
+import { Icon, IconName, Price, StripedItem, StripedList } from '../../../components';
 import { OpenSubscriptionModalCallback } from './SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from './constants';
 

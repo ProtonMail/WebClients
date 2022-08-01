@@ -2,8 +2,8 @@ import React, { ReactNode, useMemo, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import {
-    Button,
     DropdownMenu,
     DropdownMenuButton,
     FeatureCode,

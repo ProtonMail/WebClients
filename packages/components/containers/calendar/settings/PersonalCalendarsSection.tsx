@@ -2,6 +2,7 @@ import { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { SettingsParagraph, SharedCalendarsSection } from '@proton/components/containers';
 import { removeCalendar, updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
 import {
@@ -16,7 +17,7 @@ import { Address, UserModel } from '@proton/shared/lib/interfaces';
 import { ModalWithProps } from '@proton/shared/lib/interfaces/Modal';
 import { CalendarMemberInvitation, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
-import { AlertModal, Button, Href, useModalState } from '../../../components';
+import { AlertModal, Href, useModalState } from '../../../components';
 import { useApi, useEventManager, useNotifications } from '../../../hooks';
 import { useModalsMap } from '../../../hooks/useModalsMap';
 import { CalendarModal } from '../calendarModal/CalendarModal';

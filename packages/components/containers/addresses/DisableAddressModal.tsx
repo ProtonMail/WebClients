@@ -1,6 +1,8 @@
 import { c } from 'ttag';
 
-import { Alert, Button, ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../components';
+import { Button } from '@proton/atoms';
+
+import { Alert, ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../components';
 import { useLoading } from '../../hooks';
 
 interface Props extends ModalProps {

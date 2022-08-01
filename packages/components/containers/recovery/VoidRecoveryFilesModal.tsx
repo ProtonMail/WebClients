@@ -1,9 +1,9 @@
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { deleteRecoverySecrets } from '@proton/shared/lib/api/settingsRecovery';
 
 import { AlertModal, ModalProps } from '../../components';
-import Button from '../../components/button/Button';
 import { useApi, useEventManager, useLoading, useNotifications } from '../../hooks';
 
 interface Props extends Omit<ModalProps, 'children' | 'size'> {
