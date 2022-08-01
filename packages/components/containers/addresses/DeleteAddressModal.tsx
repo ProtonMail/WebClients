@@ -1,8 +1,9 @@
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
+
 import {
     Alert,
-    Button,
     ErrorButton,
     ModalProps,
     ModalTwo,

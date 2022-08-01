@@ -1,9 +1,9 @@
 import { c } from 'ttag';
 
-import { Card } from '@proton/atoms';
+import { Button, Card } from '@proton/atoms';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
-import { Button, Href, Icon } from '../../components';
+import { Href, Icon } from '../../components';
 import { classnames } from '../../helpers/component';
 import { SettingsSectionTitle } from '../account';
 

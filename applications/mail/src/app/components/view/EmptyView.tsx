@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { Button, EmptyViewContainer, FeatureCode, Loader, useFeature } from '@proton/components';
+import { Button } from '@proton/atoms';
+import { EmptyViewContainer, FeatureCode, Loader, useFeature } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import noResultInboxSvg from '@proton/styles/assets/img/illustrations/empty-mailbox.svg';
 import noResultSearchSvg from '@proton/styles/assets/img/illustrations/empty-search.svg';

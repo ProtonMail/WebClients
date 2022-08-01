@@ -2,10 +2,11 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { updatePhone } from '@proton/shared/lib/api/settings';
 import { SETTINGS_STATUS, UserSettings } from '@proton/shared/lib/interfaces';
 
-import { Button, Icon, InputFieldTwo, PhoneInput, useFormErrors, useModalState } from '../../../components';
+import { Icon, InputFieldTwo, PhoneInput, useFormErrors, useModalState } from '../../../components';
 import { classnames } from '../../../helpers';
 import { useEventManager, useNotifications } from '../../../hooks';
 import AuthModal from '../../password/AuthModal';

@@ -2,7 +2,8 @@ import { FocusEvent, Fragment, MouseEvent, memo } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, Icon, Label, Tooltip, classnames } from '@proton/components';
+import { Button } from '@proton/atoms';
+import { Icon, Label, Tooltip, classnames } from '@proton/components';
 import { Recipient } from '@proton/shared/lib/interfaces/Address';
 import { getRecipients } from '@proton/shared/lib/mail/messages';
 

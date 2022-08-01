@@ -2,7 +2,8 @@ import { Dispatch, SetStateAction, useCallback } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, useLoading, useNotifications, useSideApp } from '@proton/components';
+import { Button } from '@proton/atoms';
+import { useLoading, useNotifications, useSideApp } from '@proton/components';
 import { useAddEvents } from '@proton/components/containers/calendar/hooks';
 import { CALENDAR_APP_NAME } from '@proton/shared/lib/calendar/constants';
 import { getEventWithCalendarAlarms } from '@proton/shared/lib/calendar/integration/invite';

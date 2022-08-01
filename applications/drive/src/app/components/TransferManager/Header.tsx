@@ -2,7 +2,8 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { Button, Icon, Tooltip, classnames } from '@proton/components';
+import { Button } from '@proton/atoms';
+import { Icon, Tooltip, classnames } from '@proton/components';
 
 import {
     calculateProgress,

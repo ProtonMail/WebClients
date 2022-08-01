@@ -2,7 +2,8 @@ import React, { useCallback, useRef } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, Href, Icon, InputTwo, Spotlight, usePopperAnchor } from '@proton/components';
+import { Button } from '@proton/atoms';
+import { Href, Icon, InputTwo, Spotlight, usePopperAnchor } from '@proton/components';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import esSpotlightIcon from '@proton/styles/assets/img/illustrations/spotlight-stars.svg';
 

@@ -2,7 +2,9 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { AlertModal, AlertModalProps, Button, SettingsLink } from '../../components';
+import { Button } from '@proton/atoms';
+
+import { AlertModal, AlertModalProps, SettingsLink } from '../../components';
 import { useFeature } from '../../hooks';
 import { FeatureCode } from '../features/FeaturesContext';
 

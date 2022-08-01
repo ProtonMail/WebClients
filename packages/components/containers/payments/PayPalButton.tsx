@@ -2,10 +2,10 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { Button, ButtonProps } from '@proton/atoms';
 import { MAX_PAYPAL_AMOUNT, MIN_PAYPAL_AMOUNT } from '@proton/shared/lib/constants';
 import { doNotWindowOpen } from '@proton/shared/lib/helpers/browser';
 
-import { Button, ButtonProps } from '../../components';
 import { useNotifications } from '../../hooks';
 import { PaymentMethodFlows } from '../paymentMethods/interface';
 import { PayPalHook } from './usePayPal';

@@ -1,6 +1,8 @@
 import { c } from 'ttag';
 
-import { AlertModal, Button } from '../../../components';
+import { Button } from '@proton/atoms';
+
+import { AlertModal } from '../../../components';
 
 interface DeleteLinkConfirmationModalProps {
     onClose: () => void;

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { CryptoProxy, PrivateKeyReference } from '@proton/crypto';
 import { getKeySalts } from '@proton/shared/lib/api/keys';
 import { MnemonicKeyResponse, getMnemonicUserKeys } from '@proton/shared/lib/api/settingsMnemonic';
@@ -14,7 +15,6 @@ import { computeKeyPassword } from '@proton/srp';
 import isTruthy from '@proton/utils/isTruthy';
 
 import {
-    Button,
     Form,
     InputFieldTwo,
     Loader,

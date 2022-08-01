@@ -2,10 +2,11 @@ import { Fragment } from 'react';
 
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { buildTreeview, formatFolderName } from '@proton/shared/lib/helpers/folder';
 import { Folder, FolderWithSubFolders } from '@proton/shared/lib/interfaces/Folder';
 
-import { Button, Icon, IconName, InputFieldTwo, Option, SelectTwo, useModalState } from '../../../components';
+import { Icon, IconName, InputFieldTwo, Option, SelectTwo, useModalState } from '../../../components';
 import { classnames } from '../../../helpers';
 import EditLabelModal, { LabelModel } from '../../labels/modals/EditLabelModal';
 import { getDefaultFolderOptions, noFolderOption, noFolderValue } from '../constants';

@@ -1,8 +1,9 @@
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { disableMnemonicPhrase } from '@proton/shared/lib/api/settingsMnemonic';
 
-import { AlertModal, Button, ModalProps, useModalState } from '../../components';
+import { AlertModal, ModalProps, useModalState } from '../../components';
 import { useEventManager, useNotifications } from '../../hooks';
 import AuthModal from '../password/AuthModal';
 

@@ -2,6 +2,7 @@ import { FormEvent, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { privatizeMember, updateName, updateQuota, updateRole, updateVPN } from '@proton/shared/lib/api/members';
 import { GIGA, MEMBER_PRIVATE, MEMBER_ROLE, MEMBER_SUBSCRIBER, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
@@ -9,7 +10,6 @@ import { Member } from '@proton/shared/lib/interfaces';
 
 import {
     Alert,
-    Button,
     ConfirmModal,
     InputFieldTwo,
     ModalTwo as Modal,

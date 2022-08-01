@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { reportBug } from '@proton/shared/lib/api/reports';
 import { APPS, CLIENT_TYPES, VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
@@ -11,7 +12,6 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import noop from '@proton/utils/noop';
 
 import {
-    Button,
     Collapsible,
     CollapsibleContent,
     CollapsibleHeader,

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { ButtonLike } from '@proton/atoms';
+import { Button, ButtonLike } from '@proton/atoms';
 import { useAddresses } from '@proton/components/hooks';
 import { getCalendarStatusBadges } from '@proton/shared/lib/calendar/badges';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
@@ -12,7 +12,6 @@ import { SubscribedCalendar, VisualCalendar } from '@proton/shared/lib/interface
 import clsx from '@proton/utils/clsx';
 
 import {
-    Button,
     Icon,
     Info,
     Table,

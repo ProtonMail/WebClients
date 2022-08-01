@@ -3,9 +3,8 @@ import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { ButtonLike } from '@proton/atoms';
+import { Button, ButtonLike } from '@proton/atoms';
 import {
-    Button,
     FeatureCode,
     GenericError,
     Href,

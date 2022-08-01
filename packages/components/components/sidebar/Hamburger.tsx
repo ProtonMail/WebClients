@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import Button, { ButtonProps } from '../button/Button';
+import { Button, ButtonProps } from '@proton/atoms';
+
 import Icon from '../icon/Icon';
 
 interface Props extends ButtonProps {

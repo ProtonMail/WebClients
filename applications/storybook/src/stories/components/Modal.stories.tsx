@@ -1,9 +1,9 @@
 import { useState } from 'react';
 
+import { Button } from '@proton/atoms';
 import {
     AlertModal,
     BasicModal,
-    Button,
     Form,
     Icon,
     InputFieldTwo,

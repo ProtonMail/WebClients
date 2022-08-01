@@ -2,7 +2,8 @@ import { RefObject } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '../../components';
+import { Button } from '@proton/atoms';
+
 import Icon from '../../components/icon/Icon';
 import { useHotkeys } from '../../hooks';
 

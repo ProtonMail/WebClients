@@ -2,7 +2,9 @@ import { ChangeEvent, Fragment, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, Icon, Input, Radio, Select, Tooltip } from '../../../components';
+import { Button } from '@proton/atoms';
+
+import { Icon, Input, Radio, Select, Tooltip } from '../../../components';
 import { OptionProps } from '../../../components/select/Select';
 import { classnames } from '../../../helpers';
 import { COMPARATORS, TYPES, getComparatorLabels, getConditionTypeLabels } from '../constants';

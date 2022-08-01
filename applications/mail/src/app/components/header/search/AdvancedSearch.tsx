@@ -5,8 +5,8 @@ import { add, fromUnixTime, getUnixTime, isAfter, isBefore, sub } from 'date-fns
 import { History } from 'history';
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import {
-    Button,
     DateInput,
     Label,
     Option,

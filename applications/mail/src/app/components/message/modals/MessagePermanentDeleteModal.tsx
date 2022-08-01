@@ -1,14 +1,7 @@
 import { c } from 'ttag';
 
-import {
-    AlertModal,
-    Button,
-    ErrorButton,
-    ModalProps,
-    useApi,
-    useEventManager,
-    useNotifications,
-} from '@proton/components';
+import { Button } from '@proton/atoms';
+import { AlertModal, ErrorButton, ModalProps, useApi, useEventManager, useNotifications } from '@proton/components';
 import { deleteMessages } from '@proton/shared/lib/api/messages';
 
 import { getDeleteTitle, getModalText, getNotificationText } from '../../../hooks/actions/usePermanentDelete';

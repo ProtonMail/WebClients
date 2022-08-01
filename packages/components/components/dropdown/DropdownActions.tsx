@@ -2,8 +2,9 @@ import { MouseEvent, ReactNode } from 'react';
 
 import { c } from 'ttag';
 
+import { Button, ButtonProps } from '@proton/atoms';
+
 import { classnames } from '../../helpers';
-import Button, { ButtonProps } from '../button/Button';
 import ButtonGroup from '../button/ButtonGroup';
 import { Info } from '../link';
 import DropdownMenu from './DropdownMenu';

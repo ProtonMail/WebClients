@@ -10,7 +10,8 @@ import {
     useState,
 } from 'react';
 
-import { Button, Icon, Tooltip, classnames, useElementRect } from '@proton/components';
+import { Button } from '@proton/atoms';
+import { Icon, Tooltip, classnames, useElementRect } from '@proton/components';
 import { VIEWS } from '@proton/shared/lib/calendar/constants';
 import { addWeeks, eachDayOfInterval, format, isSameDay } from '@proton/shared/lib/date-fns-utc';
 

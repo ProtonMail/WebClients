@@ -2,10 +2,11 @@ import { FormEvent, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { setPaymentMethod } from '@proton/shared/lib/api/payments';
 import { ADD_CARD_MODE, PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
 
-import { Button, ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../components';
+import { ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../components';
 import { useApi, useEventManager, useLoading, useModals, useNotifications } from '../../hooks';
 import CreditCard from './CreditCard';
 import { CardModel } from './interface';

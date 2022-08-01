@@ -1,8 +1,9 @@
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { getAbuseURL } from '@proton/shared/lib/helpers/url';
 
-import { AlertModal, Button, Href } from '../../components';
+import { AlertModal, Href } from '../../components';
 
 interface Props {
     message?: string;

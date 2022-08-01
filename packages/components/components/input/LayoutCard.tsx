@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
+
 import { classnames } from '../../helpers';
-import { Button } from '../button';
 
 import './LayoutCard.scss';
 

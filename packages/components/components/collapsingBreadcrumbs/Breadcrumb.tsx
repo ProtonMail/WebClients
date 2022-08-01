@@ -1,7 +1,8 @@
 import { LiHTMLAttributes, ReactNode, Ref, forwardRef } from 'react';
 
+import { Button } from '@proton/atoms/';
+
 import { classnames } from '../../helpers';
-import { Button } from '../button';
 
 interface Props extends Omit<LiHTMLAttributes<HTMLLIElement>, 'onClick'> {
     title?: string;

@@ -1,11 +1,11 @@
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { CRYPTO_PROCESSING_TYPES } from '@proton/shared/lib/contacts/constants';
 import { CryptoProcessingError } from '@proton/shared/lib/contacts/decrypt';
 import { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts/Contact';
 import { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';
 
-import { Button } from '../../../components';
 import { classnames } from '../../../helpers';
 import { ContactEmailSettingsProps } from '../email/ContactEmailSettingsModal';
 import { ContactGroupEditProps } from '../group/ContactGroupEditModal';

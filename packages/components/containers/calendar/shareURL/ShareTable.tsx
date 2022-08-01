@@ -3,23 +3,13 @@ import { useLocation } from 'react-router-dom';
 
 import { c, msgid } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { MAX_LINKS_PER_CALENDAR } from '@proton/shared/lib/calendar/constants';
 import { UserModel } from '@proton/shared/lib/interfaces';
 import { ACCESS_LEVEL, CalendarLink, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 
-import {
-    Alert,
-    Button,
-    Icon,
-    Info,
-    Option,
-    SelectTwo,
-    Table,
-    TableBody,
-    TableHeader,
-    TableRow,
-} from '../../../components';
+import { Alert, Icon, Info, Option, SelectTwo, Table, TableBody, TableHeader, TableRow } from '../../../components';
 import CalendarSelect from '../../../components/calendarSelect/CalendarSelect';
 
 interface Props {

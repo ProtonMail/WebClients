@@ -1,4 +1,5 @@
-import { Button, CreateNotificationOptions, useNotifications } from '@proton/components';
+import { Button } from '@proton/atoms';
+import { CreateNotificationOptions, useNotifications } from '@proton/components';
 
 import { getTitle } from '../../helpers/title';
 import mdx from './Notification.mdx';

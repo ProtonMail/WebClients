@@ -1,14 +1,7 @@
 import { c } from 'ttag';
 
-import {
-    Button,
-    Form,
-    ModalProps,
-    ModalTwo,
-    ModalTwoContent,
-    ModalTwoFooter,
-    ModalTwoHeader,
-} from '@proton/components';
+import { Button } from '@proton/atoms';
+import { Form, ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 
 import { MessageWithOptionalBody } from '../../../logic/messages/messagesTypes';

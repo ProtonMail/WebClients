@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, InputFieldTwo, Option, SelectTwo } from '@proton/components/components';
+import { Button } from '@proton/atoms';
+import { InputFieldTwo, Option, SelectTwo } from '@proton/components/components';
 import { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
 import {
     FeatureCode,

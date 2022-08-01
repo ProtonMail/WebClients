@@ -2,7 +2,8 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { BasicModal, Button, Form } from '@proton/components';
+import { Button } from '@proton/atoms';
+import { BasicModal, Form } from '@proton/components';
 import { ICAL_ATTENDEE_STATUS, ICAL_EVENT_STATUS, MAX_ATTENDEES } from '@proton/shared/lib/calendar/constants';
 import { getDisplayTitle } from '@proton/shared/lib/calendar/helper';
 import { ADDRESS_STATUS } from '@proton/shared/lib/constants';
