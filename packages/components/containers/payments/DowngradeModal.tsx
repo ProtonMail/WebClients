@@ -1,8 +1,9 @@
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { MAIL_APP_NAME, VPN_APP_NAME } from '@proton/shared/lib/constants';
 
-import { Alert, AlertModal, Button, ModalProps } from '../../components';
+import { Alert, AlertModal, ModalProps } from '../../components';
 
 interface Props extends ModalProps {
     hasMail: boolean;

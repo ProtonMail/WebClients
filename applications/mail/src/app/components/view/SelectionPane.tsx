@@ -3,7 +3,8 @@ import { useEffect, useMemo, useState } from 'react';
 import { Location } from 'history';
 import { c, msgid } from 'ttag';
 
-import { Button, FeatureCode, Loader, useFeature, useFolders, useLabels } from '@proton/components';
+import { Button } from '@proton/atoms';
+import { FeatureCode, Loader, useFeature, useFolders, useLabels } from '@proton/components';
 import { TelemetrySimpleLoginEvents } from '@proton/shared/lib/api/telemetry';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { MailSettings } from '@proton/shared/lib/interfaces';

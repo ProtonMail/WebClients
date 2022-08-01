@@ -2,7 +2,8 @@ import { useEffect, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { Button, Icon } from '@proton/components';
+import { Button } from '@proton/atoms';
+import { Icon } from '@proton/components';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
 import { isUnread } from '../../helpers/elements';

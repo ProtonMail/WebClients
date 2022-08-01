@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { BRAND_NAME, PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
 import { getDomainsSupportURL } from '@proton/shared/lib/helpers/url';
 import { Domain, DomainAddress } from '@proton/shared/lib/interfaces';
@@ -9,16 +10,7 @@ import { DomainsModel } from '@proton/shared/lib/models';
 import { loadModels } from '@proton/shared/lib/models/helper';
 import isTruthy from '@proton/utils/isTruthy';
 
-import {
-    Button,
-    DropdownActions,
-    Loader,
-    Table,
-    TableBody,
-    TableHeader,
-    TableRow,
-    useModalState,
-} from '../../components';
+import { DropdownActions, Loader, Table, TableBody, TableHeader, TableRow, useModalState } from '../../components';
 import { useApi, useCache, useDomains, useDomainsAddresses, useLoading, useOrganization, useUser } from '../../hooks';
 import { SettingsParagraph, SettingsSectionWide, UpgradeBanner } from '../account';
 import RestoreAdministratorPrivileges from '../organization/RestoreAdministratorPrivileges';

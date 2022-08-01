@@ -2,6 +2,7 @@ import { ChangeEvent, FormEvent, useMemo, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { ACCENT_COLORS } from '@proton/shared/lib/constants';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact';
@@ -12,7 +13,6 @@ import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
 import {
     AddressesAutocompleteItem,
     Autocomplete,
-    Button,
     ColorPicker,
     Field,
     InputTwo,

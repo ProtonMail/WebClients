@@ -2,15 +2,8 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import {
-    AlertModal,
-    AlertModalProps,
-    Button,
-    Checkbox,
-    Href,
-    Label,
-    PrivateAuthenticationStore,
-} from '@proton/components';
+import { Button } from '@proton/atoms';
+import { AlertModal, AlertModalProps, Checkbox, Href, Label, PrivateAuthenticationStore } from '@proton/components';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { User } from '@proton/shared/lib/interfaces';
 import { getHasRecoveryMessage } from '@proton/shared/lib/recoveryFile/deviceRecovery';

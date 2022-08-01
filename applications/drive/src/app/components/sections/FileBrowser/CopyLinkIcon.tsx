@@ -2,7 +2,8 @@ import { useCallback, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, Icon, Tooltip } from '@proton/components';
+import { Button } from '@proton/atoms';
+import { Icon, Tooltip } from '@proton/components';
 
 import { useActions } from '../../../store';
 import { BrowserItemId } from '../../FileBrowser/interface';

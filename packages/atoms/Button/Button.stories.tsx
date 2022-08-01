@@ -1,24 +1,13 @@
 import { useState } from 'react';
 
-import { ButtonLike } from '@proton/atoms';
-import {
-    Button,
-    Checkbox,
-    Icon,
-    RadioGroup,
-    Table,
-    TableBody,
-    TableCell,
-    TableHeader,
-    TableRow,
-} from '@proton/components';
+import { Button, ButtonLike } from '@proton/atoms';
+import { Checkbox, Icon, RadioGroup, Table, TableBody, TableCell, TableHeader, TableRow } from '@proton/components';
 
-import { getTitle } from '../../helpers/title';
 import mdx from './Button.mdx';
 
 export default {
     component: Button,
-    title: getTitle(__filename, false),
+    title: 'components/Button',
     parameters: {
         docs: {
             page: mdx,

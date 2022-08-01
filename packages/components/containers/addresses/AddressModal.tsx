@@ -2,7 +2,7 @@ import { FormEvent, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { CircleLoader } from '@proton/atoms';
+import { Button, CircleLoader } from '@proton/atoms';
 import { createAddress } from '@proton/shared/lib/api/addresses';
 import { getAllMemberAddresses } from '@proton/shared/lib/api/members';
 import {
@@ -26,7 +26,6 @@ import {
 import noop from '@proton/utils/noop';
 
 import {
-    Button,
     InputFieldTwo,
     ModalTwo as Modal,
     ModalTwoContent as ModalContent,

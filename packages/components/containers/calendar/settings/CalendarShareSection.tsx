@@ -2,8 +2,8 @@ import React, { Dispatch, SetStateAction } from 'react';
 
 import { c } from 'ttag';
 
-import { ButtonLike, Card } from '@proton/atoms';
-import { Button, SettingsLink, useModalState } from '@proton/components/components';
+import { Button, ButtonLike, Card } from '@proton/atoms';
+import { SettingsLink, useModalState } from '@proton/components/components';
 import { FeatureCode, SettingsParagraph } from '@proton/components/containers';
 import { useApi, useFeature, useNotifications } from '@proton/components/hooks';
 import { removeInvitation, removeMember } from '@proton/shared/lib/api/calendars';

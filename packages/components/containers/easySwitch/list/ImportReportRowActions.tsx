@@ -1,9 +1,10 @@
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { deleteImportReport, rollbackImport } from '@proton/shared/lib/api/easySwitch';
 import { ImportReportRollbackState, ImportType } from '@proton/shared/lib/interfaces/EasySwitch';
 
-import { Alert, Button, ConfirmModal, DropdownActions } from '../../../components';
+import { Alert, ConfirmModal, DropdownActions } from '../../../components';
 import { useApi, useEventManager, useLoading, useModals, useNotifications } from '../../../hooks';
 
 interface Props {

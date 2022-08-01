@@ -3,8 +3,9 @@ import { useState } from 'react';
 import markdownit from 'markdown-it';
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
+
 import { getAppVersion } from '../../helpers';
-import { Button } from '../button';
 import {
     ModalTwo as Modal,
     ModalTwoContent as ModalContent,

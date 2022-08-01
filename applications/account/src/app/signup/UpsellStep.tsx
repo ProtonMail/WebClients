@@ -2,7 +2,8 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, CurrencySelector, Price, useLoading } from '@proton/components';
+import { Button } from '@proton/atoms';
+import { CurrencySelector, Price, useLoading } from '@proton/components';
 import { PlanCardFeatureDefinition } from '@proton/components/containers/payments/features/interface';
 import {
     getFreeDrivePlan,

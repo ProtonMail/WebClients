@@ -2,10 +2,11 @@ import { memo } from 'react';
 
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import range from '@proton/utils/range';
 
 import { classnames } from '../../helpers';
-import { Button, ButtonGroup } from '../button';
+import { ButtonGroup } from '../button';
 import { Icon } from '../icon';
 import { Tooltip } from '../tooltip';
 

@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { ActionCard, BasicModal, Button, ModalOwnProps as MainModalOwnProps } from '@proton/components/components';
+import { Button } from '@proton/atoms';
+import { ActionCard, BasicModal, ModalOwnProps as MainModalOwnProps } from '@proton/components/components';
 
 interface CalendarSidebarCreateCalendarModalProps extends MainModalOwnProps {
     isOpen: boolean;

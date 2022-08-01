@@ -1,6 +1,8 @@
 import { c } from 'ttag';
 
-import { Button, ButtonGroup } from '../button';
+import { Button } from '@proton/atoms';
+
+import { ButtonGroup } from '../button';
 import DropdownMenu from '../dropdown/DropdownMenu';
 import DropdownMenuButton from '../dropdown/DropdownMenuButton';
 import SimpleDropdown from '../dropdown/SimpleDropdown';

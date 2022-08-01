@@ -2,12 +2,13 @@ import { ReactNode, useCallback, useEffect, useRef } from 'react';
 
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { APPS_CONFIGURATION } from '@proton/shared/lib/constants';
 import { KeyboardKey } from '@proton/shared/lib/interfaces';
 import { isAuthorizedSideAppUrl, postMessageFromIframe } from '@proton/shared/lib/sideApp/helpers';
 import { SIDE_APP_ACTION, SIDE_APP_EVENTS } from '@proton/shared/lib/sideApp/models';
 
-import { AppLink, Button, Icon, Tooltip } from '../../../components';
+import { AppLink, Icon, Tooltip } from '../../../components';
 import Header from '../../../components/header/Header';
 import { useConfig, useEventManager, useHotkeys, useSideApp } from '../../../hooks';
 import { useTheme } from '../../themes';

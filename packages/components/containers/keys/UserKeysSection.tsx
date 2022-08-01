@@ -1,11 +1,12 @@
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { AlgorithmInfo, CryptoProxy } from '@proton/crypto';
 import { EncryptionConfig } from '@proton/shared/lib/interfaces';
 import { addUserKeysProcess } from '@proton/shared/lib/keys';
 import { storeDeviceRecovery } from '@proton/shared/lib/recoveryFile/deviceRecovery';
 
-import { Button, Loader, useModalState } from '../../components';
+import { Loader, useModalState } from '../../components';
 import {
     useApi,
     useAuthentication,

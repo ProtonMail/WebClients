@@ -1,11 +1,12 @@
 import { c, msgid } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { clearContacts, deleteContacts } from '@proton/shared/lib/api/contacts';
 import { allSucceded } from '@proton/shared/lib/api/helpers/response';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 
-import { Alert, AlertModal, Button, ErrorButton, ModalProps } from '../../../components';
+import { Alert, AlertModal, ErrorButton, ModalProps } from '../../../components';
 import { useApi, useContacts, useEventManager, useLoading, useNotifications } from '../../../hooks';
 
 export interface ContactDeleteProps {

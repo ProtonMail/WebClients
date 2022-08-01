@@ -2,10 +2,9 @@ import React, { ComponentPropsWithRef, useContext } from 'react';
 
 import { c } from 'ttag';
 
-import { Vr } from '@proton/atoms';
+import { Button, ButtonProps, Vr } from '@proton/atoms';
 
 import { classnames } from '../../helpers';
-import { Button, ButtonProps } from '../button';
 import { Icon } from '../icon';
 import { Tooltip } from '../tooltip';
 import { ModalContext } from './Modal';

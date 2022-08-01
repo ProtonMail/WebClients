@@ -2,6 +2,7 @@ import { isValidElement, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { updateFlags, updateThemeType, updateWelcomeFlags } from '@proton/shared/lib/api/settings';
 import { hasNewVisionary, hasVisionary } from '@proton/shared/lib/helpers/subscription';
 import { PROTON_THEMES, ThemeTypes } from '@proton/shared/lib/themes/themes';
@@ -9,14 +10,7 @@ import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 import range from '@proton/utils/range';
 
-import {
-    Button,
-    ModalTwoContent as ModalContent,
-    ModalTwo,
-    StepDot,
-    StepDots,
-    useSettingsLink,
-} from '../../components';
+import { ModalTwoContent as ModalContent, ModalTwo, StepDot, StepDots, useSettingsLink } from '../../components';
 import { useApi, useOrganization, useSubscription, useUser, useUserSettings, useWelcomeFlags } from '../../hooks';
 import { useTheme } from '../themes/ThemeProvider';
 import OnboardingDiscoverApps from './OnboardingDiscoverApps';

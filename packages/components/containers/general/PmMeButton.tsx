@@ -1,11 +1,11 @@
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { setupAddress } from '@proton/shared/lib/api/addresses';
 import { DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS } from '@proton/shared/lib/constants';
 import { missingKeysSelfProcess } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 
-import { Button } from '../../components';
 import {
     useAddresses,
     useApi,

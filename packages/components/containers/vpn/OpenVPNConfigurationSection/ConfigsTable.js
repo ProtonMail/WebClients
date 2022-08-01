@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms';
+import { Button } from '@proton/atoms';
 import { getVPNServerConfig } from '@proton/shared/lib/api/vpn';
 import { PLANS } from '@proton/shared/lib/constants';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
@@ -11,7 +12,6 @@ import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import isTruthy from '@proton/utils/isTruthy';
 
 import {
-    Button,
     DropdownActions,
     Icon,
     SettingsLink,

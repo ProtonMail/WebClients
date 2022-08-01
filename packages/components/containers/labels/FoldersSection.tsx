@@ -1,9 +1,10 @@
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { orderFolders } from '@proton/shared/lib/api/labels';
 import { ROOT_FOLDER } from '@proton/shared/lib/constants';
 
-import { Button, Info, Loader, useModalState } from '../../components';
+import { Info, Loader, useModalState } from '../../components';
 import { useApi, useEventManager, useFolders, useLoading, useMailSettings, useNotifications } from '../../hooks';
 import { SettingsSection } from '../account';
 import SettingsLayout from '../account/SettingsLayout';

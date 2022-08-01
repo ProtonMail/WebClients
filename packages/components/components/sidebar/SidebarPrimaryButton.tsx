@@ -1,7 +1,8 @@
 import { Ref, forwardRef } from 'react';
 
+import { Button, ButtonProps } from '@proton/atoms';
+
 import { classnames } from '../../helpers';
-import Button, { ButtonProps } from '../button/Button';
 
 const SidebarPrimaryButton = ({ children, className = '', ...rest }: ButtonProps, ref: Ref<HTMLButtonElement>) => {
     return (

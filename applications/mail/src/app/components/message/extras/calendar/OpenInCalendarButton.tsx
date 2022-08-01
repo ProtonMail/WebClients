@@ -1,4 +1,5 @@
-import { AppLink, Button, FeatureCode, useAuthentication, useFeature, useSideApp } from '@proton/components';
+import { Button } from '@proton/atoms';
+import { AppLink, FeatureCode, useAuthentication, useFeature, useSideApp } from '@proton/components';
 import { getLinkToCalendarEvent } from '@proton/shared/lib/calendar/helper';
 import { APPS } from '@proton/shared/lib/constants';
 import { openCalendarEventInSideApp } from '@proton/shared/lib/sideApp/calendar';

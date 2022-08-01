@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { Button, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, RadioGroup } from '@proton/components';
+import { Button } from '@proton/atoms';
+import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, RadioGroup } from '@proton/components';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';

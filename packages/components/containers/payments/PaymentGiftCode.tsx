@@ -2,7 +2,9 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, Icon, Info, InputTwo, UnderlineButton } from '../../components';
+import { Button } from '@proton/atoms';
+
+import { Icon, Info, InputTwo, UnderlineButton } from '../../components';
 import { useToggle } from '../../hooks';
 
 interface Props {

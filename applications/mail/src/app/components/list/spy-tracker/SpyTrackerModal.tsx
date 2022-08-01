@@ -1,7 +1,7 @@
 import { c, msgid } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import {
-    Button,
     Collapsible,
     CollapsibleContent,
     CollapsibleHeader,

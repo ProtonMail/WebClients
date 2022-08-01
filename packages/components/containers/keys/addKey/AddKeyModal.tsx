@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { AlgorithmInfo } from '@proton/crypto';
 import { DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS, ENCRYPTION_TYPES } from '@proton/shared/lib/constants';
 import { EncryptionConfig } from '@proton/shared/lib/interfaces';
@@ -9,7 +10,6 @@ import { getAlgorithmExists } from '@proton/shared/lib/keys';
 
 import {
     Alert,
-    Button,
     Form,
     ModalProps,
     ModalTwo,

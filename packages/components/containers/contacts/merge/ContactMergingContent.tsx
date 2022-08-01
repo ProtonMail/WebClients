@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { addContacts, deleteContacts, getContact } from '@proton/shared/lib/api/contacts';
 import { processApiRequestsSafe } from '@proton/shared/lib/api/helpers/safeApiRequests';
 import { API_CODES } from '@proton/shared/lib/constants';
@@ -17,7 +18,7 @@ import { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';
 import { splitKeys } from '@proton/shared/lib/keys/keys';
 import chunk from '@proton/utils/chunk';
 
-import { Alert, Button, DynamicProgress, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../../components';
+import { Alert, DynamicProgress, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../../components';
 import { useApi, useLoading, useUserKeys } from '../../../hooks';
 
 const { OVERWRITE_CONTACT } = OVERWRITE;

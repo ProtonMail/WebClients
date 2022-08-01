@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { Button } from '../../components';
+import { Button } from '@proton/atoms';
+
 import { useModals, useUser } from '../../hooks';
 import { SettingsParagraph, SettingsSection } from '../account';
 import CreditsModal from './CreditsModal';

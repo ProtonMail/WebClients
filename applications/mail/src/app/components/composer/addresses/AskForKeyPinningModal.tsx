@@ -2,8 +2,8 @@ import { FormEvent } from 'react';
 
 import { c, msgid } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import {
-    Button,
     Href,
     ModalProps,
     ModalTwo,

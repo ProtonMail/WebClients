@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import InputField from '@proton/components/components/v2/field/InputField';
 import {
     useApi,
@@ -35,7 +36,6 @@ import {
     AddressesInput,
     AddressesInputItem,
     Badge,
-    Button,
     Icon,
     ModalTwo as Modal,
     ModalTwoContent as ModalContent,

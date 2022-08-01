@@ -2,9 +2,10 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import noop from '@proton/utils/noop';
 
-import { AlertModal, AlertModalProps, Button } from '../../../components';
+import { AlertModal, AlertModalProps } from '../../../components';
 import { useLoading, useNotifications } from '../../../hooks';
 
 enum STEPS {

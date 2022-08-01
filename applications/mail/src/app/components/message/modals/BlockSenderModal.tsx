@@ -2,7 +2,8 @@ import { useEffect, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { AlertModal, AppLink, Button, Checkbox, Label, ModalProps } from '@proton/components';
+import { Button } from '@proton/atoms';
+import { AlertModal, AppLink, Checkbox, Label, ModalProps } from '@proton/components';
 import { APPS } from '@proton/shared/lib/constants';
 import { MailSettings, Recipient } from '@proton/shared/lib/interfaces';
 import { BLOCK_SENDER_CONFIRMATION } from '@proton/shared/lib/mail/constants';

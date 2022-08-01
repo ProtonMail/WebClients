@@ -2,7 +2,8 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, Icon, SettingsLink } from '@proton/components';
+import { Button } from '@proton/atoms';
+import { Icon, SettingsLink } from '@proton/components';
 import { APPS } from '@proton/shared/lib/constants';
 
 import { useReloadMessage } from '../../../hooks/message/useLoadMessage';

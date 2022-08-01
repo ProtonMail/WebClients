@@ -1,9 +1,10 @@
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { updateComposerMode } from '@proton/shared/lib/api/mailSettings';
 import { COMPOSER_MODE } from '@proton/shared/lib/constants';
 
-import { Button, ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../components';
+import { ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../components';
 import { useApi, useEventManager, useLoading, useMailSettings, useNotifications } from '../../hooks';
 import ComposerModeCards from '../layouts/ComposerModeCards';
 

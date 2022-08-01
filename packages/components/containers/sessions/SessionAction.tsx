@@ -1,6 +1,8 @@
 import { c } from 'ttag';
 
-import { Badge, Button } from '../../components';
+import { Button } from '@proton/atoms';
+
+import { Badge } from '../../components';
 import { useLoading } from '../../hooks';
 import { Session } from './interface';
 

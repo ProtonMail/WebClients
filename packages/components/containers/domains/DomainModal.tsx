@@ -2,6 +2,7 @@ import { FormEvent, useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { addressType } from '@proton/shared/lib/api/addresses';
 import { addDomain, getDomain } from '@proton/shared/lib/api/domains';
 import {
@@ -18,7 +19,6 @@ import { clearExternalFlags, getSignedKeyList } from '@proton/shared/lib/keys';
 import { getActiveKeys, getNormalizedActiveKeys } from '@proton/shared/lib/keys/getActiveKeys';
 
 import {
-    Button,
     ButtonGroup,
     Form,
     Icon,
@@ -32,16 +32,7 @@ import {
     useFormErrors,
 } from '../../components';
 import { classnames } from '../../helpers';
-import {
-    useApi,
-    useDomains,
-    useEventManager,
-    useGetAddressKeys,
-    useGetAddresses,
-    useLoading,
-    useNotifications,
-    useStep,
-} from '../../hooks';
+import { useApi, useDomains, useEventManager, useGetAddresses, useGetAddressKeys, useLoading, useNotifications, useStep } from '../../hooks';
 import AddressesSection from './AddressesSection';
 import DKIMSection from './DKIMSection';
 import DMARCSection from './DMARCSection';

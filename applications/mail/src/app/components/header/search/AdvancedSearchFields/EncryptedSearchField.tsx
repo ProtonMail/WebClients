@@ -1,9 +1,9 @@
 import { add } from 'date-fns';
 import { c, msgid } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import {
     AlertModal,
-    Button,
     Info,
     Label,
     Progress,

@@ -2,8 +2,8 @@ import { MouseEvent } from 'react';
 
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import {
-    Button,
     ButtonGroup,
     Icon,
     Tooltip,

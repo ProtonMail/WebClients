@@ -2,7 +2,8 @@ import * as React from 'react';
 
 import { c } from 'ttag';
 
-import { Button, Href, SettingsLink } from '@proton/components';
+import { Button } from '@proton/atoms';
+import { Href, SettingsLink } from '@proton/components';
 import Icon from '@proton/components/components/icon/Icon';
 import { APPS } from '@proton/shared/lib/constants';
 

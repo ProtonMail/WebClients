@@ -12,13 +12,13 @@ import {
 
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import discoverIllustration from '@proton/styles/assets/img/illustrations/spotlight-binoculars.svg';
 import newIllustration from '@proton/styles/assets/img/illustrations/spotlight-stars.svg';
 
 import useRightToLeft from '../../containers/rightToLeft/useRightToLeft';
 import { classnames, generateUID } from '../../helpers';
 import { useCombinedRefs, useIsClosing } from '../../hooks';
-import { Button } from '../button';
 import { Icon } from '../icon';
 import { usePopper, usePopperAnchor } from '../popper';
 import { shouldShowSideRadius } from '../popper/utils';

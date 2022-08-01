@@ -1,9 +1,10 @@
 import { ReactNode, useRef } from 'react';
 
+import { Button } from '@proton/atoms';
 import { APPS_CONFIGURATION } from '@proton/shared/lib/constants';
 import { KeyboardKey } from '@proton/shared/lib/interfaces';
 
-import { Button, Icon } from '../../../components';
+import { Icon } from '../../../components';
 import { Color } from '../../../components/button/ButtonGroup';
 import { useConfig, useHotkeys } from '../../../hooks';
 

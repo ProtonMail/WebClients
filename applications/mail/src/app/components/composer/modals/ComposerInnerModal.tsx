@@ -2,7 +2,8 @@ import { ReactNode, useRef } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, PrimaryButton, useFocusTrap, useHotkeys } from '@proton/components';
+import { Button } from '@proton/atoms';
+import { PrimaryButton, useFocusTrap, useHotkeys } from '@proton/components';
 
 import InnerModalContent from './InnerModal/InnerModalContent';
 import InnerModalFooter from './InnerModal/InnerModalFooter';

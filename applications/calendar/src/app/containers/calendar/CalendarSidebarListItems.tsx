@@ -2,9 +2,9 @@ import { MouseEvent, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import {
     AlertModal,
-    Button,
     Checkbox,
     DropdownMenuLink,
     FeatureCode,

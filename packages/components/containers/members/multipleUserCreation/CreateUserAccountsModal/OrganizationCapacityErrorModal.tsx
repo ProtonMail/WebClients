@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { AlertModal, Button, ModalProps, SettingsLink } from '@proton/components';
+import { Button } from '@proton/atoms';
+import { AlertModal, ModalProps, SettingsLink } from '@proton/components';
 
 import { ORGANIZATION_CAPACITY_ERROR_TYPE, OrganizationCapacityError } from './validateOrganizationCapacity';
 

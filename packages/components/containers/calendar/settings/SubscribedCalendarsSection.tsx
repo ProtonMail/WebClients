@@ -2,6 +2,7 @@ import { ComponentPropsWithoutRef, useMemo, useRef } from 'react';
 
 import { c, msgid } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { removeCalendar } from '@proton/shared/lib/api/calendars';
 import { MAX_SUBSCRIBED_CALENDARS } from '@proton/shared/lib/calendar/constants';
 import { getActiveAddresses } from '@proton/shared/lib/helpers/address';
@@ -10,7 +11,7 @@ import { Address, UserModel } from '@proton/shared/lib/interfaces';
 import { ModalWithProps } from '@proton/shared/lib/interfaces/Modal';
 import { SubscribedCalendar, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
-import { AlertModal, Button, Href, useModalState } from '../../../components';
+import { AlertModal, Href, useModalState } from '../../../components';
 import { useApi, useEventManager, useNotifications } from '../../../hooks';
 import { useModalsMap } from '../../../hooks/useModalsMap';
 import { SettingsParagraph } from '../../account';

@@ -1,4 +1,5 @@
 export * from './Avatar';
+export * from './Button';
 export * from './ButtonLike';
 export * from './Card';
 export * from './CircleLoader';
@@ -6,5 +7,5 @@ export * from './Donut';
 export * from './NotificationDot';
 export * from './Slider';
 export * from './Stepper';
-export * from './Vr';
 export * from './VerticalSteps';
+export * from './Vr';

@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { Button } from '../../components';
+import { Button } from '@proton/atoms';
+
 import { classnames } from '../../helpers';
 
 import './ThemeCard.scss';

@@ -1,9 +1,9 @@
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms';
 import { formatImage } from '@proton/shared/lib/helpers/image';
 import { VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
 
-import { Button } from '../../../../components';
 import { ContactImageProps } from '../../modals/ContactImageModal';
 
 interface Props {

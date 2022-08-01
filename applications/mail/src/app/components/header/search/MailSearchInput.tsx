@@ -2,7 +2,8 @@ import { Ref, forwardRef } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, Icon, InputTwo } from '@proton/components';
+import { Button } from '@proton/atoms';
+import { Icon, InputTwo } from '@proton/components';
 
 import './SearchInput.scss';
 

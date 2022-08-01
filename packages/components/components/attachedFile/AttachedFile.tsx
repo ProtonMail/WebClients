@@ -1,7 +1,7 @@
+import { Button } from '@proton/atoms/Button';
 import { splitExtension } from '@proton/shared/lib/helpers/file';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 
-import Button from '../button/Button';
 import Icon, { IconName } from '../icon/Icon';
 
 interface Props {

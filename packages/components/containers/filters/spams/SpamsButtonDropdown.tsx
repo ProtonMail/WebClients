@@ -1,7 +1,10 @@
 import { useRef, useState } from 'react';
-import { Button, Dropdown, DropdownButton, DropdownMenu, DropdownMenuButton } from '@proton/components/components';
+
+import { Button } from '@proton/atoms';
+import { Dropdown, DropdownButton, DropdownMenu, DropdownMenuButton } from '@proton/components/components';
 import { DropdownButtonProps } from '@proton/components/components/dropdown/DropdownButton';
 import useUid from '@proton/components/hooks/useUid';
+
 import { SpamListAction } from './Spams.interfaces';
 
 interface Props {
