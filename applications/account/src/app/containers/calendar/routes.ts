@@ -3,6 +3,7 @@ import { SectionConfig } from '@proton/components';
 import {APPS, CALENDAR_APP_NAME} from '@proton/shared/lib/constants';
 import {getSlugFromApp} from "@proton/shared/lib/apps/slugHelper";
 import {validateBase64string} from "@proton/shared/lib/helpers/encoding";
+import { CALENDAR_SETTINGS_SUBSECTION_ID } from '@proton/shared/lib/calendar/constants';
 
 /**
  * Calendar config is coupled to CalendarSidebar.
@@ -43,16 +44,16 @@ export const getCalendarAppRoutes = (showSubscribedCalendars: boolean, showInvit
                 subsections: [
                     {
                         text: c('Title').t`My calendars`,
-                        id: 'my-calendars',
+                        id: CALENDAR_SETTINGS_SUBSECTION_ID.PERSONAL_CALENDARS,
                     },
                     {
                         text: c('Title').t`Subscribed calendars`,
-                        id: 'other-calendars',
+                        id: CALENDAR_SETTINGS_SUBSECTION_ID.SUBSCRIBED_CALENDARS,
                         available: showSubscribedCalendars,
                     },
                     {
                         text: c('Title').t`Share outside Proton`,
-                        id: 'share',
+                        id: CALENDAR_SETTINGS_SUBSECTION_ID.SHARE,
                     },
                 ],
             },
@@ -64,11 +65,11 @@ export const getCalendarAppRoutes = (showSubscribedCalendars: boolean, showInvit
                 subsections: [
                     {
                         text: c('Title').t`Import`,
-                        id: 'import',
+                        id: CALENDAR_SETTINGS_SUBSECTION_ID.IMPORT,
                     },
                     {
                         text: c('Title').t`Export`,
-                        id: 'export',
+                        id: CALENDAR_SETTINGS_SUBSECTION_ID.EXPORT,
                     },
                 ],
             },
