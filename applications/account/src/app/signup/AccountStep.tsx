@@ -67,7 +67,7 @@ interface Props {
     defaultUsername?: string;
     defaultEmail?: string;
     defaultSignupType?: SignupType;
-    defaultRecovery?: string;
+    defaultRecoveryEmail?: string;
     hasExternalSignup?: boolean;
     domains: string[];
     hasChallenge?: boolean;
@@ -93,7 +93,7 @@ const AccountStep = ({
     defaultUsername,
     defaultEmail,
     defaultSignupType: maybeDefaultSignupType,
-    defaultRecovery,
+    defaultRecoveryEmail,
     onSubmit,
     hasExternalSignup,
     hasChallenge = true,
@@ -110,7 +110,7 @@ const AccountStep = ({
     const [email, setEmail] = useState(defaultEmail || '');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
-    const [recoveryEmail, setRecoveryEmail] = useState(defaultRecovery || '');
+    const [recoveryEmail, setRecoveryEmail] = useState(defaultRecoveryEmail || '');
     const [maybeDomain, setDomain] = useState(domains?.[0] || ''); // This is set while domains are loading
     const defaultSignupType = maybeDefaultSignupType || SignupType.Username;
     const [signupType, setSignupType] = useState<SignupType>(defaultSignupType || defaultSignupType);
