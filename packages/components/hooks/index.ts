@@ -15,6 +15,7 @@ export { default as useCache } from './useCache';
 export { default as useCachedModelResult } from './useCachedModelResult';
 export { default as useCalendars, useGetCalendars } from './useCalendars';
 export { default as useCalendarSubscribeFeature } from './useCalendarSubscribeFeature';
+export { default as useSubscribedCalendars } from './useSubscribedCalendars';
 export * from './useCalendarUserSettings';
 export { default as useCanReactivateKeys } from './useCanReactivateKeys';
 export { useLabels, useFolders, useContactGroups } from './useCategories';

@@ -37,7 +37,7 @@ import useLoading from './useLoading';
 import useEventManager from './useEventManager';
 import { useCalendarModelEventManager } from '../containers/eventManager/calendar/ModelEventManagerProvider';
 
-const useSubscribedCalendars = (calendars: VisualCalendar[], addresses: Address[]) => {
+const useSubscribedCalendars = (calendars: VisualCalendar[], addresses: Address[], loadingCalendars = false) => {
     const [subscribedCalendars, setSubscribedCalendars] = useState<SubscribedCalendar[]>([]);
     const [loading, withLoading] = useLoading(true);
     const api = useApi();
@@ -154,6 +154,10 @@ const useSubscribedCalendars = (calendars: VisualCalendar[], addresses: Address[
     };
 
     useEffect(() => {
+        if (loadingCalendars) {
+            return;
+        }
+
         return standardSubscribe(
             ({
                 Calendars: CalendarEvents = [],
@@ -191,9 +195,13 @@ const useSubscribedCalendars = (calendars: VisualCalendar[], addresses: Address[
                 });
             }
         );
-    }, []);
+    }, [loadingCalendars]);
 
     useEffect(() => {
+        if (loadingCalendars) {
+            return;
+        }
+
         return calendarSubscribe(
             calendarIDs,
             ({
@@ -209,7 +217,7 @@ const useSubscribedCalendars = (calendars: VisualCalendar[], addresses: Address[
                 });
             }
         );
-    }, [calendarIDs]);
+    }, [calendarIDs, loadingCalendars]);
 
     useEffect(() => {
         const run = async () => {
@@ -229,8 +237,12 @@ const useSubscribedCalendars = (calendars: VisualCalendar[], addresses: Address[
             void setSubscribedCalendars(newSubscribedCalendars);
         };
 
+        if (loadingCalendars) {
+            return;
+        }
+
         void withLoading(run());
-    }, []);
+    }, [loadingCalendars]);
 
     return { subscribedCalendars, loading };
 };

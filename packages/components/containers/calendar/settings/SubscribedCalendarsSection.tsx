@@ -5,14 +5,13 @@ import { removeCalendar } from '@proton/shared/lib/api/calendars';
 import { getActiveAddresses } from '@proton/shared/lib/helpers/address';
 import { MAX_SUBSCRIBED_CALENDARS } from '@proton/shared/lib/calendar/constants';
 import { Address, UserModel } from '@proton/shared/lib/interfaces';
-import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import { SubscribedCalendar, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import { ModalWithProps } from '@proton/shared/lib/interfaces/Modal';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { AlertModal, Button, Href, useModalState } from '../../../components';
 import { useApi, useEventManager, useNotifications } from '../../../hooks';
 import { CalendarModal } from '../calendarModal/CalendarModal';
-import useSubscribedCalendars from '../../../hooks/useSubscribedCalendars';
 import SubscribeCalendarModal from '../subscribeCalendarModal/SubscribeCalendarModal';
 import CalendarsSection from './CalendarsSection';
 import { SettingsParagraph } from '../../account';
@@ -28,7 +27,7 @@ type ModalsMap = {
 
 export interface SubscribedCalendarsSectionProps extends ComponentPropsWithoutRef<'div'> {
     addresses: Address[];
-    calendars: VisualCalendar[];
+    calendars: SubscribedCalendar[];
     user: UserModel;
     unavailable?: boolean;
 }
@@ -44,7 +43,6 @@ const SubscribedCalendarsSection = ({
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
     const [loadingMap, setLoadingMap] = useState({});
-    const { subscribedCalendars, loading } = useSubscribedCalendars(calendars, addresses);
 
     const activeAddresses = useMemo(() => {
         return getActiveAddresses(addresses);
@@ -125,7 +123,7 @@ const SubscribedCalendarsSection = ({
             {calendarModal.props?.editCalendar && (
                 <CalendarModal
                     {...calendarModalProps}
-                    isOpen={isCalendarModalOpen}
+                    open={isCalendarModalOpen}
                     calendar={calendarModal.props.editCalendar}
                     onExit={() => {
                         onExitCalendarModal?.();
@@ -134,9 +132,8 @@ const SubscribedCalendarsSection = ({
                 />
             )}
             <CalendarsSection
-                calendars={loading ? calendars : subscribedCalendars}
+                calendars={calendars}
                 user={user}
-                loading={loading}
                 loadingMap={loadingMap}
                 canAdd={canAddCalendar}
                 isFeatureUnavailable={unavailable}

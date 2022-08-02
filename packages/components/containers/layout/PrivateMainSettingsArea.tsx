@@ -1,4 +1,5 @@
-import { Children, isValidElement, ReactNode, useEffect, useRef } from 'react';
+import { Children, cloneElement, isValidElement, ReactNode, useEffect, useRef } from 'react';
+import { useLocation } from 'react-router';
 import noop from '@proton/utils/noop';
 
 import ErrorBoundary from '../app/ErrorBoundary';
@@ -6,22 +7,33 @@ import { SettingsPageTitle, SettingsParagraph } from '../account';
 import useAppTitle from '../../hooks/useAppTitle';
 import createScrollIntoView from '../../helpers/createScrollIntoView';
 import { classnames } from '../../helpers';
-import { SettingsPropsShared } from './interface';
+import { SettingsAreaConfig } from './interface';
 import useActiveSection from './useActiveSection';
 import PrivateMainArea from './PrivateMainArea';
 import SubSettingsSection from './SubSettingsSection';
 import { getIsSubsectionAvailable } from './helper';
 
-interface Props extends SettingsPropsShared {
-    children: ReactNode;
+interface PrivateMainSettingsAreaBaseProps {
+    breadcrumbs?: ReactNode;
+    title: string;
+    noTitle?: boolean;
+    description?: string;
     setActiveSection?: (section: string) => void;
+    children?: ReactNode;
 }
 
-const PrivateMainSettingsArea = ({ setActiveSection, location, children, config }: Props) => {
+export const PrivateMainSettingsAreaBase = ({
+    breadcrumbs,
+    title,
+    noTitle,
+    description,
+    setActiveSection,
+    children,
+}: PrivateMainSettingsAreaBaseProps) => {
+    const location = useLocation();
+
     const mainAreaRef = useRef<HTMLDivElement>(null);
     const useIntersectionSection = useRef(false);
-
-    const { text: title, description, subsections } = config;
 
     useAppTitle(title);
 
@@ -93,24 +105,58 @@ const PrivateMainSettingsArea = ({ setActiveSection, location, children, config 
         useIntersectionSection.current && setActiveSection ? setActiveSection : noop
     );
 
+    const wrappedSections = Children.toArray(children).map((child) => {
+        if (!isValidElement<{ observer: IntersectionObserver; className: string }>(child)) {
+            return null;
+        }
+
+        return cloneElement(child, {
+            observer: sectionObserver,
+        });
+    });
+
+    return (
+        <PrivateMainArea ref={mainAreaRef}>
+            <div className="container-section-sticky">
+                {breadcrumbs && <div className="mt1-5">{breadcrumbs}</div>}
+                {!noTitle && (
+                    <SettingsPageTitle className={classnames(['mt1-5', !description && 'mb1-5'])}>
+                        {title}
+                    </SettingsPageTitle>
+                )}
+                {description && <SettingsParagraph className="mb1-5">{description}</SettingsParagraph>}
+                <ErrorBoundary>{wrappedSections}</ErrorBoundary>
+            </div>
+        </PrivateMainArea>
+    );
+};
+
+interface PrivateMainSettingsAreaProps {
+    children: ReactNode;
+    setActiveSection?: (section: string) => void;
+    config: SettingsAreaConfig;
+}
+
+const PrivateMainSettingsArea = ({ setActiveSection, children, config }: PrivateMainSettingsAreaProps) => {
+    const { text, title, description, subsections } = config;
+
     const wrappedSections = Children.toArray(children).map((child, i) => {
         if (!isValidElement<{ observer: IntersectionObserver; className: string }>(child)) {
             return null;
         }
-        const config = subsections?.[i];
-        if (!config) {
+        const subsectionConfig = subsections?.[i];
+        if (!subsectionConfig) {
             throw new Error('Missing subsection');
         }
-        //
-        if (!getIsSubsectionAvailable(config)) {
+        if (!getIsSubsectionAvailable(subsectionConfig)) {
             return null;
         }
+
         return (
             <SubSettingsSection
-                key={config.id}
-                id={config.id}
-                title={config.text}
-                observer={sectionObserver}
+                key={subsectionConfig.id}
+                id={subsectionConfig.id}
+                title={subsectionConfig.text}
                 className="container-section-sticky-section"
             >
                 {child}
@@ -119,15 +165,13 @@ const PrivateMainSettingsArea = ({ setActiveSection, location, children, config 
     });
 
     return (
-        <PrivateMainArea ref={mainAreaRef}>
-            <div className="container-section-sticky">
-                <SettingsPageTitle className={classnames(['mt1-5', !description && 'mb1-5'])}>
-                    {title}
-                </SettingsPageTitle>
-                {description && <SettingsParagraph className="mb1-5">{description}</SettingsParagraph>}
-                <ErrorBoundary>{wrappedSections}</ErrorBoundary>
-            </div>
-        </PrivateMainArea>
+        <PrivateMainSettingsAreaBase
+            title={title || text}
+            description={description}
+            setActiveSection={setActiveSection}
+        >
+            {wrappedSections}
+        </PrivateMainSettingsAreaBase>
     );
 };
 

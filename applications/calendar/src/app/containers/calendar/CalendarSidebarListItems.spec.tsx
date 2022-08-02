@@ -1,20 +1,21 @@
 import React from 'react';
 import { Router } from 'react-router-dom';
-import { createMemoryHistory } from 'history';
-import { fireEvent, render, screen } from '@testing-library/react';
 
-import createCache from '@proton/shared/lib/helpers/cache';
+import { fireEvent, render, screen } from '@testing-library/react';
+import { createMemoryHistory } from 'history';
+
 import { CacheProvider } from '@proton/components/containers/cache';
+import useUser from '@proton/components/hooks/useUser';
+import { getIsCalendarDisabled } from '@proton/shared/lib/calendar/calendar';
 import { CALENDAR_FLAGS } from '@proton/shared/lib/calendar/constants';
-import { CALENDAR_TYPE, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import {
     getCalendarHasSubscriptionParameters,
     getCalendarIsNotSyncedInfo,
 } from '@proton/shared/lib/calendar/subscribe/helpers';
-import { getIsCalendarDisabled } from '@proton/shared/lib/calendar/calendar';
-
-import useUser from '@proton/components/hooks/useUser';
+import createCache from '@proton/shared/lib/helpers/cache';
 import { UserModel } from '@proton/shared/lib/interfaces';
+import { CALENDAR_TYPE, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+
 import CalendarSidebarListItems, { CalendarSidebarListItemsProps } from './CalendarSidebarListItems';
 
 jest.mock('@proton/components/containers/calendar/calendarModal/CalendarModal', () => ({
@@ -163,13 +164,18 @@ describe('CalendarSidebarListItems', () => {
 
         mockedGetIsCalendarDisabled.mockImplementation(() => false);
         mockedGetCalendarHasSubscriptionParameters.mockImplementation(() => true);
-        mockedGetCalendarIsNotSyncedInfo.mockImplementation(() => ({ label: 'label', text: 'text' }));
+        mockedGetCalendarIsNotSyncedInfo.mockImplementation(() => ({
+            label: 'label',
+            text: 'text',
+            longText: '',
+            isSyncing: false,
+        }));
         rerender(renderComponent());
 
         expect(getHasWeakColour()).toBe(true);
         expect(screen.getAllByText(/\(label\)/)[0]).toBeInTheDocument();
 
-        mockedGetCalendarIsNotSyncedInfo.mockImplementation(() => null);
+        mockedGetCalendarIsNotSyncedInfo.mockImplementation(() => undefined);
         rerender(renderComponent());
 
         expect(getHasWeakColour()).toBe(false);

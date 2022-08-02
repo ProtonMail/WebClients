@@ -14,12 +14,14 @@ const CLASSNAMES = {
     info: 'badge-label-info',
 } as const;
 
+export type BadgeType = keyof typeof CLASSNAMES;
+
 export interface Props {
     children: ReactNode;
     className?: string;
     tooltip?: string;
     url?: string;
-    type?: keyof typeof CLASSNAMES;
+    type?: BadgeType;
 }
 
 const Badge = ({ children, type = 'default', url, tooltip, className = 'mr1' }: Props) => {

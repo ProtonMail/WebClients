@@ -43,15 +43,27 @@ $padding-inline-start-link: rem(20) !default;
 		text-decoration: none;
 	}
 
-	&:focus::after {
+	&.active::after {
 		border-inline-start: 4px solid var(--navigation-current-item-marker-color);
 	}
+
+	&--collapsible {
+		padding-block: rem(5.5);
+	}
+}
+
+.navigation-link-child {
+	padding-inline-start: calc(#{rem(10)} + #{$padding-inline-start-link});
 }
 
 [aria-current='page'].navigation-link {
 	background-color: var(--navigation-current-item-background-color);
 	color: var(--navigation-current-item-text-color);
 	font-weight: var(--font-weight-bold);
+
+	.navigation-link {
+		color: var(--text-norm);
+	}
 
 	&:hover .navigation-icon:not(.navigation-icon--expand),
 	.navigation-icon {

@@ -1,6 +1,5 @@
 import { SidebarConfig, SidebarList, SidebarListItem } from '@proton/components';
 import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
-import * as React from 'react';
 import SettingsListItem from '../components/SettingsListItem';
 
 interface Props extends SidebarConfig {

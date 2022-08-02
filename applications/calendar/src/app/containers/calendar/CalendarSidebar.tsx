@@ -246,7 +246,7 @@ const CalendarSidebar = ({
             version={<CalendarSidebarVersion />}
         >
             <CalendarModal
-                isOpen={open}
+                open={open}
                 onClose={onClose}
                 activeCalendars={personalCalendars.filter(getIsCalendarActive)}
                 defaultCalendarID={calendarUserSettings.DefaultCalendarID}

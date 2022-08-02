@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { Route, Switch, useRouteMatch, useLocation } from 'react-router-dom';
+import { Route, Switch, useRouteMatch } from 'react-router-dom';
 import {
     OpenVPNConfigurationSection,
     OpenVPNCredentialsSection,
@@ -21,7 +21,6 @@ const VpnSettingsRouter = ({
     redirect?: ReactNode;
 }) => {
     const { path } = useRouteMatch();
-    const location = useLocation();
 
     const {
         routes: { general, downloads, openvpn, wireguard },
@@ -30,24 +29,24 @@ const VpnSettingsRouter = ({
     return (
         <Switch>
             <Route path={getSectionPath(path, general)}>
-                <PrivateMainSettingsArea location={location} config={general}>
+                <PrivateMainSettingsArea config={general}>
                     <ThemesSection />
                 </PrivateMainSettingsArea>
             </Route>
             <Route path={getSectionPath(path, downloads)}>
-                <PrivateMainSettingsArea location={location} config={downloads}>
+                <PrivateMainSettingsArea config={downloads}>
                     <VpnUpgradeSection />
                     <ProtonVPNClientsSection />
                 </PrivateMainSettingsArea>
             </Route>
             <Route path={getSectionPath(path, openvpn)}>
-                <PrivateMainSettingsArea location={location} config={openvpn}>
+                <PrivateMainSettingsArea config={openvpn}>
                     <OpenVPNCredentialsSection app="account" />
                     <OpenVPNConfigurationSection />
                 </PrivateMainSettingsArea>
             </Route>
             <Route path={getSectionPath(path, wireguard)}>
-                <PrivateMainSettingsArea location={location} config={wireguard}>
+                <PrivateMainSettingsArea config={wireguard}>
                     <WireGuardConfigurationSection />
                 </PrivateMainSettingsArea>
             </Route>

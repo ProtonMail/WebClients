@@ -1,5 +1,5 @@
 import { ReactNode, useEffect } from 'react';
-import { Route, Switch, useLocation } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { APP_NAMES } from '@proton/shared/lib/constants';
@@ -64,8 +64,6 @@ const AccountSettingsRouter = ({
     accountAppRoutes: ReturnType<typeof getAccountAppRoutes>;
     app: APP_NAMES;
 }) => {
-    const location = useLocation();
-
     const {
         routes: { dashboard, upgrade, easySwitch, referral, recovery, security, password, language },
     } = accountAppRoutes;
@@ -76,7 +74,7 @@ const AccountSettingsRouter = ({
                 <Route path={getSectionPath(path, dashboard)}>
                     <SubscriptionModalProvider app={app}>
                         <AutomaticSubscriptionModal />
-                        <PrivateMainSettingsArea location={location} config={dashboard}>
+                        <PrivateMainSettingsArea config={dashboard}>
                             <YourPlanSection app={app} />
                             <BillingSection />
                             <PaymentMethodsSection />
@@ -107,7 +105,7 @@ const AccountSettingsRouter = ({
             {getIsSectionAvailable(recovery) && (
                 <Route path={getSectionPath(path, recovery)}>
                     <RecoverySettingsPageVisited />
-                    <PrivateMainSettingsArea location={location} config={recovery}>
+                    <PrivateMainSettingsArea config={recovery}>
                         <OverviewSection ids={recoveryIds} />
                         <AccountRecoverySection />
                         <DataRecoverySection />
@@ -115,19 +113,19 @@ const AccountSettingsRouter = ({
                 </Route>
             )}
             <Route path={getSectionPath(path, password)}>
-                <PrivateMainSettingsArea location={location} config={password}>
+                <PrivateMainSettingsArea config={password}>
                     <UsernameSection />
                     <PasswordsSection />
                     <DeleteSection />
                 </PrivateMainSettingsArea>
             </Route>
             <Route path={getSectionPath(path, language)}>
-                <PrivateMainSettingsArea location={location} config={language}>
+                <PrivateMainSettingsArea config={language}>
                     <LanguageAndTimeSection />
                 </PrivateMainSettingsArea>
             </Route>
             <Route path={getSectionPath(path, security)}>
-                <PrivateMainSettingsArea location={location} config={security}>
+                <PrivateMainSettingsArea config={security}>
                     <SessionsSection />
                     <LogsSection />
                     <PrivacySection />
@@ -136,7 +134,7 @@ const AccountSettingsRouter = ({
             {getIsSectionAvailable(referral) && (
                 <Route path={getSectionPath(path, referral)}>
                     <ReferralInvitesContextProvider>
-                        <PrivateMainSettingsArea location={location} config={referral}>
+                        <PrivateMainSettingsArea config={referral}>
                             <InviteSection />
                             <RewardSection />
                         </PrivateMainSettingsArea>
@@ -144,7 +142,7 @@ const AccountSettingsRouter = ({
                 </Route>
             )}
             <Route path={getSectionPath(path, easySwitch)}>
-                <PrivateMainSettingsArea location={location} config={easySwitch}>
+                <PrivateMainSettingsArea config={easySwitch}>
                     <AccountEasySwitchSection />
                     <ImportListSection />
                 </PrivateMainSettingsArea>
