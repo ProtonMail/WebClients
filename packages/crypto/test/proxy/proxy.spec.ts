@@ -1,4 +1,4 @@
-import { expect, use as chaiUse } from 'chai';
+import { use as chaiUse, expect } from 'chai';
 import chaiAsPromised from 'chai-as-promised';
 
 import { CryptoApiInterface, CryptoProxy, updateServerTime } from '../../lib';
@@ -38,7 +38,8 @@ describe('CryptoProxy', () => {
         const zero = new Date(0);
 
         updateServerTime(zero);
-        await CryptoProxy.generateKey({ userIDs: [] }); // we don't care about returned value
+        // we don't care about returned value
+        await CryptoProxy.generateKey({ userIDs: [], date: undefined }); // explicitly passing undefined should not overwrite the server time
         updateServerTime(now); // restore current time
         // the proxy is expected to pass the server time at each function call
         expect(passedDate).to.deep.equal(zero);
