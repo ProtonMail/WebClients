@@ -28,10 +28,7 @@ const MainContainer = () => {
     const { handleClickSideApp } = useSideApp();
     const breakpoints = useActiveBreakpoint();
     const mailContentRef = useRef<HTMLDivElement>(null);
-    const [
-        { feature: featureSw, loading: loadingSw },
-        { feature: calendarViewInMailFeature, loading: loadingCalendarViewInMailFeature },
-    ] = useFeatures([
+    const [{ feature: featureSw, loading: loadingSw }, { feature: calendarViewInMailFeature }] = useFeatures([
         FeatureCode.MailServiceWorker,
         FeatureCode.CalendarViewInMail,
         FeatureCode.EarlyAccessScope,
@@ -83,10 +80,6 @@ const MainContainer = () => {
             </button>
         </Tooltip>
     );
-
-    if (loadingCalendarViewInMailFeature) {
-        return null;
-    }
 
     return (
         <ReduxProvider store={store}>
