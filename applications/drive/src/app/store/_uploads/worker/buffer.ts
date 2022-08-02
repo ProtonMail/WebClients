@@ -1,14 +1,14 @@
-import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
 import { wait } from '@proton/shared/lib/helpers/promise';
+import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
 
-import { EncryptedBlock, EncryptedThumbnailBlock, Link, BlockToken } from '../interface';
 import {
     MAX_ENCRYPTED_BLOCKS,
     MAX_UPLOADING_BLOCKS,
     MAX_UPLOAD_JOBS,
-    WAIT_TIME,
     TOKEN_EXPIRATION_TIME,
+    WAIT_TIME,
 } from '../constants';
+import { BlockToken, EncryptedBlock, EncryptedThumbnailBlock, Link } from '../interface';
 import { BlockHash, UploadingBlock, UploadingBlockControl } from './interface';
 import { waitForCondition } from './pauser';
 
@@ -106,17 +106,26 @@ export default class UploadWorkerBuffer {
     }
 
     async *generateUploadingBlocks(): AsyncGenerator<UploadingBlockControl> {
-        while (!this.encryptionFinished || this.encryptedBlocks.size > 0 || this.uploadingBlocks.length > 0) {
+        let blocksInProgress = 0;
+        while (
+            !this.encryptionFinished ||
+            this.encryptedBlocks.size > 0 ||
+            this.uploadingBlocks.length > 0 ||
+            blocksInProgress > 0
+        ) {
             await waitForCondition(() => this.encryptionFinished || this.uploadingBlocks.length > 0);
             const uploadingBlock = this.uploadingBlocks.shift();
             if (uploadingBlock) {
                 const { block, uploadLink, uploadToken, isTokenExpired } = uploadingBlock;
+                blocksInProgress++;
                 yield {
                     ...block,
                     uploadLink,
                     uploadToken,
                     isTokenExpired,
+                    // eslint-disable-next-line @typescript-eslint/no-loop-func
                     finish: () => {
+                        blocksInProgress--;
                         this.blockHashes.push({
                             index: block.index,
                             hash: block.hash,
@@ -126,7 +135,9 @@ export default class UploadWorkerBuffer {
                             token: uploadToken,
                         });
                     },
+                    // eslint-disable-next-line @typescript-eslint/no-loop-func
                     onTokenExpiration: () => {
+                        blocksInProgress--;
                         this.encryptedBlocks.set(block.index, block);
                     },
                 };
