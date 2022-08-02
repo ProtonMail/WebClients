@@ -4,11 +4,6 @@
     "postUpdateOptions": ["yarnDedupeHighest"],
     "rangeStrategy": "bump",
     "rebaseWhen": "conflicted",
-    "packageRules": [
-        {
-            "matchPackagePatterns": ["^roosterjs"],
-            "groupName": "roosterjs packages"
-        }
-    ],
+    "ignoreDeps": ["roosterjs", "emoji-mart", "@emoji-mart/data"],
     "ignorePaths": ["**/node_modules/**"]
 }
