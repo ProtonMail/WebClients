@@ -1,13 +1,14 @@
 import React from 'react';
 import { Router } from 'react-router-dom';
-import { createMemoryHistory } from 'history';
-import { render, screen } from '@testing-library/react';
 
-import createCache from '@proton/shared/lib/helpers/cache';
+import { render, screen } from '@testing-library/react';
+import { createMemoryHistory } from 'history';
 
 import { MAX_SUBSCRIBED_CALENDARS } from '@proton/shared/lib/calendar/constants';
-import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import createCache from '@proton/shared/lib/helpers/cache';
 import { Address, UserModel } from '@proton/shared/lib/interfaces';
+import { SubscribedCalendar } from '@proton/shared/lib/interfaces/calendar';
+
 import { CacheProvider } from '../../cache';
 import ModalsProvider from '../../modals/Provider';
 import SubscribedCalendarsSection, { SubscribedCalendarsSectionProps } from './SubscribedCalendarsSection';
@@ -53,7 +54,7 @@ describe('SubscribedCalendarsSection', () => {
                 ID: `${index}`,
                 Name: `calendar${index}`,
                 color: '#f00',
-            })) as unknown as VisualCalendar[];
+            })) as unknown as SubscribedCalendar[];
 
         const { rerender } = render(
             renderComponent({

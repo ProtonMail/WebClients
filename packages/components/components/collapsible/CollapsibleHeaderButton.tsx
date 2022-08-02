@@ -1,9 +1,10 @@
 import { useContext } from 'react';
+
 import { c } from 'ttag';
 
-import CollapsibleContext from './CollapsibleContext';
 import { Button, ButtonProps } from '../button';
 import { Tooltip } from '../tooltip';
+import CollapsibleContext from './CollapsibleContext';
 
 export interface CollapsibleHeaderButtonProps extends ButtonProps {
     /**
@@ -29,6 +30,7 @@ const CollapsibleHeaderButton = ({
 
     const handleButtonClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
         e.stopPropagation();
+        e.preventDefault();
         toggle();
         onClick?.(e);
     };

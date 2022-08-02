@@ -1,9 +1,10 @@
 import { c } from 'ttag';
+
 import { EVENT_ACTIONS, HOUR } from '../../constants';
 import {
-    Calendar,
     CALENDAR_SUBSCRIPTION_STATUS,
     CALENDAR_TYPE,
+    Calendar,
     SubscribedCalendar,
     VisualCalendar,
 } from '../../interfaces/calendar';
@@ -66,19 +67,35 @@ export const getCalendarHasSubscriptionParameters = (
     return !!(calendar as SubscribedCalendar).SubscriptionParameters;
 };
 
-export const getSyncingInfo = (text: string) => ({
+export const sortCalendars = (calendars: VisualCalendar[]) => {
+    return [...calendars].sort((cal1, cal2) => {
+        // personal calendars go first
+        const bit1 = +getIsPersonalCalendar(cal1);
+        const bit2 = +getIsPersonalCalendar(cal2);
+        if (bit1 ^ bit2) {
+            return bit2 - bit1;
+        }
+        return 0;
+    });
+};
+
+export const getSyncingInfo = (text: string, longText = '') => ({
     label: c('Calendar status').t`Syncing`,
     text,
+    longText,
+    isSyncing: true,
 });
 
-export const getNotSyncedInfo = (text: string) => ({
+export const getNotSyncedInfo = (text: string, longText = '') => ({
     label: c('Calendar status').t`Not synced`,
     text,
+    longText,
+    isSyncing: false,
 });
 
 export const getCalendarStatusInfo = (status: CALENDAR_SUBSCRIPTION_STATUS) => {
     if (status === OK) {
-        return null;
+        return;
     }
 
     if (status === INVALID_ICS) {
@@ -102,7 +119,11 @@ export const getCalendarStatusInfo = (status: CALENDAR_SUBSCRIPTION_STATUS) => {
             INTERNAL_CALENDAR_URL_NOT_FOUND,
         ].includes(status)
     ) {
-        return getNotSyncedInfo(c('Calendar subscription not synced error').t`Calendar link is not accessible`);
+        return getNotSyncedInfo(
+            c('Calendar subscription not synced error').t`Calendar link is not accessible`,
+            c('Calendar subscription not synced error; long version')
+                .t`Calendar link is not accessible from outside the calendar provider's ecosystem.`
+        );
     }
 
     if (
@@ -111,7 +132,9 @@ export const getCalendarStatusInfo = (status: CALENDAR_SUBSCRIPTION_STATUS) => {
         )
     ) {
         return getNotSyncedInfo(
-            c('Calendar subscription not synced error').t`Calendar link is temporarily inaccessible`
+            c('Calendar subscription not synced error').t`Calendar link is temporarily inaccessible`,
+            c('Calendar subscription not synced error; long version')
+                .t`Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.`
         );
     }
 
@@ -126,12 +149,18 @@ export const getCalendarIsNotSyncedInfo = (calendar: SubscribedCalendar) => {
     const { Status, LastUpdateTime } = calendar.SubscriptionParameters;
 
     if (LastUpdateTime === 0) {
-        return getSyncingInfo(c('Calendar subscription not synced error').t`Calendar is syncing`);
+        return getSyncingInfo(
+            c('Calendar subscription not synced error').t`Calendar is syncing`,
+            c('Calendar subscription not synced error')
+                .t`Calendar is syncing: it may take several minutes for all of its events to show up`
+        );
     }
 
     if (Date.now() - LastUpdateTime * 1000 > 12 * HOUR) {
         return getNotSyncedInfo(
-            c('Calendar subscription not synced error').t`More than 12 hours passed since last update`
+            c('Calendar subscription not synced error').t`More than 12 hours passed since last update`,
+            c('Calendar subscription not synced error; long version')
+                .t`More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.`
         );
     }
 
