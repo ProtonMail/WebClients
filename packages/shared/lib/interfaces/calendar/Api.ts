@@ -1,6 +1,6 @@
 import { PaginationParams } from '../../api/interface';
 import { Nullable, RequireSome } from '../utils';
-import { Calendar, CalendarDisplay } from './Calendar';
+import { CALENDAR_TYPE, Calendar, CalendarDisplay } from './Calendar';
 import { Attendee, CalendarEventData } from './Event';
 import { ACCESS_LEVEL } from './Link';
 
@@ -65,6 +65,7 @@ export interface CalendarExportEventsQuery extends PaginationParams {
 export interface GetEventByUIDArguments extends Partial<PaginationParams> {
     UID: string;
     RecurrenceID?: number;
+    CalendarType?: CALENDAR_TYPE;
 }
 
 export interface CalendarCreateEventBlobData {
