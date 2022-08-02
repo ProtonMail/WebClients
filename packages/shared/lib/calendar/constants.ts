@@ -325,3 +325,11 @@ export enum CALENDAR_VALIDATION_MODE {
     DOWNLOAD_ONLY = 0,
     DOWNLOAD_AND_PARSE = 1,
 }
+
+export const CALENDAR_SETTINGS_SUBSECTION_ID = {
+    PERSONAL_CALENDARS: 'my-calendars',
+    SUBSCRIBED_CALENDARS: 'other-calendars',
+    IMPORT: 'import',
+    EXPORT: 'export',
+    SHARE: 'share',
+};
