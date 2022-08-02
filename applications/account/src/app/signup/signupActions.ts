@@ -88,17 +88,30 @@ export const handleSaveRecovery = async ({
     const {
         ignoreExplore,
         setupData,
-        accountData: { password },
+        accountData: { password, signupType },
     } = cache;
 
     const { authResponse } = setupData!;
     const authApi = <T>(config: any) => api<T>(withAuthHeaders(authResponse.UID, authResponse.AccessToken, config));
 
     await Promise.all([
-        recoveryPhone &&
+        !!recoveryPhone &&
             srpAuth({ api: authApi, credentials: { password }, config: updatePhone({ Phone: recoveryPhone }) }),
-        recoveryEmail &&
-            srpAuth({ api: authApi, credentials: { password }, config: updateEmail({ Email: recoveryEmail }) }),
+        // Always send an update to the recovery email address when signing up with an external email address because the API sets it by default, so the client
+        // needs to reset it to an empty string if the user chooses to not save a recovery email address.
+        (!!recoveryEmail || signupType === SignupType.Email) &&
+            srpAuth({
+                api: authApi,
+                credentials: { password },
+                config: updateEmail({ Email: recoveryEmail || '' }),
+            }).catch((e) => {
+                const { code } = getApiError(e);
+                // Ignore the error the API throws when updating the recovery email address to the external email address until it's fixed.
+                if (code === API_CUSTOM_ERROR_CODES.USER_UPDATE_EMAIL_SELF && signupType === SignupType.Email) {
+                    return;
+                }
+                throw e;
+            }),
     ]);
 
     if (ignoreExplore) {

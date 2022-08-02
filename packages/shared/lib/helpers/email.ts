@@ -88,7 +88,7 @@ export const validateEmailAddress = (email: string) => {
     return validateLocalPart(localPart) && validateDomain(domain);
 };
 
-const removePlusAliasLocalPart = (localPart = '') => {
+export const removePlusAliasLocalPart = (localPart = '') => {
     const [cleanLocalPart] = localPart.split('+');
     return cleanLocalPart;
 };
