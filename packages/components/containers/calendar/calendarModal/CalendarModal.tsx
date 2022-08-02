@@ -1,42 +1,50 @@
-import { getIsSubscribedCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
-import { useState, useMemo, ChangeEvent } from 'react';
+import { ChangeEvent, useMemo, useState } from 'react';
+
 import { c } from 'ttag';
 
-import { VisualCalendar, NotificationModel, SubscribedCalendar } from '@proton/shared/lib/interfaces/calendar';
 import { dedupeNotifications, sortNotificationsByAscendingTrigger } from '@proton/shared/lib/calendar/alarms';
 import { MAX_DEFAULT_NOTIFICATIONS, MAX_LENGTHS_API } from '@proton/shared/lib/calendar/constants';
-
+import { getIsSubscribedCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
 import { Nullable } from '@proton/shared/lib/interfaces';
+import { NotificationModel, SubscribedCalendar, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+
+import { FeatureCode } from '../..';
 import {
+    Button,
     ColorPicker,
     Field,
+    Form,
+    InputFieldTwo,
     Loader,
+    ModalTwo,
+    ModalTwoContent,
+    ModalTwoFooter,
+    ModalTwoHeader,
     Option,
     SelectTwo,
     TextArea,
-    Form,
-    TooltipExclusive,
     Toggle,
-    InputFieldTwo,
-    ModalTwo,
-    ModalTwoFooter,
-    ModalTwoHeader,
-    ModalTwoContent,
-    Button,
+    TooltipExclusive,
 } from '../../../components';
-import { getCalendarPayload, getCalendarSettingsPayload, getDefaultModel, validate } from './calendarModalState';
-import { useFeature, useLoading } from '../../../hooks';
-import Notifications from '../notifications/Notifications';
-import useGetCalendarSetup from '../hooks/useGetCalendarSetup';
-import useGetCalendarActions from '../hooks/useGetCalendarActions';
-import { TruncatedText } from '../../../components/truncatedText';
 import { SelectChangeEvent } from '../../../components/selectTwo/select';
+import { TruncatedText } from '../../../components/truncatedText';
+import { useFeature, useLoading } from '../../../hooks';
 import GenericError from '../../error/GenericError';
+import useGetCalendarActions from '../hooks/useGetCalendarActions';
+import useGetCalendarSetup from '../hooks/useGetCalendarSetup';
+import Notifications from '../notifications/Notifications';
+import { getCalendarPayload, getCalendarSettingsPayload, getDefaultModel, validate } from './calendarModalState';
 
 import './CalendarModal.scss';
-import { FeatureCode } from '../..';
 
 const URL_MAX_DISPLAY_LENGTH = 100;
+
+export enum CALENDAR_MODAL_TYPE {
+    COMPLETE,
+    VISUAL,
+}
+
+const { COMPLETE, VISUAL } = CALENDAR_MODAL_TYPE;
 
 export interface CalendarModalProps {
     calendar?: VisualCalendar | SubscribedCalendar;
@@ -45,17 +53,21 @@ export interface CalendarModalProps {
     onClose?: () => void;
     onExit?: () => void;
     onCreateCalendar?: (id: string) => void;
-    isOpen?: boolean;
+    onEditCalendar?: () => void;
+    open?: boolean;
+    type?: CALENDAR_MODAL_TYPE;
 }
 
 export const CalendarModal = ({
     calendar: initialCalendar,
     activeCalendars = [],
     defaultCalendarID = '',
-    isOpen,
+    open,
     onClose,
     onExit,
     onCreateCalendar,
+    onEditCalendar,
+    type = COMPLETE,
 }: CalendarModalProps) => {
     const [loadingAction, withLoadingAction] = useLoading();
 
@@ -81,11 +93,13 @@ export const CalendarModal = ({
 
     const { error: setupError, loading: loadingSetup } = useGetCalendarSetup({ calendar: initialCalendar, setModel });
     const { handleCreateCalendar, handleUpdateCalendar } = useGetCalendarActions({
+        type,
         setCalendar,
         setError,
         defaultCalendarID,
         onClose,
         onCreateCalendar,
+        onEditCalendar,
         activeCalendars,
     });
 
@@ -116,13 +130,26 @@ export const CalendarModal = ({
     };
 
     const hasError = error || setupError;
-    const getTitle = () => {
+
+    const getTitle = (type: CALENDAR_MODAL_TYPE) => {
         if (hasError) {
             return c('Title').t`Error`;
         }
 
+        if (type === VISUAL) {
+            return c('Title').t`Calendar information`;
+        }
+
         return initialCalendar ? c('Title').t`Edit calendar` : c('Title').t`Create calendar`;
     };
+    const getSize = (type: CALENDAR_MODAL_TYPE) => {
+        if (type === VISUAL) {
+            return 'small';
+        }
+
+        return 'large';
+    };
+
     const handleSubmit = () => {
         if (hasError) {
             window.location.reload();
@@ -154,34 +181,181 @@ export const CalendarModal = ({
         );
     };
 
-    const getAddressRow = () => {
-        if (model.calendarID) {
-            return getFakeInputTwo({ content: addressText, label: c('Label').t`Email address` });
+    const calendarNameRow = (
+        <InputFieldTwo
+            id="calendar-name-input"
+            label={c('Label').t`Name`}
+            value={model.name}
+            error={isSubmitted && errors.name}
+            maxLength={MAX_LENGTHS_API.CALENDAR_NAME}
+            disableChange={loadingAction}
+            placeholder={c('Placeholder').t`Add a calendar name`}
+            onChange={({ target }: ChangeEvent<HTMLInputElement>) => setModel({ ...model, name: target.value })}
+            autoFocus
+        />
+    );
+
+    const colorRow = (
+        <InputFieldTwo
+            as={ColorPicker}
+            label={c('Label').t`Color`}
+            id="calendar-color"
+            color={model.color}
+            onChange={(color: string) => setModel({ ...model, color })}
+        />
+    );
+
+    const displayRow = (
+        <div className="flex flex-nowrap flex-align-items-center">
+            {getFakeLabel(c('Label').t`Display`)}
+            <Field className="ml1">
+                <Toggle
+                    id="calendar-display-toggle"
+                    className="p0"
+                    checked={model.display}
+                    onChange={({ target }: ChangeEvent<HTMLInputElement>) =>
+                        setModel({ ...model, display: target.checked })
+                    }
+                />
+            </Field>
+        </div>
+    );
+
+    const descriptionRow = (
+        <InputFieldTwo
+            as={TextArea}
+            label={c('Label').t`Description`}
+            autoGrow
+            id="calendar-description-textarea"
+            value={model.description}
+            placeholder={c('Placeholder').t`Add a calendar description`}
+            onChange={({ target }: ChangeEvent<HTMLTextAreaElement>) =>
+                setModel({ ...model, description: target.value })
+            }
+            maxLength={MAX_LENGTHS_API.CALENDAR_DESCRIPTION}
+            isSubmitted={isSubmitted}
+            error={errors.description}
+        />
+    );
+
+    const addressRow = model.calendarID ? (
+        getFakeInputTwo({ content: addressText, label: c('Label').t`Email address` })
+    ) : (
+        <InputFieldTwo
+            as={SelectTwo}
+            id="calendar-address-select"
+            value={model.addressID}
+            // @ts-ignore
+            onChange={({ value }: SelectChangeEvent<string>) => setModel({ ...model, addressID: value })}
+            label={c('Label').t`Default email address`}
+        >
+            {model.addressOptions.map(({ value, text }) => (
+                <Option key={value} value={value} title={text} />
+            ))}
+        </InputFieldTwo>
+    );
+
+    const defaultEventDurationRow = !isSubscribedCalendar ? (
+        <InputFieldTwo
+            as={SelectTwo}
+            label={c('Label').t`Default event duration`}
+            id="duration-select"
+            data-test-id="create-calendar/event-settings:event-duration"
+            value={model.duration}
+            // @ts-ignore
+            onChange={({ value }: SelectChangeEvent<string>) => setModel({ ...model, duration: +value })}
+        >
+            {[
+                { text: c('Duration').t`30 minutes`, value: 30 },
+                { text: c('Duration').t`60 minutes`, value: 60 },
+                { text: c('Duration').t`90 minutes`, value: 90 },
+                { text: c('Duration').t`120 minutes`, value: 120 },
+            ].map(({ value, text }) => (
+                <Option key={value} value={value} title={text} />
+            ))}
+        </InputFieldTwo>
+    ) : null;
+
+    const defaultNotificationsRow =
+        !isSubscribedCalendar || isSubscribedCalendarReminderFeatureEnabled ? (
+            <>
+                <InputFieldTwo
+                    as={Notifications}
+                    label={c('Label').t`Default notifications`}
+                    data-test-id="create-calendar/event-settings:default-notification"
+                    hasType
+                    notifications={model.partDayNotifications}
+                    canAdd={model.partDayNotifications.length < MAX_DEFAULT_NOTIFICATIONS}
+                    defaultNotification={model.defaultPartDayNotification}
+                    onChange={(notifications: NotificationModel[]) => {
+                        setModel({
+                            ...model,
+                            partDayNotifications: notifications,
+                        });
+                    }}
+                />
+
+                <InputFieldTwo
+                    as={Notifications}
+                    label={c('Label').t`Default full day notifications`}
+                    data-test-id="create-calendar/event-settings:default-full-day-notification"
+                    hasType
+                    notifications={model.fullDayNotifications}
+                    canAdd={model.fullDayNotifications.length < MAX_DEFAULT_NOTIFICATIONS}
+                    defaultNotification={model.defaultFullDayNotification}
+                    onChange={(notifications: NotificationModel[]) => {
+                        setModel({
+                            ...model,
+                            fullDayNotifications: notifications,
+                        });
+                    }}
+                />
+            </>
+        ) : null;
+
+    const subscribeURLRow =
+        subscribeURL &&
+        getFakeInputTwo({
+            content: (
+                <span className="text-break-all">
+                    <TruncatedText maxChars={URL_MAX_DISPLAY_LENGTH}>{subscribeURL}</TruncatedText>
+                </span>
+            ),
+            label: c('Label').t`URL`,
+        });
+
+    const getContentRows = (type: CALENDAR_MODAL_TYPE) => {
+        if (type === VISUAL) {
+            return (
+                <>
+                    {calendarNameRow}
+                    {descriptionRow}
+                    {colorRow}
+                </>
+            );
         }
 
         return (
-            <InputFieldTwo
-                as={SelectTwo}
-                id="calendar-address-select"
-                value={model.addressID}
-                // @ts-ignore
-                onChange={({ value }: SelectChangeEvent<string>) => setModel({ ...model, addressID: value })}
-                label={c('Label').t`Default email address`}
-            >
-                {model.addressOptions.map(({ value, text }) => (
-                    <Option key={value} value={value} title={text} />
-                ))}
-            </InputFieldTwo>
+            <>
+                {calendarNameRow}
+                {colorRow}
+                {addressRow}
+                {displayRow}
+                {descriptionRow}
+                {defaultEventDurationRow}
+                {defaultNotificationsRow}
+                {subscribeURLRow}
+            </>
         );
     };
 
     return (
         <TooltipExclusive>
             <ModalTwo
-                size="large"
+                size={getSize(type)}
                 fullscreenOnMobile
                 className="w100"
-                open={isOpen}
+                open={open}
                 onClose={onClose}
                 as={Form}
                 dense
@@ -196,130 +370,9 @@ export const CalendarModal = ({
                     <Loader />
                 ) : (
                     <>
-                        <ModalTwoHeader title={getTitle()} />
+                        <ModalTwoHeader title={getTitle(type)} />
                         <ModalTwoContent className="calendar-modal-content">
-                            {hasError ? (
-                                <GenericError />
-                            ) : (
-                                <>
-                                    <InputFieldTwo
-                                        id="calendar-name-input"
-                                        label={c('Label').t`Name`}
-                                        value={model.name}
-                                        error={isSubmitted && errors.name}
-                                        maxLength={MAX_LENGTHS_API.CALENDAR_NAME}
-                                        disableChange={loadingAction}
-                                        placeholder={c('Placeholder').t`Add a calendar name`}
-                                        onChange={({ target }: ChangeEvent<HTMLInputElement>) =>
-                                            setModel({ ...model, name: target.value })
-                                        }
-                                        autoFocus
-                                    />
-                                    <InputFieldTwo
-                                        as={ColorPicker}
-                                        label={c('Label').t`Color`}
-                                        id="calendar-color"
-                                        color={model.color}
-                                        onChange={(color: string) => setModel({ ...model, color })}
-                                    />
-                                    {getAddressRow()}
-                                    <div className="flex flex-nowrap flex-align-items-center">
-                                        {getFakeLabel(c('Label').t`Display`)}
-                                        <Field className="ml1">
-                                            <Toggle
-                                                id="calendar-display-toggle"
-                                                className="p0"
-                                                checked={model.display}
-                                                onChange={({ target }: ChangeEvent<HTMLInputElement>) =>
-                                                    setModel({ ...model, display: target.checked })
-                                                }
-                                            />
-                                        </Field>
-                                    </div>
-                                    <InputFieldTwo
-                                        as={TextArea}
-                                        label={c('Label').t`Description`}
-                                        autoGrow
-                                        id="calendar-description-textarea"
-                                        value={model.description}
-                                        placeholder={c('Placeholder').t`Add a calendar description`}
-                                        onChange={({ target }: ChangeEvent<HTMLTextAreaElement>) =>
-                                            setModel({ ...model, description: target.value })
-                                        }
-                                        maxLength={MAX_LENGTHS_API.CALENDAR_DESCRIPTION}
-                                        isSubmitted={isSubmitted}
-                                        error={errors.description}
-                                    />
-                                    {!isSubscribedCalendar && (
-                                        <InputFieldTwo
-                                            as={SelectTwo}
-                                            label={c('Label').t`Default event duration`}
-                                            id="duration-select"
-                                            data-test-id="create-calendar/event-settings:event-duration"
-                                            value={model.duration}
-                                            // @ts-ignore
-                                            onChange={({ value }: SelectChangeEvent<string>) =>
-                                                setModel({ ...model, duration: +value })
-                                            }
-                                        >
-                                            {[
-                                                { text: c('Duration').t`30 minutes`, value: 30 },
-                                                { text: c('Duration').t`60 minutes`, value: 60 },
-                                                { text: c('Duration').t`90 minutes`, value: 90 },
-                                                { text: c('Duration').t`120 minutes`, value: 120 },
-                                            ].map(({ value, text }) => (
-                                                <Option key={value} value={value} title={text} />
-                                            ))}
-                                        </InputFieldTwo>
-                                    )}
-                                    {(!isSubscribedCalendar || isSubscribedCalendarReminderFeatureEnabled) && (
-                                        <>
-                                            <InputFieldTwo
-                                                as={Notifications}
-                                                label={c('Label').t`Default notifications`}
-                                                data-test-id="create-calendar/event-settings:default-notification"
-                                                hasType
-                                                notifications={model.partDayNotifications}
-                                                canAdd={model.partDayNotifications.length < MAX_DEFAULT_NOTIFICATIONS}
-                                                defaultNotification={model.defaultPartDayNotification}
-                                                onChange={(notifications: NotificationModel[]) => {
-                                                    setModel({
-                                                        ...model,
-                                                        partDayNotifications: notifications,
-                                                    });
-                                                }}
-                                            />
-
-                                            <InputFieldTwo
-                                                as={Notifications}
-                                                label={c('Label').t`Default full day notifications`}
-                                                data-test-id="create-calendar/event-settings:default-full-day-notification"
-                                                hasType
-                                                notifications={model.fullDayNotifications}
-                                                canAdd={model.fullDayNotifications.length < MAX_DEFAULT_NOTIFICATIONS}
-                                                defaultNotification={model.defaultFullDayNotification}
-                                                onChange={(notifications: NotificationModel[]) => {
-                                                    setModel({
-                                                        ...model,
-                                                        fullDayNotifications: notifications,
-                                                    });
-                                                }}
-                                            />
-                                        </>
-                                    )}
-                                    {subscribeURL &&
-                                        getFakeInputTwo({
-                                            content: (
-                                                <span className="text-break-all">
-                                                    <TruncatedText maxChars={URL_MAX_DISPLAY_LENGTH}>
-                                                        {subscribeURL}
-                                                    </TruncatedText>
-                                                </span>
-                                            ),
-                                            label: c('Label').t`URL`,
-                                        })}
-                                </>
-                            )}
+                            {hasError ? <GenericError /> : getContentRows(type)}
                         </ModalTwoContent>
                         <ModalTwoFooter>
                             {hasError ? (

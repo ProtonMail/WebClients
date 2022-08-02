@@ -1,22 +1,18 @@
-import {
-    getCalendarHasSubscriptionParameters,
-    getCalendarIsNotSyncedInfo,
-    getIsSubscribedCalendar,
-} from '@proton/shared/lib/calendar/subscribe/helpers';
 import { c } from 'ttag';
-import { getIsCalendarDisabled, getIsCalendarProbablyActive } from '@proton/shared/lib/calendar/calendar';
 import { VisualCalendar, SubscribedCalendar } from '@proton/shared/lib/interfaces/calendar';
 import isTruthy from '@proton/utils/isTruthy';
 import { SimpleMap, UserModel } from '@proton/shared/lib/interfaces';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import { getCalendarStatusBadges } from '@proton/shared/lib/calendar/badges';
 
 import React from 'react';
-import { Badge, DropdownActions, Info, Table, TableBody, TableHeader, TableRow, Tooltip } from '../../../components';
+import { DropdownActions, Info, Table, TableBody, TableHeader, TableRow } from '../../../components';
 import useGetCalendarsEmails from '../hooks/useGetCalendarsEmails';
 
 import './CalendarsTable.scss';
 import { classnames } from '../../../helpers';
 import CalendarSelectIcon from '../../../components/calendarSelect/CalendarSelectIcon';
+import CalendarBadge from './CalendarBadge';
 
 interface Props {
     calendars: (VisualCalendar | SubscribedCalendar)[];
@@ -60,13 +56,10 @@ const CalendarsTable = ({
                 {(calendars || []).map((calendar, index) => {
                     const { ID, Name, Color } = calendar;
 
-                    const isDisabled = getIsCalendarDisabled(calendar);
-                    const isActive = getIsCalendarProbablyActive(calendar);
-                    const isDefault = ID === defaultCalendarID;
-                    const isSubscribed = getIsSubscribedCalendar(calendar);
-                    const isNotSyncedInfo = getCalendarHasSubscriptionParameters(calendar)
-                        ? getCalendarIsNotSyncedInfo(calendar)
-                        : undefined;
+                    const { isDisabled, isDefault, isSubscribed, badges } = getCalendarStatusBadges(
+                        calendar,
+                        defaultCalendarID
+                    );
 
                     const list: { text: string; onClick: () => void }[] = [
                         hasNonDelinquentScope && {
@@ -121,16 +114,14 @@ const CalendarsTable = ({
                                     </div>
                                 </div>,
                                 <div data-test-id="calendar-settings-page:calendar-status" key="status">
-                                    {isDefault && <Badge type="primary">{c('Calendar status').t`Default`}</Badge>}
-                                    {isActive && <Badge type="success">{c('Calendar status').t`Active`}</Badge>}
-                                    {isDisabled && <Badge type="light">{c('Calendar status').t`Disabled`}</Badge>}
-                                    {isSubscribed && isNotSyncedInfo && (
-                                        <Tooltip title={isNotSyncedInfo.text}>
-                                            <span>
-                                                <Badge type="warning">{isNotSyncedInfo.label}</Badge>
-                                            </span>
-                                        </Tooltip>
-                                    )}
+                                    {badges.map(({ statusType, badgeType, text, tooltipText }) => (
+                                        <CalendarBadge
+                                            key={statusType}
+                                            badgeType={badgeType}
+                                            text={text}
+                                            tooltipText={tooltipText}
+                                        />
+                                    ))}
                                 </div>,
                                 <DropdownActions
                                     className="button--small"

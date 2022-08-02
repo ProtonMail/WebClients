@@ -1,9 +1,7 @@
-import { lazy, Suspense, useEffect } from 'react';
-import { c } from 'ttag';
+import { Suspense, lazy, useEffect } from 'react';
 import { Redirect, Route, Switch, useLocation } from 'react-router-dom';
-import { DEFAULT_APP, getAppFromPathnameSafe, getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
-import { APPS, REQUIRES_INTERNAL_EMAIL_ADDRESS } from '@proton/shared/lib/constants';
-import { UserType } from '@proton/shared/lib/interfaces';
+
+import { c } from 'ttag';
 
 import {
     AppLink,
@@ -11,9 +9,11 @@ import {
     Logo,
     PrivateAppContainer,
     PrivateHeader,
+    PrivateMainAreaLoading,
     ReferralModalContainer,
     SectionConfig,
     TopBanners,
+    UserDropdown,
     useActiveBreakpoint,
     useAddresses,
     useCalendarSubscribeFeature,
@@ -21,21 +21,21 @@ import {
     useIsDataRecoveryAvailable,
     useNewDomainOptIn,
     useOrganization,
-    UserDropdown,
     useRecoveryNotification,
     useToggle,
     useUser,
     useUserSettings,
 } from '@proton/components';
 import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
+import { DEFAULT_APP, getAppFromPathnameSafe, getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
+import { APPS, REQUIRES_INTERNAL_EMAIL_ADDRESS } from '@proton/shared/lib/constants';
+import { UserType } from '@proton/shared/lib/interfaces';
 
-import PrivateMainAreaLoading from '../components/PrivateMainAreaLoading';
 import AccountSettingsRouter from '../containers/account/AccountSettingsRouter';
-
-import AccountSidebar from './AccountSidebar';
 import OrganizationSettingsRouter from '../containers/organization/OrganizationSettingsRouter';
-import { getRoutes } from './routes';
+import AccountSidebar from './AccountSidebar';
 import SettingsSearch from './SettingsSearch';
+import { getRoutes } from './routes';
 
 const MailSettingsRouter = lazy(() => import('../containers/mail/MailSettingsRouter'));
 const CalendarSettingsRouter = lazy(() => import('../containers/calendar/CalendarSettingsRouter'));
@@ -78,6 +78,7 @@ const MainContainer = () => {
         FeatureCode.CalendarSubscription,
         FeatureCode.SubscribedCalendarReminder,
         FeatureCode.DrivePlan,
+        FeatureCode.EasySwitch,
     ]);
     const [spyTrackerFeature, calendarInviteLocaleFeature, calendarAutoImportInviteFeature, referralProgramFeature] =
         features;
@@ -93,7 +94,7 @@ const MainContainer = () => {
         user,
         addresses,
         organization,
-        isUnsubscribeCalendarEnabled: enabled,
+        isSubscribeCalendarEnabled: enabled,
         isSpyTrackerEnabled: spyTrackerFeature.feature?.Value === true,
         isInviteSettingEnabled: isInviteLocaleFeatureEnabled || isAutoImportInviteFeatureEnabled,
         isReferralProgramEnabled: referralProgramFeature?.feature?.Value && userSettings.Referral?.Eligible,

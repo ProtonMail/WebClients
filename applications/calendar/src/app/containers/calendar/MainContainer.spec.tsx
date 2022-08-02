@@ -1,18 +1,19 @@
 import { Router } from 'react-router-dom';
-import { createMemoryHistory } from 'history';
+
 import { act, fireEvent, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { createMemoryHistory } from 'history';
 
-import createCache from '@proton/shared/lib/helpers/cache';
 import { CacheProvider } from '@proton/components/containers/cache';
+import ModalsProvider from '@proton/components/containers/modals/Provider';
 import useCalendars from '@proton/components/hooks/useCalendars';
 import { CalendarDisplay, CALENDAR_TYPE } from '@proton/shared/lib/interfaces/calendar';
-import { MAX_LENGTHS_API } from '@proton/shared/lib/calendar/constants';
-import ModalsProvider from '@proton/components/containers/modals/Provider';
+import { CALENDAR_FLAGS, MAX_LENGTHS_API } from '@proton/shared/lib/calendar/constants';
+import createCache from '@proton/shared/lib/helpers/cache';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 
-import MainContainer from './MainContainer';
 import { useContactEmailsCache } from './ContactEmailsProvider';
+import MainContainer from './MainContainer';
 import getSaveEventActions from './eventActions/getSaveEventActions';
 
 jest.mock('./eventActions/getSaveEventActions', () => jest.fn());
@@ -253,14 +254,13 @@ const mockedCreatableCalendar = {
     Description: 'description3',
     Display: CalendarDisplay.VISIBLE,
     Color: '#f00',
-
     Type: CALENDAR_TYPE.PERSONAL,
     Members: [
         {
             ID: 'memberId',
             Email: 'test@pm.gg',
             Permissions: 127,
-            Flags: 1,
+            Flags: CALENDAR_FLAGS.ACTIVE,
             AddressID: 'addressId',
             Color: '#f00',
             Display: CalendarDisplay.VISIBLE,
@@ -287,7 +287,7 @@ describe('MainContainer', () => {
                     {
                         ID: 'memberId1',
                         Email: 'test@pm.gg',
-                        Flags: 0,
+                        Flags: CALENDAR_FLAGS.INACTIVE,
                         Permissions: 127,
                         AddressID: 'addressId1',
                         Color: '#f00',
@@ -307,7 +307,7 @@ describe('MainContainer', () => {
                     {
                         ID: 'memberId2',
                         Email: 'test@pm.gg',
-                        Flags: 1,
+                        Flags: CALENDAR_FLAGS.ACTIVE,
                         Permissions: 127,
                         AddressID: 'addressId2',
                         Color: '#f00',

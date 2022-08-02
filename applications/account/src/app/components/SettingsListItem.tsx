@@ -1,7 +1,5 @@
-import * as React from 'react';
-
 import { NotificationDot } from '@proton/atoms';
-
+import { ThemeColor } from '@proton/colors';
 import {
     IconName,
     SidebarListItem,
@@ -9,7 +7,6 @@ import {
     SidebarListItemContentIcon,
     SidebarListItemLink,
 } from '@proton/components';
-import { ThemeColor } from '@proton/colors';
 
 interface Props {
     to: string;

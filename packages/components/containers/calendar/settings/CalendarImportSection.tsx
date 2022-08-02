@@ -1,45 +1,39 @@
-import { useState } from 'react';
-
 import { c } from 'ttag';
 
 import { CALENDAR_APP_NAME, IMPORT_CALENDAR_FAQ_URL } from '@proton/shared/lib/calendar/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { UserModel } from '@proton/shared/lib/interfaces';
+import { Address, UserModel } from '@proton/shared/lib/interfaces';
 import { EASY_SWITCH_SOURCE, EasySwitchFeatureFlag, ImportType } from '@proton/shared/lib/interfaces/EasySwitch';
 import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
-import { Alert, GoogleButton, Href, Loader, PrimaryButton } from '../../../components';
-import { useAddresses, useFeature, useModals } from '../../../hooks';
+import { Alert, GoogleButton, Href, PrimaryButton, useModalState } from '../../../components';
+import { useFeature, useModals } from '../../../hooks';
+
 import { SettingsParagraph, SettingsSection } from '../../account';
 import { EasySwitchOauthModal } from '../../easySwitch';
 import { FeatureCode } from '../../features';
 import { ImportModal } from '../importModal';
 
 interface Props {
+    addresses: Address[];
+    personalActiveCalendars: VisualCalendar[];
     defaultCalendar?: VisualCalendar;
-    activeCalendars: VisualCalendar[];
     user: UserModel;
 }
 
-const CalendarImportSection = ({ activeCalendars, defaultCalendar, user }: Props) => {
+const CalendarImportSection = ({ addresses, personalActiveCalendars, defaultCalendar, user }: Props) => {
     const { hasNonDelinquentScope } = user;
     const { createModal } = useModals();
-    const [addresses, loadingAddresses] = useAddresses();
 
     const easySwitchFeature = useFeature<EasySwitchFeatureFlag>(FeatureCode.EasySwitch);
     const easySwitchFeatureLoading = easySwitchFeature.loading;
     const easySwitchFeatureValue = easySwitchFeature.feature?.Value;
 
-    const showAlert = !activeCalendars.length && hasNonDelinquentScope;
-    const canManualImport = !!activeCalendars.length && hasNonDelinquentScope;
+    const hasActiveCalendars = !!personalActiveCalendars.length;
 
-    const [isImportModalOpen, setIsImportModalOpen] = useState(false);
+    const [importModal, setIsImportModalOpen, renderImportModal] = useModalState();
 
-    const handleManualImport = () => {
-        if (canManualImport && defaultCalendar) {
-            setIsImportModalOpen(true);
-        }
-    };
+    const handleManualImport = () => setIsImportModalOpen(true);
 
     const handleOAuthClick = () =>
         createModal(
@@ -51,24 +45,21 @@ const CalendarImportSection = ({ activeCalendars, defaultCalendar, user }: Props
             />
         );
 
-    const isLoading = easySwitchFeatureLoading || loadingAddresses;
-
-    return isLoading ? (
-        <Loader />
-    ) : (
+    return (
         <SettingsSection>
-            {isImportModalOpen && (
+            {renderImportModal && defaultCalendar && (
                 <ImportModal
-                    isOpen={isImportModalOpen}
-                    onClose={() => setIsImportModalOpen(false)}
-                    defaultCalendar={defaultCalendar!}
-                    calendars={activeCalendars}
+                    isOpen={importModal.open}
+                    defaultCalendar={defaultCalendar}
+                    calendars={personalActiveCalendars}
+                    {...importModal}
                 />
             )}
 
-            {showAlert ? (
-                <Alert className="mb1" type="warning">{c('Info')
-                    .t`You need to have an active personal calendar to import your events from .ics.`}</Alert>
+            {hasNonDelinquentScope && !hasActiveCalendars ? (
+                <Alert className="mb1" type="warning">
+                    {c('Info').t`You need to have an active personal calendar to import your events from ICS.`}
+                </Alert>
             ) : null}
 
             <SettingsParagraph>
@@ -82,13 +73,13 @@ const CalendarImportSection = ({ activeCalendars, defaultCalendar, user }: Props
             {!easySwitchFeatureLoading && easySwitchFeatureValue?.GoogleCalendar && (
                 <GoogleButton
                     onClick={handleOAuthClick}
-                    disabled={isLoading || !hasNonDelinquentScope}
+                    disabled={easySwitchFeatureLoading || !hasNonDelinquentScope}
                     className="mr1"
                 />
             )}
 
-            <PrimaryButton onClick={handleManualImport} disabled={!canManualImport}>
-                {c('Action').t`Import from .ics`}
+            <PrimaryButton onClick={handleManualImport} disabled={!hasNonDelinquentScope || !hasActiveCalendars}>
+                {c('Action').t`Import from ICS`}
             </PrimaryButton>
         </SettingsSection>
     );

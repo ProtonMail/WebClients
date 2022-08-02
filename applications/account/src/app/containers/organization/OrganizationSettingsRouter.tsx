@@ -1,5 +1,5 @@
 import { ReactNode, useRef } from 'react';
-import { Redirect, Route, Switch, useLocation } from 'react-router-dom';
+import { Redirect, Route, Switch } from 'react-router-dom';
 
 import {
     CatchAllSection,
@@ -23,7 +23,6 @@ const OrganizationSettingsRouter = ({
     path: string;
     organizationAppRoutes: ReturnType<typeof getOrganizationAppRoutes>;
 }) => {
-    const location = useLocation();
     const onceRef = useRef(false);
     const [organization] = useOrganization();
 
@@ -35,7 +34,7 @@ const OrganizationSettingsRouter = ({
         <Switch>
             {getIsSectionAvailable(setup) && (
                 <Route path={getSectionPath(path, setup)}>
-                    <PrivateMainSettingsArea location={location} config={setup}>
+                    <PrivateMainSettingsArea config={setup}>
                         <OrganizationSection organization={organization} />
                     </PrivateMainSettingsArea>
                 </Route>
@@ -48,7 +47,7 @@ const OrganizationSettingsRouter = ({
             )}
             {getIsSectionAvailable(domains) && (
                 <Route path={getSectionPath(path, domains)}>
-                    <PrivateMainSettingsArea location={location} config={domains}>
+                    <PrivateMainSettingsArea config={domains}>
                         <DomainsSection />
                         <CatchAllSection />
                     </PrivateMainSettingsArea>
@@ -56,7 +55,7 @@ const OrganizationSettingsRouter = ({
             )}
             {getIsSectionAvailable(orgKeys) && (
                 <Route path={getSectionPath(path, orgKeys)}>
-                    <PrivateMainSettingsArea location={location} config={orgKeys}>
+                    <PrivateMainSettingsArea config={orgKeys}>
                         <OrganizationSection
                             organization={organization}
                             onSetupOrganization={() => {
@@ -70,7 +69,7 @@ const OrganizationSettingsRouter = ({
             )}
             {getIsSectionAvailable(users) && (
                 <Route path={getSectionPath(path, users)}>
-                    <PrivateMainSettingsArea location={location} config={users}>
+                    <PrivateMainSettingsArea config={users}>
                         <UsersAndAddressesSection />
                     </PrivateMainSettingsArea>
                 </Route>

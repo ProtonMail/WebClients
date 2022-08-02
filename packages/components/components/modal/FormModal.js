@@ -1,12 +1,14 @@
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
+
 import noop from '@proton/utils/noop';
-import FooterModal from './Footer';
-import DialogModal from './Dialog';
-import HeaderModal from './Header';
-import ContentModal from './Content';
-import InnerModal from './Inner';
+
 import { Button } from '../button';
+import ContentModal from './Content';
+import DialogModal from './Dialog';
+import FooterModal from './Footer';
+import HeaderModal from './Header';
+import InnerModal from './Inner';
 
 /** @type any */
 const Modal = ({
