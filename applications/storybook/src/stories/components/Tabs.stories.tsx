@@ -71,7 +71,26 @@ export const Sandbox = () => {
                 <>
                     <p>
                         There is a plant seed on its back right from the day this Pokémon is born. The seed slowly grows
-                        larger.
+                        larger. There is a plant seed on its back right from the day this Pokémon is born. The seed
+                        slowly grows larger. There is a plant seed on its back right from the day this Pokémon is born.
+                        The seed slowly grows larger. There is a plant seed on its back right from the day this Pokémon
+                        is born. The seed slowly grows larger. There is a plant seed on its back right from the day this
+                        Pokémon is born. The seed slowly grows larger. There is a plant seed on its back right from the
+                        day this Pokémon is born. The seed slowly grows larger. There is a plant seed on its back right
+                        from the day this Pokémon is born. The seed slowly grows larger. There is a plant seed on its
+                        back right from the day this Pokémon is born. The seed slowly grows larger. There is a plant
+                        seed on its back right from the day this Pokémon is born. The seed slowly grows larger. There is
+                        a plant seed on its back right from the day this Pokémon is born. The seed slowly grows larger.
+                        There is a plant seed on its back right from the day this Pokémon is born. The seed slowly grows
+                        larger. There is a plant seed on its back right from the day this Pokémon is born. The seed
+                        slowly grows larger. There is a plant seed on its back right from the day this Pokémon is born.
+                        The seed slowly grows larger. There is a plant seed on its back right from the day this Pokémon
+                        is born. The seed slowly grows larger. There is a plant seed on its back right from the day this
+                        Pokémon is born. The seed slowly grows larger. There is a plant seed on its back right from the
+                        day this Pokémon is born. The seed slowly grows larger. There is a plant seed on its back right
+                        from the day this Pokémon is born. The seed slowly grows larger. There is a plant seed on its
+                        back right from the day this Pokémon is born. The seed slowly grows larger. Sorry, I needed more
+                        text.
                     </p>
                 </>
             ),
@@ -102,6 +121,7 @@ export const Sandbox = () => {
             tabs={tabs}
             value={index}
             onChange={setIndex}
+            className="scroll-if-needed max-h-custom"
             {...selectedToggles.reduce<{ [key: string]: boolean }>((acc, value, i) => {
                 acc[toggles[i]] = value;
                 return acc;
@@ -110,8 +130,9 @@ export const Sandbox = () => {
     );
 
     return (
-        <div className="flex flex-align-items-stretch py2">
-            <div className="mr2">
+        <div>
+            <div style={{ '--max-height-custom': '10rem' }}>{tabsExample}</div>
+            <div className="mt2 mb4">
                 <strong className="block mb1">Toggles</strong>
                 {toggles.map((prop, i) => {
                     return (
@@ -132,7 +153,6 @@ export const Sandbox = () => {
                     );
                 })}
             </div>
-            <div>{tabsExample}</div>
         </div>
     );
 };

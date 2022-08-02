@@ -12,7 +12,13 @@ interface Props {
     children?: Tab[];
     value: number;
     onChange: (index: number) => void;
+    /**
+     * Will make tabs stick to the top of the container when overflowing
+     */
     stickyTabs?: boolean;
+    /**
+     * Tabs will take the maximum width and divide equally
+     */
     fullWidth?: boolean;
     className?: string;
     containerClassName?: string;
@@ -26,8 +32,8 @@ export const Tabs = ({
     tabs,
     gap,
     children,
-    stickyTabs,
-    fullWidth,
+    stickyTabs = false,
+    fullWidth = false,
     className,
     containerClassName,
     navContainerClassName,
@@ -46,14 +52,8 @@ export const Tabs = ({
 
     return (
         <div className={classnames(['tabs', className])}>
-            <div className={classnames([navContainerClassName])}>
-                <nav
-                    className={classnames([
-                        'tabs-container border-bottom border-weak',
-                        stickyTabs && 'sticky-top bg-norm',
-                        containerClassName,
-                    ])}
-                >
+            <div className={classnames([navContainerClassName, stickyTabs && 'sticky-top bg-norm'])}>
+                <nav className={classnames(['tabs-container border-bottom border-weak', containerClassName])}>
                     <ul
                         className={classnames([
                             'tabs-list unstyled flex relative m0 p0',
