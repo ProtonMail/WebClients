@@ -1,8 +1,9 @@
-import { Ref } from 'react';
+import { Ref, Suspense, lazy } from 'react';
 
 import { c } from 'ttag';
 
 import { Vr } from '@proton/atoms';
+import { ErrorBoundary } from '@proton/components/containers';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 
 import { classnames } from '../../../helpers';
@@ -15,10 +16,11 @@ import { EditorMetadata } from '../interface';
 import ToolbarAlignmentDropdown from './ToolbarAlignmentDropdown';
 import ToolbarButton from './ToolbarButton';
 import ToolbarColorsDropdown from './ToolbarColorsDropdown';
-import ToolbarEmojiDropdown from './ToolbarEmojiDropdown';
 import ToolbarFontFaceDropdown from './ToolbarFontFaceDropdown';
 import ToolbarFontSizeDropdown from './ToolbarFontSizeDropdown';
 import ToolbarMoreDropdown from './ToolbarMoreDropdown';
+
+const ToolbarEmojiDropdown = lazy(() => import('./ToolbarEmojiDropdown'));
 
 interface ToolbarProps {
     config: ToolbarConfig | undefined;
@@ -118,7 +120,11 @@ const Toolbar = ({ config, metadata, mailSettings, openEmojiPickerRef, className
                     {!simple && (
                         <>
                             <Vr aria-hidden="true" />{' '}
-                            <ToolbarEmojiDropdown onInsert={config.emoji.insert} openRef={openEmojiPickerRef} />
+                            <ErrorBoundary component={() => null}>
+                                <Suspense fallback={null}>
+                                    <ToolbarEmojiDropdown onInsert={config.emoji.insert} openRef={openEmojiPickerRef} />
+                                </Suspense>
+                            </ErrorBoundary>
                         </>
                     )}
                     <ToolbarButton
