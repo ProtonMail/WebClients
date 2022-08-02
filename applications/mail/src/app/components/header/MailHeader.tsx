@@ -176,8 +176,8 @@ const MailHeader = ({ labelID, elementID, breakpoints, expanded, onToggleExpand 
                         <TopNavbarListItemFeedbackButton onClick={() => setFeedbackModalOpen(true)} />
                     ) : null
                 }
-                searchBox={<MailSearch breakpoints={breakpoints} />}
-                searchDropdown={<MailSearch breakpoints={breakpoints} />}
+                searchBox={<MailSearch breakpoints={breakpoints} labelID={labelID} location={location} />}
+                searchDropdown={<MailSearch breakpoints={breakpoints} labelID={labelID} location={location} />}
                 expanded={!!expanded}
                 onToggleExpand={onToggleExpand}
                 isNarrow={breakpoints.isNarrow}
