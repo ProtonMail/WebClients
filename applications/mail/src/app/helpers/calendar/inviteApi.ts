@@ -54,6 +54,7 @@ import { API_CODES } from '@proton/shared/lib/constants';
 import { omit, pick } from '@proton/shared/lib/helpers/object';
 import { Address, Api } from '@proton/shared/lib/interfaces';
 import {
+    CALENDAR_TYPE,
     CalendarEvent,
     CalendarEventEncryptionData,
     CalendarEventWithMetadata,
@@ -195,9 +196,14 @@ export type FetchAllEventsByUID = ({
 
 export const fetchAllEventsByUID: FetchAllEventsByUID = async ({ uid, api, recurrenceId }) => {
     const timestamp = recurrenceId ? getUnixTime(propertyToUTCDate(recurrenceId)) : undefined;
-    const promises: Promise<CalendarEventWithMetadata[]>[] = [getPaginatedEventsByUID({ api, uid })];
+    // Do not search for invitations in subscribed calendars
+    const promises: Promise<CalendarEventWithMetadata[]>[] = [
+        getPaginatedEventsByUID({ api, uid, calendarType: CALENDAR_TYPE.PERSONAL }),
+    ];
     if (recurrenceId) {
-        promises.unshift(getPaginatedEventsByUID({ api, uid, recurrenceID: timestamp }));
+        promises.unshift(
+            getPaginatedEventsByUID({ api, uid, recurrenceID: timestamp, calendarType: CALENDAR_TYPE.PERSONAL })
+        );
     }
     const [[event, ...otherEvents] = [], [parentEvent, ...otherParentEvents] = []] = await Promise.all(promises);
     if (!parentEvent) {
@@ -219,6 +225,7 @@ export const fetchAllEventsByUID: FetchAllEventsByUID = async ({ uid, api, recur
                 api,
                 uid,
                 recurrenceID: supportedTimestamp,
+                calendarType: CALENDAR_TYPE.PERSONAL,
             });
             return recoveredEvent
                 ? {
