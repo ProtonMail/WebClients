@@ -1,7 +1,10 @@
-import debounce from '@proton/utils/debounce';
 import { useCallback, useRef } from 'react';
+
 import { IEditor, PluginEvent, PluginEventType } from 'roosterjs-editor-types';
+
 import useIsMounted from '@proton/hooks/useIsMounted';
+import debounce from '@proton/utils/debounce';
+
 import { SetEditorToolbarConfig } from '../../interface';
 
 const EVENTS_TO_TRIGGER_ONCHANGE = [PluginEventType.Input, PluginEventType.ContentChanged];
@@ -42,11 +45,15 @@ const useOnEditorChange = ({ placeholder, setToolbarConfig, onChange }: Props) =
         (editorEvent: PluginEvent, editor: IEditor) => {
             const { eventType } = editorEvent;
 
-            if (TOOLBAR_EDITOR_EVENTS.includes(eventType)) {
+            if (TOOLBAR_EDITOR_EVENTS.includes(eventType as any)) {
                 debouncedSetToolbarConfig(editor);
             }
 
-            if (isPlaceholderVisibleRef.current && placeholder && EVENTS_TO_HIDE_PLACEHOLDER.includes(eventType)) {
+            if (
+                isPlaceholderVisibleRef.current &&
+                placeholder &&
+                EVENTS_TO_HIDE_PLACEHOLDER.includes(eventType as any)
+            ) {
                 const content = editor.getContent();
 
                 if (!content.includes(placeholder)) {
@@ -58,7 +65,7 @@ const useOnEditorChange = ({ placeholder, setToolbarConfig, onChange }: Props) =
                 return;
             }
 
-            if (EVENTS_TO_TRIGGER_ONCHANGE.includes(editorEvent.eventType)) {
+            if (EVENTS_TO_TRIGGER_ONCHANGE.includes(editorEvent.eventType as any)) {
                 const content = editor.getContent();
                 onChange?.(content);
             }
