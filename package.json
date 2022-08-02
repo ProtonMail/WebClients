@@ -18,12 +18,11 @@
     "resolutions": {
         "@noble/ed25519@1.6.1": "patch:@noble/ed25519@npm:1.6.1#.yarn/patches/@noble-ed25519-npm-1.6.0-59c82563e0",
         "@types/jest": "^27.5.2",
-        "@types/react": "^17.0.47",
+        "@types/react": "^17.0.48",
         "@types/react-dom": "^17.0.17",
         "safe-buffer": "^5.2.1"
     },
     "dependencies": {
-        "@emoji-mart/data": "^1.0.3",
         "@openpgp/web-stream-tools": "^0.0.11",
         "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton",
         "@proton/stylelint-config-proton": "workspace:packages/stylelint-config-proton",
