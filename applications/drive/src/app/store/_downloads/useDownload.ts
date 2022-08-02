@@ -1,7 +1,7 @@
 import { ReadableStream } from 'web-streams-polyfill';
 
-import { DriveFileRevisionResult, DriveFileBlock } from '@proton/shared/lib/interfaces/drive/file';
 import { queryFileRevision } from '@proton/shared/lib/api/drive/files';
+import { DriveFileBlock, DriveFileRevisionResult } from '@proton/shared/lib/interfaces/drive/file';
 
 import { streamToBuffer } from '../../utils/stream';
 import { useDebouncedRequest } from '../_api';
@@ -11,10 +11,12 @@ import initDownloadPure, { initDownloadStream } from './download/download';
 import initDownloadLinkFile from './download/downloadLinkFile';
 import downloadThumbnailPure from './download/downloadThumbnail';
 import {
-    LinkDownload,
+    DecryptFileKeys,
     DownloadControls,
-    DownloadStreamControls,
     DownloadEventCallbacks,
+    DownloadStreamControls,
+    LinkDownload,
+    OnSignatureIssueCallback,
     Pagination,
 } from './interface';
 
@@ -54,12 +56,19 @@ export default function useDownload() {
         return Revision.Blocks;
     };
 
-    const getKeys = async (abortSignal: AbortSignal, shareId: string, linkId: string) => {
-        const [link, privateKey, sessionKey] = await Promise.all([
-            getLink(abortSignal, shareId, linkId),
+    const getKeysWithSignatures = async (
+        abortSignal: AbortSignal,
+        shareId: string,
+        linkId: string
+    ): Promise<[DecryptFileKeys, SignatureIssues?]> => {
+        const [privateKey, sessionKey] = await Promise.all([
             getLinkPrivateKey(abortSignal, shareId, linkId),
             getLinkSessionKey(abortSignal, shareId, linkId),
         ]);
+
+        // Getting keys above might find signature issue. Lets get fresh link
+        // after that (not in parallel) to have fresh signature issues on it.
+        const link = await getLink(abortSignal, shareId, linkId);
 
         if (!sessionKey) {
             throw new Error('Session key missing on file link');
@@ -69,10 +78,32 @@ export default function useDownload() {
         }
 
         const addressPublicKeys = await getVerificationKey(link.activeRevision?.signatureAddress);
-        return {
-            privateKey: privateKey,
-            sessionKeys: sessionKey,
-            addressPublicKeys,
+        return [
+            {
+                privateKey: privateKey,
+                sessionKeys: sessionKey,
+                addressPublicKeys,
+            },
+            link.signatureIssues,
+        ];
+    };
+
+    /**
+     * getKeysUnsafe only returns keys without checking signature issues.
+     * Use only on places when its keys signatures are not important.
+     */
+    const getKeysUnsafe = async (abortSignal: AbortSignal, shareId: string, linkId: string) => {
+        const [keys] = await getKeysWithSignatures(abortSignal, shareId, linkId);
+        return keys;
+    };
+
+    const getKeysGenerator = (onSignatureIssue?: OnSignatureIssueCallback) => {
+        return async (abortSignal: AbortSignal, link: LinkDownload) => {
+            const [keys, signatureIssues] = await getKeysWithSignatures(abortSignal, link.shareId, link.linkId);
+            if (signatureIssues) {
+                await onSignatureIssue?.(abortSignal, link, signatureIssues);
+            }
+            return keys;
         };
     };
 
@@ -84,7 +115,7 @@ export default function useDownload() {
         return initDownloadPure(name, list, {
             getChildren,
             getBlocks,
-            getKeys,
+            getKeys: getKeysGenerator(eventCallbacks.onSignatureIssue),
             ...eventCallbacks,
             onSignatureIssue: async (abortSignal, link, signatureIssues) => {
                 await setSignatureIssues(abortSignal, link.shareId, link.linkId, signatureIssues);
@@ -100,7 +131,7 @@ export default function useDownload() {
         const controls = initDownloadStream(list, {
             getChildren,
             getBlocks,
-            getKeys,
+            getKeys: getKeysGenerator(eventCallbacks?.onSignatureIssue),
             ...eventCallbacks,
             onSignatureIssue: async (abortSignal, link, signatureIssues) => {
                 await setSignatureIssues(abortSignal, link.shareId, link.linkId, signatureIssues);
@@ -118,7 +149,7 @@ export default function useDownload() {
         url: string,
         token: string
     ) => {
-        return downloadThumbnailPure(url, token, () => getKeys(abortSignal, shareId, linkId));
+        return downloadThumbnailPure(url, token, () => getKeysUnsafe(abortSignal, shareId, linkId));
     };
 
     const checkFirstBlockSignature = async (abortSignal: AbortSignal, shareId: string, linkId: string) => {
@@ -136,7 +167,7 @@ export default function useDownload() {
                     getChildren,
                     getBlocks: (abortSignal) =>
                         getBlocks(abortSignal, shareId, linkId, { FromBlockIndex: 1, PageSize: 1 }),
-                    getKeys,
+                    getKeys: getKeysGenerator(),
                     onError: reject,
                     onNetworkError: reject,
                     onSignatureIssue: async (abortSignal, link, signatureIssues) => {

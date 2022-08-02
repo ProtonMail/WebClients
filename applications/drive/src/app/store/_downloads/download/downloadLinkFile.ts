@@ -1,9 +1,10 @@
-import { ReadableStream } from 'web-streams-polyfill';
-import { CryptoProxy, VERIFICATION_STATUS } from '@proton/crypto';
 // @ts-ignore missing `toStream` TS definitions
 import { readToEnd, toStream } from '@openpgp/web-stream-tools';
+import { ReadableStream } from 'web-streams-polyfill';
 
-import { LinkDownload, DownloadCallbacks, DownloadStreamControls, DecryptFileKeys } from '../interface';
+import { CryptoProxy, VERIFICATION_STATUS } from '@proton/crypto';
+
+import { DecryptFileKeys, DownloadCallbacks, DownloadStreamControls, LinkDownload } from '../interface';
 import initDownloadBlocks from './downloadBlocks';
 
 /**
@@ -14,19 +15,13 @@ import initDownloadBlocks from './downloadBlocks';
 export default function initDownloadLinkFile(link: LinkDownload, callbacks: DownloadCallbacks): DownloadStreamControls {
     let keysPromise: Promise<DecryptFileKeys> | undefined;
 
-    const checkFileSignatures = async (abortSignal: AbortSignal) => {
-        if (link.signatureIssues) {
-            await callbacks.onSignatureIssue?.(abortSignal, link, link.signatureIssues);
-        }
-    };
-
     const transformBlockStream = async (
         abortSignal: AbortSignal,
         stream: ReadableStream<Uint8Array>,
         encSignature: string
     ) => {
         if (!keysPromise) {
-            keysPromise = callbacks.getKeys(abortSignal, link.shareId, link.linkId);
+            keysPromise = callbacks.getKeys(abortSignal, link);
         }
 
         const keys = await keysPromise;
@@ -58,7 +53,6 @@ export default function initDownloadLinkFile(link: LinkDownload, callbacks: Down
 
     const controls = initDownloadBlocks(link.name, {
         ...callbacks,
-        checkFileSignatures,
         getBlocks: (abortSignal, pagination) => callbacks.getBlocks(abortSignal, link.shareId, link.linkId, pagination),
         transformBlockStream,
         checkBlockSignature,

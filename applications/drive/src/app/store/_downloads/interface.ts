@@ -1,7 +1,7 @@
 import { ReadableStream } from 'web-streams-polyfill';
 
-import { DriveFileBlock } from '@proton/shared/lib/interfaces/drive/file';
 import { PrivateKeyReference, PublicKeyReference, SessionKey } from '@proton/crypto';
+import { DriveFileBlock } from '@proton/shared/lib/interfaces/drive/file';
 
 import { DecryptedLink, SignatureIssues } from '../_links';
 
@@ -94,7 +94,7 @@ type GetBlocksCallback = (
     linkId: string,
     pagination: Pagination
 ) => Promise<DriveFileBlock[]>;
-type GetKeysCallback = (abortSignal: AbortSignal, shareId: string, linkId: string) => Promise<DecryptFileKeys>;
+type GetKeysCallback = (abortSignal: AbortSignal, link: LinkDownload) => Promise<DecryptFileKeys>;
 
 export type Pagination = { FromBlockIndex: number; PageSize: number };
 export type DecryptFileKeys = {
