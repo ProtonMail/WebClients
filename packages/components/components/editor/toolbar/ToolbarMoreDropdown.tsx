@@ -1,11 +1,12 @@
 import { Alignment, Direction } from 'roosterjs-editor-types';
 import { c } from 'ttag';
+
 import DropdownMenu from '../../dropdown/DropdownMenu';
 import DropdownMenuButton from '../../dropdown/DropdownMenuButton';
 import Icon from '../../icon/Icon';
-import ToolbarDropdown from './ToolbarDropdown';
-import { EditorMetadata } from '../interface';
 import { ToolbarConfig } from '../helpers/getToolbarConfig';
+import { EditorMetadata } from '../interface';
+import ToolbarDropdown from './ToolbarDropdown';
 
 const getClassname = (status: boolean) => (status ? undefined : 'visibility-hidden');
 
@@ -24,6 +25,16 @@ const ToolbarMoreDropdown = ({ metadata, isNarrow = false, config }: Props) => (
         hasCaret={false}
     >
         <DropdownMenu className="editor-toolbar-more-menu flex-item-noshrink">
+            {!isNarrow && metadata.supportImages && (
+                <DropdownMenuButton
+                    key={17}
+                    className="text-left flex flex-nowrap flex-align-items-center"
+                    onClick={() => config.image.showModal()}
+                >
+                    <Icon name="checkmark" className="visibility-hidden" />
+                    <span className="ml0-5 mtauto mbauto flex-item-fluid">{c('Action').t`Insert image`}</span>
+                </DropdownMenuButton>
+            )}
             {isNarrow && [
                 <DropdownMenuButton
                     key={12}
