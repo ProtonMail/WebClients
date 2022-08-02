@@ -141,6 +141,11 @@ function Drive({ activeFolder, folderView }: Props) {
         [navigateToLink, shareId, browserItems]
     );
 
+    const handleScroll = () => {
+        browserContextMenu.close();
+        browserItemContextMenu.close();
+    };
+
     useEffect(() => {
         browserContextMenu.resetPosition();
         browserItemContextMenu.resetPosition();
@@ -190,6 +195,7 @@ function Drive({ activeFolder, folderView }: Props) {
                 onItemContextMenu={browserItemContextMenu.handleContextMenu}
                 onItemRender={handleItemRender}
                 onSort={setSorting}
+                onScroll={handleScroll}
                 onViewContextMenu={browserContextMenu.handleContextMenu}
                 getDragMoveControls={getDragMoveControls}
             />

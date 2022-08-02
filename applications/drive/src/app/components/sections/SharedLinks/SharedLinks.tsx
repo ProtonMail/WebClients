@@ -169,6 +169,7 @@ const SharedLinks = ({ shareId, sharedLinksView }: Props) => {
                 onItemOpen={handleClick}
                 onItemRender={handleItemRender}
                 onSort={setSorting}
+                onScroll={browserItemContextMenu.close}
             />
         </>
     );
