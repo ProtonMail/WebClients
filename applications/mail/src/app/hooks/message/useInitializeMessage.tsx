@@ -45,7 +45,7 @@ import { useGetMessageKeys } from './useGetMessageKeys';
 import { useKeyVerification } from './useKeyVerification';
 import { useGetMessage } from './useMessage';
 
-export const useInitializeMessage = (localID: string, labelID?: string) => {
+export const useInitializeMessage = () => {
     const api = useApi();
     const markAs = useMarkAs();
     const dispatch = useDispatch();
@@ -60,7 +60,7 @@ export const useInitializeMessage = (localID: string, labelID?: string) => {
         dispatch(updateAttachment({ ID, attachment }));
     };
 
-    return useCallback(async () => {
+    return useCallback(async (localID: string, labelID?: string) => {
         // Message can change during the whole initialization sequence
         // To have the most up to date version, best is to get back to the cache version each time
         const getData = () => (getMessage(localID) as MessageStateWithData).data;
@@ -212,5 +212,5 @@ export const useInitializeMessage = (localID: string, labelID?: string) => {
                 })
             );
         }
-    }, [localID]);
+    }, []);
 };
