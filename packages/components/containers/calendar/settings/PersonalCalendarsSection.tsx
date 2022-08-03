@@ -1,14 +1,15 @@
-import { ReactNode, useMemo, useState } from 'react';
+import { ReactNode, useMemo } from 'react';
+
 import { c } from 'ttag';
 
-import { removeCalendar, updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
-import { getActiveAddresses } from '@proton/shared/lib/helpers/address';
-import { Address, UserModel } from '@proton/shared/lib/interfaces';
-import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
-import { ModalWithProps } from '@proton/shared/lib/interfaces/Modal';
-import { MAX_CALENDARS_FREE, MAX_CALENDARS_PAID } from '@proton/shared/lib/calendar/constants';
-import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { SettingsParagraph } from '@proton/components/containers';
+import { removeCalendar, updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
+import { MAX_CALENDARS_FREE, MAX_CALENDARS_PAID } from '@proton/shared/lib/calendar/constants';
+import { getActiveAddresses } from '@proton/shared/lib/helpers/address';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import { Address, UserModel } from '@proton/shared/lib/interfaces';
+import { ModalWithProps } from '@proton/shared/lib/interfaces/Modal';
+import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
 import { AlertModal, Button, Href, useModalState } from '../../../components';
 import { useApi, useEventManager, useNotifications } from '../../../hooks';
@@ -51,7 +52,6 @@ const PersonalCalendarsSection = ({
     const api = useApi();
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
-    const [loadingMap, setLoadingMap] = useState({});
     const { modalsMap, updateModal, closeModal } = useModalsMap<ModalsMap>({
         calendarModal: { isOpen: false },
         exportCalendarModal: { isOpen: false },
@@ -85,14 +85,9 @@ const PersonalCalendarsSection = ({
     };
 
     const handleSetDefault = async (calendarID: string) => {
-        try {
-            setLoadingMap((old) => ({ ...old, [calendarID]: true }));
-            await api(updateCalendarUserSettings({ DefaultCalendarID: calendarID }));
-            await call();
-            createNotification({ text: c('Success').t`Default calendar updated` });
-        } finally {
-            setLoadingMap((old) => ({ ...old, [calendarID]: false }));
-        }
+        await api(updateCalendarUserSettings({ DefaultCalendarID: calendarID }));
+        await call();
+        createNotification({ text: c('Success').t`Default calendar updated` });
     };
 
     const handleDelete = async (id: string) => {
@@ -132,22 +127,13 @@ const PersonalCalendarsSection = ({
                 },
             });
         });
-        try {
-            setLoadingMap((old) => ({
-                ...old,
-                [newDefaultCalendarID || '']: true,
-                [id]: true,
-            }));
-            await api(removeCalendar(id));
-            // null is a valid default calendar id
-            if (newDefaultCalendarID !== undefined) {
-                await api(updateCalendarUserSettings({ DefaultCalendarID: newDefaultCalendarID }));
-            }
-            await call();
-            createNotification({ text: c('Success').t`Calendar removed` });
-        } finally {
-            setLoadingMap((old) => ({ ...old, [newDefaultCalendarID || '']: false, [id]: false }));
+        await api(removeCalendar(id));
+        // null is a valid default calendar id
+        if (newDefaultCalendarID !== undefined) {
+            await api(updateCalendarUserSettings({ DefaultCalendarID: newDefaultCalendarID }));
         }
+        await call();
+        createNotification({ text: c('Success').t`Calendar removed` });
     };
 
     const handleExport = (exportCalendar: VisualCalendar) => {
@@ -216,7 +202,6 @@ const PersonalCalendarsSection = ({
                 calendars={calendars}
                 user={user}
                 defaultCalendarID={defaultCalendar?.ID}
-                loadingMap={loadingMap}
                 add={c('Action').t`Create calendar`}
                 calendarLimitReachedText={calendarLimitReachedText}
                 canAdd={canAdd}
