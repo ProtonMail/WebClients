@@ -120,9 +120,10 @@ const ImagePreview = ({ mimeType, contents, onSave }: Props) => {
                             className="flex-no-min-children mauto relative"
                             style={{
                                 ...scaledDimensions,
-                                // Add white background to override any theme
+                                // Add checkered background to override any theme
                                 // so transparent images are better visible.
-                                backgroundColor: 'white',
+                                background:
+                                    'repeating-conic-gradient(#606060 0% 25%, transparent 0% 50%) 50% / 20px 20px',
                             }}
                         >
                             <img
