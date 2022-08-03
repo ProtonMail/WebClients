@@ -79,7 +79,8 @@ const UserDropdown = ({ onOpenChat, onOpenIntroduction, ...rest }: Props) => {
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const [bugReportModal, setBugReportModal, render] = useModalState();
 
-    const recoveryNotification = useRecoveryNotification(true);
+    const buttonRecoveryNotification = useRecoveryNotification(true);
+    const insideDropdownRecoveryNotification = useRecoveryNotification(false);
     const { feature: referralProgramFeature } = useFeature(FeatureCode.ReferralProgram);
 
     const subscriptionStartedThirtyDaysAgo =
@@ -158,7 +159,7 @@ const UserDropdown = ({ onOpenChat, onOpenIntroduction, ...rest }: Props) => {
                         onCloseSpotlight();
                         toggle();
                     }}
-                    notification={recoveryNotification?.color}
+                    notification={buttonRecoveryNotification?.color}
                 />
             </ReferralSpotlight>
             <Dropdown
@@ -234,17 +235,17 @@ const UserDropdown = ({ onOpenChat, onOpenIntroduction, ...rest }: Props) => {
                         ) : null}
                     </div>
 
-                    {recoveryNotification && (
+                    {insideDropdownRecoveryNotification && (
                         <>
                             <hr className="mt0-5 mb0-5" />
                             <DropdownMenuLink
                                 as={SettingsLink}
                                 className="text-left flex flex-nowrap flex-justify-space-between flex-align-items-center"
-                                path={recoveryNotification.path}
+                                path={insideDropdownRecoveryNotification.path}
                                 onClick={close}
                             >
-                                {recoveryNotification.text}
-                                <NotificationDot color={recoveryNotification.color} />
+                                {insideDropdownRecoveryNotification.text}
+                                <NotificationDot color={insideDropdownRecoveryNotification.color} />
                             </DropdownMenuLink>
                         </>
                     )}

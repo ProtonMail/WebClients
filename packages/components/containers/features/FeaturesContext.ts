@@ -46,7 +46,6 @@ export enum FeatureCode {
     CalendarInviteLocale = 'CalendarInviteLocale',
     CalendarAutoImportInvite = 'CalendarAutoImportInvite',
     SeenMnemonicPrompt = 'SeenMnemonicPrompt',
-    VisitedRecoveryPage = 'VisitedRecoveryPage',
     SpyTrackerProtection = 'SpyTrackerProtection',
     SpyTrackerProtectionIncorporator = 'SpyTrackerProtectionIncorporator',
     SpotlightSpyTrackerProtection = 'SpotlightSpyTrackerProtection',
