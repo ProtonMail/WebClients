@@ -1,21 +1,22 @@
-import { ComponentPropsWithoutRef, useState, useRef, useMemo } from 'react';
+import { ComponentPropsWithoutRef, useMemo, useRef } from 'react';
+
 import { c, msgid } from 'ttag';
 
 import { removeCalendar } from '@proton/shared/lib/api/calendars';
-import { getActiveAddresses } from '@proton/shared/lib/helpers/address';
 import { MAX_SUBSCRIBED_CALENDARS } from '@proton/shared/lib/calendar/constants';
-import { Address, UserModel } from '@proton/shared/lib/interfaces';
-import { SubscribedCalendar, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
-import { ModalWithProps } from '@proton/shared/lib/interfaces/Modal';
+import { getActiveAddresses } from '@proton/shared/lib/helpers/address';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import { Address, UserModel } from '@proton/shared/lib/interfaces';
+import { ModalWithProps } from '@proton/shared/lib/interfaces/Modal';
+import { SubscribedCalendar, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
 import { AlertModal, Button, Href, useModalState } from '../../../components';
 import { useApi, useEventManager, useNotifications } from '../../../hooks';
+import { useModalsMap } from '../../../hooks/useModalsMap';
+import { SettingsParagraph } from '../../account';
 import { CalendarModal } from '../calendarModal/CalendarModal';
 import SubscribeCalendarModal from '../subscribeCalendarModal/SubscribeCalendarModal';
 import CalendarsSection from './CalendarsSection';
-import { SettingsParagraph } from '../../account';
-import { useModalsMap } from '../../../hooks/useModalsMap';
 
 type ModalsMap = {
     calendarModal: ModalWithProps<{
@@ -42,7 +43,6 @@ const SubscribedCalendarsSection = ({
     const api = useApi();
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
-    const [loadingMap, setLoadingMap] = useState({});
 
     const activeAddresses = useMemo(() => {
         return getActiveAddresses(addresses);
@@ -73,17 +73,9 @@ const SubscribedCalendarsSection = ({
             confirm.current = { resolve, reject };
         });
 
-        try {
-            setLoadingMap((old) => ({
-                ...old,
-                [id]: true,
-            }));
-            await api(removeCalendar(id));
-            await call();
-            createNotification({ text: c('Success').t`Calendar removed` });
-        } finally {
-            setLoadingMap((old) => ({ ...old, [id]: false }));
-        }
+        await api(removeCalendar(id));
+        await call();
+        createNotification({ text: c('Success').t`Calendar removed` });
     };
 
     const canAddCalendar =
@@ -134,7 +126,6 @@ const SubscribedCalendarsSection = ({
             <CalendarsSection
                 calendars={calendars}
                 user={user}
-                loadingMap={loadingMap}
                 canAdd={canAddCalendar}
                 isFeatureUnavailable={unavailable}
                 add={c('Action').t`Add calendar`}
