@@ -1,16 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import { c } from 'ttag';
 
 import { getCalendarStatusBadges } from '@proton/shared/lib/calendar/badges';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { SimpleMap, UserModel } from '@proton/shared/lib/interfaces';
+import { UserModel } from '@proton/shared/lib/interfaces';
 import { SubscribedCalendar, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
-import isTruthy from '@proton/utils/isTruthy';
+import { useAddresses } from '@proton/components/hooks';
+import clsx from '@proton/utils/clsx';
 
-import { DropdownActions, Info, Table, TableBody, TableHeader, TableRow } from '../../../components';
+import { Button, ButtonLike, Icon, Info, Table, TableBody, TableHeader, TableRow } from '../../../components';
 import CalendarSelectIcon from '../../../components/calendarSelect/CalendarSelectIcon';
-import { classnames } from '../../../helpers';
 import useGetCalendarsEmails from '../hooks/useGetCalendarsEmails';
 import CalendarBadge from './CalendarBadge';
 
@@ -20,27 +21,20 @@ interface Props {
     calendars: (VisualCalendar | SubscribedCalendar)[];
     defaultCalendarID?: string;
     user: UserModel;
-    onEdit: (calendar: VisualCalendar) => void;
-    onSetDefault?: (id: string) => void;
-    onDelete: (id: string) => void;
-    onExport?: (calendar: VisualCalendar) => void;
-    loadingMap: SimpleMap<boolean>;
-    actionsDisabled: boolean;
+    onSetDefault?: (id: string) => Promise<void>;
 }
 
-const CalendarsTable = ({
-    calendars = [],
-    defaultCalendarID,
-    user,
-    onEdit,
-    onSetDefault,
-    onDelete,
-    onExport,
-    loadingMap,
-    actionsDisabled = false,
-}: Props) => {
+const CalendarsTable = ({ calendars = [], defaultCalendarID, user, onSetDefault }: Props) => {
     const { hasNonDelinquentScope } = user;
     const calendarAddressMap = useGetCalendarsEmails(calendars);
+    const [addresses, loadingAddresses] = useAddresses();
+    const [isLoading, setIsLoading] = useState<string>();
+
+    const hasSingleAddress = !loadingAddresses && addresses.length === 1;
+
+    if (!calendars.length) {
+        return null;
+    }
 
     return (
         <Table className="simple-table--has-actions">
@@ -63,31 +57,6 @@ const CalendarsTable = ({
                         defaultCalendarID
                     );
 
-                    const list: { text: string; onClick: () => void }[] = [
-                        hasNonDelinquentScope && {
-                            text: c('Action').t`Edit`,
-                            onClick: () => onEdit(calendar),
-                        },
-                        !isSubscribed &&
-                            !isDisabled &&
-                            !isDefault &&
-                            hasNonDelinquentScope &&
-                            onSetDefault && {
-                                text: c('Action').t`Set as default`,
-                                onClick: () => onSetDefault(ID),
-                            },
-                        !isSubscribed &&
-                            onExport && {
-                                text: c('Action').t`Export ICS`,
-                                onClick: () => onExport(calendar),
-                            },
-                        {
-                            text: isSubscribed ? c('Action').t`Remove` : c('Action').t`Delete`,
-                            actionType: 'delete',
-                            onClick: () => onDelete(ID),
-                        },
-                    ].filter(isTruthy);
-
                     const calendarAddress = calendarAddressMap[ID] || '';
 
                     return (
@@ -103,16 +72,18 @@ const CalendarsTable = ({
                                         <div className="text-ellipsis" title={Name}>
                                             {Name}
                                         </div>
-                                        <div
-                                            className={classnames([
-                                                'text-ellipsis text-sm m0 color-weak',
-                                                !calendarAddress && 'calendar-email',
-                                            ])}
-                                            style={{ '--index': index }}
-                                            title={calendarAddress}
-                                        >
-                                            {calendarAddress}
-                                        </div>
+                                        {!hasSingleAddress && (
+                                            <div
+                                                className={clsx([
+                                                    'text-ellipsis text-sm m0 color-weak',
+                                                    !calendarAddress && 'calendar-email',
+                                                ])}
+                                                style={{ '--index': index }}
+                                                title={calendarAddress}
+                                            >
+                                                {calendarAddress}
+                                            </div>
+                                        )}
                                     </div>
                                 </div>,
                                 <div data-test-id="calendar-settings-page:calendar-status" key="status">
@@ -125,13 +96,34 @@ const CalendarsTable = ({
                                         />
                                     ))}
                                 </div>,
-                                <DropdownActions
-                                    className="button--small"
-                                    key="actions"
-                                    list={list}
-                                    disabled={actionsDisabled}
-                                    loading={!!loadingMap[ID]}
-                                />,
+                                <div className="flex flex-align-items-center flex-nowrap flex-justify-end">
+                                    {!isSubscribed &&
+                                        !isDisabled &&
+                                        !isDefault &&
+                                        hasNonDelinquentScope &&
+                                        onSetDefault && (
+                                            <Button
+                                                disabled={!!isLoading}
+                                                loading={isLoading === ID}
+                                                onClick={async () => {
+                                                    setIsLoading(ID);
+                                                    await onSetDefault(ID);
+                                                    setIsLoading(undefined);
+                                                }}
+                                                shape="outline"
+                                                className="mr0-5"
+                                            >{c('Action').t`Make default`}</Button>
+                                        )}
+                                    <ButtonLike
+                                        as={Link}
+                                        to={`/calendar/calendars/${ID}`}
+                                        shape="outline"
+                                        icon
+                                        disabled={!!isLoading}
+                                    >
+                                        <Icon name="cog-wheel" className="flex-item-noshrink" />
+                                    </ButtonLike>
+                                </div>,
                             ]}
                         />
                     );
