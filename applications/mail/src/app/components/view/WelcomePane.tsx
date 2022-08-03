@@ -4,10 +4,7 @@ import { Location } from 'history';
 import { c, msgid } from 'ttag';
 
 import {
-    FeatureCode,
-    Href,
     Loader,
-    useFeature,
     usePlans,
     useTheme,
     useUser,
@@ -16,9 +13,6 @@ import {
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { LabelCount } from '@proton/shared/lib/interfaces/Label';
-import appStore from '@proton/styles/assets/img/illustrations/app-store.svg';
-import mobileMailApp from '@proton/styles/assets/img/illustrations/app-teaser.svg';
-import playStore from '@proton/styles/assets/img/illustrations/play-store.svg';
 import envelope from '@proton/styles/assets/img/illustrations/welcome-pane.svg';
 import capitalize from '@proton/utils/capitalize';
 
@@ -42,19 +36,16 @@ interface Props {
 
 const WelcomePane = ({ mailSettings, location, labelCount }: Props) => {
     const conversationMode = isConversationMode(MAILBOX_LABEL_IDS.INBOX, mailSettings, location);
-    const { feature: featureUsedMailMobileApp, loading: loadingUsedMailMobileApp } = useFeature(
-        FeatureCode.UsedMailMobileApp
-    );
 
     const [user, loadingUser] = useUser();
     const [plans = [], loadingPlans] = usePlans();
     const [theme] = useTheme();
     const [userSettings, loadingUserSettings] = useUserSettings();
-    const loading = loadingUsedMailMobileApp || loadingUser || loadingPlans || loadingUserSettings;
+    const loading = loadingUser || loadingPlans || loadingUserSettings;
 
     const unread = labelCount?.Unread || 0;
     const total = labelCount?.Total || 0;
-    const imageSvg = featureUsedMailMobileApp?.Value ? envelope : mobileMailApp;
+
     const userName = (
         <span key="display-name" className="inline-block max-w100 text-ellipsis align-bottom">
             {capitalize(user.DisplayName)}
@@ -99,28 +90,8 @@ const WelcomePane = ({ mailSettings, location, labelCount }: Props) => {
                 <p className="text-keep-space">{labelCount ? counterMessage : null}</p>
                 <hr className="mb2 mt2" />
                 <div className="text-rg">
-                    <img className="hauto" src={imageSvg} alt={c('Alternative text for welcome image').t`Welcome`} />
+                    <img className="hauto" src={envelope} alt={c('Alternative text for welcome image').t`Welcome`} />
                 </div>
-                {featureUsedMailMobileApp?.Value ? null : (
-                    <>
-                        <p>{c('Info')
-                            .t`Download our mobile application from your favorite app store to communicate securely on-the-go.`}</p>
-                        <div className="text-rg">
-                            <Href
-                                className="inline-block mr1"
-                                url="https://itunes.apple.com/app/protonmail-encrypted-email/id979659905"
-                            >
-                                <img className="hauto" src={appStore} alt="App Store" />
-                            </Href>
-                            <Href
-                                className="inline-block"
-                                url="https://play.google.com/store/apps/details?id=ch.protonmail.android"
-                            >
-                                <img className="hauto" src={playStore} alt="Play Store" />
-                            </Href>
-                        </div>
-                    </>
-                )}
             </Container>
         </>
     );
