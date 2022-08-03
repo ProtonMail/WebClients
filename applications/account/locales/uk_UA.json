@@ -292,6 +292,9 @@
       "Download all configurations": [
         "Завантажити всі конфігурації"
       ],
+      "Download ICS": [
+        "Завантажити ICS"
+      ],
       "Download recovery file": [
         "Завантажити файл відновлення"
       ],
@@ -403,8 +406,8 @@
       "Import emails": [
         "Імпортувати електронну пошту"
       ],
-      "Import from .ics": [
-        "Імпорт з .ics"
+      "Import from ICS": [
+        "Імпорт з ICS"
       ],
       "Import key": [
         "Імпортувати ключ"
@@ -1077,6 +1080,11 @@
         "24 місяці"
       ]
     },
+    "breadcrumb": {
+      "Calendars": [
+        "Календарі"
+      ]
+    },
     "Bridge version load failed": {
       "Failed to find latest version": [
         "Не вдалося знайти найновішу версію"
@@ -1173,6 +1181,16 @@
         "Твітнути"
       ]
     },
+    "Calendar edit button tooltip": {
+      "Edit calendar information": [
+        "Редагувати інформацію календаря"
+      ]
+    },
+    "Calendar export section description": {
+      "Download an ICS file with all the events from the selected calendar.": [
+        "Завантажити файл ICS з усіма подіями з вибраного календаря."
+      ]
+    },
     "Calendar import section description": {
       "You can import ICS files from another calendar to ${ CALENDAR_APP_NAME }. This lets you quickly import one event or your entire agenda.": [
         "Ви можете імпортувати ICS файли з іншого календаря до ${ CALENDAR_APP_NAME }. Це дасть змогу швидко імпортувати одну подію або весь ваш порядок денний."
@@ -1200,6 +1218,11 @@
         "Мітку змінено"
       ]
     },
+    "Calendar settings sidebar": {
+      "Show ${ remainingItems } more": [
+        "Показати ще ${ remainingItems }"
+      ]
+    },
     "Calendar status": {
       "Active": [
         "Активний"
@@ -1224,6 +1247,9 @@
       "Calendar is syncing": [
         "Календар синхронізується"
       ],
+      "Calendar is syncing: it may take several minutes for all of its events to show up": [
+        "Календар синхронізується: для показу всіх подій з нього може знадобитися кілька хвилин"
+      ],
       "Calendar is too big": [
         "Календар завеликий"
       ],
@@ -1241,6 +1267,17 @@
       ],
       "Unsupported calendar format": [
         "Непідтримуваний формат календаря"
+      ]
+    },
+    "Calendar subscription not synced error; long version": {
+      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
+        "Посилання на календар недоступне поза межами екосистеми постачальника календаря."
+      ],
+      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
+        "Посилання на календар тимчасово недоступне. Переконайтеся, що посилання від постачальника календаря досі дійсне."
+      ],
+      "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
+        "З моменту останнього оновлення минуло понад 12 годин — Proton Calendar спробує оновити календар за кілька годин."
       ]
     },
     "Calendar view": {
@@ -2446,9 +2483,19 @@
         "Середа"
       ]
     },
+    "Default calendar event settings section title": {
+      "Default event settings": [
+        "Типові налаштування події"
+      ]
+    },
     "Default display name vcard": {
       "Unknown": [
         "Невідомо"
+      ]
+    },
+    "Delete calendar section description": {
+      "All events in this calendar will be deleted.": [
+        "Усі події в цьому календарі буде видалено."
       ]
     },
     "Delinquent modal title": {
@@ -2654,6 +2701,9 @@
       ],
       "Automatic replies is a paid feature. Please upgrade to a paid account to use this feature.": [
         "Автоматична відповідь є платною функцією. Будь ласка, передплатіть тарифний план для її використання."
+      ],
+      "Calendar cannot be found": [
+        "Не вдалося знайти календар"
       ],
       "Calendar limit reached": [
         "Досягнуто ліміту календарів"
@@ -4096,6 +4146,9 @@
       "${ emailAddress } is invalid": [
         "${ emailAddress } е-пошти недійсна"
       ],
+      "${ firstRemainingCalendarName } will be set as default calendar.": [
+        "${ firstRemainingCalendarName } буде встановлено типовим календарем."
+      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } також можна використовувати з єдиним паролем, який замінює пароль входу та пароль поштової скриньки. Щоб перемкнутись на однопарольний режим, введіть єдиний пароль, який ви бажаєте використовувати, а потім натисніть кнопку Зберегти."
       ],
@@ -4372,6 +4425,9 @@
       "Are you sure you want to delete this calendar?": [
         "Ви дійсно хочете видалити цей календар?"
       ],
+      "Are you sure you want to delete this calendar? All events in it will be deleted.": [
+        "Ви впевнені, що хочете видалити цей календар? З нього будуть видалені всі події."
+      ],
       "Are you sure you want to delete this domain?": [
         "Ви впевнені, що хочете видалити цей домен?"
       ],
@@ -4422,6 +4478,12 @@
       ],
       "Basic, Plus or Visionary subscription required": [
         "Необхідна передплата Basic, Plus або Visionary"
+      ],
+      "Before creating this address you need to provide a password and create encryption keys for it.": [
+        "Перед створенням цієї адреси необхідно ввести пароль і створити для неї ключі шифрування."
+      ],
+      "Before enabling the account you need to provide a password and create encryption keys for the new addresses.": [
+        "Перш ніж увімкнути обліковий запис, вам потрібно ввести пароль і створити ключі шифрування для нових адрес."
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Перш ніж запитувати новий код підтвердження, перевірте теку зі спамом та перевірте, чи правильно вказано адресу ${ strong }."
@@ -4610,10 +4672,10 @@
         "Адреса електронної пошти"
       ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
-        "Хостинг для 10 власних доменних імен електронної пошти включено безплатно. Додаткові домени можна додати за ${ price }."
+        "Розміщення до 10 власних доменних імен електронної пошти включено безплатно. Більше доменів можна додати за ${ price }."
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through Proton. You can host email for domains registered on any domain registrar.": [
-        "Хостинг електронної пошти доступний лише для доменів, якими ви володієте. Реєстрація доменів наразі недоступна в Proton. Ви можете розмістити електронну пошту для доменів, зареєстрованих в будь-якому реєстраторі."
+        "Розміщення доменів електронної пошти доступний лише для доменів, якими ви володієте. Реєстрація доменів наразі недоступна в Proton. Ви можете розмістити електронну пошту для доменів, зареєстрованих в будь-якому реєстраторі."
       ],
       "Emailing preference saved": [
         "Налаштування електронної пошти збережено"
@@ -5323,6 +5385,9 @@
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Цей браузер не підтримує перегляд PDF документів. Будь ласка, завантажте файл."
       ],
+      "This calendar will be removed from your account.": [
+        "Цей календар буде вилучено з вашого облікового запису."
+      ],
       "This can take a few seconds or a few minutes depending on your device": [
         "Це може тривати кілька секунд або кілька хвилин залежно від вашого пристрою"
       ],
@@ -5635,6 +5700,9 @@
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Ви не вказали спосіб відновлення, тому неможливо відновити обліковий запис при втраті пароля. Продовжити без способу відновлення?"
       ],
+      "You have no personal calendars to export.": [
+        "У вас немає особистих календарів для експорту."
+      ],
       "You have no saved payment methods.": [
         "У вас немає збережених способів оплати."
       ],
@@ -5659,8 +5727,8 @@
       "You need to have a personal calendar to create a link.": [
         "Щоб створити посилання, вам необхідно мати особистий календар."
       ],
-      "You need to have an active personal calendar to import your events from .ics.": [
-        "Вам необхідно мати активний особистий календар для імпорту ваших подій з .ics."
+      "You need to have an active personal calendar to import your events from ICS.": [
+        "Вам необхідно мати активний особистий календар для імпорту ваших подій з ICS."
       ],
       "You need to have an active personal calendar to import your events.": [
         "Вам необхідно мати активний особистий календар для імпорту ваших подій."
@@ -5809,7 +5877,7 @@
         "Ваша нова адреса електронної пошти готова до користування!"
       ],
       "Your subscription starts on ${ startText }.": [
-        "Ваша передплата розпочата ${ startText }."
+        "Ваша передплата починається ${ startText }."
       ]
     },
     "Info - folder colouring feature": {
@@ -6177,6 +6245,9 @@
     "Knowledge base link label": {
       "Here's how": [
         "Ось, як це зробити"
+      ],
+      "Learn more": [
+        "Докладніше"
       ]
     },
     "Label": {
@@ -6998,6 +7069,19 @@
         "Додати домен, яким ви володієте, до облікового запису ${ MAIL_APP_NAME }."
       ]
     },
+    "Label for default event notifications": {
+      "All-day event notifications": [
+        "Сповіщення події на цілий день"
+      ],
+      "Notifications": [
+        "Сповіщення"
+      ]
+    },
+    "Label for default event settings": {
+      "Duration": [
+        "Тривалість"
+      ]
+    },
     "Label for domain modal": {
       "Please add the following TXT record:": [
         "Додайте такий TXT запис:"
@@ -7147,6 +7231,9 @@
       ],
       "How to unlock data": [
         "Як розблокувати дані"
+      ],
+      "Import/export": [
+        "Імпорт/експорт"
       ],
       "Learn more": [
         "Докладніше"
@@ -8102,7 +8189,7 @@
         "Підтримка телефоном доступна клієнтам з 6-ма та більше користувачами під час європейського робочого часу"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
-        "Запобігає доступу до повідомлень ${ BRAND_NAME } чи сторонніх осіб. Відправник та отримувач повідомлень – єдині, хто можуть читати повідомлення."
+        "Запобігає доступу до повідомлень ${ BRAND_NAME } чи сторонніх осіб. Відправник та отримувач повідомлень – єдині, хто може читати повідомлення."
       ],
       "Protect every device connected to your WiFi network. It’s also useful if you have devices that do not support VPN settings directly.": [
         "Захистіть кожен пристрій у своїй мережі WiFi. Також це корисно для пристроїв, які не підтримують безпосередньо налаштування VPN."
@@ -8193,7 +8280,7 @@
         "Розширте загальний обсяг свого сховища до ${ bundleStorage }"
       ],
       "Boost your storage space to ${ businessStorage } per user": [
-        "Розширте простір свого сховища до ${ businessStorage } на користувача"
+        "Розширте обсяг свого сховища до ${ businessStorage } на користувача"
       ],
       "Boost your storage space to ${ driveStorage } total": [
         "Розширте простір свого сховища загалом до ${ driveStorage }"
@@ -8240,17 +8327,22 @@
         "Облікові дані OpenVPN / IKEv2 повторно згенеровано"
       ]
     },
+    "Notification success": {
+      "Event defaults updated": [
+        "Типові параметри події оновлено"
+      ]
+    },
     "Notification time input": {
       "at": [
         "о"
       ]
     },
     "Notification type": {
-      "email": [
-        "е-пошта"
+      "Email": [
+        "Е-пошта"
       ],
-      "notification": [
-        "сповіщення"
+      "In-app": [
+        "У застосунку"
       ]
     },
     "Notification when": {
@@ -8577,6 +8669,11 @@
         "PayPal"
       ]
     },
+    "Personal calendar section description": {
+      "Create a calendar to stay on top of your schedule while keeping your data secure.": [
+        "Створіть календар, щоб контролювати свій розклад, зберігаючи при цьому свої дані в безпеці."
+      ]
+    },
     "Placeholder": {
       "A way to contact you": [
         "Спосіб зв'язку з вами"
@@ -8816,6 +8913,22 @@
       ],
       "State of the art": [
         "Витвір мистецтва"
+      ]
+    },
+    "Remove calendar section description": {
+      "By unsubscribing, you will no longer have access to this calendar. All events in this calendar will be deleted from your account, but they'll remain in the original publick link.": [
+        "Скасувавши підписку, ви більше не матимете доступу до цього календаря. Усі події цього календаря буде видалено з вашого облікового запису, але вони залишаться в вихідному загальнодоступному посиланні."
+      ]
+    },
+    "Remove calendar section title": {
+      "Delete calendar?": [
+        "Видалити календар?"
+      ],
+      "Remove calendar": [
+        "Вилучити календар"
+      ],
+      "Unsubscribe?": [
+        "Відписатися?"
       ]
     },
     "Restore administrator panel": {
@@ -9164,6 +9277,9 @@
       "Calendar created": [
         "Календар створено"
       ],
+      "Calendar information updated": [
+        "Інформація календаря оновлена"
+      ],
       "Calendar removed": [
         "Календар вилучено"
       ],
@@ -9477,6 +9593,9 @@
       "Action": [
         "Дія"
       ],
+      "Activate account and generate keys": [
+        "Активувати обліковий запис і згенерувати ключі"
+      ],
       "Activate organization key": [
         "Активувати ключ організації"
       ],
@@ -9578,6 +9697,9 @@
       ],
       "Bridge for ${ platform }": [
         "Bridge для ${ platform }"
+      ],
+      "Calendar information": [
+        "Інформація календаря"
       ],
       "Cancel Mail subscription": [
         "Скасувати передплату Пошти"
@@ -9798,6 +9920,9 @@
       "Error": [
         "Помилка"
       ],
+      "Export": [
+        "Експорт"
+      ],
       "Export calendar": [
         "Експортувати календар"
       ],
@@ -9857,6 +9982,9 @@
       ],
       "Import": [
         "Імпорт"
+      ],
+      "Import and export": [
+        "Імпорт і експорт"
       ],
       "Import as simple event?": [
         "Імпортувати як просту подію?",

@@ -426,9 +426,6 @@
       "Import from .csv or vCard": [
         "Importare din .csv sau vCard"
       ],
-      "Import messages": [
-        "Importare mesaje"
-      ],
       "Inline": [
         "Integrat"
       ],
@@ -3570,6 +3567,11 @@
         "Megabaiți"
       ]
     },
+    "Filter": {
+      "Show": [
+        "Afișare"
+      ]
+    },
     "Filter Actions": {
       "Archive": [
         "Arhivă"
@@ -6485,6 +6487,11 @@
         "Îmbinare cu calendarul"
       ]
     },
+    "Pagination": {
+      "${ page } of ${ total }": [
+        "${ page } din ${ total }"
+      ]
+    },
     "Paid user checklist item": {
       "Get mobile app": [
         "Descărcați aplicația mobilă"
@@ -6858,6 +6865,11 @@
       ],
       "Sender's trusted keys verification failed": [
         "Verificarea cheilor de încredere a expeditorului a eșuat"
+      ]
+    },
+    "Sort": {
+      "Sort": [
+        "Sortare"
       ]
     },
     "Sort option": {
@@ -7332,6 +7344,9 @@
       "Addresses": [
         "Adrese"
       ],
+      "Archive": [
+        "Arhivă"
+      ],
       "Are you sure you want to close?": [
         "Sigur doriți să închideți?"
       ],
@@ -7549,6 +7564,9 @@
       "Mailbox layout": [
         "Aspect cutie poștală"
       ],
+      "Mark as read": [
+        "Marcare ca citit"
+      ],
       "Mark as unread": [
         "Marcare ca necitit"
       ],
@@ -7728,6 +7746,9 @@
       ],
       "To": [
         "Către"
+      ],
+      "Trash": [
+        "Gunoi"
       ],
       "Trust new key?": [
         "Aveți încredere în noua cheie?",

@@ -422,9 +422,6 @@
       "Import from .csv or vCard": [
         ".csv または vCard からインポート"
       ],
-      "Import messages": [
-        "メッセージをインポート"
-      ],
       "Inline": [
         "インライン"
       ],
@@ -1406,7 +1403,18 @@
         "イベントが開催中です"
       ]
     },
+    "Collapsible tooltip": {
+      "Collapse": [
+        "作成"
+      ],
+      "Expand": [
+        "展開"
+      ]
+    },
     "color": {
+      "apple": [
+        "グレーな緑"
+      ],
       "azureish white": [
         "かなり白い青"
       ],
@@ -3065,6 +3073,11 @@
         "一致する項目が多すぎるため、検索対象をより絞り込んでもう一度お試しください。"
       ]
     },
+    "Error adding participants to a calendar event": {
+      "At most 100 participants are allowed per invitation": [
+        "1 つの招待につき 100 人までが許可されています"
+      ]
+    },
     "Error display when performing invalid move on message": {
       "Drafts cannot be moved to Inbox": [
         "下書きを受信トレイに移動することはできません"
@@ -3315,6 +3328,11 @@
       ],
       "Megabyte": [
         "メガバイト"
+      ]
+    },
+    "Filter": {
+      "Show": [
+        "表示"
       ]
     },
     "Filter Actions": {
@@ -3676,6 +3694,12 @@
       "${ numContacts } contact": [
         "${ numContacts } 件の連絡先"
       ],
+      "${ numOccurrences } occurrence found": [
+        "${ numOccurrences } 件の出来事が見つかりました"
+      ],
+      "${ numOccurrences } occurrence found in the mail content": [
+        "メール内に ${ numOccurrences } 件の出来事が見つかりました"
+      ],
       "${ pureAttachmentsCount } file attached": [
         "${ pureAttachmentsCount } 件の添付ファイル"
       ],
@@ -4014,6 +4038,9 @@
       ],
       "For increased security, activate 2FA.": [
         "さらなるセキュリティのため、2FA をアクティブにします。"
+      ],
+      "For messages newer than ${ oldestDate }": [
+        "${ oldestDate } 以降のメッセージ"
       ],
       "Free up some space or add more storage space.": [
         "スペースを解放するか、ストレージのスペースをさらに増やしてください。"
@@ -4680,6 +4707,9 @@
       ],
       "You can check the progress ${ importProgressLink }.": [
         "進捗を確認するには ${ importProgressLink }。"
+      ],
+      "You can either update your search query or ${ button }": [
+        "検索内容を変えるか ${ button }"
       ],
       "You can either update your search query or clear it": [
         "検索内容を変えるか、消去してください"
@@ -5890,6 +5920,11 @@
         "アカウントを追加・切り替え"
       ]
     },
+    "new_plans: info": {
+      "Introducing Proton’s refreshed look.${ br }Many services, one mission. Welcome to an internet where privacy is the default.": [
+        "新しい外観になった Proton をご紹介します。${ br }たくさんのサービス、1 つのミッション。どこでもプライベートなインターネットへようこそ。"
+      ]
+    },
     "new_plans: label": {
       "Tell us about your experience. (Optional)": [
         "あなたのご意見をお聞かせください (任意)"
@@ -6001,6 +6036,11 @@
         "カレンダーと結合"
       ]
     },
+    "Pagination": {
+      "${ page } of ${ total }": [
+        "${ page } / ${ total }"
+      ]
+    },
     "Paid user checklist item": {
       "Get mobile app": [
         "モバイルアプリを入手する"
@@ -6026,6 +6066,12 @@
       ]
     },
     "PGP Key info": {
+      "${ emailAddress } has marked this key as compromised. This key cannot be used neither for encryption nor for signature verification.": [
+        "${ emailAddress } はこのキーを侵害扱いにしました。このキーは署名検証のみに使用できます。"
+      ],
+      "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
+        "${ emailAddress } はこのキーを廃止しました。このキーは署名検証のみに使用できます。"
+      ],
       "We recommend that you \"untrust\" this key.": [
         "この鍵を「信頼しない」ことをおすすめします。"
       ]
@@ -6342,6 +6388,11 @@
       ],
       "Sender's trusted keys verification failed": [
         "送信者の信頼されたキーの検証に失敗しました"
+      ]
+    },
+    "Sort": {
+      "Sort": [
+        "並べ替え"
       ]
     },
     "Sort option": {
@@ -6754,6 +6805,9 @@
       "Addresses": [
         "メールアドレス"
       ],
+      "Archive": [
+        "アーカイブ"
+      ],
       "Are you sure you want to close?": [
         "本当に画面を閉じてよろしいですか？"
       ],
@@ -6961,6 +7015,9 @@
       "Mailbox layout": [
         "受信トレイのレイアウト"
       ],
+      "Mark as read": [
+        "既読にする"
+      ],
       "Mark as unread": [
         "未読にする"
       ],
@@ -7140,6 +7197,9 @@
       ],
       "To": [
         "宛先"
+      ],
+      "Trash": [
+        "ごみ箱"
       ],
       "Trust new key?": [
         "新しい鍵を信頼しますか？"

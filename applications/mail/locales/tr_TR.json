@@ -424,9 +424,6 @@
       "Import from .csv or vCard": [
         ".csv ya da vCard dosyasından içe aktar"
       ],
-      "Import messages": [
-        "İletileri içe aktar"
-      ],
       "Inline": [
         "Satır arası"
       ],
@@ -3544,6 +3541,11 @@
         "Megabayt"
       ]
     },
+    "Filter": {
+      "Show": [
+        "Göster"
+      ]
+    },
     "Filter Actions": {
       "Archive": [
         "Arşiv"
@@ -4937,7 +4939,7 @@
         "Üçüncü taraf masaüstü uygulamaları ile ${ MAIL_APP_NAME } kullanmak için yükseltin."
       ],
       "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        "${ planName } faydalarını kaybetmemek için bugün yükseltin."
+        "${ planName } avantajlarını kaybetmemek için tarifenizi bugün yükseltin."
       ],
       "Upload picture": [
         "Görsel yükle"
@@ -6388,6 +6390,11 @@
         "Takvim ile birleştir"
       ]
     },
+    "Pagination": {
+      "${ page } of ${ total }": [
+        "${ page } / ${ total }"
+      ]
+    },
     "Paid user checklist item": {
       "Get mobile app": [
         "Mobil uygulamayı edinin"
@@ -6753,6 +6760,11 @@
       ],
       "Sender's trusted keys verification failed": [
         "Göndericinin güvenilen anahtarları doğrulanamadı"
+      ]
+    },
+    "Sort": {
+      "Sort": [
+        "Sırala"
       ]
     },
     "Sort option": {
@@ -7196,6 +7208,9 @@
       "Addresses": [
         "Adresler"
       ],
+      "Archive": [
+        "Arşivle"
+      ],
       "Are you sure you want to close?": [
         "Oturumu kapatmak istediğinize emin misiniz?"
       ],
@@ -7408,6 +7423,9 @@
       "Mailbox layout": [
         "Posta kutusu görünümü"
       ],
+      "Mark as read": [
+        "Okunmuş olarak işaretle"
+      ],
       "Mark as unread": [
         "Okunmamış olarak işaretle"
       ],
@@ -7587,6 +7605,9 @@
       ],
       "To": [
         "Kime"
+      ],
+      "Trash": [
+        "Çöpe at"
       ],
       "Trust new key?": [
         "Yeni anahtara güvenilsin mi?",

@@ -1090,7 +1090,21 @@
         "Tweet"
       ]
     },
+    "Calendar link purpose update success message": {
+      "Label added": [
+        "ラベルが追加されました"
+      ],
+      "Label deleted": [
+        "ラベルが削除されました"
+      ],
+      "Label edited": [
+        "ラベルが編集されました"
+      ]
+    },
     "Calendar status": {
+      "Active": [
+        "有効"
+      ],
       "Not synced": [
         "同期されていません"
       ],
@@ -2218,6 +2232,29 @@
       ],
       "/user per month": [
         "毎月 (1 ユーザーあたり)"
+      ]
+    },
+    "Daily recurring event, frequency": {
+      "${ count } time": [
+        "${ count } 回"
+      ],
+      "Daily": [
+        "毎日"
+      ],
+      "Daily, ${ timesString }": [
+        "毎日、${ timesString }"
+      ],
+      "Daily, ${ untilString }": [
+        "毎日、${ untilString }"
+      ],
+      "Every ${ interval } day": [
+        "${ interval } 日毎"
+      ],
+      "Every ${ interval } day, ${ timesString }": [
+        "${ interval } 日毎、${ timesString }"
+      ],
+      "Every ${ interval } day, ${ untilString }": [
+        "${ interval } 日毎、${ untilString }"
       ]
     },
     "Day": {
@@ -3783,6 +3820,9 @@
       "Add image URL": [
         "画像の URL を追加"
       ],
+      "Add label": [
+        "ラベルを追加"
+      ],
       "Additional options": [
         "追加のオプション"
       ],
@@ -3981,8 +4021,26 @@
       "Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.": [
         "現在利用可能なストレージは、すべて管理者アカウントに割り当てられています。追加ユーザーに割り当てたい場合は、管理者アカウントへの割り当てを減らしてください。アカウントをアップグレードすることでいつでもストレージ全体の容量を増やすこともできます。"
       ],
+      "Custom": [
+        "カスタム"
+      ],
+      "Custom daily": [
+        "毎日 (カスタム)"
+      ],
       "Custom email domains": [
         "独自メールドメイン"
+      ],
+      "Custom monthly": [
+        "毎月 (カスタム)"
+      ],
+      "Custom weekly": [
+        "毎週 (カスタム)"
+      ],
+      "Custom yearly": [
+        "毎年 (カスタム)"
+      ],
+      "Daily": [
+        "毎日"
       ],
       "Data locked": [
         "データはロックされています"
@@ -4031,6 +4089,9 @@
       ],
       "Drop the file here to upload": [
         "アップロードするファイルをここにドロップしてください"
+      ],
+      "Edit label": [
+        "ラベルを編集"
       ],
       "Edit link": [
         "リンクを編集"
@@ -4302,6 +4363,12 @@
       "Link copied to clipboard": [
         "リンクをクリップボードにコピーしました"
       ],
+      "Link created": [
+        "リンクが作成されました"
+      ],
+      "Link deleted": [
+        "リンクが削除されました"
+      ],
       "Link type": [
         "リンクの種類"
       ],
@@ -4334,6 +4401,9 @@
       ],
       "Merged": [
         "結合"
+      ],
+      "Monthly ${ onDayString }": [
+        "毎月 ${ onDayString }"
       ],
       "more": [
         "詳細"
@@ -4409,6 +4479,9 @@
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "この設定は、メールの宛先に PGP を使用している非 ${ BRAND_NAME } ユーザーがいる場合にのみ変更してください。"
+      ],
+      "Only you can see the labels.": [
+        "ラベルが見えるのはあなただけです。"
       ],
       "Or select a particular server:": [
         "または特定のサーバーを選択:"
@@ -4752,6 +4825,9 @@
       "to continue to ${ toAppName }": [
         "サインイン後 ${ toAppName } を開きます"
       ],
+      "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
+        "サービスを継続的に改善するため、アプリケーションの正常な動作を監視するためのデータを収集することがあります。この情報は、いかなる第三者サービスにも共有されません。"
+      ],
       "To decrypt and view your emails and other data, you need a recovery file.": [
         "メールなどのデータを復号するには、回復用ファイルが必要です。"
       ],
@@ -4931,6 +5007,9 @@
       ],
       "Yandex records your online activity and reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
         "Yandex はオンライン履歴を記録したり、個人情報を収集しており、広告主や、その他の第三者に情報を提供しています。プライバシーを守るため、安全なメールアドレスを作成しましょう。"
+      ],
+      "Yearly": [
+        "毎年"
       ],
       "You already have a free account": [
         "すでに FREE アカウントをお持ちですか？"
@@ -5614,6 +5693,9 @@
       "Code is 6 digits without spaces": [
         "コードは空白なしの 6 桁の数字です"
       ],
+      "Collect usage diagnostics": [
+        "使用状況診断を収集"
+      ],
       "Composer": [
         "メール作成"
       ],
@@ -6054,6 +6136,9 @@
       ],
       "Send auto-reply": [
         "自動返信を送信"
+      ],
+      "Send crash reports": [
+        "クラッシュレポートを送信"
       ],
       "Sign external messages": [
         "外部宛のメッセージへの署名"
@@ -6533,6 +6618,26 @@
       ],
       "Swiss franc": [
         "スイス・フラン"
+      ]
+    },
+    "Monthly recurring event, frequency": {
+      "Every ${ interval } month ${ onDayString }": [
+        "${ interval } か月毎の ${ onDayString }"
+      ],
+      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
+        "${ interval } か月毎の ${ onDayString } 、${ timesString }"
+      ],
+      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
+        "${ interval } か月毎の ${ onDayString } 、${ untilString }"
+      ],
+      "Monthly ${ onDayString }": [
+        "毎月 ${ onDayString }"
+      ],
+      "Monthly ${ onDayString }, ${ timesString }": [
+        "毎月 ${ onDayString } 、${ timesString }"
+      ],
+      "Monthly ${ onDayString }, ${ untilString }": [
+        "毎月 ${ onDayString } 、${ untilString }"
       ]
     },
     "Moved to black/whitelist": {
@@ -8100,6 +8205,9 @@
       "Action": [
         "アクション"
       ],
+      "Activate account and generate keys": [
+        "アカウントをアクティブにしてキーを生成"
+      ],
       "Activate organization key": [
         "組織の鍵を有効化する"
       ],
@@ -8586,6 +8694,9 @@
       "Previous": [
         "前へ"
       ],
+      "Privacy and data collection": [
+        "プライバシーとデータ収集"
+      ],
       "Processing": [
         "処理中"
       ],
@@ -8639,6 +8750,9 @@
       ],
       "Secure email based in Switzerland": [
         "スイスに拠点を置くセキュアなメール"
+      ],
+      "Security and privacy": [
+        "セキュリティとプライバシー"
       ],
       "Security logs": [
         "セキュリティログ"
@@ -9153,6 +9267,49 @@
       ],
       "It can take up to a day for DNS changes to update.": [
         "DNS の更新には最大1日かかる場合があります。"
+      ]
+    },
+    "Weekly recurring event, repeats on (multiple days), frequency": {
+      "Friday": [
+        "金曜日"
+      ],
+      "Monday": [
+        "月曜日"
+      ],
+      "Saturday": [
+        "土曜日"
+      ],
+      "Sunday": [
+        "日曜日"
+      ],
+      "Thursday": [
+        "木曜日"
+      ],
+      "Tuesday": [
+        "火曜日"
+      ],
+      "Wednesday": [
+        "水曜日"
+      ]
+    },
+    "Yearly recurring event, frequency": {
+      "Every ${ interval } year": [
+        "${ interval } 年毎"
+      ],
+      "Every ${ interval } year, ${ timesString }": [
+        "${ interval } 年毎、${ timesString }"
+      ],
+      "Every ${ interval } year, ${ untilString }": [
+        "${ interval } 年毎、${ untilString }"
+      ],
+      "Yearly": [
+        "毎年"
+      ],
+      "Yearly, ${ timesString }": [
+        "毎年、${ timesString }"
+      ],
+      "Yearly, ${ untilString }": [
+        "毎年、${ untilString }"
       ]
     }
   }
