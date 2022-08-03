@@ -18,9 +18,10 @@ interface Props {
     calendar: VisualCalendar | SubscribedCalendar;
     defaultCalendar?: VisualCalendar;
     onEdit?: () => void;
+    isEditDisabled: boolean;
 }
 
-const CalendarSettingsHeaderSection = ({ calendar, defaultCalendar, onEdit }: Props) => {
+const CalendarSettingsHeaderSection = ({ calendar, defaultCalendar, onEdit, isEditDisabled }: Props) => {
     const { Name, Description, Color, Email } = calendar;
     const { isSubscribed, badges, isNotSyncedInfo } = getCalendarStatusBadges(calendar, defaultCalendar?.ID);
     const url = getCalendarHasSubscriptionParameters(calendar) ? calendar.SubscriptionParameters.URL : undefined;
@@ -43,8 +44,8 @@ const CalendarSettingsHeaderSection = ({ calendar, defaultCalendar, onEdit }: Pr
             )}
             <div className="mt1-5 mb1-5 flex flex-justify-space-between flex-nowrap">
                 <div className="grid-align-icon">
-                    <CalendarSelectIcon color={Color} className="mr0-75 flex-item-noshrink keep-left" />
-                    <div className="h1 mb0-25 text-bold text-ellipsis" title={Name}>
+                    <CalendarSelectIcon color={Color} className="mr0-75 mt1-5 flex-item-noshrink keep-left" />
+                    <div className="h1 mb0-25 text-bold text-break" title={Name}>
                         {Name}
                     </div>
                     <div className="mb0-25 text-break">{Description}</div>
@@ -81,18 +82,14 @@ const CalendarSettingsHeaderSection = ({ calendar, defaultCalendar, onEdit }: Pr
                                     : getKnowledgeBaseUrl('/subscribe-to-external-calendar#troubleshooting')
                             }
                         >
-                            {isNotSyncedInfo.longText || isNotSyncedInfo.text}
+                            {isNotSyncedInfo.longText}
                         </Alert>
                     )}
                 </div>
-                <span className="ml1 flex-item-noshrink">
+                <span className="ml1 pt0-5 flex-item-noshrink">
                     <Tooltip title={c('Calendar edit button tooltip').t`Edit calendar information`}>
-                        <ButtonLike shape="outline" onClick={handleEdit} icon size="large">
-                            <Icon
-                                name="pen"
-                                alt={c('Calendar edit button tooltip').t`Edit calendar information`}
-                                size={20}
-                            />
+                        <ButtonLike shape="outline" onClick={handleEdit} icon disabled={isEditDisabled}>
+                            <Icon name="pen" alt={c('Calendar edit button tooltip').t`Edit calendar information`} />
                         </ButtonLike>
                     </Tooltip>
                 </span>

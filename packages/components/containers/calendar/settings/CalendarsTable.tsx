@@ -1,18 +1,20 @@
-import { c } from 'ttag';
-import { VisualCalendar, SubscribedCalendar } from '@proton/shared/lib/interfaces/calendar';
-import isTruthy from '@proton/utils/isTruthy';
-import { SimpleMap, UserModel } from '@proton/shared/lib/interfaces';
-import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { getCalendarStatusBadges } from '@proton/shared/lib/calendar/badges';
-
 import React from 'react';
+
+import { c } from 'ttag';
+
+import { getCalendarStatusBadges } from '@proton/shared/lib/calendar/badges';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import { SimpleMap, UserModel } from '@proton/shared/lib/interfaces';
+import { SubscribedCalendar, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import isTruthy from '@proton/utils/isTruthy';
+
 import { DropdownActions, Info, Table, TableBody, TableHeader, TableRow } from '../../../components';
+import CalendarSelectIcon from '../../../components/calendarSelect/CalendarSelectIcon';
+import { classnames } from '../../../helpers';
 import useGetCalendarsEmails from '../hooks/useGetCalendarsEmails';
+import CalendarBadge from './CalendarBadge';
 
 import './CalendarsTable.scss';
-import { classnames } from '../../../helpers';
-import CalendarSelectIcon from '../../../components/calendarSelect/CalendarSelectIcon';
-import CalendarBadge from './CalendarBadge';
 
 interface Props {
     calendars: (VisualCalendar | SubscribedCalendar)[];
@@ -93,7 +95,7 @@ const CalendarsTable = ({
                             key={ID}
                             cells={[
                                 <div key="id">
-                                    <div className="grid-align-icon">
+                                    <div className="grid-align-icon-center">
                                         <CalendarSelectIcon
                                             color={Color}
                                             className="mr0-75 flex-item-noshrink keep-left"
