@@ -403,9 +403,6 @@
       "Import emails": [
         "Importare mesaje"
       ],
-      "Import from .ics": [
-        "Importare din .ics"
-      ],
       "Import key": [
         "Importare cheie"
       ],
@@ -4375,6 +4372,12 @@
       "Basic, Plus or Visionary subscription required": [
         "Este necesar abonamentul „Basic”,„Plus” sau „Visionary”"
       ],
+      "Before creating this address you need to provide a password and create encryption keys for it.": [
+        "Înainte de a crea această adresă trebuie să furnizați o parolă și să creați o cheie de criptare pentru ea."
+      ],
+      "Before enabling the account you need to provide a password and create encryption keys for the new addresses.": [
+        "Înainte de a activa acest cont trebuie să furnizați o parolă și să creați chei de criptare pentru adresele noi."
+      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Înainte de a solicita un cod nou de verificare, verificați-vă folderul de mesaje nedorite și verificați dacă ${ strong } este adresa corectă."
       ],
@@ -5605,9 +5608,6 @@
       ],
       "You need to have a personal calendar to create a link.": [
         "Trebuie să aveți un calendar personal pentru a crea o legătură."
-      ],
-      "You need to have an active personal calendar to import your events from .ics.": [
-        "Trebuie să aveți un calendar personal activ pentru a vă importa evenimentele din fișierul .ics."
       ],
       "You need to have an active personal calendar to import your events.": [
         "Trebuie să aveți un calendar personal activ pentru a importa evenimentele."
@@ -8166,14 +8166,6 @@
         "la"
       ]
     },
-    "Notification type": {
-      "email": [
-        "e-mail"
-      ],
-      "notification": [
-        "notificare"
-      ]
-    },
     "Notification when": {
       "at time of event": [
         "la momentul evenimentului"
@@ -9376,6 +9368,9 @@
       ],
       "Action": [
         "Acțiune"
+      ],
+      "Activate account and generate keys": [
+        "Activare cont și generare chei"
       ],
       "Activate organization key": [
         "Activare chei organizație"

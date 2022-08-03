@@ -1866,7 +1866,7 @@
         "Můžete importovat události ve formátu iCal (ICS soubor). Tento soubor by měl mít maximální velikost ${ MAX_IMPORT_FILE_SIZE_STRING } a maximálně ${ MAX_IMPORT_EVENTS_STRING } událostí. Pokud je váš soubor větší, prosím rozdělte ho na menší soubory."
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
-        "Kontakty, které nechcete spojit ani zachovat, označte pro smazání. Ke smazání dojde po kliknutí na tlačítko pro sloučení"
+        "Kontakty, které nechcete sloučit ani zachovat, označte pro smazání. Ke smazání dojde po kliknutí na tlačítko pro sloučení"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -2712,7 +2712,7 @@
       ],
       "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
         "Při šifrování a přidávání události došlo k chybě. ${ totalImported } z ${ totalToImport } události byla úspěšně importována.",
-        "Při šifrování a přidávání události došlo k chybě. ${ totalImported } z ${ totalToImport } událostí úspěšně importovány.",
+        "Při šifrování a přidávání událostí došlo k chybě. ${ totalImported } ze ${ totalToImport } událostí byly úspěšně importovány.",
         "Při šifrování a přidávání událostí došlo k chybě. ${ totalImported } z ${ totalToImport } událostí bylo úspěšně importováno.",
         "Při šifrování a přidávání událostí došlo k chybě. ${ totalImported } z ${ totalToImport } událostí bylo úspěšně importováno."
       ],
@@ -2823,7 +2823,7 @@
       ],
       "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
         "${ totalEventsDiscarded } z ${ totalEvents } události nebude importována. Klikněte pro detaily.",
-        "${ totalEventsDiscarded } z ${ totalEvents } událostí nebude importováno. Klikněte pro detaily.",
+        "${ totalEventsDiscarded } ze ${ totalEvents } událostí nebude importováno. Klikněte pro detaily.",
         "${ totalEventsDiscarded } z ${ totalEvents } událostí nebude importováno. Klikněte pro detaily.",
         "${ totalEventsDiscarded } z ${ totalEvents } událostí nebude importováno. Klikněte pro detaily."
       ],
@@ -3121,7 +3121,7 @@
         "Stačí potvrdit výběr a my se postaráme o zbytek."
       ],
       "Key fingerprint": [
-        "Otisk prstu klíče"
+        "Otisk klíče"
       ],
       "Large imports can take several days.": [
         "Import velkého množství dat může trvat několik dní."
@@ -4127,7 +4127,7 @@
         "e-mail"
       ],
       "notification": [
-        "upozornění"
+        "oznámení"
       ]
     },
     "Notification when": {
@@ -4415,7 +4415,7 @@
     },
     "PGP Key info": {
       "${ emailAddress } has marked this key as compromised. This key cannot be used neither for encryption nor for signature verification.": [
-        "${ emailAddress } označil tento klíč jako kompromitovaný. Tento klíč nelze použít ani pro šifrování, ani pro ověření podpisu."
+        "${ emailAddress } označil(a) tento klíč jako kompromitovaný/prolomený. Tento klíč nelze použít ani pro šifrování, ani pro ověření podpisu."
       ],
       "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
         "${ emailAddress } označil(a) tento klíč jako zastaralý. Tento klíč lze použít pouze pro ověření podpisu."
@@ -4506,7 +4506,7 @@
         "${ model.deleted.length } z ${ totalBeDeleted } kontaktů bylo úspěšně smazáno."
       ],
       "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
-        "Kontakt byl sloučen.",
+        "${ model.submitted.length } z ${ totalBeMerged } kontaktu byl úspěšně sloučen.",
         "${ model.submitted.length } ze ${ totalBeMerged } kontaktů byly úspěšně sloučeny.",
         "${ model.submitted.length } z ${ totalBeMerged } kontaktů bylo úspěšně sloučeno.",
         "${ model.submitted.length } z ${ totalBeMerged } kontaktů bylo úspěšně sloučeno."
@@ -4806,7 +4806,7 @@
         "Vyprší"
       ],
       "Fingerprint": [
-        "Otisk prstu"
+        "Otisk"
       ],
       "Name": [
         "Jméno"
@@ -5327,7 +5327,7 @@
         "Kontakty nebylo možné sloučit"
       ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
-        "Jestliže si nepamatujete heslo, je možné znovu aktivovat váš klíč. Můžeme vám pomoci zbavit se upozornění, ale díky tomu trvale ztratíte přístup k datům zašifrovaným pomocí toho klíče."
+        "Jestliže si nepamatujete heslo, není možné znovu aktivovat váš klíč. Můžeme vám pomoci zbavit se upozornění, ale díky tomu trvale ztratíte přístup k datům šifrovaným pomocí toho klíče."
       ],
       "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
         "Živý chat je prémiová funkce, která je k dispozici pouze uživatelům s placenými ${ VPN_APP_NAME } tarify. Prosím otevřete běžný požadavek na podporu."

@@ -1824,6 +1824,9 @@
       ]
     },
     "Description": {
+      "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
+        "Contacten decoderen... Dit kan enkele minuten duren. Wanneer het proces is voltooid, kunt u het bestand downloaden met al uw geëxporteerde contactpersonen."
+      ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Contactpersonen verwijderen... Dit kan enkele minuten duren. Wanneer het proces is voltooid, kunt u dit venster sluiten."
       ],
@@ -1991,7 +1994,7 @@
         "Er bestaat al een groep met deze naam"
       ],
       "A maximum of 10 notifications is allowed": [
-        "Maximaal 10 meldingen zijn toegestaan"
+        "Er zijn maximaal 10 meldingen toegestaan"
       ],
       "Address primary private key not found": [
         "Primaire adressleutel is niet gevonden"
@@ -2226,6 +2229,9 @@
       ],
       "This label name is not available. Please choose a different name.": [
         "Deze labelnaam is niet beschikbaar. Gelieve een andere naam te kiezen."
+      ],
+      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
+        "Dit bericht kan koppelingen bevatten die niet op de juiste wijze geopend kunnen worden door uw huidige browser."
       ],
       "Trusted keys are not valid for sending": [
         "Vertrouwde sleutels zijn niet geldig om mee te verzenden"
@@ -2553,6 +2559,10 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "byte",
+        "bytes"
+      ],
       "GB": [
         "GB"
       ],
@@ -2561,6 +2571,24 @@
       ],
       "MB": [
         "MB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Byte",
+        "Bytes"
+      ],
+      "Gigabyte": [
+        "Gigabyte",
+        "Gigabytes"
+      ],
+      "Kilobyte": [
+        "Kilobyte",
+        "Kilobytes"
+      ],
+      "Megabyte": [
+        "Megabyte",
+        "Megabytes"
       ]
     },
     "Filter notification": {
@@ -3053,6 +3081,9 @@
       ],
       "Other options": [
         "Andere opties"
+      ],
+      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        "PGP/Inline is alleen compatibel met tekst zonder opmaak. Houd er rekening mee dat ${ MAIL_APP_NAME } altijd versleutelde berichten tekent."
       ],
       "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
         "PGP/MIME stuurt de berichten automatisch aan de hand van de opmaak in het opstelvenster. Denk eraan dat ${ MAIL_APP_NAME } versleutelde berichten ook altijd ondertekent."
@@ -3972,7 +4003,7 @@
         "e-mail"
       ],
       "notification": [
-        "notificatie"
+        "melding"
       ]
     },
     "Notification when": {
@@ -4372,6 +4403,9 @@
       ]
     },
     "Spotlight": {
+      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
+        "${ DRIVE_APP_NAME } is uit de bèta! Geef uw bestanden dezelfde beveiliging als uw e-mails."
+      ],
       "Get up to 18 months of ${ planName } for free": [
         "Krijg tot 18 maanden ${ planName } gratis"
       ],
@@ -4380,6 +4414,9 @@
       ],
       "No more missed appointments": [
         "Geen gemiste afspraken meer"
+      ],
+      "Try ${ DRIVE_APP_NAME }": [
+        "Probeer ${ DRIVE_APP_NAME }"
       ],
       "With email notifications, you decide which events to be notified about and when.": [
         "Met e-mailmeldingen, beslist u zelf over welke afspraken u een melding ontvangt en wanneer."

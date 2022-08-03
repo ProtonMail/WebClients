@@ -428,9 +428,6 @@
       "Import from .csv or vCard": [
         "Импорт из .csv или vCard"
       ],
-      "Import messages": [
-        "Импортировать сообщения"
-      ],
       "Inline": [
         "Встроить"
       ],
@@ -3634,6 +3631,11 @@
         "Мегабайтов"
       ]
     },
+    "Filter": {
+      "Show": [
+        "Показать"
+      ]
+    },
     "Filter Actions": {
       "Archive": [
         "Архив"
@@ -6620,6 +6622,11 @@
         "Объединение с календарем"
       ]
     },
+    "Pagination": {
+      "${ page } of ${ total }": [
+        "${ page } из ${ total }"
+      ]
+    },
     "Paid user checklist item": {
       "Get mobile app": [
         "Получить мобильное приложение"
@@ -7001,6 +7008,11 @@
       ],
       "Sender's trusted keys verification failed": [
         "Проверка доверенных ключей отправителя была безуспешна"
+      ]
+    },
+    "Sort": {
+      "Sort": [
+        "Сортировать"
       ]
     },
     "Sort option": {
@@ -7506,6 +7518,9 @@
       "Addresses": [
         "Адреса"
       ],
+      "Archive": [
+        "Архив"
+      ],
       "Are you sure you want to close?": [
         "Вы уверены, что хотите закрыть?"
       ],
@@ -7728,6 +7743,9 @@
       "Mailbox layout": [
         "Макет почтового ящика"
       ],
+      "Mark as read": [
+        "Отметить как прочитанное"
+      ],
       "Mark as unread": [
         "Отметить как непрочитанное"
       ],
@@ -7907,6 +7925,9 @@
       ],
       "To": [
         "Кому"
+      ],
+      "Trash": [
+        "Корзина"
       ],
       "Trust new key?": [
         "Доверять новому ключу?",

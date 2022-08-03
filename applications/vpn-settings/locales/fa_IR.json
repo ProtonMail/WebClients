@@ -5,6 +5,9 @@
   },
   "contexts": {
     "Action": {
+      "${ address } is available.": [
+        "${ address } قابل استفاده است."
+      ],
       "${ BRAND_NAME } introduction": [
         "${ BRAND_NAME } مقدمه"
       ],
@@ -25,6 +28,9 @@
       ],
       "Apply": [
         "اعمال"
+      ],
+      "Attach screenshot(s)": [
+        "پیوست ‌عکس‌صفحه(ها)"
       ],
       "Authenticate": [
         "احراز هویت"
@@ -71,11 +77,20 @@
       "Copy email to clipboard": [
         "کپی ایمیل به کلیپ‌بورد"
       ],
+      "Create": [
+        "ایجاد"
+      ],
+      "Create a secure ${ MAIL_APP_NAME } address instead": [
+        "در عوض یک نشانی ${ MAIL_APP_NAME } امن ایجاد کنید"
+      ],
       "Create account": [
         "ایجاد حساب‌کاربری"
       ],
       "Create address": [
         "ایجاد آدرس"
+      ],
+      "Create free account": [
+        "ایجاد حساب کاربری رایگان"
       ],
       "Current plan": [
         "طرح فعلی"
@@ -98,6 +113,9 @@
       "Details": [
         "جزئیات"
       ],
+      "Didn't receive a code?": [
+        "کدی دریافت نکردید؟"
+      ],
       "Didn't receive the code?": [
         "کد را دریافت نکردید؟"
       ],
@@ -106,6 +124,9 @@
       ],
       "Downgrade": [
         "پایین آوردن"
+      ],
+      "Downgrade account": [
+        "تنزیل حساب کاربری"
       ],
       "Download": [
         "بارگیری"
@@ -125,14 +146,29 @@
       "Edit phone number": [
         "ویرایش شماره‌تلفن"
       ],
+      "Edit sign-in details": [
+        "ویرایش جزئیات ورود"
+      ],
       "Edit subscription": [
         "ویرایش اشتراک ایمیل"
       ],
       "enable desktop notifications": [
         "فعا‌ل‌سازی اعلان‌های دسکتاپ"
       ],
+      "Explore other ${ BRAND_NAME } plans": [
+        "طرح‌های ${ BRAND_NAME } دیگر را کاوش کنید"
+      ],
+      "Extend": [
+        "تمدید"
+      ],
+      "Get ${ vpnPlus }": [
+        "دریافت ${ vpnPlus }"
+      ],
       "Get verification code": [
         "دریافت کد تأیید"
+      ],
+      "Go to sign in": [
+        "به ورود بروید"
       ],
       "Hide": [
         "پنهان کردن"
@@ -143,11 +179,17 @@
       "Increase": [
         "افزودن"
       ],
+      "Load more": [
+        "بارگذاری بیشتر"
+      ],
       "Loading verification": [
         "در حال بارگیری تأیید"
       ],
       "Mark as default": [
         "انتخاب به عنوان پیش‌فرض"
+      ],
+      "Maybe later": [
+        "شاید بعداً"
       ],
       "More info: ${ safeTitle }": [
         "اطلاعات بیشتر: ${ safeTitle }"
@@ -221,8 +263,20 @@
       "Return to sign in": [
         "بازگشت به فرم ورود"
       ],
+      "Revoke": [
+        "لغو کردن"
+      ],
+      "Revoke ${ name }": [
+        "لغو ${ name }"
+      ],
       "Save": [
         "ذخیره"
+      ],
+      "Save selected": [
+        "ذخیره کردن انتخاب‌شده‌ها"
+      ],
+      "Search countries": [
+        "جستجوی کشورها"
       ],
       "Select ${ planTitle }": [
         "انتخاب ${ planTitle }"
@@ -244,6 +298,9 @@
       ],
       "Show": [
         "نمایش"
+      ],
+      "Show preview": [
+        "نمایش پیش‌نمایش"
       ],
       "Sign in": [
         "ورود"
@@ -275,6 +332,9 @@
       "Unlock": [
         "بازکردن"
       ],
+      "Unlock data": [
+        "بازگشایی داده‌ها"
+      ],
       "Update recovery file": [
         "به‌روزرسانی فایل بازیابی"
       ],
@@ -284,6 +344,9 @@
       "Upgrade": [
         "ارتقا"
       ],
+      "Use ${ label } theme": [
+        "از طرح زمینهٔ ${ label } استفاده کنید"
+      ],
       "Use a different card": [
         "از کارت دیگری استفاده کنید"
       ],
@@ -292,6 +355,12 @@
       ],
       "Use recovery code": [
         "از کد بازیابی استفاده کنید"
+      ],
+      "Use two-factor authentication code": [
+        "استفاده از کد اصالت‌سنجی دو-عاملی"
+      ],
+      "Use your current email address instead": [
+        "در عوض از نشانی ایمیل فعلی خود استفاده کنید"
       ],
       "User": [
         "کاربر"
@@ -316,6 +385,9 @@
       ],
       "View invoice": [
         "مشاهده صورتحساب"
+      ],
+      "View plans details": [
+        "مشاهدهٔ جزئیات طرح‌ها"
       ],
       "Yes": [
         "بله"
@@ -824,6 +896,9 @@
       "Heard Island and McDonald Islands": [
         "جزیره هرد و جزایر مک دونالد"
       ],
+      "Holy See (Vatican City State)": [
+        "سریر مقدس (دولت‌شهر واتیکان)"
+      ],
       "Honduras": [
         "هندوراس"
       ],
@@ -1211,6 +1286,9 @@
       "Trinidad and Tobago": [
         "ترینیداد و تباگو"
       ],
+      "Tristan da Cunha": [
+        "تریستان دا کونا"
+      ],
       "Tunisia": [
         "تونس"
       ],
@@ -1546,6 +1624,9 @@
       "20% discount applied to your subscription with coupon ${ code }": [
         "۲۰٪ تخفیف به اشتراک شما با کوپن ${ code } اعمال شد"
       ],
+      "30-day money-back guarantee.": [
+        "ضمانت ۳۰ روزهٔ بازگشت پول."
+      ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "دسترسی به حساب به دلیل صورتحساب‌های پرداخت نشده محدود شده است. لطفا با مدیرتان تماس بگیرید."
       ],
@@ -1854,6 +1935,9 @@
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "شما باید یک کارت اعتباری یا حساب بانکی متصل به حساب PayPal خود داشته باشید. اگر حساب PayPal شما این امکان را ندارد، لطفا روی دکمهٔ زیر کلیک کنید."
+      ],
+      "You must remove any additional personal calendars and any shared calendar links before you can cancel your Mail subscription.": [
+        "شما باید هر تقویم شخصی دیگر و هر پیوند تقویم به اشتراک گذشتهٔ دیگر را پیش از اینکه بتوانید اشتراک‌تان را لغو کنید حذف کنید."
       ],
       "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription.": [
         "شما باید هر تقویم شخصی دیگر و هر پیوند تقویم به اشتراک گذشتهٔ دیگر را پیش از اینکه بتوانید اشتراک‌تان را لغو کنید حذف کنید."
@@ -2300,6 +2384,9 @@
       "Delete account": [
         "حذف حساب کاربری"
       ],
+      "Downgrade account": [
+        "تنزیل حساب کاربری"
+      ],
       "Got it": [
         "فهمیدم"
       ]
@@ -2687,6 +2774,9 @@
       ],
       "Disable two-factor authentication": [
         "غیرفعال کردن احراز هویت دو مرحله‌ای"
+      ],
+      "Downgrade account": [
+        "تنزیل حساب کاربری"
       ],
       "Downloads": [
         "دانلودها"
