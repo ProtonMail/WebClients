@@ -12,26 +12,26 @@ import { Alert, Href, PrimaryButton, useModalState } from '../../../components';
 import { SettingsParagraph, SettingsSection } from '../../account';
 
 interface Props {
-    defaultCalendar?: VisualCalendar;
+    fallbackCalendar?: VisualCalendar;
     personalCalendars: VisualCalendar[];
 }
 
-const CalendarExportSection = ({ personalCalendars, defaultCalendar }: Props) => {
-    const [calendar, setCalendar] = useState(defaultCalendar);
+const CalendarExportSection = ({ personalCalendars, fallbackCalendar }: Props) => {
+    const [calendar, setCalendar] = useState(fallbackCalendar);
     const [exportModal, setIsExportModalOpen, renderExportModal] = useModalState();
 
     const calendarOptions = personalCalendars.map(({ ID: id, Name: name, Color: color }) => ({ id, name, color }));
 
     const handleSelectCalendar = ({ value: id }: SelectChangeEvent<string>) => {
         const selectedCalendar = personalCalendars.find(({ ID }) => ID === id);
-        setCalendar(selectedCalendar || defaultCalendar);
+        setCalendar(selectedCalendar || fallbackCalendar);
     };
 
     const handleExport = () => {
         setIsExportModalOpen(true);
     };
 
-    const selectedCalendar = calendar || defaultCalendar;
+    const selectedCalendar = calendar || fallbackCalendar;
 
     return (
         <SettingsSection>

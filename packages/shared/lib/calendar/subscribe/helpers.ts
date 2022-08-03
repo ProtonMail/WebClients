@@ -82,14 +82,14 @@ export const sortCalendars = (calendars: VisualCalendar[]) => {
 export const getSyncingInfo = (text: string, longText = '') => ({
     label: c('Calendar status').t`Syncing`,
     text,
-    longText,
+    longText: longText ? longText : `${text}.`,
     isSyncing: true,
 });
 
 export const getNotSyncedInfo = (text: string, longText = '') => ({
     label: c('Calendar status').t`Not synced`,
     text,
-    longText,
+    longText: longText ? longText : `${text}.`,
     isSyncing: false,
 });
 
@@ -107,7 +107,11 @@ export const getCalendarStatusInfo = (status: CALENDAR_SUBSCRIPTION_STATUS) => {
     }
 
     if (status === SYNCHRONIZING) {
-        return getSyncingInfo(c('Calendar subscription not synced error').t`Calendar is syncing`);
+        return getSyncingInfo(
+            c('Calendar subscription not synced error').t`Calendar is syncing`,
+            c('Calendar subscription not synced error')
+                .t`Calendar is syncing: it may take several minutes for all of its events to show up.`
+        );
     }
 
     if (
@@ -152,7 +156,7 @@ export const getCalendarIsNotSyncedInfo = (calendar: SubscribedCalendar) => {
         return getSyncingInfo(
             c('Calendar subscription not synced error').t`Calendar is syncing`,
             c('Calendar subscription not synced error')
-                .t`Calendar is syncing: it may take several minutes for all of its events to show up`
+                .t`Calendar is syncing: it may take several minutes for all of its events to show up.`
         );
     }
 

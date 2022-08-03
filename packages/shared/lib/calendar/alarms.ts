@@ -1,5 +1,6 @@
-import uniqueBy from '@proton/utils/uniqueBy';
 import truncate from '@proton/utils/truncate';
+import uniqueBy from '@proton/utils/uniqueBy';
+
 import { MINUTE } from '../constants';
 import { convertUTCDateTimeToZone, fromUTCDate, getTimezoneOffset, toUTCDate } from '../date/timezone';
 import { omit } from '../helpers/object';
@@ -93,9 +94,6 @@ export const sortNotificationsByAscendingTrigger = (notifications: NotificationM
         return triggerAMinutes - triggerBMinutes;
     });
 
-const sortNotificationsByAscendingValue = (a: NotificationModel, b: NotificationModel) =>
-    (a.value || 0) - (b.value || 0);
-
 const uniqueNotificationComparator = (notification: NotificationModel) => {
     const trigger = getValarmTrigger(notification);
 
@@ -104,11 +102,8 @@ const uniqueNotificationComparator = (notification: NotificationModel) => {
     }`;
 };
 
-export const dedupeNotifications = (notifications: NotificationModel[]) => {
-    const sortedNotifications = [...notifications].sort(sortNotificationsByAscendingValue);
-
-    return uniqueBy(sortedNotifications, uniqueNotificationComparator);
-};
+export const dedupeNotifications = (notifications: NotificationModel[]) =>
+    uniqueBy(notifications, uniqueNotificationComparator);
 
 const getSmallestNonZeroNumericValueFromDurationValue = (object: VcalDurationValue) =>
     Math.min(...Object.values(omit(object, ['isNegative'])).filter(Boolean));

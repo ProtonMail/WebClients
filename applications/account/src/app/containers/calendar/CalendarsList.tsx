@@ -120,7 +120,7 @@ const CalendarsList = ({ prefix, calendarsSection }: Props) => {
     })();
 
     // Hiding temporarily the collapsible sidebar
-    if (!calendars.length || true) {
+    if (!calendars.length) {
         return <SettingsListItem {...calendarsSettingsHeaderProps}>{calendarsSettingsHeaderContent}</SettingsListItem>;
     }
 
