@@ -33,7 +33,7 @@ const getConfig = (env) => {
     };
 
     return {
-        target: options.isProduction ? `browserslist:${options.browserslist}` : 'web', // dev-server bug https://github.com/webpack/webpack-dev-server/issues/2812
+        target: `browserslist:${options.browserslist}`,
         mode: options.isProduction ? 'production' : 'development',
         bail: options.isProduction,
         devtool: options.isProduction ? 'source-map' : 'cheap-module-source-map',
