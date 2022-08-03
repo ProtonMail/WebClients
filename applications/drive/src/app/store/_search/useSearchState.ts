@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
 
 import { useUser } from '@proton/components';
-import { wait } from '@proton/shared/lib/helpers/promise';
+import { ESIndexingState, defaultESIndexingState, estimateIndexingProgress } from '@proton/encrypted-search';
 import { SECOND } from '@proton/shared/lib/constants';
-import { defaultESIndexingState, ESIndexingState, estimateIndexingProgress } from '@proton/encrypted-search';
+import { wait } from '@proton/shared/lib/helpers/promise';
 
 import { useSearchLibrary } from '..';
 
@@ -69,6 +69,12 @@ const useSearchState = () => {
             stopProgress();
         }
     }, [isBuilding, isRefreshing]);
+
+    useEffect(() => {
+        // Safety stop for situation when the whole component where
+        // the hook is used is removed from the DOM.
+        return () => stopProgress();
+    }, []);
 
     return esState;
 };
