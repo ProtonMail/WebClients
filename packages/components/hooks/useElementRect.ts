@@ -1,6 +1,7 @@
 import { RefObject, useLayoutEffect, useState } from 'react';
-import debounce from '@proton/utils/debounce';
+
 import useInstance from '@proton/hooks/useInstance';
+import debounce from '@proton/utils/debounce';
 
 // Can't loop over DOMRect keys with getOwnPropertyNames.
 const keys = ['bottom', 'height', 'left', 'right', 'top', 'width', 'x', 'y'];
@@ -28,10 +29,10 @@ const getElementRect = (target?: HTMLElement | null) => {
 
 type RateLimiter = <A extends any[]>(func: (...args: A) => void, wait: number) => (...args: A) => void;
 
-const equivalentReducer = (oldRect?: DOMRect, newRect?: DOMRect) => {
+export const equivalentReducer = (oldRect?: DOMRect, newRect?: DOMRect) => {
     return isEquivalent(oldRect, newRect) ? oldRect : newRect;
 };
-const defaultReducer = (
+export const defaultReducer = (
     oldRect: DOMRect | undefined,
     newRect: DOMRect | undefined,
     sizeCache: (DOMRect | undefined)[]
