@@ -10,6 +10,7 @@ import {
 } from 'react';
 
 import { versionCookieAtLoad } from '@proton/components/hooks/useEarlyAccess';
+import { serverTime } from '@proton/crypto';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { getAppFromHostname } from '@proton/shared/lib/apps/slugHelper';
 import { getLocalIDFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
@@ -209,6 +210,7 @@ export const SideAppUrlProvider = ({ children }: { children: ReactNode }) => {
                                             id,
                                             success: true,
                                             data: res,
+                                            serverTime: serverTime(),
                                         },
                                     },
                                     sideApp
@@ -226,6 +228,7 @@ export const SideAppUrlProvider = ({ children }: { children: ReactNode }) => {
                                             id,
                                             success: false,
                                             data: err,
+                                            serverTime: serverTime(),
                                         },
                                     },
                                     sideApp

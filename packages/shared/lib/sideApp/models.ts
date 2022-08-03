@@ -80,6 +80,7 @@ interface API_RESPONSE {
         id: string;
         success: boolean;
         data: any;
+        serverTime: Date;
     };
 }
 
