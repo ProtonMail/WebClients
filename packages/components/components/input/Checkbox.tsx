@@ -1,13 +1,25 @@
-import { forwardRef, InputHTMLAttributes, useEffect, useRef } from 'react';
+import { InputHTMLAttributes, forwardRef, useEffect, useRef } from 'react';
 
-import Icon from '../icon/Icon';
 import { classnames } from '../../helpers';
 import { useCombinedRefs } from '../../hooks';
+import Icon from '../icon/Icon';
 
 export interface Props extends InputHTMLAttributes<HTMLInputElement> {
+    /**
+     * Interactions will be blocked while loading is true
+     */
     loading?: boolean;
+    /**
+     * Background color can be set using a css color (e.g. #ff0000 or rgb(255, 0, 0))
+     */
     backgroundColor?: string;
+    /**
+     * Border color can be set using a css color (e.g. #ff0000 or rgb(255, 0, 0))
+     */
     borderColor?: string;
+    /**
+     * Color can be set using a css color (e.g. #ff0000 or rgb(255, 0, 0))
+     */
     color?: string;
     indeterminate?: boolean;
     labelOnClick?: (event: React.MouseEvent<HTMLLabelElement, MouseEvent>) => void;
