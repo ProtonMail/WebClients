@@ -1,14 +1,15 @@
 import { Fragment } from 'react';
+
 import { c } from 'ttag';
+
 import { buildTreeview, formatFolderName } from '@proton/shared/lib/helpers/folder';
 import { Folder, FolderWithSubFolders } from '@proton/shared/lib/interfaces/Folder';
-import { Button, Icon, IconName, useModalState, SelectTwo, Option, InputFieldTwo } from '../../../components';
+
+import { Button, Icon, IconName, InputFieldTwo, Option, SelectTwo, useModalState } from '../../../components';
 import { classnames } from '../../../helpers';
-
 import EditLabelModal, { LabelModel } from '../../labels/modals/EditLabelModal';
-
+import { getDefaultFolderOptions, noFolderOption, noFolderValue } from '../constants';
 import { Actions } from '../interfaces';
-import { getDefaultFolderOptions } from '../constants';
 
 interface Props {
     folders: Folder[];
@@ -54,7 +55,7 @@ const FilterActionsFormFolderRow = ({ folders, isNarrow, actions, handleUpdateAc
     }, []);
 
     const defaultFolders = getDefaultFolderOptions();
-    const options = [...defaultFolders].concat([
+    const options = [noFolderOption, ...defaultFolders].concat([
         { type: 'label', text: c('Option group').t`Custom folders` },
         ...reducedFolders,
     ]);
@@ -153,7 +154,7 @@ const FilterActionsFormFolderRow = ({ folders, isNarrow, actions, handleUpdateAc
                         <InputFieldTwo
                             as={SelectTwo}
                             id="memberSelect"
-                            value={moveTo.folder || 'inbox'}
+                            value={moveTo.folder || noFolderValue}
                             onValue={(value: any) => handleChangeModel({ folder: value })}
                         >
                             {folderOptions}
