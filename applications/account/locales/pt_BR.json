@@ -272,6 +272,9 @@
       "Download all configurations": [
         "Baixar todas as configurações"
       ],
+      "Download ICS": [
+        "Baixar ICS"
+      ],
       "Download recovery file": [
         "Baixar o arquivo de recuperação"
       ],
@@ -377,8 +380,8 @@
       "Import emails": [
         "Importar e-mails"
       ],
-      "Import from .ics": [
-        "Importar de .ics"
+      "Import from ICS": [
+        "Importar de ICS"
       ],
       "Import key": [
         "Importar chave"
@@ -1034,6 +1037,11 @@
       ],
       "24 months": [
         "24 meses"
+      ]
+    },
+    "breadcrumb": {
+      "Calendars": [
+        "Calendários"
       ]
     },
     "Bridge version load failed": {
@@ -3777,6 +3785,9 @@
       "${ emailAddress } is invalid": [
         "${ emailAddress } é inválido"
       ],
+      "${ firstRemainingCalendarName } will be set as default calendar.": [
+        "${ firstRemainingCalendarName } será definido como calendário padrão."
+      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "O ${ MAIL_APP_NAME } também pode ser usado com uma senha única que substitui as senhas de login e de acesso à caixa de email. Para habilitar o modo de senha única, digite a senha única que deseja usar e clique em Salvar."
       ],
@@ -4934,6 +4945,9 @@
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Este navegador não suporta pré-visualização de documentos PDF. Por favor, baixe o arquivo."
       ],
+      "This calendar will be removed from your account.": [
+        "Esse calendário será removido de sua conta."
+      ],
       "This can take a few seconds or a few minutes depending on your device": [
         "Isto pode demorar alguns segundos ou alguns minutos dependendo do seu dispositivo"
       ],
@@ -5258,8 +5272,8 @@
       "You need to have a personal calendar to create a link.": [
         "Você precisa ter um calendário para criar um link."
       ],
-      "You need to have an active personal calendar to import your events from .ics.": [
-        "Você precisa ter um calendário ativo para importar seus eventos a partir de um .ics."
+      "You need to have an active personal calendar to import your events from ICS.": [
+        "Você precisa ter um calendário ativo para importar seus eventos a partir de um ICS."
       ],
       "You need to have an active personal calendar to import your events.": [
         "Você precisa ter um calendário ativo para importar seus eventos."
@@ -5741,6 +5755,11 @@
       ],
       "Mark obsolete": [
         "Marcar como obsoleta"
+      ]
+    },
+    "Knowledge base link label": {
+      "Learn more": [
+        "Saiba mais"
       ]
     },
     "Label": {
@@ -6496,6 +6515,19 @@
         "Adicione um domínio que você possui na sua conta ${ MAIL_APP_NAME }."
       ]
     },
+    "Label for default event notifications": {
+      "All-day event notifications": [
+        "Notificações para eventos de dia inteiro"
+      ],
+      "Notifications": [
+        "Notificações"
+      ]
+    },
+    "Label for default event settings": {
+      "Duration": [
+        "Duração"
+      ]
+    },
     "Label for domain modal": {
       "Please add the following TXT record:": [
         "Por favor, adicione o seguinte registro TXT:"
@@ -6642,6 +6674,9 @@
       ],
       "How to unlock data": [
         "Como desbloquear dados"
+      ],
+      "Import/export": [
+        "Importar/exportar"
       ],
       "Learn more": [
         "Saiba mais"
@@ -7536,11 +7571,11 @@
       ]
     },
     "Notification type": {
-      "email": [
-        "e-mail"
+      "Email": [
+        "E-mail"
       ],
-      "notification": [
-        "notificação"
+      "In-app": [
+        "No aplicativo"
       ]
     },
     "Notification when": {
@@ -8078,6 +8113,17 @@
       ],
       "State of the art": [
         "Estado da arte"
+      ]
+    },
+    "Remove calendar section title": {
+      "Delete calendar?": [
+        "Excluir calendário?"
+      ],
+      "Remove calendar": [
+        "Excluir calendário"
+      ],
+      "Unsubscribe?": [
+        "Cancelar inscrição?"
       ]
     },
     "Restore administrator panel": {
@@ -8949,6 +8995,9 @@
       "Error": [
         "Erro"
       ],
+      "Export": [
+        "Exportar"
+      ],
       "Export private key": [
         "Exportar chave privada"
       ],
@@ -9002,6 +9051,9 @@
       ],
       "Import": [
         "Importar"
+      ],
+      "Import and export": [
+        "Importar e exportar"
       ],
       "Import as simple event?": [
         "Importar como um evento simples?",

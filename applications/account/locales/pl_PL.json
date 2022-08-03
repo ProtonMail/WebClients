@@ -292,6 +292,9 @@
       "Download all configurations": [
         "Pobierz wszystkie konfiguracje"
       ],
+      "Download ICS": [
+        "Pobierz plik ICS"
+      ],
       "Download recovery file": [
         "Pobierz plik odzyskiwania"
       ],
@@ -403,7 +406,7 @@
       "Import emails": [
         "Importuj wiadomości"
       ],
-      "Import from .ics": [
+      "Import from ICS": [
         "Importuj plik ICS"
       ],
       "Import key": [
@@ -1091,6 +1094,11 @@
         "24 miesiące"
       ]
     },
+    "breadcrumb": {
+      "Calendars": [
+        "Kalendarze"
+      ]
+    },
     "Bridge version load failed": {
       "Failed to find latest version": [
         "Nie udało się znaleźć najnowszej wersji"
@@ -1187,6 +1195,16 @@
         "Tweet"
       ]
     },
+    "Calendar edit button tooltip": {
+      "Edit calendar information": [
+        "Edytuj informacje kalendarza"
+      ]
+    },
+    "Calendar export section description": {
+      "Download an ICS file with all the events from the selected calendar.": [
+        "Pobierz plik ICS z wszystkimi wydarzeniami kalendarza."
+      ]
+    },
     "Calendar import section description": {
       "You can import ICS files from another calendar to ${ CALENDAR_APP_NAME }. This lets you quickly import one event or your entire agenda.": [
         "Możesz importować pliki ICS z innego kalendarza do ${ CALENDAR_APP_NAME }. Pozwala to na szybkie zaimportowanie pojedynczego wydarzenia lub całego harmonogramu."
@@ -1212,6 +1230,11 @@
       ],
       "Label edited": [
         "Etykieta została zaktualizowana"
+      ]
+    },
+    "Calendar settings sidebar": {
+      "Show ${ remainingItems } more": [
+        "Pokaż ${ remainingItems } więcej"
       ]
     },
     "Calendar status": {
@@ -2460,9 +2483,19 @@
         "Środa"
       ]
     },
+    "Default calendar event settings section title": {
+      "Default event settings": [
+        "Domyślne ustawienia wydarzenia"
+      ]
+    },
     "Default display name vcard": {
       "Unknown": [
         "Nieznany"
+      ]
+    },
+    "Delete calendar section description": {
+      "All events in this calendar will be deleted.": [
+        "Wszystkie wydarzenia w tym kalendarzu zostaną usunięte."
       ]
     },
     "Delinquent modal title": {
@@ -2668,6 +2701,9 @@
       ],
       "Automatic replies is a paid feature. Please upgrade to a paid account to use this feature.": [
         "Autoresponder jest płatną funkcją. Ulepsz do płatnego konta, aby używać tej funkcji."
+      ],
+      "Calendar cannot be found": [
+        "Kalendarz nie został znaleziony"
       ],
       "Calendar limit reached": [
         "Limit kalendarzy został osiągnięty"
@@ -4110,6 +4146,9 @@
       "${ emailAddress } is invalid": [
         "Adres e-mail ${ emailAddress } jest nieprawidłowy"
       ],
+      "${ firstRemainingCalendarName } will be set as default calendar.": [
+        "Kalendarz ${ firstRemainingCalendarName } zostanie ustawiony jako domyślny kalendarz."
+      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } może być również używany z wykorzystaniem pojedynczego hasła, które zastępuje Twoje hasło logowania oraz skrzynki pocztowej. Aby przejść w tryb pojedynczego hasła, wpisz hasło, z którego chcesz korzystać i kliknij przycisk Zapisz."
       ],
@@ -4386,6 +4425,9 @@
       "Are you sure you want to delete this calendar?": [
         "Czy na pewno chcesz usunąć ten kalendarz?"
       ],
+      "Are you sure you want to delete this calendar? All events in it will be deleted.": [
+        "Czy na pewno chcesz usunąć ten kalendarz? Wszystkie wydarzenia w tym kalendarzu zostaną usunięte."
+      ],
       "Are you sure you want to delete this domain?": [
         "Czy na pewno chcesz usunąć tę domenę?"
       ],
@@ -4436,6 +4478,12 @@
       ],
       "Basic, Plus or Visionary subscription required": [
         "Subskrypcja planu Basic, Plus lub Visionary jest wymagana"
+      ],
+      "Before creating this address you need to provide a password and create encryption keys for it.": [
+        "Przed utworzeniem adresu, musisz wpisać hasło i utworzyć dla niego klucze szyfrowania."
+      ],
+      "Before enabling the account you need to provide a password and create encryption keys for the new addresses.": [
+        "Przed włączeniem konta, musisz wpisać hasło i utworzyć klucze szyfrowania dla nowych adresów."
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Przed poproszeniem o nowy kod weryfikacyjny, sprawdź folder Spam i poprawność adresu ${ strong }."
@@ -5337,6 +5385,9 @@
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Ta przeglądarka nie obsługuje podglądu dokumentów PDF. Pobierz plik."
       ],
+      "This calendar will be removed from your account.": [
+        "Kalendarz zostanie usunięty."
+      ],
       "This can take a few seconds or a few minutes depending on your device": [
         "W zależności od urządzenia, ten proces może potrwać kilka sekund lub minut"
       ],
@@ -5673,7 +5724,7 @@
       "You need to have a personal calendar to create a link.": [
         "Musisz posiadać osobisty kalendarz, aby utworzyć link."
       ],
-      "You need to have an active personal calendar to import your events from .ics.": [
+      "You need to have an active personal calendar to import your events from ICS.": [
         "Musisz posiadać aktywny osobisty kalendarz, aby zaimportować wydarzenia z pliku ICS."
       ],
       "You need to have an active personal calendar to import your events.": [
@@ -6191,6 +6242,9 @@
     "Knowledge base link label": {
       "Here's how": [
         "Instrukcja"
+      ],
+      "Learn more": [
+        "Dowiedz się więcej"
       ]
     },
     "Label": {
@@ -7010,6 +7064,19 @@
     "Label for adding a new custom domain": {
       "Add a domain that you own to your ${ MAIL_APP_NAME } account.": [
         "Dodaj swoją domenę do konta ${ MAIL_APP_NAME }."
+      ]
+    },
+    "Label for default event notifications": {
+      "All-day event notifications": [
+        "Powiadomienia wydarzenia całodniowego"
+      ],
+      "Notifications": [
+        "Powiadomienia"
+      ]
+    },
+    "Label for default event settings": {
+      "Duration": [
+        "Czas trwania"
       ]
     },
     "Label for domain modal": {
@@ -8254,17 +8321,14 @@
         "Dane logowania OpenVPN / IKEv2 zostały ponownie wygenerowane"
       ]
     },
+    "Notification success": {
+      "Event defaults updated": [
+        "Domyślne ustawienia wydarzenia zostały zaktualizowane"
+      ]
+    },
     "Notification time input": {
       "at": [
         "o godzinie"
-      ]
-    },
-    "Notification type": {
-      "email": [
-        "wiadomość"
-      ],
-      "notification": [
-        "powiadomienie"
       ]
     },
     "Notification when": {
@@ -8832,6 +8896,17 @@
         "Najnowocześniejszy"
       ]
     },
+    "Remove calendar section title": {
+      "Delete calendar?": [
+        "Usunąć kalendarz?"
+      ],
+      "Remove calendar": [
+        "Usuń kalendarz"
+      ],
+      "Unsubscribe?": [
+        "Anulować subskrypcję?"
+      ]
+    },
     "Restore administrator panel": {
       "Changing organization keys": [
         "Zmiana klucza organizacji"
@@ -9178,6 +9253,9 @@
       "Calendar created": [
         "Kalendarz został utworzony"
       ],
+      "Calendar information updated": [
+        "Informacje kalendarza zostały zaktualizowane"
+      ],
       "Calendar removed": [
         "Kalendarz został usunięty"
       ],
@@ -9491,6 +9569,9 @@
       "Action": [
         "Akcja"
       ],
+      "Activate account and generate keys": [
+        "Aktywuj konto i generuj klucze"
+      ],
       "Activate organization key": [
         "Aktywuj klucz organizacji"
       ],
@@ -9592,6 +9673,9 @@
       ],
       "Bridge for ${ platform }": [
         "Aplikacja Bridge na ${ platform }"
+      ],
+      "Calendar information": [
+        "Informacje kalendarza"
       ],
       "Cancel Mail subscription": [
         "Anuluj subskrypcję poczty"
@@ -9811,6 +9895,9 @@
       ],
       "Error": [
         "Błąd"
+      ],
+      "Export": [
+        "Eksportuj"
       ],
       "Export calendar": [
         "Eksportuj kalendarz"

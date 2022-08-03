@@ -424,9 +424,6 @@
       "Import from .csv or vCard": [
         "Importa da .csv o vCard"
       ],
-      "Import messages": [
-        "Importa i messaggi"
-      ],
       "Inline": [
         "In linea"
       ],
@@ -3544,6 +3541,11 @@
         "Megabyte"
       ]
     },
+    "Filter": {
+      "Show": [
+        "Mostra"
+      ]
+    },
     "Filter Actions": {
       "Archive": [
         "Archivio"
@@ -6388,6 +6390,11 @@
         "Unisci con calendario"
       ]
     },
+    "Pagination": {
+      "${ page } of ${ total }": [
+        "Pagina ${ page } di ${ total }"
+      ]
+    },
     "Paid user checklist item": {
       "Get mobile app": [
         "Ottieni l'app mobile"
@@ -6753,6 +6760,11 @@
       ],
       "Sender's trusted keys verification failed": [
         "Verifica delle chiavi attendibili del mittente fallita"
+      ]
+    },
+    "Sort": {
+      "Sort": [
+        "Ordina"
       ]
     },
     "Sort option": {
@@ -7196,6 +7208,9 @@
       "Addresses": [
         "Indirizzi"
       ],
+      "Archive": [
+        "Archivio"
+      ],
       "Are you sure you want to close?": [
         "Confermi di voler chiudere?"
       ],
@@ -7408,6 +7423,9 @@
       "Mailbox layout": [
         "Layout casella mail"
       ],
+      "Mark as read": [
+        "Segna come letto"
+      ],
       "Mark as unread": [
         "Segna come non letto"
       ],
@@ -7587,6 +7605,9 @@
       ],
       "To": [
         "A"
+      ],
+      "Trash": [
+        "Cestino"
       ],
       "Trust new key?": [
         "Fidarsi della nuova chiave?",

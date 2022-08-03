@@ -361,6 +361,9 @@
       "Save": [
         "Enregister"
       ],
+      "Search countries": [
+        "Rechercher dans les pays"
+      ],
       "Select all": [
         "Tout sélectionner"
       ],
@@ -820,6 +823,14 @@
         "Changer la plage horaire pour"
       ]
     },
+    "Collapsible tooltip": {
+      "Collapse": [
+        "Replier"
+      ],
+      "Expand": [
+        "Développer"
+      ]
+    },
     "colon": {
       ": ": [
         ": "
@@ -1155,6 +1166,9 @@
       "Czech Republic": [
         "Tchéquie"
       ],
+      "Côte d'Ivoire": [
+        "Côte d'Ivoire"
+      ],
       "Denmark": [
         "Danemark"
       ],
@@ -1184,6 +1198,9 @@
       ],
       "Estonia": [
         "Estonie"
+      ],
+      "Eswatini": [
+        "Eswatini"
       ],
       "Ethiopia": [
         "Éthiopie"
@@ -1427,6 +1444,9 @@
       ],
       "Mozambique": [
         "Mozambique"
+      ],
+      "Myanmar": [
+        "Birmanie"
       ],
       "Namibia": [
         "Namibie"
@@ -1793,6 +1813,9 @@
       ]
     },
     "Description": {
+      "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
+        "Déchiffrement des contacts en cours… Ceci peut prendre quelques minutes. Lorsque cette opération sera terminée, vous pourrez télécharger le fichier avec tous vos contacts exportés."
+      ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Suppression des contacts... Ceci peut prendre quelques minutes. Une fois le processus terminé, vous pouvez fermer cette fenêtre."
       ],
@@ -1958,9 +1981,6 @@
       ],
       "A group with this name already exists": [
         "Un groupe portant ce nom existe déjà"
-      ],
-      "A maximum of 10 notifications is allowed": [
-        "Un maximum de 10 notifications est autorisé"
       ],
       "Address primary private key not found": [
         "La clé privée principale de l'adresse n'a pas été trouvée"
@@ -2196,6 +2216,9 @@
       "This label name is not available. Please choose a different name.": [
         "Ce nom de label n'est pas disponible. Veuillez en choisir un autre."
       ],
+      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
+        "Il est possible que ce message contienne des liens URL qui pourraient ne pas être ouverts correctement par votre navigateur actuel."
+      ],
       "Trusted keys are not valid for sending": [
         "Les clés approuvées ne sont pas valides pour l'envoi"
       ],
@@ -2285,6 +2308,9 @@
       "Calendar": [
         "Calendrier"
       ],
+      "Calendar time zone not supported": [
+        "Fuseau horaire du calendrier non pris en charge"
+      ],
       "Component with wrong format": [
         "Élément au mauvais format"
       ],
@@ -2357,6 +2383,9 @@
       "Start time out of bounds": [
         "Date de début hors limites"
       ],
+      "Time zone not supported": [
+        "Fuseau horaire non pris en charge"
+      ],
       "Timezone": [
         "Fuseau horaire"
       ],
@@ -2382,6 +2411,9 @@
       ],
       "Please ${ refresh } or check your connection.": [
         "Veuillez ${ refresh } ou vérifier votre connexion."
+      ],
+      "Something went wrong. Please refresh the page or try again later.": [
+        "Une erreur s'est produite. Veuillez rafraîchir la page ou réessayer plus tard."
       ],
       "There was a problem connecting to Proton.": [
         "Un problème s'est produit lors de la connexion à Proton."
@@ -3039,6 +3071,9 @@
       "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
         "PGP/Inline est uniquement compatible avec le format texte brut. Veuillez noter que ${ MAIL_APP_NAME } signe toujours les messages chiffrés."
       ],
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        "PGP/MIME envoie automatiquement le message en utilisant le mode actuel du composeur. Veuillez noter que ${ MAIL_APP_NAME } signe toujours les messages chiffrés."
+      ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Veuillez noter que les adresses assignées à ce groupe ne seront PAS supprimées."
       ],
@@ -3081,6 +3116,9 @@
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Sélectionnez le format de message que vous souhaitez utiliser par défaut lors de l'envoi d'un courriel à cette adresse électronique."
+      ],
+      "Select what you want to import from Google.": [
+        "Sélectionnez ce que vous souhaitez importer depuis Google."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Sélectionnez les calendriers à importer. Un nouveau calendrier sera créé pour chaque calendrier importé dans la limite de 20 calendriers."
@@ -3908,6 +3946,11 @@
         "Basculez vers ou ajoutez un compte"
       ]
     },
+    "new_plans: info": {
+      "Introducing Proton’s refreshed look.${ br }Many services, one mission. Welcome to an internet where privacy is the default.": [
+        "Voici le nouveau look de Proton.${ br } Plusieurs services, une seule mission. Bienvenue sur un internet où la protection de la vie privée est la règle absolue."
+      ]
+    },
     "new_plans: label": {
       "Tell us about your experience. (Optional)": [
         "Parlez-nous de votre expérience (optionnel)"
@@ -3939,14 +3982,6 @@
     "Notification time input": {
       "at": [
         "à"
-      ]
-    },
-    "Notification type": {
-      "email": [
-        "courriel"
-      ],
-      "notification": [
-        "notification"
       ]
     },
     "Notification when": {
@@ -4162,6 +4197,11 @@
     "Participant name": {
       "You": [
         "Vous"
+      ]
+    },
+    "Participants collapse button label": {
+      "Collapse participants list": [
+        "Réduire la liste des participants"
       ]
     },
     "Participants expand button label": {

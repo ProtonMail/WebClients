@@ -403,9 +403,6 @@
       "Import emails": [
         "Importar correos"
       ],
-      "Import from .ics": [
-        "Importar desde .ics"
-      ],
       "Import key": [
         "Importar clave"
       ],
@@ -4313,6 +4310,12 @@
       "Basic, Plus or Visionary subscription required": [
         "Se requiere suscripción Basic, Plus o Visionary"
       ],
+      "Before creating this address you need to provide a password and create encryption keys for it.": [
+        "Antes de crear esta dirección, necesita proporcionar una contraseña y crear claves de cifrado para ella."
+      ],
+      "Before enabling the account you need to provide a password and create encryption keys for the new addresses.": [
+        "Antes de habilitar esta cuenta, necesita proporcionar una contraseña y crear claves de cifrado para las direcciones nuevas."
+      ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Antes de solicitar un código de verificación nuevo, revise su carpeta de spam y verifique que ${ strong } sea la dirección correcta."
       ],
@@ -5538,9 +5541,6 @@
       ],
       "You need to have a personal calendar to create a link.": [
         "Necesita tener un calendario personal para crear un enlace."
-      ],
-      "You need to have an active personal calendar to import your events from .ics.": [
-        "Necesita tener un calendario personal activo para importar sus eventos desde .ics."
       ],
       "You need to have an active personal calendar to import your events.": [
         "Necesita tener un calendario personal activo para importar sus eventos."
@@ -8070,14 +8070,6 @@
         "a las"
       ]
     },
-    "Notification type": {
-      "email": [
-        "correo"
-      ],
-      "notification": [
-        "notificación"
-      ]
-    },
     "Notification when": {
       "at time of event": [
         "al momento del evento"
@@ -9259,6 +9251,9 @@
       ],
       "Action": [
         "Acción"
+      ],
+      "Activate account and generate keys": [
+        "Activar cuenta y generar claves"
       ],
       "Activate organization key": [
         "Activar clave de la organización"

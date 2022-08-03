@@ -155,6 +155,9 @@
       "Close this banner": [
         "Fermer cette bannière"
       ],
+      "Collapse URL": [
+        "Réduire l'URL"
+      ],
       "Color": [
         "Couleur"
       ],
@@ -301,6 +304,9 @@
       "Email settings": [
         "Paramètres des courriels"
       ],
+      "Emoji": [
+        "Émoji"
+      ],
       "Enable": [
         "Activer"
       ],
@@ -417,9 +423,6 @@
       ],
       "Import from .csv or vCard": [
         "Importer depuis un .csv ou une vCard"
-      ],
-      "Import messages": [
-        "Importer des messages"
       ],
       "Inline": [
         "Intégrer"
@@ -571,6 +574,9 @@
       ],
       "Move to spam": [
         "Déplacer vers les pourriels"
+      ],
+      "Move to spam and unsubscribe": [
+        "Déplacer vers les indésirables et se désabonner"
       ],
       "Move to trash": [
         "Déplacer vers la corbeille"
@@ -754,6 +760,9 @@
       ],
       "Search": [
         "Rechercher"
+      ],
+      "Search countries": [
+        "Rechercher dans les pays"
       ],
       "Search in ${ option.text }": [
         "Chercher dans ${ option.text }"
@@ -1550,7 +1559,18 @@
         "Événement en cours"
       ]
     },
+    "Collapsible tooltip": {
+      "Collapse": [
+        "Replier"
+      ],
+      "Expand": [
+        "Développer"
+      ]
+    },
     "color": {
+      "apple": [
+        "pomme"
+      ],
       "azureish white": [
         "blanc azur"
       ],
@@ -2054,6 +2074,9 @@
       "Czech Republic": [
         "Tchéquie"
       ],
+      "Côte d'Ivoire": [
+        "Côte d'Ivoire"
+      ],
       "Denmark": [
         "Danemark"
       ],
@@ -2083,6 +2106,9 @@
       ],
       "Estonia": [
         "Estonie"
+      ],
+      "Eswatini": [
+        "Eswatini"
       ],
       "Ethiopia": [
         "Éthiopie"
@@ -2326,6 +2352,9 @@
       ],
       "Mozambique": [
         "Mozambique"
+      ],
+      "Myanmar": [
+        "Birmanie"
       ],
       "Namibia": [
         "Namibie"
@@ -2713,6 +2742,9 @@
       ]
     },
     "Description": {
+      "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
+        "Déchiffrement des contacts en cours… Ceci peut prendre quelques minutes. Lorsque cette opération sera terminée, vous pourrez télécharger le fichier avec tous vos contacts exportés."
+      ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Suppression des contacts... Ceci peut prendre quelques minutes. Une fois le processus terminé, vous pouvez fermer cette fenêtre."
       ],
@@ -3177,6 +3209,9 @@
       "This message has already been sent. A new draft has been saved.": [
         "Ce message a déjà été envoyé. Un nouveau brouillon a été enregistré."
       ],
+      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
+        "Il est possible que ce message contienne des liens URL qui pourraient ne pas être ouverts correctement par votre navigateur actuel."
+      ],
       "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
         "Trop de filtres actifs. Veuillez passer à une offre payante pour activer plus de filtres."
       ],
@@ -3280,6 +3315,9 @@
       ]
     },
     "Error importing event": {
+      "Calendar time zone not supported": [
+        "Fuseau horaire du calendrier non pris en charge"
+      ],
       "Component with wrong format": [
         "Élément au mauvais format"
       ],
@@ -3346,6 +3384,9 @@
       "Start time out of bounds": [
         "Heure de début hors limites"
       ],
+      "Time zone not supported": [
+        "Fuseau horaire non pris en charge"
+      ],
       "To-do entry": [
         "Tâche à réaliser"
       ],
@@ -3368,6 +3409,9 @@
       ],
       "Please ${ refresh } or check your connection.": [
         "Veuillez ${ refresh } ou vérifier votre connexion."
+      ],
+      "Something went wrong. Please refresh the page or try again later.": [
+        "Une erreur s'est produite. Veuillez rafraîchir la page ou réessayer plus tard."
       ],
       "There was a problem connecting to Proton.": [
         "Un problème s'est produit lors de la connexion à Proton."
@@ -3484,6 +3528,11 @@
       "Megabyte": [
         "Megaoctet",
         "Megaoctets"
+      ]
+    },
+    "Filter": {
+      "Show": [
+        "Afficher"
       ]
     },
     "Filter Actions": {
@@ -4141,6 +4190,9 @@
       "Do you want to re-sign the contact details?": [
         "Souhaitez-vous signer à nouveau les coordonnées du contact?"
       ],
+      "Don't forget to share the password with the recipient": [
+        "N'oubliez pas de communiquer le mot de passe au destinataire"
+      ],
       "Download our mobile application from your favorite app store to communicate securely on-the-go.": [
         "Téléchargez notre application mobile depuis votre boutique d'applications préférée pour communiquer en toute sécurité."
       ],
@@ -4275,6 +4327,9 @@
       "Hour": [
         "Heure",
         "Heures"
+      ],
+      "I'm sending this message to a non-Proton Mail user.": [
+        "J'envoie ce message à une personne qui n'utilise pas Proton Mail."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Si vous rencontrez des difficultés à créer votre compte, veuillez demander une invitation et nous vous répondrons dans un délai d'un jour ouvrable."
@@ -4487,6 +4542,9 @@
       "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
         "PGP/Inline est uniquement compatible avec le format texte brut. Veuillez noter que ${ MAIL_APP_NAME } signe toujours les messages chiffrés."
       ],
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        "PGP/MIME envoie automatiquement le message en utilisant le mode actuel du composeur. Veuillez noter que ${ MAIL_APP_NAME } signe toujours les messages chiffrés."
+      ],
       "Phone number": [
         "Numéro de téléphone"
       ],
@@ -4495,6 +4553,9 @@
       ],
       "Please add at least one recipient.": [
         "Veuillez ajouter au moins un destinataire."
+      ],
+      "Please fill out this field.": [
+        "Veuillez remplir ce champ."
       ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
         "Veuillez le garder en sécurité. Vous en aurez besoin pour accéder à votre compte et déchiffrer vos données en cas de réinitialisation du mot de passe."
@@ -4592,6 +4653,9 @@
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Sélectionnez le format de message que vous souhaitez utiliser par défaut lors de l'envoi d'un courriel à cette adresse électronique."
+      ],
+      "Select what you want to import from Google.": [
+        "Sélectionnez ce que vous souhaitez importer depuis Google."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Sélectionnez les calendriers à importer. Un nouveau calendrier sera créé pour chaque calendrier importé dans la limite de 20 calendriers."
@@ -4717,6 +4781,10 @@
       "This conversation contains trashed messages.": [
         "Cette conversation contient des messages déplacés dans la corbeille."
       ],
+      "This conversation will be marked as spam. Would you also like to unsubscribe from future emails?": [
+        "Cette conversation sera marquée comme indésirable. Souhaitez-vous aussi vous désinscrire des futurs courriels?",
+        "Ces conversations seront marquées comme indésirables. Souhaitez-vous aussi vous désinscrire des futurs courriels?"
+      ],
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded!": [
         "Ce courriel a échoué aux exigences d'authentification de son nom de domaine. Il peut être falsifié ou mal transféré!"
       ],
@@ -4749,6 +4817,10 @@
       ],
       "This message is signed by the key attached, that has not been trusted yet.": [
         "Ce message est signé avec une clé attachée qui n'a pas encore été approuvée."
+      ],
+      "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
+        "Ce message sera marqué comme indésirable. Souhaitez-vous aussi vous désinscrire des futurs courriels?",
+        "Ces messages seront marqués comme indésirables. Souhaitez-vous aussi vous désinscrire des futurs courriels?"
       ],
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
         "Ce message va être déplacé dans les brouillons afin que vous puissiez le modifier. Vous devrez reprogrammer la date et heure d'envoi."
@@ -5599,6 +5671,9 @@
       "Region": [
         "Région"
       ],
+      "Remember my choice": [
+        "Se souvenir de mon choix"
+      ],
       "Reveal password": [
         "Afficher le mot de passe"
       ],
@@ -5835,11 +5910,17 @@
       "Learn more": [
         "En savoir plus"
       ],
+      "Less": [
+        "Moins"
+      ],
       "Manage your folders": [
         "Gérer vos dossiers"
       ],
       "Manage your labels": [
         "Gérer vos labels"
+      ],
+      "More": [
+        "Plus"
       ],
       "More about recovery": [
         "Plus d'informations sur la récupération"
@@ -6182,6 +6263,11 @@
         "Basculez vers ou ajoutez un compte"
       ]
     },
+    "new_plans: info": {
+      "Introducing Proton’s refreshed look.${ br }Many services, one mission. Welcome to an internet where privacy is the default.": [
+        "Voici le nouveau look de Proton.${ br } Plusieurs services, une seule mission. Bienvenue sur un internet où la protection de la vie privée est la règle absolue."
+      ]
+    },
     "new_plans: label": {
       "Tell us about your experience. (Optional)": [
         "Parlez-nous de votre expérience (optionnel)"
@@ -6291,6 +6377,11 @@
       ],
       "Merge with calendar": [
         "Fusionner avec le calendrier"
+      ]
+    },
+    "Pagination": {
+      "${ page } of ${ total }": [
+        "Page ${ page } sur ${ total }"
       ]
     },
     "Paid user checklist item": {
@@ -6536,6 +6627,9 @@
       ],
       "Cannot send to organizer address: ${ errorMessage }": [
         "Impossible d'envoyer à l'adresse de l'organisateur·rice: ${ errorMessage }"
+      ],
+      "Re-encrypting invitation failed. Please try again.": [
+        "L'invitation de rechiffrement a échoué. Veuillez réessayer."
       ]
     },
     "Search - no results": {
@@ -6655,6 +6749,11 @@
       ],
       "Sender's trusted keys verification failed": [
         "La vérification des clés de confiance de l'expéditeur·rice a échoué"
+      ]
+    },
+    "Sort": {
+      "Sort": [
+        "Trier"
       ]
     },
     "Sort option": {
@@ -7098,6 +7197,9 @@
       "Addresses": [
         "Adresses"
       ],
+      "Archive": [
+        "Archives"
+      ],
       "Are you sure you want to close?": [
         "Êtes-vous sûr·e de vouloir fermer?"
       ],
@@ -7310,6 +7412,9 @@
       "Mailbox layout": [
         "Mise en page de la boîte aux lettres"
       ],
+      "Mark as read": [
+        "Marquer comme lu"
+      ],
       "Mark as unread": [
         "Marquer comme non lu"
       ],
@@ -7351,6 +7456,9 @@
       ],
       "Move to inbox (not spam)": [
         "Déplacer vers la boîte de réception (non indésirable)"
+      ],
+      "Move to spam": [
+        "Déplacer vers les indésirables"
       ],
       "Move to trash": [
         "Déplacer vers la corbeille"
@@ -7486,6 +7594,9 @@
       ],
       "To": [
         "À"
+      ],
+      "Trash": [
+        "Corbeille"
       ],
       "Trust new key?": [
         "Approuver la nouvelle clé?",

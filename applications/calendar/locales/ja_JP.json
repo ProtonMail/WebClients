@@ -1959,9 +1959,6 @@
       "A group with this name already exists": [
         "この名前のグループは既に存在します"
       ],
-      "A maximum of 10 notifications is allowed": [
-        "最大 10 件の通知が許可されています"
-      ],
       "Address primary private key not found": [
         "メールアドレスのプライマリー秘密鍵が見つかりません"
       ],
@@ -3366,7 +3363,7 @@
         "OS のバージョン"
       ],
       "Optional": [
-        "オプション"
+        "任意"
       ],
       "Organizer": [
         "主催者"
@@ -3568,6 +3565,9 @@
     "Modal title": {
       "Time zone changed": [
         "タイムゾーンが変更されました。"
+      ],
+      "Unable to add more calendars": [
+        "さらなるカレンダーを追加できません"
       ]
     },
     "Modal title and action": {
@@ -3752,14 +3752,6 @@
     "Notification time input": {
       "at": [
         " at"
-      ]
-    },
-    "Notification type": {
-      "email": [
-        "メールアドレス"
-      ],
-      "notification": [
-        "通知"
       ]
     },
     "Notification when": {
@@ -3956,6 +3948,12 @@
       ]
     },
     "PGP Key info": {
+      "${ emailAddress } has marked this key as compromised. This key cannot be used neither for encryption nor for signature verification.": [
+        "${ emailAddress } はこのキーを侵害扱いにしました。このキーは署名検証のみに使用できます。"
+      ],
+      "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
+        "${ emailAddress } はこのキーを廃止しました。このキーは署名検証のみに使用できます。"
+      ],
       "We recommend that you \"untrust\" this key.": [
         "この鍵を「信頼しない」ことをおすすめします。"
       ]
