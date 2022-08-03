@@ -638,6 +638,9 @@
       "Calendar is syncing": [
         "Календар синхронізується"
       ],
+      "Calendar is syncing: it may take several minutes for all of its events to show up": [
+        "Календар синхронізується: для показу всіх подій з нього може знадобитися кілька хвилин"
+      ],
       "Calendar is too big": [
         "Календар завеликий"
       ],
@@ -655,6 +658,17 @@
       ],
       "Unsupported calendar format": [
         "Непідтримуваний формат календаря"
+      ]
+    },
+    "Calendar subscription not synced error; long version": {
+      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
+        "Посилання на календар недоступне поза межами екосистеми постачальника календаря."
+      ],
+      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
+        "Посилання на календар тимчасово недоступне. Переконайтеся, що посилання від постачальника календаря досі дійсне."
+      ],
+      "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
+        "З моменту останнього оновлення минуло понад 12 годин — Proton Calendar спробує оновити календар за кілька годин."
       ]
     },
     "Checkout row": {
@@ -2586,7 +2600,7 @@
         "Ваша нова адреса електронної пошти готова до користування!"
       ],
       "Your subscription starts on ${ startText }.": [
-        "Ваша передплата розпочата ${ startText }."
+        "Ваша передплата починається ${ startText }."
       ]
     },
     "Info for cash payment method": {

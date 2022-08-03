@@ -299,6 +299,9 @@
       "Email settings": [
         "邮件设置"
       ],
+      "Emoji": [
+        "表情符号"
+      ],
       "Enable": [
         "启用"
       ],
@@ -415,9 +418,6 @@
       ],
       "Import from .csv or vCard": [
         "从 .csv 或 vCard 导入"
-      ],
-      "Import messages": [
-        "导入邮件"
       ],
       "Inline": [
         "内嵌图片"
@@ -556,6 +556,9 @@
       ],
       "Move to spam": [
         "标为垃圾邮件"
+      ],
+      "Move to spam and unsubscribe": [
+        "标为垃圾邮件并退订"
       ],
       "Move to trash": [
         "移至废件箱"
@@ -739,6 +742,9 @@
       ],
       "Search": [
         "搜索"
+      ],
+      "Search countries": [
+        "搜索国家"
       ],
       "Search in ${ option.text }": [
         "在 ${ option.text } 中搜索"
@@ -1471,6 +1477,9 @@
       "This invitation is out of date. The event has been updated.": [
         "此邀请已过期。活动已更新。"
       ],
+      "This response is out of date.": [
+        "响应已过期"
+      ],
       "This response is out of date. The event does not exist in your calendar anymore.": [
         "此回复已过期，该活动不再存在于您的日历中。"
       ],
@@ -1530,6 +1539,14 @@
       ],
       "Event in progress": [
         "活动正在进行中"
+      ]
+    },
+    "Collapsible tooltip": {
+      "Collapse": [
+        "收起"
+      ],
+      "Expand": [
+        "展开"
       ]
     },
     "Composer email icon": {
@@ -2929,6 +2946,9 @@
       ]
     },
     "Error importing event": {
+      "Calendar time zone not supported": [
+        "不支持此日历时区"
+      ],
       "Component with wrong format": [
         "组件格式错误"
       ],
@@ -2995,6 +3015,9 @@
       "Start time out of bounds": [
         "开始超越边界的时间"
       ],
+      "Time zone not supported": [
+        "不支持此时区"
+      ],
       "To-do entry": [
         "待办事项"
       ],
@@ -3017,6 +3040,9 @@
       ],
       "Please ${ refresh } or check your connection.": [
         "请${ refresh }或检查网络连接。"
+      ],
+      "Something went wrong. Please refresh the page or try again later.": [
+        "出错了，请刷新页面或稍后重试。"
       ],
       "There was a problem connecting to Proton.": [
         "连接 Proton 服务器失败。"
@@ -3489,6 +3515,12 @@
       "${ numContacts } contact": [
         "${ numContacts } 名联系人"
       ],
+      "${ numOccurrences } occurrence found": [
+        "找到 ${ numOccurrences } 条结果"
+      ],
+      "${ numOccurrences } occurrence found in the mail content": [
+        "在邮件正文中找到 ${ numOccurrences } 条结果"
+      ],
       "${ pureAttachmentsCount } file attached": [
         "${ pureAttachmentsCount } 个文件已添加到附件。"
       ],
@@ -3732,6 +3764,9 @@
       "Do you want to re-sign the contact details?": [
         "确定要重新对联系人详细信息签名吗？"
       ],
+      "Don't forget to share the password with the recipient": [
+        "别忘了把您设定的密码告诉收件人"
+      ],
       "Download our mobile application from your favorite app store to communicate securely on-the-go.": [
         "从应用商店下载我们的移动应用即可随时随地安全通信。"
       ],
@@ -3860,6 +3895,9 @@
       ],
       "Hour": [
         "小时"
+      ],
+      "I'm sending this message to a non-Proton Mail user.": [
+        "我要将此邮件发给非 Proton Mail 邮箱。"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "若您创建账户存在困难，请提交注册申请，我们将在一个工作日内回复。"
@@ -4071,6 +4109,9 @@
       "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
         "PGP/Inline 只能用于纯文本邮件。请注意 ${ MAIL_APP_NAME } 会对所有加密邮件予以数字签名。"
       ],
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        "PGP/MIME 可使用编辑器中指定的格式发送邮件。请注意 ${ MAIL_APP_NAME } 会对所有加密邮件予以数字签名。"
+      ],
       "Phone number": [
         "电话号码"
       ],
@@ -4079,6 +4120,9 @@
       ],
       "Please add at least one recipient.": [
         "请至少添加一个收件人。"
+      ],
+      "Please fill out this field.": [
+        "请填写此项。"
       ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
         "请妥善保管。如果遇到密码重置，您将需要通过它来访问您的账户以及解密您的数据。"
@@ -4175,6 +4219,9 @@
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "选择向该地址发送邮件的首选格式。"
+      ],
+      "Select what you want to import from Google.": [
+        "请选择您要从 Google 账户导入的内容。"
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "请选择要导入的日历。将为每个导入的日历创建一个新日历（最多 20 个）。"
@@ -4299,6 +4346,9 @@
       "This conversation contains trashed messages.": [
         "此会话包含废件箱中的邮件。"
       ],
+      "This conversation will be marked as spam. Would you also like to unsubscribe from future emails?": [
+        "标为垃圾邮件后，是否要退订此类邮件？"
+      ],
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded!": [
         "不能确定此邮件是否来自该域名，这可能是欺诈邮件，也可能是投递过程出现了问题。"
       ],
@@ -4331,6 +4381,9 @@
       ],
       "This message is signed by the key attached, that has not been trusted yet.": [
         "这条消息是由所附的密钥签署的，还没有被信任。"
+      ],
+      "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
+        "标为垃圾邮件后，是否要退订此类邮件？"
       ],
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
         "此邮件将移至草稿箱，以便您进行编辑。您需要为其重新安排发送时间。"
@@ -5170,6 +5223,9 @@
       "Region": [
         "区域"
       ],
+      "Remember my choice": [
+        "记住我的选择"
+      ],
       "Reveal password": [
         "显示密码"
       ],
@@ -5406,11 +5462,17 @@
       "Learn more": [
         "了解详情"
       ],
+      "Less": [
+        "收起"
+      ],
       "Manage your folders": [
         "管理文件夹"
       ],
       "Manage your labels": [
         "管理标签"
+      ],
+      "More": [
+        "展开"
       ],
       "More about recovery": [
         "详细了解账户恢复"
@@ -5746,6 +5808,11 @@
     "new_plans: action": {
       "Switch or add account": [
         "切换或添加账户"
+      ]
+    },
+    "new_plans: info": {
+      "Introducing Proton’s refreshed look.${ br }Many services, one mission. Welcome to an internet where privacy is the default.": [
+        "Proton 界面现已焕然一新。${ br }服务繁多，使命不变。欢迎进入隐私优先的互联网。"
       ]
     },
     "new_plans: label": {
@@ -6100,6 +6167,9 @@
       ],
       "Cannot send to organizer address: ${ errorMessage }": [
         "无法发送到组织者地址：${ errorMessage }"
+      ],
+      "Re-encrypting invitation failed. Please try again.": [
+        "重新加密邀请失败，请重试。"
       ]
     },
     "Search - no results": {
@@ -6873,6 +6943,9 @@
       ],
       "Move to inbox (not spam)": [
         "移至收件箱（不是垃圾邮件）"
+      ],
+      "Move to spam": [
+        "标为垃圾邮件"
       ],
       "Move to trash": [
         "移至废件箱"

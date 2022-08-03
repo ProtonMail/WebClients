@@ -690,6 +690,9 @@
       "Calendar is syncing": [
         "Календарь синхронизируется"
       ],
+      "Calendar is syncing: it may take several minutes for all of its events to show up": [
+        "Календарь синхронизируется: может понадобиться несколько минут, чтобы показать все события"
+      ],
       "Calendar is too big": [
         "Календарь слишком большой"
       ],
@@ -707,6 +710,17 @@
       ],
       "Unsupported calendar format": [
         "Неподдерживаемый формат календаря"
+      ]
+    },
+    "Calendar subscription not synced error; long version": {
+      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
+        "Ссылка на календарь недоступна вне экосистемы, в которой он был создан."
+      ],
+      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
+        "Ссылка на календарь временно недоступна. Пожалуйста, проверьте, что ссылка, полученная от поставщика календаря, все еще действительна."
+      ],
+      "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
+        "С прошлого обновления прошло больше 12 часов — Proton Calendar попробует обновить календарь через несколько часов."
       ]
     },
     "Checkout row": {
@@ -3736,7 +3750,7 @@
         "Еще вы можете добавить до 5 календарей от друзей, родственников, коллег и организаций"
       ],
       "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections.": [
-        "Одно подключение к VPN позволяет одному устройству подключаться к Proton VPN в любой момент времени. Например, для одновременного подключения телефона и ноутбука к Proton VPN вам потребуется два подключения к VPN."
+        "Одно VPN-подключение позволяет одному устройству в любое время подключаться к Proton VPN. Например, для одновременного подключения к Proton VPN телефона и ноутбука вам потребуется два VPN-подключения."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Возможность просматривать публичные папки со входящими сообщениями пользователей, включая полный текст писем и контактную информацию"

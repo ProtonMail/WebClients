@@ -6,7 +6,7 @@
   "contexts": {
     "Action": {
       "${ BRAND_NAME } introduction": [
-        "${ BRAND_NAME } úvod"
+        "${ BRAND_NAME } představení"
       ],
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } obchod"
@@ -72,7 +72,7 @@
         "Zrušit nahrávání"
       ],
       "Chat with us": [
-        "Komunikace s námi"
+        "Chatujte s námi"
       ],
       "Check import progress": [
         "Zkontrolovat průběh importu"
@@ -108,7 +108,7 @@
         "Zavřít tento banner"
       ],
       "Close transfers": [
-        "Uzavření transferů"
+        "Zavřít přenosy"
       ],
       "Collapse": [
         "Sbalit"
@@ -180,7 +180,7 @@
         "Smazat skupinu kontaktů"
       ],
       "Delete permanently": [
-        "Navždy smazat"
+        "Trvale smazat"
       ],
       "Deselect all": [
         "Odznačit vše"
@@ -315,7 +315,7 @@
         "Označit pro odstranění"
       ],
       "Maximize transfers": [
-        "Maximum transferů"
+        "Maximalizovat přenosy"
       ],
       "Merge": [
         "Sloučit"
@@ -324,7 +324,7 @@
         "Sloučit kontakty"
       ],
       "Minimize transfers": [
-        "Minimum transferů"
+        "Minimalizovat přenosy"
       ],
       "More info: ${ safeTitle }": [
         "Více informací: ${ safeTitle }"
@@ -378,7 +378,7 @@
         "Předchozí měsíc"
       ],
       "Quit": [
-        "Odejít"
+        "Ukončit"
       ],
       "Re-sign": [
         "Znovu podepsat"
@@ -387,13 +387,13 @@
         "Obnovit data"
       ],
       "Refer a friend": [
-        "Doporučit přítele"
+        "Doporučte kamarád(ovi/ce)"
       ],
       "Refresh the page": [
         "Obnovit stránku"
       ],
       "refresh the page": [
-        "aktualizovat stránku"
+        "obnovit stránku"
       ],
       "Remove": [
         "Odstranit"
@@ -414,7 +414,7 @@
         "Poslat nový kód"
       ],
       "Reset zoom": [
-        "Obnovit velikost zobrazení na původní hodnotu"
+        "Resetovat přiblížení"
       ],
       "Restart all": [
         "Restartovat vše"
@@ -432,10 +432,10 @@
         "Obnovit vše"
       ],
       "Resume download": [
-        "Souhrn stahování"
+        "Pokračovat ve stahování"
       ],
       "Resume upload": [
-        "Souhrn nahrávání"
+        "Pokračovat v nahrávání"
       ],
       "Retry": [
         "Opakovat"
@@ -468,7 +468,7 @@
         "Sdílet položku"
       ],
       "Share via link": [
-        "Sdílej skrze odkaz"
+        "Sdílet pomocí odkazu"
       ],
       "Sharing options": [
         "Možnosti sdílení"
@@ -489,7 +489,7 @@
         "Odhlásit se"
       ],
       "Signing out": [
-        "Odhlásit se"
+        "Odhlašování"
       ],
       "Skip": [
         "Přeskočít"
@@ -501,7 +501,7 @@
         "Začít obnovu"
       ],
       "Start setup": [
-        "Spusťte nastavení"
+        "Spustit nastavení"
       ],
       "Stay": [
         "Zůstat"
@@ -519,7 +519,7 @@
         "Odeslat hlášení"
       ],
       "Theme": [
-        "Vzhled"
+        "Motiv"
       ],
       "Trust": [
         "Důvěřovat"
@@ -531,7 +531,7 @@
         "Zpět"
       ],
       "Unlock data": [
-        "Odemknout údaje"
+        "Odemknout data"
       ],
       "Unmark for deletion": [
         "Zrušit označení pro odstranění"
@@ -607,7 +607,7 @@
     },
     "Alert": {
       "By leaving now, some contacts may not be imported": [
-        "Pokud teď odejdete, některé kontakty nebudou naimportovány"
+        "Pokud teď odejdete, některé kontakty nebudou importovány"
       ]
     },
     "Apps dropdown": {
@@ -1404,7 +1404,7 @@
         "Mosambik"
       ],
       "Myanmar": [
-        "Barma"
+        "Myanmar"
       ],
       "Namibia": [
         "Namibie"
@@ -1596,7 +1596,7 @@
         "Surinam"
       ],
       "Svalbard and Jan Mayen": [
-        "Svalbard a Jan Mayen"
+        "Špicberky a Jan Mayen"
       ],
       "Sweden": [
         "Švédsko"
@@ -1739,19 +1739,19 @@
         "Zdá se, že seznam kontaktů který importujete, zahrnuje nějaké skupiny. Prosím, zkontrolujte jak by tyto skupiny měly být importovány."
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
-        "Sloučení kontaktů... To může trvat několik minut. Po dokončení procesu můžete toto okno zavřít."
+        "Slučování kontaktů... Tento proces může trvat několik minut. Po dokončení můžete okno zavřít."
       ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "Soubor by měl mít maximální velikost ${ MAX_IMPORT_FILE_SIZE_STRING } a obsahovat až ${ MAX_IMPORT_CONTACTS_STRING } kontaktů. Pokud je váš soubor větší, rozdělte jej na menší soubory.",
-        "Soubory by měly mít maximální velikost ${ MAX_IMPORT_FILE_SIZE_STRING } a obsahovat až ${ MAX_IMPORT_CONTACTS_STRING } kontaktů. Pokud jsou vaše soubory větší, rozdělte jej na menší soubory.",
-        "Souborů by mělo mít maximální velikost ${ MAX_IMPORT_FILE_SIZE_STRING } a obsahovat až ${ MAX_IMPORT_CONTACTS_STRING } kontaktů. Pokud jsou vaše soubory větší, rozdělte jej na menší soubory.",
-        "Souborů by mělo mít maximální velikost ${ MAX_IMPORT_FILE_SIZE_STRING } a obsahovat až ${ MAX_IMPORT_CONTACTS_STRING } kontaktů. Pokud jsou vaše soubory větší, rozdělte jej na menší soubory."
+        "Soubor by měl mít maximální velikost ${ MAX_IMPORT_FILE_SIZE_STRING } a obsahovat pouze ${ MAX_IMPORT_CONTACTS_STRING } kontakt. Pokud je váš soubor větší, rozdělte jej do menších souborů.",
+        "Soubor by měl mít maximální velikost ${ MAX_IMPORT_FILE_SIZE_STRING } a obsahovat nanejvýš ${ MAX_IMPORT_CONTACTS_STRING } kontakty. Pokud je váš soubor větší, rozdělte jej do menších souborů.",
+        "Soubor by měl mít maximální velikost ${ MAX_IMPORT_FILE_SIZE_STRING } a obsahovat nanejvýš ${ MAX_IMPORT_CONTACTS_STRING } kontaktů. Pokud je váš soubor větší, rozdělte jej do menších souborů.",
+        "Soubor by měl mít maximální velikost ${ MAX_IMPORT_FILE_SIZE_STRING } a obsahovat nanejvýš ${ MAX_IMPORT_CONTACTS_STRING } kontaktů. Pokud je váš soubor větší, rozdělte jej do menších souborů."
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
-        "Použijte tlačítko táhnout a tlačítko odložit pro sloučení priority mezi kontakty. Odškrtněte kontakty, které nechcete sloučit."
+        "Pomocí myši táhněte a pusťte pro změnu priority sloučení kontaktů. Odškrtněte kontakty, které nechcete sloučit."
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
-        "Kontakty, které nechcete slučovat ani uchovávat, můžete označit k odstranění. K vymazání dojde až po kliknutí na tlačítko sloučit"
+        "Kontakty, které nechcete sloučit ani zachovat, označte pro smazání. Ke smazání dojde po kliknutí na tlačítko pro sloučení"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -1886,14 +1886,14 @@
       ],
       "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
         "Jeden z kontaktů nemá e-mailovou adresu: ${ noEmailsContactNamesList }",
-        "Některých kontaktů nemá žádné e-mailové adresy: ${ noEmailsContactNamesList } ",
-        "Některých kontaktů nemá žádné e-mailové adresy: ${ noEmailsContactNamesList } ",
-        "Některé kontakty nemají e-mailovou adresu: ${ noEmailsContactNamesList } "
+        "Některé kontakty nemají e-mailové adresy: ${ noEmailsContactNamesList } ",
+        "Některé kontakty nemají e-mailové adresy: ${ noEmailsContactNamesList } ",
+        "Některé kontakty nemají e-mailové adresy: ${ noEmailsContactNamesList } "
       ],
       "One of the groups has no contacts: ${ noContactGroupList }": [
-        "Jeden ze skupiny, nemá kontakty: ${ noContactGroupList }",
-        "Jeden ze skupiny, nemá kontakty: ${ noContactGroupList } ",
-        "Některé skupiny nemají kontakty: ${ noContactGroupList } ",
+        "Jedna ze skupin neobsahuje kontakty: ${ noContactGroupList }",
+        "Některé skupiny neobsahují kontakty: ${ noContactGroupList } ",
+        "Některé skupiny neobsahují kontakty: ${ noContactGroupList } ",
         "Některé skupiny neobsahují kontakty: ${ noContactGroupList } "
       ],
       "Passwords do not match": [
@@ -2070,7 +2070,7 @@
         "Nenalezeno"
       ],
       "Oops, something went wrong": [
-        "Ups, něco se pokazilo"
+        "Jejda, něco se pokazilo"
       ],
       "Please ${ refresh } or check your connection.": [
         "Prosím ${ refresh } nebo zkontrolujte své připojení."
@@ -2090,7 +2090,7 @@
     },
     "Error notification": {
       "First name and last name cannot be unchecked at the same time": [
-        "Křestní jméno a příjmení nelze zrušit současně"
+        "Je potřeba vybrat křestní jméno a nebo příjmení"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -2186,10 +2186,10 @@
     },
     "Hint": {
       "Found ${ items.length } suggestion, use keyboard to navigate.": [
-        "Nalezeno ${ items.length } návrh, pro navigaci použijte klávesnici.",
-        "Nalezeno ${ items.length } návrh, pro navigaci použijte klávesnici.",
-        "Nalezeno ${ items.length } návrh, pro navigaci použijte klávesnici.",
-        "Nalezeno ${ items.length } návrh, pro navigaci použijte klávesnici."
+        "Nalezen ${ items.length } návrh, použijte klávesnice pro navigaci.",
+        "Nalezeny ${ items.length } návrhy, použijte klávesnici pro navigaci.",
+        "Nalezeno ${ items.length } návrhů, použijte klávesnici pro navigaci.",
+        "Nalezeno ${ items.length } návrhů, použijte klávesnici pro navigaci."
       ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Pomocí kláves nahoru a dolů můžete po zadání přejít k návrhům a procházet je. Stisknutím klávesy Enter potvrďte volbu nebo klávesou Escape zavřete okno s návrhy."
@@ -2203,7 +2203,7 @@
         "E-mail"
       ],
       "Manual": [
-        "Manuál"
+        "Ručně"
       ],
       "No verification method available": [
         "Není k dispozici žádná metoda ověření"
@@ -2224,10 +2224,10 @@
     },
     "Import contact": {
       "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
-        "${ totalImported }/${ totalToImport } kontakt zašifrován a přidán do seznamu kontaktů",
-        "${ totalImported }/${ totalToImport } kontakty zašifrovány a přidány do seznamu kontaktů",
+        "${ totalImported }/${ totalToImport } kontaktu zašifrován a přidán do seznamu kontaktů",
         "${ totalImported }/${ totalToImport } kontaktů zašifrováno a přidáno do seznamu kontaktů",
-        "${ totalImported }/${ totalToImport } kontakty zašifrovány a přidány do seznamu kontaktů"
+        "${ totalImported }/${ totalToImport } kontaktů zašifrováno a přidáno do seznamu kontaktů",
+        "${ totalImported }/${ totalToImport } kontaktů zašifrováno a přidáno do seznamu kontaktů"
       ],
       "An error occurred while encrypting and adding your contact. No contact could be imported.": [
         "Při šifrování a přidávání kontaktu došlo k chybě. Žádný kontakt se nepodařilo importovat.",
@@ -2243,10 +2243,10 @@
     },
     "Import contact groups info": {
       "${ totalContacts } contact": [
+        "${ totalContacts } kontakt",
         "${ totalContacts } kontakty",
         "${ totalContacts } kontaktů",
-        "${ totalContacts } kontaktů",
-        "${ totalContacts } kontakty"
+        "${ totalContacts } kontaktů"
       ]
     },
     "Import contact. Contact identifier": {
@@ -2261,8 +2261,8 @@
       "Contact successfully imported. The imported contact will now appear in your contact list.": [
         "Kontakt byl úspěšně importován. Importovaný kontakt se nyní zobrazí v seznamu kontaktů.",
         "Kontakty byly úspěšně importovány. Importované kontakty se nyní objeví v seznamu kontaktů.",
-        "Kontaktů bylo úspěšně importováno. Importované kontakty se nyní objeví v seznamu kontaktů.",
-        "Kontaktů bylo úspěšně importováno. Importované kontakty se nyní objeví v seznamu kontaktů."
+        "Kontakty byly úspěšně importovány. Importované kontakty se nyní objeví v seznamu kontaktů.",
+        "Kontakty byly úspěšně importovány. Importované kontakty se nyní objeví v seznamu kontaktů."
       ]
     },
     "Import contacts warning": {
@@ -2270,12 +2270,12 @@
         "prozatím"
       ],
       "ProtonContacts does not support ${ forNow }:": [
-        "Proton kontakty nepodporuje ${ forNow }:"
+        "ProtonContacts nepodporují ${ forNow }:"
       ]
     },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
-        "${ totalContactsDiscarded } z ${ totalContacts } kontakty nebudou importovány. Klikněte pro podrobnosti"
+        "${ totalContactsDiscarded } z ${ totalContacts } kontaktů nebude importováno. Klikněte pro podrobnosti"
       ],
       "No contact can be imported. Click for details": [
         "Žádný kontakt nemůže být importován. Klikněte pro více informací"
@@ -2307,7 +2307,7 @@
         "${ addressCount } e-mailových adres"
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
-        "Aplikace ${ appName } potřebuje Váš souhlas, aby mohla ${ enableDesktopNotifications }."
+        "${ appName } potřebuje váš souhlas k ${ enableDesktopNotifications }."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } nový kalendář",
@@ -2475,10 +2475,10 @@
         "a"
       ],
       "Anyone with this link can access your file.": [
-        "Kdokoliv s tímto odkazovým řádkem může mít přístup k Vašim souborům."
+        "Kdokoli s tímto odkazem má přístup k vašemu souboru."
       ],
       "Anyone with this link can access your folder.": [
-        "Kdokoli s tímto odkazem může získat přístup k vaší složce."
+        "Kdokoli s tímto odkazem má přístup k vaší složce."
       ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Opravdu chcete vyprázdnit koš a trvale smazat všechny položky?"
@@ -2556,10 +2556,10 @@
         "Vytvořit v"
       ],
       "Create links and share your files with others.": [
-        "Vytvořte odkazové řádky a sdílejte své soubory s ostatními."
+        "Vytvořte odkazy a sdílejte své soubory s ostatními."
       ],
       "Create your first folder and start moving your files.": [
-        "Vytvořte si Váš první soubor a začněte stěhovat své složky."
+        "Vytvořte první složku a přesuňte soubory."
       ],
       "Creating": [
         "Vytváření"
@@ -2574,10 +2574,10 @@
         "Jsou podporovány CSV soubory z aplikací Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora a některých dalších aplikací a také formáty vCard 3.1 a 4.0 (kódování UTF-8)."
       ],
       "Delete drive": [
-        "Odstranit disk",
-        "Odstranit disky",
-        "Odstranit disky",
-        "Odstranit disky"
+        "Smazat disk",
+        "Smazat disky",
+        "Smazat disky",
+        "Smazat disky"
       ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "Digitální podpis ověřen. Tento soubor byl bezpečně nahrán uživatelem ${ emailAddress }."
@@ -2619,7 +2619,7 @@
         "Duplicitní klíč byl aktualizován"
       ],
       "Enabling drive search": [
-        "Povolování hledání na disku"
+        "Zapínání vyhledávání na disku"
       ],
       "Encrypted": [
         "Šifrováno"
@@ -2655,7 +2655,7 @@
         "Soubor \"${ name }\" byl smazán během stahování"
       ],
       "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "Souboru chybí podpis. Nemohli jsme ověřit, že ${ emailAddress } nahrál/a ${ fileName }."
+        "Souboru chybí podpis. Nemohli jsme ověřit, že ${ emailAddress } nahrál(a) ${ fileName }."
       ],
       "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
         "Souboru chybí podpis. Nemohli jsme ověřit, kdo nahrál ${ fileName }."
@@ -2673,7 +2673,7 @@
         "Obsah složky bude sloučen do jedné složky"
       ],
       "Folder is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "Složce chybí podpis. Nemohli jsme ověřit, že ${ emailAddress } nahrál/a ${ fileName }."
+        "Složce chybí podpis. Nemohli jsme ověřit, že ${ emailAddress } nahrál(a) ${ fileName }."
       ],
       "Folder is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
         "Složce chybí podpis. Nemohli jsme ověřit, kdo nahrál ${ fileName }."
@@ -2685,7 +2685,7 @@
         "Uvolněte místo nebo přidejte další úložný prostor."
       ],
       "Free up some space or contact your administrator.": [
-        "Uvolněte místo nebo kontaktujte správce Vašeho účtu."
+        "Uvolněte úložný prostor a nebo kontaktujte správce vašeho účtu."
       ],
       "Go to \"My files\" and upload some files first.": [
         "Jděte na \"Moje Soubory\" a nahrajte nejdříve soubory."
@@ -2727,7 +2727,7 @@
         "Import probíhá"
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        "Importujeme Vaše data z ${ importedEmailAddress } do ${ toEmail }."
+        "Importujeme vaše data z ${ importedEmailAddress } do ${ toEmail }."
       ],
       "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
         "Indexování položek ${ esProgress } z ${ totalProgressToShow }"
@@ -2754,13 +2754,13 @@
         "Stačí potvrdit výběr a my se postaráme o zbytek."
       ],
       "Key fingerprint": [
-        "Otisk prstu klíče"
+        "Otisk klíče"
       ],
       "Large imports can take several days.": [
         "Dokončení velkých importů může trvat i několik dní."
       ],
       "Learn more": [
-        "Dozvědět se více"
+        "Více informací"
       ],
       "Link copied to clipboard": [
         "Odkaz zkopírován do schránky"
@@ -2772,10 +2772,10 @@
         "Nepodařilo se načíst odkazy"
       ],
       "Loading": [
-        "Načítá se"
+        "Načítání"
       ],
       "Loading ${ appName }": [
-        "Načtení aplikace ${ appName }"
+        "Načítání ${ appName }"
       ],
       "Loading link": [
         "Načítání odkazu"
@@ -2796,7 +2796,7 @@
         "Přesouvání souborů"
       ],
       "My Links": [
-        "Mé odkazové řádky"
+        "Mé odkazy"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Pojmenujte svoji novou složku a vyberte nadřazenou složku, do které ji chcete vložit. Pokud nevyberete nadřazenou složku, bude tato nová složka vytvořena v kořenové složce."
@@ -2847,7 +2847,7 @@
         "Jedna ze zašifrovaných jednotek je uzamčená. Je to pravděpodobně způsobeno nedávným resetem hesla."
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
-        "Jeden nebo více důvěryhodných klíčů byl vlastníkem označen jako \"kompromitovaný\". Doporučujeme, abyste takovým klíčům \"nedůvěřovali\"."
+        "Jeden nebo více důvěryhodných klíčů byl vlastníkem označen jako \"kompromitovaný\". Doporučujeme, abyste takové klíče označili jako nedůvěryhodné."
       ],
       "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } character is allowed": [
         "Je povolen pouze ${ MAX_CUSTOM_PASSWORD_LENGTH } znak",
@@ -2859,10 +2859,10 @@
         "Tato nastavení změňte, pouze pokud používáte PGP s příjemci, kteří nepoužívají službu ${ BRAND_NAME }."
       ],
       "Only the people with the link and the password can access this file.": [
-        "Jenom lidé s tímto odkazovým řádkem a heslem, můžou mít přístup k tomuto souboru."
+        "Kdokoli s tímto odkazem a heslem má přístup k tomuto souboru."
       ],
       "Only the people with the link and the password can access this folder.": [
-        "Do této složky mají přístup pouze osoby s Url odkazem a heslem."
+        "Kdokoli s tímto odkazem a heslem má přístup k této složce."
       ],
       "Other options": [
         "Další volby"
@@ -2958,7 +2958,7 @@
         "Vyberte formát e-mailu, který chcete aby byl použit jako výchozí pro zasílání e-mailu na tuto e-mailovou adresu."
       ],
       "Select what you want to import from Google.": [
-        "Vyberte co chcete imprtovat z Googlu."
+        "Vyberte co chcete importovat z Google."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Vyberte kalendáře, které chcete importovat. Pro každý importovaný kalendář bude vytvořen nový kalendář až do limitu 20 kalendářů."
@@ -2973,13 +2973,13 @@
         "Nastavení PGP vám umožní posílat end-to-end šifrované e-maily i s uživateli, kteří nepoužívají ${ BRAND_NAME } ale jinou službu s podporou PGP."
       ],
       "Share files with links": [
-        "Sdílejte soubory přes s odkazovými řádky"
+        "Sdílejte soubory pomocí odkazů"
       ],
       "Shareable link for ${ boldNameText }": [
         "Odkaz ke sdílení ${ boldNameText }"
       ],
       "Signature check will be ignored": [
-        "Kontrola podpisu bude ignorována"
+        "Výsledek kontroly podpisu bude ignorován"
       ],
       "Signature issue": [
         "Problém s podpisem"
@@ -3012,19 +3012,19 @@
         "Klepnutím na tlačítko + nahrajete soubor nebo složku."
       ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "Účet může mít nový klíč nebo mohlo dojít k manipulaci s následujícími položkami: ${ items }. Otevřete pouze v případě, že mu důvěřujete."
+        "Účet může mít nový klíč nebo mohlo dojít k manipulaci s následujícími položkami: ${ items }. Otevřete pouze v případě, že jim důvěřujete."
       ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Před exportem kontaktů musí aplikace kontakty lokálně dešifrovat. Na konci procesu bude vygenerován soubor VCF, který si budete moci stáhnout."
       ],
       "The following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "S následujícími položkami mohlo dojít k manipulaci : ${ items }. Otevřete pouze v případě, že jim důvěřujete."
+        "S následujícími položkami mohl někdo bez dovolení manipulovat: ${ items }. Otevřete pouze v případě, že jim důvěřujete."
       ],
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
         "Ještě je třeba přenést některé soubory. Zavřením správce přenosu se ukončí všechny operace."
       ],
       "There are no files yet": [
-        "Soubory tam ještě nejsou"
+        "Nejsou tady zatím žádné soubory"
       ],
       "These files were shared using end-to-end encryption. To ensure their security — and the security of all your documents, photos, and files — store them in Proton Drive, the cloud storage service you can trust.": [
         "Tyto soubory byly sdíleny za pomoci end-to-end šifrování. Pro zajištění jejich bezpečnosti a bezpečnosti všech vašich dokumentů, fotek, souborů je mějte uložené v Proton Drive, kloudovém úložišti, kterému můžete věřit."
@@ -3058,9 +3058,9 @@
       ],
       "This will delete the link and remove access to your file or folder for anyone with the link.": [
         "Tím odstraníte odkaz a zrušíte přístup k vašemu souboru nebo složce pro každého, kdo má tento odkaz.",
-        "Tím odstraníte odkazy a zrušíte přístup k vaším souborů nebo složkám pro každého, kdo má tyto odkazy.",
-        "Tím odstraníte odkazy a zrušíte přístup k vaším souborů nebo složkám pro každého, kdo má tyto odkazy.",
-        "Tím odstraníte odkazy a zrušíte přístup k vaším souborů nebo složkám pro každého, kdo má tyto odkazy."
+        "Tím odstraníte odkazy a zrušíte přístup k vašim souborům nebo složkám pro každého, kdo má tyto odkazy.",
+        "Tím odstraníte odkazy a zrušíte přístup k vašim souborům nebo složkám pro každého, kdo má tyto odkazy.",
+        "Tím odstraníte odkazy a zrušíte přístup k vašim souborům nebo složkám pro každého, kdo má tyto odkazy."
       ],
       "This will overwrite the existing file": [
         "Tím se přepíše existující soubor"
@@ -3102,7 +3102,7 @@
         "Neomezený počet složek, štítků a filtrů"
       ],
       "Unlimited messages": [
-        "Neomezené zprávy"
+        "Neomezený počet zpráv"
       ],
       "Unlock drive to recover files": [
         "Odemknutí disku pro obnovení souborů"
@@ -3114,7 +3114,7 @@
         "Aktulizace vyhledání na disku..."
       ],
       "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        "Upgradujte ještě dnes, abyste nepřišli o následující výhody ${ planName }."
+        "Navyšte tarif ještě dnes, abyste nepřišli o následující výhody ${ planName }."
       ],
       "Uploaded": [
         "Nahrané"
@@ -3123,19 +3123,19 @@
         "Nahrávání"
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
-        "Nahrávání stovky souboru najednou může zapříčinit dopad na výkon."
+        "Nahrávání stovek souborů najednou, může zapříčinit snížení výkonu."
       ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
-        "Pomocí tohoto formuláře nás můžete informovat o nevhodných, nezákonných,\nnebo jinak škodlivých sdílených souborech. Chystáte se nahlásit:"
+        "Pomocí tohoto formuláře nás můžete upozornit na nevhodné, nezákonné,\nnebo jinak škodlivé sdílené soubory. Chystáte se nahlásit:"
       ],
       "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "Nemohli jsme ověřit, že ${ emailAddress } nahrál ${ fileName }."
+        "Nemohli jsme ověřit, že ${ emailAddress } nahrál(a) ${ fileName }."
       ],
       "We couldn’t verify who uploaded ${ fileName }.": [
         "Nemohli jsme ověřit, kdo nahrál ${ fileName }."
       ],
       "We'll notify you when the import is done.": [
-        "Po dokončení importu Vás budeme informovat."
+        "Po dokončení importu vás budeme informovat."
       ],
       "We'll send a new verification code to ${ strong }": [
         "Zašleme nový ověřovací kód na adresu ${ strong }"
@@ -3165,7 +3165,7 @@
         "Ano"
       ],
       "You are about to open another browser tab and visit:": [
-        "Chystáte se otevřít stránku v jiném prohlížeči:"
+        "Chystáte se otevřít další záložku prohlížeče a navštívit odkaz:"
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Aktuálně jste přihlášeni jako ${ user.Name } (${ user.Email })."
@@ -3174,7 +3174,7 @@
         "Importované kalendáře můžete také sloučit s existujícími Proton kalendáři."
       ],
       "You can check the progress ${ importProgressLink }.": [
-        "Můžete zkontrolovat průběh ${ importProgressLink }."
+        "Průběh můžete zkontrolovat ${ importProgressLink }."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Můžete zapnout upozornění abyste obdrželi oznámení v případě, že do této složky přijde nový e-mail."
@@ -3183,7 +3183,7 @@
         "Nemůžete vrátit zpět tuto akci."
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
-        "Dosáhli jste ${ spaceDisplayed }% své kapacity úložiště. ${ freeUpMessage } ${ upgradeLink }"
+        "Dosáhli jste ${ spaceDisplayed }% kapacity svého úložiště. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
         "Dosáhli jste 100% kapacity úložiště. Nemůžete posílat nebo přijímat nové e-maily. ${ freeUpMessage } ${ upgradeLink }"
@@ -3198,7 +3198,7 @@
         "Váš účet má alespoň jednu fakturu po splatnosti. Váš přístup bude brzy omezen. ${ payInvoiceLink }"
       ],
       "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
-        "Váš aktuální prohlížeč nepodporuje stahování velkých souborů z důvodu nedostupnosti pracovníků služby. Při stahování velkých souborů může dojít k zamrznutí nebo nereagování prohlížeče. Použijte prosím nejnovější verzi ${ recommendedBrowser } a zkuste to znovu."
+        "Váš aktuální prohlížeč nepodporuje stahování velkých souborů z důvodu nedostupnosti Service Workers. Stahování velkých souborů může způsobit, že prohlížeč přestane reagovat. Použijte prosím nejnovější verzi ${ recommendedBrowser } a zkuste to znovu."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Vaše data jsou připravena k importu z ${ importedEmailAddressStrong } do vašeho účtu Proton."
@@ -3240,10 +3240,10 @@
         "vlastnosti souboru"
       ],
       "file data": [
-        "údaje o souboru"
+        "data souboru"
       ],
       "file data key": [
-        "klíč k souborům a datům"
+        "klíč k datům souboru"
       ],
       "keys": [
         "klíče"
@@ -3255,7 +3255,7 @@
         "hash názvu"
       ],
       "thumbnail": [
-        "náhled"
+        "miniatura"
       ]
     },
     "Key badge": {
@@ -3263,7 +3263,7 @@
         "Kompromitovaný"
       ],
       "Expired": [
-        "Expirováno"
+        "Prošlý"
       ],
       "Obsolete": [
         "Zastaralý"
@@ -3272,7 +3272,7 @@
         "Výchozí"
       ],
       "Revoked": [
-        "Odvoláno"
+        "Odvolaný"
       ],
       "Trusted": [
         "Důvěryhodný"
@@ -3406,7 +3406,7 @@
         "Vypršelo"
       ],
       "Expires": [
-        "Expiruje"
+        "Vyprší"
       ],
       "Export contacts": [
         "Exportovat kontakty"
@@ -3460,7 +3460,7 @@
         "Importovat na e-mailovou adresu"
       ],
       "Label messages as": [
-        "Označte zprávu jako"
+        "Označit zprávy jako"
       ],
       "Last 12 months only": [
         "Pouze posledních 12 měsíců"
@@ -3595,7 +3595,7 @@
         "Pro: ${ emailAddress }"
       ],
       "Two-factor authentication code": [
-        "Kód dvoufaktorového ověření"
+        "Kód dvoufázového ověření"
       ],
       "Type": [
         "Typ"
@@ -3668,10 +3668,10 @@
     },
     "Link": {
       "clearing your browser cache": [
-        "vymazání mezipaměti prohlížeče"
+        "mazání mezipaměti prohlížeče"
       ],
       "Go to subscription plans": [
-        "Přejít na plány předplatného"
+        "Přejít na tarify předplatného"
       ],
       "Learn more": [
         "Více informací"
@@ -3683,13 +3683,13 @@
         "Požádat o pozvánku"
       ],
       "Shared": [
-        "Sdílet"
+        "Sdílené"
       ],
       "Trash": [
         "Koš"
       ],
       "Upgrade": [
-        "Rozšířit"
+        "Navýšit tarif"
       ],
       "Upgrade account": [
         "Přejít na vyšší tarif"
@@ -3703,7 +3703,7 @@
         "Počet vytvořených kalendářů: ${ createdCalendars } z ${ calendarsToBeCreated }"
       ],
       "Creating new calendars": [
-        "Vytvořit nový kalendář"
+        "Vytváření nových kalendářů"
       ],
       "Gathering your data": [
         "Shromažďování dat"
@@ -3717,16 +3717,16 @@
     },
     "Mail import summary": {
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importoval všechny zprávy z ${ selectedLabelsCount } štítku z ${ totalLabelsCount } štítků od ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importoval všechny zprávy z ${ selectedLabelsCount } štítků z ${ totalLabelsCount } štítků od ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importoval všechny zprávy z ${ selectedLabelsCount } štítků z ${ totalLabelsCount } štítků od ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importoval všechny zprávy z ${ selectedLabelsCount } štítků z ${ totalLabelsCount } štítků od ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }"
+        "Importovat všechny zprávy ${ selectedLabelsCount } z ${ totalLabelsCount } štítku za ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importovat všechny zprávy ${ selectedLabelsCount } ze ${ totalLabelsCount } štítků za ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importovat všechny zprávy ${ selectedLabelsCount } z ${ totalLabelsCount } štítků za ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importovat všechny zprávy ${ selectedLabelsCount } z ${ totalLabelsCount } štítků za ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "Importovat všechny zprávy z ${ totalLabelsCount } štítku od ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importovat všechny zprávy z ${ totalLabelsCount } štítků od ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importovat všechny zprávy z ${ totalLabelsCount } štítků od ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }",
-        "Importovat všechny zprávy z ${ totalLabelsCount } štítků od ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }"
+        "Importovat všechny zprávy ${ totalLabelsCount } štítku za ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importovat všechny zprávy ${ totalLabelsCount } štítků za ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importovat všechny zprávy ${ totalLabelsCount } štítků za ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importovat všechny zprávy ${ totalLabelsCount } štítků za ${ periodFragment } a označit je jako ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Message": {
@@ -3765,7 +3765,7 @@
     },
     "new_plans: info": {
       "Introducing Proton’s refreshed look.${ br }Many services, one mission. Welcome to an internet where privacy is the default.": [
-        "Představujeme nový vzhled Protonu.${ br } Mnoho služeb, jedno poslání. Vítejte na internetu, kde je soukromí standardem."
+        "Představujeme nový vzhled Protonu.${ br }Mnoho služeb, jedno poslání. Vítejte na internetu, kde je soukromí samozřejmostí."
       ]
     },
     "new_plans: label": {
@@ -3829,7 +3829,7 @@
       "${ numberOfItems } item deleted permanently from trash": [
         "${ numberOfItems } položka trvale odstraněna z koše",
         "${ numberOfItems } položky trvale odstraněny z koše",
-        "${ numberOfItems } položky trvale odstraněny z koše",
+        "${ numberOfItems } položek trvale odstraněno z koše",
         "${ numberOfItems } položek trvale odstraněno z koše"
       ],
       "${ numberOfItems } item failed to be deleted permanently from trash": [
@@ -3876,15 +3876,15 @@
       ],
       "${ numberOfItems } link to your item failed to be deleted": [
         "${ numberOfItems } odkaz na vaši položku se nepodařilo odstranit",
-        "${ numberOfItems } odkazy na vaši položku se nepodařilo odstranit",
-        "${ numberOfItems } odkazů na vaši položku se nepodařilo odstranit",
-        "${ numberOfItems } odkazů na vaši položku se nepodařilo odstranit"
+        "${ numberOfItems } odkazy na vaše položky se nepodařilo odstranit",
+        "${ numberOfItems } odkazů na vaše položky se nepodařilo odstranit",
+        "${ numberOfItems } odkazů na vaše položky se nepodařilo odstranit"
       ],
       "${ numberOfItems } link to your item was deleted": [
         "${ numberOfItems } odkaz na vaši položku byl odstraněn",
-        "${ numberOfItems } odkazy na vaši položku byl odstraněny",
-        "${ numberOfItems } odkazů na vaši položku byl odstraněno",
-        "${ numberOfItems } odkazů na vaši položku byl odstraněno"
+        "${ numberOfItems } odkazy na vaše položky byly odstraněny",
+        "${ numberOfItems } odkazů na vaše položky bylo odstraněno",
+        "${ numberOfItems } odkazů na vaše položky bylo odstraněno"
       ],
       "All items will soon be permanently deleted from trash": [
         "Všechny položky budou brzy nevratně smazány z koše"
@@ -3896,13 +3896,13 @@
         "Skupina kontaktů byla aktualizována"
       ],
       "Encrypted search activated": [
-        "Aktivováno šifrované vyhledávání"
+        "Vyhledávání v šifrovaných datech bylo zapnuto"
       ],
       "Failed to download files: ${ err }": [
         "Nepodařilo se stáhnout soubory: ${ err }"
       ],
       "Failed to move, please try again": [
-        "Nepodařilo se přesunout, zkuste to prosím znovu"
+        "Přesun selhal, zkuste to prosím znovu"
       ],
       "Failed to upload files: ${ err }": [
         "Nepodařilo se nahrát soubory: ${ err }"
@@ -3929,37 +3929,37 @@
         "Přesunout ${ itemsToMoveCount } soubor",
         "Přesunout ${ itemsToMoveCount } soubory",
         "Přesunout ${ itemsToMoveCount } souborů",
-        "Přesunout ${ itemsToMoveCount } soubory"
+        "Přesunout ${ itemsToMoveCount } souborů"
       ],
       "Move ${ itemsToMoveCount } folder": [
-        "Přestěhuj ${ itemsToMoveCount } složku",
-        "Přestěhuj ${ itemsToMoveCount } složky",
-        "Přestěhuj ${ itemsToMoveCount } složek",
-        "Přestěhuj ${ itemsToMoveCount } složek"
+        "Přesunout ${ itemsToMoveCount } složku",
+        "Přesunout ${ itemsToMoveCount } složky",
+        "Přesunout ${ itemsToMoveCount } složek",
+        "Přesunout ${ itemsToMoveCount } složek"
       ],
       "Move ${ itemsToMoveCount } item": [
-        "Přestěhuj ${ itemsToMoveCount } položku",
-        "Přestěhuj ${ itemsToMoveCount } položky",
-        "Přestěhuj ${ itemsToMoveCount } položek",
-        "Přestěhuj ${ itemsToMoveCount } položek"
+        "Přesunout ${ itemsToMoveCount } položku",
+        "Přesunout ${ itemsToMoveCount } položky",
+        "Přesunout ${ itemsToMoveCount } položek",
+        "Přesunout ${ itemsToMoveCount } položek"
       ],
       "Move ${ movingCount } file": [
-        "Přesunout ${ movingCount } soubory",
+        "Přesunout ${ movingCount } soubor",
         "Přesunout ${ movingCount } soubory",
         "Přesunout ${ movingCount } souborů",
-        "Přesunout ${ movingCount } soubory"
+        "Přesunout ${ movingCount } souborů"
       ],
       "Move ${ movingCount } folder": [
-        "Přestěhuj ${ movingCount } složku",
-        "Přestěhuj ${ movingCount } složky",
-        "Přestěhuj ${ movingCount } složek",
-        "Přestěhuj ${ movingCount } složek"
+        "Přesunout ${ movingCount } složku",
+        "Přesunout ${ movingCount } složky",
+        "Přesunout ${ movingCount } složek",
+        "Přesunout ${ movingCount } složek"
       ],
       "Move ${ movingCount } item": [
-        "Přestěhuj ${ movingCount } položku",
-        "Přestěhuj ${ movingCount } položky",
-        "Přestěhuj ${ movingCount } položek",
-        "Přestěhuj ${ movingCount } položek"
+        "Přesunout ${ movingCount } položku",
+        "Přesunout ${ movingCount } položky",
+        "Přesunout ${ movingCount } položek",
+        "Přesunout ${ movingCount } položek"
       ],
       "Next page failed to be loaded": [
         "Další stránku se nepodařilo načíst"
@@ -3986,7 +3986,7 @@
         "Odkaz na položku byl odstraněn"
       ],
       "Trash failed to be emptied": [
-        "Odpadkový koš se nepodařilo vysypat"
+        "Koš se nepodařilo vyprázdnit"
       ],
       "Your old files will be deleted in 72 hours": [
         "Vaše staré soubory budou smazány do 72 hodin"
@@ -4000,7 +4000,7 @@
     },
     "Oauth instructions": {
       "Next you'll need to sign in to your Google account and grant Proton access to your data.": [
-        "Dále se musíte přihlásit ke svému účtu Google a udělit společnosti Proton přístup ke svým datům."
+        "Dále se potřebujete přihlásit ke svému účtu Google a udělit společnosti Proton přístup k vašim datům."
       ]
     },
     "Oauth instructions video": {
@@ -4018,12 +4018,12 @@
     },
     "Onboarding Info": {
       "Your trusty online vault for vital documents and precious memories.": [
-        "Váš spolehlivý online trezor pro důležité dokumenty a vzácné vzpomínky."
+        "Váš spolehlivý online trezor pro důležité dokumenty a drahocenné vzpomínky."
       ]
     },
     "Onboarding Proton": {
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
-        "Proveďte konfiguraci své organizace, odkaz na doménové jméno, a vytvořte si účty tak, aby všichni členové Vaší organizace byli zajištěni a chráněni."
+        "Proveďte konfiguraci své organizace, přiřaďte doménové jméno a vytvořte účty členů, aby byli všichni chráněni."
       ],
       "Discover all Proton services": [
         "Objevte všechny Proton služby"
@@ -4043,7 +4043,7 @@
     },
     "Onboarding Title": {
       "Welcome to ${ appName }": [
-        "Vítejte v ${ appName }"
+        "Vítejte na ${ appName }"
       ]
     },
     "Option": {
@@ -4075,10 +4075,10 @@
     },
     "PGP Key info": {
       "${ emailAddress } has marked this key as compromised. This key cannot be used neither for encryption nor for signature verification.": [
-        "${ emailAddress } označil tento klíč jako kompromitovaný. Tento klíč nelze použít ani pro šifrování, ani pro ověření podpisu."
+        "${ emailAddress } označil(a) tento klíč jako kompromitovaný. Tento klíč nelze použít ani pro šifrování, ani pro ověření podpisu."
       ],
       "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
-        "${ emailAddress } označil tento klíč jako zastaralý. Tento klíč lze použít pouze pro ověření podpisu."
+        "${ emailAddress } označil(a) tento klíč jako zastaralý. Tento klíč lze použít pouze pro ověření podpisu."
       ],
       "We recommend that you \"untrust\" this key.": [
         "Doporučujeme, abyste tomuto klíči \"nedůvěřovali\"."
@@ -4143,16 +4143,16 @@
     },
     "Progress bar description": {
       "${ contactsExported.length } out of ${ countContacts } contacts successfully exported.": [
-        "${ contactsExported.length } z ${ countContacts } kontakty byly úspěšně exportovány."
+        "${ contactsExported.length } z ${ countContacts } kontaktů bylo úspěšně exportováno."
       ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
-        "${ model.deleted.length } z ${ totalBeDeleted } kontaktů byl úspěšně smazán.",
+        "${ model.deleted.length } z ${ totalBeDeleted } kontaktu byl úspěšně smazán.",
         "${ model.deleted.length } z ${ totalBeDeleted } kontaktů bylo úspěšně smazáno.",
         "${ model.deleted.length } z ${ totalBeDeleted } kontaktů bylo úspěšně smazáno.",
         "${ model.deleted.length } z ${ totalBeDeleted } kontaktů bylo úspěšně smazáno."
       ],
       "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
-        "${ model.submitted.length } z ${ totalBeMerged } kontaktů byl úspěšně sloučen.",
+        "${ model.submitted.length } z ${ totalBeMerged } kontaktu byl úspěšně sloučen.",
         "${ model.submitted.length } z ${ totalBeMerged } kontaktů bylo úspěšně sloučeno.",
         "${ model.submitted.length } z ${ totalBeMerged } kontaktů bylo úspěšně sloučeno.",
         "${ model.submitted.length } z ${ totalBeMerged } kontaktů bylo úspěšně sloučeno."
@@ -4214,7 +4214,7 @@
         "${ DRIVE_APP_NAME } již není beta verzí! Zabezpečte své soubory stejně dobře, jako své e-maily."
       ],
       "Encrypted search is here": [
-        "Zašifrované vyhledávání je tady"
+        "Vyhledávání v šifrovaných datech je zde"
       ],
       "Get up to 18 months of ${ planName } for free": [
         "Získejte ${ planName } až na 18 měsíců zdarma"
@@ -4223,7 +4223,7 @@
         "Pozvěte přátele a získejte odměny!"
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
-        "Nyní můžete jednoduše vyhledávat soubory na Drivu, zatímco jsou vaše data zabezpečena."
+        "Nyní můžete jednoduše vyhledávat soubory na Drive, zatímco jsou vaše data zabezpečena."
       ],
       "Try ${ DRIVE_APP_NAME }": [
         "Vyzkoušejte ${ DRIVE_APP_NAME }"
@@ -4257,10 +4257,10 @@
         "Kontakty byly smazány"
       ],
       "Contact group deleted": [
-        "Kontaktní skupina vymazána",
-        "Kontaktní skupiny vymazány",
-        "Kontaktní skupiny vymazány",
-        "Kontaktní skupiny vymazány"
+        "Skupina kontaktů vymazána",
+        "Skupiny kontaktů vymazány",
+        "Skupiny kontaktů vymazány",
+        "Skupiny kontaktů vymazány"
       ],
       "Contact saved": [
         "Kontakt byl uložen"
@@ -4314,13 +4314,13 @@
         "Adresa"
       ],
       "Created": [
-        "Vytvořit"
+        "Vytvořeno"
       ],
       "Expires": [
-        "Expiruje"
+        "Vyprší"
       ],
       "Fingerprint": [
-        "Otisk prstu"
+        "Otisk"
       ],
       "Name": [
         "Název"
@@ -4340,7 +4340,7 @@
         "Adresa"
       ],
       "CSV field": [
-        "CSV položka"
+        "Pole CSV"
       ],
       "Import": [
         "Importovat"
@@ -4352,7 +4352,7 @@
         "Hodnoty"
       ],
       "vCard field": [
-        "vCard položka"
+        "Pole vCard"
       ]
     },
     "Text": {
@@ -4362,7 +4362,7 @@
     },
     "Time period": {
       "account creation date": [
-        "datum vytvoření účtu"
+        "data vytvoření účtu"
       ],
       "the last 12 months": [
         "posledních 12 měsíců"
@@ -4489,7 +4489,7 @@
         "Přizpůsobit a potvrdit"
       ],
       "Customize calendar import": [
-        "Přizpůsobit proces importování kalendáře"
+        "Přizpůsobte proces importování kalendáře"
       ],
       "Customize your mail import": [
         "Přizpůsobte proces importování e-mailů"
@@ -4516,7 +4516,7 @@
         "Smazat ${ Name }"
       ],
       "Delete permanently": [
-        "Navždy smazat"
+        "Trvale smazat"
       ],
       "Deleting contacts": [
         "Mazání kontaktů"
@@ -4540,7 +4540,7 @@
         "Disk"
       ],
       "Drop to upload": [
-        "Přetáhnout a nahrát"
+        "Přetáhněte sem pro nahrání"
       ],
       "Duplicate file found": [
         "Byl nalezen duplicitní soubor"
@@ -4567,10 +4567,10 @@
         "Nastavení e-mailu (${ emailAddress })"
       ],
       "Empty trash": [
-        "Vysypat koš"
+        "Vyprázdnit koš"
       ],
       "Enter your password": [
-        "Zadejte Vaše heslo"
+        "Zadejte vaše heslo"
       ],
       "Enter your username or ${ MAIL_APP_NAME } email address": [
         "Zadejte své uživatelské jméno nebo e-mailovou adresu ${ MAIL_APP_NAME }"
@@ -4732,7 +4732,7 @@
         "Vyberte datum pro vypršení platnosti odkazu"
       ],
       "Select link expiration time": [
-        "Vyberte čas pro vypršení platnosti odkazu"
+        "Vyberte čas vypršení platnosti odkazu"
       ],
       "Send feedback": [
         "Odeslat zpětnou vazbu"
@@ -4744,7 +4744,7 @@
         "Sdílet odkaz"
       ],
       "Shared": [
-        "Sdílet"
+        "Sdílené"
       ],
       "Show actions": [
         "Zobrazit akce"
@@ -4813,7 +4813,7 @@
         "Varování: podezření na falešnou webovou stránku"
       ],
       "What would you like to import?": [
-        "Co byste chtěli importovat?"
+        "Co chcete importovat?"
       ],
       "What's new": [
         "Co je nového"
@@ -4841,7 +4841,7 @@
     },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
-        "Automaticky označuje, že pro odeslání tomuto uživateli se použije formát uvedený ve složce. Prostý text označuje, že zpráva bude při odeslání vždy převedena na prostý text."
+        "\"Automatický\" označuje, že formát, aktuálně použitý v editoru bude použit pro odeslání uživateli. \"Prostý text\" znamená, že zpráva bude při odeslání vždy převedena na prostý text."
       ],
       "Digitally signing emails helps authenticating that messages are sent by you": [
         "Digitální podepisování e-mailů pomáhá ověřit, že zprávy odesíláte vy"
@@ -4850,7 +4850,7 @@
         "Každý importovaný e-mail bude mít tento štítek"
       ],
       "Email encryption forces email signature to help authenticate your sent messages": [
-        "Šifrování e-mailů posiluje e-mailový podpis, aby Vaše zprávy byly ověřeny"
+        "Šifrování e-mailů vynutí e-mailový podpis což pomůže ověřit odeslané zprávy"
       ],
       "Encrypted data": [
         "Zašifrovaná data"
@@ -4859,7 +4859,7 @@
         "Šifrovaná data s ověřeným digitálním podpisem"
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
-        "Vyberte PGP schéma, které bude použito při podepisování, nebo šifrování uživatele. Nezapomeňte, že PGP/Inline vyžaduje zprávy ve formátu prostého textu"
+        "Vyberte PGP schéma, které bude uživatelem použito při podepisování, nebo šifrování. Nezapomeňte, že PGP/Inline vyžaduje zprávy ve formátu prostého textu"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Systémové podsložky se v ${ MAIL_APP_NAME } zobrazí jako samostatné složky"
@@ -4890,7 +4890,7 @@
         "Název nesmí obsahovat neviditelné znaky, / nebo \\."
       ],
       "Name must be ${ MAX_NAME_LENGTH } characters long at most": [
-        "Jméno musí mít maximálně ${ MAX_NAME_LENGTH } znaků"
+        "Název musí mít délku maximálně ${ MAX_NAME_LENGTH } znaků"
       ],
       "Name must not be empty": [
         "Název nesmí být prázdný"
@@ -4912,14 +4912,14 @@
     },
     "Warning": {
       "Are you sure you want to permanently delete ${ count } contact group?": [
-        "Jste si jisti, že chcete trvale odstranit skupinu kontaktu ${ count }?",
-        "Jste si jisti, že chcete trvale odstranit skupiny kontaktů ${ count }?",
-        "Jste si jisti, že chcete trvale odstranit skupiny kontaktů ${ count }?",
-        "Jste si jisti, že chcete trvale odstranit skupiny kontaktů ${ count }?"
+        "Jste si jisti, že chcete trvale smazat ${ count } skupinu kontaktů?",
+        "Jste si jisti, že chcete trvale smazat ${ count } skupiny kontaktů?",
+        "Jste si jisti, že chcete trvale smazat ${ count } skupin kontaktů?",
+        "Jste si jisti, že chcete trvale smazat ${ count } skupin kontaktů?"
       ],
       "Are you sure you want to permanently delete ${ count } contact?": [
         "Jste si jisti, že chcete trvale odstranit ${ count } kontakt?",
-        "Jste si jisti, že chcete trvale odstranit ${ count } kontaktů?",
+        "Jste si jisti, že chcete trvale odstranit ${ count } kontakty?",
         "Jste si jisti, že chcete trvale odstranit ${ count } kontaktů?",
         "Jste si jisti, že chcete trvale odstranit ${ count } kontaktů?"
       ],
@@ -4936,13 +4936,13 @@
         "Pokud si heslo nepamatujete, není možné klíč znovu aktivovat. Můžeme vám pomoci zrušit výstražný banner, ale tím trvale ztratíte přístup ke všem datům zašifrovaným tímto klíčem."
       ],
       "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
-        "Živý chat je prémiová funkce, která je k dispozici pouze uživatelům s placenými ${ VPN_APP_NAME } plány. Prosím otevřete ticket."
+        "Živý chat je prémiová funkce, která je k dispozici pouze uživatelům s placenými ${ VPN_APP_NAME } tarify. Prosím otevřete běžný požadavek na podporu."
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
         "Proton sloučí všechny složky se stejným názvem. Chcete-li tomu zabránit, změňte názvy před importem."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
-        "Zprávy nejsou šifrovány end-to-end, neposílejte žádné citlivé informace."
+        "Hlášení nejsou end-to-end šifrována, prosím neposílejte žádné citlivé informace."
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "U některých kontaktů, které mají být sloučeny, se zobrazují chyby. Zkontrolujte je prosím jednotlivě"
@@ -4954,10 +4954,10 @@
         "Kontakt se nepodařilo načíst."
       ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
-        "Nastavení datumu, a času v zařízení není synchronizováno. ${ learnMore }"
+        "Nastavení data a času v zařízení, není synchronizováno. ${ learnMore }"
       ],
       "The decryption of the encrypted content failed.": [
-        "Dešifrování zašifrovaného obsahu se nezdařilo."
+        "Dešifrování šifrovaného obsahu selhalo."
       ],
       "The verification of the contact details' signature failed.": [
         "Ověření podpisu kontaktních údajů se nezdařilo."
@@ -4969,7 +4969,7 @@
         "Tato funkce vyžaduje placený Proton účet"
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
-        "Bohužel nejsme momentálně online. Chcete -li popsat svůj problém, vyplňte níže uvedený formulář. Budeme se jím zabývat a kontaktovat Vás, až budeme opět online."
+        "Bohužel nejsme momentálně dostupní. Chcete-li popsat problém, vyplňte níže uvedený formulář. Budeme se jím zabývat a kontaktovat vás, až budeme opět dostupní."
       ],
       "You will lose any customization you made so far.": [
         "Ztratíte všechna dosud provedená přizpůsobení."

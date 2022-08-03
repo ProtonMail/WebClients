@@ -1579,6 +1579,9 @@
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } 位成员"
       ],
+      "${ contactName } contains multiple email addresses.": [
+        "${ contactName } 包含了多个邮箱地址。"
+      ],
       "${ contactsCount } contact found": [
         "找到 ${ contactsCount } 位联系人"
       ],
