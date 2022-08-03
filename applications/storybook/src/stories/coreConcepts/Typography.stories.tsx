@@ -286,3 +286,28 @@ export const Colors = () => (
         </div>
     </>
 );
+
+export const Monospace = () => (
+    <>
+        <Table>
+            <TableHeader>
+                <TableRow>
+                    <TableCell type="header" className="w30">
+                        Usage
+                    </TableCell>
+                    <TableCell type="header">Demonstration</TableCell>
+                </TableRow>
+            </TableHeader>
+            <TableBody>
+                <TableRow>
+                    <TableCell>
+                        <Code>.text-monospace</Code>
+                    </TableCell>
+                    <TableCell>
+                        <p className="text-monospace">Lorem ipsum</p>
+                    </TableCell>
+                </TableRow>
+            </TableBody>
+        </Table>
+    </>
+);
