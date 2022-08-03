@@ -1,60 +1,59 @@
-import React, { useState, useMemo, useEffect } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
+
 import { c } from 'ttag';
 
-import { normalize } from '@proton/shared/lib/helpers/string';
 import { addTreeFilter, applyFilters, updateFilter } from '@proton/shared/lib/api/filters';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
+import { normalize } from '@proton/shared/lib/helpers/string';
 import { removeImagesFromContent } from '@proton/shared/lib/sanitize/purify';
+
 import {
+    Checkbox,
+    Form,
     Loader,
+    ModalProps,
     ModalTwo,
-    ModalTwoHeader,
     ModalTwoContent,
     ModalTwoFooter,
-    Form,
+    ModalTwoHeader,
     useModalState,
-    ModalProps,
-    Checkbox,
 } from '../../../components';
+import { generateUID } from '../../../helpers';
 import {
-    useLoading,
-    useLabels,
-    useFolders,
     useActiveBreakpoint,
-    useNotifications,
-    useFilters,
-    useEventManager,
     useApiWithoutResult,
+    useEventManager,
     useFeature,
+    useFilters,
+    useFolders,
+    useLabels,
+    useLoading,
+    useNotifications,
 } from '../../../hooks';
-
-import HeaderFilterModal from './HeaderFilterModal';
-import FooterFilterModal from './FooterFilterModal';
-import FilterNameForm from './FilterNameForm';
-import FilterActionsForm from './FilterActionsForm';
-import FilterConditionsForm from './FilterConditionsForm';
-import FilterPreview from './FilterPreview';
-
-import './Filtermodal.scss';
-
+import { FeatureCode } from '../../features';
+import { getDefaultFolders, noFolderValue } from '../constants';
 import {
-    SimpleFilterModalModel,
-    Filter,
-    Step,
-    Errors,
-    Condition,
     Actions,
-    FilterStatement,
-    FilterOperator,
+    Condition,
+    Errors,
+    Filter,
     FilterActions,
     FilterCondition,
+    FilterOperator,
+    FilterStatement,
+    SimpleFilterModalModel,
+    Step,
 } from '../interfaces';
 import { computeFromTree, convertModel } from '../utils';
-
-import { generateUID } from '../../../helpers';
-import { getDefaultFolders } from '../constants';
 import CloseFilterModal from './CloseFilterModal';
-import { FeatureCode } from '../../features';
+import FilterActionsForm from './FilterActionsForm';
+import FilterConditionsForm from './FilterConditionsForm';
+import FilterNameForm from './FilterNameForm';
+import FilterPreview from './FilterPreview';
+import FooterFilterModal from './FooterFilterModal';
+import HeaderFilterModal from './HeaderFilterModal';
+
+import './Filtermodal.scss';
 
 interface Props extends ModalProps {
     filter?: Filter;
@@ -183,7 +182,9 @@ const FilterModal = ({ filter, onCloseCustomAction, ...rest }: Props) => {
                 },
                 moveTo: {
                     folder:
-                        foldersLabelsMap?.folder && foldersLabelsMap?.folder[0] ? foldersLabelsMap?.folder[0] : 'inbox',
+                        foldersLabelsMap?.folder && foldersLabelsMap?.folder[0]
+                            ? foldersLabelsMap?.folder[0]
+                            : noFolderValue,
                     isOpen: true,
                 },
                 markAs: {

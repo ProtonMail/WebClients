@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { FilterStatement, ConditionType, ConditionComparator } from './interfaces';
+import { ConditionComparator, ConditionType, FilterStatement } from './interfaces';
 import { SelectOption } from './modal/FilterActionsFormFolderRow';
 
 export const EMAIL_MODE = 'email';
@@ -139,6 +139,13 @@ export const OPERATORS = [
         value: FilterStatement.ANY,
     },
 ];
+
+export const noFolderValue = '';
+export const noFolderOption = {
+    type: 'option',
+    text: c('Filter Actions').t`Do not move`,
+    value: noFolderValue,
+} as SelectOption;
 
 export const getDefaultFolders = () => {
     return [
