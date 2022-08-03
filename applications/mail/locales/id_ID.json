@@ -422,9 +422,6 @@
       "Import from .csv or vCard": [
         "Impor dari .csv atau vCard"
       ],
-      "Import messages": [
-        "Impor pesan"
-      ],
       "Inline": [
         "Inline"
       ],
@@ -3518,6 +3515,11 @@
         "Megabyte"
       ]
     },
+    "Filter": {
+      "Show": [
+        "Tampilkan"
+      ]
+    },
     "Filter Actions": {
       "Archive": [
         "Arsip"
@@ -6291,6 +6293,11 @@
         "Gabungkan dengan kalender"
       ]
     },
+    "Pagination": {
+      "${ page } of ${ total }": [
+        "Halaman ${ page } dari ${ total }"
+      ]
+    },
     "Paid user checklist item": {
       "Get mobile app": [
         "Dapatkan aplikasi mobile"
@@ -6648,6 +6655,11 @@
       ],
       "Sender's trusted keys verification failed": [
         "Verifikasi kunci terpercaya pengirim gagal"
+      ]
+    },
+    "Sort": {
+      "Sort": [
+        "Sortir"
       ]
     },
     "Sort option": {
@@ -7060,6 +7072,9 @@
       "Addresses": [
         "Alamat"
       ],
+      "Archive": [
+        "Arsip"
+      ],
       "Are you sure you want to close?": [
         "Yakin ingin menutupnya?"
       ],
@@ -7267,6 +7282,9 @@
       "Mailbox layout": [
         "Tata letak kotak surat"
       ],
+      "Mark as read": [
+        "Tandai sebagai telah dibaca"
+      ],
       "Mark as unread": [
         "Tandai belum dibaca"
       ],
@@ -7446,6 +7464,9 @@
       ],
       "To": [
         "Kepada"
+      ],
+      "Trash": [
+        "Sampah"
       ],
       "Trust new key?": [
         "Percaya kunci baru?"

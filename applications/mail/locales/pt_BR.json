@@ -424,9 +424,6 @@
       "Import from .csv or vCard": [
         "Importar de .csv ou vCard"
       ],
-      "Import messages": [
-        "Importar mensagens"
-      ],
       "Inline": [
         "Incorporado"
       ],
@@ -1583,7 +1580,7 @@
     },
     "color": {
       "apple": [
-        "apple"
+        "maçã"
       ],
       "azureish white": [
         "branco azul-celeste"
@@ -3542,6 +3539,11 @@
       "Megabyte": [
         "Megabyte",
         "Megabytes"
+      ]
+    },
+    "Filter": {
+      "Show": [
+        "Mostrar"
       ]
     },
     "Filter Actions": {
@@ -6388,6 +6390,11 @@
         "Mesclar com o calendário"
       ]
     },
+    "Pagination": {
+      "${ page } of ${ total }": [
+        "${ page } de ${ total }"
+      ]
+    },
     "Paid user checklist item": {
       "Get mobile app": [
         "Obtenha o aplicativo móvel"
@@ -6753,6 +6760,11 @@
       ],
       "Sender's trusted keys verification failed": [
         "Falha na verificação de chaves confiáveis do remetente"
+      ]
+    },
+    "Sort": {
+      "Sort": [
+        "Ordenar"
       ]
     },
     "Sort option": {
@@ -7196,6 +7208,9 @@
       "Addresses": [
         "Endereços"
       ],
+      "Archive": [
+        "Arquivo"
+      ],
       "Are you sure you want to close?": [
         "Você tem certeza que deseja fechar?"
       ],
@@ -7408,6 +7423,9 @@
       "Mailbox layout": [
         "Layout da caixa de correio"
       ],
+      "Mark as read": [
+        "Marcar como lida"
+      ],
       "Mark as unread": [
         "Marcar como não lida"
       ],
@@ -7587,6 +7605,9 @@
       ],
       "To": [
         "Para"
+      ],
+      "Trash": [
+        "Lixeira"
       ],
       "Trust new key?": [
         "Confiar na nova chave?",

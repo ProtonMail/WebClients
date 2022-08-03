@@ -292,6 +292,9 @@
       "Download all configurations": [
         "Stáhnout všechny konfigurace"
       ],
+      "Download ICS": [
+        "Stáhnout ICS"
+      ],
       "Download recovery file": [
         "Stáhnout soubor pro obnovení"
       ],
@@ -403,8 +406,8 @@
       "Import emails": [
         "Importovat e-maily"
       ],
-      "Import from .ics": [
-        "Importovat z .ics"
+      "Import from ICS": [
+        "Importovat z ICS"
       ],
       "Import key": [
         "Importovat klíč"
@@ -840,7 +843,7 @@
     },
     "Action in trial plan": {
       "Continue with free plan": [
-        "Pokračovat s bezplatným plánem"
+        "Pokračovat s bezplatným tarifem"
       ],
       "No, thanks": [
         "Ne, děkuji"
@@ -1091,6 +1094,11 @@
         "24 měsíců"
       ]
     },
+    "breadcrumb": {
+      "Calendars": [
+        "Kalendáře"
+      ]
+    },
     "Bridge version load failed": {
       "Failed to find latest version": [
         "Nepodařilo se najít nejnovější verzi"
@@ -1187,6 +1195,16 @@
         "Tweetnout"
       ]
     },
+    "Calendar edit button tooltip": {
+      "Edit calendar information": [
+        "Upravit informace kalendáře"
+      ]
+    },
+    "Calendar export section description": {
+      "Download an ICS file with all the events from the selected calendar.": [
+        "Stažení souboru ICS se všemi událostmi z vybraného kalendáře."
+      ]
+    },
     "Calendar import section description": {
       "You can import ICS files from another calendar to ${ CALENDAR_APP_NAME }. This lets you quickly import one event or your entire agenda.": [
         "Soubory ICS můžete importovat z jiného kalendáře do ${ CALENDAR_APP_NAME }. To vám umožní rychle importovat jednu událost nebo celý váš program."
@@ -1238,6 +1256,9 @@
       "Calendar is syncing": [
         "Kalendář se synchronizuje"
       ],
+      "Calendar is syncing: it may take several minutes for all of its events to show up": [
+        "Synchronizace kalendáře: může trvat několik minut, než se zobrazí všechny jeho události"
+      ],
       "Calendar is too big": [
         "Kalendář je příliš velký"
       ],
@@ -1255,6 +1276,17 @@
       ],
       "Unsupported calendar format": [
         "Nepodporovaný formát kalendáře"
+      ]
+    },
+    "Calendar subscription not synced error; long version": {
+      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
+        "Odkaz na kalendář není přístupný mimo ekosystém poskytovatele kalendáře."
+      ],
+      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
+        "Odkaz na kalendář je dočasně nedostupný. Zkontrolujte, zda je odkaz od poskytovatele kalendáře stále platný."
+      ],
+      "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
+        "Od poslední aktualizace uplynulo více než 12 hodin — Proton Calendar se pokusí kalendář aktualizovat během několika hodin."
       ]
     },
     "Calendar view": {
@@ -2460,9 +2492,19 @@
         "Středa"
       ]
     },
+    "Default calendar event settings section title": {
+      "Default event settings": [
+        "Výchozí nastavení události"
+      ]
+    },
     "Default display name vcard": {
       "Unknown": [
         "Neznámé"
+      ]
+    },
+    "Delete calendar section description": {
+      "All events in this calendar will be deleted.": [
+        "Všechny události v tomto kalendáři budou smazány."
       ]
     },
     "Delinquent modal title": {
@@ -2668,6 +2710,9 @@
       ],
       "Automatic replies is a paid feature. Please upgrade to a paid account to use this feature.": [
         "Automatické odpovědi jsou placenou funkcí. Chcete-li tuto funkci používat, přejděte na placený účet."
+      ],
+      "Calendar cannot be found": [
+        "Kalendář nelze nalézt"
       ],
       "Calendar limit reached": [
         "Dosažen limit kalendářů"
@@ -3347,7 +3392,7 @@
         "Některé události nemohly být exportovány."
       ],
       "The internet connection was interrupted, causing the export process to fail. Please try again.": [
-        "Internetové připojení bylo přerušeno a export díky tomu selhal. Prosím, zuste to znovu."
+        "Internetové připojení bylo přerušeno a export díky tomu selhal. Prosím, zkuste to znovu."
       ],
       "You can save an ICS file of the events that were successfully exported.": [
         "Můžete uložit ICS soubor s událostmi, které byly úspěšně exportovány."
@@ -4110,6 +4155,9 @@
       "${ emailAddress } is invalid": [
         "${ emailAddress } není platná e-mailová adresa"
       ],
+      "${ firstRemainingCalendarName } will be set as default calendar.": [
+        "${ firstRemainingCalendarName } bude nastaven jako výchozí kalendář."
+      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } lze také použít s jedním heslem, což nahrazuje heslo pro přihlášení a poštovní schránku. Pro přechod do režimu jedno hesla, prosím zadejte Vaše \"jednotné heslo\", které chcete použít a klikněte Uložit."
       ],
@@ -4386,6 +4434,9 @@
       "Are you sure you want to delete this calendar?": [
         "Opravdu chcete odstranit tento kalendář?"
       ],
+      "Are you sure you want to delete this calendar? All events in it will be deleted.": [
+        "Opravdu chcete smazat tento kalendář? Všechny události v něm budou odstraněny."
+      ],
       "Are you sure you want to delete this domain?": [
         "Opravdu chcete smazat tuto doménu?"
       ],
@@ -4436,6 +4487,12 @@
       ],
       "Basic, Plus or Visionary subscription required": [
         "Je vyžadováno předplatné Basic, Plus nebo Visionary"
+      ],
+      "Before creating this address you need to provide a password and create encryption keys for it.": [
+        "Před vytvořením této adresy je třeba zadat heslo a vytvořit pro ni šifrovací klíče."
+      ],
+      "Before enabling the account you need to provide a password and create encryption keys for the new addresses.": [
+        "Před povolením účtu je třeba zadat heslo a vytvořit šifrovací klíče pro nové adresy."
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Před vyžádáním nového ověřovacího kódu zkontrolujte složku spamu a zkontrolujte, zda je adresa ${ strong } správná."
@@ -5020,7 +5077,7 @@
         "Nenastaveno"
       ],
       "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
-        "Není to vaše zařízení? K přihlášení použijte okno soukromého procházení a po dokončení jej zavřete. ${ learnMore }"
+        "Nejste na svém zařízení? K přihlášení použijte okno soukromého procházení a po dokončení jej zavřete. ${ learnMore }"
       ],
       "Number of users": [
         "Počet uživatelů"
@@ -5337,6 +5394,9 @@
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Váš internetový prohlížeč nepodporuje zobrazení PDF dokumentů. Soubor si proto stáhněte."
       ],
+      "This calendar will be removed from your account.": [
+        "Tento kalendář bude odstraněn z vašeho účtu."
+      ],
       "This can take a few seconds or a few minutes depending on your device": [
         "V závislosti na Vašem zařízení to může trvat několik sekund nebo minut"
       ],
@@ -5649,6 +5709,9 @@
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Nenastavili jste e-mail pro obnovení, takže v případě ztráty hesla nebude možné účet obnovit. Pokračovat bez sekundárního e-mailu?"
       ],
+      "You have no personal calendars to export.": [
+        "Nemáte žádné osobní kalendáře, které byste mohli exportovat."
+      ],
       "You have no saved payment methods.": [
         "Nemáte žádné uložené způsoby platby."
       ],
@@ -5673,8 +5736,8 @@
       "You need to have a personal calendar to create a link.": [
         "Musíte mít osobní kalendář pro vytvoření odkazu."
       ],
-      "You need to have an active personal calendar to import your events from .ics.": [
-        "Před importováním Vašich událostí z .ics musíte mít aktivní osobní kalendář."
+      "You need to have an active personal calendar to import your events from ICS.": [
+        "Před importováním Vašich událostí z ICS musíte mít aktivní osobní kalendář."
       ],
       "You need to have an active personal calendar to import your events.": [
         "Před importováním vašich událostí musíte mít aktivní osobní kalendář."
@@ -6191,6 +6254,9 @@
     "Knowledge base link label": {
       "Here's how": [
         "Jak na to"
+      ],
+      "Learn more": [
+        "Více informací"
       ]
     },
     "Label": {
@@ -6609,7 +6675,7 @@
         "Pozvat e-mailem"
       ],
       "Keep me signed in": [
-        "Zůstat přihlášen"
+        "Neodhlašovat"
       ],
       "Keep messages in Sent/Drafts": [
         "Ponechat zprávy v Odeslaných/Konceptech"
@@ -7012,6 +7078,19 @@
         "Přidat svoji doménu k účtu ${ MAIL_APP_NAME }."
       ]
     },
+    "Label for default event notifications": {
+      "All-day event notifications": [
+        "Oznámení celodenních událostí"
+      ],
+      "Notifications": [
+        "Upozornění"
+      ]
+    },
+    "Label for default event settings": {
+      "Duration": [
+        "Doba trvání"
+      ]
+    },
     "Label for domain modal": {
       "Please add the following TXT record:": [
         "Přidejte prosím následující TXT záznam:"
@@ -7161,6 +7240,9 @@
       ],
       "How to unlock data": [
         "Jak odemknout údaje"
+      ],
+      "Import/export": [
+        "Import/export"
       ],
       "Learn more": [
         "Více informací"
@@ -7561,7 +7643,7 @@
         "Pokračovat na rekapitulaci"
       ],
       "Continue with Free": [
-        "Pokračovat zdarma"
+        "Pokračovat s bezplatným tarifem"
       ],
       "Delete account": [
         "Smazat účet"
@@ -8260,11 +8342,11 @@
       ]
     },
     "Notification type": {
-      "email": [
-        "e-mail"
+      "Email": [
+        "E-mail"
       ],
-      "notification": [
-        "oznámení"
+      "In-app": [
+        "V aplikaci"
       ]
     },
     "Notification when": {
@@ -8591,6 +8673,11 @@
         "PayPal"
       ]
     },
+    "Personal calendar section description": {
+      "Create a calendar to stay on top of your schedule while keeping your data secure.": [
+        "Vytvořte si kalendář, abyste měli přehled o svém plánu a zároveň byla vaše data v bezpečí."
+      ]
+    },
     "Placeholder": {
       "A way to contact you": [
         "Způsob, jak vás kontaktovat"
@@ -8830,6 +8917,22 @@
       ],
       "State of the art": [
         "Nejmodernější"
+      ]
+    },
+    "Remove calendar section description": {
+      "By unsubscribing, you will no longer have access to this calendar. All events in this calendar will be deleted from your account, but they'll remain in the original publick link.": [
+        "Odhlášením odběru již nebudete mít přístup k tomuto kalendáři. Všechny události v tomto kalendáři budou z vašeho účtu odstraněny, ale zůstanou v původním veřejném odkazu."
+      ]
+    },
+    "Remove calendar section title": {
+      "Delete calendar?": [
+        "Smazat kalendář?"
+      ],
+      "Remove calendar": [
+        "Odstranit kalendář"
+      ],
+      "Unsubscribe?": [
+        "Odhlásit odběr?"
       ]
     },
     "Restore administrator panel": {
@@ -9178,6 +9281,9 @@
       "Calendar created": [
         "Kalendář byl vytvořen"
       ],
+      "Calendar information updated": [
+        "Informace kalendáře aktualizovány"
+      ],
       "Calendar removed": [
         "Kalendář byl odstraněn"
       ],
@@ -9491,6 +9597,9 @@
       "Action": [
         "Akce"
       ],
+      "Activate account and generate keys": [
+        "Aktivace účtu a generování klíčů"
+      ],
       "Activate organization key": [
         "Aktivovat klíč organizace"
       ],
@@ -9592,6 +9701,9 @@
       ],
       "Bridge for ${ platform }": [
         "Most pro ${ platform }"
+      ],
+      "Calendar information": [
+        "Informace kalendáře"
       ],
       "Cancel Mail subscription": [
         "Zrušit předplatné Mailu"
@@ -9812,6 +9924,9 @@
       "Error": [
         "Chyba"
       ],
+      "Export": [
+        "Export"
+      ],
       "Export calendar": [
         "Exportovat kalendář"
       ],
@@ -9871,6 +9986,9 @@
       ],
       "Import": [
         "Importovat"
+      ],
+      "Import and export": [
+        "Import a export"
       ],
       "Import as simple event?": [
         "Importovat jako jednoduchou událost?",
@@ -10830,7 +10948,7 @@
         "Každých ${ interval } týdnů ve středu, ${ untilString }"
       ],
       "Weekly on ${ multipleDaysString }": [
-        "Každý týdev v ${ multipleDaysString }"
+        "Každý týden v ${ multipleDaysString }"
       ],
       "Weekly on ${ multipleDaysString }, ${ timesString }": [
         "Každý týden v ${ multipleDaysString }, ${ timesString }"

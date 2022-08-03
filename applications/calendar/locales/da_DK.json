@@ -361,6 +361,9 @@
       "Save": [
         "Gem"
       ],
+      "Search countries": [
+        "Søg lande"
+      ],
       "Select all": [
         "Vælg alle"
       ],
@@ -825,6 +828,14 @@
         "Ændr tidsinterval til"
       ]
     },
+    "Collapsible tooltip": {
+      "Collapse": [
+        "Fold sammen"
+      ],
+      "Expand": [
+        "Udvid"
+      ]
+    },
     "colon": {
       ": ": [
         ": "
@@ -1098,6 +1109,9 @@
       "Czech Republic": [
         "Tjekkiet"
       ],
+      "Côte d'Ivoire": [
+        "Elfenbenskysten"
+      ],
       "Denmark": [
         "Danmark"
       ],
@@ -1127,6 +1141,9 @@
       ],
       "Estonia": [
         "Estland"
+      ],
+      "Eswatini": [
+        "Eswatini"
       ],
       "Ethiopia": [
         "Etiopien"
@@ -1370,6 +1387,9 @@
       ],
       "Mozambique": [
         "Mozambique"
+      ],
+      "Myanmar": [
+        "Myanmar"
       ],
       "Namibia": [
         "Namibia"
@@ -1736,6 +1756,9 @@
       ]
     },
     "Description": {
+      "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
+        "Dekrypterer kontakter... Dette kan tage et par minutter. Når processen er afsluttet, kan du downloade filen med alle dine eksporterede kontakter."
+      ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Sletter kontakter... Dette kan tage et par minutter. Når processen er afsluttet, kan du lukke dette vindue."
       ],
@@ -1901,9 +1924,6 @@
       ],
       "A group with this name already exists": [
         "En gruppe med dette navn findes allerede"
-      ],
-      "A maximum of 10 notifications is allowed": [
-        "Højst 10 notifikationer er tilladt"
       ],
       "Address primary private key not found": [
         "Adresses primære private nøgle ikke fundet"
@@ -2139,6 +2159,9 @@
       "This label name is not available. Please choose a different name.": [
         "Dette etikettenavn er ikke tilgængeligt. Vælg venligst et andet navn."
       ],
+      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
+        "Denne besked kan indeholde links, som ikke kan åbnes korrekt af din aktuelle browser."
+      ],
       "Trusted keys are not valid for sending": [
         "Betroede nøgler er ikke gyldige til afsendelse"
       ],
@@ -2228,6 +2251,9 @@
       "Calendar": [
         "Kalender"
       ],
+      "Calendar time zone not supported": [
+        "Kalendertidszone understøttes ikke"
+      ],
       "Component with wrong format": [
         "Komponent med forkert format"
       ],
@@ -2300,6 +2326,9 @@
       "Start time out of bounds": [
         "Starttiden uden for grænserne"
       ],
+      "Time zone not supported": [
+        "Tidszone understøttes ikke"
+      ],
       "Timezone": [
         "Tidszone"
       ],
@@ -2325,6 +2354,9 @@
       ],
       "Please ${ refresh } or check your connection.": [
         "${ refresh } eller tjek din forbindelse."
+      ],
+      "Something went wrong. Please refresh the page or try again later.": [
+        "Noget gik galt. Genopfrisk siden eller prøv igen senere."
       ],
       "There was a problem connecting to Proton.": [
         "Der opstod et problem med at oprette forbindelse til Proton."
@@ -2960,6 +2992,9 @@
       "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
         "PGP/Inline er kun kompatibelt med simpelt tekstformat. Bemærk at ${ MAIL_APP_NAME } altid signerer krypterede beskeder."
       ],
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        "PGP/MIME sender automatisk beskeden vha. den aktuelle skrivetilstand. Bemærk at ${ MAIL_APP_NAME } altid signerer krypterede beskeder."
+      ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Bemærk venligst at adresser tildelt til denne gruppe IKKE vil blive slettet."
       ],
@@ -3002,6 +3037,9 @@
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Vælg det e-mail-format der som standard skal benyttes, når du sender en e-mail til denne e-mailadresse."
+      ],
+      "Select what you want to import from Google.": [
+        "Vælg, hvad du ønsker at overflytte fra Google."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Vælg, hvilke kalendere der skal importeres. Der oprettes en ny kalender for hver importeret kalender op til grænsen på 20 kalendere."
@@ -3829,6 +3867,11 @@
         "Skift eller tilføj konto"
       ]
     },
+    "new_plans: info": {
+      "Introducing Proton’s refreshed look.${ br }Many services, one mission. Welcome to an internet where privacy is the default.": [
+        "Vi præsenterer Proton's nye udseende.${ br }Mange tjenester, én mission. Velkommen til et internet, hvor privatlivsbeskyttelse er standard."
+      ]
+    },
     "new_plans: label": {
       "Tell us about your experience. (Optional)": [
         "Fortæl os om dine indtryk. (Valgfrit)"
@@ -3860,14 +3903,6 @@
     "Notification time input": {
       "at": [
         "kl."
-      ]
-    },
-    "Notification type": {
-      "email": [
-        "e-mail"
-      ],
-      "notification": [
-        "notifikation"
       ]
     },
     "Notification when": {
