@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { sortNotificationsByAscendingTrigger } from '@proton/shared/lib/calendar/alarms';
 import { DEFAULT_EVENT_DURATION } from '@proton/shared/lib/calendar/constants';
 import { modelToNotifications } from '@proton/shared/lib/calendar/modelToNotifications';
 import {
@@ -28,8 +29,12 @@ export const getCalendarEventSettingsModel = (settings: Partial<CalendarSettings
         DefaultEventDuration = DEFAULT_EVENT_DURATION,
     } = settings;
 
-    const partDayNotifications = notificationsToModel(DefaultPartDayNotifications, false);
-    const fullDayNotifications = notificationsToModel(DefaultFullDayNotifications, true);
+    const partDayNotifications = sortNotificationsByAscendingTrigger(
+        notificationsToModel(DefaultPartDayNotifications, false)
+    );
+    const fullDayNotifications = sortNotificationsByAscendingTrigger(
+        notificationsToModel(DefaultFullDayNotifications, true)
+    );
 
     return {
         duration: DefaultEventDuration,

@@ -1,12 +1,13 @@
 import { MouseEvent, useMemo } from 'react';
+
 import { c } from 'ttag';
 
-import { Nullable, SimpleMap } from '@proton/shared/lib/interfaces/utils';
-import { ACCESS_LEVEL, CalendarLink, VisualCalendar, VisualCalendarLink } from '@proton/shared/lib/interfaces/calendar';
 import { UserModel } from '@proton/shared/lib/interfaces';
+import { ACCESS_LEVEL, CalendarLink, VisualCalendar, VisualCalendarLink } from '@proton/shared/lib/interfaces/calendar';
+import { Nullable, SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { Table, TableHeader, TableBody, TableRow, Info, DropdownActions } from '../../../components';
+import { DropdownActions, Info, Table, TableBody, TableHeader, TableRow } from '../../../components';
 import CalendarSelectIcon from '../../../components/calendarSelect/CalendarSelectIcon';
 
 interface Props {
@@ -92,7 +93,7 @@ const LinkTable = ({ calendars, linksMap, onCopyLink, onDelete, onEdit, isLoadin
                                     key={CalendarUrlID}
                                     cells={[
                                         <div key="calendar">
-                                            <div className="grid-align-icon">
+                                            <div className="grid-align-icon-center">
                                                 <CalendarSelectIcon
                                                     color={color}
                                                     className="flex-item-noshrink mr0-75 keep-left"

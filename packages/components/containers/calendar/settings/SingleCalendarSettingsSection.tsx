@@ -13,6 +13,7 @@ import {
     SettingsSectionTitle,
 } from '@proton/components/containers';
 import { useGetCalendarBootstrap, useNotifications } from '@proton/components/hooks';
+import { UserModel } from '@proton/shared/lib/interfaces';
 import { SubscribedCalendar, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
 import { ButtonLike, CollapsingBreadcrumbs, Icon, Option, SimpleDropdown } from '../../../components';
@@ -26,6 +27,7 @@ interface Props {
     personalActiveCalendars: VisualCalendar[];
     subscribedCalendars: SubscribedCalendar[];
     defaultCalendar?: VisualCalendar;
+    user: UserModel;
 }
 
 const SingleCalendarSettingsSection = ({
@@ -33,6 +35,7 @@ const SingleCalendarSettingsSection = ({
     personalActiveCalendars,
     subscribedCalendars,
     defaultCalendar,
+    user: { hasNonDelinquentScope },
 }: Props) => {
     const { calendarId } = useParams<{ calendarId: string }>();
     const history = useHistory();
@@ -159,13 +162,24 @@ const SingleCalendarSettingsSection = ({
             noTitle
             breadcrumbs={calendars.length > 1 ? breadcrumbs : undefined}
         >
-            <CalendarSettingsHeaderSection calendar={calendar} defaultCalendar={defaultCalendar} onEdit={reRender} />
-            <CalendarEventDefaultsSection calendar={calendar} bootstrap={bootstrap} />
-            <CalendarDeleteSection
-                personalActiveCalendars={personalActiveCalendars}
-                calendar={calendar}
-                defaultCalendar={defaultCalendar}
-            />
+            <div className="container-section-sticky-section">
+                <CalendarSettingsHeaderSection
+                    calendar={calendar}
+                    defaultCalendar={defaultCalendar}
+                    onEdit={reRender}
+                    isEditDisabled={!hasNonDelinquentScope}
+                />
+                <CalendarEventDefaultsSection
+                    isEditDisabled={!hasNonDelinquentScope}
+                    calendar={calendar}
+                    bootstrap={bootstrap}
+                />
+                <CalendarDeleteSection
+                    personalActiveCalendars={personalActiveCalendars}
+                    calendar={calendar}
+                    defaultCalendar={defaultCalendar}
+                />
+            </div>
         </PrivateMainSettingsAreaBase>
     );
 };
