@@ -47,6 +47,9 @@
       "Apply": [
         "应用"
       ],
+      "Attach screenshot(s)": [
+        "添加截图"
+      ],
       "Back": [
         "返回"
       ],
@@ -112,6 +115,9 @@
       ],
       "Copy email to clipboard": [
         "复制邮箱地址"
+      ],
+      "Create a new contact group": [
+        "创建新联系人群组"
       ],
       "Create calendar": [
         "创建日历"
@@ -200,6 +206,9 @@
       "Go to settings": [
         "前往设置"
       ],
+      "Got it": [
+        "知道了"
+      ],
       "Hide advanced PGP settings": [
         "隐藏高级 PGP 设置"
       ],
@@ -287,6 +296,9 @@
       "OK": [
         "确定"
       ],
+      "Open in a new tab": [
+        "在新标签页中打开"
+      ],
       "Open navigation": [
         "打开导航栏"
       ],
@@ -347,6 +359,9 @@
       "Save": [
         "保存"
       ],
+      "Search countries": [
+        "搜索国家"
+      ],
       "Select all": [
         "全选"
       ],
@@ -355,6 +370,9 @@
       ],
       "Send": [
         "发送​​"
+      ],
+      "Send feedback": [
+        "提交反馈"
       ],
       "Set recovery phrase": [
         "设置恢复密语"
@@ -388,6 +406,9 @@
       ],
       "Skip": [
         "跳过"
+      ],
+      "Start import": [
+        "开始导入"
       ],
       "Start setup": [
         "开始设置"
@@ -518,6 +539,9 @@
       "By leaving now, some contacts may not be imported": [
         "如果现在离开，一些联系人可能无法导入"
       ],
+      "By leaving now, some events may not be imported": [
+        "如果现在退出，某些日程可能无法导入"
+      ],
       "By leaving now, you will lose your event.": [
         "如果现在退出，该日程将不会被保存。"
       ]
@@ -550,6 +574,9 @@
       ]
     },
     "Beta access description": {
+      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
+        "开启测试版功能后您将使用 ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME } 和 ${ DRIVE_APP_NAME } 未正式发布的公测版本，可以抢先体验新产品和新功能。"
+      ],
       "If you encounter issues, you can always disable Beta Access.": [
         "如果您在使用过程中遇到问题，您可以随时禁用该选项"
       ]
@@ -675,6 +702,11 @@
         "网站连接问题"
       ]
     },
+    "Button": {
+      "Continue using ${ MAIL_APP_NAME }.": [
+        "继续使用 ${ MAIL_APP_NAME }。"
+      ]
+    },
     "Calendar invite buttons label": {
       "Attending?": [
         "是否出席？"
@@ -729,6 +761,9 @@
       "Calendar is syncing": [
         "日历正在同步中"
       ],
+      "Calendar is too big": [
+        "日历文件太大"
+      ],
       "Calendar link is not accessible": [
         "日历链接无法访问"
       ],
@@ -740,6 +775,9 @@
       ],
       "More than 12 hours passed since last update": [
         "距离上次更新已超过了 12 个小时"
+      ],
+      "Unsupported calendar format": [
+        "不受支持的日历格式"
       ]
     },
     "Calendar view": {
@@ -751,6 +789,19 @@
       ],
       "Week": [
         "周"
+      ]
+    },
+    "Collapsible tooltip": {
+      "Collapse": [
+        "收起"
+      ],
+      "Expand": [
+        "展开"
+      ]
+    },
+    "Confirm modal title": {
+      "Quit import customization?": [
+        "退出导入定制？"
       ]
     },
     "Contact field label": {
@@ -835,6 +886,773 @@
         "读音"
       ]
     },
+    "Country name": {
+      "Abkhazia": [
+        "阿布哈兹"
+      ],
+      "Afghanistan": [
+        "阿富汗"
+      ],
+      "Albania": [
+        "阿尔巴尼亚"
+      ],
+      "Algeria": [
+        "阿尔及利亚"
+      ],
+      "American Samoa": [
+        "美属萨摩亚"
+      ],
+      "Andorra": [
+        "安道尔"
+      ],
+      "Angola": [
+        "安哥拉"
+      ],
+      "Anguilla": [
+        "安圭拉"
+      ],
+      "Antarctica": [
+        "南极洲"
+      ],
+      "Antigua and Barbuda": [
+        "安提瓜和巴布达"
+      ],
+      "Argentina": [
+        "阿根廷"
+      ],
+      "Armenia": [
+        "亚美尼亚"
+      ],
+      "Aruba": [
+        "阿鲁巴"
+      ],
+      "Ascension Island": [
+        "阿森松岛"
+      ],
+      "Australia": [
+        "澳大利亚"
+      ],
+      "Austria": [
+        "奥地利"
+      ],
+      "Azerbaijan": [
+        "阿塞拜疆"
+      ],
+      "Bahamas": [
+        "巴哈马"
+      ],
+      "Bahrain": [
+        "巴林"
+      ],
+      "Bangladesh": [
+        "孟加拉国"
+      ],
+      "Barbados": [
+        "巴巴多斯"
+      ],
+      "Belarus": [
+        "白俄罗斯"
+      ],
+      "Belgium": [
+        "比利时"
+      ],
+      "Belize": [
+        "伯利兹"
+      ],
+      "Benin": [
+        "贝宁"
+      ],
+      "Bermuda": [
+        "百慕大"
+      ],
+      "Bhutan": [
+        "不丹"
+      ],
+      "Bolivia": [
+        "玻利维亚"
+      ],
+      "Bonaire, Sint Eustatius and Saba": [
+        "荷兰加勒比区"
+      ],
+      "Bosnia and Herzegovina": [
+        "波斯尼亚和黑塞哥维那"
+      ],
+      "Botswana": [
+        "博茨瓦纳"
+      ],
+      "Bouvet Island": [
+        "布韦岛"
+      ],
+      "Brazil": [
+        "巴西"
+      ],
+      "British Indian Ocean Territory": [
+        "英属印度洋领地"
+      ],
+      "Brunei Darussalam": [
+        "文莱达鲁萨兰"
+      ],
+      "Bulgaria": [
+        "保加利亚"
+      ],
+      "Burkina Faso": [
+        "布基纳法索"
+      ],
+      "Burundi": [
+        "布隆迪"
+      ],
+      "Cambodia": [
+        "柬埔寨"
+      ],
+      "Cameroon": [
+        "喀麦隆"
+      ],
+      "Canada": [
+        "加拿大"
+      ],
+      "Cape Verde": [
+        "佛得角"
+      ],
+      "Cayman Islands": [
+        "开曼群岛"
+      ],
+      "Central African Republic": [
+        "中非共和国"
+      ],
+      "Chad": [
+        "乍得"
+      ],
+      "Chile": [
+        "智利"
+      ],
+      "China": [
+        "中国"
+      ],
+      "Christmas Island": [
+        "圣诞岛"
+      ],
+      "Cocos (Keeling) Islands": [
+        "科科斯（基林）群岛"
+      ],
+      "Colombia": [
+        "哥伦比亚"
+      ],
+      "Comoros": [
+        "科摩罗"
+      ],
+      "Congo": [
+        "刚果"
+      ],
+      "Congo, Democratic Republic of the": [
+        "刚果民主共和国"
+      ],
+      "Cook Islands": [
+        "库克群岛"
+      ],
+      "Costa Rica": [
+        "哥斯达黎加"
+      ],
+      "Croatia": [
+        "克罗地亚"
+      ],
+      "Cuba": [
+        "古巴"
+      ],
+      "Curaçao": [
+        "库拉索"
+      ],
+      "Cyprus": [
+        "塞浦路斯"
+      ],
+      "Czech Republic": [
+        "捷克共和国"
+      ],
+      "Côte d'Ivoire": [
+        "科特迪瓦"
+      ],
+      "Denmark": [
+        "丹麦"
+      ],
+      "Djibouti": [
+        "吉布提"
+      ],
+      "Dominica": [
+        "多米尼克"
+      ],
+      "Dominican Republic": [
+        "多米尼加共和国"
+      ],
+      "Ecuador": [
+        "厄瓜多尔"
+      ],
+      "Egypt": [
+        "埃及"
+      ],
+      "El Salvador": [
+        "萨尔瓦多"
+      ],
+      "Equatorial Guinea": [
+        "赤道几内亚"
+      ],
+      "Eritrea": [
+        "厄立特里亚"
+      ],
+      "Estonia": [
+        "爱沙尼亚"
+      ],
+      "Eswatini": [
+        "斯威士兰"
+      ],
+      "Ethiopia": [
+        "埃塞俄比亚"
+      ],
+      "Falkland Islands": [
+        "福克兰群岛"
+      ],
+      "Faroe Islands": [
+        "法罗群岛"
+      ],
+      "Federated States of Micronesia": [
+        "密克罗尼西亚联邦"
+      ],
+      "Fiji": [
+        "斐济"
+      ],
+      "Finland": [
+        "芬兰"
+      ],
+      "France": [
+        "法国"
+      ],
+      "French Guiana": [
+        "法属圭亚那"
+      ],
+      "French Polynesia": [
+        "法属波利尼西亚"
+      ],
+      "French Southern Territories": [
+        "法属南部领地"
+      ],
+      "Gabon": [
+        "加蓬"
+      ],
+      "Gambia": [
+        "冈比亚"
+      ],
+      "Georgia": [
+        "格鲁吉亚"
+      ],
+      "Germany": [
+        "德国"
+      ],
+      "Ghana": [
+        "加纳"
+      ],
+      "Gibraltar": [
+        "直布罗陀"
+      ],
+      "Greece": [
+        "希腊"
+      ],
+      "Greenland": [
+        "格陵兰"
+      ],
+      "Grenada": [
+        "格林纳达"
+      ],
+      "Guadeloupe": [
+        "瓜德罗普"
+      ],
+      "Guam": [
+        "关岛"
+      ],
+      "Guatemala": [
+        "危地马拉"
+      ],
+      "Guernsey": [
+        "根西"
+      ],
+      "Guinea": [
+        "几内亚"
+      ],
+      "Guinea-Bissau": [
+        "几内亚比绍"
+      ],
+      "Guyana": [
+        "圭亚那"
+      ],
+      "Haiti": [
+        "海地"
+      ],
+      "Heard Island and McDonald Islands": [
+        "赫德岛和麦克唐纳群岛"
+      ],
+      "Holy See (Vatican City State)": [
+        "圣座（梵蒂冈城邦）"
+      ],
+      "Honduras": [
+        "洪都拉斯"
+      ],
+      "Hong Kong": [
+        "香港"
+      ],
+      "Hungary": [
+        "匈牙利"
+      ],
+      "Iceland": [
+        "冰岛"
+      ],
+      "India": [
+        "印度"
+      ],
+      "Indonesia": [
+        "印度尼西亚"
+      ],
+      "International": [
+        "全球"
+      ],
+      "Iran": [
+        "伊朗"
+      ],
+      "Iraq": [
+        "伊拉克"
+      ],
+      "Ireland": [
+        "爱尔兰"
+      ],
+      "Isle of Man": [
+        "马恩岛"
+      ],
+      "Israel": [
+        "以色列"
+      ],
+      "Italy": [
+        "意大利"
+      ],
+      "Jamaica": [
+        "牙买加"
+      ],
+      "Japan": [
+        "日本"
+      ],
+      "Jersey": [
+        "泽西"
+      ],
+      "Jordan": [
+        "约旦"
+      ],
+      "Kazakhstan": [
+        "哈萨克斯坦"
+      ],
+      "Kenya": [
+        "肯尼亚"
+      ],
+      "Kiribati": [
+        "基里巴斯"
+      ],
+      "Kosovo": [
+        "科索沃"
+      ],
+      "Kuwait": [
+        "科威特"
+      ],
+      "Kyrgyzstan": [
+        "吉尔吉斯斯坦"
+      ],
+      "Laos": [
+        "老挝"
+      ],
+      "Latvia": [
+        "拉脱维亚"
+      ],
+      "Lebanon": [
+        "黎巴嫩"
+      ],
+      "Lesotho": [
+        "莱索托"
+      ],
+      "Liberia": [
+        "利比里亚"
+      ],
+      "Libya": [
+        "利比亚"
+      ],
+      "Liechtenstein": [
+        "列支敦士登"
+      ],
+      "Lithuania": [
+        "立陶宛"
+      ],
+      "Luxembourg": [
+        "卢森堡"
+      ],
+      "Macao": [
+        "澳门"
+      ],
+      "Madagascar": [
+        "马达加斯加"
+      ],
+      "Malawi": [
+        "马拉维"
+      ],
+      "Malaysia": [
+        "马来西亚"
+      ],
+      "Maldives": [
+        "马尔代夫"
+      ],
+      "Mali": [
+        "马里"
+      ],
+      "Malta": [
+        "马耳他"
+      ],
+      "Marshall Islands": [
+        "马绍尔群岛"
+      ],
+      "Martinique": [
+        "马提尼克"
+      ],
+      "Mauritania": [
+        "毛里塔尼亚"
+      ],
+      "Mauritius": [
+        "毛里求斯"
+      ],
+      "Mayotte": [
+        "马约特"
+      ],
+      "Mexico": [
+        "墨西哥"
+      ],
+      "Moldova": [
+        "摩尔多瓦"
+      ],
+      "Monaco": [
+        "摩纳哥"
+      ],
+      "Mongolia": [
+        "蒙古"
+      ],
+      "Montenegro": [
+        "黑山"
+      ],
+      "Montserrat": [
+        "蒙特塞拉特"
+      ],
+      "Morocco": [
+        "摩洛哥"
+      ],
+      "Mozambique": [
+        "莫桑比克"
+      ],
+      "Myanmar": [
+        "缅甸"
+      ],
+      "Namibia": [
+        "纳米比亚"
+      ],
+      "Nauru": [
+        "瑙鲁"
+      ],
+      "Nepal": [
+        "尼泊尔"
+      ],
+      "Netherlands": [
+        "荷兰"
+      ],
+      "New Caledonia": [
+        "新喀里多尼亚"
+      ],
+      "New Zealand": [
+        "新西兰"
+      ],
+      "Nicaragua": [
+        "尼加拉瓜"
+      ],
+      "Niger": [
+        "尼日尔"
+      ],
+      "Nigeria": [
+        "尼日利亚"
+      ],
+      "Niue": [
+        "纽埃"
+      ],
+      "Norfolk Island": [
+        "诺福克岛"
+      ],
+      "North Korea": [
+        "朝鲜"
+      ],
+      "North Macedonia": [
+        "北马其顿"
+      ],
+      "Northern Mariana Islands": [
+        "北马里亚纳群岛"
+      ],
+      "Norway": [
+        "挪威"
+      ],
+      "Oman": [
+        "阿曼"
+      ],
+      "Pakistan": [
+        "巴基斯坦"
+      ],
+      "Palau": [
+        "帕劳"
+      ],
+      "Palestine": [
+        "巴勒斯坦"
+      ],
+      "Panama": [
+        "巴拿马"
+      ],
+      "Papua New Guinea": [
+        "巴布亚新几内亚"
+      ],
+      "Paraguay": [
+        "巴拉圭"
+      ],
+      "Peru": [
+        "秘鲁"
+      ],
+      "Philippines": [
+        "菲律宾"
+      ],
+      "Pitcairn": [
+        "皮特凯恩"
+      ],
+      "Poland": [
+        "波兰"
+      ],
+      "Portugal": [
+        "葡萄牙"
+      ],
+      "Puerto Rico": [
+        "波多黎各"
+      ],
+      "Qatar": [
+        "卡塔尔"
+      ],
+      "Reunion": [
+        "留尼汪"
+      ],
+      "Romania": [
+        "罗马尼亚"
+      ],
+      "Russia": [
+        "俄罗斯"
+      ],
+      "Rwanda": [
+        "卢旺达"
+      ],
+      "Saint Barthélemy": [
+        "圣巴泰勒米"
+      ],
+      "Saint Helena": [
+        "圣赫勒拿岛"
+      ],
+      "Saint Kitts and Nevis": [
+        "圣基茨和尼维斯"
+      ],
+      "Saint Lucia": [
+        "圣卢西亚"
+      ],
+      "Saint Martin (French Part)": [
+        "法属圣马丁"
+      ],
+      "Saint Pierre and Miquelon": [
+        "圣皮埃尔和密克隆"
+      ],
+      "Saint Vincent and the Grenadines": [
+        "圣文森特和格林纳丁斯"
+      ],
+      "Samoa": [
+        "萨摩亚"
+      ],
+      "San Marino": [
+        "圣马力诺"
+      ],
+      "Sao Tome and Principe": [
+        "圣多美与普林西比"
+      ],
+      "Saudi Arabia": [
+        "沙特阿拉伯"
+      ],
+      "Senegal": [
+        "塞内加尔"
+      ],
+      "Serbia": [
+        "塞尔维亚"
+      ],
+      "Seychelles": [
+        "塞舌尔"
+      ],
+      "Sierra Leone": [
+        "塞拉利昂"
+      ],
+      "Singapore": [
+        "新加坡"
+      ],
+      "Sint Maarten": [
+        "圣马丁岛"
+      ],
+      "Slovakia": [
+        "斯洛伐克"
+      ],
+      "Slovenia": [
+        "斯洛文尼亚"
+      ],
+      "Solomon Islands": [
+        "所罗门群岛"
+      ],
+      "Somalia": [
+        "索马里"
+      ],
+      "South Africa": [
+        "南非"
+      ],
+      "South Georgia and the South Sandwich Islands": [
+        "南乔治亚岛和南桑威奇群岛"
+      ],
+      "South Korea": [
+        "韩国"
+      ],
+      "South Ossetia": [
+        "南奥塞梯"
+      ],
+      "South Sudan": [
+        "南苏丹"
+      ],
+      "Spain": [
+        "西班牙"
+      ],
+      "Sri Lanka": [
+        "斯里兰卡"
+      ],
+      "Sudan": [
+        "苏丹"
+      ],
+      "Suriname": [
+        "苏里南"
+      ],
+      "Svalbard and Jan Mayen": [
+        "斯瓦尔巴和扬马延"
+      ],
+      "Sweden": [
+        "瑞典"
+      ],
+      "Switzerland": [
+        "瑞士"
+      ],
+      "Syria": [
+        "叙利亚"
+      ],
+      "Taiwan": [
+        "台湾"
+      ],
+      "Tajikistan": [
+        "塔吉克斯坦"
+      ],
+      "Tanzania": [
+        "坦桑尼亚"
+      ],
+      "Thailand": [
+        "泰国"
+      ],
+      "Timor-Leste": [
+        "东帝汶"
+      ],
+      "Togo": [
+        "多哥"
+      ],
+      "Tokelau": [
+        "托克劳"
+      ],
+      "Tonga": [
+        "汤加"
+      ],
+      "Trinidad and Tobago": [
+        "特立尼达和多巴哥"
+      ],
+      "Tristan da Cunha": [
+        "特里斯坦达库尼亚"
+      ],
+      "Tunisia": [
+        "突尼斯"
+      ],
+      "Turkey": [
+        "土耳其"
+      ],
+      "Turkmenistan": [
+        "土库曼斯坦"
+      ],
+      "Turks and Caicos Islands": [
+        "特克斯和凯科斯群岛"
+      ],
+      "Tuvalu": [
+        "图瓦卢"
+      ],
+      "Uganda": [
+        "乌干达"
+      ],
+      "Ukraine": [
+        "乌克兰"
+      ],
+      "United Arab Emirates": [
+        "阿联酋"
+      ],
+      "United Kingdom": [
+        "英国"
+      ],
+      "United States": [
+        "美国"
+      ],
+      "United States Minor Outlying Islands": [
+        "美国本土外小岛屿"
+      ],
+      "Uruguay": [
+        "乌拉圭"
+      ],
+      "Uzbekistan": [
+        "乌兹别克斯坦"
+      ],
+      "Vanuatu": [
+        "瓦努阿图"
+      ],
+      "Venezuela": [
+        "委内瑞拉"
+      ],
+      "Vietnam": [
+        "越南"
+      ],
+      "Virgin Islands, British": [
+        "英属维尔京群岛"
+      ],
+      "Virgin Islands, U.S.": [
+        "美属维尔京群岛"
+      ],
+      "Wallis and Futuna": [
+        "瓦利斯和富图纳"
+      ],
+      "Western Sahara": [
+        "西撒哈拉"
+      ],
+      "Yemen": [
+        "也门"
+      ],
+      "Zambia": [
+        "赞比亚"
+      ],
+      "Zimbabwe": [
+        "津巴布韦"
+      ],
+      "Åland Islands": [
+        "奥兰群岛"
+      ]
+    },
     "Custom frequency option": {
       "After repeating…": [
         "重复…"
@@ -891,6 +1709,9 @@
       ]
     },
     "Description": {
+      "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
+        "正在解密联系人... 该过程可能需要几分钟，完成后您就可以下载导出的联系人了"
+      ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "正在删除联系人... 该过程可能需要几分钟，完成后您就可以关闭此对话框了"
       ],
@@ -908,6 +1729,9 @@
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "通过拖放可调整联系人合并优先级，未勾选的联系人不会被合并"
+      ],
+      "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
+        "您可以导入 iCal 格式（. ics 文件）的日程。文件大小上限为 ${ MAX_IMPORT_FILE_SIZE_STRING }，且日程总数上限为 ${ MAX_IMPORT_EVENTS_STRING }。若您的文件超出限制，请先拆分成较小的文件。"
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "您可以选择稍后删除既不想合并也不想保留的联系人，点击合并按钮后他们就会被删除"
@@ -1067,6 +1891,9 @@
       "Decryption error: Decryption of this event's content failed.": [
         "解密失败：无法解密此日程的内容。"
       ],
+      "Deselect at least ${ calendarToFixCount } calendar": [
+        "取消选择至少 ${ calendarToFixCount } 个日历"
+      ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
         "取消选择至少 ${ calendarToFixCount } 个日历或者"
       ],
@@ -1097,8 +1924,17 @@
       "Failed to get original occurrence in series": [
         "无法获取序列中的原始事件"
       ],
+      "Folder name cannot be empty.": [
+        "文件夹名称不能为空。"
+      ],
       "Image upload failed": [
         "图片上传失败"
+      ],
+      "Incorrect login credentials. Please try again.": [
+        "登录凭据不正确，请重试。"
+      ],
+      "Incorrect mailbox password. Please try again.": [
+        "邮箱密码不正确，请重试。"
       ],
       "Interval cannot be empty": [
         "重复周期不能为空"
@@ -1127,14 +1963,23 @@
       "It is only possible to move events between ${ minDateString } - ${ maxDateString }": [
         "只能在${ minDateString }到${ maxDateString }之间移动日程"
       ],
+      "Label name cannot be empty.": [
+        "标签名称不能为空。"
+      ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "将至少 ${ calendarToFixCount } 个日历与现有的 Proton 日历合并"
+      ],
+      "Missing key packet": [
+        "缺少密钥数据包"
       ],
       "Missing signature": [
         "缺少签名"
       ],
       "Name required": [
         "姓名 (必填)"
+      ],
+      "No data to import": [
+        "没有要导入的数据"
       ],
       "No keys retrieved for internal user": [
         "没有为内部用户检索到密钥"
@@ -1172,6 +2017,15 @@
       "Primary address key is not decrypted.": [
         "主密钥尚未解密。"
       ],
+      "Primary key is not valid for sending": [
+        "主密钥无法发送邮件"
+      ],
+      "Primary key retrieved for internal user is not valid for sending": [
+        "内部用户的主密钥无效，无法发送邮件"
+      ],
+      "Request timed out": [
+        "请求超时"
+      ],
       "Self invitation not allowed": [
         "不能自我邀请"
       ],
@@ -1190,14 +2044,23 @@
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "部分标签名称不可用，请自定导入内容并予以更改。"
       ],
+      "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
+        "部分标签名称超过了 ${ MAIL_APP_NAME } 的字符长度限制，请自定导入内容并予以更改。"
+      ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "出错了，请${ refresh }以继续。若仍出现此错误，请联系我们的${ supportTeam }"
       ],
       "Start time must be before end time": [
         "起始时间必须早于结束时间"
       ],
+      "The folder name is invalid. Please choose a different name.": [
+        "文件夹名称无效，请更改。"
+      ],
       "The folder name is too long. Please choose a different name.": [
         "文件夹名称过长，请重新填写。"
+      ],
+      "The label name is invalid. Please choose a different name.": [
+        "标签名称无效，请更改。"
       ],
       "The label name is too long. Please choose a different name.": [
         "标签名称过长，请重新填写。"
@@ -1216,6 +2079,15 @@
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "此字段至少需要 ${ minimumLength } 个字符。"
+      ],
+      "This folder name is not available. Please choose a different name.": [
+        "文件夹名称不可用，请重新填写。"
+      ],
+      "This label name is not available. Please choose a different name.": [
+        "标签名称不可用，请重新填写。"
+      ],
+      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
+        "此邮件可能含有当前浏览器无法正确打开的链接。"
       ],
       "Trusted keys are not valid for sending": [
         "已信任的密钥对发送无效"
@@ -1308,17 +2180,26 @@
       "Error: ${ errorMessage }": [
         "错误：${ errorMessage }"
       ],
+      "Invalid URL": [
+        "链接无效"
+      ],
       "Oops, something went wrong": [
         "糟糕，出错了"
       ],
       "Please ${ refresh } or check your connection.": [
         "请 ${ refresh } 或检查您的连接。"
       ],
+      "Something went wrong. Please refresh the page or try again later.": [
+        "出错了，请刷新页面或稍后重试。"
+      ],
       "There was a problem connecting to Proton.": [
         "无法联系 Proton"
       ],
       "You may also ${ refresh } or try again later.": [
         "您也可以${ refresh }页面或稍后再试"
+      ],
+      "You need an active personal calendar to import events": [
+        "导入您的日程之前您需要有一个启用的个人日历。"
       ]
     },
     "Error notification": {
@@ -1377,7 +2258,15 @@
         "(无标题)"
       ]
     },
+    "Feedback Modal Title": {
+      "Your feedback": [
+        "意见反馈"
+      ]
+    },
     "file size format": {
+      "byte": [
+        "字节"
+      ],
       "GB": [
         "GB"
       ],
@@ -1386,6 +2275,20 @@
       ],
       "MB": [
         "MB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "字节"
+      ],
+      "Gigabyte": [
+        "千兆字节"
+      ],
+      "Kilobyte": [
+        "千字节"
+      ],
+      "Megabyte": [
+        "兆字节"
       ]
     },
     "Filter notification": {
@@ -1450,11 +2353,32 @@
       ]
     },
     "Import calendar": {
+      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
+        "${ totalImported }/${ totalToImport } 条日程已加密并添至您的日历"
+      ],
+      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
+        "加密并添加日程时出错，${ totalImported }/${ totalToImport } 个日程已成功导入。"
+      ],
+      "An error occurred while encrypting and adding your event. No event could be imported.": [
+        "加密并添加日程时出错，未能导入任何日程。"
+      ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "正在加密并添加联系人：已完成 ${ totalImported }/${ totalToImport }"
+      ],
+      "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
+        "正在加密并添加日程：已完成 ${ totalImported }/${ totalToImport }"
+      ],
+      "Event successfully imported. The imported event will now appear in your calendar.": [
+        "日程导入成功，已显示在您的日历中。"
+      ],
+      "Please don't close the tab before the importing process is finished.": [
+        "导入结束前请勿关闭此网页。"
       ]
     },
     "Import calendar warning": {
+      "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
+        "${ CALENDAR_APP_NAME } 当前不支持某些日程类型、详情和格式。"
+      ],
       "vCard versions < 3.0": [
         "vCard 版本低于 3.0"
       ]
@@ -1502,8 +2426,17 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded }/${ totalContacts } 联系人将不会被导入，点击查看详情"
       ],
+      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
+        "${ totalEvents } 个日程有 ${ totalEventsDiscarded } 个将不会被导入，展开查看详情。"
+      ],
       "No contact can be imported. Click for details": [
         "没有联系人可供导入，点击查看详情"
+      ],
+      "No event can be imported. Expand for details.": [
+        "未能导入任何日程，展开查看详情。"
+      ],
+      "Part of your calendar content is not supported and will not be imported.": [
+        "您的日程中有部分内容我们不支持，这些日程将不会被导入。"
       ]
     },
     "Info": {
@@ -1516,11 +2449,20 @@
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } 个新日历"
       ],
+      "${ calendarsToBeMerged } merged calendar": [
+        "将 ${ calendarsToBeMerged } 个日历与现有日历合并"
+      ],
       "${ calendarsToBeMergedCount } merged calendar": [
         "${ calendarsToBeMergedCount } 个合并日历"
       ],
+      "${ contactCount } contact contains multiple email addresses.": [
+        "${ contactCount } 名联系人各有多个邮箱地址。"
+      ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } 成员"
+      ],
+      "${ contactName } contains multiple email addresses.": [
+        "${ contactName } 有多个邮箱地址。"
       ],
       "${ contactsCount } contact found": [
         "找到 ${ contactsCount } 位联系人"
@@ -1543,11 +2485,17 @@
       "${ selectedFoldersCount } label selected": [
         "已选择 ${ selectedFoldersCount } 个标签"
       ],
+      "${ storageSize } storage": [
+        "${ storageSize } 存储空间"
+      ],
       "${ updated } contact updated successfully.": [
         "${ updated } 位联系人更新成功"
       ],
       "(${ memberCount } member)": [
         "(${ memberCount } 位成员)"
+      ],
+      "10 email addresses": [
+        "10 个电子邮件地址"
       ],
       "A cancellation email will be sent to removed participants.": [
         "活动取消邮件将发送至已移除的参与者"
@@ -1582,8 +2530,14 @@
       "An invitation will be sent to the event participants.": [
         "邀请函将发送至所有的活动参与者"
       ],
+      "and": [
+        "和"
+      ],
       "At most 100 participants are allowed per invitation": [
         "每次邀请的上限是 100 人"
+      ],
+      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
+        "重新接收验证码前，请先检查垃圾邮件文件夹，并确认邮箱地址 ${ strong } 是否正确。"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "记不住密码？我们可以帮助您清除使用此密钥加密的所有联系人的加密数据，并在此过程中忽略警告"
@@ -1597,6 +2551,9 @@
       "Close this screen to exit.": [
         "关闭此窗口以退出。"
       ],
+      "Continue with ${ planName }": [
+        "继续使用 ${ planName }"
+      ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "新建 ${ calendarsToBeCreated } 个日历"
       ],
@@ -1608,6 +2565,9 @@
       ],
       "Create a new contact group": [
         "创建联系人群组"
+      ],
+      "Create in": [
+        "在此创建"
       ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "支持来自 Outlook、Outlook Express、雅虎邮箱、Hotmail、Eudora 和其他一些应用程序的 CSV 文件，以及 vCard 3.1 和 4.0 格式（UTF-8 编码）。"
@@ -1693,6 +2653,9 @@
       "Inherited from parent folder": [
         "继承自父文件夹"
       ],
+      "Internet connection lost": [
+        "网络连接已断开"
+      ],
       "Internet connection lost. Please check your device's connectivity.": [
         "网络连接已丢失。请检查您设备的连接性。"
       ],
@@ -1735,6 +2698,9 @@
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "设置新文件夹的名称和位置，若不选取父文件夹，则将创建顶层文件夹。"
       ],
+      "New": [
+        "新建"
+      ],
       "No contacts added yet": [
         "尚未添加联系人"
       ],
@@ -1753,11 +2719,29 @@
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         "所有上传的密钥都不适用于加密，加密将自动禁用"
       ],
+      "Not a valid URL": [
+        "URL 无效"
+      ],
       "Occurrences previously updated by the organizer will be kept, but some of your answers will be lost.": [
         "组织者先前更新的事件将予保留，但您的一些答复将会丢失"
       ],
       "Occurrences previously updated by the organizer will be kept.": [
         "组织者先前更新的事件将予保留"
+      ],
+      "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
+        "您信任的某些密钥已被其所有者标为「已泄露」，建议您不再信任这些密钥。"
+      ],
+      "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
+        "只有在与非 ${ BRAND_NAME } 用户使用 PGP 通讯时才应更改下列选项。"
+      ],
+      "Other options": [
+        "其他选项"
+      ],
+      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        "PGP/Inline 只能用于纯文本邮件。请注意 ${ MAIL_APP_NAME } 会对所有加密邮件予以数字签名。"
+      ],
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        "PGP/MIME 可使用编辑器中指定的格式发送邮件。请注意 ${ MAIL_APP_NAME } 会对所有加密邮件予以数字签名。"
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "请注意，分配给此组的地址将不会被删除"
@@ -1771,6 +2755,12 @@
       "Please select the folders you would like to import:": [
         "请选择要导入的文件夹："
       ],
+      "Please select which email address or addresses to add to ${ groupCount } group.": [
+        "请选择将哪些邮箱地址加入这 ${ groupCount } 个群组。"
+      ],
+      "Please select which email address or addresses to add to ${ groupName }.": [
+        "请选择将哪些邮箱地址加入「${ groupName }」。"
+      ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "请稍候，我们正在寻找可用主密钥重新签名的联系人"
       ],
@@ -1783,6 +2773,9 @@
       "Primary": [
         "主密钥"
       ],
+      "Priority support": [
+        "优先客服支持"
+      ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "大多数问题都能通过刷新页面或${link}来解决。"
       ],
@@ -1792,11 +2785,29 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "选择向该地址发送邮件的首选格式"
       ],
+      "Select what you want to import from Google.": [
+        "请选择您要从 Google 账户导入的内容。"
+      ],
+      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
+        "请选择要导入的日历。将为每个导入的日历创建一个新日历（最多 20 个）。"
+      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "服务器无法访问，请过几分钟后再试"
       ],
+      "Session timed out": [
+        "会话超时"
+      ],
+      "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
+        "设置 PGP 后，您就可以向 ${ BRAND_NAME } 以外其他兼容 PGP 的邮箱发送端到端加密邮件了。"
+      ],
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "您对先前由组织者更新过的事件的一些答复将会丢失"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME } 均共用同一存储空间。"
+      ],
+      "Support for 1 custom email domain": [
+        "支持 1 个自有域名"
       ],
       "support team": [
         "客服团队"
@@ -1849,6 +2860,9 @@
       "This event has been updated. The organizer will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete this event anyway?": [
         "本活动已更新，主办方将不会收到您拒绝邀请的通知，因为您不能从受邀地址发送邮件。仍要删除此活动吗？"
       ],
+      "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
+        "此链接指向的网站可能会窃取您的密码、信用卡等信息。"
+      ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "此链接可能使用了欺骗性域名，IE 和 Edge 浏览器无法打开。若您确认链接可靠，请使用其他浏览器打开"
       ],
@@ -1867,11 +2881,26 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "开启地址密钥验证前，您需要先信任其若干个公钥，包括您要用于发送邮件的密钥。这样可以防止其密钥被伪造"
       ],
+      "Unlimited folders, labels, and filters": [
+        "文件夹、标签、筛选规则不限量"
+      ],
+      "Unlimited messages": [
+        "每日发送邮件不限量"
+      ],
       "Update recurring event": [
         "更新循环周期性日程"
       ],
+      "Upgrade today to avoid losing the following ${ planName } benefits.": [
+        "立即升级账户即可继续享有下列 ${ planName } 权益。"
+      ],
       "We'll notify you when the import is done.": [
         "导入完成时我们将通知您。"
+      ],
+      "We'll send a new verification code to ${ strong }": [
+        "我们将向 ${ strong } 发送新的验证码"
+      ],
+      "We're moving! Join us at our new site: ${ link }.": [
+        "我们改名了！欢迎造访我们的新域名：${ link }"
       ],
       "Week": [
         "周"
@@ -1900,6 +2929,9 @@
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "您想重新获取验证码还是更换验证方式？"
       ],
+      "Would you like to receive a new verification code?": [
+        "要重新发送验证码吗？"
+      ],
       "Would you like to update all events in this series?": [
         "您想要更新该系列活动中的所有活动吗？"
       ],
@@ -1911,6 +2943,12 @@
       ],
       "You are about to open another browser tab and visit:": [
         "您即将在新标签页中打开："
+      ],
+      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
+        "您当前以 ${ user.Name } (${ user.Email }) 的身份登录"
+      ],
+      "You can also merge imported calendars with existing Proton calendars.": [
+        "您也可以将导入日历与现有 Proton 日历合并。"
       ],
       "You can check the progress ${ importProgressLink }.": [
         "您可以在 ${ importProgressLink } 查看导入进度。"
@@ -1972,6 +3010,9 @@
       "Your email will only be used for this one-time verification.": [
         "您的电子邮件将只会用于此一次性验证"
       ],
+      "Your events will be encrypted and then saved.": [
+        "您的文件将被加密并保存。"
+      ],
       "Your phone number will only be used for this one-time verification.": [
         "您的电话号码将只会用于此一次性验证"
       ],
@@ -1993,8 +3034,14 @@
       ]
     },
     "Key badge": {
+      "Compromised": [
+        "已泄露"
+      ],
       "Expired": [
         "已过期"
+      ],
+      "Obsolete": [
+        "已作废"
       ],
       "Primary": [
         "主密钥"
@@ -2010,6 +3057,9 @@
       ]
     },
     "Label": {
+      "(Temporarily unavailable. Please check back later.)": [
+        "（暂时不可用。请稍后再试。）"
+      ],
       "Add email address": [
         "添加邮箱地址"
       ],
@@ -2022,8 +3072,17 @@
       "All day": [
         "全天事件"
       ],
+      "Attach screenshot(s)": [
+        "附屏幕截图"
+      ],
       "Automatically save contacts": [
         "自动保存联系人"
+      ],
+      "Awful": [
+        "非常差"
+      ],
+      "Bad": [
+        "很差"
       ],
       "Browser": [
         "浏览器"
@@ -2031,11 +3090,23 @@
       "Browser version": [
         "浏览器版本"
       ],
+      "Calendar": [
+        "日历"
+      ],
+      "Calendars": [
+        "日历"
+      ],
       "Category": [
         "类别"
       ],
       "City": [
         "城市"
+      ],
+      "Code is 6 digits without spaces": [
+        "验证码是无空格的六位数"
+      ],
+      "Color": [
+        "颜色"
       ],
       "Contacts": [
         "通讯录"
@@ -2045,6 +3116,24 @@
       ],
       "Country": [
         "国家"
+      ],
+      "Date and time": [
+        "日期和时间"
+      ],
+      "Default email address": [
+        "默认邮箱地址"
+      ],
+      "Default event duration": [
+        "默认事件时长"
+      ],
+      "Default full day notifications": [
+        "默认全天通知"
+      ],
+      "Default notifications": [
+        "默认通知"
+      ],
+      "Delete": [
+        "删除"
       ],
       "Description": [
         "说明："
@@ -2085,11 +3174,23 @@
       "Folder location": [
         "文件夹位置"
       ],
+      "Frequency": [
+        "重复频率"
+      ],
       "From: ${ importedEmail }": [
         "来自：${ importedEmail }"
       ],
+      "Good": [
+        "很好"
+      ],
       "Hide password": [
         "隐藏密码"
+      ],
+      "How would you describe your experience with the new Proton?": [
+        "您认为新版 Proton 的使用体验如何？"
+      ],
+      "I understand the risk": [
+        "我已知悉风险"
       ],
       "Import all messages": [
         "导入所有邮件"
@@ -2103,6 +3204,12 @@
       "Import to email address": [
         "导入到邮箱地址"
       ],
+      "Import to:": [
+        "导入到："
+      ],
+      "Label messages as": [
+        "给导入的邮件加标签"
+      ],
       "Last 12 months only": [
         "仅过去 12 个月"
       ],
@@ -2111,6 +3218,9 @@
       ],
       "Last month only": [
         "仅上个月"
+      ],
+      "Location": [
+        "位置"
       ],
       "Mailbox password": [
         "邮箱密码"
@@ -2126,6 +3236,12 @@
       ],
       "Notification": [
         "通知"
+      ],
+      "Notifications": [
+        "通知"
+      ],
+      "OK": [
+        "较好"
       ],
       "Operating system": [
         "操作系统"
@@ -2199,11 +3315,17 @@
       "URL": [
         "网址"
       ],
+      "Username or ${ MAIL_APP_NAME } address": [
+        "用户名或 ${ MAIL_APP_NAME } 邮箱地址"
+      ],
       "Verification code": [
         "验证码"
       ],
       "What happened?": [
         "发生了什么？"
+      ],
+      "Wonderful": [
+        "非常好"
       ]
     },
     "Label for contact group color": {
@@ -2281,12 +3403,20 @@
         "您的导入正在开始"
       ]
     },
+    "Mail import summary": {
+      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "导入自${ periodFragment } 以来 ${ totalLabelsCount } 个标签的所有邮件，并将其标记为${ LABEL_MARKUP_PLACEHOLDER }"
+      ]
+    },
     "Message": {
       "Fw:": [
         "转发："
       ],
       "Re:": [
         "回复："
+      ],
+      "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
+        "您的免费体验期已结束，账户将于近期停用。${ action }"
       ]
     },
     "Message display when a new app version is available": {
@@ -2464,6 +3594,21 @@
         "标签名称"
       ]
     },
+    "new_plans: action": {
+      "Switch or add account": [
+        "切换或添加账户"
+      ]
+    },
+    "new_plans: label": {
+      "Tell us about your experience. (Optional)": [
+        "您可以详细叙述您的使用体验。（非必填）"
+      ]
+    },
+    "new_plans: placeholder": {
+      "Feedback": [
+        "反馈内容"
+      ]
+    },
     "Notification": {
       "Contact group created": [
         "群组已创建"
@@ -2484,7 +3629,7 @@
     },
     "Notification type": {
       "email": [
-        "邮箱"
+        "电子邮件"
       ],
       "notification": [
         "通知"
@@ -2626,6 +3771,9 @@
       "Month": [
         "月"
       ],
+      "No parent folder": [
+        "无上层文件夹"
+      ],
       "This and future events": [
         "当前和后续的周期性日程"
       ],
@@ -2642,6 +3790,9 @@
     "Option group label": {
       "Create new calendar": [
         "创建新日历"
+      ],
+      "Merge with calendar": [
+        "与日历合并"
       ]
     },
     "Participant name": {
@@ -2657,6 +3808,17 @@
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "此密钥不能用于加密"
+      ]
+    },
+    "PGP Key info": {
+      "${ emailAddress } has marked this key as compromised. This key cannot be used neither for encryption nor for signature verification.": [
+        "此密钥已被 ${ emailAddress } 标为已泄露，不能再用于加密或验证数字签名。"
+      ],
+      "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
+        "此密钥已被 ${ emailAddress } 作废，只能用于验证数字签名。"
+      ],
+      "We recommend that you \"untrust\" this key.": [
+        "建议您不再信任此密钥。"
       ]
     },
     "PGP key warning": {
@@ -2701,6 +3863,9 @@
       "Name": [
         "名称"
       ],
+      "Password": [
+        "密码"
+      ],
       "Please describe the problem and include any error messages": [
         "请描述问题并包含任何错误信息"
       ],
@@ -2709,6 +3874,9 @@
       ],
       "Search for name or email": [
         "搜索名称或邮箱地址"
+      ],
+      "Select": [
+        "选择"
       ],
       "Start typing an email address": [
         "开始输入电子邮件地址"
@@ -2794,6 +3962,26 @@
     "Sidebar calendar edit tooltip": {
       "Manage calendar": [
         "管理日历"
+      ]
+    },
+    "Spotlight": {
+      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
+        "${ DRIVE_APP_NAME } 现已正式发布！您的文件也可以具备与邮件同等的安全性。"
+      ],
+      "Get up to 18 months of ${ planName } for free": [
+        "免费获得最长 18 个月的 ${ planName } 使用权"
+      ],
+      "Invite friends and earn rewards!": [
+        "邀请好友注册赢取奖励！"
+      ],
+      "No more missed appointments": [
+        "不再错过任何日程"
+      ],
+      "Try ${ DRIVE_APP_NAME }": [
+        "体验 ${ DRIVE_APP_NAME }"
+      ],
+      "With email notifications, you decide which events to be notified about and when.": [
+        "使用邮件提醒功能，您可以自由决定何时收到哪些日程的通知。"
       ]
     },
     "Storage": {
@@ -2961,6 +4149,11 @@
         "反馈已发送"
       ]
     },
+    "Suffix for price": {
+      "/month": [
+        "/月"
+      ]
+    },
     "Table header": {
       "Action": [
         "操作"
@@ -3019,6 +4212,9 @@
       ]
     },
     "Time period": {
+      "account creation date": [
+        "账户创建日期"
+      ],
       "the last 12 months": [
         "最近 12 个月"
       ],
@@ -3100,6 +4296,9 @@
       "Clearing data": [
         "正在清除数据"
       ],
+      "Contact details": [
+        "联系人详情"
+      ],
       "Contact Details": [
         "联系人详情"
       ],
@@ -3151,6 +4350,12 @@
       "Deleting contacts": [
         "删除联系人中"
       ],
+      "Drop to upload": [
+        "拖拽文件并上传"
+      ],
+      "Edit calendar": [
+        "编辑日历"
+      ],
       "Edit contact": [
         "编辑联系人"
       ],
@@ -3171,6 +4376,9 @@
       ],
       "Enter your password": [
         "输入密码"
+      ],
+      "Enter your username or ${ MAIL_APP_NAME } email address": [
+        "输入用户名或 ${ MAIL_APP_NAME } 邮箱地址"
       ],
       "Error": [
         "错误"
@@ -3262,6 +4470,9 @@
       "Report a problem": [
         "反馈问题"
       ],
+      "Request new code": [
+        "请求新验证码"
+      ],
       "Reset calendar keys": [
         "重置日历密钥"
       ],
@@ -3337,6 +4548,9 @@
       "Sign in again to continue": [
         "此操作需要重新登录"
       ],
+      "Sign in and grant access": [
+        "登录并授予权限"
+      ],
       "Update event": [
         "更新日程"
       ],
@@ -3352,11 +4566,20 @@
       "Warning": [
         "警告"
       ],
+      "Warning: suspected fake website": [
+        "警告：疑似虚假网站"
+      ],
+      "What would you like to import?": [
+        "您需要导入哪些内容？"
+      ],
       "What's new": [
         "更新内容"
       ],
       "You have invited participants with equivalent emails": [
         "您已通过相同的邮件邀请了参与者"
+      ],
+      "Your free trial ends soon, on ${ formattedEndDate }": [
+        "您的免费试用期将于 ${ formattedEndDate } 结束"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -3376,14 +4599,26 @@
       "Digitally signing emails helps authenticating that messages are sent by you": [
         "数字签名有助于佐证您的邮件的真实性"
       ],
+      "Each imported email will have this label": [
+        "每一封导入的邮件都会有这个标签"
+      ],
       "Email encryption forces email signature to help authenticate your sent messages": [
         "邮件加密实现强制数字签名以佐证您发送的邮件的真实性"
+      ],
+      "Encrypted data": [
+        "加密数据"
       ],
       "Encrypted data with verified digital signature": [
         "已通过数字签名验证的加密数据"
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "选择加密和数字签名的 PGP 格式，请注意 PGP/Inline 只能用于纯文本邮件"
+      ],
+      "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
+        "系统子文件夹在 ${ MAIL_APP_NAME } 中将作为独立的文件夹显示"
+      ],
+      "The import will start with the most recent messages.": [
+        "导入将从最近的信息开始。"
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "上传公钥后方可向其发送端到端加密的邮件"
@@ -3395,6 +4630,14 @@
     "Validation": {
       "Password must contain at least ${ length } character": [
         "密码必须至少包含 ${ length } 个字符"
+      ]
+    },
+    "Video control": {
+      "Click to replay the video": [
+        "点击以播放视频"
+      ],
+      "Replay video": [
+        "回放视频"
       ]
     },
     "Warning": {
@@ -3416,6 +4659,12 @@
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "如果您忘记了密码，您将无法重新激活密钥。我们可以帮助您关闭警告横幅，但在此过程中，您将永久失去通过该密钥加密的所有数据"
       ],
+      "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
+        "只有付费 ${ VPN_APP_NAME } 账户才能与客服实时交流，请通过表单提交反馈。"
+      ],
+      "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
+        "Proton 将会合并所有同名的文件夹。为了避免这种情况，请在导入前更改名称。"
+      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "反馈内容不会经过端对端加密，请勿发送敏感信息"
       ],
@@ -3427,6 +4676,9 @@
       ],
       "The contact failed to load.": [
         "联系人加载失败"
+      ],
+      "The date and time settings on your device are out of sync. ${ learnMore }": [
+        "您设备上的日期和时间设置未同步。${ learnMore }"
       ],
       "The decryption of the encrypted content failed.": [
         "解密失败"
@@ -3442,6 +4694,12 @@
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "非常抱歉，我们目前不在线。请填写下面的表格来描述您的问题，我们会进行调查并在上线后联系您。"
+      ],
+      "You will lose any customization you made so far.": [
+        "当前的导入设置将无法恢复。"
+      ],
+      "Your free trial ends on ${ textDate }. ${ action }": [
+        "您的免费体验期将于 ${ textDate } 结束。${ action }"
       ]
     },
     "Weekly recurring event, frequency": {

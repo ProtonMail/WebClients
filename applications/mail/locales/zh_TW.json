@@ -422,9 +422,6 @@
       "Import from .csv or vCard": [
         "從 .csv 或 vCard 匯入"
       ],
-      "Import messages": [
-        "匯入郵件"
-      ],
       "Inline": [
         "內嵌"
       ],
@@ -6591,7 +6588,7 @@
     },
     "Title": {
       "${ appName } Keyboard Shortcuts": [
-        "${ appName } 鍵盤快捷鍵"
+        "${ appName } 鍵盤捷徑"
       ],
       "${ emailsCount } member": [
         "${ emailsCount } 位成員"
@@ -6613,6 +6610,9 @@
       ],
       "Addresses": [
         "位址"
+      ],
+      "Archive": [
+        "封存"
       ],
       "Are you sure you want to close?": [
         "您確定要關閉嗎？"
@@ -6821,6 +6821,9 @@
       "Mailbox layout": [
         "收件匣佈局"
       ],
+      "Mark as read": [
+        "標記為已讀"
+      ],
       "Mark as unread": [
         "標記為未讀"
       ],
@@ -6936,7 +6939,7 @@
         "重新傳送驗證碼"
       ],
       "Schedule send": [
-        "排程送出"
+        "排程傳送"
       ],
       "Select a theme": [
         "選擇佈景主題"
@@ -6948,7 +6951,7 @@
         "選擇聯絡人群組"
       ],
       "Send email": [
-        "發送電郵"
+        "傳送電郵"
       ],
       "Send feedback": [
         "傳送意見反饋"
@@ -6997,6 +7000,9 @@
       ],
       "To": [
         "收件者"
+      ],
+      "Trash": [
+        "垃圾桶"
       ],
       "Trust new key?": [
         "要信任新的金鑰嗎？"

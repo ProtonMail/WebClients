@@ -1175,6 +1175,9 @@
       "Czech Republic": [
         "捷克"
       ],
+      "Côte d'Ivoire": [
+        "象牙海岸"
+      ],
       "Denmark": [
         "丹麥"
       ],
@@ -1204,6 +1207,9 @@
       ],
       "Estonia": [
         "愛沙尼亞"
+      ],
+      "Eswatini": [
+        "史瓦帝尼"
       ],
       "Ethiopia": [
         "衣索比亞"
@@ -1447,6 +1453,9 @@
       ],
       "Mozambique": [
         "莫三比克"
+      ],
+      "Myanmar": [
+        "緬甸"
       ],
       "Namibia": [
         "納米比亞"
@@ -1968,9 +1977,6 @@
       ],
       "A group with this name already exists": [
         "以此為名的群組已存在"
-      ],
-      "A maximum of 10 notifications is allowed": [
-        "最多可以設定 10 個提醒"
       ],
       "Address primary private key not found": [
         "找不到位址主要金鑰"
@@ -3006,6 +3012,9 @@
       "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
         "PGP/Inline 僅與純文字格式相容。請注意，${ MAIL_APP_NAME } 會一律簽署加密郵件。"
       ],
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        "PGP/MIME 會自動使用目前編輯器模式來傳送郵件。請注意，${ MAIL_APP_NAME } 會一律簽署加密郵件。"
+      ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "請注意：指派到此群組中的電郵位址不會被刪除。"
       ],
@@ -3901,14 +3910,6 @@
         "於"
       ]
     },
-    "Notification type": {
-      "email": [
-        "電郵"
-      ],
-      "notification": [
-        "通知"
-      ]
-    },
     "Notification when": {
       "at time of event": [
         "屆時"
@@ -4723,7 +4724,7 @@
         "匯出聯絡人"
       ],
       "Feedback": [
-        "意見回饋"
+        "意見反饋"
       ],
       "Groups": [
         "群組"
@@ -4864,7 +4865,7 @@
         "請選擇要加入此事件到哪一個行事曆"
       ],
       "Send feedback": [
-        "傳送意見回饋"
+        "傳送意見反饋"
       ],
       "Send invitation": [
         "送出邀請"
@@ -4903,7 +4904,7 @@
         "您想匯入什麼？"
       ],
       "What's new": [
-        "最近更新"
+        "最新功能"
       ],
       "You have invited participants with equivalent emails": [
         "您已以同等電郵邀請參與者"

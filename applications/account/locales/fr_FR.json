@@ -403,9 +403,6 @@
       "Import emails": [
         "Importer des e-mails"
       ],
-      "Import from .ics": [
-        "Importer depuis un .ics"
-      ],
       "Import key": [
         "Importer une clé"
       ],
@@ -1115,6 +1112,11 @@
         "Profitez de l'offre spéciale de fin d'année sur notre abonnement premium VPN PLUS"
       ]
     },
+    "breadcrumb": {
+      "Calendars": [
+        "Calendriers"
+      ]
+    },
     "Bridge version load failed": {
       "Failed to find latest version": [
         "Impossible de trouver la dernière version"
@@ -1234,6 +1236,11 @@
       ],
       "Label edited": [
         "Label modifié"
+      ]
+    },
+    "Calendar settings sidebar": {
+      "Show ${ remainingItems } more": [
+        "Afficher ${ remainingItems } de plus"
       ]
     },
     "Calendar status": {
@@ -4060,6 +4067,9 @@
       "${ emailAddress } is invalid": [
         "${ emailAddress } n'est pas valide"
       ],
+      "${ firstRemainingCalendarName } will be set as default calendar.": [
+        "${ firstRemainingCalendarName } sera défini comme calendrier par défaut."
+      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } peut également être utilisé avec un mot de passe unique qui remplace le mot de passe de connexion et celui de la boîte de réception. Pour basculer vers le mode à mot de passe simple, saisissez le mot de passe unique que vous souhaitez utiliser et cliquez sur Enregistrer."
       ],
@@ -4299,6 +4309,9 @@
       ],
       "Are you sure you want to delete this calendar?": [
         "Voulez-vous vraiment supprimer ce calendrier ?"
+      ],
+      "Are you sure you want to delete this calendar? All events in it will be deleted.": [
+        "Êtes-vous sûr de vouloir supprimer ce calendrier ? Tous les événements qu'il contient seront également supprimés."
       ],
       "Are you sure you want to delete this domain?": [
         "Êtes-vous sûr de vouloir supprimer ce domaine ?"
@@ -5241,6 +5254,9 @@
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Ce navigateur ne prend pas en charge l'aperçu des documents PDF. Veuillez télécharger le fichier."
       ],
+      "This calendar will be removed from your account.": [
+        "Ce calendrier sera retiré de votre compte."
+      ],
       "This can take a few seconds or a few minutes depending on your device": [
         "Ceci peut prendre quelques secondes ou quelques minutes selon votre appareil."
       ],
@@ -5553,6 +5569,9 @@
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Vous n'avez pas défini de méthode de récupération. Cela signifie que si vous oubliez votre mot de passe, la récupération de votre compte ne sera pas possible. Voulez-vous continuer sans méthode de récupération ?"
       ],
+      "You have no personal calendars to export.": [
+        "Vous n'avez aucun calendrier personnel à exporter."
+      ],
       "You have no saved payment methods.": [
         "Vous n'avez actuellement aucun mode de paiement enregistré."
       ],
@@ -5577,8 +5596,8 @@
       "You need to have a personal calendar to create a link.": [
         "Pour créer un lien, vous devez disposer d'un calendrier personnel."
       ],
-      "You need to have an active personal calendar to import your events from .ics.": [
-        "Pour importer vos événements à partir d'un fichier .ics, vous devez avoir un calendrier personnel actif."
+      "You need to have an active personal calendar to import your events from ICS.": [
+        "Pour importer vos événements à partir d'un fichier ICS, vous devez avoir un calendrier personnel actif."
       ],
       "You need to have an active personal calendar to import your events.": [
         "Vous devez avoir un calendrier personnel actif pour importer vos événements."
@@ -6095,6 +6114,9 @@
     "Knowledge base link label": {
       "Here's how": [
         "Voici comment procéder"
+      ],
+      "Learn more": [
+        "En savoir plus"
       ]
     },
     "Label": {
@@ -6902,6 +6924,19 @@
     "Label for adding a new custom domain": {
       "Add a domain that you own to your ${ MAIL_APP_NAME } account.": [
         "Ajoutez un domaine que vous possédez à votre compte ${ MAIL_APP_NAME }."
+      ]
+    },
+    "Label for default event notifications": {
+      "All-day event notifications": [
+        "Notifications d'événement sur journée complète"
+      ],
+      "Notifications": [
+        "Notifications"
+      ]
+    },
+    "Label for default event settings": {
+      "Duration": [
+        "Durée"
       ]
     },
     "Label for domain modal": {
@@ -8106,11 +8141,11 @@
       ]
     },
     "Notification type": {
-      "email": [
-        "e-mail"
+      "Email": [
+        "E-mail"
       ],
-      "notification": [
-        "notification"
+      "In-app": [
+        "Dans l'application"
       ]
     },
     "Notification when": {
@@ -8666,6 +8701,17 @@
       ],
       "State of the art": [
         "À la pointe de la technologie :"
+      ]
+    },
+    "Remove calendar section title": {
+      "Delete calendar?": [
+        "Supprimer le calendrier ?"
+      ],
+      "Remove calendar": [
+        "Retirer le calendrier"
+      ],
+      "Unsubscribe?": [
+        "Se désabonner ?"
       ]
     },
     "Restore administrator panel": {
@@ -9400,6 +9446,9 @@
       "Bridge for ${ platform }": [
         "Bridge pour ${ platform }"
       ],
+      "Calendar information": [
+        "Informations du calendrier"
+      ],
       "Cancel Mail subscription": [
         "Annuler l'abonnement Mail"
       ],
@@ -9619,6 +9668,9 @@
       "Error": [
         "Erreur"
       ],
+      "Export": [
+        "Exporter"
+      ],
       "Export calendar": [
         "Exporter le calendrier"
       ],
@@ -9678,6 +9730,9 @@
       ],
       "Import": [
         "Importer"
+      ],
+      "Import and export": [
+        "Importation et exportation"
       ],
       "Import as simple event?": [
         "Importer comme simple événement ?",

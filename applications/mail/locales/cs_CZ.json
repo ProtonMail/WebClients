@@ -428,9 +428,6 @@
       "Import from .csv or vCard": [
         "Importovat z .csv nebo vCard"
       ],
-      "Import messages": [
-        "Importovat zprávy"
-      ],
       "Inline": [
         "Vložený"
       ],
@@ -2799,7 +2796,7 @@
         "Pomocí myši táhněte a pusťte pro změnu priority spojení kontaktů. Odškrtněte kontakty, které nechcete sloučit."
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
-        "Kontakty, které nechcete spojit ani zachovat, označte pro smazání. Ke smazání dojde po kliknutí na tlačítko pro sloučení"
+        "Kontakty, které nechcete sloučit ani zachovat, označte pro smazání. Ke smazání dojde po kliknutí na tlačítko pro sloučení"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3596,6 +3593,11 @@
         "Megabajtů"
       ]
     },
+    "Filter": {
+      "Show": [
+        "Zobrazit"
+      ]
+    },
     "Filter Actions": {
       "Archive": [
         "Archiv"
@@ -4334,7 +4336,7 @@
         "Chcete přesto přílohy stáhnout?"
       ],
       "Do you want to re-sign the contact details and in the process trust the keys with the following fingerprints?": [
-        "Chcete znovu podepsat detaily kontaktu a důvěřovat klíčům s následujícím otiskem prstu?"
+        "Chcete znovu podepsat detaily kontaktu a důvěřovat klíčům s následujícím otiskem?"
       ],
       "Do you want to re-sign the contact details?": [
         "Chcete znovu podepsat detaily kontaktu?"
@@ -4556,7 +4558,7 @@
         "Stačí potvrdit výběr a my se postaráme o zbytek."
       ],
       "Key fingerprint": [
-        "Otisk prstu klíče"
+        "Otisk klíče"
       ],
       "Large imports can take several days.": [
         "Import velkého množství dat může trvat několik dní."
@@ -5355,10 +5357,10 @@
         "Kliknutím na \"Důvěřovat klíči\" vytvoříte nový kontakt a přiřadí tento veřejný klíč k tomuto odesílateli. E-maily z této adresy budou automaticky kryptograficky ověřovány."
       ],
       "Do you want to trust the primary public key with the following fingerprint?": [
-        "Chcete důvěřovat primárnímu veřejnému klíči s následujícím otiskem prstu?",
-        "Chcete důvěřovat primárním veřejným klíčům s následujícími otisky prstů?",
-        "Chcete důvěřovat primárním veřejným klíčům s následujícími otisky prstů?",
-        "Chcete důvěřovat primárním veřejným klíčům s následujícími otisky prstů?"
+        "Chcete důvěřovat primárnímu veřejnému klíči s následujícím otiskem?",
+        "Chcete důvěřovat primárním veřejným klíčům s následujícími otisky?",
+        "Chcete důvěřovat primárním veřejným klíčům s následujícími otisky?",
+        "Chcete důvěřovat primárním veřejným klíčům s následujícími otisky?"
       ],
       "You have enabled Address Verification with Trusted Keys for this email address,\nbut no active encryption key has been trusted.\nYou must trust a key valid for sending in order to send a message to this email address.": [
         "Povolili jste Ověření Adresy pomocí Důvěryhodných klíčů pro tuto e-mailovou adresu, ale žádný aktivní šifrovací klíč nebyl označen jako důvěryhodný.\nMusíte nejprve důvěřovat klíči platnému pro odesílání, abyste odeslali zprávu na tuto e-mailovou adresu.",
@@ -6582,6 +6584,11 @@
         "Sloučit s kalendářem"
       ]
     },
+    "Pagination": {
+      "${ page } of ${ total }": [
+        "${ page } z ${ total }"
+      ]
+    },
     "Paid user checklist item": {
       "Get mobile app": [
         "Získat mobilní aplikaci"
@@ -6965,6 +6972,11 @@
         "Ověření důvěrných klíčů odesílatele selhalo"
       ]
     },
+    "Sort": {
+      "Sort": [
+        "Seřadit"
+      ]
+    },
     "Sort option": {
       "Largest first": [
         "Od největších"
@@ -7340,7 +7352,7 @@
         "Vyprší"
       ],
       "Fingerprint": [
-        "Otisk prstu"
+        "Otisk"
       ],
       "Name": [
         "Název"
@@ -7467,6 +7479,9 @@
       ],
       "Addresses": [
         "Adresy"
+      ],
+      "Archive": [
+        "Archiv"
       ],
       "Are you sure you want to close?": [
         "Opravdu chcete zavřít editor filtrů?"
@@ -7690,6 +7705,9 @@
       "Mailbox layout": [
         "Rozvržení mailové schránky"
       ],
+      "Mark as read": [
+        "Označit jako přečtené"
+      ],
       "Mark as unread": [
         "Označit jako nepřečtené"
       ],
@@ -7869,6 +7887,9 @@
       ],
       "To": [
         "Komu"
+      ],
+      "Trash": [
+        "Koš"
       ],
       "Trust new key?": [
         "Důvěřovat novému klíči?",

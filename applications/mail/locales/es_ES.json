@@ -421,9 +421,6 @@
       "Import from .csv or vCard": [
         "Importar desde .csv o vCard"
       ],
-      "Import messages": [
-        "Importar mensajes"
-      ],
       "Inline": [
         "Incrustado"
       ],
@@ -1540,6 +1537,65 @@
       ],
       "Expand": [
         "Expandir"
+      ]
+    },
+    "color": {
+      "apple": [
+        "manzana"
+      ],
+      "caramel": [
+        "caramelo"
+      ],
+      "carrot": [
+        "zanahoria"
+      ],
+      "cerise": [
+        "cereza"
+      ],
+      "copper": [
+        "cobre"
+      ],
+      "dandelion": [
+        "diente de león"
+      ],
+      "forest": [
+        "bosque"
+      ],
+      "kiwi": [
+        "kiwi"
+      ],
+      "lemon yellow": [
+        "amarillo limón"
+      ],
+      "maize": [
+        "maíz"
+      ],
+      "ocean": [
+        "océano"
+      ],
+      "pacific": [
+        "pacífico"
+      ],
+      "pink": [
+        "rosa"
+      ],
+      "pistachio": [
+        "pistacho"
+      ],
+      "plum": [
+        "ciruela"
+      ],
+      "purple": [
+        "morado"
+      ],
+      "sahara": [
+        "sahara"
+      ],
+      "strawberry": [
+        "fresa"
+      ],
+      "white": [
+        "blanco"
       ]
     },
     "Composer email icon": {
@@ -3294,6 +3350,11 @@
         "(sin título)"
       ]
     },
+    "Feedback Modal Title": {
+      "Your feedback": [
+        "Tus comentarios"
+      ]
+    },
     "file size format": {
       "byte": [
         "byte",
@@ -3325,6 +3386,11 @@
       "Megabyte": [
         "Megabyte",
         "Megabytes"
+      ]
+    },
+    "Filter": {
+      "Show": [
+        "Mostrar"
       ]
     },
     "Filter Actions": {
@@ -4872,7 +4938,7 @@
         "Tu mensaje se eliminará de la bandeja de entrada del destinatario y de tu carpeta de enviados mañana a las ${ formattedTime }"
       ],
       "Your message will expire in ${ numberOfDays } day.": [
-        "",
+        "Tu mensaje expirará en ${ numberOfDays } día.",
         "Tu mensaje expirará en ${ numberOfDays } días."
       ],
       "Your message will expire today.": [
@@ -5196,6 +5262,12 @@
       "Automatically save contacts": [
         "Guardar contactos automáticamente"
       ],
+      "Awful": [
+        "Terrible"
+      ],
+      "Bad": [
+        "Malo"
+      ],
       "BCC": [
         "CCO"
       ],
@@ -5298,11 +5370,17 @@
       "From: ${ importedEmail }": [
         "De: ${ importedEmail }"
       ],
+      "Good": [
+        "Bueno"
+      ],
       "Group": [
         "Grupo"
       ],
       "Hide password": [
         "Ocultar contraseña"
+      ],
+      "How would you describe your experience with the new Proton?": [
+        "¿Cómo describirías tu experiencia con el nuevo Proton?"
       ],
       "I understand the risk": [
         "Entiendo el riesgo"
@@ -5375,6 +5453,9 @@
       ],
       "Notification": [
         "Notificación"
+      ],
+      "OK": [
+        "Está bien"
       ],
       "Operating system": [
         "Sistema operativo"
@@ -5531,6 +5612,9 @@
       ],
       "without attachments": [
         "sin archivos adjuntos"
+      ],
+      "Wonderful": [
+        "Maravilloso"
       ]
     },
     "Label for contact group color": {
@@ -6024,6 +6108,11 @@
         "Presentamos el aspecto renovado de Proton.${ br }Muchos servicios, una misión. Bienvenido a un Internet en el que la privacidad es la norma."
       ]
     },
+    "new_plans: label": {
+      "Tell us about your experience. (Optional)": [
+        "Cuéntanos tu experiencia. (Opcional)"
+      ]
+    },
     "new_plans: placeholder": {
       "Feedback": [
         "Comentarios"
@@ -6128,6 +6217,11 @@
       ],
       "Merge with calendar": [
         "Combinar con el calendario"
+      ]
+    },
+    "Pagination": {
+      "${ page } of ${ total }": [
+        "${ page } de ${ total }"
       ]
     },
     "Paid user checklist item": {
@@ -6492,6 +6586,11 @@
       ],
       "Sender's trusted keys verification failed": [
         "La verificación de las claves de confianza del remitente ha fallado"
+      ]
+    },
+    "Sort": {
+      "Sort": [
+        "Ordenar"
       ]
     },
     "Sort option": {
@@ -6929,6 +7028,9 @@
       "Addresses": [
         "Direcciones"
       ],
+      "Archive": [
+        "Archivar"
+      ],
       "Are you sure you want to close?": [
         "¿Estás seguro de que quieres cerrarlo?"
       ],
@@ -7141,6 +7243,9 @@
       "Mailbox layout": [
         "Diseño del buzón"
       ],
+      "Mark as read": [
+        "Marcar como leído"
+      ],
       "Mark as unread": [
         "Marcar como no leído"
       ],
@@ -7317,6 +7422,9 @@
       ],
       "To": [
         "Para"
+      ],
+      "Trash": [
+        "Papelera"
       ],
       "Trust new key?": [
         "¿Confiar en la nueva clave?",

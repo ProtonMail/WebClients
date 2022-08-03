@@ -424,9 +424,6 @@
       "Import from .csv or vCard": [
         "Importeer vanuit .csv of vCard"
       ],
-      "Import messages": [
-        "Berichten importeren"
-      ],
       "Inline": [
         "Inline"
       ],
@@ -1582,6 +1579,9 @@
       ]
     },
     "color": {
+      "apple": [
+        "appeltjesgroen"
+      ],
       "azureish white": [
         "azuurwit"
       ],
@@ -2753,6 +2753,9 @@
       ]
     },
     "Description": {
+      "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
+        "Contacten decoderen... Dit kan enkele minuten duren. Wanneer het proces is voltooid, kunt u het bestand downloaden met al uw geëxporteerde contactpersonen."
+      ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Contactpersonen verwijderen... Dit kan enkele minuten duren. Wanneer het proces is voltooid, kunt u dit venster sluiten."
       ],
@@ -3217,6 +3220,9 @@
       "This message has already been sent. A new draft has been saved.": [
         "Dit bericht is al verzonden. Er is een nieuw concept opgeslagen."
       ],
+      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
+        "Dit bericht kan koppelingen bevatten die niet op de juiste wijze geopend kunnen worden door uw huidige browser."
+      ],
       "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
         "Te veel actieve filters. Upgrade naar een betaald abonnement om meer filters te activeren."
       ],
@@ -3533,6 +3539,11 @@
       "Megabyte": [
         "Megabyt",
         "Megabytes"
+      ]
+    },
+    "Filter": {
+      "Show": [
+        "Tonen"
       ]
     },
     "Filter Actions": {
@@ -4190,6 +4201,9 @@
       "Do you want to re-sign the contact details?": [
         "Wilt u de contactgegevens opnieuw ondertekenen?"
       ],
+      "Don't forget to share the password with the recipient": [
+        "Vergeet het wachtwoord niet te delen met de ontvanger"
+      ],
       "Download our mobile application from your favorite app store to communicate securely on-the-go.": [
         "Download onze mobiele applicatie van uw favoriete app store om veilig onderweg te communiceren."
       ],
@@ -4324,6 +4338,9 @@
       "Hour": [
         "Uur",
         "Uren"
+      ],
+      "I'm sending this message to a non-Proton Mail user.": [
+        "Ik verzend dit bericht naar een niet-Proton Mail-gebruiker."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Als u problemen ondervindt met het aanmaken van uw account, vraag dan een uitnodiging aan. Wij reageren op uw verzoek binnen een werkdag."
@@ -6373,6 +6390,11 @@
         "Samenvoegen met agenda"
       ]
     },
+    "Pagination": {
+      "${ page } of ${ total }": [
+        "${ page } van ${ total }"
+      ]
+    },
     "Paid user checklist item": {
       "Get mobile app": [
         "Download de mobiele app"
@@ -6616,6 +6638,9 @@
       ],
       "Cannot send to organizer address: ${ errorMessage }": [
         "Kan niet verzenden naar organisatieadres: ${ errorMessage }"
+      ],
+      "Re-encrypting invitation failed. Please try again.": [
+        "Uitnodiging voor herversleuteling mislukt. Probeer het opnieuw."
       ]
     },
     "Search - no results": {
@@ -6735,6 +6760,11 @@
       ],
       "Sender's trusted keys verification failed": [
         "Verificatie van de vertrouwde sleutels van de afzender is mislukt"
+      ]
+    },
+    "Sort": {
+      "Sort": [
+        "Sorteer"
       ]
     },
     "Sort option": {
@@ -7178,6 +7208,9 @@
       "Addresses": [
         "Adressen"
       ],
+      "Archive": [
+        "Archief"
+      ],
       "Are you sure you want to close?": [
         "Weet u zeker dat u wil afsluiten?"
       ],
@@ -7390,6 +7423,9 @@
       "Mailbox layout": [
         "Mailbox lay-out"
       ],
+      "Mark as read": [
+        "Markeer als gelezen"
+      ],
       "Mark as unread": [
         "Markeren als ongelezen"
       ],
@@ -7569,6 +7605,9 @@
       ],
       "To": [
         "Aan"
+      ],
+      "Trash": [
+        "Prullenbak"
       ],
       "Trust new key?": [
         "Nieuwe sleutel vertrouwen?",
