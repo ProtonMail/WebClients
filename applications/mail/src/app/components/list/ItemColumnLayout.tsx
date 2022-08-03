@@ -206,7 +206,10 @@ const ItemColumnLayout = ({
             {!!resultJSX && (
                 <>
                     <div
-                        className="flex flex-nowrap flex-align-items-center item-secondline max-w80 no-scroll"
+                        className={classnames([
+                            'flex flex-nowrap flex-align-items-center item-secondline item-es-result max-w80 no-scroll',
+                            isCompactView && 'mb0-75',
+                        ])}
                         aria-hidden="true"
                     >
                         <div className="item-subject flex-item-fluid flex flex-nowrap flex-align-items-center">
