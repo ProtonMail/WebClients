@@ -1,8 +1,10 @@
 import { ReactNode } from 'react';
-import { SIDE_APP_ACTION, SIDE_APP_EVENTS } from '@proton/shared/lib/sideApp/models';
-import { getIsAuthorizedApp, postMessageFromIframe } from '@proton/shared/lib/sideApp/helpers';
+
+import { updateServerTime } from '@proton/crypto';
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { APP_NAMES, DEFAULT_TIMEOUT } from '@proton/shared/lib/constants';
+import { getIsAuthorizedApp, postMessageFromIframe } from '@proton/shared/lib/sideApp/helpers';
+import { SIDE_APP_ACTION, SIDE_APP_EVENTS } from '@proton/shared/lib/sideApp/models';
 import noop from '@proton/utils/noop';
 
 import { generateUID } from '../../helpers';
@@ -24,11 +26,15 @@ const SideAppApiProvider = ({ children }: { children: ReactNode }) => {
 
         const handler = (event: MessageEvent<SIDE_APP_ACTION>) => {
             if (event.data.type === SIDE_APP_EVENTS.SIDE_APP_API_RESPONSE && event.data.payload.id === id) {
-                const { data, success } = event.data.payload;
+                const { serverTime, data, success } = event.data.payload;
+
                 window.removeEventListener('message', handler);
                 if (timeout) {
                     clearTimeout(timeout);
                 }
+
+                updateServerTime(serverTime);
+
                 if (success) {
                     resolve(data);
                 } else {
