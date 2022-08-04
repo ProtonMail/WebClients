@@ -89,6 +89,9 @@ export const parameters = {
     actions: { argTypesRegex: '^on[A-Z].*' },
     controls: { expanded: true },
     docs: { theme: theme },
+    previewTabs: {
+        canvas: { hidden: true },
+    },
     options: {
         storySort: (a, b) => {
             const aName = a[0];

@@ -1,4 +1,0 @@
-/* Hacky way to hide the Canvas tab */
-[role='main'] .os-content [href*='/?path=/story'] {
-    display: none;
-}
