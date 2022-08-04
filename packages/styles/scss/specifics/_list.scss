@@ -169,7 +169,7 @@ $item-container-row-padding-block: em(5) !default; // design wants 48px
 	// Encrypted search shows a preview of the body in the item,
 	// which therefore has to be bigger
 	&.es-three-rows {
-		height: rem(76);
+		height: auto;
 	}
 }
 
@@ -343,6 +343,17 @@ $item-container-row-padding-block: em(5) !default; // design wants 48px
 	}
 	.item-firstline-infos {
 		transform: none;
+	}
+}
+
+// fixes for ES results in compact mode list-compact class is not applied in ES context
+.is-compact {
+	.es-row-results,
+	.es-three-rows {
+		padding-inline-start: em(6);
+	}
+	.es-three-rows {
+		margin-inline-start: 0;
 	}
 }
 
