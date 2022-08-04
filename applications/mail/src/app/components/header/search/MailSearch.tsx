@@ -12,10 +12,8 @@ import {
     useMailSettings,
     usePopperAnchor,
     useToggle,
-    useUser,
 } from '@proton/components';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
-import { isPaid } from '@proton/shared/lib/user/helpers';
 
 import { ADVANCED_SEARCH_OVERLAY_CLOSE_EVENT } from '../../../constants';
 import { useEncryptedSearchContext } from '../../../containers/EncryptedSearchProvider';
@@ -39,7 +37,6 @@ const MailSearch = ({ breakpoints }: Props) => {
     const [uid] = useState(generateUID('advanced-search-overlay'));
     const { anchorRef, isOpen, open, close } = usePopperAnchor<HTMLInputElement>();
 
-    const [user] = useUser();
     const [, loadingMailSettings] = useMailSettings();
     const [, loadingLabels] = useLabels();
     const [, loadingFolders] = useFolders();
@@ -49,7 +46,7 @@ const MailSearch = ({ breakpoints }: Props) => {
     const { dropdownOpened, dbExists } = getESDBStatus();
     const esState = useEncryptedSearchToggleState(isOpen);
 
-    const showEncryptedSearch = !isMobile() && !!isPaid(user);
+    const showEncryptedSearch = !isMobile();
 
     // Show more from inside AdvancedSearch to persist the state when the overlay is closed
     const { state: showMore, toggle: toggleShowMore } = useToggle(false);
