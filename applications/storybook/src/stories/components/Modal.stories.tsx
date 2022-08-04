@@ -1,25 +1,24 @@
 import { useState } from 'react';
 
 import {
-    ModalTwo,
+    AlertModal,
+    BasicModal,
+    Button,
+    Form,
+    Icon,
+    InputFieldTwo,
+    ModalProps,
     ModalSize,
-    ModalTwoHeader,
+    ModalTwo,
     ModalTwoContent,
     ModalTwoFooter,
-    Button,
-    AlertModal,
-    Icon,
+    ModalTwoHeader,
     RadioGroup,
     Tooltip,
-    InputFieldTwo,
     useModalState,
-    ModalProps,
-    BasicModal,
-    Form,
 } from '@proton/components';
 
 import { getTitle } from '../../helpers/title';
-
 import mdx from './Modal.mdx';
 
 export default {
@@ -31,6 +30,37 @@ export default {
             page: mdx,
         },
     },
+};
+
+export const Example = () => {
+    const [open, setOpen] = useState(false);
+
+    return (
+        <div className="text-center">
+            <Button
+                className="mr0-5"
+                onClick={() => {
+                    setOpen(true);
+                }}
+            >
+                Open modal
+            </Button>
+            <ModalTwo open={open} onClose={() => setOpen(false)}>
+                <ModalTwoHeader title="Example Modal" />
+                <ModalTwoContent>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium unde, blanditiis rem
+                        accusamus obcaecati enim amet, voluptatibus nemo facilis illum aut itaque in? Deleniti iure amet
+                        qui vero, blanditiis quos?
+                    </p>
+                </ModalTwoContent>
+                <ModalTwoFooter>
+                    <Button>Secondary action</Button>
+                    <Button color="norm">Primary action</Button>
+                </ModalTwoFooter>
+            </ModalTwo>
+        </div>
+    );
 };
 
 export const Primary = () => {

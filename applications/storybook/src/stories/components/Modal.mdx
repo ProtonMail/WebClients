@@ -1,22 +1,27 @@
 import { Canvas, Story, ArgsTable, Primary, PRIMARY_STORY } from '@storybook/addon-docs';
+import { Alert } from '@proton/components'
 
 # Modal
 
 Modals are made of multiple composite components, namely:
 
-- `Modal`
-- `ModalHeader`
-- `ModalContent`
-- `ModalFooter`
+- `ModalTwo`
+- `ModalTwoHeader`
+- `ModalTwoContent`
+- `ModalTwoFooter`
+
+<Alert>
+    Please note that the old <code>Modal</code> component is deprecated and should be replaced with <code>ModalTwo</code>. This document is about the new <code>ModalTwo</code> component.
+</Alert>
 
 ## How to use
 
 ```javascript
-import { ModalTwo, ModalTwoHeader, ModalTwoTitle, ModalTwoContent, ModalTwoFooter } from '@proton/components';
+import { ModalTwo, ModalTwoHeader, ModalTwoContent, ModalTwoFooter } from '@proton/components';
 ```
-```html
-<Modal> … </Modal>
-```
+<Canvas withSource="open">
+    <Story id="components-modal--example" />
+</Canvas>
 
 ## Variants
 
@@ -102,6 +107,6 @@ It also uses `useModalState` internally.
     <Story id="components-modal--basic" />
 </Canvas>
 
-The props for `ModalContent` & `ModalFooter` aren't listed here because they don't possess any proprietary props, only the native ones of their respective underlying root dom-node.
+The props for `ModalTwoContent` & `ModalTwoFooter` aren't listed here because they don't possess any proprietary props, only the native ones of their respective underlying root dom-node.
 
 <ArgsTable story={PRIMARY_STORY} />

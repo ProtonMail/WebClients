@@ -1,7 +1,8 @@
 import { ReactNode } from 'react';
-import { useIndicator } from './useIndicator';
-import { Tab } from './index.d';
+
 import { classnames } from '../../helpers';
+import { Tab } from './index.d';
+import { useIndicator } from './useIndicator';
 
 const toKey = (index: number, prefix = '') => `${prefix}${index}`;
 
@@ -11,12 +12,18 @@ interface Props {
     children?: Tab[];
     value: number;
     onChange: (index: number) => void;
+    /**
+     * Will make tabs stick to the top of the container when overflowing
+     */
     stickyTabs?: boolean;
+    /**
+     * Tabs will take the maximum width and divide equally
+     */
     fullWidth?: boolean;
     className?: string;
     containerClassName?: string;
     navContainerClassName?: string;
-    contentClassNane?: string;
+    contentClassName?: string;
 }
 
 export const Tabs = ({
@@ -25,12 +32,12 @@ export const Tabs = ({
     tabs,
     gap,
     children,
-    stickyTabs,
-    fullWidth,
+    stickyTabs = false,
+    fullWidth = false,
     className,
     containerClassName,
     navContainerClassName,
-    contentClassNane,
+    contentClassName,
 }: Props) => {
     const key = toKey(value, 'key_');
     const label = toKey(value, 'label_');
@@ -45,14 +52,8 @@ export const Tabs = ({
 
     return (
         <div className={classnames(['tabs', className])}>
-            <div className={classnames([navContainerClassName])}>
-                <nav
-                    className={classnames([
-                        'tabs-container border-bottom border-weak',
-                        stickyTabs && 'sticky-top bg-norm',
-                        containerClassName,
-                    ])}
-                >
+            <div className={classnames([navContainerClassName, stickyTabs && 'sticky-top bg-norm'])}>
+                <nav className={classnames(['tabs-container border-bottom border-weak', containerClassName])}>
                     <ul
                         className={classnames([
                             'tabs-list unstyled flex relative m0 p0',
@@ -94,7 +95,7 @@ export const Tabs = ({
             {gap}
             <div
                 id={key}
-                className={classnames(['tabs-tabcontent pt1', contentClassNane])}
+                className={classnames(['tabs-tabcontent pt1', contentClassName])}
                 role="tabpanel"
                 aria-labelledby={label}
             >

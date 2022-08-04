@@ -1,20 +1,23 @@
 import { forwardRef, useState } from 'react';
+
 import { c } from 'ttag';
-import { Recipient } from '@proton/shared/lib/interfaces';
+
 import { Dropdown, DropdownButton, Icon, Tabs, usePopperAnchor } from '@proton/components';
-import { generateUID } from '@proton/components/helpers';
 import TopNavbarListItemButton, {
     TopNavbarListItemButtonProps,
 } from '@proton/components/components/topnavbar/TopNavbarListItemButton';
+import { generateUID } from '@proton/components/helpers';
+import { Recipient } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
+
+import { useModalTwo } from '../../../components/modalTwo/useModalTwo';
+import { useContactMergeModals } from '../hooks/useContactMergeModals';
+import { useContactModals } from '../hooks/useContactModals';
+import ContactImportModal from '../import/ContactImportModal';
 import ContactsWidgetContainer from './ContactsWidgetContainer';
 import ContactsWidgetGroupsContainer from './ContactsWidgetGroupsContainer';
 import ContactsWidgetSettingsContainer from './ContactsWidgetSettingsContainer';
 import { CONTACT_WIDGET_TABS, CustomAction } from './types';
-import { useContactModals } from '../hooks/useContactModals';
-import { useModalTwo } from '../../../components/modalTwo/useModalTwo';
-import ContactImportModal from '../import/ContactImportModal';
-import { useContactMergeModals } from '../hooks/useContactMergeModals';
 
 import './ContactsWidget.scss';
 
@@ -118,7 +121,7 @@ const TopNavbarListItemContactsDropdown = ({ className, onCompose, onMailTo = no
                 <Tabs
                     className="flex flex-column flex-item-fluid flex-nowrap"
                     containerClassName="contacts-widget-tabs flex-item-noshrink"
-                    contentClassNane="flex-item-fluid"
+                    contentClassName="flex-item-fluid"
                     tabs={[
                         {
                             title: c('Title').t`Contacts`,

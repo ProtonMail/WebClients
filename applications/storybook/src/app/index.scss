@@ -108,6 +108,7 @@ table {
 .sbdocs-a {
 	&#{&} {
 		@extend .link;
+		color: var(--link-norm) !important;
 	}
 }
 
@@ -185,4 +186,16 @@ table {
 // props content when multiple tabs are shown
 #panel-tab-content {
 	background: none !important;
+}
+
+.docblock-colorpalette div {
+	color: var(--text-norm) !important;
+}
+
+.docblock-colorpalette [title^='var(--'] {
+	padding: 0 0.1rem;
+	font-size: 0.8em;
+	user-select: all;
+	user-select: all;
+	user-select: all;
 }
