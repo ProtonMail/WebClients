@@ -6,7 +6,7 @@ import { c } from 'ttag';
 import {
     FeatureCode,
     useApi,
-    useFeature,
+    useFeatures,
     useGetMessageCounts,
     useGetUserKeys,
     useNotifications,
@@ -70,7 +70,10 @@ const EncryptedSearchProvider = ({ children }: Props) => {
     const api = useApi();
     const [user] = useUser();
     const [welcomeFlags] = useWelcomeFlags();
-    const { update: updateSpotlightES } = useFeature(FeatureCode.SpotlightEncryptedSearch);
+    const [{ update: updateSpotlightES }, { feature: partialES }] = useFeatures([
+        FeatureCode.SpotlightEncryptedSearch,
+        FeatureCode.PartialEncryptedSearch,
+    ]);
     const { createNotification } = useNotifications();
     const { isSearch, page } = parseSearchParams(history.location);
 
@@ -143,6 +146,11 @@ const EncryptedSearchProvider = ({ children }: Props) => {
      * built at page load)
      */
     const cacheOrIndexMetadata = async () => {
+        // Kill switch to control the release of partial ES
+        if (!isPaid(user) && !!partialES && !partialES.Value) {
+            return esLibraryFunctions.esDelete();
+        }
+
         const { dbExists, contentIndexingDone } = getESDBStatus();
 
         // If ES has never been activated, initialise it and create a metadata index
@@ -219,6 +227,11 @@ const EncryptedSearchProvider = ({ children }: Props) => {
      * Initialize ES
      */
     const initializeESMail = async () => {
+        // Kill switch to control the release of partial ES
+        if ((await checkVersionedESDB(user.ID)) && !isPaid(user) && !!partialES && !partialES.Value) {
+            return esLibraryFunctions.esDelete();
+        }
+
         // Migrate old IDBs
         const success = await migrate(
             user.ID,
