@@ -16,6 +16,7 @@ import { serverTime } from '@proton/crypto';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { getAppFromHostname } from '@proton/shared/lib/apps/slugHelper';
 import { getLocalIDFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
+import { ApiError, serializeApiErrorData } from '@proton/shared/lib/fetch/ApiError';
 import {
     addParentAppToUrl,
     getIsAuthorizedApp,
@@ -259,13 +260,16 @@ export const SideAppUrlProvider = ({ children }: { children: ReactNode }) => {
                                     removeAbortController(id);
                                 }
 
+                                const isApiError = err instanceof ApiError;
+
                                 postMessageToIframe(
                                     {
                                         type: SIDE_APP_EVENTS.SIDE_APP_API_RESPONSE,
                                         payload: {
                                             id,
                                             success: false,
-                                            data: err,
+                                            isApiError,
+                                            data: isApiError ? serializeApiErrorData(err) : err,
                                             serverTime: serverTime(),
                                         },
                                     },
