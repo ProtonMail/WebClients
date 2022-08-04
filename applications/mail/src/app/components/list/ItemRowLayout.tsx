@@ -120,7 +120,7 @@ const ItemRowLayout = ({
                             />
                         )}
                         {showIcon && (
-                            <span className="mr0-25 inline-flex flex-item-noshrink">
+                            <span className="mr0-25 inline-flex flex-item-noshrink align-bottom">
                                 <ItemLocation element={element} labelID={labelID} />
                             </span>
                         )}

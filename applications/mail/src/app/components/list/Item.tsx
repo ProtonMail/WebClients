@@ -142,6 +142,7 @@ const Item = ({
                     loading && 'item-is-loading',
                     hasFocus && 'item-is-focused',
                     useContentSearch && columnLayout && 'es-three-rows',
+                    useContentSearch && !columnLayout && 'es-row-results',
                 ])}
                 style={{ '--index': index }}
                 ref={elementRef}
