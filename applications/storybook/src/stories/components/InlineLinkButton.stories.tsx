@@ -14,6 +14,10 @@ export default {
 };
 
 export const Basic = () => (
+    <InlineLinkButton onClick={() => alert('See? This is a real button.')}>text content</InlineLinkButton>
+);
+
+export const Example = () => (
     <p>
         Mr. Levet this day shewed me Dr. Johnsonʼs library, which was contained in two garrets{' '}
         <InlineLinkButton onClick={() => alert('See? This is a real button.')}>over his Chambers</InlineLinkButton>,
