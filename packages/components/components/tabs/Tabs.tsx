@@ -1,8 +1,11 @@
-import { ReactNode } from 'react';
+import { ReactNode, useEffect, useRef, useState } from 'react';
 
+import { equivalentReducer } from '@proton/components/hooks/useElementRect';
+import debounce from '@proton/utils/debounce';
+
+import useRightToLeft from '../../containers/rightToLeft/useRightToLeft';
 import { classnames } from '../../helpers';
 import { Tab } from './index.d';
-import { useIndicator } from './useIndicator';
 
 const toKey = (index: number, prefix = '') => `${prefix}${index}`;
 
@@ -43,8 +46,41 @@ export const Tabs = ({
     const label = toKey(value, 'label_');
     const tabList = tabs || children || [];
     const content = tabList[value]?.content;
+    const containerRef = useRef<HTMLUListElement>(null);
+    const [selectedTabEl, setSelectedTabEl] = useState<HTMLLIElement | null>(null);
+    const [selectedTabRect, setSelectedTabRect] = useState<DOMRect | undefined>(undefined);
+    const [containerTabRect, setContainerTabRect] = useState<DOMRect | undefined>(undefined);
+    const [isRTL] = useRightToLeft();
 
-    const { ref: containerRef, scale, translate } = useIndicator(tabList, value);
+    const scale = (selectedTabRect?.width || 0) / (containerTabRect?.width || 1);
+    const offset = (isRTL ? -1 : 1) * Math.abs((selectedTabRect?.x || 0) - (containerTabRect?.x || 0));
+    const translate = `${offset}px`;
+
+    useEffect(() => {
+        const containerTabEl = containerRef.current;
+        if (!containerTabEl || !selectedTabEl) {
+            return;
+        }
+        const handleResize = () => {
+            const selectedTabRect = selectedTabEl.getBoundingClientRect();
+            const containerTabRect = containerTabEl.getBoundingClientRect();
+            setSelectedTabRect((old) => equivalentReducer(old, selectedTabRect));
+            setContainerTabRect((old) => equivalentReducer(old, containerTabRect));
+        };
+        const debouncedHandleResize = debounce(handleResize, 100);
+        const resizeObserver = new ResizeObserver(debouncedHandleResize);
+        resizeObserver.observe(containerTabEl, { box: 'border-box' });
+        resizeObserver.observe(selectedTabEl, { box: 'border-box' });
+        // Resize event listener is meant to update for if the left coordinate changes (without size changing)
+        window.addEventListener('resize', debouncedHandleResize);
+        handleResize();
+        return () => {
+            debouncedHandleResize.abort();
+            window.removeEventListener('resize', debouncedHandleResize);
+            resizeObserver.disconnect();
+        };
+        // tabs.title.join is meant to cover if the tabs would dynamically change
+    }, [containerRef.current, selectedTabEl, tabs?.map((tab) => tab.title).join('')]);
 
     if (tabs?.length === 1) {
         return <>{content}</>;
@@ -66,8 +102,14 @@ export const Tabs = ({
                         {tabList.map(({ title }, index) => {
                             const key = toKey(index, 'key_');
                             const label = toKey(index, 'label_');
+                            const selected = value === index;
                             return (
-                                <li key={key} className="tabs-list-item" role="presentation">
+                                <li
+                                    key={key}
+                                    className="tabs-list-item"
+                                    role="presentation"
+                                    ref={selected ? setSelectedTabEl : undefined}
+                                >
                                     <button
                                         onClick={(event) => {
                                             event.stopPropagation();
@@ -80,7 +122,7 @@ export const Tabs = ({
                                         role="tab"
                                         aria-controls={key}
                                         tabIndex={0}
-                                        aria-selected={value === index}
+                                        aria-selected={selected}
                                         data-testid={`tab-header-${title}-button`}
                                     >
                                         {title}
