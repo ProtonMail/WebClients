@@ -4,8 +4,8 @@ import { ShareMapLink } from '@proton/shared/lib/interfaces/drive/link';
 import retryOnError from '../../../utils/retryOnError';
 import { PAGE_SIZE, SESSION_EXPIRED_ERROR_CODE } from '../constants';
 import { Session } from '../types';
-import { FetchShareMap } from './useFetchShareMap';
 import { getDefaultSessionValue } from '../utils';
+import { FetchShareMap } from './useFetchShareMap';
 
 export const fetchItemsMetadataPage = async (
     shareId: string,
@@ -21,7 +21,7 @@ export const fetchItemsMetadataPage = async (
         session: Session;
     }>({
         fn: async (sessionName: Session['sessionName'], page?: number) => {
-            const lastIndex = page === undefined ? undefined : page * PAGE_SIZE + 1;
+            const lastIndex = page === undefined ? undefined : page * PAGE_SIZE - 1;
             const { Links, SessionName, More, Total } = await fetchShareMap({
                 shareId,
                 lastIndex,
