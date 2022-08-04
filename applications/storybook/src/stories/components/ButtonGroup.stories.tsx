@@ -1,16 +1,17 @@
 import { useState } from 'react';
+
 import {
     Button,
+    ButtonGroup,
+    RadioGroup,
     Table,
+    TableBody,
+    TableCell,
     TableHeader,
     TableRow,
-    TableCell,
-    TableBody,
-    RadioGroup,
-    ButtonGroup,
 } from '@proton/components';
-import { getTitle } from '../../helpers/title';
 
+import { getTitle } from '../../helpers/title';
 import mdx from './ButtonGroup.mdx';
 
 export default {
@@ -23,13 +24,36 @@ export default {
     },
 };
 
-export const BasicGroup = ({ ...args }) => (
-    <ButtonGroup {...args}>
-        <Button>regular item</Button>
-        <Button>regular item</Button>
-        <Button className="is-selected">selected item</Button>
-    </ButtonGroup>
-);
+export const BasicGroup = ({ ...args }) => {
+    const [selectedButton, setSelectedButton] = useState(2);
+
+    const buttons = [
+        {
+            text: 'Bulbasaur',
+        },
+        {
+            text: 'Another',
+        },
+        {
+            text: 'A third button',
+        },
+        {
+            text: 'How about one more',
+        },
+    ];
+
+    return (
+        <ButtonGroup {...args}>
+            {buttons.map(({ text }, i) => {
+                return (
+                    <Button key={i} selected={selectedButton === i} onClick={() => setSelectedButton(i)}>
+                        {text}
+                    </Button>
+                );
+            })}
+        </ButtonGroup>
+    );
+};
 
 BasicGroup.args = {};
 
@@ -47,12 +71,29 @@ export const Sandbox = () => {
     const [selectedShape, setSelectedShape] = useState<Required<ButtonGroupProps>['shape']>('solid');
     const [selectedColor, setSelectedColor] = useState<Required<ButtonGroupProps>['color']>('weak');
     const [selectedSize, setSelectedSize] = useState<Required<ButtonGroupProps>['size']>('medium');
+    const [selectedButton, setSelectedButton] = useState(0);
+
+    const buttons = [
+        {
+            text: selectedShape,
+        },
+        {
+            text: selectedColor,
+        },
+        {
+            text: selectedSize,
+        },
+    ];
 
     const buttonGroup = (
         <ButtonGroup shape={selectedShape} color={selectedColor} size={selectedSize}>
-            <Button>{selectedShape}</Button>
-            <Button>{selectedColor}</Button>
-            <Button>{selectedSize}</Button>
+            {buttons.map(({ text }, i) => {
+                return (
+                    <Button key={i} selected={selectedButton === i} onClick={() => setSelectedButton(i)}>
+                        {text}
+                    </Button>
+                );
+            })}
         </ButtonGroup>
     );
 
@@ -93,6 +134,17 @@ export const Sandbox = () => {
 };
 
 export const Variants = () => {
+    const [selectedButton, setSelectedButton] = useState(0);
+
+    const buttons = [
+        {
+            text: 'Lorem',
+        },
+        {
+            text: 'Ipsum',
+        },
+    ];
+
     return (
         <Table className="color-norm">
             <TableHeader>
@@ -114,8 +166,17 @@ export const Variants = () => {
                         {colors.map((color) => (
                             <TableCell key={color}>
                                 <ButtonGroup shape={shape} color={color}>
-                                    <Button>Lorem</Button>
-                                    <Button>ipsum</Button>
+                                    {buttons.map(({ text }, i) => {
+                                        return (
+                                            <Button
+                                                key={i}
+                                                selected={selectedButton === i}
+                                                onClick={() => setSelectedButton(i)}
+                                            >
+                                                {text}
+                                            </Button>
+                                        );
+                                    })}
                                 </ButtonGroup>
                             </TableCell>
                         ))}
