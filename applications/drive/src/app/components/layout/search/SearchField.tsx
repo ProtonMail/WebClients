@@ -23,7 +23,8 @@ export const SearchField = () => {
     const { dbExists } = useSearchResults();
 
     const navigation = useNavigate();
-    const { searchEnabled, isBuilding, isDisabled, disabledReason, prepareSearchData } = useSearchControl();
+    const { searchEnabled, isEnablingEncryptedSearch, isDisabled, disabledReason, prepareSearchData } =
+        useSearchControl();
     const [searchParams, setSearchParams] = useSearchParams();
 
     const handleSearch = useCallback((keyword = '') => {
@@ -40,7 +41,7 @@ export const SearchField = () => {
     };
 
     const handleInputClick = () => {
-        if (dbExists && !isBuilding) {
+        if (dbExists && !isEnablingEncryptedSearch) {
             return;
         }
 

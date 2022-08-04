@@ -1,6 +1,4 @@
-import { DBSchema } from 'idb';
-
-import { EncryptedSearchFunctions, ESStoredItem } from '@proton/encrypted-search';
+import { EncryptedSearchFunctions } from '@proton/encrypted-search';
 
 export interface ESLink {
     createTime: number;
@@ -15,38 +13,19 @@ export interface ESLink {
     order: number;
 }
 
-export interface StoredCiphertextDrive
-    extends ESStoredItem,
-        Pick<ESLink, 'createTime' | 'id' | 'linkId' | 'modifiedTime' | 'parentLinkId' | 'shareId' | 'size' | 'order'> {}
-
-export interface EncryptedSearchDB extends DBSchema {
-    files: {
-        key: string;
-        value: StoredCiphertextDrive;
-        indexes: { byUploadedTime: number };
-    };
-}
-
 export interface ESDriveSearchParams {
     normalisedKeywords: string[] | undefined;
 }
 
 export interface EncryptedSearchFunctionsDrive
     extends Pick<
-        EncryptedSearchFunctions<ESLink, ESDriveSearchParams, ESLink>,
+        EncryptedSearchFunctions<ESLink, ESDriveSearchParams>,
         | 'handleEvent'
         | 'encryptedSearch'
-        | 'highlightString'
-        | 'highlightMetadata'
-        | 'resumeIndexing'
-        | 'isSearchResult'
+        | 'enableEncryptedSearch'
         | 'esDelete'
         | 'getESDBStatus'
         | 'getProgressRecorderRef'
-        | 'shouldHighlight'
-        | 'pauseIndexing'
-        | 'cacheIndexedDB'
-        | 'toggleEncryptedSearch'
     > {}
 
 export interface Session {
@@ -54,5 +33,3 @@ export interface Session {
     total: number;
     isDone: boolean;
 }
-
-export type ESItemChangesDrive = ESLink;

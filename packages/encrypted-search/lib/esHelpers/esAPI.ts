@@ -1,11 +1,12 @@
-import { METRICS_LOG, SECOND } from '@proton/shared/lib/constants';
-import { Api } from '@proton/shared/lib/interfaces/Api';
-import { wait } from '@proton/shared/lib/helpers/promise';
 import { getIsOfflineError, getIsTimeoutError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { METRICS_LOG, SECOND } from '@proton/shared/lib/constants';
 import { randomDelay, sendMetricsReport } from '@proton/shared/lib/helpers/metrics';
+import { wait } from '@proton/shared/lib/helpers/promise';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
-import { addESTimestamp, getES, getNumItemsDB } from './esUtils';
+import { Api } from '@proton/shared/lib/interfaces';
+
 import { ES_TEMPORARY_ERRORS } from '../constants';
+import { readContentProgress, readNumMetadata, readSize } from '../esIDB';
 import { ESIndexMetrics, ESSearchMetrics } from '../models';
 import { estimateIndexingDuration } from './esBuild';
 
@@ -40,8 +41,7 @@ export const apiHelper = async <T>(
     api: Api,
     signal: AbortSignal | undefined,
     options: Object,
-    callingContext: string,
-    userID?: string
+    callingContext: string
 ): Promise<T | undefined> => {
     let apiResponse: T;
     try {
@@ -67,13 +67,9 @@ export const apiHelper = async <T>(
                 retryAfterSeconds = headers ? parseInt(headers.get('retry-after') || '1', 10) : retryAfterSeconds;
             }
 
-            if (userID) {
-                addESTimestamp(userID, 'stop');
-            }
-
             await wait(retryAfterSeconds * SECOND);
 
-            return apiHelper<T>(api, signal, options, callingContext, userID);
+            return apiHelper<T>(api, signal, options, callingContext);
         }
 
         if (!(error.message && error.message === 'Operation aborted') && !(error.name && error.name === 'AbortError')) {
@@ -101,26 +97,23 @@ const sendESMetrics: SendESMetrics = async (api, Title, Data) =>
  * Send metrics about the indexing process
  */
 export const sendIndexingMetrics = async (api: Api, userID: string) => {
-    addESTimestamp(userID, 'stop');
-    const progressBlob = getES.Progress(userID);
+    const progressBlob = await readContentProgress(userID);
     if (!progressBlob) {
         return;
     }
 
     const { totalItems, isRefreshed, numPauses, timestamps, originalEstimate } = progressBlob;
-    // There have been cases of broken metrics due to change to variables' name. The following is a temporary
-    // change to read the number of total items indexed also in the old (pre-library) format.
-    const { totalMessages } = progressBlob as any;
-    const numMessagesIndexed = totalItems || totalMessages || 0;
-
     const { indexTime, totalInterruptions } = estimateIndexingDuration(timestamps);
+    const indexSize = await readSize(userID);
 
     return sendESMetrics(api, 'index', {
         numInterruptions: totalInterruptions - numPauses,
-        indexSize: getES.Size(userID),
+        indexSize,
         originalEstimate,
         indexTime,
-        numMessagesIndexed,
+        // Note: the metrics dashboard expects a variable called "numMessagesIndexed" but
+        // it doesn't make too much sense in general to talk about "messages"
+        numMessagesIndexed: totalItems,
         isRefreshed,
         numPauses,
     });
@@ -135,15 +128,20 @@ export const sendSearchingMetrics = async (
     cacheSize: number,
     searchTime: number,
     isFirstSearch: boolean,
-    isCacheLimited: boolean,
-    storeName: string
+    isCacheLimited: boolean
 ) => {
     // Note: the metrics dashboard expects a variable called "numMessagesIndexed" but
     // it doesn't make too much sense in general to talk about "messages"
-    const numMessagesIndexed = await getNumItemsDB(userID, storeName);
+    const numMessagesIndexed = await readNumMetadata(userID);
+    if (typeof numMessagesIndexed === 'undefined') {
+        // If this is undefined, something went wrong when accessing IDB,
+        // therefore it makes little sense to send metrics
+        return;
+    }
+    const indexSize = await readSize(userID);
 
     return sendESMetrics(api, 'search', {
-        indexSize: getES.Size(userID),
+        indexSize,
         numMessagesIndexed,
         cacheSize,
         searchTime,
@@ -155,10 +153,9 @@ export const sendSearchingMetrics = async (
 /**
  * Send a sentry report for when ES is too slow
  * @param userID the user ID
- * @param storeName the name of the object store inside IndexedDB
  */
-export const sendSlowSearchReport = async (userID: string, storeName: string) => {
-    const numItemsIndexed = await getNumItemsDB(userID, storeName);
+export const sendSlowSearchReport = async (userID: string) => {
+    const numItemsIndexed = await readNumMetadata(userID);
 
     await randomDelay();
 

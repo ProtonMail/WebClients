@@ -1,13 +1,14 @@
 import * as React from 'react';
+
 import { c } from 'ttag';
 
-import { Button, Dropdown, useUser } from '@proton/components';
+import { Button, Dropdown } from '@proton/components';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
-import { indexKeyExists, isDBReadyAfterBuilding } from '@proton/encrypted-search';
 
-import './SearchDropdown.scss';
 import { useSearchLibrary } from '../../../store';
 import { SearchIndexingProgress } from './SearchIndexingProgress';
+
+import './SearchDropdown.scss';
 
 interface Props {
     isOpen: boolean;
@@ -17,10 +18,10 @@ interface Props {
 }
 
 export const SearchDropdown = ({ isOpen, anchorRef, onClose, onClosed }: Props) => {
-    const [user] = useUser();
     const { getESDBStatus } = useSearchLibrary();
-    const { isRefreshing, esEnabled, dbExists } = getESDBStatus();
-    const showProgress = indexKeyExists(user.ID) && esEnabled && (!isDBReadyAfterBuilding(user.ID) || isRefreshing);
+    const { isRefreshing, dbExists, isEnablingEncryptedSearch } = getESDBStatus();
+    const showProgress = isEnablingEncryptedSearch || isRefreshing;
+    const isESActive = dbExists && !isEnablingEncryptedSearch;
 
     return (
         <>
@@ -41,11 +42,11 @@ export const SearchDropdown = ({ isOpen, anchorRef, onClose, onClosed }: Props) 
                     <div>
                         <div className="flex">
                             <span className="inline-flex text-bold text-lg">
-                                {dbExists ? c('Info').t`Search Enabled` : c('Info').t`Enabling drive search`}
+                                {isESActive ? c('Info').t`Search Enabled` : c('Info').t`Enabling drive search`}
                             </span>
                         </div>
                         <p className="mb0">
-                            {dbExists
+                            {isESActive
                                 ? c('Info')
                                       .t`Private search enabled. You may now close this dialogue and search for files and folders.`
                                 : c('Info')
