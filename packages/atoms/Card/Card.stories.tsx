@@ -1,4 +1,6 @@
-import { Button } from '@proton/components';
+import { useState } from 'react';
+
+import { Button, Checkbox } from '@proton/components';
 
 import Card from './Card';
 import mdx from './Card.mdx';
@@ -27,3 +29,49 @@ export const WithActionHorizontal = () => (
         <Button color="norm">Upgrade</Button>
     </Card>
 );
+
+const toggles = ['bordered', 'rounded', 'background'] as const;
+
+export const Sandbox = () => {
+    const [selectedToggles, setSelectedToggles] = useState([true, false, true]);
+
+    const tabsExample = (
+        <Card
+            {...selectedToggles.reduce<{ [key: string]: boolean }>((acc, value, i) => {
+                acc[toggles[i]] = value;
+                return acc;
+            }, {})}
+        >
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit doloribus nobis eos iusto. Ducimus numquam
+            laborum aliquid culpa! Dolor voluptatem modi inventore error, qui repudiandae consequatur autem vitae illum
+            voluptatibus?
+        </Card>
+    );
+
+    return (
+        <div className="flex flex-align-items-stretch py2">
+            <div>{tabsExample}</div>
+            <div className="mr2">
+                <strong className="block mt1">Options</strong>
+                {toggles.map((prop, i) => {
+                    return (
+                        <div className="mb0-5">
+                            <Checkbox
+                                checked={selectedToggles[i]}
+                                onChange={({ target: { checked } }) => {
+                                    setSelectedToggles(
+                                        selectedToggles.map((oldValue, otherIndex) =>
+                                            otherIndex === i ? checked : oldValue
+                                        )
+                                    );
+                                }}
+                            >
+                                {prop}
+                            </Checkbox>
+                        </div>
+                    );
+                })}
+            </div>
+        </div>
+    );
+};
