@@ -133,6 +133,7 @@ export const defaultESMailStatus: ESDBStatusMail = {
     dropdownOpened: false,
     temporaryToggleOff: false,
     metadataIndexingPromise: Promise.resolve(),
+    activatingPartialES: false,
     lastContentTime: 0,
 };
 export const defaultESContextMail: EncryptedSearchFunctionsMail = {
@@ -142,8 +143,10 @@ export const defaultESContextMail: EncryptedSearchFunctionsMail = {
     setTemporaryToggleOff: () => {},
     cacheOrIndexMetadata: async () => {},
     getESDBStatus: () => ({ ...defaultESContext.getESDBStatus(), ...defaultESMailStatus }),
+    activateContentSearch: async () => {},
 };
 export const MAIL_EVENTLOOP_NAME = 'core';
+export const ES_BANNER_REF = 'content_search_banner';
 
 export const WELCOME_PANE_OPTIONS_URLS = {
     plansSelection: '/upgrade',

@@ -23,6 +23,7 @@ import ItemLabels from './ItemLabels';
 import ItemLocation from './ItemLocation';
 import ItemStar from './ItemStar';
 import ItemUnread from './ItemUnread';
+import useEncryptedSearchItem from './useEncryptedSearchItem';
 
 interface Props {
     labelID: string;
@@ -87,6 +88,10 @@ const ItemColumnLayout = ({
         `${numOccurrences} occurrences found in the mail content`,
         numOccurrences
     );
+
+    // For free users with limited content search, we want to make obvious that the third
+    // line in an item is the content
+    const { showContentLabel, contentLabel } = useEncryptedSearchItem(!!resultJSX);
 
     const hasOnlyIcsAttachments = getHasOnlyIcsAttachments(element?.AttachmentInfo);
     const hasLabels = useMemo(() => {
@@ -206,6 +211,7 @@ const ItemColumnLayout = ({
                     >
                         <div className="item-subject flex-item-fluid flex flex-nowrap flex-align-items-center">
                             <span className="inline-block max-w100 text-ellipsis" title={bodyTitle}>
+                                {showContentLabel && contentLabel}
                                 {resultJSX}
                             </span>
                         </div>
