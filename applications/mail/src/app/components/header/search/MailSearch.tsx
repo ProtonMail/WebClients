@@ -6,7 +6,7 @@ import {
     TopNavbarListItemSearchButton,
     generateUID,
     useAddresses,
-    useFeature,
+    useFeatures,
     useFolders,
     useLabels,
     useMailSettings,
@@ -44,12 +44,15 @@ const MailSearch = ({ breakpoints }: Props) => {
     const [, loadingLabels] = useLabels();
     const [, loadingFolders] = useFolders();
     const [, loadingAddresses] = useAddresses();
-    const { loading: loadingScheduledFeature } = useFeature(FeatureCode.ScheduledSend);
+    const [{ loading: loadingScheduledFeature }, { feature: partialES }] = useFeatures([
+        FeatureCode.ScheduledSend,
+        FeatureCode.PartialEncryptedSearch,
+    ]);
     const { getESDBStatus, cacheOrIndexMetadata, closeDropdown } = useEncryptedSearchContext();
     const { dropdownOpened, dbExists } = getESDBStatus();
     const esState = useEncryptedSearchToggleState(isOpen);
 
-    const showEncryptedSearch = !isMobile() && !!isPaid(user);
+    const showEncryptedSearch = !isMobile() && (!!isPaid(user) || (!!partialES && partialES.Value));
 
     // Show more from inside AdvancedSearch to persist the state when the overlay is closed
     const { state: showMore, toggle: toggleShowMore } = useToggle(false);
