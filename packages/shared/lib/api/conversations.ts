@@ -1,3 +1,5 @@
+import { SpamAction } from '../interfaces';
+
 interface QueryConversationProps {
     Location: any;
     Sort: any;
@@ -105,7 +107,7 @@ export const deleteConversations = (IDs: string[], LabelID: string) => ({
 interface LabelConversationsProps {
     LabelID: string;
     IDs: string[];
-    SpamAction?: number;
+    SpamAction?: SpamAction;
 }
 
 export const labelConversations = ({ LabelID, IDs, SpamAction }: LabelConversationsProps) => ({
