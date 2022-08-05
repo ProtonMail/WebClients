@@ -1,11 +1,14 @@
-import isTruthy from '@proton/utils/isTruthy';
 import { useState } from 'react';
-import { Address, Domain } from '@proton/shared/lib/interfaces';
+
 import { c, msgid } from 'ttag';
+
+import { BRAND_NAME, PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
+import { getDomainsSupportURL } from '@proton/shared/lib/helpers/url';
+import { Domain, DomainAddress } from '@proton/shared/lib/interfaces';
 import { DomainsModel } from '@proton/shared/lib/models';
 import { loadModels } from '@proton/shared/lib/models/helper';
-import { getDomainsSupportURL } from '@proton/shared/lib/helpers/url';
-import { BRAND_NAME, PLAN_NAMES, PLANS } from '@proton/shared/lib/constants';
+import isTruthy from '@proton/utils/isTruthy';
+
 import {
     Button,
     DropdownActions,
@@ -16,12 +19,12 @@ import {
     TableRow,
     useModalState,
 } from '../../components';
-import { useApi, useCache, useOrganization, useDomains, useLoading, useUser, useDomainsAddresses } from '../../hooks';
-import DomainModal from './DomainModal';
+import { useApi, useCache, useDomains, useDomainsAddresses, useLoading, useOrganization, useUser } from '../../hooks';
+import { SettingsParagraph, SettingsSectionWide, UpgradeBanner } from '../account';
 import RestoreAdministratorPrivileges from '../organization/RestoreAdministratorPrivileges';
-import { SettingsSectionWide, SettingsParagraph, UpgradeBanner } from '../account';
-import DeleteDomainModal from './DeleteDomainModal';
 import CatchAllModal from './CatchAllModal';
+import DeleteDomainModal from './DeleteDomainModal';
+import DomainModal from './DomainModal';
 import DomainName from './DomainName';
 import DomainStatus from './DomainStatus';
 
@@ -42,7 +45,9 @@ const DomainsSectionInternal = () => {
     const [organization, loadingOrganization] = useOrganization();
     const [loadingRefresh, withLoadingRefresh] = useLoading();
 
-    const [tmpDomainProps, setTmpDomainProps] = useState<{ domain: Domain; domainAddresses: Address[] } | null>(null);
+    const [tmpDomainProps, setTmpDomainProps] = useState<{ domain: Domain; domainAddresses: DomainAddress[] } | null>(
+        null
+    );
     const [newDomainModalProps, setNewDomainModalOpen, renderNewDomain] = useModalState();
     const [editDomainModalProps, setEditDomainModalOpen, renderEditDomain] = useModalState();
     const [deleteDomainModalProps, setDeleteDomainModalOpen, renderDeleteDomain] = useModalState();

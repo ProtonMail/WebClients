@@ -1,5 +1,7 @@
 import { c } from 'ttag';
+
 import type { enums } from '@proton/crypto';
+
 import { EncryptionConfig } from './interfaces';
 
 export const DEFAULT_TIMEOUT = 30000; // default fetch timeout
@@ -655,6 +657,8 @@ export const ENCRYPTION_CONFIGS: { [key: string]: EncryptionConfig } = {
 };
 
 export enum KEY_FLAG {
+    // Flag used for external addresses
+    FLAG_EXTERNAL = 4,
     // Key can be used to encrypt
     FLAG_NOT_OBSOLETE = 2,
     // Key can be used to verify signatures

@@ -1,26 +1,29 @@
 import { useState } from 'react';
+
 import { c } from 'ttag';
-import noop from '@proton/utils/noop';
-import { PrivateKeyReference, CryptoProxy } from '@proton/crypto';
+
 import { KEY_FILE_EXTENSION } from '@proton/shared/lib/constants';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { passwordLengthValidator } from '@proton/shared/lib/helpers/formValidators';
+import noop from '@proton/utils/noop';
+
+import { PrivateKeyReference, CryptoProxy } from '@proton/crypto';
 
 import {
     Button,
     Form,
     InputFieldTwo,
-    ModalProps,
     ModalTwo as Modal,
-    ModalTwoHeader as ModalHeader,
     ModalTwoContent as ModalContent,
     ModalTwoFooter as ModalFooter,
+    ModalTwoHeader as ModalHeader,
+    ModalProps,
     PasswordInputTwo,
     useFormErrors,
 } from '../../../components';
+import { generateUID } from '../../../helpers';
 import { useLoading, useModals } from '../../../hooks';
 import UnlockModal from '../../login/UnlockModal';
-import { generateUID } from '../../../helpers';
 
 const handleExport = async (name: string, privateKey: PrivateKeyReference, password: string) => {
     const fingerprint = privateKey.getFingerprint();
@@ -46,7 +49,7 @@ const ExportPrivateKeyModal = ({ name, privateKey, onSuccess, onClose, ...rest }
 
     const handleSubmit = async () => {
         // Force a login since the private key is sensitive
-        await new Promise<void>((resolve, reject) => {
+        await new Promise<string>((resolve, reject) => {
             createModal(<UnlockModal onClose={() => reject()} onSuccess={resolve} />);
         });
         await handleExport(name, privateKey, password);

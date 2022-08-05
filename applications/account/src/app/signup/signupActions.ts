@@ -1,7 +1,10 @@
-import { Api, HumanVerificationMethodType, User } from '@proton/shared/lib/interfaces';
-import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
+import { VerificationModel } from '@proton/components/containers/api/humanVerification/interface';
+import { AppIntent } from '@proton/components/containers/login/interface';
+import { getAllAddresses, updateAddress } from '@proton/shared/lib/api/addresses';
+import { auth } from '@proton/shared/lib/api/auth';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
+import { subscribe } from '@proton/shared/lib/api/payments';
+import { updateEmail, updateLocale, updatePhone } from '@proton/shared/lib/api/settings';
 import {
     getUser,
     queryCheckEmailAvailability,
@@ -9,20 +12,18 @@ import {
     queryCreateUser,
     queryCreateUserExternal,
 } from '@proton/shared/lib/api/user';
-import { withAuthHeaders, withVerificationHeaders } from '@proton/shared/lib/fetch/headers';
-import { srpAuth, srpVerify } from '@proton/shared/lib/srp';
-import { VerificationModel } from '@proton/components/containers/api/humanVerification/interface';
-import { COUPON_CODES, TOKEN_TYPES } from '@proton/shared/lib/constants';
-import { localeCode } from '@proton/shared/lib/i18n';
-import { handleSetupKeys } from '@proton/shared/lib/keys';
-import { getAllAddresses, updateAddress } from '@proton/shared/lib/api/addresses';
-import { updateEmail, updateLocale, updatePhone } from '@proton/shared/lib/api/settings';
-import { subscribe } from '@proton/shared/lib/api/payments';
-import noop from '@proton/utils/noop';
-import { auth } from '@proton/shared/lib/api/auth';
-import { persistSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { AuthResponse } from '@proton/shared/lib/authentication/interface';
-import { AppIntent } from '@proton/components/containers/login/interface';
+import { persistSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
+import { CLIENT_TYPES, COUPON_CODES, TOKEN_TYPES } from '@proton/shared/lib/constants';
+import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
+import { withAuthHeaders, withVerificationHeaders } from '@proton/shared/lib/fetch/headers';
+import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
+import { localeCode } from '@proton/shared/lib/i18n';
+import { Api, HumanVerificationMethodType, User } from '@proton/shared/lib/interfaces';
+import { handleSetupKeys } from '@proton/shared/lib/keys';
+import { srpAuth, srpVerify } from '@proton/shared/lib/srp';
+import noop from '@proton/utils/noop';
+
 import {
     HumanVerificationData,
     HumanVerificationTrigger,
@@ -87,23 +88,33 @@ export const handleSaveRecovery = async ({
     const {
         ignoreExplore,
         setupData,
-        accountData: { password },
+        accountData: { password, signupType },
     } = cache;
 
     const { authResponse } = setupData!;
     const authApi = <T>(config: any) => api<T>(withAuthHeaders(authResponse.UID, authResponse.AccessToken, config));
 
     await Promise.all([
-        recoveryPhone &&
+        !!recoveryPhone &&
             srpAuth({ api: authApi, credentials: { password }, config: updatePhone({ Phone: recoveryPhone }) }),
-        recoveryEmail &&
-            srpAuth({ api: authApi, credentials: { password }, config: updateEmail({ Email: recoveryEmail }) }),
+        // Always send an update to the recovery email address when signing up with an external email address because the API sets it by default, so the client
+        // needs to reset it to an empty string if the user chooses to not save a recovery email address.
+        (!!recoveryEmail || signupType === SignupType.Email) &&
+            srpAuth({
+                api: authApi,
+                credentials: { password },
+                config: updateEmail({ Email: recoveryEmail || '' }),
+            }).catch((e) => {
+                const { code } = getApiError(e);
+                // Ignore the error the API throws when updating the recovery email address to the external email address until it's fixed.
+                if (code === API_CUSTOM_ERROR_CODES.USER_UPDATE_EMAIL_SELF && signupType === SignupType.Email) {
+                    return;
+                }
+                throw e;
+            }),
     ]);
 
     if (ignoreExplore) {
-        if (!setupData?.authResponse) {
-            throw new Error('Missing auth response');
-        }
         return handleDone({ cache, appIntent: cache.appIntent });
     }
 
@@ -122,7 +133,7 @@ export const handleDisplayName = async ({
     api: Api;
     displayName: string;
 }): Promise<SignupActionResponse> => {
-    const { setupData } = cache;
+    const { setupData, accountData, ignoreExplore } = cache;
 
     const {
         authResponse,
@@ -131,10 +142,31 @@ export const handleDisplayName = async ({
     const authApi = <T>(config: any) => api<T>(withAuthHeaders(authResponse.UID, authResponse.AccessToken, config));
 
     await authApi(updateAddress(firstAddress.ID, { DisplayName: displayName, Signature: firstAddress.Signature }));
+    // Re-fetch the user to get the updated display name
+    const user = await authApi<{ User: User }>(getUser()).then(({ User }) => User);
+
+    const to = (() => {
+        if (accountData.signupType === SignupType.Email) {
+            // Ignore recovery step if signing up with an external email address because it's automatically set.
+            return ignoreExplore ? undefined : SIGNUP_STEPS.EXPLORE;
+        }
+        // The next step is recovery by default
+        return SIGNUP_STEPS.SAVE_RECOVERY;
+    })();
+
+    if (!to) {
+        return handleDone({ cache, appIntent: cache.appIntent });
+    }
 
     return {
-        cache,
-        to: SIGNUP_STEPS.SAVE_RECOVERY,
+        cache: {
+            ...cache,
+            setupData: {
+                ...setupData!,
+                user,
+            },
+        },
+        to,
     };
 };
 
@@ -151,17 +183,18 @@ export const handleSetupUser = async ({
         subscriptionData,
         persistent,
         generateKeys,
+        clientType,
     } = cache;
 
     const userEmail = (() => {
-        if (signupType === SignupType.Username || generateKeys) {
+        if (signupType === SignupType.Username || (signupType === SignupType.VPN && generateKeys)) {
             return `${username}@${domain}`;
-        }
-        if (signupType === SignupType.Email) {
-            return email;
         }
         if (signupType === SignupType.VPN) {
             return username;
+        }
+        if (signupType === SignupType.Email) {
+            return email;
         }
         throw new Error('Unknown type');
     })();
@@ -231,7 +264,7 @@ export const handleSetupUser = async ({
     };
 
     // Ignore the rest of the steps for VPN because we don't create an address and ask for recovery email at the start
-    if (signupType === SignupType.VPN) {
+    if (signupType === SignupType.VPN || clientType === CLIENT_TYPES.VPN) {
         return handleDone({ cache: newCache, appIntent: cache.appIntent });
     }
 
@@ -432,17 +465,21 @@ export const handleCreateAccount = async ({
     cache: SignupCacheResult;
     api: Api;
 }): Promise<SignupActionResponse> => {
-    if (cache.accountData.signupType === SignupType.Username || cache.generateKeys) {
-        await api(queryCheckUsernameAvailability(`${cache.accountData.username}@${cache.accountData.domain}`, true));
-    } else if (cache.accountData.signupType === SignupType.VPN) {
-        await api(queryCheckUsernameAvailability(cache.accountData.username));
-    } else if (cache.accountData.signupType === SignupType.Email) {
+    const {
+        accountData: { username, email, domain, signupType },
+        humanVerificationResult,
+    } = cache;
+    if (signupType === SignupType.Username || (signupType === SignupType.VPN && cache.generateKeys)) {
+        await api(queryCheckUsernameAvailability(`${username}@${domain}`, true));
+    } else if (signupType === SignupType.VPN) {
+        await api(queryCheckUsernameAvailability(username));
+    } else if (signupType === SignupType.Email) {
         try {
             await api(
                 withVerificationHeaders(
-                    cache.humanVerificationResult?.token,
-                    cache.humanVerificationResult?.tokenType,
-                    queryCheckEmailAvailability(cache.accountData.email)
+                    humanVerificationResult?.token,
+                    humanVerificationResult?.tokenType,
+                    queryCheckEmailAvailability(email)
                 )
             );
         } catch (error) {

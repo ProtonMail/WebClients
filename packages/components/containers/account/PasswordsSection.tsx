@@ -1,22 +1,23 @@
 import { useState } from 'react';
+
 import { c } from 'ttag';
-import { SETTINGS_PASSWORD_MODE } from '@proton/shared/lib/interfaces';
+
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import { SETTINGS_PASSWORD_MODE } from '@proton/shared/lib/interfaces';
 
 import { Button, Info, Loader, Toggle } from '../../components';
 import useModalState from '../../components/modalTwo/useModalState';
-import { useAddresses, useSearchParamsEffect, useUserSettings } from '../../hooks';
-
+import { useSearchParamsEffect, useUser, useUserSettings } from '../../hooks';
 import ChangePasswordModal, { MODES } from './ChangePasswordModal';
-import TwoFactorSection from './TwoFactorSection';
-import SettingsSection from './SettingsSection';
 import SettingsLayout from './SettingsLayout';
 import SettingsLayoutLeft from './SettingsLayoutLeft';
 import SettingsLayoutRight from './SettingsLayoutRight';
+import SettingsSection from './SettingsSection';
+import TwoFactorSection from './TwoFactorSection';
 
 const PasswordsSection = () => {
+    const [user, loadingUser] = useUser();
     const [userSettings, loadingUserSettings] = useUserSettings();
-    const [addresses, loadingAddresses] = useAddresses();
 
     const [tmpPasswordMode, setTmpPasswordMode] = useState<MODES>();
     const [changePasswordModal, setChangePasswordModalOpen, render] = useModalState();
@@ -27,7 +28,7 @@ const PasswordsSection = () => {
     const changePasswordMode = isOnePasswordMode
         ? MODES.CHANGE_ONE_PASSWORD_MODE
         : MODES.CHANGE_TWO_PASSWORD_LOGIN_MODE;
-    const loading = loadingUserSettings || loadingAddresses;
+    const loading = loadingUserSettings || loadingUser;
 
     const handleChangePassword = (mode: MODES) => {
         setTmpPasswordMode(mode);
@@ -49,8 +50,9 @@ const PasswordsSection = () => {
         return <Loader />;
     }
 
-    // VPN users are by default in two password mode, even if they don't have any addresses. Don't allow them to change two-password mode.
-    const hasAddresses = Array.isArray(addresses) && addresses.length > 0;
+    // Users without any keys setup are by default in two password mode, even if they have an address.
+    // Don't allow them to change two-password mode.
+    const hasTwoPasswordOption = user.Keys.length > 0;
 
     return (
         <>
@@ -69,7 +71,7 @@ const PasswordsSection = () => {
                     </SettingsLayoutRight>
                 </SettingsLayout>
                 <TwoFactorSection />
-                {hasAddresses && (
+                {hasTwoPasswordOption && (
                     <>
                         <SettingsLayout>
                             <SettingsLayoutLeft>

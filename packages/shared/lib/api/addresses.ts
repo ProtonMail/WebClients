@@ -1,6 +1,6 @@
-import { PaginationParams } from './interface';
+import { Address, Api, SignedKeyList } from '../interfaces';
 import queryPages from './helpers/queryPages';
-import { Address, Api } from '../interfaces';
+import { PaginationParams } from './interface';
 
 export const queryAddresses = (params?: PaginationParams) => ({
     url: 'addresses',
@@ -87,4 +87,10 @@ export const disableAddress = (addressID: string) => ({
 export const deleteAddress = (addressID: string) => ({
     url: `addresses/${addressID}`,
     method: 'delete',
+});
+
+export const addressType = (addressID: string, data: { Type: number; SignedKeyList: SignedKeyList }) => ({
+    url: `addresses/${addressID}/type`,
+    method: 'put',
+    data,
 });

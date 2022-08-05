@@ -1,31 +1,54 @@
-import { useState, useEffect } from 'react';
+import { FormEvent, useEffect, useRef, useState } from 'react';
+
 import { c } from 'ttag';
+
+import { addressType } from '@proton/shared/lib/api/addresses';
 import { addDomain, getDomain } from '@proton/shared/lib/api/domains';
-import { Address, Domain } from '@proton/shared/lib/interfaces';
-import { VERIFY_STATE, DOMAIN_STATE, SPF_STATE, MX_STATE, DMARC_STATE, DKIM_STATE } from '@proton/shared/lib/constants';
 import {
-    ButtonGroup,
-    RoundedIcon,
-    Tooltip,
-    Icon,
+    ADDRESS_TYPE,
+    DKIM_STATE,
+    DMARC_STATE,
+    DOMAIN_STATE,
+    MX_STATE,
+    SPF_STATE,
+    VERIFY_STATE,
+} from '@proton/shared/lib/constants';
+import { Address, Api, DecryptedKey, Domain, DomainAddress } from '@proton/shared/lib/interfaces';
+import { getSignedKeyList } from '@proton/shared/lib/keys';
+import { getActiveKeys, getNormalizedActiveKeys } from '@proton/shared/lib/keys/getActiveKeys';
+
+import {
     Button,
+    ButtonGroup,
+    Form,
+    Icon,
+    ModalProps,
     ModalTwo,
-    ModalTwoHeader,
     ModalTwoContent,
     ModalTwoFooter,
-    Form,
-    ModalProps,
+    ModalTwoHeader,
+    RoundedIcon,
+    Tooltip,
+    useFormErrors,
 } from '../../components';
-import { useLoading, useApi, useStep, useNotifications, useDomains, useEventManager } from '../../hooks';
 import { classnames } from '../../helpers';
-
-import DomainSection from './DomainSection';
-import VerifySection from './VerifySection';
+import {
+    useApi,
+    useDomains,
+    useEventManager,
+    useGetAddressKeys,
+    useGetAddresses,
+    useLoading,
+    useNotifications,
+    useStep,
+} from '../../hooks';
 import AddressesSection from './AddressesSection';
-import SPFSection from './SPFSection';
 import DKIMSection from './DKIMSection';
-import MXSection from './MXSection';
 import DMARCSection from './DMARCSection';
+import DomainSection from './DomainSection';
+import MXSection from './MXSection';
+import SPFSection from './SPFSection';
+import VerifySection from './VerifySection';
 
 const STEPS = {
     DOMAIN: 0,
@@ -50,19 +73,81 @@ const verifyDomain = (domain?: Domain) => {
 
 interface Props extends ModalProps {
     domain?: Domain;
-    domainAddresses?: Address[];
+    domainAddresses?: DomainAddress[];
 }
+
+const convertToInternalAddress = async ({
+    address,
+    keys,
+    api,
+}: {
+    address: Address;
+    keys: DecryptedKey[];
+    api: Api;
+}) => {
+    const activeKeys = await getActiveKeys(address, address.SignedKeyList, address.Keys, keys);
+    const internalAddress = {
+        ...address,
+        // Reset type to an internal address with a custom domain
+        Type: ADDRESS_TYPE.TYPE_CUSTOM_DOMAIN,
+    };
+    const signedKeyList = await getSignedKeyList(getNormalizedActiveKeys(internalAddress, activeKeys));
+    await api(
+        addressType(address.ID, {
+            Type: internalAddress.Type,
+            SignedKeyList: signedKeyList,
+        })
+    );
+};
 
 const DomainModal = ({ domain, domainAddresses = [], ...rest }: Props) => {
     const [domains, loadingDomains] = useDomains();
+    const onceRef = useRef(false);
     const [domainModel, setDomain] = useState<Partial<Domain>>(() => ({ ...domain }));
+    const getAddresses = useGetAddresses();
+    const getAddressKeys = useGetAddressKeys();
 
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
-    const [domainName, updateDomainName] = useState(domainModel.DomainName);
+    const [domainName, updateDomainName] = useState(domainModel.DomainName || '');
     const api = useApi();
+    const silentApi = <T,>(config: any) => api<T>({ ...config, silence: true });
     const { step, next, goTo } = useStep();
     const { call } = useEventManager();
+    const { validator, onFormSubmit } = useFormErrors();
+
+    useEffect(() => {
+        const run = async () => {
+            if (onceRef.current) {
+                return;
+            }
+            const domainName = domainModel.DomainName;
+            // Once a domain has gotten verified, and before we display the MX setup, we attempt to convert external addresess
+            // to internal ones by changing the type by updating the SKL.
+            if (!domainModel.ID || !domainName || domainModel.VerifyState !== VERIFY_STATE.VERIFY_STATE_GOOD) {
+                return;
+            }
+            onceRef.current = true;
+            const addresses = await getAddresses();
+            const externalAddresses = addresses.filter(
+                (address) => address.Type === ADDRESS_TYPE.TYPE_EXTERNAL && address.Email.endsWith(domainName)
+            );
+            if (!externalAddresses.length) {
+                return;
+            }
+            await Promise.all(
+                externalAddresses.map(async (externalAddress) => {
+                    return convertToInternalAddress({
+                        address: externalAddress,
+                        keys: await getAddressKeys(externalAddress.ID),
+                        api: silentApi,
+                    });
+                })
+            );
+            await call();
+        };
+        run();
+    }, [domainModel?.DomainName, domainModel?.ID, domainModel?.VerifyState]);
 
     const handleClose = async () => {
         void call(); // Refresh domains model present in background page
@@ -188,9 +273,21 @@ const DomainModal = ({ domain, domainAddresses = [], ...rest }: Props) => {
             };
 
             return {
-                section: <DomainSection domain={domainModel} onChange={updateDomainName} />,
+                section: (
+                    <DomainSection
+                        validator={validator}
+                        domain={domainModel}
+                        domainName={domainName}
+                        onValue={updateDomainName}
+                    />
+                ),
                 submit: undefined,
-                onSubmit: () => withLoading(handleSubmit()),
+                onSubmit: (event: FormEvent<HTMLFormElement>) => {
+                    if (!onFormSubmit(event.currentTarget)) {
+                        return;
+                    }
+                    withLoading(handleSubmit());
+                },
             };
         }
 

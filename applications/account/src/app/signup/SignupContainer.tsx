@@ -3,11 +3,8 @@ import { useHistory, useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import { ExperimentCode, FeatureCode, HumanVerificationSteps, OnLoginCallback } from '@proton/components/containers';
 import {
-    ExperimentCode,
-    FeatureCode,
-    HumanVerificationSteps,
-    OnLoginCallback,
     useApi,
     useErrorHandler,
     useExperiment,
@@ -17,7 +14,7 @@ import {
     useMyLocation,
     useVPNCountriesCount,
     useVPNServersCount,
-} from '@proton/components';
+} from '@proton/components/hooks';
 import { checkReferrer } from '@proton/shared/lib/api/core/referrals';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { getPaymentMethodStatus, queryPlans } from '@proton/shared/lib/api/payments';
@@ -57,7 +54,7 @@ import SignupSupportDropdown from './SignupSupportDropdown';
 import UpsellStep from './UpsellStep';
 import VerificationStep from './VerificationStep';
 import { DEFAULT_SIGNUP_MODEL } from './constants';
-import { getPlanFromPlanIDs, getSubscriptionPrices } from './helper';
+import { getLocalPart, getPlanFromPlanIDs, getSubscriptionPrices } from './helper';
 import {
     InviteData,
     PlanIDs,
@@ -260,7 +257,7 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType }: Prop
         throw new Error('Missing dependencies');
     }
 
-    const hasAppExternalSignup = externalSignupFeature.feature?.Value && getHasAppExternalSignup(toApp);
+    const hasAppExternalSignup = externalSignupFeature.feature?.Value && (!toApp || getHasAppExternalSignup(toApp));
 
     const defaultCountry = myLocation?.Country?.toUpperCase();
 
@@ -380,7 +377,9 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType }: Prop
                     defaultEmail={accountData?.email}
                     defaultUsername={accountData?.username}
                     defaultSignupType={accountData?.signupType || signupType}
-                    defaultRecovery={(accountData?.signupType === SignupType.VPN && accountData?.recoveryEmail) || ''}
+                    defaultRecoveryEmail={
+                        (accountData?.signupType === SignupType.VPN && accountData.recoveryEmail) || ''
+                    }
                     domains={model.domains}
                     onSubmit={async ({ username, email, recoveryEmail, domain, password, signupType, payload }) => {
                         const accountData = {
@@ -538,7 +537,12 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType }: Prop
             )}
             {step === CONGRATULATIONS && (
                 <CongratulationsStep
-                    defaultName={cache?.accountData.username}
+                    defaultName={
+                        cache?.accountData.username ||
+                        (accountData?.signupType === SignupType.VPN && getLocalPart(accountData.recoveryEmail)) ||
+                        (accountData?.signupType === SignupType.Email && getLocalPart(accountData.email)) ||
+                        ''
+                    }
                     planName={planName}
                     onSubmit={({ displayName }) => {
                         if (!cache) {
@@ -558,7 +562,11 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType }: Prop
                 <RecoveryStep
                     onBack={handleBackStep}
                     defaultCountry={defaultCountry}
-                    defaultEmail={verificationModel?.method === 'email' ? verificationModel?.value : ''}
+                    defaultEmail={
+                        (verificationModel?.method === 'email' && verificationModel?.value) ||
+                        (accountData?.signupType === SignupType.Email && accountData.email) ||
+                        ''
+                    }
                     defaultPhone={verificationModel?.method === 'sms' ? verificationModel?.value : ''}
                     onSubmit={({ recoveryEmail, recoveryPhone }) => {
                         if (!cache) {
