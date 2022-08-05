@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 import { HotkeyTuple, useMailSettings } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { KeyboardKey } from '@proton/shared/lib/interfaces';
-import { isTargetEditable } from '@proton/shared/lib/shortcuts/helpers';
+import { isBusy } from '@proton/shared/lib/shortcuts/helpers';
 
 import { LABEL_IDS_TO_HUMAN } from '../../constants';
 
@@ -30,7 +30,7 @@ export const useFolderNavigationHotkeys = (): HotkeyTuple[] => {
                   'G',
                   'I',
                   (e) => {
-                      if (!isTargetEditable(e)) {
+                      if (!isBusy(e)) {
                           e.stopPropagation();
                           e.preventDefault();
                           navigateTo(INBOX);
@@ -42,7 +42,7 @@ export const useFolderNavigationHotkeys = (): HotkeyTuple[] => {
                   'G',
                   'D',
                   (e) => {
-                      if (!isTargetEditable(e)) {
+                      if (!isBusy(e)) {
                           e.stopPropagation();
                           e.preventDefault();
                           navigateTo(DRAFTS);
@@ -54,7 +54,7 @@ export const useFolderNavigationHotkeys = (): HotkeyTuple[] => {
                   'G',
                   'E',
                   (e) => {
-                      if (!isTargetEditable(e)) {
+                      if (!isBusy(e)) {
                           e.stopPropagation();
                           e.preventDefault();
                           navigateTo(SENT);
@@ -66,7 +66,7 @@ export const useFolderNavigationHotkeys = (): HotkeyTuple[] => {
                   'G',
                   KeyboardKey.Star,
                   (e) => {
-                      if (!isTargetEditable(e)) {
+                      if (!isBusy(e)) {
                           e.stopPropagation();
                           e.preventDefault();
                           navigateTo(STARRED);
@@ -78,7 +78,7 @@ export const useFolderNavigationHotkeys = (): HotkeyTuple[] => {
                   'G',
                   'A',
                   (e) => {
-                      if (!isTargetEditable(e)) {
+                      if (!isBusy(e)) {
                           e.stopPropagation();
                           e.preventDefault();
                           navigateTo(ARCHIVE);
@@ -90,7 +90,7 @@ export const useFolderNavigationHotkeys = (): HotkeyTuple[] => {
                   'G',
                   'S',
                   (e) => {
-                      if (!isTargetEditable(e)) {
+                      if (!isBusy(e)) {
                           e.stopPropagation();
                           e.preventDefault();
                           navigateTo(SPAM);
@@ -102,7 +102,7 @@ export const useFolderNavigationHotkeys = (): HotkeyTuple[] => {
                   'G',
                   'T',
                   (e) => {
-                      if (!isTargetEditable(e)) {
+                      if (!isBusy(e)) {
                           e.stopPropagation();
                           e.preventDefault();
                           navigateTo(TRASH);
@@ -114,7 +114,7 @@ export const useFolderNavigationHotkeys = (): HotkeyTuple[] => {
                   'G',
                   'M',
                   (e) => {
-                      if (!isTargetEditable(e)) {
+                      if (!isBusy(e)) {
                           e.stopPropagation();
                           e.preventDefault();
                           navigateTo(ALL_MAIL);
