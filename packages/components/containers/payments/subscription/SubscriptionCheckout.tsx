@@ -1,10 +1,12 @@
 import { Fragment, ReactNode } from 'react';
+
 import { c, msgid } from 'ttag';
-import { toMap } from '@proton/shared/lib/helpers/object';
-import compare from '@proton/utils/compare';
-import { ADDON_NAMES, APPS, CYCLE, MEMBER_PLAN_MAPPING, PLAN_TYPES, PLANS } from '@proton/shared/lib/constants';
+
+import { ADDON_NAMES, APPS, CYCLE, MEMBER_PLAN_MAPPING, PLANS, PLAN_TYPES } from '@proton/shared/lib/constants';
 import { getTimeRemaining } from '@proton/shared/lib/date/date';
-import isTruthy from '@proton/utils/isTruthy';
+import humanSize from '@proton/shared/lib/helpers/humanSize';
+import { toMap } from '@proton/shared/lib/helpers/object';
+import { getCycleDiscount } from '@proton/shared/lib/helpers/subscription';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import {
     Additions,
@@ -15,17 +17,27 @@ import {
     PlansMap,
     SubscriptionCheckResponse,
 } from '@proton/shared/lib/interfaces';
-import { getCycleDiscount } from '@proton/shared/lib/helpers/subscription';
+import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
+import compare from '@proton/utils/compare';
+import isTruthy from '@proton/utils/isTruthy';
 
-import { Info, Time } from '../../../components';
+import {
+    Collapsible,
+    CollapsibleContent,
+    CollapsibleHeader,
+    CollapsibleHeaderIconButton,
+    Icon,
+    Info,
+    Time,
+} from '../../../components';
 import { useConfig } from '../../../hooks';
+import Checkout from '../Checkout';
 import CycleDiscountBadge from '../CycleDiscountBadge';
 import DiscountBadge from '../DiscountBadge';
-import CheckoutRow from './CheckoutRow';
-import Checkout from '../Checkout';
 import PaymentGiftCode from '../PaymentGiftCode';
-import { getSubTotal } from './getSubTotal';
 import { getDueCycleText, getTotalBillingText } from '../helper';
+import CheckoutRow from './CheckoutRow';
+import { getSubTotal } from './getSubTotal';
 
 interface Props {
     submit?: ReactNode;
@@ -245,6 +257,61 @@ export const SubscriptionCheckoutLocal = ({
     );
 };
 
+const PlanDescription = ({ planIDs, plansMap }: { planIDs: PlanIDs; plansMap: PlansMap }) => {
+    const summary = Object.entries(planIDs).reduce(
+        (acc, [planNameValue, quantity]) => {
+            const planName = planNameValue as keyof PlansMap;
+            const plan = plansMap[planName];
+            if (!plan || !quantity || quantity <= 0) {
+                return acc;
+            }
+            acc.addresses += plan.MaxAddresses * quantity;
+            acc.domains += plan.MaxDomains * quantity;
+            acc.space += plan.MaxSpace * quantity;
+            acc.vpn += plan.MaxVPN * quantity;
+            return acc;
+        },
+        { space: 0, addresses: 0, domains: 0, vpn: 0 }
+    );
+    const list = [
+        {
+            text: c('Info').t`Total storage`,
+            value: humanSize(summary.space || FREE_PLAN.MaxSpace, undefined, undefined, 0),
+        },
+        { text: c('Info').t`Total email addresses`, value: summary.addresses || FREE_PLAN.MaxAddresses },
+        { text: c('Info').t`Total supported domains`, value: summary.domains || FREE_PLAN.MaxDomains },
+        { text: c('Info').t`Total VPN connections`, value: summary.vpn || FREE_PLAN.MaxVPN },
+    ];
+    return (
+        <div className="mt2">
+            <hr />
+            <Collapsible>
+                <CollapsibleHeader
+                    className="text-semibold"
+                    suffix={
+                        <CollapsibleHeaderIconButton
+                            expandText={c('Action').t`What do I get?`}
+                            collapseText={c('Action').t`What do I get?`}
+                        >
+                            <Icon name="chevron-down" />
+                        </CollapsibleHeaderIconButton>
+                    }
+                >
+                    {c('Action').t`What do I get?`}
+                </CollapsibleHeader>
+                <CollapsibleContent>
+                    {list.map((item) => (
+                        <div key={item.text} className="flex flex-nowrap mb0-5">
+                            <div className="flex-item-fluid-auto text-ellipsis mr1">{item.text}</div>
+                            <div className="flex-item-fluid-auto flex-item-noshrink text-right">{item.value}</div>
+                        </div>
+                    ))}
+                </CollapsibleContent>
+            </Collapsible>
+        </div>
+    );
+};
+
 const SubscriptionCheckout = ({
     submit = c('Action').t`Pay`,
     plans = [],
@@ -268,6 +335,7 @@ const SubscriptionCheckout = ({
             onChangeCurrency={onChangeCurrency}
             loading={loading}
             hasGuarantee={!!planIDs[PLANS.VPN]}
+            description={<PlanDescription planIDs={planIDs} plansMap={plansMap} />}
         >
             <CheckoutPlanIDs
                 planIDs={planIDs}
