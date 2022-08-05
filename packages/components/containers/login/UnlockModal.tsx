@@ -1,25 +1,28 @@
 import { useState } from 'react';
+
 import { c } from 'ttag';
-import { srpAuth } from '@proton/shared/lib/srp';
-import { queryUnlock } from '@proton/shared/lib/api/user';
-import noop from '@proton/utils/noop';
-import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+
 import { PASSWORD_WRONG_ERROR } from '@proton/shared/lib/api/auth';
+import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { queryUnlock } from '@proton/shared/lib/api/user';
+import { srpAuth } from '@proton/shared/lib/srp';
+import noop from '@proton/utils/noop';
+
 import {
-    ModalTwo as Modal,
+    Button,
     Form,
-    ModalTwoHeader as ModalHeader,
+    InputFieldTwo,
+    ModalTwo as Modal,
     ModalTwoContent as ModalContent,
     ModalTwoFooter as ModalFooter,
-    Button,
-    InputFieldTwo,
-    PasswordInputTwo,
+    ModalTwoHeader as ModalHeader,
     ModalProps,
+    PasswordInputTwo,
 } from '../../components';
 import { useApi } from '../../hooks';
 
 interface Props extends Omit<ModalProps<typeof Form>, 'as' | 'onSubmit' | 'size' | 'onSuccess'> {
-    onSuccess?: () => void;
+    onSuccess?: (password: string) => Promise<void> | void;
     onClose?: () => void;
 }
 
@@ -36,7 +39,7 @@ const UnlockModal = ({ onClose, onSuccess, ...rest }: Props) => {
                 credentials: { password },
                 config: queryUnlock(),
             });
-            onSuccess?.();
+            await onSuccess?.(password);
             onClose?.();
         } catch (error: any) {
             setLoading(false);

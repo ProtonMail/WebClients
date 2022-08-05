@@ -1,34 +1,42 @@
-import {
-    Address as tsAddress,
-    Api,
-    KeySalt as tsKeySalt,
-    User as tsUser,
-    UserType,
-} from '@proton/shared/lib/interfaces';
-import { AUTH_VERSION } from '@proton/srp';
 import { c } from 'ttag';
-import { srpVerify } from '@proton/shared/lib/srp';
-import { upgradePassword } from '@proton/shared/lib/api/settings';
+
+import { getAllAddresses } from '@proton/shared/lib/api/addresses';
 import { auth2FA, getInfo, revoke } from '@proton/shared/lib/api/auth';
-import { getUser } from '@proton/shared/lib/api/user';
+import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
+import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getKeySalts } from '@proton/shared/lib/api/keys';
-import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
+import { upgradePassword } from '@proton/shared/lib/api/settings';
+import { getUser } from '@proton/shared/lib/api/user';
 import { InfoResponse } from '@proton/shared/lib/authentication/interface';
 import loginWithFallback from '@proton/shared/lib/authentication/loginWithFallback';
-import { withAuthHeaders } from '@proton/shared/lib/fetch/headers';
-import noop from '@proton/utils/noop';
 import { maybeResumeSessionByUser, persistSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
-import { getAllAddresses } from '@proton/shared/lib/api/addresses';
-import { getHasV2KeysToUpgrade, upgradeV2KeysHelper } from '@proton/shared/lib/keys/upgradeKeysV2';
-import { captureMessage } from '@proton/shared/lib/helpers/sentry';
-import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import { handleSetupAddressKeys } from '@proton/shared/lib/keys/setupAddressKeys';
+import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
+import { withAuthHeaders } from '@proton/shared/lib/fetch/headers';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import { getSentryError, migrateUser } from '@proton/shared/lib/keys';
+import { captureMessage } from '@proton/shared/lib/helpers/sentry';
+import {
+    Api,
+    UserType,
+    Address as tsAddress,
+    KeySalt as tsKeySalt,
+    User as tsUser,
+} from '@proton/shared/lib/interfaces';
+import {
+    InternalAddressGenerationPayload,
+    getInternalAddressSetupMode,
+    getSentryError,
+    handleInternalAddressGeneration,
+    migrateUser,
+} from '@proton/shared/lib/keys';
+import { handleSetupAddressKeys } from '@proton/shared/lib/keys/setupAddressKeys';
+import { getHasV2KeysToUpgrade, upgradeV2KeysHelper } from '@proton/shared/lib/keys/upgradeKeysV2';
+import { srpVerify } from '@proton/shared/lib/srp';
+import { AUTH_VERSION } from '@proton/srp';
+import noop from '@proton/utils/noop';
 
 import { ChallengeResult } from '../challenge';
-import { getAuthTypes, handleUnlockKey } from './loginHelper';
 import { AuthActionResponse, AuthCacheResult, AuthStep } from './interface';
+import { getAuthTypes, handleUnlockKey } from './loginHelper';
 
 /**
  * Finalize login can be called without a key password in these cases:
@@ -48,7 +56,7 @@ const finalizeLogin = async ({
     user?: tsUser;
     addresses?: tsAddress[];
 }): Promise<AuthActionResponse> => {
-    const { authResult, authVersion, api, authApi, persistent } = cache;
+    const { authResult, authVersion, api, authApi, persistent, hasInternalAddressSetup } = cache;
 
     if (authVersion < AUTH_VERSION) {
         await srpVerify({
@@ -59,6 +67,24 @@ const finalizeLogin = async ({
     }
 
     const User = !maybeUser ? await authApi<{ User: tsUser }>(getUser()).then(({ User }) => User) : maybeUser;
+
+    if (hasInternalAddressSetup && User.Type === UserType.EXTERNAL) {
+        const [{ Domains = [] }, addresses] = await Promise.all([
+            authApi<{ Domains: string[] }>(queryAvailableDomains('signup')),
+            maybeAddresess || getAllAddresses(authApi),
+        ]);
+        return {
+            to: AuthStep.GENERATE_INTERNAL,
+            cache: {
+                ...cache,
+                internalAddressSetup: {
+                    availableDomains: Domains,
+                    externalEmailAddress: addresses?.[0],
+                    setup: getInternalAddressSetupMode({ User, loginPassword, keyPassword }),
+                },
+            },
+        };
+    }
 
     const validatedSession = await maybeResumeSessionByUser(api, User);
     if (validatedSession) {
@@ -80,6 +106,29 @@ const finalizeLogin = async ({
             persistent,
         },
     };
+};
+
+export const handleSetupInternalAddress = async ({
+    cache,
+    payload,
+}: {
+    cache: AuthCacheResult;
+    payload: InternalAddressGenerationPayload;
+}): Promise<AuthActionResponse> => {
+    const { authApi } = cache;
+
+    const passphrase = await handleInternalAddressGeneration({
+        api: authApi,
+        setup: payload.setup,
+        domain: payload.domain,
+        username: payload.username,
+    });
+
+    return finalizeLogin({
+        cache,
+        loginPassword: cache.loginPassword,
+        keyPassword: passphrase,
+    });
 };
 
 const handleKeyMigration = async ({
@@ -343,6 +392,7 @@ export const handleLogin = async ({
     api,
     ignoreUnlock,
     hasGenerateKeys,
+    hasInternalAddressSetup,
     payload,
 }: {
     username: string;
@@ -351,6 +401,7 @@ export const handleLogin = async ({
     api: Api;
     ignoreUnlock: boolean;
     hasGenerateKeys: boolean;
+    hasInternalAddressSetup: boolean;
     payload?: ChallengeResult;
 }): Promise<AuthActionResponse> => {
     const infoResult = await api<InfoResponse>(getInfo(username));
@@ -374,6 +425,7 @@ export const handleLogin = async ({
         loginPassword: password,
         ignoreUnlock,
         hasGenerateKeys,
+        hasInternalAddressSetup,
     };
 
     return next({ cache, from: AuthStep.LOGIN });

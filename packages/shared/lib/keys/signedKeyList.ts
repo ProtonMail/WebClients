@@ -1,4 +1,5 @@
 import { CryptoProxy, PrivateKeyReference } from '@proton/crypto';
+
 import { ActiveKey, SignedKeyList, SignedKeyListItem } from '../interfaces';
 import { SimpleMap } from '../interfaces/utils';
 

@@ -1,6 +1,19 @@
 import { AuthResponse, AuthVersion } from '@proton/shared/lib/authentication/interface';
-import { Api, KeySalt as tsKeySalt, User as tsUser, Address as tsAddress } from '@proton/shared/lib/interfaces';
 import { APP_NAMES } from '@proton/shared/lib/constants';
+import {
+    Address,
+    Api,
+    Address as tsAddress,
+    KeySalt as tsKeySalt,
+    User as tsUser,
+} from '@proton/shared/lib/interfaces';
+import { InternalAddressGenerationSetup } from '@proton/shared/lib/keys';
+
+export interface InternalAddressGeneration {
+    externalEmailAddress?: Address;
+    availableDomains: string[];
+    setup: InternalAddressGenerationSetup;
+}
 
 export enum AuthStep {
     LOGIN,
@@ -24,7 +37,9 @@ export interface AuthCacheResult {
     persistent: boolean;
     loginPassword: string;
     hasGenerateKeys: boolean;
+    hasInternalAddressSetup: boolean;
     ignoreUnlock: boolean;
+    internalAddressSetup?: InternalAddressGeneration;
 }
 
 export type AuthFlows = 'signup' | 'reset' | 'switch' | undefined;
