@@ -1,10 +1,10 @@
 import { CryptoProxy, PrivateKeyReference } from '@proton/crypto';
 import unique from '@proton/utils/unique';
-import { User as tsUser, Address as tsAddress, KeyPair, SignedKeyList, DecryptedKey, Key } from '../../interfaces';
 
+import { DecryptedKey, Key, KeyPair, SignedKeyList, Address as tsAddress, User as tsUser } from '../../interfaces';
+import { getActiveKeys, getReactivatedKeyFlag, getNormalizedActiveKeys } from '../getActiveKeys';
 import { getDecryptedAddressKeysHelper } from '../getDecryptedAddressKeys';
 import { getSignedKeyList } from '../signedKeyList';
-import { getActiveKeys, getReactivatedKeyFlag } from '../getActiveKeys';
 
 interface GetReactivatedAddressKeys {
     address: tsAddress;
@@ -65,16 +65,19 @@ export const getReactivatedAddressKeys = async ({
     }
 
     const oldAddressKeysMap = new Map<string, Key>(address.Keys.map((Key) => [Key.ID, Key]));
-    const newActiveKeys = await getActiveKeys(address.SignedKeyList, address.Keys, newDecryptedAddressKeys);
-    const newActiveKeysFormatted = newActiveKeys.map((activeKey) => {
-        if (!reactivatedKeysSet.has(activeKey.ID)) {
-            return activeKey;
-        }
-        return {
-            ...activeKey,
-            flags: getReactivatedKeyFlag(oldAddressKeysMap.get(activeKey.ID)?.Flags),
-        };
-    });
+    const newActiveKeys = await getActiveKeys(address, address.SignedKeyList, address.Keys, newDecryptedAddressKeys);
+    const newActiveKeysFormatted = getNormalizedActiveKeys(
+        address,
+        newActiveKeys.map((activeKey) => {
+            if (!reactivatedKeysSet.has(activeKey.ID)) {
+                return activeKey;
+            }
+            return {
+                ...activeKey,
+                flags: getReactivatedKeyFlag(address, oldAddressKeysMap.get(activeKey.ID)?.Flags),
+            };
+        })
+    );
 
     return {
         address,

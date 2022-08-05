@@ -1,22 +1,23 @@
 import { CryptoProxy, PrivateKeyReference, toPublicKeyReference } from '@proton/crypto';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
-import { User, Address, OrganizationKey, DecryptedKey, SignedKeyList, Member, Api, Organization } from '../interfaces';
-import { getDecryptedUserKeys, getDecryptedUserKeysHelper } from './getDecryptedUserKeys';
-import { getDecryptedAddressKeys, getDecryptedAddressKeysHelper } from './getDecryptedAddressKeys';
-import { generateAddressKeyTokens } from './addressKeys';
-import { getActiveKeys } from './getActiveKeys';
-import { getSignedKeyList } from './signedKeyList';
-import { getPrimaryKey } from './getPrimaryKey';
-import { getDecryptedOrganizationKey } from './getDecryptedOrganizationKey';
-import { MEMBER_PRIVATE, USER_ROLES } from '../constants';
+
 import { queryScopes } from '../api/auth';
-import { migrateAddressKeysRoute } from '../api/keys';
-import { getOrganizationKeys } from '../api/organization';
-import { getAllMemberAddresses, getAllMembers, getMember } from '../api/members';
-import { migrateMembersAddressKeysRoute, restoreBrokenSKLRoute } from '../api/memberKeys';
-import { ApiError } from '../fetch/ApiError';
 import { getApiError } from '../api/helpers/apiErrorHelper';
+import { migrateAddressKeysRoute } from '../api/keys';
+import { migrateMembersAddressKeysRoute, restoreBrokenSKLRoute } from '../api/memberKeys';
+import { getAllMemberAddresses, getAllMembers, getMember } from '../api/members';
+import { getOrganizationKeys } from '../api/organization';
+import { MEMBER_PRIVATE, USER_ROLES } from '../constants';
+import { ApiError } from '../fetch/ApiError';
+import { Address, Api, DecryptedKey, Member, Organization, OrganizationKey, SignedKeyList, User } from '../interfaces';
+import { generateAddressKeyTokens } from './addressKeys';
+import { getActiveKeys, getNormalizedActiveKeys } from './getActiveKeys';
+import { getDecryptedAddressKeys, getDecryptedAddressKeysHelper } from './getDecryptedAddressKeys';
+import { getDecryptedOrganizationKey } from './getDecryptedOrganizationKey';
+import { getDecryptedUserKeys, getDecryptedUserKeysHelper } from './getDecryptedUserKeys';
+import { getPrimaryKey } from './getPrimaryKey';
+import { getSignedKeyList } from './signedKeyList';
 
 export const getSentryError = (e: any): any => {
     // Only interested in api errors where the API gave a valid error response, or run time errors.
@@ -125,7 +126,10 @@ export async function getAddressKeysMigrationPayload(
                     publicKey: await toPublicKeyReference(privateKey),
                 }))
             );
-            const activeKeys = await getActiveKeys(address.SignedKeyList, address.Keys, migratedDecryptedKeys);
+            const activeKeys = getNormalizedActiveKeys(
+                address,
+                await getActiveKeys(address, address.SignedKeyList, address.Keys, migratedDecryptedKeys)
+            );
             return {
                 Address: address,
                 SignedKeyList: activeKeys.length > 0 ? await getSignedKeyList(activeKeys) : (undefined as any),
@@ -431,7 +435,7 @@ export async function restoreBrokenSKL({ api, keyPassword, timeout = 120000, use
 
         const signedKeyLists = await Promise.all(
             memberAddressesKeys.map(async ({ address, keys }) => {
-                const activeKeys = await getActiveKeys(null, address.Keys, keys);
+                const activeKeys = getNormalizedActiveKeys(address, await getActiveKeys(address, null, address.Keys, keys));
                 return {
                     Address: address,
                     SignedKeyList: activeKeys.length > 0 ? await getSignedKeyList(activeKeys) : (undefined as any),

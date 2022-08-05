@@ -1,30 +1,23 @@
 import { useState } from 'react';
+
 import { c } from 'ttag';
-import PropTypes from 'prop-types';
+
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { Table, TableHeader, TableBody, TableRow, Info } from '../../components';
+import { Domain, DomainAddress } from '@proton/shared/lib/interfaces';
+
+import { Info, Table, TableBody, TableHeader, TableRow } from '../../components';
 import { useEventManager } from '../../hooks';
-
-import AddressStatus from './AddressStatus';
 import AddressCatchAll from './AddressCatchAll';
+import AddressStatus from './AddressStatus';
 
-const AddressesTable = ({ domain, domainAddresses }) => {
+interface Props {
+    domain: Domain;
+    domainAddresses: DomainAddress[];
+}
+
+const AddressesTable = ({ domain, domainAddresses }: Props) => {
     const { call } = useEventManager();
     const [addresses, setAddresses] = useState(() => domainAddresses);
-
-    const handleChange =
-        ({ ID }) =>
-        async (newValue) => {
-            setAddresses(
-                addresses.map((address) => {
-                    return {
-                        ...address,
-                        CatchAll: address.ID === ID ? +newValue : 0,
-                    };
-                })
-            );
-            await call();
-        };
 
     return (
         <Table>
@@ -53,7 +46,18 @@ const AddressesTable = ({ domain, domainAddresses }) => {
                                     key={key}
                                     address={address}
                                     domain={domain}
-                                    onChange={handleChange(address)}
+                                    onChange={(id, value) => {
+                                        const newValue = value ? 1 : 0;
+                                        setAddresses(
+                                            addresses.map((address) => {
+                                                return {
+                                                    ...address,
+                                                    CatchAll: address.ID === id ? newValue : 0,
+                                                } as const;
+                                            })
+                                        );
+                                        call();
+                                    }}
                                 />,
                             ]}
                         />
@@ -62,11 +66,6 @@ const AddressesTable = ({ domain, domainAddresses }) => {
             </TableBody>
         </Table>
     );
-};
-
-AddressesTable.propTypes = {
-    domain: PropTypes.object.isRequired,
-    domainAddresses: PropTypes.array.isRequired,
 };
 
 export default AddressesTable;

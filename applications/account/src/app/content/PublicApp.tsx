@@ -1,51 +1,54 @@
 import { useCallback, useMemo, useRef, useState } from 'react';
-import * as H from 'history';
 import { Redirect, Route, Switch, useHistory, useLocation } from 'react-router-dom';
-import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
-import ForceRefreshContext from '@proton/components/containers/forceRefresh/context';
+
+import * as H from 'history';
+
+import {
+    ExperimentsProvider,
+    FeaturesProvider,
+    ModalsChildren,
+    SSOForkProducer,
+    Unauthenticated,
+    useApi,
+    useConfig,
+} from '@proton/components';
+import { ActiveSessionData, ProduceForkData, SSOType } from '@proton/components/containers/app/SSOForkProducer';
 import { OnLoginCallbackArguments, ProtonLoginCallback } from '@proton/components/containers/app/interface';
+import ForceRefreshContext from '@proton/components/containers/forceRefresh/context';
+import { OAuthLastAccess, getOAuthLastAccess } from '@proton/shared/lib/api/oauth';
+import { getAppHref, getInvoicesPathname } from '@proton/shared/lib/apps/helper';
+import { DEFAULT_APP, getAppFromPathname, getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 import { LocalSessionResponse } from '@proton/shared/lib/authentication/interface';
+import { stripLocalBasenameFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
+import { GetActiveSessionsResult } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { produceFork, produceOAuthFork } from '@proton/shared/lib/authentication/sessionForking';
 import {
     APPS,
     APPS_CONFIGURATION,
     CLIENT_TYPES,
-    isSSOMode,
     REQUIRES_INTERNAL_EMAIL_ADDRESS,
     SSO_PATHS,
     UNPAID_STATE,
+    isSSOMode,
 } from '@proton/shared/lib/constants';
-import { GetActiveSessionsResult } from '@proton/shared/lib/authentication/persistedSessionHelper';
-import { stripLeadingAndTrailingSlash } from '@proton/shared/lib/helpers/string';
-import {
-    FeaturesProvider,
-    ExperimentsProvider,
-    ModalsChildren,
-    SSOForkProducer,
-    Unauthenticated,
-    useApi,
-} from '@proton/components';
-import { stripLocalBasenameFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
-import { getAppHref, getInvoicesPathname } from '@proton/shared/lib/apps/helper';
-import { replaceUrl } from '@proton/shared/lib/helpers/browser';
-import { DEFAULT_APP, getAppFromPathname, getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
-import { UserType } from '@proton/shared/lib/interfaces';
 import { withUIDHeaders } from '@proton/shared/lib/fetch/headers';
-import { getOAuthLastAccess, OAuthLastAccess } from '@proton/shared/lib/api/oauth';
+import { replaceUrl } from '@proton/shared/lib/helpers/browser';
+import { stripLeadingAndTrailingSlash } from '@proton/shared/lib/helpers/string';
+import { UserType } from '@proton/shared/lib/interfaces';
+import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 
-import { ActiveSessionData, ProduceForkData, SSOType } from '@proton/components/containers/app/SSOForkProducer';
-import AccountPublicApp from './AccountPublicApp';
-import EmailUnsubscribeContainer from '../public/EmailUnsubscribeContainer';
-import SwitchAccountContainer from '../public/SwitchAccountContainer';
-import OAuthConfirmForkContainer from '../public/OAuthConfirmForkContainer';
-import SignupContainer from '../signup/SignupContainer';
-import ResetPasswordContainer from '../reset/ResetPasswordContainer';
-import ForgotUsernameContainer from '../public/ForgotUsernameContainer';
 import LoginContainer from '../login/LoginContainer';
-import SignupInviteContainer from '../signup/SignupInviteContainer';
+import EmailUnsubscribeContainer from '../public/EmailUnsubscribeContainer';
+import ForgotUsernameContainer from '../public/ForgotUsernameContainer';
+import OAuthConfirmForkContainer from '../public/OAuthConfirmForkContainer';
+import SwitchAccountContainer from '../public/SwitchAccountContainer';
 import ValidateRecoveryEmailContainer from '../public/ValidateRecoveryEmailContainer';
-import { SERVICES, SERVICES_KEYS } from '../signup/interfaces';
 import { getToAppName } from '../public/helper';
+import ResetPasswordContainer from '../reset/ResetPasswordContainer';
+import SignupContainer from '../signup/SignupContainer';
+import SignupInviteContainer from '../signup/SignupInviteContainer';
+import { SERVICES, SERVICES_KEYS } from '../signup/interfaces';
+import AccountPublicApp from './AccountPublicApp';
 
 const getPathFromLocation = (location: H.Location) => {
     return [location.pathname, location.search, location.hash].join('');
@@ -100,6 +103,7 @@ interface Props {
 
 const PublicApp = ({ onLogin, locales }: Props) => {
     const history = useHistory();
+    const config = useConfig();
     const location = useLocation<{ from?: H.Location }>();
     const [, setState] = useState(1);
     const refresh = useCallback(() => setState((i) => i + 1), []);
@@ -133,9 +137,10 @@ const PublicApp = ({ onLogin, locales }: Props) => {
         maybeLocalRedirect?.toApp ||
         maybeQueryAppIntent;
 
-    // Require internal setup if an app is specified
-    const maybeShouldSetupInternalAddress =
-        maybePreAppIntent && REQUIRES_INTERNAL_EMAIL_ADDRESS.includes(maybePreAppIntent);
+    // Require internal setup if an app is specified. Otherwise, external accounts will get redirected to vpn (without having to setup an internal address)
+    const shouldSetupInternalAddress = maybePreAppIntent
+        ? REQUIRES_INTERNAL_EMAIL_ADDRESS.includes(maybePreAppIntent)
+        : false;
 
     const handleProduceFork = async (data: ProduceForkData) => {
         if (data.type === SSOType.Proton) {
@@ -174,20 +179,20 @@ const PublicApp = ({ onLogin, locales }: Props) => {
         }
 
         const { keyPassword, UID, User, LocalID, persistent, appIntent: maybeFlowAppIntent } = args;
-        const toApp = maybeFlowAppIntent?.app || maybePreAppIntent || DEFAULT_APP;
+        const toAppIntent = maybeFlowAppIntent?.app || maybePreAppIntent;
+        // Special case for external users to redirect to VPN until more apps are supported, when no app intent is provided.
+        const toApp = toAppIntent || (User.Type === UserType.EXTERNAL ? APPS.PROTONVPN_SETTINGS : DEFAULT_APP);
 
         // Handle special case going for internal vpn on account settings.
         const localRedirect =
             maybeLocalRedirect ||
             (toApp === APPS.PROTONVPN_SETTINGS ? getLocalRedirect(APPS_CONFIGURATION[toApp].settingsSlug) : undefined);
 
-        const shouldSetupInternalAddress = REQUIRES_INTERNAL_EMAIL_ADDRESS.includes(toApp);
-
         // Upon login, if user is delinquent, the fork is aborted and the user is redirected to invoices
         if (User.Delinquent >= UNPAID_STATE.DELINQUENT) {
             return onLogin({
                 ...args,
-                path: `${getSlugFromApp(toApp)}${getInvoicesPathname(toApp)}`,
+                path: `${getSlugFromApp(toApp)}${getInvoicesPathname(config.APP_NAME)}`,
             });
         }
 
@@ -201,14 +206,6 @@ const PublicApp = ({ onLogin, locales }: Props) => {
         if (forkState?.type === SSOType.Proton && args.flow !== 'signup') {
             await produceFork({ api, UID, keyPassword, ...forkState.payload, persistent });
             return;
-        }
-
-        // Special case for external users to redirect to VPN until more apps are supported
-        if (User.Type === UserType.EXTERNAL && !shouldSetupInternalAddress) {
-            return onLogin({
-                ...args,
-                path: `${getSlugFromApp(APPS.PROTONVPN_SETTINGS)}`,
-            });
         }
 
         const url = (() => {
@@ -421,7 +418,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                                                     hasActiveSessions={Boolean(activeSessions?.length)}
                                                     toAppName={toAppName}
                                                     showContinueTo={!!toOAuthName}
-                                                    shouldSetupInternalAddress={maybeShouldSetupInternalAddress}
+                                                    shouldSetupInternalAddress={shouldSetupInternalAddress}
                                                     onLogin={handleLogin}
                                                     onBack={hasBackToSwitch ? () => history.push('/switch') : undefined}
                                                 />

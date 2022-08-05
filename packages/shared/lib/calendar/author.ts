@@ -1,6 +1,7 @@
 import { PublicKeyReference } from '@proton/crypto';
 import isTruthy from '@proton/utils/isTruthy';
 import unique from '@proton/utils/unique';
+
 import { canonizeInternalEmail } from '../helpers/email';
 import { Address } from '../interfaces';
 import { CalendarEvent, CalendarEventData } from '../interfaces/calendar';
@@ -57,7 +58,12 @@ export const getAuthorPublicKeysMap = async ({
         const ownAddress = normalizedAddresses.find(({ normalizedEmailAddress }) => normalizedEmailAddress === author);
         if (ownAddress) {
             const decryptedKeys = await getAddressKeys(ownAddress.ID);
-            const addressKeys = await getActiveKeys(ownAddress.SignedKeyList, ownAddress.Keys, decryptedKeys);
+            const addressKeys = await getActiveKeys(
+                ownAddress,
+                ownAddress.SignedKeyList,
+                ownAddress.Keys,
+                decryptedKeys
+            );
             publicKeysMap[author] = addressKeys
                 .filter((decryptedKey) => {
                     return getKeyHasFlagsToVerify(decryptedKey.flags);

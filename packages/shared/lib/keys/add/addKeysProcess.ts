@@ -1,11 +1,11 @@
-import { createAddressKeyLegacy, createAddressKeyV2 } from './addAddressKeyHelper';
-import { getHasMigratedAddressKeys } from '../keyMigration';
+import { createUserKeyRoute } from '../../api/keys';
+import { DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS } from '../../constants';
 import { Address, Api, DecryptedKey, EncryptionConfig } from '../../interfaces';
 import { getActiveKeys } from '../getActiveKeys';
 import { getPrimaryKey } from '../getPrimaryKey';
-import { DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS } from '../../constants';
+import { getHasMigratedAddressKeys } from '../keyMigration';
 import { generateUserKey } from '../userKeys';
-import { createUserKeyRoute } from '../../api/keys';
+import { createAddressKeyLegacy, createAddressKeyV2 } from './addAddressKeyHelper';
 
 interface AddAddressKeysProcessArguments {
     api: Api;
@@ -28,7 +28,7 @@ export const addAddressKeysProcess = async ({
 }: AddAddressKeysProcessArguments) => {
     const hasMigratedAddressKeys = getHasMigratedAddressKeys(addresses);
 
-    const activeKeys = await getActiveKeys(address.SignedKeyList, address.Keys, addressKeys);
+    const activeKeys = await getActiveKeys(address, address.SignedKeyList, address.Keys, addressKeys);
 
     if (hasMigratedAddressKeys) {
         const userKey = getPrimaryKey(userKeys)?.privateKey;
