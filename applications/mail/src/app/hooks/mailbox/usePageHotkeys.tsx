@@ -2,7 +2,7 @@ import { useRef } from 'react';
 
 import { HotkeyTuple, useHotkeys, useMailSettings } from '@proton/components';
 import { KeyboardKey } from '@proton/shared/lib/interfaces';
-import { isTargetEditable } from '@proton/shared/lib/shortcuts/helpers';
+import { isBusy } from '@proton/shared/lib/shortcuts/helpers';
 
 import { MESSAGE_ACTIONS } from '../../constants';
 import { useOnCompose } from '../../containers/ComposeProvider';
@@ -24,7 +24,7 @@ export const usePageHotkeys = ({ onOpenShortcutsModal }: PageHotkeysHandlers) =>
         [
             KeyboardKey.QuestionMark,
             (e) => {
-                if (!isTargetEditable(e)) {
+                if (!isBusy(e)) {
                     onOpenShortcutsModal();
                 }
             },
@@ -47,7 +47,7 @@ export const usePageHotkeys = ({ onOpenShortcutsModal }: PageHotkeysHandlers) =>
         [
             KeyboardKey.Slash,
             (e) => {
-                if (Shortcuts && !isTargetEditable(e)) {
+                if (Shortcuts && !isBusy(e)) {
                     e.preventDefault();
                     const button = document.querySelector('[data-shorcut-target="searchbox-button"]') as HTMLElement;
                     button?.dispatchEvent(
@@ -63,7 +63,7 @@ export const usePageHotkeys = ({ onOpenShortcutsModal }: PageHotkeysHandlers) =>
         [
             'N',
             (e) => {
-                if (Shortcuts && !isTargetEditable(e)) {
+                if (Shortcuts && !isBusy(e)) {
                     onCompose({ action: MESSAGE_ACTIONS.NEW });
                 }
             },
