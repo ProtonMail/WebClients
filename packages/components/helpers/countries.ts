@@ -6,7 +6,7 @@ const TOP_COUNTRIES = [
     { label: 'Germany', value: 'DE' },
     { label: 'Canada', value: 'CA' },
 ];
-const DEFAULT_SEPARATOR = { label: '------------------', value: '', disabled: true };
+export const DEFAULT_SEPARATOR = { label: '------------------', value: '', disabled: true };
 const COUNTRIES = [
     { value: 'AF', label: 'Afghanistan' },
     { value: 'AL', label: 'Albania' },
