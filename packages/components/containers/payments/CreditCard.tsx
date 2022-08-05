@@ -1,10 +1,11 @@
-import { ChangeEvent } from 'react';
-import { c } from 'ttag';
-import { Info, InputFieldTwo, Select } from '../../components';
+import { ChangeEvent, useMemo } from 'react';
 
-import { getFullList } from '../../helpers/countries';
-import ExpInput from './ExpInput';
+import { c } from 'ttag';
+
+import { Info, InputFieldTwo, Select } from '../../components';
+import { DEFAULT_SEPARATOR, getFullList } from '../../helpers/countries';
 import CardNumberInput from './CardNumberInput';
+import ExpInput from './ExpInput';
 import { CardModel } from './interface';
 
 interface Props {
@@ -15,7 +16,7 @@ interface Props {
 }
 
 const CreditCard = ({ card, errors, onChange, loading = false }: Props) => {
-    const countries = getFullList().map(({ value, label: text }) => ({ value, text }));
+    const countries = useMemo(() => getFullList().map(({ value, label: text }) => ({ value, text })), []);
     const handleChange =
         (key: keyof CardModel) =>
         ({ target }: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLSelectElement>) =>
@@ -88,7 +89,17 @@ const CreditCard = ({ card, errors, onChange, loading = false }: Props) => {
                         as={Select}
                         id="country"
                         value={card.country}
-                        onChange={loading ? undefined : handleChange('country')}
+                        onChange={
+                            loading
+                                ? undefined
+                                : (event: ChangeEvent<HTMLSelectElement>) => {
+                                      const value = event.target.value;
+                                      if (value === DEFAULT_SEPARATOR.value) {
+                                          return;
+                                      }
+                                      onChange('country', value);
+                                  }
+                        }
                         options={countries}
                         autoComplete="country"
                         title={c('Label').t`Select your country`}
