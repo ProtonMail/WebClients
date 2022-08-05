@@ -81,7 +81,7 @@ export const isAttachPublicKey = hasFlag(FLAG_PUBLIC_KEY);
 export const isUnsubscribed = hasFlag(FLAG_UNSUBSCRIBED);
 export const isUnsubscribable = (message?: Partial<Message>) => {
     const unsubscribeMethods = message?.UnsubscribeMethods || {};
-    return !!unsubscribeMethods.OneClick; // Only method supported by API is OneClick
+    return !!unsubscribeMethods.OneClick; // Only method supported by API
 };
 
 export const isExternalEncrypted = (message: Message) => isE2E(message) && !isInternal(message);
