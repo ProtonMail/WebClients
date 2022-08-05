@@ -1,5 +1,7 @@
 import { ReactNode } from 'react';
+
 import { c } from 'ttag';
+
 import { Currency } from '@proton/shared/lib/interfaces';
 
 import { Icon } from '../../components';
@@ -12,9 +14,18 @@ interface Props {
     children: ReactNode;
     hasGuarantee?: boolean;
     hasPayments?: boolean;
+    description?: ReactNode;
 }
 
-const Checkout = ({ currency, onChangeCurrency, loading, children, hasGuarantee, hasPayments = true }: Props) => {
+const Checkout = ({
+    currency,
+    onChangeCurrency,
+    loading,
+    children,
+    hasGuarantee,
+    hasPayments = true,
+    description,
+}: Props) => {
     return (
         <div className="p2">
             <div className="flex flex-nowrap flex row mb1">
@@ -55,6 +66,7 @@ const Checkout = ({ currency, onChangeCurrency, loading, children, hasGuarantee,
                     </div>
                 )}
             </div>
+            {description}
         </div>
     );
 };
