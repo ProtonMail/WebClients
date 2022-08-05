@@ -14,7 +14,7 @@ import {
 } from '@proton/shared/lib/api/user';
 import { AuthResponse } from '@proton/shared/lib/authentication/interface';
 import { persistSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
-import { COUPON_CODES, TOKEN_TYPES } from '@proton/shared/lib/constants';
+import { CLIENT_TYPES, COUPON_CODES, TOKEN_TYPES } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { withAuthHeaders, withVerificationHeaders } from '@proton/shared/lib/fetch/headers';
 import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
@@ -115,9 +115,6 @@ export const handleSaveRecovery = async ({
     ]);
 
     if (ignoreExplore) {
-        if (!setupData?.authResponse) {
-            throw new Error('Missing auth response');
-        }
         return handleDone({ cache, appIntent: cache.appIntent });
     }
 
@@ -136,7 +133,7 @@ export const handleDisplayName = async ({
     api: Api;
     displayName: string;
 }): Promise<SignupActionResponse> => {
-    const { setupData } = cache;
+    const { setupData, accountData, ignoreExplore } = cache;
 
     const {
         authResponse,
@@ -148,6 +145,19 @@ export const handleDisplayName = async ({
     // Re-fetch the user to get the updated display name
     const user = await authApi<{ User: User }>(getUser()).then(({ User }) => User);
 
+    const to = (() => {
+        if (accountData.signupType === SignupType.Email) {
+            // Ignore recovery step if signing up with an external email address because it's automatically set.
+            return ignoreExplore ? undefined : SIGNUP_STEPS.EXPLORE;
+        }
+        // The next step is recovery by default
+        return SIGNUP_STEPS.SAVE_RECOVERY;
+    })();
+
+    if (!to) {
+        return handleDone({ cache, appIntent: cache.appIntent });
+    }
+
     return {
         cache: {
             ...cache,
@@ -156,7 +166,7 @@ export const handleDisplayName = async ({
                 user,
             },
         },
-        to: SIGNUP_STEPS.SAVE_RECOVERY,
+        to,
     };
 };
 
@@ -173,6 +183,7 @@ export const handleSetupUser = async ({
         subscriptionData,
         persistent,
         generateKeys,
+        clientType,
     } = cache;
 
     const userEmail = (() => {
@@ -253,7 +264,7 @@ export const handleSetupUser = async ({
     };
 
     // Ignore the rest of the steps for VPN because we don't create an address and ask for recovery email at the start
-    if (signupType === SignupType.VPN) {
+    if (signupType === SignupType.VPN || clientType === CLIENT_TYPES.VPN) {
         return handleDone({ cache: newCache, appIntent: cache.appIntent });
     }
 
