@@ -34,7 +34,7 @@ const MessagePhishingModal = ({ message, onBack, ...rest }: Props) => {
             })
         );
 
-        await moveToFolder([message.data || ({} as Element)], SPAM, '', '', true);
+        await moveToFolder([message.data || ({} as Element)], SPAM, '', '', true, false);
         createNotification({ text: c('Success').t`Phishing reported` });
         onBack();
     };
