@@ -70,7 +70,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
     const api = useApi();
     const [user] = useUser();
     const [welcomeFlags] = useWelcomeFlags();
-    const [{ update: updateSpotlightES }, { feature: partialES }] = useFeatures([
+    const [{ update: updateSpotlightES }, { get: getPartialES }] = useFeatures([
         FeatureCode.SpotlightEncryptedSearch,
         FeatureCode.PartialEncryptedSearch,
     ]);
@@ -147,6 +147,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
      */
     const cacheOrIndexMetadata = async () => {
         // Kill switch to control the release of partial ES
+        const partialES = await getPartialES();
         if (!isPaid(user) && !!partialES && !partialES.Value) {
             return esLibraryFunctions.esDelete();
         }
@@ -228,6 +229,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
      */
     const initializeESMail = async () => {
         // Kill switch to control the release of partial ES
+        const partialES = await getPartialES();
         if ((await checkVersionedESDB(user.ID)) && !isPaid(user) && !!partialES && !partialES.Value) {
             return esLibraryFunctions.esDelete();
         }
