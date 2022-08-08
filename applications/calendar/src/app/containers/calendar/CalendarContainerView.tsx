@@ -1,59 +1,59 @@
-import { MAXIMUM_DATE, MINIMUM_DATE, VIEWS } from '@proton/shared/lib/calendar/constants';
-import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import { ReactNode, Ref, useCallback, useEffect, useMemo, useState } from 'react';
+
+import { differenceInCalendarDays, format, isToday } from 'date-fns';
+import { c, msgid } from 'ttag';
+
 import {
+    Button,
+    FloatingButton,
+    Icon,
     LocalizedMiniCalendar,
-    useToggle,
-    TextLoader,
+    MainLogo,
+    PrivateAppContainer,
     PrivateHeader,
     PrivateMainArea,
-    PrivateAppContainer,
-    FloatingButton,
-    MainLogo,
-    TimeZoneSelector,
-    Icon,
-    TopNavbarListItemSettingsDropdown,
-    TopNavbarListItemContactsDropdown,
-    TopNavbarListItemFeedbackButton,
-    Tooltip,
-    Button,
-    useNotifications,
-    useContactGroups,
-    TopBanners,
-    UserDropdown,
-    useModalState,
-    SideAppHeaderTitle,
     PrivateSideAppHeader,
     RebrandingFeedbackModal,
+    SideAppHeaderTitle,
+    TextLoader,
+    TimeZoneSelector,
+    Tooltip,
+    TopBanners,
+    TopNavbarListItemContactsDropdown,
+    TopNavbarListItemFeedbackButton,
+    TopNavbarListItemSettingsDropdown,
+    UserDropdown,
+    useContactGroups,
     useHasRebrandingFeedback,
+    useModalState,
+    useNotifications,
+    useToggle,
 } from '@proton/components';
-import { c, msgid } from 'ttag';
-import { differenceInCalendarDays, format, isToday } from 'date-fns';
-
-import { fromUTCDate, toLocalDate } from '@proton/shared/lib/date/timezone';
-import { AttendeeModel, CalendarUserSettings, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
-import { APPS } from '@proton/shared/lib/constants';
+import CalendarSelectIcon from '@proton/components/components/calendarSelect/CalendarSelectIcon';
 import { CONTACT_WIDGET_TABS, CustomActionRenderProps } from '@proton/components/containers/contacts/widget/types';
 import { emailToAttendee } from '@proton/shared/lib/calendar/attendees';
-import isTruthy from '@proton/utils/isTruthy';
-import { Address } from '@proton/shared/lib/interfaces';
-import { canonizeInternalEmail, validateEmailAddress } from '@proton/shared/lib/helpers/email';
-import uniqueBy from '@proton/utils/uniqueBy';
-import CalendarSelectIcon from '@proton/components/components/calendarSelect/CalendarSelectIcon';
-import { dateLocale } from '@proton/shared/lib/i18n';
+import { MAXIMUM_DATE, MINIMUM_DATE, VIEWS } from '@proton/shared/lib/calendar/constants';
 import { getDefaultView } from '@proton/shared/lib/calendar/getSettings';
+import { APPS } from '@proton/shared/lib/constants';
+import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
+import { fromUTCDate, toLocalDate } from '@proton/shared/lib/date/timezone';
+import { canonizeInternalEmail, validateEmailAddress } from '@proton/shared/lib/helpers/email';
+import { dateLocale } from '@proton/shared/lib/i18n';
+import { Address } from '@proton/shared/lib/interfaces';
+import { AttendeeModel, CalendarUserSettings, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import isTruthy from '@proton/utils/isTruthy';
+import uniqueBy from '@proton/utils/uniqueBy';
 
-import { getNoonDateForTimeZoneOffset } from '../../helpers/date';
-import CalendarSidebar from './CalendarSidebar';
-import CalendarToolbar from './CalendarToolbar';
 import DateCursorButtons from '../../components/DateCursorButtons';
 import ViewSelector from '../../components/ViewSelector';
-
-import getDateDiff from './getDateDiff';
 import getDateRangeText from '../../components/getDateRangeText';
 import CalendarOnboardingModal from '../../components/onboarding/CalendarOnboardingModal';
-import { toUrlParams } from './getUrlHelper';
+import { getNoonDateForTimeZoneOffset } from '../../helpers/date';
 import { getIsSideApp } from '../../helpers/views';
+import CalendarSidebar from './CalendarSidebar';
+import CalendarToolbar from './CalendarToolbar';
+import getDateDiff from './getDateDiff';
+import { toUrlParams } from './getUrlHelper';
 
 /**
  * Converts a local date into the corresponding UTC date at 0 hours.
@@ -462,6 +462,7 @@ const CalendarContainerView = ({
             calendars={calendars}
             addresses={addresses}
             logo={logo}
+            isNarrow={isNarrow}
             expanded={expanded}
             onToggleExpand={onToggleExpand}
             onCreateEvent={onCreateEvent ? () => onCreateEvent?.() : undefined}
