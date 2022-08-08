@@ -6,15 +6,16 @@ import {
     useCallback,
     useContext,
     useEffect,
+    useRef,
     useState,
 } from 'react';
 
+import { APP_NAMES, DAY, MINUTE } from '@proton/shared/lib/constants';
 import { versionCookieAtLoad } from '@proton/components/hooks/useEarlyAccess';
 import { serverTime } from '@proton/crypto';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { getAppFromHostname } from '@proton/shared/lib/apps/slugHelper';
 import { getLocalIDFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
-import { APP_NAMES } from '@proton/shared/lib/constants';
 import {
     addParentAppToUrl,
     getIsAuthorizedApp,
@@ -38,15 +39,22 @@ export const SideAppContext = createContext<{
     sideAppOpenedUrls?: SideAppOpenedUrl[];
     parentApp?: APP_NAMES;
     setParentApp?: Dispatch<SetStateAction<APP_NAMES | undefined>>;
+    showSideApp?: boolean;
+    setShowSideApp?: Dispatch<SetStateAction<boolean>>;
+    currentlyOpenedApp?: APP_NAMES;
 }>({});
 
 export default function useSideApp() {
-    const { sideAppUrl, setSideAppUrl, sideAppOpenedUrls, parentApp } = useContext(SideAppContext) || {
-        sideAppUrl: undefined,
-        setSideAppUrl: undefined,
-        sideAppOpenedUrls: undefined,
-        parentApp: undefined,
-    };
+    const { sideAppUrl, setSideAppUrl, sideAppOpenedUrls, parentApp, showSideApp, setShowSideApp, currentlyOpenedApp } =
+        useContext(SideAppContext) || {
+            sideAppUrl: undefined,
+            setSideAppUrl: undefined,
+            sideAppOpenedUrls: undefined,
+            parentApp: undefined,
+            showSideApp: undefined,
+            setShowSideApp: undefined,
+            currentlyOpenedApp: undefined,
+        };
     const { offline } = useApiStatus();
     const onlineStatus = useOnline();
 
@@ -67,11 +75,15 @@ export default function useSideApp() {
             const alreadyOpenedUrl = sideAppOpenedUrls?.find((opened) => opened.app === app)?.url;
             const url = alreadyOpenedUrl || getAppHref(path, app, localID);
 
+            const isSwitchingApp = sideAppUrl !== undefined && currentlyOpenedApp !== app && isAppReachable;
+
             // Send an event to the iframe if we click on the app button to close it
             // That way, we can get the current URL and store it in alreadyOpenedUrls
-            if (sideAppUrl === url) {
+            // Only close it when the app is already displayed,
+            // Otherwise it's the case where the app is hidden and we want to show it again
+            if (sideAppUrl === url && showSideApp) {
                 postMessageToIframe({ type: SIDE_APP_EVENTS.SIDE_APP_CLOSE_FROM_OUTSIDE }, app);
-            } else if (sideAppUrl !== undefined && isAppReachable) {
+            } else if (isSwitchingApp) {
                 // If side app url is not undefined, then we have an app currently opened
                 // It means we are switching app by clicking on another app button
                 // In that case we want to get the current URL and store it in alreadyOpenedUrls
@@ -86,29 +98,49 @@ export default function useSideApp() {
             }
         };
 
-    return { sideAppUrl, setSideAppUrl, handleClickSideApp, parentApp, isSideApp };
+    return { sideAppUrl, setSideAppUrl, handleClickSideApp, parentApp, isSideApp, showSideApp, setShowSideApp };
 }
 
 export const SideAppUrlProvider = ({ children }: { children: ReactNode }) => {
     const { APP_NAME } = useConfig();
+    // URL that is currently used in the iframe
     const [sideAppUrl, setSideAppUrl] = useState<string>();
+
+    // Is the side panel displayed or not (we can have an URL set, and the side panel hidden)
+    const [showSideApp, setShowSideApp] = useState(false);
+
+    // All opened URLs for each apps opened in the side panel. In case we want to reopen the side panel,
+    // we will be able to reopen it on the same URL
     const [sideAppOpenedUrls, setSideAppOpenedUrls] = useState<SideAppOpenedUrl[]>([]);
     const { getUID, getPersistent, getPassword } = useAuthentication();
     const api = useApi();
     const getUser = useGetUser();
 
+    // Parent app of the app embedded into the side panel (we need it to post messages to the parent app)
     const [parentApp, setParentApp] = useState<APP_NAMES>();
 
     const [requestsAbortControllers, setRequestsAbortControllers] = useState<
         { id: string; abortController: AbortController }[]
     >([]);
 
+    const currentlyOpenedApp = sideAppUrl ? getAppFromHostname(new URL(sideAppUrl).hostname) : undefined;
+
     const handleSetSideAppUrl = (url?: string, replacePath?: boolean) => {
         // Add the parent-app name to the url we want to open in the iframe
         // This allows us to know from which app we are opening the iframe, and to use the correct targetOrigin
         const updatedUrl = addParentAppToUrl(url || '', APP_NAME, replacePath);
 
-        setSideAppUrl(updatedUrl);
+        const toOpenApp = getAppFromHostname(new URL(updatedUrl).hostname);
+
+        const needsToShowHiddenApp = currentlyOpenedApp === toOpenApp && !showSideApp;
+
+        // If the url is different than the current one, we want to open another url
+        // If the currently opened app is the same one than the one we want to open,
+        // and it is currently hidden, then we only want to show it
+        if (!needsToShowHiddenApp && updatedUrl !== sideAppUrl) {
+            setSideAppUrl(updatedUrl);
+        }
+        setShowSideApp(true);
     };
 
     const updateOpenedUrls = (url?: string, app?: string) => {
@@ -137,9 +169,15 @@ export const SideAppUrlProvider = ({ children }: { children: ReactNode }) => {
                         if (event.data.payload) {
                             const { url, app } = event.data.payload;
                             updateOpenedUrls(url, app);
+
+                            // Normally, close is hiding the side panel.
+                            // But with this extra parameter, we close it totally
+                            if (event.data.payload.closeDefinitely) {
+                                setSideAppUrl(undefined);
+                            }
                         }
 
-                        setSideAppUrl(undefined);
+                        setShowSideApp(false);
                     }
                     break;
                 case SIDE_APP_EVENTS.SIDE_APP_SWITCH:
@@ -267,9 +305,46 @@ export const SideAppUrlProvider = ({ children }: { children: ReactNode }) => {
         };
     }, [sideAppUrl]);
 
+    // After a certain period of time (3 days) where the side app is closed and not used, we close it definitely
+    const timeoutRef = useRef(0);
+    useEffect(() => {
+        if (!showSideApp && currentlyOpenedApp) {
+            const hidePanelAt = Date.now();
+            const maxDate = hidePanelAt + 3 * DAY;
+
+            timeoutRef.current = window.setInterval(() => {
+                const now = Date.now();
+                if (now > maxDate) {
+                    postMessageToIframe(
+                        {
+                            type: SIDE_APP_EVENTS.SIDE_APP_CLOSE_FROM_OUTSIDE,
+                            payload: { closeDefinitely: true },
+                        },
+                        currentlyOpenedApp
+                    );
+                }
+            }, 5 * MINUTE);
+        }
+
+        return () => {
+            if (timeoutRef.current) {
+                clearInterval(timeoutRef.current);
+            }
+        };
+    }, [showSideApp, currentlyOpenedApp]);
+
     return (
         <SideAppContext.Provider
-            value={{ sideAppUrl, setSideAppUrl: handleSetSideAppUrl, sideAppOpenedUrls, parentApp, setParentApp }}
+            value={{
+                sideAppUrl,
+                setSideAppUrl: handleSetSideAppUrl,
+                sideAppOpenedUrls,
+                parentApp,
+                setParentApp,
+                showSideApp,
+                setShowSideApp,
+                currentlyOpenedApp,
+            }}
         >
             {children}
         </SideAppContext.Provider>

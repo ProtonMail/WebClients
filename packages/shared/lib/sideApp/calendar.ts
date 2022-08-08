@@ -8,6 +8,8 @@ import { getLinkToCalendarEvent } from '../calendar/helper';
 interface OpenCalendarEventProps {
     sideAppUrl?: string;
     setSideAppUrl?: (url: string, replacePath?: boolean) => void;
+    showSideApp?: boolean;
+    setShowSideApp?: (show: boolean) => void;
     localID?: number;
     calendarID: string;
     eventID: string;
@@ -17,6 +19,8 @@ interface OpenCalendarEventProps {
 export const openCalendarEventInSideApp = ({
     sideAppUrl,
     setSideAppUrl,
+    showSideApp,
+    setShowSideApp,
     localID,
     calendarID,
     eventID,
@@ -29,6 +33,10 @@ export const openCalendarEventInSideApp = ({
         const sideAppLinkTo = getAppHref(linkTo, calendarApp, localID);
         setSideAppUrl?.(sideAppLinkTo, false);
     } else {
+        if (!showSideApp) {
+            // If the calendar app is opened but hidden, we need to show it
+            setShowSideApp?.(true);
+        }
         postMessageToIframe(
             {
                 type: SIDE_APP_EVENTS.SIDE_APP_CALENDAR_OPEN_EVENT,
