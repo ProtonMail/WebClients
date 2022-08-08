@@ -140,6 +140,7 @@ const MiniCalendar = ({
                             onClick={() => onSelectDate?.(now)}
                             disabled={(min && +now < +min) || (max && +now > +max)}
                             data-testid="minicalendar:today"
+                            className="flex"
                         >
                             <TodayIcon todayDate={now.getDate()} />
                         </Button>

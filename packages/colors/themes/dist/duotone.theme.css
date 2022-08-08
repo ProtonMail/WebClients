@@ -82,10 +82,9 @@
   --optional-email-item-selected-background-color: var(
     --interaction-norm-major-2
   );
-  --optional-email-item-selected-icon-background-color: var(
-    --primary
-  );
+  --optional-email-item-selected-icon-background-color: var(--primary);
   --optional-mini-calendar-today-color: initial;
+  --optional-logo-icon-text-color: #6d4aff;
 }
 
 .ui-prominent {
