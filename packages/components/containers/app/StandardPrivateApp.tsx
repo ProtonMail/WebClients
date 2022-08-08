@@ -2,7 +2,6 @@ import { FunctionComponent, ReactNode, useEffect, useRef, useState } from 'react
 
 import { c } from 'ttag';
 
-import { getFeatures } from '@proton/shared/lib/api/features';
 import { getApiErrorMessage, getIs401Error } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { APPS, REQUIRES_INTERNAL_EMAIL_ADDRESS, REQUIRES_NONDELINQUENT } from '@proton/shared/lib/constants';
 import createEventManager from '@proton/shared/lib/eventManager/eventManager';
@@ -21,7 +20,14 @@ import unique from '@proton/utils/unique';
 
 import { useAppLink } from '../../components';
 import { handleEarlyAccessDesynchronization } from '../../helpers/earlyAccessDesynchronization';
-import { WELCOME_FLAGS_CACHE_KEY, getWelcomeFlagsValue, useApi, useCache, useConfig } from '../../hooks';
+import {
+    WELCOME_FLAGS_CACHE_KEY,
+    getWelcomeFlagsValue,
+    useApi,
+    useCache,
+    useConfig,
+    useLoadFeature,
+} from '../../hooks';
 import { ContactProvider } from '../contacts';
 import {
     CalendarModelEventManagerProvider,
@@ -29,8 +35,7 @@ import {
     EventModelListener,
     EventNotices,
 } from '../eventManager';
-import { ExperimentsProvider } from '../experiments';
-import { Feature, FeatureCode, FeaturesProvider } from '../features';
+import { FeatureCode } from '../features';
 import ForceRefreshProvider from '../forceRefresh/Provider';
 import { DensityInjector } from '../layouts';
 import { ModalsChildren } from '../modals';
@@ -49,6 +54,7 @@ interface Props<T, M extends Model<T>, E, EvtM extends Model<E>> {
     onLogout: () => void;
     fallback?: ReactNode;
     preloadModels?: M[];
+    preloadFeatures?: FeatureCode[];
     eventModels?: EvtM[];
     noModals?: boolean;
     hasPrivateMemberKeyGeneration?: boolean;
@@ -64,6 +70,7 @@ const StandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>>({
     onInit,
     fallback,
     preloadModels = [],
+    preloadFeatures = [],
     eventModels = [],
     noModals = false,
     hasPrivateMemberKeyGeneration = false,
@@ -82,6 +89,7 @@ const StandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>>({
     const appRef = useRef<FunctionComponent | null>(null);
     const hasDelinquentBlockRef = useRef(false);
     const appLink = useAppLink();
+    const getFeature = useLoadFeature();
 
     useEffect(() => {
         const eventManagerPromise = loadEventID(silentApi, cache).then((eventID) => {
@@ -95,7 +103,7 @@ const StandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>>({
 
         const hasInternalEmailAddressRequirement = REQUIRES_INTERNAL_EMAIL_ADDRESS.includes(APP_NAME);
 
-        const featuresPromise = silentApi<{ Features: Feature[] }>(getFeatures([FeatureCode.EarlyAccessScope]));
+        const featuresPromise = getFeature([FeatureCode.EarlyAccessScope, ...preloadFeatures]);
 
         const models = unique([UserSettingsModel, UserModel, ...preloadModels]);
 
@@ -119,8 +127,7 @@ const StandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>>({
             const browserLocale = getBrowserLocale();
             const localeCode = getClosestLocaleCode(userSettings.Locale, locales);
             return Promise.all([
-                featuresPromise.then(async ({ Features }) => {
-                    const [earlyAccessScope] = Features;
+                featuresPromise.then(async ([earlyAccessScope]) => {
                     earlyAccessRefresher = handleEarlyAccessDesynchronization({
                         userSettings,
                         earlyAccessScope,
@@ -201,24 +208,20 @@ const StandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>>({
         <EventManagerProvider eventManager={eventManagerRef.current}>
             <CalendarModelEventManagerProvider>
                 <ContactProvider>
-                    <FeaturesProvider>
-                        <ExperimentsProvider>
-                            <EventModelListener models={eventModels} />
-                            <EventNotices />
-                            <ThemeInjector />
-                            <DensityInjector />
-                            {!noModals && <ModalsChildren />}
-                            <KeyBackgroundManager
-                                hasPrivateMemberKeyGeneration={hasPrivateMemberKeyGeneration}
-                                hasReadableMemberKeyActivation={hasReadableMemberKeyActivation}
-                                hasMemberKeyMigration={hasMemberKeyMigration}
-                            />
-                            <StorageListener />
-                            <ForceRefreshProvider>
-                                <LoadedApp />
-                            </ForceRefreshProvider>
-                        </ExperimentsProvider>
-                    </FeaturesProvider>
+                    <EventModelListener models={eventModels} />
+                    <EventNotices />
+                    <ThemeInjector />
+                    <DensityInjector />
+                    {!noModals && <ModalsChildren />}
+                    <KeyBackgroundManager
+                        hasPrivateMemberKeyGeneration={hasPrivateMemberKeyGeneration}
+                        hasReadableMemberKeyActivation={hasReadableMemberKeyActivation}
+                        hasMemberKeyMigration={hasMemberKeyMigration}
+                    />
+                    <StorageListener />
+                    <ForceRefreshProvider>
+                        <LoadedApp />
+                    </ForceRefreshProvider>
                 </ContactProvider>
             </CalendarModelEventManagerProvider>
         </EventManagerProvider>

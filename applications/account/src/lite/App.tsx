@@ -1,35 +1,38 @@
 import { Fragment, useMemo, useState } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
-import sentry from '@proton/shared/lib/helpers/sentry';
+
 import {
-    ErrorBoundary,
-    StandardErrorPage,
-    Icons,
-    PreventLeaveProvider,
-    ConfigProvider,
-    CompatibilityCheck,
-    RightToLeftProvider,
-    ThemeProvider,
-    ModalsProvider,
     ApiProvider,
     CacheProvider,
+    CompatibilityCheck,
+    ConfigProvider,
+    CreateNotificationOptions,
+    ErrorBoundary,
+    ExperimentsProvider,
+    FeaturesProvider,
+    Icons,
+    ModalsProvider,
     NotificationsChildren,
     NotificationsHijack,
-    CreateNotificationOptions,
+    PreventLeaveProvider,
+    RightToLeftProvider,
+    StandardErrorPage,
+    ThemeProvider,
     getSessionTrackingEnabled,
 } from '@proton/components';
-import { initLocales } from '@proton/shared/lib/i18n/locales';
-import { APPS } from '@proton/shared/lib/constants';
-
 import AuthenticationProvider from '@proton/components/containers/authentication/Provider';
-import createCache from '@proton/shared/lib/helpers/cache';
-import noop from '@proton/utils/noop';
 import authentication from '@proton/shared/lib/authentication/authentication';
+import { APPS } from '@proton/shared/lib/constants';
+import createCache from '@proton/shared/lib/helpers/cache';
+import sentry from '@proton/shared/lib/helpers/sentry';
+import { initLocales } from '@proton/shared/lib/i18n/locales';
+import noop from '@proton/utils/noop';
 
 import * as config from '../app/config';
-import '../app/app.scss';
 import Setup from './Setup';
 import broadcast, { MessageType } from './broadcast';
+
+import '../app/app.scss';
 
 initLocales(require.context('../../locales', true, /.json$/, 'lazy'));
 
@@ -99,12 +102,16 @@ const App = () => {
                                             <ApiProvider UID={UID} config={enhancedConfig} onLogout={handleLogout}>
                                                 <AuthenticationProvider store={authenticationValue}>
                                                     <CacheProvider cache={cache}>
-                                                        <NotificationsChildren />
-                                                        <ErrorBoundary component={<StandardErrorPage />}>
-                                                            {isLogout ? null : (
-                                                                <Setup UID={UID} onLogin={handleLogin} />
-                                                            )}
-                                                        </ErrorBoundary>
+                                                        <FeaturesProvider>
+                                                            <ExperimentsProvider>
+                                                                <NotificationsChildren />
+                                                                <ErrorBoundary component={<StandardErrorPage />}>
+                                                                    {isLogout ? null : (
+                                                                        <Setup UID={UID} onLogin={handleLogin} />
+                                                                    )}
+                                                                </ErrorBoundary>
+                                                            </ExperimentsProvider>
+                                                        </FeaturesProvider>
                                                     </CacheProvider>
                                                 </AuthenticationProvider>
                                             </ApiProvider>
