@@ -4069,7 +4069,7 @@ __metadata:
   resolution: "@proton/stylelint-config-proton@workspace:packages/stylelint-config-proton"
   dependencies:
     stylelint: ^13.13.1
-    stylelint-config-prettier: ^8.0.2
+    stylelint-config-prettier: ^9.0.3
   languageName: unknown
   linkType: soft
 
@@ -4081,7 +4081,7 @@ __metadata:
     prettier: ^2.7.1
     sass: ^1.54.0
     stylelint: ^13.13.1
-    stylelint-config-prettier: ^8.0.2
+    stylelint-config-prettier: ^9.0.3
     stylelint-use-logical: ^1.1.0
     svgo: ^2.8.0
   languageName: unknown
@@ -29127,15 +29127,15 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"stylelint-config-prettier@npm:^8.0.2":
-  version: 8.0.2
-  resolution: "stylelint-config-prettier@npm:8.0.2"
+"stylelint-config-prettier@npm:^9.0.3":
+  version: 9.0.3
+  resolution: "stylelint-config-prettier@npm:9.0.3"
   peerDependencies:
     stylelint: ">=11.0.0"
   bin:
     stylelint-config-prettier: bin/check.js
     stylelint-config-prettier-check: bin/check.js
-  checksum: 6a3bfdf840b7e0b01875e68a0b144d9c02495a1038167c32fc03b0f76d07d989bbe90dec1552b9f5f79119f27b4f1780acde05ee23d5034d7e1ffbdcb362c6d8
+  checksum: 9ff3f719daf3865878615ba52c31de6ef0a0d25d41cb58c41afe2f1c459a838997ff912cc4a5b4d401f92e2193667ff4d140b6d303cf8192e894b5cb454c41b9
   languageName: node
   linkType: hard
 
