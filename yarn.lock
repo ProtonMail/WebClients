@@ -3722,7 +3722,7 @@ __metadata:
     jest: ^28.1.3
     jest-environment-jsdom: ^28.1.3
     libphonenumber-js: ^1.10.11
-    linkify-it: ^3.0.3
+    linkify-it: ^4.0.1
     markdown-it: ^12.3.2
     prettier: ^2.7.1
     prop-types: ^15.8.1
@@ -20295,12 +20295,21 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"linkify-it@npm:^3.0.1, linkify-it@npm:^3.0.3":
+"linkify-it@npm:^3.0.1":
   version: 3.0.3
   resolution: "linkify-it@npm:3.0.3"
   dependencies:
     uc.micro: ^1.0.1
   checksum: 31367a4bb70c5bbc9703246236b504b0a8e049bcd4e0de4291fa50f0ebdebf235b5eb54db6493cb0b1319357c6eeafc4324c9f4aa34b0b943d9f2e11a1268fbc
+  languageName: node
+  linkType: hard
+
+"linkify-it@npm:^4.0.1":
+  version: 4.0.1
+  resolution: "linkify-it@npm:4.0.1"
+  dependencies:
+    uc.micro: ^1.0.1
+  checksum: 3e0a29921269c14eb7ac6f5db2da68d4854ea9acca6e9014a323f75f2dd39b197ffab57c1fbd6a906ceb021aad3ee6d7ba7d0181236dd9630ffc452b392f7f71
   languageName: node
   linkType: hard
 
