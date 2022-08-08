@@ -21,13 +21,18 @@ const {
 
 describe('getSyncingInfo', () => {
     it('passes an object with the correct label and text', () => {
-        expect(getSyncingInfo('dog')).toEqual({ label: 'Syncing', text: 'dog', longText: '', isSyncing: true });
+        expect(getSyncingInfo('dog')).toEqual({ label: 'Syncing', text: 'dog', longText: 'dog.', isSyncing: true });
     });
 });
 
 describe('getNotSyncedInfo', () => {
     it('passes an object with the correct label and text', () => {
-        expect(getNotSyncedInfo('dog')).toEqual({ label: 'Not synced', text: 'dog', longText: '', isSyncing: false });
+        expect(getNotSyncedInfo('dog')).toEqual({
+            label: 'Not synced',
+            text: 'dog',
+            longText: 'dog.',
+            isSyncing: false,
+        });
     });
 });
 
@@ -92,7 +97,7 @@ describe('getCalendarIsNotSyncedInfo', () => {
         expect(getCalendarIsNotSyncedInfo(notSyncedYetCalendar)).toEqual(
             getSyncingInfo(
                 'Calendar is syncing',
-                'Calendar is syncing: it may take several minutes for all of its events to show up'
+                'Calendar is syncing: it may take several minutes for all of its events to show up.'
             )
         );
         expect(getCalendarIsNotSyncedInfo(getCommonCalendarWithStatus(OK))).toBe(undefined);
@@ -147,7 +152,10 @@ describe('getCalendarIsNotSyncedInfo', () => {
             getNotSyncedInfo('Calendar is too big')
         );
         expect(getCalendarIsNotSyncedInfo(getCommonCalendarWithStatus(SYNCHRONIZING))).toEqual(
-            getSyncingInfo('Calendar is syncing')
+            getSyncingInfo(
+                'Calendar is syncing',
+                'Calendar is syncing: it may take several minutes for all of its events to show up.'
+            )
         );
 
         expect(getCalendarIsNotSyncedInfo(getCommonCalendarWithStatus(HTTP_REQUEST_FAILED_BAD_REQUEST))).toEqual(

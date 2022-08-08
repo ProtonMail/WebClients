@@ -16,7 +16,7 @@ import {
 } from '@proton/components/containers/calendar/calendarModal/calendarModalState';
 import { useApi, useFeature, useLoading, useNotifications } from '@proton/components/hooks';
 import { updateCalendarSettings } from '@proton/shared/lib/api/calendars';
-import { dedupeNotifications } from '@proton/shared/lib/calendar/alarms';
+import { dedupeNotifications, sortNotificationsByAscendingTrigger } from '@proton/shared/lib/calendar/alarms';
 import { MAX_DEFAULT_NOTIFICATIONS } from '@proton/shared/lib/calendar/constants';
 import { modelToNotifications } from '@proton/shared/lib/calendar/modelToNotifications';
 import { getIsPersonalCalendar, getIsSubscribedCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
@@ -34,9 +34,10 @@ import Notifications from '../notifications/Notifications';
 interface Props {
     calendar: VisualCalendar | SubscribedCalendar;
     bootstrap: CalendarBootstrap;
+    isEditDisabled: boolean;
 }
 
-const CalendarEventDefaultsSection = ({ calendar, bootstrap }: Props) => {
+const CalendarEventDefaultsSection = ({ calendar, bootstrap, isEditDisabled }: Props) => {
     const api = useApi();
     const { call } = useCalendarModelEventManager();
     const { createNotification } = useNotifications();
@@ -74,7 +75,7 @@ const CalendarEventDefaultsSection = ({ calendar, bootstrap }: Props) => {
 
     const handleSaveNotifications = (fullDay = false) => {
         const key = fullDay ? 'fullDayNotifications' : 'partDayNotifications';
-        const dedupedNotifications = dedupeNotifications(model[key]);
+        const dedupedNotifications = sortNotificationsByAscendingTrigger(dedupeNotifications(model[key]));
         const withLoading = fullDay ? withLoadingSaveFullDayNotifications : withLoadingSavePartDayNotifications;
 
         return withLoading(
@@ -101,6 +102,8 @@ const CalendarEventDefaultsSection = ({ calendar, bootstrap }: Props) => {
 
     useEffect(() => {
         setModel(getCalendarEventSettingsModel(bootstrap.CalendarSettings));
+        setHasTouchedPartDayNotifications(false);
+        setHasTouchedFullDayNotifications(false);
     }, [bootstrap]);
 
     if (!showDuration && !showNotifications) {
@@ -120,7 +123,7 @@ const CalendarEventDefaultsSection = ({ calendar, bootstrap }: Props) => {
                     </SettingsLayoutLeft>
                     <SettingsLayoutRight>
                         <InputFieldTwo
-                            disabled={loadingDuration}
+                            disabled={loadingDuration || isEditDisabled}
                             as={SelectTwo}
                             id="event-duration"
                             data-test-id="create-calendar/event-settings:event-duration"
@@ -154,7 +157,7 @@ const CalendarEventDefaultsSection = ({ calendar, bootstrap }: Props) => {
                             fullWidth={false}
                             notifications={model.partDayNotifications}
                             canAdd={model.partDayNotifications.length < MAX_DEFAULT_NOTIFICATIONS}
-                            disabled={loadingSavePartDayNotifications}
+                            disabled={loadingSavePartDayNotifications || isEditDisabled}
                             addIcon="plus"
                             defaultNotification={getDefaultModel().defaultPartDayNotification}
                             onChange={(notifications: NotificationModel[]) => {
@@ -169,7 +172,7 @@ const CalendarEventDefaultsSection = ({ calendar, bootstrap }: Props) => {
                             <Button
                                 onClick={() => handleSaveNotifications(false)}
                                 loading={loadingSavePartDayNotifications}
-                                disabled={!hasTouchedPartDayNotifications}
+                                disabled={!hasTouchedPartDayNotifications || isEditDisabled}
                             >
                                 {c('Action').t`Save`}
                             </Button>
@@ -191,7 +194,7 @@ const CalendarEventDefaultsSection = ({ calendar, bootstrap }: Props) => {
                             fullWidth={false}
                             notifications={model.fullDayNotifications}
                             canAdd={model.fullDayNotifications.length < MAX_DEFAULT_NOTIFICATIONS}
-                            disabled={loadingSaveFullDayNotifications}
+                            disabled={loadingSaveFullDayNotifications || isEditDisabled}
                             addIcon="plus"
                             defaultNotification={getDefaultModel().defaultFullDayNotification}
                             onChange={(notifications: NotificationModel[]) => {
@@ -206,7 +209,7 @@ const CalendarEventDefaultsSection = ({ calendar, bootstrap }: Props) => {
                             <Button
                                 onClick={() => handleSaveNotifications(true)}
                                 loading={loadingSaveFullDayNotifications}
-                                disabled={!hasTouchedFullDayNotifications}
+                                disabled={!hasTouchedFullDayNotifications || isEditDisabled}
                             >
                                 {c('Action').t`Save`}
                             </Button>
