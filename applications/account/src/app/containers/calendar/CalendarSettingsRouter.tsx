@@ -155,6 +155,7 @@ const CalendarSettingsRouter = ({
                     personalActiveCalendars={personalActiveCalendars}
                     subscribedCalendars={subscribedCalendars}
                     defaultCalendar={defaultCalendar}
+                    user={user}
                 />
             </Route>
             <Route path={getSectionPath(path, interopsRoute)} exact>
@@ -165,7 +166,10 @@ const CalendarSettingsRouter = ({
                         defaultCalendar={defaultCalendar}
                         user={user}
                     />
-                    <CalendarExportSection personalCalendars={personalCalendars} defaultCalendar={defaultCalendar} />
+                    <CalendarExportSection
+                        personalCalendars={personalCalendars}
+                        fallbackCalendar={defaultCalendar || personalCalendars[0]}
+                    />
                 </PrivateMainSettingsArea>
             </Route>
             {redirect}
