@@ -1,14 +1,18 @@
 import { ReactNode, useCallback, useEffect, useRef } from 'react';
+
 import { c } from 'ttag';
-import { SIDE_APP_ACTION, SIDE_APP_EVENTS } from '@proton/shared/lib/sideApp/models';
-import { isAuthorizedSideAppUrl, postMessageFromIframe } from '@proton/shared/lib/sideApp/helpers';
+
 import { APPS_CONFIGURATION } from '@proton/shared/lib/constants';
 import { KeyboardKey } from '@proton/shared/lib/interfaces';
-import { useConfig, useEventManager, useHotkeys, useSideApp } from '../../../hooks';
-import Header from '../../../components/header/Header';
+import { isAuthorizedSideAppUrl, postMessageFromIframe } from '@proton/shared/lib/sideApp/helpers';
+import { SIDE_APP_ACTION, SIDE_APP_EVENTS } from '@proton/shared/lib/sideApp/models';
+
 import { AppLink, Button, Icon, Tooltip } from '../../../components';
-import './PrivateSideAppHeader.scss';
+import Header from '../../../components/header/Header';
+import { useConfig, useEventManager, useHotkeys, useSideApp } from '../../../hooks';
 import { useTheme } from '../../themes';
+
+import './PrivateSideAppHeader.scss';
 
 export interface PrivateIframeHeaderProps {
     toLink?: string;
@@ -35,10 +39,12 @@ const PrivateSideAppHeader = ({
     const { APP_NAME } = useConfig();
     const appName = APPS_CONFIGURATION[APP_NAME].name;
 
-    const handleToggleIFrame = (nextUrl?: string) => {
+    const handleToggleIFrame = (nextUrl?: string, closeDefinitely?: boolean) => {
         if (!parentApp) {
             return;
         }
+
+        onCloseDropdown?.();
         // If nextUrl, we want to switch from app, so we need to pass the nextUrl
         if (nextUrl) {
             postMessageFromIframe(
@@ -52,7 +58,7 @@ const PrivateSideAppHeader = ({
             postMessageFromIframe(
                 {
                     type: SIDE_APP_EVENTS.SIDE_APP_CLOSE,
-                    payload: { app: APP_NAME, url: window.location.href },
+                    payload: { app: APP_NAME, url: window.location.href, closeDefinitely },
                 },
                 parentApp
             );
@@ -69,7 +75,8 @@ const PrivateSideAppHeader = ({
 
             switch (event.data.type) {
                 case SIDE_APP_EVENTS.SIDE_APP_CLOSE_FROM_OUTSIDE:
-                    handleToggleIFrame();
+                    const { closeDefinitely } = event.data.payload || { closeDefinitely: undefined };
+                    handleToggleIFrame(undefined, closeDefinitely);
                     break;
                 case SIDE_APP_EVENTS.SIDE_APP_SWITCH_FROM_OUTSIDE:
                     const { nextUrl } = event.data.payload;
