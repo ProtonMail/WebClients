@@ -4,7 +4,6 @@ import { useLocation } from 'react-router-dom';
 import { c } from 'ttag';
 
 import {
-    AppsDropdownWithDiscoverySpotlight,
     DropdownMenuButton,
     FloatingButton,
     Icon,
@@ -182,7 +181,6 @@ const MailHeader = ({ labelID, elementID, breakpoints, expanded, onToggleExpand 
                 expanded={!!expanded}
                 onToggleExpand={onToggleExpand}
                 isNarrow={breakpoints.isNarrow}
-                appsDropdown={<AppsDropdownWithDiscoverySpotlight />}
                 floatingButton={
                     <FloatingButton onClick={() => onCompose({ action: MESSAGE_ACTIONS.NEW })}>
                         <Icon size={24} name="pen" className="mauto" />
