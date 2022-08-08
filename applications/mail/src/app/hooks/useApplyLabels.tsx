@@ -354,7 +354,14 @@ export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolea
     };
 
     const moveToFolder = useCallback(
-        async (elements: Element[], folderID: string, folderName: string, fromLabelID: string, silent = false) => {
+        async (
+            elements: Element[],
+            folderID: string,
+            folderName: string,
+            fromLabelID: string,
+            silent = false,
+            askUnsub = true
+        ) => {
             if (!elements.length) {
                 return;
             }
@@ -363,12 +370,15 @@ export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolea
 
             const isMessage = testIsMessage(elements[0]);
 
-            const [, spamAction] = await Promise.all([
-                // Open a modal when moving a scheduled message/conversation to trash to inform the user that it will be cancelled
-                searchForScheduled(folderID, isMessage, elements),
+            // Open a modal when moving a scheduled message/conversation to trash to inform the user that it will be cancelled
+            await searchForScheduled(folderID, isMessage, elements);
+
+            let spamAction: SpamAction | undefined = undefined;
+
+            if (askUnsub) {
                 // Open a modal when moving items to spam to propose to unsubscribe them
-                askToUnsubscribe(folderID, isMessage, elements),
-            ]);
+                spamAction = await askToUnsubscribe(folderID, isMessage, elements);
+            }
 
             const action = isMessage ? labelMessages : labelConversations;
             const authorizedToMove = isMessage
