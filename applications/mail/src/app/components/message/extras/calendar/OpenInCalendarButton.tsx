@@ -14,7 +14,7 @@ interface Props {
 
 const OpenInCalendarButton = ({ linkString, calendarID, eventID, recurrenceID }: Props) => {
     const { feature: calendarViewInMailFeature, loading } = useFeature(FeatureCode.CalendarViewInMail);
-    const { sideAppUrl, setSideAppUrl } = useSideApp();
+    const { sideAppUrl, setSideAppUrl, showSideApp, setShowSideApp } = useSideApp();
     const authentication = useAuthentication();
     const localID = authentication.getLocalID();
 
@@ -34,6 +34,8 @@ const OpenInCalendarButton = ({ linkString, calendarID, eventID, recurrenceID }:
         openCalendarEventInSideApp({
             sideAppUrl,
             setSideAppUrl,
+            showSideApp,
+            setShowSideApp,
             localID,
             calendarID,
             eventID,
