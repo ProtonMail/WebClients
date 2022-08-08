@@ -4263,7 +4263,7 @@ __metadata:
     sass: ^1.54.0
     stylelint: ^13.13.1
     stylelint-config-prettier: ^9.0.3
-    stylelint-use-logical: ^1.1.0
+    stylelint-use-logical: ^2.0.0
     svgo: ^2.8.0
   languageName: unknown
   linkType: soft
@@ -29156,12 +29156,12 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"stylelint-use-logical@npm:^1.1.0":
-  version: 1.1.0
-  resolution: "stylelint-use-logical@npm:1.1.0"
+"stylelint-use-logical@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "stylelint-use-logical@npm:2.0.0"
   peerDependencies:
-    stylelint: ^9.6.0
-  checksum: bb15ec0e4fc26ed64de94ecee4d7a528f8ae21e22d88f8151d9d82f877d1cc9e55c55935760c1df8693753e2ace1182fbfd1686b0651f93660ee443e5bc672b4
+    stylelint: ">= 11 < 15"
+  checksum: 62ce9bd5f2e7da53157f07df81082883852d2838025ba49f697ec785af993d6c726370e0db45b2b1c5d822902f66f25c25fe2ef101430d8715d6bf355d6a0426
   languageName: node
   linkType: hard
 
