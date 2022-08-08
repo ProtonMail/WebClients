@@ -39,7 +39,7 @@ const LoaderPage = ({ text, loaderClassName = '' }: Props) => {
 
     return (
         <div className="h100">
-            <div className="absolute-center text-center">
+            <div className={classnames(['absolute-center text-center', isSideApp && 'w90'])}>
                 {isSideApp && <CircleLoader className="mauto color-primary" size="medium" />}
                 {!isIframe && (
                     <div>
@@ -52,7 +52,7 @@ const LoaderPage = ({ text, loaderClassName = '' }: Props) => {
                 <div className="header pl1 flex flex-justify-end flex-align-items-center">
                     <Tooltip title={c('Action').t`Close`}>
                         <Button icon color="weak" shape="ghost" onClick={handleCloseIFrame}>
-                            <Icon name="cross-big" size={14} />
+                            <Icon name="cross-big" size={16} />
                         </Button>
                     </Tooltip>
                 </div>

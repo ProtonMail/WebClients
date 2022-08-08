@@ -146,17 +146,17 @@ const PrivateSideAppHeader = ({
                 <div className="flex flex-justify-space-between flex-align-items-center w100">
                     {customTitle ? customTitle : <span>{appName}</span>}
 
-                    <div className="flex">
+                    <div className="flex flex-align-items-center flex-nowrap">
                         {customActions}
                         <Tooltip title={c('Action').t`Open in a new tab`}>
                             <AppLink to={toLink} selfOpening className="mr0-5 button button-ghost-weak button-for-icon">
-                                <Icon name="arrow-out-square" size={14} />
+                                <Icon name="arrow-out-square" size={16} />
                             </AppLink>
                         </Tooltip>
 
                         <Tooltip title={c('Action').t`Close`}>
                             <Button icon color="weak" shape="ghost" onClick={() => handleToggleIFrame()}>
-                                <Icon name="cross-big" size={14} />
+                                <Icon name="cross-big" size={16} />
                             </Button>
                         </Tooltip>
                     </div>
