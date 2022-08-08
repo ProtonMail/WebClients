@@ -87,7 +87,7 @@ const CalendarSettingsRouter = ({
     const { subscribedCalendars, loading: loadingSubscribedCalendars } = useSubscribedCalendars(
         otherCalendars,
         memoizedAddresses,
-        loadingCalendars
+        loadingCalendars || loadingAddresses
     );
 
     const [calendarUserSettings = DEFAULT_CALENDAR_USER_SETTINGS, loadingCalendarUserSettings] =
