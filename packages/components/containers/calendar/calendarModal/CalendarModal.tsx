@@ -247,7 +247,7 @@ export const CalendarModal = ({
             value={model.addressID}
             // @ts-ignore
             onChange={({ value }: SelectChangeEvent<string>) => setModel({ ...model, addressID: value })}
-            label={c('Label').t`Default email address`}
+            label={c('Label').t`Email address`}
         >
             {model.addressOptions.map(({ value, text }) => (
                 <Option key={value} value={value} title={text} />
@@ -258,7 +258,7 @@ export const CalendarModal = ({
     const defaultEventDurationRow = !isSubscribedCalendar ? (
         <InputFieldTwo
             as={SelectTwo}
-            label={c('Label').t`Default event duration`}
+            label={c('Label').t`Event duration`}
             id="duration-select"
             data-test-id="create-calendar/event-settings:event-duration"
             value={model.duration}
@@ -281,7 +281,7 @@ export const CalendarModal = ({
             <>
                 <InputFieldTwo
                     as={Notifications}
-                    label={c('Label').t`Default notifications`}
+                    label={c('Label').t`Event notifications`}
                     data-test-id="create-calendar/event-settings:default-notification"
                     hasType
                     notifications={model.partDayNotifications}
@@ -297,7 +297,7 @@ export const CalendarModal = ({
 
                 <InputFieldTwo
                     as={Notifications}
-                    label={c('Label').t`Default full day notifications`}
+                    label={c('Label').t`All-day event notifications`}
                     data-test-id="create-calendar/event-settings:default-full-day-notification"
                     hasType
                     notifications={model.fullDayNotifications}
