@@ -1,11 +1,12 @@
 import { ReactNode } from 'react';
+
 import { c, msgid } from 'ttag';
 
-import { VisualCalendar, SubscribedCalendar } from '@proton/shared/lib/interfaces/calendar';
-import { SimpleMap, UserModel } from '@proton/shared/lib/interfaces';
 import { Card } from '@proton/atoms';
-
 import { MAX_CALENDARS_PAID } from '@proton/shared/lib/calendar/constants';
+import { UserModel } from '@proton/shared/lib/interfaces';
+import { SubscribedCalendar, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+
 import { Alert, ButtonLike, PrimaryButton, SettingsLink, Tooltip } from '../../../components';
 import { SettingsSection } from '../../account';
 import CalendarsTable from './CalendarsTable';
@@ -14,8 +15,6 @@ export interface CalendarsSectionProps {
     calendars: (VisualCalendar | SubscribedCalendar)[];
     defaultCalendarID?: string;
     user: UserModel;
-    loading?: boolean;
-    loadingMap: SimpleMap<boolean>;
     canAdd: boolean;
     isFeatureUnavailable?: boolean;
     add: string;
@@ -32,8 +31,6 @@ const CalendarsSection = ({
     calendars = [],
     defaultCalendarID,
     user,
-    loading = false,
-    loadingMap,
     canAdd,
     isFeatureUnavailable = false,
     add,
@@ -91,12 +88,7 @@ const CalendarsSection = ({
                 calendars={calendars}
                 defaultCalendarID={defaultCalendarID}
                 user={user}
-                onEdit={onEdit}
                 onSetDefault={onSetDefault}
-                onDelete={onDelete}
-                onExport={onExport}
-                loadingMap={loadingMap}
-                actionsDisabled={loading}
             />
         )}
     </SettingsSection>
