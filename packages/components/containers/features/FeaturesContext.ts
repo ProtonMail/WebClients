@@ -73,6 +73,7 @@ export enum FeatureCode {
     RebrandingFeedbackEnabled = 'RebrandingFeedbackEnabled',
     RebrandingFeedback = 'RebrandingFeedback',
     SubscribedCalendarReminder = 'SubscribedCalendarReminder',
+    SpotlightSubscribedCalendarReminder = 'SpotlightSubscribedCalendarReminder',
     DrivePlan = 'DrivePlan',
     TopBannerDisplayDriveRelease = 'TopBannerDisplayDriveRelease',
     TopBannerVisitedDriveRelease = 'TopBannerVisitedDriveRelease',

@@ -1,10 +1,12 @@
-import { ReactNode, useRef } from 'react';
+import { ReactNode, Ref, useRef } from 'react';
+
 import noop from '@proton/utils/noop';
-import Icon from '../icon/Icon';
+
 import { classnames } from '../../helpers';
-import SidebarListItem from './SidebarListItem';
 import { HotkeyTuple, useHotkeys } from '../../hooks';
 import ButtonLike from '../button/ButtonLike';
+import Icon from '../icon/Icon';
+import SidebarListItem from './SidebarListItem';
 
 interface Props {
     toggle: boolean;
@@ -15,6 +17,7 @@ interface Props {
     title?: string;
     onFocus?: (id: string) => void;
     id?: string;
+    headerRef?: Ref<HTMLDivElement>;
 }
 
 const SimpleSidebarListItemHeader = ({
@@ -24,6 +27,7 @@ const SimpleSidebarListItemHeader = ({
     right,
     text,
     id,
+    headerRef,
     title,
     onFocus = noop,
 }: Props) => {
@@ -53,7 +57,7 @@ const SimpleSidebarListItemHeader = ({
                 hasCaret && 'navigation-link-header-group--expandable',
             ])}
         >
-            <div className="flex flex-nowrap">
+            <div className="flex flex-nowrap" ref={headerRef}>
                 <button
                     ref={buttonRef}
                     className="text-uppercase flex flex-align-items-center flex-item-fluid text-left navigation-link-header-group-link"
