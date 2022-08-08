@@ -1,10 +1,11 @@
 import React from 'react';
 import { Router } from 'react-router-dom';
-import { createMemoryHistory } from 'history';
-import { render, screen } from '@testing-library/react';
 
-import { UserModel } from '@proton/shared/lib/interfaces';
+import { render, screen } from '@testing-library/react';
+import { createMemoryHistory } from 'history';
+
 import createCache from '@proton/shared/lib/helpers/cache';
+import { UserModel } from '@proton/shared/lib/interfaces';
 import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
 import { CacheProvider } from '../../cache';
@@ -18,6 +19,20 @@ jest.mock('../../eventManager/calendar/ModelEventManagerProvider', () => ({
     useCalendarModelEventManager: jest.fn(),
 }));
 jest.mock('@proton/components/hooks/useConfig', () => () => ({ APP_NAME: 'proton-calendar', APP_VERSION: 'test' }));
+jest.mock('@proton/components/hooks/useAddresses', () => ({
+    __esModule: true,
+    default: jest.fn(() => [
+        [
+            {
+                Email: 'test@pm.gg',
+                Status: 1,
+                Receive: 1,
+                Send: 1,
+            },
+        ],
+    ]),
+    useGetAddresses: jest.fn(),
+}));
 
 function renderComponent(props?: Partial<CalendarsSectionProps>) {
     const defaultProps: CalendarsSectionProps = {
@@ -25,7 +40,6 @@ function renderComponent(props?: Partial<CalendarsSectionProps>) {
         // defaultCalendarID?: string,
         user: { hasPaidMail: false } as UserModel,
         // loading?: boolean,
-        loadingMap: {},
         canAdd: false,
         // isFeatureUnavailable?: boolean,
         add: 'add',
