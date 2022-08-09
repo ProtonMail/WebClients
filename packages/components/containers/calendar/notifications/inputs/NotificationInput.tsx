@@ -23,6 +23,7 @@ import {
 const { EMAIL, DEVICE /* BOTH */ } = SETTINGS_NOTIFICATION_TYPE;
 
 interface Props {
+    id: string;
     className?: string;
     notification: NotificationModel;
     hasWhen?: boolean;
@@ -43,6 +44,7 @@ const getWhenOptions = (isAllDay: boolean, value = 0) => {
 };
 
 const NotificationInput = ({
+    id,
     className,
     notification,
     notification: { isAllDay, type, when, value, at, unit },
@@ -107,6 +109,7 @@ const NotificationInput = ({
                         ])}
                     >
                         <SelectTwo
+                            id={id}
                             value={type}
                             disabled={disabled}
                             onChange={({ value }) => onChange({ ...notification, type: +value })}
