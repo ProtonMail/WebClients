@@ -1,21 +1,19 @@
-import { CryptoProxy } from '@proton/crypto';
-
 import { usePreventLeave } from '@proton/components';
-import runInQueue from '@proton/shared/lib/helpers/runInQueue';
-import chunk from '@proton/utils/chunk';
-
-import { BATCH_REQUEST_SIZE, MAX_THREADS_PER_REQUEST, RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
-import { queryMoveLink } from '@proton/shared/lib/api/drive/share';
+import { CryptoProxy } from '@proton/crypto';
 import {
-    queryTrashLinks,
-    queryRestoreLinks,
-    queryEmptyTrashOfShare,
-    queryDeleteTrashedLinks,
     queryDeleteChildrenLinks,
+    queryDeleteTrashedLinks,
+    queryEmptyTrashOfShare,
+    queryRestoreLinks,
+    queryTrashLinks,
 } from '@proton/shared/lib/api/drive/link';
+import { queryMoveLink } from '@proton/shared/lib/api/drive/share';
+import { BATCH_REQUEST_SIZE, MAX_THREADS_PER_REQUEST, RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
+import runInQueue from '@proton/shared/lib/helpers/runInQueue';
 import { RestoreFromTrashResult } from '@proton/shared/lib/interfaces/drive/restore';
-import { generateLookupHash, encryptPassphrase } from '@proton/shared/lib/keys/driveKeys';
+import { encryptPassphrase, generateLookupHash } from '@proton/shared/lib/keys/driveKeys';
 import { getDecryptedSessionKey } from '@proton/shared/lib/keys/drivePassphrase';
+import chunk from '@proton/utils/chunk';
 
 import { useDebouncedRequest } from '../_api';
 import { useDriveCrypto } from '../_crypto';
@@ -96,7 +94,12 @@ export default function useLinksActions() {
                 NodePassphraseSignature,
                 SignatureAddress: address.Email,
             })
-        );
+        ).catch((err) => {
+            if (INVALID_REQUEST_ERROR_CODES.includes(err?.data?.Code)) {
+                throw new ValidationError(err.data.Error);
+            }
+            throw err;
+        });
         const originalParentId = link.parentLinkId;
         return originalParentId;
     };
