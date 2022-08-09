@@ -166,11 +166,11 @@
       "I have a question": [
         "Tenho uma dúvida"
       ],
-      "import": [
-        "importar"
-      ],
       "Import": [
         "Importar"
+      ],
+      "import": [
+        "importar"
       ],
       "Load image": [
         "Carregar imagem"
@@ -588,6 +588,11 @@
         "Aceitou provisoriamente o convite"
       ]
     },
+    "Calendar subscription not synced error": {
+      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
+        "A sincronizar agenda: a exibição de todos os eventos, poderá demorar vários minutos."
+      ]
+    },
     "Calendar view": {
       "Day": [
         "Dia"
@@ -903,6 +908,9 @@
       ],
       "Decryption error: Decryption of this event's content failed.": [
         "Erro de desencriptação: a desencriptação do conteúdo deste evento falhou."
+      ],
+      "Domain not available, try again later": [
+        "Domínio indisponível, tente novamente mais tarde"
       ],
       "Email address disabled": [
         "Endereço electrónico desactivado"
@@ -1693,6 +1701,9 @@
       "All day": [
         "Dia inteiro"
       ],
+      "All-day event notifications": [
+        "Notificação de eventos de dia inteiro"
+      ],
       "Automatically save contacts": [
         "Gravar contactos automaticamente"
       ],
@@ -1737,6 +1748,12 @@
       ],
       "Ends": [
         "Termina"
+      ],
+      "Event duration": [
+        "Duração do evento"
+      ],
+      "Event notifications": [
+        "Notificação de eventos"
       ],
       "Event title": [
         "Título do evento"
@@ -2368,6 +2385,14 @@
     "Sidebar calendar edit tooltip": {
       "Manage calendar": [
         "Gerir a agenda"
+      ]
+    },
+    "Spotlight": {
+      "Don't miss any events": [
+        "Não perca nenhum evento"
+      ],
+      "You can now add notifications to calendars you subscribed to.": [
+        "Pode agora adicionar notificações às agendas subscritas."
       ]
     },
     "Storage": {

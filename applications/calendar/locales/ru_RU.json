@@ -230,11 +230,11 @@
       "I have a question": [
         "У меня есть вопрос"
       ],
-      "import": [
-        "импорт"
-      ],
       "Import": [
         "Импорт"
+      ],
+      "import": [
+        "импорт"
       ],
       "Import events": [
         "Импортировать события"
@@ -841,6 +841,9 @@
       "Calendar is syncing": [
         "Календарь синхронизируется"
       ],
+      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
+        "Календарь синхронизируется: может понадобиться несколько минут, чтобы показать все события."
+      ],
       "Calendar is too big": [
         "Календарь слишком большой"
       ],
@@ -858,6 +861,17 @@
       ],
       "Unsupported calendar format": [
         "Неподдерживаемый формат календаря"
+      ]
+    },
+    "Calendar subscription not synced error; long version": {
+      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
+        "Ссылка на календарь недоступна вне экосистемы, в которой он был создан."
+      ],
+      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
+        "Ссылка на календарь временно недоступна. Пожалуйста, проверьте, что ссылка, полученная от поставщика календаря, все еще действительна."
+      ],
+      "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
+        "С прошлого обновления прошло больше 12 часов — Proton Calendar попробует обновить календарь через несколько часов."
       ]
     },
     "Calendar view": {
@@ -2055,9 +2069,6 @@
       "A group with this name already exists": [
         "Группа с таким именем уже существует"
       ],
-      "A maximum of 10 notifications is allowed": [
-        "Разрешено до 10 уведомлений"
-      ],
       "Address primary private key not found": [
         "Основной секретный ключ для адреса не найден"
       ],
@@ -2102,6 +2113,9 @@
         "Отмените выбор по крайней мере ${ calendarToFixCount } календарей или",
         "Отмените выбор по крайней мере ${ calendarToFixCount } календарь или",
         "Отмените выбор по крайней мере ${ calendarToFixCount } календарей или"
+      ],
+      "Domain not available, try again later": [
+        "Домен недоступен, повторите попытку позже"
       ],
       "Email address disabled": [
         "Эл. адрес отключен"
@@ -3568,6 +3582,9 @@
       "All day": [
         "Весь день"
       ],
+      "All-day event notifications": [
+        "Уведомления о событии в течение всего дня"
+      ],
       "Attach screenshot(s)": [
         "Приложить снимки экрана"
       ],
@@ -3616,18 +3633,6 @@
       "Date and time": [
         "Дата и время"
       ],
-      "Default email address": [
-        "Адрес электронной почты по умолчанию"
-      ],
-      "Default event duration": [
-        "Длительность события по умолчанию"
-      ],
-      "Default full day notifications": [
-        "Уведомления для событий на весь день по умолчанию"
-      ],
-      "Default notifications": [
-        "Уведомления по умолчанию"
-      ],
       "Delete": [
         "Удалить"
       ],
@@ -3657,6 +3662,12 @@
       ],
       "Ends": [
         "Заканчивается"
+      ],
+      "Event duration": [
+        "Длительность события"
+      ],
+      "Event notifications": [
+        "Уведомления о событии"
       ],
       "Event title": [
         "Название события"
@@ -4620,6 +4631,9 @@
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "Завершилось тестирование ${ DRIVE_APP_NAME }! Обеспечьте свои файлы такой же безопасностью, которой обладает ваша электронная почта."
       ],
+      "Don't miss any events": [
+        "Не пропускайте события"
+      ],
       "Get up to 18 months of ${ planName } for free": [
         "Получите до 18 месяцев ${ planName } бесплатно"
       ],
@@ -4634,6 +4648,9 @@
       ],
       "With email notifications, you decide which events to be notified about and when.": [
         "При использовании уведомлений по электронной почте вы сами решаете, о каких событиях и когда получать уведомления."
+      ],
+      "You can now add notifications to calendars you subscribed to.": [
+        "Теперь можно добавлять уведомления для календарей, на которые вы подписаны."
       ]
     },
     "Storage": {
@@ -4713,6 +4730,9 @@
       ],
       "Calendar created": [
         "Календарь создан"
+      ],
+      "Calendar information updated": [
+        "Сведения о календаре обновлены"
       ],
       "Calendar updated": [
         "Календарь обновлен"
@@ -4968,6 +4988,9 @@
       ],
       "Calendar alarm": [
         "Оповещение календаря"
+      ],
+      "Calendar information": [
+        "Сведения о календаре"
       ],
       "Change my answer": [
         "Изменить мой ответ"

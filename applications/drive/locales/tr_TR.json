@@ -286,11 +286,11 @@
       "I have a question": [
         "Bir sorum var"
       ],
-      "import": [
-        "içe aktar"
-      ],
       "Import": [
         "İçe aktar"
+      ],
+      "import": [
+        "içe aktar"
       ],
       "Import from .csv or vCard": [
         ".csv ya da vCard dosyasından içe aktar"
@@ -763,6 +763,9 @@
       "Calendar is syncing": [
         "Takvim eşitleniyor"
       ],
+      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
+        "Takvim eşitleniyor: Tüm etkinliklerin görüntülenmesi bir kaç dakika alabilir."
+      ],
       "Calendar is too big": [
         "Takvim çok büyük"
       ],
@@ -780,6 +783,17 @@
       ],
       "Unsupported calendar format": [
         "Takvim biçimi desteklenmiyor"
+      ]
+    },
+    "Calendar subscription not synced error; long version": {
+      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
+        "Takvim bağlantısına, takvim hizmeti sağlayıcısının ekosistemi dışından erişilemez."
+      ],
+      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
+        "Takvim bağlantısına geçici olarak erişilemiyor. Lütfen takvim hizmeti sağlayıcısı bağlantısının hala geçerli olduğunu doğrulayın."
+      ],
+      "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
+        "Son güncellemenin üzerinden 12 saatten fazla zaman geçmiş. Proton Calendar, takvimi birkaç saat içinde güncellemeye çalışacak."
       ]
     },
     "Collapsible tooltip": {
@@ -1770,8 +1784,8 @@
       "A group with this name already exists": [
         "Aynı adlı bir grup zaten var"
       ],
-      "A problem occurred, please try again": [
-        "Bir sorun çıktı. Lütfen yeniden deneyin"
+      "A problem occurred, please try again.": [
+        "Bir sorun çıktı. Lütfen yeniden deneyin."
       ],
       "Authentication canceled.": [
         "Kimlik doğrulaması iptal edildi."
@@ -1801,6 +1815,9 @@
       "Deselect at least ${ calendarToFixCount } calendar or": [
         "En az ${ calendarToFixCount } takvimi kaldırın ya da",
         "En az ${ calendarToFixCount } takvimi kaldırın ya da"
+      ],
+      "Domain not available, try again later": [
+        "Etki alanı kullanılamıyor. Bir süre sonra yeniden deneyin"
       ],
       "Email address invalid": [
         "E-posta adresi geçersiz"
@@ -1883,8 +1900,8 @@
       "Passwords do not match": [
         "Parola ile onayı aynı değil"
       ],
-      "Please activate your content search again": [
-        "Lütfen içerik aramayı yeniden etkinleştirin"
+      "Please activate your search again": [
+        "Lütfen aramanızı yeniden etkinleştirin"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "İlerlemek için lütfen vurgulanan çakışmayı düzeltin.",

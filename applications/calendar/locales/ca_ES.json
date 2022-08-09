@@ -211,11 +211,11 @@
       "I have a question": [
         "Tinc una pregunta"
       ],
-      "import": [
-        "importar"
-      ],
       "Import": [
         "Importar"
+      ],
+      "import": [
+        "importar"
       ],
       "Import events": [
         "Importar esdeveniments"
@@ -576,6 +576,9 @@
       ]
     },
     "Beta access description": {
+      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
+        "L'accés beta us permet utilitzar la versió beta de ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } i ${ DRIVE_APP_NAME } abans que es faci pública. Això vol dir que podeu ser el primer a provar nous productes, rebre noves actualitzacions i utilitzar noves característiques."
+      ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Si trobeu problemes, sempre podeu desactivar l'Accés Beta."
       ]
@@ -796,6 +799,11 @@
         "Setmana"
       ]
     },
+    "Collapsible tooltip": {
+      "Collapse": [
+        "Replega"
+      ]
+    },
     "colon": {
       ": ": [
         ": "
@@ -954,6 +962,9 @@
       "Albania": [
         "Albània"
       ],
+      "Algeria": [
+        "Algèria"
+      ],
       "American Samoa": [
         "Samoa Americana"
       ],
@@ -978,17 +989,185 @@
       "Bolivia": [
         "Bolívia"
       ],
+      "Cameroon": [
+        "Camerun"
+      ],
+      "Canada": [
+        "Canadà"
+      ],
+      "Chad": [
+        "Txad"
+      ],
       "Chile": [
         "Xile"
+      ],
+      "China": [
+        "Xina"
+      ],
+      "Christmas Island": [
+        "Illa Christmas"
+      ],
+      "Cocos (Keeling) Islands": [
+        "Illes Cocos (Keeling)"
+      ],
+      "Colombia": [
+        "Colòmbia"
+      ],
+      "Cook Islands": [
+        "Illes Cook"
+      ],
+      "Costa Rica": [
+        "Costa Rica"
       ],
       "Cuba": [
         "Cuba"
       ],
+      "Cyprus": [
+        "Xipre"
+      ],
+      "Czech Republic": [
+        "República Txeca"
+      ],
+      "Côte d'Ivoire": [
+        "Costa d'Ivori"
+      ],
+      "Dominican Republic": [
+        "República Dominicana"
+      ],
+      "Ecuador": [
+        "Equador"
+      ],
+      "Egypt": [
+        "Egipte"
+      ],
+      "Equatorial Guinea": [
+        "Guinea Equatorial"
+      ],
+      "Eritrea": [
+        "Eritrea"
+      ],
+      "Estonia": [
+        "Estònia"
+      ],
+      "Ethiopia": [
+        "Etiòpia"
+      ],
+      "Fiji": [
+        "Fiji"
+      ],
+      "Finland": [
+        "Finlàndia"
+      ],
+      "French Guiana": [
+        "Guaiana Francesa"
+      ],
+      "Gambia": [
+        "Gàmbia"
+      ],
+      "Georgia": [
+        "Geòrgia"
+      ],
+      "Germany": [
+        "Alemanya"
+      ],
+      "Gibraltar": [
+        "Gibraltar"
+      ],
+      "Greece": [
+        "Grècia"
+      ],
+      "Greenland": [
+        "Groenlàndia"
+      ],
+      "Grenada": [
+        "Granada"
+      ],
+      "Guadeloupe": [
+        "Guadalupe"
+      ],
+      "Guatemala": [
+        "Guatemala"
+      ],
+      "Guinea": [
+        "Guinea"
+      ],
       "International": [
         "Internacional"
       ],
+      "Romania": [
+        "Romania"
+      ],
+      "Russia": [
+        "Rússia"
+      ],
+      "Saint Helena": [
+        "Santa Helena"
+      ],
+      "Saudi Arabia": [
+        "Aràbia Saudita"
+      ],
+      "Serbia": [
+        "Sèrbia"
+      ],
+      "Singapore": [
+        "Singapur"
+      ],
+      "Slovakia": [
+        "Eslovàquia"
+      ],
+      "Slovenia": [
+        "Eslovènia"
+      ],
+      "South Africa": [
+        "Sud-àfrica"
+      ],
+      "Spain": [
+        "Espanya"
+      ],
+      "Sweden": [
+        "Suècia"
+      ],
+      "Switzerland": [
+        "Suïssa"
+      ],
+      "Tanzania": [
+        "Tanzània"
+      ],
+      "Tunisia": [
+        "Tunísia"
+      ],
+      "Uganda": [
+        "Uganda"
+      ],
+      "Ukraine": [
+        "Ucraïna"
+      ],
       "United Arab Emirates": [
         "Emirats Àrabs Units"
+      ],
+      "United Kingdom": [
+        "Regne Unit"
+      ],
+      "United States": [
+        "Estats Units"
+      ],
+      "Uruguay": [
+        "Uruguai"
+      ],
+      "Uzbekistan": [
+        "Uzbekistan"
+      ],
+      "Venezuela": [
+        "Veneçuela"
+      ],
+      "Vietnam": [
+        "Vietnam"
+      ],
+      "Western Sahara": [
+        "Sàhara Occidental"
+      ],
+      "Zambia": [
+        "Zàmbia"
       ]
     },
     "Custom frequency option": {
@@ -1706,6 +1885,10 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "byte",
+        "bytes"
+      ],
       "GB": [
         "GB"
       ],
@@ -1980,6 +2163,9 @@
       ],
       "Close this screen to exit.": [
         "Tanqueu la finestra per sortir."
+      ],
+      "Continue with ${ planName }": [
+        "Continua amb ${ planName }"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Crear ${ calendarsToBeCreated } nou calendari",
@@ -2505,15 +2691,6 @@
       "Date and time": [
         "Data i hora"
       ],
-      "Default email address": [
-        "Adreça de correu per defecte"
-      ],
-      "Default event duration": [
-        "Durada d'esdeveniments per defecte"
-      ],
-      "Default notifications": [
-        "Notificacions per defecte"
-      ],
       "Delete": [
         "Elimina"
       ],
@@ -2977,6 +3154,11 @@
         "Canvia o afegeix un compte"
       ]
     },
+    "new_plans: info": {
+      "Introducing Proton’s refreshed look.${ br }Many services, one mission. Welcome to an internet where privacy is the default.": [
+        "Presentem el nou aspecte de Proton.${ br }Molts serveis, una missió. Benvingut/da a l'Internet on tenim la privacitat per defecte."
+      ]
+    },
     "new_plans: label": {
       "Tell us about your experience. (Optional)": [
         "Expliqueu-nos la vostra experiència. (Opcional)"
@@ -3008,6 +3190,14 @@
     "Notification time input": {
       "at": [
         "a"
+      ]
+    },
+    "Notification type": {
+      "email": [
+        "correu electrònic"
+      ],
+      "notification": [
+        "notificació"
       ]
     },
     "Notification when": {
@@ -3178,6 +3368,9 @@
         "Mes",
         "Mesos"
       ],
+      "No parent folder": [
+        "No hi ha carpeta mare"
+      ],
       "This and future events": [
         "Aquest i els esdeveniments futurs"
       ],
@@ -3204,6 +3397,11 @@
     "Participant name": {
       "You": [
         "Tú"
+      ]
+    },
+    "Participants collapse button label": {
+      "Collapse participants list": [
+        "Replega la llista de participants"
       ]
     },
     "Participants expand button label": {
@@ -3626,6 +3824,15 @@
     "Time period": {
       "account creation date": [
         "data de creació del compte"
+      ],
+      "the last 12 months": [
+        "els darrers 12 mesos"
+      ],
+      "the last 3 months": [
+        "els darrers 3 mesos"
+      ],
+      "the last month": [
+        "el darrer mes"
       ]
     },
     "Time unit": {

@@ -284,11 +284,11 @@
       "I have a question": [
         "Saya memiliki pertanyaan"
       ],
-      "import": [
-        "impor"
-      ],
       "Import": [
         "Impor"
+      ],
+      "import": [
+        "impor"
       ],
       "Import from .csv or vCard": [
         "Impor dari .csv atau vCard"
@@ -761,6 +761,9 @@
       "Calendar is syncing": [
         "Kalender sedang menyinkronkan data"
       ],
+      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
+        "Kalender sedang menyinkronkan data: proses ini dapat berlangsung hingga beberapa menit sebelum seluruh acara dapat dimunculkan."
+      ],
       "Calendar is too big": [
         "Ukuran kalender terlalu besar"
       ],
@@ -778,6 +781,17 @@
       ],
       "Unsupported calendar format": [
         "Format kalender tidak didukung"
+      ]
+    },
+    "Calendar subscription not synced error; long version": {
+      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
+        "Tautan kalender tidak dapat diakses dari luar ekosistem penyedia kalender."
+      ],
+      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
+        "Tautan kalender untuk sementara tidak dapat diakses. Pastikan tautan dari penyedia kalender masih valid."
+      ],
+      "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
+        "Lebih dari 12 jam telah berlalu sejak pembaruan terakhir — Proton Calendar akan mencoba untuk memperbarui kalender dalam beberapa jam."
       ]
     },
     "Collapsible tooltip": {
@@ -1767,8 +1781,8 @@
       "A group with this name already exists": [
         "Grup dengan nama ini sudah ada"
       ],
-      "A problem occurred, please try again": [
-        "Terdapat suatu masalah, silakan coba lagi"
+      "A problem occurred, please try again.": [
+        "Terdapat suatu masalah, silakan coba lagi."
       ],
       "Authentication canceled.": [
         "Otentikasi dibatalkan."
@@ -1796,6 +1810,9 @@
       ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
         "Hapus setidaknya ${ calendarToFixCount } kalender dari pilihan atau"
+      ],
+      "Domain not available, try again later": [
+        "Domain tidak tersedia, coba lagi nanti"
       ],
       "Email address invalid": [
         "Alamat email tidak valid"
@@ -1875,8 +1892,8 @@
       "Passwords do not match": [
         "Kata sandi tidak cocok"
       ],
-      "Please activate your content search again": [
-        "Mohon aktifkan kembali pencarian konten Anda"
+      "Please activate your search again": [
+        "Mohon aktifkan kembali pencarian Anda"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Harap selesaikan permasalahan yang ada terlebih dahulu sebelum melanjutkan."

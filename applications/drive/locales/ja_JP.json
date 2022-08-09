@@ -284,10 +284,10 @@
       "I have a question": [
         "サポートに質問"
       ],
-      "import": [
+      "Import": [
         "インポート"
       ],
-      "Import": [
+      "import": [
         "インポート"
       ],
       "Import from .csv or vCard": [
@@ -1751,7 +1751,7 @@
       "A group with this name already exists": [
         "この名前のグループは既に存在します"
       ],
-      "A problem occurred, please try again": [
+      "A problem occurred, please try again.": [
         "問題が発生しました。もう一度やり直してください。"
       ],
       "Authentication canceled.": [
@@ -1780,6 +1780,9 @@
       ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
         "${ calendarToFixCount } 件のカレンダーの選択を解除するか"
+      ],
+      "Domain not available, try again later": [
+        "ドメインが利用できません。再度お試しください。"
       ],
       "Email address invalid": [
         "無効なメールアドレスです"
@@ -1859,8 +1862,8 @@
       "Passwords do not match": [
         "パスワードが一致しません"
       ],
-      "Please activate your content search again": [
-        "内容の検索を再度有効にしてください"
+      "Please activate your search again": [
+        "検索を再度有効にしてください"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "続行するためにハイライトされた競合を修正してください。"
@@ -2133,7 +2136,7 @@
         "CAPTCHA"
       ],
       "Email": [
-        "電子メール"
+        "メール"
       ],
       "Manual": [
         "手動"
@@ -2683,6 +2686,9 @@
       "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
         "PGP/Inline はプレーンテキスト形式としか互換性がありません。${ MAIL_APP_NAME } は暗号化されたメッセージに常に署名することに注意してください。"
       ],
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        "PGP/MIME は自動的に現在の書式を使用してメッセージを送信します。${ MAIL_APP_NAME } は暗号化されたメッセージに常に署名することに注意してください。"
+      ],
       "Please enter the password to decrypt and view content.": [
         "パスワードを入力して復号しコンテンツを閲覧します。"
       ],
@@ -2746,6 +2752,9 @@
       "Search Enabled": [
         "検索が有効です"
       ],
+      "Secure sharing": [
+        "安全な共有"
+      ],
       "Secure your documents and data": [
         "書類やデータを保護します"
       ],
@@ -2802,6 +2811,9 @@
       ],
       "support team": [
         "サポートチーム"
+      ],
+      "Swiss privacy": [
+        "スイス法準拠のプライバシー"
       ],
       "Tap the + button to upload a file or folder.": [
         "+ ボタンをタップしてファイルやフォルダーをアップロードします。"
@@ -3724,6 +3736,11 @@
         "${ appName } を使ってみる"
       ]
     },
+    "Onboarding Info": {
+      "Your trusty online vault for vital documents and precious memories.": [
+        "必要不可欠な書類や大切な思い出を安全な場所に保管しましょう。"
+      ]
+    },
     "Onboarding Proton": {
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "組織を構成、ドメイン名をリンク、アカウントを作成して、組織のすべてのメンバーを確実に保護します。"
@@ -3777,6 +3794,12 @@
       ]
     },
     "PGP Key info": {
+      "${ emailAddress } has marked this key as compromised. This key cannot be used neither for encryption nor for signature verification.": [
+        "${ emailAddress } はこのキーを侵害扱いにしました。このキーは署名検証のみに使用できます。"
+      ],
+      "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
+        "${ emailAddress } はこのキーを廃止しました。このキーは署名検証のみに使用できます。"
+      ],
       "We recommend that you \"untrust\" this key.": [
         "この鍵を「信頼しない」ことをおすすめします。"
       ]

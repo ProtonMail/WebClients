@@ -4748,9 +4748,6 @@
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a ${ VPN_APP_NAME } server.": [
         "For at sikre din internetforbindelse, skal du downloade og installere ${ VPN_APP_NAME }-applikationen til din enhed og oprette forbindelse til en ${ VPN_APP_NAME }-server."
       ],
-      "To use ${ toAppName }, please create an address.": [
-        "Opret en adresse for at bruge ${ toAppName }."
-      ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Genopfyld din konto med kredit, som du kan benytte på et nyt abonnement eller fornyelse af dit nuværende. Du får én kredit pr. brugte ${ i18nCurrency }."
       ],
@@ -4999,9 +4996,6 @@
       ],
       "You'll still be able to send and receive mail with your existing email address(es).": [
         "Du vil stadig kunne sende og modtage post med din(e) eksisterende e-mailadresse(r)."
-      ],
-      "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, please create an address.": [
-        "Din ${ BRAND_NAME } konto er tilknyttet ${ externalEmailAddress }. For at bruge ${ toAppName } skal du oprette en adresse."
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
         "Dine ${ VPN_APP_NAME } og ${ MAIL_APP_NAME }-konti er forbundne. For at slette dem begge, så log ind på ${ loginLink } og slet din konto dér."
@@ -6550,12 +6544,60 @@
         "Etiketnavn"
       ]
     },
+    "new_plans: Action": {
+      "From ${ _price }": [
+        "Fra ${ _price }"
+      ],
+      "From ${ _price2 } per user": [
+        "Fra ${ _price2 } per bruger"
+      ],
+      "From ${ price }": [
+        "Fra ${ price }"
+      ]
+    },
+    "new_plans: attribute": {
+      "Get ${ connections } high-speed VPN connection": [
+        "Få ${ connections } højhastigheds VPN-forbindelse",
+        "Få ${ connections } højhastigheds VPN-forbindelser"
+      ],
+      "Get ${ connections } high-speed VPN connection per user": [
+        "Få ${ connections } højhastigheds VPN-forbindelse per bruger",
+        "Få ${ connections } højhastigheds VPN-forbindelser per bruger"
+      ]
+    },
+    "new_plans: Info": {
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Opgrader til den ultimative privatlivspakke og adgang til alle premium Proton-tjenester."
+      ]
+    },
+    "new_plans: Plan frequency": {
+      "/month": [
+        "/måned"
+      ]
+    },
     "new_plans: Title": {
       "Upgrade to ${ planName }": [
         "Opgrader til ${ planName }"
       ],
       "Your account's usage": [
         "Din kontos forbrug"
+      ]
+    },
+    "new_plans: Upsell attribute": {
+      "Access advanced VPN features": [
+        "Få adgang til avancerede VPN-funktioner"
+      ],
+      "Add more personalization with 15 email addresses and support for 3 custom email domains": [
+        "Tilføj mere personalisering med 15 e-mailadresser og understøttelse af 3 brugerdefinerede e-maildomæner"
+      ],
+      "Boost your storage space to ${ bundleStorage } total": [
+        "Forøg din lagerplads til ${ bundleStorage } i alt"
+      ],
+      "Boost your storage space to ${ businessStorage } per user": [
+        "Forøg din lagerplads til ${ businessStorage } i alt"
+      ],
+      "Boost your storage space to ${ driveStorage } total": [
+        "Forøg din lagerplads til ${ driveStorage } i alt"
       ]
     },
     "Notification": {
@@ -7636,9 +7678,6 @@
       "Add user": [
         "Tilføj bruger"
       ],
-      "Address is available": [
-        "Adresse er tilgængelig"
-      ],
       "Address verification": [
         "Adressebekræftelse"
       ],
@@ -7758,9 +7797,6 @@
       ],
       "Continue with partial import?": [
         "Fortsæt med delvis import?"
-      ],
-      "Create a ${ mailAppName } address": [
-        "Opret en ${ mailAppName } adresse"
       ],
       "Create your ${ BRAND_NAME } Account": [
         "Opret din ${ BRAND_NAME }-konto"
@@ -8651,9 +8687,6 @@
       ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
         "Dato- og tidsindstillingerne på din enhed er ikke synkroniseret. ${ learnMore }"
-      ],
-      "This feature is only available for ${ mailProfessional } plans or higher": [
-        "Denne funktion er kun tilgængelig med ${ mailProfessional }-abonnementer eller højere"
       ],
       "This import may exceed the storage capacity currently available in your Proton account. Please consider customizing your import.": [
         "Denne import kan overstige den lagerkapacitet, der i øjeblikket er tilgængelig på din Proton-konto. Overvej venligst at tilpasse din import."

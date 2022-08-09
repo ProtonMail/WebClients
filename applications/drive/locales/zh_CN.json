@@ -281,10 +281,10 @@
       "I have a question": [
         "我有疑问"
       ],
-      "import": [
+      "Import": [
         "导入"
       ],
-      "Import": [
+      "import": [
         "导入"
       ],
       "Import from .csv or vCard": [
@@ -1108,9 +1108,6 @@
       "A group with this name already exists": [
         "已存在同名群组"
       ],
-      "A problem occurred, please try again": [
-        "出错了，请重试"
-      ],
       "Authentication canceled.": [
         "验证被取消。"
       ],
@@ -1137,6 +1134,9 @@
       ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
         "取消选择至少 ${ calendarToFixCount } 个日历或者"
+      ],
+      "Domain not available, try again later": [
+        "域名不可用，请稍后再试"
       ],
       "Email address invalid": [
         "邮箱格式不正确"
@@ -1215,9 +1215,6 @@
       ],
       "Passwords do not match": [
         "两次输入的密码不一致"
-      ],
-      "Please activate your content search again": [
-        "请重新开启全文搜索"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "请修复高亮的冲突以继续。"
@@ -2121,6 +2118,12 @@
       ],
       "Signature issue": [
         "签名问题"
+      ],
+      "Some files failed to download. Try downloading the files again.": [
+        "某些文件下载失败，请重试。"
+      ],
+      "Some files failed to upload. Try uploading the files again.": [
+        "某些文件上传失败，请重试。"
       ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "您的某些文件无法再访问，请恢复对其的访问权限。${ StartRecoveryButton }"

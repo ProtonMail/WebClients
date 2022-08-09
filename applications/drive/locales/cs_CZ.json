@@ -290,11 +290,11 @@
       "I have a question": [
         "Mám dotaz"
       ],
-      "import": [
-        "importovat"
-      ],
       "Import": [
         "Importovat"
+      ],
+      "import": [
+        "importovat"
       ],
       "Import from .csv or vCard": [
         "Importovat z .csv nebo vCard"
@@ -786,6 +786,17 @@
         "Nepodporovaný formát kalendáře"
       ]
     },
+    "Calendar subscription not synced error; long version": {
+      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
+        "Odkaz na kalendář není přístupný mimo ekosystém poskytovatele kalendáře."
+      ],
+      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
+        "Odkaz na kalendář je dočasně nedostupný. Zkontrolujte, zda je odkaz od poskytovatele kalendáře stále platný."
+      ],
+      "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
+        "Od poslední aktualizace uplynulo více než 12 hodin — Proton Calendar se pokusí kalendář aktualizovat během několika hodin."
+      ]
+    },
     "Collapsible tooltip": {
       "Collapse": [
         "Sbalit"
@@ -1029,7 +1040,7 @@
         "Bolívie"
       ],
       "Bonaire, Sint Eustatius and Saba": [
-        "Bonaire, Sint Eustatius a Saba"
+        "Bonaire, Svatý Eustach a Saba"
       ],
       "Bosnia and Herzegovina": [
         "Bosna a Hercegovina"
@@ -1776,8 +1787,8 @@
       "A group with this name already exists": [
         "Skupina s tímto názvem již existuje"
       ],
-      "A problem occurred, please try again": [
-        "Objevil se problém, prosím zkuste to později"
+      "A problem occurred, please try again.": [
+        "Objevil se problém, prosím zkuste to znovu."
       ],
       "Authentication canceled.": [
         "Přihlášení zrušeno."
@@ -1811,6 +1822,9 @@
         "Zrušte výběr nejméně ${ calendarToFixCount } kalendářů nebo",
         "Zrušte výběr nejméně ${ calendarToFixCount } kalendářů nebo",
         "Zrušte výběr nejméně ${ calendarToFixCount } kalendářů nebo"
+      ],
+      "Domain not available, try again later": [
+        "Doména není dostupná, zkuste to znovu později"
       ],
       "Email address invalid": [
         "E-mailová adresa je neplatná"
@@ -1899,8 +1913,8 @@
       "Passwords do not match": [
         "Hesla se neshodují"
       ],
-      "Please activate your content search again": [
-        "Prosím, aktivujte znovu vyhledávání obsahu"
+      "Please activate your search again": [
+        "Prosím, aktivujte znovu vyhledávání"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Chcete-li pokračovat, opravte zvýrazněný konflikt.",

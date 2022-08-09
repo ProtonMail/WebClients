@@ -413,10 +413,10 @@
       "Images will be loaded without a proxy": [
         "画像はプロキシーを経由しないで読み込まれました"
       ],
-      "import": [
+      "Import": [
         "インポート"
       ],
-      "Import": [
+      "import": [
         "インポート"
       ],
       "Import from .csv or vCard": [
@@ -2742,8 +2742,8 @@
       "A group with this name already exists": [
         "この名前のグループは既に存在します"
       ],
-      "A problem occurred, please try again": [
-        "問題が発生しました。もう一度やり直してください"
+      "A problem occurred, please try again.": [
+        "問題が発生しました。再度お試しください。"
       ],
       "Address primary private key not found": [
         "メールアドレスのプライマリー秘密鍵が見つかりません"
@@ -2795,6 +2795,9 @@
       ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
         "${ calendarToFixCount } 件のカレンダーの選択を解除するか"
+      ],
+      "Domain not available, try again later": [
+        "ドメインが利用できません。再度お試しください。"
       ],
       "Draft could not be saved. Try again.": [
         "下書きを保存できませんでした。もう一度お試しください。"
@@ -2910,8 +2913,8 @@
       "Passwords do not match": [
         "パスワードが一致しません"
       ],
-      "Please activate your content search again": [
-        "内容の検索を再度有効にしてください"
+      "Please activate your search again": [
+        "検索を再度有効にしてください"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "続行するためにハイライトされた競合を修正してください。"
@@ -2972,6 +2975,9 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "エラーが発生しました。続行するには ${ refresh } してください。それでもこのエラーが発生する場合は ${ supportTeam } までお問い合わせください。"
+      ],
+      "Something went wrong, please try again": [
+        "問題が発生しました。再度お試しください。"
       ],
       "Sorry, Proton can't decrypt your message. Please check that all your keys are active.": [
         "Proton はメッセージを復号できません。すべての鍵が有効か確認してください。"
@@ -3338,6 +3344,9 @@
     "Filter Actions": {
       "Archive": [
         "アーカイブ"
+      ],
+      "Do not move": [
+        "移動しない"
       ],
       "Inbox": [
         "受信トレイ"
@@ -3877,6 +3886,12 @@
       "Confirm phishing report": [
         "フィッシング報告の確認"
       ],
+      "Content search of the entire inbox is available for ${ paidPlansButton }.": [
+        "受信トレイ全体のコンテンツ検索は ${ paidPlansButton } で利用可能です。"
+      ],
+      "Content: ": [
+        "中身: "
+      ],
       "Continue with ${ planName }": [
         "${ planName } で続行"
       ],
@@ -3940,11 +3955,8 @@
       "Don't forget to share the password with the recipient": [
         "宛先にパスワードを伝えることを忘れないでください"
       ],
-      "Download our mobile application from your favorite app store to communicate securely on-the-go.": [
-        "お好みのアプリストアからモバイルアプリをダウンロードして、外出先でも安全に会話しましょう。"
-      ],
-      "Downloading message ${ esProgress } out of ${ totalProgressToShow }": [
-        "${ esProgress } / ${ totalProgressToShow } メッセージをダウンロードしています"
+      "Downloading message ${ currentProgress } out of ${ totalProgress }": [
+        "${ currentProgress } / ${ totalProgress } メッセージをダウンロードしています"
       ],
       "Draft": [
         "下書き"
@@ -3993,6 +4005,9 @@
       ],
       "Encrypt message": [
         "メッセージを暗号化"
+      ],
+      "End of message content search": [
+        "メッセージ内容の検索の終わり"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "${ destinationText } に送信された認証コードを入力してください。"
@@ -4468,6 +4483,9 @@
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "このページを離れると入力したデータの下書きは保存されません。"
       ],
+      "The original sender of this message is no longer valid. Your message will be sent from your default address ${ defaultEmail }.": [
+        "このメッセージの元の送信者は有効ではありません。メッセージは既定のアドレス ${ defaultEmail } から送信されます。"
+      ],
       "The sender has requested a read receipt.": [
         "差出人が開封確認を要求しています。"
       ],
@@ -4782,6 +4800,15 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "メールアドレスは、この一度限りの認証にのみ使用されます。"
+      ],
+      "Your message will be deleted from the recipient's inbox and your sent folder on ${ dateString } at ${ formattedTime }": [
+        "あなたのメッセージは、${ dateString } の ${ formattedTime } に受信者の受信トレイおよびあなたの送信済みフォルダーから削除されます"
+      ],
+      "Your message will be deleted from the recipient's inbox and your sent folder today at ${ formattedTime }": [
+        "あなたのメッセージは、今日の ${ formattedTime } に受信者の受信トレイおよびあなたの送信済みフォルダーから削除されます"
+      ],
+      "Your message will be deleted from the recipient's inbox and your sent folder tomorrow at ${ formattedTime }": [
+        "あなたのメッセージは、明日の ${ formattedTime } に受信者の受信トレイおよびあなたの送信済みフォルダーから削除されます"
       ],
       "Your message will expire in ${ numberOfDays } day.": [
         "メッセージの有効期限は残り ${ numberOfDays } 日です。"
@@ -5605,8 +5632,14 @@
       "Open updated event in ${ calendarAppName }": [
         "${ calendarAppName } で更新されたイベントを開く"
       ],
+      "Or you can delete one of your calendars and create a new one linked to an active email address.": [
+        "またはカレンダーを削除し、有効なメールアドレスにリンクされたカレンダーを作成することができます。"
+      ],
       "Outbox": [
         "送信箱"
+      ],
+      "paid plans": [
+        "有料プラン"
       ],
       "Pay invoice": [
         "請求の支払い"
@@ -7273,9 +7306,6 @@
       ],
       "The import will start with the most recent messages.": [
         "インポートは新しいメッセージから始まります。"
-      ],
-      "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "すべてのメッセージをダウンロードし、ローカルで検索可能にします。ブラウザのデータを削除するとこの機能は無効になります。"
       ],
       "This feature is only available for paid users": [
         "この機能は課金ユーザーのみが利用できます"

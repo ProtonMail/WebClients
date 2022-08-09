@@ -415,11 +415,11 @@
       "Images will be loaded without a proxy": [
         "Les images seront chargées sans proxy"
       ],
-      "import": [
-        "importer"
-      ],
       "Import": [
         "Importer"
+      ],
+      "import": [
+        "importer"
       ],
       "Import from .csv or vCard": [
         "Importer depuis un .csv ou une vCard"
@@ -1549,6 +1549,17 @@
       ],
       "Unsupported calendar format": [
         "Format de calendrier non pris en charge"
+      ]
+    },
+    "Calendar subscription not synced error; long version": {
+      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
+        "Le lien du calendrier n'est pas accessible depuis l'extérieur de l'écosystème du fournisseur de calendrier."
+      ],
+      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
+        "Le lien du calendrier est temporairement inaccessible. Veuillez vérifier que le lien du fournisseur de calendrier est toujours valide."
+      ],
+      "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
+        "Plus de 12 heures se sont écoulées depuis la dernière mise à jour — Proton Calendar essaiera de mettre à jour le calendrier dans quelques heures."
       ]
     },
     "Calendar widget banner": {
@@ -2912,8 +2923,8 @@
       "A group with this name already exists": [
         "Un groupe portant ce nom existe déjà"
       ],
-      "A problem occurred, please try again": [
-        "Un problème est survenu, merci de réessayer"
+      "A problem occurred, please try again.": [
+        "Une erreur est survenue, veuillez réessayer."
       ],
       "Address primary private key not found": [
         "La clé privée principale de l'adresse n'a pas été trouvée"
@@ -2968,6 +2979,9 @@
       "Deselect at least ${ calendarToFixCount } calendar or": [
         "Désélectionnez au moins ${ calendarToFixCount } calendrier ou",
         "Désélectionnez au moins ${ calendarToFixCount } calendriers ou"
+      ],
+      "Domain not available, try again later": [
+        "Domaine non disponible, veuillez réessayer plus tard"
       ],
       "Draft could not be saved. Try again.": [
         "Le brouillon n'a pas pu être enregistré. Veuillez réessayer."
@@ -3086,7 +3100,7 @@
       "Passwords do not match": [
         "Les mots de passe ne correspondent pas"
       ],
-      "Please activate your content search again": [
+      "Please activate your search again": [
         "Veuillez réactiver la recherche de contenu"
       ],
       "Please fix the highlighted conflict to proceed.": [
@@ -3153,6 +3167,9 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Une erreur est survenue, veuillez ${ refresh } pour continuer. Si vous voyez toujours ce message d'erreur, veuillez contacter notre ${ supportTeam }."
+      ],
+      "Something went wrong, please try again": [
+        "Un problème est survenu, veuillez réessayer plus tard"
       ],
       "Sorry, Proton can't decrypt your message. Please check that all your keys are active.": [
         "Désolé, Proton ne peut pas déchiffrer votre message. Veuillez vérifier que toutes vos clés sont activées."
@@ -3538,6 +3555,9 @@
     "Filter Actions": {
       "Archive": [
         "Archives"
+      ],
+      "Do not move": [
+        "Ne pas déplacer"
       ],
       "Inbox": [
         "Boîte de réception"
@@ -4127,6 +4147,12 @@
       "Confirm phishing report": [
         "Confirmer le signalement d'hameçonnage"
       ],
+      "Content search of the entire inbox is available for ${ paidPlansButton }.": [
+        "La recherche de contenu dans toute la boîte de réception est disponible pour ${ paidPlansButton }."
+      ],
+      "Content: ": [
+        "Contenu: "
+      ],
       "Continue with ${ planName }": [
         "Continuer avec ${ planName }"
       ],
@@ -4193,11 +4219,8 @@
       "Don't forget to share the password with the recipient": [
         "N'oubliez pas de communiquer le mot de passe au destinataire"
       ],
-      "Download our mobile application from your favorite app store to communicate securely on-the-go.": [
-        "Téléchargez notre application mobile depuis votre boutique d'applications préférée pour communiquer en toute sécurité."
-      ],
-      "Downloading message ${ esProgress } out of ${ totalProgressToShow }": [
-        "Téléchargement du message ${ esProgress } sur ${ totalProgressToShow }"
+      "Downloading message ${ currentProgress } out of ${ totalProgress }": [
+        "Téléchargement du message ${ currentProgress } sur ${ totalProgress }"
       ],
       "Draft": [
         "Brouillon"
@@ -4248,6 +4271,9 @@
       ],
       "Encrypt message": [
         "Chiffrer le message"
+      ],
+      "End of message content search": [
+        "Fin de la recherche de contenu de message"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Entrez le code de vérification qui a été envoyé à ${ destinationText }."
@@ -4509,6 +4535,9 @@
       "No results found": [
         "Aucun résultat trouvé"
       ],
+      "No results found in the past 30 days, searching the rest of your inbox": [
+        "Aucun résultat trouvé au cours des 30 derniers jours, recherche dans le reste de votre boîte de réception"
+      ],
       "No trackers found, but some images could not be loaded with tracking protection": [
         "Aucun traqueur trouvé, mais certaines images n'ont pas pu être chargées avec la protection contre le tracking"
       ],
@@ -4765,6 +4794,9 @@
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
         "Cette action téléchargera tous les messages afin qu'ils puissent être recherchés localement. Effacer les données de votre navigateur ou vous déconnecter désactivera cette option."
+      ],
+      "This action will download the most recent messages so they can be searched locally. Clearing your browser data will disable this option.": [
+        "Cette action téléchargera les messages les plus récents afin qu'ils puissent être recherchés localement. Effacer les données de votre navigateur ou vous déconnecter désactivera cette option."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Cette adresse est désactivée. Pour pouvoir envoyer à cette adresse, le propriétaire doit d'abord activer cette adresse."
@@ -5936,6 +5968,9 @@
       ],
       "Outbox": [
         "Boîte d'envoi"
+      ],
+      "paid plans": [
+        "abonnements payants"
       ],
       "Pay invoice": [
         "Payer la facture"
@@ -7666,6 +7701,9 @@
       "Encrypted data with verified digital signature": [
         "Données chiffrées avec une signature numérique vérifiée"
       ],
+      "For messages older than 30 days, only the subject line and recipient list will be searched": [
+        "Pour les messages datant de plus de 30 jours, seuls l'objet et la liste des destinataires seront recherchés"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Sélectionnez le schéma PGP à utiliser lors de la signature ou du chiffrement vers un autre utilisateur. Notez que PGP/Inline force le format des messages en texte brut"
       ],
@@ -7674,9 +7712,6 @@
       ],
       "The import will start with the most recent messages.": [
         "L'importation commencera par les messages les plus récents."
-      ],
-      "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "Cette action téléchargera tous les messages afin qu'ils puissent être recherchés localement. Effacer les données de votre navigateur ou vous déconnecter désactivera cette option."
       ],
       "This feature is only available for paid users": [
         "Cette fonctionnalité est uniquement disponible pour les utilisateurs payants"

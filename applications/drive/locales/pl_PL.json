@@ -290,11 +290,11 @@
       "I have a question": [
         "Mam pytanie"
       ],
-      "import": [
-        "importuj"
-      ],
       "Import": [
         "Importuj"
+      ],
+      "import": [
+        "importuj"
       ],
       "Import from .csv or vCard": [
         "Importuj z pliku CSV lub vCard"
@@ -767,6 +767,9 @@
       "Calendar is syncing": [
         "Kalendarz jest synchronizowany"
       ],
+      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
+        "Kalendarz jest synchronizowany: Ładowanie wszystkich wydarzeń może potrwać kilka minut."
+      ],
       "Calendar is too big": [
         "Rozmiar kalendarza jest zbyt duży"
       ],
@@ -784,6 +787,17 @@
       ],
       "Unsupported calendar format": [
         "Format kalendarza jest nieobsługiwany"
+      ]
+    },
+    "Calendar subscription not synced error; long version": {
+      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
+        "Link kalendarza nie jest dostępny poza usługą dostawcy kalendarza."
+      ],
+      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
+        "Link kalendarza jest tymczasowo niedostępny. Zweryfikuj, czy link dostawcy kalendarza jest ważny."
+      ],
+      "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
+        "Minęło ponad 12 godzin od ostatniej synchronizacji. Proton Calendar zaktualizuje kalendarz w ciągu kilku godzin."
       ]
     },
     "Collapsible tooltip": {
@@ -1776,8 +1790,8 @@
       "A group with this name already exists": [
         "Grupa o tej nazwie już istnieje"
       ],
-      "A problem occurred, please try again": [
-        "Wystąpił problem. Spróbuj ponownie"
+      "A problem occurred, please try again.": [
+        "Wystąpił problem. Spróbuj ponownie."
       ],
       "Authentication canceled.": [
         "Uwierzytelnianie zostało anulowane."
@@ -1811,6 +1825,9 @@
         "Odznacz co najmniej ${ calendarToFixCount } kalendarze lub",
         "Odznacz co najmniej ${ calendarToFixCount } kalendarzy lub",
         "Odznacz co najmniej ${ calendarToFixCount } kalendarzy lub"
+      ],
+      "Domain not available, try again later": [
+        "Domena nie jest dostępna. Spróbuj ponownie później"
       ],
       "Email address invalid": [
         "Adres e-mail jest nieprawidłowy"
@@ -1899,8 +1916,8 @@
       "Passwords do not match": [
         "Hasła nie pasują do siebie"
       ],
-      "Please activate your content search again": [
-        "Włącz ponownie wyszukiwanie zawartości"
+      "Please activate your search again": [
+        "Włącz ponownie wyszukiwanie"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Popraw zaznaczony konflikt, aby kontynuować.",

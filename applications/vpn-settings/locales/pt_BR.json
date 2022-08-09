@@ -158,6 +158,9 @@
       "Explore other ${ BRAND_NAME } plans": [
         "Explore outros planos ${ BRAND_NAME }"
       ],
+      "Extend": [
+        "Estender"
+      ],
       "Get ${ vpnPlus }": [
         "Obter ${ vpnPlus }"
       ],
@@ -386,6 +389,9 @@
       "View plans details": [
         "Ver detalhes dos planos"
       ],
+      "What do I get?": [
+        "O que eu recebo?"
+      ],
       "Yes": [
         "Sim"
       ],
@@ -402,6 +408,9 @@
       ],
       "No, thanks": [
         "Não, obrigado"
+      ],
+      "Start my 30-day free trial": [
+        "Iniciar meu teste gratuito de 30 dias"
       ],
       "Try free for 30 days": [
         "Experimente gratuitamente por 30 dias"
@@ -632,6 +641,9 @@
       "Calendar is syncing": [
         "O calendário está sincronizando"
       ],
+      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
+        "O calendário está sincronizando: pode levar vários minutos até que todos os seus eventos sejam exibidos."
+      ],
       "Calendar is too big": [
         "O calendário é grande demais"
       ],
@@ -651,6 +663,17 @@
         "Formato de calendário não suportado"
       ]
     },
+    "Calendar subscription not synced error; long version": {
+      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
+        "O link do calendário não está acessível para fora do ecossistema do provedor do calendário."
+      ],
+      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
+        "O link do calendário está temporariamente inacessível. Por favor, verifique se o link do provedor do calendário ainda é válido."
+      ],
+      "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
+        "Mais de 12 horas se passaram desde a última atualização — O Proton Calendar vai tentar atualizar o calendário em algumas horas."
+      ]
+    },
     "Checkout row": {
       "${ users } user": [
         "${ users } usuário",
@@ -662,6 +685,9 @@
       ]
     },
     "Collapsible tooltip": {
+      "Collapse": [
+        "Recolher"
+      ],
       "Expand": [
         "Expandir"
       ]
@@ -679,6 +705,9 @@
       "copper": [
         "cobre"
       ],
+      "enzian": [
+        "enzian"
+      ],
       "fern": [
         "samambaia"
       ],
@@ -691,14 +720,29 @@
       "olive": [
         "azeitona"
       ],
+      "pacific": [
+        "pacífico"
+      ],
+      "pickle": [
+        "salmoura"
+      ],
+      "pine": [
+        "pinho"
+      ],
       "pink": [
         "rosa"
+      ],
+      "plum": [
+        "ameixa"
       ],
       "purple": [
         "roxo"
       ],
       "reef": [
         "recife"
+      ],
+      "sahara": [
+        "saara"
       ],
       "slateblue": [
         "azul ardósia"
@@ -753,7 +797,7 @@
         "Angola"
       ],
       "Anguilla": [
-        "Anguila"
+        "Anguilla"
       ],
       "Antarctica": [
         "Antártica"
@@ -786,7 +830,7 @@
         "Bahamas"
       ],
       "Bahrain": [
-        "Barém"
+        "Bahrein"
       ],
       "Bangladesh": [
         "Banglasdesh"
@@ -831,7 +875,7 @@
         "Brasil"
       ],
       "British Indian Ocean Territory": [
-        "Território do Oceano Índico Britânico"
+        "Território Britânico do Oceano Índico"
       ],
       "Brunei Darussalam": [
         "Brunei Darussalam"
@@ -843,13 +887,13 @@
         "Burkina Faso"
       ],
       "Burundi": [
-        "Burúndi"
+        "Burundi"
       ],
       "Cambodia": [
-        "Cambodja"
+        "Camboja"
       ],
       "Cameroon": [
-        "Camerões"
+        "Camarões"
       ],
       "Canada": [
         "Canadá"
@@ -858,7 +902,7 @@
         "Cabo Verde"
       ],
       "Cayman Islands": [
-        "Ilhas Caiman"
+        "Ilhas Cayman"
       ],
       "Central African Republic": [
         "República Centro-Africana"
@@ -999,7 +1043,7 @@
         "Grécia"
       ],
       "Greenland": [
-        "Gronelândia"
+        "Groenlândia"
       ],
       "Grenada": [
         "Granada"
@@ -1101,7 +1145,7 @@
         "Kuwait"
       ],
       "Kyrgyzstan": [
-        "Quirziguistão"
+        "Quirguistão"
       ],
       "Laos": [
         "Laos"
@@ -1191,7 +1235,7 @@
         "Moçambique"
       ],
       "Myanmar": [
-        "Myanmar"
+        "Myanmar (Birmânia)"
       ],
       "Namibia": [
         "Namíbia"
@@ -1203,7 +1247,7 @@
         "Nepal"
       ],
       "Netherlands": [
-        "Países baixos"
+        "Países Baixos"
       ],
       "New Caledonia": [
         "Nova Caledônia"
@@ -1957,6 +2001,9 @@
       "Creating your account": [
         "Criando sua conta"
       ],
+      "Credit for the unused portion of your previous plan subscription": [
+        "Crédito pela parte não utilizada no plano anterior da sua assinatura"
+      ],
       "Custom email domains": [
         "Domínios personalizados de e-mail"
       ],
@@ -1978,6 +2025,9 @@
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "A hospedagem de e-mails para 10 nomes de domínio de e-mail adicionais está incluída gratuitamente. Domínios adicionais podem ser adicionados por ${ price }."
       ],
+      "Email hosting is only available for domains you already own. Domain registration is not currently available through Proton. You can host email for domains registered on any domain registrar.": [
+        "A hospedagem de e-mail está disponível apenas para domínios que você já possui. O registro de domínio não está disponível no momento através do Proton. Você pode hospedar e-mail para domínios registrados em qualquer registrador de domínio."
+      ],
       "Emailing preference saved": [
         "Preferências de e-mail salvas"
       ],
@@ -1992,6 +2042,9 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Digite o código de verificação que foi enviado para ${ destinationText }."
+      ],
+      "Enter your ${ BRAND_NAME } Account details.": [
+        "Insira os detalhes da sua conta ${ BRAND_NAME }."
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Entre seu e-mail ou nome de usuário da conta ${ BRAND_NAME }."
@@ -2018,7 +2071,7 @@
         "Para Visa e MasterCard, os 3 dígitos no verso do cartão. Para American Express, os 4 dígitos na frente do seu cartão."
       ],
       "Free": [
-        "Gratuito"
+        "Grátis"
       ],
       "Free up some space or add more storage space.": [
         "Libere espaço ou adicione mais espaço de armazenamento."
@@ -2149,6 +2202,9 @@
       "of": [
         "de"
       ],
+      "One account for all ${ BRAND_NAME } services.": [
+        "Uma conta para todos os serviços de ${ BRAND_NAME }."
+      ],
       "Or select a particular server:": [
         "Ou selecione um servidor particular:"
       ],
@@ -2245,6 +2301,9 @@
       "Thank you for supporting our mission.": [
         "Obrigado por apoiar a nossa missão."
       ],
+      "The securest way to browse, stream, and be online.": [
+        "A maneira mais segura de navegar, transmitir e estar online."
+      ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Estes arquivos de configuração permitem escolher qual servidor ${ VPN_APP_NAME } será conectado ao usar um aplicativo de VPN de terceiros ou ao configurar uma conexão de VPN em um roteador."
       ],
@@ -2296,14 +2355,23 @@
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a ${ VPN_APP_NAME } server.": [
         "Para proteger a sua conexão de internet, baixe e instale o aplicativo ${ VPN_APP_NAME } no seu dispositivo e conecte a um servidor ${ VPN_APP_NAME }."
       ],
-      "To use ${ toAppName }, please create an address.": [
-        "Para usar ${ toAppName }, por favor crie um endereço."
-      ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Recarregue sua conta com créditos que podem ser utilizados para assinar um novo plano ou renovar seu plano atual. Você recebe um crédito a cada ${ i18nCurrency } gasto."
       ],
       "Tor": [
         "Tor"
+      ],
+      "Total email addresses": [
+        "Endereços de e-mail totais"
+      ],
+      "Total storage": [
+        "Armazenamento total"
+      ],
+      "Total supported domains": [
+        "Domínios suportados totais"
+      ],
+      "Total VPN connections": [
+        "Conexões VPN totais"
       ],
       "Two-factor authentication adds an extra layer of security to your account in case your password is compromised.": [
         "A autenticação em dois fatores adiciona uma camada extra de segurança para a sua conta para caso sua senha seja comprometida."
@@ -2331,6 +2399,9 @@
       ],
       "Unsupported file": [
         "Arquivo não suportado"
+      ],
+      "Update the URL in your password manager": [
+        "Atualize a URL no seu gerenciador de senhas"
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Use o melhor servidor de acordo com a carga atual e a posição: ${ formattedBestServerName }"
@@ -2382,6 +2453,9 @@
       ],
       "We’ll send a reset code to the phone number you provided for account recovery.": [
         "Enviaremos um código de redefinição para o número de telefone que você forneceu para a recuperação da conta."
+      ],
+      "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
+        "Estamos atualizando seu plano atual para um plano aprimorado que oferece mais pelo mesmo preço. Enquanto nossos sistemas estiverem sendo atualizados, você não poderá alterá-los. Enviaremos um e-mail assim que estiver pronto."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Quando sua assinatura renovar, nós aplicaremos quaisquer créditos disponíveis antes de mudar o método de pagamento acima."
@@ -2455,8 +2529,8 @@
       "You'll stay signed in even after you close the browser.": [
         "Você permanecerá conectado mesmo depois de fechar o navegador."
       ],
-      "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, please create an address.": [
-        "A sua conta ${ BRAND_NAME } está associada com ${ externalEmailAddress }. Para usar o ${ toAppName }, por favor, crie um endereço."
+      "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
+        "A sua conta ${ BRAND_NAME } está associada com ${ externalEmailAddress }. Para usar o ${ toAppName }, você precisa de um ${ MAIL_APP_NAME } endereço."
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
         "Suas contas do ${ VPN_APP_NAME } e ${ MAIL_APP_NAME } estão vinculadas. Para excluir ambas, inicie a sessão em ${ loginLink } e exclua sua conta lá."
@@ -2479,6 +2553,9 @@
       "Your email will only be used for this one-time verification.": [
         "Seu e-mail só será utilizado para essa verificação única."
       ],
+      "Your existing ${ BRAND_NAME } account can be used to access all ${ BRAND_NAME } services. Please sign in with ${ email }.": [
+        "Sua conta ${ BRAND_NAME } existente pode ser usada para acessar todos os serviços da ${ BRAND_NAME }. Por favor, inicie a sessão com ${ email }."
+      ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "Suas informações de pagamento estão protegidas com a criptografia TLS e leis de privacidade suíças."
       ],
@@ -2496,8 +2573,29 @@
       ]
     },
     "info": {
+      "Create an email address": [
+        "Criar um endereço de e-mail"
+      ],
+      "Day 27: Trial reminder": [
+        "Dia 27: Lembrete de teste"
+      ],
+      "Day 30: Trial ends": [
+        "Dia 30: Lembrete de teste"
+      ],
+      "Enjoy secure, easy-to-use emailing with plenty of premium features.": [
+        "Desfrute de e-mail seguro e fácil de usar com muitos recursos premium."
+      ],
       "Try Mail Plus": [
         "Testar o Mail Plus"
+      ],
+      "We’ll email you before your trial ends. Cancel anytime.": [
+        "Enviaremos um e-mail para você antes do término da avaliação. Cancele a qualquer momento."
+      ],
+      "Your new email address is ready to go!": [
+        "Seu novo endereço de e-mail está pronto para ser usado!"
+      ],
+      "Your subscription starts on ${ startText }.": [
+        "Sua assinatura começa em ${ startText }."
       ]
     },
     "Info for cash payment method": {
@@ -2567,6 +2665,9 @@
       ]
     },
     "Label": {
+      "${ humanUsedSpace } of ${ humanMaxSpace }": [
+        "${ humanUsedSpace } de ${ humanMaxSpace }"
+      ],
       "${ MAIL_APP_NAME } address": [
         "Endereço do ${ MAIL_APP_NAME }"
       ],
@@ -2746,7 +2847,7 @@
         "Nome no cartão"
       ],
       "New login password": [
-        "Nova senha"
+        "Nova senha de acesso"
       ],
       "New mailbox password": [
         "Nova senha da caixa de correio"
@@ -2961,13 +3062,16 @@
         "Solicitar um convite"
       ],
       "Reset password": [
-        "Redefinir senha"
+        "Redefinir Senha"
       ],
       "Sign in": [
         "Iniciar sessão"
       ],
       "Terms": [
         "Termos"
+      ],
+      "Trouble signing in?": [
+        "Problemas para fazer login?"
       ],
       "Upgrade": [
         "Upgrade"
@@ -3356,6 +3460,9 @@
       "Privacy and security suite for businesses, including all premium Proton services.": [
         "Pacote de privacidade e segurança para empresas, incluindo todos os serviços premium da Proton."
       ],
+      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
+        "Armazenamento em nuvem seguro que permite armazenar, sincronizar e compartilhar arquivos com facilidade e segurança."
+      ],
       "Secure email and calendar for professionals and businesses.": [
         "E-mail e calendário seguros para profissionais e empresas."
       ],
@@ -3376,6 +3483,9 @@
       ]
     },
     "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Torne a privacidade seu padrão para backup, armazenamento, compartilhamento e recuperação de arquivos."
+      ],
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "Caso contrário, o acesso à sua conta será limitado e, futuramente, sua conta será desativada."
       ],
@@ -3798,6 +3908,13 @@
     "plan customizer, users": {
       "contact": [
         "contato"
+      ],
+      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
+        "Selecione o número de usuários a serem incluídos em seu plano. Cada usuário adicional custa ${ price }."
+      ],
+      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
+        "Se você precisar de mais de ${ maxUsers } conta de usuário, por favor ${ contact } nossa equipe de vendas.",
+        "Se você precisar de mais de ${ maxUsers } contas de usuário, ${ contact } nossa equipe de vendas."
       ]
     },
     "Price": {
@@ -3877,6 +3994,9 @@
       ]
     },
     "Spotlight": {
+      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
+        "O ${ DRIVE_APP_NAME } saiu do beta! Dê aos seus arquivos a mesma segurança que seus e-mails recebem."
+      ],
       "Get up to 18 months of ${ planName } for free": [
         "Obtenha até 18 meses de ${ planName } gratuitamente"
       ],
@@ -3925,8 +4045,8 @@
         "${ n } conexões VPN de alta velocidade por usuário"
       ],
       "${ n } VPN connection": [
-        "${ n } conexão de VPN",
-        "${ n } conexões de VPN"
+        "${ n } conexão VPN",
+        "${ n } conexões VPN"
       ],
       "${ n } VPN connection per user": [
         "${ n } conexões VPN por usuário",
@@ -3976,12 +4096,15 @@
     },
     "Subscription saving": {
       "Save": [
-        "Salvar"
+        "Economize"
       ]
     },
     "Subtitle for trial plan": {
       "The privacy-first Mail and Calendar solution for your everyday communications needs.": [
         "O acesso à solução de email e calendário que prioriza a privacidade para as suas necessidades diárias de comunicação."
+      ],
+      "This offer is for those new to Proton only. No credit card required.": [
+        "Esta oferta é apenas para aqueles que são novos no Proton. Não é necessário cartão de crédito."
       ]
     },
     "Success": {
@@ -4049,6 +4172,12 @@
     "Success notification": {
       "Certificate ${ name } revoked": [
         "O certificado ${ name } foi revogado"
+      ],
+      "Certificate extended until ${ formattedExpirationDate }": [
+        "Certificado estendido até ${ formattedExpirationDate }"
+      ],
+      "Config \"${ name }\" created, note that the private key is not stored and won't be shown again, you should copy or download this config.": [
+        "Configuração \"${ name }\" criada, observe que a chave privada não está armazenada e não será exibida novamente, você deve copiar ou baixar esta configuração."
       ],
       "Creating config file for ${ serverName }": [
         "Criando arquivo de configuração para ${ serverName }"
@@ -4153,9 +4282,6 @@
       "Add PayPal payment method": [
         "Adicionar o Paypal como método de pagamento"
       ],
-      "Address is available": [
-        "O endereço está disponível"
-      ],
       "Amount": [
         "Quantidade"
       ],
@@ -4207,8 +4333,8 @@
       "Congratulations on choosing privacy!": [
         "Parabéns por escolher a privacidade!"
       ],
-      "Create a ${ mailAppName } address": [
-        "Criar um endereço de ${ mailAppName }"
+      "Create a ${ MAIL_APP_NAME } address": [
+        "Criar um endereço de ${ MAIL_APP_NAME }"
       ],
       "Create your ${ BRAND_NAME } Account": [
         "Crie suaconta do ${ BRAND_NAME }"
@@ -4275,6 +4401,9 @@
       ],
       "Gift code": [
         "Código do vale-presente"
+      ],
+      "How your free trial works": [
+        "Como funciona seu teste gratuito"
       ],
       "Human verification": [
         "Verificação humana"
@@ -4414,11 +4543,14 @@
       "This address might compromise your privacy.": [
         "Este endereço pode comprometer sua privacidade."
       ],
+      "Try the best of ${ MAIL_APP_NAME } for free": [
+        "Experimente o melhor de ${ MAIL_APP_NAME } gratuitamente"
+      ],
       "TV log in": [
         "Iniciar sessão na TV"
       ],
       "Two-factor authentication": [
-        "Autenticação de dois fatores"
+        "Autenticação em dois fatores"
       ],
       "Type": [
         "Tipo"
@@ -4449,6 +4581,9 @@
       ],
       "You already have a Proton account": [
         "Você já tem uma conta Proton"
+      ],
+      "Your ${ MAIL_APP_NAME } address": [
+        "Seu ${ MAIL_APP_NAME } endereço"
       ],
       "Your current plan": [
         "O seu plano atual"
