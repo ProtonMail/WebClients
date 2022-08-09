@@ -35,6 +35,16 @@ $sticky-title-height: rem(100) !default;
 
 	&-section {
 		margin-block-end: rem(80);
+
+		&--single-calendar-section {
+			// temporary margin by hand until better global solution found
+			margin-block-start: em(54);
+
+			@include respond-to($breakpoint-small) {
+				// full alignment not possible
+				margin-block-start: 0;
+			}
+		}
 	}
 }
 
