@@ -57,11 +57,15 @@ function addAbortListener(value: CacheValue, signal?: AbortSignal) {
     if (!signal) {
         return;
     }
-    signal.addEventListener('abort', () => {
+    const handleAbort = () => {
         const allAborted = !value.signals.some((signal) => !signal || !signal.aborted);
         if (allAborted) {
             value.controller.abort();
         }
+    };
+    signal.addEventListener('abort', handleAbort);
+    value.promise.finally(() => {
+        signal.removeEventListener('abort', handleAbort);
     });
 }
 
