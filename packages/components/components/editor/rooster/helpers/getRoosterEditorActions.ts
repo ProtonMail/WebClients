@@ -31,6 +31,7 @@ const getRoosterEditorActions = (
                 return;
             }
 
+            iframeRef.current?.focus();
             editorInstance.focus();
         },
         insertImage(url: string, attrs: { [key: string]: string } = {}) {
