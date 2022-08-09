@@ -80,6 +80,7 @@ interface API_RESPONSE {
     payload: {
         id: string;
         success: boolean;
+        isApiError?: boolean;
         data: any;
         serverTime: Date;
     };
