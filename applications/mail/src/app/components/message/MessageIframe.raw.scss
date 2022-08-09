@@ -22,7 +22,11 @@ body {
 
 /* override reset.scss */
 body * {
-	line-height: normal;
+	line-height: 1.5;
+}
+
+code {
+	line-height: 1;
 }
 
 /* Forbidden property on almost ALL clients IE add a space :) */
