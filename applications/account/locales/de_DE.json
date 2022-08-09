@@ -10,6 +10,12 @@
       ],
       "Full view": [
         "Vollständige Ansicht"
+      ],
+      "Limited": [
+        "Eingeschränkt"
+      ],
+      "Limited view": [
+        "Eingeschränkte Ansicht"
       ]
     },
     "Action": {
@@ -1112,6 +1118,11 @@
         "Lass dir das Jahresend-Sonderangebot für unseren Premium VPN PLUS-Tarif nicht entgehen"
       ]
     },
+    "breadcrumb": {
+      "Calendars": [
+        "Kalender"
+      ]
+    },
     "Bridge version load failed": {
       "Failed to find latest version": [
         "Neueste Version konnte nicht gefunden werden"
@@ -1208,6 +1219,16 @@
         "Twittern"
       ]
     },
+    "Calendar edit button tooltip": {
+      "Edit calendar information": [
+        "Kalenderinformationen bearbeiten"
+      ]
+    },
+    "Calendar export section description": {
+      "Download an ICS file with all the events from the selected calendar.": [
+        "Lade eine ICS-Datei mit allen Terminen des ausgewählten Kalenders herunter."
+      ]
+    },
     "Calendar import section description": {
       "You can import ICS files from another calendar to ${ CALENDAR_APP_NAME }. This lets you quickly import one event or your entire agenda.": [
         "Du kannst ICS-Dateien aus anderen Kalendern in ${ CALENDAR_APP_NAME } importieren. So kannst du schnell einzelne oder alle Termine zu deinem Kalender hinzufügen."
@@ -1231,6 +1252,11 @@
       ],
       "Label edited": [
         "Kategorie bearbeitet"
+      ]
+    },
+    "Calendar settings sidebar": {
+      "Show ${ remainingItems } more": [
+        "${ remainingItems } weitere anzeigen"
       ]
     },
     "Calendar status": {
@@ -1274,6 +1300,17 @@
       ],
       "Unsupported calendar format": [
         "Nicht unterstütztes Kalender-Format"
+      ]
+    },
+    "Calendar subscription not synced error; long version": {
+      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
+        "Der Kalender-Link ist von außerhalb des Ökosystems des Kalenderanbieters nicht zugänglich."
+      ],
+      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
+        "Auf den Kalenderlink kann vorübergehend nicht zugegriffen werden. Bitte überprüfe, ob der Link des Kalenderanbieters noch gültig ist."
+      ],
+      "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
+        "Seit der letzten Aktualisierung sind mehr als 12 Stunden vergangen — Proton Calendar versucht, den Kalender in einigen Stunden zu aktualisieren."
       ]
     },
     "Calendar view": {
@@ -2364,9 +2401,19 @@
         "Mittwoch"
       ]
     },
+    "Default calendar event settings section title": {
+      "Default event settings": [
+        "Standard-Termineinstellungen"
+      ]
+    },
     "Default display name vcard": {
       "Unknown": [
         "Unbekannt"
+      ]
+    },
+    "Delete calendar section description": {
+      "All events in this calendar will be deleted.": [
+        "Alle Termine in diesem Kalender werden gelöscht."
       ]
     },
     "Delinquent modal title": {
@@ -3309,6 +3356,9 @@
     "Filter Actions": {
       "Archive": [
         "Archivieren"
+      ],
+      "Do not move": [
+        "Nicht verschieben"
       ],
       "Inbox": [
         "Postfach"
@@ -5256,9 +5306,6 @@
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a ${ VPN_APP_NAME } server.": [
         "Um deine Internetverbindung zu schützen, lade die ${ VPN_APP_NAME } App für dein Gerät herunter und verbinde dich mit einem ${ VPN_APP_NAME }-Server."
       ],
-      "To use ${ toAppName }, please create an address.": [
-        "Um ${ toAppName } zu verwenden, erstelle bitte eine E-Mail-Adresse."
-      ],
       "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
         "Jeder Filter muss mindestens einen Namen und ein gültiges Sieve-Skript enthalten, damit er richtig funktioniert. Erfahre ${ link }."
       ],
@@ -5469,6 +5516,9 @@
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Sie haben keine Wiederherstellungs-Methode eingerichtet, sodass eine Wiederherstellung des Kontos unmöglich ist, falls Sie Ihr Passwort vergessen. Trotzdem ohne Wiederherstellungs-Möglichkeit fortfahren?"
       ],
+      "You have no personal calendars to export.": [
+        "Du hast keine persönlichen Kalender zum Exportieren."
+      ],
       "You have no saved payment methods.": [
         "Du hast keine Zahlungsmethoden festgelegt."
       ],
@@ -5492,6 +5542,9 @@
       ],
       "You need to have a personal calendar to create a link.": [
         "Du benötigst einen persönlichen Kalender, um einen Link erstellen zu können."
+      ],
+      "You need to have an active personal calendar to import your events from ICS.": [
+        "Du musst einen aktiven persönlichen Kalender nutzen, um deine Termine mittels ICS zu importieren."
       ],
       "You need to have an active personal calendar to import your events.": [
         "Du musst einen aktiven persönlichen Kalender nutzen, um deine Termine importieren zu können."
@@ -5529,8 +5582,8 @@
       "You'll still be able to send and receive mail with your existing email address(es).": [
         "Du kannst weiterhin E-Mails mit deinen bestehenden E-Mail-Adressen senden und empfangen."
       ],
-      "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, please create an address.": [
-        "Ihr ${ BRAND_NAME }-Konto ist mit ${ externalEmailAddress } verknüpft. Um ${ toAppName } verwenden zu können, erstellen Sie bitte eine E-Mail-Adresse."
+      "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
+        "Dein ${ BRAND_NAME }-Konto ist mit ${ externalEmailAddress } verknüpft. Um ${ toAppName } zu verwenden, benötigst du eine ${ MAIL_APP_NAME }-E-Mail-Adresse."
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
         "Deine ${ VPN_APP_NAME } und ${ MAIL_APP_NAME } Konten sind miteinander verknüpft. Um beide zu löschen, melde dich bitte unter ${ loginLink } an und lösche dort dein Konto."
@@ -5615,6 +5668,15 @@
       "Create an email address": [
         "Neue E-Mail-Adresse erstellen"
       ],
+      "Day 27: Trial reminder": [
+        "Tag 27: Erinnerung zur Testversion"
+      ],
+      "Day 30: Trial ends": [
+        "Tag 30: Testversion endet"
+      ],
+      "Enjoy secure, easy-to-use emailing with plenty of premium features.": [
+        "Genieße sicheren, benutzerfreundlichen E-Mail-Versand mit zahlreichen Premium-Funktionen."
+      ],
       "Key ${ fingerprint } has already been uploaded": [
         "Schlüssel ${ fingerprint } wurde bereits hochgeladen"
       ],
@@ -5623,6 +5685,12 @@
       ],
       "Try Mail Plus": [
         "Mail Plus ausprobieren"
+      ],
+      "We’ll email you before your trial ends. Cancel anytime.": [
+        "Wir senden dir eine E-Mail, bevor deine Testversion endet. Du kannst jederzeit kündigen."
+      ],
+      "Your new email address is ready to go!": [
+        "Deine neue E-Mail-Adresse ist jetzt einsatzbereit!"
       ]
     },
     "Info - folder colouring feature": {
@@ -5990,6 +6058,9 @@
     "Knowledge base link label": {
       "Here's how": [
         "Und so geht's"
+      ],
+      "Learn more": [
+        "Mehr erfahren"
       ]
     },
     "Label": {
@@ -6236,23 +6307,11 @@
       "Days of the week": [
         "Tage der Woche"
       ],
-      "Default email address": [
-        "Standard E-Mail-Adresse"
-      ],
-      "Default event duration": [
-        "Standarddauer für Termine"
-      ],
-      "Default full day notifications": [
-        "Standardbenachrichtigungen für ganztägige Ereignisse"
-      ],
       "Default language": [
         "Standardsprache"
       ],
       "Default language (${ defaultLanguage })": [
         "Standardsprache (${ defaultLanguage })"
-      ],
-      "Default notifications": [
-        "Standard-Benachrichtigungen"
       ],
       "Default PGP scheme": [
         "Standard PGP-Schema"
@@ -6805,6 +6864,19 @@
         "Füge deine eigene Domain zu deinem ${ MAIL_APP_NAME }-Konto hinzu."
       ]
     },
+    "Label for default event notifications": {
+      "All-day event notifications": [
+        "Benachrichtigungen zu ganztägigem Termin"
+      ],
+      "Notifications": [
+        "Benachrichtigungen"
+      ]
+    },
+    "Label for default event settings": {
+      "Duration": [
+        "Dauer"
+      ]
+    },
     "Label for domain modal": {
       "Please add the following TXT record:": [
         "Bitte füge folgenden TXT-Eintrag hinzu:"
@@ -6955,6 +7027,9 @@
       "How to unlock data": [
         "Wie Daten entsperrt werden"
       ],
+      "Import/export": [
+        "Import/Export"
+      ],
       "Learn more": [
         "Mehr erfahren"
       ],
@@ -7046,6 +7121,12 @@
       "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "Importiert alle Nachrichten aus ${ totalLabelsCount } Kategorie seit ${ periodFragment } und kennzeichnet diese als „${ LABEL_MARKUP_PLACEHOLDER }”",
         "Importiert alle Nachrichten aus ${ totalLabelsCount } Kategorien seit ${ periodFragment } und kennzeichnet diese als „${ LABEL_MARKUP_PLACEHOLDER }”"
+      ]
+    },
+    "Maximum calendar links reached warning": {
+      "You can create up to ${ MAX_LINKS_PER_CALENDAR } link per calendar. To create a new link to this calendar, delete one from the list below.": [
+        "Du kannst bis zu ${ MAX_LINKS_PER_CALENDAR } Link pro Kalender erstellen. Um einen neuen Link zu erstellen, musst du einen Link aus der folgenden Liste löschen.",
+        "Du kannst bis zu ${ MAX_LINKS_PER_CALENDAR } Links pro Kalender erstellen. Um einen neuen Link zu erstellen, musst du einen Link aus der folgenden Liste löschen."
       ]
     },
     "Member action": {
@@ -7983,9 +8064,22 @@
         "OpenVPN/IKEv2-Zugangsdaten wiederhergestellt"
       ]
     },
+    "Notification success": {
+      "Event defaults updated": [
+        "Termin-Standardwerte aktualisiert"
+      ]
+    },
     "Notification time input": {
       "at": [
         "um"
+      ]
+    },
+    "Notification type": {
+      "email": [
+        "E-Mail"
+      ],
+      "notification": [
+        "Benachrichtigung"
       ]
     },
     "Notification when": {
@@ -8304,6 +8398,11 @@
         "PayPal"
       ]
     },
+    "Personal calendar section description": {
+      "Create a calendar to stay on top of your schedule while keeping your data secure.": [
+        "Erstelle einen Kalender, um den Überblick über deinen Zeitplan zu behalten und gleichzeitig deine Daten zu schützen."
+      ]
+    },
     "Placeholder": {
       "A way to contact you": [
         "Eine Möglichkeit, Sie zu kontaktieren"
@@ -8541,6 +8640,22 @@
       ],
       "State of the art": [
         "Stand der Technik"
+      ]
+    },
+    "Remove calendar section description": {
+      "By unsubscribing, you will no longer have access to this calendar. All events in this calendar will be deleted from your account, but they'll remain in the original publick link.": [
+        "Wenn du dich abmeldest, hast du keinen Zugriff mehr auf diesen Kalender. Alle Ereignisse in diesem Kalender werden aus deinem Konto gelöscht, aber sie bleiben im ursprünglichen öffentlichen Link erhalten."
+      ]
+    },
+    "Remove calendar section title": {
+      "Delete calendar?": [
+        "Kalender löschen?"
+      ],
+      "Remove calendar": [
+        "Kalender entfernen"
+      ],
+      "Unsubscribe?": [
+        "Abbestellen?"
       ]
     },
     "Restore administrator panel": {
@@ -8857,6 +8972,9 @@
       ],
       "Calendar created": [
         "Kalender erstellt"
+      ],
+      "Calendar information updated": [
+        "Kalenderinformationen aktualisiert"
       ],
       "Calendar removed": [
         "Kalender entfernt"
@@ -9205,9 +9323,6 @@
       "Add user": [
         "Benutzer hinzuf."
       ],
-      "Address is available": [
-        "E-Mail-Adresse verfügbar"
-      ],
       "Address verification": [
         "Adressbestätigung"
       ],
@@ -9337,8 +9452,8 @@
       "Continue with partial import?": [
         "Mit Teilimport fortfahren?"
       ],
-      "Create a ${ mailAppName } address": [
-        "Erstellen Sie eine ${ mailAppName }-E-Mail-Adresse"
+      "Create a ${ MAIL_APP_NAME } address": [
+        "Erstelle eine ${ MAIL_APP_NAME }-E-Mail-Adresse"
       ],
       "Create calendar": [
         "Kalender erstellen"
@@ -9902,6 +10017,9 @@
       "Your ${ domain } address is active": [
         "Deine Domain ${ domain } ist aktiv"
       ],
+      "Your ${ MAIL_APP_NAME } address": [
+        "Deine ${ MAIL_APP_NAME } E-Mail-Adresse"
+      ],
       "Your calendar link": [
         "Dein Kalender-Link"
       ],
@@ -10288,9 +10406,6 @@
       ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
         "Die Datums- und Zeiteinstellungen auf Ihrem Gerät sind nicht synchronisiert. ${ learnMore }"
-      ],
-      "This feature is only available for ${ mailProfessional } plans or higher": [
-        "Diese Funktion ist nur im Tarif „${ mailProfessional }” oder höher verfügbar"
       ],
       "This import may exceed the storage capacity currently available in your Proton account. Please consider customizing your import.": [
         "Dieser Import kann die derzeit in Ihrem Proton-Konto verfügbare Speicherkapazität überschreiten. Bitte prüfen Sie, ob Sie den Import anpassen können."

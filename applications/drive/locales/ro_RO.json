@@ -288,11 +288,11 @@
       "I have a question": [
         "Am o întrebare"
       ],
-      "import": [
-        "importare"
-      ],
       "Import": [
         "Importare"
+      ],
+      "import": [
+        "importare"
       ],
       "Import from .csv or vCard": [
         "Importare din .csv sau vCard"
@@ -782,6 +782,17 @@
       ],
       "Unsupported calendar format": [
         "Format de calendar neacceptat."
+      ]
+    },
+    "Calendar subscription not synced error; long version": {
+      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
+        "Legătura calendarului nu este accesibilă din exteriorul ecosistemului furnizorului calendarului."
+      ],
+      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
+        "Legătura calendarului nu este accesibilă momentan. Verificați dacă legătura de la furnizorul calendarului încă e validă."
+      ],
+      "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
+        "Au trecut mai mult de 12 ore de la ultima actualizare - Proton Calendar va încerca să actualizeze calendarul în câteva ore."
       ]
     },
     "Collapsible tooltip": {
@@ -1773,7 +1784,7 @@
       "A group with this name already exists": [
         "Un grup cu acest nume există deja."
       ],
-      "A problem occurred, please try again": [
+      "A problem occurred, please try again.": [
         "A apărut o eroare, mai reîncercați."
       ],
       "Authentication canceled.": [
@@ -1806,6 +1817,9 @@
         "Deselectați cel puțin un calendar sau",
         "Deselectați cel puțin ${ calendarToFixCount } calendare sau",
         "Deselectați cel puțin ${ calendarToFixCount } de calendare sau"
+      ],
+      "Domain not available, try again later": [
+        "Domeniul nu este disponibil, reîncercați mai târziu."
       ],
       "Email address invalid": [
         "Adresă de e-mail nevalidă"
@@ -1891,8 +1905,8 @@
       "Passwords do not match": [
         "Parolele nu coincid"
       ],
-      "Please activate your content search again": [
-        "Reactivați căutarea în conținutul mesajelor."
+      "Please activate your search again": [
+        "Reactivați căutarea"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Remediați conflictul evidențiat pentru a continua.",

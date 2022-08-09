@@ -746,6 +746,9 @@
       "Void anyway": [
         "仍然廢止"
       ],
+      "What do I get?": [
+        "您可獲得"
+      ],
       "Wipe": [
         "清除"
       ],
@@ -2855,6 +2858,9 @@
       "Archive": [
         "封存"
       ],
+      "Do not move": [
+        "請勿移動"
+      ],
       "Inbox": [
         "收件匣"
       ],
@@ -4578,9 +4584,6 @@
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a ${ VPN_APP_NAME } server.": [
         "保護您的網際網路連線安全，請下載並安裝 ${ VPN_APP_NAME } 在您的裝置上，並連接至 ${ VPN_APP_NAME } 伺服器。"
       ],
-      "To use ${ toAppName }, please create an address.": [
-        "要使用 ${ toAppName }，請建立位址。"
-      ],
       "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
         "正常運作情況下，每一個篩選器必須包含至少一個名稱及一個有效的 Sieve 程序檔。您可查看 ${ link }。"
       ],
@@ -4589,6 +4592,18 @@
       ],
       "Tor": [
         "Tor"
+      ],
+      "Total email addresses": [
+        "可使用的電郵位址總數"
+      ],
+      "Total storage": [
+        "總儲存量"
+      ],
+      "Total supported domains": [
+        "可支援的網域總數"
+      ],
+      "Total VPN connections": [
+        "總 VPN 連線數量"
       ],
       "Two-factor authentication adds an extra layer of security to your account in case your password is compromised.": [
         "兩步驟驗證為您的帳號增添一重保安，以防您的密碼萬一被洩露。"
@@ -4833,8 +4848,8 @@
       "You'll still be able to send and receive mail with your existing email address(es).": [
         "您仍然可以使用現有的電郵位址來傳送與接收電郵。"
       ],
-      "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, please create an address.": [
-        "您的 ${ BRAND_NAME } 帳號已與 ${ externalEmailAddress } 關聯。如要使用 ${ toAppName }，請建立一個電郵位址。"
+      "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
+        "您的 ${ BRAND_NAME } 帳號目前已設定關聯至 ${ externalEmailAddress }。 若要使用 ${ toAppName }，您需要一組 ${ MAIL_APP_NAME } 電郵位址。"
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
         "您的 ${ VPN_APP_NAME } 和 ${ MAIL_APP_NAME } 帳號是相互連結的。如要一併刪除，請登入 ${ loginLink } 並在那裡刪除您的帳號。"
@@ -6439,6 +6454,14 @@
         "OpenVPN / IKEv2 認證已重新生成"
       ]
     },
+    "Notification type": {
+      "email": [
+        "電郵"
+      ],
+      "notification": [
+        "通知"
+      ]
+    },
     "Option": {
       "10th of the month": [
         "每月10日"
@@ -7416,9 +7439,6 @@
       "Add user": [
         "加入使用者"
       ],
-      "Address is available": [
-        "郵件位址可用"
-      ],
       "Address verification": [
         "電郵位址驗證"
       ],
@@ -7539,8 +7559,8 @@
       "Continue with partial import?": [
         "繼續部分匯入？"
       ],
-      "Create a ${ mailAppName } address": [
-        "建立 ${ mailAppName } 電郵位址"
+      "Create a ${ MAIL_APP_NAME } address": [
+        "創建新的 ${ MAIL_APP_NAME } 電郵位址"
       ],
       "Create your ${ BRAND_NAME } Account": [
         "創建您的 ${ BRAND_NAME } 帳號"
@@ -8060,6 +8080,9 @@
       ],
       "Your ${ domain } address is active": [
         "您的 ${ domain } 位址已啟用"
+      ],
+      "Your ${ MAIL_APP_NAME } address": [
+        "您新的 ${ MAIL_APP_NAME } 電郵位址"
       ],
       "Your current plan": [
         "您目前的方案"

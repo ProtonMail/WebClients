@@ -1232,6 +1232,11 @@
         "Štítek změněn"
       ]
     },
+    "Calendar settings sidebar": {
+      "Show ${ remainingItems } more": [
+        "Zobrazit ${ remainingItems } další"
+      ]
+    },
     "Calendar status": {
       "Active": [
         "Aktivní"
@@ -1255,9 +1260,6 @@
       ],
       "Calendar is syncing": [
         "Kalendář se synchronizuje"
-      ],
-      "Calendar is syncing: it may take several minutes for all of its events to show up": [
-        "Synchronizace kalendáře: může trvat několik minut, než se zobrazí všechny jeho události"
       ],
       "Calendar is too big": [
         "Kalendář je příliš velký"
@@ -3474,6 +3476,9 @@
       "Archive": [
         "Archiv"
       ],
+      "Do not move": [
+        "Nepřesouvat"
+      ],
       "Inbox": [
         "Příchozí pošta"
       ],
@@ -5496,9 +5501,6 @@
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a ${ VPN_APP_NAME } server.": [
         "Chcete-li zabezpečit své připojení k internetu, stáhněte a nainstalujte si do svého zařízení aplikaci ${ VPN_APP_NAME } a připojte se k serveru ${ VPN_APP_NAME }."
       ],
-      "To use ${ toAppName }, please create an address.": [
-        "Chcete-li použít ${ toAppName }, vytvořte adresu, prosím."
-      ],
       "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
         "Pro správnou funkci musí každý filtr obsahovat alespoň název a platný skript Sieve. Můžete ${ link }."
       ],
@@ -5775,8 +5777,8 @@
       "You'll still be able to send and receive mail with your existing email address(es).": [
         "Stále budete moci odesílat a přijímat poštu pomocí svých stávajících e-mailových adres."
       ],
-      "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, please create an address.": [
-        "Váš účet ${ BRAND_NAME } je spojen s ${ externalEmailAddress }. Chcete-li použít ${ toAppName }, vytvořte prosím adresu."
+      "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
+        "Váš účet ${ BRAND_NAME } je spojen s ${ externalEmailAddress }. Chcete-li použít ${ toAppName }, potřebujete ${ MAIL_APP_NAME } adresu."
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
         "Vaše účty ${ VPN_APP_NAME } a ${ MAIL_APP_NAME } jsou propojeny. Chcete-li je odstranit, přihlaste se prosím na ${ loginLink } a smažte tam svůj účet."
@@ -6509,23 +6511,11 @@
       "Days of the week": [
         "Dny v týdnu"
       ],
-      "Default email address": [
-        "Výchozí e-mailová adresa"
-      ],
-      "Default event duration": [
-        "Výchozí doba trvání události"
-      ],
-      "Default full day notifications": [
-        "Výchozí celodenní oznámení"
-      ],
       "Default language": [
         "Výchozí jazyk"
       ],
       "Default language (${ defaultLanguage })": [
         "Výchozí jazyk (${ defaultLanguage })"
-      ],
-      "Default notifications": [
-        "Výchozí oznámení"
       ],
       "Default PGP scheme": [
         "Výchozí schéma PGP"
@@ -7080,10 +7070,10 @@
     },
     "Label for default event notifications": {
       "All-day event notifications": [
-        "Oznámení celodenních událostí"
+        "Upozornění na celodenní události"
       ],
       "Notifications": [
-        "Upozornění"
+        "Oznámení"
       ]
     },
     "Label for default event settings": {
@@ -8336,17 +8326,22 @@
         "OpenVPN / IKEv2 údaje byly obnoveny"
       ]
     },
+    "Notification success": {
+      "Event defaults updated": [
+        "Výchozí nastavení události aktualizováno"
+      ]
+    },
     "Notification time input": {
       "at": [
         "v"
       ]
     },
     "Notification type": {
-      "Email": [
-        "E-mail"
+      "email": [
+        "e-mail"
       ],
-      "In-app": [
-        "V aplikaci"
+      "notification": [
+        "oznámení"
       ]
     },
     "Notification when": {
@@ -8921,7 +8916,7 @@
     },
     "Remove calendar section description": {
       "By unsubscribing, you will no longer have access to this calendar. All events in this calendar will be deleted from your account, but they'll remain in the original publick link.": [
-        "Odhlášením odběru již nebudete mít přístup k tomuto kalendáři. Všechny události v tomto kalendáři budou z vašeho účtu odstraněny, ale zůstanou v původním veřejném odkazu."
+        "Odhlášením odběru již nebudete mít přístup k tomuto kalendáři. Všechny události tohoto kalendáře budou z vašeho účtu odstraněny, ale i nadále budou k dispozici pod originálním veřejným odkazem."
       ]
     },
     "Remove calendar section title": {
@@ -9642,9 +9637,6 @@
       "Add user": [
         "Přidat uživatele"
       ],
-      "Address is available": [
-        "Adresa je k dispozici"
-      ],
       "Address verification": [
         "Ověření adresy"
       ],
@@ -9774,8 +9766,8 @@
       "Continue with partial import?": [
         "Pokračovat s neúplným importem?"
       ],
-      "Create a ${ mailAppName } address": [
-        "Vytvořit ${ mailAppName } adresu"
+      "Create a ${ MAIL_APP_NAME } address": [
+        "Vytvořit ${ MAIL_APP_NAME } adresu"
       ],
       "Create calendar": [
         "Vytvořit kalendář"
@@ -10341,6 +10333,9 @@
       "Your ${ domain } address is active": [
         "Vaše ${ domain } adresa je aktivní"
       ],
+      "Your ${ MAIL_APP_NAME } address": [
+        "Vaše ${ MAIL_APP_NAME } adresa"
+      ],
       "Your calendar link": [
         "URL adresa kalendáře"
       ],
@@ -10739,9 +10734,6 @@
       ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
         "Nastavení data a času na vašem zařízení nejsou synchronizována. ${ learnMore }"
-      ],
-      "This feature is only available for ${ mailProfessional } plans or higher": [
-        "Tato funkce je dostupná pouze pro plány ${ mailProfessional } nebo vyšší"
       ],
       "This import may exceed the storage capacity currently available in your Proton account. Please consider customizing your import.": [
         "Tento import může překročit kapacitu úložiště, která je momentálně k dispozici ve vašem Proton účtu. Zvažte prosím přizpůsobení importu."

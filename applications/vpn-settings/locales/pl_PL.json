@@ -66,7 +66,7 @@
         "Potwierdź"
       ],
       "Contact support": [
-        "Skontaktuj się ze wsparciem technicznym"
+        "Pomoc techniczna"
       ],
       "Continue": [
         "Kontynuuj"
@@ -389,6 +389,9 @@
       "View plans details": [
         "Pokaż szczegóły planów"
       ],
+      "What do I get?": [
+        "Co otrzymam?"
+      ],
       "Yes": [
         "Tak"
       ],
@@ -652,6 +655,9 @@
       "Calendar is syncing": [
         "Kalendarz jest synchronizowany"
       ],
+      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
+        "Kalendarz jest synchronizowany: Ładowanie wszystkich wydarzeń może potrwać kilka minut."
+      ],
       "Calendar is too big": [
         "Rozmiar kalendarza jest zbyt duży"
       ],
@@ -669,6 +675,17 @@
       ],
       "Unsupported calendar format": [
         "Format kalendarza jest nieobsługiwany"
+      ]
+    },
+    "Calendar subscription not synced error; long version": {
+      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
+        "Link kalendarza nie jest dostępny poza usługą dostawcy kalendarza."
+      ],
+      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
+        "Link kalendarza jest tymczasowo niedostępny. Zweryfikuj, czy link dostawcy kalendarza jest ważny."
+      ],
+      "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
+        "Minęło ponad 12 godzin od ostatniej synchronizacji. Proton Calendar zaktualizuje kalendarz w ciągu kilku godzin."
       ]
     },
     "Checkout row": {
@@ -2378,14 +2395,23 @@
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a ${ VPN_APP_NAME } server.": [
         "Aby chronić swoje połączenie internetowe, pobierz oraz zainstaluj aplikację ${ VPN_APP_NAME } i połącz się z serwerem."
       ],
-      "To use ${ toAppName }, please create an address.": [
-        "Utwórz adres, aby korzystać z usługi ${ toAppName }."
-      ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Doładuj swoje konto środkami, których możesz użyć do wykupienia nowego planu lub odnowienia obecnego. 1 ${ i18nCurrency } to jeden kredyt."
       ],
       "Tor": [
         "Tor"
+      ],
+      "Total email addresses": [
+        "Adresy e-mail"
+      ],
+      "Total storage": [
+        "Przestrzeń dyskowa"
+      ],
+      "Total supported domains": [
+        "Wsparcie dla domen"
+      ],
+      "Total VPN connections": [
+        "Połączenia VPN"
       ],
       "Two-factor authentication adds an extra layer of security to your account in case your password is compromised.": [
         "W przypadku naruszenia hasła, uwierzytelnianie dwustopniowe dodaje dodatkową warstwę bezpieczeństwa do Twojego konta."
@@ -2543,8 +2569,8 @@
       "You'll stay signed in even after you close the browser.": [
         "Pozostaniesz zalogowany, nawet po zamknięciu przeglądarki."
       ],
-      "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, please create an address.": [
-        "Twoje konto ${ BRAND_NAME } jest powiązane z adresem ${ externalEmailAddress }. Utwórz adres, aby korzystać z usługi ${ toAppName }."
+      "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
+        "Twoje konto ${ BRAND_NAME } jest powiązane z adresem ${ externalEmailAddress }. Utwórz adres ${ MAIL_APP_NAME }, aby korzystać z usługi ${ toAppName }."
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
         "Twoje konta ${ VPN_APP_NAME } i ${ MAIL_APP_NAME } są połączone. Aby je usunąć, zaloguj się na ${ loginLink } i usuń konto."
@@ -3081,7 +3107,7 @@
         "Poproś o zaproszenie"
       ],
       "Reset password": [
-        "Zresetuj hasło"
+        "Resetowanie hasła"
       ],
       "Sign in": [
         "Zaloguj się"
@@ -3300,7 +3326,7 @@
         "${ size } przestrzeni dyskowej"
       ],
       "1 free VPN connection in total": [
-        "Łącznie 1 darmowe połączenie VPN"
+        "1 darmowe połączenie VPN"
       ],
       "99.95% SLA": [
         "Umowa SLA 99,95%"
@@ -4008,7 +4034,7 @@
     },
     "Recovery method": {
       "Email": [
-        "Adres e-mail"
+        "E-mail"
       ],
       "Phone number": [
         "Numer telefonu"
@@ -4045,7 +4071,7 @@
         "Nazwa wyświetlana"
       ],
       "Email": [
-        "Adres e-mail"
+        "E-mail"
       ],
       "Username": [
         "Nazwa użytkownika"
@@ -4116,7 +4142,7 @@
         "${ n } połączenie VPN",
         "${ n } połączenia VPN",
         "${ n } połączeń VPN",
-        "${ n } połączeń VPN"
+        "${ n } połączenia VPN"
       ],
       "${ n } VPN connection per user": [
         "${ n } połączenie VPN na użytkownika",
@@ -4180,7 +4206,7 @@
     },
     "Subscription saving": {
       "Save": [
-        "Zapisz"
+        "Zaoszczędź"
       ]
     },
     "Subtitle for trial plan": {
@@ -4368,9 +4394,6 @@
       "Add PayPal payment method": [
         "Dodaj PayPal jako metodę płatności"
       ],
-      "Address is available": [
-        "Adres jest dostępny"
-      ],
       "Amount": [
         "Kwota"
       ],
@@ -4422,8 +4445,8 @@
       "Congratulations on choosing privacy!": [
         "Gratulujemy wyboru prywatności!"
       ],
-      "Create a ${ mailAppName } address": [
-        "Utwórz adres ${ mailAppName }"
+      "Create a ${ MAIL_APP_NAME } address": [
+        "Utwórz adres ${ MAIL_APP_NAME }"
       ],
       "Create your ${ BRAND_NAME } Account": [
         "Utwórz konto ${ BRAND_NAME }"
@@ -4471,7 +4494,7 @@
         "Edytuj kartę płatniczą"
       ],
       "Email": [
-        "Adres e-mail"
+        "E-mail"
       ],
       "Email subscriptions": [
         "Listy mailingowe"
@@ -4576,7 +4599,7 @@
         "Przetwarzanie..."
       ],
       "Recommended": [
-        "Zalecane"
+        "Zalecany"
       ],
       "Recovery": [
         "Odzyskiwanie"
@@ -4588,7 +4611,7 @@
         "Poproś o nowy kod"
       ],
       "Reset password": [
-        "Zresetuj hasło"
+        "Resetowanie hasła"
       ],
       "Reset password?": [
         "Zresetować hasło?"
@@ -4670,6 +4693,9 @@
       ],
       "You already have a Proton account": [
         "Posiadasz już konto Proton"
+      ],
+      "Your ${ MAIL_APP_NAME } address": [
+        "Twój adres ${ MAIL_APP_NAME }"
       ],
       "Your current plan": [
         "Obecny plan"

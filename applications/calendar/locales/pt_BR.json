@@ -226,11 +226,11 @@
       "I have a question": [
         "Eu tenho uma dúvida"
       ],
-      "import": [
-        "importar"
-      ],
       "Import": [
         "Importar"
+      ],
+      "import": [
+        "importar"
       ],
       "Import events": [
         "Importar eventos"
@@ -799,6 +799,9 @@
       "Calendar is syncing": [
         "Calendário está sincronizando"
       ],
+      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
+        "O calendário está sincronizando: pode levar vários minutos até que todos os seus eventos sejam exibidos."
+      ],
       "Calendar is too big": [
         "Calendário é grande demais"
       ],
@@ -816,6 +819,17 @@
       ],
       "Unsupported calendar format": [
         "Formato de calendário não suportado"
+      ]
+    },
+    "Calendar subscription not synced error; long version": {
+      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
+        "O link do calendário não está acessível para fora do ecossistema do provedor do calendário."
+      ],
+      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
+        "O link do calendário está temporariamente inacessível. Por favor, verifique se o link do provedor do calendário ainda é válido."
+      ],
+      "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
+        "Mais de 12 horas se passaram desde a última atualização — O Proton Calendar vai tentar atualizar o calendário em algumas horas."
       ]
     },
     "Calendar view": {
@@ -1993,9 +2007,6 @@
       "A group with this name already exists": [
         "Já existe um grupo com este nome"
       ],
-      "A maximum of 10 notifications is allowed": [
-        "O máximo de notificações permitidas é 10"
-      ],
       "Address primary private key not found": [
         "Endereço da chave primária privada não encontrada"
       ],
@@ -2036,6 +2047,9 @@
       "Deselect at least ${ calendarToFixCount } calendar or": [
         "Desmarque ao menos ${ calendarToFixCount } calendário ou",
         "Desmarque ao menos ${ calendarToFixCount } calendários ou"
+      ],
+      "Domain not available, try again later": [
+        "Domínio indisponível, tente novamente mais tarde"
       ],
       "Email address disabled": [
         "Endereço de e-mail desativado"
@@ -3418,6 +3432,9 @@
       "All day": [
         "Todo o dia"
       ],
+      "All-day event notifications": [
+        "Notificações para eventos de dia inteiro"
+      ],
       "Attach screenshot(s)": [
         "Anexar captura(s) de tela"
       ],
@@ -3466,18 +3483,6 @@
       "Date and time": [
         "Data e hora"
       ],
-      "Default email address": [
-        "Endereço de e-mail padrão"
-      ],
-      "Default event duration": [
-        "Duração padrão do evento"
-      ],
-      "Default full day notifications": [
-        "Notificações padrão para o dia inteiro"
-      ],
-      "Default notifications": [
-        "Notificações padrão"
-      ],
       "Delete": [
         "Excluir"
       ],
@@ -3507,6 +3512,12 @@
       ],
       "Ends": [
         "Termina"
+      ],
+      "Event duration": [
+        "Duração do evento"
+      ],
+      "Event notifications": [
+        "Notificações do evento"
       ],
       "Event title": [
         "Titulo do evento"
@@ -4500,6 +4511,9 @@
       "Calendar created": [
         "O calendário foi criado"
       ],
+      "Calendar information updated": [
+        "As informações do calendário foram atualizadas"
+      ],
       "Calendar updated": [
         "O calendário foi atualizado"
       ],
@@ -4742,6 +4756,9 @@
       ],
       "Calendar alarm": [
         "Alarme do calendário"
+      ],
+      "Calendar information": [
+        "Informações do calendário"
       ],
       "Change my answer": [
         "Alterar minha resposta"

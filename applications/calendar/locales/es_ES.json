@@ -226,11 +226,11 @@
       "I have a question": [
         "Tengo una pregunta"
       ],
-      "import": [
-        "importar"
-      ],
       "Import": [
         "Importar"
+      ],
+      "import": [
+        "importar"
       ],
       "Import events": [
         "Importar eventos"
@@ -779,6 +779,9 @@
       "Calendar is syncing": [
         "El calendario se está sincronizando"
       ],
+      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
+        "El calendario se está sincronizando: puede tardar varios minutos en mostrar todos sus eventos."
+      ],
       "Calendar is too big": [
         "El calendario es demasiado grande"
       ],
@@ -793,6 +796,17 @@
       ],
       "More than 12 hours passed since last update": [
         "Han pasado más de 12 horas desde la última actualización"
+      ]
+    },
+    "Calendar subscription not synced error; long version": {
+      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
+        "El enlace al calendario no es accesible desde fuera del ecosistema del proveedor del calendario."
+      ],
+      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
+        "El enlace al calendario no está accesible temporalmente. Verifica que el enlace del proveedor del calendario aún es válido."
+      ],
+      "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
+        "Ha pasado más de 12 horas desde la última actualización — Proton Calendar intentará actualizar el canlendario dentro de unas horas."
       ]
     },
     "Calendar view": {
@@ -1906,6 +1920,9 @@
       "Decryption error: Decryption of this event's content failed.": [
         "Error de descifrado: el descifrado del contenido de este evento ha fallado."
       ],
+      "Domain not available, try again later": [
+        "Dominio no disponible, inténtalo de nuevo más tarde"
+      ],
       "Email address disabled": [
         "Dirección de correo electrónico deshabilitada"
       ],
@@ -1962,6 +1979,9 @@
       ],
       "It is only possible to move events between ${ minDateString } - ${ maxDateString }": [
         "Solo es posible mover eventos entre ${ minDateString } y ${ maxDateString }"
+      ],
+      "Label name cannot be empty.": [
+        "El nombre de la etiqueta no puede estar vacío."
       ],
       "Missing key packet": [
         "Paquete de claves perdido"
@@ -2119,6 +2139,9 @@
       ],
       "Invalid event": [
         "Evento no válido"
+      ],
+      "Missing start time": [
+        "Falta la hora inicial"
       ],
       "Non-Gregorian": [
         "No gregoriano"
@@ -2313,6 +2336,9 @@
     "Import calendar": {
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
         "Cifrando y agregando contactos: ${ totalImported }/${ totalToImport }"
+      ],
+      "Please don't close the tab before the importing process is finished.": [
+        "No cierres la pestaña antes de que el proceso de importación haya terminado."
       ]
     },
     "Import calendar warning": {
@@ -2629,6 +2655,9 @@
       ],
       "Monthly ${ onDayString }": [
         "Mensualmente ${ onDayString }"
+      ],
+      "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
+        "Nombre su nueva carpeta y seleccione la carpeta principal en la que desea colocarla. Si no selecciona una carpeta principal, esta nueva carpeta se creará como una carpeta de nivel superior."
       ],
       "New": [
         "Nuevo"
@@ -2963,11 +2992,20 @@
       "All day": [
         "Todo el día"
       ],
+      "All-day event notifications": [
+        "Notificaciones de eventos que ocupan todo el día"
+      ],
       "Attach screenshot(s)": [
         "Adjuntar captura(s) de pantalla"
       ],
       "Automatically save contacts": [
         "Guardar contactos automáticamente"
+      ],
+      "Awful": [
+        "Terrible"
+      ],
+      "Bad": [
+        "Malo"
       ],
       "Browser": [
         "Navegador"
@@ -3034,6 +3072,12 @@
       ],
       "Ends": [
         "Termina"
+      ],
+      "Event duration": [
+        "Duración del evento"
+      ],
+      "Event notifications": [
+        "Notificaciones de eventos"
       ],
       "Event title": [
         "Título del evento"
@@ -3103,6 +3147,9 @@
       ],
       "Notifications": [
         "Notificaciones"
+      ],
+      "OK": [
+        "OK"
       ],
       "Operating system": [
         "Sistema operativo"
@@ -3483,6 +3530,14 @@
         "a las"
       ]
     },
+    "Notification type": {
+      "email": [
+        "correo electrónico"
+      ],
+      "notification": [
+        "notificación"
+      ]
+    },
     "Notification when": {
       "at time of event": [
         "al momento del evento"
@@ -3839,6 +3894,26 @@
         "Gestionar calendario"
       ]
     },
+    "Spotlight": {
+      "Don't miss any events": [
+        "No te pierdas ningún evento"
+      ],
+      "Get up to 18 months of ${ planName } for free": [
+        "Obtén hasta 18 meses gratis de ${ planName }"
+      ],
+      "Invite friends and earn rewards!": [
+        "¡Invita a tus amigos y gana recompensas!"
+      ],
+      "No more missed appointments": [
+        "No más citas perdidas"
+      ],
+      "Try ${ DRIVE_APP_NAME }": [
+        "Prueba ${ DRIVE_APP_NAME }"
+      ],
+      "You can now add notifications to calendars you subscribed to.": [
+        "Ahora puedes añadir notificaciones a los calendarios a los que estás suscrito."
+      ]
+    },
     "Storage": {
       "Release notes": [
         "Notas de la versión"
@@ -3853,6 +3928,16 @@
     "Subscribe to calendar modal": {
       "Calendar URL": [
         "URL del calendario"
+      ]
+    },
+    "Subscribe to calendar modal description": {
+      "Learn how to get a private calendar link.": [
+        "Aprende a obtener un enlace de calendario privado."
+      ]
+    },
+    "Subscribed calendar extension warning": {
+      "This link might be wrong": [
+        "Este enlace puede ser erróneo"
       ]
     },
     "Subscribed calendar URL length warning": {
@@ -3890,6 +3975,9 @@
       ],
       "Calendar created": [
         "Calendario creado"
+      ],
+      "Calendar information updated": [
+        "Información del calendario actualizada"
       ],
       "Calendar updated": [
         "Calendario actualizado"
@@ -4133,6 +4221,9 @@
       ],
       "Calendar alarm": [
         "Alarma del calendario"
+      ],
+      "Calendar information": [
+        "Información del calendario"
       ],
       "Change my answer": [
         "Cambiar mi respuesta"

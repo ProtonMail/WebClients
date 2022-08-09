@@ -30,7 +30,7 @@
         "Применить"
       ],
       "Attach screenshot(s)": [
-        "Приложить снимки экрана"
+        "Приложить скриншот(ы)"
       ],
       "Authenticate": [
         "Аутентифицировать"
@@ -66,7 +66,7 @@
         "Подтвердить"
       ],
       "Contact support": [
-        "Связаться с поддержкой"
+        "Связаться со службой поддержки"
       ],
       "Continue": [
         "Продолжить"
@@ -389,6 +389,9 @@
       "View plans details": [
         "Посмотреть информацию о тарифе"
       ],
+      "What do I get?": [
+        "Что я получу?"
+      ],
       "Yes": [
         "Да"
       ],
@@ -690,8 +693,8 @@
       "Calendar is syncing": [
         "Календарь синхронизируется"
       ],
-      "Calendar is syncing: it may take several minutes for all of its events to show up": [
-        "Календарь синхронизируется: может понадобиться несколько минут, чтобы показать все события"
+      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
+        "Календарь синхронизируется: чтобы отобразились все его события, может потребоваться несколько минут."
       ],
       "Calendar is too big": [
         "Календарь слишком большой"
@@ -884,7 +887,7 @@
         "Азербайджан"
       ],
       "Bahamas": [
-        "Багамские Острова"
+        "Багамские острова"
       ],
       "Bahrain": [
         "Бахрейн"
@@ -917,7 +920,7 @@
         "Боливия"
       ],
       "Bonaire, Sint Eustatius and Saba": [
-        "Бонэйр, Синт-Эстатиус и Саба"
+        "Бонайре, Синт-Эстатиус и Саба"
       ],
       "Bosnia and Herzegovina": [
         "Босния и Герцеговина"
@@ -932,7 +935,7 @@
         "Бразилия"
       ],
       "British Indian Ocean Territory": [
-        "Британская Территория в Индийском Океане"
+        "Британская территория в Индийском океане"
       ],
       "Brunei Darussalam": [
         "Бруней-Даруссалам"
@@ -956,10 +959,10 @@
         "Канада"
       ],
       "Cape Verde": [
-        "Кабо-Верде"
+        "Острова Зеленого Мыса"
       ],
       "Cayman Islands": [
-        "Острова Кайман"
+        "Каймановы острова"
       ],
       "Central African Republic": [
         "Центральноафриканская Республика"
@@ -977,7 +980,7 @@
         "Остров Рождества"
       ],
       "Cocos (Keeling) Islands": [
-        "Кокосовые острова или Килинг"
+        "Кокосовые (Килинговые) острова"
       ],
       "Colombia": [
         "Колумбия"
@@ -1367,7 +1370,7 @@
         "Филиппины"
       ],
       "Pitcairn": [
-        "Острова Питкэрн"
+        "Питкэрн"
       ],
       "Poland": [
         "Польша"
@@ -1457,10 +1460,10 @@
         "Сомали"
       ],
       "South Africa": [
-        "ЮАР"
+        "Южная Африка"
       ],
       "South Georgia and the South Sandwich Islands": [
-        "Южная Георгия и Южные Сандвичевы Острова"
+        "Южная Георгия и Южные Сандвичевы острова"
       ],
       "South Korea": [
         "Южная Корея"
@@ -1532,7 +1535,7 @@
         "Турция"
       ],
       "Turkmenistan": [
-        "Туркменистан"
+        "Туркмения"
       ],
       "Turks and Caicos Islands": [
         "Острова Теркс и Кайкос"
@@ -1547,13 +1550,13 @@
         "Украина"
       ],
       "United Arab Emirates": [
-        "Объединённые Арабские Эмираты"
+        "Объединенные Арабские Эмираты"
       ],
       "United Kingdom": [
         "Великобритания"
       ],
       "United States": [
-        "США"
+        "Соединенные Штаты Америки"
       ],
       "United States Minor Outlying Islands": [
         "Внешние малые острова США"
@@ -2224,7 +2227,7 @@
         "Узнайте, как пользоваться ${ VPN_APP_NAME } с помощью сторонних приложений VPN."
       ],
       "Learn more": [
-        "Узнать больше"
+        "Подробнее"
       ],
       "Link copied to clipboard": [
         "Ссылка скопирована в буфер обмена"
@@ -2430,14 +2433,23 @@
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a ${ VPN_APP_NAME } server.": [
         "Чтобы защитить ваше интернет-соединение, скачайте и установите приложение ${ VPN_APP_NAME } для вашего устройства и подключитесь к серверу ${ VPN_APP_NAME }."
       ],
-      "To use ${ toAppName }, please create an address.": [
-        "Чтобы использовать ${ toAppName }, пожалуйста, создайте адрес."
-      ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Пополняйте свой счёт кредитами, которые вы можете использовать для подписки на новый тариф или продления своего текущего тарифа. Вы получаете один кредит за каждый потраченный ${ i18nCurrency }."
       ],
       "Tor": [
         "Tor"
+      ],
+      "Total email addresses": [
+        "Всего адресов электронной почты"
+      ],
+      "Total storage": [
+        "Общий объем хранения"
+      ],
+      "Total supported domains": [
+        "Поддерживаемых доменов, всего"
+      ],
+      "Total VPN connections": [
+        "VPN-подключений, всего"
       ],
       "Two-factor authentication adds an extra layer of security to your account in case your password is compromised.": [
         "Двухфакторная аутентификация добавляет дополнительный уровень безопасности вашей учетной записи на случай, если ваш пароль скомпрометирован."
@@ -2595,8 +2607,8 @@
       "You'll stay signed in even after you close the browser.": [
         "Вы сохраните авторизацию даже после закрытия браузера."
       ],
-      "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, please create an address.": [
-        "Ваша учетная запись для ${ BRAND_NAME } связана с ${ externalEmailAddress }. Чтобы использовать ${ toAppName }, пожалуйста, создайте адрес."
+      "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
+        "Учетная запись вашего ${ BRAND_NAME } связана с ${ externalEmailAddress }. Чтобы использовать ${ toAppName }, вам необходим адрес ${ MAIL_APP_NAME }."
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
         "Ваши аккаунты ${ VPN_APP_NAME } и ${ MAIL_APP_NAME } связаны между собой. Чтобы удалить их оба, войдите в систему по ссылке: ${ loginLink } и удалите там свой аккаунт."
@@ -2762,7 +2774,7 @@
         "Приложить снимки экрана"
       ],
       "Billing cycle": [
-        "Оплачиваемый период"
+        "Период оплаты"
       ],
       "Block malware only": [
         "Блокировать только вредоносные программы"
@@ -2909,7 +2921,7 @@
         "Пароль почтового ящика"
       ],
       "Moderate NAT": [
-        "Умеренное NAT"
+        "Умеренный NAT"
       ],
       "Name": [
         "Имя"
@@ -3115,7 +3127,7 @@
         "Перейти на страницу подписки"
       ],
       "Learn more": [
-        "Узнать больше"
+        "Подробнее"
       ],
       "Need help?": [
         "Нужна помощь?"
@@ -3508,7 +3520,7 @@
         "Управление сессиями пользователей"
       ],
       "Worldwide streaming services": [
-        "Стриминговые сервисы со всего мира"
+        "Всемирные службы трансляции"
       ]
     },
     "new_plans: heading": {
@@ -3708,7 +3720,7 @@
         "Создайте до ${ n } пользовательского календаря."
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
-        "VPN защищает от угроз конфиденциальности, пропуская ваш интернет-трафик через несколько серверов"
+        "VPN защищает от угроз конфиденциальности, пропуская ваш трафик через несколько серверов"
       ],
       "Easily share your calendars with your colleagues, family, and friends via a link": [
         "Без труда делитесь ссылками на свои календари с коллегами, родственниками и друзьями"
@@ -3789,7 +3801,7 @@
         "Сбрасывайте пароли и двухфакторную аутентификацию для пользователей"
       ],
       "Route your internet traffic through the Tor network with a single click": [
-        "Направляйте свой Интернет-трафик через сеть Tor одним щелчком мыши"
+        "Направляйте свой трафик через сеть Tor одним нажатием"
       ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even Proton can't access them.": [
         "Храните информацию о контактах в безопасности, например номера телефонов, адреса, даты рождения и личные заметки. Шифрование нулевого доступа гарантирует, что эти данные будут недоступны даже Proton"
@@ -4034,7 +4046,7 @@
     },
     "Recovery Email": {
       "Cancel": [
-        "Отмена"
+        "Отменить"
       ],
       "Email address has been verified.": [
         "Адрес электронной почты был проверен."
@@ -4060,7 +4072,7 @@
     },
     "Recovery method": {
       "Email": [
-        "Эл. почта"
+        "Электронная почта"
       ],
       "Phone number": [
         "Номер телефона"
@@ -4071,7 +4083,7 @@
     },
     "Recovery Phone": {
       "Cancel": [
-        "Отмена"
+        "Отменить"
       ],
       "Phone number has been verified.": [
         "Номер телефона подтвержден."
@@ -4083,7 +4095,7 @@
         "Подтвердить с помощью СМС"
       ],
       "Verify now": [
-        "Проверить сейчас"
+        "Подтвердить сейчас"
       ],
       "Verify recovery phone?": [
         "Подтвердить телефон для восстановления?"
@@ -4097,7 +4109,7 @@
         "Отображаемое имя"
       ],
       "Email": [
-        "Эл. почта"
+        "Электронная почта"
       ],
       "Username": [
         "Имя пользователя"
@@ -4168,7 +4180,7 @@
         "${ n } подключение к VPN",
         "${ n } подключения к VPN",
         "${ n } подключений к VPN",
-        "${ n } подключений к VPN"
+        "${ n } подключения к VPN"
       ],
       "${ n } VPN connection per user": [
         "${ n } подключение к VPN на пользователя",
@@ -4420,9 +4432,6 @@
       "Add PayPal payment method": [
         "Добавление способа оплаты PayPal"
       ],
-      "Address is available": [
-        "Адрес доступен"
-      ],
       "Amount": [
         "Сумма"
       ],
@@ -4439,7 +4448,7 @@
         "Оплата"
       ],
       "Billing cycle": [
-        "Оплачиваемый период"
+        "Период оплаты"
       ],
       "Cancel Mail subscription": [
         "Отменить подписку на почту"
@@ -4474,8 +4483,8 @@
       "Congratulations on choosing privacy!": [
         "Поздравляем с выбором конфиденциальности!"
       ],
-      "Create a ${ mailAppName } address": [
-        "Создать адрес ${ mailAppName }"
+      "Create a ${ MAIL_APP_NAME } address": [
+        "Создать адрес ${ MAIL_APP_NAME }"
       ],
       "Create your ${ BRAND_NAME } Account": [
         "Создайте свой аккаунт ${ BRAND_NAME }"
@@ -4511,7 +4520,7 @@
         "Отключение двухфакторной аутентификации"
       ],
       "Downgrade account": [
-        "Понизить учетную запись"
+        "Перейти на более дешевый тариф"
       ],
       "Download ${ VPN_APP_NAME }": [
         "Скачать ${ VPN_APP_NAME }"
@@ -4535,7 +4544,7 @@
         "Найти адрес электнонной почты или имя пользователя"
       ],
       "General": [
-        "Общие положения"
+        "Общие"
       ],
       "Get ${ vpnPlus } to access all servers": [
         "Получите ${ vpnPlus } для доступа ко всем серверам"
@@ -4628,7 +4637,7 @@
         "Обработка..."
       ],
       "Recommended": [
-        "Рекомендованное"
+        "Рекомендуется"
       ],
       "Recovery": [
         "Восстановление"
@@ -4722,6 +4731,9 @@
       ],
       "You already have a Proton account": [
         "У вас уже есть аккаунт Proton"
+      ],
+      "Your ${ MAIL_APP_NAME } address": [
+        "Ваш адрес ${ MAIL_APP_NAME }"
       ],
       "Your current plan": [
         "Текущий тарифный план"

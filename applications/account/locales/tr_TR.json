@@ -823,6 +823,9 @@
       "Void anyway": [
         "Yine de geçersiz kıl"
       ],
+      "What do I get?": [
+        "Ne alacağım?"
+      ],
       "Wipe": [
         "Yok et"
       ],
@@ -1245,8 +1248,8 @@
       "Calendar is syncing": [
         "Takvim eşitleniyor"
       ],
-      "Calendar is syncing: it may take several minutes for all of its events to show up": [
-        "Takvim eşitleniyor: Tüm etkinliklerin görüntülenmesi bir kaç dakika alabilir"
+      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
+        "Takvim eşitleniyor: Tüm etkinliklerin görüntülenmesi bir kaç dakika alabilir."
       ],
       "Calendar is too big": [
         "Takvim çok büyük"
@@ -3421,6 +3424,9 @@
       "Archive": [
         "Arşiv"
       ],
+      "Do not move": [
+        "Taşınmasın"
+      ],
       "Inbox": [
         "Gelen kutusu"
       ],
@@ -5367,9 +5373,6 @@
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a ${ VPN_APP_NAME } server.": [
         "İnternet bağlantınızı güvence altına almak için cihazınıza ${ VPN_APP_NAME } uygulamasını indirip yükleyin ve bir ${ VPN_APP_NAME } sunucusuna bağlanın."
       ],
-      "To use ${ toAppName }, please create an address.": [
-        "Lütfne ${ toAppName } kullanabilmek için bir adres oluşturun."
-      ],
       "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
         "Düzgün çalışması için, her süzgecin en az bir adı ve geçerli bir Sieve betiği olmalıdır. ${ link }."
       ],
@@ -5378,6 +5381,18 @@
       ],
       "Tor": [
         "Tor"
+      ],
+      "Total email addresses": [
+        "Toplam e-posta adresi"
+      ],
+      "Total storage": [
+        "Toplam depolama alanı"
+      ],
+      "Total supported domains": [
+        "Toplam etki alanı"
+      ],
+      "Total VPN connections": [
+        "Toplam VPN bağlantısı"
       ],
       "Two-factor authentication adds an extra layer of security to your account in case your password is compromised.": [
         "İki aşamalı kimlik doğrulaması, parolanızın ele geçirilmesi durumunda hesabınıza ek bir güvenlik katmanı ekler."
@@ -5646,8 +5661,8 @@
       "You'll still be able to send and receive mail with your existing email address(es).": [
         "Var olan e-posta adreslerinizle e-posta gönderip almayı sürdürebilirsiniz."
       ],
-      "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, please create an address.": [
-        "${ BRAND_NAME } hesabınız ${ externalEmailAddress } ile ilişkilidir. Lütfen ${ toAppName } kullanabilmek için bir adres oluşturun."
+      "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
+        "${ BRAND_NAME } hesabınız ${ externalEmailAddress } ile ilişkilidir. ${ toAppName } kullanabilmek için bir ${ MAIL_APP_NAME } adresinizin olması gereklidir."
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
         "${ VPN_APP_NAME } ve ${ MAIL_APP_NAME } hesaplarınız birbirine bağlıdır. İkisini de silmek için lütfen ${ loginLink } adresinden oturum açarak hesabınızı silin."
@@ -6179,6 +6194,9 @@
       "ALL": [
         "TÜMÜ"
       ],
+      "All-day event notifications": [
+        "Tüm günlük etkinlik bildirimleri"
+      ],
       "Allow recovery by email": [
         "E-posta ile hesap kurtarılabilsin"
       ],
@@ -6374,23 +6392,11 @@
       "Days of the week": [
         "Haftanın günleri"
       ],
-      "Default email address": [
-        "Varsayılan e-posta adresi"
-      ],
-      "Default event duration": [
-        "Varsayılan etkinlik süresi"
-      ],
-      "Default full day notifications": [
-        "Varsayılan tam gün bildirimleri"
-      ],
       "Default language": [
         "Varsayılan dil"
       ],
       "Default language (${ defaultLanguage })": [
         "Varsayılan dil (${ defaultLanguage })"
-      ],
-      "Default notifications": [
-        "Varsayılan bildirimler"
       ],
       "Default PGP scheme": [
         "Varsayılan PGP şeması"
@@ -6469,6 +6475,12 @@
       ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Şu parmak izli anahtar için parolayı yazın: ${ fingerprintCode }"
+      ],
+      "Event duration": [
+        "Etkinlik süresi"
+      ],
+      "Event notifications": [
+        "Etkinlik bildirimleri"
       ],
       "Expiration date": [
         "Son kullanma tarihi"
@@ -8166,11 +8178,11 @@
       ]
     },
     "Notification type": {
-      "Email": [
-        "E-posta"
+      "email": [
+        "e-posta"
       ],
-      "In-app": [
-        "Uygulama içi"
+      "notification": [
+        "bildirim"
       ]
     },
     "Notification when": {
@@ -9424,9 +9436,6 @@
       "Add user": [
         "Kullanıcı ekle"
       ],
-      "Address is available": [
-        "Adres kullanılabilir"
-      ],
       "Address verification": [
         "Adres doğrulaması"
       ],
@@ -9556,8 +9565,8 @@
       "Continue with partial import?": [
         "Kısmi içe aktarmayla devam edilsin mi?"
       ],
-      "Create a ${ mailAppName } address": [
-        "Bir ${ mailAppName } adresi oluştur"
+      "Create a ${ MAIL_APP_NAME } address": [
+        "Bir ${ MAIL_APP_NAME } adresi oluştur"
       ],
       "Create calendar": [
         "Takvim oluştur"
@@ -10121,6 +10130,9 @@
       "Your ${ domain } address is active": [
         "${ domain } adresiniz kullanıma hazır"
       ],
+      "Your ${ MAIL_APP_NAME } address": [
+        "${ MAIL_APP_NAME } adresiniz"
+      ],
       "Your calendar link": [
         "Takvim bağlantınız"
       ],
@@ -10507,9 +10519,6 @@
       ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
         "Aygıtınızın tarih ve saat ayarları eşit değil. ${ learnMore }"
-      ],
-      "This feature is only available for ${ mailProfessional } plans or higher": [
-        "Bu özellik yalnızca ProtonMail ${ mailProfessional } veya üzerindeki tarifeler ile kullanılabilir"
       ],
       "This import may exceed the storage capacity currently available in your Proton account. Please consider customizing your import.": [
         "Bu içe aktarma işlemi, Proton hesabınızın geçerli depolama kapasitesini aşabilir. Lütfen içe aktarmanızı özelleştirmeyi değerlendirin."

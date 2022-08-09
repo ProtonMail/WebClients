@@ -205,11 +205,11 @@
       "I have a question": [
         "Tinc una pregunta"
       ],
-      "import": [
-        "importar"
-      ],
       "Import": [
         "Importar"
+      ],
+      "import": [
+        "importar"
       ],
       "Import from .csv or vCard": [
         "Importa des de .csv o vCard"
@@ -605,8 +605,14 @@
       ]
     },
     "Calendar subscription not synced error": {
+      "Calendar could not be decrypted": [
+        "El calendari no s'ha pogut desxifrar"
+      ],
       "Calendar is syncing": [
         "El calendari s'està sincronitzant"
+      ],
+      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
+        "El calendari s'està sincronitzant. Pot ser que els vostres esdeveniments tardin uns minuts en aparèixer."
       ],
       "Calendar is too big": [
         "El calendari és massa gran"
@@ -622,6 +628,82 @@
       ],
       "More than 12 hours passed since last update": [
         "Han passat més de 12 hores des de la darrera actualització"
+      ],
+      "Unsupported calendar format": [
+        "Format de calendari no permès"
+      ]
+    },
+    "Calendar subscription not synced error; long version": {
+      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
+        "El proveïdor d'aquest enllaç no en permet el seu accés."
+      ],
+      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
+        "En aquest moment, el proveïdor d'aquest enllaç no en permet el seu accés. Siusplau, verifiqueu que l'enllaç segueix essent vàlid."
+      ],
+      "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
+        "Fa més de 12 hores de la darrera actualització — Proton Calendar provarà d'actualitzar-lo en les properes hores."
+      ]
+    },
+    "color": {
+      "carrot": [
+        "pastanaga"
+      ],
+      "cerise": [
+        "cirera"
+      ],
+      "cobalt": [
+        "cobalt"
+      ],
+      "copper": [
+        "coure"
+      ],
+      "enzian": [
+        "enzian"
+      ],
+      "fern": [
+        "verd falguera"
+      ],
+      "forest": [
+        "verd bosc"
+      ],
+      "ocean": [
+        "blau marí"
+      ],
+      "olive": [
+        "verd oliva"
+      ],
+      "pacific": [
+        "blau pacífic"
+      ],
+      "pickle": [
+        "cogombre"
+      ],
+      "pine": [
+        "verd pi"
+      ],
+      "pink": [
+        "rosa"
+      ],
+      "plum": [
+        "pruna"
+      ],
+      "purple": [
+        "porpra"
+      ],
+      "reef": [
+        "corall"
+      ],
+      "sahara": [
+        "sahara"
+      ],
+      "slateblue": [
+        "blau pissarra"
+      ],
+      "soil": [
+        "terra"
+      ],
+      "strawberry": [
+        "maduixa"
       ]
     },
     "Contact field label": {
@@ -859,17 +941,40 @@
       "A group with this name already exists": [
         "Ja existeix un grup amb aquest nom"
       ],
+      "A problem occurred, please try again.": [
+        "Hi ha hagut un problema. Intenteu-ho de nou."
+      ],
       "Authentication canceled.": [
         "S'ha cancel·lat l'autenticació."
       ],
       "Authentication error.": [
         "Error d'autenticació."
       ],
+      "Calendar limit reached": [
+        "Límit de calendaris assolit"
+      ],
+      "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
+        "No es poden importar tots els calendaris perquè heu arribat al límit personal de calendaris."
+      ],
       "Contact could not be saved": [
         "El contacte no s'ha pogut desar"
       ],
       "Contact signature not verified": [
         "Signatura del contacte no verificada"
+      ],
+      "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
+        "La cerca de continguts no es pot activar en aquest navegador. Tanqueu el mode de navegació privada o utilitzeu un altre navegador."
+      ],
+      "Deselect at least ${ calendarToFixCount } calendar": [
+        "Desmarqueu almenys ${ calendarToFixCount } calendari",
+        "Desmarqueu almenys ${ calendarToFixCount } calendaris"
+      ],
+      "Deselect at least ${ calendarToFixCount } calendar or": [
+        "Desmarqueu almenys ${ calendarToFixCount } calendari o",
+        "Desmarqueu almenys ${ calendarToFixCount } calendaris o"
+      ],
+      "Domain not available, try again later": [
+        "El domini no està disponible, torneu-ho a provar més tard"
       ],
       "Email address invalid": [
         "L'adreça de correu electrònic no és vàlida"
@@ -880,11 +985,32 @@
       "Enter 6 digits": [
         "Introduïu 6 dígits"
       ],
+      "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
+        "El fitxer \"${ item.name }\" no s'ha pogut pujar a causa d'aquest error: \"${ error }\""
+      ],
+      "File \"${ name }\" is already downloading": [
+        "El fitxer \"${ name }\" ja s'està descarregant"
+      ],
       "File cannot be merged with folder": [
         "Un fitxer no es pot fusionar amb una carpeta"
       ],
+      "File selection is already downloading": [
+        "La vostra selecció de fitxers ja s'està descarregant"
+      ],
+      "Folder \"${ name }\" is already downloading": [
+        "La carpeta \"${ name }\" ja s'està descarregant"
+      ],
+      "Folder name cannot be empty.": [
+        "El nom de la carpeta no es pot deixar buit."
+      ],
       "Image upload failed": [
         "La càrrega de la imatge ha fallat"
+      ],
+      "Incorrect login credentials. Please try again.": [
+        "Credencials incorrectes. Torneu-ho a provar."
+      ],
+      "Incorrect mailbox password. Please try again.": [
+        "Contrasenya incorrecta. Torneu-ho a provar."
       ],
       "Incorrect password. Please try again.": [
         "Contrasenya incorrecta, torneu-ho a intentar."
@@ -898,8 +1024,21 @@
       "Invalid verification code": [
         "Codi de verificació no vàlid"
       ],
+      "Label name cannot be empty.": [
+        "El nom de l'etiqueta no es pot deixar buit."
+      ],
+      "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
+        "Combineu almenys ${ calendarToFixCount } calendari importat amb un calendari Proton existent",
+        "Combineu almenys ${ calendarToFixCount } calendaris importats amb els vostres calendaris Proton existents"
+      ],
+      "Missing key packet": [
+        "Falta el paquet de claus"
+      ],
       "Missing signature": [
         "Signatura no trobada"
+      ],
+      "No data to import": [
+        "No hi ha cap dada per importar"
       ],
       "No valid address found": [
         "No s’ha trobat una adreça vàlida"
@@ -918,8 +1057,27 @@
       "Passwords do not match": [
         "Les contrasenyes no coincideixen"
       ],
+      "Please activate your search again": [
+        "Siusplau, activeu de nou la vostra cerca"
+      ],
+      "Please fix the highlighted conflict to proceed.": [
+        "Arregleu el conflicte destacat per poder continuar.",
+        "Arregleu els conflictes destacats per poder continuar."
+      ],
       "Primary address key is not decrypted": [
         "La clau de l'adreça primària no està desxifrada"
+      ],
+      "Primary address key is not decrypted.": [
+        "La clau d'adreça primària no està desxifrada."
+      ],
+      "Report failed to be sent": [
+        "No s'ha pogut enviar la vostra denúncia"
+      ],
+      "Request timed out": [
+        "S'ha esgotat el temps d'espera de la petició"
+      ],
+      "Search failed": [
+        "Cerca fallida"
       ],
       "Signature not verified": [
         "Signatura no verificada"
@@ -933,11 +1091,23 @@
       "Some groups could not be deleted": [
         "Alguns grups no poden ser eliminats"
       ],
+      "Some of your label names are unavailable. Please customize the import to edit these names.": [
+        "Alguns dels vostres noms d'etiqueta no estan disponibles. Modifiqueu la importació per tal d'editar-ne els noms."
+      ],
+      "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
+        "Els noms d'algunes de les vostres etiquetes superen el límit de caràcters màxim de ${ MAIL_APP_NAME }. Modifiqueu la importació per tal d'editar-ne els noms."
+      ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "S'ha produït un error, ${ refresh } per continuar. Si continueu veient aquest missatge d'error, poseu-vos en contacte amb el nostre ${ supportTeam }."
       ],
+      "The folder name is invalid. Please choose a different name.": [
+        "El nom de la carpeta no és vàlid. Escolliu-ne un de diferent."
+      ],
       "The folder name is too long. Please choose a different name.": [
         "El nom de la carpeta és massa llarg. Escolliu-ne un de diferent."
+      ],
+      "The label name is invalid. Please choose a different name.": [
+        "El nom de l'etiqueta no és vàlid. Escolliu-ne un de diferent."
       ],
       "The label name is too long. Please choose a different name.": [
         "El nom de l'etiqueta és massa llarg. Escolliu-ne un de diferent."
@@ -963,6 +1133,9 @@
       "The original folder or file not found": [
         "No s'ha trobat la carpeta o fitxer originals"
       ],
+      "There are too many folders in your external account. Please customize the import to delete some folders.": [
+        "Hi ha massa carpetes al vostre compte extern. Siusplau, modifiqueu la importació per tal d'eliminar algunes carpetes."
+      ],
       "There was an error when exporting the contacts vCards": [
         "Hi ha hagut un error exportant les vCards dels contactes"
       ],
@@ -971,6 +1144,15 @@
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Aquest camp requereix un mínim de ${ minimumLength } caràcters."
+      ],
+      "This folder name is not available. Please choose a different name.": [
+        "Aquest nom de carpeta no està disponible. Trieu-ne un de diferent."
+      ],
+      "This label name is not available. Please choose a different name.": [
+        "Aquest nom d'etiqueta no està disponible. Trieu-ne un de diferent."
+      ],
+      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
+        "Aquest missatge pot contenir algunes adreces URL que no es poden obrir amb el vostre navegador actual."
       ],
       "Unknown error": [
         "Error desconegut"
@@ -983,6 +1165,9 @@
       ],
       "You must set a name": [
         "Heu d'establir un nom"
+      ],
+      "Your browser does not support uploading folders": [
+        "El teu navegador no permet la pujada de carpetes"
       ],
       "Your import will not be processed.": [
         "La vostra importació no es processarà."
@@ -1067,6 +1252,10 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "byte",
+        "bytes"
+      ],
       "GB": [
         "GB"
       ],
@@ -1075,6 +1264,24 @@
       ],
       "MB": [
         "MB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "byte",
+        "bytes"
+      ],
+      "Gigabyte": [
+        "gigabyte",
+        "gigabytes"
+      ],
+      "Kilobyte": [
+        "kilobyte",
+        "kilobytes"
+      ],
+      "Megabyte": [
+        "megabyte",
+        "megabytes"
       ]
     },
     "Group": {
@@ -1219,12 +1426,22 @@
       "${ speed }/s": [
         "${ speed }/s"
       ],
+      "${ storageSize } storage": [
+        "${ storageSize } d'emmagatzematge"
+      ],
       "${ updated } contact updated successfully.": [
         "${ updated } contacte actualitzat satisfactòriament.",
         "${ updated } contactes actualitzats satisfactòriament."
       ],
       "${ uploadName } already exists in this location.": [
         "${ uploadName } ja existeix en aquesta ubicació."
+      ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } membre)",
+        "(${ memberCount } membres)"
+      ],
+      "10 email addresses": [
+        "10 adreces de correu"
       ],
       "A number will be added to the filename": [
         "S'afegirà un número al nom de l'arxiu"
@@ -1261,6 +1478,9 @@
       ],
       "Conflict": [
         "Conflicte"
+      ],
+      "Continue with ${ planName }": [
+        "Continua amb ${ planName }"
       ],
       "Create a new contact group": [
         "Crear un nou grup de contactes"
@@ -1346,6 +1566,9 @@
       "Initializing": [
         "Inicialitzant"
       ],
+      "Internet connection lost": [
+        "S'ha perdut la vostra connexió a internet"
+      ],
       "Internet connection lost. Please check your device's connectivity.": [
         "S'ha perdut la connexió a Internet. Comproveu la connectivitat del dispositiu."
       ],
@@ -1415,11 +1638,17 @@
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         "Cap de les claus carregades és vàlida pel xifratge. S'ha deshabilitat el xifratge automàticament."
       ],
+      "Not a valid URL": [
+        "No és una URL vàlida"
+      ],
       "of": [
         "de"
       ],
       "Only the people with the link and the password can access this file.": [
         "Només les persones amb l'enllaç i la contrasenya poden accedir a aquest arxiu."
+      ],
+      "Other options": [
+        "Altres opcions"
       ],
       "Paused": [
         "Pausat"
@@ -1448,6 +1677,9 @@
       "Primary": [
         "Primari"
       ],
+      "Priority support": [
+        "Suport prioritari"
+      ],
       "Queued": [
         "En cua"
       ],
@@ -1460,14 +1692,29 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Seleccioneu el format de correu electrònic que voleu utilitzar per defecte quan envieu correus a aquesta adreça."
       ],
+      "Servers are unreachable. Please try again in a few minutes": [
+        "Servidors inaccessibles. Torneu a provar-ho en uns minuts"
+      ],
+      "Session timed out": [
+        "Temps de sessió esgotat"
+      ],
       "Share files with links": [
         "Compartir fitxers amb enllaços"
       ],
       "Something went wrong, please try again later.": [
         "Alguna cosa ha anat malament, siusplau, intenta-ho més tard."
       ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "L'espai d'emmagatzematge és compartit amb ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } i ${ DRIVE_APP_NAME }."
+      ],
+      "Support for 1 custom email domain": [
+        "Suport per a 1 domini de correu personalitzat"
+      ],
       "support team": [
         "equip de suport"
+      ],
+      "Swiss privacy": [
+        "Privacitat suïssa"
       ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "L'aplicació ha de desxifrar localment els vostres contactes abans de poder-los exportar. Al final del procés, es generarà un fitxer VCF i el podreu descarregar."
@@ -1483,6 +1730,9 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Aquest navegador no suporta la previsualització de documents PDF. Descarregueu-vos l'arxiu."
+      ],
+      "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
+        "Aquest enllaç dirigeix a una pàgina web que podria estar intentant recopilar dades personals com ara contrasenyes o informació de les teves targetes de crèdit."
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Aquest enllaç podria ser un atac homògraf i no es pot obrir amb els navegadors Internet Explorer i Edge. Si esteu segurs de que aquest enllaç és legítim, feu servir un navegador diferent per obrir-lo."
@@ -1526,8 +1776,17 @@
       "Trash": [
         "Paperera"
       ],
+      "Unlimited folders, labels, and filters": [
+        "Carpetes, etiquetes i filtres il·limitats"
+      ],
+      "Unlimited messages": [
+        "Missatges il·limitats"
+      ],
       "Unsupported file": [
         "Fitxer no compatible"
+      ],
+      "Upgrade today to avoid losing the following ${ planName } benefits.": [
+        "Millora avui la teva subscripció per a no perdre les funcionalitats ${ planName }."
       ],
       "Uploaded": [
         "Carregat"
@@ -1537,6 +1796,9 @@
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "La càrrega de centenars de fitxers alhora pot tenir un impacte en el rendiment."
+      ],
+      "We're moving! Join us at our new site: ${ link }.": [
+        "Ens traslladem! Ara podreu trobar-nos a ${ link }."
       ],
       "Week": [
         "Setmana"
@@ -1555,6 +1817,9 @@
       ],
       "You are about to open another browser tab and visit:": [
         "Esteu a punt d'obrir una pestanya del navegador nova i visitar:"
+      ],
+      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
+        "Actualment has iniciat sessió com a ${ user.Name } (${ user.Email })."
       ],
       "You cannot undo this action.": [
         "No pots desfer aquesta acció."
@@ -1718,6 +1983,12 @@
       "Merge a folder": [
         "Fusionar una carpeta"
       ],
+      "Modified": [
+        "Modificació"
+      ],
+      "Name": [
+        "Nom"
+      ],
       "Never": [
         "Mai"
       ],
@@ -1765,6 +2036,9 @@
       ],
       "Sign emails": [
         "Signar correu electrònics"
+      ],
+      "Size": [
+        "Mida"
       ],
       "Skip file": [
         "Ometre fitxer"
@@ -1878,6 +2152,16 @@
       ],
       "Folder name": [
         "Nom de la carpeta"
+      ]
+    },
+    "new_plans: action": {
+      "Switch or add account": [
+        "Canvia o afegeix un compte"
+      ]
+    },
+    "new_plans: info": {
+      "Introducing Proton’s refreshed look.${ br }Many services, one mission. Welcome to an internet where privacy is the default.": [
+        "Presentem el nou aspecte de Proton. ${ br } Molts serveis, una missió. Benvingut/da a l'Internet on tenim la privacitat per defecte."
       ]
     },
     "Notification": {
@@ -2246,6 +2530,9 @@
       "Back": [
         "Torna"
       ],
+      "Based in Switzerland, available globally": [
+        "Amb seu a Suïssa, disponible a tot el món"
+      ],
       "Beta Access": [
         "Accés Beta"
       ],
@@ -2415,6 +2702,9 @@
       ],
       "Phone numbers": [
         "Números de telèfon"
+      ],
+      "Privacy settings": [
+        "Configuració de privacitat"
       ],
       "Re-sign all contacts": [
         "Tornar a signar tots els contactes"

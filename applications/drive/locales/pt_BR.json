@@ -283,11 +283,11 @@
       "I have a question": [
         "Eu tenho uma dúvida"
       ],
-      "import": [
-        "importar"
-      ],
       "Import": [
         "Importar"
+      ],
+      "import": [
+        "importar"
       ],
       "Import from .csv or vCard": [
         "Importar de .csv ou vCard"
@@ -760,6 +760,9 @@
       "Calendar is syncing": [
         "Calendário está sincronizando"
       ],
+      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
+        "O calendário está sincronizando: pode levar vários minutos até que todos os seus eventos sejam exibidos."
+      ],
       "Calendar is too big": [
         "Calendário é grande demais"
       ],
@@ -777,6 +780,17 @@
       ],
       "Unsupported calendar format": [
         "Formato de calendário não suportado"
+      ]
+    },
+    "Calendar subscription not synced error; long version": {
+      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
+        "O link do calendário não está acessível para fora do ecossistema do provedor do calendário."
+      ],
+      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
+        "O link do calendário está temporariamente inacessível. Por favor, verifique se o link do provedor do calendário ainda é válido."
+      ],
+      "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
+        "Mais de 12 horas se passaram desde a última atualização — O Proton Calendar vai tentar atualizar o calendário em algumas horas."
       ]
     },
     "Collapsible tooltip": {
@@ -1764,8 +1778,8 @@
       "A group with this name already exists": [
         "Já existe um grupo com esse"
       ],
-      "A problem occurred, please try again": [
-        "Ocorreu um erro. Tente novamente"
+      "A problem occurred, please try again.": [
+        "Ocorreu um erro. Tente novamente."
       ],
       "Authentication canceled.": [
         "Autenticação cancelada."
@@ -1795,6 +1809,9 @@
       "Deselect at least ${ calendarToFixCount } calendar or": [
         "Desmarque ao menos ${ calendarToFixCount } calendário ou",
         "Desmarque ao menos ${ calendarToFixCount } calendários ou"
+      ],
+      "Domain not available, try again later": [
+        "Domínio indisponível, tente novamente mais tarde"
       ],
       "Email address invalid": [
         "Endereço de e-mail inválido"
@@ -1877,8 +1894,8 @@
       "Passwords do not match": [
         "As senhas não coincidem"
       ],
-      "Please activate your content search again": [
-        "Ative a busca de conteúdo novamente"
+      "Please activate your search again": [
+        "Ative a busca novamente"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Por favor, corrija o conflito em destaque para prosseguir.",
@@ -2884,6 +2901,9 @@
       ],
       "There are no files yet": [
         "Ainda não há arquivos"
+      ],
+      "These files were shared using end-to-end encryption. To ensure their security — and the security of all your documents, photos, and files — store them in Proton Drive, the cloud storage service you can trust.": [
+        "Esses arquivos se compartilharam usando criptografia de ponta a ponta. Para garantir sua segurança, e privacidade de todos seus documentos, fotos e arquivos, armazene no Proton Drive, o serviço de armazenamento em nuvem em quem você pode confiar."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Essa conta foi suspensa devido a uma possível violação da política de uso."
@@ -4592,6 +4612,9 @@
       ],
       "You have no folders yet": [
         "Você ainda não tem pastas"
+      ],
+      "You've got files": [
+        "Você tem arquivos"
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         "Sua avaliação gratuita termina em breve, em ${ formattedEndDate }"

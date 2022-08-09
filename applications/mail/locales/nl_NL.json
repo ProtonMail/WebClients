@@ -415,11 +415,11 @@
       "Images will be loaded without a proxy": [
         "Afbeeldingen zullen worden ingeladen zonder proxy"
       ],
-      "import": [
-        "importeren"
-      ],
       "Import": [
         "Importeren"
+      ],
+      "import": [
+        "importeren"
       ],
       "Import from .csv or vCard": [
         "Importeer vanuit .csv of vCard"
@@ -1542,6 +1542,9 @@
       ],
       "Calendar is syncing": [
         "De agenda wordt gesynchroniseerd"
+      ],
+      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
+        "Agenda is aan het synchroniseren: het kan enkele minuten duren voordat alle afspraken verschijnen."
       ],
       "Calendar is too big": [
         "De agenda is te groot"
@@ -2923,9 +2926,6 @@
       "A group with this name already exists": [
         "Er bestaat al een groep met deze naam"
       ],
-      "A problem occurred, please try again": [
-        "Er is een probleem opgetreden, probeer het opnieuw"
-      ],
       "Address primary private key not found": [
         "Primaire adressleutel is niet gevonden"
       ],
@@ -2979,6 +2979,9 @@
       "Deselect at least ${ calendarToFixCount } calendar or": [
         "Ten minste ${ calendarToFixCount } agenda deselecteren of",
         "Ten minste ${ calendarToFixCount } agenda's deselecteren of"
+      ],
+      "Domain not available, try again later": [
+        "Domein niet beschikbaar, probeer het later opnieuw"
       ],
       "Draft could not be saved. Try again.": [
         "Concept kon niet worden opgeslagen. Probeer het opnieuw."
@@ -3096,9 +3099,6 @@
       ],
       "Passwords do not match": [
         "Wachtwoorden komen niet overeen"
-      ],
-      "Please activate your content search again": [
-        "Activeer alstublieft het zoeken naar inhoud opnieuw"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Los het gemarkeerde conflict op om verder te gaan.",
@@ -3549,6 +3549,9 @@
     "Filter Actions": {
       "Archive": [
         "Archiveren"
+      ],
+      "Do not move": [
+        "Niet verplaatsen"
       ],
       "Inbox": [
         "Inbox"
@@ -4203,12 +4206,6 @@
       ],
       "Don't forget to share the password with the recipient": [
         "Vergeet het wachtwoord niet te delen met de ontvanger"
-      ],
-      "Download our mobile application from your favorite app store to communicate securely on-the-go.": [
-        "Download onze mobiele applicatie van uw favoriete app store om veilig onderweg te communiceren."
-      ],
-      "Downloading message ${ esProgress } out of ${ totalProgressToShow }": [
-        "Bericht ${ esProgress } van ${ totalProgressToShow } aan het downloaden"
       ],
       "Draft": [
         "Concept"
@@ -7685,9 +7682,6 @@
       ],
       "The import will start with the most recent messages.": [
         "Het importeren begint met de meest recente berichten."
-      ],
-      "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "Deze actie zal alle berichten downloaden zodat ze lokaal kunnen worden gezocht. Het wissen van uw browsergegevens zal deze optie uitschakelen."
       ],
       "This feature is only available for paid users": [
         "Deze functionaliteit is alleen beschikbaar voor betalende gebruikers"

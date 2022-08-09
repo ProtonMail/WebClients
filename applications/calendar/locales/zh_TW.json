@@ -224,10 +224,10 @@
       "I have a question": [
         "我要發問"
       ],
-      "import": [
+      "Import": [
         "匯入"
       ],
-      "Import": [
+      "import": [
         "匯入"
       ],
       "Import events": [
@@ -797,6 +797,9 @@
       "Calendar is syncing": [
         "行事曆正在同步"
       ],
+      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
+        "行事曆同步中：僅需數分鐘即可顯示所有事件。"
+      ],
       "Calendar is too big": [
         "行事曆太大"
       ],
@@ -814,6 +817,17 @@
       ],
       "Unsupported calendar format": [
         "不支援的行事曆格式"
+      ]
+    },
+    "Calendar subscription not synced error; long version": {
+      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
+        "行事曆連結無法從服務提供商生態系統外進行連線。"
+      ],
+      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
+        "行事曆連結暫時無法存取。請確認行事曆服務提供商的連結仍屬有效。"
+      ],
+      "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
+        "從上次更新以來已經過了超過12小時 — Proton Calendar 將會嘗試在幾個小時內更新日曆。"
       ]
     },
     "Calendar view": {
@@ -842,7 +856,7 @@
     },
     "colon": {
       ": ": [
-        "："
+        " : "
       ]
     },
     "color": {
@@ -1817,6 +1831,9 @@
       ]
     },
     "Description": {
+      "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
+        "解密聯絡人資料中… 此步驟將耗時數分鐘。當作業完成時，您就可以下載所有已匯出的聯絡人檔案。"
+      ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "正在刪除聯絡人……這可能需要數分鐘。流程完成時，您可以關閉此對話方塊。"
       ],
@@ -2017,6 +2034,9 @@
       "Deselect at least ${ calendarToFixCount } calendar or": [
         "請取消選取至少 ${ calendarToFixCount } 個行事曆或"
       ],
+      "Domain not available, try again later": [
+        "網域目前不適用，請稍後再試"
+      ],
       "Email address disabled": [
         "電郵位址已停用"
       ],
@@ -2206,6 +2226,9 @@
       "This label name is not available. Please choose a different name.": [
         "此標籤名稱無法使用。請換另一個名稱。"
       ],
+      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
+        "此郵件可能包含某些您目前的瀏覽器無法正確開啟的連結 URL。"
+      ],
       "Trusted keys are not valid for sending": [
         "信任的金鑰用於寄送時無效"
       ],
@@ -2273,7 +2296,7 @@
         "上載您的檔案 ${ formattedFilename } 時發生錯誤。檔案大小上限為 ${ MAX_IMPORT_FILE_SIZE_STRING }。"
       ],
       "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
-        "上載您的檔案 ${ formattedFilename } 時發生錯誤。未選取任何 .csv 或 .vcf 檔案。"
+        "上載您的檔案 ${ formattedFilename } 時發生錯誤。未選取任何 .csv 或 .vcf 檔案"
       ],
       "An error occurred uploading your file. No file has been selected.": [
         "上載您的檔案時發生錯誤。未選取任何檔案。"
@@ -2294,6 +2317,9 @@
       ],
       "Calendar": [
         "行事曆"
+      ],
+      "Calendar time zone not supported": [
+        "行事曆的時區暫不支援"
       ],
       "Component with wrong format": [
         "元件的格式有誤"
@@ -2367,6 +2393,9 @@
       "Start time out of bounds": [
         "開始時間超出界限"
       ],
+      "Time zone not supported": [
+        "不支援的時區"
+      ],
       "Timezone": [
         "時區"
       ],
@@ -2392,6 +2421,9 @@
       ],
       "Please ${ refresh } or check your connection.": [
         "請${ refresh }或檢查您的連線。"
+      ],
+      "Something went wrong. Please refresh the page or try again later.": [
+        "出了一點問題。請重新整理頁面或稍後再試。"
       ],
       "There was a problem connecting to Proton.": [
         "連線至Proton時發生錯誤。"
@@ -2665,7 +2697,7 @@
     },
     "Import contact error": {
       "Contact ${ contactId }: ": [
-        "聯絡人 ${ contactId }："
+        "聯絡人 ${ contactId } : "
       ]
     },
     "Import contact groups info": {
@@ -3057,6 +3089,9 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "當寄送電郵到此電郵位址時，預設使用選取的電郵格式。"
       ],
+      "Select what you want to import from Google.": [
+        "選擇您要從 Google 匯入的任何檔案。"
+      ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "請選取要匯入的行事曆。將為每個匯入的行事曆創建一個新的行事曆，上限為 20 個行事曆。"
       ],
@@ -3341,6 +3376,9 @@
       "All day": [
         "整天"
       ],
+      "All-day event notifications": [
+        "全日事件通知"
+      ],
       "Attach screenshot(s)": [
         "附加螢幕截圖"
       ],
@@ -3389,18 +3427,6 @@
       "Date and time": [
         "日期與時間"
       ],
-      "Default email address": [
-        "預設電郵位址"
-      ],
-      "Default event duration": [
-        "預設活動持續時間"
-      ],
-      "Default full day notifications": [
-        "預設整日活動通知"
-      ],
-      "Default notifications": [
-        "預設通知"
-      ],
       "Delete": [
         "刪除"
       ],
@@ -3430,6 +3456,12 @@
       ],
       "Ends": [
         "結束"
+      ],
+      "Event duration": [
+        "事件持續時間"
+      ],
+      "Event notifications": [
+        "事件通知"
       ],
       "Event title": [
         "事件標題"
@@ -3477,7 +3509,7 @@
         "匯入到："
       ],
       "Label messages as": [
-        "為郵件加上標籤："
+        "在郵件加上標籤："
       ],
       "Last 12 months only": [
         "僅過去 12 個月"
@@ -3877,6 +3909,11 @@
         "切換或是加入帳號"
       ]
     },
+    "new_plans: info": {
+      "Introducing Proton’s refreshed look.${ br }Many services, one mission. Welcome to an internet where privacy is the default.": [
+        "Proton 新樣貌隆重登場！${ br } 多種服務，單一使命。歡迎蒞臨隱私為本的網路世界。"
+      ]
+    },
     "new_plans: label": {
       "Tell us about your experience. (Optional)": [
         "與我們分享您的使用體驗。（選填）"
@@ -3908,6 +3945,14 @@
     "Notification time input": {
       "at": [
         "於"
+      ]
+    },
+    "Notification type": {
+      "email": [
+        "電郵"
+      ],
+      "notification": [
+        "通知"
       ]
     },
     "Notification when": {
@@ -4160,7 +4205,7 @@
         "加入標題"
       ],
       "E.g., ": [
-        "範例："
+        "範例 : "
       ],
       "Filter groups": [
         "篩選群組"
@@ -4284,6 +4329,9 @@
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "${ DRIVE_APP_NAME } 已完成測試，為您的檔案提供與電郵相同的安全性。"
       ],
+      "Don't miss any events": [
+        "別錯過任何活動"
+      ],
       "Get up to 18 months of ${ planName } for free": [
         "免費取得最多18個月的 ${ planName }"
       ],
@@ -4298,6 +4346,9 @@
       ],
       "With email notifications, you decide which events to be notified about and when.": [
         "藉由電郵通知，您可以決定何時提醒任何事件。"
+      ],
+      "You can now add notifications to calendars you subscribed to.": [
+        "你已可以添加提醒到你訂閱的行事曆了。"
       ]
     },
     "Storage": {
@@ -4377,6 +4428,9 @@
       ],
       "Calendar created": [
         "行事曆已創建"
+      ],
+      "Calendar information updated": [
+        "行事曆資訊已更新"
       ],
       "Calendar updated": [
         "行事曆已更新"
@@ -4614,6 +4668,9 @@
       ],
       "Calendar alarm": [
         "行事曆鬧鐘"
+      ],
+      "Calendar information": [
+        "行事曆資訊"
       ],
       "Change my answer": [
         "更改我的回答"

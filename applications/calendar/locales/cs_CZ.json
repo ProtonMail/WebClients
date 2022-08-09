@@ -230,11 +230,11 @@
       "I have a question": [
         "Mám dotaz"
       ],
-      "import": [
-        "import"
-      ],
       "Import": [
         "Importovat"
+      ],
+      "import": [
+        "import"
       ],
       "Import events": [
         "Import událostí"
@@ -820,6 +820,17 @@
       ],
       "Unsupported calendar format": [
         "Nepodporovaný formát kalendáře"
+      ]
+    },
+    "Calendar subscription not synced error; long version": {
+      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
+        "Odkaz na kalendář není přístupný mimo ekosystém poskytovatele kalendáře."
+      ],
+      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
+        "Odkaz na kalendář je dočasně nedostupný. Zkontrolujte, zda je odkaz od poskytovatele kalendáře stále platný."
+      ],
+      "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
+        "Od poslední aktualizace uplynulo více než 12 hodin — Proton Calendar se pokusí kalendář aktualizovat během několika hodin."
       ]
     },
     "Calendar view": {
@@ -2017,9 +2028,6 @@
       "A group with this name already exists": [
         "Skupina s tímto názvem již existuje"
       ],
-      "A maximum of 10 notifications is allowed": [
-        "Je povoleno maximálně 10 oznámení"
-      ],
       "Address primary private key not found": [
         "Primární soukromý klíč adresy nebyl nalezen"
       ],
@@ -2064,6 +2072,9 @@
         "Zrušte výběr nejméně ${ calendarToFixCount } kalendářů nebo",
         "Zrušte výběr nejméně ${ calendarToFixCount } kalendářů nebo",
         "Zrušte výběr nejméně ${ calendarToFixCount } kalendářů nebo"
+      ],
+      "Domain not available, try again later": [
+        "Doména není dostupná, zkuste to znovu později"
       ],
       "Email address disabled": [
         "E-mailová adresa je zakázána"
@@ -3578,18 +3589,6 @@
       "Date and time": [
         "Datum a čas"
       ],
-      "Default email address": [
-        "Výchozí e-mailová adresa"
-      ],
-      "Default event duration": [
-        "Výchozí doba trvání události"
-      ],
-      "Default full day notifications": [
-        "Výchozí celodenní oznámení"
-      ],
-      "Default notifications": [
-        "Výchozí upozornění"
-      ],
       "Delete": [
         "Odstranit"
       ],
@@ -4676,6 +4675,9 @@
       "Calendar created": [
         "Kalendář byl vytvořen"
       ],
+      "Calendar information updated": [
+        "Informace kalendáře aktualizovány"
+      ],
       "Calendar updated": [
         "Kalendář aktualizován"
       ],
@@ -4930,6 +4932,9 @@
       ],
       "Calendar alarm": [
         "Výstraha kalendáře"
+      ],
+      "Calendar information": [
+        "Informace kalendáře"
       ],
       "Change my answer": [
         "Změnit mou odpověď"
@@ -5327,7 +5332,7 @@
         "Kontakty nebylo možné sloučit"
       ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
-        "Jestliže si nepamatujete heslo, není možné znovu aktivovat váš klíč. Můžeme vám pomoci zbavit se upozornění, ale díky tomu trvale ztratíte přístup k datům šifrovaným pomocí toho klíče."
+        "Jestliže si nepamatujete své heslo, klíč není možné znovu aktivovat. Můžeme vám pomoci zbavit se upozornění, ale díky tomu trvale ztratíte přístup k datům šifrovaným pomocí toho klíče."
       ],
       "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
         "Živý chat je prémiová funkce, která je k dispozici pouze uživatelům s placenými ${ VPN_APP_NAME } tarify. Prosím otevřete běžný požadavek na podporu."

@@ -409,11 +409,11 @@
       "Images will be loaded without a proxy": [
         "Billeder vil blive indlæst uden en proxy"
       ],
-      "import": [
-        "importér"
-      ],
       "Import": [
         "Import"
+      ],
+      "import": [
+        "importér"
       ],
       "Import from .csv or vCard": [
         "Importer fra .csv eller vCard"
@@ -568,6 +568,9 @@
       ],
       "Move to spam": [
         "Flyt til spam"
+      ],
+      "Move to spam and unsubscribe": [
+        "Flyt til spam og afmeld"
       ],
       "Move to trash": [
         "Flyt til papirkurv"
@@ -751,6 +754,9 @@
       ],
       "Search": [
         "Søg"
+      ],
+      "Search countries": [
+        "Søg lande"
       ],
       "Search in ${ option.text }": [
         "Søg i ${ option.text }"
@@ -2723,8 +2729,8 @@
       "A group with this name already exists": [
         "En gruppe med dette navn findes allerede"
       ],
-      "A problem occurred, please try again": [
-        "Der opstod en fejl. Prøv venligst igen"
+      "A problem occurred, please try again.": [
+        "Der opstod et problem. Prøv venligst igen."
       ],
       "Address primary private key not found": [
         "Adresses primære private nøgle ikke fundet"
@@ -2779,6 +2785,9 @@
       "Deselect at least ${ calendarToFixCount } calendar or": [
         "Fravælg mindst ${ calendarToFixCount } kalender eller",
         "Fravælg mindst ${ calendarToFixCount } kalendere eller"
+      ],
+      "Domain not available, try again later": [
+        "Domæne er ikke tilgængeligt, prøv igen senere"
       ],
       "Draft could not be saved. Try again.": [
         "Kladde kunne ikke gemmes. Prøv igen."
@@ -2897,8 +2906,8 @@
       "Passwords do not match": [
         "Adgangskoder matcher ikke"
       ],
-      "Please activate your content search again": [
-        "Aktiver venligst din indholdssøgning igen"
+      "Please activate your search again": [
+        "Aktiver din søgning igen"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Løs venligst den fremhævede konflikt for at fortsætte.",
@@ -2964,6 +2973,9 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Noget gik galt. ${ refresh } venligst siden for at fortsætte. Ser du fortsat denne fejlmeddelelse, bedes du kontakte vores ${ supportTeam }."
+      ],
+      "Something went wrong, please try again": [
+        "Noget gik galt. Prøv igen"
       ],
       "Sorry, Proton can't decrypt your message. Please check that all your keys are active.": [
         "Beklager, Proton kan ikke dekryptere din besked. Kontroller at alle dine nøgler er aktive."
@@ -3916,6 +3928,9 @@
       "Confirm phishing report": [
         "Bekræft phishing-anmeldelse"
       ],
+      "Content: ": [
+        "Indhold: "
+      ],
       "Continue with ${ planName }": [
         "Fortsæt med ${ planName }"
       ],
@@ -3978,12 +3993,6 @@
       ],
       "Do you want to re-sign the contact details?": [
         "Vil du gensignere kontaktdetaljerne?"
-      ],
-      "Download our mobile application from your favorite app store to communicate securely on-the-go.": [
-        "Download vores mobil-app fra din foretrukne app-butik for at kommunikere sikkert på farten."
-      ],
-      "Downloading message ${ esProgress } out of ${ totalProgressToShow }": [
-        "Downloader besked ${ esProgress } ud af ${ totalProgressToShow }"
       ],
       "Draft": [
         "Kladde"
@@ -4333,6 +4342,9 @@
       ],
       "Please add at least one recipient.": [
         "Angiv mindst én modtager."
+      ],
+      "Please fill out this field.": [
+        "Udfyld venligst dette felt."
       ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
         "Sørg for at gemme den sikkert. Du skal bruge den til at få adgang til din konto og dekryptere dine data i tilfælde af en nulstilling af adgangskoden."
@@ -6925,6 +6937,9 @@
       "Addresses": [
         "Adresser"
       ],
+      "Archive": [
+        "Arkivér"
+      ],
       "Are you sure you want to close?": [
         "Er du sikker på, at du vil lukke?"
       ],
@@ -7137,6 +7152,9 @@
       "Mailbox layout": [
         "Postkasse-layout"
       ],
+      "Mark as read": [
+        "Markér som læst"
+      ],
       "Mark as unread": [
         "Markér som ulæst"
       ],
@@ -7178,6 +7196,9 @@
       ],
       "Move to inbox (not spam)": [
         "Flyt til indbakke (ikke spam)"
+      ],
+      "Move to spam": [
+        "Flyt til spam"
       ],
       "Move to trash": [
         "Flyt til papirkurv"
@@ -7314,6 +7335,9 @@
       "To": [
         "Til"
       ],
+      "Trash": [
+        "Flyt til papirkurv"
+      ],
       "Trust new key?": [
         "Stol på ny nøgle?",
         "Stol på nye nøgler?"
@@ -7390,9 +7414,6 @@
       ],
       "The import will start with the most recent messages.": [
         "Importen vil starte med de seneste beskeder."
-      ],
-      "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "Denne handling vil downloade alle beskeder, så de kan gennemsøges lokalt. Rydder du dine browserdata, deaktiveres denne indstilling."
       ],
       "This feature is only available for paid users": [
         "Denne funktion er kun tilgængelig for betalende brugere"
