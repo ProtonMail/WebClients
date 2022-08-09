@@ -1,10 +1,10 @@
-import { decryptSigned } from '@proton/shared/lib/keys/driveKeys';
-import { FILE_CHUNK_SIZE } from '@proton/shared/lib/drive/constants';
 import { CryptoProxy, PrivateKeyReference, PublicKeyReference, VERIFICATION_STATUS } from '@proton/crypto';
+import { FILE_CHUNK_SIZE } from '@proton/shared/lib/drive/constants';
+import { decryptSigned } from '@proton/shared/lib/keys/driveKeys';
 
 interface ExtendedAttributes {
     Common: {
-        ModificationTime: string;
+        ModificationTime?: string;
         Size?: number;
         BlockSizes?: number[];
     };
@@ -23,12 +23,16 @@ export async function ecryptFolderExtendedAttributes(
     nodePrivateKey: PrivateKeyReference,
     addressPrivateKey: PrivateKeyReference
 ) {
-    const xattr = {
+    const xattr = createFolderExtendedAttributes(modificationTime);
+    return encryptExtendedAttributes(xattr, nodePrivateKey, addressPrivateKey);
+}
+
+export function createFolderExtendedAttributes(modificationTime: Date): ExtendedAttributes {
+    return {
         Common: {
-            ModificationTime: modificationTime.toISOString(),
+            ModificationTime: dateToIsoString(modificationTime),
         },
     };
-    return encryptExtendedAttributes(xattr, nodePrivateKey, addressPrivateKey);
 }
 
 export async function ecryptFileExtendedAttributes(
@@ -46,7 +50,7 @@ export function createFileExtendedAttributes(file: File): ExtendedAttributes {
     blockSizes.push(file.size % FILE_CHUNK_SIZE);
     return {
         Common: {
-            ModificationTime: new Date(file.lastModified).toISOString(),
+            ModificationTime: dateToIsoString(new Date(file.lastModified)),
             Size: file.size,
             BlockSizes: blockSizes,
         },
@@ -145,4 +149,9 @@ function parseBlockSizes(xattr: any): number[] | undefined {
         return undefined;
     }
     return blockSizes;
+}
+
+function dateToIsoString(date: Date) {
+    const isDateValid = !Number.isNaN(date.getTime());
+    return isDateValid ? date.toISOString() : undefined;
 }
