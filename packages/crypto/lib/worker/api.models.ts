@@ -1,25 +1,25 @@
 import type {
+    AlgorithmInfo,
+    Data,
+    DecryptLegacyOptions,
     DecryptOptionsPmcrypto,
     DecryptResultPmcrypto,
-    SignOptionsPmcrypto,
+    DecryptSessionKeyOptionsPmcrypto,
     EncryptOptionsPmcrypto,
-    Data,
-    VerifyOptionsPmcrypto,
-    VerifyMessageResult,
-    AlgorithmInfo,
+    EncryptSessionKeyOptionsPmcrypto,
     GenerateKeyOptions,
     GenerateSessionKeyOptionsPmcrypto,
-    EncryptSessionKeyOptionsPmcrypto,
-    DecryptSessionKeyOptionsPmcrypto,
-    DecryptLegacyOptions,
     ProcessMIMEOptions,
     ProcessMIMEResult,
-    SessionKey,
     ReformatKeyOptions,
+    SessionKey,
+    SignOptionsPmcrypto,
     VerifyCleartextOptionsPmcrypto,
+    VerifyMessageResult,
+    VerifyOptionsPmcrypto,
 } from 'pmcrypto-v7/lib/pmcrypto';
 
-export type { PartialConfig as OpenPGPConfig } from 'pmcrypto-v7/lib/openpgp';
+export type { PartialConfig as OpenPGPConfig, enums } from 'pmcrypto-v7/lib/openpgp';
 
 type MaybeArray<T> = T[] | T;
 export type { SessionKey, AlgorithmInfo };
