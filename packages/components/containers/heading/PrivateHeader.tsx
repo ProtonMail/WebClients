@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { APPS } from '@proton/shared/lib/constants';
+import { APPS, APPS_CONFIGURATION } from '@proton/shared/lib/constants';
 import { c } from 'ttag';
 import { useLocation } from 'react-router-dom';
 
@@ -75,6 +75,9 @@ const PrivateHeader = ({
 
     const isVPN = APP_NAME === APPS.PROTONVPN_SETTINGS;
     const upgradePathname = isVPN ? '/dashboard' : '/upgrade';
+    const appDomain = isVPN ? 'vpn-settings' : APPS_CONFIGURATION[APP_NAME].subdomain;
+    // We want to have metrics from where the user has clicked on the upgrade button
+    const upgradeUrl = `${upgradePathname}?ref=upsell_${appDomain}-button-1`;
 
     return (
         <Header>
@@ -101,7 +104,7 @@ const PrivateHeader = ({
                                 color="norm"
                                 text={c('Link').t`Upgrade`}
                                 icon={<Icon name="arrow-up-big-line" />}
-                                path={upgradePathname}
+                                path={upgradeUrl}
                                 title={c('Link').t`Go to subscription plans`}
                             />
                         </TopNavbarListItem>
