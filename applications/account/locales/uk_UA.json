@@ -823,6 +823,9 @@
       "Void anyway": [
         "Все одно видалити"
       ],
+      "What do I get?": [
+        "Що я отримую?"
+      ],
       "Wipe": [
         "Стерти"
       ],
@@ -1247,8 +1250,8 @@
       "Calendar is syncing": [
         "Календар синхронізується"
       ],
-      "Calendar is syncing: it may take several minutes for all of its events to show up": [
-        "Календар синхронізується: для показу всіх подій з нього може знадобитися кілька хвилин"
+      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
+        "Календар синхронізується: для показу всіх подій з нього може знадобитися кілька хвилин."
       ],
       "Calendar is too big": [
         "Календар завеликий"
@@ -3465,6 +3468,9 @@
       "Archive": [
         "Архів"
       ],
+      "Do not move": [
+        "Не переміщувати"
+      ],
       "Inbox": [
         "Вхідні"
       ],
@@ -5487,9 +5493,6 @@
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a ${ VPN_APP_NAME } server.": [
         "Щоб захистити своє з'єднання з інтернетом, завантажте та встановіть програму ${ VPN_APP_NAME } для вашого пристрою і під'єднайтеся до сервера ${ VPN_APP_NAME }."
       ],
-      "To use ${ toAppName }, please create an address.": [
-        "Щоб скористатися ${ toAppName }, створіть адресу."
-      ],
       "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
         "Для належної роботи кожен фільтр повинен містити принаймні назву й дійсний скрипт Sieve. Ви можете ${ link }."
       ],
@@ -5498,6 +5501,18 @@
       ],
       "Tor": [
         "Tor"
+      ],
+      "Total email addresses": [
+        "Усього адрес електронної пошти"
+      ],
+      "Total storage": [
+        "Усього сховища"
+      ],
+      "Total supported domains": [
+        "Усього підтримуваних доменів"
+      ],
+      "Total VPN connections": [
+        "Усього VPN-з'єднань"
       ],
       "Two-factor authentication adds an extra layer of security to your account in case your password is compromised.": [
         "Двоетапна перевірка підвищує рівень безпеки вашого облікового запису у випадку компрометації пароля."
@@ -5766,8 +5781,8 @@
       "You'll still be able to send and receive mail with your existing email address(es).": [
         "Ви все одно зможете надсилати та отримувати пошту за допомогою наявних адрес електронної пошти."
       ],
-      "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, please create an address.": [
-        "Ваш обліковий запис ${ BRAND_NAME } пов'язаний з ${ externalEmailAddress }. Для використання ${ toAppName }, створіть адресу."
+      "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
+        "Ваш обліковий запис ${ BRAND_NAME } пов'язаний з ${ externalEmailAddress }. Щоб користуватися ${ toAppName }, вам потрібна адреса ${ MAIL_APP_NAME }."
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
         "Ваші облікові записи ${ VPN_APP_NAME } і ${ MAIL_APP_NAME } пов'язані. Щоб видалити їх обидва, виконайте вхід у ${ loginLink } та видаліть свій обліковий запис."
@@ -6305,6 +6320,9 @@
       "ALL": [
         "ВСЕ"
       ],
+      "All-day event notifications": [
+        "Сповіщення про події на цілий день"
+      ],
       "Allow recovery by email": [
         "Дозволити відновлення за електронною поштою"
       ],
@@ -6500,23 +6518,11 @@
       "Days of the week": [
         "Дні тижня"
       ],
-      "Default email address": [
-        "Типова електронна адреса"
-      ],
-      "Default event duration": [
-        "Типова тривалість події"
-      ],
-      "Default full day notifications": [
-        "Типові сповіщення на весь день"
-      ],
       "Default language": [
         "Мова"
       ],
       "Default language (${ defaultLanguage })": [
         "Мова (${ defaultLanguage })"
-      ],
-      "Default notifications": [
-        "Типові сповіщення"
       ],
       "Default PGP scheme": [
         "Типова схема PGP"
@@ -6595,6 +6601,12 @@
       ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Введіть пароль для ключа з відбитком: ${ fingerprintCode }"
+      ],
+      "Event duration": [
+        "Тривалість події"
+      ],
+      "Event notifications": [
+        "Сповіщення про події"
       ],
       "Expiration date": [
         "Термін дії"
@@ -8338,11 +8350,11 @@
       ]
     },
     "Notification type": {
-      "Email": [
-        "Е-пошта"
+      "email": [
+        "електронна пошта"
       ],
-      "In-app": [
-        "У застосунку"
+      "notification": [
+        "сповіщення"
       ]
     },
     "Notification when": {
@@ -9638,9 +9650,6 @@
       "Add user": [
         "Додати користувача"
       ],
-      "Address is available": [
-        "Адреса доступна"
-      ],
       "Address verification": [
         "Перевірка адреси"
       ],
@@ -9770,8 +9779,8 @@
       "Continue with partial import?": [
         "Продовжити частковий імпорт?"
       ],
-      "Create a ${ mailAppName } address": [
-        "Створити адресу ${ mailAppName }"
+      "Create a ${ MAIL_APP_NAME } address": [
+        "Створити адресу ${ MAIL_APP_NAME }"
       ],
       "Create calendar": [
         "Створити календар"
@@ -10337,6 +10346,9 @@
       "Your ${ domain } address is active": [
         "Ваша адреса ${ domain } активна"
       ],
+      "Your ${ MAIL_APP_NAME } address": [
+        "Ваша адреса ${ MAIL_APP_NAME }"
+      ],
       "Your calendar link": [
         "Посилання на ваш календар"
       ],
@@ -10735,9 +10747,6 @@
       ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
         "Дата й час на вашому пристрої не синхронізуються. ${ learnMore }"
-      ],
-      "This feature is only available for ${ mailProfessional } plans or higher": [
-        "Ця функція доступна лише для тарифних планів ${ mailProfessional } або вище"
       ],
       "This import may exceed the storage capacity currently available in your Proton account. Please consider customizing your import.": [
         "Цей імпорт може перевищити обсяг сховища, який зараз доступний для вашого облікового запису Proton. Розгляньте можливість налаштування вашого імпортування."

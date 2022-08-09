@@ -4,6 +4,20 @@
     "language": "ja_JP"
   },
   "contexts": {
+    "Access level": {
+      "Full": [
+        "すべて"
+      ],
+      "Full view": [
+        "フルビュー"
+      ],
+      "Limited": [
+        "制限"
+      ],
+      "Limited view": [
+        "限定ビュー"
+      ]
+    },
     "Action": {
       "${ address } is available.": [
         "${ address } は利用可能です。"
@@ -38,6 +52,9 @@
       "Add address": [
         "アドレスを追加"
       ],
+      "Add calendar": [
+        "カレンダーを追加"
+      ],
       "Add condition": [
         "条件を追加"
       ],
@@ -58,6 +75,9 @@
       ],
       "Add label": [
         "ラベルを追加"
+      ],
+      "Add notification": [
+        "通知を追加"
       ],
       "Add PayPal": [
         "PayPal を追加"
@@ -161,11 +181,17 @@
       "Continue with ${ nameToDisplay } ${ maybeEmailInBrackets }": [
         "${ nameToDisplay } ${ maybeEmailInBrackets } で続行"
       ],
+      "Continue with Google": [
+        "Google で続行"
+      ],
       "Copy": [
         "コピー"
       ],
       "Copy email to clipboard": [
         "メールをクリップボードにコピー"
+      ],
+      "Copy link": [
+        "リンクをコピー"
       ],
       "Create": [
         "作成"
@@ -179,6 +205,9 @@
       "Create address": [
         "アドレスの作成"
       ],
+      "Create calendar": [
+        "カレンダーを作成"
+      ],
       "Create folder": [
         "フォルダーを作成"
       ],
@@ -187,6 +216,9 @@
       ],
       "Create label": [
         "ラベルを作成"
+      ],
+      "Create link": [
+        "リンクを作成"
       ],
       "Current plan": [
         "現在のプラン"
@@ -208,6 +240,9 @@
       ],
       "Delete": [
         "削除"
+      ],
+      "Delete link": [
+        "リンクを削除"
       ],
       "Delete permanently": [
         "完全に削除"
@@ -257,6 +292,9 @@
       "Download all configurations": [
         "すべての設定ファイルをダウンロード"
       ],
+      "Download ICS": [
+        "ICS をダウンロード"
+      ],
       "Download recovery file": [
         "回復用ファイルをダウンロード"
       ],
@@ -304,6 +342,9 @@
       ],
       "Export": [
         "エクスポート"
+      ],
+      "Export ICS": [
+        "ICS をエクスポート"
       ],
       "Export key": [
         "鍵をエクスポート"
@@ -364,6 +405,9 @@
       ],
       "Import emails": [
         "メールをインポート"
+      ],
+      "Import from ICS": [
+        "ICS からインポート"
       ],
       "Import key": [
         "鍵をインポート"
@@ -506,11 +550,17 @@
       "Remove bonuses": [
         "ボーナスを削除"
       ],
+      "Remove calendar": [
+        "カレンダーを削除"
+      ],
       "Remove gift code": [
         "ギフトコードを削除"
       ],
       "Remove this label": [
         "このラベルを削除"
+      ],
+      "Remove this notification": [
+        "この通知を削除"
       ],
       "Rename": [
         "名前を変更"
@@ -578,6 +628,9 @@
       "Save address": [
         "メールアドレスを保存"
       ],
+      "Save ICS file": [
+        "ICS ファイルを保存"
+      ],
       "Save selected": [
         "選択済みを保存"
       ],
@@ -590,8 +643,17 @@
       "Select ${ planTitle }": [
         "${ planTitle } を選択"
       ],
+      "Select calendar view": [
+        "カレンダー表示を選択"
+      ],
       "Select files": [
         "ファイルを選択"
+      ],
+      "Select language for invitation emails": [
+        "招待メールの言語を選択"
+      ],
+      "Select timezone": [
+        "タイムゾーンの選択"
       ],
       "send auto-reply email": [
         "自動返信メールを送信"
@@ -625,6 +687,12 @@
       ],
       "Show labels": [
         "ラベルを表示"
+      ],
+      "Show less": [
+        "詳細を非表示"
+      ],
+      "Show more": [
+        "さらに表示"
       ],
       "Show preview": [
         "プレビューを表示"
@@ -754,6 +822,9 @@
       ],
       "Void anyway": [
         "無効にする"
+      ],
+      "What do I get?": [
+        "どうやって入手しますか?"
       ],
       "Wipe": [
         "すべて削除"
@@ -994,6 +1065,11 @@
         "24か月"
       ]
     },
+    "breadcrumb": {
+      "Calendars": [
+        "カレンダー"
+      ]
+    },
     "Bridge version load failed": {
       "Failed to find latest version": [
         "最新バージョンが見つかりませんでした"
@@ -1090,6 +1166,11 @@
         "Tweet"
       ]
     },
+    "Calendar import section description": {
+      "You can import ICS files from another calendar to ${ CALENDAR_APP_NAME }. This lets you quickly import one event or your entire agenda.": [
+        "ICS ファイルを他のカレンダーから ${ CALENDAR_APP_NAME } にインポートすることができます。これにより、予定やエントリー全体を簡単にインポートできます。"
+      ]
+    },
     "Calendar link purpose update success message": {
       "Label added": [
         "ラベルが追加されました"
@@ -1105,6 +1186,12 @@
       "Active": [
         "有効"
       ],
+      "Default": [
+        "既定"
+      ],
+      "Disabled": [
+        "無効"
+      ],
       "Not synced": [
         "同期されていません"
       ],
@@ -1118,6 +1205,9 @@
       ],
       "Calendar is syncing": [
         "カレンダーの同期中"
+      ],
+      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
+        "カレンダーを同期しています…すべてのイベントが表示されるまでしばらくお待ちください。"
       ],
       "Calendar is too big": [
         "カレンダーが大きすぎます"
@@ -2342,6 +2432,20 @@
         "改善にご協力してください!"
       ]
     },
+    "Duration": {
+      "120 minutes": [
+        "120 分"
+      ],
+      "30 minutes": [
+        "30 分"
+      ],
+      "60 minutes": [
+        "60 分"
+      ],
+      "90 minutes": [
+        "90 分"
+      ]
+    },
     "Email body for description (description part)": {
       "Description: ${ eventDescription }": [
         "詳細: ${ eventDescription }"
@@ -2448,6 +2552,9 @@
       ],
       "Automatic replies is a paid feature. Please upgrade to a paid account to use this feature.": [
         "自動返信は有料機能です。この機能を使用するには有料アカウントにアップグレードしてください。"
+      ],
+      "Calendar cannot be found": [
+        "カレンダーが見つかりませんでした"
       ],
       "Calendar limit reached": [
         "カレンダーの制限に達しました"
@@ -2562,6 +2669,9 @@
       ],
       "Name on card required": [
         "カード名義が必要です"
+      ],
+      "Name required": [
+        "名前が必要です"
       ],
       "No active sessions": [
         "アクティブなセッションはありません"
@@ -2727,6 +2837,9 @@
       ],
       "This label name is not available. Please choose a different name.": [
         "このラベル名は利用できません。別の名前を選択してください。"
+      ],
+      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
+        "このメッセージには現在のブラウザーで正しく開けない URL を含んでいる可能性があります。"
       ],
       "Unknown error": [
         "不明なエラー"
@@ -2939,6 +3052,9 @@
       "Error: ${ errorMessage }": [
         "エラー: ${ errorMessage }"
       ],
+      "Invalid URL": [
+        "無効な URL です"
+      ],
       "Oops, something went wrong": [
         "エラーが発生しました。"
       ],
@@ -2984,6 +3100,11 @@
         "画像が選択されていません"
       ]
     },
+    "Error when exporting event from calendar": {
+      "Event @ ${ timeString }": [
+        "イベント @ ${ timeString }"
+      ]
+    },
     "Event invitation error": {
       "Attached ICS file could not be decrypted": [
         "添付された ICS ファイルを復号できません"
@@ -3025,6 +3146,44 @@
     "Event title": {
       "(no title)": [
         "(タイトルなし)"
+      ]
+    },
+    "Export calendar": {
+      "${ totalProcessed }/${ totalToProcess } event exported": [
+        "${ totalProcessed }/${ totalToProcess } イベントがエクスポートされました"
+      ],
+      "Calendar successfully exported. You can now save the ICS file.": [
+        "カレンダーは正常にエクスポートされました。ICS ファイルを保存することができます。"
+      ],
+      "Decrypting events from your calendar: ${ totalProcessed }/${ totalToProcess }": [
+        "カレンダーからイベントを復号中: ${ totalProcessed }/${ totalToProcess }"
+      ],
+      "Due to a password reset, some of your events could not be decrypted and exported.": [
+        "パスワードをリセットしたため、いくつかのイベントは復号およびエクスポートができませんでした。"
+      ],
+      "Error decrypting event": [
+        "イベントの復号時にエラーが発生しました"
+      ],
+      "Learn how to restore encrypted events with old password": [
+        "古いパスワードで暗号化されたイベントの復元方法についての詳細"
+      ],
+      "Loading events": [
+        "イベントを読み込み中"
+      ],
+      "Password reset - event cannot be decrypted": [
+        "パスワードリセット - イベントを復号できません"
+      ],
+      "Please don't close the tab before the exporting process is finished.": [
+        "出力が完了するまでタブを閉じないでください。"
+      ],
+      "Some of your events could not be exported.": [
+        "いつくかのイベントはエクスポートされませんでした。"
+      ],
+      "The internet connection was interrupted, causing the export process to fail. Please try again.": [
+        "インターネット接続が切断されたため、エクスポートに失敗しました。再度お試しください。"
+      ],
+      "You can save an ICS file of the events that were successfully exported.": [
+        "正常にエクスポートされたイベントの ICS ファイルを保存することができます。"
       ]
     },
     "Feature": {
@@ -3670,6 +3829,9 @@
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } 続行するとアカウント内にある現在の暗号化されたデータにアクセスすることができなくなります。"
       ],
+      "${ calendarName } will be set as default calendar.": [
+        "${ calendarName } は既定のカレンダーとして設定されます。"
+      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } 個の新しいカレンダー"
       ],
@@ -3681,6 +3843,9 @@
       ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } は無効です"
+      ],
+      "${ firstRemainingCalendarName } will be set as default calendar.": [
+        "${ firstRemainingCalendarName } は既定のカレンダーとして設定されます。"
       ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } はログイン用とメールボックス用のパスワードを 1 つに統一できます。1 つのパスワードにするには、パスワードを入力してから保存をクリックしてください。"
@@ -3880,11 +4045,20 @@
       "and": [
         "と"
       ],
+      "Anyone with this link won't be able to sync or get future updates for your calendar. If you want to give them access again, you will have to create a new link.": [
+        "このリンクを持っている人は、あなたのカレンダーの同期や今後の更新を取得することはできません。 再度アクセスを許可したい場合は、新しいリンクを作成する必要があります。"
+      ],
       "AOL reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
         "AOL はあなたの個人情報を収集しており、広告主や、その他の第三者に情報を提供しています。プライバシーを守るため、安全なメールアドレスを作成しましょう。"
       ],
       "Are you sure you want to delete this address?": [
         "本当にこのアドレスを削除してよいですか。"
+      ],
+      "Are you sure you want to delete this calendar?": [
+        "このカレンダーを削除してよろしいですか?"
+      ],
+      "Are you sure you want to delete this calendar? All events in it will be deleted.": [
+        "このカレンダーを削除してよろしいですか? カレンダーにあるすべてのイベントも削除されます。"
       ],
       "Are you sure you want to delete this domain?": [
         "このドメインを削除しますか?"
@@ -3973,6 +4147,9 @@
       "By leaving now, changes may not be saved": [
         "変更が保存されていません"
       ],
+      "By sharing the full event details of this calendar, you accept to grant Proton access to this calendar's encrypted information.": [
+        "このカレンダーの完全なイベント詳細を共有することで、このカレンダーの暗号化された情報への Proton のアクセスを許可することになります。"
+      ],
       "Center": [
         "中央揃え"
       ],
@@ -3994,6 +4171,9 @@
       "Continue with ${ planName }": [
         "${ planName } で続行"
       ],
+      "Continuing will connect your ${ ACCOUNT_APP_NAME } to ${ name }.": [
+        "続行すると、${ ACCOUNT_APP_NAME } と ${ name } が接続されます。"
+      ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "${ calendarsToBeCreated } 個の新しいカレンダーを作成"
       ],
@@ -4002,6 +4182,9 @@
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "インポートされたメッセージのラベル、インポートする期間、およびインポート先のラベルを設定します。"
+      ],
+      "Create a link to your calendar and share it with anyone outside Proton. Only you can add or remove events.": [
+        "あなたのカレンダーへのリンクを作成し、非 Proton ユーザーに共有します。予定の追加・削除が行えるのはあなただけです。"
       ],
       "Create a new account and share the email address and password with the user.": [
         "アカウントを作成してメールアドレスとパスワードをユーザーにシェアします。"
@@ -4043,10 +4226,13 @@
         "毎日"
       ],
       "Data locked": [
-        "データはロックされています"
+        "ロックされたデータ"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "他の MX レコードを削除するか、他と比較して ${ MAIL_APP_NAME } の優先度が最も小さい値であることをご確認ください。"
+      ],
+      "Delete link?": [
+        "リンクを削除しますか?"
       ],
       "Discount applied to your subscription with coupon ${ code }": [
         "クーポン ${ code } 付きのサブスクリプションに割引が適用されます"
@@ -4156,6 +4342,9 @@
       "Enter your recovery phone number and we will send you your username or email address.": [
         "回復用電話番号を入力してください。ユーザー名またはメールアドレスを送信します。"
       ],
+      "Event invitations and RSVPs will be sent in this language.": [
+        "イベントの招待と RSVP (お返事お願いします) をこの言語で送信します。"
+      ],
       "Expired": [
         "有効期限切れ"
       ],
@@ -4169,7 +4358,7 @@
         "フィルターは送信したメールと受信したメールを含むすべてのメールで動作します。各フィルターには少なくとも有効な名前、条件、動作が含まれている必要があります。"
       ],
       "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
-        "Visa、MasterCardの場合は、カード裏面に表示された3桁の数字です。American Expressは表面の4桁の数字です。"
+        "Visa、MasterCard の場合は、カード裏面に記載された 3 桁の数字です。American Express は表面の 4 桁の数字です。"
       ],
       "Free": [
         "無料"
@@ -4197,6 +4386,9 @@
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "別の管理者がこのパスワードを変更した場合、変更した人に新しい組織パスワードを問合せてください。"
+      ],
+      "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
+        "システムのタイムゾーンが現在のタイムゾーンの設定と一致しない場合、更新するよう求められます (最大1日1回)。"
       ],
       "If this is due to an old password reset, you can stop the message from showing again": [
         "古いパスワードのリセットが原因の場合は、メッセージを再表示しないようにすることができます。"
@@ -4359,6 +4551,9 @@
       ],
       "Let your contacts know you care about their privacy.": [
         "あなたが宛先の方のプライバシーに配慮していることを伝えましょう。"
+      ],
+      "Limited view: others see if you're busy. Full view: shows all event details, including name, location, or participants.": [
+        "限定ビュー: 多忙な場合は他のユーザーが確認できます。フルビュー: 名前、場所、参加者を含むすべてのイベント詳細が表示されます。"
       ],
       "Link copied to clipboard": [
         "リンクをクリップボードにコピーしました"
@@ -4738,6 +4933,12 @@
       "Thank you for supporting our mission.": [
         "サポートしていただきありがとうございます！"
       ],
+      "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
+        "${ boldDataLocked }メッセージは表示されませんが、${ encryptionAndKeysLink }を利用してロックを解除できます。"
+      ],
+      "The calendar will be removed from your account.": [
+        "このカレンダーはアカウントから削除されます。"
+      ],
       "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
         "リストの一番上にあるものが、デフォルトのメールアドレスとして使用されます。メールアドレスを並び替えるには、ドラッグ＆ドロップしてください。"
       ],
@@ -4761,6 +4962,9 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "このブラウザーは PDF ドキュメントのプレビューをサポートしていません。ファイルをダウンロードしてください。"
+      ],
+      "This calendar will be removed from your account.": [
+        "このカレンダーはアカウントから削除されます。"
       ],
       "This can take a few seconds or a few minutes depending on your device": [
         "この処理には機器により、数秒から数分を要します。"
@@ -4855,9 +5059,6 @@
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a ${ VPN_APP_NAME } server.": [
         "インターネット接続を保護するには、${ VPN_APP_NAME } アプリケーションをダウンロード・インストールして、${ VPN_APP_NAME } サーバーに接続してください。"
       ],
-      "To use ${ toAppName }, please create an address.": [
-        "${ toAppName } を利用するには、アドレスを作成します。"
-      ],
       "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
         "正常に動作させるには、それぞれのフィルターに正しい名前と有効な Sieve スクリプトが含まれている必要があります。${ link }ことができます。"
       ],
@@ -4866,6 +5067,18 @@
       ],
       "Tor": [
         "Tor"
+      ],
+      "Total email addresses": [
+        "総メールアドレス数"
+      ],
+      "Total storage": [
+        "総ストレージ容量"
+      ],
+      "Total supported domains": [
+        "総対応ドメイン数"
+      ],
+      "Total VPN connections": [
+        "総VPN接続数"
       ],
       "Two-factor authentication adds an extra layer of security to your account in case your password is compromised.": [
         "2 要素認証を使用すると、アカウントのセキュリティが強化されます。これは、パスワード侵害への対策として有効です。"
@@ -4955,7 +5168,7 @@
         "代わりに回復用フレーズを使うことをおすすめします。"
       ],
       "We use 3-D Secure to protect your payments.": [
-        "お支払いを保護するために3Dセキュアを用いています。"
+        "決済を保護するために 3D セキュアを利用します。"
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "この取引を完了するために、新しいブラウザーのタブで PayPal にリダイレクトします。 ポップアップブロッカーを使用している場合は無効にして続けてください。"
@@ -4974,6 +5187,9 @@
       ],
       "Week": [
         "週"
+      ],
+      "Week and month views only apply to desktop.": [
+        "週と月のビューはデスクトップにのみ適用されます。"
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "リセットコードをアカウント回復に設定したメールアドレスに送信しました。"
@@ -5059,6 +5275,9 @@
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "回復手段を設定していないため、パスワードを忘れた場合にはアカウントを回復できません。回復手段を設定しないまま続行しますか？"
       ],
+      "You have no personal calendars to export.": [
+        "エクスポートする個人用カレンダーがありません。"
+      ],
       "You have no saved payment methods.": [
         "支払い方法が登録されていません。"
       ],
@@ -5079,6 +5298,12 @@
       ],
       "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription.": [
         "サブスクリプションをキャンセルする前に、すべての個人のカレンダーと共有中のカレンダーのリンクを削除する必要があります。"
+      ],
+      "You need to have a personal calendar to create a link.": [
+        "リンクを作成するには個人用カレンダーが必要です。"
+      ],
+      "You need to have an active personal calendar to import your events from ICS.": [
+        "イベントを ICS からインポートするには、アクティブなパーソナルカレンダーが必要です。"
       ],
       "You need to have an active personal calendar to import your events.": [
         "イベントをインポートするには、アクティブなパーソナルカレンダーが必要です。"
@@ -5113,8 +5338,8 @@
       "You'll still be able to send and receive mail with your existing email address(es).": [
         "変更しても、以前のメールアドレスで送受信可能です。"
       ],
-      "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, please create an address.": [
-        "あなたの ${ BRAND_NAME } アカウントは ${ externalEmailAddress } に関連付けされています。${ toAppName } を使うには、アドレスを作成してください。"
+      "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
+        "あなたの ${ BRAND_NAME } アカウントは ${ externalEmailAddress } に関連付けされています。${ toAppName } を使うには、${ MAIL_APP_NAME } アドレスが必要です。"
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
         "${ VPN_APP_NAME } と ${ MAIL_APP_NAME } のアカウントはリンクしています。両アカウントを削除するには ${ loginLink } へログインしてアカウントを削除してください。"
@@ -5195,6 +5420,9 @@
     "info": {
       "Key ${ fingerprint } has already been uploaded": [
         "鍵 ${ fingerprint } は正常にアップロードされました"
+      ],
+      "Try Mail Plus": [
+        "Mail Plus を試す"
       ]
     },
     "Info - folder colouring feature": {
@@ -5548,6 +5776,11 @@
         "廃止された印をつける"
       ]
     },
+    "Knowledge base link label": {
+      "Learn more": [
+        "詳細"
+      ]
+    },
     "Label": {
       " and ": [
         " および "
@@ -5633,6 +5866,9 @@
       "Attach screenshot(s)": [
         "スクリーンショットを添付"
       ],
+      "Auto-detect primary time zone": [
+        "2 つ目のタイムゾーンを自動検出"
+      ],
       "Auto-load embedded images": [
         "埋め込み画像を自動で読み込む"
       ],
@@ -5695,6 +5931,9 @@
       ],
       "Collect usage diagnostics": [
         "使用状況診断を収集"
+      ],
+      "Color": [
+        "色"
       ],
       "Composer": [
         "メール作成"
@@ -5783,14 +6022,23 @@
       "Default language": [
         "デフォルトの言語"
       ],
+      "Default language (${ defaultLanguage })": [
+        "既定の言語 (${ defaultLanguage })"
+      ],
       "Default PGP scheme": [
         "標準 PGP 方式"
+      ],
+      "Default view": [
+        "既定の表示形式"
       ],
       "Delete": [
         "削除"
       ],
       "Density": [
         "密度"
+      ],
+      "Description": [
+        "説明"
       ],
       "Device/certificate name": [
         "デバイス/証明書の名前"
@@ -5800,6 +6048,9 @@
       ],
       "Discount": [
         "割引"
+      ],
+      "Display": [
+        "表示"
       ],
       "Display name": [
         "表示名"
@@ -5851,6 +6102,12 @@
       ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "フィンガープリント ${ fingerprintCode } を持つキーのパスワードを入力してください"
+      ],
+      "Event duration": [
+        "イベントの期間"
+      ],
+      "Event notifications": [
+        "イベントの通知"
       ],
       "Expiration date": [
         "有効期限"
@@ -6140,6 +6397,15 @@
       "Send crash reports": [
         "クラッシュレポートを送信"
       ],
+      "Send in": [
+        "送信言語"
+      ],
+      "Show secondary time zone": [
+        "2 つ目のタイムゾーンを表示"
+      ],
+      "Show week numbers": [
+        "週番号を表示"
+      ],
       "Sign external messages": [
         "外部宛のメッセージへの署名"
       ],
@@ -6305,6 +6571,11 @@
     "Label for adding a new custom domain": {
       "Add a domain that you own to your ${ MAIL_APP_NAME } account.": [
         "あなたが所有しているドメインを ${ MAIL_APP_NAME } アカウントに追加します。"
+      ]
+    },
+    "Label for default event notifications": {
+      "Notifications": [
+        "通知"
       ]
     },
     "Label for domain modal": {
@@ -6607,6 +6878,11 @@
       ],
       "How to import emails from Yahoo": [
         "Yahoo からメールをインポートする方法"
+      ]
+    },
+    "Modal title and action": {
+      "Add calendar": [
+        "カレンダーを追加"
       ]
     },
     "Monetary unit": {
@@ -6970,6 +7246,9 @@
       "* With 24-month subscription. Other subscription options available at checkout.": [
         "* 24 か月のサブスクリプション その他のサブスクリプションのオプションははチェックアウト時に選択できます。"
       ],
+      "Comprehensive privacy and security with all Proton services combined.": [
+        "包括的なプライバシーとセキュリティを提供する、すべての Proton サービスが利用できるプランです。"
+      ],
       "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
         "アカウントをダウン削除をすると、すべての ${ visionary } プランの特典は失われ、新しいアカウントを作成しても利用できなくなります。"
       ],
@@ -6982,8 +7261,20 @@
       "Popular": [
         "最も人気"
       ],
+      "Privacy and security suite for businesses, including all premium Proton services.": [
+        "ビジネスのためプライバシーとセキュリティを提供する、すべてのプレミアム Proton サービスが利用できるプランです。"
+      ],
+      "Secure email and calendar for professionals and businesses.": [
+        "プロフェッショナルとビジネスのための、安全な電子メールとカレンダーのプランです。"
+      ],
       "Set automatic replies to inform contacts you are out of the office or unable to respond.": [
         "自動返信を設定し、外出中であることや返信できないことを連絡先に伝えます。"
+      ],
+      "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
+        "インターネットへの安全かつ無制限の高速アクセスを提供する VPN のプランです。"
+      ],
+      "The no-cost starter account designed to empower everyone with privacy by default.": [
+        "すべての人にプライバシーを提供するための、無料のスタータープランです。"
       ]
     },
     "new_plans: Label": {
@@ -7169,6 +7460,14 @@
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "OpenVPN / IKEv2 認証情報を更新しました"
+      ]
+    },
+    "Notification type": {
+      "email": [
+        "メール"
+      ],
+      "notification": [
+        "通知"
       ]
     },
     "Oauth instructions": {
@@ -7558,6 +7857,14 @@
         "無料"
       ]
     },
+    "Primary timezone": {
+      "Primary time zone": [
+        "基本のタイムゾーン"
+      ],
+      "Secondary time zone": [
+        "2 つ目のタイムゾーン"
+      ]
+    },
     "Private Member": {
       "private": [
         "プライベート"
@@ -7675,6 +7982,17 @@
         "最新の暗号形式"
       ]
     },
+    "Remove calendar section title": {
+      "Delete calendar?": [
+        "カレンダーを削除しますか?"
+      ],
+      "Remove calendar": [
+        "カレンダーを削除"
+      ],
+      "Unsubscribe?": [
+        "登録解除しますか?"
+      ]
+    },
     "Restore administrator panel": {
       "Changing organization keys": [
         "組織の鍵を変更しています"
@@ -7790,6 +8108,9 @@
       ]
     },
     "Spotlight": {
+      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
+        "${ DRIVE_APP_NAME } はベータ版を卒業しました! メールと変わらないセキュリティをファイルでも体感しましょう。"
+      ],
       "Get up to 18 months of ${ planName } for free": [
         "${ planName } が最大 18 か月無料"
       ],
@@ -7828,6 +8149,21 @@
       ],
       "Your current storage:": [
         "現在のストレージ:"
+      ]
+    },
+    "Subscribe to calendar modal description": {
+      "Learn how to get a private calendar link.": [
+        "プライベートなカレンダーリンクの取得方法についての詳細"
+      ]
+    },
+    "Subscribed calendar extension warning": {
+      "By using this link, Google will make the calendar you are subscribing to public": [
+        "リンクを使うことで、購読しているカレンダーは公開されます"
+      ]
+    },
+    "Subscribed calendar URL length warning": {
+      "URL is too long": [
+        "URL が長すぎます"
       ]
     },
     "Subscription attribute": {
@@ -7885,12 +8221,12 @@
     },
     "Subscription price": {
       "For": [
-        "価格"
+        "価格:"
       ]
     },
     "Subscription saving": {
       "Save": [
-        "保存"
+        "割引率:"
       ]
     },
     "Subtitle for trial plan": {
@@ -7920,6 +8256,21 @@
       "Bug reported": [
         "バグの報告が送信されました。"
       ],
+      "Calendar added. It might take a few minutes to sync.": [
+        "カレンダーが追加されました。同期には数分かかることがあります。"
+      ],
+      "Calendar created": [
+        "カレンダーが作成されました"
+      ],
+      "Calendar information updated": [
+        "カレンダーの情報が更新されました"
+      ],
+      "Calendar removed": [
+        "カレンダーが削除されました"
+      ],
+      "Calendar updated": [
+        "カレンダーが更新されました"
+      ],
       "Canceling import": [
         "インポートをキャンセル"
       ],
@@ -7931,6 +8282,9 @@
       ],
       "Credits added": [
         "クレジットが追加されました。"
+      ],
+      "Default calendar updated": [
+        "既定のカレンダーが更新されました"
       ],
       "DMARC value copied to clipboard": [
         "DMARC値ががクリップボードにコピーされました"
@@ -8214,6 +8568,9 @@
       "Add address": [
         "アドレスを追加"
       ],
+      "Add another notification to remind you of this event": [
+        "このイベントを思い出させるために、別の通知を追加"
+      ],
       "Add contact group name": [
         "連絡先グループの名前を追加"
       ],
@@ -8246,9 +8603,6 @@
       ],
       "Add user": [
         "ユーザーを追加"
-      ],
-      "Address is available": [
-        "アドレスは利用可能です"
       ],
       "Address verification": [
         "アドレスの検証"
@@ -8306,6 +8660,9 @@
       ],
       "Bridge for ${ platform }": [
         "${ platform } 版 Bridge"
+      ],
+      "Calendar information": [
+        "カレンダーの情報"
       ],
       "Cancel Mail subscription": [
         "Mail サブスクリプションのキャンセル"
@@ -8373,8 +8730,11 @@
       "Continue with partial import?": [
         "部分的なインポートを続行しますか？"
       ],
-      "Create a ${ mailAppName } address": [
-        "${ mailAppName } アドレスを作成"
+      "Create a ${ MAIL_APP_NAME } address": [
+        "${ MAIL_APP_NAME } アドレスを作成"
+      ],
+      "Create calendar": [
+        "カレンダーを作成"
       ],
       "Create your ${ BRAND_NAME } Account": [
         "${ BRAND_NAME } アカウントを作成"
@@ -8439,6 +8799,9 @@
       "Delete account": [
         "アカウントの削除"
       ],
+      "Delete calendar": [
+        "カレンダーの削除"
+      ],
       "Delete key permanently?": [
         "鍵を完全に削除しますか？"
       ],
@@ -8478,6 +8841,9 @@
       "Edit Block List": [
         "ブロックリストの編集"
       ],
+      "Edit calendar": [
+        "カレンダーを編集"
+      ],
       "Edit credit/debit card": [
         "クレジット・デビットカードの編集"
       ],
@@ -8513,6 +8879,12 @@
       ],
       "Error": [
         "エラー"
+      ],
+      "Export": [
+        "エクスポート"
+      ],
+      "Export calendar": [
+        "カレンダーをエクスポート"
       ],
       "Export private key": [
         "秘密鍵のエクスポート"
@@ -8567,6 +8939,9 @@
       ],
       "Import": [
         "インポート"
+      ],
+      "Import and export": [
+        "インポートとエクスポート"
       ],
       "Import as simple event?": [
         "シンプル イベントとしてインポートしますか?"
@@ -8724,6 +9099,9 @@
       "Referral tracker": [
         "紹介トラッカー"
       ],
+      "Remove calendar": [
+        "カレンダーを削除"
+      ],
       "Report a problem": [
         "問題を報告"
       ],
@@ -8765,6 +9143,15 @@
       ],
       "Select contact group": [
         "連絡先グループを選択"
+      ],
+      "Select the time to send this notification": [
+        "通知を送信する時間を選択"
+      ],
+      "Select the way to send this notification": [
+        "通知を送信する方法を選択"
+      ],
+      "Select when you want this notification to be sent": [
+        "通知を送信する時間を選択"
       ],
       "Session management": [
         "セッション管理"
@@ -8904,6 +9291,12 @@
       "Your ${ domain } address is active": [
         "${ domain } アドレスはアクティブです"
       ],
+      "Your ${ MAIL_APP_NAME } address": [
+        "${ MAIL_APP_NAME } アドレス"
+      ],
+      "Your calendar link": [
+        "カレンダーのリンク"
+      ],
       "Your current plan": [
         "現在のプラン"
       ],
@@ -8921,6 +9314,11 @@
       ],
       "ZIP / postal code": [
         "郵便番号"
+      ]
+    },
+    "Title (number of minutes/hours/days/weeks)": {
+      "Choose a number": [
+        "番号を選択"
       ]
     },
     "Title for payment methods table": {
@@ -9232,9 +9630,6 @@
       ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
         "デバイスの日時設定を同期できません。${ learnMore }"
-      ],
-      "This feature is only available for ${ mailProfessional } plans or higher": [
-        "この機能は ${ mailProfessional } プラン以上でのみ利用できます"
       ],
       "This import may exceed the storage capacity currently available in your Proton account. Please consider customizing your import.": [
         "このインポートは現在Protonアカウントで利用可能なストレージ容量を超えている可能性があります。インポートのカスタマイズを検討してください。"

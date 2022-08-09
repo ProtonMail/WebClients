@@ -247,6 +247,9 @@
       "Forward as attachment": [
         "Videresend som vedhæftning"
       ],
+      "Get ${ DRIVE_APP_NAME }": [
+        "Få ${ DRIVE_APP_NAME }"
+      ],
       "Get link": [
         "Få link"
       ],
@@ -283,11 +286,11 @@
       "I have a question": [
         "Jeg har et spørgsmål"
       ],
-      "import": [
-        "importér"
-      ],
       "Import": [
         "Import"
+      ],
+      "import": [
+        "importér"
       ],
       "Import from .csv or vCard": [
         "Importer fra .csv eller vCard"
@@ -438,6 +441,9 @@
       ],
       "Search": [
         "Søg"
+      ],
+      "Search countries": [
+        "Søg lande"
       ],
       "Search drive": [
         "Søg på drev"
@@ -770,6 +776,25 @@
         "Kalenderformat understøttes ikke"
       ]
     },
+    "Calendar subscription not synced error; long version": {
+      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
+        "Kalenderlinket er ikke tilgængeligt uden for kalenderudbyderens økosystem."
+      ],
+      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
+        "Kalenderlinket er midlertidigt utilgængeligt. Kontroller venligst, at linket fra kalenderudbyderen stadig er gyldigt."
+      ],
+      "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
+        "Der er gået mere end 12 timer siden sidste opdatering - Proton Calendar vil forsøge at opdatere kalenderen om et par timer."
+      ]
+    },
+    "Collapsible tooltip": {
+      "Collapse": [
+        "Fold sammen"
+      ],
+      "Expand": [
+        "Udvid"
+      ]
+    },
     "color": {
       "carrot": [
         "gulerod"
@@ -1100,6 +1125,9 @@
       "Czech Republic": [
         "Tjekkiet"
       ],
+      "Côte d'Ivoire": [
+        "Elfenbenskysten"
+      ],
       "Denmark": [
         "Danmark"
       ],
@@ -1129,6 +1157,9 @@
       ],
       "Estonia": [
         "Estland"
+      ],
+      "Eswatini": [
+        "Eswatini"
       ],
       "Ethiopia": [
         "Etiopien"
@@ -1372,6 +1403,9 @@
       ],
       "Mozambique": [
         "Mozambique"
+      ],
+      "Myanmar": [
+        "Myanmar"
       ],
       "Namibia": [
         "Namibia"
@@ -1693,6 +1727,9 @@
       ]
     },
     "Description": {
+      "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
+        "Dekrypterer kontakter... Dette kan tage et par minutter. Når processen er afsluttet, kan du downloade filen med alle dine eksporterede kontakter."
+      ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Sletter kontakter... Dette kan tage et par minutter. Når processen er afsluttet, kan du lukke dette vindue."
       ],
@@ -1737,9 +1774,6 @@
     "Error": {
       "A group with this name already exists": [
         "En gruppe med dette navn findes allerede"
-      ],
-      "A problem occurred, please try again": [
-        "Der opstod et problem. Prøv venligst igen"
       ],
       "Authentication canceled.": [
         "Godkendelse annulleret."
@@ -1851,9 +1885,6 @@
       "Passwords do not match": [
         "Adgangskoder matcher ikke"
       ],
-      "Please activate your content search again": [
-        "Aktiver venligst din indholdssøgning igen"
-      ],
       "Please fix the highlighted conflict to proceed.": [
         "Løs venligst den fremhævede konflikt for at fortsætte.",
         "Løs venligst de fremhævede konflikter for at fortsætte."
@@ -1945,6 +1976,9 @@
       "This label name is not available. Please choose a different name.": [
         "Dette etikettenavn er ikke tilgængeligt. Vælg venligst et andet navn."
       ],
+      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
+        "Denne besked kan indeholde link-adresser, som ikke kan åbnes korrekt af din aktuelle browser."
+      ],
       "Unknown error": [
         "Ukendt fejl"
       ],
@@ -2021,6 +2055,9 @@
       ],
       "Please ${ refresh } or check your connection.": [
         "${ refresh } eller tjek din forbindelse."
+      ],
+      "Something went wrong. Please refresh the page or try again later.": [
+        "Noget gik galt. Genopfrisk siden eller prøv igen senere."
       ],
       "There was a problem connecting to Proton.": [
         "Der opstod et problem med at oprette forbindelse til Proton."
@@ -2713,6 +2750,10 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "En eller flere af dine betroede nøgler er blevet markeret som \"kompromitteret\" af deres ejer. Vi anbefaler, at du ikke længere har tillid til disse nøgler."
       ],
+      "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } character is allowed": [
+        "Kun ${ MAX_CUSTOM_PASSWORD_LENGTH } tegn er tilladt",
+        "Kun ${ MAX_CUSTOM_PASSWORD_LENGTH } tegn er tilladt"
+      ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Ændr kun disse indstillinger, hvis du benytter PGP ifm. ikke-${ BRAND_NAME }-modtagere."
       ],
@@ -2733,6 +2774,9 @@
       ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
         "PGP/Inline er kun kompatibelt med simpelt tekstformat. Bemærk at ${ MAIL_APP_NAME } altid signerer krypterede beskeder."
+      ],
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        "PGP/MIME sender automatisk beskeden vha. den aktuelle skrivetilstand. Bemærk at ${ MAIL_APP_NAME } altid signerer krypterede beskeder."
       ],
       "Please enter the password to decrypt and view content.": [
         "Indtast venligst kodeordet for, at dekryptere og se indholdet."
@@ -2809,6 +2853,9 @@
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Vælg det e-mail-format, der som standard skal benyttes, når du sender en e-mail til denne e-mailadresse."
+      ],
+      "Select what you want to import from Google.": [
+        "Vælg, hvad du ønsker at overflytte fra Google."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Vælg, hvilke kalendere der skal importeres. Der oprettes en ny kalender for hver importeret kalender op til grænsen på 20 kalendere."
@@ -3603,6 +3650,11 @@
     "new_plans: action": {
       "Switch or add account": [
         "Skift eller tilføj konto"
+      ]
+    },
+    "new_plans: info": {
+      "Introducing Proton’s refreshed look.${ br }Many services, one mission. Welcome to an internet where privacy is the default.": [
+        "Vi præsenterer Proton's nye udseende.${ br }Mange tjenester, én mission. Velkommen til et internet, hvor privatlivsbeskyttelse er standard."
       ]
     },
     "new_plans: label": {

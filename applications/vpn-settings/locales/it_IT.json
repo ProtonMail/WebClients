@@ -318,7 +318,7 @@
         "Invia"
       ],
       "Support": [
-        "Supporto"
+        "Assistenza"
       ],
       "Top up": [
         "Ricarica"
@@ -388,6 +388,9 @@
       ],
       "View plans details": [
         "Visualizza i dettagli del piano"
+      ],
+      "What do I get?": [
+        "Cosa ottengo?"
       ],
       "Yes": [
         "Sì"
@@ -657,6 +660,17 @@
         "Formato calendario non supportato"
       ]
     },
+    "Calendar subscription not synced error; long version": {
+      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
+        "Il link al calendario non è accessibile al di fuori dell'ecosistema del fornitore del calendario."
+      ],
+      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
+        "Il collegamento al calendario temporaneamente non è accessibile. Si prega di verificare che il link dato dal fornitore del calendario sia ancora valido."
+      ],
+      "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
+        "Sono passate più di 12 ore dall'ultimo aggiornamento — Proton Calendar proverà ad aggiornare il calendario tra alcune ore."
+      ]
+    },
     "Checkout row": {
       "${ users } user": [
         "${ users } utente",
@@ -813,7 +827,7 @@
         "Bahamas"
       ],
       "Bahrain": [
-        "Bahrain"
+        "Bahrein"
       ],
       "Bangladesh": [
         "Bangladesh"
@@ -846,7 +860,7 @@
         "Bonaire, Sint Eustatius e Saba"
       ],
       "Bosnia and Herzegovina": [
-        "Bosnia ed Herzegovina"
+        "Bosnia ed Erzegovina"
       ],
       "Botswana": [
         "Botswana"
@@ -996,13 +1010,13 @@
         "Francia"
       ],
       "French Guiana": [
-        "Guiana Francese"
+        "Guyana Francese"
       ],
       "French Polynesia": [
         "Polinesia Francese"
       ],
       "French Southern Territories": [
-        "Terre Australi e Antartiche Francesi"
+        "Territori australi francesi"
       ],
       "Gabon": [
         "Gabon"
@@ -1032,7 +1046,7 @@
         "Grenada"
       ],
       "Guadeloupe": [
-        "Guadalupa"
+        "Guadalupe"
       ],
       "Guam": [
         "Guam"
@@ -1116,7 +1130,7 @@
         "Kazakistan"
       ],
       "Kenya": [
-        "Kenia"
+        "Kenya"
       ],
       "Kiribati": [
         "Kiribati"
@@ -1218,7 +1232,7 @@
         "Mozambico"
       ],
       "Myanmar": [
-        "Myanmar"
+        "Birmania"
       ],
       "Namibia": [
         "Namibia"
@@ -1284,7 +1298,7 @@
         "Papua Nuova Guinea"
       ],
       "Paraguay": [
-        "Paraguai"
+        "Paraguay"
       ],
       "Peru": [
         "Perù"
@@ -1302,7 +1316,7 @@
         "Portogallo"
       ],
       "Puerto Rico": [
-        "Portorico"
+        "Porto Rico"
       ],
       "Qatar": [
         "Qatar"
@@ -1503,7 +1517,7 @@
         "Isole Vergini Britanniche"
       ],
       "Virgin Islands, U.S.": [
-        "Isole Vergini Americane"
+        "Isole Vergini Americane."
       ],
       "Wallis and Futuna": [
         "Wallis e Futuna"
@@ -2338,14 +2352,23 @@
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a ${ VPN_APP_NAME } server.": [
         "Per proteggere la tua connessione Internet, scarica e installa l'applicazione ${ VPN_APP_NAME } per il tuo dispositivo e connettiti a un server ${ VPN_APP_NAME }."
       ],
-      "To use ${ toAppName }, please create an address.": [
-        "Per usare ${ toAppName }, sei pregato di creare un indirizzo."
-      ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Ricarica il tuo account con crediti che puoi utilizzare per sottoscrivere un nuovo piano o rinnovare il piano attuale. Si ottiene un credito per ogni ${ i18nCurrency } speso."
       ],
       "Tor": [
         "Tor"
+      ],
+      "Total email addresses": [
+        "Totale indirizzi email"
+      ],
+      "Total storage": [
+        "Spazio totale"
+      ],
+      "Total supported domains": [
+        "Totale domini supportati"
+      ],
+      "Total VPN connections": [
+        "Totale connessioni VPN"
       ],
       "Two-factor authentication adds an extra layer of security to your account in case your password is compromised.": [
         "L'autenticazione a due fattori aggiunge un ulteriore livello di sicurezza al tuo account nel caso in cui la password venga compromessa."
@@ -2503,8 +2526,8 @@
       "You'll stay signed in even after you close the browser.": [
         "Rimarrai connesso anche dopo aver chiuso il browser."
       ],
-      "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, please create an address.": [
-        "Il tuo account ${ BRAND_NAME } è associato a ${ externalEmailAddress }. Per usare ${ toAppName }, crea un indirizzo."
+      "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
+        "Il tuo account ${ BRAND_NAME } è associato a ${ externalEmailAddress }. Per usare ${ toAppName }, hai bisogno di un indirizzo ${ MAIL_APP_NAME }."
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
         "I tuoi account ${ VPN_APP_NAME } e ${ MAIL_APP_NAME } sono collegati. Per eliminarli entrambi, accedi a ${ loginLink } ed elimina il tuo account da lì."
@@ -3033,7 +3056,7 @@
         "Pagamento della fattura"
       ],
       "Privacy policy": [
-        "Informativa sulla privacy"
+        "Politica sulla Privacy"
       ],
       "Request an invite": [
         "Richiedi un invito"
@@ -3930,7 +3953,7 @@
     },
     "Recovery method": {
       "Email": [
-        "Posta elettronica"
+        "Email"
       ],
       "Phone number": [
         "Numero di telefono"
@@ -3967,7 +3990,7 @@
         "Nome visualizzato"
       ],
       "Email": [
-        "Posta elettronica"
+        "Email"
       ],
       "Username": [
         "Nome utente"
@@ -4262,9 +4285,6 @@
       "Add PayPal payment method": [
         "Aggiungi il metodo di pagamento PayPal"
       ],
-      "Address is available": [
-        "L'indirizzo è disponibile"
-      ],
       "Amount": [
         "Importo"
       ],
@@ -4316,8 +4336,8 @@
       "Congratulations on choosing privacy!": [
         "Congratulazioni per aver scelto la privacy!"
       ],
-      "Create a ${ mailAppName } address": [
-        "Crea un indirizzo ${ mailAppName }"
+      "Create a ${ MAIL_APP_NAME } address": [
+        "Crea un indirizzo ${ MAIL_APP_NAME }"
       ],
       "Create your ${ BRAND_NAME } Account": [
         "Crea il tuo account ${ BRAND_NAME }"
@@ -4353,7 +4373,7 @@
         "Disabilita l'autenticazione a due fattori"
       ],
       "Downgrade account": [
-        "Effettua il downgrade dell'account"
+        "Esegui il downgrade dell'account"
       ],
       "Download ${ VPN_APP_NAME }": [
         "Scarica ${ VPN_APP_NAME }"
@@ -4365,7 +4385,7 @@
         "Modifica carta di credito/debito"
       ],
       "Email": [
-        "Posta elettronica"
+        "Email"
       ],
       "Email subscriptions": [
         "Newsletter"
@@ -4564,6 +4584,9 @@
       ],
       "You already have a Proton account": [
         "Hai già un account Proton"
+      ],
+      "Your ${ MAIL_APP_NAME } address": [
+        "Il tuo indirizzo ${ MAIL_APP_NAME }"
       ],
       "Your current plan": [
         "Il tuo piano attuale"

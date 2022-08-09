@@ -226,10 +226,10 @@
       "I have a question": [
         "Ich habe eine Frage"
       ],
-      "import": [
+      "Import": [
         "Importieren"
       ],
-      "Import": [
+      "import": [
         "Importieren"
       ],
       "Import events": [
@@ -837,6 +837,9 @@
       "Calendar is syncing": [
         "Kalender wird synchronisiert"
       ],
+      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
+        "Der Kalender wird synchronisiert: Es kann einige Minuten dauern, bis alle Ereignisse angezeigt werden."
+      ],
       "Calendar is too big": [
         "Kalender ist zu groß"
       ],
@@ -854,6 +857,17 @@
       ],
       "Unsupported calendar format": [
         "Nicht unterstütztes Kalender-Format"
+      ]
+    },
+    "Calendar subscription not synced error; long version": {
+      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
+        "Der Kalender-Link ist von außerhalb des Ökosystems des Kalenderanbieters nicht zugänglich."
+      ],
+      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
+        "Auf den Kalenderlink kann vorübergehend nicht zugegriffen werden. Bitte überprüfe, ob der Link des Kalenderanbieters noch gültig ist."
+      ],
+      "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
+        "Seit der letzten Aktualisierung sind mehr als 12 Stunden vergangen — Proton Calendar versucht, den Kalender in einigen Stunden zu aktualisieren."
       ]
     },
     "Calendar view": {
@@ -2031,9 +2045,6 @@
       "A group with this name already exists": [
         "Eine Gruppe mit diesem Namen existiert bereits"
       ],
-      "A maximum of 10 notifications is allowed": [
-        "Maximal 10 Benachrichtigungen sind zulässig"
-      ],
       "Address primary private key not found": [
         "Adresse privater Hauptschlüssel nicht gefunden"
       ],
@@ -2074,6 +2085,9 @@
       "Deselect at least ${ calendarToFixCount } calendar or": [
         "Mindestens ${ calendarToFixCount } Kalender abwählen oder",
         "Mindestens ${ calendarToFixCount } Kalender abwählen oder"
+      ],
+      "Domain not available, try again later": [
+        "Domain nicht verfügbar. Bitte versuche es später noch einmal."
       ],
       "Email address disabled": [
         "E‐Mail‐Adresse deaktiviert"
@@ -3456,6 +3470,9 @@
       "All day": [
         "Ganztägig"
       ],
+      "All-day event notifications": [
+        "Benachrichtigungen zu ganztägigen Ereignissen"
+      ],
       "Attach screenshot(s)": [
         "Bildschirmfoto(s) anhängen"
       ],
@@ -3504,18 +3521,6 @@
       "Date and time": [
         "Datum und Zeit"
       ],
-      "Default email address": [
-        "Standard E-Mail-Adresse"
-      ],
-      "Default event duration": [
-        "Standarddauer für Termine"
-      ],
-      "Default full day notifications": [
-        "Standardbenachrichtigungen für ganztägige Termine"
-      ],
-      "Default notifications": [
-        "Standard-Benachrichtigungen"
-      ],
       "Delete": [
         "Löschen"
       ],
@@ -3545,6 +3550,12 @@
       ],
       "Ends": [
         "Endet"
+      ],
+      "Event duration": [
+        "Dauer des Ereignisses"
+      ],
+      "Event notifications": [
+        "Ereignisbenachrichtigungen"
       ],
       "Event title": [
         "Titel des Termins"
@@ -4444,6 +4455,9 @@
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "${ DRIVE_APP_NAME } ist aus der Beta-Phase heraus! Biete deinen Dateien die gleiche Sicherheit wie deinen E-Mails."
       ],
+      "Don't miss any events": [
+        "Verpassen Sie keine Ereignisse"
+      ],
       "Get up to 18 months of ${ planName } for free": [
         "Erhalte bis zu 18 Monate ${ planName } kostenlos"
       ],
@@ -4458,6 +4472,9 @@
       ],
       "With email notifications, you decide which events to be notified about and when.": [
         "Entscheide bei E-Mail-Benachrichtigungen, über welche Termine du wann informiert werden möchtest."
+      ],
+      "You can now add notifications to calendars you subscribed to.": [
+        "Es ist nun möglich, Benachrichtigungen zu abonnierten Kalendern hinzuzufügen."
       ]
     },
     "Storage": {
@@ -4537,6 +4554,9 @@
       ],
       "Calendar created": [
         "Kalender erstellt"
+      ],
+      "Calendar information updated": [
+        "Kalenderinformationen aktualisiert"
       ],
       "Calendar updated": [
         "Kalender aktualisiert"
@@ -4780,6 +4800,9 @@
       ],
       "Calendar alarm": [
         "Kalenderbenachrichtigung"
+      ],
+      "Calendar information": [
+        "Kalenderinformationen"
       ],
       "Change my answer": [
         "Meine Antwort ändern"

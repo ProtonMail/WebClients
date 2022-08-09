@@ -389,6 +389,9 @@
       "View plans details": [
         "Details zum Abonnement ansehen"
       ],
+      "What do I get?": [
+        "Was bekomme ich dafür?"
+      ],
       "Yes": [
         "Ja"
       ],
@@ -475,9 +478,6 @@
       ]
     },
     "Billing cycle option": {
-      "1 month": [
-        "1 Monat"
-      ],
       "12 months": [
         "12 Monate"
       ],
@@ -676,6 +676,9 @@
       "Calendar is syncing": [
         "Kalender wird synchronisiert"
       ],
+      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
+        "Der Kalender wird synchronisiert: Es kann einige Minuten dauern, bis alle Termine angezeigt werden."
+      ],
       "Calendar is too big": [
         "Kalender ist zu groß"
       ],
@@ -693,6 +696,17 @@
       ],
       "Unsupported calendar format": [
         "Nicht unterstütztes Kalender-Format"
+      ]
+    },
+    "Calendar subscription not synced error; long version": {
+      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
+        "Der Kalender-Link ist von außerhalb des Ökosystems des Kalenderanbieters nicht zugänglich."
+      ],
+      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
+        "Auf den Kalenderlink kann vorübergehend nicht zugegriffen werden. Bitte überprüfe, ob der Link des Kalenderanbieters noch gültig ist."
+      ],
+      "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
+        "Seit der letzten Aktualisierung sind mehr als 12 Stunden vergangen — Proton Calendar versucht, den Kalender in einigen Stunden zu aktualisieren."
       ]
     },
     "Checkout row": {
@@ -911,7 +925,7 @@
         "Burundi"
       ],
       "Cambodia": [
-        "Cambodia"
+        "Kambodscha"
       ],
       "Cameroon": [
         "Kamerun"
@@ -923,7 +937,7 @@
         "Kap Verde"
       ],
       "Cayman Islands": [
-        "Cayman Islands"
+        "Cayman-Inseln"
       ],
       "Central African Republic": [
         "Zentralafrikanische Republik"
@@ -992,7 +1006,7 @@
         "Dominikanische Republik"
       ],
       "Ecuador": [
-        "Ecuador"
+        "Ekuador"
       ],
       "Egypt": [
         "Ägypten"
@@ -1010,7 +1024,7 @@
         "Estland"
       ],
       "Eswatini": [
-        "Swasiland"
+        "Königreich Eswatini"
       ],
       "Ethiopia": [
         "Äthiopien"
@@ -1019,7 +1033,7 @@
         "Falklandinseln"
       ],
       "Faroe Islands": [
-        "Färöer"
+        "Färöer-Inseln"
       ],
       "Federated States of Micronesia": [
         "Föderierte Staaten von Mikronesien"
@@ -1040,7 +1054,7 @@
         "Französisch‐Polynesien"
       ],
       "French Southern Territories": [
-        "Französische Südgebiete"
+        "Französische Süd- und Antarktisgebiete"
       ],
       "Gabon": [
         "Gabun"
@@ -1373,7 +1387,7 @@
         "St. Martin (französischer Teil)"
       ],
       "Saint Pierre and Miquelon": [
-        "Saint‐Pierre und Miquelon"
+        "Saint-Pierre und Miquelon"
       ],
       "Saint Vincent and the Grenadines": [
         "St. Vincent und die Grenadinen"
@@ -1578,9 +1592,6 @@
       ]
     },
     "Cycle": {
-      "/month": [
-        "/Monat"
-      ],
       "/user per month": [
         "/Benutzer pro Monat"
       ]
@@ -1593,9 +1604,6 @@
     "Downgrade account reason": {
       "Bugs or quality issue": [
         "Fehler oder Qualitätsprobleme"
-      ],
-      "I use a different Proton account": [
-        "Ich verwende ein anderes Proton-Konto"
       ],
       "Missing feature(s)": [
         "Fehlende Funktion(en)"
@@ -2091,9 +2099,6 @@
       "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
         "Bei Visa und MasterCard — die 3-stellige Ziffer auf der Rückseite deiner Karte. Bei American Express — die 4-stellige Ziffer auf der Vorderseite deiner Karte."
       ],
-      "Free": [
-        "Kostenlos"
-      ],
       "Free up some space or add more storage space.": [
         "Gib etwas Platz frei oder füge zusätzlichen Speicherplatz hinzu."
       ],
@@ -2376,14 +2381,23 @@
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a ${ VPN_APP_NAME } server.": [
         "Um deine Internetverbindung zu schützen, lade die App ${ VPN_APP_NAME } für dein Gerät herunter, installiere diese und verbinde dich mit einem ${ VPN_APP_NAME }-Server."
       ],
-      "To use ${ toAppName }, please create an address.": [
-        "Erstelle bitte eine E-Mail-Adresse, um ${ toAppName } zu verwenden."
-      ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Laden Sie Ihr Konto mit Guthaben auf, mit dem Sie einen neues Paket abonnieren oder Ihr aktuelles Paket verlängern können. Sie erhalten ein Guthaben für jeden ausgegebenen ${ i18nCurrency }."
       ],
       "Tor": [
         "Tor"
+      ],
+      "Total email addresses": [
+        "Anzahl E-Mail-Adressen"
+      ],
+      "Total storage": [
+        "Gesamter Speicherplatz"
+      ],
+      "Total supported domains": [
+        "Anzahl unterstützter Domains"
+      ],
+      "Total VPN connections": [
+        "Anzahl VPN‐Verbindungen"
       ],
       "Two-factor authentication adds an extra layer of security to your account in case your password is compromised.": [
         "Die Zwei-Faktor-Authentifizierung fügt deinem Konto eine zusätzliche Sicherheitsebene hinzu, falls dein Passwort kompromittiert wird."
@@ -2541,8 +2555,8 @@
       "You'll stay signed in even after you close the browser.": [
         "Du bleibst angemeldet, auch wenn du den Browser schließt."
       ],
-      "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, please create an address.": [
-        "Dein ${ BRAND_NAME }-Konto ist mit ${ externalEmailAddress } verknüpft. Erstelle bitte eine E-Mail-Adresse, um ${ toAppName } zu verwenden."
+      "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
+        "Dein ${ BRAND_NAME }-Konto ist mit ${ externalEmailAddress } verknüpft. Um ${ toAppName } zu verwenden, benötigst du eine ${ MAIL_APP_NAME }-E-Mail-Adresse."
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
         "Deine ${ VPN_APP_NAME } und ${ MAIL_APP_NAME } Konten sind miteinander verknüpft. Um beide zu löschen, melde dich bitte unter ${ loginLink } an und lösche dort dein Konto."
@@ -2705,9 +2719,6 @@
       "Attach screenshot(s)": [
         "Bildschirmfoto(s) anhängen"
       ],
-      "Billing cycle": [
-        "Abrechnungszeitraum"
-      ],
       "Block malware only": [
         "Nur Malware sperren"
       ],
@@ -2743,9 +2754,6 @@
       ],
       "Choose a name for the generated certificate file": [
         "Wähle einen Namen für die erzeugte Zertifikatsdatei"
-      ],
-      "Code": [
-        "Code"
       ],
       "Code is 6 digits without spaces": [
         "Der Code ist 6-stellig ohne Leerzeichen"
@@ -2791,9 +2799,6 @@
       ],
       "Default language": [
         "Standardsprache"
-      ],
-      "Delete": [
-        "Löschen"
       ],
       "Device/certificate name": [
         "Name des Geräts/Zertifikats"
@@ -2852,9 +2857,6 @@
       "Mailbox password": [
         "Mailbox‐Passwort"
       ],
-      "Moderate NAT": [
-        "Moderates NAT"
-      ],
       "Name": [
         "Name"
       ],
@@ -2872,9 +2874,6 @@
       ],
       "No filter": [
         "Kein Filter"
-      ],
-      "Non-standard ports": [
-        "Nicht standardisierte Ports"
       ],
       "Old login password": [
         "Altes Anmeldepasswort"
@@ -2933,9 +2932,6 @@
       "Recovery email address": [
         "Wiederherstellungs-E-Mail-Adresse"
       ],
-      "Recovery phone number": [
-        "Rufnummer für die Wiederherstellung"
-      ],
       "Recovery phrase": [
         "Wiederherstellungsphrase"
       ],
@@ -2977,9 +2973,6 @@
       ],
       "Verification code": [
         "Verifizierungscode"
-      ],
-      "VPN Accelerator": [
-        "VPN Accelerator"
       ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Wir bedauern es sehr, dass du ProtonMail nicht mehr nutzen möchtest. Bitte teile uns deine Gründe mit, damit wir uns verbessern können."
@@ -3046,9 +3039,6 @@
       "click here": [
         "Hier klicken"
       ],
-      "Common sign in issues": [
-        "Häufige Probleme bei der Anmeldung"
-      ],
       "Common sign up issues": [
         "Häufige Probleme bei der Registrierung"
       ],
@@ -3061,26 +3051,14 @@
       "Learn more": [
         "Mehr erfahren"
       ],
-      "Need help?": [
-        "Benötigst du Hilfe?"
-      ],
       "Not activated": [
         "Nicht aktiviert"
       ],
       "Pay invoice": [
         "Rechnung bezahlen"
       ],
-      "Privacy policy": [
-        "Datenschutzrichtlinien"
-      ],
       "Request an invite": [
         "Einladung anfordern"
-      ],
-      "Reset password": [
-        "Passwort zurücksetzen"
-      ],
-      "Sign in": [
-        "Anmelden"
       ],
       "Terms": [
         "Geschäftsbedingungen"
@@ -3348,9 +3326,6 @@
       "NetShield malware and ad-blocker": [
         "NetShield-Malware- und Werbe-Blocker"
       ],
-      "P2P/BitTorrent": [
-        "P2P/BitTorrent"
-      ],
       "Password-protected Emails": [
         "Passwortgeschützte E-Mails"
       ],
@@ -3428,9 +3403,6 @@
       ]
     },
     "new_plans: heading": {
-      "Support": [
-        "Support"
-      ],
       "Team management": [
         "Teamverwaltung"
       ]
@@ -3941,9 +3913,6 @@
       ]
     },
     "Recovery Email": {
-      "Cancel": [
-        "Abbrechen"
-      ],
       "Email address has been verified.": [
         "Die E-Mail-Adresse wurde verifiziert."
       ],
@@ -3959,28 +3928,16 @@
       "Verify recovery email?": [
         "Wiederherstellungs-E-Mail-Adresse verifizieren?"
       ],
-      "Verify with email": [
-        "Mit E‐Mail bestätigen"
-      ],
       "Verifying your email address increases your account security and allows additional options for recovery.": [
         "Das verifizieren deiner E-Mail-Adresse erhöht die Sicherheit deines Kontos und bietet zusätzliche Möglichkeiten zur Wiederherstellung."
       ]
     },
     "Recovery method": {
-      "Email": [
-        "E-Mail-Adresse"
-      ],
-      "Phone number": [
-        "Rufnummer"
-      ],
       "Phrase": [
         "Phrase"
       ]
     },
     "Recovery Phone": {
-      "Cancel": [
-        "Abbrechen"
-      ],
       "Phone number has been verified.": [
         "Rufnummer wurde verifiziert."
       ],
@@ -3989,9 +3946,6 @@
       ],
       "Verify by SMS": [
         "Per SMS verifizieren"
-      ],
-      "Verify now": [
-        "Jetzt verifizieren"
       ],
       "Verify recovery phone?": [
         "Wiederherstellungs-Rufnummer verifizieren?"
@@ -4003,12 +3957,6 @@
     "Signup label": {
       "Display name": [
         "Anzeigename"
-      ],
-      "Email": [
-        "E-Mail-Adresse"
-      ],
-      "Username": [
-        "Benutzername"
       ]
     },
     "Spotlight": {
@@ -4061,10 +4009,6 @@
       "${ n } high-speed VPN connection per user": [
         "${ n } Hochgeschwindigkeits-VPN-Verbindung/Benutzer",
         "${ n } Hochgeschwindigkeits-VPN-Verbindungen/Benutzer"
-      ],
-      "${ n } VPN connection": [
-        "${ n } VPN-Verbindung",
-        "${ n } VPN-Verbindungen"
       ],
       "${ n } VPN connection per user": [
         "${ n } VPN-Verbindungen/Benutzer",
@@ -4204,17 +4148,6 @@
     "Suffix": {
       "/month": [
         "/Monat"
-      ],
-      "/user per month": [
-        "/Benutzer pro Monat"
-      ]
-    },
-    "Suffix for price": {
-      "/month": [
-        "/Monat"
-      ],
-      "per month": [
-        "pro Monat"
       ]
     },
     "Tab subscription modal": {
@@ -4279,9 +4212,6 @@
       "4. Select a server to connect to": [
         "4. Wähle einen Server aus, mit dem du dich verbinden möchtest"
       ],
-      "Account": [
-        "Konto"
-      ],
       "Account suspended": [
         "Konto gesperrt"
       ],
@@ -4299,9 +4229,6 @@
       ],
       "Add PayPal payment method": [
         "PayPal als Zahlungsmethode hinzufügen"
-      ],
-      "Address is available": [
-        "E-Mail-Adresse verfügbar"
       ],
       "Amount": [
         "Betrag"
@@ -4354,8 +4281,8 @@
       "Congratulations on choosing privacy!": [
         "Herzlichen Glückwunsch zur Entscheidung für den Datenschutz!"
       ],
-      "Create a ${ mailAppName } address": [
-        "Erstelle eine ${ mailAppName }-E-Mail-Adresse"
+      "Create a ${ MAIL_APP_NAME } address": [
+        "Erstelle eine ${ MAIL_APP_NAME }-E-Mail-Adresse"
       ],
       "Create your ${ BRAND_NAME } Account": [
         "Erstelle dein ${ BRAND_NAME }-Konto"
@@ -4375,9 +4302,6 @@
       "Date": [
         "Datum"
       ],
-      "Delete": [
-        "Löschen"
-      ],
       "Delete account": [
         "Konto löschen"
       ],
@@ -4390,9 +4314,6 @@
       "Disable two-factor authentication": [
         "Zwei‐Faktor‐Authentifizierung deaktivieren"
       ],
-      "Downgrade account": [
-        "Konto herabstufen"
-      ],
       "Download ${ VPN_APP_NAME }": [
         "${ VPN_APP_NAME } herunterladen"
       ],
@@ -4402,9 +4323,6 @@
       "Edit credit/debit card": [
         "Kredit-/Debitkarte bearbeiten"
       ],
-      "Email": [
-        "E-Mail-Adresse"
-      ],
       "Email subscriptions": [
         "E‐Mail‐Abonnements"
       ],
@@ -4413,9 +4331,6 @@
       ],
       "Find email or username": [
         "E-Mail-Adresse oder Benutzername finden"
-      ],
-      "General": [
-        "Allgemein"
       ],
       "Get ${ vpnPlus } to access all servers": [
         "Hol dir ${ vpnPlus }, um Zugriff auf alle Server zu erhalten"
@@ -4434,9 +4349,6 @@
       ],
       "Invoices": [
         "Rechnungen"
-      ],
-      "Language": [
-        "Sprache"
       ],
       "Login password": [
         "Anmeldepasswort"
@@ -4458,9 +4370,6 @@
       ],
       "Open pagination": [
         "Seitennummerierung öffnen"
-      ],
-      "OpenVPN / IKEv2 username": [
-        "OpenVPN‐/IKEv2‐Benutzername"
       ],
       "OpenVPN configuration files": [
         "OpenVPN-Konfigurationsdateien"
@@ -4507,20 +4416,8 @@
       "Processing...": [
         "Wird verarbeitet …"
       ],
-      "Recommended": [
-        "Empfohlen"
-      ],
       "Recovery": [
         "Wiederherstellung"
-      ],
-      "Report a problem": [
-        "Ein Problem melden"
-      ],
-      "Request new code": [
-        "Neuen Code anfordern"
-      ],
-      "Reset password": [
-        "Passwort zurücksetzen"
       ],
       "Reset password?": [
         "Passwort zurücksetzen?"
@@ -4543,12 +4440,6 @@
       "Set up two-factor authentication": [
         "Zwei‐Faktor‐Authentifizierung einrichten"
       ],
-      "Settings": [
-        "Einstellungen"
-      ],
-      "Sign in": [
-        "Anmelden"
-      ],
       "Sign in again to continue": [
         "Melde dich erneut an, um fortzufahren"
       ],
@@ -4570,9 +4461,6 @@
       "TV log in": [
         "TV-Anmeldung"
       ],
-      "Two-factor authentication": [
-        "Zwei‐Faktor‐Authentifizierung"
-      ],
       "Type": [
         "Typ"
       ],
@@ -4582,14 +4470,8 @@
       "Unsupported browser": [
         "Nicht unterstützter Browser"
       ],
-      "Username": [
-        "Benutzername"
-      ],
       "Verification": [
         "Verifizierung"
-      ],
-      "Warning": [
-        "Warnung"
       ],
       "Warning!": [
         "Warnung!"
@@ -4602,6 +4484,9 @@
       ],
       "You already have a Proton account": [
         "Du verfügst bereits über ein Proton-Konto"
+      ],
+      "Your ${ MAIL_APP_NAME } address": [
+        "Deine ${ MAIL_APP_NAME } E-Mail-Adresse"
       ],
       "Your current plan": [
         "Dein aktuelles Abonnement"

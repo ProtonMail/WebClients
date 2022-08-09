@@ -224,10 +224,10 @@
       "I have a question": [
         "サポートに質問"
       ],
-      "import": [
+      "Import": [
         "インポート"
       ],
-      "Import": [
+      "import": [
         "インポート"
       ],
       "Import events": [
@@ -830,6 +830,14 @@
     "Calendar view selector": {
       "Change time range to": [
         "時間範囲の変更"
+      ]
+    },
+    "Collapsible tooltip": {
+      "Collapse": [
+        "作成"
+      ],
+      "Expand": [
+        "展開"
       ]
     },
     "colon": {
@@ -1809,17 +1817,23 @@
       ]
     },
     "Description": {
+      "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
+        "連絡先を復号しています… これには数分かかります。完了するとエクスポートされたすべての連絡先がダウンロードできるようになります。"
+      ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "連絡先を削除しています... これには数分かかる場合があります。処理が完了したらこのモーダルを閉じることができます。"
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "連絡先の暗号化とインポート... これには数分かかることがあります。\n処理が完了すると、このモーダルを閉じることができます。"
       ],
+      "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
+        "インポートしようとしている連絡先リストにはいくつかのグループが含まれています。どのようにグループのインポートするか確認してください。"
+      ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "連絡先の統合しています... これには数分かかる場合があります。処理が完了したらこのモーダルを閉じることができます。"
       ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "ファイルの最大サイズは ${ MAX_IMPORT_FILE_SIZE_STRING } で、連絡先は ${ MAX_IMPORT_CONTACTS_STRING } までです。 ファイルが大きい場合は、それを小さいファイルに分割してください。"
+        "ファイルの最大サイズは ${ MAX_IMPORT_FILE_SIZE_STRING } で、連絡先は ${ MAX_IMPORT_CONTACTS_STRING } までです。ファイルが大きい場合は、それを小さいファイルに分割してください。"
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "ドラッグアンドドロップを使って連絡先の優先順位を決めてください。チェックを解除するとこの連絡先は結合されません。"
@@ -1828,7 +1842,7 @@
         "iCal 形式 (ICS ファイル) をインポートできます。インポートするファイルは ${ MAX_IMPORT_FILE_SIZE_STRING } 以下でかつ、予定の数は ${ MAX_IMPORT_EVENTS_STRING } 件以下である必要があります。もし、インポートしようとしているファイルが大きすぎる場合、小さなファイルに分割してインポートしてください。"
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
-        "結合または保持する必要のない連絡先を削除するためにマークができます。 削除はマージボタンがクリックされた後にのみ行われます"
+        "結合または保持する必要のない連絡先を削除するためにマークできます。削除はマージボタンがクリックされた後にのみ行われます"
       ]
     },
     "Disabled calendar": {
@@ -1994,6 +2008,9 @@
       ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
         "${ calendarToFixCount } 件のカレンダーの選択を解除するか"
+      ],
+      "Domain not available, try again later": [
+        "ドメインが利用できません。再度お試しください。"
       ],
       "Email address disabled": [
         "メールアドレスが無効です"
@@ -2718,6 +2735,9 @@
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "未払いの請求があるためアクセスが制限されています。管理者に問い合わせてください。"
       ],
+      "Added and removed participants will be notified.": [
+        "追加したり削除した参加者は通知されます。"
+      ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "信頼された鍵でのアドレス検証がこのアドレスに対して有効になっています。このアドレス宛にメッセージを送信するには、最初に送信に使用する公開鍵を信頼する必要があります。"
       ],
@@ -2729,6 +2749,9 @@
       ],
       "An invitation will be sent to added participants.": [
         "追加した参加者に招待状を送信します。"
+      ],
+      "An invitation will be sent to the event participants.": [
+        "イベントの参加者に招待状を送信します。"
       ],
       "and": [
         "と"
@@ -2949,6 +2972,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "ほとんどの問題は、ページを更新するか、 ${ link } することで解決できます。"
       ],
+      "Removed participants will be notified.": [
+        "削除した参加者は通知されます。"
+      ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "このメールアドレスにメールを送信する際に既定で使用するメールの形式を選択できます。"
       ],
@@ -3126,6 +3152,9 @@
       "Your email will only be used for this one-time verification.": [
         "メールアドレスは、この一度限りの認証にのみ使用されます。"
       ],
+      "Your events will be encrypted and then saved.": [
+        "あなたのイベントは暗号化して保存されます。"
+      ],
       "Your phone number will only be used for this one-time verification.": [
         "電話番号は、この一度限りの認証にのみ使用されます。"
       ],
@@ -3232,18 +3261,6 @@
       ],
       "Date and time": [
         "日付と時刻"
-      ],
-      "Default email address": [
-        "既定のメールアドレス"
-      ],
-      "Default event duration": [
-        "既定の予定の長さ"
-      ],
-      "Default full day notifications": [
-        "終日の予定の既定の通知"
-      ],
-      "Default notifications": [
-        "既定の通知"
       ],
       "Delete": [
         "削除"
@@ -3754,6 +3771,14 @@
         " at"
       ]
     },
+    "Notification type": {
+      "email": [
+        "メール"
+      ],
+      "notification": [
+        "通知"
+      ]
+    },
     "Notification when": {
       "at time of event": [
         "イベントの時間"
@@ -3940,6 +3965,21 @@
     "Participant name": {
       "You": [
         "あなた"
+      ]
+    },
+    "Participants collapse button label": {
+      "Collapse participants list": [
+        "参加者一覧を縮小"
+      ]
+    },
+    "Participants expand button label": {
+      "Expand participants list": [
+        "参加者一覧を展開"
+      ]
+    },
+    "Personal calendar limit reached modal body": {
+      "Unable to create more calendars. You have reached the maximum of personal calendars within your plan.": [
+        "これ以上のカレンダーを作成できません。このプランで作成できる個人用カレンダーの最大数に達しています。"
       ]
     },
     "PGP key encryption warning": {
@@ -4158,6 +4198,11 @@
         "カレンダーの購読は、現在利用できません。"
       ]
     },
+    "Subscribed calendar limit reached modal body": {
+      "Unable to add more calendars. You have reached the maximum of subscribed calendars within your plan.": [
+        "これ以上のカレンダーを追加できません。このプランで追加できる購読済みカレンダーの最大数に達しています。"
+      ]
+    },
     "Subscribed calendar URL length warning": {
       "URL is too long": [
         "URL が長すぎます"
@@ -4173,6 +4218,12 @@
       "All events updated": [
         "すべての予定が更新されました"
       ],
+      "Answer sent and all events deleted": [
+        "回答を送信し、すべてのイベントを削除しました"
+      ],
+      "Answer sent and event deleted": [
+        "回答を送信し、イベントを削除しました"
+      ],
       "Bug reported": [
         "バグの報告が送信されました。"
       ],
@@ -4181,6 +4232,9 @@
       ],
       "Calendar created": [
         "カレンダーが作成されました。"
+      ],
+      "Calendar information updated": [
+        "カレンダーの情報が更新されました"
       ],
       "Calendar updated": [
         "カレンダーが更新されました。"
@@ -4223,6 +4277,9 @@
       ],
       "Future events updated": [
         "将来の予定が更新されました。"
+      ],
+      "Invitation sent and events created": [
+        "招待を送信し、イベントを作成しました"
       ],
       "Phone number copied to clipboard": [
         "電話番号がクリップボードにコピーされました。"
@@ -4339,7 +4396,7 @@
         "アカウントが停止されました"
       ],
       "Add another notification to remind you of this event": [
-        "このイベントを思い出させるために、別の通知を追加"
+        "このイベントをリマインドするために、別の通知を追加"
       ],
       "Add contact group name": [
         "連絡先グループの名前を追加"
@@ -4377,8 +4434,14 @@
       "Calendar alarm": [
         "カレンダーアラーム"
       ],
+      "Calendar information": [
+        "カレンダーの情報"
+      ],
       "Change my answer": [
         "回答を変更"
+      ],
+      "Choose how often this event repeats": [
+        "このイベントの頻度を選択"
       ],
       "Clearing data": [
         "データをクリアしています"
@@ -4682,6 +4745,9 @@
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "暗号化や署名の際に使用されるPGPの方式を選択してください。PGP/Inlineはプレーンテキストのメッセージでしか使用できない事に注意してください。"
+      ],
+      "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
+        "システムのサブフォルダーは ${ MAIL_APP_NAME } のそれそれのフォルダーとして表示されます"
       ],
       "The import will start with the most recent messages.": [
         "インポートは新しいメッセージから始まります。"

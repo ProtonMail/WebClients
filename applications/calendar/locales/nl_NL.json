@@ -226,11 +226,11 @@
       "I have a question": [
         "Ik heb een vraag"
       ],
-      "import": [
-        "importeren"
-      ],
       "Import": [
         "Importeren"
+      ],
+      "import": [
+        "importeren"
       ],
       "Import events": [
         "Afspraken importeren"
@@ -798,6 +798,9 @@
       ],
       "Calendar is syncing": [
         "De agenda wordt gesynchroniseerd"
+      ],
+      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
+        "Agenda is aan het synchroniseren: het kan enkele minuten duren voordat alle afspraken verschijnen."
       ],
       "Calendar is too big": [
         "De agenda is te groot"
@@ -1993,9 +1996,6 @@
       "A group with this name already exists": [
         "Er bestaat al een groep met deze naam"
       ],
-      "A maximum of 10 notifications is allowed": [
-        "Er zijn maximaal 10 meldingen toegestaan"
-      ],
       "Address primary private key not found": [
         "Primaire adressleutel is niet gevonden"
       ],
@@ -2036,6 +2036,9 @@
       "Deselect at least ${ calendarToFixCount } calendar or": [
         "Ten minste ${ calendarToFixCount } agenda deselecteren of",
         "Ten minste ${ calendarToFixCount } agenda's deselecteren of"
+      ],
+      "Domain not available, try again later": [
+        "Domein niet beschikbaar, probeer het later opnieuw"
       ],
       "Email address disabled": [
         "E-mailadres uitgeschakeld"
@@ -3466,18 +3469,6 @@
       "Date and time": [
         "Datum en tijd"
       ],
-      "Default email address": [
-        "Standaard e-mailadres"
-      ],
-      "Default event duration": [
-        "Standaard afspraakduur"
-      ],
-      "Default full day notifications": [
-        "Standaardmeldingen volledige dag"
-      ],
-      "Default notifications": [
-        "Standaardmeldingen"
-      ],
       "Delete": [
         "Verwijderen"
       ],
@@ -3507,6 +3498,12 @@
       ],
       "Ends": [
         "Eindigt"
+      ],
+      "Event duration": [
+        "Duur van de afspraak"
+      ],
+      "Event notifications": [
+        "Afspraakmeldingen"
       ],
       "Event title": [
         "Afspraak titel"
@@ -4406,6 +4403,9 @@
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "${ DRIVE_APP_NAME } is uit de bèta! Geef uw bestanden dezelfde beveiliging als uw e-mails."
       ],
+      "Don't miss any events": [
+        "Mis geen afspraken"
+      ],
       "Get up to 18 months of ${ planName } for free": [
         "Krijg tot 18 maanden ${ planName } gratis"
       ],
@@ -4420,6 +4420,9 @@
       ],
       "With email notifications, you decide which events to be notified about and when.": [
         "Met e-mailmeldingen, beslist u zelf over welke afspraken u een melding ontvangt en wanneer."
+      ],
+      "You can now add notifications to calendars you subscribed to.": [
+        "Je kan nu meldingen toevoegen aan agenda's waarop je geabonneerd bent."
       ]
     },
     "Storage": {
