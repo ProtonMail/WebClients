@@ -419,11 +419,11 @@
       "Images will be loaded without a proxy": [
         "Изображения будут загружаться без прокси-сервера"
       ],
-      "import": [
-        "импорт"
-      ],
       "Import": [
         "Импортировать"
+      ],
+      "import": [
+        "импорт"
       ],
       "Import from .csv or vCard": [
         "Импорт из .csv или vCard"
@@ -1591,6 +1591,9 @@
       "Calendar is syncing": [
         "Календарь синхронизируется"
       ],
+      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
+        "Календарь синхронизируется: может понадобиться несколько минут, чтобы показать все события."
+      ],
       "Calendar is too big": [
         "Календарь слишком большой"
       ],
@@ -1608,6 +1611,17 @@
       ],
       "Unsupported calendar format": [
         "Неподдерживаемый формат календаря"
+      ]
+    },
+    "Calendar subscription not synced error; long version": {
+      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
+        "Ссылка на календарь недоступна вне экосистемы, в которой он был создан."
+      ],
+      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
+        "Ссылка на календарь временно недоступна. Пожалуйста, проверьте, что ссылка, полученная от поставщика календаря, все еще действительна."
+      ],
+      "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
+        "С прошлого обновления прошло больше 12 часов — Proton Calendar попробует обновить календарь через несколько часов."
       ]
     },
     "Calendar widget banner": {
@@ -2983,8 +2997,8 @@
       "A group with this name already exists": [
         "Группа с таким именем уже существует"
       ],
-      "A problem occurred, please try again": [
-        "Возникла проблема. Попробуйте еще раз."
+      "A problem occurred, please try again.": [
+        "Возникла проблема, попробуйте еще раз."
       ],
       "Address primary private key not found": [
         "Основной закрытый ключ для адреса не найден"
@@ -3045,6 +3059,9 @@
         "Отмените выбор по крайней мере ${ calendarToFixCount } календарей или",
         "Отмените выбор по крайней мере ${ calendarToFixCount } календарей или",
         "Отмените выбор по крайней мере ${ calendarToFixCount } календаря(ей) или"
+      ],
+      "Domain not available, try again later": [
+        "Домен недоступен, повторите попытку позже"
       ],
       "Draft could not be saved. Try again.": [
         "Черновик не сохранился. Попробуйте еще раз."
@@ -3169,8 +3186,8 @@
       "Passwords do not match": [
         "Пароли не совпадают"
       ],
-      "Please activate your content search again": [
-        "Активируйте поиск по содержимому еще раз"
+      "Please activate your search again": [
+        "Активируйте поиск снова"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Пожалуйста, исправьте выделенный конфликт, чтобы продолжить.",
@@ -3240,6 +3257,9 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Что-то пошло не так. Пожалуйста ${ refresh } чтобы продолжить. Если вы все еще видите сообщение об ошибке, пожалуйста свяжитесь нашей ${ supportTeam }."
+      ],
+      "Something went wrong, please try again": [
+        "Что-то пошло не так, пожалуйста, попробуйте еще раз"
       ],
       "Sorry, Proton can't decrypt your message. Please check that all your keys are active.": [
         "Извините, Proton не может расшифровать ваше сообщение. Убедитесь, что все ваши ключи активны."
@@ -3639,6 +3659,9 @@
     "Filter Actions": {
       "Archive": [
         "Архив"
+      ],
+      "Do not move": [
+        "Не перемещать"
       ],
       "Inbox": [
         "Входящие"
@@ -4310,6 +4333,12 @@
       "Confirm phishing report": [
         "Подтвердить жалобу на фишинг"
       ],
+      "Content search of the entire inbox is available for ${ paidPlansButton }.": [
+        "Контентный поиск по всей папке входящих сообщений доступен за ${ paidPlansButton }."
+      ],
+      "Content: ": [
+        "Content: "
+      ],
       "Continue with ${ planName }": [
         "Продолжить с ${ planName }"
       ],
@@ -4382,11 +4411,8 @@
       "Don't forget to share the password with the recipient": [
         "Не забудьте сообщить свой пароль получателю"
       ],
-      "Download our mobile application from your favorite app store to communicate securely on-the-go.": [
-        "Скачайте наше мобильное приложение из предпочитаемого магазина, чтобы общаться безопасно, где бы вы ни были."
-      ],
-      "Downloading message ${ esProgress } out of ${ totalProgressToShow }": [
-        "Скачивание сообщения ${ esProgress } из ${ totalProgressToShow }"
+      "Downloading message ${ currentProgress } out of ${ totalProgress }": [
+        "Загрузка сообщения ${ currentProgress } из ${ totalProgress }"
       ],
       "Draft": [
         "Черновик"
@@ -4441,6 +4467,9 @@
       ],
       "Encrypt message": [
         "Зашифровать сообщение"
+      ],
+      "End of message content search": [
+        "Включить поиск содержимого сообщений"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Введите код подтверждения, отправленный на ${ destinationText }."
@@ -4712,6 +4741,9 @@
       "No results found": [
         "Результаты не найдены"
       ],
+      "No results found in the past 30 days, searching the rest of your inbox": [
+        "Не найдено результатов за последние 30 дней, поиск по остальной части вашего почтового ящика"
+      ],
       "No trackers found, but some images could not be loaded with tracking protection": [
         "Трекеры не найдены, но некоторые изображения не могут быть загружены при использовании защиты от отслеживания"
       ],
@@ -4972,6 +5004,9 @@
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
         "Это действие скачает все сообщения, чтобы их можно было искать локально. Очистка данных браузера или выход из системы отключат эту настройку."
+      ],
+      "This action will download the most recent messages so they can be searched locally. Clearing your browser data will disable this option.": [
+        "Это действие загрузит последние сообщения, чтобы их можно было искать локально. Очистка данных браузера отключит эту опцию."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Этот адрес отключён. Чтобы иметь возможность отправки на этот адрес, сначала он должен быть включён его владельцем."
@@ -6169,6 +6204,9 @@
       ],
       "Outbox": [
         "Исходящие"
+      ],
+      "paid plans": [
+        "платные тарифы"
       ],
       "Pay invoice": [
         "Оплатить счёт"
@@ -7744,7 +7782,7 @@
         "Макет почтового ящика"
       ],
       "Mark as read": [
-        "Отметить как прочитанное"
+        "Отметить прочитанным"
       ],
       "Mark as unread": [
         "Отметить как непрочитанное"
@@ -7999,6 +8037,9 @@
       "Encrypted data with verified digital signature": [
         "Зашифрованные данные с подтверждённой цифровой подписью"
       ],
+      "For messages older than 30 days, only the subject line and recipient list will be searched": [
+        "Для сообщений старше 30 дней поиск будет осуществляться только в теме и списке получателей."
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Выберите схему PGP, которая будет применяться при подписи или шифровании для пользователя. Учтите, что PGP/Inline принудительно устанавливает формат сообщений на \"простой текст\""
       ],
@@ -8007,9 +8048,6 @@
       ],
       "The import will start with the most recent messages.": [
         "Импорт начнется с самых последних сообщений."
-      ],
-      "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "Это действие скачает все сообщения, чтобы их можно было искать локально. Очистка данных браузера или выход из системы отключат эту настройку."
       ],
       "This feature is only available for paid users": [
         "Эта функция доступна только пользователям с платными тарифами"

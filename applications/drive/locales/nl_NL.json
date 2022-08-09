@@ -286,11 +286,11 @@
       "I have a question": [
         "Ik heb een vraag"
       ],
-      "import": [
-        "importeren"
-      ],
       "Import": [
         "Importeren"
+      ],
+      "import": [
+        "importeren"
       ],
       "Import from .csv or vCard": [
         "Importeer vanuit .csv of vCard"
@@ -763,6 +763,9 @@
       "Calendar is syncing": [
         "De agenda wordt gesynchroniseerd"
       ],
+      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
+        "Agenda is aan het synchroniseren: het kan enkele minuten duren voordat alle activiteiten verschijnen."
+      ],
       "Calendar is too big": [
         "De agenda is te groot"
       ],
@@ -780,6 +783,17 @@
       ],
       "Unsupported calendar format": [
         "Niet-ondersteunde agenda-indeling"
+      ]
+    },
+    "Calendar subscription not synced error; long version": {
+      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
+        "Agendalink is niet toegankelijk van buiten de agendaprovider's ecosysteem."
+      ],
+      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
+        "Agendalink is tijdelijk ontoegankelijk. Verifieer dat de link van de agendaprovider nog steeds geldig is."
+      ],
+      "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
+        "Meer dan 12 uur geleden sinds de laatste update — Proton Calendar probeert de agenda over enkele uren te updaten."
       ]
     },
     "Collapsible tooltip": {
@@ -1770,8 +1784,8 @@
       "A group with this name already exists": [
         "Er bestaat al een groep met deze naam"
       ],
-      "A problem occurred, please try again": [
-        "Er is een probleem opgetreden, probeer het opnieuw"
+      "A problem occurred, please try again.": [
+        "Er is een probleem opgetreden, probeer het opnieuw."
       ],
       "Authentication canceled.": [
         "Authenticatie geannuleerd."
@@ -1801,6 +1815,9 @@
       "Deselect at least ${ calendarToFixCount } calendar or": [
         "Ten minste ${ calendarToFixCount } agenda deselecteren of",
         "Ten minste ${ calendarToFixCount } agenda's deselecteren of"
+      ],
+      "Domain not available, try again later": [
+        "Domein niet beschikbaar, probeer het later opnieuw"
       ],
       "Email address invalid": [
         "E-mailadres ongeldig"
@@ -1883,8 +1900,8 @@
       "Passwords do not match": [
         "Wachtwoorden komen niet overeen"
       ],
-      "Please activate your content search again": [
-        "Activeer het zoeken naar inhoud opnieuw"
+      "Please activate your search again": [
+        "Heractiveer uw zoekopdracht opnieuw alsjeblieft"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Los het gemarkeerde conflict op om verder te gaan.",

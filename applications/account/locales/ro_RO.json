@@ -292,6 +292,9 @@
       "Download all configurations": [
         "Descărcare toate configurațiile"
       ],
+      "Download ICS": [
+        "Descărcare ICS"
+      ],
       "Download recovery file": [
         "Descărcare fișier de recuperare"
       ],
@@ -402,6 +405,9 @@
       ],
       "Import emails": [
         "Importare mesaje"
+      ],
+      "Import from ICS": [
+        "Importare din ICS"
       ],
       "Import key": [
         "Importare cheie"
@@ -1081,6 +1087,11 @@
         "24 luni"
       ]
     },
+    "breadcrumb": {
+      "Calendars": [
+        "Calendare"
+      ]
+    },
     "Bridge version load failed": {
       "Failed to find latest version": [
         "Nu s-a putut găsi cea mai recentă versiune"
@@ -1177,6 +1188,16 @@
         "Tweet"
       ]
     },
+    "Calendar edit button tooltip": {
+      "Edit calendar information": [
+        "Editare informații calendar"
+      ]
+    },
+    "Calendar export section description": {
+      "Download an ICS file with all the events from the selected calendar.": [
+        "Descărcați un fișier ICS cu toate evenimentele din calendarul selectat."
+      ]
+    },
     "Calendar import section description": {
       "You can import ICS files from another calendar to ${ CALENDAR_APP_NAME }. This lets you quickly import one event or your entire agenda.": [
         "Puteți importa fișiere ICS din alt calendar în ${ CALENDAR_APP_NAME }. Acest lucru vă permite să importați rapid un eveniment sau întreaga agendă."
@@ -1201,6 +1222,11 @@
       ],
       "Label edited": [
         "Eticheta a fost editată."
+      ]
+    },
+    "Calendar settings sidebar": {
+      "Show ${ remainingItems } more": [
+        "Afișare încă ${ remainingItems }"
       ]
     },
     "Calendar status": {
@@ -1244,6 +1270,17 @@
       ],
       "Unsupported calendar format": [
         "Format de calendar neacceptat."
+      ]
+    },
+    "Calendar subscription not synced error; long version": {
+      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
+        "Legătura calendarului nu este accesibilă din exteriorul ecosistemului furnizorului calendarului."
+      ],
+      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
+        "Legătura calendarului nu este accesibilă momentan. Verificați dacă legătura de la furnizorul calendarului încă e validă."
+      ],
+      "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
+        "Au trecut mai mult de 12 ore de la ultima actualizare - Proton Calendar va încerca să actualizeze calendarul în câteva ore."
       ]
     },
     "Calendar view": {
@@ -2441,9 +2478,19 @@
         "Miercuri"
       ]
     },
+    "Default calendar event settings section title": {
+      "Default event settings": [
+        "Setări implicite eveniment"
+      ]
+    },
     "Default display name vcard": {
       "Unknown": [
         "Necunoscut"
+      ]
+    },
+    "Delete calendar section description": {
+      "All events in this calendar will be deleted.": [
+        "Toate evenimentele din acest calendar vor fi șterse."
       ]
     },
     "Delinquent modal title": {
@@ -2648,6 +2695,9 @@
       ],
       "Automatic replies is a paid feature. Please upgrade to a paid account to use this feature.": [
         "Răspunsurile automate sunt o caracteristică plătită. Treceți la un cont cu plată pentru a utiliza această caracteristică."
+      ],
+      "Calendar cannot be found": [
+        "Calendarul nu poate fi găsit."
       ],
       "Calendar limit reached": [
         "Limita de calendare a fost atinsă."
@@ -3397,6 +3447,9 @@
       "Archive": [
         "Arhivă"
       ],
+      "Do not move": [
+        "Fără mutare"
+      ],
       "Inbox": [
         "Primite"
       ],
@@ -4063,6 +4116,9 @@
       "${ emailAddress } is invalid": [
         "${ emailAddress } nu este validă"
       ],
+      "${ firstRemainingCalendarName } will be set as default calendar.": [
+        "Calendarul ${ firstRemainingCalendarName } va fi setat ca implicit."
+      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } poate fi utilizat și cu o singură parolă care va înlocui atât parola contului cât și parola mesajelor. Pentru a comuta la modul cu parolă unică, introduceți parola dorită și apăsați pe «Salvare»."
       ],
@@ -4320,6 +4376,9 @@
       ],
       "Are you sure you want to delete this calendar?": [
         "Sigur doriți să ștergeți acest calendar?"
+      ],
+      "Are you sure you want to delete this calendar? All events in it will be deleted.": [
+        "Sigur doriți să ștergeți acest calendar? Toate evenimentele din el vor fi șterse."
       ],
       "Are you sure you want to delete this domain?": [
         "Sigur doriți să ștergeți acest domeniu?"
@@ -5273,6 +5332,9 @@
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Acest navigator nu acceptă previzualizarea documentelor PDF. Descărcați fișierul."
       ],
+      "This calendar will be removed from your account.": [
+        "Acest calendar va fi eliminat din cont."
+      ],
       "This can take a few seconds or a few minutes depending on your device": [
         "Acesta poate dura câteva secunde sau câteva minute, în funcție de dispozitivul folosit"
       ],
@@ -5371,9 +5433,6 @@
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a ${ VPN_APP_NAME } server.": [
         "Pentru a vă securiza conexiunea la internet, descărcați și instalați aplicația ${ VPN_APP_NAME } pentru dispozitivul utilizat și conectați-vă la un server ${ VPN_APP_NAME }."
-      ],
-      "To use ${ toAppName }, please create an address.": [
-        "Pentru a utiliza ${ toAppName }, trebuie să creați o adresă."
       ],
       "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
         "Pentru a funcționa corect, fiecare filtru trebuie să conțină cel puțin un nume și un script Sieve valid. Puteți să ${ link }."
@@ -5585,6 +5644,9 @@
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Nu ați setat o metodă de recuperare a contului, deci recuperea contului nu va fi posibilă dacă vă uitați parola. Continuați fără metodă de recuperare?"
       ],
+      "You have no personal calendars to export.": [
+        "Nu aveți calendare personale de exportat."
+      ],
       "You have no saved payment methods.": [
         "Nu aveți metode de plată salvate."
       ],
@@ -5608,6 +5670,9 @@
       ],
       "You need to have a personal calendar to create a link.": [
         "Trebuie să aveți un calendar personal pentru a crea o legătură."
+      ],
+      "You need to have an active personal calendar to import your events from ICS.": [
+        "Trebuie să aveți un calendar personal activ pentru a vă importa evenimentele din fișierul ICS."
       ],
       "You need to have an active personal calendar to import your events.": [
         "Trebuie să aveți un calendar personal activ pentru a importa evenimentele."
@@ -5645,8 +5710,8 @@
       "You'll still be able to send and receive mail with your existing email address(es).": [
         "Veți putea în continuare să trimiteți și să primiți mesaje cu adresa(ele) de e-mail existentă(e)."
       ],
-      "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, please create an address.": [
-        "Acest cont ${ BRAND_NAME } este asociat cu ${ externalEmailAddress }. Pentru a utiliza ${ toAppName }, trebuie să creați o adresă."
+      "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
+        "Contul ${ BRAND_NAME } este asociat cu ${ externalEmailAddress }. Pentru a utiliza ${ toAppName }, aveți nevoie de o adresă ${ MAIL_APP_NAME }."
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
         "Conturile de ${ VPN_APP_NAME } și ${ MAIL_APP_NAME } sunt conectate. Pentru a le șterge pe ambele, conectați-vă la ${ loginLink } și ștergeți contul de acolo."
@@ -6124,6 +6189,9 @@
     "Knowledge base link label": {
       "Here's how": [
         "Uite așa"
+      ],
+      "Learn more": [
+        "Detalii"
       ]
     },
     "Label": {
@@ -6373,23 +6441,11 @@
       "Days of the week": [
         "Ziua săptămânii"
       ],
-      "Default email address": [
-        "Adresa de e-mail implicită"
-      ],
-      "Default event duration": [
-        "Durată implicită eveniment"
-      ],
-      "Default full day notifications": [
-        "Notificări implicite întreaga zi"
-      ],
       "Default language": [
         "Limba implicită"
       ],
       "Default language (${ defaultLanguage })": [
         "Limba implicită (${ defaultLanguage })"
-      ],
-      "Default notifications": [
-        "Notificări implicite"
       ],
       "Default PGP scheme": [
         "Schema PGP implicită"
@@ -6942,6 +6998,19 @@
         "Adăugați un domeniu personal la contul ${ MAIL_APP_NAME }."
       ]
     },
+    "Label for default event notifications": {
+      "All-day event notifications": [
+        "Notificări pe durata evenimentului"
+      ],
+      "Notifications": [
+        "Notificări"
+      ]
+    },
+    "Label for default event settings": {
+      "Duration": [
+        "Durata"
+      ]
+    },
     "Label for domain modal": {
       "Please add the following TXT record:": [
         "Adăugați următoarea înregistrare TXT:"
@@ -7091,6 +7160,9 @@
       ],
       "How to unlock data": [
         "Cum se deblochează datele"
+      ],
+      "Import/export": [
+        "Importare / Exportare"
       ],
       "Learn more": [
         "Detalii"
@@ -8161,9 +8233,22 @@
         "Credențiale OpenVPN/IKE2 regenerate"
       ]
     },
+    "Notification success": {
+      "Event defaults updated": [
+        "Valorile implicite ale evenimentului s-au actualizat."
+      ]
+    },
     "Notification time input": {
       "at": [
         "la"
+      ]
+    },
+    "Notification type": {
+      "email": [
+        "e-mail"
+      ],
+      "notification": [
+        "notificare"
       ]
     },
     "Notification when": {
@@ -8486,6 +8571,11 @@
         "PayPal"
       ]
     },
+    "Personal calendar section description": {
+      "Create a calendar to stay on top of your schedule while keeping your data secure.": [
+        "Creați un calendar pentru a rămâne în topul programului dvs. păstrându-vă datele în siguranță."
+      ]
+    },
     "Placeholder": {
       "A way to contact you": [
         "Modalitate de contactare"
@@ -8724,6 +8814,22 @@
       ],
       "State of the art": [
         "De ultimă oră"
+      ]
+    },
+    "Remove calendar section description": {
+      "By unsubscribing, you will no longer have access to this calendar. All events in this calendar will be deleted from your account, but they'll remain in the original publick link.": [
+        "Prin dezabonare, nu veți mai avea acces la acest calendar. Toate evenimentele din acest calendar vor fi șterse din contul dvs., dar vor rămâne în legătura publică originală."
+      ]
+    },
+    "Remove calendar section title": {
+      "Delete calendar?": [
+        "Ștergere calendar?"
+      ],
+      "Remove calendar": [
+        "Eliminare calendar"
+      ],
+      "Unsubscribe?": [
+        "Dezabonare?"
       ]
     },
     "Restore administrator panel": {
@@ -9058,6 +9164,9 @@
       ],
       "Calendar created": [
         "Calendarul a fost creat."
+      ],
+      "Calendar information updated": [
+        "Informațiile calendarului s-au actualizat."
       ],
       "Calendar removed": [
         "Calendar a fost eliminat."
@@ -9414,9 +9523,6 @@
       "Add user": [
         "Adăugare utilizator"
       ],
-      "Address is available": [
-        "Adresa este disponibilă"
-      ],
       "Address verification": [
         "Verificare adresă"
       ],
@@ -9473,6 +9579,9 @@
       ],
       "Bridge for ${ platform }": [
         "Bridge pentru ${ platform }"
+      ],
+      "Calendar information": [
+        "Informații calendar"
       ],
       "Cancel Mail subscription": [
         "Anulare abonament pe e-mail"
@@ -9543,8 +9652,8 @@
       "Continue with partial import?": [
         "Continuați cu importarea parțială?"
       ],
-      "Create a ${ mailAppName } address": [
-        "Creare adresă ${ mailAppName }"
+      "Create a ${ MAIL_APP_NAME } address": [
+        "Creare adresă ${ MAIL_APP_NAME }"
       ],
       "Create calendar": [
         "Creare calendar"
@@ -9693,6 +9802,9 @@
       "Error": [
         "Eroare"
       ],
+      "Export": [
+        "Exportare"
+      ],
       "Export calendar": [
         "Exportare calendar"
       ],
@@ -9752,6 +9864,9 @@
       ],
       "Import": [
         "Importare"
+      ],
+      "Import and export": [
+        "Importare și exportare"
       ],
       "Import as simple event?": [
         "Importați ca eveniment simplu?",
@@ -10102,6 +10217,9 @@
       ],
       "Your ${ domain } address is active": [
         "Adresa ${ domain } este activă"
+      ],
+      "Your ${ MAIL_APP_NAME } address": [
+        "Adresa dvs. ${ MAIL_APP_NAME }"
       ],
       "Your calendar link": [
         "Legătură calendar"
@@ -10495,9 +10613,6 @@
       ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
         "Setările de dată și oră de pe dispozitiv nu sunt sincronizate. ${ learnMore }"
-      ],
-      "This feature is only available for ${ mailProfessional } plans or higher": [
-        "Această funcție este disponibilă doar pentru planul ${ mailProfessional } sau superior."
       ],
       "This import may exceed the storage capacity currently available in your Proton account. Please consider customizing your import.": [
         "Această importare poate depăși capacitatea de stocare disponibilă în prezent în acest cont Proton. Luați în considerare modificarea opțiunilor de importare."

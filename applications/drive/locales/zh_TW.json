@@ -284,10 +284,10 @@
       "I have a question": [
         "我有問題"
       ],
-      "import": [
+      "Import": [
         "匯入"
       ],
-      "Import": [
+      "import": [
         "匯入"
       ],
       "Import from .csv or vCard": [
@@ -761,6 +761,9 @@
       "Calendar is syncing": [
         "行事曆正在同步"
       ],
+      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
+        "行事曆同步中：僅需數分鐘即可顯示所有事件。"
+      ],
       "Calendar is too big": [
         "行事曆太大"
       ],
@@ -778,6 +781,17 @@
       ],
       "Unsupported calendar format": [
         "不支援的行事曆格式"
+      ]
+    },
+    "Calendar subscription not synced error; long version": {
+      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
+        "行事曆連結無法從服務提供商生態系統外進行連線。"
+      ],
+      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
+        "行事曆連結暫時無法存取。請確認行事曆服務提供商的連結仍屬有效。"
+      ],
+      "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
+        "從上次更新以來已經過了超過12小時 — Proton Calendar 將會嘗試在幾個小時內更新日曆。"
       ]
     },
     "Collapsible tooltip": {
@@ -1767,8 +1781,8 @@
       "A group with this name already exists": [
         "此名稱的群組已存在"
       ],
-      "A problem occurred, please try again": [
-        "發生錯誤，請再試一次"
+      "A problem occurred, please try again.": [
+        "發生錯誤，請再試一次。"
       ],
       "Authentication canceled.": [
         "認證已取消。"
@@ -1796,6 +1810,9 @@
       ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
         "請取消選取至少 ${ calendarToFixCount } 個行事曆或"
+      ],
+      "Domain not available, try again later": [
+        "網域無法使用，請稍後再試"
       ],
       "Email address invalid": [
         "電郵位址無效"
@@ -1875,8 +1892,8 @@
       "Passwords do not match": [
         "密碼不相符"
       ],
-      "Please activate your content search again": [
-        "請再次啟用您的內容搜尋"
+      "Please activate your search again": [
+        "請再次啟用您的搜尋"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "請先修正已標示的衝突以便繼續。"

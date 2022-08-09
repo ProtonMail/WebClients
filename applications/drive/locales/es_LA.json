@@ -286,11 +286,11 @@
       "I have a question": [
         "Tengo una pregunta"
       ],
-      "import": [
-        "importar"
-      ],
       "Import": [
         "Importar"
+      ],
+      "import": [
+        "importar"
       ],
       "Import from .csv or vCard": [
         "Importar desde .csv o vCard"
@@ -763,6 +763,9 @@
       "Calendar is syncing": [
         "El calendario se está sincronizando"
       ],
+      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
+        "El calendario se está sincronizando: puede tardar varios minutos en mostrar todos sus eventos."
+      ],
       "Calendar is too big": [
         "El calendario es muy grande"
       ],
@@ -780,6 +783,17 @@
       ],
       "Unsupported calendar format": [
         "Formato de calendario no soportado"
+      ]
+    },
+    "Calendar subscription not synced error; long version": {
+      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
+        "El enlace al calendario no es accesible desde fuera del ecosistema del proveedor del calendario."
+      ],
+      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
+        "El enlace al calendario no está accesible temporalmente. Verifique que el enlace del proveedor del calendario aún es válido."
+      ],
+      "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
+        "Han pasado más de 12 horas desde la última actualización. Proton Calendar intentará actualizar el canlendario dentro de pocas horas."
       ]
     },
     "Collapsible tooltip": {
@@ -1770,8 +1784,8 @@
       "A group with this name already exists": [
         "Ya existe un grupo con este nombre"
       ],
-      "A problem occurred, please try again": [
-        "Ocurrió un problema, intente de nuevo"
+      "A problem occurred, please try again.": [
+        "Ocurrió un problema, intente de nuevo."
       ],
       "Authentication canceled.": [
         "Autenticación cancelada."
@@ -1801,6 +1815,9 @@
       "Deselect at least ${ calendarToFixCount } calendar or": [
         "Deseleccionar al menos ${ calendarToFixCount } calendario o",
         "Deseleccionar al menos ${ calendarToFixCount } calendarios o"
+      ],
+      "Domain not available, try again later": [
+        "Dominio no disponible, inténtelo más tarde"
       ],
       "Email address invalid": [
         "Dirección de correo inválida"
@@ -1883,8 +1900,8 @@
       "Passwords do not match": [
         "Las contraseñas no coinciden"
       ],
-      "Please activate your content search again": [
-        "Habilite de nuevo la búsqueda de contenido"
+      "Please activate your search again": [
+        "Active su búsqueda de nuevo"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Solucione el conflicto resaltado para continuar.",

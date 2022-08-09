@@ -66,7 +66,7 @@
         "Confirmar"
       ],
       "Contact support": [
-        "Contacte al soporte"
+        "Contactar con soporte"
       ],
       "Continue": [
         "Continuar"
@@ -389,6 +389,9 @@
       "View plans details": [
         "Ver detalles de planes"
       ],
+      "What do I get?": [
+        "¿Qué obtengo?"
+      ],
       "Yes": [
         "Sí"
       ],
@@ -476,7 +479,7 @@
     },
     "Billing cycle option": {
       "1 month": [
-        "Un mes"
+        "1 mes"
       ],
       "12 months": [
         "12 meses"
@@ -638,6 +641,9 @@
       "Calendar is syncing": [
         "El calendario se está sincronizando"
       ],
+      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
+        "El calendario se está sincronizando: puede tardar varios minutos en mostrar todos sus eventos."
+      ],
       "Calendar is too big": [
         "El calendario es muy grande"
       ],
@@ -655,6 +661,17 @@
       ],
       "Unsupported calendar format": [
         "Formato de calendario no soportado"
+      ]
+    },
+    "Calendar subscription not synced error; long version": {
+      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
+        "El enlace al calendario no es accesible desde fuera del ecosistema del proveedor del calendario."
+      ],
+      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
+        "El enlace al calendario no está accesible temporalmente. Verifique que el enlace del proveedor del calendario aún es válido."
+      ],
+      "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
+        "Han pasado más de 12 horas desde la última actualización. Proton Calendar intentará actualizar el canlendario dentro de pocas horas."
       ]
     },
     "Checkout row": {
@@ -1218,7 +1235,7 @@
         "Mozambique"
       ],
       "Myanmar": [
-        "Myanmar/Birmania"
+        "Myanmar"
       ],
       "Namibia": [
         "Namibia"
@@ -2053,9 +2070,6 @@
       "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
         "Para Visa y MasterCard, los 3 dígitos en la parte posterior de la tarjeta."
       ],
-      "Free": [
-        "Gratis"
-      ],
       "Free up some space or add more storage space.": [
         "Libere algo de espacio o añada más espacio de almacenamiento."
       ],
@@ -2338,14 +2352,23 @@
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a ${ VPN_APP_NAME } server.": [
         "Para proteger su conexión a Internet, descargue e instale la aplicación de ${ VPN_APP_NAME } para su dispositivo y conéctese a un servidor de ${ VPN_APP_NAME }."
       ],
-      "To use ${ toAppName }, please create an address.": [
-        "Para usar ${ toAppName }, cree una dirección."
-      ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Recargue su cuenta con créditos que puede utilizar para suscribirse a un plan nuevo o renovar el actual. Obtiene un crédito por cada ${ i18nCurrency } gastado."
       ],
       "Tor": [
         "Tor"
+      ],
+      "Total email addresses": [
+        "Direcciones de correo totales"
+      ],
+      "Total storage": [
+        "Almacenamiento total"
+      ],
+      "Total supported domains": [
+        "Dominios compatibles totales"
+      ],
+      "Total VPN connections": [
+        "Conexiones VPN totales"
       ],
       "Two-factor authentication adds an extra layer of security to your account in case your password is compromised.": [
         "La autenticación de dos factores añade una capa extra de seguridad a su cuenta en caso de que su contraseña se vea comprometida."
@@ -2503,8 +2526,8 @@
       "You'll stay signed in even after you close the browser.": [
         "Seguirá conectado incluso después de cerrar el navegador."
       ],
-      "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, please create an address.": [
-        "Su cuenta de ${ BRAND_NAME } está asociada con ${ externalEmailAddress }. Para usar ${ toAppName }, cree una dirección."
+      "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
+        "Su cuenta de ${ BRAND_NAME } está asociada con ${ externalEmailAddress }. Para usar ${ toAppName }, necesita una dirección de ${ MAIL_APP_NAME }."
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
         "Sus cuentas de ${ VPN_APP_NAME } y ${ MAIL_APP_NAME } están vinculadas. Para eliminarlas a ambas, inicie sesión en ${ loginLink } y elimine su cuenta allí."
@@ -2836,7 +2859,7 @@
         "Sin filtro"
       ],
       "Non-standard ports": [
-        "Puertos no estándar"
+        "Puertos no estándares"
       ],
       "Old login password": [
         "Contraseña anterior de inicio de sesión"
@@ -3114,7 +3137,7 @@
         "Eliminar cuenta"
       ],
       "Downgrade account": [
-        "Degradar cuenta"
+        "Pasar a un plan inferior"
       ],
       "Get ${ BRAND_NAME } for free": [
         "Obtener ${ BRAND_NAME } gratis"
@@ -3500,7 +3523,7 @@
         "Al crear una cuenta de ${ BRAND_NAME }, acepta los ${ terms }."
       ],
       "Payment details": [
-        "Datos para el pago"
+        "Detalles del pago"
       ],
       "Save your email address or phone number to use for verification if you need to reset your account.": [
         "Guarde su dirección de correo o número de teléfono para usar en la verificación si necesita restablecer su cuenta."
@@ -4076,7 +4099,7 @@
     },
     "Subscription saving": {
       "Save": [
-        "Guardar"
+        "Ahorra"
       ]
     },
     "Subtitle for trial plan": {
@@ -4176,7 +4199,7 @@
         "/mes"
       ],
       "per month": [
-        "por mes"
+        "al mes"
       ]
     },
     "Tab subscription modal": {
@@ -4262,9 +4285,6 @@
       "Add PayPal payment method": [
         "Añadir PayPal como método de pago"
       ],
-      "Address is available": [
-        "Dirección disponible"
-      ],
       "Amount": [
         "Monto"
       ],
@@ -4316,8 +4336,8 @@
       "Congratulations on choosing privacy!": [
         "¡Felicitaciones en elegir la privacidad!"
       ],
-      "Create a ${ mailAppName } address": [
-        "Crear una dirección de ${ mailAppName }"
+      "Create a ${ MAIL_APP_NAME } address": [
+        "Crear una dirección de ${ MAIL_APP_NAME }"
       ],
       "Create your ${ BRAND_NAME } Account": [
         "Cree su cuenta de ${ BRAND_NAME }"
@@ -4353,7 +4373,7 @@
         "Deshabilitar autenticación de dos factores"
       ],
       "Downgrade account": [
-        "Degradar cuenta"
+        "Pasar a un plan inferior"
       ],
       "Download ${ VPN_APP_NAME }": [
         "Descargar ${ VPN_APP_NAME }"
@@ -4564,6 +4584,9 @@
       ],
       "You already have a Proton account": [
         "Ya tiene una cuenta en Proton"
+      ],
+      "Your ${ MAIL_APP_NAME } address": [
+        "Su dirección de ${ MAIL_APP_NAME }"
       ],
       "Your current plan": [
         "Su plan actual"

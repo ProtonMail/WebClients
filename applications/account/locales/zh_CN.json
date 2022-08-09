@@ -3786,9 +3786,6 @@
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a ${ VPN_APP_NAME } server.": [
         "若需要保护与互联网之间的连接，下载并安装 ${ VPN_APP_NAME } 应用程序并连接至 ${ VPN_APP_NAME } 服务器。"
       ],
-      "To use ${ toAppName }, please create an address.": [
-        "创建一个地址以使用${ toAppName }。"
-      ],
       "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
         "每条筛选规则至少应有名称和一段有效的 Sieve 代码才能正常运作。您可以${ link }。"
       ],
@@ -4046,9 +4043,6 @@
       ],
       "You'll still be able to send and receive mail with your existing email address(es).": [
         "您仍然可以通过现有的邮箱地址收发邮件。"
-      ],
-      "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, please create an address.": [
-        "您的 ${ BRAND_NAME } 账户已关联至 ${ externalEmailAddress }。要使用 ${ toAppName }，请先创建账户。"
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
         "您的 ${ VPN_APP_NAME } 和 ${ MAIL_APP_NAME } 账户是绑定在一起的，前往 ${ loginLink } 登录后可将它们一并删除。"
@@ -7233,9 +7227,6 @@
       "Add user": [
         "添加用户"
       ],
-      "Address is available": [
-        "此地址可用"
-      ],
       "Address verification": [
         "地址验证"
       ],
@@ -7358,9 +7349,6 @@
       ],
       "Continue with partial import?": [
         "继续以部分导入进行吗？"
-      ],
-      "Create a ${ mailAppName } address": [
-        "创建 ${ mailAppName } 地址"
       ],
       "Create your ${ BRAND_NAME } Account": [
         "创建 ${ BRAND_NAME } 账户"
@@ -8224,9 +8212,6 @@
       ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
         "您设备上的日期和时间设置未同步。${ learnMore }"
-      ],
-      "This feature is only available for ${ mailProfessional } plans or higher": [
-        "此功能仅限 ${ mailProfessional } 以上等级用户使用"
       ],
       "This import may exceed the storage capacity currently available in your Proton account. Please consider customizing your import.": [
         "此次导入可能会耗尽您的 Proton 账户存储空间，请考虑缩减导入内容。"
