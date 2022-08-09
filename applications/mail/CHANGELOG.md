@@ -1,3 +1,17 @@
+## Release 5.0.6.0 - August 17, 2022
+
+### Improvements
+
+-   Added an Emoji picker in composer
+-   Improved inline attachments count verification
+-   Added a modal asking for unsubscribe when moving a newsletter to SPAM
+
+### Bugfixes
+
+-   Fixed an issue where composer crashed with specific recipient
+-   Fixed an issue where contacts could not be merged
+-   Fixed an issue where attachments were not displayed on print view
+
 ## Release 5.0.5.0 - July 27, 2022
 
 ### Bug fixes
