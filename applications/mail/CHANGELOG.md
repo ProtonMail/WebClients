@@ -2,13 +2,13 @@
 
 ### Improvements
 
--   Added an Emoji picker in composer
--   Improved inline attachments count verification
--   Added a modal asking for unsubscribe when moving a newsletter to SPAM
+-   Added an Emoji picker to the composer
+-   Improved the inline attachments count verification
+-   Added a modal asking users to unsubscribe from the mailing list when moving a newsletter to SPAM
 
 ### Bugfixes
 
--   Fixed an issue where composer crashed with specific recipient
+-   Fixed an issue where composer crashed when adding a specific recipient
 -   Fixed an issue where contacts could not be merged
 -   Fixed an issue where attachments were not displayed on print view
 
