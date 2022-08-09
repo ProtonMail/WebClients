@@ -27,6 +27,34 @@ export const createApiError = (name: string, response: Response, config: any, da
     return error;
 };
 
+export const serializeApiErrorData = (error: ApiError) => {
+    /**
+     *      We are only interested in the data here, so we strip almost everything else. In particular:
+     *      * error.response is typically not serializable
+     *      * error.config might not be serializable either (for instance it can include (aborted) abort controllers)
+     */
+
+    return {
+        name: error.name,
+        status: error.status,
+        statusText: error.response?.statusText || error.message,
+        data: error.data,
+    };
+};
+
+export const deserializeApiErrorData = ({
+    name,
+    status,
+    statusText,
+    data,
+}: ReturnType<typeof serializeApiErrorData>) => {
+    const error = new ApiError(statusText, status, name);
+
+    error.data = data;
+
+    return error;
+};
+
 export const createOfflineError = (config: any) => {
     const error = new ApiError('No network connection', 0, 'OfflineError');
     error.config = config;
