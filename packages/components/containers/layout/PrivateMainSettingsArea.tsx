@@ -1,17 +1,18 @@
-import { Children, cloneElement, isValidElement, ReactNode, useEffect, useRef } from 'react';
+import { Children, ReactNode, cloneElement, isValidElement, useEffect, useRef } from 'react';
 import { useLocation } from 'react-router';
+
 import noop from '@proton/utils/noop';
 
-import ErrorBoundary from '../app/ErrorBoundary';
-import { SettingsPageTitle, SettingsParagraph } from '../account';
-import useAppTitle from '../../hooks/useAppTitle';
-import createScrollIntoView from '../../helpers/createScrollIntoView';
 import { classnames } from '../../helpers';
-import { SettingsAreaConfig } from './interface';
-import useActiveSection from './useActiveSection';
+import createScrollIntoView from '../../helpers/createScrollIntoView';
+import useAppTitle from '../../hooks/useAppTitle';
+import { SettingsPageTitle, SettingsParagraph } from '../account';
+import ErrorBoundary from '../app/ErrorBoundary';
 import PrivateMainArea from './PrivateMainArea';
 import SubSettingsSection from './SubSettingsSection';
 import { getIsSubsectionAvailable } from './helper';
+import { SettingsAreaConfig } from './interface';
+import useActiveSection from './useActiveSection';
 
 interface PrivateMainSettingsAreaBaseProps {
     breadcrumbs?: ReactNode;
@@ -118,7 +119,7 @@ export const PrivateMainSettingsAreaBase = ({
     return (
         <PrivateMainArea ref={mainAreaRef}>
             <div className="container-section-sticky">
-                {breadcrumbs && <div className="mt1-5">{breadcrumbs}</div>}
+                {breadcrumbs && <div className="on-mobile-mt1-5">{breadcrumbs}</div>}
                 {!noTitle && (
                     <SettingsPageTitle className={classnames(['mt1-5', !description && 'mb1-5'])}>
                         {title}

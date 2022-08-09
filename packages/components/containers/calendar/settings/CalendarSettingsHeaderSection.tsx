@@ -45,9 +45,9 @@ const CalendarSettingsHeaderSection = ({ calendar, defaultCalendar, onEdit, isEd
             <div className="mt1-5 mb1-5 flex flex-justify-space-between flex-nowrap">
                 <div className="grid-align-icon">
                     <CalendarSelectIcon color={Color} className="mr0-75 mt1-5 flex-item-noshrink keep-left" />
-                    <div className="h1 mb0-25 text-bold text-break" title={Name}>
+                    <h1 className="mb0-25 text-bold text-break" title={Name}>
                         {Name}
-                    </div>
+                    </h1>
                     <div className="mb0-25 text-break">{Description}</div>
                     <div className="text-ellipsis color-weak" title={Email}>
                         {Email}
