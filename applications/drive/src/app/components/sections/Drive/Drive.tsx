@@ -147,8 +147,8 @@ function Drive({ activeFolder, folderView }: Props) {
     };
 
     useEffect(() => {
-        browserContextMenu.resetPosition();
-        browserItemContextMenu.resetPosition();
+        browserContextMenu.close();
+        browserItemContextMenu.close();
     }, [shareId, linkId]);
 
     if (!items.length && !isLoading) {
