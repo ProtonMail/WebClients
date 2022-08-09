@@ -1,13 +1,13 @@
 import { c } from 'ttag';
 
-import { Button, Checkbox, classnames, FileIcon, FileNameDisplay, Icon } from '@proton/components';
+import { Button, Checkbox, FileIcon, FileNameDisplay, Icon, classnames } from '@proton/components';
 
 import { stopPropagation } from '../../../utils/stopPropagation';
-import { useSelection, useCheckbox, useItemContextMenu } from '../../FileBrowser';
+import { useCheckbox, useItemContextMenu, useSelection } from '../../FileBrowser';
 import SignatureIcon from '../../SignatureIcon';
 import { DriveItem } from '../Drive/Drive';
-import { TrashItem } from '../Trash/Trash';
 import { SharedLinkItem } from '../SharedLinks/SharedLinks';
+import { TrashItem } from '../Trash/Trash';
 import { getLinkIconText } from './utils';
 
 export function GridViewItem({ item }: { item: DriveItem | TrashItem | SharedLinkItem }) {
@@ -49,7 +49,7 @@ export function GridViewItem({ item }: { item: DriveItem | TrashItem | SharedLin
                     onClick={handleCheckboxClick}
                 />
             </div>
-            <div className="file-browser-grid-item--file-name flex border-top" title={item.name}>
+            <div className="file-browser-grid-item--file-name flex border-top">
                 <SignatureIcon
                     isFile={item.isFile}
                     signatureIssues={item.signatureIssues}
