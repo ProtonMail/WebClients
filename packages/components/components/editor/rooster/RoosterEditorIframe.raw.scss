@@ -47,7 +47,7 @@ body {
 	box-sizing: border-box;
 	font-family: system-ui, sans-serif;
 	font-size: 0.875rem; /* 14 */
-	line-height: normal;
+	line-height: 1.5; // Need to be bigger so that we don't have jumps when adding emojis
 	color: black;
 	background: white;
 	/* to fix, CSS var are not passing through the iframe */
