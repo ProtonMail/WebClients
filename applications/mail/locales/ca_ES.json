@@ -155,6 +155,9 @@
       "Close this banner": [
         "Tancar aquest bàner"
       ],
+      "Collapse URL": [
+        "Acurta l'URL"
+      ],
       "Color": [
         "Color"
       ],
@@ -412,11 +415,11 @@
       "Images will be loaded without a proxy": [
         "Les imatges es carregaran sense proxy"
       ],
-      "import": [
-        "importar"
-      ],
       "Import": [
         "Importar"
+      ],
+      "import": [
+        "importar"
       ],
       "Import from .csv or vCard": [
         "Importar des de .csv o vCard"
@@ -1137,6 +1140,9 @@
       ]
     },
     "Beta access description": {
+      "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
+        "L'accés beta us permet utilitzar la versió beta de ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } i ${ DRIVE_APP_NAME } abans que es faci pública. Això vol dir que podeu ser el primer a provar nous productes, rebre noves actualitzacions i utilitzar noves característiques."
+      ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Si trobeu problemes, sempre podeu desactivar l'Accés Beta."
       ]
@@ -1559,11 +1565,17 @@
       ]
     },
     "Collapsible tooltip": {
+      "Collapse": [
+        "Replega"
+      ],
       "Expand": [
         "Amplia"
       ]
     },
     "color": {
+      "apple": [
+        "poma"
+      ],
       "caramel": [
         "caramel"
       ],
@@ -1579,8 +1591,14 @@
       "forest": [
         "bosc"
       ],
+      "japanese laurel": [
+        "llorer japonès"
+      ],
       "kiwi": [
         "kiwi"
+      ],
+      "lemon yellow": [
+        "groc llima"
       ],
       "light red": [
         "vermell clar"
@@ -1590,6 +1608,9 @@
       ],
       "olive": [
         "oliva"
+      ],
+      "persian red": [
+        "vermell persa"
       ],
       "pine": [
         "pi"
@@ -2764,9 +2785,6 @@
       "A group with this name already exists": [
         "Ja existeix un grup amb aquest nom"
       ],
-      "A problem occurred, please try again": [
-        "Hi ha hagut un problema. Intenteu-ho de nou"
-      ],
       "Address primary private key not found": [
         "No s'ha trobat la clau privada primària de l'adreça"
       ],
@@ -2934,9 +2952,6 @@
       ],
       "Passwords do not match": [
         "Les contrasenyes no coincideixen"
-      ],
-      "Please activate your content search again": [
-        "Activeu de nou la vostra cerca de continguts"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Arregleu el conflicte ressaltat per continuar.",
@@ -3322,6 +3337,11 @@
       ],
       "MB": [
         "MB"
+      ]
+    },
+    "Filter": {
+      "Show": [
+        "Mostra"
       ]
     },
     "Filter Actions": {
@@ -3957,12 +3977,6 @@
       ],
       "Do you want to re-sign the contact details?": [
         "Voleu tornar a signar els detalls de contacte?"
-      ],
-      "Download our mobile application from your favorite app store to communicate securely on-the-go.": [
-        "Descarregueu la nostra aplicació mòbil des de la vostra botiga d'aplicacions preferida per comunicar-vos de manera segura en qualsevol moment."
-      ],
-      "Downloading message ${ esProgress } out of ${ totalProgressToShow }": [
-        "Descarregant missatge ${ esProgress } de ${ totalProgressToShow }"
       ],
       "Draft": [
         "Esborrany"
@@ -5614,6 +5628,9 @@
       "Outbox": [
         "Safata de sortida"
       ],
+      "paid plans": [
+        "plans de pagament"
+      ],
       "Pay invoice": [
         "Pagar la factura"
       ],
@@ -6359,6 +6376,11 @@
         "La verificació de les claus de confiança del remitent ha fallat"
       ]
     },
+    "Sort": {
+      "Sort": [
+        "Ordena"
+      ]
+    },
     "Sort option": {
       "Largest first": [
         "Més grans primer"
@@ -6391,6 +6413,9 @@
       ],
       "To protect your privacy, Proton blocked email trackers in this message": [
         "Per a protegir la vostra privacitat, Proton ha bloquejat els rastrejadors de correu electrònic en aquest missatge"
+      ],
+      "Try ${ DRIVE_APP_NAME }": [
+        "Prova ${ DRIVE_APP_NAME }"
       ],
       "You can now schedule your messages to be sent later": [
         "Ara podeu programar els vostres missatges per tal que s'enviïn més tard"
@@ -6778,6 +6803,9 @@
       "Addresses": [
         "Adreces"
       ],
+      "Archive": [
+        "Arxiu"
+      ],
       "Are you sure you want to close?": [
         "Està segur que vol tancar?"
       ],
@@ -6990,6 +7018,9 @@
       "Mailbox layout": [
         "Disseny de la bústia de correu"
       ],
+      "Mark as read": [
+        "Marca com a llegit"
+      ],
       "Mark as unread": [
         "Marcar com a no llegit"
       ],
@@ -7031,6 +7062,9 @@
       ],
       "Move to inbox (not spam)": [
         "Mou a la safata d'entrada (no és correu brossa)"
+      ],
+      "Move to spam": [
+        "Mou al correu brossa"
       ],
       "Move to trash": [
         "Moure a la paperera"
@@ -7167,6 +7201,9 @@
       "To": [
         "Per a"
       ],
+      "Trash": [
+        "Paperera"
+      ],
       "Trust new key?": [
         "Confiar en la nova clau?",
         "Confiar en les noves claus?"
@@ -7240,9 +7277,6 @@
       ],
       "The import will start with the most recent messages.": [
         "La importació començarà amb els missatges més recents."
-      ],
-      "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "Es descarregaran tots els missatges per a que es puguin cercar localment. Netejar les dades del vostre navegador deshabitarà aquesta opció."
       ],
       "This feature is only available for paid users": [
         "Aquesta funció només està disponible per a usuaris de pagament"

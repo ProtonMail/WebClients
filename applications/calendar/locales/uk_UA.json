@@ -230,11 +230,11 @@
       "I have a question": [
         "У мене є питання"
       ],
-      "import": [
-        "імпорт"
-      ],
       "Import": [
         "Імпорт"
+      ],
+      "import": [
+        "імпорт"
       ],
       "Import events": [
         "Імпорт подій"
@@ -789,6 +789,9 @@
       "Calendar is syncing": [
         "Календар синхронізується"
       ],
+      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
+        "Календар синхронізується: для показу всіх подій з нього може знадобитися кілька хвилин."
+      ],
       "Calendar is too big": [
         "Календар завеликий"
       ],
@@ -806,6 +809,17 @@
       ],
       "Unsupported calendar format": [
         "Непідтримуваний формат календаря"
+      ]
+    },
+    "Calendar subscription not synced error; long version": {
+      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
+        "Посилання на календар недоступне поза межами екосистеми постачальника календаря."
+      ],
+      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
+        "Посилання на календар тимчасово недоступне. Переконайтеся, що посилання від постачальника календаря досі дійсне."
+      ],
+      "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
+        "З моменту останнього оновлення минуло понад 12 годин — Proton Calendar спробує оновити календар за кілька годин."
       ]
     },
     "Calendar view": {
@@ -2003,9 +2017,6 @@
       "A group with this name already exists": [
         "Група з такою назвою вже існує"
       ],
-      "A maximum of 10 notifications is allowed": [
-        "Дозволено до 10 сповіщень"
-      ],
       "Address primary private key not found": [
         "Основний приватний ключ адреси не знайдено"
       ],
@@ -2050,6 +2061,9 @@
         "Приберіть принаймні ${ calendarToFixCount } календарі або",
         "Приберіть принаймні ${ calendarToFixCount } календарів або",
         "Приберіть принаймні ${ calendarToFixCount } календаря або"
+      ],
+      "Domain not available, try again later": [
+        "Домен недоступний, повторіть спробу пізніше"
       ],
       "Email address disabled": [
         "Адреса е-пошти вимкнена"
@@ -3516,6 +3530,9 @@
       "All day": [
         "Весь день"
       ],
+      "All-day event notifications": [
+        "Сповіщення про події на цілий день"
+      ],
       "Attach screenshot(s)": [
         "Додати знімки екрана"
       ],
@@ -3564,18 +3581,6 @@
       "Date and time": [
         "Дата й час"
       ],
-      "Default email address": [
-        "Типова електронна адреса"
-      ],
-      "Default event duration": [
-        "Типова тривалість події"
-      ],
-      "Default full day notifications": [
-        "Типові сповіщення на весь день"
-      ],
-      "Default notifications": [
-        "Типові сповіщення"
-      ],
       "Delete": [
         "Видалити"
       ],
@@ -3605,6 +3610,12 @@
       ],
       "Ends": [
         "Завершується"
+      ],
+      "Event duration": [
+        "Тривалість події"
+      ],
+      "Event notifications": [
+        "Сповіщення про події"
       ],
       "Event title": [
         "Назва події"
@@ -4568,6 +4579,9 @@
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "Завершилося тестування ${ DRIVE_APP_NAME }! Забезпечте файли таким же захистом, який мають ваші електронні листи."
       ],
+      "Don't miss any events": [
+        "Не пропустіть жодної події"
+      ],
       "Get up to 18 months of ${ planName } for free": [
         "Отримайте до 18 місяців ${ planName } безплатно"
       ],
@@ -4582,6 +4596,9 @@
       ],
       "With email notifications, you decide which events to be notified about and when.": [
         "Зі сповіщеннями електронної пошти, ви вирішуєте, про які події буде надіслано сповіщення й коли."
+      ],
+      "You can now add notifications to calendars you subscribed to.": [
+        "Тепер можна додавати сповіщення до календарів, на які Ви підписані."
       ]
     },
     "Storage": {
@@ -4661,6 +4678,9 @@
       ],
       "Calendar created": [
         "Календар створено"
+      ],
+      "Calendar information updated": [
+        "Інформація календаря оновлена"
       ],
       "Calendar updated": [
         "Календар оновлено"
@@ -4916,6 +4936,9 @@
       ],
       "Calendar alarm": [
         "Попередження календаря"
+      ],
+      "Calendar information": [
+        "Інформація календаря"
       ],
       "Change my answer": [
         "Змінити мою відповідь"

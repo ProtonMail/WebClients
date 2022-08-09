@@ -318,7 +318,7 @@
         "Soumettre"
       ],
       "Support": [
-        "Support"
+        "Assistance"
       ],
       "Top up": [
         "Recharger"
@@ -388,6 +388,9 @@
       ],
       "View plans details": [
         "Afficher les détails de l'abonnement"
+      ],
+      "What do I get?": [
+        "Qu'est-ce que j'obtiens ?"
       ],
       "Yes": [
         "Oui"
@@ -676,6 +679,9 @@
       "Calendar is syncing": [
         "Synchronisation du calendrier"
       ],
+      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
+        "Le calendrier se synchronise : il peut être nécessaire d'attendre plusieurs minutes avant de voir tous ses événements."
+      ],
       "Calendar is too big": [
         "Le calendrier est trop gros"
       ],
@@ -693,6 +699,17 @@
       ],
       "Unsupported calendar format": [
         "Format de calendrier non pris en charge"
+      ]
+    },
+    "Calendar subscription not synced error; long version": {
+      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
+        "Le lien du calendrier n'est pas accessible depuis l'extérieur de l'écosystème du fournisseur de calendrier."
+      ],
+      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
+        "Le lien du calendrier est temporairement inaccessible. Veuillez vérifier que le lien du fournisseur de calendrier est toujours valide."
+      ],
+      "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
+        "Plus de 12 heures se sont écoulées depuis la dernière mise à jour — Proton Calendar essaiera de mettre à jour le calendrier dans quelques heures."
       ]
     },
     "Checkout row": {
@@ -866,7 +883,7 @@
         "Belgique"
       ],
       "Belize": [
-        "Belize"
+        "Bélize"
       ],
       "Benin": [
         "Bénin"
@@ -881,7 +898,7 @@
         "Bolivie"
       ],
       "Bonaire, Sint Eustatius and Saba": [
-        "Bonaire, Saint-Eustache et Saba"
+        "Pays-Bas caribéens"
       ],
       "Bosnia and Herzegovina": [
         "Bosnie-Herzégovine"
@@ -899,7 +916,7 @@
         "Territoire britannique de l'océan Indien"
       ],
       "Brunei Darussalam": [
-        "Brunéi Darussalam"
+        "Brunei"
       ],
       "Bulgaria": [
         "Bulgarie"
@@ -1094,7 +1111,7 @@
         "Haïti"
       ],
       "Heard Island and McDonald Islands": [
-        "Îles Heard et McDonald"
+        "Îles Heard-et-MacDonald"
       ],
       "Holy See (Vatican City State)": [
         "Saint-Siège (État de la Cité du Vatican)"
@@ -1226,7 +1243,7 @@
         "Mauritanie"
       ],
       "Mauritius": [
-        "Maurice"
+        "Île Maurice"
       ],
       "Mayotte": [
         "Mayotte"
@@ -1256,7 +1273,7 @@
         "Mozambique"
       ],
       "Myanmar": [
-        "Myanmar"
+        "Birmanie"
       ],
       "Namibia": [
         "Namibie"
@@ -1376,7 +1393,7 @@
         "Saint-Pierre-et-Miquelon"
       ],
       "Saint Vincent and the Grenadines": [
-        "Saint-Vincent et les Grenadines"
+        "Saint-Vincent-et-les-Grenadines"
       ],
       "Samoa": [
         "Samoa"
@@ -1388,7 +1405,7 @@
         "Sao Tomé-et-Principe"
       ],
       "Saudi Arabia": [
-        "Arabie Saoudite"
+        "Arabie saoudite"
       ],
       "Senegal": [
         "Sénégal"
@@ -1472,7 +1489,7 @@
         "Thaïlande"
       ],
       "Timor-Leste": [
-        "Timor-Leste"
+        "Timor oriental"
       ],
       "Togo": [
         "Togo"
@@ -1511,7 +1528,7 @@
         "Ukraine"
       ],
       "United Arab Emirates": [
-        "Émirats arabes unis"
+        "Émirats Arabes Unis"
       ],
       "United Kingdom": [
         "Royaume-Uni"
@@ -2376,14 +2393,23 @@
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a ${ VPN_APP_NAME } server.": [
         "Pour sécuriser votre connexion internet, téléchargez et installez l'application ${ VPN_APP_NAME } pour votre appareil et connectez-vous à un serveur ${ VPN_APP_NAME }."
       ],
-      "To use ${ toAppName }, please create an address.": [
-        "Pour utiliser ${ toAppName }, veuillez créer une adresse."
-      ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Rechargez votre compte avec des crédits que vous pouvez utiliser pour un nouvel abonnement ou pour renouveler votre abonnement actuel. Vous obtenez un crédit pour chaque ${ i18nCurrency } dépensé."
       ],
       "Tor": [
         "Tor"
+      ],
+      "Total email addresses": [
+        "Nombre total d'adresses e-mail"
+      ],
+      "Total storage": [
+        "Stockage total"
+      ],
+      "Total supported domains": [
+        "Nombre total de domaines pris en charge"
+      ],
+      "Total VPN connections": [
+        "Nombre total de connexions VPN"
       ],
       "Two-factor authentication adds an extra layer of security to your account in case your password is compromised.": [
         "L'authentification à deux facteurs ajoute une couche de sécurité supplémentaire à votre compte dans l'éventualité où votre mot de passe serait compromis."
@@ -2541,8 +2567,8 @@
       "You'll stay signed in even after you close the browser.": [
         "Vous resterez connecté même après avoir fermé le navigateur."
       ],
-      "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, please create an address.": [
-        "Votre compte ${ BRAND_NAME } est associé à ${ externalEmailAddress }. Pour utiliser ${ toAppName }, veuillez créer une adresse."
+      "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
+        "Votre compte ${ BRAND_NAME } est associé à l'e-mail ${ externalEmailAddress }. Pour utiliser ${ toAppName }, vous avez besoin d'une adresse ${ MAIL_APP_NAME }."
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
         "Vos comptes ${ VPN_APP_NAME } et ${ MAIL_APP_NAME } sont liés. Pour les supprimer, veuillez vous connecter à ${ loginLink } et supprimer votre compte depuis là-bas."
@@ -2706,10 +2732,10 @@
         "Joindre une ou plusieurs captures d’écran"
       ],
       "Billing cycle": [
-        "Cycle de facturation"
+        "Période de facturation"
       ],
       "Block malware only": [
-        "Bloquer uniquement les logiciels malveillants"
+        "Bloquez uniquement les logiciels malveillants"
       ],
       "Block malware, ads and trackers": [
         "Bloquez les programmes malveillants, les publicités et les traqueurs"
@@ -4114,7 +4140,7 @@
     },
     "Subscription saving": {
       "Save": [
-        "Enregistrer"
+        "Économisez"
       ]
     },
     "Subtitle for trial plan": {
@@ -4300,9 +4326,6 @@
       "Add PayPal payment method": [
         "Ajouter le mode de paiement PayPal"
       ],
-      "Address is available": [
-        "L'adresse est disponible"
-      ],
       "Amount": [
         "Montant"
       ],
@@ -4354,8 +4377,8 @@
       "Congratulations on choosing privacy!": [
         "Bienvenue sur un internet libre et respectueux de votre vie privée !"
       ],
-      "Create a ${ mailAppName } address": [
-        "Créer une adresse ${ mailAppName }"
+      "Create a ${ MAIL_APP_NAME } address": [
+        "Créer une adresse ${ MAIL_APP_NAME }"
       ],
       "Create your ${ BRAND_NAME } Account": [
         "Créez votre compte ${ BRAND_NAME }"
@@ -4460,7 +4483,7 @@
         "Ouvrir la pagination"
       ],
       "OpenVPN / IKEv2 username": [
-        "Nom d'utilisateur OpenVPN / IKEv2"
+        "Nom d'utilisateur OpenVPN/IKEv2"
       ],
       "OpenVPN configuration files": [
         "Fichiers de configuration OpenVPN"
@@ -4602,6 +4625,9 @@
       ],
       "You already have a Proton account": [
         "Vous avez déjà un compte Proton"
+      ],
+      "Your ${ MAIL_APP_NAME } address": [
+        "Votre adresse ${ MAIL_APP_NAME }"
       ],
       "Your current plan": [
         "Votre offre actuelle"

@@ -409,11 +409,11 @@
       "Images will be loaded without a proxy": [
         "A képek proxy nélkül lesznek betöltve"
       ],
-      "import": [
-        "importálás"
-      ],
       "Import": [
         "Importálás"
+      ],
+      "import": [
+        "importálás"
       ],
       "Import from .csv or vCard": [
         "Importálás .csv vagy vCard fájlból"
@@ -2885,9 +2885,6 @@
       "A group with this name already exists": [
         "Már létezik csoport ezzel a névvel"
       ],
-      "A problem occurred, please try again": [
-        "Hiba történt, próbálja meg újra"
-      ],
       "Address primary private key not found": [
         "A cím elsődleges privát kulcsa nem található"
       ],
@@ -3058,9 +3055,6 @@
       ],
       "Passwords do not match": [
         "A jelszavak nem egyeznek"
-      ],
-      "Please activate your content search again": [
-        "Aktiválja újra az üzenetek tartalmában való keresést"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Javítsa ki a megjelölt hibát a folytatáshoz.",
@@ -4115,12 +4109,6 @@
       ],
       "Do you want to re-sign the contact details?": [
         "Aláírja újra a névjegyet?"
-      ],
-      "Download our mobile application from your favorite app store to communicate securely on-the-go.": [
-        "Töltse le a mobil alkalmazásunkat a kedvenc alkalmazásboltjából, hogy út közben is biztonságosan kommunikálhasson."
-      ],
-      "Downloading message ${ esProgress } out of ${ totalProgressToShow }": [
-        "Letöltés: ${ esProgress } üzenet. Összesen: ${ totalProgressToShow }"
       ],
       "Draft": [
         "Piszkozat"
@@ -7529,9 +7517,6 @@
       ],
       "The import will start with the most recent messages.": [
         "Az importálás a legfrissebb üzenetekkel kezdődik."
-      ],
-      "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "Ez a művelet letölti az összes üzenetet, hogy helyben kereshetők legyenek. A böngésző adatainak törlése kikapcsolja ezt a lehetőséget."
       ],
       "This feature is only available for paid users": [
         "Ez a lehetőség csak előfizetéses csomagokban érhető érhető el"

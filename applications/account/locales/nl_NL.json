@@ -4974,9 +4974,6 @@
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a ${ VPN_APP_NAME } server.": [
         "Om uw internetverbinding te beveiligen, installeert u de ${ VPN_APP_NAME }-applicatie op uw apparaat en maakt u verbinding met een ${ VPN_APP_NAME }-server."
       ],
-      "To use ${ toAppName }, please create an address.": [
-        "Maak een adres aan om ${ toAppName } te gebruiken."
-      ],
       "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
         "Om goed te werken, moet elk filter minstens een naam en een geldig Sieve-script bevatten. U kunt ${ link }."
       ],
@@ -5232,8 +5229,8 @@
       "You'll still be able to send and receive mail with your existing email address(es).": [
         "U zal nog steeds e-mails kunnen verzenden en ontvangen met uw huidige e-mailadres(sen)."
       ],
-      "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, please create an address.": [
-        "Uw ${ BRAND_NAME }-account is gekoppeld aan ${ externalEmailAddress }. Maak een adres aan om ${ toAppName } te gebruiken."
+      "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
+        "Uw ${ BRAND_NAME }-account is gekoppeld aan ${ externalEmailAddress }. Maak een ${ MAIL_APP_NAME }-adres aan om ${ toAppName } te gebruiken."
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
         "Uw ${ VPN_APP_NAME } en ${ MAIL_APP_NAME } accounts zijn gekoppeld. Om ze allebei te verwijderen, log in op ${ loginLink } en verwijder daar uw account."
@@ -8000,6 +7997,11 @@
         "State-of-the-art"
       ]
     },
+    "Remove calendar section description": {
+      "By unsubscribing, you will no longer have access to this calendar. All events in this calendar will be deleted from your account, but they'll remain in the original publick link.": [
+        "Door jou op deze agenda niet meer te abonneren, zul je er geen toegang meer tot hebben. Alle gebeurtenissen uit deze agenda zullen van uw account gewist worden, maar blijven beschikbaar via de originele publieke link."
+      ]
+    },
     "Restore administrator panel": {
       "Changing organization keys": [
         "Organisatiesleutels wijzigen"
@@ -8591,9 +8593,6 @@
       "Add user": [
         "Gebruiker toevoegen"
       ],
-      "Address is available": [
-        "Adres is beschikbaar"
-      ],
       "Address verification": [
         "Verificatie van adres"
       ],
@@ -8720,8 +8719,8 @@
       "Continue with partial import?": [
         "Doorgaan met gedeeltelijke invoer?"
       ],
-      "Create a ${ mailAppName } address": [
-        "Maak een ${ mailAppName } adres"
+      "Create a ${ MAIL_APP_NAME } address": [
+        "Maak een ${ MAIL_APP_NAME }-adres"
       ],
       "Create your ${ BRAND_NAME } Account": [
         "Maak uw ${ BRAND_NAME }-account"
@@ -9246,6 +9245,9 @@
       "Your ${ domain } address is active": [
         "Uw ${ domain }-adres is actief"
       ],
+      "Your ${ MAIL_APP_NAME } address": [
+        "Uw ${ MAIL_APP_NAME }-adres"
+      ],
       "Your current plan": [
         "Uw huidige abonnement"
       ],
@@ -9612,9 +9614,6 @@
       ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
         "De datum- en tijdinstellingen op uw apparaat zijn niet meer gesynchroniseerd. ${ learnMore }"
-      ],
-      "This feature is only available for ${ mailProfessional } plans or higher": [
-        "Deze functionaliteit is alleen beschikbaar voor het abonnement ${ mailProfessional } of hoger"
       ],
       "This import may exceed the storage capacity currently available in your Proton account. Please consider customizing your import.": [
         "Deze import mag groter zijn dan de opslagcapaciteit die momenteel beschikbaar is op uw Proton account. Overweeg om uw import aan te passen."

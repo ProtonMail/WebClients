@@ -340,6 +340,9 @@
       "External encryption": [
         "Cifrado externo"
       ],
+      "Fewer search options": [
+        "Menos opciones de búsqueda"
+      ],
       "Filter on...": [
         "Filtrar por..."
       ],
@@ -412,11 +415,11 @@
       "Images will be loaded without a proxy": [
         "Las imágenes se cargarán sin proxy"
       ],
-      "import": [
-        "importar"
-      ],
       "Import": [
         "Importar"
+      ],
+      "import": [
+        "importar"
       ],
       "Import from .csv or vCard": [
         "Importar desde .csv o vCard"
@@ -532,6 +535,9 @@
       ],
       "More search options": [
         "Más opciones de búsqueda"
+      ],
+      "Move": [
+        "Mover"
       ],
       "move emails to": [
         "mover correos electrónicos a"
@@ -761,6 +767,9 @@
       "send auto-reply email": [
         "enviar correo de respuesta automática"
       ],
+      "Send feedback": [
+        "Enviar comentarios"
+      ],
       "Send read receipt": [
         "Enviar acuse de recibo"
       ],
@@ -796,6 +805,9 @@
       ],
       "Show details": [
         "Mostrar detalles"
+      ],
+      "Show fewer search options": [
+        "Mostrar menos opciones de búsqueda"
       ],
       "Show folders": [
         "Mostrar carpetas"
@@ -1504,6 +1516,9 @@
       "Calendar is syncing": [
         "El calendario se está sincronizando"
       ],
+      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
+        "El calendario se está sincronizando: puede tardar varios minutos en mostrar todos sus eventos."
+      ],
       "Calendar is too big": [
         "El calendario es demasiado grande"
       ],
@@ -1521,6 +1536,17 @@
       ],
       "Unsupported calendar format": [
         "Formato de calendario no compatible"
+      ]
+    },
+    "Calendar subscription not synced error; long version": {
+      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
+        "El enlace al calendario no es accesible desde fuera del ecosistema del proveedor del calendario."
+      ],
+      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
+        "El enlace al calendario no está accesible temporalmente. Verifica que el enlace del proveedor del calendario aún es válido."
+      ],
+      "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
+        "Ha pasado más de 12 horas desde la última actualización — Proton Calendar intentará actualizar el canlendario dentro de unas horas."
       ]
     },
     "Calendar widget banner": {
@@ -2773,8 +2799,8 @@
       "A group with this name already exists": [
         "Ya existe un grupo con este nombre"
       ],
-      "A problem occurred, please try again": [
-        "Ha ocurrido un problema, inténtalo de nuevo"
+      "A problem occurred, please try again.": [
+        "Ha ocurrido un problema, inténtalo de nuevo."
       ],
       "Address primary private key not found": [
         "No se ha encontrado la clave primaria de la dirección"
@@ -2829,6 +2855,9 @@
       "Deselect at least ${ calendarToFixCount } calendar or": [
         "Deseleccionar al menos ${ calendarToFixCount } calendario o",
         "Deseleccionar al menos ${ calendarToFixCount } calendarios o"
+      ],
+      "Domain not available, try again later": [
+        "Dominio no disponible, inténtalo de nuevo más tarde"
       ],
       "Draft could not be saved. Try again.": [
         "No se ha podido guardar el borrador. Inténtalo de nuevo."
@@ -2947,8 +2976,8 @@
       "Passwords do not match": [
         "Las contraseñas no coinciden"
       ],
-      "Please activate your content search again": [
-        "Por favor activa tu búsqueda de contenido de nuevo"
+      "Please activate your search again": [
+        "Por favor, activa tu búsqueda de nuevo"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Por favor, arregle el conflicto resaltado para continuar.",
@@ -3015,6 +3044,9 @@
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Algo salió mal, por favor ${ refresh } para continuar. Si aún ve este mensaje de error, póngase en contacto con nuestro ${ supportTeam }."
       ],
+      "Something went wrong, please try again": [
+        "Algo salió mal. Por favor, inténtalo de nuevo más tarde"
+      ],
       "Sorry, Proton can't decrypt your message. Please check that all your keys are active.": [
         "Lo sentimos, Proton no puede descifrar tu mensaje. Comprueba que todas tus claves están activas."
       ],
@@ -3069,6 +3101,9 @@
       ],
       "This message has already been sent. A new draft has been saved.": [
         "Este mensaje ya se ha enviado. Se ha guardado como un nuevo borrador."
+      ],
+      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
+        "Este mensaje podría contener enlaces que no pueden abrirse correctamente en tu navegador actual."
       ],
       "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
         "Demasiados filtros activos. Actualiza a un plan de pago para activar más filtros."
@@ -3396,6 +3431,9 @@
     "Filter Actions": {
       "Archive": [
         "Archivo"
+      ],
+      "Do not move": [
+        "No mover"
       ],
       "Inbox": [
         "Bandeja de entrada"
@@ -3982,6 +4020,12 @@
       "Confirm phishing report": [
         "Confirmar reporte de suplantación"
       ],
+      "Content search of the entire inbox is available for ${ paidPlansButton }.": [
+        "La búsqueda de contenido en toda la bandeja de entrada está disponible para ${ paidPlansButton }."
+      ],
+      "Content: ": [
+        "Contenido: "
+      ],
       "Continue with ${ planName }": [
         "Continuar con ${ planName }"
       ],
@@ -4045,11 +4089,11 @@
       "Do you want to re-sign the contact details?": [
         "¿Quieres volver a firmar los datos del contacto?"
       ],
-      "Download our mobile application from your favorite app store to communicate securely on-the-go.": [
-        "Descarga nuestra aplicación móvil desde tu tienda de aplicaciones favorita para comunicarte de forma segura en cualquier momento."
+      "Don't forget to share the password with the recipient": [
+        "No olvides compartir la contraseña con el destinatario"
       ],
-      "Downloading message ${ esProgress } out of ${ totalProgressToShow }": [
-        "Descargando mensaje ${ esProgress } de ${ totalProgressToShow }"
+      "Downloading message ${ currentProgress } out of ${ totalProgress }": [
+        "Descargando mensaje ${ currentProgress } de ${ totalProgress }"
       ],
       "Draft": [
         "Borrador"
@@ -4100,6 +4144,9 @@
       ],
       "Encrypt message": [
         "Cifrar mensaje"
+      ],
+      "End of message content search": [
+        "Fin de la búsqueda en el contenido del mensaje"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Introduce el código de verificación que se ha enviado a ${ destinationText }."
@@ -4176,6 +4223,9 @@
       "Hour": [
         "Hora",
         "Horas"
+      ],
+      "I'm sending this message to a non-Proton Mail user.": [
+        "Estoy enviando este mensaje a un no usuario de Proton Mail."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Si tienes problemas para crear tu cuenta, por favor solicita una invitación y responderemos en un día hábil."
@@ -4351,6 +4401,9 @@
       ],
       "No results found": [
         "No se han encontrado resultados"
+      ],
+      "No results found in the past 30 days, searching the rest of your inbox": [
+        "No se han encontrado resultados en los últimos 30 días, buscando en el resto de tu bandeja de entrada"
       ],
       "No trackers found, but some images could not be loaded with tracking protection": [
         "Algunas de las imágenes no pudieron ser cargadas con la protección de rastreo"
@@ -4608,6 +4661,9 @@
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
         "Esta acción descargará todos los mensajes para que puedan ser buscados localmente. Limpiar los datos de tu navegador desactivará esta opción."
+      ],
+      "This action will download the most recent messages so they can be searched locally. Clearing your browser data will disable this option.": [
+        "Esta acción descargará los mensajes más recientes de modo que puedan ser buscados localmente. Limpiar los datos de tu navegador deshabilitará esta opción."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Esta dirección está deshabilitada. Para poder enviar a esta dirección, el propietario debe habilitar la dirección en primer lugar."
@@ -5777,6 +5833,9 @@
       "Outbox": [
         "Bandeja de salida"
       ],
+      "paid plans": [
+        "planes de pago"
+      ],
       "Pay invoice": [
         "Pagar factura"
       ],
@@ -6608,6 +6667,9 @@
       ]
     },
     "Spotlight": {
+      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
+        "${ DRIVE_APP_NAME } ha salido de la versión beta. Dé a sus archivos la misma seguridad que reciben sus correos electrónicos."
+      ],
       "Discover all Proton services": [
         "Descubre todos los servicios de Proton"
       ],
@@ -6625,6 +6687,9 @@
       ],
       "To protect your privacy, Proton blocked email trackers in this message": [
         "Para proteger su privacidad, Proton ha bloqueado los rastreadores de correo electrónico en este mensaje"
+      ],
+      "Try ${ DRIVE_APP_NAME }": [
+        "Prueba ${ DRIVE_APP_NAME }"
       ],
       "You can now schedule your messages to be sent later": [
         "Ahora puedes programar tus mensajes para que sean enviados más tarde"
@@ -7494,6 +7559,9 @@
       "Encrypted data with verified digital signature": [
         "Datos cifrados con firma digital verificada"
       ],
+      "For messages older than 30 days, only the subject line and recipient list will be searched": [
+        "Para mensajes de hace más de 30 días, solamente se buscará en la línea del asunto y en la lista de destinatarios"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Selecciona el esquema PGP a utilizar para firmar o cifrar a un usuario. Ten en cuenta que PGP/Inline obliga a mensajes de texto plano"
       ],
@@ -7502,9 +7570,6 @@
       ],
       "The import will start with the most recent messages.": [
         "La importación comenzará con los mensajes más recientes."
-      ],
-      "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "Esta acción descargará todos los mensajes para que puedan ser buscados localmente. Limpiar los datos de tu navegador desactivará esta opción."
       ],
       "This feature is only available for paid users": [
         "Esta función solo está disponible para usuarios de pago"

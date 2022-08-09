@@ -155,6 +155,9 @@
       "Close this banner": [
         "关闭此横幅"
       ],
+      "Collapse URL": [
+        "无效网址"
+      ],
       "Color": [
         "颜色"
       ],
@@ -410,10 +413,10 @@
       "Images will be loaded without a proxy": [
         "图像载入时不会借助代理服务器"
       ],
-      "import": [
+      "Import": [
         "导入"
       ],
-      "Import": [
+      "import": [
         "导入"
       ],
       "Import from .csv or vCard": [
@@ -538,6 +541,18 @@
       ],
       "Move": [
         "移动"
+      ],
+      "Move all conversations from this folder": [
+        "移动该文件夹中的所有对话"
+      ],
+      "Move all conversations from this label": [
+        "移动该标签中的所有对话"
+      ],
+      "Move all messages from this folder": [
+        "移动该文件夹中的所有邮件"
+      ],
+      "Move all messages from this label": [
+        "移动该标签中的所有邮件"
       ],
       "move emails to": [
         "将邮件移至"
@@ -1533,6 +1548,17 @@
         "不受支持的日历格式"
       ]
     },
+    "Calendar subscription not synced error; long version": {
+      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
+        "日历链接不能从日历提供者的系统之外访问。"
+      ],
+      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
+        "日历链接暂时无法访问。请核实日历提供者的链接仍然有效。"
+      ],
+      "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
+        "距离上次更新已经超过12小时--Proton Calendar将尝试在几小时内更新日历。"
+      ]
+    },
     "Calendar widget banner": {
       "Event already ended": [
         "活动已结束"
@@ -1547,6 +1573,11 @@
       ],
       "Expand": [
         "展开"
+      ]
+    },
+    "color": {
+      "white": [
+        "白色"
       ]
     },
     "Composer email icon": {
@@ -1889,6 +1920,9 @@
       "Czech Republic": [
         "捷克"
       ],
+      "Côte d'Ivoire": [
+        "科特迪瓦"
+      ],
       "Denmark": [
         "丹麦"
       ],
@@ -1919,6 +1953,9 @@
       "Estonia": [
         "爱沙尼亚"
       ],
+      "Eswatini": [
+        "斯威士兰"
+      ],
       "Ethiopia": [
         "埃塞俄比亚"
       ],
@@ -1927,6 +1964,9 @@
       ],
       "Faroe Islands": [
         "法罗群岛"
+      ],
+      "Federated States of Micronesia": [
+        "密克罗尼西亚联邦"
       ],
       "Fiji": [
         "斐济"
@@ -1939,6 +1979,9 @@
       ],
       "French Guiana": [
         "法属圭亚那"
+      ],
+      "French Polynesia": [
+        "法属波利尼西亚"
       ],
       "French Southern Territories": [
         "法属南部领地"
@@ -1996,6 +2039,9 @@
       ],
       "Heard Island and McDonald Islands": [
         "赫德岛和麦克唐纳群岛"
+      ],
+      "Holy See (Vatican City State)": [
+        "圣座（梵蒂冈城邦）"
       ],
       "Honduras": [
         "洪都拉斯"
@@ -2057,6 +2103,9 @@
       "Kiribati": [
         "基里巴斯"
       ],
+      "Kosovo": [
+        "科索沃"
+      ],
       "Kuwait": [
         "科威特"
       ],
@@ -2090,14 +2139,44 @@
       "Luxembourg": [
         "卢森堡"
       ],
+      "Macao": [
+        "澳门"
+      ],
       "Madagascar": [
         "马达加斯加"
+      ],
+      "Malawi": [
+        "马拉维"
+      ],
+      "Malaysia": [
+        "马来西亚"
+      ],
+      "Maldives": [
+        "马尔代夫"
+      ],
+      "Mali": [
+        "马里"
+      ],
+      "Malta": [
+        "马耳他"
       ],
       "Marshall Islands": [
         "马绍尔群岛"
       ],
+      "Martinique": [
+        "马提尼克"
+      ],
+      "Mauritania": [
+        "毛里塔尼亚"
+      ],
+      "Mauritius": [
+        "毛里求斯"
+      ],
       "Mayotte": [
         "马约特"
+      ],
+      "Mexico": [
+        "墨西哥"
       ],
       "Moldova": [
         "摩尔多瓦"
@@ -2105,14 +2184,116 @@
       "Monaco": [
         "摩纳哥"
       ],
+      "Mongolia": [
+        "蒙古"
+      ],
       "Montenegro": [
         "黑山"
+      ],
+      "Montserrat": [
+        "蒙特塞拉特"
       ],
       "Morocco": [
         "摩洛哥"
       ],
+      "Mozambique": [
+        "莫桑比克"
+      ],
+      "Myanmar": [
+        "缅甸"
+      ],
+      "Namibia": [
+        "纳米比亚"
+      ],
+      "Nauru": [
+        "瑙鲁"
+      ],
+      "Nepal": [
+        "尼泊尔"
+      ],
+      "Netherlands": [
+        "荷兰"
+      ],
+      "New Caledonia": [
+        "新喀里多尼亚"
+      ],
+      "New Zealand": [
+        "新西兰"
+      ],
+      "Nicaragua": [
+        "尼加拉瓜"
+      ],
+      "Niger": [
+        "尼日尔"
+      ],
+      "Nigeria": [
+        "尼日利亚"
+      ],
+      "Niue": [
+        "纽埃"
+      ],
+      "Norfolk Island": [
+        "诺福克岛"
+      ],
       "North Korea": [
         "朝鲜"
+      ],
+      "North Macedonia": [
+        "北马其顿"
+      ],
+      "Northern Mariana Islands": [
+        "北马里亚纳群岛"
+      ],
+      "Norway": [
+        "挪威"
+      ],
+      "Oman": [
+        "阿曼"
+      ],
+      "Pakistan": [
+        "巴基斯坦"
+      ],
+      "Palau": [
+        "帕劳"
+      ],
+      "Palestine": [
+        "巴勒斯坦"
+      ],
+      "Panama": [
+        "巴拿马"
+      ],
+      "Papua New Guinea": [
+        "巴布亚新几内亚"
+      ],
+      "Paraguay": [
+        "巴拉圭"
+      ],
+      "Peru": [
+        "秘鲁"
+      ],
+      "Philippines": [
+        "菲律宾"
+      ],
+      "Pitcairn": [
+        "皮特凯恩"
+      ],
+      "Poland": [
+        "波兰"
+      ],
+      "Portugal": [
+        "葡萄牙"
+      ],
+      "Puerto Rico": [
+        "波多黎各"
+      ],
+      "Qatar": [
+        "卡塔尔"
+      ],
+      "Reunion": [
+        "留尼汪"
+      ],
+      "Romania": [
+        "罗马尼亚"
       ],
       "Russia": [
         "俄罗斯"
@@ -2135,6 +2316,9 @@
       "Saint Martin (French Part)": [
         "法属圣马丁"
       ],
+      "Saint Pierre and Miquelon": [
+        "圣皮埃尔和密克隆"
+      ],
       "Saint Vincent and the Grenadines": [
         "圣文森特和格林纳丁斯"
       ],
@@ -2152,6 +2336,9 @@
       ],
       "Senegal": [
         "塞内加尔"
+      ],
+      "Serbia": [
+        "塞尔维亚"
       ],
       "Seychelles": [
         "塞舌尔"
@@ -2185,6 +2372,9 @@
       ],
       "South Korea": [
         "韩国"
+      ],
+      "South Ossetia": [
+        "南奥塞梯"
       ],
       "South Sudan": [
         "南苏丹"
@@ -2239,6 +2429,9 @@
       ],
       "Trinidad and Tobago": [
         "特立尼达和多巴哥"
+      ],
+      "Tristan da Cunha": [
+        "特里斯坦达库尼亚"
       ],
       "Tunisia": [
         "突尼斯"
@@ -2391,6 +2584,9 @@
       ]
     },
     "Description": {
+      "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
+        "正在解密通讯录，可能需要几分钟的时间。完成后您就可以下载导出的通讯录文件了。"
+      ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "正在删除联系人... 该过程可能需要几分钟，完成后您就可以关闭此对话框了"
       ],
@@ -2556,8 +2752,8 @@
       "A group with this name already exists": [
         "已存在同名群组"
       ],
-      "A problem occurred, please try again": [
-        "出现错误，请重试"
+      "A problem occurred, please try again.": [
+        "出错了，请重试。"
       ],
       "Address primary private key not found": [
         "找不到地址主私钥"
@@ -2724,7 +2920,7 @@
       "Passwords do not match": [
         "密码不匹配"
       ],
-      "Please activate your content search again": [
+      "Please activate your search again": [
         "请重新开启全文搜索"
       ],
       "Please fix the highlighted conflict to proceed.": [
@@ -2790,6 +2986,9 @@
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "发生错误，请${ refresh }后重试。若仍出现此错误，请联系我们的${ supportTeam }。"
       ],
+      "Something went wrong, please try again": [
+        "出现了一些问题。请重试。"
+      ],
       "Sorry, Proton can't decrypt your message. Please check that all your keys are active.": [
         "对不起，Proton 无法解密您的邮件。请确认您的密钥是否已全部启用。"
       ],
@@ -2843,6 +3042,9 @@
       ],
       "This message has already been sent. A new draft has been saved.": [
         "此邮件已发送，已保存新草稿。"
+      ],
+      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
+        "此邮件可能含有当前浏览器无法正确打开的链接。"
       ],
       "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
         "启用的规则数量已达上限，开通付费账户即可使用更多筛选规则。"
@@ -3159,6 +3361,9 @@
     "Filter Actions": {
       "Archive": [
         "存档"
+      ],
+      "Do not move": [
+        "不移动"
       ],
       "Inbox": [
         "收件箱"
@@ -3704,6 +3909,12 @@
       "Confirm phishing report": [
         "确认钓鱼报告"
       ],
+      "Content search of the entire inbox is available for ${ paidPlansButton }.": [
+        "开通${ paidPlansButton }即可对收件箱中的所有邮件进行全文搜索。"
+      ],
+      "Content: ": [
+        "内容： "
+      ],
       "Continue with ${ planName }": [
         "升级至 ${ planName } 并继续"
       ],
@@ -3767,11 +3978,8 @@
       "Don't forget to share the password with the recipient": [
         "别忘了把您设定的密码告诉收件人"
       ],
-      "Download our mobile application from your favorite app store to communicate securely on-the-go.": [
-        "从应用商店下载我们的移动应用即可随时随地安全通信。"
-      ],
-      "Downloading message ${ esProgress } out of ${ totalProgressToShow }": [
-        "正在下载邮件 ${ esProgress } / ${ totalProgressToShow }"
+      "Downloading message ${ currentProgress } out of ${ totalProgress }": [
+        "正在下载邮件 ${ currentProgress } / ${ totalProgress }"
       ],
       "Draft": [
         "草稿"
@@ -3820,6 +4028,9 @@
       ],
       "Encrypt message": [
         "邮件加密"
+      ],
+      "End of message content search": [
+        "信息内容搜索结束"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "验证码已发至 ${ destinationText }，请在下方输入。"
@@ -4076,6 +4287,9 @@
       "No results found": [
         "未找到结果"
       ],
+      "No results found in the past 30 days, searching the rest of your inbox": [
+        "30 天内的邮件没有找到结果，正在搜索其余邮件"
+      ],
       "No trackers found, but some images could not be loaded with tracking protection": [
         "没有检测到跟踪器，但跟踪器防护导致某些图像无法加载"
       ],
@@ -4329,6 +4543,9 @@
         "此账户因可能违反用户协议而被封禁。"
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
+        "此操作将从服务器下载所有邮件并在本地进行搜索，清除浏览器数据将禁用此选项。"
+      ],
+      "This action will download the most recent messages so they can be searched locally. Clearing your browser data will disable this option.": [
         "此操作将从服务器下载所有邮件并在本地进行搜索，清除浏览器数据将禁用此选项。"
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
@@ -5489,6 +5706,9 @@
       "Outbox": [
         "发件箱"
       ],
+      "paid plans": [
+        "付费账户"
+      ],
       "Pay invoice": [
         "前去支付"
       ],
@@ -5924,6 +6144,11 @@
       ],
       "Merge with calendar": [
         "与日历合并"
+      ]
+    },
+    "Pagination": {
+      "${ page } of ${ total }": [
+        "${ page } / ${ total }"
       ]
     },
     "Paid user checklist item": {
@@ -6695,6 +6920,9 @@
       "Addresses": [
         "地址"
       ],
+      "Archive": [
+        "存档"
+      ],
       "Are you sure you want to close?": [
         "确定要关闭吗？"
       ],
@@ -6902,6 +7130,9 @@
       "Mailbox layout": [
         "邮箱布局"
       ],
+      "Mark as read": [
+        "标为已读"
+      ],
       "Mark as unread": [
         "标为未读"
       ],
@@ -7082,6 +7313,9 @@
       "To": [
         "收件人"
       ],
+      "Trash": [
+        "废件箱"
+      ],
       "Trust new key?": [
         "信任新密钥？"
       ],
@@ -7149,6 +7383,9 @@
       "Encrypted data with verified digital signature": [
         "已加密并验证数字签名"
       ],
+      "For messages older than 30 days, only the subject line and recipient list will be searched": [
+        "对于超过30天的邮件，只有主题行和收件人名单会被搜索到。"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "选择在向用户签名或加密时要使用的 PGP 方案。请注意, PGP/内嵌强制纯文本消息。"
       ],
@@ -7157,9 +7394,6 @@
       ],
       "The import will start with the most recent messages.": [
         "导入将从最近的信息开始。"
-      ],
-      "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "此操作将从服务器下载所有邮件并在本地进行搜索，清除浏览器数据将禁用此选项。"
       ],
       "This feature is only available for paid users": [
         "此功能仅供付费用户使用"

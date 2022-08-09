@@ -286,11 +286,11 @@
       "I have a question": [
         "Ho una domanda"
       ],
-      "import": [
-        "importa"
-      ],
       "Import": [
         "Importa"
+      ],
+      "import": [
+        "importa"
       ],
       "Import from .csv or vCard": [
         "Importa da .csv o vCard"
@@ -780,6 +780,17 @@
       ],
       "Unsupported calendar format": [
         "Formato calendario non supportato"
+      ]
+    },
+    "Calendar subscription not synced error; long version": {
+      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
+        "Il link al calendario non è accessibile al di fuori dell'ecosistema del fornitore del calendario."
+      ],
+      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
+        "Il collegamento al calendario temporaneamente non è accessibile. Si prega di verificare che il link dato dal fornitore del calendario sia ancora valido."
+      ],
+      "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
+        "Sono passate più di 12 ore dall'ultimo aggiornamento — Proton Calendar proverà ad aggiornare il calendario tra alcune ore."
       ]
     },
     "Collapsible tooltip": {
@@ -1770,8 +1781,8 @@
       "A group with this name already exists": [
         "Esiste già un gruppo con questo nome"
       ],
-      "A problem occurred, please try again": [
-        "Si è verificato un problema, riprova"
+      "A problem occurred, please try again.": [
+        "Si è verificato un problema, riprova."
       ],
       "Authentication canceled.": [
         "Autenticazione annullata."
@@ -1801,6 +1812,9 @@
       "Deselect at least ${ calendarToFixCount } calendar or": [
         "Deseleziona almeno ${ calendarToFixCount } calendario o",
         "Deseleziona almeno ${ calendarToFixCount } calendari o"
+      ],
+      "Domain not available, try again later": [
+        "Dominio non disponibile, riprovare più tardi"
       ],
       "Email address invalid": [
         "Indirizzo email non valido"
@@ -1883,8 +1897,8 @@
       "Passwords do not match": [
         "Le password non corrispondono"
       ],
-      "Please activate your content search again": [
-        "Si prega di attivare di nuovo la ricerca di contenuti"
+      "Please activate your search again": [
+        "Si prega di attivare nuovamente la ricerca"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Correggi il conflitto evidenziato per procedere.",

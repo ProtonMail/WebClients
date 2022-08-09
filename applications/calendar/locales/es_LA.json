@@ -226,11 +226,11 @@
       "I have a question": [
         "Tengo una pregunta"
       ],
-      "import": [
-        "importar"
-      ],
       "Import": [
         "Importar"
+      ],
+      "import": [
+        "importar"
       ],
       "Import events": [
         "Importar eventos"
@@ -799,6 +799,9 @@
       "Calendar is syncing": [
         "El calendario se está sincronizando"
       ],
+      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
+        "El calendario se está sincronizando: puede tardar varios minutos en mostrar todos sus eventos."
+      ],
       "Calendar is too big": [
         "El calendario es muy grande"
       ],
@@ -816,6 +819,17 @@
       ],
       "Unsupported calendar format": [
         "Formato de calendario no soportado"
+      ]
+    },
+    "Calendar subscription not synced error; long version": {
+      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
+        "El enlace al calendario no es accesible desde fuera del ecosistema del proveedor del calendario."
+      ],
+      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
+        "El enlace al calendario no está accesible temporalmente. Verifique que el enlace del proveedor del calendario aún es válido."
+      ],
+      "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
+        "Han pasado más de 12 horas desde la última actualización. Proton Calendar intentará actualizar el canlendario dentro de pocas horas."
       ]
     },
     "Calendar view": {
@@ -2033,6 +2047,9 @@
       "Deselect at least ${ calendarToFixCount } calendar or": [
         "Deseleccionar al menos ${ calendarToFixCount } calendario o",
         "Deseleccionar al menos ${ calendarToFixCount } calendarios o"
+      ],
+      "Domain not available, try again later": [
+        "Dominio no disponible, inténtelo más tarde"
       ],
       "Email address disabled": [
         "Dirección de correo deshabilitada"
@@ -3415,6 +3432,9 @@
       "All day": [
         "Todo el día"
       ],
+      "All-day event notifications": [
+        "Notificaciones de eventos durante todo el día"
+      ],
       "Attach screenshot(s)": [
         "Adjuntar captura(s)"
       ],
@@ -3463,18 +3483,6 @@
       "Date and time": [
         "Fecha y hora"
       ],
-      "Default email address": [
-        "Dirección de correo por defecto"
-      ],
-      "Default event duration": [
-        "Duración de evento por defecto"
-      ],
-      "Default full day notifications": [
-        "Notificaciones de todo el día por defecto"
-      ],
-      "Default notifications": [
-        "Notificaciones por defecto"
-      ],
       "Delete": [
         "Eliminar"
       ],
@@ -3504,6 +3512,12 @@
       ],
       "Ends": [
         "Termina"
+      ],
+      "Event duration": [
+        "Duración del evento"
+      ],
+      "Event notifications": [
+        "Notificaciones de eventos"
       ],
       "Event title": [
         "Título del evento"
@@ -3995,6 +4009,14 @@
         "a las"
       ]
     },
+    "Notification type": {
+      "email": [
+        "correo"
+      ],
+      "notification": [
+        "notificación"
+      ]
+    },
     "Notification when": {
       "at time of event": [
         "al momento del evento"
@@ -4395,6 +4417,9 @@
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "¡${ DRIVE_APP_NAME } sale de la beta! Brinde a sus archivos la misma seguridad de sus correos electrónicos."
       ],
+      "Don't miss any events": [
+        "No pierda ningún evento"
+      ],
       "Get up to 18 months of ${ planName } for free": [
         "Obtenga hasta 18 meses de ${ planName } gratis"
       ],
@@ -4409,6 +4434,9 @@
       ],
       "With email notifications, you decide which events to be notified about and when.": [
         "Con las notificaciones por correo electrónico, usted decide sobre qué eventos se le notificará y cuándo."
+      ],
+      "You can now add notifications to calendars you subscribed to.": [
+        "Ahora puede añadir notificaciones a sus calendarios suscritos."
       ]
     },
     "Storage": {
@@ -4488,6 +4516,9 @@
       ],
       "Calendar created": [
         "Calendario creado"
+      ],
+      "Calendar information updated": [
+        "Información del calendario actualizada"
       ],
       "Calendar updated": [
         "Calendario actualizado"
@@ -4731,6 +4762,9 @@
       ],
       "Calendar alarm": [
         "Alarma del calendario"
+      ],
+      "Calendar information": [
+        "Información del calendario"
       ],
       "Change my answer": [
         "Cambiar mi respuesta"

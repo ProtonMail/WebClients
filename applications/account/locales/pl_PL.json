@@ -823,6 +823,9 @@
       "Void anyway": [
         "Unieważnij mimo to"
       ],
+      "What do I get?": [
+        "Co otrzymam?"
+      ],
       "Wipe": [
         "Wyczyść"
       ],
@@ -1261,6 +1264,9 @@
       "Calendar is syncing": [
         "Kalendarz jest synchronizowany"
       ],
+      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
+        "Kalendarz jest synchronizowany: Ładowanie wszystkich wydarzeń może potrwać kilka minut."
+      ],
       "Calendar is too big": [
         "Rozmiar kalendarza jest zbyt duży"
       ],
@@ -1278,6 +1284,17 @@
       ],
       "Unsupported calendar format": [
         "Format kalendarza jest nieobsługiwany"
+      ]
+    },
+    "Calendar subscription not synced error; long version": {
+      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
+        "Link kalendarza nie jest dostępny poza usługą dostawcy kalendarza."
+      ],
+      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
+        "Link kalendarza jest tymczasowo niedostępny. Zweryfikuj, czy link dostawcy kalendarza jest ważny."
+      ],
+      "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
+        "Minęło ponad 12 godzin od ostatniej synchronizacji. Proton Calendar zaktualizuje kalendarz w ciągu kilku godzin."
       ]
     },
     "Calendar view": {
@@ -3465,6 +3482,9 @@
       "Archive": [
         "Archiwum"
       ],
+      "Do not move": [
+        "Nie przenoś"
+      ],
       "Inbox": [
         "Odebrane"
       ],
@@ -5487,9 +5507,6 @@
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a ${ VPN_APP_NAME } server.": [
         "Aby chronić swoje połączenie internetowe, pobierz oraz zainstaluj aplikację ${ VPN_APP_NAME } i połącz się z serwerem."
       ],
-      "To use ${ toAppName }, please create an address.": [
-        "Utwórz adres, aby korzystać z usługi ${ toAppName }."
-      ],
       "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
         "Każdy filtr musi zawierać nazwę i skrypt Sieve. ${ link }."
       ],
@@ -5498,6 +5515,18 @@
       ],
       "Tor": [
         "Tor"
+      ],
+      "Total email addresses": [
+        "Adresy e-mail"
+      ],
+      "Total storage": [
+        "Przestrzeń dyskowa"
+      ],
+      "Total supported domains": [
+        "Wsparcie dla domen"
+      ],
+      "Total VPN connections": [
+        "Połączenia VPN"
       ],
       "Two-factor authentication adds an extra layer of security to your account in case your password is compromised.": [
         "W przypadku naruszenia hasła, uwierzytelnianie dwustopniowe dodaje dodatkową warstwę bezpieczeństwa do Twojego konta."
@@ -5700,6 +5729,9 @@
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Nie dodano metody odzyskiwania. Jeśli zapomnisz hasła, to nie odzyskasz już swojego konta. Czy chcesz przejść dalej bez dodawania metody odzyskiwania?"
       ],
+      "You have no personal calendars to export.": [
+        "Nie masz osobistych kalendarzy do wyeksportowania."
+      ],
       "You have no saved payment methods.": [
         "Nie masz zapisanych metod płatności."
       ],
@@ -5763,8 +5795,8 @@
       "You'll still be able to send and receive mail with your existing email address(es).": [
         "Nadal możesz wysyłać i odbierać wiadomości przy użyciu obecnych adresów e-mail."
       ],
-      "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, please create an address.": [
-        "Twoje konto ${ BRAND_NAME } jest powiązane z adresem ${ externalEmailAddress }. Utwórz adres, aby korzystać z usługi ${ toAppName }."
+      "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
+        "Twoje konto ${ BRAND_NAME } jest powiązane z adresem ${ externalEmailAddress }. Utwórz adres ${ MAIL_APP_NAME }, aby korzystać z usługi ${ toAppName }."
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
         "Twoje konta ${ VPN_APP_NAME } i ${ MAIL_APP_NAME } są połączone. Aby je usunąć, zaloguj się na ${ loginLink } i usuń konto."
@@ -6302,6 +6334,9 @@
       "ALL": [
         "WSZYSTKIE"
       ],
+      "All-day event notifications": [
+        "Powiadomienia wydarzenia całodniowego"
+      ],
       "Allow recovery by email": [
         "Zezwalaj na odzyskiwanie przez e-mail"
       ],
@@ -6497,23 +6532,11 @@
       "Days of the week": [
         "Dni tygodnia"
       ],
-      "Default email address": [
-        "Domyślny adres e-mail"
-      ],
-      "Default event duration": [
-        "Domyślny czas trwania wydarzenia"
-      ],
-      "Default full day notifications": [
-        "Domyślne powiadomienia całodniowe"
-      ],
       "Default language": [
         "Język domyślny"
       ],
       "Default language (${ defaultLanguage })": [
         "Język domyślny (${ defaultLanguage })"
-      ],
-      "Default notifications": [
-        "Domyślne powiadomienia"
       ],
       "Default PGP scheme": [
         "Domyślny schemat PGP"
@@ -6592,6 +6615,12 @@
       ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Wpisz hasło dla klucza z odciskiem: ${ fingerprintCode }"
+      ],
+      "Event duration": [
+        "Czas trwania wydarzenia"
+      ],
+      "Event notifications": [
+        "Powiadomienia wydarzenia"
       ],
       "Expiration date": [
         "Data wygaśnięcia"
@@ -7228,6 +7257,9 @@
       ],
       "How to unlock data": [
         "Jak odblokować dane"
+      ],
+      "Import/export": [
+        "Import / Eksport"
       ],
       "Learn more": [
         "Dowiedz się więcej"
@@ -8331,6 +8363,14 @@
         "o godzinie"
       ]
     },
+    "Notification type": {
+      "email": [
+        "wiadomość"
+      ],
+      "notification": [
+        "powiadomienie"
+      ]
+    },
     "Notification when": {
       "at time of event": [
         "w chwili rozpoczęcia"
@@ -8655,6 +8695,11 @@
         "PayPal"
       ]
     },
+    "Personal calendar section description": {
+      "Create a calendar to stay on top of your schedule while keeping your data secure.": [
+        "Utwórz kalendarz, aby zapanować nad swoim harmonogramem, jednocześnie dbając o bezpieczeństwo danych."
+      ]
+    },
     "Placeholder": {
       "A way to contact you": [
         "Preferowana metoda kontaktu"
@@ -8894,6 +8939,11 @@
       ],
       "State of the art": [
         "Najnowocześniejszy"
+      ]
+    },
+    "Remove calendar section description": {
+      "By unsubscribing, you will no longer have access to this calendar. All events in this calendar will be deleted from your account, but they'll remain in the original publick link.": [
+        "Anulując subskrypcję, utracisz dostęp do tego kalendarza. Wszystkie wydarzenia z tego kalendarza zostaną usunięte z konta Proton, ale pozostaną dostępne za pomocą publicznego linku."
       ]
     },
     "Remove calendar section title": {
@@ -9614,9 +9664,6 @@
       "Add user": [
         "Dodaj użytkownika"
       ],
-      "Address is available": [
-        "Adres jest dostępny"
-      ],
       "Address verification": [
         "Weryfikacja adresu"
       ],
@@ -9746,8 +9793,8 @@
       "Continue with partial import?": [
         "Kontynuować częściowe importowanie?"
       ],
-      "Create a ${ mailAppName } address": [
-        "Utwórz adres ${ mailAppName }"
+      "Create a ${ MAIL_APP_NAME } address": [
+        "Utwórz adres ${ MAIL_APP_NAME }"
       ],
       "Create calendar": [
         "Utwórz kalendarz"
@@ -9958,6 +10005,9 @@
       ],
       "Import": [
         "Importuj"
+      ],
+      "Import and export": [
+        "Import i eksport"
       ],
       "Import as simple event?": [
         "Importować jako zwykłe wydarzenie?",
@@ -10309,6 +10359,9 @@
       ],
       "Your ${ domain } address is active": [
         "Adres ${ domain } jest aktywny"
+      ],
+      "Your ${ MAIL_APP_NAME } address": [
+        "Twój adres ${ MAIL_APP_NAME }"
       ],
       "Your calendar link": [
         "Twój link kalendarza"
@@ -10708,9 +10761,6 @@
       ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
         "Ustawienia daty i czasu na Twoim urządzeniu nie są zsynchronizowane. ${ learnMore }"
-      ],
-      "This feature is only available for ${ mailProfessional } plans or higher": [
-        "Ta funkcja jest dostępna tylko w planach ${ mailProfessional } i wyższych"
       ],
       "This import may exceed the storage capacity currently available in your Proton account. Please consider customizing your import.": [
         "Ten import może przekroczyć obecnie dostępną przestrzeń dyskową na Twoim koncie Proton. Rozważ dostosowanie importu."

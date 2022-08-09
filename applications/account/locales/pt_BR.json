@@ -4,6 +4,20 @@
     "language": "pt_BR"
   },
   "contexts": {
+    "Access level": {
+      "Full": [
+        "Completo"
+      ],
+      "Full view": [
+        "Visualização completa"
+      ],
+      "Limited": [
+        "Limitado"
+      ],
+      "Limited view": [
+        "Visualização limitada"
+      ]
+    },
     "Action": {
       "${ address } is available.": [
         "${ address } está disponível."
@@ -788,6 +802,9 @@
       "Void anyway": [
         "Vazio de qualquer maneira"
       ],
+      "What do I get?": [
+        "O que eu recebo?"
+      ],
       "Wipe": [
         "Limpar"
       ],
@@ -807,6 +824,9 @@
       ]
     },
     "Action in trial plan": {
+      "Continue with free plan": [
+        "Continuar com o plano grátis"
+      ],
       "No, thanks": [
         "Não, obrigado"
       ],
@@ -1140,7 +1160,41 @@
         "Tweet"
       ]
     },
+    "Calendar import section description": {
+      "You can import ICS files from another calendar to ${ CALENDAR_APP_NAME }. This lets you quickly import one event or your entire agenda.": [
+        "Você pode importar arquivos ICS de outro calendário para ${ CALENDAR_APP_NAME }. Isso permite que você rapidamente importe um evento ou sua agenda inteira."
+      ]
+    },
+    "Calendar limit warning": {
+      "You have reached the maximum number of personal calendars you can create within your plan.": [
+        "Você atingiu a quantidade máxima de calendários pessoais que podem ser criados em seu plano."
+      ],
+      "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS } subscribed calendar.": [
+        "Você atingiu o número máximo de ${ MAX_SUBSCRIBED_CALENDARS } calendário assinado.",
+        "Você atingiu o número máximo de ${ MAX_SUBSCRIBED_CALENDARS } calendários assinados."
+      ]
+    },
+    "Calendar link purpose update success message": {
+      "Label added": [
+        "Marcador adicionado"
+      ],
+      "Label deleted": [
+        "Marcador removido"
+      ],
+      "Label edited": [
+        "Marcador alterado"
+      ]
+    },
     "Calendar status": {
+      "Active": [
+        "Ativo"
+      ],
+      "Default": [
+        "Padrão"
+      ],
+      "Disabled": [
+        "Desativado"
+      ],
       "Not synced": [
         "Não sincronizado"
       ],
@@ -1154,6 +1208,9 @@
       ],
       "Calendar is syncing": [
         "Calendário está sincronizando"
+      ],
+      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
+        "O calendário está sincronizando: pode levar vários minutos até que todos os seus eventos sejam exibidos."
       ],
       "Calendar is too big": [
         "Calendário é grande demais"
@@ -1172,6 +1229,28 @@
       ],
       "Unsupported calendar format": [
         "Formato de calendário não suportado"
+      ]
+    },
+    "Calendar subscription not synced error; long version": {
+      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
+        "O link do calendário não está acessível para fora do ecossistema do provedor do calendário."
+      ],
+      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
+        "O link do calendário está temporariamente inacessível. Por favor, verifique se o link do provedor do calendário ainda é válido."
+      ],
+      "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
+        "Mais de 12 horas se passaram desde a última atualização — O Proton Calendar vai tentar atualizar o calendário em algumas horas."
+      ]
+    },
+    "Calendar view": {
+      "Day": [
+        "Dia"
+      ],
+      "Month": [
+        "Mês"
+      ],
+      "Week": [
+        "Semana"
       ]
     },
     "Checkout row": {
@@ -2240,6 +2319,36 @@
         "/usuário por mês"
       ]
     },
+    "Daily recurring event, frequency": {
+      "${ count } time": [
+        "${ count } vez",
+        "${ count } vezes"
+      ],
+      "Daily": [
+        "Diariamente"
+      ],
+      "Daily, ${ timesString }": [
+        "Diariamente, ${ timesString }"
+      ],
+      "Daily, ${ untilString }": [
+        "Diariamente, ${ untilString }"
+      ],
+      "Every ${ interval } day": [
+        "A cada ${ interval } dia",
+        "A cada ${ interval } dias"
+      ],
+      "Every ${ interval } day, ${ timesString }": [
+        "A cada ${ interval } dia, ${ timesString }",
+        "A cada ${ interval } dias, ${ timesString }"
+      ],
+      "Every ${ interval } day, ${ untilString }": [
+        "A cada ${ interval } dia, ${ untilString }",
+        "A cada ${ interval } dias, ${ untilString }"
+      ],
+      "until ${ dateString }": [
+        "até ${ dateString }"
+      ]
+    },
     "Day": {
       "Friday": [
         "Sexta-feira"
@@ -2973,6 +3082,9 @@
       "Error: ${ errorMessage }": [
         "Erro: ${ errorMessage }"
       ],
+      "Invalid URL": [
+        "URL inválida"
+      ],
       "Oops, something went wrong": [
         "Opa, alguma coisa deu errado"
       ],
@@ -3027,6 +3139,14 @@
         "Nenhuma imagem selecionada"
       ]
     },
+    "Error when exporting event from calendar": {
+      "Event @ ${ timeString }": [
+        "Evento @ ${ timeString }"
+      ],
+      "Event from ${ timeString }, ${ rruleString }": [
+        "Evento a partir de ${ timeString }, ${ rruleString }"
+      ]
+    },
     "Event invitation error": {
       "Attached ICS file could not be decrypted": [
         "Arquivo ICS anexado não pôde ser descriptografado"
@@ -3077,17 +3197,51 @@
       ]
     },
     "Export calendar": {
+      "${ totalProcessed }/${ totalToProcess } event exported": [
+        "${ totalProcessed }/${ totalToProcess } evento exportado",
+        "${ totalProcessed }/${ totalToProcess } eventos exportados"
+      ],
+      "Calendar successfully exported. You can now save the ICS file.": [
+        "Calendário exportado com sucesso. Você agora pode salvar o arquivo ICS."
+      ],
       "Decrypting events from your calendar: ${ totalProcessed }/${ totalToProcess }": [
         "Descriptografando eventos do seu calendário: ${ totalProcessed }/${ totalToProcess }"
+      ],
+      "Due to a password reset, none of your events could be decrypted and exported.": [
+        "Devido a uma redefinição de senha, nenhum dos eventos pôde ser descriptografado e exportado."
+      ],
+      "Due to a password reset, some of your events could not be decrypted and exported.": [
+        "Devido a uma redefinição de senha, alguns eventos não puderam ser descriptografados e exportados."
       ],
       "Error decrypting event": [
         "Erro ao descriptografar o evento"
       ],
+      "Learn how to restore encrypted events with old password": [
+        "Saiba como restaurar eventos criptografados com senha antiga"
+      ],
       "Loading events": [
         "Carregando eventos"
       ],
+      "None of the events could be exported.": [
+        "Nenhum dos eventos pode ser exportado."
+      ],
+      "Password reset - event cannot be decrypted": [
+        "Redefinição de senha - o evento não pode ser descriptografado"
+      ],
+      "Password reset - multiple events cannot be decrypted": [
+        "Redefinição de senha - vários eventos não podem ser descriptografados"
+      ],
       "Please don't close the tab before the exporting process is finished.": [
         "Por favor, não feche a aba antes que o processo de exportação termine."
+      ],
+      "Some of your events could not be exported.": [
+        "Não foi possível exportar alguns dos seus eventos."
+      ],
+      "The internet connection was interrupted, causing the export process to fail. Please try again.": [
+        "A conexão com a internet foi interrompida, causando falha no processo de exportação. Por favor, tente novamente."
+      ],
+      "You can save an ICS file of the events that were successfully exported.": [
+        "Você pode salvar um arquivo ICS dos eventos que foram exportados com sucesso."
       ]
     },
     "Feature": {
@@ -3151,6 +3305,9 @@
     "Filter Actions": {
       "Archive": [
         "Arquivados"
+      ],
+      "Do not move": [
+        "Não mover"
       ],
       "Inbox": [
         "Caixa de Entrada"
@@ -3259,6 +3416,9 @@
       "Actions": [
         "Ações"
       ],
+      "Calendar": [
+        "Calendário"
+      ],
       "Event": [
         "Evento"
       ],
@@ -3271,14 +3431,26 @@
       "Key type": [
         "Tipo de chave"
       ],
+      "Label": [
+        "Marcador"
+      ],
+      "Name": [
+        "Nome"
+      ],
       "Notifications": [
         "Notificações"
       ],
       "Organization key fingerprint": [
         "Impressão digital da chave da organização"
       ],
+      "Status": [
+        "Status"
+      ],
       "Time": [
         "Horário"
+      ],
+      "What others see": [
+        "O que os outros veem"
       ]
     },
     "Header for addresses table": {
@@ -4147,7 +4319,7 @@
         "Crie um marcador para as mensagens importadas, um intervalo de tempo para esta importação e as pastas que você gostaria de importar."
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
-        "Criar um marcador para as mensagens importadas, um período de tempo para esta importação, e os marcadores que deseja importar."
+        "Crie um marcador para as mensagens importadas, um período de tempo para esta importação, e os marcadores que deseja importar."
       ],
       "Create a link to your calendar and share it with anyone outside Proton. Only you can add or remove events.": [
         "Crie um link para o seu calendário e compartilhe-o com qualquer pessoa fora do Proton. Somente você pode adicionar ou remover eventos."
@@ -5044,14 +5216,23 @@
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a ${ VPN_APP_NAME } server.": [
         "Para proteger sua conexão à internet, baixe e instale o aplicativo ${ VPN_APP_NAME } no seu dispositivo e se conecte a um servidor ${ VPN_APP_NAME }."
       ],
-      "To use ${ toAppName }, please create an address.": [
-        "Para usar ${ toAppName }, por favor crie um endereço."
-      ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Recarregue sua conta com créditos que podem ser utilizados para assinar um novo plano ou renovar seu plano atual. Você recebe um crédito a cada ${ i18nCurrency } gasto."
       ],
       "Tor": [
         "Tor"
+      ],
+      "Total email addresses": [
+        "Endereços de e-mail adicionais"
+      ],
+      "Total storage": [
+        "Total de armazenamento"
+      ],
+      "Total supported domains": [
+        "Total de domínios suportados"
+      ],
+      "Total VPN connections": [
+        "Conexões VPN adicionais"
       ],
       "Two-factor authentication adds an extra layer of security to your account in case your password is compromised.": [
         "A autenticação em dois fatores adiciona uma camada extra de segurança para a sua conta para caso sua senha seja comprometida."
@@ -5311,9 +5492,6 @@
       "You'll still be able to send and receive mail with your existing email address(es).": [
         "Você ainda poderá enviar e receber mensagens com seu(s) endereço(s) de e-mail existente(s)."
       ],
-      "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, please create an address.": [
-        "A sua conta ${ BRAND_NAME } está associada com ${ externalEmailAddress }. Para usar o ${ toAppName }, por favor, crie um endereço."
-      ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
         "Suas contas ${ VPN_APP_NAME } e ${ MAIL_APP_NAME } estão conectadas. Para excluir ambas, por favor acesse sua conta em ${ loginLink } e exclua sua conta lá."
       ],
@@ -5391,11 +5569,17 @@
       "Additional duplicate keys detected. Please upload individually for more information.": [
         "Chaves adicionais duplicadas detectadas. Por favor envie individualmente para mais informações."
       ],
+      "Create an email address": [
+        "Criar um endereço de e-mail"
+      ],
       "Key ${ fingerprint } has already been uploaded": [
         "Chave ${ fingerprint } já foi enviada"
       ],
       "Track your referral link activities here": [
         "Acompanhe suas atividades de links de referência aqui"
+      ],
+      "Try Mail Plus": [
+        "Testar o Mail Plus"
       ]
     },
     "Info - folder colouring feature": {
@@ -5758,6 +5942,9 @@
       ]
     },
     "Knowledge base link label": {
+      "Here's how": [
+        "Aqui está como"
+      ],
       "Learn more": [
         "Saiba mais"
       ]
@@ -5811,6 +5998,9 @@
       "ALL": [
         "TODOS"
       ],
+      "All-day event notifications": [
+        "Notificações para eventos de dia inteiro"
+      ],
       "Allow recovery by email": [
         "Permitir recuperação por e-mail"
       ],
@@ -5841,6 +6031,9 @@
       "App password": [
         "Senha do aplicativo"
       ],
+      "Apply filter to existing emails": [
+        "Aplicar filtro aos e-mails existentes"
+      ],
       "Ask before loading remote content": [
         "Confirme antes de carregar conteúdo remoto"
       ],
@@ -5849,6 +6042,9 @@
       ],
       "Attach screenshot(s)": [
         "Anexar captura(s) de tela"
+      ],
+      "Auto-detect primary time zone": [
+        "Detecção automática do fuso horário primário"
       ],
       "Auto-load embedded images": [
         "Carregar imagens incorporadas automaticamente"
@@ -5906,6 +6102,9 @@
       ],
       "Code is 6 digits without spaces": [
         "O código é de 6 dígitos sem espaços"
+      ],
+      "Color": [
+        "Cor"
       ],
       "Composer": [
         "Compositor"
@@ -5994,14 +6193,23 @@
       "Default language": [
         "Idioma padrão"
       ],
+      "Default language (${ defaultLanguage })": [
+        "Idioma padrão (${ defaultLanguage })"
+      ],
       "Default PGP scheme": [
         "Esquema PGP padrão"
+      ],
+      "Default view": [
+        "Visualização padrão"
       ],
       "Delete": [
         "Excluir"
       ],
       "Density": [
         "Densidade"
+      ],
+      "Description": [
+        "Descrição"
       ],
       "Device/certificate name": [
         "Nome do dispositivo/certificado"
@@ -6062,6 +6270,12 @@
       ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Digite a senha da chave com impressão digital ${ fingerprintCode }"
+      ],
+      "Event duration": [
+        "Duração do evento"
+      ],
+      "Event notifications": [
+        "Notificações do evento"
       ],
       "Expiration date": [
         "Data de expiração"
@@ -6348,6 +6562,12 @@
       "Send auto-reply": [
         "Enviar resposta automática"
       ],
+      "Show secondary time zone": [
+        "Mostrar fuso horário secundário"
+      ],
+      "Show week numbers": [
+        "Exibir números da semana"
+      ],
       "Sign external messages": [
         "Assinar mensagens externas"
       ],
@@ -6432,6 +6652,9 @@
       "Upload 1 or more recovery files or encryption keys": [
         "Envie 1 ou mais arquivos de recuperação ou chaves de criptografia"
       ],
+      "URL": [
+        "URL"
+      ],
       "Use folder colors": [
         "Usar cores da pasta"
       ],
@@ -6488,6 +6711,12 @@
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Sim, eu quero excluir permanentemente esta conta e todos os seus dados."
+      ],
+      "Your calendar URL": [
+        "URL do seu calendário"
+      ],
+      "Your calendar URL label": [
+        "Etiqueta URL do seu calendário"
       ],
       "Your password (admin)": [
         "Sua senha (admin)"
@@ -6768,6 +6997,12 @@
         "Importar todas as mensagens de ${ totalLabelsCount } marcadores desde ${ periodFragment } e marcá-las como ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
+    "Maximum calendar links reached warning": {
+      "You can create up to ${ MAX_LINKS_PER_CALENDAR } link per calendar. To create a new link to this calendar, delete one from the list below.": [
+        "Você pode criar até ${ MAX_LINKS_PER_CALENDAR } link por calendário. Para criar um novo link para este calendário, exclua um da lista abaixo.",
+        "Você pode criar até ${ MAX_LINKS_PER_CALENDAR } links por calendário. Para criar um novo link para este calendário, exclua um da lista abaixo."
+      ]
+    },
     "Member action": {
       "Delete": [
         "Excluir"
@@ -6832,6 +7067,11 @@
         "Como importar e-mails do Yahoo"
       ]
     },
+    "Modal title and action": {
+      "Add calendar": [
+        "Adicionar calendário"
+      ]
+    },
     "Monetary unit": {
       "Dollar": [
         "Dólar"
@@ -6841,6 +7081,94 @@
       ],
       "Swiss franc": [
         "Franco suíço"
+      ]
+    },
+    "Monthly recurring event, frequency": {
+      "Every ${ interval } month ${ onDayString }": [
+        "A cada ${ interval } mês, ${ onDayString }",
+        "A cada ${ interval } meses, ${ onDayString }"
+      ],
+      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
+        "A cada ${ interval } mês ${ onDayString }, ${ timesString }",
+        "A cada ${ interval } meses, ${ onDayString }, ${ timesString }"
+      ],
+      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
+        "A cada ${ interval } mês ${ onDayString }, ${ untilString }",
+        "A cada ${ interval } meses ${ onDayString }, ${ untilString }"
+      ],
+      "Monthly ${ onDayString }": [
+        "Mensalmente ${ onDayString }"
+      ],
+      "Monthly ${ onDayString }, ${ timesString }": [
+        "Mensalmente ${ onDayString }, ${ timesString }"
+      ],
+      "Monthly ${ onDayString }, ${ untilString }": [
+        "Mensalmente ${ onDayString }, ${ untilString }"
+      ]
+    },
+    "Monthly recurring event, repeats on": {
+      "on day ${ dayOfMonth }": [
+        "no dia ${ dayOfMonth }"
+      ],
+      "on the first Friday": [
+        "na primeira Sexta-feira"
+      ],
+      "on the first Monday": [
+        "na primeira Segunda-feira"
+      ],
+      "on the first Saturday": [
+        "no primeiro Sábado"
+      ],
+      "on the first Sunday": [
+        "no primeiro Domingo"
+      ],
+      "on the first Thursday": [
+        "na primeira Quinta-feira"
+      ],
+      "on the first Tuesday": [
+        "na primeira Terça-feira"
+      ],
+      "on the first Wednesday": [
+        "na primeira Quarta-feira"
+      ],
+      "on the fourth Monday": [
+        "na quarta Segunda-feira"
+      ],
+      "on the fourth Sunday": [
+        "no quarto Domingo"
+      ],
+      "on the fourth Thursday": [
+        "na quarta Quinta-feira"
+      ],
+      "on the fourth Tuesday": [
+        "na quarta Terça-feira"
+      ],
+      "on the fourth Wednesday": [
+        "na quarta Quarta-feira"
+      ],
+      "on the second Friday": [
+        "na segunda Sexta-feira"
+      ],
+      "on the second Monday": [
+        "na segunda Segunda-feira"
+      ],
+      "on the second Sunday": [
+        "no segundo Domingo"
+      ],
+      "on the second Thursday": [
+        "na segunda Quinta-feira"
+      ],
+      "on the second Tuesday": [
+        "na segunda Terça-feira"
+      ],
+      "on the second Wednesday": [
+        "na segunda Quarta-feira"
+      ],
+      "on the third Friday": [
+        "na terceira Sexta-feira"
+      ],
+      "on the third Saturday": [
+        "no terceiro Sábado"
       ]
     },
     "Moved to black/whitelist": {
@@ -7571,11 +7899,11 @@
       ]
     },
     "Notification type": {
-      "Email": [
-        "E-mail"
+      "email": [
+        "e-mail"
       ],
-      "In-app": [
-        "No aplicativo"
+      "notification": [
+        "notificação"
       ]
     },
     "Notification when": {
@@ -7998,6 +8326,14 @@
         "Gratuito"
       ]
     },
+    "Primary timezone": {
+      "Primary time zone": [
+        "Fuso horário primário"
+      ],
+      "Secondary time zone": [
+        "Fuso horário secundário"
+      ]
+    },
     "Private Member": {
       "private": [
         "privado"
@@ -8154,6 +8490,11 @@
         "Enviar arquivos adicionais"
       ]
     },
+    "Select search results": {
+      "No results found": [
+        "Nenhum resultado encontrado"
+      ]
+    },
     "Settings description": {
       "Make the move to privacy. Effortlessly and securely.": [
         "Venha para a privacidade. Sem esforço e com segurança."
@@ -8249,6 +8590,9 @@
       ]
     },
     "Spotlight": {
+      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
+        "O ${ DRIVE_APP_NAME } saiu do beta! Dê aos seus arquivos a mesma segurança que seus e-mails recebem."
+      ],
       "Get up to 18 months of ${ planName } for free": [
         "Obtenha até 18 meses de ${ planName } gratuitamente"
       ],
@@ -8293,6 +8637,37 @@
       ],
       "Your current storage:": [
         "Seu armazenamento atual:"
+      ]
+    },
+    "Subscribe to calendar modal": {
+      "Calendar URL": [
+        "URL do calendário"
+      ],
+      "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Subscribed calendars.\n${ kbLink }": [
+        "Para se inscrever em uma agenda externa ou pública e suas atualizações, digite a URL. Uma versão de somente leitura do calendário será adicionada aos calendários assinados.\n${ kbLink }"
+      ]
+    },
+    "Subscribe to calendar modal description": {
+      "Learn how to get a private calendar link.": [
+        "Aprenda como obter um link para um calendário privado."
+      ]
+    },
+    "Subscribed calendar extension warning": {
+      "By using this link, Google will make the calendar you are subscribing to public": [
+        "Ao usar este link, Google tornará público o calendário ao qual você está se inscrevendo"
+      ],
+      "This link might be wrong": [
+        "Este link pode estar errado"
+      ]
+    },
+    "Subscribed calendar section description": {
+      "Add public, external, or shared calendars using a URL.": [
+        "Adicione calendários públicos, externos ou compartilhados usando a URL."
+      ]
+    },
+    "Subscribed calendar URL length warning": {
+      "URL is too long": [
+        "URL é muito longo"
       ]
     },
     "Subscription attribute": {
@@ -8401,8 +8776,17 @@
       "Calendar added. It might take a few minutes to sync.": [
         "Calendário adicionado. Pode levar alguns minutos para sincronizar."
       ],
+      "Calendar created": [
+        "O calendário foi criado"
+      ],
+      "Calendar information updated": [
+        "As informações do calendário foram atualizadas"
+      ],
       "Calendar removed": [
         "Calendário removido"
+      ],
+      "Calendar updated": [
+        "O calendário foi atualizado"
       ],
       "Canceling import": [
         "Cancelando a importação"
@@ -8576,6 +8960,11 @@
         "por mês"
       ]
     },
+    "Summary of errors during export calendar": {
+      "Details about events that couldn't be exported": [
+        "Detalhes sobre os eventos que não puderam ser exportados"
+      ]
+    },
     "Tab in domain modal": {
       "Addresses": [
         "Endereços"
@@ -8642,6 +9031,11 @@
         "${ minutes } minutos"
       ]
     },
+    "Timezone search placeholder": {
+      "Search timezones": [
+        "Pesquisar fusos horários"
+      ]
+    },
     "Title": {
       "${ appName } Keyboard Shortcuts": [
         "${ appName } Teclas de Atalho"
@@ -8695,6 +9089,9 @@
       "Add address": [
         "Adicionar endereço"
       ],
+      "Add another notification to remind you of this event": [
+        "Adicione outra notificação para lembrá-lo deste evento"
+      ],
       "Add contact group name": [
         "Adicionar nome do grupo de contatos"
       ],
@@ -8727,9 +9124,6 @@
       ],
       "Add user": [
         "Adicionar usuário"
-      ],
-      "Address is available": [
-        "O endereço está disponível"
       ],
       "Address verification": [
         "Verificação de endereço"
@@ -8784,6 +9178,9 @@
       ],
       "Bridge for ${ platform }": [
         "Bridge para ${ platform }"
+      ],
+      "Calendar information": [
+        "Informações do calendário"
       ],
       "Cancel Mail subscription": [
         "Cancelar assinatura de e-mail"
@@ -8854,8 +9251,11 @@
       "Continue with partial import?": [
         "Continue com uma importação parcial?"
       ],
-      "Create a ${ mailAppName } address": [
-        "Criar um endereço de ${ mailAppName }"
+      "Create a ${ MAIL_APP_NAME } address": [
+        "Criar um endereço de ${ MAIL_APP_NAME }"
+      ],
+      "Create calendar": [
+        "Criar calendário"
       ],
       "Create your ${ BRAND_NAME } Account": [
         "Crie sua Conta ${ BRAND_NAME }"
@@ -8920,6 +9320,9 @@
       "Delete account": [
         "Excluir conta"
       ],
+      "Delete calendar": [
+        "Excluir calendário"
+      ],
       "Delete key permanently?": [
         "Excluir permanentemente a chave?"
       ],
@@ -8959,6 +9362,9 @@
       "Edit Block List": [
         "Editar Lista de Bloqueados"
       ],
+      "Edit calendar": [
+        "Editar calendário"
+      ],
       "Edit credit/debit card": [
         "Editar cartão de crédito/débito"
       ],
@@ -8997,6 +9403,9 @@
       ],
       "Export": [
         "Exportar"
+      ],
+      "Export calendar": [
+        "Exportando calendário"
       ],
       "Export private key": [
         "Exportar chave privada"
@@ -9209,6 +9618,9 @@
       "Referral tracker": [
         "Rastreador de referência"
       ],
+      "Remove calendar": [
+        "Excluir calendário"
+      ],
       "Report a problem": [
         "Relatar um problema"
       ],
@@ -9250,6 +9662,15 @@
       ],
       "Select contact group": [
         "Selecionar grupo de contato"
+      ],
+      "Select the time to send this notification": [
+        "Selecione o horário para enviar esta notificação"
+      ],
+      "Select the way to send this notification": [
+        "Selecione a forma de enviar esta notificação"
+      ],
+      "Select when you want this notification to be sent": [
+        "Selecione quando você deseja que esta notificação seja enviada"
       ],
       "Session management": [
         "Gerenciamento de sessão"
@@ -9386,6 +9807,9 @@
       "Your ${ domain } address is active": [
         "Seu endereço ${ domain } está ativo"
       ],
+      "Your calendar link": [
+        "Link do seu calendário"
+      ],
       "Your current plan": [
         "O seu plano atual"
       ],
@@ -9498,7 +9922,7 @@
         "Personalize importação para reduzir o número de pastas"
       ],
       "Customize import to reduce the number of labels": [
-        "Personalizar importação para reduzir a quantidade de marcadores"
+        "Personalize a importação para reduzir a quantidade de marcadores"
       ],
       "Discount applied for annual billing cycle": [
         "Desconto aplicado para o ciclo de faturamento anual"
@@ -9559,6 +9983,9 @@
       ],
       "This feature is only available for paid users": [
         "Este recurso só está disponível para usuários com um plano pago"
+      ],
+      "This feature is unavailable for the moment": [
+        "Este recurso está indisponível no momento"
       ],
       "This key cannot be used for encryption": [
         "Essa chave não pode ser usada para criptografar"
@@ -9752,9 +10179,6 @@
       "The date and time settings on your device are out of sync. ${ learnMore }": [
         "As configurações de data e hora em seu dispositivo não estão sincronizadas. ${ learnMore }"
       ],
-      "This feature is only available for ${ mailProfessional } plans or higher": [
-        "Esse recurso só está disponível para os planos de ${ mailProfessional } ou superiores"
-      ],
       "This import may exceed the storage capacity currently available in your Proton account. Please consider customizing your import.": [
         "Esta importação pode exceder a capacidade de armazenamento atualmente disponível em sua conta Proton. Por favor, considere realizar sua importação de forma personalizada."
       ],
@@ -9794,6 +10218,235 @@
     "Weak personal key warning": {
       "This key no longer meets our security standards. We suggest you mark it as obsolete and generate a new key.": [
         "Esta chave não atende mais aos nossos padrões de segurança. Sugerimos que você a marque como obsoleta e gere uma nova chave."
+      ]
+    },
+    "Weekly recurring event, frequency": {
+      "Every ${ interval } week on ${ multipleDaysString }": [
+        "",
+        "A cada ${ interval } semanas, ${ multipleDaysString }"
+      ],
+      "Every ${ interval } week on all days": [
+        "A cada ${ interval } das semanas, todos os dias",
+        "A cada ${ interval } das semanas, todos os dias"
+      ],
+      "Every ${ interval } week on all days, ${ timesString }": [
+        "A cada ${ interval } semana, todos os dias, até ${ timesString }",
+        "A cada ${ interval } semanas, todos os dias, às ${ timesString }"
+      ],
+      "Every ${ interval } week on all days, ${ untilString }": [
+        "A cada ${ interval } semana, todos os dias, ${ untilString }",
+        "A cada ${ interval } semanas em todos os dias, ${ untilString }"
+      ],
+      "Every ${ interval } week on Friday": [
+        "A cada ${ interval } semana, na Sexta-feira",
+        "A cada ${ interval } semanas na Sexta-feira"
+      ],
+      "Every ${ interval } week on Friday, ${ timesString }": [
+        "A cada ${ interval } semana, na Sexta-feira, às ${ timesString }",
+        "A cada ${ interval } semanas, na Sexta-feira, às ${ timesString }"
+      ],
+      "Every ${ interval } week on Friday, ${ untilString }": [
+        "A cada ${ interval } semana, na Sexta-feira, ${ untilString }",
+        "A cada ${ interval } semanas, na Sexta-feira, ${ untilString }"
+      ],
+      "Every ${ interval } week on Monday": [
+        "A cada ${ interval } semana, à Segunda-feira",
+        "A cada ${ interval } semanas na Segunda-feira"
+      ],
+      "Every ${ interval } week on Monday, ${ timesString }": [
+        "A cada ${ interval } semana, todos os dias, até ${ timesString }",
+        "A cada ${ interval } semanas, na Segunda-feira, às ${ timesString }"
+      ],
+      "Every ${ interval } week on Monday, ${ untilString }": [
+        "A cada ${ interval } semana, na Segunda-feira, ${ untilString }",
+        "A cada ${ interval } semanas, na Segunda-feira, ${ untilString }"
+      ],
+      "Every ${ interval } week on Saturday": [
+        "A cada ${ interval } semana, no Sábado",
+        "A cada ${ interval } semanas, no Sábado"
+      ],
+      "Every ${ interval } week on Saturday, ${ timesString }": [
+        "A cada ${ interval } semana, no Sábado, às ${ timesString }",
+        "A cada ${ interval } semanas, no Sábado, ${ timesString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ untilString }": [
+        "A cada ${ interval } semana, no Sábado, ${ untilString }",
+        "A cada ${ interval } semanas, no Sábado, ${ untilString }"
+      ],
+      "Every ${ interval } week on Sunday": [
+        "A cada ${ interval } semana ao Domingo",
+        "A cada ${ interval } semanas, ao Domingo"
+      ],
+      "Every ${ interval } week on Sunday, ${ timesString }": [
+        "A cada ${ interval } semana, todos os dias, até ${ timesString }",
+        "A cada ${ interval } semanas, todos os dias, até ${ timesString }"
+      ],
+      "Every ${ interval } week on Sunday, ${ untilString }": [
+        "A cada ${ interval } semana, no Domingo, ${ untilString }",
+        "A cada ${ interval } semanas, no Domingo, ${ untilString }"
+      ],
+      "Every ${ interval } week on Thursday": [
+        "A cada ${ interval } semana, na Quinta-feira",
+        "A cada ${ interval } semanas na Quinta-feira"
+      ],
+      "Every ${ interval } week on Thursday, ${ timesString }": [
+        "A cada ${ interval } semana, na Quinta-feira, às ${ timesString }",
+        "A cada ${ interval } semanas, na Quinta-feira, às ${ timesString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ untilString }": [
+        "A cada ${ interval } semana, na Quinta-feira, ${ untilString }",
+        "A cada ${ interval } semanas, na Quinta-feira, ${ untilString }"
+      ],
+      "Every ${ interval } week on Tuesday": [
+        "A cada ${ interval } semana, na Terça-feira",
+        "A cada ${ interval } semanas na Terça-feira"
+      ],
+      "Every ${ interval } week on Tuesday, ${ timesString }": [
+        "A cada ${ interval } semana, na Terça-feira, às ${ timesString }",
+        "A cada ${ interval } semanas, na Terça-feira, às ${ timesString }"
+      ],
+      "Every ${ interval } week on Tuesday, ${ untilString }": [
+        "A cada ${ interval } semana, na Terça-feira, ${ untilString }",
+        "A cada ${ interval } semanas, na Terça-feira, ${ untilString }"
+      ],
+      "Every ${ interval } week on Wednesday": [
+        "A cada ${ interval } semana, na Quarta-feira",
+        "A cada ${ interval } semanas, na Quarta-feira"
+      ],
+      "Every ${ interval } week on Wednesday, ${ timesString }": [
+        "A cada ${ interval } semana, na Quarta-feira, às ${ timesString }",
+        "A cada ${ interval } semanas, na Quarta-feira, às ${ timesString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ untilString }": [
+        "A cada ${ interval } semana, na Quarta-feira, ${ untilString }",
+        "A cada ${ interval } semanas, na Quarta-feira, ${ untilString }"
+      ],
+      "Weekly on ${ multipleDaysString }": [
+        "Semanalmente em ${ multipleDaysString }"
+      ],
+      "Weekly on ${ multipleDaysString }, ${ timesString }": [
+        "Semanalmente, ${ multipleDaysString }, até ${ timesString }"
+      ],
+      "Weekly on ${ multipleDaysString }, ${ untilString }": [
+        "Semanalmente em ${ multipleDaysString }, ${ untilString }"
+      ],
+      "Weekly on all days": [
+        "Semanalmente, todos os dias"
+      ],
+      "Weekly on all days, ${ timesString }": [
+        "Semanalmente em todos os dias, ${ timesString }"
+      ],
+      "Weekly on all days, ${ untilString }": [
+        "Semanalmente em todos os dias, ${ untilString }"
+      ],
+      "Weekly on Friday": [
+        "Semanalmente na Sexta-feira"
+      ],
+      "Weekly on Friday, ${ timesString }": [
+        "Semanalmente no Domingo, ${ timesString }"
+      ],
+      "Weekly on Friday, ${ untilString }": [
+        "Semanalmente na Sexta-feira, ${ untilString }"
+      ],
+      "Weekly on Monday": [
+        "Semanalmente na Segunda-feira"
+      ],
+      "Weekly on Monday, ${ timesString }": [
+        "Semanalmente no Domingo, ${ timesString }"
+      ],
+      "Weekly on Monday, ${ untilString }": [
+        "Semanalmente na Segunda-feira, ${ untilString }"
+      ],
+      "Weekly on Saturday": [
+        "Semanalmente no Sábado"
+      ],
+      "Weekly on Saturday, ${ timesString }": [
+        "Semanalmente no Domingo, ${ timesString }"
+      ],
+      "Weekly on Saturday, ${ untilString }": [
+        "Semanalmente no Sábado, ${ untilString }"
+      ],
+      "Weekly on Sunday": [
+        "Semanalmente, ao Domingo"
+      ],
+      "Weekly on Sunday, ${ timesString }": [
+        "Semanalmente no Domingo, ${ timesString }"
+      ],
+      "Weekly on Sunday, ${ untilString }": [
+        "Semanalmente no Domingo, ${ untilString }"
+      ],
+      "Weekly on Thursday": [
+        "Semanalmente na Quinta-feira"
+      ],
+      "Weekly on Thursday, ${ timesString }": [
+        "Semanalmente no Domingo, ${ timesString }"
+      ],
+      "Weekly on Thursday, ${ untilString }": [
+        "Semanalmente na Quinta-feira, ${ untilString }"
+      ],
+      "Weekly on Tuesday": [
+        "Semanalmente, à Terça-feira"
+      ],
+      "Weekly on Tuesday, ${ timesString }": [
+        "Semanalmente no Domingo, ${ timesString }"
+      ],
+      "Weekly on Tuesday, ${ untilString }": [
+        "Semanalmente na Terça-feira, ${ untilString }"
+      ],
+      "Weekly on Wednesday": [
+        "Semanalmente na Quarta-feira"
+      ],
+      "Weekly on Wednesday, ${ timesString }": [
+        "Semanalmente no Domingo, ${ timesString }"
+      ],
+      "Weekly on Wednesday, ${ untilString }": [
+        "Semanalmente na Quarta-feira, ${ untilString }"
+      ]
+    },
+    "Weekly recurring event, repeats on (multiple days), frequency": {
+      "Friday": [
+        "Sexta-feira"
+      ],
+      "Monday": [
+        "Segunda-feira"
+      ],
+      "Saturday": [
+        "Sábado"
+      ],
+      "Sunday": [
+        "Domingo"
+      ],
+      "Thursday": [
+        "Quinta-feira"
+      ],
+      "Tuesday": [
+        "Terça-feira"
+      ],
+      "Wednesday": [
+        "Quarta-feira"
+      ]
+    },
+    "Yearly recurring event, frequency": {
+      "Every ${ interval } year": [
+        "A cada ${ interval } de ano",
+        "A cada ${ interval } anos"
+      ],
+      "Every ${ interval } year, ${ timesString }": [
+        "A cada ${ interval } ano, ${ timesString }",
+        "A cada ${ interval } anos, ${ timesString }"
+      ],
+      "Every ${ interval } year, ${ untilString }": [
+        "A cada ${ interval } ano, ${ untilString }",
+        "A cada ${ interval } anos, ${ untilString }"
+      ],
+      "Yearly": [
+        "Anualmemnte"
+      ],
+      "Yearly, ${ timesString }": [
+        "Anualmente, ${ timesString }"
+      ],
+      "Yearly, ${ untilString }": [
+        "Anualmente, ${ untilString }"
       ]
     }
   }
