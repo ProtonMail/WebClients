@@ -1,6 +1,8 @@
 import { c } from 'ttag';
+
 import identity from '@proton/utils/identity';
-import { MIME_TYPES, MAILBOX_LABEL_IDS } from '../constants';
+
+import { MAILBOX_LABEL_IDS, MIME_TYPES } from '../constants';
 import { clearBit, hasBit, setBit, toggleBit } from '../helpers/bitset';
 import { canonizeInternalEmail, getEmailParts } from '../helpers/email';
 import { isICS } from '../helpers/mimetype';
@@ -23,7 +25,6 @@ const {
     FLAG_SIGN,
     FLAG_PUBLIC_KEY,
     FLAG_UNSUBSCRIBED,
-    FLAG_UNSUBSCRIBABLE,
     FLAG_SCHEDULED_SEND,
 } = MESSAGE_FLAGS;
 const AUTOREPLY_HEADERS = ['X-Autoreply', 'X-Autorespond', 'X-Autoreply-From', 'X-Mail-Autoreply'];
@@ -78,7 +79,10 @@ export const isInternalEncrypted = hasFlag(FLAG_E2E | FLAG_INTERNAL);
 export const isSign = hasFlag(FLAG_SIGN);
 export const isAttachPublicKey = hasFlag(FLAG_PUBLIC_KEY);
 export const isUnsubscribed = hasFlag(FLAG_UNSUBSCRIBED);
-export const isUnsubscribable = hasFlag(FLAG_UNSUBSCRIBABLE);
+export const isUnsubscribable = (message?: Partial<Message>) => {
+    const unsubscribeMethods = message?.UnsubscribeMethods || {};
+    return !!unsubscribeMethods.OneClick; // Only method supported by API
+};
 
 export const isExternalEncrypted = (message: Message) => isE2E(message) && !isInternal(message);
 export const isPGPEncrypted = (message: Message) => isExternal(message) && isReceived(message) && isE2E(message);

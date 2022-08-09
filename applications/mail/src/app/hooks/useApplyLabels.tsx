@@ -12,6 +12,7 @@ import { labelMessages, unlabelMessages } from '@proton/shared/lib/api/messages'
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { SpamAction } from '@proton/shared/lib/interfaces';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { isUnsubscribable } from '@proton/shared/lib/mail/messages';
 import isTruthy from '@proton/utils/isTruthy';
 
 import MoveScheduledModal from '../components/message/modals/MoveScheduledModal';
@@ -338,6 +339,12 @@ export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolea
     const askToUnsubscribe = async (folderID: string, isMessage: boolean, elements: Element[]) => {
         if (folderID === SPAM) {
             if (mailSettings?.SpamAction === null) {
+                const canBeUnsubscribed = elements.some((message) => isUnsubscribable(message));
+
+                if (!canBeUnsubscribed) {
+                    return;
+                }
+
                 const { unsubscribe, remember } = await handleShowSpamModal({ isMessage, elements });
                 const spamAction = unsubscribe ? SpamAction.SpamAndUnsub : SpamAction.JustSpam;
 
@@ -346,6 +353,7 @@ export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolea
                     void api(updateSpamAction(spamAction));
                 }
 
+                // This choice is return and used in the label API request
                 return spamAction;
             }
 
