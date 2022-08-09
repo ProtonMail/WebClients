@@ -224,10 +224,10 @@
       "I have a question": [
         "我有疑问"
       ],
-      "import": [
+      "Import": [
         "导入"
       ],
-      "Import": [
+      "import": [
         "导入"
       ],
       "Import events": [
@@ -725,6 +725,9 @@
       "${ name } tentatively accepted the invitation": [
         "${ name } 暂时接受邀请"
       ],
+      "This event has been canceled": [
+        "此活动已被取消。"
+      ],
       "You accepted the invitation": [
         "您接受了邀请"
       ],
@@ -780,6 +783,17 @@
         "不受支持的日历格式"
       ]
     },
+    "Calendar subscription not synced error; long version": {
+      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
+        "日历链接不能从日历提供者的系统之外访问。"
+      ],
+      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
+        "日历链接暂时无法访问。请核实日历提供者的链接仍然有效。"
+      ],
+      "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
+        "距离上次更新已经超过12小时--Proton Calendar将尝试在几小时内更新日历。"
+      ]
+    },
     "Calendar view": {
       "Day": [
         "天"
@@ -789,6 +803,11 @@
       ],
       "Week": [
         "周"
+      ]
+    },
+    "Calendar view selector": {
+      "Change time range to": [
+        "将时间范围改为"
       ]
     },
     "Collapsible tooltip": {
@@ -1750,9 +1769,24 @@
         "停用"
       ]
     },
+    "Disabled calendar name suffix": {
+      "Disabled": [
+        "已停用"
+      ]
+    },
     "Disabled calendar tooltip": {
       "The event belongs to a disabled calendar.": [
         "此为已停用日历中的事件"
+      ]
+    },
+    "Don't ask to update timezone checkbox label": {
+      "Don't ask again": [
+        "不再询问"
+      ]
+    },
+    "Dropdown action icon tooltip": {
+      "Add calendar": [
+        "添加日历"
       ]
     },
     "Duration": {
@@ -1785,6 +1819,9 @@
       ]
     },
     "Email body for invitation": {
+      "${ eventTitle } has been canceled.": [
+        "${ eventTitle } 已被取消。"
+      ],
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } 已更新。\n${ eventDetailsText }"
       ],
@@ -1854,9 +1891,6 @@
       ],
       "A group with this name already exists": [
         "已存在同名群组"
-      ],
-      "A maximum of 10 notifications is allowed": [
-        "最多允许10个通知"
       ],
       "Address primary private key not found": [
         "找不到地址主私钥"
@@ -2160,20 +2194,95 @@
       "Calendar": [
         "日历"
       ],
+      "Calendar time zone not supported": [
+        "不支持此日历时区"
+      ],
+      "Component with wrong format": [
+        "组件格式错误"
+      ],
       "Custom timezone": [
         "自定义时区"
+      ],
+      "Edited event not supported": [
+        "不支持已编辑的事件"
       ],
       "Element": [
         "元素"
       ],
+      "Encryption failed": [
+        "加密失败"
+      ],
+      "End time out of bounds": [
+        "结束时间超出限制"
+      ],
       "Event": [
         "事件"
+      ],
+      "Event validation failed": [
+        "事件验证失败"
+      ],
+      "Floating times not supported": [
+        "不支持浮动时间"
+      ],
+      "Free-busy time information": [
+        "忙碌/空闲时间信息"
+      ],
+      "Invalid event": [
+        "无效的日程"
+      ],
+      "Journal entry": [
+        "记录条目"
+      ],
+      "Malformed all-day event": [
+        "全天日程格式不正确"
+      ],
+      "Malformed end time": [
+        "结束时间格式不正确"
+      ],
+      "Malformed recurring event": [
+        "错误的重复日程"
+      ],
+      "Malformed start time": [
+        "启动时间格式不正确"
+      ],
+      "Missing start time": [
+        "缺少启动时间"
+      ],
+      "No UID, title or start time": [
+        "没有 UID、标题或开始时间"
+      ],
+      "Non-Gregorian": [
+        "非格里历"
+      ],
+      "Notification out of bounds": [
+        "通知超出范围"
+      ],
+      "Original recurring event could not be found": [
+        "找不到原始重复事件"
+      ],
+      "Recurring event has no occurrences": [
+        "重复事件没有发生"
+      ],
+      "Recurring rule not supported": [
+        "不支持重复规则"
+      ],
+      "Start time out of bounds": [
+        "开始时间超出限制"
+      ],
+      "Time zone not supported": [
+        "不支持此时区"
       ],
       "Timezone": [
         "时区"
       ],
+      "To-do entry": [
+        "待办事项"
+      ],
       "Unknown": [
         "未知"
+      ],
+      "Unsupported event": [
+        "不支持的日程"
       ]
     },
     "Error message": {
@@ -2217,9 +2326,19 @@
         "分数 (必填)"
       ]
     },
+    "Event canceled status badge": {
+      "canceled": [
+        "已取消"
+      ]
+    },
     "Event delete button tooltip": {
       "Delete event": [
         "删除日程"
+      ]
+    },
+    "Event duplicate button tooltip": {
+      "Duplicate event": [
+        "重复的事件"
       ]
     },
     "Event edit button tooltip": {
@@ -2248,6 +2367,9 @@
       ],
       "no": [
         "否"
+      ],
+      "pending": [
+        "等待"
       ],
       "yes": [
         "是"
@@ -2381,6 +2503,20 @@
       ],
       "vCard versions < 3.0": [
         "vCard 版本低于 3.0"
+      ]
+    },
+    "Import calendar; import invitation": {
+      "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your Proton email address.": [
+        "导入的邀请在 ${ CALENDAR_APP_NAME } 中显示为没有组织者和参与者详细信息的简单活动。要获取活动更新或者查看参与人员，请让组织者用您的 Proton 邮箱地址邀请您。"
+      ],
+      "This file contains an event invitation:": [
+        "此文件包含活动邀请："
+      ],
+      "This file contains an invitation response:": [
+        "此文件包含邀请回复："
+      ],
+      "This file contains some data that we cannot import:": [
+        "此文件包含一些无法导入的数据："
       ]
     },
     "Import contact": {
@@ -3120,18 +3256,6 @@
       "Date and time": [
         "日期和时间"
       ],
-      "Default email address": [
-        "默认邮箱地址"
-      ],
-      "Default event duration": [
-        "默认事件时长"
-      ],
-      "Default full day notifications": [
-        "默认全天通知"
-      ],
-      "Default notifications": [
-        "默认通知"
-      ],
       "Delete": [
         "删除"
       ],
@@ -3393,17 +3517,26 @@
       "Almost there": [
         "就快好了"
       ],
+      "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
+        "已创建 ${ createdCalendars }/${ calendarsToBeCreated } 个日历"
+      ],
       "Creating new calendars": [
         "正在创建新日历"
       ],
       "Gathering your data": [
         "正在收集您的数据"
       ],
+      "We're gathering your data from your provider": [
+        "我们正在通过您原先的服务商调取您的数据"
+      ],
       "Your import is starting": [
         "您的导入正在开始"
       ]
     },
     "Mail import summary": {
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "从${ selectedLabelsCount } 中导入${ totalLabelsCount } 标签中自${ periodFragment } 以来的所有信息，并将其标记为${ LABEL_MARKUP_PLACEHOLDER }。"
+      ],
       "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "导入自${ periodFragment } 以来 ${ totalLabelsCount } 个标签的所有邮件，并将其标记为${ LABEL_MARKUP_PLACEHOLDER }"
       ]
@@ -3599,6 +3732,11 @@
         "切换或添加账户"
       ]
     },
+    "new_plans: info": {
+      "Introducing Proton’s refreshed look.${ br }Many services, one mission. Welcome to an internet where privacy is the default.": [
+        "Proton 界面现已焕然一新。${ br }服务繁多，使命不变。欢迎进入隐私优先的互联网。"
+      ]
+    },
     "new_plans: label": {
       "Tell us about your experience. (Optional)": [
         "您可以详细叙述您的使用体验。（非必填）"
@@ -3607,6 +3745,11 @@
     "new_plans: placeholder": {
       "Feedback": [
         "反馈内容"
+      ]
+    },
+    "new_plans: title": {
+      "Updated Proton, unified protection": [
+        "新版 Proton，全方位的隐私保护"
       ]
     },
     "Notification": {
@@ -3714,6 +3857,32 @@
         "未知"
       ]
     },
+    "Oauth instructions": {
+      "Next you'll need to sign in to your Google account and grant Proton access to your data.": [
+        "接下来您需要登录至您的 Google 账户并允许 Proton 访问您的数据。"
+      ]
+    },
+    "Oauth instructions video": {
+      "For the import to work, you must select all requested items as shown in the GIF.": [
+        "为顺利完成导入，您需要如下图所示勾选所有权限。"
+      ]
+    },
+    "Onboarding": {
+      "Welcome to ${ appName }": [
+        "欢迎来到 ${ appName }"
+      ],
+      "Where you can take control of your time and your data.": [
+        "在这里你可以掌控你的时间和数据。"
+      ]
+    },
+    "Onboarding Action": {
+      "Next": [
+        "下一步"
+      ],
+      "Start using ${ appName }": [
+        "开始使用 ${ appName }"
+      ]
+    },
     "Onboarding Proton": {
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "配置您的机构信息、链接您的域名、创建账户以确保您机构的所有成员都受到保护"
@@ -3800,9 +3969,19 @@
         "你"
       ]
     },
+    "Participants collapse button label": {
+      "Collapse participants list": [
+        "收起参与者名单"
+      ]
+    },
     "Participants expand button label": {
       "Expand participants list": [
         "展开参与者列表"
+      ]
+    },
+    "Personal calendar limit reached modal body": {
+      "Unable to create more calendars. You have reached the maximum of personal calendars within your plan.": [
+        "无法创建更多的日历。你已经达到了你的计划中个人日历的上限。"
       ]
     },
     "PGP key encryption warning": {
@@ -3959,6 +4138,11 @@
         "未找到结果"
       ]
     },
+    "Settings update growler warning": {
+      "Failed to update settings": [
+        "未能更新设置"
+      ]
+    },
     "Sidebar calendar edit tooltip": {
       "Manage calendar": [
         "管理日历"
@@ -4016,6 +4200,21 @@
         "此链接可能有误"
       ]
     },
+    "Subscribed calendar feature unavailable error": {
+      "Subscribing to a calendar is unavailable at the moment": [
+        "订阅日历功能目前不可用"
+      ]
+    },
+    "Subscribed calendar limit reached modal body": {
+      "Unable to add more calendars. You have reached the maximum of subscribed calendars within your plan.": [
+        "无法添加更多日历。你已经达到了你的计划内订阅日历的上限。"
+      ]
+    },
+    "Subscribed calendar URL length warning": {
+      "URL is too long": [
+        "URL 太长"
+      ]
+    },
     "Success": {
       "A cancellation email will be sent to removed participants for all the events in this series.": [
         "将向该系列活动中的所有活动删除的参与者发送取消邮件"
@@ -4046,6 +4245,9 @@
       ],
       "Calendar created": [
         "日历已创建"
+      ],
+      "Calendar information updated": [
+        "日历信息已更新"
       ],
       "Calendar updated": [
         "日历已更新"
@@ -4283,6 +4485,9 @@
       ],
       "Calendar alarm": [
         "日历闹钟"
+      ],
+      "Calendar information": [
+        "日历信息"
       ],
       "Change my answer": [
         "更改答复"
@@ -4638,6 +4843,11 @@
       ],
       "Replay video": [
         "回放视频"
+      ]
+    },
+    "View event button tooltip": {
+      "Open in a new tab": [
+        "在新标签页中打开"
       ]
     },
     "Warning": {

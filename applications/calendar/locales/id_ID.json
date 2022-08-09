@@ -224,11 +224,11 @@
       "I have a question": [
         "Saya memiliki sebuah pertanyaan"
       ],
-      "import": [
-        "impor"
-      ],
       "Import": [
         "Impor"
+      ],
+      "import": [
+        "impor"
       ],
       "Import events": [
         "Impor acara"
@@ -797,6 +797,9 @@
       "Calendar is syncing": [
         "Kalender sedang menyinkronkan data"
       ],
+      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
+        "Kalender sedang menyinkronkan data: proses ini dapat berlangsung hingga beberapa menit sebelum seluruh acara dapat dimunculkan."
+      ],
       "Calendar is too big": [
         "Ukuran kalender terlalu besar"
       ],
@@ -814,6 +817,17 @@
       ],
       "Unsupported calendar format": [
         "Format kalender tidak didukung"
+      ]
+    },
+    "Calendar subscription not synced error; long version": {
+      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
+        "Tautan kalender tidak dapat diakses dari luar ekosistem penyedia kalender."
+      ],
+      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
+        "Tautan kalender untuk sementara tidak dapat diakses. Pastikan tautan dari penyedia kalender masih valid."
+      ],
+      "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
+        "Lebih dari 12 jam telah berlalu sejak pembaruan terakhir — Proton Calendar akan mencoba untuk memperbarui kalender dalam beberapa jam."
       ]
     },
     "Calendar view": {
@@ -2019,6 +2033,9 @@
       ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
         "Hapus setidaknya ${ calendarToFixCount } kalender dari pilihan atau"
+      ],
+      "Domain not available, try again later": [
+        "Domain tidak tersedia, coba lagi nanti"
       ],
       "Email address disabled": [
         "Alamat email dinonaktifkan"
@@ -3359,6 +3376,9 @@
       "All day": [
         "Seharian"
       ],
+      "All-day event notifications": [
+        "Notifikasi acara sepanjang hari"
+      ],
       "Attach screenshot(s)": [
         "Lampirkan tangkapan layar"
       ],
@@ -3407,18 +3427,6 @@
       "Date and time": [
         "Tanggal dan waktu"
       ],
-      "Default email address": [
-        "Alamat email default"
-      ],
-      "Default event duration": [
-        "Durasi acara default"
-      ],
-      "Default full day notifications": [
-        "Notifikasi sepanjang hari default"
-      ],
-      "Default notifications": [
-        "Notifikasi default"
-      ],
       "Delete": [
         "Hapus"
       ],
@@ -3448,6 +3456,12 @@
       ],
       "Ends": [
         "Akhir"
+      ],
+      "Event duration": [
+        "Durasi acara"
+      ],
+      "Event notifications": [
+        "Notifikasi acara"
       ],
       "Event title": [
         "Judul acara"
@@ -3933,6 +3947,14 @@
         "pada"
       ]
     },
+    "Notification type": {
+      "email": [
+        "email"
+      ],
+      "notification": [
+        "notifikasi"
+      ]
+    },
     "Notification when": {
       "at time of event": [
         "pada saat acara"
@@ -4307,6 +4329,9 @@
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "${ DRIVE_APP_NAME } telah keluar dari fase beta! Berikan berkas Anda keamanan yang serupa dengan email Anda."
       ],
+      "Don't miss any events": [
+        "Jangan lewatkan acara apapun"
+      ],
       "Get up to 18 months of ${ planName } for free": [
         "Dapatkan langganan ${ planName } hingga 18 bulan secara gratis"
       ],
@@ -4321,6 +4346,9 @@
       ],
       "With email notifications, you decide which events to be notified about and when.": [
         "Dengan notifikasi email, Anda dapat menentukan notifikasi seputar acara mana saja yang akan Anda terima beserta waktunya."
+      ],
+      "You can now add notifications to calendars you subscribed to.": [
+        "Anda kini dapat menambahkan notifikasi pada kalender yang Anda langgan."
       ]
     },
     "Storage": {
@@ -4400,6 +4428,9 @@
       ],
       "Calendar created": [
         "Kalender berhasil dibuat"
+      ],
+      "Calendar information updated": [
+        "Informasi kalender diperbarui"
       ],
       "Calendar updated": [
         "Kalender berhasil diperbarui"
@@ -4637,6 +4668,9 @@
       ],
       "Calendar alarm": [
         "Pengingat kalender"
+      ],
+      "Calendar information": [
+        "Informasi kalender"
       ],
       "Change my answer": [
         "Ubah jawaban saya"

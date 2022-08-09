@@ -303,7 +303,7 @@
         "Ön izlemeyi göster"
       ],
       "Sign in": [
-        "Oturum aç"
+        "Giriş yapın"
       ],
       "Sign out": [
         "Oturumu kapat"
@@ -388,6 +388,9 @@
       ],
       "View plans details": [
         "Tarife ayrıntılarını görüntüle"
+      ],
+      "What do I get?": [
+        "Ne alacağım?"
       ],
       "Yes": [
         "Evet"
@@ -476,7 +479,7 @@
     },
     "Billing cycle option": {
       "1 month": [
-        "1 aylık"
+        "1 ay"
       ],
       "12 months": [
         "12 ay"
@@ -491,7 +494,7 @@
         "Aylık"
       ],
       "Two-year": [
-        "Iki yıllık"
+        "İki yıllık"
       ]
     },
     "blackfriday Info": {
@@ -638,8 +641,8 @@
       "Calendar is syncing": [
         "Takvim eşitleniyor"
       ],
-      "Calendar is syncing: it may take several minutes for all of its events to show up": [
-        "Takvim eşitleniyor: Tüm etkinliklerin görüntülenmesi bir kaç dakika alabilir"
+      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
+        "Takvim eşitleniyor: Tüm etkinliklerin görüntülenmesi bir kaç dakika alabilir."
       ],
       "Calendar is too big": [
         "Takvim çok büyük"
@@ -1232,7 +1235,7 @@
         "Mozambik"
       ],
       "Myanmar": [
-        "Myanmar"
+        "Burma"
       ],
       "Namibia": [
         "Namibya"
@@ -2068,7 +2071,7 @@
         "Visa ve MasterCard için kartınızın arkasındaki 3 haneli kod. American Express için ise kartınızın önündeki 4 haneli kod."
       ],
       "Free": [
-        "Ücretsiz"
+        "Free"
       ],
       "Free up some space or add more storage space.": [
         "Biraz boş yer açın veya daha fazla depolama alanı ekleyin."
@@ -2352,14 +2355,23 @@
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a ${ VPN_APP_NAME } server.": [
         "İnternet bağlantınızı güvence altına almak için cihazınıza ${ VPN_APP_NAME } uygulamasını indirip yükleyin ve bir ${ VPN_APP_NAME } sunucusuna bağlanın."
       ],
-      "To use ${ toAppName }, please create an address.": [
-        "Lütfne ${ toAppName } kullanabilmek için bir adres oluşturun."
-      ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Hesabınızla yeni bir tarifeye abone olmak ya da geçerli tarifenizi yenilemek için kullanabileceğiniz krediler ekleyin. Bir kredi için ${ i18nCurrency } ödersiniz."
       ],
       "Tor": [
         "Tor"
+      ],
+      "Total email addresses": [
+        "Toplam e-posta adresi"
+      ],
+      "Total storage": [
+        "Toplam depolama alanı"
+      ],
+      "Total supported domains": [
+        "Toplam etki alanı"
+      ],
+      "Total VPN connections": [
+        "Toplam VPN bağlantısı"
       ],
       "Two-factor authentication adds an extra layer of security to your account in case your password is compromised.": [
         "İki aşamalı kimlik doğrulaması, parolanızın ele geçirilmesi durumunda hesabınıza ek bir güvenlik katmanı ekler."
@@ -2517,8 +2529,8 @@
       "You'll stay signed in even after you close the browser.": [
         "Web tarayıcıyı kapattıktan sonra bile oturumunuz açık kalır."
       ],
-      "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, please create an address.": [
-        "${ BRAND_NAME } hesabınız ${ externalEmailAddress } ile ilişkilidir. Lütfen ${ toAppName } kullanabilmek için bir adres oluşturun."
+      "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
+        "${ BRAND_NAME } hesabınız ${ externalEmailAddress } ile ilişkilidir. ${ toAppName } kullanabilmek için bir ${ MAIL_APP_NAME } adresinizin olması gereklidir."
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
         "${ VPN_APP_NAME } ve ${ MAIL_APP_NAME } hesaplarınız birbirine bağlıdır. İkisini de silmek için lütfen ${ loginLink } adresinden oturum açarak hesabınızı silin."
@@ -2910,7 +2922,7 @@
         "Kurtarma e-posta adresi"
       ],
       "Recovery phone number": [
-        "Kurtarma telefon numarası"
+        "Kurtarma telefonu numarası"
       ],
       "Recovery phrase": [
         "Kurtarma ifadesi"
@@ -3233,8 +3245,8 @@
         "${ n } VPN bağlantısı"
       ],
       "${ n } VPN connection per user": [
-        "${ n } VPN bağlantısı / kullanıcı",
-        "${ n } VPN bağlantısı / kullanıcı"
+        "Her kullanıcı için ${ n } VPN bağlantısı",
+        "Her kullanıcı için ${ n } VPN bağlantısı"
       ],
       "${ size } attachment size": [
         "${ size } ek dosya boyutu"
@@ -3944,7 +3956,7 @@
     },
     "Recovery method": {
       "Email": [
-        "E-posta"
+        "E-posta adresi"
       ],
       "Phone number": [
         "Telefon numarası"
@@ -3981,7 +3993,7 @@
         "Görüntülenecek ad"
       ],
       "Email": [
-        "E-posta"
+        "E-posta adresi"
       ],
       "Username": [
         "Kullanıcı adı"
@@ -4276,9 +4288,6 @@
       "Add PayPal payment method": [
         "PayPal ödeme yöntemi ekle"
       ],
-      "Address is available": [
-        "Adres kullanılabilir"
-      ],
       "Amount": [
         "Tutar"
       ],
@@ -4330,8 +4339,8 @@
       "Congratulations on choosing privacy!": [
         "Kişisel gizliliği korumayı seçtiğiniz için teşekkürler!"
       ],
-      "Create a ${ mailAppName } address": [
-        "Bir ${ mailAppName } adresi oluştur"
+      "Create a ${ MAIL_APP_NAME } address": [
+        "Bir ${ MAIL_APP_NAME } adresi oluştur"
       ],
       "Create your ${ BRAND_NAME } Account": [
         "${ BRAND_NAME } hesabınızı açın"
@@ -4379,7 +4388,7 @@
         "Kredi/banka kartını düzenle"
       ],
       "Email": [
-        "E-posta"
+        "E-posta adresi"
       ],
       "Email subscriptions": [
         "E-posta abonelikleri"
@@ -4578,6 +4587,9 @@
       ],
       "You already have a Proton account": [
         "Zaten bir Proton hesabınız var"
+      ],
+      "Your ${ MAIL_APP_NAME } address": [
+        "${ MAIL_APP_NAME } adresiniz"
       ],
       "Your current plan": [
         "Geçerli tarifeniz"

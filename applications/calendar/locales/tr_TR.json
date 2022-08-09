@@ -226,11 +226,11 @@
       "I have a question": [
         "Bir sorum var"
       ],
-      "import": [
-        "içe aktar"
-      ],
       "Import": [
         "İçe aktar"
+      ],
+      "import": [
+        "içe aktar"
       ],
       "Import events": [
         "Etkinlikleri içe aktar"
@@ -799,6 +799,9 @@
       "Calendar is syncing": [
         "Takvim eşitleniyor"
       ],
+      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
+        "Takvim eşitleniyor: Tüm etkinliklerin görüntülenmesi bir kaç dakika alabilir."
+      ],
       "Calendar is too big": [
         "Takvim çok büyük"
       ],
@@ -816,6 +819,17 @@
       ],
       "Unsupported calendar format": [
         "Takvim biçimi desteklenmiyor"
+      ]
+    },
+    "Calendar subscription not synced error; long version": {
+      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
+        "Takvim bağlantısına, takvim hizmeti sağlayıcısının ekosistemi dışından erişilemez."
+      ],
+      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
+        "Takvim bağlantısına geçici olarak erişilemiyor. Lütfen takvim hizmeti sağlayıcısı bağlantısının hala geçerli olduğunu doğrulayın."
+      ],
+      "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
+        "Son güncellemenin üzerinden 12 saatten fazla zaman geçmiş. Proton Calendar, takvimi birkaç saat içinde güncellemeye çalışacak."
       ]
     },
     "Calendar view": {
@@ -1993,9 +2007,6 @@
       "A group with this name already exists": [
         "Aynı adlı bir grup zaten var"
       ],
-      "A maximum of 10 notifications is allowed": [
-        "En fazla 10 bildirime izin verilir"
-      ],
       "Address primary private key not found": [
         "Adresin birincil kişisel anahtarı bulunamadı"
       ],
@@ -2036,6 +2047,9 @@
       "Deselect at least ${ calendarToFixCount } calendar or": [
         "En az ${ calendarToFixCount } takvimi kaldırın ya da",
         "En az ${ calendarToFixCount } takvimi kaldırın ya da"
+      ],
+      "Domain not available, try again later": [
+        "Etki alanı kullanılamıyor. Bir süre sonra yeniden deneyin"
       ],
       "Email address disabled": [
         "E-posta adresi devre dışı"
@@ -3418,6 +3432,9 @@
       "All day": [
         "Tüm gün"
       ],
+      "All-day event notifications": [
+        "Tüm gün etkinlik bildirimleri"
+      ],
       "Attach screenshot(s)": [
         "Ekran görüntüsü ekle"
       ],
@@ -3466,18 +3483,6 @@
       "Date and time": [
         "Tarih ve saat"
       ],
-      "Default email address": [
-        "Varsayılan e-posta adresi"
-      ],
-      "Default event duration": [
-        "Varsayılan etkinlik süresi"
-      ],
-      "Default full day notifications": [
-        "Varsayılan tüm gün bildirimleri"
-      ],
-      "Default notifications": [
-        "Varsayılan bildirimler"
-      ],
       "Delete": [
         "Sil"
       ],
@@ -3507,6 +3512,12 @@
       ],
       "Ends": [
         "Bitiş"
+      ],
+      "Event duration": [
+        "Etkinlik süresi"
+      ],
+      "Event notifications": [
+        "Etkinlik bildirimleri"
       ],
       "Event title": [
         "Etkinlik başlığı"
@@ -4406,6 +4417,9 @@
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "${ DRIVE_APP_NAME } beta yayınlandı! Dosyalarınıza da e-postalarınızdaki güvenliği sağlayın."
       ],
+      "Don't miss any events": [
+        "Hiçbir etkinliği kaçırmayın"
+      ],
       "Get up to 18 months of ${ planName } for free": [
         "18 aya kadar ücretsiz ${ planName } kazanın"
       ],
@@ -4420,6 +4434,9 @@
       ],
       "With email notifications, you decide which events to be notified about and when.": [
         "E-posta bildirimleri ile hangi etkinliklerin ne zaman bildirileceğini belirleyebilirsiniz."
+      ],
+      "You can now add notifications to calendars you subscribed to.": [
+        "Artık abone olduğunuz takvimlere bildirim ekleyebilirsiniz."
       ]
     },
     "Storage": {
@@ -4499,6 +4516,9 @@
       ],
       "Calendar created": [
         "Takvim oluşturuldu"
+      ],
+      "Calendar information updated": [
+        "Takvim bilgileri güncellendi"
       ],
       "Calendar updated": [
         "Takvim güncellendi"
@@ -4742,6 +4762,9 @@
       ],
       "Calendar alarm": [
         "Takvim alarmı"
+      ],
+      "Calendar information": [
+        "Takvim bilgileri"
       ],
       "Change my answer": [
         "Yanıtımı değiştir"

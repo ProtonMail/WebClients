@@ -292,6 +292,9 @@
       "Download all configurations": [
         "Unduh seluruh konfigurasi"
       ],
+      "Download ICS": [
+        "Unduh ICS"
+      ],
       "Download recovery file": [
         "Unduh berkas pemulihan"
       ],
@@ -402,6 +405,9 @@
       ],
       "Import emails": [
         "Impor email"
+      ],
+      "Import from ICS": [
+        "Impor dari ICS"
       ],
       "Import key": [
         "Impor kunci"
@@ -817,6 +823,9 @@
       "Void anyway": [
         "Tetap anulir"
       ],
+      "What do I get?": [
+        "Apa yang akan saya dapatkan?"
+      ],
       "Wipe": [
         "Hapus"
       ],
@@ -1067,6 +1076,11 @@
         "24 bulan"
       ]
     },
+    "breadcrumb": {
+      "Calendars": [
+        "Kalender"
+      ]
+    },
     "Bridge version load failed": {
       "Failed to find latest version": [
         "Gagal untuk menemukan versi terbaru"
@@ -1163,6 +1177,16 @@
         "Tweet"
       ]
     },
+    "Calendar edit button tooltip": {
+      "Edit calendar information": [
+        "Sunting informasi kalender"
+      ]
+    },
+    "Calendar export section description": {
+      "Download an ICS file with all the events from the selected calendar.": [
+        "Unduh berkas ICS dengan seluruh acara yang terdapat pada kalender yang dipilih."
+      ]
+    },
     "Calendar import section description": {
       "You can import ICS files from another calendar to ${ CALENDAR_APP_NAME }. This lets you quickly import one event or your entire agenda.": [
         "Anda dapat mengimpor berkas ICS dari kalender lain ke dalam ${ CALENDAR_APP_NAME }. Hal ini memungkinkan Anda untuk dapat mengimpor acara tertentu atau seluruh agenda Anda secara cepat."
@@ -1185,6 +1209,11 @@
       ],
       "Label edited": [
         "Label disunting"
+      ]
+    },
+    "Calendar settings sidebar": {
+      "Show ${ remainingItems } more": [
+        "Tampilkan ${ remainingItems } item tambahan"
       ]
     },
     "Calendar status": {
@@ -1211,6 +1240,9 @@
       "Calendar is syncing": [
         "Sedang sinkronisasi kalender"
       ],
+      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
+        "Kalender sedang menyinkronkan data: proses ini dapat berlangsung hingga beberapa menit sebelum seluruh acara dapat dimunculkan."
+      ],
       "Calendar is too big": [
         "Kalender terlalu besar"
       ],
@@ -1228,6 +1260,17 @@
       ],
       "Unsupported calendar format": [
         "Format kalender tidak didukung"
+      ]
+    },
+    "Calendar subscription not synced error; long version": {
+      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
+        "Tautan kalender tidak dapat diakses dari luar ekosistem penyedia kalender."
+      ],
+      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
+        "Tautan kalender untuk sementara tidak dapat diakses. Pastikan tautan dari penyedia kalender masih valid."
+      ],
+      "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
+        "Lebih dari 12 jam telah berlalu sejak pembaruan terakhir — Proton Calendar akan mencoba untuk memperbarui kalender dalam beberapa jam."
       ]
     },
     "Calendar view": {
@@ -2383,9 +2426,19 @@
         "Rabu"
       ]
     },
+    "Default calendar event settings section title": {
+      "Default event settings": [
+        "Pengaturan acara default"
+      ]
+    },
     "Default display name vcard": {
       "Unknown": [
         "Tidak dikenal"
+      ]
+    },
+    "Delete calendar section description": {
+      "All events in this calendar will be deleted.": [
+        "Seluruh acara yang terdapat pada kalender ini akan dihapus."
       ]
     },
     "Delinquent modal title": {
@@ -2588,6 +2641,9 @@
       ],
       "Automatic replies is a paid feature. Please upgrade to a paid account to use this feature.": [
         "Pesan balasan otomatis merupakan fitur berbayar. Silakan tingkatkan akun Anda ke akun berbayar untuk dapat menggunakan fitur ini."
+      ],
+      "Calendar cannot be found": [
+        "Kalender tidak dapat ditemukan"
       ],
       "Calendar limit reached": [
         "Batas kalender tercapai"
@@ -3313,6 +3369,9 @@
       "Archive": [
         "Arsip"
       ],
+      "Do not move": [
+        "Jangan pindahkan"
+      ],
       "Inbox": [
         "Kotak Masuk"
       ],
@@ -3949,6 +4008,9 @@
       "${ emailAddress } is invalid": [
         "${ emailAddress } tidak valid"
       ],
+      "${ firstRemainingCalendarName } will be set as default calendar.": [
+        "${ firstRemainingCalendarName } akan diatur sebagai kalendar default."
+      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } juga mendukung penggunaan kata sandi tunggal yang dapat digunakan baik untuk masuk ataupun untuk mengakses kotak pesan Anda. Untuk beralih ke mode kata sandi tunggal, masukkan kata sandi yang hendak Anda gunakan dan klik Simpan."
       ],
@@ -4170,6 +4232,9 @@
       ],
       "Are you sure you want to delete this calendar?": [
         "Apakah Anda yakin untuk menghapus kalender ini?"
+      ],
+      "Are you sure you want to delete this calendar? All events in it will be deleted.": [
+        "Apakah Anda yakin untuk menghapus kalender ini? Seluruh acara yang terkandung di dalamnya juga akan ikut terhapus."
       ],
       "Are you sure you want to delete this domain?": [
         "Apakah Anda yakin untuk menghapus domain ini?"
@@ -5113,6 +5178,9 @@
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Peramban web ini tidak mendukung untuk melakukan pratinjau dokumen PDF. Silahkan unduh berkas tersebut."
       ],
+      "This calendar will be removed from your account.": [
+        "Kalender ini akan dihapus dari akun Anda."
+      ],
       "This can take a few seconds or a few minutes depending on your device": [
         "Proses ini dapat memerlukan waktu beberapa detik atau menit tergantung kemampuan perangkat Anda"
       ],
@@ -5212,9 +5280,6 @@
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a ${ VPN_APP_NAME } server.": [
         "Untuk mengamankan koneksi internet Anda, unduh dan pasang aplikasi ${ VPN_APP_NAME } untuk perangkat Anda dan sambungkan ke server ${ VPN_APP_NAME }."
       ],
-      "To use ${ toAppName }, please create an address.": [
-        "Untuk dapat menggunakan ${ toAppName }, mohon buat alamat terlebih dahulu."
-      ],
       "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
         "Untuk dapat bekerja, masing-masing filter harus memiliki nama dan kode Sieve yang valid. Anda dapat ${ link }."
       ],
@@ -5223,6 +5288,18 @@
       ],
       "Tor": [
         "Tor"
+      ],
+      "Total email addresses": [
+        "Total alamat email"
+      ],
+      "Total storage": [
+        "Total kuota penyimpanan"
+      ],
+      "Total supported domains": [
+        "Total domain yang didukung"
+      ],
+      "Total VPN connections": [
+        "Total koneksi VPN"
       ],
       "Two-factor authentication adds an extra layer of security to your account in case your password is compromised.": [
         "Otentikasi dua faktor akan memberikan lapisan keamanan ekstra pada akun Anda di kala kata sandi Anda jatuh ke tangan pihak yang tidak bertanggung jawab."
@@ -5425,6 +5502,9 @@
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Berhubung Anda belum mengatur metode pemulihan, akun Anda tidak akan dapat dipulihkan apabila ke depannya Anda kehilangan kata sandi Anda. Lanjutkan tanpa metode pemulihan?"
       ],
+      "You have no personal calendars to export.": [
+        "Anda tidak memiliki kalender personal yang dapat diekspor."
+      ],
       "You have no saved payment methods.": [
         "Anda tidak memiliki metode pembayaran yang tersimpan."
       ],
@@ -5448,6 +5528,9 @@
       ],
       "You need to have a personal calendar to create a link.": [
         "Anda harus memiliki kalender pribadi untuk dapat membuat tautan."
+      ],
+      "You need to have an active personal calendar to import your events from ICS.": [
+        "Anda harus memiliki kalender personal yang aktif untuk dapat mengimpor acara dari berkas ICS."
       ],
       "You need to have an active personal calendar to import your events.": [
         "Anda harus punya kalender pribadi aktif supaya bisa mengimpor acara."
@@ -5485,8 +5568,8 @@
       "You'll still be able to send and receive mail with your existing email address(es).": [
         "Anda akan tetap dapat mengirim dan menerima email dengan alamat-alamat email yang telah Anda miliki sebelumnya."
       ],
-      "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, please create an address.": [
-        "Akun ${ BRAND_NAME } Anda dikaitkan dengan ${ externalEmailAddress }. Untuk menggunakan ${ toAppName }, harap buat alamat email."
+      "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
+        "Akun ${ BRAND_NAME } Anda terhubung dengan ${ externalEmailAddress }. Untuk dapat menggunakan ${ toAppName }, Anda butuh alamat email ${ MAIL_APP_NAME }."
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
         "Akun ${ VPN_APP_NAME } dan ${ MAIL_APP_NAME } Anda saling terhubung antar satu sama lain. Untuk menghapus keduanya, harap masuk ke ${ loginLink } dan hapus akun Anda di sana."
@@ -5964,6 +6047,9 @@
     "Knowledge base link label": {
       "Here's how": [
         "Berikut caranya"
+      ],
+      "Learn more": [
+        "Pelajari lebih lanjut"
       ]
     },
     "Label": {
@@ -6011,6 +6097,9 @@
       ],
       "ALL": [
         "SEMUA"
+      ],
+      "All-day event notifications": [
+        "Notifikasi acara sepanjang hari"
       ],
       "Allow recovery by email": [
         "Izinkan pemulihan akun melalui email"
@@ -6207,23 +6296,11 @@
       "Days of the week": [
         "Hari dalam seminggu"
       ],
-      "Default email address": [
-        "Alamat email default"
-      ],
-      "Default event duration": [
-        "Durasi acara default"
-      ],
-      "Default full day notifications": [
-        "Notifikasi sepanjang hari default"
-      ],
       "Default language": [
         "Bahasa bawaan"
       ],
       "Default language (${ defaultLanguage })": [
         "Bahasa default (${ defaultLanguage })"
-      ],
-      "Default notifications": [
-        "Notifikasi default"
       ],
       "Default PGP scheme": [
         "Skema PGP default"
@@ -6302,6 +6379,12 @@
       ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Masukkan kata sandi kunci yang memiliki kode sidik jari berikut: ${ fingerprintCode }"
+      ],
+      "Event duration": [
+        "Durasi acara"
+      ],
+      "Event notifications": [
+        "Notifikasi acara"
       ],
       "Expiration date": [
         "Tanggal kedaluwarsa"
@@ -6776,6 +6859,19 @@
         "Tambahkan domain yang Anda miliki ke akun ${ MAIL_APP_NAME } Anda."
       ]
     },
+    "Label for default event notifications": {
+      "All-day event notifications": [
+        "Notifikasi acara sepanjang hari"
+      ],
+      "Notifications": [
+        "Notifikasi"
+      ]
+    },
+    "Label for default event settings": {
+      "Duration": [
+        "Durasi"
+      ]
+    },
     "Label for domain modal": {
       "Please add the following TXT record:": [
         "Harap tambahkan data TXT berikut ini:"
@@ -6925,6 +7021,9 @@
       ],
       "How to unlock data": [
         "Bagaimana cara membuka kunci data"
+      ],
+      "Import/export": [
+        "Impor/ekspor"
       ],
       "Learn more": [
         "Pelajari lebih lanjut"
@@ -7892,9 +7991,22 @@
         "Kredensial OpenVPN / IKEv2 berhasil dibuat ulang"
       ]
     },
+    "Notification success": {
+      "Event defaults updated": [
+        "Pengaturan acara default diperbarui"
+      ]
+    },
     "Notification time input": {
       "at": [
         "pada"
+      ]
+    },
+    "Notification type": {
+      "email": [
+        "email"
+      ],
+      "notification": [
+        "notifikasi"
       ]
     },
     "Notification when": {
@@ -8209,6 +8321,11 @@
         "PayPal"
       ]
     },
+    "Personal calendar section description": {
+      "Create a calendar to stay on top of your schedule while keeping your data secure.": [
+        "Buat kalender untuk menjaga rutinitas dan mengamankan data Anda."
+      ]
+    },
     "Placeholder": {
       "A way to contact you": [
         "Cara menghubungi Anda"
@@ -8445,6 +8562,22 @@
       ],
       "State of the art": [
         "Canggih"
+      ]
+    },
+    "Remove calendar section description": {
+      "By unsubscribing, you will no longer have access to this calendar. All events in this calendar will be deleted from your account, but they'll remain in the original publick link.": [
+        "Dengan berhenti berlangganan, Anda tidak akan lagi dapat mengakses kalender ini. Seluruh acara yang terdapat pada kalender ini akan dihapus dari akun Anda, namun akan tetap ada pada tautan publik asli."
+      ]
+    },
+    "Remove calendar section title": {
+      "Delete calendar?": [
+        "Hapus kalender?"
+      ],
+      "Remove calendar": [
+        "Hapus kalender"
+      ],
+      "Unsubscribe?": [
+        "Berhenti berlangganan?"
       ]
     },
     "Restore administrator panel": {
@@ -8745,6 +8878,9 @@
       ],
       "Calendar created": [
         "Kalender dibuat"
+      ],
+      "Calendar information updated": [
+        "Informasi kalender diperbarui"
       ],
       "Calendar removed": [
         "Kalender dihapus"
@@ -9090,9 +9226,6 @@
       "Add user": [
         "Tambah pengguna"
       ],
-      "Address is available": [
-        "Alamat tersedia"
-      ],
       "Address verification": [
         "Verifikasi alamat"
       ],
@@ -9149,6 +9282,9 @@
       ],
       "Bridge for ${ platform }": [
         "Bridge untuk ${ platform }"
+      ],
+      "Calendar information": [
+        "Informasi kalender"
       ],
       "Cancel Mail subscription": [
         "Batalkan langganan Mail"
@@ -9219,8 +9355,8 @@
       "Continue with partial import?": [
         "Lanjut impor walau hanya sebagian?"
       ],
-      "Create a ${ mailAppName } address": [
-        "Buat alamat ${ mailAppName }"
+      "Create a ${ MAIL_APP_NAME } address": [
+        "Buat alamat ${ MAIL_APP_NAME }"
       ],
       "Create calendar": [
         "Buat kalender"
@@ -9369,6 +9505,9 @@
       "Error": [
         "Kesalahan"
       ],
+      "Export": [
+        "Ekspor"
+      ],
       "Export calendar": [
         "Ekspor kalender"
       ],
@@ -9428,6 +9567,9 @@
       ],
       "Import": [
         "Impor"
+      ],
+      "Import and export": [
+        "Impor dan ekspor"
       ],
       "Import as simple event?": [
         "Impor sebagai acara sederhana?"
@@ -9776,6 +9918,9 @@
       ],
       "Your ${ domain } address is active": [
         "Alamat ${ domain } Anda aktif"
+      ],
+      "Your ${ MAIL_APP_NAME } address": [
+        "Alamat ${ MAIL_APP_NAME } Anda"
       ],
       "Your calendar link": [
         "Tautan kalender Anda"
@@ -10157,9 +10302,6 @@
       ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
         "Tanggal dan waktu yang terpasang pada piranti Anda tidak sesuai dengan tanggal dan waktu saat ini. ${ learnMore }"
-      ],
-      "This feature is only available for ${ mailProfessional } plans or higher": [
-        "Fitur ini hanya tersedia bagi para pengguna ${ mailProfessional } atau lebih tinggi"
       ],
       "This import may exceed the storage capacity currently available in your Proton account. Please consider customizing your import.": [
         "Impor ini mungkin akan menghabiskan kapasitas penyimpanan akun Proton Anda. Harap sesuaikan kebutuhan impor Anda."

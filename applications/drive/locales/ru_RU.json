@@ -102,7 +102,7 @@
         "Закрыть окно"
       ],
       "Close navigation": [
-        "Закрыть навигацию"
+        "Закрыть панель навигации"
       ],
       "Close this banner": [
         "Закрыть этот баннер"
@@ -290,11 +290,11 @@
       "I have a question": [
         "У меня есть вопрос"
       ],
-      "import": [
-        "импортировать"
-      ],
       "Import": [
         "Импортировать"
+      ],
+      "import": [
+        "импортировать"
       ],
       "Import from .csv or vCard": [
         "Импорт из .csv или vCard"
@@ -354,7 +354,7 @@
         "OK"
       ],
       "Open navigation": [
-        "Открыть навигацию"
+        "Открыть панель навигации"
       ],
       "Pause all": [
         "Приостановить все"
@@ -805,6 +805,9 @@
       "Calendar is syncing": [
         "Календарь синхронизируется"
       ],
+      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
+        "Календарь синхронизируется: может понадобиться несколько минут, чтобы показать все события."
+      ],
       "Calendar is too big": [
         "Календарь слишком большой"
       ],
@@ -822,6 +825,17 @@
       ],
       "Unsupported calendar format": [
         "Неподдерживаемый формат календаря"
+      ]
+    },
+    "Calendar subscription not synced error; long version": {
+      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
+        "Ссылка на календарь недоступна вне экосистемы, в которой он был создан."
+      ],
+      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
+        "Ссылка на календарь временно недоступна. Пожалуйста, проверьте, что ссылка, полученная от поставщика календаря, все еще действительна."
+      ],
+      "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
+        "С прошлого обновления прошло больше 12 часов — Proton Calendar попробует обновить календарь через несколько часов."
       ]
     },
     "Collapsible tooltip": {
@@ -1814,8 +1828,8 @@
       "A group with this name already exists": [
         "Группа с таким именем уже существует"
       ],
-      "A problem occurred, please try again": [
-        "Возникла проблема. Попробуйте еще раз"
+      "A problem occurred, please try again.": [
+        "Возникла проблема, попробуйте еще раз."
       ],
       "Authentication canceled.": [
         "Аутентификация отменена."
@@ -1849,6 +1863,9 @@
         "Отмените выбор по крайней мере ${ calendarToFixCount } календарей или",
         "Отмените выбор по крайней мере ${ calendarToFixCount } календарей или",
         "Отмените выбор по крайней мере ${ calendarToFixCount } календарей или"
+      ],
+      "Domain not available, try again later": [
+        "Домен недоступен, повторите попытку позже"
       ],
       "Email address invalid": [
         "Недействительный адрес электронной почты"
@@ -1893,7 +1910,7 @@
         "Недопустимое имя"
       ],
       "Invalid public key file": [
-        "Недействительный файл публичного ключа"
+        "Недействительный файл открытого ключа"
       ],
       "Invalid verification code": [
         "Недействительный код подтверждения"
@@ -1937,8 +1954,8 @@
       "Passwords do not match": [
         "Пароли не совпадают"
       ],
-      "Please activate your content search again": [
-        "Пожалуйста, активируйте поиск содержимого снова"
+      "Please activate your search again": [
+        "Активируйте поиск снова"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Пожалуйста, исправьте выделенный конфликт, чтобы продолжить.",
@@ -2783,10 +2800,10 @@
         "Подключение к Интернету потеряно"
       ],
       "Internet connection lost. Please check your device's connectivity.": [
-        "Подключение к Интернету потеряно. Проверьте возможность подключения устройства."
+        "Подключение к интернету потеряно. Проверьте возможность подключения устройства."
       ],
       "Internet connection restored.": [
-        "Подключение к Интернету восстановлено."
+        "Подключение к интернету восстановлено."
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Просто подтвердите свой выбор, а остальное мы сделаем сами."
@@ -4575,7 +4592,7 @@
         "Скачать непроверенную папку?"
       ],
       "Drive": [
-        "Хранилище"
+        "Диск"
       ],
       "Drop to upload": [
         "Перетащите для загрузки"

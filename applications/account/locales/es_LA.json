@@ -292,6 +292,9 @@
       "Download all configurations": [
         "Descargar todos los ajustes"
       ],
+      "Download ICS": [
+        "Descargar ICS"
+      ],
       "Download recovery file": [
         "Descargar archivo de recuperación"
       ],
@@ -402,6 +405,9 @@
       ],
       "Import emails": [
         "Importar correos"
+      ],
+      "Import from ICS": [
+        "Importar desde ICS"
       ],
       "Import key": [
         "Importar clave"
@@ -817,6 +823,9 @@
       "Void anyway": [
         "Anular de todos modos"
       ],
+      "What do I get?": [
+        "¿Qué obtengo?"
+      ],
       "Wipe": [
         "Borrar"
       ],
@@ -1074,6 +1083,11 @@
         "Obtenga la oferta especial de fin de año en nuestro plan Premium VPN PLUS"
       ]
     },
+    "breadcrumb": {
+      "Calendars": [
+        "Calendarios"
+      ]
+    },
     "Bridge version load failed": {
       "Failed to find latest version": [
         "No se encontró la última versión"
@@ -1170,6 +1184,16 @@
         "Tweet"
       ]
     },
+    "Calendar edit button tooltip": {
+      "Edit calendar information": [
+        "Editar información del calendario"
+      ]
+    },
+    "Calendar export section description": {
+      "Download an ICS file with all the events from the selected calendar.": [
+        "Descargue un archivo ICS con todos los eventos del calendario seleccionado."
+      ]
+    },
     "Calendar import section description": {
       "You can import ICS files from another calendar to ${ CALENDAR_APP_NAME }. This lets you quickly import one event or your entire agenda.": [
         "Puede importar archivos ICS de otro calendario a ${ CALENDAR_APP_NAME }. Esto le permite importar rápidamente un evento o toda su agenda."
@@ -1193,6 +1217,11 @@
       ],
       "Label edited": [
         "Etiqueta editada"
+      ]
+    },
+    "Calendar settings sidebar": {
+      "Show ${ remainingItems } more": [
+        "Mostrar ${ remainingItems } más"
       ]
     },
     "Calendar status": {
@@ -1219,6 +1248,9 @@
       "Calendar is syncing": [
         "El calendario se está sincronizando"
       ],
+      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
+        "El calendario se está sincronizando: puede tardar varios minutos en mostrar todos sus eventos."
+      ],
       "Calendar is too big": [
         "El calendario es muy grande"
       ],
@@ -1236,6 +1268,17 @@
       ],
       "Unsupported calendar format": [
         "Formato de calendario no soportado"
+      ]
+    },
+    "Calendar subscription not synced error; long version": {
+      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
+        "El enlace al calendario no es accesible desde fuera del ecosistema del proveedor del calendario."
+      ],
+      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
+        "El enlace al calendario no está accesible temporalmente. Verifique que el enlace del proveedor del calendario aún es válido."
+      ],
+      "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
+        "Han pasado más de 12 horas desde la última actualización. Proton Calendar intentará actualizar el canlendario dentro de pocas horas."
       ]
     },
     "Calendar view": {
@@ -2425,9 +2468,19 @@
         "Miércoles"
       ]
     },
+    "Default calendar event settings section title": {
+      "Default event settings": [
+        "Ajustes por defecto del evento"
+      ]
+    },
     "Default display name vcard": {
       "Unknown": [
         "Desconocido"
+      ]
+    },
+    "Delete calendar section description": {
+      "All events in this calendar will be deleted.": [
+        "Todos los eventos en este calendario se eliminarán."
       ]
     },
     "Delinquent modal title": {
@@ -2631,6 +2684,9 @@
       ],
       "Automatic replies is a paid feature. Please upgrade to a paid account to use this feature.": [
         "Las respuestas automáticas son una función de pago. Actualice a una cuenta de pago para usar esta función."
+      ],
+      "Calendar cannot be found": [
+        "No se encuentra el calendario"
       ],
       "Calendar limit reached": [
         "Límite del calendario alcanzado"
@@ -3368,6 +3424,9 @@
       "Archive": [
         "Archivo"
       ],
+      "Do not move": [
+        "No mover"
+      ],
       "Inbox": [
         "Buzón"
       ],
@@ -4019,6 +4078,9 @@
       "${ emailAddress } is invalid": [
         "${ emailAddress } es inválida"
       ],
+      "${ firstRemainingCalendarName } will be set as default calendar.": [
+        "${ firstRemainingCalendarName } se establecerá como calendario por defecto."
+      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } puede también usarse con una sola contraseña que reemplaza tanto a la contraseña de inicio de sesión como a la del buzón. Para cambiar al modo de una sola contraseña, ingrese la única contraseña que desea usar y haga clic en guardar."
       ],
@@ -4258,6 +4320,9 @@
       ],
       "Are you sure you want to delete this calendar?": [
         "¿Seguro que desea eliminar este calendario?"
+      ],
+      "Are you sure you want to delete this calendar? All events in it will be deleted.": [
+        "¿En verdad desea eliminar este calendario? Todos los eventos en él serán eliminados."
       ],
       "Are you sure you want to delete this domain?": [
         "¿Seguro que desea eliminar este dominio?"
@@ -5206,6 +5271,9 @@
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Este navegador no admite la previsualización de documentos PDF. Descargue el archivo."
       ],
+      "This calendar will be removed from your account.": [
+        "Este calendario se eliminará de su cuenta."
+      ],
       "This can take a few seconds or a few minutes depending on your device": [
         "Esto puede tardar unos segundos o minutos dependiendo de su dispositivo"
       ],
@@ -5305,9 +5373,6 @@
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a ${ VPN_APP_NAME } server.": [
         "Para proteger su conexión a Internet, descargue e instale la aplicación de ${ VPN_APP_NAME } para su dispositivo y conéctese a un servidor de ${ VPN_APP_NAME }."
       ],
-      "To use ${ toAppName }, please create an address.": [
-        "Para usar ${ toAppName }, cree una dirección."
-      ],
       "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
         "Para funcionar correctamente, cada filtro debe contener al menos un nombre y un script Sieve válido. Puede ${ link }."
       ],
@@ -5316,6 +5381,18 @@
       ],
       "Tor": [
         "Tor"
+      ],
+      "Total email addresses": [
+        "Direcciones de correo totales"
+      ],
+      "Total storage": [
+        "Almacenamiento total"
+      ],
+      "Total supported domains": [
+        "Dominios compatibles totales"
+      ],
+      "Total VPN connections": [
+        "Conexiones VPN totales"
       ],
       "Two-factor authentication adds an extra layer of security to your account in case your password is compromised.": [
         "La autenticación de dos factores añade una capa extra de seguridad a su cuenta en caso de que su contraseña se vea comprometida."
@@ -5518,6 +5595,9 @@
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "No definió un método de recuperación por lo que la recuperación de cuentas es imposible si olvida su contraseña. ¿Proceder sin método de recuperación?"
       ],
+      "You have no personal calendars to export.": [
+        "No tiene calendarios personales para exportar."
+      ],
       "You have no saved payment methods.": [
         "No tiene ningún método de pago guardado."
       ],
@@ -5541,6 +5621,9 @@
       ],
       "You need to have a personal calendar to create a link.": [
         "Necesita tener un calendario personal para crear un enlace."
+      ],
+      "You need to have an active personal calendar to import your events from ICS.": [
+        "Necesita tener un calendario personal activo para importar sus eventos desde ICS."
       ],
       "You need to have an active personal calendar to import your events.": [
         "Necesita tener un calendario personal activo para importar sus eventos."
@@ -5578,8 +5661,8 @@
       "You'll still be able to send and receive mail with your existing email address(es).": [
         "Aún podrá enviar y recibir correos con su dirección(es) de correo existente(s)."
       ],
-      "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, please create an address.": [
-        "Su cuenta de ${ BRAND_NAME } está asociada con ${ externalEmailAddress }. Para usar ${ toAppName }, cree una dirección."
+      "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
+        "Su cuenta de ${ BRAND_NAME } está asociada con ${ externalEmailAddress }. Para usar ${ toAppName }, necesita una dirección de ${ MAIL_APP_NAME }."
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
         "Sus cuentas de ${ VPN_APP_NAME } y ${ MAIL_APP_NAME } están vinculadas. Para eliminarlas a ambas, inicie sesión en ${ loginLink } y elimine su cuenta allí."
@@ -6057,6 +6140,9 @@
     "Knowledge base link label": {
       "Here's how": [
         "Así es cómo"
+      ],
+      "Learn more": [
+        "Más información"
       ]
     },
     "Label": {
@@ -6107,6 +6193,9 @@
       ],
       "ALL": [
         "TODO"
+      ],
+      "All-day event notifications": [
+        "Notificaciones de eventos durante todo el día"
       ],
       "Allow recovery by email": [
         "Permitir recuperación por correo electrónico"
@@ -6303,23 +6392,11 @@
       "Days of the week": [
         "Días de la semana"
       ],
-      "Default email address": [
-        "Dirección de correo por defecto"
-      ],
-      "Default event duration": [
-        "Duración del evento por defecto"
-      ],
-      "Default full day notifications": [
-        "Notificaciones por defecto para todo el día"
-      ],
       "Default language": [
         "Idioma por defecto"
       ],
       "Default language (${ defaultLanguage })": [
         "Idioma por defecto (${ defaultLanguage })"
-      ],
-      "Default notifications": [
-        "Notificaciones por defecto"
       ],
       "Default PGP scheme": [
         "Esquema PGP por defecto"
@@ -6395,6 +6472,12 @@
       ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Ingrese la contraseña para la clave con huella digital: ${ fingerprintCode }"
+      ],
+      "Event duration": [
+        "Duración del evento"
+      ],
+      "Event notifications": [
+        "Notificaciones del evento"
       ],
       "Expiration date": [
         "Fecha de expiración"
@@ -6869,6 +6952,19 @@
         "Añada un dominio que posea a su cuenta de ${ MAIL_APP_NAME }."
       ]
     },
+    "Label for default event notifications": {
+      "All-day event notifications": [
+        "Notificaciones de eventos durante todo el día"
+      ],
+      "Notifications": [
+        "Notificaciones"
+      ]
+    },
+    "Label for default event settings": {
+      "Duration": [
+        "Duración"
+      ]
+    },
     "Label for domain modal": {
       "Please add the following TXT record:": [
         "Añada el siguiente registro TXT:"
@@ -7018,6 +7114,9 @@
       ],
       "How to unlock data": [
         "Cómo desbloquear datos"
+      ],
+      "Import/export": [
+        "Importar/exportar"
       ],
       "Learn more": [
         "Más información"
@@ -8065,9 +8164,22 @@
         "Credenciales OpenVPN/IKEv2 regeneradas"
       ]
     },
+    "Notification success": {
+      "Event defaults updated": [
+        "Valores por defecto del evento actualizados"
+      ]
+    },
     "Notification time input": {
       "at": [
         "a las"
+      ]
+    },
+    "Notification type": {
+      "email": [
+        "correo"
+      ],
+      "notification": [
+        "notificación"
       ]
     },
     "Notification when": {
@@ -8386,6 +8498,11 @@
         "PayPal"
       ]
     },
+    "Personal calendar section description": {
+      "Create a calendar to stay on top of your schedule while keeping your data secure.": [
+        "Cree un calendario para mantenerse al tanto de su agenda mientras mantiene sus datos seguros."
+      ]
+    },
     "Placeholder": {
       "A way to contact you": [
         "Una forma de contactarle"
@@ -8623,6 +8740,22 @@
       ],
       "State of the art": [
         "Lo último"
+      ]
+    },
+    "Remove calendar section description": {
+      "By unsubscribing, you will no longer have access to this calendar. All events in this calendar will be deleted from your account, but they'll remain in the original publick link.": [
+        "Al cancelar la suscripción, ya no tendrá acceso a este calendario. Todos los eventos en este calendario se eliminarán de su cuenta pero se mantendrán en el enlace público original."
+      ]
+    },
+    "Remove calendar section title": {
+      "Delete calendar?": [
+        "¿Eliminar calendario?"
+      ],
+      "Remove calendar": [
+        "Eliminar calendario"
+      ],
+      "Unsubscribe?": [
+        "¿Cancelar suscripción?"
       ]
     },
     "Restore administrator panel": {
@@ -8944,6 +9077,9 @@
       ],
       "Calendar created": [
         "Calendario creado"
+      ],
+      "Calendar information updated": [
+        "Información del calendario actualizada"
       ],
       "Calendar removed": [
         "Calendario eliminado"
@@ -9297,9 +9433,6 @@
       "Add user": [
         "Añadir usuario"
       ],
-      "Address is available": [
-        "Dirección disponible"
-      ],
       "Address verification": [
         "Verificación de direcciones"
       ],
@@ -9356,6 +9489,9 @@
       ],
       "Bridge for ${ platform }": [
         "Bridge para ${ platform }"
+      ],
+      "Calendar information": [
+        "Información del calendario"
       ],
       "Cancel Mail subscription": [
         "Cancelar suscripción de Correo"
@@ -9426,8 +9562,8 @@
       "Continue with partial import?": [
         "¿Continuar con una importación parcial?"
       ],
-      "Create a ${ mailAppName } address": [
-        "Crear una dirección de ${ mailAppName }"
+      "Create a ${ MAIL_APP_NAME } address": [
+        "Crear una dirección de ${ MAIL_APP_NAME }"
       ],
       "Create calendar": [
         "Crear calendario"
@@ -9576,6 +9712,9 @@
       "Error": [
         "Error"
       ],
+      "Export": [
+        "Exportar"
+      ],
       "Export calendar": [
         "Exportar calendario"
       ],
@@ -9635,6 +9774,9 @@
       ],
       "Import": [
         "Importar"
+      ],
+      "Import and export": [
+        "Importar y exportar"
       ],
       "Import as simple event?": [
         "¿Importar como evento simple?",
@@ -9984,6 +10126,9 @@
       ],
       "Your ${ domain } address is active": [
         "Su dirección ${ domain } está activa"
+      ],
+      "Your ${ MAIL_APP_NAME } address": [
+        "Su dirección de ${ MAIL_APP_NAME }"
       ],
       "Your calendar link": [
         "Enlace a su calendario"
@@ -10371,9 +10516,6 @@
       ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
         "Los ajustes de fecha y hora en su dispositivo están desactualizados. ${ learnMore }"
-      ],
-      "This feature is only available for ${ mailProfessional } plans or higher": [
-        "Esta función solo está disponible para el plan ${ mailProfessional } o superior"
       ],
       "This import may exceed the storage capacity currently available in your Proton account. Please consider customizing your import.": [
         "Esta importación puede exceder la capacidad de almacenamiento disponible actualmente en su cuenta Proton. Considere personalizar su importación."

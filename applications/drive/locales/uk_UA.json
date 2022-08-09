@@ -290,11 +290,11 @@
       "I have a question": [
         "У мене є питання"
       ],
-      "import": [
-        "імпорт"
-      ],
       "Import": [
         "Імпорт"
+      ],
+      "import": [
+        "імпорт"
       ],
       "Import from .csv or vCard": [
         "Імпортувати з .csv або vCard"
@@ -753,6 +753,9 @@
       "Calendar is syncing": [
         "Календар синхронізується"
       ],
+      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
+        "Календар синхронізується: для показу всіх подій з нього може знадобитися кілька хвилин."
+      ],
       "Calendar is too big": [
         "Календар завеликий"
       ],
@@ -770,6 +773,17 @@
       ],
       "Unsupported calendar format": [
         "Непідтримуваний формат календаря"
+      ]
+    },
+    "Calendar subscription not synced error; long version": {
+      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
+        "Посилання на календар недоступне поза межами екосистеми постачальника календаря."
+      ],
+      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
+        "Посилання на календар тимчасово недоступне. Переконайтеся, що посилання від постачальника календаря досі дійсне."
+      ],
+      "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
+        "З моменту останнього оновлення минуло понад 12 годин — Proton Calendar спробує оновити календар за кілька годин."
       ]
     },
     "Collapsible tooltip": {
@@ -1762,8 +1776,8 @@
       "A group with this name already exists": [
         "Група з такою назвою вже існує"
       ],
-      "A problem occurred, please try again": [
-        "Виникла проблема. Повторіть спробу"
+      "A problem occurred, please try again.": [
+        "Виникла проблема, повторіть спробу."
       ],
       "Authentication canceled.": [
         "Автентифікацію скасовано."
@@ -1797,6 +1811,9 @@
         "Приберіть принаймні ${ calendarToFixCount } календарі або",
         "Приберіть принаймні ${ calendarToFixCount } календарів або",
         "Приберіть принаймні ${ calendarToFixCount } календаря або"
+      ],
+      "Domain not available, try again later": [
+        "Домен недоступний, повторіть спробу пізніше"
       ],
       "Email address invalid": [
         "Недійсна адреса електронної пошти"
@@ -1885,8 +1902,8 @@
       "Passwords do not match": [
         "Паролі відрізняються"
       ],
-      "Please activate your content search again": [
-        "Активуйте пошук вмісту знову"
+      "Please activate your search again": [
+        "Активуйте пошук знову"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Виправте вказану проблему, щоб продовжити.",

@@ -29,9 +29,6 @@
       "Apply": [
         "Pas toe"
       ],
-      "Attach screenshot(s)": [
-        "Schermafbeelding(en) toevoegen"
-      ],
       "Authenticate": [
         "Authenticeren"
       ],
@@ -79,6 +76,9 @@
       ],
       "Create": [
         "Aanmaken"
+      ],
+      "Create a secure ${ MAIL_APP_NAME } address instead": [
+        "Maak in plaats daarvan een veilig ${ MAIL_APP_NAME }-adres"
       ],
       "Create account": [
         "Account aanmaken"
@@ -192,7 +192,7 @@
         "Meer informatie: ${ safeTitle }"
       ],
       "Need help?": [
-        "Heeft u hulp nodig?"
+        "Hulp nodig?"
       ],
       "Next": [
         "Volgende"
@@ -272,6 +272,9 @@
       "Save selected": [
         "Geselecteerde bewaren"
       ],
+      "Search countries": [
+        "Zoek landen"
+      ],
       "Select ${ planTitle }": [
         "Selecteer ${ planTitle }"
       ],
@@ -295,9 +298,6 @@
       ],
       "Show preview": [
         "Voorbeeld tonen"
-      ],
-      "Sign in": [
-        "Log in"
       ],
       "Sign out": [
         "Uitloggen"
@@ -382,6 +382,9 @@
       ],
       "View plans details": [
         "Abonnementsgegevens bekijken"
+      ],
+      "What do I get?": [
+        "Wat krijg ik?"
       ],
       "Yes": [
         "Ja"
@@ -626,6 +629,9 @@
       "Calendar is syncing": [
         "De agenda wordt gesynchroniseerd"
       ],
+      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
+        "Agenda is aan het synchroniseren: het kan enkele minuten duren voordat alle afspraken verschijnen."
+      ],
       "Calendar is too big": [
         "De agenda is te groot"
       ],
@@ -643,6 +649,11 @@
       ],
       "Unsupported calendar format": [
         "Niet-ondersteunde agenda-indeling"
+      ]
+    },
+    "Calendar subscription not synced error; long version": {
+      "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
+        "Meer dan 12 uur geleden sinds de laatste update — Proton Calendar probeert de agenda over enkele uren te updaten."
       ]
     },
     "Checkout row": {
@@ -830,9 +841,6 @@
       "Bolivia": [
         "Bolivia"
       ],
-      "Bonaire, Sint Eustatius and Saba": [
-        "Bonaire, Sint Eustatius en Saba"
-      ],
       "Bosnia and Herzegovina": [
         "Bosnië en Herzegovina"
       ],
@@ -891,7 +899,7 @@
         "Kersteiland"
       ],
       "Cocos (Keeling) Islands": [
-        "Cocoseilanden"
+        "Cocoseilanden (Keeling)"
       ],
       "Colombia": [
         "Colombia"
@@ -1206,7 +1214,7 @@
         "Mozambique"
       ],
       "Myanmar": [
-        "Myanmar"
+        "Myanmar (Birma)"
       ],
       "Namibia": [
         "Namibië"
@@ -1449,7 +1457,7 @@
         "Turkmenistan"
       ],
       "Turks and Caicos Islands": [
-        "De Turks- en Caicoseilanden"
+        "Turks- en Caicoseilanden"
       ],
       "Tuvalu": [
         "Tuvalu"
@@ -1491,7 +1499,7 @@
         "Maagdeneilanden, Verenigd Koninkrijk"
       ],
       "Virgin Islands, U.S.": [
-        "Maagdeneilanden, Verenigde Staten."
+        "Maagdeneilanden, Verenigde Staten"
       ],
       "Wallis and Futuna": [
         "Wallis en Futuna"
@@ -1545,7 +1553,7 @@
         "Bugs of kwaliteitsproblemen"
       ],
       "I use a different Proton account": [
-        "Ik gebruik een ander Proton account"
+        "Ik gebruik een ander Proton-account"
       ],
       "Missing feature(s)": [
         "Ontbrekend(e) kenmerk(en)"
@@ -1766,6 +1774,10 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "byte",
+        "bytes"
+      ],
       "GB": [
         "GB"
       ],
@@ -1774,6 +1786,24 @@
       ],
       "MB": [
         "MB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Byte",
+        "Bytes"
+      ],
+      "Gigabyte": [
+        "Gigabyte",
+        "Gigabytes"
+      ],
+      "Kilobyte": [
+        "Kilobyte",
+        "Kilobytes"
+      ],
+      "Megabyte": [
+        "Megabyte",
+        "Megabytes"
       ]
     },
     "Frequency of news": {
@@ -2019,9 +2049,6 @@
       "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
         "Voor Visa, MasterCard en Discover zijn dit de 3 cijfers op de achterkant van uw kaart. Voor American Express de 4 cijfers op de voorkant van uw kaart."
       ],
-      "Free": [
-        "Free"
-      ],
       "Free up some space or add more storage space.": [
         "Maak ruimte vrij of voeg meer opslagruimte toe."
       ],
@@ -2099,6 +2126,9 @@
       ],
       "Learn more": [
         "Meer informatie"
+      ],
+      "Link copied to clipboard": [
+        "Koppeling gekopieerd naar klembord"
       ],
       "Loading": [
         "Laden"
@@ -2199,6 +2229,9 @@
       "Proton can't help you recover any lost passwords.": [
         "Proton kan u niet helpen bij het herstellen van verloren wachtwoorden."
       ],
+      "read our two-factor authentication guide first": [
+        "lees eerst de instructies over tweestapsverificatie (2FA)"
+      ],
       "recovery method": [
         "herstelmethode"
       ],
@@ -2298,14 +2331,23 @@
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a ${ VPN_APP_NAME } server.": [
         "Om uw internetverbinding te beveiligen, installeert u de ${ VPN_APP_NAME }-applicatie op uw apparaat en maakt u verbinding met een ${ VPN_APP_NAME }-server."
       ],
-      "To use ${ toAppName }, please create an address.": [
-        "Maak een adres aan om ${ toAppName } te gebruiken."
-      ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Waardeer uw account op met 'credits' die u kunt gebruiken om een aanvullend abonnement af te sluiten of uw huidige abonnement te vernieuwen. U krijgt één 'credit' voor elke ${ i18nCurrency } die u gebruikt."
       ],
       "Tor": [
         "Tor"
+      ],
+      "Total email addresses": [
+        "Totaal e-mailadressen"
+      ],
+      "Total storage": [
+        "Totale opslagruimte"
+      ],
+      "Total supported domains": [
+        "Totaal ondersteunde domeinen"
+      ],
+      "Total VPN connections": [
+        "Totale VPN-verbindingen"
       ],
       "Two-factor authentication adds an extra layer of security to your account in case your password is compromised.": [
         "Tweestapsverificatie voegt een extra beveiligingslaag toe aan uw account in het geval uw wachtwoord wordt aangetast."
@@ -2439,6 +2481,9 @@
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "U moet een creditcard of bankrekening gekoppeld hebben aan uw PayPal-account. Als uw PayPal-account dat niet heeft, klik dan op de knop hieronder."
       ],
+      "You must remove any additional personal calendars and any shared calendar links before you can cancel your Mail subscription.": [
+        "U moet alle extra persoonlijke agenda's en gedeelde agenda-koppelingen verwijderen voordat u uw Mail abonnement kunt opzeggen."
+      ],
       "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription.": [
         "U moet alle extra persoonlijke agenda's en gedeelde agenda-koppelingen verwijderen voordat u uw abonnement kunt opzeggen."
       ],
@@ -2460,8 +2505,8 @@
       "You'll stay signed in even after you close the browser.": [
         "U zult ingelogd blijven, zelfs als u de browser sluit."
       ],
-      "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, please create an address.": [
-        "Uw ${ BRAND_NAME }-account is gekoppeld aan ${ externalEmailAddress }. Maak een adres aan om ${ toAppName } te gebruiken."
+      "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
+        "Uw ${ BRAND_NAME }-account is gekoppeld aan ${ externalEmailAddress }. Maak een ${ MAIL_APP_NAME }-adres aan om ${ toAppName } te gebruiken."
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
         "Uw ${ VPN_APP_NAME } en ${ MAIL_APP_NAME } accounts zijn gekoppeld. Om ze allebei te verwijderen, log in op ${ loginLink } en verwijder daar uw account."
@@ -2686,7 +2731,7 @@
         "Standaardtaal"
       ],
       "Delete": [
-        "Verwijder"
+        "Verwijderen"
       ],
       "Device/certificate name": [
         "Apparaat/certificaat naam"
@@ -2955,7 +3000,7 @@
         "Meer informatie"
       ],
       "Need help?": [
-        "Heeft u hulp nodig?"
+        "Hulp nodig?"
       ],
       "Not activated": [
         "Niet actief"
@@ -2972,11 +3017,11 @@
       "Reset password": [
         "Wachtwoord resetten"
       ],
-      "Sign in": [
-        "Log in"
-      ],
       "Terms": [
         "Voorwaarden"
+      ],
+      "Trouble signing in?": [
+        "Problemen met inloggen?"
       ],
       "Upgrade": [
         "Upgraden"
@@ -3075,6 +3120,12 @@
       ],
       "Explore all ${ BRAND_NAME } plans": [
         "Bekijk alle ${ BRAND_NAME }-abonnementen"
+      ],
+      "From ${ _price }": [
+        "Vanaf ${ _price }"
+      ],
+      "From ${ _price2 } per user": [
+        "Vanaf ${ _price2 } per gebruiker"
       ],
       "From ${ price }": [
         "Vanaf ${ price }"
@@ -3359,6 +3410,9 @@
       "Privacy and security suite for businesses, including all premium Proton services.": [
         "Privacy- en beveiligingssuite voor bedrijven, inclusief alle premium Proton-services."
       ],
+      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
+        "Veilige cloudopslag die u alles laat opslaan, synchroniseren, en u makkelijk en veilig bestanden laat delen."
+      ],
       "Secure email and calendar for professionals and businesses.": [
         "Veilige e-mail en agenda voor professionals en bedrijven."
       ],
@@ -3379,6 +3433,9 @@
       ]
     },
     "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Maak privacy uw standaard voor back-ups, opslag, delen en herstel van bestanden."
+      ],
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "Anders zal de toegang tot uw account worden beperkt en wordt uw account uiteindelijk uitgeschakeld."
       ],
@@ -3412,6 +3469,9 @@
       ]
     },
     "new_plans: signup": {
+      "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }.": [
+        "Door een ${ BRAND_NAME }-account aan te maken, gaat u akkoord met u onze ${ terms }."
+      ],
       "Payment details": [
         "Betalingsgegevens"
       ],
@@ -3420,6 +3480,9 @@
       ],
       "Subscription": [
         "Abonnement"
+      ],
+      "terms and conditions": [
+        "algemene voorwaarden"
       ],
       "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
         "Kies eerst een weergavenaam. Dit is de naam die mensen zien als u een e-mail verzendt, ze uitnodigt voor een afspraak of een bestand deelt."
@@ -3640,6 +3703,9 @@
       "Boost your storage space to ${ businessStorage } per user": [
         "Breid uw opslagruimte uit naar ${ businessStorage } per gebruiker"
       ],
+      "Boost your storage space to ${ driveStorage } total": [
+        "Verhoog uw opslagruimte tot ${ driveStorage } totaal"
+      ],
       "Cover more ground with support for 10 custom email domains": [
         "Doe meer met ondersteuning voor 10 aangepaste e-maildomeinen"
       ],
@@ -3811,7 +3877,7 @@
     },
     "Recovery Email": {
       "Cancel": [
-        "Annuleer"
+        "Annuleren"
       ],
       "Email address has been verified.": [
         "E-mailadres werd geverifieerd."
@@ -3848,10 +3914,25 @@
     },
     "Recovery Phone": {
       "Cancel": [
-        "Annuleer"
+        "Annuleren"
+      ],
+      "Phone number has been verified.": [
+        "Telefoonnummer is geverifieerd."
+      ],
+      "Phone number not yet verified.": [
+        "Telefoonnummer is nog niet geverifieerd."
+      ],
+      "Verify by SMS": [
+        "Verifiëren met sms"
       ],
       "Verify now": [
         "Verifieer nu"
+      ],
+      "Verify recovery phone?": [
+        "Hersteltelefoon verifiëren?"
+      ],
+      "Verifying your phone number increases your account security and allows additional options for recovery.": [
+        "Uw telefoonnummer verifiëren verhoogt uw accountbeveiliging en laat extra opties voor herstel toe."
       ]
     },
     "Signup label": {
@@ -3866,11 +3947,17 @@
       ]
     },
     "Spotlight": {
+      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
+        "${ DRIVE_APP_NAME } is uit de bèta! Geef uw bestanden dezelfde beveiliging als uw e-mails."
+      ],
       "Get up to 18 months of ${ planName } for free": [
         "Krijg tot 18 maanden ${ planName } gratis"
       ],
       "Invite friends and earn rewards!": [
         "Nodig vrienden uit en verdien bonussen!"
+      ],
+      "Try ${ DRIVE_APP_NAME }": [
+        "Probeer ${ DRIVE_APP_NAME }"
       ]
     },
     "State": {
@@ -3912,7 +3999,7 @@
       ],
       "${ n } VPN connection": [
         "${ n } VPN-verbinding",
-        "${ n } VPN-verbindingen"
+        ""
       ],
       "${ n } VPN connection per user": [
         "${ n } VPN-verbinding per gebruiker",
@@ -4049,9 +4136,6 @@
     "Suffix": {
       "/month": [
         "/maand"
-      ],
-      "/user per month": [
-        "/gebruiker per maand"
       ]
     },
     "Suffix for price": {
@@ -4059,7 +4143,7 @@
         "/maand"
       ],
       "per month": [
-        "maandelijks"
+        "per maand"
       ]
     },
     "Tab subscription modal": {
@@ -4145,9 +4229,6 @@
       "Add PayPal payment method": [
         "Voeg PayPal als betalingsmethode toe"
       ],
-      "Address is available": [
-        "Adres is beschikbaar"
-      ],
       "Amount": [
         "Bedrag"
       ],
@@ -4165,6 +4246,9 @@
       ],
       "Billing cycle": [
         "Factuurperiode"
+      ],
+      "Cancel Mail subscription": [
+        "Mail-abonnement opzeggen"
       ],
       "Card verification": [
         "Kaartverificatie"
@@ -4196,8 +4280,8 @@
       "Congratulations on choosing privacy!": [
         "Gefeliciteerd om voor privacy te kiezen!"
       ],
-      "Create a ${ mailAppName } address": [
-        "Maak een ${ mailAppName } adres"
+      "Create a ${ MAIL_APP_NAME } address": [
+        "Maak een ${ MAIL_APP_NAME }-adres"
       ],
       "Create your ${ BRAND_NAME } Account": [
         "Maak uw ${ BRAND_NAME }-account"
@@ -4218,7 +4302,7 @@
         "Datum"
       ],
       "Delete": [
-        "Verwijder"
+        "Verwijderen"
       ],
       "Delete account": [
         "Account verwijderen"
@@ -4358,9 +4442,6 @@
       "Request new code": [
         "Nieuwe code aanvragen"
       ],
-      "Reset password": [
-        "Wachtwoord resetten"
-      ],
       "Reset password?": [
         "Wachtwoord resetten?"
       ],
@@ -4384,9 +4465,6 @@
       ],
       "Settings": [
         "Instellingen"
-      ],
-      "Sign in": [
-        "Log in"
       ],
       "Sign in again to continue": [
         "Log opnieuw in om door te gaan"
@@ -4441,6 +4519,9 @@
       ],
       "You already have a Proton account": [
         "U heeft al een Proton account"
+      ],
+      "Your ${ MAIL_APP_NAME } address": [
+        "Uw ${ MAIL_APP_NAME }-adres"
       ],
       "Your current plan": [
         "Uw huidige abonnement"

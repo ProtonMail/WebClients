@@ -286,11 +286,11 @@
       "I have a question": [
         "Ich habe eine Frage"
       ],
-      "import": [
-        "importieren"
-      ],
       "Import": [
         "Importieren"
+      ],
+      "import": [
+        "importieren"
       ],
       "Import from .csv or vCard": [
         "Aus CSV-Datei oder vCard importieren"
@@ -801,6 +801,9 @@
       "Calendar is syncing": [
         "Kalender wird synchronisiert"
       ],
+      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
+        "Der Kalender wird synchronisiert: Es kann einige Minuten dauern, bis alle Ereignisse angezeigt werden."
+      ],
       "Calendar is too big": [
         "Kalender ist zu groß"
       ],
@@ -818,6 +821,17 @@
       ],
       "Unsupported calendar format": [
         "Nicht unterstütztes Kalender-Format"
+      ]
+    },
+    "Calendar subscription not synced error; long version": {
+      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
+        "Der Kalender-Link ist von außerhalb des Ökosystems des Kalenderanbieters nicht zugänglich."
+      ],
+      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
+        "Auf den Kalenderlink kann vorübergehend nicht zugegriffen werden. Bitte überprüfe, ob der Link des Kalenderanbieters noch gültig ist."
+      ],
+      "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
+        "Seit der letzten Aktualisierung sind mehr als 12 Stunden vergangen — Proton Calendar versucht, den Kalender in einigen Stunden zu aktualisieren."
       ]
     },
     "Collapsible tooltip": {
@@ -1808,8 +1822,8 @@
       "A group with this name already exists": [
         "Eine Gruppe mit diesem Namen existiert bereits"
       ],
-      "A problem occurred, please try again": [
-        "Es ist ein Problem aufgetreten, bitte versuche es erneut"
+      "A problem occurred, please try again.": [
+        "Es ist ein Problem aufgetreten, bitte versuche es erneut."
       ],
       "Authentication canceled.": [
         "Authentifizierung abgebrochen."
@@ -1839,6 +1853,9 @@
       "Deselect at least ${ calendarToFixCount } calendar or": [
         "Mindestens ${ calendarToFixCount } Kalender abwählen oder",
         "Mindestens ${ calendarToFixCount } Kalender abwählen oder"
+      ],
+      "Domain not available, try again later": [
+        "Domain nicht verfügbar. Bitte versuche es später noch einmal."
       ],
       "Email address invalid": [
         "Ungültige E-Mail-Adresse"
@@ -1921,8 +1938,8 @@
       "Passwords do not match": [
         "Passwörter stimmen nicht überein"
       ],
-      "Please activate your content search again": [
-        "Bitte aktiviere deine Inhalts-Suche erneut"
+      "Please activate your search again": [
+        "Bitte aktiviere deine Suche erneut"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Bitte behebe den hervorgehobenen Konflikt, um fortzufahren.",

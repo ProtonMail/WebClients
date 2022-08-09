@@ -17,6 +17,9 @@
       "activate": [
         "activar"
       ],
+      "Activate ${ addressToCreate }": [
+        "Activa ${ addressToCreate }"
+      ],
       "Activate ${ Name }@pm.me": [
         "Activar ${ Name }@pm.me"
       ],
@@ -29,8 +32,14 @@
       "Add": [
         "Afegir"
       ],
+      "Add ${ BRAND_NAME } Account": [
+        "Afegeix un compte de ${ BRAND_NAME }"
+      ],
       "Add address": [
         "Afegir adreça"
+      ],
+      "Add calendar": [
+        "Afegeix calendari"
       ],
       "Add condition": [
         "Afegir condició"
@@ -52,6 +61,9 @@
       ],
       "Add label": [
         "Afegir etiqueta"
+      ],
+      "Add notification": [
+        "Afegeix notificació"
       ],
       "Add PayPal": [
         "Afegir PayPal"
@@ -76,6 +88,9 @@
       ],
       "Apply": [
         "Aplicar"
+      ],
+      "Attach screenshot(s)": [
+        "Adjunta captura/es de pantalla"
       ],
       "Authenticate": [
         "Autenticar"
@@ -143,11 +158,23 @@
       "Continue import": [
         "Continua la importació"
       ],
+      "Continue to ${ name }": [
+        "Continua amb ${ name }"
+      ],
+      "Continue with ${ nameToDisplay } ${ maybeEmailInBrackets }": [
+        "Continua amb ${ nameToDisplay } ${ maybeEmailInBrackets }"
+      ],
+      "Continue with Google": [
+        "Continua amb Google"
+      ],
       "Copy": [
         "Copiar"
       ],
       "Copy email to clipboard": [
         "Copiar correu electrònic al porta-retalls"
+      ],
+      "Copy link": [
+        "Copia l'enllaç"
       ],
       "Create": [
         "Crear"
@@ -158,6 +185,9 @@
       "Create address": [
         "Crear una adreça"
       ],
+      "Create calendar": [
+        "Crea un calendari"
+      ],
       "Create folder": [
         "Crear carpeta"
       ],
@@ -167,11 +197,20 @@
       "Create label": [
         "Crear etiqueta"
       ],
+      "Create link": [
+        "Crea l'enllaç"
+      ],
+      "Current plan": [
+        "Pla actual"
+      ],
       "Customize": [
         "Personalitzar"
       ],
       "Customize import": [
         "Personalitzar importació"
+      ],
+      "Customize plan": [
+        "Personalitza el pla"
       ],
       "Decrease": [
         "Redueix"
@@ -181,6 +220,9 @@
       ],
       "Delete": [
         "Esborra"
+      ],
+      "Delete link": [
+        "Elimina l'enllaç"
       ],
       "Delete record": [
         "Suprimeix el registre"
@@ -193,6 +235,9 @@
       ],
       "Didn't receive a code?": [
         "No heu rebut un codi?"
+      ],
+      "Didn't receive the code?": [
+        "No heu rebut el codi?"
       ],
       "Disable recovery phrase": [
         "Desactivar la frase de recuperació"
@@ -221,6 +266,9 @@
       "Download all configurations": [
         "Descarregar totes les preferències"
       ],
+      "Download ICS": [
+        "Baixa l'ICS"
+      ],
       "Download recovery file": [
         "Descarrega el fitxer de recuperació"
       ],
@@ -242,17 +290,32 @@
       "Edit sieve": [
         "Editar sieve"
       ],
+      "Edit subscription": [
+        "Edita la subscripció"
+      ],
+      "Emoji": [
+        "Emoji"
+      ],
       "enable desktop notifications": [
         "activar les notificacions d'escriptori"
       ],
       "Enable multi-user support": [
         "Activar suport multiusuari"
       ],
+      "Explore other ${ BRAND_NAME } plans": [
+        "Explora altres ${ BRAND_NAME } plans"
+      ],
       "Export": [
         "Exportar"
       ],
+      "Export ICS": [
+        "Exporta l'ICS"
+      ],
       "Export key": [
         "Exportar clau"
+      ],
+      "Extend": [
+        "Amplia"
       ],
       "Font": [
         "Font"
@@ -271,6 +334,9 @@
       ],
       "Get verification code": [
         "Obtenir codi de verificació"
+      ],
+      "Go to label": [
+        "Ves a l'etiqueta"
       ],
       "Hide": [
         "Amaga"
@@ -295,6 +361,9 @@
       ],
       "Import emails": [
         "Importar correus"
+      ],
+      "Import from ICS": [
+        "Importa des d'ICS"
       ],
       "Import key": [
         "Importar clau"
@@ -383,6 +452,9 @@
       "Pay": [
         "Pagar"
       ],
+      "Pay ${ price }": [
+        "Paga ${ price }"
+      ],
       "Preview": [
         "Previsualització"
       ],
@@ -425,11 +497,17 @@
       "Remove bonuses": [
         "Suprimeix bonus"
       ],
+      "Remove calendar": [
+        "Elimina el calendari"
+      ],
       "Remove gift code": [
         "Esborrar codi regal"
       ],
       "Remove this label": [
         "Elimina aquesta etiqueta"
+      ],
+      "Remove this notification": [
+        "Elimina la notificació"
       ],
       "Rename": [
         "Reanomenar"
@@ -494,6 +572,15 @@
       "Save address": [
         "Desar adreça"
       ],
+      "Save ICS file": [
+        "Desa el fitxer ICS"
+      ],
+      "Search countries": [
+        "Cerca països"
+      ],
+      "Select ${ planTitle }": [
+        "Selecciona ${ planTitle }"
+      ],
       "Select files": [
         "Seleccioneu fitxers"
       ],
@@ -530,11 +617,20 @@
       "Show labels": [
         "Mostrar les etiquetes"
       ],
+      "Show more": [
+        "Mostra'n més"
+      ],
       "Sign in": [
         "Iniciar la sessió"
       ],
       "Sign out": [
         "Tancar la sessió"
+      ],
+      "Sign out from ${ nameToDisplay } ${ maybeEmailInBrackets }": [
+        "Tanca la sessió de ${ nameToDisplay } ${ maybeEmailInBrackets }"
+      ],
+      "Sign out of all accounts": [
+        "Tanca tots els comptes"
       ],
       "Signing in": [
         "Iniciant sessió"
@@ -623,6 +719,12 @@
       "Verify": [
         "Verificar"
       ],
+      "Verify account": [
+        "Verifica el compte"
+      ],
+      "Verify email": [
+        "Verifica el correu"
+      ],
       "View": [
         "Veure"
       ],
@@ -657,6 +759,9 @@
       ]
     },
     "Action in trial plan": {
+      "Continue with free plan": [
+        "Continua amb el pla gratuït"
+      ],
       "No, thanks": [
         "No, gràcies"
       ],
@@ -781,6 +886,9 @@
       ]
     },
     "Billing cycle option": {
+      "1 month": [
+        "1 mes"
+      ],
       "12 months": [
         "12 mesos"
       ],
@@ -931,6 +1039,11 @@
         "Copia"
       ]
     },
+    "Calendar settings sidebar": {
+      "Show ${ remainingItems } more": [
+        "Mostra'n ${ remainingItems } més"
+      ]
+    },
     "Calendar status": {
       "Not synced": [
         "No sincronitzat"
@@ -957,6 +1070,14 @@
       ],
       "More than 12 hours passed since last update": [
         "Han passat més de 12 hores des de la darrera actualització"
+      ]
+    },
+    "Collapsible tooltip": {
+      "Collapse": [
+        "Replega"
+      ],
+      "Expand": [
+        "Amplia"
       ]
     },
     "Condition for custom filter": {
@@ -1135,6 +1256,20 @@
     "Credits": {
       "Unused credits": [
         "Crèdits no utilitzats"
+      ]
+    },
+    "Cycle": {
+      "/month": [
+        "/mes"
+      ]
+    },
+    "Daily recurring event, frequency": {
+      "${ count } time": [
+        "${ count } vegada",
+        "${ count } vegades"
+      ],
+      "Daily": [
+        "Diàriament"
       ]
     },
     "Day": {
@@ -1736,6 +1871,16 @@
         "També podeu ${ refresh } o tornar-ho a intentar més tard."
       ]
     },
+    "Error message, recovery": {
+      "sign in": [
+        "inicia la sessió"
+      ]
+    },
+    "Error message, unsubscribe": {
+      "sign in": [
+        "inicia la sessió"
+      ]
+    },
     "Error notification": {
       "First name and last name cannot be unchecked at the same time": [
         "El nom i cognoms no es poden desmarcar al mateix temps"
@@ -1919,6 +2064,9 @@
     "Header": {
       "Actions": [
         "Accions"
+      ],
+      "Calendar": [
+        "Calendari"
       ],
       "Event": [
         "Esdeveniment"
@@ -2202,6 +2350,9 @@
       ]
     },
     "Info": {
+      "${ addressToCreate } is now active": [
+        "${ addressToCreate } ara està activa"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necessita el vostre permís per ${ enableDesktopNotifications }."
       ],
@@ -2259,6 +2410,10 @@
       "${ strongAddressAvailable } You will use this email address to sign into all ${ BRAND_NAME } services.": [
         "${ strongAddressAvailable } Utilitzareu aquesta adreça de correu electrònic per accedir a tots els serveis de ${ BRAND_NAME }."
       ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } membre)",
+        "(${ memberCount } membres)"
+      ],
       "(Filter if ALL of the following conditions are met)": [
         "(Filtre si es compleixen totes les condicions següents)"
       ],
@@ -2273,6 +2428,9 @@
       ],
       "1. Invite friends to Proton": [
         "1. Convida amistats a Proton"
+      ],
+      "10 email addresses": [
+        "10 adreces de correu"
       ],
       "2. They try ${ planName }": [
         "2. Elles proven ${ planName }"
@@ -2551,6 +2709,9 @@
       "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
         "Per a Visa i MasterCard, els 3 dígits a la part posterior de la targeta. Per American Express, els 4 dígits de la part frontal de la targeta."
       ],
+      "Free": [
+        "Gratuït"
+      ],
       "Free up some space or add more storage space.": [
         "Allibereu una mica d’espai o afegiu més espai d’emmagatzematge."
       ],
@@ -2774,6 +2935,9 @@
       "Other options": [
         "Altres opcions"
       ],
+      "Our new ${ domain } domain is a convenient option for sending and receiving emails. You'll still be able to use your original ${ protonMailAppName } address.": [
+        "El nostre nou domini ${ domain } és una opció pràctica per enviar i rebre correus. Podreu seguir utilitzant la vostra adreça original ${ protonMailAppName }."
+      ],
       "P2P": [
         "P2P"
       ],
@@ -2853,6 +3017,9 @@
       "Queued": [
         "En cua"
       ],
+      "recovery method": [
+        "mètode de recuperació"
+      ],
       "Recovery phrase copied to clipboard": [
         "Frase de recuperació copiada al porta-retalls"
       ],
@@ -2882,6 +3049,9 @@
       ],
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Escaneja aquest codi Qr amb el teu disposiu d'autenticació en dos passos per a configurar el vostre compte. ${ switchButton }."
+      ],
+      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        "Enviat amb correu segur de <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
       ],
       "Server is currently down": [
         "El servidor està actualment caigut"
@@ -3144,8 +3314,8 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "Ben aviat sereu redirigits a PayPal per verificar el pagament."
       ],
-      "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, please create an address.": [
-        "El seu compte ${ BRAND_NAME } està associat amb ${ externalEmailAddress }. Per utilitzar ${ toAppName }, creeu una adreça."
+      "You'll still be able to send and receive mail with your existing email address(es).": [
+        "Podreu seguir enviant i rebent correus amb les vostres adreces actuals."
       ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
         "El vostre compte té almenys una factura en retard. El vostre accés ha estat restringit. ${ payInvoiceLink }"
@@ -3212,6 +3382,9 @@
       "Additional duplicate keys detected. Please upload individually for more information.": [
         "S'han detectat claus addicionals duplicades. Carregueu-les individualment per obtenir més informació."
       ],
+      "Create an email address": [
+        "Crea una adreça de correu"
+      ],
       "Key ${ fingerprint } has already been uploaded": [
         "La clau ${ fingerprint } ja s'ha carregat"
       ]
@@ -3265,6 +3438,9 @@
     "Invoice state display as badge": {
       "Billed": [
         "Facturat"
+      ],
+      "Gifted": [
+        "Regalat"
       ],
       "Paid": [
         "Pagat"
@@ -3563,6 +3739,9 @@
       ],
       "${ MAIL_APP_NAME } address": [
         "Adreça de ${ MAIL_APP_NAME }"
+      ],
+      "${ MAIL_APP_NAME } footer": [
+        "Peu de text de ${ MAIL_APP_NAME }"
       ],
       "${ n } month": [
         "${ n } mes",
@@ -4255,6 +4434,9 @@
       "Proton company announcements": [
         "Anuncis de l'organització Proton"
       ],
+      "Proton for Business": [
+        "Proton per a empreses"
+      ],
       "Proton for Business newsletter": [
         "Butlletí de Proton per a Empreses"
       ],
@@ -4446,6 +4628,11 @@
         "Franc suís"
       ]
     },
+    "Monthly recurring event, repeats on": {
+      "on day ${ dayOfMonth }": [
+        "el dia ${ dayOfMonth }"
+      ]
+    },
     "Moved to black/whitelist": {
       "${ Domain } removed": [
         "${ Domain } esborrat"
@@ -4474,6 +4661,49 @@
       ],
       "Label name": [
         "Nom de etiqueta"
+      ]
+    },
+    "new_plans: action": {
+      "Continue with Free": [
+        "Continuar amb el gratuït"
+      ],
+      "Switch or add account": [
+        "Canvia o afegeix un compte"
+      ]
+    },
+    "new_plans: feature": {
+      "${ n } VPN connection": [
+        "${ n } connexió VPN",
+        "${ n } connexions VPN"
+      ]
+    },
+    "new_plans: Plan frequency": {
+      "/month": [
+        "/mes"
+      ]
+    },
+    "new_plans: signup": {
+      "Payment details": [
+        "Detalls del pagament"
+      ],
+      "Subscription": [
+        "Subscripció"
+      ],
+      "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
+        "Per començar, trieu un nom a mostrar. Això és el que les persones veuran quan envieu un correu, les convideu a un esdeveniment o compartiu un fitxer."
+      ]
+    },
+    "new_plans: upgrade": {
+      "Included with ${ plus }, ${ bundle }, and ${ BRAND_NAME } for Business.": [
+        "Inclòs en ${ plus }, ${ bundle } i ${ BRAND_NAME } per a empreses."
+      ],
+      "Included with all ${ BRAND_NAME } for Business plans.": [
+        "Inclòs en tots els plans de ${ BRAND_NAME } per a empreses."
+      ]
+    },
+    "new_plans: Upsell attribute": {
+      "10 email addresses/aliases": [
+        "10 adreces de correu/àlies"
       ]
     },
     "Notification": {
@@ -4745,6 +4975,12 @@
       "A way to contact you": [
         "Una manera de contactar amb tu"
       ],
+      "Add a calendar description": [
+        "Afegeix una descripció de calendari"
+      ],
+      "Add a calendar name": [
+        "Afegeix un nom de calendari"
+      ],
       "Add gift code": [
         "Afegir codi regal"
       ],
@@ -4915,6 +5151,9 @@
       ],
       "Upload": [
         "Carregar"
+      ],
+      "Upload additional files": [
+        "Pugeu fitxers addicionals"
       ]
     },
     "Settings description": {
@@ -4963,6 +5202,9 @@
       ]
     },
     "Signup label": {
+      "Display name": [
+        "Nom a mostrar"
+      ],
       "Email": [
         "Correu electrònic"
       ],
@@ -5212,9 +5454,22 @@
         "/mes"
       ]
     },
+    "Suffix for price": {
+      "/month": [
+        "/mes"
+      ]
+    },
     "Tab in domain modal": {
       "Addresses": [
         "Adreces"
+      ]
+    },
+    "Tab subscription modal": {
+      "For businesses": [
+        "Per a empreses"
+      ],
+      "For individuals": [
+        "Per a particulars"
       ]
     },
     "TableHeader": {
@@ -5249,6 +5504,15 @@
     "Time period": {
       "account creation date": [
         "data de creació del compte"
+      ],
+      "the last 12 months": [
+        "els darrers 12 mesos"
+      ],
+      "the last 3 months": [
+        "els darrers 3 mesos"
+      ],
+      "the last month": [
+        "el darrer mes"
       ]
     },
     "Time unit": {
@@ -5280,6 +5544,9 @@
       ],
       "3. Select config file and download": [
         "3. Seleccionar arxiu de configuració i descarregar"
+      ],
+      "Account and password": [
+        "Compte i contrasenya"
       ],
       "Account recovery": [
         "Recuperació de compte"
@@ -5329,9 +5596,6 @@
       "Add user": [
         "Afegir usuari"
       ],
-      "Address is available": [
-        "Adreça disponible"
-      ],
       "Address verification": [
         "Verificació d'adreça"
       ],
@@ -5370,6 +5634,9 @@
       ],
       "Back": [
         "Torna"
+      ],
+      "Backup and export": [
+        "Còpia de seguretat i exportació"
       ],
       "Billing cycle": [
         "Cicle de facturació"
@@ -5422,6 +5689,9 @@
       "Clear": [
         "Netejar"
       ],
+      "Composing": [
+        "Redacció"
+      ],
       "Confirm address": [
         "Confirmar adreça"
       ],
@@ -5434,14 +5704,20 @@
       "Confirm phone number": [
         "Confirmeu el número de telèfon"
       ],
+      "Congratulations on choosing privacy!": [
+        "Felicitats per triar la privacitat!"
+      ],
+      "Connect ${ name }": [
+        "Connecta ${ name }"
+      ],
       "Contact encryption keys": [
         "Claus de xifratge de contacte"
       ],
       "Continue with partial import?": [
         "Continuar amb la importació parcial?"
       ],
-      "Create a ${ mailAppName } address": [
-        "Crear una adreça de ${ mailAppName }"
+      "Create a ${ MAIL_APP_NAME } address": [
+        "Crea una adreça de ${ MAIL_APP_NAME }"
       ],
       "Credentials": [
         "Credencials"
@@ -5451,6 +5727,9 @@
       ],
       "Currency": [
         "Moneda"
+      ],
+      "Current and past imports": [
+        "Importacions actuals i anteriors"
       ],
       "Custom filters": [
         "Filtres personalitzats"
@@ -5515,11 +5794,17 @@
       "Disable two-factor authentication": [
         "Deshabilitar l'autenticació en dos passos"
       ],
+      "Display name and signature": [
+        "Nom a mostrar i signatura"
+      ],
       "Domain names": [
         "Noms de domini"
       ],
       "Downgrade account": [
         "Degradar compte"
+      ],
+      "Download ${ VPN_APP_NAME }": [
+        "Baixa ${ VPN_APP_NAME }"
       ],
       "Edit Allow List": [
         "Edita la Llista d'Autoritzats"
@@ -5560,6 +5845,12 @@
       "Error": [
         "Error"
       ],
+      "Export": [
+        "Exporta"
+      ],
+      "Export calendar": [
+        "Exporta el calendari"
+      ],
       "Export private key": [
         "Exportar clau privada"
       ],
@@ -5593,11 +5884,17 @@
       "Human verification": [
         "Verificació humana"
       ],
+      "Identity and addresses": [
+        "Identitat i adreces"
+      ],
       "IMAP/SMTP": [
         "IMAP/SMTP"
       ],
       "Import": [
         "Importació"
+      ],
+      "Import and export": [
+        "Importació i exportació"
       ],
       "Import as simple event?": [
         "Importar com un element simple?",
@@ -5624,6 +5921,9 @@
       "Invalid verification code": [
         "Codi de verificació no vàlid"
       ],
+      "Invitations": [
+        "Invitacions"
+      ],
       "Invoices": [
         "Factures"
       ],
@@ -5647,6 +5947,9 @@
       ],
       "Messages": [
         "Missatges"
+      ],
+      "Messages and composing": [
+        "Missatges i redacció"
       ],
       "Multi-user support": [
         "Suport multi-usuari"
@@ -5684,8 +5987,14 @@
       "Organization": [
         "Organització"
       ],
+      "Organization and keys": [
+        "Organització i claus"
+      ],
       "Password": [
         "Contrasenya"
+      ],
+      "Password and keys": [
+        "Contrasenya i claus"
       ],
       "Passwords": [
         "Contrasenyes"
@@ -5714,6 +6023,9 @@
       "Previous": [
         "Anterior"
       ],
+      "Privacy and data collection": [
+        "Privacitat i recopilació de dades"
+      ],
       "Processing": [
         "Processant"
       ],
@@ -5735,6 +6047,12 @@
       "Recovery file": [
         "Arxiu de recuperació"
       ],
+      "Refer a friend": [
+        "Recomana a un amic"
+      ],
+      "Referral tracker": [
+        "Seguiment de recomanacions"
+      ],
       "Report a problem": [
         "Avisar d'un problema"
       ],
@@ -5753,8 +6071,14 @@
       "Restore administrator privileges": [
         "Restaurar els privilegis d'administrador"
       ],
+      "Save contact details": [
+        "Desa els detalls de contacte"
+      ],
       "Secure email based in Switzerland": [
         "Correu electrònic segur amb seu a Suïssa"
+      ],
+      "Security and privacy": [
+        "Seguretat i privacitat"
       ],
       "Security logs": [
         "Registres de seguretat"
@@ -5858,6 +6182,9 @@
       "Unsupported browser": [
         "Navegador no soportat"
       ],
+      "Upgrade plan": [
+        "Millora el pla"
+      ],
       "Username": [
         "Nom d'usuari"
       ],
@@ -5882,8 +6209,20 @@
       "What's new": [
         "Novetats"
       ],
+      "WireGuard": [
+        "WireGuard"
+      ],
+      "WireGuard configuration": [
+        "Configuració del WireGuard"
+      ],
+      "You already have a Proton account": [
+        "Ja teniu un compte de Proton"
+      ],
       "Your ${ domain } address is active": [
         "La seva adreça ${ domain } està activa"
+      ],
+      "Your calendar link": [
+        "Enllaç del vostre calendari"
       ],
       "Your current plan": [
         "El vostre pla actual"
@@ -6086,6 +6425,14 @@
         "La contrasenya ha de tenir com a mínim ${ length } caràcters"
       ]
     },
+    "Video control": {
+      "Click to replay the video": [
+        "Feu clic per repetir el vídeo"
+      ],
+      "Replay video": [
+        "Repeteix el vídeo"
+      ]
+    },
     "VPN info": {
       "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, and more.": [
         "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now i més."
@@ -6196,6 +6543,29 @@
       ],
       "It can take up to a day for DNS changes to update.": [
         "Els canvis DNS poden trigar fins a un dia a actualitzar-se."
+      ]
+    },
+    "Weekly recurring event, repeats on (multiple days), frequency": {
+      "Friday": [
+        "divendres"
+      ],
+      "Monday": [
+        "dilluns"
+      ],
+      "Saturday": [
+        "dissabte"
+      ],
+      "Sunday": [
+        "diumenge"
+      ],
+      "Thursday": [
+        "dijous"
+      ],
+      "Tuesday": [
+        "dimarts"
+      ],
+      "Wednesday": [
+        "dimecres"
       ]
     }
   }

@@ -419,11 +419,11 @@
       "Images will be loaded without a proxy": [
         "Зображення завантажаться без проксі"
       ],
-      "import": [
-        "імпортувати"
-      ],
       "Import": [
         "Імпорт"
+      ],
+      "import": [
+        "імпортувати"
       ],
       "Import from .csv or vCard": [
         "Імпортувати з .csv або vCard"
@@ -1539,6 +1539,9 @@
       "Calendar is syncing": [
         "Календар синхронізується"
       ],
+      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
+        "Календар синхронізується: для показу всіх подій з нього може знадобитися кілька хвилин."
+      ],
       "Calendar is too big": [
         "Календар завеликий"
       ],
@@ -1556,6 +1559,17 @@
       ],
       "Unsupported calendar format": [
         "Непідтримуваний формат календаря"
+      ]
+    },
+    "Calendar subscription not synced error; long version": {
+      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
+        "Посилання на календар недоступне поза межами екосистеми постачальника календаря."
+      ],
+      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
+        "Посилання на календар тимчасово недоступне. Переконайтеся, що посилання від постачальника календаря досі дійсне."
+      ],
+      "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
+        "З моменту останнього оновлення минуло понад 12 годин — Proton Calendar спробує оновити календар за кілька годин."
       ]
     },
     "Calendar widget banner": {
@@ -2931,8 +2945,8 @@
       "A group with this name already exists": [
         "Група з такою назвою вже існує"
       ],
-      "A problem occurred, please try again": [
-        "Виникла проблема. Повторіть спробу"
+      "A problem occurred, please try again.": [
+        "Виникла проблема, повторіть спробу."
       ],
       "Address primary private key not found": [
         "Основний приватний ключ адреси не знайдено"
@@ -2993,6 +3007,9 @@
         "Приберіть принаймні ${ calendarToFixCount } календарі або",
         "Приберіть принаймні ${ calendarToFixCount } календарів або",
         "Приберіть принаймні ${ calendarToFixCount } календаря або"
+      ],
+      "Domain not available, try again later": [
+        "Домен недоступний, повторіть спробу пізніше"
       ],
       "Draft could not be saved. Try again.": [
         "Не вдалося зберегти чернетку. Спробуйте знову."
@@ -3117,8 +3134,8 @@
       "Passwords do not match": [
         "Паролі відрізняються"
       ],
-      "Please activate your content search again": [
-        "Активуйте пошук вмісту знову"
+      "Please activate your search again": [
+        "Активуйте пошук знову"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Виправте вказану проблему, щоб продовжити.",
@@ -3188,6 +3205,9 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Щось пішло не так. Будь ласка, ${ refresh } для продовження. Якщо це повідомлення не зникає, зв'яжіться з нашою ${ supportTeam }."
+      ],
+      "Something went wrong, please try again": [
+        "Сталася помилка, повторіть спробу пізніше"
       ],
       "Sorry, Proton can't decrypt your message. Please check that all your keys are active.": [
         "Перепрошуємо, але Proton не може розшифрувати ваше повідомлення. Переконайтеся, що всі ваші ключі активні."
@@ -3587,6 +3607,9 @@
     "Filter Actions": {
       "Archive": [
         "Архів"
+      ],
+      "Do not move": [
+        "Не переміщувати"
       ],
       "Inbox": [
         "Вхідні"
@@ -4258,6 +4281,12 @@
       "Confirm phishing report": [
         "Підтвердити звіт про шахрайство"
       ],
+      "Content search of the entire inbox is available for ${ paidPlansButton }.": [
+        "Пошук вмісту в усій теці «Вхідні» доступний у ${ paidPlansButton }."
+      ],
+      "Content: ": [
+        "Вміст: "
+      ],
       "Continue with ${ planName }": [
         "Продовжити з ${ planName }"
       ],
@@ -4330,11 +4359,8 @@
       "Don't forget to share the password with the recipient": [
         "Пам'ятайте про надання пароля отримувачу"
       ],
-      "Download our mobile application from your favorite app store to communicate securely on-the-go.": [
-        "Завантажте наш мобільний застосунок для захищеного спілкування на ходу."
-      ],
-      "Downloading message ${ esProgress } out of ${ totalProgressToShow }": [
-        "Завантаження повідомлення ${ esProgress } з ${ totalProgressToShow }"
+      "Downloading message ${ currentProgress } out of ${ totalProgress }": [
+        "Завантаження повідомлення ${ currentProgress } з ${ totalProgress }"
       ],
       "Draft": [
         "Чернетка"
@@ -4389,6 +4415,9 @@
       ],
       "Encrypt message": [
         "Зашифрувати повідомлення"
+      ],
+      "End of message content search": [
+        "Завершити пошук вмісту повідомлень"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Введіть код перевірки, який був надісланий на ${ destinationText }."
@@ -4660,6 +4689,9 @@
       "No results found": [
         "Результатів не знайдено"
       ],
+      "No results found in the past 30 days, searching the rest of your inbox": [
+        "За останні 30 днів не знайдено жодних результатів. Шукаємо у вашій теці «Вхідні»"
+      ],
       "No trackers found, but some images could not be loaded with tracking protection": [
         "Елементів стеження не виявлено, але деякі зображення неможливо завантажити з активним захистом від стеження"
       ],
@@ -4920,6 +4952,9 @@
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
         "Ця дія завантажить усі повідомлення для можливості їх локального пошуку. Очищення даних браузера вимкне цю можливість."
+      ],
+      "This action will download the most recent messages so they can be searched locally. Clearing your browser data will disable this option.": [
+        "Ця дія завантажить найновіші повідомлення для можливості їх локального пошуку. Очищення даних браузера вимкне цю можливість."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Цю адресу вимкнено. Щоб мати змогу надсилати на цю адресу, власник повинен спочатку активувати адресу."
@@ -6117,6 +6152,9 @@
       ],
       "Outbox": [
         "Вихідні"
+      ],
+      "paid plans": [
+        "платні тарифні плани"
       ],
       "Pay invoice": [
         "Сплатити рахунок"
@@ -7955,9 +7993,6 @@
       ],
       "The import will start with the most recent messages.": [
         "Імпортування розпочнеться з найновіших повідомлень."
-      ],
-      "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "Ця дія завантажить усі повідомлення для можливості їх локального пошуку. Очищення даних браузера вимкне цю можливість."
       ],
       "This feature is only available for paid users": [
         "Ця функція доступна лише користувачам, які мають передплату"

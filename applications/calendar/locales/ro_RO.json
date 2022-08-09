@@ -228,11 +228,11 @@
       "I have a question": [
         "Am o întrebare"
       ],
-      "import": [
-        "importare"
-      ],
       "Import": [
         "Importare"
+      ],
+      "import": [
+        "importare"
       ],
       "Import events": [
         "Importare evenimente"
@@ -818,6 +818,17 @@
       ],
       "Unsupported calendar format": [
         "Format de calendar neacceptat."
+      ]
+    },
+    "Calendar subscription not synced error; long version": {
+      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
+        "Legătura calendarului nu este accesibilă din exteriorul ecosistemului furnizorului calendarului."
+      ],
+      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
+        "Legătura calendarului nu este accesibilă momentan. Verificați dacă legătura de la furnizorul calendarului încă e validă."
+      ],
+      "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
+        "Au trecut mai mult de 12 ore de la ultima actualizare - Proton Calendar va încerca să actualizeze calendarul în câteva ore."
       ]
     },
     "Calendar view": {
@@ -2047,6 +2058,9 @@
         "Deselectați cel puțin un calendar sau",
         "Deselectați cel puțin ${ calendarToFixCount } calendare sau",
         "Deselectați cel puțin ${ calendarToFixCount } de calendare sau"
+      ],
+      "Domain not available, try again later": [
+        "Domeniul nu este disponibil, reîncercați mai târziu."
       ],
       "Email address disabled": [
         "Adresă de e-mail dezactivată"
@@ -3519,18 +3533,6 @@
       "Date and time": [
         "Data și ora"
       ],
-      "Default email address": [
-        "Adresa de e-mail implicită"
-      ],
-      "Default event duration": [
-        "Durată implicită eveniment"
-      ],
-      "Default full day notifications": [
-        "Notificări întreaga zi implicite"
-      ],
-      "Default notifications": [
-        "Notificări implicite"
-      ],
       "Delete": [
         "Ștergere"
       ],
@@ -4057,6 +4059,14 @@
         "la"
       ]
     },
+    "Notification type": {
+      "email": [
+        "e-mail"
+      ],
+      "notification": [
+        "notificare"
+      ]
+    },
     "Notification when": {
       "at time of event": [
         "la ora evenimentului"
@@ -4577,6 +4587,9 @@
       "Calendar created": [
         "Calendar creat"
       ],
+      "Calendar information updated": [
+        "Informațiile calendarului s-au actualizat."
+      ],
       "Calendar updated": [
         "Calendar actualizat"
       ],
@@ -4825,6 +4838,9 @@
       ],
       "Calendar alarm": [
         "Alarmă calendar"
+      ],
+      "Calendar information": [
+        "Informații calendar"
       ],
       "Change my answer": [
         "Schimbare răspuns"
