@@ -1,10 +1,12 @@
-// NB: it is important to only import this as a type
+import { VERIFICATION_STATUS } from 'pmcrypto-v7/lib/constants';
+
+import { captureMessage } from '@proton/shared/lib/helpers/sentry';
+
 import { serverTime } from '../serverTime';
 import type { ApiInterface as CryptoApiInterface } from '../worker/api';
+import { WorkerVerifyOptions } from '../worker/api.models';
 
-export { CryptoApiInterface };
-export { VERIFICATION_STATUS } from 'pmcrypto-v7/lib/constants';
-export type { enums } from 'pmcrypto-v7/lib/openpgp'; // NB: it is important to only import this as a type
+export { CryptoApiInterface, VERIFICATION_STATUS };
 
 const assertNotNull = (value: CryptoApiInterface | null): CryptoApiInterface => {
     if (value === null) {
@@ -31,6 +33,42 @@ interface CryptoProxyInterface extends CryptoApiInterface {
      * Any endpoint-specific clean up logic should be done inside the `onRelease` callback.
      */
     releaseEndpoint(): Promise<void>;
+}
+
+/**
+ * Prior to OpenPGP.js v5.4.0, trailing spaces were not properly stripped with \r\n line endings (see https://github.com/openpgpjs/openpgpjs/pull/1548).
+ * In order to verify the signatures generated over the incorrectly normalised data, we fallback to not normalising the input.
+ * Currently, this is done inside the CryptoProxy, to transparently track the number of signatures that are affected throughout the apps.
+ * @param options - verification options, with `date` already set to server time
+ */
+async function verifyMessageWithFallback<
+    DataType extends string | Uint8Array,
+    FormatType extends WorkerVerifyOptions<DataType>['format'] = 'utf8'
+>(options: WorkerVerifyOptions<DataType> & { format?: FormatType }) {
+    const verificationResult = await assertNotNull(endpoint).verifyMessage<DataType, FormatType>(options);
+
+    const { textData, stripTrailingSpaces } = options;
+    if (
+        verificationResult.verified === VERIFICATION_STATUS.SIGNED_AND_INVALID &&
+        stripTrailingSpaces &&
+        textData &&
+        verificationResult.data !== textData // detect whether some normalisation was applied
+    ) {
+        const fallbackverificationResult = await assertNotNull(endpoint).verifyMessage<string, FormatType>({
+            ...options,
+            binaryData: undefined,
+            stripTrailingSpaces: false,
+        });
+
+        if (fallbackverificationResult.verified === VERIFICATION_STATUS.SIGNED_AND_VALID) {
+            captureMessage('Fallback verification needed', {
+                level: 'info',
+            });
+            return fallbackverificationResult;
+        }
+    }
+
+    return verificationResult;
 }
 
 /**
@@ -61,7 +99,7 @@ export const CryptoProxy: CryptoProxyInterface = {
     decryptMessageLegacy: async ({ date = serverTime(), ...opts }) =>
         assertNotNull(endpoint).decryptMessageLegacy({ ...opts, date }),
     signMessage: async ({ date = serverTime(), ...opts }) => assertNotNull(endpoint).signMessage({ ...opts, date }),
-    verifyMessage: async ({ date = serverTime(), ...opts }) => assertNotNull(endpoint).verifyMessage({ ...opts, date }),
+    verifyMessage: async ({ date = serverTime(), ...opts }) => verifyMessageWithFallback({ ...opts, date }),
     verifyCleartextMessage: async ({ date = serverTime(), ...opts }) =>
         assertNotNull(endpoint).verifyCleartextMessage({ ...opts, date }),
     processMIME: async ({ date = serverTime(), ...opts }) => assertNotNull(endpoint).processMIME({ ...opts, date }),
