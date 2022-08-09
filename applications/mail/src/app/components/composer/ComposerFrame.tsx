@@ -35,7 +35,7 @@ const ComposerFrame = ({
     const [mailSettings] = useMailSettings();
     const composerFrameRef = useRef<HTMLDivElement>(null);
     const composerRef = useRef<ComposerAction>(null);
-    const { sideAppUrl } = useSideApp();
+    const { sideAppUrl, showSideApp } = useSideApp();
 
     // Minimized status of the composer
     const { state: minimized, toggle: toggleMinimized } = useToggle(false);
@@ -45,7 +45,7 @@ const ComposerFrame = ({
         mailSettings?.ComposerMode === COMPOSER_MODE.MAXIMIZED
     );
 
-    const windowWidth = sideAppUrl ? windowSize.width - SIDE_APP_WIDTH : windowSize.width;
+    const windowWidth = sideAppUrl && showSideApp ? windowSize.width - SIDE_APP_WIDTH : windowSize.width;
     const { style, customClasses } = computeComposerStyle({
         index,
         count,
