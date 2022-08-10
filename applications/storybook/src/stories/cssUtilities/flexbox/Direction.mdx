@@ -1,0 +1,74 @@
+import { Canvas, Source, Story } from '@storybook/addon-docs';
+
+import { getTitle } from '../../../helpers/title';
+
+<Meta title={getTitle(__filename)} />
+
+<div className="border p0-5 rounded bg-weak" style={{ width: '320px', resize: 'both', overflow: 'auto' }}>
+    <Story id="css-utilities-flexbox-direction--flex" />
+</div>
+
+# Flexbox
+
+This defines a flex container and enables a flex context for all its direct children. This class is mandatory when using any of the flex helper classes.
+
+`className='flex'`
+
+<Canvas withSource="true">
+    <Story id="css-utilities-flexbox-direction--flex" />
+</Canvas>
+
+Note: flex class applies `min-width: 0` and `min-height: 0` to the direct children. In some very super-rare cases (selects, etc.), this can create bugs. In these cases, you may use `flex-no-min-children`.
+
+## Flex direction
+
+This defines the directions that the flex items are placed
+
+-   `row` (default): left to right in ltr; right to left in rtl
+-   `row-reverse`: right to left in ltr; left to right in rtl
+-   `column`: same as row but top to bottom
+-   `column-reverse`: same as row-reverse but bottom to top
+
+## Flex row
+
+`className='flex flex-row'`
+
+<Canvas>
+    <Story id="css-utilities-flexbox-direction--flex-row" />
+</Canvas>
+
+## Flex row reverse
+
+`className='flex flex-row-reverse'`
+
+<Canvas>
+    <Story id="css-utilities-flexbox-direction--flex-row-reverse" />
+</Canvas>
+
+## Flex column
+
+`className='flex flex-column'`
+
+<Canvas>
+    <Story id="css-utilities-flexbox-direction--flex-column" />
+</Canvas>
+
+## Flex column reverse
+
+`className='flex flex-column-reverse'`
+
+<Canvas>
+    <Story id="css-utilities-flexbox-direction--flex-column-reverse" />
+</Canvas>
+
+## Flex Wrap
+
+When using the `.flex` helper class, items will automatically flow into the next line. (due to `flex-wrap: wrap`) To always keep items on one line, use `flex-nowrap`.
+
+`className='flex flex-nowrap'`
+
+<Canvas>
+    <Story id="css-utilities-flexbox-direction--flex-wrap" />
+    <Story id="css-utilities-flexbox-direction--flex-nowrap" />
+</Canvas>
+
