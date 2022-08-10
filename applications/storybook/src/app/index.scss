@@ -113,7 +113,7 @@ table {
 }
 
 // Theme support
-.sbdocs {
+.sbdocs:not(.bg-primary) {
 	background: var(--background-norm) !important;
 	color: var(--text-norm) !important;
 }
