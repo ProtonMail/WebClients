@@ -74,15 +74,15 @@ describe('ExtraExpirationTime', () => {
         banner = await result.rerender(getExpirationTime(hoursInSeconds1));
         expect(banner?.textContent).toBe('Expires in 3 hours');
 
-        // The message will expire in 0 day 1h 59min 59s, so we display "Expires in less than 1 hour"
+        // The message will expire in 0 day 1h 59min 59s, so we display "Expires in less than 2 hour"
         const hoursInSeconds2 = 60 * 60 * 2;
         banner = await result.rerender(getExpirationTime(hoursInSeconds2));
-        expect(banner?.textContent).toBe('Expires in less than 1 hour');
+        expect(banner?.textContent).toBe('Expires in less than 2 hours');
 
-        // The message will expire in 0 day 0h 1min 59s, so we display "Expires in less than 1 minute"
+        // The message will expire in 0 day 0h 1min 59s, so we display "Expires in less than 2 minute"
         const minutesInSeconds = 60 * 2;
         banner = await result.rerender(getExpirationTime(minutesInSeconds));
-        expect(banner?.textContent).toBe('Expires in less than 1 minute');
+        expect(banner?.textContent).toBe('Expires in less than 2 minutes');
 
         // The message will expire in 0 day 0h 0min Xs, so we display "Expires in less than X seconds"
         banner = await result.rerender(getExpirationTime(seconds));

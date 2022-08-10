@@ -11,6 +11,7 @@ import clsx from '@proton/utils/clsx';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { getLabelIDs, isStarred as testIsStarred } from '../../helpers/elements';
+import { useExpiringElement } from '../../hooks/useExpiration';
 import { Element } from '../../models/element';
 import { ESMessage } from '../../models/encryptedSearch';
 import { Breakpoints } from '../../models/utils';
@@ -61,6 +62,8 @@ const ItemColumnLayout = ({
     const [userSettings] = useUserSettings();
     const { shouldHighlight, highlightMetadata } = useEncryptedSearchContext();
     const highlightData = shouldHighlight();
+
+    const { expirationTime, hasExpiration } = useExpiringElement(element, conversationMode);
 
     const body = (element as ESMessage).decryptedBody;
     const { Subject } = element;
@@ -155,8 +158,8 @@ const ItemColumnLayout = ({
                 <div className="item-icons flex flex-item-noshrink flex-nowrap no-mobile">
                     <ItemHoverButtons element={element} labelID={labelID} elementID={elementID} onBack={onBack} />
                     <span className="flex opacity-on-hover-hide">
-                        {!!element.ExpirationTime && (
-                            <ItemExpiration element={element} className="ml0-25 flex-align-self-center" />
+                        {hasExpiration && (
+                            <ItemExpiration expirationTime={expirationTime} className="ml0-25 flex-align-self-center" />
                         )}
                         <ItemAttachmentIcon
                             icon={hasOnlyIcsAttachments ? 'calendar-grid' : undefined}
@@ -169,8 +172,8 @@ const ItemColumnLayout = ({
                     </span>
                 </div>
                 <div className="item-icons flex flex-row flex-item-noshrink flex-nowrap no-desktop no-tablet on-mobile-flex">
-                    {!!element.ExpirationTime && (
-                        <ItemExpiration element={element} className="ml0-25 flex-align-self-center" />
+                    {hasExpiration && (
+                        <ItemExpiration expirationTime={expirationTime} className="ml0-25 flex-align-self-center" />
                     )}
                     <ItemAttachmentIcon
                         icon={hasOnlyIcsAttachments ? 'calendar-grid' : undefined}
