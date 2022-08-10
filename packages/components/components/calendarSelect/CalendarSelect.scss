@@ -1,14 +1,17 @@
 @import '~@proton/styles/scss/config';
 
 .calendar-select-color {
-	inline-size: rem(12);
-	block-size: rem(12);
+	inline-size: var(--calendar-select-color-size, #{rem(12)});
+	block-size: var(--calendar-select-color-size, #{rem(12)});
 	box-sizing: content-box;
 	border-radius: 50%;
 	display: inline-flex;
 
-
 	@media not print {
 		border: rem(2) solid var(--background-norm);
+	}
+
+	&--large {
+		--calendar-select-color-size: #{rem(20)};
 	}
 }
