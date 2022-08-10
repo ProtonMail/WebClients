@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, InputFieldTwo, useFormErrors, useLoading } from '@proton/components';
+import { Button, Icon, InputFieldTwo, useFormErrors, useLoading } from '@proton/components';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import noop from '@proton/utils/noop';
 
@@ -69,6 +69,24 @@ const TOTPForm = ({ onSubmit }: Props) => {
                     value={totp}
                     onValue={setTotp}
                     inputMode="numeric"
+                    suffix={
+                        totp.length > 0 && (
+                            <Button
+                                title={c('Action').t`Clear two-factor authentication code`}
+                                className="inline-flex flex-item-noshrink"
+                                onClick={() => setTotp('')}
+                                shape="ghost"
+                                size="small"
+                                icon
+                            >
+                                <Icon
+                                    className="mauto"
+                                    name="cross-big"
+                                    alt={c('Action').t`Clear two-factor authentication code`}
+                                />
+                            </Button>
+                        )
+                    }
                 />
             )}
             <Button size="large" color="norm" type="submit" fullWidth loading={loading} className="mt1-75">
