@@ -62,7 +62,8 @@ const getDateCount = (
 
 export const formatDelay = (
     nowDate: Date,
-    expirationDate: Date
+    expirationDate: Date,
+    willExpireSoon = false
 ): { formattedDelay: string; formattedDelayShort: string } => {
     let delta = differenceInSeconds(expirationDate, nowDate);
     const daysCountLeft = Math.floor(delta / 86400);
@@ -73,9 +74,30 @@ export const formatDelay = (
     delta -= minutesCountLeft * 60;
     const secondsCountLeft = delta % 60;
 
+    /**
+     * 1 - When displaying short delay and having a message which will expire soon,
+     *      we want to display "Expires in less than XX hour" or minutes or seconds
+     * 2 - But if there is 1h59 left, hours count will be 1, and we will display the message "Expires in less than 1 hour",
+     *      so we need to add 1 to the count in order to display "Expires in less than 2 hours"
+     * 3 - However, if the hour count is 0 (so we have 45 minutes left for example), we don't want to display "Expires in less than 1 hour"
+     *      In that case we want to display "Expires in less than 46 minutes", so we don't add 1 when count is 0
+     * 4 - Now if hour count is 0 and we have 59 minutes left, we don't want to display "Expires in less than 60 minutes" but "Expires in less than 1 hour"
+     * */
+    const shortHoursCountLeft =
+        willExpireSoon && (hoursCountLeft > 0 || minutesCountLeft === 59) ? hoursCountLeft + 1 : hoursCountLeft;
+    const shortMinutesCountLeft =
+        willExpireSoon && (minutesCountLeft > 0 || secondsCountLeft === 59) ? minutesCountLeft + 1 : minutesCountLeft;
+    const shortSecondsCountLeft = willExpireSoon && secondsCountLeft > 0 ? secondsCountLeft + 1 : secondsCountLeft;
+
     return {
         formattedDelay: getDateCount(daysCountLeft, hoursCountLeft, minutesCountLeft, secondsCountLeft),
-        formattedDelayShort: getDateCount(daysCountLeft, hoursCountLeft, minutesCountLeft, secondsCountLeft, true),
+        formattedDelayShort: getDateCount(
+            daysCountLeft,
+            shortHoursCountLeft,
+            shortMinutesCountLeft,
+            shortSecondsCountLeft,
+            true
+        ),
     };
 };
 
@@ -126,6 +148,23 @@ export const useExpiration = (message: MessageState) => {
 
     const isExpiration = delayMessage !== '' || expireOnMessage !== '';
 
+    const setExpirationMessages = (nowDate: Date, expirationDate: Date) => {
+        const willExpireSoon = differenceInHours(expirationDate, nowDate) < 2;
+        setLessThanTwoHours(willExpireSoon);
+
+        const { formattedDelay, formattedDelayShort } = formatDelay(nowDate, expirationDate, willExpireSoon);
+        setDelayMessage(c('Info').t`Expires in ${formattedDelay}`);
+
+        if (willExpireSoon) {
+            setButtonMessage(c('Info').t`Expires in less than ${formattedDelayShort}`);
+        } else {
+            setButtonMessage(c('Info').t`Expires in ${formattedDelayShort}`);
+        }
+
+        const { dateString, formattedTime } = formatDateToHuman(expirationDate);
+        setExpireOnMessage(getExpireOnTime(expirationTime, dateString, formattedTime));
+    };
+
     const handler = useHandler(() => {
         if (!expirationTime) {
             setDelayMessage('');
@@ -141,32 +180,17 @@ export const useExpiration = (message: MessageState) => {
             return;
         }
         if (draftExpirationTime > 0) {
-            const expirationDate = draftExpirationTime * 1000;
-            const { dateString, formattedTime } = formatDateToHuman(expirationDate);
-
-            setExpireOnMessage(getExpireOnTime(expirationDate, dateString, formattedTime));
+            const draftExpirationDate = fromUnixTime(draftExpirationTime);
+            setExpirationMessages(nowDate, draftExpirationDate);
         } else {
-            const willExpireSoon = differenceInHours(expirationDate, nowDate) < 2;
-            setLessThanTwoHours(willExpireSoon);
-
-            const { formattedDelay, formattedDelayShort } = formatDelay(nowDate, expirationDate);
-            setDelayMessage(c('Info').t`Expires in ${formattedDelay}`);
-
-            if (willExpireSoon) {
-                setButtonMessage(c('Info').t`Expires in less than ${formattedDelayShort}`);
-            } else {
-                setButtonMessage(c('Info').t`Expires in ${formattedDelayShort}`);
-            }
-
-            const { dateString, formattedTime } = formatDateToHuman(expirationDate);
-            setExpireOnMessage(getExpireOnTime(expirationTime, dateString, formattedTime));
+            setExpirationMessages(nowDate, expirationDate);
         }
     });
 
     useEffect(() => {
         handler();
 
-        if (expirationTime && !(draftExpirationTime > 0)) {
+        if (expirationTime) {
             const intervalID = window.setInterval(handler, 1000); // eslint-disable-line @typescript-eslint/no-implied-eval
             return () => clearInterval(intervalID);
         }
