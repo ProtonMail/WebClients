@@ -193,6 +193,12 @@
       "Download": [
         "Descargar"
       ],
+      "Download (${ count })": [
+        "Descargar (${ count })"
+      ],
+      "Download all": [
+        "Descargar todo"
+      ],
       "Download anyway": [
         "Descargar de todos modos"
       ],
@@ -240,6 +246,9 @@
       ],
       "Forward as attachment": [
         "Reenviar como adjunto"
+      ],
+      "Get ${ DRIVE_APP_NAME }": [
+        "Obtén ${ DRIVE_APP_NAME }"
       ],
       "Get link": [
         "Obtener enlace"
@@ -424,17 +433,26 @@
       "Resume upload": [
         "Reanudar subida"
       ],
+      "Retry": [
+        "Reintentar"
+      ],
       "Save": [
         "Guardar"
       ],
       "Search": [
         "Buscar"
       ],
+      "Search countries": [
+        "Buscar países"
+      ],
       "Search drive": [
         "Buscar en unidad"
       ],
       "Select all": [
         "Seleccionar todo"
+      ],
+      "Send feedback": [
+        "Enviar comentarios"
       ],
       "Set recovery phrase": [
         "Establecer una frase de recuperación"
@@ -767,6 +785,25 @@
         "Formato de calendario no soportado"
       ]
     },
+    "Calendar subscription not synced error; long version": {
+      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
+        "El enlace al calendario no es accesible desde fuera del ecosistema del proveedor del calendario."
+      ],
+      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
+        "El enlace al calendario no está accesible temporalmente. Verifica que el enlace del proveedor del calendario aún es válido."
+      ],
+      "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
+        "Ha pasado más de 12 horas desde la última actualización — Proton Calendar intentará actualizar el canlendario dentro de pocas horas."
+      ]
+    },
+    "Collapsible tooltip": {
+      "Collapse": [
+        "Minimizar"
+      ],
+      "Expand": [
+        "Expandir"
+      ]
+    },
     "color": {
       "carrot": [
         "zanahoria"
@@ -1096,6 +1133,9 @@
       ],
       "Czech Republic": [
         "República Checa"
+      ],
+      "Côte d'Ivoire": [
+        "Costa de Marfil"
       ],
       "Denmark": [
         "Dinamarca"
@@ -2028,6 +2068,9 @@
       "Please ${ refresh } or check your connection.": [
         "Por favor, ${ refresh } o comprueba tu conexión."
       ],
+      "Something went wrong. Please refresh the page or try again later.": [
+        "Algo ha ido mal. Por favor, actualiza la página o inténtalo más tarde."
+      ],
       "There was a problem connecting to Proton.": [
         "Ha ocurrido un problema al conectarse a Proton."
       ],
@@ -2046,6 +2089,11 @@
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "No se ha seleccionado ninguna imagen"
+      ]
+    },
+    "Feedback Modal Title": {
+      "Your feedback": [
+        "Tus comentarios"
       ]
     },
     "file size format": {
@@ -2446,6 +2494,12 @@
       "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
         "Firma digital verificada. Este directorio ha sido cargado de forma segura por ${ emailAddress }."
       ],
+      "Download canceled": [
+        "Descarga cancelada"
+      ],
+      "Download failed": [
+        "Descarga fallida"
+      ],
       "Download of ${ downloadFileName } will be aborted": [
         "La descarga de ${ downloadFileName } será abortada"
       ],
@@ -2460,6 +2514,9 @@
       ],
       "Duplicate key updated": [
         "Clave duplicada actualizada"
+      ],
+      "Enabling drive search": [
+        "Activación de la búsqueda de unidades"
       ],
       "Encrypted search is here": [
         "La búsqueda cifrada está aquí"
@@ -2595,11 +2652,23 @@
       "Link copied to clipboard": [
         "Enlace copiado al portapapeles"
       ],
+      "Link failed to be loaded": [
+        "No se pudo cargar el enlace"
+      ],
+      "Links failed to be loaded": [
+        "No se pudo cargar los enlaces"
+      ],
       "Loading": [
         "Cargando"
       ],
       "Loading ${ appName }": [
         "Cargando ${ appName }"
+      ],
+      "Loading link": [
+        "Cargando enlace"
+      ],
+      "Loading links": [
+        "Cargando enlaces"
       ],
       "Loading preview": [
         "Cargando previsualización"
@@ -2688,6 +2757,12 @@
       "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
         "PGP/Inline sólo es compatible con texto sin formato. Ten en cuenta que ${ MAIL_APP_NAME } siempre firma los mensajes cifrados."
       ],
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        "PGP/MIME envía automáticamente el mensaje usando el modo de composición actual. Ten en cuenta que ${ MAIL_APP_NAME } siempre firma los mensajes cifrados."
+      ],
+      "Please enter the password to decrypt and view content.": [
+        "Por favor, introduce la contraseña para descifrar y visualizar el contenido."
+      ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Ten en cuenta que las direcciones asignadas a este grupo NO se eliminarán."
       ],
@@ -2749,6 +2824,9 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Selecciona el formato de correo electrónico que deseas utilizar por defecto al enviar un correo electrónico a esta dirección."
       ],
+      "Select what you want to import from Google.": [
+        "Selecciona lo que quieres importar de Google."
+      ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Seleccione qué calendarios quiere importar. Se creará un nuevo calendario por cada uno importado, hasta alcanzar el límite de 20 calendarios."
       ],
@@ -2790,6 +2868,9 @@
       ],
       "support team": [
         "equipo de soporte"
+      ],
+      "Swiss privacy": [
+        "Privacidad suiza"
       ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "La cuenta puede tener una nueva clave o los siguientes elementos pueden haber sido manipulados: ${ items }. Abrir sólo si son de su confianza."
@@ -3196,6 +3277,9 @@
       "Hide password": [
         "Ocultar contraseña"
       ],
+      "How would you describe your experience with the new Proton?": [
+        "¿Cómo describirías tu experiencia con el nuevo Proton?"
+      ],
       "I understand the risk": [
         "Entiendo el riesgo"
       ],
@@ -3225,6 +3309,9 @@
       ],
       "Last month only": [
         "Solo el último mes"
+      ],
+      "Location": [
+        "Ubicación"
       ],
       "Mailbox password": [
         "Contraseña del buzón"
@@ -3503,6 +3590,16 @@
     "new_plans: action": {
       "Switch or add account": [
         "Cambiar o añadir cuenta"
+      ]
+    },
+    "new_plans: label": {
+      "Tell us about your experience. (Optional)": [
+        "Cuéntanos tu experiencia. (Opcional)"
+      ]
+    },
+    "new_plans: placeholder": {
+      "Feedback": [
+        "Comentarios"
       ]
     },
     "new_plans: title": {
@@ -3897,6 +3994,9 @@
       ]
     },
     "Spotlight": {
+      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
+        "${ DRIVE_APP_NAME } ha salido de la versión beta. Da a tus archivos la misma seguridad que reciben tus correos electrónicos."
+      ],
       "Encrypted search is here": [
         "La búsqueda cifrada está aquí"
       ],
@@ -3908,6 +4008,9 @@
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "Ahora puedes buscar fácilmente archivos de Drive mientras mantienes tus datos seguros."
+      ],
+      "Try ${ DRIVE_APP_NAME }": [
+        "Prueba ${ DRIVE_APP_NAME }"
       ]
     },
     "Storage": {
@@ -3968,6 +4071,11 @@
       ],
       "Verification successful": [
         "Verificación completada con éxito"
+      ]
+    },
+    "Success notification when user send feedback": {
+      "Feedback sent": [
+        "Comentarios enviados"
       ]
     },
     "Suffix for price": {
@@ -4089,6 +4197,9 @@
       "Back": [
         "Atrás"
       ],
+      "Based in Switzerland, available globally": [
+        "Con sede en Suiza, disponible globalmente"
+      ],
       "Beta Access": [
         "Acceso beta"
       ],
@@ -4139,6 +4250,9 @@
       ],
       "Date": [
         "Fecha"
+      ],
+      "Decrypting": [
+        "Descifrando"
       ],
       "Delete ${ count } contact": [
         "Eliminar ${ count } contacto",
@@ -4213,6 +4327,9 @@
       ],
       "Failed": [
         "Fallido"
+      ],
+      "Feedback": [
+        "Comentarios"
       ],
       "File details": [
         "Detalles del archivo"
@@ -4308,6 +4425,9 @@
       "Phone numbers": [
         "Números de teléfono"
       ],
+      "Privacy settings": [
+        "Configuración de privacidad"
+      ],
       "Re-sign all contacts": [
         "Volver a firmar todos los contactos"
       ],
@@ -4353,6 +4473,9 @@
       "Select link expiration time": [
         "Selecciona la hora de expiración del enlace"
       ],
+      "Send feedback": [
+        "Enviar comentarios"
+      ],
       "Settings": [
         "Configuración"
       ],
@@ -4389,6 +4512,9 @@
       "The link either does not exist or has expired": [
         "El enlace no existe o ha expirado"
       ],
+      "The link expired": [
+        "El enlace ha expirado"
+      ],
       "The link failed to be loaded": [
         "No se pudo cargar el enlace"
       ],
@@ -4397,6 +4523,9 @@
       ],
       "This folder has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "Esta carpeta tiene una firma que falta o no es válida. Vaya a Menú (⋮) → Detalles para obtener información."
+      ],
+      "This link is password protected": [
+        "Este enlace está protegido con contraseña"
       ],
       "Total size": [
         "Tamaño total"

@@ -821,6 +821,17 @@
         "Niet-ondersteunde agenda-indeling"
       ]
     },
+    "Calendar subscription not synced error; long version": {
+      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
+        "Agendalink is niet toegankelijk van buiten de agendaproviders ecosysteem."
+      ],
+      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
+        "Agendalink is tijdelijk ontoegankelijk. Verifieer dat de link van de agendaprovider nog steeds geldig is."
+      ],
+      "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
+        "Meer dan 12 uur geleden sinds de laatste update — Proton Calendar probeert de agenda over enkele uren te updaten."
+      ]
+    },
     "Calendar view": {
       "Day": [
         "Dag"
@@ -4422,7 +4433,7 @@
         "Met e-mailmeldingen, beslist u zelf over welke afspraken u een melding ontvangt en wanneer."
       ],
       "You can now add notifications to calendars you subscribed to.": [
-        "Je kan nu meldingen toevoegen aan agenda's waarop je geabonneerd bent."
+        "U kan nu meldingen toevoegen aan agenda's waarop u geabonneerd bent."
       ]
     },
     "Storage": {
@@ -4502,6 +4513,9 @@
       ],
       "Calendar created": [
         "Agenda aangemaakt"
+      ],
+      "Calendar information updated": [
+        "Agenda-informate bijgewerkt"
       ],
       "Calendar updated": [
         "Agenda bijgewerkt"
@@ -4745,6 +4759,9 @@
       ],
       "Calendar alarm": [
         "Agendamelding"
+      ],
+      "Calendar information": [
+        "Agenda-informatie"
       ],
       "Change my answer": [
         "Mijn antwoord wijzigen"

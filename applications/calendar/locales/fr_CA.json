@@ -788,6 +788,9 @@
       "Calendar is syncing": [
         "Synchronisation du calendrier"
       ],
+      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
+        "Le calendrier se synchronise: vous devrez peut être attendre plusieurs minutes avant de voir tous les événements."
+      ],
       "Calendar is too big": [
         "Le calendrier est trop gros"
       ],
@@ -805,6 +808,17 @@
       ],
       "Unsupported calendar format": [
         "Format de calendrier non pris en charge"
+      ]
+    },
+    "Calendar subscription not synced error; long version": {
+      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
+        "Le lien du calendrier n'est pas accessible depuis l'extérieur de l'écosystème du fournisseur de calendrier."
+      ],
+      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
+        "Le lien du calendrier est temporairement inaccessible. Veuillez vérifier que le lien du fournisseur de calendrier est toujours valide."
+      ],
+      "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
+        "Plus de 12 heures se sont écoulées depuis la dernière mise à jour — Proton Calendar essaiera de mettre à jour le calendrier dans quelques heures."
       ]
     },
     "Calendar view": {
@@ -2022,6 +2036,9 @@
       "Deselect at least ${ calendarToFixCount } calendar or": [
         "Désélectionnez au moins ${ calendarToFixCount } calendrier ou",
         "Désélectionnez au moins ${ calendarToFixCount } calendriers ou"
+      ],
+      "Domain not available, try again later": [
+        "Domaine non disponible, veuillez réessayer plus tard"
       ],
       "Email address disabled": [
         "Adresse électronique désactivée"
@@ -3404,6 +3421,9 @@
       "All day": [
         "Journée entière"
       ],
+      "All-day event notifications": [
+        "Notifications d'événement sur journée complète"
+      ],
       "Attach screenshot(s)": [
         "Joindre une ou plusieurs captures d’écran"
       ],
@@ -3481,6 +3501,12 @@
       ],
       "Ends": [
         "Se termine"
+      ],
+      "Event duration": [
+        "Durée de l’événement"
+      ],
+      "Event notifications": [
+        "Notifications de l’événement"
       ],
       "Event title": [
         "Titre de l'événement"
@@ -3972,6 +3998,14 @@
         "à"
       ]
     },
+    "Notification type": {
+      "email": [
+        "courriel"
+      ],
+      "notification": [
+        "notification"
+      ]
+    },
     "Notification when": {
       "at time of event": [
         "à l'heure de l'événement"
@@ -4372,6 +4406,9 @@
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "${ DRIVE_APP_NAME } n'est plus en version beta. Offrez à vos fichiers la même sécurité que celle dont bénéficient vos courriels."
       ],
+      "Don't miss any events": [
+        "Ne manquez aucun événement"
+      ],
       "Get up to 18 months of ${ planName } for free": [
         "Obtenez jusqu'à 18 mois de ${ planName } gratuitement"
       ],
@@ -4386,6 +4423,9 @@
       ],
       "With email notifications, you decide which events to be notified about and when.": [
         "Avec les notifications par courriel, vous décidez pour quels événements vous serez notifié et quand."
+      ],
+      "You can now add notifications to calendars you subscribed to.": [
+        "Vous pouvez maintenant ajouter des notifications aux calendriers auxquels vous êtes abonné."
       ]
     },
     "Storage": {
@@ -4465,6 +4505,9 @@
       ],
       "Calendar created": [
         "Calendrier créé"
+      ],
+      "Calendar information updated": [
+        "Informations du calendrier actualisées"
       ],
       "Calendar updated": [
         "Calendrier mis à jour"
@@ -4708,6 +4751,9 @@
       ],
       "Calendar alarm": [
         "Alarme de calendrier"
+      ],
+      "Calendar information": [
+        "Informations du calendrier"
       ],
       "Change my answer": [
         "Changer ma réponse"
