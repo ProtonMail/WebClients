@@ -13,6 +13,7 @@ import NotificationInput from './inputs/NotificationInput';
 export const NOTIFICATION_ID = 'notifications';
 
 interface Props {
+    id: string;
     notifications: NotificationModel[];
     hasWhen?: boolean;
     hasType?: boolean;
@@ -25,6 +26,7 @@ interface Props {
 }
 
 const Notifications = ({
+    id,
     notifications,
     hasWhen,
     hasType,
@@ -43,9 +45,12 @@ const Notifications = ({
     return (
         <>
             {notifications.map((notification, index) => {
+                const uniqueId = index === 0 ? id : `${id}-${index}`;
+
                 return (
                     <div className="mb0-5 flex flex-nowrap flex-align-items-center" key={notification.id}>
                         <NotificationInput
+                            id={uniqueId}
                             hasWhen={hasWhen}
                             hasType={hasType}
                             fullWidth={fullWidth}

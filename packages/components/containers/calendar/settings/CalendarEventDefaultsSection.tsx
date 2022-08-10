@@ -146,12 +146,13 @@ const CalendarEventDefaultsSection = ({ calendar, bootstrap, isEditDisabled }: P
             {showNotifications && (
                 <SettingsLayout>
                     <SettingsLayoutLeft>
-                        <label htmlFor="event-duration" className="text-semibold">
+                        <label htmlFor="default-part-day-notifications" className="text-semibold">
                             {c('Label for default event notifications').t`Notifications`}
                         </label>
                     </SettingsLayoutLeft>
                     <SettingsLayoutRight className="w100">
                         <Notifications
+                            id="default-part-day-notifications"
                             data-test-id="create-calendar/event-settings:default-notification"
                             hasType
                             fullWidth={false}
@@ -183,12 +184,13 @@ const CalendarEventDefaultsSection = ({ calendar, bootstrap, isEditDisabled }: P
             {showNotifications && (
                 <SettingsLayout>
                     <SettingsLayoutLeft>
-                        <label htmlFor="event-duration" className="text-semibold">
+                        <label htmlFor="default-full-day-notifications" className="text-semibold">
                             {c('Label for default event notifications').t`All-day event notifications`}
                         </label>
                     </SettingsLayoutLeft>
                     <SettingsLayoutRight className="w100">
                         <Notifications
+                            id="default-full-day-notifications"
                             data-test-id="create-calendar/event-settings:default-full-day-notification"
                             hasType
                             fullWidth={false}

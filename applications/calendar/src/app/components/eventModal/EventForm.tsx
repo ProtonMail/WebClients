@@ -1,14 +1,24 @@
 import { HTMLAttributes } from 'react';
+
 import { c } from 'ttag';
 
 import {
-    FREQUENCY,
-    MAX_LENGTHS_API,
-    MAX_NOTIFICATIONS,
+    Alert,
+    MemoizedIconRow as IconRow,
+    InputTwo,
+    Notifications,
+    TextAreaTwo,
+    classnames,
+} from '@proton/components';
+import CalendarSelectIcon from '@proton/components/components/calendarSelect/CalendarSelectIcon';
+import {
     CALENDAR_INPUT_ID,
     DESCRIPTION_INPUT_ID,
+    FREQUENCY,
     FREQUENCY_INPUT_ID,
     LOCATION_INPUT_ID,
+    MAX_LENGTHS_API,
+    MAX_NOTIFICATIONS,
     NOTIFICATION_INPUT_ID,
     PARTICIPANTS_INPUT_ID,
     TITLE_INPUT_ID,
@@ -18,22 +28,12 @@ import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import { getIsAddressActive } from '@proton/shared/lib/helpers/address';
 import { Address } from '@proton/shared/lib/interfaces';
 import { EventModel, EventModelErrors, NotificationModel } from '@proton/shared/lib/interfaces/calendar';
-import {
-    Alert,
-    classnames,
-    Notifications,
-    MemoizedIconRow as IconRow,
-    InputTwo,
-    TextAreaTwo,
-} from '@proton/components';
-import CalendarSelectIcon from '@proton/components/components/calendarSelect/CalendarSelectIcon';
 
 import createHandlers from './eventForm/createPropFactory';
 import CreateEventCalendarSelect from './inputs/CreateEventCalendarSelect';
 import CustomFrequencySelector from './inputs/CustomFrequencySelector';
 import FrequencyInput from './inputs/FrequencyInput';
 import ParticipantsInput from './inputs/ParticipantsInput';
-
 import DateTimeRow from './rows/DateTimeRow';
 import MiniDateTimeRows from './rows/MiniDateTimeRows';
 
@@ -199,6 +199,7 @@ const EventForm = ({
         >
             {isAllDay ? (
                 <Notifications
+                    id={NOTIFICATION_INPUT_ID}
                     hasType
                     {...{
                         errors,
@@ -219,6 +220,7 @@ const EventForm = ({
                 />
             ) : (
                 <Notifications
+                    id={NOTIFICATION_INPUT_ID}
                     hasType
                     {...{
                         errors,
