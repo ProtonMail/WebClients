@@ -2,11 +2,12 @@ import { c } from 'ttag';
 
 import { NotificationModel } from '@proton/shared/lib/interfaces/calendar/Notification';
 import addItem from '@proton/utils/addItem';
+import clsx from '@proton/utils/clsx';
 import removeItem from '@proton/utils/removeIndex';
 import updateItem from '@proton/utils/updateItem';
 
 import { Button, ButtonLike, Icon, IconName, Tooltip } from '../../../components';
-import { classnames, generateUID } from '../../../helpers';
+import { generateUID } from '../../../helpers';
 import { useActiveBreakpoint } from '../../../hooks';
 import NotificationInput from './inputs/NotificationInput';
 
@@ -40,7 +41,7 @@ const Notifications = ({
     const { isNarrow } = useActiveBreakpoint();
     const addNotificationText = c('Action').t`Add notification`;
 
-    const noNotificationsButtonClassName = fullWidth ? 'mt0-5 on-mobile-mt1' : 'mt0-5 on-tablet-mt1';
+    const noNotificationsButtonClassName = fullWidth ? 'mt0-5 on-mobile-mt1' : 'on-tablet-mt1';
 
     return (
         <>
@@ -79,7 +80,10 @@ const Notifications = ({
             })}
             {canAdd && (
                 <Button
-                    className={classnames(['p0-5', notifications.length === 0 && noNotificationsButtonClassName])}
+                    className={clsx([
+                        fullWidth ? 'p0' : 'p0-5',
+                        notifications.length === 0 && noNotificationsButtonClassName,
+                    ])}
                     shape={addIcon ? 'ghost' : 'underline'}
                     color={addIcon ? 'weak' : 'norm'}
                     data-test-id="add-notification"
