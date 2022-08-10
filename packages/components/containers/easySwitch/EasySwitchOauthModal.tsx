@@ -286,7 +286,7 @@ const EasySwitchOauthModal = ({
 
                         const tokenScope = Products;
 
-                        const createImportPayload: CreateImportPayload = { TokenID: ID };
+                        const createImportPayload: CreateImportPayload = { TokenID: ID, Source: source };
 
                         if (Products.includes(ImportType.MAIL)) {
                             createImportPayload[ImportType.MAIL] = {
