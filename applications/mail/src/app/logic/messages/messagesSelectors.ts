@@ -17,3 +17,7 @@ export const localID = createSelector([messages, currentID], (messages, currentI
 });
 
 export const messageByID = createSelector([messages, localID], (messages, localID) => messages[localID]);
+
+export const allMessages = createSelector([messages], (messages) => {
+    return Object.values(messages);
+});
