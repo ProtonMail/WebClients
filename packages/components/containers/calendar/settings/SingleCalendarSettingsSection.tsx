@@ -162,7 +162,7 @@ const SingleCalendarSettingsSection = ({
             noTitle
             breadcrumbs={calendars.length > 1 ? breadcrumbs : undefined}
         >
-            <div className="container-section-sticky-section">
+            <div className="container-section-sticky-section container-section-sticky-section--single-calendar-section">
                 <CalendarSettingsHeaderSection
                     calendar={calendar}
                     defaultCalendar={defaultCalendar}
