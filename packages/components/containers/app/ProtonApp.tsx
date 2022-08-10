@@ -1,52 +1,54 @@
-import { useState, useCallback, useRef, useMemo, useEffect, Fragment, ReactNode } from 'react';
+import { Fragment, ReactNode, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { Router } from 'react-router';
+
 import { History, createBrowserHistory as createHistory } from 'history';
+
+import { ExperimentsProvider, FeaturesProvider } from '@proton/components/containers';
+import useInstance from '@proton/hooks/useInstance';
+import { getAppHref } from '@proton/shared/lib/apps/helper';
+import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
+import { FORK_TYPE } from '@proton/shared/lib/authentication/ForkInterface';
 import { AuthenticationStore } from '@proton/shared/lib/authentication/createAuthenticationStore';
-import createCache, { Cache } from '@proton/shared/lib/helpers/cache';
-import { AddressesModel } from '@proton/shared/lib/models';
-import { formatUser, UserModel } from '@proton/shared/lib/models/userModel';
-import { STATUS } from '@proton/shared/lib/models/cache';
-import { isSSOMode, SSO_PATHS, APPS } from '@proton/shared/lib/constants';
-import { getPersistedSession } from '@proton/shared/lib/authentication/persistedSessionStorage';
-import noop from '@proton/utils/noop';
-import createListeners from '@proton/shared/lib/helpers/listeners';
 import {
     getBasename,
     getLocalIDFromPathname,
     stripLocalBasenameFromPathname,
 } from '@proton/shared/lib/authentication/pathnameHelper';
+import { getPersistedSession } from '@proton/shared/lib/authentication/persistedSessionStorage';
+import { requestFork } from '@proton/shared/lib/authentication/sessionForking';
+import { APPS, SSO_PATHS, isSSOMode } from '@proton/shared/lib/constants';
+import { replaceUrl } from '@proton/shared/lib/helpers/browser';
+import createCache, { Cache } from '@proton/shared/lib/helpers/cache';
+import createListeners from '@proton/shared/lib/helpers/listeners';
+import * as sentry from '@proton/shared/lib/helpers/sentry';
 import { stripLeadingAndTrailingSlash } from '@proton/shared/lib/helpers/string';
 import { ProtonConfig } from '@proton/shared/lib/interfaces';
-import { replaceUrl } from '@proton/shared/lib/helpers/browser';
-import { getAppHref } from '@proton/shared/lib/apps/helper';
-import { requestFork } from '@proton/shared/lib/authentication/sessionForking';
-import { FORK_TYPE } from '@proton/shared/lib/authentication/ForkInterface';
-import * as sentry from '@proton/shared/lib/helpers/sentry';
-
-import useInstance from '@proton/hooks/useInstance';
-import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
+import { AddressesModel } from '@proton/shared/lib/models';
+import { STATUS } from '@proton/shared/lib/models/cache';
+import { UserModel, formatUser } from '@proton/shared/lib/models/userModel';
 import { getIsAuthorizedApp } from '@proton/shared/lib/sideApp/helpers';
+import noop from '@proton/utils/noop';
 
 import { Icons } from '../../components';
-import Signout from './Signout';
+import { GlobalLoader, GlobalLoaderProvider } from '../../components/globalLoader';
+import SpotlightProvider from '../../components/spotlight/Provider';
+import { PreventLeaveProvider } from '../../hooks';
+import { SideAppUrlProvider } from '../../hooks/useSideApp';
+import StandardApiProvider from '../api/ApiProvider';
+import SideAppApiProvider from '../api/SideAppApiProvider';
+import AuthenticationProvider from '../authentication/Provider';
+import CacheProvider from '../cache/Provider';
 import CompatibilityCheck from '../compatibilityCheck/CompatibilityCheck';
 import ConfigProvider from '../config/Provider';
-import NotificationsProvider from '../notifications/Provider';
-import NotificationsChildren from '../notifications/Children';
 import ModalsProvider from '../modals/Provider';
-import StandardApiProvider from '../api/ApiProvider';
-import CacheProvider from '../cache/Provider';
-import AuthenticationProvider from '../authentication/Provider';
+import NotificationsChildren from '../notifications/Children';
+import NotificationsProvider from '../notifications/Provider';
 import RightToLeftProvider from '../rightToLeft/Provider';
-import { setTmpEventID } from './loadEventID';
+import ThemeProvider from '../themes/ThemeProvider';
+import Signout from './Signout';
 import clearKeyCache from './clearKeyCache';
 import { OnLoginCallbackArguments } from './interface';
-import { PreventLeaveProvider } from '../../hooks';
-import { GlobalLoaderProvider, GlobalLoader } from '../../components/globalLoader';
-import ThemeProvider from '../themes/ThemeProvider';
-import SpotlightProvider from '../../components/spotlight/Provider';
-import { SideAppUrlProvider } from '../../hooks/useSideApp';
-import SideAppApiProvider from '../api/SideAppApiProvider';
+import { setTmpEventID } from './loadEventID';
 
 const getIsSSOPath = (pathname: string) => {
     const strippedPathname = `/${stripLeadingAndTrailingSlash(pathname)}`;
@@ -298,28 +300,34 @@ const ProtonApp = ({ authentication, config, children, hasInitialAuth }: Props) 
                                                 <ApiProvider UID={UID} config={config} onLogout={handleLogout}>
                                                     <AuthenticationProvider store={authenticationValue}>
                                                         <CacheProvider cache={cacheRef.current}>
-                                                            <GlobalLoaderProvider>
-                                                                <SideAppUrlProvider>
-                                                                    <GlobalLoader />
-                                                                    <NotificationsChildren />
-                                                                    {(() => {
-                                                                        if (isLoggingOut) {
-                                                                            return (
-                                                                                <Signout
-                                                                                    onDone={handleFinalizeLogout}
-                                                                                    onLogout={() =>
-                                                                                        consumerLogoutPromise
-                                                                                    }
-                                                                                />
-                                                                            );
-                                                                        }
-                                                                        if (pathRef.current) {
-                                                                            return null;
-                                                                        }
-                                                                        return children;
-                                                                    })()}
-                                                                </SideAppUrlProvider>
-                                                            </GlobalLoaderProvider>
+                                                            <FeaturesProvider>
+                                                                <ExperimentsProvider>
+                                                                    <GlobalLoaderProvider>
+                                                                        <SideAppUrlProvider>
+                                                                            <GlobalLoader />
+                                                                            <NotificationsChildren />
+                                                                            {(() => {
+                                                                                if (isLoggingOut) {
+                                                                                    return (
+                                                                                        <Signout
+                                                                                            onDone={
+                                                                                                handleFinalizeLogout
+                                                                                            }
+                                                                                            onLogout={() =>
+                                                                                                consumerLogoutPromise
+                                                                                            }
+                                                                                        />
+                                                                                    );
+                                                                                }
+                                                                                if (pathRef.current) {
+                                                                                    return null;
+                                                                                }
+                                                                                return children;
+                                                                            })()}
+                                                                        </SideAppUrlProvider>
+                                                                    </GlobalLoaderProvider>
+                                                                </ExperimentsProvider>
+                                                            </FeaturesProvider>
                                                         </CacheProvider>
                                                     </AuthenticationProvider>
                                                 </ApiProvider>

@@ -90,6 +90,8 @@ export interface FeaturesContextValue {
     put: <V = any>(code: FeatureCode, value: V) => Promise<Feature<V>>;
 }
 
+export type FeaturesLoadContextValue = Pick<FeaturesContextValue, 'get'>['get'];
+
 export interface FeatureContextValue<V = any> {
     feature: Feature<V> | undefined;
     loading: boolean | undefined;
@@ -97,4 +99,6 @@ export interface FeatureContextValue<V = any> {
     update: (value: V) => Promise<Feature<V>>;
 }
 
-export default createContext<FeaturesContextValue>({} as FeaturesContextValue);
+export const FeaturesContext = createContext<FeaturesContextValue>({} as FeaturesContextValue);
+
+export const FeaturesLoadContext = createContext<FeaturesLoadContextValue>(null as unknown as FeaturesLoadContextValue);
