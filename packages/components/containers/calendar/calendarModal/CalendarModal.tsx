@@ -280,6 +280,7 @@ export const CalendarModal = ({
         !isSubscribedCalendar || isSubscribedCalendarReminderFeatureEnabled ? (
             <>
                 <InputFieldTwo
+                    id="default-notification"
                     as={Notifications}
                     label={c('Label').t`Event notifications`}
                     data-test-id="create-calendar/event-settings:default-notification"
@@ -296,6 +297,7 @@ export const CalendarModal = ({
                 />
 
                 <InputFieldTwo
+                    id="default-full-day-notification"
                     as={Notifications}
                     label={c('Label').t`All-day event notifications`}
                     data-test-id="create-calendar/event-settings:default-full-day-notification"
