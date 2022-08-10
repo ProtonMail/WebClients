@@ -4,23 +4,7 @@ import { getTitle } from '../../../helpers/title';
 
 <Meta title={getTitle(__filename)} />
 
-<div className="border p0-5 rounded bg-weak" style={{ width: '320px', resize: 'both', overflow: 'auto' }}>
-    <Story id="css-utilities-flexbox-direction--flex" />
-</div>
-
-# Flexbox
-
-This defines a flex container and enables a flex context for all its direct children. This class is mandatory when using any of the flex helper classes.
-
-`className='flex'`
-
-<Canvas withSource="true">
-    <Story id="css-utilities-flexbox-direction--flex" />
-</Canvas>
-
-Note: flex class applies `min-width: 0` and `min-height: 0` to the direct children. In some very super-rare cases (selects, etc.), this can create bugs. In these cases, you may use `flex-no-min-children`.
-
-## Flex direction
+# Flex direction
 
 This defines the directions that the flex items are placed
 
