@@ -1,0 +1,165 @@
+import { Canvas, Source, Story } from '@storybook/addon-docs';
+
+import { getTitle } from '../../../helpers/title';
+
+<Meta title={getTitle(__filename)} />
+
+# Alignment
+
+## Justify space between
+
+Flex items are evenly distributed in the line without space around them
+
+`className='flex flex-justify-space-between'`
+
+<Canvas>
+    <Story id="css-utilities-flexbox-alignment--justify-between" />
+</Canvas>
+
+## Justify space around
+
+Flex items are evenly distributed in the line with space around them
+
+`className='flex flex-justify-space-around'`
+
+<Canvas>
+    <Story id="css-utilities-flexbox-alignment--justify-around" />
+</Canvas>
+
+## Justify end
+
+Flex items are aligned towards the end of the flex container, depending on the writing-mode.
+
+`className='flex flex-justify-end'`
+
+<Canvas>
+    <Story id="css-utilities-flexbox-alignment--justify-end" />
+</Canvas>
+
+## Justify center
+
+Flex items are centered in the flex container.
+
+`className='flex flex-justify-center'`
+
+<Canvas>
+    <Story id="css-utilities-flexbox-alignment--justify-center" />
+</Canvas>
+
+## Center items in a column
+
+When using `.flex-column`, use `.flex-align-items-center` to center the items in the flex container.
+
+`className='flex flex-column flex-align-items-center'`
+
+<Canvas>
+    <Story id="css-utilities-flexbox-alignment--align-items-center-column" />
+</Canvas>
+
+## Align items to the end in a column
+
+When using `.flex-column`, use `.flex-align-items-end` to align the items towars the end of the flex container, depending on the writing-mode.
+
+`className='flex flex-column flex-align-items-center'`
+
+<Canvas>
+    <Story id="css-utilities-flexbox-alignment--align-items-end-column" />
+</Canvas>
+
+## Align items to the beginning of a row
+
+Use `.flex-align-items-start` to align the items towars the end of the flex container.
+
+`className='flex flex-column flex-align-items-start'`
+
+<Canvas>
+    <Story id="css-utilities-flexbox-alignment--align-items-start" />
+</Canvas>
+
+## Align items to the end of a row
+
+Use `.flex-align-items-end` to align the items towars the end of the flex container.
+
+`className='flex flex-align-items-end'`
+
+<Canvas>
+    <Story id="css-utilities-flexbox-alignment--align-items-end" />
+</Canvas>
+
+## Align items to the center of a row
+
+`className='flex flex-align-items-center'`
+
+<Canvas>
+    <Story id="css-utilities-flexbox-alignment--align-items-center" />
+</Canvas>
+
+## Align items to the text baseline of a row
+
+Similar to `.flex-align-items-center`, but all items are aligned to the text baseline
+
+`className='flex flex-align-items-baseline'`
+
+<Canvas>
+    <Story id="css-utilities-flexbox-alignment--align-items-baseline" />
+</Canvas>
+
+## Stretch all items to the height of the row
+
+`className='flex flex-align-items-stretch'`
+
+<Canvas>
+    <Story id="css-utilities-flexbox-alignment--align-items-stretch" />
+</Canvas>
+
+## Align one item to the center
+
+Container: `className='flex'`
+
+Item:`className='flex-align-self-center'`
+
+<Canvas>
+    <Story id="css-utilities-flexbox-alignment--align-item-center" />
+</Canvas>
+
+## Align one item to the start
+
+Container: `className='flex'`
+
+Item:`className='flex-align-self-start'`
+
+<Canvas>
+    <Story id="css-utilities-flexbox-alignment--align-item-start" />
+</Canvas>
+
+## Align one item to the end
+
+Container: `className='flex'`
+
+Item:`className='flex-align-self-end'`
+
+<Canvas>
+    <Story id="css-utilities-flexbox-alignment--align-item-end" />
+</Canvas>
+
+## Stretch one item
+
+Container: `className='flex'`
+
+Item:`className='flex-align-self-stretch'`
+
+<Canvas>
+    <Story id="css-utilities-flexbox-alignment--align-item-stretch" />
+</Canvas>
+
+
+## Center item
+## Center one item horizontally
+
+Container: `className='flex'`
+
+Item: `className='mauto'`
+
+<Canvas>
+    <Story id="css-utilities-flexbox-alignment--vertically-center-one-item" />
+</Canvas>
