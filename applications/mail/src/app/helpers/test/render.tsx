@@ -74,11 +74,11 @@ const TestProvider = ({ children }: Props) => {
                     <ModalsProvider>
                         <AuthenticationProvider store={authentication}>
                             <CacheProvider cache={cache}>
-                                <ModalsChildren />
-                                <EventModelListener models={[ConversationCountsModel, MessageCountsModel]} />
-                                <ReduxProvider store={store}>
-                                    <FeaturesProvider>
-                                        <ExperimentsProvider>
+                                <FeaturesProvider>
+                                    <ExperimentsProvider>
+                                        <ModalsChildren />
+                                        <EventModelListener models={[ConversationCountsModel, MessageCountsModel]} />
+                                        <ReduxProvider store={store}>
                                             <MailContentRefProvider mailContentRef={contentRef}>
                                                 <MailboxContainerContextProvider
                                                     isResizing={false}
@@ -96,9 +96,9 @@ const TestProvider = ({ children }: Props) => {
                                                     </ComposeProvider>
                                                 </MailboxContainerContextProvider>
                                             </MailContentRefProvider>
-                                        </ExperimentsProvider>
-                                    </FeaturesProvider>
-                                </ReduxProvider>
+                                        </ReduxProvider>
+                                    </ExperimentsProvider>
+                                </FeaturesProvider>
                             </CacheProvider>
                         </AuthenticationProvider>
                     </ModalsProvider>

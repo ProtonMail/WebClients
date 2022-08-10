@@ -1,8 +1,10 @@
-import { ReactNode, useRef, useState } from 'react';
+import { ReactNode, useCallback, useRef, useState } from 'react';
+
 import { getFeatures, updateFeatureValue } from '@proton/shared/lib/api/features';
 import unique from '@proton/utils/unique';
+
 import { useApi } from '../../hooks';
-import FeaturesContext, { Feature, FeatureCode } from './FeaturesContext';
+import { Feature, FeatureCode, FeaturesContext, FeaturesLoadContext } from './FeaturesContext';
 
 interface Props {
     children: ReactNode;
@@ -16,7 +18,7 @@ const FeaturesProvider = ({ children }: Props) => {
     const codePromiseCacheRef = useRef<{ [key in FeatureCode]?: Promise<Feature> | undefined }>({});
     const codeQueueRef = useRef<FeatureCode[]>([]);
 
-    const get = (codes: FeatureCode[]) => {
+    const get = useCallback((codes: FeatureCode[]) => {
         const codeQueue = codeQueueRef.current;
         codeQueueRef.current = [];
         const codePromiseCache = codePromiseCacheRef.current;
@@ -81,7 +83,7 @@ const FeaturesProvider = ({ children }: Props) => {
                 return codePromiseCache[code]!;
             })
         );
-    };
+    }, []);
 
     const updateFeature = (code: FeatureCode, feature: Feature | undefined) => {
         setFeatures((currentFeatures) => ({ ...currentFeatures, [code]: feature }));
@@ -112,7 +114,11 @@ const FeaturesProvider = ({ children }: Props) => {
     };
 
     return (
-        <FeaturesContext.Provider value={{ features, loading, get, put, enqueue }}>{children}</FeaturesContext.Provider>
+        <FeaturesLoadContext.Provider value={get}>
+            <FeaturesContext.Provider value={{ features, loading, get, put, enqueue }}>
+                {children}
+            </FeaturesContext.Provider>
+        </FeaturesLoadContext.Provider>
     );
 };
 

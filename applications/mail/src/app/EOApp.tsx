@@ -6,6 +6,8 @@ import {
     CacheProvider,
     CompatibilityCheck,
     ConfigProvider,
+    ExperimentsProvider,
+    FeaturesProvider,
     Icons,
     ModalsProvider,
     NotificationsChildren,
@@ -58,10 +60,14 @@ const App = () => {
                                     <ModalsProvider>
                                         <ApiProvider config={config} onLogout={noop}>
                                             <CacheProvider cache={cacheRef.current}>
-                                                <NotificationsChildren />
-                                                <StandardPublicApp locales={locales}>
-                                                    <EOContainer />
-                                                </StandardPublicApp>
+                                                <FeaturesProvider>
+                                                    <ExperimentsProvider>
+                                                        <NotificationsChildren />
+                                                        <StandardPublicApp locales={locales}>
+                                                            <EOContainer />
+                                                        </StandardPublicApp>
+                                                    </ExperimentsProvider>
+                                                </FeaturesProvider>
                                             </CacheProvider>
                                         </ApiProvider>
                                     </ModalsProvider>

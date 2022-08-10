@@ -47,16 +47,16 @@ const EOTestProvider = ({ children, routePath = EO_REDIRECT_PATH }: Props) => {
                 <NotificationsTestProvider>
                     <ModalsProvider>
                         <CacheProvider cache={cache}>
-                            <ModalsChildren />
-                            <ReduxProvider store={store}>
-                                <FeaturesProvider>
-                                    <ExperimentsProvider>
+                            <FeaturesProvider>
+                                <ExperimentsProvider>
+                                    <ModalsChildren />
+                                    <ReduxProvider store={store}>
                                         <Router history={history}>
                                             <Route path={routePath}>{children}</Route>
                                         </Router>
-                                    </ExperimentsProvider>
-                                </FeaturesProvider>
-                            </ReduxProvider>
+                                    </ReduxProvider>
+                                </ExperimentsProvider>
+                            </FeaturesProvider>
                         </CacheProvider>
                     </ModalsProvider>
                 </NotificationsTestProvider>
