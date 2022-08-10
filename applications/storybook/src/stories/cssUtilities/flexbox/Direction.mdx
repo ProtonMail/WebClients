@@ -1,0 +1,58 @@
+import { Canvas, Source, Story } from '@storybook/addon-docs';
+
+import { getTitle } from '../../../helpers/title';
+
+<Meta title={getTitle(__filename)} />
+
+# Flex direction
+
+This defines the directions that the flex items are placed
+
+-   `row` (default): left to right in ltr; right to left in rtl
+-   `row-reverse`: right to left in ltr; left to right in rtl
+-   `column`: same as row but top to bottom
+-   `column-reverse`: same as row-reverse but bottom to top
+
+## Flex row
+
+`className='flex flex-row'`
+
+<Canvas>
+    <Story id="css-utilities-flexbox-direction--flex-row" />
+</Canvas>
+
+## Flex row reverse
+
+`className='flex flex-row-reverse'`
+
+<Canvas>
+    <Story id="css-utilities-flexbox-direction--flex-row-reverse" />
+</Canvas>
+
+## Flex column
+
+`className='flex flex-column'`
+
+<Canvas>
+    <Story id="css-utilities-flexbox-direction--flex-column" />
+</Canvas>
+
+## Flex column reverse
+
+`className='flex flex-column-reverse'`
+
+<Canvas>
+    <Story id="css-utilities-flexbox-direction--flex-column-reverse" />
+</Canvas>
+
+## Flex Wrap
+
+When using the `.flex` helper class, items will automatically flow into the next line. (due to `flex-wrap: wrap`) To always keep items on one line, use `flex-nowrap`.
+
+`className='flex flex-nowrap'`
+
+<Canvas>
+    <Story id="css-utilities-flexbox-direction--flex-wrap" />
+    <Story id="css-utilities-flexbox-direction--flex-nowrap" />
+</Canvas>
+

@@ -113,7 +113,7 @@ table {
 }
 
 // Theme support
-.sbdocs {
+.sbdocs:not(.bg-primary) {
 	background: var(--background-norm) !important;
 	color: var(--text-norm) !important;
 }
@@ -196,4 +196,17 @@ table {
 	padding: 0 0.1rem;
 	font-size: 0.8em;
 	user-select: all;
+}
+
+body.sb-main-fullscreen::before {
+	position: fixed;
+	inset-block-end: 0;
+	display: block;
+	background: var(--primary);
+	color: var(--primary-contrast);
+	border-radius: var(--border-radius-sm);
+	font-size: 0.8em;
+	padding: 0 0.3em;
+	inset-inline-end: 0;
+	z-index: 12000;
 }
