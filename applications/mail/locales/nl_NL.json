@@ -1565,6 +1565,17 @@
         "Niet-ondersteunde agenda-indeling"
       ]
     },
+    "Calendar subscription not synced error; long version": {
+      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
+        "Agendalink is niet toegankelijk van buiten de agendaproviders ecosysteem."
+      ],
+      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
+        "Agendalink is tijdelijk ontoegankelijk. Verifieer dat de link van de agendaprovider nog steeds geldig is."
+      ],
+      "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
+        "Meer dan 12 uur geleden sinds de laatste update — Proton Calendar probeert de agenda over enkele uren te updaten."
+      ]
+    },
     "Calendar widget banner": {
       "Event already ended": [
         "Het evenement is al afgelopen"
@@ -2926,6 +2937,9 @@
       "A group with this name already exists": [
         "Er bestaat al een groep met deze naam"
       ],
+      "A problem occurred, please try again.": [
+        "Er is een probleem opgetreden, probeer het opnieuw."
+      ],
       "Address primary private key not found": [
         "Primaire adressleutel is niet gevonden"
       ],
@@ -3164,6 +3178,9 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Er ging iets mis, gelieve ${ refresh } om door te gaan. Als u dit foutbericht nog steeds ziet, neem dan contact op met onze ${ supportTeam }."
+      ],
+      "Something went wrong, please try again": [
+        "Er ging iets mis, probeer later opnieuw"
       ],
       "Sorry, Proton can't decrypt your message. Please check that all your keys are active.": [
         "Sorry, Proton kan uw bericht niet decoderen. Controleer of al uw sleutels actief zijn."
@@ -4141,6 +4158,12 @@
       "Confirm phishing report": [
         "Phishingrapport bevestigen"
       ],
+      "Content search of the entire inbox is available for ${ paidPlansButton }.": [
+        "Inhoud doorzoeken voor de volledige inbox is beschikbaar voor ${ paidPlansButton }."
+      ],
+      "Content: ": [
+        "Inhoud: "
+      ],
       "Continue with ${ planName }": [
         "Ga door met ${ planName }"
       ],
@@ -4206,6 +4229,9 @@
       ],
       "Don't forget to share the password with the recipient": [
         "Vergeet het wachtwoord niet te delen met de ontvanger"
+      ],
+      "Downloading message ${ currentProgress } out of ${ totalProgress }": [
+        "Bericht ${ currentProgress } van ${ totalProgress } aan het downloaden"
       ],
       "Draft": [
         "Concept"
@@ -4517,6 +4543,9 @@
       "No results found": [
         "Geen resultaten gevonden"
       ],
+      "No results found in the past 30 days, searching the rest of your inbox": [
+        "Geen resultaten van de afgelopen 30 dagen gevonden, de rest van uw inbox wordt doorzocht"
+      ],
       "No trackers found, but some images could not be loaded with tracking protection": [
         "Geen trackers gevonden, maar sommige afbeeldingen konden niet ingeladen worden met bescherming tegen tracking"
       ],
@@ -4773,6 +4802,9 @@
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
         "Deze actie zal alle berichten downloaden zodat ze lokaal kunnen worden gezocht. Het wissen van uw browsergegevens zal deze optie uitschakelen."
+      ],
+      "This action will download the most recent messages so they can be searched locally. Clearing your browser data will disable this option.": [
+        "Deze actie zal de meest berichten downloaden zodat ze lokaal kunnen worden gezocht. Het wissen van uw browsergegevens zal deze optie uitschakelen."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Dit adres is uitgeschakeld. Om berichten naar dit adres te versturen moet de eigenaar het adres eerst activeren."
@@ -5945,6 +5977,9 @@
       "Outbox": [
         "Postvak UIT"
       ],
+      "paid plans": [
+        "betaalde abonnementen"
+      ],
       "Pay invoice": [
         "Factuur betalen"
       ],
@@ -6761,7 +6796,7 @@
     },
     "Sort": {
       "Sort": [
-        "Sorteer"
+        "Sorteren"
       ]
     },
     "Sort option": {
@@ -6782,9 +6817,6 @@
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "${ DRIVE_APP_NAME } is uit de bèta! Geef uw bestanden dezelfde beveiliging als uw e-mails."
       ],
-      "Discover all Proton services": [
-        "Ontdek alle Proton-diensten"
-      ],
       "Get up to 18 months of ${ planName } for free": [
         "Krijg tot 18 maanden ${ planName } gratis"
       ],
@@ -6793,9 +6825,6 @@
       ],
       "Message Content Search": [
         "Zoeken naar berichtinhoud"
-      ],
-      "Securely manage your schedule, files, and online life! Open to discover all Proton services.": [
-        "Beheer veilig uw planning, bestanden en online-leven! Open om alle Proton-diensten te ontdekken."
       ],
       "To protect your privacy, Proton blocked email trackers in this message": [
         "Om uw privacy te beschermen, heeft Proton e-mailtrackers in dit bericht geblokkeerd"
@@ -7673,6 +7702,9 @@
       ],
       "Encrypted data with verified digital signature": [
         "Versleutelde gegevens met geverifieerde digitale ondertekening"
+      ],
+      "For messages older than 30 days, only the subject line and recipient list will be searched": [
+        "Voor berichten ouder dan 30 dagen, zal enkel het onderwerp en ontvangerslijst worden doorzocht"
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Selecteer het PGP-schema dat wordt gebruikt bij het ondertekenen of versleutelen naar een gebruiker. Merk op dat PGP/Inline berichten zonder opmaak forceert"

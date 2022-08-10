@@ -247,6 +247,9 @@
       "Forward as attachment": [
         "Transférer en tant que pièce jointe"
       ],
+      "Get ${ DRIVE_APP_NAME }": [
+        "Obtenir ${ DRIVE_APP_NAME }"
+      ],
       "Get link": [
         "Obtenir le lien"
       ],
@@ -438,6 +441,9 @@
       ],
       "Search": [
         "Rechercher"
+      ],
+      "Search countries": [
+        "Rechercher dans les pays"
       ],
       "Search drive": [
         "Rechercher dans Drive"
@@ -746,6 +752,9 @@
       "Calendar is syncing": [
         "Synchronisation du calendrier"
       ],
+      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
+        "Le calendrier se synchronise: vous devrez peut être attendre plusieurs minutes avant de voir tous les événements."
+      ],
       "Calendar is too big": [
         "Le calendrier est trop gros"
       ],
@@ -763,6 +772,25 @@
       ],
       "Unsupported calendar format": [
         "Format de calendrier non pris en charge"
+      ]
+    },
+    "Calendar subscription not synced error; long version": {
+      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
+        "Le lien du calendrier n'est pas accessible depuis l'extérieur de l'écosystème du fournisseur de calendrier."
+      ],
+      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
+        "Le lien du calendrier est temporairement inaccessible. Veuillez vérifier que le lien du fournisseur de calendrier est toujours valide."
+      ],
+      "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
+        "Plus de 12 heures se sont écoulées depuis la dernière mise à jour — Proton Calendar essaiera de mettre à jour le calendrier dans quelques heures."
+      ]
+    },
+    "Collapsible tooltip": {
+      "Collapse": [
+        "Replier"
+      ],
+      "Expand": [
+        "Développer"
       ]
     },
     "color": {
@@ -1095,6 +1123,9 @@
       "Czech Republic": [
         "Tchéquie"
       ],
+      "Côte d'Ivoire": [
+        "Côte d'Ivoire"
+      ],
       "Denmark": [
         "Danemark"
       ],
@@ -1124,6 +1155,9 @@
       ],
       "Estonia": [
         "Estonie"
+      ],
+      "Eswatini": [
+        "Eswatini"
       ],
       "Ethiopia": [
         "Éthiopie"
@@ -1367,6 +1401,9 @@
       ],
       "Mozambique": [
         "Mozambique"
+      ],
+      "Myanmar": [
+        "Birmanie"
       ],
       "Namibia": [
         "Namibie"
@@ -1688,6 +1725,9 @@
       ]
     },
     "Description": {
+      "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
+        "Déchiffrement des contacts en cours… Cela peut prendre quelques minutes. Lorsque cette opération sera terminée, vous pourrez télécharger le fichier avec tous vos contacts exportés."
+      ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Suppression des contacts... Ceci peut prendre quelques minutes. Une fois le processus terminé, vous pouvez fermer cette fenêtre."
       ],
@@ -1733,6 +1773,9 @@
       "A group with this name already exists": [
         "Un groupe portant ce nom existe déjà"
       ],
+      "A problem occurred, please try again.": [
+        "Une erreur est survenue. Veuillez réessayer."
+      ],
       "Authentication canceled.": [
         "Authentification annulée."
       ],
@@ -1761,6 +1804,9 @@
       "Deselect at least ${ calendarToFixCount } calendar or": [
         "Désélectionnez au moins ${ calendarToFixCount } calendrier ou",
         "Désélectionnez au moins ${ calendarToFixCount } calendriers ou"
+      ],
+      "Domain not available, try again later": [
+        "Domaine non disponible: veuillez réessayer plus tard."
       ],
       "Email address invalid": [
         "Adresse courriel invalide"
@@ -1842,6 +1888,9 @@
       ],
       "Passwords do not match": [
         "Les mots de passe ne correspondent pas"
+      ],
+      "Please activate your search again": [
+        "Veuillez réactiver la recherche de contenu"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Veuillez corriger le conflit en surbrillance pour continuer.",
@@ -1934,6 +1983,9 @@
       "This label name is not available. Please choose a different name.": [
         "Ce nom de label n'est pas disponible. Veuillez en choisir un autre."
       ],
+      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
+        "Ce message peut contenir des liens URL que votre navigateur actuel peut ne pas ouvrir correctement."
+      ],
       "Unknown error": [
         "Erreur inconnue"
       ],
@@ -2010,6 +2062,9 @@
       ],
       "Please ${ refresh } or check your connection.": [
         "Veuillez ${ refresh } ou vérifier votre connexion."
+      ],
+      "Something went wrong. Please refresh the page or try again later.": [
+        "Une erreur s'est produite. Veuillez rafraîchir la page ou réessayer plus tard."
       ],
       "There was a problem connecting to Proton.": [
         "Un problème s'est produit lors de la connexion à Proton."
@@ -2702,6 +2757,10 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Une ou plusieurs de vos clés de confiance ont été marquées comme « compromises » par leur propriétaire. Nous vous recommandons de ne plus faire confiance à ces clés."
       ],
+      "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } character is allowed": [
+        "Seul ${ MAX_CUSTOM_PASSWORD_LENGTH } caractère est autorisé.",
+        "Seuls ${ MAX_CUSTOM_PASSWORD_LENGTH } caractères sont autorisés."
+      ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Ne modifiez ces paramètres que si vous utilisez PGP avec des destinataires qui n'utilisent pas ${ BRAND_NAME }."
       ],
@@ -2722,6 +2781,9 @@
       ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
         "PGP/Inline est uniquement compatible avec le format texte brut. Veuillez noter que ${ MAIL_APP_NAME } signe toujours les messages chiffrés."
+      ],
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        "PGP/MIME envoie automatiquement le message en utilisant le mode actuel du composeur. Veuillez noter que ${ MAIL_APP_NAME } signe toujours les messages chiffrés."
       ],
       "Please enter the password to decrypt and view content.": [
         "Veuillez saisir le mot de passe pour déchiffrer et voir le contenu."
@@ -2798,6 +2860,9 @@
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Sélectionnez le format de message que vous souhaitez utiliser par défaut lors de l'envoi d'un courriel à cette adresse électronique."
+      ],
+      "Select what you want to import from Google.": [
+        "Sélectionnez ce que vous souhaitez importer depuis Google."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Sélectionnez les calendriers à importer. Un nouveau calendrier sera créé pour chaque calendrier importé dans la limite de 20 calendriers."
@@ -3592,6 +3657,11 @@
     "new_plans: action": {
       "Switch or add account": [
         "Basculez vers ou ajoutez un compte"
+      ]
+    },
+    "new_plans: info": {
+      "Introducing Proton’s refreshed look.${ br }Many services, one mission. Welcome to an internet where privacy is the default.": [
+        "Voici le nouveau look de Proton.${ br } Plusieurs services, une seule mission. Bienvenue sur un internet où la protection de la vie privée est la règle absolue."
       ]
     },
     "new_plans: label": {
@@ -4534,6 +4604,9 @@
       ],
       "The link either does not exist or has expired": [
         "Le lien n'existe pas ou a expiré"
+      ],
+      "The link expired": [
+        "Le lien a expiré"
       ],
       "The link failed to be loaded": [
         "Le lien n'a pas pu être chargé"
