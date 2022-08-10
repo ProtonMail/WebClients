@@ -360,8 +360,8 @@ export const Sandbox = () => {
                             <Checkbox
                                 id={id}
                                 checked={checked}
-                                onChange={({ target: { checked } }) => {
-                                    handleCheckboxChange(id, checked);
+                                onChange={({ target }) => {
+                                    handleCheckboxChange(id, target.checked);
                                 }}
                             />
 
@@ -378,7 +378,7 @@ export const Sandbox = () => {
                                 </span>
                             </span>
 
-                            <SelectTwo value={value} onChange={({ value: value }) => handleSelectChange(id, value)}>
+                            <SelectTwo value={value} onValue={(newValue) => handleSelectChange(id, newValue)}>
                                 {sizeOptions(id).map((size) => (
                                     <Option key={size} title={size} value={size} />
                                 ))}
