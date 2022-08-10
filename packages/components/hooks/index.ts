@@ -38,6 +38,7 @@ export { default as useEarlyAccess } from './useEarlyAccess';
 export { default as useElementRect } from './useElementRect';
 export { default as useErrorHandler } from './useErrorHandler';
 export { default as useEventManager } from './useEventManager';
+export { default as useLoadFeature } from './useLoadFeature';
 export { default as useFeature } from './useFeature';
 export { default as useFeatures } from './useFeatures';
 export { default as useExperiment } from './useExperiment';

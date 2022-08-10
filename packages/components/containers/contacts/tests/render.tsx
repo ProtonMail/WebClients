@@ -1,15 +1,19 @@
 import { ReactElement, ReactNode } from 'react';
-import { STATUS } from '@proton/shared/lib/models/cache';
-import createCache from '@proton/shared/lib/helpers/cache';
+
 import { RenderResult, render as originalRender } from '@testing-library/react';
+
+import { CryptoApiInterface, CryptoProxy, VERIFICATION_STATUS } from '@proton/crypto';
+import { CONTACT_CARD_TYPE } from '@proton/shared/lib/constants';
 import { prepareVCardContact } from '@proton/shared/lib/contacts/encrypt';
 import { parseToVCard } from '@proton/shared/lib/contacts/vcard';
-import { CONTACT_CARD_TYPE } from '@proton/shared/lib/constants';
-import { CryptoApiInterface, CryptoProxy, VERIFICATION_STATUS } from '@proton/crypto';
-import { CacheProvider } from '../../cache';
+import createCache from '@proton/shared/lib/helpers/cache';
+import { STATUS } from '@proton/shared/lib/models/cache';
+
 import ApiContext from '../../api/apiContext';
-import { NotificationsContext } from '../../notifications';
+import { CacheProvider } from '../../cache';
 import EventManagerContext from '../../eventManager/context';
+import FeaturesProvider from '../../features/FeaturesProvider';
+import { NotificationsContext } from '../../notifications';
 import ContactProvider from '../ContactProvider';
 
 // probably better to instead let the tests explicitly set the crypto proxy, since it needs releasing anyway to avoid memory leaks
@@ -80,15 +84,16 @@ export const eventManager = {
 const TestProvider = ({ children }: { children: ReactNode }) => (
     <ApiContext.Provider value={api}>
         <CacheProvider cache={cache}>
-            <NotificationsContext.Provider value={notificationManager}>
-                <EventManagerContext.Provider value={eventManager}>
-                    <ContactProvider>{children}</ContactProvider>
-                </EventManagerContext.Provider>
-            </NotificationsContext.Provider>
+            <FeaturesProvider>
+                <NotificationsContext.Provider value={notificationManager}>
+                    <EventManagerContext.Provider value={eventManager}>
+                        <ContactProvider>{children}</ContactProvider>
+                    </EventManagerContext.Provider>
+                </NotificationsContext.Provider>
+            </FeaturesProvider>
         </CacheProvider>
     </ApiContext.Provider>
 );
-
 export const minimalCache = () => {
     cache.set('User', { status: STATUS.RESOLVED, value: {} });
     cache.set('MailSettings', { status: STATUS.RESOLVED, value: {} });

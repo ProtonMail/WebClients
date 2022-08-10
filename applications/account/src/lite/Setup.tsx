@@ -1,9 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import { flushSync } from 'react-dom';
+
 import {
     EventManagerProvider,
-    ExperimentsProvider,
-    FeaturesProvider,
     ModalsChildren,
     StandardLoadErrorPage,
     useApi,
@@ -12,24 +11,24 @@ import {
     useThemeQueryParameter,
 } from '@proton/components';
 import LoaderPage from '@proton/components/containers/app/LoaderPage';
-import { User, UserSettings } from '@proton/shared/lib/interfaces';
-import { withAuthHeaders, withUIDHeaders } from '@proton/shared/lib/fetch/headers';
 import { pullForkSession, setCookies, setRefreshCookies } from '@proton/shared/lib/api/auth';
-import { PullForkResponse, RefreshSessionResponse } from '@proton/shared/lib/authentication/interface';
-import getRandomString from '@proton/utils/getRandomString';
-import { locales } from '@proton/shared/lib/i18n/locales';
-import { getGenericErrorPayload } from '@proton/shared/lib/broadcast';
 import { getLatestID } from '@proton/shared/lib/api/events';
+import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { PullForkResponse, RefreshSessionResponse } from '@proton/shared/lib/authentication/interface';
+import { getGenericErrorPayload } from '@proton/shared/lib/broadcast';
 import createEventManager from '@proton/shared/lib/eventManager/eventManager';
-import { loadModels } from '@proton/shared/lib/models/helper';
+import { withAuthHeaders, withUIDHeaders } from '@proton/shared/lib/fetch/headers';
+import { loadCryptoWorker } from '@proton/shared/lib/helpers/setupCryptoWorker';
 import { getBrowserLocale, getClosestLocaleCode, getClosestLocaleMatch } from '@proton/shared/lib/i18n/helper';
 import { loadDateLocale, loadLocale } from '@proton/shared/lib/i18n/loadLocale';
-import { loadCryptoWorker } from '@proton/shared/lib/helpers/setupCryptoWorker';
-import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { locales } from '@proton/shared/lib/i18n/locales';
+import { User, UserSettings } from '@proton/shared/lib/interfaces';
 import { UserModel, UserSettingsModel } from '@proton/shared/lib/models';
+import { loadModels } from '@proton/shared/lib/models/helper';
+import getRandomString from '@proton/utils/getRandomString';
 
-import MainContainer from './content/MainContainer';
 import broadcast, { MessageType } from './broadcast';
+import MainContainer from './content/MainContainer';
 
 interface Props {
     onLogin: (UID: string) => void;
@@ -140,12 +139,8 @@ const Setup = ({ onLogin, UID }: Props) => {
 
     return (
         <EventManagerProvider eventManager={eventManagerRef.current}>
-            <FeaturesProvider>
-                <ExperimentsProvider>
-                    <ModalsChildren />
-                    <MainContainer />
-                </ExperimentsProvider>
-            </FeaturesProvider>
+            <ModalsChildren />
+            <MainContainer />
         </EventManagerProvider>
     );
 };
