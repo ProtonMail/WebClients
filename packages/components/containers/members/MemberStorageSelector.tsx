@@ -1,12 +1,15 @@
-import { c } from 'ttag';
 import { ReactNode, useRef, useState } from 'react';
-import { GIGA } from '@proton/shared/lib/constants';
-import humanSize, { getLongSizeFormat, getSizeFormat, getUnit } from '@proton/shared/lib/helpers/humanSize';
-import clamp from '@proton/utils/clamp';
-import generateUID from '@proton/shared/lib/helpers/generateUID';
-import { getVariableFromThemeColor, ThemeColor } from '@proton/colors';
+
+import { c } from 'ttag';
+
 import { Donut } from '@proton/atoms';
 import Slider from '@proton/atoms/Slider/Slider';
+import { ThemeColor, getVariableFromThemeColor } from '@proton/colors';
+import { GIGA } from '@proton/shared/lib/constants';
+import generateUID from '@proton/shared/lib/helpers/generateUID';
+import humanSize, { getLongSizeFormat, getSizeFormat, getUnit } from '@proton/shared/lib/helpers/humanSize';
+import clamp from '@proton/utils/clamp';
+
 import { Tooltip } from '../../components';
 import InputField from '../../components/v2/field/InputField';
 import { useElementRect } from '../../hooks';
@@ -197,7 +200,7 @@ const MemberStorageSelector = ({
                                                 }
                                             >
                                                 <span
-                                                    className="inline-block mr0-5 w2e rounded"
+                                                    className="inline-block user-select-none mr0-5 w2e rounded"
                                                     style={{ background: `var(${getVariableFromThemeColor(color)})` }}
                                                 >
                                                     &nbsp;
