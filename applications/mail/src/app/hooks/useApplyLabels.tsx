@@ -327,6 +327,8 @@ export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolea
 
             if (numberOfScheduledMessages > 0 && numberOfScheduledMessages === elements.length) {
                 canUndo = false;
+            } else {
+                canUndo = true;
             }
 
             if (!canUndo) {
