@@ -6,25 +6,22 @@ import { c } from 'ttag';
 import { Icon, Tooltip, classnames } from '@proton/components';
 
 import { formatFullDate } from '../../helpers/date';
-import { Element } from '../../models/element';
 
 import './ItemExpiration.scss';
 
 interface Props {
-    element?: Element;
     className?: string;
+    expirationTime?: number;
 }
 
-const ItemExpiration = ({ element, className }: Props) => {
-    const { ExpirationTime } = element || {};
-
+const ItemExpiration = ({ className, expirationTime }: Props) => {
     const tooltipMessage = useMemo(() => {
-        const date = fromUnixTime(ExpirationTime || 0);
+        const date = fromUnixTime(expirationTime || 0);
         const formattedDate = formatFullDate(date);
         return c('Info').t`This message will expire ${formattedDate}`;
-    }, [ExpirationTime]);
+    }, [expirationTime]);
 
-    if (!ExpirationTime) {
+    if (!expirationTime) {
         return null;
     }
 

@@ -8,6 +8,7 @@ import { Label } from '@proton/shared/lib/interfaces/Label';
 import { getHasOnlyIcsAttachments } from '@proton/shared/lib/mail/messages';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
+import { useExpiringElement } from '../../hooks/useExpiration';
 import { Element } from '../../models/element';
 import { ESMessage } from '../../models/encryptedSearch';
 import NumMessages from '../conversation/NumMessages';
@@ -54,6 +55,8 @@ const ItemRowLayout = ({
 }: Props) => {
     const { shouldHighlight, highlightMetadata } = useEncryptedSearchContext();
     const highlightData = shouldHighlight();
+
+    const { expirationTime, hasExpiration } = useExpiringElement(element, conversationMode);
 
     const body = (element as ESMessage).decryptedBody;
     const { Subject, Size } = element;
@@ -151,7 +154,7 @@ const ItemRowLayout = ({
             </span>
 
             <span className="flex w3e ml0-5 text-center flex-justify-end">
-                {!!element.ExpirationTime && <ItemExpiration element={element} />}
+                {hasExpiration && <ItemExpiration expirationTime={expirationTime} />}
                 <ItemAttachmentIcon
                     icon={hasOnlyIcsAttachments ? 'calendar-grid' : undefined}
                     element={element}
