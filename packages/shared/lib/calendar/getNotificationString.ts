@@ -1,8 +1,8 @@
 import { c, msgid } from 'ttag';
 
 import { fromLocalDate, toUTCDate } from '../date/timezone';
-import { NOTIFICATION_UNITS, NOTIFICATION_WHEN } from './constants';
 import { NotificationModel } from '../interfaces/calendar';
+import { NOTIFICATION_UNITS, NOTIFICATION_WHEN } from './constants';
 
 const getNotificationString = (notification: NotificationModel, formatTime: (date: Date) => string) => {
     const { value = 0, unit, when, at, isAllDay } = notification;
@@ -13,10 +13,10 @@ const getNotificationString = (notification: NotificationModel, formatTime: (dat
         }
 
         if (when === NOTIFICATION_WHEN.BEFORE) {
-            if (unit === NOTIFICATION_UNITS.MINUTES) {
+            if (unit === NOTIFICATION_UNITS.MINUTE) {
                 return c('Notifications').ngettext(msgid`${value} minute before`, `${value} minutes before`, value);
             }
-            if (unit === NOTIFICATION_UNITS.HOURS) {
+            if (unit === NOTIFICATION_UNITS.HOUR) {
                 return c('Notifications').ngettext(msgid`${value} hour before`, `${value} hours before`, value);
             }
             if (unit === NOTIFICATION_UNITS.DAY) {
@@ -28,10 +28,10 @@ const getNotificationString = (notification: NotificationModel, formatTime: (dat
         }
 
         if (when === NOTIFICATION_WHEN.AFTER) {
-            if (unit === NOTIFICATION_UNITS.MINUTES) {
+            if (unit === NOTIFICATION_UNITS.MINUTE) {
                 return c('Notifications').ngettext(msgid`${value} minute after`, `${value} minutes after`, value);
             }
-            if (unit === NOTIFICATION_UNITS.HOURS) {
+            if (unit === NOTIFICATION_UNITS.HOUR) {
                 return c('Notifications').ngettext(msgid`${value} hour after`, `${value} hours after`, value);
             }
             if (unit === NOTIFICATION_UNITS.DAY) {
@@ -53,14 +53,14 @@ const getNotificationString = (notification: NotificationModel, formatTime: (dat
     }
 
     if (when === NOTIFICATION_WHEN.BEFORE) {
-        if (unit === NOTIFICATION_UNITS.MINUTES) {
+        if (unit === NOTIFICATION_UNITS.MINUTE) {
             return c('Notifications').ngettext(
                 msgid`${value} minute before at ${time}`,
                 `${value} minutes before at ${time}`,
                 value
             );
         }
-        if (unit === NOTIFICATION_UNITS.HOURS) {
+        if (unit === NOTIFICATION_UNITS.HOUR) {
             return c('Notifications').ngettext(
                 msgid`${value} hour before at ${time}`,
                 `${value} hours before at ${time}`,
@@ -84,14 +84,14 @@ const getNotificationString = (notification: NotificationModel, formatTime: (dat
     }
 
     if (when === NOTIFICATION_WHEN.AFTER) {
-        if (unit === NOTIFICATION_UNITS.MINUTES) {
+        if (unit === NOTIFICATION_UNITS.MINUTE) {
             return c('Notifications').ngettext(
                 msgid`${value} minute after at ${time}`,
                 `${value} minutes after at ${time}`,
                 value
             );
         }
-        if (unit === NOTIFICATION_UNITS.HOURS) {
+        if (unit === NOTIFICATION_UNITS.HOUR) {
             return c('Notifications').ngettext(
                 msgid`${value} hour after at ${time}`,
                 `${value} hours after at ${time}`,
