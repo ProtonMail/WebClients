@@ -1,9 +1,9 @@
-import { EventModel } from '@proton/shared/lib/interfaces/calendar';
 import {
-    SETTINGS_NOTIFICATION_TYPE,
     NOTIFICATION_UNITS,
     NOTIFICATION_WHEN,
+    SETTINGS_NOTIFICATION_TYPE,
 } from '@proton/shared/lib/calendar/constants';
+import { EventModel } from '@proton/shared/lib/interfaces/calendar';
 
 import { modelToValarmComponents } from './modelToProperties';
 
@@ -16,19 +16,19 @@ describe('model to valarm', () => {
                     {
                         value: 1,
                         type: SETTINGS_NOTIFICATION_TYPE.EMAIL,
-                        unit: NOTIFICATION_UNITS.HOURS,
+                        unit: NOTIFICATION_UNITS.HOUR,
                         when: NOTIFICATION_WHEN.AFTER,
                     },
                     {
                         value: 15,
                         type: SETTINGS_NOTIFICATION_TYPE.DEVICE,
-                        unit: NOTIFICATION_UNITS.MINUTES,
+                        unit: NOTIFICATION_UNITS.MINUTE,
                         when: NOTIFICATION_WHEN.BEFORE,
                     },
                     {
                         value: 10,
                         type: SETTINGS_NOTIFICATION_TYPE.DEVICE,
-                        unit: NOTIFICATION_UNITS.MINUTES,
+                        unit: NOTIFICATION_UNITS.MINUTE,
                         when: NOTIFICATION_WHEN.BEFORE,
                     },
                 ],
@@ -94,31 +94,31 @@ describe('model to valarm', () => {
                     {
                         value: 1,
                         type: SETTINGS_NOTIFICATION_TYPE.EMAIL,
-                        unit: NOTIFICATION_UNITS.HOURS,
+                        unit: NOTIFICATION_UNITS.HOUR,
                         when: NOTIFICATION_WHEN.AFTER,
                     },
                     {
                         value: 1,
                         type: SETTINGS_NOTIFICATION_TYPE.DEVICE,
-                        unit: NOTIFICATION_UNITS.HOURS,
+                        unit: NOTIFICATION_UNITS.HOUR,
                         when: NOTIFICATION_WHEN.BEFORE,
                     },
                     {
                         value: 60,
                         type: SETTINGS_NOTIFICATION_TYPE.DEVICE,
-                        unit: NOTIFICATION_UNITS.MINUTES,
+                        unit: NOTIFICATION_UNITS.MINUTE,
                         when: NOTIFICATION_WHEN.BEFORE,
                     },
                     {
                         value: 15,
                         type: SETTINGS_NOTIFICATION_TYPE.DEVICE,
-                        unit: NOTIFICATION_UNITS.MINUTES,
+                        unit: NOTIFICATION_UNITS.MINUTE,
                         when: NOTIFICATION_WHEN.BEFORE,
                     },
                     {
                         value: 15,
                         type: SETTINGS_NOTIFICATION_TYPE.DEVICE,
-                        unit: NOTIFICATION_UNITS.MINUTES,
+                        unit: NOTIFICATION_UNITS.MINUTE,
                         when: NOTIFICATION_WHEN.BEFORE,
                     },
                 ],

@@ -1,14 +1,14 @@
+import { NotificationModel } from '../interfaces/calendar/Notification';
 import { NOTIFICATION_UNITS, NOTIFICATION_WHEN } from './constants';
 import { transformBeforeAt } from './trigger';
-import { NotificationModel } from '../interfaces/calendar/Notification';
 
 const getValarmTriggerUnit = (unit: NOTIFICATION_UNITS) => {
     return (
         {
             [NOTIFICATION_UNITS.WEEK]: 'weeks',
             [NOTIFICATION_UNITS.DAY]: 'days',
-            [NOTIFICATION_UNITS.HOURS]: 'hours',
-            [NOTIFICATION_UNITS.MINUTES]: 'minutes',
+            [NOTIFICATION_UNITS.HOUR]: 'hours',
+            [NOTIFICATION_UNITS.MINUTE]: 'minutes',
         }[unit] || 'days'
     );
 };

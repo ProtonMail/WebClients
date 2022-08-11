@@ -1,6 +1,6 @@
-import { normalizeRelativeTrigger, transformBeforeAt } from './trigger';
-import { NOTIFICATION_UNITS, NOTIFICATION_WHEN, SETTINGS_NOTIFICATION_TYPE } from './constants';
 import { NotificationModel, VcalDurationValue } from '../interfaces/calendar';
+import { NOTIFICATION_UNITS, NOTIFICATION_WHEN, SETTINGS_NOTIFICATION_TYPE } from './constants';
+import { normalizeRelativeTrigger, transformBeforeAt } from './trigger';
 
 const getInt = (value: any) => parseInt(value, 10) || 0;
 
@@ -52,9 +52,9 @@ const partDayTriggerToModel = ({ type, when, weeks, days, hours, minutes }: Trig
             return [days, NOTIFICATION_UNITS.DAY];
         }
         if (hours) {
-            return [hours, NOTIFICATION_UNITS.HOURS];
+            return [hours, NOTIFICATION_UNITS.HOUR];
         }
-        return [minutes, NOTIFICATION_UNITS.MINUTES];
+        return [minutes, NOTIFICATION_UNITS.MINUTE];
     })();
 
     return {
