@@ -1,4 +1,5 @@
 import isTruthy from '@proton/utils/isTruthy';
+
 import { normalize } from '../../helpers/string';
 import {
     DateTimeValue,
@@ -69,8 +70,8 @@ export const getSupportedAlarm = (
         : !normalizedTrigger.isNegative && triggerDurationInSeconds !== 0;
     const nonSupportedTrigger =
         normalizedTrigger.seconds !== 0 ||
-        normalizedTrigger.minutes > NOTIFICATION_UNITS_MAX[NOTIFICATION_UNITS.MINUTES] ||
-        normalizedTrigger.hours > NOTIFICATION_UNITS_MAX[NOTIFICATION_UNITS.HOURS] ||
+        normalizedTrigger.minutes > NOTIFICATION_UNITS_MAX[NOTIFICATION_UNITS.MINUTE] ||
+        normalizedTrigger.hours > NOTIFICATION_UNITS_MAX[NOTIFICATION_UNITS.HOUR] ||
         normalizedTrigger.days > NOTIFICATION_UNITS_MAX[NOTIFICATION_UNITS.DAY] ||
         normalizedTrigger.weeks > NOTIFICATION_UNITS_MAX[NOTIFICATION_UNITS.WEEK];
 

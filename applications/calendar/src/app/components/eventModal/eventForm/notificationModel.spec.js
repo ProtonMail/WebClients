@@ -1,13 +1,13 @@
-import { fromTriggerString } from '@proton/shared/lib/calendar/vcal';
 import {
-    SETTINGS_NOTIFICATION_TYPE,
     NOTIFICATION_UNITS,
     NOTIFICATION_WHEN,
+    SETTINGS_NOTIFICATION_TYPE,
 } from '@proton/shared/lib/calendar/constants';
 import { triggerToModel } from '@proton/shared/lib/calendar/notificationModel';
+import { fromTriggerString } from '@proton/shared/lib/calendar/vcal';
 
 const { DEVICE } = SETTINGS_NOTIFICATION_TYPE;
-const { WEEK, DAY, HOURS, MINUTES } = NOTIFICATION_UNITS;
+const { WEEK, DAY, HOUR, MINUTE } = NOTIFICATION_UNITS;
 const { AFTER, BEFORE } = NOTIFICATION_WHEN;
 
 describe('properties to model positive trigger', () => {
@@ -21,7 +21,7 @@ describe('properties to model positive trigger', () => {
         ).toEqual({
             isAllDay: false,
             value: 0,
-            unit: MINUTES,
+            unit: MINUTE,
             type: DEVICE,
             when: AFTER,
         });
@@ -37,7 +37,7 @@ describe('properties to model positive trigger', () => {
         ).toEqual({
             isAllDay: false,
             value: 1,
-            unit: MINUTES,
+            unit: MINUTE,
             type: DEVICE,
             when: AFTER,
         });
@@ -123,7 +123,7 @@ describe('properties to model negative trigger', () => {
         ).toEqual({
             isAllDay: false,
             value: 15,
-            unit: HOURS,
+            unit: HOUR,
             type: DEVICE,
             when: BEFORE,
         });
@@ -155,7 +155,7 @@ describe('properties to model negative trigger', () => {
         ).toEqual({
             isAllDay: false,
             value: 39,
-            unit: HOURS,
+            unit: HOUR,
             type: DEVICE,
             when: BEFORE,
         });
@@ -171,7 +171,7 @@ describe('properties to model negative trigger', () => {
         ).toEqual({
             isAllDay: false,
             value: 60,
-            unit: MINUTES,
+            unit: MINUTE,
             type: DEVICE,
             when: BEFORE,
         });
