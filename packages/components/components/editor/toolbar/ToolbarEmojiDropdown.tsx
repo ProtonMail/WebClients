@@ -4,6 +4,7 @@ import data from '@emoji-mart/data';
 import { Picker } from 'emoji-mart';
 import { c } from 'ttag';
 
+import { Icon } from '@proton/components/components';
 import { DARK_THEMES } from '@proton/shared/lib/themes/themes';
 
 import { useTheme } from '../../../containers/themes';
@@ -64,7 +65,7 @@ const ToolbarEmojiDropdown = ({ onInsert, openRef }: Props) => {
         <ToolbarDropdown
             ref={dropdownRef}
             noMaxSize
-            content={'🙂'}
+            content={<Icon name="emoji" alt={c('Action').t`Emoji`} />}
             className="flex-item-noshrink"
             title={c('Action').t`Emoji`}
             autoClose={false}
