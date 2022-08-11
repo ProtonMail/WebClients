@@ -1,5 +1,7 @@
 import { ReactNode } from 'react';
+
 import { c } from 'ttag';
+
 import FormModal from './FormModal';
 
 export interface ConfirmModalProps {
@@ -19,6 +21,9 @@ export interface ConfirmModalProps {
     closeProps?: any;
 }
 
+/**
+ * @deprecated please use `AlertModal` instead
+ */
 const Confirm = ({
     onClose,
     onConfirm,
