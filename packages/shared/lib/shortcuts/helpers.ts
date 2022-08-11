@@ -1,12 +1,20 @@
+import { isDialogOpen, isDropdownOpen, isEditing, isModalOpen } from '../busy';
 import { isMac } from '../helpers/browser';
 import { KeyboardKeyType } from '../interfaces';
 
-const HTML_TAGS_TO_IGNORE = ['input', 'select', 'textarea'];
+const HTML_TAGS_TO_IGNORE = ['input', 'select', 'textarea', 'button', 'a'];
 
-export const isTargetEditable = (e: KeyboardEvent) => {
+export const isBusy = (e: KeyboardEvent) => {
     const { tagName, isContentEditable } = e.target as HTMLElement;
 
-    return HTML_TAGS_TO_IGNORE.includes(tagName.toLowerCase()) || isContentEditable;
+    return (
+        HTML_TAGS_TO_IGNORE.includes(tagName.toLowerCase()) ||
+        isContentEditable ||
+        isDialogOpen() ||
+        isModalOpen() ||
+        isDropdownOpen() ||
+        isEditing()
+    );
 };
 
 export const isValidShortcut = (shortcut: KeyboardKeyType[], event: KeyboardEvent): boolean => {
