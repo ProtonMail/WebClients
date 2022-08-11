@@ -127,6 +127,10 @@ const getExpireOnTime = (expirationDate: number, dateString: string, formattedTi
 };
 
 export const useExpiration = (message: MessageState) => {
+    // The draft expires in is not a time stamp, it's the number of seconds until the expiration
+    // So if we need to display correctly the time remaining, we need to calculate this value once
+    const [draftExpirationDate, setDraftExpirationDate] = useState<Date>();
+
     const draftExpirationTime = message.draftFlags?.expiresIn
         ? addSeconds(new Date(), message.draftFlags?.expiresIn).getTime() / 1000
         : 0;
@@ -181,8 +185,14 @@ export const useExpiration = (message: MessageState) => {
             return;
         }
         if (draftExpirationTime > 0) {
-            const draftExpirationDate = fromUnixTime(draftExpirationTime);
-            setExpirationMessages(nowDate, draftExpirationDate);
+            // If the draft expiration is not calculated yet, we can calculate it, and we will see the correct Delay value on the UI.
+            // Because draftFlags contains the number of seconds until the message expire, we cannot recalculate this each seconds.
+            // Otherwise, we would try to calculate the remaining time based on now date, which would always give us the same result.
+            if (!draftExpirationDate) {
+                setDraftExpirationDate(fromUnixTime(draftExpirationTime));
+            } else {
+                setExpirationMessages(nowDate, draftExpirationDate);
+            }
         } else {
             setExpirationMessages(nowDate, expirationDate);
         }
