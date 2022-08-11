@@ -104,10 +104,35 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
         () => getInitialState(labels, getElementsFromIDs(selectedIDs)),
         [selectedIDs, labels, labelID]
     );
+
     const [selectedLabelIDs, setSelectedLabelIDs] = useState<SelectionState>(initialState);
+
+    const changes = useMemo(() => {
+        const elements = getElementsFromIDs(selectedIDs);
+        const initialState = getInitialState(labels, elements);
+        return Object.keys(selectedLabelIDs).reduce((acc, LabelID) => {
+            if (selectedLabelIDs[LabelID] === LabelState.On && initialState[LabelID] !== LabelState.On) {
+                acc[LabelID] = true;
+            }
+            if (selectedLabelIDs[LabelID] === LabelState.Off && initialState[LabelID] !== LabelState.Off) {
+                acc[LabelID] = false;
+            }
+            return acc;
+        }, {} as { [labelID: string]: boolean });
+    }, [selectedIDs, initialState, selectedLabelIDs]);
+
     const alwaysDisabled = useMemo(() => {
-        return !getSendersToFilter(getElementsFromIDs(selectedIDs)).length;
-    }, [getSendersToFilter, selectedIDs]);
+        return (
+            !getSendersToFilter(getElementsFromIDs(selectedIDs)).length ||
+            Object.values(changes).every((value) => !value)
+        );
+    }, [getSendersToFilter, selectedIDs, changes]);
+
+    useEffect(() => {
+        if (alwaysDisabled && always) {
+            setAlways(false);
+        }
+    }, [alwaysDisabled, always]);
 
     useEffect(() => onLock(!containFocus), [containFocus]);
 
@@ -138,23 +163,13 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
         return normName.includes(normSearch);
     });
 
-    const handleApply = async (selection = selectedLabelIDs) => {
-        const areSameLabels = isDeepEqual(initialState, selection);
+    const handleApply = async () => {
+        const elements = getElementsFromIDs(selectedIDs);
+        const areSameLabels = isDeepEqual(initialState, selectedLabelIDs);
 
         const promises = [];
-        const elements = getElementsFromIDs(selectedIDs);
 
         if (!areSameLabels) {
-            const initialState = getInitialState(labels, elements);
-            const changes = Object.keys(selection).reduce((acc, LabelID) => {
-                if (selection[LabelID] === LabelState.On && initialState[LabelID] !== LabelState.On) {
-                    acc[LabelID] = true;
-                }
-                if (selection[LabelID] === LabelState.Off && initialState[LabelID] !== LabelState.Off) {
-                    acc[LabelID] = false;
-                }
-                return acc;
-            }, {} as { [labelID: string]: boolean });
             promises.push(applyLabels(elements, changes, always));
         }
 
