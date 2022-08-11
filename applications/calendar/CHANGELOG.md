@@ -1,3 +1,11 @@
+## Release: 5.0.4 — August 24, 2022
+
+### Improvements
+
+-   Reorganisation of the calendar settings
+-   Improve the performance and security of crypto operations
+-   Use account primary time zone when importing events without time zone (floating time)
+
 ## Release: 5.0.3 — July 20, 2022
 
 ### New features
