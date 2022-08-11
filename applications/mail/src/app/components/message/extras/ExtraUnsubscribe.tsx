@@ -1,7 +1,9 @@
 import { c } from 'ttag';
 
 import {
+    AlertModal,
     Button,
+    FeatureCode,
     Field,
     Href,
     Icon,
@@ -17,11 +19,13 @@ import {
     useAddresses,
     useApi,
     useEventManager,
+    useFeature,
     useLoading,
     useModalState,
     useNotifications,
 } from '@proton/components';
 import { markAsUnsubscribed, oneClickUnsubscribe } from '@proton/shared/lib/api/messages';
+import { TelemetrySimpleLoginEvents } from '@proton/shared/lib/api/telemetry';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { openNewTab } from '@proton/shared/lib/helpers/browser';
 import { canonizeInternalEmail } from '@proton/shared/lib/helpers/email';
@@ -35,18 +39,27 @@ import { useSendMessage } from '../../../hooks/composer/useSendMessage';
 import { useSendVerifications } from '../../../hooks/composer/useSendVerifications';
 import { useGetMessage } from '../../../hooks/message/useMessage';
 import { useSaveDraft } from '../../../hooks/message/useSaveDraft';
+import { useSimpleLoginExtension } from '../../../hooks/simpleLogin/useSimpleLoginExtension';
+import { useSimpleLoginTelemetry } from '../../../hooks/simpleLogin/useSimpleLoginTelemetry';
 import { MessageState, MessageStateWithData, PartialMessageState } from '../../../logic/messages/messagesTypes';
+import SimpleLoginModal from '../../simpleLogin/SimpleLoginModal';
 
 interface Props {
     message: MessageState;
 }
 
 const ExtraUnsubscribe = ({ message }: Props) => {
+    const { feature: simpleLoginIntegrationFeature, loading: loadingSimpleLoadingFeature } = useFeature(
+        FeatureCode.SLIntegration
+    );
+    const { handleSendTelemetryData } = useSimpleLoginTelemetry();
+
     const { createNotification } = useNotifications();
     const api = useApi();
     const { call } = useEventManager();
     const [addresses] = useAddresses();
     const { extendedVerifications: sendVerification } = useSendVerifications();
+    const { hasSimpleLogin } = useSimpleLoginExtension();
     const saveDraft = useSaveDraft();
     const getMessage = useGetMessage();
     const sendMessage = useSendMessage();
@@ -56,7 +69,11 @@ const ExtraUnsubscribe = ({ message }: Props) => {
     const address = addresses.find(({ Email }) => canonizeInternalEmail(Email) === canonizeInternalEmail(toAddress));
     const unsubscribeMethods = message?.data?.UnsubscribeMethods || {};
 
+    const needsSimpleLoginPresentation = simpleLoginIntegrationFeature?.Value && !hasSimpleLogin;
+
     const [unsubscribeModalProps, setUnsubscribeModalOpen] = useModalState();
+    const [unsubscribedModalProps, setUnsubscribedModalOpen] = useModalState();
+    const [simpleLoginModalProps, setSimpleLoginModalOpen, renderSimpleLoginModal] = useModalState();
 
     if (!Object.keys(unsubscribeMethods).length || !address) {
         return null;
@@ -188,11 +205,46 @@ const ExtraUnsubscribe = ({ message }: Props) => {
         }
 
         unsubscribeModalProps.onClose();
+        if (needsSimpleLoginPresentation) {
+            // We need to send a telemetry request when the user sees the SL unsubscribe modal
+            handleSendTelemetryData(TelemetrySimpleLoginEvents.newsletter_unsubscribe);
+
+            setUnsubscribedModalOpen(true);
+        }
         await submit();
         await api(markAsUnsubscribed([messageID]));
         await call();
         createNotification({ text: c('Success').t`Mail list unsubscribed` });
     };
+
+    const handleSimpleLoginModalOpen = () => {
+        // We need to send a telemetry request when the user clicks on the hide my email button
+        handleSendTelemetryData(TelemetrySimpleLoginEvents.simplelogin_modal_view, {}, true);
+        unsubscribedModalProps.onClose();
+        setSimpleLoginModalOpen(true);
+    };
+
+    if (loadingSimpleLoadingFeature) {
+        return null;
+    }
+
+    const maskMyEmailButton = (
+        <Button
+            key="mask-my-email-button"
+            className="ml0-25"
+            color="norm"
+            shape="underline"
+            onClick={handleSimpleLoginModalOpen}
+        >{c('Action').t`Hide My Email`}</Button>
+    );
+
+    /*
+     * translator:
+     * ${maskMyEmailButton} link to open the Hide My Email modal
+     * Full sentence for reference: "Protect your email from being leaked to mailing lists or spammers with Hide My Email."
+     */
+    const unsubscribeSLtext = c('Info')
+        .jt`Protect your email from being leaked to mailing lists or spammers with ${maskMyEmailButton}.`;
 
     return (
         <div className="bg-norm rounded border pl0-5 pr0-25 on-mobile-pr0-5 on-mobile-pb0-5 py0-25 mb0-85 flex flex-nowrap on-mobile-flex-column">
@@ -235,6 +287,16 @@ const ExtraUnsubscribe = ({ message }: Props) => {
                     >{c('Action').t`Unsubscribe`}</PrimaryButton>
                 </ModalTwoFooter>
             </ModalTwo>
+
+            <AlertModal
+                title={c('Title').t`Unsubscribe request sent`}
+                buttons={[<Button onClick={unsubscribedModalProps.onClose}>{c('Action').t`Close`}</Button>]}
+                {...unsubscribedModalProps}
+            >
+                <span>{unsubscribeSLtext}</span>
+            </AlertModal>
+
+            {renderSimpleLoginModal && <SimpleLoginModal {...simpleLoginModalProps} />}
         </div>
     );
 };

@@ -62,10 +62,9 @@ const getTrackers = (message: MessageState) => {
 
 interface Props {
     message: MessageState;
-    isDetails?: boolean;
 }
 
-export const useMessageTrackers = ({ message, isDetails = false }: Props) => {
+export const useMessageTrackers = ({ message }: Props) => {
     const [mailSettings] = useMailSettings();
     const [title, setTitle] = useState<string>('');
     const [modalText, setModalText] = useState<string>('');
@@ -117,7 +116,7 @@ export const useMessageTrackers = ({ message, isDetails = false }: Props) => {
             setTitle(nextTitle);
             setModalText(nextModalText);
         }
-    }, [numberOfTrackers, needsMoreProtection, hasProtection, isDetails, hasFailLoadSomeImgThroughProxy]);
+    }, [numberOfTrackers, needsMoreProtection, hasProtection, hasFailLoadSomeImgThroughProxy]);
 
     return { hasProtection, hasShowImage, numberOfTrackers, needsMoreProtection, title, modalText, trackers };
 };

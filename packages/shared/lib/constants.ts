@@ -892,3 +892,15 @@ export enum METRICS_LOG {
     ENCRYPTED_SEARCH = 'encrypted_search',
     DARK_STYLES = 'dark_styles',
 }
+
+/** SimpleLogin constants **/
+// SimpleLogin tags used to communicate with the web extension
+export enum SIMPLE_LOGIN_TAGS {
+    EXTENSION_INSTALLED_QUERY = 'EXTENSION_INSTALLED_QUERY',
+    EXTENSION_INSTALLED_RESPONSE = 'EXTENSION_INSTALLED_RESPONSE',
+}
+
+export enum SIMPLE_LOGIN_EXTENSION_LINKS {
+    MAIN_PAGE = 'https://simplelogin.io',
+    DASHBOARD = 'https://app.simplelogin.io/dashboard/',
+}
