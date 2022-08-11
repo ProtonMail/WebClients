@@ -40,32 +40,11 @@ const textInputSelectors = ['email', 'number', 'password', 'search', 'tel', 'tex
 
 const allTextInputsSelector = `input:not([type]), textarea, ${textInputSelectors.join(',')}`;
 
-const domIsBusy = () => {
-    /*
-     * These verifications perform some dom querying operations so in
-     * order to not unnecessarily waste performance we return early
-     * should any of the conditions fail before evaluationg all of them
-     */
-    if (document.querySelector(`.${dialogRootClassName}`) !== null) {
-        return true;
-    }
+export const isDialogOpen = () => document.querySelector(`.${dialogRootClassName}, [role="dialog"]`) !== null;
+export const isModalOpen = () => document.querySelector(`.${modalTwoRootClassName}`) !== null;
+export const isDropdownOpen = () => document.querySelector(`.${dropdownRootClassName}`) !== null;
 
-    if (document.querySelector(`.${modalTwoRootClassName}`) !== null) {
-        return true;
-    }
-
-    if (document.querySelector(`.${dropdownRootClassName}`) !== null) {
-        return true;
-    }
-
-    const allInputs = document.querySelectorAll<HTMLInputElement>(allTextInputsSelector);
-
-    const allTextInputsAreEmpty = Array.from(allInputs).every((element) => !element.value);
-
-    if (!allTextInputsAreEmpty) {
-        return true;
-    }
-
+export const isEditing = () => {
     const { activeElement } = document;
 
     if (activeElement === null) {
@@ -81,6 +60,35 @@ const domIsBusy = () => {
     }
 
     return false;
+};
+
+const domIsBusy = () => {
+    /*
+     * These verifications perform some dom querying operations so in
+     * order to not unnecessarily waste performance we return early
+     * should any of the conditions fail before evaluationg all of them
+     */
+    if (isDialogOpen()) {
+        return true;
+    }
+
+    if (isModalOpen()) {
+        return true;
+    }
+
+    if (isDropdownOpen()) {
+        return true;
+    }
+
+    const allInputs = document.querySelectorAll<HTMLInputElement>(allTextInputsSelector);
+
+    const allTextInputsAreEmpty = Array.from(allInputs).every((element) => !element.value);
+
+    if (!allTextInputsAreEmpty) {
+        return true;
+    }
+
+    return isEditing();
 };
 
 const THIRTY_MINUTES = 30 * 60 * 1000;
