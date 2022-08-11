@@ -45,7 +45,7 @@ const CalendarDeleteSection = ({ personalActiveCalendars, calendar, defaultCalen
         : c('Delete calendar section description').t`All events in this calendar will be deleted.`;
 
     const firstRemainingCalendarName = firstRemainingCalendar ? (
-        <span className="text-strong" key="calendar-name">
+        <span className="text-strong text-break" key="calendar-name">
             {firstRemainingCalendar.Name}
         </span>
     ) : null;
