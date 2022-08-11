@@ -235,7 +235,7 @@ const marginsRightAligned = [
     },
 ];
 
-const marginsCentered = [
+const marginsCenterHorizontally = [
     {
         id: 'm',
         checked: false,
@@ -265,6 +265,44 @@ const marginsCentered = [
         id: 'mx',
         checked: true,
         value: 'center',
+    },
+    {
+        id: 'my',
+        checked: false,
+        value: '0',
+    },
+];
+
+const marginsCentered = [
+    {
+        id: 'm',
+        checked: true,
+        value: 'auto',
+    },
+    {
+        id: 'mt',
+        checked: false,
+        value: '0',
+    },
+    {
+        id: 'mr',
+        checked: false,
+        value: '0',
+    },
+    {
+        id: 'mb',
+        checked: false,
+        value: '0',
+    },
+    {
+        id: 'ml',
+        checked: false,
+        value: '0',
+    },
+    {
+        id: 'mx',
+        checked: false,
+        value: '0',
     },
     {
         id: 'my',
@@ -340,7 +378,9 @@ export const Sandbox = () => {
     };
 
     const containerClasses = (classes: string | string[]) => {
-        if (classes.includes('auto') || classes.includes('center')) {
+        if (classes === 'mauto') {
+            return 'h100';
+        } else if (classes.includes('auto') || classes.includes('center')) {
             return '';
         } else {
             return 'absolute';
@@ -387,9 +427,10 @@ export const Sandbox = () => {
                     ))}
                 </div>
                 <div className="border rounded w60 relative">
+                    {containerClasses}
                     <div
                         className={`${containerClasses(assembleClasses(selectedMargin))} bg-strong rounded-sm`}
-                        style={{ display: 'flow-root' }}
+                        style={{ display: assembleClasses(selectedMargin).includes('mauto') ? 'flex' : 'flow-root' }}
                     >
                         <div
                             className={`${assembleClasses(selectedMargin)} ${demoItemClasses} bg-primary`}
@@ -402,7 +443,10 @@ export const Sandbox = () => {
             <strong>Try these presets: </strong>
             <ButtonGroup color="weak" shape="outline" size="small">
                 <Button onClick={() => setSelectedMargin(marginsRightAligned)}>align element to the right</Button>
-                <Button onClick={() => setSelectedMargin(marginsCentered)}>center element horizontally</Button>
+                <Button onClick={() => setSelectedMargin(marginsCenterHorizontally)}>
+                    center element horizontally
+                </Button>
+                <Button onClick={() => setSelectedMargin(marginsCentered)}>center element in flex container</Button>
             </ButtonGroup>
 
             <div className="block mt2">
