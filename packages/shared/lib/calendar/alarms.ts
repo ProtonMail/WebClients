@@ -87,23 +87,29 @@ export const sortNotificationsByAscendingTrigger = (notifications: NotificationM
         const triggerA = getValarmTrigger(a);
         const triggerB = getValarmTrigger(b);
         const triggerAMinutes =
-            normalizeDurationToUnit(triggerA, NOTIFICATION_UNITS.MINUTES) * (triggerA.isNegative ? -1 : 1);
+            normalizeDurationToUnit(triggerA, NOTIFICATION_UNITS.MINUTE) * (triggerA.isNegative ? -1 : 1);
         const triggerBMinutes =
-            normalizeDurationToUnit(triggerB, NOTIFICATION_UNITS.MINUTES) * (triggerB.isNegative ? -1 : 1);
+            normalizeDurationToUnit(triggerB, NOTIFICATION_UNITS.MINUTE) * (triggerB.isNegative ? -1 : 1);
 
         return triggerAMinutes - triggerBMinutes;
     });
+
+const sortNotificationsByAscendingValue = (a: NotificationModel, b: NotificationModel) =>
+    (a.value || 0) - (b.value || 0);
 
 const uniqueNotificationComparator = (notification: NotificationModel) => {
     const trigger = getValarmTrigger(notification);
 
     return `${notification.type}-${
-        normalizeDurationToUnit(trigger, NOTIFICATION_UNITS.MINUTES) * (trigger.isNegative ? -1 : 1)
+        normalizeDurationToUnit(trigger, NOTIFICATION_UNITS.MINUTE) * (trigger.isNegative ? -1 : 1)
     }`;
 };
 
-export const dedupeNotifications = (notifications: NotificationModel[]) =>
-    uniqueBy(notifications, uniqueNotificationComparator);
+export const dedupeNotifications = (notifications: NotificationModel[]) => {
+    const sortedNotifications = [...notifications].sort(sortNotificationsByAscendingValue);
+
+    return uniqueBy(sortedNotifications, uniqueNotificationComparator);
+};
 
 const getSmallestNonZeroNumericValueFromDurationValue = (object: VcalDurationValue) =>
     Math.min(...Object.values(omit(object, ['isNegative'])).filter(Boolean));
@@ -120,7 +126,7 @@ const uniqueAlarmComparator = (alarm: VcalValarmRelativeComponent) => {
     const isTriggerNegative = 'isNegative' in triggerValue && triggerValue.isNegative;
 
     return `${alarm.action.value}-${
-        normalizeDurationToUnit(triggerValue, NOTIFICATION_UNITS.MINUTES) * (isTriggerNegative ? -1 : 1)
+        normalizeDurationToUnit(triggerValue, NOTIFICATION_UNITS.MINUTE) * (isTriggerNegative ? -1 : 1)
     }`;
 };
 
