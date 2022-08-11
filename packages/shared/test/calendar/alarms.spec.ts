@@ -1,27 +1,27 @@
-import { differenceInMinutes, differenceInHours, differenceInDays, differenceInWeeks } from 'date-fns';
+import { differenceInDays, differenceInHours, differenceInMinutes, differenceInWeeks } from 'date-fns';
 import { enUS } from 'date-fns/locale';
-import { normalizeTrigger } from '../../lib/calendar/trigger';
-import { convertZonedDateTimeToUTC, convertUTCDateTimeToZone, toUTCDate } from '../../lib/date/timezone';
-import { pick } from '../../lib/helpers/object';
-import { SETTINGS_NOTIFICATION_TYPE, NOTIFICATION_UNITS, NOTIFICATION_WHEN } from '../../lib/calendar/constants';
-import { MINUTE, HOUR, DAY, WEEK } from '../../lib/constants';
-import { propertyToUTCDate } from '../../lib/calendar/vcalConverter';
+
 import {
+    dedupeAlarmsWithNormalizedTriggers,
+    dedupeNotifications,
+    filterFutureNotifications,
+    getAlarmMessage,
+    sortNotificationsByAscendingTrigger,
+} from '../../lib/calendar/alarms';
+import { NOTIFICATION_UNITS, NOTIFICATION_WHEN, SETTINGS_NOTIFICATION_TYPE } from '../../lib/calendar/constants';
+import { normalizeTrigger } from '../../lib/calendar/trigger';
+import { propertyToUTCDate } from '../../lib/calendar/vcalConverter';
+import { DAY, HOUR, MINUTE, WEEK } from '../../lib/constants';
+import { convertUTCDateTimeToZone, convertZonedDateTimeToUTC, toUTCDate } from '../../lib/date/timezone';
+import { pick } from '../../lib/helpers/object';
+import {
+    DateTime,
+    NotificationModel,
     VcalDateProperty,
     VcalTriggerProperty,
     VcalValarmRelativeComponent,
     VcalVeventComponent,
-    NotificationModel,
-    DateTime,
 } from '../../lib/interfaces/calendar';
-
-import {
-    filterFutureNotifications,
-    getAlarmMessage,
-    dedupeNotifications,
-    dedupeAlarmsWithNormalizedTriggers,
-    sortNotificationsByAscendingTrigger,
-} from '../../lib/calendar/alarms';
 
 const formatOptions = { locale: enUS };
 const tzidEurope = 'Europe/Zurich';
@@ -262,7 +262,7 @@ describe('filterFutureNotifications', () => {
         const atSameTimeNotifications = [
             {
                 id: '1',
-                unit: NOTIFICATION_UNITS.MINUTES,
+                unit: NOTIFICATION_UNITS.MINUTE,
                 type: SETTINGS_NOTIFICATION_TYPE.EMAIL,
                 when: NOTIFICATION_WHEN.AFTER,
                 value: 0,
@@ -296,7 +296,7 @@ describe('filterFutureNotifications', () => {
         const beforeNotifications = [
             {
                 id: '1',
-                unit: NOTIFICATION_UNITS.MINUTES,
+                unit: NOTIFICATION_UNITS.MINUTE,
                 type: SETTINGS_NOTIFICATION_TYPE.DEVICE,
                 when: NOTIFICATION_WHEN.BEFORE,
                 value: 1,
@@ -322,14 +322,14 @@ describe('filterFutureNotifications', () => {
         const afterNotifications = [
             {
                 id: '1',
-                unit: NOTIFICATION_UNITS.MINUTES,
+                unit: NOTIFICATION_UNITS.MINUTE,
                 type: SETTINGS_NOTIFICATION_TYPE.DEVICE,
                 when: NOTIFICATION_WHEN.AFTER,
                 isAllDay,
             },
             {
                 id: '1',
-                unit: NOTIFICATION_UNITS.MINUTES,
+                unit: NOTIFICATION_UNITS.MINUTE,
                 type: SETTINGS_NOTIFICATION_TYPE.DEVICE,
                 when: NOTIFICATION_WHEN.AFTER,
                 value: 1,
@@ -602,37 +602,37 @@ describe('normalizeTrigger', () => {
     });
 });
 
-describe('dedupeNotifications()', () => {
-    it('dedupes notifications', () => {
+describe('dedupeNotifications', () => {
+    it('de-duplicates alarms as expected', () => {
         const notifications = [
             {
                 id: 'one',
-                unit: 1,
-                type: 1,
+                unit: NOTIFICATION_UNITS.WEEK,
+                type: SETTINGS_NOTIFICATION_TYPE.DEVICE,
                 when: NOTIFICATION_WHEN.BEFORE,
                 value: 1,
                 isAllDay: false,
             },
             {
                 id: 'two',
-                unit: 2,
-                type: 1,
+                unit: NOTIFICATION_UNITS.DAY,
+                type: SETTINGS_NOTIFICATION_TYPE.DEVICE,
                 when: NOTIFICATION_WHEN.BEFORE,
                 value: 7,
                 isAllDay: false,
             },
             {
                 id: 'three',
-                unit: 3,
-                type: 1,
+                unit: NOTIFICATION_UNITS.HOUR,
+                type: SETTINGS_NOTIFICATION_TYPE.DEVICE,
                 when: NOTIFICATION_WHEN.BEFORE,
                 value: 168,
                 isAllDay: false,
             },
             {
                 id: 'four',
-                unit: 1,
-                type: 1,
+                unit: NOTIFICATION_UNITS.WEEK,
+                type: SETTINGS_NOTIFICATION_TYPE.DEVICE,
                 when: NOTIFICATION_WHEN.BEFORE,
                 value: 1,
                 isAllDay: true,
@@ -640,8 +640,8 @@ describe('dedupeNotifications()', () => {
             },
             {
                 id: 'five',
-                unit: 2,
-                type: 1,
+                unit: NOTIFICATION_UNITS.DAY,
+                type: SETTINGS_NOTIFICATION_TYPE.DEVICE,
                 when: NOTIFICATION_WHEN.BEFORE,
                 value: 7,
                 isAllDay: true,
@@ -649,20 +649,20 @@ describe('dedupeNotifications()', () => {
             },
             {
                 id: 'six',
-                unit: 3,
-                type: 1,
+                unit: NOTIFICATION_UNITS.HOUR,
+                type: SETTINGS_NOTIFICATION_TYPE.DEVICE,
                 when: NOTIFICATION_WHEN.BEFORE,
                 value: 168,
                 isAllDay: true,
                 at: new Date(2000, 1, 1),
             },
-        ] as NotificationModel[];
+        ];
 
         expect(dedupeNotifications(notifications)).toEqual([
             {
                 id: 'one',
-                unit: 1,
-                type: 1,
+                unit: NOTIFICATION_UNITS.WEEK,
+                type: SETTINGS_NOTIFICATION_TYPE.DEVICE,
                 when: NOTIFICATION_WHEN.BEFORE,
                 value: 1,
                 isAllDay: false,
@@ -671,10 +671,66 @@ describe('dedupeNotifications()', () => {
                 id: 'six',
                 at: new Date(2000, 1, 1),
                 isAllDay: true,
-                type: 1,
-                unit: 3,
+                type: SETTINGS_NOTIFICATION_TYPE.DEVICE,
+                unit: NOTIFICATION_UNITS.HOUR,
                 value: 168,
                 when: NOTIFICATION_WHEN.BEFORE,
+            },
+        ]);
+    });
+
+    it('sorts when deduping', () => {
+        const notifications = [
+            {
+                id: '14-days',
+                unit: NOTIFICATION_UNITS.DAY,
+                type: SETTINGS_NOTIFICATION_TYPE.DEVICE,
+                when: NOTIFICATION_WHEN.BEFORE,
+                value: 14,
+                isAllDay: false,
+            },
+            {
+                id: '24-hours',
+                unit: NOTIFICATION_UNITS.HOUR,
+                type: SETTINGS_NOTIFICATION_TYPE.DEVICE,
+                when: NOTIFICATION_WHEN.BEFORE,
+                value: 24,
+                isAllDay: false,
+            },
+            {
+                id: 'two-weeks',
+                unit: NOTIFICATION_UNITS.WEEK,
+                type: SETTINGS_NOTIFICATION_TYPE.DEVICE,
+                when: NOTIFICATION_WHEN.BEFORE,
+                value: 2,
+                isAllDay: false,
+            },
+            {
+                id: '1-day',
+                unit: NOTIFICATION_UNITS.DAY,
+                type: SETTINGS_NOTIFICATION_TYPE.DEVICE,
+                when: NOTIFICATION_WHEN.BEFORE,
+                value: 1,
+                isAllDay: false,
+            },
+        ];
+
+        expect(dedupeNotifications(notifications)).toEqual([
+            {
+                id: '1-day',
+                unit: NOTIFICATION_UNITS.DAY,
+                type: SETTINGS_NOTIFICATION_TYPE.DEVICE,
+                when: NOTIFICATION_WHEN.BEFORE,
+                value: 1,
+                isAllDay: false,
+            },
+            {
+                id: 'two-weeks',
+                unit: NOTIFICATION_UNITS.WEEK,
+                type: SETTINGS_NOTIFICATION_TYPE.DEVICE,
+                when: NOTIFICATION_WHEN.BEFORE,
+                value: 2,
+                isAllDay: false,
             },
         ]);
     });
@@ -869,28 +925,28 @@ describe('dedupeAlarmsWithNormalizedTriggers()', () => {
 describe('sortNotificationsByAscendingTrigger()', () => {
     it('sorts case 1 correctly', () => {
         const a = {
-            unit: NOTIFICATION_UNITS.MINUTES,
+            unit: NOTIFICATION_UNITS.MINUTE,
             type: SETTINGS_NOTIFICATION_TYPE.DEVICE,
             when: NOTIFICATION_WHEN.AFTER,
             value: 0,
             isAllDay: false,
         };
         const b = {
-            unit: NOTIFICATION_UNITS.HOURS,
+            unit: NOTIFICATION_UNITS.HOUR,
             type: SETTINGS_NOTIFICATION_TYPE.DEVICE,
             when: NOTIFICATION_WHEN.BEFORE,
             value: 1,
             isAllDay: false,
         };
         const c = {
-            unit: NOTIFICATION_UNITS.HOURS,
+            unit: NOTIFICATION_UNITS.HOUR,
             type: SETTINGS_NOTIFICATION_TYPE.DEVICE,
             when: NOTIFICATION_WHEN.BEFORE,
             value: 1,
             isAllDay: false,
         };
         const d = {
-            unit: NOTIFICATION_UNITS.MINUTES,
+            unit: NOTIFICATION_UNITS.MINUTE,
             type: SETTINGS_NOTIFICATION_TYPE.DEVICE,
             when: NOTIFICATION_WHEN.BEFORE,
             value: 60,
