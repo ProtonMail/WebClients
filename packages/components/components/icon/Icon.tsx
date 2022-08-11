@@ -1,4 +1,5 @@
 import { forwardRef } from 'react';
+
 import { isFirefoxLessThan55 } from '@proton/shared/lib/helpers/browser';
 
 import { classnames } from '../../helpers';
@@ -126,6 +127,7 @@ export type IconName =
     | 'cross-small'
     | 'drive'
     | 'earth'
+    | 'emoji'
     | 'envelope'
     | 'envelope-arrow-up-and-right'
     | 'envelope-cross'
