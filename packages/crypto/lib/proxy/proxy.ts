@@ -66,6 +66,24 @@ async function verifyMessageWithFallback<
             });
             return fallbackverificationResult;
         }
+
+        // detect whether the message has trailing spaces followed by a mix of \r\n and \n line endings
+        const legacyRemoveTrailingSpaces = (text: string) => {
+            return text
+                .split('\n')
+                .map((line) => {
+                    let i = line.length - 1;
+                    for (; i >= 0 && (line[i] === ' ' || line[i] === '\t'); i--) {}
+                    return line.substr(0, i + 1);
+                })
+                .join('\n');
+        };
+
+        if (textData !== legacyRemoveTrailingSpaces(textData)) {
+            captureMessage('Fallback verification insufficient', {
+                level: 'info',
+            });
+        }
     }
 
     return verificationResult;
