@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 
 import { useAuthentication } from '@proton/components';
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
-import { isAttachPublicKey } from '@proton/shared/lib/mail/messages';
+import { isAttachPublicKey, isPlainText } from '@proton/shared/lib/mail/messages';
 
 import { ATTACHMENT_ACTION, upload } from '../../helpers/attachment/attachmentUploader';
 import { attachPublicKey } from '../../helpers/message/messageAttachPublicKey';
@@ -29,6 +29,7 @@ export const useSendModifications = () => {
         const messageKeys = await getMessageKeys(message.data);
         const attachments: Attachment[] = [];
         const images: MessageEmbeddedImage[] = [];
+        const isPlainTextMessage = isPlainText(message.data);
 
         // Add public key if selected
         if (isAttachPublicKey(message.data)) {
@@ -42,10 +43,19 @@ export const useSendModifications = () => {
         const replacedImages = replaceDataUrl(message);
         if (replacedImages.length) {
             for (const { cid, file } of replacedImages) {
-                const [uploadInfo] = upload([file], message, messageKeys, ATTACHMENT_ACTION.INLINE, auth.UID, cid);
+                const [uploadInfo] = upload(
+                    [file],
+                    message,
+                    messageKeys,
+                    isPlainTextMessage ? ATTACHMENT_ACTION.ATTACHMENT : ATTACHMENT_ACTION.INLINE,
+                    auth.UID,
+                    cid
+                );
                 const uploadResult = await uploadInfo.resultPromise;
                 attachments.push(uploadResult.attachment);
-                images.push(createEmbeddedImageFromUpload(uploadResult.attachment));
+                if (!isPlainTextMessage) {
+                    images.push(createEmbeddedImageFromUpload(uploadResult.attachment));
+                }
             }
         }
 
