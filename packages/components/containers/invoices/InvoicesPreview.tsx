@@ -1,4 +1,4 @@
-import { useImperativeHandle, forwardRef, Ref, useState, useRef } from 'react';
+import { Ref, forwardRef, useImperativeHandle, useRef, useState } from 'react';
 
 import { getInvoice } from '@proton/shared/lib/api/payments';
 

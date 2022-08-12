@@ -1,18 +1,21 @@
-import { useState, Dispatch, SetStateAction, FormEvent } from 'react';
+import { Dispatch, FormEvent, SetStateAction, useState } from 'react';
+
 import { c } from 'ttag';
-import { ImportContactsModel, IMPORT_STEPS } from '@proton/shared/lib/interfaces/contacts/Import';
+
+import { ImportFatalError } from '@proton/shared/lib/contacts/errors/ImportFatalError';
+import { toVCardContacts } from '@proton/shared/lib/contacts/helpers/csv';
+import { getHasPreVcardsContacts } from '@proton/shared/lib/contacts/helpers/import';
 import {
     modifyContactField,
     modifyContactType,
     toggleContactChecked,
 } from '@proton/shared/lib/contacts/helpers/importCsv';
-import { toVCardContacts } from '@proton/shared/lib/contacts/helpers/csv';
-import { getHasPreVcardsContacts } from '@proton/shared/lib/contacts/helpers/import';
-import { ImportFatalError } from '@proton/shared/lib/contacts/errors/ImportFatalError';
+import { IMPORT_STEPS, ImportContactsModel } from '@proton/shared/lib/interfaces/contacts/Import';
+
+import { Alert, Button, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, Table } from '../../../../components';
 import { useNotifications } from '../../../../hooks';
-import { Table, Alert, ModalTwoHeader, ModalTwoContent, ModalTwoFooter, Button } from '../../../../components';
-import ContactImportCsvTableHeader from './ContactImportCsvTableHeader';
 import ContactImportCsvTableBody from './ContactImportCsvTableBody';
+import ContactImportCsvTableHeader from './ContactImportCsvTableHeader';
 
 interface Props {
     model: ImportContactsModel;

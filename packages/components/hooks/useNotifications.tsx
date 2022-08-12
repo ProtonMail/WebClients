@@ -1,4 +1,5 @@
 import { useContext } from 'react';
+
 import NotificationsContext from '../containers/notifications/notificationsContext';
 
 const useNotifications = () => {

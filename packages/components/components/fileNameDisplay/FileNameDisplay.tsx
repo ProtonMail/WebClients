@@ -1,5 +1,6 @@
 import { splitExtension } from '@proton/shared/lib/helpers/file';
 import { rtlSanitize } from '@proton/shared/lib/helpers/string';
+
 import { MiddleEllipsis } from '../ellipsis';
 
 const CHARACTERS_BEFORE_EXTENSION = 3;

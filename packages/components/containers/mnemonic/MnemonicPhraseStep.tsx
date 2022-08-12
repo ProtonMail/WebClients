@@ -1,10 +1,10 @@
 import { c } from 'ttag';
 
-import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { Card } from '@proton/atoms';
+import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 
-import { useNotifications } from '../../hooks';
 import { Button, Copy, Icon, Loader } from '../../components';
+import { useNotifications } from '../../hooks';
 
 export const MnemonicPhraseStepContent = ({ mnemonic, loading }: { mnemonic?: string; loading?: boolean }) => {
     const { createNotification } = useNotifications();

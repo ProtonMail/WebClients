@@ -1,9 +1,12 @@
 import { useState } from 'react';
+
 import { c } from 'ttag';
+
 import { AlgorithmInfo } from '@proton/crypto';
-import { getAlgorithmExists } from '@proton/shared/lib/keys';
 import { DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS, ENCRYPTION_TYPES } from '@proton/shared/lib/constants';
 import { EncryptionConfig } from '@proton/shared/lib/interfaces';
+import { getAlgorithmExists } from '@proton/shared/lib/keys';
+
 import {
     Alert,
     Button,
@@ -14,7 +17,6 @@ import {
     ModalTwoFooter,
     ModalTwoHeader,
 } from '../../../components';
-
 import SelectEncryption from './SelectEncryption';
 
 enum STEPS {

@@ -1,6 +1,7 @@
-import { c } from 'ttag';
-import { VerticalSteps, VerticalStep } from '@proton/atoms/VerticalSteps';
 import { addMonths, format } from 'date-fns';
+import { c } from 'ttag';
+
+import { VerticalStep, VerticalSteps } from '@proton/atoms/VerticalSteps';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
 import { Icon } from '../../components';

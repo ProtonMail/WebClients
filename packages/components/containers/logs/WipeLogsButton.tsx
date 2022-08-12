@@ -1,6 +1,7 @@
 import { c } from 'ttag';
+
 import { Alert, Button, ConfirmModal } from '../../components';
-import { useModals, useLoading } from '../../hooks';
+import { useLoading, useModals } from '../../hooks';
 
 interface Props {
     onWipe: () => Promise<void>;

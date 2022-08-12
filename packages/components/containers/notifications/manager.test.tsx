@@ -1,7 +1,8 @@
 import { useState } from 'react';
-import { renderHook, act } from '@testing-library/react-hooks';
-import { NotificationOptions } from './interfaces';
 
+import { act, renderHook } from '@testing-library/react-hooks';
+
+import { NotificationOptions } from './interfaces';
 import createNotificationManager from './manager';
 
 describe('notification manager', () => {

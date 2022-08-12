@@ -1,5 +1,7 @@
-import { forwardRef, MouseEvent, Ref } from 'react';
+import { MouseEvent, Ref, forwardRef } from 'react';
+
 import { c } from 'ttag';
+
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 
 import { Icon } from '../icon';

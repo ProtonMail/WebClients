@@ -1,5 +1,6 @@
 import { c } from 'ttag';
-import { Icon, Alert } from '../../components';
+
+import { Alert, Icon } from '../../components';
 
 const MozillaInfoPanel = () => {
     return (

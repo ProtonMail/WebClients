@@ -1,4 +1,5 @@
 import { ChangeEvent } from 'react';
+
 import { STICKY_LABELS } from '@proton/shared/lib/constants';
 
 import { Toggle } from '../../components';

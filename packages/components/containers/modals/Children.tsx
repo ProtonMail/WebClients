@@ -1,7 +1,8 @@
 import { useContext } from 'react';
-import ModalsContext from './modalsContext';
-import ModalsChildrenContext from './childrenContext';
+
 import ModalsContainer from './Container';
+import ModalsChildrenContext from './childrenContext';
+import ModalsContext from './modalsContext';
 
 const ModalsChildren = () => {
     const manager = useContext(ModalsContext);

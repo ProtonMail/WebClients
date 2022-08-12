@@ -1,8 +1,9 @@
 import { Ref, useEffect, useRef, useState } from 'react';
 
 import { classnames } from '../../helpers';
-import './Scroll.scss';
 import { useCombinedRefs } from '../../hooks';
+
+import './Scroll.scss';
 
 const TOLERANCE = 4;
 

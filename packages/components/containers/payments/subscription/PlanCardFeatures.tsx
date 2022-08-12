@@ -1,11 +1,14 @@
-import { c } from 'ttag';
 import React from 'react';
-import { Audience } from '@proton/shared/lib/interfaces';
+
+import { c } from 'ttag';
+
 import { PLANS } from '@proton/shared/lib/constants';
+import { Audience } from '@proton/shared/lib/interfaces';
+
 import { CalendarLogo, DriveLogo, Icon, Info, MailLogo, VpnLogo } from '../../../components';
+import { classnames } from '../../../helpers';
 import { AllFeatures, getFeatureDefinitions } from '../features';
 import { PlanCardFeatureDefinition, ShortPlan } from '../features/interface';
-import { classnames } from '../../../helpers';
 
 interface FeatureListProps {
     features: PlanCardFeatureDefinition[];

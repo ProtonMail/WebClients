@@ -1,5 +1,4 @@
 import Vr from './Vr';
-
 import mdx from './Vr.mdx';
 
 export default {

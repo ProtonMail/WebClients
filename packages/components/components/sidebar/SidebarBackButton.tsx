@@ -1,7 +1,8 @@
 import { c } from 'ttag';
-import AppLink, { AppLinkProps } from '../link/AppLink';
+
 import { ButtonLike } from '../button';
 import { Icon } from '../icon';
+import AppLink, { AppLinkProps } from '../link/AppLink';
 
 const SidebarBackButton = ({ children, ...rest }: AppLinkProps) => {
     return (

@@ -1,16 +1,18 @@
 import { ChangeEvent, useEffect, useState } from 'react';
+
 import { c } from 'ttag';
-import {
-    importKeysProcess,
-    deleteAddressKey,
-    setPrimaryAddressKey,
-    addAddressKeysProcess,
-    setAddressKeyFlags,
-    OnKeyImportCallback,
-    reactivateKeysProcess,
-} from '@proton/shared/lib/keys';
-import { EncryptionConfig } from '@proton/shared/lib/interfaces';
+
 import { AlgorithmInfo } from '@proton/crypto';
+import { EncryptionConfig } from '@proton/shared/lib/interfaces';
+import {
+    OnKeyImportCallback,
+    addAddressKeysProcess,
+    deleteAddressKey,
+    importKeysProcess,
+    reactivateKeysProcess,
+    setAddressKeyFlags,
+    setPrimaryAddressKey,
+} from '@proton/shared/lib/keys';
 
 import { Button, Loader, useModalState } from '../../components';
 import {
@@ -23,23 +25,21 @@ import {
     useUser,
     useUserKeys,
 } from '../../hooks';
-
-import { SettingsSectionWide, SettingsParagraph } from '../account';
-
+import { SettingsParagraph, SettingsSectionWide } from '../account';
 import AddressKeysHeaderActions from './AddressKeysHeaderActions';
 import KeysTable from './KeysTable';
-import ExportPublicKeyModal from './exportKey/ExportPublicKeyModal';
-import ExportPrivateKeyModal from './exportKey/ExportPrivateKeyModal';
-import DeleteKeyModal from './deleteKey/DeleteKeyModal';
-import useDisplayKeys from './shared/useDisplayKeys';
 import AddKeyModal from './addKey/AddKeyModal';
+import DeleteKeyModal from './deleteKey/DeleteKeyModal';
+import ExportPrivateKeyModal from './exportKey/ExportPrivateKeyModal';
+import ExportPublicKeyModal from './exportKey/ExportPublicKeyModal';
 import ImportKeyModal from './importKeys/ImportKeyModal';
-import { getNewKeyFlags } from './shared/flags';
-import { FlagAction } from './shared/interface';
-import { getKeyByID } from './shared/helper';
 import { ImportKey } from './importKeys/interface';
 import ReactivateKeysModal from './reactivateKeys/ReactivateKeysModal';
 import { getAllKeysReactivationRequests } from './reactivateKeys/getAllKeysToReactive';
+import { getNewKeyFlags } from './shared/flags';
+import { getKeyByID } from './shared/helper';
+import { FlagAction } from './shared/interface';
+import useDisplayKeys from './shared/useDisplayKeys';
 
 const AddressKeysSection = () => {
     const { createModal } = useModals();

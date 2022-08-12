@@ -2,6 +2,7 @@ import { ComponentPropsWithoutRef, useContext } from 'react';
 
 import { classnames } from '../../helpers';
 import { ModalContext } from './Modal';
+
 import './ModalFooter.scss';
 
 const ModalFooter = ({ className: classNameProp, ...rest }: ComponentPropsWithoutRef<'div'>) => {

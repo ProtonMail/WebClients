@@ -1,4 +1,5 @@
 import { c, msgid } from 'ttag';
+
 import { ThemeColorUnion } from '@proton/colors';
 import { Referral, ReferralState } from '@proton/shared/lib/interfaces';
 

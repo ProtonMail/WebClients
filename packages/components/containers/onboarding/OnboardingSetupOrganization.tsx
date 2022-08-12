@@ -1,4 +1,5 @@
 import { c } from 'ttag';
+
 import onboardingOrganization from '@proton/styles/assets/img/onboarding/organization.svg';
 
 import OnboardingContent, { Props as OnboardingContentProps } from './OnboardingContent';

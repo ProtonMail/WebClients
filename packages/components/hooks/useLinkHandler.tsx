@@ -1,17 +1,18 @@
-import { useEffect, RefObject, useState, ReactNode } from 'react';
-import { c } from 'ttag';
-import punycode from 'punycode.js';
+import { ReactNode, RefObject, useEffect, useState } from 'react';
 
+import punycode from 'punycode.js';
+import { c } from 'ttag';
+
+import { PROTON_DOMAINS } from '@proton/shared/lib/constants';
+import { isEdge, isIE11 } from '@proton/shared/lib/helpers/browser';
 import { getSecondLevelDomain } from '@proton/shared/lib/helpers/url';
 import { MailSettings } from '@proton/shared/lib/interfaces';
-import { isIE11, isEdge } from '@proton/shared/lib/helpers/browser';
 import isTruthy from '@proton/utils/isTruthy';
-import { PROTON_DOMAINS } from '@proton/shared/lib/constants';
 
-import { isExternal, isSubDomain, getHostname } from '../helpers/url';
-import { useNotifications, useHandler } from './index';
-import LinkConfirmationModal from '../components/notifications/LinkConfirmationModal';
 import { useModalState } from '../components';
+import LinkConfirmationModal from '../components/notifications/LinkConfirmationModal';
+import { getHostname, isExternal, isSubDomain } from '../helpers/url';
+import { useHandler, useNotifications } from './index';
 
 // Reference : Angular/src/app/utils/directives/linkHandler.js
 

@@ -1,4 +1,5 @@
 import { ChangeEvent } from 'react';
+
 import { c } from 'ttag';
 
 import { MIME_TYPES } from '@proton/shared/lib/constants';

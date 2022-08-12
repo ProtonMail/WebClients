@@ -1,9 +1,9 @@
 import { c } from 'ttag';
 
-import oauthInstructionsWebm from '@proton/styles/assets/videos/easySwitch/oauth-instructions.webm';
-import oauthInstructionsMp4 from '@proton/styles/assets/videos/easySwitch/oauth-instructions.mp4';
-
 import { IAOauthModalModel } from '@proton/shared/lib/interfaces/EasySwitch';
+import oauthInstructionsMp4 from '@proton/styles/assets/videos/easySwitch/oauth-instructions.mp4';
+import oauthInstructionsWebm from '@proton/styles/assets/videos/easySwitch/oauth-instructions.webm';
+
 import { VideoInstructions } from '../../../components';
 
 interface Props {

@@ -1,10 +1,11 @@
 import { c } from 'ttag';
+
 import { EASY_SWITCH_SOURCE, EasySwitchFeatureFlag, ImportType } from '@proton/shared/lib/interfaces/EasySwitch';
 
-import { useAddresses, useFeature, useModals, useUser } from '../../../hooks';
-import { FeatureCode } from '../../features';
 import { GoogleButton, Loader, PrimaryButton } from '../../../components';
+import { useAddresses, useFeature, useModals, useUser } from '../../../hooks';
 import { EasySwitchOauthModal } from '../../easySwitch';
+import { FeatureCode } from '../../features';
 
 interface Props {
     onImport: () => void;

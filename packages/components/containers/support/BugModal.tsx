@@ -1,37 +1,38 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
+
 import { c } from 'ttag';
 
 import { reportBug } from '@proton/shared/lib/api/reports';
 import { APPS, VPN_APP_NAME } from '@proton/shared/lib/constants';
-import noop from '@proton/utils/noop';
-import { omit } from '@proton/shared/lib/helpers/object';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
+import { omit } from '@proton/shared/lib/helpers/object';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import noop from '@proton/utils/noop';
 
-import AttachScreenshot, { Screenshot } from './AttachScreenshot';
-import { getReportInfo, getClientName } from '../../helpers/report';
 import {
     Button,
     Collapsible,
+    CollapsibleContent,
+    CollapsibleHeader,
+    CollapsibleHeaderIconButton,
     Form,
     Href,
+    Icon,
     InputFieldTwo,
-    ModalProps,
     ModalTwo as Modal,
-    ModalTwoHeader as ModalHeader,
     ModalTwoContent as ModalContent,
     ModalTwoFooter as ModalFooter,
+    ModalTwoHeader as ModalHeader,
+    ModalProps,
     Option,
     SelectTwo,
     TextAreaTwo,
     useFormErrors,
-    CollapsibleHeader,
-    CollapsibleContent,
-    CollapsibleHeaderIconButton,
-    Icon,
 } from '../../components';
+import { getClientName, getReportInfo } from '../../helpers/report';
 import { useApi, useConfig, useNotifications } from '../../hooks';
+import AttachScreenshot, { Screenshot } from './AttachScreenshot';
 
 export type BugModalMode = 'chat-unavailable' | 'chat-no-agents';
 

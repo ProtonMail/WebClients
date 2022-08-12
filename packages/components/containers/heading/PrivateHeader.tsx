@@ -1,20 +1,19 @@
 import { ReactNode } from 'react';
-import { APPS, APPS_CONFIGURATION } from '@proton/shared/lib/constants';
-import { c } from 'ttag';
 import { useLocation } from 'react-router-dom';
 
+import { c } from 'ttag';
+
 import { Vr } from '@proton/atoms';
+import { APPS, APPS_CONFIGURATION } from '@proton/shared/lib/constants';
 
 import { AppLink, Hamburger, Icon, SettingsLink } from '../../components';
-import { useConfig, useUser } from '../../hooks';
 import Header, { Props as HeaderProps } from '../../components/header/Header';
-
+import { TopNavbar, TopNavbarList, TopNavbarListItem } from '../../components/topnavbar';
+import TopNavbarListItemButton from '../../components/topnavbar/TopNavbarListItemButton';
+import { useConfig, useUser } from '../../hooks';
 import { AppsDropdown } from '../app';
 import TopNavbarListItemBlackFridayButton from './TopNavbarListItemBlackFridayButton';
 import usePromotionOffer from './usePromotionOffer';
-
-import { TopNavbar, TopNavbarList, TopNavbarListItem } from '../../components/topnavbar';
-import TopNavbarListItemButton from '../../components/topnavbar/TopNavbarListItemButton';
 
 interface Props extends HeaderProps {
     logo?: ReactNode;

@@ -1,6 +1,8 @@
+import { isValid } from 'date-fns';
+
 import { getAllFieldLabels } from '@proton/shared/lib/helpers/contacts';
 import { VCardDateOrText, VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
-import { isValid } from 'date-fns';
+
 import { DateInput } from '../../../../components';
 
 interface Props {

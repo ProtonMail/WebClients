@@ -2,14 +2,14 @@ import { ReactNode } from 'react';
 
 import BadAppVersionBanner from './BadAppVersionBanner';
 import DelinquentTopBanner from './DelinquentTopBanner';
-import StorageLimitTopBanner from './StorageLimitTopBanner';
-import OnlineTopBanner from './OnlineTopBanner';
-import SubUserTopBanner from './SubUserTopBanner';
 import DesktopNotificationTopBanner from './DesktopNotificationTopBanner';
-import TimeOutOfSyncTopBanner from './TimeOutOfSyncTopBanner';
-import ReferralTopBanner from './ReferralTopBanner';
-import NudgeTopBanner from './NudgeTopBanner';
 import DriveReleaseTopBanner from './DriveReleaseTopBanner';
+import NudgeTopBanner from './NudgeTopBanner';
+import OnlineTopBanner from './OnlineTopBanner';
+import ReferralTopBanner from './ReferralTopBanner';
+import StorageLimitTopBanner from './StorageLimitTopBanner';
+import SubUserTopBanner from './SubUserTopBanner';
+import TimeOutOfSyncTopBanner from './TimeOutOfSyncTopBanner';
 
 interface Props {
     children?: ReactNode;

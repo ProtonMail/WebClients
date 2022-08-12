@@ -1,22 +1,25 @@
-import { setupAddress, orderAddress } from '@proton/shared/lib/api/addresses';
+import { useState } from 'react';
+
+import { c } from 'ttag';
+
+import { orderAddress, setupAddress } from '@proton/shared/lib/api/addresses';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS, DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS } from '@proton/shared/lib/constants';
-import unique from '@proton/utils/unique';
-import noop from '@proton/utils/noop';
 import { Address } from '@proton/shared/lib/interfaces';
 import { missingKeysSelfProcess } from '@proton/shared/lib/keys';
-import { useState } from 'react';
-import { c } from 'ttag';
-import { AlertModal, Button, AlertModalProps, useModalState } from '../../components';
+import noop from '@proton/utils/noop';
+import unique from '@proton/utils/unique';
+
+import { AlertModal, AlertModalProps, Button, useModalState } from '../../components';
 import {
     useAddresses,
-    useLoading,
-    useUser,
     useApi,
-    useGetUserKeys,
     useAuthentication,
     useEventManager,
+    useGetUserKeys,
+    useLoading,
     useNotifications,
+    useUser,
 } from '../../hooks';
 import { SettingsSectionWide } from '../account';
 

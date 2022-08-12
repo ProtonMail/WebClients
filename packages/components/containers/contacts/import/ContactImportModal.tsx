@@ -1,12 +1,14 @@
 import { useState } from 'react';
+
 import { IMPORT_STEPS, ImportContactsModel } from '@proton/shared/lib/interfaces/contacts/Import';
+
 import { ModalProps, ModalTwo } from '../../../components';
 import ContactImportAttaching from './steps/ContactImportAttaching';
 import ContactImportCsv from './steps/ContactImportCsv';
 import ContactImportGroups from './steps/ContactImportGroups';
-import ContactImporting from './steps/ContactImporting';
-import ContactImportWarning from './steps/ContactImportWarning';
 import ContactImportSummary from './steps/ContactImportSummary';
+import ContactImportWarning from './steps/ContactImportWarning';
+import ContactImporting from './steps/ContactImporting';
 
 export const getInitialState = (): ImportContactsModel => ({
     step: IMPORT_STEPS.ATTACHING,

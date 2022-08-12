@@ -1,10 +1,10 @@
 import { c } from 'ttag';
-import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { ButtonLike, SettingsLink } from '../../components';
-
-import { SettingsSection, SettingsParagraph } from '../account';
+import { SettingsParagraph, SettingsSection } from '../account';
 import PmMeButton from './PmMeButton';
 
 interface Props {

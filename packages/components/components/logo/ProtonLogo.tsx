@@ -1,5 +1,6 @@
 import { ComponentPropsWithoutRef, useState } from 'react';
-import { classnames, generateUID, LogoProps } from '@proton/components';
+
+import { LogoProps, classnames, generateUID } from '@proton/components';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
 type Version = 'full' | 'glyph-only';

@@ -1,14 +1,16 @@
 import { useState } from 'react';
-import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
+
 import { c } from 'ttag';
+
+import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { HumanVerificationMethodType } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
 import {
-    ModalProps,
     ModalTwo as Modal,
-    ModalTwoHeader as ModalHeader,
     ModalTwoContent as ModalContent,
+    ModalTwoHeader as ModalHeader,
+    ModalProps,
 } from '../../../components';
 import { useLoading, useNotifications } from '../../../hooks';
 import HumanVerificationForm from './HumanVerificationForm';

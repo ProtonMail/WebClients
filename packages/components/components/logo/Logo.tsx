@@ -1,14 +1,14 @@
 import { ComponentPropsWithoutRef } from 'react';
 
-import { APP_NAMES, APPS } from '@proton/shared/lib/constants';
+import { APPS, APP_NAMES } from '@proton/shared/lib/constants';
 
+import { IconSize } from '../icon';
 import CalendarLogo from './CalendarLogo';
 import DriveLogo from './DriveLogo';
 import MailLogo from './MailLogo';
 import VpnLogo from './VpnLogo';
 
 import './Logo.scss';
-import { IconSize } from '../icon';
 
 export type LogoVariant = 'with-wordmark' | 'standalone' | 'glyph-only';
 

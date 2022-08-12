@@ -1,8 +1,10 @@
-import { createContext, ReactNode, useContext, useEffect, useRef } from 'react';
+import { ReactNode, createContext, useContext, useEffect, useRef } from 'react';
+
 import { queryLatestModelEventID, queryModelEvents } from '@proton/shared/lib/api/calendars';
 import createEventManager, { EVENT_ID_KEYS, EventManager } from '@proton/shared/lib/eventManager/eventManager';
-import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import { Api } from '@proton/shared/lib/interfaces';
+import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
+
 import { useApi } from '../../../hooks';
 
 const CalendarModelEventManagerContext = createContext<CalendarModelEventManager | null>(null);

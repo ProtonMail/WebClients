@@ -1,4 +1,5 @@
 import { HTMLAttributes } from 'react';
+
 import { classnames } from '../../helpers';
 
 interface Props extends HTMLAttributes<HTMLSpanElement> {

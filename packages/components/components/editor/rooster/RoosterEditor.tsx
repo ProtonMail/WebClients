@@ -1,16 +1,20 @@
 import { useRef } from 'react';
-import { c } from 'ttag';
 import { createPortal } from 'react-dom';
+
+import { c } from 'ttag';
+
 import { MailSettings } from '@proton/shared/lib/interfaces';
-import { EditorActions, SetEditorToolbarConfig } from '../interface';
+
+import { classnames } from '../../../helpers';
 import { EDITOR_BLOCKQUOTE_TOGGLE_CONTAINER_ID } from '../constants';
+import { ModalLinkProps } from '../hooks/interface';
+import { EditorActions, SetEditorToolbarConfig } from '../interface';
+import BlockquoteToggle from './BlockquoteToggle';
 import useBubbleIframeEvents from './hooks/useBubbleIframeEvents';
 import useInitRooster from './hooks/useInitRooster';
-import BlockquoteToggle from './BlockquoteToggle';
 import useOnEditorChange from './hooks/useOnEditorChange';
+
 import './RoosterEditor.scss';
-import { ModalLinkProps } from '../hooks/interface';
-import { classnames } from '../../../helpers';
 
 interface Props {
     placeholder?: string;

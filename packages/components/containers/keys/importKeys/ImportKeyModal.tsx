@@ -1,9 +1,11 @@
 import { useRef, useState } from 'react';
+
 import { c } from 'ttag';
-import { ArmoredKeyWithInfo } from '@proton/shared/lib/keys';
+
 import { CryptoProxy, PrivateKeyReference } from '@proton/crypto';
-import getRandomString from "@proton/utils/getRandomString";
+import { ArmoredKeyWithInfo } from '@proton/shared/lib/keys';
 import { OnKeyImportCallback } from '@proton/shared/lib/keys';
+import getRandomString from '@proton/utils/getRandomString';
 
 import {
     Alert,
@@ -16,10 +18,9 @@ import {
 } from '../../../components';
 import { useModals, useNotifications } from '../../../hooks';
 import GenericError from '../../error/GenericError';
-
-import ImportKeysList from './ImportKeysList';
-import SelectKeyFiles from '../shared/SelectKeyFiles';
 import DecryptFileKeyModal from '../shared/DecryptFileKeyModal';
+import SelectKeyFiles from '../shared/SelectKeyFiles';
+import ImportKeysList from './ImportKeysList';
 import { ImportKey, Status } from './interface';
 import { updateKey } from './state';
 

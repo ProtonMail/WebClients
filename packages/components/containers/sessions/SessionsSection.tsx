@@ -1,24 +1,26 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
+
 import { c } from 'ttag';
+
 import { querySessions, revokeOtherSessions, revokeSession } from '@proton/shared/lib/api/auth';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+
 import {
+    Alert,
     Button,
+    ConfirmModal,
+    Pagination,
     Table,
-    TableHeader,
     TableBody,
+    TableHeader,
     TableRow,
     Time,
-    Pagination,
-    Alert,
-    ConfirmModal,
     usePagination,
 } from '../../components';
-import { useApi, useAuthentication, useModals, useLoading, useNotifications } from '../../hooks';
-
+import { useApi, useAuthentication, useLoading, useModals, useNotifications } from '../../hooks';
+import { SettingsParagraph, SettingsSectionWide } from '../account';
 import SessionAction from './SessionAction';
 import { Session } from './interface';
-import { SettingsParagraph, SettingsSectionWide } from '../account';
 
 const PAGE_SIZE = 10;
 

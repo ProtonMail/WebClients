@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
+
 import { c } from 'ttag';
+
 import { isMaybeTorLessThan11 } from '@proton/shared/lib/helpers/browser';
 
 import { Href } from '../../components';

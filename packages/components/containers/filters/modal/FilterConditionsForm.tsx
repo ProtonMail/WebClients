@@ -1,10 +1,10 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
+
 import { c } from 'ttag';
 
-import { Condition, FilterStatement, ConditionType, ConditionComparator, SimpleFilterModalModel } from '../interfaces';
 import { Radio, UnderlineButton } from '../../../components';
 import { classnames, generateUID } from '../../../helpers';
-
+import { Condition, ConditionComparator, ConditionType, FilterStatement, SimpleFilterModalModel } from '../interfaces';
 import FilterConditionsFormRow from './FilterConditionsFormRow';
 
 const generateNewCondition = () => ({

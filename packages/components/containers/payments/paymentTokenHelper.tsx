@@ -1,11 +1,13 @@
-import { PAYMENT_METHOD_TYPES, PAYMENT_TOKEN_STATUS } from '@proton/shared/lib/constants';
-import { getTokenStatus, createToken } from '@proton/shared/lib/api/payments';
-import { Api } from '@proton/shared/lib/interfaces';
-import { wait } from '@proton/shared/lib/helpers/promise';
 import { c } from 'ttag';
+
+import { createToken, getTokenStatus } from '@proton/shared/lib/api/payments';
+import { PAYMENT_METHOD_TYPES, PAYMENT_TOKEN_STATUS } from '@proton/shared/lib/constants';
+import { wait } from '@proton/shared/lib/helpers/promise';
 import { getHostname } from '@proton/shared/lib/helpers/url';
-import { Params, PaymentTokenResult } from './interface';
+import { Api } from '@proton/shared/lib/interfaces';
+
 import PaymentVerificationModal from './PaymentVerificationModal';
+import { Params, PaymentTokenResult } from './interface';
 import { toParams } from './paymentTokenToParams';
 
 const { STATUS_PENDING, STATUS_CHARGEABLE, STATUS_FAILED, STATUS_CONSUMED, STATUS_NOT_SUPPORTED } =

@@ -1,6 +1,8 @@
 import { MouseEvent, useMemo, useRef, useState } from 'react';
-import { c } from 'ttag';
+
 import { getISOWeek } from 'date-fns';
+import { c } from 'ttag';
+
 import { classnames } from '../../helpers';
 import { Tooltip } from '../tooltip';
 

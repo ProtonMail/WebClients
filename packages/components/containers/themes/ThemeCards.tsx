@@ -1,7 +1,7 @@
 import { ThemeTypes } from '@proton/shared/lib/themes/themes';
 
-import ThemeCard from './ThemeCard';
 import { classnames } from '../../helpers';
+import ThemeCard from './ThemeCard';
 
 export interface Theme {
     label: string;

@@ -1,14 +1,14 @@
-import { APPS, MAIL_APP_NAME, VPN_APP_NAME } from '@proton/shared/lib/constants';
-import { hasMigrationDiscount, hasNewVisionary } from '@proton/shared/lib/helpers/subscription';
 import { c } from 'ttag';
 
-import { DiscountWarningModal, NewVisionaryWarningModal } from '../payments/subscription/PlanLossWarningModal';
-import { Href, Button, Loader } from '../../components';
-import { useAddresses, useConfig, useSubscription } from '../../hooks';
-import { useModalState } from '../../components/modalTwo';
+import { APPS, MAIL_APP_NAME, VPN_APP_NAME } from '@proton/shared/lib/constants';
+import { hasMigrationDiscount, hasNewVisionary } from '@proton/shared/lib/helpers/subscription';
 
-import MozillaInfoPanel from './MozillaInfoPanel';
+import { Button, Href, Loader } from '../../components';
+import { useModalState } from '../../components/modalTwo';
+import { useAddresses, useConfig, useSubscription } from '../../hooks';
+import { DiscountWarningModal, NewVisionaryWarningModal } from '../payments/subscription/PlanLossWarningModal';
 import DeleteAccountModal from './DeleteAccountModal';
+import MozillaInfoPanel from './MozillaInfoPanel';
 import SettingsParagraph from './SettingsParagraph';
 
 const DeleteSection = () => {

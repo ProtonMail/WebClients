@@ -1,13 +1,13 @@
-import { SectionConfig } from './interface';
 import {
-    SubSidebarList,
-    SidebarListItemContent,
-    SubSidebarListItem,
     SidebarListItem,
+    SidebarListItemContent,
     SidebarListItemContentIcon,
+    SubSidebarList,
+    SubSidebarListItem,
 } from '../../components/sidebar';
 import SidebarListItemLink, { SubSidebarListItemLink } from '../../components/sidebar/SidebarListItemLink';
 import { getIsSectionAvailable, getIsSubsectionAvailable } from './helper';
+import { SectionConfig } from './interface';
 
 interface Props {
     list: SectionConfig[];

@@ -1,11 +1,13 @@
-import { c } from 'ttag';
 import { useEffect, useState } from 'react';
+
+import { c } from 'ttag';
+
+import { classnames } from '../../../helpers';
+import { Badge } from '../../badge';
+import { Button } from '../../button';
 import { DropdownMenu, DropdownMenuContainer } from '../../dropdown';
 import { FONT_FACES } from '../constants';
 import ToolbarDropdown from './ToolbarDropdown';
-import { Badge } from '../../badge';
-import { Button } from '../../button';
-import { classnames } from '../../../helpers';
 
 interface Props {
     value?: string;

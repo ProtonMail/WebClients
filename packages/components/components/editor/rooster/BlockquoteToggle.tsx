@@ -1,5 +1,7 @@
 import { c } from 'ttag';
+
 import { Icon } from '@proton/components';
+
 interface Props {
     show: boolean | undefined;
     onClick: (() => void) | undefined;

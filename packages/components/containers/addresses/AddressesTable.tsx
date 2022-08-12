@@ -1,10 +1,11 @@
 import { c } from 'ttag';
+
 import { Address, CachedOrganizationKey, Member, UserModel } from '@proton/shared/lib/interfaces';
 
-import { Table, TableHeader, TableBody, TableRow } from '../../components';
-import { formatAddresses, getPermissions, getStatus } from './helper';
+import { Table, TableBody, TableHeader, TableRow } from '../../components';
 import AddressActions from './AddressActions';
 import AddressStatus from './AddressStatus';
+import { formatAddresses, getPermissions, getStatus } from './helper';
 
 interface AddressesTableProps {
     loading: boolean;

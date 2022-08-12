@@ -1,11 +1,13 @@
-import { useRef, useEffect, forwardRef, ReactNode, Ref } from 'react';
-import { c } from 'ttag';
-import { ThemeColorUnion } from '@proton/colors';
-import { parseKeyFiles, ArmoredKeyWithInfo } from '@proton/shared/lib/keys';
+import { ReactNode, Ref, forwardRef, useEffect, useRef } from 'react';
 
+import { c } from 'ttag';
+
+import { ThemeColorUnion } from '@proton/colors';
+import { ArmoredKeyWithInfo, parseKeyFiles } from '@proton/shared/lib/keys';
+
+import { Shape } from '../../../components/button';
 import FileInput from '../../../components/input/FileInput';
 import useCombinedRefs from '../../../hooks/useCombinedRefs';
-import { Shape } from '../../../components/button';
 
 interface Props {
     onUpload: (keys: ArmoredKeyWithInfo[]) => void;

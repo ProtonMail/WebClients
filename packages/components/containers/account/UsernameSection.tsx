@@ -1,8 +1,9 @@
 import { c } from 'ttag';
+
 import { APPS, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 
-import { Label, Row, Field, Href } from '../../components';
-import { useUser, useConfig } from '../../hooks';
+import { Field, Href, Label, Row } from '../../components';
+import { useConfig, useUser } from '../../hooks';
 
 const UsernameSection = () => {
     const { APP_NAME } = useConfig();

@@ -1,13 +1,14 @@
 import { useEffect, useState } from 'react';
+
 import { c } from 'ttag';
 
-import { ACCENT_COLORS, ROOT_FOLDER, LABEL_TYPE } from '@proton/shared/lib/constants';
-import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
-import noop from '@proton/utils/noop';
-import { create as createLabel, updateLabel, checkLabelAvailability } from '@proton/shared/lib/api/labels';
+import { checkLabelAvailability, create as createLabel, updateLabel } from '@proton/shared/lib/api/labels';
+import { ACCENT_COLORS, LABEL_TYPE, ROOT_FOLDER } from '@proton/shared/lib/constants';
+import { omit } from '@proton/shared/lib/helpers/object';
 import { Folder } from '@proton/shared/lib/interfaces/Folder';
 import { Label } from '@proton/shared/lib/interfaces/Label';
-import { omit } from '@proton/shared/lib/helpers/object';
+import noop from '@proton/utils/noop';
+import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
 
 import {
     Button,
@@ -18,7 +19,7 @@ import {
     ModalTwoHeader,
     useFormErrors,
 } from '../../../components';
-import { useEventManager, useLoading, useApi, useNotifications } from '../../../hooks';
+import { useApi, useEventManager, useLoading, useNotifications } from '../../../hooks';
 import NewLabelForm from '../NewLabelForm';
 
 export interface LabelModel extends Pick<Folder | Label, 'Name' | 'Color' | 'Type'> {

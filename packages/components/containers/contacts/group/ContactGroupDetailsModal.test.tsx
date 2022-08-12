@@ -1,6 +1,7 @@
 import { LABEL_TYPE } from '@proton/shared/lib/constants';
 import { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
 import { STATUS } from '@proton/shared/lib/models/cache';
+
 import { cache, clearAll, minimalCache, render } from '../tests/render';
 import ContactGroupDetailsModal, { ContactGroupDetailsProps } from './ContactGroupDetailsModal';
 

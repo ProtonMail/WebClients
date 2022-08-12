@@ -1,10 +1,12 @@
 import { useState } from 'react';
+
 import { c } from 'ttag';
-import Icon from '../../icon/Icon';
+
 import ColorSelector from '../../color/ColorSelector';
+import Icon from '../../icon/Icon';
+import { Tabs } from '../../tabs';
 import { FONT_COLORNAMES } from '../constants';
 import ToolbarDropdown from './ToolbarDropdown';
-import { Tabs } from '../../tabs';
 
 interface Props {
     fontColor: string;

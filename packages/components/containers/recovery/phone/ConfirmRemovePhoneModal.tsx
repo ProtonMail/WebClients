@@ -1,12 +1,13 @@
 import { c } from 'ttag';
+
 import {
     Alert,
     Button,
-    ModalProps,
     ModalTwo as Modal,
     ModalTwoContent as ModalContent,
     ModalTwoFooter as ModalFooter,
     ModalTwoHeader as ModalHeader,
+    ModalProps,
 } from '../../../components';
 
 interface Props extends ModalProps {

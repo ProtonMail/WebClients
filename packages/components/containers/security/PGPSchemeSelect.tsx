@@ -1,4 +1,5 @@
 import { ChangeEvent } from 'react';
+
 import { PACKAGE_TYPE } from '@proton/shared/lib/constants';
 
 import { Select } from '../../components';

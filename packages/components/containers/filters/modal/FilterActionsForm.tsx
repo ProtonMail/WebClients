@@ -1,12 +1,11 @@
 import { Folder } from '@proton/shared/lib/interfaces/Folder';
 import { Label } from '@proton/shared/lib/interfaces/Label';
 
-import FilterActionsFormLabelsRow from './FilterActionsFormLabelsRow';
-import FilterActionsFormFoldersRow from './FilterActionsFormFolderRow';
-import FilterActionsFormMarkAsRow from './FilterActionsFormMarkAsRow';
-import FilterActionsFormAutoReplyRow from './FilterActionsFormAutoReplyRow';
-
 import { Actions, SimpleFilterModalModel } from '../interfaces';
+import FilterActionsFormAutoReplyRow from './FilterActionsFormAutoReplyRow';
+import FilterActionsFormFoldersRow from './FilterActionsFormFolderRow';
+import FilterActionsFormLabelsRow from './FilterActionsFormLabelsRow';
+import FilterActionsFormMarkAsRow from './FilterActionsFormMarkAsRow';
 
 interface Props {
     labels: Label[];

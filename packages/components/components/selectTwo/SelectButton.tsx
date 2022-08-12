@@ -1,4 +1,5 @@
-import { ComponentPropsWithRef, forwardRef, KeyboardEvent, ReactNode } from 'react';
+import { ComponentPropsWithRef, KeyboardEvent, ReactNode, forwardRef } from 'react';
+
 import { classnames } from '../../helpers';
 import { DropdownCaret } from '../dropdown';
 import { CircleLoader } from '../loader';

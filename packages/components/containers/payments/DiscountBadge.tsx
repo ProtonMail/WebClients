@@ -1,7 +1,10 @@
 import { ReactNode } from 'react';
+
 import { c } from 'ttag';
-import { COUPON_CODES, BLACK_FRIDAY, APPS } from '@proton/shared/lib/constants';
+
 import { getAppName } from '@proton/shared/lib/apps/helper';
+import { APPS, BLACK_FRIDAY, COUPON_CODES } from '@proton/shared/lib/constants';
+
 import { Badge } from '../../components';
 
 const vpnAppName = getAppName(APPS.PROTONVPN_SETTINGS);

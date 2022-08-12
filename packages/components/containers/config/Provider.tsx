@@ -1,4 +1,5 @@
 import { ReactNode } from 'react';
+
 import { ProtonConfig } from '@proton/shared/lib/interfaces';
 
 import ConfigContext from './configContext';

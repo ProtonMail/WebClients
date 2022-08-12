@@ -1,6 +1,9 @@
 import { useEffect, useState } from 'react';
+
 import { c } from 'ttag';
+
 import { validateMnemonic } from '@proton/shared/lib/mnemonic';
+
 import { InputFieldTwo, TextAreaTwo } from '../../components';
 import { InputFieldProps } from '../../components/v2/field/InputField';
 

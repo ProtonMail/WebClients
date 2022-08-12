@@ -1,8 +1,11 @@
-import { ReactNode, MouseEvent } from 'react';
+import { MouseEvent, ReactNode } from 'react';
+
 import { c } from 'ttag';
-import noContactsImg from '@proton/styles/assets/img/illustrations/no-contacts.svg';
-import noResultsImg from '@proton/styles/assets/img/illustrations/empty-search.svg';
+
 import { InlineLinkButton } from '@proton/components';
+import noResultsImg from '@proton/styles/assets/img/illustrations/empty-search.svg';
+import noContactsImg from '@proton/styles/assets/img/illustrations/no-contacts.svg';
+
 import { IllustrationPlaceholder } from '../../illustration';
 
 export enum EmptyType {

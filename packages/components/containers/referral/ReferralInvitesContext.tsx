@@ -1,8 +1,9 @@
-import { createContext, useContext, useState, Dispatch, SetStateAction } from 'react';
+import { Dispatch, SetStateAction, createContext, useContext, useState } from 'react';
+
 import { Referral } from '@proton/shared/lib/interfaces';
 
-import useReferrals, { UseReferralsReducerState } from './hooks/useReferrals';
 import useReferralRewardStatus, { UseReferralStatusReducerState } from './hooks/useReferralRewardStatus';
+import useReferrals, { UseReferralsReducerState } from './hooks/useReferrals';
 
 interface ReferralProgramContext {
     invitedReferralsState: [Referral[], Dispatch<SetStateAction<Referral[]>>];

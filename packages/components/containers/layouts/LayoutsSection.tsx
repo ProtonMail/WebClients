@@ -2,16 +2,15 @@ import { c } from 'ttag';
 
 import { updateComposerMode, updateViewLayout } from '@proton/shared/lib/api/mailSettings';
 import { updateDensity } from '@proton/shared/lib/api/settings';
-import { DENSITY, VIEW_LAYOUT, COMPOSER_MODE } from '@proton/shared/lib/constants';
+import { COMPOSER_MODE, DENSITY, VIEW_LAYOUT } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { Info, Loader } from '../../components';
-import { useNotifications, useUserSettings, useMailSettings, useEventManager, useLoading, useApi } from '../../hooks';
+import { useApi, useEventManager, useLoading, useMailSettings, useNotifications, useUserSettings } from '../../hooks';
 import { SettingsSectionWide } from '../account';
-
 import ComposerModeCards from './ComposerModeCards';
-import ViewLayoutCards from './ViewLayoutCards';
 import DensityRadiosCards from './DensityRadiosCards';
+import ViewLayoutCards from './ViewLayoutCards';
 
 const LayoutsSection = () => {
     const [{ ComposerMode = 0, ViewLayout = 0 } = {}, loadingMailSettings] = useMailSettings();

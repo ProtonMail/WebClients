@@ -1,20 +1,20 @@
 import {
+    ChangeEvent,
     ComponentPropsWithoutRef,
-    useRef,
     MouseEvent as ReactMouseEvent,
     TouchEvent as ReactTouchEvent,
+    useRef,
     useState,
-    ChangeEvent,
 } from 'react';
 
 import { ThemeColorUnion } from '@proton/colors';
-import clamp from '@proton/utils/clamp';
-import percentage from '@proton/utils/percentage';
-import clsx from '@proton/utils/clsx';
-import useSynchronizingState from '@proton/hooks/useSynchronizingState';
-import { useRightToLeft } from '@proton/components/containers/rightToLeft';
 import ButtonLike from '@proton/components/components/button/ButtonLike';
 import Icon from '@proton/components/components/icon/Icon';
+import { useRightToLeft } from '@proton/components/containers/rightToLeft';
+import useSynchronizingState from '@proton/hooks/useSynchronizingState';
+import clamp from '@proton/utils/clamp';
+import clsx from '@proton/utils/clsx';
+import percentage from '@proton/utils/percentage';
 
 import SliderMark from './SliderMark';
 

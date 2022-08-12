@@ -1,12 +1,14 @@
 import { ChangeEvent } from 'react';
+
 import { c } from 'ttag';
+
 import { updatePromptPin } from '@proton/shared/lib/api/mailSettings';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { Info, Toggle } from '../../components';
-import { useApi, useLoading, useMailSettings, useEventManager, useNotifications } from '../../hooks';
 
-import { SettingsSection, SettingsParagraph } from '../account';
+import { Info, Toggle } from '../../components';
+import { useApi, useEventManager, useLoading, useMailSettings, useNotifications } from '../../hooks';
+import { SettingsParagraph, SettingsSection } from '../account';
 import SettingsLayout from '../account/SettingsLayout';
 import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../account/SettingsLayoutRight';

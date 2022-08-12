@@ -1,4 +1,5 @@
 import { c } from 'ttag';
+
 import { APPS } from '@proton/shared/lib/constants';
 
 import { Alert, ButtonLike, SettingsLink } from '../../components';

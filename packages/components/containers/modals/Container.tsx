@@ -1,8 +1,8 @@
 import { cloneElement } from 'react';
 
+import BackdropContainer from '../../components/modalTwo/BackdropContainer';
 import ModalErrorBoundary from '../app/ModalErrorBoundary';
 import { Modal } from './interface';
-import BackdropContainer from '../../components/modalTwo/BackdropContainer';
 
 export interface ModalPropsInjection {
     key: string;

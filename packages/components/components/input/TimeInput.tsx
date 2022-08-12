@@ -1,17 +1,19 @@
-import { useEffect, useState, useMemo, useRef, ChangeEvent, MouseEvent } from 'react';
+import { ChangeEvent, MouseEvent, useEffect, useMemo, useRef, useState } from 'react';
+
+import { Locale, addMinutes, format, parse, startOfDay } from 'date-fns';
 import { c, msgid } from 'ttag';
-import { Locale, addMinutes, startOfDay, format, parse } from 'date-fns';
-import { dateLocale } from '@proton/shared/lib/i18n';
+
 import { findLongestMatchingIndex } from '@proton/shared/lib/helpers/string';
+import { dateLocale } from '@proton/shared/lib/i18n';
 import withDecimalPrecision from '@proton/utils/withDecimalPrecision';
 
-import Input, { Props as InputProps } from './Input';
-import Dropdown from '../dropdown/Dropdown';
-import { usePopperAnchor } from '../popper';
 import { generateUID } from '../../helpers';
+import { useHotkeys } from '../../hooks';
+import Dropdown from '../dropdown/Dropdown';
 import DropdownMenu from '../dropdown/DropdownMenu';
 import DropdownMenuButton from '../dropdown/DropdownMenuButton';
-import { useHotkeys } from '../../hooks';
+import { usePopperAnchor } from '../popper';
+import Input, { Props as InputProps } from './Input';
 
 const toFormatted = (value: Date, locale: Locale) => {
     return format(value, 'p', { locale });

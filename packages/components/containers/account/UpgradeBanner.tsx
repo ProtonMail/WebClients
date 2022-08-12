@@ -1,8 +1,10 @@
 import { ReactNode } from 'react';
+
 import { c } from 'ttag';
-import { Audience } from '@proton/shared/lib/interfaces';
-import { PLANS } from '@proton/shared/lib/constants';
+
 import { Card } from '@proton/atoms';
+import { PLANS } from '@proton/shared/lib/constants';
+import { Audience } from '@proton/shared/lib/interfaces';
 
 import { ButtonLike, SettingsLink } from '../../components';
 import { classnames } from '../../helpers';

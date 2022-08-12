@@ -1,4 +1,4 @@
-import { isImage, isSupportedText, isPDF, isVideo, isFont, isExcel, isICS } from '@proton/shared/lib/helpers/mimetype';
+import { isExcel, isFont, isICS, isImage, isPDF, isSupportedText, isVideo } from '@proton/shared/lib/helpers/mimetype';
 
 import { classnames } from '../../helpers/component';
 import MimeIcon, { MimeIconProps, MimeName } from '../icon/MimeIcon';
