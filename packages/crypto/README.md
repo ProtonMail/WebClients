@@ -24,8 +24,8 @@ const recipientPublicKey = await CryptoProxy.importPublicKey({ armoredKey: '...'
 // To import a private key, the passphrase must be known
 // (otherwise, either wait for it to be available, or import as public key)
 const senderPrivateKey = await CryptoProxy.importPrivateKey({
-  armoredKey: '...', // or `binaryKey`
-  passphrase: 'key decryption passphrase' // If the key is expected to be already decrypted (rare, but it can happen for keys uploaded by the user), you have to pass `passphrase: null`.
+    armoredKey: '...', // or `binaryKey`
+    passphrase: 'key decryption passphrase', // If the key is expected to be already decrypted (rare, but it can happen for keys uploaded by the user), you have to pass `passphrase: null`.
 });
 ```
 
@@ -34,14 +34,14 @@ To export keys to be able to transfer them:
 ```js
 // on public key export, if a private key is given, only the public key material is extracted and serialized
 const armoredPublicKey = await CryptoProxy.exportPublicKey({
-  key: senderPrivateKey,
-  format: 'armored' // or 'binary'
+    key: senderPrivateKey,
+    format: 'armored', // or 'binary'
 });
 // on private key export, the key will be encrypted before serialization, using the given `passhrapse`
 const armoredPrivateKey = await CryptoProxy.exportPrivateKey({
-  key: senderPrivateKey,
-  passphrase: 'key encryption passphrase',
-  format: 'armored' // or 'binary'
+    key: senderPrivateKey,
+    passphrase: 'key encryption passphrase',
+    format: 'armored', // or 'binary'
 });
 ```
 
@@ -118,22 +118,21 @@ const sessionKey = await CryptoProxy.generateSessionKey({ recipientKeys: recipie
 
 // Then encrypt the data with it
 const { message: armoredMessage } = await CryptoProxy.encryptMessage({
-  textData: 'text data to encrypt', // or `binaryData` for Uint8Arrays
-  sessionKey,
-  encryptionKeys: recipientPublicKey, // and/or `passwords`, used to encrypt the session key
-  signingKeys: senderPrivateKey,
+    textData: 'text data to encrypt', // or `binaryData` for Uint8Arrays
+    sessionKey,
+    encryptionKeys: recipientPublicKey, // and/or `passwords`, used to encrypt the session key
+    signingKeys: senderPrivateKey,
 });
 ```
 
 To decrypt, you can again provide the session key directly:
 
 ```js
-
 // Then encrypt the data with it
 const { data } = await CryptoProxy.decryptMessage({
-  armoredMessage, // or `binaryMessage`
-  sessionKeys: sessionKey,
-  verificationKeys: senderPublicKey,
+    armoredMessage, // or `binaryMessage`
+    sessionKeys: sessionKey,
+    verificationKeys: senderPublicKey,
 });
 ```
 
@@ -141,17 +140,16 @@ You can also encrypt the session key on its own:
 
 ```js
 const armoredEncryptedSessionKey = await encryptSessionKey({
-  ...sessionKey,
-  encryptionKeys, // and/or passwords
-  format: 'armored' // or 'binary'
+    ...sessionKey,
+    encryptionKeys, // and/or passwords
+    format: 'armored', // or 'binary'
 });
 
 // And decrypt it with:
 const sessionKey = await CryptoProxy.decryptSessionKey({
-  armoredMessage: armoredEncryptedSessionKey, // or `binaryMessage`
-  decryptionsKeys // or `passwords`
+    armoredMessage: armoredEncryptedSessionKey, // or `binaryMessage`
+    decryptionsKeys, // or `passwords`
 });
-
 ```
 
 </details>
