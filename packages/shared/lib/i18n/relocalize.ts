@@ -1,10 +1,11 @@
 import { addLocale as ttagAddLocale, useLocale as ttagUseLocale } from 'ttag';
+
+import { DEFAULT_LOCALE } from '../constants';
+import { Options } from './dateFnLocale';
 import { getBrowserLocale, getClosestLocaleCode } from './helper';
 import { browserDateLocale, dateLocale, dateLocaleCode, defaultDateLocale, localeCode, setDateLocales } from './index';
 import { loadDateLocale } from './loadLocale';
 import { locales } from './locales';
-import { DEFAULT_LOCALE } from '../constants';
-import { Options } from './dateFnLocale';
 
 export const relocalizeText = async ({
     getLocalizedText,

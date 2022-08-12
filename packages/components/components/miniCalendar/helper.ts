@@ -1,4 +1,5 @@
-import { addWeeks, subWeeks, eachDayOfInterval, startOfMonth, isSameDay, startOfWeek, endOfWeek } from 'date-fns';
+import { addWeeks, eachDayOfInterval, endOfWeek, isSameDay, startOfMonth, startOfWeek, subWeeks } from 'date-fns';
+
 import { DateTuple, WeekStartsOn } from './index.d';
 
 /**

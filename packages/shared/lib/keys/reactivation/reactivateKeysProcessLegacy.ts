@@ -3,7 +3,7 @@ import { getDefaultKeyFlags } from '@proton/shared/lib/keys';
 
 import { reactivateKeyRoute } from '../../api/keys';
 import { Address, Api, DecryptedKey, Key } from '../../interfaces';
-import { getActiveKeyObject, getActiveKeys, getPrimaryFlag, getNormalizedActiveKeys } from '../getActiveKeys';
+import { getActiveKeyObject, getActiveKeys, getNormalizedActiveKeys, getPrimaryFlag } from '../getActiveKeys';
 import { getSignedKeyList } from '../signedKeyList';
 import { KeyReactivationData, KeyReactivationRecord, OnKeyReactivationCallback } from './interface';
 import { resetUserId } from './reactivateKeyHelper';

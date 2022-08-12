@@ -1,10 +1,11 @@
-import { describe, it } from 'mocha';
-import { binaryStringToArray } from '@proton/crypto/lib/utils';
 import assert from 'assert';
+import { describe, it } from 'mocha';
 
+import { binaryStringToArray } from '@proton/crypto/lib/utils';
+
+import { hashedResult0, hashedResult2, hashedResult4, watResult } from '../test/passwords.data';
 import '../test/setup';
-import { hashPassword, expandHash } from './passwords';
-import { hashedResult4, hashedResult0, hashedResult2, watResult } from '../test/passwords.data';
+import { expandHash, hashPassword } from './passwords';
 
 describe('passwords', () => {
     it('should expand a hash', async () => {

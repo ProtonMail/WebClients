@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 const usePagination = <T>(initialList: T[] = [], initialPage = 1, limit = 10) => {
     const [page, setPage] = useState(initialPage);

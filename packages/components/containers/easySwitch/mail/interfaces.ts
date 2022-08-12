@@ -1,8 +1,8 @@
 import {
-    MailImporterPayload,
-    ImportedMailFolder,
-    TIME_PERIOD,
     ImportType,
+    ImportedMailFolder,
+    MailImporterPayload,
+    TIME_PERIOD,
 } from '@proton/shared/lib/interfaces/EasySwitch';
 
 export enum MailImportStep {

@@ -3,7 +3,6 @@
  */
 import ICAL from 'ical.js';
 
-import { PROPERTIES, UNIQUE_PROPERTIES } from './vcalDefinition';
 import { DAY, HOUR, MINUTE, SECOND, WEEK } from '../constants';
 import {
     VcalCalendarComponent,
@@ -13,6 +12,7 @@ import {
     VcalDurationValue,
     VcalRrulePropertyValue,
 } from '../interfaces/calendar';
+import { PROPERTIES, UNIQUE_PROPERTIES } from './vcalDefinition';
 
 const getIcalDateValue = (value: any, tzid: string | undefined, isDate: boolean) => {
     const icalTimezone = value.isUTC ? ICAL.Timezone.utcTimezone : ICAL.Timezone.localTimezone;

@@ -1,5 +1,5 @@
 import { encodeBase64URL } from '../../helpers/encoding';
-import { getItem, setItem, removeItem } from '../../helpers/storage';
+import { getItem, removeItem, setItem } from '../../helpers/storage';
 
 const getKey = (UID: string) => {
     return encodeBase64URL(`r-${UID}`);

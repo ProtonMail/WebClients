@@ -1,8 +1,8 @@
-import { describe, it } from 'mocha';
 import assert from 'assert';
+import { describe, it } from 'mocha';
 
 import '../test/setup';
-import { generateKeySalt, computeKeyPassword } from './keys';
+import { computeKeyPassword, generateKeySalt } from './keys';
 
 describe('passwords', () => {
     it('should generate key salt', () => {

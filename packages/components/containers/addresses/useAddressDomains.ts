@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
+
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
-import { Member } from '@proton/shared/lib/interfaces';
 import { MEMBER_TYPE } from '@proton/shared/lib/constants';
+import { Member } from '@proton/shared/lib/interfaces';
 
 import { useApi, useDomains, useLoading, usePremiumDomains, useUser } from '../../hooks';
 

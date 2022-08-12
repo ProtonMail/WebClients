@@ -1,6 +1,9 @@
 import { useState } from 'react';
+
 import { differenceInMilliseconds } from 'date-fns';
+
 import { DAY, HOUR, MINUTE, SECOND } from '@proton/shared/lib/constants';
+
 import useInterval from './useInterval';
 
 const EVERY_SECOND = SECOND;

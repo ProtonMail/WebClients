@@ -1,11 +1,13 @@
-import { arrayToHexString, binaryStringToArray } from '@proton/crypto/lib/utils';
 import { CryptoProxy } from '@proton/crypto';
+import { arrayToHexString, binaryStringToArray } from '@proton/crypto/lib/utils';
+import groupWith from '@proton/utils/groupWith';
 import isTruthy from '@proton/utils/isTruthy';
 import unary from '@proton/utils/unary';
-import groupWith from '@proton/utils/groupWith';
+
+import { CONTACT_NAME_MAX_LENGTH } from '../contacts/constants';
 import { buildMailTo, canonizeEmailByGuess, getEmailTo, validateEmailAddress } from '../helpers/email';
 import { omit } from '../helpers/object';
-import { GetCanonicalEmailsMap } from '../interfaces/hooks/GetCanonicalEmailsMap';
+import { normalize, truncatePossiblyQuotedString } from '../helpers/string';
 import {
     Attendee,
     AttendeeModel,
@@ -14,11 +16,10 @@ import {
     VcalPmVeventComponent,
     VcalVeventComponent,
 } from '../interfaces/calendar';
+import { GetCanonicalEmailsMap } from '../interfaces/hooks/GetCanonicalEmailsMap';
 import { RequireSome, SimpleMap } from '../interfaces/utils';
 import { ATTENDEE_STATUS_API, ICAL_ATTENDEE_ROLE, ICAL_ATTENDEE_RSVP, ICAL_ATTENDEE_STATUS } from './constants';
 import { getAttendeeHasToken, getAttendeePartstat, getAttendeesHaveToken } from './vcalHelper';
-import { normalize, truncatePossiblyQuotedString } from '../helpers/string';
-import { CONTACT_NAME_MAX_LENGTH } from '../contacts/constants';
 
 export const generateAttendeeToken = async (normalizedEmail: string, uid: string) => {
     const uidEmail = `${uid}${normalizedEmail}`;

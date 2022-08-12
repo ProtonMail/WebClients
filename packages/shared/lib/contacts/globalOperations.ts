@@ -1,4 +1,5 @@
 import { CryptoProxy, VERIFICATION_STATUS } from '@proton/crypto';
+
 import { getContact, updateContact } from '../api/contacts';
 import { CONTACT_CARD_TYPE } from '../constants';
 import { Api, DecryptedKey, Key } from '../interfaces';

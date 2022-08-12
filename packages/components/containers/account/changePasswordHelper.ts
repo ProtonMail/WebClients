@@ -1,7 +1,7 @@
-import { srpAuth, srpVerify } from '@proton/shared/lib/srp';
-import { unlockPasswordChanges } from '@proton/shared/lib/api/user';
 import { updatePassword } from '@proton/shared/lib/api/settings';
+import { unlockPasswordChanges } from '@proton/shared/lib/api/user';
 import { Api } from '@proton/shared/lib/interfaces';
+import { srpAuth, srpVerify } from '@proton/shared/lib/srp';
 
 export const handleUnlock = ({ api, oldPassword, totp }: { api: Api; oldPassword: string; totp?: string }) => {
     return srpAuth({

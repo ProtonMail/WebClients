@@ -1,6 +1,8 @@
 import { c } from 'ttag';
+
 import isTruthy from '@proton/utils/isTruthy';
 import truncate from '@proton/utils/truncate';
+
 import { CONTACT_CARD_TYPE, FORBIDDEN_LABEL_NAMES } from '../../constants';
 import { normalize } from '../../helpers/string';
 import {
@@ -13,8 +15,8 @@ import {
 } from '../../interfaces/contacts';
 import {
     ACCEPTED_EXTENSIONS,
-    EncryptedContact,
     EXTENSION,
+    EncryptedContact,
     ImportContactsModel,
 } from '../../interfaces/contacts/Import';
 import { VCardContact } from '../../interfaces/contacts/VCard';

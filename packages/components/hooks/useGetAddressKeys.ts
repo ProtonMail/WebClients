@@ -1,14 +1,15 @@
-import { GetAddressKeys } from '@proton/shared/lib/interfaces/hooks/GetAddressKeys';
 import { useCallback } from 'react';
+
 import { DecryptedKey } from '@proton/shared/lib/interfaces';
+import { GetAddressKeys } from '@proton/shared/lib/interfaces/hooks/GetAddressKeys';
 import { getDecryptedAddressKeysHelper } from '@proton/shared/lib/keys';
 
+import { useGetAddresses } from './useAddresses';
 import useAuthentication from './useAuthentication';
 import useCache from './useCache';
-import { useGetAddresses } from './useAddresses';
-import { useGetUserKeys } from './useUserKeys';
 import { getPromiseValue } from './useCachedModelResult';
 import { useGetUser } from './useUser';
+import { useGetUserKeys } from './useUserKeys';
 
 export const CACHE_KEY = 'ADDRESS_KEYS';
 

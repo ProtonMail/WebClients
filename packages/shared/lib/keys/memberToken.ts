@@ -1,5 +1,5 @@
-import getRandomValues from '@proton/get-random-values';
 import { CryptoProxy, PrivateKeyReference, PublicKeyReference, VERIFICATION_STATUS } from '@proton/crypto';
+import getRandomValues from '@proton/get-random-values';
 
 import { uint8ArrayToBase64String } from '../helpers/encoding';
 

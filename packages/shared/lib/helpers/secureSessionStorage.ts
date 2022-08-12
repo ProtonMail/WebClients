@@ -1,7 +1,7 @@
 import getRandomValues from '@proton/get-random-values';
 
 // Not using openpgp to allow using this without having to depend on openpgp being loaded
-import { uint8ArrayToString, stringToUint8Array } from './encoding';
+import { stringToUint8Array, uint8ArrayToString } from './encoding';
 import { hasStorage as hasSessionStorage } from './sessionStorage';
 
 /**

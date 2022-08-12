@@ -1,5 +1,6 @@
-import { Cache } from '@proton/shared/lib/helpers/cache';
 import { useContext } from 'react';
+
+import { Cache } from '@proton/shared/lib/helpers/cache';
 
 import Context from '../containers/cache/cacheContext';
 

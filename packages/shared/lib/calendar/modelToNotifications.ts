@@ -1,6 +1,6 @@
 import { NotificationModel } from '../interfaces/calendar';
-import { toTriggerString } from './vcal';
 import { getValarmTrigger } from './getValarmTrigger';
+import { toTriggerString } from './vcal';
 
 export const modelToNotifications = (notifications: NotificationModel[] = []) => {
     return notifications.map((notificationModel) => ({

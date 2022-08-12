@@ -1,5 +1,7 @@
 import { MutableRefObject } from 'react';
+
 import { tabbable } from 'tabbable';
+
 import { HotkeyTuple } from './useHotkeys';
 
 interface Context {

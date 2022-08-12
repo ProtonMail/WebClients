@@ -1,8 +1,9 @@
-import { binaryStringToArray, decodeBase64 } from '@proton/crypto/lib/utils';
 import { CryptoProxy, PrivateKeyReference, PublicKeyReference, SessionKey } from '@proton/crypto';
+import { binaryStringToArray, decodeBase64 } from '@proton/crypto/lib/utils';
+
 import { MIME_TYPES } from '../../constants';
-import { Packets } from '../../interfaces/mail/crypto';
 import { Attachment } from '../../interfaces/mail/Message';
+import { Packets } from '../../interfaces/mail/crypto';
 
 export const encryptAttachment = async (
     data: Uint8Array | string,

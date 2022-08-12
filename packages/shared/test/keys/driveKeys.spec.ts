@@ -1,4 +1,5 @@
 import { CryptoProxy } from '@proton/crypto';
+
 import { decryptUnsigned } from '../../lib/keys/driveKeys';
 
 const shareKey =

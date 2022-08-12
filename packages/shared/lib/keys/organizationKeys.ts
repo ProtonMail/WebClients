@@ -1,14 +1,14 @@
-import { computeKeyPassword, generateKeySalt } from '@proton/srp';
 import { CryptoProxy, PrivateKeyReference } from '@proton/crypto';
-
+import { computeKeyPassword, generateKeySalt } from '@proton/srp';
 import isTruthy from '@proton/utils/isTruthy';
+
 import { getAllMemberAddresses } from '../api/members';
+import { UpdateOrganizationKeysPayloadLegacy, UpdateOrganizationKeysPayloadV2 } from '../api/organization';
+import { Api, EncryptionConfig, KeyPair, Member } from '../interfaces';
 import { encryptAddressKeyToken, generateAddressKey, getAddressKeyToken } from './addressKeys';
-import { decryptMemberToken, encryptMemberToken, generateMemberToken } from './memberToken';
-import { Member, EncryptionConfig, KeyPair, Api } from '../interfaces';
 import { getPrimaryKey } from './getPrimaryKey';
 import { splitKeys } from './keys';
-import { UpdateOrganizationKeysPayloadLegacy, UpdateOrganizationKeysPayloadV2 } from '../api/organization';
+import { decryptMemberToken, encryptMemberToken, generateMemberToken } from './memberToken';
 
 export const getBackupKeyData = async ({
     backupPassword,

@@ -3,6 +3,7 @@ import {
     MAX_CALENDARS_PAID,
     MAX_SUBSCRIBED_CALENDARS,
 } from '@proton/shared/lib/calendar/constants';
+
 import getHasUserReachedCalendarLimit from '../../lib/calendar/getHasUserReachedCalendarLimit';
 
 describe('getHasUserReachedCalendarLimit', () => {

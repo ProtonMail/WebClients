@@ -1,8 +1,8 @@
-import { getSrp, getRandomSrpVerifier } from '@proton/srp';
+import { getRandomSrpVerifier, getSrp } from '@proton/srp';
 
 import { getInfo, getModulus } from './api/auth';
-import { Api } from './interfaces';
 import { InfoResponse, ModulusResponse } from './authentication/interface';
+import { Api } from './interfaces';
 
 interface Credentials {
     username?: string;

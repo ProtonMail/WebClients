@@ -1,4 +1,5 @@
 import { CryptoProxy, PrivateKeyReference, PublicKeyReference, SessionKey } from '@proton/crypto';
+
 import { SimpleMap } from '../interfaces';
 import { EncryptPartResult, SignPartResult } from '../interfaces/calendar';
 

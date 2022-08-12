@@ -1,6 +1,5 @@
 import { getKeys, signMessage } from 'pmcrypto';
-import { Api, Address, SignedKeyListEpochs } from '@proton/shared/lib/interfaces';
-import { getSignedKeyListsRoute } from '@proton/shared/lib/api/keys';
+
 import {
     getCertificateRoute,
     getEpochsRoute,
@@ -8,7 +7,10 @@ import {
     getProofRoute,
     uploadVerifiedEpochRoute,
 } from '@proton/shared/lib/api/keyTransparency';
+import { getSignedKeyListsRoute } from '@proton/shared/lib/api/keys';
 import { API_CODES } from '@proton/shared/lib/constants';
+import { Address, Api, SignedKeyListEpochs } from '@proton/shared/lib/interfaces';
+
 import { Epoch, EpochExtended, Proof } from './interfaces';
 
 /**

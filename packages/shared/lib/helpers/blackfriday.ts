@@ -1,8 +1,8 @@
-import { isWithinInterval, isAfter } from 'date-fns';
+import { isAfter, isWithinInterval } from 'date-fns';
 
-import { COUPON_CODES, BLACK_FRIDAY, PRODUCT_PAYER } from '../constants';
+import { BLACK_FRIDAY, COUPON_CODES, PRODUCT_PAYER } from '../constants';
 import { Subscription } from '../interfaces';
-import { hasMailPlus, hasMailProfessional, hasVpnBasic, hasVpnPlus, hasAddons } from './subscription';
+import { hasAddons, hasMailPlus, hasMailProfessional, hasVpnBasic, hasVpnPlus } from './subscription';
 
 export const isBlackFridayPeriod = () => {
     return isWithinInterval(new Date(), { start: BLACK_FRIDAY.START, end: BLACK_FRIDAY.END });

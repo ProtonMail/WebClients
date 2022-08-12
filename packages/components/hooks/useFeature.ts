@@ -1,5 +1,5 @@
-import useFeatures from './useFeatures';
 import { FeatureCode, FeatureContextValue } from '../containers';
+import useFeatures from './useFeatures';
 
 const useFeature = <FeatureValue = any>(code: FeatureCode, prefetch = true) => {
     // Forcing type, not sure how to type a generic array

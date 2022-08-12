@@ -1,4 +1,5 @@
 import { getItem, removeItem, setItem } from '@proton/shared/lib/helpers/storage';
+
 import { createHost } from '../lib';
 import { Action, ProtonMessageResponses, ProtonMessages } from './interface';
 

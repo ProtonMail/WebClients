@@ -1,9 +1,9 @@
 import {
-    findLongestMatchingIndex,
-    truncateMore,
-    getInitials,
-    truncatePossiblyQuotedString,
     DEFAULT_TRUNCATE_OMISSION,
+    findLongestMatchingIndex,
+    getInitials,
+    truncateMore,
+    truncatePossiblyQuotedString,
 } from '../../lib/helpers/string';
 
 describe('string', () => {

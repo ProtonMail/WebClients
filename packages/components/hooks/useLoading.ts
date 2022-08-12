@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect, useCallback } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 
 type WithLoading = <T>(promise: undefined | Promise<T | void>) => Promise<T | void>;
 

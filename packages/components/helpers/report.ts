@@ -1,5 +1,5 @@
-import { getOS, getBrowser, getDevice } from '@proton/shared/lib/helpers/browser';
-import { APP_NAMES, APPS_CONFIGURATION } from '@proton/shared/lib/constants';
+import { APPS_CONFIGURATION, APP_NAMES } from '@proton/shared/lib/constants';
+import { getBrowser, getDevice, getOS } from '@proton/shared/lib/helpers/browser';
 
 export const getClientName = (appName: APP_NAMES) => {
     return `Web ${APPS_CONFIGURATION[appName].bareName}`;

@@ -435,7 +435,10 @@ export async function restoreBrokenSKL({ api, keyPassword, timeout = 120000, use
 
         const signedKeyLists = await Promise.all(
             memberAddressesKeys.map(async ({ address, keys }) => {
-                const activeKeys = getNormalizedActiveKeys(address, await getActiveKeys(address, null, address.Keys, keys));
+                const activeKeys = getNormalizedActiveKeys(
+                    address,
+                    await getActiveKeys(address, null, address.Keys, keys)
+                );
                 return {
                     Address: address,
                     SignedKeyList: activeKeys.length > 0 ? await getSignedKeyList(activeKeys) : (undefined as any),

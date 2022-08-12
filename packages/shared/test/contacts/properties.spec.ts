@@ -1,9 +1,10 @@
 import Papa from 'papaparse';
-import { getContactCategories, getContactEmails, getVCardProperties } from '../../lib/contacts/properties';
-import { parseToVCard, vCardPropertiesToICAL } from '../../lib/contacts/vcard';
+
 import { prepare, readCsv } from '../../lib/contacts/helpers/csv';
-import { toCRLF } from '../../lib/helpers/string';
+import { getContactCategories, getContactEmails, getVCardProperties } from '../../lib/contacts/properties';
 import { prepareForSaving } from '../../lib/contacts/surgery';
+import { parseToVCard, vCardPropertiesToICAL } from '../../lib/contacts/vcard';
+import { toCRLF } from '../../lib/helpers/string';
 
 describe('getContactEmails', () => {
     it('should retrieve contact emails from a vcard contact', () => {

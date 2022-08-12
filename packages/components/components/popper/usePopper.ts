@@ -1,8 +1,9 @@
-import { useState, useEffect } from 'react';
-import { getScrollParent } from '@proton/shared/lib/helpers/dom';
+import { useEffect, useState } from 'react';
 
+import { getScrollParent } from '@proton/shared/lib/helpers/dom';
 import debounce from '@proton/utils/debounce';
-import { adjustPosition, computedSize, ALL_PLACEMENTS, Position } from './utils';
+
+import { ALL_PLACEMENTS, Position, adjustPosition, computedSize } from './utils';
 
 interface GetPositionProps {
     anchorEl: HTMLElement;

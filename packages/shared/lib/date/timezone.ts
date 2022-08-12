@@ -1,4 +1,3 @@
-import isTruthy from '@proton/utils/isTruthy';
 import {
     findTimeZone,
     getTimeZoneLinks,
@@ -6,8 +5,11 @@ import {
     getZonedTime,
     listTimeZones,
 } from '@protontech/timezone-support';
-import { Api } from '@proton/shared/lib/interfaces';
+
 import { getAllowedTimeZones } from '@proton/shared/lib/api/calendars';
+import { Api } from '@proton/shared/lib/interfaces';
+import isTruthy from '@proton/utils/isTruthy';
+
 import { DateTime } from '../interfaces/calendar/Date';
 import {
     FALLBACK_ALLOWED_SUPPORTED_TIMEZONES_LIST,

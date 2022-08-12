@@ -1,5 +1,6 @@
 import { PLANS } from '@proton/shared/lib/constants';
 import { Audience } from '@proton/shared/lib/interfaces';
+
 import { IconName } from '../../../components';
 
 export interface PlanCardFeatureDefinition {

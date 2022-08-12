@@ -1,4 +1,5 @@
 import { PaginationParams } from '@proton/shared/lib/api/interface';
+
 import { CertificateDeletionParams, CertificateGenerationParams } from './Certificate';
 
 export enum CertificateMode {

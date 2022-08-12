@@ -1,6 +1,6 @@
-import getRandomValues from '@proton/get-random-values';
 import { CryptoProxy } from '@proton/crypto';
-import { binaryStringToArray, arrayToHexString, arrayToBinaryString } from '@proton/crypto/lib/utils';
+import { arrayToBinaryString, arrayToHexString, binaryStringToArray } from '@proton/crypto/lib/utils';
+import getRandomValues from '@proton/get-random-values';
 
 import { stringToUint8Array, uint8ArrayToBase64String, uint8ArrayToString } from './encoding';
 

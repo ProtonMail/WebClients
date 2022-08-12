@@ -1,7 +1,8 @@
 import { useState } from 'react';
-import useControlled from '@proton/hooks/useControlled';
-import { generateUID } from '../../helpers';
 
+import useControlled from '@proton/hooks/useControlled';
+
+import { generateUID } from '../../helpers';
 
 export interface ModalStateProps {
     key: string;

@@ -1,9 +1,9 @@
-import { isAppFromURL } from '../helpers/url';
-import { APPS } from '../constants';
 import { getAppHref } from '../apps/helper';
+import { getLinkToCalendarEvent } from '../calendar/helper';
+import { APPS } from '../constants';
+import { isAppFromURL } from '../helpers/url';
 import { postMessageToIframe } from './helpers';
 import { SIDE_APP_EVENTS } from './models';
-import { getLinkToCalendarEvent } from '../calendar/helper';
 
 interface OpenCalendarEventProps {
     sideAppUrl?: string;

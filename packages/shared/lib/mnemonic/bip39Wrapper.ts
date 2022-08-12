@@ -1,5 +1,7 @@
-import getRandomValues from '@proton/get-random-values';
 import { entropyToMnemonic, mnemonicToEntropy, validateMnemonic as validateMnemonicBip39 } from '@protontech/bip39';
+
+import getRandomValues from '@proton/get-random-values';
+
 import { base64StringToUint8Array, uint8ArrayToBase64String } from '../helpers/encoding';
 
 export const generateMnemonicBase64RandomBytes = () => {

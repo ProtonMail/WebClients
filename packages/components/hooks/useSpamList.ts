@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { WHITELIST_LOCATION, BLACKLIST_LOCATION } from '@proton/shared/lib/constants';
+
+import { BLACKLIST_LOCATION, WHITELIST_LOCATION } from '@proton/shared/lib/constants';
 import { IncomingDefault } from '@proton/shared/lib/interfaces/IncomingDefault';
 
 import { WHITE_OR_BLACK_LOCATION } from '../containers/filters/interfaces';

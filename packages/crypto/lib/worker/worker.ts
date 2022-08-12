@@ -1,6 +1,7 @@
 import { expose, transferHandlers } from 'comlink';
-import { workerTransferHandlers } from './transferHandlers';
+
 import { Api as WorkerApi } from './api';
+import { workerTransferHandlers } from './transferHandlers';
 
 workerTransferHandlers.forEach(({ name, handler }) => transferHandlers.set(name, handler));
 

@@ -1,6 +1,8 @@
-import { Subscription } from '@proton/shared/lib/interfaces';
-import { isTrial } from '@proton/shared/lib/helpers/subscription';
 import { fromUnixTime, subDays } from 'date-fns';
+
+import { isTrial } from '@proton/shared/lib/helpers/subscription';
+import { Subscription } from '@proton/shared/lib/interfaces';
+
 import { Feature } from '../../features';
 
 export const getShouldOpenReferralModal = ({

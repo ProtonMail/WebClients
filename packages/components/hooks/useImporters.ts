@@ -1,5 +1,5 @@
-import { ImportersModel, ImportReportsModel } from '@proton/shared/lib/models/importersModel';
-import { Importer, ImportReportAggregated } from '@proton/shared/lib/interfaces/EasySwitch';
+import { ImportReportAggregated, Importer } from '@proton/shared/lib/interfaces/EasySwitch';
+import { ImportReportsModel, ImportersModel } from '@proton/shared/lib/models/importersModel';
 
 import createUseModelHook from './helpers/createModelHook';
 

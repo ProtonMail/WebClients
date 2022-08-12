@@ -1,6 +1,6 @@
-import { APP_NAMES, APPS, APPS_CONFIGURATION } from '../constants';
-import { stripLeadingAndTrailingSlash } from '../helpers/string';
 import { stripLocalBasenameFromPathname } from '../authentication/pathnameHelper';
+import { APPS, APPS_CONFIGURATION, APP_NAMES } from '../constants';
+import { stripLeadingAndTrailingSlash } from '../helpers/string';
 
 export const DEFAULT_APP = APPS.PROTONMAIL;
 

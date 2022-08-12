@@ -1,6 +1,6 @@
-import { encodeUtf8Base64, decodeUtf8Base64 } from '@proton/crypto/lib/utils';
+import { decodeUtf8Base64, encodeUtf8Base64 } from '@proton/crypto/lib/utils';
 
-import { MAILBOX_PASSWORD_KEY, UID_KEY, LOCAL_ID_KEY, PERSIST_SESSION_KEY } from '../constants';
+import { LOCAL_ID_KEY, MAILBOX_PASSWORD_KEY, PERSIST_SESSION_KEY, UID_KEY } from '../constants';
 
 interface Arguments {
     set: (key: string, value: any) => void;

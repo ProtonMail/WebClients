@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+import { useCallback, useState } from 'react';
 
 export default function useControlled<V>(controlled: V, defaultValue?: V) {
     const isControlled = controlled !== undefined;

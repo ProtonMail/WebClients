@@ -1,4 +1,5 @@
-import { DependencyList, useEffect, useMemo, useState, ChangeEvent } from 'react';
+import { ChangeEvent, DependencyList, useEffect, useMemo, useState } from 'react';
+
 import useHandler from '../../hooks/useHandler';
 
 /**

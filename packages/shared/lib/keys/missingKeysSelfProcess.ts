@@ -1,7 +1,7 @@
-import { Api, Address, EncryptionConfig, DecryptedKey } from '../interfaces';
-import { getHasMigratedAddressKeys } from './keyMigration';
-import { getPrimaryKey } from './getPrimaryKey';
+import { Address, Api, DecryptedKey, EncryptionConfig } from '../interfaces';
 import { createAddressKeyLegacy, createAddressKeyV2 } from './add';
+import { getPrimaryKey } from './getPrimaryKey';
+import { getHasMigratedAddressKeys } from './keyMigration';
 
 type OnUpdateCallback = (ID: string, update: { status: 'loading' | 'error' | 'ok'; result?: string }) => void;
 

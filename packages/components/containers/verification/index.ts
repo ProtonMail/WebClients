@@ -1,1 +1,1 @@
-export { default as EmbeddedVerification } from './EmbeddedVerification'
+export { default as EmbeddedVerification } from './EmbeddedVerification';

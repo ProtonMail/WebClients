@@ -1,4 +1,5 @@
 import { PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
+
 import { RequireSome } from './utils';
 
 export interface KeyWithRecoverySecret extends Key {
