@@ -1,4 +1,4 @@
-import { Canvas, Story, ArgsTable } from '@storybook/addon-docs';
+import { Canvas, Story, Primary, ArgsTable } from '@storybook/addon-docs';
 import { Autocomplete } from '@proton/components'
 
 # Autocomplete
@@ -36,5 +36,9 @@ The hook api returns props to spread on the input and option elements.
 Since this is a component where focus persists inside the anchor even while keyboard navigating through the elements inside its dropdown, accessibility can't be managed via native focus and has to be artifically created via aria attributes. It is for that reason that the `id` prop, which is used internally to link the dropdown contents to it's anchor, is required.
 
 ### Props
+
+<div class="hidden">
+    <Primary />
+</div>
 
 <ArgsTable of={Autocomplete} />
