@@ -100,7 +100,6 @@ const SelectGroup = ({
                 maxLength={100}
                 title={c('Title').t`Add contact group name`}
                 error={error}
-                disabled={!!error}
                 value={targetName}
                 onChange={handleChangeGroupName}
             />
