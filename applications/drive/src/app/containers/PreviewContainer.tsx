@@ -1,18 +1,17 @@
-import { useEffect, useState, useCallback, useRef, useMemo } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { RouteComponentProps, useLocation } from 'react-router-dom';
 
 import { FilePreview, NavigationControl, useModals } from '@proton/components';
 import { HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
 import { RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
 
-import { DecryptedLink, useFileView } from '../store';
-import useActiveShare from '../hooks/drive/useActiveShare';
-import useNavigate from '../hooks/drive/useNavigate';
 import DetailsModal from '../components/DetailsModal';
 import ShareLinkModal from '../components/ShareLinkModal/ShareLinkModal';
 import { SignatureAlertBody } from '../components/SignatureAlert';
 import SignatureIcon from '../components/SignatureIcon';
-
+import useActiveShare from '../hooks/drive/useActiveShare';
+import useNavigate from '../hooks/drive/useNavigate';
+import { DecryptedLink, useFileView } from '../store';
 // TODO: ideally not use here
 import useSearchResults from '../store/_search/useSearchResults';
 

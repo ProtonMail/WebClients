@@ -1,14 +1,15 @@
 import { useEffect, useMemo } from 'react';
+
 import { c } from 'ttag';
 
 import { useLoading, useNotifications } from '@proton/components';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 
-import { useUserSettings } from '../_settings';
 import { useLinksListing } from '../_links';
 import { useSearchResults } from '../_search';
+import { useUserSettings } from '../_settings';
 import { reportError } from '../_utils';
-import { useMemoArrayNoMatterTheOrder, useAbortSignal, useSorting, useSortingWithDefault } from './utils';
+import { useAbortSignal, useMemoArrayNoMatterTheOrder, useSorting, useSortingWithDefault } from './utils';
 import { SortField } from './utils/useSorting';
 
 const DEFAULT_SORT = {

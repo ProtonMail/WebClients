@@ -1,7 +1,9 @@
 import { useState } from 'react';
-import { fromUnixTime, getUnixTime, getYear, getMonth, getDate, getHours, getMinutes } from 'date-fns';
-import { DateInput, TimeInput } from '@proton/components';
+
+import { fromUnixTime, getDate, getHours, getMinutes, getMonth, getUnixTime, getYear } from 'date-fns';
 import { c } from 'ttag';
+
+import { DateInput, TimeInput } from '@proton/components';
 
 interface Props {
     expiration: number | null;

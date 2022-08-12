@@ -2,13 +2,13 @@ import * as React from 'react';
 import { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
-import { PrivateAppContainer, useToggle, MainLogo, TopBanners } from '@proton/components';
+import { MainLogo, PrivateAppContainer, TopBanners, useToggle } from '@proton/components';
 
+import AppErrorBoundary from '../AppErrorBoundary';
+import FileRecoveryBanner from '../ResolveLockedVolumes/LockedVolumesBanner';
 import UploadSidebarButton from '../sections/Drive/UploadButton';
 import ShareFileSidebarButton from '../sections/SharedLinks/ShareFileSidebarButton';
 import EmptyTrashSidebarButton from '../sections/Trash/EmptyTrashSidebarButton';
-import FileRecoveryBanner from '../ResolveLockedVolumes/LockedVolumesBanner';
-import AppErrorBoundary from '../AppErrorBoundary';
 import { DriveHeaderPrivate } from './DriveHeader';
 import DriveSidebar from './DriveSidebar/DriveSidebar';
 

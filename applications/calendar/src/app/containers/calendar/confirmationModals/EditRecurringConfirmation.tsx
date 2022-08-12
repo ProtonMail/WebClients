@@ -1,7 +1,10 @@
 import { useState } from 'react';
-import { Alert, Button, BasicModal } from '@proton/components';
+
 import { c } from 'ttag';
+
+import { Alert, BasicModal, Button } from '@proton/components';
 import { RECURRING_TYPES } from '@proton/shared/lib/calendar/constants';
+
 import { INVITE_ACTION_TYPES, InviteActions } from '../../../interfaces/Invite';
 import SelectRecurringType from './SelectRecurringType';
 

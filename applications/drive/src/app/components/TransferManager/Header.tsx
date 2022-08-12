@@ -1,14 +1,16 @@
-import { useRef, useState, useEffect, useMemo } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
+
 import { c, msgid } from 'ttag';
-import { Icon, Tooltip, classnames, Button } from '@proton/components';
+
+import { Button, Icon, Tooltip, classnames } from '@proton/components';
 
 import {
-    isTransferActive,
-    isTransferDone,
-    isTransferManuallyPaused,
-    isTransferError,
-    isTransferCanceled,
     calculateProgress,
+    isTransferActive,
+    isTransferCanceled,
+    isTransferDone,
+    isTransferError,
+    isTransferManuallyPaused,
 } from '../../utils/transfer';
 import { Download, TransfersStats, Upload } from './transfer';
 

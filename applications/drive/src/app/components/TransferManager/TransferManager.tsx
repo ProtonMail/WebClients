@@ -1,29 +1,30 @@
-import { useCallback, useEffect, useRef, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { FixedSizeList, ListChildComponentProps } from 'react-window';
+
 import { c, msgid } from 'ttag';
 
-import noop from '@proton/utils/noop';
 import {
-    useToggle,
-    classnames,
-    useElementRect,
-    useActiveBreakpoint,
-    useWindowSize,
-    useRightToLeft,
     Tabs,
+    classnames,
+    useActiveBreakpoint,
+    useElementRect,
+    useRightToLeft,
+    useToggle,
+    useWindowSize,
 } from '@proton/components';
-import buffer from '@proton/utils/buffer';
-import { rootFontSize } from '@proton/shared/lib/helpers/dom';
 import busy from '@proton/shared/lib/busy';
+import { rootFontSize } from '@proton/shared/lib/helpers/dom';
+import buffer from '@proton/utils/buffer';
+import noop from '@proton/utils/noop';
 
 import useConfirm from '../../hooks/util/useConfirm';
-import { isTransferFailed } from '../../utils/transfer';
 import { useTransfersView } from '../../store';
+import { isTransferFailed } from '../../utils/transfer';
+import Header from './Header';
+import HeaderButtons from './HeaderButtons';
+import Transfer from './TransferItem';
 import { Download, STATE_TO_GROUP_MAP, TransferGroup, TransferType, TransfersStats, Upload } from './transfer';
 import useTransferControls from './useTransferControls';
-import Header from './Header';
-import Transfer from './TransferItem';
-import HeaderButtons from './HeaderButtons';
 
 interface TransferListEntry<T extends TransferType> {
     transfer: T extends TransferType.Download ? Download : Upload;

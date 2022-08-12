@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
+
 import { c } from 'ttag';
-import { Button, useFormErrors, useLoading, InputFieldTwo } from '@proton/components';
+
+import { Button, InputFieldTwo, useFormErrors, useLoading } from '@proton/components';
+import { SSO_PATHS } from '@proton/shared/lib/constants';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import noop from '@proton/utils/noop';
-import { SSO_PATHS } from '@proton/shared/lib/constants';
 
 interface Props {
     onSubmit: (username: string) => Promise<void>;

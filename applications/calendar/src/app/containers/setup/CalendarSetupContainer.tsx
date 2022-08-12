@@ -1,19 +1,20 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
+
 import {
     LoaderPage,
     StandardLoadErrorPage,
     useApi,
     useCache,
     useEventManager,
-    useGetAddresses,
     useGetAddressKeys,
+    useGetAddresses,
 } from '@proton/components';
-import { traceError } from '@proton/shared/lib/helpers/sentry';
-import { CalendarsModel, CalendarUserSettingsModel } from '@proton/shared/lib/models';
-import { loadModels } from '@proton/shared/lib/models/helper';
-import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
-import { setupCalendarKeys } from '@proton/shared/lib/calendar/keys/setupCalendarKeys';
 import setupCalendarHelper from '@proton/shared/lib/calendar/keys/setupCalendarHelper';
+import { setupCalendarKeys } from '@proton/shared/lib/calendar/keys/setupCalendarKeys';
+import { traceError } from '@proton/shared/lib/helpers/sentry';
+import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import { CalendarUserSettingsModel, CalendarsModel } from '@proton/shared/lib/models';
+import { loadModels } from '@proton/shared/lib/models/helper';
 
 interface Props {
     onDone: () => void;

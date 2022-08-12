@@ -1,7 +1,7 @@
 import { createContext, useContext, useState } from 'react';
 
-import useSearchLibrary from './useSearchLibrary';
 import { ESLink } from './types';
+import useSearchLibrary from './useSearchLibrary';
 
 function useSearchResultsProvider() {
     const { encryptedSearch, getESDBStatus } = useSearchLibrary();

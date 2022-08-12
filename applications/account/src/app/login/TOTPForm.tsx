@@ -1,9 +1,10 @@
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
+
 import { c } from 'ttag';
+
+import { Button, InputFieldTwo, useFormErrors, useLoading } from '@proton/components';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import noop from '@proton/utils/noop';
-
-import { Button, useLoading, useFormErrors, InputFieldTwo } from '@proton/components';
 
 interface Props {
     onSubmit: (totp: string) => Promise<void>;

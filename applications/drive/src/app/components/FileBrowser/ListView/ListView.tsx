@@ -2,22 +2,22 @@ import * as React from 'react';
 import { FixedSizeList, ListChildComponentProps } from 'react-window';
 
 import {
-    TableBody,
-    useActiveBreakpoint,
     Table,
-    classnames,
-    useElementRect,
+    TableBody,
     TableCellBusy,
+    classnames,
+    useActiveBreakpoint,
+    useElementRect,
     useRightToLeft,
 } from '@proton/components';
-import buffer from '@proton/utils/buffer';
 import { rootFontSize } from '@proton/shared/lib/helpers/dom';
+import buffer from '@proton/utils/buffer';
 
-import { DragMoveControls, FileBrowserBaseItem, BrowserItemId } from '../interface';
-import ListHeader from './ListHeader';
-import ItemRow from './ItemRow';
 import { FileBrowserProps } from '../FileBrowser';
+import { BrowserItemId, DragMoveControls, FileBrowserBaseItem } from '../interface';
 import { useSelection } from '../state/useSelection';
+import ItemRow from './ItemRow';
+import ListHeader from './ListHeader';
 
 interface ListItemData<T extends FileBrowserBaseItem> {
     items: T[];

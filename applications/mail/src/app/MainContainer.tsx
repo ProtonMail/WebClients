@@ -21,9 +21,9 @@ import ComposerContainer from './containers/ComposerContainer';
 import EncryptedSearchProvider from './containers/EncryptedSearchProvider';
 import PageContainer from './containers/PageContainer';
 import { ChecklistsProvider } from './containers/checklists';
+import { SimpleLoginExtensionProvider } from './hooks/simpleLogin/useSimpleLoginExtension';
 import { MailContentRefProvider } from './hooks/useClickMailContent';
 import { store } from './logic/store';
-import { SimpleLoginExtensionProvider } from './hooks/simpleLogin/useSimpleLoginExtension';
 
 const MainContainer = () => {
     const { handleClickSideApp } = useSideApp();

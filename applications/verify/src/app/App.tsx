@@ -1,21 +1,23 @@
 import { BrowserRouter as Router } from 'react-router-dom';
-import noop from '@proton/utils/noop';
+
 import {
     ApiProvider,
     ConfigProvider,
     CreateNotificationOptions,
-    ThemeProvider,
     Icons,
     ModalsChildren,
     ModalsProvider,
     NotificationsHijack,
     PreventLeaveProvider,
     RightToLeftProvider,
+    ThemeProvider,
 } from '@proton/components';
+import noop from '@proton/utils/noop';
 
-import * as config from './config';
 import Verify from './Verify';
 import broadcast, { MessageType } from './broadcast';
+import * as config from './config';
+
 import './app.scss';
 
 const App = () => {

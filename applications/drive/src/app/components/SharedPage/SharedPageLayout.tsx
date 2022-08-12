@@ -1,9 +1,10 @@
 import React from 'react';
+
 import { c } from 'ttag';
 
-import { classnames, ButtonLike, Icon, MainLogo, Unauthenticated } from '@proton/components';
-import { getStaticURL } from '@proton/shared/lib/helpers/url';
+import { ButtonLike, Icon, MainLogo, Unauthenticated, classnames } from '@proton/components';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
+import { getStaticURL } from '@proton/shared/lib/helpers/url';
 
 import './Layout.scss';
 

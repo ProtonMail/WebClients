@@ -1,4 +1,5 @@
 import { c } from 'ttag';
+
 import { HeaderCellsPresets } from '../../FileBrowser/interface';
 
 export const checkbox = {

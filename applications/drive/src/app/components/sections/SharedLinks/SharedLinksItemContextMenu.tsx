@@ -3,8 +3,8 @@ import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 import { DecryptedLink } from '../../../store';
 import { ContextMenuProps } from '../../FileBrowser/interface';
 import { DetailsButton, DownloadButton, PreviewButton, RenameButton, ShareLinkButton } from '../ContextMenu';
-import { StopSharingButton } from './ContextMenuButtons';
 import { ItemContextMenu } from '../ContextMenu/ItemContextMenu';
+import { StopSharingButton } from './ContextMenuButtons';
 
 export function SharedLinksItemContextMenu({
     shareId,

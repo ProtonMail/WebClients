@@ -1,17 +1,19 @@
 import { useState } from 'react';
+
 import { c } from 'ttag';
 
 import {
-    generateUID,
-    usePopperAnchor,
+    Button,
     Dropdown,
+    DropdownCaret,
     DropdownMenu,
     DropdownMenuButton,
-    Button,
-    DropdownCaret,
     IconName,
+    generateUID,
+    usePopperAnchor,
 } from '@proton/components';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
+
 import { SortParams } from '../FileBrowser/interface';
 
 export interface MenuItem<T> {

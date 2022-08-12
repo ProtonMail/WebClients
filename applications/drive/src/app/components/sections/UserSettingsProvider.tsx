@@ -1,8 +1,8 @@
-import { useState, createContext, Dispatch, SetStateAction } from 'react';
+import { Dispatch, SetStateAction, createContext, useState } from 'react';
 import * as React from 'react';
 
-import { UserSettings } from '@proton/shared/lib/interfaces/drive/userSettings';
 import { DEFAULT_USER_SETTINGS } from '@proton/shared/lib/drive/constants';
+import { UserSettings } from '@proton/shared/lib/interfaces/drive/userSettings';
 
 export const UserSettingsContext = createContext<[UserSettings, Dispatch<SetStateAction<UserSettings>>] | null>(null);
 

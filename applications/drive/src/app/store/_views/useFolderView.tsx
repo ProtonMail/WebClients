@@ -2,9 +2,9 @@ import { useEffect } from 'react';
 
 import { useLoading } from '@proton/components';
 
-import { useUserSettings } from '../_settings';
 import { useLinksListing } from '../_links';
-import { useMemoArrayNoMatterTheOrder, useAbortSignal, useLinkName, useControlledSorting } from './utils';
+import { useUserSettings } from '../_settings';
+import { useAbortSignal, useControlledSorting, useLinkName, useMemoArrayNoMatterTheOrder } from './utils';
 
 /**
  * useFolderView provides data for folder view (file browser of folder).

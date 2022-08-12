@@ -1,11 +1,11 @@
-import { createContext, useContext, useCallback, useMemo, useState } from 'react';
+import { createContext, useCallback, useContext, useMemo, useState } from 'react';
 
 import { useApi } from '@proton/components';
+import { queryUpdateUserSettings, queryUserSettings } from '@proton/shared/lib/api/drive/userSettings';
 import { DEFAULT_USER_SETTINGS } from '@proton/shared/lib/drive/constants';
 import { LayoutSetting, UserSettings } from '@proton/shared/lib/interfaces/drive/userSettings';
-import { queryUpdateUserSettings, queryUserSettings } from '@proton/shared/lib/api/drive/userSettings';
 
-import { UserSortParams, parseSetting, getSetting } from './sorting';
+import { UserSortParams, getSetting, parseSetting } from './sorting';
 
 type UserSettingsResponse = { UserSettings: Partial<UserSettings> };
 

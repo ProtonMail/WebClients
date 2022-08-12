@@ -1,16 +1,16 @@
 import { c } from 'ttag';
 
-import { classnames, TableCell, useActiveBreakpoint, FileIcon } from '@proton/components';
+import { FileIcon, TableCell, classnames, useActiveBreakpoint } from '@proton/components';
 
 import useActiveShare from '../../../hooks/drive/useActiveShare';
-import CopyLinkIcon from './CopyLinkIcon';
-import { DriveItem } from '../Drive/Drive';
-import SignatureIcon from '../../SignatureIcon';
-import { getLinkIconText } from './utils';
-import { TrashItem } from '../Trash/Trash';
-import { SharedLinkItem } from '../SharedLinks/SharedLinks';
 import { formatAccessCount } from '../../../utils/formatters';
 import { Cells } from '../../FileBrowser';
+import SignatureIcon from '../../SignatureIcon';
+import { DriveItem } from '../Drive/Drive';
+import { SharedLinkItem } from '../SharedLinks/SharedLinks';
+import { TrashItem } from '../Trash/Trash';
+import CopyLinkIcon from './CopyLinkIcon';
+import { getLinkIconText } from './utils';
 
 const { LocationCell: LocationCellBase, SizeCell: SizeCellBase, NameCell: NameCellBase, TimeCell } = Cells;
 

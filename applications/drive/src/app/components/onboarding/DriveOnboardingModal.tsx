@@ -1,5 +1,5 @@
 import { c } from 'ttag';
-import { getAppName } from '@proton/shared/lib/apps/helper';
+
 import {
     Button,
     OnboardingContent,
@@ -7,8 +7,8 @@ import {
     OnboardingStep,
     OnboardingStepRenderCallback,
 } from '@proton/components';
+import { getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
-
 import onboardingWelcome from '@proton/styles/assets/img/onboarding/drive-welcome.svg';
 
 interface Props {

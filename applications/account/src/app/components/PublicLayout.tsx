@@ -1,7 +1,9 @@
 import * as React from 'react';
+
 import { ProtonLogo } from '@proton/components/components';
 
 import PublicContainer from './PublicContainer';
+
 import './PublicLayout.scss';
 
 interface PublicLayoutProps {

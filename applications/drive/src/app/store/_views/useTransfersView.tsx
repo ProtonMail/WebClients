@@ -2,14 +2,14 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 import {
     Transfer,
+    TransferHistoryStats,
     TransferProgresses,
-    TransfersStats,
     TransferState,
     TransferStats,
-    TransferHistoryStats,
     TransfersHistoryStats,
+    TransfersStats,
 } from '../../components/TransferManager/transfer';
-import { isTransferProgress, isTransferFinished, isTransferError } from '../../utils/transfer';
+import { isTransferError, isTransferFinished, isTransferProgress } from '../../utils/transfer';
 import { useDownloadProvider } from '../_downloads';
 import { useUpload } from '../_uploads';
 

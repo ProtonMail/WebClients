@@ -5,8 +5,8 @@ import { Toolbar } from '@proton/components';
 
 import { DecryptedLink } from '../../../store';
 import { useSelection } from '../../FileBrowser';
-import { getSelectedItems } from '../helpers';
 import { DetailsButton, DownloadButton, LayoutButton, PreviewButton } from '../ToolbarButtons';
+import { getSelectedItems } from '../helpers';
 import { DeletePermanentlyButton, RestoreFromTrashButton } from './ToolbarButtons';
 
 interface Props {

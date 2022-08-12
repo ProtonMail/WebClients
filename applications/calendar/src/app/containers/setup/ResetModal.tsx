@@ -1,22 +1,25 @@
 import { useState } from 'react';
+
 import { c } from 'ttag';
+
 import {
     FormModal,
-    useApi,
-    useGetAddresses,
-    useGetAddressKeys,
     GenericError,
     Loader,
-    useLoading,
+    useApi,
     useCache,
+    useGetAddressKeys,
+    useGetAddresses,
+    useLoading,
 } from '@proton/components';
-import noop from '@proton/utils/noop';
 import { CALENDAR_FLAGS } from '@proton/shared/lib/calendar/constants';
+import { process } from '@proton/shared/lib/calendar/keys/resetHelper';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
-import { process } from '@proton/shared/lib/calendar/keys/resetHelper';
-import CalendarResetSection from './CalendarResetSection';
+import noop from '@proton/utils/noop';
+
 import CalendarReactivateSection from './CalendarReactivateSection';
+import CalendarResetSection from './CalendarResetSection';
 
 enum STEPS {
     LOADING,

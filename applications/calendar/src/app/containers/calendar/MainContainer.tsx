@@ -1,10 +1,6 @@
-import { getVisualCalendars } from '@proton/shared/lib/calendar/calendar';
 import { useMemo, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
-import { CALENDAR_FLAGS } from '@proton/shared/lib/calendar/constants';
-import { getIsPersonalCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
-import unary from '@proton/utils/unary';
 import {
     ErrorBoundary,
     FeatureCode,
@@ -16,15 +12,18 @@ import {
     useWelcomeFlags,
 } from '@proton/components';
 import { useInstance } from '@proton/hooks/index';
+import { getVisualCalendars } from '@proton/shared/lib/calendar/calendar';
+import { CALENDAR_FLAGS } from '@proton/shared/lib/calendar/constants';
+import { getIsPersonalCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
+import unary from '@proton/utils/unary';
 
+import Favicon from '../../components/Favicon';
+import { getIsSideApp } from '../../helpers/views';
 import CalendarOnboardingContainer from '../setup/CalendarOnboardingContainer';
 import CalendarSetupContainer from '../setup/CalendarSetupContainer';
 import ResetContainer from '../setup/ResetContainer';
 import MainContainerSetup from './MainContainerSetup';
-
-import Favicon from '../../components/Favicon';
 import { fromUrlParams } from './getUrlHelper';
-import { getIsSideApp } from '../../helpers/views';
 
 const MainContainer = () => {
     const [addresses] = useAddresses();

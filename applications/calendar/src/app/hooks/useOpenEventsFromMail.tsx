@@ -1,17 +1,19 @@
-import { startOfDay } from '@proton/shared/lib/date-fns-utc';
 import { Dispatch, RefObject, SetStateAction, useCallback, useEffect } from 'react';
-import { useCalendarModelEventManager, useNotifications } from '@proton/components';
-import { SIDE_APP_ACTION, SIDE_APP_EVENTS } from '@proton/shared/lib/sideApp/models';
-import { fromUTCDateToLocalFakeUTCDate } from '@proton/shared/lib/date/timezone';
-import { CalendarEventWithMetadata, VcalVeventComponent, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
-import { getDateOrDateTimeProperty, propertyToUTCDate } from '@proton/shared/lib/calendar/vcalConverter';
-import { Address } from '@proton/shared/lib/interfaces';
-import { isAuthorizedSideAppUrl } from '@proton/shared/lib/sideApp/helpers';
+
 import { c } from 'ttag';
 
-import { useOpenEvent } from './useOpenEvent';
-import { InteractiveState, TimeGridRef } from '../containers/calendar/interface';
+import { useCalendarModelEventManager, useNotifications } from '@proton/components';
+import { getDateOrDateTimeProperty, propertyToUTCDate } from '@proton/shared/lib/calendar/vcalConverter';
+import { startOfDay } from '@proton/shared/lib/date-fns-utc';
+import { fromUTCDateToLocalFakeUTCDate } from '@proton/shared/lib/date/timezone';
+import { Address } from '@proton/shared/lib/interfaces';
+import { CalendarEventWithMetadata, VcalVeventComponent, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import { isAuthorizedSideAppUrl } from '@proton/shared/lib/sideApp/helpers';
+import { SIDE_APP_ACTION, SIDE_APP_EVENTS } from '@proton/shared/lib/sideApp/models';
+
 import { TYPE } from '../components/calendar/interactions/constants';
+import { InteractiveState, TimeGridRef } from '../containers/calendar/interface';
+import { useOpenEvent } from './useOpenEvent';
 
 interface Props {
     calendars: VisualCalendar[];

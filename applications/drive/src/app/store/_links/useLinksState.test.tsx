@@ -1,16 +1,17 @@
-import { renderHook, act } from '@testing-library/react-hooks';
+import { act, renderHook } from '@testing-library/react-hooks';
+
 import { EVENT_TYPES } from '@proton/shared/lib/drive/constants';
 
 import { DriveEvents } from '../_events';
-import { EncryptedLink, DecryptedLink, LinkShareUrl } from './interface';
+import { DecryptedLink, EncryptedLink, LinkShareUrl } from './interface';
 import {
-    LinksState,
     Link,
-    updateByEvents,
-    deleteLinks,
+    LinksState,
     addOrUpdate,
-    setLock,
+    deleteLinks,
     setCachedThumbnailUrl,
+    setLock,
+    updateByEvents,
     useLinksStateProvider,
 } from './useLinksState';
 

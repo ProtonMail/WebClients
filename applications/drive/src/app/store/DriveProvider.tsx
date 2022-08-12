@@ -1,7 +1,7 @@
 import { PublicSessionProvider } from './_api';
-import { DriveEventManagerProvider } from './_events';
 import { DownloadsProvider, PublicDownloadsProvider } from './_downloads';
 import { DownloadSignatureIssueModal } from './_downloads/interface';
+import { DriveEventManagerProvider } from './_events';
 import { LinksProvider, PublicLinksProvider } from './_links';
 import { SearchProvider } from './_search';
 import { SharesProvider } from './_shares';

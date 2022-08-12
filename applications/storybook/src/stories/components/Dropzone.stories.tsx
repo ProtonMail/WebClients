@@ -1,7 +1,8 @@
 import { useState } from 'react';
-import { Dropzone, Button } from '@proton/components';
-import { getTitle } from '../../helpers/title';
 
+import { Button, Dropzone } from '@proton/components';
+
+import { getTitle } from '../../helpers/title';
 import mdx from './Dropzone.mdx';
 
 export default {

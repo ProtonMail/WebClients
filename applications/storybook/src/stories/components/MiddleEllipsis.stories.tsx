@@ -1,6 +1,6 @@
 import { MiddleEllipsis } from '@proton/components';
-import { getTitle } from '../../helpers/title';
 
+import { getTitle } from '../../helpers/title';
 import mdx from './MiddleEllipsis.mdx';
 
 export default {

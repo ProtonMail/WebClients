@@ -1,13 +1,13 @@
 import { act } from 'react-dom/test-utils';
 
 import { fireEvent } from '@testing-library/dom';
-import { removeItem, setItem } from '@proton/shared/lib/helpers/storage';
 import { Location } from 'history';
 import loudRejection from 'loud-rejection';
 
 import { getAppVersion } from '@proton/components';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import { LABEL_TYPE, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { removeItem, setItem } from '@proton/shared/lib/helpers/storage';
 import range from '@proton/utils/range';
 
 import {

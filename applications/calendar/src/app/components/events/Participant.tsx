@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { classnames, Tooltip } from '@proton/components';
+
+import { Tooltip, classnames } from '@proton/components';
 
 interface Props {
     icon: React.ReactNode;
