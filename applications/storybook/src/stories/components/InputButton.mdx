@@ -1,4 +1,4 @@
-import { Canvas, Story, ArgsTable } from "@storybook/addon-docs";
+import { Canvas, Story, ArgsTable, Primary } from "@storybook/addon-docs";
 import { InputButton } from "@proton/components";
 
 # InputButton
@@ -28,5 +28,9 @@ When you need to use this component like just described, please make sure to mak
 <Canvas>
     <Story id="components-inputbutton--exclusivity" />
 </Canvas>
+
+<div class="hidden">
+    <Primary />
+</div>
 
 <ArgsTable of={InputButton} />

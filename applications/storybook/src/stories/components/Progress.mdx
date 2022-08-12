@@ -1,4 +1,4 @@
-import { Canvas, Story, ArgsTable } from "@storybook/addon-docs";
+import { Canvas, Story, ArgsTable, Primary } from "@storybook/addon-docs";
 import { Progress } from "@proton/components";
 
 # Progress
@@ -12,5 +12,9 @@ Update the `value` attribute of the progress bar and the text explaining the act
 <Canvas withSource="open">
     <Story id="components-progress--basic" />
 </Canvas>
+
+<div class="hidden">
+    <Primary />
+</div>
 
 <ArgsTable of={Progress} />
