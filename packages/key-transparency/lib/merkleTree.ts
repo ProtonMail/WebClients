@@ -1,7 +1,8 @@
-import { SHA256, arrayToHexString, concatArrays, binaryStringToArray } from 'pmcrypto';
-import { vrfVerify } from './vrf';
-import { Proof } from './interfaces';
+import { SHA256, arrayToHexString, binaryStringToArray, concatArrays } from 'pmcrypto';
+
 import { KT_LEN, LEFT_N, vrfHexKey } from './constants';
+import { Proof } from './interfaces';
+import { vrfVerify } from './vrf';
 
 /**
  * Convert a string of hexadecimal numbers into a byte array

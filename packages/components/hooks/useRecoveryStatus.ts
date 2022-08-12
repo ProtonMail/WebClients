@@ -1,8 +1,9 @@
 import { MNEMONIC_STATUS } from '@proton/shared/lib/interfaces';
-import useUserSettings from './useUserSettings';
+
 import RecoveryStatus from '../containers/recovery/RecoveryStatus';
 import usePrimaryRecoverySecret from './usePrimaryRecoverySecret';
 import { useUser } from './useUser';
+import useUserSettings from './useUserSettings';
 
 const useRecoveryStatus = () => {
     const [user] = useUser();

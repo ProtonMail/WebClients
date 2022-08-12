@@ -1,6 +1,9 @@
 import { addDays, fromUnixTime } from 'date-fns';
-import unique from '@proton/utils/unique';
+
 import truncate from '@proton/utils/truncate';
+import unique from '@proton/utils/unique';
+
+import { DAY } from '../../constants';
 import { convertUTCDateTimeToZone, fromUTCDate, getSupportedTimezone } from '../../date/timezone';
 import {
     VcalDateOrDateTimeProperty,
@@ -13,6 +16,7 @@ import { getAttendeeEmail, getSupportedAttendee, getSupportedOrganizer } from '.
 import { ICAL_METHOD, MAX_LENGTHS_API } from '../constants';
 import { getIsDateOutOfBounds, getIsWellFormedDateOrDateTime, getSupportedUID } from '../helper';
 import { getHasConsistentRrule, getHasOccurrences, getSupportedRrule } from '../rrule';
+import { durationToMilliseconds } from '../vcal';
 import {
     dateToProperty,
     getDateTimeProperty,
@@ -23,8 +27,6 @@ import { getIsPropertyAllDay, getPropertyTzid } from '../vcalHelper';
 import { EVENT_INVITATION_ERROR_TYPE, EventInvitationError } from './EventInvitationError';
 import { IMPORT_EVENT_ERROR_TYPE, ImportEventError } from './ImportEventError';
 import { getSupportedAlarms } from './valarm';
-import { durationToMilliseconds } from '../vcal';
-import { DAY } from '../../constants';
 import { getSupportedStringValue } from './vcal';
 
 export const getDtendPropertyFromDuration = (

@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
-import busy from '@proton/shared/lib/busy'
+
+import busy from '@proton/shared/lib/busy';
 
 const useBeforeUnload = (message?: string | boolean) => {
     useEffect(() => {
@@ -8,17 +9,17 @@ const useBeforeUnload = (message?: string | boolean) => {
         }
 
         const handleUnload = (event: BeforeUnloadEvent) => {
-            const computedMessage = message === true ? '' : message
+            const computedMessage = message === true ? '' : message;
             if (event) {
                 event.preventDefault();
                 event.returnValue = computedMessage;
             }
             return computedMessage;
         };
-        const unregister = busy.register()
+        const unregister = busy.register();
         window.addEventListener('beforeunload', handleUnload);
         return () => {
-            unregister()
+            unregister();
             window.removeEventListener('beforeunload', handleUnload);
         };
     }, [message]);

@@ -1,4 +1,5 @@
 import { CryptoProxy, PrivateKeyReference } from '@proton/crypto';
+
 import { CONTACT_CARD_TYPE } from '../constants';
 import { ContactCard } from '../interfaces/contacts';
 

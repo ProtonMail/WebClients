@@ -1,5 +1,5 @@
-import { HTTP_ERROR_CODES } from '../errors';
 import { APP_CLIENT_IDS } from '../constants';
+import { HTTP_ERROR_CODES } from '../errors';
 
 export const PASSWORD_WRONG_ERROR = 8002;
 

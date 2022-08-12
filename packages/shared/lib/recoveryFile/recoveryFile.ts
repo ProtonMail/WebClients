@@ -1,11 +1,12 @@
-import getRandomValues from '@proton/get-random-values';
-import { PublicKeyReference, CryptoProxy, PrivateKeyReference, VERIFICATION_STATUS } from '@proton/crypto';
-import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
+import { CryptoProxy, PrivateKeyReference, PublicKeyReference, VERIFICATION_STATUS } from '@proton/crypto';
 import { concatArrays } from '@proton/crypto/lib/utils';
+import getRandomValues from '@proton/get-random-values';
+import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 import isTruthy from '@proton/utils/isTruthy';
-import { DecryptedKey, KeyWithRecoverySecret } from '../interfaces';
-import downloadFile from '../helpers/downloadFile';
+
 import { KEY_FILE_EXTENSION } from '../constants';
+import downloadFile from '../helpers/downloadFile';
+import { DecryptedKey, KeyWithRecoverySecret } from '../interfaces';
 import { ArmoredKeyWithInfo } from '../keys';
 
 const decryptRecoveryFile = (recoverySecrets: KeyWithRecoverySecret[]) => async (file: string) => {

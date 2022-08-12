@@ -1,11 +1,11 @@
-import { computeKeyPassword } from '@proton/srp';
-import { getPrimaryKeyWithSalt } from '@proton/shared/lib/keys/keys';
+import { CryptoProxy } from '@proton/crypto';
+import { AuthResponse } from '@proton/shared/lib/authentication/interface';
 import { PASSWORD_MODE } from '@proton/shared/lib/constants';
 import { KeySalt as tsKeySalt } from '@proton/shared/lib/interfaces/KeySalt';
 import { User as tsUser } from '@proton/shared/lib/interfaces/User';
-import { AuthResponse } from '@proton/shared/lib/authentication/interface';
+import { getPrimaryKeyWithSalt } from '@proton/shared/lib/keys/keys';
 import { getHasTOTPEnabled, getHasU2FEnabled } from '@proton/shared/lib/settings/twoFactor';
-import { CryptoProxy } from '@proton/crypto';
+import { computeKeyPassword } from '@proton/srp';
 
 export const getAuthTypes = ({ '2FA': { Enabled }, PasswordMode }: AuthResponse) => {
     return {

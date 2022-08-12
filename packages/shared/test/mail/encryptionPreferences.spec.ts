@@ -1,4 +1,5 @@
 import { PublicKeyReference } from '@proton/crypto';
+
 import {
     CONTACT_MIME_TYPES,
     MIME_TYPES,

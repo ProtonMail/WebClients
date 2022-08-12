@@ -1,6 +1,8 @@
 import { useCallback } from 'react';
-import { CalendarsModel } from '@proton/shared/lib/models/calendarsModel';
+
 import { CalendarWithMembers } from '@proton/shared/lib/interfaces/calendar';
+import { CalendarsModel } from '@proton/shared/lib/models/calendarsModel';
+
 import useApi from './useApi';
 import useCache from './useCache';
 import useCachedModelResult, { getPromiseValue } from './useCachedModelResult';

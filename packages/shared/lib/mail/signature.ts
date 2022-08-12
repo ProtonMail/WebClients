@@ -1,4 +1,5 @@
 import { c } from 'ttag';
+
 import { APPS, APPS_CONFIGURATION } from '../constants';
 
 interface Options {

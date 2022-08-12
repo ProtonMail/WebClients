@@ -1,7 +1,8 @@
 import { CryptoProxy } from '@proton/crypto';
-import { getResetAddressesKeys, getResetAddressesKeysV2 } from '../../lib/keys';
+
 import { ENCRYPTION_CONFIGS, ENCRYPTION_TYPES } from '../../lib/constants';
 import { Address } from '../../lib/interfaces';
+import { getResetAddressesKeys, getResetAddressesKeysV2 } from '../../lib/keys';
 
 describe('reset keys v1', () => {
     it('should return an empty result', async () => {

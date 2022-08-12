@@ -1,7 +1,8 @@
 import { c, msgid } from 'ttag';
+
 import { BRAND_NAME, MAIL_APP_NAME, PLANS } from '@proton/shared/lib/constants';
-import { Audience, PlansMap } from '@proton/shared/lib/interfaces';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
+import { Audience, PlansMap } from '@proton/shared/lib/interfaces';
 
 import { PlanCardFeature, PlanCardFeatureDefinition } from './interface';
 

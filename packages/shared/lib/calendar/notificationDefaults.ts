@@ -1,6 +1,6 @@
+import { SETTINGS_NOTIFICATION_TYPE } from './constants';
 import { triggerToModel } from './notificationModel';
 import { fromTriggerString } from './vcal';
-import { SETTINGS_NOTIFICATION_TYPE } from './constants';
 
 export const DEFAULT_PART_DAY_NOTIFICATIONS = [
     {

@@ -1,5 +1,7 @@
 import mimemessage from '@protontech/mimemessage';
+
 import { encodeUtf8 } from '@proton/crypto/lib/utils';
+
 import { AttachmentDirect } from '../../interfaces/mail/crypto';
 
 /**

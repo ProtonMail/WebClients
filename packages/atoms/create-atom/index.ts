@@ -1,8 +1,7 @@
-import path from 'path';
-import fs from 'fs/promises';
-import fsSync from 'fs';
-
 import { Command } from 'commander';
+import fsSync from 'fs';
+import fs from 'fs/promises';
+import path from 'path';
 
 import { logComponentCreationError, logConclusion, logIntro, logItemCompletion } from './utils/log';
 import {

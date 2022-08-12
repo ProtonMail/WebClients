@@ -1,15 +1,20 @@
-import { getSignature, decryptMessage, getMessage, OpenPGPKey, encryptMessage } from 'pmcrypto';
-import { Api, Address, SignedKeyList, SignedKeyListEpochs, KeyPair, SimpleMap } from '@proton/shared/lib/interfaces';
+import { OpenPGPKey, decryptMessage, encryptMessage, getMessage, getSignature } from 'pmcrypto';
+
 import { getCanonicalEmailMap } from '@proton/shared/lib/api/helpers/canonicalEmailMap';
+import { hasStorage, removeItem, setItem } from '@proton/shared/lib/helpers/storage';
+import { Address, Api, KeyPair, SignedKeyList, SignedKeyListEpochs, SimpleMap } from '@proton/shared/lib/interfaces';
+
+import { parseCertChain } from './certTransparency';
+import { EXP_EPOCH_INTERVAL, KT_STATUS } from './constants';
 import {
-    fetchProof,
     fetchEpoch,
-    uploadEpoch,
     fetchLastEpoch,
     fetchParsedSKLs,
+    fetchProof,
     fetchVerifiedEpoch,
+    uploadEpoch,
 } from './fetchHelper';
-import { EXP_EPOCH_INTERVAL, KT_STATUS } from './constants';
+import { Epoch, EpochExtended, KTInfo, KTInfoSelfAudit, KTInfoToLS } from './interfaces';
 import {
     checkSignature,
     getFromLS,
@@ -22,9 +27,6 @@ import {
     verifyEpoch,
     verifyKeyLists,
 } from './utils';
-import { parseCertChain } from './certTransparency';
-import { hasStorage, removeItem, setItem } from '@proton/shared/lib/helpers/storage';
-import { Epoch, EpochExtended, KTInfo, KTInfoSelfAudit, KTInfoToLS } from './interfaces';
 
 /**
  * For that public keys associated to an email address are correctly stored in KT

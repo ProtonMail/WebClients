@@ -1,4 +1,5 @@
 import { PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
+
 import { Params } from './interface';
 
 /**

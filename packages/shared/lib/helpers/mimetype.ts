@@ -1,4 +1,5 @@
 import { getBrowser } from '@proton/shared/lib/helpers/browser';
+
 import { MIME_TYPES } from '../constants';
 import { SupportedMimeTypes } from '../drive/constants';
 

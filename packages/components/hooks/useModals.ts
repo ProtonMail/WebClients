@@ -1,4 +1,5 @@
 import { useContext } from 'react';
+
 import ModalsContext from '../containers/modals/modalsContext';
 
 const useModals = () => {

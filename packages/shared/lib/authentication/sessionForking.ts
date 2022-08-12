@@ -1,25 +1,26 @@
 import getRandomValues from '@proton/get-random-values';
-import { APP_NAMES, APPS, SSO_PATHS } from '../constants';
-import { encodeBase64URL, uint8ArrayToString } from '../helpers/encoding';
-import { replaceUrl } from '../helpers/browser';
+
+import { pullForkSession, pushForkSession, setRefreshCookies } from '../api/auth';
+import { OAuthForkResponse, postOAuthFork } from '../api/oauth';
+import { getUser } from '../api/user';
 import { getAppHref, getClientID } from '../apps/helper';
+import { APPS, APP_NAMES, SSO_PATHS } from '../constants';
+import { withAuthHeaders, withUIDHeaders } from '../fetch/headers';
+import { replaceUrl } from '../helpers/browser';
+import { encodeBase64URL, uint8ArrayToString } from '../helpers/encoding';
+import { Api, User as tsUser } from '../interfaces';
+import { FORK_TYPE } from './ForkInterface';
+import { getKey } from './cryptoHelper';
+import { InvalidForkConsumeError, InvalidPersistentSessionError } from './error';
+import { PullForkResponse, PushForkResponse, RefreshSessionResponse } from './interface';
+import { persistSession, resumeSession } from './persistedSessionHelper';
+import { getForkDecryptedBlob, getForkEncryptedBlob } from './sessionForkBlob';
 import {
     getValidatedApp,
     getValidatedForkType,
     getValidatedLocalID,
     getValidatedRawKey,
 } from './sessionForkValidation';
-import { getForkDecryptedBlob, getForkEncryptedBlob } from './sessionForkBlob';
-import { InvalidForkConsumeError, InvalidPersistentSessionError } from './error';
-import { PullForkResponse, PushForkResponse, RefreshSessionResponse } from './interface';
-import { pullForkSession, pushForkSession, setRefreshCookies } from '../api/auth';
-import { Api, User as tsUser } from '../interfaces';
-import { withAuthHeaders, withUIDHeaders } from '../fetch/headers';
-import { FORK_TYPE } from './ForkInterface';
-import { persistSession, resumeSession } from './persistedSessionHelper';
-import { getUser } from '../api/user';
-import { OAuthForkResponse, postOAuthFork } from '../api/oauth';
-import { getKey } from './cryptoHelper';
 
 interface ForkState {
     url: string;

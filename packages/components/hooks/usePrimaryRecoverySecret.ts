@@ -1,4 +1,5 @@
 import { KeyWithRecoverySecret } from '@proton/shared/lib/interfaces';
+
 import { useUser } from './useUser';
 
 const usePrimaryRecoverySecret = (): KeyWithRecoverySecret | undefined => {

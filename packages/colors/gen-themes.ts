@@ -1,7 +1,7 @@
-import fs from 'fs';
-import tiny from 'tinycolor2';
-import prettier from 'prettier';
 import cssTree from 'css-tree';
+import fs from 'fs';
+import prettier from 'prettier';
+import tiny from 'tinycolor2';
 
 import genButtonShades from './gen-button-shades';
 import config, { ThemeConfig, ThemeFileType } from './themes.config';

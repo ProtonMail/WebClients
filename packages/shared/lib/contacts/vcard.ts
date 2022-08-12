@@ -1,11 +1,11 @@
+import { formatISO, parseISO } from 'date-fns';
 import ICAL from 'ical.js';
+
 import isTruthy from '@proton/utils/isTruthy';
 import range from '@proton/utils/range';
-import { formatISO, parseISO } from 'date-fns';
+
 import { isValidDate } from '../date/date';
 import { readFileAsString } from '../helpers/file';
-import { createContactPropertyUid, getStringContactValue } from './properties';
-import { getValue } from './property';
 import {
     VCardAddress,
     VCardContact,
@@ -14,6 +14,8 @@ import {
     VCardProperty,
 } from '../interfaces/contacts/VCard';
 import { getMimeTypeVcard, getPGPSchemeVcard } from './keyProperties';
+import { createContactPropertyUid, getStringContactValue } from './properties';
+import { getValue } from './property';
 
 export const ONE_OR_MORE_MUST_BE_PRESENT = '1*';
 export const EXACTLY_ONE_MUST_BE_PRESENT = '1';

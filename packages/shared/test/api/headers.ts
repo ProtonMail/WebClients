@@ -1,6 +1,6 @@
-import { getAppVersionHeaders } from '../../lib/fetch/headers';
 import { getClientID } from '../../lib/apps/helper';
-import { APP_NAMES, APPS } from '../../lib/constants';
+import { APPS, APP_NAMES } from '../../lib/constants';
+import { getAppVersionHeaders } from '../../lib/fetch/headers';
 
 describe('app version headers', () => {
     it('should return new app headers', () => {

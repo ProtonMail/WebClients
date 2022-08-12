@@ -1,10 +1,11 @@
 import { getAllMemberAddresses } from '@proton/shared/lib/api/members';
 import { Address, Member, PartialMemberAddress } from '@proton/shared/lib/interfaces';
-import useCache from './useCache';
-import useApi from './useApi';
-import usePromiseResult from './usePromiseResult';
+
 import { cachedPromise } from './helpers/cachedPromise';
 import { useAddresses } from './useAddresses';
+import useApi from './useApi';
+import useCache from './useCache';
+import usePromiseResult from './usePromiseResult';
 
 export function useMemberAddresses(
     members: Member[],

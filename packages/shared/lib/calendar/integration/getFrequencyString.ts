@@ -1,19 +1,21 @@
 import { c, msgid } from 'ttag';
+
 import mod from '@proton/utils/mod';
 import unique from '@proton/utils/unique';
+
 import { format } from '../../date-fns-utc';
 import { WeekStartsOn } from '../../date-fns-utc/interface';
-import { END_TYPE, FREQUENCY, MONTHLY_TYPE } from '../constants';
-import { getPositiveSetpos } from '../helper';
+import { toUTCDate } from '../../date/timezone';
 import {
     VcalDateOrDateTimeProperty,
-    VcalRrulePropertyValue,
     VcalRruleProperty,
+    VcalRrulePropertyValue,
 } from '../../interfaces/calendar/VcalModel';
-import { getEndType, getMonthType, getUntilDate, getWeeklyDays } from './rruleProperties';
+import { END_TYPE, FREQUENCY, MONTHLY_TYPE } from '../constants';
+import { getPositiveSetpos } from '../helper';
 import { getIsRruleCustom, getIsRruleSimple } from '../rrule';
 import { getPropertyTzid } from '../vcalHelper';
-import { toUTCDate } from '../../date/timezone';
+import { getEndType, getMonthType, getUntilDate, getWeeklyDays } from './rruleProperties';
 
 interface RruleEnd {
     type: END_TYPE;

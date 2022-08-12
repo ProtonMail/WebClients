@@ -1,8 +1,8 @@
-import { Address, Api, DecryptedKey, UserModel as tsUserModel } from '../interfaces';
 import { ADDRESS_STATUS, MEMBER_PRIVATE } from '../constants';
+import { Address, Api, DecryptedKey, UserModel as tsUserModel } from '../interfaces';
 import { createAddressKeyLegacy, createAddressKeyV2 } from './add';
-import { getHasMigratedAddressKeys } from './keyMigration';
 import { getPrimaryKey } from './getPrimaryKey';
+import { getHasMigratedAddressKeys } from './keyMigration';
 
 export const getAddressesWithKeysToGenerate = (user: tsUserModel, addresses: Address[]) => {
     // If signed in as subuser, or not a private user

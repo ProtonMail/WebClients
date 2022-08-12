@@ -1,10 +1,11 @@
 import { listTimeZones } from '@protontech/timezone-support';
+
 import {
+    ALLOWED_TIMEZONES_LIST,
     convertUTCDateTimeToZone,
     convertZonedDateTimeToUTC,
-    toAllowedTimeZone,
     getSupportedTimezone,
-    ALLOWED_TIMEZONES_LIST,
+    toAllowedTimeZone,
 } from '../../lib/date/timezone';
 import { MANUAL_TIMEZONE_LINKS, unsupportedTimezoneLinks } from '../../lib/date/timezoneDatabase';
 

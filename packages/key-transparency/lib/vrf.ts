@@ -1,5 +1,6 @@
-import { SHA512, concatArrays, arrayToHexString } from 'pmcrypto';
-import { Point, CURVE } from '@noble/ed25519';
+import { CURVE, Point } from '@noble/ed25519';
+import { SHA512, arrayToHexString, concatArrays } from 'pmcrypto';
+
 import { CO_FACTOR, N, ptLen } from './constants';
 
 /**

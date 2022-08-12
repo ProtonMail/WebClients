@@ -1,20 +1,22 @@
+import { useCallback } from 'react';
+
+import { Address } from '@proton/shared/lib/interfaces';
+import { MemberPassphrase } from '@proton/shared/lib/interfaces/calendar';
 import { GetAddressKeys } from '@proton/shared/lib/interfaces/hooks/GetAddressKeys';
 import { GetDecryptedPassphraseAndCalendarKeys } from '@proton/shared/lib/interfaces/hooks/GetDecryptedPassphraseAndCalendarKeys';
-import { useCallback } from 'react';
 import { splitKeys } from '@proton/shared/lib/keys';
-import noop from '@proton/utils/noop';
 import {
     decryptPassphrase,
     getAddressesMembersMap,
     getDecryptedCalendarKeys,
 } from '@proton/shared/lib/keys/calendarKeys';
-import { Address } from '@proton/shared/lib/interfaces';
-import { MemberPassphrase } from '@proton/shared/lib/interfaces/calendar';
-import useCache from './useCache';
+import noop from '@proton/utils/noop';
+
 import { useGetAddresses } from './useAddresses';
+import useCache from './useCache';
+import { getPromiseValue } from './useCachedModelResult';
 import { useGetAddressKeys } from './useGetAddressKeys';
 import { useGetCalendarBootstrap } from './useGetCalendarBootstrap';
-import { getPromiseValue } from './useCachedModelResult';
 
 export const CACHE_KEY = 'CALENDAR_KEYS';
 

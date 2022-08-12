@@ -1,12 +1,13 @@
 import isTruthy from '@proton/utils/isTruthy';
 import unary from '@proton/utils/unary';
+
 import { hasBit, toggleBit } from '../helpers/bitset';
-import { CALENDAR_FLAGS, MAX_CALENDARS_FREE, MAX_CALENDARS_PAID, SETTINGS_VIEW } from './constants';
-import { Calendar, CalendarUserSettings, CalendarWithMembers, VisualCalendar } from '../interfaces/calendar';
-import { getIsPersonalCalendar } from './subscribe/helpers';
 import { Address, Api } from '../interfaces';
+import { Calendar, CalendarUserSettings, CalendarWithMembers, VisualCalendar } from '../interfaces/calendar';
 import { GetAddressKeys } from '../interfaces/hooks/GetAddressKeys';
+import { CALENDAR_FLAGS, MAX_CALENDARS_FREE, MAX_CALENDARS_PAID, SETTINGS_VIEW } from './constants';
 import { reactivateCalendarsKeys } from './keys/reactivateCalendarKeys';
+import { getIsPersonalCalendar } from './subscribe/helpers';
 
 export const getIsCalendarActive = ({ Flags } = { Flags: 0 }) => {
     return hasBit(Flags, CALENDAR_FLAGS.ACTIVE);

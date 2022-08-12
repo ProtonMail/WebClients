@@ -1,10 +1,12 @@
 import { c } from 'ttag';
-import getRandomValues from '@proton/get-random-values';
+
 import { CryptoProxy, PrivateKeyReference, PublicKeyReference, VERIFICATION_STATUS, serverTime } from '@proton/crypto';
 import { arrayToHexString } from '@proton/crypto/lib/utils';
-import { decryptMemberToken } from './memberToken';
-import { EncryptionConfig, KeyPair } from '../interfaces';
+import getRandomValues from '@proton/get-random-values';
+
 import { DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS } from '../constants';
+import { EncryptionConfig, KeyPair } from '../interfaces';
+import { decryptMemberToken } from './memberToken';
 
 interface EncryptAddressKeyTokenArguments {
     token: string;

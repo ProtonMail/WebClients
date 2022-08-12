@@ -1,4 +1,5 @@
-import { useEffect, useReducer, Reducer } from 'react';
+import { Reducer, useEffect, useReducer } from 'react';
+
 import { Referral } from '@proton/shared/lib/interfaces';
 
 import { useApi } from '../../../hooks';

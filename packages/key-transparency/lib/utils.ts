@@ -1,21 +1,23 @@
-import {
-    verifyMessage,
-    OpenPGPKey,
-    getSHA256Fingerprints,
-    getKeys,
-    VERIFICATION_STATUS,
-    getSignature,
-    createMessage,
-    OpenPGPSignature,
-} from 'pmcrypto';
 import { enums } from 'openpgp';
-import { Api, SignedKeyListEpochs } from '@proton/shared/lib/interfaces';
+import {
+    OpenPGPKey,
+    OpenPGPSignature,
+    VERIFICATION_STATUS,
+    createMessage,
+    getKeys,
+    getSHA256Fingerprints,
+    getSignature,
+    verifyMessage,
+} from 'pmcrypto';
+
 import { getItem, hasStorage, removeItem } from '@proton/shared/lib/helpers/storage';
-import { Epoch, EpochExtended, KeyInfo } from './interfaces';
-import { fetchProof, fetchEpoch } from './fetchHelper';
-import { checkAltName, verifyLEcert, verifySCT, parseCertChain } from './certTransparency';
-import { verifyProof, verifyChainHash } from './merkleTree';
+import { Api, SignedKeyListEpochs } from '@proton/shared/lib/interfaces';
+
+import { checkAltName, parseCertChain, verifyLEcert, verifySCT } from './certTransparency';
 import { MAX_EPOCH_INTERVAL } from './constants';
+import { fetchEpoch, fetchProof } from './fetchHelper';
+import { Epoch, EpochExtended, KeyInfo } from './interfaces';
+import { verifyChainHash, verifyProof } from './merkleTree';
 
 /**
  * Check whether the metadata of a key matches what is stored in the Signed Key List

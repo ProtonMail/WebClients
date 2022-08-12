@@ -1,11 +1,12 @@
 import { useCallback } from 'react';
-import { Organization } from '@proton/shared/lib/interfaces';
+
 import { FREE_ORGANIZATION } from '@proton/shared/lib/constants';
+import { Organization } from '@proton/shared/lib/interfaces';
 import { OrganizationModel } from '@proton/shared/lib/models/organizationModel';
 
-import useCachedModelResult, { getPromiseValue } from './useCachedModelResult';
 import useApi from './useApi';
 import useCache from './useCache';
+import useCachedModelResult, { getPromiseValue } from './useCachedModelResult';
 import { useGetUser } from './useUser';
 
 export const useGetOrganization = (): (() => Promise<Organization>) => {

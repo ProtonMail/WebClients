@@ -1,19 +1,19 @@
-import { ThemeColor } from '@proton/colors';
 import { c } from 'ttag';
+
+import { ThemeColor } from '@proton/colors';
 import { MNEMONIC_STATUS } from '@proton/shared/lib/interfaces';
 
-import getOverallStatus from '../containers/recovery/getOverallStatus';
 import { FeatureCode } from '../containers/features/FeaturesContext';
 import getLikelyHasKeysToReactivate from '../containers/keys/reactivateKeys/getLikelyHasKeysToReactivate';
-
-import useRecoveryStatus from './useRecoveryStatus';
-import useIsDataRecoveryAvailable from './useIsDataRecoveryAvailable';
-import useUser from './useUser';
+import getOverallStatus from '../containers/recovery/getOverallStatus';
 import useAddresses from './useAddresses';
 import useFeature from './useFeature';
-import useIsRecoveryFileAvailable from './useIsRecoveryFileAvailable';
-import useIsMnemonicAvailable from './useIsMnemonicAvailable';
 import useHasOutdatedRecoveryFile from './useHasOutdatedRecoveryFile';
+import useIsDataRecoveryAvailable from './useIsDataRecoveryAvailable';
+import useIsMnemonicAvailable from './useIsMnemonicAvailable';
+import useIsRecoveryFileAvailable from './useIsRecoveryFileAvailable';
+import useRecoveryStatus from './useRecoveryStatus';
+import useUser from './useUser';
 
 const useRecoveryNotification = (
     isLessInvasive: boolean

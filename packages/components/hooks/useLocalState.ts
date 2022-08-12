@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
+
 import { getItem, setItem } from '@proton/shared/lib/helpers/storage';
 
 const useLocalState = <T>(defaultValue: T, key: string) => {

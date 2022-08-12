@@ -1,6 +1,6 @@
-import { PaginationParams } from './interface';
 import { Address, Api, Member } from '../interfaces';
 import queryPages from './helpers/queryPages';
+import { PaginationParams } from './interface';
 
 export const queryMembers = (params?: PaginationParams) => ({
     method: 'get',

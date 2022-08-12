@@ -1,4 +1,5 @@
 import { c } from 'ttag';
+
 import truncate from '@proton/utils/truncate';
 
 import {

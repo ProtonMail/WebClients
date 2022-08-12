@@ -1,6 +1,7 @@
 /* eslint-disable class-methods-use-this */
-import { BeforePasteEvent, EditorPlugin, IEditor, PluginEvent, PluginEventType } from 'roosterjs-editor-types';
 import { wrap } from 'roosterjs-editor-dom';
+import { BeforePasteEvent, EditorPlugin, IEditor, PluginEvent, PluginEventType } from 'roosterjs-editor-types';
+
 import { transformLinkify } from '@proton/shared/lib/mail/transformLinkify';
 
 import { EMBEDDABLE_TYPES } from '../../constants';

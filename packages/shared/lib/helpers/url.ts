@@ -1,4 +1,4 @@
-import { APPS_CONFIGURATION, APP_NAMES, LINK_TYPES, APPS, DOH_DOMAINS } from '../constants';
+import { APPS, APPS_CONFIGURATION, APP_NAMES, DOH_DOMAINS, LINK_TYPES } from '../constants';
 
 const PREFIX_TO_TYPE: { [prefix: string]: LINK_TYPES | undefined } = {
     'tel:': LINK_TYPES.PHONE,

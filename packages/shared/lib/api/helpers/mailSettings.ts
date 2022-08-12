@@ -1,4 +1,4 @@
-import { MIME_TYPES, PACKAGE_TYPE, PGP_SCHEMES, PGP_SIGN, CONTACT_MIME_TYPES } from '../../constants';
+import { CONTACT_MIME_TYPES, MIME_TYPES, PACKAGE_TYPE, PGP_SCHEMES, PGP_SIGN } from '../../constants';
 import { ContactPublicKeyModel, MailSettings } from '../../interfaces';
 
 /**

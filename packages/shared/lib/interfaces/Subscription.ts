@@ -1,4 +1,4 @@
-import { CYCLE, PLAN_TYPES, PLANS, ADDON_NAMES } from '../constants';
+import { ADDON_NAMES, CYCLE, PLANS, PLAN_TYPES } from '../constants';
 
 export type Currency = 'EUR' | 'CHF' | 'USD';
 export type Cycle = CYCLE.MONTHLY | CYCLE.YEARLY | CYCLE.TWO_YEARS;
