@@ -1,55 +1,55 @@
 .ui-prominent {
-	--primary: #8A6EFF;
-	--primary-contrast: white;
+    --primary: #8a6eff;
+    --primary-contrast: white;
 
-	--signal-danger: #F5385A;
+    --signal-danger: #f5385a;
 
-	--signal-warning: #FF9900;
+    --signal-warning: #ff9900;
 
-	--signal-success: #1EA885;
+    --signal-success: #1ea885;
 
-	--signal-info: #239ECE;
+    --signal-info: #239ece;
 
-	--interaction-norm: #6D4AFF;
+    --interaction-norm: #6d4aff;
 
-	--interaction-weak: #4A398F;
+    --interaction-weak: #4a398f;
 
-	--text-norm: #DED7FF;
-	--text-weak: #9282D4;
-	--text-hint: #6F5FB2;
-	--text-disabled: #4A398F;
-	--text-invert: #1B1340;
+    --text-norm: #ded7ff;
+    --text-weak: #9282d4;
+    --text-hint: #6f5fb2;
+    --text-disabled: #4a398f;
+    --text-invert: #1b1340;
 
-	--field-norm: #9282D4;
-	--field-hover: #7C5CFF;
-	--field-disabled: #38277A;
-	--field-focus: #6D4AFF;
-	--field-highlight: rgb(109 74 255 / 0.3);
+    --field-norm: #9282d4;
+    --field-hover: #7c5cff;
+    --field-disabled: #38277a;
+    --field-focus: #6d4aff;
+    --field-highlight: rgb(109 74 255 / 0.3);
 
-	--border-norm: #413085;
-	--border-weak: #3C2B80;
+    --border-norm: #413085;
+    --border-weak: #3c2b80;
 
-	--background-norm: #1B1340;
-	--background-weak: #271C57;
-	--background-strong: #38277A;
+    --background-norm: #1b1340;
+    --background-weak: #271c57;
+    --background-strong: #38277a;
 
-	--interaction-default: transparent;
-	--interaction-default-hover: rgb(74 54 143 / 0.3);
-	--interaction-default-active: rgb(74 57 143 / 0.4);
+    --interaction-default: transparent;
+    --interaction-default-hover: rgb(74 54 143 / 0.3);
+    --interaction-default-active: rgb(74 57 143 / 0.4);
 
-	--shadow-norm-opacity: 0.32;
-	--shadow-lifted-opacity: 0.40;
+    --shadow-norm-opacity: 0.32;
+    --shadow-lifted-opacity: 0.4;
 
-	--backdrop-norm: rgb(0 0 0 / 0.32);
+    --backdrop-norm: rgb(0 0 0 / 0.32);
 
-	/* Optional colors */
+    /* Optional colors */
 
-	--optional-scrollbar-thumb-color: #413085;
-	--optional-scrollbar-thumb-hover-color: #4A398F;
+    --optional-scrollbar-thumb-color: #413085;
+    --optional-scrollbar-thumb-hover-color: #4a398f;
 
-	--optional-link-norm: var(--interaction-norm-major-1);
-	--optional-link-hover: var(--interaction-norm-major-2);
-	--optional-link-active: var(--interaction-norm-major-3);
+    --optional-link-norm: var(--interaction-norm-major-1);
+    --optional-link-hover: var(--interaction-norm-major-2);
+    --optional-link-active: var(--interaction-norm-major-3);
 
-	--optional-mini-calendar-today-color: white;
+    --optional-mini-calendar-today-color: white;
 }
