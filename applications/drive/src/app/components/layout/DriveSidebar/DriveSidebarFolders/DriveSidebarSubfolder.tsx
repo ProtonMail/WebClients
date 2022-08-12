@@ -8,8 +8,8 @@ import {
 } from '@proton/components';
 
 import { TreeItem } from '../../../../store';
-import useSubfolderLoading from './useSubfolderLoading';
 import ExpandButton from './ExpandButton';
+import useSubfolderLoading from './useSubfolderLoading';
 
 interface Props {
     shareId: string;

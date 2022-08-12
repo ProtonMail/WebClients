@@ -1,8 +1,11 @@
-import { c } from 'ttag';
 import { useEffect, useRef } from 'react';
+
+import { c } from 'ttag';
+
 import { useSubscriptionModal, useUser } from '@proton/components';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import { canPay } from '@proton/shared/lib/user/helpers';
+
 import broadcast, { MessageType } from '../broadcast';
 
 interface Props {

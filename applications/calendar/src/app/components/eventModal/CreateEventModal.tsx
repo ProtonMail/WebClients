@@ -1,17 +1,18 @@
+import { useState } from 'react';
+
+import { c } from 'ttag';
+
+import { BasicModal, Button, Form } from '@proton/components';
 import { ICAL_ATTENDEE_STATUS, ICAL_EVENT_STATUS } from '@proton/shared/lib/calendar/constants';
 import { getDisplayTitle } from '@proton/shared/lib/calendar/helper';
 import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import { getIsAddressActive } from '@proton/shared/lib/helpers/address';
-import noop from '@proton/utils/noop';
 import { Address } from '@proton/shared/lib/interfaces';
-import { useState } from 'react';
-import { Button, BasicModal, Form } from '@proton/components';
-import { c } from 'ttag';
 import { EventModel } from '@proton/shared/lib/interfaces/calendar';
+import noop from '@proton/utils/noop';
+
 import { INVITE_ACTION_TYPES, InviteActions } from '../../interfaces/Invite';
-
 import EventForm from './EventForm';
-
 import validateEventModel from './eventForm/validateEventModel';
 import { ACTION, useForm } from './hooks/useForm';
 

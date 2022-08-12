@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { FileIcon, FileNameDisplay, classnames } from '@proton/components';
 
 import { Cells } from '../FileBrowser';

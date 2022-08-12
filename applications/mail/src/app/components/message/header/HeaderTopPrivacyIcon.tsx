@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { c } from 'ttag';
 
 import {
@@ -13,10 +14,10 @@ import {
 } from '@proton/components';
 import { getParsedHeadersFirstValue } from '@proton/shared/lib/mail/messages';
 
-import ItemSpyTrackerIcon from '../../list/spy-tracker/ItemSpyTrackerIcon';
 import { MessageState } from '../../../logic/messages/messagesTypes';
-import SimpleLoginModal from '../../simpleLogin/SimpleLoginModal';
+import ItemSpyTrackerIcon from '../../list/spy-tracker/ItemSpyTrackerIcon';
 import SpyTrackerModal from '../../list/spy-tracker/SpyTrackerModal';
+import SimpleLoginModal from '../../simpleLogin/SimpleLoginModal';
 
 interface Props {
     message: MessageState;

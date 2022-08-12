@@ -1,4 +1,5 @@
 import { useCallback } from 'react';
+
 import { c } from 'ttag';
 
 import useOpenModal from '../../../useOpenModal';

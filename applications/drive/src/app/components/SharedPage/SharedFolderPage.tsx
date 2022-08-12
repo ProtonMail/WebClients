@@ -4,11 +4,11 @@ import { MimeIcon } from '@proton/components';
 
 import { DecryptedLink, usePublicFolderView } from '../../store';
 import { FileBrowserStateProvider } from '../FileBrowser';
-import SharedPageLayout from './SharedPageLayout';
-import SharedPageHeader from './SharedPageHeader';
-import SharedPageBreadcrumb from './SharedPageBreadcrumb';
-import SharedFileBrowser from './SharedFileBrowser';
 import ReportAbuseButton from './ReportAbuseButton';
+import SharedFileBrowser from './SharedFileBrowser';
+import SharedPageBreadcrumb from './SharedPageBreadcrumb';
+import SharedPageHeader from './SharedPageHeader';
+import SharedPageLayout from './SharedPageLayout';
 
 const MIN_ITEMS_TO_EXPAND_HEIGHT = 5;
 

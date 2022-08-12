@@ -1,22 +1,23 @@
 import { ReactNode } from 'react';
+
 import { c } from 'ttag';
 
 import {
     PrivateHeader,
-    useActiveBreakpoint,
+    RebrandingFeedbackModal,
     TopNavbarListItemContactsDropdown,
+    TopNavbarListItemFeedbackButton,
     TopNavbarListItemSettingsDropdown,
     UserDropdown,
-    useModalState,
-    TopNavbarListItemFeedbackButton,
-    RebrandingFeedbackModal,
+    useActiveBreakpoint,
     useHasRebrandingFeedback,
+    useModalState,
 } from '@proton/components';
 import { APPS } from '@proton/shared/lib/constants';
 
-import { SearchField } from './search/SearchField';
-import ClearSearchDataButton from './search/ClearSearchDataButton';
 import DriveOnboardingModal from '../onboarding/DriveOnboardingModal';
+import ClearSearchDataButton from './search/ClearSearchDataButton';
+import { SearchField } from './search/SearchField';
 
 interface Props {
     isHeaderExpanded: boolean;

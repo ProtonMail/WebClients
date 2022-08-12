@@ -1,6 +1,6 @@
 import { LabelStack } from '@proton/components';
-import { getTitle } from '../../helpers/title';
 
+import { getTitle } from '../../helpers/title';
 import mdx from './LabelStack.mdx';
 
 export default {

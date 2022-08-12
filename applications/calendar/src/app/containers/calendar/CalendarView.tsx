@@ -2,10 +2,10 @@ import { Ref, RefObject } from 'react';
 
 import { VIEWS } from '@proton/shared/lib/calendar/constants';
 
-import TimeGrid from '../../components/calendar/TimeGrid';
 import DayGrid from '../../components/calendar/DayGrid';
-import { SharedViewProps, TargetEventData, TargetMoreData, TimeGridRef } from './interface';
+import TimeGrid from '../../components/calendar/TimeGrid';
 import { OnMouseDown } from '../../components/calendar/interactions/interface';
+import { SharedViewProps, TargetEventData, TargetMoreData, TimeGridRef } from './interface';
 
 const { DAY, WEEK, MONTH, MAIL } = VIEWS;
 

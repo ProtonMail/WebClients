@@ -1,7 +1,8 @@
 import { useState } from 'react';
+
 import { c } from 'ttag';
 
-import { FormModal, Radio, Checkbox, Row } from '@proton/components';
+import { Checkbox, FormModal, Radio, Row } from '@proton/components';
 
 import { SignatureIssues } from '../store';
 import { TransferSignatureIssueStrategy } from '../store';

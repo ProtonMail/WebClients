@@ -1,17 +1,20 @@
 import { useEffect, useState } from 'react';
-import { useParams, useLocation, useHistory } from 'react-router-dom';
+import { useHistory, useLocation, useParams } from 'react-router-dom';
+
 import { c } from 'ttag';
+
 import { CircleLoader, GenericError, useApi, useLoading, useNotifications } from '@proton/components';
 import { authJwt } from '@proton/shared/lib/api/auth';
 import { getNewsExternal, updateNewsExternal } from '@proton/shared/lib/api/settings';
-import { withAuthHeaders } from '@proton/shared/lib/fetch/headers';
-import { Api } from '@proton/shared/lib/interfaces';
 import { NEWS } from '@proton/shared/lib/constants';
+import { withAuthHeaders } from '@proton/shared/lib/fetch/headers';
 import { clearBit, getBits, setBit } from '@proton/shared/lib/helpers/bitset';
+import { Api } from '@proton/shared/lib/interfaces';
 
-import EmailUnsubscribed from '../components/EmailUnsubscribed';
 import EmailResubscribed from '../components/EmailResubscribed';
 import EmailSubscriptionManagement from '../components/EmailSubscriptionManagement';
+import EmailUnsubscribed from '../components/EmailUnsubscribed';
+
 import './EmailUnsubscribeContainer.scss';
 
 interface UserSettingsNewsResponse {

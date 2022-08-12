@@ -1,6 +1,6 @@
 import { Meter } from '@proton/components';
-import { getTitle } from '../../helpers/title';
 
+import { getTitle } from '../../helpers/title';
 import mdx from './Meter.mdx';
 
 export default {

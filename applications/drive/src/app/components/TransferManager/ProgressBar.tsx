@@ -1,4 +1,4 @@
-import { classnames, Progress } from '@proton/components';
+import { Progress, classnames } from '@proton/components';
 
 export enum ProgressBarStatus {
     Disabled = 'disabled',

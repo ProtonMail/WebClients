@@ -4,7 +4,7 @@ import { Icon, ToolbarButton } from '@proton/components';
 
 import { DecryptedLink } from '../../../store';
 import useOpenModal from '../../useOpenModal';
-import { noSelection, isMultiSelect } from './utils';
+import { isMultiSelect, noSelection } from './utils';
 
 interface Props {
     shareId: string;

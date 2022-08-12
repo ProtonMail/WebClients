@@ -1,15 +1,15 @@
+import { DAILY_TYPE, FREQUENCY, WEEKLY_TYPE, YEARLY_TYPE } from '@proton/shared/lib/calendar/constants';
 import {
-    getUntilDate,
-    getMonthType,
     getEndType,
+    getMonthType,
+    getUntilDate,
     getWeeklyDays,
 } from '@proton/shared/lib/calendar/integration/rruleProperties';
-import { fromUTCDate, toLocalDate } from '@proton/shared/lib/date/timezone';
-import unique from '@proton/utils/unique';
-import { VcalRruleFreqValue, VcalRruleProperty } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 import { getIsRruleCustom, getIsRruleSimple } from '@proton/shared/lib/calendar/rrule';
-import { DAILY_TYPE, FREQUENCY, WEEKLY_TYPE, YEARLY_TYPE } from '@proton/shared/lib/calendar/constants';
+import { fromUTCDate, toLocalDate } from '@proton/shared/lib/date/timezone';
 import { DateTimeModel, FrequencyModel } from '@proton/shared/lib/interfaces/calendar';
+import { VcalRruleFreqValue, VcalRruleProperty } from '@proton/shared/lib/interfaces/calendar/VcalModel';
+import unique from '@proton/utils/unique';
 
 const getSafeWeeklyDays = (startDate: Date, byday?: string | string[]) => {
     const DEFAULT = [startDate.getDay()];

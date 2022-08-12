@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react';
+
 import { c } from 'ttag';
 
 import { CollapsingBreadcrumbs, useNotifications } from '@proton/components';
 import { BreadcrumbInfo } from '@proton/components/components/collapsingBreadcrumbs/interfaces';
 
 import { DriveFolder } from '../hooks/drive/useActiveShare';
-import useNavigate from '../hooks/drive/useNavigate';
 import { useDriveDragMoveTarget } from '../hooks/drive/useDriveDragMove';
+import useNavigate from '../hooks/drive/useNavigate';
 import { useLinkPath } from '../store';
 import SignatureIcon from './SignatureIcon';
 

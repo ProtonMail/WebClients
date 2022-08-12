@@ -1,4 +1,4 @@
-import { createContext, ReactNode, useContext, useEffect, useMemo, useState } from 'react';
+import { ReactNode, createContext, useContext, useEffect, useMemo, useState } from 'react';
 
 import { FeatureCode, useSpotlightOnFeature, useSpotlightShow } from '@proton/components';
 

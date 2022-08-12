@@ -1,20 +1,21 @@
 import { useEffect } from 'react';
+
 import { c } from 'ttag';
 
 import { Button, NotificationType, useNotifications } from '@proton/components';
 
+import { DecryptedLink, useDownload } from '../../store';
 import {
     isTransferActive,
-    isTransferPaused,
-    isTransferPausedByConnection,
+    isTransferCanceled,
     isTransferDone,
     isTransferFailed,
-    isTransferCanceled,
+    isTransferPaused,
+    isTransferPausedByConnection,
 } from '../../utils/transfer';
-import { DecryptedLink, useDownload } from '../../store';
 import { useSelection } from '../FileBrowser';
-import { Download } from './../TransferManager/transfer';
 import { getSelectedItems } from '../sections/helpers';
+import { Download } from './../TransferManager/transfer';
 
 interface Props {
     children: React.ReactNode;

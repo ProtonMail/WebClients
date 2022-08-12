@@ -1,6 +1,7 @@
-import { Address } from '@proton/shared/lib/interfaces';
 import { c } from 'ttag';
+
 import { classnames } from '@proton/components';
+import { Address } from '@proton/shared/lib/interfaces';
 import { EventModel } from '@proton/shared/lib/interfaces/calendar';
 
 interface Props {

@@ -1,4 +1,5 @@
 import { c } from 'ttag';
+
 import { Icon, ToolbarButton } from '@proton/components';
 
 import useActiveShare from '../../../../hooks/drive/useActiveShare';

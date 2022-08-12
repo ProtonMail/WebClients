@@ -1,10 +1,13 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+
+import { c } from 'ttag';
+
 import { LoaderPage, StandardLoadErrorPage, useApi, useErrorHandler, useNotifications } from '@proton/components';
+import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { checkInvitation } from '@proton/shared/lib/api/invites';
 import { CLIENT_TYPES } from '@proton/shared/lib/constants';
-import { c } from 'ttag';
-import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+
 import { InviteData } from './interfaces';
 
 interface Props {

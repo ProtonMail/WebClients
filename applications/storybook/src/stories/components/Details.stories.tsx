@@ -1,4 +1,5 @@
 import { Details, Summary } from '@proton/components';
+
 import { getTitle } from '../../helpers/title';
 import mdx from './Details.mdx';
 

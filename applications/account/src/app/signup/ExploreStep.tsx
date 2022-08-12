@@ -1,10 +1,13 @@
 import { useState } from 'react';
+
 import { c } from 'ttag';
-import { Button, classnames, Logo, useLoading, Icon } from '@proton/components';
-import { APP_NAMES, APPS } from '@proton/shared/lib/constants';
+
+import { Button, Icon, Logo, classnames, useLoading } from '@proton/components';
 import { getAppName } from '@proton/shared/lib/apps/helper';
-import Header from '../public/Header';
+import { APPS, APP_NAMES } from '@proton/shared/lib/constants';
+
 import Content from '../public/Content';
+import Header from '../public/Header';
 import Main from '../public/Main';
 
 interface Props {

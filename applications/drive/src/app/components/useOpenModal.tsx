@@ -1,8 +1,7 @@
 import { useModals } from '@proton/components';
 
-import { DecryptedLink } from '../store';
 import useNavigate from '../hooks/drive/useNavigate';
-import { useSpotlight } from './useSpotlight';
+import { DecryptedLink } from '../store';
 import CreateFolderModal from './CreateFolderModal';
 import DetailsModal from './DetailsModal';
 import FilesDetailsModal from './FilesDetailsModal';
@@ -10,6 +9,7 @@ import MoveToFolderModal from './MoveToFolderModal/MoveToFolderModal';
 import RenameModal from './RenameModal';
 import SelectedFileToShareModal from './SelectedFileToShareModal/SelectedFileToShareModal';
 import ShareLinkModal from './ShareLinkModal/ShareLinkModal';
+import { useSpotlight } from './useSpotlight';
 
 export default function useOpenModal() {
     const { navigateToLink } = useNavigate();

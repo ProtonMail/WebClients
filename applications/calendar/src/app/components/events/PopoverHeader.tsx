@@ -1,5 +1,7 @@
-import { classnames } from '@proton/components';
 import * as React from 'react';
+
+import { classnames } from '@proton/components';
+
 import PopoverCloseButton from './PopoverCloseButton';
 
 interface Props extends React.ComponentPropsWithRef<'header'> {

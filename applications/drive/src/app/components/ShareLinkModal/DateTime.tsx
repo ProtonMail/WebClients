@@ -1,7 +1,8 @@
 import * as React from 'react';
-import { dateLocale } from '@proton/shared/lib/i18n';
 
-import { fromUnixTime, format as formatDate } from 'date-fns';
+import { format as formatDate, fromUnixTime } from 'date-fns';
+
+import { dateLocale } from '@proton/shared/lib/i18n';
 
 interface Props extends React.HTMLAttributes<HTMLTimeElement> {
     value: number;

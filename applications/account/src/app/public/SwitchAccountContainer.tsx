@@ -1,38 +1,39 @@
 import { Fragment, MouseEvent, useEffect, useState } from 'react';
+
 import { c } from 'ttag';
 
-import { BRAND_NAME } from '@proton/shared/lib/constants';
-import { resumeSession, getActiveSessions } from '@proton/shared/lib/authentication/persistedSessionHelper';
-import { getPersistedSession, removePersistedSession } from '@proton/shared/lib/authentication/persistedSessionStorage';
-import { InvalidPersistentSessionError } from '@proton/shared/lib/authentication/error';
-import { LocalSessionResponse } from '@proton/shared/lib/authentication/interface';
-import { getInitials } from '@proton/shared/lib/helpers/string';
-import { wait } from '@proton/shared/lib/helpers/promise';
-import { withUIDHeaders } from '@proton/shared/lib/fetch/headers';
-import { revoke } from '@proton/shared/lib/api/auth';
-import noop from '@proton/utils/noop';
-
 import {
-    Loader,
+    Alert,
+    Button,
     CircleLoader,
+    Icon,
+    InlineLinkButton,
+    Loader,
     OnLoginCallbackArguments,
+    Scroll,
+    classnames,
     useApi,
     useErrorHandler,
     useLoading,
     useNotifications,
-    Button,
-    Alert,
-    InlineLinkButton,
-    Icon,
-    Scroll,
-    classnames,
 } from '@proton/components';
-import Main from './Main';
-import Header from './Header';
+import { revoke } from '@proton/shared/lib/api/auth';
+import { InvalidPersistentSessionError } from '@proton/shared/lib/authentication/error';
+import { LocalSessionResponse } from '@proton/shared/lib/authentication/interface';
+import { getActiveSessions, resumeSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
+import { getPersistedSession, removePersistedSession } from '@proton/shared/lib/authentication/persistedSessionStorage';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
+import { withUIDHeaders } from '@proton/shared/lib/fetch/headers';
+import { wait } from '@proton/shared/lib/helpers/promise';
+import { getInitials } from '@proton/shared/lib/helpers/string';
+import noop from '@proton/utils/noop';
+
 import Content from './Content';
+import Header from './Header';
+import Layout from './Layout';
+import Main from './Main';
 
 import './SwitchAccountContainer.scss';
-import Layout from './Layout';
 
 interface Props {
     onLogin: (data: OnLoginCallbackArguments) => Promise<void>;

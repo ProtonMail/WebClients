@@ -1,15 +1,14 @@
 import { c } from 'ttag';
 
 import {
-    InnerModal,
-    Button,
     Alert,
-    PrimaryButton,
-    ModalTwoHeader,
+    Button,
+    InnerModal,
     ModalTwoContent,
     ModalTwoFooter,
+    ModalTwoHeader,
+    PrimaryButton,
 } from '@proton/components';
-
 import keyAndFileSvg from '@proton/styles/assets/img/illustrations/file-recovery.svg';
 
 interface Props {

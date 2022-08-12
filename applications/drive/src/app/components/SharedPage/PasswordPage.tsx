@@ -1,7 +1,8 @@
 import { useState } from 'react';
+
 import { c } from 'ttag';
 
-import { Button, PasswordInputTwo, InputFieldTwo, useLoading } from '@proton/components';
+import { Button, InputFieldTwo, PasswordInputTwo, useLoading } from '@proton/components';
 
 import SharedPageLayout from './SharedPageLayout';
 

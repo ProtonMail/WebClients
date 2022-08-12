@@ -1,6 +1,7 @@
+import { c } from 'ttag';
+
 import { Checkbox } from '@proton/components';
 import { Props as CheckboxProps } from '@proton/components/components/input/Checkbox';
-import { c } from 'ttag';
 
 interface Props extends Omit<CheckboxProps, 'onChange'> {
     checked: boolean;

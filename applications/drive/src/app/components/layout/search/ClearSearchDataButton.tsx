@@ -2,8 +2,8 @@ import { c } from 'ttag';
 
 import { DropdownMenuButton, Tooltip } from '@proton/components';
 
-import { useSearchControl } from '../../../store';
 import useConfirm from '../../../hooks/util/useConfirm';
+import { useSearchControl } from '../../../store';
 
 export default function ClearSearchDataButton() {
     const { openConfirmModal } = useConfirm();

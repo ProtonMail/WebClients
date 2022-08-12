@@ -1,16 +1,17 @@
-import { useLoading } from '@proton/components';
 import { c } from 'ttag';
 
+import { useLoading } from '@proton/components';
+
 import {
-    isTransferPaused,
-    isTransferFinished,
     isTransferFailed,
     isTransferFinalizing,
+    isTransferFinished,
     isTransferOngoing,
+    isTransferPaused,
 } from '../../utils/transfer';
-import { TransferType, Upload } from './transfer';
-import { TransferManagerButtonProps, TransferProps } from './interfaces';
 import Buttons from './Buttons';
+import { TransferManagerButtonProps, TransferProps } from './interfaces';
+import { TransferType, Upload } from './transfer';
 import useTransferControls from './useTransferControls';
 
 function TransferControls<T extends TransferType>({ transfer, type }: TransferProps<T>) {

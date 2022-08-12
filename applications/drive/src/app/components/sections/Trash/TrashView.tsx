@@ -1,13 +1,14 @@
 import { useEffect } from 'react';
+
 import { c } from 'ttag';
 
 import { PrivateMainArea, useAppTitle } from '@proton/components';
 
-import { useTrashView } from '../../../store';
 import useActiveShare from '../../../hooks/drive/useActiveShare';
-import TrashToolbar from './TrashToolbar';
-import Trash from './Trash';
+import { useTrashView } from '../../../store';
 import { FileBrowserStateProvider } from '../../FileBrowser';
+import Trash from './Trash';
+import TrashToolbar from './TrashToolbar';
 
 const TrashView = () => {
     useAppTitle(c('Title').t`Trash`);

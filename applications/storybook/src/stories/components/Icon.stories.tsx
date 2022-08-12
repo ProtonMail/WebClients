@@ -1,6 +1,6 @@
 import { Icon, IconProps } from '@proton/components';
-import { getTitle } from '../../helpers/title';
 
+import { getTitle } from '../../helpers/title';
 import mdx from './Icon.mdx';
 
 export default {

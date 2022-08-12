@@ -1,5 +1,7 @@
 import * as React from 'react';
+
 import { c } from 'ttag';
+
 import { Button, Icon } from '@proton/components';
 
 interface Props {

@@ -1,6 +1,5 @@
 import * as React from 'react';
 
-import { wait } from '@proton/shared/lib/helpers/promise';
 import {
     IconName,
     SidebarListItem,
@@ -9,6 +8,7 @@ import {
     SidebarListItemLink,
     useLoading,
 } from '@proton/components';
+import { wait } from '@proton/shared/lib/helpers/promise';
 
 import { useDriveEventManager } from '../../../store';
 

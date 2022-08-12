@@ -1,4 +1,4 @@
-import { Route, Redirect, Switch, RouteComponentProps } from 'react-router-dom';
+import { Redirect, Route, RouteComponentProps, Switch } from 'react-router-dom';
 
 import TrashView from '../components/sections/Trash/TrashView';
 

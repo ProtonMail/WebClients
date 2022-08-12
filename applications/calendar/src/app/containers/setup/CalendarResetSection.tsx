@@ -1,6 +1,8 @@
-import { Alert } from '@proton/components';
 import { c } from 'ttag';
+
+import { Alert } from '@proton/components';
 import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+
 import CalendarTableRows from './CalendarTableRows';
 
 interface Props {

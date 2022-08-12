@@ -1,12 +1,13 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useLocation } from 'react-router-dom';
+
 import { c } from 'ttag';
 
 import { LocationErrorBoundary, useLoading } from '@proton/components';
 
-import { DecryptedLink, PublicDriveProvider, usePublicAuth, usePublicShare } from '../store';
+import { ErrorPage, LoadingPage, PasswordPage, SharedFilePage, SharedFolderPage } from '../components/SharedPage';
 import SignatureIssueModal from '../components/SignatureIssueModal';
-import { LoadingPage, ErrorPage, PasswordPage, SharedFilePage, SharedFolderPage } from '../components/SharedPage';
+import { DecryptedLink, PublicDriveProvider, usePublicAuth, usePublicShare } from '../store';
 
 export default function PublicSharedLinkContainer() {
     return (

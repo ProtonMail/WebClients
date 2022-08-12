@@ -2,21 +2,21 @@ import { StandardPrivateApp, useApi } from '@proton/components';
 import { loadAllowedTimeZones } from '@proton/shared/lib/date/timezone';
 import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 import {
-    UserModel,
-    MailSettingsModel,
-    UserSettingsModel,
-    DomainsModel,
     AddressesModel,
-    LabelsModel,
-    FiltersModel,
-    OrganizationModel,
-    MembersModel,
-    SubscriptionModel,
-    PaymentMethodsModel,
-    ImportersModel,
-    ImportReportsModel,
-    ContactsModel,
     ContactEmailsModel,
+    ContactsModel,
+    DomainsModel,
+    FiltersModel,
+    ImportReportsModel,
+    ImportersModel,
+    LabelsModel,
+    MailSettingsModel,
+    MembersModel,
+    OrganizationModel,
+    PaymentMethodsModel,
+    SubscriptionModel,
+    UserModel,
+    UserSettingsModel,
 } from '@proton/shared/lib/models';
 import noop from '@proton/utils/noop';
 

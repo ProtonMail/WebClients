@@ -1,17 +1,17 @@
-import { StandardPrivateApp, LoaderPage, useApi, useAppTitle, useSideAppParent } from '@proton/components';
+import { LoaderPage, StandardPrivateApp, useApi, useAppTitle, useSideAppParent } from '@proton/components';
 import { loadAllowedTimeZones } from '@proton/shared/lib/date/timezone';
+import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 import {
-    UserModel,
-    UserSettingsModel,
-    CalendarsModel,
-    CalendarUserSettingsModel,
     AddressesModel,
-    MailSettingsModel,
+    CalendarUserSettingsModel,
+    CalendarsModel,
     ContactEmailsModel,
     ContactsModel,
     LabelsModel,
+    MailSettingsModel,
+    UserModel,
+    UserSettingsModel,
 } from '@proton/shared/lib/models';
-import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 import noop from '@proton/utils/noop';
 
 const EVENT_MODELS = [

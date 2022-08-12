@@ -1,22 +1,23 @@
-import { useState, ReactNode } from 'react';
+import { ReactNode, useState } from 'react';
+
 import { c } from 'ttag';
 
 import {
-    useLoading,
-    PrimaryButton,
-    Button,
     Alert,
-    ModalTwoHeader,
+    Button,
+    ModalTwo,
     ModalTwoContent,
     ModalTwoFooter,
-    ModalTwo,
+    ModalTwoHeader,
+    PrimaryButton,
+    useLoading,
 } from '@proton/components';
 
 import { DecryptedLink, useTree } from '../../store';
-import useOpenModal from '../useOpenModal';
 import FolderTree from '../FolderTree/FolderTree';
-import HasNoFilesToShare from './HasNoFilesToShare';
 import ModalContentLoader from '../ModalContentLoader';
+import useOpenModal from '../useOpenModal';
+import HasNoFilesToShare from './HasNoFilesToShare';
 
 interface Props {
     shareId: string;

@@ -1,28 +1,30 @@
-import { PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
-import noop from '@proton/utils/noop';
-import { Payment, PaymentParameters } from '@proton/components/containers/payments/interface';
-import { Api, Currency, Cycle, PaymentMethodStatus, Plan } from '@proton/shared/lib/interfaces';
-import SubscriptionCycleSelector from '@proton/components/containers/payments/subscription/SubscriptionCycleSelector';
-import Alert3ds from '@proton/components/containers/payments/Alert3ds';
-import isTruthy from '@proton/utils/isTruthy';
+import { c } from 'ttag';
+
 import {
     Button,
     CurrencySelector,
     Icon,
-    Price,
     Payment as PaymentComponent,
+    Price,
+    StyledPayPalButton,
     useLoading,
     useModals,
     usePayment,
-    StyledPayPalButton,
 } from '@proton/components';
+import Alert3ds from '@proton/components/containers/payments/Alert3ds';
+import { Payment, PaymentParameters } from '@proton/components/containers/payments/interface';
 import PlanCustomization from '@proton/components/containers/payments/subscription/PlanCustomization';
-import { c } from 'ttag';
-import { getCardPayment } from './helper';
-import { PlanIDs, SubscriptionData } from './interfaces';
+import SubscriptionCycleSelector from '@proton/components/containers/payments/subscription/SubscriptionCycleSelector';
+import { PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
+import { Api, Currency, Cycle, PaymentMethodStatus, Plan } from '@proton/shared/lib/interfaces';
+import isTruthy from '@proton/utils/isTruthy';
+import noop from '@proton/utils/noop';
+
+import Content from '../public/Content';
 import Header from '../public/Header';
 import Main from '../public/Main';
-import Content from '../public/Content';
+import { getCardPayment } from './helper';
+import { PlanIDs, SubscriptionData } from './interfaces';
 
 interface Props {
     subscriptionData: SubscriptionData;

@@ -1,10 +1,11 @@
+import { c } from 'ttag';
+
+import { Button, Icon, Tooltip, classnames } from '@proton/components';
 import { ICAL_ATTENDEE_ROLE } from '@proton/shared/lib/calendar/constants';
 import { canonizeEmail } from '@proton/shared/lib/helpers/email';
+import { AttendeeModel } from '@proton/shared/lib/interfaces/calendar';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
-import { c } from 'ttag';
-import { classnames, Icon, Tooltip, Button } from '@proton/components';
-import { AttendeeModel } from '@proton/shared/lib/interfaces/calendar';
 
 interface Props {
     attendee: AttendeeModel;

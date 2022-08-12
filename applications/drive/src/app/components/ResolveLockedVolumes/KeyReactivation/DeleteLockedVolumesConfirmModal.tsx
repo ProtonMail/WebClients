@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+
 import { c, msgid } from 'ttag';
 
 import {
@@ -11,9 +12,9 @@ import {
     ModalTwoHeader,
     useLoading,
 } from '@proton/components';
-import noop from '@proton/utils/noop';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
+import noop from '@proton/utils/noop';
 
 const appName = getAppName(APPS.PROTONDRIVE);
 

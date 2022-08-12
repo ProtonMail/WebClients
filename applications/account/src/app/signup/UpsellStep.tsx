@@ -1,16 +1,19 @@
-import { c } from 'ttag';
 import { useState } from 'react';
+
+import { c } from 'ttag';
+
 import { Button, CurrencySelector, Price, useLoading } from '@proton/components';
+import { PlanCardFeatureDefinition } from '@proton/components/containers/payments/features/interface';
 import { getFreePlan, getFreeVPNPlan, getShortPlan } from '@proton/components/containers/payments/features/plan';
+import { CYCLE, PLANS } from '@proton/shared/lib/constants';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { Currency, Cycle, Plan, PlanIDs, VPNCountries, VPNServers } from '@proton/shared/lib/interfaces';
-import { CYCLE, PLANS } from '@proton/shared/lib/constants';
-import { PlanCardFeatureDefinition } from '@proton/components/containers/payments/features/interface';
-import UpsellPlanCard from './UpsellPlanCard';
-import Main from '../public/Main';
-import Header from '../public/Header';
+
 import Content from '../public/Content';
+import Header from '../public/Header';
+import Main from '../public/Main';
 import Text from '../public/Text';
+import UpsellPlanCard from './UpsellPlanCard';
 
 interface Props {
     onPlan: (planIDs: PlanIDs) => Promise<void>;

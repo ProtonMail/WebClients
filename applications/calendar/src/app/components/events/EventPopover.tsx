@@ -1,35 +1,36 @@
 import { useEffect, useMemo, useRef } from 'react';
-import { c } from 'ttag';
-import { getUnixTime } from 'date-fns';
 
+import { getUnixTime } from 'date-fns';
+import { c } from 'ttag';
+
+import {
+    Alert,
+    AppLink,
+    Badge,
+    ButtonLike,
+    CalendarInviteButtons,
+    FeatureCode,
+    Icon,
+    Loader,
+    Tooltip,
+    useCalendarBootstrap,
+    useFeature,
+    useLoading,
+} from '@proton/components';
 import CalendarEventDateHeader from '@proton/components/components/calendarEventDateHeader/CalendarEventDateHeader';
 import { getIsCalendarDisabled } from '@proton/shared/lib/calendar/calendar';
 import { ICAL_ATTENDEE_STATUS, VIEWS } from '@proton/shared/lib/calendar/constants';
+import { getLinkToCalendarEvent } from '@proton/shared/lib/calendar/helper';
+import { getTimezonedFrequencyString } from '@proton/shared/lib/calendar/integration/getFrequencyString';
+import { notificationsToModel } from '@proton/shared/lib/calendar/notificationsToModel';
 import { getIsSubscribedCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
 import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import { fromUTCDate, toLocalDate } from '@proton/shared/lib/date/timezone';
-import { getTimezonedFrequencyString } from '@proton/shared/lib/calendar/integration/getFrequencyString';
-import noop from '@proton/utils/noop';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import { Calendar, CalendarBootstrap, CalendarEvent } from '@proton/shared/lib/interfaces/calendar';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
-import { getLinkToCalendarEvent } from '@proton/shared/lib/calendar/helper';
-import {
-    Alert,
-    Badge,
-    Loader,
-    useLoading,
-    CalendarInviteButtons,
-    ButtonLike,
-    Icon,
-    Tooltip,
-    useFeature,
-    FeatureCode,
-    AppLink,
-    useCalendarBootstrap,
-} from '@proton/components';
-import { notificationsToModel } from '@proton/shared/lib/calendar/notificationsToModel';
+import noop from '@proton/utils/noop';
 
 import { getIsCalendarEvent } from '../../containers/calendar/eventStore/cache/helper';
 import {
@@ -37,16 +38,15 @@ import {
     CalendarViewEventTemporaryEvent,
     DisplayNameEmail,
 } from '../../containers/calendar/interface';
-import { INVITE_ACTION_TYPES, InviteActions } from '../../interfaces/Invite';
-import { getEventErrorMessage } from './error';
-import getEventInformation from './getEventInformation';
-import useReadEvent from './useReadEvent';
 import { getIsSideApp } from '../../helpers/views';
-
+import { INVITE_ACTION_TYPES, InviteActions } from '../../interfaces/Invite';
 import PopoverContainer from './PopoverContainer';
 import PopoverEventContent from './PopoverEventContent';
 import PopoverFooter from './PopoverFooter';
 import PopoverHeader from './PopoverHeader';
+import { getEventErrorMessage } from './error';
+import getEventInformation from './getEventInformation';
+import useReadEvent from './useReadEvent';
 
 const { ACCEPTED, TENTATIVE } = ICAL_ATTENDEE_STATUS;
 

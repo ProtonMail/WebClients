@@ -1,35 +1,36 @@
-import { getDefaultTzid } from '@proton/shared/lib/calendar/getSettings';
 import { useMemo, useRef, useState } from 'react';
 import { Redirect, Route, Switch } from 'react-router';
+
 import {
     useActiveBreakpoint,
-    useCalendarsInfoListener,
     useCalendarUserSettings,
+    useCalendarsInfoListener,
     useUserSettings,
 } from '@proton/components';
-import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
-import { Address, UserModel } from '@proton/shared/lib/interfaces';
 import {
     DEFAULT_CALENDAR_USER_SETTINGS,
     getDefaultCalendar,
     getProbablyActiveCalendars,
 } from '@proton/shared/lib/calendar/calendar';
+import { VIEWS } from '@proton/shared/lib/calendar/constants';
+import { getDefaultTzid } from '@proton/shared/lib/calendar/getSettings';
 import { getTimezone } from '@proton/shared/lib/date/timezone';
 import { getActiveAddresses } from '@proton/shared/lib/helpers/address';
-import { VIEWS } from '@proton/shared/lib/calendar/constants';
-import { useGetOpenedMailEvents } from '../../hooks/useGetOpenedMailEvents';
+import { Address, UserModel } from '@proton/shared/lib/interfaces';
+import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
-import { CalendarsEventsCache } from './eventStore/interface';
-import getCalendarsEventCache from './eventStore/cache/getCalendarsEventCache';
-import useCalendarsEventsEventListener from './eventStore/useCalendarsEventsEventListener';
-import { CalendarsAlarmsCache } from '../alarms/CacheInterface';
-import { getCalendarsAlarmsCache } from '../alarms/useCalendarsAlarms';
-import useCalendarsAlarmsEventListeners from '../alarms/useCalendarAlarmsEventListener';
-import CalendarContainer from './CalendarContainer';
+import { useGetOpenedMailEvents } from '../../hooks/useGetOpenedMailEvents';
 import AlarmContainer from '../alarms/AlarmContainer';
-import EventActionContainer from './EventActionContainer';
-import { EventTargetAction } from './interface';
+import { CalendarsAlarmsCache } from '../alarms/CacheInterface';
+import useCalendarsAlarmsEventListeners from '../alarms/useCalendarAlarmsEventListener';
+import { getCalendarsAlarmsCache } from '../alarms/useCalendarsAlarms';
+import CalendarContainer from './CalendarContainer';
 import CalendarStartupModals from './CalendarStartupModals';
+import EventActionContainer from './EventActionContainer';
+import getCalendarsEventCache from './eventStore/cache/getCalendarsEventCache';
+import { CalendarsEventsCache } from './eventStore/interface';
+import useCalendarsEventsEventListener from './eventStore/useCalendarsEventsEventListener';
+import { EventTargetAction } from './interface';
 
 interface Props {
     calendars: VisualCalendar[];
