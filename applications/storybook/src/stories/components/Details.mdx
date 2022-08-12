@@ -1,4 +1,4 @@
-import { Canvas, Story, ArgsTable, PRIMARY_STORY } from '@storybook/addon-docs';
+import { Canvas, Story, ArgsTable, Primary, PRIMARY_STORY } from '@storybook/addon-docs';
 import { Alert, Details } from '@proton/components';
 
 # Details/Summary
@@ -14,5 +14,9 @@ import { Alert, Details } from '@proton/components';
 <Canvas>
     <Story id="components-details--opened" />
 </Canvas>
+
+<div class="hidden">
+    <Primary />
+</div>
 
 <ArgsTable story={PRIMARY_STORY} />
