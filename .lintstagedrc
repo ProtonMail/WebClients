@@ -3,11 +3,10 @@
         "prettier --write",
         "eslint --fix"
     ],
-    "*.scss": [
+    "(*.scss|.css)": [
         "prettier --write",
         "stylelint --fix"
     ],
-    "*.json": "prettier --write",
-    "*.md": "prettier --write",
+    "(*.json|*.md|*.mdx|*.html|*.mjs)": "prettier --write",
     "package.json": "sort-package-json"
 }
