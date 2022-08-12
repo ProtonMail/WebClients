@@ -1,29 +1,30 @@
 import { useCallback, useMemo, useState } from 'react';
+
 import { c } from 'ttag';
 
 import { generateUID } from '@proton/components';
 
 import { TransferState } from '../../../components/TransferManager/transfer';
 import {
-    isTransferInitializing,
-    isTransferPending,
     isTransferConflict,
     isTransferFinished,
+    isTransferInitializing,
+    isTransferPending,
 } from '../../../utils/transfer';
-import { UploadFileList, UploadFileItem, UploadFolderItem } from '../interface';
+import { UploadFileItem, UploadFileList, UploadFolderItem } from '../interface';
 import {
-    UploadQueue,
     FileUpload,
     FileUploadReady,
     FolderUpload,
     FolderUploadReady,
-    UpdateFilter,
-    UpdateState,
-    UpdateData,
     UpdateCallback,
     UpdateCallbackParams,
-    UploadUserError,
+    UpdateData,
+    UpdateFilter,
+    UpdateState,
     UploadConflictError,
+    UploadQueue,
+    UploadUserError,
 } from './interface';
 
 const DS_STORE = '.DS_Store';

@@ -1,13 +1,14 @@
-import { Nullable } from '@proton/shared/lib/interfaces';
 import { fromUnixTime } from 'date-fns';
-import { CalendarEventWithoutBlob } from '@proton/shared/lib/interfaces/calendar';
-import { VcalRrulePropertyValue } from '@proton/shared/lib/interfaces/calendar/VcalModel';
-import { getDateProperty, getDateTimeProperty } from '@proton/shared/lib/calendar/vcalConverter';
-import { fromUTCDate } from '@proton/shared/lib/date/timezone';
-import { fromRruleString } from '@proton/shared/lib/calendar/vcal';
+
 import { toExdate } from '@proton/shared/lib/calendar/exdate';
 import getRecurrenceIdValueFromTimestamp from '@proton/shared/lib/calendar/getRecurrenceIdValueFromTimestamp';
 import utcTimestampToTimezone from '@proton/shared/lib/calendar/utcTimestampToTimezone';
+import { fromRruleString } from '@proton/shared/lib/calendar/vcal';
+import { getDateProperty, getDateTimeProperty } from '@proton/shared/lib/calendar/vcalConverter';
+import { fromUTCDate } from '@proton/shared/lib/date/timezone';
+import { Nullable } from '@proton/shared/lib/interfaces';
+import { CalendarEventWithoutBlob } from '@proton/shared/lib/interfaces/calendar';
+import { VcalRrulePropertyValue } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 
 import { MetadataVcalVeventComponent } from '../interface';
 

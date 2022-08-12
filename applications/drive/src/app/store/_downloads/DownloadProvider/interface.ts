@@ -1,6 +1,6 @@
 import { VERIFICATION_STATUS } from '@proton/crypto';
 
-import { TransferState, TransferMeta } from '../../../components/TransferManager/transfer';
+import { TransferMeta, TransferState } from '../../../components/TransferManager/transfer';
 import { LinkDownload } from '../interface';
 
 export interface Download {

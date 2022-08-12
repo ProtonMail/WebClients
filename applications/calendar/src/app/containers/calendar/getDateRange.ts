@@ -1,18 +1,17 @@
-import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
+import { VIEWS } from '@proton/shared/lib/calendar/constants';
 import {
-    startOfDay,
-    endOfDay,
-    startOfWeek,
-    endOfWeek,
-    startOfMonth,
-    endOfMonth,
-    startOfYear,
-    endOfYear,
     addDays,
     addWeeks,
+    endOfDay,
+    endOfMonth,
+    endOfWeek,
+    endOfYear,
+    startOfDay,
+    startOfMonth,
+    startOfWeek,
+    startOfYear,
 } from '@proton/shared/lib/date-fns-utc';
-
-import { VIEWS } from '@proton/shared/lib/calendar/constants';
+import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 
 const getDateRange = (date: Date, range: number | undefined, view: VIEWS, weekStartsOn: WeekStartsOn): [Date, Date] => {
     const opts = { weekStartsOn };

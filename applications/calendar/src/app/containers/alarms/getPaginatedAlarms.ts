@@ -1,7 +1,8 @@
-import { CalendarAlarm } from '@proton/shared/lib/interfaces/calendar';
 import { getUnixTime } from 'date-fns';
+
 import { queryCalendarAlarms } from '@proton/shared/lib/api/calendars';
 import { Api } from '@proton/shared/lib/interfaces';
+import { CalendarAlarm } from '@proton/shared/lib/interfaces/calendar';
 
 const MAX_FETCH_ITERATIONS = 100;
 

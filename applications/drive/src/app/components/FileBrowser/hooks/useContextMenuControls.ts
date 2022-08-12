@@ -1,4 +1,4 @@
-import { useCallback, useState, useRef } from 'react';
+import { useCallback, useRef, useState } from 'react';
 
 const DROPDOWN_ANIMATION_TIME = 200; // ms
 

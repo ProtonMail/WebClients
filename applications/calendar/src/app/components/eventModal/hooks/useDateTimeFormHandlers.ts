@@ -1,15 +1,17 @@
-import {
-    toUTCDate,
-    convertUTCDateTimeToZone,
-    fromUTCDate,
-    convertZonedDateTimeToUTC,
-} from '@proton/shared/lib/date/timezone';
-import { startOfDay } from '@proton/shared/lib/date-fns-utc';
 import { addDays, isValid } from 'date-fns';
+
 import { DAY } from '@proton/shared/lib/constants';
-import { EventModel, DateTimeModel } from '@proton/shared/lib/interfaces/calendar';
-import { getDateTimeState, getTimeInUtc } from '../eventForm/time';
+import { startOfDay } from '@proton/shared/lib/date-fns-utc';
+import {
+    convertUTCDateTimeToZone,
+    convertZonedDateTimeToUTC,
+    fromUTCDate,
+    toUTCDate,
+} from '@proton/shared/lib/date/timezone';
+import { DateTimeModel, EventModel } from '@proton/shared/lib/interfaces/calendar';
+
 import getFrequencyModelChange from '../eventForm/getFrequencyModelChange';
+import { getDateTimeState, getTimeInUtc } from '../eventForm/time';
 
 const DEFAULT_MIN_TIME = new Date(Date.UTC(2000, 0, 1, 0, 0));
 

@@ -1,13 +1,13 @@
 import { useCallback } from 'react';
 
-import { UserShareResult } from '@proton/shared/lib/interfaces/drive/share';
 import { queryUserShares } from '@proton/shared/lib/api/drive/share';
+import { UserShareResult } from '@proton/shared/lib/interfaces/drive/share';
 
+import { shareMetaShortToShare, useDebouncedRequest } from '../_api';
 import { useDebouncedFunction } from '../_utils';
-import { useDebouncedRequest, shareMetaShortToShare } from '../_api';
 import { ShareWithKey } from './interface';
-import useSharesState from './useSharesState';
 import useShare from './useShare';
+import useSharesState from './useSharesState';
 import useVolume from './useVolume';
 
 /**

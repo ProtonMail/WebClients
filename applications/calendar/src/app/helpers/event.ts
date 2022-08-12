@@ -1,5 +1,6 @@
 import { ICAL_ATTENDEE_STATUS, ICAL_EVENT_STATUS } from '@proton/shared/lib/calendar/constants';
 import { EventModelReadView } from '@proton/shared/lib/interfaces/calendar';
+
 import { DecryptedEventTupleResult } from '../containers/calendar/eventStore/interface';
 
 interface GetComponentArguments {

@@ -1,6 +1,7 @@
-import { getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
-import { Audience } from '@proton/shared/lib/interfaces';
 import { PLANS } from '@proton/shared/lib/constants';
+import { Audience } from '@proton/shared/lib/interfaces';
+import { getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
+
 import { SignupModel } from './interfaces';
 
 export const YANDEX_DOMAINS = ['yandex.ru', 'yandex.ua'];

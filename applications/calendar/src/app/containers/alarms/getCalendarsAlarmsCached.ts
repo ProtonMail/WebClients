@@ -1,6 +1,7 @@
 import { Api } from '@proton/shared/lib/interfaces';
-import getPaginatedAlarms from './getPaginatedAlarms';
+
 import { CalendarAlarmCache } from './CacheInterface';
+import getPaginatedAlarms from './getPaginatedAlarms';
 
 const getCalendarsAlarmsCached = (api: Api, cache: CalendarAlarmCache, calendarIDs: string[], dateRange: Date[]) => {
     const promises = calendarIDs.map((calendarID) => {

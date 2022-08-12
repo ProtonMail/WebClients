@@ -1,11 +1,12 @@
 import { addMinutes } from '@proton/shared/lib/date-fns-utc';
-import { getKey, splitTimeGridEventsPerDay } from '../splitTimeGridEventsPerDay';
-import { getTargetIndex } from '../mouseHelpers/mathHelpers';
+
+import { CalendarViewEvent } from '../../../containers/calendar/interface';
 import { getDiffTime, getNewTime, getSnappedDate, getTargetMinutes } from '../mouseHelpers/dateHelpers';
 import { blockClick, createAutoScroll, createRafUpdater, findContainingParent } from '../mouseHelpers/domHelpers';
+import { getTargetIndex } from '../mouseHelpers/mathHelpers';
+import { getKey, splitTimeGridEventsPerDay } from '../splitTimeGridEventsPerDay';
 import { ACTIONS, TYPE } from './constants';
-import { CalendarViewEvent } from '../../../containers/calendar/interface';
-import { OnMouseDown, MouseUpAction, StartEndResult } from './interface';
+import { MouseUpAction, OnMouseDown, StartEndResult } from './interface';
 
 const DRAG_EVENT_MOVE = 1;
 const DRAG_EVENT_TIME_UP = 2;

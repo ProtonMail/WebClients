@@ -1,10 +1,10 @@
-import { ReadableStream } from 'web-streams-polyfill';
 import { Writer as ZipWriter } from '@transcend-io/conflux';
+import { ReadableStream } from 'web-streams-polyfill';
 
 import { isWindows } from '@proton/shared/lib/helpers/browser';
 
 import { TransferCancel } from '../../../components/TransferManager/transfer';
-import { splitLinkName, adjustName, adjustWindowsLinkName } from '../../_links';
+import { adjustName, adjustWindowsLinkName, splitLinkName } from '../../_links';
 import { StartedNestedLinkDownload } from './interface';
 
 type Entry = {
