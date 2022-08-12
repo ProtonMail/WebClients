@@ -1,7 +1,7 @@
 import { SupportedMimeTypes } from '@proton/shared/lib/drive/constants';
 
 import ChunkFileReader from '../ChunkFileReader';
-import { mimetypeFromExtension, SignatureChecker } from './helpers';
+import { SignatureChecker, mimetypeFromExtension } from './helpers';
 import applicationSignatures from './signatureChecks/applicationSignatures';
 import archiveSignatures from './signatureChecks/archiveSignatures';
 import audioSignatures from './signatureChecks/audioSignatures';

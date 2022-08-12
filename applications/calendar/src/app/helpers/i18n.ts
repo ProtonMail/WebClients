@@ -1,4 +1,5 @@
 import { c } from 'ttag';
+
 import { VIEWS } from '@proton/shared/lib/calendar/constants';
 
 const { DAY, WEEK, MONTH, YEAR, AGENDA, CUSTOM, MAIL } = VIEWS;

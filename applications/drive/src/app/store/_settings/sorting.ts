@@ -1,5 +1,6 @@
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import { SortSetting } from '@proton/shared/lib/interfaces/drive/userSettings';
+
 import { SortField } from '../_views/utils/useSorting';
 
 export interface UserSortParams {

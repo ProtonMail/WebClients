@@ -1,8 +1,8 @@
 import { ReactNode } from 'react';
 
 import { useNotifications } from '@proton/components';
-import { traceError } from '@proton/shared/lib/helpers/sentry';
 import { getIsConnectionIssue } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { traceError } from '@proton/shared/lib/helpers/sentry';
 
 import { ValidationError, isValidationError } from './validationError';
 

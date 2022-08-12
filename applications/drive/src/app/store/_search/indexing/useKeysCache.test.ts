@@ -1,8 +1,7 @@
-import { CryptoProxy, PrivateKeyReference, CryptoApiInterface } from '@proton/crypto';
-
+import { CryptoApiInterface, CryptoProxy, PrivateKeyReference } from '@proton/crypto';
 import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 
-import { createKeysCache, KeyCache } from './useKeysCache';
+import { KeyCache, createKeysCache } from './useKeysCache';
 
 const linkMock = {
     CreateTime: 123456,

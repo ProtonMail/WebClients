@@ -1,20 +1,23 @@
-import { getMemberAndAddress } from '@proton/shared/lib/calendar/members';
+import { useCallback } from 'react';
+
+import { getUnixTime } from 'date-fns';
+
+import { useApi, useCache } from '@proton/components';
 import { getEvent, updateMember } from '@proton/shared/lib/api/calendars';
-import { loadModels } from '@proton/shared/lib/models/helper';
-import { CalendarEventWithMetadata, VcalVeventComponent, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import { MAXIMUM_DATE, MINIMUM_DATE } from '@proton/shared/lib/calendar/constants';
+import getRecurrenceIdValueFromTimestamp from '@proton/shared/lib/calendar/getRecurrenceIdValueFromTimestamp';
+import { getMemberAndAddress } from '@proton/shared/lib/calendar/members';
 import { getOccurrences } from '@proton/shared/lib/calendar/recurring';
+import { getIsPropertyAllDay, getPropertyTzid, getRecurrenceIdDate } from '@proton/shared/lib/calendar/vcalHelper';
 import { addMilliseconds, isSameDay } from '@proton/shared/lib/date-fns-utc';
 import { toUTCDate } from '@proton/shared/lib/date/timezone';
 import { Address } from '@proton/shared/lib/interfaces';
-import { useApi, useCache } from '@proton/components';
+import { CalendarEventWithMetadata, VcalVeventComponent, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import { CalendarsModel } from '@proton/shared/lib/models';
-import { MAXIMUM_DATE, MINIMUM_DATE } from '@proton/shared/lib/calendar/constants';
-import getRecurrenceIdValueFromTimestamp from '@proton/shared/lib/calendar/getRecurrenceIdValueFromTimestamp';
-import { getIsPropertyAllDay, getPropertyTzid, getRecurrenceIdDate } from '@proton/shared/lib/calendar/vcalHelper';
-import { getUnixTime } from 'date-fns';
-import { useCallback } from 'react';
-import getAllEventsByUID from '../containers/calendar/getAllEventsByUID';
+import { loadModels } from '@proton/shared/lib/models/helper';
+
 import parseMainEventData from '../containers/calendar/event/parseMainEventData';
+import getAllEventsByUID from '../containers/calendar/getAllEventsByUID';
 
 interface HandlerProps {
     calendars: VisualCalendar[];

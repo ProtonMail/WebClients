@@ -1,18 +1,18 @@
 import { traceError } from '@proton/shared/lib/helpers/sentry';
 
 import { TransferCancel } from '../../components/TransferManager/transfer';
-import { mimeTypeFromFile } from './mimeTypeParser/mimeTypeParser';
-import { makeThumbnail } from './thumbnail';
-import { UploadWorkerController } from './workerController';
 import {
-    UploadCallbacks,
-    UploadFileControls,
-    UploadFileProgressCallbacks,
+    BlockToken,
     FileKeys,
     FileRequestBlock,
     ThumbnailRequestBlock,
-    BlockToken,
+    UploadCallbacks,
+    UploadFileControls,
+    UploadFileProgressCallbacks,
 } from './interface';
+import { mimeTypeFromFile } from './mimeTypeParser/mimeTypeParser';
+import { makeThumbnail } from './thumbnail';
+import { UploadWorkerController } from './workerController';
 
 export function initUploadFileWorker(
     file: File,

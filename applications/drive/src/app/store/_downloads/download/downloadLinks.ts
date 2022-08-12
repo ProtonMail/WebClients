@@ -1,17 +1,17 @@
 import { reportError } from '../../_utils';
 import {
-    LinkDownload,
     DownloadCallbacks,
     DownloadStreamControls,
     GetChildrenCallback,
+    LinkDownload,
     OnInitCallback,
-    OnSignatureIssueCallback,
     OnProgressCallback,
+    OnSignatureIssueCallback,
 } from '../interface';
-import { NestedLinkDownload } from './interface';
-import { FolderTreeLoader } from './downloadLinkFolder';
 import ArchiveGenerator from './archiveGenerator';
 import ConcurrentIterator from './concurrentIterator';
+import { FolderTreeLoader } from './downloadLinkFolder';
+import { NestedLinkDownload } from './interface';
 
 /**
  * initDownloadLinks prepares controls to download archive of passed `links`.

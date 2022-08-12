@@ -1,4 +1,5 @@
 import { ReactNode } from 'react';
+
 import { useAppTitle } from '@proton/components';
 
 type Props = {

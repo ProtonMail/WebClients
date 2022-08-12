@@ -1,4 +1,5 @@
 import { SupportedMimeTypes } from '@proton/shared/lib/drive/constants';
+
 import { SignatureChecker } from '../helpers';
 
 export default function imageSignatures({ check, checkString, sourceBuffer }: ReturnType<typeof SignatureChecker>) {

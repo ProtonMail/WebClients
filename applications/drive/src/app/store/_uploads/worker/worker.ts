@@ -1,15 +1,13 @@
 import { PrivateKeyReference, SessionKey } from '@proton/crypto';
-
-import { sign as signMessage, generateNodeKeys, generateContentKeys } from '@proton/shared/lib/keys/driveKeys';
+import { generateContentKeys, generateNodeKeys, sign as signMessage } from '@proton/shared/lib/keys/driveKeys';
 
 import { ecryptFileExtendedAttributes } from '../../_links';
 import { EncryptedBlock, EncryptedThumbnailBlock, Link } from '../interface';
-import { UploadWorker } from '../workerController';
 import { getErrorString } from '../utils';
-
-import { Pauser } from './pauser';
+import { UploadWorker } from '../workerController';
 import UploadWorkerBuffer from './buffer';
 import generateEncryptedBlocks from './encryption';
+import { Pauser } from './pauser';
 import startUploadJobs from './upload';
 
 // eslint-disable-next-line no-restricted-globals

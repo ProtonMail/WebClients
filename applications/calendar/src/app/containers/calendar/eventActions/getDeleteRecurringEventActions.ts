@@ -1,11 +1,13 @@
 import { ICAL_ATTENDEE_STATUS, RECURRING_TYPES } from '@proton/shared/lib/calendar/constants';
-import unary from '@proton/utils/unary';
-import isTruthy from '@proton/utils/isTruthy';
-import { omit } from '@proton/shared/lib/helpers/object';
-import { CalendarEvent, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
-
 import { getResetPartstatActions } from '@proton/shared/lib/calendar/integration/invite';
 import { getIsEventCancelled, withDtstamp } from '@proton/shared/lib/calendar/veventHelper';
+import { omit } from '@proton/shared/lib/helpers/object';
+import { CalendarEvent, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
+import isTruthy from '@proton/utils/isTruthy';
+import unary from '@proton/utils/unary';
+
+import { CalendarEventRecurring } from '../../../interfaces/CalendarEvents';
+import { EventOldData } from '../../../interfaces/EventData';
 import {
     INVITE_ACTION_TYPES,
     InviteActions,
@@ -14,16 +16,14 @@ import {
     UpdatePersonalPartOperation,
 } from '../../../interfaces/Invite';
 import {
+    SyncEventActionOperations,
     getDeleteSyncOperation,
     getUpdateSyncOperation,
-    SyncEventActionOperations,
 } from '../getSyncMultipleEventsPayload';
 import deleteFutureRecurrence from '../recurrence/deleteFutureRecurrence';
+import deleteSingleRecurrence from '../recurrence/deleteSingleRecurrence';
 import { getUpdatePartstatOperation } from './getChangePartstatActions';
 import { getRecurrenceEvents, getRecurrenceEventsAfter } from './recurringHelper';
-import { CalendarEventRecurring } from '../../../interfaces/CalendarEvents';
-import { EventOldData } from '../../../interfaces/EventData';
-import deleteSingleRecurrence from '../recurrence/deleteSingleRecurrence';
 
 interface DeleteRecurringArguments {
     type: RECURRING_TYPES;

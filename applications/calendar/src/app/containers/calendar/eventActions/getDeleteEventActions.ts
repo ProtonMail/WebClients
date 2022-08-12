@@ -1,13 +1,13 @@
 import { getIsCalendarDisabled } from '@proton/shared/lib/calendar/calendar';
-import { getMemberAndAddress } from '@proton/shared/lib/calendar/members';
+import { DELETE_CONFIRMATION_TYPES } from '@proton/shared/lib/calendar/constants';
 import { getSelfAttendeeToken } from '@proton/shared/lib/calendar/integration/invite';
+import { getMemberAndAddress } from '@proton/shared/lib/calendar/members';
 import { getBase64SharedSessionKey } from '@proton/shared/lib/calendar/veventHelper';
-import noop from '@proton/utils/noop';
 import { Address, Api } from '@proton/shared/lib/interfaces';
 import { CalendarBootstrap, CalendarEvent, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
-import { DELETE_CONFIRMATION_TYPES } from '@proton/shared/lib/calendar/constants';
 import { GetAddressKeys } from '@proton/shared/lib/interfaces/hooks/GetAddressKeys';
 import { GetCalendarKeys } from '@proton/shared/lib/interfaces/hooks/GetCalendarKeys';
+import noop from '@proton/utils/noop';
 
 import { getEventDeletedText, getRecurringEventDeletedText } from '../../../components/eventModal/eventForm/i18n';
 import { EventOldData } from '../../../interfaces/EventData';
@@ -23,7 +23,7 @@ import getSingleEditRecurringData from '../event/getSingleEditRecurringData';
 import { getIsCalendarEvent } from '../eventStore/cache/helper';
 import { GetDecryptedEventCb } from '../eventStore/interface';
 import getAllEventsByUID from '../getAllEventsByUID';
-import { getDeleteSyncOperation, SyncEventActionOperations } from '../getSyncMultipleEventsPayload';
+import { SyncEventActionOperations, getDeleteSyncOperation } from '../getSyncMultipleEventsPayload';
 import { CalendarViewEvent, OnDeleteConfirmationCb } from '../interface';
 import { getUpdatePartstatOperation } from './getChangePartstatActions';
 import { getDeleteRecurringEventActions } from './getDeleteRecurringEventActions';

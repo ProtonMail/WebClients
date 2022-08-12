@@ -1,9 +1,11 @@
 import { c } from 'ttag';
-import { canonizeEmailByGuess, canonizeInternalEmail } from '@proton/shared/lib/helpers/email';
+
 import { ICAL_ATTENDEE_STATUS } from '@proton/shared/lib/calendar/constants';
+import { notificationsToModel } from '@proton/shared/lib/calendar/notificationsToModel';
+import { canonizeEmailByGuess, canonizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import { CalendarSettings, EventModel } from '@proton/shared/lib/interfaces/calendar';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
-import { notificationsToModel } from '@proton/shared/lib/calendar/notificationsToModel';
+
 import { DisplayNameEmail } from '../containers/calendar/interface';
 
 const { NEEDS_ACTION, DECLINED, ACCEPTED, TENTATIVE } = ICAL_ATTENDEE_STATUS;

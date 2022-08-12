@@ -1,4 +1,4 @@
-import { isSupportedImage, isSVG } from '@proton/shared/lib/helpers/mimetype';
+import { isSVG, isSupportedImage } from '@proton/shared/lib/helpers/mimetype';
 
 import { scaleImageFile } from './image';
 import { scaleSvgFile } from './svg';

@@ -1,18 +1,19 @@
+import { addDays } from 'date-fns';
+
+import { dedupeNotifications } from '@proton/shared/lib/calendar/alarms';
 import { ICAL_EVENT_STATUS, MAX_LENGTHS_API } from '@proton/shared/lib/calendar/constants';
-import { withRequiredProperties } from '@proton/shared/lib/calendar/veventHelper';
 import {
     buildVcalOrganizer,
     getDateProperty,
     getDateTimeProperty,
     propertyToUTCDate,
 } from '@proton/shared/lib/calendar/vcalConverter';
-import { addDays } from 'date-fns';
+import { withRequiredProperties } from '@proton/shared/lib/calendar/veventHelper';
 import { isSameDay } from '@proton/shared/lib/date-fns-utc';
 import { omit } from '@proton/shared/lib/helpers/object';
-import { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
-import { dedupeNotifications } from '@proton/shared/lib/calendar/alarms';
-
 import { DateTimeModel, EventModel } from '@proton/shared/lib/interfaces/calendar';
+import { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
+
 import modelToFrequencyProperties from './modelToFrequencyProperties';
 import { modelToValarmComponent } from './modelToValarm';
 

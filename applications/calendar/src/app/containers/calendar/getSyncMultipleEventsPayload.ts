@@ -1,5 +1,6 @@
 import { useGetAddressKeys } from '@proton/components';
 import { useGetCalendarKeys } from '@proton/components/hooks/useGetDecryptedPassphraseAndCalendarKeys';
+import { PublicKeyReference } from '@proton/crypto';
 import { syncMultipleEvents as syncMultipleEventsRoute } from '@proton/shared/lib/api/calendars';
 import { DEFAULT_ATTENDEE_PERMISSIONS } from '@proton/shared/lib/calendar/constants';
 import getCreationKeys from '@proton/shared/lib/calendar/integration/getCreationKeys';
@@ -13,12 +14,11 @@ import { CalendarEvent } from '@proton/shared/lib/interfaces/calendar';
 import {
     CreateCalendarEventSyncData,
     CreateLinkedCalendarEventsSyncData,
-    DeleteCalendarEventSyncData,
     DELETION_REASON,
+    DeleteCalendarEventSyncData,
     UpdateCalendarEventSyncData,
 } from '@proton/shared/lib/interfaces/calendar/Api';
 import { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
-import { PublicKeyReference } from '@proton/crypto';
 
 export enum SyncOperationTypes {
     DELETE,

@@ -1,6 +1,6 @@
 import { c, msgid } from 'ttag';
 
-import { TransferState, TransferMeta } from '../../../components/TransferManager/transfer';
+import { TransferMeta, TransferState } from '../../../components/TransferManager/transfer';
 import { TransferConflictStrategy } from '../interface';
 
 interface LinkUpload {

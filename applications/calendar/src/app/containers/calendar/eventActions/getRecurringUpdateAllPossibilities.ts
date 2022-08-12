@@ -1,3 +1,4 @@
+import { getIsRruleEqual } from '@proton/shared/lib/calendar/rruleEqual';
 import {
     getDateOrDateTimeProperty,
     getDtendProperty,
@@ -5,9 +6,9 @@ import {
 } from '@proton/shared/lib/calendar/vcalConverter';
 import { getIsAllDay } from '@proton/shared/lib/calendar/vcalHelper';
 import { addDays, isSameDay } from '@proton/shared/lib/date-fns-utc';
-import { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 import { toUTCDate } from '@proton/shared/lib/date/timezone';
-import { getIsRruleEqual } from '@proton/shared/lib/calendar/rruleEqual';
+import { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
+
 import { CalendarEventRecurring } from '../../../interfaces/CalendarEvents';
 
 export enum UpdateAllPossibilities {

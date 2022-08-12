@@ -1,23 +1,23 @@
 import { c } from 'ttag';
 
-import { wait } from '@proton/shared/lib/helpers/promise';
 import { RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
+import { wait } from '@proton/shared/lib/helpers/promise';
 
 import { TransferCancel } from '../../../components/TransferManager/transfer';
 import { ValidationError } from '../../_utils';
 import { WAIT_TIME } from '../constants';
 import {
-    LinkDownload,
+    ChildrenLinkMeta,
     DownloadCallbacks,
     DownloadStreamControls,
     GetChildrenCallback,
-    OnSignatureIssueCallback,
+    LinkDownload,
     OnProgressCallback,
-    ChildrenLinkMeta,
+    OnSignatureIssueCallback,
 } from '../interface';
-import { NestedLinkDownload } from './interface';
 import ArchiveGenerator from './archiveGenerator';
 import ConcurrentIterator from './concurrentIterator';
+import { NestedLinkDownload } from './interface';
 
 type FolderLoadInfo = {
     size: number;

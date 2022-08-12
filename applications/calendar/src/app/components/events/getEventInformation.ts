@@ -3,6 +3,7 @@ import { getAggregatedEventVerificationStatus } from '@proton/shared/lib/calenda
 import { getDisplayTitle } from '@proton/shared/lib/calendar/helper';
 import { getIsAddressActive } from '@proton/shared/lib/helpers/address';
 import { EventModelReadView } from '@proton/shared/lib/interfaces/calendar';
+
 import getIsTemporaryViewEvent from '../../containers/calendar/getIsTemporaryViewEvent';
 import { CalendarViewEvent, CalendarViewEventTemporaryEvent } from '../../containers/calendar/interface';
 
