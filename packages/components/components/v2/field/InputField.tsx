@@ -1,11 +1,15 @@
-import { ElementType, forwardRef, ReactElement, ReactNode, useContext, useState } from 'react';
+import { ElementType, ReactElement, ReactNode, forwardRef, useContext, useRef, useState } from 'react';
+
+import { isFocusable } from 'tabbable';
+
 import useInstance from '@proton/hooks/useInstance';
+
+import { FormContext } from '../../../components';
+import { classnames, generateUID } from '../../../helpers';
 import { Box, PolymorphicComponentProps } from '../../../helpers/react-polymorphic-box';
 import Icon from '../../icon/Icon';
-import { classnames, generateUID } from '../../../helpers';
-import Input from '../input/Input';
 import { Tooltip } from '../../tooltip';
-import { FormContext } from '../../../components';
+import Input from '../input/Input';
 
 type NodeOrBoolean = ReactNode | boolean;
 
@@ -62,6 +66,7 @@ const InputFieldBase = <E extends ElementType = typeof defaultElement>(
     const { dense } = useContext(FormContext) || {};
     const id = useInstance(() => idProp || generateUID());
     const assistiveUid = useInstance(() => generateUID());
+    const labelRef = useRef<HTMLLabelElement>(null);
     const isDense = denseProp || dense;
     const classes = {
         root: classnames([
@@ -135,9 +140,8 @@ const InputFieldBase = <E extends ElementType = typeof defaultElement>(
     };
 
     return (
-        <label
+        <div
             className={classes.root}
-            htmlFor={id}
             onFocus={() => {
                 setIsFocused(true);
             }}
@@ -145,11 +149,13 @@ const InputFieldBase = <E extends ElementType = typeof defaultElement>(
                 setIsFocused(false);
             }}
         >
-            {(label || hint) && (
-                <div className={classes.labelContainer}>
+            {label || hint ? (
+                <label htmlFor={id} className={classes.labelContainer} ref={labelRef}>
                     {labelElement}
                     {hintElement}
-                </div>
+                </label>
+            ) : (
+                <label htmlFor={id} ref={labelRef} className="hidden" />
             )}
             <div className={classes.inputContainer}>
                 <Box
@@ -163,10 +169,25 @@ const InputFieldBase = <E extends ElementType = typeof defaultElement>(
                     suffix={getSuffix()}
                 />
             </div>
-            <div className={classes.assistContainer} id={assistiveUid}>
+            <div
+                className={classes.assistContainer}
+                id={assistiveUid}
+                onClick={(e) => {
+                    // Ignore if it's empty or if the clicked target is focusable.
+                    if (
+                        (e.currentTarget === e.target && e.currentTarget.matches(':empty')) ||
+                        isFocusable(e.target as Element)
+                    ) {
+                        return;
+                    }
+                    // Simulates this div being wrapped in a label. Clicks on the label element to trigger the normal
+                    // click handler which the label would trigger.
+                    labelRef.current?.click();
+                }}
+            >
                 {errorElement || warningElement || (!error && !warning && assistiveText)}
             </div>
-        </label>
+        </div>
     );
 };
 
