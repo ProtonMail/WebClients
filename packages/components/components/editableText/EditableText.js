@@ -1,10 +1,12 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
+
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
+
 import useToggle from '../../hooks/useToggle';
-import Input from '../input/Input';
 import { Button } from '../button';
 import { Icon } from '../icon';
+import Input from '../input/Input';
 
 const EditableText = ({ icon = 'pen', onSubmit, initialText = '', children, readOnly = false, ...rest }) => {
     const [inputValue, setInputValue] = useState(initialText);

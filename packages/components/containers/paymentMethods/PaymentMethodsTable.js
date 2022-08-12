@@ -1,9 +1,10 @@
-import { c } from 'ttag';
 import PropTypes from 'prop-types';
+import { c } from 'ttag';
+
 import { PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
 import orderBy from '@proton/utils/orderBy';
 
-import { Table, TableHeader, TableBody, TableRow } from '../../components';
+import { Table, TableBody, TableHeader, TableRow } from '../../components';
 import PaymentMethodActions from './PaymentMethodActions';
 import PaymentMethodState from './PaymentMethodState';
 

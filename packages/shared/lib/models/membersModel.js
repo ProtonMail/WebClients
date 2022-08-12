@@ -1,5 +1,5 @@
-import updateCollection from '../helpers/updateCollection';
 import { getAllMembers } from '../api/members';
+import updateCollection from '../helpers/updateCollection';
 
 export const MembersModel = {
     key: 'Members',

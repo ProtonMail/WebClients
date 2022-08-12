@@ -1,17 +1,20 @@
 import { useEffect } from 'react';
+
 import PropTypes from 'prop-types';
-import { ContactEmailsModel, ContactsModel, DomainsModel, UserModel } from '@proton/shared/lib/models';
-import { STATUS } from '@proton/shared/lib/models/cache';
-import { SubscriptionModel } from '@proton/shared/lib/models/subscriptionModel';
-import { OrganizationModel } from '@proton/shared/lib/models/organizationModel';
-import { MembersModel } from '@proton/shared/lib/models/membersModel';
+
 import { EVENT_ERRORS } from '@proton/shared/lib/errors';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
+import { ContactEmailsModel, ContactsModel, DomainsModel, UserModel } from '@proton/shared/lib/models';
 import { AddressesModel } from '@proton/shared/lib/models/addressesModel';
-import { KEY as USER_KEYS_CACHE_KEY } from '../../hooks/useUserKeys';
-import { CACHE_KEY as ADDRESS_KEYS_CACHE } from '../../hooks/useGetAddressKeys';
+import { STATUS } from '@proton/shared/lib/models/cache';
+import { MembersModel } from '@proton/shared/lib/models/membersModel';
+import { OrganizationModel } from '@proton/shared/lib/models/organizationModel';
+import { SubscriptionModel } from '@proton/shared/lib/models/subscriptionModel';
+
+import { useCache, useEventManager } from '../../hooks';
 import { KEY as ADDRESSES_KEYS_CACHE } from '../../hooks/useAddressesKeys';
-import { useEventManager, useCache } from '../../hooks';
+import { CACHE_KEY as ADDRESS_KEYS_CACHE } from '../../hooks/useGetAddressKeys';
+import { KEY as USER_KEYS_CACHE_KEY } from '../../hooks/useUserKeys';
 
 const EventModelListener = ({ models }) => {
     const { subscribe } = useEventManager();

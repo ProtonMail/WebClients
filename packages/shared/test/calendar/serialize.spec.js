@@ -1,12 +1,13 @@
 import { CryptoProxy, toPublicKeyReference } from '@proton/crypto';
-import { createCalendarEvent } from '../../lib/calendar/serialize';
-import { readCalendarEvent, readPersonalPart, readSessionKeys } from '../../lib/calendar/deserialize';
-import { setVcalProdId } from '../../lib/calendar/vcalConfig';
-import { DecryptableKey, DecryptableKey2 } from '../keys/keys.data';
-import { unwrap, wrap } from '../../lib/calendar/helper';
+
 import { ATTENDEE_STATUS_API, EVENT_VERIFICATION_STATUS } from '../../lib/calendar/constants';
-import { initRandomMock, disableRandomMock } from '../mockRandomValues';
+import { readCalendarEvent, readPersonalPart, readSessionKeys } from '../../lib/calendar/deserialize';
+import { unwrap, wrap } from '../../lib/calendar/helper';
+import { createCalendarEvent } from '../../lib/calendar/serialize';
+import { setVcalProdId } from '../../lib/calendar/vcalConfig';
 import { toCRLF } from '../../lib/helpers/string';
+import { DecryptableKey, DecryptableKey2 } from '../keys/keys.data';
+import { disableRandomMock, initRandomMock } from '../mockRandomValues';
 
 const veventComponent = {
     component: 'vevent',

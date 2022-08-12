@@ -1,9 +1,11 @@
 import { useCallback } from 'react';
+
 import getPublicKeysEmailHelper from '@proton/shared/lib/api/helpers/getPublicKeysEmailHelper';
 import { MINUTE } from '@proton/shared/lib/constants';
+
+import useApi from './useApi';
 import useCache from './useCache';
 import { getPromiseValue } from './useCachedModelResult';
-import useApi from './useApi';
 
 export const CACHE_KEY = 'PUBLIC_KEYS';
 

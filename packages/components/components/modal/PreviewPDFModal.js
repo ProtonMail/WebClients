@@ -1,5 +1,6 @@
-import { c } from 'ttag';
 import PropTypes from 'prop-types';
+import { c } from 'ttag';
+
 import FormModal from './FormModal';
 
 const PreviewPDFModal = ({ url, title = c('Title').t`Preview`, filename, ...rest }) => {

@@ -1,7 +1,7 @@
 import { queryContacts } from '../api/contacts';
-import updateCollection from '../helpers/updateCollection';
 import queryPages from '../api/helpers/queryPages';
 import { CONTACTS_LIMIT, CONTACTS_REQUESTS_PER_SECOND } from '../constants';
+import updateCollection from '../helpers/updateCollection';
 
 /**
  * 1. Specific fields from the contact is picked to store less data in the cache

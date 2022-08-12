@@ -1,37 +1,35 @@
-import { useState, useRef } from 'react';
+import { useRef, useState } from 'react';
+
 import { c } from 'ttag';
 
-import { queryInvoices, getInvoice } from '@proton/shared/lib/api/payments';
+import { getInvoice, queryInvoices } from '@proton/shared/lib/api/payments';
 import { ELEMENTS_PER_PAGE, INVOICE_OWNER, INVOICE_STATE, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 
 import {
     Alert,
-    ButtonGroup,
     Block,
     Button,
-    Table,
-    TableCell,
-    TableBody,
+    ButtonGroup,
     Pagination,
-    usePaginationAsync,
+    Table,
+    TableBody,
+    TableCell,
+    TableHeader,
     TableRow,
     Time,
-    TableHeader,
+    usePaginationAsync,
 } from '../../components';
-import { useModals, useSubscription, useUser, useApi } from '../../hooks';
-
-import MozillaInfoPanel from '../account/MozillaInfoPanel';
+import { useApi, useModals, useSubscription, useUser } from '../../hooks';
 import useApiResult from '../../hooks/useApiResult';
-
-import InvoiceAmount from './InvoiceAmount';
-import InvoiceType from './InvoiceType';
-import InvoiceState from './InvoiceState';
-import InvoiceActions from './InvoiceActions';
-import InvoiceTextModal from './InvoiceTextModal';
-import InvoicesPreview from './InvoicesPreview';
-
 import { SettingsParagraph, SettingsSectionWide } from '../account';
+import MozillaInfoPanel from '../account/MozillaInfoPanel';
+import InvoiceActions from './InvoiceActions';
+import InvoiceAmount from './InvoiceAmount';
+import InvoiceState from './InvoiceState';
+import InvoiceTextModal from './InvoiceTextModal';
+import InvoiceType from './InvoiceType';
+import InvoicesPreview from './InvoicesPreview';
 
 const InvoicesSection = () => {
     const previewRef = useRef();

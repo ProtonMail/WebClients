@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+
 import { DOMAIN_STATE } from '@proton/shared/lib/constants';
 
 import { Icon } from '../../components';

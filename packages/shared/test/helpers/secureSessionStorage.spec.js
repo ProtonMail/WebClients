@@ -1,6 +1,5 @@
+import { load, mergeParts, save, separateParts } from '../../lib/helpers/secureSessionStorage';
 import { disableRandomMock, initRandomMock } from '../mockRandomValues';
-
-import { load, save, mergeParts, separateParts } from '../../lib/helpers/secureSessionStorage';
 
 describe('secureSessionStorage', () => {
     beforeAll(initRandomMock);
