@@ -1,4 +1,5 @@
 import { END_TYPE, FREQUENCY } from '@proton/shared/lib/calendar/constants';
+
 import getFrequencyModelChange from './getFrequencyModelChange';
 
 const frequencyModel = {
