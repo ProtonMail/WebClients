@@ -1,13 +1,13 @@
 {
     "(*.ts|*.tsx|*.js)": [
         "prettier --write",
-        "eslint --fix",
+        "eslint --fix"
     ],
     "*.scss": [
         "prettier --write",
-        "stylelint --fix",
+        "stylelint --fix"
     ],
     "*.json": "prettier --write",
     "*.md": "prettier --write",
-    "package.json": "sort-package-json",
+    "package.json": "sort-package-json"
 }
