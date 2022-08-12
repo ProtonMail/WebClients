@@ -1,12 +1,12 @@
 import { c, msgid } from 'ttag';
 
-import isTruthy from '@proton/utils/isTruthy';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
+import isTruthy from '@proton/utils/isTruthy';
 
-import { waitFor, useErrorHandler } from '../../_utils';
-import useLinksState, { Link } from '../useLinksState';
+import { useErrorHandler, waitFor } from '../../_utils';
+import { DecryptedLink, EncryptedLink } from '../interface';
 import useLinks from '../useLinks';
-import { EncryptedLink, DecryptedLink } from '../interface';
+import useLinksState, { Link } from '../useLinksState';
 
 export type FetchMeta = {
     isEverythingFetched?: boolean;

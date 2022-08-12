@@ -1,15 +1,16 @@
 import { ReactNode } from 'react';
+
 import { c } from 'ttag';
 
 import {
     Alert,
-    Row,
-    ModalTwo,
-    ModalTwoFooter,
     Button,
-    ModalTwoContent,
-    ModalTwoHeader,
     FileNameDisplay,
+    ModalTwo,
+    ModalTwoContent,
+    ModalTwoFooter,
+    ModalTwoHeader,
+    Row,
 } from '@proton/components';
 
 import { useLinkDetailsView } from '../store';

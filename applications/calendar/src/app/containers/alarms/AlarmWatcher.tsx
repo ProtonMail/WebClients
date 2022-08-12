@@ -1,17 +1,18 @@
 import { MutableRefObject, useEffect, useRef } from 'react';
+
+import { differenceInMilliseconds, fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
+
 import { useApi, useGetCalendarEventRaw, useHasSuspendedCounter } from '@proton/components';
-import { fromUnixTime, differenceInMilliseconds } from 'date-fns';
 import { getEvent as getEventRoute } from '@proton/shared/lib/api/calendars';
+import { getAlarmMessage, getNextEventTime } from '@proton/shared/lib/calendar/alarms';
+import { MINUTE } from '@proton/shared/lib/constants';
 import { create } from '@proton/shared/lib/helpers/desktopNotification';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import { CalendarAlarm, CalendarEvent } from '@proton/shared/lib/interfaces/calendar';
 import noop from '@proton/utils/noop';
 
-import { getAlarmMessage, getNextEventTime } from '@proton/shared/lib/calendar/alarms';
-import { MINUTE } from '@proton/shared/lib/constants';
 import notificationIcon from '../../../assets/notification.png';
-
 import { CalendarsEventsCache } from '../calendar/eventStore/interface';
 
 const MIN_CUTOFF = -MINUTE;

@@ -1,17 +1,20 @@
 import { MutableRefObject, useEffect } from 'react';
-import { LoaderPage, useNotifications } from '@proton/components';
 import { useHistory } from 'react-router-dom';
+
 import { c } from 'ttag';
-import { Address } from '@proton/shared/lib/interfaces';
-import { VisualCalendar, CalendarEvent } from '@proton/shared/lib/interfaces/calendar';
+
+import { LoaderPage, useNotifications } from '@proton/components';
 import { ACTION_VIEWS, VIEWS } from '@proton/shared/lib/calendar/constants';
 import { getDateOrDateTimeProperty, propertyToUTCDate } from '@proton/shared/lib/calendar/vcalConverter';
 import { convertUTCDateTimeToZone, fromUTCDate, toUTCDate } from '@proton/shared/lib/date/timezone';
+import { Address } from '@proton/shared/lib/interfaces';
+import { CalendarEvent, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
-import { EventTargetAction } from './interface';
-import { getCalendarEventStoreRecord } from './eventStore/cache/upsertCalendarEventStoreRecord';
+
 import { useOpenEvent } from '../../hooks/useOpenEvent';
+import { getCalendarEventStoreRecord } from './eventStore/cache/upsertCalendarEventStoreRecord';
 import { VIEW_URL_PARAMS_VIEWS_CONVERSION } from './getUrlHelper';
+import { EventTargetAction } from './interface';
 
 const { VIEW } = ACTION_VIEWS;
 

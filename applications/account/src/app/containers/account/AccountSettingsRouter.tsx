@@ -1,11 +1,12 @@
 import { ReactNode } from 'react';
 import { Route, Switch } from 'react-router-dom';
+
 import { c } from 'ttag';
 
-import { APP_NAMES } from '@proton/shared/lib/constants';
 import {
     AccountEasySwitchSection,
     AccountRecoverySection,
+    AutomaticSubscriptionModal,
     BillingSection,
     CancelSubscriptionSection,
     CreditsSection,
@@ -21,21 +22,21 @@ import {
     PasswordsSection,
     PaymentMethodsSection,
     PlansSection,
+    PrivacySection,
+    PrivateMainArea,
     PrivateMainSettingsArea,
     SessionsSection,
+    SettingsPageTitle,
+    SubscriptionModalProvider,
     UsernameSection,
     YourPlanSection,
-    SubscriptionModalProvider,
-    AutomaticSubscriptionModal,
-    PrivateMainArea,
-    SettingsPageTitle,
-    PrivacySection,
 } from '@proton/components';
-import { InviteSection, ReferralInvitesContextProvider, RewardSection } from '@proton/components/containers/referral';
 import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
+import { InviteSection, ReferralInvitesContextProvider, RewardSection } from '@proton/components/containers/referral';
+import { APP_NAMES } from '@proton/shared/lib/constants';
 
-import { getAccountAppRoutes } from './routes';
 import { recoveryIds } from './recoveryIds';
+import { getAccountAppRoutes } from './routes';
 
 const AccountSettingsRouter = ({
     redirect,

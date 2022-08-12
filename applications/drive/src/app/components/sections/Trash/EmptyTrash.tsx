@@ -1,7 +1,6 @@
 import { c } from 'ttag';
 
 import { EmptyViewContainer } from '@proton/components';
-
 import noContentSvg from '@proton/styles/assets/img/illustrations/empty-trash.svg';
 
 const EmptyTrash = () => (

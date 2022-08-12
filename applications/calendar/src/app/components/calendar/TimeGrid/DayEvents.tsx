@@ -1,12 +1,13 @@
 import { Ref, useMemo } from 'react';
-import { isNextDay } from '@proton/shared/lib/date-fns-utc';
-import { HOUR } from '@proton/shared/lib/constants';
 
-import { layout, LayoutEvent } from '../layout';
-import { toPercent } from '../mouseHelpers/mathHelpers';
-import getIsBeforeNow from '../getIsBeforeNow';
-import PartDayEvent, { EventSize } from '../../events/PartDayEvent';
+import { HOUR } from '@proton/shared/lib/constants';
+import { isNextDay } from '@proton/shared/lib/date-fns-utc';
+
 import { CalendarViewEvent, TargetEventData } from '../../../containers/calendar/interface';
+import PartDayEvent, { EventSize } from '../../events/PartDayEvent';
+import getIsBeforeNow from '../getIsBeforeNow';
+import { LayoutEvent, layout } from '../layout';
+import { toPercent } from '../mouseHelpers/mathHelpers';
 
 /**
  * Splits 2-day events into parts that represent the actual length in the UI

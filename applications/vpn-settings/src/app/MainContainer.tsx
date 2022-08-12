@@ -1,65 +1,68 @@
 import { useEffect, useRef, useState } from 'react';
 import { Route } from 'react-router';
-import { useLocation, Redirect, Switch, useHistory } from 'react-router-dom';
-import { APPS } from '@proton/shared/lib/constants';
-import { localeCode } from '@proton/shared/lib/i18n';
+import { Redirect, Switch, useHistory, useLocation } from 'react-router-dom';
+
+import { c } from 'ttag';
+
 import {
-    TopBanners,
-    Sidebar,
-    useToggle,
-    useUser,
+    AccountRecoverySection,
+    AuthenticatedBugModal,
+    AutomaticSubscriptionModal,
+    BillingSection,
+    CancelSubscriptionSection,
+    CreditsSection,
+    DeleteSection,
+    EmailSubscriptionSection,
+    ErrorBoundary,
+    FeatureCode,
+    GiftCodeSection,
+    InvoicesSection,
+    LanguageSection,
+    MainLogo,
+    OpenVPNConfigurationSection,
+    OpenVPNCredentialsSection,
+    PasswordsSection,
+    PaymentMethodsSection,
+    PlansSection,
     PrivateAppContainer,
     PrivateHeader,
-    useActiveBreakpoint,
-    SidebarList,
-    SidebarNav,
-    SidebarListItemsWithSubsections,
-    MainLogo,
-    ErrorBoundary,
-    StandardErrorPage,
-    AuthenticatedBugModal,
-    useUserSettings,
-    useSubscription,
-    PlansSection,
-    YourPlanSection,
-    BillingSection,
-    CreditsSection,
-    GiftCodeSection,
-    CancelSubscriptionSection,
     PrivateMainSettingsArea,
-    LanguageSection,
-    PaymentMethodsSection,
-    InvoicesSection,
     ProtonVPNClientsSection,
-    OpenVPNConfigurationSection,
-    UsernameSection,
-    PasswordsSection,
-    OpenVPNCredentialsSection,
-    AccountRecoverySection,
-    EmailSubscriptionSection,
-    DeleteSection,
-    AutomaticSubscriptionModal,
+    Sidebar,
+    SidebarList,
+    SidebarListItemsWithSubsections,
+    SidebarNav,
+    StandardErrorPage,
     SubscriptionModalProvider,
-    WireGuardConfigurationSection,
-    useModalState,
-    UserDropdown,
-    Unauthenticated,
     ThemesSection,
+    TopBanners,
+    Unauthenticated,
+    UserDropdown,
+    UsernameSection,
+    WireGuardConfigurationSection,
+    YourPlanSection,
+    useActiveBreakpoint,
     useFeatures,
-    FeatureCode,
+    useModalState,
+    useSubscription,
+    useToggle,
+    useUser,
+    useUserSettings,
 } from '@proton/components';
+import { getIsSectionAvailable } from '@proton/components/containers/layout/helper';
+import { BugModalMode } from '@proton/components/containers/support/BugModal';
 import LiveChatZendesk, {
     ZendeskRef,
     getIsSelfChat,
     useCanEnableChat,
 } from '@proton/components/containers/zendesk/LiveChatZendesk';
-import { c } from 'ttag';
-import { getIsSectionAvailable } from '@proton/components/containers/layout/helper';
+import { APPS } from '@proton/shared/lib/constants';
+import { localeCode } from '@proton/shared/lib/i18n';
 import { locales } from '@proton/shared/lib/i18n/locales';
-import { BugModalMode } from '@proton/components/containers/support/BugModal';
-import { getRoutes } from './routes';
-import VpnSidebarVersion from './containers/VpnSidebarVersion';
+
 import TVContainer from './containers/TVContainer';
+import VpnSidebarVersion from './containers/VpnSidebarVersion';
+import { getRoutes } from './routes';
 
 const vpnZendeskKey = '52184d31-aa98-430f-a86c-b5a93235027a';
 

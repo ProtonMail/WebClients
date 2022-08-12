@@ -3,13 +3,7 @@ import * as React from 'react';
 import { Location } from 'history';
 import { c, msgid } from 'ttag';
 
-import {
-    Loader,
-    usePlans,
-    useTheme,
-    useUser,
-    useUserSettings,
-} from '@proton/components';
+import { Loader, usePlans, useTheme, useUser, useUserSettings } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { LabelCount } from '@proton/shared/lib/interfaces/Label';

@@ -1,4 +1,5 @@
 import tinycolor from 'tinycolor2';
+
 import { Icon, classnames } from '@proton/components';
 
 interface Props {

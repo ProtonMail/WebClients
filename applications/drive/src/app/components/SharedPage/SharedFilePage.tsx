@@ -2,10 +2,10 @@ import { c } from 'ttag';
 
 import { DecryptedLink } from '../../store';
 import { FileBrowserStateProvider } from '../FileBrowser';
-import SharedPageLayout from './SharedPageLayout';
-import SharedPageHeader from './SharedPageHeader';
-import SharedFileBrowser from './SharedFileBrowser';
 import ReportAbuseButton from './ReportAbuseButton';
+import SharedFileBrowser from './SharedFileBrowser';
+import SharedPageHeader from './SharedPageHeader';
+import SharedPageLayout from './SharedPageLayout';
 
 interface Props {
     token: string;

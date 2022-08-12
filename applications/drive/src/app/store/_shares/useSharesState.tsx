@@ -1,6 +1,6 @@
-import { createContext, useContext, useCallback, useState } from 'react';
+import { createContext, useCallback, useContext, useState } from 'react';
 
-import { Share, ShareWithKey, LockedVolumeForRestore } from './interface';
+import { LockedVolumeForRestore, Share, ShareWithKey } from './interface';
 
 type SharesState = {
     [shareId: string]: Share | ShareWithKey;

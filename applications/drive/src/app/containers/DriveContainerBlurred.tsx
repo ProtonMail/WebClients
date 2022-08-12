@@ -1,4 +1,5 @@
 import { useRef } from 'react';
+
 import { c } from 'ttag';
 
 import {
@@ -13,16 +14,15 @@ import {
     useActiveBreakpoint,
     useToggle,
 } from '@proton/components';
-
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
 
-import DriveSidebar from '../components/layout/DriveSidebar/DriveSidebar';
-import { DriveHeader } from '../components/layout/DriveHeader';
 import { ListView } from '../components/FileBrowser';
+import { ListViewHeaderItem } from '../components/FileBrowser/interface';
+import { DriveHeader } from '../components/layout/DriveHeader';
+import DriveSidebar from '../components/layout/DriveSidebar/DriveSidebar';
 import { DriveItem } from '../components/sections/Drive/Drive';
 import { ModifiedCell, NameCell, SizeCell } from '../components/sections/FileBrowser/contentCells';
-import { ListViewHeaderItem } from '../components/FileBrowser/interface';
 import headerItems from '../components/sections/FileBrowser/headerCells';
 
 const desktopCells: React.FC<{ item: DriveItem }>[] = [NameCell, ModifiedCell, SizeCell];

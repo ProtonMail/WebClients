@@ -2,9 +2,9 @@ import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
 import { DecryptedLink } from '../../../store';
 import { ContextMenuProps } from '../../FileBrowser/interface';
-import { PreviewButton, DownloadButton, DetailsButton } from '../ContextMenu';
-import { DeletePermanentlyButton, RestoreFromTrashButton } from './ContextMenuButtons';
+import { DetailsButton, DownloadButton, PreviewButton } from '../ContextMenu';
 import { ItemContextMenu } from '../ContextMenu/ItemContextMenu';
+import { DeletePermanentlyButton, RestoreFromTrashButton } from './ContextMenuButtons';
 
 export function TrashItemContextMenu({
     shareId,

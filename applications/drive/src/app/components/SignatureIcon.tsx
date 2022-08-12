@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Tooltip, Icon } from '@proton/components';
+import { Icon, Tooltip } from '@proton/components';
 
 interface Props {
     signatureIssues?: any;

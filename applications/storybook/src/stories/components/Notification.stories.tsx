@@ -1,6 +1,6 @@
 import { Button, CreateNotificationOptions, useNotifications } from '@proton/components';
-import { getTitle } from '../../helpers/title';
 
+import { getTitle } from '../../helpers/title';
 import mdx from './Notification.mdx';
 
 export default {

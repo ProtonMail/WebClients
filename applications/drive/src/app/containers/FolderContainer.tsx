@@ -1,15 +1,15 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { RouteComponentProps, Route } from 'react-router';
+import { Route, RouteComponentProps } from 'react-router';
 
-import { LinkURLType } from '@proton/shared/lib/drive/constants';
 import { useAppTitle } from '@proton/components';
+import { LinkURLType } from '@proton/shared/lib/drive/constants';
 
 import DriveView, { DriveSectionRouteProps } from '../components/sections/Drive/DriveView';
-import useNavigate from '../hooks/drive/useNavigate';
 import useActiveShare, { DriveFolder } from '../hooks/drive/useActiveShare';
-import PreviewContainer from './PreviewContainer';
-import { useDefaultShare } from '../store';
 import { useFolderContainerTitle } from '../hooks/drive/useFolderContainerTitle';
+import useNavigate from '../hooks/drive/useNavigate';
+import { useDefaultShare } from '../store';
+import PreviewContainer from './PreviewContainer';
 
 export default function FolderContainer({ match }: RouteComponentProps<DriveSectionRouteProps>) {
     const { navigateToRoot } = useNavigate();

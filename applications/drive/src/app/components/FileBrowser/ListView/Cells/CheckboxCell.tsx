@@ -1,9 +1,11 @@
-import { Checkbox, classnames, TableCell } from '@proton/components';
 import { memo } from 'react';
+
+import { Checkbox, TableCell, classnames } from '@proton/components';
+
 import { stopPropagation } from '../../../../utils/stopPropagation';
+import { useFileBrowserCheckbox } from '../../hooks/useFileBrowserCheckbox';
 import { FileBrowserBaseItem } from '../../interface';
 import { useSelection } from '../../state/useSelection';
-import { useFileBrowserCheckbox } from '../../hooks/useFileBrowserCheckbox';
 
 interface Props {
     className?: string;

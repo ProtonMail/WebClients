@@ -1,11 +1,11 @@
-import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 import { c } from 'ttag';
 
 import { Icon, ToolbarButton } from '@proton/components';
+import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
 import { DecryptedLink } from '../../../store';
 import useOpenModal from '../../useOpenModal';
-import { isMultiSelect, hasFoldersSelected } from './utils';
+import { hasFoldersSelected, isMultiSelect } from './utils';
 
 interface Props {
     shareId: string;

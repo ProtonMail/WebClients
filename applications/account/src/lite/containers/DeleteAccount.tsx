@@ -1,5 +1,7 @@
 import { useRef } from 'react';
+
 import DeleteAccountModal from '@proton/components/containers/account/DeleteAccountModal';
+
 import broadcast, { MessageType } from '../broadcast';
 
 const DeleteAccount = () => {

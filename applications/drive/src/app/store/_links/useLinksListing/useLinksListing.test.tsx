@@ -1,11 +1,11 @@
-import { renderHook, act } from '@testing-library/react-hooks';
+import { act, renderHook } from '@testing-library/react-hooks';
 
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 
 import { EncryptedLink } from '../interface';
-import { PAGE_SIZE } from './useLinksListingHelpers';
-import { useLinksListingProvider } from './useLinksListing';
 import { LinksStateProvider } from '../useLinksState';
+import { useLinksListingProvider } from './useLinksListing';
+import { PAGE_SIZE } from './useLinksListingHelpers';
 
 const LINKS = [...Array(PAGE_SIZE * 2 - 1)].map((_, x) => ({ linkId: `children${x}`, parentLinkId: 'parentLinkId' }));
 

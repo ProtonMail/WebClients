@@ -1,6 +1,7 @@
+import { c } from 'ttag';
+
 import { Loader } from '@proton/components';
 import { LinkURLType } from '@proton/shared/lib/drive/constants';
-import { c } from 'ttag';
 
 import { TreeItem } from '../../../../store';
 import FileRecoveryIcon from '../../../ResolveLockedVolumes/FileRecovery/FileRecoveryIcon';

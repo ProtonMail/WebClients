@@ -2,28 +2,28 @@ import { useCallback, useEffect, useMemo, useRef } from 'react';
 
 import { useActiveBreakpoint } from '@proton/components';
 
-import { EncryptedLink, LinkShareUrl, useFolderView, useThumbnailsDownload } from '../../../store';
+import { DriveFolder } from '../../../hooks/drive/useActiveShare';
+import useDriveDragMove from '../../../hooks/drive/useDriveDragMove';
 import useNavigate from '../../../hooks/drive/useNavigate';
+import { EncryptedLink, LinkShareUrl, useFolderView, useThumbnailsDownload } from '../../../store';
+import { SortField } from '../../../store/_views/utils/useSorting';
 import FileBrowser, {
     Cells,
-    useSelection,
     GridHeader,
-    useItemContextMenu,
     useContextMenuControls,
+    useItemContextMenu,
+    useSelection,
 } from '../../FileBrowser';
-import { DriveFolder } from '../../../hooks/drive/useActiveShare';
-import EmptyFolder from './EmptyFolder';
-import { DriveItemContextMenu } from './DriveContextMenu';
-import useOpenModal from '../../useOpenModal';
 import { BrowserItemId, FileBrowserBaseItem, ListViewHeaderItem } from '../../FileBrowser/interface';
-import { ModifiedCell, NameCell, SizeCell, ShareOptionsCell } from '../FileBrowser/contentCells';
-import { FolderContextMenu } from './FolderContextMenu';
-import useDriveDragMove from '../../../hooks/drive/useDriveDragMove';
+import useOpenModal from '../../useOpenModal';
 import { GridViewItem } from '../FileBrowser/GridViewItem';
+import { ModifiedCell, NameCell, ShareOptionsCell, SizeCell } from '../FileBrowser/contentCells';
 import headerItems from '../FileBrowser/headerCells';
-import { getSelectedItems } from '../helpers';
-import { SortField } from '../../../store/_views/utils/useSorting';
 import { translateSortField } from '../SortDropdown';
+import { getSelectedItems } from '../helpers';
+import { DriveItemContextMenu } from './DriveContextMenu';
+import EmptyFolder from './EmptyFolder';
+import { FolderContextMenu } from './FolderContextMenu';
 
 export interface DriveItem extends FileBrowserBaseItem {
     activeRevision?: EncryptedLink['activeRevision'];

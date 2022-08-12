@@ -1,13 +1,14 @@
 import { useEffect } from 'react';
+
 import { c } from 'ttag';
 
 import { PrivateMainArea, useAppTitle } from '@proton/components';
 
-import { useSharedLinksView } from '../../../store';
 import useActiveShare from '../../../hooks/drive/useActiveShare';
-import SharedLinksToolbar from './SharedLinksToolbar';
-import SharedLinks from './SharedLinks';
+import { useSharedLinksView } from '../../../store';
 import { FileBrowserStateProvider } from '../../FileBrowser';
+import SharedLinks from './SharedLinks';
+import SharedLinksToolbar from './SharedLinksToolbar';
 
 const SharedLinksView = () => {
     useAppTitle(c('Title').t`Shared`);

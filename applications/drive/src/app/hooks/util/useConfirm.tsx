@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { ModalSize, useModals } from '@proton/components';
+
 import { ConfirmationModal } from '../../components/modals/ConfirmationModal';
 
 const useConfirm = () => {

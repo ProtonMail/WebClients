@@ -1,15 +1,7 @@
 import React, { RefObject, useMemo } from 'react';
+
 import { c, msgid } from 'ttag';
 
-import { getIsCalendarDisabled } from '@proton/shared/lib/calendar/calendar';
-import { ICAL_ATTENDEE_ROLE, ICAL_ATTENDEE_STATUS } from '@proton/shared/lib/calendar/constants';
-import { restrictedCalendarSanitize } from '@proton/shared/lib/calendar/sanitize';
-import { getIsSubscribedCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
-import urlify from '@proton/shared/lib/calendar/urlify';
-import { canonizeEmailByGuess, canonizeInternalEmail } from '@proton/shared/lib/helpers/email';
-import { getInitials } from '@proton/shared/lib/helpers/string';
-import { EventModelReadView, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
-import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import {
     Collapsible,
     CollapsibleContent,
@@ -20,15 +12,24 @@ import {
     Info,
     useMailSettings,
 } from '@proton/components';
-import { useLinkHandler } from '@proton/components/hooks/useLinkHandler';
 import CalendarSelectIcon from '@proton/components/components/calendarSelect/CalendarSelectIcon';
+import { useLinkHandler } from '@proton/components/hooks/useLinkHandler';
+import { getIsCalendarDisabled } from '@proton/shared/lib/calendar/calendar';
+import { ICAL_ATTENDEE_ROLE, ICAL_ATTENDEE_STATUS } from '@proton/shared/lib/calendar/constants';
+import { restrictedCalendarSanitize } from '@proton/shared/lib/calendar/sanitize';
+import { getIsSubscribedCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
+import urlify from '@proton/shared/lib/calendar/urlify';
+import { canonizeEmailByGuess, canonizeInternalEmail } from '@proton/shared/lib/helpers/email';
+import { getInitials } from '@proton/shared/lib/helpers/string';
+import { EventModelReadView, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 
-import { getOrganizerDisplayData } from '../../helpers/attendees';
 import { DisplayNameEmail } from '../../containers/calendar/interface';
+import { getOrganizerDisplayData } from '../../helpers/attendees';
 import AttendeeStatusIcon from './AttendeeStatusIcon';
-import getAttendanceTooltip from './getAttendanceTooltip';
 import Participant from './Participant';
 import PopoverNotification from './PopoverNotification';
+import getAttendanceTooltip from './getAttendanceTooltip';
 
 type AttendeeViewModel = {
     title: string;

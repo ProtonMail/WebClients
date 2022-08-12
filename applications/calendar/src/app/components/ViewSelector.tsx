@@ -1,6 +1,6 @@
-import { classnames, ToolbarButton } from '@proton/components';
 import { c } from 'ttag';
 
+import { ToolbarButton, classnames } from '@proton/components';
 import { VIEWS } from '@proton/shared/lib/calendar/constants';
 
 const { DAY, WEEK, MONTH, CUSTOM } = VIEWS;

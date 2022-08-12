@@ -1,10 +1,8 @@
 import { VideoInstructions } from '@proton/components';
 
-import { getTitle } from '../../helpers/title';
-
-import videoWebm from '../../assets/videos/oauth-instructions.webm';
 import videoMp4 from '../../assets/videos/oauth-instructions.mp4';
-
+import videoWebm from '../../assets/videos/oauth-instructions.webm';
+import { getTitle } from '../../helpers/title';
 import mdx from './VideoInstructions.mdx';
 
 export default {

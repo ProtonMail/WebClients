@@ -1,13 +1,15 @@
 import { CSSProperties, MouseEventHandler, Ref, useEffect, useRef, useState } from 'react';
+
 import { c } from 'ttag';
 
+import { Button, PrimaryButton } from '@proton/components';
 import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import { Address } from '@proton/shared/lib/interfaces';
-import { Button, PrimaryButton } from '@proton/components';
 import { EventModel } from '@proton/shared/lib/interfaces/calendar';
 import debounce from '@proton/utils/debounce';
 import throttle from '@proton/utils/throttle';
 
+import { useRect } from '../../hooks/useRect';
 import { INVITE_ACTION_TYPES, InviteActions } from '../../interfaces/Invite';
 import PopoverContainer from '../events/PopoverContainer';
 import PopoverFooter from '../events/PopoverFooter';
@@ -15,7 +17,6 @@ import PopoverHeader from '../events/PopoverHeader';
 import EventForm from './EventForm';
 import validateEventModel from './eventForm/validateEventModel';
 import { ACTION, useForm } from './hooks/useForm';
-import { useRect } from '../../hooks/useRect';
 
 interface Props {
     isNarrow: boolean;

@@ -1,6 +1,6 @@
+import { Time } from '@proton/components';
 import { readableTime } from '@proton/shared/lib/helpers/time';
 import { dateLocale } from '@proton/shared/lib/i18n';
-import { Time } from '@proton/components';
 
 interface Props {
     time: number;

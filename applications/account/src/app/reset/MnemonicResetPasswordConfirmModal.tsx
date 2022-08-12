@@ -1,4 +1,5 @@
 import { c } from 'ttag';
+
 import { AlertModal, Button } from '@proton/components';
 
 interface Props {

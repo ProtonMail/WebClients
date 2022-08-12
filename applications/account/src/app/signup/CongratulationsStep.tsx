@@ -1,11 +1,14 @@
-import { Button, InputFieldTwo, useFormErrors, useLoading } from '@proton/components';
-import { c } from 'ttag';
-import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { useState } from 'react';
-import Header from '../public/Header';
+
+import { c } from 'ttag';
+
+import { Button, InputFieldTwo, useFormErrors, useLoading } from '@proton/components';
+import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
+
 import Content from '../public/Content';
-import Text from '../public/Text';
+import Header from '../public/Header';
 import Main from '../public/Main';
+import Text from '../public/Text';
 
 interface Props {
     defaultName?: string;

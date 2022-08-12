@@ -5,8 +5,8 @@ import { useModals } from '@proton/components';
 import { TransferCancel, TransferState } from '../../../components/TransferManager/transfer';
 import { waitUntil } from '../../../utils/async';
 import { isTransferActive, isTransferConflict } from '../../../utils/transfer';
-import { UploadConflictModal, TransferConflictStrategy } from '../interface';
-import { FileUpload, FolderUpload, UpdateFilter, UpdateState, UpdateData, ConflictStrategyHandler } from './interface';
+import { TransferConflictStrategy, UploadConflictModal } from '../interface';
+import { ConflictStrategyHandler, FileUpload, FolderUpload, UpdateData, UpdateFilter, UpdateState } from './interface';
 
 // Empty string is ensured to not conflict with any upload ID or folder name.
 // No upload has empty ID.

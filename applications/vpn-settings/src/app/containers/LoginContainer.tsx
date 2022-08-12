@@ -1,7 +1,9 @@
 import { useLocation } from 'react-router-dom';
+
 import * as H from 'history';
-import { ProtonLoginCallback } from '@proton/components';
 import AccountLoginContainer from 'proton-account/src/app/login/LoginContainer';
+
+import { ProtonLoginCallback } from '@proton/components';
 import { isMember } from '@proton/shared/lib/user/helpers';
 
 interface Props {

@@ -1,10 +1,11 @@
 import { useMemo } from 'react';
 
-import { getDevice } from '@proton/shared/lib/helpers/browser';
-import { Toolbar, useActiveBreakpoint } from '@proton/components';
 import { Vr } from '@proton/atoms';
+import { Toolbar, useActiveBreakpoint } from '@proton/components';
+import { getDevice } from '@proton/shared/lib/helpers/browser';
 
 import { DecryptedLink } from '../../../store';
+import { useSelection } from '../../FileBrowser';
 import {
     DetailsButton,
     DownloadButton,
@@ -14,16 +15,15 @@ import {
     ShareFileButton,
     ShareLinkButton,
 } from '../ToolbarButtons';
+import { getSelectedItems } from '../helpers';
 import {
     ActionsDropdown,
     CreateNewFolderButton,
-    MoveToTrashButton,
     MoveToFolderButton,
+    MoveToTrashButton,
     UploadFileButton,
     UploadFolderButton,
 } from './ToolbarButtons';
-import { useSelection } from '../../FileBrowser';
-import { getSelectedItems } from '../helpers';
 
 interface Props {
     shareId: string;

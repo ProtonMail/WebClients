@@ -1,25 +1,27 @@
 import { useState } from 'react';
+
 import { c } from 'ttag';
+
+import {
+    AlertModal,
+    AlertModalProps,
+    Button,
+    Checkbox,
+    InputFieldTwo,
+    PhoneInput,
+    useApi,
+    useFormErrors,
+    useLoading,
+    useModalState,
+} from '@proton/components';
 import { validateEmail, validatePhone } from '@proton/shared/lib/api/core/validate';
 import { emailValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import noop from '@proton/utils/noop';
 
-import {
-    Button,
-    useLoading,
-    useApi,
-    useFormErrors,
-    PhoneInput,
-    InputFieldTwo,
-    AlertModal,
-    useModalState,
-    AlertModalProps,
-    Checkbox,
-} from '@proton/components';
-import Header from '../public/Header';
 import Content from '../public/Content';
-import Text from '../public/Text';
+import Header from '../public/Header';
 import Main from '../public/Main';
+import Text from '../public/Text';
 
 interface RecoveryConfirmModalProps extends Omit<AlertModalProps, 'buttons' | 'children' | 'title'> {
     onConfirm: () => void;

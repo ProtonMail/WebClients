@@ -1,10 +1,12 @@
 import { c } from 'ttag';
+
 import { Button, useLoading } from '@proton/components';
 import { ACCOUNT_APP_NAME } from '@proton/shared/lib/constants';
-import Main from './Main';
-import Header from './Header';
+
 import Content from './Content';
+import Header from './Header';
 import Layout from './Layout';
+import Main from './Main';
 import Text from './Text';
 
 interface Props {

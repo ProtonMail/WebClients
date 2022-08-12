@@ -2,17 +2,18 @@ import { CSSProperties, Ref } from 'react';
 
 import formatUTC from '@proton/shared/lib/date-fns-utc/format';
 import { dateLocale } from '@proton/shared/lib/i18n';
-import FullDayEvent from './FullDayEvent';
-import PopoverHeader from './PopoverHeader';
-import { TYPE } from '../calendar/interactions/constants';
-import { DAY_EVENT_HEIGHT } from '../calendar/constants';
+
 import {
     CalendarViewEvent,
     CalendarViewEventTemporaryEvent,
     TargetEventData,
 } from '../../containers/calendar/interface';
+import { DAY_EVENT_HEIGHT } from '../calendar/constants';
 import getIsBeforeNow from '../calendar/getIsBeforeNow';
+import { TYPE } from '../calendar/interactions/constants';
+import FullDayEvent from './FullDayEvent';
 import PopoverContainer from './PopoverContainer';
+import PopoverHeader from './PopoverHeader';
 
 interface Props {
     isNarrow: boolean;

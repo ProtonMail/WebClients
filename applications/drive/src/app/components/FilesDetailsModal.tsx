@@ -2,19 +2,19 @@ import { c } from 'ttag';
 
 import {
     Alert,
-    Row,
-    Label,
-    Field,
-    ModalTwo,
     Button,
-    ModalTwoHeader,
+    Field,
+    Label,
+    ModalTwo,
     ModalTwoContent,
     ModalTwoFooter,
+    ModalTwoHeader,
+    Row,
 } from '@proton/components';
 
 import { useLinksDetailsView } from '../store';
-import ModalContentLoader from './ModalContentLoader';
 import { Cells } from './FileBrowser';
+import ModalContentLoader from './ModalContentLoader';
 
 interface Props {
     shareId: string;

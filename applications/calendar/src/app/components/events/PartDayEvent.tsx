@@ -1,13 +1,13 @@
-import { CSSProperties, Ref, useMemo, forwardRef, ComponentPropsWithoutRef, ReactNode } from 'react';
-import { classnames, Icon } from '@proton/components';
+import { CSSProperties, ComponentPropsWithoutRef, ReactNode, Ref, forwardRef, useMemo } from 'react';
 
-import { getEventStatusTraits } from '../../helpers/event';
+import { Icon, classnames } from '@proton/components';
 
-import useReadEvent from './useReadEvent';
-import { getEventStyle } from '../../helpers/color';
-import { getEventErrorMessage, getEventLoadingMessage } from './error';
 import { CalendarViewEvent, CalendarViewEventTemporaryEvent } from '../../containers/calendar/interface';
+import { getEventStyle } from '../../helpers/color';
+import { getEventStatusTraits } from '../../helpers/event';
+import { getEventErrorMessage, getEventLoadingMessage } from './error';
 import getEventInformation from './getEventInformation';
+import useReadEvent from './useReadEvent';
 
 export type EventSize = 'sm' | 'xs' | '2xs';
 

@@ -1,11 +1,12 @@
 import { useMemo } from 'react';
-import { c } from 'ttag';
-import { format } from 'date-fns';
 
-import { Icon, TodayIcon, ToolbarButton } from '@proton/components';
+import { format } from 'date-fns';
+import { c } from 'ttag';
+
 import { Vr } from '@proton/atoms';
-import { dateLocale } from '@proton/shared/lib/i18n';
+import { Icon, TodayIcon, ToolbarButton } from '@proton/components';
 import { VIEWS } from '@proton/shared/lib/calendar/constants';
+import { dateLocale } from '@proton/shared/lib/i18n';
 
 import { getNavigationArrowsText } from '../helpers/i18n';
 

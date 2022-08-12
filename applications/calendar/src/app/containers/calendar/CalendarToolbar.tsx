@@ -1,6 +1,7 @@
 import { ReactNode } from 'react';
-import { Toolbar } from '@proton/components';
+
 import { Vr } from '@proton/atoms';
+import { Toolbar } from '@proton/components';
 
 interface Props {
     dateCursorButtons: ReactNode;

@@ -1,14 +1,14 @@
 import { useState } from 'react';
 
 import {
-    Logo,
-    MailLogo,
     CalendarLogo,
     DriveLogo,
-    VpnLogo,
-    ProtonLogo,
+    Logo,
     LogoProps,
+    MailLogo,
+    ProtonLogo,
     RadioGroup,
+    VpnLogo,
 } from '@proton/components';
 import { APPS } from '@proton/shared/lib/constants';
 

@@ -1,7 +1,7 @@
 import { c, msgid } from 'ttag';
 
 import { useNotifications } from '@proton/components';
-import { textToClipboard, isSafari } from '@proton/shared/lib/helpers/browser';
+import { isSafari, textToClipboard } from '@proton/shared/lib/helpers/browser';
 import isTruthy from '@proton/utils/isTruthy';
 
 import useConfirm from '../../hooks/util/useConfirm';
