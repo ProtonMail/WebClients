@@ -102,6 +102,7 @@ export const queryUpdateFileRevision = (
 ) => {
     return {
         method: 'put',
+        timeout: UPLOAD_TIMEOUT,
         url: `drive/shares/${shareID}/files/${linkID}/revisions/${revisionID}`,
         data,
     };
