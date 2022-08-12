@@ -1,5 +1,7 @@
 import { c } from 'ttag';
+
 import { MAX_NAME_LENGTH } from '@proton/shared/lib/drive/constants';
+
 import { GLOBAL_FORBIDDEN_CHARACTERS } from './link';
 
 const composeValidators =

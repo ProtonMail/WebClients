@@ -1,11 +1,12 @@
-import { useRef, useEffect, ChangeEvent } from 'react';
+import { ChangeEvent, useEffect, useRef } from 'react';
+
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/components';
 
 import { logError } from '../_utils';
-import { UploadFileList, UploadFileItem } from './interface';
 import { useUploadProvider } from './UploadProvider';
+import { UploadFileItem, UploadFileList } from './interface';
 
 export function useFileUploadInput(shareId: string, linkId: string) {
     return useUploadInput(shareId, linkId, false);

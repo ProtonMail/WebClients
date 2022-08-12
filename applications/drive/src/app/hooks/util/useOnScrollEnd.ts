@@ -1,4 +1,5 @@
-import { useEffect, MutableRefObject } from 'react';
+import { MutableRefObject, useEffect } from 'react';
+
 import { useElementRect } from '@proton/components';
 
 const isScrollEnd = (target: HTMLElement | null, offsetRatio: number) =>

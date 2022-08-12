@@ -1,15 +1,17 @@
+import { PublicKeyReference } from '@proton/crypto';
 import { getAttendeeEmail } from '@proton/shared/lib/calendar/attendees';
 import { ICAL_METHOD, SAVE_CONFIRMATION_TYPES } from '@proton/shared/lib/calendar/constants';
 import { getUpdatedInviteVevent } from '@proton/shared/lib/calendar/integration/invite';
+import { getHasStartChanged } from '@proton/shared/lib/calendar/vcalConverter';
 import { getBase64SharedSessionKey } from '@proton/shared/lib/calendar/veventHelper';
-import unary from '@proton/utils/unary';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { Address, SimpleMap } from '@proton/shared/lib/interfaces';
 import { SyncMultipleApiResponse, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
 import { GetCalendarKeys } from '@proton/shared/lib/interfaces/hooks/GetCalendarKeys';
 import { SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
-import { PublicKeyReference } from '@proton/crypto';
-import { getHasStartChanged } from '@proton/shared/lib/calendar/vcalConverter';
+import unary from '@proton/utils/unary';
+
+import { EventNewData, EventOldData } from '../../../interfaces/EventData';
 import {
     CleanSendIcsActionData,
     INVITE_ACTION_TYPES,
@@ -20,16 +22,15 @@ import {
     UpdatePersonalPartOperation,
 } from '../../../interfaces/Invite';
 import {
+    SyncEventActionOperations,
     getCreateSyncOperation,
     getDeleteSyncOperation,
     getUpdateSyncOperation,
-    SyncEventActionOperations,
 } from '../getSyncMultipleEventsPayload';
 import { OnSaveConfirmationCb } from '../interface';
-import { EventNewData, EventOldData } from '../../../interfaces/EventData';
+import { withUpdatedDtstamp } from './dtstamp';
 import getChangePartstatActions from './getChangePartstatActions';
 import { getUpdatePersonalPartActions } from './getUpdatePersonalPartActions';
-import { withUpdatedDtstamp } from './dtstamp';
 import { getAddedAttendeesPublicKeysMap } from './inviteActions';
 
 const { SEND_INVITATION, SEND_UPDATE, CHANGE_PARTSTAT } = INVITE_ACTION_TYPES;

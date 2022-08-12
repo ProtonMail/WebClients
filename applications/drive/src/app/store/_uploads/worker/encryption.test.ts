@@ -1,9 +1,10 @@
 import { FILE_CHUNK_SIZE } from '@proton/shared/lib/drive/constants';
+
 import {
-    setupCryptoProxyForTesting,
-    releaseCryptoProxy,
     generatePrivateKey,
     generateSessionKey,
+    releaseCryptoProxy,
+    setupCryptoProxyForTesting,
 } from '../../../utils/test/crypto';
 import { asyncGeneratorToArray } from '../../../utils/test/generator';
 import generateBlocks from './encryption';

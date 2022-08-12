@@ -1,4 +1,4 @@
-import { getObjectId, getArrayIdNoMatterTheOrder } from './objectId';
+import { getArrayIdNoMatterTheOrder, getObjectId } from './objectId';
 
 describe('objectsId', () => {
     const object1 = { a: 1 };

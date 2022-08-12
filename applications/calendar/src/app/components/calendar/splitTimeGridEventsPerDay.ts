@@ -1,4 +1,5 @@
-import { isSameDay, eachDayOfInterval, startOfDay, endOfDay, min, max } from '@proton/shared/lib/date-fns-utc';
+import { eachDayOfInterval, endOfDay, isSameDay, max, min, startOfDay } from '@proton/shared/lib/date-fns-utc';
+
 import { CalendarViewEvent } from '../../containers/calendar/interface';
 import { LayoutEvent } from './layout';
 

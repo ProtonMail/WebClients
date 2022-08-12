@@ -1,9 +1,10 @@
 import { generateProtonCalendarUID } from '@proton/shared/lib/calendar/helper';
 import { Api } from '@proton/shared/lib/interfaces';
-import { CalendarEventsCache } from '../interface';
-import getPaginatedEvents from '../getPaginatedEvents';
-import upsertCalendarApiEvent from './upsertCalendarApiEvent';
+
 import { OpenedMailEvent } from '../../../../hooks/useGetOpenedMailEvents';
+import getPaginatedEvents from '../getPaginatedEvents';
+import { CalendarEventsCache } from '../interface';
+import upsertCalendarApiEvent from './upsertCalendarApiEvent';
 
 const getIsContained = (range: [Date, Date], otherRange: [Date, Date]) => {
     return otherRange && +otherRange[1] >= +range[1] && +otherRange[0] <= +range[0];

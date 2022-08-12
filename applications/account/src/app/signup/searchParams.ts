@@ -1,7 +1,9 @@
 import * as History from 'history';
-import { Currency, Plan } from '@proton/shared/lib/interfaces';
-import { getSupportedAddons } from '@proton/shared/lib/helpers/planIDs';
+
 import { CYCLE, DEFAULT_CYCLE, PLAN_TYPES } from '@proton/shared/lib/constants';
+import { getSupportedAddons } from '@proton/shared/lib/helpers/planIDs';
+import { Currency, Plan } from '@proton/shared/lib/interfaces';
+
 import { SERVICES, SERVICES_KEYS } from './interfaces';
 
 export const getSignupSearchParams = (search: History.Search) => {

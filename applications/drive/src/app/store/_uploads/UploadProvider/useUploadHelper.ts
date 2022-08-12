@@ -1,10 +1,10 @@
-import { generateLookupHash } from '@proton/shared/lib/keys/driveKeys';
-import range from '@proton/utils/range';
 import { queryCheckAvailableHashes } from '@proton/shared/lib/api/drive/link';
 import { HashCheckResult } from '@proton/shared/lib/interfaces/drive/link';
+import { generateLookupHash } from '@proton/shared/lib/keys/driveKeys';
+import range from '@proton/utils/range';
 
 import { useDebouncedRequest } from '../../_api';
-import { useLink, useLinksListing, adjustName, splitLinkName } from '../../_links';
+import { adjustName, splitLinkName, useLink, useLinksListing } from '../../_links';
 import { isClientUidAvailable } from './uploadClientUid';
 
 const HASH_CHECK_AMOUNT = 10;

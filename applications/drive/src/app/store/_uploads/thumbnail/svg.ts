@@ -1,5 +1,5 @@
-import { isFirefox } from '@proton/shared/lib/helpers/browser';
 import { THUMBNAIL_MAX_SIDE } from '@proton/shared/lib/drive/constants';
+import { isFirefox } from '@proton/shared/lib/helpers/browser';
 
 import { scaleImageFile } from './image';
 
