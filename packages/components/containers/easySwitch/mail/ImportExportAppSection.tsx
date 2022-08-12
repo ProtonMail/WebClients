@@ -1,9 +1,9 @@
 import { c } from 'ttag';
+
 import { getImportExportAppUrl } from '@proton/shared/lib/helpers/url';
 
 import { ButtonLike, Href } from '../../../components';
-
-import { SettingsSection, SettingsParagraph } from '../../account';
+import { SettingsParagraph, SettingsSection } from '../../account';
 
 const ImportExportAppSection = () => {
     return (

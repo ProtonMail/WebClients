@@ -1,11 +1,12 @@
 import { ChangeEvent } from 'react';
+
 import { c } from 'ttag';
 
 import { updateLabel } from '@proton/shared/lib/api/labels';
 import { Folder } from '@proton/shared/lib/interfaces/Folder';
 
-import { Tooltip, Toggle } from '../../components';
-import { useApi, useLoading, useEventManager, useNotifications } from '../../hooks';
+import { Toggle, Tooltip } from '../../components';
+import { useApi, useEventManager, useLoading, useNotifications } from '../../hooks';
 
 interface Props {
     label: Folder;

@@ -1,8 +1,8 @@
 import { useMemo } from 'react';
-import { WeekStartsOn } from './index.d';
 
-import Tooltip from '../tooltip/Tooltip';
 import { classnames } from '../../helpers';
+import Tooltip from '../tooltip/Tooltip';
+import { WeekStartsOn } from './index.d';
 
 export interface Props {
     weekStartsOn: WeekStartsOn;

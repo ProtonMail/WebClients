@@ -1,27 +1,24 @@
 import { c } from 'ttag';
+
 import { MNEMONIC_STATUS } from '@proton/shared/lib/interfaces';
 
 import { Button, Icon, Info, Toggle, useModalState } from '../../components';
-
+import { classnames } from '../../helpers/component';
 import {
     useHasOutdatedRecoveryFile,
     useIsMnemonicAvailable,
     useIsRecoveryFileAvailable,
     useRecoverySecrets,
-    useUserSettings,
-    useUser,
     useSearchParamsEffect,
+    useUser,
+    useUserSettings,
 } from '../../hooks';
-
-import { classnames } from '../../helpers/component';
-
-import SettingsParagraph from '../account/SettingsParagraph';
-import SettingsSection from '../account/SettingsSection';
 import SettingsLayout from '../account/SettingsLayout';
 import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../account/SettingsLayoutRight';
-import { GenerateMnemonicModal, DisableMnemonicModal } from '../mnemonic';
-
+import SettingsParagraph from '../account/SettingsParagraph';
+import SettingsSection from '../account/SettingsSection';
+import { DisableMnemonicModal, GenerateMnemonicModal } from '../mnemonic';
 import ExportRecoveryFileButton from './ExportRecoveryFileButton';
 import VoidRecoveryFilesModal from './VoidRecoveryFilesModal';
 

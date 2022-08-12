@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+
 import { Href } from '../../../link';
 
 const YahooMailInstructions = () => {

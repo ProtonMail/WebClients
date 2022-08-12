@@ -1,10 +1,11 @@
 import { c } from 'ttag';
+
 import { CYCLE, DEFAULT_CYCLE } from '@proton/shared/lib/constants';
 import { Cycle } from '@proton/shared/lib/interfaces';
 
-import { ButtonGroup, Button, SelectTwo, Option } from '../../components';
-import { classnames } from '../../helpers';
+import { Button, ButtonGroup, Option, SelectTwo } from '../../components';
 import Select, { Props as SelectProps } from '../../components/select/Select';
+import { classnames } from '../../helpers';
 
 const { MONTHLY, YEARLY, TWO_YEARS } = CYCLE;
 

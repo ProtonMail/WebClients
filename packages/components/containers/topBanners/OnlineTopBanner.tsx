@@ -1,13 +1,15 @@
-import { useState, useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
+
 import { c } from 'ttag';
+
 import { ping } from '@proton/shared/lib/api/tests';
 import noop from '@proton/utils/noop';
 
-import { useOnline } from '../../hooks';
-import TopBanner from './TopBanner';
-import useApiStatus from '../../hooks/useApiStatus';
-import useApi from '../../hooks/useApi';
 import { useDebounceInput } from '../../components';
+import { useOnline } from '../../hooks';
+import useApi from '../../hooks/useApi';
+import useApiStatus from '../../hooks/useApiStatus';
+import TopBanner from './TopBanner';
 
 const OFFLINE_TIMEOUT = 5000;
 

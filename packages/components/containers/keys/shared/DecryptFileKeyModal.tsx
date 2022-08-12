@@ -1,18 +1,21 @@
 import { useState } from 'react';
+
 import { c } from 'ttag';
-import { ArmoredKeyWithInfo } from '@proton/shared/lib/keys';
+
 import { CryptoProxy, PrivateKeyReference } from '@proton/crypto';
-import noop from '@proton/utils/noop';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
+import { ArmoredKeyWithInfo } from '@proton/shared/lib/keys';
+import noop from '@proton/utils/noop';
+
 import {
     Button,
     Form,
     InputFieldTwo,
-    ModalProps,
     ModalTwo as Modal,
-    ModalTwoHeader as ModalHeader,
     ModalTwoContent as ModalContent,
     ModalTwoFooter as ModalFooter,
+    ModalTwoHeader as ModalHeader,
+    ModalProps,
     PasswordInputTwo,
     useFormErrors,
 } from '../../../components';

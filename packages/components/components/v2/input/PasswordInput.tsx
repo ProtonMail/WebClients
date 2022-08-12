@@ -1,7 +1,8 @@
 import { useState } from 'react';
-import { c } from 'ttag';
-import { Button } from '../../button';
 
+import { c } from 'ttag';
+
+import { Button } from '../../button';
 import Icon from '../../icon/Icon';
 import InputTwo, { InputTwoProps } from './Input';
 

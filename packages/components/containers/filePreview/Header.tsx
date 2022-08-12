@@ -1,6 +1,8 @@
 import { ReactNode } from 'react';
+
 import { c } from 'ttag';
-import { Icon, FileIcon, FileNameDisplay, Button } from '../../components';
+
+import { Button, FileIcon, FileNameDisplay, Icon } from '../../components';
 
 const SHARED_STATUS_TO_COLOR = {
     '': undefined,

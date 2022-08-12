@@ -1,6 +1,9 @@
-import noop from '@proton/utils/noop';
 import { HTMLAttributes, ReactNode, useEffect, useState } from 'react';
+
 import { c } from 'ttag';
+
+import noop from '@proton/utils/noop';
+
 import { classnames } from '../../helpers';
 
 import './Dropzone.scss';

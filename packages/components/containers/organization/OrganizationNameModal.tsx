@@ -1,20 +1,23 @@
 import { useState } from 'react';
+
 import { c } from 'ttag';
+
 import { updateOrganizationName } from '@proton/shared/lib/api/organization';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import noop from '@proton/utils/noop';
+
 import {
-    ModalProps,
+    Button,
+    Form,
+    InputFieldTwo,
     ModalTwo as Modal,
-    ModalTwoHeader as ModalHeader,
     ModalTwoContent as ModalContent,
     ModalTwoFooter as ModalFooter,
-    Form,
+    ModalTwoHeader as ModalHeader,
+    ModalProps,
     useFormErrors,
-    InputFieldTwo,
-    Button,
 } from '../../components';
-import { useEventManager, useApi, useLoading } from '../../hooks';
+import { useApi, useEventManager, useLoading } from '../../hooks';
 
 interface Props extends ModalProps {
     organizationName: string;

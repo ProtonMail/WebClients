@@ -1,12 +1,13 @@
 import { useState } from 'react';
+
 import { c } from 'ttag';
+
 import { resetVPNSettings } from '@proton/shared/lib/api/vpn';
 import { VPN_APP_NAME } from '@proton/shared/lib/constants';
 
+import { Button, Copy, Icon, LearnMore, PrimaryButton } from '../../components';
 import { useApi, useLoading, useNotifications, useUserVPN } from '../../hooks';
 import { SettingsParagraph, SettingsSectionWide } from '../account';
-import { Button, Icon, PrimaryButton, Copy, LearnMore } from '../../components';
-
 import SettingsLayout from '../account/SettingsLayout';
 import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../account/SettingsLayoutRight';
@@ -57,7 +58,7 @@ const OpenVPNCredentialsSection = (props: Props) => {
                 <>
                     <SettingsParagraph>
                         {c('Info')
-                            .t`Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.`}
+                            .t`Use the following credentials when connecting to ${VPN_APP_NAME} servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.`}
                     </SettingsParagraph>
                     <SettingsParagraph>
                         {c('Info').jt`

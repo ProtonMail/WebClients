@@ -1,8 +1,11 @@
 import { useState } from 'react';
-import { c } from 'ttag';
-import { create, getStatus, request, Status } from '@proton/shared/lib/helpers/desktopNotification';
+
 import { PushNotification } from 'push.js';
-import { Badge, Field, Button } from '../../components';
+import { c } from 'ttag';
+
+import { Status, create, getStatus, request } from '@proton/shared/lib/helpers/desktopNotification';
+
+import { Badge, Button, Field } from '../../components';
 
 const testDefaultNotification = () => {
     return create(c('Info').t`You have a new email`, {

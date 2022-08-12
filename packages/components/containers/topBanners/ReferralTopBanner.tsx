@@ -1,11 +1,13 @@
+import { format, fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
-import { fromUnixTime, format } from 'date-fns';
-import { APPS, PLANS, MAIL_APP_NAME } from '@proton/shared/lib/constants';
-import { dateLocale } from '@proton/shared/lib/i18n';
+
+import { APPS, MAIL_APP_NAME, PLANS } from '@proton/shared/lib/constants';
 import { isTrial, isTrialExpired, willTrialExpire } from '@proton/shared/lib/helpers/subscription';
-import { useSubscription, useConfig } from '../../hooks';
-import TopBanner from './TopBanner';
+import { dateLocale } from '@proton/shared/lib/i18n';
+
 import { SettingsLink } from '../../components';
+import { useConfig, useSubscription } from '../../hooks';
+import TopBanner from './TopBanner';
 
 const ReferralTopBanner = () => {
     const [subscription, loadingSubscription] = useSubscription();

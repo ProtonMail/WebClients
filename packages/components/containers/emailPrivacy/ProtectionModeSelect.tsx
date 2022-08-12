@@ -1,9 +1,12 @@
-import { c } from 'ttag';
 import { useState } from 'react';
-import { IMAGE_PROXY_FLAGS } from '@proton/shared/lib/constants';
+
+import { c } from 'ttag';
+
 import { updateImageProxy } from '@proton/shared/lib/api/mailSettings';
-import { useApi, useEventManager, useLoading, useNotifications } from '../../hooks';
+import { IMAGE_PROXY_FLAGS } from '@proton/shared/lib/constants';
+
 import { Select } from '../../components/select';
+import { useApi, useEventManager, useLoading, useNotifications } from '../../hooks';
 
 interface Props {
     id: string;

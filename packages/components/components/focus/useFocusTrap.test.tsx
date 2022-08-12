@@ -1,5 +1,7 @@
 import { ReactNode, useRef, useState } from 'react';
-import { waitFor, render, fireEvent } from '@testing-library/react';
+
+import { fireEvent, render, waitFor } from '@testing-library/react';
+
 import useFocusTrap from './useFocusTrap';
 
 describe('FocusTrap', () => {

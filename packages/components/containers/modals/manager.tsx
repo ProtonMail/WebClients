@@ -1,4 +1,5 @@
 import { Dispatch, SetStateAction } from 'react';
+
 import { Modal, ModalManager } from './interface';
 
 export default (modals: Modal[], setModals: Dispatch<SetStateAction<Modal[]>>): ModalManager => {

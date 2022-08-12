@@ -1,22 +1,24 @@
 import { c } from 'ttag';
-import { APPS } from '@proton/shared/lib/constants';
+
 import { getAppName } from '@proton/shared/lib/apps/helper';
+import { APPS } from '@proton/shared/lib/constants';
 import { getShortcuts } from '@proton/shared/lib/shortcuts/mail';
-import { useMailSettings } from '../../hooks';
-import { classnames } from '../../helpers';
+
 import {
+    Alert,
+    Button,
     Field,
+    Label,
+    ModalProps,
+    ModalTwo,
+    ModalTwoContent,
+    ModalTwoFooter,
+    ModalTwoHeader,
     Row,
     ShortcutsSectionView,
-    Alert,
-    Label,
-    ModalTwoHeader,
-    ModalTwoFooter,
-    Button,
-    ModalTwoContent,
-    ModalTwo,
-    ModalProps,
 } from '../../components';
+import { classnames } from '../../helpers';
+import { useMailSettings } from '../../hooks';
 import ShortcutsToggle from '../general/ShortcutsToggle';
 
 import './MailShortcutsModal.scss';

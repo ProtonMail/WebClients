@@ -1,17 +1,16 @@
 import React from 'react';
+
 import { c } from 'ttag';
 
 import { Address } from '@proton/shared/lib/interfaces';
 import { EasySwitchFeatureFlag, ImportType, NON_OAUTH_PROVIDER } from '@proton/shared/lib/interfaces/EasySwitch';
-import noop from '@proton/utils/noop';
-
-import mailIllu from '@proton/styles/assets/img/import/importTypes/mail.svg';
 import calendarIllu from '@proton/styles/assets/img/import/importTypes/calendar.svg';
 import contactsIllu from '@proton/styles/assets/img/import/importTypes/contacts.svg';
+import mailIllu from '@proton/styles/assets/img/import/importTypes/mail.svg';
+import noop from '@proton/utils/noop';
 
 import { Button, ButtonProps, FormModal, Loader, Tooltip } from '../../components';
 import { useModals } from '../../hooks';
-
 import EasySwitchInstructionsModal from './EasySwitchInstructionsModal';
 
 import './EasySwitchModal.scss';

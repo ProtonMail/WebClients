@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
-import { ErrorsSieve } from '../../interfaces';
 import { Button } from '../../../../components';
+import { ErrorsSieve } from '../../interfaces';
 
 interface Props {
     onClose: () => void;

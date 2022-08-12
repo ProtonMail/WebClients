@@ -1,6 +1,7 @@
 import { c } from 'ttag';
-import Icon from '../icon/Icon';
+
 import Button, { ButtonProps } from '../button/Button';
+import Icon from '../icon/Icon';
 
 interface Props extends ButtonProps {
     onToggle?: () => void;

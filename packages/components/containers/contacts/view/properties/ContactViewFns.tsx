@@ -1,7 +1,8 @@
-import { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';
 import { getSortedProperties } from '@proton/shared/lib/contacts/properties';
-import ContactViewProperty from './ContactViewProperty';
+import { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';
+
 import { ContactViewProperties } from './ContactViewProperties';
+import ContactViewProperty from './ContactViewProperty';
 
 interface Props {
     vCardContact: VCardContact;

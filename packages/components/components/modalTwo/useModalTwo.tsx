@@ -1,5 +1,7 @@
-import noop from '@proton/utils/noop';
 import { ComponentType, useRef, useState } from 'react';
+
+import noop from '@proton/utils/noop';
+
 import useModalState from './useModalState';
 
 export const useModalTwo = function <OwnProps, Value>(

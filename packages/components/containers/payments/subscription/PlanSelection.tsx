@@ -1,4 +1,8 @@
 import { c } from 'ttag';
+
+import { CYCLE, PLANS, PLAN_TYPES } from '@proton/shared/lib/constants';
+import { toMap } from '@proton/shared/lib/helpers/object';
+import { switchPlan } from '@proton/shared/lib/helpers/planIDs';
 import {
     Audience,
     Currency,
@@ -9,22 +13,20 @@ import {
     PlansMap,
     Subscription,
 } from '@proton/shared/lib/interfaces';
-import { toMap } from '@proton/shared/lib/helpers/object';
-import { CYCLE, PLAN_TYPES, PLANS } from '@proton/shared/lib/constants';
-import { switchPlan } from '@proton/shared/lib/helpers/planIDs';
-import isTruthy from '@proton/utils/isTruthy';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
+import isTruthy from '@proton/utils/isTruthy';
 
-import { FeatureCode } from '../../../containers/features';
 import { CalendarLogo, DriveLogo, Icon, MailLogo, Option, SelectTwo, Tabs, VpnLogo } from '../../../components';
+import { FeatureCode } from '../../../containers/features';
 import { useFeature, useVPNCountriesCount, useVPNServersCount } from '../../../hooks';
-import { getShortPlan } from '../features/plan';
-import { getAllFeatures } from '../features';
 import CurrencySelector from '../CurrencySelector';
+import CycleSelector from '../CycleSelector';
+import { getAllFeatures } from '../features';
+import { getShortPlan } from '../features/plan';
 import PlanCard from './PlanCard';
 import PlanCardFeatures, { PlanCardFeaturesShort } from './PlanCardFeatures';
+
 import './PlanSelection.scss';
-import CycleSelector from '../CycleSelector';
 
 export interface SelectedProductPlans {
     [Audience.B2C]: PLANS;

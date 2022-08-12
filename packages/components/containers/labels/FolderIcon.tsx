@@ -1,8 +1,8 @@
 import { FolderWithSubFolders } from '@proton/shared/lib/interfaces/Folder';
 
 import { Icon } from '../../components';
+import { IconName, IconProps } from '../../components/icon/Icon';
 import { useFolderColor } from '../../hooks';
-import { IconProps, IconName } from '../../components/icon/Icon';
 
 interface Props extends Omit<IconProps, 'name'> {
     folder: FolderWithSubFolders;

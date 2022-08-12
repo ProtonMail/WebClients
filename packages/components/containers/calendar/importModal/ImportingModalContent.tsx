@@ -1,5 +1,10 @@
+import { Dispatch, SetStateAction, useEffect } from 'react';
+
+import { c } from 'ttag';
+
 import { ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
 import { ImportEventError } from '@proton/shared/lib/calendar/icsSurgery/ImportEventError';
+import { ImportFatalError } from '@proton/shared/lib/calendar/import/ImportFatalError';
 import { processWithJails } from '@proton/shared/lib/calendar/import/encryptAndSubmit';
 import {
     extractTotals,
@@ -8,17 +13,13 @@ import {
     splitErrors,
     splitHiddenErrors,
 } from '@proton/shared/lib/calendar/import/import';
-import { ImportFatalError } from '@proton/shared/lib/calendar/import/ImportFatalError';
 import { getEventWithCalendarAlarms } from '@proton/shared/lib/calendar/integration/invite';
-
 import {
     EncryptedEvent,
     IMPORT_STEPS,
     ImportCalendarModel,
     ImportedEvent,
 } from '@proton/shared/lib/interfaces/calendar';
-import { Dispatch, SetStateAction, useEffect } from 'react';
-import { c } from 'ttag';
 
 import { DynamicProgress } from '../../../components';
 import { useApi, useBeforeUnload, useGetCalendarInfo } from '../../../hooks';

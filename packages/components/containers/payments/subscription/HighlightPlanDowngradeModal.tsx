@@ -1,20 +1,21 @@
 import { c, msgid } from 'ttag';
-import { getDifferenceInDays } from '@proton/shared/lib/date/date';
+
 import { BRAND_NAME } from '@proton/shared/lib/constants';
+import { getDifferenceInDays } from '@proton/shared/lib/date/date';
+
 import {
     Alert,
     Button,
-    ModalProps,
+    Form,
     ModalTwo as Modal,
-    ModalTwoHeader as ModalHeader,
     ModalTwoContent as ModalContent,
     ModalTwoFooter as ModalFooter,
-    Form,
+    ModalTwoHeader as ModalHeader,
+    ModalProps,
 } from '../../../components';
-
-import SubscriptionCancelPlan from './SubscriptionCancelPlan';
-import { getFreePlan } from '../features/plan';
 import { ShortPlan } from '../features/interface';
+import { getFreePlan } from '../features/plan';
+import SubscriptionCancelPlan from './SubscriptionCancelPlan';
 
 interface Props extends Omit<ModalProps, 'onSubmit'> {
     onConfirm: () => void;

@@ -1,17 +1,18 @@
-import { useState, useRef, useEffect, DragEvent } from 'react';
+import { DragEvent, useEffect, useRef, useState } from 'react';
+
 import { c } from 'ttag';
 
-import { order, getParents } from '@proton/shared/lib/helpers/folder';
-import { Folder } from '@proton/shared/lib/interfaces/Folder';
 import { orderFolders, updateLabel } from '@proton/shared/lib/api/labels';
 import { ROOT_FOLDER } from '@proton/shared/lib/constants';
+import { getParents, order } from '@proton/shared/lib/helpers/folder';
+import { Folder } from '@proton/shared/lib/interfaces/Folder';
 
 import { Icon, TreeViewContainer, TreeViewItem } from '../../components';
-import { useApi, useLoading, useEventManager, useActiveBreakpoint } from '../../hooks';
 import { classnames } from '../../helpers';
+import { useActiveBreakpoint, useApi, useEventManager, useLoading } from '../../hooks';
 import ActionsLabel from './ActionsLabel';
-import ToggleNotify from './ToggleNotify';
 import FolderIcon from './FolderIcon';
+import ToggleNotify from './ToggleNotify';
 
 const INSIDE = 'inside';
 const AFTER = 'after';

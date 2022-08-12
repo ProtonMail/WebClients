@@ -1,8 +1,8 @@
 import { DetailedHTMLProps, HTMLAttributes, ReactNode } from 'react';
 
 import { classnames } from '../../helpers';
-import Title from './Title';
 import ModalCloseButton from './ModalCloseButton';
+import Title from './Title';
 
 interface Props extends Omit<DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>, 'children'> {
     modalTitleID?: string;

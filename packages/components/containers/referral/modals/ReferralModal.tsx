@@ -1,8 +1,8 @@
+import { useEffect } from 'react';
+
 import { format } from 'date-fns';
 import { c } from 'ttag';
-import { PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
-import { dateLocale } from '@proton/shared/lib/i18n';
-import emptyMailboxSvg from '@proton/styles/assets/img/illustrations/empty-mailbox.svg';
+
 import {
     Button,
     FeatureCode,
@@ -15,7 +15,9 @@ import {
     useFeature,
     useSettingsLink,
 } from '@proton/components';
-import { useEffect } from 'react';
+import { PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
+import { dateLocale } from '@proton/shared/lib/i18n';
+import emptyMailboxSvg from '@proton/styles/assets/img/illustrations/empty-mailbox.svg';
 
 interface Props extends ModalProps<'div'> {
     endDate: Date;

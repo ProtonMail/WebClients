@@ -1,10 +1,10 @@
 import { c } from 'ttag';
 
-import { ImportType } from '@proton/shared/lib/interfaces/EasySwitch';
 import { deleteImportReport } from '@proton/shared/lib/api/easySwitch';
+import { ImportType } from '@proton/shared/lib/interfaces/EasySwitch';
 
-import { ConfirmModal, Button, Alert, DropdownActions } from '../../../components';
-import { useApi, useLoading, useNotifications, useEventManager, useModals } from '../../../hooks';
+import { Alert, Button, ConfirmModal, DropdownActions } from '../../../components';
+import { useApi, useEventManager, useLoading, useModals, useNotifications } from '../../../hooks';
 
 interface Props {
     ID: string;

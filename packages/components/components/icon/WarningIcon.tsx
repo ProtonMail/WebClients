@@ -1,6 +1,6 @@
-import Icon from './Icon';
-import { Tooltip } from '../tooltip';
 import { classnames } from '../../helpers';
+import { Tooltip } from '../tooltip';
+import Icon from './Icon';
 
 interface Props {
     warning: string;

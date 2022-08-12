@@ -1,7 +1,9 @@
 import { RefObject } from 'react';
+
 import { c } from 'ttag';
-import Icon from '../../components/icon/Icon';
+
 import { Button } from '../../components';
+import Icon from '../../components/icon/Icon';
 import { useHotkeys } from '../../hooks';
 
 interface Props {

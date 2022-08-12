@@ -1,13 +1,16 @@
 import { ElementType, useState } from 'react';
-import noop from '@proton/utils/noop';
-import { ACCENT_COLORNAMES } from '@proton/shared/lib/constants';
+
 import tinycolor from 'tinycolor2';
-import { Icon } from '../icon';
-import { Dropdown, DropdownButton } from '../dropdown';
+
+import { ACCENT_COLORNAMES } from '@proton/shared/lib/constants';
+import noop from '@proton/utils/noop';
+
 import { classnames, generateUID } from '../../helpers';
 import ColorSelector from '../color/ColorSelector';
-import { usePopperAnchor } from '../popper';
+import { Dropdown, DropdownButton } from '../dropdown';
 import { DropdownButtonProps } from '../dropdown/DropdownButton';
+import { Icon } from '../icon';
+import { usePopperAnchor } from '../popper';
 
 interface OwnProps {
     color?: string;

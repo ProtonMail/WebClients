@@ -1,9 +1,12 @@
 import { useEffect, useState } from 'react';
+
 import { c } from 'ttag';
-import { Contact } from '@proton/shared/lib/interfaces/contacts';
+
+import { APPS } from '@proton/shared/lib/constants';
 import { getKeyUsedForContact } from '@proton/shared/lib/contacts/keyVerifications';
 import { Key } from '@proton/shared/lib/interfaces';
-import { APPS } from '@proton/shared/lib/constants';
+import { Contact } from '@proton/shared/lib/interfaces/contacts';
+
 import {
     Alert,
     Button,
@@ -17,8 +20,8 @@ import {
     useSettingsLink,
 } from '../../../components';
 import { useNotifications, useUser } from '../../../hooks';
-import { ContactClearDataConfirmProps } from './ContactClearDataConfirmModal';
 import useContact from '../hooks/useContact';
+import { ContactClearDataConfirmProps } from './ContactClearDataConfirmModal';
 
 export interface ContactDecryptionErrorProps {
     contactID: string;

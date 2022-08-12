@@ -1,11 +1,14 @@
 import { useCallback } from 'react';
+
 import { c } from 'ttag';
-import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
-import { createContactGroup, updateLabel } from '@proton/shared/lib/api/labels';
+
 import { addContacts, labelContactEmails, unLabelContactEmails } from '@proton/shared/lib/api/contacts';
+import { createContactGroup, updateLabel } from '@proton/shared/lib/api/labels';
 import { CATEGORIES, OVERWRITE } from '@proton/shared/lib/contacts/constants';
-import { createContactPropertyUid } from '@proton/shared/lib/contacts/properties';
 import { prepareVCardContacts } from '@proton/shared/lib/contacts/encrypt';
+import { createContactPropertyUid } from '@proton/shared/lib/contacts/properties';
+import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+
 import { useApi, useEventManager, useNotifications, useUserKeys } from '../../../hooks';
 
 export type UpdateGroupOptions = {

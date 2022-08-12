@@ -1,47 +1,48 @@
 import { useState } from 'react';
+
 import { c } from 'ttag';
-import { GIGA, DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
+
+import { updateQuota, updateVPN } from '@proton/shared/lib/api/members';
 import {
-    updateOrganizationName,
     updateOrganizationKeysLegacy,
     updateOrganizationKeysV2,
+    updateOrganizationName,
 } from '@proton/shared/lib/api/organization';
-import { updateQuota, updateVPN } from '@proton/shared/lib/api/members';
-import noop from '@proton/utils/noop';
+import { DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS, GIGA, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
 import {
-    passwordLengthValidator,
     confirmPasswordValidator,
     getMinPasswordLengthMessage,
+    passwordLengthValidator,
     requiredValidator,
 } from '@proton/shared/lib/helpers/formValidators';
-import clamp from '@proton/utils/clamp';
-
 import { generateOrganizationKeys, getHasMigratedAddressKeys } from '@proton/shared/lib/keys';
+import clamp from '@proton/utils/clamp';
+import noop from '@proton/utils/noop';
+
 import {
     Alert,
     Button,
+    Form,
     InputFieldTwo,
-    ModalProps,
     ModalTwo as Modal,
-    ModalTwoHeader as ModalHeader,
     ModalTwoContent as ModalContent,
     ModalTwoFooter as ModalFooter,
+    ModalTwoHeader as ModalHeader,
+    ModalProps,
     PasswordInputTwo,
-    Form,
     useFormErrors,
 } from '../../components';
 import {
-    useUser,
-    useOrganization,
-    useApi,
-    useMembers,
-    useEventManager,
-    useAuthentication,
-    useLoading,
-    useNotifications,
     useAddresses,
+    useApi,
+    useAuthentication,
+    useEventManager,
+    useLoading,
+    useMembers,
+    useNotifications,
+    useOrganization,
+    useUser,
 } from '../../hooks';
-
 import SelectEncryption from '../keys/addKey/SelectEncryption';
 import MemberStorageSelector, { getStorageRange, getTotalStorage } from '../members/MemberStorageSelector';
 

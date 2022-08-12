@@ -1,20 +1,18 @@
 import { c } from 'ttag';
 
-import { ROOT_FOLDER } from '@proton/shared/lib/constants';
 import { orderFolders } from '@proton/shared/lib/api/labels';
+import { ROOT_FOLDER } from '@proton/shared/lib/constants';
 
-import { Loader, Button, Info, useModalState } from '../../components';
-import { useFolders, useMailSettings, useLoading, useApi, useEventManager, useNotifications } from '../../hooks';
-
+import { Button, Info, Loader, useModalState } from '../../components';
+import { useApi, useEventManager, useFolders, useLoading, useMailSettings, useNotifications } from '../../hooks';
 import { SettingsSection } from '../account';
-
-import FolderTreeViewList from './FolderTreeViewList';
-import EditLabelModal from './modals/EditLabelModal';
-import ToggleEnableFolderColor from './ToggleEnableFolderColor';
-import ToggleInheritParentFolderColor from './ToggleInheritParentFolderColor';
 import SettingsLayout from '../account/SettingsLayout';
 import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../account/SettingsLayoutRight';
+import FolderTreeViewList from './FolderTreeViewList';
+import ToggleEnableFolderColor from './ToggleEnableFolderColor';
+import ToggleInheritParentFolderColor from './ToggleInheritParentFolderColor';
+import EditLabelModal from './modals/EditLabelModal';
 
 function LabelsSection() {
     const [folders = [], loadingFolders] = useFolders();

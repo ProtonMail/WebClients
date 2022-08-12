@@ -1,7 +1,7 @@
 import { ButtonHTMLAttributes, DetailedHTMLProps } from 'react';
 
-import Tooltip from '../../tooltip/Tooltip';
 import { classnames } from '../../../helpers';
+import Tooltip from '../../tooltip/Tooltip';
 
 const ToolbarButton = ({
     children,

@@ -1,7 +1,7 @@
-import { render, RenderResult } from '@testing-library/react';
+import { RenderResult, render } from '@testing-library/react';
 
-import VerticalSteps from './VerticalSteps';
 import VerticalStep from './VerticalStep';
+import VerticalSteps from './VerticalSteps';
 
 function renderBasicVerticalSteps() {
     return render(

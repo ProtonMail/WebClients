@@ -1,4 +1,5 @@
 import { c } from 'ttag';
+
 import { AlertModal } from '../../components/alertModal';
 import { Button } from '../../components/button';
 

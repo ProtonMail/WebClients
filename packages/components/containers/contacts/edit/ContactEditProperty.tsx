@@ -1,14 +1,17 @@
-import { forwardRef, Ref } from 'react';
+import { Ref, forwardRef } from 'react';
+
 import { c } from 'ttag';
+
 import { ContactEmail, ContactEmailModel } from '@proton/shared/lib/interfaces/contacts';
 import { VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
+
 import { DropdownActions, Icon, OrderableHandle } from '../../../components';
 import { classnames } from '../../../helpers';
+import ContactGroupDropdown from '../ContactGroupDropdown';
+import { ContactGroupEditProps } from '../group/ContactGroupEditModal';
+import { ContactImageProps } from '../modals/ContactImageModal';
 import ContactEditLabel from './ContactEditLabel';
 import ContactFieldProperty from './fields/ContactFieldProperty';
-import ContactGroupDropdown from '../ContactGroupDropdown';
-import { ContactImageProps } from '../modals/ContactImageModal';
-import { ContactGroupEditProps } from '../group/ContactGroupEditModal';
 
 interface Props {
     vCardProperty: VCardProperty;

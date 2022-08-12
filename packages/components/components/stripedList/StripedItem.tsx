@@ -1,4 +1,5 @@
 import { ReactNode } from 'react';
+
 import Info from '../link/Info';
 
 interface StripedItemProps {

@@ -1,19 +1,20 @@
 import React from 'react';
+
 import { c } from 'ttag';
+
 import { updateCrashReports, updateTelemetry } from '@proton/shared/lib/api/settings';
-import noop from '@proton/utils/noop';
-import { setSentryEnabled } from '@proton/shared/lib/helpers/sentry';
 import { setMetricsEnabled } from '@proton/shared/lib/helpers/metrics';
+import { setSentryEnabled } from '@proton/shared/lib/helpers/sentry';
+import noop from '@proton/utils/noop';
 
 import { Toggle } from '../../components';
 import { useApi, useEventManager, useLoading, useUserSettings } from '../../hooks';
-
 import {
+    SettingsLayout,
     SettingsLayoutLeft,
     SettingsLayoutRight,
-    SettingsSectionWide,
     SettingsParagraph,
-    SettingsLayout,
+    SettingsSectionWide,
 } from '../account';
 
 const PrivacySection = () => {

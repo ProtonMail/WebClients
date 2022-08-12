@@ -1,17 +1,18 @@
 import {
     ChangeEvent,
-    KeyboardEvent,
-    useRef,
-    ReactNode,
     DetailedHTMLProps,
     InputHTMLAttributes,
+    KeyboardEvent,
+    ReactNode,
     Ref,
     forwardRef,
+    useRef,
 } from 'react';
+
 import { classnames } from '../../helpers';
 import { useCombinedRefs } from '../../hooks';
-
 import ButtonLike from './ButtonLike';
+
 import './FileButton.scss';
 
 interface Props extends DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> {

@@ -1,4 +1,5 @@
 import { c } from 'ttag';
+
 import { Alert, Button, Icon, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../../components';
 
 interface Props {

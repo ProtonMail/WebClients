@@ -1,6 +1,8 @@
-import { c } from 'ttag';
 import { useEffect, useState } from 'react';
-import { classnames, InlineLinkButton, useFeature, FeatureCode } from '@proton/components';
+
+import { c } from 'ttag';
+
+import { FeatureCode, InlineLinkButton, classnames, useFeature } from '@proton/components';
 
 import InviteHowItWorks from './InviteHowItWorks';
 import ReferralSignatureToggle from './ReferralSignatureToggle';

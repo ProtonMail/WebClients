@@ -1,4 +1,5 @@
 import { c } from 'ttag';
+
 import { classnames, generateUID } from '../../helpers';
 
 export type Size = 'small' | 'medium' | 'large';

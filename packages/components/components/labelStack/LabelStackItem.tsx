@@ -1,14 +1,15 @@
 import { MouseEvent } from 'react';
-import { c } from 'ttag';
+
 import tinycolor from 'tinycolor2';
+import { c } from 'ttag';
 
 import { genAccentShades } from '@proton/colors';
 
-import { Dropdown, DropdownMenu, DropdownMenuButton } from '../dropdown';
-import { LabelDescription } from './LabelStack';
-import { usePopperAnchor } from '../popper';
-import { Icon } from '../icon';
 import { classnames } from '../../helpers';
+import { Dropdown, DropdownMenu, DropdownMenuButton } from '../dropdown';
+import { Icon } from '../icon';
+import { usePopperAnchor } from '../popper';
+import { LabelDescription } from './LabelStack';
 
 interface Props {
     label: LabelDescription;

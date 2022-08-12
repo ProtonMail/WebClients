@@ -1,20 +1,21 @@
 import { FormEvent, useState } from 'react';
+
 import { c } from 'ttag';
 
-import { Member } from '@proton/shared/lib/interfaces/Member';
-import { removeDiacritics } from '@proton/shared/lib/helpers/string';
-import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { Card } from '@proton/atoms';
+import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
+import { removeDiacritics } from '@proton/shared/lib/helpers/string';
+import { Member } from '@proton/shared/lib/interfaces/Member';
 
 import {
     Alert,
+    Button,
+    InputFieldTwo,
+    ModalProps,
     ModalTwo,
     ModalTwoContent,
-    InputFieldTwo,
-    ModalTwoHeader,
     ModalTwoFooter,
-    Button,
-    ModalProps,
+    ModalTwoHeader,
     useFormErrors,
 } from '../../components';
 import { useLoading } from '../../hooks';

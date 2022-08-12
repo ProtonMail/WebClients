@@ -1,14 +1,14 @@
 import { MouseEvent, ReactNode } from 'react';
-import { c } from 'ttag';
-import { Info } from '../link';
 
-import ButtonGroup from '../button/ButtonGroup';
+import { c } from 'ttag';
+
+import { classnames } from '../../helpers';
 import Button, { ButtonProps } from '../button/Button';
+import ButtonGroup from '../button/ButtonGroup';
+import { Info } from '../link';
 import DropdownMenu from './DropdownMenu';
 import DropdownMenuButton, { Props as DropdownMenuButtonProps } from './DropdownMenuButton';
 import SimpleDropdown from './SimpleDropdown';
-
-import { classnames } from '../../helpers';
 
 const wrapTooltip = (text: string | ReactNode, tooltip?: string) => {
     if (!tooltip) {

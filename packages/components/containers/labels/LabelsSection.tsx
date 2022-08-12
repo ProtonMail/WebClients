@@ -1,18 +1,17 @@
 import { useEffect, useState } from 'react';
-import { c } from 'ttag';
 import { arrayMove } from 'react-sortable-hoc';
 
+import { c } from 'ttag';
+
 import { orderLabels } from '@proton/shared/lib/api/labels';
-import { Label } from '@proton/shared/lib/interfaces';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
+import { Label } from '@proton/shared/lib/interfaces';
 
-import { Loader, Button, useDebounceInput, useModalState } from '../../components';
-import { useLabels, useEventManager, useApi, useNotifications, useLoading } from '../../hooks';
-
+import { Button, Loader, useDebounceInput, useModalState } from '../../components';
+import { useApi, useEventManager, useLabels, useLoading, useNotifications } from '../../hooks';
 import { SettingsSection } from '../account';
-
-import EditLabelModal from './modals/EditLabelModal';
 import LabelSortableList from './LabelSortableList';
+import EditLabelModal from './modals/EditLabelModal';
 
 const DEBOUNCE_VALUE = 1600;
 

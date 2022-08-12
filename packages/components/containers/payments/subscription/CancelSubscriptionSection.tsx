@@ -1,7 +1,6 @@
 import { c } from 'ttag';
 
 import { SettingsParagraph, SettingsSection } from '../../account';
-
 import UnsubscribeButton from './UnsubscribeButton';
 
 const CancelSubscriptionSection = () => {

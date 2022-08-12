@@ -1,11 +1,12 @@
 import { ChangeEvent } from 'react';
+
 import { c } from 'ttag';
 
-import { getDurationOptions } from '../../utils';
 import { Select } from '../../../../components';
 import SettingsLayout from '../../../account/SettingsLayout';
-import SettingsLayoutRight from '../../../account/SettingsLayoutRight';
 import SettingsLayoutLeft from '../../../account/SettingsLayoutLeft';
+import SettingsLayoutRight from '../../../account/SettingsLayoutRight';
+import { getDurationOptions } from '../../utils';
 
 interface Props {
     value?: number;

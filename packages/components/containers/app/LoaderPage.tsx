@@ -1,12 +1,14 @@
 import { c } from 'ttag';
-import { APPS_CONFIGURATION } from '@proton/shared/lib/constants';
-import protonSpinner from '@proton/styles/assets/img/loading-spinners/proton-spinner.svg';
-import { SIDE_APP_EVENTS } from '@proton/shared/lib/sideApp/models';
+
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
+import { APPS_CONFIGURATION } from '@proton/shared/lib/constants';
 import { getIsAuthorizedApp, postMessageFromIframe } from '@proton/shared/lib/sideApp/helpers';
-import { useConfig, useDocumentTitle } from '../../hooks';
+import { SIDE_APP_EVENTS } from '@proton/shared/lib/sideApp/models';
+import protonSpinner from '@proton/styles/assets/img/loading-spinners/proton-spinner.svg';
+
 import { Button, CircleLoader, Icon, TextLoader, Tooltip } from '../../components';
 import { classnames } from '../../helpers';
+import { useConfig, useDocumentTitle } from '../../hooks';
 
 interface Props {
     text?: string;

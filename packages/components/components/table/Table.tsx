@@ -1,4 +1,5 @@
 import { DetailedHTMLProps, ReactNode, TableHTMLAttributes } from 'react';
+
 import { classnames } from '../../helpers';
 
 interface Props extends DetailedHTMLProps<TableHTMLAttributes<HTMLTableElement>, HTMLTableElement> {

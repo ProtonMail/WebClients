@@ -1,4 +1,5 @@
 import { c } from 'ttag';
+
 import noResultsImg from '@proton/styles/assets/img/illustrations/empty-search.svg';
 
 import { UnderlineButton } from '../../../components';

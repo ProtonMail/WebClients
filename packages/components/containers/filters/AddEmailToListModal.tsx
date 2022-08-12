@@ -1,30 +1,30 @@
 import { useState } from 'react';
+
 import { c } from 'ttag';
+
 import { addIncomingDefault, updateIncomingDefault } from '@proton/shared/lib/api/incomingDefaults';
-import noop from '@proton/utils/noop';
-import { IncomingDefault } from '@proton/shared/lib/interfaces/IncomingDefault';
 import { BLACKLIST_LOCATION, WHITELIST_LOCATION } from '@proton/shared/lib/constants';
+import { IncomingDefault } from '@proton/shared/lib/interfaces/IncomingDefault';
+import noop from '@proton/utils/noop';
 
 import {
-    Radio,
-    Row,
-    Label,
+    Button,
     Field,
+    Form,
+    Label,
     ModalProps,
     ModalTwo,
-    ModalTwoHeader,
     ModalTwoContent,
     ModalTwoFooter,
-    Form,
-    Button,
+    ModalTwoHeader,
+    Radio,
+    Row,
 } from '../../components';
-import { useNotifications, useApi, useLoading } from '../../hooks';
-
-import AddEmailToList from './spamlist/AddEmailToList';
-import AddDomainToList from './spamlist/AddDomainToList';
-
-import { WHITE_OR_BLACK_LOCATION } from './interfaces';
+import { useApi, useLoading, useNotifications } from '../../hooks';
 import { DOMAIN_MODE, EMAIL_MODE } from './constants';
+import { WHITE_OR_BLACK_LOCATION } from './interfaces';
+import AddDomainToList from './spamlist/AddDomainToList';
+import AddEmailToList from './spamlist/AddEmailToList';
 
 interface Props extends ModalProps {
     type: WHITE_OR_BLACK_LOCATION;

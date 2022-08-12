@@ -1,6 +1,8 @@
 import { c } from 'ttag';
+
 import { Label } from '@proton/components';
 import { EASY_SWITCH_SOURCE } from '@proton/shared/lib/interfaces/EasySwitch';
+
 import ImportCsvContactButton from './ImportCsvContactButton';
 
 interface Props {

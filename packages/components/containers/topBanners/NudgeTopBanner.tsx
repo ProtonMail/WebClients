@@ -1,10 +1,11 @@
 import { useState } from 'react';
+
 import { c } from 'ttag';
 
 import { Href } from '../../components';
-import TopBanner from './TopBanner';
 import { useFeature } from '../../hooks';
 import { FeatureCode } from '../features';
+import TopBanner from './TopBanner';
 
 export const getIsProtonMailDomain = () => {
     return window.location.host.endsWith('.protonmail.com');

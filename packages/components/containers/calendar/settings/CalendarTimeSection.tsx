@@ -1,11 +1,10 @@
 import { CalendarUserSettings } from '@proton/shared/lib/interfaces/calendar';
 
 import { SettingsSection } from '../../account';
-
-import PrimaryTimezoneSection from './PrimaryTimezoneSection';
-import ShowSecondaryTimezoneToggle from './ShowSecondaryTimezoneToggle';
-import SecondaryTimezoneSection from './SecondaryTimezoneSection';
 import AutoDetectPrimaryTimezoneSection from './AutoDetectPrimaryTimezoneSection';
+import PrimaryTimezoneSection from './PrimaryTimezoneSection';
+import SecondaryTimezoneSection from './SecondaryTimezoneSection';
+import ShowSecondaryTimezoneToggle from './ShowSecondaryTimezoneToggle';
 
 interface Props {
     calendarUserSettings: CalendarUserSettings;

@@ -1,4 +1,5 @@
 import { ComponentPropsWithoutRef } from 'react';
+
 import clsx from '@proton/utils/clsx';
 
 import './VerticalSteps.scss';

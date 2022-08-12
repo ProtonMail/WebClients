@@ -1,6 +1,7 @@
-import { forwardRef, Ref } from 'react';
-import Icon, { IconName } from './Icon';
+import { Ref, forwardRef } from 'react';
+
 import { classnames } from '../../helpers';
+import Icon, { IconName } from './Icon';
 
 const TYPES = {
     success: 'bg-success',

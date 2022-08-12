@@ -1,21 +1,21 @@
 import {
-    RefObject,
-    ReactNode,
-    useCallback,
-    useMemo,
-    useState,
     KeyboardEvent,
-    useEffect,
-    useRef,
     MouseEvent,
+    ReactNode,
+    RefObject,
+    useCallback,
+    useEffect,
+    useMemo,
+    useRef,
+    useState,
 } from 'react';
 
-import noop from '@proton/utils/noop';
 import { sanitizeString } from '@proton/shared/lib/sanitize';
+import noop from '@proton/utils/noop';
 
+import { classnames } from '../helpers';
 import { getMatch } from './helpers/search';
 import useClickOutside from './useClickOutside';
-import { classnames } from '../helpers';
 
 // should result in an object that only has values from T that are assignable to string
 type SearchableObject<T> = { [Key in KeyOfUnion<T>]: T[KeyOfUnion<T>] extends string ? T[KeyOfUnion<T>] : undefined };

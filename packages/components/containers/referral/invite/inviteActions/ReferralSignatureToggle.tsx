@@ -1,9 +1,11 @@
-import { c } from 'ttag';
 import { Fragment, useCallback, useEffect, useState } from 'react';
+
+import { c } from 'ttag';
+
+import { Info, Toggle, useApi, useLoading, useMailSettings, useUserSettings } from '@proton/components';
 import useIsMounted from '@proton/hooks/useIsMounted';
-import { Toggle, useMailSettings, useApi, Info, useLoading, useUserSettings } from '@proton/components';
-import { getProtonMailSignature } from '@proton/shared/lib/mail/signature';
 import { updatePMSignatureReferralLink } from '@proton/shared/lib/api/mailSettings';
+import { getProtonMailSignature } from '@proton/shared/lib/mail/signature';
 
 const ReferralSignatureToggle = () => {
     const [showShareLinkFooter, setShowShareLinkFooter] = useState(0);

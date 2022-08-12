@@ -1,4 +1,5 @@
-import { forwardRef, HTMLAttributes, ReactNode, Ref } from 'react';
+import { HTMLAttributes, ReactNode, Ref, forwardRef } from 'react';
+
 import { classnames } from '../../helpers';
 
 interface Props extends HTMLAttributes<HTMLDivElement> {

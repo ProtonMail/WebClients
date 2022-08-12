@@ -1,7 +1,7 @@
-import { render, fireEvent, RenderResult, within } from '@testing-library/react';
+import { RenderResult, fireEvent, render, within } from '@testing-library/react';
 
-import SelectTwo from './SelectTwo';
 import { Option } from '../option';
+import SelectTwo from './SelectTwo';
 
 function renderBasicSelect() {
     return render(

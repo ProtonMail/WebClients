@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { ImportContactError } from '@proton/shared/lib/contacts/errors/ImportContactError';
 
-import { Details, Summary, Bordered } from '../../../../components';
+import { Bordered, Details, Summary } from '../../../../components';
 
 const ErrorDetail = ({ error, ...rest }: { error: ImportContactError }) => {
     const { contactId } = error;

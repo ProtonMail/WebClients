@@ -1,6 +1,6 @@
 import { classnames } from '../../helpers';
-import { Loader } from '../loader';
 import Icon from '../icon/Icon';
+import { Loader } from '../loader';
 import Progress from './Progress';
 
 interface Props {

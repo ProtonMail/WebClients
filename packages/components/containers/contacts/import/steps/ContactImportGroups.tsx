@@ -1,19 +1,22 @@
+import { ChangeEvent, Dispatch, FormEvent, SetStateAction } from 'react';
+
+import { c, msgid } from 'ttag';
+
 import { FORBIDDEN_LABEL_NAMES } from '@proton/shared/lib/constants';
-import isTruthy from '@proton/utils/isTruthy';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { normalize } from '@proton/shared/lib/helpers/string';
 import { ContactGroup, IMPORT_GROUPS_ACTION, ImportContactsModel } from '@proton/shared/lib/interfaces/contacts';
-import { ChangeEvent, Dispatch, FormEvent, SetStateAction } from 'react';
-import { c, msgid } from 'ttag';
+import isTruthy from '@proton/utils/isTruthy';
+
 import {
     Alert,
-    SelectTwo,
-    Option,
-    ModalTwoHeader,
-    ModalTwoContent,
-    ModalTwoFooter,
     Button,
     InputTwo,
+    ModalTwoContent,
+    ModalTwoFooter,
+    ModalTwoHeader,
+    Option,
+    SelectTwo,
 } from '../../../../components';
 import { useApi, useEventManager } from '../../../../hooks';
 import { submitCategories } from '../encryptAndSubmit';

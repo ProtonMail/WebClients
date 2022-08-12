@@ -1,5 +1,7 @@
 import { ReactNode, ThHTMLAttributes } from 'react';
+
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
+
 import { Icon } from '../icon';
 import { Loader } from '../loader';
 

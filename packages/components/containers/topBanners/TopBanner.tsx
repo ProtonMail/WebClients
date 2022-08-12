@@ -1,9 +1,10 @@
 import { ReactNode } from 'react';
+
 import { c } from 'ttag';
 
-import { classnames } from '../../helpers';
-import Icon from '../../components/icon/Icon';
 import { Button } from '../../components';
+import Icon from '../../components/icon/Icon';
+import { classnames } from '../../helpers';
 
 interface Props {
     children: ReactNode;

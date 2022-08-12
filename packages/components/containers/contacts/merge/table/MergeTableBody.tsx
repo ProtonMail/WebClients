@@ -1,9 +1,12 @@
 import { ComponentProps } from 'react';
+
 import { c } from 'ttag';
+
 import { ContactFormatted } from '@proton/shared/lib/interfaces/contacts';
-import { OrderableTableBody, OrderableTableRow, TableRow, DropdownActions } from '../../../../components';
-import NameTableCell from './NameTableCell';
+
+import { DropdownActions, OrderableTableBody, OrderableTableRow, TableRow } from '../../../../components';
 import EmailsTableCell from './EmailsTableCell';
+import NameTableCell from './NameTableCell';
 
 interface Props extends Omit<ComponentProps<typeof OrderableTableBody>, 'colSpan'> {
     contacts: ContactFormatted[];

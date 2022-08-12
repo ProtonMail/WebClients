@@ -1,23 +1,9 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
+
 import { c } from 'ttag';
-import {
-    getVCardProperties,
-    fromVCardProperties,
-    createContactPropertyUid,
-} from '@proton/shared/lib/contacts/properties';
+
 import getPublicKeysEmailHelper from '@proton/shared/lib/api/helpers/getPublicKeysEmailHelper';
 import { extractScheme } from '@proton/shared/lib/api/helpers/mailSettings';
-import {
-    sortPinnedKeys,
-    sortApiKeys,
-    getContactPublicKeyModel,
-    getIsValidForSending,
-    getVerifyingKeys,
-} from '@proton/shared/lib/keys/publicKeys';
-import uniqueBy from '@proton/utils/uniqueBy';
-import { getKeyInfoFromProperties, getMimeTypeVcard, toKeyProperty } from '@proton/shared/lib/contacts/keyProperties';
-import { ContactPublicKeyModel } from '@proton/shared/lib/interfaces';
-import { VCARD_KEY_FIELDS } from '@proton/shared/lib/contacts/constants';
 import {
     CONTACT_MIME_TYPES,
     MAIL_APP_NAME,
@@ -25,24 +11,41 @@ import {
     MIME_TYPES_MORE,
     PGP_SCHEMES,
 } from '@proton/shared/lib/constants';
+import { VCARD_KEY_FIELDS } from '@proton/shared/lib/contacts/constants';
+import { getKeyInfoFromProperties, getMimeTypeVcard, toKeyProperty } from '@proton/shared/lib/contacts/keyProperties';
+import {
+    createContactPropertyUid,
+    fromVCardProperties,
+    getVCardProperties,
+} from '@proton/shared/lib/contacts/properties';
+import { ContactPublicKeyModel } from '@proton/shared/lib/interfaces';
 import { VCardContact, VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
-import ContactMIMETypeSelect from './ContactMIMETypeSelect';
-import { useApi, useEventManager, useNotifications, useLoading, useMailSettings } from '../../../hooks';
+import {
+    getContactPublicKeyModel,
+    getIsValidForSending,
+    getVerifyingKeys,
+    sortApiKeys,
+    sortPinnedKeys,
+} from '@proton/shared/lib/keys/publicKeys';
+import uniqueBy from '@proton/utils/uniqueBy';
+
 import {
     Alert,
-    Label,
-    Field,
-    Row,
-    Info,
     Button,
-    UnderlineButton,
+    Field,
+    Info,
+    Label,
     ModalProps,
     ModalTwo,
-    ModalTwoHeader,
     ModalTwoContent,
     ModalTwoFooter,
+    ModalTwoHeader,
+    Row,
+    UnderlineButton,
 } from '../../../components';
+import { useApi, useEventManager, useLoading, useMailSettings, useNotifications } from '../../../hooks';
 import { useSaveVCardContact } from '../hooks/useSaveVCardContact';
+import ContactMIMETypeSelect from './ContactMIMETypeSelect';
 import ContactPGPSettings from './ContactPGPSettings';
 
 const { PGP_INLINE } = PGP_SCHEMES;
@@ -270,7 +273,7 @@ const ContactEmailSettingsModal = ({ contactID, vCardContact, emailProperty, ...
                 {isMimeTypeFixed && !hasPGPInline ? (
                     <Alert className="mb1">
                         {c('Info')
-                            .t`PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.`}
+                            .t`PGP/MIME automatically sends the message using the current composer mode. Please note that ${MAIL_APP_NAME} always signs encrypted messages.`}
                     </Alert>
                 ) : null}
                 <Row>

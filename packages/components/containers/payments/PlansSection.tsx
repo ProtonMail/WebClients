@@ -1,21 +1,21 @@
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
+
 import { c } from 'ttag';
 
 import { checkSubscription } from '@proton/shared/lib/api/payments';
+import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { DEFAULT_CYCLE } from '@proton/shared/lib/constants';
+import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { getIsB2BPlan, getPlanIDs } from '@proton/shared/lib/helpers/subscription';
 import { Audience, Currency, PlanIDs, Subscription, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
-import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
-import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 
 import { Button, Icon, Loader } from '../../components';
 import { useApi, useConfig, useLoading, useOrganization, usePlans, useSubscription, useUser } from '../../hooks';
-
 import MozillaInfoPanel from '../account/MozillaInfoPanel';
-import { SUBSCRIPTION_STEPS } from './subscription/constants';
 import PlanSelection from './subscription/PlanSelection';
 import { useSubscriptionModal } from './subscription/SubscriptionModalProvider';
+import { SUBSCRIPTION_STEPS } from './subscription/constants';
 import { getCurrency, getDefaultSelectedProductPlans } from './subscription/helpers';
 
 const FREE_SUBSCRIPTION = {} as Subscription;

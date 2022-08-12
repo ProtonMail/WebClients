@@ -1,28 +1,30 @@
 import { useState } from 'react';
+
 import { c } from 'ttag';
 
 import { CryptoProxy } from '@proton/crypto';
 import { activateOrganizationKey, getOrganizationBackupKeys } from '@proton/shared/lib/api/organization';
-import { OrganizationModel } from '@proton/shared/lib/models';
-import { decryptPrivateKeyWithSalt } from '@proton/shared/lib/keys';
-import noop from '@proton/utils/noop';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import { decryptPrivateKeyWithSalt } from '@proton/shared/lib/keys';
+import { OrganizationModel } from '@proton/shared/lib/models';
+import noop from '@proton/utils/noop';
+
 import {
     Alert,
     Button,
     Form,
     Href,
-    ModalProps,
+    InputFieldTwo,
     ModalTwo as Modal,
-    ModalTwoHeader as ModalHeader,
     ModalTwoContent as ModalContent,
     ModalTwoFooter as ModalFooter,
-    useFormErrors,
-    InputFieldTwo,
+    ModalTwoHeader as ModalHeader,
+    ModalProps,
     PasswordInputTwo,
+    useFormErrors,
 } from '../../components';
-import { useCache, useLoading, useNotifications, useAuthentication, useEventManager, useApi } from '../../hooks';
+import { useApi, useAuthentication, useCache, useEventManager, useLoading, useNotifications } from '../../hooks';
 
 interface Props extends ModalProps {
     mode: 'reactivate' | 'activate';

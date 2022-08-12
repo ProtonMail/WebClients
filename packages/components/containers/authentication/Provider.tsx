@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
-import { PrivateAuthenticationStore, PublicAuthenticationStore } from '../app/interface';
 
+import { PrivateAuthenticationStore, PublicAuthenticationStore } from '../app/interface';
 import AuthenticationContext from './authenticationContext';
 
 interface Props {

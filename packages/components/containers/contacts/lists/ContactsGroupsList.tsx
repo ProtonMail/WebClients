@@ -1,14 +1,16 @@
-import { useRef, ChangeEvent, useMemo } from 'react';
+import { ChangeEvent, useMemo, useRef } from 'react';
+import { AutoSizer, List } from 'react-virtualized';
+
 import { DENSITY } from '@proton/shared/lib/constants';
-import { List, AutoSizer } from 'react-virtualized';
+import { rootFontSize } from '@proton/shared/lib/helpers/dom';
+import { UserSettings } from '@proton/shared/lib/interfaces';
 import { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
-import { UserSettings } from '@proton/shared/lib/interfaces';
-import { rootFontSize } from '@proton/shared/lib/helpers/dom';
+
 import { classnames } from '../../../helpers';
-import ContactGroupRow from './ContactGroupRow';
 import { useContactFocus } from '../../../hooks/useContactFocus';
 import { useContactHotkeys } from '../../../hooks/useContactHotkeys';
+import ContactGroupRow from './ContactGroupRow';
 
 interface Props {
     groups: ContactGroup[];

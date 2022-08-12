@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
-import { Errors, SimpleFilterModalModel, Step } from '../interfaces';
 import { Breadcrumb } from '../../../components';
+import { Errors, SimpleFilterModalModel, Step } from '../interfaces';
 
 interface Props {
     model: SimpleFilterModalModel;

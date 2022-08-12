@@ -1,26 +1,28 @@
 import {
-    useEffect,
-    useState,
-    useRef,
-    CSSProperties,
-    useLayoutEffect,
     AnimationEvent,
+    CSSProperties,
     HTMLAttributes,
-    RefObject,
-    ReactNode,
     MouseEvent as ReactMouseEvent,
+    ReactNode,
+    RefObject,
+    useEffect,
+    useLayoutEffect,
+    useRef,
+    useState,
 } from 'react';
+
 import { c } from 'ttag';
-import noop from '@proton/utils/noop';
+
 import { dropdownRootClassName } from '@proton/shared/lib/busy';
-import { useIsClosing, useCombinedRefs, useHotkeys, useDropdownArrowNavigation, HotkeyTuple } from '../../hooks';
-import { classnames, getCustomSizingClasses } from '../../helpers';
+import noop from '@proton/utils/noop';
+
 import useRightToLeft from '../../containers/rightToLeft/useRightToLeft';
+import { classnames, getCustomSizingClasses } from '../../helpers';
+import { HotkeyTuple, useCombinedRefs, useDropdownArrowNavigation, useHotkeys, useIsClosing } from '../../hooks';
+import { useFocusTrap } from '../focus';
 import { usePopper } from '../popper';
 import { ALL_PLACEMENTS, Position } from '../popper/utils';
 import Portal from '../portal/Portal';
-
-import { useFocusTrap } from '../focus';
 
 interface ContentProps extends HTMLAttributes<HTMLDivElement> {
     ref?: RefObject<HTMLDivElement>;

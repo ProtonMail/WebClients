@@ -1,8 +1,8 @@
-import { classnames, SettingsSectionWide } from '@proton/components';
+import { SettingsSectionWide, classnames } from '@proton/components';
 
-import InviteActions from './inviteActions/InviteActions';
 import InviteSendEmail from './InviteSendEmail';
 import InviteShareLink from './InviteShareLink';
+import InviteActions from './inviteActions/InviteActions';
 
 import './InviteSection.scss';
 

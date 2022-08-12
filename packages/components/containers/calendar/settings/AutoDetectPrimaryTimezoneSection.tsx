@@ -1,7 +1,8 @@
 import { c } from 'ttag';
-import { CalendarUserSettings } from '@proton/shared/lib/interfaces/calendar';
-import { Info } from '../../../components';
 
+import { CalendarUserSettings } from '@proton/shared/lib/interfaces/calendar';
+
+import { Info } from '../../../components';
 import SettingsLayout from '../../account/SettingsLayout';
 import SettingsLayoutLeft from '../../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../../account/SettingsLayoutRight';

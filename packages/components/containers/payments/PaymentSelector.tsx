@@ -1,11 +1,13 @@
 import { useState } from 'react';
+
 import { c } from 'ttag';
+
 import { isNumber } from '@proton/shared/lib/helpers/validators';
 import { Currency } from '@proton/shared/lib/interfaces';
 
 import { Input, Label } from '../../components';
-import CurrencySelector from './CurrencySelector';
 import AmountButton from './AmountButton';
+import CurrencySelector from './CurrencySelector';
 
 interface Props {
     currency?: Currency;

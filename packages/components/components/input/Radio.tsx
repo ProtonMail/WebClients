@@ -1,4 +1,5 @@
 import { InputHTMLAttributes } from 'react';
+
 import { classnames } from '../../helpers';
 
 export interface Props extends InputHTMLAttributes<HTMLInputElement> {

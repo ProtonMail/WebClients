@@ -1,10 +1,10 @@
-import { forwardRef, ReactNode, Ref, useImperativeHandle, useState } from 'react';
+import { ReactNode, Ref, forwardRef, useImperativeHandle, useState } from 'react';
 
 import { classnames, generateUID } from '../../../helpers';
+import Dropdown from '../../dropdown/Dropdown';
+import DropdownButton from '../../dropdown/DropdownButton';
 import { usePopperAnchor } from '../../popper';
 import Tooltip from '../../tooltip/Tooltip';
-import DropdownButton from '../../dropdown/DropdownButton';
-import Dropdown from '../../dropdown/Dropdown';
 
 interface Props {
     autoClose?: boolean;

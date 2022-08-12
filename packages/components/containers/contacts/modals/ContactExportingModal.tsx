@@ -1,22 +1,24 @@
-import { useState, useEffect } from 'react';
-import { c } from 'ttag';
+import { useEffect, useState } from 'react';
+
 import { format } from 'date-fns';
-import downloadFile from '@proton/shared/lib/helpers/downloadFile';
-import noop from '@proton/utils/noop';
-import { Contact } from '@proton/shared/lib/interfaces/contacts';
+import { c } from 'ttag';
+
 import { exportContactsFromLabel } from '@proton/shared/lib/contacts/helpers/export';
+import downloadFile from '@proton/shared/lib/helpers/downloadFile';
+import { Contact } from '@proton/shared/lib/interfaces/contacts';
+import noop from '@proton/utils/noop';
 
 import {
-    Button,
     Alert,
+    Button,
     DynamicProgress,
+    ModalProps,
     ModalTwo,
-    ModalTwoHeader,
     ModalTwoContent,
     ModalTwoFooter,
-    ModalProps,
+    ModalTwoHeader,
 } from '../../../components';
-import { useContacts, useApi, useUserKeys } from '../../../hooks';
+import { useApi, useContacts, useUserKeys } from '../../../hooks';
 
 const DOWNLOAD_FILENAME = 'protonContacts';
 

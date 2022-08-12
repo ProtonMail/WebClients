@@ -1,24 +1,26 @@
 import {
-    useState,
-    useRef,
-    useMemo,
+    ComponentPropsWithoutRef,
     FormEvent,
     KeyboardEvent,
     MouseEvent,
     ReactElement,
-    ComponentPropsWithoutRef,
+    useMemo,
+    useRef,
+    useState,
 } from 'react';
+
 import { c } from 'ttag';
+
 import { normalize } from '@proton/shared/lib/helpers/string';
 
-import { Dropdown } from '../dropdown';
-import { Props as OptionProps } from '../option/Option';
 import { classnames } from '../../helpers';
+import { Dropdown } from '../dropdown';
 import { SearchInput } from '../input';
+import { Props as OptionProps } from '../option/Option';
 import SelectButton from './SelectButton';
 import SelectOptions from './SelectOptions';
-import useSelect, { SelectProvider } from './useSelect';
 import { SelectChangeEvent } from './select';
+import useSelect, { SelectProvider } from './useSelect';
 
 const includesString = (str1: string, str2: string) => normalize(str1, true).indexOf(normalize(str2, true)) > -1;
 

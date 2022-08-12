@@ -1,4 +1,5 @@
-import { forwardRef, Ref } from 'react';
+import { Ref, forwardRef } from 'react';
+
 import Icon, { IconName } from '../icon/Icon';
 import AppLink, { AppLinkProps } from '../link/AppLink';
 

@@ -1,9 +1,12 @@
-import { c } from 'ttag';
 import { MouseEventHandler } from 'react';
-import { Icon, classnames, Tooltip } from '@proton/components';
-import { Recipient } from '@proton/shared/lib/interfaces';
+
+import { c } from 'ttag';
+
+import { Icon, Tooltip, classnames } from '@proton/components';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
+import { Recipient } from '@proton/shared/lib/interfaces';
+
 import { isProtonAddress } from './helpers';
 
 interface Props {

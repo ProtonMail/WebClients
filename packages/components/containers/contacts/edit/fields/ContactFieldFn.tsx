@@ -1,7 +1,9 @@
-import { ChangeEvent, forwardRef, Ref } from 'react';
+import { ChangeEvent, Ref, forwardRef } from 'react';
+
 import { getAllFieldLabels } from '@proton/shared/lib/helpers/contacts';
-import { VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
+import { VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
+
 import { ErrorZone, InputTwo } from '../../../../components';
 import { InputTwoProps } from '../../../../components/v2/input/Input';
 

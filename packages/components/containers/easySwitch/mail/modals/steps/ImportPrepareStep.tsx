@@ -1,36 +1,35 @@
-import { useMemo, useEffect, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
+
 import { c, msgid } from 'ttag';
 
+import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { Address } from '@proton/shared/lib/interfaces';
 import {
+    CustomFieldsBitmap,
     IMPORT_ERROR,
-    MailImporterPayload,
     ImportedMailFolder,
+    MailImportPayloadError,
+    MailImporterPayload,
     OAUTH_PROVIDER,
     TIME_PERIOD,
-    MailImportPayloadError,
-    CustomFieldsBitmap,
 } from '@proton/shared/lib/interfaces/EasySwitch';
-import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
-import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 
-import { useFolders, useUser, useModals, useLabels } from '../../../../../hooks';
 import {
-    Icon,
-    LabelStack,
-    Button,
     Alert,
-    Tooltip,
-    InlineLinkButton,
-    TextLoader,
+    Button,
     CircleLoader,
+    Icon,
+    InlineLinkButton,
+    LabelStack,
+    TextLoader,
+    Tooltip,
 } from '../../../../../components';
-
-import { ImportMailModalModel } from '../../interfaces';
+import { useFolders, useLabels, useModals, useUser } from '../../../../../hooks';
 import { IMAPS, getTimeUnitLabels } from '../../../constants';
-
-import CustomizeMailImportModal from '../CustomizeMailImportModal';
 import useIAMailPayload from '../../../hooks/useIAMailPayload';
+import { ImportMailModalModel } from '../../interfaces';
+import CustomizeMailImportModal from '../CustomizeMailImportModal';
 
 interface Props {
     modalModel: ImportMailModalModel;

@@ -1,21 +1,24 @@
 import { useState } from 'react';
+
 import { c } from 'ttag';
+
+import { PrivateKeyReference } from '@proton/crypto';
 import { updateBackupKey } from '@proton/shared/lib/api/organization';
+import { confirmPasswordValidator, passwordLengthValidator } from '@proton/shared/lib/helpers/formValidators';
 import { getBackupKeyData } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
-import { PrivateKeyReference } from '@proton/crypto';
-import { confirmPasswordValidator, passwordLengthValidator } from '@proton/shared/lib/helpers/formValidators';
+
 import {
     Alert,
+    Button,
     Form,
     InputFieldTwo,
-    ModalProps,
     ModalTwo as Modal,
-    ModalTwoHeader as ModalHeader,
     ModalTwoContent as ModalContent,
     ModalTwoFooter as ModalFooter,
+    ModalTwoHeader as ModalHeader,
+    ModalProps,
     PasswordInputTwo,
-    Button,
     useFormErrors,
 } from '../../components';
 import { useEventManager, useLoading, useModals, useNotifications } from '../../hooks';

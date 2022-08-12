@@ -1,10 +1,12 @@
 import { useRef, useState } from 'react';
+
 import { c } from 'ttag';
 
 import { updateAutoresponder } from '@proton/shared/lib/api/mailSettings';
-import { AutoReplyDuration, BRAND_NAME, PLAN_NAMES, PLANS } from '@proton/shared/lib/constants';
-
+import { AutoReplyDuration, BRAND_NAME, PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
 import { removeImagesFromContent } from '@proton/shared/lib/sanitize/purify';
+
+import { Button, Editor, EditorActions, Toggle } from '../../components';
 import {
     useApi,
     useErrorHandler,
@@ -15,21 +17,18 @@ import {
     useNotifications,
     useUser,
 } from '../../hooks';
-import { Button, Editor, EditorActions, Toggle } from '../../components';
-
 import { SettingsParagraph, SettingsSectionWide } from '../account';
-
-import AutoReplyFormMonthly from './AutoReplyForm/AutoReplyFormMonthly';
-import AutoReplyFormDaily from './AutoReplyForm/AutoReplyFormDaily';
-import AutoReplyFormWeekly from './AutoReplyForm/AutoReplyFormWeekly';
-import AutoReplyFormPermanent from './AutoReplyForm/AutoReplyFormPermanent';
-import AutoReplyFormFixed from './AutoReplyForm/AutoReplyFormFixed';
-import DurationField from './AutoReplyForm/fields/DurationField';
-import useAutoReplyForm, { getDefaultAutoResponder } from './AutoReplyForm/useAutoReplyForm';
 import SettingsLayout from '../account/SettingsLayout';
 import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../account/SettingsLayoutRight';
 import UpgradeBanner from '../account/UpgradeBanner';
+import AutoReplyFormDaily from './AutoReplyForm/AutoReplyFormDaily';
+import AutoReplyFormFixed from './AutoReplyForm/AutoReplyFormFixed';
+import AutoReplyFormMonthly from './AutoReplyForm/AutoReplyFormMonthly';
+import AutoReplyFormPermanent from './AutoReplyForm/AutoReplyFormPermanent';
+import AutoReplyFormWeekly from './AutoReplyForm/AutoReplyFormWeekly';
+import DurationField from './AutoReplyForm/fields/DurationField';
+import useAutoReplyForm, { getDefaultAutoResponder } from './AutoReplyForm/useAutoReplyForm';
 
 const AutoReplySection = () => {
     const errorHandler = useErrorHandler();

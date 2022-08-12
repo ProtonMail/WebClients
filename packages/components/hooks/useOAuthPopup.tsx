@@ -1,12 +1,12 @@
 import { useRef } from 'react';
+
 import { c } from 'ttag';
 
 import { generateProtonWebUID } from '@proton/shared/lib/helpers/uid';
-import { OAuthProps, OAUTH_PROVIDER } from '@proton/shared/lib/interfaces/EasySwitch';
-
-import useNotifications from './useNotifications';
+import { OAUTH_PROVIDER, OAuthProps } from '@proton/shared/lib/interfaces/EasySwitch';
 
 import { G_OAUTH_REDIRECT_PATH } from '../containers/easySwitch/constants';
+import useNotifications from './useNotifications';
 
 const WINDOW_WIDTH = 500;
 const WINDOW_HEIGHT = 600;

@@ -1,8 +1,9 @@
-import { useState, useEffect } from 'react';
-import { c } from 'ttag';
-import { Icon, UnderlineButton, Info, Button } from '../../components';
-import { useToggle } from '../../hooks';
+import { useEffect, useState } from 'react';
 
+import { c } from 'ttag';
+
+import { Button, Icon, Info, UnderlineButton } from '../../components';
+import { useToggle } from '../../hooks';
 import GiftCodeForm from './subscription/GiftCodeForm';
 
 interface Props {

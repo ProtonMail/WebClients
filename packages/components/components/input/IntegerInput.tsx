@@ -1,4 +1,5 @@
 import { ChangeEvent } from 'react';
+
 import Input, { Props as InputProps } from './Input';
 
 interface Props extends Omit<InputProps, 'onChange' | 'value' | 'min' | 'max'> {

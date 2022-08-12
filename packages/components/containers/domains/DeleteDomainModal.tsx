@@ -1,4 +1,5 @@
 import { c } from 'ttag';
+
 import { deleteDomain } from '@proton/shared/lib/api/domains';
 import { Domain } from '@proton/shared/lib/interfaces';
 

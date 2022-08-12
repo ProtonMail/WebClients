@@ -1,7 +1,9 @@
+import { c } from 'ttag';
+
 import { PAYMENT_METHOD_TYPE, PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
 import { Currency } from '@proton/shared/lib/interfaces';
-import { c } from 'ttag';
-import { Row, Label, Field } from '../../components';
+
+import { Field, Label, Row } from '../../components';
 import PaymentSelector from './PaymentSelector';
 
 interface Props {

@@ -1,18 +1,20 @@
 import { useEffect, useRef, useState } from 'react';
+
 import { c } from 'ttag';
-import { HumanVerificationMethodType } from '@proton/shared/lib/interfaces';
+
 import { getStaticURL } from '@proton/shared/lib/helpers/url';
-import Text from './Text';
+import { HumanVerificationMethodType } from '@proton/shared/lib/interfaces';
 
 import { Alert, Href, Tabs } from '../../../components';
 import useApi from '../../../hooks/useApi';
-
-import { CaptchaTheme, HumanVerificationSteps, OwnershipCache, VerificationModel } from './interface';
-import { getAvailableMethods } from './helper';
 import Captcha from './Captcha';
-import './HumanVerificationModal.scss';
-import OwnershipMethod from './OwnershipMethod';
 import CodeMethod from './CodeMethod';
+import OwnershipMethod from './OwnershipMethod';
+import Text from './Text';
+import { getAvailableMethods } from './helper';
+import { CaptchaTheme, HumanVerificationSteps, OwnershipCache, VerificationModel } from './interface';
+
+import './HumanVerificationModal.scss';
 
 export interface HumanVerificationFormProps {
     onSubmit: (token: string, tokenType: HumanVerificationMethodType, verificationModel?: VerificationModel) => void;

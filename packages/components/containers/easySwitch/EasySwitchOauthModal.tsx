@@ -1,79 +1,78 @@
-import { getVisualCalendars } from '@proton/shared/lib/calendar/calendar';
 import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
+
 import { c } from 'ttag';
 
-import isTruthy from '@proton/utils/isTruthy';
-import { Address } from '@proton/shared/lib/interfaces';
-import { toMap } from '@proton/shared/lib/helpers/object';
 import { createCalendar, removeCalendar, updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
-import { setupCalendarKey } from '@proton/shared/lib/calendar/keys/setupCalendarKeys';
-import { getPrimaryKey } from '@proton/shared/lib/keys';
 import {
     createImport,
     createToken,
-    startImportTask,
-    getMailImportData,
     getCalendarImportData,
     getContactsImportData,
+    getMailImportData,
+    startImportTask,
 } from '@proton/shared/lib/api/easySwitch';
+import { getVisualCalendars } from '@proton/shared/lib/calendar/calendar';
+import { MAX_LENGTHS_API } from '@proton/shared/lib/calendar/constants';
+import { setupCalendarKey } from '@proton/shared/lib/calendar/keys/setupCalendarKeys';
+import { getPersonalCalendars } from '@proton/shared/lib/calendar/subscribe/helpers';
+import { ACCENT_COLORS, PRODUCT_NAMES } from '@proton/shared/lib/constants';
+import { getTimezone } from '@proton/shared/lib/date/timezone';
+import { getActiveAddresses } from '@proton/shared/lib/helpers/address';
+import { toMap } from '@proton/shared/lib/helpers/object';
+import { Address } from '@proton/shared/lib/interfaces';
 import {
-    CheckedProductMap,
-    IAOauthModalModel,
-    IAOauthModalModelStep,
-    OAuthProps,
-    OAUTH_PROVIDER,
-    ImportType,
-    LaunchImportPayload,
-    TIME_PERIOD,
-    ImportToken,
-    IAOauthModalModelImportData,
-    CalendarImporterPayload,
     AuthenticationMethod,
-    MailImporterPayload,
-    MailImportMapping,
     CalendarImportMapping,
+    CalendarImporterPayload,
+    CheckedProductMap,
     CreateImportPayload,
     EASY_SWITCH_SOURCE,
     EasySwitchFeatureFlag,
+    IAOauthModalModel,
+    IAOauthModalModelImportData,
+    IAOauthModalModelStep,
+    ImportToken,
+    ImportType,
     ImportedCalendar,
+    LaunchImportPayload,
+    MailImportMapping,
+    MailImporterPayload,
+    OAUTH_PROVIDER,
+    OAuthProps,
+    TIME_PERIOD,
 } from '@proton/shared/lib/interfaces/EasySwitch';
-import { getActiveAddresses } from '@proton/shared/lib/helpers/address';
-import { PRODUCT_NAMES, ACCENT_COLORS } from '@proton/shared/lib/constants';
-import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
+import { getPrimaryKey } from '@proton/shared/lib/keys';
+import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
-import { getTimezone } from '@proton/shared/lib/date/timezone';
-import { MAX_LENGTHS_API } from '@proton/shared/lib/calendar/constants';
-import { getPersonalCalendars } from '@proton/shared/lib/calendar/subscribe/helpers';
+import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
 
 import { Button, FormModal, PrimaryButton, useSettingsLink } from '../../components';
-
-import {
-    G_OAUTH_SCOPE_DEFAULT,
-    G_OAUTH_SCOPE_MAIL,
-    G_OAUTH_SCOPE_CONTACTS,
-    G_OAUTH_SCOPE_CALENDAR,
-    IA_PATHNAME_REGEX,
-    CALENDAR_TO_BE_CREATED_PREFIX,
-    IMAPS,
-} from './constants';
-
-import IASelectImportTypeStep from './steps/IASelectImportTypeStep';
-import useOAuthPopup from '../../hooks/useOAuthPopup';
-import ImportStartedStep from './steps/IAImportStartedStep';
-import IAOauthInstructionsStep from './steps/IAOauthInstructionsStep';
 import {
     useApi,
+    useApiEnvironmentConfig,
     useCalendars,
     useErrorHandler,
     useEventManager,
     useFolders,
     useGetAddressKeys,
     useLabels,
-    useApiEnvironmentConfig,
 } from '../../hooks';
-import IALoadingStep from './steps/IALoadingStep';
+import useOAuthPopup from '../../hooks/useOAuthPopup';
+import {
+    CALENDAR_TO_BE_CREATED_PREFIX,
+    G_OAUTH_SCOPE_CALENDAR,
+    G_OAUTH_SCOPE_CONTACTS,
+    G_OAUTH_SCOPE_DEFAULT,
+    G_OAUTH_SCOPE_MAIL,
+    IA_PATHNAME_REGEX,
+    IMAPS,
+} from './constants';
 import { dateToTimestamp } from './mail/helpers';
+import ImportStartedStep from './steps/IAImportStartedStep';
+import IALoadingStep from './steps/IALoadingStep';
+import IAOauthInstructionsStep from './steps/IAOauthInstructionsStep';
+import IASelectImportTypeStep from './steps/IASelectImportTypeStep';
 
 interface Props {
     addresses: Address[];

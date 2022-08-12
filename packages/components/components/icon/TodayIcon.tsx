@@ -1,6 +1,6 @@
-import './_today-icon.scss';
-
 import { classnames } from '../../helpers';
+
+import './_today-icon.scss';
 
 interface Props {
     todayDate: number;
