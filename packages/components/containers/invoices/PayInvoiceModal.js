@@ -1,15 +1,16 @@
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { checkInvoice, payInvoice } from '@proton/shared/lib/api/payments';
-import { toPrice } from '@proton/shared/lib/helpers/string';
-import { PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
-import { Input, FormModal, PrimaryButton, Row, Label, Field, Price } from '../../components';
-import { useApiResult, useModals, useNotifications, useApi, useLoading, useEventManager } from '../../hooks';
 
-import StyledPayPalButton from '../payments/StyledPayPalButton';
+import { checkInvoice, payInvoice } from '@proton/shared/lib/api/payments';
+import { PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
+import { toPrice } from '@proton/shared/lib/helpers/string';
+
+import { Field, FormModal, Input, Label, Price, PrimaryButton, Row } from '../../components';
+import { useApi, useApiResult, useEventManager, useLoading, useModals, useNotifications } from '../../hooks';
 import Payment from '../payments/Payment';
-import usePayment from '../payments/usePayment';
+import StyledPayPalButton from '../payments/StyledPayPalButton';
 import { handlePaymentToken } from '../payments/paymentTokenHelper';
+import usePayment from '../payments/usePayment';
 
 const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }) => {
     const { createModal } = useModals();

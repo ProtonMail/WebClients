@@ -1,7 +1,7 @@
-import { getDateProperty, getDateTimeProperty } from '../../../lib/calendar/vcalConverter';
-import { fromLocalDate } from '../../../lib/date/timezone';
 import { FREQUENCY } from '../../../lib/calendar/constants';
 import { withRruleUntil } from '../../../lib/calendar/rruleUntil';
+import { getDateProperty, getDateTimeProperty } from '../../../lib/calendar/vcalConverter';
+import { fromLocalDate } from '../../../lib/date/timezone';
 
 const getTest = (name, a, b, result) => ({
     name,

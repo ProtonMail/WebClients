@@ -1,12 +1,12 @@
 import {
-    parse,
     fromTriggerString,
-    serialize,
     getMillisecondsFromTriggerString,
+    parse,
     parseWithErrors,
     reformatLineBreaks,
+    serialize,
 } from '../../lib/calendar/vcal';
-import { WEEK, DAY, HOUR, MINUTE, SECOND } from '../../lib/constants';
+import { DAY, HOUR, MINUTE, SECOND, WEEK } from '../../lib/constants';
 
 const vevent = `BEGIN:VEVENT
 DTSTAMP:20190719T130854Z

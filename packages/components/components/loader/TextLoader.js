@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+
 import EllipsisLoader from './EllipsisLoader';
 
 const TextLoader = ({ children, className }) => {

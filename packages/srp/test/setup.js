@@ -1,5 +1,6 @@
-import { after, before } from 'mocha';
 import 'jsdom-global/register';
+import { after, before } from 'mocha';
+
 import { CryptoProxy } from '@proton/crypto';
 import { Api as CryptoApi } from '@proton/crypto/lib/worker/api';
 

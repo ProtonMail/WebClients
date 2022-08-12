@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
-import { Alert, Label, Table, TableHeader, TableBody, TableRow } from '../../components';
+import { Alert, Label, Table, TableBody, TableHeader, TableRow } from '../../components';
 
 const MXSection = () => {
     const boldAddresses = <strong key="addresses">{c('Tab in domain modal').t`Addresses`}</strong>;

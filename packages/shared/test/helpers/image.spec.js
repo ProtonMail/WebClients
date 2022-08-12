@@ -1,5 +1,7 @@
-import { resizeImage, toBlob, toFile, formatImage } from '../../lib/helpers/image';
-import { img } from './file.data'; // width: 300 px, height: 200 px
+import { formatImage, resizeImage, toBlob, toFile } from '../../lib/helpers/image';
+import { img } from './file.data';
+
+// width: 300 px, height: 200 px
 
 const MIMETYPE_REGEX = /data:([a-zA-Z0-9]+\/[a-zA-Z0-9-.+]+).*,.*/;
 const fileName = 'proton';
@@ -74,7 +76,7 @@ describe('resizeImage', () => {
     it('it should have a difference on image quality', async () => {
         const [base64str1, base64str2] = await Promise.all([
             resizeImage({ original: img, maxWidth: 100, finalMimeType: 'image/jpeg', encoderOptions: 1 }),
-            resizeImage({ original: img, maxWidth: 100, finalMimeType: 'image/jpeg', encoderOptions: 0.1 })
+            resizeImage({ original: img, maxWidth: 100, finalMimeType: 'image/jpeg', encoderOptions: 0.1 }),
         ]);
 
         expect(base64str1.length).toBeGreaterThan(base64str2.length);
@@ -83,7 +85,7 @@ describe('resizeImage', () => {
     it('it should resize to the bigger possibility when biggerResize is true', async () => {
         const [base64str1, base64str2] = await Promise.all([
             resizeImage({ original: img, maxWidth: 100, maxHeight: 100, bigResize: true }),
-            resizeImage({ original: img, maxWidth: 100, maxHeight: 100 })
+            resizeImage({ original: img, maxWidth: 100, maxHeight: 100 }),
         ]);
 
         expect(base64str1.length).toBeGreaterThan(base64str2.length);
@@ -102,25 +104,23 @@ describe('formatImage', () => {
     [
         {
             output: '',
-            name: 'return an empty string if no input'
+            name: 'return an empty string if no input',
         },
         {
             input: 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7',
             output: 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7',
-            name: 'return the input if it is a well-formed base64'
+            name: 'return the input if it is a well-formed base64',
         },
         {
             input: 'https://i.imgur.com/WScAnHr.jpg',
             output: 'https://i.imgur.com/WScAnHr.jpg',
-            name: 'return the URL if it is an URL'
+            name: 'return the URL if it is an URL',
         },
         {
-            input:
-                '/9j/4AAQSkZJRgABAQAAkACQAAD/4QB0RXhpZgAATU0AKgAAAAgABAEaAAUAAAABAAAAPgEbAAUAAAABAAAARgEoAAMAAAABAAIAAIdpAAQAAAABAAAATgAAAAAAAACQAAAAAQAAAJAA',
-            output:
-                'data:image/png;base64,/9j/4AAQSkZJRgABAQAAkACQAAD/4QB0RXhpZgAATU0AKgAAAAgABAEaAAUAAAABAAAAPgEbAAUAAAABAAAARgEoAAMAAAABAAIAAIdpAAQAAAABAAAATgAAAAAAAACQAAAAAQAAAJAA',
-            name: 'return a base64 if the input is not an URL nor a base64'
-        }
+            input: '/9j/4AAQSkZJRgABAQAAkACQAAD/4QB0RXhpZgAATU0AKgAAAAgABAEaAAUAAAABAAAAPgEbAAUAAAABAAAARgEoAAMAAAABAAIAAIdpAAQAAAABAAAATgAAAAAAAACQAAAAAQAAAJAA',
+            output: 'data:image/png;base64,/9j/4AAQSkZJRgABAQAAkACQAAD/4QB0RXhpZgAATU0AKgAAAAgABAEaAAUAAAABAAAAPgEbAAUAAAABAAAARgEoAAMAAAABAAIAAIdpAAQAAAABAAAATgAAAAAAAACQAAAAAQAAAJAA',
+            name: 'return a base64 if the input is not an URL nor a base64',
+        },
     ].forEach(({ name, input, output }) => {
         it(`should ${name}`, () => {
             expect(formatImage(input)).toBe(output);

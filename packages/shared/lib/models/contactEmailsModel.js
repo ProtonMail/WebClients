@@ -1,7 +1,7 @@
 import { queryContactEmails } from '../api/contacts';
 import queryPages from '../api/helpers/queryPages';
+import { CONTACTS_REQUESTS_PER_SECOND, CONTACT_EMAILS_LIMIT } from '../constants';
 import updateCollection from '../helpers/updateCollection';
-import { CONTACT_EMAILS_LIMIT, CONTACTS_REQUESTS_PER_SECOND } from '../constants';
 
 export const getContactEmailsModel = (api) => {
     return queryPages(

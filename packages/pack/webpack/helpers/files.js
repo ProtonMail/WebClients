@@ -4,15 +4,9 @@ const fs = require('fs');
 
 const SRI_ALGORITHM = 'sha384';
 
-const getHash = (out, encoding) =>
-    createHash('sha1')
-        .update(out, encoding)
-        .digest('hex');
+const getHash = (out, encoding) => createHash('sha1').update(out, encoding).digest('hex');
 
-const integrityHelper = (out, encoding, algorithm) =>
-    createHash(algorithm)
-        .update(out, encoding)
-        .digest('base64');
+const integrityHelper = (out, encoding, algorithm) => createHash(algorithm).update(out, encoding).digest('base64');
 
 const getIntegrity = (out, encoding) => `${SRI_ALGORITHM}-${integrityHelper(out, encoding, SRI_ALGORITHM)}`;
 
@@ -32,7 +26,7 @@ const transformFile = ({
     hash: shouldHash = false,
     transformPath = defaultPath,
     transformContents = defaultContents,
-    encoding = 'utf8'
+    encoding = 'utf8',
 }) => {
     const contents = fs.readFileSync(filepath, { encoding });
     const transformedContents = transformContents(filepath, contents);
@@ -49,7 +43,7 @@ const transformFile = ({
     return {
         filepath: transformedPath,
         contents: transformedContents,
-        integrity
+        integrity,
     };
 };
 
