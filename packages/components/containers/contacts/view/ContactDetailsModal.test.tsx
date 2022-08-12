@@ -1,5 +1,6 @@
 import { CryptoProxy } from '@proton/crypto';
-import { clearAll, render, api, prepareContact, mockedCryptoApi } from '../tests/render';
+
+import { api, clearAll, mockedCryptoApi, prepareContact, render } from '../tests/render';
 import ContactDetailsModal, { ContactDetailsProps } from './ContactDetailsModal';
 
 describe('ContactDetailsModal', () => {

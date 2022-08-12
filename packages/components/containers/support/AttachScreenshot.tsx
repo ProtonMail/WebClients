@@ -1,12 +1,14 @@
 import { ChangeEvent, Dispatch, SetStateAction } from 'react';
+
 import { c } from 'ttag';
 
-import { toBlob, resize } from '@proton/shared/lib/helpers/image';
 import { MAX_SIZE_SCREENSHOT } from '@proton/shared/lib/constants';
-import removeItem from '@proton/utils/removeIndex';
+import { resize, toBlob } from '@proton/shared/lib/helpers/image';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { useNotifications } from '../../hooks';
+import removeItem from '@proton/utils/removeIndex';
+
 import { Button, FileInput, Icon, Info, Table, TableBody, TableCell, TableRow } from '../../components';
+import { useNotifications } from '../../hooks';
 
 export interface Screenshot {
     name: string;

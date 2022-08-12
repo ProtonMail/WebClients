@@ -1,4 +1,5 @@
 import { ComponentPropsWithoutRef } from 'react';
+
 import { classnames } from '../../helpers';
 
 const SettingsSectionWide = ({ className, ...rest }: ComponentPropsWithoutRef<'div'>) => {

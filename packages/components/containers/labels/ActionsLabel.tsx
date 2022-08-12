@@ -5,8 +5,8 @@ import { Label } from '@proton/shared/lib/interfaces/Label';
 
 import { DropdownActions, useModalState } from '../../components';
 import { useApi, useEventManager, useNotifications } from '../../hooks';
-import EditLabelModal from './modals/EditLabelModal';
 import DeleteLabelModal from './modals/DeleteLabelModal';
+import EditLabelModal from './modals/EditLabelModal';
 
 interface Props {
     label: Label;

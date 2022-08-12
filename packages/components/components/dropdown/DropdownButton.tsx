@@ -1,9 +1,10 @@
-import { ElementType, forwardRef, ReactElement } from 'react';
+import { ElementType, ReactElement, forwardRef } from 'react';
+
 import { classnames } from '../../helpers';
-import Button from '../button/Button';
-import DropdownCaret from './DropdownCaret';
 import { Box, PolymorphicComponentProps } from '../../helpers/react-polymorphic-box';
+import Button from '../button/Button';
 import { CircleLoader } from '../loader';
+import DropdownCaret from './DropdownCaret';
 
 export interface OwnProps {
     loading?: boolean;

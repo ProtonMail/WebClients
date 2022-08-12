@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
-import { getIsSelf, getMessage, PASSWORD_CHANGE_MESSAGE_TYPE } from '@proton/shared/lib/helpers/crossTab';
+
+import { PASSWORD_CHANGE_MESSAGE_TYPE, getIsSelf, getMessage } from '@proton/shared/lib/helpers/crossTab';
 
 import { useAuthentication } from '../../hooks';
 

@@ -1,4 +1,5 @@
 import { c } from 'ttag';
+
 import { getInvoicesPathname } from '@proton/shared/lib/apps/helper';
 
 import { AlertModal, ButtonLike, ModalProps, SettingsLink } from '../../components';

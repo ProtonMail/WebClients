@@ -1,9 +1,11 @@
 import { useState } from 'react';
-import { updateDelaySend } from '@proton/shared/lib/api/mailSettings';
+
 import { c } from 'ttag';
 
-import { useEventManager, useNotifications, useApi, useLoading } from '../../hooks';
+import { updateDelaySend } from '@proton/shared/lib/api/mailSettings';
+
 import { Select } from '../../components';
+import { useApi, useEventManager, useLoading, useNotifications } from '../../hooks';
 
 interface Props {
     id: string;

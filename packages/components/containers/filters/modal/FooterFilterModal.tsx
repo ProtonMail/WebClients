@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
-import { SimpleFilterModalModel, Step, Errors } from '../interfaces';
-import { classnames } from '../../../helpers/component';
 import { Button } from '../../../components';
+import { classnames } from '../../../helpers/component';
+import { Errors, SimpleFilterModalModel, Step } from '../interfaces';
 
 interface Props {
     model: SimpleFilterModalModel;

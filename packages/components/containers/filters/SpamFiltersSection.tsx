@@ -1,22 +1,23 @@
 import { useEffect, useState } from 'react';
+
 import { c } from 'ttag';
+
 import {
+    deleteIncomingDefaults,
     getIncomingDefaults,
     updateIncomingDefault,
-    deleteIncomingDefaults,
 } from '@proton/shared/lib/api/incomingDefaults';
-import { WHITELIST_LOCATION, BLACKLIST_LOCATION } from '@proton/shared/lib/constants';
+import { BLACKLIST_LOCATION, WHITELIST_LOCATION } from '@proton/shared/lib/constants';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { IncomingDefault } from '@proton/shared/lib/interfaces/IncomingDefault';
 
-import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { SearchInput, useModalState } from '../../components';
-import { useApiResult, useApiWithoutResult, useApi, useNotifications } from '../../hooks';
-
+import { useApi, useApiResult, useApiWithoutResult, useNotifications } from '../../hooks';
 import useSpamList from '../../hooks/useSpamList';
-import SpamListItem from './spamlist/SpamListItem';
+import { SettingsParagraph, SettingsSectionWide } from '../account';
 import AddEmailToListModal from './AddEmailToListModal';
 import { WHITE_OR_BLACK_LOCATION } from './interfaces';
-import { SettingsSectionWide, SettingsParagraph } from '../account';
+import SpamListItem from './spamlist/SpamListItem';
 
 const getWhiteList = () => getIncomingDefaults({ Location: WHITELIST_LOCATION });
 const getBlackList = () => getIncomingDefaults({ Location: BLACKLIST_LOCATION });

@@ -8,9 +8,10 @@ import {
     useRef,
     useState,
 } from 'react';
-import { getStyleSrcsData, getStyleSrcUrls, handleEvent } from './challengeHelper';
-import { THEME_ID } from '../themes/ThemeProvider';
+
 import { ICONS_ID } from '../../components/icon/Icons';
+import { THEME_ID } from '../themes/ThemeProvider';
+import { getStyleSrcUrls, getStyleSrcsData, handleEvent } from './challengeHelper';
 import { ChallengeLog, ChallengeLogType, ChallengeRef, ChallengeResult } from './interface';
 
 export const ERROR_TIMEOUT_MS = 15000;

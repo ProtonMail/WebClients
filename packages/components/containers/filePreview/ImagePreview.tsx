@@ -1,13 +1,14 @@
+import { useEffect, useRef, useState } from 'react';
+
 import DOMPurify from 'dompurify';
-import { useState, useRef, useEffect } from 'react';
 import { c } from 'ttag';
 
-import { uint8ArrayToString, stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
+import { stringToUint8Array, uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
 import { isSVG } from '@proton/shared/lib/helpers/mimetype';
 
-import ZoomControl from './ZoomControl';
 import useElementRect from '../../hooks/useElementRect';
 import UnsupportedPreview from './UnsupportedPreview';
+import ZoomControl from './ZoomControl';
 
 interface Props {
     mimeType: string;

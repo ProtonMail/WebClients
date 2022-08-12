@@ -1,10 +1,10 @@
 import { c } from 'ttag';
 
-import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { Card } from '@proton/atoms';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
-import { classnames } from '../../helpers/component';
 import { Button, Href, Icon } from '../../components';
+import { classnames } from '../../helpers/component';
 import { SettingsSectionTitle } from '../account';
 
 interface Props {

@@ -1,8 +1,10 @@
 import { c } from 'ttag';
-import { PLAN_NAMES, PLANS, MAIL_APP_NAME, BRAND_NAME } from '@proton/shared/lib/constants';
+
+import { BRAND_NAME, MAIL_APP_NAME, PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { SettingsSectionWide, SettingsParagraph, UpgradeBanner } from '../account';
+
 import { useUser } from '../../hooks';
+import { SettingsParagraph, SettingsSectionWide, UpgradeBanner } from '../account';
 
 const CatchAllSection = () => {
     const [{ isAdmin, isSubUser }] = useUser();

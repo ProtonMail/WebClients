@@ -1,7 +1,7 @@
-import { ChangeEvent, DetailedHTMLProps, forwardRef, InputHTMLAttributes, Ref } from 'react';
+import { ChangeEvent, DetailedHTMLProps, InputHTMLAttributes, Ref, forwardRef } from 'react';
 
-import Icon, { IconName } from '../icon/Icon';
 import { classnames } from '../../helpers';
+import Icon, { IconName } from '../icon/Icon';
 import { CircleLoader } from '../loader';
 
 export interface ToggleProps extends DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> {

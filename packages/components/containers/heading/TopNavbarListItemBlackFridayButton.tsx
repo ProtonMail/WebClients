@@ -1,13 +1,14 @@
 import { c } from 'ttag';
+
 import { APPS } from '@proton/shared/lib/constants';
 
-import { useModals, useConfig } from '../../hooks';
 import { Icon, useSettingsLink } from '../../components';
-import { EligibleOffer } from '../payments/interface';
 import TopNavbarListItemButton, {
     TopNavbarListItemButtonProps,
 } from '../../components/topnavbar/TopNavbarListItemButton';
+import { useConfig, useModals } from '../../hooks';
 import { BlackFridayModal } from '../payments';
+import { EligibleOffer } from '../payments/interface';
 
 interface Props extends Omit<TopNavbarListItemButtonProps<'button'>, 'icon' | 'text' | 'as'> {
     offer: EligibleOffer;

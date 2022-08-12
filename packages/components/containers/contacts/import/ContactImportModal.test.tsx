@@ -1,9 +1,10 @@
-import { API_CODES } from '@proton/shared/lib/constants';
-import { CryptoProxy } from '@proton/crypto';
-
-import range from '@proton/utils/range';
 import { fireEvent, waitFor } from '@testing-library/react';
-import { api, clearAll, getCard, render, mockedCryptoApi } from '../tests/render';
+
+import { CryptoProxy } from '@proton/crypto';
+import { API_CODES } from '@proton/shared/lib/constants';
+import range from '@proton/utils/range';
+
+import { api, clearAll, getCard, mockedCryptoApi, render } from '../tests/render';
 import ContactImportModal from './ContactImportModal';
 
 jest.mock('../../../hooks/useFeature', () => () => ({ feature: {}, update: jest.fn() }));

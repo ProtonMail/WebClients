@@ -1,35 +1,38 @@
 import { ChangeEvent, Dispatch, DragEvent, FormEvent, SetStateAction, useState } from 'react';
+
 import { c, msgid } from 'ttag';
+
 import {
-    MAX_IMPORT_FILE_SIZE_STRING,
-    MAX_IMPORT_CONTACTS_STRING,
     MAX_IMPORT_CONTACTS,
+    MAX_IMPORT_CONTACTS_STRING,
     MAX_IMPORT_FILE_SIZE,
+    MAX_IMPORT_FILE_SIZE_STRING,
 } from '@proton/shared/lib/contacts/constants';
-import { ImportContactsModel, IMPORT_STEPS, EXTENSION } from '@proton/shared/lib/interfaces/contacts/Import';
-import { splitExtension } from '@proton/shared/lib/helpers/file';
-import { ImportFileError, IMPORT_ERROR_TYPE } from '@proton/shared/lib/contacts/errors/ImportFileError';
-import { getIsAcceptedExtension, getSupportedContacts, splitErrors } from '@proton/shared/lib/contacts/helpers/import';
 import { ImportFatalError } from '@proton/shared/lib/contacts/errors/ImportFatalError';
+import { IMPORT_ERROR_TYPE, ImportFileError } from '@proton/shared/lib/contacts/errors/ImportFileError';
 import { prepare, readCsv } from '@proton/shared/lib/contacts/helpers/csv';
+import { getIsAcceptedExtension, getSupportedContacts, splitErrors } from '@proton/shared/lib/contacts/helpers/import';
 import { extractVcards, readVcf } from '@proton/shared/lib/contacts/vcard';
+import { splitExtension } from '@proton/shared/lib/helpers/file';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import { EXTENSION, IMPORT_STEPS, ImportContactsModel } from '@proton/shared/lib/interfaces/contacts/Import';
+
 import {
-    Bordered,
-    FileInput,
     Alert,
     AttachedFile,
+    Bordered,
+    Button,
     Dropzone,
-    ModalTwoHeader,
+    FileInput,
     ModalTwoContent,
     ModalTwoFooter,
-    Button,
+    ModalTwoHeader,
     onlyDragFiles,
 } from '../../../../components';
 import { classnames } from '../../../../helpers';
-import { getInitialState } from '../ContactImportModal';
 import { useFeature } from '../../../../hooks';
 import { FeatureCode } from '../../../features';
+import { getInitialState } from '../ContactImportModal';
 
 const { CSV, VCF } = EXTENSION;
 

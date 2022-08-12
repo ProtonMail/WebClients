@@ -1,7 +1,6 @@
-import percentOf from '@proton/utils/percentOf';
-import { getVariableFromThemeColor, ThemeColor } from '@proton/colors';
-
+import { ThemeColor, getVariableFromThemeColor } from '@proton/colors';
 import useUid from '@proton/components/hooks/useUid';
+import percentOf from '@proton/utils/percentOf';
 
 export type DonutSegmentColor = ThemeColor | string;
 

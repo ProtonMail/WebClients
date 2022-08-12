@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react';
 
 import { DAY } from '@proton/shared/lib/constants';
 
-import { FeatureCode } from '../features';
 import { useFeature } from '../../hooks';
+import { FeatureCode } from '../features';
 import useHasRebrandingFeedback from './useHasRebrandingFeedback';
 
 export interface RebrandingFeatureValue {

@@ -1,9 +1,11 @@
 import { c } from 'ttag';
-import unsupportedPreviewSvg from '@proton/styles/assets/img/errors/preview-unavailable.svg';
+
 import corruptedPreviewSvg from '@proton/styles/assets/img/errors/broken-image.svg';
+import unsupportedPreviewSvg from '@proton/styles/assets/img/errors/preview-unavailable.svg';
+
 import { PrimaryButton } from '../../components';
-import { useActiveBreakpoint } from '../../hooks';
 import { classnames } from '../../helpers';
+import { useActiveBreakpoint } from '../../hooks';
 
 interface Props {
     type?: 'file' | 'image' | 'video';

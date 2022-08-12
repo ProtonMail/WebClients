@@ -1,4 +1,5 @@
 import { c, msgid } from 'ttag';
+
 import { VPNServer } from '@proton/shared/lib/interfaces/VPNServer';
 import uniqueBy from '@proton/utils/uniqueBy';
 

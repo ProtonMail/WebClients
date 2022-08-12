@@ -1,9 +1,10 @@
 import { ReactNode } from 'react';
+
 import { c } from 'ttag';
 
+import { Icon, PrimaryButton } from '../../components';
 import { classnames } from '../../helpers';
 import { useActiveBreakpoint } from '../../hooks';
-import { PrimaryButton, Icon } from '../../components';
 
 const SignatureIssue = ({
     signatureConfirmation,

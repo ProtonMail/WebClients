@@ -1,11 +1,9 @@
 import { c } from 'ttag';
 
 import { SettingsParagraph } from '../../account';
-
 import DaysOfWeekField from './fields/DaysOfWeekField';
-import TimeZoneField from './fields/TimeZoneField';
 import TimeField from './fields/TimeField';
-
+import TimeZoneField from './fields/TimeZoneField';
 import { AutoReplyFormModel } from './interfaces';
 
 interface Props {

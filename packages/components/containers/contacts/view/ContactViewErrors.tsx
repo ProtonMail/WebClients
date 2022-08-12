@@ -1,10 +1,12 @@
 import { c } from 'ttag';
-import { CryptoProcessingError } from '@proton/shared/lib/contacts/decrypt';
+
 import { CRYPTO_PROCESSING_TYPES } from '@proton/shared/lib/contacts/constants';
+import { CryptoProcessingError } from '@proton/shared/lib/contacts/decrypt';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+
+import { Button } from '../../../components';
 import Icon from '../../../components/icon/Icon';
 import Href from '../../../components/link/Href';
-import { Button } from '../../../components';
 import { classnames } from '../../../helpers';
 
 const { SIGNATURE_NOT_VERIFIED, FAIL_TO_READ, FAIL_TO_LOAD, FAIL_TO_DECRYPT } = CRYPTO_PROCESSING_TYPES;

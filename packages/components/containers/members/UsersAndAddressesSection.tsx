@@ -1,47 +1,48 @@
-import { useState, useMemo } from 'react';
+import { useMemo, useState } from 'react';
+
 import { c } from 'ttag';
-import { getInitials, normalize } from '@proton/shared/lib/helpers/string';
-import { DOMAIN_STATE, MEMBER_ROLE } from '@proton/shared/lib/constants';
-import { getOrganizationKeyInfo } from '@proton/shared/lib/organization/helper';
-import { Organization as tsOrganization, Domain, CachedOrganizationKey, Member } from '@proton/shared/lib/interfaces';
-import { removeMember, updateRole } from '@proton/shared/lib/api/members';
-import { revokeSessions } from '@proton/shared/lib/api/memberSessions';
-import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+
 import { Avatar } from '@proton/atoms';
+import { revokeSessions } from '@proton/shared/lib/api/memberSessions';
+import { removeMember, updateRole } from '@proton/shared/lib/api/members';
+import { DOMAIN_STATE, MEMBER_ROLE } from '@proton/shared/lib/constants';
+import { getInitials, normalize } from '@proton/shared/lib/helpers/string';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import { CachedOrganizationKey, Domain, Member, Organization as tsOrganization } from '@proton/shared/lib/interfaces';
+import { getOrganizationKeyInfo } from '@proton/shared/lib/organization/helper';
 
 import {
-    Table,
-    TableCell,
-    Info,
-    Block,
-    SearchInput,
-    TableBody,
-    TableRow,
     Badge,
+    Block,
     Button,
+    Info,
+    SearchInput,
+    Table,
+    TableBody,
+    TableCell,
+    TableRow,
     useModalState,
 } from '../../components';
 import {
-    useMembers,
-    useOrganization,
-    useDomains,
-    useNotifications,
-    useOrganizationKey,
     useApi,
+    useDomains,
     useEventManager,
     useMemberAddresses,
+    useMembers,
+    useNotifications,
+    useOrganization,
+    useOrganizationKey,
 } from '../../hooks';
+import { SettingsParagraph, SettingsSectionWide } from '../account';
+import { AddressModal } from '../addresses';
+import RestoreAdministratorPrivileges from '../organization/RestoreAdministratorPrivileges';
+import DeleteMemberModal from './DeleteMemberModal';
+import EditMemberModal from './EditMemberModal';
 import MemberActions from './MemberActions';
 import MemberAddresses from './MemberAddresses';
 import MemberFeatures from './MemberFeatures';
-import MemberRole from './MemberRole';
-import RestoreAdministratorPrivileges from '../organization/RestoreAdministratorPrivileges';
 import MemberModal from './MemberModal';
-import { SettingsParagraph, SettingsSectionWide } from '../account';
-
-import { AddressModal } from '../addresses';
-import EditMemberModal from './EditMemberModal';
-import DeleteMemberModal from './DeleteMemberModal';
+import MemberRole from './MemberRole';
 
 const validateAddUser = (
     organization: tsOrganization,

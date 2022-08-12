@@ -1,6 +1,7 @@
 import { c } from 'ttag';
-import { INVOICE_STATE } from '@proton/shared/lib/constants';
+
 import { getPaymentMethodStatus } from '@proton/shared/lib/api/payments';
+import { INVOICE_STATE } from '@proton/shared/lib/constants';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { DropdownActions } from '../../components';

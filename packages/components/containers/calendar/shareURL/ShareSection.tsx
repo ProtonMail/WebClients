@@ -1,30 +1,32 @@
 import { ComponentPropsWithoutRef, MouseEvent, useState } from 'react';
+
 import { c } from 'ttag';
+
 import { Card } from '@proton/atoms/Card';
-import { textToClipboard } from '@proton/shared/lib/helpers/browser';
-import { VisualCalendar, ACCESS_LEVEL, CalendarUrlResponse } from '@proton/shared/lib/interfaces/calendar';
+import { createPublicLink, deletePublicLink, editPublicLink } from '@proton/shared/lib/api/calendars';
 import {
     buildLink,
     generateEncryptedPurpose,
     getCreatePublicLinkPayload,
 } from '@proton/shared/lib/calendar/shareUrl/helpers';
-import { createPublicLink, deletePublicLink, editPublicLink } from '@proton/shared/lib/api/calendars';
-import { splitKeys } from '@proton/shared/lib/keys';
-import { Nullable } from '@proton/shared/lib/interfaces/utils';
-import { ModalWithProps } from '@proton/shared/lib/interfaces/Modal';
+import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import { UserModel } from '@proton/shared/lib/interfaces';
+import { ModalWithProps } from '@proton/shared/lib/interfaces/Modal';
+import { ACCESS_LEVEL, CalendarUrlResponse, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import { Nullable } from '@proton/shared/lib/interfaces/utils';
+import { splitKeys } from '@proton/shared/lib/keys';
 
+import { Alert, ButtonLike, Loader, SettingsLink } from '../../../components';
 import { useApi, useGetCalendarInfo, useNotifications } from '../../../hooks';
 import { useModalsMap } from '../../../hooks/useModalsMap';
+import { SettingsParagraph, SettingsSection } from '../../account';
 import { useCalendarModelEventManager } from '../../eventManager';
-import LinkTable from './LinkTable';
-import ShareTable from './ShareTable';
-import ShareLinkSuccessModal from './ShareLinkSuccessModal';
 import DeleteLinkConfirmationModal from './DeleteLinkConfirmationModal';
 import EditLinkModal from './EditLinkModal';
-import { Alert, ButtonLike, Loader, SettingsLink } from '../../../components';
+import LinkTable from './LinkTable';
+import ShareLinkSuccessModal from './ShareLinkSuccessModal';
+import ShareTable from './ShareTable';
 import useCalendarShareUrls from './useCalendarShareUrls';
-import { SettingsParagraph, SettingsSection } from '../../account';
 
 type ModalsMap = {
     shareLinkSuccessModal: ModalWithProps<{

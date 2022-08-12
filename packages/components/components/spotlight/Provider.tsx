@@ -1,5 +1,6 @@
+import { ReactNode, createContext, useState } from 'react';
+
 import noop from '@proton/utils/noop';
-import { createContext, ReactNode, useState } from 'react';
 
 interface Props {
     children: ReactNode;

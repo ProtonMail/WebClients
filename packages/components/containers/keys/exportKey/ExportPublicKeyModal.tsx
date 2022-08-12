@@ -1,16 +1,18 @@
 import { c } from 'ttag';
-import downloadFile from '@proton/shared/lib/helpers/downloadFile';
-import { PublicKeyReference, CryptoProxy } from '@proton/crypto';
+
+import { CryptoProxy, PublicKeyReference } from '@proton/crypto';
 import { KEY_FILE_EXTENSION } from '@proton/shared/lib/constants';
+import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import noop from '@proton/utils/noop';
+
 import {
+    Button,
     Form,
-    ModalProps,
     ModalTwo as Modal,
-    ModalTwoHeader as ModalHeader,
     ModalTwoContent as ModalContent,
     ModalTwoFooter as ModalFooter,
-    Button,
+    ModalTwoHeader as ModalHeader,
+    ModalProps,
 } from '../../../components';
 import { useLoading } from '../../../hooks';
 

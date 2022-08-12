@@ -1,10 +1,11 @@
 import { c, msgid } from 'ttag';
-import { UserModel, UserSettings, Organization, Subscription, Plan } from '@proton/shared/lib/interfaces';
+
+import { getAppName } from '@proton/shared/lib/apps/helper';
+import { APPS, MAIL_APP_NAME, PLANS, PLAN_SERVICES, VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 import { getPlan } from '@proton/shared/lib/helpers/subscription';
-import { PLAN_SERVICES, APPS, PLANS, MAIL_APP_NAME, VPN_APP_NAME } from '@proton/shared/lib/constants';
-import { getAppName } from '@proton/shared/lib/apps/helper';
 import { getClosestLocaleCode } from '@proton/shared/lib/i18n/helper';
+import { Organization, Plan, Subscription, UserModel, UserSettings } from '@proton/shared/lib/interfaces';
 
 import { Icon, Loader, SettingsLink } from '../../components';
 import { useConfig } from '../../hooks';

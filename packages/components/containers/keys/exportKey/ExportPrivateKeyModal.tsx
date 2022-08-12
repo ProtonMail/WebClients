@@ -2,12 +2,11 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { CryptoProxy, PrivateKeyReference } from '@proton/crypto';
 import { KEY_FILE_EXTENSION } from '@proton/shared/lib/constants';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { passwordLengthValidator } from '@proton/shared/lib/helpers/formValidators';
 import noop from '@proton/utils/noop';
-
-import { PrivateKeyReference, CryptoProxy } from '@proton/crypto';
 
 import {
     Button,

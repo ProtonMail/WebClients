@@ -1,5 +1,7 @@
 import { ComponentPropsWithoutRef } from 'react';
+
 import { classnames } from '../../helpers';
+
 import './SettingsLayout.scss';
 
 const SettingsLayout = ({ className = '', ...rest }: ComponentPropsWithoutRef<'div'>) => {

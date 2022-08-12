@@ -1,35 +1,32 @@
 import { c } from 'ttag';
 
 import {
-    EASY_SWITCH_SOURCE,
-    EasySwitchFeatureFlag,
-    ImportType,
-    NON_OAUTH_PROVIDER,
-} from '@proton/shared/lib/interfaces/EasySwitch';
-import isTruthy from '@proton/utils/isTruthy';
-import {
     DEFAULT_CALENDAR_USER_SETTINGS,
     getDefaultCalendar,
     getProbablyActiveCalendars,
     getVisualCalendars,
 } from '@proton/shared/lib/calendar/calendar';
 import { getIsPersonalCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
-import partition from '@proton/utils/partition';
+import {
+    EASY_SWITCH_SOURCE,
+    EasySwitchFeatureFlag,
+    ImportType,
+    NON_OAUTH_PROVIDER,
+} from '@proton/shared/lib/interfaces/EasySwitch';
 import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import isTruthy from '@proton/utils/isTruthy';
+import partition from '@proton/utils/partition';
 
-import { useAddresses, useCalendars, useCalendarUserSettings, useFeature, useModals, useUser } from '../../hooks';
 import { ProviderCard, useModalState } from '../../components';
-
-import SettingsSectionWide from './SettingsSectionWide';
-import SettingsParagraph from './SettingsParagraph';
-
-import { EasySwitchOauthModal, EasySwitchDefaultModal } from '../easySwitch';
 import { ImportProvider } from '../../components/easySwitch/ProviderCard';
-import { FeatureCode } from '../features';
-
-import { ImportModal as ImportCalendarModal } from '../calendar/importModal';
 import { useModalTwo } from '../../components/modalTwo/useModalTwo';
+import { useAddresses, useCalendarUserSettings, useCalendars, useFeature, useModals, useUser } from '../../hooks';
+import { ImportModal as ImportCalendarModal } from '../calendar/importModal';
 import ContactImportModal from '../contacts/import/ContactImportModal';
+import { EasySwitchDefaultModal, EasySwitchOauthModal } from '../easySwitch';
+import { FeatureCode } from '../features';
+import SettingsParagraph from './SettingsParagraph';
+import SettingsSectionWide from './SettingsSectionWide';
 
 const { GOOGLE, OUTLOOK, YAHOO, OTHER } = ImportProvider;
 

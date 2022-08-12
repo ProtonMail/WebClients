@@ -1,11 +1,10 @@
-import { c } from 'ttag';
 import { format } from 'date-fns';
+import { c } from 'ttag';
 
-import { ImportType, NormalizedImporter } from '@proton/shared/lib/interfaces/EasySwitch';
 import { dateLocale } from '@proton/shared/lib/i18n';
+import { ImportType, NormalizedImporter } from '@proton/shared/lib/interfaces/EasySwitch';
 
-import { TableRow, Icon } from '../../../components';
-
+import { Icon, TableRow } from '../../../components';
 import ActiveImportRowActions from './ActiveImportRowActions';
 import ActiveImportStatus from './ActiveImportStatus';
 

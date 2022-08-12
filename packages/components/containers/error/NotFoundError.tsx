@@ -1,5 +1,7 @@
 import { c } from 'ttag';
+
 import notFoundErrorSvg from '@proton/styles/assets/img/errors/error-404.svg';
+
 import IllustrationPlaceholder from '../illustration/IllustrationPlaceholder';
 
 const NotFoundError = () => {

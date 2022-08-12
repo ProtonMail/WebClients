@@ -1,4 +1,5 @@
 import { PreVcardsContact } from '@proton/shared/lib/interfaces/contacts/Import';
+
 import ContactImportCsvTableRows from './ContactImportCsvTableRows';
 
 interface Props {

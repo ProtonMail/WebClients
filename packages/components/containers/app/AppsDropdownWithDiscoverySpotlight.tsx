@@ -1,5 +1,7 @@
 import { useLayoutEffect, useRef } from 'react';
+
 import { c } from 'ttag';
+
 import { APPS } from '@proton/shared/lib/constants';
 import { UserSettings } from '@proton/shared/lib/interfaces';
 

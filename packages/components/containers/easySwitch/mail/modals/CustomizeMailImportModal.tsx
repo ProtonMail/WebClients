@@ -1,40 +1,39 @@
-import { useState, ChangeEvent, useMemo } from 'react';
-import { subYears, subMonths } from 'date-fns';
+import { ChangeEvent, useMemo, useState } from 'react';
+
+import { subMonths, subYears } from 'date-fns';
 import { c, msgid } from 'ttag';
 
-import noop from '@proton/utils/noop';
-import { Address, Label } from '@proton/shared/lib/interfaces';
 import { ADDRESS_STATUS } from '@proton/shared/lib/constants';
+import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
+import { Address, Label } from '@proton/shared/lib/interfaces';
 import {
-    MailImporterPayload,
     ImportedMailFolder,
-    TIME_PERIOD,
     MailImportPayloadError,
+    MailImporterPayload,
+    TIME_PERIOD,
 } from '@proton/shared/lib/interfaces/EasySwitch';
 import { Folder } from '@proton/shared/lib/interfaces/Folder';
-import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
+import noop from '@proton/utils/noop';
 
-import EditLabelModal, { LabelModel } from '../../../labels/modals/EditLabelModal';
-
-import { useModals } from '../../../../hooks';
 import {
-    Row,
-    Tooltip,
     Alert,
+    Button,
+    ConfirmModal,
     Field,
+    Label as FormLabel,
+    FormModal,
     Icon,
     LabelStack,
+    Row,
     Select,
-    ConfirmModal,
-    FormModal,
-    Button,
-    Label as FormLabel,
+    Tooltip,
     useModalState,
 } from '../../../../components';
-
+import { useModals } from '../../../../hooks';
+import EditLabelModal, { LabelModel } from '../../../labels/modals/EditLabelModal';
 import { getTimeUnitLabels } from '../../constants';
-import ImportManageFolders from './ImportManageFolders';
 import useIAMailPayload from '../../hooks/useIAMailPayload';
+import ImportManageFolders from './ImportManageFolders';
 
 interface Props {
     payload: MailImporterPayload;

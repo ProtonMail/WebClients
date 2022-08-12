@@ -1,19 +1,22 @@
-import { useState, ChangeEvent, useRef, useMemo } from 'react';
+import { ChangeEvent, useMemo, useRef, useState } from 'react';
+
 import { c } from 'ttag';
-import { MailSettings } from '@proton/shared/lib/interfaces';
+
 import { LINK_TYPES } from '@proton/shared/lib/constants';
-import { linkToType, addLinkPrefix } from '@proton/shared/lib/helpers/url';
-import { PrimaryButton } from '../../button';
-import Row from '../../container/Row';
-import Label from '../../label/Label';
-import Field from '../../container/Field';
-import Href from '../../link/Href';
-import { Button } from '../../button';
-import { Select } from '../../select';
-import { ModalTwoHeader, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalStateProps } from '../../modalTwo';
-import { Form } from '../../form';
-import { InputTwo } from '../../v2';
+import { addLinkPrefix, linkToType } from '@proton/shared/lib/helpers/url';
+import { MailSettings } from '@proton/shared/lib/interfaces';
+
 import { useLinkHandler } from '../../../hooks/useLinkHandler';
+import { PrimaryButton } from '../../button';
+import { Button } from '../../button';
+import Field from '../../container/Field';
+import Row from '../../container/Row';
+import { Form } from '../../form';
+import Label from '../../label/Label';
+import Href from '../../link/Href';
+import { ModalStateProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../modalTwo';
+import { Select } from '../../select';
+import { InputTwo } from '../../v2';
 
 export interface InsertLinkModalProps {
     selectionRangeFragment: DocumentFragment;

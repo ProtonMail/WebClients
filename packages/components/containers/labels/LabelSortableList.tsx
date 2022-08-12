@@ -1,9 +1,10 @@
-import { c } from 'ttag';
 import { SortableContainerProps } from 'react-sortable-hoc';
+
+import { c } from 'ttag';
 
 import { Label } from '@proton/shared/lib/interfaces/Label';
 
-import { OrderableTable, OrderableTableBody, OrderableTableHeader, Icon } from '../../components';
+import { Icon, OrderableTable, OrderableTableBody, OrderableTableHeader } from '../../components';
 import LabelSortableItem from './LabelSortableItem';
 
 interface Props extends SortableContainerProps {

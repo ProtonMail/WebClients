@@ -1,15 +1,17 @@
-import { forwardRef, Ref } from 'react';
+import { Ref, forwardRef } from 'react';
+
 import { VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
-import ContactFieldFn from './ContactFieldFn';
-import ContactFieldString from './ContactFieldString';
-import ContactFieldDate from './ContactFieldDate';
+
+import { ContactImageProps } from '../../modals/ContactImageModal';
 import ContactFieldAdr from './ContactFieldAdr';
-import ContactFieldTel from './ContactFieldTel';
+import ContactFieldDate from './ContactFieldDate';
 import ContactFieldEmail from './ContactFieldEmail';
+import ContactFieldFn from './ContactFieldFn';
+import ContactFieldGender from './ContactFieldGender';
 import ContactFieldImage from './ContactFieldImage';
 import ContactFieldNote from './ContactFieldNote';
-import ContactFieldGender from './ContactFieldGender';
-import { ContactImageProps } from '../../modals/ContactImageModal';
+import ContactFieldString from './ContactFieldString';
+import ContactFieldTel from './ContactFieldTel';
 
 interface Props {
     vCardProperty: VCardProperty<any>;

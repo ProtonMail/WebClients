@@ -1,5 +1,6 @@
-import { VIEW_MODE } from '@proton/shared/lib/constants';
 import { ChangeEvent } from 'react';
+
+import { VIEW_MODE } from '@proton/shared/lib/constants';
 
 import { Toggle } from '../../components';
 import { useToggle } from '../../hooks';

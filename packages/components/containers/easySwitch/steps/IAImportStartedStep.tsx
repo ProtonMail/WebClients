@@ -1,10 +1,10 @@
 import { useLocation } from 'react-router-dom';
+
 import { c } from 'ttag';
 
 import importStartedSvg from '@proton/styles/assets/img/onboarding/import-assistant.svg';
 
 import { SettingsLink } from '../../../components';
-
 import { IA_PATHNAME_REGEX } from '../constants';
 
 interface Props {

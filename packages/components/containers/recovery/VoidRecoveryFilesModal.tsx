@@ -1,8 +1,10 @@
 import { c } from 'ttag';
+
 import { deleteRecoverySecrets } from '@proton/shared/lib/api/settingsRecovery';
-import { useApi, useEventManager, useLoading, useNotifications } from '../../hooks';
-import Button from '../../components/button/Button';
+
 import { AlertModal, ModalProps } from '../../components';
+import Button from '../../components/button/Button';
+import { useApi, useEventManager, useLoading, useNotifications } from '../../hooks';
 
 type Props = Omit<ModalProps, 'children' | 'size'>;
 

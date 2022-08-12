@@ -1,4 +1,5 @@
 import { c } from 'ttag';
+
 import { Label, PrimaryButton, Tooltip } from '@proton/components';
 import { useContacts } from '@proton/components/hooks';
 

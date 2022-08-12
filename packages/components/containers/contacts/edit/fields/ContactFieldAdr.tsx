@@ -1,6 +1,9 @@
-import { useState, ChangeEvent } from 'react';
+import { ChangeEvent, useState } from 'react';
+
 import { c } from 'ttag';
+
 import { VCardAddress, VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
+
 import { InputTwo } from '../../../../components';
 import { generateUID } from '../../../../helpers';
 

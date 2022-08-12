@@ -1,24 +1,27 @@
-import { useState, ChangeEvent, FormEvent } from 'react';
+import { ChangeEvent, FormEvent, useState } from 'react';
+
 import { c } from 'ttag';
-import { isValidHttpUrl } from '@proton/shared/lib/helpers/url';
-import { resizeImage } from '@proton/shared/lib/helpers/image';
+
 import { CONTACT_IMG_SIZE } from '@proton/shared/lib/contacts/constants';
-import { useNotifications } from '../../../hooks';
+import { resizeImage } from '@proton/shared/lib/helpers/image';
+import { isValidHttpUrl } from '@proton/shared/lib/helpers/url';
+
 import {
-    Row,
-    Label,
+    Button,
+    ErrorZone,
     Field,
     FileInput,
+    Form,
+    InputTwo,
+    Label,
+    ModalProps,
     ModalTwo,
-    ModalTwoHeader,
     ModalTwoContent,
     ModalTwoFooter,
-    Button,
-    ModalProps,
-    InputTwo,
-    Form,
-    ErrorZone,
+    ModalTwoHeader,
+    Row,
 } from '../../../components';
+import { useNotifications } from '../../../hooks';
 
 export interface ContactImageProps {
     url?: string;

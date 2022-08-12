@@ -1,27 +1,28 @@
 import {
     AnimationEvent,
-    Children,
-    cloneElement,
     CSSProperties,
+    Children,
     ReactElement,
     ReactNode,
     RefObject,
+    cloneElement,
     useEffect,
     useState,
 } from 'react';
+
 import { c } from 'ttag';
 
 import discoverIllustration from '@proton/styles/assets/img/illustrations/spotlight-binoculars.svg';
 import newIllustration from '@proton/styles/assets/img/illustrations/spotlight-stars.svg';
 
 import useRightToLeft from '../../containers/rightToLeft/useRightToLeft';
-import Portal from '../portal/Portal';
 import { classnames, generateUID } from '../../helpers';
 import { useCombinedRefs, useIsClosing } from '../../hooks';
 import { Button } from '../button';
 import { Icon } from '../icon';
 import { usePopper, usePopperAnchor } from '../popper';
 import { shouldShowSideRadius } from '../popper/utils';
+import Portal from '../portal/Portal';
 
 type SpotlightType = 'discover' | 'new';
 

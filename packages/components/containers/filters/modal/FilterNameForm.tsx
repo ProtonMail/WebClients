@@ -1,10 +1,10 @@
 import { KeyboardEvent } from 'react';
+
 import { c } from 'ttag';
 
 import { Field, InputTwo } from '../../../components';
 import { classnames } from '../../../helpers';
-
-import { SimpleFilterModalModel, AdvancedSimpleFilterModalModel, Step } from '../interfaces';
+import { AdvancedSimpleFilterModalModel, SimpleFilterModalModel, Step } from '../interfaces';
 
 interface Errors {
     name: string;

@@ -1,26 +1,27 @@
 import { FormEvent, useMemo, useState } from 'react';
+
 import { c } from 'ttag';
+
 import { privatizeMember, updateName, updateQuota, updateRole, updateVPN } from '@proton/shared/lib/api/members';
 import { GIGA, MEMBER_PRIVATE, MEMBER_ROLE, MEMBER_SUBSCRIBER, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
-import { Member } from '@proton/shared/lib/interfaces';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
+import { Member } from '@proton/shared/lib/interfaces';
 
 import {
-    ModalProps,
+    Alert,
+    Button,
+    ConfirmModal,
+    InputFieldTwo,
     ModalTwo as Modal,
     ModalTwoContent as ModalContent,
     ModalTwoFooter as ModalFooter,
     ModalTwoHeader as ModalHeader,
-    InputFieldTwo,
+    ModalProps,
     Toggle,
-    ConfirmModal,
-    Alert,
     useFormErrors,
-    Button,
 } from '../../components';
-import { useApi, useNotifications, useEventManager, useOrganization, useLoading, useModals } from '../../hooks';
+import { useApi, useEventManager, useLoading, useModals, useNotifications, useOrganization } from '../../hooks';
 import Addresses from '../addresses/Addresses';
-
 import MemberStorageSelector, { getStorageRange, getTotalStorage } from './MemberStorageSelector';
 
 interface Props extends ModalProps<'form'> {

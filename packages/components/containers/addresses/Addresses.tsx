@@ -1,7 +1,6 @@
 import { Organization } from '@proton/shared/lib/interfaces';
 
 import { useUser } from '../../hooks';
-
 import AddressesWithMembers from './AddressesWithMembers';
 import AddressesWithUser from './AddressesWithUser';
 

@@ -1,12 +1,14 @@
 import { ChangeEvent, FormEvent, useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import getRandomValues from '@proton/get-random-values';
 import { flushSync } from 'react-dom';
+
+import { Point, utils } from '@noble/ed25519';
 import { c } from 'ttag';
-import { utils, Point } from '@noble/ed25519';
+
+import getRandomValues from '@proton/get-random-values';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
-import { readableTime } from '@proton/shared/lib/helpers/time';
 import { base64StringToUint8Array, uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
-import OpenVPNConfigurationSection from '../OpenVPNConfigurationSection/OpenVPNConfigurationSection';
+import { readableTime } from '@proton/shared/lib/helpers/time';
+
 import {
     Alert,
     Button,
@@ -26,26 +28,26 @@ import {
     TextArea,
     Toggle,
 } from '../../../components';
-import { SettingsSectionWide, SettingsParagraph } from '../../account';
 import { getObjectKeys } from '../../../helpers';
-import { useApi, useApiResult, useModals, useNotifications, useUser, useUserVPN, useVPNLogicals } from '../../../hooks';
 import { getCountryByAbbr } from '../../../helpers/countries';
+import { useApi, useApiResult, useModals, useNotifications, useUser, useUserVPN, useVPNLogicals } from '../../../hooks';
+import { SettingsParagraph, SettingsSectionWide } from '../../account';
+import { Certificate } from '../Certificate';
+import { Logical } from '../Logical';
+import { CATEGORY } from '../OpenVPNConfigurationSection/ConfigsTable';
+import OpenVPNConfigurationSection from '../OpenVPNConfigurationSection/OpenVPNConfigurationSection';
+import { getFlagSvg } from '../flag';
+import { CertificateDTO, CertificateDeletionParams, CertificateGenerationParams } from './Certificate';
+import { KeyPair } from './KeyPair';
 import { deleteCertificates, generateCertificate, getKey, queryVPNClientConfig } from './api';
 import { CURVE } from './curve';
-import { CertificateDeletionParams, CertificateDTO, CertificateGenerationParams } from './Certificate';
-import { KeyPair } from './KeyPair';
-import { getFlagSvg } from '../flag';
-import { Logical } from '../Logical';
-import { Certificate } from '../Certificate';
-import { CATEGORY } from '../OpenVPNConfigurationSection/ConfigsTable';
-import useCertificates from './useCertificates';
 import {
-    clientConfigKeys,
     FeatureFlagsConfig,
     FeatureOption,
-    FeaturesConfig,
     FeatureSelection,
+    FeaturesConfig,
     FeaturesValues,
+    clientConfigKeys,
     formatFeatureShortName,
     formatFeatureValue,
     getKeyOfCheck,
@@ -53,6 +55,7 @@ import {
     isFeatureSelection,
 } from './feature';
 import { normalize } from './normalize';
+import useCertificates from './useCertificates';
 
 enum PLATFORM {
     MACOS = 'macOS',

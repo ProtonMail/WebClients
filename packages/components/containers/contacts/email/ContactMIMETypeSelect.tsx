@@ -1,5 +1,7 @@
 import { c } from 'ttag';
+
 import { CONTACT_MIME_TYPES, MIME_TYPES, MIME_TYPES_MORE } from '@proton/shared/lib/constants';
+
 import { Option, SelectTwo } from '../../../components';
 import { SelectChangeEvent } from '../../../components/selectTwo/select';
 

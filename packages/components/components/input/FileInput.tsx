@@ -1,9 +1,9 @@
-import { ChangeEvent, DetailedHTMLProps, forwardRef, InputHTMLAttributes, ReactNode, Ref, useRef } from 'react';
+import { ChangeEvent, DetailedHTMLProps, InputHTMLAttributes, ReactNode, Ref, forwardRef, useRef } from 'react';
 
 import { ThemeColorUnion } from '@proton/colors';
 
-import { ButtonLike, Shape } from '../button';
 import { useCombinedRefs } from '../../hooks';
+import { ButtonLike, Shape } from '../button';
 
 export interface Props extends DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> {
     children: ReactNode;

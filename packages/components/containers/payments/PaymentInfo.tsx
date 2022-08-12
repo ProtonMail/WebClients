@@ -1,5 +1,6 @@
-import { PAYMENT_METHOD_TYPE, PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
 import { c } from 'ttag';
+
+import { PAYMENT_METHOD_TYPE, PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
 
 import { Alert } from '../../components';
 

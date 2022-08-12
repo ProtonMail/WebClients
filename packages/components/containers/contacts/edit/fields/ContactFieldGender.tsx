@@ -1,6 +1,8 @@
 import { ChangeEvent } from 'react';
+
 import { getAllFieldLabels } from '@proton/shared/lib/helpers/contacts';
 import { VCardGenderValue, VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
+
 import { InputTwo } from '../../../../components';
 import { InputTwoProps } from '../../../../components/v2/input/Input';
 

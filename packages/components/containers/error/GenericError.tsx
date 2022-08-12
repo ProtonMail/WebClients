@@ -1,11 +1,12 @@
 import { ReactNode } from 'react';
+
 import { c } from 'ttag';
 
 import errorImg from '@proton/styles/assets/img/errors/error-generic.svg';
 
-import IllustrationPlaceholder from '../illustration/IllustrationPlaceholder';
 import InlineLinkButton from '../../components/button/InlineLinkButton';
 import { classnames } from '../../helpers';
+import IllustrationPlaceholder from '../illustration/IllustrationPlaceholder';
 
 interface Props {
     className?: string;

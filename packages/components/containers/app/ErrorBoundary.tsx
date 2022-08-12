@@ -1,8 +1,9 @@
 import { Component, ErrorInfo, PropsWithChildren, PropsWithRef, ReactNode } from 'react';
 
 import { traceError } from '@proton/shared/lib/helpers/sentry';
-import GenericError from '../error/GenericError';
+
 import { classnames } from '../../helpers';
+import GenericError from '../error/GenericError';
 
 interface Props {
     className?: string;

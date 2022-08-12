@@ -1,11 +1,11 @@
 import { c } from 'ttag';
-import { Table, TableCell, TableRow, TableBody } from '../../components/table';
-import Copy from '../../components/button/Copy';
 
+import Copy from '../../components/button/Copy';
+import PersonalKeyWarningIcon from '../../components/icon/PersonalKeyWarningIcon';
+import { Table, TableBody, TableCell, TableRow } from '../../components/table';
 import KeysActions from './KeysActions';
 import KeysStatus from './KeysStatus';
-import { KeyDisplay, KeyActions } from './shared/interface';
-import PersonalKeyWarningIcon from '../../components/icon/PersonalKeyWarningIcon';
+import { KeyActions, KeyDisplay } from './shared/interface';
 
 interface Props extends Partial<KeyActions> {
     keys: KeyDisplay[];

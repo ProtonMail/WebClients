@@ -1,7 +1,9 @@
 import { ReactNode } from 'react';
-import { TableHeader } from '../table';
-import './OrderableTableHeader.scss';
+
 import { classnames } from '../../helpers';
+import { TableHeader } from '../table';
+
+import './OrderableTableHeader.scss';
 
 interface Props {
     cells?: ReactNode[];

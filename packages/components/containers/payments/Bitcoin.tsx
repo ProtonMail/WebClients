@@ -1,14 +1,16 @@
 import { ReactNode, useEffect, useState } from 'react';
-import { c } from 'ttag';
-import { createBitcoinPayment, createBitcoinDonation } from '@proton/shared/lib/api/payments';
-import { MIN_BITCOIN_AMOUNT, APPS } from '@proton/shared/lib/constants';
-import { Currency } from '@proton/shared/lib/interfaces';
-import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
-import { Alert, Price, Button, Loader, Bordered, Href } from '../../components';
-import { useConfig, useApi, useLoading } from '../../hooks';
-import BitcoinQRCode from './BitcoinQRCode';
+import { c } from 'ttag';
+
+import { createBitcoinDonation, createBitcoinPayment } from '@proton/shared/lib/api/payments';
+import { APPS, MIN_BITCOIN_AMOUNT } from '@proton/shared/lib/constants';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import { Currency } from '@proton/shared/lib/interfaces';
+
+import { Alert, Bordered, Button, Href, Loader, Price } from '../../components';
+import { useApi, useConfig, useLoading } from '../../hooks';
 import BitcoinDetails from './BitcoinDetails';
+import BitcoinQRCode from './BitcoinQRCode';
 
 interface Props {
     amount: number;

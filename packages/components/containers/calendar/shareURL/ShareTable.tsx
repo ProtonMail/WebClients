@@ -1,22 +1,24 @@
-import { MAX_LINKS_PER_CALENDAR } from '@proton/shared/lib/calendar/constants';
 import { useEffect, useRef, useState } from 'react';
+import { useLocation } from 'react-router-dom';
+
 import { c, msgid } from 'ttag';
-import { VisualCalendar, ACCESS_LEVEL, CalendarLink } from '@proton/shared/lib/interfaces/calendar';
+
+import { MAX_LINKS_PER_CALENDAR } from '@proton/shared/lib/calendar/constants';
+import { UserModel } from '@proton/shared/lib/interfaces';
+import { ACCESS_LEVEL, CalendarLink, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 
-import { UserModel } from '@proton/shared/lib/interfaces';
-import { useLocation } from 'react-router-dom';
 import {
-    Icon,
-    Table,
-    TableHeader,
-    TableBody,
-    TableRow,
-    Button,
-    Info,
-    SelectTwo,
-    Option,
     Alert,
+    Button,
+    Icon,
+    Info,
+    Option,
+    SelectTwo,
+    Table,
+    TableBody,
+    TableHeader,
+    TableRow,
 } from '../../../components';
 import CalendarSelect from '../../../components/calendarSelect/CalendarSelect';
 

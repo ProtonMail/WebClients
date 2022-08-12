@@ -1,4 +1,5 @@
 import { ComponentProps } from 'react';
+
 import { QRCode } from '../../components';
 
 interface OwnProps {

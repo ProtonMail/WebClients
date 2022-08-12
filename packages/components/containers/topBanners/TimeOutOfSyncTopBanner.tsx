@@ -1,12 +1,14 @@
-import { useState, useRef, useEffect } from 'react';
+import { useEffect, useRef, useState } from 'react';
+
 import { c } from 'ttag';
+
 import { HOUR } from '@proton/shared/lib/constants';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import TopBanner from './TopBanner';
-import LearnMore from '../../components/link/LearnMore';
 
+import LearnMore from '../../components/link/LearnMore';
 import useApiServerTime from '../../hooks/useApiServerTime';
+import TopBanner from './TopBanner';
 
 const isOutOfSync = (serverTime: Date) => {
     const timeDifference = Math.abs(serverTime.getTime() - Date.now());

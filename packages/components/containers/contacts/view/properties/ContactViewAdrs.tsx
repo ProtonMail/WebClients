@@ -1,12 +1,15 @@
-import { c } from 'ttag';
-import { VCardAddress, VCardContact, VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
-import { getSortedProperties } from '@proton/shared/lib/contacts/properties';
 import { Fragment } from 'react';
+
+import { c } from 'ttag';
+
+import { getSortedProperties } from '@proton/shared/lib/contacts/properties';
+import { VCardAddress, VCardContact, VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
 import isTruthy from '@proton/utils/isTruthy';
-import ContactViewProperty from './ContactViewProperty';
-import { ContactViewProperties } from './ContactViewProperties';
+
 import { Copy } from '../../../../components';
 import { useNotifications } from '../../../../hooks';
+import { ContactViewProperties } from './ContactViewProperties';
+import ContactViewProperty from './ContactViewProperty';
 
 interface Props {
     vCardContact: VCardContact;

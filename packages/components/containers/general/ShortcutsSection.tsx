@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Row, Label, Field, Button } from '../../components';
+import { Button, Field, Label, Row } from '../../components';
 import ShortcutsToggle from './ShortcutsToggle';
 
 interface Props {

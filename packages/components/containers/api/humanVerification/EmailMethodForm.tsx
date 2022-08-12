@@ -1,10 +1,12 @@
 import { KeyboardEvent, useState } from 'react';
-import { c } from 'ttag';
-import noop from '@proton/utils/noop';
-import { Api } from '@proton/shared/lib/interfaces';
-import { emailValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 
-import { Button, useFormErrors, InputFieldTwo } from '../../../components';
+import { c } from 'ttag';
+
+import { emailValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
+import { Api } from '@proton/shared/lib/interfaces';
+import noop from '@proton/utils/noop';
+
+import { Button, InputFieldTwo, useFormErrors } from '../../../components';
 import { useLoading } from '../../../hooks';
 
 interface Props {

@@ -1,30 +1,30 @@
 import { useEffect } from 'react';
-import noop from '@proton/utils/noop';
-import {
-    activateMemberAddressKeys,
-    getAddressesWithKeysToActivate,
-    generateAllPrivateMemberKeys,
-    getAddressesWithKeysToGenerate,
-    migrateMemberAddressKeys,
-    getHasMigratedAddressKeys,
-    getDecryptedUserKeysHelper,
-    migrateUser,
-    restoreBrokenSKL,
-    getSentryError,
-} from '@proton/shared/lib/keys';
+
 import { captureMessage, traceError } from '@proton/shared/lib/helpers/sentry';
 import { User } from '@proton/shared/lib/interfaces';
+import {
+    activateMemberAddressKeys,
+    generateAllPrivateMemberKeys,
+    getAddressesWithKeysToActivate,
+    getAddressesWithKeysToGenerate,
+    getDecryptedUserKeysHelper,
+    getHasMigratedAddressKeys,
+    getSentryError,
+    migrateMemberAddressKeys,
+    migrateUser,
+    restoreBrokenSKL,
+} from '@proton/shared/lib/keys';
+import noop from '@proton/utils/noop';
 
 import {
     useAuthentication,
     useEventManager,
-    useGetAddresses,
     useGetAddressKeys,
+    useGetAddresses,
+    useGetOrganization,
     useGetUser,
     useGetUserKeys,
-    useGetOrganization,
 } from '../../hooks';
-
 import useApi from '../../hooks/useApi';
 
 interface Props {

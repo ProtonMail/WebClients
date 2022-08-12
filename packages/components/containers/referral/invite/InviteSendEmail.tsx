@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
+
 import { c, msgid } from 'ttag';
 
 import {
@@ -10,12 +11,12 @@ import {
     useLoading,
     useNotifications,
 } from '@proton/components';
-import { Recipient, Referral } from '@proton/shared/lib/interfaces';
 import { sendEmailInvitation } from '@proton/shared/lib/api/core/referrals';
+import { Recipient, Referral } from '@proton/shared/lib/interfaces';
 
 import { useReferralInvitesContext } from '../ReferralInvitesContext';
-import { deduplicateRecipients, filterContactEmails, isValidEmailAdressToRefer } from './helpers';
 import InviteSendEmailRecipient from './InviteSendEmailRecipient';
+import { deduplicateRecipients, filterContactEmails, isValidEmailAdressToRefer } from './helpers';
 
 interface SendEmailInvitationResult {
     Code: number;

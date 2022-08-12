@@ -1,13 +1,14 @@
 import { c } from 'ttag';
-import { SETTINGS_DATE_FORMAT } from '@proton/shared/lib/interfaces';
+
 import { updateDateFormat } from '@proton/shared/lib/api/settings';
-import { loadDateLocale } from '@proton/shared/lib/i18n/loadLocale';
 import { dateLocaleCode } from '@proton/shared/lib/i18n';
 import { getBrowserLocale } from '@proton/shared/lib/i18n/helper';
+import { loadDateLocale } from '@proton/shared/lib/i18n/loadLocale';
+import { SETTINGS_DATE_FORMAT } from '@proton/shared/lib/interfaces';
 import { getDefaultDateFormat } from '@proton/shared/lib/settings/helper';
 
-import { SelectTwo, Option } from '../../components';
-import { useApi, useEventManager, useNotifications, useLoading, useUserSettings } from '../../hooks';
+import { Option, SelectTwo } from '../../components';
+import { useApi, useEventManager, useLoading, useNotifications, useUserSettings } from '../../hooks';
 import SettingsLayout from '../account/SettingsLayout';
 import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../account/SettingsLayoutRight';

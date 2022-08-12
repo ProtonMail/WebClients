@@ -1,6 +1,9 @@
 import { Dispatch, SetStateAction } from 'react';
+
 import { c } from 'ttag';
+
 import { ENCRYPTION_TYPES } from '@proton/shared/lib/constants';
+
 import { Radio, Row } from '../../../components';
 
 const { RSA4096, CURVE25519 } = ENCRYPTION_TYPES;

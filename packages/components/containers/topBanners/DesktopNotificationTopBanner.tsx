@@ -1,13 +1,15 @@
-import { useState, useRef, useLayoutEffect } from 'react';
+import { useLayoutEffect, useRef, useState } from 'react';
+
 import { c } from 'ttag';
-import { getStatus, request, Status } from '@proton/shared/lib/helpers/desktopNotification';
-import { APP_NAMES, APPS } from '@proton/shared/lib/constants';
+
 import { getAppName } from '@proton/shared/lib/apps/helper';
+import { APPS, APP_NAMES } from '@proton/shared/lib/constants';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
+import { Status, getStatus, request } from '@proton/shared/lib/helpers/desktopNotification';
 import { UserSettings } from '@proton/shared/lib/interfaces';
 
+import { useConfig, useLocalState, useUserSettings } from '../../hooks';
 import TopBanner from './TopBanner';
-import { useLocalState, useConfig, useUserSettings } from '../../hooks';
 
 const DesktopNotificationTopBanner = () => {
     const [status, setStatus] = useState<Status>(getStatus());

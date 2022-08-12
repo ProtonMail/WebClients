@@ -1,10 +1,11 @@
 import { useState } from 'react';
+
 import { createToken } from '@proton/shared/lib/api/payments';
 import { PAYMENT_METHOD_TYPE } from '@proton/shared/lib/constants';
 
+import { useApi, useLoading, useModals } from '../../hooks';
 import PaymentVerificationModal from './PaymentVerificationModal';
 import { process } from './paymentTokenHelper';
-import { useApi, useLoading, useModals } from '../../hooks';
 
 interface Model {
     Token: string;

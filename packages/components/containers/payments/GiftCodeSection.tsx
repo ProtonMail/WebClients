@@ -1,13 +1,14 @@
 import { ChangeEvent, useState } from 'react';
+
 import { c } from 'ttag';
-import { validateCredit, buyCredit } from '@proton/shared/lib/api/payments';
+
+import { buyCredit, validateCredit } from '@proton/shared/lib/api/payments';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 
-import { useLoading, useEventManager, useNotifications, useApiWithoutResult } from '../../hooks';
-
 import { Button, InputFieldTwo, useFormErrors } from '../../components';
-import SettingsParagraph from '../account/SettingsParagraph';
+import { useApiWithoutResult, useEventManager, useLoading, useNotifications } from '../../hooks';
 import { SettingsSection } from '../account';
+import SettingsParagraph from '../account/SettingsParagraph';
 
 const GiftCodeSection = () => {
     const [value, setValue] = useState('');

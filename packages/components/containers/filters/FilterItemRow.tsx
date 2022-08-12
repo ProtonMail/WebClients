@@ -1,19 +1,19 @@
 import { ChangeEvent, useState } from 'react';
+
 import { c } from 'ttag';
+
+import { deleteFilter, toggleEnable } from '@proton/shared/lib/api/filters';
 import { FILTER_STATUS } from '@proton/shared/lib/constants';
-import { toggleEnable, deleteFilter } from '@proton/shared/lib/api/filters';
 
-import { Toggle, DropdownActions, OrderableTableRow, useModalState } from '../../components';
+import { DropdownActions, OrderableTableRow, Toggle, useModalState } from '../../components';
+import { DropdownActionProps } from '../../components/dropdown/DropdownActions';
 import { useApi, useEventManager, useLoading, useNotifications } from '../../hooks';
-
+import FilterWarningModal from './FilterWarningModal';
+import { Filter } from './interfaces';
+import DeleteFilterModal from './modal/DeleteFilterModal';
 import FilterModal from './modal/FilterModal';
 import AdvancedFilterModal from './modal/advanced/AdvancedFilterModal';
-
-import { Filter } from './interfaces';
 import { isSieve } from './utils';
-import DeleteFilterModal from './modal/DeleteFilterModal';
-import FilterWarningModal from './FilterWarningModal';
-import { DropdownActionProps } from '../../components/dropdown/DropdownActions';
 
 interface Props {
     filter: Filter;

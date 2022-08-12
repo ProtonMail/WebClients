@@ -1,9 +1,11 @@
 import { ReactNode, useRef } from 'react';
-import { KeyboardKey } from '@proton/shared/lib/interfaces';
+
 import { APPS_CONFIGURATION } from '@proton/shared/lib/constants';
-import { useConfig, useHotkeys } from '../../../hooks';
+import { KeyboardKey } from '@proton/shared/lib/interfaces';
+
 import { Button, Icon } from '../../../components';
 import { Color } from '../../../components/button/ButtonGroup';
+import { useConfig, useHotkeys } from '../../../hooks';
 
 interface Props {
     onToggleDropdown: () => void;

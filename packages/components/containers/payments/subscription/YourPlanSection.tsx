@@ -1,25 +1,26 @@
-import { APP_NAMES } from '@proton/shared/lib/constants';
 import { FeatureCode } from '@proton/components/containers';
+import { APP_NAMES } from '@proton/shared/lib/constants';
+
 import { Loader } from '../../../components';
 import {
     useAddresses,
     useCalendars,
+    useFeature,
     useOrganization,
+    usePlans,
     useSubscription,
     useUser,
-    usePlans,
     useVPNCountriesCount,
     useVPNServersCount,
-    useFeature,
 } from '../../../hooks';
 import MozillaInfoPanel from '../../account/MozillaInfoPanel';
-import UsagePanel from './UsagePanel';
 import { useSubscriptionModal } from './SubscriptionModalProvider';
 import SubscriptionPanel from './SubscriptionPanel';
 import UpsellPanel from './UpsellPanel';
+import UsagePanel from './UsagePanel';
+import { getCurrency } from './helpers';
 
 import './YourPlanSection.scss';
-import { getCurrency } from './helpers';
 
 interface Props {
     app: APP_NAMES;

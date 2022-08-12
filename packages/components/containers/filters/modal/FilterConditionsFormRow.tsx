@@ -1,11 +1,12 @@
-import { Fragment, useState, ChangeEvent, useEffect } from 'react';
+import { ChangeEvent, Fragment, useEffect, useState } from 'react';
+
 import { c } from 'ttag';
 
-import { TYPES, COMPARATORS, getConditionTypeLabels, getComparatorLabels } from '../constants';
-import { Condition, FilterStatement, ConditionType, ConditionComparator } from '../interfaces';
-import { Input, Select, Radio, Tooltip, Icon, Button } from '../../../components';
-import { classnames } from '../../../helpers';
+import { Button, Icon, Input, Radio, Select, Tooltip } from '../../../components';
 import { OptionProps } from '../../../components/select/Select';
+import { classnames } from '../../../helpers';
+import { COMPARATORS, TYPES, getComparatorLabels, getConditionTypeLabels } from '../constants';
+import { Condition, ConditionComparator, ConditionType, FilterStatement } from '../interfaces';
 
 import './FilterConditionsFormRow.scss';
 

@@ -1,8 +1,9 @@
 import { useEffect } from 'react';
+
 import {
     FeatureCode,
-    getShouldOpenReferralModal,
     ReferralModal,
+    getShouldOpenReferralModal,
     useFeature,
     useModalState,
     useSubscription,

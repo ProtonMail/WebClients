@@ -1,4 +1,5 @@
-import { Children, isValidElement, ReactNode } from 'react';
+import { Children, ReactNode, isValidElement } from 'react';
+
 import clsx from '@proton/utils/clsx';
 
 interface StripedListProps {

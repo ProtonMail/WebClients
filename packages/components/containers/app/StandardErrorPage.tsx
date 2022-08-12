@@ -1,7 +1,9 @@
 import { ReactNode } from 'react';
+
 import { c } from 'ttag';
-import GenericError from '../error/GenericError';
+
 import { useDocumentTitle } from '../../hooks';
+import GenericError from '../error/GenericError';
 
 interface Props {
     children?: ReactNode;

@@ -1,6 +1,8 @@
-import { c } from 'ttag';
 import { ReactElement, RefObject } from 'react';
-import { Spotlight, SettingsLink } from '@proton/components';
+
+import { c } from 'ttag';
+
+import { SettingsLink, Spotlight } from '@proton/components';
 import { APPS, PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
 import starImg from '@proton/styles/assets/img/illustrations/spotlight-stars.svg';
 

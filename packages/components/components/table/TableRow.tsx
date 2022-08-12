@@ -1,4 +1,5 @@
-import { forwardRef, HTMLAttributes, ReactNode } from 'react';
+import { HTMLAttributes, ReactNode, forwardRef } from 'react';
+
 import TableCell from './TableCell';
 
 interface Props extends HTMLAttributes<HTMLTableRowElement> {

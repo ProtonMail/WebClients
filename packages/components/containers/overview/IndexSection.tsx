@@ -1,6 +1,5 @@
 import { Icon } from '../../components';
 import { classnames } from '../../helpers';
-
 import { SectionConfig } from '../layout';
 import Sections from './Sections';
 

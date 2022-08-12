@@ -1,37 +1,39 @@
 import { ReactNode } from 'react';
+
 import { c } from 'ttag';
+
 import { deleteSubscription } from '@proton/shared/lib/api/payments';
-import { hasBonuses } from '@proton/shared/lib/helpers/organization';
 import { getShouldCalendarPreventSubscripitionChange } from '@proton/shared/lib/calendar/subscription';
-import { hasMigrationDiscount, hasNewVisionary } from '@proton/shared/lib/helpers/subscription';
 import { PLANS, PLAN_SERVICES } from '@proton/shared/lib/constants';
-import { toMap } from '@proton/shared/lib/helpers/object';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
+import { toMap } from '@proton/shared/lib/helpers/object';
+import { hasBonuses } from '@proton/shared/lib/helpers/organization';
+import { hasMigrationDiscount, hasNewVisionary } from '@proton/shared/lib/helpers/subscription';
 import { hasPaidMail } from '@proton/shared/lib/user/helpers';
 
 import Button, { ButtonProps } from '../../../components/button/Button';
 import {
     useApi,
-    useUser,
-    useNotifications,
+    useEventManager,
+    useGetCalendars,
     useLoading,
     useModals,
-    useEventManager,
+    useNotifications,
     useOrganization,
     usePlans,
     useSubscription,
+    useUser,
     useVPNCountriesCount,
     useVPNServersCount,
-    useGetCalendars,
 } from '../../../hooks';
-import LossLoyaltyModal from '../LossLoyaltyModal';
 import DowngradeModal from '../DowngradeModal';
-import HighlightPlanDowngradeModal from './HighlightPlanDowngradeModal';
-import CalendarDowngradeModal from './CalendarDowngradeModal';
+import LossLoyaltyModal from '../LossLoyaltyModal';
 import MemberDowngradeModal from '../MemberDowngradeModal';
-import { DiscountWarningModal, NewVisionaryWarningModal } from './PlanLossWarningModal';
-import FeedbackDowngradeModal, { FeedbackDowngradeData } from './FeedbackDowngradeModal';
 import { getShortPlan } from '../features/plan';
+import CalendarDowngradeModal from './CalendarDowngradeModal';
+import FeedbackDowngradeModal, { FeedbackDowngradeData } from './FeedbackDowngradeModal';
+import HighlightPlanDowngradeModal from './HighlightPlanDowngradeModal';
+import { DiscountWarningModal, NewVisionaryWarningModal } from './PlanLossWarningModal';
 import { formatPlans } from './helpers';
 
 const { MAIL, VPN } = PLAN_SERVICES;

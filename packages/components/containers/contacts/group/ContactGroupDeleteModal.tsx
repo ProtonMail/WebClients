@@ -1,9 +1,11 @@
 import { c, msgid } from 'ttag';
-import { ContactGroup } from '@proton/shared/lib/interfaces/contacts';
-import { deleteLabels } from '@proton/shared/lib/api/labels';
+
 import { allSucceded } from '@proton/shared/lib/api/helpers/response';
-import { useApi, useContactGroups, useEventManager, useLoading, useNotifications } from '../../../hooks';
+import { deleteLabels } from '@proton/shared/lib/api/labels';
+import { ContactGroup } from '@proton/shared/lib/interfaces/contacts';
+
 import { Alert, AlertModal, Button, ModalProps } from '../../../components';
+import { useApi, useContactGroups, useEventManager, useLoading, useNotifications } from '../../../hooks';
 
 export interface ContactGroupDeleteProps {
     groupIDs: string[];

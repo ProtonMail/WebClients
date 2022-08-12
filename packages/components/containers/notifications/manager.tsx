@@ -1,7 +1,10 @@
 import { Dispatch, SetStateAction } from 'react';
+
 import DOMPurify from 'dompurify';
+
 import { isElement } from '@proton/shared/lib/helpers/dom';
-import { NotificationOptions, CreateNotificationOptions } from './interfaces';
+
+import { CreateNotificationOptions, NotificationOptions } from './interfaces';
 
 function createNotificationManager(setNotifications: Dispatch<SetStateAction<NotificationOptions[]>>) {
     let idx = 1;

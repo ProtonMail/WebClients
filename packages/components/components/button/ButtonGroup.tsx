@@ -1,16 +1,16 @@
 import {
     Children,
-    cloneElement,
     ComponentPropsWithoutRef,
-    forwardRef,
     Fragment,
-    isValidElement,
     ReactElement,
     ReactNode,
+    cloneElement,
+    forwardRef,
+    isValidElement,
 } from 'react';
 
-import { ThemeColor } from '@proton/colors';
 import { Vr } from '@proton/atoms';
+import { ThemeColor } from '@proton/colors';
 
 import { classnames } from '../../helpers';
 

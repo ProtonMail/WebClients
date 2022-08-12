@@ -1,7 +1,9 @@
-import { processInBatches } from '@proton/shared/lib/calendar/export/export';
 import { Dispatch, SetStateAction, useEffect } from 'react';
+
 import { c } from 'ttag';
 
+import { getEventsCount } from '@proton/shared/lib/api/calendars';
+import { processInBatches } from '@proton/shared/lib/calendar/export/export';
 import {
     CalendarEventWithMetadata,
     EXPORT_ERRORS,
@@ -11,17 +13,16 @@ import {
     VcalVeventComponent,
 } from '@proton/shared/lib/interfaces/calendar';
 
-import { getEventsCount } from '@proton/shared/lib/api/calendars';
 import { DynamicProgress } from '../../../components';
-import useGetCalendarEventPersonal from '../../../hooks/useGetCalendarEventPersonal';
 import {
-    useGetCalendarInfo,
     useApi,
-    useGetAddresses,
     useGetAddressKeys,
+    useGetAddresses,
+    useGetCalendarInfo,
     useGetCalendarKeys,
     useGetCalendarUserSettings,
 } from '../../../hooks';
+import useGetCalendarEventPersonal from '../../../hooks/useGetCalendarEventPersonal';
 
 interface Props {
     model: ExportCalendarModel;

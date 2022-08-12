@@ -1,7 +1,8 @@
-import { ReactNode, ReactElement, cloneElement, useContext } from 'react';
+import { ReactElement, ReactNode, cloneElement, useContext } from 'react';
 
 import { classnames } from '../../helpers';
-import { ModalTwo, ModalProps, ModalTwoContent, ModalContentProps, ModalTwoFooter, ModalContext } from '../modalTwo';
+import { ModalContentProps, ModalContext, ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter } from '../modalTwo';
+
 import './AlertModal.scss';
 
 const AlertModalTitle = ({ children }: { children: ReactNode }) => (

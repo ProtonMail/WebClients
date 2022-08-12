@@ -1,5 +1,4 @@
 import Avatar, { AvatarProps } from './Avatar';
-
 import mdx from './Avatar.mdx';
 
 export default {

@@ -1,19 +1,18 @@
-import { ChangeEvent, useEffect, useState, useMemo } from 'react';
+import { ChangeEvent, useEffect, useMemo, useState } from 'react';
+
 import { c } from 'ttag';
 
 import { ADDRESS_STATUS, MAIL_APP_NAME, RECEIVE_ADDRESS, SEND_ADDRESS } from '@proton/shared/lib/constants';
 import { Address } from '@proton/shared/lib/interfaces';
 
-import { Select, Loader, Info } from '../../components';
+import { Info, Loader, Select } from '../../components';
 import { useAddresses, useMailSettings, useUserSettings } from '../../hooks';
-
 import { SettingsParagraph, SettingsSectionWide } from '../account';
-
-import PMSignature from './PMSignatureField';
-import EditAddressesSection from './EditAddressesSection';
 import SettingsLayout from '../account/SettingsLayout';
-import SettingsLayoutRight from '../account/SettingsLayoutRight';
 import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
+import SettingsLayoutRight from '../account/SettingsLayoutRight';
+import EditAddressesSection from './EditAddressesSection';
+import PMSignature from './PMSignatureField';
 
 const IdentitySection = () => {
     const [addresses, loading] = useAddresses();

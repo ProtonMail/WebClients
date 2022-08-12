@@ -1,19 +1,22 @@
-import { processApiRequestsSafe } from '@proton/shared/lib/api/helpers/safeApiRequests';
-import { useState, useEffect, useMemo } from 'react';
+import { useEffect, useMemo, useState } from 'react';
+
 import { c, msgid } from 'ttag';
-import { getContact, addContacts, deleteContacts } from '@proton/shared/lib/api/contacts';
-import { splitKeys } from '@proton/shared/lib/keys/keys';
-import { wait } from '@proton/shared/lib/helpers/promise';
-import chunk from '@proton/utils/chunk';
+
+import { addContacts, deleteContacts, getContact } from '@proton/shared/lib/api/contacts';
+import { processApiRequestsSafe } from '@proton/shared/lib/api/helpers/safeApiRequests';
+import { API_CODES } from '@proton/shared/lib/constants';
+import { ADD_CONTACTS_MAX_SIZE, API_SAFE_INTERVAL, CATEGORIES, OVERWRITE } from '@proton/shared/lib/contacts/constants';
 import { prepareVCardContact as decrypt } from '@proton/shared/lib/contacts/decrypt';
 import { prepareVCardContact as encrypt } from '@proton/shared/lib/contacts/encrypt';
-import { API_CODES } from '@proton/shared/lib/constants';
-import { API_SAFE_INTERVAL, ADD_CONTACTS_MAX_SIZE, OVERWRITE, CATEGORIES } from '@proton/shared/lib/contacts/constants';
-import { Contact as ContactType, SimpleEncryptedContact } from '@proton/shared/lib/interfaces/contacts';
 import { splitEncryptedContacts } from '@proton/shared/lib/contacts/helpers/import';
-import { combineProgress } from '@proton/shared/lib/contacts/helpers/progress';
-import { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';
 import { merge } from '@proton/shared/lib/contacts/helpers/merge';
+import { combineProgress } from '@proton/shared/lib/contacts/helpers/progress';
+import { wait } from '@proton/shared/lib/helpers/promise';
+import { Contact as ContactType, SimpleEncryptedContact } from '@proton/shared/lib/interfaces/contacts';
+import { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';
+import { splitKeys } from '@proton/shared/lib/keys/keys';
+import chunk from '@proton/utils/chunk';
+
 import { Alert, Button, DynamicProgress, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../../components';
 import { useApi, useLoading, useUserKeys } from '../../../hooks';
 
