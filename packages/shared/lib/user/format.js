@@ -1,4 +1,4 @@
-import { isPaid, isFree, isAdmin, isMember, canPay } from './helpers';
+import { canPay, isAdmin, isFree, isMember, isPaid } from './helpers';
 
 const format = (user) => {
     return {

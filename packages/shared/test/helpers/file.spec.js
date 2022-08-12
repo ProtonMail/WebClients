@@ -1,12 +1,12 @@
-import { toFile } from '../../lib/helpers/image';
 import {
-    toBase64,
     readFileAsBinaryString,
     readFileAsBuffer,
+    readFileAsString,
     splitExtension,
-    readFileAsString
+    toBase64,
 } from '../../lib/helpers/file';
-import { img, emojis } from './file.data';
+import { toFile } from '../../lib/helpers/image';
+import { emojis, img } from './file.data';
 
 describe('toBase64', () => {
     const type = 'image/png';
@@ -118,7 +118,7 @@ describe('splitExtension', () => {
             ['myFile0', 'c'],
             ['myFile1', 'py'],
             ['myFile2', 'txt'],
-            ['myFile3', 'jpeg']
+            ['myFile3', 'jpeg'],
         ];
         expect(fileNames.map(splitExtension)).toEqual(expected);
     });

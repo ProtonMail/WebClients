@@ -1,5 +1,5 @@
-import { parse } from '../../lib/calendar/vcal';
 import { getOccurrences, getOccurrencesBetween } from '../../lib/calendar/recurring';
+import { parse } from '../../lib/calendar/vcal';
 
 const stringifyResult = (result) => {
     return result.map(({ utcStart, utcEnd, occurrenceNumber }) => {

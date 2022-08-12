@@ -1,6 +1,7 @@
 import { Integer as asn1jsInteger } from 'asn1js';
+
+import { checkAltName, parseCertChain, parseCertificate, verifyLEcert, verifySCT } from '../lib/certTransparency';
 import { epoch } from './keyTransparency.data';
-import { parseCertChain, parseCertificate, checkAltName, verifyLEcert, verifySCT } from '../lib/certTransparency';
 
 describe('certificate transparency', () => {
     it('should verify a certificate', async () => {

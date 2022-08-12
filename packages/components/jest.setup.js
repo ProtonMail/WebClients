@@ -1,4 +1,5 @@
 import '@testing-library/jest-dom';
+
 import './jest.mock';
 
 // Silence warnings on expect to throw https://github.com/testing-library/react-testing-library/issues/157
@@ -10,7 +11,6 @@ window.ResizeObserver = jest.fn().mockImplementation(() => ({
     unobserve: jest.fn(),
     disconnect: jest.fn(),
 }));
-
 
 // Do not start crypto worker pool, let the single tests setup/mock the CryptoProxy as needed
 jest.mock('@proton/shared/lib/helpers/setupCryptoWorker', () => ({

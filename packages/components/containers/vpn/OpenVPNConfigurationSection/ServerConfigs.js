@@ -1,16 +1,19 @@
-import { useMemo, useEffect, useCallback } from 'react';
+import { useCallback, useEffect, useMemo } from 'react';
+
 import PropTypes from 'prop-types';
+
 import { PLANS } from '@proton/shared/lib/constants';
 import compare from '@proton/utils/compare';
 import groupWith from '@proton/utils/groupWith';
+
 import { Details, Summary } from '../../../components';
-import { useUser, useUserVPN } from '../../../hooks';
 import { classnames } from '../../../helpers';
-import { isSecureCoreEnabled, isP2PEnabled, isTorEnabled } from './utils';
+import { useUser, useUserVPN } from '../../../hooks';
+import CityNumber from './CityNumber';
 import ConfigsTable, { CATEGORY, P2PIcon, TorIcon } from './ConfigsTable';
 import Country from './Country';
 import ServerNumber from './ServerNumber';
-import CityNumber from './CityNumber';
+import { isP2PEnabled, isSecureCoreEnabled, isTorEnabled } from './utils';
 
 const getServerNum = (server) => Number(server.Name.replace('-TOR', '').split('#')[1]);
 const getServerRegion = (server) => server.Name.split('#')[0];

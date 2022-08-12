@@ -11,7 +11,7 @@ const escapeRegex = (str) => str.replace(/[-.]/g, '\\$&');
  * @return {string}
  */
 const transform = (arr = []) => {
-  return arr.map(escapeRegex).join('|');
+    return arr.map(escapeRegex).join('|');
 };
 
 /**
@@ -22,6 +22,4 @@ const transform = (arr = []) => {
  * @return {RegExp}
  */
 module.exports = (nodeModules = [], files = []) =>
-  new RegExp(
-    `(/node_modules/(?!(${transform(nodeModules)})))|(${transform(files)})`
-  );
+    new RegExp(`(/node_modules/(?!(${transform(nodeModules)})))|(${transform(files)})`);

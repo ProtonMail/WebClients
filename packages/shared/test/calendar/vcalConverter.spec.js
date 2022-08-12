@@ -1,11 +1,11 @@
 import {
     dateTimeToProperty,
     dayToNumericDay,
-    numericDayToDay,
     getDateTimePropertyInDifferentTimezone,
     getHasModifiedDateTimes,
-    propertyToUTCDate,
+    numericDayToDay,
     propertyToLocalDate,
+    propertyToUTCDate,
 } from '../../lib/calendar/vcalConverter';
 
 describe('propertyToUTCDate', () => {

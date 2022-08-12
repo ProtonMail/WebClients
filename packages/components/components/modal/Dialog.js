@@ -1,12 +1,14 @@
 import { useEffect, useLayoutEffect, useRef } from 'react';
+
 import PropTypes from 'prop-types';
+
 import { dialogRootClassName } from '@proton/shared/lib/busy';
 
-import Portal from '../portal/Portal';
 import { classnames } from '../../helpers';
-import { useFocusTrap } from '../focus';
 import { useHotkeys } from '../../hooks';
+import { useFocusTrap } from '../focus';
 import { useModalPosition } from '../modalTwo/modalPositions';
+import Portal from '../portal/Portal';
 
 const CLASSES = {
     MODAL: 'modal',

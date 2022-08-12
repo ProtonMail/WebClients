@@ -1,7 +1,8 @@
 import { arrayToHexString } from 'pmcrypto';
-import { testVectors } from './vrf.data';
-import { vrfVerify } from '../lib/vrf';
+
 import { hexStringToArray } from '../lib/merkleTree';
+import { vrfVerify } from '../lib/vrf';
+import { testVectors } from './vrf.data';
 
 describe('vrf', () => {
     it('should verify the test vectors', async () => {

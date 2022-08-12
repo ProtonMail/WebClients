@@ -1,5 +1,5 @@
-import { testEmail, skl, epoch, proof } from './keyTransparency.data';
-import { verifyProof, verifyChainHash } from '../lib/merkleTree';
+import { verifyChainHash, verifyProof } from '../lib/merkleTree';
+import { epoch, proof, skl, testEmail } from './keyTransparency.data';
 
 describe('merkle tree', () => {
     it('should verify a proof', async () => {

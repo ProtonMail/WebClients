@@ -1,5 +1,6 @@
 // eslint-disable-next-line import/no-unresolved
 import unsupportedBrowser from '@proton/styles/assets/img/errors/unsupported-browser.svg';
+
 import { getKnowledgeBaseUrl } from '../helpers/url';
 
 const showUnsupported = () => {

@@ -38,5 +38,5 @@ const createRegex = (...regexes) => new RegExp(`${regexes.join('|')}`);
 module.exports = {
     excludeFiles,
     excludeNodeModulesExcept,
-    createRegex
+    createRegex,
 };

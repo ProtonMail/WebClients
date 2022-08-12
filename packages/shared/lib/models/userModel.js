@@ -1,6 +1,6 @@
 import { getUser } from '../api/user';
-import { getInfo } from '../user/helpers';
 import updateObject from '../helpers/updateObject';
+import { getInfo } from '../user/helpers';
 
 export const formatUser = (User) => {
     return {

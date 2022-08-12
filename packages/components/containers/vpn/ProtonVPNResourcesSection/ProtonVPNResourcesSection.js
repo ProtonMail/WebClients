@@ -1,6 +1,8 @@
 import { c } from 'ttag';
+
 import { VPN_APP_NAME } from '@proton/shared/lib/constants';
-import { Row, Label, Field, Href } from '../../../components';
+
+import { Field, Href, Label, Row } from '../../../components';
 
 const ProtonVPNResourcesSection = () => {
     return (
