@@ -1,6 +1,6 @@
-import { srpVerify } from '../srp';
 import { setupKeys } from '../api/keys';
-import { Api, Address } from '../interfaces';
+import { Address, Api } from '../interfaces';
+import { srpVerify } from '../srp';
 import { generateKeySaltAndPassphrase } from './keys';
 import { getResetAddressesKeys } from './resetKeys';
 

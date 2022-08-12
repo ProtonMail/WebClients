@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+
 import { useAuthentication } from '../../hooks';
 
 const useOnLogout = (cb: () => Promise<void>) => {

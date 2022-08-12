@@ -1,5 +1,5 @@
-import { Address } from '../interfaces';
 import { addPlusAlias, canonizeInternalEmail } from '../helpers/email';
+import { Address } from '../interfaces';
 
 /**
  * Get address from email

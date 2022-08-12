@@ -1,8 +1,9 @@
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import noop from '@proton/utils/noop';
-import { deleteVersionCookies } from '../../hooks/useEarlyAccess';
+
 import { setCurrentRetries } from '../../helpers/earlyAccessDesynchronization';
+import { deleteVersionCookies } from '../../hooks/useEarlyAccess';
 
 const API_ERROR_KEY = 'API_ERROR_REFRESH';
 const EARLY_ACCESS_KEY = 'EARLY_ACCESS_RESET';

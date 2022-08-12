@@ -1,4 +1,5 @@
 import { act, renderHook } from '@testing-library/react-hooks';
+
 import { DAY, HOUR, MINUTE, SECOND } from '@proton/shared/lib/constants';
 
 import useDateCountdown from './useDateCountdown';

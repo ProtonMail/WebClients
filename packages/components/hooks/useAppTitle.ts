@@ -1,4 +1,5 @@
 import { useMemo } from 'react';
+
 import { getAppName } from '@proton/shared/lib/apps/helper';
 
 import useConfig from './useConfig';

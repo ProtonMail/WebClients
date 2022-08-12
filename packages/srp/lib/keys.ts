@@ -1,6 +1,7 @@
 import bcrypt from 'bcryptjs';
+
+import { arrayToBinaryString, binaryStringToArray, decodeBase64, encodeBase64 } from '@proton/crypto/lib/utils';
 import getRandomValues from '@proton/get-random-values';
-import { binaryStringToArray, arrayToBinaryString, encodeBase64, decodeBase64 } from '@proton/crypto/lib/utils';
 
 import { BCRYPT_PREFIX } from './constants';
 

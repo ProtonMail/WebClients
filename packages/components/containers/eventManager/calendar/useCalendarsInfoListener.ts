@@ -1,10 +1,12 @@
-import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
-import { CalendarUserSettingsModel } from '@proton/shared/lib/models';
 import { useEffect } from 'react';
-import { STATUS } from '@proton/shared/lib/models/cache';
+
+import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import { CalendarEventManager } from '@proton/shared/lib/interfaces/calendar/EventManager';
-import { updateCalendarsWithMembers as updateCalendarsWithMembers } from '@proton/shared/lib/models/calendarMembers';
+import { CalendarUserSettingsModel } from '@proton/shared/lib/models';
+import { STATUS } from '@proton/shared/lib/models/cache';
 import { updateBootstrapKeysAndSettings, updateBootstrapMembers } from '@proton/shared/lib/models/calendarBootstrap';
+import { updateCalendarsWithMembers } from '@proton/shared/lib/models/calendarMembers';
+
 import { useCache, useEventManager } from '../../../hooks';
 import { KEY as CALENDAR_BOOTSTRAP_CACHE } from '../../../hooks/useGetCalendarBootstrap';
 import { CACHE_KEY as CALENDAR_KEYS_CACHE } from '../../../hooks/useGetDecryptedPassphraseAndCalendarKeys';

@@ -1,5 +1,5 @@
-import uniqueBy from '@proton/utils/uniqueBy';
 import { Referral } from '@proton/shared/lib/interfaces';
+import uniqueBy from '@proton/utils/uniqueBy';
 
 /**
  * Deduplicate referrals from API and optimistic referrals results

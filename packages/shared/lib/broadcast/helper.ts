@@ -1,5 +1,5 @@
-import { GenericErrorPayload } from './interface';
 import { getApiError, getApiErrorMessage } from '../api/helpers/apiErrorHelper';
+import { GenericErrorPayload } from './interface';
 
 export const getGenericErrorPayload = (e: any): GenericErrorPayload => {
     const apiError = getApiError(e);

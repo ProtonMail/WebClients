@@ -1,9 +1,10 @@
 import { useCallback } from 'react';
+
 import { DecryptedKey } from '@proton/shared/lib/interfaces';
 import { Unwrap } from '@proton/shared/lib/interfaces/utils';
 
-import useCachedModelResult, { getPromiseValue } from './useCachedModelResult';
 import useCache from './useCache';
+import useCachedModelResult, { getPromiseValue } from './useCachedModelResult';
 import { useGetUserKeysRaw } from './useGetUserKeysRaw';
 
 export const KEY = 'USER_KEYS';

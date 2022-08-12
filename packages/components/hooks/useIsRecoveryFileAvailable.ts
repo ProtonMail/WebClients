@@ -1,7 +1,8 @@
-import { getHasMigratedAddressKeys, getPrimaryKey } from '@proton/shared/lib/keys';
 import { APPS } from '@proton/shared/lib/constants';
-import useConfig from './useConfig';
+import { getHasMigratedAddressKeys, getPrimaryKey } from '@proton/shared/lib/keys';
+
 import useAddresses from './useAddresses';
+import useConfig from './useConfig';
 import useUser from './useUser';
 import { useUserKeys } from './useUserKeys';
 

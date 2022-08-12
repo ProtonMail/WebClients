@@ -1,6 +1,7 @@
 import { DragEvent } from 'react';
+
 import { useDragOver } from '../../hooks';
-import { DRAG_ITEM_KEY, DRAG_ITEM_ID_KEY } from './constants';
+import { DRAG_ITEM_ID_KEY, DRAG_ITEM_KEY } from './constants';
 
 /**
  * Implement the logic of receiving the drop of items from the item list

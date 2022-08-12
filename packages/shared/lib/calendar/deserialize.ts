@@ -1,5 +1,6 @@
 import { PrivateKeyReference, PublicKeyReference, SessionKey } from '@proton/crypto';
 import unary from '@proton/utils/unary';
+
 import { getIsAddressDisabled } from '../helpers/address';
 import { canonizeInternalEmail } from '../helpers/email';
 import { base64StringToUint8Array } from '../helpers/encoding';
@@ -8,12 +9,12 @@ import {
     CalendarEvent,
     CalendarEventData,
     CalendarPersonalEventData,
-    VcalVeventComponent,
     VcalAttendeeProperty,
     VcalOrganizerProperty,
+    VcalVeventComponent,
 } from '../interfaces/calendar';
-
 import { SimpleMap } from '../interfaces/utils';
+import { toSessionKey } from '../keys/sessionKey';
 import { getAttendeeEmail, toInternalAttendee } from './attendees';
 import { ICAL_ATTENDEE_STATUS } from './constants';
 import {
@@ -25,7 +26,6 @@ import {
 import { unwrap } from './helper';
 import { parse } from './vcal';
 import { getAttendeePartstat, getIsEventComponent } from './vcalHelper';
-import { toSessionKey } from '../keys/sessionKey';
 
 export const readSessionKey = (
     KeyPacket?: Nullable<string>,

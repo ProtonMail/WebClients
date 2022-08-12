@@ -1,4 +1,5 @@
 import unary from '@proton/utils/unary';
+
 import { ADDRESS_STATUS, ADDRESS_TYPE, RECEIVE_ADDRESS, SEND_ADDRESS } from '../constants';
 import { Address, Recipient } from '../interfaces';
 import { ContactEmail } from '../interfaces/contacts';

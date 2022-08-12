@@ -1,4 +1,5 @@
 import { c } from 'ttag';
+
 import { ICAL_ATTENDEE_STATUS, ICAL_METHOD, ICAL_METHODS_ATTENDEE } from '../constants';
 
 export enum EVENT_INVITATION_ERROR_TYPE {

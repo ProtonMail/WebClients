@@ -1,16 +1,18 @@
 import { format } from 'date-fns';
+
 import uniqueBy from '@proton/utils/uniqueBy';
-import { vCardPropertiesToICAL } from '../vcard';
-import downloadFile from '../../helpers/downloadFile';
-import { Contact, ContactCard } from '../../interfaces/contacts/Contact';
-import { Api, DecryptedKey } from '../../interfaces';
-import { API_SAFE_INTERVAL, QUERY_EXPORT_MAX_PAGESIZE } from '../constants';
-import { wait } from '../../helpers/promise';
+
 import { getContact, queryContactExport } from '../../api/contacts';
-import { splitKeys } from '../../keys';
-import { prepareVCardContact } from '../decrypt';
+import downloadFile from '../../helpers/downloadFile';
+import { wait } from '../../helpers/promise';
+import { Api, DecryptedKey } from '../../interfaces';
+import { Contact, ContactCard } from '../../interfaces/contacts/Contact';
 import { VCardContact, VCardProperty } from '../../interfaces/contacts/VCard';
+import { splitKeys } from '../../keys';
+import { API_SAFE_INTERVAL, QUERY_EXPORT_MAX_PAGESIZE } from '../constants';
+import { prepareVCardContact } from '../decrypt';
 import { getVCardProperties } from '../properties';
+import { vCardPropertiesToICAL } from '../vcard';
 
 export const getFileName = (properties: VCardProperty[]) => {
     const name = properties

@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
+
 import 'intersection-observer';
 
 const useActiveSection = (setActiveSection: (section: string) => void) => {

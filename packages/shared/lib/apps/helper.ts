@@ -1,7 +1,8 @@
 import isTruthy from '@proton/utils/isTruthy';
-import { APP_NAMES, APPS, APPS_CONFIGURATION, VPN_HOSTNAME } from '../constants';
-import { stripLeadingAndTrailingSlash } from '../helpers/string';
+
 import { getLocalIDPath, stripLocalBasenameFromPathname } from '../authentication/pathnameHelper';
+import { APPS, APPS_CONFIGURATION, APP_NAMES, VPN_HOSTNAME } from '../constants';
+import { stripLeadingAndTrailingSlash } from '../helpers/string';
 
 interface TargetLocation {
     hostname: string;

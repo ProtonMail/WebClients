@@ -1,4 +1,4 @@
-import { FOLDER_PAGE_SIZE, EXPENSIVE_REQUEST_TIMEOUT } from '../../drive/constants';
+import { EXPENSIVE_REQUEST_TIMEOUT, FOLDER_PAGE_SIZE } from '../../drive/constants';
 import { MoveLink } from '../../interfaces/drive/link';
 import { CreateDriveShare } from '../../interfaces/drive/share';
 

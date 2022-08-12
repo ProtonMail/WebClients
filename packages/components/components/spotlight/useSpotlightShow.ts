@@ -1,4 +1,5 @@
 import { useContext, useEffect } from 'react';
+
 import useInstance from '@proton/hooks/useInstance';
 
 import { generateUID } from '../../helpers';

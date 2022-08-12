@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
-import { NON_OAUTH_PROVIDER, OAUTH_PROVIDER, TIME_PERIOD } from '@proton/shared/lib/interfaces/EasySwitch';
 import { EMAIL_PLACEHOLDER, USERNAME_PLACEHOLDER } from '@proton/shared/lib/constants';
+import { NON_OAUTH_PROVIDER, OAUTH_PROVIDER, TIME_PERIOD } from '@proton/shared/lib/interfaces/EasySwitch';
 
 export const G_OAUTH_REDIRECT_PATH = '/oauth/callback';
 

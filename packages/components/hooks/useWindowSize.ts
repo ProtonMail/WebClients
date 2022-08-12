@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
+
 import debounce from '@proton/utils/debounce';
 
 const getWindowSize = (): [number, number] => {

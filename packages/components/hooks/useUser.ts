@@ -1,9 +1,11 @@
-import { UserModel } from '@proton/shared/lib/models/userModel';
-import { UserModel as tsUserModel } from '@proton/shared/lib/interfaces';
 import { useCallback } from 'react';
-import useCachedModelResult, { getPromiseValue } from './useCachedModelResult';
-import useCache from './useCache';
+
+import { UserModel as tsUserModel } from '@proton/shared/lib/interfaces';
+import { UserModel } from '@proton/shared/lib/models/userModel';
+
 import useApi from './useApi';
+import useCache from './useCache';
+import useCachedModelResult, { getPromiseValue } from './useCachedModelResult';
 
 export const useGetUser = (): (() => Promise<tsUserModel>) => {
     const api = useApi();

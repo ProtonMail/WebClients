@@ -1,4 +1,5 @@
 import { c, msgid } from 'ttag';
+
 import { validateEmailAddress } from './email';
 import { isNumber } from './validators';
 

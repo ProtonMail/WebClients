@@ -1,20 +1,21 @@
-import { getRecoveryMethods, getUser } from '@proton/shared/lib/api/user';
-import { requestLoginResetToken, validateResetToken } from '@proton/shared/lib/api/reset';
-import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
-import { Api, User as tsUser, UserType } from '@proton/shared/lib/interfaces';
-import { generateKeySaltAndPassphrase, getResetAddressesKeys, handleSetupAddressKeys } from '@proton/shared/lib/keys';
-import { srpAuth, srpVerify } from '@proton/shared/lib/srp';
-import { resetKeysRoute } from '@proton/shared/lib/api/keys';
-import { AuthResponse, InfoResponse } from '@proton/shared/lib/authentication/interface';
-import { auth, authMnemonic, getMnemonicAuthInfo } from '@proton/shared/lib/api/auth';
-import { withAuthHeaders } from '@proton/shared/lib/fetch/headers';
-import { persistSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
-import { mnemonicToBase64RandomBytes } from '@proton/shared/lib/mnemonic';
-import { getMnemonicReset, GetMnemonicResetData, mnemonicReset } from '@proton/shared/lib/api/settingsMnemonic';
 import { CryptoProxy } from '@proton/crypto';
-import noop from '@proton/utils/noop';
-import isTruthy from '@proton/utils/isTruthy';
+import { auth, authMnemonic, getMnemonicAuthInfo } from '@proton/shared/lib/api/auth';
+import { resetKeysRoute } from '@proton/shared/lib/api/keys';
+import { requestLoginResetToken, validateResetToken } from '@proton/shared/lib/api/reset';
+import { GetMnemonicResetData, getMnemonicReset, mnemonicReset } from '@proton/shared/lib/api/settingsMnemonic';
+import { getRecoveryMethods, getUser } from '@proton/shared/lib/api/user';
+import { AuthResponse, InfoResponse } from '@proton/shared/lib/authentication/interface';
+import { persistSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
+import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
+import { withAuthHeaders } from '@proton/shared/lib/fetch/headers';
+import { Api, UserType, User as tsUser } from '@proton/shared/lib/interfaces';
+import { generateKeySaltAndPassphrase, getResetAddressesKeys, handleSetupAddressKeys } from '@proton/shared/lib/keys';
+import { mnemonicToBase64RandomBytes } from '@proton/shared/lib/mnemonic';
+import { srpAuth, srpVerify } from '@proton/shared/lib/srp';
 import { computeKeyPassword, generateKeySalt } from '@proton/srp';
+import isTruthy from '@proton/utils/isTruthy';
+import noop from '@proton/utils/noop';
+
 import {
     AccountType,
     RecoveryMethod,

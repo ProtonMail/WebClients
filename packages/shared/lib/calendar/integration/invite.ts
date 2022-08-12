@@ -1,6 +1,8 @@
 import { c } from 'ttag';
+
 import isTruthy from '@proton/utils/isTruthy';
 import unary from '@proton/utils/unary';
+
 import { MIME_TYPES } from '../../constants';
 import { addDays, format as formatUTC } from '../../date-fns-utc';
 import { Options } from '../../date-fns-utc/format';
@@ -29,11 +31,12 @@ import { GetVTimezonesMap } from '../../interfaces/hooks/GetVTimezonesMap';
 import { RequireSome } from '../../interfaces/utils';
 import { getSupportedPlusAlias } from '../../mail/addresses';
 import { MESSAGE_FLAGS } from '../../mail/constants';
-import { formatSubject, RE_PREFIX } from '../../mail/messages';
+import { RE_PREFIX, formatSubject } from '../../mail/messages';
 import { getAttendeeEmail, toIcsPartstat } from '../attendees';
 import { ICAL_ATTENDEE_STATUS, ICAL_METHOD, SETTINGS_NOTIFICATION_TYPE } from '../constants';
 import { getSelfAddressData } from '../deserialize';
 import { getDisplayTitle } from '../helper';
+import { getSupportedStringValue } from '../icsSurgery/vcal';
 import { getIsRruleEqual } from '../rruleEqual';
 import { fromTriggerString, serialize } from '../vcal';
 import { getAllDayInfo, getHasModifiedDateTimes, propertyToUTCDate } from '../vcalConverter';
@@ -46,7 +49,6 @@ import {
     getSequence,
 } from '../vcalHelper';
 import { getIsEventCancelled, withDtstamp, withSummary } from '../veventHelper';
-import { getSupportedStringValue } from '../icsSurgery/vcal';
 
 export const getParticipantHasAddressID = (
     participant: Participant

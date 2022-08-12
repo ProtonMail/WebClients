@@ -1,6 +1,6 @@
+import { APPS, APP_NAMES } from '@proton/shared/lib/constants';
 import { Address, MNEMONIC_STATUS, UserModel } from '@proton/shared/lib/interfaces';
 import { getHasMigratedAddressKeys } from '@proton/shared/lib/keys';
-import { APP_NAMES, APPS } from '@proton/shared/lib/constants';
 
 import { Feature } from '../features';
 

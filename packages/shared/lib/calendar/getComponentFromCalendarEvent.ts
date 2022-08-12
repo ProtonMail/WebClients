@@ -1,5 +1,5 @@
-import { CALENDAR_CARD_TYPE } from './constants';
 import { CalendarEvent, SharedVcalVeventComponent } from '../interfaces/calendar';
+import { CALENDAR_CARD_TYPE } from './constants';
 import { unwrap } from './helper';
 import { parse } from './vcal';
 

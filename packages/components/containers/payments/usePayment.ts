@@ -1,10 +1,11 @@
-import { useState, useEffect, useMemo } from 'react';
+import { useEffect, useMemo, useState } from 'react';
+
 import { PAYMENT_METHOD_TYPE, PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
 
-import usePayPal from './usePayPal';
-import useCard from './useCard';
-import toDetails from './toDetails';
 import { PaymentParameters } from './interface';
+import toDetails from './toDetails';
+import useCard from './useCard';
+import usePayPal from './usePayPal';
 
 const { CARD, BITCOIN, CASH, PAYPAL, PAYPAL_CREDIT } = PAYMENT_METHOD_TYPES;
 

@@ -1,5 +1,6 @@
 import { queryVerificationCode } from '@proton/shared/lib/api/user';
 import { HumanVerificationMethodType } from '@proton/shared/lib/interfaces';
+
 import { VerificationModel } from './interface';
 
 export const getFormattedCode = (verificationModel: VerificationModel, code: string) => {

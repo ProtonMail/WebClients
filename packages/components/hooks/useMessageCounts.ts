@@ -1,9 +1,11 @@
 import { useCallback } from 'react';
-import { MessageCountsModel } from '@proton/shared/lib/models/messageCountsModel';
+
 import { LabelCount } from '@proton/shared/lib/interfaces/Label';
-import useCachedModelResult, { getPromiseValue } from './useCachedModelResult';
+import { MessageCountsModel } from '@proton/shared/lib/models/messageCountsModel';
+
 import useApi from './useApi';
 import useCache from './useCache';
+import useCachedModelResult, { getPromiseValue } from './useCachedModelResult';
 
 export const useGetMessageCounts = (): (() => Promise<LabelCount[]>) => {
     const api = useApi();

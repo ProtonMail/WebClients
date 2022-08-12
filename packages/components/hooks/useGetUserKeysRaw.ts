@@ -1,4 +1,5 @@
 import { useCallback } from 'react';
+
 import { getDecryptedUserKeys, getDecryptedUserKeysHelper } from '@proton/shared/lib/keys';
 
 import useAuthentication from './useAuthentication';

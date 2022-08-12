@@ -1,7 +1,8 @@
-import { generateKeySalt, computeKeyPassword } from '@proton/srp';
 import { CryptoProxy } from '@proton/crypto';
-import { srpGetVerify } from '../srp';
+import { computeKeyPassword, generateKeySalt } from '@proton/srp';
+
 import { Api, DecryptedKey } from '../interfaces';
+import { srpGetVerify } from '../srp';
 import { generateMnemonicBase64RandomBytes, generateMnemonicFromBase64RandomBytes } from './bip39Wrapper';
 
 export interface MnemonicData {

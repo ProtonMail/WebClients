@@ -1,7 +1,8 @@
 import { getResult } from '@proton/shared/lib/environment/helper';
+
 import { FeatureCode } from '../containers/features';
-import useFeature from './useFeature';
 import useEarlyAccess from './useEarlyAccess';
+import useFeature from './useFeature';
 
 const useCalendarSubscribeFeature = () => {
     const { currentEnvironment } = useEarlyAccess();

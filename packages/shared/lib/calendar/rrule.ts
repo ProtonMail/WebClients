@@ -1,7 +1,3 @@
-import { RequireSome } from '../interfaces';
-import { getOccurrences } from './recurring';
-import { propertyToUTCDate } from './vcalConverter';
-import { getIsDateTimeValue, getIsPropertyAllDay, getPropertyTzid } from './vcalHelper';
 import {
     convertUTCDateTimeToZone,
     convertZonedDateTimeToUTC,
@@ -10,6 +6,7 @@ import {
     toUTCDate,
 } from '../date/timezone';
 import { omit, pick } from '../helpers/object';
+import { RequireSome } from '../interfaces';
 import {
     VcalDateOrDateTimeProperty,
     VcalDateOrDateTimeValue,
@@ -27,6 +24,9 @@ import {
     MAXIMUM_DATE,
     MAXIMUM_DATE_UTC,
 } from './constants';
+import { getOccurrences } from './recurring';
+import { propertyToUTCDate } from './vcalConverter';
+import { getIsDateTimeValue, getIsPropertyAllDay, getPropertyTzid } from './vcalHelper';
 
 export const getIsStandardByday = (byday = ''): byday is VcalDaysKeys => {
     return /^(SU|MO|TU|WE|TH|FR|SA)$/.test(byday);

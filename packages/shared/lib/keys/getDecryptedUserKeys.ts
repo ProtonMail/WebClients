@@ -1,9 +1,10 @@
 import { CryptoProxy } from '@proton/crypto';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
-import { DecryptedKey, Key as tsKey, KeyPair, User } from '../interfaces';
-import { decryptMemberToken } from './memberToken';
+
+import { DecryptedKey, KeyPair, User, Key as tsKey } from '../interfaces';
 import { getDecryptedOrganizationKey } from './getDecryptedOrganizationKey';
+import { decryptMemberToken } from './memberToken';
 
 export const getUserKeyPassword = ({ Token }: tsKey, keyPassword: string, organizationKey?: KeyPair) => {
     if (Token && organizationKey) {

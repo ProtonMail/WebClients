@@ -1,4 +1,4 @@
-import { generateAddressKey, GenerateAddressKeyArguments } from './addressKeys';
+import { GenerateAddressKeyArguments, generateAddressKey } from './addressKeys';
 
 export const USER_KEY_USERID = 'not_for_email_use@domain.tld';
 

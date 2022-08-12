@@ -1,4 +1,5 @@
 import { Snapshots, UndoSnapshotsService } from 'roosterjs-editor-types';
+
 import { ROOSTER_SNAPSHOTS_MAX_SIZE } from '../../constants';
 
 interface Functions {

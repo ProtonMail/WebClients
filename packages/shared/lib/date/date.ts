@@ -1,15 +1,16 @@
 import {
-    eachDayOfInterval,
-    startOfWeek,
-    endOfWeek,
-    startOfYear,
-    format,
     addMonths,
-    sub,
-    isAfter,
-    getDaysInMonth,
     differenceInMilliseconds,
+    eachDayOfInterval,
+    endOfWeek,
+    format,
+    getDaysInMonth,
+    isAfter,
+    startOfWeek,
+    startOfYear,
+    sub,
 } from 'date-fns';
+
 import { DAY } from '../constants';
 
 interface FormatOptions {

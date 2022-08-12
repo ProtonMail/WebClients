@@ -1,7 +1,8 @@
 import { PrivateKeyReference } from '@proton/crypto';
-import { createMemberAddressKeysLegacy, createMemberAddressKeysV2, getDecryptedMemberKey } from './memberKeys';
-import { Api, Address, Member, EncryptionConfig } from '../interfaces';
+
+import { Address, Api, EncryptionConfig, Member } from '../interfaces';
 import { getHasMemberMigratedAddressKeys } from './keyMigration';
+import { createMemberAddressKeysLegacy, createMemberAddressKeysV2, getDecryptedMemberKey } from './memberKeys';
 
 type OnUpdateCallback = (ID: string, update: { status: 'loading' | 'error' | 'ok'; result?: string }) => void;
 

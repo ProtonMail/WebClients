@@ -1,5 +1,5 @@
 import { PublicKeyReference } from '@proton/crypto';
-import { Address } from './Address';
+
 import {
     CONTACT_MIME_TYPES,
     CONTACT_PGP_SCHEMES,
@@ -8,6 +8,7 @@ import {
     PGP_SCHEMES,
     RECIPIENT_TYPES,
 } from '../constants';
+import { Address } from './Address';
 import { MailSettings } from './MailSettings';
 import { SignedKeyListEpochs } from './SignedKeyList';
 

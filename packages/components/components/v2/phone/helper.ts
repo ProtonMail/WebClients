@@ -1,3 +1,5 @@
+import examples from 'libphonenumber-js/examples.mobile.json';
+import metadata from 'libphonenumber-js/metadata.min.json';
 import parsePhoneNumberFromString, {
     AsYouType,
     CountryCode,
@@ -5,11 +7,11 @@ import parsePhoneNumberFromString, {
     getCountryCallingCode,
     getExampleNumber,
 } from 'libphonenumber-js/min';
-import metadata from 'libphonenumber-js/metadata.min.json';
-import examples from 'libphonenumber-js/examples.mobile.json';
+
 import isTruthy from '@proton/utils/isTruthy';
-import { getFlagSvg } from './flagSvgs';
+
 import { callingCodeToLeading, getCountryMap } from './data';
+import { getFlagSvg } from './flagSvgs';
 
 export const getTrimmedString = (string: string) => {
     // Handle (123) -> (123

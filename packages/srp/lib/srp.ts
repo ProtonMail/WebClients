@@ -1,19 +1,20 @@
 import { BigNumber, Modulus } from 'asmcrypto.js/dist_es8/bignum/bignum';
+
 import {
-    concatArrays,
     arrayToBinaryString,
     binaryStringToArray,
+    concatArrays,
     decodeBase64,
     encodeBase64,
 } from '@proton/crypto/lib/utils';
 import getRandomValues from '@proton/get-random-values';
 
+import { AUTH_VERSION, MAX_VALUE_ITERATIONS, SRP_LEN } from './constants';
+import { AuthCredentials, AuthInfo } from './interface';
 import { expandHash, hashPassword } from './passwords';
 import { fromBN, toBN } from './utils/bigNumber';
-import { checkUsername } from './utils/username';
 import { verifyAndGetModulus } from './utils/modulus';
-import { AUTH_VERSION, SRP_LEN, MAX_VALUE_ITERATIONS } from './constants';
-import { AuthCredentials, AuthInfo } from './interface';
+import { checkUsername } from './utils/username';
 
 const ZERO_BN = BigNumber.fromNumber(0);
 const ONE_BN = BigNumber.fromNumber(1);

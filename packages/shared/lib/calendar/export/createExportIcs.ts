@@ -1,7 +1,7 @@
 import { RequireSome } from '../../interfaces';
 import { Calendar, VcalVcalendar, VcalVeventComponent, VcalVtimezoneComponent } from '../../interfaces/calendar';
-import { serialize } from '../vcal';
 import { ICAL_METHOD } from '../constants';
+import { serialize } from '../vcal';
 
 interface CreateExportIcsParams {
     prodId: string;

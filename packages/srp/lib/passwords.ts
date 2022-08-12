@@ -1,5 +1,6 @@
 import bcrypt from 'bcryptjs';
 
+import { CryptoProxy } from '@proton/crypto';
 import {
     arrayToBinaryString,
     arrayToHexString,
@@ -8,9 +9,9 @@ import {
     encodeBase64,
     encodeUtf8,
 } from '@proton/crypto/lib/utils';
-import { CryptoProxy } from '@proton/crypto';
-import { cleanUsername } from './utils/username';
+
 import { BCRYPT_PREFIX } from './constants';
+import { cleanUsername } from './utils/username';
 
 /**
  * Expand a hash

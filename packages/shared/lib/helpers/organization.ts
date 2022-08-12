@@ -1,6 +1,6 @@
 import { ORGANIZATION_FLAGS } from '../constants';
-import { hasBit } from './bitset';
 import { Organization } from '../interfaces';
+import { hasBit } from './bitset';
 
 export const isLoyal = (organization: Partial<Organization> = {}) => {
     return hasBit(organization.Flags, ORGANIZATION_FLAGS.LOYAL);

@@ -1,6 +1,8 @@
 import { c } from 'ttag';
+
+import { CryptoProxy, PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
 import isTruthy from '@proton/utils/isTruthy';
-import { PrivateKeyReference, PublicKeyReference, CryptoProxy } from '@proton/crypto';
+
 import { CONTACT_CARD_TYPE } from '../constants';
 import { CANONIZE_SCHEME, canonizeEmail } from '../helpers/email';
 import { generateProtonWebUID } from '../helpers/uid';

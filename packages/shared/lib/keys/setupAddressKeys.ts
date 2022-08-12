@@ -1,6 +1,6 @@
 import { getAllAddresses, setupAddress as setupAddressRoute } from '../api/addresses';
 import { queryAvailableDomains } from '../api/domains';
-import { Address as tsAddress, Api } from '../interfaces';
+import { Api, Address as tsAddress } from '../interfaces';
 import { handleSetupKeys } from './setupKeys';
 
 interface SetupAddressArgs {

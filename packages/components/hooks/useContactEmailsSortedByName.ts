@@ -1,4 +1,5 @@
 import { useMemo } from 'react';
+
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact';
 
 import useContactEmails from './useContactEmails';
