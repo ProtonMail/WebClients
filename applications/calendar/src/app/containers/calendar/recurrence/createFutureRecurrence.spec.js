@@ -1,4 +1,5 @@
 import { MAX_LENGTHS_API } from '@proton/shared/lib/calendar/constants';
+
 import { getFutureRecurrenceUID } from './createFutureRecurrence';
 
 describe('create future recurrence', () => {
