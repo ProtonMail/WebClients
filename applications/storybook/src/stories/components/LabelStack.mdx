@@ -1,4 +1,4 @@
-import { Canvas, Story, ArgsTable } from '@storybook/addon-docs';
+import { Canvas, Story, ArgsTable, Primary } from '@storybook/addon-docs';
 
 import { LabelStack, Label } from '@proton/components'
 
@@ -43,5 +43,9 @@ The `LabelStack` component allows you to add a label list with embeded look and 
 <Canvas>
     <Story id="components-labelstack--dropdown" />
 </Canvas>
+
+<div class="hidden">
+    <Primary />
+</div>
 
 <ArgsTable of={LabelStack} />
