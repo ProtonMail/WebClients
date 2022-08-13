@@ -1,4 +1,5 @@
-import { Canvas, Story, ArgsTable, Primary, PRIMARY_STORY } from "@storybook/addon-docs";
+import { ArgsTable, Canvas, PRIMARY_STORY, Primary, Story } from '@storybook/addon-docs';
+
 import { Alert, InlineLinkButton } from '@proton/components';
 
 # Button
@@ -14,13 +15,18 @@ The button is an essential element of any design. It's meant to look and behave 
 ## Variants
 
 <Alert type="info" className="my1-5">
-    The button with <code>underline</code> shape comes with default paddings to ensure alignment when used in a same row as another button or input field. It is not meant to be used inside a text content. If you need a button with a real link shape <InlineLinkButton onClick={() => alert('See? This is a real button.')}>such as this one</InlineLinkButton>, use the <code>InlineLinkButton</code> component instead.<br/><a href="?path=/docs/components-inlinelinkbutton--basic">Check out the InlineLinkButton component</a>
+    The button with <code>underline</code> shape comes with default paddings to ensure alignment when used in a same row
+    as another button or input field. It is not meant to be used inside a text content. If you need a button with a real
+    link shape{' '}
+    <InlineLinkButton onClick={() => alert('See? This is a real button.')}>such as this one</InlineLinkButton>, use the{' '}
+    <code>InlineLinkButton</code> component instead.
+    <br />
+    <a href="?path=/docs/components-inlinelinkbutton--basic">Check out the InlineLinkButton component</a>
 </Alert>
 
 <Story id="components-button--sandbox" />
 
 <Story id="components-button--variants" />
-
 
 ## Polymorphic Buttons
 

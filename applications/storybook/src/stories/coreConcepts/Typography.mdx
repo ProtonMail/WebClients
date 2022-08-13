@@ -1,11 +1,10 @@
-import { Canvas, Story, Primary } from '@storybook/addon-docs';
+import { Canvas, Primary, Story } from '@storybook/addon-docs';
 
 # Typography
 
 ## Normal text
 
-Proton apps suite uses **Inter** as the default typeface in all current themes.
-Inter is available in three font weights:
+Proton apps suite uses **Inter** as the default typeface in all current themes. Inter is available in three font weights:
 
 <Story id="core-concepts-typography--font" />
 
@@ -34,7 +33,11 @@ For any source code, Proton apps suite uses a monospaced system font stack.
 <Story id="core-concepts-typography--monospace" />
 
 ```css
-.text-monospace, pre, code, kbd, samp {
+.text-monospace,
+pre,
+code,
+kbd,
+samp {
     font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
 }
 ```
