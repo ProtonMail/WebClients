@@ -1,11 +1,7 @@
 import { Meta, Source } from '@storybook/addon-docs';
-import {
-    Table,
-    TableHeader,
-    TableRow,
-    TableCell,
-    TableBody,
-} from '@proton/components';
+
+import { Table, TableBody, TableCell, TableHeader, TableRow } from '@proton/components';
+
 import { getTitle } from '../../helpers/title';
 
 <Meta title={getTitle(__filename)} />
@@ -19,9 +15,7 @@ Utilities for controlling the box shadow of an element.
 <Table className="color-norm">
     <TableHeader>
         <TableRow>
-            <TableCell type="header">
-                Class
-            </TableCell>
+            <TableCell type="header">Class</TableCell>
             <TableCell type="header" className="w50">
                 Explanation
             </TableCell>
@@ -47,7 +41,8 @@ Utilities for controlling the box shadow of an element.
                 <code>shadow-lifted</code>
             </TableCell>
             <TableCell>
-                Applies a <code>--shadow-lifted</code> shadow on an element.<br/>
+                Applies a <code>--shadow-lifted</code> shadow on an element.
+                <br />
                 Should only be applied on lifted and out of flow elements, such as modals or tooltips.
             </TableCell>
             <TableCell className="text-right">
@@ -62,7 +57,7 @@ Utilities for controlling the box shadow of an element.
 Applies the common box shadow on this element.
 
 <Source
-    language='html'
+    language="html"
     format
     code={`
 <div className="shadow-norm">Lorem ipsum dolor sit amet</div>

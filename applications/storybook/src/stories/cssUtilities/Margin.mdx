@@ -1,4 +1,4 @@
-import { Canvas, Source, Story, Primary } from '@storybook/addon-docs';
+import { Canvas, Primary, Source, Story } from '@storybook/addon-docs';
 
 # Margin
 
@@ -13,7 +13,7 @@ Add equal margin to all sides of an element
 Add a margin to the top or bottom of an element or use a `my` class to add the same vertical margin with one class
 
 <Story id="css-utilities-margin--margin-top" />
-<br/>
+<br />
 <Story id="css-utilities-margin--margin-bottom" />
 <br />
 <Story id="css-utilities-margin--margin-y" />
@@ -29,18 +29,32 @@ Add a margin to the left or right of an element or use a `mx` class to add the s
 </div>
 
 ## Margin auto
+
 <ul>
-    <li><code>.mtauto</code> = <code>margin-top: auto</code>.</li>
-    <li><code>.mrauto</code> = <code>margin-right: auto</code>.</li>
-    <li><code>.mbauto</code> = <code>margin-bottom: auto</code>.</li>
-    <li><code>.mlauto</code> = <code>margin-left: auto</code>.</li>
-    <li><code>.mauto</code> = <code>margin: auto</code>.</li>
-    <li><code>.center</code> = <code>.mlauto</code> + <code>.mrauto</code></li>
+    <li>
+        <code>.mtauto</code> = <code>margin-top: auto</code>.
+    </li>
+    <li>
+        <code>.mrauto</code> = <code>margin-right: auto</code>.
+    </li>
+    <li>
+        <code>.mbauto</code> = <code>margin-bottom: auto</code>.
+    </li>
+    <li>
+        <code>.mlauto</code> = <code>margin-left: auto</code>.
+    </li>
+    <li>
+        <code>.mauto</code> = <code>margin: auto</code>.
+    </li>
+    <li>
+        <code>.center</code> = <code>.mlauto</code> + <code>.mrauto</code>
+    </li>
 </ul>
 
 Use these classes to position elements [with flexbox](?path=/docs/css-utilities-flexbox--page).
 
 ## Sandbox
+
 <Canvas>
     <Story id="css-utilities-margin--sandbox" />
 </Canvas>
