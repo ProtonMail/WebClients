@@ -1,11 +1,7 @@
 import { Meta, Source } from '@storybook/addon-docs';
-import {
-    Table,
-    TableHeader,
-    TableRow,
-    TableCell,
-    TableBody,
-} from '@proton/components';
+
+import { Table, TableBody, TableCell, TableHeader, TableRow } from '@proton/components';
+
 import { getTitle } from '../../helpers/title';
 
 <Meta title={getTitle(__filename)} />
@@ -19,9 +15,7 @@ Utilities for controlling the border radius of an element.
 <Table className="color-norm">
     <TableHeader>
         <TableRow>
-            <TableCell type="header">
-                Class
-            </TableCell>
+            <TableCell type="header">Class</TableCell>
             <TableCell type="header" className="w50">
                 Explanation
             </TableCell>
@@ -101,9 +95,7 @@ Utilities for controlling the border radius of an element.
             <TableCell>
                 <code>rounded-none</code>
             </TableCell>
-            <TableCell>
-                Cancel border radiuses at all corners of an element.
-            </TableCell>
+            <TableCell>Cancel border radiuses at all corners of an element.</TableCell>
             <TableCell className="text-right">
                 <span className="inline-block rounded-none border border-currentColor w3e">&nbsp;</span>
             </TableCell>
@@ -116,7 +108,7 @@ Utilities for controlling the border radius of an element.
 Applies the common border radius on this element.
 
 <Source
-    language='html'
+    language="html"
     format
     code={`
 <div className="rounded">Lorem ipsum dolor sit amet</div>

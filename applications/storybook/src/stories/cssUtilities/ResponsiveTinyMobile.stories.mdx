@@ -1,4 +1,5 @@
 import { Meta, Source } from '@storybook/addon-docs';
+
 import { getTitle } from '../../helpers/title';
 
 <Meta title={getTitle(__filename)} />
@@ -8,42 +9,45 @@ import { getTitle } from '../../helpers/title';
 ## Hiding something on mobile and lower
 
 <div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
-  <div class="w49 flex-align-self-center">
-	Applies <code>display: none</code> to the element for tinymobile breakpoint.
-  </div>
-  <div class="w49">
-<Source
-  language='html'
-  light
-  format
-  code={`
+    <div class="w49 flex-align-self-center">
+        Applies <code>display: none</code> to the element for tinymobile breakpoint.
+    </div>
+    <div class="w49">
+        <Source
+            language="html"
+            light
+            format
+            code={`
 <span className="no-tiny-mobile">…</span>
 `}
-/>
-  </div>
+        />
+    </div>
 </div>
 
 ## Linearizing content on tinymobile
 
 <div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
-  <div class="w49 flex-align-self-center">
-	Applies <code>float: none; display: block; width: auto;</code> to the element for tinymobile breakpoint.
-  </div>
-  <div class="w49">
-<Source
-  language='html'
-  light
-  format
-  code={`
+    <div class="w49 flex-align-self-center">
+        Applies <code>float: none; display: block; width: auto;</code> to the element for tinymobile breakpoint.
+    </div>
+    <div class="w49">
+        <Source
+            language="html"
+            light
+            format
+            code={`
 <span className="auto-tiny-mobile">…</span>
 `}
-/>
-  </div>
+        />
+    </div>
 </div>
 
 <br />
 
-<strong>Flexbox version:</strong> resize the window, by default, elements take all the width on mobile thanks to <code>on-tiny-mobile-flex-column</code>.
+<strong>Flexbox version:</strong> resize the window, by default, elements take all the width on mobile thanks to <code>
+    on-tiny-mobile-flex-column
+</code>
+.
 
 <div class="flex flex-justify-space-between mb2 on-tiny-mobile-flex-column">
   <div class="w49 flex-align-self-center">
@@ -72,26 +76,25 @@ import { getTitle } from '../../helpers/title';
 
 Other flexbox helpers for tinymobile:
 
-- <code>on-tiny-mobile-flex-align-self-start</code> applies <code>align-self: start</code> to the element for mobile and smaller breakpoints.
-
-
+-   <code>on-tiny-mobile-flex-align-self-start</code> applies <code>align-self: start</code> to the element for mobile and
+    smaller breakpoints.
 
 ## Margin/padding helpers
 
 Please check before how <a href="?path=/docs/front-end-helpers-margin-padding--page">margin/padding helpers</a> work.
 
-- <code>.on-tiny-mobile-m</code> = <code>margin</code>
-- <code>t/r/b/l</code> = <code>top/right/bottom/left</code>
-- <code>0/1</code> = 0/1em
+-   <code>.on-tiny-mobile-m</code> = <code>margin</code>
+-   <code>t/r/b/l</code> = <code>top/right/bottom/left</code>
+-   <code>0/1</code> = 0/1em
 
 Examples:
 
 <div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
-  <div class="w49 on-mobile-mb1 border">
-    <div class="on-tiny-mobile-pl1 on-tiny-mobile-pr1 on-tiny-mobile-m1 bg-primary">
-      <code>.on-tiny-mobile-m1</code>  = <code>margin: 1em</code> <span class="color-white">on tinymobile</span>.
+    <div class="w49 on-mobile-mb1 border">
+        <div class="on-tiny-mobile-pl1 on-tiny-mobile-pr1 on-tiny-mobile-m1 bg-primary">
+            <code>.on-tiny-mobile-m1</code> = <code>margin: 1em</code> <span class="color-white">on tinymobile</span>.
+        </div>
     </div>
-  </div>
 </div>
 
 ## Table helpers

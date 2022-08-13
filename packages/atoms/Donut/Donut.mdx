@@ -1,4 +1,4 @@
-import { Canvas, Story, ArgsTable, Primary, PRIMARY_STORY } from '@storybook/addon-docs'
+import { ArgsTable, Canvas, PRIMARY_STORY, Primary, Story } from '@storybook/addon-docs';
 
 # Donut
 
@@ -8,9 +8,7 @@ import { Canvas, Story, ArgsTable, Primary, PRIMARY_STORY } from '@storybook/add
 
 ## With slider
 
-This isn't really part of the api, it's just used to demonstrate that the Donut is able to
-adapt in real time to react state changes (through the `segments` property), as well as automatically
-scale past 100 percent, should the percentages of all segments add up to more than 100.
+This isn't really part of the api, it's just used to demonstrate that the Donut is able to adapt in real time to react state changes (through the `segments` property), as well as automatically scale past 100 percent, should the percentages of all segments add up to more than 100.
 
 <Canvas>
     <Story id="components-donut--with-slider" />
@@ -18,8 +16,7 @@ scale past 100 percent, should the percentages of all segments add up to more th
 
 ## Accessibility
 
-Since the Donut itself is only visual to represent % share of allocation, one way to make this data
-accessible is to add screen-reader text inside assistive texts used to label the individual Donut segments.
+Since the Donut itself is only visual to represent % share of allocation, one way to make this data accessible is to add screen-reader text inside assistive texts used to label the individual Donut segments.
 
 <Canvas>
     <Story id="components-donut--accessibility" />
