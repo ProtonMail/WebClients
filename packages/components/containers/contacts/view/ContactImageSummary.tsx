@@ -1,11 +1,13 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
+
 import { c } from 'ttag';
-import { getInitials } from '@proton/shared/lib/helpers/string';
-import { resizeImage, toImage } from '@proton/shared/lib/helpers/image';
-import { isBase64Image } from '@proton/shared/lib/helpers/validators';
-import noop from '@proton/utils/noop';
+
 import { SHOW_IMAGES } from '@proton/shared/lib/constants';
 import { CONTACT_IMG_SIZE } from '@proton/shared/lib/contacts/constants';
+import { resizeImage, toImage } from '@proton/shared/lib/helpers/image';
+import { getInitials } from '@proton/shared/lib/helpers/string';
+import { isBase64Image } from '@proton/shared/lib/helpers/validators';
+import noop from '@proton/utils/noop';
 
 import { Icon, Loader } from '../../../components';
 import { useLoading, useMailSettings } from '../../../hooks';

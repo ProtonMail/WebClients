@@ -1,10 +1,13 @@
 import { c } from 'ttag';
+
+import { setNewRecoverySecret } from '@proton/shared/lib/api/settingsRecovery';
 import {
     exportRecoveryFile,
     generateRecoverySecret,
     validateRecoverySecret,
 } from '@proton/shared/lib/recoveryFile/recoveryFile';
-import { setNewRecoverySecret } from '@proton/shared/lib/api/settingsRecovery';
+
+import Button, { ButtonProps } from '../../components/button/Button';
 import {
     useApi,
     useEventManager,
@@ -13,7 +16,6 @@ import {
     usePrimaryRecoverySecret,
     useUserKeys,
 } from '../../hooks';
-import Button, { ButtonProps } from '../../components/button/Button';
 
 interface Props extends Omit<ButtonProps, 'onClick'> {}
 

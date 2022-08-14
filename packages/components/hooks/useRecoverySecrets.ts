@@ -1,5 +1,6 @@
-import isTruthy from '@proton/utils/isTruthy';
 import { KeyWithRecoverySecret } from '@proton/shared/lib/interfaces';
+import isTruthy from '@proton/utils/isTruthy';
+
 import { useUser } from './useUser';
 
 const useRecoverySecrets = (): KeyWithRecoverySecret[] => {

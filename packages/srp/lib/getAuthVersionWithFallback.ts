@@ -1,6 +1,6 @@
-import { cleanUsername } from './utils/username';
 import { AUTH_FALLBACK_VERSION } from './constants';
 import { AuthVersion } from './interface';
+import { cleanUsername } from './utils/username';
 
 /**
  * Get the next auth version to use and if it's the last attempt.

@@ -1,8 +1,10 @@
 import { useMemo } from 'react';
-import { Contact, ContactEmail, ContactFormatted } from '@proton/shared/lib/interfaces/contacts';
-import { normalize } from '@proton/shared/lib/helpers/string';
+
 import { toMap } from '@proton/shared/lib/helpers/object';
+import { normalize } from '@proton/shared/lib/helpers/string';
+import { Contact, ContactEmail, ContactFormatted } from '@proton/shared/lib/interfaces/contacts';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
+
 import { useContactEmails, useContactGroups, useContacts } from '../../../hooks';
 import { useItemsSelection } from '../../items';
 

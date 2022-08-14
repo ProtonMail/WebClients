@@ -1,9 +1,10 @@
-import { extractTotals } from '@proton/shared/lib/calendar/import/import';
 import { c, msgid } from 'ttag';
+
+import { extractTotals } from '@proton/shared/lib/calendar/import/import';
 import { ImportCalendarModel } from '@proton/shared/lib/interfaces/calendar';
 
-import ErrorDetails from './ErrorDetails';
 import { Alert, DynamicProgress } from '../../../components';
+import ErrorDetails from './ErrorDetails';
 
 interface Props {
     model: ImportCalendarModel;

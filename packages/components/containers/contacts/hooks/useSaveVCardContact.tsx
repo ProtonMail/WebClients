@@ -1,11 +1,14 @@
 import { useCallback } from 'react';
+
 import { c } from 'ttag';
-import { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';
-import { prepareVCardContacts } from '@proton/shared/lib/contacts/encrypt';
-import { CATEGORIES, OVERWRITE } from '@proton/shared/lib/contacts/constants';
-import { API_CODES } from '@proton/shared/lib/constants';
+
 import { addContacts } from '@proton/shared/lib/api/contacts';
+import { API_CODES } from '@proton/shared/lib/constants';
+import { CATEGORIES, OVERWRITE } from '@proton/shared/lib/contacts/constants';
+import { prepareVCardContacts } from '@proton/shared/lib/contacts/encrypt';
 import { AddContactsApiResponses } from '@proton/shared/lib/interfaces/contacts/ContactApi';
+import { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';
+
 import { useApi, useNotifications, useUserKeys } from '../../../hooks';
 
 const { OVERWRITE_CONTACT, THROW_ERROR_IF_CONFLICT } = OVERWRITE;

@@ -1,7 +1,9 @@
-import getRandomValues from '@proton/get-random-values';
 import { c } from 'ttag';
+
 import { CryptoProxy } from '@proton/crypto';
 import { arrayToHexString, binaryStringToArray } from '@proton/crypto/lib/utils';
+import getRandomValues from '@proton/get-random-values';
+
 import { API_CODES } from '../constants';
 import { getDaysInMonth } from '../date-fns-utc';
 import { encodeBase64URL, uint8ArrayToString } from '../helpers/encoding';
@@ -11,7 +13,7 @@ import {
     VcalDateOrDateTimeProperty,
     VcalDateTimeProperty,
 } from '../interfaces/calendar';
-import { ACTION_VIEWS, MAX_LENGTHS_API, MAXIMUM_DATE_UTC, MINIMUM_DATE_UTC } from './constants';
+import { ACTION_VIEWS, MAXIMUM_DATE_UTC, MAX_LENGTHS_API, MINIMUM_DATE_UTC } from './constants';
 import { propertyToUTCDate } from './vcalConverter';
 import { getIsPropertyAllDay } from './vcalHelper';
 

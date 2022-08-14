@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
-import { queryVPNLogicalServerInfo } from '@proton/shared/lib/api/vpn';
 
+import { queryVPNLogicalServerInfo } from '@proton/shared/lib/api/vpn';
 import { PLANS } from '@proton/shared/lib/constants';
 import { VPNServers } from '@proton/shared/lib/interfaces';
+
 import useApi from './useApi';
 import useLoading from './useLoading';
 

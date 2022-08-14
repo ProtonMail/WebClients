@@ -1,7 +1,9 @@
-import { c } from 'ttag';
 import PropTypes from 'prop-types';
+import { c } from 'ttag';
+
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { Alert, Label, Table, TableHeader, TableBody, TableRow, Copy } from '../../components';
+
+import { Alert, Copy, Label, Table, TableBody, TableHeader, TableRow } from '../../components';
 import { useNotifications } from '../../hooks';
 
 const VerifySection = ({ domain }) => {

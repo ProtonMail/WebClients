@@ -1,16 +1,17 @@
 import { useRef, useState } from 'react';
-import { c } from 'ttag';
 import { Link } from 'react-router-dom';
+
+import { c } from 'ttag';
+
 import { APPS, MAIL_APP_NAME } from '@proton/shared/lib/constants';
-import { confirmPasswordValidator, passwordLengthValidator } from '@proton/shared/lib/helpers/formValidators';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
+import { confirmPasswordValidator, passwordLengthValidator } from '@proton/shared/lib/helpers/formValidators';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
-import { Alert, Href, Label, PasswordInput, ConfirmModal, PrimaryButton, Input } from '../../components';
-import { GenericError } from '../error';
-
+import { Alert, ConfirmModal, Href, Input, Label, PasswordInput, PrimaryButton } from '../../components';
 import { useApi, useConfig, useErrorHandler, useLoading, useModals, useNotifications } from '../../hooks';
 import { OnLoginCallback } from '../app';
+import { GenericError } from '../error';
 import { ResetActionResponse, ResetCacheResult, STEPS } from './interface';
 import { handleNewPassword, handleRequestToken, handleValidateResetToken } from './resetActions';
 

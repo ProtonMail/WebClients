@@ -1,3 +1,7 @@
+import { MutableRefObject, useCallback, useEffect, useMemo, useReducer, useRef, useState } from 'react';
+import { useHistory, useLocation } from 'react-router-dom';
+
+import { useAppTitle, useCalendarBootstrap } from '@proton/components';
 import { MAXIMUM_DATE_UTC, MINIMUM_DATE_UTC, VIEWS } from '@proton/shared/lib/calendar/constants';
 import {
     getAutoDetectPrimaryTimezone,
@@ -8,7 +12,9 @@ import {
     getInviteLocale,
     getSecondaryTimezone,
 } from '@proton/shared/lib/calendar/getSettings';
-import { isSameDay, MILLISECONDS_IN_MINUTE } from '@proton/shared/lib/date-fns-utc';
+import { getIsPersonalCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
+import { SECOND } from '@proton/shared/lib/constants';
+import { MILLISECONDS_IN_MINUTE, isSameDay } from '@proton/shared/lib/date-fns-utc';
 import {
     convertUTCDateTimeToZone,
     convertZonedDateTimeToUTC,
@@ -21,30 +27,26 @@ import {
 import { Address, User, UserSettings } from '@proton/shared/lib/interfaces';
 import { AttendeeModel, CalendarUserSettings, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import { getWeekStartsOn } from '@proton/shared/lib/settings/helper';
-import { MutableRefObject, useCallback, useEffect, useMemo, useReducer, useRef, useState } from 'react';
-import { useAppTitle, useCalendarBootstrap } from '@proton/components';
-import { useHistory, useLocation } from 'react-router-dom';
 import unary from '@proton/utils/unary';
-import { getIsPersonalCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
-import { SECOND } from '@proton/shared/lib/constants';
+
 import { getNoonDateForTimeZoneOffset } from '../../helpers/date';
 import {
     canAskTimezoneSuggestion,
     getTimezoneSuggestionKey,
     saveLastTimezoneSuggestion,
 } from '../../helpers/timezoneSuggestion';
+import { OpenedMailEvent } from '../../hooks/useGetOpenedMailEvents';
 import AskUpdateTimezoneModal from '../settings/AskUpdateTimezoneModal';
 import CalendarContainerView from './CalendarContainerView';
 import ContactEmailsProvider from './ContactEmailsProvider';
+import InteractiveCalendarView from './InteractiveCalendarView';
+import { SUPPORTED_VIEWS_IN_APP, SUPPORTED_VIEWS_IN_SIDE_APP } from './constants';
 import { CalendarsEventsCache } from './eventStore/interface';
 import useCalendarsEvents from './eventStore/useCalendarsEvents';
 import getDateRange from './getDateRange';
 import getTitleDateString from './getTitleDateString';
 import { fromUrlParams, toUrlParams } from './getUrlHelper';
-import InteractiveCalendarView from './InteractiveCalendarView';
 import { EventTargetAction, InteractiveRef, TimeGridRef } from './interface';
-import { OpenedMailEvent } from '../../hooks/useGetOpenedMailEvents';
-import { SUPPORTED_VIEWS_IN_APP, SUPPORTED_VIEWS_IN_SIDE_APP } from './constants';
 
 const { DAY, WEEK, MONTH } = VIEWS;
 

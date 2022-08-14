@@ -1,7 +1,7 @@
 import getRandomValues from '@proton/get-random-values';
 
-import { removeItem, setItem } from './storage';
 import { uint8ArrayToBase64String } from './encoding';
+import { removeItem, setItem } from './storage';
 
 export const PASSWORD_CHANGE_MESSAGE_TYPE = 'password-change';
 

@@ -1,16 +1,17 @@
 import unique from '@proton/utils/unique';
+
 import { normalize } from '../../helpers/string';
 import { FormattedContact } from '../../interfaces/contacts/FormattedContact';
-import { ONE_OR_MORE_MUST_BE_PRESENT, ONE_OR_MORE_MAY_BE_PRESENT, PROPERTIES, isCustomField } from '../vcard';
+import { VCardContact, VCardProperty } from '../../interfaces/contacts/VCard';
 import {
-    hasPref,
+    fromVCardProperties,
     generateNewGroupName,
     getStringContactValue,
     getVCardProperties,
-    fromVCardProperties,
+    hasPref,
 } from '../properties';
-import { VCardContact, VCardProperty } from '../../interfaces/contacts/VCard';
 import { prepareForSaving } from '../surgery';
+import { ONE_OR_MORE_MAY_BE_PRESENT, ONE_OR_MORE_MUST_BE_PRESENT, PROPERTIES, isCustomField } from '../vcard';
 
 const getPref = (params: { [key: string]: string | undefined } | undefined) => {
     const numValue = Number(params?.pref || '');

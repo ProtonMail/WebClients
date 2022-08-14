@@ -1,6 +1,7 @@
 import { c } from 'ttag';
-import Icon from '../../components/icon/Icon';
+
 import { Button } from '../../components';
+import Icon from '../../components/icon/Icon';
 
 interface Props {
     scale: number;

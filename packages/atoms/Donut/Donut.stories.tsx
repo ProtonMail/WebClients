@@ -1,6 +1,6 @@
 import { ChangeEvent, useState } from 'react';
 
-import { getVariableFromThemeColor, ThemeColor } from '@proton/colors';
+import { ThemeColor, getVariableFromThemeColor } from '@proton/colors';
 
 import Donut from './Donut';
 import mdx from './Donut.mdx';

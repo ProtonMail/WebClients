@@ -1,5 +1,6 @@
-import { c } from 'ttag';
 import { Direction } from 'roosterjs-editor-types';
+import { c } from 'ttag';
+
 import { EditorMetadata } from './interface';
 
 /**

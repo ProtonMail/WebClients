@@ -1,7 +1,9 @@
-import { c } from 'ttag';
 import valid from 'card-validator';
 import creditCardType from 'credit-card-type';
+import { c } from 'ttag';
+
 import { isEmpty } from '@proton/shared/lib/helpers/validators';
+
 import { CardModel } from './interface';
 
 export const isCardNumber = (value: string) => valid.number(value).isValid;

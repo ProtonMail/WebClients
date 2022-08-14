@@ -1,6 +1,6 @@
 import loginWithFallback from '../../lib/authentication/loginWithFallback';
-import { Modulus, ServerEphemeral, Salt, ServerProof } from './login.data';
 import { disableRandomMock, initRandomMock } from '../mockRandomValues';
+import { Modulus, Salt, ServerEphemeral, ServerProof } from './login.data';
 
 const getInfoResult = (version) => ({
     Username: 'test',

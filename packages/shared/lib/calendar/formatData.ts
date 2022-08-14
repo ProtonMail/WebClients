@@ -1,8 +1,9 @@
 import isTruthy from '@proton/utils/isTruthy';
-import { SimpleMap } from '../interfaces';
-import { EncryptPartResult, SignPartResult } from '../interfaces/calendar/PartResult';
-import { AttendeeClearPartResult } from '../interfaces/calendar/Attendee';
+
 import { uint8ArrayToBase64String } from '../helpers/encoding';
+import { SimpleMap } from '../interfaces';
+import { AttendeeClearPartResult } from '../interfaces/calendar/Attendee';
+import { EncryptPartResult, SignPartResult } from '../interfaces/calendar/PartResult';
 import { CALENDAR_CARD_TYPE } from './constants';
 
 const { ENCRYPTED_AND_SIGNED, SIGNED } = CALENDAR_CARD_TYPE;

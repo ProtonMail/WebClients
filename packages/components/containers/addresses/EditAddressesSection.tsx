@@ -1,15 +1,15 @@
-import { ChangeEvent, useState, useRef, useEffect } from 'react';
+import { ChangeEvent, useEffect, useRef, useState } from 'react';
+
 import { c } from 'ttag';
 
 import { updateAddress } from '@proton/shared/lib/api/addresses';
 import { Address } from '@proton/shared/lib/interfaces';
 
-import { Input, Button, Editor, EditorActions } from '../../components';
-import { useApi, useLoading, useNotifications, useEventManager, useMailSettings, useHotkeys } from '../../hooks';
-
+import { Button, Editor, EditorActions, Input } from '../../components';
+import { useApi, useEventManager, useHotkeys, useLoading, useMailSettings, useNotifications } from '../../hooks';
 import SettingsLayout from '../account/SettingsLayout';
-import SettingsLayoutRight from '../account/SettingsLayoutRight';
 import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
+import SettingsLayoutRight from '../account/SettingsLayoutRight';
 
 const EMPTY_VALUES = [/^(<div><br><\/div>)+$/, /^(<div>\s*<\/div>)+$/];
 

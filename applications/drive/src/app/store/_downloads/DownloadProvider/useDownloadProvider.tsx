@@ -1,20 +1,21 @@
 import { useCallback, useEffect } from 'react';
+
 import { c } from 'ttag';
 
-import { useNotifications, usePreventLeave, useModals, useOnline } from '@proton/components';
+import { useModals, useNotifications, useOnline, usePreventLeave } from '@proton/components';
 
-import { TransferState } from '../../../components/TransferManager/transfer';
 import DownloadIsTooBigModal from '../../../components/DownloadIsTooBigModal';
-import { isTransferCancelError, isTransferProgress, isTransferPausedByConnection } from '../../../utils/transfer';
+import { TransferState } from '../../../components/TransferManager/transfer';
 import { bufferToStream } from '../../../utils/stream';
-import { logError, reportError } from '../../_utils';
+import { isTransferCancelError, isTransferPausedByConnection, isTransferProgress } from '../../../utils/transfer';
 import { SignatureIssues } from '../../_links';
+import { logError, reportError } from '../../_utils';
 import { MAX_DOWNLOADING_BLOCKS_LOAD } from '../constants';
 import FileSaver from '../fileSaver/fileSaver';
-import { LinkDownload, InitDownloadCallback, DownloadSignatureIssueModal } from '../interface';
+import { DownloadSignatureIssueModal, InitDownloadCallback, LinkDownload } from '../interface';
 import { UpdateFilter } from './interface';
-import useDownloadQueue from './useDownloadQueue';
 import useDownloadControl from './useDownloadControl';
+import useDownloadQueue from './useDownloadQueue';
 import useDownloadSignatureIssue from './useDownloadSignatureIssue';
 
 export default function useDownloadProvider(

@@ -2,7 +2,10 @@ import { c } from 'ttag';
 
 import { Button } from '../../components';
 import { classnames } from '../../helpers';
-import './ThemeCard.scss'; // just for proper sizing when zooming
+
+import './ThemeCard.scss';
+
+// just for proper sizing when zooming
 
 interface Props {
     label: string;

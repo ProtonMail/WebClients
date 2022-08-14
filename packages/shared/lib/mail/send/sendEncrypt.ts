@@ -4,13 +4,13 @@
 import { CryptoProxy, PrivateKeyReference, PublicKeyReference, SessionKey } from '@proton/crypto';
 import { concatArrays } from '@proton/crypto/lib/utils';
 import isTruthy from '@proton/utils/isTruthy';
+
+import { AES256, MIME_TYPES, PACKAGE_TYPE } from '../../constants';
 import { hasBit } from '../../helpers/bitset';
 import { uint8ArrayToBase64String } from '../../helpers/encoding';
+import { Attachment, Message } from '../../interfaces/mail/Message';
 import { PackageDirect } from '../../interfaces/mail/crypto';
-import { Message, Attachment } from '../../interfaces/mail/Message';
 import { RequireOnly, SimpleMap } from '../../interfaces/utils';
-import { AES256, MIME_TYPES, PACKAGE_TYPE } from '../../constants';
-
 import { getSessionKey } from './attachments';
 
 interface AttachmentKeys {

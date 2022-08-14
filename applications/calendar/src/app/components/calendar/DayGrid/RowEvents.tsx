@@ -1,13 +1,15 @@
 import { Ref } from 'react';
+
 import { endOfDay } from '@proton/shared/lib/date-fns-utc';
-import { getEvent } from './helper';
-import { TYPE } from '../interactions/constants';
-import getIsBeforeNow from '../getIsBeforeNow';
+
 import { CalendarViewEvent, TargetEventData, TargetMoreData } from '../../../containers/calendar/interface';
 import FullDayEvent from '../../events/FullDayEvent';
 import MoreFullDayEvent from '../../events/MoreFullDayEvent';
-import { EventsInRowSummary, EventsStyleResult } from '../useDayGridEventLayout';
+import getIsBeforeNow from '../getIsBeforeNow';
+import { TYPE } from '../interactions/constants';
 import { LayoutEvent } from '../layout';
+import { EventsInRowSummary, EventsStyleResult } from '../useDayGridEventLayout';
+import { getEvent } from './helper';
 
 interface Props {
     days: Date[];

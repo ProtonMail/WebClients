@@ -1,5 +1,5 @@
 import { APP_NAMES, FORKABLE_APPS } from '../constants';
-import { stringToUint8Array, decodeBase64URL } from '../helpers/encoding';
+import { decodeBase64URL, stringToUint8Array } from '../helpers/encoding';
 import { FORK_TYPE } from './ForkInterface';
 
 export const getValidatedApp = (app = ''): APP_NAMES | undefined => {

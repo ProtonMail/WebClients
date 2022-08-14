@@ -1,6 +1,7 @@
 import { ReactNode } from 'react';
-import OnlineTopBanner from './OnlineTopBanner';
+
 import BadAppVersionBanner from './BadAppVersionBanner';
+import OnlineTopBanner from './OnlineTopBanner';
 import TorWarningBanner from './TorWarningBanner';
 
 interface Props {

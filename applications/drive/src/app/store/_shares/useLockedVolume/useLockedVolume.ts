@@ -1,23 +1,24 @@
-import { format } from 'date-fns';
 import { useCallback } from 'react';
 
-import { usePreventLeave, useAddressesKeys } from '@proton/components';
-import { Address } from '@proton/shared/lib/interfaces';
-import { dateLocale } from '@proton/shared/lib/i18n';
-import isTruthy from '@proton/utils/isTruthy';
-import { generateLookupHash, encryptPassphrase } from '@proton/shared/lib/keys/driveKeys';
-import { queryRestoreDriveVolume, queryDeleteLockedVolumes } from '@proton/shared/lib/api/drive/volume';
-import { CryptoProxy, PrivateKeyReference } from '@proton/crypto';
+import { format } from 'date-fns';
 
-import { useDebouncedFunction } from '../../_utils';
+import { useAddressesKeys, usePreventLeave } from '@proton/components';
+import { CryptoProxy, PrivateKeyReference } from '@proton/crypto';
+import { queryDeleteLockedVolumes, queryRestoreDriveVolume } from '@proton/shared/lib/api/drive/volume';
+import { dateLocale } from '@proton/shared/lib/i18n';
+import { Address } from '@proton/shared/lib/interfaces';
+import { encryptPassphrase, generateLookupHash } from '@proton/shared/lib/keys/driveKeys';
+import isTruthy from '@proton/utils/isTruthy';
+
 import { useDebouncedRequest } from '../../_api';
 import { useDriveCrypto } from '../../_crypto';
 import { useLink } from '../../_links';
 import { GLOBAL_FORBIDDEN_CHARACTERS } from '../../_links/link';
-import useShare from './../useShare';
+import { useDebouncedFunction } from '../../_utils';
+import { LockedVolumeForRestore, ShareWithKey } from './../interface';
 import useDefaultShare from './../useDefaultShare';
+import useShare from './../useShare';
 import useSharesState from './../useSharesState';
-import { ShareWithKey, LockedVolumeForRestore } from './../interface';
 import { getPossibleAddressPrivateKeys, prepareVolumeForRestore } from './utils';
 
 /**

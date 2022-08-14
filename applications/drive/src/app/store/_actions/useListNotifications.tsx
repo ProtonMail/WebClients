@@ -1,6 +1,6 @@
 import { c, msgid } from 'ttag';
 
-import { useNotifications, InlineLinkButton } from '@proton/components';
+import { InlineLinkButton, useNotifications } from '@proton/components';
 
 import { useErrorHandler } from '../_utils';
 import { LinkInfo } from './interface';

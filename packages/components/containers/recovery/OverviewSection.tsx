@@ -1,4 +1,6 @@
 import { reactivateKeysProcess } from '@proton/shared/lib/keys';
+
+import { useModalState } from '../../components';
 import {
     useAddresses,
     useAddressesKeys,
@@ -11,12 +13,11 @@ import {
     useUserKeys,
 } from '../../hooks';
 import { FeatureCode } from '../features/FeaturesContext';
-import RecoverDataConfirmModal from './RecoverDataConfirmModal';
-import RecoverDataCard from './RecoverDataCard';
-import RecoveryCard from './RecoveryCard';
-import { getAllKeysReactivationRequests } from '../keys/reactivateKeys/getAllKeysToReactive';
-import { useModalState } from '../../components';
 import ReactivateKeysModal from '../keys/reactivateKeys/ReactivateKeysModal';
+import { getAllKeysReactivationRequests } from '../keys/reactivateKeys/getAllKeysToReactive';
+import RecoverDataCard from './RecoverDataCard';
+import RecoverDataConfirmModal from './RecoverDataConfirmModal';
+import RecoveryCard from './RecoveryCard';
 
 interface Props {
     ids: {

@@ -1,20 +1,21 @@
 import { useCallback } from 'react';
+
 import { c } from 'ttag';
 
+import { useAuthentication, useGetAddressKeys, useGetAddresses, useNotifications } from '@proton/components';
 import { PrivateKeyReference } from '@proton/crypto';
-import { useGetAddresses, useGetAddressKeys, useNotifications, useAuthentication } from '@proton/components';
-import { Address } from '@proton/shared/lib/interfaces/Address';
 import { ADDRESS_STATUS } from '@proton/shared/lib/constants';
+import { Address } from '@proton/shared/lib/interfaces/Address';
 import { sign as signMessage } from '@proton/shared/lib/keys/driveKeys';
 
 import { ShareWithKey } from '../_shares';
 import {
     decryptSharePassphraseAsync,
+    getOwnAddressKeysAsync,
+    getOwnAddressPrimaryKeyAsync,
     getPrimaryAddressAsync,
     getPrimaryAddressKeyAsync,
     getPrimaryAddressKeysAsync,
-    getOwnAddressPrimaryKeyAsync,
-    getOwnAddressKeysAsync,
 } from './driveCrypto';
 
 // Special case for drive to allow users with just an external address

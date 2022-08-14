@@ -1,11 +1,12 @@
-import { ForwardedRef, forwardRef, Fragment } from 'react';
+import { ForwardedRef, Fragment, forwardRef } from 'react';
+
 import { c } from 'ttag';
 
-import { APPS } from '@proton/shared/lib/constants';
 import { getAppName } from '@proton/shared/lib/apps/helper';
+import { APPS } from '@proton/shared/lib/constants';
 
+import { AppLink, Icon, Logo, SettingsLink, SimpleDropdown, VpnLogo } from '../../components';
 import { useApps } from '../../hooks';
-import { AppLink, Logo, Icon, SimpleDropdown, SettingsLink, VpnLogo } from '../../components';
 
 interface AppsDropdownProps {
     onDropdownClick?: () => void;

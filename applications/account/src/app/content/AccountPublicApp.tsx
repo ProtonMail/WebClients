@@ -1,22 +1,24 @@
-import { c } from 'ttag';
 import { useEffect, useState } from 'react';
 import * as React from 'react';
-import { loadCryptoWorker } from '@proton/shared/lib/helpers/setupCryptoWorker';
-import { getBrowserLocale, getClosestLocaleCode, getClosestLocaleMatch } from '@proton/shared/lib/i18n/helper';
-import { loadLocale, loadDateLocale } from '@proton/shared/lib/i18n/loadLocale';
-import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
-import { LoaderPage, useApi, ProtonLoginCallback, StandardLoadErrorPage } from '@proton/components';
+
+import * as H from 'history';
+import { c } from 'ttag';
+
+import { LoaderPage, ProtonLoginCallback, StandardLoadErrorPage, useApi } from '@proton/components';
+import { wrapUnloadError } from '@proton/components/containers/app/errorRefresh';
+import { getApiErrorMessage, getIs401Error } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { InvalidPersistentSessionError } from '@proton/shared/lib/authentication/error';
+import { getLocalIDFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
 import {
-    getActiveSessions,
     GetActiveSessionsResult,
+    getActiveSessions,
     resumeSession,
 } from '@proton/shared/lib/authentication/persistedSessionHelper';
-import { wrapUnloadError } from '@proton/components/containers/app/errorRefresh';
-import { getLocalIDFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
-import { InvalidPersistentSessionError } from '@proton/shared/lib/authentication/error';
-import { getApiErrorMessage, getIs401Error } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getCookie } from '@proton/shared/lib/helpers/cookies';
-import * as H from 'history';
+import { loadCryptoWorker } from '@proton/shared/lib/helpers/setupCryptoWorker';
+import { getBrowserLocale, getClosestLocaleCode, getClosestLocaleMatch } from '@proton/shared/lib/i18n/helper';
+import { loadDateLocale, loadLocale } from '@proton/shared/lib/i18n/loadLocale';
+import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 
 interface Props {
     location: H.Location;

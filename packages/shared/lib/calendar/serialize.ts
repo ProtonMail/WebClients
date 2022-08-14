@@ -1,13 +1,13 @@
 import { PrivateKeyReference, PublicKeyReference, SessionKey } from '@proton/crypto';
+
+import { SignPartResult, VcalVeventComponent } from '../interfaces/calendar';
 import { CalendarCreateEventBlobData } from '../interfaces/calendar/Api';
 import { RequireSome, SimpleMap } from '../interfaces/utils';
-
 import { CALENDAR_CARD_TYPE } from './constants';
-import { getVeventParts } from './veventHelper';
 import { createSessionKey, encryptPart, getEncryptedSessionKey, getEncryptedSessionKeysMap, signPart } from './encrypt';
-import { SignPartResult, VcalVeventComponent } from '../interfaces/calendar';
-import { getIsEventComponent } from './vcalHelper';
 import { formatData } from './formatData';
+import { getIsEventComponent } from './vcalHelper';
+import { getVeventParts } from './veventHelper';
 
 const { ENCRYPTED_AND_SIGNED, SIGNED, CLEAR_TEXT } = CALENDAR_CARD_TYPE;
 

@@ -1,5 +1,7 @@
 import { ReactNode, useEffect, useState } from 'react';
+
 import { decryptData, encryptData, getKey } from '@proton/shared/lib/authentication/cryptoHelper';
+
 import { useConfig } from '../../hooks';
 import CompatibilityCheckView from './CompatibilityCheckView';
 import { getCompatibilityList } from './compatibilityCheckHelper';

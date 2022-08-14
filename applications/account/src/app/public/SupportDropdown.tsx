@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import * as React from 'react';
-import { generateUID, Dropdown, usePopperAnchor, DropdownMenu } from '@proton/components';
+
 import { c } from 'ttag';
+
+import { Dropdown, DropdownMenu, generateUID, usePopperAnchor } from '@proton/components';
 
 import SupportDropdownButton from './SupportDropdownButton';
 

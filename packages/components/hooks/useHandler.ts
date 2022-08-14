@@ -1,6 +1,7 @@
-import { useRef, useEffect, RefObject, useMemo, DependencyList } from 'react';
-import throttle from '@proton/utils/throttle';
+import { DependencyList, RefObject, useEffect, useMemo, useRef } from 'react';
+
 import debounce from '@proton/utils/debounce';
+import throttle from '@proton/utils/throttle';
 
 import useEventManager from './useEventManager';
 

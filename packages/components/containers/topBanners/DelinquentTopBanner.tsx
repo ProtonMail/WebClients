@@ -1,9 +1,10 @@
 import { c } from 'ttag';
-import { UNPAID_STATE } from '@proton/shared/lib/constants';
-import { getInvoicesPathname } from '@proton/shared/lib/apps/helper';
 
-import { useUser, useConfig } from '../../hooks';
+import { getInvoicesPathname } from '@proton/shared/lib/apps/helper';
+import { UNPAID_STATE } from '@proton/shared/lib/constants';
+
 import { SettingsLink } from '../../components';
+import { useConfig, useUser } from '../../hooks';
 import TopBanner from './TopBanner';
 
 const DelinquentTopBanner = () => {

@@ -1,11 +1,12 @@
 import { c } from 'ttag';
+
 import isTruthy from '@proton/utils/isTruthy';
-import unique from '@proton/utils/unique';
 import truncate from '@proton/utils/truncate';
+import unique from '@proton/utils/unique';
+
 import { getEventByUID } from '../../api/calendars';
 import formatUTC, { Options as FormatOptions } from '../../date-fns-utc/format';
 import { getSupportedTimezone, toUTCDate } from '../../date/timezone';
-
 import { readFileAsString } from '../../helpers/file';
 import { dateLocale } from '../../i18n';
 import { Api, SimpleMap } from '../../interfaces';
@@ -17,11 +18,11 @@ import {
     VcalVeventComponent,
     VcalVtimezoneComponent,
 } from '../../interfaces/calendar';
-
 import { ICAL_METHOD, IMPORT_ERROR_TYPE, MAX_CALENDARS_PAID, MAX_IMPORT_EVENTS } from '../constants';
 import getComponentFromCalendarEvent from '../getComponentFromCalendarEvent';
 import { generateVeventHashUID, getOriginalUID } from '../helper';
 import { IMPORT_EVENT_ERROR_TYPE, ImportEventError } from '../icsSurgery/ImportEventError';
+import { getSupportedCalscale } from '../icsSurgery/vcal';
 import { getLinkedDateTimeProperty, getSupportedEvent } from '../icsSurgery/vevent';
 import { parseWithErrors, serialize } from '../vcal';
 import {
@@ -39,7 +40,6 @@ import {
 } from '../vcalHelper';
 import { withDtstamp } from '../veventHelper';
 import { ImportFileError } from './ImportFileError';
-import { getSupportedCalscale } from '../icsSurgery/vcal';
 
 const getParsedComponentHasError = (component: VcalCalendarComponentOrError): component is { error: Error } => {
     return !!(component as { error: Error }).error;

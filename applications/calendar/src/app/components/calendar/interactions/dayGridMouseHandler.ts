@@ -1,11 +1,10 @@
-import { getTargetIndex } from '../mouseHelpers/mathHelpers';
-import { getDiffTime, getNewTime } from '../mouseHelpers/dateHelpers';
-import { blockClick, findContainingParent, findUpwards, createRafUpdater } from '../mouseHelpers/domHelpers';
-
-import { ACTIONS, TYPE } from './constants';
 import { CalendarViewEvent } from '../../../containers/calendar/interface';
+import { getDiffTime, getNewTime } from '../mouseHelpers/dateHelpers';
+import { blockClick, createRafUpdater, findContainingParent, findUpwards } from '../mouseHelpers/domHelpers';
+import { getTargetIndex } from '../mouseHelpers/mathHelpers';
 import useDayGridEventLayout from '../useDayGridEventLayout';
-import { OnMouseDown, MouseUpAction, StartEndResult } from './interface';
+import { ACTIONS, TYPE } from './constants';
+import { MouseUpAction, OnMouseDown, StartEndResult } from './interface';
 
 const CREATE_SENSITIVITY = 20; // In pixels
 const CREATE_STATE_INIT = -1;

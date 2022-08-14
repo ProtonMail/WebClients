@@ -1,13 +1,14 @@
-import { ReactNode, useState, useCallback, SyntheticEvent } from 'react';
+import { ReactNode, SyntheticEvent, useCallback, useState } from 'react';
 import * as React from 'react';
+
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/components/hooks';
 import dragdropImageSvg from '@proton/styles/assets/img/illustrations/drag-and-drop.svg';
 
+import useActiveShare from '../../../hooks/drive/useActiveShare';
 import { useUpload } from '../../../store';
 import { UploadFileList } from '../../../store';
-import useActiveShare from '../../../hooks/drive/useActiveShare';
 import { isTransferCancelError } from '../../../utils/transfer';
 
 interface UploadDragDropProps {

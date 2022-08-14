@@ -2,8 +2,7 @@ import { createContext, useContext } from 'react';
 import * as React from 'react';
 
 import { TransferProgresses } from '../../../components/TransferManager/transfer';
-
-import { LinkDownload, InitDownloadCallback, DownloadSignatureIssueModal } from '../interface';
+import { DownloadSignatureIssueModal, InitDownloadCallback, LinkDownload } from '../interface';
 import { Download, DownloadLinksProgresses, UpdateFilter } from './interface';
 import useDownload from './useDownloadProvider';
 

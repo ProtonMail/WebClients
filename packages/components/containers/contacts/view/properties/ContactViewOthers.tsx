@@ -1,11 +1,13 @@
 import { format, isValid } from 'date-fns';
-import { VCardContact, VCardDateOrText, VCardGenderValue } from '@proton/shared/lib/interfaces/contacts/VCard';
-import { getSortedProperties } from '@proton/shared/lib/contacts/properties';
+
 import { OTHER_INFORMATION_FIELDS } from '@proton/shared/lib/contacts/constants';
+import { getSortedProperties } from '@proton/shared/lib/contacts/properties';
 import { dateLocale } from '@proton/shared/lib/i18n';
-import ContactViewProperty from './ContactViewProperty';
-import { ContactViewProperties } from './ContactViewProperties';
+import { VCardContact, VCardDateOrText, VCardGenderValue } from '@proton/shared/lib/interfaces/contacts/VCard';
+
 import { RemoteImage } from '../../../../components';
+import { ContactViewProperties } from './ContactViewProperties';
+import ContactViewProperty from './ContactViewProperty';
 
 interface Props {
     vCardContact: VCardContact;

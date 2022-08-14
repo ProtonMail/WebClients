@@ -1,10 +1,12 @@
-import isTruthy from '@proton/utils/isTruthy';
 import { isValid } from 'date-fns';
+
+import isTruthy from '@proton/utils/isTruthy';
+
 import { VCardContact, VCardProperty } from '../interfaces/contacts/VCard';
 import {
+    FIELDS_WITH_PREF,
     compareVCardPropertyByPref,
     createContactPropertyUid,
-    FIELDS_WITH_PREF,
     fromVCardProperties,
     generateNewGroupName,
     getVCardProperties,

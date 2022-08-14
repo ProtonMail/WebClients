@@ -1,25 +1,12 @@
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import noop from '@proton/utils/noop';
+
 import { useModalTwo } from '../../../components/modalTwo/useModalTwo';
-import ContactEditModal, { ContactEditProps, ContactEditModalProps } from '../edit/ContactEditModal';
+import ContactEditModal, { ContactEditModalProps, ContactEditProps } from '../edit/ContactEditModal';
+import ContactEmailSettingsModal, { ContactEmailSettingsProps } from '../email/ContactEmailSettingsModal';
 import ContactGroupDeleteModal, { ContactGroupDeleteProps } from '../group/ContactGroupDeleteModal';
 import ContactGroupDetailsModal, { ContactGroupDetailsProps } from '../group/ContactGroupDetailsModal';
 import ContactGroupEditModal, { ContactGroupEditProps } from '../group/ContactGroupEditModal';
-import ContactDeleteModal, { ContactDeleteProps } from '../modals/ContactDeleteModal';
-import ContactEmailSettingsModal, { ContactEmailSettingsProps } from '../email/ContactEmailSettingsModal';
-import ContactDetailsModal, { ContactDetailsProps } from '../view/ContactDetailsModal';
-import ContactExportingModal, { ContactExportingProps } from '../modals/ContactExportingModal';
-import ContactUpgradeModal from '../modals/ContactUpgradeModal';
-import ContactImageModal, { ContactImageProps } from '../modals/ContactImageModal';
-import ContactSignatureErrorModal, {
-    ContactSignatureErrorModalProps,
-    ContactSignatureErrorProps,
-} from '../modals/ContactSignatureErrorModal';
-import ContactDecryptionErrorModal, {
-    ContactDecryptionErrorModalProps,
-    ContactDecryptionErrorProps,
-} from '../modals/ContactDecryptionErrorModal';
-import ContactResignExecutionModal from '../modals/ContactResignExecutionModal';
 import ContactClearDataConfirmModal, {
     ContactClearDataConfirmModalProps,
     ContactClearDataConfirmProps,
@@ -27,7 +14,21 @@ import ContactClearDataConfirmModal, {
 import ContactClearDataExecutionModal, {
     ContactClearDataExecutionProps,
 } from '../modals/ContactClearDataExecutionModal';
+import ContactDecryptionErrorModal, {
+    ContactDecryptionErrorModalProps,
+    ContactDecryptionErrorProps,
+} from '../modals/ContactDecryptionErrorModal';
+import ContactDeleteModal, { ContactDeleteProps } from '../modals/ContactDeleteModal';
+import ContactExportingModal, { ContactExportingProps } from '../modals/ContactExportingModal';
+import ContactImageModal, { ContactImageProps } from '../modals/ContactImageModal';
+import ContactResignExecutionModal from '../modals/ContactResignExecutionModal';
+import ContactSignatureErrorModal, {
+    ContactSignatureErrorModalProps,
+    ContactSignatureErrorProps,
+} from '../modals/ContactSignatureErrorModal';
+import ContactUpgradeModal from '../modals/ContactUpgradeModal';
 import SelectEmailsModal, { SelectEmailsProps } from '../modals/SelectEmailsModal';
+import ContactDetailsModal, { ContactDetailsProps } from '../view/ContactDetailsModal';
 
 export const useContactModals = ({ onMailTo = noop }: { onMailTo: (email: string) => void }) => {
     const [contactDetailsModal, handleShowContactDetailsModal] = useModalTwo<ContactDetailsProps, void>(

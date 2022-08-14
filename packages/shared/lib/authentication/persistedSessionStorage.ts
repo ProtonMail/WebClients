@@ -1,10 +1,11 @@
 import isTruthy from '@proton/utils/isTruthy';
-import { setItem, getItem, removeItem } from '../helpers/storage';
+
+import { removeLastRefreshDate } from '../api/helpers/refreshStorage';
+import { getItem, removeItem, setItem } from '../helpers/storage';
 import { PersistedSession, PersistedSessionBlob } from './SessionInterface';
-import { getValidatedLocalID } from './sessionForkValidation';
 import { InvalidPersistentSessionError } from './error';
 import { getDecryptedBlob, getEncryptedBlob } from './sessionBlobCryptoHelper';
-import { removeLastRefreshDate } from '../api/helpers/refreshStorage';
+import { getValidatedLocalID } from './sessionForkValidation';
 
 const STORAGE_PREFIX = 'ps-';
 const getKey = (localID: number) => `${STORAGE_PREFIX}${localID}`;

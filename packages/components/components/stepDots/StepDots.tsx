@@ -1,4 +1,5 @@
-import { Children, cloneElement, HTMLProps, ReactElement } from 'react';
+import { Children, HTMLProps, ReactElement, cloneElement } from 'react';
+
 import { classnames } from '../../helpers';
 import { Props as StepDotProps } from '../stepDot/StepDot';
 

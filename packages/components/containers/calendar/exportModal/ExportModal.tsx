@@ -1,6 +1,12 @@
+import { useState } from 'react';
+
+import { format } from 'date-fns';
+import { c } from 'ttag';
+
 import { createExportIcs } from '@proton/shared/lib/calendar/export/createExportIcs';
 import { getProdIdFromNameAndVersion } from '@proton/shared/lib/calendar/vcalConfig';
 import { getUniqueVtimezones } from '@proton/shared/lib/calendar/vtimezoneHelper';
+import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import {
     Calendar,
     EXPORT_ERRORS,
@@ -10,17 +16,13 @@ import {
     VcalVeventComponent,
 } from '@proton/shared/lib/interfaces/calendar';
 import { getWeekStartsOn } from '@proton/shared/lib/settings/helper';
-import { useState } from 'react';
-import { c } from 'ttag';
 
-import downloadFile from '@proton/shared/lib/helpers/downloadFile';
-import { format } from 'date-fns';
-import { Button, BasicModal } from '../../../components';
-import { useGetVtimezonesMap } from '../../../hooks/useGetVtimezonesMap';
-import ExportingModalContent from './ExportingModalContent';
-import ExportSummaryModalContent from './ExportSummaryModalContent';
-import { useConfig, useGetCalendarUserSettings, useUserSettings } from '../../../hooks';
 import { getAppVersion } from '../../..';
+import { BasicModal, Button } from '../../../components';
+import { useConfig, useGetCalendarUserSettings, useUserSettings } from '../../../hooks';
+import { useGetVtimezonesMap } from '../../../hooks/useGetVtimezonesMap';
+import ExportSummaryModalContent from './ExportSummaryModalContent';
+import ExportingModalContent from './ExportingModalContent';
 
 interface Props {
     calendar: Calendar;

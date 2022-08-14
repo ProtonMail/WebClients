@@ -1,7 +1,7 @@
-import { CALENDAR_PERMISSIONS } from './constants';
 import { hasBit } from '../helpers/bitset';
 import { Address as AddressInterface } from '../interfaces';
 import { CalendarMember as MemberInterface } from '../interfaces/calendar';
+import { CALENDAR_PERMISSIONS } from './constants';
 
 export const getMemberAddressWithAdminPermissions = (Members: MemberInterface[], Addresses: AddressInterface[]) => {
     const Member = Members.find(({ Email: MemberEmail, Permissions }) => {

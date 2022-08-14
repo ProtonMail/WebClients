@@ -1,7 +1,9 @@
-import { useCallback, useEffect, useState, DragEvent } from 'react';
+import { DragEvent, useCallback, useEffect, useState } from 'react';
+
 import { generateUID } from '../../helpers';
 import useHandler from '../../hooks/useHandler';
 import { DRAG_ITEM_ID_KEY, DRAG_ITEM_KEY } from './constants';
+
 import './items.scss';
 
 type AbstractItem = { ID?: string };

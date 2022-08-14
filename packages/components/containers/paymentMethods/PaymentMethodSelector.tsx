@@ -1,8 +1,8 @@
 import { PAYMENT_METHOD_TYPE } from '@proton/shared/lib/constants';
 
-import { PaymentMethodData } from './interface';
-import { classnames } from '../../helpers';
 import { Icon, Option, Radio, SelectTwo } from '../../components';
+import { classnames } from '../../helpers';
+import { PaymentMethodData } from './interface';
 
 interface Props {
     options: PaymentMethodData[];

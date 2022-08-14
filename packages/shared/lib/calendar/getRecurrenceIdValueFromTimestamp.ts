@@ -1,5 +1,5 @@
-import utcTimestampToTimezone from './utcTimestampToTimezone';
 import { toExdate } from './exdate';
+import utcTimestampToTimezone from './utcTimestampToTimezone';
 
 const getRecurrenceIdValueFromTimestamp = (timestamp: number, isAllDay: boolean, startTimezone: string) => {
     const localStartDateTime = utcTimestampToTimezone(timestamp, startTimezone);

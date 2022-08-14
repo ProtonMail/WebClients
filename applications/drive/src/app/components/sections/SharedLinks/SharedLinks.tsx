@@ -1,20 +1,21 @@
 import { useCallback, useMemo, useRef } from 'react';
+
 import { c } from 'ttag';
 
 import { useActiveBreakpoint } from '@proton/components';
 
-import { EncryptedLink, LinkShareUrl, useSharedLinksView, useThumbnailsDownload } from '../../../store';
-import FileBrowser, { Cells, GridHeader, useItemContextMenu, useSelection } from '../../FileBrowser';
 import useNavigate from '../../../hooks/drive/useNavigate';
-import EmptyShared from './EmptyShared';
-import { SharedLinksItemContextMenu } from './SharedLinksItemContextMenu';
+import { EncryptedLink, LinkShareUrl, useSharedLinksView, useThumbnailsDownload } from '../../../store';
+import { SortField } from '../../../store/_views/utils/useSorting';
+import FileBrowser, { Cells, GridHeader, useItemContextMenu, useSelection } from '../../FileBrowser';
 import { BrowserItemId, FileBrowserBaseItem, ListViewHeaderItem } from '../../FileBrowser/interface';
 import { GridViewItem } from '../FileBrowser/GridViewItem';
-import { AccessCountCell, CreatedCell, LocationCell, NameCell, ExpirationCell } from '../FileBrowser/contentCells';
+import { AccessCountCell, CreatedCell, ExpirationCell, LocationCell, NameCell } from '../FileBrowser/contentCells';
 import headerItems from '../FileBrowser/headerCells';
-import { getSelectedItems } from '../helpers';
-import { SortField } from '../../../store/_views/utils/useSorting';
 import { translateSortField } from '../SortDropdown';
+import { getSelectedItems } from '../helpers';
+import EmptyShared from './EmptyShared';
+import { SharedLinksItemContextMenu } from './SharedLinksItemContextMenu';
 
 export interface SharedLinkItem extends FileBrowserBaseItem {
     activeRevision?: EncryptedLink['activeRevision'];

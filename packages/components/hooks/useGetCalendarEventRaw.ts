@@ -1,8 +1,10 @@
-import { getAuthorPublicKeysMap, withNormalizedAuthors } from '@proton/shared/lib/calendar/author';
-import { getCalendarEventDecryptionKeys } from '@proton/shared/lib/calendar/keys/getCalendarEventDecryptionKeys';
 import { useCallback } from 'react';
+
+import { getAuthorPublicKeysMap, withNormalizedAuthors } from '@proton/shared/lib/calendar/author';
 import { readCalendarEvent, readSessionKeys } from '@proton/shared/lib/calendar/deserialize';
+import { getCalendarEventDecryptionKeys } from '@proton/shared/lib/calendar/keys/getCalendarEventDecryptionKeys';
 import { CalendarEvent } from '@proton/shared/lib/interfaces/calendar';
+
 import { useGetAddresses } from './useAddresses';
 import { useGetAddressKeys } from './useGetAddressKeys';
 import { useGetCalendarKeys } from './useGetDecryptedPassphraseAndCalendarKeys';

@@ -1,4 +1,4 @@
-import { useEffect, RefObject } from 'react';
+import { RefObject, useEffect } from 'react';
 
 const useClickOutside = (ref: RefObject<HTMLDivElement>, fn: () => void) => {
     const listener = (e: MouseEvent | TouchEvent) => {

@@ -1,4 +1,4 @@
-import { renderHook, act } from '@testing-library/react-hooks';
+import { act, renderHook } from '@testing-library/react-hooks';
 
 import { FILE_CHUNK_SIZE, SupportedMimeTypes } from '@proton/shared/lib/drive/constants';
 

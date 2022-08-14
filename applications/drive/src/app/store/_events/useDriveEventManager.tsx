@@ -1,11 +1,11 @@
-import { createContext, useContext, useRef, ReactNode } from 'react';
+import { ReactNode, createContext, useContext, useRef } from 'react';
 
-import { useApi, useEventManager, generateUID } from '@proton/components';
-import { Api } from '@proton/shared/lib/interfaces';
-import { captureMessage } from '@proton/shared/lib/helpers/sentry';
-import { DriveEventsResult } from '@proton/shared/lib/interfaces/drive/events';
-import { queryLatestEvents, queryEvents } from '@proton/shared/lib/api/drive/share';
+import { generateUID, useApi, useEventManager } from '@proton/components';
+import { queryEvents, queryLatestEvents } from '@proton/shared/lib/api/drive/share';
 import createEventManager, { EventManager } from '@proton/shared/lib/eventManager/eventManager';
+import { captureMessage } from '@proton/shared/lib/helpers/sentry';
+import { Api } from '@proton/shared/lib/interfaces';
+import { DriveEventsResult } from '@proton/shared/lib/interfaces/drive/events';
 
 import { driveEventsResultToDriveEvents } from '../_api';
 import { logError } from '../_utils';

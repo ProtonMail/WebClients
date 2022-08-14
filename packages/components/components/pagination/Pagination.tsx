@@ -1,7 +1,8 @@
 import { c } from 'ttag';
-import { ButtonGroup, Button } from '../button';
-import DropdownMenuButton from '../dropdown/DropdownMenuButton';
+
+import { Button, ButtonGroup } from '../button';
 import DropdownMenu from '../dropdown/DropdownMenu';
+import DropdownMenuButton from '../dropdown/DropdownMenuButton';
 import SimpleDropdown from '../dropdown/SimpleDropdown';
 import { Icon } from '../icon';
 

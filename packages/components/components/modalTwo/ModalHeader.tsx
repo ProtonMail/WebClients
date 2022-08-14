@@ -1,13 +1,15 @@
 import React, { ComponentPropsWithRef, useContext } from 'react';
+
 import { c } from 'ttag';
 
 import { Vr } from '@proton/atoms';
 
 import { classnames } from '../../helpers';
-import { Icon } from '../icon';
 import { Button, ButtonProps } from '../button';
+import { Icon } from '../icon';
 import { Tooltip } from '../tooltip';
 import { ModalContext } from './Modal';
+
 import './ModalHeader.scss';
 
 interface ModalHeaderProps extends Omit<ComponentPropsWithRef<'div'>, 'children' | 'title'> {

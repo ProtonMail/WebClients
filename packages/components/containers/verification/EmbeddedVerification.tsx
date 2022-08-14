@@ -1,8 +1,9 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { localeCode } from '@proton/shared/lib/i18n';
+
 import { APPS } from '@proton/shared/lib/constants';
-import { HumanVerificationMethodType } from '@proton/shared/lib/interfaces';
 import { getAppUrlFromApiUrl, getAppUrlRelativeToOrigin, stringifySearchParams } from '@proton/shared/lib/helpers/url';
+import { localeCode } from '@proton/shared/lib/i18n';
+import { HumanVerificationMethodType } from '@proton/shared/lib/interfaces';
 
 import { useConfig, useNotifications } from '../../hooks';
 

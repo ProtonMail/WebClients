@@ -1,4 +1,5 @@
 import { c } from 'ttag';
+
 import { CircleLoader } from '../../../components';
 
 const SubscriptionUpgrade = () => {

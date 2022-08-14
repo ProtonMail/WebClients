@@ -1,27 +1,29 @@
 import { useEffect, useState } from 'react';
+
 import { c } from 'ttag';
+
+import { getApiError, getApiErrorMessage, getIs401Error } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { OAuthClientInfo, getOAuthClientInfo } from '@proton/shared/lib/api/oauth';
+import { FORK_TYPE } from '@proton/shared/lib/authentication/ForkInterface';
+import { InvalidPersistentSessionError } from '@proton/shared/lib/authentication/error';
 import {
-    getActiveSessions,
     GetActiveSessionsResult,
+    getActiveSessions,
     resumeSession,
 } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import {
-    getProduceForkParameters,
     OAuthProduceForkParameters,
     ProduceForkParameters,
+    getProduceForkParameters,
 } from '@proton/shared/lib/authentication/sessionForking';
-import { InvalidPersistentSessionError } from '@proton/shared/lib/authentication/error';
-import { getApiError, getApiErrorMessage, getIs401Error } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import { FORK_TYPE } from '@proton/shared/lib/authentication/ForkInterface';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
-import { getOAuthClientInfo, OAuthClientInfo } from '@proton/shared/lib/api/oauth';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
+import { Href } from '../../components';
 import { useApi, useErrorHandler } from '../../hooks';
 import LoaderPage from './LoaderPage';
-import StandardLoadErrorPage from './StandardLoadErrorPage';
 import StandardErrorPage from './StandardErrorPage';
-import { Href } from '../../components';
+import StandardLoadErrorPage from './StandardLoadErrorPage';
 
 const getProduceOAuthForkParameters = () => {
     const searchParams = new URLSearchParams(window.location.search);

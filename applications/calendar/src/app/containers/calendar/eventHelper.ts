@@ -1,3 +1,6 @@
+import { differenceInHours } from 'date-fns';
+
+import { max } from '@proton/shared/lib/date-fns-utc';
 import {
     convertUTCDateTimeToZone,
     convertZonedDateTimeToUTC,
@@ -5,12 +8,10 @@ import {
     fromUTCDateToLocalFakeUTCDate,
     toUTCDate,
 } from '@proton/shared/lib/date/timezone';
-import { differenceInHours } from 'date-fns';
-import { max } from '@proton/shared/lib/date-fns-utc';
 import { EventModel, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
-import { getTimeInUtc, getDateTimeState } from '../../components/eventModal/eventForm/time';
 import getFrequencyModelChange from '../../components/eventModal/eventForm/getFrequencyModelChange';
+import { getDateTimeState, getTimeInUtc } from '../../components/eventModal/eventForm/time';
 import { CalendarViewEvent, CalendarViewEventTemporaryEvent } from './interface';
 
 export const getCalendarViewEventProperties = ({ start, end, isAllDay }: EventModel, tzid: string) => {

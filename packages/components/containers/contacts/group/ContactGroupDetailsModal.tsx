@@ -1,15 +1,18 @@
 import { c, msgid } from 'ttag';
+
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact';
-import { Icon, Button, ModalTwo, ModalProps } from '../../../components';
-import { useContactEmails, useContactGroups, useUser } from '../../../hooks';
-import Tooltip from '../../../components/tooltip/Tooltip';
-import ContactGroupTable from './ContactGroupTable';
-import { ContactGroupDeleteProps } from './ContactGroupDeleteModal';
-import { ContactGroupEditProps } from './ContactGroupEditModal';
-import ModalHeader from '../../../components/modalTwo/ModalHeader';
+
+import { Button, Icon, ModalProps, ModalTwo } from '../../../components';
 import ModalContent from '../../../components/modalTwo/ModalContent';
 import ModalFooter from '../../../components/modalTwo/ModalFooter';
+import ModalHeader from '../../../components/modalTwo/ModalHeader';
+import Tooltip from '../../../components/tooltip/Tooltip';
+import { useContactEmails, useContactGroups, useUser } from '../../../hooks';
 import { ContactExportingProps } from '../modals/ContactExportingModal';
+import { ContactGroupDeleteProps } from './ContactGroupDeleteModal';
+import { ContactGroupEditProps } from './ContactGroupEditModal';
+import ContactGroupTable from './ContactGroupTable';
+
 import './ContactGroupDetailsModal.scss';
 
 export interface ContactGroupDetailsProps {

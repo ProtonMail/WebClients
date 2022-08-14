@@ -1,5 +1,6 @@
 import { c } from 'ttag';
-import { DEFAULT_CYCLE, DEFAULT_CURRENCY } from '@proton/shared/lib/constants';
+
+import { DEFAULT_CURRENCY, DEFAULT_CYCLE } from '@proton/shared/lib/constants';
 import { Currency, Cycle } from '@proton/shared/lib/interfaces';
 
 import Price, { Props as PriceProps } from '../../../components/price/Price';

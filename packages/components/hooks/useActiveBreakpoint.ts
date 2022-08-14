@@ -1,4 +1,5 @@
-import { useState, useEffect, useMemo } from 'react';
+import { useEffect, useMemo, useState } from 'react';
+
 import debounce from '@proton/utils/debounce';
 
 const getBreakpoint = () => {

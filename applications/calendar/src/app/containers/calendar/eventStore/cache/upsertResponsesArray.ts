@@ -4,12 +4,13 @@ import {
     SyncMultipleApiResponses,
     UpdateEventPartApiResponse,
 } from '@proton/shared/lib/interfaces/calendar';
+
+import { OpenedMailEvent } from '../../../../hooks/useGetOpenedMailEvents';
 import { UpdatePartstatOperation, UpdatePersonalPartOperation } from '../../../../interfaces/Invite';
-import upsertCalendarApiEvent from './upsertCalendarApiEvent';
-import { getIsDeleteSyncOperation, SyncEventActionOperations } from '../../getSyncMultipleEventsPayload';
+import { SyncEventActionOperations, getIsDeleteSyncOperation } from '../../getSyncMultipleEventsPayload';
 import { CalendarsEventsCache } from '../interface';
 import removeCalendarEventStoreRecord from './removeCalendarEventStoreRecord';
-import { OpenedMailEvent } from '../../../../hooks/useGetOpenedMailEvents';
+import upsertCalendarApiEvent from './upsertCalendarApiEvent';
 
 const getResponse = (responses: SyncMultipleApiResponses[], index: number) => {
     return responses.find((x) => x.Index === index);

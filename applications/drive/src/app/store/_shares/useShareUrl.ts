@@ -1,31 +1,12 @@
+import { useApi, usePreventLeave } from '@proton/components';
 import { CryptoProxy, SessionKey } from '@proton/crypto';
 import { encodeUtf8 } from '@proton/crypto/lib/utils';
-import { useApi, usePreventLeave } from '@proton/components';
-import { computeKeyPassword } from '@proton/srp';
-import { srpGetVerify } from '@proton/shared/lib/srp';
-import chunk from '@proton/utils/chunk';
-import {
-    base64StringToUint8Array,
-    uint8ArrayToBase64String,
-    stringToUint8Array,
-} from '@proton/shared/lib/helpers/encoding';
-import isTruthy from '@proton/utils/isTruthy';
-import runInQueue from '@proton/shared/lib/helpers/runInQueue';
-import getRandomString from '@proton/utils/getRandomString';
-import { generateKeySaltAndPassphrase } from '@proton/shared/lib/keys/keys';
-import { decryptUnsigned, encryptUnsigned } from '@proton/shared/lib/keys/driveKeys';
-import {
-    SharedURLFlags,
-    SharedURLSessionKeyPayload,
-    ShareURL,
-    UpdateSharedURL,
-} from '@proton/shared/lib/interfaces/drive/sharing';
 import {
     queryCreateSharedLink,
+    queryDeleteMultipleSharedLinks,
+    queryDeleteSharedLink,
     querySharedLinks,
     queryUpdateSharedLink,
-    queryDeleteSharedLink,
-    queryDeleteMultipleSharedLinks,
 } from '@proton/shared/lib/api/drive/sharing';
 import {
     BATCH_REQUEST_SIZE,
@@ -34,6 +15,25 @@ import {
     RESPONSE_CODE,
     SHARE_GENERATED_PASSWORD_LENGTH,
 } from '@proton/shared/lib/drive/constants';
+import {
+    base64StringToUint8Array,
+    stringToUint8Array,
+    uint8ArrayToBase64String,
+} from '@proton/shared/lib/helpers/encoding';
+import runInQueue from '@proton/shared/lib/helpers/runInQueue';
+import {
+    ShareURL,
+    SharedURLFlags,
+    SharedURLSessionKeyPayload,
+    UpdateSharedURL,
+} from '@proton/shared/lib/interfaces/drive/sharing';
+import { decryptUnsigned, encryptUnsigned } from '@proton/shared/lib/keys/driveKeys';
+import { generateKeySaltAndPassphrase } from '@proton/shared/lib/keys/keys';
+import { srpGetVerify } from '@proton/shared/lib/srp';
+import { computeKeyPassword } from '@proton/srp';
+import chunk from '@proton/utils/chunk';
+import getRandomString from '@proton/utils/getRandomString';
+import isTruthy from '@proton/utils/isTruthy';
 
 import { useDebouncedRequest } from '../_api';
 import { useDriveCrypto } from '../_crypto';

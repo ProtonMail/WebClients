@@ -1,27 +1,28 @@
 import { c, msgid } from 'ttag';
+
 import { PLANS } from '@proton/shared/lib/constants';
-import unique from '@proton/utils/unique';
+import humanSize from '@proton/shared/lib/helpers/humanSize';
+import { toMap } from '@proton/shared/lib/helpers/object';
 import {
     getBaseAmount,
+    getCycleDiscount,
     getHasLegacyPlans,
     hasVisionary,
-    getCycleDiscount,
 } from '@proton/shared/lib/helpers/subscription';
-import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { Plan } from '@proton/shared/lib/interfaces';
-import { toMap } from '@proton/shared/lib/helpers/object';
+import unique from '@proton/utils/unique';
 
 import { Info, Loader, Time } from '../../components';
-import { useOrganization, usePlans, useSubscription, useUser } from '../../hooks';
+import Price from '../../components/price/Price';
 import { classnames } from '../../helpers';
+import { useOrganization, usePlans, useSubscription, useUser } from '../../hooks';
 import { SettingsSection } from '../account';
 import MozillaInfoPanel from '../account/MozillaInfoPanel';
-import { formatPlans } from './subscription/helpers';
-import DiscountBadge from './DiscountBadge';
-import PlanPrice from './subscription/PlanPrice';
 import CycleDiscountBadge from './CycleDiscountBadge';
-import Price from '../../components/price/Price';
+import DiscountBadge from './DiscountBadge';
 import { getDueCycleText, getTotalBillingText } from './helper';
+import PlanPrice from './subscription/PlanPrice';
+import { formatPlans } from './subscription/helpers';
 
 const getRenewalText = (periodEnd: number) => {
     const formattedEndTime = <Time key="time-text">{periodEnd}</Time>;

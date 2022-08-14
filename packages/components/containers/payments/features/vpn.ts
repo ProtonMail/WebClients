@@ -1,7 +1,8 @@
 import { c, msgid } from 'ttag';
+
 import { PLANS, VPN_APP_NAME, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
-import { getFreeServers, getPlusServers } from '@proton/shared/lib/vpn/features';
 import { Audience, VPNCountries, VPNServers } from '@proton/shared/lib/interfaces';
+import { getFreeServers, getPlusServers } from '@proton/shared/lib/vpn/features';
 
 import { PlanCardFeature, PlanCardFeatureDefinition } from './interface';
 

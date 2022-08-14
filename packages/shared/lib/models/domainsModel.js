@@ -1,6 +1,6 @@
 import { queryDomains } from '../api/domains';
-import updateCollection from '../helpers/updateCollection';
 import queryPages from '../api/helpers/queryPages';
+import updateCollection from '../helpers/updateCollection';
 
 export const getDomainsModel = (api) => {
     return queryPages((page, pageSize) => {

@@ -1,8 +1,9 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import createCache from '@proton/shared/lib/helpers/cache';
 
 import { MAX_LENGTHS_API } from '@proton/shared/lib/calendar/constants';
+import createCache from '@proton/shared/lib/helpers/cache';
+
 import { CacheProvider } from '../../cache';
 import SubscribeCalendarModal from './SubscribeCalendarModal';
 

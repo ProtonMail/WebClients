@@ -1,9 +1,10 @@
 import { ReactNode } from 'react';
-import SidebarListItemContentIcon from './SidebarListItemContentIcon';
+
+import { IconName, IconSize } from '../icon/Icon';
 import SidebarListItem from './SidebarListItem';
 import SidebarListItemContent from './SidebarListItemContent';
+import SidebarListItemContentIcon from './SidebarListItemContentIcon';
 import SidebarListItemLink, { Props as SidebarListItemProps } from './SidebarListItemLink';
-import { IconName, IconSize } from '../icon/Icon';
 
 interface Props extends SidebarListItemProps {
     to: string;

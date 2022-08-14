@@ -1,20 +1,20 @@
 import { useState } from 'react';
+
 import { c, msgid } from 'ttag';
 
 import { MAX_CALENDARS_PAID } from '@proton/shared/lib/calendar/constants';
-import { Calendar } from '@proton/shared/lib/interfaces/calendar';
-import noop from '@proton/utils/noop';
 import {
     CalendarImportMapping,
     CalendarImporterPayload,
     ImportedCalendar,
 } from '@proton/shared/lib/interfaces/EasySwitch';
+import { Calendar } from '@proton/shared/lib/interfaces/calendar';
+import noop from '@proton/utils/noop';
 
-import { FormModal, PrimaryButton, Icon } from '../../../../components';
+import { FormModal, Icon, PrimaryButton } from '../../../../components';
 import { classnames } from '../../../../helpers/component';
-
-import CustomizeCalendarImportRow from './CustomizeCalendarImportRow';
 import { CALENDAR_TO_BE_CREATED_PREFIX } from '../../constants';
+import CustomizeCalendarImportRow from './CustomizeCalendarImportRow';
 
 interface Props {
     providerCalendars: ImportedCalendar[];

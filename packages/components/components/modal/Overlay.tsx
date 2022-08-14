@@ -1,6 +1,7 @@
 import { ComponentPropsWithoutRef } from 'react';
-import Portal from '../portal/Portal';
+
 import { classnames } from '../../helpers';
+import Portal from '../portal/Portal';
 
 const CLASSES = {
     OVERLAY: 'modal-overlay',

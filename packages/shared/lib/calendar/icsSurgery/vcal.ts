@@ -1,6 +1,6 @@
+import { normalize } from '../../helpers/string';
 import { VcalStringProperty } from '../../interfaces/calendar';
 import { ICAL_CALSCALE } from '../constants';
-import { normalize } from '../../helpers/string';
 
 export const getSupportedStringValue = (property?: VcalStringProperty) => {
     const trimmedValue = property?.value?.trim();

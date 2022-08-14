@@ -1,6 +1,6 @@
+import { getTypeValues } from '../../helpers/contacts';
 import { PreVcardProperty, PreVcardsContact } from '../../interfaces/contacts/Import';
 import { VCardKey } from '../../interfaces/contacts/VCard';
-import { getTypeValues } from '../../helpers/contacts';
 
 // See './csv.ts' for the definition of pre-vCard and pre-vCards contact
 

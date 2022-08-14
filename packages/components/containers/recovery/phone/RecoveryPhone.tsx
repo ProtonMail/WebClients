@@ -1,13 +1,15 @@
 import { useState } from 'react';
+
 import { c } from 'ttag';
+
 import { updatePhone } from '@proton/shared/lib/api/settings';
 import { SETTINGS_STATUS, UserSettings } from '@proton/shared/lib/interfaces';
 
 import { Button, Icon, InputFieldTwo, PhoneInput, useFormErrors, useModalState } from '../../../components';
-import { useNotifications, useEventManager, useModals, useLoading } from '../../../hooks';
 import { classnames } from '../../../helpers';
-import ConfirmRemovePhoneModal from './ConfirmRemovePhoneModal';
+import { useEventManager, useLoading, useModals, useNotifications } from '../../../hooks';
 import AuthModal from '../../password/AuthModal';
+import ConfirmRemovePhoneModal from './ConfirmRemovePhoneModal';
 import VerifyRecoveryPhoneModal from './VerifyRecoveryPhoneModal';
 
 interface Props {

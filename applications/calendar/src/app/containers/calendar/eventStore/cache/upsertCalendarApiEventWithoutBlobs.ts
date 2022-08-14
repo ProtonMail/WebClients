@@ -1,9 +1,10 @@
 import { pick } from '@proton/shared/lib/helpers/object';
 import { CalendarEventWithoutBlob } from '@proton/shared/lib/interfaces/calendar';
+
 import { CalendarEventsCache } from '../interface';
-import { getCalendarEventStoreRecord, upsertCalendarEventStoreRecord } from './upsertCalendarEventStoreRecord';
 import getComponentFromCalendarEventWithoutBlob from './getComponentFromCalendarEventWithoutBlob';
 import removeCalendarEventStoreRecord from './removeCalendarEventStoreRecord';
+import { getCalendarEventStoreRecord, upsertCalendarEventStoreRecord } from './upsertCalendarEventStoreRecord';
 
 const FIELDS_TO_KEEP = [
     'ID',

@@ -1,5 +1,5 @@
-import { wait } from '../../lib/helpers/promise';
 import { onceWithQueue } from '../../lib/helpers/onceWithQueue';
+import { wait } from '../../lib/helpers/promise';
 
 const DELAY = 10;
 

@@ -1,16 +1,20 @@
 import { ReactNode } from 'react';
-import { c, msgid } from 'ttag';
+
 import { format, fromUnixTime } from 'date-fns';
+import { c, msgid } from 'ttag';
+
+import { getAppName } from '@proton/shared/lib/apps/helper';
+import { MAX_CALENDARS_PAID } from '@proton/shared/lib/calendar/constants';
 import {
-    APP_NAMES,
     APPS,
+    APP_NAMES,
     BRAND_NAME,
     CYCLE,
     MAIL_APP_NAME,
     PLANS,
     VPN_CONNECTIONS,
 } from '@proton/shared/lib/constants';
-import isTruthy from '@proton/utils/isTruthy';
+import humanSize from '@proton/shared/lib/helpers/humanSize';
 import {
     getHasLegacyPlans,
     hasDrive,
@@ -20,13 +24,12 @@ import {
     isTrial,
 } from '@proton/shared/lib/helpers/subscription';
 import { Currency, Plan, Subscription, UserModel } from '@proton/shared/lib/interfaces';
-import { MAX_CALENDARS_PAID } from '@proton/shared/lib/calendar/constants';
-import { getAppName } from '@proton/shared/lib/apps/helper';
-import humanSize from '@proton/shared/lib/helpers/humanSize';
+import isTruthy from '@proton/utils/isTruthy';
 
 import { Button, Icon, IconName, Price, StripedItem, StripedList } from '../../../components';
 import { OpenSubscriptionModalCallback } from './SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from './constants';
+
 import './UpsellPanel.scss';
 
 interface UpsellBoxProps {

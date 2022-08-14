@@ -1,19 +1,20 @@
-import { useMemo, useState, useEffect, FormEvent, useRef } from 'react';
-import { addMonths, endOfMonth, startOfMonth, isSameMonth } from 'date-fns';
+import { FormEvent, useEffect, useMemo, useRef, useState } from 'react';
+
+import { addMonths, endOfMonth, isSameMonth, startOfMonth } from 'date-fns';
 
 import { Vr } from '@proton/atoms';
 
-import { useElementRect } from '../../hooks';
-import { getDaysInMonth, getDateTupleFromMonday } from './helper';
 import { classnames } from '../../helpers';
+import { useElementRect } from '../../hooks';
+import { Button } from '../button';
+import { TodayIcon } from '../icon';
+import Icon from '../icon/Icon';
+import { Tooltip } from '../tooltip';
 import MonthDays from './MonthDays';
 import WeekDays from './WeekDays';
 import WeekNumbers from './WeekNumbers';
-import Icon from '../icon/Icon';
+import { getDateTupleFromMonday, getDaysInMonth } from './helper';
 import { DateTuple, WeekStartsOn } from './index.d';
-import { Button } from '../button';
-import { Tooltip } from '../tooltip';
-import { TodayIcon } from '../icon';
 
 export interface Props {
     hasCursors?: boolean;

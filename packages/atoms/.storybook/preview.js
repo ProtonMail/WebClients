@@ -1,11 +1,12 @@
-import { Icons, NotificationsProvider, ModalsProvider, ModalsChildren, CacheProvider } from '@proton/components';
+import { CacheProvider, Icons, ModalsChildren, ModalsProvider, NotificationsProvider } from '@proton/components';
 import ApiProvider from '@proton/components/containers/api/ApiProvider';
 import ConfigProvider from '@proton/components/containers/config/Provider';
 import createCache from '@proton/shared/lib/helpers/cache';
 
-import theme from './theme';
-import './index.scss';
 import './prismjs.js';
+import theme from './theme';
+
+import './index.scss';
 
 const cacheRef = createCache();
 

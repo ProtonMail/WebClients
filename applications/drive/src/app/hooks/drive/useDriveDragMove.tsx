@@ -1,16 +1,17 @@
-import { useState, useRef } from 'react';
+import { useRef, useState } from 'react';
 import * as React from 'react';
+
 import { c } from 'ttag';
 
-import isTruthy from '@proton/utils/isTruthy';
 import { useGlobalLoader } from '@proton/components';
-import noop from '@proton/utils/noop';
 import { CUSTOM_DATA_FORMAT } from '@proton/shared/lib/drive/constants';
+import isTruthy from '@proton/utils/isTruthy';
+import noop from '@proton/utils/noop';
 
-import { useActions } from '../../store';
-import { DragMoveControls } from '../../components/FileBrowser/interface';
 import { useSelection } from '../../components/FileBrowser';
+import { DragMoveControls } from '../../components/FileBrowser/interface';
 import { DriveItem } from '../../components/sections/Drive/Drive';
+import { useActions } from '../../store';
 import { LinkInfo } from '../../store/_actions/interface';
 
 type DragAndDropItem = DriveItem;

@@ -1,42 +1,42 @@
 import { c } from 'ttag';
 
 import { PrivateKeyReference, SessionKey } from '@proton/crypto';
-import { generateLookupHash, encryptName } from '@proton/shared/lib/keys/driveKeys';
-import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 import {
     queryCreateFile,
     queryCreateFileRevision,
-    queryUpdateFileRevision,
     queryDeleteFileRevision,
     queryRequestUpload,
+    queryUpdateFileRevision,
 } from '@proton/shared/lib/api/drive/files';
+import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 import {
     CreateFileResult,
     CreateFileRevisionResult,
     FileRevisionState,
     RequestUploadResult,
 } from '@proton/shared/lib/interfaces/drive/file';
+import { encryptName, generateLookupHash } from '@proton/shared/lib/keys/driveKeys';
 
 import { TransferCancel } from '../../../components/TransferManager/transfer';
 import useQueuedFunction from '../../../hooks/util/useQueuedFunction';
-import { ValidationError, logError } from '../../_utils';
 import { useDebouncedRequest } from '../../_api';
 import { useDriveCrypto } from '../../_crypto';
 import { useDriveEventManager } from '../../_events';
 import { DecryptedLink, useLink, useLinksActions, validateLinkName } from '../../_links';
+import { ValidationError, logError } from '../../_utils';
 import { MAX_UPLOAD_BLOCKS_LOAD } from '../constants';
+import { initUploadFileWorker } from '../initUploadFileWorker';
 import {
-    TransferConflictStrategy,
+    BlockToken,
     FileKeys,
     FileRequestBlock,
     ThumbnailRequestBlock,
-    BlockToken,
+    TransferConflictStrategy,
     UploadFileControls,
 } from '../interface';
-import { initUploadFileWorker } from '../initUploadFileWorker';
 import { ConflictStrategyHandler, UploadUserError } from './interface';
-import useUploadHelper from './useUploadHelper';
 import { generateClientUid } from './uploadClientUid';
+import useUploadHelper from './useUploadHelper';
 
 interface FileRevision {
     isNewFile: boolean;

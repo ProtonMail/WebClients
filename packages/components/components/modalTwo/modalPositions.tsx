@@ -1,4 +1,5 @@
-import { createContext, ReactNode, useCallback, useContext, useLayoutEffect, useState } from 'react';
+import { ReactNode, createContext, useCallback, useContext, useLayoutEffect, useState } from 'react';
+
 import noop from '@proton/utils/noop';
 
 const ModalPositionsContext = createContext<[any[], (id: any) => () => void]>([[], () => noop]);

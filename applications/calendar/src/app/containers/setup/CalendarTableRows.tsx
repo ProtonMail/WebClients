@@ -1,6 +1,8 @@
-import { Table, TableBody, TableHeader, TableRow } from '@proton/components';
 import { c } from 'ttag';
+
+import { Table, TableBody, TableHeader, TableRow } from '@proton/components';
 import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+
 import CalendarIcon from '../../components/CalendarIcon';
 
 const CalendarTableRow = ({ Name, Color }: VisualCalendar) => {

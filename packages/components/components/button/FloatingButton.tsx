@@ -1,6 +1,7 @@
-import { forwardRef, Ref } from 'react';
-import Button, { ButtonProps } from './Button';
+import { Ref, forwardRef } from 'react';
+
 import { classnames } from '../../helpers';
+import Button, { ButtonProps } from './Button';
 
 interface Props extends ButtonProps {
     title?: string;

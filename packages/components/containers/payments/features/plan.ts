@@ -1,10 +1,13 @@
 import { c } from 'ttag';
-import { BRAND_NAME, PLAN_NAMES, PLANS, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
+
+import { BRAND_NAME, PLANS, PLAN_NAMES, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
 import { Plan, PlansMap, VPNCountries, VPNServers } from '@proton/shared/lib/interfaces';
 import { getFreeServers, getPlusServers } from '@proton/shared/lib/vpn/features';
 
-import { ShortPlan } from './interface';
+import { getCalendarAppFeature, getNCalendarsFeature } from './calendar';
 import { getDriveAppFeature, getStorageFeature, getStorageFeatureB2B } from './drive';
+import { getSupport } from './highlights';
+import { ShortPlan } from './interface';
 import {
     getContactGroupsManagement,
     getFoldersAndLabelsFeature,
@@ -13,7 +16,6 @@ import {
     getNDomainsFeature,
     getNMessagesFeature,
 } from './mail';
-import { getCalendarAppFeature, getNCalendarsFeature } from './calendar';
 import {
     getB2BHighSpeedVPNConnections,
     getCountries,
@@ -27,7 +29,6 @@ import {
     getVPNConnections,
     getVPNSpeed,
 } from './vpn';
-import { getSupport } from './highlights';
 
 const getCTA = (planName: string) => {
     return c('new_plans: action').t`Get ${planName}`;

@@ -1,18 +1,19 @@
 import { useMemo, useState } from 'react';
-import { c } from 'ttag';
-import { fromUnixTime, getUnixTime, addDays, addHours, startOfDay } from 'date-fns';
 
+import { addDays, addHours, fromUnixTime, getUnixTime, startOfDay } from 'date-fns';
+import { c } from 'ttag';
+
+import { AutoReplyDuration } from '@proton/shared/lib/constants';
 import {
-    fromUTCDate,
-    fromLocalDate,
-    toUTCDate,
     convertUTCDateTimeToZone,
     convertZonedDateTimeToUTC,
-    getTimezone,
+    fromLocalDate,
+    fromUTCDate,
     getTimeZoneOptions,
+    getTimezone,
     toLocalDate,
+    toUTCDate,
 } from '@proton/shared/lib/date/timezone';
-import { AutoReplyDuration } from '@proton/shared/lib/constants';
 import { AutoResponder as tsAutoResponder } from '@proton/shared/lib/interfaces';
 
 import { DAY_SECONDS, HOUR_SECONDS, MINUTES_SECONDS, getDurationOptions, getMatchingTimezone } from '../utils';

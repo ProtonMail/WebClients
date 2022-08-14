@@ -1,8 +1,9 @@
-import { useLoading, useGetCalendarBootstrap, useGetAddresses } from '@proton/components';
+import { useGetAddresses, useGetCalendarBootstrap, useLoading } from '@proton/components';
 import CalendarSelect from '@proton/components/components/calendarSelect/CalendarSelect';
 import { Props as SelectProps } from '@proton/components/components/selectTwo/SelectTwo';
-import { EventModel } from '@proton/shared/lib/interfaces/calendar';
 import { notificationsToModel } from '@proton/shared/lib/calendar/notificationsToModel';
+import { EventModel } from '@proton/shared/lib/interfaces/calendar';
+
 import { getInitialMemberModel } from '../eventForm/state';
 
 export interface Props extends Omit<SelectProps<string>, 'children'> {

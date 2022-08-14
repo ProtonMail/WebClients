@@ -1,12 +1,12 @@
 import { Fragment } from 'react';
+
 import { c } from 'ttag';
 
 import { Label } from '@proton/shared/lib/interfaces/Label';
-import { Checkbox, Button, Icon, LabelStack, useModalState } from '../../../components';
+
+import { Button, Checkbox, Icon, LabelStack, useModalState } from '../../../components';
 import { classnames } from '../../../helpers';
-
 import EditLabelModal, { LabelModel } from '../../labels/modals/EditLabelModal';
-
 import { Actions } from '../interfaces';
 
 interface Props {

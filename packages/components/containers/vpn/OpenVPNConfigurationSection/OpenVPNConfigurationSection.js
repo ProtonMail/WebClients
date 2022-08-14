@@ -1,29 +1,31 @@
-import { useState, useMemo, useEffect } from 'react';
+import { useEffect, useMemo, useState } from 'react';
+
 import PropTypes from 'prop-types';
 import { c, msgid } from 'ttag';
+
 import { getVPNServerConfig } from '@proton/shared/lib/api/vpn';
-import groupWith from '@proton/utils/groupWith';
-import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { PLANS, SORT_DIRECTION, VPN_APP_NAME, VPN_CONNECTIONS, VPN_HOSTNAME } from '@proton/shared/lib/constants';
+import downloadFile from '@proton/shared/lib/helpers/downloadFile';
+import groupWith from '@proton/utils/groupWith';
 
 import {
-    Href,
+    Block,
     Button,
     ButtonLike,
+    Href,
     Icon,
     Info,
-    Block,
-    Tooltip,
     Radio,
     RadioGroup,
     SettingsLink,
+    Tooltip,
 } from '../../../components';
-import { useApiWithoutResult, useUser, useSortedList, useUserVPN, usePlans, useVPNLogicals } from '../../../hooks';
-import { getCountryByAbbr, correctAbbr } from '../../../helpers/countries';
+import { correctAbbr, getCountryByAbbr } from '../../../helpers/countries';
+import { useApiWithoutResult, usePlans, useSortedList, useUser, useUserVPN, useVPNLogicals } from '../../../hooks';
+import { SettingsParagraph } from '../../account';
+import ConfigsTable, { CATEGORY } from './ConfigsTable';
 import ServerConfigs from './ServerConfigs';
 import { isSecureCoreEnabled, isTorEnabled } from './utils';
-import ConfigsTable, { CATEGORY } from './ConfigsTable';
-import { SettingsParagraph } from '../../account';
 
 const PLATFORM = {
     MACOS: 'macOS',

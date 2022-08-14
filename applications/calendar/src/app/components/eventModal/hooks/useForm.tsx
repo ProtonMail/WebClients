@@ -1,9 +1,10 @@
-import isTruthy from '@proton/utils/isTruthy';
-import { useLoading } from '@proton/components';
 import { useState } from 'react';
-import { EventModelErrors } from '@proton/shared/lib/interfaces/calendar';
-import { TITLE_INPUT_ID } from '@proton/shared/lib/calendar/constants';
+
+import { useLoading } from '@proton/components';
 import { NOTIFICATION_ID } from '@proton/components/containers/calendar/notifications/Notifications';
+import { TITLE_INPUT_ID } from '@proton/shared/lib/calendar/constants';
+import { EventModelErrors } from '@proton/shared/lib/interfaces/calendar';
+import isTruthy from '@proton/utils/isTruthy';
 
 import { InviteActions } from '../../../interfaces/Invite';
 import { COUNT_ID, UNTIL_ID } from '../rows/EndsRow';

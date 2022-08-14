@@ -1,8 +1,8 @@
 import { getAuthVersionWithFallback } from '@proton/srp';
 
-import { auth, getInfo, PASSWORD_WRONG_ERROR } from '../api/auth';
-import { srpAuth } from '../srp';
+import { PASSWORD_WRONG_ERROR, auth, getInfo } from '../api/auth';
 import { Api } from '../interfaces';
+import { srpAuth } from '../srp';
 import { AuthResponse, AuthVersion, InfoResponse } from './interface';
 
 /**

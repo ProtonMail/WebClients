@@ -1,10 +1,9 @@
 import { ACCENT_COLORS } from '@proton/shared/lib/constants';
-import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
-import isTruthy from '@proton/utils/isTruthy';
-
+import { ImportedMailFolder, MailImportMapping } from '@proton/shared/lib/interfaces/EasySwitch';
 import { Folder } from '@proton/shared/lib/interfaces/Folder';
 import { Label } from '@proton/shared/lib/interfaces/Label';
-import { ImportedMailFolder, MailImportMapping } from '@proton/shared/lib/interfaces/EasySwitch';
+import isTruthy from '@proton/utils/isTruthy';
+import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
 
 import { FolderRelationshipsMap } from './interfaces';
 

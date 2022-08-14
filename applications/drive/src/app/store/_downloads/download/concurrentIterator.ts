@@ -3,9 +3,9 @@ import { FILE_CHUNK_SIZE } from '@proton/shared/lib/drive/constants';
 
 import { waitUntil } from '../../../utils/async';
 import { MAX_DOWNLOADING_BLOCKS_LOAD, MAX_DOWNLOADING_FILES_LOAD } from '../constants';
-import { DownloadStreamControls, DownloadCallbacks } from '../interface';
-import { NestedLinkDownload, StartedNestedLinkDownload } from './interface';
+import { DownloadCallbacks, DownloadStreamControls } from '../interface';
 import initDownloadLinkFile from './downloadLinkFile';
+import { NestedLinkDownload, StartedNestedLinkDownload } from './interface';
 
 /**
  * ConcurrentIterator iterates over provided generator of links and starts

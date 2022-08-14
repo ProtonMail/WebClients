@@ -1,4 +1,4 @@
-import { uint8ArrayToString, base64StringToUint8Array } from './encoding';
+import { base64StringToUint8Array, uint8ArrayToString } from './encoding';
 
 /**
  * Convert file to encoded base 64 string

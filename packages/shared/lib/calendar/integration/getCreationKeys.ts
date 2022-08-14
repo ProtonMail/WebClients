@@ -1,11 +1,12 @@
 import { c } from 'ttag';
-import { readSessionKeys } from '../deserialize';
-import { getPrimaryKey } from '../../keys';
-import { CalendarEvent, DecryptedCalendarKey } from '../../interfaces/calendar';
+
 import { DecryptedKey } from '../../interfaces';
-import { getCalendarEventDecryptionKeys } from '../keys/getCalendarEventDecryptionKeys';
-import { toSessionKey } from '../../keys/sessionKey';
+import { CalendarEvent, DecryptedCalendarKey } from '../../interfaces/calendar';
+import { getPrimaryKey } from '../../keys';
 import { getPrimaryCalendarKey } from '../../keys/calendarKeys';
+import { toSessionKey } from '../../keys/sessionKey';
+import { readSessionKeys } from '../deserialize';
+import { getCalendarEventDecryptionKeys } from '../keys/getCalendarEventDecryptionKeys';
 
 interface GetCreationKeysArguments {
     calendarEvent?: CalendarEvent;

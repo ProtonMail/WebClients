@@ -1,14 +1,16 @@
 import { KeyboardEvent, ReactNode, useState } from 'react';
-import { c } from 'ttag';
-import noop from '@proton/utils/noop';
-import { isNumber } from '@proton/shared/lib/helpers/validators';
-import { numberValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 
-import { Button, useFormErrors, InputFieldTwo } from '../../../components';
+import { c } from 'ttag';
+
+import { numberValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
+import { isNumber } from '@proton/shared/lib/helpers/validators';
+import noop from '@proton/utils/noop';
+
+import { Button, InputFieldTwo, useFormErrors } from '../../../components';
 import { useLoading } from '../../../hooks';
-import { VerificationModel } from './interface';
-import { getFormattedCode } from './helper';
 import Text from './Text';
+import { getFormattedCode } from './helper';
+import { VerificationModel } from './interface';
 
 interface Props {
     onSubmit: (code: string, verificationModel: VerificationModel) => void;

@@ -1,6 +1,6 @@
 import { ComponentPropsWithoutRef } from 'react';
-import { classnames } from '../../helpers';
 
+import { classnames } from '../../helpers';
 import { CircleLoader } from '../loader';
 
 interface Props extends ComponentPropsWithoutRef<'td'> {

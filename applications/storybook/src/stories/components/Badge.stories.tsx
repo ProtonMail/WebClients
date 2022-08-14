@@ -1,6 +1,6 @@
 import { Badge } from '@proton/components';
-import { getTitle } from '../../helpers/title';
 
+import { getTitle } from '../../helpers/title';
 import mdx from './Badge.mdx';
 
 export default {

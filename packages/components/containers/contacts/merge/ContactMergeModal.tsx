@@ -1,10 +1,12 @@
-import { useState, useEffect, useMemo } from 'react';
+import { useEffect, useMemo, useState } from 'react';
+
 import { ContactFormatted, ContactMergeModel } from '@proton/shared/lib/interfaces/contacts';
+
 import { ModalProps, ModalTwo } from '../../../components';
 import { useEventManager } from '../../../hooks';
+import { ContactMergePreviewModalProps } from './ContactMergePreviewModal';
 import ContactMergeTableContent from './ContactMergeTableContent';
 import ContactMergingContent from './ContactMergingContent';
-import { ContactMergePreviewModalProps } from './ContactMergePreviewModal';
 
 export interface ContactMergeProps {
     contacts: ContactFormatted[][];

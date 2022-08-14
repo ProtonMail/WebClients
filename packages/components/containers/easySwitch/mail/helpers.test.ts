@@ -1,4 +1,5 @@
 import { ImportedMailFolder } from '@proton/shared/lib/interfaces/EasySwitch';
+
 import { getFolderRelationshipsMap } from './helpers';
 
 describe('EasySwitch mail helpers', () => {

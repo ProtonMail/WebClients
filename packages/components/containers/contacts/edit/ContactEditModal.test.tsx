@@ -1,7 +1,9 @@
-import { API_CODES, CONTACT_CARD_TYPE } from '@proton/shared/lib/constants';
-import { CryptoProxy } from '@proton/crypto';
-import { parseToVCard } from '@proton/shared/lib/contacts/vcard';
 import { fireEvent, waitFor } from '@testing-library/react';
+
+import { CryptoProxy } from '@proton/crypto';
+import { API_CODES, CONTACT_CARD_TYPE } from '@proton/shared/lib/constants';
+import { parseToVCard } from '@proton/shared/lib/contacts/vcard';
+
 import { api, clearAll, mockedCryptoApi, notificationManager, render } from '../tests/render';
 import ContactEditModal, { ContactEditModalProps, ContactEditProps } from './ContactEditModal';
 

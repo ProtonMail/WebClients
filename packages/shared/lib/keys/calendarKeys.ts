@@ -1,20 +1,21 @@
-import getRandomValues from '@proton/get-random-values';
 import { c } from 'ttag';
+
 import {
     CryptoProxy,
     PrivateKeyReference,
     PublicKeyReference,
-    toPublicKeyReference,
     VERIFICATION_STATUS,
+    toPublicKeyReference,
 } from '@proton/crypto';
-
+import getRandomValues from '@proton/get-random-values';
 import isTruthy from '@proton/utils/isTruthy';
-import { ENCRYPTION_TYPES, ENCRYPTION_CONFIGS } from '../constants';
+
+import { ENCRYPTION_CONFIGS, ENCRYPTION_TYPES } from '../constants';
+import { hasBit } from '../helpers/bitset';
 import { uint8ArrayToBase64String } from '../helpers/encoding';
 import { Address, EncryptionConfig } from '../interfaces';
-import { DecryptedCalendarKey, CalendarKey as tsKey, CalendarMember, CalendarKeyFlags } from '../interfaces/calendar';
+import { CalendarKeyFlags, CalendarMember, DecryptedCalendarKey, CalendarKey as tsKey } from '../interfaces/calendar';
 import { CalendarSetupData } from '../interfaces/calendar/Api';
-import { hasBit } from '../helpers/bitset';
 
 export const generatePassphrase = () => {
     const value = getRandomValues(new Uint8Array(32));

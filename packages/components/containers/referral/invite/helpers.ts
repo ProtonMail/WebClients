@@ -1,4 +1,4 @@
-import { getEmailParts, PROTONMAIL_DOMAINS, validateEmailAddress } from '@proton/shared/lib/helpers/email';
+import { PROTONMAIL_DOMAINS, getEmailParts, validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import { Recipient } from '@proton/shared/lib/interfaces';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 

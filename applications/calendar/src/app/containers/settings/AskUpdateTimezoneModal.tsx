@@ -1,16 +1,16 @@
 import { c } from 'ttag';
 
 import {
+    AlertModal,
     Button,
     useApi,
-    useEventManager,
-    useNotifications,
-    AlertModal,
-    useLoading,
     useCalendarUserSettings,
+    useEventManager,
+    useLoading,
+    useNotifications,
 } from '@proton/components';
-import { updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
 import AutoDetectPrimaryTimezoneToggle from '@proton/components/containers/calendar/settings/AutoDetectPrimaryTimezoneToggle';
+import { updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
 
 interface Props {
     localTzid: string;

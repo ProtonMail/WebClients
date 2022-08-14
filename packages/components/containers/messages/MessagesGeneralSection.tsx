@@ -1,10 +1,12 @@
 import { MouseEvent } from 'react';
+
 import { c } from 'ttag';
 
-import { SETTINGS_STATUS } from '@proton/shared/lib/interfaces';
 import { APPS } from '@proton/shared/lib/constants';
+import { SETTINGS_STATUS } from '@proton/shared/lib/interfaces';
 
-import { useModalState, SettingsLink } from '../../components';
+import { SettingsLink, useModalState } from '../../components';
+import Icon from '../../components/icon/Icon';
 import { useUser, useUserSettings } from '../../hooks';
 import SettingsLayout from '../account/SettingsLayout';
 import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
@@ -15,7 +17,6 @@ import {
     DailyEmailNotificationToggleInput,
     DailyEmailNotificationToggleLabel,
 } from '../recovery/DailyEmailNotificationToggle';
-import Icon from '../../components/icon/Icon';
 
 const MessagesGeneralSection = () => {
     const [userSettings] = useUserSettings();

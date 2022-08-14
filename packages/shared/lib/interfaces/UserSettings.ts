@@ -1,5 +1,5 @@
-import { ChecklistId } from './Checklist';
 import { DENSITY } from '../constants';
+import { ChecklistId } from './Checklist';
 
 export enum SETTINGS_STATUS {
     UNVERIFIED = 0,

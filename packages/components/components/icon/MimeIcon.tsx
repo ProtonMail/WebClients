@@ -1,4 +1,5 @@
-import { forwardRef, ComponentPropsWithRef } from 'react';
+import { ComponentPropsWithRef, forwardRef } from 'react';
+
 import { isFirefoxLessThan55 } from '@proton/shared/lib/helpers/browser';
 
 import { classnames } from '../../helpers';

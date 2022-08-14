@@ -1,4 +1,7 @@
 import React from 'react';
+
+import { c } from 'ttag';
+
 import {
     Button,
     ButtonLike,
@@ -8,10 +11,9 @@ import {
     ModalTwoHeader,
     SettingsLink,
 } from '@proton/components';
-import { c } from 'ttag';
-import noop from '@proton/utils/noop';
-import { APPS } from '@proton/shared/lib/constants';
 import { getAppName } from '@proton/shared/lib/apps/helper';
+import { APPS } from '@proton/shared/lib/constants';
+import noop from '@proton/utils/noop';
 
 const appName = getAppName(APPS.PROTONDRIVE);
 

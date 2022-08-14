@@ -1,11 +1,10 @@
 import { c } from 'ttag';
 
 import { useSubscription } from '../../hooks';
-
-import MozillaInfoPanel from './MozillaInfoPanel';
 import EditEmailSubscription from './EditEmailSubscription';
-import SettingsSection from './SettingsSection';
+import MozillaInfoPanel from './MozillaInfoPanel';
 import SettingsParagraph from './SettingsParagraph';
+import SettingsSection from './SettingsSection';
 
 const EmailSubscriptionSection = () => {
     const [subscription] = useSubscription();

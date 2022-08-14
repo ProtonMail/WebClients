@@ -1,15 +1,16 @@
+import { getUnixTime } from 'date-fns';
+
 import {
+    ADDON_NAMES,
+    APPS,
+    APP_NAMES,
     CYCLE,
+    DEFAULT_CURRENCY,
+    PLANS,
     PLAN_SERVICES,
     PLAN_TYPES,
-    ADDON_NAMES,
-    DEFAULT_CURRENCY,
-    APP_NAMES,
-    PLANS,
-    APPS,
 } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
-import { getUnixTime } from 'date-fns';
 import { hasVpnBasic, hasVpnPlus } from '@proton/shared/lib/helpers/subscription';
 import {
     Audience,

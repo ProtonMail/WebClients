@@ -1,10 +1,11 @@
 import { PrivateKeyReference } from '@proton/crypto';
-import { User as tsUser, Address as tsAddress, Key, User, DecryptedKey, Address } from '../../lib/interfaces';
+
+import { Address, DecryptedKey, Key, User, Address as tsAddress, User as tsUser } from '../../lib/interfaces';
 import {
+    getDecryptedAddressKeysHelper,
+    getDecryptedUserKeysHelper,
     getHasMigratedAddressKey,
     reactivateKeysProcess,
-    getDecryptedUserKeysHelper,
-    getDecryptedAddressKeysHelper,
 } from '../../lib/keys';
 import { KeyReactivationData, KeyReactivationRecord } from '../../lib/keys/reactivation/interface';
 import { getAddressKey, getAddressKeyHelper, getLegacyAddressKey, getUserKey } from './keyDataHelper';

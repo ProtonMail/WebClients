@@ -1,13 +1,15 @@
 import { useState } from 'react';
+
 import { c } from 'ttag';
+
 import { updateEmail } from '@proton/shared/lib/api/settings';
 import { emailValidator } from '@proton/shared/lib/helpers/formValidators';
-import isTruthy from '@proton/utils/isTruthy';
 import { SETTINGS_STATUS, UserSettings } from '@proton/shared/lib/interfaces';
+import isTruthy from '@proton/utils/isTruthy';
 
 import { Button, Icon, InputFieldTwo, useFormErrors, useModalState } from '../../../components';
-import { useEventManager, useLoading, useModals, useNotifications } from '../../../hooks';
 import { classnames } from '../../../helpers';
+import { useEventManager, useLoading, useModals, useNotifications } from '../../../hooks';
 import AuthModal from '../../password/AuthModal';
 import ConfirmRemoveEmailModal from './ConfirmRemoveEmailModal';
 import VerifyRecoveryEmailModal from './VerifyRecoveryEmailModal';

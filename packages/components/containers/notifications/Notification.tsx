@@ -1,4 +1,5 @@
 import { AnimationEvent, MouseEvent, ReactNode } from 'react';
+
 import { classnames } from '../../helpers';
 import { NotificationType } from './interfaces';
 

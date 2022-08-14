@@ -1,11 +1,13 @@
 import { useState } from 'react';
+
 import { c } from 'ttag';
-import { useLoading, Button, useFormErrors, InputFieldTwo } from '@proton/components';
-import noop from '@proton/utils/noop';
-import { Api } from '@proton/shared/lib/interfaces';
-import { queryCheckUsernameAvailability } from '@proton/shared/lib/api/user';
+
+import { Button, InputFieldTwo, useFormErrors, useLoading } from '@proton/components';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { queryCheckUsernameAvailability } from '@proton/shared/lib/api/user';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
+import { Api } from '@proton/shared/lib/interfaces';
+import noop from '@proton/utils/noop';
 
 interface Props {
     onSubmit: (username: string, domain: string) => void;

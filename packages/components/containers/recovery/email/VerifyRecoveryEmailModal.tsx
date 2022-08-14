@@ -1,5 +1,7 @@
 import { useState } from 'react';
+
 import { c } from 'ttag';
+
 import { postVerifySend } from '@proton/shared/lib/api/verify';
 import { UserSettings } from '@proton/shared/lib/interfaces';
 

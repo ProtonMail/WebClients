@@ -1,5 +1,7 @@
 import { useState } from 'react';
-import { msgid, c } from 'ttag';
+
+import { c, msgid } from 'ttag';
+
 import { PartialMemberAddress } from '@proton/shared/lib/interfaces';
 
 import { Button, Icon } from '../../components';

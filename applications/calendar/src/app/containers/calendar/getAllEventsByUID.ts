@@ -1,6 +1,6 @@
 import { queryEvents } from '@proton/shared/lib/api/calendars';
-import { Api } from '@proton/shared/lib/interfaces';
 import paginatedFetch from '@proton/shared/lib/api/helpers/paginatedFetch';
+import { Api } from '@proton/shared/lib/interfaces';
 import { CalendarEventWithMetadata } from '@proton/shared/lib/interfaces/calendar';
 
 const getAllEventsByUID = async (api: Api, calendarID: string, UID: string, RecurrenceID?: number) => {

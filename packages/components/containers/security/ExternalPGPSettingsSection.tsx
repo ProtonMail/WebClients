@@ -1,17 +1,15 @@
 import { c } from 'ttag';
 
-import { BRAND_NAME, PACKAGE_TYPE } from '@proton/shared/lib/constants';
 import { updateAttachPublicKey, updatePGPScheme, updateSign } from '@proton/shared/lib/api/mailSettings';
+import { BRAND_NAME, PACKAGE_TYPE } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
-import { Info, Toggle, AlertModal, Button, useModalState, AlertModalProps } from '../../components';
-import { useMailSettings, useEventManager, useApi, useLoading, useNotifications } from '../../hooks';
-
-import { SettingsSection, SettingsParagraph } from '../account';
+import { AlertModal, AlertModalProps, Button, Info, Toggle, useModalState } from '../../components';
+import { useApi, useEventManager, useLoading, useMailSettings, useNotifications } from '../../hooks';
+import { SettingsParagraph, SettingsSection } from '../account';
 import SettingsLayout from '../account/SettingsLayout';
 import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../account/SettingsLayoutRight';
-
 import PGPSchemeSelect from './PGPSchemeSelect';
 
 interface AutomaticallySignModalProps extends Omit<AlertModalProps, 'title' | 'buttons' | 'children'> {

@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types';
+import { c } from 'ttag';
+
 import { Price } from '@proton/components';
 import { CYCLE, DEFAULT_CURRENCY, DEFAULT_CYCLE } from '@proton/shared/lib/constants';
-import { c } from 'ttag';
 
 const { MONTHLY, YEARLY } = CYCLE;
 

@@ -1,9 +1,11 @@
 import { ChangeEvent } from 'react';
+
 import { c } from 'ttag';
+
 import { updateShortcuts } from '@proton/shared/lib/api/mailSettings';
 
-import { useToggle, useEventManager, useApiWithoutResult, useNotifications, useMailSettings } from '../../hooks';
 import { Toggle } from '../../components';
+import { useApiWithoutResult, useEventManager, useMailSettings, useNotifications, useToggle } from '../../hooks';
 
 interface Props {
     id: string;

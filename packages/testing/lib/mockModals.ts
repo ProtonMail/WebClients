@@ -1,4 +1,5 @@
 import { jest } from '@jest/globals';
+
 import { useModals } from '@proton/components';
 
 export const mockModals: ReturnType<typeof useModals> = {

@@ -1,5 +1,7 @@
 import { useState } from 'react';
+
 import { classnames } from '../../helpers';
+
 import './Backdrop.scss';
 
 interface Props {

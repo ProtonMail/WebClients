@@ -1,22 +1,25 @@
-import { useState, useMemo } from 'react';
+import { useMemo, useState } from 'react';
+
 import { c, msgid } from 'ttag';
-import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+
+import { CircleLoader, SearchInput } from '@proton/components';
+import { useApi, useNotifications, useUser, useUserKeys, useUserSettings } from '@proton/components/hooks';
 import { exportContacts } from '@proton/shared/lib/contacts/helpers/export';
 import { extractMergeable } from '@proton/shared/lib/contacts/helpers/merge';
 import { Recipient } from '@proton/shared/lib/interfaces';
-import { CircleLoader, SearchInput } from '@proton/components';
-import { useApi, useNotifications, useUser, useUserKeys, useUserSettings } from '@proton/components/hooks';
-import ContactsList from '../lists/ContactsList';
-import useContactList from '../hooks/useContactList';
-import ContactsWidgetToolbar from './ContactsWidgetToolbar';
-import { ContactDeleteProps } from '../modals/ContactDeleteModal';
+import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+
 import { ContactEditProps } from '../edit/ContactEditModal';
-import ContactsWidgetPlaceholder, { EmptyType } from './ContactsWidgetPlaceholder';
-import MergeContactBanner from '../widget/MergeContactBanner';
-import { CustomAction } from './types';
-import { ContactMergeProps } from '../merge/ContactMergeModal';
 import { ContactGroupEditProps } from '../group/ContactGroupEditModal';
+import useContactList from '../hooks/useContactList';
+import ContactsList from '../lists/ContactsList';
+import { ContactMergeProps } from '../merge/ContactMergeModal';
+import { ContactDeleteProps } from '../modals/ContactDeleteModal';
 import { SelectEmailsProps } from '../modals/SelectEmailsModal';
+import MergeContactBanner from '../widget/MergeContactBanner';
+import ContactsWidgetPlaceholder, { EmptyType } from './ContactsWidgetPlaceholder';
+import ContactsWidgetToolbar from './ContactsWidgetToolbar';
+import { CustomAction } from './types';
 
 interface Props {
     onClose: () => void;

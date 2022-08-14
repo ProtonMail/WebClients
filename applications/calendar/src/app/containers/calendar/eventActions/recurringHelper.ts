@@ -1,15 +1,16 @@
 import { addDays } from 'date-fns';
-import { getDtendProperty } from '@proton/shared/lib/calendar/vcalConverter';
-import { CalendarEvent } from '@proton/shared/lib/interfaces/calendar';
-import { getOccurrences } from '@proton/shared/lib/calendar/recurring';
-import { fromUTCDate, toUTCDate } from '@proton/shared/lib/date/timezone';
-import { VcalDateOrDateTimeProperty, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
-import { getIsAllDay, getPropertyTzid, getRecurrenceId } from '@proton/shared/lib/calendar/vcalHelper';
-import { toExdate } from '@proton/shared/lib/calendar/exdate';
 
+import { toExdate } from '@proton/shared/lib/calendar/exdate';
+import { getOccurrences } from '@proton/shared/lib/calendar/recurring';
+import { getDtendProperty } from '@proton/shared/lib/calendar/vcalConverter';
+import { getIsAllDay, getPropertyTzid, getRecurrenceId } from '@proton/shared/lib/calendar/vcalHelper';
+import { fromUTCDate, toUTCDate } from '@proton/shared/lib/date/timezone';
+import { CalendarEvent } from '@proton/shared/lib/interfaces/calendar';
+import { VcalDateOrDateTimeProperty, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
+
+import { CalendarEventRecurring } from '../../../interfaces/CalendarEvents';
 import parseMainEventData from '../event/parseMainEventData';
 import deleteFutureRecurrence from '../recurrence/deleteFutureRecurrence';
-import { CalendarEventRecurring } from '../../../interfaces/CalendarEvents';
 
 export const getOriginalEvent = (recurrences: CalendarEvent[]) => {
     return recurrences.find((Event) => {

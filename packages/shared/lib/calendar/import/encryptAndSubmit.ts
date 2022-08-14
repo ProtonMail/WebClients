@@ -1,24 +1,25 @@
 import chunk from '@proton/utils/chunk';
+
 import { syncMultipleEvents } from '../../api/calendars';
-import { HTTP_ERROR_CODES } from '../../errors';
-import {
-    SyncMultipleApiResponses,
-    DecryptedCalendarKey,
-    ImportedEvent,
-    VcalVeventComponent,
-    EncryptedEvent,
-    SyncMultipleApiResponse,
-} from '../../interfaces/calendar';
 import { HOUR, SECOND } from '../../constants';
+import { HTTP_ERROR_CODES } from '../../errors';
+import { wait } from '../../helpers/promise';
+import { Api, DecryptedKey } from '../../interfaces';
+import {
+    DecryptedCalendarKey,
+    EncryptedEvent,
+    ImportedEvent,
+    SyncMultipleApiResponse,
+    SyncMultipleApiResponses,
+    VcalVeventComponent,
+} from '../../interfaces/calendar';
 import { CreateCalendarEventSyncData } from '../../interfaces/calendar/Api';
 import { DEFAULT_ATTENDEE_PERMISSIONS } from '../constants';
 import { getIsSuccessSyncApiResponse } from '../helper';
-import { getComponentIdentifier, splitErrors } from './import';
 import { IMPORT_EVENT_ERROR_TYPE, ImportEventError } from '../icsSurgery/ImportEventError';
-import { createCalendarEvent, getHasSharedEventContent, getHasSharedKeyPacket } from '../serialize';
 import getCreationKeys from '../integration/getCreationKeys';
-import { wait } from '../../helpers/promise';
-import { Api, DecryptedKey } from '../../interfaces';
+import { createCalendarEvent, getHasSharedEventContent, getHasSharedKeyPacket } from '../serialize';
+import { getComponentIdentifier, splitErrors } from './import';
 
 const BATCH_SIZE = 10;
 

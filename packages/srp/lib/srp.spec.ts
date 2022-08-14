@@ -1,9 +1,9 @@
-import { describe, it } from 'mocha';
 import assert from 'assert';
+import { describe, it } from 'mocha';
 import requireInject from 'require-inject';
 
 import '../test/setup';
-import { AUTH_RESPONSE, SERVER_MODULUS, SERVER_MODULUS_FAKE, FAKE_RANDOM } from '../test/srp.data';
+import { AUTH_RESPONSE, FAKE_RANDOM, SERVER_MODULUS, SERVER_MODULUS_FAKE } from '../test/srp.data';
 
 const mockRandomValues = (buf: Uint8Array) => new Uint8Array(FAKE_RANDOM.slice(0, buf.length));
 

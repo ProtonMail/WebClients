@@ -1,29 +1,30 @@
 import { useCallback, useEffect } from 'react';
+
 import { c } from 'ttag';
 
 import {
-    useGetUser,
     useEventManager,
-    useNotifications,
-    usePreventLeave,
+    useGetUser,
     useModals,
+    useNotifications,
     useOnline,
+    usePreventLeave,
 } from '@proton/components';
-import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { MAX_SAFE_UPLOADING_FILE_COUNT, MAX_SAFE_UPLOADING_FILE_SIZE } from '@proton/shared/lib/drive/constants';
+import humanSize from '@proton/shared/lib/helpers/humanSize';
 
 import { TransferCancel, TransferState } from '../../../components/TransferManager/transfer';
-import { isTransferCancelError, isTransferProgress, isTransferPausedByConnection } from '../../../utils/transfer';
+import { FileThresholdModal, FileThresholdModalType } from '../../../components/uploads/FileThresholdModal';
+import { isTransferCancelError, isTransferPausedByConnection, isTransferProgress } from '../../../utils/transfer';
 import { reportError } from '../../_utils';
 import { MAX_UPLOAD_BLOCKS_LOAD, MAX_UPLOAD_FOLDER_LOAD } from '../constants';
-import { UploadConflictModal, UploadFileList, UploadFileItem } from '../interface';
+import { UploadConflictModal, UploadFileItem, UploadFileList } from '../interface';
 import { UpdateFilter } from './interface';
+import useUploadConflict from './useUploadConflict';
+import useUploadControl from './useUploadControl';
 import useUploadFile from './useUploadFile';
 import useUploadFolder from './useUploadFolder';
 import useUploadQueue, { convertFilterToFunction } from './useUploadQueue';
-import useUploadConflict from './useUploadConflict';
-import useUploadControl from './useUploadControl';
-import { FileThresholdModalType, FileThresholdModal } from '../../../components/uploads/FileThresholdModal';
 
 export default function useUpload(UploadConflictModal: UploadConflictModal) {
     const onlineStatus = useOnline();

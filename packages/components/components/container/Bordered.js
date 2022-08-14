@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+
 import { classnames } from '../../helpers';
 
 const Bordered = ({ children, className = '', ...rest }) => {

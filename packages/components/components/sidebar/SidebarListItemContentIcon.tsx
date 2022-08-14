@@ -1,5 +1,5 @@
-import Icon, { IconProps } from '../icon/Icon';
 import { classnames } from '../../helpers';
+import Icon, { IconProps } from '../icon/Icon';
 
 const SidebarListItemContentIcon = ({ className, ...rest }: IconProps) => {
     return (

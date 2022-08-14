@@ -1,20 +1,21 @@
 import { useCallback, useMemo, useRef } from 'react';
+
 import { c } from 'ttag';
 
 import { useActiveBreakpoint } from '@proton/components';
 
-import { EncryptedLink, LinkShareUrl, useSearchView, useThumbnailsDownload } from '../../../store';
-import useNavigate from '../../../hooks/drive/useNavigate';
-import FileBrowser, { GridHeader, Cells, useItemContextMenu, useSelection } from '../../FileBrowser';
-import { SearchItemContextMenu } from './SearchItemContextMenu';
-import headerItems from '../FileBrowser/headerCells';
-import { LocationCell, ModifiedCell, NameCell, SizeCell } from '../FileBrowser/contentCells';
-import { BrowserItemId, FileBrowserBaseItem, ListViewHeaderItem } from '../../FileBrowser/interface';
 import useDriveDragMove from '../../../hooks/drive/useDriveDragMove';
-import { GridViewItem } from '../FileBrowser/GridViewItem';
-import { getSelectedItems } from '../helpers';
+import useNavigate from '../../../hooks/drive/useNavigate';
+import { EncryptedLink, LinkShareUrl, useSearchView, useThumbnailsDownload } from '../../../store';
 import { SortField } from '../../../store/_views/utils/useSorting';
+import FileBrowser, { Cells, GridHeader, useItemContextMenu, useSelection } from '../../FileBrowser';
+import { BrowserItemId, FileBrowserBaseItem, ListViewHeaderItem } from '../../FileBrowser/interface';
+import { GridViewItem } from '../FileBrowser/GridViewItem';
+import { LocationCell, ModifiedCell, NameCell, SizeCell } from '../FileBrowser/contentCells';
+import headerItems from '../FileBrowser/headerCells';
 import { translateSortField } from '../SortDropdown';
+import { getSelectedItems } from '../helpers';
+import { SearchItemContextMenu } from './SearchItemContextMenu';
 
 export interface SearchItem extends FileBrowserBaseItem {
     activeRevision?: EncryptedLink['activeRevision'];

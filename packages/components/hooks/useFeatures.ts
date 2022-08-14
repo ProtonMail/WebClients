@@ -1,4 +1,5 @@
-import { useMemo, useContext, useEffect } from 'react';
+import { useContext, useEffect, useMemo } from 'react';
+
 import noop from '@proton/utils/noop';
 
 import { FeatureCode, FeatureContextValue, FeaturesContext } from '../containers/features';

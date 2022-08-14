@@ -1,15 +1,16 @@
 import { useRef, useState } from 'react';
+
 import {
     Autocomplete,
     AutocompleteList,
-    Option,
+    Icon,
+    IconName,
     Input,
+    Marks,
+    Option,
     SimpleAutocomplete,
     useAutocomplete,
     useAutocompleteFilter,
-    Marks,
-    Icon,
-    IconName,
 } from '@proton/components';
 
 import { getTitle } from '../../helpers/title';

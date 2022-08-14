@@ -1,7 +1,8 @@
-import { renderHook, act } from '@testing-library/react-hooks';
+import { act, renderHook } from '@testing-library/react-hooks';
 
 import { decryptSigned } from '@proton/shared/lib/keys/driveKeys';
 import { decryptPassphrase } from '@proton/shared/lib/keys/drivePassphrase';
+
 import { useLinkInner } from './useLink';
 
 jest.mock('@proton/shared/lib/keys/driveKeys');

@@ -1,7 +1,8 @@
 import { useCallback } from 'react';
-import useAsync from './useAsync';
+
 import useApi from './useApi';
 import { QueryFunction } from './useApiResult';
+import useAsync from './useAsync';
 
 interface Result<R, U extends any[]> {
     loading: boolean;

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+
 import {
     Button,
     Checkbox,
@@ -13,8 +14,8 @@ import {
     TextAreaTwo,
     Toggle,
 } from '@proton/components';
-import { getTitle } from '../../helpers/title';
 
+import { getTitle } from '../../helpers/title';
 import mdx from './InputField.mdx';
 
 export default {

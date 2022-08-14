@@ -1,7 +1,8 @@
 import { c } from 'ttag';
-import { Alert, useSettingsLink, ModalTwo, ModalTwoHeader, Button, ModalProps } from '../../../components';
-import ModalFooter from '../../../components/modalTwo/ModalFooter';
+
+import { Alert, Button, ModalProps, ModalTwo, ModalTwoHeader, useSettingsLink } from '../../../components';
 import ModalContent from '../../../components/modalTwo/ModalContent';
+import ModalFooter from '../../../components/modalTwo/ModalFooter';
 
 const ContactUpgradeModal = ({ ...rest }: ModalProps) => {
     const goToSettings = useSettingsLink();

@@ -1,22 +1,25 @@
-import { useState, useEffect, useMemo } from 'react';
+import { useEffect, useMemo, useState } from 'react';
+
 import { c } from 'ttag';
-import { splitKeys } from '@proton/shared/lib/keys/keys';
+
 import { getContact } from '@proton/shared/lib/api/contacts';
+import { CRYPTO_PROCESSING_TYPES } from '@proton/shared/lib/contacts/constants';
 import { CryptoProcessingError, prepareVCardContact } from '@proton/shared/lib/contacts/decrypt';
 import { toMap } from '@proton/shared/lib/helpers/object';
-import { CRYPTO_PROCESSING_TYPES } from '@proton/shared/lib/contacts/constants';
 import { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';
+import { splitKeys } from '@proton/shared/lib/keys/keys';
 import noop from '@proton/utils/noop';
+
 import {
-    Loader,
-    ModalTwo,
-    ModalProps,
-    ModalTwoHeader,
-    ModalTwoFooter,
     Button,
+    Loader,
+    ModalProps,
+    ModalTwo,
     ModalTwoContent,
+    ModalTwoFooter,
+    ModalTwoHeader,
 } from '../../../components';
-import { useApi, useLoading, useContactEmails, useAddresses, useContactGroups, useUserKeys } from '../../../hooks';
+import { useAddresses, useApi, useContactEmails, useContactGroups, useLoading, useUserKeys } from '../../../hooks';
 import ContactView from '../view/ContactView';
 
 export interface ContactMergeDetailsModalProps {

@@ -1,4 +1,5 @@
-import { useEffect, useReducer, Reducer } from 'react';
+import { Reducer, useEffect, useReducer } from 'react';
+
 import { getReferralsStatus } from '@proton/shared/lib/api/core/referrals';
 import { ReferralStatus } from '@proton/shared/lib/interfaces';
 

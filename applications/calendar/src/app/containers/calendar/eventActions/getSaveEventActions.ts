@@ -1,13 +1,13 @@
+import { useGetCalendarKeys } from '@proton/components/hooks/useGetDecryptedPassphraseAndCalendarKeys';
 import { withPmAttendees } from '@proton/shared/lib/calendar/attendees';
-import { getMemberAndAddress } from '@proton/shared/lib/calendar/members';
 import { getSelfAttendeeToken } from '@proton/shared/lib/calendar/integration/invite';
+import { getMemberAndAddress } from '@proton/shared/lib/calendar/members';
 import { getIsRruleEqual } from '@proton/shared/lib/calendar/rruleEqual';
 import withVeventRruleWkst from '@proton/shared/lib/calendar/rruleWkst';
 import { buildVcalOrganizer, dayToNumericDay } from '@proton/shared/lib/calendar/vcalConverter';
 import { getHasAttendees } from '@proton/shared/lib/calendar/vcalHelper';
 import { getBase64SharedSessionKey } from '@proton/shared/lib/calendar/veventHelper';
 import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
-import noop from '@proton/utils/noop';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { Address, Api, SimpleMap } from '@proton/shared/lib/interfaces';
@@ -15,8 +15,9 @@ import { CalendarBootstrap, SyncMultipleApiResponse } from '@proton/shared/lib/i
 import { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 import { GetAddressKeys } from '@proton/shared/lib/interfaces/hooks/GetAddressKeys';
 import { GetCanonicalEmailsMap } from '@proton/shared/lib/interfaces/hooks/GetCanonicalEmailsMap';
-import { useGetCalendarKeys } from '@proton/components/hooks/useGetDecryptedPassphraseAndCalendarKeys';
 import { SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
+import noop from '@proton/utils/noop';
+
 import { getRecurringEventUpdatedText, getSingleEventText } from '../../../components/eventModal/eventForm/i18n';
 import { modelToVeventComponent } from '../../../components/eventModal/eventForm/modelToProperties';
 import { EventNewData, EventOldData } from '../../../interfaces/EventData';

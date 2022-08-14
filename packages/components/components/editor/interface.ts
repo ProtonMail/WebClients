@@ -1,5 +1,6 @@
-import { Direction, IEditor, PluginEvent } from 'roosterjs-editor-types';
 import { Dispatch, SetStateAction } from 'react';
+
+import { Direction, IEditor, PluginEvent } from 'roosterjs-editor-types';
 
 export { Direction as EditorTextDirection } from 'roosterjs-editor-types';
 

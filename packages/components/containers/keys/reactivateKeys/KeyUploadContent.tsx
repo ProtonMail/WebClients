@@ -1,9 +1,11 @@
 import { ComponentType, Dispatch, ReactNode, SetStateAction, useRef } from 'react';
+
 import { c } from 'ttag';
+
 import { CryptoProxy, PrivateKeyReference } from '@proton/crypto';
 import { ArmoredKeyWithInfo } from '@proton/shared/lib/keys';
-import uniqueBy from '@proton/utils/uniqueBy';
 import removeItem from '@proton/utils/removeIndex';
+import uniqueBy from '@proton/utils/uniqueBy';
 
 import { Button, ButtonProps, Icon, InputFieldTwo, Table, TableBody, TableRow } from '../../../components';
 import { useModals, useNotifications } from '../../../hooks';

@@ -1,23 +1,24 @@
-import { ChangeEvent, useState, useRef, useEffect, useMemo, KeyboardEvent, ReactNode, MouseEvent } from 'react';
+import { ChangeEvent, KeyboardEvent, MouseEvent, ReactNode, useEffect, useMemo, useRef, useState } from 'react';
+
 import { c } from 'ttag';
 
+import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import { ImportedMailFolder, MailImportDestinationFolder } from '@proton/shared/lib/interfaces/EasySwitch';
 import { Folder } from '@proton/shared/lib/interfaces/Folder';
 import { Label } from '@proton/shared/lib/interfaces/Label';
-import { MailImportDestinationFolder, ImportedMailFolder } from '@proton/shared/lib/interfaces/EasySwitch';
-import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 
+import { Checkbox, Icon, InlineLinkButton, InputFieldTwo, LabelStack, Tooltip } from '../../../../components';
 import { classnames } from '../../../../helpers';
-import { Tooltip, Icon, Checkbox, InlineLinkButton, LabelStack, InputFieldTwo } from '../../../../components';
+import { RESERVED_NAMES, escapeSlashes, nameAlreadyExists, splitEscaped, unescapeSlashes } from '../helpers';
 import {
     CheckedFoldersMap,
     DisabledFoldersMap,
-    FolderRelationshipsMap,
+    EditModeMap,
     FolderNamesMap,
     FolderPathsMap,
-    EditModeMap,
+    FolderRelationshipsMap,
     LabelsMap,
 } from '../interfaces';
-import { escapeSlashes, unescapeSlashes, splitEscaped, nameAlreadyExists, RESERVED_NAMES } from '../helpers';
 
 const SYSTEM_FOLDERS = Object.values(MailImportDestinationFolder) as string[];
 

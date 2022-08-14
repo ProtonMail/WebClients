@@ -1,9 +1,9 @@
 import { APPS, APPS_CONFIGURATION, VPN_HOSTNAME } from '@proton/shared/lib/constants';
 
-import { useConfig, useApps } from '../../hooks';
-import MobileNavServices from './MobileNavServices';
-import Href from '../link/Href';
 import { AppLink, Logo, VpnLogo } from '..';
+import { useApps, useConfig } from '../../hooks';
+import Href from '../link/Href';
+import MobileNavServices from './MobileNavServices';
 
 const MobileAppsLinks = () => {
     const { APP_NAME } = useConfig();

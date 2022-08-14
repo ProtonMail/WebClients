@@ -1,6 +1,6 @@
-import { testEmail, keyList, skl, epoch, proof } from './keyTransparency.data';
-import { verifyPublicKeys } from '../lib/keyTransparency';
 import { KT_STATUS } from '../lib/constants';
+import { verifyPublicKeys } from '../lib/keyTransparency';
+import { epoch, keyList, proof, skl, testEmail } from './keyTransparency.data';
 
 describe('key transparency', () => {
     const mockAddress = {

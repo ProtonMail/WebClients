@@ -1,16 +1,16 @@
-import { parse } from '../../../lib/calendar/vcal';
+import { FREQUENCY } from '../../../lib/calendar/constants';
 import {
     getDayAndSetpos,
+    getHasConsistentRrule,
+    getHasOccurrences,
     getIsRruleCustom,
-    getSupportedRrule,
-    getSupportedUntil,
+    getIsRruleSimple,
     getIsRruleSupported,
     getIsStandardByday,
-    getHasConsistentRrule,
-    getIsRruleSimple,
-    getHasOccurrences,
+    getSupportedRrule,
+    getSupportedUntil,
 } from '../../../lib/calendar/rrule';
-import { FREQUENCY } from '../../../lib/calendar/constants';
+import { parse } from '../../../lib/calendar/vcal';
 
 describe('getIsStandardByday', () => {
     it('returns true for standard BYDAY strings', () => {

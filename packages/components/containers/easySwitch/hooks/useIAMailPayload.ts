@@ -1,26 +1,26 @@
 import { format } from 'date-fns';
 
 import { LABEL_TYPE } from '@proton/shared/lib/constants';
-import { Folder } from '@proton/shared/lib/interfaces/Folder';
-import { Label } from '@proton/shared/lib/interfaces/Label';
 import {
-    MailImportDestinationFolder,
     ImportedMailFolder,
+    MailImportDestinationFolder,
     MailImportMapping,
     MailImportPayloadError,
 } from '@proton/shared/lib/interfaces/EasySwitch';
+import { Folder } from '@proton/shared/lib/interfaces/Folder';
+import { Label } from '@proton/shared/lib/interfaces/Label';
 
+import { MAX_FOLDER_LIMIT } from '../constants';
 import {
     escapeSlashes,
     getFolderRelationshipsMap,
     getRandomLabelColor,
     mappingHasFoldersTooLong,
     mappingHasLabelsTooLong,
-    mappingHasUnavailableNames,
     mappingHasReservedNames,
+    mappingHasUnavailableNames,
     splitEscaped,
 } from '../mail/helpers';
-import { MAX_FOLDER_LIMIT } from '../constants';
 
 const { FOLDER_NAMES_TOO_LONG, LABEL_NAMES_TOO_LONG, UNAVAILABLE_NAMES, MAX_FOLDERS_LIMIT_REACHED, RESERVED_NAMES } =
     MailImportPayloadError;

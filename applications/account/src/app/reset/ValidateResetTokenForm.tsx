@@ -1,11 +1,13 @@
-import { c } from 'ttag';
 import { useState } from 'react';
-import { Button, RequestNewCodeModal, useFormErrors, useLoading, InputFieldTwo } from '@proton/components';
-import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
-import { RecoveryMethod } from '@proton/components/containers/resetPassword/interface';
-import noop from '@proton/utils/noop';
-import Text from '../public/Text';
 
+import { c } from 'ttag';
+
+import { Button, InputFieldTwo, RequestNewCodeModal, useFormErrors, useLoading } from '@proton/components';
+import { RecoveryMethod } from '@proton/components/containers/resetPassword/interface';
+import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
+import noop from '@proton/utils/noop';
+
+import Text from '../public/Text';
 import ValidateResetTokenConfirmModal from './ValidateResetTokenConfirmModal';
 
 interface Props {

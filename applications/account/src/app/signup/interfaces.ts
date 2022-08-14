@@ -1,3 +1,11 @@
+import { ChallengeResult } from '@proton/components';
+import { VerificationModel } from '@proton/components/containers/api/humanVerification/interface';
+import { AppIntent, AuthSession } from '@proton/components/containers/login/interface';
+import { Payment } from '@proton/components/containers/payments/interface';
+import { SelectedProductPlans } from '@proton/components/containers/payments/subscription/PlanSelection';
+import { PayPalHook } from '@proton/components/containers/payments/usePayPal';
+import { AuthResponse } from '@proton/shared/lib/authentication/interface';
+import { APPS, CLIENT_TYPES } from '@proton/shared/lib/constants';
 import {
     Address,
     Currency,
@@ -8,14 +16,6 @@ import {
     SubscriptionCheckResponse,
     User,
 } from '@proton/shared/lib/interfaces';
-import { APPS, CLIENT_TYPES } from '@proton/shared/lib/constants';
-import { PayPalHook } from '@proton/components/containers/payments/usePayPal';
-import { SelectedProductPlans } from '@proton/components/containers/payments/subscription/PlanSelection';
-import { AppIntent, AuthSession } from '@proton/components/containers/login/interface';
-import { ChallengeResult } from '@proton/components';
-import { VerificationModel } from '@proton/components/containers/api/humanVerification/interface';
-import { Payment } from '@proton/components/containers/payments/interface';
-import { AuthResponse } from '@proton/shared/lib/authentication/interface';
 
 export enum SIGNUP_STEPS {
     NO_SIGNUP = 'no-signup',

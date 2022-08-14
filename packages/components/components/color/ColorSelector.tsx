@@ -1,10 +1,10 @@
 import tinycolor from 'tinycolor2';
 
+import { genAccentShades } from '@proton/colors';
+import useInstance from '@proton/hooks/useInstance';
 import generateUID from '@proton/shared/lib/helpers/generateUID';
 import capitalize from '@proton/utils/capitalize';
-import { genAccentShades } from '@proton/colors';
 
-import useInstance from '@proton/hooks/useInstance';
 import { classnames } from '../../helpers';
 
 interface Props {

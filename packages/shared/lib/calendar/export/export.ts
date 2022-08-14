@@ -1,10 +1,22 @@
-import { c } from 'ttag';
-import { CryptoProxy } from '@proton/crypto';
 import { fromUnixTime } from 'date-fns';
-import unique from '@proton/utils/unique';
+import { c } from 'ttag';
+
+import { CryptoProxy } from '@proton/crypto';
 import partition from '@proton/utils/partition';
+import unique from '@proton/utils/unique';
+
 import { queryEvents } from '../../api/calendars';
+import { SECOND } from '../../constants';
+import formatUTC from '../../date-fns-utc/format';
+import { WeekStartsOn } from '../../date-fns-utc/interface';
+import {
+    formatGMTOffsetAbbreviation,
+    fromUTCDate,
+    fromUTCDateToLocalFakeUTCDate,
+    getTimezoneOffset,
+} from '../../date/timezone';
 import { wait } from '../../helpers/promise';
+import { dateLocale } from '../../i18n';
 import { Address, Api, Key } from '../../interfaces';
 import {
     CalendarEvent,
@@ -19,20 +31,10 @@ import { GetCalendarEventPersonal } from '../../interfaces/hooks/GetCalendarEven
 import { GetCalendarKeys } from '../../interfaces/hooks/GetCalendarKeys';
 import { withNormalizedAuthors } from '../author';
 import { readCalendarEvent, readSessionKeys } from '../deserialize';
+import { getTimezonedFrequencyString } from '../integration/getFrequencyString';
 import { getCalendarEventDecryptionKeys } from '../keys/getCalendarEventDecryptionKeys';
 import { fromRruleString } from '../vcal';
-import { getTimezonedFrequencyString } from '../integration/getFrequencyString';
 import { getDateProperty } from '../vcalConverter';
-import {
-    formatGMTOffsetAbbreviation,
-    fromUTCDate,
-    fromUTCDateToLocalFakeUTCDate,
-    getTimezoneOffset,
-} from '../../date/timezone';
-import { dateLocale } from '../../i18n';
-import { WeekStartsOn } from '../../date-fns-utc/interface';
-import { SECOND } from '../../constants';
-import formatUTC from '../../date-fns-utc/format';
 import { withSummary } from '../veventHelper';
 
 export const getHasCalendarEventMatchingSigningKeys = async (event: CalendarEvent, keys: Key[]) => {

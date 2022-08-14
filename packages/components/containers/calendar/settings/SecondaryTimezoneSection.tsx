@@ -1,14 +1,15 @@
+import { useState } from 'react';
+
+import { c } from 'ttag';
+
 import { updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
 import { getTimezone } from '@proton/shared/lib/date/timezone';
 import { CalendarUserSettings } from '@proton/shared/lib/interfaces/calendar';
-import { useState } from 'react';
-import { c } from 'ttag';
 
-import { useApi, useEventManager, useLoading, useNotifications } from '../../../hooks';
 import { TimeZoneSelector } from '../../../components';
-
-import SettingsLayoutLeft from '../../account/SettingsLayoutLeft';
+import { useApi, useEventManager, useLoading, useNotifications } from '../../../hooks';
 import SettingsLayout from '../../account/SettingsLayout';
+import SettingsLayoutLeft from '../../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../../account/SettingsLayoutRight';
 
 interface Props {

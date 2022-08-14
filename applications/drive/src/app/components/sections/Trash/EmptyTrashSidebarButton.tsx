@@ -1,9 +1,9 @@
 import { c } from 'ttag';
 
-import { FloatingButton, SidebarPrimaryButton, Icon } from '@proton/components';
+import { FloatingButton, Icon, SidebarPrimaryButton } from '@proton/components';
 
-import { useActions, useIsEmptyTrashButtonAvailable } from '../../../store';
 import useActiveShare from '../../../hooks/drive/useActiveShare';
+import { useActions, useIsEmptyTrashButtonAvailable } from '../../../store';
 
 interface Props {
     mobileVersion?: boolean;

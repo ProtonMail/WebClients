@@ -1,18 +1,18 @@
 import { ChangeEvent } from 'react';
+
 import { c } from 'ttag';
 
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import {
-    OAUTH_PROVIDER,
     IMPORT_ERROR,
     ImportError,
-    NormalizedImporter,
     NON_OAUTH_PROVIDER,
+    NormalizedImporter,
+    OAUTH_PROVIDER,
 } from '@proton/shared/lib/interfaces/EasySwitch';
-import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
-import { Alert, Row, Label, Field, Href, InputTwo, PasswordInputTwo } from '../../../../../components';
+import { Alert, Field, Href, InputTwo, Label, PasswordInputTwo, Row } from '../../../../../components';
 import { EASY_SWITCH_EMAIL_PLACEHOLDER, IMAPS } from '../../../constants';
-
 import { ImportMailModalModel } from '../../interfaces';
 
 interface Props {

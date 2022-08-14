@@ -1,7 +1,8 @@
-import { SortEndHandler, ContainerGetter } from 'react-sortable-hoc';
-import { c } from 'ttag';
-import { OrderableTable, OrderableTableHeader, OrderableTableBody } from '../../components';
+import { ContainerGetter, SortEndHandler } from 'react-sortable-hoc';
 
+import { c } from 'ttag';
+
+import { OrderableTable, OrderableTableBody, OrderableTableHeader } from '../../components';
 import FilterItemRow from './FilterItemRow';
 import { Filter } from './interfaces';
 

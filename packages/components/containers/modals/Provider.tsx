@@ -1,10 +1,10 @@
-import { useState, useMemo, ReactNode } from 'react';
+import { ReactNode, useMemo, useState } from 'react';
 
-import ModalsContext from './modalsContext';
-import ModalsChildrenContext from './childrenContext';
-import createManager from './manager';
-import { Modal } from './interface';
 import { ModalPositionsProvider } from '../../components/modalTwo/modalPositions';
+import ModalsChildrenContext from './childrenContext';
+import { Modal } from './interface';
+import createManager from './manager';
+import ModalsContext from './modalsContext';
 
 interface Props {
     children: ReactNode;

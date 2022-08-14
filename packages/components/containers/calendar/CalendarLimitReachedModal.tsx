@@ -1,9 +1,10 @@
 import React from 'react';
+
 import { c } from 'ttag';
 
+import { AlertModal } from '../../components/alertModal';
 import { Button, ButtonLike } from '../../components/button';
 import { SettingsLink } from '../../components/link';
-import { AlertModal } from '../../components/alertModal';
 
 interface Props {
     children: React.ReactNode;

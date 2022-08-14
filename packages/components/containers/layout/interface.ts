@@ -1,4 +1,5 @@
 import { ThemeColor } from '@proton/colors';
+
 import { IconName } from '../../components';
 
 export interface SubSectionConfig {

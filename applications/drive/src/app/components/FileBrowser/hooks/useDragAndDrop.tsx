@@ -1,14 +1,15 @@
 import { useCallback } from 'react';
-import { msgid, c } from 'ttag';
+
+import { c, msgid } from 'ttag';
 
 import { useDragMove } from '@proton/components';
-import noop from '@proton/utils/noop';
 import { CUSTOM_DATA_FORMAT } from '@proton/shared/lib/drive/constants';
+import noop from '@proton/utils/noop';
 
-import { useSelection } from '../state/useSelection';
-import { DragMoveControls, FileBrowserBaseItem } from '../interface';
-import { selectMessageForItemList } from '../../sections/helpers';
 import { DecryptedLink } from '../../../store';
+import { selectMessageForItemList } from '../../sections/helpers';
+import { DragMoveControls, FileBrowserBaseItem } from '../interface';
+import { useSelection } from '../state/useSelection';
 
 interface Options {
     item: FileBrowserBaseItem;

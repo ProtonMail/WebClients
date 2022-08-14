@@ -1,4 +1,5 @@
 import { INVOICE_STATE } from '@proton/shared/lib/constants';
+
 import { Price } from '../../components';
 import { Invoice } from './interface';
 

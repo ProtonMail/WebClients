@@ -1,4 +1,5 @@
-import { renderHook, act } from '@testing-library/react-hooks';
+import { act, renderHook } from '@testing-library/react-hooks';
+
 import { useSelectionControls } from './useSelectionControls';
 
 const ALL_IDS = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];

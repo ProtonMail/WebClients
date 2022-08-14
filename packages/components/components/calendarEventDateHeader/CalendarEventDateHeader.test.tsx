@@ -1,5 +1,6 @@
-import { enUS, pt } from 'date-fns/locale';
 import { render, screen } from '@testing-library/react';
+import { enUS, pt } from 'date-fns/locale';
+
 import { CalendarEventDateHeader } from './index';
 
 describe('CalendarEventDateHeader', () => {

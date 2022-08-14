@@ -1,14 +1,15 @@
-import { useRef, useEffect, ReactNode } from 'react';
+import { ReactNode, useEffect, useRef } from 'react';
+
 import { c } from 'ttag';
+
 import { hasMailPlus } from '@proton/shared/lib/helpers/subscription';
 
 import { ButtonLike, SettingsLink } from '../../components';
-import { useUser, useSubscription, useOrganization, useUserSettings } from '../../hooks';
-import { SectionConfig } from '../layout';
-
-import SummarySection from './SummarySection';
-import IndexSection from './IndexSection';
+import { useOrganization, useSubscription, useUser, useUserSettings } from '../../hooks';
 import { SettingsPageTitle } from '../account';
+import { SectionConfig } from '../layout';
+import IndexSection from './IndexSection';
+import SummarySection from './SummarySection';
 
 interface Props {
     title: string;

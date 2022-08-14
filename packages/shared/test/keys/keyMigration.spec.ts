@@ -1,13 +1,13 @@
-import { migrateAddressKeys } from '../../lib/keys/keyMigration';
-import { getLegacyAddressKey, getUserKey } from './keyDataHelper';
-import { Address as tsAddress, Unwrap, User as tsUser } from '../../lib/interfaces';
+import { extractEmailFromUserID } from '../../lib/helpers/email';
+import { Unwrap, Address as tsAddress, User as tsUser } from '../../lib/interfaces';
 import {
     decryptAddressKeyToken,
     getDecryptedAddressKeysHelper,
     getDecryptedUserKeysHelper,
     splitKeys,
 } from '../../lib/keys';
-import { extractEmailFromUserID } from '../../lib/helpers/email';
+import { migrateAddressKeys } from '../../lib/keys/keyMigration';
+import { getLegacyAddressKey, getUserKey } from './keyDataHelper';
 
 const DEFAULT_KEYPASSWORD = '123';
 

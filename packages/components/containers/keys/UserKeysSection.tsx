@@ -1,19 +1,18 @@
 import { c } from 'ttag';
-import { addUserKeysProcess } from '@proton/shared/lib/keys';
-import { EncryptionConfig } from '@proton/shared/lib/interfaces';
+
 import { AlgorithmInfo } from '@proton/crypto';
+import { EncryptionConfig } from '@proton/shared/lib/interfaces';
+import { addUserKeysProcess } from '@proton/shared/lib/keys';
 
 import { Button, Loader, useModalState } from '../../components';
-import { useUser, useModals, useUserKeys, useApi, useEventManager, useAuthentication } from '../../hooks';
-
+import { useApi, useAuthentication, useEventManager, useModals, useUser, useUserKeys } from '../../hooks';
 import { SettingsParagraph, SettingsSectionWide } from '../account';
-
-import ExportPublicKeyModal from './exportKey/ExportPublicKeyModal';
-import ExportPrivateKeyModal from './exportKey/ExportPrivateKeyModal';
 import KeysTable from './KeysTable';
-import useDisplayKeys from './shared/useDisplayKeys';
-import { getKeyByID } from './shared/helper';
 import AddKeyModal from './addKey/AddKeyModal';
+import ExportPrivateKeyModal from './exportKey/ExportPrivateKeyModal';
+import ExportPublicKeyModal from './exportKey/ExportPublicKeyModal';
+import { getKeyByID } from './shared/helper';
+import useDisplayKeys from './shared/useDisplayKeys';
 
 const UserKeysSections = () => {
     const { createModal } = useModals();

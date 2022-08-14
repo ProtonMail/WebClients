@@ -1,12 +1,11 @@
-import { MAX_LENGTHS_API, EVENT_VERIFICATION_STATUS } from '@proton/shared/lib/calendar/constants';
-import { EventModelView, VcalVeventComponent, SelfAddressData } from '@proton/shared/lib/interfaces/calendar';
+import { EVENT_VERIFICATION_STATUS, MAX_LENGTHS_API } from '@proton/shared/lib/calendar/constants';
 import { getDtendProperty } from '@proton/shared/lib/calendar/vcalConverter';
 import { getEventStatus } from '@proton/shared/lib/calendar/vcalHelper';
+import { EventModelView, SelfAddressData, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
 import truncate from '@proton/utils/truncate';
 
 import { propertiesToAttendeeModel } from './propertiesToAttendeeModel';
 import propertiesToDateTimeModel from './propertiesToDateTimeModel';
-
 import { propertiesToFrequencyModel } from './propertiesToFrequencyModel';
 import { propertiesToOrganizerModel } from './propertiesToOrganizerModel';
 

@@ -1,28 +1,30 @@
 import { useState } from 'react';
-import { c } from 'ttag';
-import { requestUsername } from '@proton/shared/lib/api/reset';
 import { useHistory } from 'react-router-dom';
-import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
-import noop from '@proton/utils/noop';
+
+import { c } from 'ttag';
 
 import {
     Button,
-    useApi,
-    useNotifications,
-    useLoading,
-    useFormErrors,
-    useErrorHandler,
-    Tabs,
-    PhoneInput,
-    useMyLocation,
     InputFieldTwo,
+    PhoneInput,
+    Tabs,
+    useApi,
+    useErrorHandler,
+    useFormErrors,
+    useLoading,
+    useMyLocation,
+    useNotifications,
 } from '@proton/components';
+import { requestUsername } from '@proton/shared/lib/api/reset';
 import { SSO_PATHS } from '@proton/shared/lib/constants';
-import Content from './Content';
-import Main from './Main';
-import Header from './Header';
+import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
+import noop from '@proton/utils/noop';
+
 import LoginSupportDropdown from '../login/LoginSupportDropdown';
+import Content from './Content';
+import Header from './Header';
 import Layout from './Layout';
+import Main from './Main';
 
 type Method = 'email' | 'phone';
 const ForgotUsernameForm = ({

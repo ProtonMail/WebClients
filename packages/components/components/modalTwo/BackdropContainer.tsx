@@ -1,5 +1,5 @@
-import Backdrop from './Backdrop';
 import { Portal } from '../portal';
+import Backdrop from './Backdrop';
 import { useModalPositions } from './modalPositions';
 
 const BackdropContainer = () => {

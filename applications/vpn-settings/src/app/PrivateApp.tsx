@@ -1,14 +1,14 @@
 import { StandardPrivateApp } from '@proton/components';
-import {
-    UserModel,
-    MailSettingsModel,
-    UserSettingsModel,
-    SubscriptionModel,
-    OrganizationModel,
-    AddressesModel,
-    PaymentMethodsModel,
-} from '@proton/shared/lib/models';
 import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
+import {
+    AddressesModel,
+    MailSettingsModel,
+    OrganizationModel,
+    PaymentMethodsModel,
+    SubscriptionModel,
+    UserModel,
+    UserSettingsModel,
+} from '@proton/shared/lib/models';
 
 const getAppContainer = () => import('./MainContainer');
 

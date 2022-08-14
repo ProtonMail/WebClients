@@ -1,16 +1,16 @@
 import { useMemo, useState } from 'react';
-import { ALL_MEMBERS_ID, MEMBER_PRIVATE } from '@proton/shared/lib/constants';
+
 import { c, msgid } from 'ttag';
-import { UserModel, Organization, Member } from '@proton/shared/lib/interfaces';
 
-import { Alert, Loader, Button, SettingsLink, useModalState } from '../../components';
-import { useMembers, useMemberAddresses, useOrganizationKey, useNotifications, useAddresses } from '../../hooks';
+import { ALL_MEMBERS_ID, MEMBER_PRIVATE } from '@proton/shared/lib/constants';
+import { Member, Organization, UserModel } from '@proton/shared/lib/interfaces';
 
+import { Alert, Button, Loader, SettingsLink, useModalState } from '../../components';
+import { useAddresses, useMemberAddresses, useMembers, useNotifications, useOrganizationKey } from '../../hooks';
 import { SettingsParagraph } from '../account';
-
 import AddressModal from './AddressModal';
-import AddressesWithUser from './AddressesWithUser';
 import AddressesTable from './AddressesTable';
+import AddressesWithUser from './AddressesWithUser';
 
 const getMemberIndex = (members: Member[] = [], memberID?: string, isOnlySelf?: boolean) => {
     const newMemberIndex =

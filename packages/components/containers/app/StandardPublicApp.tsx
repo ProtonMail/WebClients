@@ -1,12 +1,14 @@
 import { ReactNode, useEffect, useState } from 'react';
+import { useHistory } from 'react-router-dom';
+
 import { c } from 'ttag';
+
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { getCookie } from '@proton/shared/lib/helpers/cookies';
 import { loadCryptoWorker } from '@proton/shared/lib/helpers/setupCryptoWorker';
+import { getBrowserLocale, getClosestLocaleCode, getClosestLocaleMatch } from '@proton/shared/lib/i18n/helper';
 import { loadDateLocale, loadLocale } from '@proton/shared/lib/i18n/loadLocale';
 import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
-import { getBrowserLocale, getClosestLocaleCode, getClosestLocaleMatch } from '@proton/shared/lib/i18n/helper';
-import { useHistory } from 'react-router-dom';
-import { getCookie } from '@proton/shared/lib/helpers/cookies';
 
 import ModalsChildren from '../modals/Children';
 import LoaderPage from './LoaderPage';

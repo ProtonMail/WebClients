@@ -1,7 +1,9 @@
 import { ChangeEvent } from 'react';
+
 import { c } from 'ttag';
-import isTruthy from '@proton/utils/isTruthy';
+
 import { Address } from '@proton/shared/lib/interfaces';
+import isTruthy from '@proton/utils/isTruthy';
 
 import { DropdownActions, Select } from '../../components';
 

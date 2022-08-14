@@ -1,12 +1,12 @@
 import { updateEarlyAccess } from '@proton/shared/lib/api/settings';
-import { deleteCookie, getCookie, setCookie } from '@proton/shared/lib/helpers/cookies';
 import { doesNotSupportEarlyAccessVersion } from '@proton/shared/lib/helpers/browser';
+import { deleteCookie, getCookie, setCookie } from '@proton/shared/lib/helpers/cookies';
 
-import useFeature from './useFeature';
+import { Feature, FeatureCode } from '../containers/features';
 import useApi from './useApi';
+import useFeature from './useFeature';
 import useLoading from './useLoading';
 import useUserSettings from './useUserSettings';
-import { Feature, FeatureCode } from '../containers/features';
 
 export type Environment = 'alpha' | 'beta';
 

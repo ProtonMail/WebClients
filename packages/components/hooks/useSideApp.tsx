@@ -10,12 +10,12 @@ import {
     useState,
 } from 'react';
 
-import { APP_NAMES, DAY, MINUTE } from '@proton/shared/lib/constants';
 import { versionCookieAtLoad } from '@proton/components/hooks/useEarlyAccess';
 import { serverTime } from '@proton/crypto';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { getAppFromHostname } from '@proton/shared/lib/apps/slugHelper';
 import { getLocalIDFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
+import { APP_NAMES, DAY, MINUTE } from '@proton/shared/lib/constants';
 import { ApiError, serializeApiErrorData } from '@proton/shared/lib/fetch/ApiError';
 import {
     addParentAppToUrl,

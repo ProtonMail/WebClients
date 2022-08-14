@@ -1,23 +1,26 @@
 import { Fragment, ReactNode, useState } from 'react';
+
 import { c } from 'ttag';
+
 import { SUBSCRIPTION_CANCELLATION_REASONS } from '@proton/shared/lib/constants';
-import shuffle from '@proton/utils/shuffle';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { UserModel } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
+import shuffle from '@proton/utils/shuffle';
+
 import {
     Button,
+    Form,
     InputFieldTwo,
-    ModalProps,
     ModalTwo as Modal,
-    ModalTwoHeader as ModalHeader,
     ModalTwoContent as ModalContent,
     ModalTwoFooter as ModalFooter,
+    ModalTwoHeader as ModalHeader,
+    ModalProps,
     Option,
     SelectTwo,
     TextAreaTwo,
     useFormErrors,
-    Form,
 } from '../../../components';
 import { useConfig } from '../../../hooks';
 

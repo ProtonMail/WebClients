@@ -1,4 +1,5 @@
 import { c } from 'ttag';
+
 import { getMimeTypeDescription } from '../../../sections/helpers';
 
 interface Props {

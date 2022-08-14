@@ -1,9 +1,11 @@
-import { useMemo, Fragment } from 'react';
+import { Fragment, useMemo } from 'react';
+
 import { omit } from '@proton/shared/lib/helpers/object';
-import Breadcrumb from './Breadcrumb';
-import CollapsedBreadcrumbs from './CollapsedBreadcrumbs';
+
 import useActiveBreakpoint from '../../hooks/useActiveBreakpoint';
 import Icon from '../icon/Icon';
+import Breadcrumb from './Breadcrumb';
+import CollapsedBreadcrumbs from './CollapsedBreadcrumbs';
 import { BreadcrumbInfo } from './interfaces';
 
 export type GroupedBreadcrumbs = (BreadcrumbInfo | BreadcrumbInfo[])[];

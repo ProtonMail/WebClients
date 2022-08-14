@@ -1,4 +1,4 @@
-import { useRef, useEffect, MutableRefObject } from 'react';
+import { MutableRefObject, useEffect, useRef } from 'react';
 
 const traceChanges = (componentName: string, typeName: string, current: any, previousRef: MutableRefObject<any>) => {
     const changedProps = Object.entries(current).reduce<any>((acc, [key, value]) => {

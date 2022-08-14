@@ -1,7 +1,8 @@
 import { useState } from 'react';
+
 import { c } from 'ttag';
 
-import { Alert, ErrorButton, ConfirmModal, ConfirmModalProps, Input, Row } from '../../../../components';
+import { Alert, ConfirmModal, ConfirmModalProps, ErrorButton, Input, Row } from '../../../../components';
 
 interface Props extends ConfirmModalProps {
     email: string;

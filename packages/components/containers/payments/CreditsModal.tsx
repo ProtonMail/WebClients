@@ -1,37 +1,38 @@
 import { useState } from 'react';
+
 import { c } from 'ttag';
+
 import { buyCredit } from '@proton/shared/lib/api/payments';
 import {
     APPS,
-    DEFAULT_CURRENCY,
     DEFAULT_CREDITS_AMOUNT,
+    DEFAULT_CURRENCY,
     MIN_CREDIT_AMOUNT,
     PAYMENT_METHOD_TYPES,
 } from '@proton/shared/lib/constants';
-import { Currency } from '@proton/shared/lib/interfaces';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import { Currency } from '@proton/shared/lib/interfaces';
 
 import {
+    Alert,
+    Button,
+    Form,
+    ModalProps,
     ModalTwo,
-    ModalTwoHeader,
     ModalTwoContent,
     ModalTwoFooter,
-    ModalProps,
-    Form,
-    Button,
+    ModalTwoHeader,
     PrimaryButton,
-    Alert,
     useDebounceInput,
 } from '../../components';
-import { useNotifications, useEventManager, useConfig, useModals, useApi, useLoading } from '../../hooks';
-
+import { useApi, useConfig, useEventManager, useLoading, useModals, useNotifications } from '../../hooks';
 import AmountRow from './AmountRow';
-import PaymentInfo from './PaymentInfo';
 import Payment from './Payment';
-import usePayment from './usePayment';
-import { handlePaymentToken } from './paymentTokenHelper';
+import PaymentInfo from './PaymentInfo';
 import StyledPayPalButton from './StyledPayPalButton';
 import { PaymentParameters } from './interface';
+import { handlePaymentToken } from './paymentTokenHelper';
+import usePayment from './usePayment';
 
 const getCurrenciesI18N = () => ({
     EUR: c('Monetary unit').t`Euro`,

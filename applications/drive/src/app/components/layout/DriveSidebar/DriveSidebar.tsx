@@ -3,8 +3,8 @@ import * as React from 'react';
 
 import { Sidebar, SidebarNav } from '@proton/components';
 
-import { useDefaultShare, ShareWithKey } from '../../../store';
 import useActiveShare from '../../../hooks/drive/useActiveShare';
+import { ShareWithKey, useDefaultShare } from '../../../store';
 import DriveSidebarFooter from './DriveSidebarFooter';
 import DriveSidebarList from './DriveSidebarList';
 

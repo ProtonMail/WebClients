@@ -1,4 +1,5 @@
-import { Children, ComponentPropsWithoutRef, isValidElement, Ref } from 'react';
+import { Children, ComponentPropsWithoutRef, Ref, isValidElement } from 'react';
+
 import { classnames } from '../../helpers';
 
 interface DropdownMenuProps extends ComponentPropsWithoutRef<'ul'> {

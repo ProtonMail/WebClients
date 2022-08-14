@@ -1,6 +1,7 @@
 import { c } from 'ttag';
+
+import { AUTH_LOG_EVENTS, AuthLog } from '@proton/shared/lib/authlog';
 import { SETTINGS_LOG_AUTH_STATE } from '@proton/shared/lib/interfaces';
-import { AuthLog, AUTH_LOG_EVENTS } from '@proton/shared/lib/authlog';
 
 import { Alert, Icon, Table, TableBody, TableCell, TableHeader, TableRow, Time } from '../../components';
 

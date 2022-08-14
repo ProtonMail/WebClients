@@ -1,18 +1,20 @@
 import { FormEvent, useState } from 'react';
+
 import { c } from 'ttag';
-import { Organization } from '@proton/shared/lib/interfaces';
-import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
+
 import { Card } from '@proton/atoms';
+import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
+import { Organization } from '@proton/shared/lib/interfaces';
 
 import {
     Button,
     Form,
     InputFieldTwo,
-    ModalProps,
     ModalTwo as Modal,
-    ModalTwoHeader as ModalHeader,
     ModalTwoContent as ModalContent,
     ModalTwoFooter as ModalFooter,
+    ModalTwoHeader as ModalHeader,
+    ModalProps,
     useFormErrors,
 } from '../../components';
 

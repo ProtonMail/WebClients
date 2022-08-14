@@ -1,5 +1,6 @@
-import { Address, Api, DecryptedKey } from '@proton/shared/lib/interfaces';
 import { AuthResponse } from '@proton/shared/lib/authentication/interface';
+import { Address, Api, DecryptedKey } from '@proton/shared/lib/interfaces';
+
 import { AuthSession } from '../login/interface';
 
 export enum STEPS {

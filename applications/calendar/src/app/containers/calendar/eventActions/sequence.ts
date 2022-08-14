@@ -2,6 +2,7 @@ import { getIsRruleSubset } from '@proton/shared/lib/calendar/rruleSubset';
 import { getHasModifiedDateTimes } from '@proton/shared/lib/calendar/vcalConverter';
 import { getIsPropertyAllDay } from '@proton/shared/lib/calendar/vcalHelper';
 import { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
+
 import { withUpdatedDtstamp } from './dtstamp';
 
 export const withIncrementedSequence = (vevent: VcalVeventComponent) => {

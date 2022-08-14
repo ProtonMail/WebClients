@@ -1,9 +1,12 @@
-import { c } from 'ttag';
-import range from '@proton/utils/range';
 import { memo } from 'react';
-import { ButtonGroup, Button } from '../button';
-import { Icon } from '../icon';
+
+import { c } from 'ttag';
+
+import range from '@proton/utils/range';
+
 import { classnames } from '../../helpers';
+import { Button, ButtonGroup } from '../button';
+import { Icon } from '../icon';
 import { Tooltip } from '../tooltip';
 
 interface Props {

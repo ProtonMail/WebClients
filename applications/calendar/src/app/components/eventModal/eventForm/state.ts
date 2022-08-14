@@ -15,32 +15,29 @@ import {
     DEFAULT_PART_DAY_NOTIFICATION,
     DEFAULT_PART_DAY_NOTIFICATIONS,
 } from '@proton/shared/lib/calendar/notificationDefaults';
+import { notificationsToModel } from '@proton/shared/lib/calendar/notificationsToModel';
+import { stripAllTags } from '@proton/shared/lib/calendar/sanitize';
 import { getIsSubscribedCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
-
 import { getIsAllDay, getRecurrenceId } from '@proton/shared/lib/calendar/vcalHelper';
 import { fromLocalDate, toUTCDate } from '@proton/shared/lib/date/timezone';
 import { Address as tsAddress } from '@proton/shared/lib/interfaces';
 import {
     AttendeeModel,
-    CalendarSettings as tsCalendarSettings,
+    CalendarMember,
     DateTimeModel,
     EventModel,
     FrequencyModel,
-    CalendarMember,
     SelfAddressData,
     VisualCalendar,
+    CalendarSettings as tsCalendarSettings,
 } from '@proton/shared/lib/interfaces/calendar';
 import { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 
-import { notificationsToModel } from '@proton/shared/lib/calendar/notificationsToModel';
-import { stripAllTags } from '@proton/shared/lib/calendar/sanitize';
 import { SharedVcalVeventComponent } from '../../../containers/calendar/eventStore/interface';
-
 import { getSnappedDate } from '../../calendar/mouseHelpers/dateHelpers';
 import getFrequencyModelChange from './getFrequencyModelChange';
 import { propertiesToModel } from './propertiesToModel';
 import { propertiesToNotificationModel } from './propertiesToNotificationModel';
-
 import { getDateTimeState } from './time';
 
 export const getNotificationModels = ({

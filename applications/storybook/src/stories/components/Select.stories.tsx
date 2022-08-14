@@ -1,7 +1,8 @@
 import { useRef, useState } from 'react';
-import { SelectTwo, Option, Icon, InputFieldTwo } from '@proton/components';
-import { getTitle } from '../../helpers/title';
 
+import { Icon, InputFieldTwo, Option, SelectTwo } from '@proton/components';
+
+import { getTitle } from '../../helpers/title';
 import mdx from './Select.mdx';
 
 export default {

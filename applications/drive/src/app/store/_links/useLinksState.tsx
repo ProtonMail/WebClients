@@ -1,11 +1,11 @@
-import { createContext, useContext, useCallback, useEffect, useState } from 'react';
+import { createContext, useCallback, useContext, useEffect, useState } from 'react';
 
 import { EVENT_TYPES } from '@proton/shared/lib/drive/constants';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { useDriveEventManager, DriveEvents } from '../_events';
-import { isEncryptedLinkSame, isDecryptedLinkSame } from './link';
-import { EncryptedLink, DecryptedLink, LinkShareUrl, SignatureIssues } from './interface';
+import { DriveEvents, useDriveEventManager } from '../_events';
+import { DecryptedLink, EncryptedLink, LinkShareUrl, SignatureIssues } from './interface';
+import { isDecryptedLinkSame, isEncryptedLinkSame } from './link';
 
 export type LinksState = {
     [shareId: string]: {

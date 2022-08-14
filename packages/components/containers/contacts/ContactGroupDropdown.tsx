@@ -1,24 +1,28 @@
-import { useState, useEffect, useMemo, ReactNode, ChangeEvent, FormEvent } from 'react';
+import { ChangeEvent, FormEvent, ReactNode, useEffect, useMemo, useState } from 'react';
+
 import { c } from 'ttag';
+
+import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { normalize } from '@proton/shared/lib/helpers/string';
 import { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts/Contact';
-import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
-import { usePopperAnchor } from '../../components/popper';
-import { useContactGroups, useUser } from '../../hooks';
-import { classnames, generateUID } from '../../helpers';
-import Dropdown from '../../components/dropdown/Dropdown';
-import Tooltip from '../../components/tooltip/Tooltip';
-import Icon from '../../components/icon/Icon';
-import SearchInput from '../../components/input/SearchInput';
-import { ButtonProps } from '../../components/button/Button';
+
+import { DropdownButton } from '../../components';
 import { Button } from '../../components/button';
-import Mark from '../../components/text/Mark';
+import { ButtonProps } from '../../components/button/Button';
+import Dropdown from '../../components/dropdown/Dropdown';
+import Icon from '../../components/icon/Icon';
 import Checkbox from '../../components/input/Checkbox';
+import SearchInput from '../../components/input/SearchInput';
+import { usePopperAnchor } from '../../components/popper';
+import Mark from '../../components/text/Mark';
+import Tooltip from '../../components/tooltip/Tooltip';
+import { classnames, generateUID } from '../../helpers';
+import { useContactGroups, useUser } from '../../hooks';
 import { ContactGroupEditProps } from './group/ContactGroupEditModal';
 import useApplyGroups from './hooks/useApplyGroups';
-import { DropdownButton } from '../../components';
-import './ContactGroupDropdown.scss';
 import { SelectEmailsProps } from './modals/SelectEmailsModal';
+
+import './ContactGroupDropdown.scss';
 
 const UNCHECKED = 0;
 const CHECKED = 1;

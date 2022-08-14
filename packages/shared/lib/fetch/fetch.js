@@ -1,6 +1,6 @@
-import { createUrl, checkStatus, serializeData } from './helpers';
-import { createOfflineError, createTimeoutError } from './ApiError';
 import { DEFAULT_TIMEOUT } from '../constants';
+import { createOfflineError, createTimeoutError } from './ApiError';
+import { checkStatus, createUrl, serializeData } from './helpers';
 
 const fetchHelper = ({ url: urlString, params, signal, timeout = DEFAULT_TIMEOUT, ...rest }) => {
     const abortController = new AbortController();

@@ -1,6 +1,7 @@
+import { c } from 'ttag';
+
 import { CYCLE } from '@proton/shared/lib/constants';
 import { Currency, Cycle, Plan } from '@proton/shared/lib/interfaces';
-import { c } from 'ttag';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 
 import { Price } from '../../../components';

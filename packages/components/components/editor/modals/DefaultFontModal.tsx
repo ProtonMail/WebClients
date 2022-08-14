@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
+
 import { c } from 'ttag';
+
 import { updateFontFace, updateFontSize } from '@proton/shared/lib/api/mailSettings';
 
-import { Button, ModalTwo, ModalTwoContent, ModalTwoHeader, ModalTwoFooter, Form } from '../../../components';
-import { useMailSettings, useNotifications, useApi, useEventManager } from '../../../hooks';
-import FontSizeSelect from '../../../containers/layouts/FontSizeSelect';
+import { Button, Form, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../../components';
 import FontFaceSelect from '../../../containers/layouts/FontFaceSelect';
+import FontSizeSelect from '../../../containers/layouts/FontSizeSelect';
+import { useApi, useEventManager, useMailSettings, useNotifications } from '../../../hooks';
 import { DEFAULT_FONT_FACE, DEFAULT_FONT_SIZE } from '../constants';
 
 interface Props {

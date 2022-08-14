@@ -1,5 +1,7 @@
 import { ChangeEvent, useEffect, useRef } from 'react';
+
 import useIsMounted from '@proton/hooks/useIsMounted';
+
 import { EditorActions } from '../interface';
 
 interface Props {

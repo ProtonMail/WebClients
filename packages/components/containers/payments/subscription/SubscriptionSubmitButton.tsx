@@ -1,11 +1,11 @@
+import { c } from 'ttag';
+
 import { PAYMENT_METHOD_TYPE, PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
 import { Currency, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
-import { c } from 'ttag';
-import { Price, PrimaryButton } from '../../../components';
 
+import { Price, PrimaryButton } from '../../../components';
 import StyledPayPalButton from '../StyledPayPalButton';
 import { PayPalHook } from '../usePayPal';
-
 import { SUBSCRIPTION_STEPS } from './constants';
 
 interface Props {

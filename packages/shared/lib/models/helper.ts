@@ -1,6 +1,6 @@
-import { STATUS } from './cache';
-import { Api } from '../interfaces';
 import { Cache } from '../helpers/cache';
+import { Api } from '../interfaces';
+import { STATUS } from './cache';
 
 interface Args {
     api: Api;

@@ -1,7 +1,9 @@
 import { c } from 'ttag';
+
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import WarningIcon from './WarningIcon';
+
 import Href from '../link/Href';
+import WarningIcon from './WarningIcon';
 
 interface Props {
     isWeak: boolean;

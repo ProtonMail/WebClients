@@ -1,8 +1,8 @@
 import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
-
 import { DateTimeModel, FrequencyModel } from '@proton/shared/lib/interfaces/calendar';
-import RepeatEveryRow from '../rows/RepeatEveryRow';
+
 import EndsRow from '../rows/EndsRow';
+import RepeatEveryRow from '../rows/RepeatEveryRow';
 
 interface Props {
     frequencyModel: FrequencyModel;

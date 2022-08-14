@@ -1,24 +1,21 @@
 import { c } from 'ttag';
 
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import {
-    ImportStatus,
     ImportError,
     ImportReport,
+    ImportStatus,
     ImportType,
     Importer,
     NormalizedImporter,
 } from '@proton/shared/lib/interfaces/EasySwitch';
-import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
-import { useImporters, useImportReports } from '../../hooks';
-import { Href, Alert, Loader, Table, TableCell, TableBody } from '../../components';
-
+import { Alert, Href, Loader, Table, TableBody, TableCell } from '../../components';
+import { useImportReports, useImporters } from '../../hooks';
 import { SettingsParagraph, SettingsSectionWide } from '../account';
-
-import { ImportHistory } from './mail/interfaces';
-
 import ActiveImportRow from './list/ActiveImportRow';
 import ImportReportRow from './list/ImportReportRow';
+import { ImportHistory } from './mail/interfaces';
 
 const sortActiveImports = (a: NormalizedImporter, b: NormalizedImporter) => {
     if (!a.Active || !b.Active) {

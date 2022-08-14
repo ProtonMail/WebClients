@@ -1,10 +1,10 @@
 import { Alignment } from 'roosterjs-editor-types';
 import { c } from 'ttag';
 
-import ToolbarDropdown from './ToolbarDropdown';
-import Icon from '../../icon/Icon';
 import DropdownMenu from '../../dropdown/DropdownMenu';
 import DropdownMenuButton from '../../dropdown/DropdownMenuButton';
+import Icon from '../../icon/Icon';
+import ToolbarDropdown from './ToolbarDropdown';
 
 interface Props {
     setAlignment: (nextAlignment: Alignment) => void;

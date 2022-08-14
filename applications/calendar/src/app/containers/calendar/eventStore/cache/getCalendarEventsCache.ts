@@ -1,4 +1,5 @@
 import createIntervalTree from '@protontech/interval-tree';
+
 import { CalendarEventsCache } from '../interface';
 
 const getCalendarEventsCache = (): CalendarEventsCache => {

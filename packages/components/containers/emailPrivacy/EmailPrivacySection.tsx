@@ -1,16 +1,19 @@
 import React, { useEffect, useState } from 'react';
+
 import { c } from 'ttag';
+
 import { IMAGE_PROXY_FLAGS, SHOW_IMAGES } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
+
 import { Info } from '../../components/link';
-import SettingsLayoutRight from '../account/SettingsLayoutRight';
-import RemoteToggle from './RemoteToggle';
-import SettingsLayout from '../account/SettingsLayout';
 import { useFeatures, useMailSettings } from '../../hooks';
-import PreventTrackingToggle from './PreventTrackingToggle';
+import SettingsLayout from '../account/SettingsLayout';
+import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
+import SettingsLayoutRight from '../account/SettingsLayoutRight';
 import { FeatureCode } from '../features';
+import PreventTrackingToggle from './PreventTrackingToggle';
 import ProtectionModeSelect from './ProtectionModeSelect';
+import RemoteToggle from './RemoteToggle';
 
 const { REMOTE } = SHOW_IMAGES;
 
