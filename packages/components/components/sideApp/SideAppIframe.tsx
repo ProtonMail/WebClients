@@ -1,4 +1,5 @@
 import { classnames } from '@proton/components/helpers';
+
 import { useSideApp } from '../../hooks';
 
 const SideAppIframe = () => {

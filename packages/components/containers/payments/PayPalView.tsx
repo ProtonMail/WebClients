@@ -1,12 +1,13 @@
-import { MIN_PAYPAL_AMOUNT, MAX_PAYPAL_AMOUNT } from '@proton/shared/lib/constants';
-import { doNotWindowOpen } from '@proton/shared/lib/helpers/browser';
-import { Currency } from '@proton/shared/lib/interfaces';
 import { c } from 'ttag';
 
-import { Alert, DoNotWindowOpenAlertError, Price, Loader } from '../../components';
+import { MAX_PAYPAL_AMOUNT, MIN_PAYPAL_AMOUNT } from '@proton/shared/lib/constants';
+import { doNotWindowOpen } from '@proton/shared/lib/helpers/browser';
+import { Currency } from '@proton/shared/lib/interfaces';
+
+import { Alert, DoNotWindowOpenAlertError, Loader, Price } from '../../components';
+import { PaymentMethodFlows } from '../paymentMethods/interface';
 import PayPalButton from './PayPalButton';
 import { PayPalHook } from './usePayPal';
-import { PaymentMethodFlows } from '../paymentMethods/interface';
 
 interface Props {
     paypal: PayPalHook;

@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
+
 import { c } from 'ttag';
+
 import { CircleLoader, GenericError, useApi, useLoading } from '@proton/components';
 import { postVerifyValidate } from '@proton/shared/lib/api/verify';
 

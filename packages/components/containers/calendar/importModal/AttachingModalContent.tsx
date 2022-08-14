@@ -1,16 +1,17 @@
-import { c } from 'ttag';
 import { ChangeEvent, DragEvent } from 'react';
 
-import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import { c } from 'ttag';
+
 import {
     IMPORT_CALENDAR_FAQ_URL,
     MAX_IMPORT_EVENTS_STRING,
     MAX_IMPORT_FILE_SIZE_STRING,
 } from '@proton/shared/lib/calendar/constants';
-import { ImportCalendarModel } from '@proton/shared/lib/interfaces/calendar/Import';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import { ImportCalendarModel } from '@proton/shared/lib/interfaces/calendar/Import';
 
-import { Bordered, FileInput, Alert, Label, Field, Row, AttachedFile, Dropzone, LearnMore } from '../../../components';
+import { Alert, AttachedFile, Bordered, Dropzone, Field, FileInput, Label, LearnMore, Row } from '../../../components';
 import CalendarSelect from '../../../components/calendarSelect/CalendarSelect';
 import { classnames } from '../../../helpers';
 

@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
+
 import { c } from 'ttag';
 
 import { classnames } from '../../../helpers';
-import { DropdownMenu, DropdownMenuContainer } from '../../dropdown';
 import { Badge } from '../../badge';
 import { Button } from '../../button';
+import { DropdownMenu, DropdownMenuContainer } from '../../dropdown';
 import { FONT_SIZES } from '../constants';
 import ToolbarDropdown from './ToolbarDropdown';
 

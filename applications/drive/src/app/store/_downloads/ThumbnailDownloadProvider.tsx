@@ -2,8 +2,8 @@ import { createContext, useContext, useEffect, useMemo, useRef } from 'react';
 
 import { MAX_THREADS_PER_DOWNLOAD } from '@proton/shared/lib/drive/constants';
 
-import { createAsyncQueue } from '../../utils/parallelRunners';
 import useNavigate from '../../hooks/drive/useNavigate';
+import { createAsyncQueue } from '../../utils/parallelRunners';
 import { useLink } from '../_links';
 import { logError } from '../_utils';
 import useDownload from './useDownload';

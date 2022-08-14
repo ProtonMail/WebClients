@@ -1,9 +1,11 @@
 import { useState } from 'react';
+
 import { c } from 'ttag';
+
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
+import { Alert, Copy, Input, Label, Table, TableBody, TableHeader, TableRow } from '../../components';
 import { useNotifications } from '../../hooks';
-import { Alert, Label, Table, TableHeader, TableBody, TableRow, Copy, Input } from '../../components';
 
 const DMARCSection = () => {
     const none = <strong key="none">p=none</strong>;

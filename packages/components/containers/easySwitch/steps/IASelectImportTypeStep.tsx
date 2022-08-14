@@ -1,38 +1,38 @@
 import { ReactNode, useEffect, useMemo, useRef } from 'react';
+
 import { c, msgid } from 'ttag';
 
-import { Folder } from '@proton/shared/lib/interfaces/Folder';
+import { getProbablyActiveCalendars } from '@proton/shared/lib/calendar/calendar';
+import { MAX_CALENDARS_PAID } from '@proton/shared/lib/calendar/constants';
+import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { Address, Label } from '@proton/shared/lib/interfaces';
 import {
+    CalendarImportMapping,
+    CalendarImportPayloadError,
+    CalendarImporterPayload,
     CheckedProductMap,
-    ImportType,
+    CustomFieldsBitmap,
+    EasySwitchFeatureFlag,
     IAOauthModalModel,
+    ImportType,
+    IsCustomCalendarMapping,
     LaunchImportPayload,
+    MailImportPayloadError,
     MailImporterPayload,
     TIME_PERIOD,
-    CalendarImportMapping,
-    CalendarImporterPayload,
-    MailImportPayloadError,
-    CalendarImportPayloadError,
-    CustomFieldsBitmap,
-    IsCustomCalendarMapping,
-    EasySwitchFeatureFlag,
 } from '@proton/shared/lib/interfaces/EasySwitch';
+import { Folder } from '@proton/shared/lib/interfaces/Folder';
 import { Calendar } from '@proton/shared/lib/interfaces/calendar';
 import isTruthy from '@proton/utils/isTruthy';
-import { MAX_CALENDARS_PAID } from '@proton/shared/lib/calendar/constants';
-import { getProbablyActiveCalendars } from '@proton/shared/lib/calendar/calendar';
-import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
-import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 
-import { Checkbox, Icon, Label as FormLabel, LabelStack, UnderlineButton } from '../../../components';
-import { useModals } from '../../../hooks';
-
-import CustomizeMailImportModal from '../mail/modals/CustomizeMailImportModal';
-import CustomizeCalendarImportModal from '../calendar/modals/CustomizeCalendarImportModal';
-import useIAMailPayload from '../hooks/useIAMailPayload';
+import { Checkbox, Label as FormLabel, Icon, LabelStack, UnderlineButton } from '../../../components';
 import { classnames } from '../../../helpers';
+import { useModals } from '../../../hooks';
+import CustomizeCalendarImportModal from '../calendar/modals/CustomizeCalendarImportModal';
 import { CALENDAR_TO_BE_CREATED_PREFIX } from '../constants';
+import useIAMailPayload from '../hooks/useIAMailPayload';
+import CustomizeMailImportModal from '../mail/modals/CustomizeMailImportModal';
 
 interface Props {
     addresses: Address[];

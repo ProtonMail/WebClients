@@ -1,11 +1,12 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
+
 import { c } from 'ttag';
 
 import { EmptyViewContainer, useActiveBreakpoint, usePopperAnchor } from '@proton/components';
-
 import noContentSvg from '@proton/styles/assets/img/illustrations/empty-folder.svg';
-import { UploadButton } from './UploadButton';
+
 import { FolderContextMenu } from './FolderContextMenu';
+import { UploadButton } from './UploadButton';
 
 const EmptyFolder = ({ shareId }: { shareId: string }) => {
     const { isDesktop } = useActiveBreakpoint();

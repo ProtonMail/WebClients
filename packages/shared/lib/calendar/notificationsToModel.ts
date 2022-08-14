@@ -1,7 +1,6 @@
 import generateUID from '../helpers/generateUID';
-
-import { filterFutureNotifications } from './alarms';
 import { CalendarNotificationSettings } from '../interfaces/calendar';
+import { filterFutureNotifications } from './alarms';
 import { triggerToModel } from './notificationModel';
 import { fromTriggerString } from './vcal';
 

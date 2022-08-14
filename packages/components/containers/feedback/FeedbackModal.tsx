@@ -1,17 +1,19 @@
 import { ChangeEvent, FormEvent, useEffect, useState } from 'react';
+
 import { c } from 'ttag';
+
 import { sendFeedback } from '@proton/shared/lib/api/feedback';
 
 import {
     Button,
-    TextArea,
-    ModalTwo as Modal,
-    ModalTwoHeader as ModalHeader,
-    ModalTwoContent as ModalContent,
-    ModalTwoFooter as ModalFooter,
-    ModalProps,
     EmojiScale,
     EmojiScaleProps,
+    ModalTwo as Modal,
+    ModalTwoContent as ModalContent,
+    ModalTwoFooter as ModalFooter,
+    ModalTwoHeader as ModalHeader,
+    ModalProps,
+    TextArea,
 } from '../../components';
 import { useApi, useLoading, useNotifications } from '../../hooks';
 

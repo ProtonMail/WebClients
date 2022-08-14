@@ -1,28 +1,29 @@
 import { Fragment, MutableRefObject, ReactNode, useEffect, useState } from 'react';
+import { flushSync } from 'react-dom';
+
 import { c } from 'ttag';
+
+import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import {
     getVerificationDataRoute,
     sendVerificationCode,
     verifyVerificationCode,
 } from '@proton/shared/lib/api/verification';
-import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import { Api, HumanVerificationMethodType } from '@proton/shared/lib/interfaces';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
-import { flushSync } from 'react-dom';
+import { Api, HumanVerificationMethodType } from '@proton/shared/lib/interfaces';
 
 import { Button, Loader } from '../../../components';
 import { useLoading, useNotifications } from '../../../hooks';
-
 import RequestNewCodeModal from './RequestNewCodeModal';
-import VerifyCodeForm from './VerifyCodeForm';
 import Text from './Text';
+import VerifyCodeForm from './VerifyCodeForm';
 import {
+    HumanVerificationSteps,
     OwnershipCache,
     OwnershipVerificationModel,
     VerificationDataResult,
-    VerificationTokenResult,
-    HumanVerificationSteps,
     VerificationModel,
+    VerificationTokenResult,
 } from './interface';
 
 const formatMessage = (text: string, embolden: string) => {

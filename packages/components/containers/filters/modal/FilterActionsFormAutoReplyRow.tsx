@@ -1,11 +1,12 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
+
 import { c } from 'ttag';
 
 import noop from '@proton/utils/noop';
 
-import { Toggle, Tooltip, Editor, EditorActions } from '../../../components';
-import { useUser } from '../../../hooks';
+import { Editor, EditorActions, Toggle, Tooltip } from '../../../components';
 import { classnames } from '../../../helpers';
+import { useUser } from '../../../hooks';
 import { Actions } from '../interfaces';
 
 interface Props {

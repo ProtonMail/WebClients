@@ -1,15 +1,18 @@
 import { useEffect, useState } from 'react';
+
 import { c } from 'ttag';
-import { KeyReactivationRecord, OnKeyReactivationCallback } from '@proton/shared/lib/keys';
-import { DecryptedKey, KeySalt, MNEMONIC_STATUS } from '@proton/shared/lib/interfaces';
-import { getKeySalts } from '@proton/shared/lib/api/keys';
-import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
+
 import { CryptoProxy, PrivateKeyReference } from '@proton/crypto';
-import isTruthy from '@proton/utils/isTruthy';
-import { getMnemonicUserKeys, MnemonicKeyResponse } from '@proton/shared/lib/api/settingsMnemonic';
+import { getKeySalts } from '@proton/shared/lib/api/keys';
+import { MnemonicKeyResponse, getMnemonicUserKeys } from '@proton/shared/lib/api/settingsMnemonic';
 import { lockSensitiveSettings, unlockPasswordChanges } from '@proton/shared/lib/api/user';
-import { computeKeyPassword } from '@proton/srp';
+import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
+import { DecryptedKey, KeySalt, MNEMONIC_STATUS } from '@proton/shared/lib/interfaces';
+import { KeyReactivationRecord, OnKeyReactivationCallback } from '@proton/shared/lib/keys';
 import { mnemonicToBase64RandomBytes } from '@proton/shared/lib/mnemonic';
+import { computeKeyPassword } from '@proton/srp';
+import isTruthy from '@proton/utils/isTruthy';
+
 import {
     Button,
     Form,
@@ -24,7 +27,6 @@ import {
     Tabs,
     useFormErrors,
 } from '../../../components';
-import { KeyReactivationRequest, KeyReactivationRequestState, KeyReactivationRequestStateData } from './interface';
 import {
     useApi,
     useIsMnemonicAvailable,
@@ -34,11 +36,12 @@ import {
     useRecoverySecrets,
     useUser,
 } from '../../../hooks';
-import { getInitialStates } from './state';
-import { getReactivatedKeys } from './reactivateHelper';
+import MnemonicInputField, { useMnemonicInputValidation } from '../../mnemonic/MnemonicInputField';
 import { AuthModal } from '../../password';
 import RecoveryFileTabContent from './RecoveryFileTabContent';
-import MnemonicInputField, { useMnemonicInputValidation } from '../../mnemonic/MnemonicInputField';
+import { KeyReactivationRequest, KeyReactivationRequestState, KeyReactivationRequestStateData } from './interface';
+import { getReactivatedKeys } from './reactivateHelper';
+import { getInitialStates } from './state';
 
 interface ReactivatedKeysState {
     numberOfSuccessfullyReactivatedKeys: number;

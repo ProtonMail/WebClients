@@ -1,11 +1,11 @@
 import * as React from 'react';
 
-import { TableRowSticky, TableHeaderCell, Checkbox } from '@proton/components';
+import { Checkbox, TableHeaderCell, TableRowSticky } from '@proton/components';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 
-import { SortParams } from '../interface';
 import { stopPropagation } from '../../../utils/stopPropagation';
 import SortDropdown from '../../sections/SortDropdown';
+import { SortParams } from '../interface';
 import { useSelection } from '../state/useSelection';
 
 interface Props<T> {

@@ -1,33 +1,34 @@
 import { ReactNode, useState } from 'react';
+
 import { c } from 'ttag';
-import { setupTotp, TOTP_WRONG_ERROR } from '@proton/shared/lib/api/settings';
-import { srpAuth } from '@proton/shared/lib/srp';
+
 import { PASSWORD_WRONG_ERROR } from '@proton/shared/lib/api/auth';
-import downloadFile from '@proton/shared/lib/helpers/downloadFile';
-import { APPS } from '@proton/shared/lib/constants';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import { getTOTPData } from '@proton/shared/lib/settings/twoFactor';
-import noop from '@proton/utils/noop';
+import { TOTP_WRONG_ERROR, setupTotp } from '@proton/shared/lib/api/settings';
+import { APPS } from '@proton/shared/lib/constants';
+import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import { getTOTPData } from '@proton/shared/lib/settings/twoFactor';
+import { srpAuth } from '@proton/shared/lib/srp';
+import noop from '@proton/utils/noop';
 
 import {
     Alert,
     Button,
+    Form,
     Href,
     InlineLinkButton,
     Loader,
-    ModalProps,
     ModalTwo as Modal,
-    ModalTwoHeader as ModalHeader,
     ModalTwoContent as ModalContent,
     ModalTwoFooter as ModalFooter,
+    ModalTwoHeader as ModalHeader,
+    ModalProps,
     QRCode,
-    Form,
 } from '../../components';
-import { useConfig, useNotifications, useLoading, useApi, useEventManager, useUser, useModals } from '../../hooks';
-
-import PasswordTotpInputs from '../password/PasswordTotpInputs';
+import { useApi, useConfig, useEventManager, useLoading, useModals, useNotifications, useUser } from '../../hooks';
 import AuthModal from '../password/AuthModal';
+import PasswordTotpInputs from '../password/PasswordTotpInputs';
 
 interface ModalProperties {
     section: ReactNode;

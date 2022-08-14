@@ -1,4 +1,5 @@
 import mod from '@proton/utils/mod';
+
 import { addDays, isNextDay } from '../date-fns-utc';
 import {
     convertUTCDateTimeToZone,
@@ -9,6 +10,8 @@ import {
 } from '../date/timezone';
 import { buildMailTo, canonizeEmail, getEmailTo } from '../helpers/email';
 import {
+    DateTime,
+    Participant,
     VcalAttendeeProperty,
     VcalDateOrDateTimeProperty,
     VcalDateOrDateTimeValue,
@@ -18,10 +21,7 @@ import {
     VcalDaysKeys,
     VcalOrganizerProperty,
     VcalVeventComponent,
-    Participant,
-    DateTime,
 } from '../interfaces/calendar';
-
 import { getAttendeeEmail } from './attendees';
 import { getIsPropertyAllDay, getPropertyTzid } from './vcalHelper';
 

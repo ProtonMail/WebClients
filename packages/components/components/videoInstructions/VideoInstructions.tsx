@@ -1,7 +1,8 @@
-import { useState, useRef } from 'react';
-import { c } from 'ttag';
-import { classnames } from '../../helpers';
+import { useRef, useState } from 'react';
 
+import { c } from 'ttag';
+
+import { classnames } from '../../helpers';
 import { Icon } from '../icon';
 
 import './VideoInstructions.scss';

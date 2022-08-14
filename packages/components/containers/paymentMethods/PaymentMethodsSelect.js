@@ -1,5 +1,7 @@
 import { useEffect } from 'react';
+
 import PropTypes from 'prop-types';
+
 import { Select } from '../../components';
 
 const PaymentMethodsSelect = ({ method, methods = [], onChange, loading }) => {

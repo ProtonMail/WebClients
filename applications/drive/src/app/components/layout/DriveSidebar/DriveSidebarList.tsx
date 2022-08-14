@@ -1,13 +1,14 @@
 import { useState } from 'react';
 import { useRouteMatch } from 'react-router-dom';
+
 import { c } from 'ttag';
 
 import { SidebarList } from '@proton/components';
 
 import { ShareWithKey } from '../../../store';
 import { DriveSectionRouteProps } from '../../sections/Drive/DriveView';
-import DriveSidebarListItem from './DriveSidebarListItem';
 import DriveSidebarFolders from './DriveSidebarFolders/DriveSidebarFolders';
+import DriveSidebarListItem from './DriveSidebarListItem';
 
 interface Props {
     shareId?: string;

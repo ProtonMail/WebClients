@@ -1,11 +1,11 @@
-import unary from '@proton/utils/unary';
-import { getIsPersonalCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
-import { CalendarUrlsResponse, CalendarWithMembers } from '@proton/shared/lib/interfaces/calendar';
 import { getPublicLinks } from '@proton/shared/lib/api/calendars';
 import { MAX_CALENDARS_FREE } from '@proton/shared/lib/calendar/constants';
-import { Api, Plan, PlanIDs } from '@proton/shared/lib/interfaces';
+import { getIsPersonalCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
 import { PLAN_SERVICES, PLAN_TYPES } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
+import { Api, Plan, PlanIDs } from '@proton/shared/lib/interfaces';
+import { CalendarUrlsResponse, CalendarWithMembers } from '@proton/shared/lib/interfaces/calendar';
+import unary from '@proton/utils/unary';
 
 export const willHavePaidMail = (planIDs: PlanIDs, plans: Plan[]) => {
     const newPlanName = Object.keys(planIDs).find((planName) =>

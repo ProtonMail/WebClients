@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
-import TopNavbarListItemButton from '../../components/topnavbar/TopNavbarListItemButton';
 import Icon from '../../components/icon/Icon';
+import TopNavbarListItemButton from '../../components/topnavbar/TopNavbarListItemButton';
 
 interface Props {
     onClick: () => void;

@@ -1,4 +1,5 @@
 import { c } from 'ttag';
+
 import { SpamAction } from '@proton/shared/lib/interfaces';
 
 import { Option, SelectTwo } from '../../components';

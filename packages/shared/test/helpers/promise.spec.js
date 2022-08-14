@@ -3,12 +3,15 @@ import { runChunksDelayed, wait } from '../../lib/helpers/promise';
 describe('promise', () => {
     describe('chunks delayed', () => {
         it('should call chunks in a specific interval', async () => {
-            const chunks = [[1, 2], ['a', 'b']];
+            const chunks = [
+                [1, 2],
+                ['a', 'b'],
+            ];
             const resultMap = {
                 1: 'foo',
                 2: 'bar',
                 a: 'baz',
-                b: 'qux'
+                b: 'qux',
             };
             const cb = (value) => {
                 return resultMap[value];

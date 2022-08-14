@@ -4,14 +4,7 @@ import { ContextMenu } from '@proton/components';
 
 import { ContextMenuProps } from '../../FileBrowser/interface';
 
-export function ItemContextMenu({
-    anchorRef,
-    isOpen,
-    position,
-    open,
-    close,
-    children,
-}: ContextMenuProps) {
+export function ItemContextMenu({ anchorRef, isOpen, position, open, close, children }: ContextMenuProps) {
     useEffect(() => {
         if (position) {
             /*

@@ -1,6 +1,8 @@
 import { KeyboardEvent } from 'react';
+
 import { c } from 'ttag';
-import { PrimaryButton, Input } from '../../../components';
+
+import { Input, PrimaryButton } from '../../../components';
 
 interface Props {
     code: string;

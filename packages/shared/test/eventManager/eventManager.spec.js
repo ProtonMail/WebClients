@@ -24,13 +24,13 @@ describe('event manager', () => {
             { EventID: '4', More: 1 },
             { EventID: '5', More: 1 },
             { EventID: '6', More: 0 },
-            { EventID: '6', More: 0 }
+            { EventID: '6', More: 0 },
         ]);
 
         const eventManager = createEventManager({
             eventID: '1',
             api,
-            interval: 1000
+            interval: 1000,
         });
         const onSuccess = jasmine.createSpy();
         const unsubscribe = eventManager.subscribe(onSuccess);

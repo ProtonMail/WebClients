@@ -1,7 +1,8 @@
 import { useEffect, useMemo, useState } from 'react';
+
+import { CryptoProxy, PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
 import { CachedOrganizationKey } from '@proton/shared/lib/interfaces';
 import { getFormattedAlgorithmName } from '@proton/shared/lib/keys';
-import { PublicKeyReference, PrivateKeyReference, CryptoProxy } from '@proton/crypto';
 
 const useDisplayOrganizationKey = (organizationKey?: CachedOrganizationKey) => {
     const [parsedKey, setParsedKey] = useState<PublicKeyReference | PrivateKeyReference>();

@@ -1,4 +1,4 @@
-import { PLAN_TYPES, PLANS } from '@proton/shared/lib/constants';
+import { PLANS, PLAN_TYPES } from '@proton/shared/lib/constants';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { Currency, Cycle, Organization, Plan, PlanIDs, PlansMap } from '@proton/shared/lib/interfaces';
 

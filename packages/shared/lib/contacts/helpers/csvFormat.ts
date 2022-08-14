@@ -1,6 +1,8 @@
 import { isValid, parseISO } from 'date-fns';
-import isTruthy from '@proton/utils/isTruthy';
+
 import capitalize from '@proton/utils/capitalize';
+import isTruthy from '@proton/utils/isTruthy';
+
 import { normalize } from '../../helpers/string';
 import { ContactValue } from '../../interfaces/contacts';
 import {

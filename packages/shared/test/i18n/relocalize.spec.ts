@@ -1,5 +1,6 @@
 import { format } from 'date-fns';
-import { c, LocaleData, useLocale as ttagUseLocale } from 'ttag';
+import { LocaleData, c, useLocale as ttagUseLocale } from 'ttag';
+
 import { DEFAULT_LOCALE } from '../../lib/constants';
 import { dateLocale } from '../../lib/i18n';
 import { loadDateLocale, loadLocale } from '../../lib/i18n/loadLocale';

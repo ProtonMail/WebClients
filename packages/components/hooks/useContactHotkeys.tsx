@@ -1,4 +1,5 @@
 import { useRef } from 'react';
+
 import { HotkeyTuple, useHotkeys } from './index';
 
 export interface ContactHotkeysContext {

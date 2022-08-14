@@ -1,10 +1,11 @@
 import { act } from 'react-dom/test-utils';
-import { renderHook, RenderResult } from '@testing-library/react-hooks';
 
+import { RenderResult, renderHook } from '@testing-library/react-hooks';
+
+import { EVENT_TYPES } from '@proton/shared/lib/drive/constants';
 import createEventManager, { EventManager } from '@proton/shared/lib/eventManager/eventManager';
 import { Api } from '@proton/shared/lib/interfaces';
 import { DriveEventsResult } from '@proton/shared/lib/interfaces/drive/events';
-import { EVENT_TYPES } from '@proton/shared/lib/drive/constants';
 
 import { driveEventsResultToDriveEvents } from '../_api';
 import { useDriveEventManagerProvider } from './useDriveEventManager';

@@ -10,9 +10,9 @@ import { generateAddressKeyTokens } from '../addressKeys';
 import {
     getActiveKeyObject,
     getActiveKeys,
+    getNormalizedActiveKeys,
     getPrimaryFlag,
     getReactivatedKeyFlag,
-    getNormalizedActiveKeys,
 } from '../getActiveKeys';
 import { getDecryptedAddressKeysHelper } from '../getDecryptedAddressKeys';
 import { getPrimaryKey } from '../getPrimaryKey';

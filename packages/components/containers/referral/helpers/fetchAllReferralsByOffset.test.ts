@@ -1,4 +1,5 @@
 import { Api } from '@proton/shared/lib/interfaces';
+
 import fetchAllReferralsByOffset from './fetchAllReferralsByOffset';
 
 interface ApiResults {

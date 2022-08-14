@@ -1,12 +1,13 @@
 import { MutableRefObject, useEffect } from 'react';
-import { useEventManager, useCalendarModelEventManager } from '@proton/components';
+
+import { useCalendarModelEventManager, useEventManager } from '@proton/components';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import { CalendarEventManager, CalendarEventsEventManager } from '@proton/shared/lib/interfaces/calendar/EventManager';
 
-import { CalendarsEventsCache } from './interface';
+import { OpenedMailEvent } from '../../../hooks/useGetOpenedMailEvents';
 import removeCalendarEventStoreRecord from './cache/removeCalendarEventStoreRecord';
 import upsertCalendarApiEventWithoutBlob from './cache/upsertCalendarApiEventWithoutBlobs';
-import { OpenedMailEvent } from '../../../hooks/useGetOpenedMailEvents';
+import { CalendarsEventsCache } from './interface';
 
 export const useCalendarCacheEventListener = (
     cacheRef: MutableRefObject<CalendarsEventsCache>,

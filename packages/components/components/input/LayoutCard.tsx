@@ -1,8 +1,11 @@
 import { c } from 'ttag';
 
-import { Button } from '../button';
 import { classnames } from '../../helpers';
-import './LayoutCard.scss'; // just for proper sizing when zooming
+import { Button } from '../button';
+
+import './LayoutCard.scss';
+
+// just for proper sizing when zooming
 
 export interface LayoutCardProps {
     label: string;

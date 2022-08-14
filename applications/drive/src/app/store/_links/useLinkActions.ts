@@ -1,12 +1,12 @@
-import { CryptoProxy } from '@proton/crypto';
 import { usePreventLeave } from '@proton/components';
-import { queryRenameLink } from '@proton/shared/lib/api/drive/share';
+import { CryptoProxy } from '@proton/crypto';
 import { queryCreateFolder } from '@proton/shared/lib/api/drive/folder';
+import { queryRenameLink } from '@proton/shared/lib/api/drive/share';
 import {
-    generateNodeKeys,
+    encryptName,
     generateLookupHash,
     generateNodeHashKey,
-    encryptName,
+    generateNodeKeys,
 } from '@proton/shared/lib/keys/driveKeys';
 import { getDecryptedSessionKey } from '@proton/shared/lib/keys/drivePassphrase';
 
@@ -14,8 +14,8 @@ import { useDebouncedRequest } from '../_api';
 import { useDriveCrypto } from '../_crypto';
 import { useDriveEventManager } from '../_events';
 import { ValidationError } from '../_utils';
-import useLink from './useLink';
 import { ecryptFolderExtendedAttributes } from './extendedAttributes';
+import useLink from './useLink';
 import { validateLinkName } from './validation';
 
 /**

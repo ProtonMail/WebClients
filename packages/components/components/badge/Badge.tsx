@@ -1,7 +1,8 @@
 import { ReactNode } from 'react';
-import Tooltip from '../tooltip/Tooltip';
+
 import { classnames } from '../../helpers';
 import { Href } from '../link';
+import Tooltip from '../tooltip/Tooltip';
 
 const CLASSNAMES = {
     default: 'badge-label-norm',

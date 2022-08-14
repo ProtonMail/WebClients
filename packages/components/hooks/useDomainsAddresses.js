@@ -1,9 +1,10 @@
 import { queryDomainAddresses } from '@proton/shared/lib/api/domains';
 import queryPages from '@proton/shared/lib/api/helpers/queryPages';
+
 import { cachedPromise } from './helpers/cachedPromise';
-import usePromiseResult from './usePromiseResult';
-import useCache from './useCache';
 import useApi from './useApi';
+import useCache from './useCache';
+import usePromiseResult from './usePromiseResult';
 
 export const getAllDomainAddresses = (api, domainID) => {
     return queryPages((page, pageSize) => {

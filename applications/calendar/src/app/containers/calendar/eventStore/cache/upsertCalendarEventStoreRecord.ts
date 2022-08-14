@@ -1,13 +1,14 @@
-import { addDays, max } from '@proton/shared/lib/date-fns-utc';
-import { CalendarEvent, CalendarEventSharedData } from '@proton/shared/lib/interfaces/calendar';
-import { getDtendProperty, propertyToUTCDate } from '@proton/shared/lib/calendar/vcalConverter';
-import { getIsAllDay, getIsRecurring, getRecurrenceIdDate, getUidValue } from '@proton/shared/lib/calendar/vcalHelper';
 import { differenceInHours } from 'date-fns';
 
+import { getDtendProperty, propertyToUTCDate } from '@proton/shared/lib/calendar/vcalConverter';
+import { getIsAllDay, getIsRecurring, getRecurrenceIdDate, getUidValue } from '@proton/shared/lib/calendar/vcalHelper';
+import { addDays, max } from '@proton/shared/lib/date-fns-utc';
+import { CalendarEvent, CalendarEventSharedData } from '@proton/shared/lib/interfaces/calendar';
+
+import { CalendarEventStoreRecord, CalendarEventsCache, SharedVcalVeventComponent } from '../interface';
+import { getIsCalendarEvent } from './helper';
 import { setEventInRecurrenceInstances, setEventInRecurringCache } from './recurringCache';
 import upsertCalendarEventInTree from './upsertCalendarEventInTree';
-import { CalendarEventsCache, CalendarEventStoreRecord, SharedVcalVeventComponent } from '../interface';
-import { getIsCalendarEvent } from './helper';
 
 export const getCalendarEventStoreRecord = (
     eventComponent: SharedVcalVeventComponent,

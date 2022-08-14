@@ -1,22 +1,23 @@
-import { useEffect, MutableRefObject } from 'react';
+import { MutableRefObject, useEffect } from 'react';
+
 import { c } from 'ttag';
+
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import { Organization } from '@proton/shared/lib/interfaces';
 import {
     getHasOtherAdmins,
     getNonPrivateMembers,
     getOrganizationKeyInfo,
 } from '@proton/shared/lib/organization/helper';
-import { Organization } from '@proton/shared/lib/interfaces';
-import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { Alert, Block, Button, Loader, Table, TableBody, TableHeader, TableRow } from '../../components';
 import { useMembers, useModals, useNotifications, useOrganizationKey, useUser } from '../../hooks';
 import { SettingsParagraph, SettingsSection } from '../account';
-
-import useDisplayOrganizationKey from './useDisplayOrganizationKey';
 import ChangeOrganizationKeysModal from './ChangeOrganizationKeysModal';
-import ReactivateOrganizationKeysModal from './ReactivateOrganizationKeysModal';
 import ChangeOrganizationPasswordModal from './ChangeOrganizationPasswordModal';
+import ReactivateOrganizationKeysModal from './ReactivateOrganizationKeysModal';
 import { getActivationText } from './helper';
+import useDisplayOrganizationKey from './useDisplayOrganizationKey';
 
 interface Props {
     organization?: Organization;

@@ -13,7 +13,7 @@ class FormDataMock {
 const headersMock = {
     get: () => {
         return undefined;
-    }
+    },
 };
 
 describe('fetch', () => {
@@ -40,7 +40,7 @@ describe('fetch', () => {
     it('should be able to receive json data', async () => {
         setup(async () => ({ json: async () => ({ bar: 1 }), status: 200, headers: headersMock }));
         const config = {
-            url: 'http://foo.com/'
+            url: 'http://foo.com/',
         };
         const result = await performRequest(config).then((response) => response.json());
         expect(result).toEqual({ bar: 1 });
@@ -50,7 +50,7 @@ describe('fetch', () => {
         setup(async () => ({ blob: async () => 123, status: 200, headers: headersMock }));
         const config = {
             url: 'http://foo.com/',
-            output: 'blob'
+            output: 'blob',
         };
         const result = await performRequest(config).then((response) => response.blob());
         expect(result).toEqual(123);
@@ -61,8 +61,8 @@ describe('fetch', () => {
         const config = {
             url: 'http://foo.com/',
             data: {
-                foo: 'bar'
-            }
+                foo: 'bar',
+            },
         };
         await performRequest(config).then((response) => response.json());
         expect(spy.calls.all()[0].args).toEqual([
@@ -72,10 +72,10 @@ describe('fetch', () => {
                 credentials: 'include',
                 redirect: 'follow',
                 headers: {
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(config.data)
-            })
+                body: JSON.stringify(config.data),
+            }),
         ]);
     });
 
@@ -85,8 +85,8 @@ describe('fetch', () => {
             url: 'http://foo.com/',
             input: 'form',
             data: {
-                foo: 'bar'
-            }
+                foo: 'bar',
+            },
         };
         await performRequest(config).then((response) => response.json());
         const fd = new FormData();
@@ -98,8 +98,8 @@ describe('fetch', () => {
                 credentials: 'include',
                 redirect: 'follow',
                 headers: {},
-                body: fd
-            })
+                body: fd,
+            }),
         ]);
     });
 
@@ -107,7 +107,7 @@ describe('fetch', () => {
         setup(async () => ({ json: async () => ({ bar: 1 }), status: 400, headers: headersMock }));
         const config = {
             url: 'http://foo.com/',
-            suppress: [123]
+            suppress: [123],
         };
         await expectAsync(performRequest(config)).toBeRejectedWith(
             jasmine.objectContaining({
@@ -121,8 +121,8 @@ describe('fetch', () => {
                     credentials: 'include',
                     redirect: 'follow',
                     headers: {},
-                    body: undefined
-                })
+                    body: undefined,
+                }),
             })
         );
     });

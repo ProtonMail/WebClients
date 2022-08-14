@@ -1,19 +1,20 @@
-import { ReactNode, useRef, useMemo, ComponentPropsWithoutRef } from 'react';
+import { ComponentPropsWithoutRef, ReactNode, useMemo, useRef } from 'react';
+
 import { c } from 'ttag';
 
 import { APPS } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
-import percentage from '@proton/utils/percentage';
 import { hasMailProfessional, hasNewVisionary, hasVisionary } from '@proton/shared/lib/helpers/subscription';
+import percentage from '@proton/utils/percentage';
 
+import { classnames } from '../../helpers';
+import { useConfig, useSubscription, useUser } from '../../hooks';
+import { useFocusTrap } from '../focus';
 import { SettingsLink } from '../link';
 import { Meter, getMeterColor } from '../progress';
 import { Tooltip } from '../tooltip';
-import { useUser, useSubscription, useConfig } from '../../hooks';
 import Hamburger from './Hamburger';
 import MobileAppsLinks from './MobileAppsLinks';
-import { useFocusTrap } from '../focus';
-import { classnames } from '../../helpers';
 
 interface Props extends ComponentPropsWithoutRef<'div'> {
     logo?: ReactNode;

@@ -7,8 +7,8 @@ import {
     OrganizationPasswordSection,
     OrganizationSection,
     PrivateMainSettingsArea,
-    useOrganization,
     UsersAndAddressesSection,
+    useOrganization,
 } from '@proton/components';
 import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
 

@@ -1,9 +1,11 @@
 import { c } from 'ttag';
+
 import { HumanVerificationForm } from '@proton/components';
 import { HumanVerificationFormProps } from '@proton/components/containers/api/humanVerification/HumanVerificationForm';
+
+import Content from '../public/Content';
 import Header from '../public/Header';
 import Main from '../public/Main';
-import Content from '../public/Content';
 
 interface Props extends HumanVerificationFormProps {
     onBack?: () => void;

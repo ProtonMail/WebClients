@@ -1,5 +1,5 @@
-import { EncryptedBlock, Link } from '../interface';
 import { WAIT_TIME } from '../constants';
+import { EncryptedBlock, Link } from '../interface';
 import { UploadingBlock, UploadingBlockControl } from './interface';
 
 export function waitFor(callback: () => boolean, timeout = 100): Promise<string> {

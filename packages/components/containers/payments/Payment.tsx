@@ -1,26 +1,27 @@
 import { ReactNode, Ref, useEffect } from 'react';
+
 import { c } from 'ttag';
+
 import {
-    PAYMENT_METHOD_TYPE,
-    MIN_DONATION_AMOUNT,
-    MIN_CREDIT_AMOUNT,
     DEFAULT_CURRENCY,
+    MIN_CREDIT_AMOUNT,
+    MIN_DONATION_AMOUNT,
+    PAYMENT_METHOD_TYPE,
     PAYMENT_METHOD_TYPES,
 } from '@proton/shared/lib/constants';
 import { Currency, PaymentMethodStatus } from '@proton/shared/lib/interfaces';
 
+import { Alert, Loader, Price } from '../../components';
 import { classnames } from '../../helpers';
-
-import { Alert, Price, Loader } from '../../components';
 import { useMethods } from '../paymentMethods';
-import PaymentMethodSelector from '../paymentMethods/PaymentMethodSelector';
-import CreditCard from './CreditCard';
-import Cash from './Cash';
-import Bitcoin from './Bitcoin';
-import PayPalView from './PayPalView';
 import PaymentMethodDetails from '../paymentMethods/PaymentMethodDetails';
-import Alert3DS from './Alert3ds';
+import PaymentMethodSelector from '../paymentMethods/PaymentMethodSelector';
 import { PaymentMethodFlows } from '../paymentMethods/interface';
+import Alert3DS from './Alert3ds';
+import Bitcoin from './Bitcoin';
+import Cash from './Cash';
+import CreditCard from './CreditCard';
+import PayPalView from './PayPalView';
 import { CardModel } from './interface';
 
 interface Props {

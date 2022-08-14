@@ -1,16 +1,16 @@
-import { useState, ChangeEvent } from 'react';
+import { ChangeEvent, useState } from 'react';
+
 import { c } from 'ttag';
 
 import { isValidHttpUrl } from '@proton/shared/lib/helpers/url';
 
 import { generateUID } from '../../../helpers';
 import { Button, PrimaryButton } from '../../button';
-import Label from '../../label/Label';
-import Input from '../../input/Input';
-import { Form } from '../../form';
-import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../modalTwo';
-
 import FileButton from '../../button/FileButton';
+import { Form } from '../../form';
+import Input from '../../input/Input';
+import Label from '../../label/Label';
+import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../modalTwo';
 
 enum ImageState {
     Initial,

@@ -1,9 +1,11 @@
 import { fromBER } from 'asn1js';
 import Certificate from 'pkijs/src/Certificate';
-import { verifySCTsForCertificate } from 'pkijs/src/SignedCertificateTimestampList';
 import GeneralName from 'pkijs/src/GeneralName';
+import { verifySCTsForCertificate } from 'pkijs/src/SignedCertificateTimestampList';
 import { getParametersValue } from 'pvutils';
+
 import { base64StringToUint8Array, uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
+
 import { ctLogs, rootCertificates } from './certificates';
 
 /**

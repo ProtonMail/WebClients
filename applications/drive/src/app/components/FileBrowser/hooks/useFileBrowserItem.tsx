@@ -1,4 +1,4 @@
-import { useRef, useCallback } from 'react';
+import { useCallback, useRef } from 'react';
 
 import { BrowserItemId, DragMoveControls } from '../interface';
 import { useSelection } from '../state/useSelection';

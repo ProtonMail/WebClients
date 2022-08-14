@@ -8,7 +8,6 @@ import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
 import { Alert, GoogleButton, Href, PrimaryButton, useModalState } from '../../../components';
 import { useFeature, useModals } from '../../../hooks';
-
 import { SettingsParagraph, SettingsSection } from '../../account';
 import { EasySwitchOauthModal } from '../../easySwitch';
 import { FeatureCode } from '../../features';

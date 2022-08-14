@@ -1,5 +1,7 @@
 import { c } from 'ttag';
+
 import { getAbuseURL } from '@proton/shared/lib/helpers/url';
+
 import { AlertModal, Button, Href } from '../../components';
 
 interface Props {

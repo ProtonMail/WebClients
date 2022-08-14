@@ -1,16 +1,19 @@
 import { useState } from 'react';
+
 import { c } from 'ttag';
-import { isEdge, isIE11, openNewTab } from '@proton/shared/lib/helpers/browser';
+
 import { updateConfirmLink } from '@proton/shared/lib/api/mailSettings';
-import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import { isEdge, isIE11, openNewTab } from '@proton/shared/lib/helpers/browser';
 import { rtlSanitize } from '@proton/shared/lib/helpers/string';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+
 import { useApi, useEventManager } from '../../hooks';
 import { Button } from '../button';
-import { Href } from '../link';
+import { Form } from '../form';
 import { Checkbox } from '../input';
 import { Label } from '../label';
+import { Href } from '../link';
 import { ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../modalTwo';
-import { Form } from '../form';
 
 interface Props extends ModalProps {
     link?: string;

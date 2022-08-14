@@ -1,5 +1,6 @@
 import { CryptoProxy, KeyInfo } from '@proton/crypto';
 import isTruthy from '@proton/utils/isTruthy';
+
 import { readFileAsString } from '../helpers/file';
 
 export interface ArmoredKeyWithInfo extends KeyInfo {

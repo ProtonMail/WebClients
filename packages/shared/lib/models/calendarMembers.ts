@@ -1,9 +1,9 @@
 import {
     getIsCalendarEventManagerCreate,
-    getIsCalendarEventManagerUpdate,
     getIsCalendarEventManagerDelete,
-    getIsCalendarMemberEventManagerDelete,
+    getIsCalendarEventManagerUpdate,
     getIsCalendarMemberEventManagerCreate,
+    getIsCalendarMemberEventManagerDelete,
     getIsCalendarMemberEventManagerUpdate,
 } from '../eventManager/helpers';
 import { CalendarWithMembers } from '../interfaces/calendar';

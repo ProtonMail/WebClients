@@ -1,21 +1,21 @@
 import {
-    cloneElement,
     DetailedHTMLProps,
-    forwardRef,
     InputHTMLAttributes,
     KeyboardEventHandler,
     ReactElement,
     ReactNode,
     Ref,
+    cloneElement,
+    forwardRef,
     useState,
 } from 'react';
+
 import { c } from 'ttag';
 
-import { generateUID, classnames } from '../../helpers';
-import useInput from './useInput';
-import ErrorZone from '../text/ErrorZone';
-
+import { classnames, generateUID } from '../../helpers';
 import Icon from '../icon/Icon';
+import ErrorZone from '../text/ErrorZone';
+import useInput from './useInput';
 
 export interface Props extends DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> {
     ref?: Ref<HTMLInputElement>; // override ref so that LegacyRef isn't used

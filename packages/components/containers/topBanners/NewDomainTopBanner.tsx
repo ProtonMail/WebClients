@@ -1,13 +1,14 @@
 import { useState } from 'react';
+
 import { c } from 'ttag';
+
 import { APPS } from '@proton/shared/lib/constants';
 import { getStaticURL } from '@proton/shared/lib/helpers/url';
 
 import { Href, SettingsLink } from '../../components';
 import { useFeature, useUser } from '../../hooks';
+import { getShowNewDomainSection, useNewDomainOptIn } from '../addresses';
 import { FeatureCode } from '../features';
-import { useNewDomainOptIn, getShowNewDomainSection } from '../addresses';
-
 import TopBanner from './TopBanner';
 
 const NewDomainTopBanner = () => {

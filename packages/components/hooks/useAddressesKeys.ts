@@ -1,8 +1,10 @@
 import { useCallback } from 'react';
+
 import { Address, DecryptedKey } from '@proton/shared/lib/interfaces';
 import { Unwrap } from '@proton/shared/lib/interfaces/utils';
-import useCache from './useCache';
+
 import { useGetAddresses } from './useAddresses';
+import useCache from './useCache';
 import useCachedModelResult from './useCachedModelResult';
 import { useGetAddressKeys } from './useGetAddressKeys';
 

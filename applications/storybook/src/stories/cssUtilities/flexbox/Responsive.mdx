@@ -1,4 +1,4 @@
-import { Canvas, Source, Story, Primary } from '@storybook/addon-docs';
+import { Canvas, Primary, Source, Story } from '@storybook/addon-docs';
 
 import { getTitle } from '../../../helpers/title';
 
@@ -9,6 +9,7 @@ import { getTitle } from '../../../helpers/title';
 Many (but not all) flex helper classes can be prefixed with `on-mobile` or `on-tablet`
 
 ## Column on mobile
+
 This will display items in a column on mobile, but not on tablet or desktop (resize preview to see effect)
 
 `className='flex on-mobile-flex-column'`
@@ -18,16 +19,16 @@ This will display items in a column on mobile, but not on tablet or desktop (res
 </div>
 
 ## Column on tablet
-This will display items in a column on mobile and tablet, but not on desktop (resize preview to see effect)
-`className='flex on-tablet-flex-column'`
+
+This will display items in a column on mobile and tablet, but not on desktop (resize preview to see effect) `className='flex on-tablet-flex-column'`
 
 <div className="border p0-5 rounded bg-weak" style={{ width: '900px', resize: 'both', overflow: 'auto' }}>
     <Story id="css-utilities-flexbox-responsive--column-tablet" />
 </div>
 
 ## Remove gap on mobile
-This will remove the gap on mobile, but not tablet or desktop
-`className='flex flex-gap-1 on-mobile-flex-gap-0'`
+
+This will remove the gap on mobile, but not tablet or desktop `className='flex flex-gap-1 on-mobile-flex-gap-0'`
 
 <div className="border p0-5 rounded bg-weak mb1" style={{ width: '320px', resize: 'both', overflow: 'auto' }}>
     <Story id="css-utilities-flexbox-responsive--flex-gap-0" />

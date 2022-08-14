@@ -1,5 +1,7 @@
 import { c } from 'ttag';
+
 import { INVOICE_TYPE } from '@proton/shared/lib/constants';
+
 import { Invoice } from './interface';
 
 const getType = (type: INVOICE_TYPE) => {

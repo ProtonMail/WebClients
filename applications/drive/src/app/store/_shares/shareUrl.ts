@@ -1,6 +1,6 @@
+import { SHARE_GENERATED_PASSWORD_LENGTH } from '@proton/shared/lib/drive/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { SharedURLFlags } from '@proton/shared/lib/interfaces/drive/sharing';
-import { SHARE_GENERATED_PASSWORD_LENGTH } from '@proton/shared/lib/drive/constants';
 
 export const hasCustomPassword = (sharedURL?: { Flags?: number }): boolean => {
     return !!sharedURL && hasBit(sharedURL.Flags, SharedURLFlags.CustomPassword);

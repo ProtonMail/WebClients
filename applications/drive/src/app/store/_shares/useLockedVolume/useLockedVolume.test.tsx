@@ -1,7 +1,9 @@
+import { act, renderHook } from '@testing-library/react-hooks';
+
 import { User } from '@proton/shared/lib/interfaces';
 import { getDecryptedUserKeysHelper } from '@proton/shared/lib/keys';
 import { getUserKey } from '@proton/shared/test/keys/keyDataHelper';
-import { renderHook, act } from '@testing-library/react-hooks';
+
 import { generateAddress, releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../utils/test/crypto';
 import { LockedVolumeForRestore } from '../interface';
 import useSharesState from '../useSharesState';

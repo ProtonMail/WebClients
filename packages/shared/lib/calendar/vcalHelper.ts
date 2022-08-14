@@ -1,3 +1,4 @@
+import { toUTCDate } from '../date/timezone';
 import { normalize } from '../helpers/string';
 import {
     VcalAttendeeProperty,
@@ -27,7 +28,6 @@ import {
     ICAL_METHODS_ATTENDEE,
     ICAL_METHODS_ORGANIZER,
 } from './constants';
-import { toUTCDate } from '../date/timezone';
 
 export const getIsPropertyAllDay = (property: VcalDateOrDateTimeProperty): property is VcalDateProperty => {
     return property.parameters?.type === 'date' ?? false;

@@ -12,8 +12,8 @@ import { setFeatureFlags } from '../../../helpers/test/api';
 import { addToCache, minimalCache } from '../../../helpers/test/cache';
 import { render } from '../../../helpers/test/render';
 import { MessageState } from '../../../logic/messages/messagesTypes';
-import ItemSpyTrackerIcon from './ItemSpyTrackerIcon';
 import HeaderTopPrivacyIcon from '../../message/header/HeaderTopPrivacyIcon';
+import ItemSpyTrackerIcon from './ItemSpyTrackerIcon';
 
 const messageWithTrackers: MessageState = {
     localID: 'messageWithTrackerId',

@@ -1,9 +1,9 @@
 import { usePreventLeave } from '@proton/components';
 import { queryCreateShare, queryDeleteShare } from '@proton/shared/lib/api/drive/share';
 import { getEncryptedSessionKey } from '@proton/shared/lib/calendar/encrypt';
-import { getDecryptedSessionKey } from '@proton/shared/lib/keys/drivePassphrase';
-import { generateNodeKeys } from '@proton/shared/lib/keys/driveKeys';
 import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
+import { generateNodeKeys } from '@proton/shared/lib/keys/driveKeys';
+import { getDecryptedSessionKey } from '@proton/shared/lib/keys/drivePassphrase';
 
 import { useDebouncedRequest } from '../_api';
 import { useDriveCrypto } from '../_crypto';

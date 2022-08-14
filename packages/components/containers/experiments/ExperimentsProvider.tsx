@@ -1,6 +1,7 @@
 import { ReactNode, useEffect, useRef, useState } from 'react';
+
 import { getExperiments } from '@proton/shared/lib/api/experiments';
-import { setCookie, getCookie, deleteCookie } from '@proton/shared/lib/helpers/cookies';
+import { deleteCookie, getCookie, setCookie } from '@proton/shared/lib/helpers/cookies';
 import { getSecondLevelDomain } from '@proton/shared/lib/helpers/url';
 
 import { useApi } from '../../hooks';

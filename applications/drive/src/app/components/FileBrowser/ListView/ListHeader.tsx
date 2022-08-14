@@ -3,8 +3,8 @@ import * as React from 'react';
 import { Checkbox, TableHeaderCell, TableRowSticky } from '@proton/components';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 
-import { SortParams } from '../interface';
 import { stopPropagation } from '../../../utils/stopPropagation';
+import { SortParams } from '../interface';
 import { useSelection } from '../state/useSelection';
 
 interface Props<T> {

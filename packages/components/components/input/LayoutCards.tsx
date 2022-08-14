@@ -1,5 +1,5 @@
-import LayoutCard, { LayoutCardProps } from './LayoutCard';
 import { classnames } from '../../helpers';
+import LayoutCard, { LayoutCardProps } from './LayoutCard';
 
 interface Props {
     list: LayoutCardProps[];

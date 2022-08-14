@@ -1,4 +1,5 @@
 import { ReactNode } from 'react';
+
 import { DIACRITICS_REGEXP, ES_MAX_INITIAL_CHARS } from '../constants';
 import { HighlightMetadata } from '../models';
 import { esSentryReport } from './esAPI';

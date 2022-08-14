@@ -1,9 +1,11 @@
-import { hasBit } from '@proton/shared/lib/helpers/bitset';
-import { IMAGE_PROXY_FLAGS } from '@proton/shared/lib/constants';
 import { c } from 'ttag';
+
 import { updateImageProxy } from '@proton/shared/lib/api/mailSettings';
-import { useApi, useEventManager, useLoading, useNotifications, useToggle } from '../../hooks';
+import { IMAGE_PROXY_FLAGS } from '@proton/shared/lib/constants';
+import { hasBit } from '@proton/shared/lib/helpers/bitset';
+
 import { Toggle } from '../../components/toggle';
+import { useApi, useEventManager, useLoading, useNotifications, useToggle } from '../../hooks';
 
 interface Props {
     id: string;

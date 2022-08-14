@@ -1,6 +1,8 @@
 import { c } from 'ttag';
-import { getOrganizationKeyInfo } from '@proton/shared/lib/organization/helper';
+
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import { getOrganizationKeyInfo } from '@proton/shared/lib/organization/helper';
+
 import { Alert, Block, ButtonLike, LearnMore, SettingsLink } from '../../components';
 import { useOrganization, useOrganizationKey } from '../../hooks';
 import { getActivationText } from './helper';

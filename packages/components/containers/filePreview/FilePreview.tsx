@@ -1,16 +1,18 @@
+import { ReactNode, Ref, forwardRef, useRef, useState } from 'react';
+
+import { isPDF, isSupportedImage, isSupportedText, isSupportedVideo } from '@proton/shared/lib/helpers/mimetype';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
-import { forwardRef, ReactNode, Ref, useRef, useState } from 'react';
-import { isSupportedImage, isSupportedVideo, isSupportedText, isPDF } from '@proton/shared/lib/helpers/mimetype';
+
+import { useFocusTrap } from '../../components';
+import { useCombinedRefs, useHotkeys } from '../../hooks';
 import Header, { SharedStatus } from './Header';
 import ImagePreview from './ImagePreview';
-import PreviewLoader from './PreviewLoader';
-import TextPreview from './TextPreview';
-import VideoPreview from './VideoPreview';
-import UnsupportedPreview from './UnsupportedPreview';
 import PDFPreview from './PDFPreview';
+import PreviewLoader from './PreviewLoader';
 import SignatureIssue from './SignatureIssue';
-import { useCombinedRefs, useHotkeys } from '../../hooks';
-import { useFocusTrap } from '../../components';
+import TextPreview from './TextPreview';
+import UnsupportedPreview from './UnsupportedPreview';
+import VideoPreview from './VideoPreview';
 
 interface Props {
     loading: boolean;

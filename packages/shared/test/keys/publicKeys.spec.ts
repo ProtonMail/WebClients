@@ -1,6 +1,7 @@
 import { CryptoProxy, PublicKeyReference } from '@proton/crypto';
-import { ValidPublicKey, ExpiredPublicKey, SignOnlyPublicKey } from './keys.data';
+
 import { getContactPublicKeyModel, sortApiKeys, sortPinnedKeys } from '../../lib/keys/publicKeys';
+import { ExpiredPublicKey, SignOnlyPublicKey, ValidPublicKey } from './keys.data';
 
 describe('get contact public key model', () => {
     const publicKeyConfig = {

@@ -1,23 +1,24 @@
 import PropTypes from 'prop-types';
+import { c } from 'ttag';
+
 import {
-    Tooltip,
-    Icon,
+    Button,
     CurrencySelector,
     CycleSelector,
-    Button,
+    Icon,
     Info,
     Loader,
-    useVPNCountriesCount,
+    Tooltip,
     useToggle,
+    useVPNCountriesCount,
 } from '@proton/components';
-import { c } from 'ttag';
 import {
-    PLANS,
-    PLAN_SERVICES,
+    CYCLE,
     DEFAULT_CURRENCY,
     DEFAULT_CYCLE,
-    CYCLE,
     MAIL_APP_NAME,
+    PLANS,
+    PLAN_SERVICES,
 } from '@proton/shared/lib/constants';
 import { getPlanName } from '@proton/shared/lib/helpers/subscription';
 

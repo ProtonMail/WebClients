@@ -1,10 +1,10 @@
 import { useEffect } from 'react';
+
 import { useModals } from '@proton/components';
 import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
-import ResetModal from './ResetModal';
-
 import CalendarContainerViewBlurred from '../calendar/CalendarContainerViewBlurred';
+import ResetModal from './ResetModal';
 
 interface Props {
     calendars: VisualCalendar[];

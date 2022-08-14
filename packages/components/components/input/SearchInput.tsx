@@ -1,4 +1,5 @@
-import { forwardRef, useState, useEffect, ChangeEvent } from 'react';
+import { ChangeEvent, forwardRef, useEffect, useState } from 'react';
+
 import noop from '@proton/utils/noop';
 
 import Input, { Props as InputProps } from './Input';

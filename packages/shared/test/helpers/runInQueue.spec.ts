@@ -1,5 +1,5 @@
-import runInQueue from '../../lib/helpers/runInQueue';
 import { wait } from '../../lib/helpers/promise';
+import runInQueue from '../../lib/helpers/runInQueue';
 
 describe('runInQueue', () => {
     it('should execute every function', async () => {

@@ -1,5 +1,7 @@
-import { Children, cloneElement, MouseEvent, ReactElement, RefObject } from 'react';
+import { Children, MouseEvent, ReactElement, RefObject, cloneElement } from 'react';
+
 import { c, msgid } from 'ttag';
+
 import { Dropdown } from '../dropdown';
 import { Props as OptionProps } from '../option/Option';
 

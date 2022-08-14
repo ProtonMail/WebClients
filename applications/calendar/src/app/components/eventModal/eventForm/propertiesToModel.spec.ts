@@ -1,5 +1,6 @@
 import { parse } from '@proton/shared/lib/calendar/vcal';
 import { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
+
 import { propertiesToModel } from './propertiesToModel';
 
 describe('properties to model', () => {

@@ -1,9 +1,10 @@
 import { c } from 'ttag';
-import { VIEW_LAYOUT } from '@proton/shared/lib/constants';
-import { updateViewLayout } from '@proton/shared/lib/api/mailSettings';
 
-import { useApi, useLoading, useEventManager, useNotifications, useMailSettings } from '../../hooks';
+import { updateViewLayout } from '@proton/shared/lib/api/mailSettings';
+import { VIEW_LAYOUT } from '@proton/shared/lib/constants';
+
 import { Button, ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../components';
+import { useApi, useEventManager, useLoading, useMailSettings, useNotifications } from '../../hooks';
 import ViewLayoutCards from '../layouts/ViewLayoutCards';
 
 import './ModalSettingsLayoutCards.scss';

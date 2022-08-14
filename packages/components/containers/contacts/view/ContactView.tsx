@@ -1,21 +1,23 @@
-import { CRYPTO_PROCESSING_TYPES } from '@proton/shared/lib/contacts/constants';
-import { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts/Contact';
-import { CryptoProcessingError } from '@proton/shared/lib/contacts/decrypt';
 import { c } from 'ttag';
+
+import { CRYPTO_PROCESSING_TYPES } from '@proton/shared/lib/contacts/constants';
+import { CryptoProcessingError } from '@proton/shared/lib/contacts/decrypt';
+import { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts/Contact';
 import { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';
-import { classnames } from '../../../helpers';
-import ContactViewErrors from './ContactViewErrors';
-import ContactSummary from './ContactSummary';
+
 import { Button } from '../../../components';
-import ContactViewFns from './properties/ContactViewFns';
-import ContactViewEmails from './properties/ContactViewEmails';
-import ContactViewTels from './properties/ContactViewTels';
-import ContactViewAdrs from './properties/ContactViewAdrs';
-import ContactViewOthers from './properties/ContactViewOthers';
+import { classnames } from '../../../helpers';
 import { ContactEmailSettingsProps } from '../email/ContactEmailSettingsModal';
+import { ContactGroupEditProps } from '../group/ContactGroupEditModal';
+import ContactSummary from './ContactSummary';
+import ContactViewErrors from './ContactViewErrors';
+import ContactViewAdrs from './properties/ContactViewAdrs';
+import ContactViewEmails from './properties/ContactViewEmails';
+import ContactViewFns from './properties/ContactViewFns';
+import ContactViewOthers from './properties/ContactViewOthers';
+import ContactViewTels from './properties/ContactViewTels';
 
 import './ContactView.scss';
-import { ContactGroupEditProps } from '../group/ContactGroupEditModal';
 
 interface Props {
     vCardContact: VCardContact;

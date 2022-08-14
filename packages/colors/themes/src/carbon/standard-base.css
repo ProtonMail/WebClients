@@ -1,61 +1,61 @@
 :root,
 .ui-standard {
-	--primary: #8A6EFF;
-	--primary-contrast: white;
+    --primary: #8a6eff;
+    --primary-contrast: white;
 
-	--signal-danger: #F5385A;
+    --signal-danger: #f5385a;
 
-	--signal-warning: #FF9900;
+    --signal-warning: #ff9900;
 
-	--signal-success: #1EA885;
+    --signal-success: #1ea885;
 
-	--signal-info: #239ECE;
+    --signal-info: #239ece;
 
-	--interaction-norm: #6D4AFF;
+    --interaction-norm: #6d4aff;
 
-	--interaction-weak: #4A4658;
+    --interaction-weak: #4a4658;
 
-	--text-norm: white;
-	--text-weak: #A7A4B5;
-	--text-hint: #6D697D;
-	--text-disabled: #5B576B;
-	--text-invert: #1C1B24;
+    --text-norm: white;
+    --text-weak: #a7a4b5;
+    --text-hint: #6d697d;
+    --text-disabled: #5b576b;
+    --text-invert: #1c1b24;
 
-	--field-norm: #5B576B;
-	--field-hover: #6D697D;
-	--field-disabled: #3F3B4C;
-	--field-focus: #6D4AFF;
-	--field-highlight: rgb(109 74 255 / 0.3);
+    --field-norm: #5b576b;
+    --field-hover: #6d697d;
+    --field-disabled: #3f3b4c;
+    --field-focus: #6d4aff;
+    --field-highlight: rgb(109 74 255 / 0.3);
 
-	--border-norm: #4A4658;
-	--border-weak: #343140;
+    --border-norm: #4a4658;
+    --border-weak: #343140;
 
-	--background-norm: #1C1B24;
-	--background-weak: #292733;
-	--background-strong: #3F3B4C;
+    --background-norm: #1c1b24;
+    --background-weak: #292733;
+    --background-strong: #3f3b4c;
 
-	--interaction-default: transparent;
-	--interaction-default-hover: rgb(91 87 107 / 0.2);
-	--interaction-default-active: rgb(91 87 107 / 0.4);
+    --interaction-default: transparent;
+    --interaction-default-hover: rgb(91 87 107 / 0.2);
+    --interaction-default-active: rgb(91 87 107 / 0.4);
 
-	--shadow-norm-opacity: 0.5;
-	--shadow-lifted-opacity: 0.75;
+    --shadow-norm-opacity: 0.5;
+    --shadow-lifted-opacity: 0.75;
 
-	--backdrop-norm: rgb(0 0 0 / 0.48);
+    --backdrop-norm: rgb(0 0 0 / 0.48);
 
-	/* Optional colors */
+    /* Optional colors */
 
-	--optional-scrollbar-thumb-color: #4A4658;
-	--optional-scrollbar-thumb-hover-color: #5B576B;
+    --optional-scrollbar-thumb-color: #4a4658;
+    --optional-scrollbar-thumb-hover-color: #5b576b;
 
-	--optional-link-norm: var(--interaction-norm-major-1);
-	--optional-link-hover: var(--interaction-norm-major-2);
-	--optional-link-active: var(--interaction-norm-major-3);
+    --optional-link-norm: var(--interaction-norm-major-1);
+    --optional-link-hover: var(--interaction-norm-major-2);
+    --optional-link-active: var(--interaction-norm-major-3);
 
-	--optional-email-item-read-background-color: #16141C;
-	--optional-email-item-read-text-color: var(--text-norm);
+    --optional-email-item-read-background-color: #16141c;
+    --optional-email-item-read-text-color: var(--text-norm);
 
-	--optional-mini-calendar-today-color: white;
+    --optional-mini-calendar-today-color: white;
 
-    --optional-logo-icon-text-color: #C5B7FF;
+    --optional-logo-icon-text-color: #c5b7ff;
 }

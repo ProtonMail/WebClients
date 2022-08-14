@@ -1,13 +1,16 @@
 import { CSSProperties, ChangeEvent, DragEvent, useState } from 'react';
+
 import { c } from 'ttag';
-import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
-import { ContactFormatted, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
+
 import { addPlus } from '@proton/shared/lib/helpers/string';
-import { classnames } from '../../../helpers';
-import ContactGroupLabels from '../group/ContactGroupLabels';
-import { ItemCheckbox } from '../../items';
+import { ContactFormatted, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
+import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
+
 import { Copy } from '../../../components/button';
+import { classnames } from '../../../helpers';
 import { useNotifications } from '../../../hooks';
+import { ItemCheckbox } from '../../items';
+import ContactGroupLabels from '../group/ContactGroupLabels';
 
 interface Props {
     checked: boolean;

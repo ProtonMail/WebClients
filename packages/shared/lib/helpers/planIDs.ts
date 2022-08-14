@@ -1,5 +1,5 @@
+import { ADDON_NAMES, PLANS } from '../constants';
 import { Organization, Plan, PlanIDs } from '../interfaces';
-import { PLANS, ADDON_NAMES } from '../constants';
 
 const { MAIL, DRIVE, VPN, FAMILY, NEW_VISIONARY, ENTERPRISE, BUNDLE, BUNDLE_PRO, MAIL_PRO, DRIVE_PRO } = PLANS;
 const NEW_PLANS = [MAIL, DRIVE, VPN, FAMILY, NEW_VISIONARY, ENTERPRISE, BUNDLE, BUNDLE_PRO, MAIL_PRO, DRIVE_PRO];

@@ -1,6 +1,7 @@
 import { PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
-import { AttachmentDirect, PackageDirect, SendPreferences } from '../../interfaces/mail/crypto';
+
 import { Attachment, Message } from '../../interfaces/mail/Message';
+import { AttachmentDirect, PackageDirect, SendPreferences } from '../../interfaces/mail/crypto';
 import { RequireOnly, SimpleMap } from '../../interfaces/utils';
 import { encryptPackages } from './sendEncrypt';
 import { attachSubPackages } from './sendSubPackages';

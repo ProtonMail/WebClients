@@ -1,6 +1,6 @@
-import { DownloadSignatureIssueModal } from './interface';
 import { DownloadProvider } from './DownloadProvider';
 import { ThumbnailsDownloadProvider } from './ThumbnailDownloadProvider';
+import { DownloadSignatureIssueModal } from './interface';
 import useDownload from './useDownload';
 import usePublicDownload from './usePublicDownload';
 

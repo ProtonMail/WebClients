@@ -1,10 +1,11 @@
 import { addLocale as ttagAddLocale, useLocale as ttagUseLocale } from 'ttag';
-import dateFnLocales from './dateFnLocales';
-import { setDateLocales, setLocales } from './index';
-import { getDateFnLocaleWithLongFormat, getDateFnLocaleWithSettings, Options } from './dateFnLocale';
-import { TtagLocaleMap } from '../interfaces/Locale';
+
 import { DEFAULT_LOCALE } from '../constants';
+import { TtagLocaleMap } from '../interfaces/Locale';
+import { Options, getDateFnLocaleWithLongFormat, getDateFnLocaleWithSettings } from './dateFnLocale';
+import dateFnLocales from './dateFnLocales';
 import { getClosestLocaleMatch, getLanguageCode } from './helper';
+import { setDateLocales, setLocales } from './index';
 
 export const loadLocale = async (localeCode: string, locales: TtagLocaleMap) => {
     const languageCode = getLanguageCode(localeCode);

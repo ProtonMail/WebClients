@@ -1,10 +1,11 @@
 import { ReactNode } from 'react';
 import { SortableContainerProps } from 'react-sortable-hoc';
 
-import { Table } from '../table';
-import OrderableContainer from '../orderable/OrderableContainer';
-import './OrderableTable.scss';
 import { classnames } from '../../helpers';
+import OrderableContainer from '../orderable/OrderableContainer';
+import { Table } from '../table';
+
+import './OrderableTable.scss';
 
 interface Props extends SortableContainerProps {
     className?: string;

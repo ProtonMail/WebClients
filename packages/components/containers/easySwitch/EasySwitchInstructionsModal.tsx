@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { c } from 'ttag';
 
 import { Address } from '@proton/shared/lib/interfaces';
@@ -6,21 +7,17 @@ import { ImportType, NON_OAUTH_PROVIDER } from '@proton/shared/lib/interfaces/Ea
 import noop from '@proton/utils/noop';
 
 import { FormModal } from '../../components';
-import { useModals } from '../../hooks';
-
-import ImportMailModal from './mail/modals/ImportMailModal';
-
-import YahooMailInstructions from '../../components/easySwitch/instructions/yahoo/YahooMailInstructions';
-import YahooCalendarInstructions from '../../components/easySwitch/instructions/yahoo/YahooCalendarInstructions';
-import YahooContactsInstructions from '../../components/easySwitch/instructions/yahoo/YahooContactsInstructions';
-
-import OutlookMailInstructions from '../../components/easySwitch/instructions/outlook/OutlookMailInstructions';
-import OutlookCalendarInstructions from '../../components/easySwitch/instructions/outlook/OutlookCalendarInstructions';
-import OutlookContactsInstructions from '../../components/easySwitch/instructions/outlook/OutlookContactsInstructions';
-
-import DefaultMailInstructions from '../../components/easySwitch/instructions/default/DefaultMailInstructions';
 import DefaultCalendarInstructions from '../../components/easySwitch/instructions/default/DefaultCalendarInstructions';
 import DefaultContactsInstructions from '../../components/easySwitch/instructions/default/DefaultContactsInstructions';
+import DefaultMailInstructions from '../../components/easySwitch/instructions/default/DefaultMailInstructions';
+import OutlookCalendarInstructions from '../../components/easySwitch/instructions/outlook/OutlookCalendarInstructions';
+import OutlookContactsInstructions from '../../components/easySwitch/instructions/outlook/OutlookContactsInstructions';
+import OutlookMailInstructions from '../../components/easySwitch/instructions/outlook/OutlookMailInstructions';
+import YahooCalendarInstructions from '../../components/easySwitch/instructions/yahoo/YahooCalendarInstructions';
+import YahooContactsInstructions from '../../components/easySwitch/instructions/yahoo/YahooContactsInstructions';
+import YahooMailInstructions from '../../components/easySwitch/instructions/yahoo/YahooMailInstructions';
+import { useModals } from '../../hooks';
+import ImportMailModal from './mail/modals/ImportMailModal';
 
 interface Props {
     onClose?: () => void;

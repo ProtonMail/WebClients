@@ -1,5 +1,6 @@
-import { classnames } from '@proton/components';
 import * as React from 'react';
+
+import { classnames } from '@proton/components';
 
 interface Props extends React.HTMLProps<HTMLDivElement> {
     children: React.ReactNode;

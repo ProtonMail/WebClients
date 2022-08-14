@@ -1,21 +1,23 @@
-import { ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
+import { useCallback } from 'react';
+
 import { concatArrays } from '@proton/crypto/lib/utils';
+import { sendMessageDirect } from '@proton/shared/lib/api/messages';
+import { ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
-import isTruthy from '@proton/utils/isTruthy';
 import { pick } from '@proton/shared/lib/helpers/object';
 import { Recipient } from '@proton/shared/lib/interfaces';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import { SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
+import { SEND_MESSAGE_DIRECT_ACTION } from '@proton/shared/lib/interfaces/message';
 import { RequireSome, SimpleMap } from '@proton/shared/lib/interfaces/utils';
-import { sendMessageDirect } from '@proton/shared/lib/api/messages';
 import { splitKeys } from '@proton/shared/lib/keys/keys';
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
+import { encryptAttachment } from '@proton/shared/lib/mail/send/attachments';
 import generatePackages from '@proton/shared/lib/mail/send/generatePackages';
 import getSendPreferences from '@proton/shared/lib/mail/send/getSendPreferences';
-import { encryptAttachment } from '@proton/shared/lib/mail/send/attachments';
-import { useCallback } from 'react';
-import { SEND_MESSAGE_DIRECT_ACTION } from '@proton/shared/lib/interfaces/message';
+import isTruthy from '@proton/utils/isTruthy';
+
 import { useApi, useGetAddressKeys, useGetEncryptionPreferences, useGetMailSettings } from './index';
 
 export interface SendIcsParams {

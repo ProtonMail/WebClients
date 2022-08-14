@@ -1,6 +1,6 @@
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
-import { SortField } from '../_views/utils/useSorting';
 
+import { SortField } from '../_views/utils/useSorting';
 import * as sorting from './sorting';
 
 describe('sorting', () => {

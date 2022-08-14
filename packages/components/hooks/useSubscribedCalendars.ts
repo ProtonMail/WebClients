@@ -1,4 +1,7 @@
+import { useEffect, useMemo, useState } from 'react';
+
 import { getSubscriptionParameters } from '@proton/shared/lib/api/calendars';
+import { getVisualCalendars } from '@proton/shared/lib/calendar/calendar';
 import {
     getIsCalendarSubscriptionEventManagerUpdate,
     getIsSubscribedCalendar,
@@ -11,31 +14,30 @@ import {
     getIsCalendarMemberEventManagerDelete,
     getIsCalendarMemberEventManagerUpdate,
 } from '@proton/shared/lib/eventManager/helpers';
-import { findMemberIndices } from '@proton/shared/lib/models/calendarMembers';
-import { useEffect, useMemo, useState } from 'react';
 import { Address } from '@proton/shared/lib/interfaces';
+import {
+    Calendar,
+    CalendarMember,
+    CalendarSubscription,
+    CalendarSubscriptionResponse,
+    CalendarWithMembers,
+    SubscribedCalendar,
+    VisualCalendar,
+} from '@proton/shared/lib/interfaces/calendar';
 import {
     CalendarEventManager,
     CalendarMemberEventManager,
     CalendarSubscriptionEventManager,
 } from '@proton/shared/lib/interfaces/calendar/EventManager';
+import { findMemberIndices } from '@proton/shared/lib/models/calendarMembers';
 import addItem from '@proton/utils/addItem';
-import updateItem from '@proton/utils/updateItem';
 import removeItem from '@proton/utils/removeIndex';
-import { getVisualCalendars } from '@proton/shared/lib/calendar/calendar';
-import {
-    Calendar,
-    VisualCalendar,
-    CalendarSubscription,
-    CalendarSubscriptionResponse,
-    SubscribedCalendar,
-    CalendarWithMembers,
-    CalendarMember,
-} from '@proton/shared/lib/interfaces/calendar';
-import useApi from './useApi';
-import useLoading from './useLoading';
-import useEventManager from './useEventManager';
+import updateItem from '@proton/utils/updateItem';
+
 import { useCalendarModelEventManager } from '../containers/eventManager/calendar/ModelEventManagerProvider';
+import useApi from './useApi';
+import useEventManager from './useEventManager';
+import useLoading from './useLoading';
 
 const useSubscribedCalendars = (calendars: VisualCalendar[], addresses: Address[], loadingCalendars = false) => {
     const [subscribedCalendars, setSubscribedCalendars] = useState<SubscribedCalendar[]>([]);

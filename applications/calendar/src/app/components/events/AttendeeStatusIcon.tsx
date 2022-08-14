@@ -1,5 +1,5 @@
-import { ICAL_ATTENDEE_STATUS } from '@proton/shared/lib/calendar/constants';
 import { Icon } from '@proton/components';
+import { ICAL_ATTENDEE_STATUS } from '@proton/shared/lib/calendar/constants';
 
 const { ACCEPTED, DECLINED, TENTATIVE, DELEGATED, NEEDS_ACTION } = ICAL_ATTENDEE_STATUS;
 

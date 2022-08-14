@@ -1,4 +1,5 @@
 import { LocaleData } from 'ttag';
+
 import { TtagLocaleMap } from '../interfaces/Locale';
 
 export let locales: TtagLocaleMap = {};

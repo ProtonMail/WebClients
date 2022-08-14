@@ -1,7 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
+
 import { c, msgid } from 'ttag';
-import { Contact } from '@proton/shared/lib/interfaces/contacts';
+
 import { resignAllContacts } from '@proton/shared/lib/contacts/globalOperations';
+import { Contact } from '@proton/shared/lib/interfaces/contacts';
+
 import {
     Alert,
     Button,

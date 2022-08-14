@@ -1,12 +1,13 @@
 import React, { useEffect, useRef, useState } from 'react';
+
 import { c } from 'ttag';
 
 import { useModals, useNotifications } from '@proton/components';
 
 import { useLockedVolume } from '../../../store';
 import DeleteLockedVolumesConfirmModal from './DeleteLockedVolumesConfirmModal';
-import UnlockDriveConfirmationDialog from './UnlockDriveConfirmationDialog';
 import KeyReactivationModal from './LockedVolumesResolveMethodModal';
+import UnlockDriveConfirmationDialog from './UnlockDriveConfirmationDialog';
 import { LockedVolumeResolveMethod } from './interfaces';
 
 interface ReactivationParams {

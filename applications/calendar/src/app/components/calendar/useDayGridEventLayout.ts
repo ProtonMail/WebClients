@@ -1,9 +1,9 @@
 import { CSSProperties, useMemo } from 'react';
 
+import { CalendarViewEvent } from '../../containers/calendar/interface';
+import { layout } from './layout';
 import { toPercent } from './mouseHelpers/mathHelpers';
 import { splitDayEventsInInterval } from './splitDayEventsInInterval';
-import { layout } from './layout';
-import { CalendarViewEvent } from '../../containers/calendar/interface';
 
 const getIsAllSingle = (eventsInRowSummary: EventsInRowSummary, start: number, end: number) => {
     for (let i = start; i < end; ++i) {

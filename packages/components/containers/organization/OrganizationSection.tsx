@@ -1,6 +1,7 @@
 import { c } from 'ttag';
-import { Audience, Organization } from '@proton/shared/lib/interfaces';
-import { APPS, MAIL_APP_NAME, BRAND_NAME } from '@proton/shared/lib/constants';
+
+import { unlockPasswordChanges } from '@proton/shared/lib/api/user';
+import { APPS, BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import {
     getHasB2BPlan,
     hasFree,
@@ -8,14 +9,14 @@ import {
     hasNewVisionary,
     hasVisionary,
 } from '@proton/shared/lib/helpers/subscription';
-import { unlockPasswordChanges } from '@proton/shared/lib/api/user';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import { Audience, Organization } from '@proton/shared/lib/interfaces';
 
 import { Button, ButtonLike, Field, Label, Loader, PrimaryButton, Row, SettingsLink } from '../../components';
 import { useModals, useNotifications, useSubscription } from '../../hooks';
-import OrganizationNameModal from './OrganizationNameModal';
 import { SettingsParagraph, SettingsSectionWide, UpgradeBanner } from '../account';
 import AuthModal from '../password/AuthModal';
+import OrganizationNameModal from './OrganizationNameModal';
 import SetupOrganizationModal from './SetupOrganizationModal';
 
 interface Props {

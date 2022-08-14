@@ -1,10 +1,10 @@
 import { useEffect } from 'react';
 import * as React from 'react';
 
-import { classnames, DragMoveContainer } from '@proton/components';
+import { DragMoveContainer, classnames } from '@proton/components';
 
-import useFileBrowserItem from '../hooks/useFileBrowserItem';
 import useDragAndDrop from '../hooks/useDragAndDrop';
+import useFileBrowserItem from '../hooks/useFileBrowserItem';
 import { DragMoveControls, FileBrowserBaseItem } from '../interface';
 
 export interface ItemProps<T extends FileBrowserBaseItem> {

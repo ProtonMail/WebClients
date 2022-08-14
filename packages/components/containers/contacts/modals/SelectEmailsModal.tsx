@@ -1,22 +1,25 @@
-import { useState, ChangeEvent, useEffect } from 'react';
+import { ChangeEvent, useEffect, useState } from 'react';
+
 import { c, msgid } from 'ttag';
+
 import { Contact, ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import isTruthy from '@proton/utils/isTruthy';
-import useContactEmails from '../../../hooks/useContactEmails';
+
 import {
     Alert,
-    Row,
-    Label,
-    Field,
+    Button,
     Checkbox,
+    Field,
+    Label,
     ModalProps,
     ModalTwo,
-    ModalTwoHeader,
     ModalTwoContent,
     ModalTwoFooter,
-    Button,
+    ModalTwoHeader,
+    Row,
 } from '../../../components';
 import { useContactGroups } from '../../../hooks';
+import useContactEmails from '../../../hooks/useContactEmails';
 
 export interface SelectEmailsProps {
     groupIDs: string[];

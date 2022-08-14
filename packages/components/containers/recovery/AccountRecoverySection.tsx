@@ -1,16 +1,17 @@
 import { c } from 'ttag';
+
 import { updateResetEmail, updateResetPhone } from '@proton/shared/lib/api/settings';
 
 import { Loader, Toggle } from '../../components';
 import { useEventManager, useLoading, useModals, useMyLocation, useNotifications, useUserSettings } from '../../hooks';
-import RecoveryEmail from './email/RecoveryEmail';
-import RecoveryPhone from './phone/RecoveryPhone';
-import AuthModal from '../password/AuthModal';
-import SettingsParagraph from '../account/SettingsParagraph';
 import { SettingsSection } from '../account';
 import SettingsLayout from '../account/SettingsLayout';
 import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../account/SettingsLayoutRight';
+import SettingsParagraph from '../account/SettingsParagraph';
+import AuthModal from '../password/AuthModal';
+import RecoveryEmail from './email/RecoveryEmail';
+import RecoveryPhone from './phone/RecoveryPhone';
 
 const AccountRecoverySection = () => {
     const { createModal } = useModals();

@@ -1,4 +1,4 @@
-import { arrayToBinaryString, binaryStringToArray, encodeBase64, decodeBase64 } from '@proton/crypto/lib/utils';
+import { arrayToBinaryString, binaryStringToArray, decodeBase64, encodeBase64 } from '@proton/crypto/lib/utils';
 
 export const uint8ArrayToString = arrayToBinaryString;
 
@@ -33,7 +33,7 @@ export const uint8ArrayToPaddedBase64URLString = (array: Uint8Array) =>
     encodeBase64URL(uint8ArrayToString(array), false);
 
 export const validateBase64string = (str: string, useVariantAlphabet?: boolean) => {
-    const regex = useVariantAlphabet ? /^[-_A-Za-z0-9]*={0,3}$/ : /^[+/A-Za-z0-9]*={0,3}$/
+    const regex = useVariantAlphabet ? /^[-_A-Za-z0-9]*={0,3}$/ : /^[+/A-Za-z0-9]*={0,3}$/;
 
     return regex.test(str);
 };

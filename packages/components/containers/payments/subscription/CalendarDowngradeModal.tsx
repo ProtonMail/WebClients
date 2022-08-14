@@ -1,6 +1,8 @@
 import { c } from 'ttag';
-import { APPS } from '@proton/shared/lib/constants';
+
 import { getAppName } from '@proton/shared/lib/apps/helper';
+import { APPS } from '@proton/shared/lib/constants';
+
 import { AlertModal, AppLink, Button, ModalProps } from '../../../components';
 
 interface Props extends ModalProps {

@@ -1,4 +1,5 @@
 import { CSSProperties, Ref } from 'react';
+
 import { classnames } from '@proton/components';
 
 interface Props {

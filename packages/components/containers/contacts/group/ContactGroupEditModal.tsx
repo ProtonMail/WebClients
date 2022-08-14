@@ -1,30 +1,33 @@
-import { useState, ChangeEvent, useMemo, FormEvent } from 'react';
+import { ChangeEvent, FormEvent, useMemo, useState } from 'react';
+
 import { c, msgid } from 'ttag';
-import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
-import diff from '@proton/utils/diff';
+
 import { ACCENT_COLORS } from '@proton/shared/lib/constants';
-import { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact';
-import isTruthy from '@proton/utils/isTruthy';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
+import { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact';
+import diff from '@proton/utils/diff';
+import isTruthy from '@proton/utils/isTruthy';
+import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
+
 import {
-    InputTwo,
-    Row,
-    Field,
-    Label,
-    ColorPicker,
+    AddressesAutocompleteItem,
     Autocomplete,
     Button,
-    getContactsAutocompleteItems,
-    AddressesAutocompleteItem,
+    ColorPicker,
+    Field,
+    InputTwo,
+    Label,
     ModalProps,
     ModalTwo,
+    ModalTwoContent,
     ModalTwoFooter,
     ModalTwoHeader,
-    ModalTwoContent,
+    Row,
+    getContactsAutocompleteItems,
 } from '../../../components';
 import { useContactEmails, useContactGroups } from '../../../hooks';
-import ContactGroupTable from './ContactGroupTable';
 import useUpdateGroup from '../hooks/useUpdateGroup';
+import ContactGroupTable from './ContactGroupTable';
 
 export interface ContactGroupEditProps {
     contactGroupID?: string;

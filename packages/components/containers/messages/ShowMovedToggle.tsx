@@ -3,8 +3,8 @@ import { c } from 'ttag';
 import { updateShowMoved } from '@proton/shared/lib/api/mailSettings';
 import { SHOW_MOVED } from '@proton/shared/lib/constants';
 
-import { useApi, useEventManager, useToggle, useMailSettings, useNotifications, useLoading } from '../../hooks';
 import { Toggle } from '../../components';
+import { useApi, useEventManager, useLoading, useMailSettings, useNotifications, useToggle } from '../../hooks';
 
 const { DRAFTS_AND_SENT, NONE } = SHOW_MOVED;
 

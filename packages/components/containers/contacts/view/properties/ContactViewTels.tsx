@@ -1,10 +1,12 @@
 import { c } from 'ttag';
-import { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';
+
 import { getSortedProperties } from '@proton/shared/lib/contacts/properties';
-import ContactViewProperty from './ContactViewProperty';
-import { ContactViewProperties } from './ContactViewProperties';
+import { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';
+
 import { Copy } from '../../../../components';
 import { useNotifications } from '../../../../hooks';
+import { ContactViewProperties } from './ContactViewProperties';
+import ContactViewProperty from './ContactViewProperty';
 
 interface Props {
     vCardContact: VCardContact;

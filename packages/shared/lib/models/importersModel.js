@@ -1,4 +1,4 @@
-import { getImportsList, getImportReportsList } from '../api/easySwitch';
+import { getImportReportsList, getImportsList } from '../api/easySwitch';
 import updateCollection from '../helpers/updateCollection';
 
 export const getImportsModel = (api) => {

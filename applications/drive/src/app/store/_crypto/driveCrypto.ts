@@ -1,11 +1,11 @@
+import { PrivateKeyReference, PublicKeyReference, toPublicKeyReference } from '@proton/crypto';
 import { ADDRESS_STATUS } from '@proton/shared/lib/constants';
+import { canonizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import { DecryptedKey } from '@proton/shared/lib/interfaces';
 import { Address } from '@proton/shared/lib/interfaces/Address';
 import { getPrimaryKey } from '@proton/shared/lib/keys';
-import { canonizeInternalEmail } from '@proton/shared/lib/helpers/email';
-import { splitKeys } from '@proton/shared/lib/keys/keys';
 import { decryptPassphrase } from '@proton/shared/lib/keys/drivePassphrase';
-import { PrivateKeyReference, PublicKeyReference, toPublicKeyReference } from '@proton/crypto';
+import { splitKeys } from '@proton/shared/lib/keys/keys';
 
 import { ShareWithKey } from '../_shares';
 

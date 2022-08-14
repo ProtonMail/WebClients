@@ -1,8 +1,9 @@
 import { useState } from 'react';
+
 import { InputFieldTwo, Toggle, useLoading } from '@proton/components';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import { getTitle } from '../../helpers/title';
 
+import { getTitle } from '../../helpers/title';
 import mdx from './Toggle.mdx';
 
 export default {

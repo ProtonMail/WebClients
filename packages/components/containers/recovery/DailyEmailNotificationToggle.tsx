@@ -1,10 +1,11 @@
 import { c } from 'ttag';
+
 import { updateNotifyEmail } from '@proton/shared/lib/api/settings';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { getStaticURL } from '@proton/shared/lib/helpers/url';
 
-import { useLoading, useNotifications, useApi, useEventManager } from '../../hooks';
-import { Toggle, Info } from '../../components';
+import { Info, Toggle } from '../../components';
+import { useApi, useEventManager, useLoading, useNotifications } from '../../hooks';
 
 interface DailyEmailNotificationToggleInputProps {
     isEnabled: boolean;

@@ -1,9 +1,11 @@
 import { useCallback } from 'react';
-import { CalendarUserSettingsModel } from '@proton/shared/lib/models/calendarSettingsModel';
+
 import { CalendarUserSettings as tsCalendarUserSettings } from '@proton/shared/lib/interfaces/calendar';
-import useCachedModelResult, { getPromiseValue } from './useCachedModelResult';
-import useCache from './useCache';
+import { CalendarUserSettingsModel } from '@proton/shared/lib/models/calendarSettingsModel';
+
 import useApi from './useApi';
+import useCache from './useCache';
+import useCachedModelResult, { getPromiseValue } from './useCachedModelResult';
 
 export const useGetCalendarUserSettings = (): (() => Promise<tsCalendarUserSettings>) => {
     const api = useApi();

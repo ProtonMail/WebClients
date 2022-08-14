@@ -1,14 +1,15 @@
-import { Icon, classnames, Tooltip, IconName } from '@proton/components';
 import { c } from 'ttag';
 
+import { Icon, IconName, Tooltip, classnames } from '@proton/components';
+
 import {
-    isTransferManuallyPaused,
-    isTransferProgress,
+    isTransferCanceled,
     isTransferDone,
     isTransferError,
-    isTransferCanceled,
+    isTransferManuallyPaused,
+    isTransferProgress,
 } from '../../utils/transfer';
-import { TransferState, Upload, Download, TransferType } from './transfer';
+import { Download, TransferState, TransferType, Upload } from './transfer';
 
 interface Props {
     transfer: Upload | Download;

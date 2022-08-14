@@ -1,6 +1,7 @@
 import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
-import StandardPublicApp from './StandardPublicApp';
+
 import MinimalLoginContainer from '../login/MinimalLoginContainer';
+import StandardPublicApp from './StandardPublicApp';
 import { OnLoginCallback } from './interface';
 
 interface Props {

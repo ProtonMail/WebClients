@@ -3,8 +3,8 @@ import { ShareMapLink } from '@proton/shared/lib/interfaces/drive/link';
 
 import { createAsyncQueue } from '../../../utils/parallelRunners';
 import { PAGE_SIZE } from '../constants';
-import { FetchShareMap } from './useFetchShareMap';
 import { fetchItemsMetadataPage } from './fetchItemsMetadataPage';
+import { FetchShareMap } from './useFetchShareMap';
 
 const PARALLEL_FETCH_LIMIT = 5;
 

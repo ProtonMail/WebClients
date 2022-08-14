@@ -1,16 +1,18 @@
 import { ReactNode } from 'react';
+
 import { c } from 'ttag';
+
 import {
-    Bordered,
-    Icon,
-    IconName,
     Block,
-    Href,
-    SimpleDropdown,
-    DropdownMenu,
+    Bordered,
+    Button,
     ButtonGroup,
     ButtonLike,
-    Button,
+    DropdownMenu,
+    Href,
+    Icon,
+    IconName,
+    SimpleDropdown,
 } from '../../../components';
 
 interface Props {

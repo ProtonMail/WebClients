@@ -1,7 +1,8 @@
-import { FREQUENCY } from '@proton/shared/lib/calendar/constants';
 import { c } from 'ttag';
+
 import { Option, SelectTwo } from '@proton/components';
 import { Props as SelectProps } from '@proton/components/components/selectTwo/SelectTwo';
+import { FREQUENCY } from '@proton/shared/lib/calendar/constants';
 
 const { ONCE, DAILY, WEEKLY, MONTHLY, YEARLY, CUSTOM } = FREQUENCY;
 

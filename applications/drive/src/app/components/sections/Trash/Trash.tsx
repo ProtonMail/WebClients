@@ -1,21 +1,22 @@
 import { useCallback, useMemo, useRef } from 'react';
+
 import { c } from 'ttag';
 
 import { useActiveBreakpoint } from '@proton/components';
 
+import useNavigate from '../../../hooks/drive/useNavigate';
 import { EncryptedLink, LinkShareUrl, useThumbnailsDownload } from '../../../store';
 import { useTrashView } from '../../../store';
-import useNavigate from '../../../hooks/drive/useNavigate';
-import FileBrowser, { Cells, useItemContextMenu, useSelection, GridHeader } from '../../FileBrowser';
-import EmptyTrash from './EmptyTrash';
-import { DeletedCell, LocationCell, NameCell, SizeCell } from '../FileBrowser/contentCells';
-import { BrowserItemId, FileBrowserBaseItem, ListViewHeaderItem } from '../../FileBrowser/interface';
-import { TrashItemContextMenu } from './TrashItemContextMenu';
-import headerItems from '../FileBrowser/headerCells';
-import { GridViewItem } from '../FileBrowser/GridViewItem';
-import { getSelectedItems } from '../helpers';
 import { SortField } from '../../../store/_views/utils/useSorting';
+import FileBrowser, { Cells, GridHeader, useItemContextMenu, useSelection } from '../../FileBrowser';
+import { BrowserItemId, FileBrowserBaseItem, ListViewHeaderItem } from '../../FileBrowser/interface';
+import { GridViewItem } from '../FileBrowser/GridViewItem';
+import { DeletedCell, LocationCell, NameCell, SizeCell } from '../FileBrowser/contentCells';
+import headerItems from '../FileBrowser/headerCells';
 import { translateSortField } from '../SortDropdown';
+import { getSelectedItems } from '../helpers';
+import EmptyTrash from './EmptyTrash';
+import { TrashItemContextMenu } from './TrashItemContextMenu';
 
 export interface TrashItem extends FileBrowserBaseItem {
     activeRevision?: EncryptedLink['activeRevision'];

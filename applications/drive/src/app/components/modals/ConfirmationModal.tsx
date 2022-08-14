@@ -1,5 +1,6 @@
-import { c } from 'ttag';
 import React, { ReactNode, useState } from 'react';
+
+import { c } from 'ttag';
 
 import {
     Alert,

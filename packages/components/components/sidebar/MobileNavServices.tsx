@@ -1,7 +1,8 @@
 import { ReactNode } from 'react';
+
 import { APPS } from '@proton/shared/lib/constants';
 
-import { useConfig, useActiveBreakpoint } from '../../hooks';
+import { useActiveBreakpoint, useConfig } from '../../hooks';
 
 interface Props {
     children: ReactNode;

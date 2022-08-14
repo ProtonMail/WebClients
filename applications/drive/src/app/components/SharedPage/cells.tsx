@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { TableCell, FileIcon, Icon, Loader } from '@proton/components';
+import { FileIcon, Icon, Loader, TableCell } from '@proton/components';
 
 import { Cells, HeaderCellsPresets } from '../FileBrowser';
 import { getLinkIconText } from '../sections/FileBrowser/utils';

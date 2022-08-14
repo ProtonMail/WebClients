@@ -1,5 +1,7 @@
 import { useCallback, useState } from 'react';
+
 import { UserSettings } from '@proton/shared/lib/interfaces';
+
 import useCache from './useCache';
 
 export const WELCOME_FLAGS_CACHE_KEY = 'welcome-flags';

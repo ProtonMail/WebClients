@@ -1,22 +1,25 @@
-import { useCallback, useMemo, forwardRef, Ref } from 'react';
+import { Ref, forwardRef, useCallback, useMemo } from 'react';
+
 import { c } from 'ttag';
-import move from '@proton/utils/move';
+
 import { OTHER_INFORMATION_FIELDS } from '@proton/shared/lib/contacts/constants';
-import { ContactEmailModel } from '@proton/shared/lib/interfaces/contacts';
-import { EXACTLY_ONE_MAY_BE_PRESENT, PROPERTIES } from '@proton/shared/lib/contacts/vcard';
-import { SimpleMap } from '@proton/shared/lib/interfaces';
-import { VCardContact, VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
 import {
     compareVCardPropertyByPref,
     compareVCardPropertyByUid,
     getSortedProperties,
     getVCardProperties,
 } from '@proton/shared/lib/contacts/properties';
+import { EXACTLY_ONE_MAY_BE_PRESENT, PROPERTIES } from '@proton/shared/lib/contacts/vcard';
+import { SimpleMap } from '@proton/shared/lib/interfaces';
+import { ContactEmailModel } from '@proton/shared/lib/interfaces/contacts';
+import { VCardContact, VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
+import move from '@proton/utils/move';
+
 import { Button, Icon, IconName, OrderableContainer, OrderableElement } from '../../../components';
-import ContactEditProperty from './ContactEditProperty';
-import EncryptedIcon from '../view/EncryptedIcon';
-import { ContactImageProps } from '../modals/ContactImageModal';
 import { ContactGroupEditProps } from '../group/ContactGroupEditModal';
+import { ContactImageProps } from '../modals/ContactImageModal';
+import EncryptedIcon from '../view/EncryptedIcon';
+import ContactEditProperty from './ContactEditProperty';
 
 const ICONS: { [key: string]: IconName } = {
     fn: 'user',

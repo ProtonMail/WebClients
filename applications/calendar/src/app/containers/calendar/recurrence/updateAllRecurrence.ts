@@ -1,9 +1,10 @@
 import { getDtendProperty } from '@proton/shared/lib/calendar/vcalConverter';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
-import { getSafeRruleUntil } from './helper';
-import { getStartDateTimeMerged, getEndDateTimeMerged } from './getDateTimeMerged';
+
 import { UpdateAllPossibilities } from '../eventActions/getRecurringUpdateAllPossibilities';
+import { getEndDateTimeMerged, getStartDateTimeMerged } from './getDateTimeMerged';
+import { getSafeRruleUntil } from './helper';
 
 const getComponentWithUpdatedRrule = (component: VcalVeventComponent) => {
     const { rrule } = component;

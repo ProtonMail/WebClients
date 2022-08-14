@@ -1,5 +1,5 @@
+import { load, save } from '../helpers/secureSessionStorage';
 import createStore from '../helpers/store';
-import { save, load } from '../helpers/secureSessionStorage';
 
 const createSecureSessionStorage = () => {
     const store = createStore(load());

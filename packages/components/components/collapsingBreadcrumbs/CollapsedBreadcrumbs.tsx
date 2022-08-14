@@ -1,11 +1,13 @@
 import { useMemo, useRef } from 'react';
+
 import { omit } from '@proton/shared/lib/helpers/object';
-import { generateUID, classnames } from '../../helpers';
-import { usePopperAnchor } from '../popper';
-import Breadcrumb from './Breadcrumb';
+
+import { classnames, generateUID } from '../../helpers';
 import Dropdown from '../dropdown/Dropdown';
 import DropdownMenu from '../dropdown/DropdownMenu';
 import DropdownMenuButton from '../dropdown/DropdownMenuButton';
+import { usePopperAnchor } from '../popper';
+import Breadcrumb from './Breadcrumb';
 import { BreadcrumbInfo } from './interfaces';
 
 interface Props {

@@ -1,10 +1,11 @@
 import { getIsRecurring, getRecurrenceIdDate, getUidValue } from '@proton/shared/lib/calendar/vcalHelper';
+import { APPS } from '@proton/shared/lib/constants';
 import { postMessageFromIframe } from '@proton/shared/lib/sideApp/helpers';
 import { SIDE_APP_EVENTS } from '@proton/shared/lib/sideApp/models';
-import { APPS } from '@proton/shared/lib/constants';
+
+import { OpenedMailEvent } from '../../../../hooks/useGetOpenedMailEvents';
 import { CalendarEventsCache } from '../interface';
 import { removeEventFromRecurrenceInstances, removeEventFromRecurringCache } from './recurringCache';
-import { OpenedMailEvent } from '../../../../hooks/useGetOpenedMailEvents';
 
 export const removeCalendarEventStoreRecord = (
     EventID: string,

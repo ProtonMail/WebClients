@@ -1,3 +1,6 @@
+import { useCallback } from 'react';
+
+import { useApi, useGetEncryptionPreferences, useGetMailSettings } from '@proton/components';
 import { getAttendeeEmail } from '@proton/shared/lib/calendar/attendees';
 import { getIcsMessageWithPreferences } from '@proton/shared/lib/calendar/integration/invite';
 import { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
@@ -5,8 +8,7 @@ import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import { SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import getSendPreferences from '@proton/shared/lib/mail/send/getSendPreferences';
-import { useCallback } from 'react';
-import { useApi, useGetEncryptionPreferences, useGetMailSettings } from '@proton/components';
+
 import { INVITE_ACTION_TYPES, InviteActions } from '../interfaces/Invite';
 
 const { SEND_INVITATION, SEND_UPDATE, CHANGE_PARTSTAT, DECLINE_INVITATION, CANCEL_INVITATION } = INVITE_ACTION_TYPES;

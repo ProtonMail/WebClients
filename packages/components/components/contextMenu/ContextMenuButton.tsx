@@ -1,5 +1,5 @@
-import { Icon, IconName } from '../icon';
 import { DropdownMenuButton } from '../dropdown';
+import { Icon, IconName } from '../icon';
 
 interface Props {
     name: string;

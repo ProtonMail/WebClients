@@ -1,5 +1,6 @@
-import { FocusableElement, isFocusable, tabbable } from 'tabbable';
 import { MutableRefObject, useEffect, useRef, useState } from 'react';
+
+import { FocusableElement, isFocusable, tabbable } from 'tabbable';
 
 const findParentElement = (el: Element | null | undefined, cb: (el: Element) => boolean) => {
     let nextEl = el;

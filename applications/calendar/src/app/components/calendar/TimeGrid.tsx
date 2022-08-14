@@ -9,27 +9,27 @@ import {
     useRef,
     useState,
 } from 'react';
-import { addWeeks, eachDayOfInterval, format, isSameDay } from '@proton/shared/lib/date-fns-utc';
-import { Button, classnames, Icon, Tooltip, useElementRect } from '@proton/components';
+
+import { Button, Icon, Tooltip, classnames, useElementRect } from '@proton/components';
 import { VIEWS } from '@proton/shared/lib/calendar/constants';
+import { addWeeks, eachDayOfInterval, format, isSameDay } from '@proton/shared/lib/date-fns-utc';
 
-import handleTimeGridMouseDown from './interactions/timeGridMouseHandler';
-import handleDayGridMouseDown from './interactions/dayGridMouseHandler';
-import { OnMouseDown } from './interactions/interface';
-import { toPercent } from './mouseHelpers/mathHelpers';
-
-import useDayGridEventLayout from './useDayGridEventLayout';
-import { getKey, splitTimeGridEventsPerDay, toUTCMinutes } from './splitTimeGridEventsPerDay';
-import HourLines from './TimeGrid/HourLines';
-import HourTexts from './TimeGrid/HourTexts';
-import DayLines from './TimeGrid/DayLines';
-import DayButtons from './TimeGrid/DayButtons';
-import DayEvents from './TimeGrid/DayEvents';
-import RowEvents from './DayGrid/RowEvents';
-import { PartDayEventView } from '../events/PartDayEvent';
-import { disableScroll, enableScroll } from './mouseHelpers/scrollHelper';
 import { CalendarViewEvent, TargetEventData, TargetMoreData } from '../../containers/calendar/interface';
 import { getNavigationArrowsText } from '../../helpers/i18n';
+import { PartDayEventView } from '../events/PartDayEvent';
+import RowEvents from './DayGrid/RowEvents';
+import DayButtons from './TimeGrid/DayButtons';
+import DayEvents from './TimeGrid/DayEvents';
+import DayLines from './TimeGrid/DayLines';
+import HourLines from './TimeGrid/HourLines';
+import HourTexts from './TimeGrid/HourTexts';
+import handleDayGridMouseDown from './interactions/dayGridMouseHandler';
+import { OnMouseDown } from './interactions/interface';
+import handleTimeGridMouseDown from './interactions/timeGridMouseHandler';
+import { toPercent } from './mouseHelpers/mathHelpers';
+import { disableScroll, enableScroll } from './mouseHelpers/scrollHelper';
+import { getKey, splitTimeGridEventsPerDay, toUTCMinutes } from './splitTimeGridEventsPerDay';
+import useDayGridEventLayout from './useDayGridEventLayout';
 
 const hours = Array.from({ length: 24 }, (a, i) => {
     return new Date(Date.UTC(2000, 0, 1, i));

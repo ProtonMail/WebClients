@@ -1,12 +1,13 @@
 import { CSSProperties, Ref, useMemo } from 'react';
-import { Icon, classnames } from '@proton/components';
-import { getEventStatusTraits } from '../../helpers/event';
 
-import useReadEvent from './useReadEvent';
-import { getEventStyle } from '../../helpers/color';
-import { getEventErrorMessage, getEventLoadingMessage } from './error';
+import { Icon, classnames } from '@proton/components';
+
 import { CalendarViewEvent, CalendarViewEventTemporaryEvent } from '../../containers/calendar/interface';
+import { getEventStyle } from '../../helpers/color';
+import { getEventStatusTraits } from '../../helpers/event';
+import { getEventErrorMessage, getEventLoadingMessage } from './error';
 import getEventInformation from './getEventInformation';
+import useReadEvent from './useReadEvent';
 
 interface Props {
     style: CSSProperties;

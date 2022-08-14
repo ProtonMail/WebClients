@@ -1,7 +1,10 @@
 import { Dispatch, SetStateAction } from 'react';
+
 import { c } from 'ttag';
+
 import { ContactFormatted, ContactMergeModel } from '@proton/shared/lib/interfaces/contacts';
 import move from '@proton/utils/move';
+
 import { Alert, Button, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../../components';
 import { ContactMergePreviewModalProps } from './ContactMergePreviewModal';
 import MergeTable from './table/MergeTable';

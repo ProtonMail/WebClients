@@ -1,15 +1,14 @@
 import { c } from 'ttag';
+
 import { updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
 import { CalendarUserSettings } from '@proton/shared/lib/interfaces/calendar';
 
-import { useApi, useLoading, useEventManager, useNotifications } from '../../../hooks';
-
-import { SettingsSection } from '../../account';
 import { Info, Toggle } from '../../../components';
+import { useApi, useEventManager, useLoading, useNotifications } from '../../../hooks';
+import { SettingsSection } from '../../account';
 import SettingsLayout from '../../account/SettingsLayout';
 import SettingsLayoutLeft from '../../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../../account/SettingsLayoutRight';
-
 import WeekStartSection from '../../general/WeekStartSection';
 import ViewPreferenceSelector from './ViewPreferenceSelector';
 

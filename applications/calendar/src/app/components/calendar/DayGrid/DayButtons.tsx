@@ -1,4 +1,5 @@
 import { memo } from 'react';
+
 import { isSameDay } from '@proton/shared/lib/date-fns-utc';
 
 interface Props {

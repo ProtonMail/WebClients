@@ -1,6 +1,8 @@
 import { c } from 'ttag';
+
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+
 import { AlertModal, AlertModalProps, Button, Href } from '../../../components';
 
 interface Props extends Omit<AlertModalProps, 'children' | 'title' | 'buttons'> {

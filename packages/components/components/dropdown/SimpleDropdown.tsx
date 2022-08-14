@@ -1,9 +1,10 @@
-import { CSSProperties, ElementType, forwardRef, ReactNode, useState } from 'react';
-import Dropdown from './Dropdown';
-import { usePopperAnchor } from '../popper';
-import DropdownButton, { DropdownButtonProps } from './DropdownButton';
+import { CSSProperties, ElementType, ReactNode, forwardRef, useState } from 'react';
+
 import { generateUID } from '../../helpers';
 import { useCombinedRefs } from '../../hooks';
+import { usePopperAnchor } from '../popper';
+import Dropdown from './Dropdown';
+import DropdownButton, { DropdownButtonProps } from './DropdownButton';
 
 interface OwnProps {
     hasCaret?: boolean;

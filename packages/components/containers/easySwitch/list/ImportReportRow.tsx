@@ -1,14 +1,13 @@
-import { c } from 'ttag';
 import { format } from 'date-fns';
+import { c } from 'ttag';
 
-import { ImportType, ImportReport } from '@proton/shared/lib/interfaces/EasySwitch';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { dateLocale } from '@proton/shared/lib/i18n';
+import { ImportReport, ImportType } from '@proton/shared/lib/interfaces/EasySwitch';
 
-import { TableRow, Icon } from '../../../components';
-
-import ImportReportStatus from './ImportReportStatus';
+import { Icon, TableRow } from '../../../components';
 import ImportReportRowActions from './ImportReportRowActions';
+import ImportReportStatus from './ImportReportStatus';
 
 interface Props {
     report: ImportReport;

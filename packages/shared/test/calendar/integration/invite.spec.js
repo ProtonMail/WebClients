@@ -1,9 +1,10 @@
 import { enUS } from 'date-fns/locale';
-import { createInviteIcs, generateEmailBody, generateEmailSubject } from '../../../lib/calendar/integration/invite';
+
 import { ICAL_ATTENDEE_STATUS, ICAL_METHOD } from '../../../lib/calendar/constants';
-import { RE_PREFIX } from '../../../lib/mail/messages';
+import { createInviteIcs, generateEmailBody, generateEmailSubject } from '../../../lib/calendar/integration/invite';
 import { omit } from '../../../lib/helpers/object';
 import { toCRLF } from '../../../lib/helpers/string';
+import { RE_PREFIX } from '../../../lib/mail/messages';
 
 const exampleVevent = {
     component: 'vevent',

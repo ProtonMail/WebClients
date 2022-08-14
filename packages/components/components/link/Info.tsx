@@ -1,10 +1,11 @@
 import { MouseEvent, ReactNode, useState } from 'react';
+
 import { c } from 'ttag';
 
-import { generateUID, classnames } from '../../helpers';
-import Icon from '../icon/Icon';
-import { usePopper, Popper, usePopperAnchor } from '../popper';
 import useRightToLeft from '../../containers/rightToLeft/useRightToLeft';
+import { classnames, generateUID } from '../../helpers';
+import Icon from '../icon/Icon';
+import { Popper, usePopper, usePopperAnchor } from '../popper';
 import useTooltipHandlers from '../tooltip/useTooltipHandlers';
 
 interface Props {

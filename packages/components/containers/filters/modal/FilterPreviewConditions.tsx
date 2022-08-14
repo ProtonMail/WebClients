@@ -1,10 +1,11 @@
 import { Fragment, useMemo } from 'react';
+
 import { c } from 'ttag';
 
-import { getConditionTypeLabels, getComparatorLabels } from '../constants';
-import { FilterStatement, SimpleFilterModalModel, ConditionType, ConditionComparator } from '../interfaces';
 import { Icon } from '../../../components';
 import { classnames } from '../../../helpers';
+import { getComparatorLabels, getConditionTypeLabels } from '../constants';
+import { ConditionComparator, ConditionType, FilterStatement, SimpleFilterModalModel } from '../interfaces';
 
 interface Props {
     isNarrow: boolean;

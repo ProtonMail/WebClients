@@ -1,17 +1,19 @@
 import { ChangeEvent, Dispatch, SetStateAction } from 'react';
+
 import { c } from 'ttag';
+
 import { CryptoProxy } from '@proton/crypto';
-import { ArmoredKeyWithInfo } from '@proton/shared/lib/keys';
-import { getIsValidForSending, getKeyEncryptionCapableStatus } from '@proton/shared/lib/keys/publicKeys';
-import { MailSettings, ContactPublicKeyModel } from '@proton/shared/lib/interfaces';
 import { BRAND_NAME, CONTACT_PGP_SCHEMES, MIME_TYPES_MORE } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import { ContactPublicKeyModel, MailSettings } from '@proton/shared/lib/interfaces';
+import { ArmoredKeyWithInfo } from '@proton/shared/lib/keys';
+import { getIsValidForSending, getKeyEncryptionCapableStatus } from '@proton/shared/lib/keys/publicKeys';
 
+import { Alert, Field, Info, Label, Row, Toggle } from '../../../components';
 import { useNotifications } from '../../../hooks';
 import SelectKeyFiles from '../../keys/shared/SelectKeyFiles';
-import { Alert, Row, Label, Info, Field, Toggle } from '../../../components';
-import ContactSchemeSelect from './ContactSchemeSelect';
 import ContactKeysTable from './ContactKeysTable';
+import ContactSchemeSelect from './ContactSchemeSelect';
 
 interface Props {
     model: ContactPublicKeyModel;

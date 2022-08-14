@@ -1,16 +1,17 @@
 import React, { ReactNode, useState } from 'react';
+
 import { c } from 'ttag';
 
 import {
-    Radio,
+    Button,
     Checkbox,
-    Row,
+    ModalTwo,
+    ModalTwoContent,
     ModalTwoFooter,
     ModalTwoHeader,
-    ModalTwoContent,
-    ModalTwo,
-    Button,
     PrimaryButton,
+    Radio,
+    Row,
 } from '@proton/components';
 
 import { TransferConflictStrategy } from '../../store';

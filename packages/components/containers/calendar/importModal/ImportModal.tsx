@@ -1,4 +1,11 @@
+import { ChangeEvent, DragEvent, useEffect, useState } from 'react';
+
+import { c, msgid } from 'ttag';
+
+import { updateMember } from '@proton/shared/lib/api/calendars';
 import { ICAL_METHOD, IMPORT_ERROR_TYPE, MAX_IMPORT_FILE_SIZE } from '@proton/shared/lib/calendar/constants';
+import { ImportFatalError } from '@proton/shared/lib/calendar/import/ImportFatalError';
+import { ImportFileError } from '@proton/shared/lib/calendar/import/ImportFileError';
 import {
     extractTotals,
     getSupportedEvents,
@@ -6,31 +13,24 @@ import {
     splitErrors,
     splitHiddenErrors,
 } from '@proton/shared/lib/calendar/import/import';
-import { ImportFatalError } from '@proton/shared/lib/calendar/import/ImportFatalError';
-
-import { ImportFileError } from '@proton/shared/lib/calendar/import/ImportFileError';
-import { APPS } from '@proton/shared/lib/constants';
 import { getMemberAndAddress } from '@proton/shared/lib/calendar/members';
-import { updateMember } from '@proton/shared/lib/api/calendars';
+import { APPS } from '@proton/shared/lib/constants';
 import { splitExtension } from '@proton/shared/lib/helpers/file';
-import noop from '@proton/utils/noop';
 import {
-    VisualCalendar,
     IMPORT_STEPS,
     ImportCalendarModel,
     ImportedEvent,
+    VisualCalendar,
 } from '@proton/shared/lib/interfaces/calendar';
-import { ChangeEvent, DragEvent, useEffect, useState } from 'react';
-import { c, msgid } from 'ttag';
-import { onlyDragFiles, Button, BasicModal } from '../../../components';
+import noop from '@proton/utils/noop';
 
-import { useApi, useEventManager, useConfig, useAddresses, useGetCalendarUserSettings } from '../../../hooks';
+import { BasicModal, Button, onlyDragFiles } from '../../../components';
+import { useAddresses, useApi, useConfig, useEventManager, useGetCalendarUserSettings } from '../../../hooks';
 import { useCalendarModelEventManager } from '../../eventManager';
-
 import AttachingModalContent from './AttachingModalContent';
-import ImportingModalContent from './ImportingModalContent';
 import ImportInvitationModalContent from './ImportInvitationModalContent';
 import ImportSummaryModalContent from './ImportSummaryModalContent';
+import ImportingModalContent from './ImportingModalContent';
 import PartialImportModalContent from './PartialImportModalContent';
 
 interface Props {

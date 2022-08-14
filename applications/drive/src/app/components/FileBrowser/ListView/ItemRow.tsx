@@ -1,12 +1,12 @@
 import { memo, useEffect } from 'react';
 
-import { TableRow, classnames, DragMoveContainer } from '@proton/components';
+import { DragMoveContainer, TableRow, classnames } from '@proton/components';
 import { isEquivalent } from '@proton/shared/lib/helpers/object';
 import shallowEqual from '@proton/utils/shallowEqual';
 
-import { DragMoveControls, FileBrowserBaseItem } from '../interface';
-import useFileBrowserItem from '../hooks/useFileBrowserItem';
 import useDragAndDrop from '../hooks/useDragAndDrop';
+import useFileBrowserItem from '../hooks/useFileBrowserItem';
+import { DragMoveControls, FileBrowserBaseItem } from '../interface';
 
 export interface ListItemProps<T extends FileBrowserBaseItem> {
     Cells: React.FC<{ item: any }>[];

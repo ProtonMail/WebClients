@@ -1,14 +1,16 @@
-import { c, msgid } from 'ttag';
 import { useLocation } from 'react-router';
+
+import { c, msgid } from 'ttag';
 
 import { PrivateMainArea } from '@proton/components';
 
-import { useSearchView } from '../../../store';
-import { extractSearchParameters } from '../../../store/_search/utils'; // TODO: handle with container
+// TODO: handle with container
 import useActiveShare from '../../../hooks/drive/useActiveShare';
+import { useSearchView } from '../../../store';
+import { extractSearchParameters } from '../../../store/_search/utils';
+import { FileBrowserStateProvider } from '../../FileBrowser';
 import DriveToolbar from '../Drive/DriveToolbar';
 import { Search } from './Search';
-import { FileBrowserStateProvider } from '../../FileBrowser';
 
 export function SearchView() {
     const { activeShareId } = useActiveShare();

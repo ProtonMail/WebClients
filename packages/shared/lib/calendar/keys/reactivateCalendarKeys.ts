@@ -1,10 +1,11 @@
-import { CryptoProxy } from '@proton/crypto';
 import { useGetAddressKeys } from '@proton/components';
-import { Address, Api } from '../../interfaces';
+import { CryptoProxy } from '@proton/crypto';
+
 import { getAllCalendarKeys, getPassphrases, queryMembers, reactivateCalendarKey } from '../../api/calendars';
+import { Address, Api } from '../../interfaces';
+import { Calendar, CalendarKey, CalendarMember, Passphrase, ReenableKeyResponse } from '../../interfaces/calendar';
 import { splitKeys } from '../../keys';
 import { decryptPassphrase } from '../../keys/calendarKeys';
-import { Calendar, CalendarKey, CalendarMember, Passphrase, ReenableKeyResponse } from '../../interfaces/calendar';
 import { getMemberAddressWithAdminPermissions } from '../getMemberWithAdmin';
 
 interface ReactivateCalendarsKeysArgumentsShared {

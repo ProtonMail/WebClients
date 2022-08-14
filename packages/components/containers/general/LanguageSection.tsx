@@ -1,18 +1,20 @@
 import { c } from 'ttag';
+
 import { updateLocale } from '@proton/shared/lib/api/settings';
-import { loadLocale, loadDateLocale } from '@proton/shared/lib/i18n/loadLocale';
 import { getBrowserLocale, getClosestLocaleCode } from '@proton/shared/lib/i18n/helper';
+import { loadDateLocale, loadLocale } from '@proton/shared/lib/i18n/loadLocale';
 import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
+
+import { Option, SelectTwo } from '../../components';
 import {
     useApi,
     useConfig,
+    useEventManager,
+    useForceRefresh,
     useLoading,
     useNotifications,
-    useForceRefresh,
-    useEventManager,
     useUserSettings,
 } from '../../hooks';
-import { Option, SelectTwo } from '../../components';
 import SettingsLayout from '../account/SettingsLayout';
 import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../account/SettingsLayoutRight';

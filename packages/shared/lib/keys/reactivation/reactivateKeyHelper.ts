@@ -2,7 +2,7 @@ import { CryptoProxy, PrivateKeyReference } from '@proton/crypto';
 import unique from '@proton/utils/unique';
 
 import { DecryptedKey, Key, KeyPair, SignedKeyList, Address as tsAddress, User as tsUser } from '../../interfaces';
-import { getActiveKeys, getReactivatedKeyFlag, getNormalizedActiveKeys } from '../getActiveKeys';
+import { getActiveKeys, getNormalizedActiveKeys, getReactivatedKeyFlag } from '../getActiveKeys';
 import { getDecryptedAddressKeysHelper } from '../getDecryptedAddressKeys';
 import { getSignedKeyList } from '../signedKeyList';
 

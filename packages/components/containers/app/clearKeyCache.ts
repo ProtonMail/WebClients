@@ -1,7 +1,8 @@
-import { DecryptedKey } from '@proton/shared/lib/interfaces';
 import { CryptoProxy } from '@proton/crypto';
-import { KEY as USER_KEYS_CACHE_KEY } from '../../hooks/useUserKeys';
+import { DecryptedKey } from '@proton/shared/lib/interfaces';
+
 import { CACHE_KEY as ADDRESS_KEYS_CACHE } from '../../hooks/useGetAddressKeys';
+import { KEY as USER_KEYS_CACHE_KEY } from '../../hooks/useUserKeys';
 
 const clearCachedKeys = (cachedKeys: DecryptedKey[] = []) => {
     cachedKeys.forEach?.((cachedKey) => {

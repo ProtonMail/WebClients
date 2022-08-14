@@ -1,8 +1,10 @@
 import { useEffect } from 'react';
+
 import { c } from 'ttag';
-import GenericError from '../error/GenericError';
+
 import { InlineLinkButton } from '../../components';
 import { useDocumentTitle } from '../../hooks';
+import GenericError from '../error/GenericError';
 
 interface Props {
     errorMessage?: string;

@@ -1,31 +1,32 @@
 import { ReactNode } from 'react';
+
 import { c } from 'ttag';
-import { locales } from '@proton/shared/lib/i18n/locales';
-import { getPrivacyPolicyURL, getStaticURL, getTermsURL } from '@proton/shared/lib/helpers/url';
+
+import {
+    CalendarLogo,
+    DriveLogo,
+    Href,
+    IconSize,
+    MailLogo,
+    ProtonLogo,
+    PublicTopBanners,
+    VpnLogo,
+    classnames,
+    getAppVersion,
+    useActiveBreakpoint,
+    useConfig,
+} from '@proton/components';
 import NudgeTopBanner, { getIsProtonMailDomain } from '@proton/components/containers/topBanners/NudgeTopBanner';
 import {
-    APP_NAMES,
     APPS,
+    APP_NAMES,
     CALENDAR_APP_NAME,
     DRIVE_APP_NAME,
     MAIL_APP_NAME,
     VPN_APP_NAME,
 } from '@proton/shared/lib/constants';
-
-import {
-    getAppVersion,
-    useConfig,
-    PublicTopBanners,
-    Href,
-    MailLogo,
-    CalendarLogo,
-    VpnLogo,
-    DriveLogo,
-    classnames,
-    ProtonLogo,
-    IconSize,
-    useActiveBreakpoint,
-} from '@proton/components';
+import { getPrivacyPolicyURL, getStaticURL, getTermsURL } from '@proton/shared/lib/helpers/url';
+import { locales } from '@proton/shared/lib/i18n/locales';
 
 import LanguageSelect from './LanguageSelect';
 

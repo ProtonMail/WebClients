@@ -1,5 +1,6 @@
 import { c } from 'ttag';
-import { TextLoader, CircleLoader } from '../../components';
+
+import { CircleLoader, TextLoader } from '../../components';
 
 const PreviewLoader = () => {
     return (

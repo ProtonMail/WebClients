@@ -1,20 +1,20 @@
 import {
-    ProtonApp,
-    useAuthentication,
-    PublicAuthenticationStore,
-    PrivateAuthenticationStore,
     ErrorBoundary,
+    PrivateAuthenticationStore,
+    ProtonApp,
+    PublicAuthenticationStore,
     StandardErrorPage,
     getSessionTrackingEnabled,
+    useAuthentication,
 } from '@proton/components';
-import { initLocales } from '@proton/shared/lib/i18n/locales';
+import authentication from '@proton/shared/lib/authentication/authentication';
 import { newVersionUpdater } from '@proton/shared/lib/busy';
 import sentry from '@proton/shared/lib/helpers/sentry';
-import authentication from '@proton/shared/lib/authentication/authentication';
+import { initLocales } from '@proton/shared/lib/i18n/locales';
 
-import * as config from './config';
 import PrivateApp from './PrivateApp';
 import PublicApp from './PublicApp';
+import * as config from './config';
 
 import './app.scss';
 

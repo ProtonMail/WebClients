@@ -1,8 +1,7 @@
 import { ThemeColor } from '@proton/colors';
 
-import NotificationDot from './NotificationDot';
 import { Card } from '..';
-
+import NotificationDot from './NotificationDot';
 import mdx from './NotificationDot.mdx';
 
 export default {

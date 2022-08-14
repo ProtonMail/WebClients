@@ -2,8 +2,8 @@
  * Currently this is basically a copy of sendSubPackages from the mail repo. TO BE IMPROVED
  */
 import { MIME_TYPES, PACKAGE_TYPE } from '../../constants';
-import { SendPreferences, PackageDirect } from '../../interfaces/mail/crypto';
 import { Attachment } from '../../interfaces/mail/Message';
+import { PackageDirect, SendPreferences } from '../../interfaces/mail/crypto';
 import { SimpleMap } from '../../interfaces/utils';
 
 const { PLAINTEXT, DEFAULT, MIME } = MIME_TYPES;

@@ -1,9 +1,9 @@
 import { c } from 'ttag';
 
-import { Calendar } from '@proton/shared/lib/interfaces/calendar';
 import { ImportedCalendar } from '@proton/shared/lib/interfaces/EasySwitch';
+import { Calendar } from '@proton/shared/lib/interfaces/calendar';
 
-import { Checkbox, Label, LabelStack, SelectTwo, Option } from '../../../../components';
+import { Checkbox, Label, LabelStack, Option, SelectTwo } from '../../../../components';
 import { classnames } from '../../../../helpers/component';
 import { CALENDAR_TO_BE_CREATED_PREFIX } from '../../constants';
 

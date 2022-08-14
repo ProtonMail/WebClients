@@ -1,13 +1,13 @@
-import { CryptoProxy, SessionKey, updateServerTime, serverTime, PrivateKeyReference } from '@proton/crypto';
+import { CryptoProxy, PrivateKeyReference, SessionKey, serverTime, updateServerTime } from '@proton/crypto';
 
 import {
-    FileKeys,
+    BlockToken,
     EncryptedBlock,
     EncryptedThumbnailBlock,
+    FileKeys,
     FileRequestBlock,
-    ThumbnailRequestBlock,
     Link,
-    BlockToken,
+    ThumbnailRequestBlock,
 } from './interface';
 import { getErrorString } from './utils';
 

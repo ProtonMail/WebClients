@@ -10,8 +10,33 @@ import {
     useState,
 } from 'react';
 import { Prompt } from 'react-router';
+
 import { c } from 'ttag';
 
+import {
+    Dropzone,
+    classnames,
+    onlyDragFiles,
+    useApi,
+    useBeforeUnload,
+    useCalendarModelEventManager,
+    useConfig,
+    useContactEmails,
+    useEventManager,
+    useGetAddressKeys,
+    useGetCalendarEventRaw,
+    useNotifications,
+    useRelocalizeText,
+} from '@proton/components';
+import { ImportModal } from '@proton/components/containers/calendar/importModal';
+import { useReadCalendarBootstrap } from '@proton/components/hooks/useGetCalendarBootstrap';
+import useGetCalendarEventPersonal from '@proton/components/hooks/useGetCalendarEventPersonal';
+import { useGetCanonicalEmailsMap } from '@proton/components/hooks/useGetCanonicalEmailsMap';
+import { useGetCalendarKeys } from '@proton/components/hooks/useGetDecryptedPassphraseAndCalendarKeys';
+import { useGetVtimezonesMap } from '@proton/components/hooks/useGetVtimezonesMap';
+import { useModalsMap } from '@proton/components/hooks/useModalsMap';
+import useSendIcs from '@proton/components/hooks/useSendIcs';
+import { serverTime } from '@proton/crypto';
 import { updateAttendeePartstat, updateMember, updatePersonalEventPart } from '@proton/shared/lib/api/calendars';
 import { processApiRequestsSafe } from '@proton/shared/lib/api/helpers/safeApiRequests';
 import { toApiPartstat } from '@proton/shared/lib/calendar/attendees';
@@ -25,19 +50,20 @@ import {
     SAVE_CONFIRMATION_TYPES,
 } from '@proton/shared/lib/calendar/constants';
 import { getMemberAndAddress } from '@proton/shared/lib/calendar/members';
+import { getIsPersonalCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
+import { reencryptCalendarSharedEvent } from '@proton/shared/lib/calendar/sync/reencrypt';
 import { getProdId } from '@proton/shared/lib/calendar/vcalConfig';
+import { propertyToUTCDate } from '@proton/shared/lib/calendar/vcalConverter';
 import { getSharedSessionKey, withDtstamp } from '@proton/shared/lib/calendar/veventHelper';
-import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import { API_CODES, SECOND } from '@proton/shared/lib/constants';
 import { format, isSameDay } from '@proton/shared/lib/date-fns-utc';
+import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import { getFormattedWeekdays } from '@proton/shared/lib/date/date';
-import unique from '@proton/utils/unique';
 import { canonizeEmailByGuess, canonizeInternalEmail } from '@proton/shared/lib/helpers/email';
-import noop from '@proton/utils/noop';
-import isTruthy from '@proton/utils/isTruthy';
 import { omit, pick } from '@proton/shared/lib/helpers/object';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import { Address } from '@proton/shared/lib/interfaces';
+import { ModalWithProps } from '@proton/shared/lib/interfaces/Modal';
 import {
     AttendeeModel,
     CalendarBootstrap,
@@ -50,66 +76,41 @@ import {
     VisualCalendar,
 } from '@proton/shared/lib/interfaces/calendar';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
-import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
-import { ModalWithProps } from '@proton/shared/lib/interfaces/Modal';
-import {
-    useApi,
-    useBeforeUnload,
-    useConfig,
-    useContactEmails,
-    useEventManager,
-    useGetAddressKeys,
-    useGetCalendarEventRaw,
-    useNotifications,
-    Dropzone,
-    onlyDragFiles,
-    classnames,
-    useRelocalizeText,
-    useCalendarModelEventManager,
-} from '@proton/components';
-import { useReadCalendarBootstrap } from '@proton/components/hooks/useGetCalendarBootstrap';
-import { useModalsMap } from '@proton/components/hooks/useModalsMap';
-import useGetCalendarEventPersonal from '@proton/components/hooks/useGetCalendarEventPersonal';
-import { useGetCanonicalEmailsMap } from '@proton/components/hooks/useGetCanonicalEmailsMap';
-import { useGetCalendarKeys } from '@proton/components/hooks/useGetDecryptedPassphraseAndCalendarKeys';
-import { useGetVtimezonesMap } from '@proton/components/hooks/useGetVtimezonesMap';
-import useSendIcs from '@proton/components/hooks/useSendIcs';
-import { serverTime } from '@proton/crypto';
-import eventImport from '@proton/styles/assets/img/illustrations/event-import.svg';
-import { ImportModal } from '@proton/components/containers/calendar/importModal';
-import { reencryptCalendarSharedEvent } from '@proton/shared/lib/calendar/sync/reencrypt';
-import { getIsPersonalCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
 import { SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
-import { propertyToUTCDate } from '@proton/shared/lib/calendar/vcalConverter';
+import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
+import eventImport from '@proton/styles/assets/img/illustrations/event-import.svg';
+import isTruthy from '@proton/utils/isTruthy';
+import noop from '@proton/utils/noop';
+import unique from '@proton/utils/unique';
 
-import { modelToDateProperty } from '../../components/eventModal/eventForm/modelToProperties';
+import Popover, { PopoverRenderData } from '../../components/calendar/Popover';
 import { ACTIONS, TYPE } from '../../components/calendar/interactions/constants';
 import {
+    MouseDownAction,
+    MouseUpAction,
     isCreateDownAction,
     isEventDownAction,
     isMoreDownAction,
-    MouseDownAction,
-    MouseUpAction,
 } from '../../components/calendar/interactions/interface';
 import { findUpwards } from '../../components/calendar/mouseHelpers/domHelpers';
-import Popover, { PopoverRenderData } from '../../components/calendar/Popover';
 import { sortEvents, sortWithTemporaryEvent } from '../../components/calendar/sortLayout';
-
 import CreateEventModal from '../../components/eventModal/CreateEventModal';
 import CreateEventPopover from '../../components/eventModal/CreateEventPopover';
 import { getHasDoneChanges } from '../../components/eventModal/eventForm/getHasEdited';
+import { modelToDateProperty } from '../../components/eventModal/eventForm/modelToProperties';
 import {
     getExistingEvent,
     getInitialFrequencyModel,
     getInitialModel,
 } from '../../components/eventModal/eventForm/state';
-
 import { getTimeInUtc } from '../../components/eventModal/eventForm/time';
 import EventPopover from '../../components/events/EventPopover';
 import MorePopoverEvent from '../../components/events/MorePopoverEvent';
-
 import { modifyEventModelPartstat } from '../../helpers/attendees';
+import { getIsSideApp } from '../../helpers/views';
+import { OpenedMailEvent } from '../../hooks/useGetOpenedMailEvents';
 import useGetMapSendIcsPreferences from '../../hooks/useGetSendIcsPreferencesMap';
+import { useOpenEventsFromMail } from '../../hooks/useOpenEventsFromMail';
 import {
     CleanSendIcsActionData,
     INVITE_ACTION_TYPES,
@@ -121,19 +122,18 @@ import {
     UpdatePersonalPartOperation,
 } from '../../interfaces/Invite';
 import CalendarView from './CalendarView';
-import SendWithErrorsConfirmationModal from './confirmationModals/SendWithErrorsConfirmationModal';
+import { useContactEmailsCache } from './ContactEmailsProvider';
 import CloseConfirmationModal from './confirmationModals/CloseConfirmation';
 import DeleteConfirmModal from './confirmationModals/DeleteConfirmModal';
 import DeleteRecurringConfirmModal from './confirmationModals/DeleteRecurringConfirmModal';
-
 import EditRecurringConfirmModal from './confirmationModals/EditRecurringConfirmation';
 import EditSingleConfirmModal from './confirmationModals/EditSingleConfirmModal';
-import { useContactEmailsCache } from './ContactEmailsProvider';
+import EquivalentAttendeesModal from './confirmationModals/EquivalentAttendeesModal';
+import SendWithErrorsConfirmationModal from './confirmationModals/SendWithErrorsConfirmationModal';
 import getDeleteEventActions from './eventActions/getDeleteEventActions';
 import getSaveEventActions from './eventActions/getSaveEventActions';
 import { getSendIcsAction } from './eventActions/inviteActions';
 import withOccurrenceEvent from './eventActions/occurrenceEvent';
-
 import { getCreateTemporaryEvent, getEditTemporaryEvent, getTemporaryEvent, getUpdatedDateTime } from './eventHelper';
 import getComponentFromCalendarEvent from './eventStore/cache/getComponentFromCalendarEvent';
 import { getIsCalendarEvent } from './eventStore/cache/helper';
@@ -159,10 +159,6 @@ import {
     TimeGridRef,
 } from './interface';
 import { getInitialTargetEventData } from './targetEventHelper';
-import EquivalentAttendeesModal from './confirmationModals/EquivalentAttendeesModal';
-import { useOpenEventsFromMail } from '../../hooks/useOpenEventsFromMail';
-import { OpenedMailEvent } from '../../hooks/useGetOpenedMailEvents';
-import { getIsSideApp } from '../../helpers/views';
 
 const getNormalizedTime = (isAllDay: boolean, initial: DateTimeModel, dateFromCalendar: Date) => {
     if (!isAllDay) {

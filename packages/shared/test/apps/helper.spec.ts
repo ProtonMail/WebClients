@@ -1,5 +1,5 @@
-import { APPS } from '../../lib/constants';
 import { getAppHref } from '../../lib/apps/helper';
+import { APPS } from '../../lib/constants';
 
 const location = {
     hostname: 'calendar.protonmail.com',

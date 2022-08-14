@@ -1,16 +1,16 @@
-import { BrowserTransportOptions } from '@sentry/browser/types/transports/types';
 import {
-    captureMessage as sentryCaptureMessage,
     captureException,
     configureScope,
     init,
     makeFetchTransport,
+    captureMessage as sentryCaptureMessage,
 } from '@sentry/browser';
+import { BrowserTransportOptions } from '@sentry/browser/types/transports/types';
 
-import { ProtonConfig } from '../interfaces';
 import { VPN_HOSTNAME } from '../constants';
-import { getUIDHeaders } from '../fetch/headers';
 import { ApiError } from '../fetch/ApiError';
+import { getUIDHeaders } from '../fetch/headers';
+import { ProtonConfig } from '../interfaces';
 
 const isLocalhost = (host: string) => host.startsWith('localhost');
 

@@ -1,24 +1,27 @@
 import { useEffect, useMemo, useRef } from 'react';
+
 import { c } from 'ttag';
+
+import { singleExport } from '@proton/shared/lib/contacts/helpers/export';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';
-import { singleExport } from '@proton/shared/lib/contacts/helpers/export';
-import { useContactGroups, useAddresses, useUserKeys, useMailSettings } from '../../../hooks';
-import useContactList from '../hooks/useContactList';
-import useContact from '../hooks/useContact';
+
+import { Loader } from '../../../components';
+import { Button } from '../../../components/button';
+import { ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../../components/modalTwo';
+import { useAddresses, useContactGroups, useMailSettings, useUserKeys } from '../../../hooks';
+import { useLinkHandler } from '../../../hooks/useLinkHandler';
 import ErrorBoundary from '../../app/ErrorBoundary';
 import GenericError from '../../error/GenericError';
-import { Button } from '../../../components/button';
-import { useLinkHandler } from '../../../hooks/useLinkHandler';
-import useVCardContact from '../hooks/useVCardContact';
-import { ModalTwo, ModalTwoHeader, ModalTwoContent, ModalTwoFooter, ModalProps } from '../../../components/modalTwo';
-import ContactView from './ContactView';
-import { Loader } from '../../../components';
 import { ContactEditProps } from '../edit/ContactEditModal';
-import { ContactDeleteProps } from '../modals/ContactDeleteModal';
 import { ContactEmailSettingsProps } from '../email/ContactEmailSettingsModal';
 import { ContactGroupEditProps } from '../group/ContactGroupEditModal';
+import useContact from '../hooks/useContact';
+import useContactList from '../hooks/useContactList';
+import useVCardContact from '../hooks/useVCardContact';
+import { ContactDeleteProps } from '../modals/ContactDeleteModal';
+import ContactView from './ContactView';
 
 export interface ContactDetailsProps {
     contactID: string;

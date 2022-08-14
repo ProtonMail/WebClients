@@ -19,8 +19,8 @@ import { Canvas, Story } from '@storybook/addon-docs/blocks';
 The name you call your mdx file does not matter as it has to be linked manually to the respective component stories file like so (however `Component.mdx` seems like a convenient pattern for mdx pages that are directly linked to a stories file of the same component):
 
 ```jsx
-import Component from './Component.tsx';
 import mdx from './Component.mdx';
+import Component from './Component.tsx';
 
 export default {
     component: Component,
@@ -46,8 +46,9 @@ This pattern is documented in the following storybook 'recipe': [CSF Stories wit
 To show the arguments (props) for a certain component in the documentation page use the ArgsTable Storybook Block
 
 ```jsx
-import { ArgsTable } from '@storybook/addon-docs/blocks';
 import { Alert } from 'react-components';
+
+import { ArgsTable } from '@storybook/addon-docs/blocks';
 
 <ArgsTable of={Alert} />;
 ```
@@ -71,14 +72,14 @@ This comment will be present in StoryBook:
 
 There have been issues with typescript-docgen not being able to correctly extract the args/props for the ArgsTable. The following scenarios cause problems with that.
 
-Importing a component under a different name than it was exportet as
+Importing a component under a different name than it was exported as
 
 ```js
-/* foo.js */
-export default Foo;
-
 /* bar.js */
 import Baz from './foo';
+
+/* foo.js */
+export default Foo;
 ```
 
 Exporting the component as an anonymous value, for example when wrapped in higher order functions and directly exported.

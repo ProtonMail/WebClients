@@ -1,8 +1,8 @@
 import { metrics } from '../api/metrics';
+import { TelemetryEvents, TelemetryMeasurementGroups, sendTelemetryData } from '../api/telemetry';
 import { METRICS_LOG, SECOND } from '../constants';
 import { Api, SimpleMap } from '../interfaces';
 import { wait } from './promise';
-import { sendTelemetryData, TelemetryEvents, TelemetryMeasurementGroups } from '../api/telemetry';
 
 let metricsEnabled = true;
 

@@ -1,9 +1,10 @@
 import { useState } from 'react';
+
 import { c } from 'ttag';
+
+import { Button, InputFieldTwo, PasswordInputTwo, useFormErrors, useLoading } from '@proton/components';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import noop from '@proton/utils/noop';
-
-import { Button, useLoading, PasswordInputTwo, useFormErrors, InputFieldTwo } from '@proton/components';
 
 interface Props {
     onSubmit: (keyPassword: string) => Promise<void>;

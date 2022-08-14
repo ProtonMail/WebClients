@@ -1,9 +1,8 @@
 import { c } from 'ttag';
 
-import { useModals, useUser } from '../../hooks';
-
 import { Button } from '../../components';
-import { SettingsSection, SettingsParagraph } from '../account';
+import { useModals, useUser } from '../../hooks';
+import { SettingsParagraph, SettingsSection } from '../account';
 import CreditsModal from './CreditsModal';
 
 const CreditsSection = () => {

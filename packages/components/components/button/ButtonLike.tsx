@@ -1,4 +1,4 @@
-import { ElementType, forwardRef, ReactElement } from 'react';
+import { ElementType, ReactElement, forwardRef } from 'react';
 
 import { ThemeColorUnion } from '@proton/colors';
 

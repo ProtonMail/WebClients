@@ -1,9 +1,11 @@
 import { ReactNode } from 'react';
+
 import { c } from 'ttag';
+
 import { Currency } from '@proton/shared/lib/interfaces';
 
-import { classnames } from '../../../helpers';
 import { Price } from '../../../components';
+import { classnames } from '../../../helpers';
 
 interface Props {
     title: ReactNode;

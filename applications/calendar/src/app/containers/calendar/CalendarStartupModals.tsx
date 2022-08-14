@@ -1,17 +1,18 @@
 import { useEffect, useRef } from 'react';
-import { APPS } from '@proton/shared/lib/constants';
+
 import {
-    useModalState,
-    ReferralModal,
-    useSubscription,
-    useFeature,
     FeatureCode,
-    getShouldOpenReferralModal,
-    V5WelcomeModal,
-    useShouldOpenV5WelcomeModal,
     RebrandingFeedbackModal,
+    ReferralModal,
+    V5WelcomeModal,
+    getShouldOpenReferralModal,
+    useFeature,
+    useModalState,
     useRebrandingFeedback,
+    useShouldOpenV5WelcomeModal,
+    useSubscription,
 } from '@proton/components';
+import { APPS } from '@proton/shared/lib/constants';
 
 const CalendarStartupModals = () => {
     const app = APPS.PROTONCALENDAR;

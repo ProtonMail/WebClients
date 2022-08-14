@@ -1,24 +1,27 @@
-import { useEffect, Dispatch, SetStateAction } from 'react';
+import { Dispatch, SetStateAction, useEffect } from 'react';
+
 import { c } from 'ttag';
-import {
-    EncryptedContact,
-    ImportedContact,
-    IMPORT_STEPS,
-    ImportContactsModel,
-} from '@proton/shared/lib/interfaces/contacts/Import';
-import { splitKeys } from '@proton/shared/lib/keys/keys';
-import { OVERWRITE, CATEGORIES } from '@proton/shared/lib/contacts/constants';
+
+import { CATEGORIES, OVERWRITE } from '@proton/shared/lib/contacts/constants';
 import { ImportContactError } from '@proton/shared/lib/contacts/errors/ImportContactError';
 import { ImportFatalError } from '@proton/shared/lib/contacts/errors/ImportFatalError';
-import { useApi, useBeforeUnload, useGetUserKeys, useEventManager } from '../../../../hooks';
+import {
+    EncryptedContact,
+    IMPORT_STEPS,
+    ImportContactsModel,
+    ImportedContact,
+} from '@proton/shared/lib/interfaces/contacts/Import';
+import { splitKeys } from '@proton/shared/lib/keys/keys';
+
 import {
     Alert,
+    Button,
     DynamicProgress,
-    ModalTwoHeader,
     ModalTwoContent,
     ModalTwoFooter,
-    Button,
+    ModalTwoHeader,
 } from '../../../../components';
+import { useApi, useBeforeUnload, useEventManager, useGetUserKeys } from '../../../../hooks';
 import { extractTotals, processContactsInBatches } from '../encryptAndSubmit';
 
 interface Props {

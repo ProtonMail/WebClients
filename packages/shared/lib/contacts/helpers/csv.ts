@@ -1,16 +1,18 @@
 import Papa from 'papaparse';
+
 import isTruthy from '@proton/utils/isTruthy';
 import range from '@proton/utils/range';
-import { createContactPropertyUid, fromVCardProperties, generateNewGroupName } from '../properties';
+
+import { getAllTypes } from '../../helpers/contacts';
 import {
     ParsedCsvContacts,
     PreVcardProperty,
     PreVcardsContact,
     PreVcardsProperty,
 } from '../../interfaces/contacts/Import';
-import { standarize, combine, toPreVcard } from './csvFormat';
-import { getAllTypes } from '../../helpers/contacts';
 import { VCardContact, VCardKey, VCardProperty } from '../../interfaces/contacts/VCard';
+import { createContactPropertyUid, fromVCardProperties, generateNewGroupName } from '../properties';
+import { combine, standarize, toPreVcard } from './csvFormat';
 
 interface PapaParseOnCompleteArgs {
     data?: string[][];

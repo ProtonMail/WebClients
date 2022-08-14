@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { getCountryByAbbr, correctAbbr } from '../../../helpers/countries';
+
+import { correctAbbr, getCountryByAbbr } from '../../../helpers/countries';
 import { getFlagSvg } from '../flag';
 
 const Country = ({ server: { EntryCountry, ExitCountry } }) => {

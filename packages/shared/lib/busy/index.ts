@@ -1,2 +1,2 @@
-export { default } from './busy'
-export * from './busy'
+export { default } from './busy';
+export * from './busy';

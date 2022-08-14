@@ -1,4 +1,5 @@
-import { ComponentPropsWithRef, forwardRef, ReactNode, Ref, useEffect, useRef } from 'react';
+import { ComponentPropsWithRef, ReactNode, Ref, forwardRef, useEffect, useRef } from 'react';
+
 import { useCombinedRefs } from '../../..';
 import { classnames } from '../../../helpers';
 import useAutoGrow from '../../../hooks/useAutoGrow';

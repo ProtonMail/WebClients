@@ -1,15 +1,17 @@
+import { PublicKeyReference } from '@proton/crypto';
 import { getAttendeeEmail } from '@proton/shared/lib/calendar/attendees';
 import { ICAL_ATTENDEE_STATUS, ICAL_METHOD, RECURRING_TYPES } from '@proton/shared/lib/calendar/constants';
 import { getResetPartstatActions, getUpdatedInviteVevent } from '@proton/shared/lib/calendar/integration/invite';
+import { getHasStartChanged } from '@proton/shared/lib/calendar/vcalConverter';
 import { withDtstamp } from '@proton/shared/lib/calendar/veventHelper';
-import unary from '@proton/utils/unary';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { SimpleMap } from '@proton/shared/lib/interfaces';
 import { CalendarEvent, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
 import { SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
-import { PublicKeyReference } from '@proton/crypto';
-import { getHasStartChanged } from '@proton/shared/lib/calendar/vcalConverter';
+import unary from '@proton/utils/unary';
 
+import { CalendarEventRecurring } from '../../../interfaces/CalendarEvents';
+import { EventNewData, EventOldData } from '../../../interfaces/EventData';
 import {
     INVITE_ACTION_TYPES,
     InviteActions,
@@ -19,10 +21,10 @@ import {
     UpdatePersonalPartOperation,
 } from '../../../interfaces/Invite';
 import {
+    SyncEventActionOperations,
     getCreateSyncOperation,
     getDeleteSyncOperation,
     getUpdateSyncOperation,
-    SyncEventActionOperations,
 } from '../getSyncMultipleEventsPayload';
 import createFutureRecurrence from '../recurrence/createFutureRecurrence';
 import createSingleRecurrence from '../recurrence/createSingleRecurrence';
@@ -35,8 +37,6 @@ import { getUpdatePersonalPartActions } from './getUpdatePersonalPartActions';
 import { getAddedAttendeesPublicKeysMap } from './inviteActions';
 import { getCurrentEvent, getRecurrenceEvents, getRecurrenceEventsAfter } from './recurringHelper';
 import { withIncrementedSequence, withUpdatedDtstampAndSequence, withVeventSequence } from './sequence';
-import { EventNewData, EventOldData } from '../../../interfaces/EventData';
-import { CalendarEventRecurring } from '../../../interfaces/CalendarEvents';
 
 interface SaveRecurringArguments {
     type: RECURRING_TYPES;

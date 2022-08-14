@@ -1,5 +1,5 @@
 import { SORT_DIRECTION } from '../../constants';
-import { FOLDER_PAGE_SIZE, DEFAULT_SORT_FIELD, DEFAULT_SORT_ORDER } from '../../drive/constants';
+import { DEFAULT_SORT_FIELD, DEFAULT_SORT_ORDER, FOLDER_PAGE_SIZE } from '../../drive/constants';
 import { AbuseReportPayload, CreateSharedURL, UpdateSharedURL } from '../../interfaces/drive/sharing';
 
 export const queryInitSRPHandshake = (token: string) => {

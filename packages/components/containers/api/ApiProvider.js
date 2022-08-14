@@ -1,26 +1,28 @@
 import { useReducer, useRef, useState } from 'react';
+
 import PropTypes from 'prop-types';
-import xhr from '@proton/shared/lib/fetch/fetch';
-import configureApi from '@proton/shared/lib/api';
-import withApiHandlers from '@proton/shared/lib/api/helpers/withApiHandlers';
-import { getDateHeader } from '@proton/shared/lib/fetch/helpers';
+
 import { updateServerTime } from '@proton/crypto';
+import configureApi from '@proton/shared/lib/api';
 import {
     getApiError,
     getApiErrorMessage,
     getIsOfflineError,
     getIsUnreachableError,
 } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import withApiHandlers from '@proton/shared/lib/api/helpers/withApiHandlers';
 import { getClientID } from '@proton/shared/lib/apps/helper';
-import { localeCode } from '@proton/shared/lib/i18n';
+import xhr from '@proton/shared/lib/fetch/fetch';
 import { withLocaleHeaders } from '@proton/shared/lib/fetch/headers';
+import { getDateHeader } from '@proton/shared/lib/fetch/helpers';
+import { localeCode } from '@proton/shared/lib/i18n';
 
-import ApiContext from './apiContext';
-import ApiStatusContext, { defaultApiStatus } from './apiStatusContext';
-import ApiServerTimeContext from './apiServerTimeContext';
 import { useModals, useNotifications } from '../../hooks';
 import UnlockModal from '../login/UnlockModal';
 import DelinquentModal from './DelinquentModal';
+import ApiContext from './apiContext';
+import ApiServerTimeContext from './apiServerTimeContext';
+import ApiStatusContext, { defaultApiStatus } from './apiStatusContext';
 import HumanVerificationModal from './humanVerification/HumanVerificationModal';
 
 const getSilenced = ({ silence } = {}, code) => {

@@ -1,18 +1,18 @@
-import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 import { ContextSeparator } from '@proton/components';
+import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
+import { DecryptedLink } from '../../../store';
 import { ContextMenuProps } from '../../FileBrowser/interface';
 import {
+    CopyLinkButton,
     DetailsButton,
     DownloadButton,
-    CopyLinkButton,
     PreviewButton,
     RenameButton,
     ShareLinkButton,
 } from '../ContextMenu';
-import { MoveToFolderButton, MoveToTrashButton } from './ContextMenuButtons';
-import { DecryptedLink } from '../../../store';
 import { ItemContextMenu } from '../ContextMenu/ItemContextMenu';
+import { MoveToFolderButton, MoveToTrashButton } from './ContextMenuButtons';
 
 export function DriveItemContextMenu({
     shareId,
@@ -36,13 +36,7 @@ export function DriveItemContextMenu({
     const selectedLinkIds = selectedLinks.map(({ linkId }) => linkId);
 
     return (
-        <ItemContextMenu
-            isOpen={isOpen}
-            open={open}
-            close={close}
-            position={position}
-            anchorRef={anchorRef}
-        >
+        <ItemContextMenu isOpen={isOpen} open={open} close={close} position={position} anchorRef={anchorRef}>
             {hasPreviewAvailable && <PreviewButton shareId={shareId} linkId={selectedLink.linkId} close={close} />}
             {hasPreviewAvailable && <ContextSeparator />}
             <DownloadButton shareId={shareId} selectedLinks={selectedLinks} close={close} />

@@ -6,8 +6,8 @@ import { TransferCancel, TransferState } from '../../../components/TransferManag
 import { waitUntil } from '../../../utils/async';
 import { isTransferActive, isTransferSignatureIssue } from '../../../utils/transfer';
 import { SignatureIssues } from '../../_links';
-import { LinkDownload, TransferSignatureIssueStrategy, DownloadSignatureIssueModal } from '../interface';
-import { Download, UpdateFilter, UpdateState, UpdateData } from './interface';
+import { DownloadSignatureIssueModal, LinkDownload, TransferSignatureIssueStrategy } from '../interface';
+import { Download, UpdateData, UpdateFilter, UpdateState } from './interface';
 
 // Empty string is ensured to not conflict with any upload ID or folder name.
 // No upload has empty ID.

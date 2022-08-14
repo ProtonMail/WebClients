@@ -1,6 +1,7 @@
 import { CryptoProxy } from '@proton/crypto';
-import { DecryptableKey } from './keys.data';
+
 import { decryptPassphrase } from '../../lib/keys/calendarKeys';
+import { DecryptableKey } from './keys.data';
 
 const armoredPassphrase = `
 -----BEGIN PGP MESSAGE-----

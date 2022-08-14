@@ -1,31 +1,32 @@
 import { c, msgid } from 'ttag';
-import { PLANS, PLAN_NAMES, APPS, CYCLE, BRAND_NAME, VPN_CONNECTIONS, APP_NAMES } from '@proton/shared/lib/constants';
-import { getHasB2BPlan, getPrimaryPlan, hasVPN, isTrial } from '@proton/shared/lib/helpers/subscription';
-import {
-    Subscription,
-    Organization,
-    Address,
-    UserModel,
-    VPNServers,
-    VPNCountries,
-    Currency,
-} from '@proton/shared/lib/interfaces';
-import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
-import percentage from '@proton/utils/percentage';
-import isTruthy from '@proton/utils/isTruthy';
-import humanSize from '@proton/shared/lib/helpers/humanSize';
-import { getFreeServers, getPlusServers } from '@proton/shared/lib/vpn/features';
 
 import { MAX_CALENDARS_FREE, MAX_CALENDARS_PAID } from '@proton/shared/lib/calendar/constants';
-import { Price, StripedList, StripedItem, Meter, Button, IconName, Icon } from '../../../components';
-import { OpenSubscriptionModalCallback } from './SubscriptionModalProvider';
-import { SUBSCRIPTION_STEPS } from './constants';
+import { APPS, APP_NAMES, BRAND_NAME, CYCLE, PLANS, PLAN_NAMES, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
+import humanSize from '@proton/shared/lib/helpers/humanSize';
+import { getHasB2BPlan, getPrimaryPlan, hasVPN, isTrial } from '@proton/shared/lib/helpers/subscription';
+import {
+    Address,
+    Currency,
+    Organization,
+    Subscription,
+    UserModel,
+    VPNCountries,
+    VPNServers,
+} from '@proton/shared/lib/interfaces';
+import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
+import { getFreeServers, getPlusServers } from '@proton/shared/lib/vpn/features';
+import isTruthy from '@proton/utils/isTruthy';
+import percentage from '@proton/utils/percentage';
+
+import { Button, Icon, IconName, Meter, Price, StripedItem, StripedList } from '../../../components';
 import {
     getB2BHighSpeedVPNConnectionsText,
     getFreeVPNConnectionTotal,
     getHighSpeedVPNConnectionsText,
     getVPNConnectionsText,
 } from '../features/vpn';
+import { OpenSubscriptionModalCallback } from './SubscriptionModalProvider';
+import { SUBSCRIPTION_STEPS } from './constants';
 
 interface Item {
     icon: IconName;

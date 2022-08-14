@@ -1,11 +1,12 @@
 import { useMemo } from 'react';
+
 import { c } from 'ttag';
 
 import { getTimeZoneOptions } from '@proton/shared/lib/date/timezone';
 
-import { Props as SelectProps } from '../selectTwo/SelectTwo';
 import { Option } from '../option';
 import { SearchableSelect } from '../selectTwo';
+import { Props as SelectProps } from '../selectTwo/SelectTwo';
 
 interface Props extends Omit<SelectProps<string>, 'onChange' | 'children'> {
     timezone?: string;

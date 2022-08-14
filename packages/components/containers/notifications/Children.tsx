@@ -1,7 +1,8 @@
 import React, { useContext } from 'react';
-import NotificationsContext from './notificationsContext';
-import NotificationsChildrenContext from './childrenContext';
+
 import NotificationsContainer from './Container';
+import NotificationsChildrenContext from './childrenContext';
+import NotificationsContext from './notificationsContext';
 
 const NotificationsChildren = () => {
     const manager = useContext(NotificationsContext);

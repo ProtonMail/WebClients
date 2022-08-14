@@ -1,15 +1,16 @@
 import { useState } from 'react';
+
 import { c } from 'ttag';
 
 import {
-    generateUID,
-    usePopperAnchor,
     Dropdown,
     DropdownMenu,
+    DropdownMenuButton,
     Icon,
     IconName,
-    DropdownMenuButton,
     ToolbarButton,
+    generateUID,
+    usePopperAnchor,
 } from '@proton/components';
 
 import { DecryptedLink, useActions } from '../../../../store';

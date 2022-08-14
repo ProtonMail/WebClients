@@ -1,23 +1,24 @@
 import { ReactNode, useState } from 'react';
+
 import { c } from 'ttag';
-import { disableTotp } from '@proton/shared/lib/api/settings';
-import { srpAuth } from '@proton/shared/lib/srp';
+
 import { PASSWORD_WRONG_ERROR } from '@proton/shared/lib/api/auth';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { disableTotp } from '@proton/shared/lib/api/settings';
+import { srpAuth } from '@proton/shared/lib/srp';
 import noop from '@proton/utils/noop';
 
 import {
+    Button,
+    Form,
     Loader,
-    ModalProps,
     ModalTwo as Modal,
-    ModalTwoHeader as ModalHeader,
     ModalTwoContent as ModalContent,
     ModalTwoFooter as ModalFooter,
-    Form,
-    Button,
+    ModalTwoHeader as ModalHeader,
+    ModalProps,
 } from '../../components';
-import { useLoading, useApi, useEventManager, useNotifications } from '../../hooks';
-
+import { useApi, useEventManager, useLoading, useNotifications } from '../../hooks';
 import PasswordTotpInputs from '../password/PasswordTotpInputs';
 import useAskAuth from '../password/useAskAuth';
 

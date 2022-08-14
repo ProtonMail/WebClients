@@ -1,12 +1,13 @@
 import { c } from 'ttag';
 
+import { Table, TableBody, TableHeader, TableRow } from '@proton/components';
 import { Referral, ReferralState } from '@proton/shared/lib/interfaces';
-import { Table, TableHeader, TableBody, TableRow } from '@proton/components';
-import DateCell from './DateCell';
+
+import { Loader } from '../../../../components';
 import ActivityCell from './ActivityCell';
+import DateCell from './DateCell';
 import RewardCell from './RewardCell';
 import UserCell from './UserCell';
-import { Loader } from '../../../../components';
 
 interface Props {
     loading?: boolean;

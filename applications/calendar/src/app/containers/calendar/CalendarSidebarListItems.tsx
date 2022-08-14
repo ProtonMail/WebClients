@@ -1,37 +1,36 @@
 import { useState } from 'react';
+
 import { c } from 'ttag';
 
 import {
     Button,
     Checkbox,
-    classnames,
+    DropdownMenuLink,
     Icon,
     SettingsLink,
     SidebarListItem,
     SidebarListItemContent,
     SidebarListItemDiv,
     SimpleDropdown,
-    DropdownMenuLink,
     Tooltip,
-    useUser,
+    classnames,
     useModalState,
+    useUser,
 } from '@proton/components';
-import noop from '@proton/utils/noop';
-import { VisualCalendar, SubscribedCalendar } from '@proton/shared/lib/interfaces/calendar';
-import { getIsCalendarDisabled, getProbablyActiveCalendars } from '@proton/shared/lib/calendar/calendar';
-
-import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
+import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import { CalendarModal } from '@proton/components/containers/calendar/calendarModal/CalendarModal';
+import { ImportModal } from '@proton/components/containers/calendar/importModal';
+import { getIsCalendarDisabled, getProbablyActiveCalendars } from '@proton/shared/lib/calendar/calendar';
+import { CALENDAR_SETTINGS_SUBSECTION_ID, COLORS } from '@proton/shared/lib/calendar/constants';
 import {
     getCalendarHasSubscriptionParameters,
     getCalendarIsNotSyncedInfo,
     getIsPersonalCalendar,
 } from '@proton/shared/lib/calendar/subscribe/helpers';
-import { ImportModal } from '@proton/components/containers/calendar/importModal';
-
 import { Nullable } from '@proton/shared/lib/interfaces';
-import { CALENDAR_SETTINGS_SUBSECTION_ID, COLORS } from '@proton/shared/lib/calendar/constants';
+import { SubscribedCalendar, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import noop from '@proton/utils/noop';
 
 export interface CalendarSidebarListItemsProps {
     calendars?: VisualCalendar[] | SubscribedCalendar[];
@@ -165,9 +164,10 @@ const CalendarSidebarListItems = ({
                                         <hr className="mt0-5 mb0-5" />
                                         <DropdownMenuLink
                                             as={SettingsLink}
-                                            path={`/calendars#${isPersonalCalendar
-                                                ? CALENDAR_SETTINGS_SUBSECTION_ID.PERSONAL_CALENDARS
-                                                : CALENDAR_SETTINGS_SUBSECTION_ID.SUBSCRIBED_CALENDARS
+                                            path={`/calendars#${
+                                                isPersonalCalendar
+                                                    ? CALENDAR_SETTINGS_SUBSECTION_ID.PERSONAL_CALENDARS
+                                                    : CALENDAR_SETTINGS_SUBSECTION_ID.SUBSCRIBED_CALENDARS
                                             }`}
                                         >
                                             {c('Calendar sidebar dropdown item').t`More options`}

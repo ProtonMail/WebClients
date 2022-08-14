@@ -1,12 +1,14 @@
 import { c } from 'ttag';
-import { CryptoProxy } from '@proton/crypto';
+
 import { useGetAddressKeys } from '@proton/components';
-import { Address, Api } from '../../interfaces';
+import { CryptoProxy } from '@proton/crypto';
+
 import { getCalendarGroupReset, queryMembers, resetCalendarGroup } from '../../api/calendars';
+import { Address, Api } from '../../interfaces';
+import { Calendar, CalendarMember } from '../../interfaces/calendar';
 import { getPrimaryKey } from '../../keys';
 import { generateCalendarKeyPayload } from '../../keys/calendarKeys';
 import { getMemberAddressWithAdminPermissions } from '../getMemberWithAdmin';
-import { Calendar, CalendarMember } from '../../interfaces/calendar';
 
 interface ResetCalendarKeysArguments {
     api: Api;

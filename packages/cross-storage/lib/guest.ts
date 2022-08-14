@@ -1,6 +1,6 @@
-import { getIsSupported } from './support';
 import { CrossStorageTimeoutError, CrossStorageUnsupportedError } from './errors';
 import { CrossStorageMessage } from './interface';
+import { getIsSupported } from './support';
 
 enum States {
     INIT,

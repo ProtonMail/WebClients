@@ -1,4 +1,4 @@
-import { useContext, createContext, RefObject } from 'react';
+import { RefObject, createContext, useContext } from 'react';
 
 export const MainAreaContext = createContext<RefObject<HTMLElement> | null>(null);
 

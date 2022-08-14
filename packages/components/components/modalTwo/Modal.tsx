@@ -1,17 +1,17 @@
-import { ElementType, createContext, useLayoutEffect, useState, useRef } from 'react';
-import { modalTwoRootClassName } from '@proton/shared/lib/busy';
+import { ElementType, createContext, useLayoutEffect, useRef, useState } from 'react';
 
 import useInstance from '@proton/hooks/useInstance';
-
 import usePrevious from '@proton/hooks/usePrevious';
+import { modalTwoRootClassName } from '@proton/shared/lib/busy';
 
-import { useHotkeys } from '../../hooks';
-import { Box, PolymorphicComponentProps } from '../../helpers/react-polymorphic-box';
 import { classnames, generateUID } from '../../helpers';
+import { Box, PolymorphicComponentProps } from '../../helpers/react-polymorphic-box';
+import { useHotkeys } from '../../hooks';
 import { useFocusTrap } from '../focus';
 import { Portal } from '../portal';
-import './Modal.scss';
 import { useModalPosition } from './modalPositions';
+
+import './Modal.scss';
 
 export type ModalSize = 'small' | 'medium' | 'large' | 'full';
 

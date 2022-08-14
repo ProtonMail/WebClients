@@ -1,7 +1,10 @@
-import { c, msgid } from 'ttag';
-import { ImportContactsModel, IMPORT_STEPS } from '@proton/shared/lib/interfaces/contacts/Import';
-import { getImportCategoriesModel, haveCategories } from '@proton/shared/lib/contacts/helpers/import';
 import { Dispatch, FormEvent, SetStateAction } from 'react';
+
+import { c, msgid } from 'ttag';
+
+import { getImportCategoriesModel, haveCategories } from '@proton/shared/lib/contacts/helpers/import';
+import { IMPORT_STEPS, ImportContactsModel } from '@proton/shared/lib/interfaces/contacts/Import';
+
 import {
     Alert,
     Button,
@@ -10,10 +13,10 @@ import {
     ModalTwoFooter,
     ModalTwoHeader,
 } from '../../../../components';
-import { extractTotals } from '../encryptAndSubmit';
-import ContactImportWarningErrorDetails from './ContactImportWarningErrorDetails';
 import { useUser } from '../../../../hooks';
 import { useGetContactGroups } from '../../../../hooks/useCategories';
+import { extractTotals } from '../encryptAndSubmit';
+import ContactImportWarningErrorDetails from './ContactImportWarningErrorDetails';
 
 interface Props {
     model: ImportContactsModel;

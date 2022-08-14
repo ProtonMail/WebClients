@@ -1,14 +1,15 @@
 import { c } from 'ttag';
+
 import { APPS, PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { useModals, useSubscription, useConfig, usePaymentMethods } from '../../hooks';
-import { Button, Loader } from '../../components';
 
+import { Button, Loader } from '../../components';
+import { useConfig, useModals, usePaymentMethods, useSubscription } from '../../hooks';
+import { SettingsParagraph, SettingsSection } from '../account';
 import MozillaInfoPanel from '../account/MozillaInfoPanel';
 import EditCardModal from '../payments/EditCardModal';
 import PayPalModal from '../payments/PayPalModal';
 import PaymentMethodsTable from './PaymentMethodsTable';
-import { SettingsParagraph, SettingsSection } from '../account';
 
 const PaymentMethodsSection = () => {
     const { APP_NAME } = useConfig();

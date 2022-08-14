@@ -1,9 +1,9 @@
 import { c } from 'ttag';
 
+import { Card } from '@proton/atoms';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { MNEMONIC_STATUS } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
-import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { Card } from '@proton/atoms';
 
 import { Href, Loader } from '../../components';
 import {
@@ -15,8 +15,8 @@ import {
     useUser,
     useUserSettings,
 } from '../../hooks';
-import { SettingsSectionTitle } from '../account';
 import useIsRecoveryFileAvailable from '../../hooks/useIsRecoveryFileAvailable';
+import { SettingsSectionTitle } from '../account';
 import RecoveryCardStatus, { RecoveryCardStatusProps } from './RecoveryCardStatus';
 
 interface Props {

@@ -1,4 +1,5 @@
 import getRandomValues from '@proton/get-random-values';
+
 import getRandomString, { DEFAULT_CHARSET } from './getRandomString';
 
 jest.mock('@proton/get-random-values');

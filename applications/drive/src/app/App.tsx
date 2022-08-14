@@ -2,13 +2,13 @@ import { useState } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 import { ProtonApp, StandardPublicApp, StandardSetup, getSessionTrackingEnabled } from '@proton/components';
-import { initLocales } from '@proton/shared/lib/i18n/locales';
+import authentication from '@proton/shared/lib/authentication/authentication';
 import { newVersionUpdater } from '@proton/shared/lib/busy';
 import sentry from '@proton/shared/lib/helpers/sentry';
-import authentication from '@proton/shared/lib/authentication/authentication';
+import { initLocales } from '@proton/shared/lib/i18n/locales';
 
-import * as config from './config';
 import PrivateApp from './PrivateApp';
+import * as config from './config';
 import PublicSharedLinkContainer from './containers/PublicSharedLinkContainer';
 
 import './app.scss';

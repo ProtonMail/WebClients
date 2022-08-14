@@ -1,10 +1,12 @@
-import { c } from 'ttag';
 import PropTypes from 'prop-types';
+import { c } from 'ttag';
+
 import { deletePaymentMethod, orderPaymentMethods } from '@proton/shared/lib/api/payments';
-import { isExpired } from '@proton/shared/lib/helpers/card';
 import { PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
-import { DropdownActions, ConfirmModal, Alert, ErrorButton } from '../../components';
-import { useModals, useApi, useNotifications, useEventManager } from '../../hooks';
+import { isExpired } from '@proton/shared/lib/helpers/card';
+
+import { Alert, ConfirmModal, DropdownActions, ErrorButton } from '../../components';
+import { useApi, useEventManager, useModals, useNotifications } from '../../hooks';
 import EditCardModal from '../payments/EditCardModal';
 
 const toCard = ({ Details = {}, Type }) => {

@@ -1,5 +1,5 @@
-import { Key } from './Key';
 import { MEMBER_PRIVATE, MEMBER_ROLE, MEMBER_TYPE } from '../constants';
+import { Key } from './Key';
 
 export interface PartialMemberAddress {
     ID: string;

@@ -1,16 +1,7 @@
 import { ReactNode, useEffect, useState } from 'react';
 import { useLocation } from 'react-router';
+
 import { c } from 'ttag';
-import { HumanVerificationMethodType } from '@proton/shared/lib/interfaces';
-import { createOfflineError } from '@proton/shared/lib/fetch/ApiError';
-import { queryCheckVerificationCode } from '@proton/shared/lib/api/user';
-import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import { getBrowserLocale, getClosestLocaleCode, getClosestLocaleMatch } from '@proton/shared/lib/i18n/helper';
-import { loadDateLocale, loadLocale } from '@proton/shared/lib/i18n/loadLocale';
-import { initLocales } from '@proton/shared/lib/i18n/locales';
-import { getGenericErrorPayload } from '@proton/shared/lib/broadcast';
-import { DARK_THEMES } from '@proton/shared/lib/themes/themes';
-import useInstance from '@proton/hooks/useInstance';
 
 import {
     HumanVerificationForm,
@@ -20,9 +11,20 @@ import {
     useNotifications,
     useThemeQueryParameter,
 } from '@proton/components';
+import useInstance from '@proton/hooks/useInstance';
+import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { queryCheckVerificationCode } from '@proton/shared/lib/api/user';
+import { getGenericErrorPayload } from '@proton/shared/lib/broadcast';
+import { createOfflineError } from '@proton/shared/lib/fetch/ApiError';
+import { getBrowserLocale, getClosestLocaleCode, getClosestLocaleMatch } from '@proton/shared/lib/i18n/helper';
+import { loadDateLocale, loadLocale } from '@proton/shared/lib/i18n/loadLocale';
+import { initLocales } from '@proton/shared/lib/i18n/locales';
+import { HumanVerificationMethodType } from '@proton/shared/lib/interfaces';
+import { DARK_THEMES } from '@proton/shared/lib/themes/themes';
 
 import broadcast, { MessageType } from './broadcast';
 import { VerificationSearchParameters } from './types';
+
 import './Verify.scss';
 
 const locales = initLocales(require.context('../../locales', true, /.json$/, 'lazy'));
@@ -47,7 +49,7 @@ const Verify = () => {
     const { createNotification } = useNotifications();
     const location = useLocation();
     const theme = useThemeQueryParameter();
-    
+
     const search = parseSearch(location.search) as VerificationSearchParameters;
     const { methods, embed, locale, token, vpn, defaultCountry, defaultEmail, defaultPhone } = search;
 

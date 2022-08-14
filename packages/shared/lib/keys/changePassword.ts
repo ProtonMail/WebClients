@@ -1,10 +1,10 @@
 import { CryptoProxy, PrivateKeyReference } from '@proton/crypto';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
-import { Address as tsAddress, DecryptedKey } from '../interfaces';
 
-import { getHasMigratedAddressKeys } from './keyMigration';
+import { DecryptedKey, Address as tsAddress } from '../interfaces';
 import { getEncryptedArmoredAddressKey } from './addressKeys';
+import { getHasMigratedAddressKeys } from './keyMigration';
 
 const getEncryptedArmoredUserKey = async ({ ID, privateKey }: DecryptedKey, newKeyPassword: string) => {
     const privateKeyArmored = await CryptoProxy.exportPrivateKey({

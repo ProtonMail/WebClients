@@ -1,5 +1,7 @@
-import { ButtonHTMLAttributes, cloneElement, forwardRef, ReactElement, ReactNode, Ref } from 'react';
+import { ButtonHTMLAttributes, ReactElement, ReactNode, Ref, cloneElement, forwardRef } from 'react';
+
 import noop from '@proton/utils/noop';
+
 import { classnames } from '../../helpers';
 import { Tooltip } from '../tooltip';
 

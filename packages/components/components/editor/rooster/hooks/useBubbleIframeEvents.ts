@@ -1,8 +1,9 @@
 import { RefObject, useCallback, useEffect } from 'react';
+
+import { cloneEvent, isKeyboardEvent } from '@proton/shared/lib/helpers/events';
 import { KeyboardKey } from '@proton/shared/lib/interfaces';
-import { editorShortcuts } from '@proton/shared/lib/shortcuts/mail';
 import { isValidShortcut } from '@proton/shared/lib/shortcuts/helpers';
-import { isKeyboardEvent, cloneEvent } from '@proton/shared/lib/helpers/events';
+import { editorShortcuts } from '@proton/shared/lib/shortcuts/mail';
 
 import { IFRAME_EVENTS_LIST, ROOSTER_EDITOR_WRAPPER_ID } from '../../constants';
 

@@ -1,5 +1,6 @@
 import { c } from 'ttag';
-import { TableCell, Button, Icon } from '../../../../components';
+
+import { Button, Icon, TableCell } from '../../../../components';
 
 interface Props {
     disabledPrevious: boolean;

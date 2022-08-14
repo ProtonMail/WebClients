@@ -1,11 +1,11 @@
-import { Transfer, TransfersStats, TransferState } from '../components/TransferManager/transfer';
 import { ProgressBarStatus } from '../components/TransferManager/ProgressBar';
+import { Transfer, TransferState, TransfersStats } from '../components/TransferManager/transfer';
 import {
     calculateProgress,
     getProgressBarStatus,
     isTransferActive,
-    isTransferCanceled,
     isTransferCancelError,
+    isTransferCanceled,
     isTransferDone,
     isTransferError,
     isTransferFailed,

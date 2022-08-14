@@ -1,5 +1,6 @@
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS, isSSOMode } from '@proton/shared/lib/constants';
+
 import create from '../lib/guest';
 import {
     Action,

@@ -1,7 +1,7 @@
 import { ComponentPropsWithoutRef, useState } from 'react';
 
-import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { classnames, generateUID } from '@proton/components';
+import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 
 import { LogoProps } from './Logo';
 

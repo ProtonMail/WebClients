@@ -1,5 +1,7 @@
-import { forwardRef, ComponentPropsWithoutRef } from 'react';
+import { ComponentPropsWithoutRef, forwardRef } from 'react';
+
 import { c } from 'ttag';
+
 import { PROTON_THEMES_MAP } from '@proton/shared/lib/themes/themes';
 
 import { AppLink, DropdownMenu, DropdownMenuButton, DropdownMenuLink, Icon } from '../../components';
@@ -8,9 +10,9 @@ import TopNavbarListItemButton, {
     TopNavbarListItemButtonProps,
 } from '../../components/topnavbar/TopNavbarListItemButton';
 import { useEarlyAccess, useModals } from '../../hooks';
-import ThemesModal from '../themes/ThemesModal';
 import EarlyAccessModal from '../earlyAccess/EarlyAccessModal';
 import { useTheme } from '../themes';
+import ThemesModal from '../themes/ThemesModal';
 
 const TopNavbarListItemSettingsButtonBase = (
     props: Omit<TopNavbarListItemButtonProps<'button'>, 'icon' | 'text' | 'as'>,

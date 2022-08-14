@@ -1,19 +1,21 @@
 import { ChangeEvent, useState } from 'react';
-import { MAX_LENGTHS_API } from '@proton/shared/lib/calendar/constants';
-import { truncateMore } from '@proton/shared/lib/helpers/string';
+
 import { c } from 'ttag';
 
-import { CALENDAR_SUBSCRIPTION_STATUS, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
-import { isURL } from '@proton/shared/lib/helpers/validators';
-import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { validateSubscription } from '@proton/shared/lib/api/calendars';
+import { MAX_LENGTHS_API } from '@proton/shared/lib/calendar/constants';
 import { getCalendarStatusInfo } from '@proton/shared/lib/calendar/subscribe/helpers';
-import { getCalendarPayload, getCalendarSettingsPayload, getDefaultModel } from '../calendarModal/calendarModalState';
-import { Href, InputFieldTwo, Loader, Button, BasicModal, Form } from '../../../components';
-import { useLoading, useApi } from '../../../hooks';
+import { truncateMore } from '@proton/shared/lib/helpers/string';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import { isURL } from '@proton/shared/lib/helpers/validators';
+import { CALENDAR_SUBSCRIPTION_STATUS, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+
+import { BasicModal, Button, Form, Href, InputFieldTwo, Loader } from '../../../components';
+import { useApi, useLoading } from '../../../hooks';
 import { GenericError } from '../../error';
-import useGetCalendarSetup from '../hooks/useGetCalendarSetup';
+import { getCalendarPayload, getCalendarSettingsPayload, getDefaultModel } from '../calendarModal/calendarModalState';
 import useGetCalendarActions from '../hooks/useGetCalendarActions';
+import useGetCalendarSetup from '../hooks/useGetCalendarSetup';
 
 const { CALENDAR_URL } = MAX_LENGTHS_API;
 

@@ -1,3 +1,6 @@
+import { useCallback } from 'react';
+
+import { serverTime } from '@proton/crypto';
 import { syncMultipleEvents as syncMultipleEventsRoute } from '@proton/shared/lib/api/calendars';
 import { getAttendeeEmail, withPmAttendees } from '@proton/shared/lib/calendar/attendees';
 import { DEFAULT_ATTENDEE_PERMISSIONS, ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
@@ -25,8 +28,7 @@ import {
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import { SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
 import getSendPreferences from '@proton/shared/lib/mail/send/getSendPreferences';
-import { serverTime } from '@proton/crypto';
-import { useCallback } from 'react';
+
 import {
     useAddresses,
     useApi,

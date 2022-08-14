@@ -1,43 +1,45 @@
 import { useState } from 'react';
+
 import { c } from 'ttag';
+
+import { CryptoProxy } from '@proton/crypto';
 import { updateOrganizationKeysLegacy, updateOrganizationKeysV2 } from '@proton/shared/lib/api/organization';
 import { DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS } from '@proton/shared/lib/constants';
+import { confirmPasswordValidator, passwordLengthValidator } from '@proton/shared/lib/helpers/formValidators';
+import { CachedOrganizationKey, Member } from '@proton/shared/lib/interfaces';
 import {
     generateOrganizationKeys,
     getHasMigratedAddressKeys,
     getReEncryptedPublicMemberTokensPayloadLegacy,
     getReEncryptedPublicMemberTokensPayloadV2,
 } from '@proton/shared/lib/keys';
-import { CachedOrganizationKey, Member } from '@proton/shared/lib/interfaces';
-import { CryptoProxy } from '@proton/crypto';
 import noop from '@proton/utils/noop';
-import { confirmPasswordValidator, passwordLengthValidator } from '@proton/shared/lib/helpers/formValidators';
+
 import {
     Alert,
-    InputFieldTwo,
-    ModalProps,
-    ModalTwo as Modal,
-    ModalTwoHeader as ModalHeader,
-    ModalTwoContent as ModalContent,
-    ModalTwoFooter as ModalFooter,
-    PasswordInputTwo,
     Button,
     Form,
+    InputFieldTwo,
+    ModalTwo as Modal,
+    ModalTwoContent as ModalContent,
+    ModalTwoFooter as ModalFooter,
+    ModalTwoHeader as ModalHeader,
+    ModalProps,
+    PasswordInputTwo,
     useFormErrors,
 } from '../../components';
 import {
+    useApi,
+    useAuthentication,
     useEventManager,
+    useGetAddresses,
     useLoading,
     useModals,
     useNotifications,
-    useAuthentication,
     useStep,
-    useApi,
-    useGetAddresses,
 } from '../../hooks';
-import AuthModal from '../password/AuthModal';
-
 import SelectEncryption from '../keys/addKey/SelectEncryption';
+import AuthModal from '../password/AuthModal';
 
 interface Props extends ModalProps {
     hasOtherAdmins: boolean;

@@ -1,7 +1,7 @@
 import { PrivateKeyReference } from '@proton/crypto';
 import { HARDWARE_CONCURRENCY } from '@proton/shared/lib/drive/constants';
-import { ShareMapLink } from '@proton/shared/lib/interfaces/drive/link';
 import { wait } from '@proton/shared/lib/helpers/promise';
+import { ShareMapLink } from '@proton/shared/lib/interfaces/drive/link';
 
 import { runInQueueAbortable } from '../../../utils/parallelRunners';
 import { ESLink } from '../types';
