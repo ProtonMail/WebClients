@@ -1,23 +1,24 @@
-import React, { useState, ChangeEvent, FocusEvent } from 'react';
+import React, { ChangeEvent, FocusEvent, useState } from 'react';
+
 import { c } from 'ttag';
 
 import {
-    InputTwo,
-    Row,
-    Label,
+    Button,
     Field,
-    useLoading,
+    InputTwo,
+    Label,
     ModalTwo,
-    ModalTwoHeader,
     ModalTwoContent,
     ModalTwoFooter,
-    Button,
+    ModalTwoHeader,
     PrimaryButton,
+    Row,
+    useLoading,
 } from '@proton/components';
-import noop from '@proton/utils/noop';
 import { MAX_NAME_LENGTH } from '@proton/shared/lib/drive/constants';
+import noop from '@proton/utils/noop';
 
-import { useActions, validateLinkNameField, formatLinkName, splitLinkName } from '../store';
+import { formatLinkName, splitLinkName, useActions, validateLinkNameField } from '../store';
 
 interface Props {
     shareId: string;

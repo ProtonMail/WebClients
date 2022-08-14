@@ -1,10 +1,13 @@
 import { DetailedHTMLProps, ImgHTMLAttributes, useEffect, useState } from 'react';
+
 import { c } from 'ttag';
+
 import { SHOW_IMAGES } from '@proton/shared/lib/constants';
-import { isURL } from '@proton/shared/lib/helpers/validators';
 import { toImage } from '@proton/shared/lib/helpers/image';
+import { isURL } from '@proton/shared/lib/helpers/validators';
+
+import { useLoading, useMailSettings } from '../../hooks';
 import Button from '../button/Button';
-import { useMailSettings, useLoading } from '../../hooks';
 import { Loader } from '../loader';
 
 export interface Props extends DetailedHTMLProps<ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement> {

@@ -1,6 +1,8 @@
 import { c } from 'ttag';
+
 import { BugModal, DropdownMenuButton, DropdownMenuLink, Icon, useModalState } from '@proton/components';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+
 import SupportDropdown from '../public/SupportDropdown';
 
 const SignupSupportDropdown = () => {

@@ -1,18 +1,18 @@
-import { createContext, ReactNode, useContext, useRef } from 'react';
-import { Audience, Currency, Cycle, PlanIDs } from '@proton/shared/lib/interfaces';
-import { getHasB2BPlan, getHasLegacyPlans, getIsB2BPlan, getPlanIDs } from '@proton/shared/lib/helpers/subscription';
-import { switchPlan } from '@proton/shared/lib/helpers/planIDs';
-import { toMap } from '@proton/shared/lib/helpers/object';
+import { ReactNode, createContext, useContext, useRef } from 'react';
+
 import { APP_NAMES, PLANS } from '@proton/shared/lib/constants';
+import { toMap } from '@proton/shared/lib/helpers/object';
+import { switchPlan } from '@proton/shared/lib/helpers/planIDs';
+import { getHasB2BPlan, getHasLegacyPlans, getIsB2BPlan, getPlanIDs } from '@proton/shared/lib/helpers/subscription';
+import { Audience, Currency, Cycle, PlanIDs } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
 import { useModalState } from '../../../components';
 import { useOrganization, usePlans, useSubscription, useUser } from '../../../hooks';
-
-import { SUBSCRIPTION_STEPS } from './constants';
 import SubscriptionModal from './SubscriptionModal';
 import SubscriptionModalDisabled from './SubscriptionModalDisabled';
-import { getCurrency, getDefaultSelectedProductPlans, SelectedProductPlans } from './helpers';
+import { SUBSCRIPTION_STEPS } from './constants';
+import { SelectedProductPlans, getCurrency, getDefaultSelectedProductPlans } from './helpers';
 
 interface OpenCallbackProps {
     step: SUBSCRIPTION_STEPS;

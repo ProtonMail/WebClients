@@ -1,21 +1,21 @@
 import { useEffect, useState } from 'react';
-import { Switch, Route, Redirect } from 'react-router-dom';
+import { Redirect, Route, Switch } from 'react-router-dom';
 
 import { LoaderPage, LocationErrorBoundary, ModalsChildren, useLoading, useWelcomeFlags } from '@proton/components';
 import noop from '@proton/utils/noop';
 
-import { DriveProvider, useDriveEventManager, useDefaultShare, useSearchControl } from '../store';
-import { ActiveShareProvider } from '../hooks/drive/useActiveShare';
-import TransferManager from '../components/TransferManager/TransferManager';
-import ConflictModal from '../components/uploads/ConflictModal';
 import SignatureIssueModal from '../components/SignatureIssueModal';
+import TransferManager from '../components/TransferManager/TransferManager';
 import DriveWindow from '../components/layout/DriveWindow';
+import ConflictModal from '../components/uploads/ConflictModal';
+import { ActiveShareProvider } from '../hooks/drive/useActiveShare';
+import { DriveProvider, useDefaultShare, useDriveEventManager, useSearchControl } from '../store';
+import DriveStartupModals from './DriveStartupModals';
 import FolderContainer from './FolderContainer';
 import OnboardingContainer from './OnboardingContainer';
+import { SearchContainer } from './SearchContainer';
 import SharedURLsContainer from './SharedLinksContainer';
 import TrashContainer from './TrashContainer';
-import { SearchContainer } from './SearchContainer';
-import DriveStartupModals from './DriveStartupModals';
 
 // Empty shared root for blurred container.
 const DEFAULT_SHARE_VALUE = {

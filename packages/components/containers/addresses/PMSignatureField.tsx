@@ -1,11 +1,13 @@
 import { ChangeEvent } from 'react';
-import { c } from 'ttag';
-import { updatePMSignature } from '@proton/shared/lib/api/mailSettings';
-import { getProtonMailSignature } from '@proton/shared/lib/mail/signature';
-import { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 
-import { useToggle, useNotifications, useEventManager, useApiWithoutResult } from '../../hooks';
+import { c } from 'ttag';
+
+import { updatePMSignature } from '@proton/shared/lib/api/mailSettings';
+import { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
+import { getProtonMailSignature } from '@proton/shared/lib/mail/signature';
+
 import { Toggle } from '../../components';
+import { useApiWithoutResult, useEventManager, useNotifications, useToggle } from '../../hooks';
 
 interface Props {
     id: string;

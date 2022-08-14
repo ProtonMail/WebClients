@@ -1,6 +1,7 @@
 import { Locale } from 'date-fns';
-import { enGBLocale, enUSLocale, faIRLocale } from './dateFnLocales';
+
 import { SETTINGS_DATE_FORMAT, SETTINGS_TIME_FORMAT, SETTINGS_WEEK_START } from '../interfaces';
+import { enGBLocale, enUSLocale, faIRLocale } from './dateFnLocales';
 
 // Support for changing the date format is not great. Hide it for now.
 export const IS_DATE_FORMAT_ENABLED = false;

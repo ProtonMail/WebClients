@@ -1,12 +1,12 @@
 import {
-    useState,
-    useMemo,
     ChangeEvent,
+    ChangeEventHandler,
     FocusEvent,
+    FocusEventHandler,
     KeyboardEvent,
     KeyboardEventHandler,
-    ChangeEventHandler,
-    FocusEventHandler,
+    useMemo,
+    useState,
 } from 'react';
 
 const FOCUSED_CLASS = 'focused';

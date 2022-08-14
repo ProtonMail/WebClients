@@ -1,11 +1,11 @@
 import { c } from 'ttag';
 
-import { SHOW_IMAGES } from '@proton/shared/lib/constants';
 import { updateShowImages } from '@proton/shared/lib/api/mailSettings';
-import { setBit, clearBit, hasBit } from '@proton/shared/lib/helpers/bitset';
+import { SHOW_IMAGES } from '@proton/shared/lib/constants';
+import { clearBit, hasBit, setBit } from '@proton/shared/lib/helpers/bitset';
 
 import { Toggle } from '../../components';
-import { useApi, useEventManager, useToggle, useNotifications, useLoading } from '../../hooks';
+import { useApi, useEventManager, useLoading, useNotifications, useToggle } from '../../hooks';
 
 const { EMBEDDED } = SHOW_IMAGES;
 

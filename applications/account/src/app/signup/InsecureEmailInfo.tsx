@@ -1,15 +1,17 @@
 import { useState } from 'react';
-import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
+
 import { c } from 'ttag';
 
 import { Icon } from '@proton/components';
+import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
+
 import {
-    INSECURE_DOMAINS,
-    YANDEX_DOMAINS,
-    YAHOO_DOMAINS,
     AOL_DOMAINS,
-    MAIL_RU_DOMAINS,
     GMAIL_DOMAINS,
+    INSECURE_DOMAINS,
+    MAIL_RU_DOMAINS,
+    YAHOO_DOMAINS,
+    YANDEX_DOMAINS,
 } from './constants';
 
 interface Props {

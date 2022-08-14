@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { ToolbarButton, Icon } from '@proton/components';
+import { Icon, ToolbarButton } from '@proton/components';
 
 import useActiveShare from '../../../../hooks/drive/useActiveShare';
 import { useFolderUploadInput } from '../../../../store';

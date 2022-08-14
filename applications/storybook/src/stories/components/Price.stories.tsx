@@ -1,6 +1,6 @@
 import { Price } from '@proton/components';
-import { getTitle } from '../../helpers/title';
 
+import { getTitle } from '../../helpers/title';
 import mdx from './Price.mdx';
 
 export default {

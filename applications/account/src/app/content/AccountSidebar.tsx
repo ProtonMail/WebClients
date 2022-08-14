@@ -1,12 +1,13 @@
 import { c } from 'ttag';
-import { Sidebar, SidebarNav, SidebarList, SidebarBackButton } from '@proton/components';
-import { APPS, APP_NAMES } from '@proton/shared/lib/constants';
-import { getAppName } from '@proton/shared/lib/apps/helper';
 
-import AccountSidebarVersion from './AccountSidebarVersion';
-import { Routes } from './routes';
+import { Sidebar, SidebarBackButton, SidebarList, SidebarNav } from '@proton/components';
+import { getAppName } from '@proton/shared/lib/apps/helper';
+import { APPS, APP_NAMES } from '@proton/shared/lib/constants';
+
 import SidebarListWrapper from '../containers/SidebarListWrapper';
 import CalendarSettingsSidebar from '../containers/calendar/CalendarSettingsSidebar';
+import AccountSidebarVersion from './AccountSidebarVersion';
+import { Routes } from './routes';
 
 interface AccountSidebarProps {
     app: APP_NAMES;

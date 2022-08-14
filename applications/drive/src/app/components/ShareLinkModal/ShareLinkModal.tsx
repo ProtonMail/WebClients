@@ -1,23 +1,24 @@
 import { useEffect, useState } from 'react';
+
 import { c } from 'ttag';
 
 import { ModalTwo, useLoading, useNotifications } from '@proton/components';
-import { SharedURLSessionKeyPayload, ShareURL } from '@proton/shared/lib/interfaces/drive/sharing';
 import { SHARE_GENERATED_PASSWORD_LENGTH } from '@proton/shared/lib/drive/constants';
+import { ShareURL, SharedURLSessionKeyPayload } from '@proton/shared/lib/interfaces/drive/sharing';
 
 import useConfirm from '../../hooks/util/useConfirm';
 import {
     DecryptedLink,
-    useShareUrl,
-    useLinkView,
+    getSharedLink,
     hasCustomPassword,
     hasGeneratedPasswordIncluded,
     splitGeneratedAndCustomPassword,
-    getSharedLink,
+    useLinkView,
+    useShareUrl,
 } from '../../store';
 import ModalContentLoader from '../ModalContentLoader';
-import GeneratedLinkState from './GeneratedLinkState';
 import ErrorState from './ErrorState';
+import GeneratedLinkState from './GeneratedLinkState';
 
 const getLoadingMessage = (item: DecryptedLink) => {
     if (item.shareUrl) {

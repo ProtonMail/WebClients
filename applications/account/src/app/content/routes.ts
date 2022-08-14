@@ -1,9 +1,10 @@
-import { Address, Organization, UserModel } from '@proton/shared/lib/interfaces';
 import { ThemeColor } from '@proton/colors';
+import { Address, Organization, UserModel } from '@proton/shared/lib/interfaces';
+
 import { getAccountAppRoutes } from '../containers/account/routes';
-import { getMailAppRoutes } from '../containers/mail/routes';
 import { getCalendarAppRoutes } from '../containers/calendar/routes';
 import { getDriveAppRoutes } from '../containers/drive/routes';
+import { getMailAppRoutes } from '../containers/mail/routes';
 import { getOrganizationAppRoutes } from '../containers/organization/routes';
 import { getVpnAppRoutes } from '../containers/vpn/routes';
 

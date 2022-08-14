@@ -3,15 +3,15 @@ import { useCallback, useRef } from 'react';
 import { FILE_CHUNK_SIZE } from '@proton/shared/lib/drive/constants';
 
 import { TransferState } from '../../../components/TransferManager/transfer';
-import { isTransferProgress, isTransferPending, isTransferFinished } from '../../../utils/transfer';
+import { isTransferFinished, isTransferPending, isTransferProgress } from '../../../utils/transfer';
 import { DownloadControls } from '../interface';
 import {
     Download,
-    DownloadProgresses,
     DownloadLinksProgresses,
+    DownloadProgresses,
+    UpdateCallback,
     UpdateFilter,
     UpdateState,
-    UpdateCallback,
 } from './interface';
 
 export default function useDownloadControl(

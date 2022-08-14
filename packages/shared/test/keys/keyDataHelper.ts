@@ -1,7 +1,8 @@
-import { CryptoProxy, toPublicKeyReference, PrivateKeyReference } from '@proton/crypto';
-import { generateAddressKey, generateAddressKeyTokens, generateUserKey } from '../../lib/keys';
-import { Key } from '../../lib/interfaces';
+import { CryptoProxy, PrivateKeyReference, toPublicKeyReference } from '@proton/crypto';
+
 import { ENCRYPTION_CONFIGS, ENCRYPTION_TYPES } from '../../lib/constants';
+import { Key } from '../../lib/interfaces';
+import { generateAddressKey, generateAddressKeyTokens, generateUserKey } from '../../lib/keys';
 
 const encryptionConfig = ENCRYPTION_CONFIGS[ENCRYPTION_TYPES.CURVE25519];
 

@@ -1,17 +1,20 @@
-import { c } from 'ttag';
 import { ReactNode, useState } from 'react';
-import { SSO_PATHS } from '@proton/shared/lib/constants';
-import { Button, Icon, Tabs, useLoading, useFormErrors, PhoneInput, InputFieldTwo } from '@proton/components';
-import isTruthy from '@proton/utils/isTruthy';
-import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
-import noop from '@proton/utils/noop';
-import { RecoveryMethod } from '@proton/components/containers/resetPassword/interface';
 import { useHistory } from 'react-router-dom';
+
+import { c } from 'ttag';
+
+import { Button, Icon, InputFieldTwo, PhoneInput, Tabs, useFormErrors, useLoading } from '@proton/components';
 import MnemonicInputField, {
     useMnemonicInputValidation,
 } from '@proton/components/containers/mnemonic/MnemonicInputField';
-import MnemonicResetPasswordConfirmModal from './MnemonicResetPasswordConfirmModal';
+import { RecoveryMethod } from '@proton/components/containers/resetPassword/interface';
+import { SSO_PATHS } from '@proton/shared/lib/constants';
+import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
+import isTruthy from '@proton/utils/isTruthy';
+import noop from '@proton/utils/noop';
+
 import Text from '../public/Text';
+import MnemonicResetPasswordConfirmModal from './MnemonicResetPasswordConfirmModal';
 
 const BorderedWarningText = ({ children }: { children: ReactNode }) => {
     return (

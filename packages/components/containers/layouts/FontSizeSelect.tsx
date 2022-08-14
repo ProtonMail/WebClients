@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { SelectTwo, Option } from '../../components';
+
+import { Option, SelectTwo } from '../../components';
 import { DEFAULT_FONT_SIZE, FONT_SIZES } from '../../components/editor/constants';
 
 interface Props {

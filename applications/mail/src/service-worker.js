@@ -1,10 +1,10 @@
-import { registerRoute } from 'workbox-routing';
-import { NetworkFirst, CacheFirst } from 'workbox-strategies';
-import { precacheAndRoute } from 'workbox-precaching/precacheAndRoute';
 // Used for filtering matches based on status code, header, or both
 import { CacheableResponsePlugin } from 'workbox-cacheable-response';
 // Used to limit entries in cache, remove entries after a certain period of time
 import { ExpirationPlugin } from 'workbox-expiration';
+import { precacheAndRoute } from 'workbox-precaching/precacheAndRoute';
+import { registerRoute } from 'workbox-routing';
+import { CacheFirst, NetworkFirst } from 'workbox-strategies';
 
 // To remove debug logs in dev mode
 // self.__WB_DISABLE_DEV_LOGS = true;

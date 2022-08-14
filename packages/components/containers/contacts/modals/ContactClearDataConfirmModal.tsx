@@ -1,6 +1,9 @@
 import { useState } from 'react';
+
 import { c } from 'ttag';
+
 import { Key } from '@proton/shared/lib/interfaces';
+
 import {
     Alert,
     Button,

@@ -1,20 +1,20 @@
 import {
-    useState,
-    useRef,
+    ComponentPropsWithoutRef,
+    KeyboardEvent,
+    MutableRefObject,
+    ReactElement,
     useEffect,
     useMemo,
-    KeyboardEvent,
-    ReactElement,
-    ComponentPropsWithoutRef,
-    MutableRefObject,
+    useRef,
+    useState,
 } from 'react';
 
 import { Dropdown } from '../dropdown';
 import Option, { Props as OptionProps } from '../option/Option';
-import SelectOptions from './SelectOptions';
-import useSelect, { SelectProvider } from './useSelect';
 import SelectButton from './SelectButton';
+import SelectOptions from './SelectOptions';
 import { SelectChangeEvent } from './select';
+import useSelect, { SelectProvider } from './useSelect';
 
 export interface Props<V>
     extends Omit<ComponentPropsWithoutRef<'button'>, 'value' | 'onClick' | 'onChange' | 'onKeyDown' | 'aria-label'> {

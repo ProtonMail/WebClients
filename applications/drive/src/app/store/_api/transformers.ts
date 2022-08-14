@@ -1,8 +1,8 @@
+import { isMainShare } from '@proton/shared/lib/drive/utils/share';
 import { DriveEventsResult } from '@proton/shared/lib/interfaces/drive/events';
 import { LinkMeta, LinkType, SharedUrlInfo } from '@proton/shared/lib/interfaces/drive/link';
 import { ShareMeta, ShareMetaShort } from '@proton/shared/lib/interfaces/drive/share';
 import { ShareURL } from '@proton/shared/lib/interfaces/drive/sharing';
-import { isMainShare } from '@proton/shared/lib/drive/utils/share';
 
 import { DriveEvents } from '../_events/interface';
 import { EncryptedLink } from '../_links/interface';

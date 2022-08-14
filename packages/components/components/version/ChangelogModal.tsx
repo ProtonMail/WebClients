@@ -1,16 +1,17 @@
 import { useState } from 'react';
-import { c } from 'ttag';
+
 import markdownit from 'markdown-it';
+import { c } from 'ttag';
 
 import { getAppVersion } from '../../helpers';
+import { Button } from '../button';
 import {
-    ModalProps,
     ModalTwo as Modal,
-    ModalTwoHeader as ModalHeader,
     ModalTwoContent as ModalContent,
     ModalTwoFooter as ModalFooter,
+    ModalTwoHeader as ModalHeader,
+    ModalProps,
 } from '../modalTwo';
-import { Button } from '../button';
 
 import './ChangeLogModal.scss';
 

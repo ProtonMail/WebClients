@@ -1,9 +1,9 @@
 import { c } from 'ttag';
 
-import { ImportStatus, ImportError } from '@proton/shared/lib/interfaces/EasySwitch';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import { ImportError, ImportStatus } from '@proton/shared/lib/interfaces/EasySwitch';
 
-import { Badge, Tooltip, Icon, Progress } from '../../../components';
+import { Badge, Icon, Progress, Tooltip } from '../../../components';
 
 interface Props {
     processed: number;

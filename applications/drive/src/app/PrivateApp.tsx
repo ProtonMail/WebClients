@@ -1,15 +1,16 @@
-import { StandardPrivateApp, LoaderPage } from '@proton/components';
+import { LoaderPage, StandardPrivateApp } from '@proton/components';
+import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 import {
+    AddressesModel,
+    ContactEmailsModel,
+    ContactsModel,
+    LabelsModel,
     UserModel,
     UserSettingsModel,
-    AddressesModel,
-    ContactsModel,
-    ContactEmailsModel,
-    LabelsModel,
 } from '@proton/shared/lib/models';
-import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
-import { useUserSettings, SettingsProvider } from './store';
+
 import UserSettingsProvider from './components/sections/UserSettingsProvider';
+import { SettingsProvider, useUserSettings } from './store';
 
 const getAppContainer = () => import('./containers/MainContainer');
 

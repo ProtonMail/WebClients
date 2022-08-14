@@ -1,4 +1,5 @@
 import { ComponentPropsWithoutRef } from 'react';
+
 import { CircleLoader } from '../loader';
 
 interface Props extends ComponentPropsWithoutRef<'tr'> {

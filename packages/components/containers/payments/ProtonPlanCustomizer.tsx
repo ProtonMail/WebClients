@@ -1,5 +1,5 @@
 import { ComponentPropsWithoutRef, ReactElement, ReactNode, useState } from 'react';
-import { Cycle, Currency, Plan, Organization, PlanIDs } from '@proton/shared/lib/interfaces';
+
 import { c, msgid } from 'ttag';
 
 import {
@@ -12,9 +12,9 @@ import {
     MAX_VPN_ADDON,
 } from '@proton/shared/lib/constants';
 import { getSupportedAddons, setQuantity } from '@proton/shared/lib/helpers/planIDs';
+import { Currency, Cycle, Organization, Plan, PlanIDs } from '@proton/shared/lib/interfaces';
 
 import { Icon, Info, Price } from '../../components';
-
 import { classnames } from '../../helpers';
 
 const AddonKey = {

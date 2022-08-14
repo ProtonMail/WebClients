@@ -1,28 +1,30 @@
-import PropTypes from 'prop-types';
 import { memo } from 'react';
-import { textToClipboard } from '@proton/shared/lib/helpers/browser';
-import isTruthy from '@proton/utils/isTruthy';
-import downloadFile from '@proton/shared/lib/helpers/downloadFile';
+
+import PropTypes from 'prop-types';
+import { c } from 'ttag';
+
 import { getVPNServerConfig } from '@proton/shared/lib/api/vpn';
 import { PLANS } from '@proton/shared/lib/constants';
-import { c } from 'ttag';
+import { textToClipboard } from '@proton/shared/lib/helpers/browser';
+import downloadFile from '@proton/shared/lib/helpers/downloadFile';
+import isTruthy from '@proton/utils/isTruthy';
+
 import {
-    Table,
-    TableBody,
-    TableRow,
-    DropdownActions,
-    Tooltip,
-    TableCell,
-    Icon,
     Button,
     ButtonLike,
+    DropdownActions,
+    Icon,
     SettingsLink,
+    Table,
+    TableBody,
+    TableCell,
+    TableRow,
+    Tooltip,
 } from '../../../components';
-import { useApi, useNotifications, useUser } from '../../../hooks';
 import { classnames } from '../../../helpers';
-
-import LoadIndicator from './LoadIndicator';
+import { useApi, useNotifications, useUser } from '../../../hooks';
 import Country from './Country';
+import LoadIndicator from './LoadIndicator';
 import { isP2PEnabled, isTorEnabled } from './utils';
 
 export const CATEGORY = {

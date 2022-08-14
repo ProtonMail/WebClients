@@ -1,4 +1,4 @@
-import { renderHook, act } from '@testing-library/react-hooks';
+import { act, renderHook } from '@testing-library/react-hooks';
 
 import { FILE_CHUNK_SIZE } from '@proton/shared/lib/drive/constants';
 
@@ -6,7 +6,7 @@ import { TransferState } from '../../../components/TransferManager/transfer';
 import { mockGlobalFile, testFile } from '../../../utils/test/file';
 import { MAX_BLOCKS_PER_UPLOAD } from '../constants';
 import { UploadFileControls, UploadFolderControls } from '../interface';
-import { UpdateFilter, FileUpload } from './interface';
+import { FileUpload, UpdateFilter } from './interface';
 import useUploadControl from './useUploadControl';
 
 function makeFileUpload(id: string, state: TransferState, filename: string, size = 2 * FILE_CHUNK_SIZE): FileUpload {

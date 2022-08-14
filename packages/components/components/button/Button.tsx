@@ -1,4 +1,5 @@
-import { forwardRef, Ref } from 'react';
+import { Ref, forwardRef } from 'react';
+
 import ButtonLike, { ButtonLikeProps } from './ButtonLike';
 
 export interface ButtonProps extends Omit<ButtonLikeProps<'button'>, 'as' | 'ref'> {}

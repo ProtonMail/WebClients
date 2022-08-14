@@ -1,14 +1,16 @@
 import { RefObject } from 'react';
-import { DefaultFormat, EditorPlugin, IEditor, Direction } from 'roosterjs-editor-types';
-import { MailSettings } from '@proton/shared/lib/interfaces';
-import { DEFAULT_FONT_FACE, DEFAULT_FONT_SIZE, ROOSTER_SNAPSHOTS_MAX_SIZE } from '../../constants';
-import { EditorActions, OnEditorEventListened } from '../../interface';
 
+import { DefaultFormat, Direction, EditorPlugin, IEditor } from 'roosterjs-editor-types';
+
+import { MailSettings } from '@proton/shared/lib/interfaces';
+
+import { DEFAULT_FONT_FACE, DEFAULT_FONT_SIZE, ROOSTER_SNAPSHOTS_MAX_SIZE } from '../../constants';
+import { ModalLinkProps } from '../../hooks/interface';
+import { EditorActions, OnEditorEventListened } from '../../interface';
+import EditorCustomPastePlugin from '../plugins/EditorCustomPastePlugin';
 import EditorEventListener from '../plugins/EditorEventListener';
 import UndoSnapshots from '../plugins/UndoSnapshots';
 import getRoosterEditorActions from './getRoosterEditorActions';
-import EditorCustomPastePlugin from '../plugins/EditorCustomPastePlugin';
-import { ModalLinkProps } from '../../hooks/interface';
 
 interface Options {
     onEditorEvent: OnEditorEventListened;

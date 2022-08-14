@@ -1,6 +1,7 @@
 import { c } from 'ttag';
+
+import { Icon, classnames } from '@proton/components';
 import { Referral } from '@proton/shared/lib/interfaces';
-import { classnames, Icon } from '@proton/components';
 
 interface Props {
     referral: Referral;

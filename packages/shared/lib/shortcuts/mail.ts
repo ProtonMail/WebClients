@@ -1,6 +1,8 @@
 import { c } from 'ttag';
+
 import isTruthy from '@proton/utils/isTruthy';
-import { metaKey, altKey, shiftKey, isSafari as checkIsSafari } from '../helpers/browser';
+
+import { altKey, isSafari as checkIsSafari, metaKey, shiftKey } from '../helpers/browser';
 import { KeyboardKeyType } from '../interfaces';
 
 export const editorShortcuts: Record<string, KeyboardKeyType[]> = {

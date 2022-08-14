@@ -1,4 +1,5 @@
 import { LabelHTMLAttributes } from 'react';
+
 import { classnames } from '../../helpers';
 
 type Props = LabelHTMLAttributes<HTMLLabelElement>;

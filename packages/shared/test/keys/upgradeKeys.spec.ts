@@ -1,8 +1,9 @@
 import { CryptoProxy, PrivateKeyReference } from '@proton/crypto';
+
+import { Address as tsAddress, User as tsUser } from '../../lib/interfaces';
+import { getDecryptedAddressKeysHelper, getDecryptedUserKeysHelper } from '../../lib/keys';
 import { upgradeV2KeysHelper } from '../../lib/keys/upgradeKeysV2';
 import { Modulus } from '../authentication/login.data';
-import { User as tsUser, Address as tsAddress } from '../../lib/interfaces';
-import { getDecryptedAddressKeysHelper, getDecryptedUserKeysHelper } from '../../lib/keys';
 import { getAddressKey, getUserKey } from './keyDataHelper';
 
 const DEFAULT_EMAIL = 'test@test.com';

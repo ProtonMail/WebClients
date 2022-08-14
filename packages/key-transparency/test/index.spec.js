@@ -1,5 +1,5 @@
-import { init } from 'pmcrypto';
 import * as openpgp from 'openpgp';
+import { init } from 'pmcrypto';
 
 const staticRandom = new Uint32Array(255);
 for (let i = 0; i < 255; ++i) {

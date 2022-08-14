@@ -1,5 +1,6 @@
 import { enUS, fr } from 'date-fns/locale';
-import { getFormattedWeekdays, getFormattedMonths, getWeekStartsOn, isValidDate } from '../../lib/date/date';
+
+import { getFormattedMonths, getFormattedWeekdays, getWeekStartsOn, isValidDate } from '../../lib/date/date';
 
 describe('getFormattedWeekdays', () => {
     it('should get a list with the names of the days of the week according to current locale', () => {

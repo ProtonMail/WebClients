@@ -1,22 +1,24 @@
-import { useState, useEffect, FormEvent } from 'react';
-import { c } from 'ttag';
-import { reactivateMnemonicPhrase, updateMnemonicPhrase } from '@proton/shared/lib/api/settingsMnemonic';
-import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import { PASSWORD_WRONG_ERROR } from '@proton/shared/lib/api/auth';
-import noop from '@proton/utils/noop';
-import { srpAuth } from '@proton/shared/lib/srp';
-import { generateMnemonicPayload, generateMnemonicWithSalt, MnemonicData } from '@proton/shared/lib/mnemonic';
+import { FormEvent, useEffect, useState } from 'react';
 
+import { c } from 'ttag';
+
+import { PASSWORD_WRONG_ERROR } from '@proton/shared/lib/api/auth';
+import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { reactivateMnemonicPhrase, updateMnemonicPhrase } from '@proton/shared/lib/api/settingsMnemonic';
 import { MNEMONIC_STATUS } from '@proton/shared/lib/interfaces';
+import { MnemonicData, generateMnemonicPayload, generateMnemonicWithSalt } from '@proton/shared/lib/mnemonic';
+import { srpAuth } from '@proton/shared/lib/srp';
+import noop from '@proton/utils/noop';
+
 import {
     AlertModal,
     Button,
     Loader,
-    ModalProps,
     ModalTwo as Modal,
-    ModalTwoHeader as ModalHeader,
     ModalTwoContent as ModalContent,
     ModalTwoFooter as ModalFooter,
+    ModalTwoHeader as ModalHeader,
+    ModalProps,
 } from '../../components';
 import { useApi, useEventManager, useGetUserKeys, useLoading, useUser } from '../../hooks';
 import { PasswordTotpInputs, useAskAuth } from '../password';

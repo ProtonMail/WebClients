@@ -1,4 +1,5 @@
 import { END_TYPE, FREQUENCY, MONTHLY_TYPE, WEEKLY_TYPE } from '@proton/shared/lib/calendar/constants';
+
 import modelToFrequencyProperties from './modelToFrequencyProperties';
 import { getInitialFrequencyModel } from './state';
 

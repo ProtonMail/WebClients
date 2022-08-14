@@ -1,4 +1,5 @@
 import { getSecondLevelDomain } from '@proton/shared/lib/helpers/url';
+
 import { CrossStorageMessage, ResponseMessage } from './interface';
 import { getTestKeyValue, setTestKeyValue } from './support';
 

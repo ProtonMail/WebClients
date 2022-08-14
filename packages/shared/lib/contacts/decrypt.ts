@@ -1,4 +1,5 @@
 import { c } from 'ttag';
+
 import { CryptoProxy, VERIFICATION_STATUS } from '@proton/crypto';
 
 import { CONTACT_CARD_TYPE } from '../constants';

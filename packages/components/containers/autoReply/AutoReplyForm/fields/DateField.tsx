@@ -1,8 +1,9 @@
 import { isValid } from 'date-fns';
+
 import { DateInput } from '../../../../components';
 import SettingsLayout from '../../../account/SettingsLayout';
-import SettingsLayoutRight from '../../../account/SettingsLayoutRight';
 import SettingsLayoutLeft from '../../../account/SettingsLayoutLeft';
+import SettingsLayoutRight from '../../../account/SettingsLayoutRight';
 
 interface Props {
     id: string;

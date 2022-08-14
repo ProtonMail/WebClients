@@ -1,8 +1,9 @@
 // @ts-ignore
-import longFormatters from 'date-fns/_lib/format/longFormatters';
 // @ts-ignore
 import formatters from 'date-fns/_lib/format/formatters/index';
+import longFormatters from 'date-fns/_lib/format/longFormatters';
 import defaultLocale from 'date-fns/locale/en-US';
+
 import { WeekStartsOn } from './interface';
 
 /**

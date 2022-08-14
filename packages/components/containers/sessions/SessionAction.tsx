@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
-import { useLoading } from '../../hooks';
 import { Badge, Button } from '../../components';
+import { useLoading } from '../../hooks';
 import { Session } from './interface';
 
 interface Props {

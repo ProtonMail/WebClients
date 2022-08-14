@@ -1,6 +1,8 @@
 import { c } from 'ttag';
+
 import { BRAND_NAME, PLANS } from '@proton/shared/lib/constants';
 import { Audience } from '@proton/shared/lib/interfaces';
+
 import { PlanCardFeature, PlanCardFeatureDefinition } from './interface';
 
 export const getTwoFA = (): PlanCardFeatureDefinition => {

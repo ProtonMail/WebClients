@@ -1,4 +1,5 @@
 import { CryptoProxy } from '@proton/crypto';
+
 import { DecryptedKey, InactiveKey, Key } from '../interfaces';
 
 export const getInactiveKeys = async (Keys: Key[], decryptedKeys: DecryptedKey[]): Promise<InactiveKey[]> => {

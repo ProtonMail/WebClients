@@ -1,4 +1,5 @@
 import { PublicKeyReference } from '@proton/crypto';
+
 import { MIME_TYPES, PACKAGE_TYPE } from '../../constants';
 import { EncryptionPreferencesError } from '../../mail/encryptionPreferences';
 import { SimpleMap } from '../utils';

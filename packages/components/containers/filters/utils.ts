@@ -1,17 +1,16 @@
-import { toMap } from '@proton/shared/lib/helpers/object';
 import Sieve from '@proton/shared/lib/filters/sieve';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
+import { toMap } from '@proton/shared/lib/helpers/object';
 
+import { COMPARATORS, FILTER_VERSION, OPERATORS, TYPES } from './constants';
 import {
-    FilterOperator,
-    FilterCondition,
-    FilterActions,
-    SimpleFilterModalModel,
     Filter,
+    FilterActions,
+    FilterCondition,
     FilterModalModelBase,
+    FilterOperator,
+    SimpleFilterModalModel,
 } from './interfaces';
-
-import { FILTER_VERSION, OPERATORS, TYPES, COMPARATORS } from './constants';
 
 export const computeFromTree = (filter: Filter) => {
     const ignoreComment = ({ Type }: any) => Type !== 'Comment';

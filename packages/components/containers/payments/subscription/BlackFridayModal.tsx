@@ -1,16 +1,19 @@
 import { ReactNode, useEffect, useState } from 'react';
-import { checkSubscription } from '@proton/shared/lib/api/payments';
-import { APPS, CYCLE, DEFAULT_CURRENCY, DEFAULT_CYCLE } from '@proton/shared/lib/constants';
-import { c } from 'ttag';
-import { Currency, Cycle, PlanIDs, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
-import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
+import { c } from 'ttag';
+
+import { checkSubscription } from '@proton/shared/lib/api/payments';
 import { getAppName } from '@proton/shared/lib/apps/helper';
-import { FormModal, Button, Price, Info, Href, CircleLoader } from '../../../components';
-import { useLoading, useApi } from '../../../hooks';
+import { APPS, CYCLE, DEFAULT_CURRENCY, DEFAULT_CYCLE } from '@proton/shared/lib/constants';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import { Currency, Cycle, PlanIDs, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
+
+import { Button, CircleLoader, FormModal, Href, Info, Price } from '../../../components';
 import { classnames } from '../../../helpers';
-import { EligibleOffer } from '../interface';
+import { useApi, useLoading } from '../../../hooks';
 import CurrencySelector from '../CurrencySelector';
+import { EligibleOffer } from '../interface';
+
 import './BlackFridayModal.scss';
 
 const { MONTHLY, YEARLY, TWO_YEARS } = CYCLE;

@@ -1,5 +1,5 @@
-import { CryptoProxy } from './proxy';
 import { KeyReference, PrivateKeyReference } from '../worker/api.models';
+import { CryptoProxy } from './proxy';
 
 /**
  * Find the key that generated the given signature.

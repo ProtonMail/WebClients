@@ -1,10 +1,10 @@
-import { VERIFICATION_STATUS } from '@proton/crypto';
 import { c } from 'ttag';
 
 import { Alert, TextLoader } from '@proton/components';
+import { VERIFICATION_STATUS } from '@proton/crypto';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
-import { SignatureIssues, SignatureIssueLocation } from '../store';
+import { SignatureIssueLocation, SignatureIssues } from '../store';
 
 type Props = {
     loading: boolean;

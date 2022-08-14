@@ -1,7 +1,17 @@
 import { c } from 'ttag';
+
+import { revoke } from '@proton/shared/lib/api/auth';
 import { authMember } from '@proton/shared/lib/api/members';
-import { APPS, isSSOMode, isStandaloneMode, MEMBER_PRIVATE } from '@proton/shared/lib/constants';
+import { getUser } from '@proton/shared/lib/api/user';
+import { getAppHref } from '@proton/shared/lib/apps/helper';
+import { MemberAuthResponse } from '@proton/shared/lib/authentication/interface';
 import memberLogin from '@proton/shared/lib/authentication/memberLogin';
+import {
+    maybeResumeSessionByUser,
+    persistSessionWithPassword,
+} from '@proton/shared/lib/authentication/persistedSessionHelper';
+import { APPS, MEMBER_PRIVATE, isSSOMode, isStandaloneMode } from '@proton/shared/lib/constants';
+import { withUIDHeaders } from '@proton/shared/lib/fetch/headers';
 import {
     CachedOrganizationKey,
     Member,
@@ -9,22 +19,12 @@ import {
     PartialMemberAddress,
     User as tsUser,
 } from '@proton/shared/lib/interfaces';
-import noop from '@proton/utils/noop';
-import isTruthy from '@proton/utils/isTruthy';
-import { revoke } from '@proton/shared/lib/api/auth';
-import {
-    maybeResumeSessionByUser,
-    persistSessionWithPassword,
-} from '@proton/shared/lib/authentication/persistedSessionHelper';
-import { getAppHref } from '@proton/shared/lib/apps/helper';
-import { withUIDHeaders } from '@proton/shared/lib/fetch/headers';
-import { getUser } from '@proton/shared/lib/api/user';
-import { MemberAuthResponse } from '@proton/shared/lib/authentication/interface';
 import { getOrganizationKeyInfo } from '@proton/shared/lib/organization/helper';
+import isTruthy from '@proton/utils/isTruthy';
+import noop from '@proton/utils/noop';
 
 import { DropdownActions } from '../../components';
 import { useApi, useAuthentication, useLoading, useModals, useNotifications } from '../../hooks';
-
 import AuthModal from '../password/AuthModal';
 
 interface Props {

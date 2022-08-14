@@ -1,9 +1,11 @@
 import { ChangeEvent } from 'react';
+
 import { c } from 'ttag';
+
 import { updateAutoSaveContacts } from '@proton/shared/lib/api/mailSettings';
 
-import { useNotifications, useEventManager, useApi, useLoading } from '../../hooks';
 import { Toggle } from '../../components';
+import { useApi, useEventManager, useLoading, useNotifications } from '../../hooks';
 
 interface Props {
     autoSaveContacts: boolean;

@@ -1,7 +1,9 @@
 import { MutableRefObject } from 'react';
+
 import { differenceInCalendarDays } from '@proton/shared/lib/date-fns-utc';
-import { EventTargetAction } from './interface';
+
 import { TYPE } from '../../components/calendar/interactions/constants';
+import { EventTargetAction } from './interface';
 
 export const getInitialTargetEventData = (
     eventTargetActionRef: MutableRefObject<EventTargetAction | undefined>,

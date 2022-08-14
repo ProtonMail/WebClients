@@ -1,12 +1,12 @@
 import { c } from 'ttag';
 
 import googleLogo from '@proton/styles/assets/img/import/providers/google.svg';
-import yahooLogo from '@proton/styles/assets/img/import/providers/yahoo.svg';
-import outlookLogo from '@proton/styles/assets/img/import/providers/outlook.svg';
 import otherIllu from '@proton/styles/assets/img/import/providers/other.svg';
+import outlookLogo from '@proton/styles/assets/img/import/providers/outlook.svg';
+import yahooLogo from '@proton/styles/assets/img/import/providers/yahoo.svg';
 
-import { Button, ButtonProps } from '../button';
 import { classnames } from '../../helpers';
+import { Button, ButtonProps } from '../button';
 
 import './ProviderCard.scss';
 

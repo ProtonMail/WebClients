@@ -1,4 +1,5 @@
 import { c } from 'ttag';
+
 import { Button, Icon, Tooltip } from '@proton/components';
 
 interface Props {

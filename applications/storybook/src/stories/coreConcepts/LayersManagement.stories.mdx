@@ -1,4 +1,5 @@
 import { Meta, Source } from '@storybook/addon-docs';
+
 import { getTitle } from '../../helpers/title';
 
 <Meta title={getTitle(__filename)} />
@@ -11,28 +12,28 @@ We have create some SASS variables for managing layer stack.
 
 ## Variable list
 
-Here are the available variables. Remember that you don't really need to take care of their value for __abstraction purposes__, so let's consider them as from higher to lower level layer.
+Here are the available variables. Remember that you don't really need to take care of their value for **abstraction purposes**, so let's consider them as from higher to lower level layer.
 
-- __`$layer-tooltips`__ for tooltips
+-   **`$layer-tooltips`** for tooltips
 
-- __`$layer-notifications`__ for notifications
+-   **`$layer-notifications`** for notifications
 
-- __`$layer-modals`__ for modals and dropdowns
+-   **`$layer-modals`** for modals and dropdowns
 
-- __`$layer-dropzone`__ for drag and drop zone area
+-   **`$layer-dropzone`** for drag and drop zone area
 
-- __`$layer-mobile-navigation`__ for navigation bar on mobile
+-   **`$layer-mobile-navigation`** for navigation bar on mobile
 
-- __`$layer-previewer`__ for file preview
+-   **`$layer-previewer`** for file preview
 
-- __`$layer-floating-frames`__ for floating frames, sush as the composer or transfer manager
+-   **`$layer-floating-frames`** for floating frames, sush as the composer or transfer manager
 
-- __`$layer-floating-action-buttons`__ for floating action buttons, sush as new message on mobile
+-   **`$layer-floating-action-buttons`** for floating action buttons, sush as new message on mobile
 
 ## Example
 
 <Source
-    language='css'
+    language="css"
     format
     copy={false}
     code={`
@@ -48,24 +49,24 @@ Here are the available variables. Remember that you don't really need to take ca
 
 ## Special treatment
 
-There's a helper that can be used to make sure that a component is over other ones: __`.upper-layer`__, which is using __`$layer-upper`__ variable. This variable has a lower value than any other layer variable.
+There's a helper that can be used to make sure that a component is over other ones: **`.upper-layer`**, which is using **`$layer-upper`** variable. This variable has a lower value than any other layer variable.
 
 ## Why?
 
 Managing z-indexes of a growing number of components can quickly become tricky: which one should be on top or below of another? At what index does it belong? Does it make sense that it's on the same level as another?
 
-To simplify this process, we create an __abstraction with variables__ intended to find more easily where a component belongs to.
+To simplify this process, we create an **abstraction with variables** intended to find more easily where a component belongs to.
 
 ## Statements
 
-First of all, let's imagine the z-indexes as __layers__. It's easier to work with and more understandable.
+First of all, let's imagine the z-indexes as **layers**. It's easier to work with and more understandable.
 
-Then, let's remind ourselves that components placed __at the same layer__ are __stacked in an increasing order__. That means that the last component in the DOM tree will be on top of other components at the same layer.
+Then, let's remind ourselves that components placed **at the same layer** are **stacked in an increasing order**. That means that the last component in the DOM tree will be on top of other components at the same layer.
 
-Let's remind ourselves also that the `z-index` property __needs to be used in addition to the `position` property__. By doing so, you will create a new __[stacking context](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context)__, so all the `z-index` applied on any children would be scoped inside that stacking context, and won't have any effect on the outside.
+Let's remind ourselves also that the `z-index` property **needs to be used in addition to the `position` property**. By doing so, you will create a new **[stacking context](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context)**, so all the `z-index` applied on any children would be scoped inside that stacking context, and won't have any effect on the outside.
 
 Oh, and you can create stacking contexts inside stacking contexts, but good luck with that!
 
 Since those variables don't need to be changed at any time in client side, we chose to use SASS variables instead of CSS variables.
 
-And finally, to give some flexibility, __the first hundred of indexes are free for any specific purpose__. The lowest layer is defined at `100`, the other ones are defined at an incremental step of one hundred. That leaves room for any specificity between those values in a specific layer.
+And finally, to give some flexibility, **the first hundred of indexes are free for any specific purpose**. The lowest layer is defined at `100`, the other ones are defined at an incremental step of one hundred. That leaves room for any specificity between those values in a specific layer.

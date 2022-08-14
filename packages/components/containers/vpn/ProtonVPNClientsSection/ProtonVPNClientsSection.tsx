@@ -1,20 +1,23 @@
-import { c } from 'ttag';
-import { VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { useHistory, useLocation } from 'react-router-dom';
+
+import { c } from 'ttag';
+
+import { VPN_APP_NAME } from '@proton/shared/lib/constants';
 import onboardingVPNWelcome from '@proton/styles/assets/img/onboarding/vpn-welcome.svg';
-import VPNClientCard from './VPNClientCard';
+
 import {
-    DropdownMenuLink,
+    Button,
+    ButtonLike,
     Copy,
+    DropdownMenuLink,
+    Href,
+    ModalProps,
     ModalTwo,
     ModalTwoContent,
-    ModalProps,
-    Button,
-    Href,
-    ButtonLike,
 } from '../../../components';
 import { SettingsParagraph, SettingsSectionWide } from '../../account';
 import { OnboardingContent } from '../../onboarding';
+import VPNClientCard from './VPNClientCard';
 
 interface DownloadModalProps extends ModalProps {
     downloadUrl: string;

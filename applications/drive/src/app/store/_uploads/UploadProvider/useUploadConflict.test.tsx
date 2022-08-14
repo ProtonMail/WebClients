@@ -1,5 +1,6 @@
 import { ReactNode } from 'react';
-import { renderHook, act } from '@testing-library/react-hooks';
+
+import { act, renderHook } from '@testing-library/react-hooks';
 
 import { ModalsProvider } from '@proton/components';
 

@@ -1,10 +1,10 @@
+import { DENSITY } from '@proton/shared/lib/constants';
 import {
     SETTINGS_DATE_FORMAT,
     SETTINGS_LOG_AUTH_STATE,
     SETTINGS_TIME_FORMAT,
     SETTINGS_WEEK_START,
 } from '@proton/shared/lib/interfaces';
-import { DENSITY } from '@proton/shared/lib/constants';
 import { ThemeTypes } from '@proton/shared/lib/themes/themes';
 
 export const TOTP_WRONG_ERROR = 12060;

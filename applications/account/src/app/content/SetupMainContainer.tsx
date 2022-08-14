@@ -1,7 +1,7 @@
 import { Route, Switch } from 'react-router-dom';
 
-import MainContainer from './MainContainer';
 import SetupInternalAccountContainer from '../containers/SetupInternalAccountContainer';
+import MainContainer from './MainContainer';
 
 const SetupMainContainer = () => {
     return (

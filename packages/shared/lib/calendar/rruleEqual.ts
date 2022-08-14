@@ -1,6 +1,9 @@
 import shallowEqual from '@proton/utils/shallowEqual';
 
-import { FREQUENCY } from './constants';
+import { isSameDay } from '../date-fns-utc';
+import { toUTCDate } from '../date/timezone';
+import isDeepEqual from '../helpers/isDeepEqual';
+import { omit } from '../helpers/object';
 import {
     VcalDateOrDateTimeValue,
     VcalDays,
@@ -8,10 +11,7 @@ import {
     VcalRruleProperty,
     VcalRrulePropertyValue,
 } from '../interfaces/calendar/VcalModel';
-import isDeepEqual from '../helpers/isDeepEqual';
-import { omit } from '../helpers/object';
-import { toUTCDate } from '../date/timezone';
-import { isSameDay } from '../date-fns-utc';
+import { FREQUENCY } from './constants';
 import { getRruleValue } from './rrule';
 import { withRruleWkst } from './rruleWkst';
 import { dayToNumericDay } from './vcalConverter';

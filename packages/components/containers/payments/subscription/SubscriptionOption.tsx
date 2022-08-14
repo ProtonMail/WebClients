@@ -1,4 +1,5 @@
 import { MouseEvent, ReactNode } from 'react';
+
 import { c } from 'ttag';
 
 import { Button, Icon, Info } from '../../../components';

@@ -1,5 +1,6 @@
-import { Button, AlertModal } from '@proton/components';
 import { c } from 'ttag';
+
+import { AlertModal, Button } from '@proton/components';
 
 interface CloseConfirmationModalProps {
     onClose: () => void;

@@ -1,15 +1,17 @@
-import { useEffect, useState, useMemo, MutableRefObject } from 'react';
+import { MutableRefObject, useEffect, useMemo, useState } from 'react';
+
+import { DAY } from '@proton/shared/lib/constants';
 import { fromUTCDateToLocalFakeUTCDate } from '@proton/shared/lib/date/timezone';
 import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import isTruthy from '@proton/utils/isTruthy';
-import { DAY } from '@proton/shared/lib/constants';
-import { getRecurringEvents } from './cache/getRecurringEvents';
-import { CalendarsEventsCache } from './interface';
+
+import { OpenedMailEvent } from '../../../hooks/useGetOpenedMailEvents';
 import { CalendarViewEvent, CalendarViewEventData } from '../interface';
 import { getExistingFetch } from './cache/fetchCalendarEvents';
+import { getRecurringEvents } from './cache/getRecurringEvents';
+import { CalendarsEventsCache } from './interface';
 import useCalendarsEventsFetcher from './useCalendarsEventsFetcher';
 import useCalendarsEventsReader from './useCalendarsEventsReader';
-import { OpenedMailEvent } from '../../../hooks/useGetOpenedMailEvents';
 
 const useCalendarsEvents = (
     requestedCalendars: VisualCalendar[],

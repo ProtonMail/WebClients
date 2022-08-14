@@ -1,6 +1,7 @@
-import { Cycle } from '@proton/shared/lib/interfaces';
-import { CYCLE } from '@proton/shared/lib/constants';
 import { c, msgid } from 'ttag';
+
+import { CYCLE } from '@proton/shared/lib/constants';
+import { Cycle } from '@proton/shared/lib/interfaces';
 
 export const getDueCycleText = (cycle: Cycle) => {
     if (cycle === CYCLE.MONTHLY) {

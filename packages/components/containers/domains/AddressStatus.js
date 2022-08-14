@@ -1,6 +1,8 @@
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import { RECEIVE_ADDRESS, ADDRESS_STATUS } from '@proton/shared/lib/constants';
+
+import { ADDRESS_STATUS, RECEIVE_ADDRESS } from '@proton/shared/lib/constants';
+
 import { Badge } from '../../components';
 
 const AddressStatus = ({ address }) => {

@@ -1,9 +1,10 @@
 import { c } from 'ttag';
-import { DENSITY } from '@proton/shared/lib/constants';
-import { updateDensity } from '@proton/shared/lib/api/settings';
 
-import { useUserSettings, useApi, useLoading, useEventManager, useNotifications } from '../../hooks';
+import { updateDensity } from '@proton/shared/lib/api/settings';
+import { DENSITY } from '@proton/shared/lib/constants';
+
 import { Button, ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../components';
+import { useApi, useEventManager, useLoading, useNotifications, useUserSettings } from '../../hooks';
 import DensityRadiosCards from '../layouts/DensityRadiosCards';
 
 import './ModalSettingsLayoutCards.scss';

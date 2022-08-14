@@ -1,8 +1,10 @@
+import { fireEvent } from '@testing-library/react';
+
 import { CryptoProxy } from '@proton/crypto';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { STATUS } from '@proton/shared/lib/models/cache';
-import { fireEvent } from '@testing-library/react';
-import { api, cache, clearAll, minimalCache, prepareContact, render, mockedCryptoApi } from '../tests/render';
+
+import { api, cache, clearAll, minimalCache, mockedCryptoApi, prepareContact, render } from '../tests/render';
 import ContactExportingModal, { ContactExportingProps } from './ContactExportingModal';
 
 jest.mock('@proton/shared/lib/helpers/downloadFile', () => {

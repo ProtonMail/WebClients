@@ -1,5 +1,5 @@
-import './typings/index.d';
 import './typings/css.d';
+import './typings/index.d';
 
 export * from './hooks';
 export * from './helpers';

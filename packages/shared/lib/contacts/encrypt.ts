@@ -1,15 +1,16 @@
 import { c } from 'ttag';
+
 import { CryptoProxy } from '@proton/crypto';
 
+import { CONTACT_CARD_TYPE } from '../constants';
 import { generateProtonWebUID } from '../helpers/uid';
-import { vCardPropertiesToICAL } from './vcard';
-import { hasCategories, getVCardProperties, createContactPropertyUid } from './properties';
 import { KeyPair } from '../interfaces';
 import { Contact, ContactCard } from '../interfaces/contacts/Contact';
-import { CONTACT_CARD_TYPE } from '../constants';
-import { CLEAR_FIELDS, SIGNED_FIELDS } from './constants';
 import { VCardContact, VCardProperty } from '../interfaces/contacts/VCard';
+import { CLEAR_FIELDS, SIGNED_FIELDS } from './constants';
+import { createContactPropertyUid, getVCardProperties, hasCategories } from './properties';
 import { prepareForSaving } from './surgery';
+import { vCardPropertiesToICAL } from './vcard';
 
 const { CLEAR_TEXT, ENCRYPTED_AND_SIGNED, SIGNED } = CONTACT_CARD_TYPE;
 

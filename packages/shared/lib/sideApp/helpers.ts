@@ -1,8 +1,9 @@
 import { isURLProtonInternal } from '@proton/components/helpers/url';
-import { SIDE_APP_ACTION } from './models';
-import { APP_NAMES, APPS, APPS_CONFIGURATION } from '../constants';
+
 import { getAppHref } from '../apps/helper';
 import { getLocalIDFromPathname } from '../authentication/pathnameHelper';
+import { APPS, APPS_CONFIGURATION, APP_NAMES } from '../constants';
+import { SIDE_APP_ACTION } from './models';
 
 const { PROTONMAIL, PROTONCALENDAR } = APPS;
 

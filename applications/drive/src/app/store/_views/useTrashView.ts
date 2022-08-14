@@ -3,9 +3,9 @@ import { useEffect } from 'react';
 import { useLoading } from '@proton/components';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 
-import { useUserSettings } from '../_settings';
 import { useLinksListing } from '../_links';
-import { useMemoArrayNoMatterTheOrder, useAbortSignal, useSortingWithDefault } from './utils';
+import { useUserSettings } from '../_settings';
+import { useAbortSignal, useMemoArrayNoMatterTheOrder, useSortingWithDefault } from './utils';
 import { SortField } from './utils/useSorting';
 
 const DEFAULT_SORT = {

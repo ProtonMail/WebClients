@@ -1,13 +1,13 @@
 import { PublicKeyReference } from '@proton/crypto';
+
 import { CONTACT_CARD_TYPE } from '../../constants';
 import { CRYPTO_PROCESSING_TYPES } from '../../contacts/constants';
 import { readSigned } from '../../contacts/decrypt';
 import { getKeyInfoFromProperties } from '../../contacts/keyProperties';
 import { parseToVCard } from '../../contacts/vcard';
 import { CANONIZE_SCHEME, canonizeEmail } from '../../helpers/email';
-
 import { Api, PinnedKeysConfig } from '../../interfaces';
-import { Contact as tsContact, ContactEmail } from '../../interfaces/contacts';
+import { ContactEmail, Contact as tsContact } from '../../interfaces/contacts';
 import { getContact, queryContactEmails } from '../contacts';
 
 const getContactEmail = async (

@@ -1,14 +1,14 @@
-import { useEffect, useState, useCallback } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 import { useLoading } from '@proton/components';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
 import { streamToBuffer } from '../../utils/stream';
-import { useUserSettings } from '../_settings';
-import { logError, isIgnoredError } from '../_utils';
 import { useDownload, useDownloadProvider } from '../_downloads';
 import { DecryptedLink, useLink, useLinksListing } from '../_links';
-import { useMemoArrayNoMatterTheOrder, useAbortSignal, useControlledSorting } from './utils';
+import { useUserSettings } from '../_settings';
+import { isIgnoredError, logError } from '../_utils';
+import { useAbortSignal, useControlledSorting, useMemoArrayNoMatterTheOrder } from './utils';
 
 /**
  * useFileView provides data for file preview.

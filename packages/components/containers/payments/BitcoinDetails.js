@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
+
 import { Copy } from '../../components';
 
 const BitcoinDetails = ({ amount, address }) => {

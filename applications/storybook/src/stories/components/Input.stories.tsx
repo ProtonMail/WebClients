@@ -1,8 +1,9 @@
 import { useState } from 'react';
+
 import { InputTwo } from '@proton/components';
 import ccIcon from '@proton/styles/assets/img/credit-card-icons/cc-master.svg';
-import { getTitle } from '../../helpers/title';
 
+import { getTitle } from '../../helpers/title';
 import mdx from './Input.mdx';
 
 export default {

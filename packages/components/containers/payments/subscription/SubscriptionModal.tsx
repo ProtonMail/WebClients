@@ -1,21 +1,24 @@
 import { FormEvent, useEffect, useRef, useState } from 'react';
+
 import { c } from 'ttag';
-import { DEFAULT_CURRENCY, DEFAULT_CYCLE, PLAN_TYPES, PLANS } from '@proton/shared/lib/constants';
+
 import { checkSubscription, deleteSubscription, subscribe } from '@proton/shared/lib/api/payments';
-import { hasBonuses } from '@proton/shared/lib/helpers/organization';
-import { hasPlanIDs, supportAddons } from '@proton/shared/lib/helpers/planIDs';
-import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
-import isTruthy from '@proton/utils/isTruthy';
-import { Audience, Currency, Cycle, PlanIDs, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
-import { getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
-import { hasMigrationDiscount, hasNewVisionary } from '@proton/shared/lib/helpers/subscription';
 import {
     getShouldCalendarPreventSubscripitionChange,
     willHavePaidMail,
 } from '@proton/shared/lib/calendar/subscription';
+import { DEFAULT_CURRENCY, DEFAULT_CYCLE, PLANS, PLAN_TYPES } from '@proton/shared/lib/constants';
+import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
+import { hasBonuses } from '@proton/shared/lib/helpers/organization';
+import { hasPlanIDs, supportAddons } from '@proton/shared/lib/helpers/planIDs';
+import { hasMigrationDiscount, hasNewVisionary } from '@proton/shared/lib/helpers/subscription';
+import { Audience, Currency, Cycle, PlanIDs, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
+import { getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
 import { hasPaidMail } from '@proton/shared/lib/user/helpers';
+import isTruthy from '@proton/utils/isTruthy';
 
 import { Button, ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../../components';
+import { classnames } from '../../../helpers';
 import {
     useApi,
     useEventManager,
@@ -28,25 +31,25 @@ import {
     useSubscription,
     useUser,
 } from '../../../hooks';
-import { classnames } from '../../../helpers';
-import LossLoyaltyModal from '../LossLoyaltyModal';
 import GenericError from '../../error/GenericError';
-import usePayment from '../usePayment';
-import Payment from '../Payment';
-import PlanSelection from './PlanSelection';
-import { SUBSCRIPTION_STEPS } from './constants';
-import SubscriptionSubmitButton from './SubscriptionSubmitButton';
-import SubscriptionUpgrade from './SubscriptionUpgrade';
-import SubscriptionThanks from './SubscriptionThanks';
-import SubscriptionCheckout, { SubscriptionCheckoutLocal } from './SubscriptionCheckout';
-import './SubscriptionModal.scss';
-import { handlePaymentToken } from '../paymentTokenHelper';
-import PlanCustomization from './PlanCustomization';
-import CalendarDowngradeModal from './CalendarDowngradeModal';
-import SubscriptionCycleSelector from './SubscriptionCycleSelector';
+import LossLoyaltyModal from '../LossLoyaltyModal';
 import MemberDowngradeModal from '../MemberDowngradeModal';
+import Payment from '../Payment';
+import { handlePaymentToken } from '../paymentTokenHelper';
+import usePayment from '../usePayment';
+import CalendarDowngradeModal from './CalendarDowngradeModal';
+import PlanCustomization from './PlanCustomization';
 import { DiscountWarningModal, NewVisionaryWarningModal } from './PlanLossWarningModal';
+import PlanSelection from './PlanSelection';
+import SubscriptionCheckout, { SubscriptionCheckoutLocal } from './SubscriptionCheckout';
+import SubscriptionCycleSelector from './SubscriptionCycleSelector';
+import SubscriptionSubmitButton from './SubscriptionSubmitButton';
+import SubscriptionThanks from './SubscriptionThanks';
+import SubscriptionUpgrade from './SubscriptionUpgrade';
+import { SUBSCRIPTION_STEPS } from './constants';
 import { getDefaultSelectedProductPlans } from './helpers';
+
+import './SubscriptionModal.scss';
 
 interface Props extends Pick<ModalProps<'div'>, 'open' | 'onClose' | 'onExit'> {
     step?: SUBSCRIPTION_STEPS;

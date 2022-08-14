@@ -1,7 +1,8 @@
 import { useEffect } from 'react';
+
 import { c } from 'ttag';
 
-import { InlineLinkButton, TopBanner, useModals, useLoading } from '@proton/components';
+import { InlineLinkButton, TopBanner, useLoading, useModals } from '@proton/components';
 
 import { useLockedVolume } from '../../store';
 import FilesRecoveryModal from './FileRecovery/FilesRecoveryModal';

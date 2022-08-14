@@ -1,4 +1,5 @@
 import { ComponentPropsWithoutRef, forwardRef } from 'react';
+
 import QRCodeReact from 'qrcode.react';
 
 import { classnames } from '../../helpers';

@@ -1,28 +1,28 @@
 import { c } from 'ttag';
+
 import { cancelImport, createToken, resumeImport, updateImport } from '@proton/shared/lib/api/easySwitch';
+import {
+    AuthenticationMethod,
+    EASY_SWITCH_SOURCE,
+    ImportError,
+    ImportStatus,
+    ImportToken,
+    ImportType,
+    NormalizedImporter,
+    OAUTH_PROVIDER,
+    OAuthProps,
+} from '@proton/shared/lib/interfaces/EasySwitch';
 import isTruthy from '@proton/utils/isTruthy';
 
+import { Alert, Button, ConfirmModal, DropdownActions } from '../../../components';
 import {
-    NormalizedImporter,
-    ImportStatus,
-    ImportError,
-    AuthenticationMethod,
-    OAUTH_PROVIDER,
-    ImportType,
-    OAuthProps,
-    ImportToken,
-    EASY_SWITCH_SOURCE,
-} from '@proton/shared/lib/interfaces/EasySwitch';
-
-import { Alert, ConfirmModal, DropdownActions, Button } from '../../../components';
-import {
+    useAddresses,
     useApi,
-    useLoading,
+    useApiEnvironmentConfig,
     useEventManager,
+    useLoading,
     useModals,
     useNotifications,
-    useAddresses,
-    useApiEnvironmentConfig,
 } from '../../../hooks';
 import useOAuthPopup from '../../../hooks/useOAuthPopup';
 import {
@@ -31,7 +31,6 @@ import {
     G_OAUTH_SCOPE_DEFAULT,
     G_OAUTH_SCOPE_MAIL,
 } from '../constants';
-
 import ImportMailModal from '../mail/modals/ImportMailModal';
 
 interface Props {

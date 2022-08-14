@@ -1,11 +1,12 @@
 import { CryptoProxy } from '@proton/crypto';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
-import { DecryptedKey, Key as tsKey, KeyPair, KeysPair, User } from '../interfaces';
-import { decryptMemberToken } from './memberToken';
-import { splitKeys } from './keys';
+
+import { DecryptedKey, KeyPair, KeysPair, User, Key as tsKey } from '../interfaces';
 import { getAddressKeyToken } from './addressKeys';
 import { getDecryptedOrganizationKey } from './getDecryptedOrganizationKey';
+import { splitKeys } from './keys';
+import { decryptMemberToken } from './memberToken';
 
 const getAddressKeyPassword = (
     { Activation, Token, Signature }: tsKey,

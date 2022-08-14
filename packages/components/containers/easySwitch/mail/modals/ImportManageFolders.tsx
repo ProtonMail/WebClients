@@ -1,26 +1,25 @@
-import { useState, useMemo, useEffect } from 'react';
+import { useEffect, useMemo, useState } from 'react';
+
 import { c } from 'ttag';
 
 import { Address, Label } from '@proton/shared/lib/interfaces';
-import { Folder } from '@proton/shared/lib/interfaces/Folder';
 import {
-    MailImporterPayload,
-    MailImportMapping,
     ImportedMailFolder,
     MailImportDestinationFolder,
+    MailImportMapping,
+    MailImporterPayload,
 } from '@proton/shared/lib/interfaces/EasySwitch';
+import { Folder } from '@proton/shared/lib/interfaces/Folder';
 
+import { escapeSlashes, getFolderRelationshipsMap, getLevel, splitEscaped } from '../helpers';
 import {
     CheckedFoldersMap,
     DisabledFoldersMap,
+    EditModeMap,
     FolderNamesMap,
     FolderPathsMap,
-    EditModeMap,
     LabelsMap,
 } from '../interfaces';
-
-import { escapeSlashes, getFolderRelationshipsMap, getLevel, splitEscaped } from '../helpers';
-
 import ImportManageFoldersRow from './ImportManageFoldersRow';
 
 interface Props {

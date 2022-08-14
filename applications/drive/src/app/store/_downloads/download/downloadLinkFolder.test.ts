@@ -1,4 +1,4 @@
-import { LinkDownload, ChildrenLinkMeta } from '../interface';
+import { ChildrenLinkMeta, LinkDownload } from '../interface';
 import { FolderTreeLoader } from './downloadLinkFolder';
 
 type Tree = {

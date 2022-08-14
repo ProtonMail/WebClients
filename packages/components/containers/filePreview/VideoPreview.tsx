@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import useElementRect from '../../hooks/useElementRect';
 import UnsupportedPreview from './UnsupportedPreview';

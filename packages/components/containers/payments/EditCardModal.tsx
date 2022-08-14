@@ -1,15 +1,17 @@
 import { FormEvent, useState } from 'react';
-import { c } from 'ttag';
-import { setPaymentMethod } from '@proton/shared/lib/api/payments';
-import { PAYMENT_METHOD_TYPES, ADD_CARD_MODE } from '@proton/shared/lib/constants';
-import { Button, ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../components';
-import { useNotifications, useApi, useLoading, useModals, useEventManager } from '../../hooks';
 
+import { c } from 'ttag';
+
+import { setPaymentMethod } from '@proton/shared/lib/api/payments';
+import { ADD_CARD_MODE, PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
+
+import { Button, ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../components';
+import { useApi, useEventManager, useLoading, useModals, useNotifications } from '../../hooks';
 import CreditCard from './CreditCard';
-import useCard from './useCard';
-import toDetails from './toDetails';
-import { handlePaymentToken } from './paymentTokenHelper';
 import { CardModel } from './interface';
+import { handlePaymentToken } from './paymentTokenHelper';
+import toDetails from './toDetails';
+import useCard from './useCard';
 
 interface Props extends Omit<ModalProps<'form'>, 'as' | 'children' | 'size'> {
     card: CardModel;

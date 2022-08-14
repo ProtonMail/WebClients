@@ -1,17 +1,20 @@
 import { useMemo, useState } from 'react';
+
 import { c, msgid } from 'ttag';
+
+import { orderContactGroups } from '@proton/shared/lib/helpers/contactGroups';
+import { normalize } from '@proton/shared/lib/helpers/string';
 import { Recipient } from '@proton/shared/lib/interfaces';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
-import { normalize } from '@proton/shared/lib/helpers/string';
-import { orderContactGroups } from '@proton/shared/lib/helpers/contactGroups';
+
 import { CircleLoader, SearchInput } from '../../../components';
 import { useContactEmails, useContactGroups, useNotifications, useUser, useUserSettings } from '../../../hooks';
-import ContactsWidgetGroupsToolbar from './ContactsWidgetGroupsToolbar';
-import ContactsGroupsList from '../lists/ContactsGroupsList';
 import { useItemsSelection } from '../../items';
-import { ContactGroupEditProps } from '../group/ContactGroupEditModal';
-import ContactsWidgetPlaceholder, { EmptyType } from './ContactsWidgetPlaceholder';
 import { ContactGroupDeleteProps } from '../group/ContactGroupDeleteModal';
+import { ContactGroupEditProps } from '../group/ContactGroupEditModal';
+import ContactsGroupsList from '../lists/ContactsGroupsList';
+import ContactsWidgetGroupsToolbar from './ContactsWidgetGroupsToolbar';
+import ContactsWidgetPlaceholder, { EmptyType } from './ContactsWidgetPlaceholder';
 import { CustomAction } from './types';
 
 interface Props {

@@ -1,53 +1,54 @@
 import { useState } from 'react';
+
 import { c } from 'ttag';
-import { lockSensitiveSettings } from '@proton/shared/lib/api/user';
+
 import { PASSWORD_WRONG_ERROR } from '@proton/shared/lib/api/auth';
-import { generateKeySaltAndPassphrase } from '@proton/shared/lib/keys';
-import { isSSOMode, MAIL_APP_NAME } from '@proton/shared/lib/constants';
-import { persistSessionWithPassword } from '@proton/shared/lib/authentication/persistedSessionHelper';
-import { PASSWORD_CHANGE_MESSAGE_TYPE, sendMessageToTabs } from '@proton/shared/lib/helpers/crossTab';
-import noop from '@proton/utils/noop';
 import { updatePrivateKeyRoute } from '@proton/shared/lib/api/keys';
-import { srpVerify } from '@proton/shared/lib/srp';
-import { Address } from '@proton/shared/lib/interfaces';
-import { getUpdateKeysPayload } from '@proton/shared/lib/keys/changePassword';
+import { lockSensitiveSettings } from '@proton/shared/lib/api/user';
+import { persistSessionWithPassword } from '@proton/shared/lib/authentication/persistedSessionHelper';
+import { MAIL_APP_NAME, isSSOMode } from '@proton/shared/lib/constants';
+import { PASSWORD_CHANGE_MESSAGE_TYPE, sendMessageToTabs } from '@proton/shared/lib/helpers/crossTab';
 import {
     confirmPasswordValidator,
     passwordLengthValidator,
     requiredValidator,
 } from '@proton/shared/lib/helpers/formValidators';
+import { Address } from '@proton/shared/lib/interfaces';
+import { generateKeySaltAndPassphrase } from '@proton/shared/lib/keys';
+import { getUpdateKeysPayload } from '@proton/shared/lib/keys/changePassword';
+import { srpVerify } from '@proton/shared/lib/srp';
+import noop from '@proton/utils/noop';
 
-import { handleUnlock, handleChangeLoginPassword } from './changePasswordHelper';
 import {
     Alert,
     Button,
     Form,
     InputFieldTwo,
     Loader,
-    ModalProps,
     ModalTwo as Modal,
     ModalTwoContent as ModalContent,
     ModalTwoFooter as ModalFooter,
     ModalTwoHeader as ModalHeader,
+    ModalProps,
     PasswordInputTwo,
     SettingsLink,
     useFormErrors,
 } from '../../components';
-
-import { GenericError } from '../error';
 import {
-    useAuthentication,
-    useEventManager,
-    useNotifications,
     useApi,
-    useUser,
-    useGetUserKeys,
-    useGetOrganizationKeyRaw,
+    useAuthentication,
     useBeforeUnload,
-    useGetAddresses,
+    useEventManager,
     useGetAddressKeys,
+    useGetAddresses,
+    useGetOrganizationKeyRaw,
+    useGetUserKeys,
+    useNotifications,
+    useUser,
 } from '../../hooks';
+import { GenericError } from '../error';
 import { useAskAuth } from '../password';
+import { handleChangeLoginPassword, handleUnlock } from './changePasswordHelper';
 
 export enum MODES {
     CHANGE_ONE_PASSWORD_MODE = 1,

@@ -1,7 +1,10 @@
 import { useCallback } from 'react';
+
 import { c } from 'ttag';
-import { Contact, ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+
 import { labelContactEmails, unLabelContactEmails } from '@proton/shared/lib/api/contacts';
+import { Contact, ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+
 import { useApi, useContacts, useEventManager, useNotifications } from '../../../hooks';
 import { SelectEmailsProps } from '../modals/SelectEmailsModal';
 

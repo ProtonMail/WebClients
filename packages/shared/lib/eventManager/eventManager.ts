@@ -1,7 +1,7 @@
-import { INTERVAL_EVENT_TIMER } from '../constants';
 import { getEvents } from '../api/events';
-import { onceWithQueue } from '../helpers/onceWithQueue';
+import { INTERVAL_EVENT_TIMER } from '../constants';
 import createListeners, { Listener } from '../helpers/listeners';
+import { onceWithQueue } from '../helpers/onceWithQueue';
 import { Api } from '../interfaces';
 
 const FIBONACCI = [1, 1, 2, 3, 5, 8];

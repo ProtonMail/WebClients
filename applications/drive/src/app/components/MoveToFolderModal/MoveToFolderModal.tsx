@@ -1,27 +1,28 @@
-import React, { useState, ReactNode } from 'react';
+import React, { ReactNode, useState } from 'react';
+
 import { c, msgid } from 'ttag';
 
 import {
-    useLoading,
-    PrimaryButton,
-    InnerModal,
-    UnderlineButton,
-    useModals,
-    useActiveBreakpoint,
     Button,
     Icon,
-    ModalTwoHeader,
+    InnerModal,
     ModalTwo,
     ModalTwoContent,
     ModalTwoFooter,
+    ModalTwoHeader,
+    PrimaryButton,
+    UnderlineButton,
+    useActiveBreakpoint,
+    useLoading,
+    useModals,
 } from '@proton/components';
 
-import { DecryptedLink, TreeItem, useFolderTree, useActions } from '../../store';
-import FolderTree from '../FolderTree/FolderTree';
-import HasNoFolders from './HasNoFolders';
-import { selectMessageForItemList } from '../sections/helpers';
+import { DecryptedLink, TreeItem, useActions, useFolderTree } from '../../store';
 import CreateFolderModal from '../CreateFolderModal';
+import FolderTree from '../FolderTree/FolderTree';
 import ModalContentLoader from '../ModalContentLoader';
+import { selectMessageForItemList } from '../sections/helpers';
+import HasNoFolders from './HasNoFolders';
 
 interface Props {
     shareId: string;

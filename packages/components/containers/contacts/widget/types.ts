@@ -1,6 +1,7 @@
 import { ReactNode } from 'react';
-import { Recipient, SimpleMap } from '@proton/shared/lib/interfaces/index';
+
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts/index';
+import { Recipient, SimpleMap } from '@proton/shared/lib/interfaces/index';
 
 import useContactList from '../hooks/useContactList';
 

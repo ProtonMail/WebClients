@@ -1,21 +1,22 @@
 import * as React from 'react';
-import humanSize from '@proton/shared/lib/helpers/humanSize';
-import { classnames, Loader, FileIcon, FileNameDisplay } from '@proton/components';
 
-import { TransferType } from './transfer';
-import ProgressBar from './ProgressBar';
-import TransferStateIndicator from './TransferStateIndicator';
-import TransferControls from './TransferControls';
+import { FileIcon, FileNameDisplay, Loader, classnames } from '@proton/components';
+import humanSize from '@proton/shared/lib/helpers/humanSize';
+
 import {
-    isTransferInitializing,
-    isTransferProgress,
-    isTransferPaused,
+    getProgressBarStatus,
     isTransferCanceled,
     isTransferDone,
-    getProgressBarStatus,
+    isTransferInitializing,
+    isTransferPaused,
     isTransferPending,
+    isTransferProgress,
 } from '../../utils/transfer';
+import ProgressBar from './ProgressBar';
+import TransferControls from './TransferControls';
+import TransferStateIndicator from './TransferStateIndicator';
 import { TransferProps } from './interfaces';
+import { TransferType } from './transfer';
 
 type Props<T extends TransferType> = React.HTMLAttributes<HTMLDivElement> &
     TransferProps<T> & {

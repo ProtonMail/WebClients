@@ -1,4 +1,5 @@
 import { CryptoProxy } from '@proton/crypto';
+
 import { CachedOrganizationKey, OrganizationKey } from '../interfaces';
 
 export const getDecryptedOrganizationKey = async (OrganizationPrivateKey: string, keyPassword: string) => {

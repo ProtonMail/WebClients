@@ -1,6 +1,7 @@
-import { useState, useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
+
 import { c } from 'ttag';
-import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
+
 import {
     addVCardProperty,
     getSortedProperties,
@@ -8,21 +9,23 @@ import {
     removeVCardProperty,
     updateVCardContact,
 } from '@proton/shared/lib/contacts/properties';
-import { getOtherInformationFields } from '@proton/shared/lib/helpers/contacts';
-import { ContactEmail, ContactEmailModel } from '@proton/shared/lib/interfaces/contacts/Contact';
-import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
-import { canonizeEmail } from '@proton/shared/lib/helpers/email';
-import { VCardContact, VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
 import { prepareForEdition } from '@proton/shared/lib/contacts/surgery';
 import { isMultiValue } from '@proton/shared/lib/contacts/vcard';
-import ContactEditProperties from './ContactEditProperties';
-import { useNotifications, useLoading, useEventManager, useContactEmails, useHandler } from '../../../hooks';
+import { getOtherInformationFields } from '@proton/shared/lib/helpers/contacts';
+import { canonizeEmail } from '@proton/shared/lib/helpers/email';
+import { ContactEmail, ContactEmailModel } from '@proton/shared/lib/interfaces/contacts/Contact';
+import { VCardContact, VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
+import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
+import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
+
 import { Button, ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../../components';
-import ContactEditProperty from './ContactEditProperty';
+import { useContactEmails, useEventManager, useHandler, useLoading, useNotifications } from '../../../hooks';
+import { ContactGroupEditProps } from '../group/ContactGroupEditModal';
 import useApplyGroups from '../hooks/useApplyGroups';
 import { useSaveVCardContact } from '../hooks/useSaveVCardContact';
 import { ContactImageProps } from '../modals/ContactImageModal';
-import { ContactGroupEditProps } from '../group/ContactGroupEditModal';
+import ContactEditProperties from './ContactEditProperties';
+import ContactEditProperty from './ContactEditProperty';
 
 const otherInformationFields = getOtherInformationFields().map(({ value }) => value);
 

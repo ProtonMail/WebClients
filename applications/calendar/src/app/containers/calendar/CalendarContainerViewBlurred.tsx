@@ -1,9 +1,11 @@
 import { useRef } from 'react';
-import noop from '@proton/utils/noop';
-import { endOfWeek, startOfWeek } from '@proton/shared/lib/date-fns-utc';
+
 import { SETTINGS_VIEW, VIEWS } from '@proton/shared/lib/calendar/constants';
-import CalendarContainerView from './CalendarContainerView';
+import { endOfWeek, startOfWeek } from '@proton/shared/lib/date-fns-utc';
+import noop from '@proton/utils/noop';
+
 import TimeGrid from '../../components/calendar/TimeGrid';
+import CalendarContainerView from './CalendarContainerView';
 import { TimeGridRef } from './interface';
 
 const CalendarContainerViewBlurred = () => {

@@ -2,11 +2,11 @@ import { c } from 'ttag';
 
 import { APPS_CONFIGURATION } from '@proton/shared/lib/constants';
 
-import { useConfig, useEarlyAccess } from '../../hooks';
-import ChangelogModal from './ChangelogModal';
 import { getAppVersion } from '../../helpers';
-import { Tooltip } from '../tooltip';
+import { useConfig, useEarlyAccess } from '../../hooks';
 import { useModalState } from '../modalTwo';
+import { Tooltip } from '../tooltip';
+import ChangelogModal from './ChangelogModal';
 
 interface Props {
     appName?: string;

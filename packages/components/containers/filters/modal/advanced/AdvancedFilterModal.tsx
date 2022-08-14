@@ -1,42 +1,41 @@
-import { useState, FormEvent, useMemo } from 'react';
+import { FormEvent, useMemo, useState } from 'react';
+
 import { c } from 'ttag';
+
+import { addTreeFilter, checkSieveFilter, updateFilter } from '@proton/shared/lib/api/filters';
 import { normalize } from '@proton/shared/lib/helpers/string';
-import { checkSieveFilter, addTreeFilter, updateFilter } from '@proton/shared/lib/api/filters';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
-import { FILTER_VERSION } from '../../constants';
-import { Filter, AdvancedSimpleFilterModalModel, ErrorsSieve } from '../../interfaces';
-import { sieveTemplates, convertModel } from '../../utils';
-
-import './AdvancedFilterModal.scss';
-
 import {
-    useDebounceInput,
-    ModalTwo,
     Form,
-    ModalTwoHeader,
+    Href,
+    ModalProps,
+    ModalTwo,
     ModalTwoContent,
     ModalTwoFooter,
+    ModalTwoHeader,
+    useDebounceInput,
     useModalState,
-    ModalProps,
-    Href,
 } from '../../../../components';
-
 import {
-    useLoading,
-    useApi,
-    useFilters,
     useActiveBreakpoint,
-    useNotifications,
-    useEventManager,
+    useApi,
     useApiWithoutResult,
+    useEventManager,
+    useFilters,
+    useLoading,
+    useNotifications,
     useUserSettings,
 } from '../../../../hooks';
-
+import { FILTER_VERSION } from '../../constants';
+import { AdvancedSimpleFilterModalModel, ErrorsSieve, Filter } from '../../interfaces';
+import { convertModel, sieveTemplates } from '../../utils';
+import CloseFilterModal from '../CloseFilterModal';
 import FilterNameForm from '../FilterNameForm';
 import FooterAdvancedFilterModal from './FooterAdvancedFilterModal';
 import SieveForm from './SieveForm';
-import CloseFilterModal from '../CloseFilterModal';
+
+import './AdvancedFilterModal.scss';
 
 interface Props extends ModalProps {
     filter?: Filter;

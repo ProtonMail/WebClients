@@ -1,15 +1,17 @@
 import { useEffect, useState } from 'react';
+import { ContainerGetter, SortEndHandler, arrayMove } from 'react-sortable-hoc';
+
 import { c } from 'ttag';
-import { arrayMove, ContainerGetter, SortEndHandler } from 'react-sortable-hoc';
+
 import { applyFilters, updateFilterOrder } from '@proton/shared/lib/api/filters';
 
 import { Loader } from '../../components';
-import { useFilters, useApiWithoutResult, useEventManager, useNotifications, useApi, useFeature } from '../../hooks';
-import FilterSortableList from './FilterSortableList';
-import ActionsFilterToolbar from './ActionsFilterToolbar';
-import { Filter } from './interfaces';
-import { SettingsSection, SettingsParagraph } from '../account';
+import { useApi, useApiWithoutResult, useEventManager, useFeature, useFilters, useNotifications } from '../../hooks';
+import { SettingsParagraph, SettingsSection } from '../account';
 import { FeatureCode } from '../features';
+import ActionsFilterToolbar from './ActionsFilterToolbar';
+import FilterSortableList from './FilterSortableList';
+import { Filter } from './interfaces';
 
 function FiltersSection() {
     const { feature: applyFiltersFeature } = useFeature(FeatureCode.ApplyFilters);

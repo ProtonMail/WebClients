@@ -1,5 +1,5 @@
-import { CalendarEvent, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
 import { parse } from '@proton/shared/lib/calendar/vcal';
+import { CalendarEvent, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
 
 import getSyncMultipleEventsPayload, {
     SyncMultipleEventsArguments,

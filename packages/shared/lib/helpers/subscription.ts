@@ -1,6 +1,7 @@
 import { addWeeks, fromUnixTime, isBefore } from 'date-fns';
-import { PLAN_TYPES, PLAN_SERVICES, PLANS, CYCLE, ADDON_NAMES, COUPON_CODES, APPS, APP_NAMES } from '../constants';
-import { Subscription, PlanIDs, Cycle, PlansMap } from '../interfaces';
+
+import { ADDON_NAMES, APPS, APP_NAMES, COUPON_CODES, CYCLE, PLANS, PLAN_SERVICES, PLAN_TYPES } from '../constants';
+import { Cycle, PlanIDs, PlansMap, Subscription } from '../interfaces';
 import { hasBit } from './bitset';
 
 const { PLAN, ADDON } = PLAN_TYPES;

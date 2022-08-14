@@ -1,9 +1,10 @@
 import { Organization } from '@proton/shared/lib/interfaces';
+
+import { cachedPromise } from './helpers/cachedPromise';
 import useCache from './useCache';
-import { useUser } from './useUser';
 import { useGetOrganizationKeyRaw } from './useGetOrganizationKeyRaw';
 import usePromiseResult from './usePromiseResult';
-import { cachedPromise } from './helpers/cachedPromise';
+import { useUser } from './useUser';
 
 const useOrganizationKey = (organization?: Organization) => {
     const cache = useCache();

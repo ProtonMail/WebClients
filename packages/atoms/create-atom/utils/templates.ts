@@ -1,8 +1,8 @@
 import fs from 'fs/promises';
 import { render } from 'mustache';
 
-import prettify from './prettify';
 import { logItemCompletion } from './log';
+import prettify from './prettify';
 import { toKebabCase } from './string';
 
 const getTemplateFile = (templateName: string) =>

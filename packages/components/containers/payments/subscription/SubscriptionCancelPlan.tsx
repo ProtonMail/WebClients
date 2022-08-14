@@ -1,6 +1,7 @@
 import { Icon, Info } from '../../../components';
 import { classnames } from '../../../helpers';
 import { PlanCardFeatureDefinition } from '../features/interface';
+
 import './SubscriptionCancelPlan.scss';
 
 interface Props {

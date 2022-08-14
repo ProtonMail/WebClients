@@ -1,52 +1,48 @@
-import { useState, useMemo, FormEvent, useEffect } from 'react';
+import { FormEvent, useEffect, useMemo, useState } from 'react';
 import { useLocation } from 'react-router-dom';
+
 import { c } from 'ttag';
 
 import {
-    getAuthenticationMethod,
     createImport,
-    startImportTask,
-    getMailImportData,
-    updateImport,
+    getAuthenticationMethod,
     getImport,
+    getMailImportData,
     resumeImport,
+    startImportTask,
+    updateImport,
 } from '@proton/shared/lib/api/easySwitch';
-
-import noop from '@proton/utils/noop';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
+import { toMap } from '@proton/shared/lib/helpers/object';
 import { isNumber } from '@proton/shared/lib/helpers/validators';
 import { Address } from '@proton/shared/lib/interfaces';
 import {
-    TIME_PERIOD,
-    MailImportMapping,
     IMPORT_ERROR,
-    NON_OAUTH_PROVIDER,
-    ImportedMailFolder,
     ImportType,
+    ImportedMailFolder,
+    MailImportMapping,
+    NON_OAUTH_PROVIDER,
     NormalizedImporter,
+    TIME_PERIOD,
 } from '@proton/shared/lib/interfaces/EasySwitch';
-import { toMap } from '@proton/shared/lib/helpers/object';
-
-import { useLoading, useModals, useApi, useEventManager, useErrorHandler } from '../../../../hooks';
+import noop from '@proton/utils/noop';
 
 import {
+    Alert,
+    Button,
     ConfirmModal,
     FormModal,
-    Button,
     PrimaryButton,
-    Alert,
     useDebounceInput,
     useSettingsLink,
 } from '../../../../components';
-
-import { MailImportStep, ImportMailModalModel, AuthenticationMethod } from '../interfaces';
-
-import ImportStartStep from './steps/ImportStartStep';
-import ImportPrepareStep from './steps/ImportPrepareStep';
-import ImportStartedStep from '../../steps/IAImportStartedStep';
-
+import { useApi, useErrorHandler, useEventManager, useLoading, useModals } from '../../../../hooks';
 import { IA_PATHNAME_REGEX, IMAPS, PORTS } from '../../constants';
+import ImportStartedStep from '../../steps/IAImportStartedStep';
 import { dateToTimestamp } from '../helpers';
+import { AuthenticationMethod, ImportMailModalModel, MailImportStep } from '../interfaces';
+import ImportPrepareStep from './steps/ImportPrepareStep';
+import ImportStartStep from './steps/ImportStartStep';
 
 import './ImportMailModal.scss';
 

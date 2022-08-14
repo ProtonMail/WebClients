@@ -1,10 +1,10 @@
-import useUser from './useUser';
-import { useUserKeys } from './useUserKeys';
-import { useAddressesKeys } from './useAddressesKeys';
 import {
     getAllKeysReactivationRequests,
     getKeysToReactivateCount,
 } from '../containers/keys/reactivateKeys/getAllKeysToReactive';
+import { useAddressesKeys } from './useAddressesKeys';
+import useUser from './useUser';
+import { useUserKeys } from './useUserKeys';
 
 const useCanReactivateKeys = () => {
     const [User] = useUser();

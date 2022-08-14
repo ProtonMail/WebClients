@@ -1,7 +1,8 @@
-import { MAIL_APP_NAME, VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { c } from 'ttag';
 
-import { Row, Label, Field, Alert, Href } from '../../../components';
+import { MAIL_APP_NAME, VPN_APP_NAME } from '@proton/shared/lib/constants';
+
+import { Alert, Field, Href, Label, Row } from '../../../components';
 import { useUser } from '../../../hooks';
 
 const ProtonVPNCredentialsSection = () => {

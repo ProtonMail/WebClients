@@ -1,9 +1,10 @@
-import { useRef, useState, useEffect } from 'react';
-import { splitKeys } from '@proton/shared/lib/keys';
+import { useEffect, useRef, useState } from 'react';
+
 import { CryptoProcessingError, prepareVCardContact } from '@proton/shared/lib/contacts/decrypt';
 import { DecryptedKey } from '@proton/shared/lib/interfaces';
 import { Contact } from '@proton/shared/lib/interfaces/contacts/Contact';
 import { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';
+import { splitKeys } from '@proton/shared/lib/keys';
 
 export type VCardContactModel = {
     ID?: string;

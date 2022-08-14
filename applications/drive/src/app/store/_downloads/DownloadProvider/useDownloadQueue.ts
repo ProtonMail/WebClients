@@ -1,20 +1,21 @@
 import { useCallback, useMemo, useState } from 'react';
+
 import { c } from 'ttag';
 
 import { generateUID } from '@proton/components';
 import { SupportedMimeTypes } from '@proton/shared/lib/drive/constants';
 
 import { TransferMeta, TransferState } from '../../../components/TransferManager/transfer';
-import { isTransferPending, isTransferFinished } from '../../../utils/transfer';
+import { isTransferFinished, isTransferPending } from '../../../utils/transfer';
 import { LinkDownload } from '../interface';
 import {
     Download,
-    UpdateFilter,
-    UpdateState,
-    UpdateData,
+    DownloadUserError,
     UpdateCallback,
     UpdateCallbackParams,
-    DownloadUserError,
+    UpdateData,
+    UpdateFilter,
+    UpdateState,
 } from './interface';
 
 export default function useDownloadQueue() {

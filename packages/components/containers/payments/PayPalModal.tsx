@@ -1,12 +1,14 @@
 import { useEffect, useRef } from 'react';
+
 import { c } from 'ttag';
+
 import { createToken, setPaymentMethod } from '@proton/shared/lib/api/payments';
 import { PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
 
+import { AlertModal, Button, ModalProps } from '../../components';
 import { useApi, useEventManager, useLoading, useNotifications } from '../../hooks';
-import { AlertModal, ModalProps, Button } from '../../components';
-import { process } from './paymentTokenHelper';
 import { PaymentTokenResult } from './interface';
+import { process } from './paymentTokenHelper';
 
 const PAYMENT_AUTHORIZATION_AMOUNT = 100;
 const PAYMENT_AUTHORIZATION_CURRENCY = 'CHF';

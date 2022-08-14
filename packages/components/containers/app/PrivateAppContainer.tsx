@@ -1,6 +1,8 @@
 import { ReactNode, Ref } from 'react';
+
 import { classnames } from '../../helpers';
 import ErrorBoundary from './ErrorBoundary';
+
 import './SideApp.scss';
 
 interface Props {

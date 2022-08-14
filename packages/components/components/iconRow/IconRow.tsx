@@ -1,6 +1,6 @@
-import { ReactNode, ReactElement } from 'react';
+import { ReactElement, ReactNode } from 'react';
 
-import { Label, Icon, IconName } from '@proton/components';
+import { Icon, IconName, Label } from '@proton/components';
 
 import { Tooltip } from '../tooltip';
 

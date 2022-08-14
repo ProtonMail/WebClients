@@ -1,6 +1,7 @@
-import { c } from 'ttag';
 import { useEffect } from 'react';
-import { APPS } from '@proton/shared/lib/constants';
+
+import { c } from 'ttag';
+
 import {
     Button,
     CalendarLogo,
@@ -9,17 +10,19 @@ import {
     Href,
     IconSize,
     MailLogo,
-    ModalProps,
     ModalTwo as Modal,
     ModalTwoContent as ModalContent,
-    useFeature,
+    ModalProps,
     VpnLogo,
+    useFeature,
 } from '@proton/components';
+import { APPS } from '@proton/shared/lib/constants';
 import { getStaticURL } from '@proton/shared/lib/helpers/url';
-import mailSVG from './assets/Mail.svg';
+
+import OnboardingContent from '../onboarding/OnboardingContent';
 import calendarSVG from './assets/Calendar.svg';
 import driveSVG from './assets/Drive.svg';
-import OnboardingContent from '../onboarding/OnboardingContent';
+import mailSVG from './assets/Mail.svg';
 
 interface Props extends ModalProps {
     app: typeof APPS.PROTONMAIL | typeof APPS.PROTONCALENDAR | typeof APPS.PROTONDRIVE;
@@ -73,7 +76,7 @@ const V5WelcomeModal = ({ app, ...rest }: Props) => {
                             {
                                 // translator: ${br} is just a break line, please keep the variable at the same place.
                                 c('new_plans: info')
-                                    .jt`Introducing Proton’s refreshed look.${ br }Many services, one mission. Welcome to an internet where privacy is the default.`
+                                    .jt`Introducing Proton’s refreshed look.${br}Many services, one mission. Welcome to an internet where privacy is the default.`
                             }{' '}
                             <Href url={getStaticURL('/news/updated-proton')}>{c('Info').t`Learn more`}</Href>
                         </>

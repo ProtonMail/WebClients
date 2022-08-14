@@ -1,8 +1,9 @@
-import { PAYMENT_METHOD_TYPE, PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
 import { c } from 'ttag';
-import { SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
 
 import { PrimaryButton, StyledPayPalButton } from '@proton/components';
+import { PAYMENT_METHOD_TYPE, PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
+import { SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
+
 import { SignupPayPal } from './interfaces';
 
 interface Props {

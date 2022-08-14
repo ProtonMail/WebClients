@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { Icon, ToolbarButton } from '@proton/components';
 
 import { DecryptedLink, useDownload } from '../../../store';
-import { noSelection, hasFoldersSelected } from './utils';
+import { hasFoldersSelected, noSelection } from './utils';
 
 interface Props {
     shareId: string;

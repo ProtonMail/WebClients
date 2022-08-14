@@ -1,15 +1,16 @@
-import { useCallback, useState, useEffect } from 'react';
+import { useCallback, useEffect, useState } from 'react';
+
 import { c } from 'ttag';
-import move from '@proton/utils/move';
+
 import { orderAddress } from '@proton/shared/lib/api/addresses';
-import { Address, CachedOrganizationKey, Member, UserModel } from '@proton/shared/lib/interfaces';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
+import { Address, CachedOrganizationKey, Member, UserModel } from '@proton/shared/lib/interfaces';
+import move from '@proton/utils/move';
 
-import { Alert, OrderableTable, OrderableTableHeader, OrderableTableBody, OrderableTableRow } from '../../components';
-import { useApi, useEventManager, useAddresses, useNotifications } from '../../hooks';
-
-import AddressStatus from './AddressStatus';
+import { Alert, OrderableTable, OrderableTableBody, OrderableTableHeader, OrderableTableRow } from '../../components';
+import { useAddresses, useApi, useEventManager, useNotifications } from '../../hooks';
 import AddressActions from './AddressActions';
+import AddressStatus from './AddressStatus';
 import { formatAddresses, getPermissions, getStatus } from './helper';
 
 interface Props {

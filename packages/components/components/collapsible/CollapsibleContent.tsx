@@ -1,5 +1,6 @@
 import { ElementType, useContext } from 'react';
 import { Box, PolymorphicComponentProps } from 'react-polymorphic-box';
+
 import CollapsibleContext from './CollapsibleContext';
 
 export interface CollapsibleContentOwnProps {}

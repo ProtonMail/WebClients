@@ -1,7 +1,6 @@
 import { Scroll } from '@proton/components';
 
 import { getTitle } from '../../helpers/title';
-
 import mdx from './Scroll.mdx';
 
 export default {

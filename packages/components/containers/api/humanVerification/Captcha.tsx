@@ -1,4 +1,5 @@
-import { useState, useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
+
 import { getApiSubdomainUrl } from '@proton/shared/lib/helpers/url';
 
 import { Loader } from '../../../components/loader';

@@ -1,9 +1,9 @@
 import { CryptoProxy, PrivateKeyReference, SessionKey } from '@proton/crypto';
-import { generateContentHash } from '@proton/shared/lib/keys/driveKeys';
 import { FILE_CHUNK_SIZE } from '@proton/shared/lib/drive/constants';
+import { generateContentHash } from '@proton/shared/lib/keys/driveKeys';
 
-import { EncryptedBlock, EncryptedThumbnailBlock } from '../interface';
 import ChunkFileReader from '../ChunkFileReader';
+import { EncryptedBlock, EncryptedThumbnailBlock } from '../interface';
 
 /**
  * generateEncryptedBlocks generates blocks for the specified file.

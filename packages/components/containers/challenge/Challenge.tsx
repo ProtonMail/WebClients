@@ -1,12 +1,12 @@
 import { useRef, useState } from 'react';
-import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
+
 import { getApiSubdomainUrl } from '@proton/shared/lib/helpers/url';
+import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
 
-import { classnames } from '../../helpers';
 import { Loader } from '../../components/loader';
-
-import ChallengeFrame, { Props as ChallengeProps } from './ChallengeFrame';
+import { classnames } from '../../helpers';
 import ChallengeError from './ChallengeError';
+import ChallengeFrame, { Props as ChallengeProps } from './ChallengeFrame';
 import { ChallengeLog } from './interface';
 
 interface Props extends Omit<ChallengeProps, 'src' | 'onError' | 'onSuccess'> {

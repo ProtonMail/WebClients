@@ -1,5 +1,7 @@
 import { c } from 'ttag';
+
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+
 import { AlertModal, AlertModalProps, Button, Href } from '../../../components';
 
 const SubscriptionModalDisabled = (props: Omit<AlertModalProps, 'title' | 'buttons' | 'children'>) => {

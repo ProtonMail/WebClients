@@ -1,7 +1,6 @@
 import { c } from 'ttag';
 
 import { DENSITY } from '@proton/shared/lib/constants';
-
 import comfortableDensitySvg from '@proton/styles/assets/img/layout/layout-thumb-density-comfortable.svg';
 import compactDensitySvg from '@proton/styles/assets/img/layout/layout-thumb-density-compact.svg';
 

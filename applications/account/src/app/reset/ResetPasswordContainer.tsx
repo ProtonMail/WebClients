@@ -1,6 +1,7 @@
 import { useRef, useState } from 'react';
-import { c } from 'ttag';
 import { useHistory } from 'react-router-dom';
+
+import { c } from 'ttag';
 
 import {
     Button,
@@ -15,6 +16,7 @@ import {
     useNotifications,
     useSearchParamsEffect,
 } from '@proton/components';
+import { ResetActionResponse, ResetCacheResult, STEPS } from '@proton/components/containers/resetPassword/interface';
 import {
     handleNewPassword,
     handleNewPasswordMnemonic,
@@ -22,22 +24,20 @@ import {
     handleRequestToken,
     handleValidateResetToken,
 } from '@proton/components/containers/resetPassword/resetActions';
-import { ResetActionResponse, ResetCacheResult, STEPS } from '@proton/components/containers/resetPassword/interface';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getStaticURL } from '@proton/shared/lib/helpers/url';
 
-import Main from '../public/Main';
-import Header from '../public/Header';
-import Text from '../public/Text';
-import Content from '../public/Content';
 import LoginSupportDropdown from '../login/LoginSupportDropdown';
+import SetPasswordForm from '../login/SetPasswordForm';
+import Content from '../public/Content';
+import Header from '../public/Header';
 import Layout from '../public/Layout';
+import Main from '../public/Main';
+import Text from '../public/Text';
 import { defaultPersistentKey } from '../public/helper';
-
 import RequestRecoveryForm from './RequestRecoveryForm';
 import RequestResetTokenForm from './RequestResetTokenForm';
 import ValidateResetTokenForm from './ValidateResetTokenForm';
-import SetPasswordForm from '../login/SetPasswordForm';
 
 interface Props {
     onLogin: OnLoginCallback;

@@ -2,9 +2,9 @@ import { END_TYPE, FREQUENCY, MONTHLY_TYPE } from '@proton/shared/lib/calendar/c
 import { getNegativeSetpos, getPositiveSetpos } from '@proton/shared/lib/calendar/helper';
 import { getUntilProperty, numericDayToDay } from '@proton/shared/lib/calendar/vcalConverter';
 import { fromLocalDate, toUTCDate } from '@proton/shared/lib/date/timezone';
-import unique from '@proton/utils/unique';
-import { VcalRruleProperty } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 import { EventModel } from '@proton/shared/lib/interfaces/calendar';
+import { VcalRruleProperty } from '@proton/shared/lib/interfaces/calendar/VcalModel';
+import unique from '@proton/utils/unique';
 
 const modelToFrequencyProperties = ({ frequencyModel, start, isAllDay, isOrganizer }: EventModel) => {
     const { type, frequency, interval, weekly, monthly, ends, vcalRruleValue } = frequencyModel;

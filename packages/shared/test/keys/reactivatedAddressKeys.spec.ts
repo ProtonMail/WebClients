@@ -1,9 +1,9 @@
-import { User as tsUser, Address as tsAddress } from '../../lib/interfaces';
-import { getDecryptedUserKeysHelper, getDecryptedAddressKeysHelper } from '../../lib/keys';
+import { Address as tsAddress, User as tsUser } from '../../lib/interfaces';
+import { getDecryptedAddressKeysHelper, getDecryptedUserKeysHelper } from '../../lib/keys';
 import {
     getAddressReactivationPayload,
-    getReactivatedAddressesKeys,
     getReactivatedAddressKeys,
+    getReactivatedAddressesKeys,
 } from '../../lib/keys/reactivation/reactivateKeyHelper';
 import { getAddressKey, getUserKey } from './keyDataHelper';
 

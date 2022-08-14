@@ -1,5 +1,6 @@
 import { StandardErrorPage, SubscriptionModalProvider } from '@proton/components';
 import { APPS } from '@proton/shared/lib/constants';
+
 import DeleteAccount from '../containers/DeleteAccount';
 import SubscribeAccount from '../containers/SubscribeAccount';
 

@@ -2,7 +2,6 @@ import { c } from 'ttag';
 
 import { Checkbox, Icon } from '../../../components';
 import { classnames } from '../../../helpers';
-
 import { Actions } from '../interfaces';
 
 interface Props {

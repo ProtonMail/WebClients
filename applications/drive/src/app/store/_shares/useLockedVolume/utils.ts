@@ -1,18 +1,12 @@
 import { c } from 'ttag';
 
-import {
-    CryptoProxy,
-    getMatchingSigningKey,
-    PrivateKeyReference,
-    VERIFICATION_STATUS,
-} from '@proton/crypto';
-import { concatArrays } from '@proton/crypto/lib/utils';
 import { useAddressesKeys } from '@proton/components';
-import { DecryptedKey } from '@proton/shared/lib/interfaces';
-import isTruthy from '@proton/utils/isTruthy';
-
+import { CryptoProxy, PrivateKeyReference, VERIFICATION_STATUS, getMatchingSigningKey } from '@proton/crypto';
+import { concatArrays } from '@proton/crypto/lib/utils';
 import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
+import { DecryptedKey } from '@proton/shared/lib/interfaces';
 import { getDecryptedSessionKey } from '@proton/shared/lib/keys/drivePassphrase';
+import isTruthy from '@proton/utils/isTruthy';
 
 import { LockedVolumeForRestore, ShareWithKey } from './../interface';
 

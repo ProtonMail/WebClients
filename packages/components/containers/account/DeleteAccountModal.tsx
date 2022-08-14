@@ -1,45 +1,47 @@
 import { ChangeEvent, FormEvent, useState } from 'react';
-import { c } from 'ttag';
-import { ACCOUNT_DELETION_REASONS } from '@proton/shared/lib/constants';
-import { deleteUser, canDelete, unlockPasswordChanges } from '@proton/shared/lib/api/user';
-import { reportBug } from '@proton/shared/lib/api/reports';
-import { srpAuth } from '@proton/shared/lib/srp';
-import { wait } from '@proton/shared/lib/helpers/promise';
-import isTruthy from '@proton/utils/isTruthy';
-import { getHasTOTPSettingEnabled } from '@proton/shared/lib/settings/twoFactor';
-import { omit } from '@proton/shared/lib/helpers/object';
-import noop from '@proton/utils/noop';
-import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { emailValidator, minLengthValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 
-import { getReportInfo, getClientName } from '../../helpers/report';
+import { c } from 'ttag';
+
+import { reportBug } from '@proton/shared/lib/api/reports';
+import { canDelete, deleteUser, unlockPasswordChanges } from '@proton/shared/lib/api/user';
+import { ACCOUNT_DELETION_REASONS } from '@proton/shared/lib/constants';
+import { emailValidator, minLengthValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
+import { omit } from '@proton/shared/lib/helpers/object';
+import { wait } from '@proton/shared/lib/helpers/promise';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import { getHasTOTPSettingEnabled } from '@proton/shared/lib/settings/twoFactor';
+import { srpAuth } from '@proton/shared/lib/srp';
+import isTruthy from '@proton/utils/isTruthy';
+import noop from '@proton/utils/noop';
+
 import {
     Alert,
     Button,
     Checkbox,
     ErrorButton,
+    Form,
     InputFieldTwo,
     ModalProps,
     ModalTwo,
     ModalTwoContent,
-    ModalTwoHeader,
     ModalTwoFooter,
+    ModalTwoHeader,
     Option,
     PasswordInputTwo,
     SelectTwo,
     TextAreaTwo,
     useFormErrors,
-    Form,
 } from '../../components';
+import { getClientName, getReportInfo } from '../../helpers/report';
 import {
-    useEventManager,
-    useUser,
-    useNotifications,
-    useUserSettings,
     useApi,
-    useLoading,
     useAuthentication,
     useConfig,
+    useEventManager,
+    useLoading,
+    useNotifications,
+    useUser,
+    useUserSettings,
 } from '../../hooks';
 
 const { DIFFERENT_ACCOUNT, TOO_EXPENSIVE, MISSING_FEATURE, USE_OTHER_SERVICE, OTHER } = ACCOUNT_DELETION_REASONS;

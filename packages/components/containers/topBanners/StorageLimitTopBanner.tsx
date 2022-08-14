@@ -1,10 +1,11 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
+
 import { c } from 'ttag';
+
 import { getItem, setItem } from '@proton/shared/lib/helpers/storage';
 
-import { useUser } from '../../hooks';
 import { SettingsLink } from '../../components';
-
+import { useUser } from '../../hooks';
 import TopBanner from './TopBanner';
 
 const IGNORE_STORAGE_LIMIT_KEY = 'ignore-storage-limit';

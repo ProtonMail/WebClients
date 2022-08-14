@@ -1,4 +1,4 @@
-import { ComponentProps, ElementType, forwardRef, ReactElement, Ref } from 'react';
+import { ComponentProps, ElementType, ReactElement, Ref, forwardRef } from 'react';
 
 // from: https://github.com/kripod/react-polymorphic-box
 

@@ -1,21 +1,25 @@
 import { useEffect, useState } from 'react';
+
 import { c } from 'ttag';
+
 import { reactivateMnemonicPhrase } from '@proton/shared/lib/api/settingsMnemonic';
-import { generateMnemonicPayload, generateMnemonicWithSalt, MnemonicData } from '@proton/shared/lib/mnemonic';
-import userPromptSvg from '@proton/styles/assets/img/illustrations/passphrase-recover.svg';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import { MnemonicData, generateMnemonicPayload, generateMnemonicWithSalt } from '@proton/shared/lib/mnemonic';
+import userPromptSvg from '@proton/styles/assets/img/illustrations/passphrase-recover.svg';
+
 import {
     Button,
     Href,
-    ModalProps,
     ModalTwo as Modal,
-    ModalTwoHeader as ModalHeader,
     ModalTwoContent as ModalContent,
     ModalTwoFooter as ModalFooter,
+    ModalTwoHeader as ModalHeader,
+    ModalProps,
 } from '../../components';
 import { useApi, useFeature, useGetUserKeys, useUser } from '../../hooks';
-import { MnemonicPhraseStepButtons, MnemonicPhraseStepContent } from './MnemonicPhraseStep';
 import { FeatureCode } from '../features';
+import { MnemonicPhraseStepButtons, MnemonicPhraseStepContent } from './MnemonicPhraseStep';
+
 import './MnemonicPromptModal.scss';
 
 enum STEPS {

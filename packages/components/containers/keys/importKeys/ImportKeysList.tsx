@@ -1,5 +1,6 @@
 import { c } from 'ttag';
-import { LoaderIcon, Table, TableRow, TableHeader, TableBody, Badge } from '../../../components';
+
+import { Badge, LoaderIcon, Table, TableBody, TableHeader, TableRow } from '../../../components';
 import { ImportKey, Status } from './interface';
 
 interface Props {

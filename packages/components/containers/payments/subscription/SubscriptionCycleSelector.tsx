@@ -1,14 +1,15 @@
 import React from 'react';
+
 import { c, msgid } from 'ttag';
+
 import { CYCLE, PLAN_TYPES } from '@proton/shared/lib/constants';
-import { Plan, PlanIDs, Currency, PlansMap } from '@proton/shared/lib/interfaces';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { getSupportedAddons } from '@proton/shared/lib/helpers/planIDs';
+import { Currency, Plan, PlanIDs, PlansMap } from '@proton/shared/lib/interfaces';
 
 import { Option, Price, Radio, SelectTwo } from '../../../components';
-
-import { classnames } from '../../../helpers';
 import InputField from '../../../components/v2/field/InputField';
+import { classnames } from '../../../helpers';
 
 interface Props {
     cycle: CYCLE;

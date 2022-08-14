@@ -1,8 +1,10 @@
 import { useState } from 'react';
-import { Nullable } from '@proton/shared/lib/interfaces/utils';
+
 import { c } from 'ttag';
 
-import { BasicModal, InputTwo, Button, Form } from '../../../components';
+import { Nullable } from '@proton/shared/lib/interfaces/utils';
+
+import { BasicModal, Button, Form, InputTwo } from '../../../components';
 import { useLoading, useNotifications } from '../../../hooks';
 
 interface Props {

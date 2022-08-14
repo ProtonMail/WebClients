@@ -1,7 +1,9 @@
 import { render, waitFor } from '@testing-library/react';
+
 import { prepareVCardContact } from '@proton/shared/lib/contacts/encrypt';
-import ContactMergingContent from './ContactMergingContent';
+
 import useApi from '../../../hooks/useApi';
+import ContactMergingContent from './ContactMergingContent';
 
 const encrypt = prepareVCardContact as jest.Mock;
 

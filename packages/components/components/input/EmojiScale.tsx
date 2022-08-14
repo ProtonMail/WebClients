@@ -1,16 +1,18 @@
 import { ChangeEvent, ComponentPropsWithoutRef } from 'react';
+
 import { c } from 'ttag';
 
 import emojiAwful from '@proton/styles/assets/img/emojis/emoji-awful.svg';
 import emojiBad from '@proton/styles/assets/img/emojis/emoji-bad.svg';
-import emojiOk from '@proton/styles/assets/img/emojis/emoji-ok.svg';
 import emojiGood from '@proton/styles/assets/img/emojis/emoji-good.svg';
+import emojiOk from '@proton/styles/assets/img/emojis/emoji-ok.svg';
 import emojiWonderful from '@proton/styles/assets/img/emojis/emoji-wonderful.svg';
 
-import InputButton, { InputButtonProps } from './InputButton';
 import { classnames } from '../../helpers';
 import { Tooltip } from '../tooltip';
+import InputButton, { InputButtonProps } from './InputButton';
 import ScaleLabel from './ScaleLabel';
+
 import './EmojiScale.scss';
 
 export interface EmojiScaleProps extends Omit<ComponentPropsWithoutRef<'div'>, 'onChange'> {

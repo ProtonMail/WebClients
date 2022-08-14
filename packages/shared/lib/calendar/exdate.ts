@@ -1,6 +1,6 @@
+import { toUTCDate } from '../date/timezone';
 import { DateTimeValue } from '../interfaces/calendar';
 import { VcalDateOrDateTimeProperty, VcalDateProperty, VcalDateTimeProperty } from '../interfaces/calendar/VcalModel';
-import { toUTCDate } from '../date/timezone';
 import { getDateProperty, getDateTimeProperty } from './vcalConverter';
 
 export const createExdateMap = (exdate: VcalDateOrDateTimeProperty[] = []) => {

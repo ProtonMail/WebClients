@@ -1,12 +1,12 @@
-import { c } from 'ttag';
 import { format } from 'date-fns';
 import cnLocale from 'date-fns/locale/zh-CN';
+import { c } from 'ttag';
 
-import { getClosestLocaleMatch, getLanguageCode } from '../../lib/i18n/helper';
+import { DEFAULT_LOCALE } from '../../lib/constants';
 import { getDateFnLocaleWithTimeFormat } from '../../lib/i18n/dateFnLocale';
+import { getClosestLocaleMatch, getLanguageCode } from '../../lib/i18n/helper';
 import { loadDateLocale, loadLocale } from '../../lib/i18n/loadLocale';
 import { SETTINGS_TIME_FORMAT } from '../../lib/interfaces';
-import { DEFAULT_LOCALE } from '../../lib/constants';
 
 describe('helper', () => {
     it('should get the closest locale', () => {

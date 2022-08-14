@@ -1,4 +1,4 @@
-import { getLabels, getFolders, getContactGroup } from '../api/labels';
+import { getContactGroup, getFolders, getLabels } from '../api/labels';
 import updateCollection from '../helpers/updateCollection';
 
 const extractLabels = ({ Labels = [] }) => Labels;

@@ -1,7 +1,9 @@
 import { c } from 'ttag';
+
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import isTruthy from '@proton/utils/isTruthy';
-import { Button, Table, TableHeader, TableBody, TableRow, TableCell } from '../../../components';
+
+import { Button, Table, TableBody, TableCell, TableHeader, TableRow } from '../../../components';
 
 interface Props {
     contactEmails: ContactEmail[];

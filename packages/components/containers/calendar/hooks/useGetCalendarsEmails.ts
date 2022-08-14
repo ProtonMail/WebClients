@@ -1,4 +1,5 @@
 import { useEffect, useReducer } from 'react';
+
 import { SimpleMap } from '@proton/shared/lib/interfaces';
 import { Calendar } from '@proton/shared/lib/interfaces/calendar';
 

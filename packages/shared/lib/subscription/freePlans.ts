@@ -1,4 +1,4 @@
-import { CYCLE, DEFAULT_CURRENCY, DEFAULT_CYCLE, PLAN_SERVICES, PLAN_TYPES, PLANS } from '../constants';
+import { CYCLE, DEFAULT_CURRENCY, DEFAULT_CYCLE, PLANS, PLAN_SERVICES, PLAN_TYPES } from '../constants';
 import { Currency, Cycle, Plan, SubscriptionCheckResponse } from '../interfaces';
 
 export const FREE_PLAN = {

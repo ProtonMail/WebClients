@@ -1,4 +1,5 @@
 import { format, fromUnixTime } from 'date-fns';
+
 import { dateLocale } from '@proton/shared/lib/i18n';
 import { Referral, ReferralState } from '@proton/shared/lib/interfaces';
 

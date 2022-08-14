@@ -1,8 +1,10 @@
-import { c } from 'ttag';
 import PropTypes from 'prop-types';
+import { c } from 'ttag';
+
 import { DKIM_STATE, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { Alert, Table, TableHeader, TableBody, TableRow, TableCell, Copy } from '../../components';
+
+import { Alert, Copy, Table, TableBody, TableCell, TableHeader, TableRow } from '../../components';
 import { useNotifications } from '../../hooks';
 
 const DKIMSection = ({ domain }) => {

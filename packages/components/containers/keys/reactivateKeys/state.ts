@@ -1,6 +1,7 @@
 import { CryptoProxy } from '@proton/crypto';
-import getRandomString from "@proton/utils/getRandomString";
-import { KeyReactivationRequestStateData, KeyReactivationRequestState, KeyReactivationRequest } from './interface';
+import getRandomString from '@proton/utils/getRandomString';
+
+import { KeyReactivationRequest, KeyReactivationRequestState, KeyReactivationRequestStateData } from './interface';
 
 export const getInitialStates = async (initial: KeyReactivationRequest[]): Promise<KeyReactivationRequestState[]> => {
     if (initial.length === 0) {

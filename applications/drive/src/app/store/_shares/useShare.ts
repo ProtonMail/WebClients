@@ -1,10 +1,10 @@
 import { CryptoProxy, PrivateKeyReference, SessionKey } from '@proton/crypto';
-import { ShareMeta } from '@proton/shared/lib/interfaces/drive/share';
 import { queryShareMeta } from '@proton/shared/lib/api/drive/share';
+import { ShareMeta } from '@proton/shared/lib/interfaces/drive/share';
 
-import { useDebouncedFunction } from '../_utils';
-import { useDebouncedRequest, shareMetaToShareWithKey } from '../_api';
+import { shareMetaToShareWithKey, useDebouncedRequest } from '../_api';
 import { useDriveCrypto } from '../_crypto';
+import { useDebouncedFunction } from '../_utils';
 import { Share, ShareWithKey } from './interface';
 import useSharesKeys, { ShareKeys } from './useSharesKeys';
 import useSharesState from './useSharesState';

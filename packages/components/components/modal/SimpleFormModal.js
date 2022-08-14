@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
-import DialogModal from './Dialog';
+
 import ContentModal from './Content';
+import DialogModal from './Dialog';
 
 const SimpleFormModal = ({ modalTitleID = 'modalTitle', children, onSubmit, onClose, ...rest }) => {
     return (

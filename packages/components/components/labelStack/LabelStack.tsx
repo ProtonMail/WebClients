@@ -1,4 +1,5 @@
 import { MouseEvent } from 'react';
+
 import { classnames } from '../../helpers';
 import Tooltip from '../tooltip/Tooltip';
 import LabelStackItem from './LabelStackItem';

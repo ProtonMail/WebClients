@@ -2,9 +2,9 @@
  * Usage node linter.mjs [arg]
  *  - arg can be a directory or a single file (default src)
  */
-import path from 'path';
 import { readFile } from 'fs/promises';
 import glob from 'glob';
+import path from 'path';
 
 /**
  * Test a rule inside the code and see if we find lines matching it

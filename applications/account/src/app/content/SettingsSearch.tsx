@@ -1,6 +1,8 @@
-import { c } from 'ttag';
 import { useRef, useState } from 'react';
 import { useHistory } from 'react-router-dom';
+
+import { c } from 'ttag';
+
 import {
     AutocompleteList,
     Icon,
@@ -11,10 +13,10 @@ import {
     useAutocomplete,
     useAutocompleteFilter,
 } from '@proton/components';
-import { getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
-import { APP_NAMES, APPS } from '@proton/shared/lib/constants';
-import isTruthy from '@proton/utils/isTruthy';
 import { getIsSectionAvailable, getIsSubsectionAvailable } from '@proton/components/containers/layout/helper';
+import { getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
+import { APPS, APP_NAMES } from '@proton/shared/lib/constants';
+import isTruthy from '@proton/utils/isTruthy';
 
 import { getRoutes } from './routes';
 

@@ -1,4 +1,5 @@
 import { CryptoProxy, KeyID } from '@proton/crypto';
+
 import { CONTACT_CARD_TYPE } from '../constants';
 import { Key } from '../interfaces';
 import { Contact } from '../interfaces/contacts';

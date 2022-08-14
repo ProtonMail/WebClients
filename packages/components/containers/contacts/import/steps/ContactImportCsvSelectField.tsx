@@ -1,4 +1,5 @@
 import { getAllFields } from '@proton/shared/lib/helpers/contacts';
+
 import { Label, Option, SelectTwo } from '../../../../components';
 import { SelectChangeEvent } from '../../../../components/selectTwo/select';
 

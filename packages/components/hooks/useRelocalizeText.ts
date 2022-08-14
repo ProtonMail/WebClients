@@ -1,5 +1,7 @@
-import { relocalizeText } from '@proton/shared/lib/i18n/relocalize';
 import { useCallback } from 'react';
+
+import { relocalizeText } from '@proton/shared/lib/i18n/relocalize';
+
 import useUserSettings from './useUserSettings';
 
 const useRelocalizeText = () => {

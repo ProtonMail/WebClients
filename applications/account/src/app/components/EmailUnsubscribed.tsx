@@ -1,5 +1,7 @@
-import { Button } from '@proton/components';
 import { c } from 'ttag';
+
+import { Button } from '@proton/components';
+
 import EmailUnsubscribeCategories from './EmailUnsubscribeCategories';
 import PublicLayout from './PublicLayout';
 

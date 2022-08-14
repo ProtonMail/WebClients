@@ -1,15 +1,16 @@
-import { useState, useRef, useEffect } from 'react';
+import { useEffect, useRef, useState } from 'react';
+
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import errorSvg from '@proton/styles/assets/img/errors/error-generic.svg';
+
 import { ADD_CARD_MODE, PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
 import { doNotWindowOpen } from '@proton/shared/lib/helpers/browser';
+import errorSvg from '@proton/styles/assets/img/errors/error-generic.svg';
 
+import { Button, DoNotWindowOpenAlertError, FormModal, Loader, PrimaryButton } from '../../components';
 import { useNotifications } from '../../hooks';
-import { FormModal, Loader, Button, PrimaryButton, DoNotWindowOpenAlertError } from '../../components';
-
-import { toParams } from './paymentTokenToParams';
 import PaymentVerificationImage from './PaymentVerificationImage';
+import { toParams } from './paymentTokenToParams';
 
 const STEPS = {
     DO_NOT_WINDOW_OPEN: 'do_not_window_open',

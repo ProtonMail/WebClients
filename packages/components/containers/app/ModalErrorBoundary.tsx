@@ -1,8 +1,10 @@
 import { ReactNode } from 'react';
+
 import { c } from 'ttag';
+
 import { FormModal } from '../../components';
-import ErrorBoundary from './ErrorBoundary';
 import { GenericError } from '../error';
+import ErrorBoundary from './ErrorBoundary';
 
 interface Props {
     children?: ReactNode;

@@ -1,20 +1,21 @@
-import { getVerifyingKeys } from '@proton/shared/lib/keys/publicKeys';
-import { Fragment, useState, useEffect, Dispatch, SetStateAction } from 'react';
-import { isValid, format } from 'date-fns';
+import { Dispatch, Fragment, SetStateAction, useEffect, useState } from 'react';
+
+import { format, isValid } from 'date-fns';
 import { c } from 'ttag';
 
-import { PublicKeyReference, CryptoProxy } from '@proton/crypto';
-import uniqueBy from '@proton/utils/uniqueBy';
-import move from '@proton/utils/move';
-import { dateLocale } from '@proton/shared/lib/i18n';
+import { CryptoProxy, PublicKeyReference } from '@proton/crypto';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
-import { getFormattedAlgorithmNames } from '@proton/shared/lib/keys';
-import { ContactPublicKeyModel } from '@proton/shared/lib/interfaces';
-
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { Badge, DropdownActions, ContactKeyWarningIcon, Table, TableBody, TableRow } from '../../../components';
-import useActiveBreakpoint from '../../../hooks/useActiveBreakpoint';
+import { dateLocale } from '@proton/shared/lib/i18n';
+import { ContactPublicKeyModel } from '@proton/shared/lib/interfaces';
+import { getFormattedAlgorithmNames } from '@proton/shared/lib/keys';
+import { getVerifyingKeys } from '@proton/shared/lib/keys/publicKeys';
+import move from '@proton/utils/move';
+import uniqueBy from '@proton/utils/uniqueBy';
+
+import { Badge, ContactKeyWarningIcon, DropdownActions, Table, TableBody, TableRow } from '../../../components';
 import { classnames } from '../../../helpers';
+import useActiveBreakpoint from '../../../hooks/useActiveBreakpoint';
 
 interface Props {
     model: ContactPublicKeyModel;

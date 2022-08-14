@@ -1,13 +1,13 @@
-import { Toolbar, PrivateMainArea } from '@proton/components';
+import { PrivateMainArea, Toolbar } from '@proton/components';
 import { LinkURLType } from '@proton/shared/lib/drive/constants';
 
-import { useFolderView } from '../../../store';
 import useActiveShare from '../../../hooks/drive/useActiveShare';
-import UploadDragDrop from '../../uploads/UploadDragDrop/UploadDragDrop';
+import { useFolderView } from '../../../store';
 import DriveBreadcrumbs from '../../DriveBreadcrumbs';
-import DriveToolbar from './DriveToolbar';
-import Drive from './Drive';
 import { FileBrowserStateProvider } from '../../FileBrowser';
+import UploadDragDrop from '../../uploads/UploadDragDrop/UploadDragDrop';
+import Drive from './Drive';
+import DriveToolbar from './DriveToolbar';
 
 export type DriveSectionRouteProps = { shareId?: string; type?: LinkURLType; linkId?: string };
 

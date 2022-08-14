@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
-import { MAXIMUM_DATE, MINIMUM_DATE, DATE_INPUT_ID } from '@proton/shared/lib/calendar/constants';
+import { DateInput, MemoizedIconRow as IconRow, TimeInput } from '@proton/components';
+import { DATE_INPUT_ID, MAXIMUM_DATE, MINIMUM_DATE } from '@proton/shared/lib/calendar/constants';
 import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
-import { DateInput, TimeInput, MemoizedIconRow as IconRow } from '@proton/components';
 import { EventModel } from '@proton/shared/lib/interfaces/calendar';
 
 import { getAllDayCheck } from '../eventForm/stateActions';

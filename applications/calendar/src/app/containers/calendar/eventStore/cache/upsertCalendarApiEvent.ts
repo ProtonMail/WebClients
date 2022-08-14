@@ -1,13 +1,14 @@
-import { CalendarEventWithMetadata } from '@proton/shared/lib/interfaces/calendar';
+import { APPS } from '@proton/shared/lib/constants';
 import { pick } from '@proton/shared/lib/helpers/object';
+import { CalendarEventWithMetadata } from '@proton/shared/lib/interfaces/calendar';
 import { postMessageFromIframe } from '@proton/shared/lib/sideApp/helpers';
 import { SIDE_APP_EVENTS } from '@proton/shared/lib/sideApp/models';
-import { APPS } from '@proton/shared/lib/constants';
+
+import { OpenedMailEvent } from '../../../../hooks/useGetOpenedMailEvents';
 import { CalendarEventsCache } from '../interface';
 import getComponentFromCalendarEvent from './getComponentFromCalendarEvent';
-import { getCalendarEventStoreRecord, upsertCalendarEventStoreRecord } from './upsertCalendarEventStoreRecord';
 import removeCalendarEventStoreRecord from './removeCalendarEventStoreRecord';
-import { OpenedMailEvent } from '../../../../hooks/useGetOpenedMailEvents';
+import { getCalendarEventStoreRecord, upsertCalendarEventStoreRecord } from './upsertCalendarEventStoreRecord';
 
 const FIELDS_TO_KEEP = [
     'ID',

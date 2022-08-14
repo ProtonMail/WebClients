@@ -1,7 +1,6 @@
 import { getIsMnemonicAvailable } from '../containers/mnemonic/helper';
-
-import useConfig from './useConfig';
 import useAddresses from './useAddresses';
+import useConfig from './useConfig';
 import useUser from './useUser';
 
 const useIsMnemonicAvailable = () => {

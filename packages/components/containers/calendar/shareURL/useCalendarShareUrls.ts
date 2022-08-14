@@ -1,3 +1,5 @@
+import { useEffect, useMemo, useState } from 'react';
+
 import {
     getIsCalendarUrlEventManagerCreate,
     getIsCalendarUrlEventManagerDelete,
@@ -5,17 +7,17 @@ import {
     transformLinkFromAPI,
     transformLinksFromAPI,
 } from '@proton/shared/lib/calendar/shareUrl/helpers';
-import updateItem from '@proton/utils/updateItem';
+import { getIsCalendarEventManagerDelete } from '@proton/shared/lib/eventManager/helpers';
 import { SimpleMap } from '@proton/shared/lib/interfaces';
-import { VisualCalendar, CalendarLink, CalendarUrl } from '@proton/shared/lib/interfaces/calendar';
+import { CalendarLink, CalendarUrl, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import {
     CalendarEventManager,
     CalendarUrlEventManager,
     CalendarUrlEventManagerDelete,
 } from '@proton/shared/lib/interfaces/calendar/EventManager';
 import { splitKeys } from '@proton/shared/lib/keys';
-import { useEffect, useMemo, useState } from 'react';
-import { getIsCalendarEventManagerDelete } from '@proton/shared/lib/eventManager/helpers';
+import updateItem from '@proton/utils/updateItem';
+
 import { useEventManager, useGetCalendarInfo, useLoading, useNotifications } from '../../../hooks';
 import { useGetCalendarPublicLinks } from '../../../hooks/useGetCalendarPublicLinks';
 import { useCalendarModelEventManager } from '../../eventManager';

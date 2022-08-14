@@ -1,19 +1,19 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import * as React from 'react';
 import { useLocation } from 'react-router-dom';
 
 import {
+    AccessDeniedError,
     ErrorBoundary,
     GenericError,
-    generateUID,
     InternalServerError,
     NotFoundError,
-    AccessDeniedError,
     PrivateMainArea,
+    generateUID,
 } from '@proton/components';
-import { ApiError } from '@proton/shared/lib/fetch/ApiError';
-import { RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
 import { HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
+import { RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
+import { ApiError } from '@proton/shared/lib/fetch/ApiError';
 
 import useActiveShare from '../hooks/drive/useActiveShare';
 

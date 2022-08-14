@@ -1,29 +1,24 @@
 import { MouseEvent, useEffect, useMemo, useState } from 'react';
-import { addDays, fromUnixTime } from 'date-fns';
 import { useLocation } from 'react-router';
+
+import { addDays, fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
-import { APP_NAMES, APPS, BRAND_NAME, isSSOMode, SSO_PATHS } from '@proton/shared/lib/constants';
-import { getIsEventModified } from '@proton/shared/lib/helpers/dom';
-import { getAppHref } from '@proton/shared/lib/apps/helper';
-import { requestFork } from '@proton/shared/lib/authentication/sessionForking';
-import { FORK_TYPE } from '@proton/shared/lib/authentication/ForkInterface';
-import { getHasLegacyPlans, getPlan, getPrimaryPlan, hasLifetime } from '@proton/shared/lib/helpers/subscription';
-import { getAppFromPathnameSafe, getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
-import { getShopURL, getStaticURL } from '@proton/shared/lib/helpers/url';
+
 import { NotificationDot } from '@proton/atoms';
+import { ThemeColor } from '@proton/colors';
 import {
     Button,
     ButtonLike,
     Copy,
     Dropdown,
     DropdownMenu,
-    DropdownMenuLink,
     DropdownMenuButton,
-    SimpleDropdown,
-    SettingsLink,
+    DropdownMenuLink,
     FeatureCode,
     Icon,
     ReferralSpotlight,
+    SettingsLink,
+    SimpleDropdown,
     useAuthentication,
     useConfig,
     useFeature,
@@ -37,12 +32,19 @@ import {
     useUser,
     useUserSettings,
 } from '@proton/components';
+import { getAppHref } from '@proton/shared/lib/apps/helper';
+import { getAppFromPathnameSafe, getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
+import { FORK_TYPE } from '@proton/shared/lib/authentication/ForkInterface';
+import { requestFork } from '@proton/shared/lib/authentication/sessionForking';
+import { APPS, APP_NAMES, BRAND_NAME, SSO_PATHS, isSSOMode } from '@proton/shared/lib/constants';
+import { getIsEventModified } from '@proton/shared/lib/helpers/dom';
+import { getHasLegacyPlans, getPlan, getPrimaryPlan, hasLifetime } from '@proton/shared/lib/helpers/subscription';
+import { getShopURL, getStaticURL } from '@proton/shared/lib/helpers/url';
 import { Subscription } from '@proton/shared/lib/interfaces';
-import { ThemeColor } from '@proton/colors';
 
 import { classnames, generateUID } from '../../helpers';
-import UserDropdownButton, { Props as UserDropdownButtonProps } from './UserDropdownButton';
 import { AuthenticatedBugModal } from '../support';
+import UserDropdownButton, { Props as UserDropdownButtonProps } from './UserDropdownButton';
 
 const getPlanTitle = (subscription: Subscription, app: APP_NAMES) => {
     if (!subscription) {

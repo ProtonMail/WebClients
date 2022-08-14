@@ -1,11 +1,13 @@
 import { c } from 'ttag';
-import { useGetAddresses, useGetAddressKeys } from '@proton/components';
-import { loadModels } from '../../models/helper';
-import { CalendarsModel } from '../../models';
+
+import { useGetAddressKeys, useGetAddresses } from '@proton/components';
+
 import { Api } from '../../interfaces';
 import { Calendar } from '../../interfaces/calendar';
-import { resetCalendarKeys } from './resetCalendarKeys';
+import { CalendarsModel } from '../../models';
+import { loadModels } from '../../models/helper';
 import { reactivateCalendarsKeys } from './reactivateCalendarKeys';
+import { resetCalendarKeys } from './resetCalendarKeys';
 
 interface ProcessArguments {
     api: Api;

@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { classnames, FloatingButton, Icon, SidebarPrimaryButton } from '@proton/components';
+import { FloatingButton, Icon, SidebarPrimaryButton, classnames } from '@proton/components';
 
 import useActiveShare from '../../../hooks/drive/useActiveShare';
 import { useDownload, useFileUploadInput, useUpload } from '../../../store';

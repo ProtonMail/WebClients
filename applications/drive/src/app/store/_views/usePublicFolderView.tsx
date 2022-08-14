@@ -4,10 +4,10 @@ import { useLoading } from '@proton/components';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import { LayoutSetting } from '@proton/shared/lib/interfaces/drive/userSettings';
 
-import { usePublicLinksListing } from '../_links';
-import { useMemoArrayNoMatterTheOrder, useAbortSignal, useLinkName, useSortingWithDefault } from './utils';
-import { SortField } from './utils/useSorting';
 import { useSelectionControls } from '../../components/FileBrowser';
+import { usePublicLinksListing } from '../_links';
+import { useAbortSignal, useLinkName, useMemoArrayNoMatterTheOrder, useSortingWithDefault } from './utils';
+import { SortField } from './utils/useSorting';
 
 const DEFAULT_SORT = {
     sortField: 'name' as SortField,

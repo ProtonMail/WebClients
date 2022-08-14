@@ -1,9 +1,10 @@
+import { useCallback } from 'react';
+
 import { queryPremiumDomains } from '@proton/shared/lib/api/domains';
 
-import { useCallback } from 'react';
-import useCachedModelResult from './useCachedModelResult';
 import useApi from './useApi';
 import useCache from './useCache';
+import useCachedModelResult from './useCachedModelResult';
 
 const getPremiumDomains = (api) => api(queryPremiumDomains()).then(({ Domains = [] }) => Domains);
 

@@ -1,29 +1,31 @@
 import { useState } from 'react';
+
 import { c } from 'ttag';
 
-import { SHOW_IMAGES, STICKY_LABELS, VIEW_MODE } from '@proton/shared/lib/constants';
 import { updateSpamAction, updateStickyLabels, updateViewMode } from '@proton/shared/lib/api/mailSettings';
+import { SHOW_IMAGES, STICKY_LABELS, VIEW_MODE } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-
 import { SpamAction } from '@proton/shared/lib/interfaces';
+
 import { Info } from '../../components';
 import { useApi, useEventManager, useFeature, useLoading, useMailSettings, useNotifications } from '../../hooks';
-import EmbeddedToggle from './EmbeddedToggle';
-import ShowMovedToggle from './ShowMovedToggle';
-import RequestLinkConfirmationToggle from './RequestLinkConfirmationToggle';
 import SettingsLayout from '../account/SettingsLayout';
 import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../account/SettingsLayoutRight';
-import { FeatureCode } from '../features';
 import { RemoteToggle } from '../emailPrivacy';
-import ViewModeToggle from '../layouts/ViewModeToggle';
+import { FeatureCode } from '../features';
 import StickyLabelsToggle from '../layouts/StickyLabelsToggle';
+import ViewModeToggle from '../layouts/ViewModeToggle';
+import EmbeddedToggle from './EmbeddedToggle';
+import RequestLinkConfirmationToggle from './RequestLinkConfirmationToggle';
+import ShowMovedToggle from './ShowMovedToggle';
 import SpamActionSelect from './SpamActionSelect';
 
 const { EMBEDDED } = SHOW_IMAGES;
 
 const MessagesSection = () => {
-    const [{ ViewMode = 0, StickyLabels = 0, ShowImages = EMBEDDED, ConfirmLink = 1, SpamAction = null, } = {}] = useMailSettings();
+    const [{ ViewMode = 0, StickyLabels = 0, ShowImages = EMBEDDED, ConfirmLink = 1, SpamAction = null } = {}] =
+        useMailSettings();
     const [showImages, setShowImages] = useState(ShowImages);
     const handleChange = (newValue: number) => setShowImages(newValue);
     const { feature: spyTrackerFeature } = useFeature(FeatureCode.SpyTrackerProtection);

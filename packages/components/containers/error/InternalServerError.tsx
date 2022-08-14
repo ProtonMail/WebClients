@@ -1,5 +1,7 @@
 import { c } from 'ttag';
+
 import internalServerErrorSvg from '@proton/styles/assets/img/errors/error-500.svg';
+
 import IllustrationPlaceholder from '../illustration/IllustrationPlaceholder';
 
 const InternalServerError = () => {

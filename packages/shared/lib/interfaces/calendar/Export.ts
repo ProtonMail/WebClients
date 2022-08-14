@@ -1,5 +1,5 @@
-import { Calendar } from './Calendar';
 import { WeekStartsOn } from '../../date-fns-utc/interface';
+import { Calendar } from './Calendar';
 
 export enum EXPORT_STEPS {
     EXPORTING,

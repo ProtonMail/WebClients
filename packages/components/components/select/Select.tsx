@@ -1,10 +1,9 @@
-import { DetailedHTMLProps, forwardRef, OptionHTMLAttributes, Ref, SelectHTMLAttributes, useState } from 'react';
+import { DetailedHTMLProps, OptionHTMLAttributes, Ref, SelectHTMLAttributes, forwardRef, useState } from 'react';
 
-import { generateUID, classnames } from '../../helpers';
+import { classnames, generateUID } from '../../helpers';
+import Icon from '../icon/Icon';
 import useInput from '../input/useInput';
 import ErrorZone from '../text/ErrorZone';
-
-import Icon from '../icon/Icon';
 
 export interface OptionProps extends DetailedHTMLProps<OptionHTMLAttributes<HTMLOptionElement>, HTMLOptionElement> {
     value: string | number;

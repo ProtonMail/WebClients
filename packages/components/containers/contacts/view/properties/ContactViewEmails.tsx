@@ -1,15 +1,17 @@
 import { c } from 'ttag';
-import { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';
+
 import { getSortedProperties } from '@proton/shared/lib/contacts/properties';
 import { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
-import ContactViewProperty from './ContactViewProperty';
-import { ContactViewProperties } from './ContactViewProperties';
-import { ContactEmailSettingsProps } from '../../email/ContactEmailSettingsModal';
-import { Button, Icon, Tooltip, Copy } from '../../../../components';
+import { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';
+
+import { Button, Copy, Icon, Tooltip } from '../../../../components';
 import { useNotifications } from '../../../../hooks';
 import ContactGroupDropdown from '../../ContactGroupDropdown';
-import ContactGroupLabels from '../../group/ContactGroupLabels';
+import { ContactEmailSettingsProps } from '../../email/ContactEmailSettingsModal';
 import { ContactGroupEditProps } from '../../group/ContactGroupEditModal';
+import ContactGroupLabels from '../../group/ContactGroupLabels';
+import { ContactViewProperties } from './ContactViewProperties';
+import ContactViewProperty from './ContactViewProperty';
 
 interface Props {
     vCardContact: VCardContact;

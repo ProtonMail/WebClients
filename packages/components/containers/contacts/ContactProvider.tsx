@@ -1,14 +1,12 @@
-import { useLayoutEffect, ReactNode } from 'react';
-
-import createCache from '@proton/shared/lib/helpers/cache';
-import createLRU from '@proton/shared/lib/helpers/lru';
-import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
-import { STATUS } from '@proton/shared/lib/models/cache';
+import { ReactNode, useLayoutEffect } from 'react';
 
 import useInstance from '@proton/hooks/useInstance';
+import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
+import createCache from '@proton/shared/lib/helpers/cache';
+import createLRU from '@proton/shared/lib/helpers/lru';
+import { STATUS } from '@proton/shared/lib/models/cache';
 
 import { useEventManager } from '../../hooks';
-
 import ContactProviderContext from './ContactProviderContext';
 
 interface Props {

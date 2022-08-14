@@ -2,8 +2,9 @@ import { getSupportedUID } from '@proton/shared/lib/calendar/helper';
 import { getIsAllDay } from '@proton/shared/lib/calendar/vcalHelper';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
-import { getSafeRruleCount, getSafeRruleUntil } from './helper';
+
 import { CalendarEventRecurring } from '../../../interfaces/CalendarEvents';
+import { getSafeRruleCount, getSafeRruleUntil } from './helper';
 
 const getRecurrenceOffsetID = (date: Date, isAllDay: boolean) => {
     const dateString = [date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate()]

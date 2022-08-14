@@ -1,4 +1,5 @@
 import { rest } from 'msw';
+
 import { addressBuilder, calendarBuilder, calendarEventBuilder, userBuilder } from './builders';
 
 export const handlers = [

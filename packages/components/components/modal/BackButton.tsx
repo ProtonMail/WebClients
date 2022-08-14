@@ -1,5 +1,7 @@
 import { ButtonHTMLAttributes, DetailedHTMLProps } from 'react';
+
 import { c } from 'ttag';
+
 import { Icon } from '../icon';
 
 const BackButton = ({

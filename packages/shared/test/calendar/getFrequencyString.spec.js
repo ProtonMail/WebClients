@@ -1,9 +1,9 @@
 import { enUS } from 'date-fns/locale';
-import { getFormattedWeekdays } from '../../lib/date/date';
-import { getTimezonedFrequencyString } from '../../lib/calendar/integration/getFrequencyString';
 
-import { getDateTimeProperty, getUntilProperty } from '../../lib/calendar/vcalConverter';
 import { FREQUENCY } from '../../lib/calendar/constants';
+import { getTimezonedFrequencyString } from '../../lib/calendar/integration/getFrequencyString';
+import { getDateTimeProperty, getUntilProperty } from '../../lib/calendar/vcalConverter';
+import { getFormattedWeekdays } from '../../lib/date/date';
 
 const weekdays = getFormattedWeekdays('cccc', { locale: enUS });
 const dummyTzid = 'Europe/Athens';

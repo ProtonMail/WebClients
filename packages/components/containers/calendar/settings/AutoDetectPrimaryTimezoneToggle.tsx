@@ -1,10 +1,11 @@
 import { c } from 'ttag';
+
 import { updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
 import { CalendarUserSettings } from '@proton/shared/lib/interfaces/calendar';
 
-import { useApi, useEventManager, useLoading, useNotifications } from '../../../hooks';
 import { Toggle } from '../../../components';
 import { ToggleProps } from '../../../components/toggle/Toggle';
+import { useApi, useEventManager, useLoading, useNotifications } from '../../../hooks';
 
 interface Props extends ToggleProps {
     calendarUserSettings: CalendarUserSettings;

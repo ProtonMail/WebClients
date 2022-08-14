@@ -1,23 +1,25 @@
-import { pick } from '@proton/shared/lib/helpers/object';
 import { MutableRefObject, useEffect, useRef, useState } from 'react';
-import useGetCalendarEventPersonal from '@proton/components/hooks/useGetCalendarEventPersonal';
-import { useApi, useGetCalendarEventRaw } from '@proton/components';
-import { wait } from '@proton/shared/lib/helpers/promise';
-import { CalendarEvent, CalendarEventWithMetadata } from '@proton/shared/lib/interfaces/calendar';
-import { getEvent as getEventRoute } from '@proton/shared/lib/api/calendars';
+
 import { c } from 'ttag';
 
-import upsertCalendarApiEvent from './cache/upsertCalendarApiEvent';
-import { getIsCalendarEvent } from './cache/helper';
+import { useApi, useGetCalendarEventRaw } from '@proton/components';
+import useGetCalendarEventPersonal from '@proton/components/hooks/useGetCalendarEventPersonal';
+import { getEvent as getEventRoute } from '@proton/shared/lib/api/calendars';
+import { pick } from '@proton/shared/lib/helpers/object';
+import { wait } from '@proton/shared/lib/helpers/promise';
+import { CalendarEvent, CalendarEventWithMetadata } from '@proton/shared/lib/interfaces/calendar';
+
+import { OpenedMailEvent } from '../../../hooks/useGetOpenedMailEvents';
+import getAllEventsByUID from '../getAllEventsByUID';
 import { CalendarViewEvent } from '../interface';
+import { getIsCalendarEvent } from './cache/helper';
+import upsertCalendarApiEvent from './cache/upsertCalendarApiEvent';
 import {
     CalendarEventsCache,
     CalendarsEventsCache,
     DecryptedEventTupleResult,
     SharedVcalVeventComponent,
 } from './interface';
-import getAllEventsByUID from '../getAllEventsByUID';
-import { OpenedMailEvent } from '../../../hooks/useGetOpenedMailEvents';
 
 const SLOW_EVENT_BYPASS = {};
 const EVENTS_PER_BATCH = 5;

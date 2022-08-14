@@ -4,8 +4,8 @@ import { locales } from '@proton/shared/lib/i18n/locales';
 import { SettingsSection } from '../account';
 import DateFormatSection from './DateFormatSection';
 import LanguageSection from './LanguageSection';
-import WeekStartSection from './WeekStartSection';
 import TimeFormatSection from './TimeFormatSection';
+import WeekStartSection from './WeekStartSection';
 
 const LanguageAndTimeSection = () => {
     return (

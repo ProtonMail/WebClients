@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { PrivateKeyReference, SessionKey } from '@proton/crypto';
 
 export type UploadConflictModal = React.FunctionComponent<UploadConflictModalProps>;

@@ -1,4 +1,5 @@
-import { useEffect, useContext, useCallback, useState, useRef, createContext, ReactNode } from 'react';
+import { ReactNode, createContext, useCallback, useContext, useEffect, useRef, useState } from 'react';
+
 import useBeforeUnload from './useBeforeUnload';
 
 const PreventLeaveContext = createContext<{
@@ -46,7 +47,7 @@ export const PreventLeaveProvider = ({ children }: { children: ReactNode }) => {
         [hasPendingTasks]
     );
 
-    useBeforeUnload(hasPendingTasks)
+    useBeforeUnload(hasPendingTasks);
 
     useEffect(() => {
         return () => clearPendingTasks();

@@ -1,15 +1,17 @@
-import { useMemo, useState, useRef, useLayoutEffect, useEffect, Ref } from 'react';
-import chunk from '@proton/utils/chunk';
-import { eachDayOfInterval, isSameMonth } from '@proton/shared/lib/date-fns-utc';
+import { Ref, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
+
 import { getISOWeek } from 'date-fns';
 
-import useDayGridEventLayout from './useDayGridEventLayout';
-import createDayGridMouseHandler from './interactions/dayGridMouseHandler';
-import { useRect } from '../../hooks/useRect';
-import RowEvents from './DayGrid/RowEvents';
-import DayButtons from './DayGrid/DayButtons';
-import { DAY_EVENT_HEIGHT } from './constants';
+import { eachDayOfInterval, isSameMonth } from '@proton/shared/lib/date-fns-utc';
+import chunk from '@proton/utils/chunk';
+
 import { CalendarViewEvent, TargetEventData, TargetMoreData } from '../../containers/calendar/interface';
+import { useRect } from '../../hooks/useRect';
+import DayButtons from './DayGrid/DayButtons';
+import RowEvents from './DayGrid/RowEvents';
+import { DAY_EVENT_HEIGHT } from './constants';
+import createDayGridMouseHandler from './interactions/dayGridMouseHandler';
+import useDayGridEventLayout from './useDayGridEventLayout';
 
 interface Props {
     tzid: string;

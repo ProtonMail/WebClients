@@ -1,5 +1,7 @@
 import { c } from 'ttag';
+
 import { PublicKeyReference } from '@proton/crypto';
+
 import { extractDraftMIMEType, extractScheme, extractSign } from '../api/helpers/mailSettings';
 import { CONTACT_MIME_TYPES, PGP_SCHEMES } from '../constants';
 import { ContactPublicKeyModel, MailSettings, PublicKeyModel, SelfSend } from '../interfaces';

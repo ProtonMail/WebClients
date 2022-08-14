@@ -1,5 +1,5 @@
-import CalendarContainerViewBlurred from '../calendar/CalendarContainerViewBlurred';
 import CalendarOnboardingModal from '../../components/onboarding/CalendarOnboardingModal';
+import CalendarContainerViewBlurred from '../calendar/CalendarContainerViewBlurred';
 
 interface Props {
     onDone: () => void;

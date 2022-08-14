@@ -1,18 +1,18 @@
-import { createContext, useContext, useCallback, useRef } from 'react';
+import { createContext, useCallback, useContext, useRef } from 'react';
 
 import { querySharedURLChildren } from '@proton/shared/lib/api/drive/sharing';
 import { LinkChildrenResult } from '@proton/shared/lib/interfaces/drive/link';
 
-import { usePublicSession, linkMetaToEncryptedLink } from '../../_api';
-import useLinksState from '../useLinksState';
+import { linkMetaToEncryptedLink, usePublicSession } from '../../_api';
 import { DecryptedLink } from '../interface';
+import useLinksState from '../useLinksState';
 import {
-    PAGE_SIZE,
     FetchMeta,
-    SortParams,
     FetchResponse,
-    useLinksListingHelpers,
+    PAGE_SIZE,
+    SortParams,
     sortParamsToServerSortArgs,
+    useLinksListingHelpers,
 } from './useLinksListingHelpers';
 
 type FetchState = {

@@ -1,9 +1,9 @@
-import { MailSettings } from '@proton/shared/lib/interfaces';
 import { useMemo } from 'react';
+
+import { MailSettings } from '@proton/shared/lib/interfaces';
 
 import { ModalStateProps } from '../../modalTwo';
 import { ModalLinkProps } from '../hooks/interface';
-
 import InsertLinkModalComponent, { InsertLinkModalProps } from './InsertLinkModalComponent';
 
 interface Props extends ModalLinkProps {

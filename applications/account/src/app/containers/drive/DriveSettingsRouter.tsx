@@ -1,5 +1,6 @@
 import { ReactNode } from 'react';
 import { Route, Switch, useRouteMatch } from 'react-router-dom';
+
 import { PrivateMainSettingsArea, ThemesSection } from '@proton/components';
 import { getSectionPath } from '@proton/components/containers/layout/helper';
 

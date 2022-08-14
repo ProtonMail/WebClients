@@ -1,8 +1,9 @@
 import { c, msgid } from 'ttag';
-import { CALENDAR_APP_NAME, PLAN_SERVICES, PLANS } from '@proton/shared/lib/constants';
-import { Audience, PlansMap } from '@proton/shared/lib/interfaces';
+
 import { MAX_CALENDARS_FREE, MAX_CALENDARS_PAID } from '@proton/shared/lib/calendar/constants';
+import { CALENDAR_APP_NAME, PLANS, PLAN_SERVICES } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
+import { Audience, PlansMap } from '@proton/shared/lib/interfaces';
 
 import { PlanCardFeature, PlanCardFeatureDefinition } from './interface';
 

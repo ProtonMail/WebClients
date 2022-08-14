@@ -1,4 +1,5 @@
-import { useState, useMemo } from 'react';
+import { useMemo, useState } from 'react';
+
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 
 export interface SortConfig<T> {

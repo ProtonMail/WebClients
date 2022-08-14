@@ -1,8 +1,8 @@
 import { MAX_RETRIES_BEFORE_FAIL } from '../constants';
 import { UploadingBlockControl } from './interface';
+import { Pauser } from './pauser';
 import { createUploadingBlockControl } from './testHelpers';
 import startUploadJobs, { XHRError } from './upload';
-import { Pauser } from './pauser';
 
 describe('upload jobs', () => {
     const mockUploadBlockFinishCallback = jest.fn();

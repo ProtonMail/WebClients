@@ -1,5 +1,6 @@
 import { SharedURLFlags } from '@proton/shared/lib/interfaces/drive/sharing';
-import { splitGeneratedAndCustomPassword, hasCustomPassword, hasGeneratedPasswordIncluded } from './shareUrl';
+
+import { hasCustomPassword, hasGeneratedPasswordIncluded, splitGeneratedAndCustomPassword } from './shareUrl';
 
 describe('Password flags checks', () => {
     describe('Missing data check', () => {

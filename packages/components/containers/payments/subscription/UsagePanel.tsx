@@ -1,11 +1,12 @@
 import { c, msgid } from 'ttag';
-import { Address, Organization, UserModel } from '@proton/shared/lib/interfaces';
-import humanSize from '@proton/shared/lib/helpers/humanSize';
-import percentage from '@proton/utils/percentage';
-import isTruthy from '@proton/utils/isTruthy';
-import { Calendar } from '@proton/shared/lib/interfaces/calendar';
 
-import { StripedList, StripedItem, Meter, IconName, Icon } from '../../../components';
+import humanSize from '@proton/shared/lib/helpers/humanSize';
+import { Address, Organization, UserModel } from '@proton/shared/lib/interfaces';
+import { Calendar } from '@proton/shared/lib/interfaces/calendar';
+import isTruthy from '@proton/utils/isTruthy';
+import percentage from '@proton/utils/percentage';
+
+import { Icon, IconName, Meter, StripedItem, StripedList } from '../../../components';
 
 interface Item {
     icon: IconName;

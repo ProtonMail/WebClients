@@ -1,6 +1,9 @@
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 
+import useRightToLeft from '../../../containers/rightToLeft/useRightToLeft';
+import { classnames } from '../../../helpers';
 import InputTwo, { InputTwoProps } from '../input/Input';
+import CountrySelect from './CountrySelect';
 import {
     getCountries,
     getCountryFromNumber,
@@ -14,9 +17,6 @@ import {
     getSpecificMaxLength,
     getTrimmedString,
 } from './helper';
-import { classnames } from '../../../helpers';
-import useRightToLeft from '../../../containers/rightToLeft/useRightToLeft';
-import CountrySelect from './CountrySelect';
 
 const usePreviousValue = <T,>(value: T) => {
     const ref = useRef<T>();

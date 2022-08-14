@@ -6,44 +6,44 @@ describe('lru', () => {
             entries: [
                 ['a', '1'],
                 ['b', '2'],
-                ['c', '3']
+                ['c', '3'],
             ],
             max: 1,
-            result: [['c', '3']]
-        },
-        {
-            entries: [
-                ['a', '1'],
-                ['b', '2']
-            ],
-            max: 2,
-            result: [
-                ['a', '1'],
-                ['b', '2']
-            ]
+            result: [['c', '3']],
         },
         {
             entries: [
                 ['a', '1'],
                 ['b', '2'],
-                ['c', '3']
+            ],
+            max: 2,
+            result: [
+                ['a', '1'],
+                ['b', '2'],
+            ],
+        },
+        {
+            entries: [
+                ['a', '1'],
+                ['b', '2'],
+                ['c', '3'],
             ],
             max: 2,
             result: [
                 ['b', '2'],
-                ['c', '3']
-            ]
+                ['c', '3'],
+            ],
         },
         {
             entries: [],
             max: 2,
-            result: []
+            result: [],
         },
         {
             entries: [['a', '1']],
             max: 2,
-            result: [['a', '1']]
-        }
+            result: [['a', '1']],
+        },
     ].forEach(({ entries, max, result }, i) => {
         it(`should iterate all keys ${i}`, () => {
             const lru = createLRU({ max });

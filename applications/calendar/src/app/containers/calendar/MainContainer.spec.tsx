@@ -7,9 +7,9 @@ import { createMemoryHistory } from 'history';
 import { CacheProvider } from '@proton/components/containers/cache';
 import ModalsProvider from '@proton/components/containers/modals/Provider';
 import useCalendars from '@proton/components/hooks/useCalendars';
-import { CalendarDisplay, CALENDAR_TYPE } from '@proton/shared/lib/interfaces/calendar';
 import { CALENDAR_FLAGS, MAX_LENGTHS_API } from '@proton/shared/lib/calendar/constants';
 import createCache from '@proton/shared/lib/helpers/cache';
+import { CALENDAR_TYPE, CalendarDisplay } from '@proton/shared/lib/interfaces/calendar';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 
 import { useContactEmailsCache } from './ContactEmailsProvider';

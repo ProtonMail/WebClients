@@ -1,6 +1,8 @@
 import { useContext, useEffect } from 'react';
-import { getIsAuthorizedApp } from '@proton/shared/lib/sideApp/helpers';
+
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
+import { getIsAuthorizedApp } from '@proton/shared/lib/sideApp/helpers';
+
 import { SideAppContext } from './useSideApp';
 
 export default function useSideAppParent() {

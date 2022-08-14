@@ -1,5 +1,7 @@
 import React from 'react';
+
 import { c } from 'ttag';
+
 import { InlineLinkButton, useModals } from '@proton/components';
 
 import { usePublicShare } from '../../store';

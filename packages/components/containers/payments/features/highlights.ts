@@ -1,9 +1,10 @@
 import { c } from 'ttag';
+
 import { PLANS } from '@proton/shared/lib/constants';
 import { PlansMap } from '@proton/shared/lib/interfaces';
 
-import { PlanCardFeature, PlanCardFeatureDefinition } from './interface';
 import { getStorage } from './drive';
+import { PlanCardFeature, PlanCardFeatureDefinition } from './interface';
 
 export const getSupport = (type: 'limited' | 'priority'): PlanCardFeatureDefinition => {
     return {

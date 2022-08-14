@@ -1,13 +1,14 @@
 import React from 'react';
 import { Router } from 'react-router-dom';
-import { createMemoryHistory } from 'history';
+
 import { render, screen } from '@testing-library/react';
+import { createMemoryHistory } from 'history';
 
-import createCache from '@proton/shared/lib/helpers/cache';
-
-import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
-import { Address, UserModel } from '@proton/shared/lib/interfaces';
 import { MAX_CALENDARS_FREE, MAX_CALENDARS_PAID } from '@proton/shared/lib/calendar/constants';
+import createCache from '@proton/shared/lib/helpers/cache';
+import { Address, UserModel } from '@proton/shared/lib/interfaces';
+import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+
 import { CacheProvider } from '../../cache';
 import ModalsProvider from '../../modals/Provider';
 import PersonalCalendarsSection, { PersonalCalendarsSectionProps } from './PersonalCalendarsSection';

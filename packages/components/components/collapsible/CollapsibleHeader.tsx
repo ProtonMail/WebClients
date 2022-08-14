@@ -2,6 +2,7 @@ import { ElementType, ReactNode, useContext } from 'react';
 import { Box, PolymorphicComponentProps } from 'react-polymorphic-box';
 
 import clsx from '@proton/utils/clsx';
+
 import CollapsibleContext from './CollapsibleContext';
 
 import './CollapsibleHeader.scss';

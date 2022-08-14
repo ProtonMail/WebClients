@@ -1,7 +1,7 @@
-import { binaryStringToArray, decodeBase64 } from '@proton/crypto/lib/utils';
 import { CryptoProxy, PublicKeyReference } from '@proton/crypto';
+import { binaryStringToArray, decodeBase64 } from '@proton/crypto/lib/utils';
 
-import { VERIFICATION_STATUS, SRP_MODULUS_KEY } from '../constants';
+import { SRP_MODULUS_KEY, VERIFICATION_STATUS } from '../constants';
 
 const { NOT_SIGNED, SIGNED_AND_VALID } = VERIFICATION_STATUS;
 

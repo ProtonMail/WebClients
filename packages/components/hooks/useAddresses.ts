@@ -1,7 +1,9 @@
-import { GetAddresses } from '@proton/shared/lib/interfaces/hooks/GetAddresses';
 import { useCallback } from 'react';
-import { AddressesModel } from '@proton/shared/lib/models/addressesModel';
+
 import { Address } from '@proton/shared/lib/interfaces';
+import { GetAddresses } from '@proton/shared/lib/interfaces/hooks/GetAddresses';
+import { AddressesModel } from '@proton/shared/lib/models/addressesModel';
+
 import useApi from './useApi';
 import useCache from './useCache';
 import useCachedModelResult, { getPromiseValue } from './useCachedModelResult';

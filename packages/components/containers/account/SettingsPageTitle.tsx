@@ -1,4 +1,5 @@
 import { HTMLAttributes } from 'react';
+
 import { classnames } from '../../helpers';
 
 const SettingsPageTitle = ({ className, children, ...rest }: HTMLAttributes<HTMLHeadingElement>) => (
