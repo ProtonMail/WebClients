@@ -30,6 +30,10 @@ export interface ModalOwnProps {
      * Whether the modal is open or not.
      */
     open?: boolean;
+    /**
+     * Whether the modal should render behind the backdrop
+     */
+    behind?: boolean;
     size?: ModalSize;
     fullscreenOnMobile?: boolean;
     fullscreen?: boolean;
@@ -74,6 +78,7 @@ const Modal = <E extends ElementType = typeof defaultElement>({
     onExit,
     disableCloseOnEscape,
     className,
+    behind,
     ...rest
 }: PolymorphicComponentProps<E, ModalOwnProps>) => {
     const [exit, setExit] = useState(() => (open ? ExitState.idle : ExitState.exited));
@@ -137,7 +142,7 @@ const Modal = <E extends ElementType = typeof defaultElement>({
                     exiting && 'modal-two--out',
                     fullscreenOnMobile && 'modal-two--fullscreen-on-mobile',
                     fullscreen && 'modal-two--fullscreen',
-                    !last && 'modal-two--is-behind-backdrop',
+                    (!last || behind) && 'modal-two--is-behind-backdrop',
                 ])}
                 onAnimationEnd={({ animationName }) => {
                     if (exiting && animationName === 'anime-modal-two-out') {

@@ -34,7 +34,7 @@ const AccountRecoverySection = () => {
             });
         }
         await new Promise((resolve, reject) => {
-            createModal(<AuthModal onClose={reject} onSuccess={resolve} config={updateResetEmail(value)} />);
+            createModal(<AuthModal onCancel={reject} onSuccess={resolve} config={updateResetEmail(value)} />);
         });
         await call();
     };
@@ -44,7 +44,9 @@ const AccountRecoverySection = () => {
             return createNotification({ type: 'error', text: c('Error').t`Please set a recovery phone number first` });
         }
         await new Promise((resolve, reject) => {
-            createModal(<AuthModal onClose={reject} onSuccess={resolve} config={updateResetPhone({ Reset: value })} />);
+            createModal(
+                <AuthModal onCancel={reject} onSuccess={resolve} config={updateResetPhone({ Reset: value })} />
+            );
         });
         await call();
     };

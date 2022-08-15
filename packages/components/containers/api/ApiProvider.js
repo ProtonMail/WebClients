@@ -19,6 +19,7 @@ import { localeCode } from '@proton/shared/lib/i18n';
 
 import { useModals, useNotifications } from '../../hooks';
 import UnlockModal from '../login/UnlockModal';
+import AuthModal from '../password/AuthModal';
 import DelinquentModal from './DelinquentModal';
 import ApiContext from './apiContext';
 import ApiServerTimeContext from './apiServerTimeContext';
@@ -53,14 +54,14 @@ const ApiProvider = ({ config, onLogout, children, UID, noErrorState }) => {
     const apiRef = useRef();
 
     if (!apiRef.current) {
-        const handleUnlock = (missingScopes = [], e) => {
+        const handleMissingScopes = ({ scopes: missingScopes = [], error, options }) => {
             if (missingScopes.includes('nondelinquent')) {
                 return new Promise((resolve, reject) => {
                     createModal(
                         <DelinquentModal
                             onClose={() => {
-                                e.cancel = true;
-                                reject(e);
+                                error.cancel = true;
+                                reject(error);
                             }}
                         />
                     );
@@ -70,19 +71,42 @@ const ApiProvider = ({ config, onLogout, children, UID, noErrorState }) => {
                 return new Promise((resolve, reject) => {
                     createModal(
                         <UnlockModal
-                            onClose={() => {
-                                e.cancel = true;
-                                reject(e);
+                            onCancel={() => {
+                                error.cancel = true;
+                                reject(error);
                             }}
-                            onSuccess={resolve}
+                            onSuccess={() => {
+                                if (!apiRef.current) {
+                                    reject(error);
+                                    return;
+                                }
+                                return resolve(apiRef.current(options));
+                            }}
                         />
                     );
                 });
             }
-            return Promise.reject(e);
+            if (missingScopes.includes('password')) {
+                return new Promise((resolve, reject) => {
+                    createModal(
+                        <AuthModal
+                            config={options}
+                            onCancel={() => {
+                                error.cancel = true;
+                                reject(error);
+                            }}
+                            onError={(apiError) => {
+                                reject(apiError);
+                            }}
+                            onSuccess={(result) => resolve(result.response)}
+                        />
+                    );
+                });
+            }
+            return Promise.reject(error);
         };
 
-        const handleVerification = ({ token, methods, onVerify, title }, e) => {
+        const handleVerification = ({ token, methods, onVerify, title }, error) => {
             return new Promise((resolve, reject) => {
                 createModal(
                     <HumanVerificationModal
@@ -93,8 +117,8 @@ const ApiProvider = ({ config, onLogout, children, UID, noErrorState }) => {
                         onSuccess={resolve}
                         onError={reject}
                         onClose={() => {
-                            e.cancel = true;
-                            reject(e);
+                            error.cancel = true;
+                            reject(error);
                         }}
                     />
                 );
@@ -111,7 +135,7 @@ const ApiProvider = ({ config, onLogout, children, UID, noErrorState }) => {
         const callWithApiHandlers = withApiHandlers({
             call,
             UID,
-            onUnlock: handleUnlock,
+            onMissingScopes: handleMissingScopes,
             onVerification: handleVerification,
         });
 

@@ -2,8 +2,12 @@ import { c } from 'ttag';
 
 import { APPS, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 
-import { Field, Href, Label, Row } from '../../components';
+import { Href } from '../../components';
 import { useConfig, useUser } from '../../hooks';
+import SettingsLayout from './SettingsLayout';
+import SettingsLayoutLeft from './SettingsLayoutLeft';
+import SettingsLayoutRight from './SettingsLayoutRight';
+import SettingsSection from './SettingsSection';
 
 const UsernameSection = () => {
     const { APP_NAME } = useConfig();
@@ -11,50 +15,47 @@ const UsernameSection = () => {
 
     if (APP_NAME === APPS.PROTONVPN_SETTINGS) {
         return (
-            <>
+            <SettingsSection>
                 {Name ? (
-                    <Row>
-                        <Label>{c('Label').t`Name`}</Label>
-                        <Field className="pt0-5">
-                            <strong>{Name}</strong>
-                        </Field>
-                    </Row>
+                    <SettingsLayout>
+                        <SettingsLayoutLeft>
+                            <div className="text-semibold">{c('Label').t`Name`}</div>
+                        </SettingsLayoutLeft>
+                        <SettingsLayoutRight>
+                            <div className="text-pre-wrap break user-select">{Name}</div>
+                        </SettingsLayoutRight>
+                    </SettingsLayout>
                 ) : null}
-                <Row>
-                    <Label>{c('Label').t`${MAIL_APP_NAME} address`}</Label>
-                    <Field className="pt0-5">
+                <SettingsLayout>
+                    <SettingsLayoutLeft>
+                        <div className="text-semibold">{c('Label').t`${MAIL_APP_NAME} address`}</div>
+                    </SettingsLayoutLeft>
+                    <SettingsLayoutRight>
                         {Email ? (
-                            <strong>{Email}</strong>
+                            <div className="text-pre-wrap break user-select">{Email}</div>
                         ) : (
                             <Href
                                 url="https://account.proton.me/switch?product=mail"
                                 title={c('Info').t`Log in to ${MAIL_APP_NAME} to activate your address`}
                             >{c('Link').t`Not activated`}</Href>
                         )}
-                    </Field>
-                </Row>
-            </>
+                    </SettingsLayoutRight>
+                </SettingsLayout>
+            </SettingsSection>
         );
     }
 
     return (
-        <>
-            {Name ? (
-                <Row>
-                    <Label>{c('Label').t`Name`}</Label>
-                    <Field className="pt0-5">
-                        <strong>{Name}</strong>
-                    </Field>
-                </Row>
-            ) : (
-                <Row>
-                    <Label>{c('Label').t`Email address`}</Label>
-                    <Field className="pt0-5">
-                        <strong>{Email}</strong>
-                    </Field>
-                </Row>
-            )}
-        </>
+        <SettingsSection>
+            <SettingsLayout>
+                <SettingsLayoutLeft>
+                    <div className="text-semibold">{Name ? c('Label').t`Name` : c('Label').t`Email address`}</div>
+                </SettingsLayoutLeft>
+                <SettingsLayoutRight>
+                    <div className="text-pre-wrap break user-select">{Name ? Name : Email}</div>
+                </SettingsLayoutRight>
+            </SettingsLayout>
+        </SettingsSection>
     );
 };
 

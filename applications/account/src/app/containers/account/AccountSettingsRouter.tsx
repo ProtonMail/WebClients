@@ -28,6 +28,7 @@ import {
     SessionsSection,
     SettingsPageTitle,
     SubscriptionModalProvider,
+    TwoFactorSection,
     UsernameSection,
     YourPlanSection,
 } from '@proton/components';
@@ -98,8 +99,11 @@ const AccountSettingsRouter = ({
             )}
             <Route path={getSectionPath(path, password)}>
                 <PrivateMainSettingsArea config={password}>
-                    <UsernameSection />
-                    <PasswordsSection />
+                    <>
+                        <UsernameSection />
+                        <PasswordsSection />
+                    </>
+                    <TwoFactorSection />
                     <DeleteSection />
                 </PrivateMainSettingsArea>
             </Route>

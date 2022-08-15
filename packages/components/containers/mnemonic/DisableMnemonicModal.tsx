@@ -1,30 +1,10 @@
-import { FormEvent, useState } from 'react';
-
 import { c } from 'ttag';
 
-import { PASSWORD_WRONG_ERROR } from '@proton/shared/lib/api/auth';
-import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { disableMnemonicPhrase } from '@proton/shared/lib/api/settingsMnemonic';
-import { srpAuth } from '@proton/shared/lib/srp';
-import noop from '@proton/utils/noop';
 
-import {
-    AlertModal,
-    Button,
-    Loader,
-    ModalTwo as Modal,
-    ModalTwoContent as ModalContent,
-    ModalTwoFooter as ModalFooter,
-    ModalTwoHeader as ModalHeader,
-    ModalProps,
-} from '../../components';
-import { useApi, useEventManager, useNotifications } from '../../hooks';
-import { PasswordTotpInputs, useAskAuth } from '../password';
-
-enum STEPS {
-    CONFIRM,
-    AUTH,
-}
+import { AlertModal, Button, ModalProps, useModalState } from '../../components';
+import { useEventManager, useNotifications } from '../../hooks';
+import AuthModal from '../password/AuthModal';
 
 interface DisableMnemonicModalProps {
     onClose: ModalProps['onClose'];
@@ -33,47 +13,30 @@ interface DisableMnemonicModalProps {
 }
 
 const DisableMnemonicModal = ({ open, onClose, onExit }: DisableMnemonicModalProps) => {
-    const [step, setStep] = useState(STEPS.CONFIRM);
-    const [submittingAuth, setSubmittingAuth] = useState(false);
-    const [password, setPassword] = useState('');
-    const [totp, setTotp] = useState('');
+    const [authModalProps, setAuthModalOpen, renderAuthModal] = useModalState();
 
-    const [hasTOTPEnabled, isLoadingAuth] = useAskAuth();
     const { createNotification } = useNotifications();
     const { call } = useEventManager();
-    const api = useApi();
 
-    const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
-        event.preventDefault();
-
-        try {
-            setSubmittingAuth(true);
-
-            await srpAuth({
-                api,
-                credentials: { password, totp },
-                config: disableMnemonicPhrase(),
-            });
-
-            await call();
-            onClose?.();
-            createNotification({ text: c('Info').t`Recovery phrase has been disabled` });
-        } catch (error: any) {
-            const { code } = getApiError(error);
-            setSubmittingAuth(false);
-            if (code !== PASSWORD_WRONG_ERROR) {
-                onClose?.();
-            }
-        }
-    };
-
-    if (step === STEPS.CONFIRM) {
-        return (
+    return (
+        <>
+            {renderAuthModal && (
+                <AuthModal
+                    config={disableMnemonicPhrase()}
+                    {...authModalProps}
+                    onCancel={undefined}
+                    onSuccess={async () => {
+                        await call();
+                        onClose?.();
+                        createNotification({ text: c('Info').t`Recovery phrase has been disabled` });
+                    }}
+                />
+            )}
             <AlertModal
                 open={open}
                 title={c('Action').t`Disable recovery phrase?`}
                 buttons={[
-                    <Button color="danger" onClick={() => setStep(STEPS.AUTH)}>
+                    <Button color="danger" onClick={() => setAuthModalOpen(true)}>
                         {c('Action').t`Disable recovery phrase`}
                     </Button>,
                     <Button onClick={onClose}>{c('Action').t`Cancel`}</Button>,
@@ -86,43 +49,8 @@ const DisableMnemonicModal = ({ open, onClose, onExit }: DisableMnemonicModalPro
                 <p className="mb0">{c('Info')
                     .t`Enabling recovery by phrase again will generate a new recovery phrase.`}</p>
             </AlertModal>
-        );
-    }
-
-    if (step === STEPS.AUTH) {
-        const handleClose = submittingAuth ? noop : onClose;
-
-        const loading = submittingAuth || isLoadingAuth;
-
-        return (
-            <Modal as="form" size="small" open={open} onClose={handleClose} onExit={onExit} onSubmit={handleSubmit}>
-                <ModalHeader title={c('Title').t`Sign in again to continue`} />
-                <ModalContent>
-                    {isLoadingAuth ? (
-                        <Loader />
-                    ) : (
-                        <PasswordTotpInputs
-                            password={password}
-                            setPassword={setPassword}
-                            totp={totp}
-                            setTotp={setTotp}
-                            showTotp={hasTOTPEnabled}
-                        />
-                    )}
-                </ModalContent>
-                <ModalFooter>
-                    <Button onClick={handleClose} disabled={loading}>
-                        {c('Action').t`Cancel`}
-                    </Button>
-                    <Button loading={loading} type="submit" color="norm">
-                        {c('Action').t`Submit`}
-                    </Button>
-                </ModalFooter>
-            </Modal>
-        );
-    }
-
-    throw new Error('Unknown step');
+        </>
+    );
 };
 
 export default DisableMnemonicModal;

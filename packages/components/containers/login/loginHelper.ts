@@ -1,17 +1,19 @@
+import { AuthTypes } from '@proton/components/containers/login/interface';
 import { CryptoProxy } from '@proton/crypto';
 import { AuthResponse } from '@proton/shared/lib/authentication/interface';
 import { PASSWORD_MODE } from '@proton/shared/lib/constants';
+import { getHasWebAuthnSupport } from '@proton/shared/lib/helpers/browser';
 import { KeySalt as tsKeySalt } from '@proton/shared/lib/interfaces/KeySalt';
 import { User as tsUser } from '@proton/shared/lib/interfaces/User';
 import { getPrimaryKeyWithSalt } from '@proton/shared/lib/keys/keys';
-import { getHasTOTPEnabled, getHasU2FEnabled } from '@proton/shared/lib/settings/twoFactor';
+import { getHasTOTPEnabled, getHasFIDO2Enabled } from '@proton/shared/lib/settings/twoFactor';
 import { computeKeyPassword } from '@proton/srp';
 
-export const getAuthTypes = ({ '2FA': { Enabled }, PasswordMode }: AuthResponse) => {
+export const getAuthTypes = ({ '2FA': { Enabled }, PasswordMode }: AuthResponse, hasFido2: boolean): AuthTypes => {
     return {
-        hasTotp: getHasTOTPEnabled(Enabled),
-        hasU2F: getHasU2FEnabled(Enabled),
-        hasUnlock: PasswordMode === PASSWORD_MODE.TWO_PASSWORD,
+        totp: getHasTOTPEnabled(Enabled),
+        fido2: getHasFIDO2Enabled(Enabled) && getHasWebAuthnSupport() && hasFido2,
+        unlock: PasswordMode === PASSWORD_MODE.TWO_PASSWORD,
     };
 };
 

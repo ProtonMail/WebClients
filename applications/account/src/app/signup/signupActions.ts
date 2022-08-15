@@ -200,14 +200,14 @@ export const handleSetupUser = async ({
         throw new Error('Unknown type');
     })();
 
-    const authResponse = await srpAuth<AuthResponse>({
+    const authResponse = await srpAuth({
         api,
         credentials: {
             username: userEmail,
             password,
         },
         config: auth({ Username: userEmail }),
-    });
+    }).then((response): Promise<AuthResponse> => response.json());
 
     const authApi = <T>(config: any) => api<T>(withAuthHeaders(authResponse.UID, authResponse.AccessToken, config));
 

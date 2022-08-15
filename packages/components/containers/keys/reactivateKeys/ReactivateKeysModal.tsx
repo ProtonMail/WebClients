@@ -171,7 +171,7 @@ const ReactivateKeysModal = ({ userKeys, keyReactivationRequests, onProcess, ...
 
     const onRecoveryPhraseSubmit = async () => {
         await new Promise((resolve, reject) => {
-            createModal(<AuthModal onClose={reject} onSuccess={resolve} config={unlockPasswordChanges()} />);
+            createModal(<AuthModal onCancel={reject} onSuccess={resolve} config={unlockPasswordChanges()} />);
         });
         const { MnemonicUserKeys } = await api<{ MnemonicUserKeys: MnemonicKeyResponse[] }>(getMnemonicUserKeys());
 

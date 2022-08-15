@@ -75,11 +75,11 @@ export const handleNewPassword = async ({
         }),
     });
 
-    const authResponse = await srpAuth<AuthResponse>({
+    const authResponse = await srpAuth({
         api,
         credentials: { username, password },
         config: auth({ Username: username }),
-    });
+    }).then((response): Promise<AuthResponse> => response.json());
     const authApi = <T>(config: any) => api<T>(withAuthHeaders(authResponse.UID, authResponse.AccessToken, config));
     let User = await authApi<{ User: tsUser }>(getUser()).then(({ User }) => User);
 
@@ -217,7 +217,7 @@ const handleMnemonic = async ({
 }): Promise<ResetActionResponse> => {
     const randomBytes = await mnemonicToBase64RandomBytes(mnemonic);
     const info = await api<InfoResponse>(getMnemonicAuthInfo(username));
-    const authResponse = await srpAuth<AuthResponse>({
+    const authResponse = await srpAuth({
         info,
         api,
         config: authMnemonic(username),
@@ -225,7 +225,7 @@ const handleMnemonic = async ({
             username,
             password: randomBytes,
         },
-    });
+    }).then((response): Promise<AuthResponse> => response.json());
 
     const { UID, AccessToken } = authResponse;
     const authApi = <T>(config: any) => api<T>(withAuthHeaders(UID, AccessToken, config));
