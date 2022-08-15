@@ -10,6 +10,7 @@ import { getUser } from '@proton/shared/lib/api/user';
 import { InfoResponse } from '@proton/shared/lib/authentication/interface';
 import loginWithFallback from '@proton/shared/lib/authentication/loginWithFallback';
 import { maybeResumeSessionByUser, persistSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
+import { APP_NAMES } from '@proton/shared/lib/constants';
 import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
 import { withAuthHeaders } from '@proton/shared/lib/fetch/headers';
 import { wait } from '@proton/shared/lib/helpers/promise';
@@ -32,7 +33,11 @@ import {
 } from '@proton/shared/lib/keys';
 import { handleSetupAddressKeys } from '@proton/shared/lib/keys/setupAddressKeys';
 import { getHasV2KeysToUpgrade, upgradeV2KeysHelper } from '@proton/shared/lib/keys/upgradeKeysV2';
-import { attemptDeviceRecovery, storeDeviceRecovery } from '@proton/shared/lib/recoveryFile/deviceRecovery';
+import {
+    attemptDeviceRecovery,
+    getIsDeviceRecoveryAvailable,
+    storeDeviceRecovery,
+} from '@proton/shared/lib/recoveryFile/deviceRecovery';
 import { srpVerify } from '@proton/shared/lib/srp';
 import { AUTH_VERSION } from '@proton/srp';
 import noop from '@proton/utils/noop';
@@ -59,7 +64,7 @@ const finalizeLogin = async ({
     user?: tsUser;
     addresses?: tsAddress[];
 }): Promise<AuthActionResponse> => {
-    const { authResult, authVersion, api, authApi, persistent, hasInternalAddressSetup } = cache;
+    const { authResult, authVersion, api, authApi, persistent, hasInternalAddressSetup, appName } = cache;
 
     if (authVersion < AUTH_VERSION) {
         await srpVerify({
@@ -116,13 +121,25 @@ const finalizeLogin = async ({
 
         // Store device recovery information
         if (persistent) {
-            const userSettings = await authApi<{ UserSettings: UserSettings }>(getSettings()).then(
-                ({ UserSettings }) => UserSettings
-            );
+            const [userKeys, addresses] = await Promise.all([
+                getDecryptedUserKeysHelper(User, keyPassword),
+                getAllAddresses(authApi),
+            ]);
+            const isDeviceRecoveryAvailable = getIsDeviceRecoveryAvailable({
+                user: User,
+                addresses,
+                userKeys,
+                appName,
+            });
 
-            if (userSettings.DeviceRecovery) {
-                const userKeys = await getDecryptedUserKeysHelper(User, keyPassword);
-                await storeDeviceRecovery({ api: authApi, user: User, userKeys });
+            if (isDeviceRecoveryAvailable) {
+                const userSettings = await authApi<{ UserSettings: UserSettings }>(getSettings()).then(
+                    ({ UserSettings }) => UserSettings
+                );
+
+                if (userSettings.DeviceRecovery) {
+                    await storeDeviceRecovery({ api: authApi, user: User, userKeys });
+                }
             }
         }
     }
@@ -423,6 +440,7 @@ export const handleLogin = async ({
     api,
     ignoreUnlock,
     hasGenerateKeys,
+    appName,
     hasInternalAddressSetup,
     payload,
 }: {
@@ -432,6 +450,7 @@ export const handleLogin = async ({
     api: Api;
     ignoreUnlock: boolean;
     hasGenerateKeys: boolean;
+    appName: APP_NAMES;
     hasInternalAddressSetup: boolean;
     payload?: ChallengeResult;
 }): Promise<AuthActionResponse> => {
@@ -449,6 +468,7 @@ export const handleLogin = async ({
         authResult,
         authVersion,
         api,
+        appName,
         authApi,
         ...getAuthTypes(authResult),
         username,

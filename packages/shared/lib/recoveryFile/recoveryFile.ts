@@ -3,10 +3,10 @@ import { concatArrays } from '@proton/crypto/lib/utils';
 import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { KEY_FILE_EXTENSION } from '../constants';
+import { APPS, APP_NAMES, KEY_FILE_EXTENSION } from '../constants';
 import downloadFile from '../helpers/downloadFile';
-import { DecryptedKey, Key, KeyWithRecoverySecret } from '../interfaces';
-import { ArmoredKeyWithInfo } from '../keys';
+import { Address, DecryptedKey, Key, KeyWithRecoverySecret, User } from '../interfaces';
+import { ArmoredKeyWithInfo, getHasMigratedAddressKeys, getPrimaryKey } from '../keys';
 
 const decryptRecoveryFile = (recoverySecrets: KeyWithRecoverySecret[]) => async (file: string) => {
     try {
@@ -133,4 +133,23 @@ export const getPrimaryRecoverySecret = (Keys: Key[] = []): KeyWithRecoverySecre
     }
 
     return primaryUserKey as KeyWithRecoverySecret;
+};
+
+export const getIsRecoveryFileAvailable = ({
+    user,
+    addresses,
+    userKeys,
+    appName,
+}: {
+    user: User;
+    addresses: Address[];
+    userKeys: DecryptedKey[];
+    appName: APP_NAMES;
+}) => {
+    const hasMigratedKeys = getHasMigratedAddressKeys(addresses);
+    const primaryKey = getPrimaryKey(userKeys);
+
+    const isPrivateUser = Boolean(user.Private);
+
+    return !!primaryKey?.privateKey && hasMigratedKeys && isPrivateUser && appName !== APPS.PROTONVPN_SETTINGS;
 };

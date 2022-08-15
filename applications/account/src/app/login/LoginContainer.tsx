@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { AbuseModal, OnLoginCallback, useApi, useErrorHandler } from '@proton/components';
+import { AbuseModal, OnLoginCallback, useApi, useConfig, useErrorHandler } from '@proton/components';
 import { AuthActionResponse, AuthCacheResult, AuthStep } from '@proton/components/containers/login/interface';
 import {
     handleLogin,
@@ -51,6 +51,7 @@ const LoginContainer = ({
     hasGenerateKeys = true,
     hasActiveSessions = false,
 }: Props) => {
+    const { APP_NAME } = useConfig();
     const errorHandler = useErrorHandler();
     const [abuseModal, setAbuseModal] = useState<{ apiErrorMessage?: string } | undefined>(undefined);
 
@@ -139,6 +140,7 @@ const LoginContainer = ({
                                     persistent,
                                     api: silentApi,
                                     hasGenerateKeys,
+                                    appName: APP_NAME,
                                     ignoreUnlock: false,
                                     hasInternalAddressSetup: !!shouldSetupInternalAddress,
                                     payload,
