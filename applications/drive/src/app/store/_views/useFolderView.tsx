@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 import { useLoading } from '@proton/components';
 
@@ -11,7 +11,8 @@ import { useAbortSignal, useControlledSorting, useLinkName, useMemoArrayNoMatter
  */
 export default function useFolderView(folder: { shareId: string; linkId: string }) {
     const { shareId, linkId } = folder;
-    const folderName = useLinkName(shareId, linkId);
+    const [error, setError] = useState<any>();
+    const folderName = useLinkName(shareId, linkId, setError);
 
     const abortSignal = useAbortSignal([shareId, linkId]);
 
@@ -26,7 +27,7 @@ export default function useFolderView(folder: { shareId: string; linkId: string 
 
     useEffect(() => {
         const ac = new AbortController();
-        void withLoading(linksListing.loadChildren(ac.signal, shareId, linkId));
+        void withLoading(linksListing.loadChildren(ac.signal, shareId, linkId).catch(setError));
         return () => {
             ac.abort();
         };
@@ -39,5 +40,6 @@ export default function useFolderView(folder: { shareId: string; linkId: string 
         sortParams,
         setSorting,
         isLoading: isLoading || isDecrypting,
+        error,
     };
 }
