@@ -170,7 +170,9 @@ const AdvancedSearch = ({
         searchInputRef.current?.focus();
     };
 
-    const handleReset = () => {
+    const handleReset = (event: FormEvent) => {
+        event.preventDefault(); // necessary to block native reset behaviour
+
         updateModel(DEFAULT_MODEL);
         searchInputRef.current?.focus();
     };
