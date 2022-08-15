@@ -23,9 +23,6 @@ const SecondaryTimezoneSection = ({ calendarUserSettings: { SecondaryTimezone, D
     const [loadingSecondaryTimeZone, withLoadingSecondaryTimeZone] = useLoading();
 
     const [timezone] = useState(() => getTimezone());
-    const secondaryTimezoneValue = DisplaySecondaryTimezone
-        ? SecondaryTimezone || timezone
-        : SecondaryTimezone || timezone;
 
     const handleChange = async (data: Partial<CalendarUserSettings>) => {
         await api(updateCalendarUserSettings(data));
@@ -45,7 +42,7 @@ const SecondaryTimezoneSection = ({ calendarUserSettings: { SecondaryTimezone, D
                     data-test-id="settings/secondary-time-zone:dropdown"
                     loading={loadingSecondaryTimeZone}
                     disabled={!DisplaySecondaryTimezone}
-                    timezone={secondaryTimezoneValue}
+                    timezone={SecondaryTimezone || timezone}
                     onChange={(SecondaryTimezone) => withLoadingSecondaryTimeZone(handleChange({ SecondaryTimezone }))}
                 />
             </SettingsLayoutRight>
