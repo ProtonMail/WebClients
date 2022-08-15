@@ -1,4 +1,4 @@
-import { useAuthentication, useUserSettings } from '@proton/components/';
+import { useAuthentication, useIsRecoveryFileAvailable, useUserSettings } from '@proton/components/';
 import { getAllKeysReactivationRequests } from '@proton/components/containers/keys/reactivateKeys/getAllKeysToReactive';
 import getLikelyHasKeysToReactivate from '@proton/components/containers/keys/reactivateKeys/getLikelyHasKeysToReactivate';
 import { KeyReactivationRequestStateData } from '@proton/components/containers/keys/reactivateKeys/interface';
@@ -15,6 +15,7 @@ import { getDecryptedAddressKeysHelper, getDecryptedUserKeysHelper, reactivateKe
 import {
     generateRecoveryFileMessage,
     generateRecoverySecret,
+    getIsRecoveryFileAvailable,
     getPrimaryRecoverySecret,
     getRecoverySecrets,
     parseRecoveryFiles,
@@ -64,7 +65,8 @@ export const attemptDeviceRecovery = async ({
     keyPassword: string;
     api: Api;
 }) => {
-    if (!addresses) {
+    const privateUser = Boolean(user.Private);
+    if (!addresses || !privateUser) {
         return;
     }
 
@@ -147,6 +149,9 @@ export const useIsDeviceRecoveryEnabled = () => {
     return userSettings.DeviceRecovery && authentication.getPersistent();
 };
 
+export const useIsDeviceRecoveryAvailable = useIsRecoveryFileAvailable;
+export const getIsDeviceRecoveryAvailable = getIsRecoveryFileAvailable;
+
 const storeRecoveryMessage = async ({
     user,
     userKeys,
@@ -175,6 +180,11 @@ export const storeDeviceRecovery = async ({
     user: User;
     userKeys: DecryptedKey[];
 }) => {
+    const privateUser = Boolean(user.Private);
+    if (!privateUser) {
+        return;
+    }
+
     const primaryUserKey = userKeys?.[0];
     if (!primaryUserKey) {
         return;
