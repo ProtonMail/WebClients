@@ -1,5 +1,6 @@
 import { APP_CLIENT_IDS } from '../constants';
 import { HTTP_ERROR_CODES } from '../errors';
+import { AuthenticationCredentialsPayload } from '../webauthn/interface';
 
 export const PASSWORD_WRONG_ERROR = 8002;
 
@@ -10,13 +11,10 @@ export const auth = (data: any) => ({
     ignoreHandler: [HTTP_ERROR_CODES.TOO_MANY_REQUESTS],
 });
 
-export const auth2FA = ({ totp, u2f }: any) => ({
+export const auth2FA = (data: { TwoFactorCode: string } | { FIDO2: AuthenticationCredentialsPayload }) => ({
     method: 'post',
     url: 'auth/2fa',
-    data: {
-        TwoFactorCode: totp,
-        U2F: u2f,
-    },
+    data: data,
 });
 
 export const authJwt = (data: { Token: String; ClientSecret?: String }) => ({

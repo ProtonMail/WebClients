@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, Icon, InputFieldTwo, useFormErrors, useLoading } from '@proton/components';
+import { Button, TotpInputs, useFormErrors, useLoading } from '@proton/components';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import noop from '@proton/utils/noop';
 
@@ -12,24 +12,26 @@ interface Props {
 
 const TOTPForm = ({ onSubmit }: Props) => {
     const [loading, withLoading] = useLoading();
-    const [totp, setTotp] = useState('');
-    const [isTotpRecovery, setIsRecovery] = useState(false);
+    const [code, setCode] = useState('');
+    const [type, setType] = useState<'totp' | 'recovery-code'>('totp');
     const hasBeenAutoSubmitted = useRef(false);
 
-    const { validator, onFormSubmit } = useFormErrors();
+    const { validator, onFormSubmit, reset } = useFormErrors();
+
+    const safeCode = code.replaceAll(/\s+/g, '');
+    const requiredError = requiredValidator(safeCode);
 
     useEffect(() => {
-        if (isTotpRecovery || loading || validator([requiredValidator(totp)]) || hasBeenAutoSubmitted.current) {
+        if (type !== 'totp' || loading || requiredError || hasBeenAutoSubmitted.current) {
             return;
         }
-
         // Auto-submit the form once the user has entered the TOTP
-        if (totp.length === 6) {
+        if (safeCode.length === 6) {
             // Do it just one time
             hasBeenAutoSubmitted.current = true;
-            withLoading(onSubmit(totp)).catch(noop);
+            withLoading(onSubmit(safeCode)).catch(noop);
         }
-    }, [totp]);
+    }, [safeCode]);
 
     return (
         <form
@@ -39,56 +41,19 @@ const TOTPForm = ({ onSubmit }: Props) => {
                 if (loading || !onFormSubmit()) {
                     return;
                 }
-                withLoading(onSubmit(totp)).catch(noop);
+                withLoading(onSubmit(safeCode)).catch(noop);
             }}
             autoComplete="off"
             method="post"
         >
-            {isTotpRecovery ? (
-                <InputFieldTwo
-                    id="recovery-code"
-                    bigger
-                    label={c('Label').t`Recovery code`}
-                    error={validator([requiredValidator(totp)])}
-                    disableChange={loading}
-                    autoFocus
-                    value={totp}
-                    onValue={setTotp}
-                />
-            ) : (
-                <InputFieldTwo
-                    id="twoFa"
-                    bigger
-                    label={c('Label').t`Two-factor authentication code`}
-                    error={validator([requiredValidator(totp)])}
-                    disableChange={loading}
-                    autoFocus
-                    autoCapitalize="off"
-                    autoCorrect="off"
-                    autoComplete="one-time-code"
-                    value={totp}
-                    onValue={setTotp}
-                    inputMode="numeric"
-                    suffix={
-                        totp.length > 0 && (
-                            <Button
-                                title={c('Action').t`Clear two-factor authentication code`}
-                                className="inline-flex flex-item-noshrink"
-                                onClick={() => setTotp('')}
-                                shape="ghost"
-                                size="small"
-                                icon
-                            >
-                                <Icon
-                                    className="mauto"
-                                    name="cross-big"
-                                    alt={c('Action').t`Clear two-factor authentication code`}
-                                />
-                            </Button>
-                        )
-                    }
-                />
-            )}
+            <TotpInputs
+                type={type}
+                code={code}
+                error={validator([requiredError])}
+                loading={loading}
+                setCode={setCode}
+                bigger={true}
+            />
             <Button size="large" color="norm" type="submit" fullWidth loading={loading} className="mt1-75">
                 {c('Action').t`Authenticate`}
             </Button>
@@ -102,11 +67,12 @@ const TOTPForm = ({ onSubmit }: Props) => {
                     if (loading) {
                         return;
                     }
-                    setTotp('');
-                    setIsRecovery(!isTotpRecovery);
+                    reset();
+                    setCode('');
+                    setType(type === 'totp' ? 'recovery-code' : 'totp');
                 }}
             >
-                {isTotpRecovery ? c('Action').t`Use two-factor authentication code` : c('Action').t`Use recovery code`}
+                {type === 'totp' ? c('Action').t`Use recovery code` : c('Action').t`Use authentication code`}
             </Button>
         </form>
     );

@@ -4,7 +4,6 @@ import { revoke } from '@proton/shared/lib/api/auth';
 import { authMember } from '@proton/shared/lib/api/members';
 import { getUser } from '@proton/shared/lib/api/user';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
-import { MemberAuthResponse } from '@proton/shared/lib/authentication/interface';
 import memberLogin from '@proton/shared/lib/authentication/memberLogin';
 import {
     maybeResumeSessionByUser,
@@ -77,9 +76,9 @@ const MemberActions = ({
         const apiConfig = authMember(member.ID);
         const { UID, LocalID } = await new Promise<{ UID: string; LocalID: number }>((resolve, reject) => {
             createModal(
-                <AuthModal<MemberAuthResponse>
-                    onClose={reject}
-                    onSuccess={({ result }) => resolve(result)}
+                <AuthModal
+                    onCancel={reject}
+                    onSuccess={({ response }) => resolve(response.json())}
                     config={apiConfig}
                 />
             );

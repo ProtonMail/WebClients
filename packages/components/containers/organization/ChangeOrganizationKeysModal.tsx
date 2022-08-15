@@ -118,7 +118,7 @@ const ChangeOrganizationKeysModal = ({
         }
 
         await new Promise((resolve, reject) => {
-            createModal(<AuthModal onClose={reject} onSuccess={resolve} config={apiConfig} />);
+            createModal(<AuthModal onCancel={reject} onSuccess={resolve} config={apiConfig} />);
         });
 
         await call();

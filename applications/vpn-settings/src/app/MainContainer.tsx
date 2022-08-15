@@ -47,6 +47,7 @@ import {
     useUser,
     useUserSettings,
 } from '@proton/components';
+import TwoFactorSection from '@proton/components/containers/account/TwoFactorSection';
 import { getIsSectionAvailable } from '@proton/components/containers/layout/helper';
 import { BugModalMode } from '@proton/components/containers/support/BugModal';
 import LiveChatZendesk, {
@@ -200,8 +201,11 @@ const MainContainer = () => {
                             </Route>
                             <Route path={routes.account.to}>
                                 <PrivateMainSettingsArea setActiveSection={setActiveSection} config={routes.account}>
-                                    <UsernameSection />
-                                    <PasswordsSection />
+                                    <>
+                                        <UsernameSection />
+                                        <PasswordsSection />
+                                    </>
+                                    <TwoFactorSection />
                                     <OpenVPNCredentialsSection />
                                     <AccountRecoverySection />
                                     <EmailSubscriptionSection />
