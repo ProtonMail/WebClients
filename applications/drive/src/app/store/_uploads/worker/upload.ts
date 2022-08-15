@@ -102,8 +102,16 @@ async function uploadBlock(
         // Upload can be cancelled at the moment when the block is already
         // committed on the backend side, but from the client point of view
         // the request was cancelled. When we attempt to upload again, we
-        // get this error which we can ignore and consider it uploaded.
+        // were getting this error. But there were cases when the block was
+        // not properly stored, so backend rather dropped this feature and
+        // requires always to have successfull upload to not miss anything.
+        // It could not be here at all, but just in case, the best is to ask
+        // for new token (because old one wouldn't be possible to use) and
+        // try upload again.
+        // If its 2023, it's super safe to remove.
         if (err.errorCode === RESPONSE_CODE.ALREADY_EXISTS) {
+            console.warn(`Block token #${block.index} already exists. Asking for new upload token.`);
+            block.onTokenExpiration();
             return;
         }
 
