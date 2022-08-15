@@ -10,6 +10,7 @@ import {
     Href,
     OnLoginCallback,
     useApi,
+    useConfig,
     useErrorHandler,
     useLocalState,
     useMyLocation,
@@ -45,6 +46,7 @@ interface Props {
 }
 
 const ResetPasswordContainer = ({ onLogin, hasGenerateKeys = true }: Props) => {
+    const { APP_NAME } = useConfig();
     const history = useHistory();
     const cacheRef = useRef<ResetCacheResult | undefined>(undefined);
     const errorHandler = useErrorHandler();
@@ -67,6 +69,7 @@ const ResetPasswordContainer = ({ onLogin, hasGenerateKeys = true }: Props) => {
         const { username, persistent } = cacheRef.current || {};
         cacheRef.current = undefined;
         cacheRef.current = {
+            appName: APP_NAME,
             persistent: persistent ?? true,
             username: username ?? '',
             Methods: [],
@@ -108,6 +111,7 @@ const ResetPasswordContainer = ({ onLogin, hasGenerateKeys = true }: Props) => {
 
             handleValidateResetToken({
                 cache: {
+                    appName: APP_NAME,
                     username,
                     Methods: [],
                     persistent,
@@ -157,6 +161,7 @@ const ResetPasswordContainer = ({ onLogin, hasGenerateKeys = true }: Props) => {
                             defaultUsername={cache?.username || automaticVerification.username}
                             onSubmit={(username) => {
                                 return handleRequestRecoveryMethods({
+                                    appName: APP_NAME,
                                     hasGenerateKeys,
                                     username,
                                     persistent,

@@ -8,6 +8,7 @@ import { GetMnemonicResetData, getMnemonicReset, mnemonicReset } from '@proton/s
 import { getRecoveryMethods, getUser } from '@proton/shared/lib/api/user';
 import { AuthResponse, InfoResponse } from '@proton/shared/lib/authentication/interface';
 import { persistSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
+import { APP_NAMES } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { withAuthHeaders } from '@proton/shared/lib/fetch/headers';
 import { Api, UserSettings, UserType, User as tsUser } from '@proton/shared/lib/interfaces';
@@ -18,7 +19,11 @@ import {
     handleSetupAddressKeys,
 } from '@proton/shared/lib/keys';
 import { mnemonicToBase64RandomBytes } from '@proton/shared/lib/mnemonic';
-import { attemptDeviceRecovery, storeDeviceRecovery } from '@proton/shared/lib/recoveryFile/deviceRecovery';
+import {
+    attemptDeviceRecovery,
+    getIsDeviceRecoveryAvailable,
+    storeDeviceRecovery,
+} from '@proton/shared/lib/recoveryFile/deviceRecovery';
 import { srpAuth, srpVerify } from '@proton/shared/lib/srp';
 import { computeKeyPassword, generateKeySalt } from '@proton/srp';
 import isTruthy from '@proton/utils/isTruthy';
@@ -42,7 +47,7 @@ export const handleNewPassword = async ({
     cache: ResetCacheResult;
     api: Api;
 }): Promise<ResetActionResponse> => {
-    const { username, token, resetResponse, persistent } = cache;
+    const { username, token, resetResponse, persistent, appName } = cache;
     if (!resetResponse || !token) {
         throw new Error('Missing response');
     }
@@ -94,10 +99,11 @@ export const handleNewPassword = async ({
     await persistSession({ ...authResponse, persistent, User, keyPassword, api });
 
     if (keyPassword) {
+        const addresses = await getAllAddresses(authApi);
         const numberOfReactivatedKeys = await attemptDeviceRecovery({
             api: authApi,
             user: User,
-            addresses: await getAllAddresses(authApi),
+            addresses,
             keyPassword,
         }).catch(noop);
 
@@ -108,13 +114,22 @@ export const handleNewPassword = async ({
 
         // Store device recovery information
         if (persistent) {
-            const userSettings = await authApi<{ UserSettings: UserSettings }>(getSettings()).then(
-                ({ UserSettings }) => UserSettings
-            );
+            const userKeys = await getDecryptedUserKeysHelper(User, keyPassword);
+            const isDeviceRecoveryAvailable = getIsDeviceRecoveryAvailable({
+                user: User,
+                addresses,
+                userKeys,
+                appName,
+            });
 
-            if (userSettings.DeviceRecovery) {
-                const userKeys = await getDecryptedUserKeysHelper(User, keyPassword);
-                await storeDeviceRecovery({ api: authApi, user: User, userKeys });
+            if (isDeviceRecoveryAvailable) {
+                const userSettings = await authApi<{ UserSettings: UserSettings }>(getSettings()).then(
+                    ({ UserSettings }) => UserSettings
+                );
+
+                if (userSettings.DeviceRecovery) {
+                    await storeDeviceRecovery({ api: authApi, user: User, userKeys });
+                }
             }
         }
     }
@@ -316,11 +331,13 @@ export const handleValidateResetToken = async ({
 };
 
 export const handleRequestRecoveryMethods = async ({
+    appName,
     username,
     persistent,
     api,
     hasGenerateKeys,
 }: {
+    appName: APP_NAMES;
     username: string;
     persistent: boolean;
     api: Api;
@@ -334,6 +351,7 @@ export const handleRequestRecoveryMethods = async ({
             await api(requestLoginResetToken({ Username: username, Email: username }));
             return {
                 cache: {
+                    appName,
                     username,
                     persistent,
                     value: username,
@@ -354,6 +372,7 @@ export const handleRequestRecoveryMethods = async ({
 
         return {
             cache: {
+                appName,
                 username,
                 persistent,
                 Methods,
