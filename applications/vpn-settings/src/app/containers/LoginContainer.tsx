@@ -17,6 +17,7 @@ const LoginContainer = ({ onLogin }: Props) => {
         <AccountLoginContainer
             hasGenerateKeys={false}
             hasRemember={false}
+            hasFido2={false}
             onLogin={async (data) => {
                 const { User } = data;
                 const previousLocation = location.state?.from;

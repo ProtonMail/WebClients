@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { Ref, forwardRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -12,7 +12,10 @@ interface Props extends Omit<InputTwoProps, 'type'> {
     defaultType?: PasswordType;
 }
 
-const PasswordInputTwo = ({ disabled, suffix, defaultType = 'password', ...rest }: Props) => {
+const PasswordInputTwoBase = (
+    { disabled, suffix, defaultType = 'password', ...rest }: Props,
+    ref: Ref<HTMLInputElement>
+) => {
     const [type, setType] = useState<PasswordType>(defaultType);
     const toggle = () => {
         setType(type === 'password' ? 'text' : 'password');
@@ -24,6 +27,7 @@ const PasswordInputTwo = ({ disabled, suffix, defaultType = 'password', ...rest 
             autoCorrect="off"
             spellCheck="false"
             {...rest}
+            ref={ref}
             type={type}
             disabled={disabled}
             suffix={
@@ -46,5 +50,7 @@ const PasswordInputTwo = ({ disabled, suffix, defaultType = 'password', ...rest 
         />
     );
 };
+
+const PasswordInputTwo = forwardRef(PasswordInputTwoBase);
 
 export default PasswordInputTwo;

@@ -109,12 +109,12 @@ export const getAccountAppRoutes = ({
                 icon: 'user',
                 subsections: [
                     {
-                        text: c('Title').t`Username`,
-                        id: 'username',
+                        text: '',
+                        id: 'account',
                     },
                     {
-                        text: c('Title').t`Passwords`,
-                        id: 'passwords',
+                        text: c('Title').t`Two-factor authentication`,
+                        id: 'two-fa',
                     },
                     {
                         text: c('Title').t`Delete account`,

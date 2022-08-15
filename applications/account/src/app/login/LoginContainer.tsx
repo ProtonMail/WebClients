@@ -13,6 +13,7 @@ import {
 } from '@proton/components';
 import { AuthActionResponse, AuthCacheResult, AuthStep } from '@proton/components/containers/login/interface';
 import {
+    handleFido2,
     handleLogin,
     handleSetupInternalAddress,
     handleSetupPassword,
@@ -35,7 +36,7 @@ import GenerateInternalAddressStep from './GenerateInternalAddressStep';
 import LoginForm from './LoginForm';
 import LoginSupportDropdown from './LoginSupportDropdown';
 import SetPasswordForm from './SetPasswordForm';
-import TOTPForm from './TOTPForm';
+import TwoFactorStep from './TwoFactorStep';
 import UnlockForm from './UnlockForm';
 
 interface Props {
@@ -47,6 +48,7 @@ interface Props {
     onBack?: () => void;
     hasRemember?: boolean;
     hasGenerateKeys?: boolean;
+    hasFido2?: boolean;
     hasActiveSessions?: boolean;
 }
 
@@ -59,6 +61,7 @@ const LoginContainer = ({
     shouldSetupInternalAddress,
     hasRemember = true,
     hasGenerateKeys = true,
+    hasFido2 = true,
     hasActiveSessions = false,
 }: Props) => {
     const { APP_NAME } = useConfig();
@@ -163,6 +166,7 @@ const LoginContainer = ({
                                     hasGenerateKeys,
                                     hasTrustedDeviceRecovery,
                                     appName: APP_NAME,
+                                    hasFido2,
                                     ignoreUnlock: false,
                                     hasInternalAddressSetup: !!shouldSetupInternalAddress,
                                     payload,
@@ -181,21 +185,34 @@ const LoginContainer = ({
                 <>
                     <Header title={c('Title').t`Two-factor authentication`} onBack={handleBackStep} />
                     <Content>
-                        <TOTPForm
-                            onSubmit={(totp) =>
-                                handleTotp({
-                                    cache,
-                                    totp,
-                                })
-                                    .then(handleResult)
-                                    .catch((e) => {
-                                        handleError(e);
-                                        // Cancel on any error except totp retry
-                                        if (e.name !== 'TOTPError') {
-                                            handleCancel();
-                                        }
+                        <TwoFactorStep
+                            fido2={cache.authResult?.['2FA']?.FIDO2}
+                            authTypes={cache.authTypes}
+                            onSubmit={(data) => {
+                                if (data.type === 'code') {
+                                    return handleTotp({
+                                        cache,
+                                        totp: data.payload,
                                     })
-                            }
+                                        .then(handleResult)
+                                        .catch((e) => {
+                                            handleError(e);
+                                            // Cancel on any error except totp retry
+                                            if (e.name !== 'TOTPError') {
+                                                handleCancel();
+                                            }
+                                        });
+                                }
+                                if (data.type === 'fido2') {
+                                    return handleFido2({ cache, payload: data.payload })
+                                        .then(handleResult)
+                                        .catch((e) => {
+                                            handleError(e);
+                                            handleCancel();
+                                        });
+                                }
+                                throw new Error('Unknown type');
+                            }}
                         />
                     </Content>
                 </>

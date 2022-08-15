@@ -11,6 +11,14 @@ const getInfoResult = (version) => ({
     Salt,
 });
 
+const getResponse = (json) => {
+    const result = {
+        clone: () => result,
+        json: () => json,
+    };
+    return result;
+};
+
 describe('login with fallback', () => {
     beforeAll(() => initRandomMock());
     afterAll(() => disableRandomMock());
@@ -24,10 +32,10 @@ describe('login with fallback', () => {
             }
             if (url === 'auth') {
                 authCalls++;
-                return {
+                return getResponse({
                     ServerProof,
                     foo: 'bar',
-                };
+                });
             }
         };
 
@@ -57,11 +65,13 @@ describe('login with fallback', () => {
                     // eslint-disable-next-line
                     return Promise.reject({ data: { Code: 8002 } });
                 }
-                return Promise.resolve({
-                    ServerProof:
-                        'ayugXfnft4D+YtSWCv/Kx1IIXAS850wY8R4BfnD1TwhvRWgu/Mzs0S3DuSwoIV6sE8BcjqimBhxFwZWW1L0Y059UM75FnJZ9H4D/o2CmMze3vOg2ShIpVdrfgMTV8BGlwhzHt6z2yH+m+6WfW7RSKmai46Q7Cj4brTrvxY7xWzsFtJVUbJcgwfSOmi6OBZ1Ouu/yKuwQi554tbBogaLky938SmMP3nDLpvhJCLM9j47eyN2QWU1kFOVu9yy9vN5i7ZuEhREApnX2D5qn3+63bWnxysB0Qx8LD30OnRrxGni4TgpxtsNXbbxMH1XdPrkkeyUxAL0Q25sbTZUdL+zfpA==',
-                    foo: 'bar',
-                });
+                return Promise.resolve(
+                    getResponse({
+                        ServerProof:
+                            'ayugXfnft4D+YtSWCv/Kx1IIXAS850wY8R4BfnD1TwhvRWgu/Mzs0S3DuSwoIV6sE8BcjqimBhxFwZWW1L0Y059UM75FnJZ9H4D/o2CmMze3vOg2ShIpVdrfgMTV8BGlwhzHt6z2yH+m+6WfW7RSKmai46Q7Cj4brTrvxY7xWzsFtJVUbJcgwfSOmi6OBZ1Ouu/yKuwQi554tbBogaLky938SmMP3nDLpvhJCLM9j47eyN2QWU1kFOVu9yy9vN5i7ZuEhREApnX2D5qn3+63bWnxysB0Qx8LD30OnRrxGni4TgpxtsNXbbxMH1XdPrkkeyUxAL0Q25sbTZUdL+zfpA==',
+                        foo: 'bar',
+                    })
+                );
             }
         };
 

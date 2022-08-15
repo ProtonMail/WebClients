@@ -82,11 +82,11 @@ const refresh = (call, UID, attempts, maxAttempts) => {
  * Attach a catch handler to every API call to handle 401, 403, and other errors.
  * @param {function} call
  * @param {string} UID
- * @param {function} onUnlock
+ * @param {function} onMissingScopes
  * @param {function} onVerification
  * @return {function}
  */
-export default ({ call, UID, onUnlock, onVerification }) => {
+export default ({ call, UID, onMissingScopes, onVerification }) => {
     let loggedOut = false;
     let appVersionBad = false;
 
@@ -133,8 +133,6 @@ export default ({ call, UID, onUnlock, onVerification }) => {
 
         return refreshHandlers[UID](responseDate);
     };
-    const unlockHandler = createOnceHandler(onUnlock);
-
     return (options) => {
         const perform = (attempts, maxAttempts) => {
             if (loggedOut) {
@@ -213,7 +211,11 @@ export default ({ call, UID, onUnlock, onVerification }) => {
                 const ignoreUnlock = Array.isArray(ignoreHandler) && ignoreHandler.includes(HTTP_ERROR_CODES.UNLOCK);
                 if (status === HTTP_ERROR_CODES.UNLOCK && !ignoreUnlock) {
                     const { Details: { MissingScopes: missingScopes = [] } = {} } = e.data || {};
-                    return unlockHandler(missingScopes, e).then(() => perform(attempts + 1, RETRY_ATTEMPTS_MAX));
+                    return onMissingScopes({
+                        scopes: missingScopes,
+                        error: e,
+                        options,
+                    });
                 }
 
                 const ignoreTooManyRequests =

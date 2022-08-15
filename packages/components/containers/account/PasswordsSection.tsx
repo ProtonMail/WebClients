@@ -13,14 +13,13 @@ import SettingsLayout from './SettingsLayout';
 import SettingsLayoutLeft from './SettingsLayoutLeft';
 import SettingsLayoutRight from './SettingsLayoutRight';
 import SettingsSection from './SettingsSection';
-import TwoFactorSection from './TwoFactorSection';
 
 const PasswordsSection = () => {
     const [user, loadingUser] = useUser();
     const [userSettings, loadingUserSettings] = useUserSettings();
 
     const [tmpPasswordMode, setTmpPasswordMode] = useState<MODES>();
-    const [changePasswordModal, setChangePasswordModalOpen, render] = useModalState();
+    const [changePasswordModal, setChangePasswordModalOpen, renderChangePasswordModal] = useModalState();
 
     const isOnePasswordMode = userSettings?.Password?.Mode === SETTINGS_PASSWORD_MODE.ONE_PASSWORD_MODE;
     const passwordLabel = isOnePasswordMode ? c('Title').t`Password` : c('Title').t`Login password`;
@@ -56,7 +55,9 @@ const PasswordsSection = () => {
 
     return (
         <>
-            {render && tmpPasswordMode && <ChangePasswordModal mode={tmpPasswordMode} {...changePasswordModal} />}
+            {renderChangePasswordModal && tmpPasswordMode && (
+                <ChangePasswordModal mode={tmpPasswordMode} {...changePasswordModal} />
+            )}
             <SettingsSection>
                 <SettingsLayout>
                     <SettingsLayoutLeft>
@@ -65,12 +66,9 @@ const PasswordsSection = () => {
                         </label>
                     </SettingsLayoutLeft>
                     <SettingsLayoutRight>
-                        <Button color="norm" onClick={() => handleChangePassword(changePasswordMode)}>
-                            {passwordButtonLabel}
-                        </Button>
+                        <Button onClick={() => handleChangePassword(changePasswordMode)}>{passwordButtonLabel}</Button>
                     </SettingsLayoutRight>
                 </SettingsLayout>
-                <TwoFactorSection />
                 {hasTwoPasswordOption && (
                     <>
                         <SettingsLayout>
@@ -107,7 +105,6 @@ const PasswordsSection = () => {
                                 </SettingsLayoutLeft>
                                 <SettingsLayoutRight>
                                     <Button
-                                        color="norm"
                                         onClick={() => handleChangePassword(MODES.CHANGE_TWO_PASSWORD_MAILBOX_MODE)}
                                     >
                                         {c('Action').t`Change mailbox password`}

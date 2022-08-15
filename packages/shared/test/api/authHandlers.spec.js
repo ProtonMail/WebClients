@@ -24,11 +24,13 @@ describe('auth handlers', () => {
         const call = jasmine
             .createSpy('call')
             .and.returnValues(Promise.reject(getApiError({ status: 403 })), Promise.resolve(getApiResult('123')));
-        const handleUnlock = jasmine.createSpy('unlock').and.returnValues(Promise.resolve());
-        const api = withApiHandlers({ call, onUnlock: handleUnlock });
+        const handleMissingScopes = jasmine.createSpy('unlock').and.callFake(({ options }) => {
+            return call(options);
+        });
+        const api = withApiHandlers({ call, onMissingScopes: handleMissingScopes });
         const result = await api({}).then((r) => r.json());
         expect(result).toBe('123');
-        expect(handleUnlock).toHaveBeenCalledTimes(1);
+        expect(handleMissingScopes).toHaveBeenCalledTimes(1);
         expect(call).toHaveBeenCalledTimes(2);
     });
 
@@ -39,7 +41,7 @@ describe('auth handlers', () => {
         const handleError = jasmine.createSpy('error').and.callFake((e) => {
             return e;
         });
-        const api = withApiHandlers({ call, onUnlock: handleUnlock });
+        const api = withApiHandlers({ call, onMissingScopes: handleUnlock });
         const error = await api({}).catch(handleError);
         expect(error).toBe(unlockError);
         expect(handleError).toHaveBeenCalledTimes(1);
