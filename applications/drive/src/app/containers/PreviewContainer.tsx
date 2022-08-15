@@ -39,6 +39,13 @@ export default function PreviewContainer({ match }: RouteComponentProps<{ shareI
 
     const { isLoading, error, link, contents, saveFile, navigation } = useFileView(shareId, linkId, useNavigation);
 
+    // If the link is not type of file, probably user modified the URL.
+    useEffect(() => {
+        if (link && !link.isFile) {
+            navigateToLink(shareId, linkId, false);
+        }
+    }, [link?.isFile]);
+
     useEffect(() => {
         if (link) {
             setFolder({ shareId, linkId: link.parentLinkId });
@@ -51,7 +58,8 @@ export default function PreviewContainer({ match }: RouteComponentProps<{ shareI
                 // Block not found (storage response).
                 error.status === HTTP_STATUS_CODE.NOT_FOUND ||
                 // Meta data not found (API response).
-                error.data?.Code === RESPONSE_CODE.NOT_FOUND
+                error.data?.Code === RESPONSE_CODE.NOT_FOUND ||
+                error.data?.Code === RESPONSE_CODE.INVALID_ID
             ) {
                 navigateToRoot();
             } else {
