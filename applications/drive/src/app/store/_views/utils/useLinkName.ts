@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
 
 import { useLink } from '../../_links';
-import { logError } from '../../_utils';
+import { isIgnoredError, logError } from '../../_utils';
 
 /**
  * useLinkName returns link name when its loaded.
  */
-export default function useLinkName(shareId: string, linkId: string): string {
+export default function useLinkName(shareId: string, linkId: string, errorCallback?: (error: any) => void): string {
     const [name, setName] = useState('');
 
     const { getLink } = useLink();
@@ -15,7 +15,12 @@ export default function useLinkName(shareId: string, linkId: string): string {
         const abortController = new AbortController();
         getLink(abortController.signal, shareId, linkId)
             .then((link) => setName(link.name))
-            .catch(logError);
+            .catch((err) => {
+                logError(err);
+                if (!isIgnoredError(err)) {
+                    errorCallback?.(err);
+                }
+            });
         return () => {
             abortController.abort();
         };
