@@ -31,9 +31,7 @@ const ShowSecondaryTimezoneToggle = ({
         createNotification({ text: c('Success').t`Preference saved` });
     };
 
-    const secondaryTimezoneValue = DisplaySecondaryTimezone
-        ? SecondaryTimezone || timezone
-        : SecondaryTimezone || timezone;
+    const secondaryTimezoneValue = SecondaryTimezone || timezone;
 
     return (
         <SettingsLayout>
