@@ -1,0 +1,134 @@
+import { Canvas, Primary, Source, Story } from '@storybook/addon-docs';
+
+import { Table, TableBody, TableCell, TableHeader, TableRow } from '@proton/components';
+
+# Sizing
+
+## Width in percent
+
+<Story id="css-utilities-sizing--width-percents" />
+
+## Widths in pixels
+
+<Story id="css-utilities-sizing--width-pixels" />
+
+## Widths in EM
+
+<Story id="css-utilities-sizing--width-em" />
+
+## Max width in percent
+
+<Story id="css-utilities-sizing--max-width-percent" />
+
+## Custom classes to use with CSS variables
+
+Use these classes together with inline styles
+
+<Table className="color-norm">
+    <TableHeader>
+        <TableRow>
+            <TableCell type="header" className="w20">
+                Class
+            </TableCell>
+            <TableCell type="header">Variable</TableCell>
+        </TableRow>
+    </TableHeader>
+    <TableBody>
+        <TableRow>
+            <TableCell>
+                <code>.w-custom</code>
+            </TableCell>
+            <TableCell>
+                <code>--width-custom</code>
+            </TableCell>
+        </TableRow>
+        <TableRow>
+            <TableCell>
+                <code>.min-w-custom</code>
+            </TableCell>
+            <TableCell>
+                <code>--min-width-custom</code>
+            </TableCell>
+        </TableRow>
+        <TableRow>
+            <TableCell>
+                <code>.max-w-custom</code>
+            </TableCell>
+            <TableCell>
+                <code>--max-width-custom</code>
+            </TableCell>
+        </TableRow>
+        <TableRow>
+            <TableCell>
+                <code>.h-custom</code>
+            </TableCell>
+            <TableCell>
+                <code>--height-custom</code>
+            </TableCell>
+        </TableRow>
+        <TableRow>
+            <TableCell>
+                <code>.min-h-custom</code>
+            </TableCell>
+            <TableCell>
+                <code>--min-height-custom</code>
+            </TableCell>
+        </TableRow>
+        <TableRow>
+            <TableCell>
+                <code>.max-h-custom</code>
+            </TableCell>
+            <TableCell>
+                <code>--max-height-custom</code>
+            </TableCell>
+        </TableRow>
+    </TableBody>
+</Table>
+
+### Example
+
+```html
+<div className="h-custom w-custom" style={{ '--width-custom': '200px', '--height-custom': '200px', }} />
+```
+
+## Height helpers
+
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+  <div class="w49 flex-align-self-center">
+    Applies <code>height: 100%</code> to element.
+  </div>
+  <div class="w49">
+<Source
+  language='html'
+  light
+  format
+  code={`
+<div className="h100">
+`}
+/>
+
+  </div>
+</div>
+
+<code>h100v</code> applies <code>height: 100vh</code> to an element. (better <span class="text-uppercase">not</span> using
+it, thanks to mobiles that don't support it correctly)
+
+<div class="flex flex-justify-space-between mb2 on-mobile-flex-column">
+    <div class="w49 flex-align-self-center">
+        Applies <code>height: auto</code> to element. Make sure this is really needed.
+    </div>
+    <div class="w49">
+        <Source
+            language="html"
+            light
+            format
+            code={`
+<div className="hauto">
+`}
+        />
+    </div>
+</div>
+
+<div class="hidden">
+    <Primary />
+</div>
