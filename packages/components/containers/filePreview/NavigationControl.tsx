@@ -48,6 +48,7 @@ const NavigationControl = ({ current, total, rootRef, onNext, onPrev }: Props) =
                 disabled={isPrevDisabled}
                 onClick={onPrev}
                 title={c('Action').t`Previous`}
+                data-testid="preview:button:previous"
             >
                 <Icon name="chevron-left" size={16} alt={c('Action').t`Previous`} />
             </Button>
@@ -63,6 +64,7 @@ const NavigationControl = ({ current, total, rootRef, onNext, onPrev }: Props) =
                 disabled={isNextDisabled}
                 onClick={onNext}
                 title={c('Action').t`Next`}
+                data-testid="preview:button:next"
             >
                 <Icon name="chevron-right" size={16} alt={c('Action').t`Next`} />
             </Button>
