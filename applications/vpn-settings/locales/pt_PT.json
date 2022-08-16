@@ -5,6 +5,9 @@
   },
   "contexts": {
     "Action": {
+      "${ address } is available.": [
+        "${ address } está disponível."
+      ],
       "${ BRAND_NAME } introduction": [
         "Introdução do ${ BRAND_NAME }"
       ],
@@ -22,6 +25,9 @@
       ],
       "Apply": [
         "Aplicar"
+      ],
+      "Authenticate": [
+        "Autenticar"
       ],
       "Back": [
         "Recuar"
@@ -53,6 +59,9 @@
       "Confirm": [
         "Confirmar"
       ],
+      "Contact support": [
+        "Contactar o suporte"
+      ],
       "Continue": [
         "Continuar"
       ],
@@ -62,8 +71,14 @@
       "Copy email to clipboard": [
         "Copiar mensagem para a área de transferência"
       ],
+      "Create": [
+        "Criar"
+      ],
       "Create account": [
         "Criar conta"
+      ],
+      "Create address": [
+        "Criar endereço"
       ],
       "Customize": [
         "Personalizar"
@@ -79,6 +94,9 @@
       ],
       "Details": [
         "Detalhes"
+      ],
+      "Didn't receive a code?": [
+        "Não recebeu o código?"
       ],
       "Done": [
         "Feito"
@@ -115,6 +133,9 @@
       ],
       "Increase": [
         "Aumentar"
+      ],
+      "Load more": [
+        "Carregar mais"
       ],
       "Loading verification": [
         "A carregar verificação"
@@ -185,6 +206,12 @@
       "Save": [
         "Gravar"
       ],
+      "Send code": [
+        "Enviar código"
+      ],
+      "Send my username": [
+        "Enviar nome de utilizador"
+      ],
       "Share via link": [
         "Partilhar por ligação"
       ],
@@ -193,6 +220,9 @@
       ],
       "Show": [
         "Mostrar"
+      ],
+      "Sign in": [
+        "Iniciar sessão"
       ],
       "Sign out": [
         "Terminar sessão"
@@ -203,6 +233,9 @@
       "Submit": [
         "Submeter"
       ],
+      "Support": [
+        "Apoio ao cliente"
+      ],
       "Top up": [
         "Recarregar"
       ],
@@ -212,14 +245,26 @@
       "Try another method": [
         "Tentar outro método"
       ],
+      "Unlock": [
+        "Desbloquear"
+      ],
       "Upgrade": [
         "Actualizar"
+      ],
+      "Use ${ label } theme": [
+        "Usar o tema ${ label }"
       ],
       "Use a different card": [
         "Utilizar um cartão diferente"
       ],
       "Use a different payment method": [
         "Utilizar um método de pagamento diferente"
+      ],
+      "Use recovery code": [
+        "Usar código de recuperação"
+      ],
+      "Use two-factor authentication code": [
+        "Usar código de autenticação em dois passos"
       ],
       "User": [
         "Utilizador"
@@ -416,6 +461,11 @@
         "A sincronizar"
       ]
     },
+    "Calendar subscription not synced error": {
+      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
+        "A sincronizar agenda: a exibição de todos os eventos, poderá demorar vários minutos."
+      ]
+    },
     "Confirmation message to delete payment method": {
       "Are you sure you want to delete this payment method?": [
         "Tem a certeza de que deseja eliminar este método de pagamento?"
@@ -473,6 +523,9 @@
       ],
       "Code wrong or not valid anymore": [
         "Código errado ou inválido"
+      ],
+      "Domain not available, try again later": [
+        "Domínio indisponível, tente novamente mais tarde"
       ],
       "Email is not valid": [
         "Email inválido"
@@ -690,11 +743,17 @@
         "${ number } servidor",
         "${ number } servidores"
       ],
+      "${ strongAddressAvailable } You will use this email address to sign into all ${ BRAND_NAME } services.": [
+        "${ strongAddressAvailable } Utilizará este email para iniciar sessão em todos os serviços ${ BRAND_NAME }."
+      ],
       "(Mail + VPN)": [
         "(Correio + VPN)"
       ],
       "+${ bonusSpace } bonus storage": [
         "+ ${ bonusSpace } de armazenamento extra"
+      ],
+      "10 email addresses": [
+        "10 endereços de e-mail"
       ],
       "20% discount applied to your subscription with coupon ${ code }": [
         "Foi aplicado um desconto de 20% com o cupão ${ code }"
@@ -710,6 +769,9 @@
       ],
       "Amount below minimum (${ amount }).": [
         "Quantia abaixo do mínimo (${ amount })."
+      ],
+      "AOL reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
+        "O AOL lê os seus dados pessoais, a fim de fornecer acesso a anunciantes e outros terceiros. Para uma melhor privacidade, crie um endereço de email seguro."
       ],
       "Basic, Plus or Visionary subscription required": [
         "Requerida subscrição Basic, Plus ou Visionary"
@@ -735,11 +797,20 @@
       "By leaving now, changes may not be saved": [
         "Se sair agora, as alterações podem não ficar gravadas"
       ],
+      "Choose the look and feel of the application.": [
+        "Escolha a aparência da aplicação."
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Clique em \"Pedir novo código\" para receber um novo código de verificação em ${ strong }. Se o número estiver incorrecto, clique em \"Editar\" para o corrigir."
       ],
+      "Continue anyway?": [
+        "Continuar mesmo assim?"
+      ],
       "Creating your account": [
         "A criar a sua conta"
+      ],
+      "Credit for the unused portion of your previous plan subscription": [
+        "Crédito pela parte não utilizada no plano anterior da sua assinatura"
       ],
       "Discount applied to your subscription with coupon ${ code }": [
         "Foi aplicado um desconto com o cupão ${ code }"
@@ -753,11 +824,23 @@
       "Enter key manually instead": [
         "Inserir a chave manualmente"
       ],
+      "Enter the code sent to your phone number ${ phone }.": [
+        "Insira o código enviado para o seu número de telefone ${ phone }."
+      ],
+      "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
+        "Insira o código enviado para ${ email }. Se não encontrar a mensagem na sua caixa de entrada, por favor verifique a pasta de spam."
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Insira o código de verificação que foi enviado para ${ destinationText }."
       ],
       "Enter your login password to confirm your identity.": [
         "Insira a senha de início de sessão para confirmar a sua identidade."
+      ],
+      "Enter your recovery email address and we will send you your username or email address.": [
+        "Insira o seu email de recuperação e receberá o seu nome de utilizador ou endereço de email."
+      ],
+      "Enter your recovery phone number and we will send you your username or email address.": [
+        "Insira o seu telefone de recuperação e receberá o seu nome de utilizador ou endereço de email."
       ],
       "Expired": [
         "Expirado"
@@ -770,6 +853,9 @@
       ],
       "Free up some space or contact your administrator.": [
         "Liberte algum espaço ou contacte um administrador."
+      ],
+      "Google records your online activity and reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
+        "O Google regista a sua actividade online e lê os seus dados pessoais, a fim de fornecer acesso a anunciantes e outros terceiros. Para uma melhor privacidade, crie um endereço de email seguro."
       ],
       "here": [
         "aqui"
@@ -816,6 +902,9 @@
       "Internet connection restored.": [
         "Ligação à Internet reposta."
       ],
+      "Learn more": [
+        "Saiba mais"
+      ],
       "Loading": [
         "A carregar"
       ],
@@ -824,6 +913,12 @@
       ],
       "Loading preview": [
         "A carregar antevisão"
+      ],
+      "lose access to all current encrypted data": [
+        "perder o acesso a todos os dados encriptados actuais"
+      ],
+      "Mail.ru reads your personal data in order to provide access for advertisers, Russian government agencies and other third parties. For better privacy, create a secure email address.": [
+        "O Mail.ru lê os seus dados pessoais a fim de proporcionar acesso a anunciantes, agências de informação russas e outros terceiros. Para uma melhor privacidade, crie um endereço de email seguro."
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "Insira manualmente esta informação no seu dispositivo de autenticação em dois passos para configurar a sua conta. ${ _switchButton }."
@@ -912,6 +1007,9 @@
       "This can take a few seconds or a few minutes depending on your device": [
         "Pode levar alguns segundos ou alguns minutos, dependendo do seu dispositivo"
       ],
+      "This will also disable any two-factor authentication method associated with this account.": [
+        "Isto também desactivará qualquer método de autenticação em dois passos associado a esta conta."
+      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "Isto cancelará a sua assinatura paga actual e perderá qualquer benefício de fidelidade acumulado. O saldo restante da sua assinatura será devolvido como créditos na conta."
       ],
@@ -921,8 +1019,14 @@
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "Isto vai eliminar permanentemente a sua conta e todos os seus dados. Não poderá reactivar esta conta."
       ],
+      "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
+        "Isto substituirá a sua senha temporária. Utilize-a para aceder à sua conta ${ BRAND_NAME } no futuro."
+      ],
       "This wizard will enable Two-Factor Authentication (2FA) on your Proton account. Two-factor authentication will make your Proton account more secure so we recommend enabling it.": [
         "Este assistente vai activar a autenticação em dois passos (2FA) na sua conta Proton. O 2FA tornará a sua conta Proton mais segura, recomendamos a sua activação."
+      ],
+      "to continue to ${ toAppName }": [
+        "para continuar para ${ toAppName }"
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Para combater o spam e o abuso, por favor confirme que é um ser humano."
@@ -951,6 +1055,9 @@
       "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
         "O modo de senha dupla usa senhas separadas para iniciar a sessão e desencriptar a caixa do correio. Isto proporciona um pequeno benefício na segurança em algumas situações, no entanto, recomendamos o modo de senha única para a maioria dos utilizadores. Para mudar para o modo de senha dupla, insira primeiro a senha de início de sessão e depois a da caixa de correio."
       ],
+      "Unfortunately there is no recovery method saved for this account.": [
+        "Infelizmente não há método de recuperação definido para esta conta."
+      ],
       "Unsupported file": [
         "Ficheiro não suportado"
       ],
@@ -972,17 +1079,29 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "A página será redireccionada para um novo separador PayPal no seu navegador, para concluir a transacção. Se utiliza bloqueadores de janelas, por favor desactive-os."
       ],
+      "We're moving! Join us at our new site: ${ link }.": [
+        "Estamos a mover! Junte-se a nós no nosso novo site: ${link }."
+      ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Quando a subscrição for renovada, aplicaremos quaisquer créditos disponíveis antes de usarmos o método de pagamento acima."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Deseja receber um novo código de verificação ou usar um método de verificação alternativo?"
       ],
+      "Yahoo reads your personal data in order to provide access for advertisers, US intelligence agencies and other third parties. For better privacy, create a secure email address.": [
+        "O Yahoo lê os seus dados pessoais a fim de proporcionar acesso a anunciantes, agências de informação americanas e outros terceiros. Para uma melhor privacidade, crie um endereço de email seguro."
+      ],
+      "Yandex records your online activity and reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
+        "O Yandex regista a sua actividade online e lê os seus dados pessoais, a fim de fornecer acesso a anunciantes e outros terceiros. Para uma melhor privacidade, crie um endereço de email seguro."
+      ],
       "You already have a free account": [
         "Já tem uma conta gratuita"
       ],
       "You can customize and download your invoices for accounting purposes.": [
         "Pode personalizar e transferir as suas facturas para efeitos contabilísticos."
+      ],
+      "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
+        "Não definiu um método de recuperação, a recuperação da conta será impossível se se esquecer da senha. Deseja continuar sem um método de recuperação?"
       ],
       "You have no saved payment methods.": [
         "Não tem métodos de pagamento gravados."
@@ -998,6 +1117,9 @@
       ],
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
         "Atingiu os 100% da sua capacidade de armazenamento. Não pode enviar ou receber novos emails. ${ freeUpMessage } ${ upgradeLink }"
+      ],
+      "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
+        "Vai ${ loseAllData } na sua conta ${ BRAND_NAME } . Para restaurá-los, terá de reinserir a sua senha antiga."
       ],
       "You will be soon redirected to your bank to verify your payment.": [
         "Será brevemente redireccionado para o seu banco para verificar o pagamento."
@@ -1031,6 +1153,9 @@
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "A sua conta Proton está actualmente suspensa. Para continuar a usar a sua conta, por favor, pague quaisquer facturas em atraso."
+      ],
+      "Your recovery email address:": [
+        "O seu email de recuperação:"
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "A sua subscrição é gerida pela Mozilla. Por favor, contacte o suporte da Mozilla."
@@ -1142,6 +1267,9 @@
       "Category": [
         "Categoria"
       ],
+      "Code": [
+        "Código"
+      ],
       "Confirm login password": [
         "Confirmar senha de início de sessão"
       ],
@@ -1169,6 +1297,9 @@
       "Default language": [
         "Idioma predefinido"
       ],
+      "Delete": [
+        "Eliminar"
+      ],
       "Digits": [
         "Algarismos"
       ],
@@ -1177,6 +1308,9 @@
       ],
       "Email address": [
         "Endereço de email"
+      ],
+      "Email or username": [
+        "Email ou utilizador"
       ],
       "Enter the code displayed on your TV": [
         "Insira o código mostrado na sua TV"
@@ -1258,6 +1392,15 @@
       ],
       "Proton username": [
         "Nome de utilizador Proton"
+      ],
+      "Recovery code": [
+        "Código de recuperação"
+      ],
+      "Recovery phrase": [
+        "Frase de recuperação"
+      ],
+      "Repeat password": [
+        "Repita a senha"
       ],
       "Reveal password": [
         "Mostrar senha"
@@ -1343,6 +1486,12 @@
       "click here": [
         "clique aqui"
       ],
+      "Common sign in issues": [
+        "Problemas de ligação comuns"
+      ],
+      "Common sign up issues": [
+        "Problemas de registo comuns"
+      ],
       "Forgot username?": [
         "Esqueceu-se do nome de utilizador?"
       ],
@@ -1363,6 +1512,9 @@
       ],
       "Reset password": [
         "Repor senha"
+      ],
+      "Sign in": [
+        "Iniciar sessão"
       ],
       "Upgrade": [
         "Actualizar"
@@ -1401,6 +1553,33 @@
     "new_plans: action": {
       "Continue with Free": [
         "Continue with Free"
+      ],
+      "Delete account": [
+        "Eliminar conta"
+      ],
+      "Got it": [
+        "Percebi"
+      ]
+    },
+    "new_plans: feature": {
+      "Encrypted contact details": [
+        "Detalhes de contacto encriptados"
+      ],
+      "Secure Core servers": [
+        "Servidores Secure Core"
+      ],
+      "Two-factor authentication": [
+        "Autenticação em dois passos"
+      ]
+    },
+    "new_plans: heading": {
+      "Support": [
+        "Apoio ao cliente"
+      ]
+    },
+    "new_plans: signup": {
+      "Subscription": [
+        "Subscrição"
       ]
     },
     "Notification": {
@@ -1526,6 +1705,40 @@
         "Gratuito"
       ]
     },
+    "Recovery Email": {
+      "Cancel": [
+        "Cancelar"
+      ]
+    },
+    "Recovery method": {
+      "Email": [
+        "Email"
+      ],
+      "Phone number": [
+        "Número de telefone"
+      ]
+    },
+    "Recovery Phone": {
+      "Cancel": [
+        "Cancelar"
+      ]
+    },
+    "Signup label": {
+      "Display name": [
+        "Nome a mostrar"
+      ],
+      "Email": [
+        "Email"
+      ],
+      "Username": [
+        "Nome de utilizador"
+      ]
+    },
+    "Spotlight": {
+      "Get up to 18 months of ${ planName } for free": [
+        "Obtenha até 18 meses grátis de ${ planName }"
+      ]
+    },
     "State": {
       "Downgrading your account, please wait": [
         "A regredir a conta, por favor aguarde"
@@ -1540,6 +1753,17 @@
       ],
       "Your current storage:": [
         "O seu armazenamento actual:"
+      ]
+    },
+    "Subscription attribute": {
+      "${ UsedAddresses } of ${ MaxAddresses } email address": [
+        "${ UsedAddresses } de ${ MaxAddresses } endereço electrónico",
+        "${ UsedAddresses } de ${ MaxAddresses } endereços electrónicos"
+      ]
+    },
+    "Subscription saving": {
+      "Save": [
+        "Gravar"
       ]
     },
     "Success": {
@@ -1563,6 +1787,12 @@
       ],
       "Gift code applied": [
         "Código de oferta aplicado"
+      ],
+      "If you entered a valid recovery email we will send you an email with your usernames in the next minute.": [
+        "Se inseriu um email de recuperação válido, enviar-lhe-emos um email com o seu nome de utilizador no próximo minuto."
+      ],
+      "If you entered a valid recovery phone we will send you an sms with your usernames in the next minute.": [
+        "Se inseriu um telefone de recuperação válido, enviar-lhe-emos uma mensagem com o seu nome de utilizador no próximo minuto."
       ],
       "Invoice customized": [
         "Factura personalizada"
@@ -1724,11 +1954,17 @@
       "Edit credit/debit card": [
         "Editar cartão de débito/crédito"
       ],
+      "Email": [
+        "Email"
+      ],
       "Email subscriptions": [
         "Subscrições de email"
       ],
       "Error": [
         "Erro"
+      ],
+      "Find email or username": [
+        "Encontrar email ou utilizador"
       ],
       "General": [
         "Geral"
@@ -1756,6 +1992,9 @@
       ],
       "Next": [
         "Seguinte"
+      ],
+      "No recovery method": [
+        "Nenhum método de recuperação"
       ],
       "Open actions dropdown": [
         "Abrir lista de acções"
@@ -1796,6 +2035,9 @@
       "PayPal verification failed": [
         "A verificação PayPal falhou"
       ],
+      "Phone": [
+        "Telefone"
+      ],
       "Plan summary": [
         "Resumo do plano"
       ],
@@ -1814,17 +2056,29 @@
       "Report a problem": [
         "Relatar um problema"
       ],
+      "Request new code": [
+        "Pedir novo código"
+      ],
       "Reset password": [
         "Repor senha"
       ],
+      "Reset password?": [
+        "Repor senha?"
+      ],
       "Select a plan": [
         "Seleccione um plano"
+      ],
+      "Set new password": [
+        "Definir nova senha"
       ],
       "Set up two-factor authentication": [
         "Configurar autenticação em dois passos"
       ],
       "Settings": [
         "Definições"
+      ],
+      "Sign in": [
+        "Iniciar sessão"
       ],
       "Sign in again to continue": [
         "Reinicie sessão para continuar"
@@ -1838,17 +2092,32 @@
       "Switch to two-password mode": [
         "Mudar para modo de senha dupla"
       ],
+      "This address might compromise your privacy.": [
+        "Este endereço pode comprometer sua privacidade."
+      ],
       "TV log in": [
         "Iniciar sessão de TV"
       ],
+      "Two-factor authentication": [
+        "Autenticação em dois passos"
+      ],
       "Type": [
         "Tipo"
+      ],
+      "Unlock your mailbox": [
+        "Desbloqueie a sua caixa de correio"
       ],
       "Unsupported browser": [
         "Navegador não suportado"
       ],
       "Username": [
         "Utilizador"
+      ],
+      "Warning": [
+        "Aviso"
+      ],
+      "Warning!": [
+        "Aviso!"
       ],
       "What's new": [
         "O que há de novo"

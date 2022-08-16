@@ -145,6 +145,9 @@
       "Clear all formatting": [
         "Очистити форматування"
       ],
+      "Clear two-factor authentication code": [
+        "Прибрати код двоетапної перевірки"
+      ],
       "Close": [
         "Закрити"
       ],
@@ -343,9 +346,6 @@
       "Export": [
         "Експорт"
       ],
-      "Export ICS": [
-        "Експортувати ICS"
-      ],
       "Export key": [
         "Експортувати ключ"
       ],
@@ -438,6 +438,9 @@
       ],
       "Loading verification": [
         "Завантаження підтвердження"
+      ],
+      "Make default": [
+        "Зробити типовою"
       ],
       "Mark as default": [
         "Позначити типовим"
@@ -1042,45 +1045,6 @@
       ],
       "Two-year": [
         "Два роки"
-      ]
-    },
-    "blackfriday Info": {
-      "Includes": [
-        "Включає"
-      ]
-    },
-    "blackfriday Title": {
-      "Most popular": [
-        "Найпопулярніша"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Action": {
-      "Get the deal": [
-        "Скористатися пропозицією"
-      ],
-      "Get the deal now": [
-        "Скористатися пропозицією"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Info": {
-      "Save ${ percentage }%": [
-        "${ percentage }%"
-      ]
-    },
-    "blackfriday: VPNspecialoffer info": {
-      "per month": [
-        "на місяць"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Title": {
-      "1 month": [
-        "1 місяць"
-      ],
-      "12 months": [
-        "12 місяців"
-      ],
-      "24 months": [
-        "24 місяці"
       ]
     },
     "breadcrumb": {
@@ -11059,10 +11023,8 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "Щороку",
-        "Кожні ${ interval } роки",
-        "Кожні ${ interval } років",
-        "Кожні ${ interval } року"
+        "Yearly",
+        ""
       ],
       "Every ${ interval } year, ${ timesString }": [
         "Щороку, ${ timesString }",

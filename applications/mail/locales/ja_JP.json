@@ -353,6 +353,9 @@
       "Generate recovery phrase": [
         "リカバリーフレーズを生成"
       ],
+      "Get SimpleLogin extension": [
+        "SimpleLogin 拡張機能を入手"
+      ],
       "Get started": [
         "利用開始"
       ],
@@ -382,6 +385,9 @@
       ],
       "Go to settings": [
         "設定を開く"
+      ],
+      "Go to SimpleLogin": [
+        "SimpleLogin へ移動"
       ],
       "Got it": [
         "はい"
@@ -1077,6 +1083,11 @@
         "会話"
       ]
     },
+    "Alternative text for SimpleLogin image": {
+      "SimpleLogin": [
+        "SimpleLogin"
+      ]
+    },
     "Alternative text for welcome image": {
       "Welcome": [
         "ようこそ"
@@ -1375,6 +1386,9 @@
       ],
       "Calendar is syncing": [
         "カレンダーの同期中"
+      ],
+      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
+        "カレンダーを同期しています: すべてのイベントが表示されるまでしばらくお待ちください。"
       ],
       "Calendar is too big": [
         "カレンダーが大きすぎます"
@@ -4672,6 +4686,9 @@
       "Use keyboard shortcuts to manage your email faster.": [
         "キーボードショートカットを使ってメールを素早く管理します。"
       ],
+      "Using SimpleLogin is easy": [
+        "SimpleLogin を使うのは簡単です"
+      ],
       "Version ${ appVersion }": [
         "バージョン ${ appVersion }"
       ],
@@ -5667,6 +5684,9 @@
       ],
       "Terms": [
         "利用規約"
+      ],
+      "This ICS file contains more than one event. Please download it and import the events in ${ calendarAppName }": [
+        "この ICS ファイルには 1 つ以上のイベントを含んでいます。ダウンロードして${ calendarAppName } でイベントをインポートしてください"
       ],
       "Trash": [
         "ごみ箱"

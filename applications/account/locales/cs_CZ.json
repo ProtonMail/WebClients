@@ -145,6 +145,9 @@
       "Clear all formatting": [
         "Vymazat veškeré formátování"
       ],
+      "Clear two-factor authentication code": [
+        "Odstranit kód dvoufázového ověření"
+      ],
       "Close": [
         "Zavřít"
       ],
@@ -343,9 +346,6 @@
       "Export": [
         "Export"
       ],
-      "Export ICS": [
-        "Exportovat ICS"
-      ],
       "Export key": [
         "Exportovat klíč"
       ],
@@ -438,6 +438,9 @@
       ],
       "Loading verification": [
         "Načítání ověření"
+      ],
+      "Make default": [
+        "Nastavit jako výchozí"
       ],
       "Mark as default": [
         "Označit jako výchozí"
@@ -823,6 +826,9 @@
       "Void anyway": [
         "Přesto zrušit"
       ],
+      "What do I get?": [
+        "Co získám?"
+      ],
       "Wipe": [
         "Vymazat"
       ],
@@ -1039,59 +1045,6 @@
       ],
       "Two-year": [
         "Dva roky"
-      ]
-    },
-    "blackfriday Info": {
-      "beta": [
-        "beta"
-      ],
-      "Includes": [
-        "Zahrnuje"
-      ],
-      "Standard price: ${ regularPrice }": [
-        "Běžná cena: ${ regularPrice }"
-      ],
-      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
-        "Předplatné se bude každé dva roky automaticky obnovovat se stejnou cenou, dokud nebude zrušeno."
-      ]
-    },
-    "blackfriday Title": {
-      "Most popular": [
-        "Nejoblíbenější"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Action": {
-      "Get the deal": [
-        "Využít nabídku"
-      ],
-      "Get the deal now": [
-        "Objednat nyní"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Info": {
-      "Save ${ percentage }%": [
-        "${ percentage } %"
-      ]
-    },
-    "blackfriday: VPNspecialoffer info": {
-      "per month": [
-        "za měsíc"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Promo title, need to be short": {
-      "Special offer": [
-        "Speciální nabídka"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Title": {
-      "1 month": [
-        "1 měsíc"
-      ],
-      "12 months": [
-        "12 měsíců"
-      ],
-      "24 months": [
-        "24 měsíců"
       ]
     },
     "breadcrumb": {
@@ -5509,6 +5462,18 @@
       ],
       "Tor": [
         "Tor"
+      ],
+      "Total email addresses": [
+        "Celkem e-mailových adres"
+      ],
+      "Total storage": [
+        "Celkem prostoru"
+      ],
+      "Total supported domains": [
+        "Celkem vlastních domén"
+      ],
+      "Total VPN connections": [
+        "Celkem VPN připojení"
       ],
       "Two-factor authentication adds an extra layer of security to your account in case your password is compromised.": [
         "Dvoufázové ověření přidává k Vašemu účtu další bezpečnostní vrstvu pro případ, že je Vaše heslo prozrazeno."
@@ -11046,10 +11011,8 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "Každý ${ interval } rok",
-        "Každé ${ interval } roky",
-        "Každých ${ interval } let",
-        "Každých ${ interval } let"
+        "Yearly",
+        ""
       ],
       "Every ${ interval } year, ${ timesString }": [
         "Každý ${ interval } rok, ${ timesString }",

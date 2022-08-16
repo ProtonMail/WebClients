@@ -77,6 +77,9 @@
       "Apply": [
         "Primijeni"
       ],
+      "Archive": [
+        "Arhiva"
+      ],
       "Attach screenshot(s)": [
         "Priložite snimku(e) zaslona"
       ],
@@ -605,6 +608,9 @@
       "Re-sign": [
         "Ponovna prijava"
       ],
+      "Read receipt sent": [
+        "Poslana potvrda o čitanju"
+      ],
       "Recover data": [
         "Oporavi podatke"
       ],
@@ -737,6 +743,9 @@
       "Skip": [
         "Preskoči"
       ],
+      "Star": [
+        "Zvjezdica"
+      ],
       "Start import": [
         "Započni uvoz"
       ],
@@ -786,6 +795,9 @@
       ],
       "Unordered list": [
         "Lista s grafičkim oznakama"
+      ],
+      "Unstar": [
+        "Ukloni zvjezdicu"
       ],
       "Unsubscribe": [
         "Otkaži pretplatu"
@@ -838,6 +850,9 @@
       "View headers": [
         "Pregled zaglavlja"
       ],
+      "View HTML": [
+        "Pregledaj HTML"
+      ],
       "View invoice": [
         "Prikaži fakturu"
       ],
@@ -864,6 +879,11 @@
       ],
       "Zoom out": [
         "Smanji"
+      ]
+    },
+    "action": {
+      "Search messages": [
+        "Pretraži poruke"
       ]
     },
     "Actions message": {
@@ -1364,6 +1384,9 @@
       ]
     },
     "CustomFilter": {
+      "Attachment": [
+        "Privitak"
+      ],
       "Filter on": [
         "Filtar za"
       ],
@@ -1488,6 +1511,16 @@
     "Download attachments": {
       "Download all": [
         "Preuzmi sve"
+      ]
+    },
+    "Early Access Disabled": {
+      "Off": [
+        "Isklj"
+      ]
+    },
+    "Early Access Enabled": {
+      "On": [
+        "Uklj"
       ]
     },
     "Email body for description (description part)": {
@@ -1921,6 +1954,11 @@
         "MB"
       ]
     },
+    "Filter": {
+      "Show": [
+        "Prikaži"
+      ]
+    },
     "Filter Actions": {
       "Archive": [
         "Arhiva"
@@ -2006,6 +2044,21 @@
       ],
       "starred": [
         "označeno zvijezdicom"
+      ]
+    },
+    "Font Face Default": {
+      "Default": [
+        "Zadano"
+      ]
+    },
+    "Font Size Default": {
+      "Default": [
+        "Zadano"
+      ]
+    },
+    "Get started checklist title": {
+      "Get started": [
+        "Započnite"
       ]
     },
     "Group": {
@@ -2271,6 +2324,9 @@
       "An unknown public key has been detected for this recipient.": [
         "Otkriven je nepoznati javni ključ za ovog primatelja."
       ],
+      "and": [
+        "i"
+      ],
       "Are you sure you want to discard your changes?": [
         "Jeste li sigurni da želite odbaciti vaše promjene?"
       ],
@@ -2315,6 +2371,9 @@
       ],
       "Checking contact ${ progress } of ${ max }...": [
         "Provjera kontakta ${ progress } od ${ max }..."
+      ],
+      "Clear data": [
+        "Izbriši podatke"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Pritisnite \"Zatraži novi kôd\" da biste novi potvrdni kôd poslali na ${ strong }. Ako je ovaj telefonski broj netočan, pritisnite \"Uredi\" da biste ga ispravili."
@@ -2404,6 +2463,9 @@
       ],
       "Estimating time remaining...": [
         "Procjena preostalog vremena..."
+      ],
+      "Expires": [
+        "Ističe"
       ],
       "file attached": [
         "privitak dodan",
@@ -2969,6 +3031,9 @@
       "Go to Trash": [
         "Idi u Otpad"
       ],
+      "Insert link": [
+        "Umetni poveznicu"
+      ],
       "Jump to first": [
         "Preskoči na prvo"
       ],
@@ -3086,6 +3151,16 @@
         "Prečaci poruke"
       ]
     },
+    "Keyboard Shortcuts Disabled": {
+      "Off": [
+        "Isklj"
+      ]
+    },
+    "Keyboard Shortcuts Enabled": {
+      "On": [
+        "Uklj"
+      ]
+    },
     "Label": {
       " and ": [
         " i "
@@ -3105,6 +3180,9 @@
       "Add to group": [
         "Dodaj u grupu"
       ],
+      "Address": [
+        "Adresa"
+      ],
       "ALL": [
         "SVE"
       ],
@@ -3123,11 +3201,17 @@
       "ANY": [
         "BILO KOJI"
       ],
+      "Attach screenshot(s)": [
+        "Priložite snimku(e) zaslona"
+      ],
       "Attachments": [
         "Privitci"
       ],
       "Automatically save contacts": [
         "Automatsko spremanje kontakata"
+      ],
+      "BCC": [
+        "BCC"
       ],
       "Blind Carbon Copy": [
         "Slijepa indigo kopija"
@@ -3144,11 +3228,17 @@
       "Category": [
         "Kategorija"
       ],
+      "CC": [
+        "CC"
+      ],
       "City": [
         "Grad"
       ],
       "Conditions": [
         "Uvjeti"
+      ],
+      "Contacts": [
+        "Kontakti"
       ],
       "Copy": [
         "Kopiraj"
@@ -3161,6 +3251,9 @@
       ],
       "Date:": [
         "Datum:"
+      ],
+      "Delete": [
+        "Izbriši"
       ],
       "Do not ask again": [
         "Ne pitaj ponovno"
@@ -3239,6 +3332,9 @@
       ],
       "Notification": [
         "Obavijest"
+      ],
+      "OK": [
+        "U redu"
       ],
       "Operating system": [
         "Operativni sustav"
@@ -3383,6 +3479,14 @@
         "Naziv"
       ]
     },
+    "Label Recipient": {
+      "From": [
+        "Od"
+      ],
+      "To": [
+        "Za"
+      ]
+    },
     "Label to change composer mode": {
       "Maximized": [
         "Maksimizirano"
@@ -3435,6 +3539,9 @@
       ]
     },
     "Link": {
+      "Activate": [
+        "Aktiviraj"
+      ],
       "Add folder": [
         "Dodaj mapu"
       ],
@@ -3497,6 +3604,9 @@
       ],
       "Manage your labels": [
         "Upravljanje oznakama"
+      ],
+      "More": [
+        "Više"
       ],
       "Open in ${ calendarAppName }": [
         "Otvori u ${ calendarAppName }"
@@ -3775,6 +3885,11 @@
         "Kontaktna grupa je ažurirana"
       ]
     },
+    "Onboarding Action": {
+      "Next": [
+        "Sljedeće"
+      ]
+    },
     "Onboarding Proton": {
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "Postavite vašu organizaciju, povežite naziv domene i stvorite račune kako biste osigurali zaštitu svih članova vaše organizacije."
@@ -3798,6 +3913,9 @@
     "Option": {
       "Add to existing group": [
         "Dodaj u postojeću grupu"
+      ],
+      "All": [
+        "Sve"
       ],
       "Create new group": [
         "Stvori novu grupu"
@@ -4141,6 +4259,11 @@
         "Prvo najmanje"
       ]
     },
+    "Status": {
+      "This message is from a mailing list.": [
+        "Ovo poruka je s mailing liste."
+      ]
+    },
     "Step in filter modal": {
       "Actions": [
         "Radnje"
@@ -4463,6 +4586,9 @@
       "Addresses": [
         "Adrese"
       ],
+      "Archive": [
+        "Arhiva"
+      ],
       "Are you sure you want to close?": [
         "Jeste li sigurni da želite zatvoriti?"
       ],
@@ -4638,6 +4764,9 @@
       "Link confirmation": [
         "Potvrda poveznice"
       ],
+      "Load embedded images": [
+        "Učitaj ugrađene slike"
+      ],
       "Load remote content": [
         "Učitaj udaljeni sadržaj"
       ],
@@ -4646,6 +4775,9 @@
       ],
       "Mailbox layout": [
         "Izgled poštanskog sandučića"
+      ],
+      "Mark as read": [
+        "Označi kao pročitano"
       ],
       "Mark as unread": [
         "Označi kao nepročitano"
@@ -4679,6 +4811,9 @@
       ],
       "Move to inbox (not spam)": [
         "Premjesti u pristiglu poštu (nije neželjena pošta)"
+      ],
+      "Move to spam": [
+        "Premjesti u neželjenu poštu"
       ],
       "Move to trash": [
         "Premjesti u otpad"
@@ -4740,6 +4875,9 @@
       "Report a problem": [
         "Prijavi problem"
       ],
+      "Request new code": [
+        "Zatraži novi kôd"
+      ],
       "Schedule send": [
         "Zakaži slanje"
       ],
@@ -4760,6 +4898,9 @@
       ],
       "Send without expiration?": [
         "Pošalji bez isteka?"
+      ],
+      "Sender": [
+        "Pošiljatelj"
       ],
       "Sending notice": [
         "Slanje obavijesti"
@@ -4784,6 +4925,9 @@
       ],
       "To": [
         "Za"
+      ],
+      "Trash": [
+        "Otpad"
       ],
       "Trust new key?": [
         "Vjeruj novom ključu?",
@@ -4819,6 +4963,11 @@
       ],
       "What's new": [
         "Što je novo"
+      ]
+    },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "Danas"
       ]
     },
     "Tooltip": {

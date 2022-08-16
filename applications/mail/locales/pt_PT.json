@@ -65,6 +65,9 @@
       "Apply": [
         "Aplicar"
       ],
+      "Archive": [
+        "Arquivo"
+      ],
       "Attachment": [
         "Anexo"
       ],
@@ -158,6 +161,9 @@
       "Copy email to clipboard": [
         "Copiar mensagem para a área de transferência"
       ],
+      "Create a new contact group": [
+        "Criar novo grupo de contactos"
+      ],
       "Create folder": [
         "Criar pasta"
       ],
@@ -231,6 +237,9 @@
       ],
       "Edit email address": [
         "Editar o endereço de email"
+      ],
+      "Edit label": [
+        "Editar etiqueta"
       ],
       "Edit phone number": [
         "Editar o número de telefone"
@@ -332,6 +341,9 @@
       "Insert contact": [
         "Inserir contacto"
       ],
+      "Insert contacts": [
+        "Inserir contactos"
+      ],
       "Insert image": [
         "Inserir imagem"
       ],
@@ -358,6 +370,9 @@
       ],
       "Load": [
         "Carregar"
+      ],
+      "Load embedded images": [
+        "Carregar imagens incorporadas"
       ],
       "Load image": [
         "Carregar imagem"
@@ -518,6 +533,9 @@
       "Re-sign": [
         "Re-assinar"
       ],
+      "Read receipt sent": [
+        "Recibo de leitura enviado"
+      ],
       "Recover data": [
         "Recuperar dados"
       ],
@@ -623,6 +641,9 @@
       "Skip": [
         "Ignorar"
       ],
+      "Star": [
+        "Estrela"
+      ],
       "Start import": [
         "Iniciar a importação"
       ],
@@ -637,6 +658,9 @@
       ],
       "This message contains embedded images.": [
         "Esta mensagem contém imagens incorporadas."
+      ],
+      "This message contains remote content.": [
+        "Esta mensagem contém conteúdo remoto."
       ],
       "Trust": [
         "Confiar"
@@ -662,6 +686,9 @@
       ],
       "Unordered list": [
         "Lista não ordenada"
+      ],
+      "Unstar": [
+        "Remover estrela"
       ],
       "Unsubscribe": [
         "Cancelar subscrição"
@@ -699,6 +726,9 @@
       "View headers": [
         "Ver cabeçalhos"
       ],
+      "View HTML": [
+        "Ver HTML"
+      ],
       "View invoice": [
         "Ver factura"
       ],
@@ -722,6 +752,11 @@
       ],
       "Zoom out": [
         "Reduzir"
+      ]
+    },
+    "action": {
+      "Search messages": [
+        "Procurar mensagens"
       ]
     },
     "Actions message": {
@@ -1213,6 +1248,9 @@
       ]
     },
     "CustomFilter": {
+      "Attachment": [
+        "Anexo"
+      ],
       "Filter on": [
         "Filtrar por"
       ],
@@ -1335,6 +1373,16 @@
     "Download attachments": {
       "Download all": [
         "Transferir tudo"
+      ]
+    },
+    "Early Access Disabled": {
+      "Off": [
+        "Off"
+      ]
+    },
+    "Early Access Enabled": {
+      "On": [
+        "On"
       ]
     },
     "Email body for description (description part)": {
@@ -1778,6 +1826,11 @@
         "MB"
       ]
     },
+    "Filter": {
+      "Show": [
+        "Mostrar"
+      ]
+    },
     "Filter Actions": {
       "Archive": [
         "Arquivo"
@@ -1863,6 +1916,21 @@
       ],
       "starred": [
         "com estrela"
+      ]
+    },
+    "Font Face Default": {
+      "Default": [
+        "Predefinição"
+      ]
+    },
+    "Font Size Default": {
+      "Default": [
+        "Predefinição"
+      ]
+    },
+    "Get started checklist title": {
+      "Get started": [
+        "Começar"
       ]
     },
     "Group": {
@@ -2110,6 +2178,9 @@
       "An unknown public key has been detected for this recipient.": [
         "Foi detectada uma chave pública desconhecida para este destinatário."
       ],
+      "and": [
+        "e"
+      ],
       "Are you sure you want to discard your changes?": [
         "Tem a certeza de que deseja descartar as alterações?"
       ],
@@ -2151,6 +2222,9 @@
       ],
       "Checking contact ${ progress } of ${ max }...": [
         "A verificar contacto ${ progress } de ${ max }..."
+      ],
+      "Clear data": [
+        "Limpar dados"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Clique em \"Pedir novo código\" para receber um novo código de verificação em ${ strong }. Se o telefone estiver incorrecto, clique em \"Editar\" para o corrigir."
@@ -2236,6 +2310,9 @@
       ],
       "Estimating time remaining...": [
         "A estimar o tempo restante..."
+      ],
+      "Expires": [
+        "Expira"
       ],
       "file attached": [
         "ficheiro anexado",
@@ -2798,6 +2875,9 @@
       "Go to Trash": [
         "Ir para Lixo"
       ],
+      "Insert link": [
+        "Inserir hiperligação"
+      ],
       "Jump to first": [
         "Ir para o primeiro"
       ],
@@ -2915,6 +2995,16 @@
         "Atalhos de mensagem"
       ]
     },
+    "Keyboard Shortcuts Disabled": {
+      "Off": [
+        "Off"
+      ]
+    },
+    "Keyboard Shortcuts Enabled": {
+      "On": [
+        "On"
+      ]
+    },
     "Label": {
       " and ": [
         " e "
@@ -2933,6 +3023,9 @@
       ],
       "Add to group": [
         "Adicionar ao grupo"
+      ],
+      "Address": [
+        "Endereço"
       ],
       "ALL": [
         "TUDO"
@@ -2958,6 +3051,9 @@
       "Automatically save contacts": [
         "Gravar contactos automaticamente"
       ],
+      "BCC": [
+        "BCC"
+      ],
       "Blind Carbon Copy": [
         "Cópia cega de mensagem (BCC)"
       ],
@@ -2973,11 +3069,17 @@
       "Category": [
         "Categoria"
       ],
+      "CC": [
+        "CC"
+      ],
       "City": [
         "Cidade"
       ],
       "Conditions": [
         "Condições"
+      ],
+      "Contacts": [
+        "Contactos"
       ],
       "Copy": [
         "Copiar"
@@ -2990,6 +3092,9 @@
       ],
       "Date:": [
         "Data:"
+      ],
+      "Delete": [
+        "Eliminar"
       ],
       "Do not ask again": [
         "Não perguntar novamente"
@@ -3068,6 +3173,9 @@
       ],
       "Notification": [
         "Notificação"
+      ],
+      "OK": [
+        "Aceitar"
       ],
       "Operating system": [
         "Sistema operativo"
@@ -3215,6 +3323,14 @@
         "Nome"
       ]
     },
+    "Label Recipient": {
+      "From": [
+        "De"
+      ],
+      "To": [
+        "Para"
+      ]
+    },
     "Label to change composer mode": {
       "Maximized": [
         "Maximizado"
@@ -3267,6 +3383,9 @@
       ]
     },
     "Link": {
+      "Activate": [
+        "Activar"
+      ],
       "Add folder": [
         "Adicionar pasta"
       ],
@@ -3332,6 +3451,9 @@
       ],
       "Manage your labels": [
         "Gerir as suas etiquetas"
+      ],
+      "More": [
+        "Mais"
       ],
       "Open in ${ calendarAppName }": [
         "Abrir no ${ calendarAppName }"
@@ -3613,6 +3735,11 @@
         "Grupo de contactos actualizado"
       ]
     },
+    "Onboarding Action": {
+      "Next": [
+        "Seguinte"
+      ]
+    },
     "Onboarding Proton": {
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "Configure a sua organização, vincule o seu nome de domínio e crie contas para garantir que todos os membros da sua organização estão protegidos."
@@ -3636,6 +3763,9 @@
     "Option": {
       "Add to existing group": [
         "Adicionar a um grupo existente"
+      ],
+      "All": [
+        "Todos"
       ],
       "Create new group": [
         "Criar novo grupo"
@@ -3979,6 +4109,11 @@
         "Obtenha até 18 meses grátis de ${ planName }"
       ]
     },
+    "Status": {
+      "This message is from a mailing list.": [
+        "Esta mensagem veio de uma lista de discussão."
+      ]
+    },
     "Step in filter modal": {
       "Actions": [
         "Acções"
@@ -4279,6 +4414,9 @@
       "Addresses": [
         "Endereços"
       ],
+      "Archive": [
+        "Arquivo"
+      ],
       "Are you sure you want to close?": [
         "Tem a certeza de que quer fechar?"
       ],
@@ -4449,6 +4587,9 @@
       "Link confirmation": [
         "Confirmação de hiperligação"
       ],
+      "Load embedded images": [
+        "Carregar imagens incorporadas"
+      ],
       "Load remote content": [
         "Carregar conteúdo remoto"
       ],
@@ -4457,6 +4598,9 @@
       ],
       "Mailbox layout": [
         "Disposição da caixa de correio"
+      ],
+      "Mark as read": [
+        "Marcar como lido"
       ],
       "Mark as unread": [
         "Marcar como não lido"
@@ -4490,6 +4634,9 @@
       ],
       "Move to inbox (not spam)": [
         "Mover para caixa de entrada (não é spam)"
+      ],
+      "Move to spam": [
+        "Mover para spam"
       ],
       "Move to trash": [
         "Mover para o lixo"
@@ -4548,6 +4695,9 @@
       "Report a problem": [
         "Relatar um problema"
       ],
+      "Request new code": [
+        "Pedir novo código"
+      ],
       "Select a theme": [
         "Seleccionar um tema"
       ],
@@ -4565,6 +4715,9 @@
       ],
       "Send without expiration?": [
         "Enviar sem expiração?"
+      ],
+      "Sender": [
+        "Remetente"
       ],
       "Sending notice": [
         "Aviso de envio"
@@ -4589,6 +4742,9 @@
       ],
       "To": [
         "Para"
+      ],
+      "Trash": [
+        "Lixo"
       ],
       "Trust new key?": [
         "Confiar em nova chave?",
@@ -4623,6 +4779,11 @@
       ],
       "What's new": [
         "O que há de novo"
+      ]
+    },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "Hoje"
       ]
     },
     "Tooltip": {

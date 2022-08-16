@@ -38,6 +38,9 @@
       "Add address": [
         "添加地址"
       ],
+      "Add calendar": [
+        "新建日历"
+      ],
       "Add condition": [
         "添加条件"
       ],
@@ -58,6 +61,9 @@
       ],
       "Add label": [
         "添加标签"
+      ],
+      "Add notification": [
+        "添加通知"
       ],
       "Add PayPal": [
         "添加 PayPal"
@@ -161,11 +167,17 @@
       "Continue with ${ nameToDisplay } ${ maybeEmailInBrackets }": [
         "继续使用 ${ nameToDisplay } ${ maybeEmailInBrackets }"
       ],
+      "Continue with Google": [
+        "使用 Google 账号继续"
+      ],
       "Copy": [
         "复制"
       ],
       "Copy email to clipboard": [
         "复制邮箱地址"
+      ],
+      "Copy link": [
+        "复制链接"
       ],
       "Create": [
         "创建"
@@ -179,6 +191,9 @@
       "Create address": [
         "创建地址"
       ],
+      "Create calendar": [
+        "创建日历"
+      ],
       "Create folder": [
         "创建文件夹"
       ],
@@ -187,6 +202,9 @@
       ],
       "Create label": [
         "创建标签"
+      ],
+      "Create link": [
+        "创建链接"
       ],
       "Current plan": [
         "当前等级"
@@ -286,6 +304,9 @@
       ],
       "Edit subscription": [
         "修改"
+      ],
+      "Emoji": [
+        "表情符号"
       ],
       "enable desktop notifications": [
         "开启推送通知"
@@ -391,6 +412,9 @@
       ],
       "Loading verification": [
         "正在载入验证"
+      ],
+      "Make default": [
+        "设为默认"
       ],
       "Mark as default": [
         "标记为默认"
@@ -509,6 +533,9 @@
       "Remove this label": [
         "移除此标签"
       ],
+      "Remove this notification": [
+        "移除这个通知？"
+      ],
       "Rename": [
         "重命名"
       ],
@@ -578,11 +605,17 @@
       "Save selected": [
         "保存选定项"
       ],
+      "Search countries": [
+        "搜索国家"
+      ],
       "Select ${ planTitle }": [
         "开通 ${ planTitle }"
       ],
       "Select files": [
         "选择文件"
+      ],
+      "Select timezone": [
+        "选择时区"
       ],
       "send auto-reply email": [
         "自动回复"
@@ -616,6 +649,12 @@
       ],
       "Show labels": [
         "显示标签"
+      ],
+      "Show less": [
+        "显示更少"
+      ],
+      "Show more": [
+        "显示更多"
       ],
       "Show preview": [
         "显示预览"
@@ -910,54 +949,9 @@
         "两年付费"
       ]
     },
-    "blackfriday Info": {
-      "Includes": [
-        "包含"
-      ],
-      "Standard price: ${ regularPrice }": [
-        "原价：${ regularPrice }"
-      ],
-      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
-        "此订阅将在两年后自动续订，价格不变，直至取消。"
-      ]
-    },
-    "blackfriday Title": {
-      "Most popular": [
-        "人气最高"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Action": {
-      "Get the deal": [
-        "立即享受优惠"
-      ],
-      "Get the deal now": [
-        "立即享受优惠"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Info": {
-      "Save ${ percentage }%": [
-        "${ percentage }%"
-      ]
-    },
-    "blackfriday: VPNspecialoffer info": {
-      "per month": [
-        "每月"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Promo title, need to be short": {
-      "Special offer": [
-        "特价"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Title": {
-      "1 month": [
-        "1 个月"
-      ],
-      "12 months": [
-        "12 个月"
-      ],
-      "24 months": [
-        "24 个月"
+    "breadcrumb": {
+      "Calendars": [
+        "日历"
       ]
     },
     "Bridge version load failed": {
@@ -1057,6 +1051,12 @@
       ]
     },
     "Calendar status": {
+      "Active": [
+        "进行中"
+      ],
+      "Default": [
+        "首选"
+      ],
       "Not synced": [
         "未同步"
       ],
@@ -1090,9 +1090,39 @@
         "不受支持的日历格式"
       ]
     },
+    "Calendar subscription not synced error; long version": {
+      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
+        "日历链接不能从日历提供者的系统之外访问。"
+      ],
+      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
+        "日历链接暂时无法访问。请核实日历提供者的链接仍然有效。"
+      ],
+      "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
+        "距离上次更新已经超过12小时--Proton Calendar将尝试在几小时内更新日历。"
+      ]
+    },
+    "Calendar view": {
+      "Day": [
+        "天"
+      ],
+      "Month": [
+        "月"
+      ],
+      "Week": [
+        "周"
+      ]
+    },
     "Checkout row": {
       "Total for ${ n } month": [
         "${ n } 月合计"
+      ]
+    },
+    "Collapsible tooltip": {
+      "Collapse": [
+        "收起"
+      ],
+      "Expand": [
+        "展开"
       ]
     },
     "color": {
@@ -1259,20 +1289,767 @@
       "Abkhazia": [
         "Abkhazia"
       ],
+      "Afghanistan": [
+        "阿富汗"
+      ],
+      "Albania": [
+        "阿尔巴尼亚"
+      ],
+      "Algeria": [
+        "阿尔及利亚"
+      ],
+      "American Samoa": [
+        "美属萨摩亚"
+      ],
+      "Andorra": [
+        "安道尔"
+      ],
+      "Angola": [
+        "安哥拉"
+      ],
+      "Anguilla": [
+        "安圭拉"
+      ],
+      "Antarctica": [
+        "南极洲"
+      ],
+      "Antigua and Barbuda": [
+        "安提瓜和巴布达"
+      ],
+      "Argentina": [
+        "阿根廷"
+      ],
+      "Armenia": [
+        "亚美尼亚"
+      ],
+      "Aruba": [
+        "阿鲁巴"
+      ],
       "Ascension Island": [
         "Ascension Island"
+      ],
+      "Australia": [
+        "澳大利亚"
+      ],
+      "Austria": [
+        "奥地利"
+      ],
+      "Azerbaijan": [
+        "阿塞拜疆"
+      ],
+      "Bahamas": [
+        "巴哈马"
+      ],
+      "Bahrain": [
+        "巴林"
+      ],
+      "Bangladesh": [
+        "孟加拉国"
+      ],
+      "Barbados": [
+        "巴巴多斯"
+      ],
+      "Belarus": [
+        "白俄罗斯"
+      ],
+      "Belgium": [
+        "比利时"
+      ],
+      "Belize": [
+        "伯利兹"
+      ],
+      "Benin": [
+        "贝宁"
+      ],
+      "Bermuda": [
+        "百慕大"
+      ],
+      "Bhutan": [
+        "不丹"
+      ],
+      "Bolivia": [
+        "玻利维亚"
+      ],
+      "Bonaire, Sint Eustatius and Saba": [
+        "荷兰加勒比区"
+      ],
+      "Bosnia and Herzegovina": [
+        "波斯尼亚和黑塞哥维那"
+      ],
+      "Botswana": [
+        "博茨瓦纳"
+      ],
+      "Bouvet Island": [
+        "布韦岛"
+      ],
+      "Brazil": [
+        "巴西"
+      ],
+      "British Indian Ocean Territory": [
+        "英属印度洋领地"
+      ],
+      "Brunei Darussalam": [
+        "文莱达鲁萨兰"
+      ],
+      "Bulgaria": [
+        "保加利亚"
+      ],
+      "Burkina Faso": [
+        "布基纳法索"
+      ],
+      "Burundi": [
+        "布隆迪"
+      ],
+      "Cambodia": [
+        "柬埔寨"
+      ],
+      "Cameroon": [
+        "喀麦隆"
+      ],
+      "Canada": [
+        "加拿大"
+      ],
+      "Cape Verde": [
+        "佛得角"
+      ],
+      "Cayman Islands": [
+        "开曼群岛"
+      ],
+      "Central African Republic": [
+        "中非共和国"
+      ],
+      "Chad": [
+        "乍得"
+      ],
+      "Chile": [
+        "智利"
       ],
       "China": [
         "中国"
       ],
+      "Christmas Island": [
+        "圣诞岛"
+      ],
+      "Cocos (Keeling) Islands": [
+        "科科斯（基林）群岛"
+      ],
+      "Colombia": [
+        "哥伦比亚"
+      ],
+      "Comoros": [
+        "科摩罗"
+      ],
+      "Congo": [
+        "刚果（布）"
+      ],
+      "Congo, Democratic Republic of the": [
+        "刚果（金）"
+      ],
+      "Cook Islands": [
+        "库克群岛"
+      ],
+      "Costa Rica": [
+        "哥斯达黎加"
+      ],
+      "Croatia": [
+        "克罗地亚"
+      ],
+      "Cuba": [
+        "古巴"
+      ],
+      "Curaçao": [
+        "库拉索"
+      ],
+      "Cyprus": [
+        "塞浦路斯"
+      ],
+      "Czech Republic": [
+        "捷克"
+      ],
+      "Côte d'Ivoire": [
+        "科特迪瓦"
+      ],
+      "Denmark": [
+        "丹麦"
+      ],
+      "Djibouti": [
+        "吉布提"
+      ],
+      "Dominica": [
+        "多米尼克"
+      ],
+      "Dominican Republic": [
+        "多米尼加共和国"
+      ],
+      "Ecuador": [
+        "厄瓜多尔"
+      ],
+      "Egypt": [
+        "埃及"
+      ],
+      "El Salvador": [
+        "萨尔瓦多"
+      ],
+      "Equatorial Guinea": [
+        "赤道几内亚"
+      ],
+      "Eritrea": [
+        "厄立特里亚"
+      ],
+      "Estonia": [
+        "爱沙尼亚"
+      ],
+      "Eswatini": [
+        "斯威士兰"
+      ],
+      "Ethiopia": [
+        "埃塞俄比亚"
+      ],
+      "Falkland Islands": [
+        "奥兰群岛"
+      ],
+      "Faroe Islands": [
+        "法罗群岛"
+      ],
+      "Federated States of Micronesia": [
+        "密克罗尼西亚联邦"
+      ],
+      "Fiji": [
+        "斐济"
+      ],
+      "Finland": [
+        "芬兰"
+      ],
+      "France": [
+        "法国"
+      ],
+      "French Guiana": [
+        "法属圭亚那"
+      ],
+      "French Polynesia": [
+        "法属波利尼西亚"
+      ],
+      "French Southern Territories": [
+        "法属南部领地"
+      ],
+      "Gabon": [
+        "加蓬"
+      ],
+      "Gambia": [
+        "冈比亚"
+      ],
+      "Georgia": [
+        "格鲁吉亚"
+      ],
+      "Germany": [
+        "德国"
+      ],
+      "Ghana": [
+        "加纳"
+      ],
+      "Gibraltar": [
+        "直布罗陀"
+      ],
+      "Greece": [
+        "希腊"
+      ],
+      "Greenland": [
+        "格陵兰"
+      ],
+      "Grenada": [
+        "格林纳达"
+      ],
+      "Guadeloupe": [
+        "瓜德罗普"
+      ],
+      "Guam": [
+        "关岛"
+      ],
+      "Guatemala": [
+        "危地马拉"
+      ],
+      "Guernsey": [
+        "根西"
+      ],
+      "Guinea": [
+        "几内亚"
+      ],
+      "Guinea-Bissau": [
+        "几内亚比绍"
+      ],
+      "Guyana": [
+        "圭亚那"
+      ],
+      "Haiti": [
+        "海地"
+      ],
+      "Heard Island and McDonald Islands": [
+        "赫德岛和麦克唐纳群岛"
+      ],
+      "Holy See (Vatican City State)": [
+        "圣座（梵蒂冈城邦）"
+      ],
+      "Honduras": [
+        "洪都拉斯"
+      ],
       "Hong Kong": [
         "中国香港"
+      ],
+      "Hungary": [
+        "匈牙利"
+      ],
+      "Iceland": [
+        "冰岛"
+      ],
+      "India": [
+        "印度"
+      ],
+      "Indonesia": [
+        "印度尼西亚"
+      ],
+      "International": [
+        "全球"
+      ],
+      "Iran": [
+        "伊朗"
+      ],
+      "Iraq": [
+        "伊拉克"
+      ],
+      "Ireland": [
+        "爱尔兰"
+      ],
+      "Isle of Man": [
+        "马恩岛"
+      ],
+      "Israel": [
+        "以色列"
+      ],
+      "Italy": [
+        "意大利"
+      ],
+      "Jamaica": [
+        "牙买加"
+      ],
+      "Japan": [
+        "日本"
+      ],
+      "Jersey": [
+        "泽西"
+      ],
+      "Jordan": [
+        "约旦"
+      ],
+      "Kazakhstan": [
+        "哈萨克斯坦"
+      ],
+      "Kenya": [
+        "肯尼亚"
+      ],
+      "Kiribati": [
+        "基里巴斯"
+      ],
+      "Kosovo": [
+        "科索沃"
+      ],
+      "Kuwait": [
+        "科威特"
+      ],
+      "Kyrgyzstan": [
+        "吉尔吉斯斯坦"
+      ],
+      "Laos": [
+        "老挝"
+      ],
+      "Latvia": [
+        "拉脱维亚"
+      ],
+      "Lebanon": [
+        "黎巴嫩"
+      ],
+      "Lesotho": [
+        "莱索托"
+      ],
+      "Liberia": [
+        "利比里亚"
+      ],
+      "Libya": [
+        "利比亚"
+      ],
+      "Liechtenstein": [
+        "列支敦士登"
+      ],
+      "Lithuania": [
+        "立陶宛"
+      ],
+      "Luxembourg": [
+        "卢森堡"
       ],
       "Macao": [
         "中国澳门"
       ],
+      "Madagascar": [
+        "马达加斯加"
+      ],
+      "Malawi": [
+        "马拉维"
+      ],
+      "Malaysia": [
+        "马来西亚"
+      ],
+      "Maldives": [
+        "马尔代夫"
+      ],
+      "Mali": [
+        "马里"
+      ],
+      "Malta": [
+        "马耳他"
+      ],
+      "Marshall Islands": [
+        "马绍尔群岛"
+      ],
+      "Martinique": [
+        "马提尼克"
+      ],
+      "Mauritania": [
+        "毛里塔尼亚"
+      ],
+      "Mauritius": [
+        "毛里求斯"
+      ],
+      "Mayotte": [
+        "马约特"
+      ],
+      "Mexico": [
+        "墨西哥"
+      ],
+      "Moldova": [
+        "摩尔多瓦"
+      ],
+      "Monaco": [
+        "摩纳哥"
+      ],
+      "Mongolia": [
+        "蒙古"
+      ],
+      "Montenegro": [
+        "黑山"
+      ],
+      "Montserrat": [
+        "蒙特塞拉特"
+      ],
+      "Morocco": [
+        "摩洛哥"
+      ],
+      "Mozambique": [
+        "莫桑比克"
+      ],
+      "Myanmar": [
+        "缅甸"
+      ],
+      "Namibia": [
+        "纳米比亚"
+      ],
+      "Nauru": [
+        "瑙鲁"
+      ],
+      "Nepal": [
+        "尼泊尔"
+      ],
+      "Netherlands": [
+        "荷兰"
+      ],
+      "New Caledonia": [
+        "新喀里多尼亚"
+      ],
+      "New Zealand": [
+        "新西兰"
+      ],
+      "Nicaragua": [
+        "尼加拉瓜"
+      ],
+      "Niger": [
+        "尼日尔"
+      ],
+      "Nigeria": [
+        "尼日利亚"
+      ],
+      "Niue": [
+        "纽埃"
+      ],
+      "Norfolk Island": [
+        "诺福克岛"
+      ],
+      "North Korea": [
+        "朝鲜"
+      ],
+      "North Macedonia": [
+        "北马其顿"
+      ],
+      "Northern Mariana Islands": [
+        "北马里亚纳群岛"
+      ],
+      "Norway": [
+        "挪威"
+      ],
+      "Oman": [
+        "阿曼"
+      ],
+      "Pakistan": [
+        "巴基斯坦"
+      ],
+      "Palau": [
+        "帕劳"
+      ],
+      "Palestine": [
+        "巴勒斯坦"
+      ],
+      "Panama": [
+        "巴拿马"
+      ],
+      "Papua New Guinea": [
+        "巴布亚新几内亚"
+      ],
+      "Paraguay": [
+        "巴拉圭"
+      ],
+      "Peru": [
+        "秘鲁"
+      ],
+      "Philippines": [
+        "菲律宾"
+      ],
+      "Pitcairn": [
+        "皮特凯恩"
+      ],
+      "Poland": [
+        "波兰"
+      ],
+      "Portugal": [
+        "葡萄牙"
+      ],
+      "Puerto Rico": [
+        "波多黎各"
+      ],
+      "Qatar": [
+        "卡塔尔"
+      ],
+      "Reunion": [
+        "留尼汪"
+      ],
+      "Romania": [
+        "罗马尼亚"
+      ],
+      "Russia": [
+        "俄罗斯"
+      ],
+      "Rwanda": [
+        "卢旺达"
+      ],
+      "Saint Barthélemy": [
+        "圣巴泰勒米"
+      ],
+      "Saint Helena": [
+        "圣赫勒拿岛"
+      ],
+      "Saint Kitts and Nevis": [
+        "圣基茨和尼维斯"
+      ],
+      "Saint Lucia": [
+        "圣卢西亚"
+      ],
+      "Saint Martin (French Part)": [
+        "法属圣马丁"
+      ],
+      "Saint Pierre and Miquelon": [
+        "圣皮埃尔和密克隆"
+      ],
+      "Saint Vincent and the Grenadines": [
+        "圣文森特和格林纳丁斯"
+      ],
+      "Samoa": [
+        "萨摩亚"
+      ],
+      "San Marino": [
+        "圣马力诺"
+      ],
+      "Sao Tome and Principe": [
+        "圣多美与普林西比"
+      ],
+      "Saudi Arabia": [
+        "沙特阿拉伯"
+      ],
+      "Senegal": [
+        "塞内加尔"
+      ],
+      "Serbia": [
+        "塞尔维亚"
+      ],
+      "Seychelles": [
+        "塞舌尔"
+      ],
+      "Sierra Leone": [
+        "塞拉利昂"
+      ],
+      "Singapore": [
+        "新加坡"
+      ],
+      "Sint Maarten": [
+        "圣马丁岛"
+      ],
+      "Slovakia": [
+        "斯洛伐克"
+      ],
+      "Slovenia": [
+        "斯洛文尼亚"
+      ],
+      "Solomon Islands": [
+        "所罗门群岛"
+      ],
+      "Somalia": [
+        "索马里"
+      ],
+      "South Africa": [
+        "南非"
+      ],
+      "South Georgia and the South Sandwich Islands": [
+        "南乔治亚岛和南桑威奇群岛"
+      ],
+      "South Korea": [
+        "韩国"
+      ],
+      "South Ossetia": [
+        "南奥塞梯"
+      ],
+      "South Sudan": [
+        "南苏丹"
+      ],
+      "Spain": [
+        "西班牙"
+      ],
+      "Sri Lanka": [
+        "斯里兰卡"
+      ],
+      "Sudan": [
+        "苏丹"
+      ],
+      "Suriname": [
+        "苏里南"
+      ],
+      "Svalbard and Jan Mayen": [
+        "斯瓦尔巴和扬马延"
+      ],
+      "Sweden": [
+        "瑞典"
+      ],
+      "Switzerland": [
+        "瑞士"
+      ],
+      "Syria": [
+        "叙利亚"
+      ],
+      "Taiwan": [
+        "台湾地区"
+      ],
+      "Tajikistan": [
+        "塔吉克斯坦"
+      ],
+      "Tanzania": [
+        "坦桑尼亚"
+      ],
+      "Thailand": [
+        "泰国"
+      ],
+      "Timor-Leste": [
+        "东帝汶"
+      ],
+      "Togo": [
+        "多哥"
+      ],
+      "Tokelau": [
+        "托克劳"
+      ],
+      "Tonga": [
+        "汤加"
+      ],
+      "Trinidad and Tobago": [
+        "特立尼达和多巴哥"
+      ],
+      "Tristan da Cunha": [
+        "特里斯坦达库尼亚"
+      ],
+      "Tunisia": [
+        "突尼斯"
+      ],
+      "Turkey": [
+        "土耳其"
+      ],
+      "Turkmenistan": [
+        "土库曼斯坦"
+      ],
+      "Turks and Caicos Islands": [
+        "特克斯和凯科斯群岛"
+      ],
+      "Tuvalu": [
+        "图瓦卢"
+      ],
+      "Uganda": [
+        "乌干达"
+      ],
+      "Ukraine": [
+        "乌克兰"
+      ],
+      "United Arab Emirates": [
+        "阿联酋"
+      ],
+      "United Kingdom": [
+        "英国"
+      ],
       "United States": [
         "美国"
+      ],
+      "United States Minor Outlying Islands": [
+        "美国本土外小岛屿"
+      ],
+      "Uruguay": [
+        "乌拉圭"
+      ],
+      "Uzbekistan": [
+        "乌兹别克斯坦"
+      ],
+      "Vanuatu": [
+        "瓦努阿图"
+      ],
+      "Venezuela": [
+        "委内瑞拉"
+      ],
+      "Vietnam": [
+        "越南"
+      ],
+      "Virgin Islands, British": [
+        "英属维尔京群岛"
+      ],
+      "Virgin Islands, U.S.": [
+        "美属维尔京群岛"
+      ],
+      "Wallis and Futuna": [
+        "瓦利斯和富图纳"
+      ],
+      "Western Sahara": [
+        "西撒哈拉"
+      ],
+      "Yemen": [
+        "也门"
+      ],
+      "Zambia": [
+        "赞比亚"
+      ],
+      "Zimbabwe": [
+        "津巴布韦"
+      ],
+      "Åland Islands": [
+        "奥兰群岛"
       ]
     },
     "CountryInfo": {
@@ -1291,6 +2068,32 @@
       ],
       "/user per month": [
         "/用户每月"
+      ]
+    },
+    "Daily recurring event, frequency": {
+      "${ count } time": [
+        "${ count } 次"
+      ],
+      "Daily": [
+        "每天"
+      ],
+      "Daily, ${ timesString }": [
+        "每天, ${ timesString }"
+      ],
+      "Daily, ${ untilString }": [
+        "每天, 直到${ untilString }"
+      ],
+      "Every ${ interval } day": [
+        "每 ${ interval } 天"
+      ],
+      "Every ${ interval } day, ${ timesString }": [
+        "每 ${ interval } 天，${ timesString }"
+      ],
+      "Every ${ interval } day, ${ untilString }": [
+        "每 ${ interval } 天，${ untilString }"
+      ],
+      "until ${ dateString }": [
+        "直到${ dateString }"
       ]
     },
     "Day": {
@@ -1393,6 +2196,20 @@
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "帮助我们改进产品！"
+      ]
+    },
+    "Duration": {
+      "120 minutes": [
+        "120 分钟"
+      ],
+      "30 minutes": [
+        "30 分钟"
+      ],
+      "60 minutes": [
+        "60 分钟"
+      ],
+      "90 minutes": [
+        "90 分钟"
       ]
     },
     "Email body for description (description part)": {
@@ -1607,11 +2424,17 @@
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "将至少 ${ calendarToFixCount } 个日历与现有的 Proton 日历合并"
       ],
+      "Missing key packet": [
+        "缺少密钥数据包"
+      ],
       "Name does not match": [
         "名称不正确"
       ],
       "Name on card required": [
         "必须填写持卡人姓名"
+      ],
+      "Name required": [
+        "姓名 (必填)"
       ],
       "No active sessions": [
         "没有已登录的账户"
@@ -1706,6 +2529,9 @@
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "部分标签名称不可用，请自定导入内容并予以更改。"
       ],
+      "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
+        "部分标签名称超过了 ${ MAIL_APP_NAME } 的长度限制，请自定导入内容并予以更改。"
+      ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "发生错误，请${ refresh }后重试。若仍出现此错误，请联系我们的${ supportTeam }。"
       ],
@@ -1759,6 +2585,15 @@
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "此字段至少需要 ${ minimumLength } 个字符。"
+      ],
+      "This folder name is not available. Please choose a different name.": [
+        "文件夹名称不可用，请重新填写。"
+      ],
+      "This label name is not available. Please choose a different name.": [
+        "标签名称不可用，请重新填写。"
+      ],
+      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
+        "此邮件可能含有当前浏览器无法正确打开的链接。"
       ],
       "Unknown error": [
         "未知错误"
@@ -1888,6 +2723,9 @@
       "Calendar": [
         "日历"
       ],
+      "Calendar time zone not supported": [
+        "不支持此日历时区"
+      ],
       "Component with wrong format": [
         "组件格式错误"
       ],
@@ -1960,6 +2798,9 @@
       "Start time out of bounds": [
         "开始超越边界的时间"
       ],
+      "Time zone not supported": [
+        "不支持此时区"
+      ],
       "Timezone": [
         "时区"
       ],
@@ -1977,11 +2818,17 @@
       "Error: ${ errorMessage }": [
         "错误：${ errorMessage }"
       ],
+      "Invalid URL": [
+        "网址无效"
+      ],
       "Oops, something went wrong": [
         "糟糕，出错了"
       ],
       "Please ${ refresh } or check your connection.": [
         "请${ refresh }或检查网络连接。"
+      ],
+      "Something went wrong. Please refresh the page or try again later.": [
+        "出错了，请刷新页面或稍后重试。"
       ],
       "There was a problem connecting to Proton.": [
         "连接 Proton 失败。"
@@ -2055,6 +2902,11 @@
         "(无标题)"
       ]
     },
+    "Export calendar": {
+      "Loading events": [
+        "日程加载中"
+      ]
+    },
     "Feature": {
       "${ MaxVPN } VPN connection": [
         "${ MaxVPN } 个 VPN 连接"
@@ -2079,6 +2931,9 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "B"
+      ],
       "GB": [
         "GB"
       ],
@@ -2089,9 +2944,26 @@
         "MB"
       ]
     },
+    "file size format, long": {
+      "Byte": [
+        "字节"
+      ],
+      "Gigabyte": [
+        "GB"
+      ],
+      "Kilobyte": [
+        "KB"
+      ],
+      "Megabyte": [
+        "MB"
+      ]
+    },
     "Filter Actions": {
       "Archive": [
         "存档"
+      ],
+      "Do not move": [
+        "不移动"
       ],
       "Inbox": [
         "收件箱"
@@ -2197,6 +3069,9 @@
       "Actions": [
         "操作"
       ],
+      "Calendar": [
+        "日历"
+      ],
       "Event": [
         "事件"
       ],
@@ -2209,11 +3084,17 @@
       "Key type": [
         "密钥类型"
       ],
+      "Name": [
+        "名称"
+      ],
       "Notifications": [
         "通知"
       ],
       "Organization key fingerprint": [
         "机构密钥指纹"
+      ],
+      "Status": [
+        "状态"
       ],
       "Time": [
         "时间"
@@ -2751,6 +3632,9 @@
       "Add image URL": [
         "添加图片链接"
       ],
+      "Add label": [
+        "创建标签"
+      ],
       "Additional options": [
         "其他选项"
       ],
@@ -2949,8 +3833,26 @@
       "Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.": [
         "目前存储空间已全部分配给管理员账户，请留出部分空间给其他用户。您可以随时升级账户获得更大的存储空间。"
       ],
+      "Custom": [
+        "自定义"
+      ],
+      "Custom daily": [
+        "个人每日计划"
+      ],
       "Custom email domains": [
         "自有域名"
+      ],
+      "Custom monthly": [
+        "个人月计划"
+      ],
+      "Custom weekly": [
+        "个人周计划"
+      ],
+      "Custom yearly": [
+        "个人年计划"
+      ],
+      "Daily": [
+        "每天"
       ],
       "Data locked": [
         "数据已锁定"
@@ -3002,6 +3904,9 @@
       ],
       "Earned ${ rewards } of ${ rewardsLimit } ${ planName } months.": [
         "最长 ${ rewardsLimit } 个月 ${ planName } 计划体验期，已获得 ${ rewards } 个月。"
+      ],
+      "Edit label": [
+        "更改标签"
       ],
       "Edit link": [
         "编辑链接"
@@ -3317,6 +4222,9 @@
       ],
       "Merged": [
         "已合并"
+      ],
+      "Monthly ${ onDayString }": [
+        "每月 ${ onDayString }"
       ],
       "more": [
         "更多"
@@ -3942,6 +4850,9 @@
       "Yandex records your online activity and reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
         "Yandex 记录您的在线活动并读取您的个人数据，以便为广告商和其他第三方提供访问。为了更好地保护您的隐私，请创建一个安全的电子邮件地址。"
       ],
+      "Yearly": [
+        "每年"
+      ],
       "You already have a free account": [
         "您的账户已经是免费版了"
       ],
@@ -4490,6 +5401,11 @@
         "作废"
       ]
     },
+    "Knowledge base link label": {
+      "Learn more": [
+        "了解详情"
+      ]
+    },
     "Label": {
       " and ": [
         "、"
@@ -4635,6 +5551,9 @@
       "Code is 6 digits without spaces": [
         "验证码是无空格的六位数"
       ],
+      "Color": [
+        "颜色"
+      ],
       "Composer": [
         "编辑窗"
       ],
@@ -4728,6 +5647,9 @@
       "Density": [
         "密度"
       ],
+      "Description": [
+        "说明："
+      ],
       "Device/certificate name": [
         "设备或证书名称"
       ],
@@ -4736,6 +5658,9 @@
       ],
       "Discount": [
         "优惠"
+      ],
+      "Display": [
+        "显示"
       ],
       "Display name": [
         "称呼"
@@ -5157,6 +6082,9 @@
       "Upload 1 or more recovery files or encryption keys": [
         "上传一个或多个恢复文件或加密密钥"
       ],
+      "URL": [
+        "网址"
+      ],
       "Use folder colors": [
         "文件夹附带颜色"
       ],
@@ -5233,6 +6161,16 @@
       ],
       "Recovery phrase": [
         "恢复密语"
+      ]
+    },
+    "Label for default event notifications": {
+      "Notifications": [
+        "通知"
+      ]
+    },
+    "Label for default event settings": {
+      "Duration": [
+        "时间"
       ]
     },
     "Label for domain modal": {
@@ -5537,6 +6475,11 @@
         "如何从Yahoo导入邮件"
       ]
     },
+    "Modal title and action": {
+      "Add calendar": [
+        "新建日历"
+      ]
+    },
     "Monetary unit": {
       "Dollar": [
         "美元"
@@ -5546,6 +6489,136 @@
       ],
       "Swiss franc": [
         "瑞士法郎"
+      ]
+    },
+    "Monthly recurring event, frequency": {
+      "Every ${ interval } month ${ onDayString }": [
+        "每 ${ interval } 个月的 ${ onDayString }"
+      ],
+      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
+        "每 ${ interval } 月的 ${ onDayString }，${ timesString }"
+      ],
+      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
+        "每 ${ interval } 月的 ${ onDayString }，直到 ${ untilString }"
+      ],
+      "Monthly ${ onDayString }": [
+        "每月 ${ onDayString }"
+      ],
+      "Monthly ${ onDayString }, ${ timesString }": [
+        "每月${ onDayString }，${ timesString }"
+      ],
+      "Monthly ${ onDayString }, ${ untilString }": [
+        "每月${ onDayString }，直到${ untilString }"
+      ]
+    },
+    "Monthly recurring event, repeats on": {
+      "on day ${ dayOfMonth }": [
+        "按日 ${ dayOfMonth }"
+      ],
+      "on the first Friday": [
+        "第一个星期五"
+      ],
+      "on the first Monday": [
+        "第一个星期一"
+      ],
+      "on the first Saturday": [
+        "第一个星期六"
+      ],
+      "on the first Sunday": [
+        "第一个星期日"
+      ],
+      "on the first Thursday": [
+        "第一个星期四"
+      ],
+      "on the first Tuesday": [
+        "第一个星期二"
+      ],
+      "on the first Wednesday": [
+        "第一个星期三"
+      ],
+      "on the fourth Friday": [
+        "第四个星期五"
+      ],
+      "on the fourth Monday": [
+        "第四个星期一"
+      ],
+      "on the fourth Saturday": [
+        "第四个星期六"
+      ],
+      "on the fourth Sunday": [
+        "第四个星期日"
+      ],
+      "on the fourth Thursday": [
+        "第四个星期四"
+      ],
+      "on the fourth Tuesday": [
+        "第四个星期二"
+      ],
+      "on the fourth Wednesday": [
+        "第四个星期三"
+      ],
+      "on the last Friday": [
+        "最后一个星期五"
+      ],
+      "on the last Monday": [
+        "最后一个星期一"
+      ],
+      "on the last Saturday": [
+        "最后一个星期六"
+      ],
+      "on the last Sunday": [
+        "最后一个星期日"
+      ],
+      "on the last Thursday": [
+        "最后一个星期四"
+      ],
+      "on the last Tuesday": [
+        "最后一个星期二"
+      ],
+      "on the last Wednesday": [
+        "最后一个星期三"
+      ],
+      "on the second Friday": [
+        "第二个星期五"
+      ],
+      "on the second Monday": [
+        "第二个星期一"
+      ],
+      "on the second Saturday": [
+        "第二个星期六"
+      ],
+      "on the second Sunday": [
+        "第二个星期日"
+      ],
+      "on the second Thursday": [
+        "第二个星期四"
+      ],
+      "on the second Tuesday": [
+        "第二个星期二"
+      ],
+      "on the second Wednesday": [
+        "第二个星期三"
+      ],
+      "on the third Friday": [
+        "第三个星期五"
+      ],
+      "on the third Monday": [
+        "第三个星期一"
+      ],
+      "on the third Saturday": [
+        "第三个星期六"
+      ],
+      "on the third Sunday": [
+        "第三个星期日"
+      ],
+      "on the third Thursday": [
+        "第三个星期四"
+      ],
+      "on the third Tuesday": [
+        "第三个星期二"
+      ],
+      "on the third Wednesday": [
+        "第三个星期三"
       ]
     },
     "Moved to black/whitelist": {
@@ -5847,6 +6920,9 @@
       ]
     },
     "new_plans: heading": {
+      "Support": [
+        "帮助"
+      ],
       "Team management": [
         "团队管理"
       ]
@@ -5901,6 +6977,11 @@
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "完全免费的普通账户，旨在助力所有人捍卫隐私。"
+      ]
+    },
+    "new_plans: Label": {
+      "${ humanUsedSpace } of ${ humanMaxSpace }": [
+        "共 ${ humanMaxSpace }，已使用 ${ humanUsedSpace }"
       ]
     },
     "new_plans: Plan frequency": {
@@ -6176,9 +7257,47 @@
         "OpenVPN / IKEv2 账号密码已重新生成"
       ]
     },
+    "Notification time input": {
+      "at": [
+        "在"
+      ]
+    },
+    "Notification type": {
+      "email": [
+        "电子邮件"
+      ],
+      "notification": [
+        "通知"
+      ]
+    },
+    "Notification when": {
+      "at time of event": [
+        "日程时间"
+      ],
+      "day before": [
+        "天前"
+      ],
+      "hour before": [
+        "小时前"
+      ],
+      "minute before": [
+        "分钟前"
+      ],
+      "on the same day": [
+        "当天"
+      ],
+      "week before": [
+        "周前"
+      ]
+    },
     "Oauth instructions": {
       "Next you'll need to sign in to your Google account and grant Proton access to your data.": [
         "接下来您需要登录至您的 Google 账户并允许 Proton 访问您的数据。"
+      ]
+    },
+    "Oauth instructions video": {
+      "For the import to work, you must select all requested items as shown in the GIF.": [
+        "为顺利完成导入，您需要如下图所示勾选所有权限。"
       ]
     },
     "Onboarding": {
@@ -6340,6 +7459,12 @@
       "Normal": [
         "常规"
       ],
+      "Off": [
+        "关"
+      ],
+      "On": [
+        "在"
+      ],
       "Permanent": [
         "长期"
       ],
@@ -6454,6 +7579,12 @@
     "Placeholder": {
       "A way to contact you": [
         "您的联系方式"
+      ],
+      "Add a calendar description": [
+        "填写分类描述"
+      ],
+      "Add a calendar name": [
+        "填写分类名称"
       ],
       "Add gift code": [
         "输入礼品码"
@@ -6683,6 +7814,11 @@
         "上传其他文件"
       ]
     },
+    "Select search results": {
+      "No results found": [
+        "搜索无结果"
+      ]
+    },
     "Settings description": {
       "Make the move to privacy. Effortlessly and securely.": [
         "迈出通向隐私的一步。安全且轻松。"
@@ -6697,6 +7833,11 @@
       ],
       "Organization": [
         "机构"
+      ]
+    },
+    "Settings update growler warning": {
+      "Failed to update settings": [
+        "未能更新设置"
       ]
     },
     "Settings/filters": {
@@ -6782,8 +7923,14 @@
       "Invite friends and earn rewards!": [
         "邀请好友注册赢取奖励！"
       ],
+      "No more missed appointments": [
+        "不再错过任何日程"
+      ],
       "Try ${ DRIVE_APP_NAME }": [
         "体验 ${ DRIVE_APP_NAME }"
+      ],
+      "With email notifications, you decide which events to be notified about and when.": [
+        "使用邮件提醒功能，您可以自由决定何时收到哪些日程的通知。"
       ]
     },
     "State": {
@@ -6814,6 +7961,32 @@
       ],
       "Your current storage:": [
         "您当前的存储空间："
+      ]
+    },
+    "Subscribe to calendar modal": {
+      "Calendar URL": [
+        "日历链接"
+      ],
+      "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Subscribed calendars.\n${ kbLink }": [
+        "要订阅外部或公共日历及其更新，请输入相应链接。一个只读版日历将添加到您订阅的日历中。\n${ kbLink }"
+      ]
+    },
+    "Subscribe to calendar modal description": {
+      "Learn how to get a private calendar link.": [
+        "了解如何获取私人日历链接。"
+      ]
+    },
+    "Subscribed calendar extension warning": {
+      "By using this link, Google will make the calendar you are subscribing to public": [
+        "通过使用此链接，Google 会将您订阅的日历设为公开"
+      ],
+      "This link might be wrong": [
+        "此链接可能有误"
+      ]
+    },
+    "Subscribed calendar URL length warning": {
+      "URL is too long": [
+        "URL 太长"
       ]
     },
     "Subscription attribute": {
@@ -6905,6 +8078,18 @@
       ],
       "Bug reported": [
         "问题已反馈"
+      ],
+      "Calendar added. It might take a few minutes to sync.": [
+        "已新增日历，可能需要几分钟才能同步"
+      ],
+      "Calendar created": [
+        "日历已创建"
+      ],
+      "Calendar information updated": [
+        "日历信息已更新"
+      ],
+      "Calendar updated": [
+        "日历已更新"
       ],
       "Canceling import": [
         "正在取消导入"
@@ -7145,6 +8330,11 @@
         "${ minutes } 分钟"
       ]
     },
+    "Timezone search placeholder": {
+      "Search timezones": [
+        "搜索时区"
+      ]
+    },
     "Title": {
       "${ appName } Keyboard Shortcuts": [
         "${ appName } 快捷键"
@@ -7193,6 +8383,9 @@
       ],
       "Add address": [
         "添加地址"
+      ],
+      "Add another notification to remind you of this event": [
+        "添加另一个提醒您此日程的通知"
       ],
       "Add contact group name": [
         "添加联系人群组名称"
@@ -7284,6 +8477,9 @@
       "Bridge for ${ platform }": [
         "Bridge ${ platform } 客户端"
       ],
+      "Calendar information": [
+        "日历信息"
+      ],
       "Card verification": [
         "银行卡验证"
       ],
@@ -7349,6 +8545,9 @@
       ],
       "Continue with partial import?": [
         "继续以部分导入进行吗？"
+      ],
+      "Create calendar": [
+        "创建日历"
       ],
       "Create your ${ BRAND_NAME } Account": [
         "创建 ${ BRAND_NAME } 账户"
@@ -7452,6 +8651,9 @@
       "Edit Block List": [
         "更改黑名单"
       ],
+      "Edit calendar": [
+        "编辑日历"
+      ],
       "Edit credit/debit card": [
         "编辑信用卡/借记卡"
       ],
@@ -7487,6 +8689,9 @@
       ],
       "Error": [
         "错误"
+      ],
+      "Export": [
+        "导出"
       ],
       "Export private key": [
         "导出私钥"
@@ -7734,6 +8939,15 @@
       "Select contact group": [
         "选择联系人群组"
       ],
+      "Select the time to send this notification": [
+        "选择发送该通知的时间"
+      ],
+      "Select the way to send this notification": [
+        "选择发送该通知的方式"
+      ],
+      "Select when you want this notification to be sent": [
+        "选择您希望发送该通知的时间"
+      ],
       "Session management": [
         "登录设备管理"
       ],
@@ -7889,6 +9103,11 @@
       ],
       "ZIP / postal code": [
         "邮编"
+      ]
+    },
+    "Title (number of minutes/hours/days/weeks)": {
+      "Choose a number": [
+        "选择一个数字"
       ]
     },
     "Title for payment methods table": {
@@ -8195,6 +9414,9 @@
       "If you cancel this import, you won't be able to resume it. Proton saved all progress in your account. Cancel anyway?": [
         "取消导入后您将无法恢复当前进度，但已导入的内容会正常保存。确定要取消吗？"
       ],
+      "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
+        "只有付费 ${ VPN_APP_NAME } 账户才能与客服实时交流，请通过表单提交反馈。"
+      ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "请注意，使用此支付方式将无法实时升级您的账户。我们将在确认支付后为您升级。"
       ],
@@ -8252,6 +9474,214 @@
     "Weak personal key warning": {
       "This key no longer meets our security standards. We suggest you mark it as obsolete and generate a new key.": [
         "此密钥已不能满足我们的安全标准，我们建议您将它作废并重新生成密钥。"
+      ]
+    },
+    "Weekly recurring event, frequency": {
+      "Every ${ interval } week on ${ multipleDaysString }": [
+        "每 ${ interval } 周的${ multipleDaysString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
+        "每${ interval } 周的${ multipleDaysString }，${ timesString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
+        "每${ interval } 周的${ multipleDaysString }，知道${ untilString }"
+      ],
+      "Every ${ interval } week on all days": [
+        "每 ${ interval } 周整周"
+      ],
+      "Every ${ interval } week on all days, ${ timesString }": [
+        "每 ${ interval } 周整周，${ timesString }"
+      ],
+      "Every ${ interval } week on all days, ${ untilString }": [
+        "每 ${ interval } 周所有天，${ untilString }"
+      ],
+      "Every ${ interval } week on Friday": [
+        "每 ${ interval } 周的星期五"
+      ],
+      "Every ${ interval } week on Friday, ${ timesString }": [
+        "每 ${ interval } 周星期五，${ timesString }"
+      ],
+      "Every ${ interval } week on Friday, ${ untilString }": [
+        "每 ${ interval } 周星期五，${ untilString }"
+      ],
+      "Every ${ interval } week on Monday": [
+        "每 ${ interval } 周的星期一"
+      ],
+      "Every ${ interval } week on Monday, ${ timesString }": [
+        "每 ${ interval } 周星期一，${ timesString }"
+      ],
+      "Every ${ interval } week on Monday, ${ untilString }": [
+        "每 ${ interval } 周星期一，${ untilString }"
+      ],
+      "Every ${ interval } week on Saturday": [
+        "每 ${ interval } 周的星期六"
+      ],
+      "Every ${ interval } week on Saturday, ${ timesString }": [
+        "每 ${ interval } 周星期六，${ timesString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ untilString }": [
+        "每 ${ interval } 周星期六，${ untilString }"
+      ],
+      "Every ${ interval } week on Sunday": [
+        "每 ${ interval } 周的星期日"
+      ],
+      "Every ${ interval } week on Sunday, ${ timesString }": [
+        "每 ${ interval } 周星期日，${ timesString }"
+      ],
+      "Every ${ interval } week on Sunday, ${ untilString }": [
+        "每 ${ interval } 周星期日，${ untilString }"
+      ],
+      "Every ${ interval } week on Thursday": [
+        "每 ${ interval } 周的星期四"
+      ],
+      "Every ${ interval } week on Thursday, ${ timesString }": [
+        "每 ${ interval } 周星期四，${ timesString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ untilString }": [
+        "每 ${ interval } 周星期四，${ untilString }"
+      ],
+      "Every ${ interval } week on Tuesday": [
+        "每 ${ interval } 周的星期二"
+      ],
+      "Every ${ interval } week on Tuesday, ${ timesString }": [
+        "每 ${ interval } 周星期二，${ timesString }"
+      ],
+      "Every ${ interval } week on Tuesday, ${ untilString }": [
+        "每 ${ interval } 周星期二，${ untilString }"
+      ],
+      "Every ${ interval } week on Wednesday": [
+        "每 ${ interval } 周的星期三"
+      ],
+      "Every ${ interval } week on Wednesday, ${ timesString }": [
+        "每 ${ interval } 周星期三，${ timesString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ untilString }": [
+        "每 ${ interval } 周星期三，${ untilString }"
+      ],
+      "Weekly on ${ multipleDaysString }": [
+        "每周的 ${ multipleDaysString }"
+      ],
+      "Weekly on ${ multipleDaysString }, ${ timesString }": [
+        "每周${ multipleDaysString }，${ timesString }"
+      ],
+      "Weekly on ${ multipleDaysString }, ${ untilString }": [
+        "每周${ multipleDaysString }，${ untilString }"
+      ],
+      "Weekly on all days": [
+        "每周所有天"
+      ],
+      "Weekly on all days, ${ timesString }": [
+        "每周所有天数，${ timesString }。"
+      ],
+      "Weekly on all days, ${ untilString }": [
+        "每天，直到${ untilString }"
+      ],
+      "Weekly on Friday": [
+        "每周星期五"
+      ],
+      "Weekly on Friday, ${ timesString }": [
+        "每周星期五，${ timesString }"
+      ],
+      "Weekly on Friday, ${ untilString }": [
+        "每周星期五，直到${ untilString }"
+      ],
+      "Weekly on Monday": [
+        "每周星期一"
+      ],
+      "Weekly on Monday, ${ timesString }": [
+        "每周星期一，${ timesString }"
+      ],
+      "Weekly on Monday, ${ untilString }": [
+        "每周星期一，直到${ untilString }"
+      ],
+      "Weekly on Saturday": [
+        "每周星期六"
+      ],
+      "Weekly on Saturday, ${ timesString }": [
+        "每周星期六，${ timesString }"
+      ],
+      "Weekly on Saturday, ${ untilString }": [
+        "每周星期六，直到${ untilString }"
+      ],
+      "Weekly on Sunday": [
+        "每周星期日"
+      ],
+      "Weekly on Sunday, ${ timesString }": [
+        "每周星期日，${ timesString }"
+      ],
+      "Weekly on Sunday, ${ untilString }": [
+        "每周星期日，直到${ untilString }"
+      ],
+      "Weekly on Thursday": [
+        "每周星期四"
+      ],
+      "Weekly on Thursday, ${ timesString }": [
+        "每周星期四，${ timesString }"
+      ],
+      "Weekly on Thursday, ${ untilString }": [
+        "每周星期四，直到${ untilString }"
+      ],
+      "Weekly on Tuesday": [
+        "每周星期二"
+      ],
+      "Weekly on Tuesday, ${ timesString }": [
+        "每周星期二，${ timesString }"
+      ],
+      "Weekly on Tuesday, ${ untilString }": [
+        "每周星期二，直到${ untilString }"
+      ],
+      "Weekly on Wednesday": [
+        "每周星期三"
+      ],
+      "Weekly on Wednesday, ${ timesString }": [
+        "每周星期三，${ timesString }"
+      ],
+      "Weekly on Wednesday, ${ untilString }": [
+        "每周星期三，直到${ untilString }"
+      ]
+    },
+    "Weekly recurring event, repeats on (multiple days), frequency": {
+      "Friday": [
+        "星期五"
+      ],
+      "Monday": [
+        "星期一"
+      ],
+      "Saturday": [
+        "星期六"
+      ],
+      "Sunday": [
+        "星期日"
+      ],
+      "Thursday": [
+        "星期四"
+      ],
+      "Tuesday": [
+        "星期二"
+      ],
+      "Wednesday": [
+        "星期三"
+      ]
+    },
+    "Yearly recurring event, frequency": {
+      "Every ${ interval } year": [
+        "Yearly",
+        ""
+      ],
+      "Every ${ interval } year, ${ timesString }": [
+        "每 ${ interval } 年，${ timesString }"
+      ],
+      "Every ${ interval } year, ${ untilString }": [
+        "每 ${ interval } 年，直到 ${ untilString }"
+      ],
+      "Yearly": [
+        "每年"
+      ],
+      "Yearly, ${ timesString }": [
+        "每年, ${ timesString }"
+      ],
+      "Yearly, ${ untilString }": [
+        "每年, ${ untilString }"
       ]
     }
   }

@@ -11,11 +11,20 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } dućan"
       ],
+      "Activate recovery": [
+        "Aktivirajte oporavak"
+      ],
       "Add": [
         "Dodaj"
       ],
+      "Add address": [
+        "Dodajte adresu"
+      ],
       "Add contact": [
         "Dodaj kontakt"
+      ],
+      "Add email": [
+        "Dodajte e-poštu"
       ],
       "Add group": [
         "Dodaj grupu"
@@ -29,11 +38,17 @@
       "Add notification": [
         "Dodaj obavijest"
       ],
+      "Add phone number": [
+        "Dodajte telefonski broj"
+      ],
       "Add to group": [
         "Dodaj u grupu"
       ],
       "Apply": [
         "Primijeni"
+      ],
+      "Attach screenshot(s)": [
+        "Priložite snimku(e) zaslona"
       ],
       "Back": [
         "Natrag"
@@ -43,6 +58,12 @@
       ],
       "Cancel": [
         "Poništi"
+      ],
+      "Chat with us": [
+        "Razgovarajte s nama"
+      ],
+      "Check import progress": [
+        "Provjerite napredak uvoza"
       ],
       "Choose a file or drag it here": [
         "Odaberite datoteku ili je dovucite ovdje"
@@ -74,6 +95,9 @@
       "Confirm": [
         "Potvrdi"
       ],
+      "Confirm opening of link ${ linkToShow }": [
+        "Potvrdite otvaranje hiperveze ${ linkToShow }"
+      ],
       "Contact group": [
         "Grupa kontakta"
       ],
@@ -86,8 +110,14 @@
       "Copy email to clipboard": [
         "Kopiraj adresu e-pošte u međuspremnik"
       ],
+      "Create a new contact group": [
+        "Stvori novu grupu kontakata"
+      ],
       "Create event": [
         "Stvori događaj"
+      ],
+      "Customize": [
+        "Prilagodi"
       ],
       "Delete": [
         "Izbriši"
@@ -111,6 +141,9 @@
       "Deselect all": [
         "Odznači sve"
       ],
+      "Didn't receive the code?": [
+        "Niste primili kod?"
+      ],
       "Discard": [
         "Odbaci"
       ],
@@ -126,8 +159,14 @@
       "Edit email address": [
         "Uredi adresu e-pošte"
       ],
+      "Edit label": [
+        "Uredi oznaku"
+      ],
       "Edit phone number": [
         "Uredi broj telefona"
+      ],
+      "Edit sign-in details": [
+        "Uredite detalje za prijavu"
       ],
       "Email settings": [
         "Postavke e-pošte"
@@ -137,6 +176,9 @@
       ],
       "Export": [
         "Izvoz"
+      ],
+      "Export contact group": [
+        "Izvezi grupu kontakata"
       ],
       "Export contacts": [
         "Izvezi kontakte"
@@ -150,14 +192,26 @@
       "Get verification code": [
         "Nabavi kôd za provjeru"
       ],
+      "Go to label": [
+        "Idi na oznaku"
+      ],
       "Go to panel ${ index }": [
         "Idi na ${ index } panel"
       ],
       "Go to settings": [
         "Idi na postavke"
       ],
+      "Got it": [
+        "Shvaćam"
+      ],
       "Hide advanced PGP settings": [
         "Sakrij napredne PGP postavke"
+      ],
+      "Hide folders": [
+        "Sakrij mape"
+      ],
+      "Hide labels": [
+        "Sakrij oznake"
       ],
       "Hide time zones": [
         "Sakrij vremenske zone"
@@ -170,6 +224,9 @@
       ],
       "import": [
         "uvoz"
+      ],
+      "Import from .csv or vCard": [
+        "Uvezite iz .csv ili vCard"
       ],
       "Load image": [
         "Učitaj sliku"
@@ -249,11 +306,17 @@
       "Previous year": [
         "Prethodna godina"
       ],
+      "Quit": [
+        "Prestati"
+      ],
       "Re-sign": [
         "Ponovna prijava"
       ],
       "Recover data": [
         "Oporavi podatke"
+      ],
+      "Refer a friend": [
+        "Uputi prijatelja"
       ],
       "refresh the page": [
         "osvježi stranicu"
@@ -269,6 +332,9 @@
       ],
       "Remove this participant": [
         "Ukloni ovog sudionika"
+      ],
+      "Rename": [
+        "Preimenuj"
       ],
       "Report a problem": [
         "Prijavi problem"
@@ -291,11 +357,20 @@
       "Send": [
         "Pošalji"
       ],
+      "Set recovery phrase": [
+        "Postavite frazu za oporavak"
+      ],
       "Share": [
         "Podijeli"
       ],
       "Show advanced PGP settings": [
         "Pokaži napredne PGP postavke"
+      ],
+      "Show folders": [
+        "Prikaži mape"
+      ],
+      "Show labels": [
+        "Prikaži oznake"
       ],
       "Show less": [
         "Prikaži manje"
@@ -315,8 +390,14 @@
       "Skip": [
         "Preskoči"
       ],
+      "Start import": [
+        "Započni uvoz"
+      ],
       "Start setup": [
         "Započni postavljanje"
+      ],
+      "Stay": [
+        "Ostani"
       ],
       "Submit": [
         "Pošalji"
@@ -333,6 +414,9 @@
       "Try another method": [
         "Isprobajte drugu metodu"
       ],
+      "Unlock data": [
+        "Otključajte podatke"
+      ],
       "Unmark for deletion": [
         "Odznači za brisanje"
       ],
@@ -341,6 +425,12 @@
       ],
       "Update": [
         "Ažuriraj"
+      ],
+      "Update recovery file": [
+        "Ažurirajte datoteku za oporavak"
+      ],
+      "Update recovery phrase": [
+        "Ažurirajte frazu za oporavak"
       ],
       "Upgrade": [
         "Nadogradnja"
@@ -356,6 +446,12 @@
       ],
       "Verify": [
         "Potvrdi"
+      ],
+      "Verify account": [
+        "Potvrdi račun"
+      ],
+      "Verify email": [
+        "Potvrdi email"
       ],
       "View": [
         "Pregled"
@@ -433,6 +529,20 @@
     "Apps dropdown": {
       "Proton applications": [
         "Proton aplikacije"
+      ]
+    },
+    "Attached ics file error": {
+      "Invalid event": [
+        "Nevažeći događaj"
+      ],
+      "Invalid ICS file": [
+        "Nevažeća ICS datoteka"
+      ],
+      "Invalid method": [
+        "Nevažeća metoda"
+      ],
+      "Unsupported event": [
+        "Događaj nije podržan"
       ]
     },
     "Beta access description": {
@@ -588,6 +698,11 @@
       ],
       "You tentatively accepted the invitation": [
         "Uvjetno ste prihvatili pozivnicu"
+      ]
+    },
+    "Calendar sidebar dropdown item": {
+      "More options": [
+        "Više opcija"
       ]
     },
     "Calendar view": {
@@ -795,6 +910,16 @@
       ],
       "90 minutes": [
         "90 minuta"
+      ]
+    },
+    "Early Access Disabled": {
+      "Off": [
+        "Isklj"
+      ]
+    },
+    "Early Access Enabled": {
+      "On": [
+        "Uklj"
       ]
     },
     "Email body for description (description part)": {
@@ -1061,8 +1186,17 @@
       ]
     },
     "Error importing calendar": {
+      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        "Došlo je do pogreške prilikom učitavanja vaše datoteke ${ formattedFilename }. Maksimalna veličina datoteke je ${ MAX_IMPORT_FILE_SIZE_STRING }."
+      ],
+      "An error occurred uploading your file. No file has been selected.": [
+        "Došlo je do pogreške prilikom učitavanja vaše datoteke. Nije odabrana nijedna datoteka."
+      ],
       "An unexpected error occurred. Import must be restarted.": [
         "Došlo je do neočekivane pogreške. Uvoz se mora ponovo pokrenuti."
+      ],
+      "Your file ${ formattedFilename } is empty.": [
+        "Vaša datoteka ${ formattedFilename } je prazna."
       ]
     },
     "Error importing contact": {
@@ -1096,9 +1230,86 @@
         "Vaša datoteka ${ formattedFilename } je prazna."
       ]
     },
+    "Error importing event": {
+      "Component with wrong format": [
+        "Komponenta s pogrešnim formatom"
+      ],
+      "Custom timezone": [
+        "Prilagođena vremenska zona"
+      ],
+      "Edited event not supported": [
+        "Uređeni događaj nije podržan"
+      ],
+      "Encryption failed": [
+        "Neuspješno šifriranje"
+      ],
+      "End time out of bounds": [
+        "Krajnje vrijeme je van granica"
+      ],
+      "Event validation failed": [
+        "Neuspjela provjera valjanosti događaja"
+      ],
+      "Floating times not supported": [
+        "Floating vremena nisu podržana"
+      ],
+      "Free-busy time information": [
+        "Informacije o slobodnom/zauzetom vremenu"
+      ],
+      "Invalid event": [
+        "Nevažeći događaj"
+      ],
+      "Journal entry": [
+        "Stavka dnevnika"
+      ],
+      "Malformed all-day event": [
+        "Nevažeći cjelodnevni događaj"
+      ],
+      "Malformed end time": [
+        "Nevažeće krajnje vrijeme"
+      ],
+      "Malformed recurring event": [
+        "Neispravan ponavljajući događaj"
+      ],
+      "Malformed start time": [
+        "Nevažeće početno vrijeme"
+      ],
+      "Missing start time": [
+        "Nedostaje početno vrijeme"
+      ],
+      "Non-Gregorian": [
+        "Ne gregorijanski"
+      ],
+      "Notification out of bounds": [
+        "Obavijest je izvan granica"
+      ],
+      "Original recurring event could not be found": [
+        "Originalni ponavljajući događaj nije pronađen"
+      ],
+      "Recurring rule not supported": [
+        "Ponavljajuće pravilo nije podržano"
+      ],
+      "Start time out of bounds": [
+        "Početno vrijeme je van granica"
+      ],
+      "Timezone": [
+        "Vremenska zona"
+      ],
+      "To-do entry": [
+        "Stavka liste zadataka"
+      ],
+      "Unknown": [
+        "Nepoznato"
+      ],
+      "Unsupported event": [
+        "Događaj nije podržan"
+      ]
+    },
     "Error message": {
       "Error: ${ errorMessage }": [
         "Pogreška: ${ errorMessage }"
+      ],
+      "Invalid URL": [
+        "Nevažeći URL"
       ],
       "Oops, something went wrong": [
         "Ups, nešto je pošlo po zlu"
@@ -1128,6 +1339,11 @@
         "Ocjena je zabilježena"
       ]
     },
+    "Event delete button tooltip": {
+      "Delete event": [
+        "Izbriši događaj"
+      ]
+    },
     "Event form": {
       "${ numberOfParticipants } participant": [
         "${ numberOfParticipants } sudionik",
@@ -1138,6 +1354,32 @@
     "Event info. Organizer name": {
       "You": [
         "Vi"
+      ]
+    },
+    "Event invitation error": {
+      "Invalid invitation": [
+        "Nevažeća pozivnica"
+      ],
+      "Invalid response": [
+        "Nevažeći odgovor"
+      ],
+      "Unsupported invitation": [
+        "Nepodržana pozivnica"
+      ],
+      "Unsupported response": [
+        "Odgovor nije podržan"
+      ],
+      "We could not cancel the event in your calendar": [
+        "Nismo mogli otkazati događaj u vašem kalendaru"
+      ],
+      "We could not retrieve the event from your calendar": [
+        "Nismo mogli dohvatiti događaj iz vašeg kalendara"
+      ],
+      "We could not update the event in your calendar": [
+        "Nismo mogli ažurirati događaj u vašem kalendaru"
+      ],
+      "Your answer was sent, but the event could not be added to your calendar": [
+        "Vaš je odgovor poslan, ali događaj nije moguće dodati u vaš kalendar"
       ]
     },
     "Event title": {
@@ -1154,6 +1396,11 @@
       ],
       "MB": [
         "MB"
+      ]
+    },
+    "Filter notification": {
+      "${ Label.Name } updated": [
+        "${ Label.Name } ažurirano"
       ]
     },
     "Group": {
@@ -1340,6 +1587,9 @@
       "An invitation will be sent to the event participants.": [
         "Pozivnica će biti poslana sudionicima događaja."
       ],
+      "and": [
+        "i"
+      ],
       "At most 100 participants are allowed per invitation": [
         "Dopušteno je najviše 100 sudionika po pozivnici"
       ],
@@ -1418,6 +1668,9 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Ako ne pronađete e-poštu u pristigloj pošti, provjerite svoju mapu neželjene pošte."
       ],
+      "Inherited from parent folder": [
+        "Nasljedno iz roditeljske mape"
+      ],
       "Internet connection lost. Please check your device's connectivity.": [
         "Nema internetske veze. Molimo provjerite povezanost uređaja."
       ],
@@ -1448,6 +1701,9 @@
       "Monthly ${ onDayString }": [
         "Mjesečno ${ onDayString }"
       ],
+      "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
+        "Dodijelite naziv svojoj novoj mapi i odaberite roditeljsku mapu u koju je želite staviti. Ako ne odaberete roditeljsku mapu, nova će se mapa stvoriti kao mapa najviše razine."
+      ],
       "No contacts added yet": [
         "Nema dodanih kontakata"
       ],
@@ -1462,6 +1718,9 @@
       ],
       "None of the participants can be notified about your changes:": [
         "Nitko od sudionika ne može biti obaviješten o vašim promjenama:"
+      ],
+      "Not a valid URL": [
+        "Nije valjani URL"
       ],
       "Occurrences previously updated by the organizer will be kept, but some of your answers will be lost.": [
         "Ponavljanja koja je organizator prethodno ažurirao zadržati će se, ali neki od vaših odgovora će se ukloniti."
@@ -1610,6 +1869,9 @@
       "You can only modify personal event properties as you can't send emails from the organizer address.": [
         "Možete mijenjati samo svojstva osobnih događaja pošto ne možete slati e-poruke s adrese organizatora."
       ],
+      "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
+        "Možete uključiti obavijesti da biste dobili upozorenja kada u tu mapu stignu nove poruke e-pošte."
+      ],
       "You have reactivated your keys and events linked to the following calendars can now be decrypted.": [
         "Poništili ste lozinku te događaji povezani sa sljedećim kalendarima se sada mogu dešifrirati."
       ],
@@ -1705,6 +1967,9 @@
       "All day": [
         "Cijeli dan"
       ],
+      "Attach screenshot(s)": [
+        "Priložite snimku(e) zaslona"
+      ],
       "Automatically save contacts": [
         "Automatsko spremanje kontakata"
       ],
@@ -1720,11 +1985,20 @@
       "City": [
         "Grad"
       ],
+      "Color": [
+        "Boja"
+      ],
+      "Contacts": [
+        "Kontakti"
+      ],
       "Copy": [
         "Kopiraj"
       ],
       "Country": [
         "Država"
+      ],
+      "Delete": [
+        "Izbriši"
       ],
       "Description": [
         "Opis"
@@ -1759,6 +2033,9 @@
       "Extended address": [
         "Produžena adresa"
       ],
+      "Folder location": [
+        "Lokacija mape"
+      ],
       "Hide password": [
         "Sakrij lozinku"
       ],
@@ -1770,6 +2047,15 @@
       ],
       "Name": [
         "Naziv"
+      ],
+      "Notification": [
+        "Obavijest"
+      ],
+      "Notifications": [
+        "Obavijesti"
+      ],
+      "OK": [
+        "U redu"
       ],
       "Operating system": [
         "Operativni sustav"
@@ -1851,6 +2137,25 @@
         "Naziv"
       ]
     },
+    "Label/folder modal": {
+      "Create folder": [
+        "Stvori mapu"
+      ],
+      "Create label": [
+        "Stvori oznaku"
+      ],
+      "Edit folder": [
+        "Uredi mapu"
+      ],
+      "Edit label": [
+        "Uredi oznaku"
+      ]
+    },
+    "label/folder notification": {
+      "${ Label.Name } created": [
+        "${ Label.Name } stvoreno"
+      ]
+    },
     "Link": {
       "Calendars": [
         "Kalendari"
@@ -1902,6 +2207,11 @@
       ],
       "Plain text": [
         "Običan tekst"
+      ]
+    },
+    "Modal action": {
+      "Close": [
+        "Zatvori"
       ]
     },
     "Modal title": {
@@ -2045,6 +2355,17 @@
         "na treću srijedu"
       ]
     },
+    "New Label form": {
+      "Color": [
+        "Boja"
+      ],
+      "Folder name": [
+        "Naziv mape"
+      ],
+      "Label name": [
+        "Naziv oznake"
+      ]
+    },
     "Notification": {
       "Contact group created": [
         "Kontaktna grupa je stvorena"
@@ -2182,6 +2503,11 @@
         "Nepoznato"
       ]
     },
+    "Onboarding Action": {
+      "Next": [
+        "Sljedeće"
+      ]
+    },
     "Onboarding Proton": {
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "Postavite vašu organizaciju, povežite naziv domene i stvorite račune kako biste osigurali zaštitu svih članova vaše organizacije."
@@ -2242,6 +2568,9 @@
         "Mjesec",
         "Mjeseca",
         "Mjeseci"
+      ],
+      "No parent folder": [
+        "Nema roditeljske mape"
       ],
       "This and future events": [
         "Ovaj i budući događaji"
@@ -2311,6 +2640,9 @@
       ],
       "Name": [
         "Naziv"
+      ],
+      "Password": [
+        "Lozinka"
       ],
       "Please describe the problem and include any error messages": [
         "Molimo opišite problem i pridružite sve poruke o pogreškama"
@@ -2827,6 +3159,9 @@
       "Report a problem": [
         "Prijavi problem"
       ],
+      "Request new code": [
+        "Zatraži novi kôd"
+      ],
       "Reset calendar keys": [
         "Poništi ključeve kalendara"
       ],
@@ -2927,6 +3262,11 @@
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
         "Odaberite broj"
+      ]
+    },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "Danas"
       ]
     },
     "Tooltip": {
@@ -3247,9 +3587,8 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "Svaku ${ interval } godinu",
-        "Svake ${ interval } godine",
-        "Svakih ${ interval } godina"
+        "Yearly",
+        ""
       ],
       "Every ${ interval } year, ${ timesString }": [
         "Svaku ${ interval } godinu, ${ timesString }",
