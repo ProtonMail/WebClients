@@ -1,4 +1,3 @@
-// import { SelectTwo, Option, Checkbox, Label } from '@proton/components';
 import { getTitle } from '../../helpers/title';
 import mdx from './Sizing.mdx';
 
