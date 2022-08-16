@@ -2,8 +2,8 @@ import { useCallback, useEffect, useRef } from 'react';
 
 import { VIEWS } from '@proton/shared/lib/calendar/constants';
 import { APPS } from '@proton/shared/lib/constants';
-import { getIsSideAppPostMessage, postMessageFromIframe } from '@proton/shared/lib/sideApp/helpers';
-import { SIDE_APP_EVENTS } from '@proton/shared/lib/sideApp/models';
+import { getIsDrawerPostMessage, postMessageFromIframe } from '@proton/shared/lib/drawer/helpers';
+import { DRAWER_EVENTS } from '@proton/shared/lib/drawer/interfaces';
 
 const getIsMatch = (existingEvent: OpenedMailEvent, newEvent: OpenedMailEvent) => {
     const { messageID: existingMessageID, UID: existingUID } = existingEvent;
@@ -17,31 +17,31 @@ export interface OpenedMailEvent {
     UID: string;
 }
 
-export const useGetOpenedMailEvents = (sideAppView?: VIEWS): (() => OpenedMailEvent[]) => {
-    const isMailView = sideAppView === VIEWS.MAIL;
+export const useGetOpenedMailEvents = (drawerView?: VIEWS): (() => OpenedMailEvent[]) => {
+    const isMailView = drawerView === VIEWS.MAIL;
     const ref = useRef<OpenedMailEvent[]>([]);
 
     useEffect(() => {
         if (isMailView) {
             // Ask Mail if calendar events are opened already
-            postMessageFromIframe({ type: SIDE_APP_EVENTS.SIDE_APP_REQUEST_OPEN_EVENTS }, APPS.PROTONMAIL);
+            postMessageFromIframe({ type: DRAWER_EVENTS.REQUEST_OPEN_EVENTS }, APPS.PROTONMAIL);
         }
     }, [isMailView]);
 
     useEffect(() => {
         const handleMessageEvents = (event: MessageEvent) => {
-            if (!getIsSideAppPostMessage(event)) {
+            if (!getIsDrawerPostMessage(event)) {
                 return;
             }
 
-            if (event.data.type === SIDE_APP_EVENTS.SIDE_APP_SET_WIDGET_EVENT) {
+            if (event.data.type === DRAWER_EVENTS.SET_WIDGET_EVENT) {
                 const newOpenedMailEvent = event.data.payload;
                 if (!ref.current.some((event) => getIsMatch(event, newOpenedMailEvent))) {
                     ref.current.push({ ...newOpenedMailEvent });
                 }
             }
 
-            if (event.data.type === SIDE_APP_EVENTS.SIDE_APP_UNSET_WIDGET_EVENT) {
+            if (event.data.type === DRAWER_EVENTS.UNSET_WIDGET_EVENT) {
                 const newOpenedMailEvent = event.data.payload;
                 const index = ref.current.findIndex((event) => getIsMatch(event, newOpenedMailEvent));
                 if (index !== -1) {

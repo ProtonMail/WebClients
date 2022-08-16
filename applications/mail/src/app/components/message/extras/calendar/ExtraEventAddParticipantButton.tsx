@@ -3,7 +3,7 @@ import { Dispatch, SetStateAction } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { useLoading, useNotifications, useSideApp } from '@proton/components';
+import { useLoading, useNotifications, useDrawer } from '@proton/components';
 import useAddAttendees from '@proton/components/containers/calendar/hooks/useAddAttendees';
 import { reformatApiErrorMessage } from '@proton/shared/lib/calendar/api';
 import { getAttendeeEmail, withPartstat } from '@proton/shared/lib/calendar/attendees';
@@ -11,12 +11,12 @@ import { ICAL_ATTENDEE_STATUS } from '@proton/shared/lib/calendar/constants';
 import { getIsSuccessSyncApiResponse } from '@proton/shared/lib/calendar/helper';
 import { AddAttendeeError } from '@proton/shared/lib/calendar/mailIntegration/AddAttendeeError';
 import { APPS } from '@proton/shared/lib/constants';
+import { postMessageToIframe } from '@proton/shared/lib/drawer/helpers';
+import { DRAWER_EVENTS } from '@proton/shared/lib/drawer/interfaces';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { RequireSome } from '@proton/shared/lib/interfaces';
 import { SyncMultipleApiSuccessResponses } from '@proton/shared/lib/interfaces/calendar';
 import { EncryptionPreferencesError } from '@proton/shared/lib/mail/encryptionPreferences';
-import { postMessageToIframe } from '@proton/shared/lib/sideApp/helpers';
-import { SIDE_APP_EVENTS } from '@proton/shared/lib/sideApp/models';
 import noop from '@proton/utils/noop';
 
 import { InvitationModel, UPDATE_ACTION, getDisableButtons } from '../../../../helpers/calendar/invite';
@@ -32,7 +32,7 @@ const ExtraEventAddParticipantButton = ({ model, setModel }: Props) => {
     const [loading, withLoading] = useLoading();
     const contactEmailsMap = useContactsMap();
     const addAttendees = useAddAttendees();
-    const { sideAppUrl } = useSideApp();
+    const { appInView } = useDrawer();
 
     const {
         calendarData,
@@ -102,12 +102,12 @@ const ExtraEventAddParticipantButton = ({ model, setModel }: Props) => {
                 return handleError();
             }
             handleSuccess(response);
-            // If the calendar app is opened in the side panel,
+            // If the calendar app is opened in the drawer,
             // we want to call the calendar event manager to refresh the view
-            if (sideAppUrl) {
+            if (appInView === APPS.PROTONCALENDAR) {
                 postMessageToIframe(
                     {
-                        type: SIDE_APP_EVENTS.SIDE_APP_CALL_CALENDAR_EVENT_MANAGER,
+                        type: DRAWER_EVENTS.CALL_CALENDAR_EVENT_MANAGER,
                         payload: { calendarID: calendarEvent.CalendarID },
                     },
                     APPS.PROTONCALENDAR

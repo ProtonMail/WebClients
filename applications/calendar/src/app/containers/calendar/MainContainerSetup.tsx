@@ -38,10 +38,10 @@ interface Props {
     calendars: VisualCalendar[];
     addresses: Address[];
     user: UserModel;
-    sideAppView?: VIEWS;
+    drawerView?: VIEWS;
 }
 
-const MainContainerSetup = ({ user, addresses, calendars, sideAppView }: Props) => {
+const MainContainerSetup = ({ user, addresses, calendars, drawerView }: Props) => {
     const { isNarrow } = useActiveBreakpoint();
     const [userSettings] = useUserSettings();
     const [calendarUserSettings = DEFAULT_CALENDAR_USER_SETTINGS] = useCalendarUserSettings();
@@ -57,7 +57,7 @@ const MainContainerSetup = ({ user, addresses, calendars, sideAppView }: Props) 
 
     useCalendarsInfoListener(allCalendarIDs);
 
-    const getOpenedMailEvents = useGetOpenedMailEvents(sideAppView);
+    const getOpenedMailEvents = useGetOpenedMailEvents(drawerView);
     const calendarsEventsCacheRef = useRef<CalendarsEventsCache>(getCalendarsEventCache());
     useCalendarsEventsEventListener(calendarsEventsCacheRef, allCalendarIDs, getOpenedMailEvents);
 
@@ -77,9 +77,9 @@ const MainContainerSetup = ({ user, addresses, calendars, sideAppView }: Props) 
     const [customTzid, setCustomTzid] = useState('');
     const defaultTzid = getDefaultTzid(calendarUserSettings, localTzid);
 
-    // In the side app the time zone selector won't be visible. We want to force using the browser time zone
+    // In the drawer the time zone selector won't be visible. We want to force using the browser time zone
     // We have to do it here, so that we use the correct timezone in EventActionContainer and in CalendarContainer
-    const tzid = sideAppView ? getTimezone() : customTzid || defaultTzid;
+    const tzid = drawerView ? getTimezone() : customTzid || defaultTzid;
 
     const [startupModalState, setStartupModalState] = useState<{ hasModal?: boolean; isOpen: boolean }>({
         isOpen: false,
@@ -91,7 +91,7 @@ const MainContainerSetup = ({ user, addresses, calendars, sideAppView }: Props) 
             <Switch>
                 <Route path={['/:appName/event', '/event']}>
                     <EventActionContainer
-                        sideAppView={sideAppView}
+                        drawerView={drawerView}
                         tzid={tzid}
                         addresses={addresses}
                         calendars={calendars}
@@ -106,7 +106,7 @@ const MainContainerSetup = ({ user, addresses, calendars, sideAppView }: Props) 
                         tzid={tzid}
                         setCustomTzid={setCustomTzid}
                         isNarrow={isNarrow}
-                        sideAppView={sideAppView}
+                        drawerView={drawerView}
                         user={user}
                         addresses={addresses}
                         activeAddresses={activeAddresses}

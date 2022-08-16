@@ -9,11 +9,13 @@ import {
     useRef,
     useState,
 } from 'react';
+import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Icon, Tooltip, classnames, useElementRect } from '@proton/components';
+import { ButtonGroup, Icon, Tooltip, classnames, useElementRect } from '@proton/components';
 import { VIEWS } from '@proton/shared/lib/calendar/constants';
-import { addWeeks, eachDayOfInterval, format, isSameDay } from '@proton/shared/lib/date-fns-utc';
+import { addDays, eachDayOfInterval, format, isSameDay } from '@proton/shared/lib/date-fns-utc';
+import { dateLocale } from '@proton/shared/lib/i18n';
 
 import { CalendarViewEvent, TargetEventData, TargetMoreData } from '../../containers/calendar/interface';
 import { getNavigationArrowsText } from '../../helpers/i18n';
@@ -65,10 +67,11 @@ interface Props {
     formatTime?: (date: Date) => string;
     onClickDate?: (date: Date) => void;
     onChangeDate?: (date: Date) => void;
+    onClickToday?: () => void;
     weekdays?: string[];
     weekdaysSingle?: string[];
     actionRef: RefObject<TimeGridActionRef>;
-    isSideApp?: boolean;
+    isDrawerApp?: boolean;
 }
 
 const TimeGrid = ({
@@ -85,6 +88,7 @@ const TimeGrid = ({
     formatTime = defaultFormat,
     onClickDate,
     onChangeDate,
+    onClickToday,
     onMouseDown,
     isInteractionEnabled = false,
     isScrollDisabled = false,
@@ -95,7 +99,7 @@ const TimeGrid = ({
     targetMoreRef,
     targetMoreData,
     actionRef,
-    isSideApp,
+    isDrawerApp,
 }: Props) => {
     const timeGridRef = useRef<HTMLDivElement>(null);
     const dayGridRef = useRef<HTMLDivElement>(null);
@@ -104,9 +108,9 @@ const TimeGrid = ({
     const scrollRef = useRef<HTMLDivElement>(null);
     const partDayEventViewRef = useRef<HTMLDivElement>(null);
 
-    const { previous: previousWeek, next: nextWeek } = getNavigationArrowsText(VIEWS.WEEK);
+    const { previous: previousDay, next: nextDay } = getNavigationArrowsText(VIEWS.DAY);
 
-    const canDisplaySecondaryTimeZone = displaySecondaryTimezone && !isSideApp;
+    const canDisplaySecondaryTimeZone = displaySecondaryTimezone && !isDrawerApp;
 
     const rect = useElementRect(timeGridRef);
     const [partDayEventViewStyleValues, setPartDayEventViewStyleValues] = useState(() => ({
@@ -183,12 +187,12 @@ const TimeGrid = ({
         scrollRef.current.scrollTop = topOffset - scrollRect.height / 2 + titleRect.height / 2;
     }, []);
 
-    const handleClickNextWeek = useCallback(() => {
-        onChangeDate?.(addWeeks(date, 1));
+    const handleClickNextDay = useCallback(() => {
+        onChangeDate?.(addDays(date, 1));
     }, [date]);
 
-    const handleClickPrevWeek = useCallback(() => {
-        onChangeDate?.(addWeeks(date, -1));
+    const handleClickPrevDay = useCallback(() => {
+        onChangeDate?.(addDays(date, -1));
     }, [date]);
 
     useImperativeHandle(
@@ -299,8 +303,8 @@ const TimeGrid = ({
             onClickDate={onClickDate}
             weekdays={weekdays}
             weekdaysSingle={weekdaysSingle}
-            hasSmallLabels={isSideApp}
-            hasBoldLabels={isSideApp}
+            hasSmallLabels={isDrawerApp}
+            hasBoldLabels={isDrawerApp}
         />
     );
 
@@ -326,42 +330,28 @@ const TimeGrid = ({
                                 </div>
                             </div>
                         ) : null}
-                        {!isSideApp && (
+                        {!isDrawerApp && (
                             <div className="calendar-aside flex flex-column flex-justify-end">
                                 <div className="text-center">{primaryTimezone}</div>
                             </div>
                         )}
 
-                        {isSideApp ? (
-                            <div className="mr0-5 ml0-5 flex flex-align-items-end">
-                                <Tooltip title={previousWeek}>
-                                    <Button
-                                        icon
-                                        size="small"
-                                        className="mb0-5"
-                                        color="weak"
-                                        shape="ghost"
-                                        onClick={handleClickPrevWeek}
-                                    >
-                                        <Icon name="chevron-left" />
-                                        <span className="sr-only">{previousWeek}</span>
-                                    </Button>
-                                </Tooltip>
-
-                                {dayButtons}
-
-                                <Tooltip title={nextWeek}>
-                                    <Button
-                                        icon
-                                        size="small"
-                                        className="mb0-5"
-                                        color="weak"
-                                        shape="ghost"
-                                        onClick={handleClickNextWeek}
-                                    >
-                                        <Icon name="chevron-right" />
-                                        <span className="sr-only">{nextWeek}</span>
-                                    </Button>
+                        {isDrawerApp ? (
+                            <div className="ml1 mr0-5 mb0-5 flex flex-align-items-end flex-justify-space-between w100">
+                                <ButtonGroup size="small" color="weak" shape="outline">
+                                    <Tooltip title={previousDay}>
+                                        <Button icon onClick={handleClickPrevDay}>
+                                            <Icon name="chevron-left" alt={previousDay} />
+                                        </Button>
+                                    </Tooltip>
+                                    <Tooltip title={nextDay}>
+                                        <Button icon onClick={handleClickNextDay}>
+                                            <Icon name="chevron-right" alt={nextDay} />
+                                        </Button>
+                                    </Tooltip>
+                                </ButtonGroup>
+                                <Tooltip title={format(date, 'PP', { locale: dateLocale })}>
+                                    <Button onClick={onClickToday} size="small">{c('Action').t`Today`}</Button>
                                 </Tooltip>
                             </div>
                         ) : (
@@ -372,7 +362,7 @@ const TimeGrid = ({
                     <div className="flex calendar-fullday-row">
                         {canDisplaySecondaryTimeZone ? <div className="calendar-aside" /> : null}
                         <div className="calendar-aside calendar-aside-weekNumber text-center flex flex-column flex-justify-end">
-                            {isSideApp && (
+                            {isDrawerApp && (
                                 <span
                                     className="h-custom flex flex-column flex-justify-center pt0-25"
                                     style={{ '--height-custom': `${dayEventHeight / 16}rem` }}

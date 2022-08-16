@@ -15,7 +15,7 @@ import {
 } from 'date-fns';
 import { c, msgid } from 'ttag';
 
-import { DateInput, ErrorZone, Href, Label, TimeInput, generateUID } from '@proton/components';
+import { DateInput, Href, InputFieldTwo, TimeInput, generateUID } from '@proton/components';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { SCHEDULED_MAX_DATE_DAYS } from '../../../constants';
@@ -166,40 +166,32 @@ const ComposerScheduleSendModal = ({ message, onClose, onSubmit }: Props) => {
                 <Href className="underline inline-block" url={getKnowledgeBaseUrl('/schedule-email-send')}>{c('Link')
                     .t`Learn more`}</Href>
             </div>
-            <div className="flex flex-gap-0-5 flex-row flex">
-                <div className="flex-item-fluid flex flex-column flex-nowrap">
-                    <Label htmlFor={`composer-schedule-date-${uid}`} className="text-semibold">{c('Label')
-                        .t`Date`}</Label>
-                    <DateInput
-                        id={`composer-schedule-date-${uid}`}
-                        onChange={handleChangeDate}
-                        value={date}
-                        min={minDate}
-                        max={maxDate}
-                        toFormatter={formatDateInput}
-                        preventValueReset
-                        error={errorDate}
-                        errorZoneClassName="hidden"
-                        data-testid="composer:schedule-date-input"
-                    />
-                    {errorDate && <ErrorZone>{errorDate}</ErrorZone>}
-                </div>
-                <div className="flex-item-fluid flex flex-column flex-nowrap">
-                    <Label htmlFor={`composer-schedule-time-${uid}`} className="text-semibold">{c('Label')
-                        .t`Time`}</Label>
-                    <TimeInput
-                        id={`composer-schedule-time-${uid}`}
-                        onChange={handleChangeTime}
-                        value={time}
-                        min={getMinScheduleTime(date)}
-                        max={isToday(date) ? endOfToday() : undefined}
-                        error={errorTime}
-                        errorZoneClassName="hidden"
-                        isSubmitted
-                        data-testid="composer:schedule-time-input"
-                    />
-                    {errorTime && <ErrorZone>{errorTime}</ErrorZone>}
-                </div>
+            <div className="flex flex-gap-0-5 flex-row flex-nowrap">
+                <InputFieldTwo
+                    as={DateInput}
+                    id={`composer-schedule-date-${uid}`}
+                    label={c('Label').t`Date`}
+                    onChange={handleChangeDate}
+                    value={date}
+                    min={minDate}
+                    max={maxDate}
+                    toFormatter={formatDateInput}
+                    preventValueReset
+                    error={errorDate}
+                    errorZoneClassName="hidden"
+                    data-testid="composer:schedule-date-input"
+                />
+                <InputFieldTwo
+                    as={TimeInput}
+                    id={`composer-schedule-time-${uid}`}
+                    label={c('Label').t`Time`}
+                    onChange={handleChangeTime}
+                    value={time}
+                    min={getMinScheduleTime(date)}
+                    max={isToday(date) ? endOfToday() : undefined}
+                    error={errorTime}
+                    data-testid="composer:schedule-time-input"
+                />
             </div>
         </ComposerInnerModal>
     );

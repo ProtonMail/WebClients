@@ -44,7 +44,7 @@ import ExtraEventHeader from './ExtraEventHeader';
 import ExtraEventSummary from './ExtraEventSummary';
 import ExtraEventTimeStatus from './ExtraEventTimeStatus';
 import ExtraEventWarning from './ExtraEventWarning';
-import useCalendarWidgetSideAppEvents from './useCalendarWidgetSideAppEvents';
+import useCalendarWidgetDrawerEvents from './useCalendarWidgetDrawerEvents';
 
 import './CalendarWidget.scss';
 
@@ -131,7 +131,7 @@ const ExtraEvent = ({
         refresh();
     };
 
-    useCalendarWidgetSideAppEvents({
+    useCalendarWidgetDrawerEvents({
         messageID: message.data.ID,
         calendarEvent: invitationApi?.calendarEvent,
         refresh,

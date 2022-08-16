@@ -9,7 +9,7 @@ import { Recipient } from '@proton/shared/lib/interfaces';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 
 import { SearchInput } from '../../../components';
-import { useContactEmails, useContactGroups, useNotifications, useUser, useUserSettings } from '../../../hooks';
+import { useContactEmails, useContactGroups, useNotifications, useUser } from '../../../hooks';
 import { useItemsSelection } from '../../items';
 import { ContactGroupDeleteProps } from '../group/ContactGroupDeleteModal';
 import { ContactGroupEditProps } from '../group/ContactGroupEditModal';
@@ -19,7 +19,7 @@ import ContactsWidgetPlaceholder, { EmptyType } from './ContactsWidgetPlaceholde
 import { CustomAction } from './types';
 
 interface Props {
-    onClose: () => void;
+    onClose?: () => void;
     onCompose?: (recipients: Recipient[], attachments: File[]) => void;
     onImport: () => void;
     customActions: CustomAction[];
@@ -27,6 +27,7 @@ interface Props {
     onDelete: (props: ContactGroupDeleteProps) => void;
     onEdit: (props: ContactGroupEditProps) => void;
     onUpgrade: () => void;
+    isDrawer?: boolean;
 }
 
 const ContactsWidgetGroupsContainer = ({
@@ -38,8 +39,8 @@ const ContactsWidgetGroupsContainer = ({
     onDelete,
     onEdit,
     onUpgrade,
+    isDrawer = false,
 }: Props) => {
-    const [userSettings, loadingUserSettings] = useUserSettings();
     const { createNotification } = useNotifications();
     const [user] = useUser();
 
@@ -125,12 +126,12 @@ const ContactsWidgetGroupsContainer = ({
         }
 
         onCompose?.(recipients, []);
-        onClose();
+        onClose?.();
     };
 
     const handleDetails = (groupID: string) => {
         onDetails(groupID);
-        onClose();
+        onClose?.();
     };
 
     const handleDelete = () => {
@@ -143,28 +144,28 @@ const ContactsWidgetGroupsContainer = ({
                 handleCheckAll(false);
             },
         });
-        onClose();
+        onClose?.();
     };
 
     const handleCreate = () => {
         if (!user.hasPaidMail) {
             onUpgrade();
-            onClose();
+            onClose?.();
             return;
         }
 
         onEdit({});
-        onClose();
+        onClose?.();
     };
 
     const handleImport = () => {
         onImport();
-        onClose();
+        onClose?.();
     };
 
     const groupCounts = filteredGroups.length;
 
-    const loading = loadingGroups || loadingContactEmails || loadingUserSettings;
+    const loading = loadingGroups || loadingContactEmails;
     const showPlaceholder = !loading && !groupCounts;
     const showList = !showPlaceholder;
 
@@ -178,13 +179,13 @@ const ContactsWidgetGroupsContainer = ({
                     value={search}
                     onChange={setSearch}
                     id="id_contact-widget-group-search"
-                    placeholder={c('Placeholder').t`Search for group name`}
+                    placeholder={c('Placeholder').t`Group name`}
                 />
                 <span className="sr-only" aria-atomic aria-live="assertive">
                     {c('Info').ngettext(msgid`${groupCounts} group found`, `${groupCounts} groups found`, groupCounts)}
                 </span>
             </div>
-            <div className="contacts-widget-toolbar pt1 pb1 border-bottom flex-item-noshrink">
+            <div className="contacts-widget-toolbar py1 border-bottom border-weak flex-item-noshrink">
                 <ContactsWidgetGroupsToolbar
                     allChecked={allChecked}
                     selected={selectedIDs}
@@ -197,6 +198,7 @@ const ContactsWidgetGroupsContainer = ({
                     customActions={customActions}
                     onCreate={handleCreate}
                     onDelete={handleDelete}
+                    isDrawer={isDrawer}
                 />
             </div>
             <div className="flex-item-fluid w100">
@@ -217,11 +219,11 @@ const ContactsWidgetGroupsContainer = ({
                     <ContactsGroupsList
                         groups={filteredGroups}
                         groupsEmailsMap={groupsEmailsMap}
-                        userSettings={userSettings}
                         onCheckOne={handleCheckOne}
                         isDesktop={false}
                         checkedIDs={checkedIDs}
                         onClick={handleDetails}
+                        isDrawer={isDrawer}
                     />
                 ) : null}
             </div>

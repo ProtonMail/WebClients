@@ -14,6 +14,7 @@ export * from './compatibilityCheck';
 export * from './contacts';
 export * from './config';
 export * from './domains';
+export * from './drawer';
 export * from './earlyAccess';
 export * from './easySwitch';
 export * from './error';

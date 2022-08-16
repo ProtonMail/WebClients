@@ -53,7 +53,7 @@ import EmailReminderWidgetSkeleton from './EmailReminderWidgetSkeleton';
 import EventReminderBanner from './EventReminderBanner';
 import ExtraEventParticipants from './ExtraEventParticipants';
 import OpenInCalendarButton from './OpenInCalendarButton';
-import useCalendarWidgetSideAppEvents from './useCalendarWidgetSideAppEvents';
+import useCalendarWidgetDrawerEvents from './useCalendarWidgetDrawerEvents';
 
 import './CalendarWidget.scss';
 
@@ -107,7 +107,7 @@ const EmailReminderWidget = ({ message, errors }: EmailReminderWidgetProps) => {
 
     const { modal: linkModal } = useLinkHandler(eventReminderRef, mailSettings);
 
-    useCalendarWidgetSideAppEvents({
+    useCalendarWidgetDrawerEvents({
         messageID: message.ID,
         calendarEvent,
         refresh,
@@ -399,7 +399,7 @@ const EmailReminderWidget = ({ message, errors }: EmailReminderWidgetProps) => {
                             icon={<CalendarSelectIcon color={Color} />}
                             labelClassName={labelClassName}
                         >
-                            {Name}
+                            <span className="text-break">{Name}</span>
                         </IconRow>
                         {!!sanitizedAndUrlifiedLocation && (
                             <IconRow title={c('Label').t`Location`} icon="map-pin" labelClassName={labelClassName}>

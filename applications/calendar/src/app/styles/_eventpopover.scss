@@ -25,6 +25,10 @@
 		box-shadow: var(--shadow-lifted);
 	}
 
+	@include respond-to($breakpoint-small) {
+		padding-inline: rem(16);
+	}
+
 	&,
 	&:focus-visible,
 	&:focus:focus-visible {

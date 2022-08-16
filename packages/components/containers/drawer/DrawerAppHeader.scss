@@ -1,6 +1,6 @@
-@import '../../../../../node_modules/@proton/styles/scss/config/index';
+@import '~@proton/styles/scss/config';
 
-.private-side-app-header {
+.drawer-app-header {
 	&-dropdownItem {
 		inset-block-start: 100%;
 		background-color: var(--background-norm);
@@ -11,7 +11,7 @@
 }
 
 // Need to shift slightly the button to the left and to lower the padding
-.side-app-header-button {
+.drawer-header-button {
 	padding-inline-start: 0.25em;
 	padding-inline-end: 0.25em;
 	margin-inline-start: -0.25em;

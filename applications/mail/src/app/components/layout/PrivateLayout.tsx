@@ -1,9 +1,24 @@
-import { ReactNode, Ref, forwardRef, useCallback, useEffect, useState } from 'react';
+import { ReactNode, Ref, forwardRef, useCallback, useEffect, useRef, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
-import { PrivateAppContainer, TopBanners, useSideApp } from '@proton/components';
-import SideAppIframe from '@proton/components/components/sideApp/SideAppIframe';
+import {
+    CalendarDrawerAppButton,
+    ContactDrawerAppButton,
+    DrawerApp,
+    DrawerSidebar,
+    FeatureCode,
+    PrivateAppContainer,
+    TopBanners,
+    useDrawer,
+    useFeature,
+} from '@proton/components';
+import DrawerVisibilityButton from '@proton/components/components/drawer/DrawerVisibilityButton';
+import { Recipient } from '@proton/shared/lib/interfaces';
+import { DrawerFeatureFlag } from '@proton/shared/lib/interfaces/Drawer';
+import isTruthy from '@proton/utils/isTruthy';
 
+import { MESSAGE_ACTIONS } from '../../constants';
+import { useOnCompose, useOnMailTo } from '../../containers/ComposeProvider';
 import { Breakpoints } from '../../models/utils';
 import MailHeader from '../header/MailHeader';
 import MailSidebar from '../sidebar/MailSidebar';
@@ -14,18 +29,32 @@ interface Props {
     labelID: string;
     elementID: string | undefined;
     isBlurred?: boolean;
-    rightSidebarContent?: ReactNode;
 }
 
-const PrivateLayout = (
-    { children, breakpoints, labelID, elementID, isBlurred, rightSidebarContent }: Props,
-    ref: Ref<HTMLDivElement>
-) => {
-    const { sideAppUrl, showSideApp } = useSideApp();
+const PrivateLayout = ({ children, breakpoints, labelID, elementID, isBlurred }: Props, ref: Ref<HTMLDivElement>) => {
     const location = useLocation();
     const [expanded, setExpand] = useState(false);
+    const onCompose = useOnCompose();
+    const onMailTo = useOnMailTo();
+    const { showDrawerSidebar } = useDrawer();
+
+    const { feature: drawerFeature } = useFeature<DrawerFeatureFlag>(FeatureCode.Drawer);
+
+    const drawerSpotlightSeenRef = useRef(false);
+    const markSpotlightAsSeen = () => {
+        if (drawerSpotlightSeenRef) {
+            drawerSpotlightSeenRef.current = true;
+        }
+    };
 
     const handleToggleExpand = useCallback(() => setExpand((expanded) => !expanded), []);
+
+    const handleContactsCompose = (emails: Recipient[], attachments: File[]) => {
+        onCompose({
+            action: MESSAGE_ACTIONS.NEW,
+            referenceMessage: { data: { ToList: emails }, draftFlags: { initialAttachments: attachments } },
+        });
+    };
 
     useEffect(() => {
         setExpand(false);
@@ -43,6 +72,11 @@ const PrivateLayout = (
         />
     );
 
+    const drawerSidebarButtons = [
+        drawerFeature?.Value.ContactsInMail && <ContactDrawerAppButton onClick={markSpotlightAsSeen} />,
+        drawerFeature?.Value.CalendarInMail && <CalendarDrawerAppButton onClick={markSpotlightAsSeen} />,
+    ].filter(isTruthy);
+
     const sidebar = (
         <MailSidebar
             labelID={labelID}
@@ -52,12 +86,7 @@ const PrivateLayout = (
         />
     );
 
-    const canShowSideAppSidebar = showSideApp ? !sideAppUrl : true;
-    const sideAppSidebar = rightSidebarContent && canShowSideAppSidebar && (
-        <div className="side-app-side-bar flex-column mt0-5 ml1 mr1 flex">{rightSidebarContent}</div>
-    );
-
-    const sideAppIframe = <SideAppIframe />;
+    const canShowDrawer = drawerSidebarButtons.length > 0;
 
     return (
         <PrivateAppContainer
@@ -66,9 +95,12 @@ const PrivateLayout = (
             sidebar={sidebar}
             isBlurred={isBlurred}
             containerRef={ref}
-            sideAppSidebar={sideAppSidebar}
-            sideAppIframe={sideAppIframe}
-            mainBordered={!!rightSidebarContent && canShowSideAppSidebar}
+            drawerSidebar={<DrawerSidebar buttons={drawerSidebarButtons} spotlightSeenRef={drawerSpotlightSeenRef} />}
+            drawerVisibilityButton={
+                canShowDrawer ? <DrawerVisibilityButton spotlightSeenRef={drawerSpotlightSeenRef} /> : undefined
+            }
+            drawerApp={<DrawerApp onCompose={handleContactsCompose} onMailTo={onMailTo} />}
+            mainBordered={canShowDrawer && showDrawerSidebar}
         >
             {children}
         </PrivateAppContainer>

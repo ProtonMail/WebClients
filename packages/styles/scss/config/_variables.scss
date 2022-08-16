@@ -23,7 +23,7 @@ $font-family-monospace: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, '
 
 // main breakpoints
 $breakpoint-large: 1500 !default;
-$breakpoint-medium-sidepanel: 1400; // Temporary breakpoint used to display the side app. When useActiveBreakpoints will be refactored, this breakpoint will disappear
+$breakpoint-medium-drawer: 1280; // Temporary breakpoint used to display the drawer app. When useActiveBreakpoints will be refactored, this breakpoint will disappear
 $breakpoint-medium-landscape: 1100 !default;
 $breakpoint-medium: 910 !default;
 $breakpoint-small: 680 !default;
@@ -116,11 +116,12 @@ $conversation-icon-size: 32 !default;
 // Z-indexes for stacking management
 $layer-upper: 10;
 $layer-floating-action-buttons: 100;
-$layer-floating-frames: 200;
-$layer-previewer: 300;
-$layer-transfer-manager: 400;
-$layer-mobile-navigation: 500;
-$layer-dropzone: 600;
-$layer-modals: 700;
-$layer-notifications: 800;
-$layer-tooltips: 900;
+$layer-drawer: 200;
+$layer-floating-frames: 300;
+$layer-previewer: 400;
+$layer-transfer-manager: 500;
+$layer-mobile-navigation: 600;
+$layer-dropzone: 700;
+$layer-modals: 800;
+$layer-notifications: 900;
+$layer-tooltips: 1000;
