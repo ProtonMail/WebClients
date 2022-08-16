@@ -1,4 +1,4 @@
-import { ReactNode, Ref, forwardRef, memo } from 'react';
+import { Ref, forwardRef, memo } from 'react';
 import { Redirect, useRouteMatch } from 'react-router-dom';
 
 import {
@@ -35,11 +35,10 @@ interface Props {
     params: MailUrlParams;
     breakpoints: Breakpoints;
     isComposerOpened: boolean;
-    rightSidebarContent?: ReactNode;
 }
 
 const PageContainer = (
-    { params: { elementID, labelID, messageID }, breakpoints, isComposerOpened, rightSidebarContent }: Props,
+    { params: { elementID, labelID, messageID }, breakpoints, isComposerOpened }: Props,
     ref: Ref<HTMLDivElement>
 ) => {
     const [userSettings] = useUserSettings();
@@ -76,7 +75,6 @@ const PageContainer = (
             labelID={labelID}
             elementID={elementID}
             breakpoints={breakpoints}
-            rightSidebarContent={rightSidebarContent}
         >
             <MailStartupModals onboardingOpen={onboardingOpen} onOnboardingDone={() => setWelcomeFlagsDone()} />
             <LocationErrorBoundary>
@@ -101,7 +99,6 @@ const MemoPageContainer = memo(forwardRef(PageContainer));
 interface PageParamsParserProps {
     breakpoints: Breakpoints;
     isComposerOpened: boolean;
-    rightSidebarContent?: ReactNode;
 }
 
 const PageParamsParser = (props: PageParamsParserProps, ref: Ref<HTMLDivElement>) => {

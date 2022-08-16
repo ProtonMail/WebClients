@@ -1,8 +1,23 @@
 import * as React from 'react';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
-import { MainLogo, PrivateAppContainer, TopBanners, useToggle } from '@proton/components';
+import {
+    CalendarDrawerAppButton,
+    ContactDrawerAppButton,
+    DrawerApp,
+    DrawerSidebar,
+    FeatureCode,
+    MainLogo,
+    PrivateAppContainer,
+    TopBanners,
+    useDrawer,
+    useFeature,
+    useToggle,
+} from '@proton/components';
+import DrawerVisibilityButton from '@proton/components/components/drawer/DrawerVisibilityButton';
+import { DrawerFeatureFlag } from '@proton/shared/lib/interfaces/Drawer';
+import isTruthy from '@proton/utils/isTruthy';
 
 import AppErrorBoundary from '../AppErrorBoundary';
 import FileRecoveryBanner from '../ResolveLockedVolumes/LockedVolumesBanner';
@@ -21,6 +36,16 @@ const DriveWindow = ({ children }: Props) => {
     const { state: expanded, toggle: toggleExpanded } = useToggle();
 
     const [recoveryBannerVisible, setReoveryBannerVisible] = useState(true);
+
+    const { feature: drawerFeature } = useFeature<DrawerFeatureFlag>(FeatureCode.Drawer);
+    const { showDrawerSidebar } = useDrawer();
+
+    const drawerSpotlightSeenRef = useRef(false);
+    const markSpotlightAsSeen = () => {
+        if (drawerSpotlightSeenRef) {
+            drawerSpotlightSeenRef.current = true;
+        }
+    };
 
     const fileRecoveryBanner = recoveryBannerVisible ? (
         <FileRecoveryBanner
@@ -49,6 +74,11 @@ const DriveWindow = ({ children }: Props) => {
         />
     );
 
+    const drawerSidebarButtons = [
+        drawerFeature?.Value.ContactsInDrive && <ContactDrawerAppButton onClick={markSpotlightAsSeen} />,
+        drawerFeature?.Value.CalendarInDrive && <CalendarDrawerAppButton onClick={markSpotlightAsSeen} />,
+    ].filter(isTruthy);
+
     const sidebar = (
         <DriveSidebar
             logo={logo}
@@ -58,8 +88,20 @@ const DriveWindow = ({ children }: Props) => {
         />
     );
 
+    const canShowDrawer = drawerSidebarButtons.length > 0;
+
     return (
-        <PrivateAppContainer top={top} header={header} sidebar={sidebar}>
+        <PrivateAppContainer
+            top={top}
+            header={header}
+            sidebar={sidebar}
+            drawerSidebar={<DrawerSidebar buttons={drawerSidebarButtons} spotlightSeenRef={drawerSpotlightSeenRef} />}
+            drawerVisibilityButton={
+                canShowDrawer ? <DrawerVisibilityButton spotlightSeenRef={drawerSpotlightSeenRef} /> : undefined
+            }
+            drawerApp={<DrawerApp />}
+            mainBordered={canShowDrawer && showDrawerSidebar}
+        >
             <AppErrorBoundary>{children}</AppErrorBoundary>
         </PrivateAppContainer>
     );

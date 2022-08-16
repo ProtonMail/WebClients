@@ -40,7 +40,7 @@ import {
     CalendarViewEventTemporaryEvent,
     DisplayNameEmail,
 } from '../../containers/calendar/interface';
-import { getIsSideApp } from '../../helpers/views';
+import { getIsCalendarAppInDrawer } from '../../helpers/views';
 import { INVITE_ACTION_TYPES, InviteActions } from '../../interfaces/Invite';
 import PopoverContainer from './PopoverContainer';
 import PopoverEventContent from './PopoverEventContent';
@@ -239,7 +239,7 @@ const EventPopover = ({
         </Tooltip>
     );
 
-    const viewEventButton = getIsSideApp(view) && (
+    const viewEventButton = getIsCalendarAppInDrawer(view) && (
         <Tooltip title={c('View event button tooltip').t`Open in a new tab`}>
             <AppLink
                 to={linkTo || '/'}

@@ -4,6 +4,7 @@ import { useStore } from 'react-redux';
 import { c } from 'ttag';
 
 import { useBeforeUnload, useHandler, useWindowSize } from '@proton/components';
+import { useDrawerWidth } from '@proton/components/hooks/useDrawerWidth';
 
 import ComposerFrame from '../components/composer/ComposerFrame';
 import { MAX_ACTIVE_COMPOSER_DESKTOP, MAX_ACTIVE_COMPOSER_MOBILE } from '../helpers/composerPositioning';
@@ -28,6 +29,7 @@ const ComposerContainer = ({ breakpoints, children }: Props) => {
     const store = useStore();
     const getMessage = useGetMessage();
     useClickMailContent(() => setFocusedMessageID(undefined));
+    const drawerOffset = useDrawerWidth();
 
     const returnFocusToElement = useRef<HTMLElement | null>(null);
 
@@ -103,6 +105,7 @@ const ComposerContainer = ({ breakpoints, children }: Props) => {
                         breakpoints={breakpoints}
                         onFocus={handleFocus(messageID)}
                         onClose={handleClose(messageID)}
+                        drawerOffset={drawerOffset}
                     />
                 ))}
             </div>

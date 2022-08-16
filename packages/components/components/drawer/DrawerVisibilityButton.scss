@@ -1,0 +1,45 @@
+@import '~@proton/styles/scss/config';
+
+.drawer-visibility-control {
+	position: absolute;
+	z-index: $layer-upper;
+	inset-block-end: 1em;
+	inset-inline-end: 0;
+	display: flex;
+	inline-size: rem(46); // same as the drawer sidebar size
+	block-size: rem(46);
+	background-color: transparent;
+	transition: translate 0.15s easing(ease-out-quint);
+
+	&--show {
+		translate: 40%;
+
+		&:hover,
+		&:focus-within {
+			translate: rem(9);
+		}
+	}
+
+	&--show &-button {
+		position: relative;
+		border-start-end-radius: 0;
+		border-end-end-radius: 0;
+
+		// To enlarge the click area
+		&::before {
+			position: absolute;
+			content: '';
+			inset-inline-start: -1em;
+			inset-inline-end: 0;
+			inset-block: -0.5em;
+		}
+	}
+
+	&--hide {
+		// not needed for now
+	}
+
+	@include respond-to($breakpoint-small) {
+		display: none;
+	}
+}

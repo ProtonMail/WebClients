@@ -13,9 +13,8 @@ import { CONTACT_WIDGET_TABS, CustomAction } from './types';
 
 jest.mock('../../../hooks/useUser', () => ({
     __esModule: true,
-    default: () => [{}, false],
-    useUser: () => [{}, false],
-    useGetUser: () => Promise.resolve([{}, false]),
+    default: jest.fn(() => [{}, false]),
+    useGetUser: jest.fn(() => [{ hasPaidMail: true, hasNonDelinquentScope: true }, false]),
 }));
 jest.mock('../../../hooks/useUserKeys', () => ({
     useUserKeys: () => [{}, false],
@@ -26,6 +25,7 @@ jest.mock('../../../hooks/useContacts', () => () => []);
 jest.mock('../../../hooks/useUserSettings', () => () => [{}, jest.fn()]);
 jest.mock('../../../hooks/useCachedModelResult', () => jest.fn());
 jest.mock('../../../hooks/useEventManager', () => () => ({}));
+jest.mock('../../../hooks/useDrawer', () => () => ({}));
 
 function renderComponent({ customActions }: { customActions: CustomAction[] }) {
     return (

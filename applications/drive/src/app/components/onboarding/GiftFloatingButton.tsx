@@ -13,9 +13,11 @@ import {
     useActiveBreakpoint,
     useLocalState,
 } from '@proton/components';
+import { useDrawerWidth } from '@proton/components/hooks/useDrawerWidth';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 import { APPS, BRAND_NAME, DRIVE_APP_NAME } from '@proton/shared/lib/constants';
+import { rootFontSize } from '@proton/shared/lib/helpers/dom';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { ChecklistKey } from '@proton/shared/lib/interfaces';
 import spotlightIcon from '@proton/styles/assets/img/illustrations/spotlight-stars.svg';
@@ -148,6 +150,10 @@ function FloatingSpotlight({
     hasClose?: boolean;
     onClick: () => void;
 }) {
+    const drawerWidth = useDrawerWidth();
+    // 1.6 is the default right offset on the floating button. Adding to that space that the drawer is taking
+    const rightOffset = drawerWidth / rootFontSize + 1.6;
+
     return (
         <Spotlight
             content={content}
@@ -162,7 +168,7 @@ function FloatingSpotlight({
                 onClick={onClick}
                 color={color}
                 className="w-custom h-custom"
-                style={{ '--width-custom': '3em', '--height-custom': '3em' }}
+                style={{ '--width-custom': '3em', '--height-custom': '3em', '--right': `${rightOffset}rem` }}
             >
                 <Icon size={24} name={icon} className="mauto" />
             </FloatingButton>

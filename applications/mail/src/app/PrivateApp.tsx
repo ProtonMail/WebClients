@@ -1,7 +1,8 @@
-import { FeatureCode, StandardPrivateApp, useApi, useProtonMailMigrationRedirect } from '@proton/components';
+import { FeatureCode, StandardPrivateApp, useApi, useDrawer, useProtonMailMigrationRedirect } from '@proton/components';
 import { getEvents } from '@proton/shared/lib/api/events';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { loadAllowedTimeZones } from '@proton/shared/lib/date/timezone';
+import { DRAWER_VISIBILITY } from '@proton/shared/lib/interfaces';
 import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 import { Model } from '@proton/shared/lib/interfaces/Model';
 import {
@@ -36,6 +37,8 @@ const PrivateApp = ({ onLogout, locales }: Props) => {
 
     useProtonMailMigrationRedirect();
 
+    const { setShowDrawerSidebar } = useDrawer();
+
     return (
         <StandardPrivateApp
             noModals
@@ -45,8 +48,9 @@ const PrivateApp = ({ onLogout, locales }: Props) => {
                 // Intentionally ignoring to return promise of the timezone call to avoid blocking app start
                 loadAllowedTimeZones(getSilentApi(api)).catch(noop);
             }}
+            onUserSettings={({ HideSidePanel }) => setShowDrawerSidebar(HideSidePanel === DRAWER_VISIBILITY.SHOW)}
             locales={locales}
-            preloadFeatures={[FeatureCode.ReorderSystemFolders]}
+            preloadFeatures={[FeatureCode.ReorderSystemFolders, FeatureCode.Drawer]}
             preloadModels={[
                 UserModel,
                 UserSettingsModel,

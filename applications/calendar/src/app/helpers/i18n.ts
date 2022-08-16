@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { VIEWS } from '@proton/shared/lib/calendar/constants';
 
-const { DAY, WEEK, MONTH, YEAR, AGENDA, CUSTOM, MAIL } = VIEWS;
+const { DAY, WEEK, MONTH, YEAR, AGENDA, CUSTOM, MAIL, DRIVE } = VIEWS;
 
 export const getNavigationArrowsText = (view: VIEWS) => {
     const previous = {
@@ -13,6 +13,7 @@ export const getNavigationArrowsText = (view: VIEWS) => {
         [CUSTOM]: c('Action').t`Previous month`,
         [YEAR]: c('Action').t`Previous year`,
         [MAIL]: c('Action').t`Previous week`,
+        [DRIVE]: c('Action').t`Previous week`,
     };
 
     const next = {
@@ -23,6 +24,7 @@ export const getNavigationArrowsText = (view: VIEWS) => {
         [CUSTOM]: c('Action').t`Next month`,
         [YEAR]: c('Action').t`Next year`,
         [MAIL]: c('Action').t`Next week`,
+        [DRIVE]: c('Action').t`Next week`,
     };
 
     return {

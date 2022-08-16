@@ -32,6 +32,7 @@ export interface SpotlightProps {
     content: ReactNode;
     type?: SpotlightType;
     onDisplayed?: () => void;
+    onClose?: () => void;
     originalPlacement?: PopperPlacement;
     hasClose?: boolean;
     /**
@@ -48,6 +49,7 @@ const Spotlight = ({
     content,
     type,
     onDisplayed,
+    onClose,
     originalPlacement = 'top',
     hasClose = true,
     anchorRef: inputAnchorRef,
@@ -96,6 +98,11 @@ const Spotlight = ({
         }
     };
 
+    const handleClose = () => {
+        onClose?.();
+        close();
+    };
+
     const closeText = c('Action').t`Close`;
 
     const illustrationURL = type
@@ -138,7 +145,7 @@ const Spotlight = ({
                             size="small"
                             className="spotlight-close"
                             title={closeText}
-                            onClick={close}
+                            onClick={handleClose}
                         >
                             <Icon name="cross" alt={closeText} />
                         </Button>

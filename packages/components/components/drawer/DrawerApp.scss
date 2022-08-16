@@ -1,0 +1,55 @@
+@import '~@proton/styles/scss/config';
+
+.drawer-app {
+	inline-size: rem(300);
+
+	&-inner {
+		animation: 0.5s easing(ease-out-quart) anime-drawer-app-inner forwards;
+
+		@keyframes anime-drawer-app-inner {
+			from {
+				opacity: 0;
+				transform: translate3d(5em, 0, 0);
+			}
+
+			to {
+				opacity: 1;
+				transform: translate3d(0, 0, 0);
+			}
+		}
+	}
+
+	&-view {
+		animation: 0.5s easing(ease-out-quart) anime-drawer-app-view forwards;
+
+		@keyframes anime-drawer-app-view {
+			from {
+				opacity: 0;
+			}
+
+			to {
+				opacity: 1;
+			}
+		}
+	}
+
+	// Between 681 and 1280 px, the widget has to be displayed on top of the rest of the UI
+	@include respond-to($breakpoint-medium-drawer) {
+		position: absolute;
+		inset-inline-end: 0;
+		block-size: 100%;
+		z-index: $layer-drawer; // Need to be on top of the mail content, but not modals
+	}
+
+	@include respond-to($breakpoint-small) {
+		inline-size: 100vw;
+	}
+
+	// We want to be able to use contacts even under 680px in a larger view
+	// So we hide the drawer-app container only if the app in view is not contact
+	&--hide-on-mobile {
+		@include respond-to($breakpoint-small) {
+			display: none;
+		}
+	}
+}
