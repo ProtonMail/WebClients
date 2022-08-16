@@ -145,6 +145,9 @@
       "Clear all formatting": [
         "Borrar formato"
       ],
+      "Clear two-factor authentication code": [
+        "Borrar código de autenticación de dos factores"
+      ],
       "Close": [
         "Cerrar"
       ],
@@ -343,9 +346,6 @@
       "Export": [
         "Exportar"
       ],
-      "Export ICS": [
-        "Exportar ICS"
-      ],
       "Export key": [
         "Exportar clave"
       ],
@@ -438,6 +438,9 @@
       ],
       "Loading verification": [
         "Cargando verificación"
+      ],
+      "Make default": [
+        "Establecer por defecto"
       ],
       "Mark as default": [
         "Marcar por defecto"
@@ -590,7 +593,7 @@
         "Restablecer contraseña"
       ],
       "Reset to default": [
-        "Restablecer valores predeterminados"
+        "Restablecer valores por defecto"
       ],
       "Reset zoom": [
         "Restablecer zoom"
@@ -767,7 +770,7 @@
         "Actualizar frase de recuperación"
       ],
       "Upgrade": [
-        "Mejorar"
+        "Actualizar"
       ],
       "Upload picture": [
         "Cargar imagen"
@@ -1028,59 +1031,6 @@
       ],
       "Two-year": [
         "Dos años"
-      ]
-    },
-    "blackfriday Info": {
-      "Includes": [
-        "Incluye"
-      ],
-      "Standard price: ${ regularPrice }": [
-        "Precio habitual: ${ regularPrice }"
-      ],
-      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
-        "Esta suscripción se renovará automáticamente al cabo de 2 años al mismo precio hasta su cancelación."
-      ]
-    },
-    "blackfriday Title": {
-      "Most popular": [
-        "Más popular"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Action": {
-      "Get the deal": [
-        "Obtener la oferta"
-      ],
-      "Get the deal now": [
-        "Obtener la oferta ahora"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Info": {
-      "Save ${ percentage }%": [
-        "${ percentage } %"
-      ]
-    },
-    "blackfriday: VPNspecialoffer info": {
-      "per month": [
-        "al mes"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Promo title, need to be short": {
-      "Special offer": [
-        "Oferta especial"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Title": {
-      "1 month": [
-        "Un mes"
-      ],
-      "12 months": [
-        "12 meses"
-      ],
-      "24 months": [
-        "24 meses"
-      ],
-      "Get the special year-end offer on our Premium VPN PLUS plan": [
-        "Obtenga la oferta especial de fin de año en nuestro plan Premium VPN PLUS"
       ]
     },
     "breadcrumb": {
@@ -1525,7 +1475,7 @@
     },
     "Confirmation message to delete payment method": {
       "Are you sure you want to delete this payment method?": [
-        "¿Está seguro que desea eliminar esta forma de pago?"
+        "¿En verdad desea eliminar esta forma de pago?"
       ]
     },
     "Confirmation title": {
@@ -2748,10 +2698,10 @@
         "El nombre de la carpeta no puede estar vacío."
       ],
       "Incorrect login credentials. Please try again.": [
-        "Credenciales de acceso incorrectas. Por favor, intente de nuevo."
+        "Credenciales de acceso incorrectas. Intente de nuevo."
       ],
       "Incorrect mailbox password. Please try again.": [
-        "Contraseña del buzón incorrecta. Por favor, intente de nuevo."
+        "Contraseña del buzón incorrecta. Intente de nuevo."
       ],
       "Incorrect password": [
         "Contraseña incorrecta"
@@ -3671,7 +3621,7 @@
     },
     "Import calendar; import invitation": {
       "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your Proton email address.": [
-        "Las invitaciones importadas aparecen en ${ CALENDAR_APP_NAME } como eventos simples sin detalles del organizador ni del participante. Para recibir actualizaciones del evento y ver a los participantes, pida a los organizadores que lo inviten usando su dirección de correo electrónico de Proton."
+        "Las invitaciones importadas aparecen en ${ CALENDAR_APP_NAME } como eventos simples sin detalles de quien organiza ni de quien participa. Para recibir actualizaciones del evento y ver a sus participantes, pida a quien organiza que le inviten usando su dirección de correo electrónico de Proton."
       ],
       "This file contains an event invitation:": [
         "Este archivo contiene una invitación de evento:",
@@ -3984,7 +3934,7 @@
     },
     "Import key": {
       "Are you sure you want to import a private key? Importing an insecurely generated or leaked private key can harm the security of your emails.\n\nPlease also note that the public key corresponding to this private key will be publicly available from our key server. If the key contains personal details (such as your full name) which you do not want to publish, please edit the key before importing it.": [
-        "¿Está seguro de que desea importar una clave privada? Importar una clave privada generada de manera insegura o filtrada puede dañar la seguridad de sus correos.\n\nTenga en cuenta también que la clave pública correspondiente a esta clave privada estará disponible públicamente en nuestro servidor de claves. Si la clave contiene datos personales (como su nombre completo) que no desea publicar, edite la clave antes de importarla."
+        "¿En verdad desea importar una clave privada? Importar una clave privada generada de manera insegura o filtrada puede dañar la seguridad de sus correos.\n\nTenga en cuenta también que la clave pública correspondiente a esta clave privada estará disponible públicamente en nuestro servidor de claves. Si la clave contiene datos personales (como su nombre completo) que no desea publicar, edite la clave antes de importarla."
       ]
     },
     "Import provider": {
@@ -4325,25 +4275,25 @@
         "¿En verdad desea eliminar este calendario? Todos los eventos en él serán eliminados."
       ],
       "Are you sure you want to delete this domain?": [
-        "¿Seguro que desea eliminar este dominio?"
+        "¿En verdad desea eliminar este dominio?"
       ],
       "Are you sure you want to delete this filter?": [
-        "¿Está seguro que desea eliminar este filtro?"
+        "¿En verdad desea eliminar este filtro?"
       ],
       "Are you sure you want to delete this folder? All children folders will also be deleted.": [
-        "¿Está seguro de que desea eliminar esta carpeta? También se eliminarán todas las carpetas secundarias."
+        "¿En verdad desea eliminar esta carpeta? También se eliminarán todas las carpetas secundarias."
       ],
       "Are you sure you want to delete this label?": [
-        "¿Está seguro que desea eliminar esta etiqueta?"
+        "¿En verdad desea eliminar esta etiqueta?"
       ],
       "Are you sure you want to discard your changes?": [
         "¿Está seguro que desea descartar los cambios?"
       ],
       "Are you sure you want to permanently delete all your logs?": [
-        "¿Está seguro que desea eliminar permanentemente todos sus registros?"
+        "¿En verdad desea eliminar permanentemente todos sus registros?"
       ],
       "Are you sure you want to remove administrative privileges from this user?": [
-        "¿Seguro que desea eliminar los privilegios administrativos de este usuario?"
+        "¿En verdad desea eliminar los privilegios administrativos de este usuario?"
       ],
       "Auto-reply is active each month between the selected start and end time.": [
         "La respuesta automática estará activa cada mes entre la fecha inicial y la fecha final seleccionadas."
@@ -4875,7 +4825,7 @@
         "Inicie sesión en ${ MAIL_APP_NAME } para activar su dirección"
       ],
       "Logs include authentication attempts for all Proton services that use your Proton credentials.": [
-        "Los registros incluyen intentos de autenticación de todos los servicios que usan sus credenciales de ProtonMail."
+        "Los registros incluyen intentos de autenticación de todos los servicios que usan sus credenciales de Proton."
       ],
       "lose access to all current encrypted data": [
         "Perderá acceso a todos los datos cifrados actuales"
@@ -5872,10 +5822,10 @@
     },
     "Key generation": {
       "A key with the same encryption algorithm already exists. Generating another key will cause slower account loading. Are you sure you want to continue?": [
-        "Ya existe una clave con el mismo algoritmo de cifrado. Generar otra clave hará que la cuenta se cargue más lentamente. ¿Está seguro de que desea continuar?"
+        "Ya existe una clave con el mismo algoritmo de cifrado. Generar otra clave hará que la cuenta se cargue más lentamente. ¿En verdad desea continuar?"
       ],
       "A key with the same encryption algorithm is already active for this address. Generating another key will cause slower account loading and deletion of this key can cause issues. If you are generating a new key because your old key is compromised, please mark that key as compromised. Are you sure you want to continue?": [
-        "Una clave con el mismo algoritmo de cifrado ya está activa para esta dirección.\nGenerar otra clave causará una carga lenta de la cuenta y el borrado de la misma puede causar problemas. Si está generando una clave nueva porque su clave anterior fue comprometida, marque la clave como comprometida. ¿Está seguro de continuar?"
+        "Una clave con el mismo algoritmo de cifrado ya está activa para esta dirección.\nGenerar otra clave causará una carga lenta de la cuenta y el borrado de la misma puede causar problemas. Si está generando una clave nueva porque su clave anterior fue comprometida, marque la clave como comprometida. ¿En verdad desea continuar?"
       ],
       "Generate key": [
         "Generar clave"
@@ -6421,6 +6371,9 @@
       ],
       "Discount": [
         "Descuento"
+      ],
+      "Display": [
+        "Mostrar"
       ],
       "Display name": [
         "Nombre a mostrar"
@@ -7155,10 +7108,10 @@
         "¿Problemas para iniciar sesión?"
       ],
       "Upgrade": [
-        "Mejorar"
+        "Actualizar"
       ],
       "Upgrade account": [
-        "Mejorar cuenta"
+        "Actualizar cuenta"
       ],
       "View guide": [
         "Ver guía"
@@ -7241,7 +7194,7 @@
         "Todas las acciones de filtrado se aplicarán a todos los mensajes de su cuenta de Proton Mail. No se enviarán correos de respuesta automática."
       ],
       "Are you sure you want to disable two-factor authentication?": [
-        "¿Está seguro que desea deshabilitar la autenticación de dos factores?"
+        "¿En verdad desea deshabilitar la autenticación de dos factores?"
       ],
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "Conecte su dominio personalizado a ${ BRAND_NAME } para configurar direcciones de correo personalizadas (p. ej., usted@suempresa.com). Nuestro asistente le guiará a través del proceso."
@@ -9464,7 +9417,7 @@
         "Aplicar código de regalo"
       ],
       "Are you sure you want to close?": [
-        "¿Está seguro de que desea cerrar?"
+        "¿En verdad desea cerrar?"
       ],
       "Auto-reply": [
         "Autorrespuesta"
@@ -10467,13 +10420,13 @@
     },
     "Warning": {
       "Are you sure you want to delete the address?": [
-        "¿Está seguro que desea eliminar esta dirección?"
+        "¿En verdad desea eliminar esta dirección?"
       ],
       "Are you sure you want to delete the phone number?": [
-        "¿Está seguro que desea eliminar el número de teléfono?"
+        "¿En verdad desea eliminar el número de teléfono?"
       ],
       "Are you sure you want to discard your import?": [
-        "¿Está seguro que desea descartar su importación?"
+        "¿En verdad desea descartar su importación?"
       ],
       "By deleting this address, you will no longer be able to receive daily email notifications.": [
         "Si elimina esta dirección, ya no podrá recibir notificaciones diarias de correo electrónico."
@@ -10488,10 +10441,10 @@
         "Al eliminar este número de teléfono, ya no podrá recuperar su cuenta."
       ],
       "By disabling the logs, you will also clear your entire logs history. Are you sure you want to disable the logs?": [
-        "Al deshabilitar los registros, también borrará todo el historial. ¿Está seguro que desea deshabilitar los registros?"
+        "Al deshabilitar los registros, también borrará todo el historial. ¿En verdad desea deshabilitar los registros?"
       ],
       "By disabling this address, you will no longer be able to send or receive emails using this address and all the linked Proton products will also be disabled. Are you sure you want to disable this address?": [
-        "Al deshabilitar esta dirección, no podrá enviar o recibir correos usando esta dirección y todos los productos de Proton enlazados también se deshabilitarán. ¿Está seguro que desea deshabilitar la dirección?"
+        "Al deshabilitar esta dirección, no podrá enviar o recibir correos usando esta dirección y todos los productos de Proton enlazados también se deshabilitarán. ¿En verdad desea deshabilitar la dirección?"
       ],
       "If you cancel this import, you won't be able to resume it. Proton saved all progress in your account. Cancel anyway?": [
         "Si cancela esta importación, no podrá reanudarla. Proton guardó todo el progreso en su cuenta. ¿Cancelar de todos modos?"
@@ -10774,8 +10727,8 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "Cada ${ interval } año",
-        "Cada ${ interval } años"
+        "Yearly",
+        ""
       ],
       "Every ${ interval } year, ${ timesString }": [
         "Cada ${ interval } año, ${ timesString }",

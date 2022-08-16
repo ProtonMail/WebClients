@@ -89,6 +89,9 @@
       "Copy email to clipboard": [
         "Copiar mensagem para a área de transferência"
       ],
+      "Create a new contact group": [
+        "Criar novo grupo de contactos"
+      ],
       "Create event": [
         "Criar evento"
       ],
@@ -127,6 +130,9 @@
       "Edit email address": [
         "Editar o endereço electrónico"
       ],
+      "Edit label": [
+        "Editar etiqueta"
+      ],
       "Edit phone number": [
         "Editar o número de telefone"
       ],
@@ -156,6 +162,9 @@
       ],
       "Go to settings": [
         "Ir para as definições"
+      ],
+      "Got it": [
+        "Percebi"
       ],
       "Hide advanced PGP settings": [
         "Ocultar definições de PGP avançadas"
@@ -439,6 +448,20 @@
         "Aplicações Proton"
       ]
     },
+    "Attached ics file error": {
+      "Invalid event": [
+        "Evento inválido"
+      ],
+      "Invalid ICS file": [
+        "Ficheiro ICS inválido"
+      ],
+      "Invalid method": [
+        "Método inválido"
+      ],
+      "Unsupported event": [
+        "Evento não suportado"
+      ]
+    },
     "Beta access description": {
       "If you encounter issues, you can always disable Beta Access.": [
         "Se encontrar problemas, pode sempre desactivar o acesso Beta."
@@ -586,6 +609,11 @@
       ],
       "You tentatively accepted the invitation": [
         "Aceitou provisoriamente o convite"
+      ]
+    },
+    "Calendar sidebar dropdown item": {
+      "More options": [
+        "Mais opções"
       ]
     },
     "Calendar subscription not synced error": {
@@ -800,6 +828,16 @@
       ],
       "90 minutes": [
         "90 minutos"
+      ]
+    },
+    "Early Access Disabled": {
+      "Off": [
+        "Off"
+      ]
+    },
+    "Early Access Enabled": {
+      "On": [
+        "On"
       ]
     },
     "Email body for description (description part)": {
@@ -1031,6 +1069,12 @@
       "Start time must be before end time": [
         "A hora inicial tem de ser anterior à hora final"
       ],
+      "The folder name is invalid. Please choose a different name.": [
+        "O nome da pasta é inválido. Por favor, escolha um nome diferente."
+      ],
+      "The label name is invalid. Please choose a different name.": [
+        "O nome da etiqueta é inválido. Por favor, escolha um nome diferente."
+      ],
       "The sending key is not valid": [
         "A chave de envio não é válida"
       ],
@@ -1063,8 +1107,17 @@
       ]
     },
     "Error importing calendar": {
+      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        "Ocorreu um erro ao carregar o ficheiro ${ formattedFilename }. O tamanho máximo de ficheiro é ${ MAX_IMPORT_FILE_SIZE_STRING }."
+      ],
+      "An error occurred uploading your file. No file has been selected.": [
+        "Ocorreu um erro ao carregar o ficheiro. Nenhum ficheiro seleccionado."
+      ],
       "An unexpected error occurred. Import must be restarted.": [
         "Ocorreu um erro inesperado. A importação tem de ser reiniciada."
+      ],
+      "Your file ${ formattedFilename } is empty.": [
+        "O ficheiro ${ formattedFilename } está vazio."
       ]
     },
     "Error importing contact": {
@@ -1098,9 +1151,86 @@
         "O ficheiro ${ formattedFilename } está vazio."
       ]
     },
+    "Error importing event": {
+      "Component with wrong format": [
+        "Componente com formato errado"
+      ],
+      "Custom timezone": [
+        "Fuso horário personalizado"
+      ],
+      "Edited event not supported": [
+        "Evento editado não suportado"
+      ],
+      "Encryption failed": [
+        "Falha ao encriptar"
+      ],
+      "End time out of bounds": [
+        "Hora final fora dos limites"
+      ],
+      "Event validation failed": [
+        "Falha ao validar o evento"
+      ],
+      "Floating times not supported": [
+        "Não são suportadas horas flutuantes"
+      ],
+      "Free-busy time information": [
+        "Informação de tempo livre/ocupado"
+      ],
+      "Invalid event": [
+        "Evento inválido"
+      ],
+      "Journal entry": [
+        "Entrada de diário"
+      ],
+      "Malformed all-day event": [
+        "Evento de dia inteiro mal formado"
+      ],
+      "Malformed end time": [
+        "Hora final mal formada"
+      ],
+      "Malformed recurring event": [
+        "Evento recorrente mal formado"
+      ],
+      "Malformed start time": [
+        "Hora inicial mal formada"
+      ],
+      "Missing start time": [
+        "Hora inicial em falta"
+      ],
+      "Non-Gregorian": [
+        "Não-gregoriano"
+      ],
+      "Notification out of bounds": [
+        "Notificação fora dos limites"
+      ],
+      "Original recurring event could not be found": [
+        "O evento recorrente original não pôde ser encontrado"
+      ],
+      "Recurring rule not supported": [
+        "Regra recorrente não suportada"
+      ],
+      "Start time out of bounds": [
+        "Hora inicial fora dos limites"
+      ],
+      "Timezone": [
+        "Fuso horário"
+      ],
+      "To-do entry": [
+        "Entrada de tarefas"
+      ],
+      "Unknown": [
+        "Desconhecido"
+      ],
+      "Unsupported event": [
+        "Evento não suportado"
+      ]
+    },
     "Error message": {
       "Error: ${ errorMessage }": [
         "Erro: ${ errorMessage }"
+      ],
+      "Invalid URL": [
+        "URL inválido"
       ],
       "Oops, something went wrong": [
         "Ups. Algo correu mal"
@@ -1130,6 +1260,11 @@
         "A avaliação é necessária"
       ]
     },
+    "Event delete button tooltip": {
+      "Delete event": [
+        "Eliminar evento"
+      ]
+    },
     "Event form": {
       "${ numberOfParticipants } participant": [
         "${ numberOfParticipants } participante",
@@ -1139,6 +1274,35 @@
     "Event info. Organizer name": {
       "You": [
         "Você"
+      ]
+    },
+    "Event invitation error": {
+      "Attached ICS file could not be decrypted": [
+        "O ficheiro ICS anexado não pôde ser desencriptado"
+      ],
+      "Invalid invitation": [
+        "Convite inválido"
+      ],
+      "Invalid response": [
+        "Resposta inválida"
+      ],
+      "Unsupported invitation": [
+        "Convite não suportado"
+      ],
+      "Unsupported response": [
+        "Resposta não suportada"
+      ],
+      "We could not cancel the event in your calendar": [
+        "Impossível cancelar o evento na sua agenda"
+      ],
+      "We could not retrieve the event from your calendar": [
+        "Impossível obter o evento da sua agenda"
+      ],
+      "We could not update the event in your calendar": [
+        "Impossível actualizar o evento na sua agenda"
+      ],
+      "Your answer was sent, but the event could not be added to your calendar": [
+        "A sua resposta foi enviada, mas o evento não pôde ser adicionado à sua agenda"
       ]
     },
     "Event title": {
@@ -1155,6 +1319,11 @@
       ],
       "MB": [
         "MB"
+      ]
+    },
+    "Filter notification": {
+      "${ Label.Name } updated": [
+        "${ Label.Name } actualizada"
       ]
     },
     "Group": {
@@ -1303,6 +1472,9 @@
         "(${ memberCount } membro)",
         "(${ memberCount } membros)"
       ],
+      "10 email addresses": [
+        "10 endereços de e-mail"
+      ],
       "A cancellation email will be sent to removed participants.": [
         "Será enviada uma mensagem de cancelamento aos participantes removidos."
       ],
@@ -1329,6 +1501,9 @@
       ],
       "An invitation will be sent to the event participants.": [
         "Será enviado um convite aos participantes do evento."
+      ],
+      "and": [
+        "e"
       ],
       "At most 100 participants are allowed per invitation": [
         "São permitidos no máximo 100 participantes por convite"
@@ -1408,6 +1583,9 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Se não encontra a mensagem na sua caixa de entrada, veja na pasta de spam."
       ],
+      "Inherited from parent folder": [
+        "Herança da pasta-mãe"
+      ],
       "Internet connection lost. Please check your device's connectivity.": [
         "Ligação à Internet perdida. Verifique a ligação do seu dispositivo."
       ],
@@ -1438,6 +1616,9 @@
       "Monthly ${ onDayString }": [
         "Mensalmente ${ onDayString }"
       ],
+      "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
+        "Nomeie a sua nova pasta e seleccione a pasta-mãe onde deseja colocá-la. Se não seleccionar uma pasta-mãe, esta nova pasta será criada como uma pasta de nível superior."
+      ],
       "No contacts added yet": [
         "Ainda não adicionou contactos"
       ],
@@ -1455,6 +1636,9 @@
       ],
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         "Nenhuma das chaves carregadas é válida para encriptação. A encriptação foi automaticamente desactivada."
+      ],
+      "Not a valid URL": [
+        "Não é um URL válido"
       ],
       "Occurrences previously updated by the organizer will be kept, but some of your answers will be lost.": [
         "Ocorrências previamente actualizadas pelo organizador serão mantidas, mas algumas das suas respostas serão perdidas."
@@ -1561,6 +1745,9 @@
       "Update recurring event": [
         "Actualizar evento recorrente"
       ],
+      "We're moving! Join us at our new site: ${ link }.": [
+        "Estamos a mover! Junte-se a nós no nosso novo site: ${link }."
+      ],
       "Week": [
         "Semana"
       ],
@@ -1602,6 +1789,9 @@
       ],
       "You can only modify personal event properties as you can't send emails from the organizer address.": [
         "Só pode modificar as propriedades pessoais do evento por não poder enviar correio a partir do endereço do organizador."
+      ],
+      "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
+        "Pode activar as notificações para receber alertas quando novas mensagens chegarem a esta pasta."
       ],
       "You have reactivated your keys and events linked to the following calendars can now be decrypted.": [
         "Reactivou as suas chaves e os eventos ligados às seguintes agendas podem agora ser desencriptados."
@@ -1719,11 +1909,20 @@
       "City": [
         "Cidade"
       ],
+      "Color": [
+        "Cor"
+      ],
+      "Contacts": [
+        "Contactos"
+      ],
       "Copy": [
         "Copiar"
       ],
       "Country": [
         "País"
+      ],
+      "Delete": [
+        "Eliminar"
       ],
       "Description": [
         "Descrição"
@@ -1764,6 +1963,9 @@
       "Extended address": [
         "Endereço estendido"
       ],
+      "Folder location": [
+        "Localização da pasta"
+      ],
       "Hide password": [
         "Ocultar senha"
       ],
@@ -1775,6 +1977,15 @@
       ],
       "Name": [
         "Nome"
+      ],
+      "Notification": [
+        "Notificação"
+      ],
+      "Notifications": [
+        "Notificações"
+      ],
+      "OK": [
+        "Aceitar"
       ],
       "Operating system": [
         "Sistema operativo"
@@ -1856,6 +2067,25 @@
         "Nome"
       ]
     },
+    "Label/folder modal": {
+      "Create folder": [
+        "Criar pasta"
+      ],
+      "Create label": [
+        "Criar etiqueta"
+      ],
+      "Edit folder": [
+        "Editar pasta"
+      ],
+      "Edit label": [
+        "Editar etiqueta"
+      ]
+    },
+    "label/folder notification": {
+      "${ Label.Name } created": [
+        "${ Label.Name } criada"
+      ]
+    },
     "Link": {
       "Calendars": [
         "Agendas"
@@ -1907,6 +2137,11 @@
       ],
       "Plain text": [
         "Texto simples"
+      ]
+    },
+    "Modal action": {
+      "Close": [
+        "Fechar"
       ]
     },
     "Modal title": {
@@ -2047,6 +2282,17 @@
         "na terceira Quarta-feira"
       ]
     },
+    "New Label form": {
+      "Color": [
+        "Cor"
+      ],
+      "Folder name": [
+        "Nome da pasta"
+      ],
+      "Label name": [
+        "Nome da etiqueta"
+      ]
+    },
     "Notification": {
       "Contact group created": [
         "Grupo de contactos criado"
@@ -2164,6 +2410,11 @@
         "Desconhecido"
       ]
     },
+    "Onboarding Action": {
+      "Next": [
+        "Seguinte"
+      ]
+    },
     "Onboarding Proton": {
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "Configure a sua organização, vincule o seu nome de domínio e crie contas para garantir que todos os membros da sua organização estão protegidos."
@@ -2222,6 +2473,9 @@
       "Month": [
         "Mês",
         "Meses"
+      ],
+      "No parent folder": [
+        "Nenhuma pasta-mãe"
       ],
       "This and future events": [
         "Este e eventos futuros"
@@ -2289,6 +2543,9 @@
       ],
       "Name": [
         "Nome"
+      ],
+      "Password": [
+        "Senha"
       ],
       "Please describe the problem and include any error messages": [
         "Por favor, descreva o problema e inclua quaisquer mensagens de erro"
@@ -2390,6 +2647,9 @@
     "Spotlight": {
       "Don't miss any events": [
         "Não perca nenhum evento"
+      ],
+      "Get up to 18 months of ${ planName } for free": [
+        "Obtenha até 18 meses grátis de ${ planName }"
       ],
       "You can now add notifications to calendars you subscribed to.": [
         "Pode agora adicionar notificações às agendas subscritas."
@@ -2816,6 +3076,9 @@
       "Report a problem": [
         "Relatar um problema"
       ],
+      "Request new code": [
+        "Pedir novo código"
+      ],
       "Reset calendar keys": [
         "Repor chaves da agenda"
       ],
@@ -2916,6 +3179,11 @@
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
         "Escolha um número"
+      ]
+    },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "Hoje"
       ]
     },
     "Tooltip": {
@@ -3206,8 +3474,8 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "A cada ${ interval } ano",
-        "A cada ${ interval } anos"
+        "Yearly",
+        ""
       ],
       "Every ${ interval } year, ${ timesString }": [
         "A cada ${ interval } ano, ${ timesString }",

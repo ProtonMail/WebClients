@@ -145,6 +145,9 @@
       "Clear all formatting": [
         "Tüm biçimlendirmeyi temizle"
       ],
+      "Clear two-factor authentication code": [
+        "İki aşamalı kimlik doğrulama kodunu temizle"
+      ],
       "Close": [
         "Kapat"
       ],
@@ -343,9 +346,6 @@
       "Export": [
         "Dışa aktar"
       ],
-      "Export ICS": [
-        "ICS olarak dışa aktar"
-      ],
       "Export key": [
         "Anahtarı dışa aktar"
       ],
@@ -438,6 +438,9 @@
       ],
       "Loading verification": [
         "Doğrulama yükleniyor"
+      ],
+      "Make default": [
+        "Varsayılan yap"
       ],
       "Mark as default": [
         "Varsayılan olarak işaretle"
@@ -1028,59 +1031,6 @@
       ],
       "Two-year": [
         "Iki yıllık"
-      ]
-    },
-    "blackfriday Info": {
-      "beta": [
-        "beta"
-      ],
-      "Includes": [
-        "İçerdikleri"
-      ],
-      "Standard price: ${ regularPrice }": [
-        "Standart fiyat: ${ regularPrice }"
-      ],
-      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
-        "Bu abonelik, iptal edilene kadar 2 yıllık bir dönem sonrasında aynı fiyattan otomatik olarak yenilenecektir."
-      ]
-    },
-    "blackfriday Title": {
-      "Most popular": [
-        "En popüler olanlar"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Action": {
-      "Get the deal": [
-        "Tekliften yararlan"
-      ],
-      "Get the deal now": [
-        "Tekliften şimdi yararlan"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Info": {
-      "Save ${ percentage }%": [
-        "- %${ percentage }"
-      ]
-    },
-    "blackfriday: VPNspecialoffer info": {
-      "per month": [
-        "aylık"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Promo title, need to be short": {
-      "Special offer": [
-        "Özel teklif"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Title": {
-      "1 month": [
-        "1 ay"
-      ],
-      "12 months": [
-        "12 ay"
-      ],
-      "24 months": [
-        "24 ay"
       ]
     },
     "breadcrumb": {
@@ -10777,8 +10727,8 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "${ interval } yılda bir",
-        "${ interval } yılda bir"
+        "Yearly",
+        ""
       ],
       "Every ${ interval } year, ${ timesString }": [
         "${ interval } yılda bir, ${ timesString }",

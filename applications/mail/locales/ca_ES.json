@@ -6,7 +6,7 @@
   "contexts": {
     "Action": {
       "${ BRAND_NAME } introduction": [
-        "Introducció ${ BRAND_NAME }"
+        "Introducció a ${ BRAND_NAME }"
       ],
       "${ BRAND_NAME } shop": [
         "Botiga de ${ BRAND_NAME }"
@@ -18,19 +18,19 @@
         "Activa la recuperació"
       ],
       "Add": [
-        "Afegir"
+        "Afegeix"
       ],
       "Add address": [
-        "Afegir adreça"
+        "Afegeix adreça"
       ],
       "Add condition": [
-        "Afegir condició"
+        "Afegeix condició"
       ],
       "Add contact": [
         "Afegir contacte"
       ],
       "Add email": [
-        "Afegir correu electrònic"
+        "Afegeix correu electrònic"
       ],
       "Add group": [
         "Afegir grup"
@@ -45,7 +45,7 @@
         "Afegeix participants"
       ],
       "Add phone number": [
-        "Afegir número de telèfon"
+        "Afegeix número de telèfon"
       ],
       "Add to ${ CALENDAR_APP_NAME }": [
         "Afegir a ${ CALENDAR_APP_NAME }"
@@ -78,7 +78,7 @@
         "Tots els no destacats"
       ],
       "Apply": [
-        "Aplicar"
+        "Aplica"
       ],
       "Archive": [
         "Arxiva"
@@ -93,13 +93,13 @@
         "Torna"
       ],
       "Beta Access": [
-        "Accés Beta"
+        "Accés beta"
       ],
       "Bold": [
         "Negreta"
       ],
       "Cancel": [
-        "Cancel·lar"
+        "Cancel·la"
       ],
       "Carbon Copy, Blind Carbon Copy": [
         "Còpia, Còpia oculta"
@@ -114,7 +114,7 @@
         "Xategeu amb nosaltres"
       ],
       "Check import progress": [
-        "Comprovar el progrés de la importació"
+        "Comprova el progrés de la importació"
       ],
       "Choose a file or drag it here": [
         "Trieu un fitxer o arrossegueu-lo aquí"
@@ -129,7 +129,7 @@
         "Netejar les dades del navegador"
       ],
       "Clear data": [
-        "Netejar dades"
+        "Neteja les dades"
       ],
       "clear it": [
         "netegeu-lo"
@@ -138,22 +138,22 @@
         "Netejar la consulta"
       ],
       "Click here.": [
-        "Cliqueu aquí."
+        "Feu clic aquí."
       ],
       "Close": [
-        "Tancar"
+        "Tanca"
       ],
       "Close composer": [
         "Tancar l'editor"
       ],
       "Close modal": [
-        "Tancar el modal"
+        "Tanca la finestra"
       ],
       "Close navigation": [
         "Tanca la navegació"
       ],
       "Close this banner": [
-        "Tancar aquest bàner"
+        "Tanca aquest bàner"
       ],
       "Collapse URL": [
         "Acurta l'URL"
@@ -168,7 +168,7 @@
         "Mida de l'editor"
       ],
       "Confirm": [
-        "Confirmar"
+        "Confirma"
       ],
       "Confirm opening of link ${ linkToShow }": [
         "Confirmeu l'obertura de l'enllaç ${ linkToShow }"
@@ -180,7 +180,7 @@
         "Continua"
       ],
       "Continue with Google": [
-        "Continuar amb Google"
+        "Continua amb Google"
       ],
       "Contract composer": [
         "Contraure l'editor"
@@ -216,7 +216,7 @@
         "Filtre personalitzat"
       ],
       "Customize": [
-        "Personalitzar"
+        "Personalitza"
       ],
       "Default email application": [
         "Aplicació de correu electrònic predeterminada"
@@ -236,7 +236,7 @@
         "Eliminar-ho tot"
       ],
       "Delete contact": [
-        "Eliminar contacte"
+        "Elimina el contacte"
       ],
       "Delete contact group": [
         "Eliminar grup de contactes"
@@ -272,13 +272,13 @@
         "Fet"
       ],
       "Download": [
-        "Descarregar"
+        "Baixa"
       ],
       "Download ${ attachmentName }": [
         "Descarregar ${ attachmentName }"
       ],
       "Edit": [
-        "Editar"
+        "Edita"
       ],
       "Edit address": [
         "Editar l'adreça"
@@ -287,7 +287,7 @@
         "Editar esborrany"
       ],
       "Edit email address": [
-        "Editar l'adreça de correu electrònic"
+        "Edita l'adreça de correu"
       ],
       "Edit encryption": [
         "Edita el xifrat"
@@ -296,7 +296,7 @@
         "Editar etiqueta"
       ],
       "Edit phone number": [
-        "Editar el número de telèfon"
+        "Edita el número de telèfon"
       ],
       "Edit sign-in details": [
         "Edita detalls d'inici de sessió"
@@ -311,7 +311,7 @@
         "Habilitar"
       ],
       "enable desktop notifications": [
-        "activar les notificacions d'escriptori"
+        "activa les notificacions d'escriptori"
       ],
       "Encryption": [
         "Xifratge"
@@ -350,40 +350,46 @@
         "Font"
       ],
       "Forward as attachment": [
-        "Reenviar com a adjunt"
+        "Reenvia com a adjunt"
       ],
       "Generate recovery phrase": [
-        "Generar una frase de recuperació"
+        "Genera una frase de recuperació"
+      ],
+      "Get SimpleLogin extension": [
+        "Obtén l'extensió de SimpleLogin"
       ],
       "Get started": [
-        "Començar"
+        "Comença"
       ],
       "Get verification code": [
         "Obtenir codi de verificació"
       ],
       "Go to first page": [
-        "Anar a la primera pàgina"
+        "Ves a la primera pàgina"
       ],
       "Go to label": [
-        "Vagi a l'etiqueta"
+        "Ves a l'etiqueta"
       ],
       "Go to last page": [
-        "Anar a la darrera pàgina"
+        "Vés a l'última pàgina"
       ],
       "Go to next page": [
-        "Anar a la pàgina següent"
+        "Ves a la pàgina següent"
       ],
       "Go to page ${ page }": [
-        "Anar a la pàgina ${ page }"
+        "Ves a la pàgina ${ page }"
       ],
       "Go to panel ${ index }": [
-        "Anar al panell ${ index }"
+        "Ves al panell ${ index }"
       ],
       "Go to previous page": [
-        "Anar a la pàgina anterior"
+        "Ves a la pàgina anterior"
       ],
       "Go to settings": [
-        "Vés a la configuració"
+        "Ves a la configuració"
+      ],
+      "Go to SimpleLogin": [
+        "Ves a SimpleLogin"
       ],
       "Got it": [
         "Entesos"
@@ -401,13 +407,19 @@
         "Amagar els detalls"
       ],
       "Hide folders": [
-        "Amagar carpetes"
+        "Amaga les carpetes"
       ],
       "Hide labels": [
-        "Amagar etiquetes"
+        "Amaga les etiquetes"
       ],
       "Hide messages": [
         "Amagar missatges"
+      ],
+      "Hide My Email": [
+        "Amaga el meu correu"
+      ],
+      "Hide my email": [
+        "Amaga el meu correu"
       ],
       "I have a question": [
         "Tinc una pregunta"
@@ -428,7 +440,7 @@
         "En línia"
       ],
       "Insert": [
-        "Afegir"
+        "Afegeix"
       ],
       "Insert ${ totalChecked } contact": [
         "Afegir ${ totalChecked } contacte",
@@ -444,7 +456,7 @@
         "Afegeix imatge"
       ],
       "Insert link": [
-        "Afegir enllaç"
+        "Afegeix un enllaç"
       ],
       "Italic": [
         "Cursiva"
@@ -471,7 +483,7 @@
         "Carregar imatges incrustades"
       ],
       "Load image": [
-        "Carregar imatge"
+        "Carrega la imatge"
       ],
       "Load more": [
         "Carregar-ne més"
@@ -621,7 +633,7 @@
         "No s'ha desat"
       ],
       "OK": [
-        "Accepta"
+        "D'acord"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
         "Obrir ${ CALENDAR_APP_NAME }"
@@ -702,7 +714,7 @@
         "refresqueu la pàgina"
       ],
       "Refresh the page": [
-        "Refresca la pàgina"
+        "Actualitza la pàgina"
       ],
       "Remove": [
         "Suprimeix"
@@ -726,7 +738,7 @@
         "Respon de manera segura"
       ],
       "Report a problem": [
-        "Avisar d'un problema"
+        "Notifica un problema"
       ],
       "Report phishing": [
         "Notificar suplantació d'identitat"
@@ -831,13 +843,13 @@
         "Mostra menys opcions de cerca"
       ],
       "Show folders": [
-        "Mostrar carpetes"
+        "Mostra les carpetes"
       ],
       "Show labels": [
-        "Mostrar etiquetes"
+        "Mostra les etiquetes"
       ],
       "Show less": [
-        "Mostrar menys"
+        "Mostra'n menys"
       ],
       "Show messages": [
         "Mostrar missatges"
@@ -849,7 +861,7 @@
         "Mostra visualització prèvia"
       ],
       "Sign out": [
-        "Tancar la sessió"
+        "Tanca la sessió"
       ],
       "Signing out": [
         "Tancant la sessió"
@@ -858,13 +870,13 @@
         "Mida"
       ],
       "Skip": [
-        "Ometre"
+        "Omet"
       ],
       "Star": [
         "Destaca"
       ],
       "Start import": [
-        "Començar importació"
+        "Comença la importació"
       ],
       "Start setup": [
         "Començar la configuració"
@@ -873,7 +885,7 @@
         "Mantenir"
       ],
       "Submit": [
-        "Enviar"
+        "Envia"
       ],
       "Theme": [
         "Tema"
@@ -934,7 +946,7 @@
         "No confiable"
       ],
       "Update": [
-        "Actualitzar"
+        "Millora"
       ],
       "Update recovery file": [
         "Actualitza el fitxer de recuperació"
@@ -961,10 +973,10 @@
         "Utilitzeu el ratolí per redimensionar la vista. Si esteu utilitzant el teclat, podeu utilitzar les tecles d'esquerra i dreta per redimensionar."
       ],
       "Use “${ label }” setting": [
-        "Utilitzar la configuració \"${ label }\""
+        "Utilitza la configuració \"${ label }\""
       ],
       "Verify": [
-        "Verificar"
+        "Verifica"
       ],
       "Verify account": [
         "Verifiqueu el compte"
@@ -973,7 +985,7 @@
         "Verifiqueu el correu electrònic"
       ],
       "View": [
-        "Veure"
+        "Mostra"
       ],
       "View contact details": [
         "Veure detalls del contacte"
@@ -985,7 +997,7 @@
         "Veure HTML"
       ],
       "View invoice": [
-        "Veure factura"
+        "Mostra la factura"
       ],
       "View keys": [
         "Veure claus"
@@ -1082,6 +1094,11 @@
     "Alternative text for conversation image": {
       "Conversation": [
         "Conversa"
+      ]
+    },
+    "Alternative text for SimpleLogin image": {
+      "SimpleLogin": [
+        "SimpleLogin"
       ]
     },
     "Alternative text for welcome image": {
@@ -1576,6 +1593,9 @@
       "apple": [
         "poma"
       ],
+      "blue-gray": [
+        "gris blavós"
+      ],
       "caramel": [
         "caramel"
       ],
@@ -1587,6 +1607,12 @@
       ],
       "copper": [
         "coure"
+      ],
+      "dark midnight blue": [
+        "blau fosc mitjanit"
+      ],
+      "dim gray": [
+        "gris suau"
       ],
       "forest": [
         "bosc"
@@ -1600,6 +1626,9 @@
       "lemon yellow": [
         "groc llima"
       ],
+      "light carmine pink": [
+        "rosa carmí clar"
+      ],
       "light red": [
         "vermell clar"
       ],
@@ -1608,6 +1637,9 @@
       ],
       "olive": [
         "oliva"
+      ],
+      "outer space": [
+        "espai exterior"
       ],
       "persian red": [
         "vermell persa"
@@ -1624,8 +1656,14 @@
       "purple": [
         "porpra"
       ],
+      "ruddy pink": [
+        "rosa vermellós"
+      ],
       "sahara": [
         "sahara"
+      ],
+      "soil": [
+        "terra"
       ],
       "strawberry": [
         "maduixa"
@@ -2785,6 +2823,9 @@
       "A group with this name already exists": [
         "Ja existeix un grup amb aquest nom"
       ],
+      "A problem occurred, please try again.": [
+        "S'ha produït un problema. Intenteu-ho de nou."
+      ],
       "Address primary private key not found": [
         "No s'ha trobat la clau privada primària de l'adreça"
       ],
@@ -2838,6 +2879,9 @@
       "Deselect at least ${ calendarToFixCount } calendar or": [
         "Desmarqueu almenys ${ calendarToFixCount } calendari o",
         "Desmarqueu almenys ${ calendarToFixCount } calendaris o"
+      ],
+      "Domain not available, try again later": [
+        "El domini no està disponible, torneu-ho a provar més tard"
       ],
       "Draft could not be saved. Try again.": [
         "L'esborrany no s'ha pogut desar. Torni a provar-ho."
@@ -2953,6 +2997,9 @@
       "Passwords do not match": [
         "Les contrasenyes no coincideixen"
       ],
+      "Please activate your search again": [
+        "Activeu de nou la vostra cerca"
+      ],
       "Please fix the highlighted conflict to proceed.": [
         "Arregleu el conflicte ressaltat per continuar.",
         "Arregleu els conflictes ressaltats per continuar."
@@ -2968,6 +3015,12 @@
       ],
       "Primary address key is not decrypted.": [
         "La clau de la adreça primària no està desxifrada."
+      ],
+      "Primary key is not valid for sending": [
+        "La clau principal no és vàlida per a l'enviament"
+      ],
+      "Primary key retrieved for internal user is not valid for sending": [
+        "La clau principal obtinguda per l'usuari intern no és vàlida per a l'enviament"
       ],
       "Public key could not be trusted": [
         "La clau pública no pot ser verificada"
@@ -3006,6 +3059,9 @@
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "Alguns dels vostres noms d'etiqueta no estan disponibles. Personalitzeu la importació per tal d'editar-ne els noms."
       ],
+      "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
+        "Els noms d'algunes de les etiquetes superen el límit de caràcters màxim de ${ MAIL_APP_NAME }. Modifiqueu la importació per tal d'editar-ne els noms."
+      ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "S'ha produït un error, ${ refresh } per continuar. Si continueu veient aquest missatge d'error, poseu-vos en contacte amb el nostre ${ supportTeam }."
       ],
@@ -3016,11 +3072,17 @@
         "No s'ha pogut desxifrar el fitxer adjunt.\nSi teniu la clau privada corresponent, encara podreu desxifrar\nel fitxer amb un programa com GnuPG.",
         "No s'ha pogut desxifrar els fitxers adjunts.\nSi teniu la clau privada corresponent, encara podreu desxifrar\nels fitxers amb un programa com GnuPG."
       ],
+      "The folder name is invalid. Please choose a different name.": [
+        "El nom de la carpeta no és vàlid. Escolliu-ne un altre."
+      ],
       "The folder name is too long. Please choose a different name.": [
         "El nom de la carpeta és massa llarg. Trieu-ne un de diferent."
       ],
       "The key properties for ${ emailAddress } could not be extracted": [
         "No s'han pogut extreure les propietats clau de ${ emailAddress }"
+      ],
+      "The label name is invalid. Please choose a different name.": [
+        "El nom de l'etiqueta no és vàlid. Escolliu-ne un altre."
       ],
       "The label name is too long. Please choose a different name.": [
         "El nom de l'etiqueta és massa llarg. Trieu-ne un de diferent."
@@ -3057,6 +3119,9 @@
       ],
       "This message has already been sent. A new draft has been saved.": [
         "Aquest missatge ja s'ha enviat. S'ha guardat un esborrany nou."
+      ],
+      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
+        "Aquest missatge pot contenir algunes adreces URL que no es poden obrir amb el navegador actual."
       ],
       "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
         "Massa filtres actius. Actualitzeu a un pla de pagament per activar més filtres."
@@ -3324,6 +3389,11 @@
         "(No title)"
       ]
     },
+    "Feedback Modal Title": {
+      "Your feedback": [
+        "Els teus comentaris"
+      ]
+    },
     "file size format": {
       "byte": [
         "byte",
@@ -3339,6 +3409,16 @@
         "MB"
       ]
     },
+    "file size format, long": {
+      "Gigabyte": [
+        "gigabyte",
+        "gigabytes"
+      ],
+      "Megabyte": [
+        "megabyte",
+        "megabytes"
+      ]
+    },
     "Filter": {
       "Show": [
         "Mostra"
@@ -3349,7 +3429,7 @@
         "Arxivar"
       ],
       "Inbox": [
-        "Bústia d’entrada"
+        "Safata d'entrada"
       ],
       "Inbox - Default": [
         "Safata d'entrada - Per defecte"
@@ -3915,6 +3995,9 @@
       "Confirm phishing report": [
         "Confirmeu l'informe de phishing"
       ],
+      "Content: ": [
+        "Contingut: "
+      ],
       "Continue with ${ planName }": [
         "Continuar amb ${ planName }"
       ],
@@ -3995,6 +4078,9 @@
       ],
       "Duplicate key updated": [
         "Clau duplicada actualitzada"
+      ],
+      "Edit encryption": [
+        "Edita el xifrat"
       ],
       "Edit expiration time": [
         "Editar l'hora de caducitat"
@@ -4303,6 +4389,9 @@
       "Please add at least one recipient.": [
         "Afegiu almenys un destinatari."
       ],
+      "Please fill out this field.": [
+        "Empleneu aquest camp."
+      ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
         "Manteniu-lo protegit. El necessitareu per accedir al vostre compte i desxifrar les vostres dades en cas d'un restabliment de contrasenya."
       ],
@@ -4601,6 +4690,9 @@
       "Unlimited messages": [
         "Missatges il·limitats"
       ],
+      "Unlock message": [
+        "Desbloqueja el missatge"
+      ],
       "Unsupported file": [
         "Fitxer no compatible"
       ],
@@ -4725,10 +4817,10 @@
         "No teniu cap missatge aquí"
       ],
       "You have ${ totalLabel } in your inbox.": [
-        "Teniu ${ totalLabel } a la vostra safata d'entrada."
+        "Teniu ${ totalLabel } a la safata d'entrada."
       ],
       "You have ${ unreadsLabel } in your inbox.": [
-        "Tens ${ unreadsLabel } a la teva safata d'entrada."
+        "Teniu ${ unreadsLabel } a la safata d'entrada."
       ],
       "You have **${ count } conversation** stored in this folder": [
         "Teniu **${ count } conversa** emmagatzemada en aquesta carpeta",
@@ -4837,7 +4929,7 @@
         "Vençuda"
       ],
       "Obsolete": [
-        "Obsolet"
+        "Obsoleta"
       ],
       "Primary": [
         "Primari"
@@ -5105,7 +5197,7 @@
         "CUALSEVOL"
       ],
       "Apply filter to existing emails": [
-        "Aplica el filtre als correus electrònics existents"
+        "Aplica el filtre als correus existents"
       ],
       "Attach screenshot(s)": [
         "Adjunta captura/es de pantalla"
@@ -5364,6 +5456,9 @@
       ],
       "Region": [
         "Regió"
+      ],
+      "Remember my choice": [
+        "Recorda la meva elecció"
       ],
       "Reveal password": [
         "Mostra la contrasenya"
@@ -5954,9 +6049,19 @@
         "Canvia o afegeix un compte"
       ]
     },
+    "new_plans: info": {
+      "Introducing Proton’s refreshed look.${ br }Many services, one mission. Welcome to an internet where privacy is the default.": [
+        "Presentem el nou aspecte de Proton.${ br }Molts serveis, una missió. Benvingut/da a l'Internet on tenim la privacitat per defecte."
+      ]
+    },
     "new_plans: placeholder": {
       "Feedback": [
         "Comentaris"
+      ]
+    },
+    "new_plans: title": {
+      "Updated Proton, unified protection": [
+        "Proton actualitzat, protecció unificada"
       ]
     },
     "Notification": {
@@ -6043,6 +6148,11 @@
       ],
       "Merge with calendar": [
         "Combinar amb el calendari"
+      ]
+    },
+    "Pagination": {
+      "${ page } of ${ total }": [
+        "${ page } de ${ total }"
       ]
     },
     "Paid user checklist item": {
@@ -6418,6 +6528,11 @@
         "Ara podeu cercar el contingut dels vostres correus electrònics xifrats."
       ]
     },
+    "Status": {
+      "This message is from a mailing list.": [
+        "Aquest missatge és d'una llista de correu."
+      ]
+    },
     "Step in filter modal": {
       "Actions": [
         "Accions"
@@ -6640,6 +6755,9 @@
       "Move ${ selectionCount } message": [
         "Mou ${ selectionCount } missatge",
         "Mou ${ selectionCount } missatges"
+      ],
+      "Password copied to clipboard": [
+        "La contrasenya s'ha copiat al porta-retalls"
       ],
       "Phishing reported": [
         "Phishing reportat"

@@ -359,6 +359,9 @@
       "Generate recovery phrase": [
         "Создать фразу для восстановления"
       ],
+      "Get SimpleLogin extension": [
+        "Получить расширение SimpleLogin"
+      ],
       "Get started": [
         "Приступить к работе"
       ],
@@ -389,6 +392,9 @@
       "Go to settings": [
         "Открыть настройки"
       ],
+      "Go to SimpleLogin": [
+        "Перейти к SimpleLogin"
+      ],
       "Got it": [
         "Понятно"
       ],
@@ -412,6 +418,12 @@
       ],
       "Hide messages": [
         "Скрыть сообщения"
+      ],
+      "Hide My Email": [
+        "Скрыть мою электронную почту"
+      ],
+      "Hide my email": [
+        "Hide my email"
       ],
       "I have a question": [
         "У меня есть вопрос"
@@ -1090,6 +1102,11 @@
     "Alternative text for conversation image": {
       "Conversation": [
         "Цепочка писем"
+      ]
+    },
+    "Alternative text for SimpleLogin image": {
+      "SimpleLogin": [
+        "SimpleLogin"
       ]
     },
     "Alternative text for welcome image": {
@@ -4393,6 +4410,9 @@
       "Default email application": [
         "Приложение электронной почты по умолчанию"
       ],
+      "Delivered via SimpleLogin by Proton": [
+        "Доставляется через SimpleLogin от Proton"
+      ],
       "Disable message content search": [
         "Отключить поиск содержимого сообщений"
       ],
@@ -4443,6 +4463,9 @@
       ],
       "Email address": [
         "Адрес электронной почты"
+      ],
+      "Email is forwarded to your mailbox; your email address stays hidden.": [
+        "Электронная почта пересылается на ваш почтовый ящик; ваш адрес электронной почты остается скрытым."
       ],
       "Email tracker protection is disabled": [
         "Защита от трекеров электронной почты отключена"
@@ -4558,6 +4581,9 @@
         "Часов",
         "Час(а, ов)"
       ],
+      "How Hide My Email works": [
+        "Как работает Hide My Email"
+      ],
       "I'm sending this message to a non-Proton Mail user.": [
         "Я отправляю это сообщение пользователю, не являющемуся пользователем Proton Mail."
       ],
@@ -4569,6 +4595,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Если сообщения нет в папке \"Входящие\" — проверьте, не попало ли оно в папку «спам»."
+      ],
+      "If your alias is sold, leaked, or abused, simply disable it to stop receiving spam.": [
+        "Если ваш псевдоним будет продан, утечет или будет использоваться не по назначению, просто отключите его, чтобы перестать получать спам."
       ],
       "Image description": [
         "Описание ошибки"
@@ -4834,6 +4863,9 @@
       "Priority support": [
         "Приоритетная поддержка"
       ],
+      "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
+        "Защитите свою электронную почту от утечки в списки рассылки или спамерам с ${ maskMyEmailButton }."
+      ],
       "Proton doesn't make money by abusing privacy.": [
         "Proton не зарабатывает на нарушении конфиденциальности."
       ],
@@ -4930,6 +4962,12 @@
       "Show original message": [
         "Показать исходное сообщение"
       ],
+      "SimpleLogin is a Proton service, and your Proton Account includes Hide My Email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
+        "SimpleLogin - это служба Proton, а ваш аккаунт Proton включает псевдонимы Hide My Email. Чтобы начать маскировать свой адрес электронной почты, зайдите в SimpleLogin и создайте свой первый псевдоним."
+      ],
+      "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
+        "SimpleLogin предоставляет простой способ создания логинов на ненадежных сторонних сайтах, где вы не хотите раскрывать свой реальный адрес электронной почты."
+      ],
       "Sorry, this message does not exist or has already expired.": [
         "К сожалению, это сообщение не существует, либо срок его действия уже истек."
       ],
@@ -4998,6 +5036,9 @@
       ],
       "There has been an error with the signature used to verify the contact details, which may be the result of a password reset.": [
         "Произошла ошибка с подписью, использованной для проверки контактных данных, это может быть вызвано сбросом пароля."
+      ],
+      "They can't spam you if they don't know your email address. Protect your inbox with Hide My Email.": [
+        "Они не могут отправить вам спам, если не знают ваш адрес электронной почты. Защитите свой почтовый ящик с помощью Hide My Email."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Этот аккаунт был отключен из-за возможного нарушения политики."
@@ -5191,6 +5232,9 @@
       "Use keyboard shortcuts to manage your email faster.": [
         "Use keyboard shortcuts to manage your email faster."
       ],
+      "Using SimpleLogin is easy": [
+        "Использовать SimpleLogin просто"
+      ],
       "Version ${ appVersion }": [
         "Версия ${ appVersion }"
       ],
@@ -5220,6 +5264,9 @@
       ],
       "When do you want your message to be sent?": [
         "Когда вы хотите, чтобы ваше сообщение было отправлено?"
+      ],
+      "When giving out your email, use a unique, disposable Hide My Email alias instead of your real email address.": [
+        "Сообщая свой адрес электронной почты, используйте уникальный, одноразовый псевдоним Hide My Email вместо своего настоящего адреса электронной почты."
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Когда вы сделали активными доверенные ключи для ${ senderName }, эти открытые ключи были добавлены к контактным данным."
@@ -5373,6 +5420,9 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Ваш номер телефона будет использоваться только для этой разовой проверки."
+      ],
+      "Your Proton Account includes SimpleLogin. Install the browser extension with one click to get started.": [
+        "Ваш аккаунт Proton включает SimpleLogin. Чтобы начать, установите расширение браузера одним нажатием."
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Ваш аккаунт в Proton в настоящее время приостановлен. Чтобы продолжить использование вашего аккаунта, пожалуйста, оплатите все просроченные счета."
@@ -7685,6 +7735,9 @@
       "Deleting contacts": [
         "Удаление контактов"
       ],
+      "Don't give spam a chance": [
+        "Не давайте спаму шанса"
+      ],
       "Edit contact": [
         "Изменение контакта"
       ],
@@ -7741,6 +7794,9 @@
       ],
       "Groups": [
         "Группы"
+      ],
+      "Hide your email with SimpleLogin by Proton": [
+        "Скрыть свою электронную почту с помощью SimpleLogin от Proton"
       ],
       "Human verification": [
         "Проверка \"Я не робот\""
@@ -7975,6 +8031,9 @@
       ],
       "Unsubscribe": [
         "Отписаться"
+      ],
+      "Unsubscribe request sent": [
+        "Отправлен запрос на отмену подписки"
       ],
       "Upgrade required": [
         "Требуется переход на платную версию"

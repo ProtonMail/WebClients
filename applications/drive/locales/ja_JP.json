@@ -761,6 +761,9 @@
       "Calendar is syncing": [
         "カレンダーの同期中"
       ],
+      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
+        "カレンダーを同期しています: すべてのイベントが表示されるまでしばらくお待ちください。"
+      ],
       "Calendar is too big": [
         "カレンダーが大きすぎます"
       ],
@@ -778,6 +781,14 @@
       ],
       "Unsupported calendar format": [
         "非対応のカレンダー形式です"
+      ]
+    },
+    "Collapsible tooltip": {
+      "Collapse": [
+        "作成"
+      ],
+      "Expand": [
+        "展開"
       ]
     },
     "color": {
@@ -2428,6 +2439,9 @@
       "Download failed": [
         "ダウンロードに失敗しました"
       ],
+      "Download failed due to ${ error }": [
+        "${ error } が発生したためダウンロードに失敗しました"
+      ],
       "Download finished": [
         "ダウンロードが完了しました"
       ],
@@ -2914,6 +2928,9 @@
       "Uploading hundreds of files at once may have a performance impact.": [
         "同時にたくさんのファイルをアップロードするとパフォーマンスが低下する可能性があります。"
       ],
+      "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
+        "このフォームを使うことで、不適切であったり違法である共有ファイル、およびその他の悪意ある共有ファイルを報告することができます。レポートする内容:"
+      ],
       "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "${ emailAddress } がアップロードした ${ fileName } を検証できませんでした。"
       ],
@@ -3304,6 +3321,9 @@
       ],
       "Phone number": [
         "電話番号"
+      ],
+      "Please provide full details to help us take appropriate action": [
+        "適切な対応を行えるようにするために、詳細な情報を提供してください"
       ],
       "Post office box": [
         "私書箱"
@@ -4445,6 +4465,9 @@
       ],
       "The link either does not exist or has expired": [
         "リンクが存在しないか有効期限が切れています"
+      ],
+      "The link expired": [
+        "リンクは期限切れです"
       ],
       "The link failed to be loaded": [
         "リンクの読み込みに失敗しました"

@@ -561,6 +561,9 @@
       "Invalid ICS file": [
         "无效的 ICS 文件"
       ],
+      "Invalid method": [
+        "无效方式"
+      ],
       "Unsupported calendar component": [
         "不受支持的日历组件"
       ],
@@ -2143,6 +2146,9 @@
       ]
     },
     "Error importing calendar": {
+      "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
+        "文件 ${ formattedFilename } 上传失败，文件大小上限为 ${ MAX_IMPORT_FILE_SIZE_STRING }。"
+      ],
       "An error occurred uploading your file ${ formattedFilename }. Only ICS file formats are allowed.": [
         "文件 ${ formattedFilename } 上传失败，我们只接受 ICS 文件格式。"
       ],
@@ -2354,6 +2360,50 @@
     "Event info. Organizer name": {
       "You": [
         "你"
+      ]
+    },
+    "Event invitation error": {
+      "Attached ICS file could not be decrypted": [
+        "无法解密附加的 ICS 文件"
+      ],
+      "Attached ICS file could not be read": [
+        "无法读取 ICS 附件"
+      ],
+      "Invalid invitation": [
+        "邀请无效"
+      ],
+      "Invalid response": [
+        "无效回复"
+      ],
+      "The event could not be added to your calendar. No answer was sent": [
+        "该事件不能被添加到您的日历。没有已发送的结果"
+      ],
+      "The event could not be updated in your calendar. No answer was sent": [
+        "该事件无法在您的日历中更新。没有已发送的结果"
+      ],
+      "Unexpected error": [
+        "意外错误"
+      ],
+      "Unsupported invitation": [
+        "不支持的邀请"
+      ],
+      "Unsupported response": [
+        "不支持的回复"
+      ],
+      "We could not cancel the event in your calendar": [
+        "我们无法取消您日历中的事件"
+      ],
+      "We could not retrieve the event from your calendar": [
+        "我们无法从您的日历中检索事件"
+      ],
+      "We could not update the event in your calendar": [
+        "我们无法更新您日历中的事件"
+      ],
+      "Your answer was sent, but the event could not be added to your calendar": [
+        "您的回复已发送，但活动无法添加到您的日历"
+      ],
+      "Your answer was sent, but the event could not be updated in your calendar": [
+        "您的回复已发送，但事件无法在您的日历中更新"
       ]
     },
     "Event popover close button": {
@@ -5101,7 +5151,8 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "每 ${ interval } 年"
+        "Yearly",
+        ""
       ],
       "Every ${ interval } year, ${ timesString }": [
         "每 ${ interval } 年，${ timesString }"

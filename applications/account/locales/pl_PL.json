@@ -145,6 +145,9 @@
       "Clear all formatting": [
         "Wyczyść formatowanie"
       ],
+      "Clear two-factor authentication code": [
+        "Wyczyść kod uwierzytelniający"
+      ],
       "Close": [
         "Zamknij"
       ],
@@ -343,9 +346,6 @@
       "Export": [
         "Eksportuj"
       ],
-      "Export ICS": [
-        "Eksportuj plik ICS"
-      ],
       "Export key": [
         "Eksportuj klucz"
       ],
@@ -438,6 +438,9 @@
       ],
       "Loading verification": [
         "Ładowanie weryfikacji"
+      ],
+      "Make default": [
+        "Ustaw jako domyślny"
       ],
       "Mark as default": [
         "Oznacz jako domyślną"
@@ -1042,59 +1045,6 @@
       ],
       "Two-year": [
         "Co dwa lata"
-      ]
-    },
-    "blackfriday Info": {
-      "beta": [
-        "beta"
-      ],
-      "Includes": [
-        "Zawiera"
-      ],
-      "Standard price: ${ regularPrice }": [
-        "Standardowa cena: ${ regularPrice }"
-      ],
-      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
-        "Subskrypcja zostanie odnowiona automatycznie po 2 latach za tę samą cenę aż do momentu anulowania jej."
-      ]
-    },
-    "blackfriday Title": {
-      "Most popular": [
-        "Najpopularniejszy"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Action": {
-      "Get the deal": [
-        "Skorzystaj z oferty"
-      ],
-      "Get the deal now": [
-        "Skorzystaj z oferty"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Info": {
-      "Save ${ percentage }%": [
-        "${ percentage } %"
-      ]
-    },
-    "blackfriday: VPNspecialoffer info": {
-      "per month": [
-        "miesięcznie"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Promo title, need to be short": {
-      "Special offer": [
-        "Oferta specjalna"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Title": {
-      "1 month": [
-        "1 miesiąc"
-      ],
-      "12 months": [
-        "12 miesięcy"
-      ],
-      "24 months": [
-        "24 miesiące"
       ]
     },
     "breadcrumb": {
@@ -11073,10 +11023,8 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "Co rok",
-        "Co ${ interval } lata",
-        "Co ${ interval } lat",
-        "Co ${ interval } roku"
+        "Yearly",
+        ""
       ],
       "Every ${ interval } year, ${ timesString }": [
         "Co rok, ${ timesString }",

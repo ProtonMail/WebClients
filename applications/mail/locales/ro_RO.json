@@ -357,6 +357,9 @@
       "Generate recovery phrase": [
         "Generare frază de recuperare"
       ],
+      "Get SimpleLogin extension": [
+        "Obținere extensie SimpleLogin"
+      ],
       "Get started": [
         "Să începem"
       ],
@@ -387,6 +390,9 @@
       "Go to settings": [
         "Accesare setări"
       ],
+      "Go to SimpleLogin": [
+        "Accesare SimpleLogin"
+      ],
       "Got it": [
         "Am înțeles"
       ],
@@ -410,6 +416,12 @@
       ],
       "Hide messages": [
         "Ascundere mesaje"
+      ],
+      "Hide My Email": [
+        "Ascundere e-mail"
+      ],
+      "Hide my email": [
+        "Ascundere e-mail"
       ],
       "I have a question": [
         "Am o întrebare"
@@ -1086,6 +1098,11 @@
     "Alternative text for conversation image": {
       "Conversation": [
         "Conversație"
+      ]
+    },
+    "Alternative text for SimpleLogin image": {
+      "SimpleLogin": [
+        "SimpleLogin"
       ]
     },
     "Alternative text for welcome image": {
@@ -4286,6 +4303,9 @@
       "Default email application": [
         "Aplicaţia de e-mail implicită"
       ],
+      "Delivered via SimpleLogin by Proton": [
+        "Livrat prin SimpleLogin de la Proton"
+      ],
       "Disable message content search": [
         "Dezactivarea căutării în conținutul mesajelor."
       ],
@@ -4335,6 +4355,9 @@
       ],
       "Email address": [
         "Adresă e-mail"
+      ],
+      "Email is forwarded to your mailbox; your email address stays hidden.": [
+        "Mesajele sunt redirecționate în căsuța poștală; adresa de e-mail rămâne ascunsă."
       ],
       "Email tracker protection is disabled": [
         "Protecția de urmărire a e-mailurilor este dezactivată"
@@ -4444,6 +4467,9 @@
         "ore",
         "de ore"
       ],
+      "How Hide My Email works": [
+        "Cum funcționează ascunderea adresei"
+      ],
       "I'm sending this message to a non-Proton Mail user.": [
         "Trimit acest mesaj unui utilizator non-Proton Mail."
       ],
@@ -4455,6 +4481,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Dacă nu vedeți mesajul verificați în folderul de mesaje nedorite."
+      ],
+      "If your alias is sold, leaked, or abused, simply disable it to stop receiving spam.": [
+        "Dacă aliasul este vândut, divulgat sau abuzat, îl dezactivați pur și simplu pentru a înceta să mai primiți mesaje nedorite."
       ],
       "Image description": [
         "Descriere imagine"
@@ -4718,6 +4747,9 @@
       "Priority support": [
         "Asistență prioritară"
       ],
+      "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
+        "Împiedicați divulgarea adresei e-mail către liste de mesagerie sau mesaje nedorite cu ${ maskMyEmailButton }."
+      ],
       "Proton doesn't make money by abusing privacy.": [
         "Proton nu face bani abuzând de viața privată."
       ],
@@ -4814,6 +4846,12 @@
       "Show original message": [
         "Afișare mesaj original"
       ],
+      "SimpleLogin is a Proton service, and your Proton Account includes Hide My Email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
+        "SimpleLogin este un serviciu Proton, iar acest cont include aliasuri de ascundere a adresei de e-mail. Pentru a începe să vă mascați adresa, accesați SimpleLogin și creați-vă primul alias."
+      ],
+      "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
+        "SimpleLogin furnizează o metodă simplă de a crea adrese de autorizare pe site-urile de neîncredere unde nu doriți să vă expuneți adevărata adresă de e-mail."
+      ],
       "Sorry, this message does not exist or has already expired.": [
         "Ne pare rău, acest mesaj nu există sau a expirat deja."
       ],
@@ -4881,6 +4919,9 @@
       ],
       "There has been an error with the signature used to verify the contact details, which may be the result of a password reset.": [
         "A apărut o eroare la semnătura folosită pentru a verifica datele de contact, care poate fi rezultatul resetării parolei."
+      ],
+      "They can't spam you if they don't know your email address. Protect your inbox with Hide My Email.": [
+        "Nu vă pot trimite mesaje nedorite dacă nu vă cunosc adresa de e-mail. Protejați-vă căsuța poștală prin ascunderea adresei reale."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Acest cont a fost suspendat din cauza unei posibile încălcări a politicii."
@@ -5072,6 +5113,9 @@
       "Use keyboard shortcuts to manage your email faster.": [
         "Utilizați combinaţiile de taste pentru a vă gestiona mai rapid mesajele."
       ],
+      "Using SimpleLogin is easy": [
+        "Folosirea SimpleLogin este ușoară"
+      ],
       "Version ${ appVersion }": [
         "Versiunea ${ appVersion }"
       ],
@@ -5101,6 +5145,9 @@
       ],
       "When do you want your message to be sent?": [
         "Când doriți să fie trimis mesajul?"
+      ],
+      "When giving out your email, use a unique, disposable Hide My Email alias instead of your real email address.": [
+        "Când furnizați adresa de e-mail, folosiți un alias unic, de unică folosință, în locul adresei de e-mail reale."
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Când ați activat cheile de încredere pentru ${ senderName }, cheile publice au fost adăugate la datele de contact."
@@ -5245,6 +5292,9 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Numărul de telefon va fi folosit doar pentru această verificare unică."
+      ],
+      "Your Proton Account includes SimpleLogin. Install the browser extension with one click to get started.": [
+        "Acest cont Proton include SimpleLogin. Instalați extensia de navigator cu un clic și începeți să o folosiți."
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Contul Proton este momentan suspendat. Pentru a putea să-l utilizați, trebuie să plătiți orice factură restantă."
@@ -7506,6 +7556,9 @@
       "Deleting contacts": [
         "Ștergere contacte"
       ],
+      "Don't give spam a chance": [
+        "Nu oferiți șanse mesajelor nedorite"
+      ],
       "Edit contact": [
         "Editare contact"
       ],
@@ -7562,6 +7615,9 @@
       ],
       "Groups": [
         "Grupuri"
+      ],
+      "Hide your email with SimpleLogin by Proton": [
+        "Ascundeți-vă adresa de e-mail cu Simple Login de la Proton"
       ],
       "Human verification": [
         "Verificare persoană"
@@ -7795,6 +7851,9 @@
       ],
       "Unsubscribe": [
         "Dezabonare"
+      ],
+      "Unsubscribe request sent": [
+        "Solicitare de dezabonare trimisă"
       ],
       "Upgrade required": [
         "Migrare necesară"
