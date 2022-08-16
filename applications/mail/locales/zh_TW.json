@@ -383,6 +383,9 @@
       "Go to settings": [
         "前往設定"
       ],
+      "Go to SimpleLogin": [
+        "前往 SimpleLogin"
+      ],
       "Got it": [
         "了解"
       ],
@@ -406,6 +409,12 @@
       ],
       "Hide messages": [
         "隱藏郵件"
+      ],
+      "Hide My Email": [
+        "隱藏我的電郵"
+      ],
+      "Hide my email": [
+        "隱藏我的電郵"
       ],
       "I have a question": [
         "我要發問"
@@ -1080,6 +1089,11 @@
         "交談"
       ]
     },
+    "Alternative text for SimpleLogin image": {
+      "SimpleLogin": [
+        "SimpleLogin"
+      ]
+    },
     "Alternative text for welcome image": {
       "Welcome": [
         "歡迎"
@@ -1566,6 +1580,9 @@
       ],
       "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
         "行事曆連結暫時無法存取。請確認行事曆服務提供商的連結仍屬有效。"
+      ],
+      "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
+        "從上次更新以來已經過了超過12小時 — Proton Calendar 將會嘗試在幾個小時內更新日曆。"
       ]
     },
     "Calendar widget banner": {
@@ -1588,8 +1605,53 @@
       "apple": [
         "Apple"
       ],
+      "caramel": [
+        "焦糖"
+      ],
       "carrot": [
         "胡蘿蔔"
+      ],
+      "cobalt": [
+        "鈷"
+      ],
+      "copper": [
+        "銅"
+      ],
+      "dandelion": [
+        "蒲公英"
+      ],
+      "forest": [
+        "森林"
+      ],
+      "lemon yellow": [
+        "檸檬黃"
+      ],
+      "maize": [
+        "玉米"
+      ],
+      "ocean": [
+        "海洋"
+      ],
+      "olive": [
+        "橄欖"
+      ],
+      "pickle": [
+        "泡菜"
+      ],
+      "pine": [
+        "松樹"
+      ],
+      "pink": [
+        "粉紅色"
+      ],
+      "purple": [
+        "紫色"
+      ],
+      "soil": [
+        "土壤"
+      ],
+      "white": [
+        "白色"
       ]
     },
     "Composer email icon": {
@@ -1932,6 +1994,9 @@
       "Czech Republic": [
         "捷克"
       ],
+      "Côte d'Ivoire": [
+        "象牙海岸"
+      ],
       "Denmark": [
         "丹麥"
       ],
@@ -1961,6 +2026,9 @@
       ],
       "Estonia": [
         "愛沙尼亞"
+      ],
+      "Eswatini": [
+        "史瓦帝尼"
       ],
       "Ethiopia": [
         "衣索比亞"
@@ -2201,6 +2269,9 @@
       ],
       "Mozambique": [
         "莫三比克"
+      ],
+      "Myanmar": [
+        "緬甸"
       ],
       "Namibia": [
         "納米比亞"
@@ -2881,6 +2952,9 @@
       "Message processing error.": [
         "郵件處理錯誤。"
       ],
+      "Missing key packet": [
+        "缺少金鑰封包"
+      ],
       "Missing signature": [
         "簽章遺失"
       ],
@@ -3202,6 +3276,9 @@
       "Start time out of bounds": [
         "開始時間超出界限"
       ],
+      "Time zone not supported": [
+        "不支援的時區"
+      ],
       "To-do entry": [
         "待辦事項"
       ],
@@ -3224,6 +3301,9 @@
       ],
       "Please ${ refresh } or check your connection.": [
         "請${ refresh }或檢查您的連線。"
+      ],
+      "Something went wrong. Please refresh the page or try again later.": [
+        "出了一點問題。請重新整理頁面或稍後再試。"
       ],
       "There was a problem connecting to Proton.": [
         "連線到 Proton 時發生問題。"
@@ -3299,7 +3379,15 @@
         "(無標題)"
       ]
     },
+    "Feedback Modal Title": {
+      "Your feedback": [
+        "您的意見回饋"
+      ]
+    },
     "file size format": {
+      "byte": [
+        "位元組"
+      ],
       "GB": [
         "GB"
       ],
@@ -3308,6 +3396,25 @@
       ],
       "MB": [
         "MB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "位元組"
+      ],
+      "Gigabyte": [
+        "十億位元組"
+      ],
+      "Kilobyte": [
+        "千位元組"
+      ],
+      "Megabyte": [
+        "百萬位元組"
+      ]
+    },
+    "Filter": {
+      "Show": [
+        "顯示"
       ]
     },
     "Filter Actions": {
@@ -4260,6 +4367,9 @@
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "此郵件已被我們的系統標註為帶有網路釣魚的企圖。請檢查這是否正當郵件。"
       ],
+      "per month.": [
+        "每月."
+      ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
         "PGP/Inline 僅與純文字格式相容。請注意，${ MAIL_APP_NAME } 會一律簽署加密郵件。"
       ],
@@ -4388,6 +4498,9 @@
       ],
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "從 @pm.me 電郵位址寄送郵件是付費功能。您的郵件將從您的預設電郵位址 ${ email } 傳送"
+      ],
+      "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
+        "以 <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> 安全電郵送出。"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "無法連線至伺服器。請過幾分鐘後再試"
@@ -4629,6 +4742,9 @@
       "Upgrade to support privacy and get more features.": [
         "升級以支援隱私並取得更多功能。"
       ],
+      "Upgrade to use ${ MAIL_APP_NAME } with third-party desktop clients.": [
+        "升級即可通過第三方客戶端使用 ${ MAIL_APP_NAME }。"
+      ],
       "Upgrade today to avoid losing the following ${ planName } benefits.": [
         "今天就升級，不要錯過 ${ planName } 特賞限時福利！"
       ],
@@ -4640,6 +4756,9 @@
       ],
       "URL: ${ unsubscribeMethods.HttpClient }": [
         "URL：${ unsubscribeMethods.HttpClient }"
+      ],
+      "Use ${ calendarAppName } to keep your agenda private.": [
+        "使用 ${ calendarAppName } 保護您的議程隱私。"
       ],
       "Use keyboard shortcuts to manage your email faster.": [
         "使用鍵盤快捷鍵來更快管理您的電郵。"
@@ -5601,6 +5720,9 @@
       "Manage your labels": [
         "管理您的標籤"
       ],
+      "More": [
+        "更多"
+      ],
       "More about recovery": [
         "更多有關於復原部份"
       ],
@@ -5935,6 +6057,16 @@
     "new_plans: action": {
       "Switch or add account": [
         "切換或是加入帳號"
+      ]
+    },
+    "new_plans: info": {
+      "Introducing Proton’s refreshed look.${ br }Many services, one mission. Welcome to an internet where privacy is the default.": [
+        "Proton 新樣貌隆重登場！${ br } 多種服務，單一使命。歡迎蒞臨隱私為本的網路世界。"
+      ]
+    },
+    "new_plans: label": {
+      "Tell us about your experience. (Optional)": [
+        "與我們分享您的使用體驗。（選填）"
       ]
     },
     "new_plans: placeholder": {
@@ -6388,6 +6520,11 @@
       ],
       "Sender's trusted keys verification failed": [
         "寄件人的已信任金鑰驗證失敗"
+      ]
+    },
+    "Sort": {
+      "Sort": [
+        "排序"
       ]
     },
     "Sort option": {
@@ -7198,6 +7335,9 @@
       ],
       "Unsubscribe": [
         "取消訂閱"
+      ],
+      "Unsubscribe request sent": [
+        "已傳送取消訂購請求"
       ],
       "Upgrade required": [
         "需要升級"

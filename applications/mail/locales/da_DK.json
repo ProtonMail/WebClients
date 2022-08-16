@@ -301,6 +301,9 @@
       "Email settings": [
         "E-mailindstillinger"
       ],
+      "Emoji": [
+        "Emoji"
+      ],
       "Enable": [
         "Aktivér"
       ],
@@ -379,6 +382,9 @@
       "Go to settings": [
         "Gå til indstillinger"
       ],
+      "Go to SimpleLogin": [
+        "Gå til SimpleLogin"
+      ],
       "Got it": [
         "Forstået"
       ],
@@ -402,6 +408,12 @@
       ],
       "Hide messages": [
         "Skjul beskeder"
+      ],
+      "Hide My Email": [
+        "Skjul Min E-mail"
+      ],
+      "Hide my email": [
+        "Skjul min e-mail"
       ],
       "I have a question": [
         "Jeg har et spørgsmål"
@@ -1531,6 +1543,9 @@
       "Calendar is syncing": [
         "Kalender synkroniserer"
       ],
+      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
+        "Kalender er ved at blive synkroniseret: Det kan tage flere minutter, før alle begivenhederne vises."
+      ],
       "Calendar is too big": [
         "Kalender er for stor"
       ],
@@ -1548,6 +1563,17 @@
       ],
       "Unsupported calendar format": [
         "Ikke-understøttet kalenderformat"
+      ]
+    },
+    "Calendar subscription not synced error; long version": {
+      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
+        "Kalenderlinket er ikke tilgængeligt uden for kalenderudbyderens økosystem."
+      ],
+      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
+        "Kalenderlinket er midlertidigt utilgængeligt. Kontroller venligst, at linket fra kalenderudbyderen stadig er gyldigt."
+      ],
+      "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
+        "Der er gået mere end 12 timer siden sidste opdatering - Proton Calendar vil forsøge at opdatere kalenderen om et par timer."
       ]
     },
     "Calendar widget banner": {
@@ -1903,6 +1929,9 @@
       "Czech Republic": [
         "Tjekkiet"
       ],
+      "Côte d'Ivoire": [
+        "Elfenbenskysten"
+      ],
       "Denmark": [
         "Danmark"
       ],
@@ -1932,6 +1961,9 @@
       ],
       "Estonia": [
         "Estland"
+      ],
+      "Eswatini": [
+        "Eswatini"
       ],
       "Ethiopia": [
         "Etiopien"
@@ -2175,6 +2207,9 @@
       ],
       "Mozambique": [
         "Mozambique"
+      ],
+      "Myanmar": [
+        "Myanmar"
       ],
       "Namibia": [
         "Namibia"
@@ -3135,6 +3170,9 @@
       ]
     },
     "Error importing event": {
+      "Calendar time zone not supported": [
+        "Kalendertidszone understøttes ikke"
+      ],
       "Component with wrong format": [
         "Komponent med forkert format"
       ],
@@ -3201,6 +3239,9 @@
       "Start time out of bounds": [
         "Starttid uden for grænserne"
       ],
+      "Time zone not supported": [
+        "Tidszone understøttes ikke"
+      ],
       "To-do entry": [
         "Gøremålindlæg"
       ],
@@ -3223,6 +3264,9 @@
       ],
       "Please ${ refresh } or check your connection.": [
         "Du bedes venligst ${ refresh } eller tjekke din forbindelse."
+      ],
+      "Something went wrong. Please refresh the page or try again later.": [
+        "Noget gik galt. Genopfrisk siden eller prøv igen senere."
       ],
       "There was a problem connecting to Proton.": [
         "Der opstod et problem med at oprette forbindelse til Proton."
@@ -3303,6 +3347,11 @@
         "(ingen titel)"
       ]
     },
+    "Feedback Modal Title": {
+      "Your feedback": [
+        "Din feedback"
+      ]
+    },
     "file size format": {
       "byte": [
         "byte",
@@ -3334,6 +3383,11 @@
       "Megabyte": [
         "Megabyte",
         "Megabytes"
+      ]
+    },
+    "Filter": {
+      "Show": [
+        "Vis"
       ]
     },
     "Filter Actions": {
@@ -3994,6 +4048,9 @@
       "Do you want to re-sign the contact details?": [
         "Vil du gensignere kontaktdetaljerne?"
       ],
+      "Don't forget to share the password with the recipient": [
+        "Glem ikke at dele adgangskoden med modtageren"
+      ],
       "Draft": [
         "Kladde"
       ],
@@ -4122,6 +4179,9 @@
       "Hour": [
         "Time",
         "Timer"
+      ],
+      "I'm sending this message to a non-Proton Mail user.": [
+        "Jeg sender denne besked til en, som ikke bruger Proton Mail."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Hvis du har problemer med at oprette din konto, bedes du anmode om en invitation. Så vil vi svare inden for en arbejdsdag."
@@ -4334,6 +4394,9 @@
       "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
         "PGP/Inline er kun kompatibelt med simpelt tekstformat. Bemærk at ${ MAIL_APP_NAME } altid signerer krypterede beskeder."
       ],
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        "PGP/MIME sender automatisk beskeden vha. den aktuelle skrivetilstand. Bemærk at ${ MAIL_APP_NAME } altid signerer krypterede beskeder."
+      ],
       "Phone number": [
         "Telefonnummer"
       ],
@@ -4442,6 +4505,9 @@
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Vælg det e-mail-format, der som standard skal benyttes, når du sender en e-mail til denne e-mailadresse."
+      ],
+      "Select what you want to import from Google.": [
+        "Vælg, hvad du ønsker at overflytte fra Google."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Vælg, hvilke kalendere der skal importeres. Der oprettes en ny kalender for hver importeret kalender op til grænsen på 20 kalendere."
@@ -4599,6 +4665,10 @@
       ],
       "This message is signed by the key attached, that has not been trusted yet.": [
         "Denne besked er signeret med den vedhæftede nøgle, der endnu ikke er betroet."
+      ],
+      "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
+        "Denne besked vil blive markeret som spam. Ønsker du også at afmelde dig fra fremtidige e-mails?",
+        "Disse beskeder vil blive markeret som spam. Ønsker du også at afmelde dig fra fremtidige e-mails?"
       ],
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
         "Denne besked flyttes til Kladder, så du kan redigere den. Du skal igen planlægge, hvornår den skal sendes."
@@ -5685,11 +5755,17 @@
       "Learn more": [
         "Få yderligere information"
       ],
+      "Less": [
+        "Mindre"
+      ],
       "Manage your folders": [
         "Administrer dine mapper"
       ],
       "Manage your labels": [
         "Administrer dine etiketter"
+      ],
+      "More": [
+        "Flere"
       ],
       "More about recovery": [
         "Mere om gendannelse"
@@ -6030,6 +6106,16 @@
     "new_plans: action": {
       "Switch or add account": [
         "Skift eller tilføj konto"
+      ]
+    },
+    "new_plans: info": {
+      "Introducing Proton’s refreshed look.${ br }Many services, one mission. Welcome to an internet where privacy is the default.": [
+        "Vi præsenterer Proton's nye udseende.${ br }Mange tjenester, én mission. Velkommen til et internet, hvor privatlivsbeskyttelse er standard."
+      ]
+    },
+    "new_plans: label": {
+      "Tell us about your experience. (Optional)": [
+        "Fortæl os om dine indtryk. (Valgfrit)"
       ]
     },
     "new_plans: placeholder": {

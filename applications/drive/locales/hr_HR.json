@@ -11,11 +11,20 @@
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } dućan"
       ],
+      "Activate recovery": [
+        "Aktivirajte oporavak"
+      ],
       "Add": [
         "Dodaj"
       ],
+      "Add address": [
+        "Dodajte adresu"
+      ],
       "Add contact": [
         "Dodaj kontakt"
+      ],
+      "Add email": [
+        "Dodajte e-poštu"
       ],
       "Add group": [
         "Dodaj grupu"
@@ -26,11 +35,17 @@
       "Add new group": [
         "Dodaj novu grupu"
       ],
+      "Add phone number": [
+        "Dodajte telefonski broj"
+      ],
       "Add to group": [
         "Dodaj u grupu"
       ],
       "Apply": [
         "Primijeni"
+      ],
+      "Attach screenshot(s)": [
+        "Priložite snimku(e) zaslona"
       ],
       "Back": [
         "Natrag"
@@ -49,6 +64,12 @@
       ],
       "Cancel upload": [
         "Odustani od učitavanja"
+      ],
+      "Chat with us": [
+        "Razgovarajte s nama"
+      ],
+      "Check import progress": [
+        "Provjerite napredak uvoza"
       ],
       "Choose a file or drag it here": [
         "Odaberite datoteku ili je dovucite ovdje"
@@ -86,6 +107,9 @@
       "Confirm": [
         "Potvrdi"
       ],
+      "Confirm opening of link ${ linkToShow }": [
+        "Potvrdite otvaranje hiperveze ${ linkToShow }"
+      ],
       "Contact group": [
         "Grupa kontakta"
       ],
@@ -104,11 +128,17 @@
       "Create": [
         "Stvori"
       ],
+      "Create a new contact group": [
+        "Stvori novu grupu kontakata"
+      ],
       "Create link": [
         "Stvori poveznicu"
       ],
       "Create new folder": [
         "Stvori novu mapu"
+      ],
+      "Customize": [
+        "Prilagodi"
       ],
       "Delete": [
         "Izbriši"
@@ -138,11 +168,17 @@
       "Details": [
         "Pojedinosti"
       ],
+      "Didn't receive the code?": [
+        "Niste primili kod?"
+      ],
       "Done": [
         "Gotovo"
       ],
       "Download": [
         "Preuzmi"
+      ],
+      "Download all": [
+        "Preuzmi sve"
       ],
       "Edit": [
         "Uredi"
@@ -150,8 +186,14 @@
       "Edit email address": [
         "Uredi adresu e-pošte"
       ],
+      "Edit label": [
+        "Uredi oznaku"
+      ],
       "Edit phone number": [
         "Uredi broj telefona"
+      ],
+      "Edit sign-in details": [
+        "Uredite detalje za prijavu"
       ],
       "Email settings": [
         "Postavke e-pošte"
@@ -165,6 +207,9 @@
       "Export": [
         "Izvoz"
       ],
+      "Export contact group": [
+        "Izvezi grupu kontakata"
+      ],
       "Export contacts": [
         "Uvezi kontakte"
       ],
@@ -177,14 +222,26 @@
       "Get verification code": [
         "Nabavi kôd za provjeru"
       ],
+      "Go to label": [
+        "Idi na oznaku"
+      ],
       "Go to panel ${ index }": [
         "Idi na ${ index } panel"
       ],
       "Go to settings": [
         "Idi na postavke"
       ],
+      "Got it": [
+        "Shvaćam"
+      ],
       "Hide advanced PGP settings": [
         "Sakrij napredne PGP postavke"
+      ],
+      "Hide folders": [
+        "Sakrij mape"
+      ],
+      "Hide labels": [
+        "Sakrij oznake"
       ],
       "I have a question": [
         "Imam pitanje"
@@ -194,6 +251,12 @@
       ],
       "import": [
         "uvoz"
+      ],
+      "Import from .csv or vCard": [
+        "Uvezite iz .csv ili vCard"
+      ],
+      "Learn more": [
+        "Saznajte više"
       ],
       "Load image": [
         "Učitaj sliku"
@@ -218,6 +281,9 @@
       ],
       "More info: ${ safeTitle }": [
         "Više informacija: ${ safeTitle }"
+      ],
+      "More options": [
+        "Više opcija"
       ],
       "Move": [
         "Premjesti"
@@ -261,11 +327,17 @@
       "Previous month": [
         "Prethodni mjesec"
       ],
+      "Quit": [
+        "Prestati"
+      ],
       "Re-sign": [
         "Ponovna prijava"
       ],
       "Recover data": [
         "Oporavi podatke"
+      ],
+      "Refer a friend": [
+        "Uputi prijatelja"
       ],
       "Refresh the page": [
         "Osvježi stranicu"
@@ -309,11 +381,20 @@
       "Resume upload": [
         "Nastavi učitavanje"
       ],
+      "Retry": [
+        "Pokušaj ponovno"
+      ],
       "Save": [
         "Spremi"
       ],
+      "Search": [
+        "Pretraga"
+      ],
       "Select all": [
         "Odaberi sve"
+      ],
+      "Set recovery phrase": [
+        "Postavite frazu za oporavak"
       ],
       "Share file": [
         "Dijeli datoteku"
@@ -326,6 +407,15 @@
       ],
       "Show advanced PGP settings": [
         "Pokaži napredne PGP postavke"
+      ],
+      "Show folders": [
+        "Prikaži mape"
+      ],
+      "Show labels": [
+        "Prikaži oznake"
+      ],
+      "Show preview": [
+        "Prikaži pregled"
       ],
       "Sign out": [
         "Odjava"
@@ -345,6 +435,9 @@
       "Start setup": [
         "Započni postavljanje"
       ],
+      "Stay": [
+        "Ostani"
+      ],
       "Stop sharing": [
         "Zaustavi dijeljenje"
       ],
@@ -363,11 +456,20 @@
       "Undo": [
         "Poništi"
       ],
+      "Unlock data": [
+        "Otključajte podatke"
+      ],
       "Unmark for deletion": [
         "Odznači za brisanje"
       ],
       "Untrust": [
         "Označi kao nepouzdano"
+      ],
+      "Update recovery file": [
+        "Ažurirajte datoteku za oporavak"
+      ],
+      "Update recovery phrase": [
+        "Ažurirajte frazu za oporavak"
       ],
       "Upgrade": [
         "Nadogradnja"
@@ -389,6 +491,12 @@
       ],
       "Verify": [
         "Potvrdi"
+      ],
+      "Verify account": [
+        "Potvrdi račun"
+      ],
+      "Verify email": [
+        "Potvrdi email"
       ],
       "View": [
         "Pregled"
@@ -686,6 +794,16 @@
         "Pronađena su sljedeća polja u CSV datoteci koju ste prenijeli. Označite one koje želite uvesti."
       ]
     },
+    "Early Access Disabled": {
+      "Off": [
+        "Isklj"
+      ]
+    },
+    "Early Access Enabled": {
+      "On": [
+        "Uklj"
+      ]
+    },
     "Error": {
       "A group with this name already exists": [
         "Grupa s ovim nazivom već postoji"
@@ -877,6 +995,11 @@
         "MB"
       ]
     },
+    "Filter notification": {
+      "${ Label.Name } updated": [
+        "${ Label.Name } ažurirano"
+      ]
+    },
     "Group": {
       "Account": [
         "Korisnički račun"
@@ -1029,11 +1152,19 @@
         "${ updated } kontakta su uspješno ažurirana.",
         "${ updated } kontakata je uspješno ažurirano."
       ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } član)",
+        "(${ memberCount } člana)",
+        "(${ memberCount } članova)"
+      ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Pristup računu je ograničen zbog neplaćenih faktura. Molimo kontaktirajte vašeg administratora."
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Za ovu adresu je omogućena potvrda adrese s pouzdanim ključevima. Da biste mogli slati na ovu adresu, prvo povjerite javne ključeve koji se mogu koristiti za slanje."
+      ],
+      "and": [
+        "i"
       ],
       "Anyone with this link can access your file.": [
         "Svatko s ovom poveznicom može pristupiti vašoj datoteci."
@@ -1049,6 +1180,9 @@
       ],
       "Checking contact ${ progress } of ${ max }...": [
         "Provjera kontakta ${ progress } od ${ max }..."
+      ],
+      "Clear data": [
+        "Izbriši podatke"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Pritisnite \"Zatraži novi kôd\" da biste novi potvrdni kôd poslali na ${ strong }. Ako je ovaj telefonski broj netočan, pritisnite \"Uredi\" da biste ga ispravili."
@@ -1082,6 +1216,17 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Unesite potvrdni kôd koji je poslan na ${ destinationText }."
+      ],
+      "Estimated time remaining: ${ estimatedMinutes } minute": [
+        "Procijenjeno preostalo vrijeme: ${ estimatedMinutes } minuta",
+        "Procijenjeno preostalo vrijeme: ${ estimatedMinutes } minute",
+        "Procijenjeno preostalo vrijeme: ${ estimatedMinutes } minuta"
+      ],
+      "Estimated time remaining: Less than a minute": [
+        "Procijenjeno preostalo vrijeme: manje od minute"
+      ],
+      "Estimating time remaining...": [
+        "Procjena preostalog vremena..."
       ],
       "Failed": [
         "Neuspješno"
@@ -1122,6 +1267,9 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Ako ne pronađete e-poštu u pristigloj pošti, provjerite svoju mapu neželjene pošte."
       ],
+      "Inherited from parent folder": [
+        "Nasljedno iz roditeljske mape"
+      ],
       "Initializing": [
         "Pokretanje"
       ],
@@ -1155,6 +1303,9 @@
       "My Links": [
         "Moje poveznice"
       ],
+      "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
+        "Dodijelite naziv svojoj novoj mapi i odaberite roditeljsku mapu u koju je želite staviti. Ako ne odaberete roditeljsku mapu, nova će se mapa stvoriti kao mapa najviše razine."
+      ],
       "Network issue": [
         "Problem s mrežom"
       ],
@@ -1178,6 +1329,9 @@
       ],
       "No results found": [
         "Nema rezultata"
+      ],
+      "Not a valid URL": [
+        "Nije valjani URL"
       ],
       "of": [
         "od"
@@ -1302,6 +1456,9 @@
       "You are about to open another browser tab and visit:": [
         "Otvoriti će te još jednu karticu preglednika i posjetiti:"
       ],
+      "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
+        "Možete uključiti obavijesti da biste dobili upozorenja kada u tu mapu stignu nove poruke e-pošte."
+      ],
       "You cannot undo this action.": [
         "Ne možete poništiti ovu radnju."
       ],
@@ -1361,6 +1518,9 @@
       ]
     },
     "Label": {
+      "# of accesses": [
+        "Broj pristupanja"
+      ],
       "(Expired)": [
         "(Isteklo)"
       ],
@@ -1379,6 +1539,9 @@
       "Apply to all duplicated folders": [
         "Primjeni na sve duplikate mapa"
       ],
+      "Attach screenshot(s)": [
+        "Priložite snimku(e) zaslona"
+      ],
       "Audio file": [
         "Zvučne datoteke"
       ],
@@ -1391,11 +1554,17 @@
       "Browser version": [
         "Verzija preglednika"
       ],
+      "Cancel download": [
+        "Zaustavi preuzimanje"
+      ],
       "Category": [
         "Kategorija"
       ],
       "City": [
         "Grad"
+      ],
+      "Contacts": [
+        "Kontakti"
       ],
       "Copy": [
         "Kopiraj"
@@ -1403,8 +1572,20 @@
       "Country": [
         "Država"
       ],
+      "Created": [
+        "Stvoreno"
+      ],
+      "Delete": [
+        "Izbriši"
+      ],
+      "Deleted": [
+        "Izbrisano"
+      ],
       "Do not ask again": [
         "Ne pitaj ponovno"
+      ],
+      "Email": [
+        "E-pošta"
       ],
       "Email address": [
         "Adresa e-pošte"
@@ -1439,6 +1620,9 @@
       "Folder": [
         "Mapa"
       ],
+      "Folder location": [
+        "Lokacija mape"
+      ],
       "Folder name": [
         "Naziv mape"
       ],
@@ -1457,14 +1641,29 @@
       "Merge a folder": [
         "Spoji mapu"
       ],
+      "Modified": [
+        "Promijenjeno"
+      ],
+      "Name": [
+        "Naziv"
+      ],
       "Never": [
         "Nikad"
+      ],
+      "Notification": [
+        "Obavijest"
+      ],
+      "OK": [
+        "U redu"
       ],
       "Operating system": [
         "Operativni sustav"
       ],
       "Operating system version": [
         "Verzija operativnog sustava"
+      ],
+      "Other": [
+        "Ostalo"
       ],
       "Password": [
         "Lozinka"
@@ -1505,11 +1704,17 @@
       "Sign emails": [
         "Potpisivanje e-pošte"
       ],
+      "Size": [
+        "Veličina"
+      ],
       "Skip file": [
         "Preskoči datoteku"
       ],
       "Skip folder": [
         "Preskoči mapu"
+      ],
+      "Spam": [
+        "Neželjena pošta"
       ],
       "Street address": [
         "Adresa"
@@ -1522,6 +1727,9 @@
       ],
       "Two-factor authentication code": [
         "Kôd dvofaktorske autentikacije"
+      ],
+      "Type": [
+        "Vrsta"
       ],
       "Unknown file": [
         "Nepoznata datoteka"
@@ -1550,6 +1758,25 @@
     "Label for contact group name": {
       "Name": [
         "Naziv"
+      ]
+    },
+    "Label/folder modal": {
+      "Create folder": [
+        "Stvori mapu"
+      ],
+      "Create label": [
+        "Stvori oznaku"
+      ],
+      "Edit folder": [
+        "Uredi mapu"
+      ],
+      "Edit label": [
+        "Uredi oznaku"
+      ]
+    },
+    "label/folder notification": {
+      "${ Label.Name } created": [
+        "${ Label.Name } stvoreno"
       ]
     },
     "Link": {
@@ -1592,6 +1819,17 @@
       ],
       "Plain text": [
         "Običan tekst"
+      ]
+    },
+    "New Label form": {
+      "Color": [
+        "Boja"
+      ],
+      "Folder name": [
+        "Naziv mape"
+      ],
+      "Label name": [
+        "Naziv oznake"
       ]
     },
     "Notification": {
@@ -1638,6 +1876,11 @@
         "Premjesti ${ movingCount } stavki"
       ]
     },
+    "Onboarding Action": {
+      "Next": [
+        "Sljedeće"
+      ]
+    },
     "Onboarding Proton": {
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "Postavite vašu organizaciju, povežite naziv domene i stvorite račune kako biste osigurali zaštitu svih članova vaše organizacije."
@@ -1667,6 +1910,9 @@
       ],
       "Ignore group": [
         "Ignoriraj grupu"
+      ],
+      "No parent folder": [
+        "Nema roditeljske mape"
       ]
     },
     "PGP key encryption warning": {
@@ -1703,6 +1949,9 @@
       ],
       "New name": [
         "Novi naziv"
+      ],
+      "Password": [
+        "Lozinka"
       ],
       "Please describe the problem and include any error messages": [
         "Molimo opišite problem i pridružite sve poruke o pogreškama"
@@ -1934,6 +2183,9 @@
       "Addresses": [
         "Adrese"
       ],
+      "All": [
+        "Sve"
+      ],
       "Back": [
         "Natrag"
       ],
@@ -2034,6 +2286,9 @@
       "Exporting contacts": [
         "Izvoz kontakata"
       ],
+      "Failed": [
+        "Neuspješno"
+      ],
       "File details": [
         "Pojedinosti datoteke"
       ],
@@ -2124,6 +2379,9 @@
       "Report a problem": [
         "Prijavi problem"
       ],
+      "Request new code": [
+        "Zatraži novi kôd"
+      ],
       "Restore your files": [
         "Vratite vaše datoteke"
       ],
@@ -2184,6 +2442,9 @@
       "Upgrade required": [
         "Potrebno je ažuriranje"
       ],
+      "Uploaded": [
+        "Učitano"
+      ],
       "Uploaded by": [
         "Prenio"
       ],
@@ -2204,6 +2465,11 @@
       ],
       "You have no folders yet": [
         "Nema mapa"
+      ]
+    },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "Danas"
       ]
     },
     "Tooltip": {

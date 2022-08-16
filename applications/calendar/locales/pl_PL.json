@@ -5665,10 +5665,8 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "Co rok",
-        "Co ${ interval } lata",
-        "Co ${ interval } lat",
-        "Co ${ interval } roku"
+        "Yearly",
+        ""
       ],
       "Every ${ interval } year, ${ timesString }": [
         "Co rok, ${ timesString }",

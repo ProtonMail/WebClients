@@ -29,6 +29,12 @@
       "Apply": [
         "Terapkan"
       ],
+      "Attach screenshot(s)": [
+        "Lampirkan tangkapan layar"
+      ],
+      "Authenticate": [
+        "Otentikasi"
+      ],
       "Back": [
         "Kembali"
       ],
@@ -44,6 +50,9 @@
       "Chat with us": [
         "Mengobrol dengan kami"
       ],
+      "Clear two-factor authentication code": [
+        "Hapus kode otentikasi dua faktor"
+      ],
       "Close": [
         "Tutup"
       ],
@@ -58,6 +67,9 @@
       ],
       "Confirm": [
         "Konfirmasi"
+      ],
+      "Contact support": [
+        "Hubungi layanan dukungan"
       ],
       "Continue": [
         "Lanjut"
@@ -185,6 +197,9 @@
       "More info: ${ safeTitle }": [
         "Info lebih lanjut: ${ safeTitle }"
       ],
+      "Need help?": [
+        "Butuh bantuan?"
+      ],
       "Next": [
         "Selanjutnya"
       ],
@@ -290,6 +305,9 @@
       "Show preview": [
         "Tampilkan pratinjau"
       ],
+      "Sign in": [
+        "Masuk"
+      ],
       "Sign out": [
         "Keluar"
       ],
@@ -301,6 +319,9 @@
       ],
       "Submit": [
         "Kirim"
+      ],
+      "Support": [
+        "Dukung"
       ],
       "Top up": [
         "Isi ulang"
@@ -453,6 +474,9 @@
       ]
     },
     "Billing cycle option": {
+      "1 month": [
+        "1 bulan"
+      ],
       "12 months": [
         "12 bulan"
       ],
@@ -746,50 +770,764 @@
       "Abkhazia": [
         "Abkhazia"
       ],
+      "Afghanistan": [
+        "Afghanistan"
+      ],
+      "Albania": [
+        "Albania"
+      ],
+      "Algeria": [
+        "Aljazair"
+      ],
+      "American Samoa": [
+        "Samoa Amerika"
+      ],
+      "Andorra": [
+        "Andorra"
+      ],
+      "Angola": [
+        "Angola"
+      ],
+      "Anguilla": [
+        "Anguilla"
+      ],
+      "Antarctica": [
+        "Antartika"
+      ],
+      "Antigua and Barbuda": [
+        "Antigua dan Barbuda"
+      ],
+      "Argentina": [
+        "Argentina"
+      ],
+      "Armenia": [
+        "Armenia"
+      ],
+      "Aruba": [
+        "Aruba"
+      ],
       "Ascension Island": [
         "Pulau Ascension"
+      ],
+      "Australia": [
+        "Australia"
+      ],
+      "Austria": [
+        "Austria"
+      ],
+      "Azerbaijan": [
+        "Azerbaijan"
+      ],
+      "Bahamas": [
+        "Bahama"
+      ],
+      "Bahrain": [
+        "Bahrain"
+      ],
+      "Bangladesh": [
+        "Bangladesh"
+      ],
+      "Barbados": [
+        "Barbados"
+      ],
+      "Belarus": [
+        "Belarus"
+      ],
+      "Belgium": [
+        "Belgia"
+      ],
+      "Belize": [
+        "Belize"
+      ],
+      "Benin": [
+        "Benin"
+      ],
+      "Bermuda": [
+        "Bermuda"
+      ],
+      "Bhutan": [
+        "Bhutan"
+      ],
+      "Bolivia": [
+        "Bolivia"
+      ],
+      "Bonaire, Sint Eustatius and Saba": [
+        "Bonaire, Sint Eustatius dan Saba"
+      ],
+      "Bosnia and Herzegovina": [
+        "Bosnia dan Herzegovina"
+      ],
+      "Botswana": [
+        "Botswana"
+      ],
+      "Bouvet Island": [
+        "Pulau Bouvet"
+      ],
+      "Brazil": [
+        "Brasil"
+      ],
+      "British Indian Ocean Territory": [
+        "Teritori Samudera Hindia Inggris"
+      ],
+      "Brunei Darussalam": [
+        "Brunei Darussalam"
+      ],
+      "Bulgaria": [
+        "Bulgaria"
+      ],
+      "Burkina Faso": [
+        "Burkina Faso"
+      ],
+      "Burundi": [
+        "Burundi"
+      ],
+      "Cambodia": [
+        "Kamboja"
+      ],
+      "Cameroon": [
+        "Kamerun"
+      ],
+      "Canada": [
+        "Kanada"
+      ],
+      "Cape Verde": [
+        "Tanjung Verde"
+      ],
+      "Cayman Islands": [
+        "Kepulauan Cayman"
+      ],
+      "Central African Republic": [
+        "Republik Afrika Tengah"
+      ],
+      "Chad": [
+        "Chad"
+      ],
+      "Chile": [
+        "Cili"
+      ],
+      "China": [
+        "Tiongkok"
+      ],
+      "Christmas Island": [
+        "Pulau Christmas"
+      ],
+      "Cocos (Keeling) Islands": [
+        "Kepulauan Cocos (Keeling)"
+      ],
+      "Colombia": [
+        "Kolombia"
+      ],
+      "Comoros": [
+        "Komoro"
+      ],
+      "Congo": [
+        "Kongo"
       ],
       "Congo, Democratic Republic of the": [
         "Republik Demokratik Kongo"
       ],
+      "Cook Islands": [
+        "Kepulauan Cook"
+      ],
+      "Costa Rica": [
+        "Kosta Rika"
+      ],
+      "Croatia": [
+        "Kroasia"
+      ],
+      "Cuba": [
+        "Kuba"
+      ],
+      "Curaçao": [
+        "Curaçao"
+      ],
+      "Cyprus": [
+        "Siprus"
+      ],
       "Czech Republic": [
         "Republik Ceko"
+      ],
+      "Côte d'Ivoire": [
+        "Pantai Gading"
+      ],
+      "Denmark": [
+        "Denmark"
+      ],
+      "Djibouti": [
+        "Djibouti"
+      ],
+      "Dominica": [
+        "Dominika"
+      ],
+      "Dominican Republic": [
+        "Republik Dominika"
+      ],
+      "Ecuador": [
+        "Ekuador"
+      ],
+      "Egypt": [
+        "Mesir"
+      ],
+      "El Salvador": [
+        "El Salvador"
+      ],
+      "Equatorial Guinea": [
+        "Guinea Ekuatorial"
+      ],
+      "Eritrea": [
+        "Eritrea"
+      ],
+      "Estonia": [
+        "Estonia"
+      ],
+      "Eswatini": [
+        "Eswatini"
+      ],
+      "Ethiopia": [
+        "Ethiopia"
       ],
       "Falkland Islands": [
         "Kepulauan Falkland"
       ],
+      "Faroe Islands": [
+        "Kepulauan Faroe"
+      ],
       "Federated States of Micronesia": [
         "Federasi Mikronesia"
+      ],
+      "Fiji": [
+        "Fiji"
+      ],
+      "Finland": [
+        "Finlandia"
+      ],
+      "France": [
+        "Perancis"
+      ],
+      "French Guiana": [
+        "Guyana Perancis"
+      ],
+      "French Polynesia": [
+        "Polinesia Perancis"
+      ],
+      "French Southern Territories": [
+        "Teritori Selatan Perancis"
+      ],
+      "Gabon": [
+        "Gabon"
+      ],
+      "Gambia": [
+        "Gambia"
+      ],
+      "Georgia": [
+        "Georgia"
+      ],
+      "Germany": [
+        "Jerman"
+      ],
+      "Ghana": [
+        "Ghana"
+      ],
+      "Gibraltar": [
+        "Gibraltar"
+      ],
+      "Greece": [
+        "Yunani"
+      ],
+      "Greenland": [
+        "Greenland"
+      ],
+      "Grenada": [
+        "Grenada"
+      ],
+      "Guadeloupe": [
+        "Guadeloupe"
+      ],
+      "Guam": [
+        "Guam"
+      ],
+      "Guatemala": [
+        "Guatemala"
+      ],
+      "Guernsey": [
+        "Guernsey"
+      ],
+      "Guinea": [
+        "Guinea"
+      ],
+      "Guinea-Bissau": [
+        "Guinea-Bissau"
+      ],
+      "Guyana": [
+        "Guyana"
+      ],
+      "Haiti": [
+        "Haiti"
+      ],
+      "Heard Island and McDonald Islands": [
+        "Pulau Heard dan Kepulauan McDonald"
       ],
       "Holy See (Vatican City State)": [
         "Takhta Suci (Negara-Kota Vatikan)"
       ],
+      "Honduras": [
+        "Honduras"
+      ],
+      "Hong Kong": [
+        "Hong Kong"
+      ],
+      "Hungary": [
+        "Hungaria"
+      ],
+      "Iceland": [
+        "Islandia"
+      ],
+      "India": [
+        "India"
+      ],
+      "Indonesia": [
+        "Indonesia"
+      ],
       "International": [
         "Internasional"
+      ],
+      "Iran": [
+        "Iran"
+      ],
+      "Iraq": [
+        "Irak"
+      ],
+      "Ireland": [
+        "Irlandia"
+      ],
+      "Isle of Man": [
+        "Pulau Mann"
+      ],
+      "Israel": [
+        "Israel"
+      ],
+      "Italy": [
+        "Italia"
+      ],
+      "Jamaica": [
+        "Jamaika"
+      ],
+      "Japan": [
+        "Jepang"
+      ],
+      "Jersey": [
+        "Jersey"
+      ],
+      "Jordan": [
+        "Yordania"
+      ],
+      "Kazakhstan": [
+        "Kazakhstan"
+      ],
+      "Kenya": [
+        "Kenya"
+      ],
+      "Kiribati": [
+        "Kiribati"
       ],
       "Kosovo": [
         "Kosovo"
       ],
+      "Kuwait": [
+        "Kuwait"
+      ],
+      "Kyrgyzstan": [
+        "Kirgizstan"
+      ],
+      "Laos": [
+        "Laos"
+      ],
+      "Latvia": [
+        "Latvia"
+      ],
+      "Lebanon": [
+        "Lebanon"
+      ],
+      "Lesotho": [
+        "Lesotho"
+      ],
+      "Liberia": [
+        "Liberia"
+      ],
+      "Libya": [
+        "Libya"
+      ],
+      "Liechtenstein": [
+        "Liechtenstein"
+      ],
+      "Lithuania": [
+        "Lithuania"
+      ],
+      "Luxembourg": [
+        "Luxembourg"
+      ],
+      "Macao": [
+        "Makau"
+      ],
+      "Madagascar": [
+        "Madagaskar"
+      ],
+      "Malawi": [
+        "Malawi"
+      ],
+      "Malaysia": [
+        "Malaysia"
+      ],
+      "Maldives": [
+        "Maladewa"
+      ],
+      "Mali": [
+        "Mali"
+      ],
+      "Malta": [
+        "Malta"
+      ],
+      "Marshall Islands": [
+        "Kepulauan Marshall"
+      ],
+      "Martinique": [
+        "Martinique"
+      ],
+      "Mauritania": [
+        "Mauritania"
+      ],
+      "Mauritius": [
+        "Mauritius"
+      ],
+      "Mayotte": [
+        "Mayotte"
+      ],
+      "Mexico": [
+        "Meksiko"
+      ],
+      "Moldova": [
+        "Moldova"
+      ],
+      "Monaco": [
+        "Monako"
+      ],
+      "Mongolia": [
+        "Mongolia"
+      ],
+      "Montenegro": [
+        "Montenegro"
+      ],
+      "Montserrat": [
+        "Montserrat"
+      ],
+      "Morocco": [
+        "Maroko"
+      ],
+      "Mozambique": [
+        "Mozambik"
+      ],
+      "Myanmar": [
+        "Myanmar"
+      ],
+      "Namibia": [
+        "Namibia"
+      ],
+      "Nauru": [
+        "Nauru"
+      ],
+      "Nepal": [
+        "Nepal"
+      ],
+      "Netherlands": [
+        "Belanda"
+      ],
+      "New Caledonia": [
+        "Kaledonia Baru"
+      ],
+      "New Zealand": [
+        "Selandia Baru"
+      ],
+      "Nicaragua": [
+        "Nikaragua"
+      ],
+      "Niger": [
+        "Niger"
+      ],
+      "Nigeria": [
+        "Nigeria"
+      ],
+      "Niue": [
+        "Niue"
+      ],
+      "Norfolk Island": [
+        "Pulau Norfolk"
+      ],
+      "North Korea": [
+        "Korea Utara"
+      ],
+      "North Macedonia": [
+        "Makedonia Utara"
+      ],
+      "Northern Mariana Islands": [
+        "Kepulauan Mariana Utara"
+      ],
+      "Norway": [
+        "Norwegia"
+      ],
+      "Oman": [
+        "Oman"
+      ],
+      "Pakistan": [
+        "Pakistan"
+      ],
+      "Palau": [
+        "Palau"
+      ],
+      "Palestine": [
+        "Palestina"
+      ],
+      "Panama": [
+        "Panama"
+      ],
+      "Papua New Guinea": [
+        "Papua Nugini"
+      ],
+      "Paraguay": [
+        "Paraguay"
+      ],
+      "Peru": [
+        "Peru"
+      ],
+      "Philippines": [
+        "Filipina"
+      ],
+      "Pitcairn": [
+        "Pitcairn"
+      ],
+      "Poland": [
+        "Polandia"
+      ],
+      "Portugal": [
+        "Portugal"
+      ],
+      "Puerto Rico": [
+        "Puerto Riko"
+      ],
+      "Qatar": [
+        "Qatar"
+      ],
       "Reunion": [
         "Reunion"
+      ],
+      "Romania": [
+        "Romania"
+      ],
+      "Russia": [
+        "Rusia"
+      ],
+      "Rwanda": [
+        "Rwanda"
+      ],
+      "Saint Barthélemy": [
+        "Saint Barthélemy"
       ],
       "Saint Helena": [
         "Saint Helena"
       ],
+      "Saint Kitts and Nevis": [
+        "Saint Kitts dan Nevis"
+      ],
+      "Saint Lucia": [
+        "Saint Lucia"
+      ],
       "Saint Martin (French Part)": [
         "Saint Martin (Wilayah Perancis)"
+      ],
+      "Saint Pierre and Miquelon": [
+        "Saint Pierre dan Miquelon"
+      ],
+      "Saint Vincent and the Grenadines": [
+        "Saint Vincent dan Grenadines"
+      ],
+      "Samoa": [
+        "Samoa"
+      ],
+      "San Marino": [
+        "San Marino"
+      ],
+      "Sao Tome and Principe": [
+        "Sao Tome dan Principe"
+      ],
+      "Saudi Arabia": [
+        "Arab Saudi"
+      ],
+      "Senegal": [
+        "Senegal"
+      ],
+      "Serbia": [
+        "Serbia"
+      ],
+      "Seychelles": [
+        "Seychelles"
+      ],
+      "Sierra Leone": [
+        "Sierra Leone"
+      ],
+      "Singapore": [
+        "Singapura"
       ],
       "Sint Maarten": [
         "Sint Maarten"
       ],
+      "Slovakia": [
+        "Slovakia"
+      ],
+      "Slovenia": [
+        "Slovenia"
+      ],
+      "Solomon Islands": [
+        "Kepulauan Solomon"
+      ],
+      "Somalia": [
+        "Somalia"
+      ],
+      "South Africa": [
+        "Afrika Selatan"
+      ],
+      "South Georgia and the South Sandwich Islands": [
+        "Georgia Selatan dan Kepulauan Sandwich Selatan"
+      ],
+      "South Korea": [
+        "Korea Selatan"
+      ],
       "South Ossetia": [
         "Ossetia Selatan"
+      ],
+      "South Sudan": [
+        "Sudan Selatan"
+      ],
+      "Spain": [
+        "Spanyol"
+      ],
+      "Sri Lanka": [
+        "Sri Lanka"
+      ],
+      "Sudan": [
+        "Sudan"
+      ],
+      "Suriname": [
+        "Suriname"
+      ],
+      "Svalbard and Jan Mayen": [
+        "Svalbard dan Jan Mayen"
+      ],
+      "Sweden": [
+        "Swedia"
+      ],
+      "Switzerland": [
+        "Swiss"
       ],
       "Syria": [
         "Suriah"
       ],
+      "Taiwan": [
+        "Taiwan"
+      ],
+      "Tajikistan": [
+        "Tajikistan"
+      ],
+      "Tanzania": [
+        "Tanzania"
+      ],
+      "Thailand": [
+        "Thailand"
+      ],
+      "Timor-Leste": [
+        "Timor-Leste"
+      ],
+      "Togo": [
+        "Togo"
+      ],
+      "Tokelau": [
+        "Tokelau"
+      ],
+      "Tonga": [
+        "Tonga"
+      ],
+      "Trinidad and Tobago": [
+        "Trinidad dan Tobago"
+      ],
       "Tristan da Cunha": [
         "Tristan da Cunha"
+      ],
+      "Tunisia": [
+        "Tunisia"
+      ],
+      "Turkey": [
+        "Turki"
+      ],
+      "Turkmenistan": [
+        "Turkmenistan"
+      ],
+      "Turks and Caicos Islands": [
+        "Kepulauan Turks dan Caicos"
+      ],
+      "Tuvalu": [
+        "Tuvalu"
+      ],
+      "Uganda": [
+        "Uganda"
+      ],
+      "Ukraine": [
+        "Ukraina"
+      ],
+      "United Arab Emirates": [
+        "Uni Emirat Arab"
+      ],
+      "United Kingdom": [
+        "Britania Raya"
+      ],
+      "United States": [
+        "Amerika Serikat"
+      ],
+      "United States Minor Outlying Islands": [
+        "Pulau-Pulau Terluar Amerika Serikat"
+      ],
+      "Uruguay": [
+        "Uruguay"
+      ],
+      "Uzbekistan": [
+        "Uzbekistan"
+      ],
+      "Vanuatu": [
+        "Vanuatu"
+      ],
+      "Venezuela": [
+        "Venezuela"
+      ],
+      "Vietnam": [
+        "Vietnam"
+      ],
+      "Virgin Islands, British": [
+        "Kepulauan Virgin, Britania"
+      ],
+      "Virgin Islands, U.S.": [
+        "Kepulauan Virgin, A.S."
+      ],
+      "Wallis and Futuna": [
+        "Wallis dan Futuna"
+      ],
+      "Western Sahara": [
+        "Sahara Barat"
+      ],
+      "Yemen": [
+        "Yaman"
+      ],
+      "Zambia": [
+        "Zambia"
+      ],
+      "Zimbabwe": [
+        "Zimbabwe"
       ],
       "Åland Islands": [
         "Kepulauan Åland"
@@ -811,6 +1549,9 @@
       ]
     },
     "Cycle": {
+      "/month": [
+        "/bulan"
+      ],
       "/user per month": [
         "/pengguna per bulan"
       ]
@@ -823,6 +1564,9 @@
     "Downgrade account reason": {
       "Bugs or quality issue": [
         "Terdapat bug-bug yang mengganggu saya"
+      ],
+      "I use a different Proton account": [
+        "Saya menggunakan akun Proton lain"
       ],
       "Missing feature(s)": [
         "Terdapat fitur-fitur yang hilang"
@@ -1309,6 +2053,9 @@
       "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
         "Untuk Visa dan MasterCard, 3 digit di belakang kartu Anda. Untuk American Express, 4 digit di depan kartu Anda."
       ],
+      "Free": [
+        "Gratis"
+      ],
       "Free up some space or add more storage space.": [
         "Kosongkan beberapa ruang atau tambah ruang penyimpanan."
       ],
@@ -1383,6 +2130,9 @@
       ],
       "Learn how to log in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Pelajari cara untuk dapat masuk ke ${ VPN_APP_NAME } dengan aplikasi VPN milik pihak ketiga."
+      ],
+      "Learn more": [
+        "Pelajari lebih lanjut"
       ],
       "Link copied to clipboard": [
         "Tautan disalin ke clipboard"
@@ -1715,7 +2465,7 @@
         "Anda dapat menyesuaikan dan mengunduh faktur tagihan Anda untuk keperluan akuntansi."
       ],
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
-        "Anda hanya dapat membuka satu jendela percakapan dalam satu waktu. Harap tutup jendela-jendela percakapan lainnya yang sedang terbuka."
+        "Anda hanya dapat membuka satu jendela percakapan dalam satu waktu. Harap tutup jendela percakapan lainnya yang terbuka sebelum memulai percakapan baru."
       ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Anda dapat menggunakan informasi kredensial berikut untuk dapat tersambung ke server ${ VPN_APP_NAME } melalui aplikasi VPN open source milik pihak ketiga seperti Tunnelblick untuk macOS atau OpenVPN untuk GNU/Linux."
@@ -1925,6 +2675,12 @@
       "Attach screenshot(s)": [
         "Lampirkan tangkapan layar"
       ],
+      "Billing cycle": [
+        "Siklus tagihan"
+      ],
+      "Block malware only": [
+        "Blokir malware saja"
+      ],
       "Block malware, ads and trackers": [
         "Blokir malware, iklan dan pelacak"
       ],
@@ -1957,6 +2713,9 @@
       ],
       "Choose a name for the generated certificate file": [
         "Pilih sebuah nama untuk membuat file sertifikat"
+      ],
+      "Code": [
+        "Kode"
       ],
       "Code is 6 digits without spaces": [
         "Kode tersusun atas 6 digit angka tanpa spasi"
@@ -2002,6 +2761,9 @@
       ],
       "Default language": [
         "Bahasa bawaan"
+      ],
+      "Delete": [
+        "Hapus"
       ],
       "Device/certificate name": [
         "Nama perangkat/sertifikat"
@@ -2060,6 +2822,9 @@
       "Mailbox password": [
         "Kata sandi kotak masuk"
       ],
+      "Moderate NAT": [
+        "NAT Moderat"
+      ],
       "Name": [
         "Nama"
       ],
@@ -2077,6 +2842,9 @@
       ],
       "No filter": [
         "Tidak ada filter"
+      ],
+      "Non-standard ports": [
+        "Port non-standar"
       ],
       "Old login password": [
         "Kata sandi lama untuk masuk"
@@ -2135,6 +2903,9 @@
       "Recovery email address": [
         "Alamat email pemulihan"
       ],
+      "Recovery phone number": [
+        "Nomor telepon pemulihan"
+      ],
       "Recovery phrase": [
         "Frasa pemulihan"
       ],
@@ -2176,6 +2947,9 @@
       ],
       "Verification code": [
         "Kode verifikasi"
+      ],
+      "VPN Accelerator": [
+        "VPN Accelerator"
       ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Kami sedih tahu kamu pergi. Tolong jelaskan mengapa kamu pergi untuk membantu kami berbenah."
@@ -2242,6 +3016,9 @@
       "click here": [
         "klik di sini"
       ],
+      "Common sign in issues": [
+        "Masalah umum proses masuk"
+      ],
       "Common sign up issues": [
         "Masalah pendaftaran umum"
       ],
@@ -2254,14 +3031,26 @@
       "Learn more": [
         "Pelajari lebih lanjut"
       ],
+      "Need help?": [
+        "Butuh bantuan?"
+      ],
       "Not activated": [
         "Belum diaktifkan"
       ],
       "Pay invoice": [
         "Bayar tagihan"
       ],
+      "Privacy policy": [
+        "Kebijakan privasi"
+      ],
       "Request an invite": [
         "Minta undangan"
+      ],
+      "Reset password": [
+        "Atur ulang kata sandi"
+      ],
+      "Sign in": [
+        "Masuk"
       ],
       "Terms": [
         "Ketentuan"
@@ -2329,6 +3118,12 @@
       "Continue with Free": [
         "Continue with Free"
       ],
+      "Delete account": [
+        "Hapus akun"
+      ],
+      "Downgrade account": [
+        "Turunkan jenis akun"
+      ],
       "Get ${ BRAND_NAME } for free": [
         "Dapatkan ${ BRAND_NAME } secara cuma-cuma"
       ],
@@ -2337,6 +3132,9 @@
       ],
       "Get ${ upsellShortPlan.title }": [
         "Dapatkan ${ upsellShortPlan.title }"
+      ],
+      "Got it": [
+        "Dimengerti"
       ],
       "Keep ${ plan }": [
         "Pertahankan ${ plan }"
@@ -2413,6 +3211,12 @@
       "${ n } personal calendar": [
         "${ n } kalender personal"
       ],
+      "${ n } VPN connection": [
+        "${ n } koneksi VPN"
+      ],
+      "${ n } VPN connection per user": [
+        "${ n } koneksi VPN per pengguna"
+      ],
       "${ size } attachment size": [
         "Batas ukuran lampiran ${ size }"
       ],
@@ -2448,6 +3252,12 @@
       ],
       "Contact groups management": [
         "Pengelolaan grup kontak"
+      ],
+      "Custom email domains": [
+        "Domain email khusus"
+      ],
+      "DNS leak prevention": [
+        "Perlindungan terhadap kebocoran DNS"
       ],
       "Document editors (docs, sheets, slides)": [
         "Editor dokumen (doc, sheet, slide)"
@@ -2494,6 +3304,9 @@
       "NetShield malware and ad-blocker": [
         "Pemblokir malware dan iklan NetShield"
       ],
+      "P2P/BitTorrent": [
+        "P2P/BitTorrent"
+      ],
       "Password-protected Emails": [
         "Email yang terlindung oleh kata sandi"
       ],
@@ -2503,8 +3316,14 @@
       "Priority email support": [
         "Dukungan email prioritas"
       ],
+      "Priority support": [
+        "Dukungan prioritas"
+      ],
       "Router support": [
         "Dukungan router"
+      ],
+      "Secure Core servers": [
+        "Server Secure Core"
       ],
       "Send & receive invitations": [
         "Kirim & terima undangan"
@@ -2520,6 +3339,18 @@
       ],
       "Split tunneling (Android and Windows)": [
         "Split tunneling (Android dan Windows)"
+      ],
+      "Strict no-logs policy": [
+        "Kebijakan tanpa log yang ketat"
+      ],
+      "Team management": [
+        "Manajemen tim"
+      ],
+      "Tor over VPN": [
+        "Tor via VPN"
+      ],
+      "Two-factor authentication": [
+        "Otentikasi dua faktor"
       ],
       "Unlimited filters": [
         "Tanpa batasan jumlah filter"
@@ -2553,6 +3384,9 @@
       ]
     },
     "new_plans: heading": {
+      "Support": [
+        "Dukung"
+      ],
       "Team management": [
         "Manajemen tim"
       ]
@@ -2639,6 +3473,16 @@
         "Masa uji coba Anda akan berakhir ${ formattedTrialExpirationDate }"
       ]
     },
+    "new_plans: Label": {
+      "${ humanUsedSpace } of ${ humanMaxSpace }": [
+        "${ humanUsedSpace } dari ${ humanMaxSpace }"
+      ]
+    },
+    "new_plans: Plan frequency": {
+      "/month": [
+        "/bulan"
+      ]
+    },
     "new_plans: Plan time remaining": {
       "You still have ${ daysRemaining } day left on your ${ currentPlanName } account.": [
         "Anda masih memiliki ${ daysRemaining } hari tersisa pada langganan ${ currentPlanName } Anda."
@@ -2648,8 +3492,14 @@
       "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }.": [
         "Dengan membuat akun ${ BRAND_NAME }, Anda menyatakan diri setuju pada ${ terms } kami."
       ],
+      "Payment details": [
+        "Rincian pembayaran"
+      ],
       "Save your email address or phone number to use for verification if you need to reset your account.": [
         "Simpan alamat email atau nomor telepon Anda untuk keperluan verifikasi apabila Anda perlu mengatur ulang akun Anda ke depannya."
+      ],
+      "Subscription": [
+        "Berlangganan"
       ],
       "terms and conditions": [
         "syarat dan ketentuan"
@@ -2886,6 +3736,18 @@
       ],
       "Get 5 additional email addresses per user": [
         "Dapatkan 5 alamat email tambahan per pengguna"
+      ],
+      "Priority support": [
+        "Dukungan prioritas"
+      ],
+      "Support for 1 custom email domain": [
+        "Dukungan 1 alamat email dengan domain khusus"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Tanpa batasan jumlah folder, label, dan filter"
+      ],
+      "Unlimited messages": [
+        "Tanpa batasan jumlah pesan"
       ]
     },
     "Notification": {
@@ -3031,6 +3893,9 @@
       ]
     },
     "Recovery Email": {
+      "Cancel": [
+        "Batal"
+      ],
       "Email address has been verified.": [
         "Alamat email telah diverifikasi."
       ],
@@ -3054,11 +3919,20 @@
       ]
     },
     "Recovery method": {
+      "Email": [
+        "Email"
+      ],
+      "Phone number": [
+        "Nomor telepon"
+      ],
       "Phrase": [
         "Frasa"
       ]
     },
     "Recovery Phone": {
+      "Cancel": [
+        "Batal"
+      ],
       "Phone number has been verified.": [
         "Nomor telepon telah diverifikasi."
       ],
@@ -3067,6 +3941,9 @@
       ],
       "Verify by SMS": [
         "Verifikasi melalui SMS"
+      ],
+      "Verify now": [
+        "Verifikasi"
       ],
       "Verify recovery phone?": [
         "Verifikasi nomor telepon pemulihan?"
@@ -3078,6 +3955,12 @@
     "Signup label": {
       "Display name": [
         "Nama tampilan"
+      ],
+      "Email": [
+        "Email"
+      ],
+      "Username": [
+        "Nama Pengguna"
       ]
     },
     "Spotlight": {
@@ -3126,6 +4009,9 @@
       "${ n } high-speed VPN connection per user": [
         "${ n } koneksi VPN berkecepatan tinggi per pengguna"
       ],
+      "${ n } VPN connection": [
+        "${ n } koneksi VPN"
+      ],
       "${ n } VPN connection per user": [
         "${ n } koneksi VPN per pengguna"
       ],
@@ -3163,6 +4049,11 @@
     "Subscription price": {
       "For": [
         "Untuk"
+      ]
+    },
+    "Subscription saving": {
+      "Save": [
+        "Simpan"
       ]
     },
     "Subtitle for trial plan": {
@@ -3252,6 +4143,17 @@
     "Suffix": {
       "/month": [
         "/bulan"
+      ],
+      "/user per month": [
+        "/pengguna per bulan"
+      ]
+    },
+    "Suffix for price": {
+      "/month": [
+        "/bulan"
+      ],
+      "per month": [
+        "per bulan"
       ]
     },
     "Tab subscription modal": {
@@ -3314,6 +4216,9 @@
       ],
       "4. Select a server to connect to": [
         "4. Pilih sebuah server untuk disambungkan"
+      ],
+      "Account": [
+        "Akun"
       ],
       "Account suspended": [
         "Akun ditangguhkan"
@@ -3405,6 +4310,9 @@
       "Date": [
         "Tanggal"
       ],
+      "Delete": [
+        "Hapus"
+      ],
       "Delete account": [
         "Hapus akun"
       ],
@@ -3417,6 +4325,9 @@
       "Disable two-factor authentication": [
         "Nonaktifkan otentikasi dua-faktor"
       ],
+      "Downgrade account": [
+        "Turunkan jenis akun"
+      ],
       "Download ${ VPN_APP_NAME }": [
         "Unduh ${ VPN_APP_NAME }"
       ],
@@ -3426,6 +4337,9 @@
       "Edit credit/debit card": [
         "Ubah kartu kredit/debit"
       ],
+      "Email": [
+        "Email"
+      ],
       "Email subscriptions": [
         "Langganan email"
       ],
@@ -3434,6 +4348,9 @@
       ],
       "Find email or username": [
         "Cari email atau nama pengguna"
+      ],
+      "General": [
+        "Umum"
       ],
       "Get ${ vpnPlus } to access all servers": [
         "Dapatkan ${ vpnPlus } untuk mengakses seluruh server"
@@ -3452,6 +4369,9 @@
       ],
       "Invoices": [
         "Tagihan"
+      ],
+      "Language": [
+        "Bahasa"
       ],
       "Login password": [
         "Kata sandi masuk"
@@ -3473,6 +4393,9 @@
       ],
       "Open pagination": [
         "Buka paginasi"
+      ],
+      "OpenVPN / IKEv2 username": [
+        "Nama pengguna OpenVPN / IKEv2"
       ],
       "OpenVPN configuration files": [
         "Berkas konfigurasi OpenVPN"
@@ -3519,11 +4442,20 @@
       "Processing...": [
         "Memproses..."
       ],
+      "Recommended": [
+        "Direkomendasikan"
+      ],
       "Recovery": [
         "Pemulihan"
       ],
       "Report a problem": [
         "Laporkan masalah"
+      ],
+      "Request new code": [
+        "Minta kode baru"
+      ],
+      "Reset password": [
+        "Atur ulang kata sandi"
       ],
       "Reset password?": [
         "Atur ulang kata sandi?"
@@ -3546,6 +4478,12 @@
       "Set up two-factor authentication": [
         "Aktifkan pemeriksaan dua-faktor"
       ],
+      "Settings": [
+        "Pengaturan"
+      ],
+      "Sign in": [
+        "Masuk"
+      ],
       "Sign in again to continue": [
         "Masuk lagi untuk melanjutkan"
       ],
@@ -3567,6 +4505,9 @@
       "TV log in": [
         "Masuk TV"
       ],
+      "Two-factor authentication": [
+        "Otentikasi dua faktor"
+      ],
       "Type": [
         "Jenis"
       ],
@@ -3576,8 +4517,14 @@
       "Unsupported browser": [
         "Peramban tidak didukung"
       ],
+      "Username": [
+        "Nama Pengguna"
+      ],
       "Verification": [
         "Verifikasi"
+      ],
+      "Warning": [
+        "Peringatan"
       ],
       "Warning!": [
         "Peringatan!"
