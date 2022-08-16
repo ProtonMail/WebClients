@@ -119,7 +119,7 @@ import EventPopover from '../../components/events/EventPopover';
 import MorePopoverEvent from '../../components/events/MorePopoverEvent';
 import { modifyEventModelPartstat } from '../../helpers/attendees';
 import { extractInviteEmails } from '../../helpers/invite';
-import { getIsSideApp } from '../../helpers/views';
+import { getIsCalendarAppInDrawer } from '../../helpers/views';
 import { OpenedMailEvent } from '../../hooks/useGetOpenedMailEvents';
 import { useOpenEventsFromMail } from '../../hooks/useOpenEventsFromMail';
 import {
@@ -266,6 +266,7 @@ const InteractiveCalendarView = ({
 
     onClickDate,
     onChangeDate,
+    onClickToday,
     onInteraction,
 
     calendars,
@@ -296,7 +297,7 @@ const InteractiveCalendarView = ({
     const isSavingEvent = useRef(false);
     const sentryLogsIDs = useInstance(() => new Set<string>());
 
-    const isSideApp = getIsSideApp(view);
+    const isDrawerApp = getIsCalendarAppInDrawer(view);
 
     const { modalsMap, closeModal, updateModal } = useModalsMap<ModalsMap>({
         createEventModal: { isOpen: false },
@@ -362,7 +363,7 @@ const InteractiveCalendarView = ({
         getInitialTargetEventData(eventTargetActionRef, dateRange)
     );
 
-    // Handle events coming from outside if calendar app is open in the side panel
+    // Handle events coming from outside if calendar app is open in the drawer
     useOpenEventsFromMail({
         calendars,
         addresses,
@@ -395,7 +396,7 @@ const InteractiveCalendarView = ({
     const isDuplicatingEvent = !!modalsMap.createEventModal.props?.isDuplicating;
     const isInTemporaryBlocking =
         tmpData && tmpDataOriginal && getHasDoneChanges(tmpData, tmpDataOriginal, isEditingEvent);
-    // If opening the event from mail in the side app (when preventPopover is true), do not disable scroll
+    // If opening the event from mail in the drawer (when preventPopover is true), do not disable scroll
     const isScrollDisabled = !!interactiveData && !temporaryEvent && !targetEventData?.preventPopover;
     const prodId = getProdId(config);
 
@@ -1629,13 +1630,14 @@ const InteractiveCalendarView = ({
                 events={sortedEventsWithTemporary}
                 onClickDate={onClickDate}
                 onChangeDate={onChangeDate}
+                onClickToday={onClickToday}
                 formatTime={formatTime}
                 formatDate={formatDate}
                 weekdays={weekdays}
                 weekdaysSingle={weekdaysSingle}
                 timeGridViewRef={timeGridViewRef}
                 isScrollDisabled={isScrollDisabled}
-                isSideApp={isSideApp}
+                isDrawerApp={isDrawerApp}
             />
             <Popover
                 containerEl={document.body}
@@ -1651,14 +1653,14 @@ const InteractiveCalendarView = ({
                     if (targetEvent.id === 'tmp' && tmpData) {
                         return (
                             <CreateEventPopover
-                                isDraggingDisabled={isNarrow || isSideApp}
+                                isDraggingDisabled={isNarrow || isDrawerApp}
                                 isNarrow={isNarrow}
                                 isCreateEvent={isCreatingEvent}
                                 style={style}
                                 popoverRef={ref}
                                 model={tmpData}
                                 addresses={addresses}
-                                displayWeekNumbers={!isSideApp && displayWeekNumbers}
+                                displayWeekNumbers={!isDrawerApp && displayWeekNumbers}
                                 weekStartsOn={weekStartsOn}
                                 setModel={handleSetTemporaryEventModel}
                                 onSave={async (inviteActions: InviteActions) => {
@@ -1824,7 +1826,7 @@ const InteractiveCalendarView = ({
             {!!tmpData && (
                 <CreateEventModal
                     isNarrow={isNarrow}
-                    displayWeekNumbers={!isSideApp && displayWeekNumbers}
+                    displayWeekNumbers={!isDrawerApp && displayWeekNumbers}
                     weekStartsOn={weekStartsOn}
                     tzid={tzid}
                     model={tmpData}
@@ -1873,6 +1875,7 @@ const InteractiveCalendarView = ({
                     }}
                     isCreateEvent={isCreatingEvent}
                     addresses={addresses}
+                    isDrawerApp={isDrawerApp}
                 />
             )}
         </Dropzone>

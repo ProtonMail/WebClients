@@ -170,7 +170,6 @@ const CalendarEventDefaultsSection = ({ calendar, bootstrap, isEditDisabled }: P
                                 });
                                 setHasTouchedPartDayNotifications(true);
                             }}
-                            hasDeleteColor={false}
                         />
                         <div className="mt0-25">
                             <Button
@@ -210,7 +209,6 @@ const CalendarEventDefaultsSection = ({ calendar, bootstrap, isEditDisabled }: P
                                 });
                                 setHasTouchedFullDayNotifications(true);
                             }}
-                            hasDeleteColor={false}
                         />
                         <div className="mt0-25">
                             <Button

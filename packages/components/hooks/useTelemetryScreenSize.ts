@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-import { useApi, useSideApp } from '@proton/components/hooks/index';
+import { useApi, useDrawer } from '@proton/components/hooks/index';
 import { TelemetryMeasurementGroups, TelemetryScreenSizeEvents } from '@proton/shared/lib/api/telemetry';
 import { SECOND } from '@proton/shared/lib/constants';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
@@ -8,7 +8,7 @@ import debounce from '@proton/utils/debounce';
 
 const useTelemetryScreenSize = () => {
     const api = useApi();
-    const { parentApp } = useSideApp();
+    const { parentApp } = useDrawer();
 
     const sendScreenSizeToTelemetry = async (event: TelemetryScreenSizeEvents) => {
         // If app is displayed inside an iframe, we don't want to send the screensize

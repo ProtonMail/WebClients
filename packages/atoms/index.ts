@@ -3,6 +3,7 @@ export * from './Button';
 export * from './Card';
 export * from './CircleLoader';
 export * from './Donut';
+export * from './DrawerIcons';
 export * from './Kbd';
 export * from './NotificationDot';
 export * from './Slider';

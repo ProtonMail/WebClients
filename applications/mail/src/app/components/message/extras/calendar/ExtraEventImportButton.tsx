@@ -3,15 +3,15 @@ import { Dispatch, SetStateAction, useCallback } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { useLoading, useNotifications, useSideApp } from '@proton/components';
+import { useLoading, useNotifications, useDrawer } from '@proton/components';
 import { useAddEvents } from '@proton/components/containers/calendar/hooks';
 import { getEventWithCalendarAlarms } from '@proton/shared/lib/calendar/mailIntegration/invite';
 import { APPS, CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
+import { postMessageToIframe } from '@proton/shared/lib/drawer/helpers';
+import { DRAWER_EVENTS } from '@proton/shared/lib/drawer/interfaces';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { RequireSome } from '@proton/shared/lib/interfaces';
 import { ImportedEvent } from '@proton/shared/lib/interfaces/calendar';
-import { postMessageToIframe } from '@proton/shared/lib/sideApp/helpers';
-import { SIDE_APP_EVENTS } from '@proton/shared/lib/sideApp/models';
 import noop from '@proton/utils/noop';
 
 import { InvitationModel, UPDATE_ACTION, getDisableButtons } from '../../../../helpers/calendar/invite';
@@ -25,7 +25,7 @@ const ExtraEventImportButton = ({ model, setModel }: Props) => {
     const [loading, withLoading] = useLoading();
     const addEvents = useAddEvents();
     const { createNotification } = useNotifications();
-    const { sideAppUrl } = useSideApp();
+    const { appInView } = useDrawer();
 
     const {
         calendarData,
@@ -73,10 +73,10 @@ const ExtraEventImportButton = ({ model, setModel }: Props) => {
             });
             if (importedEvents.length) {
                 handleSuccess(importedEvents);
-                if (sideAppUrl) {
+                if (appInView === APPS.PROTONCALENDAR) {
                     postMessageToIframe(
                         {
-                            type: SIDE_APP_EVENTS.SIDE_APP_CALL_CALENDAR_EVENT_MANAGER,
+                            type: DRAWER_EVENTS.CALL_CALENDAR_EVENT_MANAGER,
                             payload: { calendarID: calendar.ID },
                         },
                         APPS.PROTONCALENDAR

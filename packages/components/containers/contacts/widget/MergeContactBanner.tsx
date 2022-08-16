@@ -1,21 +1,34 @@
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
-import { Icon, InlineLinkButton } from '../../../components';
+import { InlineLinkButton } from '../../../components';
 
 interface Props {
     onMerge: () => void;
+    countMergeableContacts: number;
 }
 
-const MergeContactBanner = ({ onMerge }: Props) => {
+const MergeContactBanner = ({ onMerge, countMergeableContacts }: Props) => {
     const mergeAction = (
-        <InlineLinkButton onClick={onMerge} key="mergeAction" data-testid="contacts:merge-contacts-button">{c('Action')
-            .t`Merge`}</InlineLinkButton>
+        <InlineLinkButton
+            className="ml0-25"
+            onClick={onMerge}
+            key="mergeAction"
+            data-testid="contacts:merge-contacts-button"
+        >{c('Action').t`Merge`}</InlineLinkButton>
+    );
+
+    const mergeText = c('Success').ngettext(
+        msgid`${countMergeableContacts} contact look identical.`,
+        `${countMergeableContacts} contacts look identical.`,
+        countMergeableContacts
     );
 
     return (
-        <div className="pl2 pr2 pt1 pb1 bg-weak flex flex-align-items-center flex-nowrap border-bottom">
-            <Icon name="users-merge" className="mr0-5" />
-            <span>{c('Info, no need for singular').jt`Multiple contacts look identical. ${mergeAction}`}</span>
+        <div className="px1 py0-5 bg-weak border-bottom">
+            <span>
+                {mergeText}
+                {mergeAction}
+            </span>
         </div>
     );
 };

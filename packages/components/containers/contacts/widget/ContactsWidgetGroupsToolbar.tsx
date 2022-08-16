@@ -6,7 +6,7 @@ import { Button } from '@proton/atoms';
 import { Recipient, SimpleMap } from '@proton/shared/lib/interfaces';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 
-import { Checkbox, Icon, Tooltip } from '../../../components';
+import { ButtonGroup, Checkbox, Icon, Tooltip } from '../../../components';
 import { CustomAction } from './types';
 
 interface Props {
@@ -20,7 +20,8 @@ interface Props {
     customActions: CustomAction[];
     groupsEmailsMap: SimpleMap<ContactEmail[]>;
     recipients: Recipient[];
-    onClose: () => void;
+    onClose?: () => void;
+    isDrawer?: boolean;
 }
 
 const ContactsWidgetGroupsToolbar = ({
@@ -35,6 +36,7 @@ const ContactsWidgetGroupsToolbar = ({
     groupsEmailsMap,
     recipients,
     onClose,
+    isDrawer = false,
 }: Props) => {
     const selectedCount = selected.length;
     const handleCheck = ({ target }: ChangeEvent<HTMLInputElement>) => onCheckAll(target.checked);
@@ -52,10 +54,9 @@ const ContactsWidgetGroupsToolbar = ({
     return (
         <div className="flex flex-items-align-center">
             <Tooltip title={allChecked ? c('Action').t`Deselect all` : c('Action').t`Select all`}>
-                <span className="mr1 flex">
+                <span className="ml0-5 mr1 flex">
                     <Checkbox
                         id="id_contact-widget-select-all"
-                        className="ml0-5"
                         checked={allChecked}
                         onChange={handleCheck}
                         data-testid="contacts:select-all-contact-group"
@@ -65,44 +66,48 @@ const ContactsWidgetGroupsToolbar = ({
                     </label>
                 </span>
             </Tooltip>
-            {onCompose ? (
-                <Tooltip title={c('Action').t`Compose`}>
+            <ButtonGroup>
+                {onCompose ? (
+                    <Tooltip title={c('Action').t`Compose`}>
+                        <Button
+                            icon
+                            className="inline-flex pt0-5 pb0-5"
+                            onClick={onCompose}
+                            disabled={noContactInSelected}
+                            data-testid="contacts:compose-contact-group"
+                        >
+                            <Icon name="envelope" alt={c('Action').t`Compose`} />
+                        </Button>
+                    </Tooltip>
+                ) : null}
+                {customActions.map((action) =>
+                    action.render({ groupsEmailsMap, recipients, noSelection, onClose, selected })
+                )}
+                <Tooltip title={deleteText}>
                     <Button
                         icon
-                        className="inline-flex mr0-5 pt0-5 pb0-5"
-                        onClick={onCompose}
-                        disabled={noContactInSelected}
-                        data-testid="contacts:compose-contact-group"
+                        className="inline-flex pt0-5 pb0-5"
+                        onClick={onDelete}
+                        disabled={noSelection}
+                        data-testid="contacts:delete-contact-group"
                     >
-                        <Icon name="envelope" alt={c('Action').t`Compose`} />
+                        <Icon name="trash" />
                     </Button>
                 </Tooltip>
-            ) : null}
-            {customActions.map((action) =>
-                action.render({ groupsEmailsMap, recipients, noSelection, onClose, selected })
-            )}
-            <Tooltip title={deleteText}>
-                <Button
-                    icon
-                    className="inline-flex pt0-5 pb0-5"
-                    onClick={onDelete}
-                    disabled={noSelection}
-                    data-testid="contacts:delete-contact-group"
-                >
-                    <Icon name="trash" />
-                </Button>
-            </Tooltip>
-            <Tooltip title={c('Action').t`Add new group`}>
-                <Button
-                    icon
-                    color="norm"
-                    className="mlauto inline-flex pt0-5 pb0-5"
-                    onClick={onCreate}
-                    data-testid="contacts:add-contact-group"
-                >
-                    <Icon name="users-plus" alt={c('Action').t`Add new group`} />
-                </Button>
-            </Tooltip>
+                {!isDrawer && (
+                    <Tooltip title={c('Action').t`Add new group`}>
+                        <Button
+                            icon
+                            color="norm"
+                            className="mlauto inline-flex pt0-5 pb0-5"
+                            onClick={onCreate}
+                            data-testid="contacts:add-contact-group"
+                        >
+                            <Icon name="users-plus" alt={c('Action').t`Add new group`} />
+                        </Button>
+                    </Tooltip>
+                )}
+            </ButtonGroup>
         </div>
     );
 };

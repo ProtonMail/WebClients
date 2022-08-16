@@ -1,7 +1,5 @@
-import { c } from 'ttag';
-
-import { ButtonLike } from '@proton/atoms';
-import { Button } from '@proton/atoms';
+import { Button, ButtonLike } from '@proton/atoms';
+import getNotificationsTexts from '@proton/components/containers/calendar/notifications/getNotificationsTexts';
 import { NotificationModel } from '@proton/shared/lib/interfaces/calendar/Notification';
 import addItem from '@proton/utils/addItem';
 import clsx from '@proton/utils/clsx';
@@ -25,7 +23,6 @@ interface Props {
     defaultNotification: NotificationModel;
     disabled?: boolean;
     onChange: (value: NotificationModel[]) => void;
-    hasDeleteColor?: boolean;
 }
 
 const Notifications = ({
@@ -39,9 +36,8 @@ const Notifications = ({
     defaultNotification,
     disabled,
     onChange,
-    hasDeleteColor = true,
 }: Props) => {
-    const addNotificationText = c('Action').t`Add notification`;
+    const { addNotificationText, addNotificationTitle, removeNotificationText } = getNotificationsTexts();
 
     const noNotificationsButtonClassName = fullWidth ? 'mt0-5 on-mobile-mt1' : 'on-tablet-mt1';
 
@@ -59,9 +55,9 @@ const Notifications = ({
                             fullWidth={fullWidth}
                             notification={notification}
                             disabled={disabled}
-                            onChange={(newNotification) => onChange(updateItem(notifications, index, newNotification))}
+                            onEdit={(newNotification) => onChange(updateItem(notifications, index, newNotification))}
                         />
-                        <Tooltip title={c('Action').t`Remove this notification`}>
+                        <Tooltip title={removeNotificationText}>
                             <ButtonLike
                                 data-test-id="delete-notification"
                                 className="flex flex-item-noshrink ml0-5"
@@ -70,10 +66,10 @@ const Notifications = ({
                                 icon
                                 type="button"
                                 shape="ghost"
-                                color={hasDeleteColor ? 'norm' : undefined}
+                                color="norm"
                             >
                                 <Icon name="trash" className="flex-item-noshrink" />
-                                <span className="sr-only">{c('Action').t`Remove this notification`}</span>
+                                <span className="sr-only">{removeNotificationText}</span>
                             </ButtonLike>
                         </Tooltip>
                     </div>
@@ -88,7 +84,7 @@ const Notifications = ({
                     shape={addIcon ? 'ghost' : 'underline'}
                     color={addIcon ? 'weak' : 'norm'}
                     data-test-id="add-notification"
-                    title={c('Title').t`Add another notification to remind you of this event`}
+                    title={addNotificationTitle}
                     disabled={disabled}
                     onClick={() =>
                         onChange(addItem(notifications, { ...defaultNotification, id: generateUID('notification') }))

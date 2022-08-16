@@ -11,7 +11,7 @@ export enum CONTACT_WIDGET_TABS {
 }
 
 export interface CustomActionRenderProps {
-    onClose: () => void;
+    onClose?: () => void;
     noSelection: boolean;
     selected: string[];
     contactList?: ReturnType<typeof useContactList>;

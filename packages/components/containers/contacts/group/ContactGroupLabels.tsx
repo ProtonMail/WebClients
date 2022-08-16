@@ -9,9 +9,18 @@ interface Props {
     isStacked?: boolean;
     className?: string;
     onDetails: (contactGroupID: string) => void;
+    maxNumber?: number;
+    leftToRight?: boolean;
 }
 
-const ContactGroupLabels = ({ contactGroups, isStacked = true, className, onDetails }: Props) => {
+const ContactGroupLabels = ({
+    contactGroups,
+    isStacked = true,
+    className,
+    onDetails,
+    leftToRight,
+    maxNumber,
+}: Props) => {
     const labels = contactGroups.reduce((acc: LabelDescription[], contactGroup: ContactGroup) => {
         return contactGroup
             ? [
@@ -29,7 +38,15 @@ const ContactGroupLabels = ({ contactGroups, isStacked = true, className, onDeta
             : acc;
     }, []);
 
-    return <LabelStack className={className} labels={labels} isStacked={isStacked} />;
+    return (
+        <LabelStack
+            className={className}
+            labels={labels}
+            isStacked={isStacked}
+            leftToRight={leftToRight}
+            maxNumber={maxNumber}
+        />
+    );
 };
 
 export default ContactGroupLabels;

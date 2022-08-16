@@ -81,7 +81,7 @@ export const getScrollParent = (element: HTMLElement | null | undefined, include
  * Base font size on the body is 14, default browser font size is 16,
  * so we take the body computed font size and find computed root's one
  */
-export const rootFontSize = (parseInt(window.getComputedStyle(document.body).fontSize, 10) * 16) / 14;
+export const rootFontSize = ((parseInt(window.getComputedStyle(document.body).fontSize, 10) || 14) * 16) / 14;
 
 /**
  * Firefox <58 does not support block: 'nearest' and just throws

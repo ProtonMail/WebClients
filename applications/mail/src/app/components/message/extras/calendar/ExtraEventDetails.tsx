@@ -71,7 +71,7 @@ const ExtraEventDetails = ({ model, weekStartsOn }: Props) => {
                     icon={<CalendarSelectIcon color={calendar.Color} />}
                     labelClassName="inline-flex pt0-25"
                 >
-                    {calendar.Name}
+                    <span className="text-break">{calendar.Name}</span>
                 </IconRow>
             )}
             {!!trimmedLocation && (

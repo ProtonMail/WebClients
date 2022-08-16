@@ -54,6 +54,7 @@ import loadEventID from './loadEventID';
 interface Props<T, M extends Model<T>, E, EvtM extends Model<E>> {
     locales?: TtagLocaleMap;
     onInit?: () => void;
+    onUserSettings?: (userSettings: UserSettings) => void;
     onLogout: () => void;
     fallback?: ReactNode;
     preloadModels?: M[];
@@ -71,6 +72,7 @@ const StandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>>({
     locales = {},
     onLogout,
     onInit,
+    onUserSettings,
     fallback,
     preloadModels = [],
     preloadFeatures = [],
@@ -126,6 +128,7 @@ const StandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>>({
             const [userSettings] = result as [UserSettings];
 
             cache.set(WELCOME_FLAGS_CACHE_KEY, getWelcomeFlagsValue(userSettings));
+            onUserSettings?.(userSettings);
 
             setSentryEnabled(!!userSettings.CrashReports);
             setMetricsEnabled(!!userSettings.Telemetry);

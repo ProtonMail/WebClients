@@ -19,6 +19,7 @@
 	}
 
 	&-item {
+		min-inline-size: var(--item-narrow);
 		max-inline-size: var(--item-wide);
 		margin: 0.125em;
 		overflow: hidden;

@@ -53,7 +53,7 @@
 
 	@include spacing-generator(
 		// coordinates
-		(m, mt, mr, mb, ml),
+		(m, mt, mr, mb, ml, mx, my),
 		// margin sizes
 		(0, 0.5, 1, 2),
 		// prefix
@@ -62,7 +62,7 @@
 
 	@include spacing-generator(
 		// coordinates
-		(p, pt, pr, pb, pl),
+		(p, pt, pr, pb, pl, px, py),
 		// padding sizes
 		(0, 1, 2),
 		// prefix
@@ -95,12 +95,20 @@
 			}
 		}
 
+		&-order-1 {
+			order: 1;
+		}
+
 		&-w25 {
 			inline-size: 25%;
 		}
 
 		&-w100 {
 			inline-size: 100%;
+		}
+
+		&-min-wauto {
+			min-inline-size: auto;
 		}
 
 		&-max-w100 {
@@ -148,7 +156,7 @@
 
 	@include spacing-generator(
 		// coordinates
-		(m, mt, mr, mb, ml),
+		(m, mt, mr, mb, ml, mx, my),
 		// margin sizes
 		(0, 0.25, 0.5, 1, 1.25, 1.5, 2, 3.5),
 		// prefix
@@ -157,7 +165,7 @@
 
 	@include spacing-generator(
 		// coordinates
-		(p, pt, pr, pb, pl, px),
+		(p, pt, pr, pb, pl, px, py),
 		// padding sizes
 		(0, 0.25, 0.5, 1, 2),
 		// prefix
@@ -238,6 +246,10 @@
 			flex-wrap: wrap;
 		}
 
+		&-order-1 {
+			order: 1;
+		}
+
 		&-flex-gap-0 {
 			gap: 0;
 		}
@@ -252,6 +264,10 @@
 
 		&-min-w100 {
 			min-inline-size: 100%;
+		}
+
+		&-min-wauto {
+			min-inline-size: auto;
 		}
 
 		&-min-h0 {
@@ -368,6 +384,14 @@
 
 		&-flex-item-grow-1-5 {
 			flex-grow: 1.5;
+		}
+
+		&-flex-item-grow-3 {
+			flex-grow: 3;
+		}
+
+		&-flex-item-grow-custom {
+			flex-grow: var(--xs-grow-custom);
 		}
 
 		&-hide-td3 td:nth-child(3) {

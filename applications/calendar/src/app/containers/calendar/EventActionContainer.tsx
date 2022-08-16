@@ -21,11 +21,11 @@ const { VIEW } = ACTION_VIEWS;
 interface Props {
     addresses: Address[];
     calendars: VisualCalendar[];
-    sideAppView?: VIEWS;
+    drawerView?: VIEWS;
     tzid: string;
     eventTargetActionRef: MutableRefObject<EventTargetAction | undefined>;
 }
-const EventActionContainer = ({ tzid, sideAppView, addresses, calendars, eventTargetActionRef }: Props) => {
+const EventActionContainer = ({ tzid, drawerView, addresses, calendars, eventTargetActionRef }: Props) => {
     const { createNotification } = useNotifications();
     const history = useHistory();
     const openEvent = useOpenEvent();
@@ -34,7 +34,7 @@ const EventActionContainer = ({ tzid, sideAppView, addresses, calendars, eventTa
         const run = async () => {
             const params = new URLSearchParams(window.location.search);
             const action = params.get('Action');
-            const possiblySideAppView = sideAppView ? `/${VIEW_URL_PARAMS_VIEWS_CONVERSION[sideAppView]}` : '';
+            const possiblyDrawerView = drawerView ? `/${VIEW_URL_PARAMS_VIEWS_CONVERSION[drawerView]}` : '';
 
             if (action === VIEW) {
                 const handleLinkError = () => {
@@ -42,15 +42,15 @@ const EventActionContainer = ({ tzid, sideAppView, addresses, calendars, eventTa
                         type: 'error',
                         text: c('Error').t`Invalid link to the event`,
                     });
-                    history.replace(`${possiblySideAppView}/`);
+                    history.replace(`${possiblyDrawerView}/`);
                 };
 
                 const handleOtherError = () => {
-                    history.replace(`${possiblySideAppView}/`);
+                    history.replace(`${possiblyDrawerView}/`);
                 };
 
                 const handleGotoRange = (date: Date) => {
-                    const viewString = sideAppView ? possiblySideAppView : '/week';
+                    const viewString = drawerView ? possiblyDrawerView : '/week';
                     history.replace(
                         `${viewString}/${[date.getUTCFullYear(), date.getUTCMonth() + 1, date.getUTCDate()].join('/')}`
                     );
@@ -74,7 +74,7 @@ const EventActionContainer = ({ tzid, sideAppView, addresses, calendars, eventTa
                         isAllDay,
                         isAllPartDay,
                         startInTzid,
-                        preventPopover: !!sideAppView, // If the app is a side app, we want to prevent the popover opening
+                        preventPopover: !!drawerView, // If the app is a drawer app, we want to prevent the popover opening
                     };
                     return handleGotoRange(startInTzid);
                 };
@@ -89,7 +89,7 @@ const EventActionContainer = ({ tzid, sideAppView, addresses, calendars, eventTa
                         isAllDay,
                         isAllPartDay,
                         startInTzid,
-                        preventPopover: !!sideAppView, // If the app is a side app, we want to prevent the popover opening
+                        preventPopover: !!drawerView, // If the app is a drawer app, we want to prevent the popover opening
                     };
                     return handleGotoRange(startInTzid);
                 };

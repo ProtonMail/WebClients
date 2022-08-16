@@ -3,7 +3,7 @@
 		// Specificity -_-v
 		position: fixed;
 		inset-block-end: 1em;
-		inset-inline-end: 1.6em;
+		inset-inline-end: var(--right, 1.6em);
 		z-index: $layer-floating-action-buttons;
 		block-size: rem(66);
 		inline-size: rem(66);

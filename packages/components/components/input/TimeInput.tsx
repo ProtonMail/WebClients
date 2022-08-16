@@ -13,7 +13,7 @@ import Dropdown from '../dropdown/Dropdown';
 import DropdownMenu from '../dropdown/DropdownMenu';
 import DropdownMenuButton from '../dropdown/DropdownMenuButton';
 import { usePopperAnchor } from '../popper';
-import Input, { Props as InputProps } from './Input';
+import InputTwo, { InputTwoProps as InputProps } from '../v2/input/Input';
 
 const toFormatted = (value: Date, locale: Locale) => {
     return format(value, 'p', { locale });
@@ -229,7 +229,7 @@ const TimeInput = ({
 
     return (
         <>
-            <Input
+            <InputTwo
                 type="text"
                 ref={anchorRef}
                 onFocus={() => open()}

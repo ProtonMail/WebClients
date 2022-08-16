@@ -1,4 +1,11 @@
-import { LoaderPage, StandardPrivateApp, useProtonMailMigrationRedirect } from '@proton/components';
+import {
+    FeatureCode,
+    LoaderPage,
+    StandardPrivateApp,
+    useDrawer,
+    useProtonMailMigrationRedirect,
+} from '@proton/components';
+import { DRAWER_VISIBILITY } from '@proton/shared/lib/interfaces';
 import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 import {
     AddressesModel,
@@ -24,14 +31,18 @@ const PrivateAppInner = ({ onLogout, locales }: Props) => {
 
     useProtonMailMigrationRedirect();
 
+    const { setShowDrawerSidebar } = useDrawer();
+
     return (
         <StandardPrivateApp
             locales={locales}
             onLogout={onLogout}
             preloadModels={[UserModel, AddressesModel]}
+            preloadFeatures={[FeatureCode.Drawer]}
             eventModels={[UserModel, UserSettingsModel, AddressesModel, ContactsModel, ContactEmailsModel, LabelsModel]}
             fallback={<LoaderPage />}
             onInit={loadUserSettings}
+            onUserSettings={({ HideSidePanel }) => setShowDrawerSidebar(HideSidePanel === DRAWER_VISIBILITY.SHOW)}
             noModals
             app={getAppContainer}
         />

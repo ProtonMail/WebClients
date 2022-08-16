@@ -5,17 +5,13 @@ import { Route, Switch } from 'react-router-dom';
 import {
     ErrorBoundary,
     FeatureCode,
-    Logo,
     ModalsChildren,
     StandardErrorPage,
-    Tooltip,
     useActiveBreakpoint,
     useFeatures,
-    useSideApp,
 } from '@proton/components';
 import { useCalendarsInfoCoreListener } from '@proton/components/containers/eventManager/calendar/useCalendarsInfoListener';
 import useTelemetryScreenSize from '@proton/components/hooks/useTelemetryScreenSize';
-import { APPS, CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
 
 import { MAIN_ROUTE_PATH } from './constants';
 import ComposerContainer from './containers/ComposerContainer';
@@ -29,12 +25,10 @@ import { store } from './logic/store';
 const MainContainer = () => {
     useTelemetryScreenSize();
 
-    const { handleClickSideApp } = useSideApp();
     const breakpoints = useActiveBreakpoint();
     const mailContentRef = useRef<HTMLDivElement>(null);
-    const [{ feature: featureSw, loading: loadingSw }, { feature: calendarViewInMailFeature }] = useFeatures([
+    const [{ feature: featureSw, loading: loadingSw }] = useFeatures([
         FeatureCode.MailServiceWorker,
-        FeatureCode.CalendarViewInMail,
         FeatureCode.EarlyAccessScope,
         FeatureCode.ScheduledSend,
         FeatureCode.SpotlightScheduledSend,
@@ -75,18 +69,6 @@ const MainContainer = () => {
 
     useCalendarsInfoCoreListener();
 
-    const rightSidebarContent = calendarViewInMailFeature?.Value && (
-        <Tooltip title={CALENDAR_APP_NAME} originalPlacement="left">
-            <button
-                className="side-app-link flex border rounded"
-                type="button"
-                onClick={handleClickSideApp(APPS.PROTONCALENDAR)}
-            >
-                <Logo appName="proton-calendar" variant="glyph-only" className="mauto" hasTitle={false} />
-            </button>
-        </Tooltip>
-    );
-
     return (
         <ReduxProvider store={store}>
             <EncryptedSearchProvider>
@@ -105,7 +87,6 @@ const MainContainer = () => {
                                                         ref={mailContentRef}
                                                         breakpoints={breakpoints}
                                                         isComposerOpened={isComposerOpened}
-                                                        rightSidebarContent={rightSidebarContent}
                                                     />
                                                 )}
                                             />
