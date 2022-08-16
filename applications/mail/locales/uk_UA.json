@@ -359,6 +359,9 @@
       "Generate recovery phrase": [
         "Згенерувати фразу відновлення"
       ],
+      "Get SimpleLogin extension": [
+        "Отримати розширення SimpleLogin"
+      ],
       "Get started": [
         "Розпочнімо"
       ],
@@ -389,6 +392,9 @@
       "Go to settings": [
         "Перейти до налаштувань"
       ],
+      "Go to SimpleLogin": [
+        "Перейти у SimpleLogin"
+      ],
       "Got it": [
         "Зрозуміло"
       ],
@@ -412,6 +418,12 @@
       ],
       "Hide messages": [
         "Приховати повідомлення"
+      ],
+      "Hide My Email": [
+        "Сховати мою е‑адресу"
+      ],
+      "Hide my email": [
+        "Сховати мою е‑адресу"
       ],
       "I have a question": [
         "У мене є питання"
@@ -1090,6 +1102,11 @@
     "Alternative text for conversation image": {
       "Conversation": [
         "Розмова"
+      ]
+    },
+    "Alternative text for SimpleLogin image": {
+      "SimpleLogin": [
+        "SimpleLogin"
       ]
     },
     "Alternative text for welcome image": {
@@ -4341,6 +4358,9 @@
       "Default email application": [
         "Типовий застосунок електронної пошти"
       ],
+      "Delivered via SimpleLogin by Proton": [
+        "Поставляється через SimpleLogin від Proton"
+      ],
       "Disable message content search": [
         "Вимкнути пошук вмісту повідомлення"
       ],
@@ -4391,6 +4411,9 @@
       ],
       "Email address": [
         "Адреса е-пошти"
+      ],
+      "Email is forwarded to your mailbox; your email address stays hidden.": [
+        "Електронна пошта пересилається на вашу поштову скриньку; ваша електронна адреса залишається прихованою."
       ],
       "Email tracker protection is disabled": [
         "Захист від стеження у пошті вимкнено"
@@ -4506,6 +4529,9 @@
         "Годин",
         "Годин"
       ],
+      "How Hide My Email works": [
+        "Як працює функція «Сховати мою е‑адресу»"
+      ],
       "I'm sending this message to a non-Proton Mail user.": [
         "Я надсилаю повідомлення користувачу поза Proton Mail."
       ],
@@ -4517,6 +4543,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Якщо ви не можете знайти лист у вхідних повідомленнях, перевірте свою теку спаму."
+      ],
+      "If your alias is sold, leaked, or abused, simply disable it to stop receiving spam.": [
+        "Якщо ваша псевдоадреса продана, її виявлено в якомусь витоку даних або її використали в неналежному місці, просто вимкніть її, щоб припинити отримання спаму."
       ],
       "Image description": [
         "Опис зображення"
@@ -4782,6 +4811,9 @@
       "Priority support": [
         "Пріоритетна підтримка"
       ],
+      "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
+        "Захистіть свою електронну пошту від потрапляння до списків розсилки або спамерів за допомогою ${ maskMyEmailButton }."
+      ],
       "Proton doesn't make money by abusing privacy.": [
         "Proton не заробляє грошей на порушенні приватності."
       ],
@@ -4878,6 +4910,12 @@
       "Show original message": [
         "Показати оригінальне повідомлення"
       ],
+      "SimpleLogin is a Proton service, and your Proton Account includes Hide My Email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
+        "SimpleLogin — це служба Proton, і ваш обліковий запис Proton містить псевдоадреси для приховування справжньої адреси. Щоб почати маскувати адресу електронної пошти, перейдіть до SimpleLogin і створіть свою першу псевдоадресу."
+      ],
+      "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
+        "SimpleLogin забезпечує простий спосіб створення облікових записів на не довірених сторонніх сайтах, де ви не хочете розкривати свою справжню адресу електронної пошти."
+      ],
       "Sorry, this message does not exist or has already expired.": [
         "Даруйте, цього повідомлення не існує, або воно вже не дійсне."
       ],
@@ -4946,6 +4984,9 @@
       ],
       "There has been an error with the signature used to verify the contact details, which may be the result of a password reset.": [
         "Сталася помилка з підписом, використаним для перевірки контактних даних, що могла стати результатом скидання пароля."
+      ],
+      "They can't spam you if they don't know your email address. Protect your inbox with Hide My Email.": [
+        "Вони не можуть надсилати вам спам, якщо не знають вашої електронної адреси. Захистіть свою поштову скриньку за допомогою функції «Сховати мою е‑адресу»."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Цей обліковий запис було призупинено через потенційне порушення правил."
@@ -5139,6 +5180,9 @@
       "Use keyboard shortcuts to manage your email faster.": [
         "Користуйтесь комбінаціями клавіш для ефективнішої роботи з поштою."
       ],
+      "Using SimpleLogin is easy": [
+        "Користуватися SimpleLogin легко"
+      ],
       "Version ${ appVersion }": [
         "Версія ${ appVersion }"
       ],
@@ -5168,6 +5212,9 @@
       ],
       "When do you want your message to be sent?": [
         "Коли ви хочете надіслати ваше повідомлення?"
+      ],
+      "When giving out your email, use a unique, disposable Hide My Email alias instead of your real email address.": [
+        "Надаючи свою електронну адресу, використовуйте унікальну одноразову псевдоадресу служби «Сховати мою е‑адресу» замість вашої справжньої електронної адреси."
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Коли ви увімкнули довірені ключі для ${ senderName }, відкриті ключі було додано до контактних даних."
@@ -5321,6 +5368,9 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Ваш номер телефону використається лише для цієї одноразової перевірки."
+      ],
+      "Your Proton Account includes SimpleLogin. Install the browser extension with one click to get started.": [
+        "Ваш обліковий запис Proton включає SimpleLogin. Для початку роботи встановіть розширення браузера одним натисканням."
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Робота вашого облікового запису Proton тимчасово зупинена. Щоб відновити роботу, будь ласка, сплатіть прострочені рахунки."
@@ -7633,6 +7683,9 @@
       "Deleting contacts": [
         "Видалення контактів"
       ],
+      "Don't give spam a chance": [
+        "Не дайте спаму шансу"
+      ],
       "Edit contact": [
         "Змінити контакт"
       ],
@@ -7689,6 +7742,9 @@
       ],
       "Groups": [
         "Групи"
+      ],
+      "Hide your email with SimpleLogin by Proton": [
+        "Сховайте свою електронну адресу з SimpleLogin від Proton"
       ],
       "Human verification": [
         "Перевірка \"Я не робот\""
@@ -7924,6 +7980,9 @@
       "Unsubscribe": [
         "Відписатися"
       ],
+      "Unsubscribe request sent": [
+        "Запит на скасування передплати надіслано"
+      ],
       "Upgrade required": [
         "Необхідний платний тарифний план"
       ],
@@ -7978,6 +8037,9 @@
       ],
       "Encrypted data with verified digital signature": [
         "Зашифровані дані з перевіреним цифровим підписом"
+      ],
+      "For messages older than 30 days, only the subject line and recipient list will be searched": [
+        "Для повідомлень старіших за 30 днів, шукатиметься лише за темою або списком отримувачів"
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Оберіть PGP-схему для використання при підписуванні чи шифруванні для користувача. Зауважте, що PGP/Inline примусово перетворює повідомлення у звичайний текст"

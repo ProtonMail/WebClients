@@ -5703,10 +5703,8 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "Каждый ${ interval } год",
-        "Каждые ${ interval } года",
-        "Каждые ${ interval } лет",
-        "Каждые ${ interval } лет"
+        "Yearly",
+        ""
       ],
       "Every ${ interval } year, ${ timesString }": [
         "Каждый ${ interval } год, ${ timesString }",

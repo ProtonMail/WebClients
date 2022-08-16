@@ -353,6 +353,9 @@
       "Generate recovery phrase": [
         "Buat frasa pemulihan"
       ],
+      "Get SimpleLogin extension": [
+        "Dapatkan ekstensi SimpleLogin"
+      ],
       "Get started": [
         "Mulai"
       ],
@@ -383,6 +386,9 @@
       "Go to settings": [
         "Ke pengaturan"
       ],
+      "Go to SimpleLogin": [
+        "Tuju SimpleLogin"
+      ],
       "Got it": [
         "Dimengerti"
       ],
@@ -406,6 +412,12 @@
       ],
       "Hide messages": [
         "Sembunyikan pesan"
+      ],
+      "Hide My Email": [
+        "Hide My Email"
+      ],
+      "Hide my email": [
+        "Sembunyikan email saya"
       ],
       "I have a question": [
         "Saya memiliki pertanyaan"
@@ -1078,6 +1090,11 @@
     "Alternative text for conversation image": {
       "Conversation": [
         "Percakapan"
+      ]
+    },
+    "Alternative text for SimpleLogin image": {
+      "SimpleLogin": [
+        "SimpleLogin"
       ]
     },
     "Alternative text for welcome image": {
@@ -4148,6 +4165,9 @@
       "Default email application": [
         "Aplikasi email default"
       ],
+      "Delivered via SimpleLogin by Proton": [
+        "Disampaikan via SimpleLogin oleh Proton"
+      ],
       "Disable message content search": [
         "Nonaktifkan pencarian konten pesan"
       ],
@@ -4195,6 +4215,9 @@
       ],
       "Email address": [
         "Alamat email"
+      ],
+      "Email is forwarded to your mailbox; your email address stays hidden.": [
+        "Email yang masuk akan diteruskan menuju kotak surat Anda; alamat email asli Anda akan tetap tersembunyi."
       ],
       "Email tracker protection is disabled": [
         "Perlindungan pelacak email dinonakifkan"
@@ -4292,6 +4315,9 @@
       "Hour": [
         "Jam"
       ],
+      "How Hide My Email works": [
+        "Bagaimana Hide My Email bekerja"
+      ],
       "I'm sending this message to a non-Proton Mail user.": [
         "Saya mengirimkan pesan ini kepada pengguna non-Proton Mail."
       ],
@@ -4303,6 +4329,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Apabila Anda tidak menemukan email yang bersangkutan di dalam kotak masuk, mohon periksa folder spam Anda."
+      ],
+      "If your alias is sold, leaked, or abused, simply disable it to stop receiving spam.": [
+        "Apabila alamat email samaran Anda dijual, dibocorkan, atau disalahgunakan, Anda hanya perlu menonaktifkannya untuk dapat berhenti menerima spam."
       ],
       "Image description": [
         "Keterangan gambar"
@@ -4562,6 +4591,9 @@
       "Priority support": [
         "Dukungan prioritas"
       ],
+      "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
+        "Lindungi email Anda agar tidak bocor ke tangan oknum milis atau spammer dengan ${ maskMyEmailButton }."
+      ],
       "Proton doesn't make money by abusing privacy.": [
         "Proton tidak meraup keuntungan dengan cara melanggar privasi."
       ],
@@ -4658,6 +4690,12 @@
       "Show original message": [
         "Tampilkan pesan asli"
       ],
+      "SimpleLogin is a Proton service, and your Proton Account includes Hide My Email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
+        "SimpleLogin merupakan layanan milik Proton, dan akun Proton Anda meliputi perlindungan Hide My Email. Untuk mulai menyamarkan alamat email Anda, buka SimpleLogin dan buat alamat email samaran Anda."
+      ],
+      "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
+        "SimpleLogin memudahkan Anda untuk dapat membuat akun pada situs pihak ketiga yang tidak terpercaya di kala Anda tidak ingin menggunakan alamat email asli Anda."
+      ],
       "Sorry, this message does not exist or has already expired.": [
         "Maaf, pesan ini tidak ada atau telah kedaluwarsa."
       ],
@@ -4723,6 +4761,9 @@
       ],
       "There has been an error with the signature used to verify the contact details, which may be the result of a password reset.": [
         "Ada kesalahan pada tanda tangan yang dipakai untuk memverifikasi rincian kontak, yang mungkin disebabkan oleh atur ulang kata sandi."
+      ],
+      "They can't spam you if they don't know your email address. Protect your inbox with Hide My Email.": [
+        "Mereka tidak dapat menyerang Anda dengan spam apabila mereka tidak tahu alamat email Anda. Lindungi kotak masuk Anda dengan Hide My Email."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Akun ini telah ditangguhkan karena ditenggarai telah melanggar ketentuan penggunaan yang berlaku."
@@ -4830,7 +4871,7 @@
         "Untuk memulihkan data Anda, Anda perlu mengaktivasi ulang kunci enkripsi kontak yang dipakai saat data dibuat. Ini mewajibkan Anda untuk mengingat kata sandi yang dipakai saat kunci dibuat dulu."
       ],
       "To unsubscribe from this mailing list, an email will be sent from ${ boldFrom } with following details as defined by the sender of the newsletter:": [
-        "Untuk dapat berhenti berlangganan dari milis ini, sebuah email akan dikirimkan dari ${ boldFrom } dengan rincian-rincian berikut sebagaimana yang diterakan oleh pengelola milis:"
+        "Untuk berhenti berlangganan dari milis ini, sebuah email akan dikirimkan dari ${ boldFrom } dengan rincian berikut sebagaimana yang diterakan oleh pengelola milis:"
       ],
       "To unsubscribe from this mailing list, you will be taken to the following URL where instructions will be provided by the sender of the newsletter:": [
         "Untuk berhenti berlangganan dari milis ini, Anda akan dibawa ke URL berikut yang berisikan arahan lebih lanjut dari pengelola milis:"
@@ -4910,6 +4951,9 @@
       "Use keyboard shortcuts to manage your email faster.": [
         "Gunakan pintasan kibor untuk mempersingkat waktu."
       ],
+      "Using SimpleLogin is easy": [
+        "Menggunakan SimpleLogin itu mudah"
+      ],
       "Version ${ appVersion }": [
         "Versi ${ appVersion }"
       ],
@@ -4939,6 +4983,9 @@
       ],
       "When do you want your message to be sent?": [
         "Kapankah Anda ingin pesan Anda terkirim?"
+      ],
+      "When giving out your email, use a unique, disposable Hide My Email alias instead of your real email address.": [
+        "Pada saat Anda memberikan alamat email kepada orang lain, gunakanlah alamat email samaran yang dihasilkan oleh Hide My Email alih-alih alamat email asli Anda."
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Ketika Anda mengaktifkan kunci yang dipercaya untuk ${ senderName }, kunci publik ditambahkan ke rincian kontak."
@@ -5065,6 +5112,9 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Nomor telepon Anda hanya akan dipakai untuk verifikasi sekali saat ini."
+      ],
+      "Your Proton Account includes SimpleLogin. Install the browser extension with one click to get started.": [
+        "Akun Proton Anda meliputi perlindungan SimpleLogin. Instal ekstensi browser SimpleLogin dengan sekali klik untuk memulai."
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Akun Proton Anda sedang dalam masa tenggang. Untuk tetap menggunakan akun Anda, mohon lunasi tagihan yang sudah jatuh tempo."
@@ -6781,7 +6831,7 @@
         "Percakapan dihapus\n\n${ count } percakapan dihapus"
       ],
       "${ count } draft deleted": [
-        "${ count } draf terhapus"
+        "${ count } draf dihapus"
       ],
       "${ count } message deleted": [
         "Pesan dihapus\n\n${ count } pesan dihapus"
@@ -6901,7 +6951,7 @@
         "Preferensi pintasan papan ketik diperbarui"
       ],
       "Label cleared": [
-        "Label dibersihkan"
+        "Label dihapus"
       ],
       "Labels applied.": [
         "Label berhasil diterapkan."
@@ -7224,6 +7274,9 @@
       "Deleting contacts": [
         "Menghapus kontak"
       ],
+      "Don't give spam a chance": [
+        "Jangan berikan spam kesempatan"
+      ],
       "Edit contact": [
         "Sunting kontak"
       ],
@@ -7280,6 +7333,9 @@
       ],
       "Groups": [
         "Grup"
+      ],
+      "Hide your email with SimpleLogin by Proton": [
+        "Lindungi email Anda dengan SimpleLogin oleh Proton"
       ],
       "Human verification": [
         "Verifikasi manusia"
@@ -7511,6 +7567,9 @@
       ],
       "Unsubscribe": [
         "Berhenti berlangganan"
+      ],
+      "Unsubscribe request sent": [
+        "Permintaan berhenti berlangganan dikirim"
       ],
       "Upgrade required": [
         "Butuh peningkatan akun"

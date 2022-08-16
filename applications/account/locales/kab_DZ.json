@@ -38,6 +38,9 @@
       "Add address": [
         "Rnu tansa"
       ],
+      "Add calendar": [
+        "Rnu awitay"
+      ],
       "Add condition": [
         "Rnu tawtilt"
       ],
@@ -58,6 +61,9 @@
       ],
       "Add label": [
         "Rnu tabzimt"
+      ],
+      "Add notification": [
+        "Rnu alɣu"
       ],
       "Add PayPal": [
         "Rnu PayPal"
@@ -155,11 +161,17 @@
       "Continue to ${ name }": [
         "Kemmel ɣer ${ name }"
       ],
+      "Continue with Google": [
+        "Kemmel s Google"
+      ],
       "Copy": [
         "Nɣel"
       ],
       "Copy email to clipboard": [
         "Nɣel imayl ɣef afus"
+      ],
+      "Copy link": [
+        "Nɣel aseɣwen"
       ],
       "Create": [
         "Snulfu-d"
@@ -178,6 +190,9 @@
       ],
       "Create label": [
         "Rnu tabzimt"
+      ],
+      "Create link": [
+        "Rnu aseɣwen"
       ],
       "Current plan": [
         "Aɣawas amiran"
@@ -380,6 +395,9 @@
       "Loading verification": [
         "Asali n usenqed"
       ],
+      "Make default": [
+        "Err-it d amezwer"
+      ],
       "Mark as default": [
         "Err-it d amezwer"
       ],
@@ -497,6 +515,9 @@
       "Remove this label": [
         "Kkes tabzimt-a"
       ],
+      "Remove this notification": [
+        "Kkes talɣut-a"
+      ],
       "Rename": [
         "Semi"
       ],
@@ -572,6 +593,9 @@
       "Select files": [
         "Fren ifuyla"
       ],
+      "Select timezone": [
+        "Fren iẓḍi usrid"
+      ],
       "send auto-reply email": [
         "azen imayl n tririt tawurmant"
       ],
@@ -604,6 +628,12 @@
       ],
       "Show labels": [
         "Sken tibzimin"
+      ],
+      "Show less": [
+        "Sken-d drus"
+      ],
+      "Show more": [
+        "Sken-d ugar"
       ],
       "Show preview": [
         "Sken taskant"
@@ -902,57 +932,9 @@
         "Snat n tikkal i useggas"
       ]
     },
-    "blackfriday Info": {
-      "beta": [
-        "beta"
-      ],
-      "Includes": [
-        "Yella deg-s"
-      ],
-      "Standard price: ${ regularPrice }": [
-        "Atig anaway: ${ regularPrice }"
-      ],
-      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
-        "Anezdi-a ad yettwales s yimek awurman seg-a ɣef sin n yiseggasen yernu s yiwen n watig arma d asmi ara yettwasemmet."
-      ]
-    },
-    "blackfriday Title": {
-      "Most popular": [
-        "Aɣerfan akk"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Action": {
-      "Get the deal": [
-        "Faṛes tagnit"
-      ],
-      "Get the deal now": [
-        "Faṛes tagnit"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Info": {
-      "Save ${ percentage }%": [
-        "${ percentage } %"
-      ]
-    },
-    "blackfriday: VPNspecialoffer info": {
-      "per month": [
-        "i wayyur"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Promo title, need to be short": {
-      "Special offer": [
-        "Asumer uzzig"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Title": {
-      "1 month": [
-        "1 wayyur"
-      ],
-      "12 months": [
-        "12 wayyuren"
-      ],
-      "24 months": [
-        "24 wayyuren"
+    "breadcrumb": {
+      "Calendars": [
+        "Iwitayen"
       ]
     },
     "Bridge version load failed": {
@@ -1052,6 +1034,15 @@
       ]
     },
     "Calendar status": {
+      "Active": [
+        "Urmid"
+      ],
+      "Default": [
+        "Amezwer"
+      ],
+      "Disabled": [
+        "Yensa"
+      ],
       "Not synced": [
         "Ur yemtawi ara"
       ],
@@ -1079,6 +1070,17 @@
         "Amasal n uwitay ur nettusefrak ara"
       ]
     },
+    "Calendar view": {
+      "Day": [
+        "Ass"
+      ],
+      "Month": [
+        "Ayyur"
+      ],
+      "Week": [
+        "Imalas"
+      ]
+    },
     "Checkout row": {
       "${ users } user": [
         "${ users } n useqdac",
@@ -1098,11 +1100,23 @@
       "forest": [
         "tiẓgi"
       ],
+      "kiwi": [
+        "kiwi"
+      ],
       "olive": [
         "azemmur"
       ],
       "pink": [
         "axuxi"
+      ],
+      "plum": [
+        "taxuxet"
+      ],
+      "soil": [
+        "akal"
+      ],
+      "white": [
+        "amellal"
       ]
     },
     "Condition for custom filter": {
@@ -2011,6 +2025,36 @@
         "/useqdac i waggur"
       ]
     },
+    "Daily recurring event, frequency": {
+      "${ count } time": [
+        "${ count } n tikkelt",
+        "${ count } n tikkal"
+      ],
+      "Daily": [
+        "Yal ass"
+      ],
+      "Daily, ${ timesString }": [
+        "Yal ass, ${ timesString }"
+      ],
+      "Daily, ${ untilString }": [
+        "Yal ass, ${ untilString }"
+      ],
+      "Every ${ interval } day": [
+        "Yal ${ interval } ass",
+        "Yal ${ interval } n wussan"
+      ],
+      "Every ${ interval } day, ${ timesString }": [
+        "Yal ${ interval } ass, ${ timesString }",
+        "Yal ${ interval } n wussan, ${ timesString }"
+      ],
+      "Every ${ interval } day, ${ untilString }": [
+        "Yal ${ interval } ass, ${ untilString }",
+        "Yal ${ interval } n wussan, ${ untilString }"
+      ],
+      "until ${ dateString }": [
+        "alamma d ${ dateString }"
+      ]
+    },
     "Day": {
       "Friday": [
         "Sem"
@@ -2094,6 +2138,20 @@
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "Ɛawen-aɣ ad nennarni!"
+      ]
+    },
+    "Duration": {
+      "120 minutes": [
+        "120 n tesdatin"
+      ],
+      "30 minutes": [
+        "30 n tesdatin"
+      ],
+      "60 minutes": [
+        "60 n tesdatin"
+      ],
+      "90 minutes": [
+        "90 n tesdatin"
       ]
     },
     "Email body for description (description part)": {
@@ -2304,6 +2362,9 @@
       ],
       "Name on card required": [
         "Isem n tkarḍa ilaq"
+      ],
+      "Name required": [
+        "Isem yettwasra"
       ],
       "No active sessions": [
         "Ulac tiɣimiyin turmidin"
@@ -2663,6 +2724,9 @@
       "Error: ${ errorMessage }": [
         "Tuccḍa: ${ errorMessage }"
       ],
+      "Invalid URL": [
+        "Yir URL"
+      ],
       "Oops, something went wrong": [
         "Ihuh, yeḍran-d wugur"
       ],
@@ -2730,6 +2794,11 @@
     "Event title": {
       "(no title)": [
         "(ulac azwel)"
+      ]
+    },
+    "Export calendar": {
+      "Loading events": [
+        "Asali n tedyanin"
       ]
     },
     "Feature": {
@@ -2876,6 +2945,9 @@
       "Actions": [
         "Tigawin"
       ],
+      "Calendar": [
+        "Awitay"
+      ],
       "Event": [
         "Amaynut"
       ],
@@ -2888,11 +2960,17 @@
       "Key type": [
         "Anaw n tsarutt"
       ],
+      "Name": [
+        "Isem"
+      ],
       "Notifications": [
         "Ilɣa"
       ],
       "Organization key fingerprint": [
         "Adsil umdin n tsarutt n tuddsa"
+      ],
+      "Status": [
+        "Addad"
       ],
       "Time": [
         "Akud"
@@ -3440,6 +3518,9 @@
       "Add image URL": [
         "Rnu URL n tugna"
       ],
+      "Add label": [
+        "Rnu tabzimt"
+      ],
       "Additional options": [
         "Tixtiṛiyin-nniḍen"
       ],
@@ -3621,8 +3702,26 @@
       "Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.": [
         "Akka tura, akk amḍiq n usekles yellan yettunefk i unmidan anedbal. Ttxil-k, senɣes amḍiq n usekles n umiḍan anedbal akken ad tserrḥeḍ cwiṭ i yimiḍanen-nniḍen. Ad tizmireḍ ad ternuḍ amḍiq n usekles amatu melmi tebɣiḍ ticki yuli uswir n umiḍan-ik."
       ],
+      "Custom": [
+        "Udmawan"
+      ],
+      "Custom daily": [
+        "Udmawan n yal ass"
+      ],
       "Custom email domains": [
         "Tiɣula n yimayl tudmawanin"
+      ],
+      "Custom monthly": [
+        "Udmawan n yal ayyur"
+      ],
+      "Custom weekly": [
+        "Udmawan n yal amalas"
+      ],
+      "Custom yearly": [
+        "Udmawan n yal aseggas"
+      ],
+      "Daily": [
+        "Yal ass"
       ],
       "Data locked": [
         "Isefka sekkṛen"
@@ -3672,6 +3771,9 @@
       ],
       "Drop the file here to upload": [
         "Sers dagi afaylu ara tessaliḍ"
+      ],
+      "Edit label": [
+        "Ẓreg tabzimt"
       ],
       "Edit link": [
         "Ẓreg aseɣwen"
@@ -3925,6 +4027,9 @@
       ],
       "Merged": [
         "Ttusmezdin"
+      ],
+      "Monthly ${ onDayString }": [
+        "Yal ayyur ${ onDayString }"
       ],
       "more": [
         "ugar"
@@ -4363,6 +4468,9 @@
       ],
       "Yandex records your online activity and reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
         "Yandex yesseklas tigawt-inek·inem srid rnu yeqqar isefka-inek·inem udmawanen i wakken ad imudd tisiregt n unekcum i wid i iqeddcen deg udellel d yihricen wiyaḍ n wis tlata. I tbaḍnit igerrzen, rnu tansa n yimayl taɣelsant."
+      ],
+      "Yearly": [
+        "S useggas"
       ],
       "You already have a free account": [
         "Tesɛiḍ yakan amiḍan baṭṭel"
@@ -4873,6 +4981,11 @@
         "Creḍ-it d aqbur"
       ]
     },
+    "Knowledge base link label": {
+      "Learn more": [
+        "Issin ugar"
+      ]
+    },
     "Label": {
       " and ": [
         " akked "
@@ -5014,6 +5127,9 @@
       "Code is 6 digits without spaces": [
         "Tangalt tesɛa 6 n yizwilen war tallunin"
       ],
+      "Color": [
+        "Ini"
+      ],
       "Composer": [
         "Amaẓrag"
       ],
@@ -5098,6 +5214,9 @@
       "Density": [
         "Taneẓẓi"
       ],
+      "Description": [
+        "Aglam"
+      ],
       "Device/certificate name": [
         "Isem n umeɣri/uselkin"
       ],
@@ -5106,6 +5225,9 @@
       ],
       "Discount": [
         "Asaεed"
+      ],
+      "Display": [
+        "Sken"
       ],
       "Display name": [
         "Isem ara d-yettwaskanen"
@@ -5512,6 +5634,9 @@
       "Upload 1 or more recovery files or encryption keys": [
         "Sali 1 neɣ ugar n yifuyla n tririt neɣ tisura n uwgelhen"
       ],
+      "URL": [
+        "URL"
+      ],
       "Use folder colors": [
         "Seqdec initen n ukaram"
       ],
@@ -5584,6 +5709,16 @@
     "Label for adding a new custom domain": {
       "Add a domain that you own to your ${ MAIL_APP_NAME } account.": [
         "Rnu taɣult i tesɛiḍ ar umiḍan-ik ${ MAIL_APP_NAME }."
+      ]
+    },
+    "Label for default event notifications": {
+      "Notifications": [
+        "Tilγa"
+      ]
+    },
+    "Label for default event settings": {
+      "Duration": [
+        "Tiɣzi"
       ]
     },
     "Label for domain modal": {
@@ -5851,6 +5986,11 @@
         "Amek ara tketreḍ imaylen si Yahoo"
       ]
     },
+    "Modal title and action": {
+      "Add calendar": [
+        "Rnu awitay"
+      ]
+    },
     "Monetary unit": {
       "Dollar": [
         "Dollar"
@@ -5860,6 +6000,139 @@
       ],
       "Swiss franc": [
         "Afrank n Swis"
+      ]
+    },
+    "Monthly recurring event, frequency": {
+      "Every ${ interval } month ${ onDayString }": [
+        "Yal ${ interval } n wayyur ${ onDayString }",
+        "Yal ${ interval } n wayyuren ${ onDayString }"
+      ],
+      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
+        "Yal ${ interval } n wayyur ${ onDayString }, ${ timesString }",
+        "Yal ${ interval } n wayyuren ${ onDayString }, ${ timesString }"
+      ],
+      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
+        "Yal ${ interval } n wayyur ${ onDayString }, ${ untilString }",
+        "Yal ${ interval } n wayyuren ${ onDayString }, ${ untilString }"
+      ],
+      "Monthly ${ onDayString }": [
+        "Yal ayyur ${ onDayString }"
+      ],
+      "Monthly ${ onDayString }, ${ timesString }": [
+        "Yal ayyur ${ onDayString }, ${ timesString }"
+      ],
+      "Monthly ${ onDayString }, ${ untilString }": [
+        "Yal ayyur ${ onDayString }, ${ untilString }"
+      ]
+    },
+    "Monthly recurring event, repeats on": {
+      "on day ${ dayOfMonth }": [
+        "deg wass ${ dayOfMonth }"
+      ],
+      "on the first Friday": [
+        "deg sem amezwaru"
+      ],
+      "on the first Monday": [
+        "deg warim amezwaru"
+      ],
+      "on the first Saturday": [
+        "deg sed amezwaru"
+      ],
+      "on the first Sunday": [
+        "deg wacer amezwaru"
+      ],
+      "on the first Thursday": [
+        "deg umhad amezwaru"
+      ],
+      "on the first Tuesday": [
+        "deg waram amezwaru"
+      ],
+      "on the first Wednesday": [
+        "deg wahad amezwaru"
+      ],
+      "on the fourth Friday": [
+        "deg sem tis ukuẓ"
+      ],
+      "on the fourth Monday": [
+        "deg warim wis ukuẓ"
+      ],
+      "on the fourth Saturday": [
+        "deg sed wis ukuẓ"
+      ],
+      "on the fourth Sunday": [
+        "deg acer wis ukuẓ"
+      ],
+      "on the fourth Thursday": [
+        "deg umhad wis ukuẓ"
+      ],
+      "on the fourth Tuesday": [
+        "deg waram wis ukuẓ"
+      ],
+      "on the fourth Wednesday": [
+        "deg wahad wis ukuẓ"
+      ],
+      "on the last Friday": [
+        "deg sem taneggarut"
+      ],
+      "on the last Monday": [
+        "deg warim aneggaru"
+      ],
+      "on the last Saturday": [
+        "deg sed aneggaru"
+      ],
+      "on the last Sunday": [
+        "deg acer aneggaru"
+      ],
+      "on the last Thursday": [
+        "deg umhad aneggaru"
+      ],
+      "on the last Tuesday": [
+        "deg waram aneggaru"
+      ],
+      "on the last Wednesday": [
+        "deg wahad aneggaru"
+      ],
+      "on the second Friday": [
+        "deg sem wis sin"
+      ],
+      "on the second Monday": [
+        "deg warim wis sin"
+      ],
+      "on the second Saturday": [
+        "deg sed wis sin"
+      ],
+      "on the second Sunday": [
+        "deg acer wis sin"
+      ],
+      "on the second Thursday": [
+        "deg umhad wis sin"
+      ],
+      "on the second Tuesday": [
+        "deg waram wis sin"
+      ],
+      "on the second Wednesday": [
+        "deg wahad wis sin"
+      ],
+      "on the third Friday": [
+        "deg sem tis kṛad"
+      ],
+      "on the third Monday": [
+        "deg warim wis kṛad"
+      ],
+      "on the third Saturday": [
+        "deg sed wis kṛad"
+      ],
+      "on the third Sunday": [
+        "deg wacer wis kṛad"
+      ],
+      "on the third Thursday": [
+        "deg umhad wis kṛad"
+      ],
+      "on the third Tuesday": [
+        "deg waram wis kṛad"
+      ],
+      "on the third Wednesday": [
+        "deg wahad wis kṛad"
       ]
     },
     "Moved to black/whitelist": {
@@ -6149,6 +6422,35 @@
         "Turagin n OpenVPN / IKEv2 yettusirew"
       ]
     },
+    "Notification time input": {
+      "at": [
+        "ar"
+      ]
+    },
+    "Notification when": {
+      "at time of event": [
+        "lawan-nni n tedyant"
+      ],
+      "day before": [
+        "ass send",
+        "ussan send"
+      ],
+      "hour before": [
+        "asrag send",
+        "isragen send"
+      ],
+      "minute before": [
+        "tasdat send",
+        "tisdatin send"
+      ],
+      "on the same day": [
+        "deg yiwen n wass"
+      ],
+      "week before": [
+        "dduṛt send",
+        "dduṛtat send"
+      ]
+    },
     "Onboarding": {
       "Welcome to ${ VPN_APP_NAME }": [
         "Ansuf ɣer ${ VPN_APP_NAME }"
@@ -6308,6 +6610,12 @@
       "Normal": [
         "Amagnu"
       ],
+      "Off": [
+        "Yensa"
+      ],
+      "On": [
+        "Irmed"
+      ],
       "Permanent": [
         "Ameɣlal"
       ],
@@ -6417,6 +6725,12 @@
     "Placeholder": {
       "A way to contact you": [
         "Ttawil akken ad ken-nermes"
+      ],
+      "Add a calendar description": [
+        "Rnu aglam n uwitay"
+      ],
+      "Add a calendar name": [
+        "Rnu isem n uwitay"
       ],
       "Add gift code": [
         "Rnu tangalt n usefk"
@@ -6593,6 +6907,9 @@
     "Recovery Phone": {
       "Cancel": [
         "Sefsex"
+      ],
+      "Verify now": [
+        "Selken tura"
       ]
     },
     "Remark about a key type option": {
@@ -6629,6 +6946,11 @@
       ],
       "Upload additional files": [
         "Sali ifuyla imernan"
+      ]
+    },
+    "Select search results": {
+      "No results found": [
+        "Ulac igmaḍ yettwafen"
       ]
     },
     "Settings description": {
@@ -6837,6 +7159,15 @@
       ],
       "Bug reported": [
         "Abug yettwazen"
+      ],
+      "Calendar added. It might take a few minutes to sync.": [
+        "Awitay yerna. Izmer ad yeṭṭef kra n tesdatin akken ad yemtawi."
+      ],
+      "Calendar created": [
+        "Awitay yettwasnulfa-d"
+      ],
+      "Calendar updated": [
+        "Awitay yettwasnifel"
       ],
       "Canceling import": [
         "Asefsex n tektert"
@@ -7064,6 +7395,11 @@
         "${ minutes } tisdating"
       ]
     },
+    "Timezone search placeholder": {
+      "Search timezones": [
+        "Nadi timnaḍin tisraganin"
+      ]
+    },
     "Title": {
       "${ appName } Keyboard Shortcuts": [
         "${ appName } n yinegzumen n unasiw"
@@ -7113,6 +7449,9 @@
       ],
       "Add address": [
         "Rnu tansa"
+      ],
+      "Add another notification to remind you of this event": [
+        "Rnu alɣu-nniḍen i wakken ad ak·akem-d-yesmekti s uneḍru-a"
       ],
       "Add contact group name": [
         "Rnu isem n ugraw n unermes"
@@ -7366,6 +7705,9 @@
       "Edit Block List": [
         "Ẓreg tabdart n usewḥel"
       ],
+      "Edit calendar": [
+        "Ẓreg awitay"
+      ],
       "Edit credit/debit card": [
         "Ẓreg takarḍa n usmad/uxelleṣ"
       ],
@@ -7401,6 +7743,9 @@
       ],
       "Error": [
         "Anezri"
+      ],
+      "Export": [
+        "Sifeḍ"
       ],
       "Export private key": [
         "Sifeḍ tasarut tusligt"
@@ -7640,6 +7985,15 @@
       "Select contact group": [
         "Fren agraw n unermes"
       ],
+      "Select the time to send this notification": [
+        "Fren akud ideg ara yettwazen walɣu-a"
+      ],
+      "Select the way to send this notification": [
+        "Fren abrid swayes ara yettwazen walɣu-a"
+      ],
+      "Select when you want this notification to be sent": [
+        "Fren melmi i tebɣiḍ ad yettwazen walɣu-a"
+      ],
       "Session management": [
         "Amsefrak n tɣimit"
       ],
@@ -7789,6 +8143,11 @@
       ],
       "ZIP / postal code": [
         "ZIP / tangalt n lbuṣṭa"
+      ]
+    },
+    "Title (number of minutes/hours/days/weeks)": {
+      "Choose a number": [
+        "Fren uṭṭun"
       ]
     },
     "Title for payment methods table": {
@@ -8152,6 +8511,243 @@
       ],
       "It can take up to a day for DNS changes to update.": [
         "Asnifel n DNS izmer ad yeṭṭef yiwen wass akken ad yettwaleqqem."
+      ]
+    },
+    "Weekly recurring event, frequency": {
+      "Every ${ interval } week on ${ multipleDaysString }": [
+        "Yal ${ interval } n dduṛt deg ${ multipleDaysString }",
+        "Yal ${ interval } n ledwaṛ deg ${ multipleDaysString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
+        "Yal ${ interval } n umalas deg ${ multipleDaysString }, ${ timesString }",
+        "Yal ${ interval } n yimalasen deg ${ multipleDaysString }, ${ timesString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
+        "Yal ${ interval } n umalas deg ${ multipleDaysString }, ${ untilString }",
+        "Yal ${ interval } n yimalasen deg ${ multipleDaysString }, ${ untilString }"
+      ],
+      "Every ${ interval } week on all days": [
+        "Yal ${ interval } n umalas deg meṛṛa ussan",
+        "Yal ${ interval } ledwaṛ deg meṛṛa ussan"
+      ],
+      "Every ${ interval } week on all days, ${ timesString }": [
+        "Yal ${ interval } n dduṛt deg wussan akk, ${ timesString }",
+        "Yal ${ interval } n ledwaṛ deg wussan akk, ${ timesString }"
+      ],
+      "Every ${ interval } week on all days, ${ untilString }": [
+        "Yal ${ interval } n umalas deg wussan akk, ${ untilString }",
+        "Yal ${ interval } n yimalasen deg wussan akk, ${ untilString }"
+      ],
+      "Every ${ interval } week on Friday": [
+        "Yal ${ interval } n dduṛt deg wass n sem",
+        "Yal ${ interval } n ledwaṛ deg wass n sem"
+      ],
+      "Every ${ interval } week on Friday, ${ timesString }": [
+        "Yal ${ interval } n dduṛt deg wass n sem, ${ timesString }",
+        "Yal ${ interval } n ledwar deg wass n sem, ${ timesString }"
+      ],
+      "Every ${ interval } week on Friday, ${ untilString }": [
+        "Yal ${ interval } n umalas deg wass sem, ${ untilString }",
+        "Yal ${ interval } n yimalasen deg wass sem, ${ untilString }"
+      ],
+      "Every ${ interval } week on Monday": [
+        "Yal ${ interval } n dduṛt deg wass n warim",
+        "Yal ${ interval } n ledwaṛ deg wass n warim"
+      ],
+      "Every ${ interval } week on Monday, ${ timesString }": [
+        "Yal ${ interval } n dduṛt deg wass n warim, ${ timesString }",
+        "Yal ${ interval } n ledwaṛ deg wass n warim, ${ timesString }"
+      ],
+      "Every ${ interval } week on Monday, ${ untilString }": [
+        "Yal ${ interval } n umalas deg wass n warim, ${ untilString }",
+        "Yal ${ interval } n yimalasen deg wass n warim, ${ untilString }"
+      ],
+      "Every ${ interval } week on Saturday": [
+        "Yal ${ interval } n dduṛt deg wass n sed",
+        "Yal ${ interval } n ledwaṛ deg wass n sed"
+      ],
+      "Every ${ interval } week on Saturday, ${ timesString }": [
+        "Yal ${ interval } n dduṛt deg wass n sed, ${ timesString }",
+        "Yal ${ interval } n ledwaṛ deg wass n sed, ${ timesString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ untilString }": [
+        "Yal ${ interval } n umalas deg wass n sed, ${ untilString }",
+        "Yal ${ interval } n yimalasen deg wass n sed, ${ untilString }"
+      ],
+      "Every ${ interval } week on Sunday": [
+        "Yal ${ interval } n dduṛt deg wass n wacer",
+        "Yal ${ interval } n ledwaṛ deg wussan n acer"
+      ],
+      "Every ${ interval } week on Sunday, ${ timesString }": [
+        "Yal ${ interval } n dduṛt deg wass n wacer, ${ timesString }",
+        "Yal ${ interval } n ledwaṛ deg wass n wacer, ${ timesString }"
+      ],
+      "Every ${ interval } week on Sunday, ${ untilString }": [
+        "Yal ${ interval } n umalas deg wass n wacer, ${ untilString }",
+        "Yal ${ interval } n yimalasen deg wass n wacer, ${ untilString }"
+      ],
+      "Every ${ interval } week on Thursday": [
+        "Yal ${ interval } n dduṛt deg wass n wamhad",
+        "Yal ${ interval } n ledwaṛ deg wass n wamhad"
+      ],
+      "Every ${ interval } week on Thursday, ${ timesString }": [
+        "Yal ${ interval } n dduṛt deg wass n umhad, ${ timesString }",
+        "Yal ${ interval } n ledwaṛ deg wass n umhad, ${ timesString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ untilString }": [
+        "Yal ${ interval } n umalas deg wass n umhad, ${ untilString }",
+        "Yal ${ interval } n yimalasen deg wass n umhad, ${ untilString }"
+      ],
+      "Every ${ interval } week on Tuesday": [
+        "Yal ${ interval } n dduṛt deg wass n waram",
+        "Yal ${ interval } n ledwaṛ deg wass n warim"
+      ],
+      "Every ${ interval } week on Tuesday, ${ timesString }": [
+        "Yal ${ interval } n dduṛt deg wass n waram, ${ timesString }",
+        "Yal ${ interval } n ledwaṛ deg wass n waram, ${ timesString }"
+      ],
+      "Every ${ interval } week on Tuesday, ${ untilString }": [
+        "Yal ${ interval } n umalas deg wass n waram, ${ untilString }",
+        "Yal ${ interval } n yimalasen deg wass n waram, ${ untilString }"
+      ],
+      "Every ${ interval } week on Wednesday": [
+        "Yal ${ interval } n dduṛt deg wass n wahad",
+        "Yal ${ interval } n ledwaṛ deg wass n wahad"
+      ],
+      "Every ${ interval } week on Wednesday, ${ timesString }": [
+        "Yal ${ interval } n dduṛt deg wass n wahad, ${ timesString }",
+        "Yal ${ interval } n ledwaṛ deg wass n wahad, ${ timesString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ untilString }": [
+        "Yal ${ interval } n umalas deg wass n wahad, ${ untilString }",
+        "Yal ${ interval } n yimalasen deg wass n wahad, ${ untilString }"
+      ],
+      "Weekly on ${ multipleDaysString }": [
+        "Yal imalas deg ${ multipleDaysString }"
+      ],
+      "Weekly on ${ multipleDaysString }, ${ timesString }": [
+        "Yal imalas deg ${ multipleDaysString }, ${ timesString }"
+      ],
+      "Weekly on ${ multipleDaysString }, ${ untilString }": [
+        "Yal imalas deg ${ multipleDaysString }, ${ untilString }"
+      ],
+      "Weekly on all days": [
+        "Yal imalas deg wussan akk"
+      ],
+      "Weekly on all days, ${ timesString }": [
+        "Yal imalas deg wussan akk, ${ timesString }"
+      ],
+      "Weekly on all days, ${ untilString }": [
+        "Yal imalas deg wussan akk, ${ untilString }"
+      ],
+      "Weekly on Friday": [
+        "Yal imalas deg wass n sem"
+      ],
+      "Weekly on Friday, ${ timesString }": [
+        "Yal imalas deg wass n sem, ${ timesString }"
+      ],
+      "Weekly on Friday, ${ untilString }": [
+        "Yal imalas deg wass n sem, ${ untilString }"
+      ],
+      "Weekly on Monday": [
+        "Yal imalas deg wass n warim"
+      ],
+      "Weekly on Monday, ${ timesString }": [
+        "Yal imalas deg wass n warim, ${ timesString }"
+      ],
+      "Weekly on Monday, ${ untilString }": [
+        "Yal imalas deg wass n warim, ${ untilString }"
+      ],
+      "Weekly on Saturday": [
+        "Yal imalas deg wass n sed"
+      ],
+      "Weekly on Saturday, ${ timesString }": [
+        "Yal imalas deg wass n sed, ${ timesString }"
+      ],
+      "Weekly on Saturday, ${ untilString }": [
+        "Yal imalas deg wass n sed, ${ untilString }"
+      ],
+      "Weekly on Sunday": [
+        "Acer n yal imalas"
+      ],
+      "Weekly on Sunday, ${ timesString }": [
+        "Yal imalas deg wass n acer, ${ timesString }"
+      ],
+      "Weekly on Sunday, ${ untilString }": [
+        "Yal imalas deg wass n acer, ${ untilString }"
+      ],
+      "Weekly on Thursday": [
+        "Yal imalas deg wass n umhad"
+      ],
+      "Weekly on Thursday, ${ timesString }": [
+        "Yal imalas deg wass n umhad, ${ timesString }"
+      ],
+      "Weekly on Thursday, ${ untilString }": [
+        "Yal imalas deg wass n umhad, ${ untilString }"
+      ],
+      "Weekly on Tuesday": [
+        "Yal imalas deg wass n waram"
+      ],
+      "Weekly on Tuesday, ${ timesString }": [
+        "Yal imalas deg wass n waram, ${ timesString }"
+      ],
+      "Weekly on Tuesday, ${ untilString }": [
+        "Yal imalas deg wass n waram, ${ untilString }"
+      ],
+      "Weekly on Wednesday": [
+        "Yal imalas deg wass n wahad"
+      ],
+      "Weekly on Wednesday, ${ timesString }": [
+        "Yal imalas deg wass n wahad, ${ timesString }"
+      ],
+      "Weekly on Wednesday, ${ untilString }": [
+        "Yal imalas deg wass n wahad, ${ untilString }"
+      ]
+    },
+    "Weekly recurring event, repeats on (multiple days), frequency": {
+      "Friday": [
+        "Sem"
+      ],
+      "Monday": [
+        "Arim"
+      ],
+      "Saturday": [
+        "Sed"
+      ],
+      "Sunday": [
+        "Acer"
+      ],
+      "Thursday": [
+        "Amhad"
+      ],
+      "Tuesday": [
+        "Aram"
+      ],
+      "Wednesday": [
+        "Ahad"
+      ]
+    },
+    "Yearly recurring event, frequency": {
+      "Every ${ interval } year": [
+        "Yearly",
+        ""
+      ],
+      "Every ${ interval } year, ${ timesString }": [
+        "Yal ${ interval } n useggas, ${ timesString }",
+        "Yal ${ interval } n yiseggasen, ${ timesString }"
+      ],
+      "Every ${ interval } year, ${ untilString }": [
+        "Yal ${ interval } n useggas, ${ untilString }",
+        "Yal ${ interval } n yiseggasen, ${ untilString }"
+      ],
+      "Yearly": [
+        "S useggas"
+      ],
+      "Yearly, ${ timesString }": [
+        "S useggas, ${ timesString }"
+      ],
+      "Yearly, ${ untilString }": [
+        "S useggas, ${ untilString }"
       ]
     }
   }

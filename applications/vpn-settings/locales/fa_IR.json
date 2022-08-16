@@ -32,6 +32,9 @@
       "Attach screenshot(s)": [
         "پیوست ‌عکس‌صفحه(ها)"
       ],
+      "Authenticate": [
+        "احراز هویت"
+      ],
       "Back": [
         "بازگشت"
       ],
@@ -61,6 +64,9 @@
       ],
       "Confirm": [
         "تایید"
+      ],
+      "Contact support": [
+        "تماس با پشتیبانی"
       ],
       "Continue": [
         "ادامه"
@@ -188,6 +194,9 @@
       "More info: ${ safeTitle }": [
         "اطلاعات بیشتر: ${ safeTitle }"
       ],
+      "Need help?": [
+        "کمک می‌خواهید؟"
+      ],
       "Next": [
         "بعدی"
       ],
@@ -293,6 +302,9 @@
       "Show preview": [
         "نمایش پیش‌نمایش"
       ],
+      "Sign in": [
+        "ورود"
+      ],
       "Sign out": [
         "خروج"
       ],
@@ -304,6 +316,9 @@
       ],
       "Submit": [
         "ثبت"
+      ],
+      "Support": [
+        "پشتیبانی"
       ],
       "Top up": [
         "بالا بردن"
@@ -382,6 +397,11 @@
       ],
       "Zoom out": [
         "کوچک‌نمایی"
+      ]
+    },
+    "Action in trial plan": {
+      "No, thanks": [
+        "نه, ممنون"
       ]
     },
     "Addon": {
@@ -626,6 +646,9 @@
       "Tristan da Cunha": [
         "تریستان دا کونا"
       ],
+      "United Arab Emirates": [
+        "امارات متحده عربی"
+      ],
       "Åland Islands": [
         "جزایر الند"
       ]
@@ -643,6 +666,11 @@
     "Delinquent modal title": {
       "Overdue invoice": [
         "صورتحساب‌ عقب افتاده"
+      ]
+    },
+    "Downgrade account reason": {
+      "I use a different Proton account": [
+        "من یک حساب Proton دیگر استفاده می‌کنم"
       ]
     },
     "Error": {
@@ -753,6 +781,9 @@
       ],
       "Unknown payment token status": [
         "وضعیت نشانه پرداخت ناشناخته"
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        "عبارت بازیابی اشتباه است. دوباره امتحان کنید یا از شیوه دیگری برای بازیابی استفاده کنید."
       ],
       "You have no invoices.": [
         "هیچ صورت‌حسابی ندارید."
@@ -874,6 +905,9 @@
         "${ number } سرور",
         "${ number } سرور"
       ],
+      "${ strongAddressAvailable } You will use this email address to sign into all ${ BRAND_NAME } services.": [
+        "${ strongAddressAvailable } برای ورود به سیستم همه سرویس‌های ${ BRAND_NAME } از این رایانشانی استفاده خواهید کرد."
+      ],
       "(Mail + VPN)": [
         "(ایمیل + VPN)"
       ],
@@ -902,6 +936,9 @@
       "Amount below minimum (${ amount }).": [
         "مقدار کمتر از حداقل (${ amount })."
       ],
+      "AOL reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
+        "AOL اطلاعات شخصی شما را می‌خواند تا دسترسی به تبلیغ کنندگان و سایر اشخاص ثالث را فراهم کند. برای حفظ حریم خصوصی بهتر، یک رایانشانی ایمن ایجاد کنید."
+      ],
       "Basic, Plus or Visionary subscription required": [
         "اشتراک Basic، Plus یا Visionary مورد نیاز است"
       ],
@@ -929,8 +966,14 @@
       "By leaving now, changes may not be saved": [
         "با خارج شدن، تغییرات ممکن است که ذخیره نشوند"
       ],
+      "Choose the look and feel of the application.": [
+        "ظاهر و حس برنامه را انتخاب کنید."
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "روی \"درخواست کد جدید\" کلیک کنید تا یک کد تایید جدید به ${ strong } ارسال شود. اگر این شماره‌تلفن نادرست است، جهت اصلاح آن روی \"ویرایش\" کلیک نمایید."
+      ],
+      "Continue anyway?": [
+        "با این وجود ادامه می‌دهید؟"
       ],
       "Creating your account": [
         "ایجاد حساب کاربری خود"
@@ -941,6 +984,9 @@
       "Discount applied to your subscription with coupon ${ code }": [
         "تخفیف به اشتراک شما با کوپن ${ code } اعمال شد"
       ],
+      "Done! We sent a code to ${ destination }.": [
+        "انجام شد! ما یک کد به ${ destination } ارسال کردیم."
+      ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "اپ مورد علاقه خود را امروز بارگیری نموده و حریم خصوصی را با خود هر کجا که میروید ببرید."
       ],
@@ -950,11 +996,23 @@
       "Enter key manually instead": [
         "در عوض کلید را به صورت دستی وارد کنید"
       ],
+      "Enter the code sent to your phone number ${ phone }.": [
+        "کدی که به شماره تلفن ${ phone } شما فرستاده شد را وارد کنید."
+      ],
+      "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
+        "کدی که به ${ email } فرستاده شد را وارد کنید. اگر نمی‌توانید پیام را در صندوق ورودی پیدا کنید، لطفا پوشه هرزنامه خود را بررسی کنید."
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "کد تاییدی که برای ${ destinationText } ارسال شد را وارد نمایید."
       ],
       "Enter your login password to confirm your identity.": [
         "برای احراز هویت، رمز خود را وارد کنید."
+      ],
+      "Enter your recovery email address and we will send you your username or email address.": [
+        "رایانشانی بازیابی خود را وارد کنید و ما نام کاربری‌ یا رایانشانی شما را برایتان ارسال خواهیم کرد."
+      ],
+      "Enter your recovery phone number and we will send you your username or email address.": [
+        "شماره تلفن بازیابی خود را وارد کنید و ما نام کاربری یا رایانشانی شما را برایتان ارسال خواهیم کرد."
       ],
       "Expired": [
         "منقضی شده"
@@ -967,6 +1025,9 @@
       ],
       "Free up some space or contact your administrator.": [
         "مقداری فضای آزاد ایجاد کنید یا با مدیر خود تماس بگیرید."
+      ],
+      "Google records your online activity and reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
+        "گوگل فعالیت‌های برخط شما را ثبت کرده و اطلاعات شخصی شما را می‌خواند تا دسترسی به تبلیغ کنندگان و سایر اشخاص ثالث را فراهم کند. برای حفظ حریم خصوصی بهتر، یک رایانشانی ایمن ایجاد کنید."
       ],
       "here": [
         "اینجا"
@@ -989,8 +1050,14 @@
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to log into your account. Each code can only be used once.": [
         "اگر شما دستگاه دو-مرحله ای فعال شده خود را از دست دهید، این کدها می‌توانند بجای کد تأیید هویت دو-مرحله ای ۶ رقمی استفاده شوند تا به حساب خود وارد شوید. هر کد می‌تواند تنها یک بار استفاده شود."
       ],
+      "If you wish to combine this account with another one, do NOT delete it.": [
+        "اگر شما مایل به ادغام این حساب کاربری با یکی دیگر هستید، حذفش نکنید."
+      ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "مهم: لطفاً مطمئن شوید که کدهای بازیابی را ذخیره می‌کنید. در غیر اینصورت شما می‌توانید برای همیشه دسترسی به حساب خود را اگر که دستگاه تأیید هویت دو-مرحله ای خود را گم کنید، از دست دهید."
+      ],
+      "In case you lose your login details, we’ll send you recovery instructions via email or SMS.": [
+        "در صورت از دست دادن جزئیات ورود خود، به شما دستورالعمل های بازیابی را از راه رایانامه یا پیامک ارسال خواهیم کرد."
       ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
         "نصب یک پرونده تنظیمات کشور برای وصل شدن به یک سرور تصادفی در کشور انتخابی شما."
@@ -1010,6 +1077,9 @@
       "Internet connection restored.": [
         "اتصال اینترنت برقرار شد."
       ],
+      "Learn more": [
+        "بیشتر بدانید"
+      ],
       "Loading": [
         "در حال بارگذاری"
       ],
@@ -1018,6 +1088,12 @@
       ],
       "Loading preview": [
         "در حال بارگذاری پیش‌نمایش"
+      ],
+      "lose access to all current encrypted data": [
+        "از دست دادن دسترسی به همه داده‌های رمزگذاری شده کنونی"
+      ],
+      "Mail.ru reads your personal data in order to provide access for advertisers, Russian government agencies and other third parties. For better privacy, create a secure email address.": [
+        "Mail.ru اطلاعات شخصی شما را می‌خواند تا دسترسی به تبلیغ کنندگان، سازمان‌های دولتی روسیه و سایر اشخاص ثالث را فراهم کند. برای حفظ حریم خصوصی بهتر، یک رایانشانی ایمن ایجاد کنید."
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "برای تنظیم حساب خود ، این اطلاعات را به صورت دستی در دستگاه تأیید اعتبار 2 عامل وارد کنید. ${ _switchButton }."
@@ -1034,6 +1110,9 @@
       "Not set": [
         "تنظیم نشده"
       ],
+      "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
+        "از دستگاه شخص دیگری استفاده می‌کنید؟ برای ورود به سیستم یک پنجرهٔ مرور خصوصی ایجاد کرده و پس از اتمام کار آن را ببندید. ${ learnMore }"
+      ],
       "of": [
         "از"
       ],
@@ -1048,6 +1127,9 @@
       ],
       "Plan upgrade required": [
         "ارتقا برنامه مورد نیاز است"
+      ],
+      "Please enter the 12-word recovery phrase associated with your account.": [
+        "لطفاً عبارت بازیابی ١٢ واژه‌ای مرتبط با حساب خود را وارد نمایید."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "لطفاً توجه کنید که با فشردن دکمهٔ تایید، حساب شما ${ creditsRemaining } اعتبار باقیمانده خواهد داشت."
@@ -1106,6 +1188,9 @@
       "This can take a few seconds or a few minutes depending on your device": [
         "بسته به دستگاه شما می تواند چند ثانیه یا چند دقیقه طول بکشد"
       ],
+      "This will also disable any two-factor authentication method associated with this account.": [
+        "این همچنین هر گونه روش احراز هویت دو مرحله‌ای مربوط به این حساب را غیر فعال خواهد کرد."
+      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "این کار اشتراک پرداختی فعلی شما را لغو خواهد کرد و شما هر گونه مزایای وفاداری را که تا کنون کسب کرده‌اید، از دست خواهید داد. موجودی باقی ماندهٔ اشتراک شما به صورت اعتبار حساب به شما بازگردانده می‌شود."
       ],
@@ -1115,14 +1200,26 @@
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "این گزینه به طور دائم حساب کاربری شما و تمام داده‌های آن را حذف می‌کند. شما قادر به فعال‌سازی دوبارهٔ این حساب کاربری نخواهید بود."
       ],
+      "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
+        "این جایگزین گذرواژه موقت شما خواهد شد. از آن برای دسترسی به حساب ${ BRAND_NAME } خود در آینده استفاده خواهید کرد."
+      ],
+      "This will sign you out of any active sessions and disable 2-factor authentication.": [
+        "این کنش شما را از تمامی نشست‌های فعال خارج می‌کند و احراز هویت دو عاملی نیز غیرفعال می‌شود."
+      ],
       "This wizard will enable Two-Factor Authentication (2FA) on your Proton account. Two-factor authentication will make your Proton account more secure so we recommend enabling it.": [
         "این پرسشنامه تایید هویت دو-مرحله ای (2FA) را در حساب پروتن شما فعال می‌کند. تایید هویت دو-مرحله ای حساب پروتن شما را امن‌تر خواهد کرد بنابراین ما فعال کردن آن را توصیه می‌کنیم."
+      ],
+      "to continue to ${ toAppName }": [
+        "برای ادامه به ${ toAppName }"
       ],
       "To fight spam and abuse, please verify you are human.": [
         "برای نبرد با هرزنامه و سؤاستفاده، لطفاً تایید کنید که شما انسانید."
       ],
       "To keep up with the latest development at Proton products, you can subscribe to our various emails and visit our blog from time to time.": [
         "برای پیگیری آخرین پیشرفت در محصولات پروتن، می‌توانید در ایمیل‌های مختلف ما مشترک شوید و هر از گاهی به وبلاگ ما مراجعه کنید."
+      ],
+      "To proceed, select an account recovery method so we can verify the request.": [
+        "برای ادامه، لطفاً یک روش بازیابی حساب را انتخاب نمایید تا بتوانیم درخواست شما را تأیید کنیم."
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "حساب‌تان را با اعتباری که می‌توانید برای اشتراک در یک طرح جدید یا تمدید طرح فعلی استفاده کنید شارژ کنید. شما برای هر ${ i18nCurrency } که هزینه می‌کنید یک واحد اعتبار دریافت می‌کنید."
@@ -1145,6 +1242,9 @@
       "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
         "حالت دو-رمزه رمزهای عبور جداگانه برای رمزگشایی ورود و صندوق پستی استفاده میکند. این یک مزیت امنیتی کوچک در بعضی مواقع ارائه میکند، با این حال ما برای بیشتر کاربران حالت تک-رمزه توصیه میکنیم. برای تغییر به حالت دو-رمزه، ابتدا یک-رمزعبور ورودی و سپس یک-رمزعبور صندوق پستی تنظیم کنید."
       ],
+      "Unfortunately there is no recovery method saved for this account.": [
+        "متاسفانه هیچ روش بازیابی برای این حساب ذخیره نشده است."
+      ],
       "Unsupported file": [
         "فایل پشتیبانی نشده"
       ],
@@ -1157,6 +1257,15 @@
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "تایید، یک زبانه جدید باز خواهد کرد، لطفا مسدودکننده پنجره‌های Pop-up را غیرفعال کنید. هیچ هزینه‌ای از شما دریافت نخواهد شد. هر مبلغی که بابت تایید از کارت شما کم شود، بلافاصله بازپرداخت می‌شود."
       ],
+      "Warning:": [
+        "هشدار:"
+      ],
+      "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
+        "هشدار: این حذف ابدیست. با این کار دسترسی به همه سرویس‌های متصل نیز از بین می‌رود و تمام مخاطبین شما پاک می‌شوند."
+      ],
+      "We recommend using your recovery phrase instead.": [
+        "پیشنهاد می‌کنیم به‌جای آن از عبارت بازیابی خود استفاده کنید."
+      ],
       "We use 3-D Secure to protect your payments.": [
         "ما از 3-D امن استفاده میکنیم تا پرداختهای شما را حفاظت کنیم."
       ],
@@ -1165,6 +1274,12 @@
       ],
       "We're moving! Join us at our new site: ${ link }.": [
         "ما در حال جابجایی هستیم! به ما در سایت جدیدمان بپیوندید: ${ link }."
+      ],
+      "We’ll send a reset code to the email address you provided for account recovery.": [
+        "برای بازیابی حسابتان، ما یک کد بازنشانی به آدرس ایمیل بازیابی که ارائه کرده‌اید ارسال می‌کنیم."
+      ],
+      "We’ll send a reset code to the phone number you provided for account recovery.": [
+        "برای بازیابی حسابتان، ما یک کد بازنشانی به شماره تلفن بازیابی که ارائه کرده‌اید ارسال می‌کنیم."
       ],
       "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
         "ما در حال به‌روزرسانی طرح فعلی شما به یک طرح بهبود یافته هستیم که به ازای قیمت یکسان قابلیت‌های بیشتری ارائه می‌دهد. هنگامی که سامانه‌های ما در حال به‌روزرسانی هستند، شما قادر به تغییر آن نخواهید بود. ما به شما به محض انجام شدن آن پیام خواهیم داد."
@@ -1175,6 +1290,12 @@
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "آیا می‌خواهید یک کد تایید جدید دریافت نمایید یا از یک روش تایید جایگزین استفاده کنید؟"
       ],
+      "Yahoo reads your personal data in order to provide access for advertisers, US intelligence agencies and other third parties. For better privacy, create a secure email address.": [
+        "یاهو اطلاعات شخصی شما را می‌خواند تا دسترسی به تبلیغ کنندگان، سازمان‌های اطلاعاتی ایالات متحده و سایر اشخاص ثالث را فراهم کند. برای حفظ حریم خصوصی بهتر، یک رایانشانی ایمن ایجاد کنید."
+      ],
+      "Yandex records your online activity and reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
+        "یاندکس فعالیت‌های برخط شما را ثبت کرده و اطلاعات شخصی شما را می‌خواند تا دسترسی به تبلیغ کنندگان و سایر اشخاص ثالث را فراهم کند. برای حفظ حریم خصوصی بهتر، یک رایانشانی ایمن ایجاد کنید."
+      ],
       "You already have a free account": [
         "در حال حاضر یک حساب کاربری رایگان دارید"
       ],
@@ -1183,6 +1304,9 @@
       ],
       "You can customize and download your invoices for accounting purposes.": [
         "می‌توانید صورتحساب‌های خود را برای اهداف حسابداری، شخصی‌سازی و دانلود کنید."
+      ],
+      "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
+        "شما یک روش بازیابی تنظیم نکرده‌اید بنابراین در صورت فراموش کردن گذرواژه، بازیابی حساب غیرممکن است. بدون روش بازیابی ادامه می‌دهید؟"
       ],
       "You have no saved payment methods.": [
         "شما روش پرداخت ذخیره شده‌ای ندارید."
@@ -1205,11 +1329,17 @@
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
         "شما به ۱۰۰٪ ظرفیت حافظه خود رسیدید. شما نمیتوانید ایمیلهای جدید دریافت کرده یا بفرستید. ${ freeUpMessage } ${ upgradeLink }"
       ],
+      "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
+        "شما در حساب ${ BRAND_NAME } خود ${ loseAllData } خواهید داد. برای بازیابی آن، شما لازم است که گذرواژه قدیمی خود را وارد کنید."
+      ],
       "You will be soon redirected to your bank to verify your payment.": [
         "به زودی برای تایید پرداخت به بانک خود هدایت می‌شوید."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "شما به زودی جهت تأیید پرداخت خود به پی‌پال منتقل می‌شوید."
+      ],
+      "You'll stay signed in even after you close the browser.": [
+        "حتی پس از بستن مرورگر نیز در سیستم باقی خواهید ماند."
       ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
         "حساب شما حداقل یک صورتحساب تاریخ گذشته دارد. دسترسی شما محدود شده است. ${ payInvoiceLink }"
@@ -1237,6 +1367,9 @@
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "حساب پروتن شما در حال حاضر متوقف شده است. به منظور ادامه استفاده از حسابتان، لطفا صورتحساب‌های عقب افتاده را بپردازید."
+      ],
+      "Your recovery email address:": [
+        "رایانشانی بازیابی شما:"
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "اشتراک شما توسط Mozilla اداره می شود. لطفا با پشتیبانی Mozilla تماس بگیرید."
@@ -1321,6 +1454,9 @@
       "Amount due": [
         "مبلغ پرداختی"
       ],
+      "Attach screenshot(s)": [
+        "پیوست اسکرین شات(ها)"
+      ],
       "bonus storage": [
         "فضای هدیه"
       ],
@@ -1348,6 +1484,9 @@
       "Category": [
         "دسته‌بندی"
       ],
+      "Code": [
+        "کد"
+      ],
       "Confirm login password": [
         "تایید گذرواژه ورود"
       ],
@@ -1363,11 +1502,23 @@
       "Copy": [
         "کپی"
       ],
+      "Could you please let us know which provider?": [
+        "می‌توانید ارائه دهنده را برای ما تعيين کنید؟"
+      ],
+      "Could you please specify which streaming service?": [
+        "می‌توانید لطفاً سرويس پخش آنلاین را مشخص نمایید؟"
+      ],
+      "Could you please specify?": [
+        "آیا می‌توانید آن را واضح‌تر کنید؟"
+      ],
       "Country": [
         "کشور"
       ],
       "Credits used": [
         "اعتبار استفاده شده"
+      ],
+      "Current login password": [
+        "گذرواژه کنونی"
       ],
       "Customize invoices": [
         "شخصی‌سازی صورتحساب‌ها"
@@ -1375,14 +1526,26 @@
       "Default language": [
         "زبان پیش‌فرض"
       ],
+      "Delete": [
+        "حذف"
+      ],
       "Digits": [
         "ارقام"
       ],
       "Discount": [
         "تخفیف"
       ],
+      "Do you have any suggestions for our team?": [
+        "آیا برای تیم ما پیشنهادی دارید؟"
+      ],
       "Email address": [
         "آدرس ایمیل"
+      ],
+      "Email or username": [
+        "رایانامه یا نام‌کاربری"
+      ],
+      "Enter organization name to confirm": [
+        "جهت تأیید نام سازمان را وارد نمایید"
       ],
       "Enter the code displayed on your TV": [
         "کد نشان داده شده بر روی تلویزیون خود را وارد کنید"
@@ -1401,6 +1564,9 @@
       ],
       "Interval": [
         "وقفه"
+      ],
+      "Keep me signed in": [
+        "مرا در سیستم نگهدار"
       ],
       "Key": [
         "کلید"
@@ -1468,6 +1634,18 @@
       "Proton username": [
         "نام کاربری پروتن"
       ],
+      "Recovery code": [
+        "کد بازیابی"
+      ],
+      "Recovery email address": [
+        "نشانی ایمیل بازیابی"
+      ],
+      "Recovery phone number": [
+        "شماره تلفن بازیابی"
+      ],
+      "Repeat password": [
+        "تکرار گذرواژه"
+      ],
       "Reveal password": [
         "نمایش رمز عبور"
       ],
@@ -1517,6 +1695,11 @@
         "رمزعبور شما (مدیر)"
       ]
     },
+    "label": {
+      "Recovery phone number": [
+        "شماره تلفن بازیابی"
+      ]
+    },
     "Label for news": {
       "Proton beta announcements": [
         "اطلاعیه‌های بتا پروتون"
@@ -1552,6 +1735,12 @@
       "click here": [
         "اینجا کلیک کنید"
       ],
+      "Common sign in issues": [
+        "مشکلات متداول ورود به سیستم"
+      ],
+      "Common sign up issues": [
+        "مشکلات ثبت‌نام متداول"
+      ],
       "Forgot username?": [
         "نام کاربریتان را فراموش کرده‌اید؟"
       ],
@@ -1561,6 +1750,9 @@
       "Learn more": [
         "بیشتر بدانید"
       ],
+      "Need help?": [
+        "کمک می‌خواهید؟"
+      ],
       "Not activated": [
         "فعال نشده"
       ],
@@ -1569,6 +1761,12 @@
       ],
       "Request an invite": [
         "درخواست دعوت‌نامه بدهید"
+      ],
+      "Reset password": [
+        "بازنشانی گذرواژه"
+      ],
+      "Sign in": [
+        "ورود"
       ],
       "Upgrade": [
         "ارتقا"
@@ -1607,6 +1805,41 @@
     "new_plans: action": {
       "Continue with Free": [
         "Continue with Free"
+      ],
+      "Delete account": [
+        "حذف حساب کاربری"
+      ],
+      "Downgrade account": [
+        "اکانت را تنزل دهید"
+      ],
+      "Got it": [
+        "فهمیدم"
+      ]
+    },
+    "new_plans: Action": {
+      "Upgrade now": [
+        "اکنون ارتقا دهید"
+      ]
+    },
+    "new_plans: feature": {
+      "Encrypted contact details": [
+        "جزئیات مخاطب رمزنگاری شده"
+      ],
+      "Secure Core servers": [
+        "سرورهای هسته امن"
+      ],
+      "Two-factor authentication": [
+        "احراز هویت دو مرحله‌ای"
+      ]
+    },
+    "new_plans: heading": {
+      "Support": [
+        "پشتیبانی"
+      ]
+    },
+    "new_plans: signup": {
+      "Subscription": [
+        "اشتراک"
       ]
     },
     "Notification": {
@@ -1732,6 +1965,38 @@
         "رایگان"
       ]
     },
+    "Recovery Email": {
+      "Cancel": [
+        "انصراف"
+      ]
+    },
+    "Recovery method": {
+      "Email": [
+        "رایانامه"
+      ],
+      "Phone number": [
+        "شماره تلفن"
+      ],
+      "Phrase": [
+        "عبارت"
+      ]
+    },
+    "Recovery Phone": {
+      "Cancel": [
+        "انصراف"
+      ]
+    },
+    "Signup label": {
+      "Display name": [
+        "نام نمایشی"
+      ],
+      "Email": [
+        "رایانامه"
+      ],
+      "Username": [
+        "نام کاربری"
+      ]
+    },
     "State": {
       "Downgrading your account, please wait": [
         "در حال تنزیل حساب کاربری شما، لطفاً صبر کنید"
@@ -1748,7 +2013,21 @@
         "فضای ذخیره‌سازی فعلی شما:"
       ]
     },
+    "Subscription attribute": {
+      "${ UsedAddresses } of ${ MaxAddresses } email address": [
+        "${ UsedAddresses } از ${ MaxAddresses } نشانی رایانامه",
+        ""
+      ]
+    },
+    "Subscription saving": {
+      "Save": [
+        "ذخیره"
+      ]
+    },
     "Success": {
+      "${ server.Domain } copied to your clipboard": [
+        "${ server.Domain } در بریده‌دان شما کپی شد"
+      ],
       "Account deleted. Logging out...": [
         "حساب کاربری حذف شد. در حال خروج..."
       ],
@@ -1769,6 +2048,12 @@
       ],
       "Gift code applied": [
         "کد هدیه اعمال شد"
+      ],
+      "If you entered a valid recovery email we will send you an email with your usernames in the next minute.": [
+        "اگر یک رایانامه بازیابی معتبر وارد کرده‌اید، تا دقایقی دیگر نام کاربری‌های شما را با رایانامه‌ای برای شما ارسال می‌کنیم."
+      ],
+      "If you entered a valid recovery phone we will send you an sms with your usernames in the next minute.": [
+        "اگر یک شماره تلفن بازیابی معتبر وارد کرده‌اید، تا دقایقی دیگر نام کاربری های شما را با پیامکی برای شما ارسال می‌کنیم."
       ],
       "Invoice customized": [
         "صورتحساب سفارشی شد"
@@ -1818,6 +2103,11 @@
         "وضعیت"
       ]
     },
+    "Themes": {
+      "Themes": [
+        "پوسته‌ها"
+      ]
+    },
     "Title": {
       "1. Select platform": [
         "1. انتخاب پلتفرم"
@@ -1830,6 +2120,9 @@
       ],
       "3. Select config file and download": [
         "۳. فایل پیکربندی را انتخاب و بارگیری کنید"
+      ],
+      "Account": [
+        "حساب"
       ],
       "Account suspended": [
         "حساب تعلیق شده است"
@@ -1909,8 +2202,14 @@
       "Date": [
         "تاریخ"
       ],
+      "Delete": [
+        "حذف"
+      ],
       "Delete account": [
         "حذف حساب کاربری"
+      ],
+      "Delete organization?": [
+        "سازمان حذف شود؟"
       ],
       "Device connected!": [
         "دستگاه متصل شد!"
@@ -1918,17 +2217,29 @@
       "Disable two-factor authentication": [
         "غیرفعال کردن احراز هویت دو مرحله‌ای"
       ],
+      "Downgrade account": [
+        "اکانت را تنزل دهید"
+      ],
       "Downloads": [
         "دانلودها"
       ],
       "Edit credit/debit card": [
         "ویرایش کارت اعتباری/دبیت"
       ],
+      "Email": [
+        "رایانامه"
+      ],
       "Email subscriptions": [
         "اشتراک ایمیل"
       ],
       "Error": [
         "خطا"
+      ],
+      "Find email or username": [
+        "رایانامه یا نام کاربری را پیدا کنید"
+      ],
+      "General": [
+        "عمومی"
       ],
       "Gift code": [
         "کد هدیه"
@@ -1942,6 +2253,9 @@
       "Invoices": [
         "صورت‌حساب‌ها"
       ],
+      "Language": [
+        "زبان"
+      ],
       "Login password": [
         "رمز عبور ورود"
       ],
@@ -1951,6 +2265,9 @@
       "Next": [
         "بعدی"
       ],
+      "No recovery method": [
+        "هیچ روش بازیابی"
+      ],
       "Open actions dropdown": [
         "باز کردن منوی اقدامات"
       ],
@@ -1959,6 +2276,9 @@
       ],
       "Open pagination": [
         "بازکردن صفحه بندی"
+      ],
+      "OpenVPN / IKEv2 username": [
+        "نام کاربری OpenVPN / IKEv2"
       ],
       "OpenVPN configuration files": [
         "فایل‌های پیکربندی OpenVPN"
@@ -1987,6 +2307,9 @@
       "PayPal verification failed": [
         "تایید PayPal ناموفق بود"
       ],
+      "Phone": [
+        "تلفن"
+      ],
       "Plan summary": [
         "خلاصه طرح‌ها"
       ],
@@ -2002,11 +2325,35 @@
       "Processing...": [
         "در حال پردازش..."
       ],
+      "Recovery": [
+        "بازیابی"
+      ],
+      "Report a problem": [
+        "گزارش یک مشکل"
+      ],
+      "Request new code": [
+        "درخواست کد جدید"
+      ],
+      "Reset password": [
+        "بازنشانی گذرواژه"
+      ],
+      "Reset password?": [
+        "بازنشانی گذرواژه?"
+      ],
       "Select a plan": [
         "انتخاب طرح"
       ],
+      "Set new password": [
+        "تنظیم گذرواژه جدید"
+      ],
       "Set up two-factor authentication": [
         "فعال‌کردن احراز هویت دو مرحله‌ای"
+      ],
+      "Settings": [
+        "تنظیمات"
+      ],
+      "Sign in": [
+        "ورود"
       ],
       "Sign in again to continue": [
         "براى ادامه، وارد شويد"
@@ -2020,14 +2367,32 @@
       "Switch to two-password mode": [
         "تغییر به حالت دو-رمزه"
       ],
+      "This address might compromise your privacy.": [
+        "این نشانی ممکن است حریم شما را تهدید کند."
+      ],
       "TV log in": [
         "ورود تلویزیون"
+      ],
+      "Two-factor authentication": [
+        "احراز هویت دو مرحله‌ای"
       ],
       "Type": [
         "نوع"
       ],
+      "Unlock your mailbox": [
+        "نامه‌دان خود را باز کنید"
+      ],
       "Unsupported browser": [
         "مرورگر پشتیبانی نشده"
+      ],
+      "Username": [
+        "نام کاربری"
+      ],
+      "Warning": [
+        "هشدار"
+      ],
+      "Warning!": [
+        "هشدار!"
       ],
       "What's new": [
         "تازه ها چیست"

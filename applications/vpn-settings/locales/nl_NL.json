@@ -29,6 +29,9 @@
       "Apply": [
         "Pas toe"
       ],
+      "Attach screenshot(s)": [
+        "Schermafdruk(ken) toevoegen"
+      ],
       "Authenticate": [
         "Authenticeren"
       ],
@@ -46,6 +49,9 @@
       ],
       "Chat with us": [
         "Chat met ons"
+      ],
+      "Clear two-factor authentication code": [
+        "Wis tweestapsverificatiecode"
       ],
       "Close": [
         "Sluit"
@@ -299,6 +305,9 @@
       "Show preview": [
         "Voorbeeld tonen"
       ],
+      "Sign in": [
+        "Inloggen"
+      ],
       "Sign out": [
         "Uitloggen"
       ],
@@ -397,8 +406,14 @@
       ]
     },
     "Action in trial plan": {
+      "Continue with free plan": [
+        "Doorgaan met gratis abonnement"
+      ],
       "No, thanks": [
         "Nee, bedankt"
+      ],
+      "Start my 30-day free trial": [
+        "Start mijn 30 dagen proefversie"
       ],
       "Try free for 30 days": [
         "Probeer gratis uit voor 30 dagen"
@@ -652,6 +667,12 @@
       ]
     },
     "Calendar subscription not synced error; long version": {
+      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
+        "Agendalink is niet toegankelijk van buiten de agendaproviders ecosysteem."
+      ],
+      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
+        "Agendalink is tijdelijk ontoegankelijk. Verifieer dat de link van de agendaprovider nog steeds geldig is."
+      ],
       "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
         "Meer dan 12 uur geleden sinds de laatste update — Proton Calendar probeert de agenda over enkele uren te updaten."
       ]
@@ -812,7 +833,7 @@
         "Bahama's"
       ],
       "Bahrain": [
-        "Bahrain"
+        "Bahrein"
       ],
       "Bangladesh": [
         "Bangladesh"
@@ -841,6 +862,9 @@
       "Bolivia": [
         "Bolivia"
       ],
+      "Bonaire, Sint Eustatius and Saba": [
+        "Bonaire, Sint Eustatius en Saba"
+      ],
       "Bosnia and Herzegovina": [
         "Bosnië en Herzegovina"
       ],
@@ -848,13 +872,13 @@
         "Botswana"
       ],
       "Bouvet Island": [
-        "Bouvet Eiland"
+        "Bouveteiland"
       ],
       "Brazil": [
         "Brazilië"
       ],
       "British Indian Ocean Territory": [
-        "Brits Indische Oceaan Territorium"
+        "Brits Indische Oceaanterritorium"
       ],
       "Brunei Darussalam": [
         "Brunei Darussalam"
@@ -866,7 +890,7 @@
         "Burkina Faso"
       ],
       "Burundi": [
-        "Boeroendi"
+        "Burundi"
       ],
       "Cambodia": [
         "Cambodja"
@@ -884,7 +908,7 @@
         "Kaaiman Eilanden"
       ],
       "Central African Republic": [
-        "Centraal Afrikaanse Republiek"
+        "Centraal-Afrikaanse Republiek"
       ],
       "Chad": [
         "Tsjaad"
@@ -899,7 +923,7 @@
         "Kersteiland"
       ],
       "Cocos (Keeling) Islands": [
-        "Cocoseilanden (Keeling)"
+        "Cocoseilanden"
       ],
       "Colombia": [
         "Colombia"
@@ -1214,7 +1238,7 @@
         "Mozambique"
       ],
       "Myanmar": [
-        "Myanmar (Birma)"
+        "Myanmar"
       ],
       "Namibia": [
         "Namibië"
@@ -1421,7 +1445,7 @@
         "Taiwan"
       ],
       "Tajikistan": [
-        "Tadjikistan"
+        "Tadzjikistan"
       ],
       "Tanzania": [
         "Tanzania"
@@ -2049,6 +2073,9 @@
       "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
         "Voor Visa, MasterCard en Discover zijn dit de 3 cijfers op de achterkant van uw kaart. Voor American Express de 4 cijfers op de voorkant van uw kaart."
       ],
+      "Free": [
+        "Gratis"
+      ],
       "Free up some space or add more storage space.": [
         "Maak ruimte vrij of voeg meer opslagruimte toe."
       ],
@@ -2482,7 +2509,7 @@
         "U moet een creditcard of bankrekening gekoppeld hebben aan uw PayPal-account. Als uw PayPal-account dat niet heeft, klik dan op de knop hieronder."
       ],
       "You must remove any additional personal calendars and any shared calendar links before you can cancel your Mail subscription.": [
-        "U moet alle extra persoonlijke agenda's en gedeelde agenda-koppelingen verwijderen voordat u uw Mail abonnement kunt opzeggen."
+        "U moet alle extra persoonlijke agenda's en gedeelde agenda-koppelingen verwijderen voordat u uw Mail-abonnement kunt opzeggen."
       ],
       "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription.": [
         "U moet alle extra persoonlijke agenda's en gedeelde agenda-koppelingen verwijderen voordat u uw abonnement kunt opzeggen."
@@ -2546,6 +2573,29 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Uw abonnement wordt beheerd door Mozilla. Neem contact op met Mozilla support."
+      ]
+    },
+    "info": {
+      "Day 27: Trial reminder": [
+        "Dag 27: Proefversie herinnering"
+      ],
+      "Day 30: Trial ends": [
+        "Dag 30: Proefversie eindigt"
+      ],
+      "Enjoy secure, easy-to-use emailing with plenty of premium features.": [
+        "Geniet van veilig, eenvoudig-te-gebruiken mailen met veel premium functies."
+      ],
+      "Try Mail Plus": [
+        "Probeer Mail Plus"
+      ],
+      "We’ll email you before your trial ends. Cancel anytime.": [
+        "We mailen u voor uw proefversie eindigt. Annuleren wanneer u wilt."
+      ],
+      "Your new email address is ready to go!": [
+        "Uw nieuw e-mailadres is klaar om te starten!"
+      ],
+      "Your subscription starts on ${ startText }.": [
+        "Uw abonnement start op ${ startText }."
       ]
     },
     "Info for cash payment method": {
@@ -2644,7 +2694,7 @@
         "Schermafbeelding(en) toevoegen"
       ],
       "Billing cycle": [
-        "Factuurperiode"
+        "Facturatieperiode"
       ],
       "Block malware only": [
         "Alleen malware blokkeren"
@@ -3016,6 +3066,9 @@
       ],
       "Reset password": [
         "Wachtwoord resetten"
+      ],
+      "Sign in": [
+        "Inloggen"
       ],
       "Terms": [
         "Voorwaarden"
@@ -3999,7 +4052,7 @@
       ],
       "${ n } VPN connection": [
         "${ n } VPN-verbinding",
-        ""
+        "${ n } VPN-verbindingen"
       ],
       "${ n } VPN connection per user": [
         "${ n } VPN-verbinding per gebruiker",
@@ -4055,6 +4108,9 @@
     "Subtitle for trial plan": {
       "The privacy-first Mail and Calendar solution for your everyday communications needs.": [
         "De privacy-eerst e-mail en agenda oplossing voor uw alledaagse communicatienoden."
+      ],
+      "This offer is for those new to Proton only. No credit card required.": [
+        "Dit aanbod is enkel voor zij nieuw bij Proton. Geen kredietkaart vereist."
       ]
     },
     "Success": {
@@ -4136,6 +4192,9 @@
     "Suffix": {
       "/month": [
         "/maand"
+      ],
+      "/user per month": [
+        "/gebruiker per maand"
       ]
     },
     "Suffix for price": {
@@ -4442,6 +4501,9 @@
       "Request new code": [
         "Nieuwe code aanvragen"
       ],
+      "Reset password": [
+        "Wachtwoord resetten"
+      ],
       "Reset password?": [
         "Wachtwoord resetten?"
       ],
@@ -4465,6 +4527,9 @@
       ],
       "Settings": [
         "Instellingen"
+      ],
+      "Sign in": [
+        "Inloggen"
       ],
       "Sign in again to continue": [
         "Log opnieuw in om door te gaan"

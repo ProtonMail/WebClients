@@ -5284,7 +5284,8 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "Setiap ${ interval } tahun"
+        "Yearly",
+        ""
       ],
       "Every ${ interval } year, ${ timesString }": [
         "Setiap ${ interval } tahun, ${ timesString }"

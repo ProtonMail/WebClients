@@ -50,6 +50,9 @@
       "Chat with us": [
         "Chatte mit uns"
       ],
+      "Clear two-factor authentication code": [
+        "Zwei-Faktor-Authentifizierungscode löschen"
+      ],
       "Close": [
         "Schließen"
       ],
@@ -204,7 +207,7 @@
         "OK"
       ],
       "Ok": [
-        "Ok"
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "${ CALENDAR_APP_NAME }-Einstellungen öffnen"
@@ -478,6 +481,9 @@
       ]
     },
     "Billing cycle option": {
+      "1 month": [
+        "1 Monat"
+      ],
       "12 months": [
         "12 Monate"
       ],
@@ -1592,6 +1598,9 @@
       ]
     },
     "Cycle": {
+      "/month": [
+        "/Monat"
+      ],
       "/user per month": [
         "/Benutzer pro Monat"
       ]
@@ -1604,6 +1613,9 @@
     "Downgrade account reason": {
       "Bugs or quality issue": [
         "Fehler oder Qualitätsprobleme"
+      ],
+      "I use a different Proton account": [
+        "Ich verwende ein anderes Proton-Konto"
       ],
       "Missing feature(s)": [
         "Fehlende Funktion(en)"
@@ -2098,6 +2110,9 @@
       ],
       "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
         "Bei Visa und MasterCard — die 3-stellige Ziffer auf der Rückseite deiner Karte. Bei American Express — die 4-stellige Ziffer auf der Vorderseite deiner Karte."
+      ],
+      "Free": [
+        "Kostenlos"
       ],
       "Free up some space or add more storage space.": [
         "Gib etwas Platz frei oder füge zusätzlichen Speicherplatz hinzu."
@@ -2719,6 +2734,9 @@
       "Attach screenshot(s)": [
         "Bildschirmfoto(s) anhängen"
       ],
+      "Billing cycle": [
+        "Abrechnungszeitraum"
+      ],
       "Block malware only": [
         "Nur Malware sperren"
       ],
@@ -2754,6 +2772,9 @@
       ],
       "Choose a name for the generated certificate file": [
         "Wähle einen Namen für die erzeugte Zertifikatsdatei"
+      ],
+      "Code": [
+        "Code"
       ],
       "Code is 6 digits without spaces": [
         "Der Code ist 6-stellig ohne Leerzeichen"
@@ -2799,6 +2820,9 @@
       ],
       "Default language": [
         "Standardsprache"
+      ],
+      "Delete": [
+        "Löschen"
       ],
       "Device/certificate name": [
         "Name des Geräts/Zertifikats"
@@ -2857,6 +2881,9 @@
       "Mailbox password": [
         "Mailbox‐Passwort"
       ],
+      "Moderate NAT": [
+        "Moderates NAT"
+      ],
       "Name": [
         "Name"
       ],
@@ -2874,6 +2901,9 @@
       ],
       "No filter": [
         "Kein Filter"
+      ],
+      "Non-standard ports": [
+        "Nicht-standardgemäße Ports"
       ],
       "Old login password": [
         "Altes Anmeldepasswort"
@@ -2932,6 +2962,9 @@
       "Recovery email address": [
         "Wiederherstellungs-E-Mail-Adresse"
       ],
+      "Recovery phone number": [
+        "Rufnummer für die Wiederherstellung"
+      ],
       "Recovery phrase": [
         "Wiederherstellungsphrase"
       ],
@@ -2973,6 +3006,9 @@
       ],
       "Verification code": [
         "Verifizierungscode"
+      ],
+      "VPN Accelerator": [
+        "VPN-Beschleuniger"
       ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Wir bedauern es sehr, dass du ProtonMail nicht mehr nutzen möchtest. Bitte teile uns deine Gründe mit, damit wir uns verbessern können."
@@ -3039,6 +3075,9 @@
       "click here": [
         "Hier klicken"
       ],
+      "Common sign in issues": [
+        "Häufige Probleme bei der Anmeldung"
+      ],
       "Common sign up issues": [
         "Häufige Probleme bei der Registrierung"
       ],
@@ -3051,14 +3090,26 @@
       "Learn more": [
         "Mehr erfahren"
       ],
+      "Need help?": [
+        "Benötigst du Hilfe?"
+      ],
       "Not activated": [
         "Nicht aktiviert"
       ],
       "Pay invoice": [
         "Rechnung bezahlen"
       ],
+      "Privacy policy": [
+        "Datenschutzerklärung"
+      ],
       "Request an invite": [
         "Einladung anfordern"
+      ],
+      "Reset password": [
+        "Passwort zurücksetzen"
+      ],
+      "Sign in": [
+        "Anmelden"
       ],
       "Terms": [
         "Geschäftsbedingungen"
@@ -3326,6 +3377,9 @@
       "NetShield malware and ad-blocker": [
         "NetShield-Malware- und Werbe-Blocker"
       ],
+      "P2P/BitTorrent": [
+        "P2P/BitTorrent"
+      ],
       "Password-protected Emails": [
         "Passwortgeschützte E-Mails"
       ],
@@ -3403,6 +3457,9 @@
       ]
     },
     "new_plans: heading": {
+      "Support": [
+        "Unterstützung"
+      ],
       "Team management": [
         "Teamverwaltung"
       ]
@@ -3913,6 +3970,9 @@
       ]
     },
     "Recovery Email": {
+      "Cancel": [
+        "Abbrechen"
+      ],
       "Email address has been verified.": [
         "Die E-Mail-Adresse wurde verifiziert."
       ],
@@ -3928,16 +3988,28 @@
       "Verify recovery email?": [
         "Wiederherstellungs-E-Mail-Adresse verifizieren?"
       ],
+      "Verify with email": [
+        "Mit E-Mail-Adresse verifizieren"
+      ],
       "Verifying your email address increases your account security and allows additional options for recovery.": [
         "Das verifizieren deiner E-Mail-Adresse erhöht die Sicherheit deines Kontos und bietet zusätzliche Möglichkeiten zur Wiederherstellung."
       ]
     },
     "Recovery method": {
+      "Email": [
+        "E-Mail-Adresse"
+      ],
+      "Phone number": [
+        "Rufnummer"
+      ],
       "Phrase": [
         "Phrase"
       ]
     },
     "Recovery Phone": {
+      "Cancel": [
+        "Abbrechen"
+      ],
       "Phone number has been verified.": [
         "Rufnummer wurde verifiziert."
       ],
@@ -3946,6 +4018,9 @@
       ],
       "Verify by SMS": [
         "Per SMS verifizieren"
+      ],
+      "Verify now": [
+        "Jetzt bestätigen"
       ],
       "Verify recovery phone?": [
         "Wiederherstellungs-Rufnummer verifizieren?"
@@ -3957,6 +4032,12 @@
     "Signup label": {
       "Display name": [
         "Anzeigename"
+      ],
+      "Email": [
+        "E‐Mail‐Adresse"
+      ],
+      "Username": [
+        "Benutzername"
       ]
     },
     "Spotlight": {
@@ -4009,6 +4090,10 @@
       "${ n } high-speed VPN connection per user": [
         "${ n } Hochgeschwindigkeits-VPN-Verbindung/Benutzer",
         "${ n } Hochgeschwindigkeits-VPN-Verbindungen/Benutzer"
+      ],
+      "${ n } VPN connection": [
+        "${ n } VPN-Verbindung",
+        "${ n } VPN-Verbindungen"
       ],
       "${ n } VPN connection per user": [
         "${ n } VPN-Verbindungen/Benutzer",
@@ -4148,6 +4233,17 @@
     "Suffix": {
       "/month": [
         "/Monat"
+      ],
+      "/user per month": [
+        "/Benutzer pro Monat"
+      ]
+    },
+    "Suffix for price": {
+      "/month": [
+        "/Monat"
+      ],
+      "per month": [
+        "pro Monat"
       ]
     },
     "Tab subscription modal": {
@@ -4211,6 +4307,9 @@
       ],
       "4. Select a server to connect to": [
         "4. Wähle einen Server aus, mit dem du dich verbinden möchtest"
+      ],
+      "Account": [
+        "Konto"
       ],
       "Account suspended": [
         "Konto gesperrt"
@@ -4302,6 +4401,9 @@
       "Date": [
         "Datum"
       ],
+      "Delete": [
+        "Löschen"
+      ],
       "Delete account": [
         "Konto löschen"
       ],
@@ -4314,6 +4416,9 @@
       "Disable two-factor authentication": [
         "Zwei‐Faktor‐Authentifizierung deaktivieren"
       ],
+      "Downgrade account": [
+        "Konto herabstufen"
+      ],
       "Download ${ VPN_APP_NAME }": [
         "${ VPN_APP_NAME } herunterladen"
       ],
@@ -4323,6 +4428,9 @@
       "Edit credit/debit card": [
         "Kredit-/Debitkarte bearbeiten"
       ],
+      "Email": [
+        "E-Mail-Adresse"
+      ],
       "Email subscriptions": [
         "E‐Mail‐Abonnements"
       ],
@@ -4331,6 +4439,9 @@
       ],
       "Find email or username": [
         "E-Mail-Adresse oder Benutzername finden"
+      ],
+      "General": [
+        "Allgemein"
       ],
       "Get ${ vpnPlus } to access all servers": [
         "Hol dir ${ vpnPlus }, um Zugriff auf alle Server zu erhalten"
@@ -4349,6 +4460,9 @@
       ],
       "Invoices": [
         "Rechnungen"
+      ],
+      "Language": [
+        "Sprache"
       ],
       "Login password": [
         "Anmeldepasswort"
@@ -4370,6 +4484,9 @@
       ],
       "Open pagination": [
         "Seitennummerierung öffnen"
+      ],
+      "OpenVPN / IKEv2 username": [
+        "OpenVPN-/IKEv2-Benutzername"
       ],
       "OpenVPN configuration files": [
         "OpenVPN-Konfigurationsdateien"
@@ -4416,8 +4533,20 @@
       "Processing...": [
         "Wird verarbeitet …"
       ],
+      "Recommended": [
+        "Empfohlen"
+      ],
       "Recovery": [
         "Wiederherstellung"
+      ],
+      "Report a problem": [
+        "Ein Problem melden"
+      ],
+      "Request new code": [
+        "Neuen Code anfordern"
+      ],
+      "Reset password": [
+        "Passwort zurücksetzen"
       ],
       "Reset password?": [
         "Passwort zurücksetzen?"
@@ -4440,6 +4569,12 @@
       "Set up two-factor authentication": [
         "Zwei‐Faktor‐Authentifizierung einrichten"
       ],
+      "Settings": [
+        "Einstellungen"
+      ],
+      "Sign in": [
+        "Anmelden"
+      ],
       "Sign in again to continue": [
         "Melde dich erneut an, um fortzufahren"
       ],
@@ -4461,6 +4596,9 @@
       "TV log in": [
         "TV-Anmeldung"
       ],
+      "Two-factor authentication": [
+        "Zwei‐Faktor‐Authentifizierung"
+      ],
       "Type": [
         "Typ"
       ],
@@ -4470,8 +4608,14 @@
       "Unsupported browser": [
         "Nicht unterstützter Browser"
       ],
+      "Username": [
+        "Benutzername"
+      ],
       "Verification": [
         "Verifizierung"
+      ],
+      "Warning": [
+        "Warnhinweis"
       ],
       "Warning!": [
         "Warnung!"
@@ -4538,7 +4682,7 @@
     },
     "Validation": {
       "Password must contain at least ${ length } character": [
-        "Passwort muss mindestens ${ length } Zeichen enthalten",
+        "Das Passwort muss mindestens ${ length } Zeichen enthalten",
         "Das Passwort muss mindestens ${ length } Zeichen enthalten"
       ]
     },

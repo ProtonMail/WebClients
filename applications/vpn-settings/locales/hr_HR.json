@@ -5,11 +5,17 @@
   },
   "contexts": {
     "Action": {
+      "${ address } is available.": [
+        "${ address } je dostupna."
+      ],
       "${ BRAND_NAME } introduction": [
         "${ BRAND_NAME } predstavljanje"
       ],
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } dućan"
+      ],
+      "Activate recovery": [
+        "Aktivirajte oporavak"
       ],
       "Add credit / debit card": [
         "Dodaj kreditnu/debitnu karticu"
@@ -23,6 +29,12 @@
       "Apply": [
         "Primijeni"
       ],
+      "Attach screenshot(s)": [
+        "Priložite snimku(e) zaslona"
+      ],
+      "Authenticate": [
+        "Autenticiraj"
+      ],
       "Back": [
         "Natrag"
       ],
@@ -34,6 +46,9 @@
       ],
       "Change password": [
         "Promijeni lozinku"
+      ],
+      "Chat with us": [
+        "Razgovarajte s nama"
       ],
       "Close": [
         "Zatvori"
@@ -50,6 +65,9 @@
       "Confirm": [
         "Potvrdi"
       ],
+      "Contact support": [
+        "Kontaktiraj podršku"
+      ],
       "Continue": [
         "Nastavi"
       ],
@@ -59,8 +77,14 @@
       "Copy email to clipboard": [
         "Kopiraj adresu e-pošte u međuspremnik"
       ],
+      "Create": [
+        "Stvori"
+      ],
       "Create account": [
         "Stvori račun"
+      ],
+      "Create address": [
+        "Stvori adresu"
       ],
       "Customize": [
         "Prilagodi"
@@ -76,6 +100,12 @@
       ],
       "Details": [
         "Pojedinosti"
+      ],
+      "Didn't receive a code?": [
+        "Niste primili kôd?"
+      ],
+      "Didn't receive the code?": [
+        "Niste primili kod?"
       ],
       "Done": [
         "Gotovo"
@@ -98,6 +128,9 @@
       "Edit phone number": [
         "Uredi broj telefona"
       ],
+      "Edit sign-in details": [
+        "Uredite detalje za prijavu"
+      ],
       "enable desktop notifications": [
         "omogući obavijesti radne površine"
       ],
@@ -112,6 +145,9 @@
       ],
       "Increase": [
         "Povećaj"
+      ],
+      "Load more": [
+        "Učitaj više"
       ],
       "Loading verification": [
         "Učitavanje potvrde"
@@ -145,6 +181,9 @@
       ],
       "Previous": [
         "Prethodno"
+      ],
+      "Refer a friend": [
+        "Uputi prijatelja"
       ],
       "Refresh the page": [
         "Osvježi stranicu"
@@ -182,6 +221,15 @@
       "Save": [
         "Spremi"
       ],
+      "Send code": [
+        "Pošalji kôd"
+      ],
+      "Send my username": [
+        "Pošalji moje korisničko ime"
+      ],
+      "Set recovery phrase": [
+        "Postavite frazu za oporavak"
+      ],
       "Share via link": [
         "Podijeli putem poveznice"
       ],
@@ -190,6 +238,12 @@
       ],
       "Show": [
         "Prikaži"
+      ],
+      "Show preview": [
+        "Prikaži pregled"
+      ],
+      "Sign in": [
+        "Prijavite se"
       ],
       "Sign out": [
         "Odjava"
@@ -200,6 +254,9 @@
       "Submit": [
         "Pošalji"
       ],
+      "Support": [
+        "Podrška"
+      ],
       "Top up": [
         "Nadopuni"
       ],
@@ -209,8 +266,23 @@
       "Try another method": [
         "Isprobajte drugu metodu"
       ],
+      "Unlock": [
+        "Otključaj"
+      ],
+      "Unlock data": [
+        "Otključajte podatke"
+      ],
+      "Update recovery file": [
+        "Ažurirajte datoteku za oporavak"
+      ],
+      "Update recovery phrase": [
+        "Ažurirajte frazu za oporavak"
+      ],
       "Upgrade": [
         "Nadogradnja"
+      ],
+      "Use ${ label } theme": [
+        "Koristi ${ label } temu"
       ],
       "Use a different card": [
         "Upotrijebite neku drugu karticu"
@@ -218,17 +290,29 @@
       "Use a different payment method": [
         "Koristite drugi način plaćanja"
       ],
+      "Use recovery code": [
+        "Koristi kôd za oporavak"
+      ],
+      "Use two-factor authentication code": [
+        "Koristi kôd dvofaktorske autentikacije"
+      ],
       "User": [
         "Korisnik"
       ],
       "Verify": [
         "Potvrdi"
       ],
+      "Verify account": [
+        "Potvrdi račun"
+      ],
       "Verify code": [
         "Potvrdi kôd"
       ],
       "Verify code again": [
         "Ponovno potvrdite kôd"
+      ],
+      "Verify email": [
+        "Potvrdi email"
       ],
       "View": [
         "Pregled"
@@ -467,6 +551,11 @@
         "Neplaćena faktura"
       ]
     },
+    "Downgrade account reason": {
+      "I use a different Proton account": [
+        "Koristim drugi Proton račun"
+      ]
+    },
     "Error": {
       "Amount above the maximum.": [
         "Iznos veći od maksimuma."
@@ -699,6 +788,9 @@
         "${ number } poslužitelja",
         "${ number } poslužitelja"
       ],
+      "${ strongAddressAvailable } You will use this email address to sign into all ${ BRAND_NAME } services.": [
+        "${ strongAddressAvailable } Ovu ćete adresu e-pošte koristiti za prijavu u sve ${ BRAND_NAME } usluge."
+      ],
       "(Mail + VPN)": [
         "(E-pošta + VPN)"
       ],
@@ -719,6 +811,9 @@
       ],
       "Amount below minimum (${ amount }).": [
         "Iznos ispod minimuma (${ amount })."
+      ],
+      "AOL reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
+        "AOL čita vaše osobne podatke kako bi omogućio pristup oglašivačima i drugim trećim stranama. Za bolju privatnost izradite sigurnu adresu e-pošte."
       ],
       "Basic, Plus or Visionary subscription required": [
         "Basic, Plus ili Visionary pretplata je potrebna"
@@ -744,8 +839,14 @@
       "By leaving now, changes may not be saved": [
         "Ako sada napustite, promjene se možda neće spremiti"
       ],
+      "Choose the look and feel of the application.": [
+        "Odaberite izgled i dojam aplikacije."
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Pritisnite \"Zatraži novi kȏd\" da biste novi potvrdni kȏd poslali na ${ strong }. Ako je ovaj telefonski broj netočan, pritisnite \"Uredi\" da biste ga ispravili."
+      ],
+      "Continue anyway?": [
+        "Svejedno nastavi?"
       ],
       "Creating your account": [
         "Izrada vašeg računa"
@@ -762,11 +863,23 @@
       "Enter key manually instead": [
         "Ručno unesite ključ"
       ],
+      "Enter the code sent to your phone number ${ phone }.": [
+        "Unesite kôd poslan na vaš broj telefona ${ phone }."
+      ],
+      "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
+        "Unesite kôd koji je poslan na ${ email }. Ako ne pronađete e-poštu u pristigloj pošti, provjerite svoju mapu neželjene pošte."
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Unesite potvrdni kôd koji je poslan na ${ destinationText }."
       ],
       "Enter your login password to confirm your identity.": [
         "Unesite vašu lozinku za potvrdu identiteta."
+      ],
+      "Enter your recovery email address and we will send you your username or email address.": [
+        "Unesite svoju adresu e-pošte za oporavak za oporavak i poslat ćemo vam vaše korisničko ime ili adresu e-pošte."
+      ],
+      "Enter your recovery phone number and we will send you your username or email address.": [
+        "Unesite svoj telefonski broj za oporavak i poslat ćemo vam vaše korisničko ime ili adresu e-pošte."
       ],
       "Expired": [
         "Isteklo"
@@ -776,6 +889,9 @@
       ],
       "Free up some space or contact your administrator.": [
         "Oslobodite malo prostora ili se obratite administratoru."
+      ],
+      "Google records your online activity and reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
+        "Google čita vaše mrežne aktivnosti kako bi omogućio pristup oglašivačima i drugim trećim stranama. Za bolju privatnost izradite sigurnu adresu e-pošte."
       ],
       "here": [
         "ovdje"
@@ -819,6 +935,9 @@
       "Internet connection restored.": [
         "Uspostavljena je internetska veza."
       ],
+      "Learn more": [
+        "Saznajte više"
+      ],
       "Loading": [
         "Učitavanje"
       ],
@@ -827,6 +946,12 @@
       ],
       "Loading preview": [
         "Učitavanje pregleda"
+      ],
+      "lose access to all current encrypted data": [
+        "gubitak pristupa svim trenutnim šifriranim podacima"
+      ],
+      "Mail.ru reads your personal data in order to provide access for advertisers, Russian government agencies and other third parties. For better privacy, create a secure email address.": [
+        "Mail.ru čita vaše osobne podatke kako bi omogućio pristup oglašivačima, ruskim obavještajnim agencijama i drugim trećim stranama. Za bolju privatnost izradite sigurnu adresu e-pošte."
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "Za postavljanje računa, ručno unesite ove podatke u vaš uređaj za dvofaktorsku autentikaciju. ${ _switchButton }."
@@ -915,6 +1040,9 @@
       "This can take a few seconds or a few minutes depending on your device": [
         "Ovo može potrajati nekoliko sekundi ili nekoliko minuta, ovisno o uređaju"
       ],
+      "This will also disable any two-factor authentication method associated with this account.": [
+        "Ovo će također onemogućiti bilo koji oblik dvofaktorske autentikacije povezane s ovim računom."
+      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "Ovo će otkazati vašu trenutnu pretplatu i izgubit ćete sve privilegije vjernosti koje ste nakupili. Preostali iznos vaše pretplate vratit će se kao kredit na vašem računu."
       ],
@@ -924,8 +1052,14 @@
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "Ovim će te trajno izbrisati vaš račun i sve podatke povezane s njim. Nećete moći ponovno aktivirati ovaj račun."
       ],
+      "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
+        "Ovo će zamijeniti vašu privremenu lozinku. Ubuduće će te ga koristiti za pristup vašem ${ BRAND_NAME } računu."
+      ],
       "This wizard will enable Two-Factor Authentication (2FA) on your Proton account. Two-factor authentication will make your Proton account more secure so we recommend enabling it.": [
         "Ovaj čarobnjak omogućiti će dvofaktorsku autentikaciju na Proton računu. Dvofaktorska autentikacija će vaš Proton račun učiniti sigurnijim pa vam preporučujemo da opciju omogućite."
+      ],
+      "to continue to ${ toAppName }": [
+        "za nastavak u ${ toAppName }"
       ],
       "To fight spam and abuse, please verify you are human.": [
         "U borbi protiv spama i zlouporabe, molimo potvrdite da ste čovjek."
@@ -954,6 +1088,9 @@
       "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
         "Način rada s dvije lozinke koristi zasebne lozinke za prijavu i dešifriranje sandučića e-pošte. To pruža manju sigurnosnu prednost u nekim situacijama, no za većinu korisnika preporučujemo način rada s jednom lozinkom. Da biste se prebacili na način rada s dvije lozinke, prvo postavite lozinku za prijavu te zatim postavite lozinku za sandučić e-pošte."
       ],
+      "Unfortunately there is no recovery method saved for this account.": [
+        "Nažalost, za ovaj račun nije postavljen način oporavka."
+      ],
       "Unsupported file": [
         "Nepodržana datoteka"
       ],
@@ -978,11 +1115,20 @@
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Želite li dobiti novi potvrdni kôd ili koristiti alternativnu metodu potvrde?"
       ],
+      "Yahoo reads your personal data in order to provide access for advertisers, US intelligence agencies and other third parties. For better privacy, create a secure email address.": [
+        "Yahoo čita vaše osobne podatke kako bi omogućio pristup oglašivačima, američkim obavještajnim agencijama i drugim trećim stranama. Za bolju privatnost izradite sigurnu adresu e-pošte."
+      ],
+      "Yandex records your online activity and reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
+        "Yandex čita vaše mrežne aktivnosti kako bi omogućio pristup oglašivačima i drugim trećim stranama. Za bolju privatnost izradite sigurnu adresu e-pošte."
+      ],
       "You already have a free account": [
         "Već imate besplatan račun"
       ],
       "You can customize and download your invoices for accounting purposes.": [
         "Račune možete prilagoditi i preuzeti za računovodstvene svrhe."
+      ],
+      "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
+        "Vi niste postavili metodu za oporavak, stoga je oporavak računa nemogućen u slučaju da zaboravite lozinku. Želite nastaviti bez načina za oporavak?"
       ],
       "You have no saved payment methods.": [
         "Nemate spremljenih načina plaćanja."
@@ -998,6 +1144,9 @@
       ],
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
         "Dosegli ste 100% svog prostora za pohranu. Ne možete slati ni primati nove e-poruke. ${ freeUpMessage } ${ upgradeLink }"
+      ],
+      "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
+        "Na vašem ${ BRAND_NAME } računu ćete ${ loseAllData }. Da biste vratili, morati ćete unijeti staru lozinku."
       ],
       "You will be soon redirected to your bank to verify your payment.": [
         "Uskoro ćete biti preusmjereni na vašu banku radi potvrde plaćanja."
@@ -1031,6 +1180,9 @@
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Vaš Proton račun je trenutno na čekanju. Da biste nastavili koristiti svoj račun, uplatite sve neplaćene fakture."
+      ],
+      "Your recovery email address:": [
+        "Vaša adresa e-pošte za oporavak:"
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Vašom pretplatom upravlja Mozilla. Molimo kontaktirajte Mozilla podršku."
@@ -1115,6 +1267,9 @@
       "Amount due": [
         "Dospjeli iznos"
       ],
+      "Attach screenshot(s)": [
+        "Priložite snimku(e) zaslona"
+      ],
       "bonus storage": [
         "bonus prostor za pohranu"
       ],
@@ -1141,6 +1296,9 @@
       ],
       "Category": [
         "Kategorija"
+      ],
+      "Code": [
+        "Kôd"
       ],
       "Confirm login password": [
         "Potvrdi lozinku za prijavu"
@@ -1169,6 +1327,9 @@
       "Default language": [
         "Zadani jezik"
       ],
+      "Delete": [
+        "Izbriši"
+      ],
       "Digits": [
         "Znamenke"
       ],
@@ -1177,6 +1338,9 @@
       ],
       "Email address": [
         "Adresa e-pošte"
+      ],
+      "Email or username": [
+        "Adresa e-pošte ili korisničko ime"
       ],
       "Enter the code displayed on your TV": [
         "Unesite kôd prikazan na vašem televizoru"
@@ -1258,6 +1422,12 @@
       ],
       "Proton username": [
         "Proton korisničko ime"
+      ],
+      "Recovery code": [
+        "Kôd za oporavak"
+      ],
+      "Repeat password": [
+        "Ponovite lozinku"
       ],
       "Reveal password": [
         "Prikaži lozinku"
@@ -1343,6 +1513,12 @@
       "click here": [
         "kliknite ovdje"
       ],
+      "Common sign in issues": [
+        "Najčešći problemi s prijavom"
+      ],
+      "Common sign up issues": [
+        "Najčešći problemi s registracijom"
+      ],
       "Forgot username?": [
         "Zaboravili ste korisničko ime?"
       ],
@@ -1360,6 +1536,12 @@
       ],
       "Request an invite": [
         "Zatraži pozivnicu"
+      ],
+      "Reset password": [
+        "Ponovno postavljanje lozinke"
+      ],
+      "Sign in": [
+        "Prijavite se"
       ],
       "Upgrade": [
         "Nadogradnja"
@@ -1398,6 +1580,33 @@
     "new_plans: action": {
       "Continue with Free": [
         "Continue with Free"
+      ],
+      "Delete account": [
+        "Ukloni račun"
+      ],
+      "Got it": [
+        "Shvaćam"
+      ]
+    },
+    "new_plans: feature": {
+      "Encrypted contact details": [
+        "Šifrirani podaci o kontaktu"
+      ],
+      "Secure Core servers": [
+        "Secure Core poslužitelji"
+      ],
+      "Two-factor authentication": [
+        "Dvofaktorska autentikacija"
+      ]
+    },
+    "new_plans: heading": {
+      "Support": [
+        "Podrška"
+      ]
+    },
+    "new_plans: signup": {
+      "Subscription": [
+        "Pretplata"
       ]
     },
     "Notification": {
@@ -1523,6 +1732,35 @@
         "Free"
       ]
     },
+    "Recovery Email": {
+      "Cancel": [
+        "Poništi"
+      ]
+    },
+    "Recovery method": {
+      "Email": [
+        "E-pošta"
+      ],
+      "Phone number": [
+        "Broj telefona"
+      ]
+    },
+    "Recovery Phone": {
+      "Cancel": [
+        "Poništi"
+      ]
+    },
+    "Signup label": {
+      "Display name": [
+        "Zaslonski naziv"
+      ],
+      "Email": [
+        "E-pošta"
+      ],
+      "Username": [
+        "Korisničko ime"
+      ]
+    },
     "State": {
       "Downgrading your account, please wait": [
         "Snižavanje statusa vašeg računa, molimo pričekajte"
@@ -1537,6 +1775,11 @@
       ],
       "Your current storage:": [
         "Vaš trenutni prostor za pohranu:"
+      ]
+    },
+    "Subscription saving": {
+      "Save": [
+        "Spremi"
       ]
     },
     "Success": {
@@ -1560,6 +1803,12 @@
       ],
       "Gift code applied": [
         "Kôd darovnog kupona je primjenjen"
+      ],
+      "If you entered a valid recovery email we will send you an email with your usernames in the next minute.": [
+        "Ako ste unijeli važeću adresu e-pošte za oporavak, poslat ćemo vam e-poštu s vašim korisničkim imenima u sljedećoj minuti."
+      ],
+      "If you entered a valid recovery phone we will send you an sms with your usernames in the next minute.": [
+        "Ako ste unijeli važeći broj telefona za oporavak, poslat ćemo vam tekstualnu poruku s vašim korisničkim imenima u sljedećoj minuti."
       ],
       "Invoice customized": [
         "Prilagođena je faktura"
@@ -1621,6 +1870,9 @@
       ],
       "3. Select config file and download": [
         "3. Odaberite konfiguracijsku datoteku i preuzmite"
+      ],
+      "Account": [
+        "Korisnički račun"
       ],
       "Account suspended": [
         "Račun je suspendiran"
@@ -1700,6 +1952,9 @@
       "Date": [
         "Datum"
       ],
+      "Delete": [
+        "Izbriši"
+      ],
       "Delete account": [
         "Brisanje računa"
       ],
@@ -1715,11 +1970,20 @@
       "Edit credit/debit card": [
         "Uredi kreditnu/debitnu karticu"
       ],
+      "Email": [
+        "E-pošta"
+      ],
       "Email subscriptions": [
         "Pretplate e-pošte"
       ],
       "Error": [
         "Pogreška"
+      ],
+      "Find email or username": [
+        "Adresa e-pošte ili korisničko ime"
+      ],
+      "General": [
+        "Općenito"
       ],
       "Gift code": [
         "Darovni kôd"
@@ -1733,6 +1997,9 @@
       "Invoices": [
         "Fakture"
       ],
+      "Language": [
+        "Jezik"
+      ],
       "Login password": [
         "Lozinka za prijavu"
       ],
@@ -1742,6 +2009,9 @@
       "Next": [
         "Sljedeće"
       ],
+      "No recovery method": [
+        "Nema načina za oporavak"
+      ],
       "Open actions dropdown": [
         "Otvorite padajući izbornik radnji"
       ],
@@ -1750,6 +2020,9 @@
       ],
       "Open pagination": [
         "Otvori paginaciju"
+      ],
+      "OpenVPN / IKEv2 username": [
+        "OpenVPN / IKEv2 korisničko ime"
       ],
       "OpenVPN configuration files": [
         "OpenVPN konfiguracijske datoteke"
@@ -1778,6 +2051,9 @@
       "PayPal verification failed": [
         "Neuspjela PayPal potvrda"
       ],
+      "Phone": [
+        "Telefon"
+      ],
       "Plan summary": [
         "Sažetak plana"
       ],
@@ -1796,11 +2072,29 @@
       "Report a problem": [
         "Prijavi problem"
       ],
+      "Request new code": [
+        "Zatraži novi kôd"
+      ],
+      "Reset password": [
+        "Ponovno postavljanje lozinke"
+      ],
+      "Reset password?": [
+        "Ponovno postavljanje lozinke?"
+      ],
       "Select a plan": [
         "Odaberite plan"
       ],
+      "Set new password": [
+        "Postavi novu lozinku"
+      ],
       "Set up two-factor authentication": [
         "Postavite dvofaktorsku autentikaciju"
+      ],
+      "Settings": [
+        "Postavke"
+      ],
+      "Sign in": [
+        "Prijavite se"
       ],
       "Sign in again to continue": [
         "Ponovno se prijavite da biste nastavili"
@@ -1814,14 +2108,32 @@
       "Switch to two-password mode": [
         "Prijeđite na način rada s dvije lozinke"
       ],
+      "This address might compromise your privacy.": [
+        "Ova adresa može ugroziti vašu privatnost."
+      ],
       "TV log in": [
         "Prijava putem televizije"
+      ],
+      "Two-factor authentication": [
+        "Dvofaktorska autentikacija"
       ],
       "Type": [
         "Vrsta"
       ],
+      "Unlock your mailbox": [
+        "Otključajte vaš poštanski sandučić"
+      ],
       "Unsupported browser": [
         "Preglednik nije podržan"
+      ],
+      "Username": [
+        "Korisničko ime"
+      ],
+      "Warning": [
+        "Upozorenje"
+      ],
+      "Warning!": [
+        "Upozorenje!"
       ],
       "What's new": [
         "Što je novo"

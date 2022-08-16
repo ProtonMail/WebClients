@@ -4,6 +4,11 @@
     "language": "zh_TW"
   },
   "contexts": {
+    "Access level": {
+      "Full": [
+        "完整"
+      ]
+    },
     "Action": {
       "${ address } is available.": [
         "${ address } 是可用的。"
@@ -38,6 +43,9 @@
       "Add address": [
         "加入電郵位址"
       ],
+      "Add calendar": [
+        "加入行事曆"
+      ],
       "Add condition": [
         "加入條件"
       ],
@@ -58,6 +66,9 @@
       ],
       "Add label": [
         "加入標籤"
+      ],
+      "Add notification": [
+        "加入通知"
       ],
       "Add PayPal": [
         "加入 PayPal"
@@ -158,20 +169,35 @@
       "Continue to ${ name }": [
         "繼續使用 ${ name }"
       ],
+      "Continue with ${ nameToDisplay } ${ maybeEmailInBrackets }": [
+        "繼續使用 ${ nameToDisplay } ${ maybeEmailInBrackets }"
+      ],
+      "Continue with Google": [
+        "繼續以 Google 帳號登入"
+      ],
       "Copy": [
         "複製"
       ],
       "Copy email to clipboard": [
         "複製電郵位址至剪貼簿"
       ],
+      "Copy link": [
+        "複製連結"
+      ],
       "Create": [
         "加入"
+      ],
+      "Create a secure ${ MAIL_APP_NAME } address instead": [
+        "創建新的 ${ MAIL_APP_NAME } 電郵位址"
       ],
       "Create account": [
         "創建帳號"
       ],
       "Create address": [
         "建立電郵位址"
+      ],
+      "Create calendar": [
+        "創建行事曆"
       ],
       "Create folder": [
         "建立資料夾"
@@ -181,6 +207,9 @@
       ],
       "Create label": [
         "建立標籤"
+      ],
+      "Create link": [
+        "建立連結"
       ],
       "Current plan": [
         "現行方案"
@@ -250,6 +279,9 @@
       ],
       "Download all configurations": [
         "下載所有組態設定"
+      ],
+      "Download ICS": [
+        "下載 ICS"
       ],
       "Download recovery file": [
         "下載帳號救援檔案"
@@ -389,6 +421,9 @@
       "Loading verification": [
         "正在載入驗證"
       ],
+      "Make default": [
+        "設為預設值"
+      ],
       "Mark as default": [
         "標記為預設值"
       ],
@@ -500,11 +535,17 @@
       "Remove bonuses": [
         "移除贈品"
       ],
+      "Remove calendar": [
+        "移除行事曆"
+      ],
       "Remove gift code": [
         "移除禮品代碼"
       ],
       "Remove this label": [
         "移除此標籤"
+      ],
+      "Remove this notification": [
+        "移除此通知"
       ],
       "Rename": [
         "重新命名"
@@ -572,6 +613,9 @@
       "Save address": [
         "儲存電郵位址"
       ],
+      "Save ICS file": [
+        "儲存 ICS 檔案"
+      ],
       "Save selected": [
         "儲存選定項目"
       ],
@@ -584,8 +628,14 @@
       "Select ${ planTitle }": [
         "選擇方案 ${ planTitle }"
       ],
+      "Select calendar view": [
+        "選擇行事曆檢視方式"
+      ],
       "Select files": [
         "選取檔案"
+      ],
+      "Select timezone": [
+        "選取時區"
       ],
       "send auto-reply email": [
         "傳送自動回覆電郵"
@@ -619,6 +669,12 @@
       ],
       "Show labels": [
         "顯示標籤"
+      ],
+      "Show less": [
+        "顯示更少"
+      ],
+      "Show more": [
+        "顯示更多"
       ],
       "Show preview": [
         "顯示預覽"
@@ -916,57 +972,9 @@
         "兩年"
       ]
     },
-    "blackfriday Info": {
-      "beta": [
-        "測試版"
-      ],
-      "Includes": [
-        "包含"
-      ],
-      "Standard price: ${ regularPrice }": [
-        "標準價格：${ regularPrice }"
-      ],
-      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
-        "此訂閱將在 2 年後自動以相同的費用續訂，直到被取消為止。"
-      ]
-    },
-    "blackfriday Title": {
-      "Most popular": [
-        "最熱門"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Action": {
-      "Get the deal": [
-        "取得優惠"
-      ],
-      "Get the deal now": [
-        "立即取得優惠"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Info": {
-      "Save ${ percentage }%": [
-        "省下 ${ percentage }%"
-      ]
-    },
-    "blackfriday: VPNspecialoffer info": {
-      "per month": [
-        "每月"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Promo title, need to be short": {
-      "Special offer": [
-        "特別優惠"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Title": {
-      "1 month": [
-        "一個月"
-      ],
-      "12 months": [
-        "12 個月"
-      ],
-      "24 months": [
-        "24 個月"
+    "breadcrumb": {
+      "Calendars": [
+        "行事曆"
       ]
     },
     "Bridge version load failed": {
@@ -1049,6 +1057,9 @@
       "Add link to your email footer": [
         "將連結加入到您的電郵註腳"
       ],
+      "Continue using ${ MAIL_APP_NAME }.": [
+        "繼續使用 ${ MAIL_APP_NAME }。"
+      ],
       "Copy": [
         "複製"
       ],
@@ -1063,6 +1074,15 @@
       ]
     },
     "Calendar status": {
+      "Active": [
+        "使用中"
+      ],
+      "Default": [
+        "預設"
+      ],
+      "Disabled": [
+        "已停用"
+      ],
       "Not synced": [
         "未同步"
       ],
@@ -1076,6 +1096,9 @@
       ],
       "Calendar is syncing": [
         "行事曆正在同步"
+      ],
+      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
+        "行事曆同步中：僅需數分鐘即可顯示所有事件。"
       ],
       "Calendar is too big": [
         "行事曆太大了"
@@ -1096,17 +1119,68 @@
         "不支援的行事曆格式"
       ]
     },
+    "Calendar subscription not synced error; long version": {
+      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
+        "行事曆連結無法從服務提供商生態系統外進行連線。"
+      ],
+      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
+        "行事曆連結暫時無法存取。請確認行事曆服務提供商的連結仍屬有效。"
+      ],
+      "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
+        "從上次更新以來已經過了超過12小時 — Proton Calendar 將會嘗試在幾個小時內更新日曆。"
+      ]
+    },
+    "Calendar view": {
+      "Day": [
+        "天"
+      ],
+      "Month": [
+        "月"
+      ],
+      "Week": [
+        "週"
+      ]
+    },
     "Checkout row": {
       "${ users } user": [
         "${ users } 個使用者"
       ]
     },
+    "Collapsible tooltip": {
+      "Collapse": [
+        "收合"
+      ],
+      "Expand": [
+        "展開"
+      ]
+    },
     "color": {
+      "apple": [
+        "Apple"
+      ],
+      "caramel": [
+        "焦糖"
+      ],
       "carrot": [
         "胡蘿蔔"
       ],
+      "cobalt": [
+        "鈷"
+      ],
       "copper": [
         "銅"
+      ],
+      "dandelion": [
+        "蒲公英"
+      ],
+      "forest": [
+        "森林"
+      ],
+      "lemon yellow": [
+        "檸檬黃"
+      ],
+      "maize": [
+        "玉米"
       ],
       "ocean": [
         "海洋"
@@ -1116,6 +1190,9 @@
       ],
       "pacific": [
         "太平洋"
+      ],
+      "pickle": [
+        "泡菜"
       ],
       "pine": [
         "松樹"
@@ -1140,6 +1217,9 @@
       ],
       "strawberry": [
         "草莓"
+      ],
+      "white": [
+        "白色"
       ]
     },
     "Condition for custom filter": {
@@ -1275,6 +1355,9 @@
       ],
       "Work": [
         "工作"
+      ],
+      "Yomi": [
+        "漢字讀音"
       ]
     },
     "Countdown unit": {
@@ -1466,6 +1549,9 @@
       "Czech Republic": [
         "捷克"
       ],
+      "Côte d'Ivoire": [
+        "象牙海岸"
+      ],
       "Denmark": [
         "丹麥"
       ],
@@ -1495,6 +1581,9 @@
       ],
       "Estonia": [
         "愛沙尼亞"
+      ],
+      "Eswatini": [
+        "史瓦帝尼"
       ],
       "Ethiopia": [
         "衣索匹亞"
@@ -1738,6 +1827,9 @@
       ],
       "Mozambique": [
         "莫三鼻克"
+      ],
+      "Myanmar": [
+        "緬甸"
       ],
       "Namibia": [
         "納米比亞"
@@ -2056,6 +2148,35 @@
     "Cycle": {
       "/month": [
         "/月"
+      ],
+      "/user per month": [
+        "/ 每使用者每月"
+      ]
+    },
+    "Daily recurring event, frequency": {
+      "${ count } time": [
+        "總共 ${ count } 次"
+      ],
+      "Daily": [
+        "每日"
+      ],
+      "Daily, ${ timesString }": [
+        "每天，${ timesString }"
+      ],
+      "Daily, ${ untilString }": [
+        "每天，${ untilString }"
+      ],
+      "Every ${ interval } day": [
+        "每 ${ interval } 天"
+      ],
+      "Every ${ interval } day, ${ timesString }": [
+        "每 ${ interval } 天，${ timesString }"
+      ],
+      "Every ${ interval } day, ${ untilString }": [
+        "每 ${ interval } 天，${ untilString }"
+      ],
+      "until ${ dateString }": [
+        "直到 ${ dateString } 為止"
       ]
     },
     "Day": {
@@ -2158,6 +2279,20 @@
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "協助我們改善！"
+      ]
+    },
+    "Duration": {
+      "120 minutes": [
+        "120 分鐘"
+      ],
+      "30 minutes": [
+        "30 分鐘"
+      ],
+      "60 minutes": [
+        "60 分鐘"
+      ],
+      "90 minutes": [
+        "90 分鐘"
       ]
     },
     "Email body for description (description part)": {
@@ -2381,6 +2516,9 @@
       "Name on card required": [
         "持卡人姓名必須填寫"
       ],
+      "Name required": [
+        "名稱為必填"
+      ],
       "No active sessions": [
         "無使用中工作階段"
       ],
@@ -2483,6 +2621,9 @@
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "您目前使用的瀏覽器無法完成支付認證，請使用其它瀏覽器或透過電腦登入。"
       ],
+      "The folder name is invalid. Please choose a different name.": [
+        "此資料夾名稱無法使用。請換另一個名稱。"
+      ],
       "The folder name is too long. Please choose a different name.": [
         "資料夾名稱太長。請換另一個名稱。"
       ],
@@ -2491,6 +2632,9 @@
       ],
       "The keys in your recovery files can't be validated. Please upload individually for more information.": [
         "在您帳號救援檔案內的金鑰無法通過驗證。請逐一上載更多資訊。"
+      ],
+      "The label name is invalid. Please choose a different name.": [
+        "此標籤名稱無法使用。請換另一個名稱。"
       ],
       "The label name is too long. Please choose a different name.": [
         "標籤名稱太長。請換另一個名稱。"
@@ -2656,6 +2800,9 @@
       "Calendar": [
         "行事曆"
       ],
+      "Calendar time zone not supported": [
+        "行事曆的時區暫不支援"
+      ],
       "Component with wrong format": [
         "元件的格式有誤"
       ],
@@ -2728,6 +2875,9 @@
       "Start time out of bounds": [
         "開始時間超出界限"
       ],
+      "Time zone not supported": [
+        "不支援的時區"
+      ],
       "Timezone": [
         "時區"
       ],
@@ -2745,11 +2895,17 @@
       "Error: ${ errorMessage }": [
         "錯誤：${ errorMessage }"
       ],
+      "Invalid URL": [
+        "網址無效"
+      ],
       "Oops, something went wrong": [
         "糟糕，出了一點問題"
       ],
       "Please ${ refresh } or check your connection.": [
         "請${ refresh }或檢查您的連線。"
+      ],
+      "Something went wrong. Please refresh the page or try again later.": [
+        "出了一點問題。請重新整理頁面或稍後再試。"
       ],
       "There was a problem connecting to Proton.": [
         "連線到 Proton 時發生問題。"
@@ -2759,6 +2915,16 @@
       ],
       "You may also ${ refresh } or try again later.": [
         "您亦可${ refresh }或稍後再試一次。"
+      ]
+    },
+    "Error message, recovery": {
+      "sign in": [
+        "登入"
+      ]
+    },
+    "Error message, unsubscribe": {
+      "sign in": [
+        "登入"
       ]
     },
     "Error notification": {
@@ -2820,6 +2986,11 @@
         "(無標題)"
       ]
     },
+    "Export calendar": {
+      "Loading events": [
+        "載入活動中"
+      ]
+    },
     "Feature": {
       "${ MaxVPN } VPN connection": [
         "${ MaxVPN } 個 VPN 連線"
@@ -2844,6 +3015,9 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "位元組"
+      ],
       "GB": [
         "GB"
       ],
@@ -2852,6 +3026,20 @@
       ],
       "MB": [
         "MB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "位元組"
+      ],
+      "Gigabyte": [
+        "十億位元組"
+      ],
+      "Kilobyte": [
+        "千位元組"
+      ],
+      "Megabyte": [
+        "百萬位元組"
       ]
     },
     "Filter Actions": {
@@ -2863,6 +3051,9 @@
       ],
       "Inbox": [
         "收件匣"
+      ],
+      "Inbox - Default": [
+        "收件匣 - 預設"
       ],
       "Select a folder": [
         "選擇一個資料夾"
@@ -2965,6 +3156,9 @@
       "Actions": [
         "動作"
       ],
+      "Calendar": [
+        "行事曆"
+      ],
       "Event": [
         "事件"
       ],
@@ -2977,11 +3171,20 @@
       "Key type": [
         "金鑰類型"
       ],
+      "Label": [
+        "標籤"
+      ],
+      "Name": [
+        "名稱"
+      ],
       "Notifications": [
         "通知"
       ],
       "Organization key fingerprint": [
         "組織金鑰指紋"
+      ],
+      "Status": [
+        "狀態"
       ],
       "Time": [
         "時間"
@@ -3329,6 +3532,9 @@
       ],
       "shared calendars": [
         "已分享的行事曆"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Import key": {
@@ -3561,6 +3767,9 @@
       "Add image URL": [
         "加入圖像 URL"
       ],
+      "Add label": [
+        "加入標籤"
+      ],
       "Additional options": [
         "額外設定"
       ],
@@ -3623,6 +3832,9 @@
       ],
       "Are you sure you want to delete this address?": [
         "您確定要刪除此電郵位址嗎？"
+      ],
+      "Are you sure you want to delete this calendar?": [
+        "您確定要刪除此行事曆嗎？"
       ],
       "Are you sure you want to delete this domain?": [
         "您確定要刪除此網域嗎？"
@@ -3759,8 +3971,26 @@
       "Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.": [
         "目前所有可用的儲存空間已分配給系統管理員帳號。請減少系統管理員帳號的分配，以釋出空間給額外的使用者。您可隨時升級您的帳號，以增加總儲存空間。"
       ],
+      "Custom": [
+        "自訂"
+      ],
+      "Custom daily": [
+        "自訂每天"
+      ],
       "Custom email domains": [
         "自訂電郵網域"
+      ],
+      "Custom monthly": [
+        "自訂每月"
+      ],
+      "Custom weekly": [
+        "自訂每週"
+      ],
+      "Custom yearly": [
+        "自訂每年"
+      ],
+      "Daily": [
+        "每日"
       ],
       "Data locked": [
         "資料已上鎖"
@@ -3810,6 +4040,9 @@
       "Earned ${ rewards } of ${ rewardsLimit } ${ planName } months.": [
         "已賺取 ${ rewards } 個月，最多 ${ rewardsLimit } 個月 ${ planName } $。"
       ],
+      "Edit label": [
+        "編輯標籤"
+      ],
       "Edit link": [
         "編輯連結"
       ],
@@ -3857,6 +4090,9 @@
       ],
       "Enter your ${ BRAND_NAME } Account details.": [
         "請輸入您的 ${ BRAND_NAME } 帳號詳細資料。"
+      ],
+      "Enter your ${ BRAND_NAME } Account email address or username.": [
+        "輸入您的 ${ BRAND_NAME } 帳號電郵位址或使用者名稱。"
       ],
       "Enter your login password to confirm your identity.": [
         "請輸入您的登入密碼，以便確認您的身份。"
@@ -3914,6 +4150,9 @@
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "如果另一位系統管理員更改了此密碼，您將需要向其索取新的組織密碼。"
+      ],
+      "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
+        "若系統時區與目前時區偏好設定不符，將詢問您是否更新 (最多每天一次)。"
       ],
       "If this domain is currently receiving emails, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "如果此網域目前正在接收電郵，請選取 ${ boldAddresses } 分頁並加入所有作用中的電郵位址，然後再更動 MX 紀錄以確保平穩過渡。"
@@ -4092,6 +4331,12 @@
       "Link copied to clipboard": [
         "連結已複製到剪貼簿"
       ],
+      "Link created": [
+        "連結已創建"
+      ],
+      "Link deleted": [
+        "連結已刪除"
+      ],
       "Link type": [
         "連結類型"
       ],
@@ -4124,6 +4369,9 @@
       ],
       "Merged": [
         "合併"
+      ],
+      "Monthly ${ onDayString }": [
+        "每月 ${ onDayString } 日"
       ],
       "more": [
         "更多"
@@ -4254,6 +4502,9 @@
       "Please enter the 12-word recovery phrase associated with your account.": [
         "請輸入與您的帳號關連的12字復原短語。"
       ],
+      "Please fill out this field.": [
+        "請填寫以下欄位。"
+      ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
         "請保存在安全的地方。在重設密碼後你將會需要它來解密你的資料。"
       ],
@@ -4380,6 +4631,9 @@
       "Select a service provider to start": [
         "選取您的服務提供者以開始"
       ],
+      "Select what you want to import from Google.": [
+        "選擇您要從 Google 匯入的任何檔案。"
+      ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "選取哪一個行事曆要匯入。我們將建立對應匯入行事曆的新行事曆，直到20個為限。"
       ],
@@ -4461,6 +4715,9 @@
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "這個 ${ boldDataLocked } 將不會再顯示，但您仍然可以解鎖您的資料在 ${ encryptionAndKeysLink }。"
       ],
+      "The calendar will be removed from your account.": [
+        "該行事曆將會從您的帳號中移除。"
+      ],
       "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
         "清單首列為您預設的電郵位址。請拖放以重新排序您的電郵位址。"
       ],
@@ -4487,6 +4744,9 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "此瀏覽器不支援預覽 PDF 文件。請下載檔案。"
+      ],
+      "This calendar will be removed from your account.": [
+        "此行事曆將會從您的帳號中移除。"
       ],
       "This can take a few seconds or a few minutes depending on your device": [
         "取決於您的裝置，這可能需要幾秒鐘或幾分鐘"
@@ -4713,6 +4973,9 @@
       "Week": [
         "週"
       ],
+      "Week and month views only apply to desktop.": [
+        "週和月檢視僅適用於電腦版。"
+      ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "我們將會傳送重設代碼到您先前所提供的電郵位址。"
       ],
@@ -4748,6 +5011,9 @@
       ],
       "Yandex records your online activity and reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
         "Yandex 記錄您的線上活動並讀取您的個人資料，以供給廣告商及其它第三方。為更好保障隱私，請建立一個安全的電郵位址。"
+      ],
+      "Yearly": [
+        "每年"
       ],
       "You already have a free account": [
         "您已有一個免費帳號"
@@ -4936,6 +5202,9 @@
       ],
       "Track your referral link activities here": [
         "在此追蹤您的推介連結活動"
+      ],
+      "Your new email address is ready to go!": [
+        "您的新電郵位址已準備就緒！"
       ]
     },
     "Info - folder colouring feature": {
@@ -5297,6 +5566,11 @@
         "標記為已過時"
       ]
     },
+    "Knowledge base link label": {
+      "Learn more": [
+        "瞭解詳情"
+      ]
+    },
     "Label": {
       " and ": [
         " 且 "
@@ -5343,6 +5617,9 @@
       "ALL": [
         "全部"
       ],
+      "All-day event notifications": [
+        "全日事件通知"
+      ],
       "Allow recovery by email": [
         "允許透過電郵復原"
       ],
@@ -5384,6 +5661,9 @@
       ],
       "Attach screenshot(s)": [
         "附加螢幕截圖（多個）"
+      ],
+      "Auto-detect primary time zone": [
+        "自動偵測主要時區"
       ],
       "Auto-load embedded images": [
         "自動載入嵌入圖像"
@@ -5444,6 +5724,9 @@
       ],
       "Code is 6 digits without spaces": [
         "驗證碼為六位數且無空格"
+      ],
+      "Color": [
+        "顏色"
       ],
       "Composer": [
         "撰寫器"
@@ -5532,14 +5815,23 @@
       "Default language": [
         "預設語言"
       ],
+      "Default language (${ defaultLanguage })": [
+        "預設語言 (${ defaultLanguage })"
+      ],
       "Default PGP scheme": [
         "預設 PGP 格式"
+      ],
+      "Default view": [
+        "預設檢視"
       ],
       "Delete": [
         "刪除"
       ],
       "Density": [
         "密度"
+      ],
+      "Description": [
+        "描述"
       ],
       "Device/certificate name": [
         "裝置/憑證 名稱"
@@ -5549,6 +5841,9 @@
       ],
       "Discount": [
         "折扣"
+      ],
+      "Display": [
+        "顯示"
       ],
       "Display name": [
         "顯示名稱"
@@ -5600,6 +5895,12 @@
       ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "請輸入密碼以解密金鑰，金鑰指紋為：${ fingerprintCode }"
+      ],
+      "Event duration": [
+        "事件持續時間"
+      ],
+      "Event notifications": [
+        "事件通知"
       ],
       "Expiration date": [
         "有效期限"
@@ -5886,6 +6187,9 @@
       "Send auto-reply": [
         "發送自動回覆"
       ],
+      "Show secondary time zone": [
+        "顯示次要時區"
+      ],
       "Sign external messages": [
         "簽署外部郵件"
       ],
@@ -5970,6 +6274,9 @@
       "Upload 1 or more recovery files or encryption keys": [
         "上載一個或更多的帳號救援檔案或是加密金鑰"
       ],
+      "URL": [
+        "網址"
+      ],
       "Use folder colors": [
         "使用資料夾顏色"
       ],
@@ -6027,6 +6334,12 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "是的，我要永久刪除此帳號以及當中所有的資料。"
       ],
+      "Your calendar URL": [
+        "您的行事曆網址"
+      ],
+      "Your calendar URL label": [
+        "您的行事曆 URL 標籤"
+      ],
       "Your password (admin)": [
         "您的密碼（管理員）"
       ],
@@ -6046,6 +6359,19 @@
       ],
       "Recovery phrase": [
         "復原短語"
+      ]
+    },
+    "Label for default event notifications": {
+      "All-day event notifications": [
+        "全日事件通知"
+      ],
+      "Notifications": [
+        "通知"
+      ]
+    },
+    "Label for default event settings": {
+      "Duration": [
+        "期間"
       ]
     },
     "Label for domain modal": {
@@ -6191,6 +6517,9 @@
       ],
       "How to unlock data": [
         "如何解鎖資料"
+      ],
+      "Import/export": [
+        "匯入/匯出"
       ],
       "Learn more": [
         "瞭解更多"
@@ -6347,6 +6676,11 @@
         "如何從 Yahoo 匯入電郵"
       ]
     },
+    "Modal title and action": {
+      "Add calendar": [
+        "加入行事曆"
+      ]
+    },
     "Monetary unit": {
       "Dollar": [
         "美元"
@@ -6358,6 +6692,136 @@
         "瑞士法郎"
       ]
     },
+    "Monthly recurring event, frequency": {
+      "Every ${ interval } month ${ onDayString }": [
+        "每 ${ interval } 個月的${ onDayString }"
+      ],
+      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
+        "每 ${ interval } 個月的${ onDayString }，${ timesString }"
+      ],
+      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
+        "每 ${ interval } 個月的${ onDayString }，${ untilString }"
+      ],
+      "Monthly ${ onDayString }": [
+        "每月 ${ onDayString } 日"
+      ],
+      "Monthly ${ onDayString }, ${ timesString }": [
+        "每月的${ onDayString }，${ timesString }"
+      ],
+      "Monthly ${ onDayString }, ${ untilString }": [
+        "每月的${ onDayString }，${ untilString }"
+      ]
+    },
+    "Monthly recurring event, repeats on": {
+      "on day ${ dayOfMonth }": [
+        "${ dayOfMonth } 日"
+      ],
+      "on the first Friday": [
+        "第一個週五"
+      ],
+      "on the first Monday": [
+        "第一個週一"
+      ],
+      "on the first Saturday": [
+        "第一個週六"
+      ],
+      "on the first Sunday": [
+        "第一個週日"
+      ],
+      "on the first Thursday": [
+        "第一個週四"
+      ],
+      "on the first Tuesday": [
+        "第一個週二"
+      ],
+      "on the first Wednesday": [
+        "第一個週三"
+      ],
+      "on the fourth Friday": [
+        "第四個週五"
+      ],
+      "on the fourth Monday": [
+        "第四個週一"
+      ],
+      "on the fourth Saturday": [
+        "第四個週六"
+      ],
+      "on the fourth Sunday": [
+        "第四個週日"
+      ],
+      "on the fourth Thursday": [
+        "第四個週四"
+      ],
+      "on the fourth Tuesday": [
+        "第四個週二"
+      ],
+      "on the fourth Wednesday": [
+        "第四個週三"
+      ],
+      "on the last Friday": [
+        "最後一個週五"
+      ],
+      "on the last Monday": [
+        "最後一個週一"
+      ],
+      "on the last Saturday": [
+        "最後一個週六"
+      ],
+      "on the last Sunday": [
+        "最後一個週日"
+      ],
+      "on the last Thursday": [
+        "最後一個週四"
+      ],
+      "on the last Tuesday": [
+        "最後一個週二"
+      ],
+      "on the last Wednesday": [
+        "最後一個週三"
+      ],
+      "on the second Friday": [
+        "第二個週五"
+      ],
+      "on the second Monday": [
+        "第二個週一"
+      ],
+      "on the second Saturday": [
+        "第二個週六"
+      ],
+      "on the second Sunday": [
+        "第二個週日"
+      ],
+      "on the second Thursday": [
+        "第二個週四"
+      ],
+      "on the second Tuesday": [
+        "第二個週二"
+      ],
+      "on the second Wednesday": [
+        "第二個週三"
+      ],
+      "on the third Friday": [
+        "第三個週五"
+      ],
+      "on the third Monday": [
+        "第三個週一"
+      ],
+      "on the third Saturday": [
+        "第三個週六"
+      ],
+      "on the third Sunday": [
+        "第三個週日"
+      ],
+      "on the third Thursday": [
+        "第三個週四"
+      ],
+      "on the third Tuesday": [
+        "第三個週二"
+      ],
+      "on the third Wednesday": [
+        "第三個週三"
+      ]
+    },
     "Moved to black/whitelist": {
       "${ Domain } removed": [
         "${ Domain } 已移除"
@@ -6367,6 +6831,9 @@
       ]
     },
     "Navigation": {
+      "Back": [
+        "返回"
+      ],
       "Back to Calendar": [
         "返回行事曆"
       ],
@@ -6388,15 +6855,57 @@
         "標籤名稱"
       ]
     },
+    "new_plans: Action": {
+      "Upgrade now": [
+        "立即升級"
+      ]
+    },
+    "new_plans: action": {
+      "Delete account": [
+        "刪除帳號"
+      ],
+      "Downgrade account": [
+        "降級帳號"
+      ],
+      "Got it": [
+        "了解"
+      ],
+      "Switch or add account": [
+        "切換或是加入帳號"
+      ],
+      "Switch plan": [
+        "切換方案"
+      ]
+    },
     "new_plans: feature": {
+      "Auto-reply": [
+        "自動回覆"
+      ],
+      "Custom email domains": [
+        "自訂電郵網域"
+      ],
+      "Encrypted contact details": [
+        "經加密的聯絡人詳細資訊"
+      ],
       "Encrypted VPN servers": [
         "加密的 VPN 伺服器"
       ],
       "End-to-end encryption": [
         "端對端加密"
       ],
+      "Priority support": [
+        "優先支援"
+      ],
       "Secure Core servers": [
         "Secure Core 伺服器"
+      ],
+      "Two-factor authentication": [
+        "兩步驟認證"
+      ]
+    },
+    "new_plans: heading": {
+      "Support": [
+        "支援"
       ]
     },
     "new_plans: info": {
@@ -6425,6 +6934,11 @@
         "你正在當前的計畫中享受促銷價格。若你將帳號降級，你將會永遠失去此促銷價，即使你決定重新訂閱也是。"
       ]
     },
+    "new_plans: Label": {
+      "${ humanUsedSpace } of ${ humanMaxSpace }": [
+        "全部有 ${ humanMaxSpace }，已使用 ${ humanUsedSpace }"
+      ]
+    },
     "new_plans: Plan frequency": {
       "/month": [
         "/月"
@@ -6434,13 +6948,38 @@
       "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }.": [
         "建立 ${ BRAND_NAME } 帳號，即表示您同意我們的${ terms }。"
       ],
+      "Payment details": [
+        "付款細節"
+      ],
+      "Subscription": [
+        "訂閲"
+      ],
       "terms and conditions": [
         "條款及細則"
+      ]
+    },
+    "new_plans: Title": {
+      "${ mailPlanName } Trial": [
+        "${ mailPlanName } 試用版"
       ]
     },
     "new_plans: tooltip": {
       "Our servers’ hard disks are fully encrypted with multiple password layers so your data is protected even if our hardware is compromised": [
         "我們以多層密碼完整加密伺服器上的硬碟，即便硬碟被整顆拔走，你的資料仍然受到保護。"
+      ]
+    },
+    "new_plans: Upsell attribute": {
+      "Priority support": [
+        "優先支援"
+      ],
+      "Support for 1 custom email domain": [
+        "支援 1 個自訂電郵網域"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "不限數量的資料夾、標籤與篩選器"
+      ],
+      "Unlimited messages": [
+        "無限制的郵件"
       ]
     },
     "Notification": {
@@ -6454,12 +6993,42 @@
         "OpenVPN / IKEv2 認證已重新生成"
       ]
     },
+    "Notification time input": {
+      "at": [
+        "於"
+      ]
+    },
     "Notification type": {
       "email": [
         "電郵"
       ],
       "notification": [
         "通知"
+      ]
+    },
+    "Notification when": {
+      "at time of event": [
+        "屆時"
+      ],
+      "day before": [
+        "天前"
+      ],
+      "hour before": [
+        "小時前"
+      ],
+      "minute before": [
+        "分鐘前"
+      ],
+      "on the same day": [
+        "同日"
+      ],
+      "week before": [
+        "週前"
+      ]
+    },
+    "Oauth instructions video": {
+      "For the import to work, you must select all requested items as shown in the GIF.": [
+        "為使匯入開始運作，您必須選取所有必要的項目，可參考依循 GIF 裡顯示的部分。"
       ]
     },
     "Option": {
@@ -6740,6 +7309,12 @@
       "A way to contact you": [
         "有甚麼途徑可以聯絡您"
       ],
+      "Add a calendar description": [
+        "加入一個行事曆描述"
+      ],
+      "Add a calendar name": [
+        "加入一個行事曆名稱"
+      ],
       "Add gift code": [
         "加入禮品代碼"
       ],
@@ -6843,6 +7418,14 @@
         "免費"
       ]
     },
+    "Primary timezone": {
+      "Primary time zone": [
+        "主要時區"
+      ],
+      "Secondary time zone": [
+        "次要時區"
+      ]
+    },
     "Private Member": {
       "private": [
         "私密"
@@ -6893,6 +7476,9 @@
       "Email address not yet verified.": [
         "電郵位址尚未驗證。"
       ],
+      "sign in": [
+        "登入"
+      ],
       "Verification email sent to ${ email.Value }": [
         "驗證電郵已傳送至 ${ email.Value }"
       ],
@@ -6933,6 +7519,9 @@
       "Phone number has been verified.": [
         "電話號碼已曾驗證."
       ],
+      "Verify by SMS": [
+        "簡訊驗證"
+      ],
       "Verify now": [
         "立刻驗證"
       ]
@@ -6943,6 +7532,11 @@
       ],
       "State of the art": [
         "最先進的"
+      ]
+    },
+    "Remove calendar section title": {
+      "Remove calendar": [
+        "移除行事曆"
       ]
     },
     "Restore administrator panel": {
@@ -6973,6 +7567,11 @@
         "上載額外的檔案"
       ]
     },
+    "Select search results": {
+      "No results found": [
+        "找不到相符的結果"
+      ]
+    },
     "Settings description": {
       "Make the move to privacy. Effortlessly and securely.": [
         "轉向隱私。輕鬆且安全。"
@@ -6987,6 +7586,11 @@
       ],
       "Organization": [
         "組織"
+      ]
+    },
+    "Settings update growler warning": {
+      "Failed to update settings": [
+        "未能更新設定"
       ]
     },
     "Settings/filters": {
@@ -7022,6 +7626,9 @@
       ]
     },
     "Signup label": {
+      "Display name": [
+        "顯示名稱"
+      ],
       "Email": [
         "電郵"
       ],
@@ -7063,11 +7670,20 @@
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "${ DRIVE_APP_NAME } 現已正式登場！給您的檔案有如您的電子郵件一樣的安全性。"
       ],
+      "Get up to 18 months of ${ planName } for free": [
+        "獲得最多 18 個月的 ${ planName } 零元優惠"
+      ],
       "Invite friends and earn rewards!": [
         "邀請朋友並賺取獎勵！"
       ],
+      "No more missed appointments": [
+        "無其他遺漏的預定"
+      ],
       "Try ${ DRIVE_APP_NAME }": [
         "試試看 ${ DRIVE_APP_NAME }"
+      ],
+      "With email notifications, you decide which events to be notified about and when.": [
+        "藉由電郵通知，您可以決定何時提醒任何事件。"
       ]
     },
     "State": {
@@ -7100,9 +7716,46 @@
         "您目前的儲存空間："
       ]
     },
+    "Subscribe to calendar modal": {
+      "Calendar URL": [
+        "行事曆 URL"
+      ],
+      "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Subscribed calendars.\n${ kbLink }": [
+        "請輸入 URL 以訂購授權外部或公開的行事曆及其後的更新。該行事曆的唯讀版本將會加入到您「已訂購授權的行事曆」中。${ kbLink }"
+      ]
+    },
+    "Subscribe to calendar modal description": {
+      "Learn how to get a private calendar link.": [
+        "瞭解如何取得私密行事曆連結。"
+      ]
+    },
+    "Subscribed calendar extension warning": {
+      "By using this link, Google will make the calendar you are subscribing to public": [
+        "使用此連結的話，Google 將會把您訂購授權的行事曆設為公開"
+      ],
+      "This link might be wrong": [
+        "此連結或有誤"
+      ]
+    },
+    "Subscribed calendar URL length warning": {
+      "URL is too long": [
+        "URL 過長"
+      ]
+    },
     "Subscription attribute": {
+      "${ n } calendar": [
+        "${ n } 個行事曆"
+      ],
       "${ UsedAddresses } address": [
         "${ UsedAddresses } 個電郵位址"
+      ],
+      "${ UsedAddresses } of ${ MaxAddresses } email address": [
+        "最多可有 ${ MaxAddresses } 個電郵位址，目前已有 ${ UsedAddresses } 個"
+      ]
+    },
+    "Subscription saving": {
+      "Save": [
+        "儲存"
       ]
     },
     "Subtitle for trial plan": {
@@ -7132,6 +7785,21 @@
       "Bug reported": [
         "錯誤已回報"
       ],
+      "Calendar added. It might take a few minutes to sync.": [
+        "行事曆已加入。同步或需時幾分鐘。"
+      ],
+      "Calendar created": [
+        "行事曆已創建"
+      ],
+      "Calendar information updated": [
+        "行事曆資訊已更新"
+      ],
+      "Calendar removed": [
+        "行事曆已移除"
+      ],
+      "Calendar updated": [
+        "行事曆已更新"
+      ],
       "Canceling import": [
         "正在取消匯入"
       ],
@@ -7143,6 +7811,9 @@
       ],
       "Credits added": [
         "餘額已增加"
+      ],
+      "Default calendar updated": [
+        "預設行事曆已更新"
       ],
       "DMARC value copied to clipboard": [
         "DMARC 字串已經複製到剪貼簿"
@@ -7290,6 +7961,11 @@
         "/ 每使用者每月"
       ]
     },
+    "Suffix for price": {
+      "/month": [
+        "/ 月"
+      ]
+    },
     "Tab in domain modal": {
       "Addresses": [
         "位址"
@@ -7354,6 +8030,11 @@
         "${ minutes } 分鐘"
       ]
     },
+    "Timezone search placeholder": {
+      "Search timezones": [
+        "搜尋時區"
+      ]
+    },
     "Title": {
       "${ appName } Keyboard Shortcuts": [
         "${ appName } 鍵盤快捷鍵"
@@ -7405,6 +8086,9 @@
       ],
       "Add address": [
         "加入電郵位址"
+      ],
+      "Add another notification to remind you of this event": [
+        "加入另一個通知以提醒您此事件"
       ],
       "Add contact group name": [
         "加入聯絡人群組名稱"
@@ -7496,6 +8180,12 @@
       "Bridge for ${ platform }": [
         "適用於 ${ platform } 的 Bridge"
       ],
+      "Calendar information": [
+        "行事曆資訊"
+      ],
+      "Cancel Mail subscription": [
+        "取消 Mail 訂購授權"
+      ],
       "Card verification": [
         "信用卡驗證"
       ],
@@ -7562,6 +8252,9 @@
       "Create a ${ MAIL_APP_NAME } address": [
         "創建新的 ${ MAIL_APP_NAME } 電郵位址"
       ],
+      "Create calendar": [
+        "創建行事曆"
+      ],
       "Create your ${ BRAND_NAME } Account": [
         "創建您的 ${ BRAND_NAME } 帳號"
       ],
@@ -7625,6 +8318,9 @@
       "Delete account": [
         "刪除帳號"
       ],
+      "Delete calendar": [
+        "刪除行事曆"
+      ],
       "Delete key permanently?": [
         "永久刪除金鑰?"
       ],
@@ -7664,6 +8360,9 @@
       "Edit Block List": [
         "編輯封鎖清單"
       ],
+      "Edit calendar": [
+        "編輯行事曆"
+      ],
       "Edit credit/debit card": [
         "編輯信用卡/扣帳卡"
       ],
@@ -7699,6 +8398,12 @@
       ],
       "Error": [
         "錯誤"
+      ],
+      "Export": [
+        "匯出"
+      ],
+      "Export calendar": [
+        "匯出行事曆"
       ],
       "Export private key": [
         "匯出私鑰"
@@ -7753,6 +8458,9 @@
       ],
       "Import": [
         "匯入"
+      ],
+      "Import and export": [
+        "匯入與匯出"
       ],
       "Import as simple event?": [
         "匯入為基本活動？"
@@ -7907,6 +8615,9 @@
       "Referral tracker": [
         "推介追蹤"
       ],
+      "Remove calendar": [
+        "移除行事曆"
+      ],
       "Report a problem": [
         "回報問題"
       ],
@@ -7945,6 +8656,15 @@
       ],
       "Select contact group": [
         "選擇聯絡人群組"
+      ],
+      "Select the time to send this notification": [
+        "請選擇此通知傳送的時間"
+      ],
+      "Select the way to send this notification": [
+        "請選擇此通知傳送的方式"
+      ],
+      "Select when you want this notification to be sent": [
+        "請選擇您想此通知何時傳送"
       ],
       "Session management": [
         "工作階段管理"
@@ -8084,6 +8804,9 @@
       "Your ${ MAIL_APP_NAME } address": [
         "您新的 ${ MAIL_APP_NAME } 電郵位址"
       ],
+      "Your calendar link": [
+        "您的行事曆連結"
+      ],
       "Your current plan": [
         "您目前的方案"
       ],
@@ -8101,6 +8824,11 @@
       ],
       "ZIP / postal code": [
         "郵編 / 郵政代碼"
+      ]
+    },
+    "Title (number of minutes/hours/days/weeks)": {
+      "Choose a number": [
+        "請選擇一個數字"
       ]
     },
     "Title for payment methods table": {
@@ -8458,6 +9186,214 @@
     "Weak personal key warning": {
       "This key no longer meets our security standards. We suggest you mark it as obsolete and generate a new key.": [
         "此金鑰已不再符合我們的安全標準。我們建議您將其標記為過時的並生成一把新的。"
+      ]
+    },
+    "Weekly recurring event, frequency": {
+      "Every ${ interval } week on ${ multipleDaysString }": [
+        "每 ${ interval } 個星期的${ multipleDaysString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
+        "每 ${ interval } 個星期的${ multipleDaysString }，${ timesString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
+        "每 ${ interval } 個星期的${ multipleDaysString }，${ untilString }"
+      ],
+      "Every ${ interval } week on all days": [
+        "每${ interval }個星期，週中每一日"
+      ],
+      "Every ${ interval } week on all days, ${ timesString }": [
+        "每 ${ interval } 個星期，週中每一日，${ timesString }"
+      ],
+      "Every ${ interval } week on all days, ${ untilString }": [
+        "每 ${ interval } 個星期，週中每一日，${ untilString }"
+      ],
+      "Every ${ interval } week on Friday": [
+        "每 ${ interval } 個星期的週五"
+      ],
+      "Every ${ interval } week on Friday, ${ timesString }": [
+        "每 ${ interval } 個星期的週五，${ timesString }"
+      ],
+      "Every ${ interval } week on Friday, ${ untilString }": [
+        "每 ${ interval } 個星期的週五，${ untilString }"
+      ],
+      "Every ${ interval } week on Monday": [
+        "每${ interval }個星期的週一"
+      ],
+      "Every ${ interval } week on Monday, ${ timesString }": [
+        "每 ${ interval } 個星期的週一，${ timesString }"
+      ],
+      "Every ${ interval } week on Monday, ${ untilString }": [
+        "每 ${ interval } 個星期的週一，${ untilString }"
+      ],
+      "Every ${ interval } week on Saturday": [
+        "每 ${ interval } 個星期的週六"
+      ],
+      "Every ${ interval } week on Saturday, ${ timesString }": [
+        "每 ${ interval } 個星期的週六，${ timesString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ untilString }": [
+        "每 ${ interval } 個星期的週六，${ untilString }"
+      ],
+      "Every ${ interval } week on Sunday": [
+        "每${ interval }個星期的週日"
+      ],
+      "Every ${ interval } week on Sunday, ${ timesString }": [
+        "每 ${ interval } 個星期的週日，${ timesString }"
+      ],
+      "Every ${ interval } week on Sunday, ${ untilString }": [
+        "每 ${ interval } 個星期的週日，${ untilString }"
+      ],
+      "Every ${ interval } week on Thursday": [
+        "每 ${ interval } 個星期的週四"
+      ],
+      "Every ${ interval } week on Thursday, ${ timesString }": [
+        "每 ${ interval } 個星期的週四，${ timesString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ untilString }": [
+        "每 ${ interval } 個星期的週四，${ untilString }"
+      ],
+      "Every ${ interval } week on Tuesday": [
+        "每 ${ interval } 個星期的週二"
+      ],
+      "Every ${ interval } week on Tuesday, ${ timesString }": [
+        "每 ${ interval } 個星期的週二，${ timesString }"
+      ],
+      "Every ${ interval } week on Tuesday, ${ untilString }": [
+        "每 ${ interval } 個星期的週二，${ untilString }"
+      ],
+      "Every ${ interval } week on Wednesday": [
+        "每 ${ interval } 個星期的週三"
+      ],
+      "Every ${ interval } week on Wednesday, ${ timesString }": [
+        "每 ${ interval } 個星期的週三，${ timesString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ untilString }": [
+        "每 ${ interval } 個星期的週三，${ untilString }"
+      ],
+      "Weekly on ${ multipleDaysString }": [
+        "每星期的${ multipleDaysString }"
+      ],
+      "Weekly on ${ multipleDaysString }, ${ timesString }": [
+        "每星期的${ multipleDaysString }，${ timesString }"
+      ],
+      "Weekly on ${ multipleDaysString }, ${ untilString }": [
+        "每星期的${ multipleDaysString }，${ untilString }"
+      ],
+      "Weekly on all days": [
+        "每星期的所有工作日"
+      ],
+      "Weekly on all days, ${ timesString }": [
+        "每星期的所有工作日，${ timesString }"
+      ],
+      "Weekly on all days, ${ untilString }": [
+        "每星期的所有工作日，${ untilString }"
+      ],
+      "Weekly on Friday": [
+        "每星期的週五"
+      ],
+      "Weekly on Friday, ${ timesString }": [
+        "每星期的週五，${ timesString }"
+      ],
+      "Weekly on Friday, ${ untilString }": [
+        "每星期的週五，${ untilString }"
+      ],
+      "Weekly on Monday": [
+        "每星期的週一"
+      ],
+      "Weekly on Monday, ${ timesString }": [
+        "每星期的週一，${ timesString }"
+      ],
+      "Weekly on Monday, ${ untilString }": [
+        "每星期的週一，${ untilString }"
+      ],
+      "Weekly on Saturday": [
+        "每星期的週六"
+      ],
+      "Weekly on Saturday, ${ timesString }": [
+        "每星期的週六，${ timesString }"
+      ],
+      "Weekly on Saturday, ${ untilString }": [
+        "每星期的週六，${ untilString }"
+      ],
+      "Weekly on Sunday": [
+        "每星期的週日"
+      ],
+      "Weekly on Sunday, ${ timesString }": [
+        "每星期的週日，${ timesString }"
+      ],
+      "Weekly on Sunday, ${ untilString }": [
+        "每星期的週一，${ untilString }"
+      ],
+      "Weekly on Thursday": [
+        "每星期的週四"
+      ],
+      "Weekly on Thursday, ${ timesString }": [
+        "每星期的週四，${ timesString }"
+      ],
+      "Weekly on Thursday, ${ untilString }": [
+        "每星期的週四，${ untilString }"
+      ],
+      "Weekly on Tuesday": [
+        "每星期的週二"
+      ],
+      "Weekly on Tuesday, ${ timesString }": [
+        "每星期的週二，${ timesString }"
+      ],
+      "Weekly on Tuesday, ${ untilString }": [
+        "每星期的週二，${ untilString }"
+      ],
+      "Weekly on Wednesday": [
+        "每星期的週三"
+      ],
+      "Weekly on Wednesday, ${ timesString }": [
+        "每星期的週三，${ timesString }"
+      ],
+      "Weekly on Wednesday, ${ untilString }": [
+        "每星期的週三，${ untilString }"
+      ]
+    },
+    "Weekly recurring event, repeats on (multiple days), frequency": {
+      "Friday": [
+        "週五"
+      ],
+      "Monday": [
+        "週一"
+      ],
+      "Saturday": [
+        "週六"
+      ],
+      "Sunday": [
+        "週日"
+      ],
+      "Thursday": [
+        "週四"
+      ],
+      "Tuesday": [
+        "週二"
+      ],
+      "Wednesday": [
+        "週三"
+      ]
+    },
+    "Yearly recurring event, frequency": {
+      "Every ${ interval } year": [
+        "Yearly",
+        ""
+      ],
+      "Every ${ interval } year, ${ timesString }": [
+        "每${ interval }年，${ timesString }"
+      ],
+      "Every ${ interval } year, ${ untilString }": [
+        "每${ interval }年，${ untilString }"
+      ],
+      "Yearly": [
+        "每年"
+      ],
+      "Yearly, ${ timesString }": [
+        "每年，${ timesString }"
+      ],
+      "Yearly, ${ untilString }": [
+        "每年，${ untilString }"
       ]
     }
   }

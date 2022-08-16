@@ -774,6 +774,17 @@
         "不受支持的日历格式"
       ]
     },
+    "Calendar subscription not synced error; long version": {
+      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
+        "日历链接不能从日历提供者的系统之外访问。"
+      ],
+      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
+        "日历链接暂时无法访问。请核实日历提供者的链接仍然有效。"
+      ],
+      "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
+        "距离上次更新已经超过12小时--Proton Calendar将尝试在几小时内更新日历。"
+      ]
+    },
     "Collapsible tooltip": {
       "Collapse": [
         "收起"
@@ -906,6 +917,9 @@
       "Armenia": [
         "亚美尼亚"
       ],
+      "Aruba": [
+        "阿鲁巴"
+      ],
       "Ascension Island": [
         "阿森松岛"
       ],
@@ -915,14 +929,92 @@
       "Austria": [
         "奥地利"
       ],
+      "Azerbaijan": [
+        "阿塞拜疆"
+      ],
+      "Bahamas": [
+        "巴哈马"
+      ],
+      "Bahrain": [
+        "巴林"
+      ],
+      "Bangladesh": [
+        "孟加拉国"
+      ],
+      "Barbados": [
+        "巴巴多斯"
+      ],
+      "Belarus": [
+        "白俄罗斯"
+      ],
+      "Belgium": [
+        "比利时"
+      ],
+      "Belize": [
+        "伯利兹"
+      ],
+      "Benin": [
+        "贝宁"
+      ],
+      "Bermuda": [
+        "百慕大"
+      ],
+      "Bhutan": [
+        "不丹"
+      ],
+      "Bolivia": [
+        "玻利维亚"
+      ],
+      "Bonaire, Sint Eustatius and Saba": [
+        "荷兰加勒比区"
+      ],
+      "Bosnia and Herzegovina": [
+        "波斯尼亚和黑塞哥维那"
+      ],
+      "Botswana": [
+        "博茨瓦纳"
+      ],
+      "Bouvet Island": [
+        "布韦岛"
+      ],
+      "Brazil": [
+        "巴西"
+      ],
+      "British Indian Ocean Territory": [
+        "英属印度洋领地"
+      ],
+      "Brunei Darussalam": [
+        "文莱达鲁萨兰"
+      ],
+      "Bulgaria": [
+        "保加利亚"
+      ],
+      "Burkina Faso": [
+        "布基纳法索"
+      ],
+      "Burundi": [
+        "布隆迪"
+      ],
+      "Cambodia": [
+        "柬埔寨"
+      ],
       "Cameroon": [
         "喀麦隆"
+      ],
+      "Canada": [
+        "加拿大"
       ],
       "Cape Verde": [
         "佛得角"
       ],
+      "Cayman Islands": [
+        "开曼群岛"
+      ],
       "Central African Republic": [
         "中非共和国"
+      ],
+      "Chad": [
+        "乍得"
       ],
       "Chile": [
         "智利"
@@ -933,8 +1025,14 @@
       "Christmas Island": [
         "圣诞岛"
       ],
+      "Cocos (Keeling) Islands": [
+        "科科斯（基林）群岛"
+      ],
       "Colombia": [
         "哥伦比亚"
+      ],
+      "Comoros": [
+        "科摩罗"
       ],
       "Congo": [
         "刚果（布）"
@@ -948,6 +1046,9 @@
       "Costa Rica": [
         "哥斯达黎加"
       ],
+      "Croatia": [
+        "克罗地亚"
+      ],
       "Cuba": [
         "古巴"
       ],
@@ -959,6 +1060,9 @@
       ],
       "Czech Republic": [
         "捷克"
+      ],
+      "Côte d'Ivoire": [
+        "科特迪瓦"
       ],
       "Denmark": [
         "丹麦"
@@ -978,17 +1082,32 @@
       "Egypt": [
         "埃及"
       ],
+      "El Salvador": [
+        "萨尔瓦多"
+      ],
+      "Equatorial Guinea": [
+        "赤道几内亚"
+      ],
       "Eritrea": [
         "厄立特里亚"
       ],
       "Estonia": [
         "爱沙尼亚"
       ],
+      "Eswatini": [
+        "斯威士兰"
+      ],
       "Ethiopia": [
         "埃塞俄比亚"
       ],
       "Falkland Islands": [
         "马尔维纳斯群岛 / 福克兰群岛"
+      ],
+      "Faroe Islands": [
+        "法罗群岛"
+      ],
+      "Federated States of Micronesia": [
+        "密克罗尼西亚联邦"
       ],
       "Fiji": [
         "斐济"
@@ -999,41 +1118,479 @@
       "France": [
         "法国"
       ],
+      "French Guiana": [
+        "法属圭亚那"
+      ],
+      "French Polynesia": [
+        "法属波利尼西亚"
+      ],
+      "French Southern Territories": [
+        "法属南部领地"
+      ],
+      "Gabon": [
+        "加蓬"
+      ],
+      "Gambia": [
+        "冈比亚"
+      ],
+      "Georgia": [
+        "格鲁吉亚"
+      ],
       "Germany": [
         "德国"
+      ],
+      "Ghana": [
+        "加纳"
+      ],
+      "Gibraltar": [
+        "直布罗陀"
       ],
       "Greece": [
         "希腊"
       ],
+      "Greenland": [
+        "格陵兰"
+      ],
+      "Grenada": [
+        "格林纳达"
+      ],
+      "Guadeloupe": [
+        "瓜德罗普"
+      ],
+      "Guam": [
+        "关岛"
+      ],
+      "Guatemala": [
+        "危地马拉"
+      ],
+      "Guernsey": [
+        "根西"
+      ],
+      "Guinea": [
+        "几内亚"
+      ],
+      "Guinea-Bissau": [
+        "几内亚比绍"
+      ],
+      "Guyana": [
+        "圭亚那"
+      ],
+      "Haiti": [
+        "海地"
+      ],
+      "Heard Island and McDonald Islands": [
+        "赫德岛和麦克唐纳群岛"
+      ],
+      "Holy See (Vatican City State)": [
+        "圣座（梵蒂冈城邦）"
+      ],
+      "Honduras": [
+        "洪都拉斯"
+      ],
       "Hong Kong": [
         "中国香港特别行政区"
+      ],
+      "Hungary": [
+        "匈牙利"
+      ],
+      "Iceland": [
+        "冰岛"
+      ],
+      "India": [
+        "印度"
+      ],
+      "Indonesia": [
+        "印度尼西亚"
+      ],
+      "International": [
+        "全球"
+      ],
+      "Iran": [
+        "伊朗"
+      ],
+      "Iraq": [
+        "伊拉克"
+      ],
+      "Ireland": [
+        "爱尔兰"
+      ],
+      "Isle of Man": [
+        "马恩岛"
+      ],
+      "Israel": [
+        "以色列"
+      ],
+      "Italy": [
+        "意大利"
+      ],
+      "Jamaica": [
+        "牙买加"
       ],
       "Japan": [
         "日本"
       ],
+      "Jersey": [
+        "泽西"
+      ],
+      "Jordan": [
+        "约旦"
+      ],
+      "Kazakhstan": [
+        "哈萨克斯坦"
+      ],
+      "Kenya": [
+        "肯尼亚"
+      ],
+      "Kiribati": [
+        "基里巴斯"
+      ],
+      "Kosovo": [
+        "科索沃"
+      ],
+      "Kuwait": [
+        "科威特"
+      ],
+      "Kyrgyzstan": [
+        "吉尔吉斯斯坦"
+      ],
+      "Laos": [
+        "老挝"
+      ],
+      "Latvia": [
+        "拉脱维亚"
+      ],
+      "Lebanon": [
+        "黎巴嫩"
+      ],
+      "Lesotho": [
+        "莱索托"
+      ],
+      "Liberia": [
+        "利比里亚"
+      ],
+      "Libya": [
+        "利比亚"
+      ],
+      "Liechtenstein": [
+        "列支敦士登"
+      ],
+      "Lithuania": [
+        "立陶宛"
+      ],
+      "Luxembourg": [
+        "卢森堡"
+      ],
       "Macao": [
         "中国澳门特别行政区"
+      ],
+      "Madagascar": [
+        "马达加斯加"
+      ],
+      "Malawi": [
+        "马拉维"
+      ],
+      "Malaysia": [
+        "马来西亚"
+      ],
+      "Maldives": [
+        "马尔代夫"
+      ],
+      "Mali": [
+        "马里"
+      ],
+      "Malta": [
+        "马耳他"
+      ],
+      "Marshall Islands": [
+        "马绍尔群岛"
+      ],
+      "Martinique": [
+        "马提尼克"
+      ],
+      "Mauritania": [
+        "毛里塔尼亚"
+      ],
+      "Mauritius": [
+        "毛里求斯"
+      ],
+      "Mayotte": [
+        "马约特"
+      ],
+      "Mexico": [
+        "墨西哥"
+      ],
+      "Moldova": [
+        "摩尔多瓦"
+      ],
+      "Monaco": [
+        "摩纳哥"
       ],
       "Mongolia": [
         "蒙古"
       ],
+      "Montenegro": [
+        "黑山"
+      ],
+      "Montserrat": [
+        "蒙特塞拉特"
+      ],
+      "Morocco": [
+        "摩洛哥"
+      ],
+      "Mozambique": [
+        "莫桑比克"
+      ],
+      "Myanmar": [
+        "缅甸"
+      ],
+      "Namibia": [
+        "纳米比亚"
+      ],
+      "Nauru": [
+        "瑙鲁"
+      ],
+      "Nepal": [
+        "尼泊尔"
+      ],
+      "Netherlands": [
+        "荷兰"
+      ],
+      "New Caledonia": [
+        "新喀里多尼亚"
+      ],
       "New Zealand": [
         "新西兰"
+      ],
+      "Nicaragua": [
+        "尼加拉瓜"
+      ],
+      "Niger": [
+        "尼日尔"
+      ],
+      "Nigeria": [
+        "尼日利亚"
+      ],
+      "Niue": [
+        "纽埃"
+      ],
+      "Norfolk Island": [
+        "诺福克岛"
       ],
       "North Korea": [
         "朝鲜"
       ],
+      "North Macedonia": [
+        "北马其顿"
+      ],
+      "Northern Mariana Islands": [
+        "北马里亚纳群岛"
+      ],
+      "Norway": [
+        "挪威"
+      ],
+      "Oman": [
+        "阿曼"
+      ],
+      "Pakistan": [
+        "巴基斯坦"
+      ],
+      "Palau": [
+        "帕劳"
+      ],
+      "Palestine": [
+        "巴勒斯坦"
+      ],
+      "Panama": [
+        "巴拿马"
+      ],
+      "Papua New Guinea": [
+        "巴布亚新几内亚"
+      ],
+      "Paraguay": [
+        "巴拉圭"
+      ],
+      "Peru": [
+        "秘鲁"
+      ],
+      "Philippines": [
+        "菲律宾"
+      ],
+      "Pitcairn": [
+        "皮特凯恩"
+      ],
+      "Poland": [
+        "波兰"
+      ],
+      "Portugal": [
+        "葡萄牙"
+      ],
+      "Puerto Rico": [
+        "波多黎各"
+      ],
+      "Qatar": [
+        "卡塔尔"
+      ],
+      "Reunion": [
+        "留尼汪"
+      ],
+      "Romania": [
+        "罗马尼亚"
+      ],
+      "Russia": [
+        "俄罗斯"
+      ],
+      "Rwanda": [
+        "卢旺达"
+      ],
+      "Saint Barthélemy": [
+        "圣巴泰勒米"
+      ],
+      "Saint Helena": [
+        "圣赫勒拿岛"
+      ],
+      "Saint Kitts and Nevis": [
+        "圣基茨和尼维斯"
+      ],
+      "Saint Lucia": [
+        "圣卢西亚"
+      ],
+      "Saint Martin (French Part)": [
+        "法属圣马丁"
+      ],
+      "Saint Pierre and Miquelon": [
+        "圣皮埃尔和密克隆"
+      ],
+      "Saint Vincent and the Grenadines": [
+        "圣文森特和格林纳丁斯"
+      ],
+      "Samoa": [
+        "萨摩亚"
+      ],
+      "San Marino": [
+        "圣马力诺"
+      ],
+      "Sao Tome and Principe": [
+        "圣多美与普林西比"
+      ],
+      "Saudi Arabia": [
+        "沙特阿拉伯"
+      ],
+      "Senegal": [
+        "塞内加尔"
+      ],
+      "Serbia": [
+        "塞尔维亚"
+      ],
+      "Seychelles": [
+        "塞舌尔"
+      ],
+      "Sierra Leone": [
+        "塞拉利昂"
+      ],
       "Singapore": [
         "新加坡"
+      ],
+      "Sint Maarten": [
+        "圣马丁岛"
+      ],
+      "Slovakia": [
+        "斯洛伐克"
+      ],
+      "Slovenia": [
+        "斯洛文尼亚"
+      ],
+      "Solomon Islands": [
+        "所罗门群岛"
+      ],
+      "Somalia": [
+        "索马里"
+      ],
+      "South Africa": [
+        "南非"
+      ],
+      "South Georgia and the South Sandwich Islands": [
+        "南乔治亚岛和南桑威奇群岛"
       ],
       "South Korea": [
         "韩国"
       ],
+      "South Ossetia": [
+        "南奥塞梯"
+      ],
+      "South Sudan": [
+        "南苏丹"
+      ],
       "Spain": [
         "西班牙"
       ],
+      "Sri Lanka": [
+        "斯里兰卡"
+      ],
+      "Sudan": [
+        "苏丹"
+      ],
+      "Suriname": [
+        "苏里南"
+      ],
+      "Svalbard and Jan Mayen": [
+        "斯瓦尔巴和扬马延"
+      ],
+      "Sweden": [
+        "瑞典"
+      ],
       "Switzerland": [
         "瑞士"
+      ],
+      "Syria": [
+        "叙利亚"
+      ],
+      "Taiwan": [
+        "台湾地区"
+      ],
+      "Tajikistan": [
+        "塔吉克斯坦"
+      ],
+      "Tanzania": [
+        "坦桑尼亚"
+      ],
+      "Thailand": [
+        "泰国"
+      ],
+      "Timor-Leste": [
+        "东帝汶"
+      ],
+      "Togo": [
+        "多哥"
+      ],
+      "Tokelau": [
+        "托克劳"
+      ],
+      "Tonga": [
+        "汤加"
+      ],
+      "Trinidad and Tobago": [
+        "特立尼达和多巴哥"
+      ],
+      "Tristan da Cunha": [
+        "特里斯坦达库尼亚"
+      ],
+      "Tunisia": [
+        "突尼斯"
+      ],
+      "Turkey": [
+        "土耳其"
+      ],
+      "Turkmenistan": [
+        "土库曼斯坦"
+      ],
+      "Turks and Caicos Islands": [
+        "特克斯和凯科斯群岛"
+      ],
+      "Tuvalu": [
+        "图瓦卢"
+      ],
+      "Uganda": [
+        "乌干达"
       ],
       "Ukraine": [
         "乌克兰"
@@ -1041,11 +1598,53 @@
       "United Arab Emirates": [
         "阿联酋"
       ],
+      "United Kingdom": [
+        "英国"
+      ],
       "United States": [
         "美国"
       ],
+      "United States Minor Outlying Islands": [
+        "美国本土外小岛屿"
+      ],
+      "Uruguay": [
+        "乌拉圭"
+      ],
+      "Uzbekistan": [
+        "乌兹别克斯坦"
+      ],
+      "Vanuatu": [
+        "瓦努阿图"
+      ],
+      "Venezuela": [
+        "委内瑞拉"
+      ],
+      "Vietnam": [
+        "越南"
+      ],
+      "Virgin Islands, British": [
+        "英属维尔京群岛"
+      ],
+      "Virgin Islands, U.S.": [
+        "美属维尔京群岛"
+      ],
+      "Wallis and Futuna": [
+        "瓦利斯和富图纳"
+      ],
       "Western Sahara": [
         "西撒哈拉"
+      ],
+      "Yemen": [
+        "也门"
+      ],
+      "Zambia": [
+        "赞比亚"
+      ],
+      "Zimbabwe": [
+        "津巴布韦"
+      ],
+      "Åland Islands": [
+        "奥兰群岛"
       ]
     },
     "Default display name vcard": {
@@ -1064,6 +1663,9 @@
       ]
     },
     "Description": {
+      "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
+        "正在解密通讯录，可能需要几分钟的时间。完成后您就可以下载导出的通讯录文件了。"
+      ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "正在删除联系人... 该过程可能需要几分钟，完成后您就可以关闭此对话框了"
       ],
@@ -1107,6 +1709,9 @@
     "Error": {
       "A group with this name already exists": [
         "已存在同名群组"
+      ],
+      "A problem occurred, please try again.": [
+        "出错了，请重试。"
       ],
       "Authentication canceled.": [
         "验证被取消。"
@@ -1215,6 +1820,9 @@
       ],
       "Passwords do not match": [
         "两次输入的密码不一致"
+      ],
+      "Please activate your search again": [
+        "请重新开启全文搜索"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "请修复高亮的冲突以继续。"
@@ -1420,6 +2028,9 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "B"
+      ],
       "GB": [
         "GB"
       ],
@@ -1427,6 +2038,20 @@
         "KB"
       ],
       "MB": [
+        "MB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "字节"
+      ],
+      "Gigabyte": [
+        "GB"
+      ],
+      "Kilobyte": [
+        "KB"
+      ],
+      "Megabyte": [
         "MB"
       ]
     },
@@ -1572,6 +2197,9 @@
       ],
       "${ canceledCount } canceled": [
         "${ canceledCount } 项已取消"
+      ],
+      "${ contactCount } contact contains multiple email addresses.": [
+        "${ contactCount } 名联系人各有多个邮箱地址。"
       ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } 位成员"
@@ -2002,6 +2630,9 @@
       "of": [
         "/"
       ],
+      "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
+        "您信任的某些密钥已被其所有者标为「已泄露」，建议您不再信任这些密钥。"
+      ],
       "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } character is allowed": [
         "最多只能允许 ${ MAX_CUSTOM_PASSWORD_LENGTH } 个字符"
       ],
@@ -2023,6 +2654,12 @@
       "Permanently delete all files in your drive": [
         "永久删除网盘中的所有文件"
       ],
+      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        "PGP/Inline 只能用于纯文本邮件。请注意 ${ MAIL_APP_NAME } 会对所有加密邮件予以数字签名。"
+      ],
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        "PGP/MIME 可使用编辑器中指定的格式发送邮件。请注意 ${ MAIL_APP_NAME } 会对所有加密邮件予以数字签名。"
+      ],
       "Please enter the password to decrypt and view content.": [
         "请输入密码解锁并查看内容。"
       ],
@@ -2034,6 +2671,12 @@
       ],
       "Please select the folders you would like to import:": [
         "请选择要导入的文件夹："
+      ],
+      "Please select which email address or addresses to add to ${ groupCount } group.": [
+        "请选择将哪些邮箱地址加入这 ${ groupCount } 个群组。"
+      ],
+      "Please select which email address or addresses to add to ${ groupName }.": [
+        "请选择将哪些邮箱地址加入「${ groupName }」。"
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "请稍候，我们正在寻找可用主密钥重新签名的联系人。"
@@ -2364,8 +3007,14 @@
       ]
     },
     "Key badge": {
+      "Compromised": [
+        "已泄露"
+      ],
       "Expired": [
         "已失效"
+      ],
+      "Obsolete": [
+        "已作废"
       ],
       "Primary": [
         "主密钥"
@@ -2853,6 +3502,11 @@
         "切换或添加账户"
       ]
     },
+    "new_plans: info": {
+      "Introducing Proton’s refreshed look.${ br }Many services, one mission. Welcome to an internet where privacy is the default.": [
+        "Proton 界面现已焕然一新。${ br }服务繁多，使命不变。欢迎进入隐私优先的互联网。"
+      ]
+    },
     "new_plans: label": {
       "Tell us about your experience. (Optional)": [
         "您可以详细叙述您的使用体验。（非必填）"
@@ -2936,6 +3590,16 @@
         "设置已更改"
       ]
     },
+    "Oauth instructions": {
+      "Next you'll need to sign in to your Google account and grant Proton access to your data.": [
+        "接下来您需要登录 Google 账户并允许 Proton 获取您的数据。"
+      ]
+    },
+    "Oauth instructions video": {
+      "For the import to work, you must select all requested items as shown in the GIF.": [
+        "为顺利完成导入，您需要如下图所示勾选所有权限。"
+      ]
+    },
     "Onboarding Action": {
       "Next": [
         "下一步"
@@ -2999,6 +3663,17 @@
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "此密钥不能用于加密"
+      ]
+    },
+    "PGP Key info": {
+      "${ emailAddress } has marked this key as compromised. This key cannot be used neither for encryption nor for signature verification.": [
+        "此密钥已被 ${ emailAddress } 标为已泄露，不能再用于加密或验证数字签名。"
+      ],
+      "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
+        "此密钥已被 ${ emailAddress } 作废，只能用于验证数字签名。"
+      ],
+      "We recommend that you \"untrust\" this key.": [
+        "建议您不再信任此密钥。"
       ]
     },
     "PGP key warning": {
@@ -3123,6 +3798,9 @@
     "Spotlight": {
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "${ DRIVE_APP_NAME } 现已正式发布！您的文件也可以具备与邮件同等的安全性。"
+      ],
+      "Encrypted search is here": [
+        "已推出加密搜索功能"
       ],
       "Get up to 18 months of ${ planName } for free": [
         "免费获得最长 18 个月的 ${ planName } 使用权"
@@ -3712,6 +4390,9 @@
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "选择在向用户签名或加密时要使用的 PGP 方案。请注意, PGP/内嵌强制纯文本消息。"
       ],
+      "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
+        "系统子文件夹在 ${ MAIL_APP_NAME } 中将作为独立的文件夹显示"
+      ],
       "The import will start with the most recent messages.": [
         "导入将从最近的信息开始。"
       ],
@@ -3773,6 +4454,9 @@
       ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "如果您忘记了密码，您将无法重新激活密钥。我们可以帮助您关闭警告横幅，但在此过程中，您将永久失去通过该密钥加密的所有数据"
+      ],
+      "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
+        "只有付费 ${ VPN_APP_NAME } 账户才能与客服实时交流，请通过表单提交反馈。"
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
         "Proton 将会合并所有同名的文件夹。为了避免这种情况，请在导入前更改名称。"
