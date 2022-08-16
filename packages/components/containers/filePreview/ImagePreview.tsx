@@ -116,7 +116,16 @@ const ImagePreview = ({ mimeType, contents, onSave }: Props) => {
                     <UnsupportedPreview onSave={onSave} type="image" />
                 ) : (
                     imageData.src && (
-                        <div className="flex-no-min-children mauto relative" style={scaledDimensions}>
+                        <div
+                            className="flex-no-min-children mauto relative"
+                            style={{
+                                ...scaledDimensions,
+                                // Add checkered background to override any theme
+                                // so transparent images are better visible.
+                                background:
+                                    'repeating-conic-gradient(#606060 0% 25%, transparent 0% 50%) 50% / 20px 20px',
+                            }}
+                        >
                             <img
                                 ref={imageRef}
                                 onLoad={() => fitToContainer()}
