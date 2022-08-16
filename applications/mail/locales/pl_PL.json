@@ -359,6 +359,9 @@
       "Generate recovery phrase": [
         "Generuj hasło odzyskiwania"
       ],
+      "Get SimpleLogin extension": [
+        "Pobierz rozszerzenie SimpleLogin"
+      ],
       "Get started": [
         "Rozpocznij"
       ],
@@ -389,6 +392,9 @@
       "Go to settings": [
         "Przejdź do ustawień"
       ],
+      "Go to SimpleLogin": [
+        "Przejdź do SimpleLogin"
+      ],
       "Got it": [
         "Ok"
       ],
@@ -412,6 +418,12 @@
       ],
       "Hide messages": [
         "Ukryj wiadomości"
+      ],
+      "Hide My Email": [
+        "Ukryj mój adres e-mail"
+      ],
+      "Hide my email": [
+        "Ukryj mój adres e-mail"
       ],
       "I have a question": [
         "Mam pytanie"
@@ -1090,6 +1102,11 @@
     "Alternative text for conversation image": {
       "Conversation": [
         "Wątek"
+      ]
+    },
+    "Alternative text for SimpleLogin image": {
+      "SimpleLogin": [
+        "SimpleLogin"
       ]
     },
     "Alternative text for welcome image": {
@@ -4355,6 +4372,9 @@
       "Default email application": [
         "Domyślna aplikacja pocztowa"
       ],
+      "Delivered via SimpleLogin by Proton": [
+        "Dostarczono za pomocą SimpleLogin przez Proton"
+      ],
       "Disable message content search": [
         "Wyłącz wyszukiwanie zawartości wiadomości"
       ],
@@ -4405,6 +4425,9 @@
       ],
       "Email address": [
         "Adres e-mail"
+      ],
+      "Email is forwarded to your mailbox; your email address stays hidden.": [
+        "Wiadomość zostanie przekazana do skrzynki odbiorczej, a Twój adres e-mail pozostanie ukryty."
       ],
       "Email tracker protection is disabled": [
         "Ochrona przed śledzeniem wiadomości jest wyłączona"
@@ -4520,6 +4543,9 @@
         "godzin",
         "godziny"
       ],
+      "How Hide My Email works": [
+        "Jak działa ukrywanie adresu e-mail"
+      ],
       "I'm sending this message to a non-Proton Mail user.": [
         "Wysyłam wiadomość do użytkownika spoza Proton Mail."
       ],
@@ -4531,6 +4557,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Jeśli nie widzisz wiadomości w skrzynce odbiorczej, sprawdź folder Spam."
+      ],
+      "If your alias is sold, leaked, or abused, simply disable it to stop receiving spam.": [
+        "Jeśli alias został sprzedany, ujawniony lub nadużyty, wyłącz go, aby zatrzymać otrzymywanie spamu."
       ],
       "Image description": [
         "Opis obrazu"
@@ -4796,6 +4825,9 @@
       "Priority support": [
         "Priorytetowe wsparcie"
       ],
+      "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
+        "Chroń swój adres e-mail przed ujawnieniem go w listach mailingowych lub przez spammerów za pomocą funkcji ${ maskMyEmailButton }."
+      ],
       "Proton doesn't make money by abusing privacy.": [
         "Proton nie zarabia pieniędzy, naruszając prywatność."
       ],
@@ -4889,6 +4921,12 @@
       "Show original message": [
         "Pokaż oryginalną wiadomość"
       ],
+      "SimpleLogin is a Proton service, and your Proton Account includes Hide My Email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
+        "SimpleLogin to usługa Proton. Twoje konto Proton zawiera aliasy do ukrycia Twojego adresu e-mail. Utwórz w usłudze SimpleLogin pierwszy alias, aby ukryć swój adres."
+      ],
+      "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
+        "Usługa SimpleLogin zapewnia łatwy sposób tworzenia adresów e-mail dla niezaufanych stron trzecich, gdzie nie chcesz ujawniać swojego prawdziwego adresu."
+      ],
       "Sorry, this message does not exist or has already expired.": [
         "Wiadomość nie istnieje lub już wygasła."
       ],
@@ -4957,6 +4995,9 @@
       ],
       "There has been an error with the signature used to verify the contact details, which may be the result of a password reset.": [
         "Wystąpił błąd z podpisem używanym do weryfikowania szczegółów kontaktu, którego powodem może być zresetowane hasło."
+      ],
+      "They can't spam you if they don't know your email address. Protect your inbox with Hide My Email.": [
+        "Nie otrzymasz spamu, jeśli ktoś nie zna Twojego adresu e-mail. Chroń swoją pocztę za pomocą funkcji Ukryj mój adres e-mail."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Konto zostało zawieszone z powodu potencjalnego naruszenia regulaminu."
@@ -5150,6 +5191,9 @@
       "Use keyboard shortcuts to manage your email faster.": [
         "Użyj skrótów klawiszowych, aby szybciej zarządzać swoimi wiadomościami."
       ],
+      "Using SimpleLogin is easy": [
+        "Używanie usługi SimpleLogin jest łatwe"
+      ],
       "Version ${ appVersion }": [
         "Wersja ${ appVersion }"
       ],
@@ -5179,6 +5223,9 @@
       ],
       "When do you want your message to be sent?": [
         "Kiedy chcesz wysłać wiadomość?"
+      ],
+      "When giving out your email, use a unique, disposable Hide My Email alias instead of your real email address.": [
+        "Użyj unikalnego, jednorazowego aliasu, zamiast swojego prawdziwego adresu e-mail."
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Jeśli włączysz zaufane klucze dla adresu ${ senderName }, klucz publiczny zostanie dodany do szczegółów kontaktu."
@@ -5332,6 +5379,9 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Numer telefonu zostanie użyty tylko do jednorazowej weryfikacji."
+      ],
+      "Your Proton Account includes SimpleLogin. Install the browser extension with one click to get started.": [
+        "Twoje konto Proton zawiera subskrypcję SimpleLogin. Zainstaluj rozszerzenie przeglądarki za pomocą jednego kliknięcia."
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Twoje konto Proton jest obecnie zawieszone. Ureguluj zobowiązania."
@@ -7644,6 +7694,9 @@
       "Deleting contacts": [
         "Usuwanie kontaktów"
       ],
+      "Don't give spam a chance": [
+        "Pokonaj spam"
+      ],
       "Edit contact": [
         "Edytuj kontakt"
       ],
@@ -7700,6 +7753,9 @@
       ],
       "Groups": [
         "Grupy"
+      ],
+      "Hide your email with SimpleLogin by Proton": [
+        "Ukryj swój adres e-mail za pomocą SimpleLogin przez Proton"
       ],
       "Human verification": [
         "Weryfikacja antyspamowa"
@@ -7934,6 +7990,9 @@
       ],
       "Unsubscribe": [
         "Anuluj subskrypcję"
+      ],
+      "Unsubscribe request sent": [
+        "Żądanie anulowania subskrypcji zostało wysłane"
       ],
       "Upgrade required": [
         "Ulepszenie jest wymagane"

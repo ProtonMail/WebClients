@@ -793,6 +793,9 @@
       "Calendar is syncing": [
         "Kalender synkroniserer"
       ],
+      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
+        "Kalender er ved at blive synkroniseret: Det kan tage flere minutter, før alle begivenhederne vises."
+      ],
       "Calendar is too big": [
         "Kalender er for stor"
       ],
@@ -810,6 +813,17 @@
       ],
       "Unsupported calendar format": [
         "Kalenderformat understøttes ikke"
+      ]
+    },
+    "Calendar subscription not synced error; long version": {
+      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
+        "Kalenderlinket er ikke tilgængeligt uden for kalenderudbyderens økosystem."
+      ],
+      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
+        "Kalenderlinket er midlertidigt utilgængeligt. Kontroller venligst, at linket fra kalenderudbyderen stadig er gyldigt."
+      ],
+      "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
+        "Der er gået mere end 12 timer siden sidste opdatering - Proton Calendar vil forsøge at opdatere kalenderen om et par timer."
       ]
     },
     "Calendar view": {
@@ -1966,6 +1980,9 @@
         "Fravælg mindst ${ calendarToFixCount } kalender eller",
         "Fravælg mindst ${ calendarToFixCount } kalendere eller"
       ],
+      "Domain not available, try again later": [
+        "Domæne er ikke tilgængeligt, prøv igen senere"
+      ],
       "Email address disabled": [
         "E-mailadresse deaktiveret"
       ],
@@ -2488,6 +2505,10 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "byte",
+        "bytes"
+      ],
       "GB": [
         "GB"
       ],
@@ -2496,6 +2517,24 @@
       ],
       "MB": [
         "MB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Byte",
+        "Bytes"
+      ],
+      "Gigabyte": [
+        "Gigabyte",
+        "Gigabytes"
+      ],
+      "Kilobyte": [
+        "Kilobyte",
+        "Kilobytes"
+      ],
+      "Megabyte": [
+        "Megabyte",
+        "Megabytes"
       ]
     },
     "Filter notification": {
@@ -3325,6 +3364,9 @@
       "All day": [
         "Hele dagen"
       ],
+      "All-day event notifications": [
+        "Notifikationer for heldagsbegivenheder"
+      ],
       "Attach screenshot(s)": [
         "Vedhæft skærmfoto(s)"
       ],
@@ -3402,6 +3444,12 @@
       ],
       "Ends": [
         "Slutter"
+      ],
+      "Event duration": [
+        "Begivenhedsvarighed"
+      ],
+      "Event notifications": [
+        "Begivenhedsnotifikationer"
       ],
       "Event title": [
         "Begivenhedstitel"
@@ -4625,6 +4673,9 @@
       "Calendar alarm": [
         "Kalenderalarm"
       ],
+      "Calendar information": [
+        "Kalenderoplysninger"
+      ],
       "Change my answer": [
         "Skift mit svar"
       ],
@@ -5270,8 +5321,8 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "Hver ${ interval } år",
-        "Hver ${ interval } år"
+        "Yearly",
+        ""
       ],
       "Every ${ interval } year, ${ timesString }": [
         "Hver ${ interval } år, ${ timesString }",

@@ -6,13 +6,13 @@
   "contexts": {
     "Access level": {
       "Full": [
-        "すべて"
+        "フル"
       ],
       "Full view": [
         "フルビュー"
       ],
       "Limited": [
-        "制限"
+        "限定"
       ],
       "Limited view": [
         "限定ビュー"
@@ -343,9 +343,6 @@
       "Export": [
         "エクスポート"
       ],
-      "Export ICS": [
-        "ICS をエクスポート"
-      ],
       "Export key": [
         "鍵をエクスポート"
       ],
@@ -438,6 +435,9 @@
       ],
       "Loading verification": [
         "認証を読み込み中"
+      ],
+      "Make default": [
+        "既定にする"
       ],
       "Mark as default": [
         "既定値として設定"
@@ -845,6 +845,9 @@
       ]
     },
     "Action in trial plan": {
+      "Continue with free plan": [
+        "無料プランで続行"
+      ],
       "No, thanks": [
         "いいえ"
       ],
@@ -1012,59 +1015,6 @@
         "2年払い"
       ]
     },
-    "blackfriday Info": {
-      "beta": [
-        "ベータ"
-      ],
-      "Includes": [
-        "プランには以下が含まれます"
-      ],
-      "Standard price: ${ regularPrice }": [
-        "標準価格: ${ regularPrice }"
-      ],
-      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
-        "このサブスクリプションは、キャンセル処理が行われない限り2年後に同額で自動更新されます。"
-      ]
-    },
-    "blackfriday Title": {
-      "Most popular": [
-        "最も人気"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Action": {
-      "Get the deal": [
-        "割引を入手"
-      ],
-      "Get the deal now": [
-        "今すぐ割引を入手"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Info": {
-      "Save ${ percentage }%": [
-        "${ percentage }%割引"
-      ]
-    },
-    "blackfriday: VPNspecialoffer info": {
-      "per month": [
-        " / 月"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Promo title, need to be short": {
-      "Special offer": [
-        "特別オファー"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Title": {
-      "1 month": [
-        "1か月"
-      ],
-      "12 months": [
-        "12か月"
-      ],
-      "24 months": [
-        "24か月"
-      ]
-    },
     "breadcrumb": {
       "Calendars": [
         "カレンダー"
@@ -1228,6 +1178,17 @@
         "非対応のカレンダー形式です"
       ]
     },
+    "Calendar view": {
+      "Day": [
+        "日"
+      ],
+      "Month": [
+        "月"
+      ],
+      "Week": [
+        "週"
+      ]
+    },
     "Checkout row": {
       "${ users } user": [
         "${ users } ユーザー"
@@ -1236,7 +1197,18 @@
         "合計 ${ n } か月"
       ]
     },
+    "Collapsible tooltip": {
+      "Collapse": [
+        "作成"
+      ],
+      "Expand": [
+        "展開"
+      ]
+    },
     "color": {
+      "apple": [
+        "グレーな緑"
+      ],
       "azureish white": [
         "かなり薄い青"
       ],
@@ -1533,6 +1505,9 @@
       ],
       "Work": [
         "仕事"
+      ],
+      "Yomi": [
+        "ふりがな"
       ]
     },
     "Countdown unit": {
@@ -1724,6 +1699,9 @@
       "Czech Republic": [
         "チェコ共和国"
       ],
+      "Côte d'Ivoire": [
+        "コートジボワール"
+      ],
       "Denmark": [
         "デンマーク"
       ],
@@ -1753,6 +1731,9 @@
       ],
       "Estonia": [
         "エストニア"
+      ],
+      "Eswatini": [
+        "スワジランド"
       ],
       "Ethiopia": [
         "エチオピア"
@@ -1996,6 +1977,9 @@
       ],
       "Mozambique": [
         "モザンビーク"
+      ],
+      "Myanmar": [
+        "ビルマ"
       ],
       "Namibia": [
         "ナミビア"
@@ -2345,6 +2329,9 @@
       ],
       "Every ${ interval } day, ${ untilString }": [
         "${ interval } 日毎、${ untilString }"
+      ],
+      "until ${ dateString }": [
+        "${ dateString } まで"
       ]
     },
     "Day": {
@@ -2383,6 +2370,9 @@
     "Description": {
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "連絡先の暗号化しインポートしています... これには数分かかることがあります。\n処理が完了すると、このモーダルを閉じることができます。"
+      ],
+      "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
+        "インポートしようとしている連絡先リストにはいくつかのグループが含まれています。どのようにグループのインポートするか確認してください。"
       ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "ファイルの最大サイズは ${ MAX_IMPORT_FILE_SIZE_STRING } で、連絡先は ${ MAX_IMPORT_CONTACTS_STRING } 件までです。 ファイルが大きい場合は、それを小さいファイルに分割してください。"
@@ -2969,6 +2959,9 @@
       "Calendar": [
         "カレンダー"
       ],
+      "Calendar time zone not supported": [
+        "カレンダーのタイムゾーンはサポートされていません"
+      ],
       "Component with wrong format": [
         "無効なコンポーネント形式です"
       ],
@@ -3035,6 +3028,9 @@
       "Start time out of bounds": [
         "開始日時が指定可能な範囲を超えています"
       ],
+      "Time zone not supported": [
+        "タイムゾーンはサポートされていません"
+      ],
       "Timezone": [
         "タイムゾーン"
       ],
@@ -3060,6 +3056,9 @@
       ],
       "Please ${ refresh } or check your connection.": [
         "${ refresh } または接続を確認してください。"
+      ],
+      "Something went wrong. Please refresh the page or try again later.": [
+        "問題が発生しました。ページを更新するか再度お試しください。"
       ],
       "There was a problem connecting to Proton.": [
         "Proton への接続に問題がありました。"
@@ -3241,6 +3240,9 @@
       "Archive": [
         "アーカイブ"
       ],
+      "Do not move": [
+        "移動しない"
+      ],
       "Inbox": [
         "受信トレイ"
       ],
@@ -3348,6 +3350,9 @@
       "Actions": [
         "操作"
       ],
+      "Calendar": [
+        "カレンダー"
+      ],
       "Event": [
         "イベント"
       ],
@@ -3360,11 +3365,20 @@
       "Key type": [
         "鍵の種類"
       ],
+      "Label": [
+        "ラベル"
+      ],
+      "Name": [
+        "名前"
+      ],
       "Notifications": [
         "通知"
       ],
       "Organization key fingerprint": [
         "組織用の鍵のフィンガープリント"
+      ],
+      "Status": [
+        "状態"
       ],
       "Time": [
         "日時"
@@ -4046,7 +4060,7 @@
         "と"
       ],
       "Anyone with this link won't be able to sync or get future updates for your calendar. If you want to give them access again, you will have to create a new link.": [
-        "このリンクを持っている人は、あなたのカレンダーの同期や今後の更新を取得することはできません。 再度アクセスを許可したい場合は、新しいリンクを作成する必要があります。"
+        "今後、このリンクはあなたのカレンダーとの同期や更新の取得に使用できなくなります。再度アクセスを許可したい場合は、新しいリンクを作成する必要があります。"
       ],
       "AOL reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
         "AOL はあなたの個人情報を収集しており、広告主や、その他の第三者に情報を提供しています。プライバシーを守るため、安全なメールアドレスを作成しましょう。"
@@ -4553,7 +4567,7 @@
         "あなたが宛先の方のプライバシーに配慮していることを伝えましょう。"
       ],
       "Limited view: others see if you're busy. Full view: shows all event details, including name, location, or participants.": [
-        "限定ビュー: 多忙な場合は他のユーザーが確認できます。フルビュー: 名前、場所、参加者を含むすべてのイベント詳細が表示されます。"
+        "限定ビュー: 他のユーザーはあなたの予定の有無を確認できます。フルビュー: 名前、場所、参加者を含むすべてのイベント詳細が表示されます。"
       ],
       "Link copied to clipboard": [
         "リンクをクリップボードにコピーしました"
@@ -4729,6 +4743,9 @@
       "Please enter the 12-word recovery phrase associated with your account.": [
         "アカウントに関連付けられた 12 語の回復用フレーズ入力してください。"
       ],
+      "Please fill out this field.": [
+        "このフィールドに入力してください。"
+      ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
         "パスワードをリセットした場合、アカウントへのアクセスとデータの復号に必要になります。安全な場所に保管してください。"
       ],
@@ -4854,6 +4871,9 @@
       ],
       "Select a service provider to start": [
         "サービスプロバイダーを選択して開始"
+      ],
+      "Select what you want to import from Google.": [
+        "Google からインポートしたいものを選択してください。"
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "インポートするカレンダーを選択してください。インポートするカレンダーは最大 20 件までに制限されます。"
@@ -5423,6 +5443,9 @@
       ],
       "Try Mail Plus": [
         "Mail Plus を試す"
+      ],
+      "Your subscription starts on ${ startText }.": [
+        "サブスクリプションは ${ startText } に開始されます。"
       ]
     },
     "Info - folder colouring feature": {
@@ -6490,6 +6513,9 @@
       "Upload 1 or more recovery files or encryption keys": [
         "1 つ以上の回復ファイルまたは暗号鍵をアップロード"
       ],
+      "URL": [
+        "URL"
+      ],
       "Use folder colors": [
         "フォルダーの色を使用"
       ],
@@ -6578,6 +6604,11 @@
         "通知"
       ]
     },
+    "Label for default event settings": {
+      "Duration": [
+        "期間"
+      ]
+    },
     "Label for domain modal": {
       "Please add the following TXT record:": [
         "次の TXT レコードを追加してください:"
@@ -6606,6 +6637,9 @@
       ],
       "Proton company announcements": [
         "Proton からのお知らせ"
+      ],
+      "Proton for Business": [
+        "Proton for Business"
       ],
       "Proton for Business newsletter": [
         "ビジネス向け Proton のニュースレター"
@@ -6916,6 +6950,116 @@
         "毎月 ${ onDayString } 、${ untilString }"
       ]
     },
+    "Monthly recurring event, repeats on": {
+      "on day ${ dayOfMonth }": [
+        "${ dayOfMonth } 日に"
+      ],
+      "on the first Friday": [
+        "第1金曜日"
+      ],
+      "on the first Monday": [
+        "第1月曜日"
+      ],
+      "on the first Saturday": [
+        "第1土曜日"
+      ],
+      "on the first Sunday": [
+        "第1日曜日"
+      ],
+      "on the first Thursday": [
+        "第1木曜日"
+      ],
+      "on the first Tuesday": [
+        "第1火曜日"
+      ],
+      "on the first Wednesday": [
+        "第1水曜日"
+      ],
+      "on the fourth Friday": [
+        "第4金曜日"
+      ],
+      "on the fourth Monday": [
+        "第4月曜日"
+      ],
+      "on the fourth Saturday": [
+        "第4土曜日"
+      ],
+      "on the fourth Sunday": [
+        "第4日曜日"
+      ],
+      "on the fourth Thursday": [
+        "第4木曜日"
+      ],
+      "on the fourth Tuesday": [
+        "第4火曜日"
+      ],
+      "on the fourth Wednesday": [
+        "第4水曜日"
+      ],
+      "on the last Friday": [
+        "最終金曜日"
+      ],
+      "on the last Monday": [
+        "最終月曜日"
+      ],
+      "on the last Saturday": [
+        "最終土曜日"
+      ],
+      "on the last Sunday": [
+        "最終日曜日"
+      ],
+      "on the last Thursday": [
+        "最終木曜日"
+      ],
+      "on the last Tuesday": [
+        "最終火曜日"
+      ],
+      "on the last Wednesday": [
+        "最終水曜日"
+      ],
+      "on the second Friday": [
+        "第2金曜日"
+      ],
+      "on the second Monday": [
+        "第2月曜日"
+      ],
+      "on the second Saturday": [
+        "第2土曜日"
+      ],
+      "on the second Sunday": [
+        "第2日曜日"
+      ],
+      "on the second Thursday": [
+        "第2木曜日"
+      ],
+      "on the second Tuesday": [
+        "第2火曜日"
+      ],
+      "on the second Wednesday": [
+        "第2水曜日"
+      ],
+      "on the third Friday": [
+        "第3金曜日"
+      ],
+      "on the third Monday": [
+        "第3月曜日"
+      ],
+      "on the third Saturday": [
+        "第3土曜日"
+      ],
+      "on the third Sunday": [
+        "第3日曜日"
+      ],
+      "on the third Thursday": [
+        "第3木曜日"
+      ],
+      "on the third Tuesday": [
+        "第3火曜日"
+      ],
+      "on the third Wednesday": [
+        "第3水曜日"
+      ]
+    },
     "Moved to black/whitelist": {
       "${ Domain } removed": [
         "${ Domain } が削除されました"
@@ -6984,6 +7128,9 @@
       ]
     },
     "new_plans: action": {
+      "Continue with Free": [
+        "Free で続行"
+      ],
       "Delete account": [
         "アカウントを削除"
       ],
@@ -7429,6 +7576,18 @@
       "Access advanced VPN features": [
         "高度な VPN 機能にアクセス"
       ],
+      "Boost your storage space to ${ bundleStorage } total": [
+        "ストレージ容量を合計 ${ bundleStorage } に拡張"
+      ],
+      "Boost your storage space to ${ businessStorage } per user": [
+        "1 人ユーザーあたりストレージ容量を合計 ${ businessStorage } に拡張"
+      ],
+      "Boost your storage space to ${ driveStorage } total": [
+        "ストレージ容量を合計 ${ driveStorage } に拡張"
+      ],
+      "Create up to ${ numberOfPersonalCalendars } personal calendar": [
+        "最大 ${ numberOfPersonalCalendars } 件のパーソナルカレンダーを作成"
+      ],
       "Everything in ${ vpnPlanName }": [
         "${ vpnPlanName } のすべての機能を含みます"
       ],
@@ -7462,12 +7621,37 @@
         "OpenVPN / IKEv2 認証情報を更新しました"
       ]
     },
+    "Notification time input": {
+      "at": [
+        " at"
+      ]
+    },
     "Notification type": {
       "email": [
         "メール"
       ],
       "notification": [
         "通知"
+      ]
+    },
+    "Notification when": {
+      "at time of event": [
+        "イベントの時間"
+      ],
+      "day before": [
+        "日前"
+      ],
+      "hour before": [
+        "時間前"
+      ],
+      "minute before": [
+        "分前"
+      ],
+      "on the same day": [
+        "同日"
+      ],
+      "week before": [
+        "週間前"
       ]
     },
     "Oauth instructions": {
@@ -7639,6 +7823,12 @@
       "Normal": [
         "標準"
       ],
+      "Off": [
+        "オフ"
+      ],
+      "On": [
+        "オン"
+      ],
       "Permanent": [
         "無期限"
       ],
@@ -7756,6 +7946,12 @@
     "Placeholder": {
       "A way to contact you": [
         "連絡手段"
+      ],
+      "Add a calendar description": [
+        "カレンダーの詳細を入力..."
+      ],
+      "Add a calendar name": [
+        "カレンダー名を入力..."
       ],
       "Add gift code": [
         "ギフトコードを追加"
@@ -8018,6 +8214,11 @@
         "追加のファイルをアップロード"
       ]
     },
+    "Select search results": {
+      "No results found": [
+        "該当する結果が見つかりませんでした"
+      ]
+    },
     "Settings description": {
       "Make the move to privacy. Effortlessly and securely.": [
         "プライバシーが保護される環境に、簡単かつ確実に移行します。"
@@ -8032,6 +8233,11 @@
       ],
       "Organization": [
         "組織"
+      ]
+    },
+    "Settings update growler warning": {
+      "Failed to update settings": [
+        "設定の更新に失敗しました"
       ]
     },
     "Settings/filters": {
@@ -8117,8 +8323,14 @@
       "Invite friends and earn rewards!": [
         "友だちを招待して報酬を手に入れよう!"
       ],
+      "No more missed appointments": [
+        "予定を通知する"
+      ],
       "Try ${ DRIVE_APP_NAME }": [
         "${ DRIVE_APP_NAME } を試す"
+      ],
+      "With email notifications, you decide which events to be notified about and when.": [
+        "メール通知で、予定をいつ通知するかを選択できます。"
       ]
     },
     "State": {
@@ -8151,6 +8363,14 @@
         "現在のストレージ:"
       ]
     },
+    "Subscribe to calendar modal": {
+      "Calendar URL": [
+        "カレンダーの URL"
+      ],
+      "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Subscribed calendars.\n${ kbLink }": [
+        "URL を入力して、外部または公開カレンダーを購読できます。購読すると、そのカレンダーの読み取り専用バージョンが「購読済みカレンダー」に追加されます。\n${ kbLink }"
+      ]
+    },
     "Subscribe to calendar modal description": {
       "Learn how to get a private calendar link.": [
         "プライベートなカレンダーリンクの取得方法についての詳細"
@@ -8159,6 +8379,9 @@
     "Subscribed calendar extension warning": {
       "By using this link, Google will make the calendar you are subscribing to public": [
         "リンクを使うことで、購読しているカレンダーは公開されます"
+      ],
+      "This link might be wrong": [
+        "リンクが間違っています"
       ]
     },
     "Subscribed calendar URL length warning": {
@@ -8511,6 +8734,11 @@
       ],
       "${ minutes } minute": [
         "${ minutes } 分"
+      ]
+    },
+    "Timezone search placeholder": {
+      "Search timezones": [
+        "タイムゾーンの検索"
       ]
     },
     "Title": {
@@ -9664,6 +9892,170 @@
         "DNS の更新には最大1日かかる場合があります。"
       ]
     },
+    "Weekly recurring event, frequency": {
+      "Every ${ interval } week on ${ multipleDaysString }": [
+        "${ interval } 週間毎の ${ multipleDaysString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
+        "${ interval } 週間毎の ${ multipleDaysString } 、${ timesString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
+        "${ interval } 週間毎の ${ multipleDaysString } 、${ untilString }"
+      ],
+      "Every ${ interval } week on all days": [
+        "${ interval } 週間毎の全曜日"
+      ],
+      "Every ${ interval } week on all days, ${ timesString }": [
+        "${ interval } 週間毎の全曜日、${ timesString }"
+      ],
+      "Every ${ interval } week on all days, ${ untilString }": [
+        "${ interval } 週間毎の全曜日、${ untilString }"
+      ],
+      "Every ${ interval } week on Friday": [
+        "${ interval } 週間毎の金曜日"
+      ],
+      "Every ${ interval } week on Friday, ${ timesString }": [
+        "${ interval } 週間毎の金曜日、${ timesString }"
+      ],
+      "Every ${ interval } week on Friday, ${ untilString }": [
+        "${ interval } 週間毎の金曜日、${ untilString }"
+      ],
+      "Every ${ interval } week on Monday": [
+        "${ interval } 週間毎の月曜日"
+      ],
+      "Every ${ interval } week on Monday, ${ timesString }": [
+        "${ interval } 週間毎の月曜日、${ timesString }"
+      ],
+      "Every ${ interval } week on Monday, ${ untilString }": [
+        "${ interval } 週間毎の月曜日、${ untilString }"
+      ],
+      "Every ${ interval } week on Saturday": [
+        "${ interval } 週間毎の土曜日"
+      ],
+      "Every ${ interval } week on Saturday, ${ timesString }": [
+        "${ interval } 週間毎の土曜日、${ timesString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ untilString }": [
+        "${ interval } 週間毎の土曜日、${ untilString }"
+      ],
+      "Every ${ interval } week on Sunday": [
+        "${ interval } 週間毎の日曜日"
+      ],
+      "Every ${ interval } week on Sunday, ${ timesString }": [
+        "${ interval } 週間毎の日曜日、${ timesString }"
+      ],
+      "Every ${ interval } week on Sunday, ${ untilString }": [
+        "${ interval } 週間毎の日曜日、${ untilString }"
+      ],
+      "Every ${ interval } week on Thursday": [
+        "${ interval } 週間毎の木曜日"
+      ],
+      "Every ${ interval } week on Thursday, ${ timesString }": [
+        "${ interval } 週間毎の木曜日、${ timesString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ untilString }": [
+        "${ interval } 週間毎の木曜日、${ untilString }"
+      ],
+      "Every ${ interval } week on Tuesday": [
+        "${ interval } 週間毎の火曜日"
+      ],
+      "Every ${ interval } week on Tuesday, ${ timesString }": [
+        "${ interval } 週間毎の火曜日、${ timesString }"
+      ],
+      "Every ${ interval } week on Tuesday, ${ untilString }": [
+        "${ interval } 週間毎の火曜日、${ untilString }"
+      ],
+      "Every ${ interval } week on Wednesday": [
+        "${ interval } 週間毎の水曜日"
+      ],
+      "Every ${ interval } week on Wednesday, ${ timesString }": [
+        "${ interval } 週間毎の水曜日、${ timesString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ untilString }": [
+        "${ interval } 週間毎の水曜日、${ untilString }"
+      ],
+      "Weekly on ${ multipleDaysString }": [
+        "毎週 ${ multipleDaysString }"
+      ],
+      "Weekly on ${ multipleDaysString }, ${ timesString }": [
+        "毎週 ${ multipleDaysString } 、${ timesString }"
+      ],
+      "Weekly on ${ multipleDaysString }, ${ untilString }": [
+        "毎週 ${ multipleDaysString } 、${ untilString }"
+      ],
+      "Weekly on all days": [
+        "毎週の全曜日"
+      ],
+      "Weekly on all days, ${ timesString }": [
+        "毎週の全曜日、${ timesString }"
+      ],
+      "Weekly on all days, ${ untilString }": [
+        "毎週のすべての日、${ untilString }"
+      ],
+      "Weekly on Friday": [
+        "毎週金曜日"
+      ],
+      "Weekly on Friday, ${ timesString }": [
+        "毎週金曜日、${ timesString }"
+      ],
+      "Weekly on Friday, ${ untilString }": [
+        "毎週金曜日、${ untilString }"
+      ],
+      "Weekly on Monday": [
+        "毎週月曜日"
+      ],
+      "Weekly on Monday, ${ timesString }": [
+        "毎週月曜日、${ timesString }"
+      ],
+      "Weekly on Monday, ${ untilString }": [
+        "毎週月曜日、${ untilString }"
+      ],
+      "Weekly on Saturday": [
+        "毎週土曜日"
+      ],
+      "Weekly on Saturday, ${ timesString }": [
+        "毎週土曜日、${ timesString }"
+      ],
+      "Weekly on Saturday, ${ untilString }": [
+        "毎週土曜日、${ untilString }"
+      ],
+      "Weekly on Sunday": [
+        "毎週日曜日"
+      ],
+      "Weekly on Sunday, ${ timesString }": [
+        "毎週日曜日、${ timesString }"
+      ],
+      "Weekly on Sunday, ${ untilString }": [
+        "毎週日曜日、${ untilString }"
+      ],
+      "Weekly on Thursday": [
+        "毎週木曜日"
+      ],
+      "Weekly on Thursday, ${ timesString }": [
+        "毎週木曜日、${ timesString }"
+      ],
+      "Weekly on Thursday, ${ untilString }": [
+        "毎週木曜日、${ untilString }"
+      ],
+      "Weekly on Tuesday": [
+        "毎週火曜日"
+      ],
+      "Weekly on Tuesday, ${ timesString }": [
+        "毎週火曜日、${ timesString }"
+      ],
+      "Weekly on Tuesday, ${ untilString }": [
+        "毎週火曜日、${ untilString }"
+      ],
+      "Weekly on Wednesday": [
+        "毎週水曜日"
+      ],
+      "Weekly on Wednesday, ${ timesString }": [
+        "毎週水曜日、${ timesString }"
+      ],
+      "Weekly on Wednesday, ${ untilString }": [
+        "毎週水曜日、${ untilString }"
+      ]
+    },
     "Weekly recurring event, repeats on (multiple days), frequency": {
       "Friday": [
         "金曜日"
@@ -9689,7 +10081,8 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "${ interval } 年毎"
+        "Yearly",
+        ""
       ],
       "Every ${ interval } year, ${ timesString }": [
         "${ interval } 年毎、${ timesString }"

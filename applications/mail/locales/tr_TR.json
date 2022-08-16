@@ -355,6 +355,9 @@
       "Generate recovery phrase": [
         "Kurtarma ifadesi oluştur"
       ],
+      "Get SimpleLogin extension": [
+        "SimpleLogin eklentisini edinin"
+      ],
       "Get started": [
         "Başlayalım"
       ],
@@ -385,6 +388,9 @@
       "Go to settings": [
         "Ayarlara git"
       ],
+      "Go to SimpleLogin": [
+        "SimpleLogin sitesine git"
+      ],
       "Got it": [
         "Anladım"
       ],
@@ -408,6 +414,12 @@
       ],
       "Hide messages": [
         "İletileri gizle"
+      ],
+      "Hide My Email": [
+        "E-posta adresimi gizle"
+      ],
+      "Hide my email": [
+        "E-posta adresimi gizle"
       ],
       "I have a question": [
         "Bir sorum var"
@@ -1082,6 +1094,11 @@
     "Alternative text for conversation image": {
       "Conversation": [
         "Yazışma"
+      ]
+    },
+    "Alternative text for SimpleLogin image": {
+      "SimpleLogin": [
+        "SimpleLogin"
       ]
     },
     "Alternative text for welcome image": {
@@ -4217,6 +4234,9 @@
       "Default email application": [
         "Varsayılan e-posta uygulaması"
       ],
+      "Delivered via SimpleLogin by Proton": [
+        "Proton tarafından SimpleLogin aracılığıyla aktarıldı"
+      ],
       "Disable message content search": [
         "İleti içeriği aramasını devre dışı bırak"
       ],
@@ -4265,6 +4285,9 @@
       ],
       "Email address": [
         "E-posta adresi"
+      ],
+      "Email is forwarded to your mailbox; your email address stays hidden.": [
+        "E-posta, posta kutunuza iletilir. Asıl e-posta adresiniz gizli kalır."
       ],
       "Email tracker protection is disabled": [
         "E-posta izleme koruması devre dışı"
@@ -4368,6 +4391,9 @@
         "saat",
         "saat"
       ],
+      "How Hide My Email works": [
+        "E-postamı gizle özelliği nasıl çalışır"
+      ],
       "I'm sending this message to a non-Proton Mail user.": [
         "Bu iletiyi Proton Mail kullanmayan bir alıcıya gönderiyorum."
       ],
@@ -4379,6 +4405,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "E-postayı gelen kutunuzda göremezseniz, istenmeyen kutusuna bakmayı unutmayın."
+      ],
+      "If your alias is sold, leaked, or abused, simply disable it to stop receiving spam.": [
+        "Takma adınız satılırsa, sızdırılırsa veya kötü amaçla kullanılırsa, istenmeyen e-postalar almayı durdurmak için takma adı devre dışı bırakmanız yeterlidir."
       ],
       "Image description": [
         "Görsel açıklaması"
@@ -4640,6 +4669,9 @@
       "Priority support": [
         "Öncelikli destek"
       ],
+      "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
+        "${ maskMyEmailButton } ile e-posta adresinizin, posta listeleri veya istenmeyen e-posta gönderenlere sızmasından korunun."
+      ],
       "Proton doesn't make money by abusing privacy.": [
         "Proton kişisel güvenliğinizi ihlal ederek para kazanmaz."
       ],
@@ -4736,6 +4768,12 @@
       "Show original message": [
         "Özgün iletiyi göster"
       ],
+      "SimpleLogin is a Proton service, and your Proton Account includes Hide My Email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
+        "SimpleLogin bir Proton hizmetidir ve Proton hesabınızda E-postamı gizle takma adları kullanılmasını sağlar. E-posta adresinizi gizlemeye başlamak için SimpleLogin sitesine gidin ve ilk takma adınızı oluşturun."
+      ],
+      "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
+        "SimpleLogin, gerçek e-posta adresinizi açıklamak istemediğiniz, güvenilmez üçüncü taraf sitelerinde oturum açmak için basit bir yol sunar."
+      ],
       "Sorry, this message does not exist or has already expired.": [
         "Ne yazık ki, bu ileti bulunamadı ya da süresi geçmiş."
       ],
@@ -4802,6 +4840,9 @@
       ],
       "There has been an error with the signature used to verify the contact details, which may be the result of a password reset.": [
         "Kişi bilgilerini doğrulamak için kullanılan imza ile ilgili bir sorun çıktı. Bu durum parola sıfırlama işleminden kaynaklanıyor olabilir."
+      ],
+      "They can't spam you if they don't know your email address. Protect your inbox with Hide My Email.": [
+        "E-posta adresinizi bilmiyorlarsa size istenmeyen e-posta gönderemezler. E-postamı gizle özelliği ile gelen kutunuzu koruyun."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Bu hesap, bir ilke ihlali olasılığı nedeniyle askıya alındı."
@@ -4991,6 +5032,9 @@
       "Use keyboard shortcuts to manage your email faster.": [
         "E-postanızı daha hızlı yönetmek için klavye kısayollarını kullanın."
       ],
+      "Using SimpleLogin is easy": [
+        "SimpleLogin kullanmak kolaydır"
+      ],
       "Version ${ appVersion }": [
         "Sürüm ${ appVersion }"
       ],
@@ -5020,6 +5064,9 @@
       ],
       "When do you want your message to be sent?": [
         "İletinizin ne zaman gönderilmesini istersiniz?"
+      ],
+      "When giving out your email, use a unique, disposable Hide My Email alias instead of your real email address.": [
+        "E-posta adresinizi başkalarına verirken, gerçek e-posta adresiniz yerine benzersiz, tek kullanımlık bir E-postamı gizle takma adı kullanın."
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "${ senderName } için güvenilen anahtarları etkinleştirdiğinizde, kişi bilgilerine herkese açık anahtarlar eklenir."
@@ -5155,6 +5202,9 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Telefon numaranız yalnızca bu tek seferlik doğrulama için kullanılacak."
+      ],
+      "Your Proton Account includes SimpleLogin. Install the browser extension with one click to get started.": [
+        "Proton hesabınızda SimpleLogin bulunur. Başlamak için tek tıklamayla web tarayıcı eklentisini kurabilirsiniz."
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Proton hesabınız şu anda askıda. Hesabınızı kullanmayı sürdürmek için, lütfen ödenmemiş faturalarınızı ödeyin."
@@ -7365,6 +7415,9 @@
       "Deleting contacts": [
         "Kişileri sil"
       ],
+      "Don't give spam a chance": [
+        "İstenmeyen e-postalara şans tanımayın"
+      ],
       "Edit contact": [
         "Kişiyi düzenle"
       ],
@@ -7421,6 +7474,9 @@
       ],
       "Groups": [
         "Gruplar"
+      ],
+      "Hide your email with SimpleLogin by Proton": [
+        "Proton tarafından sunulan SimpleLogin hizmeti ile e-posta adresinizi gizleyin"
       ],
       "Human verification": [
         "İnsan olduğunuzu doğrulayın"
@@ -7653,6 +7709,9 @@
       ],
       "Unsubscribe": [
         "Abonelikten ayrıl"
+      ],
+      "Unsubscribe request sent": [
+        "Abonelikten ayrılma isteği gönder"
       ],
       "Upgrade required": [
         "Yükseltme gerekli"

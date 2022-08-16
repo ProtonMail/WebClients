@@ -50,6 +50,9 @@
       "Add label": [
         "Adicionar etiqueta"
       ],
+      "Add notification": [
+        "Adicionar notificação"
+      ],
       "Add PayPal": [
         "Adicionar PayPal"
       ],
@@ -134,11 +137,20 @@
       "Continue import": [
         "Continuar a importação"
       ],
+      "Continue with Google": [
+        "Continuar com o Google"
+      ],
       "Copy": [
         "Copiar"
       ],
       "Copy email to clipboard": [
         "Copiar mensagem para a área de transferência"
+      ],
+      "Copy link": [
+        "Copiar ligação"
+      ],
+      "Create": [
+        "Criar"
       ],
       "Create address": [
         "Criar endereço"
@@ -148,6 +160,9 @@
       ],
       "Create label": [
         "Criar etiqueta"
+      ],
+      "Create link": [
+        "Criar ligação"
       ],
       "Customize": [
         "Personalizar"
@@ -163,6 +178,9 @@
       ],
       "Delete": [
         "Eliminar"
+      ],
+      "Delete permanently": [
+        "Eliminar permanentemente"
       ],
       "Delete record": [
         "Eliminar registo"
@@ -275,6 +293,9 @@
       "label emails as": [
         "etiquetar email como"
       ],
+      "Load more": [
+        "Carregar mais"
+      ],
       "Loading verification": [
         "A carregar verificação"
       ],
@@ -353,6 +374,9 @@
       "Reconnect": [
         "Religar"
       ],
+      "Recover data": [
+        "Recuperar dados"
+      ],
       "Refresh status": [
         "Actualizar estado"
       ],
@@ -376,6 +400,9 @@
       ],
       "Remove this label": [
         "Remover esta etiqueta"
+      ],
+      "Remove this notification": [
+        "Remover esta notificação"
       ],
       "Rename": [
         "Renomear"
@@ -431,6 +458,9 @@
       "Select files": [
         "Seleccionar ficheiros"
       ],
+      "Select timezone": [
+        "Seleccionar fuso horário"
+      ],
       "send auto-reply email": [
         "enviar resposta automática"
       ],
@@ -460,6 +490,9 @@
       ],
       "Show labels": [
         "Mostrar etiquetas"
+      ],
+      "Show more": [
+        "Mostrar mais"
       ],
       "Sign in": [
         "Iniciar sessão"
@@ -687,53 +720,6 @@
         "Bianual"
       ]
     },
-    "blackfriday Info": {
-      "beta": [
-        "beta"
-      ],
-      "Includes": [
-        "Inclui"
-      ]
-    },
-    "blackfriday Title": {
-      "Most popular": [
-        "Mais popular"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Action": {
-      "Get the deal": [
-        "Obtenha o lidar"
-      ],
-      "Get the deal now": [
-        "Obtenha a promoção já"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Info": {
-      "Save ${ percentage }%": [
-        "${ percentage } %"
-      ]
-    },
-    "blackfriday: VPNspecialoffer info": {
-      "per month": [
-        "por mês"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Promo title, need to be short": {
-      "Special offer": [
-        "Oferta especial"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Title": {
-      "1 month": [
-        "1 mês"
-      ],
-      "12 months": [
-        "12 meses"
-      ],
-      "24 months": [
-        "24 meses"
-      ]
-    },
     "Bridge version load failed": {
       "Failed to find latest version": [
         "Falha ao encontrar a última versão"
@@ -810,9 +796,36 @@
         "Problema de acesso à página web"
       ]
     },
+    "Button": {
+      "Copy": [
+        "Copiar"
+      ],
+      "Send": [
+        "Enviar"
+      ]
+    },
     "Calendar status": {
+      "Default": [
+        "Predefinição"
+      ],
       "Not synced": [
         "Não sincronizado"
+      ]
+    },
+    "Calendar subscription not synced error": {
+      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
+        "A sincronizar agenda: a exibição de todos os eventos, poderá demorar vários minutos."
+      ]
+    },
+    "Calendar view": {
+      "Day": [
+        "Dia"
+      ],
+      "Month": [
+        "Mês"
+      ],
+      "Week": [
+        "Semana"
       ]
     },
     "Condition for custom filter": {
@@ -973,6 +986,36 @@
         "Créditos não utilizados"
       ]
     },
+    "Daily recurring event, frequency": {
+      "${ count } time": [
+        "${ count } vez",
+        "${ count } vezes"
+      ],
+      "Daily": [
+        "Diariamente"
+      ],
+      "Daily, ${ timesString }": [
+        "Diariamente, ${ timesString }"
+      ],
+      "Daily, ${ untilString }": [
+        "Diariamente, ${ untilString }"
+      ],
+      "Every ${ interval } day": [
+        "A cada ${ interval } dia",
+        "A cada ${ interval } dias"
+      ],
+      "Every ${ interval } day, ${ timesString }": [
+        "A cada ${ interval } dia, ${ timesString }",
+        "A cada ${ interval } dias, ${ timesString }"
+      ],
+      "Every ${ interval } day, ${ untilString }": [
+        "A cada ${ interval } dia, ${ untilString }",
+        "A cada ${ interval } dias, ${ untilString }"
+      ],
+      "until ${ dateString }": [
+        "até ${ dateString }"
+      ]
+    },
     "Day": {
       "Friday": [
         "Sexta-feira"
@@ -1037,6 +1080,25 @@
     "Domain modal": {
       "'www' subdomains are typically not used for email. Are you sure you want to use this domain value?": [
         "Sub-domínios \"www\" não são usados normalmente para email. Tem a certeza de que deseja utilizar este valor de domínio?"
+      ]
+    },
+    "Downgrade account reason": {
+      "I use a different Proton account": [
+        "Utilizo uma conta Proton diferente"
+      ]
+    },
+    "Duration": {
+      "120 minutes": [
+        "120 minutos"
+      ],
+      "30 minutes": [
+        "30 minutos"
+      ],
+      "60 minutes": [
+        "60 minutos"
+      ],
+      "90 minutes": [
+        "90 minutos"
       ]
     },
     "Email body for description (description part)": {
@@ -1211,6 +1273,9 @@
       ],
       "Name on card required": [
         "É necessário o nome no cartão"
+      ],
+      "Name required": [
+        "Nome requerido"
       ],
       "No active sessions": [
         "Sem sessões activas"
@@ -1519,6 +1584,9 @@
       "Error: ${ errorMessage }": [
         "Erro: ${ errorMessage }"
       ],
+      "Invalid URL": [
+        "URL inválido"
+      ],
       "Oops, something went wrong": [
         "Ups. Algo correu mal"
       ],
@@ -1577,6 +1645,11 @@
     "Event title": {
       "(no title)": [
         "(sem título)"
+      ]
+    },
+    "Export calendar": {
+      "Loading events": [
+        "A carregar os eventos"
       ]
     },
     "Feature": {
@@ -1677,6 +1750,16 @@
         "Procurar nas listas de permissões e bloqueios"
       ]
     },
+    "Font Face Default": {
+      "Default": [
+        "Predefinição"
+      ]
+    },
+    "Font Size Default": {
+      "Default": [
+        "Predefinição"
+      ]
+    },
     "Frequency of news": {
       "(1 email per month)": [
         "(1 email por mês)"
@@ -1721,11 +1804,17 @@
       "Key type": [
         "Tipo de chave"
       ],
+      "Name": [
+        "Nome"
+      ],
       "Notifications": [
         "Notificações"
       ],
       "Organization key fingerprint": [
         "Impressão digital da chave da organização"
+      ],
+      "Status": [
+        "Estado"
       ],
       "Time": [
         "Hora"
@@ -1763,6 +1852,15 @@
       ],
       "Value / Data / Points to": [
         "Valor/Dados/Aponta para"
+      ]
+    },
+    "Hint": {
+      "Found ${ items.length } suggestion, use keyboard to navigate.": [
+        "Encontrada ${ items.length } sugestão, use o teclado para navegar.",
+        "Encontradas ${ items.length } sugestões, use o teclado para navegar."
+      ],
+      "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
+        "Use as setas Acima e Abaixo para aceder e procurar sugestões após a entrada. Prima Enter para confirmar a sua escolha ou Esc para fechar a caixa de sugestões."
       ]
     },
     "Human verification method": {
@@ -1931,6 +2029,20 @@
       ],
       "app password": [
         "senha da aplicação"
+      ],
+      "Export": [
+        "Exportar"
+      ],
+      "Export contacts": [
+        "Exportar contactos"
+      ],
+      "Manage": [
+        "Gerir"
+      ]
+    },
+    "Import provider": {
+      "Other": [
+        "Outro"
       ]
     },
     "Import status": {
@@ -1957,6 +2069,11 @@
       ],
       "Started": [
         "Iniciada"
+      ]
+    },
+    "Import type": {
+      "Contacts": [
+        "Contactos"
       ]
     },
     "Import warning": {
@@ -2013,6 +2130,10 @@
       "${ strongAddressAvailable } You will use this email address to sign into all ${ BRAND_NAME } services.": [
         "${ strongAddressAvailable } Utilizará este email para iniciar sessão em todos os serviços ${ BRAND_NAME }."
       ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } membro)",
+        "(${ memberCount } membros)"
+      ],
       "(Filter if ALL of the following conditions are met)": [
         "(filtrar se TODAS as seguintes condições forem cumpridas)"
       ],
@@ -2042,6 +2163,9 @@
       ],
       "Add image URL": [
         "Adicionar URL da imagem"
+      ],
+      "Add label": [
+        "Adicionar etiqueta"
       ],
       "address": [
         "endereço",
@@ -2084,6 +2208,9 @@
       ],
       "Amount below minimum (${ amount }).": [
         "Quantia abaixo do mínimo (${ amount })."
+      ],
+      "and": [
+        "e"
       ],
       "AOL reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
         "O AOL lê os seus dados pessoais, a fim de fornecer acesso a anunciantes e outros terceiros. Para uma melhor privacidade, crie um endereço de email seguro."
@@ -2196,6 +2323,24 @@
       "Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.": [
         "Actualmente, todo o armazenamento disponível está alocado à conta do administrador. Por favor, reduza a alocação do administrador para libertar espaço para utilizadores adicionais. Pode aumentar o armazenamento total a qualquer momento actualizando para um plano superior."
       ],
+      "Custom": [
+        "Personalizado"
+      ],
+      "Custom daily": [
+        "Personalização diária"
+      ],
+      "Custom monthly": [
+        "Personalização mensal"
+      ],
+      "Custom weekly": [
+        "Personalização semanal"
+      ],
+      "Custom yearly": [
+        "Personalização anual"
+      ],
+      "Daily": [
+        "Diariamente"
+      ],
       "Discount applied to your subscription with coupon ${ code }": [
         "Foi aplicado um desconto com o cupão ${ code }"
       ],
@@ -2221,8 +2366,14 @@
       "Download your PGP keys for use with other PGP-compatible services.": [
         "Transfira as suas chaves PGP para uso noutros serviços PGP compatíveis."
       ],
+      "Drop a file here to upload": [
+        "Solte um ficheiro aqui para carregar"
+      ],
       "Drop the file here to upload": [
         "Largue o ficheiro aqui para enviar"
+      ],
+      "Edit label": [
+        "Editar etiqueta"
       ],
       "Email address": [
         "Endereço de email"
@@ -2407,6 +2558,9 @@
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "Insira manualmente esta informação no seu dispositivo de autenticação em dois passos para configurar a sua conta. ${ _switchButton }."
       ],
+      "Monthly ${ onDayString }": [
+        "Mensalmente ${ onDayString }"
+      ],
       "more": [
         "mais"
       ],
@@ -2565,6 +2719,9 @@
       ],
       "Server load": [
         "Carga do servidor"
+      ],
+      "Show original message": [
+        "Mostrar mensagem original"
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Sendo utilizador(a) leal, a sua conta dispõe de funcionalidades adicionais."
@@ -2736,6 +2893,9 @@
       ],
       "Yandex records your online activity and reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
         "O Yandex regista a sua actividade online e lê os seus dados pessoais, a fim de fornecer acesso a anunciantes e outros terceiros. Para uma melhor privacidade, crie um endereço de email seguro."
+      ],
+      "Yearly": [
+        "Anualmente"
       ],
       "You already have a free account": [
         "Já tem uma conta gratuita"
@@ -3010,6 +3170,9 @@
       "Go to Trash": [
         "Ir para Lixo"
       ],
+      "Insert link": [
+        "Inserir hiperligação"
+      ],
       "Jump to first": [
         "Ir para o primeiro"
       ],
@@ -3165,6 +3328,11 @@
         "Marcar como obsoleta"
       ]
     },
+    "Knowledge base link label": {
+      "Learn more": [
+        "Saiba mais"
+      ]
+    },
     "Label": {
       " and ": [
         " e "
@@ -3190,6 +3358,9 @@
       ],
       "ALL": [
         "TUDO"
+      ],
+      "All-day event notifications": [
+        "Notificação de eventos de dia inteiro"
       ],
       "Allow recovery by email": [
         "Permitir recuperação por email"
@@ -3257,6 +3428,9 @@
       "Code": [
         "Código"
       ],
+      "Color": [
+        "Cor"
+      ],
       "Composer": [
         "Compositor"
       ],
@@ -3284,6 +3458,9 @@
       "Confirm password": [
         "Confirmar senha"
       ],
+      "Contacts": [
+        "Contactos"
+      ],
       "Conversation grouping": [
         "Agrupamento de conversas"
       ],
@@ -3302,6 +3479,9 @@
       "Daily email notifications": [
         "Notificações por email diárias"
       ],
+      "Date": [
+        "Data"
+      ],
       "Date format": [
         "Formato da data"
       ],
@@ -3311,14 +3491,23 @@
       "Default language": [
         "Idioma predefinido"
       ],
+      "Delete": [
+        "Eliminar"
+      ],
       "Density": [
         "Densidade"
+      ],
+      "Description": [
+        "Descrição"
       ],
       "Digits": [
         "Algarismos"
       ],
       "Discount": [
         "Desconto"
+      ],
+      "Display": [
+        "Mostrar"
       ],
       "Display name": [
         "Nome a mostrar"
@@ -3362,11 +3551,20 @@
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "Insira a senha para a chave com impressão digital: ${ fingerprintCode }"
       ],
+      "Event duration": [
+        "Duração do evento"
+      ],
+      "Event notifications": [
+        "Notificação de eventos"
+      ],
       "Expires": [
         "Expira"
       ],
       "extra storage": [
         "armazenamento extra"
+      ],
+      "File": [
+        "Ficheiro"
       ],
       "Filter Name": [
         "Nome do filtro"
@@ -3644,6 +3842,9 @@
       "Undo send": [
         "Desfazer Enviar"
       ],
+      "URL": [
+        "URL"
+      ],
       "Use folder colors": [
         "Usar cores da pasta"
       ],
@@ -3702,6 +3903,19 @@
     "label": {
       "Recovery phrase": [
         "Frase de recuperação"
+      ]
+    },
+    "Label for default event notifications": {
+      "All-day event notifications": [
+        "Notificação de eventos de dia inteiro"
+      ],
+      "Notifications": [
+        "Notificações"
+      ]
+    },
+    "Label for default event settings": {
+      "Duration": [
+        "Duração"
       ]
     },
     "Label for domain modal": {
@@ -3921,6 +4135,139 @@
         "Franco suíço"
       ]
     },
+    "Monthly recurring event, frequency": {
+      "Every ${ interval } month ${ onDayString }": [
+        "A cada ${ interval } mês, ${ onDayString }",
+        "A cada ${ interval } meses, ${ onDayString }"
+      ],
+      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
+        "A cada ${ interval } mês, ${ onDayString }, ${ timesString }",
+        "A cada ${ interval } meses, ${ onDayString }, ${ timesString }"
+      ],
+      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
+        "A cada ${ interval } mês, ${ onDayString }, ${ untilString }",
+        "A cada ${ interval } meses, ${ onDayString }, ${ untilString }"
+      ],
+      "Monthly ${ onDayString }": [
+        "Mensalmente ${ onDayString }"
+      ],
+      "Monthly ${ onDayString }, ${ timesString }": [
+        "Mensalmente ${ onDayString }, ${ timesString }"
+      ],
+      "Monthly ${ onDayString }, ${ untilString }": [
+        "Mensalmente ${ onDayString }, ${ untilString }"
+      ]
+    },
+    "Monthly recurring event, repeats on": {
+      "on day ${ dayOfMonth }": [
+        "no dia ${ dayOfMonth }"
+      ],
+      "on the first Friday": [
+        "na primeira Sexta-feira"
+      ],
+      "on the first Monday": [
+        "na primeira Segunda-feira"
+      ],
+      "on the first Saturday": [
+        "no primeiro Sábado"
+      ],
+      "on the first Sunday": [
+        "no primeiro Domingo"
+      ],
+      "on the first Thursday": [
+        "na primeira Quinta-feira"
+      ],
+      "on the first Tuesday": [
+        "na primeira Terça-feira"
+      ],
+      "on the first Wednesday": [
+        "na primeira Quarta-feira"
+      ],
+      "on the fourth Friday": [
+        "na quarta Sexta-feira"
+      ],
+      "on the fourth Monday": [
+        "na quarta Segunda-feira"
+      ],
+      "on the fourth Saturday": [
+        "no quarto Sábado"
+      ],
+      "on the fourth Sunday": [
+        "no quarto Domingo"
+      ],
+      "on the fourth Thursday": [
+        "na quarta Quinta-feira"
+      ],
+      "on the fourth Tuesday": [
+        "na quarta Terça-feira"
+      ],
+      "on the fourth Wednesday": [
+        "na quarta Quarta-feira"
+      ],
+      "on the last Friday": [
+        "na última Sexta-feira"
+      ],
+      "on the last Monday": [
+        "na última Segunda-feira"
+      ],
+      "on the last Saturday": [
+        "no último Sábado"
+      ],
+      "on the last Sunday": [
+        "no último Domingo"
+      ],
+      "on the last Thursday": [
+        "na última Quinta-feira"
+      ],
+      "on the last Tuesday": [
+        "na última Terça-feira"
+      ],
+      "on the last Wednesday": [
+        "na última Quarta-feira"
+      ],
+      "on the second Friday": [
+        "na segunda Sexta-feira"
+      ],
+      "on the second Monday": [
+        "na segunda Segunda-feira"
+      ],
+      "on the second Saturday": [
+        "no segundo Sábado"
+      ],
+      "on the second Sunday": [
+        "no segundo Domingo"
+      ],
+      "on the second Thursday": [
+        "na segunda Quinta-feira"
+      ],
+      "on the second Tuesday": [
+        "na segunda Terça-feira"
+      ],
+      "on the second Wednesday": [
+        "na segunda Quarta-feira"
+      ],
+      "on the third Friday": [
+        "na terceira Sexta-feira"
+      ],
+      "on the third Monday": [
+        "na terceira Segunda-feira"
+      ],
+      "on the third Saturday": [
+        "no terceiro Sábado"
+      ],
+      "on the third Sunday": [
+        "no terceiro Domingo"
+      ],
+      "on the third Thursday": [
+        "na terceira Quinta-feira"
+      ],
+      "on the third Tuesday": [
+        "na terceira Terça-feira"
+      ],
+      "on the third Wednesday": [
+        "na terceira Quarta-feira"
+      ]
+    },
     "Moved to black/whitelist": {
       "${ Domain } removed": [
         "${ Domain } removido"
@@ -3930,6 +4277,9 @@
       ]
     },
     "Navigation": {
+      "Back": [
+        "Recuar"
+      ],
       "Back to Calendar": [
         "Voltar à agenda"
       ],
@@ -3948,6 +4298,35 @@
         "Nome da etiqueta"
       ]
     },
+    "new_plans: action": {
+      "Delete account": [
+        "Eliminar conta"
+      ],
+      "Got it": [
+        "Percebi"
+      ]
+    },
+    "new_plans: feature": {
+      "Encrypted contact details": [
+        "Detalhes de contacto encriptados"
+      ],
+      "Secure Core servers": [
+        "Servidores Secure Core"
+      ],
+      "Two-factor authentication": [
+        "Autenticação em dois passos"
+      ]
+    },
+    "new_plans: heading": {
+      "Support": [
+        "Apoio ao cliente"
+      ]
+    },
+    "new_plans: signup": {
+      "Subscription": [
+        "Subscrição"
+      ]
+    },
     "Notification": {
       "${ _Filter.Name } created": [
         "${ _Filter.Name } criado"
@@ -3957,6 +4336,35 @@
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "Credenciais OpenVPN/IKEv2 regeneradas"
+      ]
+    },
+    "Notification time input": {
+      "at": [
+        "às"
+      ]
+    },
+    "Notification when": {
+      "at time of event": [
+        "à hora do evento"
+      ],
+      "day before": [
+        "dia antes",
+        "dias antes"
+      ],
+      "hour before": [
+        "hora antes",
+        "horas antes"
+      ],
+      "minute before": [
+        "minuto antes",
+        "minutos antes"
+      ],
+      "on the same day": [
+        "no mesmo dia"
+      ],
+      "week before": [
+        "semana antes",
+        "semanas antes"
       ]
     },
     "Option": {
@@ -4113,6 +4521,12 @@
       "Normal": [
         "Normal"
       ],
+      "Off": [
+        "Off"
+      ],
+      "On": [
+        "On"
+      ],
       "Permanent": [
         "Permanente"
       ],
@@ -4211,6 +4625,12 @@
     "Placeholder": {
       "A way to contact you": [
         "Como contactar consigo"
+      ],
+      "Add a calendar description": [
+        "Adicionar descrição à agenda"
+      ],
+      "Add a calendar name": [
+        "Adicionar nome à agenda"
       ],
       "Add gift code": [
         "Adicionar código de oferta"
@@ -4329,12 +4749,22 @@
         "Trabalho"
       ]
     },
+    "Recovery Email": {
+      "Cancel": [
+        "Cancelar"
+      ]
+    },
     "Recovery method": {
       "Email": [
         "Email"
       ],
       "Phone number": [
         "Número de telefone"
+      ]
+    },
+    "Recovery Phone": {
+      "Cancel": [
+        "Cancelar"
       ]
     },
     "Restore administrator panel": {
@@ -4351,6 +4781,11 @@
     "Select files": {
       "Upload": [
         "Enviar"
+      ]
+    },
+    "Select search results": {
+      "No results found": [
+        "Nenhum resultado"
       ]
     },
     "Settings description": {
@@ -4399,6 +4834,9 @@
       ]
     },
     "Signup label": {
+      "Display name": [
+        "Nome a mostrar"
+      ],
       "Email": [
         "Email"
       ],
@@ -4436,6 +4874,11 @@
         "${ email } atualizado"
       ]
     },
+    "Spotlight": {
+      "Get up to 18 months of ${ planName } for free": [
+        "Obtenha até 18 meses grátis de ${ planName }"
+      ]
+    },
     "State": {
       "Downgrading your account, please wait": [
         "A regredir a conta, por favor aguarde"
@@ -4466,6 +4909,17 @@
         "O seu armazenamento actual:"
       ]
     },
+    "Subscription attribute": {
+      "${ UsedAddresses } of ${ MaxAddresses } email address": [
+        "${ UsedAddresses } de ${ MaxAddresses } endereço electrónico",
+        "${ UsedAddresses } de ${ MaxAddresses } endereços electrónicos"
+      ]
+    },
+    "Subscription saving": {
+      "Save": [
+        "Gravar"
+      ]
+    },
     "Success": {
       "Account deleted. Logging out...": [
         "Conta eliminada. A terminar sessão..."
@@ -4484,6 +4938,15 @@
       ],
       "Bug reported": [
         "Erro reportado"
+      ],
+      "Calendar added. It might take a few minutes to sync.": [
+        "Agenda adicionada. Poderá levar alguns minutos a sincronizar."
+      ],
+      "Calendar created": [
+        "Agenda criada"
+      ],
+      "Calendar updated": [
+        "Agenda actualizada"
       ],
       "Catch-all address updated": [
         "Endereço captura-tudo actualizado"
@@ -4658,6 +5121,11 @@
         "${ minutes } minutos"
       ]
     },
+    "Timezone search placeholder": {
+      "Search timezones": [
+        "Procurar fusos horários"
+      ]
+    },
     "Title": {
       "${ appName } Keyboard Shortcuts": [
         "Atalhos de teclado de ${ appName }"
@@ -4685,6 +5153,9 @@
       ],
       "Add address": [
         "Adicionar endereço"
+      ],
+      "Add another notification to remind you of this event": [
+        "Adicionar outra notificação para lembrar este evento"
       ],
       "Add contact group name": [
         "Adicionar nome do grupo de contactos"
@@ -4896,6 +5367,9 @@
       "Error": [
         "Erro"
       ],
+      "Export": [
+        "Exportar"
+      ],
       "Export private key": [
         "Exportar chave privada"
       ],
@@ -4919,6 +5393,9 @@
       ],
       "Generate missing keys": [
         "Gerar chaves em falta"
+      ],
+      "Get up to 18 months of ${ planName } for free": [
+        "Obtenha até 18 meses grátis de ${ planName }"
       ],
       "Gift code": [
         "Código de oferta"
@@ -4949,6 +5426,9 @@
       ],
       "Invoices": [
         "Facturas"
+      ],
+      "Keyboard shortcuts": [
+        "Atalhos de teclado"
       ],
       "Labels": [
         "Etiquetas"
@@ -5040,6 +5520,9 @@
       "Reconnect your account": [
         "Religue a sua conta"
       ],
+      "Recover data": [
+        "Recuperar dados"
+      ],
       "Report a problem": [
         "Relatar um problema"
       ],
@@ -5066,6 +5549,15 @@
       ],
       "Select contact group": [
         "Seleccionar grupo de contactos"
+      ],
+      "Select the time to send this notification": [
+        "Seleccione a hora para enviar esta notificação"
+      ],
+      "Select the way to send this notification": [
+        "Seleccione a forma de enviar esta notificação"
+      ],
+      "Select when you want this notification to be sent": [
+        "Seleccione quando é que a notificação deve ser enviada"
       ],
       "Session management": [
         "Gestão da sessão"
@@ -5151,6 +5643,9 @@
       "Unsupported browser": [
         "Navegador não suportado"
       ],
+      "Username": [
+        "Nome de utilizador"
+      ],
       "Users and addresses": [
         "Utilizadores e endereços"
       ],
@@ -5174,6 +5669,11 @@
       ],
       "ZIP / postal code": [
         "ZIP/Código postal"
+      ]
+    },
+    "Title (number of minutes/hours/days/weeks)": {
+      "Choose a number": [
+        "Escolha um número"
       ]
     },
     "Title for payment methods table": {
@@ -5241,6 +5741,11 @@
       ],
       "Role": [
         "Papel"
+      ]
+    },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "Hoje"
       ]
     },
     "Tooltip": {
@@ -5458,6 +5963,243 @@
       ],
       "It can take up to a day for DNS changes to update.": [
         "Pode demorar até um dia para as alterações de DNS actualizarem."
+      ]
+    },
+    "Weekly recurring event, frequency": {
+      "Every ${ interval } week on ${ multipleDaysString }": [
+        "A cada ${ interval } semana, ${ multipleDaysString }",
+        "A cada ${ interval } semanas, ${ multipleDaysString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
+        "A cada ${ interval } semana, ${ multipleDaysString }, ${ timesString }",
+        "A cada ${ interval } semanas, ${ multipleDaysString }, ${ timesString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
+        "A cada ${ interval } semana, ${ multipleDaysString }, ${ untilString }",
+        "A cada ${ interval } semanas, ${ multipleDaysString }, ${ untilString }"
+      ],
+      "Every ${ interval } week on all days": [
+        "A cada ${ interval } semana, todos os dias",
+        "A cada ${ interval } semanas, todos os dias"
+      ],
+      "Every ${ interval } week on all days, ${ timesString }": [
+        "A cada ${ interval } semana, todos os dias, ${ timesString }",
+        "A cada ${ interval } semanas, todos os dias, ${ timesString }"
+      ],
+      "Every ${ interval } week on all days, ${ untilString }": [
+        "A cada ${ interval } semana, todos os dias, ${ untilString }",
+        "A cada ${ interval } semanas, todos os dias, ${ untilString }"
+      ],
+      "Every ${ interval } week on Friday": [
+        "A cada ${ interval } semana, à Sexta-feira",
+        "A cada ${ interval } semanas, à Sexta-feira"
+      ],
+      "Every ${ interval } week on Friday, ${ timesString }": [
+        "A cada ${ interval } semana à Sexta-feira, ${ timesString }",
+        "A cada ${ interval } semanas à Sexta-feira, ${ timesString }"
+      ],
+      "Every ${ interval } week on Friday, ${ untilString }": [
+        "A cada ${ interval } semana à Sexta-feira, ${ untilString }",
+        "A cada ${ interval } semanas à Sexta-feira, ${ untilString }"
+      ],
+      "Every ${ interval } week on Monday": [
+        "A cada ${ interval } semana, à Segunda-feira",
+        "A cada ${ interval } semanas, à Segunda-feira"
+      ],
+      "Every ${ interval } week on Monday, ${ timesString }": [
+        "A cada ${ interval } semana à Segunda-feira, ${ timesString }",
+        "A cada ${ interval } semanas à Segunda-feira, ${ timesString }"
+      ],
+      "Every ${ interval } week on Monday, ${ untilString }": [
+        "A cada ${ interval } semana à Segunda-feira, ${ untilString }",
+        "A cada ${ interval } semanas à Segunda-feira, ${ untilString }"
+      ],
+      "Every ${ interval } week on Saturday": [
+        "A cada ${ interval } semana, ao Sábado",
+        "A cada ${ interval } semanas, ao Sábado"
+      ],
+      "Every ${ interval } week on Saturday, ${ timesString }": [
+        "A cada ${ interval } semana ao Sábado, ${ timesString }",
+        "A cada ${ interval } semanas ao Sábado, ${ timesString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ untilString }": [
+        "A cada ${ interval } semana ao Sábado ${ untilString }",
+        "A cada ${ interval } semanas ao Sábado ${ untilString }"
+      ],
+      "Every ${ interval } week on Sunday": [
+        "A cada ${ interval } semana, ao Domingo",
+        "A cada ${ interval } semanas, ao Domingo"
+      ],
+      "Every ${ interval } week on Sunday, ${ timesString }": [
+        "A cada ${ interval } semana, ao Domingo, ${ timesString }",
+        "A cada ${ interval } semanas, ao Domingo, ${ timesString }"
+      ],
+      "Every ${ interval } week on Sunday, ${ untilString }": [
+        "A cada ${ interval } semana, ao Domingo, ${ untilString }",
+        "A cada ${ interval } semanas, ao Domingo, ${ untilString }"
+      ],
+      "Every ${ interval } week on Thursday": [
+        "A cada ${ interval } semana, à Quinta-feira",
+        "A cada ${ interval } semanas, à Quinta-feira"
+      ],
+      "Every ${ interval } week on Thursday, ${ timesString }": [
+        "A cada ${ interval } semana à Quinta-feira, ${ timesString }",
+        "A cada ${ interval } semanas à Quinta-feira, ${ timesString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ untilString }": [
+        "A cada ${ interval } semana à Quinta-feira, ${ untilString }",
+        "A cada ${ interval } semanas à Quinta-feira, ${ untilString }"
+      ],
+      "Every ${ interval } week on Tuesday": [
+        "A cada ${ interval } semana, à Terça-feira",
+        "A cada ${ interval } semanas, à Terça-feira"
+      ],
+      "Every ${ interval } week on Tuesday, ${ timesString }": [
+        "A cada ${ interval } semana à Terça-feira, ${ timesString }",
+        "A cada ${ interval } semanas à Terça-feira, ${ timesString }"
+      ],
+      "Every ${ interval } week on Tuesday, ${ untilString }": [
+        "A cada ${ interval } semana à Terça-feira, ${ untilString }",
+        "A cada ${ interval } semanas à Terça-feira, ${ untilString }"
+      ],
+      "Every ${ interval } week on Wednesday": [
+        "A cada ${ interval } semana, à Quarta-feira",
+        "A cada ${ interval } semanas, à Quarta-feira"
+      ],
+      "Every ${ interval } week on Wednesday, ${ timesString }": [
+        "A cada ${ interval } semana à Quarta-feira, ${ timesString }",
+        "A cada ${ interval } semanas à Quarta-feira, ${ timesString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ untilString }": [
+        "A cada ${ interval } semana à Quarta-feira, ${ untilString }",
+        "A cada ${ interval } semanas à Quarta-feira, ${ untilString }"
+      ],
+      "Weekly on ${ multipleDaysString }": [
+        "Semanalmente, ${ multipleDaysString }"
+      ],
+      "Weekly on ${ multipleDaysString }, ${ timesString }": [
+        "Semanalmente, ${ multipleDaysString }, ${ timesString }"
+      ],
+      "Weekly on ${ multipleDaysString }, ${ untilString }": [
+        "Semanalmente, ${ multipleDaysString }, ${ untilString }"
+      ],
+      "Weekly on all days": [
+        "Semanalmente, todos os dias"
+      ],
+      "Weekly on all days, ${ timesString }": [
+        "Semanalmente, todos os dias, ${ timesString }"
+      ],
+      "Weekly on all days, ${ untilString }": [
+        "Semanalmente, todos os dias, ${ untilString }"
+      ],
+      "Weekly on Friday": [
+        "Semanalmente, à Sexta-feira"
+      ],
+      "Weekly on Friday, ${ timesString }": [
+        "Semanalmente à Sexta-feira, ${ timesString }"
+      ],
+      "Weekly on Friday, ${ untilString }": [
+        "Semanalmente à Segunda-feira, ${ untilString }"
+      ],
+      "Weekly on Monday": [
+        "Semanalmente, à Segunda-feira"
+      ],
+      "Weekly on Monday, ${ timesString }": [
+        "Semanalmente à Segunda-feira, ${ timesString }"
+      ],
+      "Weekly on Monday, ${ untilString }": [
+        "Semanalmente à Segunda-feira, ${ untilString }"
+      ],
+      "Weekly on Saturday": [
+        "Semanalmente, ao Sábado"
+      ],
+      "Weekly on Saturday, ${ timesString }": [
+        "Semanalmente ao Sábado, ${ timesString }"
+      ],
+      "Weekly on Saturday, ${ untilString }": [
+        "Semanalmente ao Sábado, ${ untilString }"
+      ],
+      "Weekly on Sunday": [
+        "Semanalmente, ao Domingo"
+      ],
+      "Weekly on Sunday, ${ timesString }": [
+        "Semanalmente ao Domingo, ${ timesString }"
+      ],
+      "Weekly on Sunday, ${ untilString }": [
+        "Semanalmente ao Domingo, ${ untilString }"
+      ],
+      "Weekly on Thursday": [
+        "Semanalmente, à Quinta-feira"
+      ],
+      "Weekly on Thursday, ${ timesString }": [
+        "Semanalmente à Quinta-feira, ${ timesString }"
+      ],
+      "Weekly on Thursday, ${ untilString }": [
+        "Semanalmente à Quinta-feira, ${ untilString }"
+      ],
+      "Weekly on Tuesday": [
+        "Semanalmente, à Terça-feira"
+      ],
+      "Weekly on Tuesday, ${ timesString }": [
+        "Semanalmente à Terça-feira, ${ timesString }"
+      ],
+      "Weekly on Tuesday, ${ untilString }": [
+        "Semanalmente à Terça-feira, ${ untilString }"
+      ],
+      "Weekly on Wednesday": [
+        "Semanalmente, à Quarta-feira"
+      ],
+      "Weekly on Wednesday, ${ timesString }": [
+        "Semanalmente à Quarta-feira, ${ timesString }"
+      ],
+      "Weekly on Wednesday, ${ untilString }": [
+        "Semanalmente à Quarta-feira, ${ untilString }"
+      ]
+    },
+    "Weekly recurring event, repeats on (multiple days), frequency": {
+      "Friday": [
+        "Sexta-feira"
+      ],
+      "Monday": [
+        "Segunda-feira"
+      ],
+      "Saturday": [
+        "Sábado"
+      ],
+      "Sunday": [
+        "Domingo"
+      ],
+      "Thursday": [
+        "Quinta-feira"
+      ],
+      "Tuesday": [
+        "Terça-feira"
+      ],
+      "Wednesday": [
+        "Quarta-feira"
+      ]
+    },
+    "Yearly recurring event, frequency": {
+      "Every ${ interval } year": [
+        "Yearly",
+        ""
+      ],
+      "Every ${ interval } year, ${ timesString }": [
+        "A cada ${ interval } ano, ${ timesString }",
+        "A cada ${ interval } anos, ${ timesString }"
+      ],
+      "Every ${ interval } year, ${ untilString }": [
+        "A cada ${ interval } ano, ${ untilString }",
+        "A cada ${ interval } anos, ${ untilString }"
+      ],
+      "Yearly": [
+        "Anualmente"
+      ],
+      "Yearly, ${ timesString }": [
+        "Anualmente, ${ timesString }"
+      ],
+      "Yearly, ${ untilString }": [
+        "Anualmente, ${ untilString }"
       ]
     }
   }

@@ -337,14 +337,14 @@
       "Export": [
         "Exportar"
       ],
-      "Export ICS": [
-        "Exportar ICS"
-      ],
       "Export key": [
         "Exportar a chave"
       ],
       "Export key before deleting": [
         "Exportar chave antes de excluir"
+      ],
+      "Extend": [
+        "Estender"
       ],
       "Font": [
         "Fonte"
@@ -426,6 +426,9 @@
       ],
       "Loading verification": [
         "Carregando verificação"
+      ],
+      "Make default": [
+        "Tornar padrão"
       ],
       "Mark as default": [
         "Definir como padrão"
@@ -1006,59 +1009,6 @@
         "Dois anos"
       ]
     },
-    "blackfriday Info": {
-      "beta": [
-        "beta"
-      ],
-      "Includes": [
-        "Inclui"
-      ],
-      "Standard price: ${ regularPrice }": [
-        "Preço normal: ${ regularPrice }"
-      ],
-      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
-        "Esta assinatura será renovada automaticamente após 2 anos pelo mesmo valor, a menos que seja cancelada."
-      ]
-    },
-    "blackfriday Title": {
-      "Most popular": [
-        "Mais popular"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Action": {
-      "Get the deal": [
-        "Obter oferta"
-      ],
-      "Get the deal now": [
-        "Obter oferta agora"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Info": {
-      "Save ${ percentage }%": [
-        "${ percentage }%"
-      ]
-    },
-    "blackfriday: VPNspecialoffer info": {
-      "per month": [
-        "por mês"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Promo title, need to be short": {
-      "Special offer": [
-        "Oferta especial"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Title": {
-      "1 month": [
-        "1 mês"
-      ],
-      "12 months": [
-        "12 meses"
-      ],
-      "24 months": [
-        "24 meses"
-      ]
-    },
     "breadcrumb": {
       "Calendars": [
         "Calendários"
@@ -1264,6 +1214,9 @@
       ]
     },
     "Collapsible tooltip": {
+      "Collapse": [
+        "Recolher"
+      ],
       "Expand": [
         "Expandir"
       ]
@@ -1290,6 +1243,9 @@
       "cerise": [
         "cereja"
       ],
+      "cinnabar": [
+        "cinábrio"
+      ],
       "cobalt": [
         "cobalto"
       ],
@@ -1302,11 +1258,23 @@
       "dandelion": [
         "dente-de-leão"
       ],
+      "dark cerulean": [
+        "cerúleo escuro"
+      ],
+      "dark midnight blue": [
+        "azul escuro da meia-noite"
+      ],
       "dim gray": [
         "cinza escuro"
       ],
+      "enzian": [
+        "enzian"
+      ],
       "fern": [
         "samambaia"
+      ],
+      "field drab": [
+        "campo monótono"
       ],
       "forest": [
         "floresta"
@@ -1317,8 +1285,14 @@
       "japanese laurel": [
         "louro japonês"
       ],
+      "kiwi": [
+        "kiwi"
+      ],
       "lemon yellow": [
         "amarelo limão"
+      ],
+      "light carmine pink": [
+        "rosa carmim claro"
       ],
       "light moss green": [
         "verde musgo claro"
@@ -1338,17 +1312,32 @@
       "olive": [
         "azeitona"
       ],
+      "outer space": [
+        "espaço sideral"
+      ],
+      "pacific": [
+        "pacífico"
+      ],
       "palatinate blue": [
         "azul palatinado"
       ],
+      "pale cerulean": [
+        "cerúleo pálido"
+      ],
       "pastel gray": [
         "cinza pastel"
+      ],
+      "persian plum": [
+        "ameixa persa"
       ],
       "persian red": [
         "vermelho persa"
       ],
       "philippine gray": [
         "cinza filipino"
+      ],
+      "philippine silver": [
+        "prata filipina"
       ],
       "pickle": [
         "salmoura"
@@ -1362,11 +1351,26 @@
       "pistachio": [
         "pistache"
       ],
+      "plum": [
+        "ameixa"
+      ],
       "purple": [
         "roxo"
       ],
+      "raisin black": [
+        "passas pretas"
+      ],
       "reef": [
         "recife"
+      ],
+      "ruddy pink": [
+        "rosa avermelhado"
+      ],
+      "sahara": [
+        "saara"
+      ],
+      "satin sheen gold": [
+        "ouro de cetim"
       ],
       "slateblue": [
         "azul ardósia"
@@ -1376,6 +1380,9 @@
       ],
       "strawberry": [
         "morango"
+      ],
+      "vivid auburn": [
+        "ruivo vívido"
       ],
       "white": [
         "branco"
@@ -4430,6 +4437,9 @@
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "A hospedagem de e-mails para 10 nomes de domínio de e-mail adicionais está incluída gratuitamente. Domínios adicionais podem ser adicionados por ${ price }."
       ],
+      "Email hosting is only available for domains you already own. Domain registration is not currently available through Proton. You can host email for domains registered on any domain registrar.": [
+        "A hospedagem de e-mail está disponível apenas para domínios que você já possui. O registro de domínio não está disponível no momento através do Proton. Você pode hospedar e-mail para domínios registrados em qualquer registrador de domínio."
+      ],
       "Emailing preference saved": [
         "Preferências de e-mail salvas"
       ],
@@ -4880,6 +4890,9 @@
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Digite a frase de recuperação de 12 palavras associada à sua conta."
       ],
+      "Please fill out this field.": [
+        "Por favor, preencha este campo."
+      ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
         "Por favor, mantenha-o seguro. Você precisará dele para acessar sua conta e descriptografar seus dados em caso de redefinição de senha."
       ],
@@ -5101,6 +5114,9 @@
       ],
       "The name will be visible to your users while they are logged in.": [
         "O nome será visível aos seus usuários enquanto eles estiverem logados."
+      ],
+      "The securest way to browse, stream, and be online.": [
+        "A maneira mais segura de navegar, transmitir e estar online."
       ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Estes arquivos de configuração permitem escolher a qual servidor do ${ VPN_APP_NAME } você será conectado ao usar um aplicativo de VPN de terceiros ou ao configurar uma conexão de VPN em um roteador."
@@ -5351,6 +5367,9 @@
       "We’ll send a reset code to the phone number you provided for account recovery.": [
         "Enviaremos um código de redefinição para o número de telefone que você forneceu para a recuperação da conta."
       ],
+      "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
+        "Estamos atualizando seu plano atual para um plano aprimorado que oferece mais pelo mesmo preço. Enquanto nossos sistemas estiverem sendo atualizados, você não poderá alterá-los. Enviaremos um e-mail assim que estiver pronto."
+      ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Quando desativado, isso impede que arquivos de imagem sejam carregados no seu dispositivo sem seu conhecimento."
       ],
@@ -5572,6 +5591,15 @@
       "Create an email address": [
         "Criar um endereço de e-mail"
       ],
+      "Day 27: Trial reminder": [
+        "Dia 27: Lembrete de teste"
+      ],
+      "Day 30: Trial ends": [
+        "Dia 30: Lembrete de teste"
+      ],
+      "Enjoy secure, easy-to-use emailing with plenty of premium features.": [
+        "Desfrute de e-mail seguro e fácil de usar com muitos recursos premium."
+      ],
       "Key ${ fingerprint } has already been uploaded": [
         "Chave ${ fingerprint } já foi enviada"
       ],
@@ -5580,6 +5608,15 @@
       ],
       "Try Mail Plus": [
         "Testar o Mail Plus"
+      ],
+      "We’ll email you before your trial ends. Cancel anytime.": [
+        "Enviaremos um e-mail para você antes do término da avaliação. Cancele a qualquer momento."
+      ],
+      "Your new email address is ready to go!": [
+        "Seu novo endereço de e-mail está pronto para ser usado!"
+      ],
+      "Your subscription starts on ${ startText }.": [
+        "Sua assinatura começa em ${ startText }."
       ]
     },
     "Info - folder colouring feature": {
@@ -6219,6 +6256,9 @@
       ],
       "Discount": [
         "Desconto"
+      ],
+      "Display": [
+        "Exibir"
       ],
       "Display name": [
         "Nome de exibição"
@@ -7131,8 +7171,14 @@
       "on the first Wednesday": [
         "na primeira Quarta-feira"
       ],
+      "on the fourth Friday": [
+        "na quarta Sexta-feira"
+      ],
       "on the fourth Monday": [
         "na quarta Segunda-feira"
+      ],
+      "on the fourth Saturday": [
+        "no quarto Sábado"
       ],
       "on the fourth Sunday": [
         "no quarto Domingo"
@@ -7146,11 +7192,35 @@
       "on the fourth Wednesday": [
         "na quarta Quarta-feira"
       ],
+      "on the last Friday": [
+        "na última Sexta-feira"
+      ],
+      "on the last Monday": [
+        "na última Segunda-feira"
+      ],
+      "on the last Saturday": [
+        "no último Sábado"
+      ],
+      "on the last Sunday": [
+        "no último Domingo"
+      ],
+      "on the last Thursday": [
+        "na última Quinta-feira"
+      ],
+      "on the last Tuesday": [
+        "na última Terça-feira"
+      ],
+      "on the last Wednesday": [
+        "na última Quarta-feira"
+      ],
       "on the second Friday": [
         "na segunda Sexta-feira"
       ],
       "on the second Monday": [
         "na segunda Segunda-feira"
+      ],
+      "on the second Saturday": [
+        "no segundo Sábado"
       ],
       "on the second Sunday": [
         "no segundo Domingo"
@@ -7167,8 +7237,23 @@
       "on the third Friday": [
         "na terceira Sexta-feira"
       ],
+      "on the third Monday": [
+        "na terceira Segunda-feira"
+      ],
       "on the third Saturday": [
         "no terceiro Sábado"
+      ],
+      "on the third Sunday": [
+        "no terceiro Domingo"
+      ],
+      "on the third Thursday": [
+        "na terceira Quinta-feira"
+      ],
+      "on the third Tuesday": [
+        "na terceira Terça-feira"
+      ],
+      "on the third Wednesday": [
+        "na terceira Quarta-feira"
       ]
     },
     "Moved to black/whitelist": {
@@ -7358,6 +7443,9 @@
       "Auto-reply": [
         "Resposta automática"
       ],
+      "Catch-all": [
+        "Catch-all"
+      ],
       "Centralized billing": [
         "Faturamento centralizado"
       ],
@@ -7507,6 +7595,9 @@
       ]
     },
     "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Torne a privacidade seu padrão para backup, armazenamento, compartilhamento e recuperação de arquivos."
+      ],
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "Caso contrário, o acesso à sua conta será limitado e, futuramente, sua conta será desativada."
       ],
@@ -7565,6 +7656,9 @@
       ],
       "Privacy and security suite for businesses, including all premium Proton services.": [
         "Pacote de privacidade e segurança para empresas, incluindo todos os serviços premium da Proton."
+      ],
+      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
+        "Armazenamento em nuvem seguro que permite armazenar, sincronizar e compartilhar arquivos com facilidade e segurança."
       ],
       "Secure email and calendar for professionals and businesses.": [
         "E-mail e calendário seguros para profissionais e empresas."
@@ -8319,6 +8413,13 @@
     "plan customizer, users": {
       "contact": [
         "contato"
+      ],
+      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
+        "Selecione o número de usuários a serem incluídos em seu plano. Cada usuário adicional custa ${ price }."
+      ],
+      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
+        "Se você precisar de mais de ${ maxUsers } conta de usuário, por favor ${ contact } nossa equipe de vendas.",
+        "Se você precisar de mais de ${ maxUsers } contas de usuário, ${ contact } nossa equipe de vendas."
       ]
     },
     "Price": {
@@ -8933,6 +9034,12 @@
       ],
       "Certificate ${ name } revoked": [
         "O certificado ${ name } foi revogado"
+      ],
+      "Certificate extended until ${ formattedExpirationDate }": [
+        "Certificado estendido até ${ formattedExpirationDate }"
+      ],
+      "Config \"${ name }\" created, note that the private key is not stored and won't be shown again, you should copy or download this config.": [
+        "Configuração \"${ name }\" criada, observe que a chave privada não está armazenada e não será exibida novamente, você deve copiar ou baixar esta configuração."
       ],
       "Creating config file for ${ serverName }": [
         "Criando arquivo de configuração para ${ serverName }"
@@ -10225,6 +10332,14 @@
         "",
         "A cada ${ interval } semanas, ${ multipleDaysString }"
       ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
+        "A cada ${ interval } semana, na(o) ${ multipleDaysString }, ${ timesString }",
+        "A cada ${ interval } semanas, na(o) ${ multipleDaysString }, ${ timesString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
+        "A cada ${ interval } semana, na(o) ${ multipleDaysString }, ${ untilString }",
+        "A cada ${ interval } semanas, na(o) ${ multipleDaysString }, ${ untilString }"
+      ],
       "Every ${ interval } week on all days": [
         "A cada ${ interval } das semanas, todos os dias",
         "A cada ${ interval } das semanas, todos os dias"
@@ -10428,8 +10543,8 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "A cada ${ interval } de ano",
-        "A cada ${ interval } anos"
+        "Yearly",
+        ""
       ],
       "Every ${ interval } year, ${ timesString }": [
         "A cada ${ interval } ano, ${ timesString }",

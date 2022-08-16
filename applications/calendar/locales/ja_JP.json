@@ -797,6 +797,9 @@
       "Calendar is syncing": [
         "カレンダーは同期中です"
       ],
+      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
+        "カレンダーを同期しています: すべてのイベントが表示されるまでしばらくお待ちください。"
+      ],
       "Calendar is too big": [
         "カレンダーが大きすぎます"
       ],
@@ -2021,6 +2024,9 @@
       "Email is not valid": [
         "メールアドレスが正しくありません"
       ],
+      "Ends on date cannot be empty": [
+        "最終日は空にできません"
+      ],
       "Ends on date must be after start time": [
         "終了日は開始日の後に設定してください。"
       ],
@@ -2316,6 +2322,9 @@
       ],
       "Journal entry": [
         "Journal のエントリー"
+      ],
+      "Malformed all-day event": [
+        "不正な終日イベントです"
       ],
       "Malformed end time": [
         "異常な終了日時です"
@@ -2621,6 +2630,11 @@
         "vCard バージョン3.0以前"
       ]
     },
+    "Import calendar; import invitation": {
+      "This file contains an event invitation:": [
+        "このファイルにはイベント招待が含まれています:"
+      ]
+    },
     "Import contact": {
       "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
         "${ totalImported }/${ totalToImport } 件の連絡先が暗号化され、連絡先リストに追加されました"
@@ -2758,6 +2772,9 @@
       ],
       "and": [
         "と"
+      ],
+      "At most 100 participants are allowed per invitation": [
+        "1 つの招待につき 100 人までが許可されています"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "新しい検証コードを要求する前に、迷惑メールフォルダーを確認し、${ strong } が正しいアドレスなことを確認してください。"
@@ -5028,7 +5045,8 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "${ interval } 年毎"
+        "Yearly",
+        ""
       ],
       "Every ${ interval } year, ${ timesString }": [
         "${ interval } 年毎、${ timesString }"
