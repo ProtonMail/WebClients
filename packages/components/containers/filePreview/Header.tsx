@@ -1,6 +1,8 @@
 import { ReactNode } from 'react';
+
 import { c } from 'ttag';
-import { Icon, FileIcon, FileNameDisplay, Button } from '../../components';
+
+import { Button, FileIcon, FileNameDisplay, Icon } from '../../components';
 
 const SHARED_STATUS_TO_COLOR = {
     '': undefined,
@@ -43,7 +45,14 @@ const Header = ({
             {children}
             <div className="flex flex-align-items-center">
                 {onSave && (
-                    <Button icon shape="ghost" title={c('Action').t`Download`} onClick={onSave} className="ml0-5">
+                    <Button
+                        icon
+                        shape="ghost"
+                        title={c('Action').t`Download`}
+                        onClick={onSave}
+                        className="ml0-5"
+                        data-testid="preview:button:download"
+                    >
                         <Icon name="arrow-down-line" size={20} alt={c('Action').t`Download`} />
                     </Button>
                 )}
@@ -54,6 +63,7 @@ const Header = ({
                         title={c('Action').t`Details`}
                         onClick={onDetail}
                         className="ml0-5 no-mobile"
+                        data-testid="preview:button:details"
                     >
                         <Icon name="info-circle" size={20} alt={c('Action').t`Details`} />
                     </Button>
@@ -65,6 +75,7 @@ const Header = ({
                         title={sharedStatus === '' ? c('Action').t`Share via link` : c('Action').t`Sharing options`}
                         onClick={onShare}
                         className="ml0-5 no-mobile"
+                        data-testid="preview:button:share"
                     >
                         <Icon
                             name="link"
@@ -75,7 +86,14 @@ const Header = ({
                     </Button>
                 )}
                 {onClose && (
-                    <Button icon shape="ghost" title={c('Action').t`Close`} onClick={onClose} className="ml0-5">
+                    <Button
+                        icon
+                        shape="ghost"
+                        title={c('Action').t`Close`}
+                        onClick={onClose}
+                        className="ml0-5"
+                        data-testid="preview:button:close"
+                    >
                         <Icon name="cross" size={20} alt={c('Action').t`Close`} />
                     </Button>
                 )}
