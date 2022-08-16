@@ -38,6 +38,9 @@
       "Add address": [
         "Cím hozzáadása"
       ],
+      "Add calendar": [
+        "Naptár hozzáadása"
+      ],
       "Add condition": [
         "Új feltétel"
       ],
@@ -58,6 +61,9 @@
       ],
       "Add label": [
         "Új címke"
+      ],
+      "Add notification": [
+        "Új emlékeztető"
       ],
       "Add PayPal": [
         "PayPal hozzáadása"
@@ -155,11 +161,17 @@
       "Continue to ${ name }": [
         "Folytatás itt: ${ name }"
       ],
+      "Continue with Google": [
+        "Folytatás Google fiókkal"
+      ],
       "Copy": [
         "Másolás"
       ],
       "Copy email to clipboard": [
         "E-mail másolása a vágólapra"
+      ],
+      "Copy link": [
+        "Hivatkozás másolása"
       ],
       "Create": [
         "Létrehozás"
@@ -170,6 +182,9 @@
       "Create address": [
         "Cím létrehozása"
       ],
+      "Create calendar": [
+        "Naptár létrehozása"
+      ],
       "Create folder": [
         "Mappa létrehozása"
       ],
@@ -178,6 +193,9 @@
       ],
       "Create label": [
         "Címke létrehozása"
+      ],
+      "Create link": [
+        "Hivatkozás létrehozása"
       ],
       "Current plan": [
         "Jelenlegi csomag"
@@ -380,6 +398,9 @@
       "Loading verification": [
         "Ellenőrzés folyamatban"
       ],
+      "Make default": [
+        "Legyen alapértelmezett"
+      ],
       "Mark as default": [
         "Megjelölés alapértelmezettként"
       ],
@@ -497,6 +518,9 @@
       "Remove this label": [
         "Címke eltávolítása"
       ],
+      "Remove this notification": [
+        "Emlékeztető törlése"
+      ],
       "Rename": [
         "Átnevezés"
       ],
@@ -572,6 +596,9 @@
       "Select files": [
         "Fájlok kiválasztása"
       ],
+      "Select timezone": [
+        "Időzóna kiválasztása"
+      ],
       "send auto-reply email": [
         "automatikus válasz küldése"
       ],
@@ -604,6 +631,12 @@
       ],
       "Show labels": [
         "Címkék megjelenítése"
+      ],
+      "Show less": [
+        "Kevesebb megjelenítése"
+      ],
+      "Show more": [
+        "Több megjelenítése"
       ],
       "Show preview": [
         "Előnézet megmutatása"
@@ -924,54 +957,9 @@
         "Kétévente"
       ]
     },
-    "blackfriday Info": {
-      "beta": [
-        "béta"
-      ],
-      "Includes": [
-        "Tartalmazza"
-      ],
-      "Standard price: ${ regularPrice }": [
-        "Normál ár: ${ regularPrice }"
-      ]
-    },
-    "blackfriday Title": {
-      "Most popular": [
-        "Legnépszerűbb"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Action": {
-      "Get the deal": [
-        "Érdekel az ajánlat"
-      ],
-      "Get the deal now": [
-        "Érdekel az ajánlat"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Info": {
-      "Save ${ percentage }%": [
-        "${ percentage } %"
-      ]
-    },
-    "blackfriday: VPNspecialoffer info": {
-      "per month": [
-        "havonta"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Promo title, need to be short": {
-      "Special offer": [
-        "Különleges ajánlat"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Title": {
-      "1 month": [
-        "1 hónap"
-      ],
-      "12 months": [
-        "12 hónap"
-      ],
-      "24 months": [
-        "24 hónap"
+    "breadcrumb": {
+      "Calendars": [
+        "Naptárak"
       ]
     },
     "Bridge version load failed": {
@@ -1071,6 +1059,15 @@
       ]
     },
     "Calendar status": {
+      "Active": [
+        "Aktív"
+      ],
+      "Default": [
+        "Alapértelmezett"
+      ],
+      "Disabled": [
+        "Letiltva"
+      ],
       "Not synced": [
         "Nincs szinkronizálva"
       ],
@@ -1102,6 +1099,17 @@
       ],
       "Unsupported calendar format": [
         "Nem támogatott naptár formátum"
+      ]
+    },
+    "Calendar view": {
+      "Day": [
+        "Nap"
+      ],
+      "Month": [
+        "Hónap"
+      ],
+      "Week": [
+        "Hét"
       ]
     },
     "Checkout row": {
@@ -1411,6 +1419,9 @@
       ],
       "Work": [
         "Munkahelyi"
+      ],
+      "Yomi": [
+        "Yomi"
       ]
     },
     "Countdown unit": {
@@ -2204,6 +2215,36 @@
         "/felhasználó havonta"
       ]
     },
+    "Daily recurring event, frequency": {
+      "${ count } time": [
+        "${ count } alkalommal",
+        "${ count } alkalommal"
+      ],
+      "Daily": [
+        "Naponta"
+      ],
+      "Daily, ${ timesString }": [
+        "Naponta, ${ timesString }"
+      ],
+      "Daily, ${ untilString }": [
+        "Naponta, ${ untilString }"
+      ],
+      "Every ${ interval } day": [
+        "Minden ${ interval }. napon",
+        "Minden ${ interval }. napon"
+      ],
+      "Every ${ interval } day, ${ timesString }": [
+        "Minden ${ interval }. napon, ${ timesString }",
+        "Minden ${ interval }. napon, ${ timesString }"
+      ],
+      "Every ${ interval } day, ${ untilString }": [
+        "Minden ${ interval }. napon, ${ untilString }",
+        "Minden ${ interval }. napon, ${ untilString }"
+      ],
+      "until ${ dateString }": [
+        "eddig: ${ dateString }"
+      ]
+    },
     "Day": {
       "Friday": [
         "Péntek"
@@ -2308,6 +2349,20 @@
     "Downgrade modal exit survey title": {
       "Help us improve!": [
         "Segítsen fejlődni!"
+      ]
+    },
+    "Duration": {
+      "120 minutes": [
+        "120 perc"
+      ],
+      "30 minutes": [
+        "30 perc"
+      ],
+      "60 minutes": [
+        "60 perc"
+      ],
+      "90 minutes": [
+        "90 perc"
       ]
     },
     "Email body for description (description part)": {
@@ -2533,6 +2588,9 @@
       ],
       "Name on card required": [
         "Kártyára írt név megadása kötelező"
+      ],
+      "Name required": [
+        "Név megadása kötelező"
       ],
       "No active sessions": [
         "Nincs aktív munkamenet"
@@ -2917,6 +2975,9 @@
       "Error: ${ errorMessage }": [
         "Hiba: ${ errorMessage }"
       ],
+      "Invalid URL": [
+        "Érvénytelen URL cím"
+      ],
       "Oops, something went wrong": [
         "Hoppá, valami hiba történt"
       ],
@@ -2993,6 +3054,11 @@
     "Event title": {
       "(no title)": [
         "(névtelen)"
+      ]
+    },
+    "Export calendar": {
+      "Loading events": [
+        "Események betöltése"
       ]
     },
     "Feature": {
@@ -3145,6 +3211,9 @@
       "Actions": [
         "Műveletek"
       ],
+      "Calendar": [
+        "Naptár"
+      ],
       "Event": [
         "Esemény"
       ],
@@ -3157,11 +3226,17 @@
       "Key type": [
         "Kulcs típusa"
       ],
+      "Name": [
+        "Név"
+      ],
       "Notifications": [
         "Emlékeztetők"
       ],
       "Organization key fingerprint": [
         "Szervezeti kulcs ujjlenyomata"
+      ],
+      "Status": [
+        "Állapot"
       ],
       "Time": [
         "Időpont"
@@ -3824,6 +3899,9 @@
       "Add image URL": [
         "Kép URL megadása"
       ],
+      "Add label": [
+        "Új címke"
+      ],
       "Additional options": [
         "További lehetőségek"
       ],
@@ -4029,8 +4107,26 @@
       "Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.": [
         "Jelenleg az összes tárhely kiosztásra került az adminisztrátor fiókhoz. Kérjük csökkentse az adminisztrátor fiókhoz kiosztott tárhelyet, hogy helyet szabadítson fel a többi felhasználónak. Bármikor növelheti a rendelkezésre álló tárhelyet nagyobb csomagra váltással."
       ],
+      "Custom": [
+        "Egyéni"
+      ],
+      "Custom daily": [
+        "Egyéni, naponta"
+      ],
       "Custom email domains": [
         "Saját domain nevek"
+      ],
+      "Custom monthly": [
+        "Egyéni, havonta"
+      ],
+      "Custom weekly": [
+        "Egyéni, hetente"
+      ],
+      "Custom yearly": [
+        "Egyéni, évente"
+      ],
+      "Daily": [
+        "Naponta"
       ],
       "Data locked": [
         "Adatok zárolva"
@@ -4083,6 +4179,9 @@
       ],
       "Earned ${ rewards } of ${ rewardsLimit } ${ planName } months.": [
         "Szerzett ${ rewards } hónap jóváírást a lehetséges ${ rewardsLimit } ${ planName } hónapból."
+      ],
+      "Edit label": [
+        "Címke szerkesztése"
       ],
       "Edit link": [
         "Hivatkozás szerkesztése"
@@ -4403,6 +4502,9 @@
       ],
       "Merged": [
         "Egyesítve"
+      ],
+      "Monthly ${ onDayString }": [
+        "Havonta: ${ onDayString }"
       ],
       "more": [
         "több"
@@ -5017,6 +5119,9 @@
       "Yandex records your online activity and reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
         "A Yandex rögzíti az ön online tevékenységét és olvassa a személyes adatait, hogy ezt hirdetők és más külső felek felhasználhassák. A személyes adatai védelme érdekében, hozza létre titkosított e-mail címét."
       ],
+      "Yearly": [
+        "Évente"
+      ],
       "You already have a free account": [
         "Már van egy ingyenes fiókja"
       ],
@@ -5565,6 +5670,11 @@
         "Megjelölés elavultként"
       ]
     },
+    "Knowledge base link label": {
+      "Learn more": [
+        "További információk"
+      ]
+    },
     "Label": {
       " and ": [
         " és "
@@ -5710,6 +5820,9 @@
       "Code is 6 digits without spaces": [
         "A kód hatjegyű, szóközök nélkül"
       ],
+      "Color": [
+        "Szín"
+      ],
       "Composer": [
         "Szerkesztő"
       ],
@@ -5806,6 +5919,9 @@
       "Density": [
         "Sűrűség"
       ],
+      "Description": [
+        "Leírás"
+      ],
       "Device/certificate name": [
         "Eszköz/tanúsítvány neve"
       ],
@@ -5814,6 +5930,9 @@
       ],
       "Discount": [
         "Kedvezmény"
+      ],
+      "Display": [
+        "Megjelenítés"
       ],
       "Display name": [
         "Megjelenített név"
@@ -6235,6 +6354,9 @@
       "Upload 1 or more recovery files or encryption keys": [
         "Töltsön fel egy vagy több helyreállító fájlt vagy titkosítási kulcsot"
       ],
+      "URL": [
+        "URL"
+      ],
       "Use folder colors": [
         "Mappa színek használata"
       ],
@@ -6316,6 +6438,11 @@
     "Label for adding a new custom domain": {
       "Add a domain that you own to your ${ MAIL_APP_NAME } account.": [
         "Adjon hozzá saját domain nevet a ${ MAIL_APP_NAME } fiókjához."
+      ]
+    },
+    "Label for default event settings": {
+      "Duration": [
+        "Időtartam"
       ]
     },
     "Label for domain modal": {
@@ -6622,6 +6749,11 @@
         "E-mailek importálása a Yahoo-tól"
       ]
     },
+    "Modal title and action": {
+      "Add calendar": [
+        "Naptár hozzáadása"
+      ]
+    },
     "Monetary unit": {
       "Dollar": [
         "Dollár"
@@ -6631,6 +6763,139 @@
       ],
       "Swiss franc": [
         "Svájci frank"
+      ]
+    },
+    "Monthly recurring event, frequency": {
+      "Every ${ interval } month ${ onDayString }": [
+        "Minden ${ interval }. hónapban, ${ onDayString }",
+        "Minden ${ interval }. hónapban, ${ onDayString }"
+      ],
+      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
+        "Minden ${ interval }. hónapban, ${ onDayString }, ${ timesString }",
+        "Minden ${ interval }. hónapban, ${ onDayString }, ${ timesString }"
+      ],
+      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
+        "Minden ${ interval }. hónapban, ${ onDayString }, ${ untilString }",
+        "Minden ${ interval }. hónapban, ${ onDayString }, ${ untilString }"
+      ],
+      "Monthly ${ onDayString }": [
+        "Havonta: ${ onDayString }"
+      ],
+      "Monthly ${ onDayString }, ${ timesString }": [
+        "Havonta ${ onDayString }, ${ timesString }"
+      ],
+      "Monthly ${ onDayString }, ${ untilString }": [
+        "Havonta ${ onDayString }, ${ untilString }"
+      ]
+    },
+    "Monthly recurring event, repeats on": {
+      "on day ${ dayOfMonth }": [
+        "${ dayOfMonth }. napon"
+      ],
+      "on the first Friday": [
+        "első péntek"
+      ],
+      "on the first Monday": [
+        "első hétfő"
+      ],
+      "on the first Saturday": [
+        "első szombat"
+      ],
+      "on the first Sunday": [
+        "első vasárnap"
+      ],
+      "on the first Thursday": [
+        "első csütörtök"
+      ],
+      "on the first Tuesday": [
+        "első kedd"
+      ],
+      "on the first Wednesday": [
+        "első szerda"
+      ],
+      "on the fourth Friday": [
+        "negyedik péntek"
+      ],
+      "on the fourth Monday": [
+        "negyedik hétfő"
+      ],
+      "on the fourth Saturday": [
+        "negyedik szombat"
+      ],
+      "on the fourth Sunday": [
+        "negyedik vasárnap"
+      ],
+      "on the fourth Thursday": [
+        "negyedik csütörtök"
+      ],
+      "on the fourth Tuesday": [
+        "negyedik kedd"
+      ],
+      "on the fourth Wednesday": [
+        "negyedik szerda"
+      ],
+      "on the last Friday": [
+        "utolsó péntek"
+      ],
+      "on the last Monday": [
+        "utolsó hétfő"
+      ],
+      "on the last Saturday": [
+        "utolsó szombat"
+      ],
+      "on the last Sunday": [
+        "utolsó vasárnap"
+      ],
+      "on the last Thursday": [
+        "utolsó csütörtök"
+      ],
+      "on the last Tuesday": [
+        "utolsó kedd"
+      ],
+      "on the last Wednesday": [
+        "utolsó szerda"
+      ],
+      "on the second Friday": [
+        "második péntek"
+      ],
+      "on the second Monday": [
+        "második hétfő"
+      ],
+      "on the second Saturday": [
+        "második szombat"
+      ],
+      "on the second Sunday": [
+        "második vasárnap"
+      ],
+      "on the second Thursday": [
+        "második csütörtök"
+      ],
+      "on the second Tuesday": [
+        "második kedd"
+      ],
+      "on the second Wednesday": [
+        "második szerda"
+      ],
+      "on the third Friday": [
+        "harmadik péntek"
+      ],
+      "on the third Monday": [
+        "harmadik hétfő"
+      ],
+      "on the third Saturday": [
+        "harmadik szombat"
+      ],
+      "on the third Sunday": [
+        "harmadik vasárnap"
+      ],
+      "on the third Thursday": [
+        "harmadik csütörtök"
+      ],
+      "on the third Tuesday": [
+        "harmadik kedd"
+      ],
+      "on the third Wednesday": [
+        "harmadik szerda"
       ]
     },
     "Moved to black/whitelist": {
@@ -7355,6 +7620,35 @@
         "OpenVPN / IKEv2 azonosító frissítve"
       ]
     },
+    "Notification time input": {
+      "at": [
+        "ekkor:"
+      ]
+    },
+    "Notification when": {
+      "at time of event": [
+        "az esemény időpontjában"
+      ],
+      "day before": [
+        "nappal előtte",
+        "nappal előtte"
+      ],
+      "hour before": [
+        "órával előtte",
+        "órával előtte"
+      ],
+      "minute before": [
+        "perccel előtte",
+        "perccel előtte"
+      ],
+      "on the same day": [
+        "ugyanazon a napon"
+      ],
+      "week before": [
+        "héttel előtte",
+        "héttel előtte"
+      ]
+    },
     "Oauth instructions": {
       "Next you'll need to sign in to your Google account and grant Proton access to your data.": [
         "Következőként be kell jelentkeznie a Google fiókjába, hogy engedélyezze a Protonnak az adatokhoz való hozzáférést."
@@ -7524,6 +7818,9 @@
       "Normal": [
         "Normál"
       ],
+      "On": [
+        "Ekkor:"
+      ],
       "Permanent": [
         "Állandó"
       ],
@@ -7641,6 +7938,12 @@
     "Placeholder": {
       "A way to contact you": [
         "Kapcsolatfelvételi lehetőség önnel"
+      ],
+      "Add a calendar description": [
+        "Adja meg a naptár leírását"
+      ],
+      "Add a calendar name": [
+        "Adja meg a naptár nevét"
       ],
       "Add gift code": [
         "Ajándék kód hozzáadása"
@@ -7826,6 +8129,14 @@
         "Jelmondat"
       ]
     },
+    "Recovery Phone": {
+      "Cancel": [
+        "Mégsem"
+      ],
+      "Verify now": [
+        "Ellenőrzés most"
+      ]
+    },
     "Remark about a key type option": {
       "Compatibility": [
         "Kompatibilitás"
@@ -7860,6 +8171,11 @@
       ],
       "Upload additional files": [
         "További fájlok feltöltése"
+      ]
+    },
+    "Select search results": {
+      "No results found": [
+        "Nincs találat"
       ]
     },
     "Settings description": {
@@ -7995,6 +8311,27 @@
         "Jelenlegi tárhelye:"
       ]
     },
+    "Subscribe to calendar modal": {
+      "Calendar URL": [
+        "Naptár URL"
+      ],
+      "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Subscribed calendars.\n${ kbLink }": [
+        "Egy külső vagy nyilvános naptárra és annak eseményeire való feliratkozáshoz, írja be annak URL címét. Egy csak olvasható naptárként fog megjelenni a feliratkozott naptárainál. ${ kbLink }"
+      ]
+    },
+    "Subscribe to calendar modal description": {
+      "Learn how to get a private calendar link.": [
+        "Olvassa el hogyan kaphat személyes naptár hivatkozást."
+      ]
+    },
+    "Subscribed calendar extension warning": {
+      "By using this link, Google will make the calendar you are subscribing to public": [
+        "Ezzel a hivatkozással, a Google nyilvánossá fogja tenni azt a naptárat amelyre fel van iratkozva"
+      ],
+      "This link might be wrong": [
+        "Ez a hivatkozás valószínűleg hibás"
+      ]
+    },
     "Subscription attribute": {
       "${ _n } calendar per user": [
         "${ _n } naptár felhasználónként",
@@ -8097,6 +8434,15 @@
       ],
       "Bug reported": [
         "Hiba bejelentve"
+      ],
+      "Calendar added. It might take a few minutes to sync.": [
+        "Naptár létrehozva. Egy pár percbe telhet a szinkronizálás."
+      ],
+      "Calendar created": [
+        "Naptár létrehozva"
+      ],
+      "Calendar updated": [
+        "Naptár frissítve"
       ],
       "Canceling import": [
         "Importálás megszakítása"
@@ -8339,6 +8685,11 @@
         "${ minutes } perc"
       ]
     },
+    "Timezone search placeholder": {
+      "Search timezones": [
+        "Időzóna keresése"
+      ]
+    },
     "Title": {
       "${ appName } Keyboard Shortcuts": [
         "${ appName } gyorsbillentyűk"
@@ -8391,6 +8742,9 @@
       ],
       "Add address": [
         "Cím hozzáadása"
+      ],
+      "Add another notification to remind you of this event": [
+        "További emlékeztető hozzáadása az eseményhez"
       ],
       "Add contact group name": [
         "Adjon nevet a névjegy csoportnak"
@@ -8545,6 +8899,9 @@
       "Continue with partial import?": [
         "Folytatja részleges importálással?"
       ],
+      "Create calendar": [
+        "Naptár létrehozása"
+      ],
       "Create your ${ BRAND_NAME } Account": [
         "${ BRAND_NAME } fiók létrehozása"
       ],
@@ -8647,6 +9004,9 @@
       "Edit Block List": [
         "Tiltólista szerkesztése"
       ],
+      "Edit calendar": [
+        "Naptár szerkesztése"
+      ],
       "Edit credit/debit card": [
         "Bankkártya szerkesztése"
       ],
@@ -8682,6 +9042,9 @@
       ],
       "Error": [
         "Hiba"
+      ],
+      "Export": [
+        "Exportálás"
       ],
       "Export private key": [
         "Privát kulcs exportálása"
@@ -8930,6 +9293,15 @@
       "Select contact group": [
         "Névjegy csoport kiválasztása"
       ],
+      "Select the time to send this notification": [
+        "Válassza ki az emlékeztető elküldésének időpontját"
+      ],
+      "Select the way to send this notification": [
+        "Válassza ki az emlékeztető elküldésének módját"
+      ],
+      "Select when you want this notification to be sent": [
+        "Válassza ki az emlékeztető elküldésének időpontját"
+      ],
       "Session management": [
         "Munkamenet-kezelés"
       ],
@@ -9085,6 +9457,11 @@
       ],
       "ZIP / postal code": [
         "Irányítószám"
+      ]
+    },
+    "Title (number of minutes/hours/days/weeks)": {
+      "Choose a number": [
+        "Válasszon egy számot"
       ]
     },
     "Title for payment methods table": {
@@ -9471,6 +9848,243 @@
     "Weak personal key warning": {
       "This key no longer meets our security standards. We suggest you mark it as obsolete and generate a new key.": [
         "Ez a kulcs már nem felel meg a mai biztonsági igényeknek. Javasoljuk, hogy jelölje meg elavultként és hozzon létre új kulcsot."
+      ]
+    },
+    "Weekly recurring event, frequency": {
+      "Every ${ interval } week on ${ multipleDaysString }": [
+        "Minden ${ interval }. héten, ${ multipleDaysString }",
+        "Minden ${ interval }. héten, ${ multipleDaysString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
+        "Minden ${ interval }. héten, ${ multipleDaysString }, ${ timesString }",
+        "Minden ${ interval }. héten, ${ multipleDaysString }, ${ timesString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
+        "Minden ${ interval }. héten, ${ multipleDaysString }, ${ untilString }",
+        "Minden ${ interval }. héten, ${ multipleDaysString }, ${ untilString }"
+      ],
+      "Every ${ interval } week on all days": [
+        "Minden ${ interval } héten, minden nap",
+        "Minden ${ interval } héten, minden nap"
+      ],
+      "Every ${ interval } week on all days, ${ timesString }": [
+        "Minden ${ interval }. héten, minden nap, ${ timesString }",
+        "Minden ${ interval }. héten, minden nap, ${ timesString }"
+      ],
+      "Every ${ interval } week on all days, ${ untilString }": [
+        "Minden ${ interval }. héten, minden nap, ${ untilString }",
+        "Minden ${ interval }. héten, minden nap, ${ untilString }"
+      ],
+      "Every ${ interval } week on Friday": [
+        "Minden ${ interval }. héten, pénteken",
+        "Minden ${ interval }. héten, pénteken"
+      ],
+      "Every ${ interval } week on Friday, ${ timesString }": [
+        "Minden ${ interval }. héten, pénteken, ${ timesString }",
+        "Minden ${ interval }. héten, pénteken, ${ timesString }"
+      ],
+      "Every ${ interval } week on Friday, ${ untilString }": [
+        "Minden ${ interval }. héten, pénteken, ${ untilString }",
+        "Minden ${ interval }. héten, pénteken, ${ untilString }"
+      ],
+      "Every ${ interval } week on Monday": [
+        "Minden ${ interval } héten, hétfőn",
+        "Minden ${ interval } héten, hétfőn"
+      ],
+      "Every ${ interval } week on Monday, ${ timesString }": [
+        "Minden ${ interval }. héten, hétfőn, ${ timesString }",
+        "Minden ${ interval }. héten, hétfőn, ${ timesString }"
+      ],
+      "Every ${ interval } week on Monday, ${ untilString }": [
+        "Minden ${ interval }. héten, hétfőn, ${ untilString }",
+        "Minden ${ interval }. héten, hétfőn, ${ untilString }"
+      ],
+      "Every ${ interval } week on Saturday": [
+        "Minden ${ interval }. héten, szombaton",
+        "Minden ${ interval }. héten, szombaton"
+      ],
+      "Every ${ interval } week on Saturday, ${ timesString }": [
+        "Minden ${ interval }. héten, vasárnap, ${ timesString }",
+        "Minden ${ interval }. héten, vasárnap, ${ timesString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ untilString }": [
+        "Minden ${ interval }. héten, szombaton, ${ untilString }",
+        "Minden ${ interval }. héten, szombaton, ${ untilString }"
+      ],
+      "Every ${ interval } week on Sunday": [
+        "Minden ${ interval }. héten, vasárnap",
+        "Minden ${ interval } héten, vasárnap"
+      ],
+      "Every ${ interval } week on Sunday, ${ timesString }": [
+        "Minden ${ interval }. héten, vasárnap, ${ timesString }",
+        "Minden ${ interval }. héten, vasárnap, ${ timesString }"
+      ],
+      "Every ${ interval } week on Sunday, ${ untilString }": [
+        "Minden ${ interval }. héten, vasárnap, ${ untilString }",
+        "Minden ${ interval }. héten, vasárnap, ${ untilString }"
+      ],
+      "Every ${ interval } week on Thursday": [
+        "Minden ${ interval }. héten, csütörtökön",
+        "Minden ${ interval }. héten, csütörtökön"
+      ],
+      "Every ${ interval } week on Thursday, ${ timesString }": [
+        "Minden ${ interval }. héten, csütörtökön, ${ timesString }",
+        "Minden ${ interval }. héten, csütörtökön, ${ timesString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ untilString }": [
+        "Minden ${ interval }. héten, csütörtökön, ${ untilString }",
+        "Minden ${ interval }. héten, csütörtökön, ${ untilString }"
+      ],
+      "Every ${ interval } week on Tuesday": [
+        "Minden ${ interval }. héten, kedden",
+        "Minden ${ interval }. héten, kedden"
+      ],
+      "Every ${ interval } week on Tuesday, ${ timesString }": [
+        "Minden ${ interval }. héten, kedden, ${ timesString }",
+        "Minden ${ interval }. héten, kedden, ${ timesString }"
+      ],
+      "Every ${ interval } week on Tuesday, ${ untilString }": [
+        "Minden ${ interval }. héten, kedden, ${ untilString }",
+        "Minden ${ interval }. héten, kedden, ${ untilString }"
+      ],
+      "Every ${ interval } week on Wednesday": [
+        "Minden ${ interval }. héten, szerdán",
+        "Minden ${ interval }. héten, szerdán"
+      ],
+      "Every ${ interval } week on Wednesday, ${ timesString }": [
+        "Minden ${ interval }. héten, szerdán, ${ timesString }",
+        "Minden ${ interval }. héten, szerdán, ${ timesString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ untilString }": [
+        "Minden ${ interval }. héten, szerdán, ${ untilString }",
+        "Minden ${ interval }. héten, szerdán, ${ untilString }"
+      ],
+      "Weekly on ${ multipleDaysString }": [
+        "Hetente ${ multipleDaysString }"
+      ],
+      "Weekly on ${ multipleDaysString }, ${ timesString }": [
+        "Hetente ${ multipleDaysString }, ${ timesString }"
+      ],
+      "Weekly on ${ multipleDaysString }, ${ untilString }": [
+        "Hetente ${ multipleDaysString }, ${ untilString }"
+      ],
+      "Weekly on all days": [
+        "Hetente, minden nap"
+      ],
+      "Weekly on all days, ${ timesString }": [
+        "Hetente minden nap, ${ timesString }"
+      ],
+      "Weekly on all days, ${ untilString }": [
+        "Hetente minden nap, ${ untilString }"
+      ],
+      "Weekly on Friday": [
+        "Minden pénteken"
+      ],
+      "Weekly on Friday, ${ timesString }": [
+        "Minden pénteken, ${ timesString }"
+      ],
+      "Weekly on Friday, ${ untilString }": [
+        "Hetente, péntekenként, ${ untilString }"
+      ],
+      "Weekly on Monday": [
+        "Minden hétfőn"
+      ],
+      "Weekly on Monday, ${ timesString }": [
+        "Minden hétfőn, ${ timesString }"
+      ],
+      "Weekly on Monday, ${ untilString }": [
+        "Hetente, hétfőnként, ${ untilString }"
+      ],
+      "Weekly on Saturday": [
+        "Minden szombaton"
+      ],
+      "Weekly on Saturday, ${ timesString }": [
+        "Minden szombaton, ${ timesString }"
+      ],
+      "Weekly on Saturday, ${ untilString }": [
+        "Hetente, szombatonként, ${ untilString }"
+      ],
+      "Weekly on Sunday": [
+        "Minden vasárnap"
+      ],
+      "Weekly on Sunday, ${ timesString }": [
+        "Minden vasárnap, ${ timesString }"
+      ],
+      "Weekly on Sunday, ${ untilString }": [
+        "Hetente, vasárnaponként, ${ untilString }"
+      ],
+      "Weekly on Thursday": [
+        "Minden csütörtökön"
+      ],
+      "Weekly on Thursday, ${ timesString }": [
+        "Minden csütörtökön, ${ timesString }"
+      ],
+      "Weekly on Thursday, ${ untilString }": [
+        "Hetente, csütörtökönként, ${ untilString }"
+      ],
+      "Weekly on Tuesday": [
+        "Minden kedden"
+      ],
+      "Weekly on Tuesday, ${ timesString }": [
+        "Minden kedden, ${ timesString }"
+      ],
+      "Weekly on Tuesday, ${ untilString }": [
+        "Hetente, keddenként, ${ untilString }"
+      ],
+      "Weekly on Wednesday": [
+        "Minden szerdán"
+      ],
+      "Weekly on Wednesday, ${ timesString }": [
+        "Minden szerdán, ${ timesString }"
+      ],
+      "Weekly on Wednesday, ${ untilString }": [
+        "Hetente, szerdánként, ${ untilString }"
+      ]
+    },
+    "Weekly recurring event, repeats on (multiple days), frequency": {
+      "Friday": [
+        "Péntek"
+      ],
+      "Monday": [
+        "Hétfő"
+      ],
+      "Saturday": [
+        "Szombat"
+      ],
+      "Sunday": [
+        "Vasárnap"
+      ],
+      "Thursday": [
+        "Csütörtök"
+      ],
+      "Tuesday": [
+        "Kedd"
+      ],
+      "Wednesday": [
+        "Szerda"
+      ]
+    },
+    "Yearly recurring event, frequency": {
+      "Every ${ interval } year": [
+        "Yearly",
+        ""
+      ],
+      "Every ${ interval } year, ${ timesString }": [
+        "Minden ${ interval }. évben, ${ timesString }",
+        "Minden ${ interval }. évben, ${ timesString }"
+      ],
+      "Every ${ interval } year, ${ untilString }": [
+        "Minden ${ interval }. évben, ${ untilString }",
+        "Minden ${ interval }. évben, ${ untilString }"
+      ],
+      "Yearly": [
+        "Évente"
+      ],
+      "Yearly, ${ timesString }": [
+        "Évente, ${ timesString }"
+      ],
+      "Yearly, ${ untilString }": [
+        "Évente, ${ untilString }"
       ]
     }
   }

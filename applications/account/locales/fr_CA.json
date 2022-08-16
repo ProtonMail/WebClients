@@ -343,9 +343,6 @@
       "Export": [
         "Exporter"
       ],
-      "Export ICS": [
-        "Exporter l'ICS"
-      ],
       "Export key": [
         "Exporter une clé"
       ],
@@ -438,6 +435,9 @@
       ],
       "Loading verification": [
         "Vérification du transfert"
+      ],
+      "Make default": [
+        "Définir par défaut"
       ],
       "Mark as default": [
         "Définir par défaut"
@@ -845,8 +845,14 @@
       ]
     },
     "Action in trial plan": {
+      "Continue with free plan": [
+        "Continuer avec l'abonnement Free"
+      ],
       "No, thanks": [
         "Non, merci"
+      ],
+      "Start my 30-day free trial": [
+        "Démarrer mon essai gratuit de 30 jours"
       ],
       "Try free for 30 days": [
         "Essayez gratuitement pendant 30 jours"
@@ -1024,48 +1030,6 @@
         "Bisannuel"
       ]
     },
-    "blackfriday Info": {
-      "beta": [
-        "bêta"
-      ],
-      "Includes": [
-        "Inclut"
-      ]
-    },
-    "blackfriday Title": {
-      "Most popular": [
-        "La plus populaire"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Action": {
-      "Get the deal": [
-        "Profitez de l'offre"
-      ],
-      "Get the deal now": [
-        "Obtenez l'offre maintenant"
-      ]
-    },
-    "blackfriday: VPNspecialoffer info": {
-      "per month": [
-        "par mois"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Promo title, need to be short": {
-      "Special offer": [
-        "Offre spéciale"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Title": {
-      "1 month": [
-        "1 mois"
-      ],
-      "12 months": [
-        "12 mois"
-      ],
-      "24 months": [
-        "24 mois"
-      ]
-    },
     "breadcrumb": {
       "Calendars": [
         "Calendriers"
@@ -1202,7 +1166,21 @@
         "Label modifié"
       ]
     },
+    "Calendar settings sidebar": {
+      "Show ${ remainingItems } more": [
+        "Afficher ${ remainingItems } de plus"
+      ]
+    },
     "Calendar status": {
+      "Active": [
+        "Actifs"
+      ],
+      "Default": [
+        "Par défaut"
+      ],
+      "Disabled": [
+        "Désactivé"
+      ],
       "Not synced": [
         "Non synchronisé"
       ],
@@ -1216,6 +1194,9 @@
       ],
       "Calendar is syncing": [
         "Synchronisation du calendrier"
+      ],
+      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
+        "Le calendrier se synchronise: vous devrez peut être attendre plusieurs minutes avant de voir tous les événements."
       ],
       "Calendar is too big": [
         "Le calendrier est trop gros"
@@ -1234,6 +1215,17 @@
       ],
       "Unsupported calendar format": [
         "Format de calendrier non pris en charge"
+      ]
+    },
+    "Calendar subscription not synced error; long version": {
+      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
+        "Le lien du calendrier n'est pas accessible depuis l'extérieur de l'écosystème du fournisseur de calendrier."
+      ],
+      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
+        "Le lien du calendrier est temporairement inaccessible. Veuillez vérifier que le lien du fournisseur de calendrier est toujours valide."
+      ],
+      "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
+        "Plus de 12 heures se sont écoulées depuis la dernière mise à jour — Proton Calendar essaiera de mettre à jour le calendrier dans quelques heures."
       ]
     },
     "Calendar view": {
@@ -1266,6 +1258,9 @@
       ]
     },
     "color": {
+      "apple": [
+        "pomme"
+      ],
       "azureish white": [
         "blanc azur"
       ],
@@ -2368,12 +2363,33 @@
       ]
     },
     "Daily recurring event, frequency": {
+      "${ count } time": [
+        "${ count } fois",
+        "${ count } fois"
+      ],
       "Daily": [
         "Quotidiennement"
+      ],
+      "Daily, ${ timesString }": [
+        "Quotidiennement, à ${ timesString }"
+      ],
+      "Daily, ${ untilString }": [
+        "Quotidiennement, ${ untilString }"
       ],
       "Every ${ interval } day": [
         "Chaque ${ interval } jour",
         "Tous les ${ interval } jours"
+      ],
+      "Every ${ interval } day, ${ timesString }": [
+        "Chaque ${ interval } jour, à ${ timesString }",
+        "Tous les ${ interval } jours, à ${ timesString }"
+      ],
+      "Every ${ interval } day, ${ untilString }": [
+        "Chaque ${ interval } jour, ${ untilString }",
+        "Tous les ${ interval } jours, ${ untilString }"
+      ],
+      "until ${ dateString }": [
+        "jusqu'au ${ dateString }"
       ]
     },
     "Day": {
@@ -3188,6 +3204,14 @@
         "Aucune image sélectionnée"
       ]
     },
+    "Error when exporting event from calendar": {
+      "Event @ ${ timeString }": [
+        "Événement @ ${ timeString }"
+      ],
+      "Event from ${ timeString }, ${ rruleString }": [
+        "Événement à partir de ${ timeString }, ${ rruleString }"
+      ]
+    },
     "Event invitation error": {
       "Attached ICS file could not be decrypted": [
         "Le fichier ICS joint n'a pas pu être déchiffré"
@@ -3346,6 +3370,9 @@
     "Filter Actions": {
       "Archive": [
         "Archiver"
+      ],
+      "Do not move": [
+        "Ne pas déplacer"
       ],
       "Inbox": [
         "Boite de réception"
@@ -5667,11 +5694,32 @@
       "Create an email address": [
         "Créer une adresse courriel"
       ],
+      "Day 27: Trial reminder": [
+        "Jour 27: votre essai se termine bientôt"
+      ],
+      "Day 30: Trial ends": [
+        "Jour 30: votre essai se termine"
+      ],
+      "Enjoy secure, easy-to-use emailing with plenty of premium features.": [
+        "Profitez d'une messagerie électronique sécurisée et conviviale, dotée de nombreuses fonctionnalités avancées."
+      ],
       "Key ${ fingerprint } has already been uploaded": [
         "La clé ${ fingerprint } a déjà été téléversée"
       ],
       "Track your referral link activities here": [
         "Suivez l'activité de vos liens de parrainage ici"
+      ],
+      "Try Mail Plus": [
+        "Essayer Mail Plus"
+      ],
+      "We’ll email you before your trial ends. Cancel anytime.": [
+        "Nous vous enverrons un courriel avant la fin de votre essai. Vous pouvez annuler à tout moment."
+      ],
+      "Your new email address is ready to go!": [
+        "Votre nouvelle adresse courriel est prête!"
+      ],
+      "Your subscription starts on ${ startText }.": [
+        "Votre abonnement commence le ${ startText }."
       ]
     },
     "Info - folder colouring feature": {
@@ -7202,6 +7250,139 @@
         "Franc suisse"
       ]
     },
+    "Monthly recurring event, frequency": {
+      "Every ${ interval } month ${ onDayString }": [
+        "Chaque ${ interval } mois, le ${ onDayString }",
+        "Tous les ${ interval } mois, le ${ onDayString }"
+      ],
+      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
+        "Chaque ${ interval } mois, le ${ onDayString }, à ${ timesString }",
+        "Tous les ${ interval } mois, le ${ onDayString }, à ${ timesString }"
+      ],
+      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
+        "Chaque ${ interval } mois, le ${ onDayString }, ${ untilString }",
+        "Tous les ${ interval } mois, le ${ onDayString }, ${ untilString }"
+      ],
+      "Monthly ${ onDayString }": [
+        "Mensuellement le ${ onDayString }"
+      ],
+      "Monthly ${ onDayString }, ${ timesString }": [
+        "Mensuellement, le ${ onDayString }, à ${ timesString }"
+      ],
+      "Monthly ${ onDayString }, ${ untilString }": [
+        "Mensuellement, le ${ onDayString }, ${ untilString }"
+      ]
+    },
+    "Monthly recurring event, repeats on": {
+      "on day ${ dayOfMonth }": [
+        "le ${ dayOfMonth }"
+      ],
+      "on the first Friday": [
+        "chaque premier vendredi"
+      ],
+      "on the first Monday": [
+        "chaque premier lundi"
+      ],
+      "on the first Saturday": [
+        "chaque premier samedi"
+      ],
+      "on the first Sunday": [
+        "chaque premier dimanche"
+      ],
+      "on the first Thursday": [
+        "chaque premier jeudi"
+      ],
+      "on the first Tuesday": [
+        "chaque premier mardi"
+      ],
+      "on the first Wednesday": [
+        "chaque premier mercredi"
+      ],
+      "on the fourth Friday": [
+        "chaque quatrième vendredi"
+      ],
+      "on the fourth Monday": [
+        "chaque quatrième lundi"
+      ],
+      "on the fourth Saturday": [
+        "chaque quatrième samedi"
+      ],
+      "on the fourth Sunday": [
+        "chaque quatrième dimanche"
+      ],
+      "on the fourth Thursday": [
+        "chaque quatrième jeudi"
+      ],
+      "on the fourth Tuesday": [
+        "chaque quatrième mardi"
+      ],
+      "on the fourth Wednesday": [
+        "chaque quatrième mercredi"
+      ],
+      "on the last Friday": [
+        "chaque dernier vendredi"
+      ],
+      "on the last Monday": [
+        "chaque dernier lundi"
+      ],
+      "on the last Saturday": [
+        "chaque dernier samedi"
+      ],
+      "on the last Sunday": [
+        "chaque dernier dimanche"
+      ],
+      "on the last Thursday": [
+        "chaque dernier jeudi"
+      ],
+      "on the last Tuesday": [
+        "chaque dernier mardi"
+      ],
+      "on the last Wednesday": [
+        "chaque dernier mercredi"
+      ],
+      "on the second Friday": [
+        "chaque deuxième vendredi"
+      ],
+      "on the second Monday": [
+        "chaque deuxième lundi"
+      ],
+      "on the second Saturday": [
+        "chaque deuxième samedi"
+      ],
+      "on the second Sunday": [
+        "chaque deuxième dimanche"
+      ],
+      "on the second Thursday": [
+        "chaque deuxième jeudi"
+      ],
+      "on the second Tuesday": [
+        "chaque deuxième mardi"
+      ],
+      "on the second Wednesday": [
+        "chaque deuxième mercredi"
+      ],
+      "on the third Friday": [
+        "chaque troisième vendredi"
+      ],
+      "on the third Monday": [
+        "chaque troisième lundi"
+      ],
+      "on the third Saturday": [
+        "chaque troisième samedi"
+      ],
+      "on the third Sunday": [
+        "chaque troisième dimanche"
+      ],
+      "on the third Thursday": [
+        "chaque troisième jeudi"
+      ],
+      "on the third Tuesday": [
+        "chaque troisième mardi"
+      ],
+      "on the third Wednesday": [
+        "chaque troisième mercredi"
+      ]
+    },
     "Moved to black/whitelist": {
       "${ Domain } removed": [
         "${ Domain } supprimé"
@@ -7774,6 +7955,9 @@
       ],
       "On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
         "En plus de cela, ajoutez jusqu'à 5 calendriers d'amis, de famille, de collègues et d'organisations."
+      ],
+      "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections.": [
+        "Une connexion RPV permet à un seul appareil de se connecter à Proton VPN à tout moment. Par exemple, pour connecter un téléphone et un ordinateur portable à Proton VPN en même temps, vous avez besoin de deux connexions RPV."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Possibilité d'afficher les boîtes de réception des utilisateurs non privés telles qu'ils les voient, y compris tous les détails des messages et des contacts."
@@ -8552,6 +8736,11 @@
         "Importer des fichiers supplémentaires"
       ]
     },
+    "Select search results": {
+      "No results found": [
+        "Aucun résultat trouvé"
+      ]
+    },
     "Settings description": {
       "Make the move to privacy. Effortlessly and securely.": [
         "Faites la transition vers la vie privée. Sans effort et en toute sécurité."
@@ -8806,6 +8995,9 @@
     "Subtitle for trial plan": {
       "The privacy-first Mail and Calendar solution for your everyday communications needs.": [
         "La solution de messagerie et de calendrier respectueuse de la vie privée pour vos besoins de communication quotidiens."
+      ],
+      "This offer is for those new to Proton only. No credit card required.": [
+        "Cette offre s'adresse uniquement aux nouveaux clients de Proton. Aucune carte de crédit n'est nécessaire."
       ]
     },
     "Success": {
@@ -9092,6 +9284,11 @@
       "${ minutes } minute": [
         "${ minutes } minute",
         "${ minutes } minutes"
+      ]
+    },
+    "Timezone search placeholder": {
+      "Search timezones": [
+        "Rechercher des fuseaux horaires"
       ]
     },
     "Title": {
@@ -10309,6 +10506,243 @@
     "Weak personal key warning": {
       "This key no longer meets our security standards. We suggest you mark it as obsolete and generate a new key.": [
         "Cette clé ne répond plus à nos normes de sécurité. Nous vous suggérons de la marquer comme obsolète et de générer une nouvelle clé."
+      ]
+    },
+    "Weekly recurring event, frequency": {
+      "Every ${ interval } week on ${ multipleDaysString }": [
+        "Chaque ${ interval } semaine, les ${ multipleDaysString }",
+        "Toutes les ${ interval } semaines, les ${ multipleDaysString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
+        "Chaque ${ interval } semaine, les ${ multipleDaysString }, à ${ timesString }",
+        "Toutes les ${ interval } semaines, les ${ multipleDaysString }, à ${ timesString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
+        "Chaque ${ interval } semaine, les ${ multipleDaysString }, ${ untilString }",
+        "Toutes les ${ interval } semaines, les ${ multipleDaysString }, ${ untilString }"
+      ],
+      "Every ${ interval } week on all days": [
+        "Chaque semaine, tous les jours ${ interval }",
+        "Toutes les ${ interval } semaines, tous les jours de la semaine"
+      ],
+      "Every ${ interval } week on all days, ${ timesString }": [
+        "Chaque ${ interval } semaine, tous les jours, à ${ timesString }",
+        "Toutes les ${ interval } semaines, tous les jours, à ${ timesString }"
+      ],
+      "Every ${ interval } week on all days, ${ untilString }": [
+        "Chaque ${ interval } semaine, tous les jours, ${ untilString }",
+        "Toutes les ${ interval } semaines, tous les jours, ${ untilString }"
+      ],
+      "Every ${ interval } week on Friday": [
+        "Chaque semaine, le vendredi ${ interval }",
+        "Toutes les ${ interval } semaines, le vendredi"
+      ],
+      "Every ${ interval } week on Friday, ${ timesString }": [
+        "Chaque ${ interval } semaine, le vendredi, à ${ timesString }",
+        "Toutes les ${ interval } semaines, le vendredi, à ${ timesString }"
+      ],
+      "Every ${ interval } week on Friday, ${ untilString }": [
+        "Chaque ${ interval } semaine, le vendredi, ${ untilString }",
+        "Toutes les ${ interval } semaines, le vendredi, ${ untilString }"
+      ],
+      "Every ${ interval } week on Monday": [
+        "Chaque semaine, le lundi ${ interval }",
+        "Toutes les ${ interval } semaines, le lundi"
+      ],
+      "Every ${ interval } week on Monday, ${ timesString }": [
+        "Chaque ${ interval } semaine, le lundi, à ${ timesString }",
+        "Toutes les ${ interval } semaines, le lundi, à ${ timesString }"
+      ],
+      "Every ${ interval } week on Monday, ${ untilString }": [
+        "Chaque ${ interval } semaine, le lundi, ${ untilString }",
+        "Toutes les ${ interval } semaines, le lundi, ${ untilString }"
+      ],
+      "Every ${ interval } week on Saturday": [
+        "Chaque semaine, le samedi ${ interval }",
+        "Toutes les ${ interval } semaines, le samedi"
+      ],
+      "Every ${ interval } week on Saturday, ${ timesString }": [
+        "Chaque ${ interval } semaine, le samedi, à ${ timesString }",
+        "Toutes les ${ interval } semaines, le samedi, à ${ timesString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ untilString }": [
+        "Chaque ${ interval } semaine, le samedi, ${ untilString }",
+        "Toutes les ${ interval } semaines, le samedi, ${ untilString }"
+      ],
+      "Every ${ interval } week on Sunday": [
+        "Chaque semaine, le dimanche ${ interval }",
+        "Toutes les ${ interval } semaines, le dimanche"
+      ],
+      "Every ${ interval } week on Sunday, ${ timesString }": [
+        "Chaque ${ interval } semaine, le dimanche, à ${ timesString }",
+        "Toutes les ${ interval } semaines, le dimanche, à ${ timesString }"
+      ],
+      "Every ${ interval } week on Sunday, ${ untilString }": [
+        "Chaque ${ interval } semaine, le dimanche, ${ untilString }",
+        "Toutes les ${ interval } semaines, le dimanche, ${ untilString }"
+      ],
+      "Every ${ interval } week on Thursday": [
+        "Chaque semaine, le jeudi ${ interval }",
+        "Toutes les ${ interval } semaines, le jeudi"
+      ],
+      "Every ${ interval } week on Thursday, ${ timesString }": [
+        "Chaque ${ interval } semaine, le jeudi, à ${ timesString }",
+        "Toutes les ${ interval } semaines, le jeudi, à ${ timesString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ untilString }": [
+        "Chaque ${ interval } semaine, le jeudi, ${ untilString }",
+        "Toutes les ${ interval } semaines, le jeudi, ${ untilString }"
+      ],
+      "Every ${ interval } week on Tuesday": [
+        "Chaque semaine, le mardi ${ interval }",
+        "Toutes les ${ interval } semaines, le mardi"
+      ],
+      "Every ${ interval } week on Tuesday, ${ timesString }": [
+        "Chaque ${ interval } semaine, le mardi, à ${ timesString }",
+        "Toutes les ${ interval } semaines, le mardi, à ${ timesString }"
+      ],
+      "Every ${ interval } week on Tuesday, ${ untilString }": [
+        "Chaque ${ interval } semaine, le mardi, ${ untilString }",
+        "Toutes les ${ interval } semaines, le mardi, ${ untilString }"
+      ],
+      "Every ${ interval } week on Wednesday": [
+        "Chaque semaine, le mercredi ${ interval }",
+        "Toutes les ${ interval } semaines, le mercredi"
+      ],
+      "Every ${ interval } week on Wednesday, ${ timesString }": [
+        "Chaque ${ interval } semaine, le mercredi, à ${ timesString }",
+        "Toutes les ${ interval } semaines, le mercredi, à ${ timesString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ untilString }": [
+        "Chaque ${ interval } semaine, le mercredi, ${ untilString }",
+        "Toutes les ${ interval } semaines, le mercredi, ${ untilString }"
+      ],
+      "Weekly on ${ multipleDaysString }": [
+        "Hebdomadairement, les ${ multipleDaysString }"
+      ],
+      "Weekly on ${ multipleDaysString }, ${ timesString }": [
+        "Hebdomadairement, les ${ multipleDaysString }, à ${ timesString }"
+      ],
+      "Weekly on ${ multipleDaysString }, ${ untilString }": [
+        "Hebdomadairement, les ${ multipleDaysString }, ${ untilString }"
+      ],
+      "Weekly on all days": [
+        "Hebdomadairement, tous les jours de la semaine"
+      ],
+      "Weekly on all days, ${ timesString }": [
+        "Hebdomadairement, tous les jours de la semaine, à ${ timesString }"
+      ],
+      "Weekly on all days, ${ untilString }": [
+        "Hebdomadairement, tous les jours de la semaine, ${ untilString }"
+      ],
+      "Weekly on Friday": [
+        "Hebdomadairement, le vendredi"
+      ],
+      "Weekly on Friday, ${ timesString }": [
+        "Hebdomadairement, chaque vendredi, à ${ timesString }"
+      ],
+      "Weekly on Friday, ${ untilString }": [
+        "Hebdomadairement, chaque vendredi, ${ untilString }"
+      ],
+      "Weekly on Monday": [
+        "Hebdomadairement, le lundi"
+      ],
+      "Weekly on Monday, ${ timesString }": [
+        "Hebdomadairement, chaque lundi, à ${ timesString }"
+      ],
+      "Weekly on Monday, ${ untilString }": [
+        "Hebdomadairement, chaque lundi, ${ untilString }"
+      ],
+      "Weekly on Saturday": [
+        "Hebdomadairement, le samedi"
+      ],
+      "Weekly on Saturday, ${ timesString }": [
+        "Hebdomadairement, chaque samedi, à ${ timesString }"
+      ],
+      "Weekly on Saturday, ${ untilString }": [
+        "Hebdomadairement, chaque samedi, ${ untilString }"
+      ],
+      "Weekly on Sunday": [
+        "Hebdomadairement, le dimanche"
+      ],
+      "Weekly on Sunday, ${ timesString }": [
+        "Hebdomadairement, chaque dimanche, à ${ timesString }"
+      ],
+      "Weekly on Sunday, ${ untilString }": [
+        "Hebdomadairement, chaque dimanche, ${ untilString }"
+      ],
+      "Weekly on Thursday": [
+        "Hebdomadairement, le jeudi"
+      ],
+      "Weekly on Thursday, ${ timesString }": [
+        "Hebdomadairement, chaque jeudi, à ${ timesString }"
+      ],
+      "Weekly on Thursday, ${ untilString }": [
+        "Hebdomadairement, chaque jeudi, ${ untilString }"
+      ],
+      "Weekly on Tuesday": [
+        "Hebdomadairement, le mardi"
+      ],
+      "Weekly on Tuesday, ${ timesString }": [
+        "Hebdomadairement, chaque mardi, à ${ timesString }"
+      ],
+      "Weekly on Tuesday, ${ untilString }": [
+        "Hebdomadairement, chaque mardi, ${ untilString }"
+      ],
+      "Weekly on Wednesday": [
+        "Hebdomadairement, le mercredi"
+      ],
+      "Weekly on Wednesday, ${ timesString }": [
+        "Hebdomadairement, chaque mercredi, à ${ timesString }"
+      ],
+      "Weekly on Wednesday, ${ untilString }": [
+        "Hebdomadairement, chaque mercredi, ${ untilString }"
+      ]
+    },
+    "Weekly recurring event, repeats on (multiple days), frequency": {
+      "Friday": [
+        "Vendredi"
+      ],
+      "Monday": [
+        "Lundi"
+      ],
+      "Saturday": [
+        "Samedi"
+      ],
+      "Sunday": [
+        "Dimanche"
+      ],
+      "Thursday": [
+        "Jeudi"
+      ],
+      "Tuesday": [
+        "Mardi"
+      ],
+      "Wednesday": [
+        "Mercredi"
+      ]
+    },
+    "Yearly recurring event, frequency": {
+      "Every ${ interval } year": [
+        "Yearly",
+        ""
+      ],
+      "Every ${ interval } year, ${ timesString }": [
+        "Chaque ${ interval } année, à ${ timesString }",
+        "Tous les ${ interval } ans, à ${ timesString }"
+      ],
+      "Every ${ interval } year, ${ untilString }": [
+        "Chaque ${ interval } année, ${ untilString }",
+        "Tous les ${ interval } ans, ${ untilString }"
+      ],
+      "Yearly": [
+        "Annuellement"
+      ],
+      "Yearly, ${ timesString }": [
+        "Annuellement, à ${ timesString }"
+      ],
+      "Yearly, ${ untilString }": [
+        "Annuellement, ${ untilString }"
       ]
     }
   }

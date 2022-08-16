@@ -4598,7 +4598,7 @@
         "Зі сповіщеннями електронної пошти, ви вирішуєте, про які події буде надіслано сповіщення й коли."
       ],
       "You can now add notifications to calendars you subscribed to.": [
-        "Тепер можна додавати сповіщення до календарів, на які Ви підписані."
+        "Тепер можна додавати сповіщення до календарів, на які ви підписані."
       ]
     },
     "Storage": {
@@ -5651,10 +5651,8 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "Щороку",
-        "Кожні ${ interval } роки",
-        "Кожні ${ interval } років",
-        "Кожні ${ interval } років"
+        "Yearly",
+        ""
       ],
       "Every ${ interval } year, ${ timesString }": [
         "Щороку, ${ timesString }",

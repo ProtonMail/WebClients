@@ -50,6 +50,9 @@
       "Chat with us": [
         "Поговорить с нами"
       ],
+      "Clear two-factor authentication code": [
+        "Очистить код двухфакторной аутентификации"
+      ],
       "Close": [
         "Закрыть"
       ],
@@ -2182,7 +2185,7 @@
         "Если вы потеряете своё \"двухфакторное\" устройство, то эти коды могут быть использованы вместо 6-значного кода двухфакторной аутентификации, чтобы войти в вашу учётную запись. Каждый код может быть использован только единожды."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
-        "Если вы продолжите переход на более дешевую версию, то вы потеряете доступ к платным функциям ${ MAIL_APP_NAME } и ${ VPN_APP_NAME }."
+        "Если вы продолжите переход на более дешевую версию, то вы потеряете доступ к ${ MAIL_APP_NAME } и платным функциям ${ VPN_APP_NAME }."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } paid features, including additional storage and filters.": [
         "Если вы продолжите переход на более дешевую версию, то вы потеряете доступ к платным функциям ${ MAIL_APP_NAME }, включая дополнительные хранилища и фильтры."
@@ -2380,7 +2383,7 @@
         "Спасибо за поддержку нашей миссии."
       ],
       "The securest way to browse, stream, and be online.": [
-        "Самый безопасный способ просматривать сайты, вести трансляции и быть онлайн."
+        "Самый безопасный способ просматривать веб-страницы, смотреть трансляции и находиться онлайн."
       ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Эти файлы конфигурации позволяют выбрать сервер ${ VPN_APP_NAME } для подключения при использовании стороннего приложения VPN или настройки подключения к VPN на маршрутизаторе."
@@ -2407,7 +2410,7 @@
         "Это позволит вам оплачивать подписку на Proton через PayPal. Мы перенаправим вас на сайт PayPal в новой вкладке браузера. Если вы пользуетесь какими-нибудь блокировщиками всплывающих окон, пожалуйста, временно отключите их перед продолжением."
       ],
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
-        "Это навсегда удалит ваш аккаунт и все его данные. Вы не сможете восстановить эту учетную запись."
+        "Это приведет к окончательному удалению вашего аккаунта и всех его данных. Вы не сможете повторно активировать этот аккаунт."
       ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Это заменит ваш временный пароль. Вы будете использовать это для доступа к вашей учетной записи в ${ BRAND_NAME } в будущем."
@@ -2587,7 +2590,7 @@
         "Прежде чем отменить подписку на Почту, вы должны удалить все дополнительные личные календари и все ссылки на общие календари."
       ],
       "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription.": [
-        "Вы должны удалить все дополнительные личные календари и все ссылки на общие календаря, прежде чем вы сможете отменить подписку."
+        "Вы должны удалить все дополнительные личные календари и все ссылки на общие календари, прежде чем вы сможете отменить подписку."
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Вы достигли ${ spaceDisplayed }% емкости Вашего хранилища. ${ freeUpMessage } ${ upgradeLink }"
@@ -2611,7 +2614,7 @@
         "Учетная запись вашего ${ BRAND_NAME } связана с ${ externalEmailAddress }. Чтобы использовать ${ toAppName }, вам необходим адрес ${ MAIL_APP_NAME }."
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
-        "Ваши аккаунты ${ VPN_APP_NAME } и ${ MAIL_APP_NAME } связаны между собой. Чтобы удалить их оба, войдите в систему по ссылке: ${ loginLink } и удалите там свой аккаунт."
+        "Ваши аккаунты ${ VPN_APP_NAME } и ${ MAIL_APP_NAME } связаны между собой. Чтобы удалить оба из них, войдите в систему по ссылке: ${ loginLink } и удалите по ней свой аккаунт."
       ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
         "Для вашей учетной записи есть по крайней мере один просроченный счет. Ваш доступ был ограничен. ${ payInvoiceLink }"
@@ -2620,7 +2623,7 @@
         "Для вашей учетной записи есть по крайней мере один просроченный счет. Ваш доступ скоро будет ограничен. ${ payInvoiceLink }"
       ],
       "Your account is being upgraded, this may take up to 30 seconds.": [
-        "Ваша учётная запись улучшается, это может занять до 30 секунд."
+        "Ваш аккаунт улучшается, это может занять до 30 секунд."
       ],
       "Your account will be updated once the payment is cleared.": [
         "Ваш аккаунт будет обновлен, когда платеж будет проверен."

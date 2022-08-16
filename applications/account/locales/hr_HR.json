@@ -23,6 +23,9 @@
       "Activate organization key": [
         "Aktivirajte ključ organizacije"
       ],
+      "Activate recovery": [
+        "Aktivirajte oporavak"
+      ],
       "Add": [
         "Dodaj"
       ],
@@ -50,6 +53,9 @@
       "Add label": [
         "Dodaj oznaku"
       ],
+      "Add notification": [
+        "Dodaj obavijest"
+      ],
       "Add PayPal": [
         "Dodaj PayPal"
       ],
@@ -73,6 +79,9 @@
       ],
       "Apply": [
         "Primijeni"
+      ],
+      "Attach screenshot(s)": [
+        "Priložite snimku(e) zaslona"
       ],
       "Authenticate": [
         "Autenticiraj"
@@ -98,6 +107,12 @@
       "Change password": [
         "Promjena lozinke"
       ],
+      "Chat with us": [
+        "Razgovarajte s nama"
+      ],
+      "Check import progress": [
+        "Provjerite napredak uvoza"
+      ],
       "Choose a file or drag it here": [
         "Odaberite datoteku ili je dovucite ovdje"
       ],
@@ -122,6 +137,9 @@
       "Confirm": [
         "Potvrdi"
       ],
+      "Confirm opening of link ${ linkToShow }": [
+        "Potvrdite otvaranje hiperveze ${ linkToShow }"
+      ],
       "Contact support": [
         "Kontaktiraj podršku"
       ],
@@ -131,11 +149,20 @@
       "Continue import": [
         "Nastavi uvoz"
       ],
+      "Continue with Google": [
+        "Nastavi s Googleom"
+      ],
       "Copy": [
         "Kopiraj"
       ],
       "Copy email to clipboard": [
         "Kopiraj adresu e-pošte u međuspremnik"
+      ],
+      "Copy link": [
+        "Kopiraj poveznicu"
+      ],
+      "Create": [
+        "Stvori"
       ],
       "Create address": [
         "Stvori adresu"
@@ -145,6 +172,9 @@
       ],
       "Create label": [
         "Stvori oznaku"
+      ],
+      "Create link": [
+        "Stvori poveznicu"
       ],
       "Customize": [
         "Prilagodi"
@@ -161,6 +191,9 @@
       "Delete": [
         "Izbriši"
       ],
+      "Delete permanently": [
+        "Trajno izbriši"
+      ],
       "Delete record": [
         "Izbriši zapis"
       ],
@@ -172,6 +205,9 @@
       ],
       "Didn't receive a code?": [
         "Niste primili kôd?"
+      ],
+      "Didn't receive the code?": [
+        "Niste primili kod?"
       ],
       "Discard": [
         "Odbaci"
@@ -206,6 +242,9 @@
       "Edit sieve": [
         "Uredi Sieve filtar"
       ],
+      "Edit sign-in details": [
+        "Uredite detalje za prijavu"
+      ],
       "enable desktop notifications": [
         "omogući obavijesti radne površine"
       ],
@@ -221,8 +260,14 @@
       "Font": [
         "Font"
       ],
+      "Generate recovery phrase": [
+        "Generirajte frazu za oporavak"
+      ],
       "Get verification code": [
         "Nabavi kôd za provjeru"
+      ],
+      "Go to label": [
+        "Idi na oznaku"
       ],
       "Hide": [
         "Sakrij"
@@ -265,6 +310,9 @@
       ],
       "label emails as": [
         "označi e-poštu kao"
+      ],
+      "Load more": [
+        "Učitaj više"
       ],
       "Loading verification": [
         "Učitavanje potvrde"
@@ -344,6 +392,12 @@
       "Reconnect": [
         "Ponovno poveži"
       ],
+      "Recover data": [
+        "Oporavi podatke"
+      ],
+      "Refer a friend": [
+        "Uputi prijatelja"
+      ],
       "Refresh status": [
         "Osvježi status"
       ],
@@ -367,6 +421,9 @@
       ],
       "Remove this label": [
         "Ukloni ovu oznaku"
+      ],
+      "Remove this notification": [
+        "Ukloni ovu obavijest"
       ],
       "Rename": [
         "Preimenuj"
@@ -425,6 +482,9 @@
       "Select files": [
         "Odabir datoteka"
       ],
+      "Select timezone": [
+        "Odaberite vremensku zonu"
+      ],
       "send auto-reply email": [
         "pošalji automatski odgovor"
       ],
@@ -440,6 +500,9 @@
       "Set catch-all": [
         "Postavi dohvati-sve"
       ],
+      "Set recovery phrase": [
+        "Postavite frazu za oporavak"
+      ],
       "Share via link": [
         "Podijeli putem poveznice"
       ],
@@ -454,6 +517,12 @@
       ],
       "Show labels": [
         "Prikaži oznake"
+      ],
+      "Show more": [
+        "Prikaži više"
+      ],
+      "Show preview": [
+        "Prikaži pregled"
       ],
       "Sign in": [
         "Prijavite se"
@@ -497,6 +566,9 @@
       "Unlock": [
         "Otključaj"
       ],
+      "Unlock data": [
+        "Otključajte podatke"
+      ],
       "Unordered list": [
         "Lista s grafičkim oznakama"
       ],
@@ -505,6 +577,12 @@
       ],
       "Update": [
         "Ažuriraj"
+      ],
+      "Update recovery file": [
+        "Ažurirajte datoteku za oporavak"
+      ],
+      "Update recovery phrase": [
+        "Ažurirajte frazu za oporavak"
       ],
       "Upgrade": [
         "Nadogradnja"
@@ -535,6 +613,12 @@
       ],
       "Verify": [
         "Potvrdi"
+      ],
+      "Verify account": [
+        "Potvrdi račun"
+      ],
+      "Verify email": [
+        "Potvrdi email"
       ],
       "View": [
         "Pregled"
@@ -684,59 +768,6 @@
         "2 godine"
       ]
     },
-    "blackfriday Info": {
-      "beta": [
-        "beta"
-      ],
-      "Includes": [
-        "Uključuje"
-      ],
-      "Standard price: ${ regularPrice }": [
-        "Standardna cijena: ${ regularPrice }"
-      ],
-      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
-        "Ovaj se pretplatnički odnos automatski obnavlja nakon dvije godine po istoj cijeni dok se ne otkaže."
-      ]
-    },
-    "blackfriday Title": {
-      "Most popular": [
-        "Najpopularniji odabir"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Action": {
-      "Get the deal": [
-        "Ugrabite ponudu"
-      ],
-      "Get the deal now": [
-        "Ugrabite ponudu sada"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Info": {
-      "Save ${ percentage }%": [
-        "- ${ percentage }%"
-      ]
-    },
-    "blackfriday: VPNspecialoffer info": {
-      "per month": [
-        "mjesečno"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Promo title, need to be short": {
-      "Special offer": [
-        "Posebna ponuda"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Title": {
-      "1 month": [
-        "1 mjesec"
-      ],
-      "12 months": [
-        "12 mjeseci"
-      ],
-      "24 months": [
-        "24 mjeseca"
-      ]
-    },
     "Bridge version load failed": {
       "Failed to find latest version": [
         "Neuspješno pronalaženje najnovije verzije"
@@ -813,9 +844,31 @@
         "Problem s pristupom web stanici"
       ]
     },
+    "Button": {
+      "Copy": [
+        "Kopiraj"
+      ],
+      "Send": [
+        "Pošalji"
+      ]
+    },
     "Calendar status": {
+      "Default": [
+        "Zadano"
+      ],
       "Not synced": [
         "Nije sinkronizirano"
+      ]
+    },
+    "Calendar view": {
+      "Day": [
+        "Dan"
+      ],
+      "Month": [
+        "Mjesec"
+      ],
+      "Week": [
+        "Tjedan"
       ]
     },
     "Condition for custom filter": {
@@ -978,6 +1031,40 @@
         "Neiskorišteni kredit"
       ]
     },
+    "Daily recurring event, frequency": {
+      "${ count } time": [
+        "${ count } put",
+        "${ count } puta",
+        "${ count } puta"
+      ],
+      "Daily": [
+        "Dnevno"
+      ],
+      "Daily, ${ timesString }": [
+        "Dnevno, ${ timesString }"
+      ],
+      "Daily, ${ untilString }": [
+        "Dnevno, ${ untilString }"
+      ],
+      "Every ${ interval } day": [
+        "Svaki ${ interval } dan",
+        "Svaka ${ interval } dana",
+        "Svakih ${ interval } dana"
+      ],
+      "Every ${ interval } day, ${ timesString }": [
+        "Svaki ${ interval } dan, ${ timesString }",
+        "Svaka ${ interval } dana, ${ timesString }",
+        "Svakih ${ interval } dana, ${ timesString }"
+      ],
+      "Every ${ interval } day, ${ untilString }": [
+        "Svaki ${ interval } dan, ${ untilString }",
+        "Svaka ${ interval } dana, ${ untilString }",
+        "Svakih ${ interval } dana, ${ untilString }"
+      ],
+      "until ${ dateString }": [
+        "do ${ dateString }"
+      ]
+    },
     "Day": {
       "Friday": [
         "Petak"
@@ -1043,6 +1130,25 @@
     "Domain modal": {
       "'www' subdomains are typically not used for email. Are you sure you want to use this domain value?": [
         "Poddomene 'www' obično se ne koriste za e-poštu. Jeste li sigurni da želite koristiti ovu domenu?"
+      ]
+    },
+    "Downgrade account reason": {
+      "I use a different Proton account": [
+        "Koristim drugi Proton račun"
+      ]
+    },
+    "Duration": {
+      "120 minutes": [
+        "120 minuta"
+      ],
+      "30 minutes": [
+        "30 minuta"
+      ],
+      "60 minutes": [
+        "60 minuta"
+      ],
+      "90 minutes": [
+        "90 minuta"
       ]
     },
     "Email body for description (description part)": {
@@ -1217,6 +1323,9 @@
       ],
       "Name on card required": [
         "Ime s kartice je nužno"
+      ],
+      "Name required": [
+        "Naziv je obavezan"
       ],
       "No active sessions": [
         "Nema aktivnih sesija"
@@ -1519,6 +1628,9 @@
       "Error: ${ errorMessage }": [
         "Pogreška: ${ errorMessage }"
       ],
+      "Invalid URL": [
+        "Nevažeći URL"
+      ],
       "Oops, something went wrong": [
         "Ups, nešto je pošlo po zlu"
       ],
@@ -1571,6 +1683,11 @@
     "Event title": {
       "(no title)": [
         "(bez naslova)"
+      ]
+    },
+    "Export calendar": {
+      "Loading events": [
+        "Učitavanje događaja"
       ]
     },
     "Feature": {
@@ -1672,6 +1789,16 @@
         "Pretraga popisa dopuštenih i nedopuštenih"
       ]
     },
+    "Font Face Default": {
+      "Default": [
+        "Zadano"
+      ]
+    },
+    "Font Size Default": {
+      "Default": [
+        "Zadano"
+      ]
+    },
     "Frequency of news": {
       "(1 email per month)": [
         "(1 e-poruka mjesečno)"
@@ -1716,11 +1843,17 @@
       "Key type": [
         "Vrsta ključa"
       ],
+      "Name": [
+        "Naziv"
+      ],
       "Notifications": [
         "Obavijesti"
       ],
       "Organization key fingerprint": [
         "Jedinstveni ključ organizacije"
+      ],
+      "Status": [
+        "Status"
       ],
       "Time": [
         "Vrijeme"
@@ -1758,6 +1891,16 @@
       ],
       "Value / Data / Points to": [
         "Vrijednost / Podaci / Ukazuje na"
+      ]
+    },
+    "Hint": {
+      "Found ${ items.length } suggestion, use keyboard to navigate.": [
+        "Pronađen je ${ items.length } prijedlog. Za navigaciju koristite tipkovnicu.",
+        "Pronađena su ${ items.length } prijedloga. Za navigaciju koristite tipkovnicu.",
+        "Pronađeno je ${ items.length } prijedloga. Za navigaciju koristite tipkovnicu."
+      ],
+      "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
+        "Upotrijebite tipke gore i dolje za pristup i pregledavanje prijedloga nakon unosa. Pritisnite Enter da biste potvrdili svoj izbor ili Escape da biste zatvorili okvir za prijedloge."
       ]
     },
     "Human verification method": {
@@ -1933,6 +2076,17 @@
       ],
       "app password": [
         "lozinka aplikacije"
+      ],
+      "Export": [
+        "Izvoz"
+      ],
+      "Export contacts": [
+        "Uvezi kontakte"
+      ]
+    },
+    "Import provider": {
+      "Other": [
+        "Ostalo"
       ]
     },
     "Import status": {
@@ -1959,6 +2113,11 @@
       ],
       "Started": [
         "Započeto"
+      ]
+    },
+    "Import type": {
+      "Contacts": [
+        "Kontakti"
       ]
     },
     "Import warning": {
@@ -2024,6 +2183,11 @@
       "${ strongAddressAvailable } You will use this email address to sign into all ${ BRAND_NAME } services.": [
         "${ strongAddressAvailable } Ovu ćete adresu e-pošte koristiti za prijavu u sve ${ BRAND_NAME } usluge."
       ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } član)",
+        "(${ memberCount } člana)",
+        "(${ memberCount } članova)"
+      ],
       "(Filter if ALL of the following conditions are met)": [
         "(Filtriraj ako su ispunjeni SVI sljedeći uvjeti)"
       ],
@@ -2047,6 +2211,9 @@
       ],
       "Add image URL": [
         "Dodajte URL slike"
+      ],
+      "Add label": [
+        "Dodaj oznaku"
       ],
       "address": [
         "adresa",
@@ -2080,6 +2247,9 @@
       ],
       "Amount below minimum (${ amount }).": [
         "Iznos ispod minimuma (${ amount })."
+      ],
+      "and": [
+        "i"
       ],
       "AOL reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
         "AOL čita vaše osobne podatke kako bi omogućio pristup oglašivačima i drugim trećim stranama. Za bolju privatnost izradite sigurnu adresu e-pošte."
@@ -2186,6 +2356,24 @@
       "Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.": [
         "Trenutno je sav raspoloživi prostor za pohranu dodijeljen administratorskom računu. Smanjite prostor administratorskog računa da biste oslobodili prostor za dodatne korisnike. U bilo kojem trenutku možete povećati ukupni prostor za pohranu, nadogradnjom svog računa."
       ],
+      "Custom": [
+        "Prilagođeno"
+      ],
+      "Custom daily": [
+        "Prilagođeno dnevno"
+      ],
+      "Custom monthly": [
+        "Prilagođeno mjesečno"
+      ],
+      "Custom weekly": [
+        "Prilagođeno tjedno"
+      ],
+      "Custom yearly": [
+        "Prilagođeno godišnje"
+      ],
+      "Daily": [
+        "Dnevno"
+      ],
       "Discount applied to your subscription with coupon ${ code }": [
         "Popust je primjenjen na vašu pretplatu s kuponom ${ code }"
       ],
@@ -2212,8 +2400,14 @@
       "Download your PGP keys for use with other PGP-compatible services.": [
         "Preuzmite vaše PGP ključeve za upotrebu s drugim PGP kompatibilnim uslugama."
       ],
+      "Drop a file here to upload": [
+        "Ispustite datoteku ovdje za prijenos"
+      ],
       "Drop the file here to upload": [
         "Ispustite datoteku ovdje za prijenos"
+      ],
+      "Edit label": [
+        "Uredi oznaku"
       ],
       "Email address": [
         "Adresa e-pošte"
@@ -2386,6 +2580,9 @@
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "Za postavljanje računa, ručno unesite ove podatke u vaš uređaj za dvofaktorsku autentikaciju. ${ _switchButton }."
       ],
+      "Monthly ${ onDayString }": [
+        "Mjesečno ${ onDayString }"
+      ],
       "more": [
         "više"
       ],
@@ -2539,6 +2736,12 @@
       "Server load": [
         "Opterećenje poslužitelja"
       ],
+      "Set recovery phrase": [
+        "Postavite frazu za oporavak"
+      ],
+      "Show original message": [
+        "Prikaži originalnu poruku"
+      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Budući da ste odani korisnik, na vašem su računu omogućene dodatne značajke."
       ],
@@ -2647,6 +2850,12 @@
       "Unsupported file": [
         "Nepodržana datoteka"
       ],
+      "Update recovery file": [
+        "Ažurirajte datoteku za oporavak"
+      ],
+      "Update recovery phrase": [
+        "Ažurirajte frazu za oporavak"
+      ],
       "Upload picture": [
         "Učitaj sliku"
       ],
@@ -2691,6 +2900,9 @@
       ],
       "Yandex records your online activity and reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
         "Yandex čita vaše mrežne aktivnosti kako bi omogućio pristup oglašivačima i drugim trećim stranama. Za bolju privatnost izradite sigurnu adresu e-pošte."
+      ],
+      "Yearly": [
+        "Godišnje"
       ],
       "You already have a free account": [
         "Već imate besplatan račun"
@@ -2959,6 +3171,9 @@
       "Go to Trash": [
         "Idi u Otpad"
       ],
+      "Insert link": [
+        "Umetni poveznicu"
+      ],
       "Jump to first": [
         "Preskoči na prvo"
       ],
@@ -3114,6 +3329,11 @@
         "Označi kao zastarjelo"
       ]
     },
+    "Knowledge base link label": {
+      "Learn more": [
+        "Saznajte više"
+      ]
+    },
     "Label": {
       " and ": [
         " i "
@@ -3166,6 +3386,9 @@
       "Attach public key": [
         "Pridodajte javni ključ"
       ],
+      "Attach screenshot(s)": [
+        "Priložite snimku(e) zaslona"
+      ],
       "Auto-load embedded images": [
         "Automatsko prikazivanje ugrađenih slika"
       ],
@@ -3199,6 +3422,9 @@
       "Code": [
         "Kôd"
       ],
+      "Color": [
+        "Boja"
+      ],
       "Composer": [
         "Prozor za novu poruku"
       ],
@@ -3226,6 +3452,9 @@
       "Confirm password": [
         "Potvrdi lozinku"
       ],
+      "Contacts": [
+        "Kontakti"
+      ],
       "Conversation grouping": [
         "Grupiranje razgovora"
       ],
@@ -3244,6 +3473,9 @@
       "Daily email notifications": [
         "Dnevne obavijesti e-pošte"
       ],
+      "Date": [
+        "Datum"
+      ],
       "Date format": [
         "Format datuma"
       ],
@@ -3253,14 +3485,23 @@
       "Default language": [
         "Zadani jezik"
       ],
+      "Delete": [
+        "Izbriši"
+      ],
       "Density": [
         "Gustoća"
+      ],
+      "Description": [
+        "Opis"
       ],
       "Digits": [
         "Znamenke"
       ],
       "Discount": [
         "Popust"
+      ],
+      "Display": [
+        "Zaslon"
       ],
       "Display name": [
         "Zaslonski naziv"
@@ -3309,6 +3550,9 @@
       ],
       "extra storage": [
         "dodatni prostor za pohranu"
+      ],
+      "File": [
+        "Datoteka"
       ],
       "Filter Name": [
         "Naziv filtra"
@@ -3583,6 +3827,9 @@
       "Undo send": [
         "Poništi slanje"
       ],
+      "URL": [
+        "URL"
+      ],
       "Use folder colors": [
         "Koristi boje mapa"
       ],
@@ -3636,6 +3883,16 @@
       ],
       "Your password (admin)": [
         "Vaša lozinka (administrator)"
+      ]
+    },
+    "Label for default event notifications": {
+      "Notifications": [
+        "Obavijesti"
+      ]
+    },
+    "Label for default event settings": {
+      "Duration": [
+        "Trajanje"
       ]
     },
     "Label for domain modal": {
@@ -3855,6 +4112,142 @@
         "Švicarski franak"
       ]
     },
+    "Monthly recurring event, frequency": {
+      "Every ${ interval } month ${ onDayString }": [
+        "Svaki ${ interval } mjesec ${ onDayString }",
+        "Svaka ${ interval } mjeseca ${ onDayString }",
+        "Svakih ${ interval } mjeseci ${ onDayString }"
+      ],
+      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
+        "Svaki ${ interval } mjesec ${ onDayString }, ${ timesString }",
+        "Svaka ${ interval } mjeseca ${ onDayString }, ${ timesString }",
+        "Svakih ${ interval } mjeseci ${ onDayString }, ${ timesString }"
+      ],
+      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
+        "Svaki ${ interval } mjesec ${ onDayString }, ${ untilString }",
+        "Svaka ${ interval } mjeseca ${ onDayString }, ${ untilString }",
+        "Svakih ${ interval } mjeseci ${ onDayString }, ${ untilString }"
+      ],
+      "Monthly ${ onDayString }": [
+        "Mjesečno ${ onDayString }"
+      ],
+      "Monthly ${ onDayString }, ${ timesString }": [
+        "Mjesečno ${ onDayString }, ${ timesString }"
+      ],
+      "Monthly ${ onDayString }, ${ untilString }": [
+        "Mjesečno ${ onDayString }, ${ untilString }"
+      ]
+    },
+    "Monthly recurring event, repeats on": {
+      "on day ${ dayOfMonth }": [
+        "na dan ${ dayOfMonth }"
+      ],
+      "on the first Friday": [
+        "na prvi petak"
+      ],
+      "on the first Monday": [
+        "na prvi ponedjeljak"
+      ],
+      "on the first Saturday": [
+        "na prvu subotu"
+      ],
+      "on the first Sunday": [
+        "na prva nedjelju"
+      ],
+      "on the first Thursday": [
+        "na prvi četvrtak"
+      ],
+      "on the first Tuesday": [
+        "na prvi utorak"
+      ],
+      "on the first Wednesday": [
+        "na prvu srijedu"
+      ],
+      "on the fourth Friday": [
+        "na četvrti petak"
+      ],
+      "on the fourth Monday": [
+        "na četvrti ponedjeljak"
+      ],
+      "on the fourth Saturday": [
+        "na četvrtu subotu"
+      ],
+      "on the fourth Sunday": [
+        "na četvrtu nedjelju"
+      ],
+      "on the fourth Thursday": [
+        "na četvrti četvrtak"
+      ],
+      "on the fourth Tuesday": [
+        "na četvrti utorak"
+      ],
+      "on the fourth Wednesday": [
+        "na četvrtu srijedu"
+      ],
+      "on the last Friday": [
+        "na zadnji petak"
+      ],
+      "on the last Monday": [
+        "na zadnji ponedjeljak"
+      ],
+      "on the last Saturday": [
+        "na zadnju subotu"
+      ],
+      "on the last Sunday": [
+        "na zadnju nedjelju"
+      ],
+      "on the last Thursday": [
+        "na zadnji četvrtak"
+      ],
+      "on the last Tuesday": [
+        "na zadnji utorak"
+      ],
+      "on the last Wednesday": [
+        "na zadnju srijedu"
+      ],
+      "on the second Friday": [
+        "na drugi petak"
+      ],
+      "on the second Monday": [
+        "na drugi ponedjeljak"
+      ],
+      "on the second Saturday": [
+        "na drugu subotu"
+      ],
+      "on the second Sunday": [
+        "na drugu nedjelju"
+      ],
+      "on the second Thursday": [
+        "na drugi četvrtak"
+      ],
+      "on the second Tuesday": [
+        "na drugi utorak"
+      ],
+      "on the second Wednesday": [
+        "na drugu srijedu"
+      ],
+      "on the third Friday": [
+        "na treći petak"
+      ],
+      "on the third Monday": [
+        "na treći ponedjeljak"
+      ],
+      "on the third Saturday": [
+        "na treću subotu"
+      ],
+      "on the third Sunday": [
+        "na treću nedjelju"
+      ],
+      "on the third Thursday": [
+        "na treći četvrtak"
+      ],
+      "on the third Tuesday": [
+        "na treći utorak"
+      ],
+      "on the third Wednesday": [
+        "na treću srijedu"
+      ]
+    },
     "Moved to black/whitelist": {
       "${ Domain } removed": [
         "${ Domain } izbrisano"
@@ -3864,6 +4257,9 @@
       ]
     },
     "Navigation": {
+      "Back": [
+        "Natrag"
+      ],
       "Back to Calendar": [
         "Natrag na Kalendar"
       ],
@@ -3882,6 +4278,35 @@
         "Naziv oznake"
       ]
     },
+    "new_plans: action": {
+      "Delete account": [
+        "Ukloni račun"
+      ],
+      "Got it": [
+        "Shvaćam"
+      ]
+    },
+    "new_plans: feature": {
+      "Encrypted contact details": [
+        "Šifrirani podaci o kontaktu"
+      ],
+      "Secure Core servers": [
+        "Secure Core poslužitelji"
+      ],
+      "Two-factor authentication": [
+        "Dvofaktorska autentikacija"
+      ]
+    },
+    "new_plans: heading": {
+      "Support": [
+        "Podrška"
+      ]
+    },
+    "new_plans: signup": {
+      "Subscription": [
+        "Pretplata"
+      ]
+    },
     "Notification": {
       "${ _Filter.Name } created": [
         "${ _Filter.Name } stvoren"
@@ -3891,6 +4316,39 @@
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "OpenVPN / IKEv2 vjerodajnice su ponovno stvorene"
+      ]
+    },
+    "Notification time input": {
+      "at": [
+        "u"
+      ]
+    },
+    "Notification when": {
+      "at time of event": [
+        "u vrijeme događaja"
+      ],
+      "day before": [
+        "dan prije",
+        "dana prije",
+        "dana prije"
+      ],
+      "hour before": [
+        "sat prije",
+        "sata prije",
+        "sata prije"
+      ],
+      "minute before": [
+        "minuta prije",
+        "minute prije",
+        "minuta prije"
+      ],
+      "on the same day": [
+        "isti dan"
+      ],
+      "week before": [
+        "tjedan prije",
+        "tjedna prije",
+        "tjedana prije"
       ]
     },
     "Option": {
@@ -4047,6 +4505,12 @@
       "Normal": [
         "Normalno"
       ],
+      "Off": [
+        "Isklj"
+      ],
+      "On": [
+        "Uklj"
+      ],
       "Permanent": [
         "Trajno"
       ],
@@ -4145,6 +4609,12 @@
     "Placeholder": {
       "A way to contact you": [
         "Način kako da vas kontaktiramo"
+      ],
+      "Add a calendar description": [
+        "Dodaj opis kalendara"
+      ],
+      "Add a calendar name": [
+        "Dodaj naziv kalendara"
       ],
       "Add gift code": [
         "Dodaj darovni kôd"
@@ -4263,12 +4733,22 @@
         "Posao"
       ]
     },
+    "Recovery Email": {
+      "Cancel": [
+        "Poništi"
+      ]
+    },
     "Recovery method": {
       "Email": [
         "E-pošta"
       ],
       "Phone number": [
         "Broj telefona"
+      ]
+    },
+    "Recovery Phone": {
+      "Cancel": [
+        "Poništi"
       ]
     },
     "Restore administrator panel": {
@@ -4291,6 +4771,11 @@
     "Select files": {
       "Upload": [
         "Učitaj"
+      ]
+    },
+    "Select search results": {
+      "No results found": [
+        "Nema rezultata"
       ]
     },
     "Settings description": {
@@ -4339,6 +4824,9 @@
       ]
     },
     "Signup label": {
+      "Display name": [
+        "Zaslonski naziv"
+      ],
       "Email": [
         "E-pošta"
       ],
@@ -4406,6 +4894,11 @@
         "Vaš trenutni prostor za pohranu:"
       ]
     },
+    "Subscription saving": {
+      "Save": [
+        "Spremi"
+      ]
+    },
     "Success": {
       "Account deleted. Logging out...": [
         "Račun je uklonjen. Odjavljivanje..."
@@ -4424,6 +4917,12 @@
       ],
       "Bug reported": [
         "Problem je prijavljen"
+      ],
+      "Calendar created": [
+        "Kalendar je stvoren"
+      ],
+      "Calendar updated": [
+        "Kalendar je ažuriran"
       ],
       "Catch-all address updated": [
         "Dohvati-sve adresa je ažurirana"
@@ -4600,6 +5099,11 @@
         "${ minutes } minuta"
       ]
     },
+    "Timezone search placeholder": {
+      "Search timezones": [
+        "Pretražite vremensku zonu"
+      ]
+    },
     "Title": {
       "${ appName } Keyboard Shortcuts": [
         "${ appName } tipkovni prečaci"
@@ -4627,6 +5131,9 @@
       ],
       "Add address": [
         "Dodaj adresu"
+      ],
+      "Add another notification to remind you of this event": [
+        "Dodajte još obavijesti da vas podsjete na ovaj događaj"
       ],
       "Add contact group name": [
         "Dodaj naziv grupi kontakata"
@@ -4838,6 +5345,9 @@
       "Error": [
         "Pogreška"
       ],
+      "Export": [
+        "Izvoz"
+      ],
       "Export private key": [
         "Izvoz privatnog ključa"
       ],
@@ -4891,6 +5401,9 @@
       ],
       "Invoices": [
         "Fakture"
+      ],
+      "Keyboard shortcuts": [
+        "Tipkovni prečaci"
       ],
       "Labels": [
         "Oznake"
@@ -4982,6 +5495,12 @@
       "Reconnect your account": [
         "Ponovno povežite vaš račun"
       ],
+      "Recover data": [
+        "Oporavi podatke"
+      ],
+      "Refer a friend": [
+        "Uputi prijatelja"
+      ],
       "Report a problem": [
         "Prijavi problem"
       ],
@@ -5011,6 +5530,15 @@
       ],
       "Select contact group": [
         "Odaberi grupu kontakta"
+      ],
+      "Select the time to send this notification": [
+        "Odaberite vrijeme slanja ove obavijesti"
+      ],
+      "Select the way to send this notification": [
+        "Odaberite način slanja ove obavijesti"
+      ],
+      "Select when you want this notification to be sent": [
+        "Odaberite kada želite da se ova obavijest pošalje"
       ],
       "Session management": [
         "Upravljanje sesijama"
@@ -5096,6 +5624,9 @@
       "Unsupported browser": [
         "Preglednik nije podržan"
       ],
+      "Username": [
+        "Korisničko ime"
+      ],
       "Users and addresses": [
         "Korisnici i adrese"
       ],
@@ -5119,6 +5650,11 @@
       ],
       "ZIP / postal code": [
         "Poštanski broj"
+      ]
+    },
+    "Title (number of minutes/hours/days/weeks)": {
+      "Choose a number": [
+        "Odaberite broj"
       ]
     },
     "Title for payment methods table": {
@@ -5186,6 +5722,11 @@
       ],
       "Role": [
         "Uloga"
+      ]
+    },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "Danas"
       ]
     },
     "Tooltip": {
@@ -5398,6 +5939,272 @@
       ],
       "It can take up to a day for DNS changes to update.": [
         "Može potrajati do jedan dan da se DNS promjene ažuriraju."
+      ]
+    },
+    "Weekly recurring event, frequency": {
+      "Every ${ interval } week on ${ multipleDaysString }": [
+        "Svaki ${ interval } tjedan na ${ multipleDaysString }",
+        "Svaka ${ interval } tjedna na ${ multipleDaysString }",
+        "Svakih ${ interval } tjedana na ${ multipleDaysString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
+        "Svaki ${ interval } tjedan na ${ multipleDaysString }, ${ timesString }",
+        "Svaka ${ interval } tjedna na ${ multipleDaysString }, ${ timesString }",
+        "Svakih ${ interval } tjedana na ${ multipleDaysString }, ${ timesString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
+        "Svaki ${ interval } tjedan na ${ multipleDaysString }, ${ untilString }",
+        "Svaka ${ interval } tjedna na ${ multipleDaysString }, ${ untilString }",
+        "Svakih ${ interval } tjedana na ${ multipleDaysString }, ${ untilString }"
+      ],
+      "Every ${ interval } week on all days": [
+        "Svaki ${ interval } tjedan, svim danima",
+        "Svaka ${ interval } tjedna, svim danima",
+        "Svakih ${ interval } tjedana, svim danima"
+      ],
+      "Every ${ interval } week on all days, ${ timesString }": [
+        "Svaki ${ interval } tjedan svakim danom, ${ timesString }",
+        "Svaka ${ interval } tjedna svakim danom, ${ timesString }",
+        "Svakih ${ interval } tjedana svakim danom, ${ timesString }"
+      ],
+      "Every ${ interval } week on all days, ${ untilString }": [
+        "Svaki ${ interval } tjedan svakim danom, ${ untilString }",
+        "Svaka ${ interval } tjedna svakim danom, ${ untilString }",
+        "Svakih ${ interval } tjedana svakim danom, ${ untilString }"
+      ],
+      "Every ${ interval } week on Friday": [
+        "Svaki ${ interval } tjedan petkom",
+        "Svaka ${ interval } tjedna petkom",
+        "Svakih ${ interval } tjedana petkom"
+      ],
+      "Every ${ interval } week on Friday, ${ timesString }": [
+        "Svaki ${ interval } tjedan petkom, ${ timesString }",
+        "Svaka ${ interval } tjedna petkom, ${ timesString }",
+        "Svakih ${ interval } tjedana petkom, ${ timesString }"
+      ],
+      "Every ${ interval } week on Friday, ${ untilString }": [
+        "Svaki ${ interval } tjedan petkom, ${ untilString }",
+        "Svaka ${ interval } tjedna petkom, ${ untilString }",
+        "Svakih ${ interval } tjedana petkom, ${ untilString }"
+      ],
+      "Every ${ interval } week on Monday": [
+        "Svaki ${ interval } tjedan ponedjeljkom",
+        "Svaka ${ interval } tjedna ponedjeljkom",
+        "Svakih ${ interval } tjedana ponedjeljkom"
+      ],
+      "Every ${ interval } week on Monday, ${ timesString }": [
+        "Svaki ${ interval } tjedan ponedjeljkom, ${ timesString }",
+        "Svaka ${ interval } tjedna ponedjeljkom, ${ timesString }",
+        "Svakih ${ interval } tjedana ponedjeljkom, ${ timesString }"
+      ],
+      "Every ${ interval } week on Monday, ${ untilString }": [
+        "Svaki ${ interval } tjedan ponedjeljkom, ${ untilString }",
+        "Svaka ${ interval } tjedna ponedjeljkom, ${ untilString }",
+        "Svakih ${ interval } tjedana ponedjeljkom, ${ untilString }"
+      ],
+      "Every ${ interval } week on Saturday": [
+        "Svaki ${ interval } tjedan subotom",
+        "Svaka ${ interval } tjedna subotom",
+        "Svakih ${ interval } tjedana subotom"
+      ],
+      "Every ${ interval } week on Saturday, ${ timesString }": [
+        "Svaki ${ interval } tjedan subotom, ${ timesString }",
+        "Svaka ${ interval } tjedna subotom, ${ timesString }",
+        "Svakih ${ interval } tjedana subotom, ${ timesString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ untilString }": [
+        "Svaki ${ interval } tjedan subotom, ${ untilString }",
+        "Svaka ${ interval } tjedna subotom, ${ untilString }",
+        "Svakih ${ interval } tjedana subotom, ${ untilString }"
+      ],
+      "Every ${ interval } week on Sunday": [
+        "Svaki ${ interval } tjedan nedjeljom",
+        "Svaka ${ interval } tjedna nedjeljom",
+        "Svakih ${ interval } tjedana nedjeljom"
+      ],
+      "Every ${ interval } week on Sunday, ${ timesString }": [
+        "Svaki ${ interval } tjedan nedjeljom, ${ timesString }",
+        "Svaka ${ interval } tjedna nedjeljom, ${ timesString }",
+        "Svakih ${ interval } tjedana nedjeljom, ${ timesString }"
+      ],
+      "Every ${ interval } week on Sunday, ${ untilString }": [
+        "Svaki ${ interval } tjedan nedjeljom, ${ untilString }",
+        "Svaka ${ interval } tjedna nedjeljom, ${ untilString }",
+        "Svakih ${ interval } tjedana nedjeljom, ${ untilString }"
+      ],
+      "Every ${ interval } week on Thursday": [
+        "Svaki ${ interval } tjedan četvrtkom",
+        "Svaka ${ interval } tjedna četvrtkom",
+        "Svakih ${ interval } tjedana četvrtkom"
+      ],
+      "Every ${ interval } week on Thursday, ${ timesString }": [
+        "Svaki ${ interval } tjedan četvrtkom, ${ timesString }",
+        "Svaka ${ interval } tjedna četvrtkom, ${ timesString }",
+        "Svakih ${ interval } tjedana četvrtkom, ${ timesString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ untilString }": [
+        "Svaki ${ interval } tjedan četvrtkom, ${ untilString }",
+        "Svaka ${ interval } tjedna četvrtkom, ${ untilString }",
+        "Svakih ${ interval } tjedana četvrtkom, ${ untilString }"
+      ],
+      "Every ${ interval } week on Tuesday": [
+        "Svaki ${ interval } tjedan utorkom",
+        "Svaka ${ interval } tjedna utorkom",
+        "Svakih ${ interval } tjedana utorkom"
+      ],
+      "Every ${ interval } week on Tuesday, ${ timesString }": [
+        "Svaki ${ interval } tjedan utorkom, ${ timesString }",
+        "Svaka ${ interval } tjedna utorkom, ${ timesString }",
+        "Svakih ${ interval } tjedana utorkom, ${ timesString }"
+      ],
+      "Every ${ interval } week on Tuesday, ${ untilString }": [
+        "Svaki ${ interval } tjedan utorkom, ${ untilString }",
+        "Svaka ${ interval } tjedna utorkom, ${ untilString }",
+        "Svakih ${ interval } tjedana utorkom, ${ untilString }"
+      ],
+      "Every ${ interval } week on Wednesday": [
+        "Svaki ${ interval } tjedan srijedom",
+        "Svaka ${ interval } tjedna srijedom",
+        "Svakih ${ interval } tjedana srijedom"
+      ],
+      "Every ${ interval } week on Wednesday, ${ timesString }": [
+        "Svaki ${ interval } tjedan srijedom, ${ timesString }",
+        "Svaka ${ interval } tjedna srijedom, ${ timesString }",
+        "Svakih ${ interval } tjedana srijedom, ${ timesString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ untilString }": [
+        "Svaki ${ interval } tjedan srijedom, ${ untilString }",
+        "Svaka ${ interval } tjedna srijedom, ${ untilString }",
+        "Svakih ${ interval } tjedana srijedom, ${ untilString }"
+      ],
+      "Weekly on ${ multipleDaysString }": [
+        "Tjedno na ${ multipleDaysString }"
+      ],
+      "Weekly on ${ multipleDaysString }, ${ timesString }": [
+        "Tjedno na ${ multipleDaysString }, ${ timesString }"
+      ],
+      "Weekly on ${ multipleDaysString }, ${ untilString }": [
+        "Tjedno na ${ multipleDaysString }, ${ untilString }"
+      ],
+      "Weekly on all days": [
+        "Tjedno, svim danima"
+      ],
+      "Weekly on all days, ${ timesString }": [
+        "Tjedno svakim danom, ${ timesString }"
+      ],
+      "Weekly on all days, ${ untilString }": [
+        "Tjedno svakim danom, ${ untilString }"
+      ],
+      "Weekly on Friday": [
+        "Tjedno petkom"
+      ],
+      "Weekly on Friday, ${ timesString }": [
+        "Tjedno petkom, ${ timesString }"
+      ],
+      "Weekly on Friday, ${ untilString }": [
+        "Tjedno petkom, ${ untilString }"
+      ],
+      "Weekly on Monday": [
+        "Tjedno ponedjeljkom"
+      ],
+      "Weekly on Monday, ${ timesString }": [
+        "Tjedno ponedjeljkom, ${ timesString }"
+      ],
+      "Weekly on Monday, ${ untilString }": [
+        "Tjedno ponedjeljkom, ${ untilString }"
+      ],
+      "Weekly on Saturday": [
+        "Tjedno subotom"
+      ],
+      "Weekly on Saturday, ${ timesString }": [
+        "Tjedno subotom, ${ timesString }"
+      ],
+      "Weekly on Saturday, ${ untilString }": [
+        "Tjedno subotom, ${ untilString }"
+      ],
+      "Weekly on Sunday": [
+        "Tjedno nedjeljom"
+      ],
+      "Weekly on Sunday, ${ timesString }": [
+        "Tjedno nedjeljom, ${ timesString }"
+      ],
+      "Weekly on Sunday, ${ untilString }": [
+        "Tjedno nedjeljom, ${ untilString }"
+      ],
+      "Weekly on Thursday": [
+        "Tjedno četvrtkom"
+      ],
+      "Weekly on Thursday, ${ timesString }": [
+        "Tjedno četvrtkom, ${ timesString }"
+      ],
+      "Weekly on Thursday, ${ untilString }": [
+        "Tjedno četvrtkom, ${ untilString }"
+      ],
+      "Weekly on Tuesday": [
+        "Tjedno utorkom"
+      ],
+      "Weekly on Tuesday, ${ timesString }": [
+        "Tjedno utorkom, ${ timesString }"
+      ],
+      "Weekly on Tuesday, ${ untilString }": [
+        "Tjedno utorkom, ${ untilString }"
+      ],
+      "Weekly on Wednesday": [
+        "Tjedno srijedom"
+      ],
+      "Weekly on Wednesday, ${ timesString }": [
+        "Tjedno srijedom, ${ timesString }"
+      ],
+      "Weekly on Wednesday, ${ untilString }": [
+        "Tjedno srijedom, ${ untilString }"
+      ]
+    },
+    "Weekly recurring event, repeats on (multiple days), frequency": {
+      "Friday": [
+        "Petak"
+      ],
+      "Monday": [
+        "Ponedjeljak"
+      ],
+      "Saturday": [
+        "Subota"
+      ],
+      "Sunday": [
+        "Nedjelja"
+      ],
+      "Thursday": [
+        "Četvrtak"
+      ],
+      "Tuesday": [
+        "Utorak"
+      ],
+      "Wednesday": [
+        "Srijeda"
+      ]
+    },
+    "Yearly recurring event, frequency": {
+      "Every ${ interval } year": [
+        "Yearly",
+        ""
+      ],
+      "Every ${ interval } year, ${ timesString }": [
+        "Svaku ${ interval } godinu, ${ timesString }",
+        "Svake ${ interval } godine, ${ timesString }",
+        "Svakih ${ interval } godina, ${ timesString }"
+      ],
+      "Every ${ interval } year, ${ untilString }": [
+        "Svaku ${ interval } godinu, ${ untilString }",
+        "Svake ${ interval } godine, ${ untilString }",
+        "Svakih ${ interval } godina, ${ untilString }"
+      ],
+      "Yearly": [
+        "Godišnje"
+      ],
+      "Yearly, ${ timesString }": [
+        "Godišnje, ${ timesString }"
+      ],
+      "Yearly, ${ untilString }": [
+        "Godišnje, ${ untilString }"
       ]
     }
   }

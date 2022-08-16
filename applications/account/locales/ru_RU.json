@@ -15,7 +15,7 @@
         "Ограниченный"
       ],
       "Limited view": [
-        "Ограниченный обзор"
+        "Ограниченный вид"
       ]
     },
     "Action": {
@@ -59,7 +59,7 @@
         "Добавить условие"
       ],
       "Add credit / debit card": [
-        "Добавить банковскую карту"
+        "Добавить кредитную / дебетовую карту"
       ],
       "Add credits": [
         "Пополнить счёт"
@@ -107,7 +107,7 @@
         "Применить к существующему сообщению"
       ],
       "Attach screenshot(s)": [
-        "Приложить снимки экрана"
+        "Вложить снимок (снимки) экрана"
       ],
       "Authenticate": [
         "Аутентифицировать"
@@ -145,6 +145,9 @@
       "Clear all formatting": [
         "Очистить форматирование"
       ],
+      "Clear two-factor authentication code": [
+        "Очистить код двухфакторной аутентификации"
+      ],
       "Close": [
         "Закрыть"
       ],
@@ -179,7 +182,7 @@
         "Продолжить с ${ name }"
       ],
       "Continue with ${ nameToDisplay } ${ maybeEmailInBrackets }": [
-        "Продолжить ${ nameToDisplay } ${ maybeEmailInBrackets }"
+        "Продолжить с ${ nameToDisplay } ${ maybeEmailInBrackets }"
       ],
       "Continue with Google": [
         "Продолжить с Google"
@@ -200,7 +203,7 @@
         "Вместо этого создайте защищенный адрес ${ MAIL_APP_NAME }"
       ],
       "Create account": [
-        "Создать учётную запись"
+        "Создать аккаунт"
       ],
       "Create address": [
         "Создать адрес"
@@ -212,7 +215,7 @@
         "Создать папку"
       ],
       "Create free account": [
-        "Создать бесплатную учётную запись"
+        "Создать бесплатный аккаунт"
       ],
       "Create label": [
         "Создать ярлык"
@@ -305,7 +308,7 @@
         "Изменить"
       ],
       "Edit billing details": [
-        "Изменить платёжную информацию"
+        "Изменить платежную информацию"
       ],
       "Edit email address": [
         "Изменить адрес эл. почты"
@@ -343,9 +346,6 @@
       "Export": [
         "Экспортировать"
       ],
-      "Export ICS": [
-        "Экспорт ICS"
-      ],
       "Export key": [
         "Экспортировать ключ"
       ],
@@ -380,7 +380,7 @@
         "Перейти к ярлыку"
       ],
       "Go to sign in": [
-        "Перейти к авторизации"
+        "Перейти к входу в систему"
       ],
       "Hide": [
         "Скрыть"
@@ -439,6 +439,9 @@
       "Loading verification": [
         "Загружается проверка"
       ],
+      "Make default": [
+        "Установить по умолчанию"
+      ],
       "Mark as default": [
         "Установить по умолчанию"
       ],
@@ -446,7 +449,7 @@
         "отметить письма как"
       ],
       "Maybe later": [
-        "Может, позже"
+        "Может быть, позже"
       ],
       "More": [
         "Ещё"
@@ -530,7 +533,7 @@
         "Восстановить данные"
       ],
       "Refer a friend": [
-        "Порекомендуйте друга"
+        "Порекомендуйте другу"
       ],
       "Refresh status": [
         "Обновить статус"
@@ -704,7 +707,7 @@
         "Выйти из учетной записи"
       ],
       "Sign out from ${ nameToDisplay } ${ maybeEmailInBrackets }": [
-        "Выписаться из ${ nameToDisplay } ${ maybeEmailInBrackets }"
+        "Выйти из ${ nameToDisplay } ${ maybeEmailInBrackets }"
       ],
       "Sign out of all accounts": [
         "Выйти из всех учётных записей"
@@ -892,16 +895,16 @@
         "${ memberAddon.MaxMembers } пользователей"
       ],
       "${ vpnAddon.MaxVPN } connection": [
-        "${ vpnAddon.MaxVPN } соединение",
-        "${ vpnAddon.MaxVPN } соединений",
-        "${ vpnAddon.MaxVPN } соединений",
-        "${ vpnAddon.MaxVPN } соединений(ия, е)"
+        "${ vpnAddon.MaxVPN } подключение",
+        "${ vpnAddon.MaxVPN } подключения",
+        "${ vpnAddon.MaxVPN } подключений",
+        "${ vpnAddon.MaxVPN } подключений"
       ],
       "${ vpnBonus } connection": [
-        "${ vpnBonus } соединение",
-        "${ vpnBonus } соединений",
-        "${ vpnBonus } соединений",
-        "${ vpnBonus } соединений(ия, е)"
+        "${ vpnBonus } подключение",
+        "${ vpnBonus } подключения",
+        "${ vpnBonus } подключений",
+        "${ vpnBonus } подключений"
       ]
     },
     "Address action": {
@@ -1044,97 +1047,6 @@
         "Каждые 2 года"
       ]
     },
-    "blackfriday Action": {
-      "Get the offer": [
-        "Воспользоваться"
-      ]
-    },
-    "blackfriday Info": {
-      "beta": [
-        "бета"
-      ],
-      "Includes": [
-        "Включает"
-      ],
-      "Standard price: ${ regularPrice }": [
-        "Обычная цена: ${ regularPrice }"
-      ],
-      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
-        "Через 2 года подписка будет автоматически продлена по той же цене, если вы не отмените ее до этого срока."
-      ]
-    },
-    "blackfriday Title": {
-      "Best deal": [
-        "Лучшее предложение"
-      ],
-      "Most popular": [
-        "Самое популярное"
-      ],
-      "Save more when combining Mail and VPN": [
-        "Сэкономьте больше, оплачивая Mail и VPN вместе"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Action": {
-      "Get the deal": [
-        "Получить скидку"
-      ],
-      "Get the deal now": [
-        "Получить скидку"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Info": {
-      "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
-        "Скидки рассчитываются исходя из стандартной платы за 1 месяц в размере ${ standardMonthlyPricing }"
-      ],
-      "Save ${ percentage }%": [
-        "– ${ percentage } %"
-      ],
-      "Special offer Terms and Conditions": [
-        "Условия специального предложения"
-      ]
-    },
-    "blackfriday: VPNspecialoffer info": {
-      "per month": [
-        "в месяц"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Promo title, need to be short": {
-      "Special offer": [
-        "Спецпредложение"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Title": {
-      "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
-        "(${ notice }) Автопродление через 1 месяц по стандартной цене ${ amount } на 1 месяц"
-      ],
-      "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
-        "(${ notice }) Автопродление через 1 год по сниженной цене ${ amount } на 1 год (скидка 20%)"
-      ],
-      "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
-        "(${ notice }) Автопродление через 2 года по сниженной цене ${ amount } на 2 года (скидка 33%)"
-      ],
-      "1 month": [
-        "1 месяц"
-      ],
-      "12 months": [
-        "12 месяцев"
-      ],
-      "24 months": [
-        "24 месяца"
-      ],
-      "Billed at ${ amount } for the first 2 years.${ supNotice }": [
-        "Оплата в размере ${ amount } за первые 2 года.${ supNotice }"
-      ],
-      "Billed at ${ amount } for the first month.${ supNotice }": [
-        "Оплата в размере ${ amount } за первый месяц.${ supNotice }"
-      ],
-      "Billed at ${ amount } for the first year.${ supNotice }": [
-        "Оплата в размере ${ amount } за первый год.${ supNotice }"
-      ],
-      "Get the special year-end offer on our Premium VPN PLUS plan": [
-        "Воспользуйтесь специальным предложением в конце года для премиум-тарифа VPN PLUS"
-      ]
-    },
     "breadcrumb": {
       "Calendars": [
         "Календари"
@@ -1218,7 +1130,7 @@
     },
     "Button": {
       "Add link to your email footer": [
-        "Добавить ссылку в нижний колонтитул вашей электронной почты"
+        "Добавить ссылку в нижний колонтитул электронной почты"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Продолжить, используя ${ MAIL_APP_NAME }."
@@ -1575,7 +1487,7 @@
         "Прекратить настройку импорта?"
       ],
       "Quit import?": [
-        "Прекратить импорт?"
+        "Выйти из импорта?"
       ],
       "Remove from the list?": [
         "Удалить из списка?"
@@ -1682,9 +1594,9 @@
       ],
       "${ monthsWithYears } month": [
         "${ monthsWithYears } месяц",
+        "${ monthsWithYears } месяца",
         "${ monthsWithYears } месяцев",
-        "${ monthsWithYears } месяцев",
-        "${ monthsWithYears } месяцев(а)"
+        "${ monthsWithYears } месяцев"
       ]
     },
     "Country name": {
@@ -2560,7 +2472,7 @@
     },
     "Description": {
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }.": [
-        "Поздравляем! Вы заработали максимальное количество ${ rewardsLimit } бесплатных месяцев ${ plusPlanName }."
+        "Поздравляем! Вы заработали максимальное количество из ${ rewardsLimit } бесплатных месяцев ${ plusPlanName }."
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Идёт шифрование и импортирование контактов, и это может занять несколько минут. Когда процесс завершится, вы сможете закрыть это сообщение."
@@ -2578,7 +2490,7 @@
         "Максимальный размер файла может быть не более ${ MAX_IMPORT_FILE_SIZE_STRING } и иметь не более ${ MAX_IMPORT_CONTACTS_STRING } контактов. Если ваш файл больше, то, пожалуйста, разбейте его на меньшие файлы."
       ],
       "Track how many people click on your link, sign up, and become paid subscribers. Watch your free months add up.": [
-        "Отслеживайте, сколько людей переходят по вашей ссылке, регистрируются и становятся платными подписчиками. Следите за тем, как накапливаются ваши бесплатные месяцы."
+        "Отслеживайте, сколько людей переходят по вашей ссылке, регистрируются и становятся подписчиками платных тарифов. Следите за тем, как накапливаются ваши бесплатные месяцы."
       ],
       "You can continue to invite friends, but you wont be able to earn more credits": [
         "Вы можете продолжать приглашать друзей, но не сможете заработать больше кредитов"
@@ -2613,13 +2525,13 @@
         "Я использую другую учетную запись Proton"
       ],
       "Missing feature(s)": [
-        "Отсутствующая(ие) функция(и)"
+        "Не хватает функции(й)"
       ],
       "My reason isn't listed, please comment": [
         "Моя причина не указана, пожалуйста, прокомментируйте"
       ],
       "Streaming service unsupported": [
-        "Служба стриминга не поддерживается"
+        "Служба трансляции не поддерживается"
       ],
       "Subscription is too expensive": [
         "Подписка слишком дорогая"
@@ -2628,7 +2540,7 @@
         "Переход к другому поставщику услуг"
       ],
       "Temporary need, may come back in the future": [
-        "Временная потребность, могу вернуться в будущем"
+        "Временная нехватка средств, могу вернуться в будущем"
       ]
     },
     "Downgrade modal exit survey title": {
@@ -2755,10 +2667,10 @@
         "Ошибка аутентификации."
       ],
       "Automatic replies is a paid feature. Please upgrade to a paid account to use this feature.": [
-        "Автоматические ответы — это платная функция. Пожалуйста, обновитесь до платной учетной записи, чтобы использовать эту функцию."
+        "Автоматические ответы — это платная функция. Улучшите до платного аккаунта, чтобы использовать эту функцию."
       ],
       "Calendar cannot be found": [
-        "Невозможно было найти календарь"
+        "Невозможно найти календарь"
       ],
       "Calendar limit reached": [
         "Достигнут лимит календаря"
@@ -2833,34 +2745,34 @@
         "Неверный пароль"
       ],
       "Invalid ${ name } code": [
-        "Неверный код ${ name }"
+        "Недействительный код ${ name }"
       ],
       "Invalid card number": [
-        "Неверный номер карты"
+        "Недействительный номер карты"
       ],
       "Invalid code": [
-        "Неверный код"
+        "Недействительный код"
       ],
       "Invalid domain": [
         "Недействительный домен"
       ],
       "Invalid expiration date": [
-        "Неверная дата окончания срока действия карты"
+        "Недействительный срок действия"
       ],
       "Invalid invitation link": [
-        "Недействительная ссылка приглашения"
+        "Неверная ссылка на приглашение"
       ],
       "Invalid name": [
         "Недействительное имя"
       ],
       "Invalid postal code": [
-        "Неправильный почтовый индекс"
+        "Недействительный почтовый индекс"
       ],
       "Invalid private key file": [
-        "Неправильный файл секретного ключа"
+        "Недействительный файл закрытого ключа"
       ],
       "Invalid Sieve code": [
-        "Ошибка в Sieve-коде"
+        "Недействительный в Sieve-код"
       ],
       "Invalid verification code": [
         "Неверный проверочный код"
@@ -2905,7 +2817,7 @@
         "Ключ организации не расшифрован."
       ],
       "Organization not recognized. Try again.": [
-        "Организация не распознана. Попробуйте еще."
+        "Организация не распознана. Попробуйте снова."
       ],
       "Passwords do not match": [
         "Пароль и его подтверждение не совпадают"
@@ -2914,7 +2826,7 @@
         "Процесс оплаты отменён"
       ],
       "Payment process consumed": [
-        "Процесс оплаты завершён"
+        "Процесс оплаты завершен"
       ],
       "Payment process failed": [
         "Сбой в процессе оплаты"
@@ -2944,7 +2856,7 @@
         "Пожалуйста, сгенерируйте ключи, прежде чем пытаться изменить пароль"
       ],
       "Please set a recovery email first": [
-        "Пожалуйста, сначала установите резервный адрес электронной почты"
+        "Сначала установите резервный адрес электронной почты"
       ],
       "Please set a recovery phone number first": [
         "Пожалуйста, сначала задайте резервный номер телефона для восстановления"
@@ -2953,7 +2865,7 @@
         "Пожалуйста, сначала задайте адрес электронной почты для восстановления/уведомлений"
       ],
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
-        "Пожалуйста, попробуйте повторить аутентификацию и убедитесь, что права доступа установлены правильно."
+        "Попробуйте повторить аутентификацию и убедитесь, что права доступа установлены правильно."
       ],
       "Please upgrade to a business plan with more than 1 user to get multi-user support": [
         "Пожалуйста, перейдите на бизнес-план с более чем 1 пользователем, чтобы получить многопользовательскую поддержку"
@@ -2986,7 +2898,7 @@
         "Имена некоторых ваших папок недоступны. Пожалуйста, настройте импорт, чтобы изменить эти имена."
       ],
       "Some of your folder names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
-        "Некоторые из ваших имен папок превышают максимальный лимит символов ${ MAIL_APP_NAME }. Пожалуйста, настройте импорт для изменения этих имен."
+        "Некоторые из ваших имен папок превышают максимальное ограничение на количество символов ${ MAIL_APP_NAME }. Пожалуйста, настройте импорт для изменения этих имен."
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "Некоторые из имен ярлыков недоступны. Пожалуйста, настройте импорт, чтобы изменить эти имена."
@@ -3001,7 +2913,7 @@
         "Вкладка закрыта"
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "Ваш браузер не позволяет завершить платеж. Пожалуйста, используйте другой браузер или войдите с компьютера."
+        "Ваш браузер не позволяет полностью авторизировать платеж. Пожалуйста, используйте другой браузер или войдите с компьютера."
       ],
       "The folder name is invalid. Please choose a different name.": [
         "Недопустимое название папки. Пожалуйста, выберите другое название."
@@ -3061,7 +2973,7 @@
         "Неизвестная ошибка"
       ],
       "Unknown payment token status": [
-        "Неизвестный статус платёжного токена"
+        "Неизвестный статус платежного токена"
       ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
         "Загруженный файл не является действительным закрытым ключом. Пожалуйста, проверьте и повторите попытку."
@@ -3082,7 +2994,7 @@
         "Неправильная фраза для восстановления пароля. Попробуйте снова или используйте другой метод восстановления."
       ],
       "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
-        "Неверный проверочный код. Пожалуйста, убедитесь, что правильно скопировали код и попробуйте снова. Вступление изменений в силу может занять до 24 часов."
+        "Недействительный код подтверждения. Пожалуйста, убедитесь, что правильно скопировали код и попробуйте снова. Вступление изменений в силу может занять до 24 часов."
       ],
       "You have lost access to your organization keys. Without restoration you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Вы потеряли доступ к ключам организации. Без восстановления вы не сможете создавать новых пользователей, добавлять адреса к существующим пользователям или получать доступ к неконфиденциальным учётным записям."
@@ -3091,10 +3003,10 @@
         "У вас нет счетов."
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
-        "Вы достигли максимального числа адресов, предусмотренных вашим тарифом. Пожалуйста, повысьте ваш тариф прежде, чем добавлять новые адреса."
+        "Вы достигли максимального числа адресов, предусмотренных вашим тарифом. Улучшите ваш тариф прежде, чем добавлять новые адреса."
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
-        "Вы достигли максимального числа пользователей, предусмотренного вашим тарифом. Пожалуйста, повысьте ваш тариф прежде, чем добавлять нового пользователя."
+        "Вы достигли максимального числа пользователей, предусмотренного вашим тарифом. Пожалуйста, улучшите ваш тариф прежде, чем добавлять нового пользователя."
       ],
       "You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Вы должны активировать ключи организации. Без активации вы не сможете добавлять новых пользователей, адреса для уже существующих пользователей или получать доступ к неконфиденциальным пользовательским учётным записям."
@@ -3296,7 +3208,7 @@
         "Возникла проблема при подключении к Proton."
       ],
       "Too many child sessions, please clear your cookies and sign back in.": [
-        "Слишком много дочерних сессий, пожалуйста, очистите куки и войдите снова."
+        "Слишком много дочерних сессий, пожалуйста, очистите файлы куки и войдите снова."
       ],
       "You may also ${ refresh } or try again later.": [
         "Вы также можете ${ refresh } или повторить попытку позже."
@@ -3398,8 +3310,8 @@
       "${ totalProcessed }/${ totalToProcess } event exported": [
         "${ totalProcessed }/${ totalToProcess } событие экспортировано",
         "${ totalProcessed }/${ totalToProcess } события экспортированы",
-        "${ totalProcessed }/${ totalToProcess } события экспортированы",
-        "${ totalProcessed } событий из ${ totalToProcess } экспортированы"
+        "${ totalProcessed }/${ totalToProcess } событий экспортировано",
+        "${ totalProcessed }/${ totalToProcess } событий экспортировано"
       ],
       "Calendar successfully exported. You can now save the ICS file.": [
         "Календарь успешно экспортирован. Теперь вы можете сохранить файл ICS."
@@ -3461,7 +3373,7 @@
         "Подключение до ${ plusVpnConnections } устройств"
       ],
       "Fastest VPN servers": [
-        "Самые быстрые VPN серверы"
+        "Самые быстрые серверы VPN"
       ],
       "Secure Core servers": [
         "Серверы Secure Core"
@@ -3701,7 +3613,7 @@
         "Значение / Данные"
       ],
       "Value / Data / Points to": [
-        "Значение / Данные / Указывать на"
+        "Значение / Данные / Указывает на"
       ]
     },
     "Hint": {
@@ -3857,16 +3769,16 @@
         "Двухэтапная аутентификация включена в вашем внешнем аккаунте электронной почты."
       ],
       "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
-        "Если ${ bold2StepsDisabled } в Gmail (по умолчанию), убедитесь, что:"
+        "Если ${ bold2StepsDisabled } (настройки Gmail по умолчанию), то убедитесь, что:"
       ],
       "If ${ bold2StepsDisabled } in Gmail (default settings), please make sure that:": [
         "Если ${ bold2StepsDisabled } в Gmail (по умолчанию), убедитесь, что:"
       ],
       "If ${ bold2StepsEnabled } in Gmail, please make sure that you are using your app password instead of your regular password.": [
-        "Если ${ bold2StepsEnabled } в Gmail, пожалуйста, убедитесь, что вы используете ваш пароль приложения, а не обычный пароль."
+        "Если ${ bold2StepsEnabled } в Gmail, пожалуйста, убедитесь, что вы используете свой пароль приложения, а не обычный пароль."
       ],
       "If ${ bold2StepsEnabled }, please make sure that your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "Если ${ bold2StepsEnabled }, пожалуйста, убедитесь, что ваш адрес электронной почты и пароль от приложения правильны. ${ boldNot } используйте ваш обычный пароль."
+        "Если ${ bold2StepsEnabled }, то убедитесь, что ваш адрес электронной почты и пароль от приложения правильны. ${ boldNot } используйте ваш обычный пароль."
       ],
       "IMAP access is enabled in your external account.": [
         "Доступ IMAP включен в вашем внешнем аккаунте."
@@ -3875,7 +3787,7 @@
         "Доступ по протоколу IMAP включен в вашей учетной записи Yahoo."
       ],
       "Invalid IMAP port": [
-        "Недопустимый порт IMAP"
+        "Недействительный порт IMAP"
       ],
       "Proton can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
         "Proton не может подключиться к вашему аккаунту. Пожалуйста, убедитесь, что в Gmail включен IMAP."
@@ -3911,7 +3823,7 @@
         "Используйте ваш пароль приложения вместо обычного пароля, если:"
       ],
       "You can also try to sign out of ${ boldGoogleAccounts } in the browser, then unlock ${ linkCAPTCHA }.": [
-        "Вы также можете попробовать выйти из ${ boldGoogleAccounts } в браузере, затем разблокировать ${ linkCAPTCHA }."
+        "Вы также можете попробовать выйти из ${ boldGoogleAccounts } в браузере, а затем разблокировать ${ linkCAPTCHA }."
       ],
       "Your app password is correct. Do ${ boldNot } use your regular password.": [
         "Ваш пароль приложения правильный. ${ boldNot } используйте свой обычный пароль."
@@ -4074,7 +3986,7 @@
         "настройки безопасности"
       ],
       "shared calendars": [
-        "подписанные календари"
+        "подписанным календарям"
       ],
       "Yahoo": [
         "Yahoo"
@@ -4102,7 +4014,7 @@
     },
     "Import key": {
       "Are you sure you want to import a private key? Importing an insecurely generated or leaked private key can harm the security of your emails.\n\nPlease also note that the public key corresponding to this private key will be publicly available from our key server. If the key contains personal details (such as your full name) which you do not want to publish, please edit the key before importing it.": [
-        "Вы уверены, что хотите импортировать закрытый ключ? Импорт небезопасно сгенерированного или утечка закрытого ключа может нанести вред безопасности вашей электронной почты.\n\nТакже обратите внимание, что открытый ключ, соответствующий этому закрытому ключу, будет находиться в открытом доступе на нашем сервере ключей. Если ключ содержит личные данные (например, ваше полное имя), которые вы не хотите публиковать, пожалуйста, отредактируйте ключ перед его импортом."
+        "Вы уверены, что хотите импортировать закрытый ключ? Импорт небезопасно сгенерированного или утечка закрытого ключа может подорвать безопасность вашей электронной почты.\n\nТакже обратите внимание, что открытый ключ, соответствующий этому закрытому ключу, будет находиться в открытом доступе на нашем сервере ключей. Если ключ содержит личные данные (например, ваше полное имя), которые вы не хотите публиковать, пожалуйста, отредактируйте ключ перед его импортом."
       ]
     },
     "Import provider": {
@@ -4136,7 +4048,7 @@
         "Приостановлено"
       ],
       "Started": [
-        "Запущен"
+        "Начато"
       ]
     },
     "Import type": {
@@ -4202,7 +4114,7 @@
         "${ calendarsToBeMergedCount } объединенный(х) календарь(я,ей)"
       ],
       "${ emailAddress } is invalid": [
-        "Адрес ${ emailAddress } недопустимый"
+        "Адрес ${ emailAddress } недействительный"
       ],
       "${ firstRemainingCalendarName } will be set as default calendar.": [
         "${ firstRemainingCalendarName } будет установлен в как календарь по умолчанию."
@@ -4337,7 +4249,7 @@
         "+${ organization.BonusVPN } подключение для ${ VPN_APP_NAME } (позволяет подключить больше устройств к VPN)",
         "+${ organization.BonusVPN } подключения для ${ VPN_APP_NAME } (позволяет подключить больше устройств к VPN)",
         "+${ organization.BonusVPN } подключений для ${ VPN_APP_NAME } (позволяет подключить больше устройств к VPN)",
-        "+${ organization.BonusVPN } подключения для ${ VPN_APP_NAME } (позволяет подключить больше устройств к VPN)"
+        "+${ organization.BonusVPN } подключений для ${ VPN_APP_NAME } (позволяет подключить больше устройств к VPN)"
       ],
       "1. Invite friends to Proton": [
         "1. Пригласите друзей в Proton"
@@ -4367,7 +4279,7 @@
         "Фразу для восстановления доступа к учетной записи позволит вам зайти в ваш аккаунт и восстановить ваши зашифрованные сообщения, если вы забудете ваш пароль."
       ],
       "A user is an account associated with a single username, mailbox, and person": [
-        "Пользователь – это учетная запись, связанная с одним именем пользователя, почтовым ящиком, и лицом"
+        "Пользователь – это учетная запись, связанная с одним именем пользователя, почтовым ящиком и лицом"
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Доступ к учётной записи ограничен из-за неоплаченных счетов. Пожалуйста, обратитесь к вашему администратору."
@@ -4385,7 +4297,7 @@
         "Учётная запись успешно обновлена"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
-        "Добавьте адрес электронной почты @pm.me в вашу учетную запись. Этот простой и короткий домен означает \"${ MAIL_APP_NAME } me\" или \"Личное сообщение мне\""
+        "Добавьте адрес электронной почты @pm.me в ваш аккаунт. Этот простой и короткий домен означает \"${ MAIL_APP_NAME } мне\" или \"Личное сообщение мне\""
       ],
       "Add a recovery email address": [
         "Добавить адрес эл. почты для восстановления доступа"
@@ -4556,16 +4468,16 @@
         "Счет выставляется в конце текущего платежного цикла (продлевается ${ renewalDate })"
       ],
       "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
-        "Транзакции Bitcoin могут занять некоторое время для подтверждения (до 24 часов). Сразу после подтверждения мы добавим кредиты на ваш счёт. После подтверждения транзакции вы сможете оплатить свой счёт кредитами."
+        "Транзакции Bitcoin могут занять некоторое время для подтверждения (до 24 часов). Сразу после подтверждения мы добавим кредиты на ваш счет. После подтверждения транзакции вы сможете оплатить свой счет кредитами."
       ],
       "Black Friday 2018 applied to your subscription": [
         "Черная пятница — 2018 применена к вашей подписке"
       ],
       "Black Friday 2019 applied to your subscription": [
-        "Чёрная пятница 2019 применена к вашей подписке"
+        "Черная пятница 2019 применена к вашей подписке"
       ],
       "Black Friday 2020 newcomer discount has been applied": [
-        "Мы применили скидку для новых пользователей на черную пятницу 2020"
+        "Скидка для новых пользователей \"Черная пятница 2020\" была применена"
       ],
       "Blocks senders from seeing if and when you opened a message.": [
         "Запрещает отправителям видеть, открывали ли вы сообщение и когда."
@@ -4619,7 +4531,7 @@
         "Создайте ярлык для импортированных сообщений, укажите диапазон времени для этого импорта и ярлыки, которые вы хотите импортировать."
       ],
       "Create a link to your calendar and share it with anyone outside Proton. Only you can add or remove events.": [
-        "Создайте ссылку на свой календарь и делитесь ею с кем-либо за пределами Proton. Только вы можете добавлять или удалять события."
+        "Создайте ссылку на свой календарь и поделитесь ею с кем угодно за пределами Proton. Только вы можете добавлять или удалять события."
       ],
       "Create a new account and share the email address and password with the user.": [
         "Создайте новый аккаунт и сообщите пользователю адрес электронной почты и пароль."
@@ -4634,13 +4546,13 @@
         "Создать в"
       ],
       "Creating your account": [
-        "Создание учетной записи"
+        "Создание вашего аккаунта"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Остаток на счете для неиспользованной части подписки на предыдущий тариф"
       ],
       "Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.": [
-        "В настоящее время все хранилище принадлежит аккаунту администратора. Пожалуйста, уменьшите выделенный для него объем, чтобы освободить место для дополнительных пользователей. Вы можете увеличить общий объем хранилища в любое время, выбрав другой тариф."
+        "В настоящее время все доступное хранилище выделено для учетной записи администратора. Пожалуйста, уменьшите объем выделенного для учетной записи администратора пространства, чтобы освободить место для дополнительных пользователей. Вы можете увеличить общий объем хранилища в любое время, улучшив свою учетную запись."
       ],
       "Custom": [
         "Пользовательский"
@@ -4700,7 +4612,7 @@
         "Готово! Мы отправили код на ${ destination }."
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
-        "При переходе на более дешевую версию все подключения к платными службам ${ VPN_APP_NAME } будут прерваны."
+        "При переходе на более дешевую версию все подключения к платными серверам ${ VPN_APP_NAME } будут прерваны."
       ],
       "Download recovery file": [
         "Скачать файл восстановления"
@@ -4718,7 +4630,7 @@
         "Для загрузки файла перетащите его сюда"
       ],
       "Earned ${ rewards } of ${ rewardsLimit } ${ planName } months.": [
-        "Получено ${ rewards } из ${ rewardsLimit } ${ planName } $ месяцев."
+        "Получено ${ rewards } из ${ rewardsLimit } месяцев ${ planName }."
       ],
       "Edit label": [
         "Изменить ярлык"
@@ -4733,7 +4645,7 @@
         "Почтовый хостинг для 10 своих почтовых доменов включен бесплатно. Дополнительные домены могут быть добавлены за ${ price }."
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through Proton. You can host email for domains registered on any domain registrar.": [
-        "Почтовый хостинг доступен только для доменов, которые уже ваши. Регистрация доменов пока недоступна через Proton. Вы можете настраивать почту для доменов, зарегистрированных у любого регистратора доменных имен."
+        "Хостинг электронной почты доступен только для доменов, которыми вы уже владеете. Регистрация доменов через Proton в настоящее время недоступна. Вы можете разместить электронную почту для доменов, зарегистрированных у любого регистратора доменов."
       ],
       "Emailing preference saved": [
         "Настройки отправки почты сохранены"
@@ -4757,7 +4669,7 @@
         "Введите код, отправленный на ваш номер телефона ${ phone }."
       ],
       "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
-        "Введите код, который был отправлен на ${ email }. Если вы не нашли письмо в папке \"Входящие\", пожалуйста, проверьте папку \"Спам\"."
+        "Введите код, который был отправлен на ${ email }. Если вы не нашли письмо в папке \"Входящие\", проверьте папку \"Спам\"."
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Введите учетные данные аккаунта электронной почты, из которого вы хотите импортировать данные."
@@ -4772,10 +4684,10 @@
         "Введите подробности своей учетной записи ${ BRAND_NAME }."
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
-        "Введите эл. адрес вашей учётной записи или имя пользователя ${ BRAND_NAME }."
+        "Введите электронный адрес вашего аккаунта или имя пользователя ${ BRAND_NAME }."
       ],
       "Enter your login password to confirm your identity.": [
-        "Для подтверждения своих личный данных введите пароль для входа."
+        "Для подтверждения своих личных данных введите пароль для входа."
       ],
       "Enter your own password (as organization admin) and new password for this user ${ Name } (${ Email }).": [
         "Введите свой собственный пароль (как администратора организации) и новый пароль для этого пользователя ${ Name } (${ Email })."
@@ -4829,7 +4741,7 @@
         "здесь"
       ],
       "Hides identifying information by loading remote content through a proxy. Option to store content as attachments.": [
-        "Скрывает идентификационную информацию, загружая внешнее содержимое через прокси-сервер. Возможность сохранения содержимого в виде вложений."
+        "Скрывает идентификационную информацию, загружая внешнее содержимое через прокси-сервер. Возможность сохранения содержимого как вложений."
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Если другой администратор изменил этот пароль, вам нужно будет спросить у него новый пароль организации."
@@ -4853,7 +4765,7 @@
         "Если сообщения нет в папке \"Входящие\", проверьте, не попало ли оно в папку «Спам»."
       ],
       "If you have a custom domain with ${ MAIL_APP_NAME }, you can set a catch-all email address to receive messages sent to your domain but to an invalid email address (e.g., because of typos).": [
-        "Если у вас есть свой домен с ${ MAIL_APP_NAME }, вы можете задать универсальный адрес электронной почты для получения сообщений, отправленных на ваш домен, но на недопустимый адрес электронной почты (например, из-за опечаток)."
+        "Если у вас есть свой домен с ${ MAIL_APP_NAME }, вы можете установить адеса электронной почты для приема всех сообщений, отправленных на ваш домен, но на недействительный адрес электронной почты (например, из-за опечаток)."
       ],
       "If you have a gift code, enter it below to apply your discount.": [
         "Если у вас есть подарочный код, введите его ниже, чтобы применить скидку."
@@ -4874,10 +4786,10 @@
         "Если вы потеряете своё устройство для 2ФА, то эти коды могут быть использованы вместо 6-значного кода двухфакторной аутентификации, чтобы войти в вашу учётную запись. Каждый код может быть использован только единожды."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
-        "Если вы продолжите переход на более дешевую версию, то вы потеряете доступ к платным функциям ${ MAIL_APP_NAME } и ${ VPN_APP_NAME }."
+        "Если вы продолжите переход на более дешевую версию, то вы потеряете доступ к ${ MAIL_APP_NAME } и платным функциям ${ VPN_APP_NAME }."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } paid features, including additional storage and filters.": [
-        "Если вы продолжите переход на более дешевую версию, то вы потеряете доступ к платным функциям ${ MAIL_APP_NAME }, включая дополнительные хранилища и фильтры."
+        "Если вы продолжите переход на более дешевую версию, то потеряете доступ к платным функциям ${ MAIL_APP_NAME }, включая дополнительное место в хранилище и фильтры."
       ],
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "Если вы продолжите переход на более дешевую версию, то вы потеряете доступ к платным функциям ${ VPN_APP_NAME }."
@@ -4886,7 +4798,7 @@
         "Если вы недавно сбросили пароль, для разблокировки данных можно воспользоваться методом восстановления данных"
       ],
       "If you want to keep an existing SPF record, you can just add ${ spf } to it after the ${ spfValue }. Do not create multiple SPF records.": [
-        "Если вы хотите оставить существующую запись SPF, то вы можете просто добавить ${ spf } к ней после ${ spfValue }. Не создавайте записей SPF."
+        "Если вы хотите оставить существующую запись SPF, то вы можете просто добавить ${ spf } к ней после ${ spfValue }. Не создавайте несколько записей SPF."
       ],
       "If you wish to combine this account with another one, do NOT delete it.": [
         "Если вы хотите объединить эту учетную запись с другой, НЕ удаляйте ее."
@@ -4982,7 +4894,7 @@
         "это обязательно"
       ],
       "I’ve been using ${ appName } and thought you might like it. It’s a secure email service that protects your privacy. Sign up with this link to get 1 month of premium features for free: ${ referrerLink }": [
-        "Я использую ${ appName } и подумал, что оно может вам понравиться. Это безопасная служба электронной почты, которая защищает вашу конфиденциальность. Зарегистрируйтесь по этой ссылке, чтобы получить платные функции на 1 месяц бесплатно: ${ referrerLink }"
+        "Я использую ${ appName } и подумал, что оно может вам понравиться. Это защищенная служба электронной почты, которая защищает вашу конфиденциальность. Зарегистрируйтесь по этой ссылке, чтобы получить платные функции на 1 месяц бесплатно: ${ referrerLink }"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Просто подтвердите свой выбор, а остальное мы сделаем сами."
@@ -5126,7 +5038,7 @@
         "Не задано"
       ],
       "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
-        "Не ваше устройство? Используйте окно приватного просмотра для входа в систему и закройте его по завершении. ${ learnMore }"
+        "Не ваше устройство? Используйте окно приватного просмотра браузера для входа в систему и закройте его по завершении. ${ learnMore }"
       ],
       "Number of users": [
         "Количество пользователей"
@@ -5135,7 +5047,7 @@
         "из"
       ],
       "One account for all ${ BRAND_NAME } services.": [
-        "Один аккаунт для всех сервисов ${ BRAND_NAME }."
+        "Один аккаунт для всех служб ${ BRAND_NAME }."
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Изменяйте эти настройки только в том случае, если используете PGP для переписки с получателями вне ${ BRAND_NAME }."
@@ -5174,10 +5086,10 @@
         "P2P"
       ],
       "Paid for a ${ rewardMonths } month plan": [
-        "Оплачен ${ rewardMonths } месячный тариф",
-        "Оплачено ${ rewardMonths } месячных тарифов",
-        "Оплачено ${ rewardMonths } месячных тарифов",
-        "Оплачено ${ rewardMonths } месячных тарифов"
+        "Оплачен тариф за ${ rewardMonths } месяц",
+        "Оплачен тариф за ${ rewardMonths } месяца",
+        "Оплачен тариф за ${ rewardMonths } месяцев",
+        "Оплачен тариф за ${ rewardMonths } месяцев"
       ],
       "Paid for a monthly plan": [
         "Оплачен тариф на месяц"
@@ -5216,7 +5128,7 @@
         "Пожалуйста, обратите внимание, что если вы удалите этот фильтр, мы перестанем обрабатывать все автоматические действия, которые он запускает."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
-        "Пожалуйста, учтите, что после нажатия на кнопку \"Подтвердить\" в аккаунте останется ${ creditsRemaining } кредитов."
+        "Пожалуйста, учтите, что после нажатия на кнопку \"Подтвердить\" в аккаунте останется ${ creditsRemaining } кредитов на счету."
       ],
       "Please provide an email address in case we need to contact you.": [
         "Пожалуйста, укажите адрес электронной почты для случая, если нам понадобится связаться с вами."
@@ -5273,16 +5185,16 @@
         "Поставлено в очередь"
       ],
       "read our two-factor authentication guide first": [
-        "Сначала прочитайте наше Руководство по двухфакторной аутентификации"
+        "сначала прочитайте наше руководство по двухфакторной аутентификации"
       ],
       "Recovery file downloaded": [
-        "Файл восстановления загружен"
+        "Файл восстановления скачан"
       ],
       "Recovery files have been voided": [
         "Файлы восстановления были уничтожены"
       ],
       "recovery method": [
-        "способ восстановления"
+        "метод восстановления"
       ],
       "Recovery phrase copied to clipboard": [
         "Фраза для восстановления доступа к учетной записи скопирована в буфер обмена"
@@ -5291,7 +5203,7 @@
         "Фраза восстановления загружена"
       ],
       "Recovery phrase has been disabled": [
-        "Фраза для восстановления доступа к учетной записи была отключена"
+        "Фраза восстановления была отключена"
       ],
       "Recovery phrase is not associated with any keys.": [
         "Фраза восстановления не связана ни с одним ключом."
@@ -5318,7 +5230,7 @@
         "Сохраните свой пароль в безопасном месте. Нажмите на значок, чтобы подтвердить правильность ввода пароля."
       ],
       "Scan QR code instead": [
-        "Сканировать QR-код"
+        "Вместо этого отсканируйте QR-код"
       ],
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Чтобы настроить свою учётную запись, просканируйте этот код своим устройством двухфакторной аутентификации. ${ switchButton }."
@@ -5327,7 +5239,7 @@
         "Защита вашей учетной записи"
       ],
       "Select a service provider to start": [
-        "Выберите поставщика услуг для начала работы"
+        "Выберите поставщика услуг, чтобы начать"
       ],
       "Select what you want to import from Google.": [
         "Выберите, что вы хотите импортировать из Google."
@@ -5357,10 +5269,10 @@
         "Показать исходное сообщение"
       ],
       "Signed up": [
-        "Подписан"
+        "Зарегистрировано"
       ],
       "Signed up via your link": [
-        "Зарегистрировался по вашей ссылке"
+        "Зарегистрировалось по вашей ссылке"
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Так как вы наш постоянный пользователь, для вашего аккаунта появился дополнительный функционал."
@@ -5375,10 +5287,10 @@
         "Хранилище, выделенное другим пользователям в этой организации"
       ],
       "Storage allocated to this user": [
-        "Хранилище, выделенное данному пользователю"
+        "Хранилище, выделенное этому пользователю"
       ],
       "Storage for users": [
-        "Дисковое пространство для пользователей"
+        "Хранилище для пользователей"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         "Место для хранения совместно используется ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } и ${ DRIVE_APP_NAME }."
@@ -5426,7 +5338,7 @@
         "Имя будет видно вашим пользователям, когда они войдут в систему."
       ],
       "The securest way to browse, stream, and be online.": [
-        "Самый безопасный способ просматривать сайты, вести трансляции и быть онлайн."
+        "Самый безопасный способ просматривать веб-страницы, смотреть трансляции и находиться онлайн."
       ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Эти файлы конфигурации позволяют выбрать сервер ${ VPN_APP_NAME } для подключения при использовании стороннего приложения VPN или настройки подключения к VPN на маршрутизаторе."
@@ -5477,7 +5389,7 @@
         "Это также отключит любой метод двухфакторной аутентификации, связанный с этим аккаунтом."
       ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
-        "Это действие отменит текущую платную подписку, и вы потеряете все накопленные вами льготы. Остаток вашей подписки будет возвращен в виде кредита по счету."
+        "Это приведет к отмене вашей текущей платной подписки, и вы потеряете все накопленные вами преимущества лояльности. Оставшаяся сумма подписки будет возвращена в виде остатка на счету."
       ],
       "This will create an encryption key for your organization. 4096-bit keys only work on high performance computers, for most users, we recommend using 2048-bit keys.": [
         "Это действие создаст ключ шифрования для вашей организации. 4096-битные ключи работают только на высокопроизводительных компьютерах. Большинству пользователей мы рекомендуем использовать 2048-битные ключи."
@@ -5495,7 +5407,7 @@
         "Это навсегда удалит данные и все адреса электронной почты, связанные с этим пользователем."
       ],
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
-        "Это действие навсегда удалит ваш аккаунт и все данные. Вы не сможете восстановить этот аккаунт."
+        "Это приведет к окончательному удалению вашего аккаунта и всех его данных. Вы не сможете повторно активировать этот аккаунт."
       ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Это заменит ваш временный пароль. Вы будете использовать его для доступа к вашему аккаунту в ${ BRAND_NAME } в будущем."
@@ -5546,10 +5458,10 @@
         "Чтобы защитить ваше интернет-соединение, скачайте и установите приложение ${ VPN_APP_NAME } для вашего устройства и подключитесь к серверу ${ VPN_APP_NAME }."
       ],
       "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
-        "Для правильной работы каждый фильтр должен содержать как минимум имя и допустимый скрипт Sieve. Вы можете ${ link }."
+        "Для правильной работы каждый фильтр должен содержать как минимум имя и действительный скрипт Sieve. Вы можете ${ link }."
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
-        "Пополняйте свой счёт кредитами, которые вы можете использовать для подписки на новый тариф или продления своего текущего тарифа. Вы получаете один кредит за каждый потраченный ${ i18nCurrency }."
+        "Пополняйте свой счет кредитами, которые вы можете использовать для подписки на новый тариф или продления своего текущего тарифа. Вы получаете один кредит за каждый потраченный ${ i18nCurrency }."
       ],
       "Tor": [
         "Tor"
@@ -5558,7 +5470,7 @@
         "Всего адресов электронной почты"
       ],
       "Total storage": [
-        "Общий объем хранения"
+        "Общий объем хранилища"
       ],
       "Total supported domains": [
         "Всего поддерживаемых доменов"
@@ -5630,10 +5542,10 @@
         "Проверка может занять несколько минут."
       ],
       "Verification will open a new tab, please disable any popup blockers.": [
-        "Подтверждение откроет новую вкладку, пожалуйста, отключите блокировку всплывающих окон."
+        "Подтверждение откроет новую вкладку, отключите блокировку всплывающих окон."
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
-        "Проверка будет происходить в новой вкладке. Пожалуйста, отключите блокировщики всплывающих окон. Мы не будем снимать ваши средства — любая сумма, используемая для проверки вашей карты, будет немедленно возвращена."
+        "Проверка будет происходить в новой вкладке. Отключите блокировщики всплывающих окон. Мы не будем снимать ваши средства. Любая сумма, используемая для проверки вашей карты, будет немедленно возвращена."
       ],
       "Verifying your payment": [
         "Подтверждение вашего платежа"
@@ -5660,7 +5572,7 @@
         "Мы используем 3-D Secure для защиты ваших платежей."
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
-        "Для завершения транзакции мы откроем новую вкладку браузера и перенаправим вас на сайт PayPal. Если вы используете блокировщики всплывающих окон, то, пожалуйста, отключите их."
+        "Для завершения транзакции мы откроем новую вкладку браузера и перенаправим вас на сайт PayPal. Если вы используете блокировщики всплывающих окон, то, пожалуйста, отключите их перед тем, как продолжить."
       ],
       "We'll notify you when the import is done.": [
         "Мы уведомим вас, когда импорт будет завершен."
@@ -5687,7 +5599,7 @@
         "Мы отправим код сброса на номер телефона, который вы указали для восстановления аккаунта."
       ],
       "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
-        "Мы переводим ваш текущий тариф на улучшенный тариф, который предлагает больше за ту же цену. Пока наши системы обновляются, вы не сможете его изменить. Мы сообщим вам по электронной почте, как только это будет сделано."
+        "Мы переводим ваш текущий тариф на улучшенный, который предлагает больше за ту же цену. Пока наши системы обновляются, вы не сможете его изменить. Мы сообщим вам по электронной почте, как только это будет сделано."
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Если отключено, то предотвращает загрузку изображений на вашем устройстве без вашего ведома."
@@ -5702,7 +5614,7 @@
         "При продлении вашей подписки мы сначала используем любой доступный баланс и только после этого списываем недостающую сумму через вышеуказанный способ оплаты."
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
-        "Без активации вы не сможете создавать новых пользователей, добавлять адреса к существующим пользователям или получать доступ к неконфиденциальным учётным записям."
+        "Без активации вы не сможете создавать новых пользователей, добавлять адреса к существующим пользователям или получать доступ к нечастным аккаунтам."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Вы хотите получить новый код подтверждения или использовать альтернативный метод проверки?"
@@ -5735,7 +5647,7 @@
         "Вы можете проверить процесс ${ importProgressLink }."
       ],
       "You can customize and download your invoices for accounting purposes.": [
-        "Вы можете настраивать и скачивать свои счета, чтобы вести учет расходов."
+        "Вы можете настраивать и загружать свои счета для бухгалтерского учета."
       ],
       "You can enable authentication logging to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "Вы можете включить журналы аутентификации, чтобы видеть когда и с какого IP-адреса производился доступ к аккаунту. Мы будем записывать IP-адреса, которые имели доступ к учетной записи, а также время посещения и неудачные попытки входа."
@@ -5744,7 +5656,7 @@
         "Вы можете импортировать один тип данных за один раз."
       ],
       "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
-        "Теперь вы можете получать сообщения на свой адрес @pm.me. Перейдите на платный тариф, чтобы также отправлять письма, используя свой адрес @pm.me, и создавать дополнительные адреса @pm.me."
+        "Теперь вы можете получать сообщения на свой адрес @pm.me. Перейдите на платный тариф, чтобы еще отправлять письма, используя свой адрес @pm.me, и создавать дополнительные адреса @pm.me."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Вы можете включить уведомления, чтобы получать оповещения при появлении новых сообщений в этой папке."
@@ -5759,13 +5671,13 @@
         "Вы не можете отправить более ${ emailSendLimitNumber } приглашений по электронной почте в течение следующих 24 часов"
       ],
       "You cannot refer ${ appName } users": [
-        "Вы не можете привлечь пользователей ${ appName }"
+        "Вы не можете пригласить пользователей ${ appName }"
       ],
       "You cannot use the OpenVPN / IKEv2 credentials to log in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
         "Вы не можете использовать учётные данные OpenVPN / IKEv2 для входа в приложения ${ VPN_APP_NAME } или панель управления ${ VPN_APP_NAME }.\n${ learnMore }"
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
-        "Вы не задали способ восстановления доступа, поэтому, если вы забудете пароль, восстановление аккаунта будет невозможно. Продолжить без способа восстановления?"
+        "Вы не задали способ восстановления доступа, поэтому, если вы забудете пароль, восстановление аккаунта будет невозможно. Продолжить без метода восстановления?"
       ],
       "You have no personal calendars to export.": [
         "У вас нет личных календарей для экспорта."
@@ -5780,7 +5692,7 @@
         "Вы должны отключить или удалить всех дополнительных пользователей ${ MAIL_APP_NAME }, адреса и свои доменты перед переходом на более дешевую версию."
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
-        "Чтобы использовать PayPal в качестве способа оплаты вы должны привязать банковскую карту или банковский счет к вашей учетной записи PayPal."
+        "Чтобы добавить PayPal в качестве способа оплаты вы должны привязать банковскую карту или банковский счет к вашей учетной записи PayPal."
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "Вам необходимо связать кредитную карту или банковский счет с вашим счетом PayPal. Если ваш счет PayPal не имеет такой привязки, пожалуйста, нажмите на кнопку ниже."
@@ -5798,7 +5710,7 @@
         "Для импорта событий из ICS необходимо иметь активный личный календарь."
       ],
       "You need to have an active personal calendar to import your events.": [
-        "Вам нужен активный календарь, чтобы начать импорт событий."
+        "Вам нужен активный личный календарь, чтобы начать импорт событий."
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Вы достигли ${ spaceDisplayed }% емкости вашего хранилища. ${ freeUpMessage } ${ upgradeLink }"
@@ -5810,7 +5722,7 @@
         "Вам следует экспортировать резервную копию этого ключа на случай, если вам понадобится восстановить зашифрованные им данные."
       ],
       "You still need to reply to invitations for the host to see your response.": [
-        "Вам по-прежнему нужно отвечать на приглашения, чтобы приглашающая сторона увидела ваш ответ."
+        "Вам все еще нужно ответить на приглашения, чтобы приглашающая сторона увидела ваш ответ."
       ],
       "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
         "Вы ${ loseAllData } в своем аккаунте ${ BRAND_NAME }. Для восстановления доступа вам нужно будет ввести свой старый пароль."
@@ -5825,7 +5737,7 @@
         "Скоро вы будете перенаправлены на сайт PayPal для подтверждения вашего платежа."
       ],
       "You won't be able to recover encrypted data after an account reset using your downloaded recovery files.": [
-        "Вы не сможете восстановить зашифрованные данные после сброса учетной записи с помощью загруженных файлов восстановления."
+        "Вы не сможете восстановить зашифрованные данные после сброса аккаунта с помощью скачанных файлов восстановления."
       ],
       "You'll stay signed in even after you close the browser.": [
         "Вы сохраните авторизацию даже после закрытия браузера."
@@ -5837,7 +5749,7 @@
         "Ваш аккаунт ${ BRAND_NAME } связан с ${ externalEmailAddress }. Чтобы использовать ${ toAppName }, вам необходим адрес ${ MAIL_APP_NAME }."
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
-        "Ваши аккаунты ${ VPN_APP_NAME } и ${ MAIL_APP_NAME } связаны между собой. Чтобы удалить их оба, войдите в систему по ссылке: ${ loginLink } и удалите там свой аккаунт."
+        "Ваши аккаунты ${ VPN_APP_NAME } и ${ MAIL_APP_NAME } связаны между собой. Чтобы удалить оба из них, войдите в систему по ссылке: ${ loginLink } и удалите по ней свой аккаунт."
       ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
         "Для вашей учетной записи есть по крайней мере один просроченный счет. Ваш доступ был ограничен. ${ payInvoiceLink }"
@@ -5873,7 +5785,7 @@
         "Ваш адрес электронной почты будет использован для этой разовой проверки."
       ],
       "Your existing ${ BRAND_NAME } account can be used to access all ${ BRAND_NAME } services. Please sign in with ${ email }.": [
-        "Ваш аккаунт ${ BRAND_NAME } можно использовать для доступа ко всем сервисам ${ BRAND_NAME }. Пожалуйста, войдите с ${ email }."
+        "Ваш аккаунт ${ BRAND_NAME } можно использовать для доступа ко всем службам ${ BRAND_NAME }. Пожалуйста, войдите с ${ email }."
       ],
       "Your import from ${ delayedImport.Account } is temporarily delayed.": [
         "Ваш импорт из ${ delayedImport.Account } временно отложен."
@@ -5891,7 +5803,7 @@
         "Письма вашей организации защищены сквозным шифрованием с применением ключа организации. Этот отпечаток можно использовать для проверки того, что у всех администраторов в вашей учётной записи есть один и тот же ключ."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
-        "Ваши платежные данные защищены шифрованием TLS и законами о конфиденциальности Швейцарии."
+        "Ваши платежные данные защищены шифрованием TLS и законами о Швейцарии о частной жизни."
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Ваш номер телефона будет использоваться только для этой разовой проверки."
@@ -5914,7 +5826,7 @@
     },
     "info": {
       "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Обнаружены дополнительные дубликаты ключей. Для получения дополнительной информации загрузите, пожалуйста, по отдельности."
+        "Обнаружены дополнительные дубликаты ключей. Для получения дополнительной информации загрузите их по отдельности."
       ],
       "Create an email address": [
         "Создайте адрес электронной почты"
@@ -5926,7 +5838,7 @@
         "День 30: Пробный период заканчивается"
       ],
       "Enjoy secure, easy-to-use emailing with plenty of premium features.": [
-        "Наслаждайтесь защищенной, простой в использовании электронной почтой с множеством функций премиум-класса."
+        "Пользуйтесь безопасной и простой в использовании электронной почтой с множеством платных функций."
       ],
       "Key ${ fingerprint } has already been uploaded": [
         "Ключ ${ fingerprint } уже был загружен"
@@ -5938,13 +5850,13 @@
         "Попробуйте Почту Plus"
       ],
       "We’ll email you before your trial ends. Cancel anytime.": [
-        "Мы отправим вам электронное письмо до окончания пробного периода. Вы можете это отменить в любое время."
+        "Мы отправим вам электронное письмо до окончания пробного периода. Отменить его вы можете в любое время."
       ],
       "Your new email address is ready to go!": [
         "Ваш новый адрес электронной почты готов к работе!"
       ],
       "Your subscription starts on ${ startText }.": [
-        "Ваша подписка начинается с ${ startText }."
+        "Ваша подписка начинается ${ startText }."
       ]
     },
     "Info - folder colouring feature": {
@@ -5965,7 +5877,7 @@
         "Добавить нового пользователя в вашу организацию и создать для него адрес."
       ],
       "For security reasons, we need to verify that you are the owner of ${ domainName }. Please add the following DNS TXT record to your domain. This can typically be done in the control panel of your domain name registrar.": [
-        "Из соображений безопасности мы должны убедиться, что вы являетесь владельцем ${ domainName }. Пожалуйста, добавьте следующую TXT-запись DNS в свой домен. Обычно это можно сделать в панели управления доменом у вашего регистратора."
+        "Из соображений безопасности мы должны убедиться, что вы являетесь владельцем ${ domainName }. Пожалуйста, добавьте следующую записьTXT DNS в свой домен. Обычно это можно сделать в панели управления доменом у вашего регистратора."
       ]
     },
     "Info for members section": {
@@ -5995,10 +5907,10 @@
     },
     "Invoice state display as badge": {
       "Billed": [
-        "Счёт выставлен"
+        "Счет выставлен"
       ],
       "Gifted": [
-        "Подарочный"
+        "Подарено"
       ],
       "Paid": [
         "Оплачено"
@@ -6007,7 +5919,7 @@
         "Не оплачено"
       ],
       "Void": [
-        "Аннулирован"
+        "Аннулировано"
       ]
     },
     "Invoice type display as badge": {
@@ -6018,7 +5930,7 @@
         "Отмена"
       ],
       "Chargeback": [
-        "Возврат платежа"
+        "Списано"
       ],
       "Credit": [
         "Кредит"
@@ -6033,10 +5945,10 @@
         "Другое"
       ],
       "Refund": [
-        "Возврат средств"
+        "Возвращено"
       ],
       "Renewal": [
-        "Продление"
+        "Продлено"
       ],
       "Subscription": [
         "Подписка"
@@ -6047,22 +5959,22 @@
         "Ключ с таким же алгоритмом шифрования уже существует. Генерация другого ключа приведет к замедлению загрузки аккаунта. Вы уверены, что хотите продолжить?"
       ],
       "A key with the same encryption algorithm is already active for this address. Generating another key will cause slower account loading and deletion of this key can cause issues. If you are generating a new key because your old key is compromised, please mark that key as compromised. Are you sure you want to continue?": [
-        "Для этого адреса уже активен ключ с тем же алгоритмом шифрования. Генерация другого ключа приведет к замедлению загрузки аккаунта, а удаление этого ключа может вызвать проблемы. Если вы генерируете новый ключ, потому что ваш старый ключ был взломан, пожалуйста, отметьте этот ключ как взломанный. Вы уверены, что хотите продолжить?"
+        "Для этого адреса уже активен ключ с тем же алгоритмом шифрования. Генерация другого ключа приведет к замедлению загрузки аккаунта, а удаление этого ключа может вызвать проблемы. Если вы генерируете новый ключ, потому что ваш старый ключ был раскрыт, отметьте этот ключ как раскрытый. Вы уверены, что хотите продолжить?"
       ],
       "Generate key": [
         "Сгенерировать ключ"
       ],
       "Key with fingerprint ${ fp } successfully created.": [
-        "Ключ с отпечатком пальца ${ fp } успешно создан."
+        "Ключ с цифровым отпечатком ${ fp } успешно создан."
       ],
       "The encryption keys are being generated. This may take several minutes and temporarily freeze your browser.": [
-        "Идет генерация ключей шифрования. Это может занять несколько минут и временно остановить работу браузера."
+        "Идет генерация ключей шифрования. Это может занять несколько минут и временно остановить работу вашего браузера."
       ],
       "The encryption keys for your address are being generated. This may take several minutes and temporarily freeze your browser.": [
         "В настоящее время генерируются ключи шифрования для вашего адреса. Это может занять несколько минут и временно остановить работу вашего браузера."
       ],
       "You can generate a new encryption key if you think your previous key has been compromised.": [
-        "Вы можете сгенерировать новый ключ шифрования, если считаете, что предыдущий ключ был взломан."
+        "Вы можете сгенерировать новый ключ шифрования, если считаете, что предыдущий ключ был раскрыт."
       ]
     },
     "Key state badge": {
@@ -6087,10 +5999,10 @@
     },
     "Key type option": {
       "${ compatibility } RSA 4096-bit (Slower, but increased compatibility with legacy software)": [
-        "${ compatibility } RSA 4096-bit (Медленнее, но совместимость с устаревшим программным обеспечением лучше)"
+        "${ compatibility } RSA 4096-bit (Медленнее, но улучшена совместимость с устаревшим программным обеспечением)"
       ],
       "${ stateOfTheArt } ECC Curve25519 (Fastest, most modern)": [
-        "${ stateOfTheArt } X25519 (Самое быстрое, самое современное)"
+        "${ stateOfTheArt } ECC Curve25519 (Самое быстрое, самое современное)"
       ]
     },
     "Keyboard shortcut name": {
@@ -6276,7 +6188,7 @@
         "Удалить"
       ],
       "Disables encryption with this key": [
-        "Отключает возможность шифрования этим ключом"
+        "Отключает шифрование этим ключом"
       ],
       "Disables signature verification and encryption with this key": [
         "Отключает проверку подписи и возможность шифрования этим ключом"
@@ -6285,7 +6197,7 @@
         "Включить возможность шифрования этим ключом"
       ],
       "Enable signature verification and encryption with this key": [
-        "Включить проверку подписи и возможность шифрования этим ключом"
+        "Включить проверку подписи и шифрование этим ключом"
       ],
       "Export": [
         "Экспорт"
@@ -6297,16 +6209,16 @@
         "Сделать основным"
       ],
       "Mark compromised": [
-        "Пометить скомпрометированным"
+        "Пометить как раскрытый"
       ],
       "Mark not compromised": [
-        "Снять пометку о компрометации"
+        "Пометить как нераскрытый"
       ],
       "Mark not obsolete": [
-        "Снять пометку об устаревании"
+        "Пометить как не устаревший"
       ],
       "Mark obsolete": [
-        "Пометить устаревшим"
+        "Пометить как устаревший"
       ]
     },
     "Knowledge base link label": {
@@ -6349,7 +6261,7 @@
         "${ UsedAddresses } из ${ MaxAddresses } адреса электронной почты",
         "${ UsedAddresses } из ${ MaxAddresses } адресов электронной почты",
         "${ UsedAddresses } из ${ MaxAddresses } адресов электронной почты",
-        "${ UsedAddresses } из ${ MaxAddresses } адреса(ов) электронной почты"
+        "${ UsedAddresses } из ${ MaxAddresses } адресов электронной почты"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Временно недоступно. Пожалуйста, проверьте позже.)"
@@ -6382,7 +6294,7 @@
         "Разрешить восстановление по номеру телефона"
       ],
       "Allow recovery by recovery phrase": [
-        "Разрешить восстановление доступа к учётной записи с помощью фразы для восстановления доступа к учетной записи"
+        "Разрешить восстановление с помощью фразы для восстановления"
       ],
       "Amount": [
         "Сумма"
@@ -6409,7 +6321,7 @@
         "Применить к существующему сообщению"
       ],
       "Ask before loading remote content": [
-        "Спрашивать перед загрузкой внешнего содержимого"
+        "Спрашивать перед скачиванием внешнего содержимого"
       ],
       "Attach public key": [
         "Присоединить публичный ключ"
@@ -6427,7 +6339,7 @@
         "Автоответчик"
       ],
       "Auto-unsubscribe": [
-        "Автоподписка"
+        "Автоматическая отписка"
       ],
       "Billing cycle": [
         "Платежный цикл"
@@ -6451,7 +6363,7 @@
         "Версия браузера"
       ],
       "BTC address:": [
-        "Биткоин адрес:"
+        "Биткоин-адрес:"
       ],
       "BTC amount:": [
         "Сумма в биткоинах:"
@@ -6472,7 +6384,7 @@
         "Категория"
       ],
       "Choose a name for the generated certificate file": [
-        "Выберите имя для созданного файла сертификата"
+        "Выберите имя для сгенерированного файла сертификата"
       ],
       "Code": [
         "Код"
@@ -6535,7 +6447,7 @@
         "Не могли бы вы сообщить нам, какой именно поставщик услуг?"
       ],
       "Could you please specify which streaming service?": [
-        "Не могли бы вы уточнить, какой именно потоковый сервис?"
+        "Не могли бы вы уточнить, какая именно служба трансляции?"
       ],
       "Could you please specify?": [
         "Не могли бы вы уточнить?"
@@ -6643,7 +6555,7 @@
         "Время окончания"
       ],
       "End weekday": [
-        "День недели окончания"
+        "Последний день недели"
       ],
       "Enter organization name to confirm": [
         "Введите название организации для подтверждения"
@@ -6652,7 +6564,7 @@
         "Введите пароль"
       ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
-        "Введите пароль для ключа с отпечатком: ${ fingerprintCode }"
+        "Введите пароль для ключа с цифровым отпечатком: ${ fingerprintCode }"
       ],
       "Event duration": [
         "Длительность события"
@@ -6667,7 +6579,7 @@
         "Срок действия"
       ],
       "extra storage": [
-        "доп. хранилище"
+        "дополнительное хранилище"
       ],
       "File": [
         "Файл"
@@ -6685,7 +6597,7 @@
         "От: ${ importedEmail }"
       ],
       "From: ${ importedEmailAddress }": [
-        "Из: ${ importedEmailAddress }"
+        "От: ${ importedEmailAddress }"
       ],
       "Gift code": [
         "Подарочный код"
@@ -6730,7 +6642,7 @@
         "Пригласить по электронной почте"
       ],
       "Keep me signed in": [
-        "Сохраните мою авторизацию"
+        "Сохранить мою авторизацию"
       ],
       "Keep messages in Sent/Drafts": [
         "Сохранять сообщения в Отправленных/Черновиках"
@@ -6739,7 +6651,7 @@
         "Ключ"
       ],
       "Key strength": [
-        "Стойкость ключа"
+        "Надежность ключа"
       ],
       "Keyboard shortcuts": [
         "Сочетания клавиш"
@@ -6793,7 +6705,7 @@
         "Имя"
       ],
       "Name on card": [
-        "Имя держателя карты"
+        "Имя на карте"
       ],
       "New login password": [
         "Новый пароль для входа"
@@ -6880,13 +6792,13 @@
         "Фраза состоит из 12 уникальных слов, расположенных в определенном порядке"
       ],
       "Please add all 3 of the following CNAME records. Note, DNS records can take several hours to update.": [
-        "Пожалуйста, добавьте все три указанные CNAME-записи. Заметьте, что обновление DNS-записей может занять несколько часов."
+        "Пожалуйста, добавьте все три указанные записи CNAME. Заметьте, что обновление записей DNS может занять несколько часов."
       ],
       "Please add the following MX record. Note, DNS records can take several hours to update.": [
-        "Добавьте, пожалуйста, эту MX запись. Заметьте, что обновление DNS записей может занять несколько часов."
+        "Добавьте эту запись MX. Заметьте, что обновление записей DNS может занять несколько часов."
       ],
       "Please add the following TXT record. Note, DNS records can take several hours to update.": [
-        "Пожалуйста, добавьте эту TXT запись. Обратите внимание, что обновление DNS записей может занять несколько часов."
+        "Пожалуйста, добавьте эту запись TXT. Обратите внимание, что обновление записей DNS может занять несколько часов."
       ],
       "Please select files to upload": [
         "Пожалуйста, выберите файлы для загрузки"
@@ -6958,7 +6870,7 @@
         "Отображать номера недель"
       ],
       "Sign external messages": [
-        "Подписывать сообщения, отправляемые вовне"
+        "Подписывать внешние сообщения"
       ],
       "Signature": [
         "Подпись"
@@ -6976,7 +6888,7 @@
         "Время начала"
       ],
       "Start weekday": [
-        "День недели начала"
+        "Первый день недели"
       ],
       "Statement": [
         "Отчет"
@@ -7069,7 +6981,7 @@
         "Хотите добавить"
       ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
-        "Жаль, что вы уходите. Пожалуйста, объясните, почему вы уходите, чтобы помочь нам улучшать наш сервис."
+        "Жаль, что вы уходите. Пожалуйста, объясните, почему вы уходите, чтобы помочь нам улучшать нашу службу."
       ],
       "Week start": [
         "Начало недели"
@@ -7111,7 +7023,7 @@
         "Ваш пароль (admin)"
       ],
       "Your referral link": [
-        "Пригласить по реферальной ссылке"
+        "Ваша реферальная ссылка"
       ],
       "Your reward": [
         "Ваше вознаграждение"
@@ -7148,7 +7060,7 @@
     },
     "Label for domain modal": {
       "Please add the following TXT record:": [
-        "Добавьте, пожалуйста, следующую TXT запись:"
+        "Добавьте, пожалуйста, следующую запись TXT:"
       ]
     },
     "Label for new member": {
@@ -7156,7 +7068,7 @@
         "Администратор"
       ],
       "Private": [
-        "Конфиденциальный"
+        "Личный"
       ],
       "VPN connections": [
         "Подключения к VPN"
@@ -7179,7 +7091,7 @@
         "Proton для бизнеса"
       ],
       "Proton for Business newsletter": [
-        "Новостная рассылка Proton для бизнеса"
+        "Новости Proton for Business"
       ],
       "Proton major features": [
         "Главные функции Proton"
@@ -7321,7 +7233,7 @@
         "Сбросить пароль"
       ],
       "Set email address": [
-        "Установить адрес эл. почты"
+        "Установить адрес электронной почты"
       ],
       "Sign in": [
         "Войти"
@@ -7330,7 +7242,7 @@
         "Условия использования"
       ],
       "Terms and conditions": [
-        "Условия и положения"
+        "Условия"
       ],
       "Trouble signing in?": [
         "Проблемы со входом?"
@@ -7345,10 +7257,10 @@
         "Посмотреть руководство"
       ],
       "What is the difference between UDP and TCP protocols?": [
-        "Какова разница между протоколами UDP и TCP?"
+        "Какая разница между протоколами UDP и TCP?"
       ],
       "Why set recovery methods?": [
-        "Зачем устанавливать способы восстановления?"
+        "Зачем устанавливать методы восстановления?"
       ]
     },
     "Loading info": {
@@ -7431,7 +7343,7 @@
         "Вы уверены, что хотите отключить двухфакторную аутентификацию?"
       ],
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
-        "Подключите свой домен к ${ BRAND_NAME }, чтобы установить свои адреса электронной почты (например, you@yourcompany.com). Наш мастер проведет вас через весь процесс."
+        "Подключите свой пользовательский домен к ${ BRAND_NAME }, чтобы настроить пользовательские адреса электронной почты (например, you@yourcompany.com). Наш мастер проведет вас через весь процесс."
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Ваша бесплатный пробный период закончился. Доступ к вашему аккаунту скоро будет отключен. ${ action }"
@@ -7453,7 +7365,7 @@
         "Как импортировать календари из Yahoo"
       ],
       "How to import contacts from another service": [
-        "Как импортировать контакты из другого сервиса"
+        "Как импортировать контакты из другой службы"
       ],
       "How to import contacts from Outlook": [
         "Как импортировать контакты из Outlook"
@@ -7734,7 +7646,7 @@
     "new_plans: attribute": {
       "Get ${ connections } high-speed VPN connection": [
         "Получите ${ connections } высокоскоростное подключение к VPN",
-        "Получите ${ connections } высокоскоростных подключений к VPN",
+        "Получите ${ connections } высокоскоростных подключения к VPN",
         "Получите ${ connections } высокоскоростных подключений к VPN",
         "Получите ${ connections } высокоскоростных подключений к VPN"
       ],
@@ -7742,7 +7654,7 @@
         "Получите ${ connections } высокоскоростное подключение к VPN на пользователя",
         "Получите ${ connections } высокоскоростных подключения к VPN на пользователя",
         "Получите ${ connections } высокоскоростных подключений к VPN на пользователя",
-        "Получите ${ connections } высокоскоростного подключения к VPN на пользователя"
+        "Получите ${ connections } высокоскоростных подключений к VPN на пользователя"
       ]
     },
     "new_plans: feature": {
@@ -7756,10 +7668,10 @@
         "Пользовательских доменов электронной почты: ${ n }"
       ],
       "${ n } email address": [
-        "${ n } адрес электронной почты/псевдоним",
+        "${ n } адрес электронной почты",
         "${ n } адреса электронной почты/псевдонима",
         "${ n } адресов электронной почты/псевдонимов",
-        "Адресов электронной почты/псевдонимов: ${ n }"
+        "${ n } адресов электронной почты/псевдонимов"
       ],
       "${ n } email address per user": [
         "${ n } адрес электронной почты на пользователя",
@@ -7828,13 +7740,13 @@
         "Всего 1 бесплатное подключение к VPN"
       ],
       "99.95% SLA": [
-        "99,95% по соглашению о качестве услуг"
+        "99,95% SLA"
       ],
       "Admin console": [
         "Панель администратора"
       ],
       "Advanced sharing security": [
-        "Усиленная защита совместного доступа"
+        "Дополнительная безопасность совместного доступа"
       ],
       "Auto-reply": [
         "Автоответчик"
@@ -7994,16 +7906,16 @@
     },
     "new_plans: Info": {
       "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Сделайте резервное копирование, хранение, совместное использование и извлечение файлов конфиденциальным по умолчанию."
+        "Обеспечьте конфиденциальность по умолчанию для резервного копирования, хранения, обмена и поиска файлов."
       ],
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "В противном случае доступ к вашему аккаунту будет ограничен, и в конечном итоге ваш аккаунт будет отключен."
+        "В противном случае доступ к вашему аккаунту будет ограничен, и в конечном итоге отключен."
       ],
       "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
         "Чтобы продолжить использование ${ MAIL_APP_NAME } с платными функциями, выберите подписку и способ оплаты."
       ],
       "Upgrade to the business pack with access to all premium Proton services.": [
-        "Перейдите на пакет для предприятий с доступом ко всем платным службам Proton."
+        "Улучшите до пакета для предприятий с доступом ко всем платным службам Proton."
       ],
       "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
         "Улучшите до пакета максимальной конфиденциальности и получите доступ ко всем платным службам Proton."
@@ -8014,7 +7926,7 @@
     },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
-        "${ brand } заканчивающийся на ${ last4 }"
+        "${ brand } заканчивающийся ${ last4 }"
       ],
       "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
         "${ BRAND_NAME } позволяет создавать адреса электронной почты и управлять аккаунтами для подпользователей. Идеально подходит для семей и организаций."
@@ -8044,7 +7956,7 @@
         "Если вы перейдете на другой тариф, то потеряете все преимущества тарифа ${ visionary } и больше не сможете вернуться к ${ visionary }."
       ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
-        "Наш тариф ${ visionary } больше не доступен для новых подписчиков, поскольку это специальный тарифный план для первоначальных пользователей ${ BRAND_NAME } с особыми возможностями и преимуществами."
+        "Наш тариф ${ visionary } больше не доступен для новых подписчиков, поскольку это специальный тариф для первоначальных пользователей ${ BRAND_NAME } с особыми возможностями и преимуществами."
       ],
       "Popular": [
         "Популярный"
@@ -8056,7 +7968,7 @@
         "Пакет обеспечения конфиденциальности и безопасности для предприятий, включающий все платные услуги Proton."
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
-        "Безопасное облачное хранилище, позволяющее легко и безопасно хранить, синхронизировать и обмениваться файлами."
+        "Защищенное облачное хранилище, позволяющее легко и безопасно хранить, синхронизировать и обмениваться файлами."
       ],
       "Secure email and calendar for professionals and businesses.": [
         "Защищенные электронная почта и календарь для отдельных пользователей и предприятий."
@@ -8112,7 +8024,7 @@
         "Подписка"
       ],
       "terms and conditions": [
-        "условия и положения"
+        "условия"
       ],
       "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
         "Чтобы начать работу, выберите отображаемое имя. Его будут видеть люди, когда вы отправите им электронное сообщение, пригласите их на мероприятие или поделитесь файлом."
@@ -8149,7 +8061,7 @@
         "Выберите подписку и оплатите"
       ],
       "Start exploring the Proton universe": [
-        "Начните знакомство со службами Proton"
+        "Начните исследовать вселенную Proton"
       ],
       "Switch plans?": [
         "Сменить тариф?"
@@ -8271,7 +8183,7 @@
         "Сбрасывайте пароли и двухфакторную аутентификацию для пользователей"
       ],
       "Route your internet traffic through the Tor network with a single click": [
-        "Направляйте свой интернет-трафик через сеть Tor одним нажатием"
+        "Направляйте свой трафик через сеть Tor одним нажатием"
       ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even Proton can't access them.": [
         "Храните в защищенном виде данные своих контактов, такие как номер телефона, адрес, день рождения и личные заметки. Шифрование с нулевым доступом гарантирует, что даже Proton не сможет получить к ним доступ."
@@ -8338,10 +8250,10 @@
         "Получите доступ к расширенным функциям VPN"
       ],
       "Add more personalization with 15 email addresses and support for 3 custom email domains": [
-        "Добавьте больше персонализации с помощью 15 адресов электронной почты и поддержки 3 пользовательских доменов электронной почты"
+        "Добавьте больше индивидуальности с помощью 15 адресов электронной почты и поддержки 3 пользовательских доменов электронной почты"
       ],
       "Boost your storage space to ${ bundleStorage } total": [
-        "Увеличьте хранилище до ${ bundleStorage } в общей сложности"
+        "Увеличьте объем хранилища в общей сложности до ${ bundleStorage }"
       ],
       "Boost your storage space to ${ businessStorage } per user": [
         "Увеличьте хранилище до ${ businessStorage } на пользователя"
@@ -8385,10 +8297,10 @@
         "Отключённый адрес не может быть основным"
       ],
       "Key with fingerprint ${ fp } has been deleted.": [
-        "Ключ с отпечатком ${ fp } удален."
+        "Ключ с цифровым отпечатком ${ fp } удален."
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
-        "Учётные данные OpenVPN / IKEv2 обновлены"
+        "Учетные данные OpenVPN / IKEv2 обновлены"
       ]
     },
     "Notification success": {
@@ -8557,13 +8469,13 @@
         "Android"
       ],
       "Ask each time": [
-        "Спрашивайте каждый раз"
+        "Спрашивать каждый раз"
       ],
       "Automatic (${ defaultDay })": [
-        "Автоматически (${ defaultDay })"
+        "Автоматический (${ defaultDay })"
       ],
       "Automatic (${ defaultFormat })": [
-        "Автоматически (${ defaultFormat })"
+        "Автоматический (${ defaultFormat })"
       ],
       "Country configs": [
         "Конфигурации стран"
@@ -8572,10 +8484,10 @@
         "Создать новую группу"
       ],
       "Fixed duration": [
-        "Фиксированный срок"
+        "Постоянная продолжительность"
       ],
       "Free server configs": [
-        "Настройки бесплатных серверов"
+        "Конфигурации бесплатных серверов"
       ],
       "GNU/Linux": [
         "GNU/Linux"
@@ -8644,7 +8556,7 @@
         "Конфигурации Secure Core"
       ],
       "Standard server configs": [
-        "Настройки стандартных серверов"
+        "Стандартные конфигурации сервера"
       ],
       "TCP": [
         "TCP"
@@ -8691,10 +8603,10 @@
     },
     "Option protection mode": {
       "Load content via proxy (recommended)": [
-        "Загрузка содержимого через прокси-сервер (рекомендуется)"
+        "Скачивание содержимого через прокси-сервер (рекомендуется)"
       ],
       "Load content via proxy and store as attachments": [
-        "Загрузка содержимого через прокси-сервер и сохранение в виде вложений"
+        "Скачивание содержимого через прокси-сервер и сохранение в виде вложений"
       ]
     },
     "OS compatibility": {
@@ -8727,7 +8639,7 @@
         "Кредитная/дебетовая карта"
       ],
       "New credit/debit card": [
-        "Новая кредитная или дебетовая карта"
+        "Новая кредитная/дебетовая карта"
       ],
       "PayPal": [
         "PayPal"
@@ -8840,13 +8752,13 @@
         "свяжитесь"
       ],
       "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
-        "Выберите количество пользователей для включения в ваш план. Каждый дополнительный пользователь стоит ${ price }."
+        "Выберите количество пользователей для включения в ваш тариф. Каждый дополнительный пользователь стоит ${ price }."
       ],
       "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
-        "Если вам нужно более ${ maxUsers } учетной записи пользователя, пожалуйста, ${ contact } с нашим отделом продаж.",
-        "Если вам нужно более ${ maxUsers } учетных записей пользователей, пожалуйста, ${ contact } с нашим отделом продаж.",
-        "Если вам нужно более ${ maxUsers } учетных записей пользователей, пожалуйста, ${ contact } с нашим отделом продаж.",
-        "Если вам нужно более ${ maxUsers } учетных записей пользователя, пожалуйста, ${ contact } с нашим отделом продаж."
+        "Если вам нужно более ${ maxUsers } аккаунта, пожалуйста, ${ contact } с нашим отделом продаж.",
+        "Если вам нужно более ${ maxUsers } аккаунтов, пожалуйста, ${ contact } с нашим отделом продаж.",
+        "Если вам нужно более ${ maxUsers } аккаунтов, пожалуйста, ${ contact } с нашим отделом продаж.",
+        "Если вам нужно более ${ maxUsers } аккаунтов, пожалуйста, ${ contact } с нашим отделом продаж."
       ]
     },
     "Price": {
@@ -8864,7 +8776,7 @@
     },
     "Private Member": {
       "private": [
-        "конфиденциальный"
+        "личный"
       ]
     },
     "Property type": {
@@ -8907,10 +8819,10 @@
         "Отменить"
       ],
       "Email address has been verified.": [
-        "Адрес электронной почты был проверен."
+        "Адрес электронной почты был подтвержден."
       ],
       "Email address not yet verified.": [
-        "Адрес электронной почты еще не проверен."
+        "Адрес электронной почты еще не подтвержден."
       ],
       "sign in": [
         "войти в систему"
@@ -8919,19 +8831,19 @@
         "Электронное письмо с подтверждением отправлено на ${ email.Value }"
       ],
       "Verify now": [
-        "Проверить сейчас"
+        "Подтвердить сейчас"
       ],
       "Verify recovery email?": [
-        "Проверить резервный адрес электронной почты?"
+        "Подтвердить резервный адрес электронной почты?"
       ],
       "Verify with email": [
         "Подтвердить с помощью электронной почты"
       ],
       "Verifying your email address increases your account security and allows additional options for recovery.": [
-        "Проверка адреса электронной почты повышает безопасность вашего аккаунта и дает дополнительные возможности для восстановления."
+        "Подтверждение адреса электронной почты повышает безопасность вашего аккаунта и дает дополнительные возможности для восстановления."
       ],
       "You can safely close this tab.": [
-        "Вы можете спокойно закрыть эту вкладку."
+        "Вы можете безопасно закрыть эту вкладку."
       ],
       "Your recovery email has been successfully verified.": [
         "Резервный адрес электронной почты был успешно подтвержден."
@@ -8965,10 +8877,10 @@
         "Подтвердить сейчас"
       ],
       "Verify recovery phone?": [
-        "Проверить резервный номер телефона?"
+        "Подтвердить телефон для восстановления?"
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
-        "Проверка номера телефона повышает безопасность вашего аккаунта и дает дополнительные возможности для восстановления."
+        "Подтверждение номера телефона повышает безопасность вашего аккаунта и дает дополнительные возможности для восстановления."
       ]
     },
     "Remark about a key type option": {
@@ -8981,7 +8893,7 @@
     },
     "Remove calendar section description": {
       "By unsubscribing, you will no longer have access to this calendar. All events in this calendar will be deleted from your account, but they'll remain in the original publick link.": [
-        "Отказавшись от подписки, вы больше не будете иметь доступа к этому календарю. Все события в этом календаре будут удалены из вашего аккаунта, но они останутся в исходной общедоступной ссылке."
+        "Отменив подписку, вы больше не будете иметь доступа к этому календарю. Все события в этом календаре будут удалены из вашего аккаунта, но они останутся в исходной общедоступной ссылке."
       ]
     },
     "Remove calendar section title": {
@@ -9033,7 +8945,7 @@
         "Перейдите к конфиденциальности. Легко и надежно."
       ],
       "You can apply multiple labels to a single message, but messages can usually only be in a single folder. Drag and drop to rearrange the order of your folders and labels.": [
-        "Вы можете применить несколько ярлыков к одному сообщению, но сообщения, как правило, могут быть только в одной папке. Перетаскивайте и перемещайте, чтобы изменить порядок ваших папок и меток."
+        "Вы можете применить несколько ярлыков к одному сообщению, но сообщения, как правило, могут быть только в одной папке. Перетаскивайте и перемещайте, чтобы изменить порядок ваших папок и ярлыков."
       ]
     },
     "Settings section title": {
@@ -9144,7 +9056,7 @@
     },
     "State": {
       "Downgrading your account, please wait": [
-        "Ваша учетная запись понижается, пожалуйста, ждите"
+        "Ваш аккаунт переходит на более дешевую версию, пожалуйста, подождите"
       ]
     },
     "Step in filter modal": {
@@ -9195,7 +9107,7 @@
     },
     "Subscribed calendar section description": {
       "Add public, external, or shared calendars using a URL.": [
-        "Добавляйте публичные, внешние мли общие календари, используя URL."
+        "Добавляйте публичные, внешние или общие календари, используя URL."
       ]
     },
     "Subscribed calendar URL length warning": {
@@ -9214,7 +9126,7 @@
         "${ maxVpn } высокоскоростное подключение к VPN",
         "${ maxVpn } высокоскоростных подключения к VPN",
         "${ maxVpn } высокоскоростных подключений к VPN",
-        "${ maxVpn } высокоскоростного подключения к VPN"
+        "${ maxVpn } высокоскоростных подключений к VPN"
       ],
       "${ n } calendar": [
         "${ n } календарь",
@@ -9226,25 +9138,25 @@
         "${ n } высокоскоростное подключение к VPN",
         "${ n } высокоскоростных подключения к VPN",
         "${ n } высокоскоростных подключений к VPN",
-        "${ n } высокоскоростного подключения к VPN"
+        "${ n } высокоскоростных подключений к VPN"
       ],
       "${ n } high-speed VPN connection per user": [
         "${ n } высокоскоростное подключение к VPN на пользователя",
         "${ n } высокоскоростных подключения к VPN на пользователя",
         "${ n } высокоскоростных подключений к VPN на пользователя",
-        "${ n } высокоскоростного подключения к VPN на пользователя"
+        "${ n } высокоскоростных подключений к VPN на пользователя"
       ],
       "${ n } VPN connection": [
-        "${ n } подключение VPN",
+        "${ n } подключение к VPN",
+        "${ n } подключения к VPN",
         "${ n } подключений к VPN",
-        "${ n } VPN-подключений",
-        "${ n } VPN соединений"
+        "${ n } подключений к VPN"
       ],
       "${ n } VPN connection per user": [
-        "${ n } VPN-подключение на пользователя",
-        "${ n } VPN-подключения на пользователя",
-        "${ n } VPN-подключений на пользователя",
-        "${ n } VPN-подключений на пользователя"
+        "${ n } подключение к VPN на пользователя",
+        "${ n } подключения к VPN на пользователя",
+        "${ n } подключений к VPN на пользователя",
+        "${ n } подключений к VPN на пользователя"
       ],
       "${ UsedAddresses } address": [
         "${ UsedAddresses } адрес",
@@ -9277,10 +9189,10 @@
         "${ UsedMembers } из ${ MaxMembers } пользователей"
       ],
       "1 email address": [
-        "1 адрес эл. почты"
+        "1 адрес электронной почты"
       ],
       "1 VPN connection": [
-        "1 подключение VPN"
+        "1 подключение к VPN"
       ],
       "Access to streaming services globally": [
         "Доступ к трансляциям по всему миру"
@@ -9375,7 +9287,7 @@
         "Адрес скопирован в буфер обмена"
       ],
       "Email updated": [
-        "Адрес эл. почты обновлён"
+        "Адрес электронной почты обновлен"
       ],
       "Gift code applied": [
         "Подарочный код применён"
@@ -9390,7 +9302,7 @@
         "Запись об импорте удалена"
       ],
       "Invoice customized": [
-        "Счёт настроен"
+        "Счет настроен"
       ],
       "Invoice paid": [
         "Счёт оплачен"
@@ -9500,7 +9412,7 @@
         "Сертификат продлен до ${ formattedExpirationDate }"
       ],
       "Config \"${ name }\" created, note that the private key is not stored and won't be shown again, you should copy or download this config.": [
-        "Конфигурация \"${ name }\" создана, обратите внимание, что закрытый ключ не хранится и не будет показан снова, вам следует скопировать или загрузить эту конфигурацию."
+        "Конфигурация \"${ name }\" создана. Обратите внимание, что закрытый ключ не хранится и не будет показан снова, вам следует скопировать или скачать эту конфигурацию."
       ],
       "Creating config file for ${ serverName }": [
         "Создание файла конфигурации для ${ serverName }"
@@ -9625,7 +9537,7 @@
         "1. Дайте имя генерируемой конфигурации"
       ],
       "1. Select platform": [
-        "1. Выберите операционную систему"
+        "1. Выберите платформу"
       ],
       "2. Select platform": [
         "2. Выберите платформу"
@@ -9727,7 +9639,7 @@
         "Внешний вид"
       ],
       "Apply filter to existing messages": [
-        "Применить к существующему сообщению"
+        "Применить фильтр к существующим сообщениям"
       ],
       "Apply gift code": [
         "Применить подарочный код"
@@ -9838,7 +9750,7 @@
         "Создать календарь"
       ],
       "Create your ${ BRAND_NAME } Account": [
-        "Создайте свой ${ BRAND_NAME } Аккаунт"
+        "Создайте свой аккаунт ${ BRAND_NAME }"
       ],
       "Credentials": [
         "Учетные данные"
@@ -9895,7 +9807,7 @@
         "Удалить папку ${ label.Name }"
       ],
       "Delete ${ label.Name } label": [
-        "Удалить метку ${ label.Name }"
+        "Удалить ярлык ${ label.Name }"
       ],
       "Delete account": [
         "Удалить аккаунт"
@@ -9991,7 +9903,7 @@
         "Экспорт закрытого ключа"
       ],
       "Export public key": [
-        "Экспорт публичного ключа"
+        "Экспорт открытого ключа"
       ],
       "External PGP settings": [
         "Внешние настройки PGP"
@@ -10030,7 +9942,7 @@
         "Как это работает?"
       ],
       "How your free trial works": [
-        "Как работает бесплатная пробная версия"
+        "Как работает ваша бесплатная пробная версия"
       ],
       "Human verification": [
         "Проверка пользователя"
@@ -10129,7 +10041,7 @@
         "Открыть меню справки"
       ],
       "Open pagination": [
-        "Отобразить нумерацию страниц"
+        "Открыть нумерацию страниц"
       ],
       "OpenVPN / IKEv2": [
         "OpenVPN / IKEv2"
@@ -10231,10 +10143,10 @@
         "Отозвать сертификат"
       ],
       "Save contact details": [
-        "Посмотреть контактную информацию"
+        "Сохранить контактную информацию"
       ],
       "Secure email based in Switzerland": [
-        "Безопасная почта, находящаяся в Швейцарии"
+        "Защищенная почта, находящаяся в Швейцарии"
       ],
       "Security and privacy": [
         "Безопасность и конфиденциальность"
@@ -10366,7 +10278,7 @@
         "Пользователи и адреса"
       ],
       "Verification": [
-        "Проверка"
+        "Подтверждение"
       ],
       "VPN apps": [
         "Приложения VPN"
@@ -10441,7 +10353,7 @@
     },
     "Title for PDF file": {
       "${ MAIL_APP_NAME } invoice": [
-        "Счет-фактура ${ MAIL_APP_NAME }"
+        "Счет ${ MAIL_APP_NAME }"
       ]
     },
     "Title header": {
@@ -10507,7 +10419,7 @@
     },
     "Tooltip": {
       "${ MAIL_APP_NAME } users will use this key by default for sending": [
-        "Пользователи ${ MAIL_APP_NAME } будут использовать этот ключ по умолчанию для отправки"
+        "Пользователи ${ MAIL_APP_NAME } будут использовать по умолчанию этот ключ для отправки"
       ],
       "Account is disconnected": [
         "Учётная запись отсоединена"
@@ -10540,7 +10452,7 @@
         "Включение расширенного журналирования записывает IP-адрес каждого события в журнале безопасности."
       ],
       "Group emails in the same conversation together in your Inbox or display them separately.": [
-        "Группировать сообщения, относящиеся к одной теме в папке \"Входящие\" или отображать их отдельно."
+        "Группировать сообщения из одной цепочки в папке \"Входящие\" или отображать их отдельно."
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Если вы купили подарочный код или получили его от нашей службы поддержки, вы можете ввести его здесь."
@@ -10594,7 +10506,7 @@
         "Мы перестали подписывать DKIM из-за проблем с конфигурацией вашего DNS. Пожалуйста, следуйте инструкциям ниже, чтобы возобновить подписывание."
       ],
       "When you add a label to a message in a conversation, it will automatically be applied to all future messages you send or receive in that conversation.": [
-        "Когда вы добавляете метку к сообщению в диалоге, она будет автоматически применяться ко всем будущим сообщениям, которые вы отправляете или получаете в этом диалоге."
+        "Когда вы добавляете ярлык к сообщению в цепочке писем, он будет автоматически применен ко всем будущим сообщениям, которые вы отправляете или получаете в этой цепочке."
       ],
       "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
         "При нажатии на ссылку эта функция антифишинга попросит подтвердить URL веб-страницы."
@@ -10603,7 +10515,7 @@
         "Когда вы перемещаете письмо в спам, вы автоматически отписываетесь от списков рассылки отправителя."
       ],
       "You have locally decrypted this key": [
-        "Вы расшифровали этот ключ локально"
+        "Вы локально расшифровали этот ключ"
       ],
       "Your ${ MAIL_APP_NAME } inbox is almost full": [
         "Ваш почтовый ящик ${ MAIL_APP_NAME } почти заполнен"
@@ -10612,12 +10524,12 @@
         "Ваше подписание DKIM работает."
       ],
       "Your external account may have reached its 24-hour bandwidth limit. Proton will try to resume the import as soon as possible.": [
-        "Возможно, ваш внешний аккаунт достиг своего лимита передачи данных за 24 часа. Proton попытается возобновить импорт как можно скорее."
+        "Возможно, ваш внешний аккаунт достиг своего предела передачи данных за 24 часа. Proton попытается возобновить импорт как можно скорее."
       ]
     },
     "Tooltip automatically attach public key": {
       "This automatically adds your public key to each message you send. Recipients can use this to verify the authenticity of your messages and send encrypted messages to you.": [
-        "Таким способом можно автоматически добавлять ваш публичный ключ к каждому отправляемому вами сообщению. Получатели могут использовать это, чтобы проверять подлинность ваших сообщений и отправлять зашифрованные сообщения вам."
+        "Таким способом можно автоматически добавлять ваш открытый ключ к каждому отправляемому вами сообщению. Получатели могут использовать это, чтобы проверять подлинность ваших сообщений и отправлять зашифрованные сообщения вам."
       ]
     },
     "Tooltip default pgp scheme": {
@@ -10708,7 +10620,7 @@
     "VPN Plan Feature": {
       "${ n } server": [
         "${ n } сервер",
-        "${ n } серверов",
+        "${ n } сервера",
         "${ n } серверов",
         "${ n } серверов"
       ],
@@ -10756,7 +10668,7 @@
         "Вы уверены, что хотите удалить номер телефона?"
       ],
       "Are you sure you want to discard your import?": [
-        "Вы уверены, что хотите отменить импорт?"
+        "Вы уверены, что хотите сбросить импорт?"
       ],
       "By deleting this address, you will no longer be able to receive daily email notifications.": [
         "Удалив этот адрес, вы больше не сможете получать ежедневные уведомления по электронной почте."
@@ -10774,16 +10686,16 @@
         "Отключив журналы, вы также очистите всю свою историю журналов. Вы уверены, что хотите отключить журналы?"
       ],
       "By disabling this address, you will no longer be able to send or receive emails using this address and all the linked Proton products will also be disabled. Are you sure you want to disable this address?": [
-        "Отключая этот адрес, вы больше не сможете отправлять или получать электронные письма, используя этот адрес, и все связанные продукты Proton также будут отключены. Вы уверены, что хотите отключить этот адрес?"
+        "Отключая этот адрес, вы больше не сможете отправлять или получать электронные письма, используя этот адрес, а все связанные продукты Proton также будут отключены. Вы уверены, что хотите отключить этот адрес?"
       ],
       "If you cancel this import, you won't be able to resume it. Proton saved all progress in your account. Cancel anyway?": [
-        "Если вы отмените этот импорт, вы не сможете возобновить его. Proton сохранил весь прогресс в вашем аккаунте. Все равно отменить?"
+        "Если вы отмените этот импорт, вы не сможете его возобновить. Proton сохранил все результаты в вашем аккаунте. Все равно отменить?"
       ],
       "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
         "Живой чат – это платная функция, доступная только для платных тарифов ${ VPN_APP_NAME }. Пожалуйста, вместо этого откройте билет."
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Пожалуйста, обратите внимание, что при выборе этого способа оплаты тип вашей учётной записи не может быть изменен сразу. Мы обновим вашу учётную запись после подтверждения оплаты."
+        "Обратите внимание, что при выборе этого способа оплаты тип вашего аккаунта не может быть изменен сразу. Мы обновим ваш аккаунт, как только будет произведена оплата."
       ],
       "Please provide at least one recipient": [
         "Пожалуйста, укажите хотя бы одного получателя"
@@ -10801,7 +10713,7 @@
         "Настройки даты и времени на вашем устройстве не синхронизированы. ${ learnMore }"
       ],
       "This import may exceed the storage capacity currently available in your Proton account. Please consider customizing your import.": [
-        "Этот импорт может потребовать больше места, чем доступно в настоящее время на вашем Proton-аккаунте. Пожалуйста, измените настройки импорта."
+        "Этот импорт может потребовать больше места, чем в настоящее время доступно в вашем аккаунте Proton. Рассмотрите возможность настройки вашего импорта."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "К сожалению, в данный момент мы не работаем в режиме онлайн. Пожалуйста, заполните форму ниже, чтобы описать вашу проблему, и мы рассмотрим ее и свяжемся с вами, когда вернемся к работе."
@@ -10810,7 +10722,7 @@
         "Мы обнаружили проблему с настройками DNS. Пожалуйста, убедитесь, что ваши записи соответствуют инструкциям ниже. Если проблема останется, нам придётся выключить подписывание DKIM."
       ],
       "You must ${ activateLink } organization keys before adding an email address to a non-private member.": [
-        "Вы должны ${ activateLink } ключи организации перед добавлением адреса электронной почты неконфиденциальному члену."
+        "Вы должны ${ activateLink } ключи организации перед добавлением адреса электронной почты нечастному участнику."
       ],
       "You will lose any customization you made so far.": [
         "Вы потеряете все сделанные вами до сих пор настройки."
@@ -10822,10 +10734,10 @@
         "Ваша бесплатный пробный период заканчивается ${ textDate }. ${ action }"
       ],
       "Your recovery file is outdated. It can't recover new data if you reset your account again.": [
-        "Ваш файл восстановления устарел. Он не сможет восстановить новые данные, если вы снова сбросите учетную запись."
+        "Ваш файл восстановления устарел. Он не сможет восстановить новые данные, если вы снова сбросите аккаунт."
       ],
       "Your recovery phrase is outdated. It can't recover new data if you reset your account again.": [
-        "Ваша фраза восстановления устарела. Она не сможет восстановить новые данные, если вы снова сбросите учетную запись."
+        "Ваша фраза восстановления устарела. Она не сможет восстановить новые данные, если вы снова сбросите аккаунт."
       ]
     },
     "Warning for domain modal": {
@@ -10833,7 +10745,7 @@
         "После успешной проверки не удаляйте эту TXT-запись, так как она необходима для подтверждения того, что вы остаётесь владельцем домена."
       ],
       "It can take up to a day for DNS changes to update.": [
-        "Вступление в силу настроек DNS может занять до 1 дня."
+        "Обновление настроек DNS может занять до 1 дня."
       ]
     },
     "Weak personal key warning": {
@@ -11111,10 +11023,8 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "Каждый ${ interval } год",
-        "Каждые ${ interval } года",
-        "Каждые ${ interval } лет",
-        "Каждые ${ interval } лет"
+        "Yearly",
+        ""
       ],
       "Every ${ interval } year, ${ timesString }": [
         "Каждый ${ interval } год в ${ timesString }",

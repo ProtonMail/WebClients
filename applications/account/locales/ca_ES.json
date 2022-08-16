@@ -57,10 +57,10 @@
         "Afegir filtre"
       ],
       "Add folder": [
-        "Afegir carpeta"
+        "Afegeix carpeta"
       ],
       "Add label": [
-        "Afegir etiqueta"
+        "Afegeix etiqueta"
       ],
       "Add notification": [
         "Afegeix notificació"
@@ -224,6 +224,9 @@
       "Delete link": [
         "Elimina l'enllaç"
       ],
+      "Delete permanently": [
+        "Suprimeix permanentment"
+      ],
       "Delete record": [
         "Suprimeix el registre"
       ],
@@ -261,22 +264,22 @@
         "Degradar compte"
       ],
       "Download": [
-        "Descarrega"
+        "Baixa"
       ],
       "Download all configurations": [
-        "Descarregar totes les preferències"
+        "Baixa tota la configuració"
       ],
       "Download ICS": [
         "Baixa l'ICS"
       ],
       "Download recovery file": [
-        "Descarrega el fitxer de recuperació"
+        "Baixa el fitxer de recuperació"
       ],
       "Download the Import-Export app": [
-        "Descarregar l'aplicació Import-Export"
+        "Baixa l'aplicació Import-Export"
       ],
       "Edit": [
-        "Editar"
+        "Edita"
       ],
       "Edit email address": [
         "Editar l'adreça de correu electrònic"
@@ -290,6 +293,9 @@
       "Edit sieve": [
         "Editar sieve"
       ],
+      "Edit sign-in details": [
+        "Edita detalls d'inici de sessió"
+      ],
       "Edit subscription": [
         "Edita la subscripció"
       ],
@@ -302,14 +308,14 @@
       "Enable multi-user support": [
         "Activar suport multiusuari"
       ],
+      "Encrypt and export": [
+        "Xifra i exporta"
+      ],
       "Explore other ${ BRAND_NAME } plans": [
         "Explora altres ${ BRAND_NAME } plans"
       ],
       "Export": [
         "Exportar"
-      ],
-      "Export ICS": [
-        "Exporta l'ICS"
       ],
       "Export key": [
         "Exportar clau"
@@ -338,6 +344,9 @@
       "Go to label": [
         "Ves a l'etiqueta"
       ],
+      "Go to sign in": [
+        "Ves a l'inici de sessió"
+      ],
       "Hide": [
         "Amaga"
       ],
@@ -354,19 +363,19 @@
         "Importar"
       ],
       "Import calendars": [
-        "Importar calendaris"
+        "Importa calendaris"
       ],
       "Import contacts": [
         "Importar contactes"
       ],
       "Import emails": [
-        "Importar correus"
+        "Importa correus"
       ],
       "Import from ICS": [
         "Importa des d'ICS"
       ],
       "Import key": [
-        "Importar clau"
+        "Importa una clau"
       ],
       "Increase": [
         "Incrementa"
@@ -395,11 +404,17 @@
       "Loading verification": [
         "Carregant verificació"
       ],
+      "Make default": [
+        "Estableix per defecte"
+      ],
       "Mark as default": [
         "Marca per defecte"
       ],
       "mark emails as": [
         "marcar correus electrònics com"
+      ],
+      "Maybe later": [
+        "Potser més endavant"
       ],
       "More": [
         "Més"
@@ -411,10 +426,10 @@
         "moure correus electrònics a"
       ],
       "Move to Allow List": [
-        "Moure a la Llista d'Autoritzats"
+        "Mou a la llista de permesos"
       ],
       "Move to Block List": [
-        "Moure a la Llista de Bloqueig"
+        "Mou a la llista de bloqueig"
       ],
       "Need help?": [
         "Necessiteu ajuda?"
@@ -479,6 +494,9 @@
       "Recover data": [
         "Recuperar dades"
       ],
+      "Refer a friend": [
+        "Recomana a un amic"
+      ],
       "Refresh status": [
         "Refresca l'estat"
       ],
@@ -489,7 +507,7 @@
         "recarregar la pàgina"
       ],
       "Reload": [
-        "Recarregar"
+        "Recarrega"
       ],
       "Remove": [
         "Suprimeix"
@@ -561,10 +579,10 @@
         "Revoca"
       ],
       "Revoke ${ name }": [
-        "Revocar ${ name }"
+        "Revoca ${ name }"
       ],
       "Revoke all other sessions": [
-        "Revocar totes les altres sessions"
+        "Revoca totes les altres sessions"
       ],
       "Save": [
         "Desa"
@@ -578,11 +596,17 @@
       "Search countries": [
         "Cerca països"
       ],
+      "Search settings": [
+        "Configuració de cerca"
+      ],
       "Select ${ planTitle }": [
         "Selecciona ${ planTitle }"
       ],
       "Select files": [
         "Seleccioneu fitxers"
+      ],
+      "Select timezone": [
+        "Seleccionar fus horari"
       ],
       "send auto-reply email": [
         "enviar correu d’auto-resposta"
@@ -617,14 +641,20 @@
       "Show labels": [
         "Mostrar les etiquetes"
       ],
+      "Show less": [
+        "Mostra'n menys"
+      ],
       "Show more": [
         "Mostra'n més"
+      ],
+      "Show preview": [
+        "Mostra visualització prèvia"
       ],
       "Sign in": [
         "Iniciar la sessió"
       ],
       "Sign out": [
-        "Tancar la sessió"
+        "Tanca la sessió"
       ],
       "Sign out from ${ nameToDisplay } ${ maybeEmailInBrackets }": [
         "Tanca la sessió de ${ nameToDisplay } ${ maybeEmailInBrackets }"
@@ -642,7 +672,7 @@
         "Mida"
       ],
       "Sort": [
-        "Ordenar"
+        "Ordena"
       ],
       "Start import": [
         "Començar importació"
@@ -657,7 +687,7 @@
         "Assistència"
       ],
       "Top up": [
-        "Recarregar"
+        "Recarrega"
       ],
       "Try again": [
         "Torna-ho a provar"
@@ -731,6 +761,9 @@
       "View invoice": [
         "Veure factura"
       ],
+      "View plans details": [
+        "Mostra els detalls dels plans"
+      ],
       "Void all recovery files": [
         "Buidar tots els arxius de recuperació"
       ],
@@ -764,6 +797,9 @@
       ],
       "No, thanks": [
         "No, gràcies"
+      ],
+      "Start my 30-day free trial": [
+        "Comença la prova gratuïta de 30 dies"
       ],
       "Try free for 30 days": [
         "Prova gratuïta de 30 dies"
@@ -802,7 +838,7 @@
         "Esborra"
       ],
       "Disable": [
-        "Deshabilitar"
+        "Desactiva"
       ],
       "Enable": [
         "Habilitar"
@@ -905,57 +941,9 @@
         "Bianual"
       ]
     },
-    "blackfriday Info": {
-      "beta": [
-        "beta"
-      ],
-      "Includes": [
-        "Inclou"
-      ],
-      "Standard price: ${ regularPrice }": [
-        "Preu estàndard: ${ regularPrice }"
-      ],
-      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
-        "Aquesta subscripció es renovarà automàticament cada 2 anys al mateix percentatge fins que es cancel·li."
-      ]
-    },
-    "blackfriday Title": {
-      "Most popular": [
-        "Més popular"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Action": {
-      "Get the deal": [
-        "Obteniu l’oferta"
-      ],
-      "Get the deal now": [
-        "Obteniu l’oferta ara"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Info": {
-      "Save ${ percentage }%": [
-        "${ percentage }%"
-      ]
-    },
-    "blackfriday: VPNspecialoffer info": {
-      "per month": [
-        "al mes"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Promo title, need to be short": {
-      "Special offer": [
-        "Oferta especial"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Title": {
-      "1 month": [
-        "1 mes"
-      ],
-      "12 months": [
-        "12 mesos"
-      ],
-      "24 months": [
-        "24 mesos"
+    "breadcrumb": {
+      "Calendars": [
+        "Calendaris"
       ]
     },
     "Bridge version load failed": {
@@ -1035,8 +1023,14 @@
       ]
     },
     "Button": {
+      "Continue using ${ MAIL_APP_NAME }.": [
+        "Continuar utilitzant ${ MAIL_APP_NAME }."
+      ],
       "Copy": [
         "Copia"
+      ],
+      "Send": [
+        "Envia"
       ]
     },
     "Calendar settings sidebar": {
@@ -1045,6 +1039,12 @@
       ]
     },
     "Calendar status": {
+      "Default": [
+        "Per defecte"
+      ],
+      "Disabled": [
+        "Desactivada"
+      ],
       "Not synced": [
         "No sincronitzat"
       ],
@@ -1053,6 +1053,9 @@
       ]
     },
     "Calendar subscription not synced error": {
+      "Calendar could not be decrypted": [
+        "El calendari no es pot desxifrar"
+      ],
       "Calendar is syncing": [
         "El calendari s'està sincronitzant"
       ],
@@ -1070,6 +1073,20 @@
       ],
       "More than 12 hours passed since last update": [
         "Han passat més de 12 hores des de la darrera actualització"
+      ],
+      "Unsupported calendar format": [
+        "Format de calendari no suportat"
+      ]
+    },
+    "Calendar view": {
+      "Day": [
+        "Dia"
+      ],
+      "Month": [
+        "Mes"
+      ],
+      "Week": [
+        "Setmana"
       ]
     },
     "Collapsible tooltip": {
@@ -1078,6 +1095,89 @@
       ],
       "Expand": [
         "Amplia"
+      ]
+    },
+    "color": {
+      "apple": [
+        "poma"
+      ],
+      "blue-gray": [
+        "gris blavós"
+      ],
+      "caramel": [
+        "caramel"
+      ],
+      "carrot": [
+        "pastanaga"
+      ],
+      "cobalt": [
+        "cobalt"
+      ],
+      "copper": [
+        "coure"
+      ],
+      "dark midnight blue": [
+        "blau fosc mitjanit"
+      ],
+      "dim gray": [
+        "gris suau"
+      ],
+      "forest": [
+        "bosc"
+      ],
+      "japanese laurel": [
+        "llorer japonès"
+      ],
+      "kiwi": [
+        "kiwi"
+      ],
+      "lemon yellow": [
+        "groc llima"
+      ],
+      "light carmine pink": [
+        "rosa carmí clar"
+      ],
+      "light red": [
+        "vermell clar"
+      ],
+      "ocean": [
+        "oceà"
+      ],
+      "olive": [
+        "oliva"
+      ],
+      "outer space": [
+        "espai exterior"
+      ],
+      "persian red": [
+        "vermell persa"
+      ],
+      "pine": [
+        "pi"
+      ],
+      "pink": [
+        "rosa"
+      ],
+      "plum": [
+        "pruna"
+      ],
+      "purple": [
+        "porpra"
+      ],
+      "ruddy pink": [
+        "rosa vermellós"
+      ],
+      "sahara": [
+        "sahara"
+      ],
+      "soil": [
+        "terra"
+      ],
+      "strawberry": [
+        "maduixa"
+      ],
+      "white": [
+        "blanc"
       ]
     },
     "Condition for custom filter": {
@@ -1229,23 +1329,746 @@
       ]
     },
     "Country name": {
+      "Abkhazia": [
+        "Abkhàzia"
+      ],
+      "Afghanistan": [
+        "Afganistan"
+      ],
+      "Albania": [
+        "Albània"
+      ],
+      "Algeria": [
+        "Algèria"
+      ],
+      "American Samoa": [
+        "Samoa Americana"
+      ],
       "Andorra": [
         "Andorra"
+      ],
+      "Angola": [
+        "Angola"
+      ],
+      "Anguilla": [
+        "Anguila"
+      ],
+      "Antarctica": [
+        "Antàrtida"
+      ],
+      "Antigua and Barbuda": [
+        "Antigua i Barbuda"
+      ],
+      "Argentina": [
+        "Argentina"
+      ],
+      "Armenia": [
+        "Armènia"
+      ],
+      "Aruba": [
+        "Aruba"
+      ],
+      "Ascension Island": [
+        "Illa de l'Ascensió"
+      ],
+      "Australia": [
+        "Austràlia"
+      ],
+      "Austria": [
+        "Àustria"
+      ],
+      "Azerbaijan": [
+        "Azerbaidjan"
+      ],
+      "Bahamas": [
+        "Bahames"
+      ],
+      "Bahrain": [
+        "Bahrain"
+      ],
+      "Bangladesh": [
+        "Bangladesh"
+      ],
+      "Barbados": [
+        "Barbados"
+      ],
+      "Belarus": [
+        "Belarús"
+      ],
+      "Belgium": [
+        "Bèlgica"
+      ],
+      "Belize": [
+        "Belize"
+      ],
+      "Benin": [
+        "Benín"
+      ],
+      "Bermuda": [
+        "Bermudes"
+      ],
+      "Bhutan": [
+        "Bhutan"
+      ],
+      "Bolivia": [
+        "Bolívia"
+      ],
+      "Bonaire, Sint Eustatius and Saba": [
+        "Bonaire, Sint Eustatius i Saba"
+      ],
+      "Bosnia and Herzegovina": [
+        "Bòsnia i Hercegovina"
+      ],
+      "Botswana": [
+        "Botswana"
+      ],
+      "Bouvet Island": [
+        "Illa Bouvet"
+      ],
+      "Brazil": [
+        "Brasil"
+      ],
+      "British Indian Ocean Territory": [
+        "Territori Britànic de l'Oceà Índic"
+      ],
+      "Brunei Darussalam": [
+        "Brunei Darussalam"
+      ],
+      "Bulgaria": [
+        "Bulgària"
+      ],
+      "Burkina Faso": [
+        "Burkina Faso"
+      ],
+      "Burundi": [
+        "Burundi"
+      ],
+      "Cambodia": [
+        "Cambodja"
+      ],
+      "Cameroon": [
+        "Camerun"
+      ],
+      "Canada": [
+        "Canadà"
+      ],
+      "Cape Verde": [
+        "Cap Verd"
+      ],
+      "Cayman Islands": [
+        "Illes Caimà"
+      ],
+      "Central African Republic": [
+        "República Centreafricana"
+      ],
+      "Chad": [
+        "Txad"
+      ],
+      "Chile": [
+        "Xile"
+      ],
+      "China": [
+        "Xina"
+      ],
+      "Christmas Island": [
+        "Illa Christmas"
+      ],
+      "Cocos (Keeling) Islands": [
+        "Illes Cocos (Keeling)"
+      ],
+      "Colombia": [
+        "Colòmbia"
+      ],
+      "Comoros": [
+        "Les Comores"
+      ],
+      "Congo": [
+        "Congo"
+      ],
+      "Congo, Democratic Republic of the": [
+        "Congo, República Democràtica del"
+      ],
+      "Cook Islands": [
+        "Illes Cook"
+      ],
+      "Costa Rica": [
+        "Costa Rica"
+      ],
+      "Croatia": [
+        "Croàcia"
+      ],
+      "Cuba": [
+        "Cuba"
+      ],
+      "Curaçao": [
+        "Curaçao"
+      ],
+      "Cyprus": [
+        "Xipre"
+      ],
+      "Czech Republic": [
+        "República Txeca"
+      ],
+      "Côte d'Ivoire": [
+        "Costa d'Ivori"
+      ],
+      "Denmark": [
+        "Dinamarca"
+      ],
+      "Djibouti": [
+        "Djibouti"
+      ],
+      "Dominica": [
+        "Dominica"
+      ],
+      "Dominican Republic": [
+        "República Dominicana"
+      ],
+      "Ecuador": [
+        "Equador"
+      ],
+      "Egypt": [
+        "Egipte"
+      ],
+      "El Salvador": [
+        "El Salvador"
+      ],
+      "Equatorial Guinea": [
+        "Guinea Equatorial"
+      ],
+      "Eritrea": [
+        "Eritrea"
+      ],
+      "Estonia": [
+        "Estònia"
+      ],
+      "Ethiopia": [
+        "Etiòpia"
+      ],
+      "Falkland Islands": [
+        "Illes Flkland"
+      ],
+      "Faroe Islands": [
+        "Illes Fèroe"
+      ],
+      "Federated States of Micronesia": [
+        "Estats Federats de Micronèsia"
+      ],
+      "Fiji": [
+        "Fiji"
+      ],
+      "Finland": [
+        "Finlàndia"
       ],
       "France": [
         "França"
       ],
+      "French Guiana": [
+        "Guaiana Francesa"
+      ],
+      "French Polynesia": [
+        "Polinèsia Francesa"
+      ],
+      "French Southern Territories": [
+        "Territoris Francesos del Sud"
+      ],
+      "Gabon": [
+        "Gabon"
+      ],
+      "Gambia": [
+        "Gàmbia"
+      ],
       "Georgia": [
         "Geòrgia"
+      ],
+      "Germany": [
+        "Alemanya"
+      ],
+      "Ghana": [
+        "Ghana"
       ],
       "Gibraltar": [
         "Gibraltar"
       ],
+      "Greece": [
+        "Grècia"
+      ],
       "Greenland": [
         "Groenlàndia"
       ],
+      "Grenada": [
+        "Granada"
+      ],
+      "Guadeloupe": [
+        "Guadalupe"
+      ],
+      "Guam": [
+        "Guam"
+      ],
+      "Guatemala": [
+        "Guatemala"
+      ],
+      "Guernsey": [
+        "Guernsey"
+      ],
+      "Guinea": [
+        "Guinea"
+      ],
+      "Guinea-Bissau": [
+        "Guinea-Bissau"
+      ],
+      "Guyana": [
+        "Guyana"
+      ],
+      "Haiti": [
+        "Haití"
+      ],
+      "Heard Island and McDonald Islands": [
+        "Illa Heard i Illes McDonald"
+      ],
+      "Holy See (Vatican City State)": [
+        "Santa Seu (Estat de la Ciutat del Vaticà)"
+      ],
+      "Honduras": [
+        "Hondures"
+      ],
+      "Hong Kong": [
+        "Hong Kong"
+      ],
+      "Hungary": [
+        "Hongria"
+      ],
+      "Iceland": [
+        "Islàndia"
+      ],
+      "India": [
+        "Índia"
+      ],
+      "Indonesia": [
+        "Indonèsia"
+      ],
+      "International": [
+        "Internacional"
+      ],
+      "Iran": [
+        "Iran"
+      ],
+      "Iraq": [
+        "Iraq"
+      ],
+      "Ireland": [
+        "Irlanda"
+      ],
+      "Isle of Man": [
+        "Illa de Man"
+      ],
+      "Israel": [
+        "Israel"
+      ],
+      "Italy": [
+        "Itàlia"
+      ],
+      "Jamaica": [
+        "Jamaica"
+      ],
+      "Japan": [
+        "Japó"
+      ],
+      "Jersey": [
+        "Jersey"
+      ],
+      "Jordan": [
+        "Jordània"
+      ],
+      "Kazakhstan": [
+        "Kazakhstan"
+      ],
+      "Kenya": [
+        "Kènia"
+      ],
+      "Kiribati": [
+        "Kiribati"
+      ],
+      "Kosovo": [
+        "Kosovo"
+      ],
+      "Kuwait": [
+        "Kuwait"
+      ],
+      "Kyrgyzstan": [
+        "Kirguizstan"
+      ],
+      "Laos": [
+        "Laos"
+      ],
+      "Latvia": [
+        "Letònia"
+      ],
+      "Lebanon": [
+        "Líban"
+      ],
+      "Liberia": [
+        "Libèria"
+      ],
+      "Libya": [
+        "Líbia"
+      ],
+      "Liechtenstein": [
+        "Liechtenstein"
+      ],
+      "Lithuania": [
+        "Lituània"
+      ],
+      "Luxembourg": [
+        "Luxemburg"
+      ],
+      "Macao": [
+        "Macau"
+      ],
+      "Madagascar": [
+        "Madagascar"
+      ],
+      "Malawi": [
+        "Malawi"
+      ],
+      "Malaysia": [
+        "Malàisia"
+      ],
+      "Maldives": [
+        "Illes Maldives"
+      ],
+      "Mali": [
+        "Mali"
+      ],
+      "Malta": [
+        "Malta"
+      ],
+      "Marshall Islands": [
+        "Illes Marshall"
+      ],
+      "Martinique": [
+        "Martinica"
+      ],
+      "Mauritania": [
+        "Mauritània"
+      ],
+      "Mauritius": [
+        "Illes Maurici"
+      ],
+      "Mayotte": [
+        "Mayotte"
+      ],
+      "Mexico": [
+        "Mèxic"
+      ],
+      "Moldova": [
+        "Moldàvia"
+      ],
+      "Monaco": [
+        "Mònaco"
+      ],
+      "Mongolia": [
+        "Mongòlia"
+      ],
+      "Montenegro": [
+        "Montenegro"
+      ],
+      "Montserrat": [
+        "Montserrat"
+      ],
+      "Morocco": [
+        "Marroc"
+      ],
+      "Mozambique": [
+        "Moçambic"
+      ],
+      "Namibia": [
+        "Namíbia"
+      ],
+      "Nauru": [
+        "Nauru"
+      ],
+      "Nepal": [
+        "Nepal"
+      ],
+      "Netherlands": [
+        "Països Baixos"
+      ],
+      "New Caledonia": [
+        "Nova Caledònia"
+      ],
+      "New Zealand": [
+        "Nova Zelanda"
+      ],
+      "Nicaragua": [
+        "Nicaragua"
+      ],
+      "Niger": [
+        "Níger"
+      ],
+      "Nigeria": [
+        "Nigèria"
+      ],
+      "Niue": [
+        "Niue"
+      ],
+      "Norfolk Island": [
+        "Illa Norfolk"
+      ],
+      "North Korea": [
+        "Corea del Nord"
+      ],
+      "North Macedonia": [
+        "Macedònia del Nord"
+      ],
+      "Northern Mariana Islands": [
+        "Illes Marianes del Nord"
+      ],
+      "Norway": [
+        "Noruega"
+      ],
+      "Oman": [
+        "Oman"
+      ],
+      "Pakistan": [
+        "Pakistan"
+      ],
+      "Palau": [
+        "Palau"
+      ],
+      "Palestine": [
+        "Palestina"
+      ],
+      "Panama": [
+        "Panamà"
+      ],
+      "Papua New Guinea": [
+        "Papua Nova Guinea"
+      ],
+      "Paraguay": [
+        "Paraguai"
+      ],
+      "Peru": [
+        "Perú"
+      ],
+      "Philippines": [
+        "Illes Filipines"
+      ],
+      "Pitcairn": [
+        "Illes Pitcairn"
+      ],
+      "Poland": [
+        "Polònia"
+      ],
+      "Portugal": [
+        "Portugal"
+      ],
+      "Puerto Rico": [
+        "Puerto Rico"
+      ],
+      "Qatar": [
+        "Qatar"
+      ],
+      "Reunion": [
+        "Illa de la Reunió"
+      ],
+      "Romania": [
+        "Romania"
+      ],
+      "Russia": [
+        "Rússia"
+      ],
+      "Rwanda": [
+        "Ruanda"
+      ],
+      "Saint Barthélemy": [
+        "Sant Bartomeu"
+      ],
+      "Saint Helena": [
+        "Santa Helena"
+      ],
+      "Saint Lucia": [
+        "Saint Lucia"
+      ],
+      "Saint Martin (French Part)": [
+        "Saint Martin (Part Francesa)"
+      ],
+      "Saint Pierre and Miquelon": [
+        "Sant Pere i Miquelon"
+      ],
+      "Saint Vincent and the Grenadines": [
+        "Saint Vincent i les Grenadines"
+      ],
+      "Samoa": [
+        "Samoa"
+      ],
+      "San Marino": [
+        "San Marino"
+      ],
+      "Sao Tome and Principe": [
+        "São Tomé i Príncipe"
+      ],
+      "Saudi Arabia": [
+        "Aràbia Saudita"
+      ],
+      "Senegal": [
+        "Senegal"
+      ],
+      "Serbia": [
+        "Sèrbia"
+      ],
+      "Seychelles": [
+        "Seychelles"
+      ],
+      "Sierra Leone": [
+        "Sierra Leone"
+      ],
+      "Singapore": [
+        "Singapur"
+      ],
+      "Sint Maarten": [
+        "Saint-Martin"
+      ],
+      "Slovakia": [
+        "Eslovàquia"
+      ],
+      "Slovenia": [
+        "Eslovènia"
+      ],
+      "Solomon Islands": [
+        "Illes Salomó"
+      ],
+      "Somalia": [
+        "Somàlia"
+      ],
+      "South Africa": [
+        "Sud-àfrica"
+      ],
+      "South Georgia and the South Sandwich Islands": [
+        "Illes Geòrgia del Sud i Sandwich del Sud"
+      ],
+      "South Korea": [
+        "Corea del Sud"
+      ],
+      "South Ossetia": [
+        "Ossètia del Sud"
+      ],
+      "South Sudan": [
+        "Sudan del Sud"
+      ],
       "Spain": [
         "Espanya"
+      ],
+      "Sri Lanka": [
+        "Sri Lanka"
+      ],
+      "Sudan": [
+        "Sudan"
+      ],
+      "Suriname": [
+        "Surinam"
+      ],
+      "Svalbard and Jan Mayen": [
+        "Svalbard i Jan Mayen"
+      ],
+      "Sweden": [
+        "Suècia"
+      ],
+      "Switzerland": [
+        "Suïssa"
+      ],
+      "Syria": [
+        "Síria"
+      ],
+      "Taiwan": [
+        "Taiwan"
+      ],
+      "Tanzania": [
+        "Tanzània"
+      ],
+      "Thailand": [
+        "Tailàndia"
+      ],
+      "Togo": [
+        "Togo"
+      ],
+      "Tonga": [
+        "Tonga"
+      ],
+      "Trinidad and Tobago": [
+        "Trinitat i Tobago"
+      ],
+      "Tristan da Cunha": [
+        "Tristan da Cunha"
+      ],
+      "Tunisia": [
+        "Tunísia"
+      ],
+      "Turkey": [
+        "Turquia"
+      ],
+      "Turkmenistan": [
+        "Turkmenistan"
+      ],
+      "Tuvalu": [
+        "Tuvalu"
+      ],
+      "Uganda": [
+        "Uganda"
+      ],
+      "Ukraine": [
+        "Ucraïna"
+      ],
+      "United Arab Emirates": [
+        "Emirats Àrabs Units"
+      ],
+      "United Kingdom": [
+        "Regne Unit"
+      ],
+      "United States": [
+        "Estats Units"
+      ],
+      "United States Minor Outlying Islands": [
+        "Illes Menors dels Estats Units"
+      ],
+      "Uruguay": [
+        "Uruguai"
+      ],
+      "Uzbekistan": [
+        "Uzbekistan"
+      ],
+      "Vanuatu": [
+        "Vanuatu"
+      ],
+      "Venezuela": [
+        "Veneçuela"
+      ],
+      "Vietnam": [
+        "Vietnam"
+      ],
+      "Virgin Islands, British": [
+        "Illes Verges, Britàniques"
+      ],
+      "Virgin Islands, U.S.": [
+        "Illes Verges, Americanes"
+      ],
+      "Wallis and Futuna": [
+        "Wallis i Futuna"
+      ],
+      "Western Sahara": [
+        "Sàhara Occidental"
+      ],
+      "Yemen": [
+        "Iemen"
+      ],
+      "Zambia": [
+        "Zàmbia"
+      ],
+      "Zimbabwe": [
+        "Zimbàbue"
+      ],
+      "Åland Islands": [
+        "Illes Aland"
       ]
     },
     "CountryInfo": {
@@ -1261,6 +2084,9 @@
     "Cycle": {
       "/month": [
         "/mes"
+      ],
+      "/user per month": [
+        "/usuari per mes"
       ]
     },
     "Daily recurring event, frequency": {
@@ -1270,6 +2096,27 @@
       ],
       "Daily": [
         "Diàriament"
+      ],
+      "Daily, ${ timesString }": [
+        "Diàriament, ${ timesString }"
+      ],
+      "Daily, ${ untilString }": [
+        "Diàriament, ${ untilString }"
+      ],
+      "Every ${ interval } day": [
+        "Cada ${ interval } dia",
+        "Cada ${ interval } dies"
+      ],
+      "Every ${ interval } day, ${ timesString }": [
+        "Cada ${ interval } dia, ${ timesString }",
+        "Cada ${ interval } dies, ${ timesString }"
+      ],
+      "Every ${ interval } day, ${ untilString }": [
+        "Cada ${ interval } dia, ${ untilString }",
+        "Cada ${ interval } dies, ${ untilString }"
+      ],
+      "until ${ dateString }": [
+        "fins el ${ dateString }"
       ]
     },
     "Day": {
@@ -1366,12 +2213,29 @@
         "Ajudeu-nos a millorar!"
       ]
     },
+    "Duration": {
+      "120 minutes": [
+        "120 minuts"
+      ],
+      "30 minutes": [
+        "30 minuts"
+      ],
+      "60 minutes": [
+        "60 minuts"
+      ],
+      "90 minutes": [
+        "90 minuts"
+      ]
+    },
     "Email body for description (description part)": {
       "Description: ${ eventDescription }": [
         "Descripció: ${ eventDescription }"
       ]
     },
     "Email body for invitation": {
+      "${ eventTitle } has been canceled.": [
+        "${ eventTitle } s'ha cancel·lat."
+      ],
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } s'ha actualitzat.\n${ eventDetailsText }"
       ],
@@ -1467,11 +2331,25 @@
       "Automatic replies is a paid feature. Please upgrade to a paid account to use this feature.": [
         "Les respostes automàtiques són una característica de pagament. Actualitzeu-vos a un compte de pagament per utilitzar aquesta funció."
       ],
+      "Calendar limit reached": [
+        "Límit de calendari assolit"
+      ],
       "Can't check username, try again later": [
         "No es pot comprovar el nom d'usuari, torneu a intentar-ho més tard"
       ],
+      "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
+        "No es poden crear calendaris nous per a tots els importats a causa del límit del calendari personal."
+      ],
       "Condition incomplete": [
         "Condició incompleta"
+      ],
+      "Deselect at least ${ calendarToFixCount } calendar": [
+        "Desmarqueu almenys ${ calendarToFixCount } calendari",
+        "Desmarqueu almenys ${ calendarToFixCount } calendaris"
+      ],
+      "Deselect at least ${ calendarToFixCount } calendar or": [
+        "Desmarqueu almenys ${ calendarToFixCount } calendari o",
+        "Desmarqueu almenys ${ calendarToFixCount } calendaris o"
       ],
       "Domain not available, try again later": [
         "El domini no està disponible; torneu-ho a provar més tard"
@@ -1502,6 +2380,15 @@
       ],
       "Filter with this name already exists": [
         "Ja existeix un filtre amb aquest nom"
+      ],
+      "Folder name cannot be empty.": [
+        "El nom de la carpeta no pot estar buit."
+      ],
+      "Incorrect login credentials. Please try again.": [
+        "Credencials d'inici de sessió incorrectes. Torneu-ho a provar."
+      ],
+      "Incorrect mailbox password. Please try again.": [
+        "Contrasenya de bústia incorrecta. Torneu a provar-ho."
       ],
       "Incorrect password": [
         "Contrasenya incorrecta"
@@ -1536,11 +2423,27 @@
       "Invalid verification code": [
         "Codi de verificació no vàlid"
       ],
+      "Label name cannot be empty.": [
+        "El nom de l'etiqueta no pot estar buit."
+      ],
+      "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
+        "Uniu almenys ${ calendarToFixCount } calendari amb un calendari Proton existent",
+        "Uniu almenys ${ calendarToFixCount } calendaris amb calendaris Proton existents"
+      ],
+      "Missing key packet": [
+        "Falta el paquet de claus"
+      ],
       "Name on card required": [
         "Nom en targeta requerit"
       ],
+      "Name required": [
+        "Nom requerit"
+      ],
       "No active sessions": [
         "No hi ha sessions actives"
+      ],
+      "No data to import": [
+        "Ni hi ha dades per importar"
       ],
       "No valid address found": [
         "No s’ha trobat una adreça vàlida"
@@ -1578,6 +2481,10 @@
       "Please enable multi-user support before adding users to your organization.": [
         "Si us plau activeu la compatibilitat multi-usuari abans d'afegir usuaris a la seva organització."
       ],
+      "Please fix the highlighted conflict to proceed.": [
+        "Arregleu el conflicte ressaltat per continuar.",
+        "Arregleu els conflictes ressaltats per continuar."
+      ],
       "Please set a recovery phone number first": [
         "Si us plau primer establiu un número de telèfon de recuperació"
       ],
@@ -1596,6 +2503,9 @@
       "Process aborted": [
         "Procés anul·lat"
       ],
+      "Request timed out": [
+        "S'ha esgotat el temps d'espera"
+      ],
       "Require at least one action": [
         "Requereix al menys una acció"
       ],
@@ -1611,6 +2521,9 @@
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "Alguns dels vostres noms d'etiqueta no estan disponibles. Personalitzeu la importació per tal d'editar-ne els noms."
       ],
+      "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
+        "Els noms d'algunes de les etiquetes superen el límit de caràcters màxim de ${ MAIL_APP_NAME }. Modifiqueu la importació per tal d'editar-ne els noms."
+      ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "S'ha produït un error, ${ refresh } per continuar. Si continueu veient aquest missatge d’error, poseu-vos en contacte amb el nostre ${ supportTeam }."
       ],
@@ -1620,8 +2533,14 @@
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "El navegador que utilitzeu no permet l'autorització total del pagament. Si us plau, utilitzeu un navegador diferent o inicieu la sessió mitjançant un ordinador."
       ],
+      "The folder name is invalid. Please choose a different name.": [
+        "El nom de la carpeta no és vàlid. Escolliu-ne un altre."
+      ],
       "The folder name is too long. Please choose a different name.": [
         "El nom de la carpeta és massa llarg. Trieu un nom diferent."
+      ],
+      "The label name is invalid. Please choose a different name.": [
+        "El nom de l'etiqueta no és vàlid. Escolliu-ne un altre."
       ],
       "The label name is too long. Please choose a different name.": [
         "El nom de l'etiqueta és massa llarg. Trieu-ne un de diferent."
@@ -1649,6 +2568,15 @@
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Aquest camp requereix un mínim de ${ minimumLength } caràcters."
+      ],
+      "This folder name is not available. Please choose a different name.": [
+        "Aquest nom de carpeta no està disponible. Trieu-ne un altre."
+      ],
+      "This label name is not available. Please choose a different name.": [
+        "Aquest nom d'etiqueta no està disponible. Trieu-ne un altre."
+      ],
+      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
+        "Aquest missatge pot contenir algunes adreces URL que no es poden obrir amb el navegador actual."
       ],
       "Unknown error": [
         "Error desconegut"
@@ -1823,6 +2751,9 @@
       "Missing start time": [
         "Falta l’hora d’inici"
       ],
+      "No UID, title or start time": [
+        "Sense UID, títol o hora d'inici"
+      ],
       "Non-Gregorian": [
         "No-Gregorià"
       ],
@@ -1831,6 +2762,9 @@
       ],
       "Original recurring event could not be found": [
         "El esdeveniment recurrent original no ha pogut ser trobat"
+      ],
+      "Recurring event has no occurrences": [
+        "L'esdeveniment recurrent no té cap ocurrència"
       ],
       "Recurring rule not supported": [
         "Regla recurrent no compatible"
@@ -1854,6 +2788,9 @@
     "Error message": {
       "Error: ${ errorMessage }": [
         "Error: ${ errorMessage }"
+      ],
+      "Invalid URL": [
+        "Adreça URL no vàlida"
       ],
       "Oops, something went wrong": [
         "Vaja, alguna cosa ha anat malament"
@@ -1891,15 +2828,32 @@
         "No s'ha seleccionat cap imatge"
       ]
     },
+    "Error when exporting event from calendar": {
+      "Event @ ${ timeString }": [
+        "Esdeveniment @ ${ timeString }"
+      ]
+    },
     "Event invitation error": {
       "Attached ICS file could not be decrypted": [
         "No es pot desxifrar l'arxiu ICS adjuntat"
+      ],
+      "Attached ICS file could not be read": [
+        "No es pot llegir l'arxiu ICS adjunt"
       ],
       "Invalid invitation": [
         "Invitació no vàlida"
       ],
       "Invalid response": [
         "Resposta no vàlida"
+      ],
+      "The event could not be added to your calendar. No answer was sent": [
+        "No s'ha pogut afegir l'esdeveniment al calendari. No s'ha enviat cap resposta"
+      ],
+      "The event could not be updated in your calendar. No answer was sent": [
+        "No s'ha pogut actualitzar l'esdeveniment al calendari. No s'ha enviat cap resposta"
+      ],
+      "Unexpected error": [
+        "Error inesperat"
       ],
       "Unsupported invitation": [
         "Invitació no compatible"
@@ -1918,11 +2872,19 @@
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
         "S'ha enviat la vostra resposta però l'esdeveniment no s'ha pogut afegir al vostre calendari"
+      ],
+      "Your answer was sent, but the event could not be updated in your calendar": [
+        "S'ha enviat la resposta, però no s'ha pogut actualitzar l'esdeveniment al calendari"
       ]
     },
     "Event title": {
       "(no title)": [
         "(sense títol)"
+      ]
+    },
+    "Export calendar": {
+      "Loading events": [
+        "Carregant esdeveniments"
       ]
     },
     "Feature": {
@@ -1947,6 +2909,10 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "byte",
+        "bytes"
+      ],
       "GB": [
         "GB"
       ],
@@ -1957,12 +2923,25 @@
         "MB"
       ]
     },
+    "file size format, long": {
+      "Gigabyte": [
+        "gigabyte",
+        "gigabytes"
+      ],
+      "Megabyte": [
+        "megabyte",
+        "megabytes"
+      ]
+    },
     "Filter Actions": {
       "Archive": [
         "Arxiu"
       ],
       "Inbox": [
         "Safata d'entrada"
+      ],
+      "Inbox - Default": [
+        "Safata d'entrada - Per defecte"
       ],
       "Select a folder": [
         "Selecció de carpeta"
@@ -2020,7 +2999,7 @@
         "Aplicar regles de correu no desitjat específiques depenent del remitent. Els missatges d'adreces o dominis a la llista de Permesos sempre van a parar a la vostra Safata d'entrada, mentre que missatges d'adreces o dominis de la llista de No desitjats sempre van a parar a Correu brossa. Marcar un missatge com a correu brossa n'afegeix l'adreça a la llista de No desitjats; marcar un missatge com a no correu brossa l'afegeix a la llista de Permesos."
       ],
       "Search in Allow List and Block List": [
-        "Cercar a Llista d'Autoritzats i Llista de Bloqueig"
+        "Cerca a les llistes de permesos i de bloqueig"
       ]
     },
     "Font Face Default": {
@@ -2080,11 +3059,17 @@
       "Key type": [
         "Clau tipus"
       ],
+      "Name": [
+        "Nom"
+      ],
       "Notifications": [
         "Notificacions"
       ],
       "Organization key fingerprint": [
         "Clau d'identificació de la clau d'organització"
+      ],
+      "Status": [
+        "Estat"
       ],
       "Time": [
         "Temps"
@@ -2122,6 +3107,15 @@
       ],
       "Value / Data / Points to": [
         "Valor / Dades / Punts a"
+      ]
+    },
+    "Hint": {
+      "Found ${ items.length } suggestion, use keyboard to navigate.": [
+        "S'ha trobat ${ items.length } suggerència, utilitza el teclat per navegar.",
+        "S'han trobat ${ items.length } suggeriments, utilitzant el teclat per navegar."
+      ],
+      "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
+        "Utilitzeu les tecles de fletxa amunt i fletxa avall per accedir i navegar pels suggeriments després de l'entrada. Premeu Retorn per confirmar la vostra elecció, o Esc per tancar el quadre de suggeriments."
       ]
     },
     "Human verification method": {
@@ -2167,6 +3161,22 @@
     "Import calendar warning": {
       "vCard versions < 3.0": [
         "versions vCard < 3.0"
+      ]
+    },
+    "Import calendar; import invitation": {
+      "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your Proton email address.": [
+        "Les invitacions importades aparèixen a ${ CALENDAR_APP_NAME } com a esdeveniments simples sense detalls de l'organitzador i dels participants. Per obtenir actualitzacions de l'esdeveniment i veure els participants, demaneu als organitzadors que us convidin utilitzant la vostra adreça de correu electrònic de Proton."
+      ],
+      "This file contains an event invitation:": [
+        "Aquest fitxer conté una invitació a un esdeveniment:",
+        "Aquest fitxer conté invitacions a un esdeveniment:"
+      ],
+      "This file contains an invitation response:": [
+        "Aquest fitxer conté una resposta a la invitació:",
+        "Aquest fitxer conté respostes a la invitació:"
+      ],
+      "This file contains some data that we cannot import:": [
+        "Aquest fitxer conté algunes dades que no podem importar:"
       ]
     },
     "Import contact": {
@@ -2284,6 +3294,11 @@
         "límit d'ample de banda"
       ]
     },
+    "Import instructions": {
+      "Select ${ boldExportCSV }.": [
+        "Selecciona ${ boldExportCSV }."
+      ]
+    },
     "Import instructions emphasis": {
       "Account info": [
         "Informació de compte"
@@ -2297,11 +3312,51 @@
       "Export": [
         "Exportació"
       ],
+      "Export contacts": [
+        "Exportar contactes"
+      ],
+      "Export to CSV file": [
+        "Exporta a fitxer CSV"
+      ],
       "ICS": [
         "ICS"
       ],
       "Manage": [
         "Gestionar"
+      ],
+      "Publish a calendar": [
+        "Publica un calendari"
+      ]
+    },
+    "Import instructions link": {
+      "app password": [
+        "contrasenya de l'aplicació"
+      ],
+      "contacts": [
+        "contactes"
+      ],
+      "CSV file": [
+        "Fitxer CSV"
+      ],
+      "full calendar view": [
+        "vista de calendari completa"
+      ],
+      "ICS file": [
+        "Fitxer ICS"
+      ],
+      "security settings": [
+        "configuració de seguretat"
+      ],
+      "shared calendars": [
+        "calendaris compartits"
+      ],
+      "Yahoo": [
+        "Yahoo"
+      ]
+    },
+    "Import provider": {
+      "Other": [
+        "Altres"
       ]
     },
     "Import status": {
@@ -2356,6 +3411,21 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necessita el vostre permís per ${ enableDesktopNotifications }."
       ],
+      "${ calendarsToBeCreatedCount } new calendar": [
+        "${ calendarsToBeCreatedCount } nou calendari",
+        "${ calendarsToBeCreatedCount } nous calendaris"
+      ],
+      "${ calendarsToBeMerged } merged calendar": [
+        "${ calendarsToBeMerged } calendari combinat",
+        "${ calendarsToBeMerged } calendaris combinats"
+      ],
+      "${ calendarsToBeMergedCount } merged calendar": [
+        "${ calendarsToBeMergedCount } calendari combinat",
+        "${ calendarsToBeMergedCount } calendaris combinats"
+      ],
+      "${ emailAddress } is invalid": [
+        "${ emailAddress } no és vàlida"
+      ],
       "${ n } address": [
         "${ n } adreça",
         "${ n } adreces"
@@ -2391,6 +3461,10 @@
         "${ providerFoldersNumLocalized } etiqueta trobada a Gmail",
         "${ providerFoldersNumLocalized } etiquetes trobades a Gmail"
       ],
+      "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
+        "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendari",
+        "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendaris"
+      ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } carpeta seleccionada",
         "${ selectedFoldersCount } carpetes seleccionades"
@@ -2406,6 +3480,9 @@
       "${ selectedFoldersCountLocalized } label selected": [
         "${ selectedFoldersCountLocalized } etiqueta seleccionada",
         "${ selectedFoldersCountLocalized } etiquetes seleccionades"
+      ],
+      "${ storageSize } storage": [
+        "${ storageSize } d'emmagatzematge"
       ],
       "${ strongAddressAvailable } You will use this email address to sign into all ${ BRAND_NAME } services.": [
         "${ strongAddressAvailable } Utilitzareu aquesta adreça de correu electrònic per accedir a tots els serveis de ${ BRAND_NAME }."
@@ -2456,6 +3533,9 @@
       "Account successfully updated": [
         "El compte s'ha actualitzat correctament"
       ],
+      "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
+        "Afegiu una adreça de correu electrònic @pm.me al vostre compte. Aquest domini curt i senzill significa «${ MAIL_APP_NAME } me» o «Private message me»."
+      ],
       "Add a recovery email address": [
         "Afegeix una adreça de correu electrònic de recuperació"
       ],
@@ -2464,6 +3544,9 @@
       ],
       "Add image URL": [
         "Afegir URL de la imatge"
+      ],
+      "Add label": [
+        "Afegeix etiqueta"
       ],
       "Additional options": [
         "Opcions addicionals"
@@ -2522,6 +3605,9 @@
       "Are you sure you want to delete this filter?": [
         "Estàs segur que vols esborrar aquest filtre?"
       ],
+      "Are you sure you want to delete this folder? All children folders will also be deleted.": [
+        "Segur que voleu eliminar aquesta carpeta? També s'eliminaran totes les carpetes filles."
+      ],
       "Are you sure you want to delete this label?": [
         "Esteu segur de voler eliminar aquesta etiqueta?"
       ],
@@ -2564,6 +3650,9 @@
       "Basic, Plus or Visionary subscription required": [
         "Es requereix una subscripció Basic, Plus o Visionary"
       ],
+      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
+        "Abans de sol·licitar un nou codi de verificació, reviseu la carpeta de correu brossa i si ${ strong } és l'adreça correcta."
+      ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Abans que pugueu enviar i rebre missatges des de les noves direccions, necessiteu crear les seves claus de xifrat respectives."
       ],
@@ -2603,11 +3692,18 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Feu clic a \"Sol·licitar un nou codi\" per rebre un codi de verificació nou a ${ strong }. Si aquest número de telèfon és incorrecte, feu clic a \"Editar\" per corregir-lo."
       ],
+      "Close this screen to exit.": [
+        "Tanqueu la finestra per sortir."
+      ],
       "Continue anyway?": [
         "Voleu continuar igualment?"
       ],
       "Continue with ${ planName }": [
         "Continua amb ${ planName }"
+      ],
+      "Create ${ calendarsToBeCreated } new calendar": [
+        "Crear ${ calendarsToBeCreated } nou calendari",
+        "Crear ${ calendarsToBeCreated } nous calendaris"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Creeu una etiqueta per als missatges importats, un interval de temps per a aquesta importació i les carpetes que vulgueu importar."
@@ -2623,6 +3719,33 @@
       ],
       "Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.": [
         "Actualment tot l'emmagatzematge disponible està assignat al compte d'administrador. Si us plau reduïu l'assignació a aquest compte per fer espai per altres usuaris. Podeu ampliar l'espai total sempre que vulgueu mitjançant l'actualització del compte."
+      ],
+      "Custom": [
+        "Personalitzat"
+      ],
+      "Custom daily": [
+        "Personalitzat diàriament"
+      ],
+      "Custom email domains": [
+        "Dominis de correu personalitzats"
+      ],
+      "Custom monthly": [
+        "Personalitzat mensualment"
+      ],
+      "Custom weekly": [
+        "Personalitzat setmanalment"
+      ],
+      "Custom yearly": [
+        "Personalitzat anualment"
+      ],
+      "Daily": [
+        "Diàriament"
+      ],
+      "Data locked": [
+        "Dades bloquejades"
+      ],
+      "Delete link?": [
+        "Voleu eliminar l'enllaç?"
       ],
       "Discount applied to your subscription with coupon ${ code }": [
         "Descompte aplicat a la vostra subscripció amb un cupó ${ code }"
@@ -2652,8 +3775,17 @@
       "Download your PGP keys for use with other PGP-compatible services.": [
         "Descarregueu les vostres claus PGP per utilitzar amb altres serveis compatibles amb PGP."
       ],
+      "Drop a file here to upload": [
+        "Arrossegueu un fitxer aquí per carregar-lo"
+      ],
       "Drop the file here to upload": [
         "Arrossegueu el fitxer aquí per carregar-lo"
+      ],
+      "Edit label": [
+        "Edita l'etiqueta"
+      ],
+      "Edit link": [
+        "Editar l'enllaç"
       ],
       "Email address": [
         "Adreça de correu electrònic"
@@ -2699,6 +3831,9 @@
       ],
       "Expired": [
         "Vençuda"
+      ],
+      "expires ${ expirationDate }": [
+        "caduca el ${ expirationDate }"
       ],
       "Failed to fetch logs.": [
         "No s'han pogut trobar els registres."
@@ -2763,11 +3898,21 @@
       "If you wish to combine this account with another one, do NOT delete it.": [
         "Si voleu combinar aquest compte amb un altre, NO l'elimineu."
       ],
+      "Image description": [
+        "Descripció de la imatge"
+      ],
       "Image URL": [
         "URL de la imatge"
       ],
       "Images have been removed because they are not allowed in auto-reply": [
         "Les imatges s'han eliminat perquè no estan permeses a les respostes automàtiques"
+      ],
+      "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
+        "Importar ${ contactsFragment } i ${ contactsGroupsFragment }"
+      ],
+      "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendar": [
+        "Importar ${ selectedCalendarsCount } de ${ totalCalendarsCount } calendari",
+        "Importar ${ selectedCalendarsCount } de ${ totalCalendarsCount } calendaris"
       ],
       "Import from": [
         "Importa des de"
@@ -2783,6 +3928,9 @@
       ],
       "IMPORTANT: Some registrars do not accept CNAME values with a period at the end (while others require it). If your registrar does not accept your CNAME records, please delete the period at the end of each CNAME value and try again.": [
         "IMPORTANT: Alguns registradors no accepten els valors CNAME amb un període al final (mentre que altres ho requereixen). Si el registrador no accepta els vostres registres CNAME, elimineu el període al final de cada valor CNAME i torna-ho a provar."
+      ],
+      "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
+        "Important les vostres dades des de ${ importedEmailAddress } a ${ toEmail }."
       ],
       "Inherited from parent folder": [
         "Heretada d'una carpeta principal"
@@ -2805,6 +3953,9 @@
       "Install a Server configuration file to connect to a specific server in the country of your choice.": [
         "Instal·leu un arxiu de configuració de servidor per connectar a un servidor a específic al país que trieu."
       ],
+      "Internet connection lost": [
+        "S'ha perdut la connexió a Internet"
+      ],
       "Internet connection lost. Please check your device's connectivity.": [
         "S'ha perdut la connexió a Internet. Comproveu la connectivitat del dispositiu."
       ],
@@ -2821,11 +3972,17 @@
       "it’s imperative": [
         "és obligatori"
       ],
+      "Just confirm your selection and we'll do the rest.": [
+        "Només confirmeu la vostra selecció i nosaltres farem la resta."
+      ],
       "Keep those records in your DNS for as long as you want to use DKIM.": [
         "Mantingueu aquest registre al DNS durant el temps que vulgueu fer servir el DKIM."
       ],
       "Label all imported messages as": [
         "Etiqueta tots els missatges importats com a"
+      ],
+      "Large imports can take several days.": [
+        "Imports grans poden trigar diversos dies."
       ],
       "Learn more": [
         "Saber-ne més"
@@ -2835,6 +3992,9 @@
       ],
       "Let your contacts know you care about their privacy.": [
         "Feu que els vostres contactes coneguin que us preocupeu per la seva privadesa."
+      ],
+      "Link copied to clipboard": [
+        "S'ha copiat l'enllaç al porta-retalls"
       ],
       "Link type": [
         "Tipus d'enllaç"
@@ -2862,6 +4022,9 @@
       ],
       "Merged": [
         "Combinats"
+      ],
+      "Monthly ${ onDayString }": [
+        "Mensual ${ onDayString }"
       ],
       "more": [
         "més"
@@ -2963,6 +4126,12 @@
       "Plan upgrade required": [
         "Es requereix una millora del pla"
       ],
+      "Please fill out this field.": [
+        "Empleneu aquest camp."
+      ],
+      "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
+        "Manteniu-lo protegit. El necessitareu per accedir al vostre compte i desxifrar les vostres dades en cas d'un restabliment de contrasenya."
+      ],
       "Please note that if you delete this address, you will no longer be able to send or receive emails using this address.": [
         "Tingueu en compte que si suprimiu aquesta adreça, ja no podreu enviar ni rebre correus electrònics mitjançant aquesta adreça."
       ],
@@ -3002,6 +4171,9 @@
       "Preview": [
         "Previsualització"
       ],
+      "Priority support": [
+        "Suport prioritari"
+      ],
       "Proton paused an import because it lost the connection with your other email provider. Please reconnect.": [
         "Proton ha aturat una importació perquè ha perdut la connexió amb el vostre altre proveïdor de correu electrònic. Torneu a connectar."
       ],
@@ -3017,11 +4189,17 @@
       "Queued": [
         "En cua"
       ],
+      "Recovery file downloaded": [
+        "S'ha baixat el fitxer de recuperació"
+      ],
       "recovery method": [
         "mètode de recuperació"
       ],
       "Recovery phrase copied to clipboard": [
         "Frase de recuperació copiada al porta-retalls"
+      ],
+      "Recovery phrase downloaded": [
+        "S'ha descarregat la frase de recuperació"
       ],
       "Recovery phrase has been disabled": [
         "S'ha desactivat la frase de recuperació"
@@ -3050,6 +4228,12 @@
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Escaneja aquest codi Qr amb el teu disposiu d'autenticació en dos passos per a configurar el vostre compte. ${ switchButton }."
       ],
+      "Select a service provider to start": [
+        "Seleccioneu un proveïdor de serveis per començar"
+      ],
+      "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
+        "Seleccioneu quins calendaris importar. Es crearà un nou calendari per cada calendari importat fins al límit de 20 calendaris."
+      ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "Enviat amb correu segur de <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
       ],
@@ -3058,6 +4242,12 @@
       ],
       "Server load": [
         "Càrrega de servidor"
+      ],
+      "Servers are unreachable. Please try again in a few minutes": [
+        "Servidors inaccessibles. Torneu a provar-ho en uns minuts"
+      ],
+      "Session timed out": [
+        "S'ha esgotat el temps de sessió"
       ],
       "Set recovery phrase": [
         "Estableix la frase de recuperació"
@@ -3076,6 +4266,12 @@
       ],
       "Some keys successfully reactivated": [
         "S'han reactivat correctament algunes claus"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "L'emmagatzematge és compartit amb ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } i ${ DRIVE_APP_NAME }."
+      ],
+      "Support for 1 custom email domain": [
+        "Suport per a 1 domini de correu personalitzat"
       ],
       "support team": [
         "equip de suport"
@@ -3176,6 +4372,15 @@
       "Tor": [
         "Tor"
       ],
+      "Total email addresses": [
+        "Adreces de correu totals"
+      ],
+      "Total supported domains": [
+        "Dominis suportats totals"
+      ],
+      "Total VPN connections": [
+        "Connexions VPN totals"
+      ],
       "Two-factor authentication adds an extra layer of security to your account in case your password is compromised.": [
         "L'autenticació de dos factors afegeix una capa extra de seguretat al vostre compte per si la vostra contrasenya ha estat compromesa."
       ],
@@ -3196,6 +4401,9 @@
       ],
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "Tret que tanqueu la sessió del vostre compte o canvieu la vostra contrasenya, la vostra sessió es mantindrà activa. Les sessions expiraran després de 30 dies d'inactivitat."
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Carpetes, etiquetes, i filtres il·limitats"
       ],
       "Unlimited messages": [
         "Missatges il·limitats"
@@ -3239,6 +4447,15 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Us redireccionarem a PayPal en una pestanya nova del navegador per completar aquesta transacció. Si utilitzeu bloquejadors emergents, inhabiliteu-los per continuar."
       ],
+      "We'll notify you when the import is done.": [
+        "Us notificarem quan la importació s'hagi realitzat."
+      ],
+      "We'll send a new verification code to ${ strong }": [
+        "Enviarem un codi de verificació nou a ${ strong }"
+      ],
+      "We're moving! Join us at our new site: ${ link }.": [
+        "Ens mudem! Entreu al nostre lloc nou: ${ link }."
+      ],
       "Web URL": [
         "URL del web"
       ],
@@ -3257,11 +4474,17 @@
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Voleu rebre un codi de verificació nou o utilitzar un mètode de verificació alternatiu?"
       ],
+      "Would you like to receive a new verification code?": [
+        "Voleu rebre un codi de verificació nou?"
+      ],
       "Yahoo reads your personal data in order to provide access for advertisers, US intelligence agencies and other third parties. For better privacy, create a secure email address.": [
         "Yahoo llegeix les teves dades personals per donar-les a publicitants, agències d’intel·ligència de EEUU i altres terceres parts. Per una millor privadesa crea un compte de correu segur."
       ],
       "Yandex records your online activity and reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
         "Yandex registra la teva activitat i llegeix les teves dades personals per donar-hi accés a publicitants o altres terceres parts. Per una millor privadesa crea una adreça de correu electrònic segur."
+      ],
+      "Yearly": [
+        "Anual"
       ],
       "You already have a free account": [
         "Ja teniu un compte gratuït"
@@ -3269,8 +4492,14 @@
       "You are about to open another browser tab and visit:": [
         "Esteu a punt d'obrir una pestanya del navegador nova i visitar:"
       ],
+      "You can also merge imported calendars with existing Proton calendars.": [
+        "També podeu combinar els calendaris importats amb calendaris Proton existents."
+      ],
+      "You can check the progress ${ importProgressLink }.": [
+        "Podeu comprovar el progrés a ${ importProgressLink }."
+      ],
       "You can customize and download your invoices for accounting purposes.": [
-        "Podeu personalitzar i descarregar les vostres factures a efectes de comptabilitat."
+        "Podeu personalitzar i baixar les vostres factures a efectes de comptabilitat."
       ],
       "You can enable authentication logging to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "Podeu habilitar l'accés amb autenticació per veure quan s'accedeix al vostre compte, i des de quina IP. Enregistrarem l'adreça IP que accedeix al compte, l'hora i els intents fallits."
@@ -3340,6 +4569,9 @@
       ],
       "Your Block List is empty.": [
         "La vostra llista de no desitjats està buida."
+      ],
+      "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
+        "Les vostres dades estan a punt per importar des de ${ importedEmailAddressStrong } al vostre compte de Proton."
       ],
       "Your email will only be used for this one-time verification.": [
         "El vostre correu electrònic només s’utilitzarà per a aquesta única verificació."
@@ -3575,6 +4807,9 @@
       "Go to Trash": [
         "Vés a la Paperera"
       ],
+      "Insert link": [
+        "Afegeix un enllaç"
+      ],
       "Jump to first": [
         "Moure a primera posició"
       ],
@@ -3730,6 +4965,11 @@
         "Marca obsolet"
       ]
     },
+    "Knowledge base link label": {
+      "Learn more": [
+        "Més informació"
+      ]
+    },
     "Label": {
       " and ": [
         " i "
@@ -3750,6 +4990,9 @@
       "${ UsedAddresses } of ${ MaxAddresses } email address": [
         "${ UsedAddresses } de ${ MaxAddresses } adreça de correu electrònic",
         "${ UsedAddresses } de ${ MaxAddresses } adreces de correu electrònic"
+      ],
+      "(Temporarily unavailable. Please check back later.)": [
+        "(No disponible temporalment. Comproveu-ho de nou més tard.)"
       ],
       "Account storage": [
         "Emmagatzematge del compte"
@@ -3798,6 +5041,9 @@
       ],
       "App password": [
         "Contrasenya de l'aplicació"
+      ],
+      "Apply filter to existing emails": [
+        "Aplica el filtre als correus existents"
       ],
       "Ask before loading remote content": [
         "Confirmar abans de carregar contingut remot"
@@ -3855,6 +5101,9 @@
       ],
       "Code is 6 digits without spaces": [
         "El codi és de 6 dígits sense espais"
+      ],
+      "Color": [
+        "Color"
       ],
       "Composer": [
         "Editor"
@@ -3940,14 +5189,20 @@
       "Density": [
         "Densitat"
       ],
+      "Description": [
+        "Descripció"
+      ],
       "Digits": [
         "Dígits"
       ],
       "Discount": [
         "Descompte"
       ],
+      "Display": [
+        "Mostrar"
+      ],
       "Display name": [
-        "Mostrar el nom"
+        "Nom a mostrar"
       ],
       "Do not ask again": [
         "No m'ho torneu a preguntar"
@@ -4339,6 +5594,9 @@
       "Upload 1 or more recovery files or encryption keys": [
         "Pengeu 1 o més fitxers de recuperació o claus de xifratge"
       ],
+      "URL": [
+        "URL"
+      ],
       "Use folder colors": [
         "Utilitzar colors de carpeta"
       ],
@@ -4401,8 +5659,21 @@
       ]
     },
     "label": {
+      "Recovery phone number": [
+        "Número de telèfon de recuperació"
+      ],
       "Recovery phrase": [
         "Frase de recuperació"
+      ]
+    },
+    "Label for default event notifications": {
+      "Notifications": [
+        "Notificacions"
+      ]
+    },
+    "Label for default event settings": {
+      "Duration": [
+        "Durada"
       ]
     },
     "Label for domain modal": {
@@ -4537,6 +5808,9 @@
       "Common sign up issues": [
         "Problemes comuns de registre"
       ],
+      "Encryption and keys": [
+        "Xifratge i claus"
+      ],
       "Forgot username?": [
         "Heu oblidat el nom d'usuari?"
       ],
@@ -4548,6 +5822,9 @@
       ],
       "Learn more": [
         "Més informació"
+      ],
+      "Need help?": [
+        "Necessiteu ajuda?"
       ],
       "Pay invoice": [
         "Pagar la factura"
@@ -4581,16 +5858,44 @@
       ]
     },
     "Loading info": {
+      "Almost there": [
+        "Ja gairebé està"
+      ],
+      "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
+        "Quantitat de calendaris creats: ${ createdCalendars } d'un total de ${ calendarsToBeCreated }"
+      ],
       "Connecting to your email provider": [
         "Connectant al vostre prveïdor de correu electrònic"
+      ],
+      "Creating new calendars": [
+        "Creant els calendaris nous"
+      ],
+      "Gathering your data": [
+        "Obtenint les vostres dades"
+      ],
+      "We're gathering your data from your provider": [
+        "Estem obtenint les vostres dades des del vostre proveïdor"
+      ],
+      "Your import is starting": [
+        "La importació s'està iniciant"
       ]
     },
     "Log preference": {
       "Enable advanced logs": [
-        "Habilitar registres avançats"
+        "Activa els registres avançats"
       ],
       "Enable authentication logs": [
-        "Habilitar registres d'autenticació"
+        "Activa els registres d'autenticació"
+      ]
+    },
+    "Mail import summary": {
+      "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importar tots els missatges d'${ selectedLabelsCount } de ${ totalLabelsCount } etiqueta des de ${ periodFragment } i etiquetar-los com a ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importar tots els missatges de ${ selectedLabelsCount } de ${ totalLabelsCount } etiquetes des de ${ periodFragment } i etiquetar-los com a ${ LABEL_MARKUP_PLACEHOLDER }"
+      ],
+      "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
+        "Importar tots els missatges d'${ totalLabelsCount } etiqueta des de ${ periodFragment } i etiquetar-los com a ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Importar tots els missatges de ${ totalLabelsCount } etiquetes des de ${ periodFragment } i etiquetar-los com a ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Member action": {
@@ -4598,7 +5903,7 @@
         "Esborra"
       ],
       "Edit": [
-        "Editar"
+        "Edita"
       ],
       "Revoke sessions": [
         "Revoca les sessions"
@@ -4609,12 +5914,20 @@
     },
     "Message": {
       "Are you sure you want to disable two-factor authentication?": [
-        "Esteu segur que voleu deshabilitar l'autenticació de dos factors?"
+        "Segur que voleu desactivar l'autenticació de dos factors?"
+      ],
+      "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
+        "S'ha acabat la prova gratuïta. L'accés al compte es desactivarà prompte. ${ action }"
       ]
     },
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "Hi ha disponible una nova versió de ${ appName }. ${ reloadButton }."
+      ]
+    },
+    "Modal title and action": {
+      "Add calendar": [
+        "Afegir calendari"
       ]
     },
     "Monetary unit": {
@@ -4628,9 +5941,137 @@
         "Franc suís"
       ]
     },
+    "Monthly recurring event, frequency": {
+      "Every ${ interval } month ${ onDayString }": [
+        "Cada ${ interval } mes ${ onDayString }",
+        "Cada ${ interval } messos ${ onDayString }"
+      ],
+      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
+        "Cada ${ interval } mes ${ onDayString }, ${ timesString }",
+        "Cada ${ interval } messos ${ onDayString }, ${ timesString }"
+      ],
+      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
+        "Cada ${ interval } mes ${ onDayString }, ${ untilString }",
+        "Cada ${ interval } mesos ${ onDayString }, ${ untilString }"
+      ],
+      "Monthly ${ onDayString }": [
+        "Mensual ${ onDayString }"
+      ],
+      "Monthly ${ onDayString }, ${ timesString }": [
+        "Mensualment ${ onDayString }, ${ timesString }"
+      ],
+      "Monthly ${ onDayString }, ${ untilString }": [
+        "Mensualment ${ onDayString }, ${ untilString }"
+      ]
+    },
     "Monthly recurring event, repeats on": {
       "on day ${ dayOfMonth }": [
         "el dia ${ dayOfMonth }"
+      ],
+      "on the first Friday": [
+        "en el primer Divendres"
+      ],
+      "on the first Monday": [
+        "en el primer Dilluns"
+      ],
+      "on the first Saturday": [
+        "en el primer Dissapte"
+      ],
+      "on the first Sunday": [
+        "en el primer Diumenge"
+      ],
+      "on the first Thursday": [
+        "en el primer Dijous"
+      ],
+      "on the first Tuesday": [
+        "en el primer Dimarts"
+      ],
+      "on the first Wednesday": [
+        "en el primer Dimecres"
+      ],
+      "on the fourth Friday": [
+        "en el quart Divendres"
+      ],
+      "on the fourth Monday": [
+        "en el quart Dilluns"
+      ],
+      "on the fourth Saturday": [
+        "en el quart Dissabte"
+      ],
+      "on the fourth Sunday": [
+        "en el quart Diumenge"
+      ],
+      "on the fourth Thursday": [
+        "en el quart Dijous"
+      ],
+      "on the fourth Tuesday": [
+        "en el quart Dimarts"
+      ],
+      "on the fourth Wednesday": [
+        "en el quart Dimecres"
+      ],
+      "on the last Friday": [
+        "en el darrer Divendres"
+      ],
+      "on the last Monday": [
+        "en el darrer Dilluns"
+      ],
+      "on the last Saturday": [
+        "en el darrer Dissabte"
+      ],
+      "on the last Sunday": [
+        "en el darrer Diumenge"
+      ],
+      "on the last Thursday": [
+        "en el darrer Dijous"
+      ],
+      "on the last Tuesday": [
+        "en el darrer Dimarts"
+      ],
+      "on the last Wednesday": [
+        "en el darrer Dimecres"
+      ],
+      "on the second Friday": [
+        "en el segon Divendres"
+      ],
+      "on the second Monday": [
+        "en el segon Dilluns"
+      ],
+      "on the second Saturday": [
+        "en el segon Dissabte"
+      ],
+      "on the second Sunday": [
+        "en el segon Diumenge"
+      ],
+      "on the second Thursday": [
+        "en el segon Dijous"
+      ],
+      "on the second Tuesday": [
+        "en el segon Dimarts"
+      ],
+      "on the second Wednesday": [
+        "en el segon Dimecres"
+      ],
+      "on the third Friday": [
+        "en el tercer Divendres"
+      ],
+      "on the third Monday": [
+        "en el tercer Dilluns"
+      ],
+      "on the third Saturday": [
+        "en el tercer Dissabte"
+      ],
+      "on the third Sunday": [
+        "en el tercer Diumenge"
+      ],
+      "on the third Thursday": [
+        "en el tercer Dijous"
+      ],
+      "on the third Tuesday": [
+        "en el tercer Dimarts"
+      ],
+      "on the third Wednesday": [
+        "en el tercer Dimecres"
       ]
     },
     "Moved to black/whitelist": {
@@ -4642,6 +6083,9 @@
       ]
     },
     "Navigation": {
+      "Back": [
+        "Torna"
+      ],
       "Back to Calendar": [
         "Tornar al Calendari"
       ],
@@ -4663,18 +6107,71 @@
         "Nom de etiqueta"
       ]
     },
+    "new_plans: Action": {
+      "Upgrade now": [
+        "Millorar ara"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Continuar amb el gratuït"
+      ],
+      "Delete account": [
+        "Eliminar compte"
+      ],
+      "Downgrade account": [
+        "Degradar compte"
+      ],
+      "Got it": [
+        "Entesos"
       ],
       "Switch or add account": [
         "Canvia o afegeix un compte"
       ]
     },
     "new_plans: feature": {
+      "${ n } filter": [
+        "${ n } filtre",
+        "${ n } filtres"
+      ],
       "${ n } VPN connection": [
         "${ n } connexió VPN",
         "${ n } connexions VPN"
+      ],
+      "Auto-reply": [
+        "Resposta automàtica"
+      ],
+      "Contact groups": [
+        "Grups de contactes"
+      ],
+      "Contact groups management": [
+        "Gestió de grups de contactes"
+      ],
+      "Custom email domains": [
+        "Dominis de correu personalitzats"
+      ],
+      "Encrypted contact details": [
+        "Detalls de contacte xifrats"
+      ],
+      "HTML signatures": [
+        "Signatures HTML"
+      ],
+      "Password-protected Emails": [
+        "Correus protegits amb contrasenya"
+      ],
+      "Priority support": [
+        "Suport prioritari"
+      ],
+      "Secure Core servers": [
+        "Servidors Secure Core"
+      ],
+      "Two-factor authentication": [
+        "Autenticació de dos factors"
+      ]
+    },
+    "new_plans: heading": {
+      "Support": [
+        "Assistència"
       ]
     },
     "new_plans: Plan frequency": {
@@ -4689,8 +6186,16 @@
       "Subscription": [
         "Subscripció"
       ],
+      "terms and conditions": [
+        "termes i condicions"
+      ],
       "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
         "Per començar, trieu un nom a mostrar. Això és el que les persones veuran quan envieu un correu, les convideu a un esdeveniment o compartiu un fitxer."
+      ]
+    },
+    "new_plans: title": {
+      "Unlock premium features by upgrading": [
+        "Milloreu el pla i desbloquegeu funcions prèmium"
       ]
     },
     "new_plans: upgrade": {
@@ -4704,6 +6209,18 @@
     "new_plans: Upsell attribute": {
       "10 email addresses/aliases": [
         "10 adreces de correu/àlies"
+      ],
+      "Priority support": [
+        "Suport prioritari"
+      ],
+      "Support for 1 custom email domain": [
+        "Suport per a 1 domini de correu personalitzat"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Carpetes, etiquetes, i filtres il·limitats"
+      ],
+      "Unlimited messages": [
+        "Missatges il·limitats"
       ]
     },
     "Notification": {
@@ -4715,6 +6232,43 @@
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "Credencials OpenVPN / IKEv2 regenerades"
+      ]
+    },
+    "Notification time input": {
+      "at": [
+        "a"
+      ]
+    },
+    "Notification type": {
+      "email": [
+        "correu electrònic"
+      ],
+      "notification": [
+        "notificació"
+      ]
+    },
+    "Notification when": {
+      "at time of event": [
+        "al moment de l'esdeveniment"
+      ],
+      "day before": [
+        "dia abans",
+        "dies abans"
+      ],
+      "hour before": [
+        "hora abans",
+        "hores abans"
+      ],
+      "minute before": [
+        "minut abans",
+        "minuts abans"
+      ],
+      "on the same day": [
+        "el mateix dia"
+      ],
+      "week before": [
+        "setmana abans",
+        "setmanes abans"
       ]
     },
     "Option": {
@@ -4871,6 +6425,12 @@
       "Normal": [
         "Normal"
       ],
+      "Off": [
+        "Desactivat"
+      ],
+      "On": [
+        "Actiu"
+      ],
       "Permanent": [
         "Permanent"
       ],
@@ -4936,6 +6496,9 @@
     "Option group label": {
       "Create new calendar": [
         "Crear calendari nou"
+      ],
+      "Merge with calendar": [
+        "Combinar amb el calendari"
       ]
     },
     "OS compatibility": {
@@ -4988,7 +6551,7 @@
         "Adreça"
       ],
       "Choose a name": [
-        "Seleccionar un nom"
+        "Seleccioneu un nom"
       ],
       "Choose display name": [
         "Trieu el nom de visualització"
@@ -5032,8 +6595,14 @@
       "Postal code": [
         "Codi postal"
       ],
+      "Search settings": [
+        "Configuració de cerca"
+      ],
       "Search users": [
         "Cercar usuaris"
+      ],
+      "Select": [
+        "Seleccionar"
       ],
       "Select a reason": [
         "Seleccioneu un motiu"
@@ -5120,12 +6689,22 @@
         "Frase"
       ]
     },
+    "Recovery Phone": {
+      "Cancel": [
+        "Cancel·la"
+      ]
+    },
     "Remark about a key type option": {
       "Compatibility": [
         "Compatibilitat"
       ],
       "State of the art": [
         "Estat de l'art"
+      ]
+    },
+    "Remove calendar section title": {
+      "Remove calendar": [
+        "Elimina el calendari"
       ]
     },
     "Restore administrator panel": {
@@ -5154,6 +6733,11 @@
       ],
       "Upload additional files": [
         "Pugeu fitxers addicionals"
+      ]
+    },
+    "Select search results": {
+      "No results found": [
+        "No s'han trobat resultats"
       ]
     },
     "Settings description": {
@@ -5214,18 +6798,18 @@
     },
     "Spam filter moved to blacklist": {
       "${ Domain } moved to Block List": [
-        "${ Domain } mogut a la Llista de Bloqueig"
+        "${ Domain } s'ha mogut a la llista de bloqueig"
       ],
       "${ Email } moved to Block List": [
-        "${ Email } mogut a la Llista de Bloqueig"
+        "${ Email } s'ha mogut a la llista de bloqueig"
       ]
     },
     "Spam filter moved to whitelist": {
       "${ Domain } moved to Allow List": [
-        "${ Domain } mogut a Llista d'Autoritzats"
+        "${ Domain } s'ha mogut a la llista de permesos"
       ],
       "${ Email } moved to Allow List": [
-        "${ Email } mogut a Llista d'Autoritzats"
+        "${ Email } s'ha mogut a la llista de permesos"
       ]
     },
     "Spam notification": {
@@ -5240,6 +6824,20 @@
       ],
       "${ email } updated": [
         "${ email } actualitzat"
+      ]
+    },
+    "Spotlight": {
+      "Get up to 18 months of ${ planName } for free": [
+        "Aconseguiu fins a 18 mesos de ${ planName } gratuïtament"
+      ],
+      "Invite friends and earn rewards!": [
+        "Convideu amistats i guanyeu recompenses!"
+      ],
+      "No more missed appointments": [
+        "No hi ha més cites perdudes"
+      ],
+      "Try ${ DRIVE_APP_NAME }": [
+        "Prova ${ DRIVE_APP_NAME }"
       ]
     },
     "State": {
@@ -5272,12 +6870,55 @@
         "El vostre emmagatzematge actual:"
       ]
     },
+    "Subscribe to calendar modal": {
+      "Calendar URL": [
+        "URL del calendari"
+      ],
+      "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Subscribed calendars.\n${ kbLink }": [
+        "Per subscriure-us a un calendari extern o públic i a les seves actualitzacions, entreu la URL. Una versió de només lectura del calendari s'afegirà als vostres Calendaris subscrits.\n${ kbLink }"
+      ]
+    },
+    "Subscribe to calendar modal description": {
+      "Learn how to get a private calendar link.": [
+        "Apreneu com obtenir un enllaç de calendari privat."
+      ]
+    },
+    "Subscribed calendar extension warning": {
+      "By using this link, Google will make the calendar you are subscribing to public": [
+        "Usant aquest enllaç, Google farà que el calendari al que us esteu subscrivint sigui públic"
+      ],
+      "This link might be wrong": [
+        "Aquest enllaç podria ser erroni"
+      ]
+    },
+    "Subscribed calendar URL length warning": {
+      "URL is too long": [
+        "L'adreça és massa llarga"
+      ]
+    },
     "Subscription attribute": {
+      "${ UsedAddresses } of ${ MaxAddresses } email address": [
+        "${ UsedAddresses } de ${ MaxAddresses } adreça de correu electrònic",
+        "${ UsedAddresses } de ${ MaxAddresses } adreces de correu electrònic"
+      ],
       "1 email address": [
         "1 adreça de correu"
       ],
       "1 VPN connection": [
         "1 connexió VPN"
+      ]
+    },
+    "Subscription saving": {
+      "Save": [
+        "Desa"
+      ]
+    },
+    "Subtitle for trial plan": {
+      "The privacy-first Mail and Calendar solution for your everyday communications needs.": [
+        "La solució de correu electrònic i calendari que prioritza la privadesa per a les vostres necessitats de comunicació diàries."
+      ],
+      "This offer is for those new to Proton only. No credit card required.": [
+        "L'oferta és només per a persones noves a Proton. No cal targeta de crèdit."
       ]
     },
     "Success": {
@@ -5301,6 +6942,15 @@
       ],
       "Bug reported": [
         "Error notificat"
+      ],
+      "Calendar added. It might take a few minutes to sync.": [
+        "Calendari afegit. Pot trigar uns minuts a sincronitzar-se."
+      ],
+      "Calendar created": [
+        "Calendari creat"
+      ],
+      "Calendar updated": [
+        "Calendari actualitzat"
       ],
       "Canceling import": [
         "Cancel·lar importació"
@@ -5452,11 +7102,17 @@
     "Suffix": {
       "/month": [
         "/mes"
+      ],
+      "/user per month": [
+        "/usuari per mes"
       ]
     },
     "Suffix for price": {
       "/month": [
         "/mes"
+      ],
+      "per month": [
+        "per mes"
       ]
     },
     "Tab in domain modal": {
@@ -5525,6 +7181,11 @@
         "${ minutes } minuts"
       ]
     },
+    "Timezone search placeholder": {
+      "Search timezones": [
+        "Cercar fus horari"
+      ]
+    },
     "Title": {
       "${ appName } Keyboard Shortcuts": [
         "Dreceres de teclat de ${ appName }"
@@ -5534,16 +7195,16 @@
         "${ maxUsers } usuaris"
       ],
       "1. Select platform": [
-        "1. Seleccionar plataforma"
+        "1. Seleccioneu la plataforma"
       ],
       "2. Select protocol": [
-        "2. Seleccionar protocol"
+        "2. Seleccioneu el protocol"
       ],
       "3-D Secure verification failed": [
         "Ha fallat la verificació segura en 3-D"
       ],
       "3. Select config file and download": [
-        "3. Seleccionar arxiu de configuració i descarregar"
+        "3. Seleccioneu el fitxer de configuració i baixeu-lo"
       ],
       "Account and password": [
         "Compte i contrasenya"
@@ -5562,6 +7223,9 @@
       ],
       "Add address": [
         "Afegir adreça"
+      ],
+      "Add another notification to remind you of this event": [
+        "Afegeix una altra notificació per recordar-vos aquest esdeveniment"
       ],
       "Add contact group name": [
         "Afegir nom de grup de contactes"
@@ -5588,10 +7252,10 @@
         "Afegir filtre Sieve"
       ],
       "Add to Allow List": [
-        "Afegiu a la Llista d'Autoritzats"
+        "Afegeix a la llista de permesos"
       ],
       "Add to Block List": [
-        "Afegir a Llista de Bloqueig"
+        "Afegeix a la llista de bloqueig"
       ],
       "Add user": [
         "Afegir usuari"
@@ -5606,7 +7270,7 @@
         "Assignar espai"
       ],
       "Allow List": [
-        "Llista d'Autoritzats"
+        "Llista de permesos"
       ],
       "Amount": [
         "Quantitat"
@@ -5645,7 +7309,7 @@
         "Detalls de facturació"
       ],
       "Block List": [
-        "Llista de Bloqueig"
+        "Llista de bloqueig"
       ],
       "Bridge for ${ platform }": [
         "Bridge per ${ platform }"
@@ -5718,6 +7382,9 @@
       ],
       "Create a ${ MAIL_APP_NAME } address": [
         "Crea una adreça de ${ MAIL_APP_NAME }"
+      ],
+      "Create calendar": [
+        "Crear calendari"
       ],
       "Credentials": [
         "Credencials"
@@ -5792,7 +7459,7 @@
         "Desactivar ${ email }"
       ],
       "Disable two-factor authentication": [
-        "Deshabilitar l'autenticació en dos passos"
+        "Desactiva l'autenticació en dos passos"
       ],
       "Display name and signature": [
         "Nom a mostrar i signatura"
@@ -5807,16 +7474,19 @@
         "Baixa ${ VPN_APP_NAME }"
       ],
       "Edit Allow List": [
-        "Edita la Llista d'Autoritzats"
+        "Edita la llista de permesos"
       ],
       "Edit Block List": [
         "Edita la Lista de Bloqueig"
+      ],
+      "Edit calendar": [
+        "Editeu el calendari"
       ],
       "Edit credit/debit card": [
         "Modificar targeta de crèdit"
       ],
       "Edit domain": [
-        "Editar el domini"
+        "Edita el domini"
       ],
       "Edit filter": [
         "Editar filtre"
@@ -5825,16 +7495,19 @@
         "Editar filtre Sieve"
       ],
       "Edit user": [
-        "Editar usuari"
+        "Edita l'usuari"
       ],
       "Email": [
         "Correu electrònic"
+      ],
+      "Email composer": [
+        "Editor de correu electrònic"
       ],
       "Email encryption keys": [
         "Claus de xifratge de correu electrònic"
       ],
       "Email privacy": [
-        "Privacitat del correu electrònic"
+        "Privacitat del correu"
       ],
       "Email subscriptions": [
         "Subscripcions per correu electrònic"
@@ -5878,6 +7551,9 @@
       "Generate missing keys": [
         "Generar claus perdudes"
       ],
+      "Get up to 18 months of ${ planName } for free": [
+        "Aconseguiu fins a 18 mesos de ${ planName } gratuïtament"
+      ],
       "Gift code": [
         "Codi regal"
       ],
@@ -5913,7 +7589,7 @@
         "Importar clau"
       ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
-        "Importar via ${ PRODUCT_NAMES.EASY_SWITCH }"
+        "Importa via ${ PRODUCT_NAMES.EASY_SWITCH }"
       ],
       "Import-Export app": [
         "Aplicació d'importació-exportació"
@@ -6053,6 +7729,9 @@
       "Referral tracker": [
         "Seguiment de recomanacions"
       ],
+      "Remove calendar": [
+        "Elimina el calendari"
+      ],
       "Report a problem": [
         "Avisar d'un problema"
       ],
@@ -6084,13 +7763,22 @@
         "Registres de seguretat"
       ],
       "Select a plan": [
-        "Seleccionar un pla"
+        "Seleccioneu un pla"
       ],
       "Select action to take on contact group": [
         "Seleccionar acció a realitzar al grup de contactes"
       ],
       "Select contact group": [
         "Seleccionar grup de contactes"
+      ],
+      "Select the time to send this notification": [
+        "Seleccioneu l'hora per enviar aquesta notificació"
+      ],
+      "Select the way to send this notification": [
+        "Seleccioneu la manera d’enviar aquesta notificació"
+      ],
+      "Select when you want this notification to be sent": [
+        "Selecciona quan vols que s'enviï aquesta notificació"
       ],
       "Session management": [
         "Gestió de sessions"
@@ -6125,8 +7813,11 @@
       "Sign in again to continue": [
         "Torneu a iniciar per continuar"
       ],
+      "Sign in and grant access": [
+        "Iniciar sessió i concedir accés"
+      ],
       "Sort folders alphabetically": [
-        "Ordenar carpetes alfabèticament"
+        "Ordena les carpetes alfabèticament"
       ],
       "Sort labels alphabetically": [
         "Ordena les etiquetes alfabèticament"
@@ -6203,6 +7894,9 @@
       "Warning!": [
         "Atenció!"
       ],
+      "Warning: suspected fake website": [
+        "Avís: sospita de lloc web fals"
+      ],
       "What would you like to import?": [
         "Què li agradaria importar?"
       ],
@@ -6227,6 +7921,9 @@
       "Your current plan": [
         "El vostre pla actual"
       ],
+      "Your free trial ends soon, on ${ formattedEndDate }": [
+        "El vostre període de prova acaba aviat, el ${ formattedEndDate }"
+      ],
       "Your plan": [
         "El vostre pla"
       ],
@@ -6235,6 +7932,11 @@
       ],
       "ZIP / postal code": [
         "Zip/Codi postal"
+      ]
+    },
+    "Title (number of minutes/hours/days/weeks)": {
+      "Choose a number": [
+        "Tria un número"
       ]
     },
     "Title for payment methods table": {
@@ -6302,6 +8004,11 @@
       ],
       "Role": [
         "Rol"
+      ]
+    },
+    "Today icon tooltip in mini calendar": {
+      "Today": [
+        "Avui"
       ]
     },
     "Tooltip": {
@@ -6406,6 +8113,20 @@
     "Tor out of date": {
       "stable release": [
         "versió estable"
+      ],
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "Aquesta versió del Navegador Tor no està suportada. Actualitzeu a la darrera ${ stableRelease }"
+      ]
+    },
+    "Update font modal": {
+      "Today is a good day to write an email": [
+        "Avui és un bon dia per escriure un correu electrònic"
+      ],
+      "Update default font and size": [
+        "Actualitzar la font i mida predeterminades"
+      ],
+      "Your default font will look like following:": [
+        "La font predeterminada serà com la següent:"
       ]
     },
     "User role": {
@@ -6501,7 +8222,7 @@
         "Al desactivar els registres, també netejaràs l'historial complet de registres. Esteu segur que voleu desactivar els registres?"
       ],
       "By disabling this address, you will no longer be able to send or receive emails using this address and all the linked Proton products will also be disabled. Are you sure you want to disable this address?": [
-        "Si deshabiliteu aquesta adreça, ja no podreu enviar o rebre correus electrònics amb aquesta adreça i tots els productes Proton vinculats també seran deshabilitats. Esteu segur que voleu deshabilitar aquesta adreça?"
+        "Si desactiveu aquesta adreça, ja no podreu enviar o rebre correus electrònics amb aquesta adreça i tots els productes Proton vinculats també seran desactivats. Segur que voleu desactivar l'adreça?"
       ],
       "If you cancel this import, you won't be able to resume it. Proton saved all progress in your account. Cancel anyway?": [
         "Si cancel·leu aquesta importació, no la podreu reprendre. Proton ha desat tot el progrés del vostre compte. Voleu cancel·lar-ho de totes maneres?"
@@ -6517,6 +8238,9 @@
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Els informes no estan xifrats d'extrem a extrem, si us plau no envieu informació sensible."
+      ],
+      "The date and time settings on your device are out of sync. ${ learnMore }": [
+        "La configuració de data i hora del vostre dispositiu no estan sincronitzats. ${ learnMore }"
       ],
       "This import may exceed the storage capacity currently available in your Proton account. Please consider customizing your import.": [
         "Aquesta importació pot superar la capacitat d'emmagatzematge disponible actualment al vostre compte de Proton. Considereu personalitzar la importació."
@@ -6535,6 +8259,9 @@
       ],
       "You will not see this import record in the list anymore.": [
         "Ja no veureu aquest registre d'importació a la llista."
+      ],
+      "Your free trial ends on ${ textDate }. ${ action }": [
+        "La prova gratuïta acaba el ${ textDate }. ${ action }"
       ]
     },
     "Warning for domain modal": {
@@ -6543,6 +8270,197 @@
       ],
       "It can take up to a day for DNS changes to update.": [
         "Els canvis DNS poden trigar fins a un dia a actualitzar-se."
+      ]
+    },
+    "Weekly recurring event, frequency": {
+      "Every ${ interval } week on ${ multipleDaysString }": [
+        "Cada ${ interval } setmana els ${ multipleDaysString }",
+        "Cada ${ interval } setmanes els ${ multipleDaysString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
+        "Cada ${ interval } setmana els ${ multipleDaysString }, ${ timesString }",
+        "Cada ${ interval } setmanes els ${ multipleDaysString }, ${ timesString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
+        "Cada ${ interval } setmana els ${ multipleDaysString }, ${ untilString }",
+        "Cada ${ interval } setmanes els ${ multipleDaysString }, ${ untilString }"
+      ],
+      "Every ${ interval } week on all days": [
+        "Cada ${ interval } setmana tots els dies",
+        "Cada ${ interval } setmanes tots els dies"
+      ],
+      "Every ${ interval } week on all days, ${ timesString }": [
+        "Cada ${ interval } setmana tots els dies, ${ timesString }",
+        "Cada ${ interval } setmanes tots els dies, ${ timesString }"
+      ],
+      "Every ${ interval } week on all days, ${ untilString }": [
+        "Cada ${ interval } setmana tots els dies, ${ untilString }",
+        "Cada ${ interval } setmanes tots els dies, ${ untilString }"
+      ],
+      "Every ${ interval } week on Friday": [
+        "Cada ${ interval } setmana els Divendres",
+        "Cada ${ interval } setmanes els Divendres"
+      ],
+      "Every ${ interval } week on Friday, ${ timesString }": [
+        "Cada ${ interval } setmana tots els Divendres, ${ timesString }",
+        "Cada ${ interval } setmanes tots els Divendres, ${ timesString }"
+      ],
+      "Every ${ interval } week on Friday, ${ untilString }": [
+        "Cada ${ interval } setmana el Divendres, ${ untilString }",
+        "Cada ${ interval } setmanes el Divendres, ${ untilString }"
+      ],
+      "Every ${ interval } week on Monday": [
+        "Cada ${ interval } setmana els Dilluns",
+        "Cada ${ interval } setmanes els Dilluns"
+      ],
+      "Every ${ interval } week on Monday, ${ timesString }": [
+        "Cada ${ interval } setmana tots els Dilluns, ${ timesString }",
+        "Cada ${ interval } setmanes tots els Dilluns, ${ timesString }"
+      ],
+      "Every ${ interval } week on Monday, ${ untilString }": [
+        "Cada ${ interval } setmana tots els Dilluns, ${ untilString }",
+        "Cada ${ interval } setmanes tots els Dilluns, ${ untilString }"
+      ],
+      "Every ${ interval } week on Saturday": [
+        "Cada ${ interval } setmana els Dissabtes",
+        "Cada ${ interval } setmanes els Dissabtes"
+      ],
+      "Every ${ interval } week on Saturday, ${ timesString }": [
+        "Cada ${ interval } setmana tots els Dissaptes, ${ timesString }",
+        "Cada ${ interval } setmanes tots els Dissaptes, ${ timesString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ untilString }": [
+        "Cada ${ interval } setmana el Dissapte, ${ untilString }",
+        "Cada ${ interval } setmanes el Dissapte, ${ untilString }"
+      ],
+      "Every ${ interval } week on Sunday": [
+        "Cada ${ interval } setmana els Diumenges",
+        "Cada ${ interval } setmanes els Diumenges"
+      ],
+      "Every ${ interval } week on Sunday, ${ timesString }": [
+        "Cada ${ interval } setmana tots els Diumenges, ${ timesString }",
+        "Cada ${ interval } setmanes tots els Diumenges, ${ timesString }"
+      ],
+      "Every ${ interval } week on Sunday, ${ untilString }": [
+        "Cada ${ interval } setmana tots els Diumenges, ${ untilString }",
+        "Cada ${ interval } setmanes tots els Diumenges, ${ untilString }"
+      ],
+      "Every ${ interval } week on Thursday": [
+        "Cada ${ interval } setmana els Dijous",
+        "Cada ${ interval } setmanes els Dijous"
+      ],
+      "Every ${ interval } week on Thursday, ${ timesString }": [
+        "Cada ${ interval } setmana els Dijous, ${ timesString }",
+        "Cada ${ interval } setmanes els Dijous, ${ timesString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ untilString }": [
+        "Cada ${ interval } setmana el Dijous, ${ untilString }",
+        "Cada ${ interval } setmanes el Dijous, ${ untilString }"
+      ],
+      "Every ${ interval } week on Tuesday": [
+        "Cada ${ interval } setmana els Dimarts",
+        "Cada ${ interval } setmanes els Dimarts"
+      ],
+      "Every ${ interval } week on Tuesday, ${ timesString }": [
+        "Cada ${ interval } setmana els Dimarts, ${ timesString }",
+        "Cada ${ interval } setmanes els Dimarts, ${ timesString }"
+      ],
+      "Every ${ interval } week on Tuesday, ${ untilString }": [
+        "Cada ${ interval } setmana el Dimarts, ${ untilString }",
+        "Cada ${ interval } setmanes el Dimarts, ${ untilString }"
+      ],
+      "Every ${ interval } week on Wednesday": [
+        "Cada ${ interval } setmana els Dimecres",
+        "Cada ${ interval } setmanes els Dimecres"
+      ],
+      "Every ${ interval } week on Wednesday, ${ timesString }": [
+        "Cada ${ interval } setmana els Dimecres, ${ timesString }",
+        "Cada ${ interval } setmanes els Dimecres, ${ timesString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ untilString }": [
+        "Cada ${ interval } setmana el Dimecres, ${ untilString }",
+        "Cada ${ interval } setmanes el Dimecres, ${ untilString }"
+      ],
+      "Weekly on ${ multipleDaysString }": [
+        "Setmanalment els ${ multipleDaysString }"
+      ],
+      "Weekly on ${ multipleDaysString }, ${ timesString }": [
+        "Semanalment els ${ multipleDaysString }, ${ timesString }"
+      ],
+      "Weekly on ${ multipleDaysString }, ${ untilString }": [
+        "Semanalment els ${ multipleDaysString }, ${ untilString }"
+      ],
+      "Weekly on all days": [
+        "Setmanalment tots els dies"
+      ],
+      "Weekly on all days, ${ timesString }": [
+        "Semanalment tots els dies, ${ timesString }"
+      ],
+      "Weekly on all days, ${ untilString }": [
+        "Semanalment tots els dies, ${ untilString }"
+      ],
+      "Weekly on Friday": [
+        "Setmanalment al Divendres"
+      ],
+      "Weekly on Friday, ${ timesString }": [
+        "Semanalment el Dilluns, ${ timesString }"
+      ],
+      "Weekly on Friday, ${ untilString }": [
+        "Semanalment el Divendres, ${ untilString }"
+      ],
+      "Weekly on Monday": [
+        "Setmanalment al Dilluns"
+      ],
+      "Weekly on Monday, ${ timesString }": [
+        "Semanalment els Dilluns, ${ timesString }"
+      ],
+      "Weekly on Monday, ${ untilString }": [
+        "Semanalment el Dilluns, ${ untilString }"
+      ],
+      "Weekly on Saturday": [
+        "Setmanalment al Dissabte"
+      ],
+      "Weekly on Saturday, ${ timesString }": [
+        "Semanalment el Dissapte, ${ timesString }"
+      ],
+      "Weekly on Saturday, ${ untilString }": [
+        "Semanalment el Dissapte, ${ untilString }"
+      ],
+      "Weekly on Sunday": [
+        "Setmanalment al Diumenge"
+      ],
+      "Weekly on Sunday, ${ timesString }": [
+        "Semanalment el Diumenge, ${ timesString }"
+      ],
+      "Weekly on Sunday, ${ untilString }": [
+        "Semanalment el Diumenge, ${ untilString }"
+      ],
+      "Weekly on Thursday": [
+        "Setmanalment al Dijous"
+      ],
+      "Weekly on Thursday, ${ timesString }": [
+        "Semanalment els Dijous, ${ timesString }"
+      ],
+      "Weekly on Thursday, ${ untilString }": [
+        "Semanalment el Dijous, ${ untilString }"
+      ],
+      "Weekly on Tuesday": [
+        "Setmanalment al Dimarts"
+      ],
+      "Weekly on Tuesday, ${ timesString }": [
+        "Semanalment els Dimarts, ${ timesString }"
+      ],
+      "Weekly on Tuesday, ${ untilString }": [
+        "Semanalment el Dimarts, ${ untilString }"
+      ],
+      "Weekly on Wednesday": [
+        "Setmanalment al Dimecres"
+      ],
+      "Weekly on Wednesday, ${ timesString }": [
+        "Dimecres setmanalmenty, ${ timesString }"
+      ],
+      "Weekly on Wednesday, ${ untilString }": [
+        "Semanalment el Dimecres, ${ untilString }"
       ]
     },
     "Weekly recurring event, repeats on (multiple days), frequency": {
@@ -6566,6 +8484,29 @@
       ],
       "Wednesday": [
         "dimecres"
+      ]
+    },
+    "Yearly recurring event, frequency": {
+      "Every ${ interval } year": [
+        "Yearly",
+        ""
+      ],
+      "Every ${ interval } year, ${ timesString }": [
+        "Cada ${ interval } any, ${ timesString }",
+        "Cada ${ interval } anys, ${ timesString }"
+      ],
+      "Every ${ interval } year, ${ untilString }": [
+        "Cada ${ interval } any, ${ untilString }",
+        "Cada ${ interval } anys, ${ untilString }"
+      ],
+      "Yearly": [
+        "Anual"
+      ],
+      "Yearly, ${ timesString }": [
+        "Anualment, ${ timesString }"
+      ],
+      "Yearly, ${ untilString }": [
+        "Anualment, ${ untilString }"
       ]
     }
   }

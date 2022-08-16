@@ -145,6 +145,9 @@
       "Clear all formatting": [
         "Alle Formatierungen entfernen"
       ],
+      "Clear two-factor authentication code": [
+        "Zwei-Faktor-Authentifizierungscode löschen"
+      ],
       "Close": [
         "Schließen"
       ],
@@ -343,9 +346,6 @@
       "Export": [
         "Exportieren"
       ],
-      "Export ICS": [
-        "Als ICS exportieren"
-      ],
       "Export key": [
         "Schlüssel export."
       ],
@@ -438,6 +438,9 @@
       ],
       "Loading verification": [
         "Überprüfung wird geladen"
+      ],
+      "Make default": [
+        "Als Standard festlegen"
       ],
       "Mark as default": [
         "Als Standard festlegen"
@@ -1028,97 +1031,6 @@
       ],
       "Two-year": [
         "Zwei Jahre"
-      ]
-    },
-    "blackfriday Action": {
-      "Get the offer": [
-        "Zum Angebot"
-      ]
-    },
-    "blackfriday Info": {
-      "beta": [
-        "beta"
-      ],
-      "Includes": [
-        "Umfasst"
-      ],
-      "Standard price: ${ regularPrice }": [
-        "Regulärer Preis: ${ regularPrice }"
-      ],
-      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
-        "Dieses Abonnement verlängert sich nach zwei Jahren automatisch, bis es gekündigt wird."
-      ]
-    },
-    "blackfriday Title": {
-      "Best deal": [
-        "Bester Preis"
-      ],
-      "Most popular": [
-        "Am beliebtesten"
-      ],
-      "Save more when combining Mail and VPN": [
-        "Spare noch mehr durch die Kombination von Mail und VPN"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Action": {
-      "Get the deal": [
-        "Jetzt zugreifen"
-      ],
-      "Get the deal now": [
-        "Jetzt zugreifen"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Info": {
-      "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
-        "Rabatte werden auf Grundlage des monatlichen Standardpreises von ${ standardMonthlyPricing } berechnet"
-      ],
-      "Save ${ percentage }%": [
-        "${ percentage } %"
-      ],
-      "Special offer Terms and Conditions": [
-        "Allgemeine Geschäftsbedingungen des Sonderangebots"
-      ]
-    },
-    "blackfriday: VPNspecialoffer info": {
-      "per month": [
-        "pro Monat"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Promo title, need to be short": {
-      "Special offer": [
-        "Sonderangebot"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Title": {
-      "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
-        "(${ notice }) Verlängert sich nach einem Monat zum monatlichen Standardpreis von ${ amount }"
-      ],
-      "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
-        "(${ notice }) Verlängert sich nach einem Jahr zum ermäßigten Standardpreis von ${ amount } (20 % Rabatt)"
-      ],
-      "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
-        "(${ notice }) Verlängert sich nach 2 Jahren zum ermäßigten 2-Jahrespreis von ${ amount } (33 % Rabatt)"
-      ],
-      "1 month": [
-        "1 Monat"
-      ],
-      "12 months": [
-        "12 Monate"
-      ],
-      "24 months": [
-        "24 Monate"
-      ],
-      "Billed at ${ amount } for the first 2 years.${ supNotice }": [
-        "Zum Preis von ${ amount } in den ersten zwei Jahren.${ supNotice }"
-      ],
-      "Billed at ${ amount } for the first month.${ supNotice }": [
-        "Zum Preis von ${ amount } im ersten Monat.${ supNotice }"
-      ],
-      "Billed at ${ amount } for the first year.${ supNotice }": [
-        "Zum Preis von ${ amount } im ersten Jahr.${ supNotice }"
-      ],
-      "Get the special year-end offer on our Premium VPN PLUS plan": [
-        "Lass dir das Jahresend-Sonderangebot für unseren Premium VPN PLUS-Tarif nicht entgehen"
       ]
     },
     "breadcrumb": {
@@ -5709,6 +5621,9 @@
       ],
       "Your new email address is ready to go!": [
         "Deine neue E-Mail-Adresse ist jetzt einsatzbereit!"
+      ],
+      "Your subscription starts on ${ startText }.": [
+        "Dein Abonnement beginnt am ${ startText }."
       ]
     },
     "Info - folder colouring feature": {
@@ -7269,11 +7184,23 @@
       "on the first Friday": [
         "am ersten Freitag"
       ],
+      "on the first Monday": [
+        "am ersten Montag"
+      ],
       "on the first Saturday": [
         "am ersten Samstag"
       ],
+      "on the first Sunday": [
+        "am ersten Sonntag"
+      ],
       "on the first Thursday": [
         "am ersten Donnerstag"
+      ],
+      "on the first Tuesday": [
+        "am ersten Dienstag"
+      ],
+      "on the first Wednesday": [
+        "am ersten Mittwoch"
       ],
       "on the fourth Friday": [
         "am vierten Freitag"
@@ -8713,6 +8640,11 @@
         "Zusätzliche Dateien hochladen"
       ]
     },
+    "Select search results": {
+      "No results found": [
+        "Keine Ergebnisse"
+      ]
+    },
     "Settings description": {
       "Make the move to privacy. Effortlessly and securely.": [
         "Mache den Schritt zum Datenschutz. Mühelos und sicher."
@@ -9256,6 +9188,11 @@
       "${ minutes } minute": [
         "${ minutes } Minute",
         "${ minutes } Minuten"
+      ]
+    },
+    "Timezone search placeholder": {
+      "Search timezones": [
+        "Zeitzonen durchsuchen"
       ]
     },
     "Title": {
@@ -10476,6 +10413,14 @@
       ]
     },
     "Weekly recurring event, frequency": {
+      "Every ${ interval } week on ${ multipleDaysString }": [
+        "Alle ${ interval } Wochen am ${ multipleDaysString }",
+        "Alle ${ interval } Wochen am ${ multipleDaysString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
+        "Alle ${ interval } Wochen am ${ multipleDaysString }, ${ timesString }",
+        "Alle ${ interval } Wochen am ${ multipleDaysString }, ${ timesString }"
+      ],
       "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
         "Wöchentlich am ${ multipleDaysString }, ${ untilString }",
         "Alle ${ interval } Wochen am ${ multipleDaysString }, ${ untilString }"
@@ -10484,11 +10429,178 @@
         "Wöchentlich an allen Tagen",
         "Alle ${ interval } Wochen an allen Tagen"
       ],
+      "Every ${ interval } week on all days, ${ timesString }": [
+        "Alle ${ interval } Wochen an allen Tagen, ${ timesString }",
+        "Alle ${ interval } Wochen an allen Tagen, ${ timesString }"
+      ],
+      "Every ${ interval } week on all days, ${ untilString }": [
+        "Wöchentlich an allen Tagen, ${ untilString }",
+        "Aller ${ interval } Wochen an allen Tagen, ${ untilString }"
+      ],
+      "Every ${ interval } week on Friday": [
+        "Alle ${ interval } Wochen am Freitag",
+        "Alle ${ interval } Wochen am Freitag"
+      ],
+      "Every ${ interval } week on Friday, ${ timesString }": [
+        "Alle ${ interval } Wochen am Freitag, ${ timesString }",
+        "Alle ${ interval } Wochen am Freitag, ${ timesString }"
+      ],
+      "Every ${ interval } week on Friday, ${ untilString }": [
+        "Wöchentlich am Freitag, ${ untilString }",
+        "Aller ${ interval } Wochen am Freitag, ${ untilString }"
+      ],
+      "Every ${ interval } week on Monday": [
+        "Alle ${ interval } Wochen am Montag",
+        "Alle ${ interval } Wochen am Montag"
+      ],
+      "Every ${ interval } week on Monday, ${ timesString }": [
+        "Alle ${ interval } Wochen am Montag, ${ timesString }",
+        "Alle ${ interval } Wochen am Montag, ${ timesString }"
+      ],
+      "Every ${ interval } week on Monday, ${ untilString }": [
+        "Wöchentlich am Montag, ${ untilString }",
+        "Aller ${ interval } Wochen am Montag, ${ untilString }"
+      ],
+      "Every ${ interval } week on Saturday": [
+        "Alle ${ interval } Wochen am Samstag",
+        "Alle ${ interval } Wochen am Samstag"
+      ],
+      "Every ${ interval } week on Saturday, ${ timesString }": [
+        "Alle ${ interval } Wochen am Samstag, ${ timesString }",
+        "Alle ${ interval } Wochen am Samstag, ${ timesString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ untilString }": [
+        "Wöchentlich am Samstag, ${ untilString }",
+        "Aller ${ interval } Wochen am Samstag, ${ untilString }"
+      ],
+      "Every ${ interval } week on Sunday": [
+        "Alle ${ interval } Wochen am Sonntag",
+        "Alle ${ interval } Wochen am Sonntag"
+      ],
+      "Every ${ interval } week on Sunday, ${ timesString }": [
+        "Alle ${ interval } Wochen am Sonntag, ${ timesString }",
+        "Alle ${ interval } Wochen am Sonntag, ${ timesString }"
+      ],
+      "Every ${ interval } week on Sunday, ${ untilString }": [
+        "Wöchentlich am Sonntag, ${ untilString }",
+        "Aller ${ interval } Wochen am Sonntag, ${ untilString }"
+      ],
+      "Every ${ interval } week on Thursday": [
+        "Alle ${ interval } Wochen am Donnerstag",
+        "Alle ${ interval } Wochen am Donnerstag"
+      ],
+      "Every ${ interval } week on Thursday, ${ timesString }": [
+        "Alle ${ interval } Wochen am Donnerstag, ${ timesString }",
+        "Alle ${ interval } Wochen am Donnerstag, ${ timesString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ untilString }": [
+        "Wöchentlich am Donnerstag, ${ untilString }",
+        "Aller ${ interval } Wochen am Donnerstag, ${ untilString }"
+      ],
+      "Every ${ interval } week on Tuesday": [
+        "Alle ${ interval } Wochen am Dienstag",
+        "Alle ${ interval } Wochen am Dienstag"
+      ],
+      "Every ${ interval } week on Tuesday, ${ timesString }": [
+        "Alle ${ interval } Wochen am Dienstag, ${ timesString }",
+        "Alle ${ interval } Wochen am Dienstag, ${ timesString }"
+      ],
+      "Every ${ interval } week on Tuesday, ${ untilString }": [
+        "Wöchentlich am Dienstag, ${ untilString }",
+        "Aller ${ interval } Wochen am Dienstag, ${ untilString }"
+      ],
+      "Every ${ interval } week on Wednesday": [
+        "Alle ${ interval } Wochen am Mittwoch",
+        "Alle ${ interval } Wochen am Mittwoch"
+      ],
+      "Every ${ interval } week on Wednesday, ${ timesString }": [
+        "Alle ${ interval } Wochen am Mittwoch, ${ timesString }",
+        "Alle ${ interval } Wochen am Mittwoch, ${ timesString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ untilString }": [
+        "Wöchentlich am Mittwoch, ${ untilString }",
+        "Aller ${ interval } Wochen am Mittwoch, ${ untilString }"
+      ],
+      "Weekly on ${ multipleDaysString }": [
+        "Wöchentlich am ${ multipleDaysString }"
+      ],
+      "Weekly on ${ multipleDaysString }, ${ timesString }": [
+        "Wöchentlich am ${ multipleDaysString }, ${ timesString }"
+      ],
+      "Weekly on ${ multipleDaysString }, ${ untilString }": [
+        "Wöchentlich am ${ multipleDaysString }, ${ untilString }"
+      ],
       "Weekly on all days": [
         "Wöchentlich an allen Tagen"
       ],
+      "Weekly on all days, ${ timesString }": [
+        "Wöchentlich an allen Tagen, ${ timesString }"
+      ],
+      "Weekly on all days, ${ untilString }": [
+        "Wöchentlich an allen Tagen, ${ untilString }"
+      ],
+      "Weekly on Friday": [
+        "Wöchentlich am Freitag"
+      ],
+      "Weekly on Friday, ${ timesString }": [
+        "Wöchentlich am Freitag, ${ timesString }"
+      ],
+      "Weekly on Friday, ${ untilString }": [
+        "Wöchentlich am Freitag, ${ untilString }"
+      ],
+      "Weekly on Monday": [
+        "Wöchentlich am Montag"
+      ],
+      "Weekly on Monday, ${ timesString }": [
+        "Wöchentlich am Montag, ${ timesString }"
+      ],
+      "Weekly on Monday, ${ untilString }": [
+        "Wöchentlich am Montag, ${ untilString }"
+      ],
+      "Weekly on Saturday": [
+        "Wöchentlich am Samstag"
+      ],
+      "Weekly on Saturday, ${ timesString }": [
+        "Wöchentlich am Samstag, ${ timesString }"
+      ],
+      "Weekly on Saturday, ${ untilString }": [
+        "Wöchentlich am Samstag, ${ untilString }"
+      ],
       "Weekly on Sunday": [
         "Jeden Sonntag"
+      ],
+      "Weekly on Sunday, ${ timesString }": [
+        "Wöchentlich am Sonntag, ${ timesString }"
+      ],
+      "Weekly on Sunday, ${ untilString }": [
+        "Wöchentlich am Sonntag, ${ untilString }"
+      ],
+      "Weekly on Thursday": [
+        "Wöchentlich am Donnerstag"
+      ],
+      "Weekly on Thursday, ${ timesString }": [
+        "Wöchentlich am Donnerstag, ${ timesString }"
+      ],
+      "Weekly on Thursday, ${ untilString }": [
+        "Wöchentlich am Donnerstag, ${ untilString }"
+      ],
+      "Weekly on Tuesday": [
+        "Wöchentlich am Dienstag"
+      ],
+      "Weekly on Tuesday, ${ timesString }": [
+        "Wöchentlich am Dienstag, ${ timesString }"
+      ],
+      "Weekly on Tuesday, ${ untilString }": [
+        "Wöchentlich am Dienstag, ${ untilString }"
+      ],
+      "Weekly on Wednesday": [
+        "Wöchentlich am Mittwoch"
+      ],
+      "Weekly on Wednesday, ${ timesString }": [
+        "Wöchentlich am Mittwoch, ${ timesString }"
+      ],
+      "Weekly on Wednesday, ${ untilString }": [
+        "Wöchentlich am Mittwoch, ${ untilString }"
       ]
     },
     "Weekly recurring event, repeats on (multiple days), frequency": {
@@ -10516,8 +10628,8 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "Jährlich",
-        "Alle ${ interval } Jahre"
+        "Yearly",
+        ""
       ],
       "Every ${ interval } year, ${ timesString }": [
         "Jährlich, ${ timesString }",

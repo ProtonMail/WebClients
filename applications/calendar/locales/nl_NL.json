@@ -3432,6 +3432,9 @@
       "All day": [
         "De hele dag"
       ],
+      "All-day event notifications": [
+        "De hele dag meldingen van afspraken"
+      ],
       "Attach screenshot(s)": [
         "Schermafbeelding(en) toevoegen"
       ],
@@ -5408,8 +5411,8 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "Elk jaar",
-        "Elke ${ interval } jaar"
+        "Yearly",
+        ""
       ],
       "Every ${ interval } year, ${ timesString }": [
         "Elke jaar, ${ timesString }",

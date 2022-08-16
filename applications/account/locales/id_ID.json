@@ -145,6 +145,9 @@
       "Clear all formatting": [
         "Hapus seluruh format"
       ],
+      "Clear two-factor authentication code": [
+        "Hapus kode otentikasi dua faktor"
+      ],
       "Close": [
         "Tutup"
       ],
@@ -343,9 +346,6 @@
       "Export": [
         "Ekspor"
       ],
-      "Export ICS": [
-        "Ekspor ICS"
-      ],
       "Export key": [
         "Ekspor kunci"
       ],
@@ -438,6 +438,9 @@
       ],
       "Loading verification": [
         "Memuat verifikasi"
+      ],
+      "Make default": [
+        "Jadikan default"
       ],
       "Mark as default": [
         "Tandai sebagai standar"
@@ -1021,59 +1024,6 @@
       ],
       "Two-year": [
         "Dua tahun"
-      ]
-    },
-    "blackfriday Info": {
-      "beta": [
-        "beta"
-      ],
-      "Includes": [
-        "Termasuk"
-      ],
-      "Standard price: ${ regularPrice }": [
-        "Harga standar: ${ regularPrice }"
-      ],
-      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
-        "Langganan ini akan otomatis diperbarui dengan tarif yang sama setelah 2 tahun hingga dibatalkan."
-      ]
-    },
-    "blackfriday Title": {
-      "Most popular": [
-        "Paling populer"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Action": {
-      "Get the deal": [
-        "Dapatkan penawaran"
-      ],
-      "Get the deal now": [
-        "Dapatkan penawaran sekarang"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Info": {
-      "Save ${ percentage }%": [
-        "${ percentage } %"
-      ]
-    },
-    "blackfriday: VPNspecialoffer info": {
-      "per month": [
-        "per bulan"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Promo title, need to be short": {
-      "Special offer": [
-        "Penawaran Spesial"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Title": {
-      "1 month": [
-        "1 bulan"
-      ],
-      "12 months": [
-        "12 bulan"
-      ],
-      "24 months": [
-        "24 bulan"
       ]
     },
     "breadcrumb": {
@@ -2401,6 +2351,32 @@
       ],
       "/user per month": [
         "/pengguna per bulan"
+      ]
+    },
+    "Daily recurring event, frequency": {
+      "${ count } time": [
+        "${ count } kali"
+      ],
+      "Daily": [
+        "Harian"
+      ],
+      "Daily, ${ timesString }": [
+        "Harian, ${ timesString }"
+      ],
+      "Daily, ${ untilString }": [
+        "Harian, ${ untilString }"
+      ],
+      "Every ${ interval } day": [
+        "Setiap ${ interval } hari"
+      ],
+      "Every ${ interval } day, ${ timesString }": [
+        "Setiap ${ interval } hari, ${ timesString }"
+      ],
+      "Every ${ interval } day, ${ untilString }": [
+        "Setiap ${ interval } hari, ${ untilString }"
+      ],
+      "until ${ dateString }": [
+        "hingga ${ dateString }"
       ]
     },
     "Day": {
@@ -7225,6 +7201,9 @@
       ]
     },
     "Monthly recurring event, repeats on": {
+      "on day ${ dayOfMonth }": [
+        "pada hari ${ dayOfMonth }"
+      ],
       "on the first Friday": [
         "pada hari Jumat pertama"
       ],
@@ -7245,6 +7224,48 @@
       ],
       "on the first Wednesday": [
         "pada hari Rabu pertama"
+      ],
+      "on the fourth Friday": [
+        "pada hari Jumat keempat"
+      ],
+      "on the fourth Monday": [
+        "pada hari Senin keempat"
+      ],
+      "on the fourth Saturday": [
+        "pada hari Sabtu keempat"
+      ],
+      "on the fourth Sunday": [
+        "pada hari Minggu keempat"
+      ],
+      "on the fourth Thursday": [
+        "pada hari Kamis keempat"
+      ],
+      "on the fourth Tuesday": [
+        "pada hari Selasa keempat"
+      ],
+      "on the fourth Wednesday": [
+        "pada hari Rabu keempat"
+      ],
+      "on the last Friday": [
+        "pada hari Jumat terakhir"
+      ],
+      "on the last Monday": [
+        "pada hari Senin terakhir"
+      ],
+      "on the last Saturday": [
+        "pada hari Sabtu terakhir"
+      ],
+      "on the last Sunday": [
+        "pada hari Minggu terakhir"
+      ],
+      "on the last Thursday": [
+        "pada hari Kamis terakhir"
+      ],
+      "on the last Tuesday": [
+        "pada hari Selasa terakhir"
+      ],
+      "on the last Wednesday": [
+        "pada hari Rabu terakhir"
       ],
       "on the second Friday": [
         "pada hari Jumat kedua"
@@ -7267,14 +7288,26 @@
       "on the second Wednesday": [
         "pada hari Rabu kedua"
       ],
+      "on the third Friday": [
+        "pada hari Jumat ketiga"
+      ],
       "on the third Monday": [
         "pada hari Senin ketiga"
+      ],
+      "on the third Saturday": [
+        "pada hari Sabtu ketiga"
       ],
       "on the third Sunday": [
         "pada hari Minggu ketiga"
       ],
+      "on the third Thursday": [
+        "pada hari Kamis ketiga"
+      ],
       "on the third Tuesday": [
         "pada hari Selasa ketiga"
+      ],
+      "on the third Wednesday": [
+        "pada hari Rabu ketiga"
       ]
     },
     "Moved to black/whitelist": {
@@ -8770,6 +8803,14 @@
         "Pelajari cara untuk mendapatkan tautan kalender pribadi."
       ]
     },
+    "Subscribed calendar extension warning": {
+      "By using this link, Google will make the calendar you are subscribing to public": [
+        "Dengan menggunakan tautan ini, Google akan membuat daftar kalender yang Anda langgan menjadi publik"
+      ],
+      "This link might be wrong": [
+        "Tautan ini mungkin salah"
+      ]
+    },
     "Subscribed calendar section description": {
       "Add public, external, or shared calendars using a URL.": [
         "Tambahkan kalender publik, eksternal, atau bersama melalui URL."
@@ -9064,6 +9105,11 @@
       ],
       "per month": [
         "per bulan"
+      ]
+    },
+    "Summary of errors during export calendar": {
+      "Details about events that couldn't be exported": [
+        "Rincian mengenai acara yang tidak dapat diekspor"
       ]
     },
     "Tab in domain modal": {
@@ -10354,6 +10400,9 @@
       "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
         "Setiap ${ interval } pekan pada ${ multipleDaysString }, ${ untilString }"
       ],
+      "Every ${ interval } week on all days": [
+        "Setiap ${ interval } pekan pada seluruh hari"
+      ],
       "Every ${ interval } week on all days, ${ timesString }": [
         "Setiap ${ interval } pekan pada seluruh hari, ${ timesString }"
       ],
@@ -10369,6 +10418,9 @@
       "Every ${ interval } week on Friday, ${ untilString }": [
         "Setiap ${ interval } pekan pada hari Jumat, ${ untilString }"
       ],
+      "Every ${ interval } week on Monday": [
+        "Setiap ${ interval } pekan pada hari Senin"
+      ],
       "Every ${ interval } week on Monday, ${ timesString }": [
         "Setiap ${ interval } pekan pada hari Senin, ${ timesString }"
       ],
@@ -10383,6 +10435,9 @@
       ],
       "Every ${ interval } week on Saturday, ${ untilString }": [
         "Setiap ${ interval } pekan pada hari Sabtu, ${ untilString }"
+      ],
+      "Every ${ interval } week on Sunday": [
+        "Setiap ${ interval } pekan pada hari Minggu"
       ],
       "Every ${ interval } week on Sunday, ${ timesString }": [
         "Setiap ${ interval } pekan pada hari Minggu, ${ timesString }"
@@ -10426,6 +10481,9 @@
       "Weekly on ${ multipleDaysString }, ${ untilString }": [
         "Mingguan pada ${ multipleDaysString }, ${ untilString }"
       ],
+      "Weekly on all days": [
+        "Mingguan pada seluruh hari"
+      ],
       "Weekly on all days, ${ timesString }": [
         "Mingguan pada seluruh hari, ${ timesString }"
       ],
@@ -10440,6 +10498,9 @@
       ],
       "Weekly on Friday, ${ untilString }": [
         "Mingguan pada hari Jumat, ${ untilString }"
+      ],
+      "Weekly on Monday": [
+        "Mingguan pada hari Senin"
       ],
       "Weekly on Monday, ${ timesString }": [
         "Mingguan pada hari Senin, ${ timesString }"
@@ -10456,6 +10517,9 @@
       "Weekly on Saturday, ${ untilString }": [
         "Mingguan pada hari Sabtu, ${ untilString }"
       ],
+      "Weekly on Sunday": [
+        "Mingguan pada hari Minggu"
+      ],
       "Weekly on Sunday, ${ timesString }": [
         "Mingguan pada hari Minggu, ${ timesString }"
       ],
@@ -10470,6 +10534,9 @@
       ],
       "Weekly on Thursday, ${ untilString }": [
         "Mingguan pada hari Kamis, ${ untilString }"
+      ],
+      "Weekly on Tuesday": [
+        "Mingguan pada hari Selasa"
       ],
       "Weekly on Tuesday, ${ timesString }": [
         "Mingguan pada hari Selasa, ${ timesString }"
@@ -10487,9 +10554,33 @@
         "Mingguan pada hari Rabu, ${ untilString }"
       ]
     },
+    "Weekly recurring event, repeats on (multiple days), frequency": {
+      "Friday": [
+        "Jumat"
+      ],
+      "Monday": [
+        "Senin"
+      ],
+      "Saturday": [
+        "Sabtu"
+      ],
+      "Sunday": [
+        "Minggu"
+      ],
+      "Thursday": [
+        "Kamis"
+      ],
+      "Tuesday": [
+        "Selasa"
+      ],
+      "Wednesday": [
+        "Rabu"
+      ]
+    },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "Setiap ${ interval } tahun"
+        "Yearly",
+        ""
       ],
       "Every ${ interval } year, ${ timesString }": [
         "Setiap ${ interval } tahun, ${ timesString }"
