@@ -23,6 +23,11 @@ async function scaleImage(img: HTMLImageElement): Promise<Uint8Array> {
     const [width, height] = calculateThumbnailSize(img);
     canvas.width = width;
     canvas.height = height;
+
+    // Make white background default for transparent images.
+    ctx.fillStyle = '#FFFFFF';
+    ctx.fillRect(0, 0, width, height);
+
     ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
 
     return new Uint8Array(await canvasToThumbnail(canvas));
