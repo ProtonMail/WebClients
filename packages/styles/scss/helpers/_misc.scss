@@ -59,6 +59,9 @@ $breakpoint-2-columns: 1180 !default;
 	visibility: hidden;
 }
 
+// When adding new opacity classes, add the values also in Storybook
+// applications/storybook/src/stories/cssUtilities/Opacity.stories.tsx
+
 .opacity-65 {
 	opacity: 0.65;
 }
