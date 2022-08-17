@@ -1,9 +1,7 @@
 import { encode } from 'hi-base32';
 
-import getRandomValues from '@proton/get-random-values';
-
 export const generateSharedSecret = (length = 20) => {
-    const randomBytes = getRandomValues(new Uint8Array(length));
+    const randomBytes = crypto.getRandomValues(new Uint8Array(length));
     return encode(randomBytes);
 };
 

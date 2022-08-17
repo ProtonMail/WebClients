@@ -1,5 +1,6 @@
+import { disableRandomMock, initRandomMock } from '@proton/testing/lib/mockRandomValues';
+
 import loginWithFallback from '../../lib/authentication/loginWithFallback';
-import { disableRandomMock, initRandomMock } from '../mockRandomValues';
 import { Modulus, Salt, ServerEphemeral, ServerProof } from './login.data';
 
 const getInfoResult = (version) => ({
@@ -11,8 +12,9 @@ const getInfoResult = (version) => ({
 });
 
 describe('login with fallback', () => {
-    beforeAll(initRandomMock);
-    afterAll(disableRandomMock);
+    beforeAll(() => initRandomMock());
+    afterAll(() => disableRandomMock());
+
     it('should login directly with auth version 4', async () => {
         let authCalls = 0;
 

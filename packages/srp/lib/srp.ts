@@ -7,7 +7,6 @@ import {
     decodeBase64,
     encodeBase64,
 } from '@proton/crypto/lib/utils';
-import getRandomValues from '@proton/get-random-values';
 
 import { AUTH_VERSION, MAX_VALUE_ITERATIONS, SRP_LEN } from './constants';
 import { AuthCredentials, AuthInfo } from './interface';
@@ -25,7 +24,7 @@ export const srpHasher = (arr: Uint8Array) => expandHash(arr);
 /**
  * Generate a random client secret.
  */
-const generateClientSecret = (len: number) => toBN(getRandomValues(new Uint8Array(len / 8)));
+const generateClientSecret = (len: number) => toBN(crypto.getRandomValues(new Uint8Array(len / 8)));
 
 /**
  * Get the client secret. Loops until it finds a safe value.
@@ -219,7 +218,7 @@ export const getRandomSrpVerifier = async (
     version = AUTH_VERSION
 ) => {
     const modulus = await verifyAndGetModulus(serverModulus);
-    const salt = arrayToBinaryString(getRandomValues(new Uint8Array(10)));
+    const salt = arrayToBinaryString(crypto.getRandomValues(new Uint8Array(10)));
     const hashedPassword = await hashPassword({
         version,
         username,
