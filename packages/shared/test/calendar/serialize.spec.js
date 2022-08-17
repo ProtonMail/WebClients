@@ -1,4 +1,5 @@
 import { CryptoProxy, toPublicKeyReference } from '@proton/crypto';
+import { disableRandomMock, initRandomMock } from '@proton/testing/lib/mockRandomValues';
 
 import { ATTENDEE_STATUS_API, EVENT_VERIFICATION_STATUS } from '../../lib/calendar/constants';
 import { readCalendarEvent, readPersonalPart, readSessionKeys } from '../../lib/calendar/deserialize';
@@ -7,7 +8,6 @@ import { createCalendarEvent } from '../../lib/calendar/serialize';
 import { setVcalProdId } from '../../lib/calendar/vcalConfig';
 import { toCRLF } from '../../lib/helpers/string';
 import { DecryptableKey, DecryptableKey2 } from '../keys/keys.data';
-import { disableRandomMock, initRandomMock } from '../mockRandomValues';
 
 const veventComponent = {
     component: 'vevent',
@@ -92,8 +92,9 @@ const transformToExternal = (data, publicAddressKey, sharedSessionKey, calendarS
 };
 
 describe('calendar encryption', () => {
-    beforeAll(initRandomMock);
-    afterAll(disableRandomMock);
+    beforeAll(() => initRandomMock());
+    afterAll(() => disableRandomMock());
+
     it('should encrypt and sign calendar events', async () => {
         const dummyProdId = 'Proton Calendar';
         setVcalProdId(dummyProdId);

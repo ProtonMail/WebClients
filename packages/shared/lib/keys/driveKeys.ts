@@ -117,8 +117,7 @@ export const generateNodeHashKey = async (publicKey: PublicKeyReference, address
     const { message: NodeHashKey } = await CryptoProxy.encryptMessage({
         // Once all clients can use non-ascii bytes, switch to simple
         // generating of random bytes without encoding it into base64:
-        //import getRandomValues from '@proton/get-random-values';
-        //binaryData: getRandomValues(new Uint8Array(32)),
+        //binaryData: crypto.getRandomValues(new Uint8Array(32)),
         textData: generatePassphrase(),
         encryptionKeys: publicKey,
         signingKeys: addressPrivateKey,
