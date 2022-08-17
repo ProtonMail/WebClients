@@ -114,26 +114,7 @@ const PagingControls = ({ loading, page: inputPage, total: inputTotal, onPage: i
             >
                 {() => (
                     <DropdownMenu>
-                        <DropdownMenuButton
-                            loading={loading}
-                            disabled={page === 1}
-                            onClick={() => onPage(1)}
-                            aria-label={c('Action').t`Go to first page`}
-                            data-testid={`toolbar:first-page`}
-                        >
-                            {c('Action').t`Go to first page`}
-                        </DropdownMenuButton>
-                        <DropdownMenuButton
-                            loading={loading}
-                            disabled={page === total}
-                            onClick={() => onPage(total)}
-                            aria-label={c('Action').t`Go to last page`}
-                            data-testid={`toolbar:last-page`}
-                            className="border-bottom"
-                        >
-                            {c('Action').t`Go to last page`}
-                        </DropdownMenuButton>
-                        <Scroll style={{ height: '120px' }}>
+                        <Scroll>
                             {[...Array(total)].map((_, i) => {
                                 const pageNumber = i + 1; // paging tooling is 0 based
                                 const active = page === pageNumber;
