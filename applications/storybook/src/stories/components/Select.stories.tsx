@@ -1,6 +1,6 @@
-import { useRef, useState } from 'react';
+import { useMemo, useRef, useState } from 'react';
 
-import { Icon, InputFieldTwo, Option, SelectTwo } from '@proton/components';
+import { Icon, InputFieldTwo, Option, SearchableSelect, SelectTwo } from '@proton/components';
 
 import { getTitle } from '../../helpers/title';
 import mdx from './Select.mdx';
@@ -35,6 +35,58 @@ export const Basic = () => {
             <Option title="Ant" value="ant" />
             <Option title="Zebra" value="zebra" />
         </SelectTwo>
+    );
+};
+
+export const Multiple = () => {
+    const options = useMemo(() => [{ label: 'ant' }, { label: 'zebra' }], []);
+    const [value, setValue] = useState([options[0]]);
+
+    return (
+        <SelectTwo value={value} onValue={setValue} multiple>
+            {options.map((option) => (
+                <Option title={option.label} value={option} key={option.label} />
+            ))}
+        </SelectTwo>
+    );
+};
+
+export const Search = () => {
+    const options = ['France', 'Switzerland', 'Taïwan', 'USA', 'UK'];
+    const [value, setValue] = useState('France');
+
+    return (
+        <SearchableSelect
+            title={'Choose your country'}
+            value={value}
+            onChange={(e) => setValue(e.value)}
+            search
+            searchPlaceholder={'Search for country'}
+        >
+            {options.map((option) => (
+                <Option key={option} value={option} title={option} />
+            ))}
+        </SearchableSelect>
+    );
+};
+
+export const MultiSearch = () => {
+    const options = ['France', 'Switzerland', 'Taïwan', 'USA', 'UK'];
+    const [value, setValue] = useState([]);
+
+    return (
+        <SearchableSelect
+            multiple
+            value={value}
+            onChange={(e) => setValue(e.value)}
+            search
+            searchPlaceholder={'Search for country'}
+            placeholder={'Choose your country'}
+        >
+            {options.map((option) => (
+                <Option key={option} value={option} title={option} />
+            ))}
+        </SearchableSelect>
     );
 };
 
@@ -113,7 +165,7 @@ export const WithComplexValues = () => {
     return (
         <SelectTwo value={value} onChange={({ value: v }) => setValue(v)}>
             {options.map((option) => (
-                <Option title={option.name} value={option} />
+                <Option title={option.name} value={option} key={option.name} />
             ))}
         </SelectTwo>
     );
