@@ -1,4 +1,4 @@
-import { ChangeEventHandler, MouseEventHandler, ReactNode } from 'react';
+import { ChangeEventHandler, MouseEventHandler, ReactNode, forwardRef } from 'react';
 
 import { c } from 'ttag';
 
@@ -13,7 +13,10 @@ interface Props {
     unstyled?: boolean;
 }
 
-const SearchField = ({ onSubmit, onChange, value, showSearchIcon = true, suffix, unstyled }: Props) => (
+const SearchField = (
+    { onSubmit, onChange, value, showSearchIcon = true, suffix, unstyled }: Props,
+    ref: React.Ref<HTMLInputElement>
+) => (
     <div className="relative flex-item-fluid">
         <InputFieldTwo
             id="search-keyword"
@@ -33,8 +36,9 @@ const SearchField = ({ onSubmit, onChange, value, showSearchIcon = true, suffix,
             onChange={onChange}
             data-shorcut-target="searchbox-field"
             suffix={suffix}
+            ref={ref}
         />
     </div>
 );
 
-export default SearchField;
+export default forwardRef(SearchField);
