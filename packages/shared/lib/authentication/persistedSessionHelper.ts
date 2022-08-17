@@ -1,5 +1,4 @@
 import { updateVersionCookie, versionCookieAtLoad } from '@proton/components/hooks/useEarlyAccess';
-import getRandomValues from '@proton/get-random-values';
 import getRandomString from '@proton/utils/getRandomString';
 
 import { getLocalKey, getLocalSessions, setCookies, setLocalKey } from '../api/auth';
@@ -156,7 +155,7 @@ export const persistSessionWithPassword = async ({
     LocalID,
     persistent,
 }: PersistSessionWithPasswordArgs) => {
-    const rawKey = getRandomValues(new Uint8Array(32));
+    const rawKey = crypto.getRandomValues(new Uint8Array(32));
     const key = await getKey(rawKey);
     const base64StringKey = uint8ArrayToBase64String(rawKey);
     await api<LocalKeyResponse>(setLocalKey(base64StringKey));

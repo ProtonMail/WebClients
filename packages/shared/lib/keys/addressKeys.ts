@@ -2,7 +2,6 @@ import { c } from 'ttag';
 
 import { CryptoProxy, PrivateKeyReference, PublicKeyReference, VERIFICATION_STATUS, serverTime } from '@proton/crypto';
 import { arrayToHexString } from '@proton/crypto/lib/utils';
-import getRandomValues from '@proton/get-random-values';
 
 import { DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS } from '../constants';
 import { EncryptionConfig, KeyPair } from '../interfaces';
@@ -98,7 +97,7 @@ export function generateAddressKeyTokens(
 ): Promise<AddressKeyTokenResult>;
 
 export async function generateAddressKeyTokens(userKey: PrivateKeyReference, organizationKey?: PrivateKeyReference) {
-    const randomBytes = getRandomValues(new Uint8Array(32));
+    const randomBytes = crypto.getRandomValues(new Uint8Array(32));
     const token = arrayToHexString(randomBytes);
     return encryptAddressKeyToken({ token, organizationKey, userKey });
 }

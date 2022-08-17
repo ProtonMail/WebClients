@@ -1,7 +1,6 @@
 import bcrypt from 'bcryptjs';
 
 import { arrayToBinaryString, binaryStringToArray, decodeBase64, encodeBase64 } from '@proton/crypto/lib/utils';
-import getRandomValues from '@proton/get-random-values';
 
 import { BCRYPT_PREFIX } from './constants';
 
@@ -21,4 +20,4 @@ export const computeKeyPassword = async (password: string, salt: string) => {
 /**
  * Generate salt for a key.
  */
-export const generateKeySalt = () => encodeBase64(arrayToBinaryString(getRandomValues(new Uint8Array(16))));
+export const generateKeySalt = () => encodeBase64(arrayToBinaryString(crypto.getRandomValues(new Uint8Array(16))));
