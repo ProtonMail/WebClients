@@ -5,6 +5,7 @@ import useControlled from '@proton/hooks/useControlled';
 import { SelectChangeEvent } from './select';
 
 interface UseSelectOptions<V> {
+    multiple: boolean;
     value?: V;
     options: V[];
     isOpen?: boolean;
@@ -17,7 +18,8 @@ interface UseSelectOptions<V> {
 interface UseSelectOutput<V> {
     isOpen: boolean;
     focusedIndex: number | null;
-    selectedIndex: number | null;
+    selectedIndexes: number[] | null;
+    autoclose: boolean;
     open: () => void;
     close: () => void;
     setFocusedIndex: (index: number) => void;
@@ -27,6 +29,7 @@ interface UseSelectOutput<V> {
 }
 
 const useSelect = <V,>({
+    multiple,
     value,
     options,
     isOpen: controlledOpen,
@@ -35,20 +38,39 @@ const useSelect = <V,>({
     onChange,
     onValue,
 }: UseSelectOptions<V>): UseSelectOutput<V> => {
+    if (multiple && value !== undefined && !Array.isArray(value)) {
+        /* eslint-disable-next-line no-console */
+        console.warn('[SelectTwo] Incorrect usage : if using multiple mode, value must be an array');
+    }
+
     const [isOpen, setIsOpen] = useControlled(controlledOpen, false);
 
     const [focusedIndex, setFocusedIndex] = useState<UseSelectOutput<V>['focusedIndex']>(null);
 
-    const selectedIndex = useMemo(() => {
-        const index = options.findIndex((option) => option === value);
+    /**
+     * multi mode specifics :
+     * - we want to disable dropdown autoclose on click to allowing selecting multiple options
+     * - if we only have a single option in multi mode, auto closing should be re-enabled
+     */
+    const autoclose = !multiple || options.length <= 1;
 
-        return index !== -1 ? index : null;
+    const selectedIndexes = useMemo<number[] | null>(() => {
+        if (value === undefined) {
+            return null;
+        }
+
+        const indexes = [value]
+            .flat()
+            .map((val) => options.findIndex((option) => option === val))
+            .filter((idx) => idx !== -1);
+
+        return indexes.length > 0 ? indexes : null;
     }, [options, value]);
 
     const open = () => {
         setIsOpen(true);
         onOpen?.();
-        setFocusedIndex(selectedIndex || 0);
+        setFocusedIndex(selectedIndexes?.[0] || 0);
     };
 
     const close = () => {
@@ -69,20 +91,34 @@ const useSelect = <V,>({
     };
 
     const handleChange: UseSelectOutput<V>['handleChange'] = (e) => {
+        const nextValue: V = (() => {
+            if (multiple && value !== undefined && Array.isArray(value)) {
+                const isSelected = value?.some((selectedValue) => e.value === selectedValue) ?? false;
+
+                return (isSelected
+                    ? value.filter((selectedValue) => selectedValue !== e.value)
+                    : [...value, e.value]) as any as V;
+            }
+
+            return e.value;
+        })();
+
+        e.value = nextValue;
         onChange?.(e);
-        onValue?.(e.value);
+        onValue?.(nextValue);
     };
 
     return {
         open,
         close,
         isOpen: isOpen || false,
+        autoclose,
         focusedIndex,
         setFocusedIndex,
         focusPreviousIndex,
         focusNextIndex,
         handleChange,
-        selectedIndex,
+        selectedIndexes,
     };
 };
 

@@ -1,13 +1,4 @@
-import {
-    ComponentPropsWithoutRef,
-    FormEvent,
-    KeyboardEvent,
-    MouseEvent,
-    ReactElement,
-    useMemo,
-    useRef,
-    useState,
-} from 'react';
+import { FormEvent, KeyboardEvent, MouseEvent, useMemo, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -16,10 +7,11 @@ import { normalize } from '@proton/shared/lib/helpers/string';
 import { classnames } from '../../helpers';
 import { Dropdown } from '../dropdown';
 import { SearchInput } from '../input';
-import { Props as OptionProps } from '../option/Option';
+import Option, { Props as OptionProps } from '../option/Option';
 import SelectButton from './SelectButton';
+import { SelectDisplayValue } from './SelectDisplayValue';
 import SelectOptions from './SelectOptions';
-import { SelectChangeEvent } from './select';
+import { SelectProps } from './select';
 import useSelect, { SelectProvider } from './useSelect';
 
 const includesString = (str1: string, str2: string) => normalize(str1, true).indexOf(normalize(str2, true)) > -1;
@@ -31,39 +23,26 @@ const defaultFilterFunction = <V,>(option: OptionProps<V>, keyword: string) =>
     (option.title && includesString(option.title, keyword)) ||
     (option.searchStrings && arrayIncludesString(option.searchStrings, keyword));
 
-export interface Props<V>
-    extends Omit<ComponentPropsWithoutRef<'button'>, 'value' | 'onClick' | 'onChange' | 'onKeyDown' | 'aria-label'> {
-    value?: V;
-    /**
-     * Optionally allows controlling the Select's open state
-     */
-    isOpen?: boolean;
-    /**
-     * Children Options of the Select, have to be of type Option
-     * (or something that implements the same interface)
-     */
-    children: ReactElement<OptionProps<V>>[];
-    onChange?: (e: SelectChangeEvent<V>) => void;
-    onClose?: () => void;
-    onOpen?: () => void;
-    loading?: boolean;
+export interface Props<V> extends SelectProps<V> {
     search?: boolean | ((option: OptionProps<V>) => void);
     searchPlaceholder?: string;
     noSearchResults?: string;
 }
 
 const SearchableSelect = <V extends any>({
+    multiple = false,
     children,
     value,
     placeholder,
     isOpen: controlledOpen,
-    onClose,
-    onOpen,
-    onChange,
     loading,
     search,
     searchPlaceholder,
     noSearchResults = c('Select search results').t`No results found`,
+    onClose,
+    onOpen,
+    onChange,
+    renderSelected,
     ...rest
 }: Props<V>) => {
     const [searchValue, setSearchValue] = useState('');
@@ -72,9 +51,11 @@ const SearchableSelect = <V extends any>({
     const searchContainerRef = useRef<HTMLDivElement>(null);
     const searchInputRef = useRef<HTMLInputElement>(null);
 
-    const optionValues = children.map((option) => option.props.value);
+    const optionChildren = children.filter((child) => child.type === Option);
+    const optionValues = optionChildren.map((option) => option.props.value);
 
-    const select = useSelect<V>({
+    const select = useSelect({
+        multiple,
         value,
         options: optionValues,
         onChange,
@@ -84,7 +65,8 @@ const SearchableSelect = <V extends any>({
 
     const {
         isOpen,
-        selectedIndex,
+        selectedIndexes,
+        autoclose,
         open,
         close: handleClose,
         setFocusedIndex,
@@ -111,7 +93,7 @@ const SearchableSelect = <V extends any>({
             close();
         } else {
             open();
-            setFocusedIndex(selectedIndex || 0);
+            setFocusedIndex(selectedIndexes?.[0] || 0);
         }
     };
 
@@ -139,35 +121,32 @@ const SearchableSelect = <V extends any>({
         }
     };
 
-    const selectedChild = selectedIndex || selectedIndex === 0 ? children[selectedIndex] : null;
-
-    const displayedValue = selectedChild?.props?.children || selectedChild?.props?.title || placeholder;
-
-    const ariaLabel = selectedChild?.props?.title;
+    const selectedChildren = (selectedIndexes ?? []).map((i) => optionChildren[i]);
+    const ariaLabel = selectedChildren?.map((child) => child.props.title).join(', ');
 
     const filteredOptions = useMemo(() => {
         if (!searchValue) {
-            return children;
+            return optionChildren;
         }
 
         const filterFunction = typeof search === 'function' ? search : defaultFilterFunction;
 
-        const filteredOptions = children.filter((child) => filterFunction(child.props, searchValue));
-
-        return filteredOptions;
+        return optionChildren.filter((child) => filterFunction(child.props, searchValue));
     }, [children, search, searchValue]);
 
-    const selectedIndexInFilteredOptions =
-        typeof selectedIndex === 'number'
-            ? filteredOptions.findIndex((option) => children[selectedIndex] === option)
-            : null;
+    const selectedIndexesInFilteredOptions =
+        selectedIndexes
+            ?.map((index) => filteredOptions.findIndex((option) => option === optionChildren[index]))
+            ?.filter((idx) => idx !== -1) ?? null;
 
     const pressedDown = useRef(false);
 
     return (
         <SelectProvider {...select}>
             <SelectButton isOpen={isOpen} onClick={handleAnchorClick} aria-label={ariaLabel} ref={anchorRef} {...rest}>
-                {displayedValue}
+                {renderSelected?.(value) ?? (
+                    <SelectDisplayValue selectedChildren={selectedChildren} placeholder={placeholder} />
+                )}
             </SelectButton>
 
             <Dropdown
@@ -175,12 +154,16 @@ const SearchableSelect = <V extends any>({
                 onClosed={handleClosed}
                 anchorRef={anchorRef}
                 onClose={close}
+                autoClose={autoclose}
                 offset={4}
                 noCaret
                 noMaxWidth
                 sameAnchorWidth
                 disableDefaultArrowNavigation={!searchValue}
-                className={classnames([searchContainerRef?.current && 'dropdown--is-searchable'])}
+                className={classnames([
+                    searchContainerRef?.current && 'dropdown--is-searchable',
+                    multiple && 'select-dropdown--togglable',
+                ])}
             >
                 <div onKeyDown={handleDropdownContentKeyDown}>
                     <div className="dropdown-search" ref={searchContainerRef}>
@@ -237,7 +220,7 @@ const SearchableSelect = <V extends any>({
                     ) : (
                         <SelectOptions
                             disableFocusOnActive
-                            selected={selectedIndexInFilteredOptions}
+                            selected={selectedIndexesInFilteredOptions}
                             onChange={handleChange}
                         >
                             {filteredOptions}

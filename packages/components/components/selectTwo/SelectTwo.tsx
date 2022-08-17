@@ -1,37 +1,19 @@
-import {
-    ComponentPropsWithoutRef,
-    KeyboardEvent,
-    MutableRefObject,
-    ReactElement,
-    useEffect,
-    useMemo,
-    useRef,
-    useState,
-} from 'react';
+import { KeyboardEvent, MutableRefObject, useEffect, useMemo, useRef, useState } from 'react';
 
+import { classnames } from '../..';
 import { Dropdown } from '../dropdown';
-import Option, { Props as OptionProps } from '../option/Option';
+import Option from '../option/Option';
 import SelectButton from './SelectButton';
+import { SelectDisplayValue } from './SelectDisplayValue';
 import SelectOptions from './SelectOptions';
-import { SelectChangeEvent } from './select';
+import { SelectProps } from './select';
 import useSelect, { SelectProvider } from './useSelect';
 
-export interface Props<V>
-    extends Omit<ComponentPropsWithoutRef<'button'>, 'value' | 'onClick' | 'onChange' | 'onKeyDown' | 'aria-label'> {
-    value?: V;
+export interface Props<V> extends SelectProps<V> {
     /**
      * Optionally allows to remove the border around the select. Use for example in inputs
      */
     unstyled?: boolean;
-    /**
-     * Optionally allows controlling the Select's open state
-     */
-    isOpen?: boolean;
-    /**
-     * Children Options of the Select, have to be of type Option
-     * (or something that implements the same interface)
-     */
-    children: ReactElement<OptionProps<V>>[];
     /**
      * Milliseconds after which to clear the current user input
      * (the input is used for highlighting match based on keyboard input)
@@ -44,33 +26,30 @@ export interface Props<V>
      * your values are complex, the search feature will be disabled for
      * that instance of the Select.
      */
-    getSearchableValue?: (value: V) => string;
     noMaxWidth?: boolean;
     originalPlacement?: string;
-    loading?: boolean;
-    onChange?: (e: SelectChangeEvent<V>) => void;
-    onValue?: (value: V) => void;
-    onClose?: () => void;
-    onOpen?: () => void;
     anchorRef?: MutableRefObject<HTMLButtonElement | null>;
+    getSearchableValue?: (value: V) => string;
 }
 
 const SelectTwo = <V extends any>({
+    multiple = false,
     unstyled,
     children,
     value,
     placeholder,
     isOpen: controlledOpen,
-    onClose,
-    onOpen,
-    onChange,
-    onValue,
     clearSearchAfter = 500,
-    getSearchableValue,
     noMaxWidth = true,
     originalPlacement,
     loading,
     anchorRef: maybeAnchorRef,
+    onClose,
+    onOpen,
+    onChange,
+    onValue,
+    getSearchableValue,
+    renderSelected,
     ...rest
 }: Props<V>) => {
     const anchorRef = useRef<HTMLButtonElement | null>(null);
@@ -83,6 +62,7 @@ const SelectTwo = <V extends any>({
     const optionValues = optionChildren.map((child) => child.props.value);
 
     const select = useSelect({
+        multiple,
         value,
         options: optionValues,
         onChange,
@@ -91,7 +71,7 @@ const SelectTwo = <V extends any>({
         onClose,
     });
 
-    const { isOpen, selectedIndex, open, close, setFocusedIndex, handleChange } = select;
+    const { isOpen, selectedIndexes, autoclose, open, close, setFocusedIndex, handleChange } = select;
 
     /*
      * Natural search-ability determined by whether or not all option values
@@ -183,11 +163,10 @@ const SelectTwo = <V extends any>({
         }
     };
 
-    const selectedChild = selectedIndex || selectedIndex === 0 ? optionChildren[selectedIndex] : null;
+    const selectedChildren = (selectedIndexes ?? []).map((i) => optionChildren[i]);
+    const ariaLabel = selectedChildren?.map((child) => child.props.title).join(', ');
 
-    const displayedValue = selectedChild?.props?.children || selectedChild?.props?.title || placeholder;
-
-    const ariaLabel = selectedChild?.props?.title;
+    const allowOptionToggling = multiple && optionChildren.length > 1;
 
     return (
         <SelectProvider {...select}>
@@ -201,21 +180,24 @@ const SelectTwo = <V extends any>({
                 ref={anchorRef}
                 {...rest}
             >
-                {displayedValue}
+                {renderSelected?.(value) ?? (
+                    <SelectDisplayValue selectedChildren={selectedChildren} placeholder={placeholder} />
+                )}
             </SelectButton>
-
             <Dropdown
                 isOpen={isOpen}
                 anchorRef={maybeAnchorRef || anchorRef}
                 onClose={close}
+                autoClose={autoclose}
                 offset={4}
                 noCaret
                 noMaxWidth={noMaxWidth}
                 originalPlacement={originalPlacement}
                 sameAnchorWidth
                 disableDefaultArrowNavigation
+                className={classnames(['select-dropdown', allowOptionToggling && 'select-dropdown--togglable'])}
             >
-                <SelectOptions selected={selectedIndex} onKeyDown={handleKeydown} onChange={handleChange}>
+                <SelectOptions selected={selectedIndexes} onKeyDown={handleKeydown} onChange={handleChange}>
                     {children}
                 </SelectOptions>
             </Dropdown>

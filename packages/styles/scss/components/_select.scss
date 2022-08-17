@@ -1,0 +1,15 @@
+.select-dropdown {
+	&--togglable {
+		.dropdown-item {
+			[aria-current='true'],
+			&--is-selected {
+				&,
+				&:hover,
+				&:focus,
+				&:active {
+					pointer-events: all;
+				}
+			}
+		}
+	}
+}

@@ -53,4 +53,5 @@ const SelectButton = forwardRef<HTMLButtonElement, SelectButtonProps>(
     }
 );
 
+SelectButton.displayName = 'SelectButton';
 export default SelectButton;
