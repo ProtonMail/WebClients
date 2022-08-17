@@ -72,14 +72,15 @@ const getRecipients = (value = '') =>
         .map((Address) => ({ Address, Name: '' }));
 const formatRecipients = (recipients: Recipient[] = []) => recipients.map(({ Address }) => Address).join(',');
 
-const initializeModel = (history: History) => () => {
+const initializeModel = (history: History, selectedLabelID: string, searchInputValue: string) => () => {
     const { keyword, address, attachments, wildcard, from, to, begin, end } = extractSearchParameters(history.location);
 
     const { filter } = getSearchParams(history.location.search);
 
     return {
-        ...DEFAULT_MODEL, // labelID re-initialized to ALL_MAIL
-        keyword: keyword || '',
+        ...DEFAULT_MODEL,
+        labelID: keyword ? selectedLabelID : ALL_MAIL,
+        keyword: searchInputValue ? keyword || '' : '',
         address: address || ALL_ADDRESSES,
         attachments,
         wildcard,
@@ -100,6 +101,8 @@ interface Props {
     handleESInteraction: () => void;
     showMore: boolean;
     toggleShowMore: () => void;
+    searchInputValue: string;
+    labelID: string;
 }
 
 const AdvancedSearch = ({
@@ -110,11 +113,14 @@ const AdvancedSearch = ({
     esInteraction,
     handleESInteraction,
     showMore,
+    searchInputValue,
     toggleShowMore,
+    labelID,
 }: Props) => {
+    const searchInputRef = useRef<HTMLInputElement>(null);
     const history = useHistory();
     const [addresses] = useAddresses();
-    const [model, updateModel] = useState<SearchModel>(initializeModel(history));
+    const [model, updateModel] = useState<SearchModel>(initializeModel(history, labelID, searchInputValue));
     const [user] = useUser();
     const { getESDBStatus } = useEncryptedSearchContext();
     const { isDBLimited, lastContentTime } = getESDBStatus();
@@ -159,14 +165,19 @@ const AdvancedSearch = ({
         onClose();
     };
 
-    const handleReset = () => updateModel(DEFAULT_MODEL);
-
     const handleClear = () => {
-        // Willingly no preventDefault here, we want the form reset to happen
-        history.push(history.location.pathname);
+        updateModel((currentModel) => ({ ...currentModel, keyword: '' }));
+        searchInputRef.current?.focus();
     };
 
-    const isSearch = useMemo(() => {
+    const handleReset = (event: FormEvent) => {
+        event.preventDefault(); // necessary to block native reset behaviour
+
+        updateModel(DEFAULT_MODEL);
+        searchInputRef.current?.focus();
+    };
+
+    const canReset = useMemo(() => {
         return !isDeepEqual(omit(model, ['labelID']), omit(DEFAULT_MODEL, ['labelID']));
     }, [model]);
 
@@ -179,16 +190,10 @@ const AdvancedSearch = ({
                     onChange={({ target }) => updateModel({ ...model, keyword: target.value })}
                     onSubmit={handleSubmit}
                     showSearchIcon={false}
+                    ref={searchInputRef}
                     suffix={
-                        isSearch ? (
-                            <Button
-                                shape="ghost"
-                                color="weak"
-                                size="small"
-                                disabled={!Object.keys(model).length}
-                                type="reset"
-                                onClick={handleClear}
-                            >
+                        model.keyword ? (
+                            <Button shape="ghost" color="weak" size="small" type="button" onClick={handleClear}>
                                 {c('Action').t`Clear`}
                             </Button>
                         ) : null
@@ -350,8 +355,17 @@ const AdvancedSearch = ({
                         {c('Action').t`More search options`}
                     </Button>
                 )}
-                <PrimaryButton type="submit" className="mlauto mb0-5 on-mobile-w100">{c('Action')
-                    .t`Search`}</PrimaryButton>
+                <div className="mlauto">
+                    {canReset ? (
+                        <Button
+                            className="mb0-5 on-mobile-w100 mr1"
+                            type="reset"
+                            title={c('Action').t`Reset search form`}
+                        >{c('Action').t`Reset`}</Button>
+                    ) : null}
+                    <PrimaryButton type="submit" className="mb0-5 on-mobile-w100">{c('Action')
+                        .t`Search`}</PrimaryButton>
+                </div>
             </div>
         </form>
     );

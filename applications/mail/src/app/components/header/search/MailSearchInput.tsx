@@ -1,27 +1,21 @@
 import { Ref, forwardRef } from 'react';
-import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
 
 import { Button, Icon, InputTwo } from '@proton/components';
 
-import { isSearch as testIsSearch } from '../../../helpers/elements';
-import { SearchParameters } from '../../../models/tools';
-
 import './SearchInput.scss';
 
 interface Props {
-    searchParams: SearchParameters;
     onOpen: () => void;
+    value: string;
+    onChange: (newValue: string) => void;
 }
 
-const SearchInput = ({ searchParams, onOpen }: Props, ref: Ref<HTMLInputElement>) => {
-    const history = useHistory();
-
-    const isSearch = testIsSearch(searchParams);
-
+const MailSearchInput = ({ value, onOpen, onChange }: Props, ref: Ref<HTMLInputElement>) => {
     const handleClear = () => {
-        history.push(history.location.pathname);
+        onChange('');
+        onOpen();
     };
 
     return (
@@ -29,7 +23,7 @@ const SearchInput = ({ searchParams, onOpen }: Props, ref: Ref<HTMLInputElement>
             <div ref={ref} className="w100 mauto">
                 <InputTwo
                     inputClassName="cursor-text"
-                    value={searchParams.keyword ? searchParams.keyword : ''}
+                    value={value}
                     placeholder={c('Placeholder').t`Search messages`}
                     onClick={onOpen}
                     data-testid="search-keyword"
@@ -50,7 +44,7 @@ const SearchInput = ({ searchParams, onOpen }: Props, ref: Ref<HTMLInputElement>
                         </Button>
                     }
                     suffix={
-                        isSearch ? (
+                        value.length ? (
                             <Button
                                 type="button"
                                 shape="ghost"
@@ -70,4 +64,4 @@ const SearchInput = ({ searchParams, onOpen }: Props, ref: Ref<HTMLInputElement>
     );
 };
 
-export default forwardRef(SearchInput);
+export default forwardRef(MailSearchInput);
