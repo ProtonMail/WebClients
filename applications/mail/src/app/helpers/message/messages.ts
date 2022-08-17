@@ -10,6 +10,7 @@ import {
     MessageImages,
     MessageState,
     MessageStateWithData,
+    MessageWithOptionalBody,
     PartialMessageState,
 } from '../../logic/messages/messagesTypes';
 import { getContent, setContent } from './messageContent';
@@ -105,7 +106,10 @@ export const getMessagesAuthorizedToMove = (messages: Message[], destinationFold
 
 export const getMessageHasData = (message: MessageState): message is MessageStateWithData => !!message.data;
 
-export const applyMarkAsChangesOnMessage = (message: Message, { status }: MarkAsChanges) => ({
+export const applyMarkAsChangesOnMessage = <T>(
+    message: MessageWithOptionalBody & T,
+    { status }: MarkAsChanges
+): MessageWithOptionalBody & T => ({
     ...message,
     Unread: status === MARK_AS_STATUS.UNREAD ? 1 : 0,
 });

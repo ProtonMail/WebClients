@@ -92,7 +92,7 @@ export const getPlainText = (message: MessageState, downconvert: boolean) => {
  * Convert the body of a message in plain text to an HTML version
  */
 export const plainTextToHTML = (
-    message: Message | undefined,
+    message: Partial<Message> | undefined,
     plainTextContent: string | undefined,
     mailSettings: MailSettings | undefined,
     userSettings: UserSettings | undefined,

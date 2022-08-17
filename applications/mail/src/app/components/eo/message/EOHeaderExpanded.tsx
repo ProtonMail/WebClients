@@ -138,13 +138,13 @@ const EOHeaderExpanded = ({
                 <div className="mt0-5 flex flex-row">
                     {messageLoaded && <ExtraExpirationTime message={message} displayAsButton />}
                     <ExtraImages
-                        message={message}
+                        messageImages={message.messageImages}
                         type="remote"
                         onLoadImages={onLoadRemoteImages}
                         mailSettings={eoDefaultMailSettings}
                     />
                     <ExtraImages
-                        message={message}
+                        messageImages={message.messageImages}
                         type="embedded"
                         onLoadImages={onLoadEmbeddedImages}
                         mailSettings={eoDefaultMailSettings}

@@ -6,22 +6,21 @@ import { MailSettings } from '@proton/shared/lib/interfaces';
 
 import { hasShowEmbedded, hasShowRemote } from '../../../helpers/mailSettings';
 import { hasToSkipProxy } from '../../../helpers/message/messageRemotes';
-import { MessageState } from '../../../logic/messages/messagesTypes';
+import { MessageImages } from '../../../logic/messages/messagesTypes';
 
 interface Props {
-    message: MessageState;
+    messageImages?: MessageImages;
     type: string;
     onLoadImages: () => void;
     mailSettings?: MailSettings;
 }
 
-const ExtraImages = ({ message, type, onLoadImages, mailSettings }: Props) => {
+const ExtraImages = ({ messageImages, type, onLoadImages, mailSettings }: Props) => {
     const { Shortcuts = 0 } = mailSettings || {};
 
-    const { showRemoteImages = true, showEmbeddedImages = true } = message.messageImages || {};
+    const { showRemoteImages = true, showEmbeddedImages = true } = messageImages || {};
 
-    const couldLoadDirect =
-        type === 'remote' && showRemoteImages === true && hasToSkipProxy(message.messageImages?.images);
+    const couldLoadDirect = type === 'remote' && showRemoteImages === true && hasToSkipProxy(messageImages?.images);
 
     if (type === 'embedded' && hasShowEmbedded(mailSettings)) {
         return null;

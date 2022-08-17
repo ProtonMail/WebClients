@@ -5,10 +5,10 @@ import { c } from 'ttag';
 import { Icon, Tooltip } from '@proton/components';
 
 import { useEncryptedSearchContext } from '../../../containers/EncryptedSearchProvider';
-import { MessageState } from '../../../logic/messages/messagesTypes';
+import { MessageStateWithData } from '../../../logic/messages/messagesTypes';
 
 interface Props {
-    message: MessageState;
+    message: MessageStateWithData;
 }
 
 const ExtraDecryptedSubject = ({ message }: Props) => {
@@ -25,7 +25,7 @@ const ExtraDecryptedSubject = ({ message }: Props) => {
         }
     }, [message.decryption?.decryptedSubject, highlightSubject]);
 
-    if (message.data?.Subject !== '...' || !subjectElement) {
+    if (message.data.Subject !== '...' || !subjectElement) {
         return null;
     }
 

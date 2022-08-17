@@ -8,9 +8,9 @@ import useIsMounted from '@proton/hooks/useIsMounted';
 import { VIEW_MODE } from '@proton/shared/lib/constants';
 import createListeners from '@proton/shared/lib/helpers/listeners';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
 import { formatDateToHuman } from '../../helpers/date';
+import { MessageWithOptionalBody } from '../../logic/messages/messagesTypes';
 import UndoButton from './UndoButton';
 
 export const createSendingMessageNotificationManager = () => {
@@ -29,7 +29,7 @@ interface SendingMessageNotificationProps {
     manager: SendingMessageNotificationManager;
     scheduledAt?: number;
     viewMode?: number;
-    message?: Message;
+    message?: MessageWithOptionalBody;
 }
 
 enum SendingStep {
