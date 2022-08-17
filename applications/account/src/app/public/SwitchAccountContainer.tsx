@@ -20,19 +20,20 @@ import {
     useNotifications,
 } from '@proton/components';
 import { revoke } from '@proton/shared/lib/api/auth';
-import { getAppHref } from '@proton/shared/lib/apps/helper';
+import { PersistedSessionWithLocalID } from '@proton/shared/lib/authentication/SessionInterface';
 import { InvalidPersistentSessionError } from '@proton/shared/lib/authentication/error';
-import { LocalSessionResponse } from '@proton/shared/lib/authentication/interface';
-import { getActiveSessions, resumeSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
-import { getPersistedSession, removePersistedSession } from '@proton/shared/lib/authentication/persistedSessionStorage';
-import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
+import {
+    LocalSessionPersisted,
+    getActiveSessions,
+    resumeSession,
+} from '@proton/shared/lib/authentication/persistedSessionHelper';
+import { removePersistedSession } from '@proton/shared/lib/authentication/persistedSessionStorage';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { withUIDHeaders } from '@proton/shared/lib/fetch/headers';
-import { replaceUrl } from '@proton/shared/lib/helpers/browser';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { getInitials } from '@proton/shared/lib/helpers/string';
-import { hasRecoveryMessage } from '@proton/shared/lib/recoveryFile/deviceRecovery';
+import { hasRecoveryMessage, removeDeviceRecovery } from '@proton/shared/lib/recoveryFile/deviceRecovery';
 import noop from '@proton/utils/noop';
-import partition from '@proton/utils/partition';
 
 import Content from './Content';
 import Header from './Header';
@@ -44,33 +45,25 @@ import './SwitchAccountContainer.scss';
 interface Props {
     onLogin: (data: OnLoginCallbackArguments) => Promise<void>;
     toAppName?: string;
-    activeSessions?: LocalSessionResponse[];
-    onSignOut: (updatedActiveSessions?: LocalSessionResponse[]) => void;
-    onSignOutAll: () => void;
+    activeSessions?: LocalSessionPersisted[];
+    onSignOut: (updatedActiveSessions?: LocalSessionPersisted[]) => void;
     onAddAccount: () => void;
 }
 
-const compareSessions = (a: LocalSessionResponse, b: LocalSessionResponse) => {
-    if (a.DisplayName && b.DisplayName) {
-        return a.DisplayName.localeCompare(b.DisplayName);
+const compareSessions = (a: LocalSessionPersisted, b: LocalSessionPersisted) => {
+    if (a.remote.DisplayName && b.remote.DisplayName) {
+        return a.remote.DisplayName.localeCompare(b.remote.DisplayName);
     }
-    if (a.Username && b.Username) {
-        return a.Username.localeCompare(b.Username);
+    if (a.remote.Username && b.remote.Username) {
+        return a.remote.Username.localeCompare(b.remote.Username);
     }
-    if (a.PrimaryEmail && b.PrimaryEmail) {
-        return a.PrimaryEmail.localeCompare(b.PrimaryEmail);
+    if (a.remote.PrimaryEmail && b.remote.PrimaryEmail) {
+        return a.remote.PrimaryEmail.localeCompare(b.remote.PrimaryEmail);
     }
     return 0;
 };
 
-const SwitchAccountContainer = ({
-    toAppName,
-    onLogin,
-    activeSessions,
-    onAddAccount,
-    onSignOut,
-    onSignOutAll,
-}: Props) => {
+const SwitchAccountContainer = ({ toAppName, onLogin, activeSessions, onAddAccount, onSignOut }: Props) => {
     const normalApi = useApi();
     const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });
     const errorHandler = useErrorHandler();
@@ -92,77 +85,35 @@ const SwitchAccountContainer = ({
         }
     }, []);
 
-    const clearSession = (localID: number) => {
-        const persistedSession = getPersistedSession(localID);
-        if (!persistedSession) {
-            return;
+    const clearSession = (session: PersistedSessionWithLocalID, clearDeviceRecovery: boolean) => {
+        removePersistedSession(session.localID, session.UID);
+        if (clearDeviceRecovery) {
+            removeDeviceRecovery(session.UserID);
         }
-        removePersistedSession(localID, persistedSession.UID);
-        silentApi(withUIDHeaders(persistedSession.UID, revoke())).catch(noop);
+        silentApi(withUIDHeaders(session.UID, revoke())).catch(noop);
     };
 
-    const handleSignOut = (localID: number, updatedActiveSessions: LocalSessionResponse[] | undefined) => {
-        clearSession(localID);
+    const handleSignOut = (sessions: LocalSessionPersisted[], clearDeviceRecovery: boolean) => {
+        sessions.forEach((session) => {
+            clearSession(session.persisted, clearDeviceRecovery);
+        });
+        const remove = new Set(sessions.map((session) => session.remote.LocalID));
+        const updatedActiveSessions = localActiveSessions?.filter((session) => !remove.has(session.remote.LocalID));
         setLocalActiveSessions(updatedActiveSessions);
         onSignOut(updatedActiveSessions);
     };
 
-    const handleSignOutClick = async (localID: number) => {
-        const [sessionToLogout, updatedActiveSessions] = localActiveSessions
-            ? partition<LocalSessionResponse>(
-                  localActiveSessions,
-                  (session): session is LocalSessionResponse => session.LocalID === localID
-              )
-            : [undefined, undefined];
-
-        if (sessionToLogout && sessionToLogout.some((session) => hasRecoveryMessage(session.UserID))) {
+    const handleSignOutMultiple = (sessions: LocalSessionPersisted[]) => {
+        if (sessions.some((session) => hasRecoveryMessage(session.remote.UserID))) {
             return createModal(
                 <ConfirmSignOutModal
-                    onSignOut={(clearData: boolean) => {
-                        const params = new URLSearchParams();
-                        if (clearData) {
-                            const clearDeviceRecoveryData = sessionToLogout.map((session) => session.UserID);
-                            params.set('clearDeviceRecoveryData', JSON.stringify(clearDeviceRecoveryData));
-                            replaceUrl(getAppHref(`/switch?${params.toString()}`, APPS.PROTONACCOUNT));
-                        }
-
-                        handleSignOut(localID, updatedActiveSessions);
+                    onSignOut={(clearDeviceRecovery: boolean) => {
+                        handleSignOut(sessions, clearDeviceRecovery);
                     }}
                 />
             );
         }
-
-        handleSignOut(localID, updatedActiveSessions);
-    };
-
-    const handleSignOutAll = async () => {
-        const prompt = localActiveSessions && localActiveSessions.some((session) => hasRecoveryMessage(session.UserID));
-
-        const signOutAll = () => {
-            localActiveSessions?.forEach(({ LocalID }) => {
-                clearSession(LocalID);
-            });
-            onSignOutAll();
-        };
-
-        if (prompt) {
-            return createModal(
-                <ConfirmSignOutModal
-                    onSignOut={(clearData: boolean) => {
-                        const params = new URLSearchParams();
-                        if (clearData) {
-                            const clearDeviceRecoveryData = localActiveSessions.map((session) => session.UserID);
-                            params.set('clearDeviceRecoveryData', JSON.stringify(clearDeviceRecoveryData));
-                            replaceUrl(getAppHref(`/switch?${params.toString()}`, APPS.PROTONACCOUNT));
-                        }
-
-                        signOutAll();
-                    }}
-                />
-            );
-        }
-
-        signOutAll();
+        handleSignOut(sessions, false);
     };
 
     const handleClickSession = async (localID: number) => {
@@ -175,7 +126,7 @@ const SwitchAccountContainer = ({
             setLoadingMap((old) => ({ ...old, [localID]: false }));
             if (e instanceof InvalidPersistentSessionError) {
                 setLocalActiveSessions((list) => {
-                    return list?.filter(({ LocalID: otherLocalID }) => otherLocalID !== localID);
+                    return list?.filter((session) => session.remote.LocalID !== localID);
                 });
                 createNotification({
                     type: 'error',
@@ -216,68 +167,71 @@ const SwitchAccountContainer = ({
             return <Alert className="mb1">{c('Error').t`No active sessions`}</Alert>;
         }
 
-        return [...localActiveSessions.sort(compareSessions)].map(
-            ({ DisplayName, Username, LocalID, PrimaryEmail }, index) => {
-                const isLoading = loadingMap[LocalID];
+        return [...localActiveSessions.sort(compareSessions)].map((session, index) => {
+            const { LocalID, DisplayName, Username, PrimaryEmail } = session.remote;
+            const isLoading = loadingMap[LocalID];
 
-                const nameToDisplay = DisplayName || Username || PrimaryEmail || '';
-                const initials = getInitials(nameToDisplay);
+            const nameToDisplay = DisplayName || Username || PrimaryEmail || '';
+            const initials = getInitials(nameToDisplay);
 
-                const maybeEmailInBrackets = PrimaryEmail ? `<${PrimaryEmail}>` : '';
+            const maybeEmailInBrackets = PrimaryEmail ? `<${PrimaryEmail}>` : '';
 
-                // translator: This is the tooltip that appears when you hover over an account button in switch account screen. Ex.: Continue with Kung Fury <kung.fury@pm.me>
-                const continueWithText = c('Action').t`Continue with ${nameToDisplay} ${maybeEmailInBrackets}`;
-                // translator: This is the tooltip that appears when you hover over an 'sign out' button in switch account screen. Ex.: Sign out from Kung Fury <kung.fury@pm.me>
-                const signOutText = c('Action').t`Sign out from ${nameToDisplay} ${maybeEmailInBrackets}`;
+            // translator: This is the tooltip that appears when you hover over an account button in switch account screen. Ex.: Continue with Kung Fury <kung.fury@pm.me>
+            const continueWithText = c('Action').t`Continue with ${nameToDisplay} ${maybeEmailInBrackets}`;
+            // translator: This is the tooltip that appears when you hover over an 'sign out' button in switch account screen. Ex.: Sign out from Kung Fury <kung.fury@pm.me>
+            const signOutText = c('Action').t`Sign out from ${nameToDisplay} ${maybeEmailInBrackets}`;
 
-                return (
-                    <Fragment key={LocalID}>
-                        <div
-                            className={classnames([
-                                'account-button p1 interactive flex flex-align-items-start w100 text-left rounded relative',
-                                isLoading && 'is-loading',
-                            ])}
-                        >
-                            <span className="flex user-initials rounded bg-primary">
-                                <span className="mauto text-semibold" aria-hidden="true">
-                                    {initials}
-                                </span>
+            return (
+                <Fragment key={LocalID}>
+                    <div
+                        className={classnames([
+                            'account-button p1 interactive flex flex-align-items-start w100 text-left rounded relative',
+                            isLoading && 'is-loading',
+                        ])}
+                    >
+                        <span className="flex user-initials rounded bg-primary">
+                            <span className="mauto text-semibold" aria-hidden="true">
+                                {initials}
                             </span>
-                            <div className="account-button-content mx1 flex-item-fluid">
-                                <button
-                                    type="button"
-                                    className="text-left increase-click-surface"
-                                    title={continueWithText}
-                                    aria-label={continueWithText}
-                                    onClick={() => handleClickSession(LocalID)}
+                        </span>
+                        <div className="account-button-content mx1 flex-item-fluid">
+                            <button
+                                type="button"
+                                className="text-left increase-click-surface"
+                                title={continueWithText}
+                                aria-label={continueWithText}
+                                onClick={() => {
+                                    void handleClickSession(LocalID);
+                                }}
+                            >
+                                <strong className="block text-break">{nameToDisplay}</strong>
+                                {PrimaryEmail && <div className="text-break color-weak">{PrimaryEmail}</div>}
+                            </button>
+                            <div>
+                                <InlineLinkButton
+                                    className="relative upper-layer"
+                                    title={signOutText}
+                                    aria-label={signOutText}
+                                    onClick={() => {
+                                        handleSignOutMultiple([session]);
+                                    }}
                                 >
-                                    <strong className="block text-break">{nameToDisplay}</strong>
-                                    {PrimaryEmail && <div className="text-break color-weak">{PrimaryEmail}</div>}
-                                </button>
-                                <div>
-                                    <InlineLinkButton
-                                        className="relative upper-layer"
-                                        title={signOutText}
-                                        aria-label={signOutText}
-                                        onClick={() => handleSignOutClick(LocalID)}
-                                    >
-                                        {c('Action').t`Sign out`}
-                                    </InlineLinkButton>
-                                </div>
+                                    {c('Action').t`Sign out`}
+                                </InlineLinkButton>
                             </div>
-                            {isLoading ? (
-                                <div className="account-button-icon flex text-lg myauto">
-                                    <CircleLoader />
-                                </div>
-                            ) : (
-                                <Icon className="account-button-icon myauto" name="arrow-right" aria-hidden="true" />
-                            )}
                         </div>
-                        {index !== localActiveSessions.length - 1 && <hr className="my0-5" />}
-                    </Fragment>
-                );
-            }
-        );
+                        {isLoading ? (
+                            <div className="account-button-icon flex text-lg myauto">
+                                <CircleLoader />
+                            </div>
+                        ) : (
+                            <Icon className="account-button-icon myauto" name="arrow-right" aria-hidden="true" />
+                        )}
+                    </div>
+                    {index !== localActiveSessions.length - 1 && <hr className="my0-5" />}
+                </Fragment>
+            );
+        });
     };
 
     const children = (
@@ -295,8 +249,15 @@ const SwitchAccountContainer = ({
                         .t`Add ${BRAND_NAME} Account`}</Button>
                 </div>
                 <div className="w100 text-center mb0-5">
-                    <Button size="large" color="norm" shape="ghost" fullWidth onClick={handleSignOutAll}>{c('Action')
-                        .t`Sign out of all accounts`}</Button>
+                    <Button
+                        size="large"
+                        color="norm"
+                        shape="ghost"
+                        fullWidth
+                        onClick={() => {
+                            handleSignOutMultiple(localActiveSessions || []);
+                        }}
+                    >{c('Action').t`Sign out of all accounts`}</Button>
                 </div>
             </Content>
         </Main>

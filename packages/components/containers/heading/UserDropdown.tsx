@@ -155,9 +155,7 @@ const UserDropdown = ({ onOpenChat, onOpenIntroduction, ...rest }: Props) => {
             {renderBugReportModal && <AuthenticatedBugModal {...bugReportModal} />}
             {renderConfirmSignOutModal && (
                 <ConfirmSignOutModal
-                    onSignOut={(clearData: boolean) =>
-                        logout({ clearDeviceRecoveryData: clearData ? [user.ID] : undefined })
-                    }
+                    onSignOut={(clearDeviceRecoveryData: boolean) => logout({ clearDeviceRecoveryData })}
                     {...confirmSignOutModal}
                 />
             )}

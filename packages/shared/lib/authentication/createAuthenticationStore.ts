@@ -26,7 +26,7 @@ const createAuthenticationStore = ({ set, get }: Arguments) => {
         return decodeUtf8Base64(value);
     };
 
-    const setLocalID = (LocalID: number) => set(LOCAL_ID_KEY, LocalID);
+    const setLocalID = (LocalID: number | undefined) => set(LOCAL_ID_KEY, LocalID);
     const getLocalID = () => get(LOCAL_ID_KEY);
 
     const hasSession = () => !!getUID();
