@@ -74,7 +74,7 @@ const AttachScreenshot = ({ id, screenshots, setScreenshots, uploading, setUploa
             <div>
                 <FileInput
                     multiple
-                    accept="image/*"
+                    accept="image/bmp, image/apng, image/png, image/jpeg, image/gif, image/tiff, image/webp"
                     id={id}
                     onChange={handleChange}
                     disabled={uploading || disabled}
