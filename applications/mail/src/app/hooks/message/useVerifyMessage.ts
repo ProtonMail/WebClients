@@ -9,7 +9,7 @@ import { isNetworkError } from '../../helpers/errors';
 import { verifyMessage } from '../../helpers/message/messageDecrypt';
 import { extractKeysFromAttachments, extractKeysFromAutocrypt } from '../../helpers/message/messageKeys';
 import { updateAttachment } from '../../logic/attachments/attachmentsActions';
-import { MessageErrors, MessageStateWithData } from '../../logic/messages/messagesTypes';
+import { MessageErrors, MessageStateWithDataFull } from '../../logic/messages/messagesTypes';
 import { verificationComplete } from '../../logic/messages/read/messagesReadActions';
 import { useContactsMap } from '../contact/useContacts';
 import { useGetAttachment } from '../useAttachment';
@@ -33,7 +33,7 @@ export const useVerifyMessage = (localID: string) => {
         async (decryptedRawContent: Uint8Array = new Uint8Array(), signature?: Uint8Array) => {
             // Message can change during the whole sequence
             // To have the most up to date version, best is to get back to the cache version each time
-            const getData = () => (getMessage(localID) as MessageStateWithData).data;
+            const getData = () => (getMessage(localID) as MessageStateWithDataFull).data;
 
             const errors: MessageErrors = {};
 

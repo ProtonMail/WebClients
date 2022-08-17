@@ -21,10 +21,10 @@ import { PREVENT_CANCEL_SEND_INTERVAL } from '../../../constants';
 import { useOnCompose } from '../../../containers/ComposeProvider';
 import { formatDateToHuman } from '../../../helpers/date';
 import { cancelScheduled } from '../../../logic/messages/draft/messagesDraftActions';
-import { MessageState } from '../../../logic/messages/messagesTypes';
+import { MessageStateWithData } from '../../../logic/messages/messagesTypes';
 
 interface Props {
-    message: MessageState;
+    message: MessageStateWithData;
 }
 const ExtraScheduledMessage = ({ message }: Props) => {
     const api = useApi();
@@ -39,7 +39,7 @@ const ExtraScheduledMessage = ({ message }: Props) => {
 
     const isScheduledMessage = isScheduled(message.data);
 
-    const scheduleDate = isScheduledMessage && message.data ? new Date(message.data.Time * 1000) : new Date();
+    const scheduleDate = isScheduledMessage ? new Date(message.data.Time * 1000) : new Date();
 
     const beforeSendInterval = scheduleDate.getTime() - nowDate;
     // Prevent from cancelling a message that is about to be sent 30s before
@@ -53,17 +53,12 @@ const ExtraScheduledMessage = ({ message }: Props) => {
     }, []);
 
     const handleUnscheduleMessage = async () => {
-        const messageID = message.data?.ID;
-        if (!messageID) {
-            return;
-        }
-
         /* Reset the load retry so that if the user schedules again the message and clicks on the view message link,
            the body of message can be loaded. Without the reset, the message can have a loadRetry > 3, which will block
            the loading of the mail body.
          */
         await dispatch(cancelScheduled(message.localID));
-        await api(cancelSend(messageID));
+        await api(cancelSend(message.data.ID));
         await call();
         createNotification({
             text: c('Message notification').t`Scheduling cancelled. Message has been moved to Drafts.`,

@@ -123,12 +123,12 @@ export const formatDownloadAll = async (
     );
 };
 
-const getZipAttachmentName = (message: Message) => `Attachments-${message.Subject}.zip`;
+const getZipAttachmentName = (message: Pick<Message, 'Subject'>) => `Attachments-${message.Subject}.zip`;
 
 /**
  * Zip and trigger download of a list of download objects
  */
-export const generateDownloadAll = async (message: Message, list: Download[]) => {
+export const generateDownloadAll = async (message: Pick<Message, 'Subject'>, list: Download[]) => {
     // TODO: uncomment
     // try {
     //     await checkAllSignatures(message, list);
