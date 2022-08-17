@@ -9,6 +9,7 @@ import useClickOutsideFocusedMessage from '../../hooks/conversation/useClickOuts
 import { useLoadMessage } from '../../hooks/message/useLoadMessage';
 import { useMessage } from '../../hooks/message/useMessage';
 import { useShouldMoveOut } from '../../hooks/useShouldMoveOut';
+import { MessageWithOptionalBody } from '../../logic/messages/messagesTypes';
 import { Breakpoints } from '../../models/utils';
 import ConversationHeader from '../conversation/ConversationHeader';
 import MessageView, { MessageViewRef } from './MessageView';
@@ -41,7 +42,7 @@ const MessageOnlyView = ({
     const [isMessageFocused, setIsMessageFocused] = useState(false);
     const [isMessageReady, setIsMessageReady] = useState(false);
     const { message, messageLoaded, bodyLoaded } = useMessage(messageID);
-    const load = useLoadMessage(message.data || ({ ID: messageID } as Message));
+    const load = useLoadMessage(message.data || ({ ID: messageID } as MessageWithOptionalBody));
 
     useShouldMoveOut(false, messageID, !bodyLoaded, onBack);
 

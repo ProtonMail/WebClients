@@ -64,12 +64,12 @@ import {
     VisualCalendar,
 } from '@proton/shared/lib/interfaces/calendar';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
-import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { RequireSome, Unwrap } from '@proton/shared/lib/interfaces/utils';
 import { getOriginalTo } from '@proton/shared/lib/mail/messages';
 import unary from '@proton/utils/unary';
 
-import { MessageStateWithData } from '../../logic/messages/messagesTypes';
+import { MessageStateWithData, MessageWithOptionalBody } from '../../logic/messages/messagesTypes';
 import { FetchAllEventsByUID } from './inviteApi';
 
 export enum EVENT_TIME_STATUS {
@@ -190,7 +190,10 @@ export const withOutsideUIDAndSequence = (vevent: VcalVeventComponent, vcal: Non
     return result;
 };
 
-const withMessageDtstamp = <T>(properties: VcalVeventComponent & T, { Time }: Message): VcalVeventComponent & T => {
+const withMessageDtstamp = <T>(
+    properties: VcalVeventComponent & T,
+    { Time }: MessageWithOptionalBody
+): VcalVeventComponent & T => {
     if (properties.dtstamp) {
         return properties;
     }
@@ -597,7 +600,7 @@ export const getSupportedEventInvitation = async ({
     primaryTimezone,
 }: {
     vcalComponent: VcalVcalendar;
-    message: Message;
+    message: MessageWithOptionalBody;
     icsBinaryString: string;
     icsFileName: string;
     primaryTimezone: string;

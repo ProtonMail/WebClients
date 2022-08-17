@@ -1,5 +1,6 @@
 import { Recipient } from '@proton/shared/lib/interfaces/Address';
-import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+
+import { MessageWithOptionalBody } from '../../logic/messages/messagesTypes';
 
 /**
  * Remove duplicate recipients from a recipient list
@@ -19,14 +20,14 @@ const uniqueRecipientList = (recipients: Recipient[]) => {
 /**
  * Remove duplicate emails from a message
  */
-export const uniqueMessageRecipients = (message: Message) => {
+export const uniqueMessageRecipients = (message: MessageWithOptionalBody) => {
     const newToList = uniqueRecipientList(message.ToList as Recipient[]);
     const newCCList = uniqueRecipientList(message.CCList as Recipient[]);
     const newBCCList = uniqueRecipientList(message.BCCList as Recipient[]);
     return { ...message, ToList: newToList, CCList: newCCList, BCCList: newBCCList };
 };
 
-export const removeMessageRecipients = (message: Message, emailAddresses: string[]) => {
+export const removeMessageRecipients = (message: MessageWithOptionalBody, emailAddresses: string[]) => {
     const newToList = message.ToList?.filter(({ Address }) => !emailAddresses?.includes(Address as string));
     const newCCList = message.CCList?.filter(({ Address }) => !emailAddresses?.includes(Address as string));
     const newBCCList = message.BCCList?.filter(({ Address }) => !emailAddresses?.includes(Address as string));

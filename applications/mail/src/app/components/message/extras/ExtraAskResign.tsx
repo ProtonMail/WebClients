@@ -4,22 +4,21 @@ import { c } from 'ttag';
 
 import { Button, Href, Icon, useModalState } from '@proton/components';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
 import { getContactEmail } from '../../../helpers/addresses';
 import { useContactsMap } from '../../../hooks/contact/useContacts';
-import { MessageVerification } from '../../../logic/messages/messagesTypes';
+import { MessageVerification, MessageWithOptionalBody } from '../../../logic/messages/messagesTypes';
 import ContactResignModal from '../modals/ContactResignModal';
 
 interface Props {
-    message: Message | undefined;
+    message: MessageWithOptionalBody;
     messageVerification: MessageVerification | undefined;
     onResignContact: () => void;
 }
 
 const ExtraAskResign = ({ message, messageVerification, onResignContact }: Props) => {
     const { senderVerified, senderPinnedKeys } = messageVerification || {};
-    const { Address = '' } = message?.Sender || {};
+    const { Address = '' } = message.Sender || {};
     const contactsMap = useContactsMap();
 
     const [contactID, setContactID] = useState<string>('');

@@ -17,10 +17,10 @@ import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { getBlogURL, getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 
-import { MessageState } from '../../../logic/messages/messagesTypes';
+import { MessageStateWithData } from '../../../logic/messages/messagesTypes';
 
 interface Props {
-    message: MessageState;
+    message: MessageStateWithData;
 }
 
 const ExtraSpamScore = ({ message }: Props) => {
@@ -54,11 +54,7 @@ const ExtraSpamScore = ({ message }: Props) => {
         (!hasBit(Flags, MESSAGE_FLAGS.FLAG_HAM_MANUAL) || LabelIDs.includes(MAILBOX_LABEL_IDS.SPAM))
     ) {
         const markAsLegitimate = async () => {
-            const messageID = message.data?.ID;
-            if (!messageID) {
-                return;
-            }
-            await api(markAsHam(messageID));
+            await api(markAsHam(message.data.ID));
             await call();
             createNotification({ text: c('Success').t`Message marked as legitimate` });
         };

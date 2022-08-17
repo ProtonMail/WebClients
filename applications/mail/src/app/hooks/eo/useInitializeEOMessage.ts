@@ -27,7 +27,7 @@ import {
     MessageImages,
     MessageRemoteImage,
     MessageState,
-    MessageStateWithData,
+    MessageStateWithDataFull,
 } from '../../logic/messages/messagesTypes';
 import { useBase64Cache } from '../useBase64Cache';
 import { useGetEODecryptedToken, useGetEOMessageState, useGetEOPassword } from './useLoadEOMessage';
@@ -41,7 +41,7 @@ export const useInitializeEOMessage = () => {
     const base64Cache = useBase64Cache();
 
     return useCallback(async () => {
-        const getData = () => (getMessage() as MessageStateWithData).data;
+        const getData = () => (getMessage() as MessageStateWithDataFull).data;
         const password = getPassword();
         const decryptedToken = getEODecryptedToken();
 

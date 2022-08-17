@@ -14,7 +14,7 @@ import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message'
 import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import { getDate, getParsedHeadersFirstValue, getSender, isMIME } from '@proton/shared/lib/mail/messages';
 
-import { MessageErrors, MessageStateWithData } from '../../logic/messages/messagesTypes';
+import { MessageErrors } from '../../logic/messages/messagesTypes';
 import { convert } from '../attachment/attachmentConverter';
 
 const { NOT_VERIFIED, NOT_SIGNED } = VERIFICATION_STATUS;
@@ -54,7 +54,7 @@ const decryptMimeMessage = async (
     try {
         if (!password) {
             decryption = await CryptoProxy.decryptMessageLegacy({
-                armoredMessage: message?.Body,
+                armoredMessage: message.Body,
                 messageDate: getDate(message),
                 decryptionKeys: privateKeys,
                 verificationKeys: [],
@@ -62,7 +62,7 @@ const decryptMimeMessage = async (
             });
         } else {
             decryption = await CryptoProxy.decryptMessageLegacy({
-                armoredMessage: message?.Body,
+                armoredMessage: message.Body,
                 messageDate: getDate(message),
                 passwords: [...password],
                 format: 'binary',
@@ -111,7 +111,7 @@ const decryptLegacyMessage = async (
     try {
         if (!password) {
             result = await CryptoProxy.decryptMessageLegacy({
-                armoredMessage: message?.Body,
+                armoredMessage: message.Body,
                 messageDate: getDate(message),
                 decryptionKeys: privateKeys,
                 verificationKeys: [],
@@ -119,7 +119,7 @@ const decryptLegacyMessage = async (
             });
         } else {
             result = await CryptoProxy.decryptMessageLegacy({
-                armoredMessage: message?.Body,
+                armoredMessage: message.Body,
                 messageDate: getDate(message),
                 passwords: [password],
                 format: 'binary',
@@ -233,9 +233,9 @@ export const verifyMessage = async (
  * keyFound contains the address, the key and keyIds of the key in case we need to display which key is needed to the user
  * matchingKey is the keyID of the key that we need to store in localStorage
  */
-export const getMessageDecryptionKeyIDFromAddress = async (address: Address, message: MessageStateWithData) => {
+export const getMessageDecryptionKeyIDFromAddress = async (address: Address, message: Message) => {
     const { encryptionKeyIDs } = await CryptoProxy.getMessageInfo({
-        armoredMessage: message.data.Body,
+        armoredMessage: message.Body,
     });
 
     for (const { PrivateKey: armoredKey } of address.Keys) {

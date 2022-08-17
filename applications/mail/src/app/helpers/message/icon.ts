@@ -2,12 +2,11 @@ import { c, msgid } from 'ttag';
 
 import { MAIL_APP_NAME, PACKAGE_TYPE } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
 import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import { getParsedHeadersFirstValue, inSigningPeriod } from '@proton/shared/lib/mail/messages';
 
-import { MessageState, MessageVerification } from '../../logic/messages/messagesTypes';
+import { MessageState, MessageVerification, MessageWithOptionalBody } from '../../logic/messages/messagesTypes';
 import { MapStatusIcons, STATUS_ICONS_FILLS, StatusIcon, X_PM_HEADERS } from '../../models/crypto';
 
 // The logic for determining the status icons can be found here:
@@ -285,7 +284,7 @@ export const getSentStatusIconInfo = (message: MessageState): MessageViewIcons =
 };
 
 export const getReceivedStatusIcon = (
-    message: Message | undefined,
+    message: MessageWithOptionalBody | undefined,
     verification: MessageVerification | undefined
 ): StatusIcon | undefined => {
     if (!message?.ParsedHeaders || verification?.verificationStatus === undefined) {

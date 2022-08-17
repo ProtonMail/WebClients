@@ -144,11 +144,14 @@ export const sendMessageDirect = ({
     data: { Message, ParentID, Action, AttachmentKeys, ExpirationTime, ExpiresIn, AutoSaveContacts, Packages },
 });
 
-interface CreateDraftData {
+interface UpdateDraftData {
     Message: BaseMessage;
+    AttachmentKeyPackets: SimpleMap<string>;
+}
+
+interface CreateDraftData extends UpdateDraftData {
     ParentID?: string;
     Action?: CREATE_DRAFT_MESSAGE_ACTION;
-    AttachmentKeyPackets: SimpleMap<string>;
 }
 
 export const createDraft = ({ Message, ParentID, Action, AttachmentKeyPackets }: CreateDraftData) => ({
@@ -157,7 +160,7 @@ export const createDraft = ({ Message, ParentID, Action, AttachmentKeyPackets }:
     data: { Message, ParentID, Action, AttachmentKeyPackets },
 });
 
-export const updateDraft = (messageID: string, Message: BaseMessage, AttachmentKeyPackets: SimpleMap<string>) => ({
+export const updateDraft = (messageID: string, { Message, AttachmentKeyPackets }: UpdateDraftData) => ({
     method: 'put',
     url: `mail/v4/messages/${messageID}`,
     data: { Message, AttachmentKeyPackets },
