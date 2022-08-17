@@ -218,6 +218,7 @@ export const MAIN_USER_KEY = 'USER_KEYS';
 export const SECURE_SESSION_STORAGE_KEY = 'SECURE';
 export const MAILBOX_PASSWORD_KEY = 'proton:mailbox_pwd';
 export const UID_KEY = 'proton:oauth:UID';
+export const USER_ID_KEY = 'proton:userID';
 export const LOCAL_ID_KEY = 'proton:localID';
 export const PERSIST_SESSION_KEY = 'proton:persistSession';
 export const INTERVAL_EVENT_TIMER = 30 * 1000;
