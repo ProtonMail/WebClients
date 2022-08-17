@@ -9,3 +9,7 @@ export interface PersistedSession {
     isSubUser: boolean;
     persistent: boolean;
 }
+
+export interface PersistedSessionWithLocalID extends PersistedSession {
+    localID: number;
+}

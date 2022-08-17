@@ -5,16 +5,17 @@ import { History, createBrowserHistory as createHistory } from 'history';
 
 import { ExperimentsProvider, FeaturesProvider } from '@proton/components/containers';
 import useInstance from '@proton/hooks/useInstance';
-import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
+import { PersistedSession } from '@proton/shared/lib/authentication/SessionInterface';
 import { AuthenticationStore } from '@proton/shared/lib/authentication/createAuthenticationStore';
+import { serializeLogoutURL } from '@proton/shared/lib/authentication/logout';
 import {
     getBasename,
     getLocalIDFromPathname,
     stripLocalBasenameFromPathname,
 } from '@proton/shared/lib/authentication/pathnameHelper';
 import { getPersistedSession } from '@proton/shared/lib/authentication/persistedSessionStorage';
-import { APPS, SSO_PATHS, isSSOMode } from '@proton/shared/lib/constants';
+import { SSO_PATHS, isSSOMode } from '@proton/shared/lib/constants';
 import { replaceUrl } from '@proton/shared/lib/helpers/browser';
 import createCache, { Cache } from '@proton/shared/lib/helpers/cache';
 import createListeners from '@proton/shared/lib/helpers/listeners';
@@ -100,8 +101,9 @@ interface AuthState {
     localID?: number;
     history: History;
     isLoggingOut?: boolean;
-    clearDeviceRecoveryData?: string[];
+    clearDeviceRecoveryData?: boolean;
     consumerLogoutPromise?: Promise<void>;
+    persistedSession?: PersistedSession;
 }
 
 interface Props {
@@ -126,7 +128,6 @@ const ProtonApp = ({ authentication, config, children, hasInitialAuth }: Props) 
 
         return {
             ...state,
-            clearDeviceRecoveryData: [],
             history,
         };
     });
@@ -157,13 +158,10 @@ const ProtonApp = ({ authentication, config, children, hasInitialAuth }: Props) 
             }
             const cache = createCache<string, any>();
 
-            // If the user was received from the login call, pre-set it directly.
-            if (User) {
-                cache.set(UserModel.key, {
-                    value: formatUser(User),
-                    status: STATUS.RESOLVED,
-                });
-            }
+            cache.set(UserModel.key, {
+                value: formatUser(User),
+                status: STATUS.RESOLVED,
+            });
 
             // If addresses was received from the login call, pre-set it directly.
             if (Addresses) {
@@ -195,53 +193,62 @@ const ProtonApp = ({ authentication, config, children, hasInitialAuth }: Props) 
         []
     );
 
-    const handleFinalizeLogout = useCallback((clearDeviceRecoveryData: string[] = []) => {
-        authentication.setUID(undefined);
-        authentication.setPassword(undefined);
-        authentication.setPersistent(undefined);
+    const handleFinalizeLogout = useCallback(
+        ({
+            clearDeviceRecoveryData = false,
+            persistedSession,
+        }: {
+            clearDeviceRecoveryData?: boolean;
+            persistedSession?: PersistedSession;
+        } = {}) => {
+            authentication.setUID(undefined);
+            authentication.setPassword(undefined);
+            authentication.setPersistent(undefined);
+            authentication.setLocalID(undefined);
 
-        const oldCache = cacheRef.current;
-        if (oldCache) {
-            clearKeyCache(oldCache);
-            oldCache.clear();
-            oldCache.clearListeners();
-        }
-
-        cacheRef.current = createCache<string, any>();
-        pathRef.current = '/';
-
-        if (isSSOMode) {
-            const params = new URLSearchParams();
-            params.set('flow', 'logout');
-            if (clearDeviceRecoveryData) {
-                params.set('clearDeviceRecoveryData', JSON.stringify(clearDeviceRecoveryData));
+            const oldCache = cacheRef.current;
+            if (oldCache) {
+                clearKeyCache(oldCache);
+                oldCache.clear();
+                oldCache.clearListeners();
             }
 
-            return replaceUrl(getAppHref(`/switch?${params.toString()}`, APPS.PROTONACCOUNT));
-        }
-        setAuthData({
-            history: createHistory({ basename: getBasename() }),
-        });
-    }, []);
+            cacheRef.current = createCache<string, any>();
+            pathRef.current = '/';
+
+            if (isSSOMode) {
+                return replaceUrl(
+                    serializeLogoutURL(persistedSession ? [persistedSession] : [], clearDeviceRecoveryData).toString()
+                );
+            }
+            return replaceUrl(getBasename());
+        },
+        []
+    );
 
     const logoutListener = useInstance(() => createListeners());
 
     const handleLogout = useCallback(
-        ({ type, clearDeviceRecoveryData = [] }: { type?: 'soft'; clearDeviceRecoveryData?: string[] } = {}) => {
+        ({ type, clearDeviceRecoveryData = false }: { type?: 'soft'; clearDeviceRecoveryData?: boolean } = {}) => {
             setAuthData((authData) => {
                 // Nothing to logout
                 if (!authData.UID) {
                     return authData;
                 }
+
+                const persistedSession = getPersistedSession(authentication.getLocalID());
+
                 if (type === 'soft') {
-                    handleFinalizeLogout(clearDeviceRecoveryData);
+                    handleFinalizeLogout({ persistedSession, clearDeviceRecoveryData });
                     return authData;
                 }
+
                 return {
                     ...authData,
                     consumerLogoutPromise: Promise.all(logoutListener.notify()).then(noop).catch(noop),
                     isLoggingOut: true,
                     clearDeviceRecoveryData,
+                    persistedSession,
                 };
             });
         },
@@ -317,9 +324,12 @@ const ProtonApp = ({ authentication, config, children, hasInitialAuth }: Props) 
                                                                                     return (
                                                                                         <Signout
                                                                                             onDone={() => {
-                                                                                                handleFinalizeLogout(
-                                                                                                    authData.clearDeviceRecoveryData
-                                                                                                );
+                                                                                                handleFinalizeLogout({
+                                                                                                    clearDeviceRecoveryData:
+                                                                                                        authData.clearDeviceRecoveryData,
+                                                                                                    persistedSession:
+                                                                                                        authData.persistedSession,
+                                                                                                });
                                                                                             }}
                                                                                             onLogout={() =>
                                                                                                 consumerLogoutPromise

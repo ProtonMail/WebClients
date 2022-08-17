@@ -15,10 +15,7 @@ export interface PrivateAuthenticationStore extends AuthenticationStore {
          * It only removes local session information.
          */
         type?: 'soft';
-        /**
-         * List of user id's to clear device recovery data for
-         */
-        clearDeviceRecoveryData?: string[];
+        clearDeviceRecoveryData?: boolean;
     }) => void;
     onLogout: (cb: () => Promise<void>) => () => void;
 }

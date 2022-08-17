@@ -19,9 +19,12 @@ import { pushForkSession } from '@proton/shared/lib/api/auth';
 import { OAuthLastAccess, getOAuthLastAccess } from '@proton/shared/lib/api/oauth';
 import { getAppHref, getClientID, getExtension, getInvoicesPathname } from '@proton/shared/lib/apps/helper';
 import { DEFAULT_APP, getAppFromPathname, getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
-import { LocalSessionResponse, PushForkResponse } from '@proton/shared/lib/authentication/interface';
+import { PushForkResponse } from '@proton/shared/lib/authentication/interface';
 import { stripLocalBasenameFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
-import { GetActiveSessionsResult } from '@proton/shared/lib/authentication/persistedSessionHelper';
+import {
+    GetActiveSessionsResult,
+    LocalSessionPersisted,
+} from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { produceFork, produceOAuthFork } from '@proton/shared/lib/authentication/sessionForking';
 import {
     APPS,
@@ -38,7 +41,7 @@ import { stripLeadingAndTrailingSlash } from '@proton/shared/lib/helpers/string'
 import { UserType } from '@proton/shared/lib/interfaces';
 import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 
-import ClearDeviceRecoveryData from '../containers/ClearDeviceRecoveryData';
+import HandleLogout from '../containers/HandleLogout';
 import LoginContainer from '../login/LoginContainer';
 import AuthExtension from '../public/AuthExtension';
 import EmailUnsubscribeContainer from '../public/EmailUnsubscribeContainer';
@@ -113,7 +116,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
     const api = useApi();
     const [forkState, setForkState] = useState<ActiveSessionData>();
     const [confirmForkData, setConfirmForkState] = useState<Extract<ProduceForkData, { type: SSOType.OAuth }>>();
-    const [activeSessions, setActiveSessions] = useState<LocalSessionResponse[]>();
+    const [activeSessions, setActiveSessions] = useState<LocalSessionPersisted[]>();
     const ignoreAutoRef = useRef(false);
     const [hasBackToSwitch, setHasBackToSwitch] = useState(false);
 
@@ -345,18 +348,14 @@ const PublicApp = ({ onLogin, locales }: Props) => {
         return false;
     };
 
-    const handleSignOutAll = () => {
-        setActiveSessions([]);
-        setHasBackToSwitch(false);
-        history.push('/login');
-    };
-
-    const handleSignOut = (updatedActiveSessions?: LocalSessionResponse[]) => {
-        if (updatedActiveSessions?.length === 0) {
-            handleSignOutAll();
+    const handleSignOut = (updatedActiveSessions?: LocalSessionPersisted[]) => {
+        if (!updatedActiveSessions?.length) {
+            setActiveSessions([]);
+            setHasBackToSwitch(false);
+            history.push('/login');
             return;
         }
-        setActiveSessions(updatedActiveSessions);
+        setActiveSessions(updatedActiveSessions || []);
     };
 
     const handleAddAccount = () => {
@@ -372,7 +371,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
 
     return (
         <>
-            <ClearDeviceRecoveryData />
+            <HandleLogout />
             <ModalsChildren />
             <Switch>
                 <Route path={`${UNAUTHENTICATED_ROUTES.UNSUBSCRIBE}/:subscriptions`}>
@@ -452,7 +451,6 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                                                     toAppName={toAppName}
                                                     onLogin={handleLogin}
                                                     onSignOut={handleSignOut}
-                                                    onSignOutAll={handleSignOutAll}
                                                     onAddAccount={handleAddAccount}
                                                 />
                                             </Route>

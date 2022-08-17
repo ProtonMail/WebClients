@@ -2,7 +2,7 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import { removeLastRefreshDate } from '../api/helpers/refreshStorage';
 import { getItem, removeItem, setItem } from '../helpers/storage';
-import { PersistedSession, PersistedSessionBlob } from './SessionInterface';
+import { PersistedSession, PersistedSessionBlob, PersistedSessionWithLocalID } from './SessionInterface';
 import { InvalidPersistentSessionError } from './error';
 import { getDecryptedBlob, getEncryptedBlob } from './sessionBlobCryptoHelper';
 import { getValidatedLocalID } from './sessionForkValidation';
@@ -40,7 +40,7 @@ export const removePersistedSession = (localID: number, UID: string) => {
     removeItem(getKey(localID));
 };
 
-export const getPersistedSessions = () => {
+export const getPersistedSessions = (): PersistedSessionWithLocalID[] => {
     const localStorageKeys = Object.keys(localStorage);
     return localStorageKeys
         .filter((key) => key.startsWith(STORAGE_PREFIX))

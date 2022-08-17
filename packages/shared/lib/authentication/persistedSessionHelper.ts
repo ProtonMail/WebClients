@@ -1,4 +1,5 @@
 import { updateVersionCookie, versionCookieAtLoad } from '@proton/components/hooks/useEarlyAccess';
+import { PersistedSessionWithLocalID } from '@proton/shared/lib/authentication/SessionInterface';
 import getRandomString from '@proton/utils/getRandomString';
 
 import { getLocalKey, getLocalSessions, setCookies, setLocalKey } from '../api/auth';
@@ -210,7 +211,12 @@ export const getActiveSessionByUserID = (UserID: string, isSubUser: boolean) => 
     });
 };
 
-export type GetActiveSessionsResult = { session?: ResumedSessionResult; sessions: LocalSessionResponse[] };
+export interface LocalSessionPersisted {
+    remote: LocalSessionResponse;
+    persisted: PersistedSessionWithLocalID;
+}
+
+export type GetActiveSessionsResult = { session?: ResumedSessionResult; sessions: LocalSessionPersisted[] };
 export const getActiveSessions = async (api: Api): Promise<GetActiveSessionsResult> => {
     const persistedSessions = getPersistedSessions();
     for (const persistedSession of persistedSessions) {
@@ -220,9 +226,12 @@ export const getActiveSessions = async (api: Api): Promise<GetActiveSessionsResu
                 withUIDHeaders(validatedSession.UID, getLocalSessions())
             );
             // The returned sessions have to exist in localstorage to be able to activate
-            const maybeActiveSessions = Sessions.filter(({ LocalID }) => {
-                return persistedSessions.some(({ localID }) => localID === LocalID);
-            });
+            const maybeActiveSessions = Sessions.map((remoteSession) => {
+                return {
+                    persisted: persistedSessions.find(({ localID }) => localID === remoteSession.LocalID),
+                    remote: remoteSession,
+                };
+            }).filter((value): value is LocalSessionPersisted => !!value.persisted);
             return {
                 session: validatedSession,
                 sessions: maybeActiveSessions,
