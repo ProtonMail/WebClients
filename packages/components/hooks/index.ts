@@ -31,6 +31,7 @@ export { default as useCyberMondayPeriod } from './useCyberMondayPeriod';
 export { default as useDocumentTitle } from './useDocumentTitle';
 export { default as useDomains } from './useDomains';
 export { default as useDomainsAddresses } from './useDomainsAddresses';
+export { useDeviceRecovery, useIsDeviceRecoveryAvailable, useIsDeviceRecoveryEnabled } from './useDeviceRecovery';
 export { default as useDragMove } from './useDragMove';
 export { default as useDragOver } from './useDragOver';
 export { default as useDropdownArrowNavigation } from './useDropdownArrowNavigation';
