@@ -188,7 +188,7 @@ const MoreDropdown = ({
                                 data-testid="toolbar:moveAll"
                             >
                                 <Icon name="trash" className="mr0-5" />
-                                {c('Action').t`Trash all`}
+                                {c('Action').t`Move all to trash`}
                             </DropdownMenuButton>
                         ) : null}
                         {inMore.delete ? (

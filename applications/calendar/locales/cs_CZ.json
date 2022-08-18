@@ -803,6 +803,9 @@
       "Calendar is syncing": [
         "Kalendář se synchronizuje"
       ],
+      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
+        "Synchronizace kalendáře: načtení všech událostí může trvat několik minut."
+      ],
       "Calendar is too big": [
         "Kalendář je příliš velký"
       ],
@@ -3541,6 +3544,9 @@
       "All day": [
         "Celý den"
       ],
+      "All-day event notifications": [
+        "Oznámení celodenních událostí"
+      ],
       "Attach screenshot(s)": [
         "Přiložit sním(ek/ky) obrazovky"
       ],
@@ -3618,6 +3624,12 @@
       ],
       "Ends": [
         "Končí"
+      ],
+      "Event duration": [
+        "Doba trvání události"
+      ],
+      "Event notifications": [
+        "Oznámení události"
       ],
       "Event title": [
         "Název události"
@@ -4581,6 +4593,9 @@
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "${ DRIVE_APP_NAME } již není beta verzí! Zabezpečte své soubory stejně dobře, jako své e-maily."
       ],
+      "Don't miss any events": [
+        "Nepropásněte žádnou událost"
+      ],
       "Get up to 18 months of ${ planName } for free": [
         "Získejte ${ planName } až na 18 měsíců zdarma"
       ],
@@ -4595,6 +4610,9 @@
       ],
       "With email notifications, you decide which events to be notified about and when.": [
         "U e-mailových oznámení rozhodujete o tom, na které události a kdy chcete být upozorněni."
+      ],
+      "You can now add notifications to calendars you subscribed to.": [
+        "Nyní můžete přidávat oznámení do kalendářů, ke kterým jste se přihlásili."
       ]
     },
     "Storage": {
