@@ -92,7 +92,7 @@ const UserKeysSections = () => {
             <SettingsSectionWide>
                 {canGenerateUserKey && (
                     <div className="mb1">
-                        <Button shape="outline" onClick={handleAddKey}>
+                        <Button shape="outline" onClick={handleAddKey} data-testid="generateUserKey">
                             {c('Action').t`Generate key`}
                         </Button>
                     </div>
