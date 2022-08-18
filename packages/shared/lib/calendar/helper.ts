@@ -2,7 +2,6 @@ import { c } from 'ttag';
 
 import { CryptoProxy } from '@proton/crypto';
 import { arrayToHexString, binaryStringToArray } from '@proton/crypto/lib/utils';
-import getRandomValues from '@proton/get-random-values';
 
 import { API_CODES } from '../constants';
 import { getDaysInMonth } from '../date-fns-utc';
@@ -35,7 +34,7 @@ export const getIsSuccessSyncApiResponse = (
  */
 export const generateProtonCalendarUID = () => {
     // by convention we generate 21 bytes of random data
-    const randomBytes = getRandomValues(new Uint8Array(21));
+    const randomBytes = crypto.getRandomValues(new Uint8Array(21));
     const base64String = encodeBase64URL(uint8ArrayToString(randomBytes));
     // and we encode them in base 64
     return `${base64String}@proton.me`;

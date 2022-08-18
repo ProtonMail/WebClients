@@ -14,3 +14,6 @@ configure({ testIdAttribute: 'data-test-id' });
 
 // Silence JDOM warnings triggered by emoji-mart
 HTMLCanvasElement.prototype.getContext = jest.fn();
+
+// JSDom does not include webcrypto
+window.crypto = require('crypto').webcrypto;

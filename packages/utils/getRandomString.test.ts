@@ -1,15 +1,17 @@
-import getRandomValues from '@proton/get-random-values';
+import { disableRandomMock, initRandomMock } from '@proton/testing/lib/mockRandomValues';
 
 import getRandomString, { DEFAULT_CHARSET } from './getRandomString';
 
-jest.mock('@proton/get-random-values');
-
-const getConsecutiveArray = (length: number) => [...Array(length).keys()];
-
-// @ts-ignore
-getRandomValues.mockImplementation((array: Uint32Array) => Uint8Array.from(getConsecutiveArray(array.length)));
-
 describe('getRandomString()', () => {
+    const getConsecutiveArray = (length: number) => [...Array(length).keys()];
+
+    const mockedRandomValues = jest
+        .fn()
+        .mockImplementation((array: Uint32Array) => Uint32Array.from(getConsecutiveArray(array.length)));
+
+    beforeAll(() => initRandomMock(mockedRandomValues));
+    afterAll(() => disableRandomMock());
+
     describe('length', () => {
         it('returns throw an error when length is negative', () => {
             expect(() => getRandomString(-1)).toThrow();
@@ -27,25 +29,14 @@ describe('getRandomString()', () => {
 
     describe('charset', () => {
         it('defaults the charset', () => {
-            // @ts-ignore
-            // Mock consecutive array [0, 1, 2, 3....] so that we can determine the charset used
-            getRandomValues.mockImplementation((array: Uint32Array) =>
-                Uint8Array.from(getConsecutiveArray(array.length))
-            );
-
             const result = getRandomString(DEFAULT_CHARSET.length);
 
-            expect(getRandomValues).toHaveBeenCalled();
+            expect(mockedRandomValues).toHaveBeenCalled();
             expect(result).toBe(DEFAULT_CHARSET);
         });
 
         it('returns characters from the defined charset', () => {
             const charset = 'qwerty';
-
-            // @ts-ignore
-            getRandomValues.mockImplementation((array: Uint32Array) =>
-                Uint8Array.from(getConsecutiveArray(array.length))
-            );
 
             const result = getRandomString(charset.length, charset);
 

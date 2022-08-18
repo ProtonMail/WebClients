@@ -1,5 +1,3 @@
-import getRandomValues from '@proton/get-random-values';
-
 import { pullForkSession, pushForkSession, setRefreshCookies } from '../api/auth';
 import { OAuthForkResponse, postOAuthFork } from '../api/oauth';
 import { getUser } from '../api/user';
@@ -27,7 +25,7 @@ interface ForkState {
 }
 
 export const requestFork = (fromApp: APP_NAMES, localID?: number, type?: FORK_TYPE) => {
-    const state = encodeBase64URL(uint8ArrayToString(getRandomValues(new Uint8Array(32))));
+    const state = encodeBase64URL(uint8ArrayToString(crypto.getRandomValues(new Uint8Array(32))));
 
     const searchParams = new URLSearchParams();
     searchParams.append('app', fromApp);
@@ -108,7 +106,7 @@ interface ProduceForkArguments {
 }
 
 export const produceFork = async ({ api, UID, keyPassword, state, app, type, persistent }: ProduceForkArguments) => {
-    const rawKey = getRandomValues(new Uint8Array(32));
+    const rawKey = crypto.getRandomValues(new Uint8Array(32));
     const base64StringKey = encodeBase64URL(uint8ArrayToString(rawKey));
     const payload = keyPassword ? await getForkEncryptedBlob(await getKey(rawKey), { keyPassword }) : undefined;
     const childClientID = getClientID(app);
