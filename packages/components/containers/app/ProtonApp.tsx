@@ -141,11 +141,13 @@ const ProtonApp = ({ authentication, config, children, hasInitialAuth }: Props) 
             Addresses,
             LocalID: newLocalID,
             persistent,
+            trusted,
             path,
         }: OnLoginCallbackArguments) => {
             authentication.setUID(newUID);
             authentication.setPassword(keyPassword);
             authentication.setPersistent(persistent);
+            authentication.setTrusted(trusted);
 
             if (newLocalID !== undefined && isSSOMode) {
                 authentication.setLocalID(newLocalID);
@@ -205,6 +207,7 @@ const ProtonApp = ({ authentication, config, children, hasInitialAuth }: Props) 
             authentication.setPassword(undefined);
             authentication.setPersistent(undefined);
             authentication.setLocalID(undefined);
+            authentication.setTrusted(undefined);
 
             const oldCache = cacheRef.current;
             if (oldCache) {

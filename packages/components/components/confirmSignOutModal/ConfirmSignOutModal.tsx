@@ -12,19 +12,17 @@ import {
     PrivateAuthenticationStore,
 } from '@proton/components';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { User, UserSettings } from '@proton/shared/lib/interfaces';
+import { User } from '@proton/shared/lib/interfaces';
 import { getHasRecoveryMessage } from '@proton/shared/lib/recoveryFile/deviceRecovery';
 
 export const shouldShowConfirmSignOutModal = ({
     user,
-    userSettings,
     authentication,
 }: {
     user: User;
-    userSettings: UserSettings;
     authentication: PrivateAuthenticationStore;
 }) => {
-    const hasEnabledDeviceBasedRecovery = authentication.getPersistent() && userSettings.DeviceRecovery;
+    const hasEnabledDeviceBasedRecovery = authentication.getTrusted();
 
     return hasEnabledDeviceBasedRecovery || getHasRecoveryMessage(user.ID);
 };

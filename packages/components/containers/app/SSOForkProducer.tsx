@@ -58,7 +58,7 @@ export type ActiveSessionData =
 export type ProduceForkData =
     | {
           type: SSOType.Proton;
-          payload: ProduceForkParameters & { UID: string; keyPassword?: string; persistent: boolean };
+          payload: ProduceForkParameters & { UID: string; keyPassword?: string; persistent: boolean; trusted: boolean };
       }
     | {
           type: SSOType.OAuth;
@@ -133,7 +133,7 @@ const SSOForkProducer = ({ type, onActiveSessions, onInvalidFork, onProduceFork 
                 const { session, sessions } = activeSessionsResult;
 
                 if (session && sessions.length === 1 && type !== FORK_TYPE.SWITCH) {
-                    const { UID, keyPassword, persistent } = session;
+                    const { UID, keyPassword, persistent, trusted } = session;
                     await onProduceFork({
                         type: SSOType.Proton,
                         payload: {
@@ -142,6 +142,7 @@ const SSOForkProducer = ({ type, onActiveSessions, onInvalidFork, onProduceFork 
                             state,
                             app,
                             persistent,
+                            trusted,
                         },
                     });
                     return;
@@ -167,6 +168,7 @@ const SSOForkProducer = ({ type, onActiveSessions, onInvalidFork, onProduceFork 
                         state,
                         app,
                         persistent: validatedSession.persistent,
+                        trusted: validatedSession.trusted,
                     },
                 });
             } catch (e: any) {

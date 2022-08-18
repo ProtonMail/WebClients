@@ -96,7 +96,7 @@ export const handleNewPassword = async ({
         User = await authApi<{ User: tsUser }>(getUser()).then(({ User }) => User);
     }
 
-    await persistSession({ ...authResponse, persistent, User, keyPassword, api });
+    let trusted = false;
 
     if (keyPassword) {
         const addresses = await getAllAddresses(authApi);
@@ -129,16 +129,20 @@ export const handleNewPassword = async ({
 
                 if (userSettings.DeviceRecovery) {
                     await storeDeviceRecovery({ api: authApi, user: User, userKeys });
+                    trusted = true;
                 }
             }
         }
     }
+
+    await persistSession({ ...authResponse, persistent, trusted, User, keyPassword, api });
 
     return {
         to: STEPS.DONE,
         session: {
             ...authResponse,
             persistent,
+            trusted,
             User,
             keyPassword,
             flow: 'reset',
@@ -181,14 +185,16 @@ export const handleNewPasswordMnemonic = async ({
         }),
     });
 
+    const trusted = false;
     const User = await authApi<{ User: tsUser }>(getUser()).then(({ User }) => User);
-    await persistSession({ ...authResponse, persistent, User, keyPassword, api: authApi });
+    await persistSession({ ...authResponse, persistent, trusted, User, keyPassword, api: authApi });
 
     return {
         to: STEPS.DONE,
         session: {
             ...authResponse,
             persistent,
+            trusted,
             User,
             keyPassword,
             flow: 'reset',

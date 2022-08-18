@@ -221,6 +221,7 @@ export const UID_KEY = 'proton:oauth:UID';
 export const USER_ID_KEY = 'proton:userID';
 export const LOCAL_ID_KEY = 'proton:localID';
 export const PERSIST_SESSION_KEY = 'proton:persistSession';
+export const TRUST_SESSION_KEY = 'proton:trustSession';
 export const INTERVAL_EVENT_TIMER = 30 * 1000;
 export const MAX_SIZE_SCREENSHOT = 500 * 1000;
 

@@ -113,7 +113,7 @@ export const SideAppUrlProvider = ({ children }: { children: ReactNode }) => {
     // All opened URLs for each apps opened in the side panel. In case we want to reopen the side panel,
     // we will be able to reopen it on the same URL
     const [sideAppOpenedUrls, setSideAppOpenedUrls] = useState<SideAppOpenedUrl[]>([]);
-    const { getUID, getPersistent, getPassword } = useAuthentication();
+    const { getUID, getPersistent, getPassword, getTrusted } = useAuthentication();
     const api = useApi();
     const getUser = useGetUser();
 
@@ -203,6 +203,7 @@ export const SideAppUrlProvider = ({ children }: { children: ReactNode }) => {
                                         UID: getUID(),
                                         keyPassword: getPassword(),
                                         persistent: getPersistent(),
+                                        trusted: getTrusted(),
                                         User: user,
                                         tag: versionCookieAtLoad,
                                     },

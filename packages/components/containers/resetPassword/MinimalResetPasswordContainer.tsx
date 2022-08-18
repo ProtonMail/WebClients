@@ -303,6 +303,7 @@ const MinimalResetPasswordContainer = ({ onLogin }: Props) => {
                                 username,
                                 Methods: [],
                                 hasGenerateKeys: false,
+                                hasTrustedDeviceRecovery: false,
                             },
                             username,
                             value: email,
