@@ -20,7 +20,6 @@ import ItemLabels from './ItemLabels';
 import ItemLocation from './ItemLocation';
 import ItemStar from './ItemStar';
 import ItemUnread from './ItemUnread';
-import useEncryptedSearchItem from './useEncryptedSearchItem';
 
 interface Props {
     isCompactView: boolean;
@@ -86,10 +85,6 @@ const ItemRowLayout = ({
         numOccurrences
     );
 
-    // For free users with limited content search, we want to make obvious that the third
-    // line in an item is the content
-    const { showContentLabel, contentLabel } = useEncryptedSearchItem(!!resultJSX);
-
     const hasOnlyIcsAttachments = getHasOnlyIcsAttachments(element?.AttachmentInfo);
 
     return (
@@ -134,7 +129,6 @@ const ItemRowLayout = ({
                                 title={bodyTitle}
                                 aria-hidden="true"
                             >
-                                {showContentLabel && contentLabel}
                                 {resultJSX}
                             </span>
                             <span className="sr-only">{bodyTitle}</span>
