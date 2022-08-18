@@ -32,7 +32,7 @@ import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { withUIDHeaders } from '@proton/shared/lib/fetch/headers';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { getInitials } from '@proton/shared/lib/helpers/string';
-import { hasRecoveryMessage, removeDeviceRecovery } from '@proton/shared/lib/recoveryFile/deviceRecovery';
+import { getHasRecoveryMessage, removeDeviceRecovery } from '@proton/shared/lib/recoveryFile/deviceRecovery';
 import noop from '@proton/utils/noop';
 
 import Content from './Content';
@@ -104,7 +104,7 @@ const SwitchAccountContainer = ({ toAppName, onLogin, activeSessions, onAddAccou
     };
 
     const handleSignOutMultiple = (sessions: LocalSessionPersisted[]) => {
-        if (sessions.some((session) => hasRecoveryMessage(session.remote.UserID))) {
+        if (sessions.some((session) => getHasRecoveryMessage(session.remote.UserID))) {
             return createModal(
                 <ConfirmSignOutModal
                     onSignOut={(clearDeviceRecovery: boolean) => {
