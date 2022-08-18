@@ -90,8 +90,9 @@ const PagingControls = ({ loading, page: inputPage, total: inputTotal, onPage: i
         );
     }
 
+    const totalText = total || 1; // total is 0 when no items
     // translator: Used for pagination, both values are number. Ex: "3 of 15"
-    const paginationLabel = c('Pagination').t`${page} of ${total}`;
+    const paginationLabel = c('Pagination').t`${page} of ${totalText}`;
 
     return (
         <>
@@ -107,7 +108,7 @@ const PagingControls = ({ loading, page: inputPage, total: inputTotal, onPage: i
             <ToolbarDropdown
                 title={c('Action').t`Change page`}
                 content={paginationLabel}
-                disabled={total <= 1}
+                disabled={loading || total <= 1}
                 size="narrow"
                 data-testid="toolbar:page-number-dropdown"
                 hasCaret={false}
