@@ -13,10 +13,6 @@ export default {
                 glob: 'index.js',
             },
             {
-                name: 'get-random-values',
-                glob: 'index.js',
-            },
-            {
                 name: 'srp',
                 glob: 'lib/**/*.{js,jsx,ts,tsx}',
             },

@@ -4,7 +4,6 @@ import { flushSync } from 'react-dom';
 import { Point, utils } from '@noble/ed25519';
 import { c } from 'ttag';
 
-import getRandomValues from '@proton/get-random-values';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { base64StringToUint8Array, uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 import { readableTime } from '@proton/shared/lib/helpers/time';
@@ -94,7 +93,7 @@ const bytesToNumberLE = (uint8a: Uint8Array) => {
 
 const unarmor = (key: string): string => `\n${key}\n`.replace(/\n---.+\n/g, '').replace(/\s/g, '');
 
-const randomPrivateKey = async (): Promise<Uint8Array> => {
+const randomPrivateKey = () => {
     if (!CURVE) {
         throw new Error('BigInt not supported');
     }
@@ -102,7 +101,7 @@ const randomPrivateKey = async (): Promise<Uint8Array> => {
     let i = 1024;
 
     while (i--) {
-        const b32 = await getRandomValues(new Uint8Array(32));
+        const b32 = crypto.getRandomValues(new Uint8Array(32));
         const num = bytesToNumberLE(b32);
 
         if (num > BigInt(1) && num < CURVE.n) {
@@ -292,7 +291,7 @@ const WireGuardConfigurationSection = () => {
 
     const getKeyPair = async (): Promise<{ privateKey: string; publicKey: string }> => {
         try {
-            const privateKey = await randomPrivateKey();
+            const privateKey = randomPrivateKey();
 
             return {
                 privateKey: uint8ArrayToBase64String(privateKey),

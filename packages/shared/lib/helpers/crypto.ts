@@ -1,6 +1,5 @@
 import { CryptoProxy } from '@proton/crypto';
 import { arrayToBinaryString, arrayToHexString, binaryStringToArray } from '@proton/crypto/lib/utils';
-import getRandomValues from '@proton/get-random-values';
 
 import { stringToUint8Array, uint8ArrayToBase64String, uint8ArrayToString } from './encoding';
 
@@ -19,7 +18,7 @@ export const getSHA256Base64String = async (data: string) => {
     return uint8ArrayToBase64String(value);
 };
 
-export const generateRandomBytes = (numberOfBytes: number) => getRandomValues(new Uint8Array(numberOfBytes));
+export const generateRandomBytes = (numberOfBytes: number) => crypto.getRandomValues(new Uint8Array(numberOfBytes));
 
 export const xorEncryptDecrypt = ({ key, data }: { key: string; data: string }) => {
     if (key.length !== data.length) {

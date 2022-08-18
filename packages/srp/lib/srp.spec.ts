@@ -1,19 +1,18 @@
 import assert from 'assert';
 import { describe, it } from 'mocha';
-import requireInject from 'require-inject';
 
+import { disableRandomMock, initRandomMock } from '@proton/testing/lib/mockRandomValues';
+
+import { getRandomSrpVerifier, getSrp } from '../lib/srp';
 import '../test/setup';
 import { AUTH_RESPONSE, FAKE_RANDOM, SERVER_MODULUS, SERVER_MODULUS_FAKE } from '../test/srp.data';
 
 const mockRandomValues = (buf: Uint8Array) => new Uint8Array(FAKE_RANDOM.slice(0, buf.length));
 
-const mocks = {
-    '@proton/get-random-values': mockRandomValues,
-};
-
-const { getRandomSrpVerifier, getSrp } = requireInject('../lib/srp', mocks);
-
 describe('srp', () => {
+    before(() => initRandomMock(mockRandomValues));
+    after(() => disableRandomMock());
+
     it('should generate verifier', async () => {
         const result = await getRandomSrpVerifier({ Modulus: SERVER_MODULUS }, { password: '123' });
         assert.deepStrictEqual(result, {

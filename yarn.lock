@@ -4035,12 +4035,6 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@proton/get-random-values@workspace:packages/get-random-values":
-  version: 0.0.0-use.local
-  resolution: "@proton/get-random-values@workspace:packages/get-random-values"
-  languageName: unknown
-  linkType: soft
-
 "@proton/hooks@workspace:packages/hooks":
   version: 0.0.0-use.local
   resolution: "@proton/hooks@workspace:packages/hooks"
@@ -4183,7 +4177,6 @@ __metadata:
     "@proton/colors": "workspace:^"
     "@proton/crypto": "workspace:packages/crypto"
     "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
-    "@proton/get-random-values": "workspace:packages/get-random-values"
     "@proton/i18n": "workspace:packages/i18n"
     "@proton/srp": "workspace:packages/srp"
     "@protontech/bip39": ^1.0.2
@@ -4218,7 +4211,6 @@ __metadata:
     prettier: ^2.7.1
     puppeteer: ^16.1.0
     push.js: ^1.0.12
-    require-inject: ^1.4.4
     ts-loader: ^9.3.1
     ttag: ^1.7.24
     typescript: ^4.7.4
@@ -4240,7 +4232,6 @@ __metadata:
     "@babel/register": ^7.18.9
     "@proton/crypto": "workspace:packages/crypto"
     "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
-    "@proton/get-random-values": "workspace:packages/get-random-values"
     asmcrypto.js: ^2.3.2
     bcryptjs: ^2.4.3
     eslint: ^8.21.0
@@ -4248,7 +4239,6 @@ __metadata:
     jsdom-global: ^3.0.2
     mocha: ^10.0.0
     prettier: ^2.7.1
-    require-inject: ^1.4.4
     typescript: ^4.7.4
   languageName: unknown
   linkType: soft
@@ -10714,13 +10704,6 @@ __metadata:
   dependencies:
     caller-callsite: ^4.1.0
   checksum: ed00224727925d7e6807230e054a7bb995fa09cd9b8c8241c3985de9c50c96784cf4b996360c2c417b56d82af340c7752300ad3387c68e7e9cfd9c5516e3faa9
-  languageName: node
-  linkType: hard
-
-"caller@npm:^1.0.1":
-  version: 1.0.1
-  resolution: "caller@npm:1.0.1"
-  checksum: 1b670f14bdfef6fc789ac5bfbbbe3f1faa2f54b0645cd2d100645966783b5d12fd3d41689dece84c063930b1f92c4bd9f32a07ebca70067a1a9b32bbf76bc1a7
   languageName: node
   linkType: hard
 
@@ -27026,15 +27009,6 @@ fsevents@^1.2.7:
   version: 2.0.2
   resolution: "require-from-string@npm:2.0.2"
   checksum: a03ef6895445f33a4015300c426699bc66b2b044ba7b670aa238610381b56d3f07c686251740d575e22f4c87531ba662d06937508f0f3c0f1ddc04db3130560b
-  languageName: node
-  linkType: hard
-
-"require-inject@npm:^1.4.4":
-  version: 1.4.4
-  resolution: "require-inject@npm:1.4.4"
-  dependencies:
-    caller: ^1.0.1
-  checksum: 55003ad6e5cb60f2fdfdc8e2fd3e9e815746a192ff460458cc96b14523aa095f023cee648d821fa98fdd66d358f0d72cc394aa0b65d151bf353b084cb55f66e4
   languageName: node
   linkType: hard
 
