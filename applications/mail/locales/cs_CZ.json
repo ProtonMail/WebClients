@@ -359,6 +359,9 @@
       "Generate recovery phrase": [
         "Vygenerovat obnovovací frázi"
       ],
+      "Get SimpleLogin extension": [
+        "Získat rozšíření SimpleLogin"
+      ],
       "Get started": [
         "Začínáme"
       ],
@@ -389,6 +392,9 @@
       "Go to settings": [
         "Přejít do nastavení"
       ],
+      "Go to SimpleLogin": [
+        "Přejít na SimpleLogin"
+      ],
       "Got it": [
         "Rozumím"
       ],
@@ -412,6 +418,12 @@
       ],
       "Hide messages": [
         "Skrýt zprávy"
+      ],
+      "Hide My Email": [
+        "Skrýt můj e-mail"
+      ],
+      "Hide my email": [
+        "Skrýt můj e-mail"
       ],
       "I have a question": [
         "Mám dotaz"
@@ -891,7 +903,7 @@
         "Tato zpráva obsahuje vzdálený obsah."
       ],
       "Trash all": [
-        "Vyhodit vše"
+        "Move all to trash"
       ],
       "Trust": [
         "Důvěřovat"
@@ -1090,6 +1102,11 @@
     "Alternative text for conversation image": {
       "Conversation": [
         "Konverzace"
+      ]
+    },
+    "Alternative text for SimpleLogin image": {
+      "SimpleLogin": [
+        "SimpleLogin"
       ]
     },
     "Alternative text for welcome image": {
@@ -1552,6 +1569,9 @@
       ],
       "Calendar is syncing": [
         "Kalendář se synchronizuje"
+      ],
+      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
+        "Synchronizace kalendáře: načtení všech událostí může trvat několik minut."
       ],
       "Calendar is too big": [
         "Kalendář je příliš velký"
@@ -4352,6 +4372,9 @@
       "Default email application": [
         "Výchozí e-mailová aplikace"
       ],
+      "Delivered via SimpleLogin by Proton": [
+        "Doručováno prostřednictvím SimpleLogin od Proton"
+      ],
       "Disable message content search": [
         "Zakázat vyhledávání v obsahu zprávy"
       ],
@@ -4402,6 +4425,9 @@
       ],
       "Email address": [
         "E-mailová adresa"
+      ],
+      "Email is forwarded to your mailbox; your email address stays hidden.": [
+        "E-mail je přeposílán do vaší schránky, vaše e-mailová adresa zůstává skrytá."
       ],
       "Email tracker protection is disabled": [
         "Ochrana před sledovacími prvky v e-mailech je vypnutá"
@@ -4517,6 +4543,9 @@
         "Hodin",
         "Hodin"
       ],
+      "How Hide My Email works": [
+        "Jak funguje funkce Skrýt můj e-mail"
+      ],
       "I'm sending this message to a non-Proton Mail user.": [
         "Tuto zprávu posílám uživateli, který není uživatelem služby Proton Mail."
       ],
@@ -4528,6 +4557,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Pokud jste nenašli e-mail ve vaší schránce, zkontrolujte prosím složku se spamem."
+      ],
+      "If your alias is sold, leaked, or abused, simply disable it to stop receiving spam.": [
+        "Pokud je váš alias prodán, prozrazen nebo zneužit, jednoduše jej zakažte, abyste přestali dostávat spam."
       ],
       "Image description": [
         "Popis obrázku"
@@ -4793,6 +4825,9 @@
       "Priority support": [
         "Prioritní podpora"
       ],
+      "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
+        "Chraňte svůj e-mail před únikem do seznamů e-mailových schránek nebo spammerů pomocí ${ maskMyEmailButton }."
+      ],
       "Proton doesn't make money by abusing privacy.": [
         "Proton nevydělává peníze zneužíváním soukromí."
       ],
@@ -4889,6 +4924,12 @@
       "Show original message": [
         "Zobrazit původní zprávu"
       ],
+      "SimpleLogin is a Proton service, and your Proton Account includes Hide My Email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
+        "SimpleLogin je služba Protonu a váš účet Proton zahrnuje aliasy Skrýt můj e-mail. Chcete-li začít maskovat svou e-mailovou adresu, přejděte do služby SimpleLogin a vytvořte si první alias."
+      ],
+      "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
+        "SimpleLogin poskytuje jednoduchý způsob vytváření přihlašovacích údajů na nedůvěryhodných webech třetích stran, kde nechcete zveřejnit svou skutečnou e-mailovou adresu."
+      ],
       "Sorry, this message does not exist or has already expired.": [
         "Je nám líto, tato zpráva neexistuje, nebo jí již vypršela platnost."
       ],
@@ -4957,6 +4998,9 @@
       ],
       "There has been an error with the signature used to verify the contact details, which may be the result of a password reset.": [
         "Byla zjištěna chyba podpisu, použitém k ověření detailů kontaktu, což může být důsledkem resetu hesla."
+      ],
+      "They can't spam you if they don't know your email address. Protect your inbox with Hide My Email.": [
+        "Nemohou vám zasílat spam, pokud neznají vaši e-mailovou adresu. Chraňte svou e-mailovou schránku pomocí funkce Skrýt můj e-mail."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Tento účet byl zablokován kvůli možnému porušení pravidel."
@@ -5150,6 +5194,9 @@
       "Use keyboard shortcuts to manage your email faster.": [
         "Použijte klávesové zkratky pro rychlejší správu e-mailů."
       ],
+      "Using SimpleLogin is easy": [
+        "Používání SimpleLogin je snadné"
+      ],
       "Version ${ appVersion }": [
         "Verze ${ appVersion }"
       ],
@@ -5179,6 +5226,9 @@
       ],
       "When do you want your message to be sent?": [
         "Kdy chcete, aby byla vaše zpráva odeslána?"
+      ],
+      "When giving out your email, use a unique, disposable Hide My Email alias instead of your real email address.": [
+        "Při poskytování svého e-mailu používejte místo své skutečné e-mailové adresy jedinečný jednorázový alias Skrýt můj e-mail."
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Jakmile povolíte důvěrné klíče pro ${ senderName }, veřejné klíče budou doplněné k detailu kontaktu."
@@ -5332,6 +5382,9 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Vaše telefonní číslo bude použito pouze pro toto jednorázové ověření."
+      ],
+      "Your Proton Account includes SimpleLogin. Install the browser extension with one click to get started.": [
+        "Váš účet Proton obsahuje SimpleLogin. Rozšíření prohlížeče nainstalujete jedním kliknutím a můžete začít."
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Váš Proton účet je momentálně pozastaven. Chcete-li Váš účet nadále používat, zaplaťte prosím všechny faktury po splatnosti."
@@ -7644,6 +7697,9 @@
       "Deleting contacts": [
         "Mazání kontaktů"
       ],
+      "Don't give spam a chance": [
+        "Nedávejte spamu šanci"
+      ],
       "Edit contact": [
         "Upravit kontakt"
       ],
@@ -7700,6 +7756,9 @@
       ],
       "Groups": [
         "Skupiny"
+      ],
+      "Hide your email with SimpleLogin by Proton": [
+        "Skryjte svůj e-mail pomocí SimpleLogin od Proton"
       ],
       "Human verification": [
         "Lidské ověření"
@@ -7934,6 +7993,9 @@
       ],
       "Unsubscribe": [
         "Odhlásit odběr"
+      ],
+      "Unsubscribe request sent": [
+        "Žádost o odhlášení odeslána"
       ],
       "Upgrade required": [
         "Vyžadováno navýšení tarifu"
