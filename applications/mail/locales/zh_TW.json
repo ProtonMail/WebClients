@@ -353,6 +353,9 @@
       "Generate recovery phrase": [
         "生成還原短語"
       ],
+      "Get SimpleLogin extension": [
+        "取得 SimpleLogin 延伸功能"
+      ],
       "Get started": [
         "入門指南"
       ],
@@ -891,7 +894,7 @@
         "此郵件包含遠端內容。"
       ],
       "Trash all": [
-        "全部清空"
+        "Move all to trash"
       ],
       "Trust": [
         "信任"
@@ -2874,6 +2877,9 @@
       "Deselect at least ${ calendarToFixCount } calendar or": [
         "請取消選取至少 ${ calendarToFixCount } 個行事曆或"
       ],
+      "Domain not available, try again later": [
+        "網域無法使用，請稍後再試"
+      ],
       "Draft could not be saved. Try again.": [
         "無法儲存草稿。再試一次。"
       ],
@@ -2980,7 +2986,7 @@
         "號碼無效"
       ],
       "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
-        "部份聯絡人無電郵位址：${ noEmailsContactNamesList }"
+        "部份聯絡人無電郵位址 : ${ noEmailsContactNamesList } "
       ],
       "One of the groups has no contacts: ${ noContactGroupList }": [
         "部份群組無聯絡人：${ noContactGroupList }"
@@ -3323,6 +3329,11 @@
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "沒有選擇圖像"
+      ]
+    },
+    "Error notification when score is missing in user feedback form modal": {
+      "Score is required": [
+        "郵件信譽評分為必要項目"
       ]
     },
     "Error sending calendar invitation": {
@@ -4025,6 +4036,9 @@
       "Default email application": [
         "預設郵件應用程式"
       ],
+      "Delivered via SimpleLogin by Proton": [
+        "此遞送採用 Proton 的 SimpleLogin 服務"
+      ],
       "Disable message content search": [
         "停用郵件內容搜尋"
       ],
@@ -4072,6 +4086,9 @@
       ],
       "Email address": [
         "電郵位址"
+      ],
+      "Email is forwarded to your mailbox; your email address stays hidden.": [
+        "電郵將轉寄至您的郵箱；您的電郵位址保持隱密。"
       ],
       "Email tracker protection is disabled": [
         "電郵追蹤保護已停用"
@@ -4169,6 +4186,9 @@
       "Hour": [
         "小時"
       ],
+      "How Hide My Email works": [
+        "隱藏我的電郵位址運作方式"
+      ],
       "I'm sending this message to a non-Proton Mail user.": [
         "我正傳送郵件給一位非 Proton Mail 的使用者。"
       ],
@@ -4180,6 +4200,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "若您在收件匣中找不到該電郵，請查看「垃圾郵件」資料夾。"
+      ],
+      "If your alias is sold, leaked, or abused, simply disable it to stop receiving spam.": [
+        "倘若您的別名位址被不當販售、洩漏或甚至是濫用，只需簡單地停用該別名，就可停止收受垃圾郵件。"
       ],
       "Image description": [
         "圖樣描述"
@@ -4268,6 +4291,9 @@
       "Manage your labels": [
         "管理您的標籤"
       ],
+      "Maximum number of attachments (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) exceeded.": [
+        "附件數量上限 (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) 已滿。"
+      ],
       "members": [
         "成員"
       ],
@@ -4276,6 +4302,9 @@
       ],
       "Merged": [
         "合併的"
+      ],
+      "Message expiration works out-of-the-box when sending emails to other ${ MAIL_APP_NAME } users. To send expiring emails to non-${ BRAND_NAME } users, please cancel and add password protection to your email.": [
+        "郵件訊息時效功能會在傳送電郵至其它 ${ MAIL_APP_NAME } 使用者時同步啟用。 傳送時效性電郵至非 ${ BRAND_NAME } 使用者時，請取消該功能，並在您的電郵加入密碼防護。"
       ],
       "Message headers": [
         "郵件標頭"
@@ -4297,6 +4326,9 @@
       ],
       "Monthly ${ onDayString }": [
         "每月 ${ onDayString } 日"
+      ],
+      "Moving a large amount of messages. This may take a while.": [
+        "正在移動大量的郵件訊息。 此步驟會耗時一會兒。"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "請命名您的新資料夾，並選取放置的上層資料夾。若您不選取上層資料夾，將以頂層資料夾建立。"
@@ -4341,7 +4373,10 @@
         "找不到相符的結果"
       ],
       "No results found in the past 30 days, searching the rest of your inbox": [
-        "在過去 30 天裡的訊息找不到您要的資料，請試著在全部收件匣中進行搜尋。"
+        "在過去 30 天裡的訊息找不到您要的資料，請試著在全部收件匣中進行搜尋"
+      ],
+      "No trackers found, but some images could not be loaded with tracking protection": [
+        "沒有發現追蹤程式，但追蹤保護啟用時即無法載入某些圖像"
       ],
       "non-Proton Mail": [
         "非 Proton Mail"
@@ -6093,6 +6128,11 @@
         "密碼已設定成功"
       ]
     },
+    "Oauth instructions": {
+      "Next you'll need to sign in to your Google account and grant Proton access to your data.": [
+        "接下來，您將必須登入您的 Google 帳號，並同意 Proton 存取您的資料。"
+      ]
+    },
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
         "為使匯入開始運作，您必須選取所有必要的項目，可參考依循 GIF 裡顯示的部分。"
@@ -6386,6 +6426,9 @@
       "PGP-signed message. Sender verification failed": [
         "經 PGP 簽署的郵件。寄件人驗證失敗"
       ],
+      "Sent by ${ MAIL_APP_NAME } with zero-access encryption": [
+        "由 ${ MAIL_APP_NAME } 採用零存取加密傳送"
+      ],
       "Stored with zero-access encryption": [
         "以零存取加密儲存"
       ]
@@ -6492,6 +6535,12 @@
       "PGP-signed": [
         "經 PGP 簽署"
       ],
+      "Sent by ${ MAIL_APP_NAME } with zero-access encryption": [
+        "由 ${ MAIL_APP_NAME } 採用零存取加密傳送"
+      ],
+      "Sent by ${ MAIL_APP_NAME } with zero-access encryption to verified recipient": [
+        "由 ${ MAIL_APP_NAME } 採用零存取加密傳送給驗證收件人"
+      ],
       "Sent by you with end-to-end encryption": [
         "由您以端對端加密傳送"
       ],
@@ -6547,6 +6596,9 @@
       ],
       "Get up to 18 months of ${ planName } for free": [
         "獲得最多 18 個月的 ${ planName } 零元優惠"
+      ],
+      "Invite friends and earn rewards!": [
+        "邀請朋友並賺取獎勵！"
       ],
       "Message Content Search": [
         "郵件內文搜尋"
@@ -7048,6 +7100,9 @@
       "Deleting contacts": [
         "正在刪除聯絡人"
       ],
+      "Don't give spam a chance": [
+        "垃圾郵件沒有存在的空間"
+      ],
       "Edit contact": [
         "編輯聯絡人"
       ],
@@ -7104,6 +7159,9 @@
       ],
       "Groups": [
         "群組"
+      ],
+      "Hide your email with SimpleLogin by Proton": [
+        "隱藏您的電郵位址，首選 Proton 的 SimpleLogin"
       ],
       "Human verification": [
         "真人身分驗證"
@@ -7395,7 +7453,7 @@
         "數位簽署驗證的加密資料"
       ],
       "For messages older than 30 days, only the subject line and recipient list will be searched": [
-        "超過 30 天以上的訊息，僅可從主旨列以及收件人清單進行搜尋。"
+        "超過 30 天以上的訊息，僅可從主旨列以及收件人清單進行搜尋"
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "請選擇簽署或加密至某使用者時採用的 PGP 方法。請注意 PGP/inline 強制使用純文字郵件格式"
@@ -7463,6 +7521,9 @@
       ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "若您忘記密碼，則沒辦法重新啟用您的金鑰。我們可說明您關閉提示橫幅，然而在此過程中，您將永久失去所有經過該金鑰加密的資料。"
+      ],
+      "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
+        "即時文字客服加值功能僅適用於 ${ VPN_APP_NAME } 的付費方案。請改為提交支援需求。"
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
         "Proton 將會合併所有相同名稱的資料夾。為了避免這種狀況，請在匯入前變更名稱。"
