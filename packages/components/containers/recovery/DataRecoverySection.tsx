@@ -9,6 +9,7 @@ import { Button, Href, Icon, Info, Toggle, useModalState } from '../../component
 import {
     useApi,
     useEventManager,
+    useFeature,
     useHasOutdatedRecoveryFile,
     useIsMnemonicAvailable,
     useIsRecoveryFileAvailable,
@@ -23,18 +24,21 @@ import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../account/SettingsLayoutRight';
 import SettingsParagraph from '../account/SettingsParagraph';
 import SettingsSection from '../account/SettingsSection';
+import { FeatureCode } from '../features';
 import { DisableMnemonicModal, GenerateMnemonicModal } from '../mnemonic';
 import ExportRecoveryFileButton from './ExportRecoveryFileButton';
 import VoidRecoveryFilesModal from './VoidRecoveryFilesModal';
 
 const DataRecoverySection = () => {
     const [user] = useUser();
-    const [userSettings, loadingUserSettings] = useUserSettings();
+    const [userSettings] = useUserSettings();
     const { call } = useEventManager();
     const api = useApi();
 
-    const [isRecoveryFileAvailable, loadingIsRecoveryFileAvailable] = useIsRecoveryFileAvailable();
-    const [isMnemonicAvailable, loadingIsMnemonicAvailable] = useIsMnemonicAvailable();
+    const trustedDeviceRecoveryFeature = useFeature<boolean>(FeatureCode.TrustedDeviceRecovery);
+
+    const [isRecoveryFileAvailable] = useIsRecoveryFileAvailable();
+    const [isMnemonicAvailable] = useIsMnemonicAvailable();
 
     const [disableMnemonicModal, setDisableMnemonicModalOpen, renderDisableMnemonicModal] = useModalState();
     const [generateMnemonicModal, setGenerateMnemonicModalOpen, renderGenerateMnemonicModal] = useModalState();
@@ -50,19 +54,13 @@ const DataRecoverySection = () => {
 
     const [loadingDeviceRecovery, withLoadingDeviceRecovery] = useLoading();
 
-    const loading =
-        loadingUserSettings || !userSettings || loadingIsMnemonicAvailable || loadingIsRecoveryFileAvailable;
-
-    useSearchParamsEffect(
-        (params) => {
-            if (!loading && params.get('action') === 'generate-recovery-phrase') {
-                setGenerateMnemonicModalOpen(true);
-                params.delete('action');
-                return params;
-            }
-        },
-        [loading]
-    );
+    useSearchParamsEffect((params) => {
+        if (params.get('action') === 'generate-recovery-phrase') {
+            setGenerateMnemonicModalOpen(true);
+            params.delete('action');
+            return params;
+        }
+    }, []);
 
     const handleChangeDeviceRecoveryToggle = async (checked: boolean) => {
         await api(updateDeviceRecovery({ DeviceRecovery: Number(checked) }));
@@ -79,7 +77,12 @@ const DataRecoverySection = () => {
                 <GenerateMnemonicModal confirmStep {...generateMnemonicModalButton} />
             )}
             {renderGenerateMnemonicModal && <GenerateMnemonicModal {...generateMnemonicModal} />}
-            {renderVoidRecoveryFilesModal && <VoidRecoveryFilesModal {...voidRecoveryFilesModal} />}
+            {renderVoidRecoveryFilesModal && (
+                <VoidRecoveryFilesModal
+                    trustedDeviceRecovery={trustedDeviceRecoveryFeature.feature?.Value}
+                    {...voidRecoveryFilesModal}
+                />
+            )}
 
             <SettingsSection>
                 <SettingsParagraph>
@@ -162,37 +165,42 @@ const DataRecoverySection = () => {
 
                 {isRecoveryFileAvailable && (
                     <>
-                        <SettingsLayout>
-                            <SettingsLayoutLeft>
-                                <label className="pt0 on-mobile-mb0-5 text-semibold" htmlFor="device-recovery-toggle">
-                                    <span className="mr0-5">{c('label').t`Trusted device recovery`}</span>
-                                    <Info
-                                        title={c('Info')
-                                            .t`We securely store recovery information on your trusted device to prevent you from losing your data`}
-                                    />
-                                </label>
-                            </SettingsLayoutLeft>
-                            <SettingsLayoutRight className="flex-item-fluid pt0-5">
-                                <div className="flex flex-align-items-center">
-                                    <Toggle
-                                        className="mr0-5"
-                                        loading={loadingDeviceRecovery}
-                                        checked={!!userSettings.DeviceRecovery}
-                                        id="deviceRecoveryToggle"
-                                        onChange={({ target: { checked } }) =>
-                                            withLoadingDeviceRecovery(handleChangeDeviceRecoveryToggle(checked))
-                                        }
-                                    />
+                        {trustedDeviceRecoveryFeature.feature?.Value && (
+                            <SettingsLayout>
+                                <SettingsLayoutLeft>
                                     <label
-                                        htmlFor="deviceRecoveryToggle"
-                                        className="flex-item-fluid"
-                                        data-testid="account:recovery:trustedDevice"
+                                        className="pt0 on-mobile-mb0-5 text-semibold"
+                                        htmlFor="device-recovery-toggle"
                                     >
-                                        {c('Label').t`Allow recovery using a trusted device`}
+                                        <span className="mr0-5">{c('label').t`Trusted device recovery`}</span>
+                                        <Info
+                                            title={c('Info')
+                                                .t`We securely store recovery information on your trusted device to prevent you from losing your data`}
+                                        />
                                     </label>
-                                </div>
-                            </SettingsLayoutRight>
-                        </SettingsLayout>
+                                </SettingsLayoutLeft>
+                                <SettingsLayoutRight className="flex-item-fluid pt0-5">
+                                    <div className="flex flex-align-items-center">
+                                        <Toggle
+                                            className="mr0-5"
+                                            loading={loadingDeviceRecovery}
+                                            checked={!!userSettings.DeviceRecovery}
+                                            id="deviceRecoveryToggle"
+                                            onChange={({ target: { checked } }) =>
+                                                withLoadingDeviceRecovery(handleChangeDeviceRecoveryToggle(checked))
+                                            }
+                                        />
+                                        <label
+                                            htmlFor="deviceRecoveryToggle"
+                                            className="flex-item-fluid"
+                                            data-testid="account:recovery:trustedDevice"
+                                        >
+                                            {c('Label').t`Allow recovery using a trusted device`}
+                                        </label>
+                                    </div>
+                                </SettingsLayoutRight>
+                            </SettingsLayout>
+                        )}
                         <SettingsLayout>
                             <SettingsLayoutLeft>
                                 <label className="pt0 on-mobile-mb0-5 text-semibold" htmlFor="recoveryFile">
@@ -215,7 +223,6 @@ const DataRecoverySection = () => {
                                         color="danger"
                                         shape="underline"
                                         onClick={() => setVoidRecoveryFilesModalOpen(true)}
-                                        loading={loading}
                                     >
                                         {c('Action').t`Void all recovery files`}
                                     </Button>

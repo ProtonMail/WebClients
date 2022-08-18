@@ -39,6 +39,7 @@ export interface AuthCacheResult {
     loginPassword: string;
     hasGenerateKeys: boolean;
     hasInternalAddressSetup: boolean;
+    hasTrustedDeviceRecovery: boolean;
     ignoreUnlock: boolean;
     internalAddressSetup?: InternalAddressGeneration;
 }

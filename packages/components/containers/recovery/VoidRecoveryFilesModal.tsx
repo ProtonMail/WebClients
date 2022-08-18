@@ -6,9 +6,14 @@ import { AlertModal, ModalProps } from '../../components';
 import Button from '../../components/button/Button';
 import { useApi, useEventManager, useLoading, useNotifications } from '../../hooks';
 
-type Props = Omit<ModalProps, 'children' | 'size'>;
+interface Props extends Omit<ModalProps, 'children' | 'size'> {
+    /**
+     * Remove when TrustedDeviceRecovery feature is removed
+     */
+    trustedDeviceRecovery: boolean | undefined;
+}
 
-const VoidRecoveryFilesModal = ({ onClose, ...rest }: Props) => {
+const VoidRecoveryFilesModal = ({ trustedDeviceRecovery, onClose, ...rest }: Props) => {
     const { call } = useEventManager();
     const api = useApi();
     const { createNotification } = useNotifications();
@@ -34,8 +39,10 @@ const VoidRecoveryFilesModal = ({ onClose, ...rest }: Props) => {
             ]}
         >
             <p className="m0">
-                {c('Info')
-                    .t`You won’t be able to recover locked data using your downloaded recovery files. This will also void trusted device-recovery information.`}
+                {trustedDeviceRecovery
+                    ? c('Info')
+                          .t`You won’t be able to recover locked data using your downloaded recovery files. This will also void trusted device-recovery information.`
+                    : c('Info').t`You won’t be able to recover locked data using your downloaded recovery files.`}
             </p>
         </AlertModal>
     );
