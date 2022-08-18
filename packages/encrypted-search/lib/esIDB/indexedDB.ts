@@ -57,11 +57,8 @@ export const checkVersionedESDB = async (userID: string) => {
 /**
  * Create an up-to-date IDB for the given user
  */
-export const createESDB = async (userID: string) => {
-    // Remove the database first, in case there is an old stale version that
-    // might arise when removing it and creating a new one immediately after
-    await deleteESDB(userID);
-    return openDB<EncryptedSearchDB>(getDBName(userID), INDEXEDDB_VERSION, {
+export const createESDB = (userID: string) =>
+    openDB<EncryptedSearchDB>(getDBName(userID), INDEXEDDB_VERSION, {
         upgrade: (esDB) => {
             // The object store containing the content of items, indexed by their ID
             esDB.createObjectStore('content');
@@ -85,7 +82,6 @@ export const createESDB = async (userID: string) => {
             esDB.createObjectStore('indexingProgress');
         },
     });
-};
 
 /**
  * Write to the ES IDB and manage the case of running out of disk space.
