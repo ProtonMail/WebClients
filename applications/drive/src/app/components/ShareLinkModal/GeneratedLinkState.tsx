@@ -150,8 +150,8 @@ function GeneratedLinkState({
     };
 
     const boldNameText = (
-        <span style={{ whiteSpace: 'nowrap' }}>
-            <b key="name">
+        <span key="name" style={{ whiteSpace: 'nowrap' }}>
+            <b>
                 <FileNameDisplay text={itemName} className="max-w80" />
             </b>
             :
