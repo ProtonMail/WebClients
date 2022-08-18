@@ -73,3 +73,24 @@ const humanSize = (bytes = 0, forceUnit?: SizeUnits, withoutUnit = false, maybeF
 };
 
 export default humanSize;
+
+/**
+ * shortHumanSize makes the compact size version. That is, it rounds it to
+ * zero or one kilobyte for size smaller than one kilobyte, and it drops
+ * the decimal part for sizes smaller than gigabyte--only for bigger files
+ * it shows one decimal digit. Examples:
+ *
+ * 12 bytes -> 0 KB
+ * 567 bytes -> 1 KB
+ * 12.34 MB -> 12 MB
+ * 12.34 GB -> 12.3 GB
+ */
+export const shortHumanSize = (bytes = 0) => {
+    if (bytes < sizeUnits.KB) {
+        return humanSize(bytes, 'KB', false, 0);
+    }
+    if (bytes < sizeUnits.GB) {
+        return humanSize(bytes, undefined, false, 0);
+    }
+    return humanSize(bytes, undefined, false, 1);
+};

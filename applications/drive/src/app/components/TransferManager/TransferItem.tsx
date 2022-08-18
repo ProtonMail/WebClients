@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import { FileIcon, FileNameDisplay, Loader, classnames } from '@proton/components';
-import humanSize from '@proton/shared/lib/helpers/humanSize';
+import humanSize, { shortHumanSize } from '@proton/shared/lib/helpers/humanSize';
 
 import {
     getProgressBarStatus,
@@ -63,9 +63,11 @@ const Transfer = <T extends TransferType>({ stats, transfer, type, className, ..
 
             {!isUploadingFolder && (
                 <div className="transfers-manager-list-item-size text-right text-ellipsis" title={`${percentageDone}%`}>
-                    {(isProgress || isPaused) && <span className="no-tablet no-mobile">{humanSize(progress)} / </span>}
+                    {(isProgress || isPaused) && progress > 0 && (
+                        <span className="no-tablet no-mobile">{shortHumanSize(progress)} / </span>
+                    )}
                     {fileSize !== undefined
-                        ? humanSize(fileSize)
+                        ? shortHumanSize(fileSize)
                         : isProgress && <Loader className="inline" size="small" />}
                 </div>
             )}
