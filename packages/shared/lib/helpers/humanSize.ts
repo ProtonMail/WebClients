@@ -77,7 +77,7 @@ export default humanSize;
 /**
  * shortHumanSize makes the compact size version. That is, it rounds it to
  * zero or one kilobyte for size smaller than one kilobyte, and it drops
- * the decimal part for sizes smaller than gigabyte--only for bigger files
+ * the fractional part for sizes smaller than gigabyte--only for bigger files
  * it shows one fractional digit. Examples:
  *
  * 12 bytes -> 0 KB
