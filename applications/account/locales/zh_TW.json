@@ -136,6 +136,9 @@
       "Clear all formatting": [
         "清除所有格式"
       ],
+      "Clear two-factor authentication code": [
+        "清除雙重身分驗證碼"
+      ],
       "Close": [
         "關閉"
       ],
@@ -7026,6 +7029,11 @@
         "週前"
       ]
     },
+    "Oauth instructions": {
+      "Next you'll need to sign in to your Google account and grant Proton access to your data.": [
+        "接下來，您將必須登入您的 Google 帳號，並同意 Proton 存取您的資料。"
+      ]
+    },
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
         "為使匯入開始運作，您必須選取所有必要的項目，可參考依循 GIF 裡顯示的部分。"
@@ -9128,6 +9136,9 @@
       ],
       "If you cancel this import, you won't be able to resume it. Proton saved all progress in your account. Cancel anyway?": [
         "如果您取消此匯入，您將無法復原。Proton 已將所有進度儲存在您的帳號中。無論無何都要取消嗎？"
+      ],
+      "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
+        "即時文字客服加值功能僅適用於 ${ VPN_APP_NAME } 的付費方案。請改為提交支援需求。"
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "請注意：選取此付款方法時，您的帳號無法立即升級。付款一俟結算完成，我們就會升級您的帳號。"
