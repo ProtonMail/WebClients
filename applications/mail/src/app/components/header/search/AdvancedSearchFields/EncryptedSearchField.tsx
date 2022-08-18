@@ -11,10 +11,8 @@ import {
     Tooltip,
     classnames,
     useModalState,
-    useUser,
 } from '@proton/components';
 import { ESIndexingState } from '@proton/encrypted-search';
-import { isPaid } from '@proton/shared/lib/user/helpers';
 
 import { useEncryptedSearchContext } from '../../../../containers/EncryptedSearchProvider';
 import { formatSimpleDate } from '../../../../helpers/date';
@@ -26,15 +24,8 @@ interface Props {
 }
 
 const EncryptedSearchField = ({ esState, esInteraction, handleESInteraction }: Props) => {
-    const [user] = useUser();
-    const {
-        enableContentSearch,
-        getESDBStatus,
-        pauseIndexing,
-        toggleEncryptedSearch,
-        getProgressRecorderRef,
-        activateContentSearch,
-    } = useEncryptedSearchContext();
+    const { enableContentSearch, getESDBStatus, pauseIndexing, toggleEncryptedSearch, getProgressRecorderRef } =
+        useEncryptedSearchContext();
     const {
         isEnablingContentSearch,
         esEnabled,
@@ -43,7 +34,6 @@ const EncryptedSearchField = ({ esState, esInteraction, handleESInteraction }: P
         isEnablingEncryptedSearch,
         isPaused,
         contentIndexingDone,
-        activatingPartialES,
         metadataIndexingPromise,
     } = getESDBStatus();
     const { esProgress, oldestTime, totalIndexingItems, estimatedMinutes, currentProgressValue } = esState;
@@ -51,9 +41,7 @@ const EncryptedSearchField = ({ esState, esInteraction, handleESInteraction }: P
     const [enableESModalProps, setEnableESModalOpen] = useModalState();
 
     // Switches
-    const showProgress =
-        isPaid(user) &&
-        (isEnablingContentSearch || isPaused || (contentIndexingDone && isRefreshing && !activatingPartialES));
+    const showProgress = isEnablingContentSearch || isPaused || (contentIndexingDone && isRefreshing);
     const showSubTitleSection = contentIndexingDone && !isRefreshing && isDBLimited && !isEnablingEncryptedSearch;
     const isEstimating = estimatedMinutes === 0 && (totalIndexingItems === 0 || esProgress !== totalIndexingItems);
     const showToggle = isEnablingContentSearch || isPaused || contentIndexingDone;
@@ -79,11 +67,8 @@ const EncryptedSearchField = ({ esState, esInteraction, handleESInteraction }: P
             : c('Info').t`Turn on to search the content of your messages`;
     }
 
-    const esExplanation = isPaid(user)
-        ? c('Info')
-              .t`This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.`
-        : c('Info')
-              .t`This action will download the most recent messages so they can be searched locally. Clearing your browser data will disable this option.`;
+    const esExplanation = c('Info')
+        .t`This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.`;
 
     const esCTA = showToggle ? (
         <Tooltip title={esToggleTooltip}>
@@ -98,7 +83,7 @@ const EncryptedSearchField = ({ esState, esInteraction, handleESInteraction }: P
             </span>
         </Tooltip>
     ) : (
-        <Button onClick={() => setEnableESModalOpen(true)} loading={esInteraction || activatingPartialES}>
+        <Button onClick={() => setEnableESModalOpen(true)} loading={esInteraction}>
             {c('Action').t`Activate`}
         </Button>
     );
@@ -166,7 +151,7 @@ const EncryptedSearchField = ({ esState, esInteraction, handleESInteraction }: P
 
     const handleEnableES = async () => {
         enableESModalProps.onClose();
-        void metadataIndexingPromise.then(activateContentSearch);
+        void metadataIndexingPromise.then(() => enableContentSearch());
         handleESInteraction();
     };
 

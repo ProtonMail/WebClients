@@ -1,16 +1,9 @@
-import { getLocalKey } from '@proton/shared/lib/api/auth';
 import { getIsOfflineError, getIsTimeoutError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import { getKey } from '@proton/shared/lib/authentication/cryptoHelper';
-import { LocalKeyResponse } from '@proton/shared/lib/authentication/interface';
-import { getActiveSessionByUserID } from '@proton/shared/lib/authentication/persistedSessionHelper';
-import { getDecryptedPersistedSessionBlob } from '@proton/shared/lib/authentication/persistedSessionStorage';
 import { METRICS_LOG, SECOND } from '@proton/shared/lib/constants';
-import { withUIDHeaders } from '@proton/shared/lib/fetch/headers';
-import { base64StringToUint8Array, decodeBase64URL, stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import { randomDelay, sendMetricsReport } from '@proton/shared/lib/helpers/metrics';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
-import { Api, User } from '@proton/shared/lib/interfaces';
+import { Api } from '@proton/shared/lib/interfaces';
 
 import { ES_TEMPORARY_ERRORS } from '../constants';
 import { readContentProgress, readNumMetadata, readSize } from '../esIDB';
@@ -101,73 +94,17 @@ const sendESMetrics: SendESMetrics = async (api, Title, Data) =>
     sendMetricsReport(api, METRICS_LOG.ENCRYPTED_SEARCH, Title, Data);
 
 /**
- * Generate a pseudorandom user ID unknown to the API
- */
-const generateESID = async (api: Api, user: User) => {
-    const persistedSession = getActiveSessionByUserID(user.ID, !!user.OrganizationPrivateKey);
-    const { UID, blob } = persistedSession || {};
-    if (!UID || !blob) {
-        return;
-    }
-
-    try {
-        // Extract the local keyPassword
-        const ClientKey = await api<LocalKeyResponse>(withUIDHeaders(UID, getLocalKey())).then(
-            ({ ClientKey }) => ClientKey
-        );
-        const localKey = await getKey(base64StringToUint8Array(ClientKey));
-        const { keyPassword } = await getDecryptedPersistedSessionBlob(localKey, blob);
-
-        // Extract a fresh key for HMAC
-        const hkdfKey = await crypto.subtle.importKey(
-            'raw',
-            base64StringToUint8Array(keyPassword).buffer,
-            'HKDF',
-            false,
-            ['deriveKey']
-        );
-        const hmacKey = await crypto.subtle.deriveKey(
-            {
-                name: 'HKDF',
-                hash: 'SHA-256',
-                salt: new Uint8Array(256),
-                info: new Uint8Array(),
-            },
-            hkdfKey,
-            {
-                name: 'HMAC',
-                hash: 'SHA-256',
-            },
-            false,
-            ['sign']
-        );
-
-        // HMAC the user ID. The final esID is the first 32-bit of the tag
-        return new Uint32Array(
-            await crypto.subtle.sign('HMAC', hmacKey, stringToUint8Array(decodeBase64URL(user.ID)))
-        )[0];
-    } catch (error: any) {
-        return;
-    }
-};
-
-/**
  * Send metrics about the indexing process
  */
-export const sendIndexingMetrics = async (api: Api, user: User, isLimited: boolean = false) => {
-    const progressBlob = await readContentProgress(user.ID);
+export const sendIndexingMetrics = async (api: Api, userID: string) => {
+    const progressBlob = await readContentProgress(userID);
     if (!progressBlob) {
-        return;
-    }
-
-    const esID = await generateESID(api, user);
-    if (!esID) {
         return;
     }
 
     const { totalItems, isRefreshed, numPauses, timestamps, originalEstimate } = progressBlob;
     const { indexTime, totalInterruptions } = estimateIndexingDuration(timestamps);
-    const indexSize = await readSize(user.ID);
+    const indexSize = await readSize(userID);
 
     return sendESMetrics(api, 'index', {
         numInterruptions: totalInterruptions - numPauses,
@@ -179,8 +116,6 @@ export const sendIndexingMetrics = async (api: Api, user: User, isLimited: boole
         numMessagesIndexed: totalItems,
         isRefreshed,
         numPauses,
-        esID,
-        isLimited,
     });
 };
 

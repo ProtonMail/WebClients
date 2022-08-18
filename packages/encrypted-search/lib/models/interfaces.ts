@@ -177,8 +177,6 @@ export interface ESIndexMetrics extends ESMetrics {
     numInterruptions: number;
     isRefreshed: boolean;
     indexTime: number;
-    esID: number;
-    isLimited: boolean;
 }
 
 /**
