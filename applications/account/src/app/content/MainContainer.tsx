@@ -17,6 +17,7 @@ import {
     useActiveBreakpoint,
     useAddresses,
     useCalendarSubscribeFeature,
+    useDeviceRecovery,
     useFeatures,
     useIsDataRecoveryAvailable,
     useNewDomainOptIn,

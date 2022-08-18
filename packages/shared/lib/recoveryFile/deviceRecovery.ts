@@ -38,7 +38,7 @@ export const removeDeviceRecovery = (userID: string) => {
     removeItem(getRecoveryMessageId(userID));
 };
 
-const getKeysFromDeviceRecovery = async (user: User) => {
+export const getKeysFromDeviceRecovery = async (user: User) => {
     const recoveryMessage = getRecoveryMessage(user.ID);
     const recoverySecrets = getRecoverySecrets(user.Keys);
 
@@ -141,16 +141,6 @@ export const attemptDeviceRecovery = async ({
     return numberOfReactivatedKeys;
 };
 
-export const useIsDeviceRecoveryEnabled = () => {
-    const [userSettings] = useUserSettings();
-    const authentication = useAuthentication();
-
-    return userSettings.DeviceRecovery && authentication.getPersistent();
-};
-
-export const useIsDeviceRecoveryAvailable = useIsRecoveryFileAvailable;
-export const getIsDeviceRecoveryAvailable = getIsRecoveryFileAvailable;
-
 const storeRecoveryMessage = async ({
     user,
     userKeys,
@@ -217,42 +207,4 @@ export const storeDeviceRecovery = async ({
     });
 };
 
-export const useDeviceRecovery = () => {
-    const [userKeys] = useUserKeys();
-    const [user] = useUser();
-    const api = useApi();
-
-    const [isDeviceRecoveryAvailable] = useIsDeviceRecoveryAvailable();
-    const isDeviceRecoveryEnabled = useIsDeviceRecoveryEnabled();
-    const hasRecoveryMessage = getHasRecoveryMessage(user.ID);
-
-    const privateKeyFingerPrints = userKeys?.map((key) => key.privateKey.getFingerprint()) || [];
-
-    useEffect(() => {
-        const run = async () => {
-            const shouldStoreDeviceRecovery =
-                isDeviceRecoveryAvailable && (isDeviceRecoveryEnabled || hasRecoveryMessage);
-            if (!privateKeyFingerPrints.length || !shouldStoreDeviceRecovery) {
-                return;
-            }
-
-            const storedKeys = (await getKeysFromDeviceRecovery(user)) || [];
-            const storedKeyFingerprints = storedKeys.map((key) => key.getFingerprint());
-            const userKeysHaveUpdated = !arraysContainSameElements(storedKeyFingerprints, privateKeyFingerPrints);
-
-            if (!userKeysHaveUpdated) {
-                return;
-            }
-
-            await storeDeviceRecovery({ api, user, userKeys });
-        };
-
-        void run();
-    }, [
-        isDeviceRecoveryAvailable,
-        isDeviceRecoveryEnabled,
-        hasRecoveryMessage,
-        privateKeyFingerPrints.join(''),
-        user.ID,
-    ]);
-};
+export const getIsDeviceRecoveryAvailable = getIsRecoveryFileAvailable;
