@@ -2,16 +2,10 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { useApi, useUser, useUserKeys } from '@proton/components/hooks';
 import { AlgorithmInfo } from '@proton/crypto';
 import { DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS, ENCRYPTION_TYPES } from '@proton/shared/lib/constants';
 import { EncryptionConfig } from '@proton/shared/lib/interfaces';
 import { getAlgorithmExists } from '@proton/shared/lib/keys';
-import {
-    storeDeviceRecovery,
-    useIsDeviceRecoveryAvailable,
-    useIsDeviceRecoveryEnabled,
-} from '@proton/shared/lib/recoveryFile/deviceRecovery';
 
 import {
     Alert,
@@ -42,20 +36,10 @@ const AddKeyModal = ({ existingAlgorithms, type, onAdd, ...rest }: Props) => {
     const [step, setStep] = useState(STEPS.SELECT_ENCRYPTION);
     const [encryptionType, setEncryptionType] = useState<ENCRYPTION_TYPES>(DEFAULT_ENCRYPTION_CONFIG);
     const [newKeyFingerprint, setNewKeyFingerprint] = useState<string>();
-    const isDeviceRecoveryAvailable = useIsDeviceRecoveryAvailable();
-    const isDeviceRecoveryEnabled = useIsDeviceRecoveryEnabled();
-    const [user] = useUser();
-    const [userKeys] = useUserKeys();
-    const api = useApi();
 
     const handleProcess = async () => {
         try {
             const fingerprint = await onAdd(ENCRYPTION_CONFIGS[encryptionType]);
-
-            if (isDeviceRecoveryAvailable && isDeviceRecoveryEnabled) {
-                await storeDeviceRecovery({ api, user, userKeys });
-            }
-
             setNewKeyFingerprint(fingerprint);
             setStep(STEPS.SUCCESS);
         } catch (error) {
