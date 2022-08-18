@@ -41,6 +41,7 @@ export interface ResetCacheResult {
     resetResponse?: ValidateResetTokenResponse;
     mnemonicData?: MnemonicData;
     hasGenerateKeys: boolean;
+    hasTrustedDeviceRecovery: boolean;
 }
 
 export type ResetActionResponse =

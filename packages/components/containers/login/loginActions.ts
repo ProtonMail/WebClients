@@ -64,7 +64,16 @@ const finalizeLogin = async ({
     user?: tsUser;
     addresses?: tsAddress[];
 }): Promise<AuthActionResponse> => {
-    const { authResult, authVersion, api, authApi, persistent, hasInternalAddressSetup, appName } = cache;
+    const {
+        authResult,
+        authVersion,
+        api,
+        authApi,
+        persistent,
+        hasInternalAddressSetup,
+        appName,
+        hasTrustedDeviceRecovery,
+    } = cache;
 
     if (authVersion < AUTH_VERSION) {
         await srpVerify({
@@ -104,8 +113,7 @@ const finalizeLogin = async ({
     }
 
     let trusted = false;
-
-    if (keyPassword) {
+    if (hasTrustedDeviceRecovery && keyPassword) {
         const numberOfReactivatedKeys = await attemptDeviceRecovery({
             api: authApi,
             user: User,
@@ -444,6 +452,7 @@ export const handleLogin = async ({
     api,
     ignoreUnlock,
     hasGenerateKeys,
+    hasTrustedDeviceRecovery,
     appName,
     hasInternalAddressSetup,
     payload,
@@ -454,6 +463,7 @@ export const handleLogin = async ({
     api: Api;
     ignoreUnlock: boolean;
     hasGenerateKeys: boolean;
+    hasTrustedDeviceRecovery: boolean;
     appName: APP_NAMES;
     hasInternalAddressSetup: boolean;
     payload?: ChallengeResult;
@@ -481,6 +491,7 @@ export const handleLogin = async ({
         ignoreUnlock,
         hasGenerateKeys,
         hasInternalAddressSetup,
+        hasTrustedDeviceRecovery,
     };
 
     return next({ cache, from: AuthStep.LOGIN });
