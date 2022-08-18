@@ -3,106 +3,32 @@ import { IDBPDatabase } from 'idb';
 import { CryptoProxy } from '@proton/crypto';
 import { MINUTE, SECOND } from '@proton/shared/lib/constants';
 import runInQueue from '@proton/shared/lib/helpers/runInQueue';
-import isTruthy from '@proton/utils/isTruthy';
 
-import {
-    AesKeyGenParams,
-    ES_MAX_CACHE,
-    ES_MAX_CONCURRENT,
-    ES_MAX_PARALLEL_ITEMS,
-    INDEXING_STATUS,
-    KeyUsages,
-    STORING_OUTCOME,
-    TIMESTAMP_TYPE,
-    defaultESProgress,
-} from '../constants';
-import {
-    addTimestamp,
-    createESDB,
-    getSortedInfo,
-    initializeConfig,
-    openESDB,
-    readIndexKey,
-    readLimited,
-    setContentRecoveryPoint,
-    setLimited,
-    setOriginalEstimate,
-    updateSize,
-    writeAllEvents,
-    writeContentItems,
-    writeMetadata,
-    writeMetadataProgress,
-} from '../esIDB';
-import {
-    AesGcmCiphertext,
-    CiphertextToStore,
-    ESCache,
-    ESIndexingState,
-    ESProgress,
-    EncryptedSearchDB,
-    EventsObject,
-    GetItemInfo,
-    GetUserKeys,
-    InternalESHelpers,
-} from '../models';
+import { AesKeyGenParams, ES_MAX_CONCURRENT, KeyUsages } from '../constants';
+import { AesGcmCiphertext, ESIndexingHelpers, ESIndexingState, GetUserKeys } from '../models';
 import { esSentryReport } from './esAPI';
-import { extractBatch, reorderCache, sizeOfESItem } from './esCache';
+import { sizeOfESItem } from './esCache';
+import {
+    addESTimestamp,
+    createESDB,
+    deleteESDB,
+    getES,
+    getOldestItem,
+    openESDB,
+    removeES,
+    setES,
+    setOriginalEstimate,
+    updateSizeIDB,
+} from './esUtils';
 
 /**
- * Execute the initial steps of a new metadata indexing, i.e. generating an index key and the DB itself
+ * Decrypt the given armored index key.
  */
-export const initializeEncryptedSearch = async (
-    userID: string,
-    getUserKeys: GetUserKeys,
-    previousEventIDs: EventsObject,
-    isRefreshed: boolean,
-    totalItems: number
-) => {
-    let esDB: IDBPDatabase<EncryptedSearchDB>;
-    let indexKey: CryptoKey;
-    try {
-        esDB = await createESDB(userID);
-        indexKey = await crypto.subtle.generateKey(AesKeyGenParams, true, KeyUsages);
-    } catch (error: any) {
-        // In case IndexedDB cannot be initialised, or something is wrong with the index key,
-        // we still want to continue the indexing process without any permanent
-        // storage but only keeping the cache in memory
-        return { indexKey: undefined, esDB: undefined };
-    }
-
-    // The index key is encrypted using the primary user key, the resulting ciphertext
-    // is kept in binary form since IndexedDB allows this format
-    const userKeysList = await getUserKeys();
-    const primaryUserKey = userKeysList[0];
-    const keyToEncrypt = await crypto.subtle.exportKey('jwk', indexKey);
-    const { message: encryptedKey } = await CryptoProxy.encryptMessage({
-        textData: JSON.stringify(keyToEncrypt),
-        encryptionKeys: [primaryUserKey.publicKey],
-        signingKeys: [primaryUserKey.privateKey],
-    });
-
-    const initialProgress: ESProgress = {
-        ...defaultESProgress,
-        totalItems,
-        isRefreshed,
-        status: INDEXING_STATUS.INDEXING,
-    };
-
-    await initializeConfig(userID, encryptedKey);
-    await writeAllEvents(userID, previousEventIDs);
-    await writeMetadataProgress(userID, initialProgress);
-
-    return { indexKey, esDB };
-};
-
-/**
- * Decrypt the given encrypted index key.
- */
-export const decryptIndexKey = async (getUserKeys: GetUserKeys, encryptedKey: string) => {
+export const decryptIndexKey = async (getUserKeys: GetUserKeys, armoredKey: string) => {
     const userKeysList = await getUserKeys();
     const primaryUserKey = userKeysList[0];
     const decryptionResult = await CryptoProxy.decryptMessage({
-        armoredMessage: encryptedKey,
+        armoredMessage: armoredKey,
         verificationKeys: [primaryUserKey.publicKey],
         decryptionKeys: [primaryUserKey.privateKey],
     });
@@ -125,13 +51,17 @@ export const decryptIndexKey = async (getUserKeys: GetUserKeys, encryptedKey: st
 };
 
 /**
- * Retrieve and decrypt the index key. Return undefined if something goes wrong
- * or if there is no key.
+ * Retrieve and decrypt the index key from localStorage. Return undefined if something goes wrong
+ * or if there is no key in local storage.
  */
 export const getIndexKey = async (getUserKeys: GetUserKeys, userID: string) => {
     try {
-        const encrypted = await readIndexKey(userID);
-        return await decryptIndexKey(getUserKeys, encrypted);
+        const armoredKey = getES.Key(userID);
+        if (!armoredKey) {
+            return;
+        }
+
+        return await decryptIndexKey(getUserKeys, armoredKey);
     } catch (error: any) {
         esSentryReport('getIndexKey', { error });
     }
@@ -140,7 +70,11 @@ export const getIndexKey = async (getUserKeys: GetUserKeys, userID: string) => {
 /**
  * Create the encrypted object to store in IndexedDB
  */
-export const encryptItem = async (itemToStore: Object, indexKey: CryptoKey): Promise<AesGcmCiphertext> => {
+export const encryptToDB = async <ESItem, ESCiphertext>(
+    itemToStore: ESItem,
+    indexKey: CryptoKey,
+    prepareCiphertext: (itemToStore: ESItem, aesGcmCiphertext: AesGcmCiphertext) => ESCiphertext
+) => {
     const itemToEncrypt = JSON.stringify(itemToStore);
     const textEncoder = new TextEncoder();
 
@@ -153,310 +87,286 @@ export const encryptItem = async (itemToStore: Object, indexKey: CryptoKey): Pro
         textEncoder.encode(itemToEncrypt)
     );
 
-    return { ciphertext, iv };
+    return prepareCiphertext(itemToStore, { ciphertext, iv });
 };
 
 /**
- * Store one batch of items metadata to IndexedDB
+ * Store one batch of items to IndexedDB
  */
-const storeItemsMetadata = async <ESItemMetadata>(
-    userID: string,
+const storeItems = async <ESItemMetadata, ESItem, ESCiphertext>(
     resultMetadata: ESItemMetadata[],
-    esDB: IDBPDatabase<EncryptedSearchDB> | undefined,
-    indexKey: CryptoKey | undefined,
-    esCacheRef: React.MutableRefObject<ESCache<ESItemMetadata, unknown>>,
-    getItemInfo: GetItemInfo<ESItemMetadata>
-) => {
-    const batchSize = resultMetadata.reduce((sum, item) => sum + sizeOfESItem(item), 0);
+    esDB: IDBPDatabase,
+    indexKey: CryptoKey,
+    abortIndexingRef: React.MutableRefObject<AbortController>,
+    storeName: string,
+    recordLocalProgress: (localProgress: number) => void,
+    esIndexingHelpers: ESIndexingHelpers<ESItemMetadata, ESItem, ESCiphertext>
+): Promise<{ lastStoredItem: ESCiphertext; batchSize: number }> => {
+    const { fetchESItem, getItemID, prepareCiphertext } = esIndexingHelpers;
 
-    // If either indexKey or esDB are undefined, we still want to index all metadata
-    // and store them in cache only
-    if (esDB && indexKey) {
-        const itemsToAdd: CiphertextToStore[] = await Promise.all(
-            resultMetadata.map(async (itemToStore) => ({
-                itemID: getItemInfo(itemToStore).ID,
-                aesGcmCiphertext: await encryptItem(itemToStore, indexKey),
-            }))
-        );
+    let batchSize = 0;
+    let counter = 0;
 
-        await writeMetadata(esDB, itemsToAdd);
-        await updateSize<ESItemMetadata>(userID, batchSize, esCacheRef.current.esCache, getItemInfo);
+    const esIteratee = async (itemMetadata: ESItemMetadata) => {
+        if (abortIndexingRef.current.signal.aborted) {
+            throw new Error('Operation aborted');
+        }
+
+        // Since itemMetadata is given, fetchESItem doesn't return undefined
+        const itemToStore = (await fetchESItem(
+            getItemID(itemMetadata),
+            itemMetadata,
+            abortIndexingRef.current.signal
+        ))!;
+
+        recordLocalProgress(++counter);
+        batchSize += sizeOfESItem(itemToStore);
+        return encryptToDB<ESItem, ESCiphertext>(itemToStore, indexKey, prepareCiphertext);
+    };
+
+    // ciphertexts is a list of symmetrically encrypted items in reverse chronological order
+    const ciphertexts = await runInQueue<ESCiphertext>(
+        resultMetadata.map((item) => () => esIteratee(item)),
+        ES_MAX_CONCURRENT
+    );
+
+    if (abortIndexingRef.current.signal.aborted) {
+        throw new Error('Operation aborted');
     }
 
-    resultMetadata.map((metadataItem) => {
-        esCacheRef.current.esCache.set(getItemInfo(metadataItem).ID, { metadata: metadataItem });
-    });
-    esCacheRef.current.cacheSize += batchSize;
+    const tx = esDB.transaction(storeName, 'readwrite');
+    await Promise.all(ciphertexts.map(async (ciphertext) => tx.store.put(ciphertext)));
+    await tx.done;
 
-    return true;
+    // Since transactions are atomic, i.e. either all ciphertexts are stored or
+    // none of them is, it's safe to take the last ciphertext as recovery point
+    return { lastStoredItem: ciphertexts[ciphertexts.length - 1], batchSize };
 };
 
 /**
- * Start metadata indexing
+ * Fetch and store items in batches starting from the given one, if any
  */
-export const buildMetadataDB = async <ESItemMetadata>(
+const storeItemsBatches = async <ESItemMetadata, ESItem, ESCiphertext>(
     userID: string,
-    esDB: IDBPDatabase<EncryptedSearchDB> | undefined,
-    indexKey: CryptoKey | undefined,
-    esCacheRef: React.MutableRefObject<ESCache<ESItemMetadata, unknown>>,
-    queryItemsMetadata: (signal: AbortSignal) => Promise<{
-        resultMetadata?: ESItemMetadata[];
-        setRecoveryPoint?: () => Promise<void>;
-    }>,
-    getItemInfo: GetItemInfo<ESItemMetadata>,
+    esDB: IDBPDatabase,
+    indexKey: CryptoKey,
     abortIndexingRef: React.MutableRefObject<AbortController>,
-    recordProgress: (progress: number) => void
+    oldestItem: ESCiphertext | undefined,
+    storeName: string,
+    recordProgress: (progress: number) => void,
+    esIndexingHelpers: ESIndexingHelpers<ESItemMetadata, ESItem, ESCiphertext>
 ) => {
-    let { resultMetadata, setRecoveryPoint } = await queryItemsMetadata(abortIndexingRef.current.signal);
+    const { queryItemsMetadata } = esIndexingHelpers;
+    let lastStoredItem = oldestItem;
+    let resultMetadata = await queryItemsMetadata(oldestItem, abortIndexingRef.current.signal);
 
-    // If it's undefined, it means an error occured
     if (!resultMetadata) {
         return false;
     }
 
     let batchSize = 0;
+    let progress = 0;
     while (resultMetadata.length) {
-        const success = await storeItemsMetadata<ESItemMetadata>(
-            userID,
+        const inloopProgress = progress;
+        const recordLocalProgress = (localProgress: number) => {
+            recordProgress(inloopProgress + localProgress);
+        };
+
+        let quotaExceededError = false;
+        const storeOutput: {
+            lastStoredItem: ESCiphertext;
+            batchSize: number;
+        } | void = await storeItems<ESItemMetadata, ESItem, ESCiphertext>(
             resultMetadata,
             esDB,
             indexKey,
-            esCacheRef,
-            getItemInfo
+            abortIndexingRef,
+            storeName,
+            recordLocalProgress,
+            esIndexingHelpers
         ).catch((error: any) => {
             if (
                 !(error.message && error.message === 'Operation aborted') &&
                 !(error.name && error.name === 'AbortError')
             ) {
+                // This happens when the user pauses indexing, for which we don't need a sentry report
                 esSentryReport('storeItemsBatches: storeItems', { error });
             }
 
-            return false;
+            if (error.name === 'QuotaExceededError') {
+                quotaExceededError = true;
+            }
         });
 
-        if (!success) {
+        if (abortIndexingRef.current.signal.aborted) {
             return false;
         }
 
-        if (setRecoveryPoint) {
-            await setRecoveryPoint();
+        if (!storeOutput) {
+            // If the quota has been reached, indexing is considered to be successful. Since
+            // items are fetched in chronological order, IndexedDB is guaranteed to contain
+            // the most recent items only
+            return quotaExceededError;
         }
 
-        batchSize += resultMetadata.length;
-        recordProgress(batchSize);
+        ({ lastStoredItem, batchSize } = storeOutput);
 
-        ({ resultMetadata, setRecoveryPoint } = await queryItemsMetadata(abortIndexingRef.current.signal));
+        updateSizeIDB(userID, batchSize);
+        progress += resultMetadata.length;
+
+        resultMetadata = await queryItemsMetadata(lastStoredItem, abortIndexingRef.current.signal);
+
         if (!resultMetadata) {
             return false;
         }
+
+        addESTimestamp(userID, 'step');
     }
-
-    esDB?.close();
-    esCacheRef.current.isCacheReady = true;
-
-    // Since we cache metadata while indexing them, and indexing proceeds in
-    // reverse chronological order, we need to reorder the cache at the end
-    // of metadata indexing to make sure it is in chronological order
-    reorderCache(esCacheRef, getItemInfo);
 
     return true;
 };
 
 /**
- * Add content to an existing metadata DB
+ * Opens the DB and starts indexing
  */
-export const buildContentDB = async <ESItemMetadata, ESSearchParameters, ESItemContent>(
+export const buildDB = async <ESItemMetadata, ESItem, ESCiphertext>(
     userID: string,
     indexKey: CryptoKey,
     abortIndexingRef: React.MutableRefObject<AbortController>,
     recordProgress: (progress: number) => void,
-    esHelpers: InternalESHelpers<ESItemMetadata, ESSearchParameters, ESItemContent>,
-    esCacheRef: React.MutableRefObject<ESCache<ESItemMetadata, unknown>>,
-    inputrecoveryPoint: [number, number] | undefined,
-    cacheWhileIndexing: boolean = true,
-    batchLimit: number = ES_MAX_PARALLEL_ITEMS
-): Promise<STORING_OUTCOME> => {
-    const { getItemInfo, fetchESItem } = esHelpers;
-    let batchSize = 0;
-    let counter = 0;
-    let limitedCache = false;
+    storeName: string,
+    indexName: string,
+    esIndexingHelpers: ESIndexingHelpers<ESItemMetadata, ESItem, ESCiphertext>
+) => {
+    addESTimestamp(userID, 'start');
+    const esDB = await openESDB(userID);
 
-    if (!fetchESItem) {
-        throw new Error('Cannot index content without fetching helper');
-    }
+    // Use the oldest item stored as recovery point
+    const oldestItem = await getOldestItem(esDB, storeName, indexName);
 
-    await addTimestamp<ESItemMetadata>(userID, esCacheRef.current.esCache, getItemInfo, TIMESTAMP_TYPE.START);
+    // Start fetching messages from the last stored message
+    // or from scratch if a recovery point was not found
+    const success = await storeItemsBatches<ESItemMetadata, ESItem, ESCiphertext>(
+        userID,
+        esDB,
+        indexKey,
+        abortIndexingRef,
+        oldestItem,
+        storeName,
+        recordProgress,
+        esIndexingHelpers
+    );
 
-    let abortFetching = new AbortController();
+    esDB.close();
 
-    const esIteratee = async (itemID: string, itemMetadata: ESItemMetadata) => {
-        // In case any other parallel executions of this function fails, abortFetching
-        // is triggered such that all others stop as well
-        if (abortIndexingRef.current.signal.aborted || abortFetching.signal.aborted) {
-            throw new Error('Operation aborted');
-        }
-
-        const itemToStore = await fetchESItem(itemID, abortIndexingRef.current.signal, esCacheRef);
-
-        let aesGcmCiphertext: AesGcmCiphertext | undefined;
-        if (itemToStore) {
-            const size = sizeOfESItem(itemToStore);
-            batchSize += size;
-
-            if (cacheWhileIndexing) {
-                if (esCacheRef.current.cacheSize < ES_MAX_CACHE) {
-                    esCacheRef.current.esCache.set(itemID, {
-                        metadata: itemMetadata,
-                        content: itemToStore,
-                    });
-                    esCacheRef.current.cacheSize += size;
-                } else {
-                    // In case the limit is reached, the content is not added, the metadata is already
-                    // present, therefore we simply flag that the content in cache is limited
-                    limitedCache = true;
-                }
-            }
-
-            aesGcmCiphertext = await encryptItem(itemToStore, indexKey);
-        }
-
-        recordProgress(++counter);
-
-        return { itemID, aesGcmCiphertext, itemMetadata };
-    };
-
-    let indexingOutcome = STORING_OUTCOME.SUCCESS;
-    let recoveryPoint = inputrecoveryPoint;
-    while (true) {
-        const storedData = extractBatch<ESItemMetadata>(esCacheRef, getItemInfo, recoveryPoint, batchLimit);
-        if (!storedData.length) {
-            break;
-        }
-
-        if (abortIndexingRef.current.signal.aborted) {
-            return STORING_OUTCOME.FAILURE;
-        }
-
-        // In case any of the parrallel execution fails, we want all other to stop but still
-        // retain the outcome of those which had succeeded in order to index at least thoes and
-        // to set the recovery point accordingly
-        const encryptedContent = await runInQueue(
-            storedData.map(
-                // eslint-disable-next-line @typescript-eslint/no-loop-func
-                ([itemID, { metadata }]) =>
-                    () =>
-                        esIteratee(itemID, metadata).catch(() => {
-                            abortFetching.abort();
-                        })
-            ),
-            ES_MAX_CONCURRENT
-        );
-
-        // Later fetches can finish later than earlier ones. To be on the safe side we consider as
-        // valid anything before the first undefined is found
-        const firstUndefined = encryptedContent.indexOf(undefined);
-        const itemsToAdd = (
-            firstUndefined === -1 ? encryptedContent : encryptedContent.slice(0, firstUndefined)
-        ).filter(isTruthy);
-
-        if (itemsToAdd.length) {
-            ({ timepoint: recoveryPoint } = getItemInfo(itemsToAdd[itemsToAdd.length - 1].itemMetadata));
-
-            const storingOutcome = await writeContentItems<ESItemMetadata>(
-                userID,
-                itemsToAdd
-                    .map((item) => {
-                        if (!!item.aesGcmCiphertext) {
-                            return { itemID: item.itemID, aesGcmCiphertext: item.aesGcmCiphertext };
-                        }
-                    })
-                    .filter(isTruthy),
-                esCacheRef.current.esCache,
-                getItemInfo,
-                abortIndexingRef
-            );
-
-            if (storingOutcome === STORING_OUTCOME.SUCCESS) {
-                // In case the batch was successfully stored, we keep on with the following batch
-                await setContentRecoveryPoint<ESItemMetadata>(
-                    userID,
-                    recoveryPoint,
-                    esCacheRef.current.esCache,
-                    getItemInfo
-                );
-                await updateSize<ESItemMetadata>(userID, batchSize, esCacheRef.current.esCache, getItemInfo);
-            } else if (storingOutcome === STORING_OUTCOME.QUOTA) {
-                // If we have reached the quota, we need to stop indexing. Note that
-                // in this case the cache might well be not limited, i.e. it contains
-                // all content of the limited index
-                indexingOutcome = STORING_OUTCOME.QUOTA;
-                break;
-            }
-            // In case the storage fails, the loop will repeat with the previous recovery point
-
-            // Reset for next batch
-            batchSize = 0;
-        }
-
-        abortFetching = new AbortController();
-        await addTimestamp<ESItemMetadata>(userID, esCacheRef.current.esCache, getItemInfo);
-    }
-
-    if (cacheWhileIndexing) {
-        esCacheRef.current.isCacheLimited = limitedCache;
-        esCacheRef.current.isContentCached = true;
-    }
-
-    return indexingOutcome;
+    return success;
 };
 
 /**
- * In case IDB is limited, trigger a new content indexing by using
- * the oldest indexed content as recovery point. This is done in case
- * items are removed after a syncing operation, therefore we might have
- * some space left to index more content
+ * Store an existing index key to local storage
  */
-export const retryContentIndexing = async <ESItemMetadata, ESSearchParameters, ESItemContent>(
+const storeIndexKey = async (indexKey: CryptoKey, userID: string, getUserKeys: GetUserKeys) => {
+    const userKeysList = await getUserKeys();
+    const primaryUserKey = userKeysList[0];
+    const keyToEncrypt = await crypto.subtle.exportKey('jwk', indexKey);
+    const { message: encryptedKey } = await CryptoProxy.encryptMessage({
+        textData: JSON.stringify(keyToEncrypt),
+        stripTrailingSpaces: true,
+        encryptionKeys: [primaryUserKey.publicKey],
+        signingKeys: [primaryUserKey.privateKey],
+    });
+    setES.Key(userID, encryptedKey);
+};
+
+/**
+ * Execute the initial steps of a new indexing, i.e. generating an index key and the DB itself
+ */
+export const initializeDB = async (
     userID: string,
-    indexKey: CryptoKey,
-    esCacheRef: React.MutableRefObject<ESCache<ESItemMetadata, unknown>>,
-    esHelpers: InternalESHelpers<ESItemMetadata, ESSearchParameters, ESItemContent>,
-    abortIndexingRef: React.MutableRefObject<AbortController>
+    getUserKeys: GetUserKeys,
+    isRefreshed: boolean,
+    totalItems: number,
+    storeName: string,
+    indexName: string,
+    primaryKeyName: string,
+    indexKeyNames: [string, string],
+    getPreviousEventID: () => Promise<string>
 ) => {
-    const isDBLimited = await readLimited(userID);
-    if (!isDBLimited) {
-        return;
+    const result: { notSupported: boolean; indexKey: CryptoKey | undefined } = {
+        notSupported: false,
+        indexKey: undefined,
+    };
+
+    // Remove IndexedDB in case there is a corrupt leftover
+    try {
+        await deleteESDB(userID);
+    } catch (error: any) {
+        if (error.name !== 'InvalidStateError') {
+            esSentryReport('initializeDB: deleteESDB', { error });
+        }
+
+        return {
+            ...result,
+            notSupported: true,
+        };
     }
 
-    const { getItemInfo } = esHelpers;
-
-    const esDB = await openESDB(userID);
-    if (!esDB) {
-        return;
+    // Save the event before starting building IndexedDB. The number of items
+    // before indexing aims to show progress, as new items will be synced only
+    // after indexing has completed
+    try {
+        const previousEventID = await getPreviousEventID();
+        setES.Event(userID, previousEventID);
+    } catch (error: any) {
+        return result;
     }
 
-    const item = (await getSortedInfo(esDB, esCacheRef.current.esCache, getItemInfo)).shift();
+    setES.Progress(userID, {
+        totalItems,
+        isRefreshed,
+        numPauses: 0,
+        timestamps: [],
+        originalEstimate: 0,
+    });
+
+    // Set up DB
+    let esDB: IDBPDatabase;
+    try {
+        esDB = await createESDB(userID, storeName, indexName, primaryKeyName, indexKeyNames);
+    } catch (error: any) {
+        if (error.name !== 'InvalidStateError') {
+            esSentryReport('initializeDB: createESDB', { error });
+        }
+
+        removeES.Event(userID);
+        removeES.Progress(userID);
+        return {
+            ...result,
+            notSupported: true,
+        };
+    }
     esDB.close();
-    if (!item) {
-        return;
+
+    // Create an index key and save it to localStorage in encrypted form
+    let indexKey: CryptoKey;
+    try {
+        indexKey = await crypto.subtle.generateKey(AesKeyGenParams, true, KeyUsages);
+        await storeIndexKey(indexKey, userID, getUserKeys);
+    } catch (error: any) {
+        esSentryReport('initializeDB: key generation', { error });
+
+        removeES.Event(userID);
+        removeES.Progress(userID);
+        await deleteESDB(userID);
+        return result;
     }
 
-    const storingOutcome = await buildContentDB<ESItemMetadata, ESSearchParameters, ESItemContent>(
-        userID,
+    setES.Size(userID, 0);
+
+    return {
+        ...result,
         indexKey,
-        abortIndexingRef,
-        () => {},
-        esHelpers,
-        esCacheRef,
-        item.timepoint,
-        esCacheRef.current.isContentCached,
-        10
-    );
-
-    // In case we have recovered, we set the flag accordingly
-    if (storingOutcome === STORING_OUTCOME.SUCCESS) {
-        await setLimited<ESItemMetadata>(userID, false, esCacheRef.current.esCache, getItemInfo);
-    }
+    };
 };
 
 /**
@@ -464,7 +374,7 @@ export const retryContentIndexing = async <ESItemMetadata, ESSearchParameters, E
  */
 export const estimateIndexingDuration = (
     timestamps: {
-        type: TIMESTAMP_TYPE;
+        type: 'start' | 'step' | 'stop';
         time: number;
     }[]
 ) => {
@@ -474,9 +384,9 @@ export const estimateIndexingDuration = (
     for (let index = 0; index < timestamps.length - 1; index++) {
         const [timestamp1, timestamp2] = timestamps.slice(index, index + 2);
 
-        if (timestamp1.type !== TIMESTAMP_TYPE.STOP && timestamp2.type !== TIMESTAMP_TYPE.START) {
+        if (timestamp1.type !== 'stop' && timestamp2.type !== 'start') {
             indexTime += timestamp2.time - timestamp1.time;
-        } else if (timestamp1.type !== TIMESTAMP_TYPE.STOP || timestamp2.type !== TIMESTAMP_TYPE.STOP) {
+        } else if (timestamp1.type !== 'stop' || timestamp2.type !== 'stop') {
             totalInterruptions++;
         }
     }
@@ -495,31 +405,28 @@ export const estimateIndexingDuration = (
  * @returns the number of estimated time to completion and the current progress
  * expressed as a number between 0 and 100
  */
-export const estimateIndexingProgress = async (
+export const estimateIndexingProgress = (
     userID: string,
     esProgress: number,
     esTotal: number,
     endTime: number,
-    esState: ESIndexingState,
-    setEstimate: boolean = true
+    esState: ESIndexingState
 ) => {
     let estimatedMinutes = 0;
     let currentProgressValue = 0;
 
     if (esTotal !== 0 && endTime !== esState.startTime && esProgress !== esState.esPrevProgress) {
-        const remainingItems = esTotal - esProgress;
+        const remainingMessages = esTotal - esProgress;
 
-        if (setEstimate) {
-            await setOriginalEstimate(
-                userID,
-                Math.floor(
-                    (((endTime - esState.startTime) / (esProgress - esState.esPrevProgress)) * remainingItems) / SECOND
-                )
-            );
-        }
+        setOriginalEstimate(
+            userID,
+            Math.floor(
+                (((endTime - esState.startTime) / (esProgress - esState.esPrevProgress)) * remainingMessages) / SECOND
+            )
+        );
 
         estimatedMinutes = Math.ceil(
-            (((endTime - esState.startTime) / (esProgress - esState.esPrevProgress)) * remainingItems) / MINUTE
+            (((endTime - esState.startTime) / (esProgress - esState.esPrevProgress)) * remainingMessages) / MINUTE
         );
         currentProgressValue = Math.ceil((esProgress / esTotal) * 100);
     }

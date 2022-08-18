@@ -2,22 +2,23 @@ import { ReactNode, createContext, useContext, useEffect, useRef, useState } fro
 
 import { c } from 'ttag';
 
-import { useApi, useGetUserKeys, useUser } from '@proton/components';
-import {
-    INDEXING_STATUS,
-    checkVersionedESDB,
-    readMetadataProgress,
-    useEncryptedSearch,
-} from '@proton/encrypted-search';
-import { isPaid } from '@proton/shared/lib/user/helpers';
+import { useApi, useUser } from '@proton/components';
+import { useEncryptedSearch } from '@proton/encrypted-search';
+import { getES } from '@proton/encrypted-search';
 
 import { useDriveEventManager } from '../_events';
 import { useLink } from '../_links';
 import { useDefaultShare, useShare } from '../_shares';
+import { STORE_NAME, TIME_INDEX } from './constants';
 import convertDriveEventsToSearchEvents from './indexing/processEvent';
 import useFetchShareMap from './indexing/useFetchShareMap';
-import { migrate } from './migration';
-import { ESDriveSearchParams, ESLink, EncryptedSearchFunctionsDrive } from './types';
+import {
+    ESDriveSearchParams,
+    ESItemChangesDrive,
+    ESLink,
+    EncryptedSearchFunctionsDrive,
+    StoredCiphertextDrive,
+} from './types';
 import { useESHelpers } from './useESHelpers';
 import useSearchEnabledFeature from './useSearchEnabledFeature';
 
@@ -31,8 +32,7 @@ export const SearchLibraryProvider = ({ children }: Props) => {
     const fetchShareMap = useFetchShareMap();
     const api = useApi();
     const [user] = useUser();
-    const getUserKeys = useGetUserKeys();
-    const { getLinkPrivateKey } = useLink();
+    const { getLinkPrivateKey, getLink } = useLink();
     const { getSharePrivateKey } = useShare();
     const { getDefaultShare } = useDefaultShare();
     const searchEnabled = useSearchEnabledFeature();
@@ -41,40 +41,37 @@ export const SearchLibraryProvider = ({ children }: Props) => {
     const handlerId = useRef<string>();
     const driveEventManager = useDriveEventManager();
 
-    const shareId = getDefaultShare().then(({ shareId }) => shareId);
-
     const esHelpers = useESHelpers({
         api,
         user,
         fetchShareMap,
-        shareId,
+        getLink,
+        shareId: getDefaultShare().then(({ shareId }) => shareId),
         getSharePrivateKey,
         getLinkPrivateKey,
     });
 
-    const esFunctions = useEncryptedSearch<ESLink, ESDriveSearchParams>({
+    const esFunctions = useEncryptedSearch<
+        ESLink,
+        ESLink,
+        ESDriveSearchParams,
+        ESItemChangesDrive,
+        StoredCiphertextDrive
+    >({
+        storeName: STORE_NAME,
+        indexName: TIME_INDEX,
+        primaryKeyName: 'id',
+        indexKeyNames: ['createTime', 'order'],
         refreshMask: 1,
         esHelpers,
         successMessage: c('Notification').t`Encrypted search activated`,
-        notifyMetadataIndexed: true,
     });
 
     const initializeESDrive = async () => {
-        // Migrate old IDBs
-        const success = await migrate(user.ID, getUserKeys, shareId);
-        if (!success) {
-            return esFunctions.esDelete();
-        }
-
-        // In case of a downgrade from paid to free, remove everything
-        if ((await checkVersionedESDB(user.ID)) && !isPaid(user)) {
-            return esFunctions.esDelete();
-        }
-
         // In case an interrupted indexing process is found, we remove anything ES
         // has built so far since drive needs to finish indexing in one go
-        const progress = await readMetadataProgress(user.ID);
-        if (!!progress && progress.status !== INDEXING_STATUS.ACTIVE) {
+        const progress = getES.Progress(user.ID);
+        if (!!progress) {
             await esFunctions.esDelete();
         }
 

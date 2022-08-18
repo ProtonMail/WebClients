@@ -1,163 +1,158 @@
 import { History } from 'history';
 
+import { Feature, WelcomeFlagsState } from '@proton/components';
 import {
-    ESCache,
+    AesGcmCiphertext,
     ESEvent,
     ESHelpers,
-    ESItemInfo,
-    ES_MAX_METADATA_BATCH,
     ES_MAX_PARALLEL_ITEMS,
-    EventsObject,
     apiHelper,
-    checkVersionedESDB,
     esSentryReport,
-    readLastEvent,
-    readMetadataRecoveryPoint,
-    setMetadataRecoveryPoint,
+    esStorageHelpers,
+    indexKeyExists,
     testKeywords,
 } from '@proton/encrypted-search';
 import { queryMessageMetadata } from '@proton/shared/lib/api/messages';
 import { EVENT_ERRORS } from '@proton/shared/lib/errors';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
+import { isMobile } from '@proton/shared/lib/helpers/browser';
 import { Api, LabelCount, Recipient, UserModel } from '@proton/shared/lib/interfaces';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { getRecipients } from '@proton/shared/lib/mail/messages';
-import isTruthy from '@proton/utils/isTruthy';
+import { isPaid } from '@proton/shared/lib/user/helpers';
 
-import { MAIL_EVENTLOOP_NAME } from '../../constants';
 import { GetMessageKeys } from '../../hooks/message/useGetMessageKeys';
-import {
-    ESBaseMessage,
-    ESMessage,
-    ESMessageContent,
-    MetadataRecoveryPoint,
-    NormalizedSearchParams,
-} from '../../models/encryptedSearch';
+import { ESItemChangesMail, ESMessage, NormalizedSearchParams, StoredCiphertext } from '../../models/encryptedSearch';
 import { Event } from '../../models/event';
 import { queryEvents } from './esAPI';
-import { fetchMessage, getBaseMessage } from './esBuild';
-import { shouldOnlySortResults, testMetadata } from './esSearch';
-import { convertEventType, getTotal } from './esSync';
-import { parseSearchParams as parseSearchParamsMail, resetSort } from './esUtils';
+import { fetchMessage } from './esBuild';
+import { normaliseSearchParams, shouldOnlySortResults, testMetadata } from './esSearch';
+import { convertEventType } from './esSync';
+import { getTotalMessages, parseSearchParams as parseSearchParamsMail, resetSort } from './esUtils';
 
 interface Props {
     getMessageKeys: GetMessageKeys;
     getMessageCounts: () => Promise<LabelCount[]>;
     api: Api;
     user: UserModel;
+    welcomeFlags: WelcomeFlagsState;
+    updateSpotlightES: <V = any>(value: V) => Promise<Feature<V>>;
     history: History;
 }
 
-export const getItemInfo = (item: ESBaseMessage | ESMessage): ESItemInfo => ({
-    ID: item.ID,
-    timepoint: [item.Time, item.Order],
-});
+export const getTimePoint = (item: ESMessage | StoredCiphertext) => [item.Time, item.Order] as [number, number];
+export const getItemID = (item: Message | StoredCiphertext | ESMessage) => item.ID;
 
 export const getESHelpers = ({
     getMessageKeys,
     getMessageCounts,
     api,
     user,
+    welcomeFlags,
+    updateSpotlightES,
     history,
-}: Props): ESHelpers<ESBaseMessage, NormalizedSearchParams, ESMessageContent> => {
+}: Props): ESHelpers<Message, ESMessage, NormalizedSearchParams, ESItemChangesMail, StoredCiphertext> => {
     const { ID: userID } = user;
 
-    const fetchESItem = (
-        itemID: string,
-        abortSignal?: AbortSignal,
-        esCacheRef?: React.MutableRefObject<ESCache<ESBaseMessage, unknown>>
-    ) => fetchMessage(itemID, api, getMessageKeys, abortSignal, esCacheRef);
+    const fetchESItem = (itemID: string, itemMetadata?: Message, abortSignal?: AbortSignal) =>
+        fetchMessage(itemID, api, getMessageKeys, abortSignal, itemMetadata);
 
-    // We need to keep the recovery point for metadata indexing in memory
-    // for cases where IDB couldn't be instantiated but we still want to
-    // index content
-    let metadataRecoveryPoint: MetadataRecoveryPoint = {};
-    const queryItemsMetadata = async (signal: AbortSignal) => {
-        const messagesPromises: Promise<ESBaseMessage[] | undefined>[] = [];
-        const Messages: ESBaseMessage[] = [];
-
-        let recoveryPoint: MetadataRecoveryPoint | undefined = metadataRecoveryPoint;
-        // Note that indexing, and therefore an instance of this function,
-        // can exist even without an IDB, because we can index in memory only.
-        // Therefore, we have to check if an IDB exists before querying it
-        if (await checkVersionedESDB(userID)) {
-            recoveryPoint = await readMetadataRecoveryPoint(userID);
-        }
-
-        const total = await getTotal(getMessageCounts)();
-        const numPages = Math.ceil(total / ES_MAX_PARALLEL_ITEMS);
-
-        let Page = 0;
-        while (Page < ES_MAX_METADATA_BATCH && Page < numPages) {
-            messagesPromises[Page] = apiHelper<{ Messages: Message[] }>(
-                api,
-                signal,
-                queryMessageMetadata({
-                    PageSize: ES_MAX_PARALLEL_ITEMS,
-                    Location: '5',
-                    Sort: 'Time',
-                    Desc: 1,
-                    Page,
-                    End: recoveryPoint?.End,
-                    EndID: recoveryPoint?.EndID,
-                } as any),
-                'queryMessageMetadata'
-            ).then((result) => {
-                if (!result) {
-                    return;
-                }
-                return result.Messages.map((message) => getBaseMessage(message));
-            });
-            Page++;
-        }
-
-        if (messagesPromises.length) {
-            const awaitedMessages = await Promise.all(messagesPromises);
-            // We only want to return messages metadata up until the first
-            // undefined, which means a failed batch, to avoid leaving holes
-            // in the indexe metadata
-            for (const batch of awaitedMessages) {
-                if (!batch) {
-                    break;
-                }
-                Messages.push(...batch);
-            }
-        }
-
-        // Fetching is over
-        if (!Messages.length) {
-            return { resultMetadata: [] };
-        }
-
-        const lastMessage = Messages[Messages.length - 1];
-        const newRecoveryPoint = {
-            End: lastMessage.Time,
-            EndID: lastMessage.ID,
-        };
-
+    const prepareCiphertext = (itemToStore: ESMessage, aesGcmCiphertext: AesGcmCiphertext) => {
+        const { ID, Time, Order, LabelIDs } = itemToStore;
         return {
-            resultMetadata: Messages,
-            setRecoveryPoint: async () => {
-                metadataRecoveryPoint = newRecoveryPoint;
-                return setMetadataRecoveryPoint(userID, newRecoveryPoint);
-            },
+            ID,
+            Time,
+            Order,
+            LabelIDs,
+            aesGcmCiphertext,
         };
     };
 
-    const searchContent = (esSearchParams: NormalizedSearchParams, itemToSearch: ESMessageContent) => {
-        const { normalizedKeywords } = esSearchParams;
-        if (!normalizedKeywords) {
+    const queryItemsMetadata = async (storedItem: StoredCiphertext | undefined, signal: AbortSignal) => {
+        const result = await apiHelper<{ Total: number; Messages: Message[] }>(
+            api,
+            signal,
+            queryMessageMetadata({
+                Limit: ES_MAX_PARALLEL_ITEMS,
+                Location: '5',
+                Sort: 'Time',
+                Desc: 1,
+                EndID: storedItem?.ID,
+                End: storedItem?.Time,
+            } as any),
+            'queryMessageMetadata',
+            userID
+        );
+
+        return result?.Messages;
+    };
+
+    const preFilter = (storedCiphertext: StoredCiphertext, esSearchParams: NormalizedSearchParams) =>
+        storedCiphertext.LabelIDs.includes(esSearchParams.labelID);
+
+    const applySearch = (esSearchParams: NormalizedSearchParams, itemToSearch: ESMessage) => {
+        const { Sender } = itemToSearch;
+
+        const transformRecipients = (recipients: Recipient[]) => [
+            ...recipients.map((recipient) => recipient.Address.toLocaleLowerCase()),
+            ...recipients.map((recipient) => recipient.Name.toLocaleLowerCase()),
+        ];
+
+        const recipients = transformRecipients(getRecipients(itemToSearch));
+        const sender = transformRecipients([Sender]);
+
+        if (!testMetadata(esSearchParams, itemToSearch, recipients, sender)) {
             return false;
         }
 
-        const { decryptedBody, decryptedSubject } = itemToSearch;
+        const { normalizedKeywords } = esSearchParams;
+        if (!normalizedKeywords) {
+            return true;
+        }
 
-        return testKeywords(normalizedKeywords, [decryptedSubject || '', decryptedBody || '']);
+        const { Subject, decryptedBody, decryptedSubject } = itemToSearch;
+        const subject = decryptedSubject || Subject;
+
+        return testKeywords(normalizedKeywords, [subject, ...recipients, ...sender, decryptedBody || '']);
     };
 
     const checkIsReverse = (esSearchParams: NormalizedSearchParams) => esSearchParams.sort.desc;
 
+    const getTotalItems = async () => {
+        const messageCounts = await getMessageCounts();
+        return getTotalMessages(messageCounts);
+    };
+
+    const updateESItem = (esItemMetadata: ESItemChangesMail, oldItem: ESMessage): ESMessage => {
+        const { LabelIDsRemoved, LabelIDsAdded, ...otherChanges } = esItemMetadata;
+        let { LabelIDs } = oldItem;
+        if (LabelIDsRemoved) {
+            LabelIDs = LabelIDs.filter((labelID) => !LabelIDsRemoved.includes(labelID));
+        }
+        if (LabelIDsAdded) {
+            LabelIDs = LabelIDs.concat(LabelIDsAdded);
+        }
+
+        return {
+            ...oldItem,
+            ...otherChanges,
+            LabelIDs,
+        };
+    };
+
+    const getDecryptionErrorParams = (): NormalizedSearchParams => {
+        return {
+            ...normaliseSearchParams({}, '5'),
+            decryptionError: true,
+        };
+    };
+
     const getKeywords = (esSearchParams: NormalizedSearchParams) => esSearchParams.normalizedKeywords;
+
+    const getSearchInterval = (esSearchParams?: NormalizedSearchParams) => ({
+        begin: esSearchParams?.begin,
+        end: esSearchParams?.end,
+    });
 
     const getSearchParams = () => {
         const { isSearch, esSearchParams } = parseSearchParamsMail(history.location);
@@ -167,30 +162,29 @@ export const getESHelpers = ({
         };
     };
 
-    const getPreviousEventID = async (): Promise<EventsObject> => {
+    const getPreviousEventID = async () => {
         const event = await queryEvents(api);
         if (!event || !event.EventID) {
-            return {};
+            throw new Error('Last event not found');
         }
-        let eventsToStore: EventsObject = {};
-        eventsToStore[MAIL_EVENTLOOP_NAME] = event.EventID;
-        return eventsToStore;
+        return event.EventID;
     };
 
-    const getEventFromIDB = async (): Promise<{
-        newEvents: ESEvent<ESBaseMessage>[];
+    const getEventFromLS = async (): Promise<{
+        newEvents: ESEvent<ESItemChangesMail>[];
         shouldRefresh: boolean;
-        eventsToStore: EventsObject;
+        eventToStore: string | undefined;
     }> => {
-        const storedEventID = await readLastEvent(userID, MAIL_EVENTLOOP_NAME);
+        const { getES } = esStorageHelpers();
+        const storedEventID = getES.Event(userID);
         if (!storedEventID) {
-            throw new Error('Event ID from IDB not found');
+            throw new Error('Event ID from local storage not found');
         }
 
         const initialEvent = await queryEvents(api, storedEventID);
 
         if (!initialEvent) {
-            throw new Error('Event fetch failed');
+            throw new Error('Event from local storage not found');
         }
 
         // We want to sync all items, potentially in multiple batches if the More flag
@@ -214,67 +208,54 @@ export const getESHelpers = ({
                     newEvents.push(newEventToCheck);
                 }
             } catch (error: any) {
-                esSentryReport('getEventFromIDB: queryEvents', { error });
-                return getEventFromIDB();
+                esSentryReport('getEventFromLS: queryEvents', { error });
+                return getEventFromLS();
             }
         }
 
-        const { EventID } = newEvents[newEvents.length - 1];
-        if (!EventID) {
-            throw new Error('Last event has no ID');
-        }
-
-        let eventsToStore: EventsObject = {};
-        eventsToStore[MAIL_EVENTLOOP_NAME] = EventID;
-
-        const esEvents: ESEvent<ESBaseMessage>[] = newEvents.map((event) => convertEventType(event)).filter(isTruthy);
+        const shouldRefresh = newEvents.reduce((accumulator, event) => {
+            return accumulator || hasBit(event.Refresh, EVENT_ERRORS.MAIL);
+        }, false);
 
         return {
-            newEvents: esEvents,
-            shouldRefresh: esEvents.some((event) => {
-                return hasBit(event.Refresh, EVENT_ERRORS.MAIL);
-            }),
-            eventsToStore,
+            newEvents: newEvents.map((event) => convertEventType(event)),
+            shouldRefresh,
+            eventToStore: newEvents[newEvents.length - 1].EventID,
         };
     };
 
-    const searchMetadata = (
-        esSearchParams: NormalizedSearchParams,
-        metadata: ESBaseMessage,
-        filterOnly: boolean = false
-    ) => {
-        const { Sender, Subject } = metadata;
-
-        const transformRecipients = (recipients: Recipient[]) => [
-            ...recipients.map((recipient) => recipient.Address.toLocaleLowerCase()),
-            ...recipients.map((recipient) => recipient.Name.toLocaleLowerCase()),
-        ];
-
-        const recipients = transformRecipients(getRecipients(metadata));
-        const sender = transformRecipients([Sender]);
-
-        const metadataFilter = testMetadata(esSearchParams, metadata, recipients, sender);
-        let keywordTest = true;
-        if (!!esSearchParams.normalizedKeywords && !filterOnly) {
-            keywordTest = testKeywords(esSearchParams.normalizedKeywords, [Subject, ...recipients, ...sender]);
+    const indexNewUser = async () => {
+        try {
+            if (welcomeFlags.isWelcomeFlow && !isMobile() && !indexKeyExists(userID) && isPaid(user)) {
+                // Start indexing for new users and prevent showing the spotlight on ES to them
+                await updateSpotlightES(false);
+                return true;
+            }
+        } catch (error) {
+            console.log('ES effect error', error);
         }
-
-        return metadataFilter && keywordTest;
+        return false;
     };
 
     return {
-        getItemInfo,
+        getItemID,
         fetchESItem,
+        prepareCiphertext,
         queryItemsMetadata,
-        searchContent,
+        preFilter,
+        applySearch,
         checkIsReverse,
         shouldOnlySortResults,
-        getTotalItems: getTotal(getMessageCounts),
+        getTimePoint,
+        getSearchInterval,
+        getTotalItems,
+        updateESItem,
+        getDecryptionErrorParams,
         getKeywords,
         getSearchParams,
         resetSort: () => resetSort(history),
         getPreviousEventID,
-        getEventFromIDB,
-        searchMetadata,
+        getEventFromLS,
+        indexNewUser,
     };
 };
