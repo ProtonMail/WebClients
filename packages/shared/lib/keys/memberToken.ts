@@ -1,5 +1,4 @@
 import { CryptoProxy, PrivateKeyReference, PublicKeyReference, VERIFICATION_STATUS } from '@proton/crypto';
-import getRandomValues from '@proton/get-random-values';
 
 import { uint8ArrayToBase64String } from '../helpers/encoding';
 
@@ -30,7 +29,7 @@ export const decryptMemberToken = async (
  * Generates the member token to decrypt its member key
  */
 export const generateMemberToken = () => {
-    const token = getRandomValues(new Uint8Array(128));
+    const token = crypto.getRandomValues(new Uint8Array(128));
     return uint8ArrayToBase64String(token);
 };
 

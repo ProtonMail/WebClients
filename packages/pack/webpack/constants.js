@@ -3,7 +3,6 @@ const BABEL_INCLUDE_NODE_MODULES = [
     'pmcrypto-v7',
     '@proton/pack',
     '@proton/shared',
-    '@proton/get-random-values',
     '@proton/srp',
     '@proton/components',
     '@protontech/mutex-browser',

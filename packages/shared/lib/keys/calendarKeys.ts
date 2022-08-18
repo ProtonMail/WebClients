@@ -7,7 +7,6 @@ import {
     VERIFICATION_STATUS,
     toPublicKeyReference,
 } from '@proton/crypto';
-import getRandomValues from '@proton/get-random-values';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { ENCRYPTION_CONFIGS, ENCRYPTION_TYPES } from '../constants';
@@ -18,7 +17,7 @@ import { CalendarKeyFlags, CalendarMember, DecryptedCalendarKey, CalendarKey as 
 import { CalendarSetupData } from '../interfaces/calendar/Api';
 
 export const generatePassphrase = () => {
-    const value = getRandomValues(new Uint8Array(32));
+    const value = crypto.getRandomValues(new Uint8Array(32));
     return uint8ArrayToBase64String(value);
 };
 

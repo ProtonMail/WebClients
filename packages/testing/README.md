@@ -12,4 +12,4 @@ Handlers are for [Mock Service Worker](https://mswjs.io) to use in mock API resp
 
 ## Mocks
 
-The mocks are all blank apart from the API. The simple API mock is necessary to allow the use of `MSW`.
+The mocks are all blank apart from the API and getRandomValues. The simple API mock is necessary to allow the use of `MSW`.

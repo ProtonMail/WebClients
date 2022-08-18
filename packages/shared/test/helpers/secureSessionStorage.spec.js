@@ -1,9 +1,10 @@
+import { disableRandomMock, initRandomMock } from '@proton/testing/lib/mockRandomValues';
+
 import { load, mergeParts, save, separateParts } from '../../lib/helpers/secureSessionStorage';
-import { disableRandomMock, initRandomMock } from '../mockRandomValues';
 
 describe('secureSessionStorage', () => {
-    beforeAll(initRandomMock);
-    afterAll(disableRandomMock);
+    beforeAll(() => initRandomMock());
+    afterAll(() => disableRandomMock());
 
     it('should be able to save and load data in window.name and sessionStorage', () => {
         const data = { foo: 'bar' };

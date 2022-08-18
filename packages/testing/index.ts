@@ -5,4 +5,6 @@ export * from './lib/mockApi';
 export * from './lib/mockNotifications';
 export * from './lib/mockModals';
 
+export * from './lib/mockRandomValues';
+
 export { rest } from 'msw';

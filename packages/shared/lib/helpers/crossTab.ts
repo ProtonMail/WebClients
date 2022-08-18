@@ -1,5 +1,3 @@
-import getRandomValues from '@proton/get-random-values';
-
 import { uint8ArrayToBase64String } from './encoding';
 import { removeItem, setItem } from './storage';
 
@@ -10,7 +8,7 @@ const CROSS_TAB_EVENT_KEY = 'cte';
 let id: string | undefined;
 
 const generateId = () => {
-    return uint8ArrayToBase64String(getRandomValues(new Uint8Array(6)));
+    return uint8ArrayToBase64String(crypto.getRandomValues(new Uint8Array(6)));
 };
 
 export const sendMessageToTabs = (type: string, data: any) => {

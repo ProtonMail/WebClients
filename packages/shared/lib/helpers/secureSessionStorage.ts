@@ -1,5 +1,3 @@
-import getRandomValues from '@proton/get-random-values';
-
 // Not using openpgp to allow using this without having to depend on openpgp being loaded
 import { stringToUint8Array, uint8ArrayToString } from './encoding';
 import { hasStorage as hasSessionStorage } from './sessionStorage';
@@ -96,7 +94,7 @@ const separatePart = (value: string) => {
     const item = stringToUint8Array(value);
     const paddedLength = Math.ceil(item.length / 256) * 256;
 
-    const share1 = getRandomValues(new Uint8Array(paddedLength));
+    const share1 = crypto.getRandomValues(new Uint8Array(paddedLength));
     const share2 = new Uint8Array(share1);
 
     for (let i = 0; i < item.length; i++) {
