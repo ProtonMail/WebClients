@@ -12,7 +12,7 @@ import {
 } from '../../constants';
 import { hasLabel, isFilter, isSearch, isUnread, sort as sortElements } from '../../helpers/elements';
 import { expectedPageLength } from '../../helpers/paging';
-import { ESBaseMessage, ESMessageContent, NormalizedSearchParams } from '../../models/encryptedSearch';
+import { ESMessage, NormalizedSearchParams } from '../../models/encryptedSearch';
 import { SearchParameters } from '../../models/tools';
 import { RootState } from '../store';
 import { ElementsStateParams } from './elementsTypes';
@@ -36,7 +36,7 @@ const currentSearch = (_: RootState, { search }: { search: SearchParameters }) =
 const currentParams = (_: RootState, { params }: { params: ElementsStateParams }) => params;
 const currentESDBStatus = (
     _: RootState,
-    { esDBStatus }: { esDBStatus: ESDBStatus<ESBaseMessage, ESMessageContent, NormalizedSearchParams> }
+    { esDBStatus }: { esDBStatus: ESDBStatus<ESMessage, NormalizedSearchParams> }
 ) => esDBStatus;
 const currentCounts = (_: RootState, { counts }: { counts: { counts: LabelCount[]; loading: boolean } }) => counts;
 
