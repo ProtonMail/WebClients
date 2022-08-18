@@ -108,6 +108,7 @@ const MemberActions = ({
                 LocalID,
                 UID,
                 persistent: authentication.getPersistent(),
+                trusted: false,
             });
             done(LocalID);
             return;

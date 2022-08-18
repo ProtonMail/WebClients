@@ -8,6 +8,7 @@ export interface PersistedSession {
     blob?: string;
     isSubUser: boolean;
     persistent: boolean;
+    trusted: boolean;
 }
 
 export interface PersistedSessionWithLocalID extends PersistedSession {

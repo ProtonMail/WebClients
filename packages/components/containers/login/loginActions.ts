@@ -103,7 +103,7 @@ const finalizeLogin = async ({
         };
     }
 
-    await persistSession({ ...authResult, User, keyPassword, api, persistent });
+    let trusted = false;
 
     if (keyPassword) {
         const numberOfReactivatedKeys = await attemptDeviceRecovery({
@@ -139,10 +139,13 @@ const finalizeLogin = async ({
 
                 if (userSettings.DeviceRecovery) {
                     await storeDeviceRecovery({ api: authApi, user: User, userKeys });
+                    trusted = true;
                 }
             }
         }
     }
+
+    await persistSession({ ...authResult, User, keyPassword, api, persistent, trusted });
 
     return {
         to: AuthStep.DONE,
@@ -152,6 +155,7 @@ const finalizeLogin = async ({
             Addresses: maybeAddresses,
             keyPassword,
             persistent,
+            trusted,
         },
     };
 };
