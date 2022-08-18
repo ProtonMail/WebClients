@@ -13,7 +13,7 @@ import {
 } from '@proton/components';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { User, UserSettings } from '@proton/shared/lib/interfaces';
-import { hasRecoveryMessage } from '@proton/shared/lib/recoveryFile/deviceRecovery';
+import { getHasRecoveryMessage } from '@proton/shared/lib/recoveryFile/deviceRecovery';
 
 export const shouldShowConfirmSignOutModal = ({
     user,
@@ -26,7 +26,7 @@ export const shouldShowConfirmSignOutModal = ({
 }) => {
     const hasEnabledDeviceBasedRecovery = authentication.getPersistent() && userSettings.DeviceRecovery;
 
-    return hasEnabledDeviceBasedRecovery || hasRecoveryMessage(user.ID);
+    return hasEnabledDeviceBasedRecovery || getHasRecoveryMessage(user.ID);
 };
 
 interface Props extends Omit<AlertModalProps, 'title' | 'buttons' | 'children'> {
