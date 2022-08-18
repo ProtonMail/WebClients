@@ -223,7 +223,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
             } catch (error) {}
         }
 
-        const { keyPassword, UID, User: user, LocalID, persistent, appIntent: maybeFlowAppIntent } = args;
+        const { keyPassword, UID, User: user, LocalID, persistent, trusted, appIntent: maybeFlowAppIntent } = args;
         const toAppIntent = maybeFlowAppIntent?.app || maybePreAppIntent;
         // Special case for external users to redirect to VPN until more apps are supported, when no app intent is provided.
         const toApp = toAppIntent || (user.Type === UserType.EXTERNAL ? APPS.PROTONVPN_SETTINGS : DEFAULT_APP);
@@ -245,7 +245,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
         if (forkState?.type === SSOType.Proton && getExtension(forkState.payload.app)) {
             await handleProduceFork({
                 type: SSOType.Proton,
-                payload: { ...forkState.payload, UID, keyPassword, persistent },
+                payload: { ...forkState.payload, UID, keyPassword, persistent, trusted },
             });
             return;
         }
@@ -260,7 +260,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
         if (forkState?.type === SSOType.Proton && args.flow !== 'signup') {
             await handleProduceFork({
                 type: SSOType.Proton,
-                payload: { ...forkState.payload, UID, keyPassword, persistent },
+                payload: { ...forkState.payload, UID, keyPassword, persistent, trusted },
             });
             return;
         }

@@ -102,10 +102,20 @@ interface ProduceForkArguments {
     app: APP_NAMES;
     state: string;
     persistent: boolean;
+    trusted: boolean;
     type?: FORK_TYPE;
 }
 
-export const produceFork = async ({ api, UID, keyPassword, state, app, type, persistent }: ProduceForkArguments) => {
+export const produceFork = async ({
+    api,
+    UID,
+    keyPassword,
+    state,
+    app,
+    type,
+    persistent,
+    trusted,
+}: ProduceForkArguments) => {
     const rawKey = crypto.getRandomValues(new Uint8Array(32));
     const base64StringKey = encodeBase64URL(uint8ArrayToString(rawKey));
     const payload = keyPassword ? await getForkEncryptedBlob(await getKey(rawKey), { keyPassword }) : undefined;
@@ -127,6 +137,9 @@ export const produceFork = async ({ api, UID, keyPassword, state, app, type, per
     toConsumeParams.append('sk', base64StringKey);
     if (persistent) {
         toConsumeParams.append('p', '1');
+    }
+    if (trusted) {
+        toConsumeParams.append('tr', '1');
     }
     if (type !== undefined) {
         toConsumeParams.append('t', type);
@@ -156,6 +169,7 @@ export const getConsumeForkParameters = () => {
     const base64StringKey = hashParams.get('sk') || '';
     const type = hashParams.get('t') || '';
     const persistent = hashParams.get('p') || '';
+    const trusted = hashParams.get('tr') || '';
 
     return {
         state: state.slice(0, 100),
@@ -163,6 +177,7 @@ export const getConsumeForkParameters = () => {
         key: base64StringKey.length ? getValidatedRawKey(base64StringKey) : undefined,
         type: getValidatedForkType(type),
         persistent: persistent === '1',
+        trusted: trusted === '1',
     };
 };
 
@@ -176,9 +191,10 @@ interface ConsumeForkArguments {
     state: string;
     key: Uint8Array;
     persistent: boolean;
+    trusted: boolean;
 }
 
-export const consumeFork = async ({ selector, api, state, key, persistent }: ConsumeForkArguments) => {
+export const consumeFork = async ({ selector, api, state, key, persistent, trusted }: ConsumeForkArguments) => {
     const stateData = getForkStateData(sessionStorage.getItem(`f${state}`));
     if (!stateData) {
         throw new InvalidForkConsumeError(`Missing state ${state}`);
@@ -229,6 +245,7 @@ export const consumeFork = async ({ selector, api, state, key, persistent }: Con
         LocalID,
         keyPassword,
         persistent,
+        trusted,
         AccessToken: newAccessToken,
         RefreshToken: newRefreshToken,
     };

@@ -109,7 +109,7 @@ const UserDropdown = ({ onOpenChat, onOpenIntroduction, ...rest }: Props) => {
 
     const handleSignOutClick = () => {
         close();
-        if (shouldShowConfirmSignOutModal({ user, userSettings, authentication })) {
+        if (shouldShowConfirmSignOutModal({ user, authentication })) {
             setConfirmSignOutModal(true);
         } else {
             logout();

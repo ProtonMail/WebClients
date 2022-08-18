@@ -61,6 +61,7 @@ export interface AuthSession {
     flow?: AuthFlows;
     appIntent?: AppIntent;
     persistent: boolean;
+    trusted: boolean;
 }
 
 export type AuthActionResponse =

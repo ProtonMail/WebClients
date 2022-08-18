@@ -298,6 +298,7 @@ const MinimalLoginContainer = ({ onLogin, hasChallenge = false, ignoreUnlock = f
                             hasGenerateKeys: false,
                             ignoreUnlock,
                             hasInternalAddressSetup: false,
+                            hasTrustedDeviceRecovery: false,
                             persistent: false,
                         })
                             .then(handleResult)
