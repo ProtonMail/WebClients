@@ -11,9 +11,9 @@ import {
     ModalTwoHeader,
     Row,
 } from '@proton/components';
+import humanSize from '@proton/shared/lib/helpers/humanSize';
 
 import { useLinksDetailsView } from '../store';
-import { Cells } from './FileBrowser';
 import ModalContentLoader from './ModalContentLoader';
 
 interface Props {
@@ -57,9 +57,7 @@ const FilesDetailsModal = ({ shareId, linkIds, onClose, open }: Props) => {
                 <Row>
                     <Label style={{ cursor: 'default' }}>{c('Title').t`Total size`}</Label>
                     <Field className="pt0-5">
-                        <b>
-                            <Cells.SizeCell size={size} />
-                        </b>
+                        <b>{humanSize(size)}</b>
                     </Field>
                 </Row>
             </ModalTwoContent>
