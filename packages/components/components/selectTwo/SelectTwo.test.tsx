@@ -270,4 +270,51 @@ describe('SelectTwo component', () => {
 
         expect(getByText('two')).toHaveFocus();
     });
+
+    it('supports multiple selection mode', () => {
+        const onChangeSpy = jest.fn();
+
+        const output = render(
+            <SelectTwo data-testid="dropdown-button" multiple value={['one', 'two']} onChange={onChangeSpy}>
+                <Option title="one" value="one" />
+                <Option title="two" value="two" />
+                <Option title="three" value="three" />
+            </SelectTwo>
+        );
+
+        openByClick(output);
+
+        expect(output.getByText('one')).toHaveClass('dropdown-item--is-selected');
+        expect(output.getByText('two')).toHaveClass('dropdown-item--is-selected');
+        expect(output.getByText('three')).not.toHaveClass('dropdown-item--is-selected');
+
+        fireEvent.click(output.getByText('three'));
+        expect(onChangeSpy).toBeCalledWith({ selectedIndex: 2, value: ['one', 'two', 'three'] });
+    });
+
+    it('supports multiple selection mode with complex values', () => {
+        const onChangeSpy = jest.fn();
+        const options = [
+            { label: 'one', key: 1 },
+            { label: 'two', key: 2 },
+            { label: 'three', key: 3 },
+        ];
+
+        const output = render(
+            <SelectTwo data-testid="dropdown-button" multiple value={[options[0]]} onChange={onChangeSpy}>
+                {options.map((option) => (
+                    <Option title={option.label} value={option} key={option.key} />
+                ))}
+            </SelectTwo>
+        );
+
+        openByClick(output);
+
+        expect(output.getByText('one', { selector: 'button' })).toHaveClass('dropdown-item--is-selected');
+        expect(output.getByText('two', { selector: 'button' })).not.toHaveClass('dropdown-item--is-selected');
+        expect(output.getByText('three', { selector: 'button' })).not.toHaveClass('dropdown-item--is-selected');
+
+        fireEvent.click(output.getByText('three'));
+        expect(onChangeSpy).toBeCalledWith({ selectedIndex: 2, value: [options[0], options[2]] });
+    });
 });
