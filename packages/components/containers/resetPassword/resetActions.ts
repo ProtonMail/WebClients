@@ -47,7 +47,7 @@ export const handleNewPassword = async ({
     cache: ResetCacheResult;
     api: Api;
 }): Promise<ResetActionResponse> => {
-    const { username, token, resetResponse, persistent, appName } = cache;
+    const { username, token, resetResponse, persistent, appName, hasTrustedDeviceRecovery } = cache;
     if (!resetResponse || !token) {
         throw new Error('Missing response');
     }
@@ -97,8 +97,7 @@ export const handleNewPassword = async ({
     }
 
     let trusted = false;
-
-    if (keyPassword) {
+    if (hasTrustedDeviceRecovery && keyPassword) {
         const addresses = await getAllAddresses(authApi);
         const numberOfReactivatedKeys = await attemptDeviceRecovery({
             api: authApi,
@@ -342,12 +341,14 @@ export const handleRequestRecoveryMethods = async ({
     persistent,
     api,
     hasGenerateKeys,
+    hasTrustedDeviceRecovery,
 }: {
     appName: APP_NAMES;
     username: string;
     persistent: boolean;
     api: Api;
     hasGenerateKeys: boolean;
+    hasTrustedDeviceRecovery: boolean;
 }): Promise<ResetActionResponse> => {
     try {
         const { Type, Methods }: { Type: AccountType; Methods: RecoveryMethod[] } = await api(
@@ -364,6 +365,7 @@ export const handleRequestRecoveryMethods = async ({
                     method: 'email',
                     Methods,
                     hasGenerateKeys,
+                    hasTrustedDeviceRecovery,
                 },
                 to: STEPS.VALIDATE_RESET_TOKEN,
             };
@@ -383,6 +385,7 @@ export const handleRequestRecoveryMethods = async ({
                 persistent,
                 Methods,
                 hasGenerateKeys,
+                hasTrustedDeviceRecovery,
             },
             to: STEPS.REQUEST_RESET_TOKEN,
         };
