@@ -897,7 +897,7 @@
         "Ce message comporte du contenu distant."
       ],
       "Trash all": [
-        "Tout supprimer"
+        "Move all to trash"
       ],
       "Trust": [
         "Approuver"
@@ -3050,7 +3050,7 @@
         "Désélectionnez au moins ${ calendarToFixCount } calendriers ou"
       ],
       "Domain not available, try again later": [
-        "Domaine non disponible, veuillez réessayer plus tard"
+        "Domaine non disponible, veuillez réessayer plus tard."
       ],
       "Draft could not be saved. Try again.": [
         "Le brouillon n'a pas pu être enregistré, veuillez réessayer."
@@ -3170,7 +3170,7 @@
         "Les mots de passe ne correspondent pas."
       ],
       "Please activate your search again": [
-        "Veuillez réactiver la recherche de contenu"
+        "Veuillez réactiver la recherche de contenu."
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Veuillez corriger le conflit en surbrillance pour continuer.",
@@ -3238,7 +3238,7 @@
         "Quelque chose s'est mal passé, veuillez ${ refresh } afin de pouvoir continuer. Si ce message d'erreur s'affiche toujours, veuillez contacter notre ${ supportTeam }."
       ],
       "Something went wrong, please try again": [
-        "Un problème est survenu, veuillez réessayer plus tard"
+        "Un problème est survenu, veuillez réessayer plus tard."
       ],
       "Sorry, Proton can't decrypt your message. Please check that all your keys are active.": [
         "Désolé, Proton ne peut pas déchiffrer votre message. Veuillez vérifier que toutes vos clés sont activées."
@@ -3296,7 +3296,7 @@
         "Ce message a déjà été envoyé. Un nouveau brouillon a été enregistré."
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "Il est possible que ce message contienne des liens URL qui pourraient ne pas être ouverts correctement par votre navigateur actuel."
+        "Ce message contient peut-être des liens URL qui pourraient ne pas s'ouvrir correctement avec votre navigateur."
       ],
       "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
         "Trop de filtres actifs. Nous vous invitons à passer à un abonnement payant pour activer plus de filtres."
@@ -4325,7 +4325,7 @@
         "Adresse électronique"
       ],
       "Email is forwarded to your mailbox; your email address stays hidden.": [
-        "L'e-mail est transféré à votre boîte aux lettres ; votre adresse e-mail reste cachée."
+        "L'e-mail est transféré dans votre boîte aux lettres et votre adresse e-mail reste cachée."
       ],
       "Email tracker protection is disabled": [
         "La protection contre les traqueurs dans les e-mails est désactivée"
@@ -4430,7 +4430,7 @@
         "Heures"
       ],
       "How Hide My Email works": [
-        "Comment Masquer mon e-mail fonctionne"
+        "Comment fonctionne Masquer mon e-mail"
       ],
       "I'm sending this message to a non-Proton Mail user.": [
         "J'envoie ce message à une personne qui n'utilise pas Proton Mail."
@@ -4445,7 +4445,7 @@
         "Si vous ne trouvez pas le message dans votre boîte de réception, vérifiez votre dossier indésirables/spam."
       ],
       "If your alias is sold, leaked, or abused, simply disable it to stop receiving spam.": [
-        "Si votre alias est vendu, fuite, ou est abusé, désactivez-le simplement pour arrêter de recevoir du spam."
+        "Si votre alias est vendu, divulgué ou utilisé de manière abusive, il suffit de le désactiver pour ne plus recevoir d'indésirables/spam."
       ],
       "Image description": [
         "Description de l'image"
@@ -4708,7 +4708,7 @@
         "Assistance prioritaire"
       ],
       "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
-        "Protégez votre e-mail des fuites vers les mailing-lists ou les spammeurs avec ${ maskMyEmailButton }."
+        "Protégez votre adresse électronique des fuites vers les listes de diffusion ou les spammeurs avec ${ maskMyEmailButton }."
       ],
       "Proton doesn't make money by abusing privacy.": [
         "Proton ne gagne pas d'argent en abusant de la vie privée."
@@ -4810,7 +4810,7 @@
         "SimpleLogin est un service Proton, et votre compte Proton inclut des alias Masquer mon e-mail. Pour commencer à masquer votre adresse e-mail, allez sur SimpleLogin et créez votre premier alias."
       ],
       "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
-        "SimpleLogin fournit une manière simple de créer des identifiants sur des sites tiers douteux où vous ne voulez pas exposer votre adresse e-mail réelle."
+        "SimpleLogin offre un moyen simple de créer des identifiants sur des sites tiers peu fiables où vous ne voulez pas exposer votre adresse e-mail réelle."
       ],
       "Sorry, this message does not exist or has already expired.": [
         "Désolé, ce message n'existe pas ou a déjà expiré."
@@ -4880,7 +4880,7 @@
         "Il y a eu une erreur avec la signature utilisée pour vérifier les coordonnées qui peut provenir d'une réinitialisation du mot de passe."
       ],
       "They can't spam you if they don't know your email address. Protect your inbox with Hide My Email.": [
-        "Ils ne peuvent pas vous spammer s'ils ne connaissent pas votre adresse e-mail. Protégez votre boîte aux lettres avec Masquer mon e-mail."
+        "On ne peut pas vous spammer si l'on ne connaît pas votre adresse électronique. Protégez votre boîte aux lettres avec Masquer mon e-mail."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Ce compte a été suspendu en raison d'une potentielle infraction aux règles d'utilisation."
@@ -5071,7 +5071,7 @@
         "Utilisez les raccourcis clavier pour gérer vos messages plus rapidement."
       ],
       "Using SimpleLogin is easy": [
-        "L'utilisation de SimpleLogin est simple"
+        "Utiliser SimpleLogin est facile"
       ],
       "Version ${ appVersion }": [
         "Version ${ appVersion }"
@@ -5104,7 +5104,7 @@
         "Quand souhaitez-vous que votre message soit envoyé ?"
       ],
       "When giving out your email, use a unique, disposable Hide My Email alias instead of your real email address.": [
-        "Lorsque vous devez donner votre e-mail, utilisez un alias Masquer mon e-mail jetable et unique plutôt que votre adresse e-mail réelle."
+        "Lorsque vous communiquez votre e-mail, utilisez un alias Masquer mon e-mail, jetable et unique, au lieu de votre véritable adresse e-mail."
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Lorsque vous avez activé les clés de confiance pour ${ senderName }, les clés publiques ont été ajoutées aux informations de contact."
@@ -7454,7 +7454,7 @@
         "Suppression des contacts"
       ],
       "Don't give spam a chance": [
-        "Ne laissez aucun chance au spam"
+        "Ne laissez aucune chance aux indésirables/spam"
       ],
       "Edit contact": [
         "Modifier le contact"
@@ -7807,7 +7807,7 @@
         "Données chiffrées avec une signature numérique vérifiée"
       ],
       "For messages older than 30 days, only the subject line and recipient list will be searched": [
-        "Pour les messages datant de plus de 30 jours, seuls l'objet et la liste des destinataires seront recherchés"
+        "Pour les messages datant de plus de 30 jours, seuls l'objet et la liste des destinataires seront recherchés."
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Sélectionnez le schéma PGP à utiliser lors de la signature ou du chiffrement vers un autre utilisateur. Notez que PGP/Inline force le format des messages en texte brut"
