@@ -9,13 +9,13 @@ import uniqueBy from '@proton/utils/uniqueBy';
 
 import { setNewRecoverySecret } from '../api/settingsRecovery';
 import { getItem, removeItem, setItem } from '../helpers/storage';
-import { Address, Api, DecryptedKey, User } from '../interfaces';
+import { Address, Api, DecryptedKey, KeyPair, User } from '../interfaces';
 import { getDecryptedAddressKeysHelper, getDecryptedUserKeysHelper, reactivateKeysProcess } from '../keys';
 import {
     generateRecoveryFileMessage,
     generateRecoverySecret,
     getIsRecoveryFileAvailable,
-    getPrimaryRecoverySecret,
+    getKeyWithRecoverySecret,
     getRecoverySecrets,
     parseRecoveryFiles,
     validateRecoverySecret,
@@ -147,7 +147,7 @@ const storeRecoveryMessage = async ({
     recoverySecret,
 }: {
     user: User;
-    userKeys: DecryptedKey[];
+    userKeys: KeyPair[];
     recoverySecret: string;
 }) => {
     const currentDeviceRecoveryKeys = (await getKeysFromDeviceRecovery(user)) || [];
@@ -179,7 +179,7 @@ export const storeDeviceRecovery = async ({
         return;
     }
 
-    const primaryRecoverySecret = getPrimaryRecoverySecret(user.Keys);
+    const primaryRecoverySecret = getKeyWithRecoverySecret(user.Keys.find((key) => key.ID === primaryUserKey.ID));
     if (!primaryRecoverySecret) {
         const { recoverySecret, signature } = await generateRecoverySecret(primaryUserKey.privateKey);
 
