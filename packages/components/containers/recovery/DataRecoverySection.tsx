@@ -38,7 +38,7 @@ const DataRecoverySection = () => {
     const trustedDeviceRecoveryFeature = useFeature<boolean>(FeatureCode.TrustedDeviceRecovery);
 
     const [isRecoveryFileAvailable] = useIsRecoveryFileAvailable();
-    const [isMnemonicAvailable] = useIsMnemonicAvailable();
+    const [isMnemonicAvailable, loadingIsMnemonicAvailable] = useIsMnemonicAvailable();
 
     const [disableMnemonicModal, setDisableMnemonicModalOpen, renderDisableMnemonicModal] = useModalState();
     const [generateMnemonicModal, setGenerateMnemonicModalOpen, renderGenerateMnemonicModal] = useModalState();
@@ -54,13 +54,20 @@ const DataRecoverySection = () => {
 
     const [loadingDeviceRecovery, withLoadingDeviceRecovery] = useLoading();
 
-    useSearchParamsEffect((params) => {
-        if (params.get('action') === 'generate-recovery-phrase') {
-            setGenerateMnemonicModalOpen(true);
-            params.delete('action');
-            return params;
-        }
-    }, []);
+    useSearchParamsEffect(
+        (params) => {
+            if (!isMnemonicAvailable) {
+                return;
+            }
+
+            if (params.get('action') === 'generate-recovery-phrase') {
+                setGenerateMnemonicModalOpen(true);
+                params.delete('action');
+                return params;
+            }
+        },
+        [loadingIsMnemonicAvailable]
+    );
 
     const handleChangeDeviceRecoveryToggle = async (checked: boolean) => {
         await api(updateDeviceRecovery({ DeviceRecovery: Number(checked) }));
