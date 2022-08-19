@@ -2,7 +2,7 @@ import { ReactNode, createContext, useMemo, useState } from 'react';
 
 import useControlled from '@proton/hooks/useControlled';
 
-import { SelectChangeEvent } from './select';
+import { SelectChangeEvent, isValidMultiMode } from './select';
 
 interface UseSelectOptions<V> {
     multiple: boolean;
@@ -18,7 +18,7 @@ interface UseSelectOptions<V> {
 interface UseSelectOutput<V> {
     isOpen: boolean;
     focusedIndex: number | null;
-    selectedIndexes: number[] | null;
+    selectedIndexes: number[];
     autoclose: boolean;
     open: () => void;
     close: () => void;
@@ -30,7 +30,7 @@ interface UseSelectOutput<V> {
 
 const useSelect = <V,>({
     multiple,
-    value,
+    value: maybeValue,
     options,
     isOpen: controlledOpen,
     onOpen,
@@ -38,12 +38,10 @@ const useSelect = <V,>({
     onChange,
     onValue,
 }: UseSelectOptions<V>): UseSelectOutput<V> => {
-    if (multiple && value !== undefined && !Array.isArray(value)) {
-        /* eslint-disable-next-line no-console */
-        console.warn('[SelectTwo] Incorrect usage : if using multiple mode, value must be an array');
-    }
+    const value = multiple && maybeValue === undefined ? [] : maybeValue;
+    const isMulti = isValidMultiMode<V>(value, multiple);
 
-    const [isOpen, setIsOpen] = useControlled(controlledOpen, false);
+    const [isOpen = false, setIsOpen] = useControlled(controlledOpen, false);
 
     const [focusedIndex, setFocusedIndex] = useState<UseSelectOutput<V>['focusedIndex']>(null);
 
@@ -54,18 +52,15 @@ const useSelect = <V,>({
      */
     const autoclose = !multiple || options.length <= 1;
 
-    const selectedIndexes = useMemo<number[] | null>(() => {
-        if (value === undefined) {
-            return null;
-        }
-
-        const indexes = [value]
-            .flat()
-            .map((val) => options.findIndex((option) => option === val))
-            .filter((idx) => idx !== -1);
-
-        return indexes.length > 0 ? indexes : null;
-    }, [options, value]);
+    const selectedIndexes = useMemo<number[]>(
+        () =>
+            [value]
+                .flat()
+                .filter((val) => val !== undefined)
+                .map((val) => options.findIndex((option) => option === val))
+                .filter((idx) => idx !== -1),
+        [options, value]
+    );
 
     const open = () => {
         setIsOpen(true);
@@ -92,8 +87,8 @@ const useSelect = <V,>({
 
     const handleChange: UseSelectOutput<V>['handleChange'] = (e) => {
         const nextValue: V = (() => {
-            if (multiple && value !== undefined && Array.isArray(value)) {
-                const isSelected = value?.some((selectedValue) => e.value === selectedValue) ?? false;
+            if (isMulti) {
+                const isSelected = value.some((selectedValue) => e.value === selectedValue);
 
                 return (isSelected
                     ? value.filter((selectedValue) => selectedValue !== e.value)
@@ -111,7 +106,7 @@ const useSelect = <V,>({
     return {
         open,
         close,
-        isOpen: isOpen || false,
+        isOpen,
         autoclose,
         focusedIndex,
         setFocusedIndex,
