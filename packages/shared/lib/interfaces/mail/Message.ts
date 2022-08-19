@@ -31,48 +31,51 @@ export interface UnsubscribeMethods {
     OneClick?: 'OneClick';
 }
 
-export interface Message {
+export interface MessageMetadata {
     ID: string;
     Order: number;
     DisplaySenderImage: number;
     ConversationID: string;
     Subject: string;
     Unread: number;
-    Sender: Recipient;
+    /** @deprecated use Flags instead */
+    Type?: number;
     /** @deprecated use Sender.Address instead */
     SenderAddress?: string;
     /** @deprecated use Sender.Name instead */
     SenderName?: string;
-    Flags: number;
-    /** @deprecated use Flags instead */
-    Type?: number;
-    /** @deprecated use Flags instead */
-    IsEncrypted?: number;
-    IsReplied: number;
-    IsRepliedAll: number;
-    IsForwarded: number;
+    Sender: Recipient;
     ToList: Recipient[];
     CCList: Recipient[];
     BCCList: Recipient[];
     Time: number;
     Size: number;
-    NumAttachments: number;
+    /** @deprecated use Flags instead */
+    IsEncrypted?: number;
     ExpirationTime?: number;
+    IsReplied: number;
+    IsRepliedAll: number;
+    IsForwarded: number;
     AddressID: string;
+    LabelIDs: string[];
     ExternalID: string;
+    NumAttachments: number;
+    Flags: number;
+    AttachmentInfo?: { [key in MIME_TYPES]?: AttachmentInfo };
+}
+
+export interface Message extends MessageMetadata {
     Body: string;
-    MIMEType: MIME_TYPES;
     Header: string;
     ParsedHeaders: { [key: string]: string | string[] | undefined };
+    Attachments: Attachment[];
+    MIMEType: MIME_TYPES;
     ReplyTo: Recipient;
     ReplyTos: Recipient[];
-    Attachments: Attachment[];
-    LabelIDs: string[];
+    UnsubscribeMethods?: UnsubscribeMethods;
     Password?: string;
     PasswordHint?: string;
     RightToLeft?: number;
-    UnsubscribeMethods?: UnsubscribeMethods;
-    AttachmentInfo?: { [key in MIME_TYPES]?: AttachmentInfo };
     EORecipient?: Recipient;
     BimiSelector?: string | null;
 }
@@ -97,7 +100,7 @@ export interface GetMessageResponse {
 export interface QueryMessageMetadataResponse {
     Code: number;
     Total: number;
-    Messages: Message[];
+    Messages: MessageMetadata[];
     TasksRunning: TaskRunning[];
 }
 
