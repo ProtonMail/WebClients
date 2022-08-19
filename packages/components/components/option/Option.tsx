@@ -61,9 +61,9 @@ const Option = <V,>({
                 title={title}
                 className={classnames([
                     className,
-                    'block w100 text-left text-break outline-none',
+                    'block w100 text-left outline-none',
                     active && 'active',
-                    truncate && 'text-ellipsis',
+                    truncate ? 'text-ellipsis' : 'text-break',
                 ])}
                 {...rest}
             >
