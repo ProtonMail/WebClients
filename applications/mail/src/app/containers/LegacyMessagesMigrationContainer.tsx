@@ -1,6 +1,8 @@
-import { useApi, useGetAddressKeys } from '@proton/components';
-import { migrateAll } from '@proton/shared/lib/mail/legacyMessagesMigration/helpers';
 import { useEffect } from 'react';
+
+import { useApi, useGetAddressKeys } from '@proton/components';
+import { makeLegacyMessageIDsFetcher, migrateMultiple } from '@proton/shared/lib/mail/legacyMessagesMigration/helpers';
+import noop from '@proton/utils/noop';
 
 const LegacyMessagesMigrationContainer = () => {
     const api = useApi();
@@ -9,9 +11,21 @@ const LegacyMessagesMigrationContainer = () => {
     useEffect(() => {
         const abortController = new AbortController();
         const { signal } = abortController;
-        const apiWithAbort: <T>(config: object) => Promise<T> = (config) => api({ ...config, signal });
+        // Since the migration happens in the background with the user unaware of it,
+        // we silence API to avoid displaying possible errors in the UI
+        const apiWithAbort: <T>(config: object) => Promise<T> = (config) => api({ ...config, signal, silence: true });
 
-        migrateAll({ api: apiWithAbort, getAddressKeys });
+        const run = async () => {
+            const it = makeLegacyMessageIDsFetcher(apiWithAbort);
+
+            let result = await it.next();
+            while (!result.done) {
+                const messageIDs = result.value.map(({ ID }) => ID);
+                await migrateMultiple({ messageIDs, api: apiWithAbort, getAddressKeys }).catch(noop);
+                result = await it.next();
+            }
+        };
+        void run();
 
         return () => {
             abortController.abort();
