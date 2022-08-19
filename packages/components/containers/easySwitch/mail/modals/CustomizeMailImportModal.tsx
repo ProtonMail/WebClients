@@ -8,6 +8,8 @@ import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { Address, Label } from '@proton/shared/lib/interfaces';
 import {
     ImportedMailFolder,
+    MailImportDestinationFolder,
+    MailImportGmailCategories,
     MailImportPayloadError,
     MailImporterPayload,
     TIME_PERIOD,
@@ -24,8 +26,10 @@ import {
     FormModal,
     Icon,
     LabelStack,
+    Option,
     Row,
     Select,
+    SelectTwo,
     Tooltip,
     useModalState,
 } from '../../../../components';
@@ -52,6 +56,8 @@ interface Props {
 const { FOLDER_NAMES_TOO_LONG, LABEL_NAMES_TOO_LONG, UNAVAILABLE_NAMES, MAX_FOLDERS_LIMIT_REACHED, RESERVED_NAMES } =
     MailImportPayloadError;
 
+const GMAIL_CATEGORIES = Object.values(MailImportGmailCategories);
+
 const CustomizeMailImportModal = ({
     payload,
     addresses,
@@ -75,6 +81,33 @@ const CustomizeMailImportModal = ({
     const [organizeFolderVisible, setOrganizeFolderVisible] = useState(customizeFoldersOpen);
     const { createModal } = useModals();
     const [isEditing, setIsEditing] = useState(false);
+    const hasCategories = providerFolders.some((folder) => folder.DestinationCategory !== undefined);
+    const categoriesDestOptions = [
+        { value: MailImportDestinationFolder.INBOX, title: c('Label').t`Move to Inbox` },
+        { value: MailImportDestinationFolder.ARCHIVE, title: c('Label').t`Move to Archive` },
+    ];
+    const [selectedCategoriesDest, setSelectedCategoriesDest] = useState(MailImportDestinationFolder.INBOX);
+
+    const updateCategoriesDest = (
+        payload: MailImporterPayload,
+        value: MailImportDestinationFolder
+    ): MailImporterPayload => ({
+        ...payload,
+        Mapping: payload.Mapping.map((item) => {
+            // @ts-expect-error item.Source is a string
+            if (GMAIL_CATEGORIES.includes(item.Source)) {
+                return {
+                    ...item,
+                    Destinations: {
+                        ...item.Destinations,
+                        FolderPath: value,
+                    },
+                };
+            }
+
+            return item;
+        }),
+    });
 
     const [editLabelProps, setEditLabelModalOpen] = useModalState();
 
@@ -113,7 +146,9 @@ const CustomizeMailImportModal = ({
         return false;
     }, [customizedPayload.ImportLabel, customizedPayload.StartTime, customizedPayload.Mapping]);
 
-    const handleChangePayload = (newPayload: MailImporterPayload) => setCustomizedPayload(newPayload);
+    const handleChangePayload = (newPayload: MailImporterPayload) => {
+        setCustomizedPayload(updateCategoriesDest(newPayload, selectedCategoriesDest));
+    };
 
     const handleCancel = () => {
         if (!hasChanged) {
@@ -321,7 +356,7 @@ const CustomizeMailImportModal = ({
                 </Row>
             </div>
 
-            <div className="mb1 flex-align-items-center">
+            <div className="mb1 border-bottom flex-align-items-center">
                 <Row>
                     <FormLabel>{isLabelMapping ? c('Label').t`Manage labels` : c('Label').t`Manage folders`}</FormLabel>
                     <div className="flex flex-align-items-center">
@@ -361,6 +396,40 @@ const CustomizeMailImportModal = ({
                     </div>
                 </Row>
             </div>
+
+            {hasCategories && (
+                <div className="mb1 flex-align-items-center">
+                    <Row>
+                        <FormLabel className="flex flex-align-items-center">
+                            {c('Label').t`Manage categories`}
+                            <Tooltip
+                                title={c('Tooltip')
+                                    .t`Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.`}
+                            >
+                                <Icon name="info-circle" className="ml0-5" />
+                            </Tooltip>
+                        </FormLabel>
+                        <Field>
+                            <SelectTwo<MailImportDestinationFolder>
+                                value={selectedCategoriesDest}
+                                onChange={({ value }) => {
+                                    setSelectedCategoriesDest(value);
+                                    setCustomizedPayload(updateCategoriesDest(customizedPayload, value));
+                                }}
+                            >
+                                {categoriesDestOptions.map((option) => (
+                                    <Option
+                                        key={option.value}
+                                        value={option.value}
+                                        title={option.title}
+                                        selected={selectedCategoriesDest === option.value}
+                                    />
+                                ))}
+                            </SelectTwo>
+                        </Field>
+                    </Row>
+                </div>
+            )}
 
             {organizeFolderVisible && (
                 <ImportManageFolders
