@@ -27,3 +27,17 @@ export interface SelectProps<V>
     onOpen?: () => void;
     renderSelected?: (selected?: V) => ReactElement;
 }
+
+export function isValidMultiMode<V>(value: any, multiple: boolean): value is V & any[] {
+    if (!multiple) {
+        return false;
+    }
+
+    if (value !== undefined && !Array.isArray(value)) {
+        /* eslint-disable-next-line no-console */
+        console.warn('[SelectTwo] Incorrect usage : if using multiple mode, value must be an array');
+        return false;
+    }
+
+    return true;
+}
