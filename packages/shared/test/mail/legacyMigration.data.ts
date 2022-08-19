@@ -1,0 +1,85 @@
+export const testPrivateKeyLegacy = `-----BEGIN PGP PRIVATE KEY BLOCK-----
+Version: OpenPGP.js v0.9.0
+Comment: http://openpgpjs.org
+
+xcMGBFSjdRkBB/9slBPGNrHAMbYT71AnxF4a0W/fcrzCP27yd1nte+iUKGyh
+yux3xGQRIHrwB9zyYBPFORXXwaQIA3YDH73YnE0FPfjh+fBWENWXKBkOVx1R
+efPTytGIyATFtLvmN1D65WkvnIfBdcOc7FWj6N4w5yOajpL3u/46Pe73ypic
+he10XuwO4198q/8YamGpTFgQVj4H7QbtuIxoV+umIAf96p9PCMAxipF+piao
+D8LYWDUCK/wr1tSXIkNKL+ZCyuCYyIAnOli7xgIlKNCWvC8csuJEYcZlmf42
+/iHyrWeusyumLeBPhRABikE2ePSo+XI7LznD/CIrLhEk6RJT31+JR0NlABEB
+AAH+CQMIGhfYEFuRjVpgaSOmgLetjNJyo++e3P3RykGb5AL/vo5LUzlGX95c
+gQWSNyYYBo7xzDw8K02dGF4y9Hq6zQDFkA9jOI2XX/qq4GYb7K515aJZwnuF
+wQ+SntabFrdty8oV33Ufm8Y/TSUP/swbOP6xlXIk8Gy06D8JHW22oN35Lcww
+LftEo5Y0rD+OFlZWnA9fe/Q6CO4OGn5DJs0HbQIlNPU1sK3i0dEjCgDJq0Fx
+6WczXpB16jLiNh0W3X/HsjgSKT7Zm3nSPW6Y5mK3y7dnlfHt+A8F1ONYbpNt
+RzaoiIaKm3hoFKyAP4vAkto1IaCfZRyVr5TQQh2UJO9S/o5dCEUNw2zXhF+Z
+O3QQfFZgQjyEPgbzVmsc/zfNUyB4PEPEOMO/9IregXa/Ij42dIEoczKQzlR0
+mHCNReLfu/B+lVNj0xMrodx9slCpH6qWMKGQ7dR4eLU2+2BZvK0UeG/QY2xe
+IvLLLptm0IBbfnWYZOWSFnqaT5NMN0idMlLBCYQoOtpgmd4voND3xpBXmTIv
+O5t4CTqK/KO8+lnL75e5X2ygZ+f1x6tPa/B45C4w+TtgITXZMlp7OE8RttO6
+v+0Fg6vGAmqHJzGckCYhwvxRJoyndRd501a/W6PdImZQJ5bPYYlaFiaF+Vxx
+ovNb7AvUsDfknr80IdzxanKq3TFf+vCmNWs9tjXgZe0POwFZvjTdErf+lZcz
+p4lTMipdA7zYksoNobNODjBgMwm5H5qMCYDothG9EF1dU/u/MOrCcgIPFouL
+Z/MiY665T9xjLOHm1Hed8LI1Fkzoclkh2yRwdFDtbFGTSq00LDcDwuluRM/8
+J6hCQQ72OT7SBtbCVhljbPbzLCuvZ8mDscvardQkYI6x7g4QhKLNQVyVk1nA
+N4g59mSICpixvgihiFZbuxYjYxoWJMJvzQZVc2VySUTCwHIEEAEIACYFAlSj
+dSQGCwkIBwMCCRB9LVPeS8+0BAQVCAIKAxYCAQIbAwIeAQAAFwoH/ArDQgdL
+SnS68BnvnQy0xhnYMmK99yc+hlbWuiTJeK3HH+U/EIkT5DiFiEyE6YuZmsa5
+9cO8jlCN8ZKgiwhDvb6i4SEa9f2gar1VCPtC+4KCaFa8esp0kdSjTRzP4ZLb
+QPrdbfPeKoLoOoaKFH8bRVlPCnrCioHTBTsbLdzg03mcczusZomn/TKH/8tT
+OctX7CrlB+ewCUc5CWL4mZqRFjAMSJpogj7/4jEVHke4V/frKRtjvQNDcuOo
+PPU+fVpHq4ILuv7pYF9DujAIbLgWN/tdE4Goxsrm+aCUyylQ2P55Vb5mhAPu
+CLYXqSELPi99/NKEM9xhLa/1HwdTwQ/1X0zHwwYEVKN1JAEH/3XCsZ/W7fnw
+zMbkE+rMUlo1+KbX+ltEG7nAwP+Q8NrwhbwhmpA3bHM3bhSdt0CO4mRx4oOR
+cqeTNjFftQzPxCbPTmcTCupNCODOK4rnEn9i9lz7/JtkOf55+/oHbx+pjvDz
+rA7u+ugNHzDYTd+nh2ue99HWoSZSEWD/sDrp1JEN8M0zxODGYfO/Hgr5Gnnp
+TEzDzZ0LvTjYMVcmjvBhtPTNLiQsVakOj1wTLWEgcna2FLHAHh0K63snxAjT
+6G1oF0Wn08H7ZP5/WhiMy1Yr+M6N+hsLpOycwtwBdjwDcWLrOhAAj3JMLI6W
+zFS6SKUr4wxnZWIPQT7TZNBXeKmbds8AEQEAAf4JAwhPB3Ux5u4eB2CqeaWy
+KsvSTH/D1o2QpWujempJ5KtCVstyV4bF1JZ3tadOGOuOpNT7jgcp/Et2VVGs
+nHPtws9uStvbY8XcZYuu+BXYEM9tkDbAaanS7FOvh48F8Qa07IQB6JbrpOAW
+uQPKtBMEsmBqpyWMPIo856ai1Lwp6ZYovdI/WxHdkcQMg8Jvsi2DFY827/ha
+75vTnyDx0psbCUN+kc9rXqwGJlGiBdWmLSGW1cb9Gy05KcAihQmXmp9YaP9y
+PMFPHiHMOLn6HPW1xEV8B1jHVF/BfaLDJYSm1q3aDC9/QkV5WLeU7DIzFWN9
+JcMsKwoRJwEf63O3/CZ39RHd9qwFrd+HPIlc7X5Pxop16G1xXAOnLBucup90
+kYwDcbNvyC8TKESf+Ga+Py5If01WhgldBm+wgOZvXnn8SoLO98qAotei8MBi
+kI/B+7cqynWg4aoZZP2wOm/dl0zlsXGhoKut2Hxr9BzG/WdbjFRgbWSOMawo
+yF5LThbevNLZeLXFcT95NSI2HO2XgNi4I0kqjldY5k9JH0fqUnlQw87CMbVs
+TUS78q6IxtljUXJ360kfQh5ue7cRdCPrfWqNyg1YU3s7CXvEfrHNMugES6/N
+zAQllWz6MHbbTxFz80l5gi3AJAoB0jQuZsLrm4RB82lmmBuWrQZh4MPtzLg0
+HOGixprygBjuaNUPHT281Ghe2UNPpqlUp8BFkUuHYPe4LWSB2ILNGaWB+nX+
+xmvZMSnI4kVsA8oXOAbg+v5W0sYNIBU4h3nk1KOGHR4kL8fSgDi81dfqtcop
+2jzolo0yPMvcrfWnwMaEH/doS3dVBQyrC61si/U6CXLqCS/w+8JTWShVT/6B
+NihnIf1ulAhSqoa317/VuYYr7hLTqS+D7O0uMfJ/1SL6/AEy4D1Rc7l8Bd5F
+ud9UVvXCwF8EGAEIABMFAlSjdSYJEH0tU95Lz7QEAhsMAACDNwf/WTKH7bS1
+xQYxGtPdqR+FW/ejh30LiPQlrs9AwrBk2JJ0VJtDxkT3FtHlwoH9nfd6YzD7
+ngJ4mxqePuU5559GqgdTKemKsA2C48uanxJbgOivivBI6ziB87W23PDv7wwh
+4Ubynw5DkH4nf4oJR2K4H7rN3EZbesh8D04A9gA5tBQnuq5L+Wag2s7MpWYl
+ZrvHh/1xLZaWz++3+N4SfaPTH8ao3Qojw/Y+OLGIFjk6B/oVEe9ZZQPhJjHx
+gd/qu8VcYdbe10xFFvbiaI/RS6Fs7JRSJCbXE0h7Z8n4hQIP1y6aBZsZeh8a
+PPekG4ttm6z3/BqqVplanIRSXlsqyp6J8A==
+=Pyb1
+-----END PGP PRIVATE KEY BLOCK-----
+`;
+
+export const testMessageEncryptedLegacy = `---BEGIN ENCRYPTED MESSAGE---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---END ENCRYPTED MESSAGE---||---BEGIN ENCRYPTED RANDOM KEY--------BEGIN PGP MESSAGE-----
+Version: OpenPGP.js v0.9.0
+Comment: http://openpgpjs.org
+
+wcBMA2tjJVxNCRhtAQf/YzkQoUqaqa3NJ/c1apIF/dsl7yJ4GdVrC3/w7lxE
+2CO5ioQD4s6QMWP2Y9dOdVl2INwz8eXOds9NS+1nMs4SoMbrpJnAjx8Cthti
+1Z/8eWMU023LYahds8BYM0T435K/2tTB5GTA4uTl2y8Xzz2PbptQ4PrUDaII
++egeQQyPA0yuoRDwpaeTiaBYOSa06YYuK5Agr0buQAxRIMCxI2o+fucjoabv
+FsQHKGu20U5GlJroSIyIVVkaH3evhNti/AnYX1HuokcGEQNsF5vo4SjWcH23
+2P86EIV+w5lUWC1FN9vZCyvbvyuqLHQMtqKVn4GBOkIc3bYQ0jru3a0FG4Cx
+bNJ0ASps2+p3Vxe0d+so2iFV92ByQ+0skyCUwCNUlwOV5V5f2fy1ImXk4mXI
+cO/bcbqRxx3pG9gkPIh43FoQktTT+tsJ5vS53qfaLGdhCYfkrWjsKu+2P9Xg
++Cr8clh6NTblhfkoAS1gzjA3XgsgEFrtP+OGqwg=
+=c5WU
+-----END PGP MESSAGE-----
+---END ENCRYPTED RANDOM KEY---
+`;
+
+export const testMessageContentLegacy =
+    '<div>flkasjfkjasdklfjasd<br></div><div>fasd<br></div><div>jfasjdfjasd<br></div><div>fj<br></div><div>asdfj<br></div><div>sadjf<br></div><div>sadjf<br></div><div>asjdf<br></div><div>jasd<br></div><div>fj<br></div><div>asdjf<br></div><div>asdjfsad<br></div><div>fasdlkfjasdjfkljsadfljsdfjsdljflkdsjfkljsdlkfjsdlk<br></div><div>jasfd<br></div><div>jsd<br></div><div>jf<br></div><div>sdjfjsdf<br></div><div><br></div><div>djfskjsladf<br></div><div>asd<br></div><div>fja<br></div><div>sdjfajsf<br></div><div>jas<br></div><div>fas<br></div><div>fj<br></div><div>afj<br></div><div>ajf<br></div><div>af<br></div><div>asdfasdfasd<br></div><div>Sent from <a href="https://protonmail.ch">ProtonMail</a>, encrypted email based in Switzerland.<br></div><div>dshfljsadfasdf<br></div><div>as<br></div><div>df<br></div><div>asd<br></div><div>fasd<br></div><div>f<br></div><div>asd<br></div><div>fasdflasdklfjsadlkjf</div><div>asd<br></div><div>fasdlkfjasdlkfjklasdjflkasjdflaslkfasdfjlasjflkasflksdjflkjasdf<br></div><div>asdflkasdjflajsfljaslkflasf<br></div><div>asdfkas<br></div><div>dfjas<br></div><div>djf<br></div><div>asjf<br></div><div>asj<br></div><div>faj<br></div><div>f<br></div><div>afj<br></div><div>sdjaf<br></div><div>jas<br></div><div>sdfj<br></div><div>ajf<br></div><div>aj<br></div><div>ajsdafafdaaf<br></div><div>a<br></div><div>f<br></div><div>lasl;ga<br></div><div>sags<br></div><div>ad<br></div><div>gags<br></div><div>g<br></div><div>ga<br></div><div>a<br></div><div>gg<br></div><div>a<br></div><div>ag<br></div><div>ag<br></div><div>agga.g.ga,ag.ag./ga<br></div><div><br></div><div>dsga<br></div><div>sg<br></div><div><br></div><div>gasga\\g\\g\\g\\g\\g\\n\\y\\t\\r\\\\r\\r\\\\n\\n\\n\\<br></div><div><br></div><div><br></div><div>sd<br></div><div>asdf<br></div><div>asdf<br></div><div>dsa<br></div><div>fasd<br></div><div>f</div>';
