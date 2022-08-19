@@ -115,24 +115,19 @@ export const validateRecoverySecret = async (recoverySecret: KeyWithRecoverySecr
     return verified === VERIFICATION_STATUS.SIGNED_AND_VALID;
 };
 
-export const getRecoverySecrets = (Keys: Key[] = []): KeyWithRecoverySecret[] => {
-    return Keys.map((key) => {
-        if (!key?.RecoverySecret || !key?.RecoverySecretSignature) {
-            return;
-        }
+export const getKeyWithRecoverySecret = (key: Key | undefined) => {
+    if (!key?.RecoverySecret || !key?.RecoverySecretSignature) {
+        return;
+    }
+    return key as KeyWithRecoverySecret;
+};
 
-        return key as KeyWithRecoverySecret;
-    }).filter(isTruthy);
+export const getRecoverySecrets = (Keys: Key[] = []): KeyWithRecoverySecret[] => {
+    return Keys.map(getKeyWithRecoverySecret).filter(isTruthy);
 };
 
 export const getPrimaryRecoverySecret = (Keys: Key[] = []): KeyWithRecoverySecret | undefined => {
-    const primaryUserKey = Keys?.[0];
-
-    if (!primaryUserKey?.RecoverySecret || !primaryUserKey?.RecoverySecretSignature) {
-        return;
-    }
-
-    return primaryUserKey as KeyWithRecoverySecret;
+    return getKeyWithRecoverySecret(Keys?.[0]);
 };
 
 export const getIsRecoveryFileAvailable = ({

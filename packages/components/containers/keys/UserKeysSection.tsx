@@ -1,11 +1,21 @@
 import { c } from 'ttag';
 
-import { AlgorithmInfo } from '@proton/crypto';
+import { AlgorithmInfo, CryptoProxy } from '@proton/crypto';
 import { EncryptionConfig } from '@proton/shared/lib/interfaces';
 import { addUserKeysProcess } from '@proton/shared/lib/keys';
+import { storeDeviceRecovery } from '@proton/shared/lib/recoveryFile/deviceRecovery';
 
 import { Button, Loader, useModalState } from '../../components';
-import { useApi, useAuthentication, useEventManager, useModals, useUser, useUserKeys } from '../../hooks';
+import {
+    useApi,
+    useAuthentication,
+    useEventManager,
+    useIsDeviceRecoveryAvailable,
+    useIsDeviceRecoveryEnabled,
+    useModals,
+    useUser,
+    useUserKeys,
+} from '../../hooks';
 import { SettingsParagraph, SettingsSectionWide } from '../account';
 import KeysTable from './KeysTable';
 import AddKeyModal from './addKey/AddKeyModal';
@@ -22,6 +32,8 @@ const UserKeysSections = () => {
     const authentication = useAuthentication();
     const [userKeys, loadingUserKeys] = useUserKeys();
     const userKeysDisplay = useDisplayKeys({ keys: userKeys, User });
+    const isDeviceRecoveryAvailable = useIsDeviceRecoveryAvailable();
+    const isDeviceRecoveryEnabled = useIsDeviceRecoveryEnabled();
 
     const existingAlgorithms = userKeysDisplay.reduce<AlgorithmInfo[]>(
         (acc, { algorithmInfos }) => acc.concat(algorithmInfos),
@@ -64,6 +76,18 @@ const UserKeysSections = () => {
             encryptionConfig,
             passphrase: authentication.getPassword(),
         });
+
+        // Store a new device recovery immediately to avoid having the storing trigger asynchronously which would cause red notification flashes
+        if (isDeviceRecoveryAvailable && isDeviceRecoveryEnabled) {
+            const publicKey = await CryptoProxy.importPublicKey({
+                binaryKey: await CryptoProxy.exportPublicKey({ key: newKey, format: 'binary' }),
+            });
+            await storeDeviceRecovery({
+                api,
+                user: User,
+                userKeys: [{ ID: 'tmp-id', privateKey: newKey, publicKey }, ...userKeys],
+            });
+        }
         await call();
         return newKey.getFingerprint();
     };
