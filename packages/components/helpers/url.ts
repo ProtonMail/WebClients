@@ -17,9 +17,13 @@ export const getHostname = (url: string) => {
     return parser.hostname;
 };
 
+export const isMailTo = (url: string): boolean => {
+    return url.toLowerCase().startsWith('mailto:');
+};
+
 export const isExternal = (url: string) => {
     try {
-        return window.location.hostname !== getHostname(url);
+        return window.location.hostname !== getHostname(url) && !isMailTo(url);
     } catch (e: any) {
         /*
          * IE11/Edge are the worst, they crash when they try to parse
