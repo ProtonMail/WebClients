@@ -42,9 +42,9 @@ export const testMetadata = (
     recipients: string[],
     sender: string[]
 ) => {
-    const { search, labelID, filter } = normalisedSearchParams;
+    const { search, labelID, decryptionError, filter } = normalisedSearchParams;
     const { address, from, to, begin, end, attachments } = search || {};
-    const { AddressID, Time, LabelIDs, NumAttachments, Unread } = messageToSearch;
+    const { AddressID, Time, LabelIDs, NumAttachments, decryptionError: messageError, Unread } = messageToSearch;
 
     if (
         !LabelIDs.includes(labelID) ||
@@ -55,6 +55,7 @@ export const testMetadata = (
         (to && !recipients.some((string) => string.includes(to))) ||
         (typeof attachments !== 'undefined' &&
             ((attachments === 0 && NumAttachments > 0) || (attachments === 1 && NumAttachments === 0))) ||
+        (typeof decryptionError !== 'undefined' && decryptionError !== messageError) ||
         (typeof filter?.Unread !== 'undefined' && filter?.Unread !== Unread)
     ) {
         return false;
@@ -76,6 +77,7 @@ export const shouldOnlySortResults = (
         filter,
         search: { address, from, to, begin, end, attachments },
         normalizedKeywords,
+        decryptionError,
     } = normalisedSearchParams;
     const {
         labelID: prevLabelID,
@@ -89,6 +91,7 @@ export const shouldOnlySortResults = (
             attachments: prevAttachments,
         },
         normalizedKeywords: prevNormalisedKeywords,
+        decryptionError: prevDecryptionError,
     } = previousNormSearchParams;
 
     // In case search parameters are different, then a new search is needed
@@ -100,6 +103,7 @@ export const shouldOnlySortResults = (
         begin !== prevBegin ||
         end !== prevEnd ||
         attachments !== prevAttachments ||
+        decryptionError !== prevDecryptionError ||
         !!normalizedKeywords !== !!prevNormalisedKeywords ||
         filter?.Unread !== prevFilter?.Unread
     ) {

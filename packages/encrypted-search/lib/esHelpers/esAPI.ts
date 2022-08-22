@@ -1,21 +1,14 @@
-import { getLocalKey } from '@proton/shared/lib/api/auth';
 import { getIsOfflineError, getIsTimeoutError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import { getKey } from '@proton/shared/lib/authentication/cryptoHelper';
-import { LocalKeyResponse } from '@proton/shared/lib/authentication/interface';
-import { getActiveSessionByUserID } from '@proton/shared/lib/authentication/persistedSessionHelper';
-import { getDecryptedPersistedSessionBlob } from '@proton/shared/lib/authentication/persistedSessionStorage';
 import { METRICS_LOG, SECOND } from '@proton/shared/lib/constants';
-import { withUIDHeaders } from '@proton/shared/lib/fetch/headers';
-import { base64StringToUint8Array, decodeBase64URL, stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import { randomDelay, sendMetricsReport } from '@proton/shared/lib/helpers/metrics';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
-import { Api, User } from '@proton/shared/lib/interfaces';
+import { Api } from '@proton/shared/lib/interfaces/Api';
 
 import { ES_TEMPORARY_ERRORS } from '../constants';
-import { readContentProgress, readNumMetadata, readSize } from '../esIDB';
 import { ESIndexMetrics, ESSearchMetrics } from '../models';
 import { estimateIndexingDuration } from './esBuild';
+import { addESTimestamp, getES, getNumItemsDB } from './esUtils';
 
 /**
  * Helper to send ES-related sentry reports
@@ -48,7 +41,8 @@ export const apiHelper = async <T>(
     api: Api,
     signal: AbortSignal | undefined,
     options: Object,
-    callingContext: string
+    callingContext: string,
+    userID?: string
 ): Promise<T | undefined> => {
     let apiResponse: T;
     try {
@@ -74,9 +68,13 @@ export const apiHelper = async <T>(
                 retryAfterSeconds = headers ? parseInt(headers.get('retry-after') || '1', 10) : retryAfterSeconds;
             }
 
+            if (userID) {
+                addESTimestamp(userID, 'stop');
+            }
+
             await wait(retryAfterSeconds * SECOND);
 
-            return apiHelper<T>(api, signal, options, callingContext);
+            return apiHelper<T>(api, signal, options, callingContext, userID);
         }
 
         if (!(error.message && error.message === 'Operation aborted') && !(error.name && error.name === 'AbortError')) {
@@ -101,86 +99,31 @@ const sendESMetrics: SendESMetrics = async (api, Title, Data) =>
     sendMetricsReport(api, METRICS_LOG.ENCRYPTED_SEARCH, Title, Data);
 
 /**
- * Generate a pseudorandom user ID unknown to the API
- */
-const generateESID = async (api: Api, user: User) => {
-    const persistedSession = getActiveSessionByUserID(user.ID, !!user.OrganizationPrivateKey);
-    const { UID, blob } = persistedSession || {};
-    if (!UID || !blob) {
-        return;
-    }
-
-    try {
-        // Extract the local keyPassword
-        const ClientKey = await api<LocalKeyResponse>(withUIDHeaders(UID, getLocalKey())).then(
-            ({ ClientKey }) => ClientKey
-        );
-        const localKey = await getKey(base64StringToUint8Array(ClientKey));
-        const { keyPassword } = await getDecryptedPersistedSessionBlob(localKey, blob);
-
-        // Extract a fresh key for HMAC
-        const hkdfKey = await crypto.subtle.importKey(
-            'raw',
-            base64StringToUint8Array(keyPassword).buffer,
-            'HKDF',
-            false,
-            ['deriveKey']
-        );
-        const hmacKey = await crypto.subtle.deriveKey(
-            {
-                name: 'HKDF',
-                hash: 'SHA-256',
-                salt: new Uint8Array(256),
-                info: new Uint8Array(),
-            },
-            hkdfKey,
-            {
-                name: 'HMAC',
-                hash: 'SHA-256',
-            },
-            false,
-            ['sign']
-        );
-
-        // HMAC the user ID. The final esID is the first 32-bit of the tag
-        return new Uint32Array(
-            await crypto.subtle.sign('HMAC', hmacKey, stringToUint8Array(decodeBase64URL(user.ID)))
-        )[0];
-    } catch (error: any) {
-        return;
-    }
-};
-
-/**
  * Send metrics about the indexing process
  */
-export const sendIndexingMetrics = async (api: Api, user: User, isLimited: boolean = false) => {
-    const progressBlob = await readContentProgress(user.ID);
+export const sendIndexingMetrics = async (api: Api, userID: string) => {
+    addESTimestamp(userID, 'stop');
+    const progressBlob = getES.Progress(userID);
     if (!progressBlob) {
         return;
     }
 
-    const esID = await generateESID(api, user);
-    if (!esID) {
-        return;
-    }
-
     const { totalItems, isRefreshed, numPauses, timestamps, originalEstimate } = progressBlob;
+    // There have been cases of broken metrics due to change to variables' name. The following is a temporary
+    // change to read the number of total items indexed also in the old (pre-library) format.
+    const { totalMessages } = progressBlob as any;
+    const numMessagesIndexed = totalItems || totalMessages || 0;
+
     const { indexTime, totalInterruptions } = estimateIndexingDuration(timestamps);
-    const indexSize = await readSize(user.ID);
 
     return sendESMetrics(api, 'index', {
         numInterruptions: totalInterruptions - numPauses,
-        indexSize,
+        indexSize: getES.Size(userID),
         originalEstimate,
         indexTime,
-        // Note: the metrics dashboard expects a variable called "numMessagesIndexed" but
-        // it doesn't make too much sense in general to talk about "messages"
-        numMessagesIndexed: totalItems,
+        numMessagesIndexed,
         isRefreshed,
         numPauses,
-        esID,
-        isLimited,
     });
 };
 
@@ -193,20 +136,15 @@ export const sendSearchingMetrics = async (
     cacheSize: number,
     searchTime: number,
     isFirstSearch: boolean,
-    isCacheLimited: boolean
+    isCacheLimited: boolean,
+    storeName: string
 ) => {
     // Note: the metrics dashboard expects a variable called "numMessagesIndexed" but
     // it doesn't make too much sense in general to talk about "messages"
-    const numMessagesIndexed = await readNumMetadata(userID);
-    if (typeof numMessagesIndexed === 'undefined') {
-        // If this is undefined, something went wrong when accessing IDB,
-        // therefore it makes little sense to send metrics
-        return;
-    }
-    const indexSize = await readSize(userID);
+    const numMessagesIndexed = await getNumItemsDB(userID, storeName);
 
     return sendESMetrics(api, 'search', {
-        indexSize,
+        indexSize: getES.Size(userID),
         numMessagesIndexed,
         cacheSize,
         searchTime,
@@ -218,9 +156,10 @@ export const sendSearchingMetrics = async (
 /**
  * Send a sentry report for when ES is too slow
  * @param userID the user ID
+ * @param storeName the name of the object store inside IndexedDB
  */
-export const sendSlowSearchReport = async (userID: string) => {
-    const numItemsIndexed = await readNumMetadata(userID);
+export const sendSlowSearchReport = async (userID: string, storeName: string) => {
+    const numItemsIndexed = await getNumItemsDB(userID, storeName);
 
     await randomDelay();
 

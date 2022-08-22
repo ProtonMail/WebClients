@@ -1,9 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 
-import { IDBPDatabase } from 'idb';
 import { c } from 'ttag';
 
-import { useOnLogout } from '@proton/components';
 import useApi from '@proton/components/hooks/useApi';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useUser from '@proton/components/hooks/useUser';
@@ -14,87 +12,76 @@ import { isFirefox } from '@proton/shared/lib/helpers/browser';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
+import { ES_EXTRA_RESULTS_LIMIT, defaultESCache, defaultESHelpers, defaultESStatus } from './constants';
 import {
-    ES_EXTRA_RESULTS_LIMIT,
-    INDEXING_STATUS,
-    STORING_OUTCOME,
-    TIMESTAMP_TYPE,
-    defaultESCache,
-    defaultESHelpers,
-    defaultESProgress,
-    defaultESStatus,
-} from './constants';
-import {
-    buildContentDB,
-    buildMetadataDB,
-    cacheContent,
-    cacheMetadata,
+    addESTimestamp,
+    buildDB,
+    cacheDB,
+    canUseES,
+    checkIsDBLimited,
     correctDecryptionErrors,
+    decryptIndexKey,
+    deleteESDB,
     esSentryReport,
     findItemIndex,
+    getES,
+    getESTotal,
     getIndexKey,
+    getNumItemsDB,
     highlightJSX,
     hybridSearch,
-    initializeEncryptedSearch,
+    increaseNumPauses,
+    indexKeyExists,
+    initializeDB,
     insertMarks,
+    isDBReadyAfterBuilding,
     refreshESCache,
+    removeES,
     removeESFlags,
     requestPersistence,
-    retryContentIndexing,
     sendIndexingMetrics,
     sendSearchingMetrics,
-    syncItemEvents,
+    setES,
+    setESCurrent,
+    syncMessageEvents,
     uncachedSearch,
+    wasIndexingDone,
 } from './esHelpers';
-import {
-    addTimestamp,
-    checkVersionedESDB,
-    deleteESDB,
-    incrementNumPauses,
-    openESDB,
-    readContentProgress,
-    readEnabled,
-    readLimited,
-    readMetadataProgress,
-    readNumContent,
-    readNumMetadata,
-    setContentActiveProgressStatus,
-    setLimited,
-    setMetadataActiveProgressStatus,
-    setProgressStatus,
-    toggleEnabled,
-    writeAllEventsConditionally,
-    writeContentProgress,
-} from './esIDB';
 import {
     ESCache,
     ESDBStatus,
     ESEvent,
     ESHelpers,
-    ESItem,
-    ESProgress,
     ESStatus,
-    EnableContentSearch,
-    EnableEncryptedSearch,
     EncryptedSearch,
-    EncryptedSearchDB,
     EncryptedSearchExecution,
     EncryptedSearchFunctions,
-    EventsObject,
     HighlightMetadata,
     HighlightString,
-    InternalESHelpers,
+    ResumeIndexing,
 } from './models';
 
-interface Props<ESItemMetadata, ESSearchParameters, ESItemContent = void> {
+interface Props<ESItemMetadata, ESItem, ESSearchParameters, ESItemChanges, ESCiphertext> {
+    storeName: string;
+    indexName: string;
+    primaryKeyName: string;
+    indexKeyNames: [string, string];
     refreshMask: number;
-    esHelpers: ESHelpers<ESItemMetadata, ESSearchParameters, ESItemContent>;
+    esHelpers: ESHelpers<ESItemMetadata, ESItem, ESSearchParameters, ESItemChanges, ESCiphertext>;
     successMessage: string;
-    notifyMetadataIndexed?: boolean;
 }
 
 /**
  * Provide the core funcionalities of ES.
+ * @param storeName The name of the object store, i.e. the table, containing items
+ * @param indexName The name of the temporal index, i.e. the one that is used to search in
+ * (reverse) chronological order
+ * @param primaryKeyName The name of the parameter of stored items which is to be used as
+ * a primary key for the database
+ * @param indexKeyNames The names of the parameters of stored items which are to be used as
+ * primary keys for the temporal index. They must refer to two numerical values, the first
+ * being the time of the item, the second being a unique numerical identifier, e.g. computed
+ * from the ID
  * @param refreshMask A number representing the bit the BE sets to REFRESH_ALL on the specific
  * client
  * @param esHelpers All the callbacks that are product-specific and therefore need to be passed
@@ -102,18 +89,21 @@ interface Props<ESItemMetadata, ESSearchParameters, ESItemContent = void> {
  * @param successMessage The text that is showing in a green notification upon completing indexing
  * @returns An empy instance of the ES IndexedDB
  */
-const useEncryptedSearch = <ESItemMetadata, ESSearchParameters, ESItemContent = void>({
+const useEncryptedSearch = <ESItemMetadata, ESItem, ESSearchParameters, ESItemChanges, ESCiphertext>({
+    storeName,
+    indexName,
+    primaryKeyName,
+    indexKeyNames,
     refreshMask,
     esHelpers: inputESHelpers,
     successMessage,
-    notifyMetadataIndexed = false,
-}: Props<ESItemMetadata, ESSearchParameters, ESItemContent>) => {
+}: Props<ESItemMetadata, ESItem, ESSearchParameters, ESItemChanges, ESCiphertext>) => {
     const getUserKeys = useGetUserKeys();
     const api = useApi();
     const [user] = useUser();
     const { ID: userID } = user;
     const { createNotification } = useNotifications();
-    const esHelpers: InternalESHelpers<ESItemMetadata, ESSearchParameters, ESItemContent> = {
+    const esHelpers: Required<ESHelpers<ESItemMetadata, ESItem, ESSearchParameters, ESItemChanges, ESCiphertext>> = {
         ...defaultESHelpers,
         ...inputESHelpers,
     };
@@ -122,10 +112,9 @@ const useEncryptedSearch = <ESItemMetadata, ESSearchParameters, ESItemContent = 
 
     // Keep a state of search results to update in case of new events
     // and information on the status of IndexedDB
-    const [esStatus, setESStatus] =
-        useState<ESStatus<ESItemMetadata, ESItemContent, ESSearchParameters>>(defaultESStatus);
+    const [esStatus, setESStatus] = useState<ESStatus<ESItem, ESSearchParameters>>(defaultESStatus);
     // Keep a reference to cached items, such that they can be queried at any time
-    const esCacheRef = useRef<ESCache<ESItemMetadata, ESItemContent>>(defaultESCache);
+    const esCacheRef = useRef<ESCache<ESItem>>(defaultESCache);
     // Allow to abort indexing
     const abortIndexingRef = useRef<AbortController>(new AbortController());
     // Allow to abort searching
@@ -144,40 +133,26 @@ const useEncryptedSearch = <ESItemMetadata, ESSearchParameters, ESItemContent = 
     };
 
     /**
-     * Reset the cache to its default empty state
+     * Wipe all local data related to ES, both from IndexedDB and local storage
      */
-    const resetCache = () => {
-        // Note that assigning values from defaultESCache doesn't work
-        esCacheRef.current.esCache = new Map();
-        esCacheRef.current.cacheSize = 0;
-        esCacheRef.current.isCacheLimited = false;
-        esCacheRef.current.isCacheReady = false;
-        esCacheRef.current.isContentCached = false;
-    };
-    useOnLogout(async () => resetCache());
-
-    /**
-     * Wipe all local data related to ES
-     */
-    const esDelete = async () => {
+    const esDelete = async (inputUserID?: string) => {
         abortIndexingRef.current.abort();
         abortSearchingRef.current.abort();
-        resetCache();
-        // Note that currently no local storage blobs exist,
-        // however in a legacy version they did
-        removeESFlags(userID);
+        const uID = inputUserID || userID;
+        esCacheRef.current = { ...defaultESCache };
+        removeESFlags(uID);
         setESStatus(() => defaultESStatus);
-        return deleteESDB(userID);
+        return deleteESDB(uID);
     };
 
     /**
      * Notify the user the DB is deleted. Typically this is needed if the key is no
      * longer usable to decrypt it
      */
-    const dbCorruptError = async () => {
-        await esDelete();
+    const dbCorruptError = async (inputUserID?: string) => {
+        await esDelete(inputUserID);
         createNotification({
-            text: c('Error').t`Please activate your search again`,
+            text: c('Error').t`Please activate your content search again`,
             type: 'error',
         });
     };
@@ -192,7 +167,7 @@ const useEncryptedSearch = <ESItemMetadata, ESSearchParameters, ESItemContent = 
     /**
      * @returns a reference object to two values related to an IndexedDB operation status.
      * The first number in the returned list is the current number of items processed while
-     * the second is the total number of items to process. It is useful to show a progress bar
+     * the second is the total number of items to process. It is useful to show a progress bar.
      */
     const getProgressRecorderRef = () => {
         return progressRecorderRef;
@@ -203,35 +178,30 @@ const useEncryptedSearch = <ESItemMetadata, ESSearchParameters, ESItemContent = 
      * which is useful to determine specific UI in certain occasions. The status contains
      * the following variables.
      * @var dbExists whether an instance of IndexedDB exists
-     * @var isEnablingContentSearch whether indexing is ongoing
+     * @var isBuilding whether indexing is ongoing
      * @var isDBLimited whether IndexedDB has fewer than the total amount of items
      * @var esEnabled whether ES is enabled (in case a fallback to server-side search exists)
      * @var isRefreshing whether a refresh of IndexedDB (when correcting decryption errors) is ongoing
      * @var isSearchPartial whether the current search only has partial results. It happens when IndexedDB does not fit in cache
      * @var isSearching whether a search is ongoing
-     * @var isCacheLimited whether the cache is limited, i.e. it doesn't contain all items that are in IndexedDB
-     * @var isEnablingEncryptedSearch whether indexing of metadata is ongoing
-     * @var isPaused whether content indexing is paused
-     * @var contentIndexingDone whether content indexing has completed
+     * @var isCaching whether caching is ongoing
      */
     const getESDBStatus = () => {
         const {
             dbExists,
-            isEnablingContentSearch,
+            isBuilding,
             isDBLimited,
             esEnabled,
             esSupported,
             isRefreshing,
             isSearchPartial,
             isSearching,
-            isEnablingEncryptedSearch,
-            isPaused,
-            contentIndexingDone,
+            isCaching,
         } = esStatus;
         const { isCacheLimited } = esCacheRef.current;
-        const esDBStatus: ESDBStatus<ESItemMetadata, ESItemContent, ESSearchParameters> = {
+        const esDBStatus: ESDBStatus<ESItem, ESSearchParameters> = {
             dbExists,
-            isEnablingContentSearch,
+            isBuilding,
             isDBLimited,
             esEnabled,
             esSupported,
@@ -239,9 +209,7 @@ const useEncryptedSearch = <ESItemMetadata, ESSearchParameters, ESItemContent = 
             isRefreshing,
             isSearchPartial,
             isSearching,
-            isEnablingEncryptedSearch,
-            isPaused,
-            contentIndexingDone,
+            isCaching,
         };
         return esDBStatus;
     };
@@ -250,13 +218,13 @@ const useEncryptedSearch = <ESItemMetadata, ESSearchParameters, ESItemContent = 
      * Reset to default only the parameters of ESStatus that are related to a search
      */
     const resetSearchStatus = (
-        esStatus: ESStatus<ESItemMetadata, ESItemContent, ESSearchParameters>
-    ): ESStatus<ESItemMetadata, ESItemContent, ESSearchParameters> => {
+        esStatus: ESStatus<ESItem, ESSearchParameters>
+    ): ESStatus<ESItem, ESSearchParameters> => {
         return {
             ...esStatus,
             permanentResults: defaultESStatus.permanentResults,
             setResultsList: defaultESStatus.setResultsList,
-            contentIDs: defaultESStatus.contentIDs,
+            lastTimePoint: defaultESStatus.lastTimePoint,
             previousESSearchParams: defaultESStatus.previousESSearchParams,
             isSearchPartial: defaultESStatus.isSearchPartial,
             isSearching: defaultESStatus.isSearching,
@@ -267,17 +235,19 @@ const useEncryptedSearch = <ESItemMetadata, ESSearchParameters, ESItemContent = 
      * Deactivates ES. This does not remove anything, and the database keeps being synced.
      * It is used to switch ES temporarily off in cases when server side search is available.
      */
-    const toggleEncryptedSearch = async () => {
+    const toggleEncryptedSearch = () => {
         const currentOption = esStatus.esEnabled;
 
-        await toggleEnabled<ESItemMetadata>(userID, esCacheRef.current.esCache, esHelpers.getItemInfo);
-        setESStatus((esStatus) => ({
-            ...esStatus,
-            esEnabled: !currentOption,
-        }));
+        setESStatus((esStatus) => {
+            return {
+                ...esStatus,
+                esEnabled: !currentOption,
+            };
+        });
 
         if (currentOption) {
             abortSearchingRef.current.abort();
+            removeES.Enabled(userID);
         } else {
             // Every time ES is enabled, we reset sorting to avoid carrying on with SIZE sorting in
             // case it was previously used. SIZE sorting is not supported by ES
@@ -285,7 +255,15 @@ const useEncryptedSearch = <ESItemMetadata, ESSearchParameters, ESItemContent = 
             if (isSearch) {
                 esHelpers.resetSort();
             }
+            setES.Enabled(userID);
         }
+
+        // If IDB was evicted by the browser in the meantime, we erase everything else too
+        void canUseES(userID, storeName).then((isIDBIntact) => {
+            if (!isIDBIntact) {
+                void dbCorruptError();
+            }
+        });
     };
 
     /**
@@ -293,101 +271,90 @@ const useEncryptedSearch = <ESItemMetadata, ESSearchParameters, ESItemContent = 
      * database as possible to be stored in memory for quick access
      */
     const cacheIndexedDB = async () => {
-        const { esEnabled, dbExists, cachedIndexKey } = esStatus;
+        const { esEnabled, dbExists, cachedIndexKey, isCaching } = esStatus;
 
-        if (!dbExists || !esEnabled || esCacheRef.current.isContentCached) {
-            return esCacheRef;
+        if (dbExists && esEnabled) {
+            const indexKey = cachedIndexKey || (await getIndexKey(getUserKeys, userID));
+            const isIDBIntact = await canUseES(userID, storeName);
+            if (!indexKey || !isIDBIntact) {
+                return dbCorruptError();
+            }
+
+            const { isCacheReady } = esCacheRef.current;
+            if (isCaching || isCacheReady) {
+                return;
+            }
+
+            setESStatus((esStatus) => {
+                return {
+                    ...esStatus,
+                    isCaching: true,
+                    cachedIndexKey: indexKey,
+                };
+            });
+
+            await cacheDB<ESItem, ESCiphertext>(
+                indexKey,
+                userID,
+                esCacheRef,
+                storeName,
+                indexName,
+                esHelpers.getTimePoint
+            );
+
+            esCacheRef.current.isCacheReady = true;
+            setESStatus((esStatus) => {
+                return {
+                    ...esStatus,
+                    isCaching: false,
+                };
+            });
         }
-
-        const indexKey = cachedIndexKey || (await getIndexKey(getUserKeys, userID));
-        if (!indexKey) {
-            await dbCorruptError();
-            return esCacheRef;
-        }
-
-        setESStatus((esStatus) => ({
-            ...esStatus,
-            cachedIndexKey: indexKey,
-        }));
-
-        await cacheContent<ESItemMetadata, ESItemContent>(indexKey, userID, esCacheRef, esHelpers.getItemInfo);
-
-        return esCacheRef;
     };
-
-    /**
-     * Create the ES cache by filling it exclusively with metadata of items
-     */
-    const cacheMetadataOnly = async () => {
-        const { esEnabled, dbExists, cachedIndexKey } = esStatus;
-
-        if (!dbExists || !esEnabled || esCacheRef.current.isCacheReady) {
-            return esCacheRef;
-        }
-
-        const indexKey = cachedIndexKey || (await getIndexKey(getUserKeys, userID));
-        if (!indexKey) {
-            await dbCorruptError();
-            return esCacheRef;
-        }
-
-        setESStatus((esStatus) => ({
-            ...esStatus,
-            cachedIndexKey: indexKey,
-        }));
-
-        await cacheMetadata<ESItemMetadata>(userID, indexKey, esHelpers.getItemInfo, esCacheRef);
-
-        return esCacheRef;
-    };
-
-    /**
-     * Return the reference to the current cache
-     */
-    const getESCache = () => esCacheRef;
 
     /**
      * Keep IndexedDB in sync with new events
      */
     const syncIndexedDB = async (
-        event: ESEvent<ESItemMetadata>,
-        indexKey: CryptoKey | undefined,
+        event: ESEvent<ESItemChanges>,
+        indexKey: CryptoKey,
         recordProgressLocal?: () => void
     ) => {
         const { Items, attemptReDecryption } = event;
-        const isUpdatingItemContent = typeof recordProgressLocal !== 'undefined';
-
-        const { permanentResults, setResultsList, contentIndexingDone } = esStatus;
+        const isUpdatingMessageContent = typeof recordProgressLocal !== 'undefined';
 
         // In case a key is reactivated, try to fix any decryption error that might
-        // have happened during indexing, but only if content indexing is done, otherwise
-        // there might not be all content in IDB
-        if (contentIndexingDone && attemptReDecryption && !!esHelpers.fetchESItem) {
+        // have happened during indexing
+        if (attemptReDecryption) {
             recordProgress(0, 0);
 
             // In case we weren't already showing the refreshing UI, we do now
-            if (!isUpdatingItemContent) {
-                setESStatus((esStatus) => ({
-                    ...esStatus,
-                    isRefreshing: true,
-                }));
+            if (!isUpdatingMessageContent) {
+                setESStatus((esStatus) => {
+                    return {
+                        ...esStatus,
+                        isRefreshing: true,
+                    };
+                });
             }
 
-            if (indexKey) {
-                await correctDecryptionErrors<ESItemMetadata, ESSearchParameters, ESItemContent>(
-                    userID,
-                    indexKey,
-                    esHelpers,
-                    recordProgress,
-                    esCacheRef
-                );
-            }
+            await correctDecryptionErrors<ESItemMetadata, ESItem, ESItemChanges, ESCiphertext, ESSearchParameters>(
+                userID,
+                indexKey,
+                storeName,
+                indexName,
+                esHelpers,
+                recordProgress,
+                esCacheRef
+            );
 
-            if (!isUpdatingItemContent) {
-                setESStatus((esStatus) => ({
-                    ...esStatus,
-                    isRefreshing: false,
-                }));
+            if (!isUpdatingMessageContent) {
+                setESStatus((esStatus) => {
+                    return {
+                        ...esStatus,
+                        isRefreshing: false,
+                    };
+                });
             }
         }
 
@@ -400,107 +367,108 @@ const useEncryptedSearch = <ESItemMetadata, ESSearchParameters, ESItemContent = 
             recordProgress(0, 0);
         }
 
+        const { permanentResults, setResultsList } = esStatus;
         const { esSearchParams } = getSearchParams();
 
-        // In case content indexing is wrapping up, contentIndexingDone is still
-        // not true, yet we need to sync content as well
-        let useContent = contentIndexingDone;
-        if (!useContent) {
-            const contentProgress = await readContentProgress(userID);
-            useContent = !!contentProgress && contentProgress.status === INDEXING_STATUS.ACTIVE;
-        }
-
-        const searchChanged = await syncItemEvents<ESItemContent, ESItemMetadata, ESSearchParameters>(
+        const searchChanged = await syncMessageEvents(
             Items,
             userID,
-            useContent,
             esCacheRef,
             permanentResults,
             indexKey,
             esSearchParams,
+            storeName,
+            indexName,
             esHelpers,
             recordProgressLocal
         );
 
         if (searchChanged) {
             setResultsList(permanentResults);
-            setESStatus((esStatus) => ({
-                ...esStatus,
-                permanentResults,
-            }));
+            setESStatus((esStatus) => {
+                return {
+                    ...esStatus,
+                    permanentResults,
+                };
+            });
         }
     };
 
     /**
      * Conclude any type of syncing routine
      */
-    const finaliseSyncing = async (eventsToStore: EventsObject, indexKey: CryptoKey | undefined) => {
+    const finaliseSyncing = async (eventToStore: string | undefined, indexKey: CryptoKey) => {
         // In case everything goes through, save the last event(s) from which to
-        // catch up the next time, but only in case either content is not indexed at all
-        // of if it already finished. If content indexing is ongoing, we don't overwrite the
-        // last event IDs from IDB because we'll need to catch up from them to update content.
-        // In other words, metadata will be re-synced once the latter happens
-        const { isEnablingContentSearch, isPaused } = esStatus;
-        if (!isEnablingContentSearch && !isPaused) {
-            await writeAllEventsConditionally<ESItemMetadata>(
-                userID,
-                eventsToStore,
-                esCacheRef.current.esCache,
-                esHelpers.getItemInfo
-            );
+        // catch up the next time
+        if (eventToStore) {
+            setES.Event(userID, eventToStore);
         }
 
-        // In case many items were removed from cache, or from IDB, fill the remaining space
-        let isDBLimited: boolean | undefined;
-        if (!!indexKey) {
-            const contentProgress = await readContentProgress(userID);
-            if (!!contentProgress && contentProgress.status === INDEXING_STATUS.ACTIVE) {
-                abortIndexingRef.current = new AbortController();
-                await retryContentIndexing(userID, indexKey, esCacheRef, esHelpers, abortIndexingRef);
-            }
-            await refreshESCache<ESItemMetadata, ESItemContent>(indexKey, userID, esCacheRef, esHelpers.getItemInfo);
+        // In case many items were removed from cache, fill the remaining space
+        await refreshESCache<ESItem, ESCiphertext>(
+            indexKey,
+            userID,
+            esCacheRef,
+            storeName,
+            indexName,
+            esHelpers.getTimePoint
+        );
 
-            // Check if DB became limited or not after the update
-            isDBLimited = await readLimited(userID);
-        }
-
-        setESStatus((esStatus) => ({
-            ...esStatus,
-            isRefreshing: false,
-            isDBLimited: isDBLimited ?? esStatus.isDBLimited,
-        }));
+        // Check if DB became limited after the update
+        const isDBLimited = await checkIsDBLimited(userID, storeName, esHelpers.getTotalItems);
+        setESStatus((esStatus) => {
+            return {
+                ...esStatus,
+                isRefreshing: false,
+                isDBLimited,
+            };
+        });
     };
 
     /**
      * Catch up with all changes contained in the given event
      */
-    const catchUpFromEvent = async (indexKey: CryptoKey, currentEvent: ESEvent<ESItemMetadata>): Promise<void> => {
+    const catchUpFromEvent = async (indexKey: CryptoKey, currentEvent: ESEvent<ESItemChanges>): Promise<void> => {
+        const isIDBIntact = await canUseES(userID, storeName);
+        if (!isIDBIntact) {
+            return dbCorruptError();
+        }
+
         try {
             await syncIndexedDB(currentEvent, indexKey);
         } catch (error: any) {
             esSentryReport('catchUpFromEvent: syncIndexedDB', { error });
-            setESStatus((esStatus) => ({
-                ...esStatus,
-                isRefreshing: false,
-            }));
+            setESStatus((esStatus) => {
+                return {
+                    ...esStatus,
+                    isRefreshing: false,
+                };
+            });
             return catchUpFromEvent(indexKey, currentEvent);
         }
 
-        return finaliseSyncing(currentEvent.eventsToStore, indexKey);
+        return finaliseSyncing(currentEvent.eventToStore, indexKey);
     };
 
     /**
      * Fetch all events since a previously stored one
      */
-    const catchUpFromLastEvents = async (
-        indexKey: CryptoKey | undefined,
-        newEvents: ESEvent<ESItemMetadata>[],
-        eventsToStore: EventsObject
+    const catchUpFromLS = async (
+        indexKey: CryptoKey,
+        newEvents: ESEvent<ESItemChanges>[],
+        eventToStore: string | undefined
     ): Promise<void> => {
-        setESStatus((esStatus) => ({
-            ...esStatus,
-            isRefreshing: true,
-        }));
+        const isIDBIntact = await canUseES(userID, storeName);
+        if (!isIDBIntact) {
+            return dbCorruptError();
+        }
+
+        setESStatus((esStatus) => {
+            return {
+                ...esStatus,
+                isRefreshing: true,
+            };
+        });
 
         // Resetting is necessery to show appropriate UI when syncing immediately after refreshing
         recordProgress(0, 0);
@@ -516,164 +484,17 @@ const useEncryptedSearch = <ESItemMetadata, ESSearchParameters, ESItemContent = 
                 await syncIndexedDB(eventToCheck, indexKey, recordProgressLocal);
             }
         } catch (error: any) {
-            esSentryReport('catchUpFromLastEvents: syncIndexedDB', { error });
-            setESStatus((esStatus) => ({
-                ...esStatus,
-                isRefreshing: false,
-            }));
-            return catchUpFromLastEvents(indexKey, newEvents, eventsToStore);
-        }
-
-        return finaliseSyncing(eventsToStore, indexKey);
-    };
-
-    /**
-     * Set up the ES IndexedDB and populate it with items metadata. It optionally accepts
-     * an object with one property.
-     * @param isRefreshed is only used to be forward to the metrics route for statistical purposes.
-     * Whenever the user manually starts indexing, the latter shouldn't be specified (and defaults to false).
-     */
-    const enableEncryptedSearch: EnableEncryptedSearch = async ({ isRefreshed = false } = {}) => {
-        // If indexing instance is already in progress, don't start a new one
-        const { isEnablingEncryptedSearch } = esStatus;
-        if (isEnablingEncryptedSearch) {
-            return;
-        }
-
-        setESStatus((esStatus) => ({
-            ...esStatus,
-            isEnablingEncryptedSearch: true,
-        }));
-
-        const handleError = () => {
-            createNotification({
-                text: c('Error').t`A problem occurred, please try again.`,
-                type: 'error',
+            esSentryReport('catchUpFromLS: syncIndexedDB', { error });
+            setESStatus((esStatus) => {
+                return {
+                    ...esStatus,
+                    isRefreshing: false,
+                };
             });
-            return esDelete();
-        };
-
-        const esdbExists = await checkVersionedESDB(userID);
-
-        let indexKey: CryptoKey | undefined;
-        let esDB: IDBPDatabase<EncryptedSearchDB> | undefined;
-        if (esdbExists) {
-            const esProgress = await readMetadataProgress(userID);
-            // If indexing was already completed, don't start a new one
-            if (esProgress && esProgress.status === INDEXING_STATUS.ACTIVE) {
-                return;
-            }
-
-            // Otherwise indexing should resume
-            esDB = await openESDB(userID);
-            indexKey = await getIndexKey(getUserKeys, userID);
-
-            // Note that at this point esDB nor indexKey can be undefined, and there
-            // is a problem if either of them is
-            if (!esDB || !indexKey) {
-                return handleError();
-            }
-        } else {
-            ({ indexKey, esDB } = await initializeEncryptedSearch(
-                userID,
-                getUserKeys,
-                await esHelpers.getPreviousEventID(),
-                isRefreshed,
-                await esHelpers.getTotalItems()
-            ));
+            return catchUpFromLS(indexKey, newEvents, eventToStore);
         }
 
-        // esSupported is false when we can't initialise IndexedDB and therefore ES
-        // will be cache only.
-        setESStatus((esStatus) => ({
-            ...esStatus,
-            esSupported: !!indexKey,
-            cachedIndexKey: indexKey,
-            dbExists: true,
-        }));
-
-        // Even though this procedure cannot be paused, this is still useful
-        // in case of clearing data and logout
-        abortIndexingRef.current = new AbortController();
-
-        const currentItems = (await readNumMetadata(userID)) || 0;
-        const totalItems = await esHelpers.getTotalItems();
-        recordProgress(currentItems, totalItems);
-        const recordProgressLocal = (progress: number) => {
-            const newProgress = currentItems + progress;
-            recordProgress(newProgress, totalItems);
-        };
-
-        let success = false;
-        while (!success) {
-            success = await buildMetadataDB<ESItemMetadata>(
-                userID,
-                esDB,
-                indexKey,
-                esCacheRef,
-                esHelpers.queryItemsMetadata,
-                esHelpers.getItemInfo,
-                abortIndexingRef,
-                recordProgressLocal
-            );
-
-            // Kill switch in case user logs out or deletes data
-            if (abortIndexingRef.current.signal.aborted) {
-                return;
-            }
-
-            // In case the procedure failed, wait some time before re-starting
-            if (!success) {
-                await wait(2 * SECOND);
-            }
-        }
-
-        // Catch up with events since the last one before indexing, which was set in
-        // the Event blob in localStorage during initialization. Note that we finalise
-        // indexing even it this step fails, because it will be retried at every new
-        // event and refresh
-        let newEvents: ESEvent<ESItemMetadata>[];
-        let shouldRefresh: boolean;
-        let eventsToStore: EventsObject;
-        try {
-            ({ newEvents, shouldRefresh, eventsToStore } = await esHelpers.getEventFromIDB());
-        } catch (error: any) {
-            return esDelete();
-        }
-
-        if (shouldRefresh) {
-            return esDelete();
-        }
-
-        const catchUpPromise = catchUpFromLastEvents(indexKey, newEvents, eventsToStore);
-        void addSyncing(() => catchUpPromise);
-        await catchUpPromise;
-
-        // Paginated indexing has the problem that if the user deletes completely some items
-        // in pages that have already been queried, all subsequent items are shifted. Therefore
-        // later pages will contain different items than if the deletion had never occured. The
-        // end result is that some items are not indexed. Since it's tricky and slow to figure
-        // out which ones, we instead just delete everything and notify users
-        const finalIndexed = await readNumMetadata(userID);
-        const finalMailbox = await esHelpers.getTotalItems();
-        if (typeof finalIndexed === 'undefined' || finalIndexed < finalMailbox) {
-            return handleError();
-        }
-
-        await setMetadataActiveProgressStatus(userID);
-        await toggleEnabled<ESItemMetadata>(userID, esCacheRef.current.esCache, esHelpers.getItemInfo);
-
-        setESStatus((esStatus) => ({
-            ...esStatus,
-            isEnablingEncryptedSearch: false,
-            esEnabled: true,
-        }));
-
-        if (notifyMetadataIndexed) {
-            createNotification({
-                text: successMessage,
-            });
-        }
+        return finaliseSyncing(eventToStore, indexKey);
     };
 
     /**
@@ -681,25 +502,19 @@ const useEncryptedSearch = <ESItemMetadata, ESSearchParameters, ESItemContent = 
      */
     const pauseIndexing = async () => {
         abortIndexingRef.current.abort();
-        setESStatus((esStatus) => ({
-            ...esStatus,
-            isEnablingContentSearch: false,
-            isPaused: true,
-        }));
-
-        await setProgressStatus<ESItemMetadata>(
-            userID,
-            INDEXING_STATUS.PAUSED,
-            esCacheRef.current.esCache,
-            esHelpers.getItemInfo
-        );
-        await incrementNumPauses<ESItemMetadata>(userID, esCacheRef.current.esCache, esHelpers.getItemInfo);
-        await addTimestamp<ESItemMetadata>(
-            userID,
-            esCacheRef.current.esCache,
-            esHelpers.getItemInfo,
-            TIMESTAMP_TYPE.STOP
-        );
+        setESStatus((esStatus) => {
+            return {
+                ...esStatus,
+                isBuilding: false,
+            };
+        });
+        setES.Pause(userID);
+        increaseNumPauses(userID);
+        addESTimestamp(userID, 'stop');
+        const isIDBIntact = await canUseES(userID, storeName);
+        if (!isIDBIntact) {
+            return dbCorruptError();
+        }
     };
 
     /**
@@ -710,73 +525,64 @@ const useEncryptedSearch = <ESItemMetadata, ESSearchParameters, ESItemContent = 
      * @param isRefreshed is only used to be forward to the metrics route for statistical purposes.
      * Whenever the user manually starts indexing, the latter shouldn't be specified (and defaults to false).
      */
-    const enableContentSearch: EnableContentSearch = async ({ notify = true, isRefreshed = false } = {}) => {
-        // If an indexing instance is already in progress don't start a new one
-        const { isEnablingContentSearch, esSupported } = esStatus;
-        if (isEnablingContentSearch) {
+    const resumeIndexing: ResumeIndexing = async ({ notify, isRefreshed } = { notify: true, isRefreshed: false }) => {
+        const isResumed = getES.Pause(userID);
+
+        // If an indexing instance is already in progress, or if indexing
+        // had already been completed, don't start a new one
+        const { esEnabled, isBuilding, dbExists } = esStatus;
+        if ((!isResumed && esEnabled) || isBuilding || dbExists) {
             return;
         }
 
-        if (!esSupported) {
-            createNotification({
-                text: c('Error')
-                    .t`Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.`,
-                type: 'error',
-            });
-            return;
-        }
-
-        const indexKey = await getIndexKey(getUserKeys, userID);
-        if (!indexKey) {
-            return dbCorruptError();
-        }
-
-        setESStatus((esStatus) => ({
-            ...esStatus,
-            isEnablingContentSearch: true,
-            isPaused: false,
-        }));
-
-        const previousProgress = await readContentProgress(userID);
-
-        const currentItems = (await readNumContent(userID)) || 0;
-        let totalItems = 0;
-        let recoveryPoint: [number, number] | undefined;
-        if (!previousProgress) {
-            // Save the event before starting building IndexedDB. The number of items
-            // before indexing aims to show progress, as new items will be synced only
-            // after indexing has completed
-            await writeAllEventsConditionally<ESItemMetadata>(
-                userID,
-                await esHelpers.getPreviousEventID(),
-                esCacheRef.current.esCache,
-                esHelpers.getItemInfo
-            );
-
-            totalItems = await esHelpers.getTotalItems();
-            const initialProgress: ESProgress = {
-                ...defaultESProgress,
-                totalItems,
-                isRefreshed,
-                status: INDEXING_STATUS.INDEXING,
+        setESStatus((esStatus) => {
+            return {
+                ...esStatus,
+                esEnabled: true,
             };
-            await writeContentProgress<ESItemMetadata>(
-                userID,
-                initialProgress,
-                esCacheRef.current.esCache,
-                esHelpers.getItemInfo
-            );
-        } else {
-            await setProgressStatus<ESItemMetadata>(
-                userID,
-                INDEXING_STATUS.INDEXING,
-                esCacheRef.current.esCache,
-                esHelpers.getItemInfo
-            );
-            ({ totalItems, recoveryPoint } = previousProgress);
-        }
+        });
+        setES.Enabled(userID);
 
+        const handleError = (notSupported?: boolean) => {
+            if (notify) {
+                createNotification({
+                    text: notSupported
+                        ? c('Error')
+                              .t`Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.`
+                        : c('Error').t`A problem occurred, please try again`,
+                    type: 'error',
+                });
+            }
+            setESStatus(() => ({ ...defaultESStatus, esSupported: !notSupported }));
+        };
+
+        removeES.Pause(userID);
         abortIndexingRef.current = new AbortController();
+
+        let indexKey: CryptoKey;
+        if (!indexKeyExists(userID) && !isResumed) {
+            const { notSupported, indexKey: newIndexKey } = await initializeDB(
+                userID,
+                getUserKeys,
+                isRefreshed || false,
+                await esHelpers.getTotalItems(),
+                storeName,
+                indexName,
+                primaryKeyName,
+                indexKeyNames,
+                esHelpers.getPreviousEventID
+            );
+            if (!newIndexKey) {
+                return handleError(notSupported);
+            }
+            indexKey = newIndexKey;
+        } else {
+            const existingIndexKey = await getIndexKey(getUserKeys, userID);
+            if (!existingIndexKey) {
+                return dbCorruptError();
+            }
+            indexKey = existingIndexKey;
+        }
 
         // We request storage persistence to prevent IDB from being evicted. In Firefox this
         // operation will trigger a popup asking the user to grant storage permission. If
@@ -790,50 +596,45 @@ const useEncryptedSearch = <ESItemMetadata, ESSearchParameters, ESItemContent = 
             await requestPersistence();
         }
 
-        // Caching content because by the end of content indexing we also expect cache
-        // to hold content. In case content indexing was interrupted, we would only add
-        // content for the fetched items and not for those that were indexed before the
-        // interruption, therefore we will that in here
-        await cacheContent<ESItemMetadata, ESItemContent>(indexKey, userID, esCacheRef, esHelpers.getItemInfo);
+        const totalItems = getESTotal(userID);
+        recordProgress(await getNumItemsDB(userID, storeName), totalItems);
 
-        // We default to having the limited flag to true and
-        // only revert if by the end IDB is not limited
-        await setLimited<ESItemMetadata>(userID, true, esCacheRef.current.esCache, esHelpers.getItemInfo);
+        setESStatus((esStatus) => {
+            return {
+                ...esStatus,
+                isBuilding: true,
+            };
+        });
 
-        recordProgress(currentItems, totalItems);
-
-        let indexingOutcome = STORING_OUTCOME.SUCCESS;
         let success = totalItems === 0;
         while (!success) {
+            const currentMessages = await getNumItemsDB(userID, storeName);
+            recordProgress(currentMessages, totalItems);
             const recordProgressLocal = (progress: number) => {
-                const newProgress = currentItems + progress;
+                const newProgress = currentMessages + progress;
+                setESCurrent(userID, newProgress);
                 recordProgress(newProgress, totalItems);
             };
 
-            try {
-                indexingOutcome = await buildContentDB<ESItemMetadata, ESSearchParameters, ESItemContent>(
-                    userID,
-                    indexKey,
-                    abortIndexingRef,
-                    recordProgressLocal,
-                    esHelpers,
-                    esCacheRef,
-                    recoveryPoint
-                );
-            } catch (error: any) {
-                if (abortIndexingRef.current.signal.aborted) {
-                    return;
-                }
-                void esSentryReport('buildContentDB', { error });
-                return dbCorruptError();
-            }
+            success = await buildDB<ESItemMetadata, ESItem, ESCiphertext>(
+                userID,
+                indexKey,
+                abortIndexingRef,
+                recordProgressLocal,
+                storeName,
+                indexName,
+                esHelpers
+            );
 
             // Kill switch in case user logs out or pauses
-            if (abortIndexingRef.current.signal.aborted) {
+            if (abortIndexingRef.current.signal.aborted || getES.Pause(userID)) {
                 return;
             }
 
-            success = indexingOutcome === STORING_OUTCOME.SUCCESS || indexingOutcome === STORING_OUTCOME.QUOTA;
+            const isIDBIntact = await canUseES(userID, storeName);
+            if (!isIDBIntact) {
+                return dbCorruptError();
+            }
 
             // In case the procedure failed, wait some time before re-starting
             if (!success) {
@@ -841,21 +642,25 @@ const useEncryptedSearch = <ESItemMetadata, ESSearchParameters, ESItemContent = 
             }
         }
 
-        // Since we default to having the limited flag to true in IDB,
-        // in case it is not limited we overwrite it
-        if (indexingOutcome === STORING_OUTCOME.SUCCESS) {
-            await setLimited<ESItemMetadata>(userID, false, esCacheRef.current.esCache, esHelpers.getItemInfo);
-        }
+        void sendIndexingMetrics(api, userID);
+
+        // Finalise IndexedDB building by catching up with new items
+        setESStatus((esStatus) => {
+            return {
+                ...esStatus,
+                isBuilding: false,
+            };
+        });
 
         // Catch up with events since the last one before indexing, which was set in
         // the Event blob in localStorage during initialization. Note that we finalise
         // indexing even it this step fails, because it will be retried at every new
         // event and refresh
-        let newEvents: ESEvent<ESItemMetadata>[];
+        let newEvents: ESEvent<ESItemChanges>[];
         let shouldRefresh: boolean;
-        let eventsToStore: EventsObject;
+        let eventToStore: string | undefined;
         try {
-            ({ newEvents, shouldRefresh, eventsToStore } = await esHelpers.getEventFromIDB());
+            ({ newEvents, shouldRefresh, eventToStore } = await esHelpers.getEventFromLS());
         } catch (error: any) {
             return dbCorruptError();
         }
@@ -864,24 +669,20 @@ const useEncryptedSearch = <ESItemMetadata, ESSearchParameters, ESItemContent = 
             return dbCorruptError();
         }
 
-        await setContentActiveProgressStatus<ESItemMetadata>(userID, esCacheRef.current.esCache, esHelpers.getItemInfo);
-        setESStatus((esStatus) => ({
-            ...esStatus,
-            isEnablingContentSearch: false,
-            contentIndexingDone: true,
-        }));
-
-        const catchUpPromise = catchUpFromLastEvents(indexKey, newEvents, eventsToStore);
+        const catchUpPromise = catchUpFromLS(indexKey, newEvents, eventToStore);
         void addSyncing(() => catchUpPromise);
         await catchUpPromise;
 
-        await addTimestamp<ESItemMetadata>(
-            userID,
-            esCacheRef.current.esCache,
-            esHelpers.getItemInfo,
-            TIMESTAMP_TYPE.STOP
-        );
-        void sendIndexingMetrics(api, user);
+        // Note that it's safe to remove the BuildProgress blob because the event to catch
+        // up from is stored in the Event blob and because the metrics report has already been sent
+        removeES.Progress(userID);
+
+        setESStatus((esStatus) => {
+            return {
+                ...esStatus,
+                dbExists: true,
+            };
+        });
 
         if (notify) {
             createNotification({
@@ -893,7 +694,7 @@ const useEncryptedSearch = <ESItemMetadata, ESSearchParameters, ESItemContent = 
     /**
      * Execute an encrypted search
      */
-    const newEncryptedSearch: EncryptedSearchExecution<ESItemMetadata, ESItemContent, ESSearchParameters> = async (
+    const newEncryptedSearch: EncryptedSearchExecution<ESItem, ESSearchParameters> = async (
         setResultsList,
         esSearchParams,
         minimumItems
@@ -904,10 +705,21 @@ const useEncryptedSearch = <ESItemMetadata, ESSearchParameters, ESItemContent = 
             permanentResults,
             isSearchPartial: wasSearchPartial,
             cachedIndexKey,
+            isCaching,
             isFirstSearch,
         } = esStatus;
 
+        const isIDBIntact = await canUseES(userID, storeName);
+        if (!isIDBIntact) {
+            return dbCorruptError().then(() => false);
+        }
+
         abortSearchingRef.current = new AbortController();
+
+        // Caching needs to be triggered here for when a refresh happens on a search URL
+        if (!isCaching && !esCacheRef.current.isCacheReady) {
+            void cacheIndexedDB();
+        }
 
         // In case only sorting changed, for complete searches it doesn't make sense to perform a new search
         if (!wasSearchPartial && previousESSearchParams) {
@@ -918,26 +730,28 @@ const useEncryptedSearch = <ESItemMetadata, ESSearchParameters, ESItemContent = 
             }
         }
 
-        setESStatus((esStatus) => ({
-            ...esStatus,
-            isSearching: true,
-            isSearchPartial: true,
-            isFirstSearch: false,
-        }));
+        setESStatus((esStatus) => {
+            return {
+                ...esStatus,
+                isSearching: true,
+                isSearchPartial: true,
+                isFirstSearch: false,
+            };
+        });
 
-        const controlledSetResultsList = (items: ESItem<ESItemMetadata, ESItemContent>[]) => {
+        const controlledSetResultsList = (items: ESItem[]) => {
             if (!abortSearchingRef.current.signal.aborted) {
                 setResultsList(items);
             }
         };
 
-        let searchResults: ESItem<ESItemMetadata, ESItemContent>[] = [];
+        let searchResults: ESItem[] = [];
         let isSearchPartial = false;
-        let contentIDs: Set<string>;
+        let lastTimePoint: [number, number] | undefined;
         try {
-            ({ searchResults, isSearchPartial, contentIDs } = await hybridSearch<
-                ESItemMetadata,
-                ESItemContent,
+            ({ searchResults, isSearchPartial, lastTimePoint } = await hybridSearch<
+                ESItem,
+                ESCiphertext,
                 ESSearchParameters
             >(
                 esCacheRef,
@@ -947,8 +761,9 @@ const useEncryptedSearch = <ESItemMetadata, ESSearchParameters, ESItemContent = 
                 userID,
                 controlledSetResultsList,
                 abortSearchingRef,
+                storeName,
+                indexName,
                 esHelpers,
-                esStatus.contentIndexingDone,
                 minimumItems
             ));
         } catch (error: any) {
@@ -963,15 +778,17 @@ const useEncryptedSearch = <ESItemMetadata, ESSearchParameters, ESItemContent = 
         }
 
         if (!abortSearchingRef.current.signal.aborted) {
-            setESStatus((esStatus) => ({
-                ...esStatus,
-                permanentResults: searchResults,
-                setResultsList: setResultsList,
-                contentIDs,
-                previousESSearchParams: esSearchParams,
-                isSearchPartial,
-                isSearching: false,
-            }));
+            setESStatus((esStatus) => {
+                return {
+                    ...esStatus,
+                    permanentResults: searchResults,
+                    setResultsList: setResultsList,
+                    lastTimePoint,
+                    previousESSearchParams: esSearchParams,
+                    isSearchPartial,
+                    isSearching: false,
+                };
+            });
             setResultsList(searchResults);
 
             const t2 = performance.now();
@@ -981,7 +798,8 @@ const useEncryptedSearch = <ESItemMetadata, ESSearchParameters, ESItemContent = 
                 esCacheRef.current.cacheSize,
                 Math.ceil(t2 - t1),
                 isFirstSearch,
-                esCacheRef.current.isCacheLimited
+                esCacheRef.current.isCacheLimited,
+                storeName
             );
         }
 
@@ -992,12 +810,12 @@ const useEncryptedSearch = <ESItemMetadata, ESSearchParameters, ESItemContent = 
      * Increase the number of results in order to reach at least the next multiple of ES_EXTRA_RESULTS_LIMIT,
      * in case the cache is limited and the user wishes more
      */
-    const incrementSearch: EncryptedSearchExecution<ESItemMetadata, ESItemContent, ESSearchParameters> = async (
+    const incrementSearch: EncryptedSearchExecution<ESItem, ESSearchParameters> = async (
         setResultsList,
         esSearchParams,
         minimumItems
     ) => {
-        const { permanentResults, contentIDs, cachedIndexKey, contentIndexingDone } = esStatus;
+        const { permanentResults, lastTimePoint, cachedIndexKey } = esStatus;
 
         const extraItems = Math.max(
             ES_EXTRA_RESULTS_LIMIT * Math.ceil(permanentResults.length / ES_EXTRA_RESULTS_LIMIT) -
@@ -1005,10 +823,12 @@ const useEncryptedSearch = <ESItemMetadata, ESSearchParameters, ESItemContent = 
             minimumItems || 0
         );
 
-        setESStatus((esStatus) => ({
-            ...esStatus,
-            isSearching: true,
-        }));
+        setESStatus((esStatus) => {
+            return {
+                ...esStatus,
+                isSearching: true,
+            };
+        });
 
         const indexKey = cachedIndexKey || (await getIndexKey(getUserKeys, userID));
         if (!indexKey) {
@@ -1016,28 +836,32 @@ const useEncryptedSearch = <ESItemMetadata, ESSearchParameters, ESItemContent = 
             return false;
         }
 
-        const resultsArray = await uncachedSearch<ESItemMetadata, ESItemContent, ESSearchParameters>(
+        const searchOutput = await uncachedSearch<ESItem, ESCiphertext, ESSearchParameters>(
             userID,
             indexKey,
             esSearchParams,
+            storeName,
+            indexName,
             esHelpers,
-            contentIDs,
             extraItems,
-            contentIndexingDone,
-            esCacheRef,
             undefined,
+            lastTimePoint,
             abortSearchingRef
         );
 
         if (!abortSearchingRef.current.signal.aborted) {
-            permanentResults.push(...resultsArray);
+            permanentResults.push(...searchOutput.resultsArray);
+            const newIsSearchPartial = !!searchOutput.lastTimePoint;
 
-            setESStatus((esStatus) => ({
-                ...esStatus,
-                permanentResults,
-                isSearchPartial: contentIDs.size > 0,
-                isSearching: false,
-            }));
+            setESStatus((esStatus) => {
+                return {
+                    ...esStatus,
+                    permanentResults,
+                    lastTimePoint: searchOutput.lastTimePoint,
+                    isSearchPartial: newIsSearchPartial,
+                    isSearching: false,
+                };
+            });
             setResultsList(permanentResults);
         }
 
@@ -1054,7 +878,7 @@ const useEncryptedSearch = <ESItemMetadata, ESSearchParameters, ESItemContent = 
      * incrementing an existing partial search
      * @returns a boolean indicating the success of the search
      */
-    const encryptedSearch: EncryptedSearch<ESItemMetadata, ESItemContent> = async (setResultsList, minimumItems) => {
+    const encryptedSearch: EncryptedSearch<ESItem> = async (setResultsList, minimumItems) => {
         const { dbExists, esEnabled, isSearchPartial, previousESSearchParams } = esStatus;
 
         // In these cases no ES should be performed
@@ -1165,22 +989,15 @@ const useEncryptedSearch = <ESItemMetadata, ESSearchParameters, ESItemContent = 
             return false;
         }
 
-        return findItemIndex(ID, permanentResults, esHelpers.getItemInfo) !== -1;
+        return findItemIndex(ID, permanentResults, esHelpers.getItemID) !== -1;
     };
 
     /**
      * Remove the index and restart ES by creating a new one from scratch
      */
-    const restartIndexing = async () => {
-        // Retrieve whether content was already being indexed and reindex it too
-        const contentProgress = await readContentProgress(userID);
-        const wasContentIndexed = contentProgress && contentProgress.status !== INDEXING_STATUS.INACTIVE;
+    const restartIndexing = async (notify?: boolean) => {
         await esDelete();
-        return enableEncryptedSearch({ isRefreshed: true }).then(() => {
-            if (wasContentIndexed) {
-                return enableContentSearch({ isRefreshed: true });
-            }
-        });
+        return resumeIndexing({ isRefreshed: true, notify });
     };
 
     /**
@@ -1188,22 +1005,15 @@ const useEncryptedSearch = <ESItemMetadata, ESSearchParameters, ESItemContent = 
      * system the product uses to correctly sync the ES database.
      * @param event a single event containing a change to the items stored in the ES database
      */
-    const handleEvent = async (event: ESEvent<ESItemMetadata> | undefined) => {
-        // An event can be undefined in case of network instability, but since the app doesn't receive
-        // the update inside the event it's ok to ignor it
-        if (!event) {
-            return;
-        }
-
-        const { dbExists, cachedIndexKey, isEnablingEncryptedSearch } = esStatus;
-        // We want to sync new events while content indexing is ongoing so that metadata search
-        // can still be used, therefore we don't check whether content is being indexed
-        if (!dbExists || isEnablingEncryptedSearch) {
+    const handleEvent = async (event: ESEvent<ESItemChanges>) => {
+        const { dbExists, cachedIndexKey } = esStatus;
+        if (!dbExists) {
             return;
         }
 
         const indexKey = cachedIndexKey || (await getIndexKey(getUserKeys, userID));
-        if (!indexKey) {
+        const isIDBIntact = await canUseES(userID, storeName);
+        if (!indexKey || !isIDBIntact) {
             return dbCorruptError();
         }
 
@@ -1222,73 +1032,58 @@ const useEncryptedSearch = <ESItemMetadata, ESSearchParameters, ESItemContent = 
      * the EncryptedSearchProvider runs, as it checks for new events, continues indexing in
      * case a previous one was started, checks whether the index key is still accessible
      */
-    const initializeES = async (shouldCache: boolean = true) => {
-        // Check whether the ES IDB exists for the current user. Nothing else is
-        // needed in case it doesn't
-        if (!(await checkVersionedESDB(userID))) {
+    const initializeES = async () => {
+        // Run whatever custom initialization is needed by the product, potentially
+        // returning whether to start a silent indexing
+        if (await esHelpers.indexNewUser()) {
+            return resumeIndexing({ notify: false });
+        }
+
+        // If no ES:*:Key blob can be found, the user has never activated ES.
+        const armoredKey = getES.Key(userID);
+        if (!armoredKey) {
             return;
         }
 
-        // At this point the indexKey must exist
-        const indexKey = await getIndexKey(getUserKeys, userID);
-        if (!indexKey) {
+        // If the blob can be found but failed decryption, password was reset therefore we
+        // index again under the new user key.
+        let indexKey: CryptoKey;
+        try {
+            indexKey = await decryptIndexKey(getUserKeys, armoredKey);
+        } catch (error: any) {
+            return await restartIndexing(false);
+        }
+
+        const isIDBIntact = await canUseES(userID, storeName);
+        if (!indexKey || !isIDBIntact) {
             return dbCorruptError();
         }
 
-        // If metadata indexing was ongoing, continue it. We only
-        // check for the INDEXING status because metadata indexing cannot be
-        // PAUSED. Note that if IDB exists and metadata progress doesn't,
-        // something is wrong
-        const metadataProgress = await readMetadataProgress(userID);
-        if (!metadataProgress) {
-            return dbCorruptError();
+        setESStatus((esStatus) => {
+            return {
+                ...esStatus,
+                dbExists: wasIndexingDone(userID),
+                esEnabled: getES.Enabled(userID),
+            };
+        });
+
+        // If indexing was not successful, try to recover (unless it was paused).
+        // Otherwise, just set the correct parameters to ESDBStatus
+        if (!isDBReadyAfterBuilding(userID)) {
+            if (!getES.Pause(userID)) {
+                await resumeIndexing();
+            }
+            return;
         }
-
-        // Cache is needed at load time, unless otherwise specified because
-        // it was already built by another process
-        if (shouldCache) {
-            await cacheMetadata<ESItemMetadata>(userID, indexKey, esHelpers.getItemInfo, esCacheRef);
-        }
-
-        if (metadataProgress.status === INDEXING_STATUS.INDEXING) {
-            return enableEncryptedSearch();
-        }
-
-        const esEnabled = await readEnabled(userID);
-        const isDBLimited = await readLimited(userID);
-        setESStatus((esStatus) => ({
-            ...esStatus,
-            dbExists: true,
-            esEnabled,
-            isDBLimited,
-        }));
-
-        // Check whether content indexing was ongoing
-        const contentProgress = await readContentProgress(userID);
-
-        const isIndexingContent = !!contentProgress && contentProgress.status === INDEXING_STATUS.INDEXING;
-        const isPaused = !!contentProgress && contentProgress.status === INDEXING_STATUS.PAUSED;
-        const contentIndexingDone = !!contentProgress && contentProgress.status === INDEXING_STATUS.ACTIVE;
-
-        if (isIndexingContent) {
-            return enableContentSearch();
-        }
-
-        setESStatus((esStatus) => ({
-            ...esStatus,
-            cachedIndexKey: indexKey,
-            isPaused,
-            contentIndexingDone,
-        }));
 
         // Compare the last event "seen" by the DB (saved in localStorage) and
         // the present one to check whether any event has happened while offline,
         // but only if indexing was successful
-        let newEvents: ESEvent<ESItemMetadata>[];
+        let newEvents: ESEvent<ESItemChanges>[];
         let shouldRefresh: boolean;
-        let eventsToStore: EventsObject;
+        let eventToStore: string | undefined;
         try {
-            ({ newEvents, shouldRefresh, eventsToStore } = await esHelpers.getEventFromIDB());
+            ({ newEvents, shouldRefresh, eventToStore } = await esHelpers.getEventFromLS());
         } catch (error: any) {
             return await dbCorruptError();
         }
@@ -1297,7 +1092,7 @@ const useEncryptedSearch = <ESItemMetadata, ESSearchParameters, ESItemContent = 
             return restartIndexing();
         }
 
-        void addSyncing(() => catchUpFromLastEvents(indexKey, newEvents, eventsToStore));
+        void addSyncing(() => catchUpFromLS(indexKey, newEvents, eventToStore));
     };
 
     /**
@@ -1310,14 +1105,13 @@ const useEncryptedSearch = <ESItemMetadata, ESSearchParameters, ESItemContent = 
         }
     }, [isSearch]);
 
-    const esFunctions: EncryptedSearchFunctions<ESItemMetadata, ESSearchParameters, ESItemContent> = useMemo(
+    const esFunctions: EncryptedSearchFunctions<ESItem, ESSearchParameters, ESItemChanges> = useMemo(
         () => ({
             encryptedSearch,
             cacheIndexedDB,
             getESDBStatus,
             toggleEncryptedSearch,
-            enableEncryptedSearch,
-            enableContentSearch,
+            resumeIndexing,
             pauseIndexing,
             getProgressRecorderRef,
             highlightString,
@@ -1327,9 +1121,6 @@ const useEncryptedSearch = <ESItemMetadata, ESSearchParameters, ESItemContent = 
             esDelete,
             handleEvent,
             initializeES,
-            resetCache,
-            cacheMetadataOnly,
-            getESCache,
         }),
         [userID, esStatus]
     );

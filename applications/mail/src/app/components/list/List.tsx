@@ -116,10 +116,9 @@ const List = (
     const [userSettings] = useUserSettings();
     const [mailSettings] = useMailSettings();
 
-    const { shouldHighlight, getESDBStatus } = useEncryptedSearchContext();
-    const { contentIndexingDone } = getESDBStatus();
+    const { shouldHighlight } = useEncryptedSearchContext();
     // Override compactness of the list view to accomodate body preview when showing encrypted search results
-    const isCompactView = userSettings.Density === DENSITY.COMPACT && !(shouldHighlight() && contentIndexingDone);
+    const isCompactView = userSettings.Density === DENSITY.COMPACT && !shouldHighlight();
 
     const [user] = useUser();
     const onCompose = useOnCompose();
@@ -142,20 +141,12 @@ const List = (
 
     // ES options: offer users the option to turn off ES if it's taking too long, and
     // enable/disable UI elements for incremental partial searches
-    const {
-        showESSlowToolbar,
-        loadingElement,
-        disableGoToLast,
-        useLoadingElement,
-        limitedContentElement,
-        showESLimitedContent,
-        limitedContentIndex,
-    } = useEncryptedSearchList({
+    const { showESSlowToolbar, loadingElement, disableGoToLast, useLoadingElement } = useEncryptedSearchList(
         isSearch,
         loading,
         page,
-        total,
-    });
+        total
+    );
 
     const { draggedIDs, handleDragStart, handleDragEnd } = useItemsDraggable(
         elements,
@@ -207,32 +198,28 @@ const List = (
                         <>
                             {/* div needed here for focus management */}
                             <div>
-                                {showESLimitedContent && limitedContentIndex === -1 && limitedContentElement}
                                 {elements.map((element, index) => (
-                                    <>
-                                        <Item
-                                            key={element.ID}
-                                            conversationMode={conversationMode}
-                                            isCompactView={isCompactView}
-                                            labelID={labelID}
-                                            loading={loading}
-                                            columnLayout={columnLayout}
-                                            elementID={elementID}
-                                            element={element}
-                                            checked={checkedIDs.includes(element.ID || '')}
-                                            onCheck={onCheckOne}
-                                            onClick={onClick}
-                                            onContextMenu={onContextMenu}
-                                            onDragStart={handleDragStart}
-                                            onDragEnd={handleDragEnd}
-                                            dragged={draggedIDs.includes(element.ID || '')}
-                                            index={index}
-                                            breakpoints={breakpoints}
-                                            onFocus={onFocus}
-                                            onBack={onBack}
-                                        />
-                                        {showESLimitedContent && limitedContentIndex === index && limitedContentElement}
-                                    </>
+                                    <Item
+                                        key={element.ID}
+                                        conversationMode={conversationMode}
+                                        isCompactView={isCompactView}
+                                        labelID={labelID}
+                                        loading={loading}
+                                        columnLayout={columnLayout}
+                                        elementID={elementID}
+                                        element={element}
+                                        checked={checkedIDs.includes(element.ID || '')}
+                                        onCheck={onCheckOne}
+                                        onClick={onClick}
+                                        onContextMenu={onContextMenu}
+                                        onDragStart={handleDragStart}
+                                        onDragEnd={handleDragEnd}
+                                        dragged={draggedIDs.includes(element.ID || '')}
+                                        index={index}
+                                        breakpoints={breakpoints}
+                                        onFocus={onFocus}
+                                        onBack={onBack}
+                                    />
                                 ))}
                             </div>
 
