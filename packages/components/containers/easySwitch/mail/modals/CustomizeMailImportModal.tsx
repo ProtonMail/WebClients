@@ -86,7 +86,17 @@ const CustomizeMailImportModal = ({
         { value: MailImportDestinationFolder.INBOX, title: c('Label').t`Move to Inbox` },
         { value: MailImportDestinationFolder.ARCHIVE, title: c('Label').t`Move to Archive` },
     ];
-    const [selectedCategoriesDest, setSelectedCategoriesDest] = useState(MailImportDestinationFolder.INBOX);
+    const [selectedCategoriesDest, setSelectedCategoriesDest] = useState<MailImportDestinationFolder>(() => {
+        const defaultValue = payload.Mapping.reduce((acc, item) => {
+            // @ts-expect-error item.Source is a string
+            if (GMAIL_CATEGORIES.includes(item.Source) && item.Destinations.FolderPath) {
+                acc = item.Destinations.FolderPath as MailImportDestinationFolder;
+            }
+            return acc;
+        }, MailImportDestinationFolder.INBOX);
+
+        return defaultValue;
+    });
 
     const updateCategoriesDest = (
         payload: MailImporterPayload,
