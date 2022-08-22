@@ -2,7 +2,8 @@ import * as React from 'react';
 
 import { c } from 'ttag';
 
-import { Button, Dropdown } from '@proton/components';
+import { Button, Dropdown, useUser } from '@proton/components';
+import { indexKeyExists, isDBReadyAfterBuilding } from '@proton/encrypted-search';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 
 import { useSearchLibrary } from '../../../store';
@@ -18,10 +19,10 @@ interface Props {
 }
 
 export const SearchDropdown = ({ isOpen, anchorRef, onClose, onClosed }: Props) => {
+    const [user] = useUser();
     const { getESDBStatus } = useSearchLibrary();
-    const { isRefreshing, dbExists, isEnablingEncryptedSearch } = getESDBStatus();
-    const showProgress = isEnablingEncryptedSearch || isRefreshing;
-    const isESActive = dbExists && !isEnablingEncryptedSearch;
+    const { isRefreshing, esEnabled, dbExists } = getESDBStatus();
+    const showProgress = indexKeyExists(user.ID) && esEnabled && (!isDBReadyAfterBuilding(user.ID) || isRefreshing);
 
     return (
         <>
@@ -42,11 +43,11 @@ export const SearchDropdown = ({ isOpen, anchorRef, onClose, onClosed }: Props) 
                     <div>
                         <div className="flex">
                             <span className="inline-flex text-bold text-lg">
-                                {isESActive ? c('Info').t`Search Enabled` : c('Info').t`Enabling drive search`}
+                                {dbExists ? c('Info').t`Search Enabled` : c('Info').t`Enabling drive search`}
                             </span>
                         </div>
                         <p className="mb0">
-                            {isESActive
+                            {dbExists
                                 ? c('Info')
                                       .t`Private search enabled. You may now close this dialogue and search for files and folders.`
                                 : c('Info')

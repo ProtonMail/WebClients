@@ -1,46 +1,21 @@
-import { DBSchema } from 'idb';
+import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 
-import { ES_SYNC_ACTIONS, INDEXING_STATUS, TIMESTAMP_TYPE } from '../constants';
 import { ESSetResultsList } from './esFunctions';
 
 /**
  * Object stored in local storage during indexing to keep track
- * of its status. Note that recoveryPoint can differ between
- * metadata or content indexing. In particular, the former can
- * have any recovery point based on the product's needs, while
- * the latter must have  [number, number] recovery point, since
- * that's the key of the temporalIndex. For simplicity, such a
- * typing is not enforced here but when reading and writing
- * recoveryPoint from/to IDB
+ * of its status
  */
-export interface ESProgress {
+export interface ESProgressBlob {
     totalItems: number;
     numPauses: number;
     isRefreshed: boolean;
     timestamps: {
-        type: TIMESTAMP_TYPE;
+        type: 'start' | 'step' | 'stop';
         time: number;
     }[];
+    currentItems?: number;
     originalEstimate: number;
-    recoveryPoint: any;
-    status: INDEXING_STATUS;
-}
-
-/**
- * Collection of progress objects defined by the ESProgress interface
- * "metadata" is always present, being it the default content type enabled by encrypted search
- */
-export interface ProgressObject {
-    metadata: ESProgress;
-    content?: ESProgress;
-}
-
-/**
- * Collection of event IDs for all the components specified by the
- * product (e.g. calendars in calendar and shares in drive)
- */
-export interface EventsObject {
-    [components: string]: string;
 }
 
 /**
@@ -52,59 +27,13 @@ export interface AesGcmCiphertext {
 }
 
 /**
- * Ciphertexts in IDB have out-of-line keys, therefore we need
- * to specify the ID with which to index items externally
+ * The base interface of all stored items in the ES DB. It must be extended
+ * to define the interface of the product's specific stored item type. It
+ * forces all stored items to have the aesGcmCiphertext field, which formats
+ * an AES-GCM ciphertext correctly
  */
-export type CiphertextToStore = {
-    itemID: string;
+export interface ESStoredItem {
     aesGcmCiphertext: AesGcmCiphertext;
-};
-
-/**
- * List of possible key-value pairs types in the config object store
- */
-export interface ConfigValues {
-    indexKey: string;
-    size: number;
-    enabled: boolean;
-    limited: boolean;
-    migrated?: any;
-}
-export type ConfigKeys = keyof ConfigValues;
-
-/**
- * IndexedDB structure. Each sub-object corresponds to an object store
- *   - config contains overall information, e.g. whether ES was enabled
- *     or disabled, the index key and the estimated size of all items
- *   - events contains the latest event IDs according to which items
- *     had been updated, for all components of the product
- *   - indexingProgress contains information about the status of indexing
- *     for metadata and for any other content type specified by the product
- *   - metadata contains all the actual items' metadata
- *   - content contains the content of the items which are stored in the
- *     metadata objectStore
- */
-export interface EncryptedSearchDB extends DBSchema {
-    config: {
-        value: ConfigValues[ConfigKeys];
-        key: ConfigKeys;
-    };
-    events: {
-        value: string;
-        key: string;
-    };
-    indexingProgress: {
-        value: ESProgress;
-        key: string;
-    };
-    metadata: {
-        value: AesGcmCiphertext;
-        key: string;
-    };
-    content: {
-        value: AesGcmCiphertext;
-        key: string;
-    };
 }
 
 /**
@@ -117,35 +46,19 @@ export interface ESIndexingState {
     endTime: number;
     oldestTime: number;
     esPrevProgress: number;
-    totalIndexingItems: number;
+    totalIndexingMessages: number;
     currentProgressValue: number;
 }
 
 /**
- * Object representing the primary ID and the temporal coordinate
- * of an item
+ * A decrypted copy of IDB kept in memory in plaintext form. The field
+ * esCache is an array of all indexed items
  */
-export interface ESItemInfo {
-    ID: string;
-    timepoint: [number, number];
-}
-
-export interface CachedItem<ESItemMetadata, ESItemContent> {
-    metadata: ESItemMetadata;
-    content?: ESItemContent;
-}
-
-/**
- * A decrypted copy of IDB kept in memory in plaintext form. The property
- * esCache is a map of all indexed items. The property isCacheLimited refers
- * to content only, as metadata is assumed to always fit cache
- */
-export interface ESCache<ESItemMetadata, ESItemContent> {
-    esCache: Map<string, CachedItem<ESItemMetadata, ESItemContent>>;
+export interface ESCache<ESItem> {
+    esCache: ESItem[];
     cacheSize: number;
     isCacheLimited: boolean;
     isCacheReady: boolean;
-    isContentCached: boolean;
 }
 
 /**
@@ -177,93 +90,74 @@ export interface ESIndexMetrics extends ESMetrics {
     numInterruptions: number;
     isRefreshed: boolean;
     indexTime: number;
-    esID: number;
-    isLimited: boolean;
 }
 
 /**
  * Required fields to correctly process events and keep IDB in sync. This object
- * instructs the code to apply Action to the item specified by ID. ItemMetadata
- * contains the metadata of the item being changed and can be omitted only in
- * deletion events
+ * instructs the code to apply Action to the item specified by ID. ItemEvent is
+ * an optional field if more information are needed to sync the item
  */
-export interface ESItemEvent<ESItemMetadata> {
+export interface ESItemEvent<ESItemChanges> {
     ID: string;
-    Action: ES_SYNC_ACTIONS;
-    ItemMetadata: ESItemMetadata | undefined;
+    Action: EVENT_ACTIONS;
+    ItemEvent: ESItemChanges | undefined;
 }
 
 /**
  * Overall structure of an event
  */
-export interface ESEvent<ESItemMetadata> {
-    EventID: string;
+export interface ESEvent<ESItemChanges> {
+    EventID?: string;
     Refresh?: number;
-    Items?: ESItemEvent<ESItemMetadata>[];
+    Items?: ESItemEvent<ESItemChanges>[];
     attemptReDecryption?: boolean;
-    eventsToStore: EventsObject;
+    eventToStore?: string;
 }
-
-/**
- * Interface representing an ESItem, i.e. the combination of metadata plus
- * content. This is the overall item that can be searched. Note that metadata
- * must always be present, while content is optional, either because content
- * search hasn't been activated, or because a product doesn't support content
- * altogether
- */
-export type ESItem<ESItemMetadata, ESItemContent> = ESItemMetadata & Partial<ESItemContent>;
 
 /**
  * Internal variables on the status of ES
  */
-export interface ESStatus<ESItemMetadata, ESItemContent, ESSearchParameters> {
-    permanentResults: ESItem<ESItemMetadata, ESItemContent>[];
-    setResultsList: ESSetResultsList<ESItemMetadata, ESItemContent>;
-    contentIDs: Set<string>;
+export interface ESStatus<ESItem, ESSearchParameters> {
+    permanentResults: ESItem[];
+    setResultsList: ESSetResultsList<ESItem>;
+    lastTimePoint: [number, number] | undefined;
     previousESSearchParams: ESSearchParameters | undefined;
     cachedIndexKey: CryptoKey | undefined;
     dbExists: boolean;
+    isBuilding: boolean;
     isDBLimited: boolean;
     esEnabled: boolean;
     esSupported: boolean;
     isRefreshing: boolean;
     isSearchPartial: boolean;
     isSearching: boolean;
+    isCaching: boolean;
     isFirstSearch: boolean;
-    isEnablingContentSearch: boolean;
-    isEnablingEncryptedSearch: boolean;
-    isPaused: boolean;
-    contentIndexingDone: boolean;
 }
 
 /**
  * Subset of variables from the ES status useful to display correct UI
  * @var dbExists whether an instance of IndexedDB exists
- * @var isEnablingContentSearch whether indexing of content is ongoing
+ * @var isBuilding whether indexing is ongoing
  * @var isDBLimited whether IndexedDB has fewer than the total amount of items
  * @var esEnabled whether ES is enabled (in case a fallback to server-side search exists)
  * @var esSupported whether the browser supports our search engine. It's true by default until indexing fails to initialise IndexedDB
  * @var isRefreshing whether a refresh of IndexedDB (when correcting decryption errors) is ongoing
  * @var isSearchPartial whether the current search only has partial results. It happens when IndexedDB does not fit in cache
  * @var isSearching whether a search is ongoing
- * @var isCacheLimited whether the cache is limited, i.e. it doesn't contain all items that are in IndexedDB
- * @var isEnablingEncryptedSearch whether indexing of metadata is ongoing
- * @var isPaused whether content indexing is paused
- * @var contentIndexingDone whether content indexing is finished
+ * @var isCaching whether caching is ongoing
  */
-export interface ESDBStatus<ESItemMetadata, ESItemContent, ESSearchParameters>
+export interface ESDBStatus<ESItem, ESSearchParameters>
     extends Pick<
-            ESStatus<ESItemMetadata, ESItemContent, ESSearchParameters>,
+            ESStatus<ESItem, ESSearchParameters>,
             | 'dbExists'
-            | 'isEnablingContentSearch'
+            | 'isBuilding'
             | 'isDBLimited'
             | 'esEnabled'
             | 'esSupported'
             | 'isRefreshing'
             | 'isSearchPartial'
             | 'isSearching'
-            | 'isEnablingEncryptedSearch'
-            | 'isPaused'
-            | 'contentIndexingDone'
+            | 'isCaching'
         >,
-        Pick<ESCache<unknown, unknown>, 'isCacheLimited'> {}
+        Pick<ESCache<ESItem>, 'isCacheLimited'> {}
