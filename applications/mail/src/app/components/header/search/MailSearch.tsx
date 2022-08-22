@@ -7,7 +7,7 @@ import {
     TopNavbarListItemSearchButton,
     generateUID,
     useAddresses,
-    useFeatures,
+    useFeature,
     useFolders,
     useLabels,
     useMailSettings,
@@ -47,29 +47,15 @@ const MailSearch = ({ breakpoints, labelID, location }: Props) => {
     const [, loadingLabels] = useLabels();
     const [, loadingFolders] = useFolders();
     const [, loadingAddresses] = useAddresses();
-    const [{ loading: loadingScheduledFeature }, { feature: partialES }] = useFeatures([
-        FeatureCode.ScheduledSend,
-        FeatureCode.PartialEncryptedSearch,
-    ]);
-    const { getESDBStatus, cacheOrIndexMetadata, closeDropdown } = useEncryptedSearchContext();
-    const { dropdownOpened, dbExists } = getESDBStatus();
+    const { loading: loadingScheduledFeature } = useFeature(FeatureCode.ScheduledSend);
+    const { getESDBStatus, cacheIndexedDB, closeDropdown } = useEncryptedSearchContext();
+    const { isDBLimited, dropdownOpened } = getESDBStatus();
     const esState = useEncryptedSearchToggleState(isOpen);
 
-    const showEncryptedSearch = !isMobile() && (!!isPaid(user) || (!!partialES && partialES.Value));
+    const showEncryptedSearch = !isMobile() && !!isPaid(user);
 
     // Show more from inside AdvancedSearch to persist the state when the overlay is closed
     const { state: showMore, toggle: toggleShowMore } = useToggle(false);
-    // Show a loader between the time the user interacts with the ES CTA (i.e. the "Activate"
-    // button) and when metadata indexing is over. Set back to false in case the ESDB is removed
-    const [esInteraction, setESInteraction] = useState<boolean>(false);
-    const handleESInteraction = async () => {
-        setESInteraction(() => true);
-    };
-    useEffect(() => {
-        if (!dbExists) {
-            setESInteraction(() => false);
-        }
-    }, [dbExists]);
 
     const loading =
         loadingLabels || loadingFolders || loadingMailSettings || loadingAddresses || loadingScheduledFeature;
@@ -101,7 +87,7 @@ const MailSearch = ({ breakpoints, labelID, location }: Props) => {
 
         if (!loading) {
             anchorRef.current?.blur();
-            void cacheOrIndexMetadata();
+            void cacheIndexedDB();
             open();
         }
     };
@@ -137,8 +123,7 @@ const MailSearch = ({ breakpoints, labelID, location }: Props) => {
                     showEncryptedSearch={showEncryptedSearch}
                     onClose={close}
                     esState={esState}
-                    esInteraction={esInteraction}
-                    handleESInteraction={handleESInteraction}
+                    isDBLimited={isDBLimited}
                     showMore={showMore}
                     toggleShowMore={toggleShowMore}
                     searchInputValue={searchInputValue}
