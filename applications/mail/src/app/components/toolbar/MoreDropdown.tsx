@@ -1,6 +1,5 @@
 import { c } from 'ttag';
 
-import { Vr } from '@proton/atoms';
 import { DropdownMenu, DropdownMenuButton, Icon } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
@@ -156,7 +155,6 @@ const MoreDropdown = ({
 
     return (
         <>
-            <Vr />
             <ToolbarDropdown
                 title={c('Action').t`More`}
                 content={<Icon className="toolbar-icon" name="three-dots-horizontal" alt={c('Action').t`More`} />}
