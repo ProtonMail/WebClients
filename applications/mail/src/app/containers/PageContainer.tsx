@@ -8,9 +8,10 @@ import {
     useLabels,
     useMailSettings,
     useModalState,
+    useUserSettings,
     useWelcomeFlags,
 } from '@proton/components';
-import { MailSettings } from '@proton/shared/lib/interfaces';
+import { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 import { Label } from '@proton/shared/lib/interfaces/Label';
 
 import PrivateLayout from '../components/layout/PrivateLayout';
@@ -38,6 +39,7 @@ const PageContainer = (
     { params: { elementID, labelID, messageID }, breakpoints, isComposerOpened, rightSidebarContent }: Props,
     ref: Ref<HTMLDivElement>
 ) => {
+    const [userSettings] = useUserSettings();
     const [mailSettings] = useMailSettings();
     const [welcomeFlags, setWelcomeFlagsDone] = useWelcomeFlags();
     const [mailShortcutsProps, setMailShortcutsModalOpen] = useModalState();
@@ -77,6 +79,7 @@ const PageContainer = (
                 <MailboxContainer
                     labelID={labelID}
                     mailSettings={mailSettings as MailSettings}
+                    userSettings={userSettings as UserSettings}
                     breakpoints={breakpoints}
                     elementID={elementID}
                     messageID={messageID}
