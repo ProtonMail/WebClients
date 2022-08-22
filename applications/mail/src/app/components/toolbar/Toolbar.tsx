@@ -136,20 +136,6 @@ const Toolbar = ({
                         onBack={onBack}
                     />
                 ) : null}
-                <MoreDropdown
-                    labelID={labelID}
-                    elementIDs={elementIDs}
-                    selectedIDs={selectedIDs}
-                    isSearch={isSearch}
-                    isNarrow={isNarrow}
-                    isTiny={isTiny}
-                    isExtraTiny={breakpoint === 'extratiny'}
-                    onMove={onMove}
-                    onDelete={onDelete}
-                    onBack={onBack}
-                    breakpoints={breakpoints}
-                    conversationMode={conversationMode}
-                />
             </div>
             <div className="flex toolbar-inner">
                 {listInView ? (
@@ -162,6 +148,20 @@ const Toolbar = ({
                             sort={sort}
                             onSort={onSort}
                             isSearch={isSearch}
+                        />
+                        <MoreDropdown
+                            labelID={labelID}
+                            elementIDs={elementIDs}
+                            selectedIDs={selectedIDs}
+                            isSearch={isSearch}
+                            isNarrow={isNarrow}
+                            isTiny={isTiny}
+                            isExtraTiny={breakpoint === 'extratiny'}
+                            onMove={onMove}
+                            onDelete={onDelete}
+                            onBack={onBack}
+                            breakpoints={breakpoints}
+                            conversationMode={conversationMode}
                         />
                         <PagingControls
                             narrowMode={isNarrow}
