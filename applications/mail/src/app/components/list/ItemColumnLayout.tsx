@@ -137,14 +137,12 @@ const ItemColumnLayout = ({
 
             <div className="flex flex-nowrap flex-align-items-center item-secondline max-w100">
                 <div className="item-subject flex-item-fluid flex flex-nowrap flex-align-items-center">
-                    {conversationMode && <NumMessages className="mr0-25 flex-item-noshrink" conversation={element} />}
-
                     {showIcon && (
                         <span className="flex flex-item-noshrink">
                             <ItemLocation element={element} labelID={labelID} />
                         </span>
                     )}
-
+                    {conversationMode && <NumMessages className="mr0-25 flex-item-noshrink" conversation={element} />}
                     <span
                         role="heading"
                         aria-level={2}
