@@ -1,21 +1,27 @@
 import { c } from 'ttag';
 
-import { DropdownMenu, DropdownMenuButton, Icon, classnames, useMailSettings } from '@proton/components';
+import {
+    Button,
+    DropdownMenu,
+    DropdownMenuButton,
+    Icon,
+    SimpleDropdown,
+    classnames,
+    useActiveBreakpoint,
+} from '@proton/components';
 import { MESSAGE_BUTTONS } from '@proton/shared/lib/constants';
+import { MailSettings } from '@proton/shared/lib/interfaces';
 
 import { Filter } from '../../models/tools';
-import ToolbarDropdown from './ToolbarDropdown';
-
-const { READ_UNREAD } = MESSAGE_BUTTONS;
 
 interface Props {
-    icon: boolean;
     filter: Filter;
     onFilter: (filter: Filter) => void;
+    mailSettings: MailSettings;
 }
 
-const FilterActions = ({ icon, filter, onFilter }: Props) => {
-    const [{ MessageButtons = READ_UNREAD } = {}] = useMailSettings();
+const FilterActions = ({ filter = {}, mailSettings, onFilter }: Props) => {
+    const { isDesktop } = useActiveBreakpoint();
 
     const noFilterApply = !Object.values(filter).length;
 
@@ -61,25 +67,27 @@ const FilterActions = ({ icon, filter, onFilter }: Props) => {
                 }
             },
         },
-        ...(MessageButtons === READ_UNREAD ? readUnreadButtons : readUnreadButtons.reverse()),
+        ...(mailSettings.MessageButtons === MESSAGE_BUTTONS.READ_UNREAD
+            ? readUnreadButtons
+            : readUnreadButtons.reverse()),
     ];
 
-    const { text = '' } = buttons.find(({ isActive }) => isActive) || {};
+    if (!isDesktop) {
+        const { text = '' } = buttons.find(({ isActive }) => isActive) || {};
 
-    const dropdownButton = icon ? <Icon className="toolbar-icon" name="lines-long-to-small" /> : text;
-
-    return (
-        <ToolbarDropdown
-            hasCaret={!icon}
-            title={text}
-            content={
-                <span className="flex flex-align-items-center flex-nowrap" data-testid="toolbar:filter-dropdown">
-                    {dropdownButton}
-                </span>
-            }
-            className={classnames([icon && !noFilterApply && 'is-active'])}
-        >
-            {() => (
+        return (
+            <SimpleDropdown
+                as={Button}
+                shape="ghost"
+                size="small"
+                hasCaret={false}
+                content={
+                    <span className="flex flex-align-items-center flex-nowrap" data-testid="toolbar:filter-dropdown">
+                        <Icon className="toolbar-icon mr0-5" name="filter" />
+                        <span className="text-sm m0">{text}</span>
+                    </span>
+                }
+            >
                 <DropdownMenu>
                     <div className="text-bold w100 pr1 pl1 pt0-5 pb0-5">{c('Filter').t`Show`}</div>
                     {buttons.map(({ ID, text, isActive, onClick }) => {
@@ -96,8 +104,31 @@ const FilterActions = ({ icon, filter, onFilter }: Props) => {
                         );
                     })}
                 </DropdownMenu>
-            )}
-        </ToolbarDropdown>
+            </SimpleDropdown>
+        );
+    }
+
+    return (
+        <div className="flex">
+            {buttons.map(({ ID, text, isActive, onClick }) => {
+                return (
+                    <Button
+                        key={ID}
+                        data-testid={ID}
+                        size="small"
+                        shape="ghost"
+                        aria-pressed={isActive}
+                        className={classnames([
+                            'text-sm mt0 mb0 mr0-25 ml0-25',
+                            isActive && 'no-pointer-events bg-strong',
+                        ])}
+                        onClick={onClick}
+                    >
+                        {text}
+                    </Button>
+                );
+            })}
+        </div>
     );
 };
 
