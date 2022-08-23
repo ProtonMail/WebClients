@@ -14,7 +14,6 @@ interface Controls {
               left: number;
           }
         | undefined;
-    resetPosition: () => void;
 }
 
 const FileBrowserItemContextMenuContext = createContext<Controls | null>(null);
