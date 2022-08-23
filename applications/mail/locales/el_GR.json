@@ -860,9 +860,6 @@
       "This message contains remote content.": [
         "Αυτό το μήνυμα περιέχει απομακρυσμένο περιεχόμενο."
       ],
-      "Trash all": [
-        "Move all to trash"
-      ],
       "Trust": [
         "Αξιόπιστο"
       ],
@@ -1237,7 +1234,7 @@
     },
     "Calendar invite info": {
       " This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar.": [
-        " Αυτή η νέα πρόταση χρόνου δεν ταιριάζει με τα στοιχεία πρόσκλησής σας. Παρακαλώ επιβεβαιώστε τα στοιχεία πρόσκλησης στο ημερολόγιό σας."
+        "This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar."
       ],
       "${ participantName } accepted your invitation and proposed a new time for one occurrence of this event.": [
         "Ο/Η ${ participantName } αποδέχθηκε την πρόσκλησή σας και πρότεινε μια νέα ώρα για μία διοργάνωση αυτής της εκδήλωσης."
@@ -7176,6 +7173,9 @@
       ],
       "The import will start with the most recent messages.": [
         "Η εισαγωγή θα ξεκινήσει με τα πιο πρόσφατα μηνύματα."
+      ],
+      "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
+        "Αυτή η ενέργεια θα κάνει λήψη όλων των μηνυμάτων, ώστε να μπορείτε να κάνετε αναζήτηση τοπικά. Η εκκαθάριση των δεδομένων του προγράμματος περιήγησης θα απενεργοποιήσει αυτήν την επιλογή."
       ],
       "This feature is only available for paid users": [
         "Αυτή η λειτουργία είναι διαθέσιμη μόνο για χρήστες επί πληρωμή"

@@ -56,6 +56,9 @@
       "Cancel": [
         "Cancel·lar"
       ],
+      "Cancel all": [
+        "Cancel·la-ho tot"
+      ],
       "Cancel all uploads": [
         "Cancel·lar totes les pujades"
       ],
@@ -124,6 +127,9 @@
       ],
       "Continue": [
         "Continua"
+      ],
+      "Continue transfers": [
+        "Continua les transferències"
       ],
       "Continue with Google": [
         "Continuar amb Google"
@@ -241,6 +247,9 @@
       "Go to panel ${ index }": [
         "Anar al panell ${ index }"
       ],
+      "Go to parent": [
+        "Ves al pare"
+      ],
       "Go to settings": [
         "Anar a la configuració"
       ],
@@ -325,6 +334,9 @@
       "Open navigation": [
         "Obre la navegació"
       ],
+      "Pause all": [
+        "Interromp-ho tot"
+      ],
       "Pause download": [
         "Pausar la baixada"
       ],
@@ -382,6 +394,9 @@
       "Reset zoom": [
         "Restablir zoom"
       ],
+      "Restart all": [
+        "Reinicia-ho tot"
+      ],
       "Restart download": [
         "Reiniciar la descàrrega"
       ],
@@ -390,6 +405,9 @@
       ],
       "Restore from trash": [
         "Recuperar de la paperera"
+      ],
+      "Resume all": [
+        "Reprèn-ho tot"
       ],
       "Resume download": [
         "Reprendre la baixada"
@@ -408,6 +426,9 @@
       ],
       "Search countries": [
         "Cerca països"
+      ],
+      "Search drive": [
+        "Cerca a drive"
       ],
       "Select all": [
         "Seleccionar-ho tot"
@@ -465,6 +486,9 @@
       ],
       "Stop sharing": [
         "Deixa de compartir"
+      ],
+      "Stop transfers": [
+        "Atura les transferències"
       ],
       "Submit": [
         "Enviar"
@@ -1709,8 +1733,8 @@
       "A group with this name already exists": [
         "Ja existeix un grup amb aquest nom"
       ],
-      "A problem occurred, please try again.": [
-        "Hi ha hagut un problema. Intenteu-ho de nou."
+      "A problem occurred, please try again": [
+        "S'ha produït un problema. Intenteu-ho de nou"
       ],
       "Authentication canceled.": [
         "S'ha cancel·lat l'autenticació."
@@ -1825,8 +1849,8 @@
       "Passwords do not match": [
         "Les contrasenyes no coincideixen"
       ],
-      "Please activate your search again": [
-        "Siusplau, activeu de nou la vostra cerca"
+      "Please activate your content search again": [
+        "Siusplau, activeu de nou la vostra cerca de continguts"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Arregleu el conflicte destacat per poder continuar.",
@@ -2197,9 +2221,16 @@
         "${ calendarsToBeMergedCount } calendari combinat",
         "${ calendarsToBeMergedCount } calendaris combinats"
       ],
+      "${ contactCount } contact contains multiple email addresses.": [
+        "${ contactCount } contacte té múltiples adreces de correu.",
+        "${ contactCount } contactes tenen múltiples adreces de correu."
+      ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } Membre",
         "${ contactEmailsLength } Membres"
+      ],
+      "${ contactName } contains multiple email addresses.": [
+        "${ contactName } té múltiples adreces de correu."
       ],
       "${ contactsCount } contact found": [
         "${ contactsCount } contacte trobat",
@@ -2518,6 +2549,12 @@
       "of": [
         "de"
       ],
+      "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
+        "Una o més de les teves claus de confiança ha estat marcada com a \"compromesa\" pel seu propietari. Et recomanem que marquis aquestes claus com a \"no confiables\"."
+      ],
+      "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
+        "Canvieu aquestes funcions només si esteu emprant PGP amb destinataris sense ${ BRAND_NAME }."
+      ],
       "Only the people with the link and the password can access this file.": [
         "Només les persones amb l'enllaç i la contrasenya poden accedir a aquest arxiu."
       ],
@@ -2527,6 +2564,9 @@
       "Paused": [
         "Pausat"
       ],
+      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        "PGP/Inline només és compatible amb el format de text net. Tingueu en compte que ${ MAIL_APP_NAME } sempre signa els missatges xifrats."
+      ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Tingueu en compte que les adreces assignades a aquest grup NO se suprimiran."
       ],
@@ -2535,6 +2575,13 @@
       ],
       "Please select the folders you would like to import:": [
         "Seleccioneu les carpetes que voleu importar:"
+      ],
+      "Please select which email address or addresses to add to ${ groupCount } group.": [
+        "Seleccioneu quina adreça o adreces de correu electrònic cal afegir a ${ groupCount } grup.",
+        "Seleccioneu quina adreça o adreces de correu electrònic cal afegir a ${ groupCount } grups."
+      ],
+      "Please select which email address or addresses to add to ${ groupName }.": [
+        "Seleccioneu quina adreça o adreces de correu electrònic cal afegir a ${ groupName }."
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Si us plau, espereu mentre busquem contactes que es poden tornar a signar amb la clau de xifratge primària."
@@ -2577,6 +2624,9 @@
       ],
       "Session timed out": [
         "Temps de sessió esgotat"
+      ],
+      "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
+        "La configuració de PGP permet enviar correus electrònics xifrats de punta a extrem amb un usuari que no és ${ BRAND_NAME } i que utilitza un servei compatible amb PGP."
       ],
       "Share files with links": [
         "Compartir fitxers amb enllaços"
@@ -3629,8 +3679,23 @@
         "${ emailsCount } membre",
         "${ emailsCount } membres"
       ],
+      "${ numberOfFailedTransfer.total } failed download": [
+        "${ numberOfFailedTransfer.total } baixada fallida",
+        "${ numberOfFailedTransfer.total } baixades fallides"
+      ],
+      "${ numberOfFailedTransfer.total } failed transfer": [
+        "${ numberOfFailedTransfer.total } transferència fallida",
+        "${ numberOfFailedTransfer.total } transferències fallides"
+      ],
+      "${ numberOfFailedTransfer.total } failed upload": [
+        "${ numberOfFailedTransfer.total } pujada fallida",
+        "${ numberOfFailedTransfer.total } pujades fallides"
+      ],
       "Account suspended": [
         "Compte suspès"
+      ],
+      "Active": [
+        "Actiu"
       ],
       "Add contact group name": [
         "Afegir nom de grup de contactes"
@@ -3657,11 +3722,17 @@
       "Beta Access": [
         "Accés Beta"
       ],
+      "Browser might run out of memory": [
+        "És possible que el navegador arribi al límit de memòria"
+      ],
       "Change layout": [
         "Canvia la disposició"
       ],
       "Clearing data": [
         "Netejant dades"
+      ],
+      "Completed": [
+        "Completat"
       ],
       "Contact details": [
         "Detalls del contacte"
@@ -3725,6 +3796,15 @@
       "Discard changes?": [
         "Voleu descartar els canvis?"
       ],
+      "Download shared file": [
+        "Baixa el fitxer compartit"
+      ],
+      "Download unverified file?": [
+        "Baixa un fitxer no verificat?"
+      ],
+      "Download unverified folder?": [
+        "Baixa una carpeta no verificada?"
+      ],
       "Drive": [
         "Drive"
       ],
@@ -3785,6 +3865,16 @@
       "Folder details": [
         "Detalls de la carpeta"
       ],
+      "Folders details": [
+        "Característiques de les carpetes"
+      ],
+      "Found ${ searchView.numberOfResults } result": [
+        "Trobat ${ searchView.numberOfResults } resultat",
+        "Trobats ${ searchView.numberOfResults } resultats"
+      ],
+      "Getting files": [
+        "S'estan obtenint els fitxers"
+      ],
       "Groups": [
         "Grups"
       ],
@@ -3796,6 +3886,12 @@
       ],
       "Invalid verification code": [
         "Codi de verificació no vàlid"
+      ],
+      "Item details": [
+        "Detalls de l'element"
+      ],
+      "Items details": [
+        "Detalls dels elements"
       ],
       "Link confirmation": [
         "Confirmació d'enllaç"
@@ -3821,11 +3917,20 @@
       "My files": [
         "Els meus arxius"
       ],
+      "My files ${ date }.zip": [
+        "Els meus fitxers ${ date }.zip"
+      ],
       "Name": [
         "Nom"
       ],
       "Number of files": [
         "Nombre de fitxers"
+      ],
+      "Number of folders": [
+        "Nombre de carpetes"
+      ],
+      "Number of items": [
+        "Nombre d'elements"
       ],
       "Open actions dropdown": [
         "Obrir desplegable d'accions"
@@ -3841,6 +3946,9 @@
       ],
       "Other names": [
         "Altres noms"
+      ],
+      "Performance might be affected": [
+        "El rendiment podria veure's perjudicat"
       ],
       "Phone numbers": [
         "Números de telèfon"
@@ -3871,6 +3979,12 @@
       ],
       "Restore your files": [
         "Restaureu els vostres fitxers"
+      ],
+      "Search results": [
+        "Resultats de la cerca"
+      ],
+      "Searching…": [
+        "S'està cercant…"
       ],
       "Select a theme": [
         "Seleccionar un tema"
@@ -3920,8 +4034,26 @@
       "Stop sharing with everyone?": [
         "Deixar de compartir amb tothom?"
       ],
+      "Stop transfers?": [
+        "Aturar transferències?"
+      ],
       "The link either does not exist or has expired": [
         "L’enllaç no existeix o bé ha caducat"
+      ],
+      "The link expired": [
+        "L'enllaç ha caducat"
+      ],
+      "The link failed to be loaded": [
+        "L'enllaç no s'ha pogut carregar"
+      ],
+      "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
+        "A aquest fitxer li manca signatura o té una signatura no valida. Ves a (⋮) → Detalls per a més informació."
+      ],
+      "This folder has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
+        "A aquesta carpeta li manca signatura o té una signatura no valida. Ves a (⋮) → Detalls per a més informació."
+      ],
+      "This link is password protected": [
+        "Aquest enllaç està protegit amb contrasenya"
       ],
       "Total size": [
         "Mida total"

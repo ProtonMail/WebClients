@@ -2625,9 +2625,6 @@
       ]
     },
     "Error": {
-      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Addresses > Short domain (pm.me)": [
-        "Aveți numele de utilizator ${ Local }. Pentru a crea ${ Local }@${ Domain }, accesați Setări > Adrese > Domeniu scurt (pm.me)"
-      ],
       "A group with this name already exists": [
         "Un grup cu acest nume există deja"
       ],
@@ -7814,26 +7811,6 @@
         "Gestionare echipă"
       ]
     },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Faceți confidențialitatea ca implicită pentru conservarea fișierelor, stocarea, partajarea și recuperarea lor."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Altfel accesul la cont va fi limitat și eventual va fi dezactivat."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Pentru a continua să utilizați ${ MAIL_APP_NAME } cu funcțiile premium, alegeți tipul de abonament și opțiunea de plată."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Treceți la pachetul de afaceri cu acces la toate serviciile premium Proton."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Treceți la pachetul de confidențialitate complet și accesați toate serviciile premium Proton."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Perioada de probă se termină ${ formattedTrialExpirationDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } care se termină cu ${ last4 }"
@@ -7900,6 +7877,26 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Vă bucurați de un preț promoțional la planul dvs. actual. Dacă vă retrogradați contul, veți pierde prețul promoțional și nu va fi disponibil dacă încercați să vă abonați din nou."
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Faceți confidențialitatea ca implicită pentru conservarea fișierelor, stocarea, partajarea și recuperarea lor."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Altfel accesul la cont va fi limitat și eventual va fi dezactivat."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Pentru a continua să utilizați ${ MAIL_APP_NAME } cu funcțiile premium, alegeți tipul de abonament și opțiunea de plată."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Treceți la pachetul de afaceri cu acces la toate serviciile premium Proton."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Treceți la pachetul de confidențialitate complet și accesați toate serviciile premium Proton."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Perioada de probă se termină ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -9648,7 +9645,7 @@
         "Moneda"
       ],
       "Current and past imports": [
-        "Importări actuale și anterioare"
+        "Your import history"
       ],
       "Custom filters": [
         "Filtre proprii"

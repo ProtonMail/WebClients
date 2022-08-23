@@ -569,6 +569,9 @@
       "Move all messages from this label": [
         "Alle Nachrichten dieser Kategorie verschieben"
       ],
+      "Move all to trash": [
+        "Alle in den Papierkorb verschieben"
+      ],
       "move emails to": [
         "Nachrichten verschieben nach"
       ],
@@ -749,6 +752,12 @@
       "Request new code": [
         "Neuen Code anfordern"
       ],
+      "Reset": [
+        "Zurücksetzen"
+      ],
+      "Reset search form": [
+        "Suchformular zurücksetzen"
+      ],
       "Reset zoom": [
         "Vergrößerung zurücksetzen"
       ],
@@ -895,9 +904,6 @@
       ],
       "This message contains remote content.": [
         "Diese Nachricht enthält Inhalte aus externen Quellen."
-      ],
-      "Trash all": [
-        "Move all to trash"
       ],
       "Trust": [
         "Vertrauen"
@@ -1343,7 +1349,7 @@
     },
     "Calendar invite info": {
       " This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar.": [
-        " Dieser neue Terminvorschlag stimmt nicht mit deinen Angaben zur Einladung überein. Bitte überprüfe die Einladungsdetails in deinem Kalender."
+        "This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar."
       ],
       "${ participantName } accepted an invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } hat eine Einladung angenommen und eine neue Zeit für einen der Termine vorgeschlagen."
@@ -1651,6 +1657,12 @@
       "apple": [
         "Apfel"
       ],
+      "blanched almond": [
+        "blanchierte Mandel"
+      ],
+      "caramel": [
+        "Karamell"
+      ],
       "carrot": [
         "Karotte"
       ],
@@ -1663,6 +1675,9 @@
       "copper": [
         "Kupfer"
       ],
+      "dandelion": [
+        "Löwenzahn"
+      ],
       "enzian": [
         "Enzian"
       ],
@@ -1671,6 +1686,18 @@
       ],
       "forest": [
         "Waldgrün"
+      ],
+      "kiwi": [
+        "Kiwi"
+      ],
+      "lemon yellow": [
+        "zitronengelb"
+      ],
+      "light moss green": [
+        "helles moosgrün"
+      ],
+      "maize": [
+        "Mais"
       ],
       "ocean": [
         "Ozeanblau"
@@ -1681,6 +1708,9 @@
       "pacific": [
         "Pazifikblau"
       ],
+      "pastel gray": [
+        "pastellgrau"
+      ],
       "pickle": [
         "Moosgrün"
       ],
@@ -1689,6 +1719,9 @@
       ],
       "pink": [
         "Rosa"
+      ],
+      "pistachio": [
+        "Pistazie"
       ],
       "plum": [
         "Pflaume"
@@ -1701,6 +1734,9 @@
       ],
       "sahara": [
         "Sahara"
+      ],
+      "satin sheen gold": [
+        "seidenglänzendes Gold"
       ],
       "slateblue": [
         "Blaugrau"
@@ -2089,7 +2125,7 @@
         "Estland"
       ],
       "Eswatini": [
-        "Königreich Eswatini (vormals Swasiland)"
+        "Königreich Eswatini"
       ],
       "Ethiopia": [
         "Äthiopien"
@@ -2893,8 +2929,8 @@
       "A group with this name already exists": [
         "Eine Gruppe mit diesem Namen existiert bereits"
       ],
-      "A problem occurred, please try again.": [
-        "Es ist ein Problem aufgetreten, bitte erneut versuchen."
+      "A problem occurred, please try again": [
+        "Es ist ein Problem aufgetreten, bitte erneut versuchen"
       ],
       "Address primary private key not found": [
         "Privater Hauptschlüssel für die Adresse nicht gefunden"
@@ -3070,8 +3106,8 @@
       "Passwords do not match": [
         "Die Passwörter stimmen nicht überein"
       ],
-      "Please activate your search again": [
-        "Bitte aktiviere deine Inhalts-Suche erneut"
+      "Please activate your content search again": [
+        "Bitte die Inhaltssuche erneut aktivieren"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Bitte behebe den hervorgehobenen Konflikt, um fortfahren zu können.",
@@ -3137,9 +3173,6 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Ein Problem ist aufgetreten. Bitte ${ refresh }, um fortzufahren. Wenn dir diese Fehlermeldung weiterhin angezeigt wird, wende dich bitte an unser ${ supportTeam }."
-      ],
-      "Something went wrong, please try again": [
-        "Etwas ist schief gelaufen. Bitte versuche es erneut"
       ],
       "Sorry, Proton can't decrypt your message. Please check that all your keys are active.": [
         "Leider konnte Proton deine Nachricht nicht entschlüsseln. Bitte prüfe, ob alle deine Schlüssel aktiv sind."
@@ -3398,7 +3431,7 @@
         "Bitte ${ refresh } oder überprüfe deine Verbindung."
       ],
       "Something went wrong. Please refresh the page or try again later.": [
-        "Ein Problem ist aufgetreten. Bitte die Seite aktualisieren oder später erneut versuchen."
+        "Etwas ist schiefgelaufen. Bitte aktualisiere die Seite oder versuche es später erneut."
       ],
       "There was a problem connecting to Proton.": [
         "Es gab ein Problem bei der Verbindung zu Proton."
@@ -4117,12 +4150,6 @@
       "Confirm phishing report": [
         "Phishing-Bericht bestätigen"
       ],
-      "Content search of the entire inbox is available for ${ paidPlansButton }.": [
-        "Das Durchsuchen des gesamten Posteingangs ist für ${ paidPlansButton } verfügbar."
-      ],
-      "Content: ": [
-        "Inhalt: "
-      ],
       "Continue with ${ planName }": [
         "Fahre mit ${ planName } fort"
       ],
@@ -4192,8 +4219,8 @@
       "Don't forget to share the password with the recipient": [
         "Vergiss nicht, dem Empfänger das Passwort mitzuteilen"
       ],
-      "Downloading message ${ currentProgress } out of ${ totalProgress }": [
-        "Nachricht ${ currentProgress } von ${ totalProgress } wird heruntergeladen"
+      "Downloading message ${ esProgress } out of ${ totalProgressToShow }": [
+        "Nachricht ${ esProgress } von ${ totalProgressToShow } wird heruntergeladen"
       ],
       "Draft": [
         "Entwurf"
@@ -4247,9 +4274,6 @@
       ],
       "Encrypt message": [
         "Nachricht verschlüsseln"
-      ],
-      "End of message content search": [
-        "Suche nach Nachrichteninhalten beenden"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Gib den an ${ destinationText } gesendeten Verifizierungscode ein."
@@ -4517,9 +4541,6 @@
       "No results found": [
         "Keine Ergebnisse gefunden"
       ],
-      "No results found in the past 30 days, searching the rest of your inbox": [
-        "Keine Ergebnisse in Nachrichten der letzten 30 Tage gefunden. Rest des Posteingangs wird durchsucht"
-      ],
       "No trackers found, but some images could not be loaded with tracking protection": [
         "Keine Tracker gefunden, aber einige Bilder konnten nicht mit Tracking-Schutz geladen werden"
       ],
@@ -4669,7 +4690,7 @@
         "Wähle das Nachrichtenformat, das standardmäßig verwendet werden soll, wenn eine Nachricht an diese E-Mail-Adresse gesendet wird."
       ],
       "Select what you want to import from Google.": [
-        "Auswählen, was aus Google importieren werden soll."
+        "Auswählen, was aus Google importiert werden soll."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Bitte wähle die zu importierenden Kalender aus. Für jeden importierten Kalender wird ein neuer Kalender erstellt, bis die Grenze von 20 Kalendern erreicht ist."
@@ -4788,9 +4809,6 @@
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
         "Durch diese Aktion werden alle Nachrichten heruntergeladen, sodass diese lokal durchsucht werden können. Sobald du deine Browserdaten löschst, wird diese Option wieder deaktiviert."
-      ],
-      "This action will download the most recent messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "Mit dieser Aktion werden die neuesten Nachrichten heruntergeladen, damit diese lokal durchsucht werden können. Durch das Löschen der Browserdaten wird diese Option deaktiviert."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Diese Adresse ist deaktiviert. Um an diese Adresse senden zu können, muss der Besitzer die Adresse zuerst aktivieren."
@@ -5971,9 +5989,6 @@
       ],
       "Outbox": [
         "Postausgang"
-      ],
-      "paid plans": [
-        "kostenpflichtiges Abonnements"
       ],
       "Pay invoice": [
         "Rechnung bezahlen"
@@ -7707,9 +7722,6 @@
       "Encrypted data with verified digital signature": [
         "Verschlüsselte Daten mit bestätigter digitaler Signatur"
       ],
-      "For messages older than 30 days, only the subject line and recipient list will be searched": [
-        "Bei Nachrichten, die älter als 30 Tage sind, werden nur die Betreffzeile und die Empfängerliste durchsucht."
-      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Wähle das PGP-Schema, das beim Signieren oder Verschlüsseln an einen Benutzer genutzt werden soll. Beachte dabei, dass PGP/Inline das Senden als reine Textnachrichten erzwingt."
       ],
@@ -7718,6 +7730,9 @@
       ],
       "The import will start with the most recent messages.": [
         "Der Import beginnt mit den neuesten Nachrichten."
+      ],
+      "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
+        "Durch diese Aktion werden alle Nachrichten heruntergeladen, sodass diese lokal durchsucht werden können. Sobald du deine Browserdaten löschst, wird diese Option wieder deaktiviert."
       ],
       "This feature is only available for paid users": [
         "Diese Funktion ist nur für zahlende Benutzer verfügbar"
