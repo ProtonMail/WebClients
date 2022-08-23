@@ -21,6 +21,7 @@ export function useContextMenuControls() {
 
     const close = useCallback(() => {
         setIsOpen(false);
+        setPosition(undefined);
         lastCloseTime.current = Date.now();
     }, []);
 
@@ -39,10 +40,6 @@ export function useContextMenuControls() {
         setPosition({ top: touchPosition.clientY, left: touchPosition.clientX });
     };
 
-    const resetPosition = () => {
-        setPosition(undefined);
-    };
-
     const value = {
         isOpen,
         handleContextMenu,
@@ -50,7 +47,6 @@ export function useContextMenuControls() {
         open,
         close,
         position,
-        resetPosition,
     };
 
     return value;
