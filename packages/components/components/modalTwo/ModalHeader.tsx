@@ -33,39 +33,52 @@ interface ModalHeaderProps extends Omit<ComponentPropsWithRef<'div'>, 'children'
      */
     closeButtonProps?: ButtonProps;
     /**
-     * Optionnal additional title classNames
+     * Optional additional title classNames
      */
     titleClassName?: string;
+    /**
+     * Additional content to be rendered above the scrollable section.
+     */
+    additionalContent?: JSX.Element;
 }
 
-const ModalHeader = ({ title, subline, actions, closeButtonProps, titleClassName, ...rest }: ModalHeaderProps) => {
+const ModalHeader = ({
+    title,
+    subline,
+    actions,
+    closeButtonProps,
+    titleClassName,
+    additionalContent,
+    ...rest
+}: ModalHeaderProps) => {
     const { id, onClose, size } = useContext(ModalContext);
 
     const [firstAction, secondAction] = Array.isArray(actions) ? actions : [actions];
 
     return (
-        <div
-            className={classnames([
-                'modal-two-header flex flex-nowrap flex-item-noshrink flex-align-items-start',
-                title ? 'flex-justify-space-between' : 'flex-justify-end',
-            ])}
-            {...rest}
-        >
-            {title && (
-                <div className="modal-two-header-title mt0-25">
-                    <h3
-                        id={id}
-                        className={classnames([
-                            'text-bold',
-                            ['large', 'full'].includes(size) ? 'text-4xl' : 'text-2xl',
-                            titleClassName,
-                        ])}
-                    >
-                        {title}
-                    </h3>
-                    {subline && <div className="color-weak">{subline}</div>}
-                </div>
-            )}
+        <div className="modal-two-header ">
+            <div
+                className={classnames([
+                    'flex flex-nowrap flex-item-noshrink flex-align-items-start',
+                    title ? 'flex-justify-space-between' : 'flex-justify-end',
+                ])}
+                {...rest}
+            >
+                {title && (
+                    <div className="modal-two-header-title mt0-25">
+                        <h3
+                            id={id}
+                            className={classnames([
+                                'text-bold',
+                                ['large', 'full'].includes(size) ? 'text-4xl' : 'text-2xl',
+                                titleClassName,
+                            ])}
+                        >
+                            {title}
+                        </h3>
+                        {subline && <div className="color-weak">{subline}</div>}
+                    </div>
+                )}
 
             <div className="modal-two-header-actions flex flex-item-noshrink flex-nowrap flex-align-items-stretch">
                 {actions && (
@@ -76,12 +89,20 @@ const ModalHeader = ({ title, subline, actions, closeButtonProps, titleClassName
                     </>
                 )}
 
-                <Tooltip title={c('Action').t`Close`}>
-                    <Button className="flex-item-noshrink" icon shape="ghost" onClick={onClose} {...closeButtonProps}>
-                        <Icon className="modal-close-icon" name="cross-big" />
-                    </Button>
-                </Tooltip>
+                    <Tooltip title={c('Action').t`Close`}>
+                        <Button
+                            className="flex-item-noshrink"
+                            icon
+                            shape="ghost"
+                            onClick={onClose}
+                            {...closeButtonProps}
+                        >
+                            <Icon className="modal-close-icon" name="cross-big" />
+                        </Button>
+                    </Tooltip>
+                </div>
             </div>
+            {additionalContent}
         </div>
     );
 };
