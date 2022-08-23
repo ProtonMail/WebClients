@@ -575,6 +575,9 @@
       "Move all messages from this label": [
         "Перемістити всі повідомлення з цієї мітки"
       ],
+      "Move all to trash": [
+        "Перемістити все у смітник"
+      ],
       "move emails to": [
         "перемістити листи"
       ],
@@ -755,6 +758,12 @@
       "Request new code": [
         "Запитати новий код"
       ],
+      "Reset": [
+        "Скинути"
+      ],
+      "Reset search form": [
+        "Скинути форму пошуку"
+      ],
       "Reset zoom": [
         "Скинути масштаб"
       ],
@@ -901,9 +910,6 @@
       ],
       "This message contains remote content.": [
         "Це повідомлення містить зовнішній вміст."
-      ],
-      "Trash all": [
-        "Move all to trash"
       ],
       "Trust": [
         "Довіряти"
@@ -1301,7 +1307,7 @@
     },
     "Calendar invite info": {
       " This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar.": [
-        " Ця нова пропозиція часу не збігається з подробицями вашого запрошення. Перевірте подробиці запрошення у своєму календарі."
+        "This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar."
       ],
       "${ participantName } accepted an invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } приймає запрошення і пропонує новий час для одного повторення цієї події."
@@ -2962,8 +2968,8 @@
       "A group with this name already exists": [
         "Група з такою назвою вже існує"
       ],
-      "A problem occurred, please try again.": [
-        "Виникла проблема, повторіть спробу."
+      "A problem occurred, please try again": [
+        "Виникла проблема. Повторіть спробу"
       ],
       "Address primary private key not found": [
         "Основний приватний ключ адреси не знайдено"
@@ -3151,8 +3157,8 @@
       "Passwords do not match": [
         "Паролі відрізняються"
       ],
-      "Please activate your search again": [
-        "Активуйте пошук знову"
+      "Please activate your content search again": [
+        "Активуйте пошук вмісту знову"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Виправте вказану проблему, щоб продовжити.",
@@ -3222,9 +3228,6 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Щось пішло не так. Будь ласка, ${ refresh } для продовження. Якщо це повідомлення не зникає, зв'яжіться з нашою ${ supportTeam }."
-      ],
-      "Something went wrong, please try again": [
-        "Сталася помилка, повторіть спробу пізніше"
       ],
       "Sorry, Proton can't decrypt your message. Please check that all your keys are active.": [
         "Перепрошуємо, але Proton не може розшифрувати ваше повідомлення. Переконайтеся, що всі ваші ключі активні."
@@ -4298,12 +4301,6 @@
       "Confirm phishing report": [
         "Підтвердити звіт про шахрайство"
       ],
-      "Content search of the entire inbox is available for ${ paidPlansButton }.": [
-        "Пошук вмісту в усій теці «Вхідні» доступний у ${ paidPlansButton }."
-      ],
-      "Content: ": [
-        "Вміст: "
-      ],
       "Continue with ${ planName }": [
         "Продовжити з ${ planName }"
       ],
@@ -4379,8 +4376,8 @@
       "Don't forget to share the password with the recipient": [
         "Пам'ятайте про надання пароля отримувачу"
       ],
-      "Downloading message ${ currentProgress } out of ${ totalProgress }": [
-        "Завантаження повідомлення ${ currentProgress } з ${ totalProgress }"
+      "Downloading message ${ esProgress } out of ${ totalProgressToShow }": [
+        "Завантаження повідомлення ${ esProgress } з ${ totalProgressToShow }"
       ],
       "Draft": [
         "Чернетка"
@@ -4438,9 +4435,6 @@
       ],
       "Encrypt message": [
         "Зашифрувати повідомлення"
-      ],
-      "End of message content search": [
-        "Завершити пошук вмісту повідомлень"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Введіть код перевірки, який був надісланий на ${ destinationText }."
@@ -4718,9 +4712,6 @@
       "No results found": [
         "Результатів не знайдено"
       ],
-      "No results found in the past 30 days, searching the rest of your inbox": [
-        "За останні 30 днів не знайдено жодних результатів. Шукаємо у вашій теці «Вхідні»"
-      ],
       "No trackers found, but some images could not be loaded with tracking protection": [
         "Елементів стеження не виявлено, але деякі зображення неможливо завантажити з активним захистом від стеження"
       ],
@@ -4993,9 +4984,6 @@
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
         "Ця дія завантажить усі повідомлення для можливості їх локального пошуку. Очищення даних браузера вимкне цю можливість."
-      ],
-      "This action will download the most recent messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "Ця дія завантажить найновіші повідомлення для можливості їх локального пошуку. Очищення даних браузера вимкне цю можливість."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Цю адресу вимкнено. Щоб мати змогу надсилати на цю адресу, власник повинен спочатку активувати адресу."
@@ -6202,9 +6190,6 @@
       ],
       "Outbox": [
         "Вихідні"
-      ],
-      "paid plans": [
-        "платні тарифні плани"
       ],
       "Pay invoice": [
         "Сплатити рахунок"
@@ -8038,9 +8023,6 @@
       "Encrypted data with verified digital signature": [
         "Зашифровані дані з перевіреним цифровим підписом"
       ],
-      "For messages older than 30 days, only the subject line and recipient list will be searched": [
-        "Для повідомлень старіших за 30 днів, шукатиметься лише за темою або списком отримувачів"
-      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Оберіть PGP-схему для використання при підписуванні чи шифруванні для користувача. Зауважте, що PGP/Inline примусово перетворює повідомлення у звичайний текст"
       ],
@@ -8049,6 +8031,9 @@
       ],
       "The import will start with the most recent messages.": [
         "Імпортування розпочнеться з найновіших повідомлень."
+      ],
+      "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
+        "Ця дія завантажить усі повідомлення для можливості їх локального пошуку. Очищення даних браузера вимкне цю можливість."
       ],
       "This feature is only available for paid users": [
         "Ця функція доступна лише користувачам, які мають передплату"

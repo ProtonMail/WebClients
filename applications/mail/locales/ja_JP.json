@@ -887,9 +887,6 @@
       "This message contains remote content.": [
         "このメッセージにはリモートコンテンツが含まれています。"
       ],
-      "Trash all": [
-        "Move all to trash"
-      ],
       "Trust": [
         "信頼する"
       ],
@@ -1291,7 +1288,7 @@
     },
     "Calendar invite info": {
       " This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar.": [
-        " この新しい時間はあなたの招待の詳細と一致しません。カレンダーの招待の詳細を確認してください。"
+        "This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar."
       ],
       "${ participantName } accepted an invitation to this event.": [
         "${ participantName } はこのイベントの招待を承認しました。"
@@ -2756,9 +2753,6 @@
       "A group with this name already exists": [
         "この名前のグループは既に存在します"
       ],
-      "A problem occurred, please try again.": [
-        "問題が発生しました。再度お試しください。"
-      ],
       "Address primary private key not found": [
         "メールアドレスのプライマリー秘密鍵が見つかりません"
       ],
@@ -2927,9 +2921,6 @@
       "Passwords do not match": [
         "パスワードが一致しません"
       ],
-      "Please activate your search again": [
-        "検索を再度有効にしてください"
-      ],
       "Please fix the highlighted conflict to proceed.": [
         "続行するためにハイライトされた競合を修正してください。"
       ],
@@ -2989,9 +2980,6 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "エラーが発生しました。続行するには ${ refresh } してください。それでもこのエラーが発生する場合は ${ supportTeam } までお問い合わせください。"
-      ],
-      "Something went wrong, please try again": [
-        "問題が発生しました。再度お試しください。"
       ],
       "Sorry, Proton can't decrypt your message. Please check that all your keys are active.": [
         "Proton はメッセージを復号できません。すべての鍵が有効か確認してください。"
@@ -3900,12 +3888,6 @@
       "Confirm phishing report": [
         "フィッシング報告の確認"
       ],
-      "Content search of the entire inbox is available for ${ paidPlansButton }.": [
-        "受信トレイ全体のコンテンツ検索は ${ paidPlansButton } で利用可能です。"
-      ],
-      "Content: ": [
-        "中身: "
-      ],
       "Continue with ${ planName }": [
         "${ planName } で続行"
       ],
@@ -3969,9 +3951,6 @@
       "Don't forget to share the password with the recipient": [
         "宛先にパスワードを伝えることを忘れないでください"
       ],
-      "Downloading message ${ currentProgress } out of ${ totalProgress }": [
-        "${ currentProgress } / ${ totalProgress } メッセージをダウンロードしています"
-      ],
       "Draft": [
         "下書き"
       ],
@@ -4019,9 +3998,6 @@
       ],
       "Encrypt message": [
         "メッセージを暗号化"
-      ],
-      "End of message content search": [
-        "メッセージ内容の検索の終わり"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "${ destinationText } に送信された認証コードを入力してください。"
@@ -4839,6 +4815,9 @@
       "Your phone number will only be used for this one-time verification.": [
         "電話番号は、この一度限りの認証にのみ使用されます。"
       ],
+      "Your Proton Account includes SimpleLogin. Install the browser extension with one click to get started.": [
+        "あなたの Proton アカウントには SimpleLogin が含まれています。ワンクリックでブラウザー拡張機能をインストールし始めることができます。"
+      ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "あなたの Proton アカウントは現在利用停止中です。引き続きアカウントを使用する場合は、すべての未払いの請求書を精算してください。"
       ],
@@ -5654,9 +5633,6 @@
       ],
       "Outbox": [
         "送信箱"
-      ],
-      "paid plans": [
-        "有料プラン"
       ],
       "Pay invoice": [
         "請求の支払い"
@@ -7320,6 +7296,9 @@
       ],
       "The import will start with the most recent messages.": [
         "インポートは新しいメッセージから始まります。"
+      ],
+      "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
+        "すべてのメッセージをダウンロードし、ローカルで検索可能にします。ブラウザのデータを削除するとこの機能は無効になります。"
       ],
       "This feature is only available for paid users": [
         "この機能は課金ユーザーのみが利用できます"

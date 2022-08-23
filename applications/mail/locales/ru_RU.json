@@ -575,6 +575,9 @@
       "Move all messages from this label": [
         "Переместить все сообщения с этого ярлыка"
       ],
+      "Move all to trash": [
+        "Переместить все в корзину"
+      ],
       "move emails to": [
         "переместить письма в"
       ],
@@ -755,6 +758,12 @@
       "Request new code": [
         "Запросить новый код"
       ],
+      "Reset": [
+        "Сбросить"
+      ],
+      "Reset search form": [
+        "Сброс формы поиска"
+      ],
       "Reset zoom": [
         "Сбросить масштаб"
       ],
@@ -901,9 +910,6 @@
       ],
       "This message contains remote content.": [
         "В этом сообщении есть внешнее содержимое."
-      ],
-      "Trash all": [
-        "Move all to trash"
       ],
       "Trust": [
         "Доверять"
@@ -1353,7 +1359,7 @@
     },
     "Calendar invite info": {
       " This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar.": [
-        " Предложение о новом времени не соответствует вашим сведениям о приглашении. Пожалуйста, проверьте сведения о приглашении в календаре."
+        "This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar."
       ],
       "${ participantName } accepted an invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } принял приглашение и предложил новое время для одного повтора события."
@@ -3014,8 +3020,8 @@
       "A group with this name already exists": [
         "Группа с таким именем уже существует"
       ],
-      "A problem occurred, please try again.": [
-        "Возникла проблема, попробуйте еще раз."
+      "A problem occurred, please try again": [
+        "Возникла проблема. Попробуйте еще раз"
       ],
       "Address primary private key not found": [
         "Основной закрытый ключ для адреса не найден"
@@ -3203,8 +3209,8 @@
       "Passwords do not match": [
         "Пароли не совпадают"
       ],
-      "Please activate your search again": [
-        "Активируйте поиск снова"
+      "Please activate your content search again": [
+        "Активируйте поиск содержимого снова"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Пожалуйста, исправьте выделенный конфликт, чтобы продолжить.",
@@ -3274,9 +3280,6 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Что-то пошло не так. Пожалуйста ${ refresh } чтобы продолжить. Если вы все еще видите сообщение об ошибке, пожалуйста свяжитесь нашей ${ supportTeam }."
-      ],
-      "Something went wrong, please try again": [
-        "Что-то пошло не так, пожалуйста, попробуйте еще раз"
       ],
       "Sorry, Proton can't decrypt your message. Please check that all your keys are active.": [
         "Извините, Proton не может расшифровать ваше сообщение. Убедитесь, что все ваши ключи активны."
@@ -4350,12 +4353,6 @@
       "Confirm phishing report": [
         "Подтвердить жалобу на фишинг"
       ],
-      "Content search of the entire inbox is available for ${ paidPlansButton }.": [
-        "Контентный поиск по всей папке входящих сообщений доступен за ${ paidPlansButton }."
-      ],
-      "Content: ": [
-        "Content: "
-      ],
       "Continue with ${ planName }": [
         "Продолжить с ${ planName }"
       ],
@@ -4431,8 +4428,8 @@
       "Don't forget to share the password with the recipient": [
         "Не забудьте сообщить свой пароль получателю"
       ],
-      "Downloading message ${ currentProgress } out of ${ totalProgress }": [
-        "Загрузка сообщения ${ currentProgress } из ${ totalProgress }"
+      "Downloading message ${ esProgress } out of ${ totalProgressToShow }": [
+        "Скачивание сообщения ${ esProgress } из ${ totalProgressToShow }"
       ],
       "Draft": [
         "Черновик"
@@ -4490,9 +4487,6 @@
       ],
       "Encrypt message": [
         "Зашифровать сообщение"
-      ],
-      "End of message content search": [
-        "Включить поиск содержимого сообщений"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Введите код подтверждения, отправленный на ${ destinationText }."
@@ -4770,9 +4764,6 @@
       "No results found": [
         "Результаты не найдены"
       ],
-      "No results found in the past 30 days, searching the rest of your inbox": [
-        "Не найдено результатов за последние 30 дней, поиск по остальной части вашего почтового ящика"
-      ],
       "No trackers found, but some images could not be loaded with tracking protection": [
         "Трекеры не найдены, но некоторые изображения не могут быть загружены при использовании защиты от отслеживания"
       ],
@@ -5045,9 +5036,6 @@
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
         "Это действие скачает все сообщения, чтобы их можно было искать локально. Очистка данных браузера или выход из системы отключат эту настройку."
-      ],
-      "This action will download the most recent messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "Это действие загрузит последние сообщения, чтобы их можно было искать локально. Очистка данных браузера отключит эту опцию."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Этот адрес отключён. Чтобы иметь возможность отправки на этот адрес, сначала он должен быть включён его владельцем."
@@ -6254,9 +6242,6 @@
       ],
       "Outbox": [
         "Исходящие"
-      ],
-      "paid plans": [
-        "платные тарифы"
       ],
       "Pay invoice": [
         "Оплатить счёт"
@@ -8090,9 +8075,6 @@
       "Encrypted data with verified digital signature": [
         "Зашифрованные данные с подтверждённой цифровой подписью"
       ],
-      "For messages older than 30 days, only the subject line and recipient list will be searched": [
-        "Для сообщений старше 30 дней поиск будет осуществляться только в теме и списке получателей."
-      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Выберите схему PGP, которая будет применяться при подписи или шифровании для пользователя. Учтите, что PGP/Inline принудительно устанавливает формат сообщений на \"простой текст\""
       ],
@@ -8101,6 +8083,9 @@
       ],
       "The import will start with the most recent messages.": [
         "Импорт начнется с самых последних сообщений."
+      ],
+      "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
+        "Это действие скачает все сообщения, чтобы их можно было искать локально. Очистка данных браузера или выход из системы отключат эту настройку."
       ],
       "This feature is only available for paid users": [
         "Эта функция доступна только пользователям с платными тарифами"

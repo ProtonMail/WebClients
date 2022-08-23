@@ -266,7 +266,7 @@
         "Aller au panneau ${ index }"
       ],
       "Go to parent": [
-        "Revenir en arrière"
+        "Revenir au dossier parent"
       ],
       "Go to settings": [
         "Accéder aux paramètres"
@@ -506,7 +506,7 @@
         "Arrêter le partage"
       ],
       "Stop transfers": [
-        "Arrêter les transferts "
+        "Arrêter les transferts"
       ],
       "Submit": [
         "Envoyer"
@@ -1822,8 +1822,8 @@
       "A group with this name already exists": [
         "Un groupe portant ce nom existe déjà."
       ],
-      "A problem occurred, please try again.": [
-        "Une erreur est survenue. Veuillez réessayer."
+      "A problem occurred, please try again": [
+        "Une erreur est survenue, veuillez réessayer"
       ],
       "Authentication canceled.": [
         "Authentification annulée."
@@ -1867,10 +1867,10 @@
         "Saisissez 6 chiffres"
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
-        "Le fichier « ${ item.name } » ne peut pas être chargé en raison de l'erreur « ${ error } »."
+        "Le fichier « ${ item.name } » ne peut pas être chargé en raison de l'erreur « ${ error } »."
       ],
       "File \"${ name }\" is already downloading": [
-        "Le fichier « ${ name } » est déjà en cours de téléchargement."
+        "Le fichier « ${ name } » est déjà en cours de téléchargement."
       ],
       "File cannot be merged with folder": [
         "Le fichier ne peut pas être fusionné avec le dossier."
@@ -1879,7 +1879,7 @@
         "Les fichiers sélectionnés sont déjà en cours de téléchargement."
       ],
       "Folder \"${ name }\" is already downloading": [
-        "Le dossier « ${ name } » est déjà en cours de téléchargement."
+        "Le dossier « ${ name } » est déjà en cours de téléchargement."
       ],
       "Folder name cannot be empty.": [
         "Le nom de dossier ne peut pas être vide."
@@ -1938,7 +1938,7 @@
       "Passwords do not match": [
         "Les mots de passe ne correspondent pas."
       ],
-      "Please activate your search again": [
+      "Please activate your content search again": [
         "Veuillez réactiver la recherche de contenu"
       ],
       "Please fix the highlighted conflict to proceed.": [
@@ -2095,7 +2095,7 @@
         "Accès refusé"
       ],
       "Brace yourself till we get the error fixed.": [
-        "Veuillez patienter jusqu'à ce que corrigions l'erreur."
+        "Veuillez patienter jusqu'à ce que nous corrigions l'erreur."
       ],
       "Error: ${ errorMessage }": [
         "Erreur : ${ errorMessage }"
@@ -2446,13 +2446,13 @@
         "Toute personne ayant ce lien peut accéder à votre dossier."
       ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
-        "Êtes-vous sûr de vouloir vider la corbeille et supprimer définitivement tous les éléments ?"
+        "Êtes-vous sûr de vouloir vider la corbeille et supprimer définitivement tous les éléments ?"
       ],
       "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
-        "Êtes-vous sûr de vouloir supprimer définitivement ${ itemName } de la corbeille ?"
+        "Êtes-vous sûr de vouloir supprimer définitivement ${ itemName } de la corbeille ?"
       ],
       "Are you sure you want to permanently delete selected items from trash?": [
-        "Êtes-vous sûr de vouloir supprimer définitivement les éléments sélectionnés de la corbeille ?"
+        "Êtes-vous sûr de vouloir supprimer définitivement les éléments sélectionnés de la corbeille ?"
       ],
       "Because ${ appName } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
         "Étant donné que ${ appName } est chiffré de bout en bout, nous ne pouvons pas accéder\nou déchiffrer vos fichiers pour vous. Pour déverrouiller votre disque après une réinitialisation de mot de passe,\nvous devez avoir l'un des éléments suivants :"
@@ -2611,7 +2611,7 @@
         "Échec de l'ouverture d'un lien sécurisé. La raison est : ${ error }"
       ],
       "File \"${ name }\" was deleted during download": [
-        "Le fichier « ${ name } » a été supprimé pendant le téléchargement"
+        "Le fichier « ${ name } » a été supprimé pendant le téléchargement"
       ],
       "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "Signature du fichier manquante. Nous n'avons pas pu vérifier que ${ emailAddress } a chargé le fichier ${ fileName }."
@@ -2626,7 +2626,7 @@
         "Finalisation en cours"
       ],
       "Folder \"${ link.name }\" was deleted during download": [
-        "Le dossier « ${ link.name } » a été supprimé pendant le téléchargement"
+        "Le dossier « ${ link.name } » a été supprimé pendant le téléchargement"
       ],
       "Folder contents will merge into a single folder": [
         "Le contenu du dossier sera fusionné dans un dossier unique."
@@ -2647,7 +2647,7 @@
         "Libérez de l'espace ou contactez votre administrateur."
       ],
       "Go to \"My files\" and upload some files first.": [
-        "Allez dans « Mes fichiers » et commencez à charger des fichiers."
+        "Allez dans Mes fichiers et commencez à charger des fichiers."
       ],
       "Group assignment applied": [
         "Affectation de groupe appliquée"
@@ -2720,7 +2720,7 @@
         "En savoir plus"
       ],
       "Link copied to clipboard": [
-        "Lien copié dans le presse-papier"
+        "Lien copié dans le presse-papiers"
       ],
       "Link failed to be loaded": [
         "Le lien n'a pas pu être chargé."
@@ -3004,10 +3004,10 @@
         "Ce lien a été créé dans une version ancienne de Drive et ne peut pas être modifié. Supprimez ce lien et créez-en un nouveau pour modifier les paramètres."
       ],
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
-        "Ce lien sera définitivement désactivé. Personne avec ce lien ne pourra accéder à votre fichier. Pour repartager le fichier, vous aurez besoin d'un nouveau lien."
+        "Ce lien sera définitivement désactivé. Aucune personne possédant ce lien ne pourra accéder à votre fichier. Pour partager à nouveau le fichier, vous aurez besoin d'un nouveau lien."
       ],
       "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
-        "Ce lien sera définitivement désactivé. Personne avec ce lien ne pourra accéder à votre dossier. Pour repartager le dossier, vous aurez besoin d'un nouveau lien."
+        "Ce lien sera définitivement désactivé. Aucune personne possédant ce lien ne pourra accéder à votre dossier. Pour partager à nouveau le dossier, vous aurez besoin d'un nouveau lien."
       ],
       "This will delete the link and remove access to your file or folder for anyone with the link.": [
         "Ceci supprimera le lien et supprimera l'accès à votre fichier ou dossier pour toute personne ayant le lien.",
@@ -3035,16 +3035,16 @@
         "Pour utiliser la vérification d'adresse, vous devez approuver une ou plusieurs clés publiques disponibles, y compris celle que vous souhaitez utiliser pour l'envoi. Cela empêche la falsification des clés de chiffrement."
       ],
       "Transfer canceled for file \"${ name }\"": [
-        "Transfert annulé pour le fichier « ${ name } »"
+        "Transfert annulé pour le fichier « ${ name } »"
       ],
       "Transfer canceled for folder \"${ name }\"": [
-        "Transfert annulé pour le dossier « ${ name } »"
+        "Transfert annulé pour le dossier « ${ name } »"
       ],
       "Transfer skipped for file \"${ file.name }\"": [
-        "Transfert ignoré pour le fichier « ${ file.name } »"
+        "Transfert ignoré pour le fichier « ${ file.name } »"
       ],
       "Transfer skipped for folder \"${ folderName }\"": [
-        "Transfert ignoré pour le dossier « ${ folderName } »"
+        "Transfert ignoré pour le dossier « ${ folderName } »"
       ],
       "Trash": [
         "Corbeille"
@@ -3077,7 +3077,7 @@
         "Le chargement de centaines de fichiers en même temps peut avoir un impact sur les performances."
       ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
-        "Utilisez ce formulaire pour nous signaler des fichiers partagés inappropriés, illégaux ou tout autre fichier partagé malveillant. Vous êtes sur le point de signaler :"
+        "Utilisez ce formulaire pour nous signaler des fichiers partagés inappropriés, illégaux ou tout autre fichier partagé malveillant. Vous êtes sur le point de signaler :"
       ],
       "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "Nous n'avons pas pu vérifier que ${ emailAddress } a chargé le fichier ${ fileName }."
@@ -3098,7 +3098,7 @@
         "Semaine"
       ],
       "What do you want to do?": [
-        "Que souhaitez-vous faire ?"
+        "Que souhaitez-vous faire ?"
       ],
       "What would you like to do?": [
         "Qu'aimeriez-vous faire ?"
@@ -3321,8 +3321,8 @@
         "Supprimer"
       ],
       "Delete drive?": [
-        "Supprimer le disque ?",
-        "Supprimer les disques ?"
+        "Supprimer le disque ?",
+        "Supprimer les disques ?"
       ],
       "Deleted": [
         "Supprimé"
@@ -3730,40 +3730,40 @@
     },
     "Notification": {
       "\"${ name }\" created successfully": [
-        "« ${ name } » correctement créé"
+        "« ${ name } » correctement créé"
       ],
       "\"${ name }\" deleted permanently from trash": [
-        "« ${ name } » est définitivement supprimé"
+        "« ${ name } » est définitivement supprimé"
       ],
       "\"${ name }\" failed to be created": [
-        "« ${ name } » n'a pas pu être créé"
+        "« ${ name } » n'a pas pu être créé"
       ],
       "\"${ name }\" failed to be deleted permanently from trash": [
-        "« ${ name } » n'a pu être supprimé définitivement de la corbeille"
+        "« ${ name } » n'a pu être supprimé définitivement de la corbeille"
       ],
       "\"${ name }\" failed to be moved": [
-        "« ${ name } » n'a pas pu être déplacé"
+        "« ${ name } » n'a pas pu être déplacé"
       ],
       "\"${ name }\" failed to be moved to trash": [
-        "« ${ name } » n'a pas pu être déplacé vers la corbeille"
+        "« ${ name } » n'a pas pu être déplacé vers la corbeille"
       ],
       "\"${ name }\" failed to be restored from trash": [
-        "« ${ name } » n'a pas pu être restauré depuis la corbeille"
+        "« ${ name } » n'a pas pu être restauré depuis la corbeille"
       ],
       "\"${ name }\" moved to trash": [
         "« ${ name } » déplacé vers la corbeille"
       ],
       "\"${ name }\" restored from trash": [
-        "« ${ name } » restauré depuis la corbeille"
+        "« ${ name } » restauré depuis la corbeille"
       ],
       "\"${ name }\" successfully moved": [
         "« ${ name } » correctement déplacé"
       ],
       "\"${ newName }\" failed to be renamed": [
-        "« ${ newName } » n'a pas pu être renommé"
+        "« ${ newName } » n'a pas pu être renommé"
       ],
       "\"${ newName }\" renamed successfully": [
-        "« ${ newName } » correctement renommé"
+        "« ${ newName } » correctement renommé"
       ],
       "${ count } item failed to be decrypted": [
         "${ count } élément n'a pas pu être déchiffré",
@@ -3847,7 +3847,7 @@
         "Le lien n'a pas pu être chargé"
       ],
       "Move ${ itemsToMoveCount } file": [
-        "Déplacer ${ itemsToMoveCount } fichiers",
+        "Déplacer ${ itemsToMoveCount } fichier",
         "Déplacer ${ itemsToMoveCount } fichiers"
       ],
       "Move ${ itemsToMoveCount } folder": [
@@ -3883,10 +3883,10 @@
         "Le sous-dossier n'a pas pu être chargé"
       ],
       "The link to \"${ name }\" failed to be deleted": [
-        "Le lien vers « ${ name } » n'a pas pu être supprimé"
+        "Le lien vers « ${ name } » n'a pas pu être supprimé"
       ],
       "The link to \"${ name }\" was deleted": [
-        "Le lien vers « ${ name } » a été supprimé"
+        "Le lien vers « ${ name } » a été supprimé"
       ],
       "The link to your item failed to be deleted": [
         "Le lien vers votre élément n'a pas pu être supprimé"
@@ -4287,7 +4287,7 @@
     },
     "Title": {
       "# of accesses": [
-        "Nb d'accès"
+        "Nombre d'accès"
       ],
       "${ emailsCount } member": [
         "${ emailsCount } membre",
@@ -4562,7 +4562,7 @@
         "Autres noms"
       ],
       "Performance might be affected": [
-        "Ceci peut affecter les performances."
+        "Ceci peut affecter les performances"
       ],
       "Phone numbers": [
         "Numéros de téléphone"
@@ -4667,7 +4667,7 @@
         "Ce dossier a une signature manquante ou non valide. Allez à Menu (⋮) → Détails pour plus d'informations."
       ],
       "This link is password protected": [
-        "Ce lien est protégé par un mot de passe."
+        "Ce lien est protégé par un mot de passe"
       ],
       "Total size": [
         "Taille totale"
@@ -4769,7 +4769,7 @@
         "« ${ str } » n'est pas un nom valide."
       ],
       "Name cannot include invisible characters, / or \\.": [
-        "Le nom ne peut pas inclure de caractères invisibles, / ou \\."
+        "Le nom ne peut pas inclure de caractères invisibles, / ou \\."
       ],
       "Name must be ${ MAX_NAME_LENGTH } characters long at most": [
         "Le nom doit comporter ${ MAX_NAME_LENGTH } caractères au maximum."

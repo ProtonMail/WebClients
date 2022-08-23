@@ -569,6 +569,9 @@
       "Move all messages from this label": [
         "Sposta tutti i messaggi da questa etichetta"
       ],
+      "Move all to trash": [
+        "Sposta tutto nel cestino"
+      ],
       "move emails to": [
         "sposta l'email in"
       ],
@@ -749,6 +752,12 @@
       "Request new code": [
         "Richiedi nuovo codice"
       ],
+      "Reset": [
+        "Reimposta"
+      ],
+      "Reset search form": [
+        "Reimposta modulo di ricerca"
+      ],
       "Reset zoom": [
         "Reimposta zoom"
       ],
@@ -895,9 +904,6 @@
       ],
       "This message contains remote content.": [
         "Questo messaggio contiene contenuto remoto."
-      ],
-      "Trash all": [
-        "Move all to trash"
       ],
       "Trust": [
         "Attendibile"
@@ -1305,7 +1311,7 @@
     },
     "Calendar invite info": {
       " This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar.": [
-        " Questa nuova proposta di tempo non corrisponde ai dettagli dell'invito. Verifica i dettagli dell'invito nel tuo calendario."
+        "This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar."
       ],
       "${ participantName } accepted an invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } ha accettato un invito e ha proposto un nuovo orario per una occorrenza di questo evento."
@@ -2954,8 +2960,8 @@
       "A group with this name already exists": [
         "Esiste già un gruppo con questo nome"
       ],
-      "A problem occurred, please try again.": [
-        "Si è verificato un problema, riprova."
+      "A problem occurred, please try again": [
+        "Si è verificato un problema, riprova per favore"
       ],
       "Address primary private key not found": [
         "Chiave privata primaria indirizzo non trovata"
@@ -3131,8 +3137,8 @@
       "Passwords do not match": [
         "Le password non corrispondono"
       ],
-      "Please activate your search again": [
-        "Si prega di attivare nuovamente la ricerca"
+      "Please activate your content search again": [
+        "Si prega di attivare di nuovo la ricerca di contenuti"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Correggi il conflitto evidenziato per procedere.",
@@ -3198,9 +3204,6 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Qualcosa è andato storto, ${ refresh } per procedere. Se continui a vedere questo errore contatta il nostro ${ supportTeam }."
-      ],
-      "Something went wrong, please try again": [
-        "Qualcosa è andato storto. Per favore riprova"
       ],
       "Sorry, Proton can't decrypt your message. Please check that all your keys are active.": [
         "Siamo spiacenti, Proton non può decifrare il messaggio. Si prega di controllare che tutte le chiavi siano attive."
@@ -4178,12 +4181,6 @@
       "Confirm phishing report": [
         "Conferma segnalazione di phishing"
       ],
-      "Content search of the entire inbox is available for ${ paidPlansButton }.": [
-        "La ricerca all'interno dell'intera casella di posta è disponibile con ${ paidPlansButton }."
-      ],
-      "Content: ": [
-        "Contenuto: "
-      ],
       "Continue with ${ planName }": [
         "Continua con ${ planName }"
       ],
@@ -4253,8 +4250,8 @@
       "Don't forget to share the password with the recipient": [
         "Non dimenticare di condividere la tua password con il destinatario"
       ],
-      "Downloading message ${ currentProgress } out of ${ totalProgress }": [
-        "Scaricando il messaggio ${ currentProgress } di ${ totalProgress }"
+      "Downloading message ${ esProgress } out of ${ totalProgressToShow }": [
+        "Scaricando il message ${ esProgress } di ${ totalProgressToShow }"
       ],
       "Draft": [
         "Bozza"
@@ -4308,9 +4305,6 @@
       ],
       "Encrypt message": [
         "Cifra messaggio"
-      ],
-      "End of message content search": [
-        "Fine messaggio di ricerca del contenuto"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Inserisci il codice di verifica inviato a ${ destinationText }."
@@ -4577,9 +4571,6 @@
       ],
       "No results found": [
         "Nessun risultato trovato"
-      ],
-      "No results found in the past 30 days, searching the rest of your inbox": [
-        "Nessun risultato trovato negli ultimi 30 giorni, la ricerca continua nel resto della casella di posta"
       ],
       "No trackers found, but some images could not be loaded with tracking protection": [
         "Nessun tracker trovato, tuttavia alcune immagini non possono essere caricate con la protezione dal tracking attivata"
@@ -4849,9 +4840,6 @@
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
         "Quest'azione scaricherà tutti i messaggi così che possano esser ricercati localmente. Cancellare i dati del tuo browser disabiliterà quest'opzione."
-      ],
-      "This action will download the most recent messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "Quest'azione scaricherà tutti i messaggi, così che possano esser ricercati localmente. La cancellazione dei dati del tuo browser disabiliterà quest'opzione."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Questo indirizzo è disabilitato. Per essere in grado di inviare a questo indirizzo il proprietario deve prima attivarlo."
@@ -6032,9 +6020,6 @@
       ],
       "Outbox": [
         "In Uscita"
-      ],
-      "paid plans": [
-        "piani a pagamento"
       ],
       "Pay invoice": [
         "Pagamento della fattura"
@@ -7768,9 +7753,6 @@
       "Encrypted data with verified digital signature": [
         "Dati crittografati con firma digitale verificata"
       ],
-      "For messages older than 30 days, only the subject line and recipient list will be searched": [
-        "Per i messaggi più vecchi di 30 giorni, verranno cercati solo la riga dell'oggetto e l'elenco dei destinatari"
-      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Seleziona lo schema PGP da usare quando si firma o si crittografa per un utente. Nota che PGP/Inline forza i testi in messaggi semplici"
       ],
@@ -7779,6 +7761,9 @@
       ],
       "The import will start with the most recent messages.": [
         "L'importazione inizierà con i messaggi più recenti."
+      ],
+      "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
+        "Quest'azione scaricherà tutti i messaggi così che possano esser ricercati localmente. Cancellare i dati del tuo browser disabiliterà quest'opzione."
       ],
       "This feature is only available for paid users": [
         "Questa funzionalità è disponibile solo per utenti paganti"

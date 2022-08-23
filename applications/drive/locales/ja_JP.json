@@ -1762,9 +1762,6 @@
       "A group with this name already exists": [
         "この名前のグループは既に存在します"
       ],
-      "A problem occurred, please try again.": [
-        "問題が発生しました。もう一度やり直してください。"
-      ],
       "Authentication canceled.": [
         "認証がキャンセルされました。"
       ],
@@ -1872,9 +1869,6 @@
       ],
       "Passwords do not match": [
         "パスワードが一致しません"
-      ],
-      "Please activate your search again": [
-        "検索を再度有効にしてください"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "続行するためにハイライトされた競合を修正してください。"
@@ -2704,7 +2698,7 @@
         "PGP/MIME は自動的に現在の書式を使用してメッセージを送信します。${ MAIL_APP_NAME } は暗号化されたメッセージに常に署名することに注意してください。"
       ],
       "Please enter the password to decrypt and view content.": [
-        "パスワードを入力して復号しコンテンツを閲覧します。"
+        "復号とコンテンツの閲覧には、パスワードが必要です。"
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "グループに割り当てられたアドレスは削除されません。"
@@ -2840,6 +2834,9 @@
       ],
       "There are no files yet": [
         "まだファイルがありません"
+      ],
+      "These files were shared using end-to-end encryption. To ensure their security — and the security of all your documents, photos, and files — store them in Proton Drive, the cloud storage service you can trust.": [
+        "これらのファイルは、エンドツーエンド暗号化を使用して共有されています。ドキュメント、写真、ファイルなどのセキュリティ確保のため、信頼できるクラウドストレージサービスの Proton Drive を使用しましょう。"
       ],
       "This account has been suspended due to a potential policy violation.": [
         "このアカウントは、ポリシー違反の可能性があるため停止されています。"
@@ -4224,7 +4221,7 @@
         "変更を破棄しますか?"
       ],
       "Download shared file": [
-        "共有されたファイルをダウンロード"
+        "共有ファイルをダウンロード"
       ],
       "Download unverified file?": [
         "未検証のファイルをダウンロードしますか?"
