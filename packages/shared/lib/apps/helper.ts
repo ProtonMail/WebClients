@@ -1,7 +1,7 @@
 import isTruthy from '@proton/utils/isTruthy';
 
 import { getLocalIDPath, stripLocalBasenameFromPathname } from '../authentication/pathnameHelper';
-import { APPS, APPS_CONFIGURATION, APP_NAMES, VPN_HOSTNAME } from '../constants';
+import { APPS, APPS_CONFIGURATION, APP_NAMES, EXTENSIONS, VPN_HOSTNAME } from '../constants';
 import { stripLeadingAndTrailingSlash } from '../helpers/string';
 
 interface TargetLocation {
@@ -60,6 +60,10 @@ export const getAccountSettingsApp = () => APPS.PROTONACCOUNT;
 
 export const getClientID = (appName: APP_NAMES) => {
     return APPS_CONFIGURATION[appName].clientID;
+};
+
+export const getExtension = (appName: APP_NAMES) => {
+    return EXTENSIONS[appName as keyof typeof EXTENSIONS];
 };
 
 export const getAppName = (appName: APP_NAMES) => {
