@@ -75,7 +75,7 @@ describe('SubscribeCalendarModal', () => {
         const srOnlyWarning = screen.getByText(urlTooLongRegex);
 
         expect(screen.getByText(urlTooLongRegex)).toBeInTheDocument();
-        expect(srOnlyWarning).not.toBeVisible();
+        expect(srOnlyWarning).toBeVisible();
 
         // 0 is the close modal svg, 1 is the input icon
         userEvent.hover(screen.getAllByRole('img', { hidden: true })[1]);
