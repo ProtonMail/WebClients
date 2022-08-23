@@ -566,6 +566,9 @@
       "Move all messages from this label": [
         "從此標籤移動所有訊息"
       ],
+      "Move all to trash": [
+        "全部丟到垃圾桶"
+      ],
       "move emails to": [
         "將電郵移動到"
       ],
@@ -892,9 +895,6 @@
       ],
       "This message contains remote content.": [
         "此郵件包含遠端內容。"
-      ],
-      "Trash all": [
-        "Move all to trash"
       ],
       "Trust": [
         "信任"
@@ -1300,7 +1300,7 @@
     },
     "Calendar invite info": {
       " This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar.": [
-        " 新的時間提議與您的邀請詳情不符。請在您行事曆中驗證邀請詳情。"
+        "This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar."
       ],
       "${ participantName } accepted an invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } 已接受邀請，並就此事件其中一次提出新時間的建議。"
@@ -2823,9 +2823,6 @@
       "A group with this name already exists": [
         "此名稱的群組已存在"
       ],
-      "A problem occurred, please try again.": [
-        "發生錯誤，請再試一次。"
-      ],
       "Address primary private key not found": [
         "找不到電子郵件地址主要私密金鑰"
       ],
@@ -2994,9 +2991,6 @@
       "Passwords do not match": [
         "密碼不一致"
       ],
-      "Please activate your search again": [
-        "請再次啟用您的搜尋"
-      ],
       "Please fix the highlighted conflict to proceed.": [
         "請先修正已標示的衝突以便繼續。"
       ],
@@ -3053,9 +3047,6 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "發生錯誤，請${ refresh }以繼續。如果您仍看到此錯誤訊息，請聯絡我們的${ supportTeam }。"
-      ],
-      "Something went wrong, please try again": [
-        "發生錯誤，請再試一次"
       ],
       "Sorry, Proton can't decrypt your message. Please check that all your keys are active.": [
         "抱歉，Proton 無法解密您的郵件。請檢查您所有的金鑰是否在使用中。"
@@ -3982,12 +3973,6 @@
       "Confirm phishing report": [
         "確認網路釣魚報告"
       ],
-      "Content search of the entire inbox is available for ${ paidPlansButton }.": [
-        "完整收件匣的內容搜尋功能，已包含在付費方案中 ${ paidPlansButton }。"
-      ],
-      "Content: ": [
-        "內容包括 : "
-      ],
       "Continue with ${ planName }": [
         "繼續使用 ${ planName }"
       ],
@@ -4054,9 +4039,6 @@
       "Don't forget to share the password with the recipient": [
         "別忘記與您的收件者共享金鑰密碼"
       ],
-      "Downloading message ${ currentProgress } out of ${ totalProgress }": [
-        "正在下載 ${ currentProgress } 則訊息，訊息總數為 ${ totalProgress }"
-      ],
       "Draft": [
         "草稿"
       ],
@@ -4107,9 +4089,6 @@
       ],
       "Encrypt message": [
         "加密郵件"
-      ],
-      "End of message content search": [
-        "訊息的內容搜尋結尾"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "驗證碼已傳送至 ${ destinationText }，請在下方輸入。"
@@ -4372,9 +4351,6 @@
       "No results found": [
         "找不到相符的結果"
       ],
-      "No results found in the past 30 days, searching the rest of your inbox": [
-        "在過去 30 天裡的訊息找不到您要的資料，請試著在全部收件匣中進行搜尋"
-      ],
       "No trackers found, but some images could not be loaded with tracking protection": [
         "沒有發現追蹤程式，但追蹤保護啟用時即無法載入某些圖像"
       ],
@@ -4617,9 +4593,6 @@
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
         "此動作將下載所有郵件，以供本機搜尋。清除您的瀏覽器資料將停用此選項。"
-      ],
-      "This action will download the most recent messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "此動作將會下載最近期的訊息，以便於本地搜尋時利用。清除您的瀏覽器資料則將會停用此選項。"
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "此電郵位址已停用。若要傳送到此電郵位址，請其擁有者首先啟用此電郵位址。"
@@ -5772,9 +5745,6 @@
       ],
       "Outbox": [
         "寄件匣"
-      ],
-      "paid plans": [
-        "付費方案"
       ],
       "Pay invoice": [
         "繳付帳單"
@@ -7452,14 +7422,14 @@
       "Encrypted data with verified digital signature": [
         "數位簽署驗證的加密資料"
       ],
-      "For messages older than 30 days, only the subject line and recipient list will be searched": [
-        "超過 30 天以上的訊息，僅可從主旨列以及收件人清單進行搜尋"
-      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "請選擇簽署或加密至某使用者時採用的 PGP 方法。請注意 PGP/inline 強制使用純文字郵件格式"
       ],
       "The import will start with the most recent messages.": [
         "匯入將自近期的郵件開始。"
+      ],
+      "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
+        "此動作將下載所有郵件，以供本機搜尋。清除您的瀏覽器資料將停用此選項。"
       ],
       "This feature is only available for paid users": [
         "此功能僅提供給付費使用者"

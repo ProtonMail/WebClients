@@ -352,6 +352,9 @@
       "Generate recovery phrase": [
         "Opret gendannelsessætning"
       ],
+      "Get SimpleLogin extension": [
+        "Hent SimpleLogin-udvidelse"
+      ],
       "Get started": [
         "Kom godt i gang"
       ],
@@ -563,6 +566,9 @@
       "Move all messages from this label": [
         "Flyt alle beskeder fra denne etikette"
       ],
+      "Move all to trash": [
+        "Flyt alle til papirkurv"
+      ],
       "move emails to": [
         "flyt e-mails til"
       ],
@@ -743,6 +749,12 @@
       "Request new code": [
         "Anmod om ny kode"
       ],
+      "Reset": [
+        "Nulstil"
+      ],
+      "Reset search form": [
+        "Nulstil søgeformular"
+      ],
       "Reset zoom": [
         "Nulstil zoom"
       ],
@@ -889,9 +901,6 @@
       ],
       "This message contains remote content.": [
         "Denne besked indeholder eksternt indhold."
-      ],
-      "Trash all": [
-        "Move all to trash"
       ],
       "Trust": [
         "Hav tillid til"
@@ -1288,7 +1297,7 @@
     },
     "Calendar invite info": {
       " This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar.": [
-        " Dette nye tidsforslag matcher ikke dine invitationsdetaljer. Kontroller venligst invitationsdetaljerne i din kalender."
+        "This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar."
       ],
       "${ participantName } accepted an invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } accepterede en invitation og foreslog et nyt tidspunkt til én forekomst af denne begivenhed."
@@ -2764,9 +2773,6 @@
       "A group with this name already exists": [
         "En gruppe med dette navn findes allerede"
       ],
-      "A problem occurred, please try again.": [
-        "Der opstod et problem. Prøv venligst igen."
-      ],
       "Address primary private key not found": [
         "Adresses primære private nøgle ikke fundet"
       ],
@@ -2941,9 +2947,6 @@
       "Passwords do not match": [
         "Adgangskoder matcher ikke"
       ],
-      "Please activate your search again": [
-        "Aktiver din søgning igen"
-      ],
       "Please fix the highlighted conflict to proceed.": [
         "Løs venligst den fremhævede konflikt for at fortsætte.",
         "Løs venligst de fremhævede konflikter for at fortsætte."
@@ -3008,9 +3011,6 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Noget gik galt. ${ refresh } venligst siden for at fortsætte. Ser du fortsat denne fejlmeddelelse, bedes du kontakte vores ${ supportTeam }."
-      ],
-      "Something went wrong, please try again": [
-        "Noget gik galt. Prøv igen"
       ],
       "Sorry, Proton can't decrypt your message. Please check that all your keys are active.": [
         "Beklager, Proton kan ikke dekryptere din besked. Kontroller at alle dine nøgler er aktive."
@@ -3981,9 +3981,6 @@
       ],
       "Confirm phishing report": [
         "Bekræft phishing-anmeldelse"
-      ],
-      "Content: ": [
-        "Indhold: "
       ],
       "Continue with ${ planName }": [
         "Fortsæt med ${ planName }"
@@ -7494,6 +7491,9 @@
       ],
       "The import will start with the most recent messages.": [
         "Importen vil starte med de seneste beskeder."
+      ],
+      "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
+        "Denne handling vil downloade alle beskeder, så de kan gennemsøges lokalt. Rydder du dine browserdata, deaktiveres denne indstilling."
       ],
       "This feature is only available for paid users": [
         "Denne funktion er kun tilgængelig for betalende brugere"

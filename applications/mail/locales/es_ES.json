@@ -415,6 +415,9 @@
       "Hide messages": [
         "Ocultar mensajes"
       ],
+      "Hide My Email": [
+        "Ocultar mi dirección de correo electrónico"
+      ],
       "Hide my email": [
         "Ocultar mi correo electrónico"
       ],
@@ -530,6 +533,12 @@
       "Merge contacts": [
         "Combinar contactos"
       ],
+      "Messages from this sender": [
+        "Mensajes de este remitente"
+      ],
+      "Messages to this recipient": [
+        "Mensajes a este destinatario"
+      ],
       "Minimize composer": [
         "Minimizar el editor"
       ],
@@ -547,6 +556,21 @@
       ],
       "Move": [
         "Mover"
+      ],
+      "Move all conversations from this folder": [
+        "Mover todas las conversaciones de esta carpeta"
+      ],
+      "Move all conversations from this label": [
+        "Mover todas las conversaciones con esta etiqueta"
+      ],
+      "Move all messages from this folder": [
+        "Mover todos los mensajes de esta carpeta"
+      ],
+      "Move all messages from this label": [
+        "Mover todos los mensajes con esta etiqueta"
+      ],
+      "Move all to trash": [
+        "Mover todo a la papelera"
       ],
       "move emails to": [
         "mover correos electrónicos a"
@@ -603,7 +627,7 @@
         "No"
       ],
       "No trackers found, but some images could not be loaded with tracking protection.": [
-        "Algunas de las imágenes no pudieron ser cargadas con la protección de rastreo."
+        "No se encontraron rastreadores. Algunas de las imágenes no pudieron ser cargadas con la protección de rastreo."
       ],
       "No, I won't attend": [
         "No, no asistiré"
@@ -728,6 +752,12 @@
       "Request new code": [
         "Solicitar un nuevo código"
       ],
+      "Reset": [
+        "Restablecer"
+      ],
+      "Reset search form": [
+        "Restablecer el formulario de búsqueda"
+      ],
       "Reset zoom": [
         "Restablecer zoom"
       ],
@@ -735,7 +765,7 @@
         "Reanudar"
       ],
       "Revert to original display": [
-        "Revertir al fondo original"
+        "Revertir a la vista original"
       ],
       "Save": [
         "Guardar"
@@ -875,9 +905,6 @@
       "This message contains remote content.": [
         "Este mensaje contiene contenido remoto."
       ],
-      "Trash all": [
-        "Move all to trash"
-      ],
       "Trust": [
         "Confiar"
       ],
@@ -949,7 +976,7 @@
         "Usar para enviar"
       ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
-        "Usa el mouse para cambiar el tamaño de la vista. Si utilizas el teclado, puedes usar las teclas de flecha izquierda y derecha para cambiar el tamaño."
+        "Utilice el ratón para cambiar el tamaño de la vista. Si utiliza el teclado, puede usar las teclas de flecha izquierda y derecha para cambiar el tamaño."
       ],
       "Use “${ label }” setting": [
         "Utilizar la configuración de \"${ label }\""
@@ -1073,6 +1100,11 @@
     "Alternative text for conversation image": {
       "Conversation": [
         "Conversación"
+      ]
+    },
+    "Alternative text for SimpleLogin image": {
+      "SimpleLogin": [
+        "SimpleLogin"
       ]
     },
     "Alternative text for welcome image": {
@@ -1279,7 +1311,7 @@
     },
     "Calendar invite info": {
       " This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar.": [
-        " Esta nueva propuesta horaria no coincide con los detalles de tu invitación. Por favor, verifica los detalles de la invitación en tu calendario."
+        "This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar."
       ],
       "${ participantName } accepted an invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } aceptó una invitación y propuso una nueva hora para una ocurrencia de este evento."
@@ -1606,7 +1638,7 @@
         "diente de león"
       ],
       "enzian": [
-        "enzima"
+        "genciana"
       ],
       "fern": [
         "helecho"
@@ -1660,7 +1692,7 @@
         "azul pizarra"
       ],
       "soil": [
-        "suelo"
+        "tierra"
       ],
       "strawberry": [
         "fresa"
@@ -2847,8 +2879,8 @@
       "A group with this name already exists": [
         "Ya existe un grupo con este nombre"
       ],
-      "A problem occurred, please try again.": [
-        "Ha ocurrido un problema, inténtalo de nuevo."
+      "A problem occurred, please try again": [
+        "Ha ocurrido un problema, inténtalo de nuevo"
       ],
       "Address primary private key not found": [
         "No se ha encontrado la clave primaria de la dirección"
@@ -2872,7 +2904,7 @@
         "Elija una fecha en el futuro."
       ],
       "Choose a date within the next ${ SCHEDULED_MAX_DATE_DAYS } day.": [
-        "Elija una fecha dentro de los siguientes ${ SCHEDULED_MAX_DATE_DAYS } días.",
+        "Elija una fecha dentro del siguiente ${ SCHEDULED_MAX_DATE_DAYS } día.",
         "Elija una fecha dentro de los siguientes ${ SCHEDULED_MAX_DATE_DAYS } días."
       ],
       "Condition incomplete": [
@@ -2888,13 +2920,13 @@
         "Firma del contacto no verificada"
       ],
       "Contact your organization’s administrator to resolve this": [
-        "Contacta con el administrador de tu organización para resolver esto"
+        "Contacte con el administrador de su organización para resolver esto"
       ],
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "La búsqueda de contenido no puede ser habilitada en este navegador. Por favor, salga del modo de navegación privada o utilice otro navegador."
       ],
       "Decryption error: decryption of this message's encrypted content failed.": [
-        "Error de descifrado: el descifrado del contenido de este mensaje ha fallado."
+        "Error al descifrar: el descifrado del contenido de este mensaje ha fallado."
       ],
       "Deselect at least ${ calendarToFixCount } calendar": [
         "Deseleccionar al menos ${ calendarToFixCount } calendario",
@@ -2905,10 +2937,10 @@
         "Deseleccionar al menos ${ calendarToFixCount } calendarios o"
       ],
       "Domain not available, try again later": [
-        "Dominio no disponible, inténtalo de nuevo más tarde"
+        "Dominio no disponible, inténtelo de nuevo más tarde"
       ],
       "Draft could not be saved. Try again.": [
-        "No se ha podido guardar el borrador. Inténtalo de nuevo."
+        "No se ha podido guardar el borrador. Inténtelo de nuevo."
       ],
       "Email address disabled": [
         "Dirección de correo electrónico deshabilitada"
@@ -2932,7 +2964,7 @@
         "Error en una de las condiciones"
       ],
       "Error while saving draft. Please try again.": [
-        "Error al guardar el borrador. Por favor, intente de nuevo."
+        "Error al guardar el borrador. Por favor, inténtelo de nuevo."
       ],
       "Error while sending the message. Message is not sent.": [
         "Se ha producido un error al enviar el mensaje. El mensaje no se ha enviado."
@@ -2941,7 +2973,7 @@
         "Error al subir archivos adjuntos. El mensaje no se ha enviado."
       ],
       "Failed to encrypt attachment. Please try again.": [
-        "El cifrado del archivo adjunto ha fallado. Por favor, inténtalo de nuevo."
+        "El cifrado del archivo adjunto ha fallado. Por favor, inténtelo de nuevo."
       ],
       "Filter with this name already exists": [
         "Ya existe un filtro con este nombre"
@@ -2959,7 +2991,7 @@
         "Contraseña de buzón incorrecta. Por favor, inténtelo de nuevo."
       ],
       "Invalid expiration time": [
-        "Tiempo de caducidad inválido"
+        "El tiempo de caducidad no es válido"
       ],
       "Invalid name": [
         "Nombre no válido"
@@ -2993,7 +3025,7 @@
         "No se ha encontrado la firma"
       ],
       "Network error: Please check your connection and try again.": [
-        "Error de red: Por favor, comprueba tu conexión e inténtalo de nuevo."
+        "Error de red: Por favor, compruebe su conexión e inténtelo de nuevo."
       ],
       "No address with keys available to compose a message": [
         "No hay una dirección con claves disponibles para redactar un mensaje"
@@ -3024,8 +3056,8 @@
       "Passwords do not match": [
         "Las contraseñas no coinciden"
       ],
-      "Please activate your search again": [
-        "Por favor, activa tu búsqueda de nuevo"
+      "Please activate your content search again": [
+        "Por favor, activa de nuevo tu búsqueda de contenido"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Por favor, arregle el conflicto resaltado para continuar.",
@@ -3047,7 +3079,7 @@
         "La clave principal no es válida para realizar el envío"
       ],
       "Primary key retrieved for internal user is not valid for sending": [
-        "La clave principal recuperada para el usuario interno no es válida para enviar"
+        "La clave principal recuperada para el usuario interno no es válida para el envío"
       ],
       "Public key could not be trusted": [
         "No se ha podido verificar la clave pública"
@@ -3084,23 +3116,20 @@
         "Algunos grupos no pueden ser eliminados"
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
-        "Algunos de tus nombres de etiquetas no están disponibles. Por favor, personaliza la importación para editar estos nombres."
+        "Algunos de sus nombres de etiquetas no están disponibles. Por favor, personalice la importación para editar estos nombres."
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
-        "Algunos de tus nombres de etiqueta exceden el límite de caracteres de ${ MAIL_APP_NAME }. Por favor, modifica el importe para editar estos nombres."
+        "Algunos de sus nombres de etiqueta exceden el límite de caracteres de ${ MAIL_APP_NAME }. Por favor, modifique la importación para editar estos nombres."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Algo salió mal, por favor ${ refresh } para continuar. Si aún ve este mensaje de error, póngase en contacto con nuestro ${ supportTeam }."
       ],
-      "Something went wrong, please try again": [
-        "Algo salió mal. Por favor, inténtalo de nuevo más tarde"
-      ],
       "Sorry, Proton can't decrypt your message. Please check that all your keys are active.": [
-        "Lo sentimos, Proton no puede descifrar tu mensaje. Comprueba que todas tus claves están activas."
+        "Lo sentimos, Proton no puede descifrar su mensaje. Compruebe que todas sus claves estén activas."
       ],
       "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
-        "El archivo adjunto no se ha podido descifrar.\nSi tienes la clave privada correspondiente, aún podrás descifrar\nel archivo con un programa como GnuPG.",
-        "Algunos archivos adjuntos no han podido descifrar.\nSi tienes la clave privada correspondiente, aún podrás descifrar\nlos archivos con un programa como GnuPG."
+        "El archivo adjunto no se ha podido descifrar.\nSi tiene la clave privada correspondiente, aún podrá descifrar\nel archivo con un programa como GnuPG.",
+        "Algunos archivos adjuntos no se han podido descifrar.\nSi tiene la clave privada correspondiente, aún podrá descifrar\nlos archivos con un programa como GnuPG."
       ],
       "The folder name is invalid. Please choose a different name.": [
         "El nombre de la carpeta es inválido. Por favor, elige un nombre diferente."
@@ -3112,7 +3141,7 @@
         "No se han podido extraer las propiedades de la clave para ${ emailAddress }"
       ],
       "The label name is invalid. Please choose a different name.": [
-        "El nombre de la etiqueta es inválido. Por favor, elige un nombre diferente."
+        "El nombre de la etiqueta no es válido. Por favor, elija un nombre diferente."
       ],
       "The label name is too long. Please choose a different name.": [
         "El nombre de la etiqueta es demasiado largo. Por favor, elija un nombre diferente."
@@ -3124,10 +3153,10 @@
         "La clave de envío no es válida"
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
-        "Hay demasiadas carpetas en tu cuenta externa. Por favor, personaliza la importación para eliminar algunas carpetas."
+        "Hay demasiadas carpetas en su cuenta externa. Por favor, personalice la importación para eliminar algunas carpetas."
       ],
       "There has been an issue with content search. Default search has been used instead.": [
-        "Ha habido un problema con la búsqueda de contenido. La búsqueda predeterminada se ha utilizado en su lugar."
+        "Hubo un problema con la búsqueda de contenido. En su lugar se ha utilizado la búsqueda predeterminada."
       ],
       "There was an error when exporting the contacts vCards": [
         "Hubo un error al exportar los vCards de contactos"
@@ -3139,10 +3168,10 @@
         "Este campo requiere un mínimo de ${ minimumLength } caracteres."
       ],
       "This folder name is not available. Please choose a different name.": [
-        "Este nombre de carpeta no está disponible. Por favor, elige un nombre diferente."
+        "Este nombre de carpeta no está disponible. Por favor, elija un nombre diferente."
       ],
       "This label name is not available. Please choose a different name.": [
-        "Este nombre de etiqueta no está disponible. Por favor, elige un nombre diferente."
+        "Este nombre de etiqueta no está disponible. Por favor, elija un nombre diferente."
       ],
       "This message has already been sent": [
         "Este mensaje ya ha sido enviado"
@@ -3151,10 +3180,10 @@
         "Este mensaje ya se ha enviado. Se ha guardado como un nuevo borrador."
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "Este mensaje podría contener enlaces que no pueden abrirse correctamente en tu navegador actual."
+        "Este mensaje podría contener enlaces que no se pueden abrir correctamente en su navegador actual."
       ],
       "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
-        "Demasiados filtros activos. Actualiza a un plan de pago para activar más filtros."
+        "Demasiados filtros activos. Actualice a un plan de pago para activar más filtros."
       ],
       "Trusted keys are not valid for sending": [
         "Las claves de confianza no son válidas para el envío"
@@ -3179,7 +3208,7 @@
         "No puedes abrir más de ${ maxActiveComposer } ventanas de edición a la vez"
       ],
       "You did not provide a file.": [
-        "No has proporcionado ningún archivo."
+        "No ha proporcionado ningún archivo."
       ],
       "You must set a name": [
         "Debes establecer un nombre"
@@ -3818,7 +3847,7 @@
       ],
       "${ contactCount } contact contains multiple email addresses.": [
         "El contacto ${ contactCount } contiene múltiples direcciones de correo.",
-        "Los contactos ${ contactCount } contiene múltiples direcciones de correo."
+        "Los contactos ${ contactCount } contienen múltiples direcciones de correo."
       ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } Miembro",
@@ -3863,12 +3892,12 @@
         "${ numContacts } contactos"
       ],
       "${ numOccurrences } occurrence found": [
-        "${ numOccurrences } incidencia encontrada",
-        "${ numOccurrences } incidencias encontradas"
+        "${ numOccurrences } ocurrencia encontrada",
+        "${ numOccurrences } ocurrencias encontradas"
       ],
       "${ numOccurrences } occurrence found in the mail content": [
-        "${ numOccurrences } incidencia encontrada en el contenido del correo",
-        "${ numOccurrences } incidencias encontradas en el contenido del correo"
+        "${ numOccurrences } ocurrencia encontrada en el contenido del correo",
+        "${ numOccurrences } ocurrencias encontradas en el contenido del correo"
       ],
       "${ pureAttachmentsCount } file attached": [
         "${ pureAttachmentsCount } archivo adjunto",
@@ -3941,7 +3970,7 @@
         "Una frase de recuperación es una de las formas más seguras de proteger el acceso a tu cuenta. Puedes usarla para acceder a tu cuenta y recuperar tus datos cifrados si alguna vez olvidas tu contraseña."
       ],
       "A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.": [
-        "Se enviará una solicitud para darte de baja de esta lista de correo y se procesará automáticamente."
+        "Se enviará una solicitud para darle de baja de esta lista de correo y se procesará automáticamente."
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "El acceso a la cuenta ha sido restringido debido a facturas impagadas. Por favor, contacta con tu administrador."
@@ -3950,7 +3979,7 @@
         "Activación en proceso"
       ],
       "Add ${ addressToCreate } to your account for free, for a limited time only.": [
-        "Añade ${ addressToCreate } a tu cuenta de forma gratuita, solo por tiempo limitado."
+        "Añada ${ addressToCreate } a su cuenta de forma gratuita, solo por un tiempo limitado."
       ],
       "Add image URL": [
         "Agregar URL de imagen"
@@ -3991,13 +4020,16 @@
         "y"
       ],
       "Are you sure you want to delete all messages in this folder?": [
-        "¿Estas seguro de que quieres eliminar todos los mensajes en está carpeta?"
+        "¿Está seguro de que quiere eliminar todos los mensajes en esta carpeta?"
       ],
       "Are you sure you want to delete all messages with this label?": [
-        "¿Estás seguro de que quieres eliminar todos los mensajes con esta etiqueta?"
+        "¿Está seguro de que quiere eliminar todos los mensajes con esta etiqueta?"
       ],
       "Are you sure you want to discard your changes?": [
         "¿Estás seguro de que quieres descartar los cambios?"
+      ],
+      "Are you sure you want to move all messages in this location to Trash?": [
+        "¿Está seguro de que quiere mover todos los mensajes de esta carpeta a la Papelera?"
       ],
       "Are you sure you want to permanently delete ${ count } conversation?": [
         "¿Estás seguro de que quieres eliminar permanentemente ${ count } conversación?",
@@ -4033,7 +4065,7 @@
         "La navegación básica y las acciones siguen estando disponibles independientemente de que los atajos de teclado estén habilitados o no en los ajustes."
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
-        "Antes de solicitar un nuevo código de verificación revisa tu carpeta de spam y comprueba que ${ strong } es la dirección correcta."
+        "Antes de solicitar un nuevo código de verificación revise su carpeta de spam y compruebe que ${ strong } la dirección es correcta."
       ],
       "Body: ": [
         "Cuerpo: "
@@ -4060,19 +4092,13 @@
         "Haz clic en \"Solicitar nuevo código\" para enviarte un nuevo código de verificación a ${ strong }. Si esta dirección de correo electrónico es incorrecta, haz clic en \"Editar\" para corregirla."
       ],
       "Click to view group details": [
-        "Haz clic para ver detalles del grupo"
+        "Haga clic para ver los detalles del grupo"
       ],
       "Close this screen to exit.": [
         "Cierra esta pantalla para salir."
       ],
       "Confirm phishing report": [
         "Confirmar reporte de suplantación"
-      ],
-      "Content search of the entire inbox is available for ${ paidPlansButton }.": [
-        "La búsqueda de contenido en toda la bandeja de entrada está disponible para ${ paidPlansButton }."
-      ],
-      "Content: ": [
-        "Contenido: "
       ],
       "Continue with ${ planName }": [
         "Continuar con ${ planName }"
@@ -4124,6 +4150,9 @@
       "Default email application": [
         "Aplicación de correo electrónico predeterminada"
       ],
+      "Delivered via SimpleLogin by Proton": [
+        "Entregado por Proton a través de SimpleLogin"
+      ],
       "Disable message content search": [
         "Desactivar la búsqueda del contenido de mensajes"
       ],
@@ -4135,13 +4164,13 @@
         "¿Quieres volver a firmar los datos del contacto y en el proceso, confiar en las claves con las siguientes huellas digitales?"
       ],
       "Do you want to re-sign the contact details?": [
-        "¿Quieres volver a firmar los datos del contacto?"
+        "¿Quiere volver a firmar los datos del contacto?"
       ],
       "Don't forget to share the password with the recipient": [
-        "No olvides compartir la contraseña con el destinatario"
+        "No olvide compartir la contraseña con el destinatario"
       ],
-      "Downloading message ${ currentProgress } out of ${ totalProgress }": [
-        "Descargando mensaje ${ currentProgress } de ${ totalProgress }"
+      "Downloading message ${ esProgress } out of ${ totalProgressToShow }": [
+        "Descargando mensaje ${ esProgress } de ${ totalProgressToShow }"
       ],
       "Draft": [
         "Borrador"
@@ -4173,8 +4202,11 @@
       "Email address": [
         "Dirección de correo electrónico"
       ],
+      "Email is forwarded to your mailbox; your email address stays hidden.": [
+        "El correo electrónico es reenviado a su buzón; su dirección de correo electrónico permanece oculta."
+      ],
       "Email tracker protection is disabled": [
-        "Protección del rastreador de correo electrónico está deshabilitada"
+        "Protección contra rastreo para el correo electrónico deshabilitada"
       ],
       "Email trackers can violate your privacy. Proton did not find any trackers on this message.": [
         "Los rastreadores de correo pueden violar tu privacidad. Proton no encontró ningún rastreador en este mensaje."
@@ -4192,9 +4224,6 @@
       ],
       "Encrypt message": [
         "Cifrar mensaje"
-      ],
-      "End of message content search": [
-        "Fin de la búsqueda en el contenido del mensaje"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Introduce el código de verificación que se ha enviado a ${ destinationText }."
@@ -4256,7 +4285,7 @@
         "De"
       ],
       "Get more storage and premium features.": [
-        "Consigue más almacenamiento y funciones premium."
+        "Consigua más almacenamiento y funciones premium."
       ],
       "Group assignment applied": [
         "Asignación de grupo aplicada"
@@ -4275,8 +4304,11 @@
         "Hora",
         "Horas"
       ],
+      "How Hide My Email works": [
+        "Cómo funciona Hide My Email"
+      ],
       "I'm sending this message to a non-Proton Mail user.": [
-        "Estoy enviando este mensaje a un no usuario de Proton Mail."
+        "Estoy enviando este mensaje a alguien que no utiliza Proton Mail."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Si tienes problemas para crear tu cuenta, por favor solicita una invitación y responderemos en un día hábil."
@@ -4287,6 +4319,9 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Si no encuentras el correo electrónico en tu bandeja de entrada, por favor, comprueba tu carpeta de spam."
       ],
+      "If your alias is sold, leaked, or abused, simply disable it to stop receiving spam.": [
+        "Si su alias es vendido, filtrado o utilizado de forma abusiva, simplemente desactívelo para dejar de recibir spam."
+      ],
       "Image description": [
         "Descripción de la imagen"
       ],
@@ -4294,7 +4329,7 @@
         "URL de la imagen"
       ],
       "Images have been removed because they are not allowed in auto-reply": [
-        "Las imágenes han sido eliminadas porque no están permitidas en respuesta automática"
+        "Las imágenes han sido eliminadas porque no están permitidas en la respuesta automática"
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Importar ${ contactsFragment } y ${ contactsGroupsFragment }"
@@ -4310,10 +4345,10 @@
         "Importación en curso"
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        "Importando tus datos desde ${ importedEmailAddress } a ${ toEmail }."
+        "Importando sus datos desde ${ importedEmailAddress } a ${ toEmail }."
       ],
       "Increase storage space starting at": [
-        "Aumenta el espacio de almacenamiento a partir de"
+        "Aumente el espacio de almacenamiento a partir de"
       ],
       "Indexing paused": [
         "Indexación pausada"
@@ -4337,7 +4372,7 @@
         "Se ha restablecido la conexión a Internet."
       ],
       "Just confirm your selection and we'll do the rest.": [
-        "Sólo tienes que confirmar tu selección y nosotros haremos el resto."
+        "Sólo tiene que confirmar su selección y nosotros haremos el resto."
       ],
       "Key fingerprint": [
         "Huella digital de la llave"
@@ -4376,7 +4411,7 @@
         "Administra tus etiquetas"
       ],
       "Maximum number of attachments (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) exceeded.": [
-        "Máximo número de adjuntos (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) excedido."
+        "Cantidad máxima de adjuntos (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) excedida."
       ],
       "members": [
         "miembros"
@@ -4388,7 +4423,7 @@
         "Fusionado"
       ],
       "Message expiration works out-of-the-box when sending emails to other ${ MAIL_APP_NAME } users. To send expiring emails to non-${ BRAND_NAME } users, please cancel and add password protection to your email.": [
-        "La caducidad de los mensajes funciona de forma inmediata cuando se envían correos electrónicos a otros usuarios de ${ MAIL_APP_NAME }. Para enviar correos con caducidad a usuarios que no sean de ${ BRAND_NAME }, por favor cancele y añada la protección por contraseña a su correo electrónico."
+        "La caducidad de los mensajes funciona de forma inmediata cuando se envían correos electrónicos a otros usuarios de ${ MAIL_APP_NAME }. Para enviar correos con caducidad a usuarios que no sean de ${ BRAND_NAME }, por favor anule y añada la protección por contraseña a su correo electrónico."
       ],
       "Message headers": [
         "Encabezados del mensaje"
@@ -4410,6 +4445,9 @@
       ],
       "Monthly ${ onDayString }": [
         "Mensual ${ onDayString }"
+      ],
+      "Moving a large amount of messages. This may take a while.": [
+        "Moviendo una gran cantidad de mensajes. Esto puede tardar un rato."
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Ponle un nombre a tu nueva carpeta y selecciona la carpeta en la que quieres colocarla. Si no seleccionas una carpeta, esta nueva carpeta se creará como una carpeta de nivel superior."
@@ -4453,17 +4491,14 @@
       "No results found": [
         "No se han encontrado resultados"
       ],
-      "No results found in the past 30 days, searching the rest of your inbox": [
-        "No se han encontrado resultados en los últimos 30 días, buscando en el resto de tu bandeja de entrada"
-      ],
       "No trackers found, but some images could not be loaded with tracking protection": [
-        "Algunas de las imágenes no pudieron ser cargadas con la protección de rastreo"
+        "Algunas de las imágenes no pudieron ser cargadas con la protección contra rastreo"
       ],
       "non-Proton Mail": [
-        "no-Proton Mail"
+        "Proton Mail"
       ],
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
-        "Ninguna de las claves cargadas son validas para el cifrado. El cifrado se desactiva automáticamente."
+        "Ninguna de las claves cargadas es válida para cifrado. El cifrado se ha deshabilitado automáticamente."
       ],
       "Not a valid URL": [
         "No es una URL válida"
@@ -4481,7 +4516,7 @@
         "Otras opciones"
       ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
-        "Nuestro sistema ha marcado este mensaje como un intento de suplantación de identidad. Por favor, comprueba que es legítimo."
+        "Nuestro sistema ha marcado este mensaje como un intento de suplantación de identidad. Por favor, compruebe que es legítimo."
       ],
       "per month.": [
         "al mes."
@@ -4499,10 +4534,10 @@
         "Texto plano"
       ],
       "Please add at least one recipient.": [
-        "Por favor, añade al menos un destinatario."
+        "Por favor, añada al menos un destinatario."
       ],
       "Please fill out this field.": [
-        "Por favor rellena este campo."
+        "Por favor, rellene este campo."
       ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
         "Manténla a salvo. La necesitarás para acceder a tu cuenta y descifrar tus datos en caso de un restablecimiento de contraseña."
@@ -4514,17 +4549,17 @@
         "Ten en cuenta que este proceso puede tardar algo de tiempo dependiendo del tamaño de tu libreta de direcciones."
       ],
       "Please select the folders you would like to import:": [
-        "Por favor, selecciona las carpetas que te gustaría importar:"
+        "Por favor, seleccione las carpetas que le gustaría importar:"
       ],
       "Please select the type of link you want to insert and fill in all the fields.": [
         "Selecciona el tipo de enlace que quieres insertar y completa todos los campos."
       ],
       "Please select which email address or addresses to add to ${ groupCount } group.": [
-        "Selecciona qué dirección o direcciones de correo añadir al grupo ${ groupCount }.",
-        "Selecciona qué dirección o direcciones de correo añadir a los grupos ${ groupCount }."
+        "Seleccione qué dirección o direcciones de correo añadir al grupo ${ groupCount }.",
+        "Seleccione qué dirección o direcciones de correo añadir a los grupos ${ groupCount }."
       ],
       "Please select which email address or addresses to add to ${ groupName }.": [
-        "Selecciona qué dirección o direcciones de correo añadir a ${ groupName }."
+        "Seleccione qué dirección o direcciones de correo añadir a ${ groupName }."
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Por favor, espera mientras buscamos contactos que puedan volver a firmarse con la clave de cifrado principal."
@@ -4543,6 +4578,9 @@
       ],
       "Priority support": [
         "Soporte prioritario"
+      ],
+      "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
+        "Proteja su correo electrónico para que no sea utilizado en listas de correo o por los spammers con ${ maskMyEmailButton }."
       ],
       "Proton doesn't make money by abusing privacy.": [
         "Proton no gana dinero abusando de la privacidad."
@@ -4596,7 +4634,7 @@
         "La busqueda está tardando demasiado? ${ dropdownButton } o ${ toggleOffButton } de esta sesión de busqueda."
       ],
       "Seems like you are all caught up for now": [
-        "Parece que estás al corriente por ahora"
+        "Parece que ya está al día por ahora"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Selecciona el formato de correo electrónico que deseas utilizar por defecto al enviar un correo electrónico a esta dirección."
@@ -4608,7 +4646,7 @@
         "Seleccione los calendarios que desea importar. Se creará un nuevo calendario para cada calendario importado hasta el límite de 20 calendarios."
       ],
       "Send an encrypted, password protected message to a ${ boldText } email address.": [
-        "Enviar a la dirección de correo electrónico ${ boldText } un mensaje encriptado y protegido por contraseña."
+        "Enviar un mensaje encriptado y protegido por contraseña a una dirección de correo electrónico que no es de ${ boldText }."
       ],
       "Sending": [
         "Enviando"
@@ -4617,10 +4655,10 @@
         "Enviando mensaje..."
       ],
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
-        "El envío de mensajes desde la dirección @pm.me es una característica de pago. Tu mensaje será enviado desde tu dirección por defecto ${ email }"
+        "El envío de mensajes desde la dirección @pm.me es una característica de pago. Su mensaje será enviado desde su dirección por defecto ${ email }"
       ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
-        "Enviado con <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> correo seguro."
+        "Enviado con <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> correo electrónico seguro."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "No se puede acceder a los servidores. Por favor, inténtelo de nuevo en unos minutos"
@@ -4639,6 +4677,12 @@
       ],
       "Show original message": [
         "Mostrar el mensaje original"
+      ],
+      "SimpleLogin is a Proton service, and your Proton Account includes Hide My Email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
+        "SimpleLogin es un servicio de Proton, y su cuenta de Proton incluye los alias de Hide My Email. Para empezar a ocultar su dirección de correo electrónico, vaya a SimpleLogin y cree su primer alias."
+      ],
+      "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
+        "SimpleLogin proporciona una forma sencilla de iniciar sesión en sitios de terceros no fiables si no quiere exponer su dirección de correo electrónico real."
       ],
       "Sorry, this message does not exist or has already expired.": [
         "Lo sentimos, este mensaje no existe o ya ha caducado."
@@ -4665,7 +4709,7 @@
         "Soporte para 1 dominio de correo personalizado"
       ],
       "Support privacy by upgrading for": [
-        "Apoyar la privacidad mediante la actualización para"
+        "Apoye la privacidad actualizando a"
       ],
       "support team": [
         "equipo de soporte"
@@ -4683,38 +4727,38 @@
         "La aplicación necesita descifrar localmente tus contactos antes de poder exportarlos. Al final del proceso se generará un archivo VCF y podrás descargarlo."
       ],
       "The data you have entered in the draft may not be saved if you leave the page.": [
-        "Es posible que los datos que has introducido en el borrador no sean guardados si abandonas la página."
+        "Es posible que los datos que ha introducido en el borrador no se guarden si abandona la página."
       ],
       "The original message you are trying to forward / reply to is in the process of being sent. If you continue, you will not be able to undo sending of the original message any longer.": [
-        "El mensaje original al que estás intentando reenviar / responder está en proceso de ser enviado. Si continúas, no podrás deshacer el envío del mensaje original."
+        "El mensaje original al que está intentando reenviar / responder está en proceso de ser enviado. Si continúa, no podrá deshacer el envío del mensaje original."
       ],
       "The original sender of this message is no longer valid. Your message will be sent from your default address ${ defaultEmail }.": [
-        "El remitente original de este mensaje ya no es válido. Tu mensaje se enviará desde tu dirección predeterminada ${ defaultEmail }."
+        "El remitente original de este mensaje ya no es válido. Su mensaje se enviará desde su dirección predeterminada ${ defaultEmail }."
       ],
       "The sender has requested a read receipt.": [
         "El remitente ha solicitado una confirmación de lectura."
       ],
       "The verification of ${ contactName } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddress } or edit the contact.": [
-        "La verificación de ${ contactName } ha fallado: el contacto no está firmado correctamente.\nEsto puede ser resultado de un restablecimiento de contraseña.\nDebes volver a firmar el contacto para enviar un mensaje a ${ contactAddress } o editar el contacto."
+        "La verificación de ${ contactName } ha fallado: el contacto no está firmado correctamente.\nEsto puede ser resultado de un restablecimiento de contraseña.\nDebe volver a firmar el contacto para enviar un mensaje a ${ contactAddress } o editar el contacto."
       ],
       "The verification of ${ contactNames } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddresses } or edit the contact.": [
-        "La verificación de ${ contactNames } ha fallado: el contacto no está firmado correctamente.\nEsto puede ser resultado de un restablecimiento de contraseña.\nDebes volver a firmar el contacto para enviar un mensaje a ${ contactAddresses } o editar el contacto.",
-        "La verificación de ${ contactNames } ha fallado: los contactos no están firmados correctamente.\nEsto puede ser resultado de un restablecimiento de contraseña.\nDebes volver a firmar los contactos para enviar un mensaje a ${ contactAddresses } o editar los contactos."
+        "La verificación de ${ contactNames } ha fallado: el contacto no está firmado correctamente.\nEsto puede ser resultado de un restablecimiento de contraseña.\nDebe volver a firmar el contacto para enviar un mensaje a ${ contactAddresses } o editar el contacto.",
+        "La verificación de ${ contactNames } ha fallado: los contactos no están firmados correctamente.\nEsto puede ser resultado de un restablecimiento de contraseña.\nDebe volver a firmar los contactos para enviar un mensaje a ${ contactAddresses } o editar los contactos."
       ],
       "Themes can give your inbox a new look.": [
-        "Los temas pueden darle un estilo nuevo a tu bandeja de entrada."
+        "Los temas pueden darle un aspecto diferente a su bandeja de entrada."
       ],
       "There has been an error with the signature used to verify the contact details, which may be the result of a password reset.": [
         "Se ha producido un error con la firma utilizada para verificar los datos del contacto, que pueden ser el resultado de un restablecimiento de contraseña."
+      ],
+      "They can't spam you if they don't know your email address. Protect your inbox with Hide My Email.": [
+        "No pueden enviarle correo no deseado si no conocen su dirección de correo electrónico. Proteja su bandeja de entrada con Hide My Email."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Esta cuenta ha sido suspendida debido a una posible violación de la política."
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "Esta acción descargará todos los mensajes para que puedan ser buscados localmente. Limpiar los datos de tu navegador desactivará esta opción."
-      ],
-      "This action will download the most recent messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "Esta acción descargará los mensajes más recientes de modo que puedan ser buscados localmente. Limpiar los datos de tu navegador deshabilitará esta opción."
+        "Esta acción descargará todos los mensajes para que la búsqueda pueda ser local. Limpiar los datos de su navegador desactivará esta opción."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Esta dirección está deshabilitada. Para poder enviar a esta dirección, el propietario debe habilitar la dirección en primer lugar."
@@ -4729,11 +4773,11 @@
         "Esta conversación contiene mensajes no borrados."
       ],
       "This conversation contains trashed messages.": [
-        "Esta conversación contiene mensajes de la papelera."
+        "Esta conversación contiene mensajes borrados."
       ],
       "This conversation will be marked as spam. Would you also like to unsubscribe from future emails?": [
-        "Esta conversación será marcada como spam. ¿Te gustaría a su vez cancelar la suscripción de cara a futuros correos?",
-        "Estas conversaciones serán marcadas como spam. ¿Te gustaría a su vez cancelar la suscripción de cara a futuros correos?"
+        "Esta conversación será marcada como spam. ¿Le gustaría a su vez cancelar la suscripción para no recibir más correos?",
+        "Estas conversaciones serán marcadas como spam. ¿Le gustaría a su vez cancelar la suscripción para no recibir más correos?"
       ],
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded!": [
         "Este correo electrónico ha fallado los requisitos de autenticación de su dominio. ¡Puede estar falsificado o reenviado incorrectamente!"
@@ -4751,7 +4795,7 @@
         "Este enlace puede ser un ataque homógrafo. Por favor, verifica que este es el enlace que quieres visitar o no lo abras."
       ],
       "This message has been adjusted to comply with a dark background.": [
-        "Este mensaje ha sido ajustado para cumplir con un fondo oscuro."
+        "Este mensaje ha sido ajustado para ajustarse a un fondo oscuro."
       ],
       "This message is automatically generated as a response to a previous message.": [
         "Este mensaje es generado automáticamente como respuesta a un mensaje anterior."
@@ -4763,17 +4807,17 @@
         "Este mensaje proviene de una lista de correo."
       ],
       "This message is signed by a key that has not been trusted yet.": [
-        "Este mensaje está firmado con una clave que aún no ha sido confiada."
+        "Este mensaje está firmado con una clave que aún no es deconfianza."
       ],
       "This message is signed by the key attached, that has not been trusted yet.": [
-        "Este mensaje está firmado con la clave adjunta, que aún no ha sido confiada."
+        "Este mensaje está firmado con la clave adjunta, que aún no es deconfianza."
       ],
       "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
-        "Este mensaje será marcado como spam. ¿Te gustaría a su vez cancelar la suscripción de cara a futuros correos?",
-        "Estos mensajes serán marcados como spam. ¿Te gustaría a su vez cancelar la suscripción de cara a futuros correos?"
+        "Este mensaje será marcado como spam. ¿Le gustaría a su vez cancelar la suscripción para no recibir más correos?",
+        "Estos mensajes serán marcados como spam. ¿Le gustaría a su vez cancelar la suscripción para no recibir más correos?"
       ],
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
-        "Este mensaje será movido a los Borradores, entonces podrá editarlo. Necesitará reprogramar cuándo será enviado."
+        "Este mensaje se moverá a los Borradores, entonces podrá editarlo. Necesitará reprogramar el envío."
       ],
       "This message will be sent on ${ dateString } at ${ formattedTime }": [
         "Este mensaje será enviado el ${ dateString } a las ${ formattedTime }"
@@ -4791,19 +4835,19 @@
         "Este mensaje expirará el ${ formattedDate }"
       ],
       "This message will expire on ${ dateString } at ${ formattedTime }": [
-        "Este mensaje caducará en ${ dateString } a las ${ formattedTime }"
+        "Este mensaje caducará el ${ dateString } a las ${ formattedTime }"
       ],
       "This message will expire today at ${ formattedTime }": [
-        "Este mensaje expira hoy en ${ formattedTime }"
+        "Este mensaje expira hoy a las ${ formattedTime }"
       ],
       "This message will expire tomorrow at ${ formattedTime }": [
-        "Este mensaje expira mañana ${ formattedTime }"
+        "Este mensaje expira mañana a las ${ formattedTime }"
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Esta clave pública se usará automáticamente para cifrar el correo electrónico enviado a esta dirección."
       ],
       "This sender's public key has not been trusted yet.": [
-        "La clave pública de este remitente no ha sido confiada aún."
+        "La clave pública de este remitente aún no es de confianza."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Para luchar contra el spam y el abuso, verifica que eres humano."
@@ -4815,10 +4859,10 @@
         "Para recuperar tus datos, necesitas volver a activar la llave de cifrado de contactos utilizada en el momento en que se crearon los datos. Esto requerirá recordar la contraseña utilizada cuando se generó la llave."
       ],
       "To unsubscribe from this mailing list, an email will be sent from ${ boldFrom } with following details as defined by the sender of the newsletter:": [
-        "Para darte de baja de esta lista de correo, se enviará un correo desde ${ boldFrom } con los siguientes detalles definidos por el remitente del boletín:"
+        "Para darse de baja de esta lista de correo, se enviará un correo desde ${ boldFrom } con los siguientes detalles definidos por el remitente del boletín:"
       ],
       "To unsubscribe from this mailing list, you will be taken to the following URL where instructions will be provided by the sender of the newsletter:": [
-        "Para darte de baja de esta lista de correo, serás llevado a la siguiente URL donde el remitente del boletín te dará las instrucciones:"
+        "Para darse de baja de esta lista de correo, será llevado a la siguiente URL donde el remitente del boletín le dará las instrucciones:"
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Para usar la verificación de dirección, debe confiar en una o más de las claves públicas disponibles, incluyendo la clave que deseas utilizar para enviar. Esto impedirá que las claves de cifrado sean falsificadas."
@@ -4830,7 +4874,7 @@
         "Desactive la búsqueda de contenidos. El progreso de la activación no se perderá."
       ],
       "Turn on to search the content of your messages": [
-        "Activa para buscar el contenido de sus mensajes"
+        "Active para buscar en el contenido de sus mensajes"
       ],
       "Unlimited folders, labels, and filters": [
         "Carpetas, etiquetas y filtros ilimitados"
@@ -4848,37 +4892,37 @@
         "Actualizando búsqueda de contenido de mensaje..."
       ],
       "Upgrade to add more addresses to your account.": [
-        "Actualiza para agregar más direcciones a su cuenta."
+        "Actualice para agregar más direcciones a su cuenta."
       ],
       "Upgrade to configure a vacation auto-responder.": [
-        "Actualizar para configurar un contestador automático de vacaciones."
+        "Actualice para poder configurar una respuesta automática."
       ],
       "Upgrade to create more folders, filters, and addresses.": [
-        "Actualiza para crear más carpetas, filtros y direcciones."
+        "Actualice para crear más carpetas, filtros y direcciones."
       ],
       "Upgrade to host emails from your own domain name.": [
-        "Actualice para alojar correos electrónicos desde su propio nombre de dominio."
+        "Actualice para alojar correos electrónicos desde su dominio personal."
       ],
       "Upgrade to send email from @pm.me addresses.": [
         "Actualiza para enviar correos desde direcciones @pm.me."
       ],
       "Upgrade to send emails to contact groups easily.": [
-        "Actualizar para enviar correos electrónicos a grupos de contactos fácilmente."
+        "Actualice para enviar fácilmente correos electrónicos a grupos de contactos."
       ],
       "Upgrade to support a privacy-first internet.": [
-        "Actualizar para apoyar un internet que dé prioridad a la privacidad."
+        "Actualice para apoyar un internet que dé prioridad a la privacidad."
       ],
       "Upgrade to support our mission of privacy for all.": [
         "Actualice para apoyar nuestra misión de brindar privacidad a todos."
       ],
       "Upgrade to support privacy and get more features.": [
-        "Actualiza para apoyar la privacidad y obtener más funciones."
+        "Actualice para apoyar la privacidad y obtener más funciones."
       ],
       "Upgrade to use ${ MAIL_APP_NAME } with third-party desktop clients.": [
-        "Actualiza para usar ${ MAIL_APP_NAME } con clientes de escritorio de terceros."
+        "Actualice para usar ${ MAIL_APP_NAME } con programas de escritorio de terceros."
       ],
       "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        "Actualiza hoy para evitar perder los beneficios de ${ planName } $."
+        "Actualice hoy para evitar perder los beneficios de ${ planName } $."
       ],
       "Upload picture": [
         "Cargar imagen"
@@ -4893,22 +4937,25 @@
         "Utiliza ${ calendarAppName } para mantener tu agenda privada."
       ],
       "Use keyboard shortcuts to manage your email faster.": [
-        "Usar atajos del teclado para administrar sus correos rápidamente."
+        "Utilice atajos del teclado para administrar sus correos rápidamente."
+      ],
+      "Using SimpleLogin is easy": [
+        "SimpleLogin es fácil de usar"
       ],
       "Version ${ appVersion }": [
         "Versión ${ appVersion }"
       ],
       "Visit our shop to get Proton merchandise.": [
-        "Visite nuestra tienda para obtener mercancía de Proton."
+        "Visite nuestra tienda para obtener productos promocionales de Proton."
       ],
       "We apologize. This might have been a mistake from our side. Can you please confirm that you want to mark this email as a legitimate one?": [
-        "Lo sentimos. Esto podría haber sido un error por nuestra parte. ¿Podrías confirmar que quieres marcar este correo electrónico como legítimo?"
+        "Lo sentimos. Esto podría haber sido un error por nuestra parte. ¿Podría confirmar que quiere marcar este correo electrónico como legítimo?"
       ],
       "We could not verify the sender's trusted keys.": [
         "No hemos podido verificar las claves de confianza del remitente."
       ],
       "We'll notify you when the import is done.": [
-        "Te avisaremos cuando la importación esté hecha."
+        "Le avisaremos cuando la importación esté terminada."
       ],
       "We'll send a new verification code to ${ strong }": [
         "Enviaremos un código de verificación nuevo a ${ strong }"
@@ -4925,6 +4972,9 @@
       "When do you want your message to be sent?": [
         "¿Cuándo quieres que se envíe tu mensaje?"
       ],
+      "When giving out your email, use a unique, disposable Hide My Email alias instead of your real email address.": [
+        "Cuando proporcione su correo electrónico, utilice un alias único y desechable de Hide My Email en lugar de su dirección de correo electrónico real."
+      ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Cuando habilitaste las claves de confianza para ${ senderName }, las claves públicas fueron añadidas a los datos del contacto."
       ],
@@ -4932,7 +4982,7 @@
         "¿Te gustaría recibir un nuevo código de verificación o utilizar un método de verificación alternativo?"
       ],
       "Would you like to receive a new verification code?": [
-        "¿Desearía recibir un código de verificación nuevo?"
+        "¿Quiere recibir un código de verificación nuevo?"
       ],
       "Yearly": [
         "Anual"
@@ -4941,7 +4991,7 @@
         "Estás a punto de abrir otra pestaña del navegador y visitar:"
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        "Actualmente has iniciado sesión como ${ user.Name } (${ user.Email })."
+        "Actualmente está conectado como ${ user.Name } (${ user.Email })."
       ],
       "You can add it as an attachment or display it inline in your mail body.": [
         "Puede añadirlo como archivo adjunto o mostrarlo en línea en el cuerpo del correo."
@@ -4956,19 +5006,19 @@
         "Puedes actualizar tu consulta de búsqueda o ${ button }"
       ],
       "You can either update your search query or clear it": [
-        "Puedes actualizar tu consulta de búsqueda o borrarla"
+        "Puede actualizar sus términos de búsqueda o borrarlos"
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Puedes activar las notificaciones para recibir alertas cuando lleguen mensajes de correo electrónico nuevos a esta carpeta."
       ],
       "You can use ${ VPN_APP_NAME } for free today.": [
-        "Puedes usar ${ VPN_APP_NAME } gratis hoy."
+        "Puede usar ${ VPN_APP_NAME } gratis hoy."
       ],
       "You cannot reply from the invited address.": [
-        "No puedes responder desde la dirección invitada."
+        "No puede responder desde la dirección invitada."
       ],
       "You do not have any messages here": [
-        "No tienes ningún mensaje aquí"
+        "No tiene ningún mensaje aquí"
       ],
       "You have ${ totalLabel } in your inbox.": [
         "Tienes ${ totalLabel } en tu bandeja de entrada."
@@ -4993,13 +5043,13 @@
         "Tienes **${ count } mensajes** marcados con esta etiqueta"
       ],
       "You have not given your email any subject. Do you want to send the message anyway?": [
-        "No le has dado ningún asunto a tu correo electrónico. ¿Quieres enviar el mensaje de todos modos?"
+        "No ha indicado ningún asunto en su correo electrónico. ¿Quiere enviar el mensaje de todos modos?"
       ],
       "You have reached 100% of your storage capacity. Consider freeing up some space or upgrading your account with additional storage space to compose new messages.": [
-        "Has alcanzado el 100% de tu capacidad de almacenamiento. Considera en liberar algo de espacio o mejorar tu cuenta con espacio de almacenamiento adicional para redactar mensajes nuevos."
+        "Ha alcanzado el 100% de su capacidad de almacenamiento. Puede intentar liberar algo de espacio o mejorar su cuenta con espacio de almacenamiento adicional para poder redactar nuevos mensajes."
       ],
       "You have reached the maximum number of 5 replies.": [
-        "Has alcanzado el número máximo de 5 respuestas."
+        "Ha alcanzado el número máximo de 5 respuestas."
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Has alcanzado el${ spaceDisplayed }% de tu capacidad de almacenamiento. Libera algo de espacio o añade más espacio de almacenamiento.${ freeUpMessage } ${ upgradeLink }"
@@ -5033,32 +5083,35 @@
         "Tu cuenta tiene al menos una factura atrasada. Tu acceso pronto será restringido. ${ payInvoiceLink }"
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
-        "Sus datos están listos para importar desde ${ importedEmailAddressStrong } a su cuenta de Proton."
+        "Sus datos están listos para ser importados desde ${ importedEmailAddressStrong } a su cuenta de Proton."
       ],
       "Your email will only be used for this one-time verification.": [
         "Tu correo electrónico sólo se utilizará para esta verificación única."
       ],
       "Your message will be deleted from the recipient's inbox and your sent folder on ${ dateString } at ${ formattedTime }": [
-        "Tu mensaje se eliminará de la bandeja de entrada del destinatario y de tu carpeta de enviados el ${ dateString } a las ${ formattedTime }"
+        "Su mensaje se eliminará de la bandeja de entrada del destinatario y de su carpeta de enviados el ${ dateString } a las ${ formattedTime }"
       ],
       "Your message will be deleted from the recipient's inbox and your sent folder today at ${ formattedTime }": [
-        "Tu mensaje se eliminará de la bandeja de entrada del destinatario y de tu carpeta de enviados hoy a las ${ formattedTime }"
+        "Su mensaje se eliminará de la bandeja de entrada del destinatario y de su carpeta de enviados hoy a las ${ formattedTime }"
       ],
       "Your message will be deleted from the recipient's inbox and your sent folder tomorrow at ${ formattedTime }": [
-        "Tu mensaje se eliminará de la bandeja de entrada del destinatario y de tu carpeta de enviados mañana a las ${ formattedTime }"
+        "Su mensaje se eliminará de la bandeja de entrada del destinatario y de su carpeta de enviados mañana a las ${ formattedTime }"
       ],
       "Your message will expire in ${ numberOfDays } day.": [
-        "Tu mensaje expirará en ${ numberOfDays } día.",
-        "Tu mensaje expirará en ${ numberOfDays } días."
+        "Su mensaje expirará en ${ numberOfDays } día.",
+        "Su mensaje expirará en ${ numberOfDays } días."
       ],
       "Your message will expire today.": [
-        "Tu mensaje caducará hoy."
+        "Su mensaje caducará hoy."
       ],
       "Your message will expire tomorrow.": [
-        "Tu mensaje caducará mañana."
+        "Su mensaje caducará mañana."
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Tu número de teléfono sólo se utilizará para esta verificación única."
+      ],
+      "Your Proton Account includes SimpleLogin. Install the browser extension with one click to get started.": [
+        "Su cuenta de Proton incluye SimpleLogin. Instale la extensión del navegador para poder empezar con un solo clic."
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Tu cuenta de Proton está actualmente en espera. Para continuar usando tu cuenta, por favor abona cualquier factura atrasada."
@@ -5490,7 +5543,7 @@
         "Ocultar contraseña"
       ],
       "How would you describe your experience with the new Proton?": [
-        "¿Cómo describirías tu experiencia con el nuevo Proton?"
+        "¿Cómo describiría su experiencia con el nuevo Proton?"
       ],
       "I understand the risk": [
         "Entiendo el riesgo"
@@ -5634,10 +5687,10 @@
         "Selecciona como se abrirá el editor por defecto."
       ],
       "Select how your list of messages looks like by default.": [
-        "Seleccionar como tu lista de mensajes aparece de forma preestablecida."
+        "Seleccione como aparecerá su lista de mensajes de forma preestablecida."
       ],
       "Select how your mailbox looks like by default.": [
-        "Selecciona como aparecerá tu buzón de manera predeterminada."
+        "Seleccione como aparecerá su buzón de manera predeterminada."
       ],
       "Send auto-reply": [
         "Enviar respuesta automática"
@@ -5822,7 +5875,7 @@
         "Crea un calendario nuevo para añadir este evento"
       ],
       "Create a new calendar to answer this invitation": [
-        "Crear un calendario nuevo para responder a esta invitación"
+        "Cree un nuevo calendario para responder a esta invitación"
       ],
       "Create a new calendar to manage your invitations": [
         "Crear un nuevo calendario para gestionar tus invitaciones"
@@ -5887,9 +5940,6 @@
       "Outbox": [
         "Bandeja de salida"
       ],
-      "paid plans": [
-        "planes de pago"
-      ],
       "Pay invoice": [
         "Pagar factura"
       ],
@@ -5897,10 +5947,10 @@
         "Política de privacidad"
       ],
       "Re-enable the address linked to this calendar to manage your invitation.": [
-        "Rehabilita la dirección vinculada a este calendario para gestionar tu invitación."
+        "Rehabilite la dirección vinculada a este calendario para gestionar su invitación."
       ],
       "Re-enable the address linked to this calendar to update your invitation.": [
-        "Rehabilita la dirección vinculada a este calendario para actualizar tu invitación."
+        "Rehabilite la dirección vinculada a este calendario para actualizar su invitación."
       ],
       "Request an invite": [
         "Solicitar una invitación"
@@ -5936,7 +5986,7 @@
         "Mejorar cuenta"
       ],
       "You need to activate your calendar keys to add this event": [
-        "Tienes que activar las claves de tu calendario para añadir este evento"
+        "Tiene que activar las claves de su calendario para añadir este evento"
       ],
       "You need to activate your calendar keys to answer this invitation": [
         "Necesitas habilitar las claves del calendario para responder a esta invitación"
@@ -6358,7 +6408,7 @@
     },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
-        "Esta clave no puede utilizarse para cifrado"
+        "Esta clave no se puede utilizar para el cifrado"
       ]
     },
     "PGP Key info": {
@@ -6430,7 +6480,7 @@
         "Por favor, describe el problema e incluye cualquier mensaje de error"
       ],
       "Please insert link first": [
-        "Por favor, inserte el enlace primero"
+        "Por favor, introduzca el enlace primero"
       ],
       "Search for group name": [
         "Buscar por nombre de grupo"
@@ -6580,6 +6630,9 @@
       ],
       "Cannot send to organizer address: ${ errorMessage }": [
         "No se puede enviar a la dirección del organizador: ${ errorMessage }"
+      ],
+      "Re-encrypting invitation failed. Please try again.": [
+        "La recodificación de la invitación ha fallado. Por favor, inténtelo de nuevo."
       ]
     },
     "Search - no results": {
@@ -6928,7 +6981,7 @@
         "Preferencias de atajos de teclado actualizadas"
       ],
       "Label cleared": [
-        "Etiqueta vaciada"
+        "Etiqueta eliminada"
       ],
       "Labels applied.": [
         "Etiquetas aplicadas."
@@ -6993,10 +7046,10 @@
         "Preferencias guardadas"
       ],
       "Public key trusted": [
-        "Clave pública confiada"
+        "Clave pública de confianza"
       ],
       "Read receipt sent": [
-        "Acuse de recibo enviado"
+        "Confirmación de lectura enviada"
       ],
       "Verification successful": [
         "Verificación completada con éxito"
@@ -7181,7 +7234,7 @@
         "¿Confirmar dirección del destinatario?"
       ],
       "Contact details": [
-        "Detalles de contacto"
+        "Detalles del contacto"
       ],
       "Contact Details": [
         "Datos del contacto"
@@ -7266,6 +7319,9 @@
       "Deleting contacts": [
         "Eliminando contactos"
       ],
+      "Don't give spam a chance": [
+        "No deje que el spam llegue a su destino"
+      ],
       "Edit contact": [
         "Editar contacto"
       ],
@@ -7300,7 +7356,7 @@
         "Introduce tu contraseña"
       ],
       "Enter your username or ${ MAIL_APP_NAME } email address": [
-        "Ingresa tu nombre de usuario o su dirección de correo de ${ MAIL_APP_NAME }"
+        "Ingrese su nombre de usuario o su dirección de correo de ${ MAIL_APP_NAME }"
       ],
       "Error": [
         "Error"
@@ -7322,6 +7378,9 @@
       ],
       "Groups": [
         "Grupos"
+      ],
+      "Hide your email with SimpleLogin by Proton": [
+        "Oculte su correo electrónico con SimpleLogin de Proton"
       ],
       "Human verification": [
         "Verificación humana"
@@ -7378,7 +7437,7 @@
         "Lista de mensajes"
       ],
       "Message will expire": [
-        "Este mensaje va a expirar"
+        "Este mensaje expirará"
       ],
       "More": [
         "Más"
@@ -7510,7 +7569,7 @@
         "Error de envío"
       ],
       "Sending notice": [
-        "Aviso de envío"
+        "Enviando notificación"
       ],
       "Sending original message": [
         "Enviando mensaje original"
@@ -7554,6 +7613,9 @@
       ],
       "Unsubscribe": [
         "Cancelar suscripción"
+      ],
+      "Unsubscribe request sent": [
+        "Solicitud de baja enviada"
       ],
       "Upgrade required": [
         "Actualización necesaria"
@@ -7610,9 +7672,6 @@
       "Encrypted data with verified digital signature": [
         "Datos cifrados con firma digital verificada"
       ],
-      "For messages older than 30 days, only the subject line and recipient list will be searched": [
-        "Para mensajes de hace más de 30 días, solamente se buscará en la línea del asunto y en la lista de destinatarios"
-      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Selecciona el esquema PGP a utilizar para firmar o cifrar a un usuario. Ten en cuenta que PGP/Inline obliga a mensajes de texto plano"
       ],
@@ -7621,6 +7680,9 @@
       ],
       "The import will start with the most recent messages.": [
         "La importación comenzará con los mensajes más recientes."
+      ],
+      "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
+        "Esta acción descargará todos los mensajes para que la búsqueda pueda ser local. Limpiar los datos de su navegador desactivará esta opción."
       ],
       "This feature is only available for paid users": [
         "Esta función solo está disponible para usuarios de pago"

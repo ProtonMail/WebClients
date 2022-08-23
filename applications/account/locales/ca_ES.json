@@ -528,7 +528,7 @@
         "Elimina la notificació"
       ],
       "Rename": [
-        "Reanomenar"
+        "Canvia el nom"
       ],
       "Report a problem": [
         "Avisar d'un problema"
@@ -1039,6 +1039,9 @@
       ]
     },
     "Calendar status": {
+      "Active": [
+        "Actiu"
+      ],
       "Default": [
         "Per defecte"
       ],
@@ -2304,9 +2307,6 @@
       ]
     },
     "Error": {
-      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Addresses > Short domain (pm.me)": [
-        "${ Local } es el teu nom d'usuari. Per crear ${ Local }@${ Domain }, si us plau vagi a Ajustaments > Adreces > Domini Curt (pm.me)"
-      ],
       "A group with this name already exists": [
         "Ja existeix un grup amb aquest nom"
       ],
@@ -4086,6 +4086,9 @@
       "of": [
         "de"
       ],
+      "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
+        "Canvieu aquestes funcions només si esteu emprant PGP amb destinataris sense ${ BRAND_NAME }."
+      ],
       "Organization keys activated": [
         "S'han activat les claus de l'organització"
       ],
@@ -4318,6 +4321,9 @@
       "This is the password you used before the password reset.": [
         "Això és la contrasenya que utilitzàveu abans del restabliment de contrasenya."
       ],
+      "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
+        "Aquest enllaç dirigeix a una pàgina web que podria estar intentant recopilar dades personals com ara contrasenyes o informació de les teves targetes de crèdit."
+      ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Aquest enllaç podria ser un atac homògraf i no es pot obrir amb els navegadors Internet Explorer i Edge. Si esteu segurs de que aquest enllaç és legítim, feu servir un navegador diferent per obrir-lo."
       ],
@@ -4417,6 +4423,9 @@
       "Update recovery phrase": [
         "Actualitza la frase de recuperació"
       ],
+      "Upgrade today to avoid losing the following ${ planName } benefits.": [
+        "Millora avui la teva subscripció per a no perdre les funcionalitats ${ planName }."
+      ],
       "Upload picture": [
         "Carregar imatge"
       ],
@@ -4491,6 +4500,9 @@
       ],
       "You are about to open another browser tab and visit:": [
         "Esteu a punt d'obrir una pestanya del navegador nova i visitar:"
+      ],
+      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
+        "Actualment has iniciat sessió com a ${ user.Name } (${ user.Email })."
       ],
       "You can also merge imported calendars with existing Proton calendars.": [
         "També podeu combinar els calendaris importats amb calendaris Proton existents."
@@ -7396,7 +7408,7 @@
         "Moneda"
       ],
       "Current and past imports": [
-        "Importacions actuals i anteriors"
+        "Your import history"
       ],
       "Custom filters": [
         "Filtres personalitzats"

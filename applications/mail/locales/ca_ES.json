@@ -569,6 +569,9 @@
       "Move all messages from this label": [
         "Moure tots els missatges d'aquesta etiqueta"
       ],
+      "Move all to trash": [
+        "Mou tot a la paperera"
+      ],
       "move emails to": [
         "moure correus electrònics a"
       ],
@@ -732,7 +735,7 @@
         "Elimina aquesta etiqueta"
       ],
       "Rename": [
-        "Reanomenar"
+        "Canvia el nom"
       ],
       "Reply securely": [
         "Respon de manera segura"
@@ -748,6 +751,12 @@
       ],
       "Request new code": [
         "Demana un nou codi"
+      ],
+      "Reset": [
+        "Restablir"
+      ],
+      "Reset search form": [
+        "Restablir formulari de cerca"
       ],
       "Reset zoom": [
         "Restablir zoom"
@@ -895,9 +904,6 @@
       ],
       "This message contains remote content.": [
         "Aquest missatge conté contingut remot."
-      ],
-      "Trash all": [
-        "Move all to trash"
       ],
       "Trust": [
         "De confiança"
@@ -1305,7 +1311,7 @@
     },
     "Calendar invite info": {
       " This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar.": [
-        " Aquesta nova proposta horària no coincideix amb els detalls de la vostra invitació. Si us plau verifiqueu els detalls de la invitació al vostre calendari."
+        "This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar."
       ],
       "${ participantName } accepted an invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } ha acceptat una invitació i ha proposat una nova hora per a una ocurrència d'aquest esdeveniment."
@@ -2823,8 +2829,8 @@
       "A group with this name already exists": [
         "Ja existeix un grup amb aquest nom"
       ],
-      "A problem occurred, please try again.": [
-        "S'ha produït un problema. Intenteu-ho de nou."
+      "A problem occurred, please try again": [
+        "S'ha produït un problema. Intenteu-ho de nou"
       ],
       "Address primary private key not found": [
         "No s'ha trobat la clau privada primària de l'adreça"
@@ -2997,8 +3003,8 @@
       "Passwords do not match": [
         "Les contrasenyes no coincideixen"
       ],
-      "Please activate your search again": [
-        "Activeu de nou la vostra cerca"
+      "Please activate your content search again": [
+        "Siusplau, activeu de nou la vostra cerca de continguts"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Arregleu el conflicte ressaltat per continuar.",
@@ -3761,9 +3767,16 @@
         "${ calendarsToBeMergedCount } calendari combinat",
         "${ calendarsToBeMergedCount } calendaris combinats"
       ],
+      "${ contactCount } contact contains multiple email addresses.": [
+        "${ contactCount } contacte té múltiples adreces de correu.",
+        "${ contactCount } contactes tenen múltiples adreces de correu."
+      ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } Membre",
         "${ contactEmailsLength } Membres"
+      ],
+      "${ contactName } contains multiple email addresses.": [
+        "${ contactName } té múltiples adreces de correu."
       ],
       "${ contactsCount } contact found": [
         "${ contactsCount } contacte trobat",
@@ -3879,6 +3892,9 @@
       "Activation in progress": [
         "Activació en procés"
       ],
+      "Add ${ addressToCreate } to your account for free, for a limited time only.": [
+        "Afegiu ${ addressToCreate } gratuïtament i per a un temps limitat al vostre compte."
+      ],
       "Add image URL": [
         "Afegir URL de la imatge"
       ],
@@ -3925,6 +3941,9 @@
       ],
       "Are you sure you want to discard your changes?": [
         "N'estás segur que desitges descartar els teus canvis?"
+      ],
+      "Are you sure you want to move all messages in this location to Trash?": [
+        "Segur que voleu moure tots els missatges d'aquesta carpeta a la paperera?"
       ],
       "Are you sure you want to permanently delete ${ count } conversation?": [
         "Segur que voleu eliminar permanentment aquesta ${ count } conversa?",
@@ -3995,9 +4014,6 @@
       "Confirm phishing report": [
         "Confirmeu l'informe de phishing"
       ],
-      "Content: ": [
-        "Contingut: "
-      ],
       "Continue with ${ planName }": [
         "Continuar amb ${ planName }"
       ],
@@ -4060,6 +4076,12 @@
       ],
       "Do you want to re-sign the contact details?": [
         "Voleu tornar a signar els detalls de contacte?"
+      ],
+      "Don't forget to share the password with the recipient": [
+        "No oblidi compartir la contrassenya amb el destinatari"
+      ],
+      "Downloading message ${ esProgress } out of ${ totalProgressToShow }": [
+        "Descarregant missatge ${ esProgress } de ${ totalProgressToShow }"
       ],
       "Draft": [
         "Esborrany"
@@ -4190,6 +4212,9 @@
         "Hora",
         "Hores"
       ],
+      "I'm sending this message to a non-Proton Mail user.": [
+        "Envio aquest missatge a un usuari que no és de Proton Mail."
+      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Si teniu problemes per crear el vostre compte, sol·liciteu una invitació i us respondrem en un dia laborable."
       ],
@@ -4296,6 +4321,9 @@
       "Merged": [
         "Combinats"
       ],
+      "Message expiration works out-of-the-box when sending emails to other ${ MAIL_APP_NAME } users. To send expiring emails to non-${ BRAND_NAME } users, please cancel and add password protection to your email.": [
+        "La caducitat del missatge funciona automàticament quan s'envien correus electrònics a altres usuaris de ${ MAIL_APP_NAME }. Per enviar correus electrònics que caduquin a usuaris que no siguin de ${ BRAND_NAME }, torneu enrere i afegiu la protecció de contrasenya al correu electrònic."
+      ],
       "Message headers": [
         "Capçaleres del missatge"
       ],
@@ -4362,6 +4390,9 @@
       "No trackers found, but some images could not be loaded with tracking protection": [
         "No s'han trobat rastrejadors, però algunes imatges no s'han pogut carregar amb la protecció de seguiment"
       ],
+      "non-Proton Mail": [
+        "que no és de Proton Mail"
+      ],
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         "Cap de les claus carregades és vàlida pel xifratge. S'ha deshabilitat el xifratge automàticament."
       ],
@@ -4371,6 +4402,12 @@
       "of": [
         "de"
       ],
+      "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
+        "Una o més de les teves claus de confiança ha estat marcada com a \"compromesa\" pel seu propietari. Et recomanem que marquis aquestes claus com a \"no confiables\"."
+      ],
+      "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
+        "Canvieu aquestes funcions només si esteu emprant PGP amb destinataris sense ${ BRAND_NAME }."
+      ],
       "Other options": [
         "Altres opcions"
       ],
@@ -4379,6 +4416,9 @@
       ],
       "per month.": [
         "al mes."
+      ],
+      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
+        "PGP/Inline només és compatible amb el format de text net. Tingueu en compte que ${ MAIL_APP_NAME } sempre signa els missatges xifrats."
       ],
       "Phone number": [
         "Número de telèfon"
@@ -4406,6 +4446,13 @@
       ],
       "Please select the type of link you want to insert and fill in all the fields.": [
         "Seleccioneu el tipus d'enllaç que voleu inserir i ompliu tots els camps."
+      ],
+      "Please select which email address or addresses to add to ${ groupCount } group.": [
+        "Seleccioneu quina adreça o adreces de correu electrònic cal afegir a ${ groupCount } grup.",
+        "Seleccioneu quina adreça o adreces de correu electrònic cal afegir a ${ groupCount } grups."
+      ],
+      "Please select which email address or addresses to add to ${ groupName }.": [
+        "Seleccioneu quina adreça o adreces de correu electrònic cal afegir a ${ groupName }."
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Si us plau, espereu mentre busquem contactes que es poden tornar a signar amb la clau de xifratge primària."
@@ -4446,6 +4493,9 @@
       "Request read receipt": [
         "Sol·licitar confirmació de lectura"
       ],
+      "Rich text": [
+        "Text enriquit"
+      ],
       "Right to Left": [
         "Dreta a Esquerra"
       ],
@@ -4482,6 +4532,9 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Seleccioneu quins calendaris importar. Es crearà un nou calendari per cada calendari importat fins al límit de 20 calendaris."
       ],
+      "Send an encrypted, password protected message to a ${ boldText } email address.": [
+        "Envia un correu encriptat protegit amb contrasenya a una adreça de correu ${ boldText }."
+      ],
       "Sending": [
         "Enviant"
       ],
@@ -4502,6 +4555,9 @@
       ],
       "Set a recovery phrase": [
         "Establir una frase de recuperació"
+      ],
+      "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
+        "La configuració de PGP permet enviar correus electrònics xifrats de punta a extrem amb un usuari que no és ${ BRAND_NAME } i que utilitza un servei compatible amb PGP."
       ],
       "Show original message": [
         "Mostra el missatge original"
@@ -4599,6 +4655,9 @@
       ],
       "This invitation is saved in a disabled calendar.": [
         "Aquesta invitació es desa en un calendari desactivat."
+      ],
+      "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
+        "Aquest enllaç dirigeix a una pàgina web que podria estar intentant recopilar dades personals com ara contrasenyes o informació de les teves targetes de crèdit."
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Aquest enllaç pot ser un atac de homògraf i no es pot obrir amb els navegadors Internet Explorer i Edge. Si esteu segurs que l’enllaç és legítim, utilitzeu un navegador diferent per obrir-lo."
@@ -4729,6 +4788,9 @@
       "Upgrade to use ${ MAIL_APP_NAME } with third-party desktop clients.": [
         "Milloreu el compte per a utilitzar ${ MAIL_APP_NAME } amb clients d'escriptori de tercers."
       ],
+      "Upgrade today to avoid losing the following ${ planName } benefits.": [
+        "Millora avui la teva subscripció per a no perdre les funcionalitats ${ planName }."
+      ],
       "Upload picture": [
         "Carregar imatge"
       ],
@@ -4788,6 +4850,9 @@
       ],
       "You are about to open another browser tab and visit:": [
         "Esteu a punt d'obrir una altra pestanya del navegador i visitar:"
+      ],
+      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
+        "Actualment has iniciat sessió com a ${ user.Name } (${ user.Email })."
       ],
       "You can add it as an attachment or display it inline in your mail body.": [
         "Podeu afegir-ho com un adjunt o mostrar-ho incrustat en el cos del missatge."
@@ -4892,6 +4957,16 @@
       ],
       "Your message will be deleted from the recipient's inbox and your sent folder tomorrow at ${ formattedTime }": [
         "El vostre missatge s'esborrarà de la safata d'entrada del destinatari i de la vostra carpeta d'enviats demà a les ${ formattedTime }"
+      ],
+      "Your message will expire in ${ numberOfDays } day.": [
+        "Aquest missatge caducarà d'aquí ${ numberOfDays } dia.",
+        "Aquest missatge caducarà d'aquí ${ numberOfDays } dies."
+      ],
+      "Your message will expire today.": [
+        "Aquest missatge caducarà avui."
+      ],
+      "Your message will expire tomorrow.": [
+        "Aquest missatge caducarà demà."
       ],
       "Your phone number will only be used for this one-time verification.": [
         "El vostre número de telèfon només s’utilitzarà per a aquesta única verificació."
@@ -5722,9 +5797,6 @@
       ],
       "Outbox": [
         "Safata de sortida"
-      ],
-      "paid plans": [
-        "plans de pagament"
       ],
       "Pay invoice": [
         "Pagar la factura"
@@ -7389,6 +7461,9 @@
       ],
       "The import will start with the most recent messages.": [
         "La importació començarà amb els missatges més recents."
+      ],
+      "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
+        "Es descarregaran tots els missatges per a que es puguin cercar localment. Netejar les dades del vostre navegador deshabitarà aquesta opció."
       ],
       "This feature is only available for paid users": [
         "Aquesta funció només està disponible per a usuaris de pagament"

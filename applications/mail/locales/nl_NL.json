@@ -566,6 +566,9 @@
       "Move all messages from this label": [
         "Alle berichten van dit label verplaatsen"
       ],
+      "Move all to trash": [
+        "Alles naar de prullenbak verplaatsen"
+      ],
       "move emails to": [
         "e-mails verplaatsen naar"
       ],
@@ -746,6 +749,12 @@
       "Request new code": [
         "Nieuwe code aanvragen"
       ],
+      "Reset": [
+        "Resetten"
+      ],
+      "Reset search form": [
+        "Zoekformulier resetten"
+      ],
       "Reset zoom": [
         "Reset zoom"
       ],
@@ -892,9 +901,6 @@
       ],
       "This message contains remote content.": [
         "Dit bericht bevat externe inhoud."
-      ],
-      "Trash all": [
-        "Move all to trash"
       ],
       "Trust": [
         "Vertrouwen"
@@ -1297,7 +1303,7 @@
     },
     "Calendar invite info": {
       " This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar.": [
-        " Dit nieuwe tijdvoorstel komt niet overeen met uw uitnodigingsgegevens. Controleer de uitnodigingsgegevens in uw agenda."
+        "This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar."
       ],
       "${ participantName } accepted an invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } heeft de uitnodiging geaccepteerd en stelt een nieuw tijdstip voor één herhaling van de afspraak voor."
@@ -2946,8 +2952,8 @@
       "A group with this name already exists": [
         "Er bestaat al een groep met deze naam"
       ],
-      "A problem occurred, please try again.": [
-        "Er is een probleem opgetreden, probeer het opnieuw."
+      "A problem occurred, please try again": [
+        "Er is een probleem opgetreden, probeer het opnieuw"
       ],
       "Address primary private key not found": [
         "Primaire adressleutel is niet gevonden"
@@ -3123,8 +3129,8 @@
       "Passwords do not match": [
         "Wachtwoorden komen niet overeen"
       ],
-      "Please activate your search again": [
-        "Heractiveer uw zoekopdracht opnieuw alsjeblieft"
+      "Please activate your content search again": [
+        "Activeer het zoeken naar inhoud opnieuw"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Los het gemarkeerde conflict op om verder te gaan.",
@@ -3190,9 +3196,6 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Er ging iets mis, gelieve ${ refresh } om door te gaan. Als u dit foutbericht nog steeds ziet, neem dan contact op met onze ${ supportTeam }."
-      ],
-      "Something went wrong, please try again": [
-        "Er ging iets mis, probeer later opnieuw"
       ],
       "Sorry, Proton can't decrypt your message. Please check that all your keys are active.": [
         "Sorry, Proton kan uw bericht niet decoderen. Controleer of al uw sleutels actief zijn."
@@ -4170,12 +4173,6 @@
       "Confirm phishing report": [
         "Phishingrapport bevestigen"
       ],
-      "Content search of the entire inbox is available for ${ paidPlansButton }.": [
-        "Inhoud doorzoeken voor de volledige inbox is beschikbaar voor ${ paidPlansButton }."
-      ],
-      "Content: ": [
-        "Inhoud: "
-      ],
       "Continue with ${ planName }": [
         "Ga door met ${ planName }"
       ],
@@ -4242,8 +4239,8 @@
       "Don't forget to share the password with the recipient": [
         "Vergeet het wachtwoord niet te delen met de ontvanger"
       ],
-      "Downloading message ${ currentProgress } out of ${ totalProgress }": [
-        "Bericht ${ currentProgress } van ${ totalProgress } aan het downloaden"
+      "Downloading message ${ esProgress } out of ${ totalProgressToShow }": [
+        "Bericht ${ esProgress } van ${ totalProgressToShow } aan het downloaden"
       ],
       "Draft": [
         "Concept"
@@ -4564,9 +4561,6 @@
       "No results found": [
         "Geen resultaten gevonden"
       ],
-      "No results found in the past 30 days, searching the rest of your inbox": [
-        "Geen resultaten van de afgelopen 30 dagen gevonden, de rest van uw inbox wordt doorzocht"
-      ],
       "No trackers found, but some images could not be loaded with tracking protection": [
         "Geen trackers gevonden, maar sommige afbeeldingen konden niet ingeladen worden met bescherming tegen tracking"
       ],
@@ -4829,9 +4823,6 @@
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
         "Deze actie zal alle berichten downloaden zodat ze lokaal kunnen worden gezocht. Het wissen van uw browsergegevens zal deze optie uitschakelen."
-      ],
-      "This action will download the most recent messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "Deze actie zal de meest berichten downloaden zodat ze lokaal kunnen worden gezocht. Het wissen van uw browsergegevens zal deze optie uitschakelen."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Dit adres is uitgeschakeld. Om berichten naar dit adres te versturen moet de eigenaar het adres eerst activeren."
@@ -6006,9 +5997,6 @@
       ],
       "Outbox": [
         "Postvak UIT"
-      ],
-      "paid plans": [
-        "betaalde abonnementen"
       ],
       "Pay invoice": [
         "Factuur betalen"
@@ -7739,9 +7727,6 @@
       "Encrypted data with verified digital signature": [
         "Versleutelde gegevens met geverifieerde digitale ondertekening"
       ],
-      "For messages older than 30 days, only the subject line and recipient list will be searched": [
-        "Voor berichten ouder dan 30 dagen, zal enkel het onderwerp en ontvangerslijst worden doorzocht"
-      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Selecteer het PGP-schema dat wordt gebruikt bij het ondertekenen of versleutelen naar een gebruiker. Merk op dat PGP/Inline berichten zonder opmaak forceert"
       ],
@@ -7750,6 +7735,9 @@
       ],
       "The import will start with the most recent messages.": [
         "Het importeren begint met de meest recente berichten."
+      ],
+      "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
+        "Deze actie zal alle berichten downloaden zodat ze lokaal kunnen worden gezocht. Het wissen van uw browsergegevens zal deze optie uitschakelen."
       ],
       "This feature is only available for paid users": [
         "Deze functionaliteit is alleen beschikbaar voor betalende gebruikers"
