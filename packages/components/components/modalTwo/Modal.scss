@@ -122,6 +122,10 @@
 			--size: #{rem(600)};
 		}
 
+		&--xlarge {
+			--size: #{rem(800)};
+		}
+
 		&--full {
 			--size: 100%;
 
