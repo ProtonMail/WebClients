@@ -7,7 +7,7 @@ import { LocationErrorBoundary, useLoading } from '@proton/components';
 
 import { ErrorPage, LoadingPage, PasswordPage, SharedFilePage, SharedFolderPage } from '../components/SharedPage';
 import SignatureIssueModal from '../components/SignatureIssueModal';
-import { DecryptedLink, PublicDriveProvider, usePublicAuth, usePublicShare } from '../store';
+import { DecryptedLink, PublicDriveProvider, useDownload, usePublicAuth, usePublicShare } from '../store';
 
 export default function PublicSharedLinkContainer() {
     return (
@@ -25,8 +25,18 @@ export default function PublicSharedLinkContainer() {
  * initiate session itself.
  */
 function PublicShareLinkInitContainer() {
+    const { clearDownloads } = useDownload();
     const { token, urlPassword } = usePublicToken();
     const { isLoading, error, isPasswordNeeded, submitPassword } = usePublicAuth(token, urlPassword);
+
+    // If password to the share was changed, page need to reload everything.
+    // In such case we need to also clear all downloads to not keep anything
+    // from before.
+    useEffect(() => {
+        if (isLoading) {
+            clearDownloads();
+        }
+    }, [isLoading]);
 
     if (isLoading) {
         return <LoadingPage stage="auth" />;
