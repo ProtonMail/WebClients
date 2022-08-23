@@ -385,7 +385,7 @@ export default function useUploadFile() {
                         );
                     }
 
-                    await driveEventManager.pollAllShareEvents(shareId);
+                    await driveEventManager.pollShare(shareId);
                 },
                 5
             ),
