@@ -777,6 +777,9 @@
       ]
     },
     "Calendar sidebar dropdown item": {
+      "Add calendar from URL": [
+        "Añadir calendario desde una URL"
+      ],
       "More options": [
         "Más opciones"
       ]
@@ -840,6 +843,11 @@
         "Semana"
       ]
     },
+    "Calendar view selector": {
+      "Change time range to": [
+        "Cambiar el intervalo de tiempo a"
+      ]
+    },
     "Collapsible tooltip": {
       "Collapse": [
         "Minimizar tamaño"
@@ -867,7 +875,7 @@
         "cobre"
       ],
       "enzian": [
-        "enzima"
+        "genciana"
       ],
       "fern": [
         "helecho"
@@ -909,7 +917,7 @@
         "azul pizarra"
       ],
       "soil": [
-        "suelo"
+        "tierra"
       ],
       "strawberry": [
         "fresa"
@@ -1872,6 +1880,11 @@
         "Deshabilitado"
       ]
     },
+    "Disabled calendar name suffix": {
+      "Disabled": [
+        "Deshabilitado"
+      ]
+    },
     "Disabled calendar tooltip": {
       "The event belongs to a disabled calendar.": [
         "El evento pertenece a un calendario deshabilitado."
@@ -2166,7 +2179,7 @@
         "La clave principal no es válida para realizar el envío"
       ],
       "Primary key retrieved for internal user is not valid for sending": [
-        "La clave principal recuperada para el usuario interno no es válida para enviar"
+        "La clave principal recuperada para el usuario interno no es válida para el envío"
       ],
       "Request timed out": [
         "Tiempo de espera agotado"
@@ -2187,7 +2200,7 @@
         "Algunos grupos no pueden ser eliminados"
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
-        "Algunos de tus nombres de etiquetas no están disponibles. Por favor, personaliza la importación para editar estos nombres."
+        "Algunos de sus nombres de etiquetas no están disponibles. Por favor, personalice la importación para editar estos nombres."
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Algunos de sus nombres de carpeta exceden el límite máximo de caracteres de ${ MAIL_APP_NAME }. Por favor, personalice la importación para editar estos nombres."
@@ -2205,7 +2218,7 @@
         "El nombre de la carpeta es demasiado largo. Por favor, elija un nombre diferente."
       ],
       "The label name is invalid. Please choose a different name.": [
-        "El nombre de la etiqueta es inválido. Por favor, elige un nombre diferente."
+        "El nombre de la etiqueta no es válido. Por favor, elija un nombre diferente."
       ],
       "The label name is too long. Please choose a different name.": [
         "El nombre de la etiqueta es demasiado largo. Por favor, elija un nombre diferente."
@@ -2214,7 +2227,7 @@
         "La clave de envío no es válida"
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
-        "Hay demasiadas carpetas en tu cuenta externa. Por favor, personaliza la importación para eliminar algunas carpetas."
+        "Hay demasiadas carpetas en su cuenta externa. Por favor, personalice la importación para eliminar algunas carpetas."
       ],
       "There was an error when exporting the contacts vCards": [
         "Hubo un error al exportar los vCards de contactos"
@@ -2226,13 +2239,13 @@
         "Este campo requiere un mínimo de ${ minimumLength } caracteres."
       ],
       "This folder name is not available. Please choose a different name.": [
-        "Este nombre de carpeta no está disponible. Por favor, elige un nombre diferente."
+        "Este nombre de carpeta no está disponible. Por favor, elija un nombre diferente."
       ],
       "This label name is not available. Please choose a different name.": [
-        "Este nombre de etiqueta no está disponible. Por favor, elige un nombre diferente."
+        "Este nombre de etiqueta no está disponible. Por favor, elija un nombre diferente."
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "Este mensaje podría contener enlaces que no pueden abrirse correctamente en tu navegador actual."
+        "Este mensaje podría contener enlaces que no se pueden abrir correctamente en su navegador actual."
       ],
       "Trusted keys are not valid for sending": [
         "Las claves confiadas no son válidas para enviar"
@@ -3009,7 +3022,7 @@
         "Se ha restablecido la conexión a Internet."
       ],
       "Just confirm your selection and we'll do the rest.": [
-        "Sólo tienes que confirmar tu selección y nosotros haremos el resto."
+        "Sólo tiene que confirmar su selección y nosotros haremos el resto."
       ],
       "Key fingerprint": [
         "Huella digital de la clave"
@@ -3099,7 +3112,7 @@
         "Por favor, elimina los duplicados y vuelve a intentarlo."
       ],
       "Please select the folders you would like to import:": [
-        "Por favor, selecciona las carpetas que te gustaría importar:"
+        "Por favor, seleccione las carpetas que le gustaría importar:"
       ],
       "Please select which email address or addresses to add to ${ groupCount } group.": [
         "Selecciona qué dirección o direcciones de correo añadir al grupo ${ groupCount }.",
@@ -3232,7 +3245,7 @@
         "Actualizar evento recurrente"
       ],
       "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        "Actualiza hoy para evitar perder los beneficios de ${ planName } $."
+        "Actualice hoy para evitar perder los beneficios de ${ planName } $."
       ],
       "We'll notify you when the import is done.": [
         "Te avisaremos cuando la importación haya terminado."
@@ -3346,7 +3359,7 @@
         "Tu dirección está deshabilitada. No se puede enviar un correo electrónico de cancelación a los participantes del evento. ¿Quieres eliminar este evento de todos modos?"
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
-        "Sus datos están listos para importar desde ${ importedEmailAddressStrong } a su cuenta de Proton."
+        "Sus datos están listos para ser importados desde ${ importedEmailAddressStrong } a su cuenta de Proton."
       ],
       "Your email will only be used for this one-time verification.": [
         "Tu correo electrónico sólo se utilizará para esta verificación única."
@@ -3525,7 +3538,7 @@
         "Ocultar contraseña"
       ],
       "How would you describe your experience with the new Proton?": [
-        "¿Cómo describirías tu experiencia con el nuevo Proton?"
+        "¿Cómo describiría su experiencia con el nuevo Proton?"
       ],
       "I understand the risk": [
         "Entiendo el riesgo"
@@ -3793,6 +3806,9 @@
     "Modal title": {
       "Time zone changed": [
         "Zona horaria cambiada"
+      ],
+      "Unable to add more calendars": [
+        "No se pueden añadir más calendarios"
       ]
     },
     "Modal title and action": {
@@ -4107,6 +4123,9 @@
     "Onboarding": {
       "Welcome to ${ appName }": [
         "Bienvenido/a a ${ appName }"
+      ],
+      "Where you can take control of your time and your data.": [
+        "Donde puedes tomar el control de tu tiempo y de tus datos."
       ]
     },
     "Onboarding Action": {
@@ -4215,6 +4234,11 @@
     "Participants expand button label": {
       "Expand participants list": [
         "Expandir lista de participantes"
+      ]
+    },
+    "Personal calendar limit reached modal body": {
+      "Unable to create more calendars. You have reached the maximum of personal calendars within your plan.": [
+        "No se pueden crear más calendarios. Has alcanzado el número máximo de calendarios personales dentro de tu plan."
       ]
     },
     "PGP key encryption warning": {
@@ -4439,6 +4463,16 @@
       ],
       "This link might be wrong": [
         "Este enlace puede ser erróneo"
+      ]
+    },
+    "Subscribed calendar feature unavailable error": {
+      "Subscribing to a calendar is unavailable at the moment": [
+        "La suscripción a un calendario no está disponible en este momento"
+      ]
+    },
+    "Subscribed calendar limit reached modal body": {
+      "Unable to add more calendars. You have reached the maximum of subscribed calendars within your plan.": [
+        "No se pueden añadir más calendarios. Has alcanzado el número máximo de calendarios permitidos dentro de tu plan."
       ]
     },
     "Subscribed calendar URL length warning": {

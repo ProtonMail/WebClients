@@ -180,7 +180,7 @@ export const getAccountAppRoutes = ({
                         id: 'start-import',
                     },
                     {
-                        text: c('Title').t`Current and past imports`,
+                        text: c('Title').t`Your import history`,
                         id: 'import-list',
                     },
                 ],

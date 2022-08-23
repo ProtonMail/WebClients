@@ -2642,8 +2642,8 @@
       ]
     },
     "Error": {
-      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Addresses > Short domain (pm.me)": [
-        "${ Local } je Vaše uživatelské jméno. Chcete-li vytvořit ${ Local }@${ Domain }, přejděte do Nastavení > Adresy > Krátká doména (pm.me)"
+      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ Local } je Vaše uživatelské jméno. Chcete-li vytvořit ${ Local }@${ Domain }, přejděte do Nastavení > Zprávy a kompozice > Krátká doména (pm.me)"
       ],
       "A group with this name already exists": [
         "Skupina s tímto názvem již existuje"
@@ -7904,26 +7904,6 @@
         "Řízení týmu"
       ]
     },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Zvolte si soukromí jako standard pro zálohu souborů, úložiště, sdílení a stahování."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "V opačném případě bude přístup k vašemu účtu omezen a váš účet bude nakonec deaktivován."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Pro další používání ${ MAIL_APP_NAME } s prémiovými funkcemi si vyberte předplatné a platební metodu."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Získejte obchodní balíček s přístupem ke všem prémiovým službám Proton."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Získejte nejvyšší balíček ochrany soukromí s přístupem ke všem prémiovým službám Proton."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Zkušební verze končí ${ formattedTrialExpirationDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } končící ${ last4 }"
@@ -7990,6 +7970,26 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Ve svém aktuálním tarifu využíváte akční cenu. Pokud přejdete na nižší verzi účtu, ztratíte možnost nadále využívat tuto cenu a při opětovném přihlášení k předplatnému již nebude dostupná."
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Zvolte si soukromí jako standard pro zálohu souborů, úložiště, sdílení a stahování."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "V opačném případě bude přístup k vašemu účtu omezen a váš účet bude nakonec deaktivován."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Pro další používání ${ MAIL_APP_NAME } s prémiovými funkcemi si vyberte předplatné a platební metodu."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Získejte obchodní balíček s přístupem ke všem prémiovým službám Proton."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Získejte nejvyšší balíček ochrany soukromí s přístupem ke všem prémiovým službám Proton."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Zkušební verze končí ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -9762,7 +9762,7 @@
         "Měna"
       ],
       "Current and past imports": [
-        "Aktuální a minulé importy"
+        "Your import history"
       ],
       "Custom filters": [
         "Vlastní filtry"

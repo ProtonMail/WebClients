@@ -353,6 +353,9 @@
       "Generate recovery phrase": [
         "生成恢复密语"
       ],
+      "Get SimpleLogin extension": [
+        "获取 SimpleLogin 扩展程序"
+      ],
       "Get started": [
         "入门"
       ],
@@ -383,6 +386,9 @@
       "Go to settings": [
         "前往设置"
       ],
+      "Go to SimpleLogin": [
+        "前往 SimpleLogin"
+      ],
       "Got it": [
         "知道了"
       ],
@@ -406,6 +412,12 @@
       ],
       "Hide messages": [
         "隐藏邮件"
+      ],
+      "Hide My Email": [
+        "隐藏邮箱地址"
+      ],
+      "Hide my email": [
+        "隐藏邮箱地址"
       ],
       "I have a question": [
         "我有疑问"
@@ -553,6 +565,9 @@
       ],
       "Move all messages from this label": [
         "移动该标签中的所有邮件"
+      ],
+      "Move all to trash": [
+        "全部移至废件箱"
       ],
       "move emails to": [
         "将邮件移至"
@@ -734,6 +749,12 @@
       "Request new code": [
         "重发验证码"
       ],
+      "Reset": [
+        "重置"
+      ],
+      "Reset search form": [
+        "重置搜索条件"
+      ],
       "Reset zoom": [
         "重置缩放"
       ],
@@ -880,9 +901,6 @@
       ],
       "This message contains remote content.": [
         "此邮件含有外链内容。"
-      ],
-      "Trash all": [
-        "Move all to trash"
       ],
       "Trust": [
         "信任"
@@ -1078,6 +1096,11 @@
     "Alternative text for conversation image": {
       "Conversation": [
         "会话"
+      ]
+    },
+    "Alternative text for SimpleLogin image": {
+      "SimpleLogin": [
+        "SimpleLogin"
       ]
     },
     "Alternative text for welcome image": {
@@ -1280,7 +1303,7 @@
     },
     "Calendar invite info": {
       " This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar.": [
-        " 此新时间提议与您的邀请详细信息不符，请验证您日历中的邀请详情。"
+        "This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar."
       ],
       "${ participantName } accepted an invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } 接受了参加一次该活动的邀请，并为其提议了一个新时间。"
@@ -2752,9 +2775,6 @@
       "A group with this name already exists": [
         "已存在同名群组"
       ],
-      "A problem occurred, please try again.": [
-        "出错了，请重试。"
-      ],
       "Address primary private key not found": [
         "找不到地址主私钥"
       ],
@@ -2920,9 +2940,6 @@
       "Passwords do not match": [
         "密码不匹配"
       ],
-      "Please activate your search again": [
-        "请重新开启全文搜索"
-      ],
       "Please fix the highlighted conflict to proceed.": [
         "请修复高亮的冲突以继续。"
       ],
@@ -2985,9 +3002,6 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "发生错误，请${ refresh }后重试。若仍出现此错误，请联系我们的${ supportTeam }。"
-      ],
-      "Something went wrong, please try again": [
-        "出现了一些问题。请重试。"
       ],
       "Sorry, Proton can't decrypt your message. Please check that all your keys are active.": [
         "对不起，Proton 无法解密您的邮件。请确认您的密钥是否已全部启用。"
@@ -3914,12 +3928,6 @@
       "Confirm phishing report": [
         "确认钓鱼报告"
       ],
-      "Content search of the entire inbox is available for ${ paidPlansButton }.": [
-        "开通${ paidPlansButton }即可对收件箱中的所有邮件进行全文搜索。"
-      ],
-      "Content: ": [
-        "内容： "
-      ],
       "Continue with ${ planName }": [
         "升级至 ${ planName } 并继续"
       ],
@@ -3968,6 +3976,9 @@
       "Default email application": [
         "设为默认邮件应用"
       ],
+      "Delivered via SimpleLogin by Proton": [
+        "由 Proton 通过 SimpleLogin 提供"
+      ],
       "Disable message content search": [
         "禁用邮件全文搜索"
       ],
@@ -3982,9 +3993,6 @@
       ],
       "Don't forget to share the password with the recipient": [
         "别忘了把您设定的密码告诉收件人"
-      ],
-      "Downloading message ${ currentProgress } out of ${ totalProgress }": [
-        "正在下载邮件 ${ currentProgress } / ${ totalProgress }"
       ],
       "Draft": [
         "草稿"
@@ -4016,6 +4024,9 @@
       "Email address": [
         "邮箱地址"
       ],
+      "Email is forwarded to your mailbox; your email address stays hidden.": [
+        "临时邮箱中的邮件将转发至真实邮箱，您真正的邮箱地址也就不会暴露。"
+      ],
       "Email tracker protection is disabled": [
         "已禁用电子邮件跟踪保护"
       ],
@@ -4033,9 +4044,6 @@
       ],
       "Encrypt message": [
         "邮件加密"
-      ],
-      "End of message content search": [
-        "信息内容搜索结束"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "验证码已发至 ${ destinationText }，请在下方输入。"
@@ -4112,6 +4120,9 @@
       "Hour": [
         "小时"
       ],
+      "How Hide My Email works": [
+        "隐藏邮箱地址的原理"
+      ],
       "I'm sending this message to a non-Proton Mail user.": [
         "我要将此邮件发给非 Proton Mail 邮箱。"
       ],
@@ -4123,6 +4134,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "若邮件没有出现在收件箱中，请检查其是否被归为垃圾邮件。"
+      ],
+      "If your alias is sold, leaked, or abused, simply disable it to stop receiving spam.": [
+        "倘若临时邮箱地址被泄露、被贩卖、被滥用，只需予以销毁即可免受垃圾邮件袭扰。"
       ],
       "Image description": [
         "图片描述"
@@ -4292,9 +4306,6 @@
       "No results found": [
         "未找到结果"
       ],
-      "No results found in the past 30 days, searching the rest of your inbox": [
-        "30 天内的邮件没有找到结果，正在搜索其余邮件"
-      ],
       "No trackers found, but some images could not be loaded with tracking protection": [
         "没有检测到跟踪器，但跟踪器防护导致某些图像无法加载"
       ],
@@ -4381,6 +4392,9 @@
       ],
       "Priority support": [
         "优先享受客服"
+      ],
+      "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
+        "${ maskMyEmailButton }即可防止您的邮箱泄露，免受垃圾邮件干扰。"
       ],
       "Proton doesn't make money by abusing privacy.": [
         "Proton 绝不以践踏用户隐私的方式牟利。"
@@ -4478,6 +4492,12 @@
       "Show original message": [
         "显示原始邮件"
       ],
+      "SimpleLogin is a Proton service, and your Proton Account includes Hide My Email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
+        "您可以使用 Proton 提供的 SimpleLogin 服务隐藏您的邮箱地址，只需前往 SimpleLogin 创建邮箱别名即可。"
+      ],
+      "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
+        "如果您不愿将真实邮箱透露给其他网站，SimpleLogin 能够方便快捷地生成临时邮箱供您使用。"
+      ],
       "Sorry, this message does not exist or has already expired.": [
         "对不起，此消息不存在或已过期。"
       ],
@@ -4544,13 +4564,13 @@
       "There has been an error with the signature used to verify the contact details, which may be the result of a password reset.": [
         "用于验证联系信息的签名有误，可能是密码重置的结果。"
       ],
+      "They can't spam you if they don't know your email address. Protect your inbox with Hide My Email.": [
+        "只要不知道您的邮箱地址就无法发送垃圾邮件。使用隐藏邮箱地址功能将垃圾邮件拒之门外。"
+      ],
       "This account has been suspended due to a potential policy violation.": [
         "此账户因可能违反用户协议而被封禁。"
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "此操作将从服务器下载所有邮件并在本地进行搜索，清除浏览器数据将禁用此选项。"
-      ],
-      "This action will download the most recent messages so they can be searched locally. Clearing your browser data will disable this option.": [
         "此操作将从服务器下载所有邮件并在本地进行搜索，清除浏览器数据将禁用此选项。"
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
@@ -4730,6 +4750,9 @@
       "Use keyboard shortcuts to manage your email faster.": [
         "使用键盘快捷键让邮件操作更加迅捷。"
       ],
+      "Using SimpleLogin is easy": [
+        "SimpleLogin 便捷易用"
+      ],
       "Version ${ appVersion }": [
         "版本 ${ appVersion }"
       ],
@@ -4759,6 +4782,9 @@
       ],
       "When do you want your message to be sent?": [
         "您想要什么时候发送您的邮件？"
+      ],
+      "When giving out your email, use a unique, disposable Hide My Email alias instead of your real email address.": [
+        "在网上填写邮箱时，不必使用真实的邮箱地址，只需填写一个可销毁的临时邮箱。"
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "当您为 ${ senderName } 启用可信密钥时，公钥被添加到联系人详细信息中。"
@@ -4885,6 +4911,9 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "您的电话号码将只会用于此一次性验证。"
+      ],
+      "Your Proton Account includes SimpleLogin. Install the browser extension with one click to get started.": [
+        "您的 Proton 账户自带 SimpleLogin 服务，一键安装浏览器扩展程序即可开始使用。"
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "您的 Proton 账户已欠费停用，请先支付逾期账单再继续使用。"
@@ -5710,9 +5739,6 @@
       ],
       "Outbox": [
         "发件箱"
-      ],
-      "paid plans": [
-        "付费账户"
       ],
       "Pay invoice": [
         "前去支付"
@@ -7039,6 +7065,9 @@
       "Deleting contacts": [
         "删除联系人中"
       ],
+      "Don't give spam a chance": [
+        "不要给垃圾邮件留下可乘之机"
+      ],
       "Edit contact": [
         "编辑联系人"
       ],
@@ -7095,6 +7124,9 @@
       ],
       "Groups": [
         "群组"
+      ],
+      "Hide your email with SimpleLogin by Proton": [
+        "借助 Proton 的 SimpleLogin 服务隐藏您的邮箱地址"
       ],
       "Human verification": [
         "身份验证"
@@ -7327,6 +7359,9 @@
       "Unsubscribe": [
         "退订"
       ],
+      "Unsubscribe request sent": [
+        "退订请求已发送"
+      ],
       "Upgrade required": [
         "需要升级"
       ],
@@ -7382,9 +7417,6 @@
       "Encrypted data with verified digital signature": [
         "已加密并验证数字签名"
       ],
-      "For messages older than 30 days, only the subject line and recipient list will be searched": [
-        "对于超过30天的邮件，只有主题行和收件人名单会被搜索到。"
-      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "选择在向用户签名或加密时要使用的 PGP 方案。请注意, PGP/内嵌强制纯文本消息。"
       ],
@@ -7393,6 +7425,9 @@
       ],
       "The import will start with the most recent messages.": [
         "导入将从最近的信息开始。"
+      ],
+      "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
+        "此操作将从服务器下载所有邮件并在本地进行搜索，清除浏览器数据将禁用此选项。"
       ],
       "This feature is only available for paid users": [
         "此功能仅供付费用户使用"

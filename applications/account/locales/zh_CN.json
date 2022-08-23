@@ -2292,9 +2292,6 @@
       ]
     },
     "Error": {
-      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Addresses > Short domain (pm.me)": [
-        "您的用户名为 ${ Local }。要创建 ${ Local }@${ Domain }，请前往设置 > 地址 > 短域名（pm.me）"
-      ],
       "A group with this name already exists": [
         "此群组名已被使用"
       ],
@@ -3020,6 +3017,9 @@
       ]
     },
     "FilterSettings": {
+      "Add a custom filter to automatically perform certain actions, like labeling or archiving messages. Filters can be edited and created directly via Sieve programming language.": [
+        "定制筛选规则可以自动执行某些操作，例如加标签或将邮件存档。使用 Sieve 编程语言可以直接创建或修改规则。"
+      ],
       "Apply sender-specific spam rules. Messages from addresses or domains on the Allow List always go to your Inbox while messages from addresses or domains on the Block List always go to Spam. Marking a message as spam adds its address to the Block List. Marking a message as not spam adds it to the Allow List.": [
         "针对发件人的筛选规则可以在这里设置。来自白名单的邮件会被一律归入收件箱，而来自黑名单的则一律归为垃圾邮件。将邮件标为垃圾邮件后其发件人也会被加入黑名单，而标为非垃圾邮件则会被加入白名单。"
       ],
@@ -5551,6 +5551,9 @@
       "Code is 6 digits without spaces": [
         "验证码是无空格的六位数"
       ],
+      "Collect usage diagnostics": [
+        "收集使用方式信息"
+      ],
       "Color": [
         "颜色"
       ],
@@ -5997,6 +6000,9 @@
       ],
       "Send auto-reply": [
         "自动回复"
+      ],
+      "Send crash reports": [
+        "发送崩溃报告"
       ],
       "Sign external messages": [
         "对向外发送的邮件予以数字签名"
@@ -6927,23 +6933,6 @@
         "团队管理"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "否则，您的账户功能将受到限制，直至最后被停用。"
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "如需继续使用 ${ MAIL_APP_NAME } 的高级功能，请选择您要开通的账户等级和支付方式。"
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "采用商业隐私保护体系，畅享所有 Proton 高级功能。"
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "解锁顶级隐私保护体系，畅享所有 Proton 高级功能。"
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "您的体验期将于 ${ formattedTrialExpirationDate } 结束"
-      ]
-    },
     "new_plans: info": {
       "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
         "${ BRAND_NAME } 账户可以创建从属用户并分配邮箱地址，适合家庭与组织团体使用。"
@@ -6977,6 +6966,23 @@
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "完全免费的普通账户，旨在助力所有人捍卫隐私。"
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "否则，您的账户功能将受到限制，直至最后被停用。"
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "如需继续使用 ${ MAIL_APP_NAME } 的高级功能，请选择您要开通的账户等级和支付方式。"
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "采用商业隐私保护体系，畅享所有 Proton 高级功能。"
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "解锁顶级隐私保护体系，畅享所有 Proton 高级功能。"
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "您的体验期将于 ${ formattedTrialExpirationDate } 结束"
       ]
     },
     "new_plans: Label": {
@@ -8562,7 +8568,7 @@
         "货币"
       ],
       "Current and past imports": [
-        "当前和过去导入"
+        "Your import history"
       ],
       "Custom filters": [
         "定制筛选规则"
@@ -8873,6 +8879,9 @@
       "Previous": [
         "前一页"
       ],
+      "Privacy and data collection": [
+        "隐私与数据收集"
+      ],
       "Processing": [
         "处理中"
       ],
@@ -8926,6 +8935,9 @@
       ],
       "Secure email based in Switzerland": [
         "来自瑞士的加密邮箱"
+      ],
+      "Security and privacy": [
+        "安全与隐私"
       ],
       "Security logs": [
         "安全日志"
