@@ -569,6 +569,9 @@
       "Move all messages from this label": [
         "Bu etiketteki tüm iletileri taşı"
       ],
+      "Move all to trash": [
+        "Tümünü çöpe at"
+      ],
       "move emails to": [
         "e-postaları şuraya taşı"
       ],
@@ -749,6 +752,12 @@
       "Request new code": [
         "Yeni kod iste"
       ],
+      "Reset": [
+        "Sıfırla"
+      ],
+      "Reset search form": [
+        "Arama formunu sıfırla"
+      ],
       "Reset zoom": [
         "Yakınlaştırmayı sıfırla"
       ],
@@ -895,9 +904,6 @@
       ],
       "This message contains remote content.": [
         "Bu iletide uzak içerik var."
-      ],
-      "Trash all": [
-        "Move all to trash"
       ],
       "Trust": [
         "Güven"
@@ -1305,7 +1311,7 @@
     },
     "Calendar invite info": {
       " This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar.": [
-        " Bu yeni saat önerisi, davet bilgilerinizle eşleşmiyor. Lütfen takviminizdeki davet bilgilerini doğrulayın."
+        "This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar."
       ],
       "${ participantName } accepted an invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName }, yapılmış bir daveti kabul etti ve bu yinelenen etkinliğin bir tanesi için yeni bir saat önerisinde bulundu."
@@ -2954,8 +2960,8 @@
       "A group with this name already exists": [
         "Aynı adlı bir grup zaten var"
       ],
-      "A problem occurred, please try again.": [
-        "Bir sorun çıktı. Lütfen yeniden deneyin."
+      "A problem occurred, please try again": [
+        "Bir sorun çıktı. Lütfen yeniden deneyin"
       ],
       "Address primary private key not found": [
         "Adresin birincil kişisel anahtarı bulunamadı"
@@ -3131,8 +3137,8 @@
       "Passwords do not match": [
         "Parola ile onayı aynı değil"
       ],
-      "Please activate your search again": [
-        "Lütfen aramanızı yeniden etkinleştirin"
+      "Please activate your content search again": [
+        "Lütfen içerik aramayı yeniden etkinleştirin"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "İlerlemek için lütfen vurgulanan çakışmayı düzeltin.",
@@ -3198,9 +3204,6 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Bir şeyler ters gitti. Lütfen ilerlemek için ${ refresh }yin. Bu sorun sürerse lütfen ${ supportTeam } ile görüşün."
-      ],
-      "Something went wrong, please try again": [
-        "Bir şeyler ters gitti. Lütfen yeniden deneyin"
       ],
       "Sorry, Proton can't decrypt your message. Please check that all your keys are active.": [
         "Ne yazık ki, Proton iletinizin şifresini çözemiyor. Lütfen tüm anahtarlarınızın etkin olduğundan emin olun."
@@ -4178,12 +4181,6 @@
       "Confirm phishing report": [
         "Kimlik avı bildirimini onayla"
       ],
-      "Content search of the entire inbox is available for ${ paidPlansButton }.": [
-        "Tüm gelen kutusunun taranması özelliği ${ paidPlansButton } tarifesi ile kullanılabilir."
-      ],
-      "Content: ": [
-        "İçerik: "
-      ],
       "Continue with ${ planName }": [
         "${ planName } aboneliği ile devam edin"
       ],
@@ -4253,8 +4250,8 @@
       "Don't forget to share the password with the recipient": [
         "Parolayı alıcı ile paylaşmayı unutmayın"
       ],
-      "Downloading message ${ currentProgress } out of ${ totalProgress }": [
-        "İletiler indiriliyor ${ currentProgress } / ${ totalProgress }"
+      "Downloading message ${ esProgress } out of ${ totalProgressToShow }": [
+        "İleti ${ esProgress } / ${ totalProgressToShow } indiriliyor"
       ],
       "Draft": [
         "Taslak"
@@ -4308,9 +4305,6 @@
       ],
       "Encrypt message": [
         "İletiyi şifrele"
-      ],
-      "End of message content search": [
-        "İleti içeriği aramasının sonu"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "${ destinationText } alıcısına gönderilen doğrulama kodunu yazın."
@@ -4577,9 +4571,6 @@
       ],
       "No results found": [
         "Herhangi bir sonuç bulunamadı"
-      ],
-      "No results found in the past 30 days, searching the rest of your inbox": [
-        "Son 30 günde eşleşen bir sonuç bulunamadı. Tüm gelen kutunuz aranıyor"
       ],
       "No trackers found, but some images could not be loaded with tracking protection": [
         "Herhangi bir izleyici bulunamadı. Ancak bazı görseller izleme koruması nedeniyle yüklenmeyebilir"
@@ -4849,9 +4840,6 @@
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
         "Bu işlem tüm iletileri indirir. Böylece iletiler yerel olarak aranabilir. Web tarayıcınızın verilerini silerseniz bu seçenek devre dışı kalır."
-      ],
-      "This action will download the most recent messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "Bu işlem yakın zamandaki iletileri indirir. Böylece iletiler yerel olarak aranabilir. Web tarayıcınızın verilerini silerseniz bu seçenek devre dışı kalır."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Bu adres devre dışı. Bu adrese e-posta gönderebilmek için önce sahibi adresi etkinleştirmelidir."
@@ -6032,9 +6020,6 @@
       ],
       "Outbox": [
         "Giden kutusu"
-      ],
-      "paid plans": [
-        "ücretli tarifeler"
       ],
       "Pay invoice": [
         "Faturayı öde"
@@ -7768,9 +7753,6 @@
       "Encrypted data with verified digital signature": [
         "Doğrulanmış dijital imza ile şifrelenmiş veri"
       ],
-      "For messages older than 30 days, only the subject line and recipient list will be searched": [
-        "30 günden eski iletilerin, yalnızca konu satırı ve alıcı listesi aranır"
-      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Bir kullanıcı için imzalama veya şifreleme sırasında kullanılacak PGP şemasını seçin. PGP/Inline için iletilerin düz metin biçiminde olması gerektiğini unutmayın"
       ],
@@ -7779,6 +7761,9 @@
       ],
       "The import will start with the most recent messages.": [
         "İçe aktarma yeni iletilerden eski iletilere doğru yapılacak."
+      ],
+      "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
+        "Bu işlem tüm iletileri indirir. Böylece iletiler yerel olarak aranabilir. Web tarayıcınızın verilerini silerseniz bu seçenek devre dışı kalır."
       ],
       "This feature is only available for paid users": [
         "Bu özelliği yalnızca ücretli tarife kullanıcıları kullanabilir"

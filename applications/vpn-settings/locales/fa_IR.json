@@ -50,6 +50,9 @@
       "Chat with us": [
         "با ما گفتگو کنید"
       ],
+      "Clear two-factor authentication code": [
+        "پاک کردن از کد اصالت‌ سنجی دو عاملی"
+      ],
       "Close": [
         "بستن"
       ],
@@ -389,6 +392,9 @@
       "View plans details": [
         "مشاهدهٔ جزئیات طرح‌ها"
       ],
+      "What do I get?": [
+        "چه چیزی دیافت میکنم?"
+      ],
       "Yes": [
         "بله"
       ],
@@ -577,6 +583,22 @@
         "در حال همگام‌سازی"
       ]
     },
+    "Calendar subscription not synced error": {
+      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
+        "درحال همگام سازی تقویم: نمایش همه رویدادها ممکن است چند دقیقه طول بکشد."
+      ]
+    },
+    "Calendar subscription not synced error; long version": {
+      "Calendar link is not accessible from outside the calendar provider's ecosystem.": [
+        "لینک تقویم خارج از اکوسیستم ارائه دهنده تقویم قابل دسترس نیست."
+      ],
+      "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
+        "لینک تثویم موقتا غبرقابل دسترس است. لطفا مطمئن شوید لینک ارائه دهنده تقویم همچنان معتبر است."
+      ],
+      "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
+        "پیش از 12 ساعت از آخرین بروزرسانی می گذرد – تا ساعاتی دیگر Proton Calendar برای بروزرسانی تلاش خواهد کرد."
+      ]
+    },
     "Confirmation message to delete payment method": {
       "Are you sure you want to delete this payment method?": [
         "مطمئن هستید که می خواهید این نحوه پرداخت را حذف کنید؟"
@@ -610,6 +632,12 @@
       "Czech Republic": [
         "جمهوری چک"
       ],
+      "Côte d'Ivoire": [
+        "ساحل عاج"
+      ],
+      "Eswatini": [
+        "سوازیلند"
+      ],
       "Falkland Islands": [
         "جزایر فالکلند"
       ],
@@ -624,6 +652,9 @@
       ],
       "Kosovo": [
         "کوزوو"
+      ],
+      "Myanmar": [
+        "میانمار"
       ],
       "Reunion": [
         "رئونیون"
@@ -683,6 +714,9 @@
       "Can't check username, try again later": [
         "نمی‌توان نام کاربری را چک کرد، دوباره امتحان کنید"
       ],
+      "Checkout expired, please try again": [
+        "پرداخت نهایی منقضی شد، لطفاً دوباره سعی کنید"
+      ],
       "Code wrong or not valid anymore": [
         "کد غلط یا دیگر غیر معتبر است"
       ],
@@ -725,6 +759,9 @@
       "Not a valid number": [
         "شماره معتبر نیست"
       ],
+      "Organization not recognized. Try again.": [
+        "شازمان شناسایی نشد. دوباره تلاش کنید."
+      ],
       "Passwords do not match": [
         "رمزهای عبور مطابقت ندارند"
       ],
@@ -742,6 +779,12 @@
       ],
       "Payments are currently not available, please try again later": [
         "در حال حاضر امکان پرداخت موجود نیست، لطفا بعدا دوباره امتحان کنید"
+      ],
+      "Please generate keys before you try to change your password": [
+        "لطفا قبل از تلاش برای تغییر رمز خود کلیدها را ایجاد کنید"
+      ],
+      "Please set a recovery email first": [
+        "لطفا ابتدا یک ایمیل بازیابی تنظیم کنید"
       ],
       "Please set a recovery phone number first": [
         "لطفاً ابتدا یک شماره تماس بازیابی تنظیم کنید"
@@ -787,6 +830,9 @@
       ],
       "You have no invoices.": [
         "هیچ صورت‌حسابی ندارید."
+      ],
+      "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
+        "حساب یا سازمان شما دارای یک صورت‌ حساب به تعویق افتاده است. لطفا تمام صورت‌ حساب‌های پرداخت نشده را پرداخت کنید."
       ]
     },
     "Error message": {
@@ -798,6 +844,9 @@
       ],
       "Please ${ refresh } or check your connection.": [
         "لطفاً ${ refresh } یا اتصالتان را بررسی کنید."
+      ],
+      "Something went wrong. Please refresh the page or try again later.": [
+        "مشکلی پیش آمد. لطفا صفحه را تازه سازی کنید یا بعدا تلاش کنید."
       ],
       "There was a problem connecting to Proton.": [
         "مشکلی در متصل شدن به Proton وجود داشت."
@@ -905,6 +954,9 @@
         "${ number } سرور",
         "${ number } سرور"
       ],
+      "${ storageSize } storage": [
+        "${ storageSize } فضای ذخیره‌سازی"
+      ],
       "${ strongAddressAvailable } You will use this email address to sign into all ${ BRAND_NAME } services.": [
         "${ strongAddressAvailable } برای ورود به سیستم همه سرویس‌های ${ BRAND_NAME } از این رایانشانی استفاده خواهید کرد."
       ],
@@ -917,6 +969,9 @@
       "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
         "+${ organization.BonusVPN } اتصال برای ${ VPN_APP_NAME } (به شما اجازه می‌دهد تا دستگاه‌های بیشتری را به VPN متصل کنید)",
         "+${ organization.BonusVPN } اتصال برای ${ VPN_APP_NAME } (به شما اجازه می‌دهد دستگاه‌های بیشتری را به VPN متصل کنید)"
+      ],
+      "10 email addresses": [
+        "10 آدرس ایمیل"
       ],
       "20% discount applied to your subscription with coupon ${ code }": [
         "۲۰٪ تخفیف به اشتراک شما با کوپن ${ code } اعمال شد"
@@ -941,6 +996,9 @@
       ],
       "Basic, Plus or Visionary subscription required": [
         "اشتراک Basic، Plus یا Visionary مورد نیاز است"
+      ],
+      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
+        "قبل از درخواست کد تایید جدید، لطفا پوشه هرزنامه خود را برسسی کنید و مطمئن شوید آدرس ${ strong } صحیح است."
       ],
       "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
         "صورت‌حساب در پایان دورهٔ صورت‌حساب کنونی شما (در ${ renewalDate } تمدید می‌شود)"
@@ -1071,6 +1129,9 @@
       "Install a Server configuration file to connect to a specific server in the country of your choice.": [
         "نصب یک پرونده تنظیمات سرور برای اتصال به یک سرور در کشور انتخابی شما."
       ],
+      "Internet connection lost": [
+        "اتصال اینترنت قطع شد"
+      ],
       "Internet connection lost. Please check your device's connectivity.": [
         "اتصال اینترنت از دست رفت. لطفا اتصال دستگاه خود را بررسی کنید."
       ],
@@ -1079,6 +1140,9 @@
       ],
       "Learn more": [
         "بیشتر بدانید"
+      ],
+      "Link copied to clipboard": [
+        "لینک به حافظه موقت کپی شد"
       ],
       "Loading": [
         "در حال بارگذاری"
@@ -1155,6 +1219,9 @@
       "Preview": [
         "پیش‌نمایش"
       ],
+      "Priority support": [
+        "اولویت پشتیبانی"
+      ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "بازیابی صفحه یا ${ link } بطور خودکار بیشتر مسايل را حل خواهد کرد."
       ],
@@ -1170,8 +1237,20 @@
       "Server load": [
         "بار سرور"
       ],
+      "Servers are unreachable. Please try again in a few minutes": [
+        "دسترسی به سرورها امکان‌پذیر نیست. لطفاً چند دقیقهٔ دیگر دوباره تلاش کنید"
+      ],
+      "Session timed out": [
+        "زمان نشست پایان یافت"
+      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "از آنجایی که شما یک کاربر وفادار هستید، حساب کاربری شما امکانات فعال شدهٔ اضافی است."
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "فضای ذخیره‌سازی بین ${ MAIL_APP_NAME }، ${ CALENDAR_APP_NAME } و ${ DRIVE_APP_NAME } به اشتراک گذاشته است."
+      ],
+      "Support for 1 custom email domain": [
+        "پشتیبانی از ١ دامنه ایمیل سفارشی"
       ],
       "support team": [
         "تیم پشتیبانی"
@@ -1245,6 +1324,12 @@
       "Unfortunately there is no recovery method saved for this account.": [
         "متاسفانه هیچ روش بازیابی برای این حساب ذخیره نشده است."
       ],
+      "Unlimited folders, labels, and filters": [
+        "پوشه‌ها، برچسب‌ها و فیلترهای بی‌شمار"
+      ],
+      "Unlimited messages": [
+        "پیام های نامحدود"
+      ],
       "Unsupported file": [
         "فایل پشتیبانی نشده"
       ],
@@ -1272,6 +1357,9 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "برای تکمیل این تراکنش از طریق یک تب جدید در مرورگر به پی‌پال منتقل می‌شوید. برای ادامه لطفا اگر از مسدودکننده‌های Pop-up روی مرورگرتان استفاده می‌کنید، آن‌ها را غیرفعال کنید."
       ],
+      "We'll send a new verification code to ${ strong }": [
+        "یک کد تأیید جدید به ${ strong } ارسال خواهیم کرد"
+      ],
       "We're moving! Join us at our new site: ${ link }.": [
         "ما در حال جابجایی هستیم! به ما در سایت جدیدمان بپیوندید: ${ link }."
       ],
@@ -1290,6 +1378,9 @@
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "آیا می‌خواهید یک کد تایید جدید دریافت نمایید یا از یک روش تایید جایگزین استفاده کنید؟"
       ],
+      "Would you like to receive a new verification code?": [
+        "آیا می‌خواهید یک کد تأیید جدید دریافت کنید؟"
+      ],
       "Yahoo reads your personal data in order to provide access for advertisers, US intelligence agencies and other third parties. For better privacy, create a secure email address.": [
         "یاهو اطلاعات شخصی شما را می‌خواند تا دسترسی به تبلیغ کنندگان، سازمان‌های اطلاعاتی ایالات متحده و سایر اشخاص ثالث را فراهم کند. برای حفظ حریم خصوصی بهتر، یک رایانشانی ایمن ایجاد کنید."
       ],
@@ -1304,6 +1395,9 @@
       ],
       "You can customize and download your invoices for accounting purposes.": [
         "می‌توانید صورتحساب‌های خود را برای اهداف حسابداری، شخصی‌سازی و دانلود کنید."
+      ],
+      "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
+        "شما فقط میتوانید یک گفت و گو باز داشته باشید. لطفا قبل شروع گفت و گو جدید، قبلی را ببندید."
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "شما یک روش بازیابی تنظیم نکرده‌اید بنابراین در صورت فراموش کردن گذرواژه، بازیابی حساب غیرممکن است. بدون روش بازیابی ادامه می‌دهید؟"
@@ -1825,6 +1919,9 @@
       "Encrypted contact details": [
         "جزئیات مخاطب رمزنگاری شده"
       ],
+      "Priority support": [
+        "اولویت پشتیبانی"
+      ],
       "Secure Core servers": [
         "سرورهای هسته امن"
       ],
@@ -1840,6 +1937,20 @@
     "new_plans: signup": {
       "Subscription": [
         "اشتراک"
+      ]
+    },
+    "new_plans: Upsell attribute": {
+      "Priority support": [
+        "اولویت پشتیبانی"
+      ],
+      "Support for 1 custom email domain": [
+        "پشتیبانی از ١ دامنه ایمیل سفارشی"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "پوشه‌ها، برچسب‌ها و فیلترهای بی‌شمار"
+      ],
+      "Unlimited messages": [
+        "پیام های نامحدود"
       ]
     },
     "Notification": {
@@ -2109,6 +2220,9 @@
       ]
     },
     "Title": {
+      "${ VPN_APP_NAME } clients": [
+        "مشتریان ${ VPN_APP_NAME }"
+      ],
       "1. Select platform": [
         "1. انتخاب پلتفرم"
       ],

@@ -662,9 +662,6 @@
       "This message contains remote content.": [
         "Esta mensagem contém conteúdo remoto."
       ],
-      "Trash all": [
-        "Move all to trash"
-      ],
       "Trust": [
         "Confiar"
       ],
@@ -974,7 +971,7 @@
     },
     "Calendar invite info": {
       " This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar.": [
-        " Esta nova proposta de horário não coincide com os detalhes do seu convite. Por favor, verifique os detalhes do convite na sua agenda."
+        "This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar."
       ],
       "${ participantName } accepted your invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } aceitou o seu convite e propôs um novo horário para uma ocorrência deste evento."
@@ -1457,6 +1454,9 @@
       "A group with this name already exists": [
         "Já existe um grupo com este nome"
       ],
+      "A problem occurred, please try again": [
+        "Ocorreu um problema. Por favor, tente novamente"
+      ],
       "Address primary private key not found": [
         "Chave privada primária do endereço não encontrada"
       ],
@@ -1554,6 +1554,9 @@
       ],
       "Passwords do not match": [
         "As senhas não coincidem"
+      ],
+      "Please activate your content search again": [
+        "Por favor, ative a procura de conteúdo novamente"
       ],
       "Public key could not be trusted": [
         "A chave pública não pôde ser confiada"
@@ -2275,6 +2278,9 @@
       ],
       "Do you want to re-sign the contact details?": [
         "Deseja assinar novamente os detalhes do contacto?"
+      ],
+      "Downloading message ${ esProgress } out of ${ totalProgressToShow }": [
+        "A transferir mensagem ${ esProgress } de ${ totalProgressToShow }"
       ],
       "Draft": [
         "Rascunho"
@@ -4804,6 +4810,9 @@
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Seleccione o esquema PGP a usar ao assinar ou encriptar para um utilizador. Note que o PGP/incorporado força o envio de mensagens em texto simples"
+      ],
+      "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
+        "Esta acção transfere todas as mensagens para que possam ser procuradas localmente. Limpar os dados do navegador desactiva esta opção."
       ],
       "This feature is only available for paid users": [
         "Esta funcionalidade só está disponível para utilizadores pagantes"

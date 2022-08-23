@@ -833,6 +833,9 @@
       "No, thanks": [
         "Não, obrigado"
       ],
+      "Start my 30-day free trial": [
+        "Iniciar meu teste gratuito de 30 dias"
+      ],
       "Try free for 30 days": [
         "Experimente gratuitamente por 30 dias"
       ]
@@ -2556,8 +2559,8 @@
       ]
     },
     "Error": {
-      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Addresses > Short domain (pm.me)": [
-        "${ Local } é o seu nome de usuário. Para criar ${ Local }@${ Domain }, vá para Configurações> Endereços> Domínio curto (pm.me)"
+      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ Local } é o seu nome de usuário. Para criar ${ Local }@${ Domain }, vá para Configurações> Mensagens e composição > Domínio curto (pm.me)"
       ],
       "A group with this name already exists": [
         "Um grupo com esse nome já existe"
@@ -4473,6 +4476,9 @@
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Digite o código de verificação que foi enviado para ${ destinationText }."
       ],
+      "Enter your ${ BRAND_NAME } Account details.": [
+        "Insira os detalhes da sua conta ${ BRAND_NAME }."
+      ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Entre seu e-mail ou nome de usuário da conta ${ BRAND_NAME }."
       ],
@@ -4828,6 +4834,9 @@
       ],
       "of": [
         "de"
+      ],
+      "One account for all ${ BRAND_NAME } services.": [
+        "Uma conta para todos os serviços de ${ BRAND_NAME }."
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Altere essas configurações apenas se você estiver usando o PGP com destinatários que não usam o ${ BRAND_NAME }."
@@ -5289,6 +5298,9 @@
       "Update recovery phrase": [
         "Atualizar frase de recuperação"
       ],
+      "Update the URL in your password manager": [
+        "Atualize a URL no seu gerenciador de senhas"
+      ],
       "Upgrade today to avoid losing the following ${ planName } benefits.": [
         "Faça upgrade hoje para não perder os seguintes benefícios ${ planName }."
       ],
@@ -5511,6 +5523,9 @@
       "You'll still be able to send and receive mail with your existing email address(es).": [
         "Você ainda poderá enviar e receber mensagens com seu(s) endereço(s) de e-mail existente(s)."
       ],
+      "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
+        "A sua conta ${ BRAND_NAME } está associada com ${ externalEmailAddress }. Para usar o ${ toAppName }, você precisa de um ${ MAIL_APP_NAME } endereço."
+      ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
         "Suas contas ${ VPN_APP_NAME } e ${ MAIL_APP_NAME } estão conectadas. Para excluir ambas, por favor acesse sua conta em ${ loginLink } e exclua sua conta lá."
       ],
@@ -5546,6 +5561,9 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "O seu e-mail será utilizado somente nesta verificação única."
+      ],
+      "Your existing ${ BRAND_NAME } account can be used to access all ${ BRAND_NAME } services. Please sign in with ${ email }.": [
+        "Sua conta ${ BRAND_NAME } existente pode ser usada para acessar todos os serviços da ${ BRAND_NAME }. Por favor, inicie a sessão com ${ email }."
       ],
       "Your import from ${ delayedImport.Account } is temporarily delayed.": [
         "Sua importação de ${ delayedImport.Account } está temporariamente atrasada."
@@ -6826,6 +6844,9 @@
       "Proton company announcements": [
         "Anúncios da Proton"
       ],
+      "Proton for Business": [
+        "Proton for Business"
+      ],
       "Proton for Business newsletter": [
         "Newsletter do Proton para Negócios"
       ],
@@ -6979,6 +7000,9 @@
       ],
       "Terms and conditions": [
         "Termos e condições"
+      ],
+      "Trouble signing in?": [
+        "Problemas para fazer login?"
       ],
       "Upgrade": [
         "Upgrade"
@@ -7594,26 +7618,6 @@
         "Gerenciamento de equipes"
       ]
     },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Torne a privacidade seu padrão para backup, armazenamento, compartilhamento e recuperação de arquivos."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Caso contrário, o acesso à sua conta será limitado e, futuramente, sua conta será desativada."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Para continuar usando o ${ MAIL_APP_NAME } com recursos premium, escolha sua assinatura e opções de pagamento."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Faça o upgrade para o pacote para empresas com acesso a todos os serviços premium da Proton."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Faça o upgrade para o pacote de privacidade definitivo e acesse todos os serviços premium da Proton."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Sua avaliação termina em ${ formattedTrialExpirationDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } com final ${ last4 }"
@@ -7680,6 +7684,26 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Seu plano atual está com um preço promocional. Se fizer o downgrade da sua conta, você perderá seu preço promocional, o qual não estará mais disponível se você tentar assinar novamente."
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Torne a privacidade seu padrão para backup, armazenamento, compartilhamento e recuperação de arquivos."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Caso contrário, o acesso à sua conta será limitado e, futuramente, sua conta será desativada."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Para continuar usando o ${ MAIL_APP_NAME } com recursos premium, escolha sua assinatura e opções de pagamento."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Faça o upgrade para o pacote para empresas com acesso a todos os serviços premium da Proton."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Faça o upgrade para o pacote de privacidade definitivo e acesse todos os serviços premium da Proton."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Sua avaliação termina em ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -8850,6 +8874,9 @@
     "Subtitle for trial plan": {
       "The privacy-first Mail and Calendar solution for your everyday communications needs.": [
         "O acesso à solução de email e calendário que prioriza a privacidade para as suas necessidades diárias de comunicação."
+      ],
+      "This offer is for those new to Proton only. No credit card required.": [
+        "Esta oferta é apenas para aqueles que são novos no Proton. Não é necessário cartão de crédito."
       ]
     },
     "Success": {
@@ -9377,7 +9404,7 @@
         "Moeda"
       ],
       "Current and past imports": [
-        "Importações atuais e anteriores"
+        "Your import history"
       ],
       "Custom filters": [
         "Filtros personalizados"
@@ -9555,6 +9582,9 @@
       ],
       "How does it work?": [
         "Como isso funciona?"
+      ],
+      "How your free trial works": [
+        "Como funciona seu teste gratuito"
       ],
       "Human verification": [
         "Verificação humana"
@@ -9913,6 +9943,9 @@
       ],
       "Your ${ domain } address is active": [
         "Seu endereço ${ domain } está ativo"
+      ],
+      "Your ${ MAIL_APP_NAME } address": [
+        "Seu endereço ${ MAIL_APP_NAME }"
       ],
       "Your calendar link": [
         "Link do seu calendário"

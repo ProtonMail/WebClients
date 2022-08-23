@@ -416,10 +416,10 @@
         "Masquer les messages"
       ],
       "Hide My Email": [
-        "Masquer mon e-mail"
+        "Masquer mon adresse e-mail"
       ],
       "Hide my email": [
-        "Masquer mon e-mail"
+        "Masquer mon adresse e-mail"
       ],
       "I have a question": [
         "J’ai une question"
@@ -568,6 +568,9 @@
       ],
       "Move all messages from this label": [
         "Déplacer tous les messages de ce label"
+      ],
+      "Move all to trash": [
+        "Tout déplacer vers la corbeille"
       ],
       "move emails to": [
         "déplacer les e-mails vers"
@@ -749,6 +752,12 @@
       "Request new code": [
         "Demander un nouveau code"
       ],
+      "Reset": [
+        "Réinitialiser"
+      ],
+      "Reset search form": [
+        "Réinitialiser le formulaire de recherche"
+      ],
       "Reset zoom": [
         "Réinitialiser le zoom"
       ],
@@ -895,9 +904,6 @@
       ],
       "This message contains remote content.": [
         "Ce message comporte du contenu distant."
-      ],
-      "Trash all": [
-        "Move all to trash"
       ],
       "Trust": [
         "Approuver"
@@ -1343,7 +1349,7 @@
     },
     "Calendar invite info": {
       " This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar.": [
-        " Cette nouvelle proposition horaire ne correspond pas aux détails de votre invitation. Veuillez vérifier les détails de l'invitation dans votre calendrier."
+        "This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar."
       ],
       "${ participantName } accepted an invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } a accepté une invitation et a proposé un nouvel horaire pour une occurrence de cet événement."
@@ -2992,8 +2998,8 @@
       "A group with this name already exists": [
         "Un groupe portant ce nom existe déjà."
       ],
-      "A problem occurred, please try again.": [
-        "Une erreur est survenue, veuillez réessayer."
+      "A problem occurred, please try again": [
+        "Une erreur est survenue, veuillez réessayer"
       ],
       "Address primary private key not found": [
         "La clé privée principale de l'adresse n'a pas été trouvée."
@@ -3169,8 +3175,8 @@
       "Passwords do not match": [
         "Les mots de passe ne correspondent pas."
       ],
-      "Please activate your search again": [
-        "Veuillez réactiver la recherche de contenu."
+      "Please activate your content search again": [
+        "Veuillez réactiver la recherche de contenu"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Veuillez corriger le conflit en surbrillance pour continuer.",
@@ -3236,9 +3242,6 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Quelque chose s'est mal passé, veuillez ${ refresh } afin de pouvoir continuer. Si ce message d'erreur s'affiche toujours, veuillez contacter notre ${ supportTeam }."
-      ],
-      "Something went wrong, please try again": [
-        "Un problème est survenu, veuillez réessayer plus tard."
       ],
       "Sorry, Proton can't decrypt your message. Please check that all your keys are active.": [
         "Désolé, Proton ne peut pas déchiffrer votre message. Veuillez vérifier que toutes vos clés sont activées."
@@ -4216,12 +4219,6 @@
       "Confirm phishing report": [
         "Confirmer le signalement d'hameçonnage"
       ],
-      "Content search of the entire inbox is available for ${ paidPlansButton }.": [
-        "La recherche de contenu dans toute la boîte de réception est disponible pour ${ paidPlansButton }."
-      ],
-      "Content: ": [
-        "Contenu : "
-      ],
       "Continue with ${ planName }": [
         "Continuer avec ${ planName }"
       ],
@@ -4291,8 +4288,8 @@
       "Don't forget to share the password with the recipient": [
         "N'oubliez pas de communiquer le mot de passe au destinataire"
       ],
-      "Downloading message ${ currentProgress } out of ${ totalProgress }": [
-        "Téléchargement du message ${ currentProgress } sur ${ totalProgress }"
+      "Downloading message ${ esProgress } out of ${ totalProgressToShow }": [
+        "Téléchargement du message ${ esProgress } sur ${ totalProgressToShow }"
       ],
       "Draft": [
         "Brouillon"
@@ -4346,9 +4343,6 @@
       ],
       "Encrypt message": [
         "Chiffrer le message"
-      ],
-      "End of message content search": [
-        "Fin de la recherche de contenu de message"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Entrez le code de vérification qui a été envoyé à ${ destinationText }."
@@ -4430,7 +4424,7 @@
         "Heures"
       ],
       "How Hide My Email works": [
-        "Comment fonctionne Masquer mon e-mail"
+        "Comment fonctionne Masquer mon adresse e-mail"
       ],
       "I'm sending this message to a non-Proton Mail user.": [
         "J'envoie ce message à une personne qui n'utilise pas Proton Mail."
@@ -4615,9 +4609,6 @@
       ],
       "No results found": [
         "Aucun résultat trouvé"
-      ],
-      "No results found in the past 30 days, searching the rest of your inbox": [
-        "Aucun résultat trouvé au cours des 30 derniers jours, recherche dans le reste de votre boîte de réception"
       ],
       "No trackers found, but some images could not be loaded with tracking protection": [
         "Aucun traqueur trouvé, mais certaines images n'ont pas pu être chargées avec la protection contre le tracking"
@@ -4807,7 +4798,7 @@
         "Afficher le message d'origine"
       ],
       "SimpleLogin is a Proton service, and your Proton Account includes Hide My Email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
-        "SimpleLogin est un service Proton, et votre compte Proton inclut des alias Masquer mon e-mail. Pour commencer à masquer votre adresse e-mail, allez sur SimpleLogin et créez votre premier alias."
+        "SimpleLogin est un service Proton, et votre compte Proton inclut des alias Masquer mon adresse e-mail. Pour commencer à masquer votre adresse e-mail, allez sur SimpleLogin et créez votre premier alias."
       ],
       "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "SimpleLogin offre un moyen simple de créer des identifiants sur des sites tiers peu fiables où vous ne voulez pas exposer votre adresse e-mail réelle."
@@ -4880,16 +4871,13 @@
         "Il y a eu une erreur avec la signature utilisée pour vérifier les coordonnées qui peut provenir d'une réinitialisation du mot de passe."
       ],
       "They can't spam you if they don't know your email address. Protect your inbox with Hide My Email.": [
-        "On ne peut pas vous spammer si l'on ne connaît pas votre adresse électronique. Protégez votre boîte aux lettres avec Masquer mon e-mail."
+        "On ne peut pas vous spammer si l'on ne connaît pas votre adresse électronique. Protégez votre boîte aux lettres avec Masquer mon adresse e-mail."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Ce compte a été suspendu en raison d'une potentielle infraction aux règles d'utilisation."
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
         "Cette action téléchargera tous les messages afin qu'ils puissent être recherchés localement. Effacer les données de votre navigateur ou vous déconnecter désactivera cette option."
-      ],
-      "This action will download the most recent messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "Cette action téléchargera les messages les plus récents afin qu'ils puissent être recherchés localement. Effacer les données de votre navigateur ou vous déconnecter désactivera cette option."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Cette adresse est désactivée. Pour pouvoir envoyer à cette adresse, le propriétaire doit d'abord activer cette adresse."
@@ -5104,7 +5092,7 @@
         "Quand souhaitez-vous que votre message soit envoyé ?"
       ],
       "When giving out your email, use a unique, disposable Hide My Email alias instead of your real email address.": [
-        "Lorsque vous communiquez votre e-mail, utilisez un alias Masquer mon e-mail, jetable et unique, au lieu de votre véritable adresse e-mail."
+        "Lorsque vous communiquez votre e-mail, utilisez un alias unique Masquer mon adresse e-mail au lieu de votre véritable adresse e-mail."
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Lorsque vous avez activé les clés de confiance pour ${ senderName }, les clés publiques ont été ajoutées aux informations de contact."
@@ -6070,9 +6058,6 @@
       ],
       "Outbox": [
         "Boîte d'envoi"
-      ],
-      "paid plans": [
-        "abonnements payants"
       ],
       "Pay invoice": [
         "Payer la facture"
@@ -7806,9 +7791,6 @@
       "Encrypted data with verified digital signature": [
         "Données chiffrées avec une signature numérique vérifiée"
       ],
-      "For messages older than 30 days, only the subject line and recipient list will be searched": [
-        "Pour les messages datant de plus de 30 jours, seuls l'objet et la liste des destinataires seront recherchés."
-      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Sélectionnez le schéma PGP à utiliser lors de la signature ou du chiffrement vers un autre utilisateur. Notez que PGP/Inline force le format des messages en texte brut"
       ],
@@ -7817,6 +7799,9 @@
       ],
       "The import will start with the most recent messages.": [
         "L'importation commencera par les messages les plus récents."
+      ],
+      "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
+        "Cette action téléchargera tous les messages afin qu'ils puissent être recherchés localement. Effacer les données de votre navigateur ou vous déconnecter désactivera cette option."
       ],
       "This feature is only available for paid users": [
         "Cette fonctionnalité est disponible uniquement pour les utilisateurs payants"

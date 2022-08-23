@@ -872,9 +872,6 @@
       "This message contains remote content.": [
         "Ez az üzenet \"Távoli tartalmat\" tartalmaz."
       ],
-      "Trash all": [
-        "Move all to trash"
-      ],
       "Trust": [
         "Megbízható"
       ],
@@ -1273,7 +1270,7 @@
     },
     "Calendar invite info": {
       " This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar.": [
-        " Ez az új javasolt időpont nem fedi a meghívó adatait. Ellenőrizze a meghívó részleteit a naptárában."
+        "This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar."
       ],
       "${ participantName } accepted an invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } elfogadott egy meghívást és új időpontot javasolt az esemény egy alkalmára."
@@ -7523,6 +7520,9 @@
       ],
       "The import will start with the most recent messages.": [
         "Az importálás a legfrissebb üzenetekkel kezdődik."
+      ],
+      "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
+        "Ez a művelet letölti az összes üzenetet, hogy helyben kereshetők legyenek. A böngésző adatainak törlése kikapcsolja ezt a lehetőséget."
       ],
       "This feature is only available for paid users": [
         "Ez a lehetőség csak előfizetéses csomagokban érhető érhető el"

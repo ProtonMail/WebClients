@@ -575,6 +575,9 @@
       "Move all messages from this label": [
         "Přesun všech zpráv tohoto štítku"
       ],
+      "Move all to trash": [
+        "Přesunout vše do koše"
+      ],
       "move emails to": [
         "přesunout e-maily do"
       ],
@@ -755,6 +758,12 @@
       "Request new code": [
         "Vyžádejte si nový kód"
       ],
+      "Reset": [
+        "Resetovat"
+      ],
+      "Reset search form": [
+        "Resetovat vyhledávací formulář"
+      ],
       "Reset zoom": [
         "Resetovat přiblížení"
       ],
@@ -901,9 +910,6 @@
       ],
       "This message contains remote content.": [
         "Tato zpráva obsahuje vzdálený obsah."
-      ],
-      "Trash all": [
-        "Move all to trash"
       ],
       "Trust": [
         "Důvěřovat"
@@ -1315,7 +1321,7 @@
     },
     "Calendar invite info": {
       " This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar.": [
-        " Nově navržený čas, neodpovídá Vašim údajům v pozvánce. Zkontrolujte prosím detaily pozvánky ve Vašem kalendáři."
+        "This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar."
       ],
       "${ participantName } accepted an invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } přijal(a) pozvání a navrhl(a) nový čas pro jeden výskyt této události."
@@ -2976,8 +2982,8 @@
       "A group with this name already exists": [
         "Skupina s tímto názvem již existuje"
       ],
-      "A problem occurred, please try again.": [
-        "Objevil se problém, prosím zkuste to znovu."
+      "A problem occurred, please try again": [
+        "Objevil se problém, prosím zkuste to znovu"
       ],
       "Address primary private key not found": [
         "Primární soukromý klíč adresy nenalezen"
@@ -3165,8 +3171,8 @@
       "Passwords do not match": [
         "Hesla se neshodují"
       ],
-      "Please activate your search again": [
-        "Prosím, aktivujte znovu vyhledávání"
+      "Please activate your content search again": [
+        "Prosím, aktivujte znovu vyhledávání obsahu"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Chcete-li pokračovat, opravte zvýrazněný konflikt.",
@@ -3236,9 +3242,6 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Došlo k chybě, prosíme ${ refresh } stránku pro pokračování. Pokud stále vidíte tuto chybu, kontaktujte náš ${ supportTeam }."
-      ],
-      "Something went wrong, please try again": [
-        "Něco se pokazilo, prosím zkuste to znovu"
       ],
       "Sorry, Proton can't decrypt your message. Please check that all your keys are active.": [
         "Omlouváme se, Proton nemůže dešifrovat vaší zprávu. Prosím zkontrolujte, že jsou všechny vaše klíče aktivní."
@@ -4312,12 +4315,6 @@
       "Confirm phishing report": [
         "Potvrzení nahlášení phishingu"
       ],
-      "Content search of the entire inbox is available for ${ paidPlansButton }.": [
-        "Vyhledávání v obsahu zpráv veškeré doručené pošty umožňují ${ paidPlansButton }."
-      ],
-      "Content: ": [
-        "Obsah: "
-      ],
       "Continue with ${ planName }": [
         "Pokračovat s ${ planName }"
       ],
@@ -4393,8 +4390,8 @@
       "Don't forget to share the password with the recipient": [
         "Nezapomeňte příjemci sdělit heslo"
       ],
-      "Downloading message ${ currentProgress } out of ${ totalProgress }": [
-        "Stahování zprávy ${ currentProgress } z ${ totalProgress }"
+      "Downloading message ${ esProgress } out of ${ totalProgressToShow }": [
+        "Stahování zprávy ${ esProgress } z ${ totalProgressToShow }"
       ],
       "Draft": [
         "Koncept"
@@ -4452,9 +4449,6 @@
       ],
       "Encrypt message": [
         "Šifrovat zprávu"
-      ],
-      "End of message content search": [
-        "Konec vyhledávání v obsahu zprávy"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Zadejte ověřovací kód, který byl odeslán na ${ destinationText }."
@@ -4732,9 +4726,6 @@
       "No results found": [
         "Nebyly nalezeny žádné výsledky"
       ],
-      "No results found in the past 30 days, searching the rest of your inbox": [
-        "Nebyly nalezeny žádné výsledky za posledních 30 dnů, prohledávání zbytku vaší doručené pošty"
-      ],
       "No trackers found, but some images could not be loaded with tracking protection": [
         "Nebyly nalezeny žádné sledovací prvky, ale některé obrázky nebylo možné načíst s ochranou proti sledování"
       ],
@@ -5007,9 +4998,6 @@
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
         "Tato akce stáhne všechny zprávy, aby mohly být lokálně prohledávány. Vymazání dat prohlížeče deaktivuje tuto volbu."
-      ],
-      "This action will download the most recent messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "Tato akce stáhne nejnovější zprávy, aby mohly být lokálně prohledávány. Vymazání dat prohlížeče deaktivuje tuto volbu."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Tato adresa není povolena. Pokud chcete odesílat zprávy na tuto adresu, musí ji majitel nejdříve povolit."
@@ -6216,9 +6204,6 @@
       ],
       "Outbox": [
         "K odeslání"
-      ],
-      "paid plans": [
-        "placené tarify"
       ],
       "Pay invoice": [
         "Zaplatit fakturu"
@@ -8052,9 +8037,6 @@
       "Encrypted data with verified digital signature": [
         "Zašifrovaná data s ověřeným digitálním podpisem"
       ],
-      "For messages older than 30 days, only the subject line and recipient list will be searched": [
-        "V případě zpráv, které jsou starší 30 dnů, bude prohledán pouze předmět a seznam příjemců"
-      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Vyberte PGP schéma, které se použije při podepisování, nebo šifrování uživatele. Nezapomeňte, že PGP/Inline vyžaduje zprávy ve formátu prostého textu"
       ],
@@ -8063,6 +8045,9 @@
       ],
       "The import will start with the most recent messages.": [
         "Import začne nejnovějšími zprávami."
+      ],
+      "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
+        "Tato akce stáhne všechny zprávy, aby mohly být lokálně prohledávány. Vymazání dat prohlížeče deaktivuje tuto volbu."
       ],
       "This feature is only available for paid users": [
         "Tato funkce je k dispozici pouze platícím uživatelům"
