@@ -7,6 +7,7 @@ import { modalTwoRootClassName } from '@proton/shared/lib/busy';
 import { classnames, generateUID } from '../../helpers';
 import { Box, PolymorphicComponentProps } from '../../helpers/react-polymorphic-box';
 import { useHotkeys } from '../../hooks';
+import Dialog from '../dialog/Dialog';
 import { useFocusTrap } from '../focus';
 import { Portal } from '../portal';
 import { useModalPosition } from './modalPositions';
@@ -145,7 +146,7 @@ const Modal = <E extends ElementType = typeof defaultElement>({
                     }
                 }}
             >
-                <dialog
+                <Dialog
                     ref={dialogRef}
                     aria-labelledby={id}
                     aria-describedby={`${id}-description`}
@@ -161,7 +162,7 @@ const Modal = <E extends ElementType = typeof defaultElement>({
                     <ModalContext.Provider value={modalContextValue}>
                         <Box as={defaultElement} className="modal-two-dialog-container" {...rest} />
                     </ModalContext.Provider>
-                </dialog>
+                </Dialog>
             </div>
         </Portal>
     );

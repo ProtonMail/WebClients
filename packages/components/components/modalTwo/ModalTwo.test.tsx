@@ -1,6 +1,6 @@
 import { ReactNode, useEffect, useState } from 'react';
 
-import { fireEvent, render } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 
 import { Button } from '../button';
 import ModalTwo from './Modal';
@@ -197,5 +197,23 @@ describe('ModalTwo Hotkeys', () => {
         fireEvent.keyDown(getByTestId('close-button'), { key: 'Escape' });
         maybeTriggerOutAnimation(getOutModal(container));
         expect(queryByTestId('inner')).toHaveTextContent('Rendered');
+    });
+});
+
+/**
+ * Due to a JSDom issue `dialog` tag is not understood correctly
+ * Delete this test when the Jest will implement the fix
+ * - Issue: https://github.com/jsdom/jsdom/issues/3294
+ * - Fix pull request: https://github.com/jsdom/jsdom/pull/3403
+ */
+describe('ModalTwo GetByRole issue', () => {
+    it('Content should be selectable by role', () => {
+        render(
+            <ModalTwo open>
+                <Button>Hello</Button>
+            </ModalTwo>
+        );
+
+        expect(screen.getByRole('button', { name: 'Hello' })).toBeVisible();
     });
 });
