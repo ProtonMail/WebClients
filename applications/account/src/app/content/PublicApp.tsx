@@ -15,10 +15,11 @@ import {
 import { ActiveSessionData, ProduceForkData, SSOType } from '@proton/components/containers/app/SSOForkProducer';
 import { OnLoginCallbackArguments, ProtonLoginCallback } from '@proton/components/containers/app/interface';
 import ForceRefreshContext from '@proton/components/containers/forceRefresh/context';
+import { pushForkSession } from '@proton/shared/lib/api/auth';
 import { OAuthLastAccess, getOAuthLastAccess } from '@proton/shared/lib/api/oauth';
-import { getAppHref, getInvoicesPathname } from '@proton/shared/lib/apps/helper';
+import { getAppHref, getClientID, getExtension, getInvoicesPathname } from '@proton/shared/lib/apps/helper';
 import { DEFAULT_APP, getAppFromPathname, getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
-import { LocalSessionResponse } from '@proton/shared/lib/authentication/interface';
+import { LocalSessionResponse, PushForkResponse } from '@proton/shared/lib/authentication/interface';
 import { stripLocalBasenameFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
 import { GetActiveSessionsResult } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { produceFork, produceOAuthFork } from '@proton/shared/lib/authentication/sessionForking';
@@ -38,6 +39,7 @@ import { UserType } from '@proton/shared/lib/interfaces';
 import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 
 import LoginContainer from '../login/LoginContainer';
+import AuthExtension from '../public/AuthExtension';
 import EmailUnsubscribeContainer from '../public/EmailUnsubscribeContainer';
 import ForgotUsernameContainer from '../public/ForgotUsernameContainer';
 import OAuthConfirmForkContainer from '../public/OAuthConfirmForkContainer';
@@ -144,6 +146,45 @@ const PublicApp = ({ onLogin, locales }: Props) => {
 
     const handleProduceFork = async (data: ProduceForkData) => {
         if (data.type === SSOType.Proton) {
+            const extension = getExtension(data.payload.app);
+
+            if (extension) {
+                const childClientID = getClientID(data.payload.app);
+                const { Selector: selector } = await api<PushForkResponse>(
+                    withUIDHeaders(
+                        data.payload.UID,
+                        pushForkSession({
+                            ChildClientID: childClientID,
+                            Independent: 0,
+                        })
+                    )
+                );
+
+                chrome.runtime.sendMessage(
+                    extension.ID,
+                    {
+                        type: 'fork',
+                        payload: {
+                            selector,
+                            keyPassword: data.payload.keyPassword,
+                            persistent: data.payload.persistent,
+                            state: data.payload.state,
+                        },
+                    },
+                    (result) => {
+                        if (chrome.runtime.lastError) {
+                            history.replace('/auth-ext', { type: 'error', payload: chrome.runtime.lastError.message });
+                            return;
+                        }
+                        if (result.type === 'success') {
+                            history.replace('/auth-ext', { type: 'success', payload: result.payload });
+                        } else {
+                            history.replace('/auth-ext', { type: 'error', payload: result.payload });
+                        }
+                    }
+                );
+                return;
+            }
             return produceFork({ api, ...data.payload });
         }
 
@@ -196,6 +237,15 @@ const PublicApp = ({ onLogin, locales }: Props) => {
             });
         }
 
+        // Fork early to extensions because they don't need to follow the signup logic
+        if (forkState?.type === SSOType.Proton && getExtension(forkState.payload.app)) {
+            await handleProduceFork({
+                type: SSOType.Proton,
+                payload: { ...forkState.payload, UID, keyPassword, persistent },
+            });
+            return;
+        }
+
         if (forkState?.type === SSOType.OAuth) {
             await handleProduceFork({ type: SSOType.OAuth, payload: { ...forkState.payload, UID } });
             return;
@@ -204,7 +254,10 @@ const PublicApp = ({ onLogin, locales }: Props) => {
         // If the user signed up and there is an active fork, purposefully ignore it so that it
         // triggers a page load with the query parameters
         if (forkState?.type === SSOType.Proton && args.flow !== 'signup') {
-            await produceFork({ api, UID, keyPassword, ...forkState.payload, persistent });
+            await handleProduceFork({
+                type: SSOType.Proton,
+                payload: { ...forkState.payload, UID, keyPassword, persistent },
+            });
             return;
         }
 
@@ -357,6 +410,9 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                         }
                         onInvalid={() => history.push('/signup')}
                     />
+                </Route>
+                <Route path="/auth-ext">
+                    <AuthExtension />
                 </Route>
                 <Route path="*">
                     <FeaturesProvider>

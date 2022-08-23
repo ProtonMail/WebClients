@@ -11,7 +11,12 @@ const appendQueryParams = (url: URL, params: { [key: string]: any }) => {
 };
 
 export const createUrl = (urlString: string, params: { [key: string]: any } = {}) => {
-    const url = new URL(urlString, window.location.origin);
+    let url: URL;
+    if (typeof window !== 'undefined') {
+        url = new URL(urlString, window.location.origin);
+    } else {
+        url = new URL(urlString);
+    }
     appendQueryParams(url, params);
     return url;
 };
