@@ -158,6 +158,61 @@ Utilities for controlling the placement of positioned elements.
     </TableBody>
 </Table>
 
+## Custom classes to use with CSS variables
+
+Use these classes together with inline styles
+
+<Table className="color-norm">
+    <TableHeader>
+        <TableRow>
+            <TableCell type="header" className="w20">
+                Class
+            </TableCell>
+            <TableCell type="header">Variable</TableCell>
+        </TableRow>
+    </TableHeader>
+    <TableBody>
+        <TableRow>
+            <TableCell>
+                <code>.top-custom</code>
+            </TableCell>
+            <TableCell>
+                <code>--top-custom</code>
+            </TableCell>
+        </TableRow>
+        <TableRow>
+            <TableCell>
+                <code>.right-custom</code>
+            </TableCell>
+            <TableCell>
+                <code>--right-custom</code>
+            </TableCell>
+        </TableRow>
+        <TableRow>
+            <TableCell>
+                <code>.bottom-custom</code>
+            </TableCell>
+            <TableCell>
+                <code>--bottom-custom</code>
+            </TableCell>
+        </TableRow>
+        <TableRow>
+            <TableCell>
+                <code>.left-custom</code>
+            </TableCell>
+            <TableCell>
+                <code>--left-custom</code>
+            </TableCell>
+        </TableRow>
+    </TableBody>
+</Table>
+
+### Example
+
+```html
+<div className="top-custom left-custom" style={{ '--top-custom': '200px', '--left-custom': '200px', }} />
+```
+
 ## Layers
 
 Utilities for controlling the the stack order of an element.
