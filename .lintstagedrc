@@ -7,6 +7,6 @@
         "prettier --write",
         "stylelint --fix"
     ],
-    "(*.json|*.md|*.mdx|*.html|*.mjs)": "prettier --write",
+    "(*.json|*.md|*.mdx|*.html|*.mjs|*.yml)": "prettier --write",
     "package.json": "sort-package-json"
 }

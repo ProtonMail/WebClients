@@ -28,7 +28,7 @@ const CONFIG: { [key: string]: any } = {
         // Accept HTML (official) tags only and automatically excluding all SVG & MathML tags
         USE_PROFILES: { html: true },
     },
-    // When we display a message we need to be global and return more informations
+    // When we display a message we need to be global and return more information
     raw: { WHOLE_DOCUMENT: true, RETURN_DOM: true },
     html: { WHOLE_DOCUMENT: false, RETURN_DOM: true },
     protonizer: {
