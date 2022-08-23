@@ -14,7 +14,7 @@ import { useModalPosition } from './modalPositions';
 
 import './Modal.scss';
 
-export type ModalSize = 'small' | 'medium' | 'large' | 'full';
+export type ModalSize = 'small' | 'medium' | 'large' | 'xlarge' | 'full';
 
 /**
  * Omission of id from ModalOwnProps because in ModalOwnProps "id"
@@ -156,6 +156,7 @@ const Modal = <E extends ElementType = typeof defaultElement>({
                         className,
                         size === 'small' && 'modal-two-dialog--small',
                         size === 'large' && 'modal-two-dialog--large',
+                        size === 'xlarge' && 'modal-two-dialog--xlarge',
                         size === 'full' && 'modal-two-dialog--full',
                     ])}
                 >
