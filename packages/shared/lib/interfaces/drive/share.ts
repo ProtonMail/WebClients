@@ -1,11 +1,8 @@
-import { LinkType } from './link';
-
 export interface CreateDriveShare {
     AddressID: string;
     RootLinkID: string;
     Name: string;
     Type?: number; // TODO: UNUSED - remove it when BE removes it
-    LinkType?: LinkType; // TODO: UNUSED
     PermissionsMask: number;
     ShareKey: string;
     SharePassphrase: string;
@@ -22,7 +19,6 @@ export interface ShareMetaShort {
     ShareID: string;
     Type: number;
     LinkID: string;
-    LinkType: LinkType;
     Locked: boolean;
     VolumeID: string;
     Creator: string;
