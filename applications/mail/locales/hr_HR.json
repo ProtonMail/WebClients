@@ -767,9 +767,6 @@
       "This message contains remote content.": [
         "Ova poruka sadrži udaljeni sadržaj."
       ],
-      "Trash all": [
-        "Move all to trash"
-      ],
       "Trust": [
         "Vjeruj"
       ],
@@ -1107,7 +1104,7 @@
     },
     "Calendar invite info": {
       " This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar.": [
-        " Novi vremenski prijedlog se ne podudara s detaljima vaše pozivnice. Provjerite detalje pozivnice u kalendaru."
+        "This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar."
       ],
       "${ participantName } accepted your invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } je prihvatio vašu pozivnicu i predložio novo vrijeme za jedno ponavljanje ovog događaja."
@@ -4988,6 +4985,9 @@
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Odaberite PGP shemu koja će se koristiti prilikom potpisivanja ili šifriranja korisniku. Imajte na umu da PGP/Inline prisilno šalje obične tekstualne poruke"
+      ],
+      "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
+        "Ovom će se radnjom preuzeti sve poruke kako bi se mogle pretraživati lokalno. Brisanje podataka preglednika onemogućiti će ovu opciju."
       ],
       "This feature is only available for paid users": [
         "Ova značajka je dostupna samo za plaćene korisnike"

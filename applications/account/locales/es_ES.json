@@ -1147,6 +1147,9 @@
       "Default": [
         "Por defecto"
       ],
+      "Disabled": [
+        "Deshabilitado"
+      ],
       "Not synced": [
         "No sincronizado"
       ],
@@ -1246,7 +1249,7 @@
         "diente de león"
       ],
       "enzian": [
-        "enzima"
+        "genciana"
       ],
       "fern": [
         "helecho"
@@ -1300,7 +1303,7 @@
         "azul pizarra"
       ],
       "soil": [
-        "suelo"
+        "tierra"
       ],
       "strawberry": [
         "fresa"
@@ -2485,8 +2488,8 @@
       ]
     },
     "Error": {
-      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Addresses > Short domain (pm.me)": [
-        "${ Local } es tu nombre de usuario. Para crear ${ Local }@${ Domain }, dirígete a Ajustes > Direcciones > Dominio corto (pm.me)"
+      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ Local } es tu nombre de usuario. Para crear ${ Local }@${ Domain }, dirígete a Ajustes > Mensajes y redacción > Dominio corto (pm.me)"
       ],
       "A group with this name already exists": [
         "Ya existe un grupo con este nombre"
@@ -2802,7 +2805,7 @@
         "Este nombre de etiqueta no está disponible. Por favor, elige un nombre diferente."
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser.": [
-        "Este mensaje podría contener enlaces que no pueden abrirse correctamente en tu navegador actual."
+        "Este mensaje podría contener enlaces que no se pueden abrir correctamente en su navegador actual."
       ],
       "Unknown error": [
         "Error desconocido"
@@ -4817,7 +4820,7 @@
         "Introduce la frase de recuperación de 12 palabras asociada a tu cuenta."
       ],
       "Please fill out this field.": [
-        "Por favor rellena este campo."
+        "Por favor, rellene este campo."
       ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
         "Manténla a salvo. La necesitarás para acceder a tu cuenta y descifrar tus datos en caso de un restablecimiento de contraseña."
@@ -5124,6 +5127,9 @@
       ],
       "to continue to ${ toAppName }": [
         "para continuar a ${ toAppName }"
+      ],
+      "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
+        "Para mejorar continuamente nuestros servicios, a veces recopilamos datos para controlar el buen funcionamiento de nuestras aplicaciones. Esta información no se comparte con ningún servicio de terceros."
       ],
       "To decrypt and view your emails and other data, you need a recovery file.": [
         "Para desencriptar y ver sus correos electrónicos y otros datos, necesitas un archivo de recuperación."
@@ -6063,6 +6069,9 @@
       "Code is 6 digits without spaces": [
         "El código es de 6 dígitos sin espacios"
       ],
+      "Collect usage diagnostics": [
+        "Recopilar diagnósticos de uso"
+      ],
       "Color": [
         "Color"
       ],
@@ -6521,6 +6530,9 @@
       ],
       "Send auto-reply": [
         "Enviar respuesta automática"
+      ],
+      "Send crash reports": [
+        "Enviar informes de fallos"
       ],
       "Send in": [
         "Enviar"
@@ -7511,26 +7523,6 @@
         "Administración de equipos"
       ]
     },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Haz que la privacidad sea tu opción predeterminada para la copia de seguridad, el almacenamiento, el intercambio y la recuperación de archivos."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Si no lo haces, dejarás de tener acceso a tu cuenta y, finalmente, se desactivará."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Para seguir usando ${ MAIL_APP_NAME } con las funciones prémium, suscríbete y elige el método de pago."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Pásate al plan para empresas y disfruta de todos los servicios prémium de Proton."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Pásate al plan de privacidad definitivo y disfruta de todos los servicios prémium de Proton."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "La prueba acaba el ${ formattedTrialExpirationDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } que acaba en ${ last4 }"
@@ -7597,6 +7589,26 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Ahora mismo pagas un precio especial por tu plan. Si te pasas a un plan inferior, perderás esta ventaja y no la recuperarás suscribiéndote de nuevo."
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Haz que la privacidad sea tu opción predeterminada para la copia de seguridad, el almacenamiento, el intercambio y la recuperación de archivos."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Si no lo haces, dejarás de tener acceso a tu cuenta y, finalmente, se desactivará."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Para seguir usando ${ MAIL_APP_NAME } con las funciones prémium, suscríbete y elige el método de pago."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Pásate al plan para empresas y disfruta de todos los servicios prémium de Proton."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Pásate al plan de privacidad definitivo y disfruta de todos los servicios prémium de Proton."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "La prueba acaba el ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -7856,13 +7868,13 @@
         "Mayor grado de personalización con 15 direcciones y 3 dominios de correo personalizados"
       ],
       "Boost your storage space to ${ bundleStorage } total": [
-        "Posibilidad de ampliar el espacio de almacenamiento a un total de ${ bundleStorage }"
+        "Aumenta tu espacio de almacenamiento a un total de ${ bundleStorage }"
       ],
       "Boost your storage space to ${ businessStorage } per user": [
-        "Posibilidad de ampliar el espacio de almacenamiento a ${ businessStorage } por usuario"
+        "Aumenta tu espacio de almacenamiento a un total de ${ businessStorage } por usuario"
       ],
       "Boost your storage space to ${ driveStorage } total": [
-        "Posibilidad de ampliar el espacio de almacenamiento a un total de ${ driveStorage }"
+        "Aumenta tu espacio de almacenamiento a un total de ${ driveStorage }"
       ],
       "Cover more ground with support for 10 custom email domains": [
         "Más posibilidades con 10 dominios de correo electrónico personalizados"
@@ -9277,7 +9289,7 @@
         "Moneda"
       ],
       "Current and past imports": [
-        "Importaciones actuales y pasadas"
+        "Your import history"
       ],
       "Custom filters": [
         "Filtros personalizados"
@@ -9592,6 +9604,9 @@
       "Previous": [
         "Anterior"
       ],
+      "Privacy and data collection": [
+        "Privacidad y recopilación de datos"
+      ],
       "Processing": [
         "Procesando"
       ],
@@ -9648,6 +9663,9 @@
       ],
       "Secure email based in Switzerland": [
         "Correo electrónico seguro con sede en Suiza"
+      ],
+      "Security and privacy": [
+        "Seguridad y privacidad"
       ],
       "Security logs": [
         "Registros de seguridad"

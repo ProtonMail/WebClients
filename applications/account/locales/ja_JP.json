@@ -1121,6 +1121,11 @@
         "ICS ファイルを他のカレンダーから ${ CALENDAR_APP_NAME } にインポートすることができます。これにより、予定やエントリー全体を簡単にインポートできます。"
       ]
     },
+    "Calendar limit warning": {
+      "You have reached the maximum number of personal calendars you can create within your plan.": [
+        "現在のプランで作成できるパーソナルカレンダーの最大数に達しています。"
+      ]
+    },
     "Calendar link purpose update success message": {
       "Label added": [
         "ラベルが追加されました"
@@ -2516,9 +2521,6 @@
       ]
     },
     "Error": {
-      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Addresses > Short domain (pm.me)": [
-        "${ Local } はあなたのユーザー名です。${ Local }@${ Domain } を作成するには、設定 > メールアドレス > 短縮ドメイン (pm.me) に移動してください。"
-      ],
       "A group with this name already exists": [
         "この名前のグループは既に存在します"
       ],
@@ -3628,7 +3630,7 @@
         "${ boldManage } をクリックしてオプション メニューを展開してください。"
       ],
       "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to Proton.": [
-        "手順がメールサービス プロバイダーによって異なるため、Proton にメールをインポートする前に ${ knowledgeBaseLink } を生成することをおすすめします。"
+        "手順がメールサービスプロバイダーによって異なるため、Proton にメールをインポートする前に ${ knowledgeBaseLink } を生成することをおすすめします。"
       ],
       "Expand the dropdown menu by clicking on the 3 dots (...).": [
         "3 点リーダー（...）をクリックしてドロップダウンを展開します。"
@@ -3871,7 +3873,7 @@
         "${ n } 件のアドレス"
       ],
       "${ none } has no effect on email delivery, but we recommend ${ quarantine } for better security.": [
-        "${ none } はメールの配信には影響しませんが、セキュリティのため ${ quarantine } をお勧めします。"
+        "${ none } はメールの配信には影響しませんが、セキュリティのため ${ quarantine } をおすすめします。"
       ],
       "${ number } city": [
         "${ number } つの都市"
@@ -4798,13 +4800,13 @@
         "パスワードを紛失した場合、Proton はアカウントへのアクセスを回復することができません。"
       ],
       "Proton paused an import because it lost the connection with your other email provider. Please reconnect.": [
-        "Protonは他のメールプロバイダーとの接続が失われたためインポートを一時停止しました。再接続してください。"
+        "Proton は他のメールプロバイダーとの接続が失われたためインポートを一時停止しました。再接続してください。"
       ],
       "Proton paused an import because your account is running low on space. You can:": [
         "アカウントの空き容量が少なくなっているため、Proton はインポートを一時停止しました。以下のことが可能です:"
       ],
       "Proton will try to resume the import as soon as your email provider resets your account’s ${ bandwithLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
-        "Protonは、メールプロバイダーがアカウントのリセットを完了するとすぐにインポートを再開しようとします。${ bandwithLimitLink }。 何もする必要はありません。インポートをキャンセルすると再開できなくなり、やり直す必要があります。"
+        "Proton は、メールプロバイダーがアカウントのリセットを完了するとすぐにインポートを再開しようとします。${ bandwithLimitLink }。 何もする必要はありません。インポートをキャンセルすると再開できなくなり、やり直す必要があります。"
       ],
       "Public link invite": [
         "公開リンク招待"
@@ -5017,7 +5019,7 @@
         "この操作により、現在の有料サブスクリプションがキャンセルされ、これまでに蓄積されたロイヤルティ特典が失われます。ご利用料金の残高分はアカウントクレジットとして返金されます。"
       ],
       "This will create an encryption key for your organization. 4096-bit keys only work on high performance computers, for most users, we recommend using 2048-bit keys.": [
-        "組織用の暗号鍵を作成します。4096ビット鍵は高性能コンピューターでのみ動作します。ほとんどのユーザーには2048ビット鍵の使用をお勧めします。"
+        "組織用の暗号鍵を作成します。4096ビット鍵は高性能コンピューターでのみ動作します。ほとんどのユーザーには2048ビット鍵の使用をおすすめします。"
       ],
       "This will disable your current recovery phrase. You won't be able to use it to access your account or decrypt your data.": [
         "現在の回復用フレーズは無効になります。この回復用フレーズでアカウントにアクセスしたりデータを復元することはできなくなります。"
@@ -7363,20 +7365,6 @@
         "チームマネジメント"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "そうでない場合は、アカウントへのアクセスが制限され、最終的にはアカウントが無効化されます。"
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "プレミアム機能の ${ MAIL_APP_NAME } を使い続けるには、サブスクリプションと支払方法を選択してください。"
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "究極のプライバシーパックにアップレードして、すべてのプレミアムな Proton サービスにアクセスします。"
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "トライアルは ${ formattedTrialExpirationDate } で終了します"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ last4 } で終わる ${ brand }"
@@ -7422,6 +7410,20 @@
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "すべての人にプライバシーを提供するための、無料のスタータープランです。"
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "そうでない場合は、アカウントへのアクセスが制限され、最終的にはアカウントが無効化されます。"
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "プレミアム機能の ${ MAIL_APP_NAME } を使い続けるには、サブスクリプションと支払方法を選択してください。"
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "究極のプライバシーパックにアップレードして、すべてのプレミアムな Proton サービスにアクセスします。"
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "トライアルは ${ formattedTrialExpirationDate } で終了します"
       ]
     },
     "new_plans: Label": {
@@ -7497,6 +7499,9 @@
       ]
     },
     "new_plans: tooltip": {
+      "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
+        "現在、プロモーション目的やプログラム制御のメールの一括送信はサポートしていません。このような場合は、専用のメールサービスプロバイダーを使用することをおすすめします。"
+      ],
       "Control access to your shared files by adding password protection and link expiration dates": [
         "パスワード保護とリンクの有効期限を追加して、共有ファイルへのアクセスを制御します"
       ],
@@ -8977,7 +8982,7 @@
         "通貨"
       ],
       "Current and past imports": [
-        "現在と過去のインポート"
+        "Your import history"
       ],
       "Custom filters": [
         "仕分けフィルター"
@@ -9705,6 +9710,9 @@
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "DNS 設定に問題があるため、DKIM の署名を停止しました。署名を再開するには、以下の手順に従ってください。"
       ],
+      "When you add a label to a message in a conversation, it will automatically be applied to all future messages you send or receive in that conversation.": [
+        "会話のメッセージにラベルを追加すると、その後同じ会話で送受信されるすべてのメッセージに同じラベルが適用されます。"
+      ],
       "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
         "リンクをクリックすると、フィッシング対策機能として新しい URL を開くときに続行するか確認することができます。"
       ],
@@ -9745,6 +9753,14 @@
     "Upgrade": {
       "Upgrade to ${ planName } to connect up to ${ n } device to the VPN at once": [
         "${ planName } にアップグレードして同時に ${ n } のデバイスを VPN に接続します"
+      ]
+    },
+    "Upgrade notice": {
+      "Upgrade to a Mail paid plan to create up to ${ MAX_CALENDARS_PAID } calendar, allowing you to make calendars for work, to share with friends, and just for yourself.": [
+        "Mail の有料プランにアップグレードすると、最大 ${ MAX_CALENDARS_PAID } 件のカレンダーを作成できるようになり、仕事用、友人との共有用、個人用などのカレンダーを作成できます。"
+      ],
+      "Upgrade to a Mail paid plan to share your personal calendar via link with anyone.": [
+        "Mail の有料プランにアップグレードすると、パーソナルカレンダーをリンク経由で誰とでも共有できます。"
       ]
     },
     "User role": {

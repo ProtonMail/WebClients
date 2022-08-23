@@ -2414,9 +2414,6 @@
       ]
     },
     "Error": {
-      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Addresses > Short domain (pm.me)": [
-        "${ Local } er dit brugernavn. For at oprette ${ Local }@${ Domain }, gå til Indstillinger > Adresser > Kort domæne (pm.me)"
-      ],
       "A group with this name already exists": [
         "En gruppe med dette navn findes allerede"
       ],
@@ -7056,6 +7053,14 @@
         "Support"
       ]
     },
+    "new_plans: info": {
+      "Comprehensive privacy and security with all Proton services combined.": [
+        "Omfattende privatliv og sikkerhed med alle Proton-tjenester kombineret."
+      ],
+      "Set automatic replies to inform contacts you are out of the office or unable to respond.": [
+        "Brug automatiske svar til at informere kontakter om, at du ikke er på kontoret eller på anden måde ikke er i stand til at svare."
+      ]
+    },
     "new_plans: Info": {
       "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
         "Opgrader til den ultimative privatlivspakke og adgang til alle premium Proton-tjenester."
@@ -8440,7 +8445,7 @@
         "Valuta"
       ],
       "Current and past imports": [
-        "Nuværende og tidligere importer"
+        "Your import history"
       ],
       "Custom filters": [
         "Tilpassede filtre"
@@ -8808,6 +8813,9 @@
       ],
       "Secure email based in Switzerland": [
         "Sikker e-mail-tjeneste baseret i Schweiz"
+      ],
+      "Security and privacy": [
+        "Sikkerhed og privatliv"
       ],
       "Security logs": [
         "Sikkerhedslog"

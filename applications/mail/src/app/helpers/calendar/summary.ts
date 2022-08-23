@@ -306,7 +306,7 @@ export const getOrganizerSummaryText = (model: RequireSome<InvitationModel, 'inv
 
             if (isFromFuture) {
                 return c('Calendar invite info')
-                    .t` This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar.`;
+                    .t`This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar.`;
             }
 
             if (isOutdated) {

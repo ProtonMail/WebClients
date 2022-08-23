@@ -2968,6 +2968,9 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Una o més de les teves claus de confiança ha estat marcada com a \"compromesa\" pel seu propietari. Et recomanem que marquis aquestes claus com a \"no confiables\"."
       ],
+      "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
+        "Canvieu aquestes funcions només si esteu emprant PGP amb destinataris sense ${ BRAND_NAME }."
+      ],
       "Other options": [
         "Altres opcions"
       ],
@@ -3025,6 +3028,9 @@
       ],
       "Session timed out": [
         "S'ha esgotat el temps de sessió"
+      ],
+      "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
+        "La configuració de PGP permet enviar correus electrònics xifrats de punta a extrem amb un usuari que no és ${ BRAND_NAME } i que utilitza un servei compatible amb PGP."
       ],
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "Algunes de les vostres respostes a ocurrències prèviament actualitzades per l'organitzador es perdran."
@@ -3086,6 +3092,9 @@
       "This event has been updated. The organizer will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete this event anyway?": [
         "Aquest esdeveniment s'ha actualitzat. No es notificarà a l'organitzador d'aquest esdeveniment que rebutgeu la invitació perquè no podeu enviar correus des de l'adreça electrònica convidada. Voleu suprimir aquest esdeveniment de totes maneres?"
       ],
+      "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
+        "Aquest enllaç dirigeix a una pàgina web que podria estar intentant recopilar dades personals com ara contrasenyes o informació de les teves targetes de crèdit."
+      ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Aquest enllaç podria ser un atac homògraf i no es pot obrir amb els navegadors Internet Explorer i Edge. Si esteu segurs de que aquest enllaç és legítim, feu servir un navegador diferent per obrir-lo."
       ],
@@ -3112,6 +3121,9 @@
       ],
       "Update recurring event": [
         "Actualitza l'esdeveniment recurrent"
+      ],
+      "Upgrade today to avoid losing the following ${ planName } benefits.": [
+        "Millora avui la teva subscripció per a no perdre les funcionalitats ${ planName }."
       ],
       "We'll notify you when the import is done.": [
         "Us notificarem quan la importació s'hagi realitzat."
@@ -3163,6 +3175,9 @@
       ],
       "You are about to open another browser tab and visit:": [
         "Esteu a punt d'obrir una pestanya del navegador nova i visitar:"
+      ],
+      "You are currently signed in as ${ user.Name } (${ user.Email }).": [
+        "Actualment has iniciat sessió com a ${ user.Name } (${ user.Email })."
       ],
       "You can also merge imported calendars with existing Proton calendars.": [
         "També podeu combinar els calendaris importats amb calendaris Proton existents."
