@@ -114,6 +114,7 @@ export interface MailImportMapping {
     Destinations: {
         FolderPath?: string;
         Labels?: Pick<Label, 'Name' | 'Color'>[];
+        Category?: string;
     };
     checked?: boolean;
 }

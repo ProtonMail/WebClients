@@ -111,6 +111,7 @@ const CustomizeMailImportModal = ({
                     Destinations: {
                         ...item.Destinations,
                         FolderPath: value,
+                        Category: item.Source,
                     },
                 };
             }
