@@ -48,6 +48,7 @@ export const APPS = {
     PROTONVPN_SETTINGS: 'proton-vpn-settings',
     PROTONADMIN: 'proton-admin',
     PROTONVERIFICATION: 'proton-verify',
+    PROTONEXTENSION: 'proton-extension',
 } as const;
 export const APPS_CONFIGURATION = {
     [APPS.PROTONACCOUNT]: {
@@ -104,6 +105,15 @@ export const APPS_CONFIGURATION = {
         icon: 'brand-proton-calendar',
         settingsSlug: 'calendar',
     },
+    [APPS.PROTONEXTENSION]: {
+        publicPath: '',
+        subdomain: 'extension',
+        name: 'Proton Extension',
+        bareName: 'Extension',
+        clientID: 'web-account',
+        icon: '',
+        settingsSlug: '',
+    },
     [APPS.PROTONVPN_SETTINGS]: {
         publicPath: '',
         subdomain: '',
@@ -132,6 +142,7 @@ export const APPS_CONFIGURATION = {
         settingsSlug: '',
     },
 } as const;
+
 export type APP_KEYS = keyof typeof APPS;
 export type APP_NAMES = typeof APPS[APP_KEYS];
 export type APP_CLIENT_IDS = typeof APPS_CONFIGURATION[keyof typeof APPS_CONFIGURATION]['clientID'] | 'android_tv-vpn';
@@ -876,8 +887,12 @@ export const OPENPGP =
         : WEBPACK_OPENPGP;
 
 export const FORKABLE_APPS = new Set(
-    [APPS.PROTONMAIL, APPS.PROTONCONTACTS, APPS.PROTONDRIVE, APPS.PROTONCALENDAR].filter(Boolean)
+    [APPS.PROTONMAIL, APPS.PROTONCONTACTS, APPS.PROTONDRIVE, APPS.PROTONCALENDAR, APPS.PROTONEXTENSION].filter(Boolean)
 );
+
+export const EXTENSIONS = {
+    [APPS.PROTONEXTENSION]: { ID: 'damclcigmmkebnbppkmjpnmambblleon' },
+} as const;
 
 export const AES256 = 'aes256';
 
