@@ -18,5 +18,25 @@ jest.mock('@proton/shared/lib/helpers/setupCryptoWorker', () => ({
     loadCryptoWorker: jest.fn(),
 }));
 
+/**
+ * Due to a JSDom issue `dialog` tag is not understood correctly
+ * Delete this test when the Jest will implement the fix
+ * - Issue: https://github.com/jsdom/jsdom/issues/3294
+ * - Fix pull request: https://github.com/jsdom/jsdom/pull/3403
+ */
+jest.mock('./components/dialog/Dialog.tsx', () => {
+    const { forwardRef } = jest.requireActual('react');
+    return {
+        __esModule: true,
+        default: forwardRef(({ children, ...rest }, ref) => {
+            return (
+                <div {...rest} ref={ref}>
+                    {children}
+                </div>
+            );
+        }),
+    };
+});
+
 // Silence JDOM warnings triggered by emoji-mart
 HTMLCanvasElement.prototype.getContext = jest.fn();
