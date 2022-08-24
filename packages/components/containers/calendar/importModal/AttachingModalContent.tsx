@@ -80,7 +80,7 @@ const AttachingModalContent = ({
                         onDragLeave={onDragLeave}
                         className="w100"
                     >
-                        <FileInput className="center" accept=".ics" id="import-calendar" onChange={onAttach}>
+                        <FileInput className="mxauto" accept=".ics" id="import-calendar" onChange={onAttach}>
                             {c('Action').t`Choose a file or drag it here`}
                         </FileInput>
                     </Dropzone>
