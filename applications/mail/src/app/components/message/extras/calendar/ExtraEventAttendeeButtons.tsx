@@ -256,7 +256,7 @@ const ExtraEventAttendeeButtons = ({ model, setModel, message, reloadWidget }: P
         };
 
         if (loadingRetry) {
-            return <Loader className="center flex mt1 mb1 " />;
+            return <Loader className="mxauto flex my1 " />;
         }
 
         return (
