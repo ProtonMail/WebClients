@@ -143,7 +143,7 @@ const AttachmentItem = ({
                         type="button"
                         onClick={handleAction(true)}
                     >
-                        <span className="mtauto mbauto flex flex-align-items-baseline flex-nowrap pr0-5">
+                        <span className="myauto flex flex-align-items-baseline flex-nowrap pr0-5">
                             <FileNameDisplay text={name} />
                             <span
                                 className="message-attachmentSize sr-only align-baseline inline-block flex-item-noshrink ml0-25"
