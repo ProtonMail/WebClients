@@ -4,6 +4,7 @@ import { Redirect, Route, Switch } from 'react-router-dom';
 import {
     CatchAllSection,
     DomainsSection,
+    MultiUserCreationSection,
     OrganizationPasswordSection,
     OrganizationSection,
     PrivateMainSettingsArea,
@@ -71,6 +72,7 @@ const OrganizationSettingsRouter = ({
                 <Route path={getSectionPath(path, users)}>
                     <PrivateMainSettingsArea config={users}>
                         <UsersAndAddressesSection />
+                        <MultiUserCreationSection />
                     </PrivateMainSettingsArea>
                 </Route>
             )}

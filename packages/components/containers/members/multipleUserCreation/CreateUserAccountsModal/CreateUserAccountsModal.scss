@@ -1,0 +1,13 @@
+@import '~@proton/styles/scss/config';
+
+.create-user-accounts-additional-content {
+	// 9px to match padding of a simple table cell
+	padding-inline-start: em(9);
+}
+
+.create-user-accounts-table {
+	& .display-name-header {
+		// 27px to match the width of the checkbox
+		margin-inline-start: em(27);
+	}
+}
