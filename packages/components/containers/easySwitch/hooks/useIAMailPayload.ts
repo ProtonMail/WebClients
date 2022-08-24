@@ -4,13 +4,14 @@ import { LABEL_TYPE } from '@proton/shared/lib/constants';
 import {
     ImportedMailFolder,
     MailImportDestinationFolder,
+    MailImportGmailCategories,
     MailImportMapping,
     MailImportPayloadError,
 } from '@proton/shared/lib/interfaces/EasySwitch';
 import { Folder } from '@proton/shared/lib/interfaces/Folder';
 import { Label } from '@proton/shared/lib/interfaces/Label';
 
-import { MAX_FOLDER_LIMIT } from '../constants';
+import { GMAIL_CATEGORIES, MAX_FOLDER_LIMIT } from '../constants';
 import {
     escapeSlashes,
     getFolderRelationshipsMap,
@@ -144,8 +145,8 @@ const useIAMailPayload = ({
     };
 
     const getDefaultMapping = () => {
-        return providerFolders.map((folder) => {
-            const Destinations = isLabelMapping
+        return providerFolders.map((folder): MailImportMapping => {
+            const Destinations: MailImportMapping['Destinations'] = isLabelMapping
                 ? {
                       FolderPath: folder.DestinationFolder,
                       Labels: !folder.DestinationFolder ? getDestinationLabels(folder) : [],
@@ -153,6 +154,10 @@ const useIAMailPayload = ({
                 : {
                       FolderPath: folder.DestinationFolder || getDestinationFolderPath(folder),
                   };
+
+            if (GMAIL_CATEGORIES.includes(folder.Source as MailImportGmailCategories)) {
+                Destinations.Category = folder.Source;
+            }
 
             return {
                 Source: folder.Source,

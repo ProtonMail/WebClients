@@ -35,7 +35,7 @@ import {
 } from '../../../../components';
 import { useModals } from '../../../../hooks';
 import EditLabelModal, { LabelModel } from '../../../labels/modals/EditLabelModal';
-import { getTimeUnitLabels } from '../../constants';
+import { GMAIL_CATEGORIES, getTimeUnitLabels } from '../../constants';
 import useIAMailPayload from '../../hooks/useIAMailPayload';
 import ImportManageFolders from './ImportManageFolders';
 
@@ -56,7 +56,31 @@ interface Props {
 const { FOLDER_NAMES_TOO_LONG, LABEL_NAMES_TOO_LONG, UNAVAILABLE_NAMES, MAX_FOLDERS_LIMIT_REACHED, RESERVED_NAMES } =
     MailImportPayloadError;
 
-const GMAIL_CATEGORIES = Object.values(MailImportGmailCategories);
+const getFirstCategoryDestination = (payload: MailImporterPayload): MailImportDestinationFolder | undefined =>
+    payload.Mapping.find((item) => {
+        return GMAIL_CATEGORIES.includes(item.Source as MailImportGmailCategories);
+    })?.Destinations?.FolderPath as MailImportDestinationFolder | undefined;
+
+const updateCategoriesDest = (
+    payload: MailImporterPayload,
+    value: MailImportDestinationFolder
+): MailImporterPayload => ({
+    ...payload,
+    Mapping: payload.Mapping.map((item) => {
+        if (GMAIL_CATEGORIES.includes(item.Source as MailImportGmailCategories)) {
+            return {
+                ...item,
+                Destinations: {
+                    ...item.Destinations,
+                    FolderPath: value,
+                    Category: item.Source,
+                },
+            };
+        }
+
+        return item;
+    }),
+});
 
 const CustomizeMailImportModal = ({
     payload,
@@ -86,39 +110,9 @@ const CustomizeMailImportModal = ({
         { value: MailImportDestinationFolder.INBOX, title: c('Label').t`Move to Inbox` },
         { value: MailImportDestinationFolder.ARCHIVE, title: c('Label').t`Move to Archive` },
     ];
-    const [selectedCategoriesDest, setSelectedCategoriesDest] = useState<MailImportDestinationFolder>(() => {
-        const defaultValue = payload.Mapping.reduce((acc, item) => {
-            // @ts-expect-error item.Source is a string
-            if (GMAIL_CATEGORIES.includes(item.Source) && item.Destinations.FolderPath) {
-                acc = item.Destinations.FolderPath as MailImportDestinationFolder;
-            }
-            return acc;
-        }, MailImportDestinationFolder.INBOX);
-
-        return defaultValue;
-    });
-
-    const updateCategoriesDest = (
-        payload: MailImporterPayload,
-        value: MailImportDestinationFolder
-    ): MailImporterPayload => ({
-        ...payload,
-        Mapping: payload.Mapping.map((item) => {
-            // @ts-expect-error item.Source is a string
-            if (GMAIL_CATEGORIES.includes(item.Source)) {
-                return {
-                    ...item,
-                    Destinations: {
-                        ...item.Destinations,
-                        FolderPath: value,
-                        Category: item.Source,
-                    },
-                };
-            }
-
-            return item;
-        }),
-    });
+    const [selectedCategoriesDest, setSelectedCategoriesDest] = useState<MailImportDestinationFolder>(
+        () => getFirstCategoryDestination(payload) || MailImportDestinationFolder.INBOX
+    );
 
     const [editLabelProps, setEditLabelModalOpen] = useModalState();
 
@@ -223,8 +217,10 @@ const CustomizeMailImportModal = ({
         });
     };
 
-    const totalFoldersCount = providerFolders.length;
-    const selectedFoldersCount = customizedPayload.Mapping.filter((m) => m.checked).length;
+    const totalFoldersCount = providerFolders.filter((item) => !item.DestinationCategory).length;
+    const selectedFoldersCount = customizedPayload.Mapping.filter((item) => !item.Destinations.Category).filter(
+        (m) => m.checked
+    ).length;
 
     const handleSubmit = () => {
         updateModel(selectedPeriod, customizedPayload);
