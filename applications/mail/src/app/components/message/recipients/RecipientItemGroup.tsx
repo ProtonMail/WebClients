@@ -116,21 +116,21 @@ const RecipientItemGroup = ({ group, mapStatusIcons, globalIcon, showDropdown, i
                             onClick={handleCompose}
                         >
                             <Icon name="envelope" className="mr0-5" />
-                            <span className="flex-item-fluid mtauto mbauto">{c('Action').t`New message`}</span>
+                            <span className="flex-item-fluid myauto">{c('Action').t`New message`}</span>
                         </DropdownMenuButton>
                         <DropdownMenuButton
                             className="text-left flex flex-nowrap flex-align-items-center"
                             onClick={handleCopy}
                         >
                             <Icon name="squares" className="mr0-5" />
-                            <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Copy addresses`}</span>
+                            <span className="flex-item-fluid myauto">{c('Action').t`Copy addresses`}</span>
                         </DropdownMenuButton>
                         <DropdownMenuButton
                             className="text-left flex flex-nowrap flex-align-items-center"
                             onClick={handleRecipients}
                         >
                             <Icon name="user" className="mr0-5" />
-                            <span className="flex-item-fluid mtauto mbauto">{c('Action').t`View recipients`}</span>
+                            <span className="flex-item-fluid myauto">{c('Action').t`View recipients`}</span>
                         </DropdownMenuButton>
                     </DropdownMenu>
                 </Dropdown>
