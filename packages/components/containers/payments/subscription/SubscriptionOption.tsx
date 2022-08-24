@@ -14,7 +14,7 @@ interface SubscriptionOptionProps {
 }
 
 const SubscriptionOption = ({ name, title, price, description, features = [], onSelect }: SubscriptionOptionProps) => (
-    <div className="flex-autogrid-item" data-plan-name={name}>
+    <div className="flex-item-fluid" data-plan-name={name}>
         <div className="border-container p2">
             <h3 className="h1 text-bold text-ellipsis">{title}</h3>
 
