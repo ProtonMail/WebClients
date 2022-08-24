@@ -8,7 +8,6 @@ import updateItem from '@proton/utils/updateItem';
 
 import { Button, ButtonLike, Icon, IconName, Tooltip } from '../../../components';
 import { generateUID } from '../../../helpers';
-import { useActiveBreakpoint } from '../../../hooks';
 import NotificationInput from './inputs/NotificationInput';
 
 export const NOTIFICATION_ID = 'notifications';
@@ -40,7 +39,6 @@ const Notifications = ({
     onChange,
     hasDeleteColor = true,
 }: Props) => {
-    const { isNarrow } = useActiveBreakpoint();
     const addNotificationText = c('Action').t`Add notification`;
 
     const noNotificationsButtonClassName = fullWidth ? 'mt0-5 on-mobile-mt1' : 'on-tablet-mt1';
@@ -60,7 +58,6 @@ const Notifications = ({
                             notification={notification}
                             disabled={disabled}
                             onChange={(newNotification) => onChange(updateItem(notifications, index, newNotification))}
-                            isNarrow={isNarrow}
                         />
                         <Tooltip title={c('Action').t`Remove this notification`}>
                             <ButtonLike
