@@ -109,7 +109,7 @@ const AddressesGroupItem = ({
                     </span>
                     <Tooltip title={c('Info').t`Click to view group details`}>
                         <span
-                            className="composer-addresses-item-label mtauto mbauto pl0-25 text-ellipsis pr0-5"
+                            className="composer-addresses-item-label myauto pl0-25 text-ellipsis pr0-5"
                             onClick={() => showModalCallback(true)}
                             onContextMenu={handleContextMenu}
                         >
@@ -150,14 +150,14 @@ const AddressesGroupItem = ({
                         onClick={handleCopy}
                     >
                         <Icon name="squares" className="mr0-5" />
-                        <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Copy addresses`}</span>
+                        <span className="flex-item-fluid myauto">{c('Action').t`Copy addresses`}</span>
                     </DropdownMenuButton>
                     <DropdownMenuButton
                         className="text-left flex flex-nowrap flex-align-items-center"
                         onClick={() => showModalCallback(true)}
                     >
                         <Icon name="user" className="mr0-5" />
-                        <span className="flex-item-fluid mtauto mbauto">{c('Action').t`View recipients`}</span>
+                        <span className="flex-item-fluid myauto">{c('Action').t`View recipients`}</span>
                     </DropdownMenuButton>
                     <DropdownMenuButton
                         className="text-left flex flex-nowrap flex-align-items-center"
@@ -165,7 +165,7 @@ const AddressesGroupItem = ({
                         onClick={handleRemove}
                     >
                         <Icon name="cross-circle" className="mr0-5" />
-                        <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Remove`}</span>
+                        <span className="flex-item-fluid myauto">{c('Action').t`Remove`}</span>
                     </DropdownMenuButton>
                 </DropdownMenu>
             </ContextMenu>

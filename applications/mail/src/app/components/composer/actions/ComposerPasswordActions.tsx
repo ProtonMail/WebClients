@@ -66,7 +66,7 @@ const ComposerPasswordActions = ({ isPassword, onChange, onPassword }: Props) =>
                     data-testid="composer:edit-outside-encryption"
                 >
                     <Icon name="lock" />
-                    <span className="ml0-5 mtauto mbauto flex-item-fluid">{c('Action').t`Edit encryption`}</span>
+                    <span className="ml0-5 myauto flex-item-fluid">{c('Action').t`Edit encryption`}</span>
                 </DropdownMenuButton>
                 <DropdownMenuButton
                     className="text-left flex flex-nowrap flex-align-items-center color-danger"
@@ -74,7 +74,7 @@ const ComposerPasswordActions = ({ isPassword, onChange, onPassword }: Props) =>
                     data-testid="composer:remove-outside-encryption"
                 >
                     <Icon name="trash" />
-                    <span className="ml0-5 mtauto mbauto flex-item-fluid">{c('Action').t`Remove encryption`}</span>
+                    <span className="ml0-5 myauto flex-item-fluid">{c('Action').t`Remove encryption`}</span>
                 </DropdownMenuButton>
             </ComposerMoreOptionsDropdown>
         );
