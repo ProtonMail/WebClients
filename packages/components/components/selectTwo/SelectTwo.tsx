@@ -83,10 +83,10 @@ const SelectTwo = <V extends any>({
      */
     const [allOptionChildrenAreStrings, allOptionsHaveTitles] = useMemo(
         () => [
-            children.every((child) => typeof child.props.children === 'string'),
-            children.every((child) => Boolean(child.props.title)),
+            optionChildren.every((child) => typeof child.props.children === 'string'),
+            optionChildren.every((child) => Boolean(child.props.title)),
         ],
-        [children]
+        [optionChildren]
     );
 
     const isNaturallySearchable = allOptionChildrenAreStrings || allOptionsHaveTitles;
@@ -96,8 +96,8 @@ const SelectTwo = <V extends any>({
     const searchableItems = useMemo(() => {
         if (isNaturallySearchable) {
             return allOptionChildrenAreStrings
-                ? (children.map((child) => child.props.children) as string[])
-                : children.map((child) => child.props.title);
+                ? (optionChildren.map((child) => child.props.children) as string[])
+                : optionChildren.map((child) => child.props.title);
         }
 
         if (getSearchableValue) {
