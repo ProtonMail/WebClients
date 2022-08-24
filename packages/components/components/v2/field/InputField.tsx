@@ -11,7 +11,7 @@ import Icon from '../../icon/Icon';
 import { Tooltip } from '../../tooltip';
 import Input from '../input/Input';
 
-type NodeOrBoolean = ReactNode | boolean;
+export type NodeOrBoolean = ReactNode | boolean;
 
 // TODO: Add required child props to the as component
 /*
