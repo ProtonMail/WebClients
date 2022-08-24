@@ -54,8 +54,7 @@ const useSelect = <V,>({
 
     const selectedIndexes = useMemo<number[]>(
         () =>
-            [value]
-                .flat()
+            (isMulti ? value : [value])
                 .filter((val) => val !== undefined)
                 .map((val) => options.findIndex((option) => option === val))
                 .filter((idx) => idx !== -1),
