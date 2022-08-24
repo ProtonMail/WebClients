@@ -79,6 +79,7 @@ export enum FeatureCode {
     ApplyFilters = 'ApplyFilters',
     NumberOfPreloadedConversations = 'NumberOfPreloadedConversations',
     SLIntegration = 'SLIntegration',
+    SpotlightAutoAddedInvites = 'SpotlightAutoAddedInvites',
 }
 
 export interface FeaturesContextValue {
