@@ -213,7 +213,7 @@ const BlackFridayModal = ({ offer, onSelect, ...rest }: Props) => {
         >
             {loading ? (
                 <div className="text-center">
-                    <CircleLoader size="large" className="center flex mb2" />
+                    <CircleLoader size="large" className="mxauto flex mb2" />
                 </div>
             ) : (
                 <>
