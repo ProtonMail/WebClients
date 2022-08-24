@@ -2,9 +2,10 @@ import { ReactNode, createContext, useMemo, useState } from 'react';
 
 import useControlled from '@proton/hooks/useControlled';
 
-import { SelectChangeEvent } from './select';
+import { SelectChangeEvent, isValidMultiMode } from './select';
 
 interface UseSelectOptions<V> {
+    multiple: boolean;
     value?: V;
     options: V[];
     isOpen?: boolean;
@@ -17,7 +18,8 @@ interface UseSelectOptions<V> {
 interface UseSelectOutput<V> {
     isOpen: boolean;
     focusedIndex: number | null;
-    selectedIndex: number | null;
+    selectedIndexes: number[];
+    autoclose: boolean;
     open: () => void;
     close: () => void;
     setFocusedIndex: (index: number) => void;
@@ -27,7 +29,8 @@ interface UseSelectOutput<V> {
 }
 
 const useSelect = <V,>({
-    value,
+    multiple,
+    value: maybeValue,
     options,
     isOpen: controlledOpen,
     onOpen,
@@ -35,20 +38,33 @@ const useSelect = <V,>({
     onChange,
     onValue,
 }: UseSelectOptions<V>): UseSelectOutput<V> => {
-    const [isOpen, setIsOpen] = useControlled(controlledOpen, false);
+    const value = multiple && maybeValue === undefined ? [] : maybeValue;
+    const isMulti = isValidMultiMode<V>(value, multiple);
+
+    const [isOpen = false, setIsOpen] = useControlled(controlledOpen, false);
 
     const [focusedIndex, setFocusedIndex] = useState<UseSelectOutput<V>['focusedIndex']>(null);
 
-    const selectedIndex = useMemo(() => {
-        const index = options.findIndex((option) => option === value);
+    /**
+     * multi mode specifics :
+     * - we want to disable dropdown autoclose on click to allowing selecting multiple options
+     * - if we only have a single option in multi mode, auto closing should be re-enabled
+     */
+    const autoclose = !multiple || options.length <= 1;
 
-        return index !== -1 ? index : null;
-    }, [options, value]);
+    const selectedIndexes = useMemo<number[]>(
+        () =>
+            (isMulti ? value : [value])
+                .filter((val) => val !== undefined)
+                .map((val) => options.findIndex((option) => option === val))
+                .filter((idx) => idx !== -1),
+        [options, value]
+    );
 
     const open = () => {
         setIsOpen(true);
         onOpen?.();
-        setFocusedIndex(selectedIndex || 0);
+        setFocusedIndex(selectedIndexes?.[0] || 0);
     };
 
     const close = () => {
@@ -69,20 +85,34 @@ const useSelect = <V,>({
     };
 
     const handleChange: UseSelectOutput<V>['handleChange'] = (e) => {
+        const nextValue: V = (() => {
+            if (isMulti) {
+                const isSelected = value.some((selectedValue) => e.value === selectedValue);
+
+                return (isSelected
+                    ? value.filter((selectedValue) => selectedValue !== e.value)
+                    : [...value, e.value]) as any as V;
+            }
+
+            return e.value;
+        })();
+
+        e.value = nextValue;
         onChange?.(e);
-        onValue?.(e.value);
+        onValue?.(nextValue);
     };
 
     return {
         open,
         close,
-        isOpen: isOpen || false,
+        isOpen,
+        autoclose,
         focusedIndex,
         setFocusedIndex,
         focusPreviousIndex,
         focusNextIndex,
         handleChange,
-        selectedIndex,
+        selectedIndexes,
     };
 };
 

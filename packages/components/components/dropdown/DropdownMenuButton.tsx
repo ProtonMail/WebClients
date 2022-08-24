@@ -53,4 +53,6 @@ const DropdownMenuButton = forwardRef<HTMLButtonElement, Props>(
     }
 );
 
+DropdownMenuButton.displayName = 'DropdownMenuButton';
+
 export default DropdownMenuButton;
