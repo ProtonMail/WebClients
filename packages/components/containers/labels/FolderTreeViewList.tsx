@@ -163,7 +163,7 @@ const FolderTreeViewList = ({ items = [] }: Props) => {
                                         <ToggleNotify label={item} />
                                     </div>
                                     <div className="treeview-actions w10e flex flex-column flex-align-items-end">
-                                        <div className="mtauto mbauto">
+                                        <div className="myauto">
                                             <ActionsLabel label={item} />
                                         </div>
                                     </div>
