@@ -1,4 +1,4 @@
-import { ComponentPropsWithoutRef, ReactElement } from 'react';
+import { ComponentPropsWithoutRef, ReactElement, ReactNode } from 'react';
 
 import { Props as OptionProps } from '../option/Option';
 
@@ -10,6 +10,10 @@ export type SelectChangeEvent<V> = {
 export interface SelectProps<V>
     extends Omit<ComponentPropsWithoutRef<'button'>, 'value' | 'onClick' | 'onChange' | 'onKeyDown' | 'aria-label'> {
     value?: V;
+    /**
+     * Enable multiple mode, allowing selection of multiple values.
+     * In this mode, the value prop the value prop must be an array.
+     */
     multiple?: boolean;
     /**
      * Optionally allows controlling the Select's open state
@@ -25,7 +29,11 @@ export interface SelectProps<V>
     onValue?: (value: V) => void;
     onClose?: () => void;
     onOpen?: () => void;
-    renderSelected?: (selected?: V) => ReactElement;
+    /**
+     * Render function to render the displayed value inside the select's
+     * anchor. If null is returned, will fall back to the internal implementation.
+     */
+    renderSelected?: (selected?: V) => ReactNode;
 }
 
 export function isValidMultiMode<V>(value: any, multiple: boolean): value is V & any[] {
