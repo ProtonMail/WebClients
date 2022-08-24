@@ -64,7 +64,7 @@
 }
 
 // .max-w500p { max-inline-size: 500px; }
-@each $max-width in (100, 650) {
+@each $max-width in (100, 270, 650) {
 	.max-w#{$max-width}p {
 		max-inline-size: #{$max-width}px;
 	}
@@ -102,7 +102,7 @@
 }
 
 // .min-h50e { min-block-size: 50em; }
-@each $min-height in (5, 16) {
+@each $min-height in (5, 10, 16) {
 	.min-h#{$min-height}e {
 		min-block-size: #{$min-height}em;
 	}
