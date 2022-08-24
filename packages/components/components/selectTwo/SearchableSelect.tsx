@@ -55,6 +55,7 @@ const SearchableSelect = <V extends any>({
     const optionValues = optionChildren.map((option) => option.props.value);
 
     const select = useSelect({
+        isOpen: controlledOpen,
         multiple,
         value,
         options: optionValues,
