@@ -1,7 +1,7 @@
 import { classnames } from '../../helpers';
 
 interface Props {
-    value?: number;
+    value: number;
     max?: number;
     id?: string;
     className?: string;
