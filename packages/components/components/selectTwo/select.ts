@@ -1,6 +1,7 @@
 import { ComponentPropsWithoutRef, ReactElement, ReactNode } from 'react';
 
 import { Props as OptionProps } from '../option/Option';
+import { NodeOrBoolean } from '../v2/field/InputField';
 
 export type SelectChangeEvent<V> = {
     value: V;
@@ -25,6 +26,7 @@ export interface SelectProps<V>
      */
     children: ReactElement<OptionProps<V>>[];
     loading?: boolean;
+    error?: NodeOrBoolean;
     onChange?: (e: SelectChangeEvent<V>) => void;
     onValue?: (value: V) => void;
     onClose?: () => void;
