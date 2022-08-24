@@ -58,7 +58,7 @@ export default function SortDropdown<T extends string>({
                 size="small"
                 icon
             >
-                <DropdownCaret isOpen={isOpen} className="expand-caret toolbar-icon mtauto mbauto" size={16} />
+                <DropdownCaret isOpen={isOpen} className="expand-caret toolbar-icon myauto" size={16} />
             </Button>
             <Dropdown
                 id={uid}
