@@ -2,6 +2,7 @@ import { IMAGE_PROXY_FLAGS } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import generateUID from '@proton/shared/lib/helpers/generateUID';
 import { MailSettings } from '@proton/shared/lib/interfaces';
+import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 import { isDraft } from '@proton/shared/lib/mail/messages';
 
 import { WHITE_LISTED_ADDRESSES } from '../../constants';
@@ -62,7 +63,8 @@ export const transformRemote = (
     const showRemoteImages =
         message.messageImages?.showRemoteImages ||
         hasShowRemote(mailSettings) ||
-        WHITE_LISTED_ADDRESSES.includes(message.data?.Sender?.Address || '');
+        (WHITE_LISTED_ADDRESSES.includes(message.data?.Sender?.Address || '') &&
+            !hasBit(message.data?.Flags, MESSAGE_FLAGS.FLAG_DMARC_FAIL));
 
     const draft = isDraft(message.data);
 
