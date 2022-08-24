@@ -209,15 +209,11 @@ const SwitchAccountContainer = ({
                                 </div>
                             </div>
                             {isLoading ? (
-                                <div className="account-button-icon flex text-lg mtauto mbauto">
+                                <div className="account-button-icon flex text-lg myauto">
                                     <CircleLoader />
                                 </div>
                             ) : (
-                                <Icon
-                                    className="account-button-icon  mtauto mbauto"
-                                    name="arrow-right"
-                                    aria-hidden="true"
-                                />
+                                <Icon className="account-button-icon myauto" name="arrow-right" aria-hidden="true" />
                             )}
                         </div>
                         {index !== localActiveSessions.length - 1 && <hr className="my0-5" />}
