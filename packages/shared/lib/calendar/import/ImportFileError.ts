@@ -1,4 +1,4 @@
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
 import truncate from '@proton/utils/truncate';
 
@@ -36,8 +36,11 @@ const getErrorMessage = (errorType: IMPORT_ERROR_TYPE, filename = '') => {
         return c('Error importing calendar').t`Your file ${formattedFilename} has no events to be imported.`;
     }
     if (errorType === IMPORT_ERROR_TYPE.TOO_MANY_EVENTS) {
-        return c('Error importing calendar')
-            .t`Your file ${formattedFilename} contains more than ${MAX_IMPORT_EVENTS_STRING} events.`;
+        return c('Error importing calendar').ngettext(
+            msgid`Your file ${formattedFilename} contains more than ${MAX_IMPORT_EVENTS_STRING} event.`,
+            `Your file ${formattedFilename} contains more than ${MAX_IMPORT_EVENTS_STRING} events.`,
+            MAX_IMPORT_EVENTS_STRING
+        );
     }
     if (errorType === IMPORT_ERROR_TYPE.FILE_CORRUPTED) {
         return c('Error importing calendar')
