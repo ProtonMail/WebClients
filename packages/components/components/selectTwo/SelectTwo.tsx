@@ -62,6 +62,7 @@ const SelectTwo = <V extends any>({
     const optionValues = optionChildren.map((child) => child.props.value);
 
     const select = useSelect({
+        isOpen: controlledOpen,
         multiple,
         value,
         options: optionValues,
