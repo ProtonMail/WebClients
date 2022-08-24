@@ -12,10 +12,14 @@ const ActivityCell = ({ referral }: Props) => {
     switch (referral.State) {
         case ReferralState.INVITED:
             message = referral.Email
-                ? // translator : We are in a table cell. A user referee has been invited via mail
-                  c('Info').t`Invited via email`
-                : // translator : We are in a table cell. A user referee has signed up via his referral link
-                  c('Info').t`Signed up via your link`;
+                ? // translator : We're in a table cell displaying an activity status.
+                  // Value can be `Invited via email` or `Signed up via your link` or `Signed up`
+                  // Here the user referee has been invited via mail
+                  c('User referee invited via email').t`Invited via email`
+                : // translator : We're in a table cell displaying an activity status.
+                  // Value can be `Invited via email` or `Signed up via your link` or `Signed up`
+                  // Here the user referee signed up using his referral link
+                  c('User referee signed up using referral link').t`Signed up via your link`;
             break;
         case ReferralState.SIGNED_UP:
         case ReferralState.TRIAL:
