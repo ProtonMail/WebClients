@@ -64,7 +64,7 @@ const TVContainer = () => {
                             loading={loading}
                             type="submit"
                             pill
-                            className="text-uppercase text-bold mt2 mb1-5 center"
+                            className="text-uppercase text-bold mt2 mb1-5 mxauto"
                         >
                             <span className="p0-5 inline-flex">
                                 {error ? c('Action').t`Verify code again` : c('Action').t`Verify code`}
