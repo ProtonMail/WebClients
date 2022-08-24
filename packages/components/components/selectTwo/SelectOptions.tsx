@@ -13,7 +13,7 @@ import { SelectChangeEvent } from './select';
 import { SelectContext } from './useSelect';
 
 interface SelectOptionsProps<V> extends Omit<ComponentPropsWithoutRef<'ul'>, 'onChange'> {
-    selected: number | null;
+    selected: number | number[] | null;
     children: ReactElement<OptionProps<V>>[];
     disableFocusOnActive?: boolean;
     onChange: (e: SelectChangeEvent<V>) => void;
@@ -69,11 +69,10 @@ const SelectOptions = <V,>({
 
     const items = Children.map(children, (child, index) => {
         const localIndex = optionIndices.indexOf(index);
-
         if (optionIndices.includes(index)) {
             return cloneElement(child, {
-                disableFocusOnActive,
-                selected: selected === localIndex,
+                disableFocusOnActive: disableFocusOnActive,
+                selected: Array.isArray(selected) ? selected.includes(localIndex) : selected === localIndex,
                 active: focusedIndex === localIndex,
                 onChange: handleChildChange(localIndex),
             });
