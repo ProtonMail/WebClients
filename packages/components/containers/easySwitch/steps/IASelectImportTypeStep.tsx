@@ -18,6 +18,7 @@ import {
     ImportType,
     IsCustomCalendarMapping,
     LaunchImportPayload,
+    MailImportGmailCategories,
     MailImportPayloadError,
     MailImporterPayload,
     TIME_PERIOD,
@@ -30,7 +31,7 @@ import { Checkbox, Label as FormLabel, Icon, LabelStack, UnderlineButton } from 
 import { classnames } from '../../../helpers';
 import { useModals } from '../../../hooks';
 import CustomizeCalendarImportModal from '../calendar/modals/CustomizeCalendarImportModal';
-import { CALENDAR_TO_BE_CREATED_PREFIX } from '../constants';
+import { CALENDAR_TO_BE_CREATED_PREFIX, GMAIL_CATEGORIES } from '../constants';
 import useIAMailPayload from '../hooks/useIAMailPayload';
 import CustomizeMailImportModal from '../mail/modals/CustomizeMailImportModal';
 
@@ -230,8 +231,12 @@ const IASelectImportTypeStep = ({
             }
         };
 
-        const totalLabelsCount = providerFolders.length;
-        const selectedLabelsCount = Mapping.filter((item) => item.checked).length;
+        const totalLabelsCount = providerFolders.filter(
+            (item) => !GMAIL_CATEGORIES.includes(item.Source as MailImportGmailCategories)
+        ).length;
+        const selectedLabelsCount = Mapping.filter(
+            (item) => item.checked && !GMAIL_CATEGORIES.includes(item.Source as MailImportGmailCategories)
+        ).length;
 
         const periodFragment = getPeriodFragment();
 
