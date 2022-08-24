@@ -107,7 +107,7 @@ const ItemColumnLayout = ({
         >
             <div className="flex flex-align-items-center item-firstline">
                 <div className="item-senders flex-item-fluid flex flex-nowrap pr1">
-                    <ItemAction element={element} className="mr0-5 flex-item-noshrink mtauto mbauto" />
+                    <ItemAction element={element} className="mr0-5 flex-item-noshrink myauto" />
                     <span
                         className="inline-block max-w100 text-ellipsis"
                         title={addresses}
