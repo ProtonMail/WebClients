@@ -55,7 +55,7 @@ export function GridViewItem({ item }: { item: DriveItem | TrashItem | SharedLin
                     signatureIssues={item.signatureIssues}
                     className="file-browser-grid-view--signature-icon"
                 />
-                <FileNameDisplay text={item.name} className="center" />
+                <FileNameDisplay text={item.name} className="mxauto" />
                 <Button
                     shape="ghost"
                     size="small"
