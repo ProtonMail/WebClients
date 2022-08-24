@@ -7,9 +7,7 @@ import {
 } from '@proton/shared/lib/calendar/constants';
 import { NotificationModel } from '@proton/shared/lib/interfaces/calendar/Notification';
 
-import { FeatureCode } from '../../..';
-import { useSpotlightOnFeature } from '../../../..';
-import { IntegerInput, Option, SelectTwo, Spotlight, TimeInput, useSpotlightShow } from '../../../../components';
+import { IntegerInput, Option, SelectTwo, TimeInput } from '../../../../components';
 import { classnames } from '../../../../helpers';
 import {
     getDaysBefore,
@@ -32,7 +30,6 @@ interface Props {
     disabled?: boolean;
     onChange: (model: NotificationModel) => void;
     error?: string;
-    isNarrow: boolean;
 }
 
 const getWhenOptions = (isAllDay: boolean, value = 0) => {
@@ -53,7 +50,6 @@ const NotificationInput = ({
     disabled = false,
     onChange,
     error,
-    isNarrow,
 }: Props) => {
     const safeValue = value === undefined ? 1 : value;
 
@@ -68,13 +64,6 @@ const NotificationInput = ({
 
     const errorProps = typeof error === 'string' ? { 'aria-invalid': true } : {};
 
-    const {
-        show,
-        onDisplayed,
-        onClose: onCloseSpotlight,
-    } = useSpotlightOnFeature(FeatureCode.SpotlightEmailNotifications, !isNarrow);
-    const shouldShowSpotlight = useSpotlightShow(show);
-
     return (
         <div
             className={classnames([
@@ -84,49 +73,32 @@ const NotificationInput = ({
             ])}
         >
             {hasType && (
-                <Spotlight
-                    show={shouldShowSpotlight}
-                    onDisplayed={onDisplayed}
-                    type="new"
-                    content={
-                        <>
-                            <div className="text-lg text-bold mb0-25">{c('Spotlight')
-                                .t`No more missed appointments`}</div>
-                            <p className="m0">
-                                {c('Spotlight')
-                                    .t`With email notifications, you decide which events to be notified about and when.`}
-                            </p>
-                        </>
-                    }
+                <span
+                    className={classnames([
+                        'flex flex-nowrap mr0-5',
+                        fullWidth ? 'on-mobile-mt0-5 on-mobile-mb0-5' : 'on-tablet-mt0-5 on-tablet-mb0-5',
+                        isAllDay && at
+                            ? 'on-tiny-mobile-ml0'
+                            : classnames(['w10e', fullWidth ? 'on-mobile-ml0' : 'on-tablet-ml0']),
+                    ])}
                 >
-                    <span
-                        className={classnames([
-                            'flex flex-nowrap mr0-5',
-                            fullWidth ? 'on-mobile-mt0-5 on-mobile-mb0-5' : 'on-tablet-mt0-5 on-tablet-mb0-5',
-                            isAllDay && at
-                                ? 'on-tiny-mobile-ml0'
-                                : classnames(['w10e', fullWidth ? 'on-mobile-ml0' : 'on-tablet-ml0']),
-                        ])}
+                    <SelectTwo
+                        id={id}
+                        value={type}
+                        disabled={disabled}
+                        onChange={({ value }) => onChange({ ...notification, type: +value })}
+                        title={c('Title').t`Select the way to send this notification`}
+                        {...errorProps}
                     >
-                        <SelectTwo
-                            id={id}
-                            value={type}
-                            disabled={disabled}
-                            onChange={({ value }) => onChange({ ...notification, type: +value })}
-                            title={c('Title').t`Select the way to send this notification`}
-                            onOpen={onCloseSpotlight}
-                            {...errorProps}
-                        >
-                            {[
-                                { text: c('Notification type').t`notification`, value: DEVICE },
-                                { text: c('Notification type').t`email`, value: EMAIL },
-                                // { text: c('Notification type').t`both notification and email`, value: BOTH },
-                            ].map(({ value, text }) => (
-                                <Option key={value} value={value} title={text} />
-                            ))}
-                        </SelectTwo>
-                    </span>
-                </Spotlight>
+                        {[
+                            { text: c('Notification type').t`notification`, value: DEVICE },
+                            { text: c('Notification type').t`email`, value: EMAIL },
+                            // { text: c('Notification type').t`both notification and email`, value: BOTH },
+                        ].map(({ value, text }) => (
+                            <Option key={value} value={value} title={text} />
+                        ))}
+                    </SelectTwo>
+                </span>
             )}
             <span className="flex flex-nowrap flex-item-fluid">
                 {hasValueInput && (
