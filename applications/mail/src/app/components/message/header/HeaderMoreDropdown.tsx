@@ -274,7 +274,7 @@ const HeaderMoreDropdown = ({
                                     onClick={handleStar}
                                 >
                                     <Icon name={isStarred ? 'star-slash' : 'star'} className="mr0-5" />
-                                    <span className="flex-item-fluid mtauto mbauto">{staringText}</span>
+                                    <span className="flex-item-fluid myauto">{staringText}</span>
                                 </DropdownMenuButton>
 
                                 <hr className="my0-5" />
@@ -284,7 +284,7 @@ const HeaderMoreDropdown = ({
                                     onClick={handleMove(ARCHIVE, fromFolderID)}
                                 >
                                     <Icon name="archive-box" className="mr0-5" />
-                                    <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Archive`}</span>
+                                    <span className="flex-item-fluid myauto">{c('Action').t`Archive`}</span>
                                 </DropdownMenuButton>
                                 {isNarrow && (
                                     <DropdownMenuButton
@@ -292,8 +292,7 @@ const HeaderMoreDropdown = ({
                                         onClick={() => onOpenAdditionnal(0)}
                                     >
                                         <Icon name="filter" className="mr0-5" />
-                                        <span className="flex-item-fluid mtauto mbauto">{c('Action')
-                                            .t`Filter on...`}</span>
+                                        <span className="flex-item-fluid myauto">{c('Action').t`Filter on...`}</span>
                                     </DropdownMenuButton>
                                 )}
                                 {isNarrow && (
@@ -302,8 +301,7 @@ const HeaderMoreDropdown = ({
                                         onClick={() => onOpenAdditionnal(1)}
                                     >
                                         <Icon name="folder" className="mr0-5" />
-                                        <span className="flex-item-fluid mtauto mbauto">{c('Action')
-                                            .t`Move to...`}</span>
+                                        <span className="flex-item-fluid myauto">{c('Action').t`Move to...`}</span>
                                     </DropdownMenuButton>
                                 )}
                                 {isNarrow && (
@@ -312,8 +310,7 @@ const HeaderMoreDropdown = ({
                                         onClick={() => onOpenAdditionnal(2)}
                                     >
                                         <Icon name="tag" className="mr0-5" />
-                                        <span className="flex-item-fluid mtauto mbauto">{c('Action')
-                                            .t`Label as...`}</span>
+                                        <span className="flex-item-fluid myauto">{c('Action').t`Label as...`}</span>
                                     </DropdownMenuButton>
                                 )}
                                 {isSpam ? (
@@ -322,8 +319,7 @@ const HeaderMoreDropdown = ({
                                         onClick={handleUnread}
                                     >
                                         <Icon name="eye-slash" className="mr0-5" />
-                                        <span className="flex-item-fluid mtauto mbauto">{c('Action')
-                                            .t`Mark as unread`}</span>
+                                        <span className="flex-item-fluid myauto">{c('Action').t`Mark as unread`}</span>
                                     </DropdownMenuButton>
                                 ) : (
                                     <DropdownMenuButton
@@ -331,8 +327,7 @@ const HeaderMoreDropdown = ({
                                         onClick={handleMove(SPAM, fromFolderID)}
                                     >
                                         <Icon name="fire" className="mr0-5" />
-                                        <span className="flex-item-fluid mtauto mbauto">{c('Action')
-                                            .t`Move to spam`}</span>
+                                        <span className="flex-item-fluid myauto">{c('Action').t`Move to spam`}</span>
                                     </DropdownMenuButton>
                                 )}
                                 {isInTrash ? (
@@ -341,7 +336,7 @@ const HeaderMoreDropdown = ({
                                         onClick={() => setMessagePermanentDeleteModalOpen(true)}
                                     >
                                         <Icon name="cross-circle" className="mr0-5" />
-                                        <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Delete`}</span>
+                                        <span className="flex-item-fluid myauto">{c('Action').t`Delete`}</span>
                                     </DropdownMenuButton>
                                 ) : null}
 
@@ -352,14 +347,14 @@ const HeaderMoreDropdown = ({
                                     onClick={handleExport}
                                 >
                                     <Icon name="arrow-up-from-square" className="mr0-5" />
-                                    <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Export`}</span>
+                                    <span className="flex-item-fluid myauto">{c('Action').t`Export`}</span>
                                 </DropdownMenuButton>
                                 <DropdownMenuButton
                                     className="text-left flex flex-nowrap flex-align-items-center"
                                     onClick={() => setMessagePrintModalOpen(true)}
                                 >
                                     <Icon name="printer" className="mr0-5" />
-                                    <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Print`}</span>
+                                    <span className="flex-item-fluid myauto">{c('Action').t`Print`}</span>
                                 </DropdownMenuButton>
 
                                 <hr className="my0-5" />
@@ -369,7 +364,7 @@ const HeaderMoreDropdown = ({
                                     onClick={() => setMessageDetailsModalOpen(true)}
                                 >
                                     <Icon name="list-bullets" className="mr0-5" />
-                                    <span className="flex-item-fluid mtauto mbauto">{c('Action')
+                                    <span className="flex-item-fluid myauto">{c('Action')
                                         .t`View message details`}</span>
                                 </DropdownMenuButton>
                                 <DropdownMenuButton
@@ -377,7 +372,7 @@ const HeaderMoreDropdown = ({
                                     onClick={() => setMessageHeaderModalOpen(true)}
                                 >
                                     <Icon name="window-terminal" className="mr0-5" />
-                                    <span className="flex-item-fluid mtauto mbauto">{c('Action').t`View headers`}</span>
+                                    <span className="flex-item-fluid myauto">{c('Action').t`View headers`}</span>
                                 </DropdownMenuButton>
                                 {!sourceMode && (
                                     <DropdownMenuButton
@@ -385,8 +380,7 @@ const HeaderMoreDropdown = ({
                                         onClick={() => onSourceMode(true)}
                                     >
                                         <Icon name="code" className="mr0-5" />
-                                        <span className="flex-item-fluid mtauto mbauto">{c('Action')
-                                            .t`View HTML`}</span>
+                                        <span className="flex-item-fluid myauto">{c('Action').t`View HTML`}</span>
                                     </DropdownMenuButton>
                                 )}
                                 {sourceMode && (
@@ -395,7 +389,7 @@ const HeaderMoreDropdown = ({
                                         onClick={() => onSourceMode(false)}
                                     >
                                         <Icon name="window-image" className="mr0-5" />
-                                        <span className="flex-item-fluid mtauto mbauto">{c('Action')
+                                        <span className="flex-item-fluid myauto">{c('Action')
                                             .t`View rendered HTML`}</span>
                                     </DropdownMenuButton>
                                 )}
@@ -407,8 +401,7 @@ const HeaderMoreDropdown = ({
                                     onClick={() => setMessagePhishingModalOpen(true)}
                                 >
                                     <Icon name="hook" className="mr0-5" />
-                                    <span className="flex-item-fluid mtauto mbauto">{c('Action')
-                                        .t`Report phishing`}</span>
+                                    <span className="flex-item-fluid myauto">{c('Action').t`Report phishing`}</span>
                                 </DropdownMenuButton>
                             </DropdownMenu>
                         );
