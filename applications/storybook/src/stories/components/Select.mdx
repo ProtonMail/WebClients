@@ -23,7 +23,7 @@ We can allow the user to select multiple options by specifying the `mode` prop a
 
 Dropdown items become togglable & selecting an item will not auto-close the dropdown.
 
-<Canvas withSource="open">
+<Canvas>
     <Story id="components-select--multiple" />
 </Canvas>
 
@@ -59,7 +59,7 @@ The Select component can be uses as an [input for InputField](/docs/components-i
 
 This component will add a search input field inside of the select dropdown in order to filter out the options data. You can pass a custom search function if necessary.
 
-<Canvas withSource="open">
+<Canvas>
     <Story id="components-select--search" />
 </Canvas>
 
@@ -67,8 +67,16 @@ This component will add a search input field inside of the select dropdown in or
 
 Allow searching while selecting multiple results. The selected options are preserved through out the search. Selecting an item will not auto-close the dropdown : each item can be toggled.
 
-<Canvas withSource="open">
+<Canvas>
     <Story id="components-select--multi-search" />
+</Canvas>
+
+### Custom display value rendering
+
+The `renderSelected` prop allows customisation of the rendered display value.
+
+<Canvas>
+    <Story id="components-select--render-selected" />
 </Canvas>
 
 ### Accessibility
