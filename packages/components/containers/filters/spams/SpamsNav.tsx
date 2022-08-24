@@ -1,22 +1,29 @@
 import { c } from 'ttag';
+
 import { classnames } from '@proton/components/helpers';
+
 import { SpamNavItem } from './Spams.interfaces';
 
 interface Props {
     onChange: (type: SpamNavItem) => void;
     selected: SpamNavItem;
+    showBlockSender: boolean;
 }
 
-const NAV: [type: SpamNavItem, getName: () => string][] = [
-    ['ALL', () => c('Navigation').t`All`],
-    ['SPAM', () => c('Navigation').t`Spam`],
-    ['NON_SPAM', () => c('Navigation').t`Non spam`],
-    ['BLOCKED', () => c('Navigation').t`Blocked`],
-];
+const getNav = (showBlockSender: boolean): [type: SpamNavItem, getName: () => string][] => {
+    return [
+        ['ALL', () => c('Navigation').t`All`],
+        ['SPAM', () => c('Navigation').t`Spam`],
+        ['NON_SPAM', () => c('Navigation').t`Non spam`],
+        ...(showBlockSender
+            ? [['BLOCKED', () => c('Navigation').t`Blocked`] as [type: SpamNavItem, getName: () => string]]
+            : []),
+    ];
+};
 
-const SpamFiltersNav = ({ selected, onChange }: Props) => (
+const SpamFiltersNav = ({ selected, onChange, showBlockSender }: Props) => (
     <ul className="unstyled block">
-        {NAV.map(([type, getName]) => (
+        {getNav(showBlockSender).map(([type, getName]) => (
             <li
                 key={type}
                 onClick={() => onChange(type)}

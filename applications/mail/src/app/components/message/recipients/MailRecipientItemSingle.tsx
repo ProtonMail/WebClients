@@ -5,8 +5,9 @@ import { useHistory } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { DropdownMenuButton, Icon, useModalState, usePopperAnchor } from '@proton/components/components';
+import { FeatureCode } from '@proton/components/containers';
 import { ContactEditProps } from '@proton/components/containers/contacts/edit/ContactEditModal';
-import { useApi, useMailSettings, useNotifications } from '@proton/components/hooks';
+import { useApi, useFeature, useMailSettings, useNotifications } from '@proton/components/hooks';
 import { PublicKeyReference } from '@proton/crypto';
 import { updateBlockSenderConfirmation } from '@proton/shared/lib/api/mailSettings';
 import { MAILBOX_LABEL_IDS, VIEW_LAYOUT } from '@proton/shared/lib/constants';
@@ -69,6 +70,7 @@ const MailRecipientItemSingle = ({
 }: Props) => {
     const api = useApi();
     const { createNotification } = useNotifications();
+    const { feature: blockSenderFeature } = useFeature(FeatureCode.BlockSender);
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const history = useHistory();
 
@@ -239,7 +241,7 @@ const MailRecipientItemSingle = ({
                     {isRecipient ? c('Action').t`Messages to this recipient` : c('Action').t`Messages from this sender`}
                 </span>
             </DropdownMenuButton>
-            {!isBlocked && incomingDefaultsStatus === 'loaded' && (
+            {blockSenderFeature?.Value === true && !isBlocked && incomingDefaultsStatus === 'loaded' && (
                 <DropdownMenuButton
                     className="text-left flex flex-nowrap flex-align-items-center"
                     onClick={handleClickBlockSender}
