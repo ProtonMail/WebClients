@@ -28,22 +28,22 @@ const PaymentSelector = ({ currency, amount, onChangeCurrency, onChangeAmount, m
 
     return (
         <>
-            <div className="flex-autogrid on-mobile-flex-column">
-                <div className="flex-autogrid-item on-mobile-mb0-5">
+            <div className="flex flex-gap-1 flex-justify-space-between mb1 on-mobile-flex-column">
+                <div className="flex-item-fluid on-mobile-mb0-5">
                     <AmountButton className="w100" onSelect={handleButton} value={500} amount={amount} />
                 </div>
-                <div className="flex-autogrid-item on-mobile-mb0-5">
+                <div className="flex-item-fluid on-mobile-mb0-5">
                     <AmountButton className="w100" onSelect={handleButton} value={1000} amount={amount} />
                 </div>
-                <div className="flex-autogrid-item on-mobile-mb0-5">
+                <div className="flex-item-fluid on-mobile-mb0-5">
                     <AmountButton className="w100" onSelect={handleButton} value={5000} amount={amount} />
                 </div>
-                <div className="flex-autogrid-item on-mobile-mb0-5">
+                <div className="flex-item-fluid on-mobile-mb0-5">
                     <AmountButton className="w100" onSelect={handleButton} value={10000} amount={amount} />
                 </div>
             </div>
-            <div className="flex-autogrid on-mobile-flex-column">
-                <div className="flex-autogrid-item on-mobile-mb0-5">
+            <div className="flex flex-gap-1 flex-justify-space-between on-mobile-flex-column">
+                <div className="flex-item-fluid on-mobile-mb0-5">
                     <Label htmlFor="otherAmount" className="sr-only">{c('Label').t`Other amount`}</Label>
                     <Input
                         className="w100"
@@ -74,7 +74,7 @@ const PaymentSelector = ({ currency, amount, onChangeCurrency, onChangeAmount, m
                         placeholder={c('Placeholder').t`Other`}
                     />
                 </div>
-                <div className="flex-autogrid-item on-mobile-mb0-5">
+                <div className="flex-item-fluid on-mobile-mb0-5">
                     <CurrencySelector className="w100" currency={currency} onSelect={onChangeCurrency} />
                 </div>
             </div>
