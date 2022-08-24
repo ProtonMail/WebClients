@@ -1,6 +1,7 @@
 import { createAction, createAsyncThunk } from '@reduxjs/toolkit';
 
 import { moveAll as moveAllRequest, queryMessageMetadata } from '@proton/shared/lib/api/messages';
+import { FIBONACCI_LIST } from '@proton/shared/lib/constants';
 import { Api } from '@proton/shared/lib/interfaces';
 import diff from '@proton/utils/diff';
 import noop from '@proton/utils/noop';
@@ -31,11 +32,14 @@ export const updatePage = createAction<number>('elements/updatePage');
 
 export const retry = createAction<{ queryParameters: any; error: Error | undefined }>('elements/retry');
 
-export const retryStale = createAction<{ queryParameters: any }>('elements/retry/stale');
+export const retryStale = createAction<{ queryParameters: any; count: number }>('elements/retry/stale');
 
 export const load = createAsyncThunk<{ result: QueryResults; taskRunning: TaskRunningInfo }, QueryParams>(
     'elements/load',
-    async ({ api, call, page, params, abortController, conversationMode }: QueryParams, { dispatch, getState }) => {
+    async (
+        { api, call, page, params, abortController, conversationMode, count = 1 }: QueryParams,
+        { dispatch, getState }
+    ) => {
         const queryParameters = getQueryElementsParameters({ page, params });
         let result;
         try {
@@ -48,12 +52,11 @@ export const load = createAsyncThunk<{ result: QueryResults; taskRunning: TaskRu
             throw error;
         }
         if (result.Stale === 1) {
-            const error = new Error('Elements result is stale');
+            const ms = 1000 * (FIBONACCI_LIST?.[count] || Math.max(...FIBONACCI_LIST));
             // Wait a second before retrying
             setTimeout(() => {
-                dispatch(retryStale({ queryParameters }));
-            }, 1000);
-            throw error;
+                void dispatch(load({ api, call, page, params, abortController, conversationMode, count: count + 1 }));
+            }, ms);
         }
         const taskLabels = Object.keys(result.TasksRunning || {});
         const taskRunning = { ...(getState() as RootState).elements.taskRunning };
