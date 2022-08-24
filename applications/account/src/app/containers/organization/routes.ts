@@ -19,8 +19,8 @@ export const getOrganizationAppRoutes = ({ user, organization }: { user: UserMod
                         id: 'members',
                     },
                     {
-                        text: c('Title').t`Addresses`,
-                        id: 'addresses',
+                        text: c('Title').t`Create multiple user accounts`,
+                        id: 'multi-user-creation',
                     },
                 ],
             },
