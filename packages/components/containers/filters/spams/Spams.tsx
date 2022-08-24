@@ -3,6 +3,7 @@ import { useEffect, useRef } from 'react';
 import { c } from 'ttag';
 
 import {
+    Button,
     LabelStack,
     Loader,
     Pagination,
@@ -14,9 +15,10 @@ import {
     TableRow,
     useModalState,
 } from '@proton/components/components';
-import { useErrorHandler, useNotifications } from '@proton/components/hooks';
+import { useErrorHandler, useFeature, useNotifications } from '@proton/components/hooks';
 import useIsMounted from '@proton/hooks/useIsMounted';
 
+import { FeatureCode } from '../../features';
 import {
     HandleSpamListActionClick,
     getActionsByLocation,
@@ -40,6 +42,7 @@ const ELEMENTS_PER_PAGE = 10;
 const Spams = () => {
     const isMounted = useIsMounted();
     const [modalProps, openModal, renderModal] = useModalState();
+    const { feature: blockSenderFeature, loading: blockSenderLoading } = useFeature(FeatureCode.BlockSender);
 
     const { createNotification } = useNotifications();
 
@@ -122,24 +125,38 @@ const Spams = () => {
         dispatch({ type: 'fetchList' });
     }, []);
 
-    return (
+    return blockSenderLoading ? null : (
         <>
-            <div className="mb2">
-                <SpamsButtonDropdown
-                    title={c('Action').t`Add address`}
-                    actions={INSERT_ACTIONS.map(({ getName, type }) => ({
-                        name: getName(),
-                        onClick: () => {
-                            dispatch({ type: 'setModal', payload: type });
+            {blockSenderFeature?.Value === true ? (
+                <div className="mb2">
+                    <SpamsButtonDropdown
+                        title={c('Action').t`Add address`}
+                        actions={INSERT_ACTIONS.map(({ getName, type }) => ({
+                            name: getName(),
+                            onClick: () => {
+                                dispatch({ type: 'setModal', payload: type });
+                                openModal(true);
+                            },
+                        }))}
+                        buttonProps={{
+                            hasCaret: true,
+                            color: 'norm',
+                        }}
+                    />
+                </div>
+            ) : (
+                <div className="mb2">
+                    <Button
+                        color="norm"
+                        onClick={() => {
+                            dispatch({ type: 'setModal', payload: INSERT_ACTIONS[1].type });
                             openModal(true);
-                        },
-                    }))}
-                    buttonProps={{
-                        hasCaret: true,
-                        color: 'norm',
-                    }}
-                />
-            </div>
+                        }}
+                    >
+                        {c('Action').t`Add address`}
+                    </Button>
+                </div>
+            )}
 
             {globalTotal > 0 && (
                 <>
@@ -157,6 +174,7 @@ const Spams = () => {
                     <SpamsNav
                         selected={display}
                         onChange={(nextDisplay) => dispatch({ type: 'setDisplay', payload: nextDisplay })}
+                        showBlockSender={blockSenderFeature?.Value === true}
                     />
                 </>
             )}

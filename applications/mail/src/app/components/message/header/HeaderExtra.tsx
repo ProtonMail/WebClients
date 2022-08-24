@@ -40,6 +40,7 @@ const HeaderExtra = ({
     const received = isReceived(message.data);
 
     const { feature: scheduledFeature } = useFeature(FeatureCode.ScheduledSend);
+    const { feature: blockSenderFeature } = useFeature(FeatureCode.BlockSender);
     const isScheduledMessage = isScheduled(message.data);
     const showCalendarWidget = messageLoaded && received;
 
@@ -54,7 +55,7 @@ const HeaderExtra = ({
             <ExtraErrors message={message} />
             <ExtraAutoReply message={message.data} />
             <ExtraUnsubscribe message={message.data} />
-            <ExtraBlockedSender message={message} />
+            {blockSenderFeature?.Value === true && <ExtraBlockedSender message={message} />}
             {message.verification && <ExtraPinKey message={message.data} messageVerification={message.verification} />}
             <ExtraAskResign
                 message={message.data}
