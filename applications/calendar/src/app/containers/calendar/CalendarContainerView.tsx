@@ -5,6 +5,7 @@ import { c, msgid } from 'ttag';
 
 import {
     Button,
+    FeatureCode,
     FloatingButton,
     Icon,
     LocalizedMiniCalendar,
@@ -14,7 +15,9 @@ import {
     PrivateMainArea,
     PrivateSideAppHeader,
     RebrandingFeedbackModal,
+    SettingsLink,
     SideAppHeaderTitle,
+    Spotlight,
     TextLoader,
     TimeZoneSelector,
     TodayIcon,
@@ -28,7 +31,10 @@ import {
     useHasRebrandingFeedback,
     useModalState,
     useNotifications,
+    useSpotlightOnFeature,
+    useSpotlightShow,
     useToggle,
+    useWelcomeFlags,
 } from '@proton/components';
 import CalendarSelectIcon from '@proton/components/components/calendarSelect/CalendarSelectIcon';
 import { CONTACT_WIDGET_TABS, CustomActionRenderProps } from '@proton/components/containers/contacts/widget/types';
@@ -359,6 +365,17 @@ const CalendarContainerView = ({
 
     const logo = <MainLogo to="/" />;
 
+    const [{ isWelcomeFlow }] = useWelcomeFlags();
+    const { show, onDisplayed } = useSpotlightOnFeature(
+        FeatureCode.SpotlightAutoAddedInvites,
+        !isWelcomeFlow && !isNarrow
+    );
+    const shouldShowSpotlight = useSpotlightShow(show);
+    const goToSettingsLink = (
+        <SettingsLink path="/general#invitations" app={APPS.PROTONCALENDAR}>{c('Spotlight settings link')
+            .t`Go to settings`}</SettingsLink>
+    );
+
     const header = isSideApp ? (
         <PrivateSideAppHeader
             toLink={toLink}
@@ -397,7 +414,27 @@ const CalendarContainerView = ({
             <PrivateHeader
                 userDropdown={<UserDropdown onOpenIntroduction={() => setOnboardingModal(true)} />}
                 logo={logo}
-                settingsButton={<TopNavbarListItemSettingsDropdown to="/calendar" toApp={APPS.PROTONACCOUNT} />}
+                settingsButton={
+                    <Spotlight
+                        type="new"
+                        show={shouldShowSpotlight}
+                        onDisplayed={onDisplayed}
+                        content={
+                            <div style={{ maxWidth: 240 }}>
+                                <div className="text-lg text-bold mb0-25">{c('Spotlight')
+                                    .t`Easily accept invites`}</div>
+                                <p className="m0">
+                                    {c('Spotlight')
+                                        .jt`Now invitations appear in your calendar as pending events. Just open an event to respond. ${goToSettingsLink}`}
+                                </p>
+                            </div>
+                        }
+                    >
+                        <div>
+                            <TopNavbarListItemSettingsDropdown to="/calendar" toApp={APPS.PROTONACCOUNT} />
+                        </div>
+                    </Spotlight>
+                }
                 floatingButton={
                     <FloatingButton onClick={() => onCreateEvent?.()}>
                         <Icon size={24} name="plus" className="mauto" />
