@@ -1,6 +1,6 @@
 import { useMemo, useRef, useState } from 'react';
 
-import { Icon, InputFieldTwo, Option, SearchableSelect, SelectTwo } from '@proton/components';
+import { Icon, InputFieldTwo, LabelStack, Option, SearchableSelect, SelectTwo } from '@proton/components';
 
 import { getTitle } from '../../helpers/title';
 import mdx from './Select.mdx';
@@ -87,6 +87,37 @@ export const MultiSearch = () => {
                 <Option key={option} value={option} title={option} />
             ))}
         </SearchableSelect>
+    );
+};
+
+const options = [
+    { color: '#8080FF', name: 'electron' },
+    { color: '#EC3E7C', name: 'muon' },
+    { color: '#DB60D6', name: 'tau' },
+    { color: '#415DF0', name: 'neutrino' },
+    { color: '#179FD9', name: 'z boson' },
+    { color: '#1DA583', name: 'w boson' },
+    { color: '#3CBB3A', name: 'quark' },
+    { color: '#B4A40E', name: 'higgs' },
+    { color: '#936D58', name: 'photon' },
+    { color: '#F78400', name: 'gluon' },
+];
+
+export const RenderSelected = () => {
+    const [value, setValue] = useState<typeof options>(options.slice(0, 4));
+
+    return (
+        <SelectTwo
+            multiple
+            value={value}
+            placeholder={'Choose your country'}
+            onValue={setValue}
+            renderSelected={(selected) => <LabelStack labels={selected ?? []} />}
+        >
+            {options.map((option) => (
+                <Option key={option.name} value={option} title={option.name} />
+            ))}
+        </SelectTwo>
     );
 };
 
