@@ -37,7 +37,7 @@ const SupportDropdownButton = ({
             {...rest}
         >
             {children}
-            {noCaret ? null : <DropdownCaret isOpen={isOpen} className="ml0-5 expand-caret mtauto mbauto" />}
+            {noCaret ? null : <DropdownCaret isOpen={isOpen} className="ml0-5 expand-caret myauto" />}
         </button>
     );
 };
