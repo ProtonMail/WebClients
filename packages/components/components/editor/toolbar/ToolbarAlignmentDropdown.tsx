@@ -22,21 +22,21 @@ const ToolbarAlignmentDropdown = ({ setAlignment }: Props) => (
                 onClick={() => setAlignment(Alignment.Left)}
             >
                 <Icon name="text-align-left" />
-                <span className="ml0-5 mtauto mbauto flex-item-fluid">{c('Info').t`Align left`}</span>
+                <span className="ml0-5 myauto flex-item-fluid">{c('Info').t`Align left`}</span>
             </DropdownMenuButton>
             <DropdownMenuButton
                 className="text-left flex flex-nowrap flex-align-items-center"
                 onClick={() => setAlignment(Alignment.Center)}
             >
                 <Icon name="text-align-center" />
-                <span className="ml0-5 mtauto mbauto flex-item-fluid">{c('Info').t`Center`}</span>
+                <span className="ml0-5 myauto flex-item-fluid">{c('Info').t`Center`}</span>
             </DropdownMenuButton>
             <DropdownMenuButton
                 className="text-left flex flex-nowrap flex-align-items-center"
                 onClick={() => setAlignment(Alignment.Right)}
             >
                 <Icon name="text-align-right" />
-                <span className="ml0-5 mtauto mbauto flex-item-fluid">{c('Info').t`Align right`}</span>
+                <span className="ml0-5 myauto flex-item-fluid">{c('Info').t`Align right`}</span>
             </DropdownMenuButton>
         </DropdownMenu>
     </ToolbarDropdown>
