@@ -196,7 +196,7 @@ const AddressesRecipientItem = ({
                     <Tooltip title={title}>
                         <span
                             className={classnames([
-                                'composer-addresses-item-label mtauto mbauto text-ellipsis pr0-5',
+                                'composer-addresses-item-label myauto text-ellipsis pr0-5',
                                 icon || loading || !valid ? 'pl0-25' : 'pl0-5',
                             ])}
                             contentEditable={editableMode}
@@ -233,14 +233,14 @@ const AddressesRecipientItem = ({
                         onClick={handleCopy}
                     >
                         <Icon name="squares" className="mr0-5" />
-                        <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Copy address`}</span>
+                        <span className="flex-item-fluid myauto">{c('Action').t`Copy address`}</span>
                     </DropdownMenuButton>
                     <DropdownMenuButton
                         className="text-left flex flex-nowrap flex-align-items-center"
                         onClick={handleDoubleClick}
                     >
                         <Icon name="pen" className="mr0-5" />
-                        <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Edit address`}</span>
+                        <span className="flex-item-fluid myauto">{c('Action').t`Edit address`}</span>
                     </DropdownMenuButton>
                     {ContactID ? (
                         <DropdownMenuButton
@@ -248,7 +248,7 @@ const AddressesRecipientItem = ({
                             onClick={handleClickContact}
                         >
                             <Icon name="user" className="mr0-5" />
-                            <span className="flex-item-fluid mtauto mbauto">{c('Action').t`View contact details`}</span>
+                            <span className="flex-item-fluid myauto">{c('Action').t`View contact details`}</span>
                         </DropdownMenuButton>
                     ) : (
                         <DropdownMenuButton
@@ -256,7 +256,7 @@ const AddressesRecipientItem = ({
                             onClick={handleClickContact}
                         >
                             <Icon name="user-plus" className="mr0-5" />
-                            <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Create new contact`}</span>
+                            <span className="flex-item-fluid myauto">{c('Action').t`Create new contact`}</span>
                         </DropdownMenuButton>
                     )}
                     <DropdownMenuButton
@@ -265,7 +265,7 @@ const AddressesRecipientItem = ({
                         onClick={handleRemove}
                     >
                         <Icon name="cross-circle" className="mr0-5" />
-                        <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Remove`}</span>
+                        <span className="flex-item-fluid myauto">{c('Action').t`Remove`}</span>
                     </DropdownMenuButton>
                 </DropdownMenu>
             </ContextMenu>
