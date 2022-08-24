@@ -1,7 +1,12 @@
 import { c } from 'ttag';
 
 import { EMAIL_PLACEHOLDER, USERNAME_PLACEHOLDER } from '@proton/shared/lib/constants';
-import { NON_OAUTH_PROVIDER, OAUTH_PROVIDER, TIME_PERIOD } from '@proton/shared/lib/interfaces/EasySwitch';
+import {
+    MailImportGmailCategories,
+    NON_OAUTH_PROVIDER,
+    OAUTH_PROVIDER,
+    TIME_PERIOD,
+} from '@proton/shared/lib/interfaces/EasySwitch';
 
 export const G_OAUTH_REDIRECT_PATH = '/oauth/callback';
 
@@ -15,6 +20,8 @@ export const G_OAUTH_SCOPE_CALENDAR = ['https://www.googleapis.com/auth/calendar
 export const IA_PATHNAME_REGEX = /\/easy-switch/;
 
 /* Mail specific */
+
+export const GMAIL_CATEGORIES = Object.values(MailImportGmailCategories);
 
 export const getTimeUnitLabels = () => ({
     [TIME_PERIOD.BIG_BANG]: c('Label').t`Import all messages`,
