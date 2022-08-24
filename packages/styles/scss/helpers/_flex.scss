@@ -111,20 +111,3 @@
 .flex-item-noflex {
 	flex: 0;
 }
-
-.flex-autogrid {
-	@extend .flex;
-	@extend .flex-justify-space-between;
-	margin-block: 0;
-	margin-inline: -0.5em;
-}
-
-.flex-autogrid-item {
-	@extend .flex-item-fluid;
-	padding-block: 0 1em;
-	padding-inline: 0.5em;
-
-	&.pb0 {
-		padding-block-end: 0;
-	}
-}
