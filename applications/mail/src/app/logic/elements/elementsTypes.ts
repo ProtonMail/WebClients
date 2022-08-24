@@ -98,6 +98,7 @@ export interface QueryParams {
     conversationMode: boolean;
     page: number;
     params: ElementsStateParams;
+    count?: number;
 }
 
 export interface QueryResults {

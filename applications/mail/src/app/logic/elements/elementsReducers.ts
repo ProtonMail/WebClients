@@ -52,8 +52,10 @@ export const retry = (
     state.retry = newRetry(state.retry, action.payload.queryParameters, action.payload.error);
 };
 
-export const retryStale = (state: Draft<ElementsState>, action: PayloadAction<{ queryParameters: any }>) => {
-    state.pendingRequest = false;
+export const retryStale = (
+    state: Draft<ElementsState>,
+    action: PayloadAction<{ queryParameters: any; count: number }>
+) => {
     state.retry = { payload: action.payload.queryParameters, count: 1, error: undefined };
 };
 
