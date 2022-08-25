@@ -4,7 +4,7 @@ import { Location } from 'history';
 import { c, msgid } from 'ttag';
 
 import { Loader, usePlans, useTheme, useUser, useUserSettings } from '@proton/components';
-import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { DAY, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { LabelCount } from '@proton/shared/lib/interfaces/Label';
 import envelope from '@proton/styles/assets/img/illustrations/welcome-pane.svg';
@@ -36,6 +36,10 @@ const WelcomePane = ({ mailSettings, location, labelCount }: Props) => {
     const [theme] = useTheme();
     const [userSettings, loadingUserSettings] = useUserSettings();
     const loading = loadingUser || loadingPlans || loadingUserSettings;
+
+    // Display upsell banners if free user, and 3 days after the user signup, not before
+    const userCreateTime = user.CreateTime || 0;
+    const canDisplayBanner = Date.now() > userCreateTime * 1000 + 3 * DAY && !user.hasPaidMail;
 
     const unread = labelCount?.Unread || 0;
     const total = labelCount?.Total || 0;
@@ -78,7 +82,7 @@ const WelcomePane = ({ mailSettings, location, labelCount }: Props) => {
 
     return (
         <>
-            {user.hasPaidMail ? null : <WelcomePaneBanner plans={plans} userSettings={userSettings} theme={theme} />}
+            {canDisplayBanner ? <WelcomePaneBanner plans={plans} userSettings={userSettings} theme={theme} /> : null}
             <Container>
                 <h1>{user.DisplayName ? c('Title').jt`Welcome ${userName}` : c('Title').t`Welcome`}</h1>
                 <p className="text-keep-space">{labelCount ? counterMessage : null}</p>
