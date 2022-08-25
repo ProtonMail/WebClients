@@ -4,6 +4,20 @@
     "language": "ca_ES"
   },
   "contexts": {
+    "Access level": {
+      "Full": [
+        "Complet"
+      ],
+      "Full view": [
+        "Vista completa"
+      ],
+      "Limited": [
+        "Limitat"
+      ],
+      "Limited view": [
+        "Vista limitada"
+      ]
+    },
     "Action": {
       "${ address } is available.": [
         "${ address } està disponible."
@@ -601,6 +615,9 @@
       ],
       "Select ${ planTitle }": [
         "Selecciona ${ planTitle }"
+      ],
+      "Select calendar view": [
+        "Tria la vista de calendari"
       ],
       "Select files": [
         "Seleccioneu fitxers"
@@ -2331,6 +2348,9 @@
       "Automatic replies is a paid feature. Please upgrade to a paid account to use this feature.": [
         "Les respostes automàtiques són una característica de pagament. Actualitzeu-vos a un compte de pagament per utilitzar aquesta funció."
       ],
+      "Calendar cannot be found": [
+        "No es pot trobar el calendari"
+      ],
       "Calendar limit reached": [
         "Límit de calendari assolit"
       ],
@@ -3453,6 +3473,9 @@
         "${ numContacts } contacte",
         "${ numContacts } contactes"
       ],
+      "${ planName } credits earned": [
+        "${ planName } crèdits aconseguits"
+      ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } carpeta trobada",
         "${ providerFoldersNumLocalized } carpetes trobades"
@@ -3460,6 +3483,9 @@
       "${ providerFoldersNumLocalized } label found in Gmail": [
         "${ providerFoldersNumLocalized } etiqueta trobada a Gmail",
         "${ providerFoldersNumLocalized } etiquetes trobades a Gmail"
+      ],
+      "${ rewards } of ${ rewardsLimit } months": [
+        "${ rewards } de ${ rewardsLimit } mesos"
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendari",
@@ -4186,6 +4212,9 @@
       "Proton will try to resume the import as soon as your email provider resets your account’s ${ bandwithLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
         "Proton intentarà reprendre la importació tan aviat com el vostre proveïdor de correu electrònic restableixi el del vostre compte ${ bandwithLimitLink }. No cal fer res. Si cancel·leu la importació, no la podreu reprendre i haureu de tornar a començar."
       ],
+      "Public link invite": [
+        "Enllaç públic d'invitació"
+      ],
       "purchase additional storage": [
         "comprar emmagatzematge addicional"
       ],
@@ -4325,7 +4354,7 @@
         "Aquest enllaç dirigeix a una pàgina web que podria estar intentant recopilar dades personals com ara contrasenyes o informació de les teves targetes de crèdit."
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Aquest enllaç podria ser un atac homògraf i no es pot obrir amb els navegadors Internet Explorer i Edge. Si esteu segurs de que aquest enllaç és legítim, feu servir un navegador diferent per obrir-lo."
+        "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Aquest enllaç pot ser un atac homògraf. Verifiqueu que aquest és l'enllaç que voleu visitar o declineu obrir-lo."
@@ -5832,6 +5861,9 @@
       "Go to subscription plans": [
         "Anar als plans de subscripció"
       ],
+      "Import/export": [
+        "Importa/exporta"
+      ],
       "Learn more": [
         "Més informació"
       ],
@@ -6383,6 +6415,9 @@
       "Android": [
         "Android"
       ],
+      "Ask each time": [
+        "Pregunta cada vegada"
+      ],
       "Automatic (${ defaultDay })": [
         "Automàtic (${ defaultDay })"
       ],
@@ -6643,6 +6678,11 @@
     "Price": {
       "Free": [
         "Gratuït"
+      ]
+    },
+    "Primary timezone": {
+      "Primary time zone": [
+        "Zona horària principal"
       ]
     },
     "Private Member": {
@@ -6960,6 +7000,9 @@
       ],
       "Calendar created": [
         "Calendari creat"
+      ],
+      "Calendar removed": [
+        "S'ha eliminat el calendari"
       ],
       "Calendar updated": [
         "Calendari actualitzat"
@@ -7407,9 +7450,6 @@
       "Currency": [
         "Moneda"
       ],
-      "Current and past imports": [
-        "Your import history"
-      ],
       "Custom filters": [
         "Filtres personalitzats"
       ],
@@ -7457,6 +7497,9 @@
       ],
       "Delete account": [
         "Eliminar compte"
+      ],
+      "Delete calendar": [
+        "Elimina el calendari"
       ],
       "Delete logs": [
         "Eliminar registres"
@@ -7541,6 +7584,9 @@
       ],
       "Export public key": [
         "Exporta clau pública"
+      ],
+      "Extension": [
+        "Extensió"
       ],
       "External PGP settings": [
         "Configuració de PGP externa"
@@ -7762,6 +7808,9 @@
       "Restore administrator privileges": [
         "Restaurar els privilegis d'administrador"
       ],
+      "Revoke certificate": [
+        "Revoca el certificat"
+      ],
       "Save contact details": [
         "Desa els detalls de contacte"
       ],
@@ -7935,6 +7984,9 @@
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         "El vostre període de prova acaba aviat, el ${ formattedEndDate }"
+      ],
+      "Your import history": [
+        "Historial d'importació"
       ],
       "Your plan": [
         "El vostre pla"

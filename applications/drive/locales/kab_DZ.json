@@ -610,59 +610,6 @@
         "Ma tmugreḍ uguren tzemreḍ ad tsenseḍ anekcum Biṭa."
       ]
     },
-    "blackfriday Info": {
-      "beta": [
-        "beta"
-      ],
-      "Includes": [
-        "Yella deg-s"
-      ],
-      "Standard price: ${ regularPrice }": [
-        "Atig anaway: ${ regularPrice }"
-      ],
-      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
-        "Anezdi-a ad yettwales s yimek awurman seg-a ɣef sin n yiseggasen yernu s yiwen n watig arma d asmi ara yettwasemmet."
-      ]
-    },
-    "blackfriday Title": {
-      "Most popular": [
-        "Aɣerfan akk"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Action": {
-      "Get the deal": [
-        "Faṛes tagnit"
-      ],
-      "Get the deal now": [
-        "Faṛes tagnit"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Info": {
-      "Save ${ percentage }%": [
-        "${ percentage } %"
-      ]
-    },
-    "blackfriday: VPNspecialoffer info": {
-      "per month": [
-        "i wayyur"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Promo title, need to be short": {
-      "Special offer": [
-        "Asumer uzzig"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Title": {
-      "1 month": [
-        "1 wayyur"
-      ],
-      "12 months": [
-        "12 wayyuren"
-      ],
-      "24 months": [
-        "24 wayyuren"
-      ]
-    },
     "Bug category": {
       "Application problem": [
         "Ugur n usnas"
@@ -2546,7 +2493,7 @@
         "Iminig-a ur yessefrak ara tamuɣli n yisemliyen PDF. Ttxil sader afaylu."
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Aseɣwen-a yezmer ad yili d aẓdam homograph, ulamek yeldi s yimingen Internet Explorer d Edge. Ma yella tetḥeqqeḍ belli aseɣwen-a iṣeḥḥa, ttxil-k·m seqdec iminig-nniḍen akken ad teldiḍ."
+        "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Aseɣwen-a yezmer ad yili d aẓdam homograph. Ttxil-k·m senqed ma d aseɣwen-a iwuɣur tebɣiḍ ad terzuḍ, neɣ ur tetteldi ara."
@@ -3645,6 +3592,18 @@
         "${ emailsCount } n uεeggal",
         "${ emailsCount } n yiεeggalen"
       ],
+      "${ numberOfFailedTransfer.total } failed download": [
+        "${ numberOfFailedTransfer.total } yecceḍ usader",
+        "${ numberOfFailedTransfer.total } ccḍen isadaren"
+      ],
+      "${ numberOfFailedTransfer.total } failed transfer": [
+        "${ numberOfFailedTransfer.total } yecceḍ usiweḍ",
+        "${ numberOfFailedTransfer.total } yecceḍ usiweḍ"
+      ],
+      "${ numberOfFailedTransfer.total } failed upload": [
+        "${ numberOfFailedTransfer.total } yecceḍ usali",
+        "${ numberOfFailedTransfer.total } ccḍen isalayen"
+      ],
       "Account suspended": [
         "Amiḍan yettwaḥebsen"
       ],
@@ -3804,6 +3763,10 @@
       "Folders details": [
         "Talqayt n yikaramen"
       ],
+      "Found ${ searchView.numberOfResults } result": [
+        "${ searchView.numberOfResults } ugmuḍ yettwafen",
+        "${ searchView.numberOfResults } yigmaḍ yettwafen"
+      ],
       "Groups": [
         "Igrawen"
       ],
@@ -3815,6 +3778,9 @@
       ],
       "Invalid verification code": [
         "Tangalt n usentem mačči d tameɣtut"
+      ],
+      "Item details": [
+        "Talqayt n uferdis"
       ],
       "Items details": [
         "Talqayt n yiferdisen"
@@ -3842,6 +3808,9 @@
       ],
       "My files": [
         "Ifuyla-inu"
+      ],
+      "My files ${ date }.zip": [
+        "Ifuyla-inu ${ date }.zip"
       ],
       "Name": [
         "Isem"
@@ -3872,6 +3841,9 @@
       ],
       "Phone numbers": [
         "Uṭṭunen n tiliɣṛi"
+      ],
+      "Privacy settings": [
+        "Iqewwaren n tbaḍnit"
       ],
       "Re-sign all contacts": [
         "Allus n uzmel n yinermisen meṛṛa"
@@ -3956,6 +3928,9 @@
       ],
       "The link either does not exist or has expired": [
         "Aseɣwen u ryelli ara neɣ ahat yemmut"
+      ],
+      "The link expired": [
+        "Yemmut useɣwen"
       ],
       "The link failed to be loaded": [
         "Afaylu yegguma ad d-yali"

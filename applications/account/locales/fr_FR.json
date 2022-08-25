@@ -506,7 +506,7 @@
         "Payer ${ price }"
       ],
       "Please contact the administrator of the organisation to manage the subscription": [
-        "Veuillez contacter l'administrateur de votre organisation pour gérer votre abonnement."
+        "Nous vous invitons à contacter l'administrateur de votre organisation pour gérer votre abonnement."
       ],
       "Preview": [
         "Aperçu"
@@ -2608,6 +2608,9 @@
       ]
     },
     "Error": {
+      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ Local } est votre nom d'utilisateur. Pour créer ${ Local }@${ Domain }, allez dans Paramètres > Messages et composition > Domaine court (pm.me)."
+      ],
       "A group with this name already exists": [
         "Un groupe portant ce nom existe déjà."
       ],
@@ -2615,7 +2618,7 @@
         "La clé privée principale de l'adresse n'a pas été trouvée."
       ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
-        "Tout l'espace de stockage est alloué. Veuillez réduire l'espace de stockage alloué aux autres utilisateurs."
+        "Tout l'espace de stockage est alloué. Réduisez l'espace de stockage alloué aux autres utilisateurs."
       ],
       "Amount above the maximum.": [
         "Montant supérieur au maximum."
@@ -2639,13 +2642,13 @@
         "Limite de calendrier atteinte"
       ],
       "Can't check username, try again later": [
-        "Impossible de vérifier le nom d'utilisateur, veuillez réessayer plus tard."
+        "Impossible de vérifier le nom d'utilisateur, nous vous invitons à réessayer plus tard."
       ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         "Impossible de créer de nouveaux calendriers pour tous les calendriers importés en raison de la limite de calendriers personnels."
       ],
       "Checkout expired, please try again": [
-        "La commande a expiré, veuillez réessayer."
+        "La commande a expiré, réessayez."
       ],
       "Condition incomplete": [
         "Condition incomplète"
@@ -2683,7 +2686,7 @@
         "Erreur dans une des conditions"
       ],
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
-        "Impossible d'obtenir les sessions actives. Veuillez ${ refresh } ou réessayer plus tard."
+        "Impossible d'obtenir les sessions actives. Nous vous invitons à ${ refresh } ou à réessayer plus tard."
       ],
       "Filter with this name already exist": [
         "Un filtre portant ce nom existe déjà."
@@ -2792,32 +2795,32 @@
         "Processus de paiement non pris en charge"
       ],
       "Payments are currently not available, please try again later": [
-        "Les paiements ne sont actuellement pas disponibles, veuillez réessayer plus tard."
+        "Les paiements ne sont actuellement pas disponibles, réessayez plus tard."
       ],
       "Permission denied, administrator privileges have been restricted.": [
         "Permission refusée, les privilèges administrateur ont été restreints."
       ],
       "Please configure a custom domain before adding users to your organization.": [
-        "Veuillez configurer un domaine personnalisé avant d'ajouter des utilisateurs à votre organisation."
+        "Configurez un domaine personnalisé avant d'ajouter des utilisateurs à votre organisation."
       ],
       "Please enable multi-user support before adding users to your organization.": [
-        "Veuillez activer la prise en charge multi-utilisateur avant d'ajouter des utilisateurs à votre organisation."
+        "Activez la prise en charge multi-utilisateur avant d'ajouter des utilisateurs à votre organisation."
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Veuillez corriger le conflit en surbrillance pour continuer.",
         "Veuillez corriger les conflits en surbrillance pour continuer."
       ],
       "Please generate keys before you try to change your password": [
-        "Veuillez générer des clés avant d'essayer de changer votre mot de passe."
+        "Générez des clés avant d'essayer de changer votre mot de passe."
       ],
       "Please set a recovery email first": [
-        "Veuillez d'abord définir une adresse électronique de récupération."
+        "Définissez d'abord une adresse électronique de récupération."
       ],
       "Please set a recovery phone number first": [
-        "Veuillez d'abord définir un numéro de téléphone de récupération."
+        "Définissez d'abord un numéro de téléphone de récupération."
       ],
       "Please set a recovery/notification email first": [
-        "Veuillez d'abord définir une adresse électronique de récupération/notification."
+        "Définissez d'abord une adresse électronique de récupération/notification."
       ],
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         "Essayez de vous authentifier à nouveau et vérifiez que les autorisations sont correctement définies."
@@ -2850,10 +2853,10 @@
         "La vérification de la signature a échoué."
       ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
-        "Certains de vos noms de dossiers ne sont pas disponibles. Veuillez personnaliser l'importation pour modifier ces noms."
+        "Certains de vos noms de dossiers ne sont pas disponibles. Personnalisez l'importation pour modifier ces noms."
       ],
       "Some of your folder names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
-        "Certains de vos noms de dossiers dépassent la limite de caractères autorisée par ${ MAIL_APP_NAME }. Veuillez personnaliser l'importation pour modifier ces noms."
+        "Certains de vos noms de dossiers dépassent la limite de caractères autorisée par ${ MAIL_APP_NAME }. Personnalisez l'importation pour modifier ces noms."
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "Certains de vos noms de labels ne sont pas disponibles. Veuillez personnaliser l'importation pour modifier ces noms."
@@ -2868,7 +2871,7 @@
         "Onglet fermé"
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "Le navigateur que vous utilisez ne permet pas le traitement complet des paiements. Veuillez utiliser un autre navigateur ou vous connecter depuis un ordinateur."
+        "Le navigateur que vous utilisez ne permet pas le traitement complet des paiements. Nous vous invitons à utiliser un autre navigateur ou à vous connecter depuis un ordinateur."
       ],
       "The folder name is invalid. Please choose a different name.": [
         "Le nom du dossier n'est pas valide. Veuillez en choisir un autre."
@@ -2877,10 +2880,10 @@
         "Le nom du dossier est trop long. Veuillez en choisir un autre."
       ],
       "The keys in your recovery file can't be validated. Please contact support.": [
-        "Les clés dans votre fichier de récupération ne peuvent pas être validées. Veuillez contacter le support."
+        "Les clés dans votre fichier de récupération ne peuvent pas être validées. Nous vous invitons à contacter le support."
       ],
       "The keys in your recovery files can't be validated. Please upload individually for more information.": [
-        "Les clés de votre fichier de récupération ne peuvent pas être validées. Veuillez les importer individuellement obtenir pour plus d'informations."
+        "Les clés de votre fichier de récupération ne peuvent pas être validées. Nous vous invitons à les importer individuellement avoir pour plus d'informations."
       ],
       "The label name is invalid. Please choose a different name.": [
         "Le nom du label n'est pas valide. Veuillez en choisir un autre."
@@ -2904,7 +2907,7 @@
         "La clé de l'organisation doit d'abord être activée."
       ],
       "The session has expired. Please sign in again.": [
-        "La session a expiré. Veuillez vous connecter à nouveau."
+        "La session a expiré. Reconnectez-vous."
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Il y a trop de dossiers dans votre compte externe. Veuillez personnaliser l'importation pour supprimer certains dossiers."
@@ -2934,10 +2937,10 @@
         "Le fichier chargé n'est pas une clé privée valide. Veuillez vérifier et réessayer."
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
-        "Les fichiers chargés ne sont pas des clés privées valides. Veuillez vérifier et réessayer."
+        "Les fichiers chargés ne sont pas des clés privées valides. Nous vous invitons à vérifier et réessayer."
       ],
       "Verification did not succeed, please try again in an hour.": [
-        "La vérification n'a pas réussi, veuillez réessayer dans une heure."
+        "La vérification n'a pas réussi, réessayez dans une heure."
       ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "Nous avons arrêté la signature DKIM en raison de problèmes avec votre configuration DNS. Veuillez suivre les instructions ci-dessous pour la reprendre."
@@ -2946,7 +2949,7 @@
         "Nous n'avons pas pu nous connecter à votre fournisseur de services."
       ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
-        "Phrase de récupération erronée. Veuillez réessayer ou utiliser une autre méthode de récupération."
+        "Phrase de récupération erronée. Réessayez ou utilisez une autre méthode de récupération."
       ],
       "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
         "Code de vérification erroné. Assurez-vous d'avoir correctement copié le code de vérification et réessayez. Jusqu'à 24 heures peuvent s'écouler avant que les changements ne prennent effet."
@@ -2973,7 +2976,7 @@
         "Vous devez définir un nom."
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
-        "Votre compte ou organisation a une facture en retard. Veuillez régler les factures impayées."
+        "Votre compte ou organisation a une facture en retard. Nous vous invitons à régler les factures impayées."
       ],
       "Your import will not be processed.": [
         "Votre importation ne sera pas traitée."
@@ -4050,8 +4053,8 @@
         "${ number } serveurs"
       ],
       "${ numberOfNonPrivateKeys } uploaded file is not a valid private key. Please verify and try again.": [
-        "${ numberOfNonPrivateKeys } fichier chargé n'est pas une clé privée valide. Veuillez vérifier et réessayer.",
-        "${ numberOfNonPrivateKeys } fichiers chargés ne sont pas des clés privées valides. Veuillez vérifier et réessayer."
+        "${ numberOfNonPrivateKeys } fichier chargé n'est pas une clé privée valide. Nous vous invitons à vérifier et à réessayer.",
+        "${ numberOfNonPrivateKeys } fichiers chargés ne sont pas des clés privées valides. Nous vous invitons à vérifier et à réessayer."
       ],
       "${ numContactGroups } contact group": [
         "${ numContactGroups } groupe de contacts",
@@ -4973,7 +4976,7 @@
         "Abonnement supérieur nécessaire"
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
-        "Veuillez saisir la phrase de récupération de 12 mots associée à votre compte."
+        "Saisissez la phrase de récupération de 12 mots associée à votre compte."
       ],
       "Please fill out this field.": [
         "Veuillez remplir ce champ."
@@ -4982,7 +4985,7 @@
         "Veuillez le garder en sécurité. Vous en aurez besoin pour accéder à votre compte et déchiffrer vos données en cas de réinitialisation du mot de passe."
       ],
       "Please note that if you delete this address, you will no longer be able to send or receive emails using this address.": [
-        "Veuillez noter que si vous supprimez cette adresse, vous ne pourrez plus l'utiliser pour envoyer ou recevoir des messages."
+        "Notez que si vous supprimez cette adresse, vous ne pourrez plus l'utiliser pour envoyer ou recevoir des messages."
       ],
       "Please note that if you delete this domain, all the addresses associated with it will be disabled.": [
         "Notez que si vous supprimez ce domaine, toutes les adresses qui lui sont associées seront désactivées."
@@ -4994,7 +4997,7 @@
         "Notez qu'en cliquant sur le bouton Confirmer, votre compte disposera de ${ creditsRemaining } crédits restants."
       ],
       "Please provide an email address in case we need to contact you.": [
-        "Veuillez nous communiquer une adresse électronique au cas où nous aurions besoin de vous contacter."
+        "Nous vous invitons à nous communiquer une adresse électronique au cas où nous aurions besoin de vous contacter."
       ],
       "Please select the folders you would like to import:": [
         "Veuillez sélectionner les dossiers que vous voulez importer :"
@@ -5009,7 +5012,7 @@
         "Nous vous invitons à réessayer, à utiliser un autre mode de paiement ou à contacter PayPal pour obtenir de l'aide."
       ],
       "Please verify payment at the new tab which was opened.": [
-        "Veuillez vérifier le paiement dans le nouvel onglet qui a été ouvert."
+        "Vérifiez le paiement dans le nouvel onglet qui a été ouvert."
       ],
       "Please verify the card in the new tab which was opened.": [
         "Nous vous invitons à vérifier la carte dans le nouvel onglet qui a été ouvert."
@@ -5171,7 +5174,7 @@
         "équipe support"
       ],
       "Temporarily unavailable. Please check back later.": [
-        "Temporairement indisponible. Veuillez vérifier plus tard."
+        "Temporairement indisponible. Nous vous invitons à vérifier plus tard."
       ],
       "Test link": [
         "Lien test"
@@ -5240,7 +5243,7 @@
         "Ce lien mène à un site web qui pourrait essayer de voler vos informations, comme des mots de passe et des informations de carte bancaire."
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Ce lien pourrait être une attaque homographique et ne peut pas être ouvert avec le navigateur Microsoft Edge. Si vous êtes certain de la légitimité de ce lien, veuillez utiliser un autre navigateur pour l'ouvrir."
+        "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Ce lien est peut-être une attaque homographique. Assurez-vous qu'il s'agit bien du lien que vous souhaitez consulter, ou ne l'ouvrez pas."
@@ -5285,7 +5288,7 @@
         "Pour éviter la perte de données, ne les supprimez que si vous savez ce que vous faites ou si vous avez exporté une copie."
       ],
       "To confirm, please enter the name of the user you wish to delete.": [
-        "Pour confirmer, veuillez saisir le nom de l'utilisateur que vous souhaitez supprimer."
+        "Pour confirmer, saisissez le nom de l'utilisateur que vous souhaitez supprimer."
       ],
       "to continue to ${ toAppName }": [
         "pour continuer vers ${ toAppName }"
@@ -5357,7 +5360,7 @@
         "Avec l'option deux mots de passe, vous utilisez un mot de passe pour vous connecter à votre compte et un autre mot de passe pour déchiffrer votre messagerie. Cela représente une petite sécurité supplémentaire dans certains cas, mais nous recommandons d'utiliser un seul mot de passe, cela convient pour la majorité des utilisateurs. Pour utiliser deux mots de passe, définissez d'abord un mot de passe de connexion à votre compte, puis choisissez un mot de passe pour votre messagerie."
       ],
       "Unable to verify recovery file signature. Please contact support.": [
-        "Impossible de vérifier la signature du fichier de récupération. Veuillez contacter le support."
+        "Impossible de vérifier la signature du fichier de récupération. Nous vous invitons à contacter le support."
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Il n'y a malheureusement pas de méthode de récupération enregistrée pour ce compte."
@@ -5390,7 +5393,7 @@
         "Charger une image"
       ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
-        "Le fichier chargé n'est pas une clé privée valide. Veuillez vérifier et réessayer."
+        "Le fichier chargé n'est pas une clé privée valide. Nous vous invitons à vérifier et à réessayer."
       ],
       "URL link": [
         "Lien URL"
@@ -5558,7 +5561,7 @@
         "Pour pouvoir ajouter PayPal comme méthode de paiement, vous devez associer une carte de crédit ou un compte bancaire à votre compte PayPal."
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
-        "Vous devez avoir une carte de crédit ou un compte bancaire lié à votre compte PayPal. Si votre compte PayPal n'en dispose pas, veuillez cliquer sur le lien ci-dessous."
+        "Vous devez avoir une carte de crédit ou un compte bancaire lié à votre compte PayPal. Si votre compte PayPal n'en dispose pas, cliquez sur le lien ci-dessous."
       ],
       "You must remove any additional personal calendars and any shared calendar links before you can cancel your Mail subscription.": [
         "Vous devez supprimer tout calendrier personnel supplémentaire et tout lien de calendrier partagé avant de pouvoir annuler votre abonnement."
@@ -5612,7 +5615,7 @@
         "Votre compte ${ BRAND_NAME } est associé à l'e-mail ${ externalEmailAddress }. Pour utiliser ${ toAppName }, vous avez besoin d'une adresse ${ MAIL_APP_NAME }."
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
-        "Vos comptes ${ VPN_APP_NAME } et ${ MAIL_APP_NAME } sont liés. Pour les supprimer, veuillez vous connecter à ${ loginLink } et supprimer votre compte depuis là-bas."
+        "Vos comptes ${ VPN_APP_NAME } et ${ MAIL_APP_NAME } sont liés. Pour les supprimer, connectez-vous à ${ loginLink } et supprimez votre compte depuis là-bas."
       ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
         "Votre compte présente au moins une facture en retard. Votre accès a été restreint. ${ payInvoiceLink }"
@@ -5660,7 +5663,7 @@
         "Vos informations de connexion ne seront pas enregistrées une fois l'importation terminée."
       ],
       "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
-        "Le mot de passe de votre organisation peut être partagé avec d'autres utilisateurs auxquels vous souhaitez donner des privilèges d'administrateur. Il s'agit également d'un code permettant de récupérer l'accès à votre organisation dans le cas où vous perdriez l'accès à votre compte. Veuillez sauvegarder ce mot de passe et le conserver en lieu sûr."
+        "Le mot de passe de votre organisation peut être partagé avec d'autres utilisateurs auxquels vous souhaitez donner des privilèges d'administrateur. C'est aussi d'un code de récupération d'urgence pour accéder à votre organisation si vous perdez l'accès à votre compte. Nous vous invitons à enregistrer ce mot de passe et à le conserver en lieu sûr."
       ],
       "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
         "Les e-mails de votre organisation sont protégés par un chiffrement de bout en bout grâce à la clé de l'organisation. Cette empreinte peut être utilisée pour vérifier que tous les administrateurs de votre compte ont la même clé."
@@ -6421,7 +6424,7 @@
         "Saisissez le mot de passe"
       ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
-        "Veuillez saisir le mot de passe pour la clé à empreinte : ${ fingerprintCode }"
+        "Saisissez le mot de passe pour la clé à empreinte : ${ fingerprintCode }"
       ],
       "Event duration": [
         "Durée de l’événement"
@@ -6649,10 +6652,10 @@
         "La phrase se compose de 12 mots uniques dans un ordre spécifique."
       ],
       "Please add all 3 of the following CNAME records. Note, DNS records can take several hours to update.": [
-        "Veuillez ajouter les 3 enregistrements CNAME suivants. Notez que la mise à jour des enregistrements DNS peut prendre plusieurs heures."
+        "Ajoutez les 3 enregistrements CNAME suivants. Notez que la mise à jour des enregistrements DNS peut prendre plusieurs heures."
       ],
       "Please add the following MX record. Note, DNS records can take several hours to update.": [
-        "Veuillez ajouter l'enregistrement MX suivant. Notez que la mise à jour des enregistrements DNS peut prendre plusieurs heures."
+        "Ajoutez l'enregistrement MX suivant. Notez que la mise à jour des enregistrements DNS peut prendre plusieurs heures."
       ],
       "Please add the following TXT record. Note, DNS records can take several hours to update.": [
         "Veuillez ajouter l'enregistrement TXT suivant. Notez que la mise à jour des enregistrements DNS peut prendre plusieurs heures."
@@ -9530,9 +9533,6 @@
       "Currency": [
         "Devise"
       ],
-      "Current and past imports": [
-        "Your import history"
-      ],
       "Custom filters": [
         "Filtres personnalisés"
       ],
@@ -9673,6 +9673,9 @@
       ],
       "Export public key": [
         "Exporter une clé publique"
+      ],
+      "Extension": [
+        "Extension"
       ],
       "External PGP settings": [
         "Paramètres PGP externes"
@@ -10088,6 +10091,9 @@
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         "Votre essai gratuit se termine bientôt, le ${ formattedEndDate }"
+      ],
+      "Your import history": [
+        "Votre historique d'importation"
       ],
       "Your plan": [
         "Votre abonnement"

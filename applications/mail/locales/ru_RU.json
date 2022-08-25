@@ -1180,97 +1180,6 @@
         "Если вы столкнетесь с проблемами, то всегда можете отключить доступ к Beta-функциям."
       ]
     },
-    "blackfriday Action": {
-      "Get the offer": [
-        "Воспользоваться"
-      ]
-    },
-    "blackfriday Info": {
-      "beta": [
-        "бета"
-      ],
-      "Includes": [
-        "Включает"
-      ],
-      "Standard price: ${ regularPrice }": [
-        "Обычная цена: ${ regularPrice }"
-      ],
-      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
-        "Через 2 года подписка будет автоматически продлена по той же цене, если вы не отмените ее до этого срока."
-      ]
-    },
-    "blackfriday Title": {
-      "Best deal": [
-        "Лучшее предложение"
-      ],
-      "Most popular": [
-        "Самое популярное"
-      ],
-      "Save more when combining Mail and VPN": [
-        "Сэкономьте больше, оплачивая Mail и VPN вместе"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Action": {
-      "Get the deal": [
-        "Получить скидку"
-      ],
-      "Get the deal now": [
-        "Получить скидку"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Info": {
-      "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
-        "Скидки рассчитываются исходя из стандартной платы за 1 месяц в размере ${ standardMonthlyPricing }"
-      ],
-      "Save ${ percentage }%": [
-        "– ${ percentage } %"
-      ],
-      "Special offer Terms and Conditions": [
-        "Условия специального предложения"
-      ]
-    },
-    "blackfriday: VPNspecialoffer info": {
-      "per month": [
-        "в месяц"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Promo title, need to be short": {
-      "Special offer": [
-        "Спецпредложение"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Title": {
-      "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
-        "(${ notice }) Автопродление через 1 месяц по стандартной цене ${ amount } на 1 месяц"
-      ],
-      "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
-        "(${ notice }) Автопродление через 1 год по сниженной цене ${ amount } на 1 год (скидка 20%)"
-      ],
-      "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
-        "(${ notice }) Автопродление через 2 года по сниженной цене ${ amount } на 2 года (скидка 33%)"
-      ],
-      "1 month": [
-        "1 месяц"
-      ],
-      "12 months": [
-        "12 месяцев"
-      ],
-      "24 months": [
-        "24 месяца"
-      ],
-      "Billed at ${ amount } for the first 2 years.${ supNotice }": [
-        "Оплата в размере ${ amount } за первые 2 года.${ supNotice }"
-      ],
-      "Billed at ${ amount } for the first month.${ supNotice }": [
-        "Оплата в размере ${ amount } за первый месяц.${ supNotice }"
-      ],
-      "Billed at ${ amount } for the first year.${ supNotice }": [
-        "Оплата в размере ${ amount } за первый год.${ supNotice }"
-      ],
-      "Get the special year-end offer on our Premium VPN PLUS plan": [
-        "Воспользуйтесь специальным предложением в конце года для премиум-тарифа VPN PLUS"
-      ]
-    },
     "Bug category": {
       "Application problem": [
         "Проблема в приложении"
@@ -1358,9 +1267,6 @@
       ]
     },
     "Calendar invite info": {
-      " This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar.": [
-        "This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar."
-      ],
       "${ participantName } accepted an invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } принял приглашение и предложил новое время для одного повтора события."
       ],
@@ -1573,6 +1479,9 @@
       ],
       "This invitation is out of date. The event has been updated.": [
         "Приглашение устарело. Событие было обновлено."
+      ],
+      "This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar.": [
+        "Это новое временное предложение не соответствует информации о вашем приглашении. Проверьте информацию о приглашении в своем календаре."
       ],
       "This response doesn't match your invitation details. Please verify the invitation details in your calendar.": [
         "Этот ответ не соответствует информации вашего приглашения. Проверьте информацию приглашения в вашем календаре."
@@ -5068,7 +4977,7 @@
         "Эта ссылка ведет на сайт, который может пытаться украсть вашу информацию, например, пароли и данные кредитной карты."
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Эта ссылка может быть омографической атакой и не может быть открыта браузерами Internet Explorer и Edge. Если вы уверены, что ссылка безопасна, то, пожалуйста, воспользуйтесь другим браузером для её открытия."
+        "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Эта ссылка может быть омографической атакой, при которой символы одного алфавита подменяются похожими символами из другого. Пожалуйста, проверьте, что это именно та ссылка, которую вы хотите посетить, или не переходите по ней."

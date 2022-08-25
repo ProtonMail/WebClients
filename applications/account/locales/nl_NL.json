@@ -5150,7 +5150,7 @@
         "Deze link leidt naar een website die mogelijk uw informatie, zoals wachtwoorden en kredietkaartgegevens, tracht te stelen."
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Deze link kan een homografie-aanval zijn en kan niet geopend worden in Internet Explorer en Edge. Als u zeker bent dat de link legitiem is, gebruik dan een andere browser om het te bezoeken."
+        "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Deze link kan een homografie-aanval zijn. Controleer eerst of de link juist is, of open hem niet."
@@ -9377,9 +9377,6 @@
       "Currency": [
         "Valuta"
       ],
-      "Current and past imports": [
-        "Your import history"
-      ],
       "Custom filters": [
         "Aangepaste filters"
       ],
@@ -9517,6 +9514,9 @@
       ],
       "Export public key": [
         "Exporteer publieke sleutel"
+      ],
+      "Extension": [
+        "Extensies"
       ],
       "External PGP settings": [
         "Externe PGP-instellingen"
@@ -9920,6 +9920,9 @@
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         "Uw gratis proefversie eindigt weldra, op ${ formattedEndDate }"
+      ],
+      "Your import history": [
+        "Uw import historiek"
       ],
       "Your plan": [
         "Uw abonnement"
