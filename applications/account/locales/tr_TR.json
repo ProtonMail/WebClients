@@ -173,19 +173,19 @@
         "Destek ekibimizle görüşün"
       ],
       "Continue": [
-        "Devam et"
+        "İlerle"
       ],
       "Continue import": [
-        "İçe aktarmaya devam et"
+        "İçe aktarmayı sürdür"
       ],
       "Continue to ${ name }": [
-        "${ name } ile devam et"
+        "${ name } ile ilerle"
       ],
       "Continue with ${ nameToDisplay } ${ maybeEmailInBrackets }": [
         "${ nameToDisplay } ${ maybeEmailInBrackets } ile ilerle"
       ],
       "Continue with Google": [
-        "Google ile devam et"
+        "Google ile ilerle"
       ],
       "Copy": [
         "Kopyala"
@@ -434,7 +434,7 @@
         "e-postalar şöyle etiketlensin"
       ],
       "Load more": [
-        "Devamını yükle"
+        "Diğerlerini yükle"
       ],
       "Loading verification": [
         "Doğrulama yükleniyor"
@@ -4008,7 +4008,7 @@
         "${ appName }, ${ enableDesktopNotifications } için izninizi istiyor."
       ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
-        "${ boldWarning } Devam ederseniz hesabınızda bulunan tüm şifrelenmiş verilere erişiminizi kaybedeceksiniz."
+        "${ boldWarning } İlerlerseniz hesabınızda bulunan tüm şifrelenmiş verilere erişiminizi kaybedeceksiniz."
       ],
       "${ calendarName } will be set as default calendar.": [
         "${ calendarName } varsayılan takvim olarak ayarlanacak."
@@ -4362,7 +4362,7 @@
         "Ücretsiz bir tarifeye geçtiğinizde, gelecekte yeniden ücretli tarifeye geçseniz bile bu avantajları kalıcı olarak kaybedersiniz."
       ],
       "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
-        "Tarifenizi düşürdüğünüzde aşağıdaki avantajları kaybedeceksiniz. Devam etmek istediğinize emin misiniz?"
+        "Tarifenizi düşürdüğünüzde aşağıdaki avantajları kaybedeceksiniz. İlerlemek istediğinize emin misiniz?"
       ],
       "By leaving now, changes may not be saved": [
         "Şimdi çıkarsanız, değişiklikler kaydedilemeyebilir"
@@ -4386,10 +4386,10 @@
         "Çıkmak için bu ekranı kapatın."
       ],
       "Continue anyway?": [
-        "Yine de devam edilsin mi?"
+        "Yine de ilerlemek istiyor musunuz?"
       ],
       "Continue with ${ planName }": [
-        "${ planName } aboneliği ile devam edin"
+        "${ planName } aboneliğini kullanmayı sürdür"
       ],
       "Continuing will connect your ${ ACCOUNT_APP_NAME } to ${ name }.": [
         "İlerlerseniz ${ ACCOUNT_APP_NAME } uygulamanız ${ name } ile bağlanacak."
@@ -5243,7 +5243,7 @@
         "Bu bağlantı, parola ve kredi kartı gibi bilgilerinizi çalmayı deneyen bir web sitesine gidiyor olabilir."
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Bu bağlantı göründüğü gibi olmayan bir sahtecilik girişimi olabilir ve Internet Explorer ya da Edge tarayıcıları ile açılamaz. Bağlantının göründüğü gibi olduğundan eminseniz, açmak için farklı bir web tarayıcısı kullanın."
+        "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Bu bağlantı göründüğü gibi olmayan bir sahtecilik girişimi olabilir. Lütfen bu bağlantının gerçekten ziyaret etmek istediğiniz bağlantı olduğunu doğrulayın ya da açmayın."
@@ -5267,7 +5267,7 @@
         "Bu işlem kişisel anahtarınızın bulunduğu bir dosyayı indirecek. Bu dosyayı bir parola ile şifreleyerek koruyun."
       ],
       "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
-        "Bu seçenek, Proton aboneliğiniz için PayPal üzerinden ödeme yapılabilmesini sağlar. Yeni bir tarayıcı sekmesi açarak sizi PayPal sitesine yönlendireceğiz. Herhangi bir açılır pencere engelleyici kullanıyorsanız, işleme devam etmek için devre dışı bırakın."
+        "Bu seçenek, Proton aboneliğiniz için PayPal üzerinden ödeme yapılabilmesini sağlar. Yeni bir tarayıcı sekmesi açarak sizi PayPal sitesine yönlendireceğiz. Herhangi bir açılır pencere engelleyici kullanıyorsanız, işlemi sürdürmek için bunu devre dışı bırakın."
       ],
       "This will permanently delete the data and all email addresses associated with this user.": [
         "Bu kullanıcı ile ilişkili tüm e-posta ve veriler kalıcı olarak silinecek."
@@ -5291,7 +5291,7 @@
         "Onaylamak için lütfen silmek istediğiniz kullanıcının adını yazın."
       ],
       "to continue to ${ toAppName }": [
-        "${ toAppName } uygulamasına devam etmek için"
+        "${ toAppName } uygulamasına ilerlemek için"
       ],
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
         "Hizmetlerimizi sürekli olarak geliştirmek için bazen uygulamalarımızın düzgün çalışıp çalışmadığını izlemek amacıyla veri topluyoruz. Bu bilgiler herhangi bir 3. taraf ile paylaşılmıyor."
@@ -5543,7 +5543,7 @@
         "${ VPN_APP_NAME } uygulamalarında ya da ${ VPN_APP_NAME } panosunda oturum açmak için OpenVPN / IKEv2 kimlik bilgilerini kullanamazsınız. ${ learnMore }"
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
-        "Bir kurtarma yöntemi belirlemediniz. Parolanızı unutursanız hesabınızı kurtaramazsınız. Kurtarma yöntemi olmadan devam etmek istiyor musunuz?"
+        "Bir kurtarma yöntemi belirlemediniz. Parolanızı unutursanız hesabınızı kurtaramazsınız. Kurtarma yöntemi olmadan ilerlemek istiyor musunuz?"
       ],
       "You have no personal calendars to export.": [
         "Dışa aktarabileceğiniz bir kişisel takviminiz yok."
@@ -5822,10 +5822,10 @@
     },
     "Key generation": {
       "A key with the same encryption algorithm already exists. Generating another key will cause slower account loading. Are you sure you want to continue?": [
-        "Aynı şifreleme algoritmasını kullanan bir anahtar zaten var. Başka bir anahtar oluşturmak hesabın yüklenmesini yavaşlatır. Devam etmek istediğinize emin misiniz?"
+        "Aynı şifreleme algoritmasını kullanan bir anahtar zaten var. Başka bir anahtar oluşturmak hesabın daha yavaş yüklenmesine neden olur. İlerlemek istediğinize emin misiniz?"
       ],
       "A key with the same encryption algorithm is already active for this address. Generating another key will cause slower account loading and deletion of this key can cause issues. If you are generating a new key because your old key is compromised, please mark that key as compromised. Are you sure you want to continue?": [
-        "Bu adres için aynı şifreleme algoritmasını kullanan bir anahtar zaten etkin. Başka bir anahtar oluşturmak, hesabın daha yavaş yüklenmesine neden olur ve bu anahtarın silinmesi sorunlara neden olabilir. Eski anahtarınız ele geçirildiği için yeni bir anahtar oluşturuyorsanız, lütfen bu anahtarı ele geçirilmiş olarak işaretleyin. Devam etmek istediğinize emin misiniz?"
+        "Bu adres için aynı şifreleme algoritmasını kullanan bir anahtar zaten etkin. Başka bir anahtar oluşturmak, hesabın daha yavaş yüklenmesine neden olur ve bu anahtarın silinmesi sorunlara neden olabilir. Eski anahtarınız ele geçirildiği için yeni bir anahtar oluşturuyorsanız, lütfen bu anahtarı ele geçirilmiş olarak işaretleyin. İlerlemek istediğinize emin misiniz?"
       ],
       "Generate key": [
         "Anahtar oluştur"
@@ -7458,7 +7458,7 @@
         "Gözden geçirmeyi sürdür"
       ],
       "Continue with Free": [
-        "Free tarifesi ile devam et"
+        "Free tarifesini kullanmayı sürdür"
       ],
       "Delete account": [
         "Hesabı sil"
@@ -9513,7 +9513,7 @@
         "Kişi şifreleme anahtarları"
       ],
       "Continue with partial import?": [
-        "Kısmi içe aktarmayla devam edilsin mi?"
+        "Kısmi içe aktarmayla ilerlensin mi?"
       ],
       "Create a ${ MAIL_APP_NAME } address": [
         "Bir ${ MAIL_APP_NAME } adresi oluştur"
@@ -9532,9 +9532,6 @@
       ],
       "Currency": [
         "Para birimi"
-      ],
-      "Current and past imports": [
-        "Your import history"
       ],
       "Custom filters": [
         "Özel süzgeçler"
@@ -9676,6 +9673,9 @@
       ],
       "Export public key": [
         "Herkese açık anahtarı dışa aktar"
+      ],
+      "Extension": [
+        "Uzantı"
       ],
       "External PGP settings": [
         "Dış PGP ayarları"
@@ -9973,7 +9973,7 @@
         "Oturum aç"
       ],
       "Sign in again to continue": [
-        "Devam etmek için yeniden oturum açın"
+        "İlerlemek için yeniden oturum açın"
       ],
       "Sign in and grant access": [
         "Oturum açın ve erişim izni verin"
@@ -10091,6 +10091,9 @@
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         "Ücretsiz denemeniz yakında ${ formattedEndDate } tarihinde sona erecek"
+      ],
+      "Your import history": [
+        "İçe aktarma geçmişiniz"
       ],
       "Your plan": [
         "Tarifeniz"
@@ -10228,7 +10231,7 @@
         "Satın aldığınız ya da destek ekibimizden verilen bir hediye kodunuz varsa, buraya yazabilirsiniz."
       ],
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
-        "Gönderilmiş veya Taslaklar kutusundaki iletiler, başka bir klasöre taşısanız bile o klasörde görünmeye devam eder."
+        "Gönderilmiş veya Taslaklar kutusundaki iletiler, başka bir klasöre taşısanız bile o klasörde görünmeyi sürdürür."
       ],
       "Set how your list of messages looks like by default.": [
         "İleti listenizin varsayılan olarak nasıl görüneceğini seçin."
@@ -10500,7 +10503,7 @@
     },
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
-        "Doğrulama tamamlandıktan sonra da bu etki alanının sahibi olduğunuzu doğrulamaya devam etmemiz gerektiğinden bu TXT kaydını kaldırmayın."
+        "Doğrulama tamamlandıktan sonra da bu etki alanının sahibi olduğunuzu doğrulamayı sürdürmemiz gerektiğinden bu TXT kaydını kaldırmayın."
       ],
       "It can take up to a day for DNS changes to update.": [
         "DNS değişikliklerinin güncellenmesi bir gün sürebilir."
