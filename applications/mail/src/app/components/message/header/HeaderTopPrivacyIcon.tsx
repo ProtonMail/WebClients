@@ -76,7 +76,11 @@ const HeaderTopPrivacyIcon = ({ message }: Props) => {
                                         className="mr0-5 relative inline-flex flex-align-items-center"
                                     />
                                     <span className="pl0-25 flex-item-fluid">
-                                        {c('Info').t`Delivered via SimpleLogin by Proton`}
+                                        {
+                                            // translator : Received message has been delivered to the user via a Simple Login alias
+                                            c('Message has been sent to the user via a SimpleLogin alias')
+                                                .t`Delivered via SimpleLogin by Proton`
+                                        }
                                     </span>
                                 </div>
                             </DropdownMenuButton>
