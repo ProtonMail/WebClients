@@ -175,6 +175,11 @@ export interface MessageDraftFlags {
     originalTo?: string;
 
     /**
+     * Original "From" address of the referring message. It is used to reply with an alias address. Only added for drafts.
+     */
+    originalFrom?: string;
+
+    /**
      * Original "AddressID" of the address of the referring message. Only added for drafts.
      * Used on rare situation when replying with a different address than the one you received the message.
      */
