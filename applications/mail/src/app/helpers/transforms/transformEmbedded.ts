@@ -1,9 +1,7 @@
-import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import generateUID from '@proton/shared/lib/helpers/generateUID';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
-import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
-import { getAttachments, isDraft } from '@proton/shared/lib/mail/messages';
+import { getAttachments, isDMARCValidationFailure, isDraft } from '@proton/shared/lib/mail/messages';
 
 import { WHITE_LISTED_ADDRESSES } from '../../constants';
 import { LoadEmbeddedResults, MessageEmbeddedImage, MessageState } from '../../logic/messages/messagesTypes';
@@ -30,7 +28,7 @@ export const transformEmbedded = async (
         message.messageImages?.showEmbeddedImages === true ||
         hasShowEmbedded(mailSettings) ||
         (WHITE_LISTED_ADDRESSES.includes(message.data?.Sender?.Address || '') &&
-            !hasBit(message.data?.Flags, MESSAGE_FLAGS.FLAG_DMARC_FAIL));
+            !isDMARCValidationFailure(message.data));
 
     const existingEmbeddedImage = getEmbeddedImages(message);
     let newEmbeddedImages: MessageEmbeddedImage[] = [];

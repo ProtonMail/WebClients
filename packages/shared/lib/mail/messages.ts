@@ -26,6 +26,9 @@ const {
     FLAG_PUBLIC_KEY,
     FLAG_UNSUBSCRIBED,
     FLAG_SCHEDULED_SEND,
+    FLAG_DMARC_FAIL,
+    FLAG_PHISHING_AUTO,
+    FLAG_HAM_MANUAL,
 } = MESSAGE_FLAGS;
 const AUTOREPLY_HEADERS = ['X-Autoreply', 'X-Autorespond', 'X-Autoreply-From', 'X-Mail-Autoreply'];
 const LIST_HEADERS = [
@@ -83,6 +86,9 @@ export const isUnsubscribable = (message?: Partial<Message>) => {
     const unsubscribeMethods = message?.UnsubscribeMethods || {};
     return !!unsubscribeMethods.OneClick; // Only method supported by API
 };
+export const isDMARCValidationFailure = hasFlag(FLAG_DMARC_FAIL);
+export const isAutoFlaggedPhishing = hasFlag(FLAG_PHISHING_AUTO);
+export const isManualFlaggedHam = hasFlag(FLAG_HAM_MANUAL);
 
 export const isExternalEncrypted = (message: Message) => isE2E(message) && !isInternal(message);
 export const isPGPEncrypted = (message: Message) => isExternal(message) && isReceived(message) && isE2E(message);
