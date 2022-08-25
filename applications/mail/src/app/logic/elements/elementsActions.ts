@@ -32,8 +32,6 @@ export const updatePage = createAction<number>('elements/updatePage');
 
 export const retry = createAction<{ queryParameters: any; error: Error | undefined }>('elements/retry');
 
-export const retryStale = createAction<{ queryParameters: any; count: number }>('elements/retry/stale');
-
 export const load = createAsyncThunk<{ result: QueryResults; taskRunning: TaskRunningInfo }, QueryParams>(
     'elements/load',
     async (
