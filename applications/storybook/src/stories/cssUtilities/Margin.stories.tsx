@@ -264,7 +264,7 @@ const marginsCenterHorizontally = [
     {
         id: 'mx',
         checked: true,
-        value: 'center',
+        value: 'auto',
     },
     {
         id: 'my',
@@ -339,8 +339,8 @@ export const Sandbox = () => {
 
         items.forEach((item) => {
             if (item.checked) {
-                if (item.id === 'mx' && item.value === 'center') {
-                    classes.push('center');
+                if (item.id === 'mx' && item.value === 'mxauto') {
+                    classes.push('mxauto');
                 } else {
                     classes.push(`${item.id}${item.value}`);
                 }
@@ -355,7 +355,10 @@ export const Sandbox = () => {
 
         switch (id) {
             case 'mx':
-                newSizes.unshift('center');
+                newSizes.unshift('auto');
+                break;
+            case 'my':
+                newSizes.unshift('auto');
                 break;
             case 'mt':
                 newSizes.unshift('auto');
@@ -378,12 +381,27 @@ export const Sandbox = () => {
     };
 
     const containerClasses = (classes: string | string[]) => {
-        if (classes === 'mauto') {
+        if (
+            classes.includes('mauto') ||
+            classes.includes('myauto') ||
+            classes.includes('mtauto') ||
+            classes.includes('mbauto')
+        ) {
             return 'h100';
-        } else if (classes.includes('auto') || classes.includes('center')) {
+        } else if (classes.includes('auto')) {
             return '';
         } else {
             return 'absolute';
+        }
+    };
+    // display: assembleClasses(selectedMargin).includes('mauto') ? 'flex' : 'flow-root'
+    const containerDisplay = (classes: string | string[]) => {
+        if (classes.includes('mauto') || classes.includes('mxauto myauto')) {
+            return 'flex';
+        } else if (classes.includes('myauto') || classes.includes('mtauto') || classes.includes('mbauto')) {
+            return 'inline-flex';
+        } else {
+            return 'flow-root';
         }
     };
 
@@ -430,7 +448,7 @@ export const Sandbox = () => {
                     {containerClasses}
                     <div
                         className={`${containerClasses(assembleClasses(selectedMargin))} bg-strong rounded-sm`}
-                        style={{ display: assembleClasses(selectedMargin).includes('mauto') ? 'flex' : 'flow-root' }}
+                        style={{ display: containerDisplay(assembleClasses(selectedMargin)) }}
                     >
                         <div
                             className={`${assembleClasses(selectedMargin)} ${demoItemClasses} bg-primary`}
