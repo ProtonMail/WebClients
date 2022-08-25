@@ -1180,45 +1180,6 @@
         "При виникненні проблем, ви завжди можете вимкнути бета-доступ."
       ]
     },
-    "blackfriday Info": {
-      "Includes": [
-        "Включає"
-      ]
-    },
-    "blackfriday Title": {
-      "Most popular": [
-        "Найпопулярніша"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Action": {
-      "Get the deal": [
-        "Скористатися пропозицією"
-      ],
-      "Get the deal now": [
-        "Скористатися пропозицією"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Info": {
-      "Save ${ percentage }%": [
-        "${ percentage }%"
-      ]
-    },
-    "blackfriday: VPNspecialoffer info": {
-      "per month": [
-        "на місяць"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Title": {
-      "1 month": [
-        "1 місяць"
-      ],
-      "12 months": [
-        "12 місяців"
-      ],
-      "24 months": [
-        "24 місяці"
-      ]
-    },
     "Bug category": {
       "Application problem": [
         "Проблема з додатком"
@@ -1306,9 +1267,6 @@
       ]
     },
     "Calendar invite info": {
-      " This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar.": [
-        "This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar."
-      ],
       "${ participantName } accepted an invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } приймає запрошення і пропонує новий час для одного повторення цієї події."
       ],
@@ -1521,6 +1479,9 @@
       ],
       "This invitation is out of date. The event has been updated.": [
         "Це запрошення застаріло. Подію було оновлено."
+      ],
+      "This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar.": [
+        "Ця нова пропозиція часу не збігається з подробицями вашого запрошення. Перевірте подробиці запрошення у своєму календарі."
       ],
       "This response doesn't match your invitation details. Please verify the invitation details in your calendar.": [
         "Ця відповідь не збігається з подробицями вашого запрошення. Перевірте подробиці запрошення у своєму календарі."
@@ -5016,7 +4977,7 @@
         "Це посилання веде на вебсайт, який, можливо, намагається викрасти ваші дані, як-от паролі та дані кредитної картки."
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Це посилання може бути гомографічною атакою і його не можна відкрити в браузерах Internet Explorer чи Edge. Якщо ви впевнені, що це надійне посилання, відкрийте його в іншому браузері."
+        "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Це посилання може бути гомографічною атакою. Впевніться, що це саме те посилання, яке ви хочете відвідати, або не відкривайте його."

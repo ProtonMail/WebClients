@@ -1180,59 +1180,6 @@
         "Jestliže zaznamenáte problémy, vždy můžete deaktivovat Beta Přístup."
       ]
     },
-    "blackfriday Info": {
-      "beta": [
-        "beta"
-      ],
-      "Includes": [
-        "Zahrnuje"
-      ],
-      "Standard price: ${ regularPrice }": [
-        "Běžná cena: ${ regularPrice }"
-      ],
-      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
-        "Předplatné se bude každé dva roky automaticky obnovovat se stejnou cenou, dokud nebude zrušeno."
-      ]
-    },
-    "blackfriday Title": {
-      "Most popular": [
-        "Nejoblíbenější"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Action": {
-      "Get the deal": [
-        "Využít nabídku"
-      ],
-      "Get the deal now": [
-        "Objednat nyní"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Info": {
-      "Save ${ percentage }%": [
-        "${ percentage } %"
-      ]
-    },
-    "blackfriday: VPNspecialoffer info": {
-      "per month": [
-        "za měsíc"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Promo title, need to be short": {
-      "Special offer": [
-        "Speciální nabídka"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Title": {
-      "1 month": [
-        "1 měsíc"
-      ],
-      "12 months": [
-        "12 měsíců"
-      ],
-      "24 months": [
-        "24 měsíců"
-      ]
-    },
     "Bug category": {
       "Application problem": [
         "Problém s aplikací"
@@ -1320,9 +1267,6 @@
       ]
     },
     "Calendar invite info": {
-      " This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar.": [
-        "This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar."
-      ],
       "${ participantName } accepted an invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } přijal(a) pozvání a navrhl(a) nový čas pro jeden výskyt této události."
       ],
@@ -1535,6 +1479,9 @@
       ],
       "This invitation is out of date. The event has been updated.": [
         "Tato pozvánka je zastaralá. Událost byla aktualizována."
+      ],
+      "This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar.": [
+        "Nově navržený čas neodpovídá údajům ve vaší pozvánce. Zkontrolujte prosím detaily pozvánky ve vašem kalendáři."
       ],
       "This response doesn't match your invitation details. Please verify the invitation details in your calendar.": [
         "Tato odpověď neodpovídá Vašim údajům o pozvánce. Zkontrolujte prosím detaily pozvánky ve Vašem kalendáři."
@@ -5030,7 +4977,7 @@
         "Tento odkaz vede na webovou stránku, která se může pokoušet ukrást vaše údaje, například hesla a údaje o kreditní kartě."
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Tento odkaz může být homografickým útokem a nelze ho otevřít pomocí prohlížeče Internet Explorer nebo Edge. Pokud jste si jisti, že je odkaz v pořádku, otevřete ho v jiném prohlížeči."
+        "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Tento odkaz může být homografickým útokem. Zkontrolujte, zda se jedná o odkaz, který chcete navštívit, nebo odkaz neotevírejte."

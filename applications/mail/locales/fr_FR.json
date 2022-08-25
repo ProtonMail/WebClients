@@ -1049,7 +1049,7 @@
         "Aucun résultat n'a été trouvé."
       ],
       "Please try another search term.": [
-        "Veuillez essayer un autre terme de recherche."
+        "Essayez un autre terme de recherche."
       ],
       "You don't have any contacts.": [
         "Vous n'avez pas de contacts."
@@ -1170,97 +1170,6 @@
         "Si vous rencontrez des problèmes, vous pouvez toujours désactiver l'accès à la version bêta."
       ]
     },
-    "blackfriday Action": {
-      "Get the offer": [
-        "Profiter de l'offre"
-      ]
-    },
-    "blackfriday Info": {
-      "beta": [
-        "bêta"
-      ],
-      "Includes": [
-        "Inclut"
-      ],
-      "Standard price: ${ regularPrice }": [
-        "Prix normal : ${ regularPrice }"
-      ],
-      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
-        "Cet abonnement se renouvellera automatiquement tous les 2 ans au même tarif jusqu'à son annulation."
-      ]
-    },
-    "blackfriday Title": {
-      "Best deal": [
-        "Meilleure offre"
-      ],
-      "Most popular": [
-        "Le plus populaire"
-      ],
-      "Save more when combining Mail and VPN": [
-        "Économisez plus en combinant Mail et VPN"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Action": {
-      "Get the deal": [
-        "Profitez de l'offre"
-      ],
-      "Get the deal now": [
-        "Profitez de l'offre maintenant"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Info": {
-      "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
-        "Les réductions sont basées sur le prix mensuel standard de ${ standardMonthlyPricing }"
-      ],
-      "Save ${ percentage }%": [
-        "- ${ percentage } %"
-      ],
-      "Special offer Terms and Conditions": [
-        "Conditions générales des offres spéciales"
-      ]
-    },
-    "blackfriday: VPNspecialoffer info": {
-      "per month": [
-        "par mois"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Promo title, need to be short": {
-      "Special offer": [
-        "Offre spéciale"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Title": {
-      "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
-        "(${ notice }) Renouvellement après 1 mois à un prix standard mensuel de ${ amount }"
-      ],
-      "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
-        "(${ notice }) Renouvellement après 1 an à un prix standard annuel réduit de ${ amount } (20 % de réduction)"
-      ],
-      "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
-        "(${ notice }) Renouvellement après 2 ans à un prix standard bisannuel réduit de ${ amount } (33 % de réduction)"
-      ],
-      "1 month": [
-        "1 mois"
-      ],
-      "12 months": [
-        "12 mois"
-      ],
-      "24 months": [
-        "24 mois"
-      ],
-      "Billed at ${ amount } for the first 2 years.${ supNotice }": [
-        "Facturé ${ amount } pour les 2 premières années.${ supNotice }"
-      ],
-      "Billed at ${ amount } for the first month.${ supNotice }": [
-        "Facturé ${ amount } pour le premier mois.${ supNotice }"
-      ],
-      "Billed at ${ amount } for the first year.${ supNotice }": [
-        "Facturé ${ amount } pour la première année.${ supNotice }"
-      ],
-      "Get the special year-end offer on our Premium VPN PLUS plan": [
-        "Profitez de l'offre spéciale de fin d'année sur notre abonnement premium VPN PLUS"
-      ]
-    },
     "Bug category": {
       "Application problem": [
         "Problème de l'application"
@@ -1348,9 +1257,6 @@
       ]
     },
     "Calendar invite info": {
-      " This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar.": [
-        "This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar."
-      ],
       "${ participantName } accepted an invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } a accepté une invitation et a proposé un nouvel horaire pour une occurrence de cet événement."
       ],
@@ -1563,6 +1469,9 @@
       ],
       "This invitation is out of date. The event has been updated.": [
         "Cette invitation est obsolète. L'événement a été mis à jour."
+      ],
+      "This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar.": [
+        "Cette nouvelle proposition horaire ne correspond pas aux détails de votre invitation. Vérifiez les détails de l'invitation dans votre calendrier."
       ],
       "This response doesn't match your invitation details. Please verify the invitation details in your calendar.": [
         "Cette réponse ne correspond pas aux détails de votre invitation. Veuillez vérifier les détails de l'invitation dans votre calendrier."
@@ -2838,7 +2747,7 @@
         "Chiffrement et importation des contacts… Ceci peut prendre quelques minutes. Une fois le processus terminé, vous pouvez fermer cette boîte de dialogue."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
-        "Il semble que la liste de contacts que vous importez contienne certains groupes. Veuillez vérifier comment ces groupes doivent être importés."
+        "Il semble que la liste de contacts que vous importez contienne des groupes. Nous vous invitons à vérifier comment ces groupes doivent être importés."
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Fusion des contacts… ceci peut prendre quelques minutes. Lorsque le processus sera terminé, vous pourrez fermer cette boîte de dialogue."
@@ -2999,7 +2908,7 @@
         "Un groupe portant ce nom existe déjà."
       ],
       "A problem occurred, please try again": [
-        "Une erreur est survenue, veuillez réessayer"
+        "Une erreur est survenue, veuillez réessayer."
       ],
       "Address primary private key not found": [
         "La clé privée principale de l'adresse n'a pas été trouvée."
@@ -3042,7 +2951,7 @@
         "Contactez l’administrateur de votre organisation pour résoudre ce problème."
       ],
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
-        "La recherche de contenu ne peut pas être activée dans ce navigateur. Veuillez quitter la navigation privée ou essayer avec un autre navigateur."
+        "La recherche de contenu ne peut pas être activée dans ce navigateur. Quittez la navigation privée ou essayez avec un autre navigateur."
       ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Erreur de déchiffrement : le déchiffrement du contenu chiffré de ce message a échoué."
@@ -3056,7 +2965,7 @@
         "Désélectionnez au moins ${ calendarToFixCount } calendriers ou"
       ],
       "Domain not available, try again later": [
-        "Domaine non disponible, veuillez réessayer plus tard."
+        "Domaine non disponible, réessayez plus tard."
       ],
       "Draft could not be saved. Try again.": [
         "Le brouillon n'a pas pu être enregistré, veuillez réessayer."
@@ -3144,7 +3053,7 @@
         "Signature manquante"
       ],
       "Network error: Please check your connection and try again.": [
-        "Erreur réseau : veuillez vérifier votre connexion et réessayer."
+        "Erreur réseau : nous vous invitons à vérifier votre connexion et à réessayer."
       ],
       "No address with keys available to compose a message": [
         "Aucune adresse avec des clés disponibles pour écrire un message"
@@ -3176,7 +3085,7 @@
         "Les mots de passe ne correspondent pas."
       ],
       "Please activate your content search again": [
-        "Veuillez réactiver la recherche de contenu"
+        "Veuillez réactiver la recherche de contenu."
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Veuillez corriger le conflit en surbrillance pour continuer.",
@@ -3235,16 +3144,16 @@
         "Certains groupes n'ont pas pu être supprimés."
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
-        "Certains de vos noms de labels ne sont pas disponibles. Veuillez personnaliser l'importation pour modifier ces noms."
+        "Certains de vos noms de labels ne sont pas disponibles. Personnalisez l'importation pour modifier ces noms."
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
-        "Certains de vos noms de labels dépassent la limite de caractères autorisée par ${ MAIL_APP_NAME }. Veuillez personnaliser l'importation pour modifier ces noms."
+        "Certains de vos noms de labels dépassent la limite de caractères autorisée par ${ MAIL_APP_NAME }. Personnalisez l'importation pour modifier ces noms."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Quelque chose s'est mal passé, veuillez ${ refresh } afin de pouvoir continuer. Si ce message d'erreur s'affiche toujours, veuillez contacter notre ${ supportTeam }."
+        "Quelque chose s'est mal passé, nous vous invitons à ${ refresh } pour continuer. Si ce message d'erreur s'affiche toujours, contactez notre ${ supportTeam }."
       ],
       "Sorry, Proton can't decrypt your message. Please check that all your keys are active.": [
-        "Désolé, Proton ne peut pas déchiffrer votre message. Veuillez vérifier que toutes vos clés sont activées."
+        "Proton ne peut malheureusement pas déchiffrer votre message. Nous vous invitons à vérifier que toutes vos clés sont actives."
       ],
       "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
         "La pièce jointe n'a pas pu être déchiffrée.\nSi vous avez la clé privée correspondante, vous aurez toujours la possibilité de déchiffrer\nle fichier avec un programme tel que GnuPG.",
@@ -3272,7 +3181,7 @@
         "La clé d'envoi n'est pas valide."
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
-        "Il y a trop de dossiers dans votre compte externe. Veuillez personnaliser l'importation pour supprimer certains dossiers."
+        "Il y a trop de dossiers dans votre compte externe. Personnalisez l'importation pour supprimer certains dossiers."
       ],
       "There has been an issue with content search. Default search has been used instead.": [
         "Un problème est survenu avec la recherche de contenu. La recherche par défaut a été utilisée à la place."
@@ -3342,7 +3251,7 @@
         "Votre importation ne sera pas traitée."
       ],
       "Your search matched too many results. Please limit your search and try again.": [
-        "Trop de résultats correspondants à votre recherche. Veuillez limiter votre recherche et essayez à nouveau."
+        "Trop de résultats correspondants à votre recherche. Limitez votre recherche et essayez à nouveau."
       ]
     },
     "Error adding participants to a calendar event": {
@@ -3497,7 +3406,7 @@
         "Désolé, quelque chose s'est mal passé."
       ],
       "Please ${ refresh } or check your connection.": [
-        "Veuillez ${ refresh } ou vérifier votre connexion."
+        "Nous vous invitons à ${ refresh } ou à vérifier votre connexion."
       ],
       "Something went wrong. Please refresh the page or try again later.": [
         "Une erreur s'est produite. Veuillez rafraîchir la page ou réessayer plus tard."
@@ -4092,7 +4001,7 @@
         "Une demande de désinscription de cette liste de diffusion sera envoyée à l'expéditeur de la newsletter et traitée automatiquement."
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "Accès au compte restreint en raison de factures impayées. Veuillez contacter votre administrateur."
+        "Accès au compte restreint en raison de factures impayées. Nous vous invitons à contacter votre administrateur."
       ],
       "Activation in progress": [
         "Activation en cours"
@@ -4376,7 +4285,7 @@
         "Expire bientôt"
       ],
       "Expiring message": [
-        "Message expiré"
+        "Message avec date d’expiration"
       ],
       "file attached": [
         "fichier joint",
@@ -4430,13 +4339,13 @@
         "J'envoie ce message à une personne qui n'utilise pas Proton Mail."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
-        "Si vous rencontrez des difficultés à créer votre compte, veuillez demander une invitation et nous vous répondrons dans un délai d'un jour ouvré."
+        "Si vous rencontrez des difficultés à créer votre compte, demandez une invitation et nous vous répondrons dans un délai d'un jour ouvré."
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Si vous pensez qu'il s'agit d'une erreur, nous vous invitons à nous contacter ${ contactLink }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
-        "Si vous ne trouvez pas le message dans votre boîte de réception, vérifiez votre dossier indésirables/spam."
+        "Si vous ne trouvez pas le message dans votre boîte de réception, vérifiez votre dossier Indésirables/spam."
       ],
       "If your alias is sold, leaked, or abused, simply disable it to stop receiving spam.": [
         "Si votre alias est vendu, divulgué ou utilisé de manière abusive, il suffit de le désactiver pour ne plus recevoir d'indésirables/spam."
@@ -4542,7 +4451,7 @@
         "Fusionné"
       ],
       "Message expiration works out-of-the-box when sending emails to other ${ MAIL_APP_NAME } users. To send expiring emails to non-${ BRAND_NAME } users, please cancel and add password protection to your email.": [
-        "L'expiration des messages fonctionne pour l'envoi d'e-mails à d'autres utilisateurs ${ MAIL_APP_NAME }. Pour envoyer des e-mails à durée d’expiration à des utilisateurs n’utilisant pas ${ BRAND_NAME }, veuillez annuler l’envoi et ajouter une protection par mot de passe à votre message."
+        "Les messages avec une date d'expiration fonctionnent pour l'envoi d'e-mails à d'autres utilisateurs ${ MAIL_APP_NAME }. Pour des destinataires qui n'utilisent pas ${ BRAND_NAME }, nous vous invitons à annuler l’envoi et à ajouter une protection par mot de passe à votre message."
       ],
       "Message headers": [
         "En-têtes du message"
@@ -4641,7 +4550,7 @@
         "par mois."
       ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        "PGP/Inline est uniquement compatible avec le format texte brut. Veuillez noter que ${ MAIL_APP_NAME } signe toujours les messages chiffrés."
+        "PGP/Inline est uniquement compatible avec le format texte brut. Notez que ${ MAIL_APP_NAME } signe toujours les messages chiffrés."
       ],
       "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
         "PGP/MIME envoie automatiquement le message en utilisant le mode actuel du composeur. Veuillez noter que ${ MAIL_APP_NAME } signe toujours les messages chiffrés."
@@ -4653,25 +4562,25 @@
         "Texte brut"
       ],
       "Please add at least one recipient.": [
-        "Veuillez ajouter au moins un destinataire."
+        "Ajoutez au moins un destinataire."
       ],
       "Please fill out this field.": [
-        "Veuillez remplir ce champ."
+        "Complétez ce champ."
       ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
-        "Veuillez le garder en sécurité. Vous en aurez besoin pour accéder à votre compte et déchiffrer vos données en cas de réinitialisation du mot de passe."
+        "Nous vous invitons à le garder en sécurité. Vous en aurez besoin pour accéder à votre compte et déchiffrer vos données en cas de réinitialisation du mot de passe."
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
-        "Veuillez noter que les adresses assignées à ce groupe ne seront PAS supprimées."
+        "Notez que les adresses assignées à ce groupe ne seront PAS supprimées."
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
-        "Veuillez noter que ce processus peut prendre un certain temps en fonction de la taille de votre carnet d'adresses."
+        "Notez que ce processus peut prendre un certain temps en fonction de la taille de votre carnet d'adresses."
       ],
       "Please select the folders you would like to import:": [
-        "Veuillez sélectionner les dossiers que vous souhaitez importer :"
+        "Sélectionnez les dossiers que vous souhaitez importer :"
       ],
       "Please select the type of link you want to insert and fill in all the fields.": [
-        "Veuillez sélectionner le type de lien que vous souhaitez insérer et remplir tous les champs."
+        "Sélectionnez le type de lien que vous souhaitez insérer et remplir tous les champs."
       ],
       "Please select which email address or addresses to add to ${ groupCount } group.": [
         "Sélectionnez la ou les adresses e-mail à ajouter au groupe ${ groupCount }.",
@@ -4908,7 +4817,7 @@
         "Ce lien mène à un site web qui pourrait essayer de voler vos informations, comme les mots de passe et les détails de carte de crédit."
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Ce lien pourrait être une attaque homographique et ne peut pas être ouvert avec les navigateurs Internet Explorer et Edge. Si vous êtes certain de la légitimité de ce lien, veuillez utiliser un autre navigateur pour l'ouvrir."
+        "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Ce lien pourrait être une attaque homographique. Assurez vous qu'il s'agit bien du lien que vous souhaitez visiter, ou ne l'ouvrez pas."
@@ -4987,7 +4896,7 @@
         "Pour utiliser la vérification d'adresse, vous devez approuver une ou plusieurs clés publiques disponibles, y compris celles que vous souhaitez utiliser pour l'envoi. Cela empêche la falsification des clés de chiffrement."
       ],
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
-        "Trop de messages en attente d'envoi. Veuillez attendre jusqu'à ce qu'un autre message soit envoyé pour programmer celui-ci."
+        "Trop de messages en attente d'envoi. Attendez qu'un autre message soit envoyé pour programmer celui-ci."
       ],
       "Turn off content search. Activation progress won't be lost.": [
         "Désactiver la recherche de contenu. La progression d'activation ne sera pas perdue."
@@ -5233,7 +5142,7 @@
         "Votre compte Proton inclut SimpleLogin. Installez l'extension de navigateur en un clic pour commencer."
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "Votre compte Proton est actuellement suspendu. Pour continuer à utiliser votre compte, veuillez régler les factures impayées."
+        "Votre compte Proton est actuellement suspendu. Pour continuer à l'utiliser, nous vous invitons à régler les factures impayées."
       ],
       "Your recovery phrase": [
         "Votre phrase de récupération"
@@ -5497,7 +5406,7 @@
         " et ${ l }"
       ],
       "(Temporarily unavailable. Please check back later.)": [
-        "(temporairement indisponible. Veuillez vérifier plus tard)"
+        "(temporairement indisponible, nous vous invitons à vérifier plus tard)"
       ],
       "Actions": [
         "Actions"
@@ -6093,7 +6002,7 @@
         "Conditions générales d'utilisation"
       ],
       "This ICS file contains more than one event. Please download it and import the events in ${ calendarAppName }": [
-        "Ce fichier ICS contient plus d'un événement. Veuillez le télécharger et importer les événements dans ${ calendarAppName }"
+        "Ce fichier ICS contient plus d'un événement. Téléchargez et importez les événements dans ${ calendarAppName }."
       ],
       "Trash": [
         "Corbeille"
@@ -6596,10 +6505,10 @@
         "Numéro de téléphone"
       ],
       "Please describe the problem and include any error messages": [
-        "Veuillez décrire le problème et inclure les messages d'erreur."
+        "Décrivez le problème et incluez les éventuels messages d'erreur."
       ],
       "Please insert link first": [
-        "Veuillez d'abord insérer un lien"
+        "Insérez d'abord le lien"
       ],
       "Search for group name": [
         "Rechercher un nom de groupe"
@@ -7818,7 +7727,7 @@
         "version stable"
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
-        "Cette version du navigateur Tor n'est pas prise en charge. Veuillez mettre à jour avec la dernière ${ stableRelease }"
+        "Cette version du navigateur Tor n'est pas prise en charge. Nous vous invitons à mettre à jour avec la dernière ${ stableRelease }"
       ]
     },
     "Update font modal": {
@@ -7868,7 +7777,7 @@
         "Si vous ne vous souvenez plus de votre mot de passe, il est impossible de réactiver votre clé. Nous pouvons vous aider à supprimer la bannière d'alerte, mais vous perdrez ainsi définitivement l'accès à toutes les données chiffrées avec cette clé."
       ],
       "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
-        "Le dialogue en ligne en temps réel est une fonctionnalité premium disponible uniquement pour les personnes disposant d’une offre ${ VPN_APP_NAME } payante. Veuillez ouvrir un ticket à la place."
+        "Le chat en direct est une fonctionnalité premium pour les utilisateurs avec un abonnement ${ VPN_APP_NAME } payant. Nous vous invitons à ouvrir un ticket à la place."
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
         "Proton fusionnera tous les dossiers avec le même nom. Pour éviter cela, changez les noms avant l'importation."
@@ -7899,13 +7808,13 @@
         "La vérification de la signature des coordonnées a échoué."
       ],
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
-        "Cette action est irréversible. Veuillez saisir le mot ${ boldDanger } dans le champ pour continuer."
+        "Cette action est irréversible. Saisissez le mot ${ boldDanger } dans le champ pour continuer."
       ],
       "This feature requires a paid Proton account": [
         "Cette fonctionnalité nécessite un compte Proton payant"
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
-        "Malheureusement, nous ne sommes pas en ligne pour le moment. Veuillez remplir le formulaire ci-dessous pour décrire votre problème, nous l'examinerons et vous contacterons lorsque nous serons de nouveau en ligne."
+        "Nous ne sommes malheureusement pas en ligne pour le moment. Nous vous invitons à remplir le formulaire ci-dessous pour décrire votre problème. Nous l'examinerons et vous contacterons dès que nous serons de nouveau en ligne."
       ],
       "You will lose any customization you made so far.": [
         "Vous perdrez toutes les personnalisations que vous avez faites jusqu'à présent."
