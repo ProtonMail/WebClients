@@ -619,97 +619,6 @@
         "Si vous rencontrez des problèmes, vous pouvez toujours désactiver l'accès à la version bêta."
       ]
     },
-    "blackfriday Action": {
-      "Get the offer": [
-        "Profiter de l'offre"
-      ]
-    },
-    "blackfriday Info": {
-      "beta": [
-        "bêta"
-      ],
-      "Includes": [
-        "Inclut"
-      ],
-      "Standard price: ${ regularPrice }": [
-        "Prix normal : ${ regularPrice }"
-      ],
-      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
-        "Cet abonnement se renouvellera automatiquement tous les 2 ans au même tarif jusqu'à son annulation."
-      ]
-    },
-    "blackfriday Title": {
-      "Best deal": [
-        "Meilleure offre"
-      ],
-      "Most popular": [
-        "Le plus populaire"
-      ],
-      "Save more when combining Mail and VPN": [
-        "Économisez plus en combinant Mail et VPN"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Action": {
-      "Get the deal": [
-        "Profitez de l'offre"
-      ],
-      "Get the deal now": [
-        "Profitez de l'offre maintenant"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Info": {
-      "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
-        "Les réductions sont basées sur le prix mensuel standard de ${ standardMonthlyPricing }"
-      ],
-      "Save ${ percentage }%": [
-        "- ${ percentage } %"
-      ],
-      "Special offer Terms and Conditions": [
-        "Conditions générales des offres spéciales"
-      ]
-    },
-    "blackfriday: VPNspecialoffer info": {
-      "per month": [
-        "par mois"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Promo title, need to be short": {
-      "Special offer": [
-        "Offre spéciale"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Title": {
-      "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
-        "(${ notice }) Renouvellement après 1 mois à un prix standard mensuel de ${ amount }"
-      ],
-      "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
-        "(${ notice }) Renouvellement après 1 an à un prix standard annuel réduit de ${ amount } (20 % de réduction)"
-      ],
-      "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
-        "(${ notice }) Renouvellement après 2 ans à un prix standard bisannuel réduit de ${ amount } (33 % de réduction)"
-      ],
-      "1 month": [
-        "1 mois"
-      ],
-      "12 months": [
-        "12 mois"
-      ],
-      "24 months": [
-        "24 mois"
-      ],
-      "Billed at ${ amount } for the first 2 years.${ supNotice }": [
-        "Facturé ${ amount } pour les 2 premières années.${ supNotice }"
-      ],
-      "Billed at ${ amount } for the first month.${ supNotice }": [
-        "Facturé ${ amount } pour le premier mois.${ supNotice }"
-      ],
-      "Billed at ${ amount } for the first year.${ supNotice }": [
-        "Facturé ${ amount } pour la première année.${ supNotice }"
-      ],
-      "Get the special year-end offer on our Premium VPN PLUS plan": [
-        "Profitez de l'offre spéciale de fin d'année sur notre abonnement premium VPN PLUS"
-      ]
-    },
     "Bug category": {
       "Application problem": [
         "Problème d'application"
@@ -1823,7 +1732,7 @@
         "Un groupe portant ce nom existe déjà."
       ],
       "A problem occurred, please try again": [
-        "Une erreur est survenue, veuillez réessayer"
+        "Une erreur est survenue, veuillez réessayer."
       ],
       "Authentication canceled.": [
         "Authentification annulée."
@@ -1894,7 +1803,7 @@
         "Mot de passe de la messagerie incorrect. Veuillez réessayer."
       ],
       "Incorrect password. Please try again.": [
-        "Mot de passe incorrect. Veuillez réessayer."
+        "Mot de passe incorrect. Réessayez."
       ],
       "Invalid name": [
         "Nom incorrect"
@@ -1939,7 +1848,7 @@
         "Les mots de passe ne correspondent pas."
       ],
       "Please activate your content search again": [
-        "Veuillez réactiver la recherche de contenu"
+        "Veuillez réactiver la recherche de contenu."
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Veuillez corriger le conflit en surbrillance pour continuer.",
@@ -1994,7 +1903,7 @@
         "Le nom du label est trop long. Veuillez en choisir un autre."
       ],
       "The new revision of original file is not uploaded yet, please try again later": [
-        "La nouvelle révision du fichier d'origine n'est pas encore chargée, veuillez réessayer plus tard."
+        "La nouvelle révision du fichier d'origine n'est pas encore chargée, réessayez plus tard."
       ],
       "The original file has missing active revision": [
         "Le fichier d'origine a une révision active manquante."
@@ -2006,7 +1915,7 @@
         "Le fichier d'origine a une clé de session manquante."
       ],
       "The original file is not uploaded yet, please try again later": [
-        "Le fichier d'origine n'est pas encore chargé, veuillez réessayer plus tard."
+        "Le fichier d'origine n'est pas encore chargé, réessayez plus tard."
       ],
       "The original folder not found": [
         "Le dossier d'origine est introuvable."
@@ -2095,7 +2004,7 @@
         "Accès refusé"
       ],
       "Brace yourself till we get the error fixed.": [
-        "Veuillez patienter jusqu'à ce que nous corrigions l'erreur."
+        "Nous vous invitons à patienter jusqu'à ce que nous corrigions l'erreur."
       ],
       "Error: ${ errorMessage }": [
         "Erreur : ${ errorMessage }"
@@ -2605,7 +2514,7 @@
         "Échec"
       ],
       "Failed to generate a secure link. Try again later.": [
-        "Impossible de générer un lien sécurisé, veuillez réessayer plus tard."
+        "Impossible de générer un lien sécurisé, réessayez plus tard."
       ],
       "Failed to open a secure link. The reason is: ${ error }": [
         "Échec de l'ouverture d'un lien sécurisé. La raison est : ${ error }"
@@ -2835,7 +2744,7 @@
         "PGP/MIME envoie automatiquement le message en utilisant le mode actuel du composeur. Veuillez noter que ${ MAIL_APP_NAME } signe toujours les messages chiffrés."
       ],
       "Please enter the password to decrypt and view content.": [
-        "Veuillez saisir le mot de passe pour déchiffrer et voir le contenu."
+        "Saisissez le mot de passe pour déchiffrer et voir le contenu."
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Veuillez noter que les adresses assignées à ce groupe ne seront PAS supprimées."
@@ -2947,7 +2856,7 @@
         "Certains de vos fichiers ne sont plus accessibles. Restaurez l'accès à vos fichiers. ${ StartRecoveryButton }"
       ],
       "Something went wrong, please try again later.": [
-        "Un problème est survenu, veuillez réessayer plus tard."
+        "Un problème est survenu, réessayez plus tard."
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         "Le stockage est partagé entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } et ${ DRIVE_APP_NAME }."
@@ -2995,7 +2904,7 @@
         "Ce lien mène à un site web qui pourrait essayer de voler vos informations, comme les mots de passe et les détails de carte de crédit."
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Ce lien pourrait être une attaque homographique et ne peut pas être ouvert avec les navigateurs Internet Explorer et Edge. Si vous êtes certain de la légitimité de ce lien, veuillez utiliser un autre navigateur pour l'ouvrir."
+        "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Ce lien pourrait être une attaque homographique. Veuillez vous assurer qu'il s'agit bien du lien que vous souhaitez visiter ou ne l'ouvrez pas."
@@ -3149,7 +3058,7 @@
         "Votre compte a une ou plusieurs factures en retard. Votre accès sera bientôt restreint. ${ payInvoiceLink }"
       ],
       "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
-        "Votre navigateur actuel ne prend pas en charge le téléchargement de fichiers volumineux en raison de l'indisponibilité des prestataires de services. Le téléchargement de fichiers volumineux peut entraîner un gel ou une perte de réactivité du navigateur. Veuillez utiliser la dernière version d'un ${ recommendedBrowser } et essayer à nouveau."
+        "Votre navigateur actuel ne prend pas en charge le téléchargement de fichiers volumineux en raison de l'indisponibilité des prestataires de services. Le téléchargement de fichiers volumineux peut entraîner un gel ou une perte de réactivité du navigateur. Utilisez la dernière version d'un ${ recommendedBrowser } et essayez à nouveau."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Vos données sont prêtes à être importées de ${ importedEmailAddressStrong } vers votre compte Proton."
@@ -3472,7 +3381,7 @@
         "Numéro de téléphone"
       ],
       "Please provide full details to help us take appropriate action": [
-        "Veuillez indiquer le maximum de détails pour nous aider à prendre les actions appropriées"
+        "Nous vous invitons à fournir tous les détails nécessaires pour nous aider à prendre les mesures appropriées."
       ],
       "Post office box": [
         "Boîte postale"
@@ -3825,7 +3734,7 @@
         "Échec du téléchargement des fichiers : ${ err }"
       ],
       "Failed to move, please try again": [
-        "Échec du déplacement, veuillez réessayer"
+        "Échec du déplacement, réessayez."
       ],
       "Failed to upload files: ${ err }": [
         "Échec du chargement des fichiers : ${ err }"

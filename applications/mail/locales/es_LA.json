@@ -1170,59 +1170,6 @@
         "Si encuentra problemas, siempre puede deshabilitar el acceso beta."
       ]
     },
-    "blackfriday Info": {
-      "Includes": [
-        "Incluye"
-      ],
-      "Standard price: ${ regularPrice }": [
-        "Precio habitual: ${ regularPrice }"
-      ],
-      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
-        "Esta suscripción se renovará automáticamente al cabo de 2 años al mismo precio hasta su cancelación."
-      ]
-    },
-    "blackfriday Title": {
-      "Most popular": [
-        "Más popular"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Action": {
-      "Get the deal": [
-        "Obtener la oferta"
-      ],
-      "Get the deal now": [
-        "Obtener la oferta ahora"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Info": {
-      "Save ${ percentage }%": [
-        "${ percentage } %"
-      ]
-    },
-    "blackfriday: VPNspecialoffer info": {
-      "per month": [
-        "al mes"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Promo title, need to be short": {
-      "Special offer": [
-        "Oferta especial"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Title": {
-      "1 month": [
-        "Un mes"
-      ],
-      "12 months": [
-        "12 meses"
-      ],
-      "24 months": [
-        "24 meses"
-      ],
-      "Get the special year-end offer on our Premium VPN PLUS plan": [
-        "Obtenga la oferta especial de fin de año en nuestro plan Premium VPN PLUS"
-      ]
-    },
     "Bug category": {
       "Application problem": [
         "Problema de la aplicación"
@@ -1310,9 +1257,6 @@
       ]
     },
     "Calendar invite info": {
-      " This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar.": [
-        "This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar."
-      ],
       "${ participantName } accepted an invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } aceptó una invitación y propuso una hora nueva para una ocurrencia de este evento."
       ],
@@ -1525,6 +1469,9 @@
       ],
       "This invitation is out of date. The event has been updated.": [
         "La invitación está desactualizada. El evento fue actualizado."
+      ],
+      "This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar.": [
+        "Esta propuesta horaria nueva no coincide con los detalles de su invitación. Verifique los detalles de la invitación en su calendario."
       ],
       "This response doesn't match your invitation details. Please verify the invitation details in your calendar.": [
         "Esta respuesta no coincide con los detalles de su invitación. Verifique los detalles de la invitación en su calendario."
@@ -4870,7 +4817,7 @@
         "Este enlace conduce a un sitio web que podría estar intentando robar su información, como contraseñas y datos de tarjetas de crédito."
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Este enlace puede ser un ataque homogéneo y no puede abrirse por los navegadores Internet Explorer y Edge. Si cree que el enlace es legítimo, deberá abrirlo en un navegador diferente."
+        "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Este enlace puede ser un ataque homogéneo. Verifique que este es el enlace que desea visitar o no lo abra."
