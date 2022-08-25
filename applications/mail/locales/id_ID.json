@@ -1165,59 +1165,6 @@
         "Apabila Anda menemui suatu masalah, Anda dapat menonaktifkan Akses Beta kapan saja."
       ]
     },
-    "blackfriday Info": {
-      "beta": [
-        "beta"
-      ],
-      "Includes": [
-        "Termasuk"
-      ],
-      "Standard price: ${ regularPrice }": [
-        "Harga standar: ${ regularPrice }"
-      ],
-      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
-        "Langganan ini akan otomatis diperbarui dengan tarif yang sama setelah 2 tahun hingga dibatalkan."
-      ]
-    },
-    "blackfriday Title": {
-      "Most popular": [
-        "Paling populer"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Action": {
-      "Get the deal": [
-        "Dapatkan penawaran"
-      ],
-      "Get the deal now": [
-        "Dapatkan penawaran sekarang"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Info": {
-      "Save ${ percentage }%": [
-        "${ percentage } %"
-      ]
-    },
-    "blackfriday: VPNspecialoffer info": {
-      "per month": [
-        "per bulan"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Promo title, need to be short": {
-      "Special offer": [
-        "Penawaran Spesial"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Title": {
-      "1 month": [
-        "1 bulan"
-      ],
-      "12 months": [
-        "12 bulan"
-      ],
-      "24 months": [
-        "24 bulan"
-      ]
-    },
     "Bug category": {
       "Application problem": [
         "Masalah aplikasi"
@@ -1305,9 +1252,6 @@
       ]
     },
     "Calendar invite info": {
-      " This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar.": [
-        "This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar."
-      ],
       "${ participantName } accepted an invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } telah menyetujui undangan untuk dapat hadir dan telah mengusulkan jadwal baru untuk salah satu acara dalam rangkaian acara ini."
       ],
@@ -2949,6 +2893,9 @@
       "A group with this name already exists": [
         "Grup dengan nama ini sudah ada"
       ],
+      "A problem occurred, please try again": [
+        "Terdapat suatu masalah, silakan coba lagi"
+      ],
       "Address primary private key not found": [
         "Kunci pribadi utama alamat tidak ditemukan"
       ],
@@ -3116,6 +3063,9 @@
       ],
       "Passwords do not match": [
         "Kata sandi tidak cocok"
+      ],
+      "Please activate your content search again": [
+        "Mohon aktifkan kembali pencarian konten Anda"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Harap selesaikan permasalahan yang ada terlebih dahulu sebelum melanjutkan."
@@ -4174,6 +4124,9 @@
       "Don't forget to share the password with the recipient": [
         "Jangan lupa untuk membagikan kata sandi Anda dengan penerima pesan"
       ],
+      "Downloading message ${ esProgress } out of ${ totalProgressToShow }": [
+        "Mengunduh pesan ${ esProgress } dari ${ totalProgressToShow }"
+      ],
       "Draft": [
         "Draf"
       ],
@@ -4781,7 +4734,7 @@
         "Tautan ini tertuju pada situs web yang dapat mencuri informasi pribadi Anda, seperti kata sandi dan rincian kartu kredit yang Anda miliki."
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Tautan ini mungkin serangan homograf dan tidak dapat dibuka dengan Internet Explorer dan Edge. Jika Anda yakin tautan tersebut absah, mohon buka dengan peramban lain."
+        "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Tautan ini mungkin serangan homograf. Mohon verifikasi tautan yang ingin Anda kunjungi, atau jangan kunjungi sama sekali."

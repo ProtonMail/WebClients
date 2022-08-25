@@ -406,8 +406,17 @@
       ]
     },
     "Action in trial plan": {
+      "Continue with free plan": [
+        "ادامه با طرح رایگان"
+      ],
       "No, thanks": [
         "نه, ممنون"
+      ],
+      "Start my 30-day free trial": [
+        "شروع دوره آزمایشی 30 روزه من"
+      ],
+      "Try free for 30 days": [
+        "برای 30 روز رایگان امتحان کنید"
       ]
     },
     "Addon": {
@@ -452,59 +461,6 @@
       ],
       "Two-year": [
         "دو ساله"
-      ]
-    },
-    "blackfriday Info": {
-      "beta": [
-        "beta"
-      ],
-      "Includes": [
-        "شامل"
-      ],
-      "Standard price: ${ regularPrice }": [
-        "قیمت استاندارد: ${ regularPrice }"
-      ],
-      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
-        "این اشتراک بعد از ۲ سال با همین نرخ به‌طور خودکار تمدید خواهد، مگراینکه آن را لغو کنید."
-      ]
-    },
-    "blackfriday Title": {
-      "Most popular": [
-        "محبوب‌ترین"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Action": {
-      "Get the deal": [
-        "دریافت معامله"
-      ],
-      "Get the deal now": [
-        "الان معامله را بگیر"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Info": {
-      "Save ${ percentage }%": [
-        "${ percentage }%"
-      ]
-    },
-    "blackfriday: VPNspecialoffer info": {
-      "per month": [
-        "در هر ماه"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Promo title, need to be short": {
-      "Special offer": [
-        "پیشنهاد ویژه"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Title": {
-      "1 month": [
-        "۱ ماه"
-      ],
-      "12 months": [
-        "۱۲ ماه"
-      ],
-      "24 months": [
-        "۲۴ ماه"
       ]
     },
     "Bug category": {
@@ -578,14 +534,46 @@
         "مشکل دسترسی به وب‌سایت"
       ]
     },
+    "Button": {
+      "Continue using ${ MAIL_APP_NAME }.": [
+        "ادامه با استفاده از ${ MAIL_APP_NAME }."
+      ]
+    },
     "Calendar status": {
+      "Not synced": [
+        "همگام‌سازی نشده"
+      ],
       "Syncing": [
         "در حال همگام‌سازی"
       ]
     },
     "Calendar subscription not synced error": {
+      "Calendar could not be decrypted": [
+        "رمزگشایی تقویم ممکن نبود"
+      ],
+      "Calendar is syncing": [
+        "تقویم درحال همگام‌سازی است"
+      ],
       "Calendar is syncing: it may take several minutes for all of its events to show up.": [
         "درحال همگام سازی تقویم: نمایش همه رویدادها ممکن است چند دقیقه طول بکشد."
+      ],
+      "Calendar is too big": [
+        "تقویم بسیار بزرگ است"
+      ],
+      "Calendar link is not accessible": [
+        "لینک تقویم دردسترس نیست"
+      ],
+      "Calendar link is temporarily inaccessible": [
+        "لینک تقویم موقتا دردرسترس نیست"
+      ],
+      "Failed to sync calendar": [
+        "همگام‌سازی تقویم موفق نبود"
+      ],
+      "More than 12 hours passed since last update": [
+        "بیش از 12 ساعت از آخرین بروزرسانی میگذرد"
+      ],
+      "Unsupported calendar format": [
+        "فورمت تقویم پشتیبانی نشده"
       ]
     },
     "Calendar subscription not synced error; long version": {
@@ -597,6 +585,76 @@
       ],
       "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
         "پیش از 12 ساعت از آخرین بروزرسانی می گذرد – تا ساعاتی دیگر Proton Calendar برای بروزرسانی تلاش خواهد کرد."
+      ]
+    },
+    "Collapsible tooltip": {
+      "Collapse": [
+        "بستن"
+      ],
+      "Expand": [
+        "گسترش دادن"
+      ]
+    },
+    "color": {
+      "carrot": [
+        "هویج"
+      ],
+      "cerise": [
+        "شفقی"
+      ],
+      "cobalt": [
+        "کبالت"
+      ],
+      "copper": [
+        "مس"
+      ],
+      "enzian": [
+        "نیلی متالیک"
+      ],
+      "fern": [
+        "خزه ای"
+      ],
+      "forest": [
+        "جنگل"
+      ],
+      "ocean": [
+        "اقیانوس"
+      ],
+      "olive": [
+        "زیتون"
+      ],
+      "pacific": [
+        "آبی آسمانی سیر"
+      ],
+      "pickle": [
+        "خیارشور"
+      ],
+      "pine": [
+        "کاج"
+      ],
+      "pink": [
+        "صورتی"
+      ],
+      "plum": [
+        "آلو"
+      ],
+      "purple": [
+        "بنفش"
+      ],
+      "reef": [
+        "سخره مرجانی"
+      ],
+      "sahara": [
+        "صحرا"
+      ],
+      "slateblue": [
+        "آبی کدر"
+      ],
+      "soil": [
+        "خاک"
+      ],
+      "strawberry": [
+        "توت فرنگی"
       ]
     },
     "Confirmation message to delete payment method": {
@@ -623,11 +681,179 @@
       "Abkhazia": [
         "آبخازستان"
       ],
+      "Afghanistan": [
+        "افغانستان"
+      ],
+      "Albania": [
+        "آلبانی"
+      ],
+      "Algeria": [
+        "الجزایر"
+      ],
+      "American Samoa": [
+        "ساموآی آمریکا"
+      ],
+      "Andorra": [
+        "آندورا"
+      ],
+      "Angola": [
+        "آنگولا"
+      ],
+      "Anguilla": [
+        "آنگویلا"
+      ],
+      "Antarctica": [
+        "آنتارکتیکا"
+      ],
+      "Antigua and Barbuda": [
+        "آنتیگوا و باربودا"
+      ],
+      "Argentina": [
+        "آرژانتین"
+      ],
+      "Armenia": [
+        "ارمنستان"
+      ],
+      "Aruba": [
+        "آروبا"
+      ],
       "Ascension Island": [
         "جزیرهٔ اسنشن"
       ],
+      "Australia": [
+        "استرالیا"
+      ],
+      "Austria": [
+        "اتریش"
+      ],
+      "Azerbaijan": [
+        "آذربایجان"
+      ],
+      "Bahamas": [
+        "باهاما"
+      ],
+      "Bahrain": [
+        "بحرین"
+      ],
+      "Bangladesh": [
+        "بنگلادش"
+      ],
+      "Barbados": [
+        "باربادوس"
+      ],
+      "Belarus": [
+        "بلاروس"
+      ],
+      "Belgium": [
+        "بلژیک"
+      ],
+      "Belize": [
+        "بلیز"
+      ],
+      "Benin": [
+        "بنین"
+      ],
+      "Bermuda": [
+        "برمودا"
+      ],
+      "Bhutan": [
+        "بوتان"
+      ],
+      "Bolivia": [
+        "بولیوی"
+      ],
+      "Bonaire, Sint Eustatius and Saba": [
+        "بونیر ، سینت اوستاتیوس و صبا"
+      ],
+      "Bosnia and Herzegovina": [
+        "بوسنی و هرزگووین"
+      ],
+      "Botswana": [
+        "بوتسوانا"
+      ],
+      "Bouvet Island": [
+        "جزیره بووه"
+      ],
+      "Brazil": [
+        "برزیل"
+      ],
+      "British Indian Ocean Territory": [
+        "مستعمرات انگلیسی اقیانوس هند"
+      ],
+      "Brunei Darussalam": [
+        "برونئی دارالسلام"
+      ],
+      "Bulgaria": [
+        "بلغارستان"
+      ],
+      "Burkina Faso": [
+        "برکینافاسو"
+      ],
+      "Burundi": [
+        "بوروندی"
+      ],
+      "Cambodia": [
+        "کامبوج"
+      ],
+      "Cameroon": [
+        "کامرون"
+      ],
+      "Canada": [
+        "کانادا"
+      ],
+      "Cape Verde": [
+        "کیپ ورد"
+      ],
+      "Cayman Islands": [
+        "جزایر کیمن"
+      ],
+      "Central African Republic": [
+        "جمهوری آفریقای مرکزی"
+      ],
+      "Chad": [
+        "چاد"
+      ],
+      "Chile": [
+        "شیلی"
+      ],
+      "China": [
+        "چین"
+      ],
+      "Christmas Island": [
+        "جزیره کریسمس"
+      ],
+      "Cocos (Keeling) Islands": [
+        "جزایر (کیلینگ) کوکو"
+      ],
+      "Colombia": [
+        "کلمبیا"
+      ],
+      "Comoros": [
+        "کومور"
+      ],
+      "Congo": [
+        "کنگو"
+      ],
       "Congo, Democratic Republic of the": [
         "جمهوری دموکراتیک کنگو"
+      ],
+      "Cook Islands": [
+        "جزایر کوک"
+      ],
+      "Costa Rica": [
+        "کاستاریکا"
+      ],
+      "Croatia": [
+        "کرواسی"
+      ],
+      "Cuba": [
+        "کوبا"
+      ],
+      "Curaçao": [
+        "کوراسائو"
+      ],
+      "Cyprus": [
+        "قبرس"
       ],
       "Czech Republic": [
         "جمهوری چک"
@@ -635,50 +861,584 @@
       "Côte d'Ivoire": [
         "ساحل عاج"
       ],
+      "Denmark": [
+        "دانمارک"
+      ],
+      "Djibouti": [
+        "جیبوتی"
+      ],
+      "Dominica": [
+        "دومینیکا"
+      ],
+      "Dominican Republic": [
+        "جمهوری دومینیکن"
+      ],
+      "Ecuador": [
+        "اکوادور"
+      ],
+      "Egypt": [
+        "مصر"
+      ],
+      "El Salvador": [
+        "ال سالوادور"
+      ],
+      "Equatorial Guinea": [
+        "گینه استوایی"
+      ],
+      "Eritrea": [
+        "اریتره"
+      ],
+      "Estonia": [
+        "استونی"
+      ],
       "Eswatini": [
         "سوازیلند"
+      ],
+      "Ethiopia": [
+        "اتیوپی"
       ],
       "Falkland Islands": [
         "جزایر فالکلند"
       ],
+      "Faroe Islands": [
+        "جزایر فارو"
+      ],
       "Federated States of Micronesia": [
         "ایالات فدرال میکرونزی"
+      ],
+      "Fiji": [
+        "فیجی"
+      ],
+      "Finland": [
+        "فنلاند"
+      ],
+      "France": [
+        "فرانسه"
+      ],
+      "French Guiana": [
+        "گویان فرانسه"
+      ],
+      "French Polynesia": [
+        "پلینزی فرانسوی"
+      ],
+      "French Southern Territories": [
+        "سرزمین های جنوبی فرانسه"
+      ],
+      "Gabon": [
+        "گابن"
+      ],
+      "Gambia": [
+        "گامبیا"
+      ],
+      "Georgia": [
+        "گرجستان"
+      ],
+      "Germany": [
+        "آلمان"
+      ],
+      "Ghana": [
+        "غنا"
+      ],
+      "Gibraltar": [
+        "جبل الطارق"
+      ],
+      "Greece": [
+        "یونان"
+      ],
+      "Greenland": [
+        "گرینلند"
+      ],
+      "Grenada": [
+        "گراندا"
+      ],
+      "Guadeloupe": [
+        "گوادلوپ"
+      ],
+      "Guam": [
+        "گوام"
+      ],
+      "Guatemala": [
+        "گواتمالا"
+      ],
+      "Guernsey": [
+        "گورنسی"
+      ],
+      "Guinea": [
+        "گینه"
+      ],
+      "Guinea-Bissau": [
+        "گینه بیسائو"
+      ],
+      "Guyana": [
+        "گویان"
+      ],
+      "Haiti": [
+        "هائیتی"
+      ],
+      "Heard Island and McDonald Islands": [
+        "جزیره هرد و جزایر مک دونالد"
       ],
       "Holy See (Vatican City State)": [
         "سریر مقدس (دولت‌شهر واتیکان)"
       ],
+      "Honduras": [
+        "هندوراس"
+      ],
+      "Hong Kong": [
+        "هنگ کنگ"
+      ],
+      "Hungary": [
+        "مجارستان"
+      ],
+      "Iceland": [
+        "ایسلند"
+      ],
+      "India": [
+        "هند"
+      ],
+      "Indonesia": [
+        "اندونزی"
+      ],
       "International": [
         "بین‌المللی"
+      ],
+      "Iran": [
+        "ایران"
+      ],
+      "Iraq": [
+        "عراق"
+      ],
+      "Ireland": [
+        "ایرلند"
+      ],
+      "Isle of Man": [
+        "جزیره من"
+      ],
+      "Israel": [
+        "اسرائیل"
+      ],
+      "Italy": [
+        "ایتالیا"
+      ],
+      "Jamaica": [
+        "جامائیکا"
+      ],
+      "Japan": [
+        "ژاپن"
+      ],
+      "Jersey": [
+        "جرسی"
+      ],
+      "Jordan": [
+        "اردن"
+      ],
+      "Kazakhstan": [
+        "قزاقستان"
+      ],
+      "Kenya": [
+        "کنیا"
+      ],
+      "Kiribati": [
+        "کیریباتی"
       ],
       "Kosovo": [
         "کوزوو"
       ],
+      "Kuwait": [
+        "کویت"
+      ],
+      "Kyrgyzstan": [
+        "قرقیزستان"
+      ],
+      "Laos": [
+        "لائوس"
+      ],
+      "Latvia": [
+        "لتونی"
+      ],
+      "Lebanon": [
+        "لبنان"
+      ],
+      "Lesotho": [
+        "لسوتو"
+      ],
+      "Liberia": [
+        "لیبریا"
+      ],
+      "Libya": [
+        "لیبی"
+      ],
+      "Liechtenstein": [
+        "لیختن اشتاین"
+      ],
+      "Lithuania": [
+        "لیتوانی"
+      ],
+      "Luxembourg": [
+        "لوکزامبورگ"
+      ],
+      "Macao": [
+        "ماکائو"
+      ],
+      "Madagascar": [
+        "ماداگاسکار"
+      ],
+      "Malawi": [
+        "مالاوی"
+      ],
+      "Malaysia": [
+        "مالزی"
+      ],
+      "Maldives": [
+        "مالدیو"
+      ],
+      "Mali": [
+        "مالی"
+      ],
+      "Malta": [
+        "مالت"
+      ],
+      "Marshall Islands": [
+        "جزایر مارشال"
+      ],
+      "Martinique": [
+        "مارتینیک"
+      ],
+      "Mauritania": [
+        "موریتانی"
+      ],
+      "Mauritius": [
+        "موریس"
+      ],
+      "Mayotte": [
+        "مایوت"
+      ],
+      "Mexico": [
+        "مکزیک"
+      ],
+      "Moldova": [
+        "مولداوی"
+      ],
+      "Monaco": [
+        "موناکو"
+      ],
+      "Mongolia": [
+        "مغولستان"
+      ],
+      "Montenegro": [
+        "مونته‌نگرو"
+      ],
+      "Montserrat": [
+        "مونتسرات"
+      ],
+      "Morocco": [
+        "مراکش"
+      ],
+      "Mozambique": [
+        "موزامبیک"
+      ],
       "Myanmar": [
         "میانمار"
+      ],
+      "Namibia": [
+        "نامیبی"
+      ],
+      "Nauru": [
+        "نائورو"
+      ],
+      "Nepal": [
+        "نپال"
+      ],
+      "Netherlands": [
+        "هلند"
+      ],
+      "New Caledonia": [
+        "کالدونیای جدید"
+      ],
+      "New Zealand": [
+        "نيوزلند"
+      ],
+      "Nicaragua": [
+        "نیکاراگوئه"
+      ],
+      "Niger": [
+        "نیجر"
+      ],
+      "Nigeria": [
+        "نیجریه"
+      ],
+      "Niue": [
+        "نیوئه"
+      ],
+      "Norfolk Island": [
+        "جزیره نورفولک"
+      ],
+      "North Korea": [
+        "کره شمالی"
+      ],
+      "North Macedonia": [
+        "مقدونیه شمالی"
+      ],
+      "Northern Mariana Islands": [
+        "جزایر ماریانای شمالی"
+      ],
+      "Norway": [
+        "نروژ"
+      ],
+      "Oman": [
+        "عمان"
+      ],
+      "Pakistan": [
+        "پاکستان"
+      ],
+      "Palau": [
+        "پالائو"
+      ],
+      "Palestine": [
+        "فلسطین"
+      ],
+      "Panama": [
+        "پاناما"
+      ],
+      "Papua New Guinea": [
+        "گینه نو پوپوآ"
+      ],
+      "Paraguay": [
+        "پاراگوئه"
+      ],
+      "Peru": [
+        "پرو"
+      ],
+      "Philippines": [
+        "فیلیپین"
+      ],
+      "Pitcairn": [
+        "پیتکارین"
+      ],
+      "Poland": [
+        "لهستان"
+      ],
+      "Portugal": [
+        "پرتقال"
+      ],
+      "Puerto Rico": [
+        "پورتوریکو"
+      ],
+      "Qatar": [
+        "قطر"
       ],
       "Reunion": [
         "رئونیون"
       ],
+      "Romania": [
+        "روماني"
+      ],
+      "Russia": [
+        "روسیه"
+      ],
+      "Rwanda": [
+        "رواندا"
+      ],
+      "Saint Barthélemy": [
+        "سنت بارتلی"
+      ],
       "Saint Helena": [
         "سن هلن"
+      ],
+      "Saint Kitts and Nevis": [
+        "سنت کیتس و نویس"
+      ],
+      "Saint Lucia": [
+        "سنت لوسیا"
       ],
       "Saint Martin (French Part)": [
         "سن مارتین (فرانسه)"
       ],
+      "Saint Pierre and Miquelon": [
+        "سنت پیر و ماژلان"
+      ],
+      "Saint Vincent and the Grenadines": [
+        "سنت وینسنت و گرنادین"
+      ],
+      "Samoa": [
+        "ساموآ"
+      ],
+      "San Marino": [
+        "سان مارینو"
+      ],
+      "Sao Tome and Principe": [
+        "سائوتومه و پرنسیپ"
+      ],
+      "Saudi Arabia": [
+        "عربستان سعودی"
+      ],
+      "Senegal": [
+        "سنگال"
+      ],
+      "Serbia": [
+        "صربستان"
+      ],
+      "Seychelles": [
+        "سیشل"
+      ],
+      "Sierra Leone": [
+        "سیرالئون"
+      ],
+      "Singapore": [
+        "سنگاپور"
+      ],
       "Sint Maarten": [
         "سن مارتن"
+      ],
+      "Slovakia": [
+        "اسلواکی"
+      ],
+      "Slovenia": [
+        "اسلوانی"
+      ],
+      "Solomon Islands": [
+        "جزایر سلیمان"
+      ],
+      "Somalia": [
+        "سومالی"
+      ],
+      "South Africa": [
+        "آفریقای جنوبی"
+      ],
+      "South Georgia and the South Sandwich Islands": [
+        "گرجستان جنوبی و جزایر ساندویچ جنوبی"
+      ],
+      "South Korea": [
+        "کرهٔ جنوبی"
       ],
       "South Ossetia": [
         "اوستیای جنوبی"
       ],
+      "South Sudan": [
+        "سودان جنوبی"
+      ],
+      "Spain": [
+        "اسپانیا"
+      ],
+      "Sri Lanka": [
+        "سریلانکا"
+      ],
+      "Sudan": [
+        "سودان"
+      ],
+      "Suriname": [
+        "سورینام"
+      ],
+      "Svalbard and Jan Mayen": [
+        "اسوالبارد و جان ماین"
+      ],
+      "Sweden": [
+        "سوئد"
+      ],
+      "Switzerland": [
+        "سوئیس"
+      ],
       "Syria": [
         "سوریه"
+      ],
+      "Taiwan": [
+        "تایوان"
+      ],
+      "Tajikistan": [
+        "تاجیکستان"
+      ],
+      "Tanzania": [
+        "تانزانیا"
+      ],
+      "Thailand": [
+        "تایلند"
+      ],
+      "Timor-Leste": [
+        "تیمور لسته"
+      ],
+      "Togo": [
+        "توگو"
+      ],
+      "Tokelau": [
+        "توکلائو"
+      ],
+      "Tonga": [
+        "تونگا"
+      ],
+      "Trinidad and Tobago": [
+        "ترینیداد و تباگو"
       ],
       "Tristan da Cunha": [
         "تریستان دا کونا"
       ],
+      "Tunisia": [
+        "تونس"
+      ],
+      "Turkey": [
+        "ترکیه"
+      ],
+      "Turkmenistan": [
+        "ترکمنستان"
+      ],
+      "Turks and Caicos Islands": [
+        "جزایر تورکس و کایکوس"
+      ],
+      "Tuvalu": [
+        "تووالو"
+      ],
+      "Uganda": [
+        "اوگاندا"
+      ],
+      "Ukraine": [
+        "اوکراین"
+      ],
       "United Arab Emirates": [
         "امارات متحده عربی"
+      ],
+      "United Kingdom": [
+        "انگلستان"
+      ],
+      "United States": [
+        "آمریکا، ایالات متحده"
+      ],
+      "United States Minor Outlying Islands": [
+        "جزایر کوچک حاشیه ای ایالات متحده"
+      ],
+      "Uruguay": [
+        "اروگوئه"
+      ],
+      "Uzbekistan": [
+        "ازبکستان"
+      ],
+      "Vanuatu": [
+        "وانواتو"
+      ],
+      "Venezuela": [
+        "ونزوئلا"
+      ],
+      "Vietnam": [
+        "ویتنام"
+      ],
+      "Virgin Islands, British": [
+        "جزایر ویرجین انگلیس"
+      ],
+      "Virgin Islands, U.S.": [
+        "جزایر ویرجین آمریکا"
+      ],
+      "Wallis and Futuna": [
+        "والیس و فوتونا"
+      ],
+      "Western Sahara": [
+        "صحرای غربی"
+      ],
+      "Yemen": [
+        "یمن"
+      ],
+      "Zambia": [
+        "زامبیا"
+      ],
+      "Zimbabwe": [
+        "زیمباوه"
       ],
       "Åland Islands": [
         "جزایر الند"
@@ -692,6 +1452,11 @@
     "Credits": {
       "Unused credits": [
         "اعتبارات استفاده نشده"
+      ]
+    },
+    "Cycle": {
+      "/month": [
+        "/ماهانه"
       ]
     },
     "Delinquent modal title": {
@@ -720,6 +1485,9 @@
       "Code wrong or not valid anymore": [
         "کد غلط یا دیگر غیر معتبر است"
       ],
+      "Domain not available, try again later": [
+        "دامنه در دسترس نیست، بعداً دوباره امتحان کنید"
+      ],
       "Email is not valid": [
         "ایمیل معتبر نیست"
       ],
@@ -731,6 +1499,12 @@
       ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "اگر زمان در تلویزیون شما منقضی شده است، روی نوسازی در تلویزیون خود کلیک کرده و کد خود را دوباره وارد کنید."
+      ],
+      "Incorrect login credentials. Please try again.": [
+        "اطلاعات ورود به سیستم نادرست است. لطفا دوباره تلاش کنید."
+      ],
+      "Incorrect mailbox password. Please try again.": [
+        "رمزعبور صندوق پیام نادرست است. لطفا دوباره امتحان کنید."
       ],
       "Invalid ${ name } code": [
         "کد ${ name } نامعتبر"
@@ -791,6 +1565,9 @@
       ],
       "Process aborted": [
         "فرآیند قطع شد"
+      ],
+      "Request timed out": [
+        "مهلت درخواست تمام شد"
       ],
       "Signature verification failed": [
         "تصدیق امضا ناموفق بود"
@@ -882,6 +1659,10 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "بایت",
+        "بایت"
+      ],
       "GB": [
         "گیگابایت"
       ],
@@ -889,6 +1670,24 @@
         "کیلوبایت"
       ],
       "MB": [
+        "مگابایت"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "بایت",
+        "بایت"
+      ],
+      "Gigabyte": [
+        "گیگابایت",
+        "گیگابایت"
+      ],
+      "Kilobyte": [
+        "کیلوبایت",
+        "کیلوبایت"
+      ],
+      "Megabyte": [
+        "مگابایت",
         "مگابایت"
       ]
     },
@@ -960,6 +1759,12 @@
       "${ strongAddressAvailable } You will use this email address to sign into all ${ BRAND_NAME } services.": [
         "${ strongAddressAvailable } برای ورود به سیستم همه سرویس‌های ${ BRAND_NAME } از این رایانشانی استفاده خواهید کرد."
       ],
+      "${ vpnBasic }, ${ vpnPlus } or ${ visionary } required for Country level connection.": [
+        "طرح های ${ vpnBasic }، ${ vpnPlus } یا ${ visionary } برای اتصال در سطح کشورها نیاز است."
+      ],
+      "${ vpnPlus } or ${ visionary } required for Secure Core feature.": [
+        "${ vpnPlus } یا ${ visionary } میاز است تا از ویژگی Secure Core استفاده کنید."
+      ],
       "(Mail + VPN)": [
         "(ایمیل + VPN)"
       ],
@@ -979,11 +1784,20 @@
       "30-day money-back guarantee.": [
         "ضمانت ۳۰ روزهٔ بازگشت پول."
       ],
+      "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
+        "نامی که به شما کمک کند که مشخص کنید کجا از آن استفاده میکنید تا بعدا راحت آنرا لغو یا تمدید کنید."
+      ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "دسترسی به حساب به دلیل صورتحساب‌های پرداخت نشده محدود شده است. لطفا با مدیرتان تماس بگیرید."
       ],
+      "Account size": [
+        "اندازه حساب کاربری"
+      ],
       "Account successfully updated": [
         "حساب کاربری با موفقیت به‌روزرسانی شد"
+      ],
+      "Additional options": [
+        "امکانات اضافی"
       ],
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
         "بعد از پرداخت Bitcoin، لطفا دستورالعمل زیر را دنبال کنید تا ارتقا پیدا کنید."
@@ -993,6 +1807,9 @@
       ],
       "AOL reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
         "AOL اطلاعات شخصی شما را می‌خواند تا دسترسی به تبلیغ کنندگان و سایر اشخاص ثالث را فراهم کند. برای حفظ حریم خصوصی بهتر، یک رایانشانی ایمن ایجاد کنید."
+      ],
+      "Based in Switzerland, available globally": [
+        "مستقر در سوئیس، قابل دسترس به صورت جهانی"
       ],
       "Basic, Plus or Visionary subscription required": [
         "اشتراک Basic، Plus یا Visionary مورد نیاز است"
@@ -1039,8 +1856,14 @@
       "Credit for the unused portion of your previous plan subscription": [
         "اعتبار برای قسمت استفاده نشدهٔ طرح اشتراک قبلی شما"
       ],
+      "Custom email domains": [
+        "دامنه های ایمیل سفارشی"
+      ],
       "Discount applied to your subscription with coupon ${ code }": [
         "تخفیف به اشتراک شما با کوپن ${ code } اعمال شد"
+      ],
+      "Do not use the OpenVPN / IKEv2 credentials in ${ VPN_APP_NAME } applications or on the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
+        "از اطلاعات OpenVPN / IKEv2 در برنامه های ${ VPN_APP_NAME } یا برای داشبورد ${ VPN_APP_NAME } استفاده نکنید. ${ learnMore }"
       ],
       "Done! We sent a code to ${ destination }.": [
         "انجام شد! ما یک کد به ${ destination } ارسال کردیم."
@@ -1075,8 +1898,14 @@
       "Expired": [
         "منقضی شده"
       ],
+      "expires ${ expirationDate }": [
+        "در ${ expirationDate } منقضی میشود"
+      ],
       "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
         "برای ویزا و مستر کارت ، 3 رقم پشت کارت شما. برای American Express، 4 رقم جلوی کارت شما."
+      ],
+      "Free": [
+        "رایگان"
       ],
       "Free up some space or add more storage space.": [
         "مقداری فضای آزاد ایجاد کنید یا فضای حافظه بیشتری بیفزایید."
@@ -1138,6 +1967,9 @@
       "Internet connection restored.": [
         "اتصال اینترنت برقرار شد."
       ],
+      "Learn how to log in to ${ VPN_APP_NAME } with third-party VPN applications.": [
+        "با نحوه ورود به ${ VPN_APP_NAME } با برنامه های VPN دیگر آشنا شوید."
+      ],
       "Learn more": [
         "بیشتر بدانید"
       ],
@@ -1177,8 +2009,14 @@
       "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
         "از دستگاه شخص دیگری استفاده می‌کنید؟ برای ورود به سیستم یک پنجرهٔ مرور خصوصی ایجاد کرده و پس از اتمام کار آن را ببندید. ${ learnMore }"
       ],
+      "Number of users": [
+        "تعداد کاربران"
+      ],
       "of": [
         "از"
+      ],
+      "Or select a particular server:": [
+        "یا سروری خاص را انتخاب کنید:"
       ],
       "P2P": [
         "P2P"
@@ -1225,6 +2063,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "بازیابی صفحه یا ${ link } بطور خودکار بیشتر مسايل را حل خواهد کرد."
       ],
+      "Revoke certificate ${ name }": [
+        "لغو کردن گواهی ${ name }"
+      ],
       "Scan QR code instead": [
         "به جای آن ، کد QR را اسکن کنید"
       ],
@@ -1257,6 +2098,15 @@
       ],
       "Thank you for supporting our mission.": [
         "برای پشتیبانی از آرمان ما سپاسگزاریم."
+      ],
+      "The securest way to browse, stream, and be online.": [
+        "امن ترین راه برای وبگردی، استریم و آنلاین بودن."
+      ],
+      "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
+        "این فایل های تنظیمات به شما اجازه میدهند که به کدام سرور ${ VPN_APP_NAME } در هنگام استفاده از برنامه های VPN دیگر استفاده کنید یا یک اتصال VPN بر روی روتر خود تنظیم کنید."
+      ],
+      "These configurations are provided to work with WireGuard routers and official clients.": [
+        "این تنظیمات ارائه شده اند تا با روترهای WireGuard و سرویس گیرندگان رسمی کار کنند."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "این حساب به دلیل یک تخطی احتمالی از سیاست‌ها به تعلیق درآمده است."
@@ -1300,11 +2150,26 @@
       "To proceed, select an account recovery method so we can verify the request.": [
         "برای ادامه، لطفاً یک روش بازیابی حساب را انتخاب نمایید تا بتوانیم درخواست شما را تأیید کنیم."
       ],
+      "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a ${ VPN_APP_NAME } server.": [
+        "برای محافظت از ارتباط اینترنت خود، برنامه ${ VPN_APP_NAME } را برای دستگاه خود دانلود و نصب کنید و به یک سرور ${ VPN_APP_NAME } متصل شوید."
+      ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "حساب‌تان را با اعتباری که می‌توانید برای اشتراک در یک طرح جدید یا تمدید طرح فعلی استفاده کنید شارژ کنید. شما برای هر ${ i18nCurrency } که هزینه می‌کنید یک واحد اعتبار دریافت می‌کنید."
       ],
       "Tor": [
         "Tor"
+      ],
+      "Total email addresses": [
+        "مجموع آدرس های ایمیل"
+      ],
+      "Total storage": [
+        "مجموع فضای ذخیره‌سازی"
+      ],
+      "Total supported domains": [
+        "مجموع دامنه های پشتیبانی شده"
+      ],
+      "Total VPN connections": [
+        "مجموع اتصالات VPN"
       ],
       "Two-factor authentication adds an extra layer of security to your account in case your password is compromised.": [
         "تایید هویت دو مرحله‌ای یک لایهٔ امنیتی اضافه به حساب کاربری شما در صورتی که گذرواژهٔ شما افشا شود اضافه می‌کند."
@@ -1333,6 +2198,12 @@
       "Unsupported file": [
         "فایل پشتیبانی نشده"
       ],
+      "Use the best server according to current load and position: ${ formattedBestServerName }": [
+        "بهترین سرور را براساس میزان بار و مکان استفاده کنید: ${ formattedBestServerName }"
+      ],
+      "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
+        "از اطلاعات ذیل برای اتصال به سرورهای ${ VPN_APP_NAME } بدون برنامه استفاده کنید. مثال های موارد استفاده: Tunnelblick در macOS، OpenVPN در لینوکس/GNU."
+      ],
       "Verification can take a few minutes.": [
         "تایید ممکن است چند دقیقه طول بکشد."
       ],
@@ -1347,6 +2218,9 @@
       ],
       "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
         "هشدار: این حذف ابدیست. با این کار دسترسی به همه سرویس‌های متصل نیز از بین می‌رود و تمام مخاطبین شما پاک می‌شوند."
+      ],
+      "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
+        "توصیه میکنیم درصورت امکان از برنامه های رسمی ${ VPN_APP_NAME } استفاده کنید."
       ],
       "We recommend using your recovery phrase instead.": [
         "پیشنهاد می‌کنیم به‌جای آن از عبارت بازیابی خود استفاده کنید."
@@ -1398,6 +2272,12 @@
       ],
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
         "شما فقط میتوانید یک گفت و گو باز داشته باشید. لطفا قبل شروع گفت و گو جدید، قبلی را ببندید."
+      ],
+      "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
+        "میتوانید با استفاده از اطلاعات ذیل به یک سرور ${ VPN_APP_NAME } با استفاده از برنامه های VPN متن باز دیگر مانند Tunnelblick برای macOS یا OpenVPN برای لینوکس/GNU متصل شوید."
+      ],
+      "You cannot use the OpenVPN / IKEv2 credentials to log in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
+        "نمیتوانید از اطلاعات OpenVPN / IKEv2 برای ورود به برنامه های ${ VPN_APP_NAME } یا داشبورد ${ VPN_APP_NAME } استفاده کنید. ${ learnMore }"
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "شما یک روش بازیابی تنظیم نکرده‌اید بنابراین در صورت فراموش کردن گذرواژه، بازیابی حساب غیرممکن است. بدون روش بازیابی ادامه می‌دهید؟"
@@ -1581,6 +2461,9 @@
       "Code": [
         "کد"
       ],
+      "Code is 6 digits without spaces": [
+        "کد ۶ رقمی بدون فاصله می‌باشد"
+      ],
       "Confirm login password": [
         "تایید گذرواژه ورود"
       ],
@@ -1707,6 +2590,9 @@
       "Operating system version": [
         "نگارش سیستم عامل"
       ],
+      "Optional": [
+        "اختیاری"
+      ],
       "Other amount": [
         "سایر مبالغ"
       ],
@@ -1736,6 +2622,9 @@
       ],
       "Recovery phone number": [
         "شماره تلفن بازیابی"
+      ],
+      "Recovery phrase": [
+        "عبارت بازیابی"
       ],
       "Repeat password": [
         "تکرار گذرواژه"
@@ -1853,6 +2742,9 @@
       "Pay invoice": [
         "پرداخت صورتحساب"
       ],
+      "Privacy policy": [
+        "سیاست حفظ حریم خصوصی"
+      ],
       "Request an invite": [
         "درخواست دعوت‌نامه بدهید"
       ],
@@ -1861,6 +2753,9 @@
       ],
       "Sign in": [
         "ورود"
+      ],
+      "Terms": [
+        "شرایط"
       ],
       "Upgrade": [
         "ارتقا"
@@ -1878,6 +2773,9 @@
     "Message": {
       "Are you sure you want to disable two-factor authentication?": [
         "آیا مطمئن هستید که می خواهید تأیید هویت دو عاملی را غیرفعال کنید?"
+      ],
+      "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
+        "مهلت دورهٔ آزمایشی رایگان شما به پایان رسیده‌است. دسترسی به حساب شما به‌زودی غیرفعال خواهد شد. ${ action }"
       ]
     },
     "Message display when a new app version is available": {
@@ -1908,6 +2806,9 @@
       ],
       "Got it": [
         "فهمیدم"
+      ],
+      "Switch or add account": [
+        "تغییر یا افزودن حساب"
       ]
     },
     "new_plans: Action": {
@@ -1916,6 +2817,9 @@
       ]
     },
     "new_plans: feature": {
+      "Custom email domains": [
+        "دامنه های ایمیل سفارشی"
+      ],
       "Encrypted contact details": [
         "جزئیات مخاطب رمزنگاری شده"
       ],
@@ -1934,9 +2838,17 @@
         "پشتیبانی"
       ]
     },
+    "new_plans: Plan frequency": {
+      "/month": [
+        "/ماهانه"
+      ]
+    },
     "new_plans: signup": {
       "Subscription": [
         "اشتراک"
+      ],
+      "terms and conditions": [
+        "شرایط و ضوابط"
       ]
     },
     "new_plans: Upsell attribute": {
@@ -2108,6 +3020,20 @@
         "نام کاربری"
       ]
     },
+    "Spotlight": {
+      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
+        "${ DRIVE_APP_NAME } از بتا خارج شد! به فایل های خود امنیتی بدهید که به ایمیل ها خود می گیرند."
+      ],
+      "Get up to 18 months of ${ planName } for free": [
+        "تا 18 ماه از طرح ${ planName } را رایگان دریافت کنید"
+      ],
+      "Invite friends and earn rewards!": [
+        "دوستان خود را دعوت کنید و پاداش دریافت کنید!"
+      ],
+      "Try ${ DRIVE_APP_NAME }": [
+        "${ DRIVE_APP_NAME } را امتحان کنید"
+      ]
+    },
     "State": {
       "Downgrading your account, please wait": [
         "در حال تنزیل حساب کاربری شما، لطفاً صبر کنید"
@@ -2126,8 +3052,8 @@
     },
     "Subscription attribute": {
       "${ UsedAddresses } of ${ MaxAddresses } email address": [
-        "${ UsedAddresses } از ${ MaxAddresses } نشانی رایانامه",
-        ""
+        "${ UsedAddresses } از ${ MaxAddresses } آدرس ایمیل",
+        "${ UsedAddresses } از ${ MaxAddresses } آدرس ایمیل"
       ]
     },
     "Subscription saving": {
@@ -2197,6 +3123,16 @@
         "شما با موفقیت لغو اشتراک کردید"
       ]
     },
+    "Suffix": {
+      "/month": [
+        "/ماهانه"
+      ]
+    },
+    "Suffix for price": {
+      "/month": [
+        "/ماهانه"
+      ]
+    },
     "TableHeader": {
       "Action": [
         "عمل"
@@ -2220,11 +3156,21 @@
       ]
     },
     "Title": {
+      "${ maxUsers } user": [
+        "${ maxUsers } کاربر",
+        "${ maxUsers } کاربر"
+      ],
       "${ VPN_APP_NAME } clients": [
         "مشتریان ${ VPN_APP_NAME }"
       ],
+      "1. Give a name to the config to be generated": [
+        "1. نامی به پیکربندی بدهید تا تولید شود"
+      ],
       "1. Select platform": [
         "1. انتخاب پلتفرم"
+      ],
+      "2. Select platform": [
+        "2. پلتفرم را انتخاب کنید"
       ],
       "2. Select protocol": [
         "2. انتخاب پروتکل"
@@ -2234,6 +3180,12 @@
       ],
       "3. Select config file and download": [
         "۳. فایل پیکربندی را انتخاب و بارگیری کنید"
+      ],
+      "3. Select VPN options": [
+        "3. تنظیمات VPN را انتخاب کنید"
+      ],
+      "4. Select a server to connect to": [
+        "4. سروری برای اتصال انتخاب کنید"
       ],
       "Account": [
         "حساب"
@@ -2274,6 +3226,9 @@
       "Billing cycle": [
         "دوره صورتحساب"
       ],
+      "Cancel Mail subscription": [
+        "لغو اشتراک ایمیل"
+      ],
       "Card verification": [
         "تأیید کارت"
       ],
@@ -2300,6 +3255,15 @@
       ],
       "Confirm phone number": [
         "تأیید شماره تلفن"
+      ],
+      "Congratulations on choosing privacy!": [
+        "برای انتخاب حریم خصوصی به شما تبریک میگوییم!"
+      ],
+      "Create a ${ MAIL_APP_NAME } address": [
+        "ایجاد یک نشانی ${ MAIL_APP_NAME }"
+      ],
+      "Create your ${ BRAND_NAME } Account": [
+        "حساب کاربری ${ BRAND_NAME } خود را ایجاد کنید"
       ],
       "Credits": [
         "اعتبار"
@@ -2334,6 +3298,9 @@
       "Downgrade account": [
         "اکانت را تنزل دهید"
       ],
+      "Download ${ VPN_APP_NAME }": [
+        "دانلود ${ VPN_APP_NAME }"
+      ],
       "Downloads": [
         "دانلودها"
       ],
@@ -2355,8 +3322,14 @@
       "General": [
         "عمومی"
       ],
+      "Get ${ vpnPlus } to access all servers": [
+        "جهت دسترسی به همه سرورها ${ vpnPlus } را دریافت کنید"
+      ],
       "Gift code": [
         "کد هدیه"
+      ],
+      "How your free trial works": [
+        "طرح آزمایشی شما چگونه کار میکند"
       ],
       "Human verification": [
         "تأیید ربات نبودن"
@@ -2439,6 +3412,9 @@
       "Processing...": [
         "در حال پردازش..."
       ],
+      "Recommended": [
+        "پیشنهاد شده"
+      ],
       "Recovery": [
         "بازیابی"
       ],
@@ -2453,6 +3429,15 @@
       ],
       "Reset password?": [
         "بازنشانی گذرواژه?"
+      ],
+      "Revoke certificate": [
+        "لغو کردن گواهی"
+      ],
+      "Save contact details": [
+        "ذخیره جزئیات مخاطب"
+      ],
+      "Secure email based in Switzerland": [
+        "ایمیل امن مستقر در سوئیس"
       ],
       "Select a plan": [
         "انتخاب طرح"
@@ -2484,6 +3469,9 @@
       "This address might compromise your privacy.": [
         "این نشانی ممکن است حریم شما را تهدید کند."
       ],
+      "Try the best of ${ MAIL_APP_NAME } for free": [
+        "بهترین های ${ MAIL_APP_NAME } را رایگان امتحان کنید"
+      ],
       "TV log in": [
         "ورود تلویزیون"
       ],
@@ -2502,6 +3490,9 @@
       "Username": [
         "نام کاربری"
       ],
+      "Verification": [
+        "تایید"
+      ],
       "Warning": [
         "هشدار"
       ],
@@ -2511,14 +3502,23 @@
       "What's new": [
         "تازه ها چیست"
       ],
+      "WireGuard configuration": [
+        "تنظیمات WireGuard"
+      ],
       "You already have a Proton account": [
         "شما در حال حاضر یک حساب Proton دارید"
+      ],
+      "Your ${ MAIL_APP_NAME } address": [
+        "آدرس ${ MAIL_APP_NAME } شما"
       ],
       "Your current plan": [
         "طرح جاری شما"
       ],
       "Your plan": [
         "طرح شما"
+      ],
+      "You’ve been invited to try ${ mailAppName }": [
+        "شما دعوت شده اید تا ${ mailAppName } را امتحان کنید"
       ],
       "ZIP / postal code": [
         "کد پستی"
@@ -2546,6 +3546,14 @@
         "اگر شما کد هدیه خریده‌اید یا از تیم پشتیبانی ما دریافت کرده‌اید، می‌توانید آن را اینجا وارد کنید."
       ]
     },
+    "Tor out of date": {
+      "stable release": [
+        "نسخه پایدار"
+      ],
+      "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
+        "این نسخه از مرورگر Tor پشتیبانی نمیشود. لطفا به آخرین نسخه ${ stableRelease } بروزرسانی کنید"
+      ]
+    },
     "Validation": {
       "Password must contain at least ${ length } character": [
         "گذرواژه باید شامل حداقل ${ length } نویسه باشد",
@@ -2555,6 +3563,12 @@
     "VPN info": {
       "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, and more.": [
         "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HB0 Now, و موارد بیشتر."
+      ]
+    },
+    "VPN Plan Feature": {
+      "${ n } server": [
+        "${ n } سرور",
+        "${ n }+ سرور"
       ]
     },
     "VPNClient": {
@@ -2599,11 +3613,23 @@
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "با پاک کردن این شماره همراه، شما دیگر قادر به بازیابی حساب خود نخواهید بود."
       ],
+      "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
+        "گفتگو زنده یک ویژگی پریمیوم است که فقط دراختیار کسانی که طرح خریدنی ${ VPN_APP_NAME } را دارند است. لطفا در عوض یک تیکت ایجاد کنید."
+      ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "لطفا توجه کنید که با انتخاب این روش پرداخت، حساب شما نمیتواند بلافاصله ارتقا یابد. ما حساب شما را زمانیکه پرداخت شما صاف شد، به روز خواهیم کرد."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "گزارش‌ها سرتاسر رمزگذاری شده نیستند، لطفاً هیچ اطلاعات حساسی ارسال نکنید."
+      ],
+      "The date and time settings on your device are out of sync. ${ learnMore }": [
+        "تنظیمات تاریخ و ساعت دستگاه شما همگام سازی نشده است. ${ learnMore }"
+      ],
+      "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
+        "متاسفانه درحال حاضر آنلاین نیستیم. اطفا فرم ذیل را برای توضیح مشل خود پر کنید، ما آنرا بررسی کردن و هنگامی که آنلاین شدیم با شما تماس خواهیم گرفت."
+      ],
+      "Your free trial ends on ${ textDate }. ${ action }": [
+        "دورهٔ آزمایشی رایگان شما در ${ textDate } به پایان می‌رسد. ${ action }"
       ]
     }
   }

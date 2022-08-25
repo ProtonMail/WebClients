@@ -1175,59 +1175,6 @@
         "Dacă întâmpinați probleme, puteți dezactiva întotdeauna accesul la Beta."
       ]
     },
-    "blackfriday Info": {
-      "beta": [
-        "beta"
-      ],
-      "Includes": [
-        "Include"
-      ],
-      "Standard price: ${ regularPrice }": [
-        "Preț standard: ${ regularPrice }"
-      ],
-      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
-        "Abonamentul se va reînnoi în mod automat peste 2 ani, la același preț, până când este anulat."
-      ]
-    },
-    "blackfriday Title": {
-      "Most popular": [
-        "Cel mai popular"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Action": {
-      "Get the deal": [
-        "Obțineți oferta"
-      ],
-      "Get the deal now": [
-        "Obțineți oferta"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Info": {
-      "Save ${ percentage }%": [
-        "- ${ percentage }%"
-      ]
-    },
-    "blackfriday: VPNspecialoffer info": {
-      "per month": [
-        "pe lună"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Promo title, need to be short": {
-      "Special offer": [
-        "Ofertă specială"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Title": {
-      "1 month": [
-        "1 lună"
-      ],
-      "12 months": [
-        "12 luni"
-      ],
-      "24 months": [
-        "24 luni"
-      ]
-    },
     "Bug category": {
       "Application problem": [
         "Problemă aplicație"
@@ -1315,9 +1262,6 @@
       ]
     },
     "Calendar invite info": {
-      " This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar.": [
-        "This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar."
-      ],
       "${ participantName } accepted an invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } a acceptat o invitație și a propus o nouă dată pentru o singură manifestare a acestui eveniment."
       ],
@@ -1530,6 +1474,9 @@
       ],
       "This invitation is out of date. The event has been updated.": [
         "Această invitație este veche. Evenimentul a fost modificat."
+      ],
+      "This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar.": [
+        "Această nouă dată propusă nu se potrivește cu detaliile invitației. Verificați detaliile invitației în calendar."
       ],
       "This response doesn't match your invitation details. Please verify the invitation details in your calendar.": [
         "Acest răspuns nu se potrivește cu detaliile invitației. Verificați detaliile invitației în calendar."
@@ -4950,7 +4897,7 @@
         "Această legătură duce la un site web care ar putea încerca să vă fure informațiile, cum ar fi parolele și detaliile cărților de credit."
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Această legătură ar putea fi un atac omoglific (caractere asemănătoare dar cu cod diferit de caracter) și nu poate fi deschisă de către navigatoarele Internet Explorer și Edge. Dacă sunteți sigur că legătura este legitimă, folosiți un alt navigator pentru a o deschide."
+        "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Această legătură ar putea fi un atac omoglific. Verificați adresa pe care doriți să o vizitați sau nu o deschideți."

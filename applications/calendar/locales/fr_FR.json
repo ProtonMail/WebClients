@@ -613,97 +613,6 @@
         "Si vous rencontrez des problèmes, vous pouvez toujours désactiver l’accès à la version bêta."
       ]
     },
-    "blackfriday Action": {
-      "Get the offer": [
-        "Profiter de l'offre"
-      ]
-    },
-    "blackfriday Info": {
-      "beta": [
-        "bêta"
-      ],
-      "Includes": [
-        "Inclut"
-      ],
-      "Standard price: ${ regularPrice }": [
-        "Prix normal : ${ regularPrice }"
-      ],
-      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
-        "Cet abonnement se renouvellera automatiquement tous les 2 ans au même tarif jusqu'à son annulation."
-      ]
-    },
-    "blackfriday Title": {
-      "Best deal": [
-        "Meilleure offre"
-      ],
-      "Most popular": [
-        "Le plus populaire"
-      ],
-      "Save more when combining Mail and VPN": [
-        "Économisez plus en combinant Mail et VPN"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Action": {
-      "Get the deal": [
-        "Profitez de l'offre"
-      ],
-      "Get the deal now": [
-        "Profitez de l'offre maintenant"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Info": {
-      "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
-        "Les réductions sont basées sur le prix mensuel standard de ${ standardMonthlyPricing }"
-      ],
-      "Save ${ percentage }%": [
-        "- ${ percentage } %"
-      ],
-      "Special offer Terms and Conditions": [
-        "Conditions générales des offres spéciales"
-      ]
-    },
-    "blackfriday: VPNspecialoffer info": {
-      "per month": [
-        "par mois"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Promo title, need to be short": {
-      "Special offer": [
-        "Offre spéciale"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Title": {
-      "(${ notice }) Renews after 1 month at a standard monthly price of ${ amount }": [
-        "(${ notice }) Renouvellement après 1 mois à un prix standard mensuel de ${ amount }"
-      ],
-      "(${ notice }) Renews after 1 year at a standard discounted annual price of ${ amount } (20% discount)": [
-        "(${ notice }) Renouvellement après 1 an à un prix standard annuel réduit de ${ amount } (20 % de réduction)"
-      ],
-      "(${ notice }) Renews after 2 years at a standard discounted 2-year price of ${ amount } (33% discount)": [
-        "(${ notice }) Renouvellement après 2 ans à un prix standard bisannuel réduit de ${ amount } (33 % de réduction)"
-      ],
-      "1 month": [
-        "1 mois"
-      ],
-      "12 months": [
-        "12 mois"
-      ],
-      "24 months": [
-        "24 mois"
-      ],
-      "Billed at ${ amount } for the first 2 years.${ supNotice }": [
-        "Facturé ${ amount } pour les 2 premières années.${ supNotice }"
-      ],
-      "Billed at ${ amount } for the first month.${ supNotice }": [
-        "Facturé ${ amount } pour le premier mois.${ supNotice }"
-      ],
-      "Billed at ${ amount } for the first year.${ supNotice }": [
-        "Facturé ${ amount } pour la première année.${ supNotice }"
-      ],
-      "Get the special year-end offer on our Premium VPN PLUS plan": [
-        "Profitez de l'offre spéciale de fin d'année sur notre abonnement premium VPN PLUS"
-      ]
-    },
     "Bug category": {
       "Application problem": [
         "Problème d’application"
@@ -864,7 +773,7 @@
         "Le lien du calendrier n'est pas accessible en dehors de l'écosystème du fournisseur de calendrier."
       ],
       "Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.": [
-        "Le lien du calendrier est temporairement inaccessible. Veuillez vérifier que le lien du fournisseur de calendrier est toujours valide."
+        "Le lien du calendrier est temporairement inaccessible. Vérifiez que le lien du fournisseur de calendrier est toujours valide."
       ],
       "More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.": [
         "Plus de 12 heures se sont écoulées depuis la dernière mise à jour. Proton Calendar essaiera de mettre à jour le calendrier dans quelques heures."
@@ -2201,7 +2110,7 @@
         "Les mots de passe ne correspondent pas"
       ],
       "Please create an address first.": [
-        "Veuillez d’abord créer une adresse."
+        "Créez d'abord une adresse."
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Veuillez corriger le conflit en surbrillance pour continuer.",
@@ -2238,13 +2147,13 @@
         "Certains groupes n'ont pas pu être supprimés"
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
-        "Certains de vos noms de labels ne sont pas disponibles. Veuillez personnaliser l'importation pour modifier ces noms."
+        "Certains de vos noms de labels ne sont pas disponibles. Personnalisez l'importation pour modifier ces noms."
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
-        "Certains de vos noms de labels dépassent la limite de caractères autorisée par ${ MAIL_APP_NAME }. Veuillez personnaliser l'importation pour modifier ces noms."
+        "Certains de vos noms de labels dépassent la limite de caractères autorisée par ${ MAIL_APP_NAME }. Personnalisez l'importation pour modifier ces noms."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Quelque chose s'est mal passé, veuillez ${ refresh } afin de pouvoir continuer. Si ce message d'erreur s'affiche toujours, veuillez contacter notre ${ supportTeam }."
+        "Quelque chose s'est mal passé, nous vous invitons à ${ refresh } pour continuer. Si ce message d'erreur s'affiche toujours, contactez notre ${ supportTeam }."
       ],
       "Start time must be before end time": [
         "L’heure de début doit être antérieure à l’heure de fin"
@@ -2265,7 +2174,7 @@
         "La clé d’envoi n’est pas valide"
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
-        "Il y a trop de dossiers dans votre compte externe. Veuillez personnaliser l'importation pour supprimer certains dossiers."
+        "Il y a trop de dossiers dans votre compte externe. Personnalisez l'importation pour supprimer certains dossiers."
       ],
       "There was an error when exporting the contacts vCards": [
         "Une erreur s’est produite lors de l’exportation des vCards des contacts"
@@ -2277,7 +2186,7 @@
         "Ce champ nécessite un minimum de ${ minimumLength } caractères."
       ],
       "This folder name is not available. Please choose a different name.": [
-        "Ce nom de dossier n'est pas disponible. Veuillez choisir un autre nom."
+        "Ce nom de dossier n'est pas disponible. Veuillez en choisir un autre."
       ],
       "This label name is not available. Please choose a different name.": [
         "Ce nom de label n'est pas disponible. Veuillez en choisir un autre."
@@ -2479,7 +2388,7 @@
         "Veuillez ${ refresh } ou vérifier votre connexion."
       ],
       "Something went wrong. Please refresh the page or try again later.": [
-        "Une erreur s'est produite. Veuillez rafraîchir la page ou réessayer plus tard."
+        "Une erreur s'est produite. Rafraîchissez la page ou réessayez plus tard."
       ],
       "There was a problem connecting to Proton.": [
         "Un problème s’est produit lors de la connexion à Proton."
@@ -2729,7 +2638,7 @@
         "Événements correctement importés. Les événements importés apparaîtront maintenant dans votre calendrier."
       ],
       "Please don't close the tab before the importing process is finished.": [
-        "Veuillez ne pas fermer l'onglet avant la fin du processus d'importation."
+        "Ne fermez pas l'onglet avant la fin du processus d'importation."
       ]
     },
     "Import calendar warning": {
@@ -3135,19 +3044,19 @@
         "Autres options"
       ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        "PGP/Inline est uniquement compatible avec le format texte brut. Veuillez noter que ${ MAIL_APP_NAME } signe toujours les messages chiffrés."
+        "PGP/Inline est uniquement compatible avec le format texte brut. Notez que ${ MAIL_APP_NAME } signe toujours les messages chiffrés."
       ],
       "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        "PGP/MIME envoie automatiquement le message en utilisant le mode actuel du composeur. Veuillez noter que ${ MAIL_APP_NAME } signe toujours les messages chiffrés."
+        "PGP/MIME envoie automatiquement le message en utilisant le mode actuel du composeur. Notez que ${ MAIL_APP_NAME } signe toujours les messages chiffrés."
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
-        "Veuillez noter que les adresses assignées à ce groupe ne seront PAS supprimées."
+        "Notez que les adresses assignées à ce groupe ne seront PAS supprimées."
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "Veuillez noter que ce processus peut prendre un certain temps en fonction de la taille de votre carnet d’adresses."
       ],
       "Please remove the duplicates and try again.": [
-        "Veuillez supprimer les doublons et réessayer."
+        "Supprimez les doublons et réessayez."
       ],
       "Please select the folders you would like to import:": [
         "Veuillez sélectionner les dossiers que vous souhaitez importer :"
@@ -3262,7 +3171,7 @@
         "Ce lien mène à un site Web qui pourrait essayer de voler vos informations, comme les mots de passe et les détails de carte de crédit."
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Ce lien pourrait être une attaque homographique et ne peut pas être ouvert avec les navigateurs Internet Explorer et Edge. Si vous êtes certain de la légitimité de ce lien, veuillez utiliser un autre navigateur pour l'ouvrir."
+        "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Ce lien pourrait être une attaque homographique. Veuillez vous assurer qu'il s'agit bien du lien que vous souhaitez visiter ou ne l'ouvrez pas."
@@ -4347,7 +4256,7 @@
         "Mot de passe"
       ],
       "Please describe the problem and include any error messages": [
-        "Veuillez décrire le problème et inclure les messages d’erreur"
+        "Décrivez le problème et incluez les éventuels messages d'erreur."
       ],
       "Search for group name": [
         "Rechercher par nom de groupe"

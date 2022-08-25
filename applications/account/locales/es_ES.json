@@ -5078,7 +5078,7 @@
         "Este enlace conduce a un sitio web que podría estar intentando robar su información, como contraseñas y datos de tarjetas de crédito."
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Este enlace puede ser un ataque homógrafo y no puede abrirse por los navegadores Internet Explorer y Edge. Si estás seguro de que el enlace es legítimo, utiliza un navegador diferente para abrirlo."
+        "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Este enlace puede ser un ataque homógrafo. Por favor, verifica que este es el enlace que quieres visitar o no lo abras."
@@ -9288,9 +9288,6 @@
       "Currency": [
         "Moneda"
       ],
-      "Current and past imports": [
-        "Your import history"
-      ],
       "Custom filters": [
         "Filtros personalizados"
       ],
@@ -9428,6 +9425,9 @@
       ],
       "Export public key": [
         "Exportar clave pública"
+      ],
+      "Extension": [
+        "Extensión"
       ],
       "External PGP settings": [
         "Ajustes PGP externos"
@@ -9831,6 +9831,9 @@
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         "Tu periodo de prueba gratuito acaba el ${ formattedEndDate }"
+      ],
+      "Your import history": [
+        "Tu historial de importaciones"
       ],
       "Your plan": [
         "Tu plan"
