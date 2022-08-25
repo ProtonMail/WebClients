@@ -1,7 +1,6 @@
 import { createAction, createAsyncThunk } from '@reduxjs/toolkit';
 
 import { moveAll as moveAllRequest, queryMessageMetadata } from '@proton/shared/lib/api/messages';
-import { FIBONACCI_LIST } from '@proton/shared/lib/constants';
 import { Api } from '@proton/shared/lib/interfaces';
 import diff from '@proton/utils/diff';
 import noop from '@proton/utils/noop';
@@ -26,6 +25,8 @@ import {
     refreshTaskRunningTimeout,
 } from './helpers/elementQuery';
 
+const REFRESHES = [5, 10, 20];
+
 export const reset = createAction<NewStateParams>('elements/reset');
 
 export const updatePage = createAction<number>('elements/updatePage');
@@ -49,9 +50,9 @@ export const load = createAsyncThunk<{ result: QueryResults; taskRunning: TaskRu
             }, 2000);
             throw error;
         }
-        if (result.Stale === 1) {
-            const ms = 1000 * (FIBONACCI_LIST?.[count] || Math.max(...FIBONACCI_LIST));
-            // Wait a second before retrying
+        if (result.Stale === 1 && REFRESHES?.[count]) {
+            const ms = 1000 * REFRESHES[count];
+            // Wait few seconds before retrying
             setTimeout(() => {
                 void dispatch(load({ api, call, page, params, abortController, conversationMode, count: count + 1 }));
             }, ms);
