@@ -2643,7 +2643,7 @@
     },
     "Error": {
       "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
-        "${ Local } je Vaše uživatelské jméno. Chcete-li vytvořit ${ Local }@${ Domain }, přejděte do Nastavení > Zprávy a kompozice > Krátká doména (pm.me)"
+        "${ Local } je vaše uživatelské jméno. Chcete-li vytvořit ${ Local }@${ Domain }, přejděte do Nastavení > Zprávy a psaní > Krátká doména (pm.me)"
       ],
       "A group with this name already exists": [
         "Skupina s tímto názvem již existuje"
@@ -5377,7 +5377,7 @@
         "Tento odkaz vede na webovou stránku, která se může pokoušet ukrást vaše údaje, například hesla a údaje o kreditní kartě."
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Tento odkaz může být homografickým útokem a nelze ho otevřít pomocí prohlížeče Internet Explorer nebo Edge. Pokud jste si jisti, že je odkaz v pořádku, otevřete ho v jiném prohlížeči."
+        "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Tento odkaz může být homografickým útokem. Zkontrolujte, zda se jedná o odkaz, který chcete navštívit, nebo odkaz neotevírejte."
@@ -9761,9 +9761,6 @@
       "Currency": [
         "Měna"
       ],
-      "Current and past imports": [
-        "Your import history"
-      ],
       "Custom filters": [
         "Vlastní filtry"
       ],
@@ -9904,6 +9901,9 @@
       ],
       "Export public key": [
         "Exportovat veřejný klíč"
+      ],
+      "Extension": [
+        "Rozšíření"
       ],
       "External PGP settings": [
         "Externí nastavení PGP"
@@ -10321,6 +10321,9 @@
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         "Vaše bezplatná zkušební verze brzy skončí, dne ${ formattedEndDate }"
+      ],
+      "Your import history": [
+        "Aktuální a minulé importy"
       ],
       "Your plan": [
         "Váš plán"

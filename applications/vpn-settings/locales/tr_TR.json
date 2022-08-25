@@ -72,7 +72,7 @@
         "Destek ekibimizle görüşün"
       ],
       "Continue": [
-        "Devam et"
+        "İlerle"
       ],
       "Copy": [
         "Kopyala"
@@ -183,7 +183,7 @@
         "Artır"
       ],
       "Load more": [
-        "Devamını yükle"
+        "Diğerlerini yükle"
       ],
       "Loading verification": [
         "Doğrulama yükleniyor"
@@ -498,59 +498,6 @@
       ],
       "Two-year": [
         "İki yıllık"
-      ]
-    },
-    "blackfriday Info": {
-      "beta": [
-        "beta"
-      ],
-      "Includes": [
-        "İçerdikleri"
-      ],
-      "Standard price: ${ regularPrice }": [
-        "Standart fiyat: ${ regularPrice }"
-      ],
-      "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
-        "Bu abonelik, iptal edilene kadar 2 yıllık bir dönem sonrasında aynı fiyattan otomatik olarak yenilenecektir."
-      ]
-    },
-    "blackfriday Title": {
-      "Most popular": [
-        "En popüler olanlar"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Action": {
-      "Get the deal": [
-        "Tekliften yararlan"
-      ],
-      "Get the deal now": [
-        "Tekliften şimdi yararlan"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Info": {
-      "Save ${ percentage }%": [
-        "- %${ percentage }"
-      ]
-    },
-    "blackfriday: VPNspecialoffer info": {
-      "per month": [
-        "aylık"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Promo title, need to be short": {
-      "Special offer": [
-        "Özel teklif"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Title": {
-      "1 month": [
-        "1 ay"
-      ],
-      "12 months": [
-        "12 ay"
-      ],
-      "24 months": [
-        "24 ay"
       ]
     },
     "Bug category": {
@@ -1885,7 +1832,7 @@
         "${ appName }, ${ enableDesktopNotifications } için izninizi istiyor."
       ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
-        "${ boldWarning } Devam ederseniz hesabınızda bulunan tüm şifrelenmiş verilere erişiminizi kaybedeceksiniz."
+        "${ boldWarning } İlerlerseniz hesabınızda bulunan tüm şifrelenmiş verilere erişiminizi kaybedeceksiniz."
       ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME }, oturum açmak ve posta kutusu şifresini çözmek için tek bir parola kullanabilir. Tek parola kipine geçmek için kullanmak istediğiniz tek parolayı yazın ve Kaydet üzerine tıklayın."
@@ -1987,7 +1934,7 @@
         "Ücretsiz bir tarifeye geçtiğinizde, gelecekte yeniden ücretli tarifeye geçseniz bile bu avantajları kalıcı olarak kaybedersiniz."
       ],
       "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
-        "Tarifenizi düşürdüğünüzde aşağıdaki özellikleri kaybedeceksiniz. Devam etmek istediğinize emin misiniz?"
+        "Tarifenizi düşürdüğünüzde aşağıdaki avantajları kaybedeceksiniz. İlerlemek istediğinize emin misiniz?"
       ],
       "By leaving now, changes may not be saved": [
         "Şimdi çıkarsanız, değişiklikler kaydedilemeyebilir"
@@ -1999,7 +1946,7 @@
         "Yeni bir doğrulama kodunun ${ strong } numarasına gönderilmesi için \"Yeni kod iste\" üzerine tıklayın. Bu telefon numarası yanlışsa düzeltmek için \"Düzenle\" üzerine tıklayın."
       ],
       "Continue anyway?": [
-        "Yine de devam edilsin mi?"
+        "Yine de ilerlemek istiyor musunuz?"
       ],
       "Creating your account": [
         "Hesabınız oluşturuluyor"
@@ -2329,7 +2276,7 @@
         "Bu işlem, geçerli ücretli aboneliğinizi iptal edecek ve kazandığınız sadık kullanıcı özelliklerini kaybetmenize sebep olacak. Aboneliğinizin kalan bakiyesi hesap kredisi olarak iade edilecek."
       ],
       "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
-        "Bu seçenek, Proton aboneliğiniz için PayPal üzerinden ödeme yapılabilmesini sağlar. Yeni bir tarayıcı sekmesi açarak sizi PayPal sitesine yönlendireceğiz. Herhangi bir açılır pencere engelleyici kullanıyorsanız, işleme devam etmek için devre dışı bırakın."
+        "Bu seçenek, Proton aboneliğiniz için PayPal üzerinden ödeme yapılabilmesini sağlar. Yeni bir tarayıcı sekmesi açarak sizi PayPal sitesine yönlendireceğiz. Herhangi bir açılır pencere engelleyici kullanıyorsanız, işlemi sürdürmek için bunu devre dışı bırakın."
       ],
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "Bu işlem, hesabınızı ve tüm verilerini kalıcı olarak siler. Bu hesabı yeniden etkinleştiremezsiniz."
@@ -2344,7 +2291,7 @@
         "Bu yardımcı, Proton hesabınızda iki aşamalı kimlik doğrulamayı (2FA) etkinleştirir. Proton hesabınızı daha güvenli kılacağından iki aşamalı kimlik doğrulamayı etkinleştirmenizi öneririz."
       ],
       "to continue to ${ toAppName }": [
-        "${ toAppName } uygulamasına devam etmek için"
+        "${ toAppName } uygulamasına ilerlemek için"
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Spam ve kötüye kullanıma karşı lütfen insan olduğunuzu doğrulayın."
@@ -2494,7 +2441,7 @@
         "${ VPN_APP_NAME } uygulamalarında ya da ${ VPN_APP_NAME } panosunda oturum açmak için OpenVPN / IKEv2 kimlik bilgilerini kullanamazsınız. ${ learnMore }"
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
-        "Bir kurtarma yöntemi belirlememişsiniz. Bu nedenle parolanızı unutursanız hesabınızı kurtaramazsınız. Kurtarma yöntemi olmadan devam etmek istiyor musunuz?"
+        "Bir kurtarma yöntemi belirlemediniz. Parolanızı unutursanız hesabınızı kurtaramazsınız. Kurtarma yöntemi olmadan ilerlemek istiyor musunuz?"
       ],
       "You have no saved payment methods.": [
         "Kayıtlı bir ödeme yönteminiz yok."
@@ -4538,7 +4485,7 @@
         "Oturum aç"
       ],
       "Sign in again to continue": [
-        "Devam etmek için yeniden oturum açın"
+        "İlerlemek için yeniden oturum açın"
       ],
       "Status": [
         "Durum"

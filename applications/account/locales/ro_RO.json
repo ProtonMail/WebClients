@@ -2625,6 +2625,9 @@
       ]
     },
     "Error": {
+      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "Aveți numele de utilizator ${ Local }. Pentru a crea ${ Local }@${ Domain }, accesați Setări > Mesaje și compunere > Domeniu scurt (pm.me)"
+      ],
       "A group with this name already exists": [
         "Un grup cu acest nume există deja"
       ],
@@ -5307,7 +5310,7 @@
         "Această legătură duce la un site web care ar putea încerca să vă fure informațiile, cum ar fi parolele și detaliile cărților de credit."
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Această legătură ar putea fi un atac omografic (caractere asemănătoare dar cu cod diferit de caracter) și nu poate fi deschisă de către navigatoarele Internet Explorer și Edge. Dacă aveți siguranța că legătura este legitimă, folosiți un alt navigator pentru a o deschide."
+        "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Această legătură ar putea fi un atac omoglific. Verificați adresa pe care doriți să o vizitați sau nu o deschideți."
@@ -9644,9 +9647,6 @@
       "Currency": [
         "Moneda"
       ],
-      "Current and past imports": [
-        "Your import history"
-      ],
       "Custom filters": [
         "Filtre proprii"
       ],
@@ -9787,6 +9787,9 @@
       ],
       "Export public key": [
         "Exportare cheie publică"
+      ],
+      "Extension": [
+        "Extensie"
       ],
       "External PGP settings": [
         "Setări externe PGP"
@@ -10203,6 +10206,9 @@
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         "Perioada de încercare gratuită se încheie în curând, la ${ formattedEndDate }"
+      ],
+      "Your import history": [
+        "Istoric importări"
       ],
       "Your plan": [
         "Plan actual"
