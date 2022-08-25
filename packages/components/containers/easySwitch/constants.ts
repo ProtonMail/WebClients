@@ -11,7 +11,10 @@ import {
 export const G_OAUTH_REDIRECT_PATH = '/oauth/callback';
 
 export const G_OAUTH_SCOPE_DEFAULT = ['email', 'openid'];
+
 export const G_OAUTH_SCOPE_MAIL = ['https://mail.google.com/'];
+export const G_OAUTH_SCOPE_MAIL_NEW_SCOPE = ['https://www.googleapis.com/auth/gmail.readonly'];
+
 export const G_OAUTH_SCOPE_CONTACTS = ['https://www.googleapis.com/auth/contacts.readonly'];
 
 export const G_OAUTH_SCOPE_CALENDAR = ['https://www.googleapis.com/auth/calendar.readonly'];
