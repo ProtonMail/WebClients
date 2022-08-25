@@ -117,12 +117,6 @@ const ItemColumnLayout = ({
                     </span>
                 </div>
 
-                {!!element.ExpirationTime && (
-                    <span className="flex-item-noshrink">
-                        <ItemExpiration element={element} className="mr0-5" />
-                    </span>
-                )}
-
                 <span
                     className={classnames([
                         'flex-item-noshrink item-firstline-infos flex flex-nowrap flex-align-items-center',
@@ -157,6 +151,9 @@ const ItemColumnLayout = ({
                 <div className="item-icons flex flex-item-noshrink flex-nowrap no-mobile">
                     <ItemHoverButtons element={element} labelID={labelID} elementID={elementID} onBack={onBack} />
                     <span className="flex opacity-on-hover-hide">
+                        {!!element.ExpirationTime && (
+                            <ItemExpiration element={element} className="ml0-25 flex-align-self-center" />
+                        )}
                         <ItemAttachmentIcon
                             icon={hasOnlyIcsAttachments ? 'calendar-grid' : undefined}
                             element={element}
@@ -168,6 +165,9 @@ const ItemColumnLayout = ({
                     </span>
                 </div>
                 <div className="item-icons flex flex-row flex-item-noshrink flex-nowrap no-desktop no-tablet on-mobile-flex">
+                    {!!element.ExpirationTime && (
+                        <ItemExpiration element={element} className="ml0-25 flex-align-self-center" />
+                    )}
                     <ItemAttachmentIcon
                         icon={hasOnlyIcsAttachments ? 'calendar-grid' : undefined}
                         element={element}
