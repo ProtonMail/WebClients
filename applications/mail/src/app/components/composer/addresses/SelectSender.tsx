@@ -38,7 +38,10 @@ const SelectSender = ({ message, disabled, onChange, onChangeContent, addressesB
 
     const [uid] = useState(generateUID('select-sender'));
 
-    const addressesOptions = getFromAddresses(addresses, message.draftFlags?.originalTo).map((address) => (
+    const addressesOptions = getFromAddresses(
+        addresses,
+        message.draftFlags?.originalTo || message.draftFlags?.originalFrom
+    ).map((address) => (
         <Option value={address.Email} title={address.Email} key={address.Email}>
             <span className="inline-flex flex-nowrap flex-row flex-align-items-center max-w100">
                 <span className="text-ellipsis">{address.Email}</span>

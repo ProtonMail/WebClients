@@ -217,10 +217,13 @@ export const createNewDraft = (
     const [Attachments, pgpAttachments] = convertToFile(reusedAttachments, getAttachment);
 
     const originalTo = getOriginalTo(referenceMessage?.data);
+    const originalFrom = referenceMessage?.data?.Sender?.Address;
+    const originalAddress =
+        isSent(referenceMessage?.data) || isSentAndReceived(referenceMessage?.data) ? originalFrom : originalTo;
     const originalAddressID = referenceMessage?.data?.AddressID;
     const initialAttachments = [...(referenceMessage?.draftFlags?.initialAttachments || []), ...pgpAttachments];
 
-    const senderAddress = getFromAddress(addresses, originalTo, referenceMessage?.data?.AddressID);
+    const senderAddress = getFromAddress(addresses, originalAddress, referenceMessage?.data?.AddressID);
 
     const AddressID = senderAddress?.ID || ''; // Set the AddressID from previous message to convert attachments on reply / replyAll / forward
 
@@ -283,6 +286,7 @@ export const createNewDraft = (
             ParentID,
             action,
             originalTo,
+            originalFrom,
             originalAddressID,
             initialAttachments,
         },
