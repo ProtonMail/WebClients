@@ -54,17 +54,20 @@ import {
     useCalendars,
     useErrorHandler,
     useEventManager,
+    useFeature,
     useFolders,
     useGetAddressKeys,
     useLabels,
 } from '../../hooks';
 import useOAuthPopup from '../../hooks/useOAuthPopup';
+import { FeatureCode } from '../features';
 import {
     CALENDAR_TO_BE_CREATED_PREFIX,
     G_OAUTH_SCOPE_CALENDAR,
     G_OAUTH_SCOPE_CONTACTS,
     G_OAUTH_SCOPE_DEFAULT,
     G_OAUTH_SCOPE_MAIL,
+    G_OAUTH_SCOPE_MAIL_NEW_SCOPE,
     IA_PATHNAME_REGEX,
     IMAPS,
 } from './constants';
@@ -112,6 +115,7 @@ const EasySwitchOauthModal = ({
     featureMap,
     ...rest
 }: Props) => {
+    const useNewScopeFeature = useFeature(FeatureCode.EasySwitchGmailNewScope);
     const activeAddresses = getActiveAddresses(addresses);
     const getAddressKeys = useGetAddressKeys();
     const location = useLocation();
@@ -163,7 +167,12 @@ const EasySwitchOauthModal = ({
     const [isLoadingCreateCalendars, setIsLoadingCreateCalendars] = useState(false);
     const [isLoadingStartImportTask, setIsLoadingStartImportTask] = useState(false);
 
-    const showLoadingState = isInitLoading || isLoadingOAuth || isLoadingCreateCalendars || isLoadingStartImportTask;
+    const showLoadingState =
+        isInitLoading ||
+        isLoadingOAuth ||
+        isLoadingCreateCalendars ||
+        isLoadingStartImportTask ||
+        useNewScopeFeature.loading;
 
     const [calendarsToBeCreatedCount, setCalendarsToBeCreatedCount] = useState(0);
     const [createdCalendarsCount, setCreatedCalendarsCount] = useState(0);
@@ -254,7 +263,9 @@ const EasySwitchOauthModal = ({
         if (modalModel.step === OAUTH_INSTRUCTIONS) {
             const scopes = [
                 ...G_OAUTH_SCOPE_DEFAULT,
-                checkedTypes[MAIL] && G_OAUTH_SCOPE_MAIL,
+                checkedTypes[MAIL] && useNewScopeFeature.feature?.Value === true
+                    ? G_OAUTH_SCOPE_MAIL_NEW_SCOPE
+                    : G_OAUTH_SCOPE_MAIL,
                 checkedTypes[CALENDAR] && G_OAUTH_SCOPE_CALENDAR,
                 checkedTypes[CONTACTS] && G_OAUTH_SCOPE_CONTACTS,
                 // checkedTypes[DRIVE] && G_OAUTH_SCOPE_DRIVE,
