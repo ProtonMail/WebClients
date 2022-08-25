@@ -141,12 +141,12 @@ export const getAddressFromEmail = (addresses: Address[], email = '') => {
  * Return list of addresses available in the FROM select
  * Reference: Angular/src/app/composer/factories/composerFromModel.js
  */
-export const getFromAddresses = (addresses: Address[], originalTo = '') => {
+export const getFromAddresses = (addresses: Address[], originalAddress = '') => {
     const result = addresses
         .filter(({ Status, Receive, Send }) => Status === 1 && Receive === 1 && Send === 1)
         .sort((a1, a2) => (a1.Order || 0) - (a2.Order || 0));
 
-    const plusAddress = getAddressFromPlusAlias(addresses, originalTo);
+    const plusAddress = getAddressFromPlusAlias(addresses, originalAddress);
 
     if (plusAddress) {
         // It's important to unshift the plus address to be found first with find()
