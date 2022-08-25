@@ -95,6 +95,7 @@ const ComposerExpirationModal = ({ message, onClose, onChange }: Props) => {
     const [{ feature: EORedesignFeature, loading }] = useFeatures([FeatureCode.EORedesign]);
 
     const isEORedesign = EORedesignFeature?.Value;
+    const isExpirationSet = message?.draftFlags?.expiresIn;
 
     const [uid] = useState(generateUID('password-modal'));
 
@@ -184,7 +185,11 @@ const ComposerExpirationModal = ({ message, onClose, onChange }: Props) => {
 
     return (
         <ComposerInnerModal
-            title={isPasswordSet ? c('Info').t`Edit expiration time` : c('Info').t`Expiring message`}
+            title={
+                isExpirationSet
+                    ? c('Info').t`Edit expiration time`
+                    : c('Adding expiration to a message will create an expiring message').t`Expiring message`
+            }
             disabled={disabled}
             onSubmit={handleSubmit}
             onCancel={handleCancel}
