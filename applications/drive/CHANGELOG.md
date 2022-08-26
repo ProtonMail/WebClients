@@ -1,3 +1,19 @@
+# Release beta 32 - 2022-08-31
+
+## Improved
+
+-   Increased thumbnail size
+-   Transparent images have a checkered background
+-   Encrypted Search available to free users
+
+## Fixed
+
+-   Fixes for uploads of big files
+-   Better handling on new shared link page when password changes
+-   Fix indexing for Encrypted Search
+-   Fix closing context menu in various situations
+-   Fix shift selection
+
 # Release beta 31 - 2022-07-28
 
 ## Improved
