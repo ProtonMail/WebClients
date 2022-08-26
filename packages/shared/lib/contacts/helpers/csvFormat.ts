@@ -587,7 +587,7 @@ export const toPreVcard = ({ original, standard }: { original: string; standard:
  * When there is only one pre-vCard property in a pre-vCards property, get the property
  */
 const getFirstValue = (preVcards: PreVcardProperty[]): string =>
-    getStringContactValue(preVcards[0].checked ? preVcards[0].value : '');
+    getStringContactValue(preVcards[0].checked ? preVcards[0].value : '').trim();
 
 const getDateValue = (preVcards: PreVcardProperty[]) => {
     const text = getFirstValue(preVcards);
