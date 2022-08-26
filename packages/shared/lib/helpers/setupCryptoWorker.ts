@@ -6,7 +6,7 @@ import { hasModulesSupport, isIos11, isSafari11 } from './browser';
 let promise: undefined | Promise<void>;
 
 const isUnsupportedWorker = () => {
-    // In safari 11 there's an unknown problem with comlink.
+    // In safari 11 there's an unknown problem.
     // In iOS there's a bug that prevents the worker from functioning properly.
     return isSafari11() || isIos11();
 };
