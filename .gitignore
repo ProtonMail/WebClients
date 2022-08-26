@@ -33,3 +33,5 @@ build
 *.code-workspace
 .vscode
 .nyc_output
+tests/**/*.png
+!tests/**/*-linux.png
