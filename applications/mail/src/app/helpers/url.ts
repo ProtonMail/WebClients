@@ -17,7 +17,7 @@ export const toAddresses = (emailsStr: string): Recipient[] => {
     const escaped = emails.map((email) => {
         // Some HTML Entities might still be URI encoded at this point
         const uriDecoded = decodeURIComponent(email);
-        return unescapeFromString(uriDecoded);
+        return unescapeFromString(uriDecoded).trim();
     });
 
     return escaped.map((element) => {
