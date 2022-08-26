@@ -29,7 +29,7 @@ const MoreFullDayEvent = ({ style, more, eventRef, isSelected }: Props) => {
                 ])}
                 ref={eventRef}
             >
-                <span data-test-id="calendar-view:more-events-collapsed" className="mtauto mbauto">
+                <span data-test-id="calendar-view:more-events-collapsed" className="myauto">
                     {more} more
                 </span>
             </div>

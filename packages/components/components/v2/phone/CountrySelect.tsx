@@ -57,7 +57,7 @@ const CountrySelect = ({ value, options, onChange, embedded, onClosed }: Props) 
                 }}
                 className="unstyled flex-align-self-stretch my0-25 pr0-5 border-right"
                 ref={anchorRef}
-                caretClassName="mtauto mbauto"
+                caretClassName="myauto"
                 aria-live="assertive"
                 aria-atomic="true"
                 aria-label={value?.countryName}

@@ -192,19 +192,6 @@
 				inline-size: 100%;
 				flex-basis: auto;
 			}
-
-			&.flex-autogrid {
-				margin: 0;
-
-				&.mb1 {
-					margin-block-end: 1em;
-				}
-			}
-
-			& > .flex-autogrid-item {
-				padding: 0;
-				min-block-size: auto;
-			}
 		}
 
 		&-flex-column-no-stretch {

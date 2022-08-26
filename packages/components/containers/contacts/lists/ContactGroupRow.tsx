@@ -49,7 +49,7 @@ const ContactGroupRow = ({ checked, style, groupsEmailsMap, group, onClick, onCh
             data-element-id={group.ID}
             data-shortcut-target="contact-container"
         >
-            <div className="flex flex-nowrap w100 h100 mtauto mbauto flex-align-items-center">
+            <div className="flex flex-nowrap w100 h100 myauto flex-align-items-center">
                 <ItemCheckbox
                     ID={ID}
                     name={Name}

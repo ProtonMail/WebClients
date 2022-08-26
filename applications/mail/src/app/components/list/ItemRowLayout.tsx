@@ -88,11 +88,11 @@ const ItemRowLayout = ({
 
     return (
         <div className="flex-item-fluid flex flex-align-items-center flex-nowrap flex-row item-titlesender">
-            <div className="mtauto mbauto flex w2e" data-testid={unread}>
+            <div className="myauto flex w2e" data-testid={unread}>
                 <ItemStar element={element} />
             </div>
             <div className={classnames(['item-senders flex flex-nowrap mauto pr1', unread && 'text-bold'])}>
-                <ItemAction element={element} className="mr0-5 flex-item-noshrink mtauto mbauto" />
+                <ItemAction element={element} className="mr0-5 flex-item-noshrink myauto" />
                 <span className="max-w100 text-ellipsis" title={addresses} data-testid="message-row:sender-address">
                     {sendersContent}
                 </span>
@@ -146,7 +146,7 @@ const ItemRowLayout = ({
                 isCollapsed={false}
             />
 
-            <span className="item-weight mtauto mbauto ml1 text-right" data-testid="message-row:item-size">
+            <span className="item-weight myauto ml1 text-right" data-testid="message-row:item-size">
                 {!loading && size}
             </span>
 

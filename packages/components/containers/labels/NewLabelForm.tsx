@@ -89,7 +89,7 @@ function NewLabelForm({
     };
 
     return (
-        <div className="center flex-item-fluid">
+        <div className="mxauto flex-item-fluid">
             {!labelOrFolder.ID && labelOrFolder.Type === LABEL_TYPE.MESSAGE_FOLDER ? (
                 <div className="mb1">
                     {c('Info')
