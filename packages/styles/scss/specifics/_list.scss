@@ -45,11 +45,12 @@
 }
 
 $item-container-height: rem(66) !default;
-$item-container-padding-block: em(11) !default;
-$item-container-padding-inline-start: em(9) !default;
+$item-container-padding-block: em(12) !default;
+
+$item-container-padding-inline-start: em(16) !default;
 $item-container-padding-inline-end: em(12) !default;
 $item-container-padding-inline: $item-container-padding-inline-start $item-container-padding-inline-end;
-$item-container-margin-inline: em(12) !default;
+
 $item-container-height-compact-mode: rem(56) !default;
 $item-container-row-height-compact-mode: rem(36) !default;
 $item-container-row-padding-block: em(5) !default; // design wants 48px
@@ -61,31 +62,13 @@ $item-container-row-padding-block: em(5) !default; // design wants 48px
 	position: relative;
 	padding-block: $item-container-padding-block; // design wants ~66 height
 	padding-inline: $item-container-padding-inline;
-	border-block-end: 1px solid var(--border-weak);
 	scroll-margin-block-start: $item-container-height;
 
-	// no transition, otherwhise there's a flash on page loading
+	transition: box-shadow 0.15s easing(easeOutQuint);
+	// no other transition, otherwhise there's a flash on page loading
 	// because of theme file loading after applying default theme colors
 
-	&::after,
-	&-wrapper::after {
-		content: '';
-		position: absolute;
-		inset: 0;
-		inset-inline-start: -$item-container-margin-inline;
-		inset-block-end: 1px;
-		z-index: 1;
-		pointer-events: none;
-		transition: 0.15s easing(ease-out-quart);
-		border-inline-start: 5px solid transparent;
-	}
-
-	&:focus {
-		outline: none;
-	}
-
-	&.read,
-	&-wrapper.read {
+	&.read {
 		background-color: var(--email-item-read-background-color);
 		color: var(--email-item-read-text-color);
 
@@ -115,40 +98,35 @@ $item-container-row-padding-block: em(5) !default; // design wants 48px
 		}
 	}
 
-	&-wrapper:hover::after {
-		box-shadow: var(--shadow-norm);
+	&:hover {
+		z-index: 1;
+		box-shadow: var(--shadow-lifted);
+		transition-delay: 0.5s;
 	}
 
-	&:focus::after,
-	&.item-is-focused::after {
-		border-inline-start-color: var(--email-item-focus-marker-color);
+	&:focus,
+	&.item-is-focused {
+		outline: none;
+		border-color: var(--field-focus);
+		box-shadow: 0 0 0 #{$fields-focus-ring-size} var(--field-highlight);
 	}
 
-	&.item-is-selected,
-	// alias for Angular
-	&.item-container.active {
-		&#{&} {
-			background-color: var(--email-item-selected-background-color);
-			color: var(--email-item-selected-text-color);
+	&.item-is-selected {
+		background-color: var(--email-item-selected-background-color);
+		color: var(--email-item-selected-text-color);
 
-			&:focus::after,
-			&.item-is-focused::after {
-				border-inline-start-color: var(--email-item-selected-focus-marker-color);
-			}
+		.item-icon,
+		.item-icon-compact:hover {
+			background-color: var(--email-item-selected-icon-background-color);
+			color: var(--email-item-selected-icon-text-color);
+		}
 
-			.item-icon,
-			.item-icon-compact:hover {
-				background-color: var(--email-item-selected-icon-background-color);
-				color: var(--email-item-selected-icon-text-color);
-			}
+		.item-titlesender {
+			border-block-end-color: transparent;
+		}
 
-			.item-firstline {
-				color: var(--email-item-selected-text-color);
-			}
-
-			.item-titlesender {
-				border-block-end-color: transparent;
-			}
+		.item-hover-action-buttons {
+			--button-group-border-color: var(--email-item-selected-background-color);
 		}
 	}
 
@@ -172,9 +150,8 @@ $item-container-row-padding-block: em(5) !default; // design wants 48px
 }
 
 .item-container {
-	border-block-end: 0;
-	padding-block-end: 0; // design wants ~66 height
-	margin-inline: $item-container-margin-inline;
+	margin-inline: em(8);
+	border: 1px solid transparent; // for focus state
 	border-radius: var(--border-radius-lg);
 	@include respond-to($breakpoint-small) {
 		margin-inline: em(2);
@@ -183,6 +160,7 @@ $item-container-row-padding-block: em(5) !default; // design wants 48px
 
 .item-container-row {
 	padding-block: $item-container-row-padding-block;
+	border-block-end: 1px solid var(--border-weak);
 
 	// fix pseudo element for row layout
 	.item-checkbox {
@@ -232,8 +210,6 @@ $item-container-row-padding-block: em(5) !default; // design wants 48px
 }
 
 .item-firstline {
-	color: var(--text-norm);
-
 	&-infos {
 		transform: translateY(-0.5ex);
 	}
@@ -244,19 +220,15 @@ $item-container-row-padding-block: em(5) !default; // design wants 48px
 }
 
 .item-hover-action-buttons {
-	inset-inline-start: rem(6); // magic number to get perfect hover :D
+	margin-inline-end: rem(-6); // magic number to get perfect hover :D
 }
 
 /* Comfortable view */
 
 .is-comfortable {
-	// should apply this background only for comfortable view, NOT on mobile or Row mode
 	.item-container {
-		&.read,
-		&-wrapper.read {
-			@include respond-to($breakpoint-small, 'min') {
-				background-color: var(--email-item-read-comfort-background-color);
-			}
+		&-wrapper {
+			margin-block-end: em(4);
 		}
 
 		// just a 12 margin only for first element, not on mobile
@@ -268,6 +240,25 @@ $item-container-row-padding-block: em(5) !default; // design wants 48px
 
 		&-row {
 			padding-inline-start: em(21);
+		}
+	}
+
+	.item-unread-dot {
+		position: absolute;
+		inset-block-start: em(18);
+		inset-inline-start: em(2);
+		z-index: 1;
+	}
+
+	.item-checkbox {
+		// for allowing hovering larger than fake circle
+		&::after {
+			content: '';
+			position: absolute;
+			inset-block: calc(#{-$item-container-padding-block} - 0.1em);
+			inset-inline-start: calc(#{-$item-container-padding-inline-start} - 0.1em);
+			inset-inline-end: -0.6em;
+			border-radius: 0 0 var(--border-radius-lg) var(--border-radius-lg);
 		}
 	}
 }
@@ -284,9 +275,9 @@ $item-container-row-padding-block: em(5) !default; // design wants 48px
 	&::after {
 		content: '';
 		position: absolute;
-		inset-inline: -#{em(12)};
-		inset-block-start: calc(-1 * (#{$item-container-height-compact-mode} - #{rem($conversation-icon-size)}) / 2);
-		block-size: $item-container-height-compact-mode;
+		inset-block: em(-8);
+		inset-inline: em(-6);
+		margin-block-start: em(5);
 	}
 
 	.checkbox-fakecheck {
@@ -318,8 +309,7 @@ $item-container-row-padding-block: em(5) !default; // design wants 48px
 		border-block-end: 1px solid var(--border-weak);
 
 		// center hover action vertically, did this to keep more space available for content
-		&:hover,
-		&:focus-within {
+		&:hover {
 			.item-hover-action-buttons {
 				margin-block-start: -1.5em;
 			}
@@ -449,17 +439,6 @@ $item-container-row-padding-block: em(5) !default; // design wants 48px
 }
 
 .item-checkbox {
-	// for allowing hovering larger than fake circle
-	&::after {
-		content: '';
-		position: absolute;
-		inset-block: calc(-1 * ((#{$item-container-height} - #{rem($conversation-icon-size)}) / 2));
-		inset-inline-start: em(-12);
-		inline-size: calc(#{rem($conversation-icon-size)} + #{$item-container-padding-inline-start} + #{rem(5)});
-
-		// icon size + padding container + tiny margin for comfort
-	}
-
 	// hidden fake check by default
 	& + .item-icon > .item-icon-fakecheck {
 		display: none;

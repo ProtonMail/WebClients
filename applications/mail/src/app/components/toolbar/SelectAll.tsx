@@ -43,7 +43,7 @@ const SelectAll = ({ labelID, loading, disabled, elementIDs, checkedIDs, onCheck
     return (
         <>
             <Tooltip title={checked ? c('Action').t`Deselect all messages` : c('Action').t`Select all messages`}>
-                <span className="select-all-container flex ml2 on-mobile-ml1 on-mobile-pl0-25">
+                <span className="select-all-container flex on-mobile-pl0-25">
                     <Checkbox
                         className="select-all"
                         checked={checked}
