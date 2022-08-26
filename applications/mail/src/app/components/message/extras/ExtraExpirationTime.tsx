@@ -60,7 +60,7 @@ const ExtraExpirationTime = ({ message, displayAsButton = false, marginBottom = 
             ])}
             data-testid="expiration-banner"
         >
-            <Icon name="hourglass" className="flex-item-noshrink mtauto mbauto" />
+            <Icon name="hourglass" className="flex-item-noshrink myauto" />
             <span className="flex-item-fluid">{expireOnMessage}</span>
             <span className="on-mobile-w100 flex-item-noshrink flex-align-items-start flex">
                 <Button

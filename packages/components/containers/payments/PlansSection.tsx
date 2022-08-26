@@ -123,7 +123,7 @@ const PlansSection = () => {
             <Button
                 color="norm"
                 shape="ghost"
-                className="flex center flex-align-items-center mb1"
+                className="flex mxauto flex-align-items-center mb1"
                 onClick={() => {
                     open({
                         step: SUBSCRIPTION_STEPS.PLAN_SELECTION,

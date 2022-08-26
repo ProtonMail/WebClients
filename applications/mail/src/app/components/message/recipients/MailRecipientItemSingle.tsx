@@ -149,7 +149,7 @@ const MailRecipientItemSingle = ({
             <hr className="my0-5" />
             <DropdownMenuButton className="text-left flex flex-nowrap flex-align-items-center" onClick={handleCompose}>
                 <Icon name="envelope" className="mr0-5" />
-                <span className="flex-item-fluid mtauto mbauto">{c('Action').t`New message`}</span>
+                <span className="flex-item-fluid myauto">{c('Action').t`New message`}</span>
             </DropdownMenuButton>
             {ContactID ? (
                 <DropdownMenuButton
@@ -157,7 +157,7 @@ const MailRecipientItemSingle = ({
                     onClick={handleClickContact}
                 >
                     <Icon name="user" className="mr0-5" />
-                    <span className="flex-item-fluid mtauto mbauto">{c('Action').t`View contact details`}</span>
+                    <span className="flex-item-fluid myauto">{c('Action').t`View contact details`}</span>
                 </DropdownMenuButton>
             ) : (
                 <DropdownMenuButton
@@ -165,7 +165,7 @@ const MailRecipientItemSingle = ({
                     onClick={handleClickContact}
                 >
                     <Icon name="user-plus" className="mr0-5" />
-                    <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Create new contact`}</span>
+                    <span className="flex-item-fluid myauto">{c('Action').t`Create new contact`}</span>
                 </DropdownMenuButton>
             )}
             <DropdownMenuButton
@@ -173,7 +173,7 @@ const MailRecipientItemSingle = ({
                 onClick={handleClickSearch}
             >
                 <Icon name="envelope-magnifying-glass" className="mr0-5" />
-                <span className="flex-item-fluid mtauto mbauto">
+                <span className="flex-item-fluid myauto">
                     {isRecipient ? c('Action').t`Messages to this recipient` : c('Action').t`Messages from this sender`}
                 </span>
             </DropdownMenuButton>
@@ -183,7 +183,7 @@ const MailRecipientItemSingle = ({
                     onClick={handleClickTrust}
                 >
                     <Icon name="user" className="mr0-5" />
-                    <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Trust public key`}</span>
+                    <span className="flex-item-fluid myauto">{c('Action').t`Trust public key`}</span>
                 </DropdownMenuButton>
             )}
         </>

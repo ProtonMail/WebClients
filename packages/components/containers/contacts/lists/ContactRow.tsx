@@ -88,7 +88,7 @@ const ContactRow = ({
             data-element-id={contact.ID}
             data-shortcut-target="contact-container"
         >
-            <div className="flex flex-nowrap w100 h100 mtauto mbauto flex-align-items-center opacity-on-hover-container">
+            <div className="flex flex-nowrap w100 h100 myauto flex-align-items-center opacity-on-hover-container">
                 <ItemCheckbox ID={ID} name={Name} checked={checked} onChange={onCheck} />
                 <div className="flex-item-fluid pl1 flex flex-column flex-justify-space-between conversation-titlesender">
                     <div className="flex flex-nowrap flex-align-items-center item-firstline max-w100">

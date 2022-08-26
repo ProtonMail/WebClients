@@ -85,7 +85,7 @@ const PrivateHeader = ({
                 {AppsDropdownComponent}
             </div>
             <Hamburger expanded={expanded} onToggle={onToggleExpand} />
-            {title && isNarrow ? <span className="text-xl lh-rg mtauto mbauto text-ellipsis">{title}</span> : null}
+            {title && isNarrow ? <span className="text-xl lh-rg myauto text-ellipsis">{title}</span> : null}
             {isNarrow ? null : searchBox}
             <TopNavbar>
                 <TopNavbarList>

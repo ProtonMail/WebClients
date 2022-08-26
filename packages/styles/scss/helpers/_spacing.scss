@@ -83,3 +83,12 @@
 .mauto {
 	margin: auto;
 }
+
+.center, // deprecated
+.mxauto {
+	margin-inline: auto;
+}
+
+.myauto {
+	margin-block: auto;
+}
