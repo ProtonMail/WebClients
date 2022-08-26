@@ -3,7 +3,7 @@
 ## Improved
 
 -   Increased thumbnail size
--   Transparent images have checkered background
+-   Transparent images have a checkered background
 -   Encrypted Search available to free users
 
 ## Fixed
