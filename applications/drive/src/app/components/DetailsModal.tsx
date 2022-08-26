@@ -12,6 +12,7 @@ import {
     ModalTwoHeader,
     Row,
 } from '@proton/components';
+import humanSize from '@proton/shared/lib/helpers/humanSize';
 
 import { useLinkDetailsView } from '../store';
 import { formatAccessCount } from '../utils/formatters';
@@ -19,7 +20,7 @@ import { Cells } from './FileBrowser';
 import ModalContentLoader from './ModalContentLoader';
 import SignatureAlert from './SignatureAlert';
 
-const { UserNameCell, LocationCell, TimeCell, DescriptiveTypeCell, MimeTypeCell, SizeCell } = Cells;
+const { UserNameCell, LocationCell, TimeCell, DescriptiveTypeCell, MimeTypeCell } = Cells;
 interface Props {
     shareId: string;
     linkId: string;
@@ -90,9 +91,7 @@ export default function DetailsModal({ shareId, linkId, onClose, open }: Props) 
                         <DetailsRow label={c('Title').t`MIME type`}>
                             <MimeTypeCell mimeType={link.mimeType} />
                         </DetailsRow>
-                        <DetailsRow label={c('Title').t`Size`}>
-                            <SizeCell size={link.size} />
-                        </DetailsRow>
+                        <DetailsRow label={c('Title').t`Size`}>{humanSize(link.size)}</DetailsRow>
                     </>
                 )}
                 <DetailsRow label={c('Title').t`Shared`}>{isShared}</DetailsRow>

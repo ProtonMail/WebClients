@@ -1,5 +1,5 @@
 import { classnames } from '@proton/components';
-import humanSize from '@proton/shared/lib/helpers/humanSize';
+import { shortHumanSize } from '@proton/shared/lib/helpers/humanSize';
 
 interface Props {
     size: number;
@@ -7,7 +7,7 @@ interface Props {
 }
 
 export const SizeCell = ({ size, className }: Props) => {
-    const readableSize = humanSize(size);
+    const readableSize = shortHumanSize(size);
     return (
         <div className={classnames(['text-ellipsis', className])} title={readableSize}>
             <span className="text-pre">{readableSize}</span>
