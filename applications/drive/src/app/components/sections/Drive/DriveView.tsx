@@ -1,7 +1,10 @@
+import { useEffect } from 'react';
+
 import { PrivateMainArea, Toolbar } from '@proton/components';
-import { LinkURLType } from '@proton/shared/lib/drive/constants';
+import { LinkURLType, RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
 
 import useActiveShare from '../../../hooks/drive/useActiveShare';
+import useNavigate from '../../../hooks/drive/useNavigate';
 import { useFolderView } from '../../../store';
 import DriveBreadcrumbs from '../../DriveBreadcrumbs';
 import { FileBrowserStateProvider } from '../../FileBrowser';
@@ -13,8 +16,22 @@ export type DriveSectionRouteProps = { shareId?: string; type?: LinkURLType; lin
 
 function DriveView() {
     const { activeFolder } = useActiveShare();
+    const { navigateToRoot, navigateToLink } = useNavigate();
 
     const folderView = useFolderView(activeFolder);
+
+    useEffect(() => {
+        if (folderView.error) {
+            const code = folderView.error.data?.Code;
+            if (code === RESPONSE_CODE.INVALID_LINK_TYPE) {
+                navigateToLink(activeFolder.shareId, activeFolder.linkId, true);
+            } else if (code === RESPONSE_CODE.NOT_FOUND || code === RESPONSE_CODE.INVALID_ID) {
+                navigateToRoot();
+            } else {
+                throw folderView.error;
+            }
+        }
+    }, [folderView.error]);
 
     return (
         <FileBrowserStateProvider itemIds={folderView.items.map(({ linkId }) => linkId)}>

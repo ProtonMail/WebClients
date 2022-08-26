@@ -1,6 +1,7 @@
 import { c, msgid } from 'ttag';
 
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
+import { RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { useErrorHandler, waitFor } from '../../_utils';
@@ -141,6 +142,9 @@ export function useLinksListingHelpers() {
                 return !fetchMeta.isEverythingFetched;
             })
             .catch((err) => {
+                if (err?.data?.Code === RESPONSE_CODE.INVALID_LINK_TYPE) {
+                    throw err;
+                }
                 // If you do bigger changes around, consider this:
                 // It looked like a good idea to handle errors by showing
                 // notification here to handle all places nicely on one
