@@ -183,6 +183,16 @@ const parseIcalProperty = (property: any, vCardContact: VCardContact) => {
         vCardContact[name] = [] as any;
     }
 
+    // If we encounter an array value for a field, if it contains only an empty string,
+    // we don't want it to be part on contact properties.
+    // E.g. we have "CATEGORIES:" (with nothing before nor behind) in the vCard
+    //  => We need to remove it otherwise the contact will not be exportable because "toString" will fail
+    if (Array.isArray(propertyAsObject.value)) {
+        if (propertyAsObject.value.filter((element) => element !== '').length === 0) {
+            return;
+        }
+    }
+
     (vCardContact[name] as any[]).push(propertyAsObject);
 };
 
