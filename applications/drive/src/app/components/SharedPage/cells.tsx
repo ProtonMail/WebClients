@@ -48,7 +48,11 @@ function SizeCell({ item }: { item: PublicLink }) {
         // including the header. This is wanted UI element.
         return (
             <TableCell className="m0 w35 flex flex-nowrap flex-justify-end" data-testid="column-size">
-                <Cells.SizeCell size={item.progress.progress} />/
+                {item.progress.progress > 0 && (
+                    <>
+                        <Cells.SizeCell size={item.progress.progress} />/
+                    </>
+                )}
                 {item.progress.total !== undefined ? <Cells.SizeCell size={item.progress.total} /> : '-'}
                 {item.progress.isFinished ? <Icon name="checkmark" className="ml0-5" /> : <Loader className="ml0-5" />}
             </TableCell>
