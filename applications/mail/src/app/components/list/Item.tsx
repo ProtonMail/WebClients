@@ -124,7 +124,7 @@ const Item = ({
     };
 
     return (
-        <div className={classnames(['item-container-wrapper relative', !unread && 'read'])}>
+        <div className="item-container-wrapper relative">
             <div
                 onContextMenu={(event) => onContextMenu(event, element)}
                 onClick={handleClick}
@@ -176,6 +176,7 @@ const Item = ({
                     loading={loading}
                     breakpoints={breakpoints}
                     onBack={onBack}
+                    isSelected={isSelected}
                 />
             </div>
         </div>
