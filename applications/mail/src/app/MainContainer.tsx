@@ -39,6 +39,7 @@ const MainContainer = () => {
         FeatureCode.SpotlightEncryptedSearch,
         FeatureCode.UsedMailMobileApp,
         FeatureCode.SpyTrackerProtection,
+        FeatureCode.ContextFiltering,
     ]);
 
     // Service Worker registration
