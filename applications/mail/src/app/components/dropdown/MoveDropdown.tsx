@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import {
     Button,
     Checkbox,
+    FeatureCode,
     FolderIcon,
     Icon,
     IconName,
@@ -15,6 +16,7 @@ import {
     Tooltip,
     classnames,
     generateUID,
+    useFeature,
     useFolders,
     useLoading,
     useModalState,
@@ -67,6 +69,7 @@ interface Props {
 
 const MoveDropdown = ({ selectedIDs, labelID, conversationMode, onClose, onLock, onBack, breakpoints }: Props) => {
     const [uid] = useState(generateUID('move-dropdown'));
+    const contextFilteringFeature = useFeature(FeatureCode.ContextFiltering);
 
     const [loading, withLoading] = useLoading();
     const [folders = []] = useFolders();
@@ -224,21 +227,23 @@ const MoveDropdown = ({ selectedIDs, labelID, conversationMode, onClose, onLock,
                     )}
                 </ul>
             </div>
-            <Tooltip title={alwaysTooltip}>
-                <div className={classnames(['p1 pb0 border-top', alwaysDisabled && 'color-disabled'])}>
-                    <Checkbox
-                        id={alwaysCheckID}
-                        checked={always}
-                        disabled={alwaysDisabled}
-                        onChange={({ target }) => setAlways(target.checked)}
-                        data-testid="move-dropdown:always-move"
-                        data-prevent-arrow-navigation
-                    />
-                    <label htmlFor={alwaysCheckID} className="flex-item-fluid">
-                        {c('Label').t`Always move senders emails`}
-                    </label>
-                </div>
-            </Tooltip>
+            {contextFilteringFeature.feature?.Value === true && contextFilteringFeature.loading === false && (
+                <Tooltip title={alwaysTooltip}>
+                    <div className={classnames(['p1 pb0 border-top', alwaysDisabled && 'color-disabled'])}>
+                        <Checkbox
+                            id={alwaysCheckID}
+                            checked={always}
+                            disabled={alwaysDisabled}
+                            onChange={({ target }) => setAlways(target.checked)}
+                            data-testid="move-dropdown:always-move"
+                            data-prevent-arrow-navigation
+                        />
+                        <label htmlFor={alwaysCheckID} className="flex-item-fluid">
+                            {c('Label').t`Always move senders emails`}
+                        </label>
+                    </div>
+                </Tooltip>
+            )}
             <div className="m1">
                 <PrimaryButton
                     className="w100"
