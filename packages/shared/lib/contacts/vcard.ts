@@ -220,7 +220,7 @@ export const internalValueToIcalValue = (name: string, type: string | undefined,
             postalCode = '',
             country = '',
         } = value as VCardAddress;
-        return [[postOfficeBox, extendedAddress, streetAddress, locality, region, postalCode, country]];
+        return [postOfficeBox, extendedAddress, streetAddress, locality, region, postalCode, country];
     }
     if (name === 'bday' || name === 'anniversary') {
         const dateValue = value as VCardDateOrText;
@@ -254,8 +254,11 @@ export const vCardPropertiesToICAL = (properties: VCardProperty[]) => {
             property.resetType('text');
         }
 
-        const iCalValue = internalValueToIcalValue(field, params?.type, value);
-        property.setValue(iCalValue);
+        if (Array.isArray(value)) {
+            property.setValues(value.map((val) => internalValueToIcalValue(field, params?.type, val)));
+        } else {
+            property.setValue(internalValueToIcalValue(field, params?.type, value));
+        }
 
         Object.entries(params || {}).forEach(([key, value]) => {
             property.setParameter(key, value.toString());
