@@ -241,7 +241,11 @@ const ImportManageFolders = ({
                 <div className="flex-item-fluid pt0-5">
                     <ul className="unstyled m0">
                         {providerFolders
-                            .filter((folder) => getLevel(folder.Source, folder.Separator, providerFolders) === 0)
+                            .filter(
+                                (folder) =>
+                                    getLevel(folder.Source, folder.Separator, providerFolders) === 0 &&
+                                    !folder.DestinationCategory
+                            )
                             .map((item: ImportedMailFolder) => (
                                 <ImportManageFoldersRow
                                     onToggleCheck={handleToggleCheck}

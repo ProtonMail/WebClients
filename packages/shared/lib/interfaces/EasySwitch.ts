@@ -114,6 +114,7 @@ export interface MailImportMapping {
     Destinations: {
         FolderPath?: string;
         Labels?: Pick<Label, 'Name' | 'Color'>[];
+        Category?: string;
     };
     checked?: boolean;
 }
@@ -164,13 +165,21 @@ export interface ImportedFolder {
     Total: number;
 }
 
+export enum MailImportGmailCategories {
+    FORUMS = 'Forums',
+    PROMOTIONS = 'Promotions',
+    SOCIAL = 'Social',
+    UPDATES = 'Updates',
+}
+
 export interface ImportedMailFolder {
-    Source: string;
-    Separator: string;
-    Total: number;
-    Flags: string[];
+    DestinationCategory?: MailImportGmailCategories;
     DestinationFolder?: MailImportDestinationFolder;
+    Flags: string[];
+    Separator: string;
     Size: number;
+    Source: string;
+    Total: number;
 }
 
 export enum MailImportPayloadError {
