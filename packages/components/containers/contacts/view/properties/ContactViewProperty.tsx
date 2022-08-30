@@ -24,10 +24,10 @@ const ContactViewProperty = ({ field, type, isSignatureVerified, children }: Pro
                         'contact-view-row-label flex-no-min-children on-mobile-max-w100 flex-item-noshrink flex-align-items-start label max-w100p',
                     ])}
                 >
-                    <div className="inline-flex flex-item-noshrink flex-item-fluid flex-align-items-center">
-                        <span role="heading" aria-level={3} className="mr0-5">
+                    <div className="flex flex-item-noshrink flex-item-fluid flex-align-items-center max-w100">
+                        <div role="heading" aria-level={3} className="mr0-5">
                             <ContactLabelProperty field={field} type={type} />
-                        </span>
+                        </div>
                         {field && ['email', 'fn'].includes(field) ? null : (
                             <EncryptedIcon className="flex" isSignatureVerified={isSignatureVerified} />
                         )}
