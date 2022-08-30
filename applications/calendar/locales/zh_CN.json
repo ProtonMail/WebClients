@@ -528,11 +528,38 @@
       "${ title } started yesterday at ${ formattedHour }": [
         "${ title } 昨天${ formattedHour } 开始"
       ],
+      "${ title } starts at ${ formattedHour }": [
+        "${ title } 已于 ${ formattedHour } 开始"
+      ],
       "${ title } starts now": [
         "${ title } 现在开始"
       ],
+      "${ title } starts on ${ _formattedDate2 }": [
+        "${ title } 开始于 ${ _formattedDate2 }"
+      ],
+      "${ title } starts on ${ _formattedDate2 } at ${ formattedHour }": [
+        "${ title } 在 ${ _formattedDate2 } ${ formattedHour } 开始"
+      ],
+      "${ title } starts on ${ _formattedDate3 }": [
+        "${ title } 在 ${ _formattedDate3 } 开始"
+      ],
+      "${ title } starts on ${ _formattedDate3 } at ${ formattedHour }": [
+        "${ title } 在 ${ _formattedDate3 } ${ formattedHour } 开始"
+      ],
+      "${ title } starts on ${ _formattedDateWithoutTime }": [
+        "${ title } 在 ${ _formattedDateWithoutTime } 开始"
+      ],
+      "${ title } starts on ${ formattedDateWithTime }": [
+        "${ title } 在 ${ formattedDateWithTime } 开始"
+      ],
       "${ title } starts today": [
         "${ title } 今天开始"
+      ],
+      "${ title } starts tomorrow": [
+        "${ title } 将于明天开始"
+      ],
+      "${ title } starts tomorrow at ${ formattedHour }": [
+        "${ title } 将在明天${ formattedHour } 开始"
       ]
     },
     "Alert": {
@@ -717,6 +744,9 @@
       "Calendar is syncing": [
         "日历正在同步中"
       ],
+      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
+        "日历正在同步：可能需要几分钟的时间才能显示出所有的事件."
+      ],
       "Calendar is too big": [
         "日历文件太大"
       ],
@@ -769,6 +799,28 @@
       ],
       "Expand": [
         "展开"
+      ]
+    },
+    "colon": {
+      ": ": [
+        ": "
+      ]
+    },
+    "color": {
+      "ocean": [
+        "海洋"
+      ],
+      "pine": [
+        "松树"
+      ],
+      "pink": [
+        "粉色"
+      ],
+      "purple": [
+        "紫色"
+      ],
+      "soil": [
+        "土地"
       ]
     },
     "Confirm modal title": {
@@ -1884,6 +1936,9 @@
       "Deselect at least ${ calendarToFixCount } calendar or": [
         "取消选择至少 ${ calendarToFixCount } 个日历或者"
       ],
+      "Domain not available, try again later": [
+        "域名不可用，请稍后再试"
+      ],
       "Email address disabled": [
         "Email 地址已禁用"
       ],
@@ -2096,6 +2151,9 @@
       ]
     },
     "Error importing calendar": {
+      "An error occurred reading your file ${ formattedFilename }. File does not have the right format.": [
+        "读取文件 ${ formattedFilename } 失败，文件格式不正确。"
+      ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "文件 ${ formattedFilename } 上传失败，文件大小上限为 ${ MAX_IMPORT_FILE_SIZE_STRING }。"
       ],
@@ -2108,8 +2166,17 @@
       "An unexpected error occurred. Import must be restarted.": [
         "发生未知错误，需重新导入"
       ],
+      "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
+        "您的文件 ${ formattedFilename } 包含一个无效的 method 属性，无法导入。"
+      ],
+      "Your file ${ formattedFilename } has no events to be imported.": [
+        "文件 ${ formattedFilename } 中没有可导入的事件。"
+      ],
       "Your file ${ formattedFilename } is empty.": [
         "文件 ${ formattedFilename } 为空。"
+      ],
+      "Your file ${ formattedFilename } is not a calendar.": [
+        "文件 ${ formattedFilename } 不是日历文件。"
       ]
     },
     "Error importing contact": {
@@ -2999,9 +3066,6 @@
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "此链接指向的网站可能会窃取您的密码、信用卡等信息。"
       ],
-      "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it."
-      ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "此链接可能使用了欺骗性域名，请确认其可靠性后再打开"
       ],
@@ -3208,6 +3272,9 @@
       "All day": [
         "全天事件"
       ],
+      "All-day event notifications": [
+        "全天事件通知"
+      ],
       "Attach screenshot(s)": [
         "附屏幕截图"
       ],
@@ -3285,6 +3352,12 @@
       ],
       "Ends": [
         "结束"
+      ],
+      "Event duration": [
+        "事件持续时间"
+      ],
+      "Event notifications": [
+        "事件通知"
       ],
       "Event title": [
         "日程名称"
@@ -4152,6 +4225,12 @@
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "${ DRIVE_APP_NAME } 现已正式发布！您的文件也可以具备与邮件同等的安全性。"
       ],
+      "Don't miss any events": [
+        "不会错过任何事件"
+      ],
+      "Easily accept invites": [
+        "轻松接受邀请"
+      ],
       "Get up to 18 months of ${ planName } for free": [
         "免费获得最长 18 个月的 ${ planName } 使用权"
       ],
@@ -4161,11 +4240,22 @@
       "No more missed appointments": [
         "不再错过任何日程"
       ],
+      "Now invitations appear in your calendar as pending events. Just open an event to respond. ${ goToSettingsLink }": [
+        "现在，邀请将在您的日历中显示为待处理事件。 只需打开事件就可以回复。 ${ goToSettingsLink }"
+      ],
       "Try ${ DRIVE_APP_NAME }": [
         "体验 ${ DRIVE_APP_NAME }"
       ],
       "With email notifications, you decide which events to be notified about and when.": [
         "使用邮件提醒功能，您可以自由决定何时收到哪些日程的通知。"
+      ],
+      "You can now add notifications to calendars you subscribed to.": [
+        "您现在可以向订阅的日历添加通知了。"
+      ]
+    },
+    "Spotlight settings link": {
+      "Go to settings": [
+        "前往设置"
       ]
     },
     "Storage": {

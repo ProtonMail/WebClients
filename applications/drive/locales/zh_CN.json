@@ -705,6 +705,9 @@
       "Calendar is syncing": [
         "日历正在同步中"
       ],
+      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
+        "日历正在同步：可能需要几分钟的时间才能显示出所有的事件."
+      ],
       "Calendar is too big": [
         "日历文件太大"
       ],
@@ -741,6 +744,23 @@
       ],
       "Expand": [
         "展开"
+      ]
+    },
+    "color": {
+      "ocean": [
+        "海洋"
+      ],
+      "pine": [
+        "松树"
+      ],
+      "pink": [
+        "粉色"
+      ],
+      "purple": [
+        "紫色"
+      ],
+      "soil": [
+        "土地"
       ]
     },
     "Confirm modal title": {
@@ -1660,6 +1680,9 @@
       "A group with this name already exists": [
         "已存在同名群组"
       ],
+      "A problem occurred, please try again": [
+        "出错了，请重试"
+      ],
       "Authentication canceled.": [
         "验证被取消。"
       ],
@@ -1767,6 +1790,9 @@
       ],
       "Passwords do not match": [
         "两次输入的密码不一致"
+      ],
+      "Please activate your content search again": [
+        "请重新开启全文搜索"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "请修复高亮的冲突以继续。"
@@ -2756,9 +2782,6 @@
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "此链接指向的网站可能会窃取您的密码、信用卡等信息。"
-      ],
-      "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "此链接可能使用了欺骗性域名，请确认可靠性后再打开。"

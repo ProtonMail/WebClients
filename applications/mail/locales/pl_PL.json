@@ -1077,6 +1077,11 @@
         "Uczestnik został dodany"
       ]
     },
+    "Adding expiration to a message will create an expiring message": {
+      "Expiring message": [
+        "Wygasająca wiadomość"
+      ]
+    },
     "Alert": {
       "By leaving now, some contacts may not be imported": [
         "Jeśli wyjdziesz teraz, niektóre kontakty nie zostaną zaimportowane"
@@ -4316,9 +4321,6 @@
       "Default email application": [
         "Domyślna aplikacja pocztowa"
       ],
-      "Delivered via SimpleLogin by Proton": [
-        "Dostarczono za pomocą SimpleLogin przez Proton"
-      ],
       "Disable message content search": [
         "Wyłącz wyszukiwanie zawartości wiadomości"
       ],
@@ -4429,9 +4431,6 @@
       ],
       "Expires soon": [
         "Wygasa wkrótce"
-      ],
-      "Expiring message": [
-        "Wygasająca wiadomość"
       ],
       "file attached": [
         "załącznik",
@@ -4973,8 +4972,8 @@
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Link prowadzi do strony internetowej, która może próbować wykraść informacje, takie jak hasła i dane karty płatniczej."
       ],
-      "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it."
+      "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
+        "Ten link może być atakiem homograficznym i nie może zostać otwarty przez przeglądarkę Edge. Upewnij się, że link, który chcesz odwiedzić jest wiarygodny i otwórz go za pomocą innej przeglądarki."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Ten link może być atakiem homograficznym. Sprawdź, czy jest to link, który chcesz odwiedzić lub nie otwieraj go."
@@ -6298,6 +6297,11 @@
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "Dostępna jest nowa wersja aplikacji ${ appName }. ${ reloadButton }."
+      ]
+    },
+    "Message has been sent to the user via a SimpleLogin alias": {
+      "Delivered via SimpleLogin by Proton": [
+        "Dostarczono za pomocą SimpleLogin przez Proton"
       ]
     },
     "Message image": {

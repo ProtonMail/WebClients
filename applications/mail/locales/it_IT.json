@@ -1069,6 +1069,11 @@
         "Partecipante aggiunto"
       ]
     },
+    "Adding expiration to a message will create an expiring message": {
+      "Expiring message": [
+        "Scadenza messaggio"
+      ]
+    },
     "Alert": {
       "By leaving now, some contacts may not be imported": [
         "Uscendo ora, alcuni contatti potrebbero non essere importati"
@@ -4178,9 +4183,6 @@
       "Default email application": [
         "Applicazione email predefinita"
       ],
-      "Delivered via SimpleLogin by Proton": [
-        "Consegnato tramite SimpleLogin da Proton"
-      ],
       "Disable message content search": [
         "Disabilita la ricerca del contenuto del messaggio"
       ],
@@ -4198,7 +4200,7 @@
         "Non dimenticare di condividere la tua password con il destinatario"
       ],
       "Downloading message ${ esProgress } out of ${ totalProgressToShow }": [
-        "Scaricando il message ${ esProgress } di ${ totalProgressToShow }"
+        "Scaricando il messaggio ${ esProgress } di ${ totalProgressToShow }"
       ],
       "Draft": [
         "Bozza"
@@ -4283,9 +4285,6 @@
       ],
       "Expires soon": [
         "Scade a breve"
-      ],
-      "Expiring message": [
-        "Scadenza messaggio"
       ],
       "file attached": [
         "file allegato",
@@ -4816,8 +4815,8 @@
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Questo collegamento porta a un sito web che potrebbe tentare di rubare le tue informazioni, come password e dettagli della carta di credito."
       ],
-      "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it."
+      "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
+        "Questo link potrebbe essere un attacco omografico e non può essere aperto dal browser Edge. Se sei sicuro che il link sia legittimo, utilizza un browser diverso per aprirlo."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Questo link potrebbe essere un attacco omografo. Verifica che questo sia il link che desideri visitare o non aprirlo."
@@ -6113,6 +6112,11 @@
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "È disponibile una nuova versione di ${ appName } . ${ reloadButton }."
+      ]
+    },
+    "Message has been sent to the user via a SimpleLogin alias": {
+      "Delivered via SimpleLogin by Proton": [
+        "Consegnato tramite SimpleLogin da Proton"
       ]
     },
     "Message image": {

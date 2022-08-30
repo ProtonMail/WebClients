@@ -2265,9 +2265,6 @@
       "An unexpected error occurred. Import must be restarted.": [
         "Произошла непредвиденная ошибка. Необходимо начать импорт заново."
       ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } events.": [
-        "Ваш файл ${ formattedFilename } содержит более ${ MAX_IMPORT_EVENTS_STRING } событий."
-      ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "Ваш файл ${ formattedFilename } имеет недопустимый метод и не может быть импортирован."
       ],
@@ -3281,9 +3278,6 @@
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Эта ссылка ведет на сайт, который может пытаться украсть вашу информацию, например, пароли и данные кредитной карты."
-      ],
-      "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Эта ссылка может быть омографической атакой, при которой символы одного алфавита подменяются похожими символами из другого. Пожалуйста, проверьте, что это именно та ссылка, которую вы хотите посетить, или не переходите по ней."
@@ -4543,6 +4537,9 @@
       "Don't miss any events": [
         "Не пропускайте события"
       ],
+      "Easily accept invites": [
+        "Легко принимайте приглашения"
+      ],
       "Get up to 18 months of ${ planName } for free": [
         "Получите до 18 месяцев ${ planName } бесплатно"
       ],
@@ -4552,6 +4549,9 @@
       "No more missed appointments": [
         "Больше никаких пропущенных встреч"
       ],
+      "Now invitations appear in your calendar as pending events. Just open an event to respond. ${ goToSettingsLink }": [
+        "Теперь приглашения появляются в вашем календаре как ожидающие события. Просто откройте событие, чтобы ответить. ${ goToSettingsLink }"
+      ],
       "Try ${ DRIVE_APP_NAME }": [
         "Попробовать ${ DRIVE_APP_NAME }"
       ],
@@ -4560,6 +4560,11 @@
       ],
       "You can now add notifications to calendars you subscribed to.": [
         "Теперь можно добавлять уведомления для календарей, на которые вы подписаны."
+      ]
+    },
+    "Spotlight settings link": {
+      "Go to settings": [
+        "Открыть настройки"
       ]
     },
     "Storage": {

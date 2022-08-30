@@ -2211,9 +2211,6 @@
       "An unexpected error occurred. Import must be restarted.": [
         "Terjadi kesalahan tidak terduga. Impor harus diulang."
       ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } events.": [
-        "Berkas ${ formattedFilename } mengandung lebih dari ${ MAX_IMPORT_EVENTS_STRING } acara."
-      ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "Berkas ${ formattedFilename } tidak dapat diimpor karena mengandung metode yang tidak valid."
       ],
@@ -3113,9 +3110,6 @@
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Tautan ini tertuju pada situs web yang dapat mencuri informasi pribadi Anda, seperti kata sandi dan rincian kartu kredit yang Anda miliki."
-      ],
-      "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Tautan ini mungkin serangan homograf. Mohon verifikasi tautan yang ingin Anda kunjungi, atau jangan membukanya."
@@ -4279,6 +4273,9 @@
       "Don't miss any events": [
         "Jangan lewatkan acara apapun"
       ],
+      "Easily accept invites": [
+        "Terima undangan dengan mudah"
+      ],
       "Get up to 18 months of ${ planName } for free": [
         "Dapatkan langganan ${ planName } hingga 18 bulan secara gratis"
       ],
@@ -4288,6 +4285,9 @@
       "No more missed appointments": [
         "Tidak ada lagi janji yang luput"
       ],
+      "Now invitations appear in your calendar as pending events. Just open an event to respond. ${ goToSettingsLink }": [
+        "Sekarang, undangan akan muncul pada kalender Anda sebagai acara yang menunggu balasan. Anda hanya perlu membuka acara untuk membalas. ${ goToSettingsLink }"
+      ],
       "Try ${ DRIVE_APP_NAME }": [
         "Coba ${ DRIVE_APP_NAME }"
       ],
@@ -4296,6 +4296,11 @@
       ],
       "You can now add notifications to calendars you subscribed to.": [
         "Anda kini dapat menambahkan notifikasi pada kalender yang Anda langgan."
+      ]
+    },
+    "Spotlight settings link": {
+      "Go to settings": [
+        "Ke pengaturan"
       ]
     },
     "Storage": {

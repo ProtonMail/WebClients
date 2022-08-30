@@ -1069,6 +1069,11 @@
         "Teilnehmer hinzugefügt"
       ]
     },
+    "Adding expiration to a message will create an expiring message": {
+      "Expiring message": [
+        "Verfallende Nachricht"
+      ]
+    },
     "Alert": {
       "By leaving now, some contacts may not be imported": [
         "Wenn du jetzt beendest, können einige Kontakte nicht importiert werden."
@@ -4109,9 +4114,6 @@
       "Default email application": [
         "Standard E-Mail-Anwendung"
       ],
-      "Delivered via SimpleLogin by Proton": [
-        "Übermittelt über SimpleLogin von Proton"
-      ],
       "Disable message content search": [
         "Suche nach Nachrichteninhalten deaktivieren"
       ],
@@ -4214,9 +4216,6 @@
       ],
       "Expires soon": [
         "Verfällt demnächst"
-      ],
-      "Expiring message": [
-        "Ablaufende Nachricht"
       ],
       "file attached": [
         "Datei angehängt",
@@ -4747,8 +4746,8 @@
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Dieser Link führt zu einer Website, die möglicherweise versucht, deine Informationen wie Passwörter und Kreditkartendaten zu stehlen."
       ],
-      "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it."
+      "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
+        "Dieser Link ist möglicherweise ein homographischer Angriff (Vortäuschung einer falschen Identität) und kann vom Edge Browser nicht geöffnet werden. Wenn du sicher bist, dass der Link seriös ist, verwende einen anderen Browser, um ihn zu öffnen."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Dieser Link könnte ein homographischer Angriff (Vortäuschung einer falschen Identität) sein. Bitte überprüfe, ob dies der Link ist, den du besuchen möchtest, oder öffne ihn nicht."
@@ -5036,10 +5035,10 @@
         "Deine Nachricht enthält das Schlüsselwort „${ attachmentsFoundKeyword }“, es wurde jedoch kein Anhang hinzugefügt. Möchtest du deine Nachricht trotzdem senden?"
       ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
-        "Ihr Konto weist mindestens eine überfällige Rechnung auf. Ihr Zugang wurde eingeschränkt. ${ payInvoiceLink }"
+        "Dein Konto weist mindestens eine überfällige Rechnung auf. Dein Zugang wurde eingeschränkt. ${ payInvoiceLink }"
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
-        "Ihr Konto weist mindestens eine überfällige Rechnung auf. Ihr Zugang wird in Kürze eingeschränkt. ${ payInvoiceLink }"
+        "Dein Konto weist mindestens eine überfällige Rechnung auf. Dein Zugang wird in Kürze eingeschränkt. ${ payInvoiceLink }"
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Deine Daten von ${ importedEmailAddressStrong } können nun in dein Proton-Konto übertragen werden."
@@ -5991,7 +5990,7 @@
         "Wir erfassen deine Daten bei deinem Anbieter"
       ],
       "Your import is starting": [
-        "Ihr Datenimport wurde gestartet"
+        "Dein Datenimport wurde gestartet"
       ]
     },
     "Mail import summary": {
@@ -6044,6 +6043,11 @@
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "Eine neue Version von ${ appName } ist verfügbar. ${ reloadButton }."
+      ]
+    },
+    "Message has been sent to the user via a SimpleLogin alias": {
+      "Delivered via SimpleLogin by Proton": [
+        "Zugestellt über SimpleLogin von Proton"
       ]
     },
     "Message image": {
@@ -6791,7 +6795,7 @@
         "Mehr Speicher hinzufügen"
       ],
       "Your current storage:": [
-        "Ihr aktueller Speicherplatz:"
+        "Dein aktueller Speicherplatz:"
       ]
     },
     "Success": {
