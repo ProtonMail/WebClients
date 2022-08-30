@@ -90,17 +90,17 @@ const ItemHoverButtons = ({
                 ])}
             >
                 <Tooltip title={unreadAlt}>
-                    <Button icon onClick={handleMarkAs} tabIndex={-1}>
+                    <Button icon onClick={handleMarkAs}>
                         <Icon name={unreadIcon} alt={unreadAlt} />
                     </Button>
                 </Tooltip>
                 <Tooltip title={c('Action').t`Move to archive`}>
-                    <Button icon onClick={handleArchive} disabled={labelID === ARCHIVE} tabIndex={-1}>
+                    <Button icon onClick={handleArchive} disabled={labelID === ARCHIVE}>
                         <Icon name="archive-box" alt={c('Action').t`Move to archive`} />
                     </Button>
                 </Tooltip>
                 <Tooltip title={c('Action').t`Move to trash`}>
-                    <Button icon onClick={handleTrash} disabled={labelID === TRASH} tabIndex={-1}>
+                    <Button icon onClick={handleTrash} disabled={labelID === TRASH}>
                         <Icon name="trash" alt={c('Action').t`Move to trash`} />
                     </Button>
                 </Tooltip>
@@ -110,7 +110,6 @@ const ItemHoverButtons = ({
                             icon
                             onClick={handleStar}
                             className={classnames(['starbutton item-star', isStarred && 'starbutton--is-starred'])}
-                            tabIndex={-1}
                         >
                             <Icon name={starIcon} alt={starAlt} />
                         </Button>
