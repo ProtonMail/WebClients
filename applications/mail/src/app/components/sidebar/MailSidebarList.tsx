@@ -358,17 +358,15 @@ const MailSidebarList = ({ labelID: currentLabelID }: Props) => {
                     right={
                         displayFolders ? (
                             <div className="flex flex-align-items-center">
-                                {folders?.length ? (
-                                    <button
-                                        type="button"
-                                        className="flex navigation-link-header-group-control flex-item-noshrink"
-                                        onClick={() => handleOpenLabelModal('folder')}
-                                        title={c('Title').t`Create a new folder`}
-                                        data-testid="navigation-link:add-folder"
-                                    >
-                                        <Icon name="plus" />
-                                    </button>
-                                ) : null}
+                                <button
+                                    type="button"
+                                    className="flex navigation-link-header-group-control flex-item-noshrink"
+                                    onClick={() => handleOpenLabelModal('folder')}
+                                    title={c('Action').t`Create a new folder`}
+                                    data-testid="navigation-link:add-folder"
+                                >
+                                    <Icon name="plus" alt={c('Action').t`Create a new folder`} />
+                                </button>
                                 <SidebarListItemHeaderLink
                                     to="/mail/folders-labels"
                                     toApp={APPS.PROTONACCOUNT}
@@ -403,17 +401,15 @@ const MailSidebarList = ({ labelID: currentLabelID }: Props) => {
                     right={
                         displayLabels ? (
                             <div className="flex flex-align-items-center">
-                                {labels?.length ? (
-                                    <button
-                                        type="button"
-                                        className="flex navigation-link-header-group-control flex-item-noshrink"
-                                        onClick={() => handleOpenLabelModal('label')}
-                                        title={c('Title').t`Create a new label`}
-                                        data-testid="navigation-link:add-label"
-                                    >
-                                        <Icon name="plus" />
-                                    </button>
-                                ) : null}
+                                <button
+                                    type="button"
+                                    className="flex navigation-link-header-group-control flex-item-noshrink"
+                                    onClick={() => handleOpenLabelModal('label')}
+                                    title={c('Action').t`Create a new label`}
+                                    data-testid="navigation-link:add-label"
+                                >
+                                    <Icon name="plus" alt={c('Action').t`Create a new label`} />
+                                </button>
                                 <SidebarListItemHeaderLink
                                     to="/mail/folders-labels"
                                     toApp={APPS.PROTONACCOUNT}
