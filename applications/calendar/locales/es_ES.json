@@ -2229,7 +2229,8 @@
       "An unexpected error occurred. Import must be restarted.": [
         "Ha ocurrido un error inesperado. La importación debe reiniciarse."
       ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } events.": [
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } event.": [
+        "Tu archivo ${ formattedFilename } contiene más de ${ MAX_IMPORT_EVENTS_STRING } evento.",
         "Tu archivo ${ formattedFilename } contiene más de ${ MAX_IMPORT_EVENTS_STRING } eventos."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
@@ -3164,8 +3165,8 @@
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Este enlace conduce a un sitio web que podría estar intentando robar tu información, como contraseñas y datos de tarjetas de crédito."
       ],
-      "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it."
+      "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
+        "Este enlace puede ser un ataque homógrafo y no puede ser abierto por navegadores Edge. Si estás seguro de que el enlace es legítimo, usa un navegador diferente para abrirlo."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Este enlace puede ser un ataque homógrafo. Por favor, verifique que este es el enlace que quiere visitar o no lo abra."
@@ -4378,6 +4379,11 @@
       ],
       "You can now add notifications to calendars you subscribed to.": [
         "Ahora puedes añadir notificaciones a los calendarios a los que estás suscrito."
+      ]
+    },
+    "Spotlight settings link": {
+      "Go to settings": [
+        "Ir a la configuración"
       ]
     },
     "Storage": {

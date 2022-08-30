@@ -2941,9 +2941,6 @@
       "An unexpected error occurred. Import must be restarted.": [
         "Er is een onverwachte fout opgetreden. Importeren moet opnieuw gestart worden."
       ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } events.": [
-        "Uw bestand ${ formattedFilename } bevat meer dan ${ MAX_IMPORT_EVENTS_STRING } afspraken."
-      ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "Uw bestand ${ formattedFilename } heeft een ongeldige methode en kan niet worden geïmporteerd."
       ],
@@ -4665,9 +4662,6 @@
         "Uitnodiging succesvol verzonden",
         "Uitnodigingen succesvol verzonden"
       ],
-      "Invited via email": [
-        "Uitgenodigd via e-mail"
-      ],
       "Issues signing in?": [
         "Problemen met inloggen?"
       ],
@@ -5050,9 +5044,6 @@
       "Signed up": [
         "Geregistreerd"
       ],
-      "Signed up via your link": [
-        "Geregistreerd via uw link"
-      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Aangezien u een loyale gebruiker bent, heeft uw account extra functies ingeschakeld."
       ],
@@ -5149,8 +5140,8 @@
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Deze link leidt naar een website die mogelijk uw informatie, zoals wachtwoorden en kredietkaartgegevens, tracht te stelen."
       ],
-      "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it."
+      "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
+        "Deze koppeling kan een homografie-aanval zijn en kan niet geopend worden in Edge. Als u zeker bent dat de link legitiem is, gebruik dan een andere browser om het te bezoeken."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Deze link kan een homografie-aanval zijn. Controleer eerst of de link juist is, of open hem niet."
@@ -7601,6 +7592,26 @@
         "Teambeheer"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Maak privacy uw standaard voor back-ups, opslag, delen en herstel van bestanden."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Anders zal de toegang tot uw account worden beperkt en wordt uw account uiteindelijk uitgeschakeld."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Om ${ MAIL_APP_NAME } te blijven gebruiken met premium functies, kiest u uw abonnement en betaalwijze."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Upgrade naar het zakelijke pakket met toegang tot alle premium Proton-services."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Upgrade naar het ultieme privacypakket met toegang tot alle premium Proton-services."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Uw proefperiode eindigt op ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } eindigend met ${ last4 }"
@@ -7667,26 +7678,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "U profiteert van een kortingsprijs op uw huidige abonnement. Als u uw account downgradet, raakt u de korting kwijt en is dit abonnement niet meer beschikbaar wanneer u een nieuw abonnement wilt afsluiten."
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Maak privacy uw standaard voor back-ups, opslag, delen en herstel van bestanden."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Anders zal de toegang tot uw account worden beperkt en wordt uw account uiteindelijk uitgeschakeld."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Om ${ MAIL_APP_NAME } te blijven gebruiken met premium functies, kiest u uw abonnement en betaalwijze."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Upgrade naar het zakelijke pakket met toegang tot alle premium Proton-services."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Upgrade naar het ultieme privacypakket met toegang tot alle premium Proton-services."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Uw proefperiode eindigt op ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {

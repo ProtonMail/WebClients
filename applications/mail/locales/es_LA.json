@@ -1069,6 +1069,11 @@
         "Participante añadido"
       ]
     },
+    "Adding expiration to a message will create an expiring message": {
+      "Expiring message": [
+        "Expiración del mensaje"
+      ]
+    },
     "Alert": {
       "By leaving now, some contacts may not be imported": [
         "Al salir ahora, algunos contactos podrían no ser importados"
@@ -4178,9 +4183,6 @@
       "Default email application": [
         "Aplicación de correo por defecto"
       ],
-      "Delivered via SimpleLogin by Proton": [
-        "Entregado a través de SimpleLogin por Proton"
-      ],
       "Disable message content search": [
         "Deshabilitar búsqueda de contenido de mensajes"
       ],
@@ -4283,9 +4285,6 @@
       ],
       "Expires soon": [
         "Expira pronto"
-      ],
-      "Expiring message": [
-        "Expiración del mensaje"
       ],
       "file attached": [
         "archivo adjunto",
@@ -4816,8 +4815,8 @@
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Este enlace conduce a un sitio web que podría estar intentando robar su información, como contraseñas y datos de tarjetas de crédito."
       ],
-      "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it."
+      "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
+        "Este enlace puede ser un ataque homógrafo y los navegadores Edge no pueden abrirlo. Si cree que el enlace es legítimo, use un navegador diferente para abrirlo."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Este enlace puede ser un ataque homogéneo. Verifique que este es el enlace que desea visitar o no lo abra."
@@ -6113,6 +6112,11 @@
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "Una versión nueva de ${ appName } está disponible. ${ reloadButton }."
+      ]
+    },
+    "Message has been sent to the user via a SimpleLogin alias": {
+      "Delivered via SimpleLogin by Proton": [
+        "Entregado por Proton a través de SimpleLogin"
       ]
     },
     "Message image": {

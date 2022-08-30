@@ -2229,9 +2229,6 @@
       "An unexpected error occurred. Import must be restarted.": [
         "Une erreur inattendue s'est produite. L'importation doit être relancée."
       ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } events.": [
-        "Votre fichier ${ formattedFilename } contient plus de ${ MAX_IMPORT_EVENTS_STRING } événements."
-      ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "Votre fichier ${ formattedFilename } possède une forme invalide et ne peut être importé."
       ],
@@ -3169,9 +3166,6 @@
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Ce lien mène à un site Web qui pourrait essayer de voler vos informations, comme les mots de passe et les détails de carte de crédit."
-      ],
-      "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Ce lien pourrait être une attaque homographique. Veuillez vous assurer qu'il s'agit bien du lien que vous souhaitez visiter ou ne l'ouvrez pas."
@@ -4384,6 +4378,11 @@
       ],
       "You can now add notifications to calendars you subscribed to.": [
         "Vous pouvez maintenant ajouter des notifications aux calendriers auxquels vous êtes abonné."
+      ]
+    },
+    "Spotlight settings link": {
+      "Go to settings": [
+        "Accéder aux paramètres"
       ]
     },
     "Storage": {

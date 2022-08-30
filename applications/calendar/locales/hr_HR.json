@@ -1753,9 +1753,6 @@
       "This event has been updated. The organizer will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete this event anyway?": [
         "Događaj je ažuriran. Organizator neće biti obaviješten da odbijate pozivnicu jer ne možete poslati e-poštu s pozvane adrese. Želite li ipak izbrisati ovaj događaj?"
       ],
-      "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it."
-      ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Ova poveznica može biti homografski napad. Potvrdite da je ovo poveznica koju želite posjetiti ili je nemojte otvarati."
       ],
@@ -2678,6 +2675,11 @@
     "Select search results": {
       "No results found": [
         "Nema rezultata"
+      ]
+    },
+    "Spotlight settings link": {
+      "Go to settings": [
+        "Idi na postavke"
       ]
     },
     "Storage": {

@@ -35,7 +35,7 @@
         "${ addressToCreate } を有効化"
       ],
       "Activate ${ Name }@pm.me": [
-        "${ Name }@pm.me を有効化"
+        "${ Name }@pm.me を有効にする"
       ],
       "Activate organization key": [
         "組織の鍵を有効化する"
@@ -59,7 +59,7 @@
         "条件を追加"
       ],
       "Add credit / debit card": [
-        "クレジット・デビットカードを追加"
+        "クレジット/デビットカードを追加"
       ],
       "Add credits": [
         "クレジットを追加"
@@ -144,6 +144,9 @@
       ],
       "Clear all formatting": [
         "書式をすべて消去"
+      ],
+      "Clear two-factor authentication code": [
+        "2 要素認証コードをクリア"
       ],
       "Close": [
         "閉じる"
@@ -440,7 +443,7 @@
         "既定にする"
       ],
       "Mark as default": [
-        "既定値として設定"
+        "既定として設定"
       ],
       "mark emails as": [
         "メールをマーク"
@@ -851,6 +854,9 @@
       "No, thanks": [
         "いいえ"
       ],
+      "Start my 30-day free trial": [
+        "30 日の無料トライアルを開始"
+      ],
       "Try free for 30 days": [
         "無料で 30 日間試す"
       ]
@@ -1114,6 +1120,11 @@
       ],
       "Tweet": [
         "Tweet"
+      ]
+    },
+    "Calendar edit button tooltip": {
+      "Edit calendar information": [
+        "カレンダー情報を編集"
       ]
     },
     "Calendar import section description": {
@@ -2618,7 +2629,7 @@
         "無効な ${ name } コードです"
       ],
       "Invalid card number": [
-        "無効なカード番号です。"
+        "無効なカード番号です"
       ],
       "Invalid code": [
         "無効なコードです"
@@ -2636,7 +2647,7 @@
         "無効な名前です"
       ],
       "Invalid postal code": [
-        "無効な郵便番号"
+        "無効な郵便番号です"
       ],
       "Invalid private key file": [
         "秘密鍵ファイルが無効です"
@@ -2774,7 +2785,7 @@
         "エラーが発生しました。続行するには ${ refresh } してください。それでもこのエラーが発生する場合は ${ supportTeam } までお問い合わせください。"
       ],
       "Tab closed": [
-        "タブが閉じられました。"
+        "タブが閉じられました"
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "お使いのブラウザでは、支払いを完全に承認できません。別のブラウザを使用するか、コンピューターからログインしてください。"
@@ -2906,9 +2917,6 @@
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "予期しないエラーが発生しました。インポートを再起動する必要があります。"
-      ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } events.": [
-        "ファイル ${ formattedFilename } には ${ MAX_IMPORT_EVENTS_STRING } 以上のイベントが含まれています。"
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "ファイル ${ formattedFilename } は無効なメソッドでインポートできません。"
@@ -4523,9 +4531,6 @@
       "Invite successfully sent": [
         "招待は正常に送信されました"
       ],
-      "Invited via email": [
-        "メール経由の招待"
-      ],
       "Issues signing in?": [
         "サインインに問題がありますか？"
       ],
@@ -4904,9 +4909,6 @@
       "Signed up": [
         "サインアップ済み"
       ],
-      "Signed up via your link": [
-        "リンク経由でサインアップ済み"
-      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "あなたは忠実なユーザーですので、あなたのアカウントには追加機能が有効になっています。"
       ],
@@ -5002,9 +5004,6 @@
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "このリンクはパスワードやクレジットカードなどの情報を盗もうとするウェブサイトに誘導している可能性があります。"
-      ],
-      "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "このリンクはホモグラフ攻撃の可能性があります。 これがあなたのアクセスしたいリンクであることを確認するか、開かないようにしてください。"
@@ -5440,6 +5439,9 @@
       ]
     },
     "info": {
+      "Create an email address": [
+        "メールアドレスを作成"
+      ],
       "Key ${ fingerprint } has already been uploaded": [
         "鍵 ${ fingerprint } は正常にアップロードされました"
       ],
@@ -5848,6 +5850,9 @@
       ],
       "ALL": [
         "すべて"
+      ],
+      "All-day event notifications": [
+        "終日イベントの通知"
       ],
       "Allow recovery by email": [
         "メールアドレスでの回復を許可"
@@ -6575,6 +6580,9 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "このアカウントとすべてのデータを完全に削除することに同意します。"
       ],
+      "Your calendar URL": [
+        "カレンダーの URL"
+      ],
       "Your password (admin)": [
         "あなたのパスワード (管理者)"
       ],
@@ -6602,6 +6610,9 @@
       ]
     },
     "Label for default event notifications": {
+      "All-day event notifications": [
+        "終日イベントの通知"
+      ],
       "Notifications": [
         "通知"
       ]
@@ -6760,6 +6771,9 @@
       ],
       "How to unlock data": [
         "データのロックを解除する方法"
+      ],
+      "Import/export": [
+        "インポート/エクスポート"
       ],
       "Learn more": [
         "詳細"
@@ -7130,6 +7144,9 @@
       ]
     },
     "new_plans: action": {
+      "Continue to review": [
+        "見直しを行う"
+      ],
       "Continue with Free": [
         "Free で続行"
       ],
@@ -7365,6 +7382,20 @@
         "チームマネジメント"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "そうでない場合は、アカウントへのアクセスが制限され、最終的にはアカウントが無効化されます。"
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "プレミアム機能の ${ MAIL_APP_NAME } を使い続けるには、サブスクリプションと支払方法を選択してください。"
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "究極のプライバシーパックにアップレードして、すべてのプレミアムな Proton サービスにアクセスします。"
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "トライアルは ${ formattedTrialExpirationDate } で終了します"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ last4 } で終わる ${ brand }"
@@ -7410,20 +7441,6 @@
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "すべての人にプライバシーを提供するための、無料のスタータープランです。"
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "そうでない場合は、アカウントへのアクセスが制限され、最終的にはアカウントが無効化されます。"
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "プレミアム機能の ${ MAIL_APP_NAME } を使い続けるには、サブスクリプションと支払方法を選択してください。"
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "究極のプライバシーパックにアップレードして、すべてのプレミアムな Proton サービスにアクセスします。"
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "トライアルは ${ formattedTrialExpirationDate } で終了します"
       ]
     },
     "new_plans: Label": {
@@ -9429,7 +9446,7 @@
         "迷惑メールフィルター"
       ],
       "Start a new import": [
-        "新しいインポートを始める"
+        "新しいインポートを開始"
       ],
       "Start import process": [
         "インポートを開始"
@@ -9532,6 +9549,9 @@
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         "無料トライアルは ${ formattedEndDate } に終了します。"
+      ],
+      "Your import history": [
+        "インポート履歴"
       ],
       "Your plan": [
         "現在のプラン"

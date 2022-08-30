@@ -2229,7 +2229,8 @@
       "An unexpected error occurred. Import must be restarted.": [
         "Si è verificato un errore imprevisto. L'importazione deve essere riavviata."
       ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } events.": [
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } event.": [
+        "Il tuo file ${ formattedFilename } contiene più di ${ MAX_IMPORT_EVENTS_STRING } evento.",
         "Il tuo file ${ formattedFilename } contiene più di ${ MAX_IMPORT_EVENTS_STRING } eventi."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
@@ -3170,8 +3171,8 @@
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Questo collegamento porta a un sito web che potrebbe tentare di rubare le tue informazioni, come password e dettagli della carta di credito."
       ],
-      "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it."
+      "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
+        "Questo link potrebbe essere un attacco omografico e non può essere aperto dal browser Edge. Se sei sicuro che il link sia legittimo, utilizza un browser diverso per aprirlo."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Questo link potrebbe essere un attacco omografo. Verifica che questo sia il link che desideri visitare o non aprirlo."
@@ -4367,6 +4368,9 @@
       "Don't miss any events": [
         "Non mancare alcun evento"
       ],
+      "Easily accept invites": [
+        "Accetta gli inviti facilmente"
+      ],
       "Get up to 18 months of ${ planName } for free": [
         "Ricevi fino a 18 mesi di ${ planName } gratuitamente"
       ],
@@ -4376,6 +4380,9 @@
       "No more missed appointments": [
         "Niente più appuntamenti mancati"
       ],
+      "Now invitations appear in your calendar as pending events. Just open an event to respond. ${ goToSettingsLink }": [
+        "Ora gli inviti appaiono sul tuo calendario come eventi in attesa. Apri un evento per rispondere. ${ goToSettingsLink }"
+      ],
       "Try ${ DRIVE_APP_NAME }": [
         "Prova ${ DRIVE_APP_NAME }"
       ],
@@ -4384,6 +4391,11 @@
       ],
       "You can now add notifications to calendars you subscribed to.": [
         "Ora puoi aggiungere delle notifiche ai calendari a cui sei sottoscritto."
+      ]
+    },
+    "Spotlight settings link": {
+      "Go to settings": [
+        "Vai alle impostazioni"
       ]
     },
     "Storage": {
