@@ -806,7 +806,7 @@
         "仍然廢止"
       ],
       "What do I get?": [
-        "您可獲得"
+        "我的方案服務內容"
       ],
       "Wipe": [
         "清除"
@@ -2378,6 +2378,9 @@
       ]
     },
     "Error": {
+      "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
+        "${ Local } 是您的使用者名稱。如要創建 ${ Local }@${ Domain }，請前往 設定 > 信件及撰寫郵件 > 短網域名稱 (pm.me)"
+      ],
       "A group with this name already exists": [
         "以此為名的群組已存在"
       ],
@@ -2746,9 +2749,6 @@
       "An unexpected error occurred. Import must be restarted.": [
         "發生未知的錯誤。匯入必須重新啟動。"
       ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } events.": [
-        "您的檔案 ${ formattedFilename } 包含多於 ${ MAX_IMPORT_EVENTS_STRING } 個事件。"
-      ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "您的檔案 ${ formattedFilename } 有一個錯誤的功能故無法匯入。"
       ],
@@ -2987,6 +2987,9 @@
       ]
     },
     "Export calendar": {
+      "${ totalProcessed }/${ totalToProcess } event exported": [
+        "${ totalProcessed }/${ totalToProcess } 個事件已匯出"
+      ],
       "Loading events": [
         "載入活動中"
       ]
@@ -3614,6 +3617,9 @@
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } 若你選擇繼續，你會遺失所有的已加密資料。"
       ],
+      "${ calendarName } will be set as default calendar.": [
+        "${ calendarName } 將會是預設的行事曆。"
+      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } 個加入行事曆"
       ],
@@ -3625,6 +3631,9 @@
       ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } 無效"
+      ],
+      "${ firstRemainingCalendarName } will be set as default calendar.": [
+        "${ firstRemainingCalendarName } 將會是預設的行事曆。"
       ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } 也可使用單一密碼取代登入密碼和郵箱密碼。如要切換為單一密碼模式，請輸入您想使用的單一密碼，然後按一下「儲存」。"
@@ -4280,9 +4289,6 @@
       "Invite successfully sent": [
         "邀請已成功傳送"
       ],
-      "Invited via email": [
-        "透過 email 邀請"
-      ],
       "Issues signing in?": [
         "登入出現問題？"
       ],
@@ -4661,9 +4667,6 @@
       "Signed up": [
         "註冊"
       ],
-      "Signed up via your link": [
-        "透過您的連結註冊"
-      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "為答謝您的長期支援，您的帳號已啟用額外的功能。"
       ],
@@ -4765,9 +4768,6 @@
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "此連結指向一個可能嘗試竊取您資訊（如密碼與信用卡資訊等）的網站。"
-      ],
-      "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "此連結可能是同形異義詞的偽裝攻擊 (homograph attack)。請核對這是您欲造訪的連結，否則不要開啟。"
@@ -5319,7 +5319,7 @@
         "正在為您的電郵位址生成加密金鑰。這可能需時數分鐘，您的瀏覽器在此期間可能會暫時停止回應。"
       ],
       "You can generate a new encryption key if you think your previous key has been compromised.": [
-        "若您認為之前的金鑰已外洩，您可以生成一副全新的加密金鑰"
+        "若您認為之前的金鑰已外洩，您可以生成一組全新的加密金鑰。"
       ]
     },
     "Key state badge": {
@@ -6311,10 +6311,10 @@
         "發生了甚麼問題？"
       ],
       "What is the main reason you are cancelling?": [
-        "請讓我們知道您取消訂購授權的原因。"
+        "請您告訴我們，是什麼原因讓您決定取消訂購授權？"
       ],
       "What is the main reason you are deleting your account?": [
-        "請讓我們知道您刪除帳號的原因。"
+        "請您告訴我們，是什麼原因讓您決定刪除帳號？"
       ],
       "With attachment": [
         "連同附件"
@@ -6878,6 +6878,54 @@
       ]
     },
     "new_plans: feature": {
+      "${ DRIVE_APP_NAME } (web beta)": [
+        "${ DRIVE_APP_NAME } (網頁測試版)"
+      ],
+      "${ n } custom email domain": [
+        "${ n } 個自訂電郵網域"
+      ],
+      "${ n } email address": [
+        "${ n } 組電郵位址/別名"
+      ],
+      "${ n } email address per user": [
+        "${ n } 組電郵位址/每位使用者"
+      ],
+      "${ n } filter": [
+        "${ n } 個篩選器"
+      ],
+      "${ n } folder": [
+        "${ n } 個資料夾"
+      ],
+      "${ n } folder and label": [
+        "${ n } 個資料夾和標籤"
+      ],
+      "${ n } label": [
+        "${ n } 個標籤"
+      ],
+      "${ n } message per day": [
+        "${ n } 封郵件 / 每天"
+      ],
+      "${ n } personal calendar": [
+        "${ n } 個私人行事曆"
+      ],
+      "${ n } VPN connection": [
+        "${ n } 個 VPN 連線"
+      ],
+      "${ n } VPN connection per user": [
+        "${ n } 個 VPN 連線 / 每一位使用者"
+      ],
+      "${ size } attachment size": [
+        "${ size } 的附件大小"
+      ],
+      "${ size } storage per user": [
+        "${ size } 可用空間 / 每位使用者"
+      ],
+      "${ size } total storage": [
+        "${ size } 總儲存量"
+      ],
+      "1 free VPN connection in total": [
+        "1 個完全免費 VPN 連線"
+      ],
       "Auto-reply": [
         "自動回覆"
       ],
@@ -6909,6 +6957,21 @@
       ]
     },
     "new_plans: info": {
+      "${ brand } ending in ${ last4 }": [
+        "${ brand } 後四碼 ${ last4 }"
+      ],
+      "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
+        "${ BRAND_NAME } 可讓您為創建電郵位址給子使用者並具備管理帳號權限。非常適合家庭親人和機構組織。"
+      ],
+      "* With 1-month subscription. Other subscription options available at checkout.": [
+        "＊月付方案訂購授權。更多授權選項可在結帳時加購。"
+      ],
+      "* With 12-month subscription. Other subscription options available at checkout.": [
+        "*為期 12 個月授權。更多授權選項可在結帳時加購。"
+      ],
+      "* With 24-month subscription. Other subscription options available at checkout.": [
+        "*為期 24 個月授權。更多授權選項可在結帳時加購。"
+      ],
       "Applicable credits, proration, and coupons are applied in the next step": [
         "適用的餘額、價差與優惠券將在下一步時套用。"
       ],
@@ -6969,6 +7032,12 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "${ storageSize } total storage": [
+        "${ storageSize } 總儲存空間"
+      ],
+      "10 email addresses/aliases": [
+        "10 組電郵位址/別名"
+      ],
       "Priority support": [
         "優先支援"
       ],
@@ -7748,14 +7817,47 @@
       ]
     },
     "Subscription attribute": {
+      "${ _n } calendar per user": [
+        "${ _n } 個行事曆/每位使用者"
+      ],
+      "${ maxVpn } high-speed VPN connection": [
+        "${ maxVpn } 個極飆速 VPN 連線"
+      ],
       "${ n } calendar": [
         "${ n } 個行事曆"
+      ],
+      "${ n } high-speed VPN connection": [
+        "${ n } 個極飆速 VPN 連線"
+      ],
+      "${ n } high-speed VPN connection per user": [
+        "${ n } 個極飆速 VPN 連線 / 每一位使用者"
+      ],
+      "${ n } VPN connection": [
+        "${ n } 個 VPN 連線"
+      ],
+      "${ n } VPN connection per user": [
+        "${ n } 個 VPN 連線 / 每一位使用者"
       ],
       "${ UsedAddresses } address": [
         "${ UsedAddresses } 個電郵位址"
       ],
       "${ UsedAddresses } of ${ MaxAddresses } email address": [
         "最多可有 ${ MaxAddresses } 個電郵位址，目前已有 ${ UsedAddresses } 個"
+      ],
+      "${ UsedCalendars } calendar": [
+        "${ UsedCalendars } 行事曆"
+      ],
+      "${ UsedDomains } of ${ MaxDomains } custom domain": [
+        "${ MaxDomains } 個可用自訂網域，已用 ${ UsedDomains } 個"
+      ],
+      "${ UsedMembers } of ${ MaxMembers } user": [
+        "${ MaxMembers } 位可用會員名額，已用 ${ UsedMembers } 位"
+      ],
+      "1 email address": [
+        "1 組電郵位址"
+      ],
+      "1 VPN connection": [
+        "1 個 VPN 連線"
       ]
     },
     "Subscription saving": {
@@ -8844,6 +8946,11 @@
         "狀態"
       ]
     },
+    "Title for PDF file": {
+      "${ MAIL_APP_NAME } invoice": [
+        "${ MAIL_APP_NAME } 繳款單"
+      ]
+    },
     "Title header": {
       "Actions": [
         "動作"
@@ -8906,6 +9013,9 @@
       ]
     },
     "Tooltip": {
+      "${ MAIL_APP_NAME } users will use this key by default for sending": [
+        "${ MAIL_APP_NAME } 使用者將透過這一組預設的金鑰用來傳送郵件"
+      ],
       "Account is disconnected": [
         "帳號已中斷連線"
       ],

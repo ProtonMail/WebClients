@@ -1057,6 +1057,9 @@
       "Default": [
         "首选"
       ],
+      "Disabled": [
+        "已禁用"
+      ],
       "Not synced": [
         "未同步"
       ],
@@ -1070,6 +1073,9 @@
       ],
       "Calendar is syncing": [
         "日历正在同步中"
+      ],
+      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
+        "日历正在同步：可能需要几分钟的时间才能显示出所有的事件."
       ],
       "Calendar is too big": [
         "日历文件太大"
@@ -1126,14 +1132,62 @@
       ]
     },
     "color": {
+      "apple": [
+        "苹果"
+      ],
+      "blanched almond": [
+        "白杏仁"
+      ],
+      "caramel": [
+        "焦糖色"
+      ],
+      "dandelion": [
+        "蒲公英"
+      ],
+      "dim gray": [
+        "暗灰"
+      ],
+      "gainsboro": [
+        "淡灰色"
+      ],
+      "japanese laurel": [
+        "日本月桂"
+      ],
+      "kiwi": [
+        "猕猴桃"
+      ],
       "lemon yellow": [
         "柠檬黄"
+      ],
+      "maize": [
+        "玉米"
+      ],
+      "mughal green": [
+        "莫卧儿绿"
+      ],
+      "ocean": [
+        "海洋"
+      ],
+      "outer space": [
+        "外太空"
+      ],
+      "philippine gray": [
+        "菲律宾灰"
+      ],
+      "philippine silver": [
+        "菲律宾银"
+      ],
+      "pine": [
+        "松树"
       ],
       "pink": [
         "粉色"
       ],
       "purple": [
         "紫色"
+      ],
+      "soil": [
+        "土地"
       ],
       "white": [
         "白色"
@@ -2666,9 +2720,6 @@
       "An unexpected error occurred. Import must be restarted.": [
         "出现意外错误，需重新开始导入。"
       ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } events.": [
-        "文件 ${ formattedFilename } 中的日程数已超过 ${ MAX_IMPORT_EVENTS_STRING }。"
-      ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "您的文件 ${ formattedFilename } 包含一个无效的 method 属性，无法导入。"
       ],
@@ -2964,6 +3015,9 @@
       ],
       "Inbox": [
         "收件箱"
+      ],
+      "Inbox - Default": [
+        "收件箱 - 默认"
       ],
       "Select a folder": [
         "选择文件夹"
@@ -4139,9 +4193,6 @@
       "Invite successfully sent": [
         "已成功发送邀请"
       ],
-      "Invited via email": [
-        "已发送邀请邮件"
-      ],
       "Issues signing in?": [
         "登录时遇到问题？"
       ],
@@ -4514,9 +4565,6 @@
       "Signed up": [
         "已注册"
       ],
-      "Signed up via your link": [
-        "已通过您的邀请链接注册"
-      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "作为 Proton 忠实用户，您拥有以下特权。"
       ],
@@ -4612,9 +4660,6 @@
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "此链接所指向的网站可能会窃取您的密码、信用卡等信息。"
-      ],
-      "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "此链接可能使用了欺骗性域名，请确认其可靠性后再打开。"
@@ -5452,6 +5497,9 @@
       "ALL": [
         "且"
       ],
+      "All-day event notifications": [
+        "全天事件通知"
+      ],
       "Allow recovery by email": [
         "允许通过电子邮件恢复"
       ],
@@ -5715,6 +5763,12 @@
       ],
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         "输入以下密钥的密码：${ fingerprintCode }"
+      ],
+      "Event duration": [
+        "事件持续时间"
+      ],
+      "Event notifications": [
+        "事件通知"
       ],
       "Expiration date": [
         "有效期至"
@@ -6170,6 +6224,9 @@
       ]
     },
     "Label for default event notifications": {
+      "All-day event notifications": [
+        "全天事件通知"
+      ],
       "Notifications": [
         "通知"
       ]
@@ -6933,6 +6990,23 @@
         "团队管理"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "否则，您的账户功能将受到限制，直至最后被停用。"
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "如需继续使用 ${ MAIL_APP_NAME } 的高级功能，请选择您要开通的账户等级和支付方式。"
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "采用商业隐私保护体系，畅享所有 Proton 高级功能。"
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "解锁顶级隐私保护体系，畅享所有 Proton 高级功能。"
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "您的体验期将于 ${ formattedTrialExpirationDate } 结束"
+      ]
+    },
     "new_plans: info": {
       "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
         "${ BRAND_NAME } 账户可以创建从属用户并分配邮箱地址，适合家庭与组织团体使用。"
@@ -6966,23 +7040,6 @@
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "完全免费的普通账户，旨在助力所有人捍卫隐私。"
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "否则，您的账户功能将受到限制，直至最后被停用。"
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "如需继续使用 ${ MAIL_APP_NAME } 的高级功能，请选择您要开通的账户等级和支付方式。"
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "采用商业隐私保护体系，畅享所有 Proton 高级功能。"
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "解锁顶级隐私保护体系，畅享所有 Proton 高级功能。"
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "您的体验期将于 ${ formattedTrialExpirationDate } 结束"
       ]
     },
     "new_plans: Label": {
