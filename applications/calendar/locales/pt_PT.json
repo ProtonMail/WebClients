@@ -1677,9 +1677,6 @@
       "This event has been updated. The organizer will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete this event anyway?": [
         "Este evento foi actualizado. O organizador não será notificado de que recusou o convite por não poder enviar correio desse endereço. Deseja eliminar este evento mesmo assim?"
       ],
-      "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it."
-      ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Esta ligação pode ser um ataque homográfico. Por favor, verifique se esta é a ligação que deseja visitar, ou não a abra."
       ],
@@ -2604,8 +2601,16 @@
       "Get up to 18 months of ${ planName } for free": [
         "Obtenha até 18 meses grátis de ${ planName }"
       ],
+      "Now invitations appear in your calendar as pending events. Just open an event to respond. ${ goToSettingsLink }": [
+        "Os convites para eventos aparecem agora na sua agenda como eventos pendentes. Desta forma, para responder basta abrir o evento. ${ goToSettingsLink }"
+      ],
       "You can now add notifications to calendars you subscribed to.": [
         "Pode agora adicionar notificações às agendas subscritas."
+      ]
+    },
+    "Spotlight settings link": {
+      "Go to settings": [
+        "Ir para as definições"
       ]
     },
     "Storage": {

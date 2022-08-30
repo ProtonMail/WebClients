@@ -332,7 +332,7 @@
         "Exporter"
       ],
       "Export contact group": [
-        "Exporter le groupe de contats"
+        "Exporter le groupe de contacts"
       ],
       "Export contacts": [
         "Exporter les contacts"
@@ -471,7 +471,7 @@
         "Labelliser comme..."
       ],
       "label emails as": [
-        "labelliser l'e-mail comme"
+        "labelliser les messages comme"
       ],
       "Learn more": [
         "En savoir plus"
@@ -1067,6 +1067,11 @@
       ],
       "Participant added": [
         "Participant ajouté"
+      ]
+    },
+    "Adding expiration to a message will create an expiring message": {
+      "Expiring message": [
+        "Message avec date d’expiration"
       ]
     },
     "Alert": {
@@ -4178,9 +4183,6 @@
       "Default email application": [
         "Application de messagerie par défaut"
       ],
-      "Delivered via SimpleLogin by Proton": [
-        "Délivré via SimpleLogin par Proton"
-      ],
       "Disable message content search": [
         "Désactiver la recherche de contenu de message"
       ],
@@ -4283,9 +4285,6 @@
       ],
       "Expires soon": [
         "Expire bientôt"
-      ],
-      "Expiring message": [
-        "Message avec date d’expiration"
       ],
       "file attached": [
         "fichier joint",
@@ -4798,10 +4797,10 @@
         "Cette conversation contient un message programmé. L'envoi de ce message sera annulé."
       ],
       "This conversation contains non-trashed messages.": [
-        "Cette conversation contient des messages non mis à la corbeille."
+        "Cette conversation contient des messages non mis à la Corbeille."
       ],
       "This conversation contains trashed messages.": [
-        "Cette conversation contient des messages déplacés dans la corbeille."
+        "Cette conversation contient des messages déplacés dans la Corbeille."
       ],
       "This conversation will be marked as spam. Would you also like to unsubscribe from future emails?": [
         "Cette conversation sera marquée comme indésirable/spam. Souhaitez-vous aussi vous désinscrire des futurs e-mails ?",
@@ -4816,8 +4815,8 @@
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Ce lien mène à un site web qui pourrait essayer de voler vos informations, comme les mots de passe et les détails de carte de crédit."
       ],
-      "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it."
+      "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
+        "Ce lien pourrait être une attaque homographique et ne peut pas être ouvert avec le navigateur Edge. Si vous êtes certain de la légitimité de ce lien, utilisez un autre navigateur pour l'ouvrir."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Ce lien pourrait être une attaque homographique. Assurez vous qu'il s'agit bien du lien que vous souhaitez visiter, ou ne l'ouvrez pas."
@@ -5158,7 +5157,7 @@
     },
     "Info on errors": {
       "Click for details": [
-        "Cliquez pour plus de détails"
+        "Cliquez pour plus de détails."
       ]
     },
     "Info, no need for singular": {
@@ -6113,6 +6112,11 @@
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "Une nouvelle version de ${ appName } est disponible. ${ reloadButton }."
+      ]
+    },
+    "Message has been sent to the user via a SimpleLogin alias": {
+      "Delivered via SimpleLogin by Proton": [
+        "Délivré via SimpleLogin par Proton"
       ]
     },
     "Message image": {

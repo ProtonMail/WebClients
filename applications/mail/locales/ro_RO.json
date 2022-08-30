@@ -1073,6 +1073,11 @@
         "Participant adăugat"
       ]
     },
+    "Adding expiration to a message will create an expiring message": {
+      "Expiring message": [
+        "Mesaj la expirare"
+      ]
+    },
     "Alert": {
       "By leaving now, some contacts may not be imported": [
         "Renunțând acum, unele contacte nu vor fi importate."
@@ -4247,9 +4252,6 @@
       "Default email application": [
         "Aplicaţia de e-mail implicită"
       ],
-      "Delivered via SimpleLogin by Proton": [
-        "Livrat prin SimpleLogin de la Proton"
-      ],
       "Disable message content search": [
         "Dezactivarea căutării în conținutul mesajelor."
       ],
@@ -4356,9 +4358,6 @@
       ],
       "Expires soon": [
         "Expiră în curând"
-      ],
-      "Expiring message": [
-        "Mesaj la expirare"
       ],
       "file attached": [
         "fişier ataşat",
@@ -4896,8 +4895,8 @@
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Această legătură duce la un site web care ar putea încerca să vă fure informațiile, cum ar fi parolele și detaliile cărților de credit."
       ],
-      "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it."
+      "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
+        "Această legătură ar putea fi un atac omografic (caractere asemănătoare dar cu cod diferit de caracter) și nu poate fi deschisă de către navigatorul Microsoft Edge. Dacă aveți certitudinea că legătura este legitimă, folosiți un alt navigator pentru a o deschide."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Această legătură ar putea fi un atac omoglific. Verificați adresa pe care doriți să o vizitați sau nu o deschideți."
@@ -6207,6 +6206,11 @@
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "O versiune nouă a ${ appName } este disponibilă. ${ reloadButton }."
+      ]
+    },
+    "Message has been sent to the user via a SimpleLogin alias": {
+      "Delivered via SimpleLogin by Proton": [
+        "Livrat prin SimpleLogin de la Proton"
       ]
     },
     "Message image": {

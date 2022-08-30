@@ -2167,9 +2167,6 @@
       "An unexpected error occurred. Import must be restarted.": [
         "En uventet fejl opstod. Import skal genstartes."
       ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } events.": [
-        "Din fil ${ formattedFilename } indeholder mere end ${ MAX_IMPORT_EVENTS_STRING } begivenheder."
-      ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "Din fil ${ formattedFilename } har en ugyldig metode og kan ikke importeres."
       ],
@@ -3107,9 +3104,6 @@
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Dette link fører til et websted, som måske forsøger at stjæle dine oplysninger, f.eks. adgangskoder og kreditkortoplysninger."
-      ],
-      "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Dette link kan være et homografisk angreb og kan ikke åbnes af Internet Explorer og Edge browsere. Tjek at dette faktisk er det link, du ønsker at besøge, eller undlad at åbne det."
@@ -4303,6 +4297,11 @@
       ],
       "With email notifications, you decide which events to be notified about and when.": [
         "Med e-mail-meddelelser bestemmer du selv, hvilke begivenheder du vil have besked om og hvornår."
+      ]
+    },
+    "Spotlight settings link": {
+      "Go to settings": [
+        "Gå til indstillinger"
       ]
     },
     "Storage": {

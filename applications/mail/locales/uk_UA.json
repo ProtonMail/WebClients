@@ -576,7 +576,7 @@
         "Перемістити всі повідомлення з цієї мітки"
       ],
       "Move all to trash": [
-        "Перемістити все у смітник"
+        "Перемістити все до смітника"
       ],
       "move emails to": [
         "перемістити листи"
@@ -1075,6 +1075,11 @@
       ],
       "Participant added": [
         "Учасника додано"
+      ]
+    },
+    "Adding expiration to a message will create an expiring message": {
+      "Expiring message": [
+        "Самознищуване повідомлення"
       ]
     },
     "Alert": {
@@ -4316,9 +4321,6 @@
       "Default email application": [
         "Типовий застосунок електронної пошти"
       ],
-      "Delivered via SimpleLogin by Proton": [
-        "Доставлено через SimpleLogin від Proton"
-      ],
       "Disable message content search": [
         "Вимкнути пошук вмісту повідомлення"
       ],
@@ -4429,9 +4431,6 @@
       ],
       "Expires soon": [
         "Скоро завершується"
-      ],
-      "Expiring message": [
-        "Самознищувальне повідомлення"
       ],
       "file attached": [
         "вкладений файл",
@@ -4976,8 +4975,8 @@
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Це посилання веде на вебсайт, який, можливо, намагається викрасти ваші дані, як-от паролі та дані кредитної картки."
       ],
-      "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it."
+      "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
+        "Це посилання може бути гомографічною атакою і його не можна відкрити у браузерах Edge. Якщо ви впевнені, що це надійне посилання, відкрийте його в іншому браузері."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Це посилання може бути гомографічною атакою. Впевніться, що це саме те посилання, яке ви хочете відвідати, або не відкривайте його."
@@ -6301,6 +6300,11 @@
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "Доступна нова версія ${ appName }. ${ reloadButton }."
+      ]
+    },
+    "Message has been sent to the user via a SimpleLogin alias": {
+      "Delivered via SimpleLogin by Proton": [
+        "Доставлено через SimpleLogin від Proton"
       ]
     },
     "Message image": {

@@ -2265,7 +2265,10 @@
       "An unexpected error occurred. Import must be restarted.": [
         "Došlo k neočekávané chybě. Import musí být restartován."
       ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } events.": [
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } event.": [
+        "Váš soubor ${ formattedFilename } obsahuje více než ${ MAX_IMPORT_EVENTS_STRING } událost.",
+        "Váš soubor ${ formattedFilename } obsahuje více než ${ MAX_IMPORT_EVENTS_STRING } události.",
+        "Váš soubor ${ formattedFilename } obsahuje více než ${ MAX_IMPORT_EVENTS_STRING } událostí.",
         "Váš soubor ${ formattedFilename } obsahuje více než ${ MAX_IMPORT_EVENTS_STRING } událostí."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
@@ -3282,8 +3285,8 @@
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Tento odkaz vede na webovou stránku, která se může pokoušet ukrást vaše údaje, například hesla a údaje o kreditní kartě."
       ],
-      "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it."
+      "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
+        "Tento odkaz může být homografickým útokem a nelze ho otevřít pomocí prohlížeče Edge. Pokud jste si jisti, že je odkaz v pořádku, otevřete ho v jiném prohlížeči."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Tento odkaz může být homografickým útokem. Zkontrolujte, zda se jedná o odkaz, který chcete navštívit, nebo odkaz neotevírejte."
@@ -4543,6 +4546,9 @@
       "Don't miss any events": [
         "Nepropásněte žádnou událost"
       ],
+      "Easily accept invites": [
+        "Snadné přijímání pozvánek"
+      ],
       "Get up to 18 months of ${ planName } for free": [
         "Získejte ${ planName } až na 18 měsíců zdarma"
       ],
@@ -4552,6 +4558,9 @@
       "No more missed appointments": [
         "Žádné další zmeškané schůzky"
       ],
+      "Now invitations appear in your calendar as pending events. Just open an event to respond. ${ goToSettingsLink }": [
+        "Nyní se pozvánky zobrazují v kalendáři jako události bez odpovědi. Stačí otevřít událost a odpovědět na ni. ${ goToSettingsLink }"
+      ],
       "Try ${ DRIVE_APP_NAME }": [
         "Vyzkoušejte ${ DRIVE_APP_NAME }"
       ],
@@ -4560,6 +4569,11 @@
       ],
       "You can now add notifications to calendars you subscribed to.": [
         "Nyní můžete přidávat oznámení do kalendářů, ke kterým jste se přihlásili."
+      ]
+    },
+    "Spotlight settings link": {
+      "Go to settings": [
+        "Přejít do nastavení"
       ]
     },
     "Storage": {

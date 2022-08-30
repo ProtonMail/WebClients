@@ -2943,7 +2943,8 @@
       "An unexpected error occurred. Import must be restarted.": [
         "Ocorreu um erro inesperado. A importação precisa ser reiniciada."
       ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } events.": [
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } event.": [
+        "O arquivo ${ formattedFilename } contém mais de ${ MAX_IMPORT_EVENTS_STRING } evento.",
         "O arquivo ${ formattedFilename } contém mais de ${ MAX_IMPORT_EVENTS_STRING } eventos."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
@@ -4673,9 +4674,6 @@
         "Convite enviado com sucesso",
         "Convites enviados com sucesso"
       ],
-      "Invited via email": [
-        "Convidado através do e-mail"
-      ],
       "Issues signing in?": [
         "Problemas para iniciar sessão?"
       ],
@@ -5058,9 +5056,6 @@
       "Signed up": [
         "Criar conta"
       ],
-      "Signed up via your link": [
-        "Inscreveu-se através do seu link"
-      ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Como você é um usuário fiel, sua conta tem recursos adicionais ativados."
       ],
@@ -5163,8 +5158,8 @@
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Esse link leva a um site que pode estar tentando roubar suas informações, como senhas e detalhes de cartão de crédito."
       ],
-      "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it."
+      "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
+        "Este link pode ser um ataque homógrafo e não pode ser aberto pelos navegador Edge. Se você tiver certeza de que o link é legítimo, use um navegador diferente para abri-lo."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Este link pode ser um ataque homográfico. Por favor, verifique se este é o link que você deseja visitar, caso contrário, não abra."
@@ -7618,6 +7613,26 @@
         "Gerenciamento de equipes"
       ]
     },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Torne a privacidade seu padrão para backup, armazenamento, compartilhamento e recuperação de arquivos."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Caso contrário, o acesso à sua conta será limitado e, futuramente, sua conta será desativada."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Para continuar usando o ${ MAIL_APP_NAME } com recursos premium, escolha sua assinatura e opções de pagamento."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Faça o upgrade para o pacote para empresas com acesso a todos os serviços premium da Proton."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Faça o upgrade para o pacote de privacidade definitivo e acesse todos os serviços premium da Proton."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Sua avaliação termina em ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } com final ${ last4 }"
@@ -7684,26 +7699,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Seu plano atual está com um preço promocional. Se fizer o downgrade da sua conta, você perderá seu preço promocional, o qual não estará mais disponível se você tentar assinar novamente."
-      ]
-    },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Torne a privacidade seu padrão para backup, armazenamento, compartilhamento e recuperação de arquivos."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Caso contrário, o acesso à sua conta será limitado e, futuramente, sua conta será desativada."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Para continuar usando o ${ MAIL_APP_NAME } com recursos premium, escolha sua assinatura e opções de pagamento."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Faça o upgrade para o pacote para empresas com acesso a todos os serviços premium da Proton."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Faça o upgrade para o pacote de privacidade definitivo e acesse todos os serviços premium da Proton."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Sua avaliação termina em ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -9392,7 +9387,7 @@
         "Criar calendário"
       ],
       "Create your ${ BRAND_NAME } Account": [
-        "Crie sua Conta ${ BRAND_NAME }"
+        "Crie sua conta ${ BRAND_NAME }"
       ],
       "Credentials": [
         "Credenciais"
@@ -9890,6 +9885,9 @@
       "Time zone": [
         "Fuso horário"
       ],
+      "Try the best of ${ MAIL_APP_NAME } for free": [
+        "Experimente o melhor de ${ MAIL_APP_NAME } gratuitamente"
+      ],
       "Two-factor authentication": [
         "Autenticação de dois fatores"
       ],
@@ -10201,6 +10199,16 @@
       "Upgrade to ${ planName } to connect up to ${ n } device to the VPN at once": [
         "Atualize para ${ planName } para conectar até ${ n } dispositivo à VPN de uma só vez",
         "Atualize para ${ planName } para conectar até ${ n } dispositivos à VPN de uma só vez"
+      ]
+    },
+    "User referee invited via email": {
+      "Invited via email": [
+        "Convidado através do e-mail"
+      ]
+    },
+    "User referee signed up using referral link": {
+      "Signed up via your link": [
+        "Inscreveu-se através do seu link"
       ]
     },
     "User role": {

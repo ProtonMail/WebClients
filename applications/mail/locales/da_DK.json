@@ -155,6 +155,9 @@
       "Close this banner": [
         "Luk dette banner"
       ],
+      "Collapse URL": [
+        "Fold URL sammen"
+      ],
       "Color": [
         "Farve"
       ],
@@ -3998,6 +4001,9 @@
       "Don't forget to share the password with the recipient": [
         "Glem ikke at dele adgangskoden med modtageren"
       ],
+      "Downloading message ${ esProgress } out of ${ totalProgressToShow }": [
+        "Downloader besked ${ esProgress } ud af ${ totalProgressToShow }"
+      ],
       "Draft": [
         "Kladde"
       ],
@@ -4078,9 +4084,6 @@
       ],
       "Expires soon": [
         "Udløber snart"
-      ],
-      "Expiring message": [
-        "Bedsked med udløb"
       ],
       "file attached": [
         "fil vedhæftet",
@@ -4396,6 +4399,9 @@
       "Priority support": [
         "Prioriteret support"
       ],
+      "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
+        "Beskyt din e-mail mod at blive lækket til mailinglister eller spammere med ${ maskMyEmailButton }."
+      ],
       "Proton doesn't make money by abusing privacy.": [
         "Proton tjener ikke penge ved at misbruge privatlivets fred."
       ],
@@ -4580,6 +4586,10 @@
       "This conversation contains trashed messages.": [
         "Denne samtale indeholder kasserede beskeder."
       ],
+      "This conversation will be marked as spam. Would you also like to unsubscribe from future emails?": [
+        "Denne samtale vil blive markeret som spam. Ønsker du også at afmelde dig fra fremtidige e-mails?",
+        "Disse samtaler vil blive markeret som spam. Ønsker du også at afmelde dig fra fremtidige e-mails?"
+      ],
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded!": [
         "Denne e-mail fejlede Reverse DNS Lookup. Den kan være falsk eller forkert videresendt!"
       ],
@@ -4588,9 +4598,6 @@
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Dette link fører til et websted, som måske forsøger at stjæle dine oplysninger, f.eks. adgangskoder og kreditkortoplysninger."
-      ],
-      "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Dette link kan være et homografisk angreb. Bekræft venligst at dette faktisk er det link, du ønsker at besøge, eller undlad at åbne det."
