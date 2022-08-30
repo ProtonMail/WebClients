@@ -79,6 +79,7 @@ const MainContainer = () => {
         FeatureCode.SubscribedCalendarReminder,
         FeatureCode.DrivePlan,
         FeatureCode.EasySwitch,
+        FeatureCode.EasySwitchGmailNewScope,
     ]);
     const [spyTrackerFeature, calendarInviteLocaleFeature, calendarAutoImportInviteFeature, referralProgramFeature] =
         features;

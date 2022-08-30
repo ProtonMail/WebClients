@@ -20,16 +20,19 @@ import {
     useApi,
     useApiEnvironmentConfig,
     useEventManager,
+    useFeature,
     useLoading,
     useModals,
     useNotifications,
 } from '../../../hooks';
 import useOAuthPopup from '../../../hooks/useOAuthPopup';
+import { FeatureCode } from '../../features';
 import {
     G_OAUTH_SCOPE_CALENDAR,
     G_OAUTH_SCOPE_CONTACTS,
     G_OAUTH_SCOPE_DEFAULT,
     G_OAUTH_SCOPE_MAIL,
+    G_OAUTH_SCOPE_MAIL_NEW_SCOPE,
 } from '../constants';
 import ImportMailModal from '../mail/modals/ImportMailModal';
 
@@ -42,6 +45,7 @@ const ActiveImportRowActions = ({ activeImport }: Props) => {
     const { State, ErrorCode } = Active || {};
 
     const { triggerOAuthPopup } = useOAuthPopup();
+    const useNewScopeFeature = useFeature(FeatureCode.EasySwitchGmailNewScope);
 
     const api = useApi();
     const [addresses, loadingAddresses] = useAddresses();
@@ -56,7 +60,9 @@ const ActiveImportRowActions = ({ activeImport }: Props) => {
     const handleReconnectOAuth = async (ImporterID: string) => {
         const scopes = [
             ...G_OAUTH_SCOPE_DEFAULT,
-            tokenScope?.includes(ImportType.MAIL) && G_OAUTH_SCOPE_MAIL,
+            tokenScope?.includes(ImportType.MAIL) && useNewScopeFeature.feature?.Value === true
+                ? G_OAUTH_SCOPE_MAIL_NEW_SCOPE
+                : G_OAUTH_SCOPE_MAIL,
             tokenScope?.includes(ImportType.CALENDAR) && G_OAUTH_SCOPE_CALENDAR,
             tokenScope?.includes(ImportType.CONTACTS) && G_OAUTH_SCOPE_CONTACTS,
             // tokenScope?.includes(ImportType.DRIVE) && G_OAUTH_SCOPE_DRIVE,
