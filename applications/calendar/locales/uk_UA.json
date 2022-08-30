@@ -2265,8 +2265,11 @@
       "An unexpected error occurred. Import must be restarted.": [
         "Сталася неочікувана помилка. Необхідно перезапустити імпорт."
       ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } events.": [
-        "Ваш файл ${ formattedFilename } містить понад ${ MAX_IMPORT_EVENTS_STRING } подій."
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } event.": [
+        "Ваш файл ${ formattedFilename } містить більше ніж ${ MAX_IMPORT_EVENTS_STRING } подію.",
+        "Ваш файл ${ formattedFilename } містить більше ніж ${ MAX_IMPORT_EVENTS_STRING } події.",
+        "Ваш файл ${ formattedFilename } містить більше ніж ${ MAX_IMPORT_EVENTS_STRING } подій.",
+        "Ваш файл ${ formattedFilename } містить більше ніж ${ MAX_IMPORT_EVENTS_STRING } події."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "Ваш файл ${ formattedFilename } має недійсний метод і його неможливо імпортувати."
@@ -3282,8 +3285,8 @@
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Це посилання веде на вебсайт, який, можливо, намагається викрасти ваші дані, як-от паролі та дані кредитної картки."
       ],
-      "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it."
+      "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
+        "Це посилання може бути гомографічною атакою і його не можна відкрити у браузерах Edge. Якщо ви впевнені, що це надійне посилання, відкрийте його в іншому браузері."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Це посилання може бути гомографічною атакою. Впевніться, що це саме те посилання, яке ви хочете відвідати, або не відкривайте його."
@@ -4543,6 +4546,9 @@
       "Don't miss any events": [
         "Не пропустіть жодної події"
       ],
+      "Easily accept invites": [
+        "Легко погоджуйтеся на запрошення"
+      ],
       "Get up to 18 months of ${ planName } for free": [
         "Отримайте до 18 місяців ${ planName } безплатно"
       ],
@@ -4552,6 +4558,9 @@
       "No more missed appointments": [
         "Більше жодних пропущених зустрічей"
       ],
+      "Now invitations appear in your calendar as pending events. Just open an event to respond. ${ goToSettingsLink }": [
+        "Відтепер запрошення показуються у вашому календарі подіями, що очікують на розгляд. Просто відкрийте подію, щоб відповісти. ${ goToSettingsLink }"
+      ],
       "Try ${ DRIVE_APP_NAME }": [
         "Спробувати ${ DRIVE_APP_NAME }"
       ],
@@ -4560,6 +4569,11 @@
       ],
       "You can now add notifications to calendars you subscribed to.": [
         "Тепер можна додавати сповіщення до календарів, на які ви підписані."
+      ]
+    },
+    "Spotlight settings link": {
+      "Go to settings": [
+        "Перейти до налаштувань"
       ]
     },
     "Storage": {

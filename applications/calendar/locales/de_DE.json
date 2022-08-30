@@ -2229,8 +2229,9 @@
       "An unexpected error occurred. Import must be restarted.": [
         "Ein unerwarteter Fehler ist aufgetreten. Der Import muss neu ausgeführt werden."
       ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } events.": [
-        "Die Datei „${ formattedFilename }” enthält mehr als ${ MAX_IMPORT_EVENTS_STRING } Termine."
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } event.": [
+        "Deine Datei „${ formattedFilename }“ enthält mehr als ${ MAX_IMPORT_EVENTS_STRING } Termin.",
+        "Deine Datei „${ formattedFilename }“ enthält mehr als ${ MAX_IMPORT_EVENTS_STRING } Termine."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "Deine Datei ${ formattedFilename } enthält eine ungültige Methode und konnte nicht importiert werden."
@@ -3170,8 +3171,8 @@
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Dieser Link führt zu einer Website, die möglicherweise versucht, deine Informationen wie Passwörter und Kreditkartendaten zu stehlen."
       ],
-      "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it."
+      "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
+        "Dieser Link ist möglicherweise ein homographischer Angriff (Vortäuschung einer falschen Identität) und kann vom Edge Browser nicht geöffnet werden. Wenn du sicher bist, dass der Link seriös ist, verwende einen anderen Browser, um ihn zu öffnen."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Dieser Link ist möglicherweise ein homographischer Angriff (Vortäuschung einer falschen Identität). Bitte vergewissere dich, dass dies der Link ist, den du besuchen möchtest, oder öffne ihn nicht."
@@ -4367,6 +4368,9 @@
       "Don't miss any events": [
         "Verpassen Sie keine Termine"
       ],
+      "Easily accept invites": [
+        "Einladungen ganz einfach annehmen"
+      ],
       "Get up to 18 months of ${ planName } for free": [
         "Erhalte bis zu 18 Monate ${ planName } kostenlos"
       ],
@@ -4376,6 +4380,9 @@
       "No more missed appointments": [
         "Keine verpassten Termine mehr"
       ],
+      "Now invitations appear in your calendar as pending events. Just open an event to respond. ${ goToSettingsLink }": [
+        "Jetzt werden Einladungen in deinem Kalender als ausstehende Termine angezeigt. Öffne einfach einen Termin, um zu antworten. ${ goToSettingsLink }"
+      ],
       "Try ${ DRIVE_APP_NAME }": [
         "${ DRIVE_APP_NAME } ausprobieren"
       ],
@@ -4384,6 +4391,11 @@
       ],
       "You can now add notifications to calendars you subscribed to.": [
         "Es ist nun möglich, Benachrichtigungen zu abonnierten Kalendern hinzuzufügen."
+      ]
+    },
+    "Spotlight settings link": {
+      "Go to settings": [
+        "Zu den Einstellungen"
       ]
     },
     "Storage": {

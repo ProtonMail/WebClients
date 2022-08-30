@@ -2211,9 +2211,6 @@
       "An unexpected error occurred. Import must be restarted.": [
         "發生未知的錯誤。匯入必須重新啟動。"
       ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } events.": [
-        "您的檔案 ${ formattedFilename } 包含多於 ${ MAX_IMPORT_EVENTS_STRING } 個事件。"
-      ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "您的檔案 ${ formattedFilename } 有一個無效的方法，因此無法匯入。"
       ],
@@ -3113,9 +3110,6 @@
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "此連結指向一個可能嘗試竊取您資訊（如密碼與信用卡資訊等）的網站。"
-      ],
-      "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "此連結可能是同形異義詞的偽裝攻擊 (homograph attack)。請核對這是您欲造訪的連結，否則不要開啟。"
@@ -4296,6 +4290,11 @@
       ],
       "You can now add notifications to calendars you subscribed to.": [
         "你已可以添加提醒到你訂閱的行事曆了。"
+      ]
+    },
+    "Spotlight settings link": {
+      "Go to settings": [
+        "前往設定"
       ]
     },
     "Storage": {

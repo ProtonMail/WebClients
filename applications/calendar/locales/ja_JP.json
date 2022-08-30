@@ -2180,9 +2180,6 @@
       "An unexpected error occurred. Import must be restarted.": [
         "予期しないエラーが発生しました。インポートを再起動する必要があります。"
       ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } events.": [
-        "ファイル ${ formattedFilename } には ${ MAX_IMPORT_EVENTS_STRING } 以上のイベントが含まれています。"
-      ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "ファイル ${ formattedFilename } は無効なメソッドでインポートできません。"
       ],
@@ -2999,9 +2996,6 @@
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "このリンクはパスワードやクレジットカードなどの情報を盗もうとするウェブサイトに誘導している可能性があります。"
       ],
-      "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it."
-      ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "このリンクはホモグラフ攻撃の可能性があります。 これがあなたのアクセスしたいリンクであることを確認するか、開かないようにしてください。"
       ],
@@ -3181,6 +3175,9 @@
       "All day": [
         "終日"
       ],
+      "All-day event notifications": [
+        "終日イベントの通知"
+      ],
       "Attach screenshot(s)": [
         "スクリーンショットを添付"
       ],
@@ -3258,6 +3255,12 @@
       ],
       "Ends": [
         "繰り返しの終了条件"
+      ],
+      "Event duration": [
+        "イベントの期間"
+      ],
+      "Event notifications": [
+        "イベントの通知"
       ],
       "Event title": [
         "予定のタイトル"
@@ -4129,6 +4132,11 @@
       ],
       "With email notifications, you decide which events to be notified about and when.": [
         "メール通知で、予定をいつ通知するかを選択できます。"
+      ]
+    },
+    "Spotlight settings link": {
+      "Go to settings": [
+        "設定を開く"
       ]
     },
     "Storage": {
