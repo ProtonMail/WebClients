@@ -1065,6 +1065,11 @@
         "参与者已添加"
       ]
     },
+    "Adding expiration to a message will create an expiring message": {
+      "Expiring message": [
+        "过期邮件"
+      ]
+    },
     "Alert": {
       "By leaving now, some contacts may not be imported": [
         "如果现在离开，一些联系人可能无法导入"
@@ -1285,6 +1290,9 @@
       "${ participantName } asked for the latest updates to an event which does not exist in your calendar anymore.": [
         "${ participantName } 请求对您日历中已不存在的活动进行最新更新。"
       ],
+      "${ participantName } asked for the latest updates to an event which doesn't match your invitation details. Please verify the invitation details in your calendar.": [
+        "${ participantName } 要求与您的邀请详细信息不匹配的事件进行最新更新。 请验证日历中的邀请详细信息。"
+      ],
       "${ participantName } declined an invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } 拒绝了参加一次该活动的邀请，并为其提议了一个新时间。"
       ],
@@ -1462,6 +1470,12 @@
       "This invitation is out of date. The event has been updated.": [
         "此邀请已过期。活动已更新。"
       ],
+      "This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar.": [
+        "此新时间提议与您的邀请详细信息不符，请验证您日历中的邀请详情。"
+      ],
+      "This response doesn't match your invitation details. Please verify the invitation details in your calendar.": [
+        "此回复与您的邀请详细信息不符，请验证您日历中的邀请详情。"
+      ],
       "This response is out of date.": [
         "响应已过期"
       ],
@@ -1498,6 +1512,9 @@
       ],
       "Calendar is syncing": [
         "日历正在同步中"
+      ],
+      "Calendar is syncing: it may take several minutes for all of its events to show up.": [
+        "日历正在同步：可能需要几分钟的时间才能显示出所有的事件."
       ],
       "Calendar is too big": [
         "日历文件太大"
@@ -1546,6 +1563,63 @@
       ]
     },
     "color": {
+      "apple": [
+        "苹果"
+      ],
+      "blanched almond": [
+        "白杏仁"
+      ],
+      "caramel": [
+        "焦糖色"
+      ],
+      "dandelion": [
+        "蒲公英"
+      ],
+      "dim gray": [
+        "暗灰"
+      ],
+      "gainsboro": [
+        "淡灰色"
+      ],
+      "japanese laurel": [
+        "日本月桂"
+      ],
+      "kiwi": [
+        "猕猴桃"
+      ],
+      "lemon yellow": [
+        "柠檬黄"
+      ],
+      "maize": [
+        "玉米"
+      ],
+      "mughal green": [
+        "莫卧儿绿"
+      ],
+      "ocean": [
+        "海洋"
+      ],
+      "outer space": [
+        "外太空"
+      ],
+      "philippine gray": [
+        "菲律宾灰"
+      ],
+      "philippine silver": [
+        "菲律宾银"
+      ],
+      "pine": [
+        "松树"
+      ],
+      "pink": [
+        "粉色"
+      ],
+      "purple": [
+        "紫色"
+      ],
+      "soil": [
+        "土地"
+      ],
       "white": [
         "白色"
       ]
@@ -2722,6 +2796,9 @@
       "A group with this name already exists": [
         "已存在同名群组"
       ],
+      "A problem occurred, please try again": [
+        "出错了，请重试"
+      ],
       "Address primary private key not found": [
         "找不到地址主私钥"
       ],
@@ -2772,6 +2849,9 @@
       ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
         "取消选择至少 ${ calendarToFixCount } 个日历或者"
+      ],
+      "Domain not available, try again later": [
+        "域名不可用，请稍后再试"
       ],
       "Draft could not be saved. Try again.": [
         "草稿保存失败，请重试。"
@@ -2886,6 +2966,9 @@
       ],
       "Passwords do not match": [
         "密码不匹配"
+      ],
+      "Please activate your content search again": [
+        "请重新开启全文搜索"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "请修复高亮的冲突以继续。"
@@ -3333,6 +3416,9 @@
       ],
       "Inbox": [
         "收件箱"
+      ],
+      "Inbox - Default": [
+        "收件箱 - 默认"
       ],
       "Select a folder": [
         "选择文件夹"
@@ -3923,9 +4009,6 @@
       "Default email application": [
         "设为默认邮件应用"
       ],
-      "Delivered via SimpleLogin by Proton": [
-        "由 Proton 通过 SimpleLogin 提供"
-      ],
       "Disable message content search": [
         "禁用邮件全文搜索"
       ],
@@ -3940,6 +4023,9 @@
       ],
       "Don't forget to share the password with the recipient": [
         "别忘了把您设定的密码告诉收件人"
+      ],
+      "Downloading message ${ esProgress } out of ${ totalProgressToShow }": [
+        "正在下载邮件：${ esProgress } 条 / 共 ${ totalProgressToShow } 条"
       ],
       "Draft": [
         "草稿"
@@ -4021,9 +4107,6 @@
       ],
       "Expires soon": [
         "即将过期"
-      ],
-      "Expiring message": [
-        "邮件有效期"
       ],
       "file attached": [
         "个附件"
@@ -4546,9 +4629,6 @@
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "此链接指向的网站可能会窃取您的密码、信用卡等信息。"
-      ],
-      "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "此链接可能使用了欺骗性域名，请确认可靠性后再打开。"
@@ -5832,6 +5912,11 @@
         "${ appName } 有新版本，请${ reloadButton }。"
       ]
     },
+    "Message has been sent to the user via a SimpleLogin alias": {
+      "Delivered via SimpleLogin by Proton": [
+        "由 Proton 通过 SimpleLogin 提供"
+      ]
+    },
     "Message image": {
       "Image has not been loaded in order to protect your privacy.": [
         "为了保护您的隐私，图像未被加载。"
@@ -6486,6 +6571,11 @@
       ],
       "Sender's trusted keys verification failed": [
         "已信任的发件人密钥验证失败"
+      ]
+    },
+    "Sort": {
+      "Sort": [
+        "排序"
       ]
     },
     "Sort option": {

@@ -1065,6 +1065,11 @@
         "Peserta ditambahkan"
       ]
     },
+    "Adding expiration to a message will create an expiring message": {
+      "Expiring message": [
+        "Pesan kedaluwarsa"
+      ]
+    },
     "Alert": {
       "By leaving now, some contacts may not be imported": [
         "Dengan keluar sekarang, beberapa kontak mungkin tidak diimpor"
@@ -1464,6 +1469,9 @@
       ],
       "This invitation is out of date. The event has been updated.": [
         "Undangan ini kedaluwarsa. Acara telah diperbarui."
+      ],
+      "This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar.": [
+        "Waktu baru yang diajukan tidak sesuai dengan rincian undangan Anda. Mohon periksa ulang rincian undangan yang terdapat pada kalender Anda."
       ],
       "This response doesn't match your invitation details. Please verify the invitation details in your calendar.": [
         "Balasan ini tidak sesuai dengan rincian undangan Anda. Silakan verifikasi rincian undangan di kalender Anda."
@@ -4106,9 +4114,6 @@
       "Default email application": [
         "Aplikasi email default"
       ],
-      "Delivered via SimpleLogin by Proton": [
-        "Disampaikan via SimpleLogin oleh Proton"
-      ],
       "Disable message content search": [
         "Nonaktifkan pencarian konten pesan"
       ],
@@ -4207,9 +4212,6 @@
       ],
       "Expires soon": [
         "Akan segera kedaluwarsa"
-      ],
-      "Expiring message": [
-        "Pesan akan kedaluwarsa"
       ],
       "file attached": [
         "file terlampir"
@@ -4732,9 +4734,6 @@
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Tautan ini tertuju pada situs web yang dapat mencuri informasi pribadi Anda, seperti kata sandi dan rincian kartu kredit yang Anda miliki."
-      ],
-      "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Tautan ini mungkin serangan homograf. Mohon verifikasi tautan yang ingin Anda kunjungi, atau jangan kunjungi sama sekali."
@@ -6016,6 +6015,11 @@
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "Versi baru ${ appName } telah tersedia. ${ reloadButton }."
+      ]
+    },
+    "Message has been sent to the user via a SimpleLogin alias": {
+      "Delivered via SimpleLogin by Proton": [
+        "Disampaikan via SimpleLogin oleh Proton"
       ]
     },
     "Message image": {
