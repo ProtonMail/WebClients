@@ -8,7 +8,7 @@ import clsx from '@proton/utils/clsx';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { getRecipients as getConversationRecipients, getSenders } from '../../helpers/conversation';
-import { isMessage, isUnread } from '../../helpers/elements';
+import { getFirstSenderAddress, isMessage, isUnread } from '../../helpers/elements';
 import { isCustomLabel } from '../../helpers/labels';
 import { useRecipientLabel } from '../../hooks/contact/useRecipientLabel';
 import { Element } from '../../models/element';
@@ -63,7 +63,6 @@ const Item = ({
 }: Props) => {
     const [mailSettings] = useMailSettings();
     const [labels] = useLabels();
-
     const { shouldHighlight, getESDBStatus } = useEncryptedSearchContext();
     const { dbExists, esEnabled } = getESDBStatus();
     const useES = dbExists && esEnabled && shouldHighlight();
@@ -99,6 +98,8 @@ const Item = ({
 
     const ItemLayout = columnLayout ? ItemColumnLayout : ItemRowLayout;
     const unread = isUnread(element, labelID);
+    const firstSenderAddress = getFirstSenderAddress(element);
+    const displaySenderImage = !displayRecipients && !!element.DisplaySenderImage;
 
     const handleClick = (event: MouseEvent<HTMLDivElement>) => {
         const target = event.target as HTMLElement;
@@ -153,6 +154,7 @@ const Item = ({
                 <ItemCheckbox
                     ID={element.ID}
                     name={displayRecipients ? recipientsLabels[0] : sendersLabels[0]}
+                    email={displaySenderImage ? firstSenderAddress : ''}
                     checked={checked}
                     onChange={handleCheck}
                     compactClassName="mr0-75 stop-propagation"

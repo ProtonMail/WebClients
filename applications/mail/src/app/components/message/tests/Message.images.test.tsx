@@ -114,7 +114,7 @@ describe('Message images', () => {
     });
 
     it('should load correctly all elements other than images with proxy', async () => {
-        addApiMock(`images`, () => {
+        addApiMock(`core/v4/images`, () => {
             const response = {
                 headers: { get: jest.fn() },
                 blob: () => new Blob(),
@@ -205,7 +205,7 @@ describe('Message images', () => {
             },
         };
 
-        addApiMock(`images`, () => {
+        addApiMock(`core/v4/images`, () => {
             const error = new Error();
             (error as any).data = { Code: 2902, Error: 'TEST error message' };
             return Promise.reject(error);
