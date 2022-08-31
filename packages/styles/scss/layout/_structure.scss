@@ -119,7 +119,7 @@ html,
 	border-inline-start-width: 1px;
 	border-inline-end-width: 0;
 	box-shadow: var(--main-box-shadow);
-	background-color: transparent;
+	background: var(--background-norm);
 
 	&--bordered {
 		border-start-end-radius: var(--border-radius-md);
@@ -139,7 +139,6 @@ html,
 }
 
 .main-area {
-	background: var(--background-norm);
 	color: var(--text-norm);
 	overflow: auto;
 
