@@ -15,9 +15,10 @@ import { isConversationMode } from '../../helpers/mailSettings';
 import { setParamsInLocation } from '../../helpers/mailboxUrl';
 import { Element } from '../../models/element';
 import { Filter } from '../../models/tools';
-import { useMoveToFolder, useStar } from '../useApplyLabels';
-import { MARK_AS_STATUS, useMarkAs } from '../useMarkAs';
-import { usePermanentDelete } from '../usePermanentDelete';
+import { MARK_AS_STATUS, useMarkAs } from '../actions/useMarkAs';
+import { useMoveToFolder } from '../actions/useMoveToFolder';
+import { usePermanentDelete } from '../actions/usePermanentDelete';
+import { useStar } from '../actions/useStar';
 import { useGetElementsFromIDs } from './useElements';
 import { useFolderNavigationHotkeys } from './useFolderNavigationHotkeys';
 
@@ -120,7 +121,7 @@ export const useMailboxHotkeys = (
         const folderName = getFolderName(LabelID, folders);
         const fromLabelID = labelIDs?.includes(labelID) ? INBOX : labelID;
 
-        await moveToFolder(elements, LabelID, folderName, fromLabelID);
+        await moveToFolder(elements, LabelID, folderName, fromLabelID, false);
         if (elementIDForList) {
             handleBack();
         }

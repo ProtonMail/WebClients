@@ -1,16 +1,22 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
 import {
     Button,
+    Checkbox,
+    FeatureCode,
     FolderIcon,
     Icon,
     IconName,
     Mark,
+    PrimaryButton,
+    Radio,
     SearchInput,
     Tooltip,
+    classnames,
     generateUID,
+    useFeature,
     useFolders,
     useLoading,
     useModalState,
@@ -25,8 +31,9 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import { isMessage as testIsMessage } from '../../helpers/elements';
 import { getMessagesAuthorizedToMove } from '../../helpers/message/messages';
+import { useCreateFilters } from '../../hooks/actions/useCreateFilters';
+import { useMoveToFolder } from '../../hooks/actions/useMoveToFolder';
 import { useGetElementsFromIDs } from '../../hooks/mailbox/useElements';
-import { useMoveToFolder } from '../../hooks/useApplyLabels';
 import { Breakpoints } from '../../models/utils';
 
 import './MoveDropdown.scss';
@@ -62,14 +69,18 @@ interface Props {
 
 const MoveDropdown = ({ selectedIDs, labelID, conversationMode, onClose, onLock, onBack, breakpoints }: Props) => {
     const [uid] = useState(generateUID('move-dropdown'));
+    const contextFilteringFeature = useFeature(FeatureCode.ContextFiltering);
 
     const [loading, withLoading] = useLoading();
     const [folders = []] = useFolders();
     const [search, updateSearch] = useState('');
+    const [selectedFolder, setSelectedFolder] = useState<Folder | undefined>();
+    const [always, setAlways] = useState(false);
     const [containFocus, setContainFocus] = useState(true);
     const normSearch = normalize(search, true);
     const getElementsFromIDs = useGetElementsFromIDs();
     const { moveToFolder, moveScheduledModal, moveAllModal, moveToSpamModal } = useMoveToFolder(setContainFocus);
+    const { getSendersToFilter } = useCreateFilters();
 
     const [editLabelProps, setEditLabelModalOpen] = useModalState();
 
@@ -80,6 +91,10 @@ const MoveDropdown = ({ selectedIDs, labelID, conversationMode, onClose, onLock,
     const isMessage = testIsMessage(elements[0]);
     const canMoveToInbox = isMessage ? !!getMessagesAuthorizedToMove(elements as Message[], INBOX).length : true;
     const canMoveToSpam = isMessage ? !!getMessagesAuthorizedToMove(elements as Message[], SPAM).length : true;
+
+    const alwaysDisabled = useMemo(() => {
+        return !getSendersToFilter(elements).length;
+    }, [getSendersToFilter, elements]);
 
     const list = treeview
         .reduce<FolderItem[]>((acc, folder) => folderReducer(acc, folder), [])
@@ -106,8 +121,8 @@ const MoveDropdown = ({ selectedIDs, labelID, conversationMode, onClose, onLock,
             return normName.includes(normSearch);
         });
 
-    const handleMove = async (folder?: Folder) => {
-        await moveToFolder(elements, folder?.ID || '', folder?.Name || '', labelID);
+    const handleMove = async () => {
+        await moveToFolder(elements, selectedFolder?.ID || '', selectedFolder?.Name || '', labelID, always);
         onClose();
 
         if (!isMessage || !conversationMode) {
@@ -120,13 +135,24 @@ const MoveDropdown = ({ selectedIDs, labelID, conversationMode, onClose, onLock,
         setEditLabelModalOpen(true);
     };
 
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        await withLoading(handleMove());
+    };
+
     // The dropdown is several times in the view, native html ids has to be different each time
     const searchInputID = `${uid}-search`;
+    const alwaysCheckID = `${uid}-always`;
     const folderButtonID = (ID: string) => `${uid}-${ID}`;
     const autoFocusSearch = !breakpoints.isNarrow;
+    const applyDisabled = selectedFolder?.ID === undefined;
+
+    const alwaysTooltip = alwaysDisabled
+        ? c('Context filtering disabled').t`Your selection contains only yourself as sender`
+        : undefined;
 
     return (
-        <>
+        <form onSubmit={handleSubmit}>
             <div className="flex flex-justify-space-between flex-align-items-center m1 mb0">
                 <span className="text-bold" tabIndex={-2}>
                     {c('Label').t`Move to`}
@@ -164,14 +190,22 @@ const MoveDropdown = ({ selectedIDs, labelID, conversationMode, onClose, onLock,
                 <ul className="unstyled mt0 mb0">
                     {list.map((folder: FolderItem) => {
                         return (
-                            <li key={folder.ID} className="dropdown-item">
-                                <button
+                            <li
+                                key={folder.ID}
+                                className="dropdown-item dropdown-item-button relative cursor-pointer w100 flex flex-nowrap flex-align-items-center pt0-5 pb0-5 pl1 pr1"
+                            >
+                                <Radio
+                                    className="flex-item-noshrink"
                                     id={folderButtonID(folder.ID)}
+                                    name={uid}
+                                    checked={selectedFolder?.ID === folder.ID}
+                                    onChange={() => setSelectedFolder(folder)}
+                                    data-testid={`label-dropdown:folder-radio-${folder.Name}`}
+                                />
+                                <label
+                                    htmlFor={folderButtonID(folder.ID)}
                                     data-level={folder.level}
-                                    type="button"
-                                    disabled={loading}
-                                    className="dropdown-item-button w100 flex flex-nowrap flex-align-items-center pl1 pr1 pt0-5 pb0-5"
-                                    onClick={() => withLoading(handleMove(folder))}
+                                    className="flex flex-nowrap flex-align-items-center increase-click-surface flex-item-fluid"
                                     data-testid={`folder-dropdown:folder-${folder.Name}`}
                                 >
                                     <FolderIcon
@@ -182,7 +216,7 @@ const MoveDropdown = ({ selectedIDs, labelID, conversationMode, onClose, onLock,
                                     <span className="text-ellipsis" title={folder.Name}>
                                         <Mark value={search}>{folder.Name}</Mark>
                                     </span>
-                                </button>
+                                </label>
                             </li>
                         );
                     })}
@@ -193,10 +227,39 @@ const MoveDropdown = ({ selectedIDs, labelID, conversationMode, onClose, onLock,
                     )}
                 </ul>
             </div>
+            {contextFilteringFeature.feature?.Value === true && contextFilteringFeature.loading === false && (
+                <Tooltip title={alwaysTooltip}>
+                    <div className={classnames(['p1 pb0 border-top', alwaysDisabled && 'color-disabled'])}>
+                        <Checkbox
+                            id={alwaysCheckID}
+                            checked={always}
+                            disabled={alwaysDisabled}
+                            onChange={({ target }) => setAlways(target.checked)}
+                            data-testid="move-dropdown:always-move"
+                            data-prevent-arrow-navigation
+                        />
+                        <label htmlFor={alwaysCheckID} className="flex-item-fluid">
+                            {c('Label').t`Always move senders emails`}
+                        </label>
+                    </div>
+                </Tooltip>
+            )}
+            <div className="m1">
+                <PrimaryButton
+                    className="w100"
+                    loading={loading}
+                    disabled={applyDisabled}
+                    data-testid="move-dropdown:apply"
+                    data-prevent-arrow-navigation
+                    type="submit"
+                >
+                    {c('Action').t`Apply`}
+                </PrimaryButton>
+            </div>
             {moveScheduledModal}
             {moveAllModal}
             {moveToSpamModal}
-        </>
+        </form>
     );
 };
 

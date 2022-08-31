@@ -5,8 +5,8 @@ import { c } from 'ttag';
 import { Vr } from '@proton/atoms';
 import { Icon, ToolbarButton } from '@proton/components';
 
+import { MARK_AS_STATUS } from '../../hooks/actions/useMarkAs';
 import { useElementBreakpoints } from '../../hooks/useElementBreakpoints';
-import { MARK_AS_STATUS } from '../../hooks/useMarkAs';
 import { Filter, Sort } from '../../models/tools';
 import { Breakpoints } from '../../models/utils';
 import FilterActions from './FilterActions';

@@ -7,7 +7,7 @@ import { MailSettings } from '@proton/shared/lib/interfaces';
 import { Folder } from '@proton/shared/lib/interfaces/Folder';
 import { Label, LabelCount } from '@proton/shared/lib/interfaces/Label';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { hasAttachments as messageHasAttachments } from '@proton/shared/lib/mail/messages';
+import { getSender, hasAttachments as messageHasAttachments } from '@proton/shared/lib/mail/messages';
 import diff from '@proton/utils/diff';
 import unique from '@proton/utils/unique';
 
@@ -18,6 +18,7 @@ import { LabelIDsChanges } from '../models/event';
 import { Filter, SearchParameters, Sort } from '../models/tools';
 import {
     getLabelIDs as conversationGetLabelIDs,
+    getSenders as conversationGetSenders,
     getTime as conversationGetTime,
     hasAttachments as conversationHasAttachments,
     isUnread as conversationIsUnread,
@@ -190,4 +191,11 @@ export const getCurrentFolderIDs = (element: Element | undefined, customFoldersL
     };
     const customFolders = toMap(customFoldersList, 'ID');
     return Object.keys(labelIDs).filter((labelID) => standardFolders[labelID] || customFolders[labelID]) || '';
+};
+
+export const getSenders = (element: Element) => {
+    if (isMessage(element)) {
+        return [getSender(element as Message)];
+    }
+    return conversationGetSenders(element as Conversation);
 };

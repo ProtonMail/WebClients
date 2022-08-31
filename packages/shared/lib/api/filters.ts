@@ -7,10 +7,13 @@ export const addSieveFilter = ({ Name, Sieve, Version }: AddSieveFilterParams) =
     data: { Name, Sieve, Version },
 });
 
-export const addTreeFilter = ({ ID, Name, Status, Version, Simple, Tree, Sieve }: Filter) => ({
+export const addTreeFilter = (
+    { ID, Name, Status, Version, Simple, Tree, Sieve }: Filter,
+    Source?: 'AutoLabel' | 'AutoFolder'
+) => ({
     method: 'post',
     url: 'mail/v4/filters',
-    data: { ID, Name, Status, Version, Simple, Tree, Sieve },
+    data: { ID, Name, Status, Version, Simple, Tree, Sieve, Source },
 });
 
 export const queryFilters = () => ({
