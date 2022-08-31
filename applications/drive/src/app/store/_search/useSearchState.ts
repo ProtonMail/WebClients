@@ -10,30 +10,31 @@ import { useSearchLibrary } from '..';
 const useSearchState = () => {
     const [user] = useUser();
     const { getProgressRecorderRef, getESDBStatus } = useSearchLibrary();
-    const { isBuilding, isRefreshing } = getESDBStatus();
+    const { isEnablingEncryptedSearch, isRefreshing } = getESDBStatus();
     const [esState, setESState] = useState<ESIndexingState>(defaultESIndexingState);
 
     const abortProgressRef = useRef<AbortController>(new AbortController());
 
     const setProgress = async () => {
         while (!abortProgressRef.current.signal.aborted) {
+            const [esProgress, esTotal] = getProgressRecorderRef().current;
+            const endTime = performance.now();
+
+            const { estimatedMinutes, currentProgressValue } = await estimateIndexingProgress(
+                user.ID,
+                esProgress,
+                esTotal,
+                endTime,
+                esState,
+                false
+            );
+
             setESState((esState) => {
-                const [esProgress, esTotal] = getProgressRecorderRef().current;
-                const endTime = performance.now();
-
-                const { estimatedMinutes, currentProgressValue } = estimateIndexingProgress(
-                    user.ID,
-                    esProgress,
-                    esTotal,
-                    endTime,
-                    esState
-                );
-
                 return {
                     ...esState,
                     endTime,
                     esProgress,
-                    totalIndexingMessages: esTotal,
+                    totalIndexingItems: esTotal,
                     estimatedMinutes: estimatedMinutes || esState.estimatedMinutes,
                     currentProgressValue: currentProgressValue || esState.currentProgressValue,
                 };
@@ -44,13 +45,13 @@ const useSearchState = () => {
 
     const startProgress = async () => {
         abortProgressRef.current = new AbortController();
-        const [esPrevProgress, totalIndexingMessages] = getProgressRecorderRef().current;
+        const [esPrevProgress, totalIndexingItems] = getProgressRecorderRef().current;
         setESState((esState) => {
             return {
                 ...esState,
                 startTime: performance.now(),
                 esPrevProgress,
-                totalIndexingMessages,
+                totalIndexingItems,
             };
         });
         await wait(2 * SECOND);
@@ -63,12 +64,12 @@ const useSearchState = () => {
     };
 
     useEffect(() => {
-        if (isBuilding || isRefreshing) {
+        if (isEnablingEncryptedSearch || isRefreshing) {
             void startProgress();
         } else {
             stopProgress();
         }
-    }, [isBuilding, isRefreshing]);
+    }, [isEnablingEncryptedSearch, isRefreshing]);
 
     useEffect(() => {
         // Safety stop for situation when the whole component where
