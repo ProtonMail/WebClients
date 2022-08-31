@@ -125,7 +125,7 @@ export const getMailAppRoutes = ({
                         id: 'custom',
                     },
                     {
-                        text: c('Title').t`Spam filters`,
+                        text: c('Title').t`Spam and block list`,
                         id: 'spam',
                     },
                 ],

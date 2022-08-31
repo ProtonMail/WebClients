@@ -216,6 +216,10 @@ export const updateConversation = (
 export const eventMessagesUpdates = (state: Draft<ConversationsState>, action: PayloadAction<ConversationEvent>) => {
     const { toCreate, toUpdate, toDelete } = action.payload;
 
+    if (toCreate.length === 0 && toUpdate.length === 0 && Object.keys(toDelete).length === 0) {
+        return;
+    }
+
     // Create and update conversation messages
     [...toCreate, ...toUpdate].forEach((messageEvent) => {
         const conversationState = getConversation(state, messageEvent.ConversationID);

@@ -1,7 +1,5 @@
 import { Annotation } from 'codemirror/addon/lint/lint';
 
-import { BLACKLIST_LOCATION, WHITELIST_LOCATION } from '@proton/shared/lib/constants';
-
 export enum FilterStatement {
     ALL = 'all',
     ANY = 'any',
@@ -138,7 +136,3 @@ export interface Filter {
     Sieve?: string;
     Tree?: any;
 }
-
-/* SpamList */
-
-export type WHITE_OR_BLACK_LOCATION = typeof WHITELIST_LOCATION | typeof BLACKLIST_LOCATION;
