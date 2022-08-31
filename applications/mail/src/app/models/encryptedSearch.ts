@@ -7,6 +7,7 @@ import { Filter, SearchParameters, Sort } from './tools';
 export type ESBaseMessage = Pick<
     Message,
     | 'ID'
+    | 'DisplaySenderImage'
     | 'Order'
     | 'ConversationID'
     | 'Subject'

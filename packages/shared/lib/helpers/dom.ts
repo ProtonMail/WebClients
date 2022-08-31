@@ -132,3 +132,31 @@ export const checkContrast = (node: ChildNode, window: Window): boolean => {
 export const getIsEventModified = (event: MouseEvent) => {
     return event.metaKey || event.altKey || event.ctrlKey || event.shiftKey;
 };
+
+export const isVisible = (element: HTMLElement | null) => {
+    if (!element) {
+        return false;
+    }
+
+    const style = getComputedStyle(element);
+    const { offsetWidth, offsetHeight } = element;
+    const { width, height } = element.getBoundingClientRect();
+
+    if (style.display === 'none') {
+        return false;
+    }
+
+    if (style.visibility !== 'visible') {
+        return false;
+    }
+
+    if ((style.opacity as any) === 0) {
+        return false;
+    }
+
+    if (offsetWidth + offsetHeight + height + width === 0) {
+        return false;
+    }
+
+    return true;
+};
