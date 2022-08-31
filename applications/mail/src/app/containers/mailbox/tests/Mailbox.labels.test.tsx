@@ -187,6 +187,9 @@ describe('Mailbox labels actions', () => {
             if (folderButton) {
                 fireEvent.click(folderButton);
             }
+
+            const moveDropdownApply = getByTestId('move-dropdown:apply');
+            fireEvent.click(moveDropdownApply);
         };
 
         it('should move two conversations in a another folder', async () => {

@@ -6,7 +6,7 @@ import { c } from 'ttag';
 import { AlertModal, Button, ErrorButton, useApi, useEventManager, useModalState } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
-import { moveAll } from '../logic/elements/elementsActions';
+import { moveAll } from '../../logic/elements/elementsActions';
 
 export const useMoveAll = () => {
     const api = useApi();

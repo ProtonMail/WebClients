@@ -6,12 +6,15 @@ import { c } from 'ttag';
 import {
     Button,
     Checkbox,
+    FeatureCode,
     Icon,
     Mark,
     PrimaryButton,
     SearchInput,
     Tooltip,
+    classnames,
     generateUID,
+    useFeature,
     useLabels,
     useLoading,
     useModalState,
@@ -25,8 +28,10 @@ import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
 
 import { getLabelIDs } from '../../helpers/elements';
 import { getStandardFolders } from '../../helpers/labels';
+import { useApplyLabels } from '../../hooks/actions/useApplyLabels';
+import { useCreateFilters } from '../../hooks/actions/useCreateFilters';
+import { useMoveToFolder } from '../../hooks/actions/useMoveToFolder';
 import { useGetElementsFromIDs } from '../../hooks/mailbox/useElements';
-import { useApplyLabels, useMoveToFolder } from '../../hooks/useApplyLabels';
 import { Element } from '../../models/element';
 import { Breakpoints } from '../../models/utils';
 
@@ -82,15 +87,21 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
     const [labels = []] = useLabels();
 
     const labelIDs = labels.map(({ ID }) => ID);
+    const contextFilteringFeature = useFeature(FeatureCode.ContextFiltering);
+    const displayContextFiltering =
+        contextFilteringFeature.feature?.Value === true && contextFilteringFeature.loading === false;
+
     const [uid] = useState(generateUID('label-dropdown'));
     const [loading, withLoading] = useLoading();
     const [search, updateSearch] = useState('');
     const [containFocus, setContainFocus] = useState(true);
     const [lastChecked, setLastChecked] = useState(''); // Store ID of the last label ID checked
     const [alsoArchive, updateAlsoArchive] = useState(false);
+    const [always, setAlways] = useState(false);
     const getElementsFromIDs = useGetElementsFromIDs();
     const applyLabels = useApplyLabels();
     const { moveToFolder, moveScheduledModal, moveAllModal, moveToSpamModal } = useMoveToFolder(setContainFocus);
+    const { getSendersToFilter } = useCreateFilters();
 
     const [editLabelProps, setEditLabelModalOpen] = useModalState();
 
@@ -98,7 +109,35 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
         () => getInitialState(labels, getElementsFromIDs(selectedIDs)),
         [selectedIDs, labels, labelID]
     );
+
     const [selectedLabelIDs, setSelectedLabelIDs] = useState<SelectionState>(initialState);
+
+    const changes = useMemo(() => {
+        const elements = getElementsFromIDs(selectedIDs);
+        const initialState = getInitialState(labels, elements);
+        return Object.keys(selectedLabelIDs).reduce((acc, LabelID) => {
+            if (selectedLabelIDs[LabelID] === LabelState.On && initialState[LabelID] !== LabelState.On) {
+                acc[LabelID] = true;
+            }
+            if (selectedLabelIDs[LabelID] === LabelState.Off && initialState[LabelID] !== LabelState.Off) {
+                acc[LabelID] = false;
+            }
+            return acc;
+        }, {} as { [labelID: string]: boolean });
+    }, [selectedIDs, initialState, selectedLabelIDs]);
+
+    const alwaysDisabled = useMemo(() => {
+        return (
+            !getSendersToFilter(getElementsFromIDs(selectedIDs)).length ||
+            Object.values(changes).every((value) => !value)
+        );
+    }, [getSendersToFilter, selectedIDs, changes]);
+
+    useEffect(() => {
+        if (alwaysDisabled && always) {
+            setAlways(false);
+        }
+    }, [alwaysDisabled, always]);
 
     useEffect(() => onLock(!containFocus), [containFocus]);
 
@@ -115,6 +154,7 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
     // The dropdown is several times in the view, native html ids has to be different each time
     const searchInputID = `${uid}-search`;
     const archiveCheckID = `${uid}-archive`;
+    const alwaysCheckID = `${uid}-always`;
     const labelCheckID = (ID: string) => `${uid}-${ID}`;
     const areSameLabels = isDeepEqual(initialState, selectedLabelIDs);
     const applyDisabled = areSameLabels && !alsoArchive;
@@ -128,37 +168,25 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
         return normName.includes(normSearch);
     });
 
-    const handleApply = async (selection = selectedLabelIDs) => {
-        const areSameLabels = isDeepEqual(initialState, selection);
+    const handleApply = async () => {
+        const elements = getElementsFromIDs(selectedIDs);
+        const areSameLabels = isDeepEqual(initialState, selectedLabelIDs);
 
         const promises = [];
-        const elements = getElementsFromIDs(selectedIDs);
 
         if (!areSameLabels) {
-            const initialState = getInitialState(labels, elements);
-            const changes = Object.keys(selection).reduce((acc, LabelID) => {
-                if (selection[LabelID] === LabelState.On && initialState[LabelID] !== LabelState.On) {
-                    acc[LabelID] = true;
-                }
-                if (selection[LabelID] === LabelState.Off && initialState[LabelID] !== LabelState.Off) {
-                    acc[LabelID] = false;
-                }
-                return acc;
-            }, {} as { [labelID: string]: boolean });
-            promises.push(applyLabels(elements, changes));
+            promises.push(applyLabels(elements, changes, always));
         }
 
         if (alsoArchive) {
             const folderName = getStandardFolders()[MAILBOX_IDENTIFIERS.archive].name;
             const fromLabelID = labelIDs.includes(labelID) ? MAILBOX_IDENTIFIERS.inbox : labelID;
-            promises.push(moveToFolder(elements, MAILBOX_IDENTIFIERS.archive, folderName, fromLabelID));
+            promises.push(moveToFolder(elements, MAILBOX_IDENTIFIERS.archive, folderName, fromLabelID, false));
         }
 
         await Promise.all(promises);
         onClose();
     };
-
-    const handleClickIcon = (labelID: string) => () => handleApply({ [labelID]: LabelState.On });
 
     const applyCheck = (labelIDs: string[], selected: boolean) => {
         const update = labelIDs.reduce((acc, ID) => {
@@ -199,6 +227,10 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
         e.preventDefault();
         await withLoading(handleApply());
     };
+
+    const alwaysTooltip = alwaysDisabled
+        ? c('Context filtering disabled').t`Your selection contains only yourself as sender`
+        : undefined;
 
     return (
         <form onSubmit={handleSubmit}>
@@ -247,6 +279,14 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
                             key={ID}
                             className="dropdown-item dropdown-item-button relative cursor-pointer w100 flex flex-nowrap flex-align-items-center pt0-5 pb0-5 pl1 pr1"
                         >
+                            <Checkbox
+                                className="flex-item-noshrink"
+                                id={labelCheckID(ID)}
+                                checked={selectedLabelIDs[ID] === LabelState.On}
+                                indeterminate={selectedLabelIDs[ID] === LabelState.Indeterminate}
+                                onChange={handleCheck(ID)}
+                                data-testid={`label-dropdown:label-checkbox-${Name}`}
+                            />
                             <label
                                 htmlFor={labelCheckID(ID)}
                                 title={Name}
@@ -257,21 +297,12 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
                                     name="circle-filled"
                                     size={16}
                                     color={Color}
-                                    className="flex-item-noshrink relative ml0-25 mr0-5"
-                                    onClick={handleClickIcon(ID)}
+                                    className="flex-item-noshrink relative ml0-5 mr0-5"
                                 />
                                 <span className="text-ellipsis">
                                     <Mark value={search}>{Name}</Mark>
                                 </span>
                             </label>
-                            <Checkbox
-                                className="flex-item-noshrink"
-                                id={labelCheckID(ID)}
-                                checked={selectedLabelIDs[ID] === LabelState.On}
-                                indeterminate={selectedLabelIDs[ID] === LabelState.Indeterminate}
-                                onChange={handleCheck(ID)}
-                                data-testid={`label-dropdown:label-checkbox-${Name}`}
-                            />
                         </li>
                     ))}
                     {list.length === 0 && (
@@ -281,7 +312,24 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
                     )}
                 </ul>
             </div>
-            <div className="flex m1 mb0">
+            {displayContextFiltering && (
+                <Tooltip title={alwaysTooltip}>
+                    <div className={classnames(['p1 border-top', alwaysDisabled && 'color-disabled'])}>
+                        <Checkbox
+                            id={alwaysCheckID}
+                            checked={always}
+                            disabled={alwaysDisabled}
+                            onChange={({ target }) => setAlways(target.checked)}
+                            data-testid="label-dropdown:always-move"
+                            data-prevent-arrow-navigation
+                        />
+                        <label htmlFor={alwaysCheckID} className="flex-item-fluid">
+                            {c('Label').t`Always label senders emails`}
+                        </label>
+                    </div>
+                </Tooltip>
+            )}
+            <div className={classnames([!displayContextFiltering && 'py1 border-top', 'flex ml1 mr1'])}>
                 <Checkbox
                     id={archiveCheckID}
                     checked={alsoArchive}

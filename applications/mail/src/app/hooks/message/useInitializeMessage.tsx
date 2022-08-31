@@ -38,9 +38,9 @@ import {
     documentInitializePending,
     load,
 } from '../../logic/messages/read/messagesReadActions';
+import { MARK_AS_STATUS, useMarkAs } from '../actions/useMarkAs';
 import { useGetAttachment } from '../useAttachment';
 import { useBase64Cache } from '../useBase64Cache';
-import { MARK_AS_STATUS, useMarkAs } from '../useMarkAs';
 import { useGetMessageKeys } from './useGetMessageKeys';
 import { useKeyVerification } from './useKeyVerification';
 import { useGetMessage } from './useMessage';

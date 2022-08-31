@@ -16,9 +16,9 @@ import {
 } from '@proton/components';
 import { emptyLabel as emptyLabelRequest } from '@proton/shared/lib/api/messages';
 
-import { isCustomLabel } from '../helpers/labels';
-import { backendActionFinished, backendActionStarted } from '../logic/elements/elementsActions';
-import { useOptimisticEmptyLabel } from './optimistic/useOptimisticEmptyLabel';
+import { isCustomLabel } from '../../helpers/labels';
+import { backendActionFinished, backendActionStarted } from '../../logic/elements/elementsActions';
+import { useOptimisticEmptyLabel } from '../optimistic/useOptimisticEmptyLabel';
 
 export const useEmptyLabel = () => {
     const { createNotification } = useNotifications();

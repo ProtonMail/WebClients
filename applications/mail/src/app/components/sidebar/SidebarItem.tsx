@@ -24,8 +24,9 @@ import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
 import { LABEL_IDS_TO_HUMAN } from '../../constants';
+import { useApplyLabels } from '../../hooks/actions/useApplyLabels';
+import { useMoveToFolder } from '../../hooks/actions/useMoveToFolder';
 import { useGetElementsFromIDs } from '../../hooks/mailbox/useElements';
-import { useApplyLabels, useMoveToFolder } from '../../hooks/useApplyLabels';
 import LocationAside from './LocationAside';
 
 const { ALL_MAIL, DRAFTS, ALL_DRAFTS, SENT, ALL_SENT, SCHEDULED } = MAILBOX_LABEL_IDS;
@@ -76,7 +77,7 @@ const SidebarItem = ({
 
     const [refreshing, withRefreshing] = useLoading(false);
 
-    const applyLabel = useApplyLabels();
+    const applyLabels = useApplyLabels();
     const { moveToFolder, moveScheduledModal, moveAllModal, moveToSpamModal } = useMoveToFolder();
 
     const humanID = LABEL_IDS_TO_HUMAN[labelID as MAILBOX_LABEL_IDS]
@@ -110,9 +111,9 @@ const SidebarItem = ({
         (itemIDs) => {
             const elements = getElementsFromIDs(itemIDs);
             if (isFolder) {
-                void moveToFolder(elements, labelID, text, currentLabelID);
+                void moveToFolder(elements, labelID, text, currentLabelID, false);
             } else {
-                void applyLabel(elements, { [labelID]: true });
+                void applyLabels(elements, { [labelID]: true }, false);
             }
         }
     );
