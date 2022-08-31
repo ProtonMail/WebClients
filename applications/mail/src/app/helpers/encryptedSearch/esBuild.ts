@@ -1,10 +1,10 @@
+import { CachedItem, ESCache, isTimepointSmaller } from '@proton/encrypted-search';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { Api } from '@proton/shared/lib/interfaces';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
-import { localisedForwardFlags } from '../../constants';
 import { GetMessageKeys } from '../../hooks/message/useGetMessageKeys';
-import { ESBaseMessage, ESMessage } from '../../models/encryptedSearch';
+import { ESBaseMessage, ESMessage, ESMessageContent } from '../../models/encryptedSearch';
 import { locateBlockquote } from '../message/messageBlockquote';
 import { decryptMessage } from '../message/messageDecrypt';
 import { toText } from '../parserHtml';
@@ -50,10 +50,10 @@ const cleanText = (text: string, removeQuote: boolean) => {
 };
 
 /**
- * Turns a Message into a ESBaseMessage
+ * Turn a range of supersets of the ESBaseMessage interface into an ESBaseMessage object
  */
-const prepareMessageMetadata = (message: Message | ESMessage) => {
-    const messageForSearch: ESBaseMessage = {
+export const getBaseMessage = (message: Message | ESMessage) => {
+    const baseMessage: ESBaseMessage = {
         ID: message.ID,
         ConversationID: message.ConversationID,
         Subject: message.Subject,
@@ -75,18 +75,33 @@ const prepareMessageMetadata = (message: Message | ESMessage) => {
         Order: message.Order,
         AttachmentInfo: message.AttachmentInfo,
     };
-    return messageForSearch;
+    return baseMessage;
 };
 
 /**
- * Compare the subject to a set of known translations of the Fw: flag and decide
- * if the message is a forwarded one
+ * Check whether a message is first in its conversation, i.e. whether it is
+ * the oldest among all messages in the conversation
  */
-export const isMessageForwarded = (subject: string | undefined) => {
-    if (!subject) {
-        return false;
+const isFirst = (message: Message, esCache: Map<string, CachedItem<ESBaseMessage, unknown>>) => {
+    const { ConversationID, Time, Order, ID } = message;
+    const timepoint: [number, number] = [Time, Order];
+
+    const values = esCache.values();
+    let value = values.next();
+
+    while (!value.done) {
+        const { metadata } = value.value;
+        if (
+            metadata.ConversationID === ConversationID &&
+            metadata.ID !== ID &&
+            isTimepointSmaller([metadata.Time, metadata.Order], timepoint)
+        ) {
+            return false;
+        }
+        value = values.next();
     }
-    return localisedForwardFlags.some((fwFlag) => subject.slice(0, fwFlag.length).toLocaleLowerCase() === fwFlag);
+
+    return true;
 };
 
 /**
@@ -97,40 +112,30 @@ export const fetchMessage = async (
     api: Api,
     getMessageKeys: GetMessageKeys,
     signal?: AbortSignal,
-    messageMetadata?: Message
-): Promise<ESMessage | undefined> => {
+    esCacheRef?: React.MutableRefObject<ESCache<ESBaseMessage, unknown>>
+): Promise<ESMessageContent | undefined> => {
     const message = await queryMessage(api, messageID, signal);
     if (!message) {
-        // If a permanent error happened and metadata was given, the returned
-        // ESMessage is as if decryption failed
-        if (messageMetadata) {
-            return {
-                ...prepareMessageMetadata(messageMetadata),
-                decryptionError: true,
-            };
-        }
-        // Otherwise an undefined message is returned
-        return;
+        throw new Error('Message fetching failed');
     }
 
     let decryptedSubject: string | undefined;
     let decryptedBody: string | undefined;
-    let decryptionError = true;
     let mimetype: MIME_TYPES | undefined;
     try {
         const keys = await getMessageKeys(message);
         const decryptionResult = await decryptMessage(message, keys.privateKeys, undefined);
         if (!decryptionResult.errors) {
             ({ decryptedSubject, decryptedBody, mimetype } = decryptionResult);
-            decryptionError = false;
         }
     } catch (error: any) {
         // Decryption can legitimately fail if there are inactive keys. In this
         // case the above three variables are left undefined
+        return;
     }
 
-    // Quotes are removed for all sent messages, and all other messages apart from forwarded ones
-    const removeQuote = message.LabelIDs.includes('2') || !isMessageForwarded(message.Subject);
+    // Quotes are removed for all messages that are not first in their conversation
+    const removeQuote = !!esCacheRef && !isFirst(message, esCacheRef.current.esCache);
 
     const cleanDecryptedBody =
         typeof decryptedBody === 'string'
@@ -139,12 +144,12 @@ export const fetchMessage = async (
                 : decryptedBody
             : undefined;
 
-    const cachedMessage: ESMessage = {
-        ...prepareMessageMetadata(message),
+    const content: ESMessageContent = {
         decryptedBody: cleanDecryptedBody,
         decryptedSubject,
-        decryptionError,
     };
 
-    return cachedMessage;
+    if (typeof content.decryptedBody === 'string' || typeof content.decryptedSubject === 'string') {
+        return content;
+    }
 };
