@@ -7,6 +7,7 @@ export * from './Checklist';
 export * from './Domain';
 export * from './EncryptionPreferences';
 export * from './Hotkeys';
+export * from './IncomingDefault';
 export * from './Key';
 export * from './KeySalt';
 export * from './Label';
