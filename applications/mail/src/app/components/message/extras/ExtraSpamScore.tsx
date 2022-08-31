@@ -13,9 +13,8 @@ import {
 } from '@proton/components';
 import { markAsHam } from '@proton/shared/lib/api/messages';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { getBlogURL, getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
+import { isAutoFlaggedPhishing, isDMARCValidationFailure, isManualFlaggedHam } from '@proton/shared/lib/mail/messages';
 
 import { MessageStateWithData } from '../../../logic/messages/messagesTypes';
 
@@ -25,14 +24,14 @@ interface Props {
 
 const ExtraSpamScore = ({ message }: Props) => {
     const [loading, withLoading] = useLoading();
-    const { Flags, LabelIDs = [] } = message.data || {};
+    const { LabelIDs = [] } = message.data || {};
     const { call } = useEventManager();
     const api = useApi();
     const { createNotification } = useNotifications();
 
     const [spamScoreModalProps, setSpamScoreModalOpen] = useModalState();
 
-    if (hasBit(Flags, MESSAGE_FLAGS.FLAG_DMARC_FAIL)) {
+    if (isDMARCValidationFailure(message.data)) {
         return (
             <div className="bg-norm rounded px0-5 py0-25 mb0-85 flex flex-nowrap">
                 <Icon name="exclamation-circle-filled" className="flex-item-noshrink mt0-4 ml0-2 color-danger" />
@@ -50,8 +49,8 @@ const ExtraSpamScore = ({ message }: Props) => {
     }
 
     if (
-        hasBit(Flags, MESSAGE_FLAGS.FLAG_PHISHING_AUTO) &&
-        (!hasBit(Flags, MESSAGE_FLAGS.FLAG_HAM_MANUAL) || LabelIDs.includes(MAILBOX_LABEL_IDS.SPAM))
+        isAutoFlaggedPhishing(message.data) &&
+        (!isManualFlaggedHam(message.data) || LabelIDs.includes(MAILBOX_LABEL_IDS.SPAM))
     ) {
         const markAsLegitimate = async () => {
             await api(markAsHam(message.data.ID));

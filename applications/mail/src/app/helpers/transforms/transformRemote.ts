@@ -2,7 +2,7 @@ import { IMAGE_PROXY_FLAGS } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import generateUID from '@proton/shared/lib/helpers/generateUID';
 import { MailSettings } from '@proton/shared/lib/interfaces';
-import { isDraft } from '@proton/shared/lib/mail/messages';
+import { isDMARCValidationFailure, isDraft } from '@proton/shared/lib/mail/messages';
 
 import { WHITE_LISTED_ADDRESSES } from '../../constants';
 import { MessageRemoteImage, MessageState } from '../../logic/messages/messagesTypes';
@@ -62,7 +62,8 @@ export const transformRemote = (
     const showRemoteImages =
         message.messageImages?.showRemoteImages ||
         hasShowRemote(mailSettings) ||
-        WHITE_LISTED_ADDRESSES.includes(message.data?.Sender?.Address || '');
+        (WHITE_LISTED_ADDRESSES.includes(message.data?.Sender?.Address || '') &&
+            !isDMARCValidationFailure(message.data));
 
     const draft = isDraft(message.data);
 

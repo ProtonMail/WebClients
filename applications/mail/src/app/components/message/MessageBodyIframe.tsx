@@ -5,10 +5,8 @@ import { c } from 'ttag';
 
 import { Icon, Tooltip, classnames } from '@proton/components';
 import { useLinkHandler } from '@proton/components/hooks/useLinkHandler';
-import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { MailSettings } from '@proton/shared/lib/interfaces';
-import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
-import { hasAttachments } from '@proton/shared/lib/mail/messages';
+import { hasAttachments, isAutoFlaggedPhishing } from '@proton/shared/lib/mail/messages';
 
 import { useMailboxContainerContext } from '../../containers/mailbox/MailboxContainerProvider';
 import { MessageState } from '../../logic/messages/messagesTypes';
@@ -92,7 +90,7 @@ const MessageBodyIframe = ({
         onMailTo,
         startListening: initStatus === 'done' && iframeRootDivRef.current !== undefined,
         isOutside,
-        isPhishingAttempt: hasBit(message.data?.Flags, MESSAGE_FLAGS.FLAG_PHISHING_AUTO),
+        isPhishingAttempt: isAutoFlaggedPhishing(message.data),
     });
 
     useIframeDispatchEvents(initStatus === 'done', iframeRef, onFocus);
