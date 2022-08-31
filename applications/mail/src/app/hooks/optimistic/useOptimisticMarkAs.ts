@@ -21,9 +21,9 @@ import { optimisticMarkAs as optimisticMarkAsMessageAction } from '../../logic/m
 import { Conversation } from '../../models/conversation';
 import { Element } from '../../models/element';
 import { CacheEntry } from '../../models/tools';
+import { MARK_AS_STATUS } from '../actions/useMarkAs';
 import { useGetConversation } from '../conversation/useConversation';
 import { useGetElementByID } from '../mailbox/useElements';
-import { MARK_AS_STATUS } from '../useMarkAs';
 
 export type MarkAsChanges = { status: MARK_AS_STATUS };
 

@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { Icon, IconSize, Tooltip, classnames, useLoading, useMailSettings } from '@proton/components';
 
 import { isMessage, isStarred as testIsStarred } from '../../helpers/elements';
-import { useStar } from '../../hooks/useApplyLabels';
+import { useStar } from '../../hooks/actions/useStar';
 import { Element } from '../../models/element';
 
 interface Props {

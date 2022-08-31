@@ -6,8 +6,9 @@ import { Button, ButtonGroup, Icon, Tooltip, classnames, useLoading } from '@pro
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
 import { isMessage, isStarred as testIsStarred, isUnread as testIsUnread } from '../../helpers/elements';
-import { useMoveToFolder, useStar } from '../../hooks/useApplyLabels';
-import { MARK_AS_STATUS, useMarkAs } from '../../hooks/useMarkAs';
+import { MARK_AS_STATUS, useMarkAs } from '../../hooks/actions/useMarkAs';
+import { useMoveToFolder } from '../../hooks/actions/useMoveToFolder';
+import { useStar } from '../../hooks/actions/useStar';
 import { Element } from '../../models/element';
 
 const { READ, UNREAD } = MARK_AS_STATUS;
@@ -51,12 +52,12 @@ const ItemHoverButtons = ({
 
     const handleArchive = (event: MouseEvent) => {
         event.stopPropagation();
-        void moveToFolder([element], ARCHIVE, c('Title').t`Archive`, labelID);
+        void moveToFolder([element], ARCHIVE, c('Title').t`Archive`, labelID, false);
     };
 
     const handleTrash = (event: MouseEvent) => {
         event.stopPropagation();
-        void moveToFolder([element], TRASH, c('Title').t`Trash`, labelID);
+        void moveToFolder([element], TRASH, c('Title').t`Trash`, labelID, false);
     };
 
     const handleStar = (event: MouseEvent) => {

@@ -1,102 +1,34 @@
 import { Dispatch, SetStateAction, useCallback } from 'react';
-import { useDispatch } from 'react-redux';
-
 import { c, msgid } from 'ttag';
-
+import { useDispatch } from 'react-redux';
 import { classnames, useApi, useEventManager, useLabels, useMailSettings, useNotifications } from '@proton/components';
 import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
-import { labelConversations, unlabelConversations } from '@proton/shared/lib/api/conversations';
-import { updateSpamAction } from '@proton/shared/lib/api/mailSettings';
-import { undoActions } from '@proton/shared/lib/api/mailUndoActions';
-import { labelMessages, unlabelMessages } from '@proton/shared/lib/api/messages';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import { SpamAction } from '@proton/shared/lib/interfaces';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { isUnsubscribable } from '@proton/shared/lib/mail/messages';
+import { undoActions } from '@proton/shared/lib/api/mailUndoActions';
+import { labelMessages } from '@proton/shared/lib/api/messages';
+import { labelConversations } from '@proton/shared/lib/api/conversations';
 import isTruthy from '@proton/utils/isTruthy';
+import { SpamAction } from '@proton/shared/lib/interfaces';
+import { updateSpamAction } from '@proton/shared/lib/api/mailSettings';
 
-import MoveScheduledModal from '../components/message/modals/MoveScheduledModal';
-import MoveToSpamModal from '../components/message/modals/MoveToSpamModal';
-import MoveAllButton from '../components/notifications/MoveAllButton';
-import UndoActionNotification from '../components/notifications/UndoActionNotification';
-import { PAGE_SIZE } from '../constants';
-import { SUCCESS_NOTIFICATION_EXPIRATION } from '../constants';
-import { isMessage as testIsMessage } from '../helpers/elements';
-import { isLabel } from '../helpers/labels';
-import { getMessagesAuthorizedToMove } from '../helpers/message/messages';
-import { backendActionFinished, backendActionStarted } from '../logic/elements/elementsActions';
-import { Conversation } from '../models/conversation';
-import { Element } from '../models/element';
-import { useOptimisticApplyLabels } from './optimistic/useOptimisticApplyLabels';
+import { useOptimisticApplyLabels } from '../optimistic/useOptimisticApplyLabels';
 import { useMoveAll } from './useMoveAll';
+import MoveScheduledModal from '../../components/message/modals/MoveScheduledModal';
+import { Conversation } from '../../models/conversation';
+import { getMessagesAuthorizedToMove } from '../../helpers/message/messages';
+import { isMessage as testIsMessage } from '../../helpers/elements';
+import UndoActionNotification from '../../components/notifications/UndoActionNotification';
+import { PAGE_SIZE, SUCCESS_NOTIFICATION_EXPIRATION } from '../../constants';
+import { isLabel } from '../../helpers/labels';
+import { backendActionFinished, backendActionStarted } from '../../logic/elements/elementsActions';
+import { Element } from '../../models/element';
+import MoveAllButton from '../../components/notifications/MoveAllButton';
+import MoveToSpamModal from '../../components/message/modals/MoveToSpamModal';
+import { useCreateFilters } from './useCreateFilters';
 
 const { SPAM, TRASH, SCHEDULED, SENT, ALL_SENT, DRAFTS, ALL_DRAFTS, INBOX } = MAILBOX_LABEL_IDS;
-
-const getNotificationTextStarred = (isMessage: boolean, elementsCount: number) => {
-    if (isMessage) {
-        if (elementsCount === 1) {
-            return c('Success').t`Message marked as Starred.`;
-        }
-        return c('Success').ngettext(
-            msgid`${elementsCount} message marked as Starred.`,
-            `${elementsCount} messages marked as Starred.`,
-            elementsCount
-        );
-    }
-
-    if (elementsCount === 1) {
-        return c('Success').t`Conversation marked as Starred.`;
-    }
-    return c('Success').ngettext(
-        msgid`${elementsCount} conversation marked as Starred.`,
-        `${elementsCount} conversations marked as Starred.`,
-        elementsCount
-    );
-};
-
-const getNotificationTextRemoved = (isMessage: boolean, elementsCount: number, labelName: string) => {
-    if (isMessage) {
-        if (elementsCount === 1) {
-            return c('Success').t`Message removed from ${labelName}.`;
-        }
-        return c('Success').ngettext(
-            msgid`${elementsCount} message removed from ${labelName}.`,
-            `${elementsCount} messages removed from ${labelName}.`,
-            elementsCount
-        );
-    }
-
-    if (elementsCount === 1) {
-        return c('Success').t`Conversation removed from ${labelName}.`;
-    }
-    return c('Success').ngettext(
-        msgid`${elementsCount} conversation removed from ${labelName}.`,
-        `${elementsCount} conversations removed from ${labelName}.`,
-        elementsCount
-    );
-};
-
-const getNotificationTextAdded = (isMessage: boolean, elementsCount: number, labelName: string) => {
-    if (isMessage) {
-        if (elementsCount === 1) {
-            return c('Success').t`Message added to ${labelName}.`;
-        }
-        return c('Success').ngettext(
-            msgid`${elementsCount} message added to ${labelName}.`,
-            `${elementsCount} messages added to ${labelName}.`,
-            elementsCount
-        );
-    }
-
-    if (elementsCount === 1) {
-        return c('Success').t`Conversation added to ${labelName}.`;
-    }
-    return c('Success').ngettext(
-        msgid`${elementsCount} conversation added to ${labelName}.`,
-        `${elementsCount} conversations added to ${labelName}.`,
-        elementsCount
-    );
-};
 
 const joinSentences = (success: string, notAuthorized: string) => [success, notAuthorized].filter(isTruthy).join(' ');
 
@@ -189,103 +121,28 @@ const getNotificationTextMoved = (
     );
 };
 
-export const useApplyLabels = () => {
-    const api = useApi();
-    const { call, stop, start } = useEventManager();
-    const { createNotification } = useNotifications();
-    const [labels = []] = useLabels();
-    const optimisticApplyLabels = useOptimisticApplyLabels();
-    const dispatch = useDispatch();
+const getNotificationTextUnauthorized = (folderID?: string, fromLabelID?: string) => {
+    let notificationText = c('Error display when performing invalid move on message')
+        .t`This action cannot be performed`;
 
-    const applyLabels = useCallback(
-        async (elements: Element[], changes: { [labelID: string]: boolean }, silent = false) => {
-            if (!elements.length) {
-                return;
-            }
-
-            let undoing = false;
-
-            const isMessage = testIsMessage(elements[0]);
-            const labelAction = isMessage ? labelMessages : labelConversations;
-            const unlabelAction = isMessage ? unlabelMessages : unlabelConversations;
-            const changesKeys = Object.keys(changes);
-            const elementIDs = elements.map((element) => element.ID);
-            const rollbacks = {} as { [labelID: string]: () => void };
-
-            const handleDo = async () => {
-                let tokens = [];
-                try {
-                    // Stop the event manager to prevent race conditions
-                    stop();
-                    dispatch(backendActionStarted());
-                    tokens = await Promise.all(
-                        changesKeys.map(async (LabelID) => {
-                            rollbacks[LabelID] = optimisticApplyLabels(elements, { [LabelID]: changes[LabelID] });
-                            try {
-                                const action = changes[LabelID] ? labelAction : unlabelAction;
-                                const { UndoToken } = await api(action({ LabelID, IDs: elementIDs }));
-                                return UndoToken.Token;
-                            } catch (error: any) {
-                                rollbacks[LabelID]();
-                                throw error;
-                            }
-                        })
-                    );
-                } finally {
-                    dispatch(backendActionFinished());
-                    if (!undoing) {
-                        start();
-                        await call();
-                    }
-                }
-                return tokens;
-            };
-
-            // No await ==> optimistic
-            const promise = handleDo();
-
-            const handleUndo = async () => {
-                try {
-                    undoing = true;
-                    const tokens = await promise;
-                    // Stop the event manager to prevent race conditions
-                    stop();
-                    Object.values(rollbacks).forEach((rollback) => rollback());
-                    const filteredTokens = tokens.filter(isTruthy);
-                    await Promise.all(filteredTokens.map((token) => api(undoActions(token))));
-                } finally {
-                    start();
-                    await call();
-                }
-            };
-
-            let notificationText = c('Success').t`Labels applied.`;
-
-            const elementsCount = elementIDs.length;
-
-            if (changesKeys.length === 1) {
-                const labelName = labels.filter((l) => l.ID === changesKeys[0])[0]?.Name;
-
-                if (changesKeys[0] === MAILBOX_LABEL_IDS.STARRED) {
-                    notificationText = getNotificationTextStarred(isMessage, elementsCount);
-                } else if (!Object.values(changes)[0]) {
-                    notificationText = getNotificationTextRemoved(isMessage, elementsCount, labelName);
-                } else {
-                    notificationText = getNotificationTextAdded(isMessage, elementsCount, labelName);
-                }
-            }
-
-            if (!silent) {
-                createNotification({
-                    text: <UndoActionNotification onUndo={handleUndo}>{notificationText}</UndoActionNotification>,
-                    expiration: SUCCESS_NOTIFICATION_EXPIRATION,
-                });
-            }
-        },
-        [labels]
-    );
-
-    return applyLabels;
+    if (fromLabelID === SENT || fromLabelID === ALL_SENT) {
+        if (folderID === INBOX) {
+            notificationText = c('Error display when performing invalid move on message')
+                .t`Sent messages cannot be moved to Inbox`;
+        } else if (folderID === SPAM) {
+            notificationText = c('Error display when performing invalid move on message')
+                .t`Sent messages cannot be moved to Spam`;
+        }
+    } else if (fromLabelID === DRAFTS || fromLabelID === ALL_DRAFTS) {
+        if (folderID === INBOX) {
+            notificationText = c('Error display when performing invalid move on message')
+                .t`Drafts cannot be moved to Inbox`;
+        } else if (folderID === SPAM) {
+            notificationText = c('Error display when performing invalid move on message')
+                .t`Drafts cannot be moved to Spam`;
+        }
+    }
+    return notificationText;
 };
 
 export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolean>>) => {
@@ -296,6 +153,8 @@ export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolea
     const optimisticApplyLabels = useOptimisticApplyLabels();
     const [mailSettings] = useMailSettings();
     const dispatch = useDispatch();
+    const { getFilterActions } = useCreateFilters();
+
     let canUndo = true; // Used to not display the Undo button if moving only scheduled messages/conversations to trash
 
     const { moveAll, modal: moveAllModal } = useMoveAll();
@@ -369,6 +228,7 @@ export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolea
             folderID: string,
             folderName: string,
             fromLabelID: string,
+            createFilters: boolean,
             silent = false,
             askUnsub = true
         ) => {
@@ -396,37 +256,15 @@ export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolea
                 : elements;
             const elementIDs = authorizedToMove.map((element) => element.ID);
 
-            const getNotificationText = () => {
-                let notificationText = c('Error display when performing invalid move on message')
-                    .t`This action cannot be performed`;
-
-                if (fromLabelID === SENT || fromLabelID === ALL_SENT) {
-                    if (folderID === INBOX) {
-                        notificationText = c('Error display when performing invalid move on message')
-                            .t`Sent messages cannot be moved to Inbox`;
-                    } else if (folderID === SPAM) {
-                        notificationText = c('Error display when performing invalid move on message')
-                            .t`Sent messages cannot be moved to Spam`;
-                    }
-                } else if (fromLabelID === DRAFTS || fromLabelID === ALL_DRAFTS) {
-                    if (folderID === INBOX) {
-                        notificationText = c('Error display when performing invalid move on message')
-                            .t`Drafts cannot be moved to Inbox`;
-                    } else if (folderID === SPAM) {
-                        notificationText = c('Error display when performing invalid move on message')
-                            .t`Drafts cannot be moved to Spam`;
-                    }
-                }
-                return notificationText;
-            };
-
             if (!authorizedToMove.length) {
                 createNotification({
-                    text: getNotificationText(),
+                    text: getNotificationTextUnauthorized(folderID, fromLabelID),
                     type: 'error',
                 });
                 return;
             }
+
+            const { doCreateFilters, undoCreateFilters } = getFilterActions();
 
             let rollback = () => {};
 
@@ -437,9 +275,12 @@ export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolea
                     stop();
                     dispatch(backendActionStarted());
                     rollback = optimisticApplyLabels(authorizedToMove, { [folderID]: true }, true, [], fromLabelID);
-                    const { UndoToken } = await api(
-                        action({ LabelID: folderID, IDs: elementIDs, SpamAction: spamAction })
-                    );
+
+                    const [{ UndoToken }] = await Promise.all([
+                        api<{ UndoToken: { Token: string } }>(action({ LabelID: folderID, IDs: elementIDs, SpamAction: spamAction })),
+                        createFilters ? doCreateFilters(elements, [folderID], true) : undefined,
+                    ]);
+
                     // We are not checking ValidUntil since notification stay for few seconds after this action
                     token = UndoToken.Token;
                 } catch (error: any) {
@@ -474,7 +315,11 @@ export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolea
                         // Stop the event manager to prevent race conditions
                         stop();
                         rollback();
-                        await api(undoActions(token));
+
+                        await Promise.all([
+                            token !== undefined ? api(undoActions(token)) : undefined,
+                            createFilters ? undoCreateFilters() : undefined,
+                        ]);
                     } finally {
                         start();
                         await call();
@@ -511,46 +356,4 @@ export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolea
     );
 
     return { moveToFolder, moveScheduledModal, moveAllModal, moveToSpamModal };
-};
-
-export const useStar = () => {
-    const api = useApi();
-    const { call, stop, start } = useEventManager();
-    const optimisticApplyLabels = useOptimisticApplyLabels();
-    const dispatch = useDispatch();
-
-    const star = useCallback(async (elements: Element[], value: boolean) => {
-        if (!elements.length) {
-            return;
-        }
-
-        const isMessage = testIsMessage(elements[0]);
-        const labelAction = isMessage ? labelMessages : labelConversations;
-        const unlabelAction = isMessage ? unlabelMessages : unlabelConversations;
-        const action = value ? labelAction : unlabelAction;
-
-        let rollback = () => {};
-
-        try {
-            // Stop the event manager to prevent race conditions
-            stop();
-            dispatch(backendActionStarted());
-            rollback = optimisticApplyLabels(elements, { [MAILBOX_LABEL_IDS.STARRED]: value });
-            await api(
-                action({
-                    LabelID: MAILBOX_LABEL_IDS.STARRED,
-                    IDs: elements.map((element) => element.ID),
-                })
-            );
-        } catch (error: any) {
-            rollback();
-            throw error;
-        } finally {
-            dispatch(backendActionFinished());
-            start();
-            await call();
-        }
-    }, []);
-
-    return star;
 };
