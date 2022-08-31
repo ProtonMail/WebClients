@@ -26,7 +26,7 @@ const ColorPicker = <T extends ElementType>({ color = 'blue', onChange = noop, c
     const [uid] = useState(generateUID('dropdown'));
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
 
-    const colors = Object.entries(ACCENT_COLORNAMES).map(([value, getLabel]) => ({ value, label: getLabel() }));
+    const colors = Object.values(ACCENT_COLORNAMES).map(({ color, getName }) => ({ value: color, label: getName() }));
 
     return (
         <>

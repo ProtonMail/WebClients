@@ -68,7 +68,7 @@ export const validateDomain = (domain: string) => {
 /**
  * Split an email into local part plus domain.
  */
-export const getEmailParts = (email: string) => {
+export const getEmailParts = (email: string): [localPart: string, domain: string] => {
     const endIdx = email.lastIndexOf('@');
     if (endIdx === -1) {
         return [email, ''];

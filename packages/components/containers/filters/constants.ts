@@ -3,9 +3,6 @@ import { c } from 'ttag';
 import { ConditionComparator, ConditionType, FilterStatement } from './interfaces';
 import { SelectOption } from './modal/FilterActionsFormFolderRow';
 
-export const EMAIL_MODE = 'email';
-export const DOMAIN_MODE = 'domain';
-
 export const FILTER_VERSION = 2;
 
 export const getConditionTypeLabels = (type: ConditionType) => {
