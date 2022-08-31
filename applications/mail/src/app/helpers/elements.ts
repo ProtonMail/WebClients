@@ -199,3 +199,10 @@ export const getSenders = (element: Element) => {
     }
     return conversationGetSenders(element as Conversation);
 };
+
+export const getFirstSenderAddress = (element: Element) => {
+    const senders = getSenders(element);
+    const [sender] = senders;
+    const { Address = '' } = sender || {};
+    return Address;
+};

@@ -2,8 +2,7 @@ import { MouseEvent } from 'react';
 
 import { c } from 'ttag';
 
-import { Copy, useNotifications } from '@proton/components';
-import { getInitials } from '@proton/shared/lib/helpers/string';
+import { ContactImage, Copy, useNotifications } from '@proton/components';
 import { Recipient } from '@proton/shared/lib/interfaces';
 
 interface Props {
@@ -13,7 +12,6 @@ interface Props {
 }
 
 const RecipientDropdownItem = ({ label, recipient, closeDropdown }: Props) => {
-    const initial = getInitials(label);
     const { createNotification } = useNotifications();
 
     // Label value can contain :
@@ -40,13 +38,15 @@ const RecipientDropdownItem = ({ label, recipient, closeDropdown }: Props) => {
     return (
         <div className="flex flex-nowrap flex-align-items-center opacity-on-hover-container p0-5" onClick={handleClick}>
             <span className="item-icon flex flex-item-noshrink rounded mx0-5" aria-hidden="true">
-                <span className="mauto">{initial}</span>
+                <span className="mauto">
+                    <ContactImage email={recipient.Address} name={label} className="w100 h100 rounded" />
+                </span>
             </span>
             <div className="flex flex-column flex-item-fluid px0-5">
-                <span className="text-ellipsis" title={label}>
+                <span className="text-ellipsis user-select" title={label}>
                     {label}
                 </span>
-                {hasName && <span className="color-weak text-ellipsis">{`<${recipient.Address}>`}</span>}
+                {hasName && <span className="color-weak text-ellipsis user-select">{`<${recipient.Address}>`}</span>}
             </div>
             <Copy
                 value={recipient.Address}

@@ -58,4 +58,5 @@ export interface MailSettings {
     FontSize: number | null;
     SpamAction: SpamAction | null;
     BlockSenderConfirmation: BLOCK_SENDER_CONFIRMATION | null;
+    HideSenderImages: number;
 }
