@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { Vr } from '@proton/atoms/Vr';
 import { DropdownMenu, DropdownMenuButton, Icon } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
@@ -203,6 +204,7 @@ const MoreDropdown = ({
                     </DropdownMenu>
                 )}
             </ToolbarDropdown>
+            <Vr />
             {deleteAllModal}
             {moveAllModal}
         </>

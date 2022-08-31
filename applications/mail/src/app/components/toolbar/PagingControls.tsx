@@ -2,7 +2,6 @@ import { useLocation } from 'react-router';
 
 import { c } from 'ttag';
 
-import { Vr } from '@proton/atoms';
 import {
     DropdownMenu,
     DropdownMenuButton,
@@ -53,7 +52,6 @@ const PagingControls = ({ loading, page: inputPage, total: inputTotal, onPage: i
     if (narrowMode) {
         return (
             <>
-                <Vr />
                 <ToolbarDropdown
                     title={c('Action').t`Change page`}
                     content={String(page)}
@@ -96,7 +94,6 @@ const PagingControls = ({ loading, page: inputPage, total: inputTotal, onPage: i
 
     return (
         <>
-            <Vr />
             <ToolbarButton
                 disabled={loading || page <= 1}
                 title={c('Action').t`Previous page`}
