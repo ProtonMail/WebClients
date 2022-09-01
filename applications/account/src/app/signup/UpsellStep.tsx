@@ -95,7 +95,7 @@ const UpsellStep = ({
                                     disabled={loading}
                                     onClick={() => {
                                         setType('free');
-                                        withLoading(onPlan({}));
+                                        void withLoading(onPlan({}));
                                     }}
                                 >{c('new_plans: action').t`Continue with Free`}</Button>
                             }
@@ -137,7 +137,7 @@ const UpsellStep = ({
                                     disabled={loading}
                                     onClick={() => {
                                         setType('bundle');
-                                        withLoading(onPlan({ [upsellShortPlan.plan]: 1 }));
+                                        void withLoading(onPlan({ [upsellShortPlan.plan]: 1 }));
                                     }}
                                 >{c('new_plans: action').t`Get ${upsellShortPlan.title}`}</Button>
                             }
