@@ -85,6 +85,7 @@ const QuickReplyContainer = ({
                         disabled={!isReferenceMessageInitialized}
                         onKeyDown={handleOpenFromKeydown}
                         tabIndex={0}
+                        data-testid="quick-reply-container-button"
                     >
                         {replyToString}
                     </button>
