@@ -100,8 +100,7 @@ $item-container-row-padding-block: em(5) !default; // design wants 48px
 
 	&:hover {
 		z-index: 2;
-		box-shadow: var(--shadow-lifted);
-		transition-delay: 0.5s;
+		box-shadow: var(--shadow-norm);
 	}
 
 	&::after {
