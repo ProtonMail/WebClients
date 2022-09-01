@@ -1,4 +1,4 @@
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
 import { MAX_NAME_LENGTH } from '@proton/shared/lib/drive/constants';
 
@@ -26,7 +26,11 @@ const validateSpaceStart = (str: string) => {
 
 const validateNameLength = (str: string) => {
     return str.length > MAX_NAME_LENGTH
-        ? c('Validation Error').t`Name must be ${MAX_NAME_LENGTH} characters long at most`
+        ? c('Validation Error').ngettext(
+              msgid`Name must be ${MAX_NAME_LENGTH} character long at most`,
+              `Name must be ${MAX_NAME_LENGTH} characters long at most`,
+              MAX_NAME_LENGTH
+          )
         : undefined;
 };
 
