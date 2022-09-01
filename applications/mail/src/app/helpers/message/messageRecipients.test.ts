@@ -1,10 +1,13 @@
 import { INCOMING_DEFAULTS_LOCATION } from '@proton/shared/lib/constants';
-import { Address, IncomingDefault } from '@proton/shared/lib/interfaces';
+import { Address, IncomingDefault, SimpleMap } from '@proton/shared/lib/interfaces';
 import { Recipient } from '@proton/shared/lib/interfaces/Address';
-import { ContactGroup } from '@proton/shared/lib/interfaces/contacts';
+import { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 
 import { Conversation } from '../../models/conversation';
+import { MESSAGE_ACTIONS } from '../../constants';
+import { MessageState } from '../../logic/messages/messagesTypes';
 import { Element } from '../../models/element';
 import {
     findSender,
@@ -12,6 +15,8 @@ import {
     getRecipientGroupLabel,
     getRecipientLabel,
     getSendersToBlock,
+    getRecipients,
+    getReplyRecipientListAsString,
     recipientsToRecipientOrGroup,
 } from './messageRecipients';
 
@@ -22,6 +27,23 @@ const recipient4: Recipient = { Name: 'recipient4', Address: 'address4', Group: 
 const recipient5: Recipient = { Name: 'recipient5', Address: 'address5', Group: 'Group2' };
 const group1 = { ID: 'GroupID1', Name: 'GroupName1', Path: 'Group1' } as ContactGroup;
 const groupMap = { [group1.Path]: group1 };
+
+const fromAddress = 'from@protonmail.com';
+const fromName = 'From';
+const meAddress = 'me@protonmail.com';
+const meName = 'Me';
+const toAddress = 'to@protonmail.com';
+const toName = 'To';
+const ccAddress = 'cc@protonmail.com';
+const ccName = 'CC';
+const bccAddress = 'bcc@protonmail.com';
+const bccName = 'BCC';
+
+const fromRecipient = { Name: fromName, Address: fromAddress } as Recipient;
+const meRecipient = { Name: meName, Address: meAddress } as Recipient;
+const toRecipient = { Name: toName, Address: toAddress } as Recipient;
+const ccRecipient = { Name: ccName, Address: ccAddress } as Recipient;
+const bccRecipient = { Name: bccName, Address: bccAddress } as Recipient;
 
 describe('messageRecipients', () => {
     describe('findSender', () => {
@@ -194,6 +216,97 @@ describe('messageRecipients', () => {
             const senders = getSendersToBlock(elements, incomingDefaultsAddresses, addresses);
 
             expect(senders).toEqual(expectedSenders);
+        });
+    });
+
+    describe('getRecipients', () => {
+        it.each`
+            replyType                    | isSentMessage
+            ${MESSAGE_ACTIONS.REPLY}     | ${true}
+            ${MESSAGE_ACTIONS.REPLY}     | ${false}
+            ${MESSAGE_ACTIONS.REPLY_ALL} | ${true}
+            ${MESSAGE_ACTIONS.REPLY_ALL} | ${false}
+        `('should give the expected recipients', ({ replyType, isSentMessage }) => {
+            const referenceMessage = {
+                data: {
+                    ReplyTos: isSentMessage ? [meRecipient] : [fromRecipient],
+                    ToList: isSentMessage ? [toRecipient] : [meRecipient, toRecipient],
+                    CCList: [ccRecipient],
+                    BCCList: [bccRecipient],
+                    Flags: isSentMessage ? MESSAGE_FLAGS.FLAG_SENT : MESSAGE_FLAGS.FLAG_RECEIVED,
+                } as Partial<Message>,
+            } as MessageState;
+
+            const addresses = [{ DisplayName: meName, Email: meAddress } as Address];
+
+            const { ToList, CCList, BCCList } = getRecipients(referenceMessage, replyType, addresses);
+
+            if (replyType === MESSAGE_ACTIONS.REPLY) {
+                if (isSentMessage) {
+                    expect(ToList).toEqual([toRecipient]);
+                    expect(CCList).toEqual([]);
+                    expect(BCCList).toEqual([]);
+                } else {
+                    expect(ToList).toEqual([fromRecipient]);
+                    expect(CCList).toEqual([]);
+                    expect(BCCList).toEqual([]);
+                }
+            } else {
+                if (isSentMessage) {
+                    expect(ToList).toEqual([toRecipient]);
+                    expect(CCList).toEqual([ccRecipient]);
+                    expect(BCCList).toEqual([bccRecipient]);
+                } else {
+                    expect(ToList).toEqual([fromRecipient]);
+                    expect(CCList).toEqual([toRecipient, ccRecipient]);
+                    expect(BCCList).toEqual([]);
+                }
+            }
+        });
+    });
+
+    describe('getReplyRecipientListAsString', () => {
+        it.each`
+            replyType                    | isSentMessage
+            ${MESSAGE_ACTIONS.REPLY}     | ${true}
+            ${MESSAGE_ACTIONS.REPLY}     | ${false}
+            ${MESSAGE_ACTIONS.REPLY_ALL} | ${true}
+            ${MESSAGE_ACTIONS.REPLY_ALL} | ${false}
+        `('should give the expected recipient string', ({ replyType, isSentMessage }) => {
+            const referenceMessage = {
+                data: {
+                    ReplyTos: isSentMessage ? [meRecipient] : [fromRecipient],
+                    ToList: isSentMessage ? [toRecipient] : [meRecipient, toRecipient],
+                    CCList: [ccRecipient],
+                    BCCList: [bccRecipient],
+                    Flags: isSentMessage ? MESSAGE_FLAGS.FLAG_SENT : MESSAGE_FLAGS.FLAG_RECEIVED,
+                } as Partial<Message>,
+            } as MessageState;
+
+            const addresses = [{ DisplayName: meName, Email: meAddress } as Address];
+            const fromCustomName = 'From contact name';
+            const contactsMap: SimpleMap<ContactEmail> = {
+                'from@protonmail.com': {
+                    Email: fromAddress,
+                    Name: fromCustomName,
+                } as ContactEmail,
+            };
+
+            const recipientsString = getReplyRecipientListAsString(referenceMessage, replyType, addresses, contactsMap);
+
+            if (replyType === MESSAGE_ACTIONS.REPLY) {
+                if (isSentMessage) {
+                    expect(recipientsString).toEqual('To');
+                } else {
+                    expect(recipientsString).toEqual(`${fromCustomName}`);
+                }
+            } else {
+                if (isSentMessage) {
+                    expect(recipientsString).toEqual('To, CC, BCC');
+                } else {
+                    expect(recipientsString).toEqual(`${fromCustomName}, To, CC`);
+                }
+            }
         });
     });
 });
