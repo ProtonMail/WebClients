@@ -18,7 +18,7 @@ import ToolbarEmojiDropdown from '@proton/components/components/editor/toolbar/T
 import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
 import { useTheme } from '@proton/components/containers';
 import { classnames } from '@proton/components/helpers';
-import { useAddresses, useMailSettings, useUserSettings } from '@proton/components/hooks';
+import { useAddresses, useHandler, useMailSettings, useUserSettings } from '@proton/components/hooks';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { DARK_THEMES } from '@proton/shared/lib/themes/themes';
 
@@ -64,6 +64,8 @@ const QuickReply = ({
 
     const getConversation = useGetConversation();
     const getAllMessages = useGetAllMessages();
+
+    const onClose = useHandler(onCloseQuickReply);
 
     const [theme] = useTheme();
     const isDarkTheme = DARK_THEMES.includes(theme);
@@ -113,7 +115,7 @@ const QuickReply = ({
     } = useComposerContent({
         type: EditorTypes.quickReply,
         messageID: newMessageID,
-        onClose: onCloseQuickReply,
+        onClose,
         composerFrameRef: quickReplyFrameRef,
         referenceMessage,
         replyUpdated,
@@ -186,8 +188,8 @@ const QuickReply = ({
     // Manage quick reply close when expanding
     // The composer will remove the draftFlag when opened, and we need to close the message afterwards
     useEffect(() => {
-        if (!syncedMessage.draftFlags?.isQuickReply) {
-            onCloseQuickReply?.();
+        if (!syncedMessage.draftFlags?.isQuickReply && !isSending) {
+            onClose();
         }
     }, [syncedMessage.draftFlags]);
 
@@ -238,7 +240,7 @@ const QuickReply = ({
     };
 
     const handleCloseQuickReply = async () => {
-        onCloseQuickReply?.();
+        onClose();
         await handleDelete();
     };
 
@@ -329,6 +331,7 @@ const QuickReply = ({
                             onClick={handleSendQuickReply}
                             loading={isSending}
                             className="ml0-5"
+                            data-testid="quick-reply-send-button"
                         >
                             <Icon name="paper-plane" alt={c('Action').t`Send quick reply`} />
                         </Button>
