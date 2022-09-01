@@ -6,6 +6,8 @@ import { Currency, Plan } from '@proton/shared/lib/interfaces';
 
 import { SERVICES, SERVICES_KEYS } from './interfaces';
 
+const cycles = [CYCLE.MONTHLY, CYCLE.YEARLY, CYCLE.TWO_YEARS];
+
 export const getSignupSearchParams = (search: History.Search) => {
     const searchParams = new URLSearchParams(search);
 
@@ -13,7 +15,10 @@ export const getSignupSearchParams = (search: History.Search) => {
     const currency = maybeCurrency && ['EUR', 'CHF', 'USD'].includes(maybeCurrency) ? maybeCurrency : undefined;
 
     const maybeCycle = Number(searchParams.get('billing')) || Number(searchParams.get('cycle'));
-    const cycle = [CYCLE.MONTHLY, CYCLE.YEARLY, CYCLE.TWO_YEARS].includes(maybeCycle) ? maybeCycle : undefined;
+    const cycle = cycles.includes(maybeCycle) ? maybeCycle : undefined;
+
+    const maybeMinimumCycle = Number(searchParams.get('minimumCycle'));
+    const minimumCycle = cycles.includes(maybeMinimumCycle) ? maybeMinimumCycle : undefined;
 
     const maybeUsers = Number(searchParams.get('users'));
     const users = maybeUsers >= 1 && maybeUsers <= 5000 ? maybeUsers : undefined;
@@ -36,6 +41,7 @@ export const getSignupSearchParams = (search: History.Search) => {
         coupon,
         currency,
         cycle: cycle || DEFAULT_CYCLE,
+        minimumCycle,
         preSelectedPlan,
         service,
         users,

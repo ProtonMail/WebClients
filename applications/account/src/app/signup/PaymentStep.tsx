@@ -110,6 +110,7 @@ const PaymentStep = ({
                     <SubscriptionCycleSelector
                         mode="buttons"
                         cycle={subscriptionData.cycle}
+                        minimumCycle={subscriptionData.minimumCycle}
                         currency={subscriptionData.currency}
                         onChangeCycle={onChangeCycle}
                         plans={plans}
