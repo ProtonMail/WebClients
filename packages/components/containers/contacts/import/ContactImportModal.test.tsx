@@ -64,7 +64,7 @@ Botman,,botman@pm.me,,,,,,,Skopje,,,,,,,,,,Partizanska`;
 
         const encrypted0 = getCard(contact0Cards, true);
 
-        expect(encrypted0).toContain('ADR;TYPE=;PREF=1:,,,New Orleans,LA,94958,USA');
+        expect(encrypted0).toContain('ADR;TYPE=;PREF=1:;;;New Orleans;LA;94958;USA');
         expect(encrypted0).toContain('ORG:Smith Inc.');
         expect(encrypted0).toContain('TEL;TYPE=home;PREF=1:123-456-789');
         expect(encrypted0).toContain('TITLE:Head honcho');
@@ -78,7 +78,7 @@ Botman,,botman@pm.me,,,,,,,Skopje,,,,,,,,,,Partizanska`;
 
         const encrypted1 = getCard(contact1Cards, true);
 
-        expect(encrypted1).toContain('ADR;TYPE=;PREF=1:,,,Brighton,East Sussex,BR7 7HT,UK');
+        expect(encrypted1).toContain('ADR;TYPE=;PREF=1:;;;Brighton;East Sussex;BR7 7HT;UK');
         expect(encrypted1).toContain('NOTE:Likes to party!');
         expect(encrypted1).toContain('ORG:Example UK');
         expect(encrypted1).toContain('TEL;TYPE=work;PREF=1:(44)12345678');
@@ -94,7 +94,7 @@ Botman,,botman@pm.me,,,,,,,Skopje,,,,,,,,,,Partizanska`;
 
         const encrypted2 = getCard(contact2Cards, true);
 
-        expect(encrypted2).toContain('ADR;TYPE=;PREF=1:,,,Bridgeport,NJ,8014,USA');
+        expect(encrypted2).toContain('ADR;TYPE=;PREF=1:;;;Bridgeport;NJ;8014;USA');
         expect(encrypted2).toContain('NOTE:nickname: Carrot');
         expect(encrypted2).toContain('BDAY;VALUE=TEXT:03/12/1969');
         expect(encrypted2).toContain('TEL;TYPE=home;PREF=1:856-264-4130');
@@ -111,7 +111,7 @@ Botman,,botman@pm.me,,,,,,,Skopje,,,,,,,,,,Partizanska`;
 
         const encrypted3 = getCard(contact3Cards, true);
 
-        expect(encrypted3).toContain('ADR;TYPE=;PREF=1:,,,Skopje,,,');
+        expect(encrypted3).toContain('ADR;TYPE=;PREF=1:;;;Skopje;;;');
         expect(encrypted3).toContain('NOTE:home: Partizanska');
     });
 });
