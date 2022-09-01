@@ -1,26 +1,20 @@
+import { findByTestId, waitFor } from '@testing-library/dom';
 import { act, fireEvent } from '@testing-library/react';
 
 import { ROOSTER_EDITOR_ID } from '@proton/components/components/editor/constants';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
+import { wait } from '@proton/shared/lib/helpers/promise';
 import { MailSettings } from '@proton/shared/lib/interfaces';
-import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 
+import { MESSAGE_ACTIONS } from '../../../../constants';
 import { addApiMock } from '../../../../helpers/test/api';
 import { addToCache, minimalCache } from '../../../../helpers/test/cache';
 import { addApiKeys, addKeysToAddressKeysCache } from '../../../../helpers/test/crypto';
-import { createDocument, encryptMessage } from '../../../../helpers/test/message';
-import { MessageDecryption } from '../../../../logic/messages/messagesTypes';
+import { getDropdown } from '../../../../helpers/test/helper';
 import { initialize } from '../../../../logic/messages/read/messagesReadActions';
 import { store } from '../../../../logic/store';
-import { addressID, messageID, setup, subject } from '../../../message/tests/Message.test.helpers';
-
-export const referenceMessageName = 'Reference-Message Name';
-export const referenceMessageAddress = 'referenceMessage@protonmail.com';
-export const userName = 'User Name';
-export const userAddress = 'user@protonmail.com';
-
-export const protonSignature = 'Sent with Proton Mail secure email.';
-export const defaultReferenceMessageBody = 'Reference Message Body';
+import { addressID, setup } from '../../../message/tests/Message.test.helpers';
+import { data, fromFields, getExpectedDefaultPlainTextContent, getMessage } from './QuickReply.test.data';
 
 // Helper to make testing easier
 export const removeLineBreaks = (text: string) => {
@@ -39,90 +33,115 @@ export const getStateMessageFromParentID = (parentMessageID: string) => {
 };
 
 interface QuickReplyTestConfig {
-    toKeys: any;
-    fromKeys: any;
+    meKeys: any;
     referenceMessageBody?: string;
     isPlainText?: boolean;
+    isSender?: boolean;
 }
 
 export const setupQuickReplyTests = async ({
-    toKeys,
-    fromKeys,
-    referenceMessageBody = defaultReferenceMessageBody,
+    meKeys,
+    referenceMessageBody = data.defaultReferenceMessageBody,
     isPlainText,
+    isSender,
 }: QuickReplyTestConfig) => {
     minimalCache();
     addToCache('MailSettings', { PMSignature: 1, DraftMIMEType: MIME_TYPES.DEFAULT } as MailSettings); // Need to have the Proton signature by default in the QR
     addToCache('Addresses', [
         {
             ID: addressID,
-            Email: userAddress,
+            Email: fromFields.meAddress,
             Receive: 1,
             Status: 1,
             Send: 1,
-            HasKeys: true,
-            Keys: [
-                {
-                    Primary: 1,
-                    PrivateKey: toKeys.privateKeyArmored,
-                    PublicKey: toKeys.publicKeyArmored,
-                },
-            ],
         },
     ]);
 
-    addKeysToAddressKeysCache(addressID, toKeys);
-    addApiKeys(true, referenceMessageAddress, []);
-    addApiKeys(true, userAddress, [toKeys]);
-    addApiMock('keys', () => ({}));
+    addKeysToAddressKeysCache(addressID, meKeys);
+    addApiKeys(false, fromFields.fromAddress, []);
 
-    const encryptedBody = await encryptMessage(referenceMessageBody, fromKeys, toKeys);
-
-    const message = {
-        localID: messageID,
-        data: {
-            ID: messageID,
-            AddressID: addressID,
-            Subject: subject,
-            Sender: { Name: referenceMessageName, Address: referenceMessageAddress },
-            ReplyTos: [{ Name: referenceMessageName, Address: referenceMessageAddress }],
-            ToList: [{ Name: userName, Address: userAddress }],
-            Body: encryptedBody, // todo check
-            MIMEType: isPlainText ? MIME_TYPES.PLAINTEXT : MIME_TYPES.DEFAULT,
-            Attachments: [] as Attachment[],
-        } as Message,
-        decryption: {
-            decryptedBody: isPlainText ? referenceMessageBody : createDocument(referenceMessageBody),
-        } as MessageDecryption,
-        messageDocument: {
-            initialized: true,
-            plainText: isPlainText ? referenceMessageBody : undefined,
-            document: isPlainText ? undefined : createDocument(referenceMessageBody),
-        },
-    };
-
-    const expectedDefaultPlainTextContent = `Sent with Proton Mail secure email.
-------- Original Message -------
-On Thursday, January 1st, 1970 at 1:00 AM, ${referenceMessageName} <${referenceMessageAddress}> wrote:
-
-
-> ${referenceMessageBody}`;
+    // Reference message
+    const message = getMessage(!!isSender, !!isPlainText, referenceMessageBody);
 
     store.dispatch(initialize(message));
 
-    // Auto save mock
-    const createCall = jest.fn(() => ({ Message: { ID: 'draftID', Attachments: [] } }));
-    addApiMock(`mail/v4/messages`, createCall);
+    const expectedDefaultPlainTextContent = getExpectedDefaultPlainTextContent(referenceMessageBody);
 
     const container = await setup({ conversationMode: true, message: message.data }, false);
+
+    const createCall = jest.fn((message) => {
+        return Promise.resolve({
+            Message: {
+                ID: data.quickReplyMessageID,
+                ...message.data.Message,
+            },
+        });
+    });
+    const updateCall = jest.fn((message) => {
+        return Promise.resolve(message.data);
+    });
+    const sendCall = jest.fn((message) => {
+        return Promise.resolve({ Sent: { ID: data.quickReplyMessageID, ...message.data } });
+    });
+    addApiMock(`mail/v4/messages`, createCall, 'post');
+    addApiMock(`mail/v4/messages/${data.quickReplyMessageID}`, updateCall, 'put');
+    addApiMock(`mail/v4/messages/${data.quickReplyMessageID}`, sendCall, 'post');
 
     const getPlainTextEditor = async () => {
         return (await container.findByTestId('editor-textarea')) as HTMLTextAreaElement;
     };
 
     const getRoosterEditor = async () => {
-        const iframe = container.getByTestId('rooster-iframe') as HTMLIFrameElement;
+        const iframe = (await container.findByTestId('rooster-iframe')) as HTMLIFrameElement;
         return iframe.contentDocument?.getElementById(ROOSTER_EDITOR_ID);
+    };
+
+    const getRecipientList = async () => {
+        const recipientListContainer = await container.findByTestId('recipients-list-string');
+        return recipientListContainer.innerHTML;
+    };
+
+    const waitForSpy = (spy: jest.Mock<Promise<unknown>, [message: any]>) =>
+        waitFor(
+            () => {
+                expect(spy).toHaveBeenCalled();
+            },
+            { timeout: 10000 }
+        );
+
+    const updateReplyType = async (type: MESSAGE_ACTIONS, isTriggeringCreate = false) => {
+        const quickReplyTypeDropdown = await container.findByTestId('quick-reply-type-dropdown');
+
+        // Open the dropdown
+        fireEvent.click(quickReplyTypeDropdown);
+
+        const dropdown = await getDropdown();
+
+        const quickReplyTypeReplyButton = await findByTestId(dropdown, 'quick-reply-type-dropdown-reply-button');
+        const quickReplyTypeReplyAllButton = await findByTestId(dropdown, 'quick-reply-type-dropdown-reply-all-button');
+
+        // Click on the button
+        if (type === MESSAGE_ACTIONS.REPLY) {
+            await act(async () => {
+                fireEvent.click(quickReplyTypeReplyButton);
+                await wait(3000);
+                if (isTriggeringCreate) {
+                    await waitForSpy(createCall);
+                } else {
+                    await waitForSpy(updateCall);
+                }
+            });
+        } else if (MESSAGE_ACTIONS.REPLY_ALL) {
+            await act(async () => {
+                fireEvent.click(quickReplyTypeReplyAllButton);
+                await wait(3000);
+                if (isTriggeringCreate) {
+                    await waitForSpy(createCall);
+                } else {
+                    await waitForSpy(updateCall);
+                }
+            });
+        }
     };
 
     const openQuickReply = async () => {
@@ -143,24 +162,34 @@ On Thursday, January 1st, 1970 at 1:00 AM, ${referenceMessageName} <${referenceM
             if (plainTextEditor) {
                 await act(async () => {
                     fireEvent.change(plainTextEditor, { target: { value: newContent } });
-                    jest.advanceTimersByTime(2500);
+                    await wait(3000);
+                    await waitForSpy(createCall);
                 });
             }
         } else {
-            const roosterEditor = await getRoosterEditor();
-            if (roosterEditor) {
-                await act(async () => {
-                    // fireEvent.input will trigger an update inside the editor, but we need to add our content in it
-                    // The first thing to do is add content in the editor by hand
-                    // Then triggering input event will trigger the onChange in the composer, which will update the state etc....
-                    // I'm totally cheating but the goal is only to check that the editor will receive new content such as the state
-                    roosterEditor.innerHTML = `${newContent}${roosterEditor.innerHTML}`;
+            const roosterEditor = (await getRoosterEditor()) as HTMLElement;
 
-                    fireEvent.input(roosterEditor);
-                    jest.advanceTimersByTime(2500);
-                });
-            }
+            await act(async () => {
+                // fireEvent.input will trigger an update inside the editor, but we need to add our content in it
+                // The first thing to do is add content in the editor by hand
+                // Then triggering input event will trigger the onChange in the composer, which will update the state etc....
+                // I'm totally cheating but the goal is only to check that the editor will receive new content such as the state
+                roosterEditor.innerHTML = `${newContent}${roosterEditor.innerHTML}`;
+
+                fireEvent.input(roosterEditor);
+                await wait(3000);
+                await waitForSpy(createCall);
+            });
         }
+    };
+
+    const sendQuickReply = async () => {
+        const sendButton = await container.findByTestId('quick-reply-send-button');
+
+        await act(async () => {
+            fireEvent.click(sendButton);
+            await waitForSpy(sendCall);
+        });
     };
 
     return {
@@ -168,8 +197,14 @@ On Thursday, January 1st, 1970 at 1:00 AM, ${referenceMessageName} <${referenceM
         getPlainTextEditor,
         getRoosterEditor,
         createCall,
+        updateCall,
+        sendCall,
         openQuickReply,
         updateQuickReplyContent,
+        sendQuickReply,
         expectedDefaultPlainTextContent,
+        getRecipientList,
+        updateReplyType,
+        waitForSpy,
     };
 };

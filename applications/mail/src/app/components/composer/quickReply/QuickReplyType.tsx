@@ -60,11 +60,13 @@ const QuickReplyType = ({ referenceMessage, modelMessage, onChange, editorRef }:
                 hasCaret
                 className="navigation-link-header-group-control flex mr0-5"
                 content={<Icon className="flex-item-noshrink mr-0-5" name={iconName} />}
+                data-testid="quick-reply-type-dropdown"
             >
                 <DropdownMenu>
                     <DropdownMenuButton
                         className="flex flex-align-items-center text-left"
                         onClick={() => handleChangeReplyType(REPLY)}
+                        data-testid="quick-reply-type-dropdown-reply-button"
                     >
                         <Icon name="arrow-up-and-left-big" className="mr0-5" />
                         {c('Action').t`Reply`}
@@ -72,6 +74,7 @@ const QuickReplyType = ({ referenceMessage, modelMessage, onChange, editorRef }:
                     <DropdownMenuButton
                         className="flex flex-align-items-center text-left"
                         onClick={() => handleChangeReplyType(REPLY_ALL)}
+                        data-testid="quick-reply-type-dropdown-reply-all-button"
                     >
                         <Icon name="arrows-up-and-left-big" className="mr0-5" />
                         {c('Action').t`Reply all`}
@@ -79,7 +82,13 @@ const QuickReplyType = ({ referenceMessage, modelMessage, onChange, editorRef }:
                 </DropdownMenu>
             </SimpleDropdown>
 
-            <div className="flex-item-fluid text-ellipsis" aria-level={2} role="heading" title={replyToString}>
+            <div
+                className="flex-item-fluid text-ellipsis"
+                aria-level={2}
+                role="heading"
+                title={replyToString}
+                data-testid="recipients-list-string"
+            >
                 {replyToString}
             </div>
         </>

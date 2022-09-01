@@ -90,7 +90,8 @@ export const useComposerContent = (args: EditorArgs) => {
     // Needed to be able to force focus only at first time
     const [opening, setOpening] = useState(true);
 
-    const [isSending, setIsSending] = useState(false);
+    // Use long living state so that we can use it from the send handler
+    const [isSending, setIsSending] = useLongLivingState<boolean>(false);
 
     // Model value of the edited message in the composer
     const [modelMessage, setModelMessage, getModelMessage] = useLongLivingState<MessageState>({
@@ -571,6 +572,7 @@ export const useComposerContent = (args: EditorArgs) => {
     const handleSendQuickReply = async () => {
         // Can send only if a modification has been made, otherwise we can send empty message with the shortcut
         if (isQuickReply && args.replyUpdated && !isSending) {
+            setIsSending(true);
             dispatch(removeQuickReplyFlag(modelMessage.localID));
             void handleSend();
         }
