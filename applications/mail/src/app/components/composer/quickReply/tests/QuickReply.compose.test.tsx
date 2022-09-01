@@ -3,43 +3,33 @@ import {
     clearAll,
     generateKeys,
     releaseCryptoProxy,
+    setFeatureFlags,
     setupCryptoProxyForTesting,
 } from '../../../../helpers/test/helper';
 import { messageID } from '../../../message/tests/Message.test.helpers';
-import {
-    getStateMessageFromParentID,
-    referenceMessageAddress,
-    referenceMessageName,
-    removeLineBreaks,
-    setupQuickReplyTests,
-    userAddress,
-} from './QuickReply.test.helpers';
+import { data, fromFields, recipients } from './QuickReply.test.data';
+import { getStateMessageFromParentID, removeLineBreaks, setupQuickReplyTests } from './QuickReply.test.helpers';
 
-// TODO Will need to set the FF when it will be added
+jest.setTimeout(20000);
 
-describe('Quick reply - Plaintext', () => {
-    beforeEach(() => {
-        jest.useFakeTimers();
-    });
-    afterEach(() => {
-        clearAll();
-        jest.useRealTimers();
-    });
-
-    const protonSignature = 'Sent with Proton Mail secure email.';
-
-    let toKeys: GeneratedKey;
-    let fromKeys: GeneratedKey;
+describe('Quick reply - Compose', () => {
+    let meKeys: GeneratedKey;
 
     beforeAll(async () => {
         await setupCryptoProxyForTesting();
-
-        toKeys = await generateKeys('user', userAddress);
-        fromKeys = await generateKeys('from', referenceMessageAddress);
+        meKeys = await generateKeys('me', fromFields.meAddress);
     });
 
     afterAll(async () => {
         await releaseCryptoProxy();
+    });
+
+    beforeEach(() => {
+        setFeatureFlags('QuickReply', true);
+    });
+
+    afterEach(() => {
+        clearAll();
     });
 
     it('should open a plaintext quick reply and be able to modify it', async () => {
@@ -47,10 +37,12 @@ describe('Quick reply - Plaintext', () => {
         const {
             openQuickReply,
             updateQuickReplyContent,
+            sendQuickReply,
             getPlainTextEditor,
             expectedDefaultPlainTextContent,
             createCall,
-        } = await setupQuickReplyTests({ toKeys, fromKeys, isPlainText: true });
+            sendCall,
+        } = await setupQuickReplyTests({ meKeys, isPlainText: true });
         await openQuickReply();
         const plainTextEditor = await getPlainTextEditor();
 
@@ -59,7 +51,7 @@ describe('Quick reply - Plaintext', () => {
          */
         // Plaintext editor should contain only the signature by default in QR
         // Because we hide the reply
-        expect(plainTextEditor?.value.trim()).toEqual(protonSignature);
+        expect(plainTextEditor?.value.trim()).toEqual(data.protonSignature);
 
         // However, the state should contain the whole message (message + sig + blockquotes content)
         const messageFromState = getStateMessageFromParentID(messageID);
@@ -67,10 +59,8 @@ describe('Quick reply - Plaintext', () => {
             removeLineBreaks(expectedDefaultPlainTextContent)
         );
         // Sender and Recipients are correct
-        expect(messageFromState?.data?.Sender.Address).toEqual(userAddress);
-        expect(messageFromState?.data?.ToList).toEqual([
-            { Name: referenceMessageName, Address: referenceMessageAddress },
-        ]);
+        expect(messageFromState?.data?.Sender.Address).toEqual(fromFields.meAddress);
+        expect(messageFromState?.data?.ToList).toEqual([recipients.fromRecipient]);
 
         // Auto-save has not been called yet
         expect(createCall).not.toHaveBeenCalled();
@@ -80,7 +70,7 @@ describe('Quick reply - Plaintext', () => {
          * After passing the whole composer logic, we still don't have the reply added to the content
          */
         const newContent = 'Adding content';
-        const contentChange = `${newContent} ${protonSignature}`;
+        const contentChange = `${newContent} ${data.protonSignature}`;
 
         // Type something in the editor
         await updateQuickReplyContent(contentChange);
@@ -96,16 +86,25 @@ describe('Quick reply - Plaintext', () => {
 
         // Auto-save has been called
         expect(createCall).toHaveBeenCalled();
+
+        /**
+         * Send the quick reply
+         */
+        await sendQuickReply();
+
+        expect(sendCall).toHaveBeenCalled();
+        const sendRequest = (sendCall.mock.calls[0] as any[])[0];
+        expect(sendRequest.method).toBe('post');
     });
 
     it('should open an HTML quick reply and be able to modify it', async () => {
         const referenceMessageContent = 'Reference message content';
 
-        const { openQuickReply, updateQuickReplyContent, getRoosterEditor, createCall } = await setupQuickReplyTests({
-            toKeys,
-            fromKeys,
-            referenceMessageBody: `<div>${referenceMessageContent}<br><div>`,
-        });
+        const { openQuickReply, updateQuickReplyContent, getRoosterEditor, sendQuickReply, createCall, sendCall } =
+            await setupQuickReplyTests({
+                meKeys,
+                referenceMessageBody: `<div>${referenceMessageContent}<br><div>`,
+            });
         await openQuickReply();
 
         const roosterEditor = await getRoosterEditor();
@@ -118,17 +117,17 @@ describe('Quick reply - Plaintext', () => {
         // Editor should contain only the signature by default in QR
         // Because we hide the reply
         let protonSignature;
-        let protonBLockquotes;
+        let protonBlockquotes;
         if (roosterEditor) {
             protonSignature = roosterEditor.innerHTML.includes('Sent with');
-            protonBLockquotes = roosterEditor.innerHTML.includes(referenceMessageContent);
+            protonBlockquotes = roosterEditor.innerHTML.includes(referenceMessageContent);
         }
 
         // Editor
         // Signature is found in the editor
         expect(protonSignature).toBeTruthy();
         // Blockquotes are not present in the editor
-        expect(protonBLockquotes).toBeFalsy();
+        expect(protonBlockquotes).toBeFalsy();
 
         // Redux state
         // Signature is found in the state
@@ -178,5 +177,13 @@ describe('Quick reply - Plaintext', () => {
 
         // Auto-save has been called
         expect(createCall).toHaveBeenCalled();
+
+        /**
+         * Send the quick reply
+         */
+        await sendQuickReply();
+        await expect(sendCall).toHaveBeenCalled();
+        const sendRequest = (sendCall.mock.calls[0] as any[])[0];
+        expect(sendRequest.method).toBe('post');
     });
 });
