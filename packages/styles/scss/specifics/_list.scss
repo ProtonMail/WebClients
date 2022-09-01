@@ -64,7 +64,7 @@ $item-container-row-padding-block: em(5) !default; // design wants 48px
 	padding-inline: $item-container-padding-inline;
 	scroll-margin-block-start: $item-container-height;
 
-	transition: box-shadow 0.15s easing(easeOutQuint);
+	transition: box-shadow 0.1s easing(easeOutQuint);
 	// no other transition, otherwhise there's a flash on page loading
 	// because of theme file loading after applying default theme colors
 
@@ -111,6 +111,7 @@ $item-container-row-padding-block: em(5) !default; // design wants 48px
 		border: 1px solid transparent;
 		border-radius: inherit;
 		pointer-events: none;
+		transition: 0.1s easing(easeOutQuint);
 	}
 
 	&:focus,
@@ -318,7 +319,9 @@ $item-container-row-padding-block: em(5) !default; // design wants 48px
 
 	.item-container {
 		// center hover action vertically, did this to keep more space available for content
-		&:hover {
+		&:hover,
+		&:focus,
+		&:focus-within {
 			.item-hover-action-buttons {
 				margin-block-start: -1.5em;
 			}
