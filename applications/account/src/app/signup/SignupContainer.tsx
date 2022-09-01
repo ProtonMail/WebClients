@@ -347,10 +347,9 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType }: Prop
             return handleBack;
         }
     })();
-
     const signupType =
         clientType === CLIENT_TYPES.VPN || toApp === APPS.PROTONVPN_SETTINGS ? SignupType.VPN : SignupType.Username;
-    const upsellPlanName = signupType === SignupType.VPN ? PLANS.VPN : PLANS.BUNDLE;
+    const upsellPlanName = signupType === SignupType.VPN ? PLANS.VPN : PLANS.MAIL;
 
     const accountData = cache?.accountData;
 
