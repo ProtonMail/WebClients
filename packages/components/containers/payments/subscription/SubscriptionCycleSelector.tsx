@@ -13,6 +13,7 @@ import { classnames } from '../../../helpers';
 
 interface Props {
     cycle: CYCLE;
+    minimumCycle?: CYCLE;
     mode: 'select' | 'buttons';
     currency: Currency;
     onChangeCycle: (cycle: CYCLE) => void;
@@ -27,6 +28,7 @@ const getText = (n: number) => {
 
 const SubscriptionCycleSelector = ({
     cycle: cycleSelected,
+    minimumCycle = CYCLE.MONTHLY,
     mode,
     onChangeCycle,
     currency,
@@ -34,7 +36,8 @@ const SubscriptionCycleSelector = ({
     planIDs,
     plans,
 }: Props) => {
-    const cycles = [CYCLE.TWO_YEARS, CYCLE.YEARLY, CYCLE.MONTHLY];
+    const filteredCycles = [CYCLE.YEARLY, CYCLE.MONTHLY].filter((cycle) => cycle >= minimumCycle);
+    const cycles = [CYCLE.TWO_YEARS, ...filteredCycles];
 
     const supportedAddons = getSupportedAddons(planIDs);
     const plansMap = toMap(plans, 'Name') as PlansMap;
@@ -100,6 +103,35 @@ const SubscriptionCycleSelector = ({
         },
         {} as any
     );
+
+    if (cycles.length === 1) {
+        const cycle = cycles[0];
+        const { total, totalPerMonth, discount } = totals[cycle];
+
+        return (
+            <div key={`${cycle}`} className="p1 mb1 border rounded bg-norm flex flex-nowrap flex-align-items-stretch">
+                <div className="flex-item-fluid">
+                    <div className="flex flex-align-items-center">
+                        <strong className="text-lg flex-item-fluid mr1">{getText(cycle)}</strong>
+                        <strong className="text-lg flex-item-noshrink color-primary">
+                            {c('Subscription price').t`For`}
+                            <Price className="ml0-25" currency={currency}>
+                                {total}
+                            </Price>
+                        </strong>
+                    </div>
+                    <div className="flex flex-align-items-center">
+                        <span className="color-weak flex flex-item-fluid">
+                            <Price currency={currency} suffix={monthlySuffix}>
+                                {totalPerMonth}
+                            </Price>
+                        </span>
+                        <span className="color-success flex flex-item-noshrink">{getDiscountPrice(discount)}</span>
+                    </div>
+                </div>
+            </div>
+        );
+    }
 
     if (mode === 'select') {
         return (
