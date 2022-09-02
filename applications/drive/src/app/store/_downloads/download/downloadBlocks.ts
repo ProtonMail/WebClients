@@ -291,8 +291,17 @@ export default function initDownloadBlocks(
                     // and download at the same time, we get weird network error
                     // (err::NET_FAILED with status code 200) which is also "fixed"
                     // by automatic retry.
-                    if (getIsConnectionIssue(e) && numRetries < MAX_RETRIES_BEFORE_FAIL) {
-                        console.warn(`Connection issue for block #${activeIndex} download. Retry num: ${numRetries}`);
+                    const isSlightIssue =
+                        getIsConnectionIssue(e) ||
+                        // Unexpected end of packet is coming from crypto library
+                        // if the data is not complete, e.g., server did not send
+                        // the full block data, but only part of the block.
+                        e.message === 'Unexpected end of packet';
+                    if (isSlightIssue && numRetries < MAX_RETRIES_BEFORE_FAIL) {
+                        console.warn(
+                            `Connection issue for block #${activeIndex} download. Retry num: ${numRetries}. Error:`,
+                            e
+                        );
                         // Wait for all blocks to be finished to have proper activeIndex.
                         await waitUntil(() => ongoingNumberOfDownloads === 0);
                         // Do not refetch blocks. Its not needed at this stage, and
