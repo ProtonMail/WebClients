@@ -84,10 +84,7 @@ const ItemHoverButtons = ({
         <>
             <ButtonGroup
                 size={size}
-                className={classnames([
-                    'opacity-on-hover opacity-on-hover-no-width relative item-hover-action-buttons no-mobile',
-                    className,
-                ])}
+                className={classnames(['relative item-hover-action-buttons no-mobile', className])}
             >
                 <Tooltip title={unreadAlt}>
                     <Button icon onClick={handleMarkAs}>

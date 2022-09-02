@@ -64,8 +64,7 @@ $item-container-row-padding-block: em(5) !default; // design wants 48px
 	padding-inline: $item-container-padding-inline;
 	scroll-margin-block-start: $item-container-height;
 
-	transition: box-shadow 0.1s easing(easeOutQuint);
-	// no other transition, otherwhise there's a flash on page loading
+	// no transition, otherwhise there's a flash on page loading
 	// because of theme file loading after applying default theme colors
 
 	&.read {
@@ -110,7 +109,6 @@ $item-container-row-padding-block: em(5) !default; // design wants 48px
 		border: 1px solid transparent;
 		border-radius: inherit;
 		pointer-events: none;
-		transition: 0.1s easing(easeOutQuint);
 	}
 
 	&:focus,
@@ -230,7 +228,23 @@ $item-container-row-padding-block: em(5) !default; // design wants 48px
 }
 
 .item-hover-action-buttons {
+	width: 0;
+	transform: scale(0);
 	margin-inline-end: rem(-6); // Magic number to get perfect alignment with star on hover :D
+	opacity: 0;
+	visibility: hidden;
+}
+
+@media (hover: hover) and (pointer: fine) {
+	.item-container:hover,
+	.item-container-row:hover {
+		.item-hover-action-buttons {
+			width: auto;
+			transform: scale(1);
+			opacity: 1;
+			visibility: visible;
+		}
+	}
 }
 
 /* Comfortable view */
