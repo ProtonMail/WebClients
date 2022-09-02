@@ -27,14 +27,15 @@ const InvoiceActions = ({ invoice, fetchInvoices, onPreview, onDownload }: Props
         invoice.State === INVOICE_STATE.UNPAID && {
             text: c('Action').t`Pay`,
             async onClick() {
-                const { Stripe, Paymentwall } = await api(getPaymentMethodStatus());
-                const canPay = Stripe || Paymentwall;
+                const { Card, Paypal } = await api(getPaymentMethodStatus());
+                const canPay = Card || Paypal;
 
                 if (!canPay) {
                     createNotification({
                         type: 'error',
                         text: c('Error').t`Payments are currently not available, please try again later`,
                     });
+                    return;
                 }
 
                 createModal(<PayInvoiceModal invoice={invoice} fetchInvoices={fetchInvoices} />);
