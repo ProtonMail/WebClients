@@ -6,7 +6,7 @@
 
 		.user-initials {
 			background-color: var(--interaction-default);
-			transition: 0.15s easing(easeOutQuint), background-position 0s;
+			transition: 0.15s easing(ease-out-quint), background-position 0s;
 		}
 
 		&:hover,

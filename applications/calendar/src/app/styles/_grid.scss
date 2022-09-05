@@ -23,7 +23,7 @@
 			line-height: 1;
 			inline-size: 1.75em;
 			block-size: 1.75em;
-			transition: 0.15s easing(easeOutQuint);
+			transition: 0.15s easing(ease-out-quint);
 
 			@include respond-to($breakpoint-small, 'min') {
 				block-size: rem(28);

@@ -4,14 +4,19 @@
 	h1 {
 		@include rhythm(map-get($title-sizes, 'h2'));
 	}
+
 	h2 {
 		@include rhythm(map-get($title-sizes, 'h4'));
+
 		margin-block-end: 0.5em;
 	}
+
 	h3 {
 		@include rhythm(map-get($title-sizes, 'h4'));
+
 		margin-block-end: 0.5em;
 	}
+
 	ul {
 		margin-block-start: 0.5em;
 	}

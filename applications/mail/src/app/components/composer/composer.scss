@@ -6,21 +6,16 @@
 
 	// When the composer is in focus state, to be placed over any other composer frames
 	z-index: $layer-floating-frames + 1;
-
 	block-size: rem(640);
 	inline-size: rem(640);
 	max-block-size: 100%;
 	max-inline-size: 100%;
 	overflow: hidden;
-
 	background: var(--background-norm);
 	box-shadow: var(--shadow-lifted);
 	color: var(--text-norm);
-
-	transition: 0.15s easing(easeOutQuint), transform 0s;
-
+	transition: 0.15s easing(ease-out-quint), transform 0s;
 	transform: translateX(var(--composer-drag-offset));
-
 	border-end-start-radius: 0;
 	border-end-end-radius: 0;
 
@@ -62,15 +57,18 @@
 			max-block-size: 2.5em;
 			padding-inline-end: rem(1);
 			cursor: text;
+
 			&.disabled {
 				color: var(--field-disabled-text-color);
 				border-color: var(--field-disabled);
+
 				.composer-addresses-addressIcon {
 					opacity: 0.5;
 				}
 			}
 		}
 	}
+
 	&-meta-label {
 		padding-block-start: 0.85em;
 
@@ -93,7 +91,6 @@
 		flex-wrap: wrap;
 		inline-size: 100%;
 		position: relative;
-		// max-block-size: 100px;
 		overflow-y: auto;
 		overflow-x: hidden;
 
@@ -139,12 +136,15 @@
 	*/
 	&-addresses-addressIcon {
 		inset-block-start: rem(-2);
+
 		&:empty {
 			margin-inline-end: 0;
 		}
 	}
+
 	&-addresses-autocomplete {
 		max-block-size: 100%;
+
 		ul {
 			position: absolute;
 			inset-inline-start: 0;
@@ -157,7 +157,6 @@
 			margin-block: 0;
 			margin-inline: 20px 0;
 			padding: 0;
-
 			max-block-size: rem(200);
 			overflow-y: auto;
 			overflow-x: hidden;
@@ -214,7 +213,7 @@
 			color: var(--signal-danger);
 
 			.composer-addresses-item-label {
-				border-right-color: currentColor;
+				border-inline-end-color: currentcolor;
 			}
 		}
 	}
@@ -224,21 +223,23 @@
 		min-block-size: rem($default-height-fields); // to avoid tiny layout shifts
 		max-block-size: 100px;
 		overflow-y: auto;
-		// background: green;
 		padding-block: 0;
 		padding-inline-end: rem(1);
+
 		&.composer-editor-expanded {
 			padding-inline-start: 0.5em;
+
 			.field:empty {
 				// only for placeholder position when empty
 				margin-inline-start: 0.65em;
-				// border: 1px solid red;
 			}
 		}
+
 		.composer-addresses-input-container {
 			margin-inline-start: 0;
 			padding-block: 1px 0;
 		}
+
 		.composer-to-ccbcc-buttons {
 			padding-block-start: 0.4em; // to avoid shifts
 		}
@@ -252,7 +253,6 @@
 			border-radius: 0;
 			border-block-start-width: 0;
 			border-inline-width: 0;
-
 			min-block-size: em(44);
 
 			&:focus,
@@ -260,6 +260,7 @@
 				box-shadow: none;
 			}
 		}
+
 		// normal select
 		& + svg.right-icon {
 			inset-block-start: 0.5em;
@@ -271,12 +272,14 @@
 			box-shadow: none;
 			border-inline: 0;
 			border-radius: 0;
+
 			&[aria-expanded='true'] {
 				border-color: var(--interaction-norm);
 				background-color: var(--field-focus-background-color);
 				color: var(--field-focus-text-color);
 				box-shadow: none;
 			}
+
 			// no need outline for this field, already provided by styles
 			&#{&} {
 				&:focus-visible {
@@ -284,6 +287,7 @@
 				}
 			}
 		}
+
 		// new selectTwo without caret
 		&.select--inline-caret > svg {
 			display: none;
@@ -309,6 +313,7 @@
 	// content
 	.composer-content {
 		min-block-size: 10em;
+
 		// forced to white because HTML edition and not yet Dark mode supported
 		&--rich-edition,
 		.editor--disabled::after {
@@ -320,6 +325,7 @@
 		border: 0;
 		padding: 0;
 	}
+
 	.editor-toolbar {
 		max-inline-size: em(640);
 	}
@@ -389,9 +395,11 @@
 			@include respond-to($breakpoint-small) {
 				block-size: auto;
 			}
+
 			&-header {
 				padding-block: rem(24) 0;
 			}
+
 			&-title {
 				font-size: em(16);
 				font-weight: var(--font-weight-bold);
@@ -440,7 +448,7 @@
 	&-addresses-item-drag-placeholder {
 		inline-size: var(--width, 5em);
 		border-radius: var(--border-radius-md);
-		border: 1px dashed currentColor;
+		border: 1px dashed currentcolor;
 	}
 
 	// states

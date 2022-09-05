@@ -14,6 +14,7 @@ $padding-inline-start-link: rem(20) !default;
 
 .navigation-icon {
 	color: var(--text-weak);
+
 	&-empty {
 		inline-size: rem(23);
 	}
@@ -34,7 +35,7 @@ $padding-inline-start-link: rem(20) !default;
 		inset: 0;
 		z-index: 1;
 		pointer-events: none;
-		transition: 0.15s easing(easeOutQuart);
+		transition: 0.15s easing(ease-out-quart);
 		border-inline-start: 4px solid transparent;
 	}
 
@@ -84,6 +85,7 @@ $padding-inline-start-link: rem(20) !default;
 		// had to do this because of Safari
 		outline: unset;
 	}
+
 	color: var(--text-weak);
 
 	&:hover,
@@ -107,7 +109,7 @@ $padding-inline-start-link: rem(20) !default;
 		color: var(--text-weak);
 	}
 
-	//&:focus, // gimme focus-visible !!!!
+	// &:focus, // gimme focus-visible !!!!
 	&:hover {
 		color: var(--text-norm);
 
@@ -119,7 +121,7 @@ $padding-inline-start-link: rem(20) !default;
 
 .navigation-link--expand:focus,
 .navigation-link--expand:hover,
-//.navigation-link-header-group-link:focus,
+// .navigation-link-header-group-link:focus,
 .navigation-link-header-group-link:hover {
 	.navigation-icon--expand {
 		color: inherit;
