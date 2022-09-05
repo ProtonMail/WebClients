@@ -1,6 +1,7 @@
 /* fix bug on Chrome */
 body {
 	@extend .no-scroll;
+
 	block-size: 100%;
 }
 
@@ -21,6 +22,7 @@ html,
 .app-root-loader {
 	position: fixed;
 	inset: 0;
+
 	// Static because css variables can't be reached on that components
 	background: var(--background-norm, white);
 	color: var(--text-norm, black);
@@ -34,6 +36,7 @@ html,
 	align-items: center;
 	padding: 3em;
 	font-size: 1.2em;
+
 	// Static because css variables can't be reached on that components
 	background: white;
 	color: black;
@@ -149,6 +152,7 @@ html,
 
 .main-area--with-toolbar {
 	@extend .main-area;
+
 	border-radius: 0;
 }
 
@@ -170,6 +174,7 @@ $height-for-mobile: 8em !default;
 @include respond-to($breakpoint-small) {
 	.main-area--padding-fix {
 		padding-block-end: $height-for-mobile;
+
 		// thanks Apple for the fixed toolbar at the bottom
 	}
 
@@ -186,7 +191,8 @@ $height-for-mobile: 8em !default;
 
 .main-area--no-header {
 	@extend .main-area;
-	//height: 100vh; // create a crazy bug on Safari on VPN
+
+	// height: 100vh; // create a crazy bug on Safari on VPN
 	max-block-size: 100%;
 }
 

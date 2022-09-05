@@ -24,7 +24,7 @@
 		border-radius: 50%;
 		background-color: var(--color-selector-base);
 		cursor: pointer;
-		transition: 0.15s easing(easeOutQuint);
+		transition: 0.15s easing(ease-out-quint);
 
 		&::before {
 			content: '';

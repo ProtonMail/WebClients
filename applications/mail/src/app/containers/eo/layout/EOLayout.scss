@@ -59,8 +59,7 @@
 	}
 
 	// main content
-	transition: max-inline-size 0.15s easing(easeIn);
-	//min-block-size: 30em;// was here to limitate shifts
+	transition: max-inline-size 0.15s easing(ease-in);
 	border-radius: var(--border-radius-lg);
 
 	// fix for plans, same as in subscription flow
@@ -72,10 +71,12 @@
 		padding-inline: em(48);
 		padding-block: 0.5em 0;
 	}
+
 	&-title {
 		font-size: 2em;
 		font-weight: normal;
 	}
+
 	&-main-content {
 		padding-inline: em(48);
 		padding-block: em(24);
@@ -102,6 +103,7 @@
 		.message-attachmentList-item-container {
 			max-inline-size: 100%;
 		}
+
 		.composer-attachment-list-wrapper {
 			flex-wrap: nowrap;
 		}

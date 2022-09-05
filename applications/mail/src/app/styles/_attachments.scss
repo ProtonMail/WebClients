@@ -8,18 +8,19 @@
 	svg[aria-busy='true'] {
 		background-size: 16px;
 	}
-	transition: 0.15s easing(easeOutQuint), background-position 0s;
+
+	transition: 0.15s easing(ease-out-quint), background-position 0s;
 
 	&-size {
 		visibility: visible;
 	}
+
 	&-download {
 		position: absolute;
 		inset-block: 0;
 		inset-inline-end: 0;
 		inline-size: rem(36);
-		visibility: hidden;
-		// transition to work
+		visibility: hidden; // transition to work
 	}
 
 	&:hover,
@@ -31,6 +32,7 @@
 		.message-attachmentSecondaryAction-size {
 			visibility: hidden;
 		}
+
 		.message-attachmentSecondaryAction-download {
 			visibility: visible;
 			background-color: var(--interaction-default-hover);
@@ -49,6 +51,7 @@
 
 .message-attachmentList-item {
 	background-color: var(--background-norm);
+
 	&--uploadInProgress {
 		background-color: var(--background-weak);
 
@@ -63,6 +66,7 @@
 }
 
 $message-attachment-icon-width: 2.6em !default;
+
 .message-attachmentIcon {
 	inline-size: $message-attachment-icon-width;
 }
