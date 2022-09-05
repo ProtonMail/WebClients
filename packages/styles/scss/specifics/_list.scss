@@ -1,4 +1,5 @@
 @use 'sass:math';
+
 /*
  * Items
  * For conversations and contacts lists
@@ -45,21 +46,18 @@
 
 $item-container-height: rem(66) !default;
 $item-container-padding-block: em(11) !default;
-
 $item-container-padding-inline-start: em(9) !default;
 $item-container-padding-inline-end: em(12) !default;
 $item-container-padding-inline: $item-container-padding-inline-start $item-container-padding-inline-end;
-
 $item-container-margin-inline: em(12) !default;
-
 $item-container-height-compact-mode: rem(56) !default;
 $item-container-row-height-compact-mode: rem(36) !default;
-
 $item-container-row-padding-block: em(5) !default; // design wants 48px
 
 .item-container,
 .item-container-row {
 	@extend %appearing-container;
+
 	position: relative;
 	padding-block: $item-container-padding-block; // design wants ~66 height
 	padding-inline: $item-container-padding-inline;
@@ -78,7 +76,7 @@ $item-container-row-padding-block: em(5) !default; // design wants 48px
 		inset-block-end: 1px;
 		z-index: 1;
 		pointer-events: none;
-		transition: 0.15s easing(easeOutQuart);
+		transition: 0.15s easing(ease-out-quart);
 		border-inline-start: 5px solid transparent;
 	}
 
@@ -213,6 +211,7 @@ $item-container-row-padding-block: em(5) !default; // design wants 48px
 	.item-checkbox {
 		// this is a crazy fix for Firefox - for having ::after stuff working on it for mail conversations
 		// to have increased area around checkbox for clicking
+
 		/* autoprefixer: ignore next */
 		/* stylelint-disable-next-line */
 		-moz-appearance: initial;
@@ -231,12 +230,15 @@ $item-container-row-padding-block: em(5) !default; // design wants 48px
 	block-size: em(20);
 	line-height: calc(20 * 1.5 / 21);
 }
+
 .item-firstline {
 	color: var(--text-norm);
+
 	&-infos {
 		transform: translateY(-0.5ex);
 	}
 }
+
 .item-secondline:empty {
 	min-block-size: 1.5em;
 }
@@ -328,9 +330,11 @@ $item-container-row-padding-block: em(5) !default; // design wants 48px
 		block-size: $item-container-row-height-compact-mode;
 		scroll-margin-block-start: $item-container-row-height-compact-mode;
 		padding-block: 0;
+
 		.item-icon-compact {
 			// margin-block-start: 0;
 			margin-block: auto;
+
 			&::after {
 				block-size: $item-container-row-height-compact-mode;
 			}
@@ -341,6 +345,7 @@ $item-container-row-padding-block: em(5) !default; // design wants 48px
 	.item-secondline {
 		margin: 0;
 	}
+
 	.item-firstline-infos {
 		transform: none;
 	}
@@ -352,6 +357,7 @@ $item-container-row-padding-block: em(5) !default; // design wants 48px
 	.es-three-rows {
 		padding-inline-start: em(6);
 	}
+
 	.es-three-rows {
 		margin-inline-start: 0;
 	}
@@ -383,7 +389,7 @@ $item-container-row-padding-block: em(5) !default; // design wants 48px
 			inset: 0;
 			z-index: 1;
 			border-radius: var(--border-radius-md);
-			background-color: currentColor;
+			background-color: currentcolor;
 			opacity: 0;
 		}
 
@@ -392,6 +398,7 @@ $item-container-row-padding-block: em(5) !default; // design wants 48px
 			opacity: 0;
 		}
 	}
+
 	.item-checkbox-label {
 		margin-block-start: 0;
 	}
@@ -449,6 +456,7 @@ $item-container-row-padding-block: em(5) !default; // design wants 48px
 		inset-block: calc(-1 * ((#{$item-container-height} - #{rem($conversation-icon-size)}) / 2));
 		inset-inline-start: em(-12);
 		inline-size: calc(#{rem($conversation-icon-size)} + #{$item-container-padding-inline-start} + #{rem(5)});
+
 		// icon size + padding container + tiny margin for comfort
 	}
 
@@ -484,7 +492,7 @@ $item-container-row-padding-block: em(5) !default; // design wants 48px
 
 		& > .item-icon-fakecheck {
 			display: flex;
-			animation: anime-conversation-icon-in easing(easeOutQuint) 0.15s;
+			animation: anime-conversation-icon-in easing(ease-out-quint) 0.15s;
 		}
 
 		@keyframes anime-conversation-icon-in {

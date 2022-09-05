@@ -23,7 +23,7 @@ $scrollshadow-size: rem(5) !default;
 				 *
 				 * "width: 100%" in order to maintain a block element behaviour
 				 * even though using "display: inline-block"
-				 * 
+				 *
 				 */
 				display: inline-block;
 				min-inline-size: 100%;
@@ -41,7 +41,7 @@ $scrollshadow-size: rem(5) !default;
 				inline-size: $scrollshadow-size;
 				height: 100%;
 				opacity: 0;
-				transition: 250ms easing(easeOutCubic);
+				transition: 250ms easing(ease-out-cubic);
 			}
 
 			.scroll-start-shadow {
@@ -76,7 +76,7 @@ $scrollshadow-size: rem(5) !default;
 				inset-inline-start: 0;
 				inset-inline-end: 0;
 				block-size: $scrollshadow-size;
-				transition: 250ms easing(easeOutCubic);
+				transition: 250ms easing(ease-out-cubic);
 				opacity: 0;
 			}
 

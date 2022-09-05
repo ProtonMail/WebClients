@@ -18,6 +18,7 @@
 
 		@each $size in $sizes {
 			// add unit if different from 0
+			/* stylelint-disable-next-line length-zero-no-unit */
 			$value: if($size == 0, $size, $size + 0em);
 
 			// replace from 1.5 to 1-5

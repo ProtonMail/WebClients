@@ -9,6 +9,7 @@
 		animation-delay: 1ms !important;
 		animation-duration: 0.001ms !important;
 		animation-iteration-count: 1 !important;
+
 		// This magic value is needed because of https://bugs.webkit.org/show_bug.cgi?id=242510
 		// which affects visibility changes on Safari (iOS + MacOS) when reduce motion is
 		// enabled in accessibility settings. Even though transitions are not involved.

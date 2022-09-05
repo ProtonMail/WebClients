@@ -6,6 +6,7 @@
 		--max-height-bounds: calc(100vh - (var(--top) * 1px) - 2px);
 		--max-width-bounds: calc(100vw - (var(--left) * 1px) - 2px);
 	}
+
 	// On mobile view, left and top are not used
 	@include respond-to($breakpoint-small, 'max') {
 		--max-height-bounds: 100vh;
@@ -20,12 +21,13 @@
 	z-index: $layer-modals;
 	transform-origin: top center;
 	color: var(--text-norm);
-	animation: anime-dropdown-in 0.15s easing(easeOutCubic) both;
+	animation: anime-dropdown-in 0.15s easing(ease-out-cubic) both;
 
 	@keyframes anime-dropdown-in {
 		from {
 			opacity: 0;
 		}
+
 		to {
 			opacity: 1;
 		}
@@ -38,6 +40,7 @@
 			from {
 				opacity: 1;
 			}
+
 			to {
 				opacity: 0;
 			}
@@ -96,8 +99,10 @@
 
 	/* Scrollable insides of the dropdown */
 	&-content {
-		block-size: calc(var(--height) * 1px);
-		// The min size can't be greater than the remaining space when the dropdown is positioned
+		block-size: calc(
+			var(--height) * 1px
+		); // The min size can't be greater than the remaining space when the dropdown is positioned
+
 		min-inline-size: min(var(--min-width, 1.5em), var(--max-width-bounds));
 		min-block-size: min(var(--min-height, 1em), var(--max-height-bounds));
 		overflow: auto;

@@ -1,4 +1,5 @@
 @use 'sass:math';
+
 $height-wizard: rem(6) !default;
 $size-current-pin: rem(16) !default;
 
@@ -25,6 +26,7 @@ $size-current-pin: rem(16) !default;
 			transparent #{math.div($height-wizard, 2)}
 		);
 	}
+
 	&-marker-icon {
 		&#{&} {
 			fill: var(--primary-contrast);
@@ -110,6 +112,7 @@ $size-current-pin: rem(16) !default;
 		&:first-child {
 			text-align: start;
 		}
+
 		&:last-child {
 			text-align: end;
 		}
