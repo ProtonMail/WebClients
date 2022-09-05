@@ -119,7 +119,7 @@ const FilterActions = ({ filter = {}, mailSettings, onFilter }: Props) => {
                         shape="ghost"
                         aria-pressed={isActive}
                         className={classnames([
-                            'text-sm mt0 mb0 mr0-25 ml0-25',
+                            'text-sm my0 mx0-25',
                             isActive && 'no-pointer-events bg-strong',
                         ])}
                         onClick={onClick}
