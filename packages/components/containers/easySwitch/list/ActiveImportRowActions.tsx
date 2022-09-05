@@ -60,9 +60,8 @@ const ActiveImportRowActions = ({ activeImport }: Props) => {
     const handleReconnectOAuth = async (ImporterID: string) => {
         const scopes = [
             ...G_OAUTH_SCOPE_DEFAULT,
-            tokenScope?.includes(ImportType.MAIL) && useNewScopeFeature.feature?.Value === true
-                ? G_OAUTH_SCOPE_MAIL_NEW_SCOPE
-                : G_OAUTH_SCOPE_MAIL,
+            tokenScope?.includes(ImportType.MAIL) &&
+                (useNewScopeFeature.feature?.Value === true ? G_OAUTH_SCOPE_MAIL_NEW_SCOPE : G_OAUTH_SCOPE_MAIL),
             tokenScope?.includes(ImportType.CALENDAR) && G_OAUTH_SCOPE_CALENDAR,
             tokenScope?.includes(ImportType.CONTACTS) && G_OAUTH_SCOPE_CONTACTS,
             // tokenScope?.includes(ImportType.DRIVE) && G_OAUTH_SCOPE_DRIVE,
