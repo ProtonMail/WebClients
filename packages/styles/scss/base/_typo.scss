@@ -3,7 +3,7 @@ html {
 	@if $root-equiv-10-px==true {
 		font-size: 62.5%;
 
-		@if ($use-ie-calc-font-fallback==true) {
+		@if $use-ie-calc-font-fallback==true {
 			font-size: calc(1em * 0.625);
 		}
 	}
@@ -37,6 +37,7 @@ body {
 	.#{$tag} {
 		display: block;
 		@include rhythm($size, 'single_bottom');
+
 		font-weight: var(--font-weight-normal);
 	}
 }

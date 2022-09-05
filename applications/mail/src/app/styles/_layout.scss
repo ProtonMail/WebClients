@@ -24,7 +24,7 @@
 			inset-inline-start: calc((var(--grip-size) - var(--indicator-size)) / 2);
 			inline-size: var(--indicator-size);
 			background-color: transparent;
-			transition: background-color 0.25s easing(easeOutQuint);
+			transition: background-color 0.25s easing(ease-out-quint);
 		}
 
 		&:hover::before {

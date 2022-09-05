@@ -3,6 +3,7 @@
 
 	&-fakeradio {
 		@extend .checkbox-fakecheck;
+
 		border-radius: 50%;
 
 		&::before {
@@ -13,7 +14,7 @@
 			border-radius: 50%;
 			background: transparent;
 			transform: scale(0);
-			transition: 0.15s easing(easeOutCubic), 0.15s transform easing(easeOutBack);
+			transition: 0.15s easing(ease-out-cubic), 0.15s transform easing(ease-out-back);
 		}
 	}
 

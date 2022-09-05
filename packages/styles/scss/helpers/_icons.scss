@@ -2,12 +2,13 @@
 %icon {
 	display: inline-block;
 	vertical-align: middle;
-	fill: currentColor;
+	fill: currentcolor;
 }
 
 @each $width in (6, 8, 10, 11, 12, 14, 16, 18, 20, 22, 24, 28, 40, 42, 48, 56, 60, 70, 100, 110) {
 	.icon-#{$width}p {
 		@extend %icon; // 🤔
+
 		inline-size: rem($width);
 		block-size: rem($width);
 	}
@@ -16,8 +17,9 @@
 @each $width in (50) {
 	.icon-#{$width} {
 		@extend %icon; // 🤔
-		inline-size: percentage(math.div($width, 100));
-		block-size: percentage(math.div($width, 100));
+
+		inline-size: math.percentage(math.div($width, 100));
+		block-size: math.percentage(math.div($width, 100));
 	}
 }
 
