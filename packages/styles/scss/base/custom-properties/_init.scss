@@ -25,7 +25,6 @@
 // Other mappings
 :root {
 	--1px: #{math.div(1rem, 16)}; // Assumed 16px browser base font size
-
 	--border-radius-sm: calc(0.5 * var(--border-radius) * var(--1px));
 	--border-radius-md: calc(var(--border-radius) * var(--1px));
 	--border-radius-lg: calc(1.5 * var(--border-radius) * var(--1px));
