@@ -30,81 +30,71 @@ export const loadEmbedded = createAsyncThunk<LoadEmbeddedResults, LoadEmbeddedPa
     }
 );
 
-export const loadRemoteProxy = createAsyncThunk<LoadRemoteResults[], LoadRemoteParams>(
+export const loadRemoteProxy = createAsyncThunk<LoadRemoteResults, LoadRemoteParams>(
     'messages/remote/load/proxy',
-    async ({ imagesToLoad, api }) => {
-        return Promise.all(
-            imagesToLoad.map(async (image) => {
-                if (!image.url) {
-                    return { image, error: 'No URL' };
-                }
+    async ({ imageToLoad, api }) => {
+        if (!imageToLoad.url) {
+            return { image: imageToLoad, error: 'No URL' };
+        }
 
-                try {
-                    const encodedImageUrl = encodeImageUri(image.url);
-                    const response: Response = await api({
-                        ...getImage(encodedImageUrl),
-                        output: 'raw',
-                        silence: true,
-                    });
+        try {
+            const encodedImageUrl = encodeImageUri(imageToLoad.url);
+            const response: Response = await api({
+                ...getImage(encodedImageUrl),
+                output: 'raw',
+                silence: true,
+            });
 
-                    return {
-                        image,
-                        blob: await response.blob(),
-                        tracker: response.headers.get('x-pm-tracker-provider') || '',
-                    };
-                } catch (error) {
-                    return { image, error };
-                }
-            })
-        );
+            return {
+                image: imageToLoad,
+                blob: await response.blob(),
+                tracker: response.headers.get('x-pm-tracker-provider') || '',
+            };
+        } catch (error) {
+            return { image: imageToLoad, error };
+        }
     }
 );
 
-export const loadFakeProxy = createAsyncThunk<LoadRemoteResults[], LoadRemoteParams>(
+export const loadFakeProxy = createAsyncThunk<LoadRemoteResults | undefined, LoadRemoteParams>(
     'messages/remote/fake/proxy',
-    async ({ imagesToLoad, api }) => {
-        return Promise.all(
-            imagesToLoad
-                .filter((image) => image.tracker === undefined)
-                .map(async (image) => {
-                    if (!image.url) {
-                        return { image, error: 'No URL' };
-                    }
+    async ({ imageToLoad, api }) => {
+        if (imageToLoad.tracker !== undefined) {
+            return;
+        }
 
-                    try {
-                        const encodedImageUrl = encodeImageUri(image.url);
-                        const response: Response = await api({
-                            ...getImage(encodedImageUrl, 1),
-                            output: 'raw',
-                            silence: true,
-                        });
+        if (!imageToLoad.url) {
+            return { image: imageToLoad, error: 'No URL' };
+        }
 
-                        return {
-                            image,
-                            tracker: response.headers.get('x-pm-tracker-provider') || '',
-                        };
-                    } catch (error) {
-                        return { image, error };
-                    }
-                })
-        );
+        try {
+            const encodedImageUrl = encodeImageUri(imageToLoad.url);
+            const response: Response = await api({
+                ...getImage(encodedImageUrl, 1),
+                output: 'raw',
+                silence: true,
+            });
+
+            return {
+                image: imageToLoad,
+                tracker: response.headers.get('x-pm-tracker-provider') || '',
+            };
+        } catch (error) {
+            return { image: imageToLoad, error };
+        }
     }
 );
 
-export const loadRemoteDirect = createAsyncThunk<LoadRemoteResults[], LoadRemoteParams>(
+export const loadRemoteDirect = createAsyncThunk<LoadRemoteResults, LoadRemoteParams>(
     'messages/remote/load/direct',
-    async ({ imagesToLoad }) => {
-        return Promise.all(
-            imagesToLoad.map(async (image): Promise<LoadRemoteResults> => {
-                try {
-                    // First load, use url, second try, url is blank, use originalURL
-                    const url = image.originalURL || image.url || '';
-                    await preloadImage(url);
-                    return { image };
-                } catch (error) {
-                    return { image, error };
-                }
-            })
-        );
+    async ({ imageToLoad }) => {
+        try {
+            // First load, use url, second try, url is blank, use originalURL
+            const url = imageToLoad.originalURL || imageToLoad.url || '';
+            await preloadImage(url);
+            return { image: imageToLoad };
+        } catch (error) {
+            return { image: imageToLoad, error };
+        }
     }
 );
