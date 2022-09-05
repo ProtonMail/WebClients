@@ -32,7 +32,7 @@
 	clear: both;
 }
 
-@if $use-clearleft_right==true {
+@if $use-clearleft-right==true {
 	.clear-left {
 		clear: inline-start;
 	}
@@ -124,15 +124,10 @@
 
 	& > *,
 	&-no-break {
-		/* stylelint-disable-next-line */
-		-webkit-column-break-inside: avoid;
-		/* Chrome, Safari, Opera */
-		page-break-inside: avoid;
-		/* Firefox */
-		break-inside: avoid;
-		/* IE 10+ */
-		break-inside: avoid-column;
-		/* W3C */
+		-webkit-column-break-inside: avoid; // Chrome, Safari, Opera
+		page-break-inside: avoid; // Firefox
+		break-inside: avoid; // IE 10+
+		break-inside: avoid-column; // W3C
 	}
 }
 
@@ -164,8 +159,7 @@
 
 // Make hover-only interaction focusable with keyboard
 .opacity-on-hover {
-	opacity: 0;
-	// Do not use visibility to keep it focusable even when invisible
+	opacity: 0; // Do not use visibility to keep it focusable even when invisible
 
 	&-no-width {
 		width: 0;
@@ -177,6 +171,7 @@
 	&-container:focus-within &-only-desktop {
 		opacity: 1;
 	}
+
 	&-container:focus-within &-no-width,
 	&-supercontainer:hover &-container:hover:focus-within &-no-width {
 		width: auto;
@@ -193,6 +188,7 @@
 		width: 0;
 		transform: scale(0);
 	}
+
 	&-supercontainer:hover &-container:not(:hover):focus-within &-hide {
 		display: flex;
 	}
@@ -206,6 +202,7 @@
 		&-container:hover &-hide {
 			display: none;
 		}
+
 		&-container:hover &-no-width {
 			width: auto;
 			transform: scale(1);

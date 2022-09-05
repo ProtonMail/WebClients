@@ -1,6 +1,7 @@
 .simple-table {
 	@extend .border-collapse;
 	@extend .border-none;
+
 	inline-size: 100%;
 
 	caption {
@@ -105,6 +106,7 @@
 
 .alternate-table-bg-row-rounded {
 	@extend .border-none;
+
 	inline-size: 100%;
 	border-spacing: 0; // no border-collapse for radius ^^
 
@@ -119,11 +121,13 @@
 		> * {
 			background-color: var(--background-weak);
 		}
+
 		// radiuses
 		> :first-child {
 			border-start-start-radius: var(--border-radius-lg);
 			border-end-start-radius: var(--border-radius-lg);
 		}
+
 		> :last-child {
 			border-start-end-radius: var(--border-radius-lg);
 			border-end-end-radius: var(--border-radius-lg);

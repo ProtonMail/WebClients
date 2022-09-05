@@ -2,14 +2,13 @@
 
 .dropzone {
 	// TODO: commented out until approved in the design system
-	//border: 1px dashed var(--interaction-norm);
+	// border: 1px dashed var(--interaction-norm);
 	opacity: 0;
 	visibility: hidden;
 	transition-property: opacity, visibility;
 	transition-duration: 0.15s;
-	transition-timing-function: easing(easeIn);
-	// 1 less than what modals currently have
-	z-index: $layer-dropzone;
+	transition-timing-function: easing(ease-in);
+	z-index: $layer-dropzone; // 1 less than what modals currently have
 
 	&::before {
 		content: '';

@@ -8,7 +8,7 @@
 			block-size: 1.75em;
 			border-radius: var(--border-radius-md);
 			border: 1px solid transparent;
-			transition: 0.15s easing(easeOutQuint);
+			transition: 0.15s easing(ease-out-quint);
 		}
 
 		&:hover &-number,
