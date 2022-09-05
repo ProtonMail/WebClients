@@ -28,6 +28,7 @@
 			// just to make it closer to checkbox
 			&-more-selections {
 				margin-inline-start: em(2);
+
 				--padding-toolbar-button-dropdown: #{em(6, $base-font-size)};
 			}
 		}
@@ -54,7 +55,7 @@
 
 		border: unset;
 		background-color: unset;
-		color: currentColor;
+		color: currentcolor;
 		block-size: auto;
 		margin-inline: 0.25em;
 		border-radius: var(--border-radius-md);

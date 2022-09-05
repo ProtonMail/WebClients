@@ -40,7 +40,7 @@
 		}
 
 		&-button {
-			transition: 0.15s easing(easeOutQuint);
+			transition: 0.15s easing(ease-out-quint);
 
 			&:hover,
 			&:focus {
@@ -87,7 +87,7 @@
 		.label-stack-item {
 			overflow: hidden;
 			margin: 0;
-			transition: transform 0.1s 0.2s easing(easeOutQuart), max-width 0.2s 0s easing(easeOutQuart);
+			transition: transform 0.1s 0.2s easing(ease-out-quart), max-width 0.2s 0s easing(ease-out-quart);
 
 			&:hover,
 			&:focus-within,
@@ -97,6 +97,7 @@
 
 			&:not(:first-child) {
 				--button-opacity: 0;
+
 				max-inline-size: var(--item-narrow);
 				transform: scale(var(--item-scale));
 			}
@@ -104,7 +105,7 @@
 			&-inner,
 			&-delete-icon {
 				opacity: var(--button-opacity, 1);
-				transition: opacity 0.2s 0.1s easing(easeOutQuart);
+				transition: opacity 0.2s 0.1s easing(ease-out-quart);
 			}
 
 			&-delete {
@@ -123,8 +124,9 @@
 			&:focus-within {
 				.label-stack-item {
 					// Avoid glitch effect on first-child
-					&:first-child:not(:hover):not(:focus-within) {
+					&:first-child:not(:hover, :focus-within) {
 						--button-opacity: 0;
+
 						max-inline-size: var(--item-narrow);
 						transform: scale(var(--item-scale));
 						transition-delay: 0.2s, 0s;
@@ -133,6 +135,7 @@
 					&:not(:first-child):hover,
 					&:not(:first-child):focus-within {
 						--button-opacity: 1;
+
 						max-inline-size: var(--item-wide);
 						transform: scale(1);
 					}

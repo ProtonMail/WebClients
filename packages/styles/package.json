@@ -15,7 +15,7 @@
     "scripts": {
         "build:reset": "sass --no-source-map --style=compressed scss/specifics/android-reset.scss assets/css/android-reset.css; sass --no-source-map --style=compressed scss/specifics/android-dark-mode.scss assets/css/android-dark-mode.css",
         "lint": "yarn run lint:scss && yarn run lint:svg",
-        "lint:scss": "stylelint --syntax=scss '**/*.scss'",
+        "lint:scss": "stylelint '**/*.scss'",
         "lint:svg": "./tasks/lint-svg.sh"
     },
     "dependencies": {
@@ -24,8 +24,9 @@
     "devDependencies": {
         "prettier": "^2.7.1",
         "sass": "^1.54.4",
-        "stylelint": "^13.13.1",
-        "stylelint-config-prettier": "^9.0.3",
+        "stylelint": "^14.11.0",
+        "stylelint-config-prettier-scss": "^0.0.1",
+        "stylelint-config-standard-scss": "^5.0.0",
         "stylelint-use-logical": "^2.0.0",
         "svgo": "^2.8.0"
     }

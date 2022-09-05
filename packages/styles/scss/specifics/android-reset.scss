@@ -1,6 +1,7 @@
 /*
  * Specific reset for Android
  */
+/* stylelint-disable-next-line value-keyword-case */
 $font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue',
 	sans-serif;
 
@@ -99,9 +100,8 @@ pre,
 code,
 kbd,
 samp {
-	/* stylelint-disable font-family-no-duplicate-names */
-	font-family: SFMono-Regular, Consolas, 'Liberation Mono', 'Menlo', monospace, monospace;
-	/* stylelint-enable font-family-no-duplicate-names */
+	/* stylelint-disable-next-line */
+	font-family: SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace, monospace;
 	font-size: 1em;
 }
 
@@ -134,11 +134,13 @@ audio:not([controls]) {
 }
 
 /* important, abbr are good */
+
 /* only those with a title are shown */
 abbr[title] {
 	border-block-end: dotted 1px;
 	cursor: help;
 	text-decoration: none;
+
 	/* color inherited from text */
 }
 
@@ -161,7 +163,6 @@ dfn {
  */
 $use-other-typo-helpers: false;
 $use-other-line-height-helpers: false;
-
 $base-font-size: 16;
 $typo-unit: 'use_em';
 $vertical-rhythm: 'single_top_single_bottom';
@@ -174,7 +175,9 @@ $title-sizes: (
 	h6: 12,
 );
 
+/* stylelint-disable-next-line no-invalid-position-at-import-rule */
 @import '../config/';
+/* stylelint-disable-next-line no-invalid-position-at-import-rule */
 @import '../base/typo';
 
 /*
@@ -232,7 +235,8 @@ table img {
 blockquote {
 	padding-block: 0.2em !important;
 	padding-inline: 1.2em !important;
-	/*margin: 1em 0 2em 0 !important;*/
+
+	/* margin: 1em 0 2em 0 !important; */
 	margin: 0 !important; // actually on web
 	border: 3px solid var(--primary) !important;
 	border-width: 0 0 0 3px !important;

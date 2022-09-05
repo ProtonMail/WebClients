@@ -1,10 +1,9 @@
 module.exports = {
-    extends: ['stylelint-config-prettier'],
+    extends: ['stylelint-config-standard-scss', 'stylelint-config-prettier-scss'],
     rules: {
         'color-no-invalid-hex': true,
         'font-family-no-duplicate-names': true,
         'font-family-no-missing-generic-family-keyword': true,
-        'function-calc-no-invalid': true,
         'function-calc-no-unspaced-operator': true,
         'function-linear-gradient-no-nonstandard-direction': true,
         'string-no-newline': true,
@@ -68,6 +67,9 @@ module.exports = {
         'custom-property-pattern': null,
         'property-no-vendor-prefix': true,
         'selector-pseudo-element-colon-notation': 'double',
+        'selector-class-pattern': null,
+        'scss/at-extend-no-missing-placeholder': null,
+        'scss/no-global-function-names': null, // todo: reintroduce this later with sass migrate
 
         'function-name-case': 'lower',
         'function-url-quotes': 'never',
