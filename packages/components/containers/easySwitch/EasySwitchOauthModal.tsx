@@ -263,9 +263,8 @@ const EasySwitchOauthModal = ({
         if (modalModel.step === OAUTH_INSTRUCTIONS) {
             const scopes = [
                 ...G_OAUTH_SCOPE_DEFAULT,
-                checkedTypes[MAIL] && useNewScopeFeature.feature?.Value === true
-                    ? G_OAUTH_SCOPE_MAIL_NEW_SCOPE
-                    : G_OAUTH_SCOPE_MAIL,
+                checkedTypes[MAIL] &&
+                    (useNewScopeFeature.feature?.Value === true ? G_OAUTH_SCOPE_MAIL_NEW_SCOPE : G_OAUTH_SCOPE_MAIL),
                 checkedTypes[CALENDAR] && G_OAUTH_SCOPE_CALENDAR,
                 checkedTypes[CONTACTS] && G_OAUTH_SCOPE_CONTACTS,
                 // checkedTypes[DRIVE] && G_OAUTH_SCOPE_DRIVE,
