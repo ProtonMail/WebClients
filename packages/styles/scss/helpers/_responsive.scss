@@ -221,9 +221,11 @@
 		&-flex-align-self-start {
 			align-self: start;
 		}
+
 		&-flex-justify-start {
 			justify-content: start;
 		}
+
 		&-flex-justify-center {
 			justify-content: center;
 		}
@@ -231,6 +233,7 @@
 		&-flex-wrap {
 			flex-wrap: wrap;
 		}
+
 		&-flex-gap-0 {
 			gap: 0;
 		}
@@ -309,15 +312,19 @@
 		&-wauto {
 			inline-size: auto;
 		}
+
 		&-w100 {
 			inline-size: 100%;
 		}
+
 		&-w25 {
 			inline-size: 25%;
 		}
+
 		&-max-w50 {
 			max-inline-size: 50%;
 		}
+
 		&-text-left {
 			text-align: start;
 		}
@@ -338,6 +345,7 @@
 				flex-basis: auto;
 			}
 		}
+
 		&-flex-column-no-stretch {
 			flex-direction: column;
 
@@ -345,6 +353,7 @@
 				align-self: center;
 			}
 		}
+
 		&-flex-item-grow-1-5 {
 			flex-grow: 1.5;
 		}

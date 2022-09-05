@@ -1,4 +1,5 @@
 @use 'sass:math';
+
 $toggle-width: em(40) !default;
 $toggle-width-button: em(24) !default;
 
@@ -26,7 +27,7 @@ $toggle-width-button: em(24) !default;
 		transform: translateX(0);
 		border-radius: $toggle-width-button;
 		background-color: var(--field-norm);
-		transition: transform 0.25s easing(easeOutBack), background-color 0.25s easing(easeOutCubic);
+		transition: transform 0.25s easing(ease-out-back), background-color 0.25s easing(ease-out-cubic);
 	}
 
 	& > .toggle-label-text {
@@ -52,7 +53,7 @@ $toggle-width-button: em(24) !default;
 		.toggle-label-img {
 			margin: auto;
 			opacity: 0;
-			transition: opacity 0.15s easing(easeOutCubic);
+			transition: opacity 0.15s easing(ease-out-cubic);
 		}
 
 		.toggle-label-loader {
@@ -61,12 +62,13 @@ $toggle-width-button: em(24) !default;
 			z-index: 1;
 			display: flex;
 			color: var(--interaction-norm-contrast);
-			animation: 0.25s easing(easeOutCubic) forwards anime-toggle-label-loader-fade-in;
+			animation: 0.25s easing(ease-out-cubic) forwards anime-toggle-label-loader-fade-in;
 
 			@keyframes anime-toggle-label-loader-fade-in {
 				from {
 					opacity: 0;
 				}
+
 				to {
 					opacity: 1;
 				}
@@ -110,6 +112,7 @@ $toggle-width-button: em(24) !default;
 					transform: translateX(#{$toggle-width - $toggle-width-button});
 				}
 			}
+
 			background-color: var(--interaction-norm);
 		}
 	}
@@ -118,6 +121,7 @@ $toggle-width-button: em(24) !default;
 	&--disabled {
 		cursor: default;
 		opacity: 0.5;
+
 		// disabled but not loading
 		&:not(.toggle-label--loading) {
 			box-shadow: none;
