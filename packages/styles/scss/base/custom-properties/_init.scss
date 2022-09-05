@@ -31,9 +31,6 @@
 :root {
 	--1px: #{math.div(1rem, 16)}; // Assumed 16px browser base font size
 
-	--shadow-norm: 0 calc(var(--1px)) calc(var(--1px) * 4) rgb(0 0 0 / var(--shadow-norm-opacity, 0.1));
-	--shadow-lifted: 0 calc(var(--1px) * 8) calc(var(--1px) * 24) rgb(0 0 0 / var(--shadow-lifted-opacity, 0.2));
-
 	--border-radius-sm: calc(0.5 * var(--border-radius) * var(--1px));
 	--border-radius-md: calc(var(--border-radius) * var(--1px));
 	--border-radius-lg: calc(1.5 * var(--border-radius) * var(--1px));
