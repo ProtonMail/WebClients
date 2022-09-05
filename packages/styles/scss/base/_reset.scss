@@ -72,9 +72,8 @@ th {
 		font: inherit;
 		color: inherit;
 		/* stylelint-disable-next-line */
-		-webkit-appearance: none;
+		-webkit-appearance: none; // -webkit-appearance: none makes vocalization failing
 	}
-	// -webkit-appearance: none makes vocalization failing
 
 	input[type='checkbox'] {
 		/* stylelint-disable-next-line */
@@ -129,7 +128,7 @@ label,
 button,
 input,
 select {
-	color: currentColor;
+	color: currentcolor;
 	vertical-align: middle;
 }
 
@@ -211,12 +210,13 @@ audio:not([controls]) {
 	block-size: 0;
 }
 
-/* important, abbr are good */
-/* only those with a title are shown */
+/* important, abbr are good
+ * only those with a title are shown */
 abbr[title] {
 	border-block-end: dotted 1px;
 	cursor: help;
 	text-decoration: none;
+
 	/* color inherited from text */
 }
 

@@ -3,6 +3,7 @@
 	background-color: var(--file-preview-background-color, var(--background-norm));
 	@extend .flex-item-fluid-auto;
 	@extend .flex-column;
+
 	position: fixed;
 	inset: 0;
 	z-index: $layer-previewer;
@@ -28,6 +29,7 @@
 		@extend .flex-item-fluid-auto;
 		@extend .mt0;
 		@extend .mb2;
+
 		word-break: break-word;
 		white-space: pre-wrap;
 		inline-size: 100%;
@@ -36,6 +38,7 @@
 
 	&-image {
 		@extend .mauto;
+
 		object-fit: contain;
 		max-inline-size: none;
 		position: absolute;

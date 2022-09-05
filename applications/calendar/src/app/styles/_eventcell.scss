@@ -14,7 +14,6 @@
 	border-block-end-width: 1px;
 	border-inline-start-width: 5px;
 	border-inline-end-width: 1px;
-
 	padding-block: em(2);
 	padding-inline: em(3);
 	border-radius: var(--border-radius-sm);
@@ -24,7 +23,7 @@
 	cursor: pointer;
 	opacity: var(--opacity);
 	transition: all 0.1s ease-out, opacity 0.5s ease-out, background-color 0.15s ease-in-out;
-	animation: loadingEvent 1s easing(easeInQuint) infinite alternate;
+	animation: loadingEvent 1s easing(ease-in-quint) infinite alternate;
 
 	& > * {
 		transition: opacity 0.1s ease-out;
@@ -67,7 +66,7 @@
 			var(--color-alpha) 100%
 		);
 		background-size: 5.18px 19.32px;
-		color: currentColor;
+		color: currentcolor;
 	}
 
 	&.isPast {
@@ -99,6 +98,7 @@
 	from {
 		opacity: var(--opacity);
 	}
+
 	to {
 		opacity: calc(var(--opacity) - 0.4);
 	}

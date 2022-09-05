@@ -17,7 +17,7 @@
 }
 
 .progress-bar {
-	@include progress-bar-size();
+	@include progress-bar-size;
 
 	background: var(--background-weak);
 	color: var(--signal-info);
@@ -29,16 +29,16 @@
 
 	&::-webkit-progress-value {
 		background: var(--signal-info);
-		transition: 0.25s width easing(easeInOutQuint);
+		transition: 0.25s width easing(ease-in-out-quint);
 	}
 
 	&::-moz-progress-bar {
 		background: var(--signal-info);
-		transition: 0.25s width easing(easeInOutQuint);
+		transition: 0.25s width easing(ease-in-out-quint);
 	}
 
 	&::-ms-fill {
-		border-color: currentColor;
+		border-color: currentcolor;
 	}
 
 	@each $variant,
