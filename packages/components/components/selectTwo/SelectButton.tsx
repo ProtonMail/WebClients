@@ -1,18 +1,20 @@
-import { ComponentPropsWithRef, forwardRef, KeyboardEvent } from 'react';
+import { ComponentPropsWithRef, KeyboardEvent, forwardRef } from 'react';
 
 import { classnames } from '../../helpers';
 import { DropdownCaret } from '../dropdown';
 import { CircleLoader } from '../loader';
+import { NodeOrBoolean } from '../v2/field/InputField';
 
 interface SelectButtonProps extends Omit<ComponentPropsWithRef<'button'>, 'value'> {
     unstyled?: boolean;
     loading?: boolean;
+    error?: NodeOrBoolean;
     isOpen?: boolean;
     onOpen?: () => void;
 }
 
 const SelectButton = forwardRef<HTMLButtonElement, SelectButtonProps>(
-    ({ className, unstyled, loading, isOpen, onOpen, children, ...rest }, ref) => {
+    ({ className, unstyled, loading, error, isOpen, onOpen, children, ...rest }, ref) => {
         const handleAnchorKeydown = (e: KeyboardEvent<HTMLButtonElement>) => {
             switch (e.key) {
                 case ' ': {
@@ -33,6 +35,7 @@ const SelectButton = forwardRef<HTMLButtonElement, SelectButtonProps>(
                 aria-busy={loading}
                 aria-live="assertive"
                 aria-atomic="true"
+                aria-invalid={Boolean(error)}
                 className={classnames([
                     !unstyled && 'select field',
                     'outline-none w100 flex flex-justify-space-between flex-align-items-center flex-nowrap no-pointer-events-children',
