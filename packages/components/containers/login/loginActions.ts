@@ -36,6 +36,7 @@ import { getHasV2KeysToUpgrade, upgradeV2KeysHelper } from '@proton/shared/lib/k
 import {
     attemptDeviceRecovery,
     getIsDeviceRecoveryAvailable,
+    removeDeviceRecovery,
     storeDeviceRecovery,
 } from '@proton/shared/lib/recoveryFile/deviceRecovery';
 import { srpVerify } from '@proton/shared/lib/srp';
@@ -150,6 +151,8 @@ const finalizeLogin = async ({
                     trusted = true;
                 }
             }
+        } else {
+            removeDeviceRecovery(User.ID);
         }
     }
 
