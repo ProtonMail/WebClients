@@ -1,8 +1,9 @@
 import { c } from 'ttag';
 
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { Domain, DomainAddress } from '@proton/shared/lib/interfaces';
 
-import { Button, ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../components';
+import { Button, Info, ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../components';
 import AddressesTable from './AddressesTable';
 
 interface Props extends ModalProps {
@@ -13,7 +14,14 @@ interface Props extends ModalProps {
 const CatchAllModal = ({ domain, domainAddresses, ...rest }: Props) => {
     return (
         <ModalTwo {...rest}>
-            <ModalTwoHeader title={c('Title').t`Catch-All address`} />
+            <ModalTwoHeader
+                title={
+                    <span className="inline-flex flex-align-items-center">
+                        {c('Title').t`Catch-All address`}
+                        <Info className="ml0-5" url={getKnowledgeBaseUrl('/catch-all')} />
+                    </span>
+                }
+            />
             <ModalTwoContent>
                 <AddressesTable domain={domain} domainAddresses={domainAddresses} />
             </ModalTwoContent>
