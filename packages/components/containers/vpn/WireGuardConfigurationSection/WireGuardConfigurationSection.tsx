@@ -57,6 +57,7 @@ import {
 } from './feature';
 import { normalize } from './normalize';
 import useCertificates from './useCertificates';
+import WireGuardCreationModal, { WireGuardCreationModalProps } from './WireGuardCreationModal';
 
 enum PLATFORM {
     MACOS = 'macOS',
