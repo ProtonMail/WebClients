@@ -389,48 +389,56 @@ const WireGuardConfigurationSection = () => {
                 });
             }
 
-            const { privateKey, publicKey } = await getKeyPair();
-            const x25519PrivateKey = await getX25519PrivateKey(privateKey);
-            const deviceName = nameInputRef?.current?.value || '';
-            const certificate = await queryCertificate(publicKey, deviceName, getFeatureValues(addedPeer));
+            try {
+                const {privateKey, publicKey} = await getKeyPair();
+                const x25519PrivateKey = await getX25519PrivateKey(privateKey);
+                const deviceName = nameInputRef?.current?.value || '';
+                const certificate = await queryCertificate(publicKey, deviceName, getFeatureValues(addedPeer));
 
-            if (!certificate.DeviceName) {
-                certificate.DeviceName = deviceName;
-            }
+                if (!certificate.DeviceName) {
+                    certificate.DeviceName = deviceName;
+                }
 
-            const newCertificate = getCertificateModel(certificate, peer, x25519PrivateKey);
-            const id = newCertificate.id;
-            const name = newCertificate.name || newCertificate.publicKeyFingerprint || newCertificate.publicKey;
+                const newCertificate = getCertificateModel(certificate, peer, x25519PrivateKey);
+                const id = newCertificate.id;
+                const name = newCertificate.name || newCertificate.publicKeyFingerprint || newCertificate.publicKey;
 
-            if (!silent) {
-                const downloadCallback = getDownloadCallback(newCertificate);
+                if (!silent) {
+                    const downloadCallback = getDownloadCallback(newCertificate);
 
-                handleShowCreationModal({
-                    open: true,
-                    serverName: serverName,
-                    // translator: name a name given by the user to a config file
-                    text: c('Success notification')
-                        .t`Config "${name}" created, note that the private key is not stored and won't be shown again, you should copy or download this config.`,
-                    config: newCertificate?.config || '',
-                    onDownload() {
-                        downloadCallback();
-                        handleShowCreationModal({open: false});
-                    },
-                    onClose() {
-                        handleShowCreationModal({open: false});
-                    },
+                    handleShowCreationModal({
+                        open: true,
+                        serverName: serverName,
+                        // translator: name a name given by the user to a config file
+                        text: c('Success notification')
+                            .t`Config "${name}" created, note that the private key is not stored and won't be shown again, you should copy or download this config.`,
+                        config: newCertificate?.config || '',
+                        onDownload() {
+                            downloadCallback();
+                            handleShowCreationModal({open: false});
+                        },
+                        onClose() {
+                            handleShowCreationModal({open: false});
+                        },
+                    });
+                }
+
+                flushSync(() => {
+                    setCurrentCertificate(id);
+                    setCertificates([...(certificates || []), newCertificate]);
                 });
-            }
 
-            flushSync(() => {
-                setCurrentCertificate(id);
-                setCertificates([...(certificates || []), newCertificate]);
-            });
+                document.querySelector(`[data-certificate-id="${id}"]`)?.scrollIntoView();
 
-            document.querySelector(`[data-certificate-id="${id}"]`)?.scrollIntoView();
+                if (nameInputRef?.current) {
+                    nameInputRef.current.value = '';
+                }
+            } catch (e) {
+                if (!silent && serverName) {
+                    handleShowCreationModal({open: false});
+                }
 
-            if (nameInputRef?.current) {
-                nameInputRef.current.value = '';
+                throw e;
             }
         } finally {
             setCreating(false);
