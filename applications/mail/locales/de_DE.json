@@ -23,9 +23,6 @@
       "Add address": [
         "Adresse hinzufügen"
       ],
-      "Add condition": [
-        "Bedingung hinzufügen"
-      ],
       "Add contact": [
         "Kontakt hinzufügen"
       ],
@@ -77,6 +74,9 @@
       "All Unstarred": [
         "Alle nicht gekennzeichneten auswählen"
       ],
+      "Allow messages": [
+        "Nachrichten erlauben"
+      ],
       "Apply": [
         "Übernehmen"
       ],
@@ -94,6 +94,12 @@
       ],
       "Beta Access": [
         "Beta-Zugang"
+      ],
+      "Block": [
+        "Sperren"
+      ],
+      "Block messages from this sender": [
+        "Nachrichten von diesem Absender sperren"
       ],
       "Bold": [
         "Fett"
@@ -147,7 +153,7 @@
         "Verfassen-Fenster schließen"
       ],
       "Close modal": [
-        "Dialog schließen"
+        "Close"
       ],
       "Close navigation": [
         "Navigation schließen"
@@ -200,20 +206,17 @@
       "Create a new contact group": [
         "Neue Kontaktgruppe erstellen"
       ],
-      "Create folder": [
-        "Ordner erstellen"
+      "Create a new folder": [
+        "Neuen Ordner erstellen"
       ],
-      "Create label": [
-        "Kategorie erstellen"
+      "Create a new label": [
+        "Neue Kategorie erstellen"
       ],
       "Create new contact": [
         "Neuen Kontakt erstellen"
       ],
       "Create new message": [
         "Neue Nachricht erstellen"
-      ],
-      "Custom filter": [
-        "Benutzerderfinierter Filter"
       ],
       "Customize": [
         "Anpassen"
@@ -343,9 +346,6 @@
       "Fewer search options": [
         "Weniger Suchoptionen"
       ],
-      "Filter on...": [
-        "Filtern nach …"
-      ],
       "Font": [
         "Schriftart"
       ],
@@ -470,9 +470,6 @@
       "Label as...": [
         "Hinzufügen zur Kategorie …"
       ],
-      "label emails as": [
-        "Nachrichten kategorisieren:"
-      ],
       "Learn more": [
         "Mehr erfahren"
       ],
@@ -508,9 +505,6 @@
       ],
       "Mark as unread": [
         "Als ungelesen markieren"
-      ],
-      "mark emails as": [
-        "Nachrichten kennzeichnen als"
       ],
       "Mark for deletion": [
         "Zum Löschen vormerken"
@@ -571,9 +565,6 @@
       ],
       "Move all to trash": [
         "Alle in den Papierkorb verschieben"
-      ],
-      "move emails to": [
-        "Nachrichten verschieben nach"
       ],
       "Move to": [
         "Verschieben nach"
@@ -662,9 +653,6 @@
       "Pause": [
         "Pausieren"
       ],
-      "Preview": [
-        "Vorschau"
-      ],
       "Preview ${ attachmentName }": [
         "Vorschau von ${ attachmentName } anzeigen"
       ],
@@ -730,9 +718,6 @@
       ],
       "Remove expiration time": [
         "Ablaufzeitpunkt entfernen"
-      ],
-      "Remove this label": [
-        "Kategorie entfernen"
       ],
       "Rename": [
         "Umbenennen"
@@ -805,9 +790,6 @@
       ],
       "Send anyway": [
         "Trotzdem senden"
-      ],
-      "send auto-reply email": [
-        "automatische E-Mail-Antwort senden"
       ],
       "Send feedback": [
         "Feedback senden"
@@ -1824,6 +1806,11 @@
         "Lesung (Yomi)"
       ]
     },
+    "Context filtering disabled": {
+      "Your selection contains only yourself as sender": [
+        "Deine Auswahl enthält nur dich selbst als Absender"
+      ]
+    },
     "Country name": {
       "Abkhazia": [
         "Abkhazia"
@@ -2591,26 +2578,6 @@
         "Åland‐Inseln"
       ]
     },
-    "CustomFilter": {
-      "Attachment": [
-        "Anhang"
-      ],
-      "Filter on": [
-        "Filtern nach …"
-      ],
-      "Next": [
-        "Weiter"
-      ],
-      "Recipient": [
-        "Empfänger"
-      ],
-      "Sender": [
-        "Absender"
-      ],
-      "Subject": [
-        "Betreff"
-      ]
-    },
     "Daily recurring event, frequency": {
       "${ count } time": [
         "${ count } Mal",
@@ -2687,6 +2654,15 @@
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Kontakte werden zusammengeführt… Dies kann einige Minuten dauern. Wenn der Vorgang abgeschlossen ist, kannst du diese Meldung schließen."
+      ],
+      "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted. ${ manageBlockedAddressesSettingsLink } in settings.": [
+        "Neue E-Mails von ${ senderEmailAddress } werden nicht zugestellt und permanent gelöscht. ${ manageBlockedAddressesSettingsLink } in den Einstellungen."
+      ],
+      "No folders": [
+        "Keine Ordner"
+      ],
+      "No labels": [
+        "Keine Kategorie"
       ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Die Datei darf eine maximale Größe von ${ MAX_IMPORT_FILE_SIZE_STRING } nicht überschreiten und höchstens ${ MAX_IMPORT_CONTACTS_STRING } Kontakt enthalten. Sollte deine Datei größer sein, teile sie bitte in kleinere Dateien auf.",
@@ -2871,9 +2847,6 @@
         "Wähle ein Datum innerhalb des nächsten ${ SCHEDULED_MAX_DATE_DAYS } Tages.",
         "Wähle ein Datum innerhalb der nächsten ${ SCHEDULED_MAX_DATE_DAYS } Tage."
       ],
-      "Condition incomplete": [
-        "Bedingung unvollständig"
-      ],
       "Contact could not be saved": [
         "Der Kontakt konnte nicht gespeichert werden"
       ],
@@ -2915,17 +2888,11 @@
       "Email is not valid": [
         "E-Mail-Adresse ungültig"
       ],
-      "Empty condition": [
-        "Leere Bedingung"
-      ],
       "Enter 6 digits": [
         "6 Ziffern eingeben"
       ],
       "Enter a password": [
         "Passwort eingeben"
-      ],
-      "Error in one of the conditions": [
-        "Fehler in einer der Bedingungen"
       ],
       "Error while saving draft. Please try again.": [
         "Fehler beim Speichern des Entwurfs. Bitte versuche es erneut."
@@ -2938,9 +2905,6 @@
       ],
       "Failed to encrypt attachment. Please try again.": [
         "Der Anhang konnte nicht verschlüsselt werden. Bitte versuche es erneut."
-      ],
-      "Filter with this name already exists": [
-        "Es gibt bereits einen Filter mit diesem Namen"
       ],
       "Folder name cannot be empty.": [
         "Name des Ordners muss angegeben werden."
@@ -3058,12 +3022,6 @@
       "Request timed out": [
         "Zeitüberschreitung bei der Anfrage"
       ],
-      "Require at least one action": [
-        "Erfordert mindestens eine Aktion"
-      ],
-      "Require at least one condition": [
-        "Erfordert mindestens eine Bedingung"
-      ],
       "Signature not verified": [
         "Signatur nicht bestätigt"
       ],
@@ -3145,9 +3103,6 @@
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser.": [
         "Diese Nachricht enthält möglicherweise Internetadressen, die von deinem aktuellen Browser nicht ordnungsgemäß geöffnet werden können."
-      ],
-      "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
-        "Zu viele aktive Filter. Bitte wechsle zu einem kostenpflichtigen Abonnement, um weitere Filter zu aktivieren."
       ],
       "Trusted keys are not valid for sending": [
         "Die vertrauenswürdigen Schlüssel sind für den Versand nicht gültig"
@@ -3501,18 +3456,6 @@
       ]
     },
     "Filter modal type": {
-      "If the attachments": [
-        "Wenn die Anhänge"
-      ],
-      "If the recipient": [
-        "Wenn der Empfänger"
-      ],
-      "If the sender": [
-        "Wenn der Absender"
-      ],
-      "If the subject": [
-        "Wenn der Betreff"
-      ],
       "Select…": [
         "Auswählen…"
       ],
@@ -3532,9 +3475,6 @@
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } aktualisiert"
-      ],
-      "Filter ${ Filter.Name } updated": [
-        "Filter ${ Filter.Name } aktualisiert"
       ]
     },
     "Filter option": {
@@ -3552,14 +3492,6 @@
       ],
       "Unread": [
         "Ungelesen"
-      ]
-    },
-    "Filter preview": {
-      "read": [
-        "gelesen"
-      ],
-      "starred": [
-        "gekennzeichnet"
       ]
     },
     "Font Face Default": {
@@ -3918,12 +3850,6 @@
         "(${ memberCount } Mitglied)",
         "(${ memberCount } Mitglieder)"
       ],
-      "(Filter if ALL of the following conditions are met)": [
-        "(Filtern, wenn ALLE der folgenden Bedingungen erfüllt sind)"
-      ],
-      "(Filter if ANY of the following conditions are met)": [
-        "(Filtern, wenn IRGENDEINE der folgenden Bedingungen erfüllt ist)"
-      ],
       "(No Recipient)": [
         "(Keine Empfänger)"
       ],
@@ -3974,9 +3900,6 @@
       "All your calendars are disabled.": [
         "Alle deine Kalender sind deaktiviert."
       ],
-      "All your changes will be lost.": [
-        "Alle deine Änderungen gehen dabei verloren."
-      ],
       "An unknown public key has been detected for this recipient.": [
         "Für diesen Empfänger wurde ein unbekannter öffentlicher Schlüssel erkannt."
       ],
@@ -3988,9 +3911,6 @@
       ],
       "Are you sure you want to delete all messages with this label?": [
         "Möchtest du wirklich alle Nachrichten mit dieser Kategorie löschen?"
-      ],
-      "Are you sure you want to discard your changes?": [
-        "Möchtest du deine Änderungen wirklich verwerfen?"
       ],
       "Are you sure you want to move all messages in this location to Trash?": [
         "Möchtest du wirklich alle hier vorliegenden Nachrichten in den Papierkorb verschieben?"
@@ -4221,9 +4141,6 @@
         "Datei angehängt",
         "Dateien angehängt"
       ],
-      "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
-        "Filter gelten für eingehende wie auch gesendete E-Mails aus. Jeder Filter muss mindestens einen Namen, eine Bedingung und eine Aktion enthalten."
-      ],
       "Folder": [
         "Ordner"
       ],
@@ -4285,9 +4202,6 @@
       ],
       "Image URL": [
         "Bild-URL"
-      ],
-      "Images have been removed because they are not allowed in auto-reply": [
-        "Grafiken wurden entfernt, da diese in automatischen Antworten nicht zulässig sind"
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "${ contactsFragment } und ${ contactsGroupsFragment } importieren"
@@ -4413,9 +4327,6 @@
       "New": [
         "Neu"
       ],
-      "No action selected": [
-        "Keine Aktion ausgewählt"
-      ],
       "No contacts added yet": [
         "Noch keine Kontakte hinzugefügt"
       ],
@@ -4428,17 +4339,11 @@
       "No folder found": [
         "Keine Ordner gefunden"
       ],
-      "No folder selected": [
-        "Kein Ordner ausgewählt"
-      ],
       "No group found": [
         "Keine Gruppe gefunden"
       ],
       "No label found": [
         "Keine Kategorie gefunden"
-      ],
-      "No label selected": [
-        "Keine Kategorie ausgewählt"
       ],
       "No more results found": [
         "Keine weiteren Ergebnisse gefunden"
@@ -4605,6 +4510,9 @@
       ],
       "Send an encrypted, password protected message to a ${ boldText } email address.": [
         "Sende eine verschlüsselte, passwortgeschützte Nachricht an eine ${ boldText } E-Mail-Adresse."
+      ],
+      "Sender has been blocked.": [
+        "Der Absender wurde gesperrt"
       ],
       "Sending": [
         "Wird gesendet"
@@ -5159,9 +5067,6 @@
       "Close draft": [
         "Entwurf schließen"
       ],
-      "Create filter with...": [
-        "Filter erstellen mit…"
-      ],
       "Delete permanently": [
         "Dauerhaft löschen"
       ],
@@ -5329,17 +5234,8 @@
       ]
     },
     "Label": {
-      " and ": [
-        " und "
-      ],
-      " and ${ l }": [
-        " und ${ l }"
-      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Vorübergehend nicht verfügbar. Bitte schaue später wieder vorbei.)"
-      ],
-      "Actions": [
-        "Aktionen"
       ],
       "Add email address": [
         "E-Mail-Adresse hinzufügen"
@@ -5353,26 +5249,14 @@
       "Address": [
         "Anschrift"
       ],
-      "ALL": [
-        "ALLE"
-      ],
       "Also archive": [
         "Auch archivieren"
       ],
-      "AND": [
-        "UND"
+      "Always label senders emails": [
+        "E-Mails dieses Absenders immer kennzeichnen"
       ],
-      "and": [
-        "und"
-      ],
-      "And": [
-        "Und"
-      ],
-      "ANY": [
-        "IRGENDEINE"
-      ],
-      "Apply filter to existing emails": [
-        "Filter auf vorhandene E-Mails anwenden"
+      "Always move senders emails": [
+        "E-Mails dieses Absenders immer verschieben"
       ],
       "Attach screenshot(s)": [
         "Bildschirmfoto(s) anhängen"
@@ -5422,9 +5306,6 @@
       "Code is 6 digits without spaces": [
         "Der Code ist 6-stellig ohne Leerzeichen"
       ],
-      "Conditions": [
-        "Bedingungen"
-      ],
       "Confirm password": [
         "Passwort bestätigen"
       ],
@@ -5449,6 +5330,9 @@
       "Do not ask again": [
         "Nicht mehr fragen"
       ],
+      "Don't show this again": [
+        "Nicht erneut anzeigen"
+      ],
       "Email": [
         "E-Mail-Adresse"
       ],
@@ -5472,9 +5356,6 @@
       ],
       "Extended address": [
         "Adresszusatz"
-      ],
-      "Filter Name": [
-        "Filtername"
       ],
       "Folder location": [
         "Pfad des Ordners"
@@ -5505,12 +5386,6 @@
       ],
       "I understand the risk": [
         "Ich bin mir des Risikos bewusst"
-      ],
-      "IF": [
-        "WENN"
-      ],
-      "If": [
-        "Wenn"
       ],
       "Import all messages": [
         "Alle Nachrichten importieren"
@@ -5551,6 +5426,9 @@
       "Mailbox password": [
         "Postfach-Passwort"
       ],
+      "Manage categories": [
+        "Kategorien verwalten"
+      ],
       "Manage folders": [
         "Ordner verwalten"
       ],
@@ -5560,17 +5438,17 @@
       "Manage my addresses": [
         "E-Mail-Adressen verwalten"
       ],
-      "Mark as": [
-        "Kennzeichnen als"
-      ],
       "Move to": [
         "Verschieben nach"
       ],
+      "Move to Archive": [
+        "Ins Archiv verschieben"
+      ],
+      "Move to Inbox": [
+        "In Posteingang verschieben"
+      ],
       "Name": [
         "Name"
-      ],
-      "No label found": [
-        "Keine Kategorie gefunden"
       ],
       "Notification": [
         "Benachrichtigung"
@@ -5583,15 +5461,6 @@
       ],
       "Operating system version": [
         "Version des Betriebssystems"
-      ],
-      "OR": [
-        "ODER"
-      ],
-      "or": [
-        "oder"
-      ],
-      "Or": [
-        "Oder"
       ],
       "Participants": [
         "Teilnehmer"
@@ -5620,9 +5489,6 @@
       "Public keys": [
         "Öffentliche Schlüssel"
       ],
-      "Read": [
-        "Gelesen"
-      ],
       "Recipient": [
         "Empfänger"
       ],
@@ -5650,9 +5516,6 @@
       "Select how your mailbox looks like by default.": [
         "Wähle aus, wie dein Postfach standardmäßig aussehen soll."
       ],
-      "Send auto-reply": [
-        "Automatische Antwort senden"
-      ],
       "Sender": [
         "Absender"
       ],
@@ -5662,32 +5525,11 @@
       "Size:": [
         "Größe:"
       ],
-      "Starred": [
-        "Gekennzeichnet"
-      ],
-      "Statement": [
-        "Aussage"
-      ],
       "Street address": [
         "Straße und Hausnummer"
       ],
       "System information": [
         "Systeminformationen"
-      ],
-      "The email was sent ${ attachment }": [
-        "Die E-Mail wurde gesendet ${ attachment }"
-      ],
-      "the email was sent ${ attachment }": [
-        "die E-Mail wurde gesendet ${ attachment }"
-      ],
-      "The email was sent ${ attachmentStrong }": [
-        "Die E-Mail wurde gesendet ${ attachmentStrong }"
-      ],
-      "the email was sent ${ label }": [
-        "die E-Mail wurde gesendet ${ label }"
-      ],
-      "Then": [
-        "Dann"
       ],
       "Time": [
         "Zeit"
@@ -5718,21 +5560,6 @@
       ],
       "What happened?": [
         "Problembeschreibung"
-      ],
-      "With attachment": [
-        "Mit Anhang"
-      ],
-      "with attachments": [
-        "mit Anhängen"
-      ],
-      "Without attachment": [
-        "Ohne Anhang"
-      ],
-      "without attachment": [
-        "ohne Anhang"
-      ],
-      "without attachments": [
-        "ohne Anhänge"
       ],
       "Wonderful": [
         "Wunderbar"
@@ -5811,12 +5638,6 @@
       "Activate": [
         "Aktivieren"
       ],
-      "Add folder": [
-        "Ordner hinzufügen"
-      ],
-      "Add label": [
-        "Kategorie hinzufügen"
-      ],
       "All mail": [
         "Alle Nachrichten"
       ],
@@ -5873,6 +5694,9 @@
       ],
       "Less": [
         "Weniger"
+      ],
+      "Manage blocked email addresses": [
+        "Verwalte gesperrte E-Mail-Adressen"
       ],
       "Manage your folders": [
         "Ordner verwalten"
@@ -6250,8 +6074,8 @@
       ]
     },
     "Notification": {
-      "${ _Filter.Name } created": [
-        "${ _Filter.Name } erstellt"
+      "Block removed": [
+        "Sperre entfernt"
       ],
       "Contact group created": [
         "Kontaktgruppe erstellt"
@@ -6261,6 +6085,9 @@
       ],
       "Password has been set successfully": [
         "Das Passwort wurde erfolgreich festgelegt"
+      ],
+      "Sender ${ senderEmail } blocked": [
+        "Absender ${ senderEmail } gesperrt"
       ]
     },
     "Oauth instructions": {
@@ -6327,9 +6154,6 @@
       ]
     },
     "Option group": {
-      "Custom folders": [
-        "Benutzerdefinierte Ordner"
-      ],
       "Default folders": [
         "Standardordner"
       ],
@@ -6471,9 +6295,6 @@
       ],
       "Text": [
         "Text"
-      ],
-      "Type text or keyword": [
-        "Text oder Schlüsselwort eingeben"
       ],
       "Write your message": [
         "Nachricht verfassen"
@@ -6770,20 +6591,6 @@
         "Abbestellt"
       ]
     },
-    "Step in filter modal": {
-      "Actions": [
-        "Aktionen"
-      ],
-      "Conditions": [
-        "Bedingungen"
-      ],
-      "Name": [
-        "Name"
-      ],
-      "Preview": [
-        "Vorschau"
-      ]
-    },
     "Storage": {
       "Get extra storage for free": [
         "Hol dir kostenlos zusätzlichen Speicherplatz"
@@ -6928,6 +6735,12 @@
       "Conversation removed from ${ labelName }.": [
         "Unterhaltung aus „${ labelName }” entfernt."
       ],
+      "Conversations from ${ sendersList } will be labelled as ${ labelsList }": [
+        "Themen von ${ sendersList } werden als ${ labelsList } gekennzeichnet"
+      ],
+      "Conversations from ${ sendersList } will be moved to ${ folder }": [
+        "Themen von ${ sendersList } werden in den Ordner ${ folder } verschoben"
+      ],
       "Draft deleted": [
         "Entwurf wurde gelöscht"
       ],
@@ -6984,6 +6797,12 @@
       ],
       "Message removed from ${ labelName }.": [
         "Nachricht aus „${ labelName }” entfernt."
+      ],
+      "Messages from ${ sendersList } will be labelled as ${ labelsList }": [
+        "Die Nachrichten von ${ sendersList } werden als ${ labelsList } gekennzeichnet"
+      ],
+      "Messages from ${ sendersList } will be moved to ${ folder }": [
+        "Nachrichten von ${ sendersList } werden in den Ordner ${ folder } verschoben."
       ],
       "Move ${ selectionCount } conversation": [
         "${ selectionCount } Unterhaltung verschieben",
@@ -7144,9 +6963,6 @@
       "Add contact group name": [
         "Name der Kontaktgruppe hinzufügen"
       ],
-      "Add filter": [
-        "Filter hinzufügen"
-      ],
       "Add to ${ groupCount } group": [
         "Zu ${ groupCount } Gruppe hinzufügen",
         "Zu ${ groupCount } Gruppen hinzufügen"
@@ -7159,9 +6975,6 @@
       ],
       "Archive": [
         "Archiv"
-      ],
-      "Are you sure you want to close?": [
-        "Wirklich schließen?"
       ],
       "Attachments": [
         "Anhänge"
@@ -7177,6 +6990,9 @@
       ],
       "Blind Carbon Copy": [
         "Blindkopie"
+      ],
+      "Block sender": [
+        "Absender sperren"
       ],
       "Carbon Copy": [
         "Kopie"
@@ -7210,12 +7026,6 @@
       ],
       "Conversation list": [
         "Themenbaum"
-      ],
-      "Create a new folder": [
-        "Neuen Ordner erstellen"
-      ],
-      "Create a new label": [
-        "Neue Kategorie erstellen"
       ],
       "Create contact": [
         "Kontakt erstellen"
@@ -7291,9 +7101,6 @@
       "Edit contact group": [
         "Kontaktgruppe bearbeiten"
       ],
-      "Edit filter": [
-        "Filter bearbeiten"
-      ],
       "Edit image": [
         "Bild bearbeiten"
       ],
@@ -7332,9 +7139,6 @@
       ],
       "Feedback": [
         "Feedback"
-      ],
-      "Filter on": [
-        "Filtern nach …"
       ],
       "Forward": [
         "Weiterleiten"
@@ -7635,6 +7439,9 @@
       "Encrypted data with verified digital signature": [
         "Verschlüsselte Daten mit bestätigter digitaler Signatur"
       ],
+      "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
+        "Gmail kategorisiert automatisch einige E-Mails als Soziale Netzwerke oder Werbeaktionen. Du kannst auswählen, wohin diese E-Mails importiert werden sollen."
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Wähle das PGP-Schema, das beim Signieren oder Verschlüsseln an einen Benutzer genutzt werden soll. Beachte dabei, dass PGP/Inline das Senden als reine Textnachrichten erzwingt."
       ],
@@ -7646,9 +7453,6 @@
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
         "Durch diese Aktion werden alle Nachrichten heruntergeladen, sodass diese lokal durchsucht werden können. Sobald du deine Browserdaten löschst, wird diese Option wieder deaktiviert."
-      ],
-      "This feature is only available for paid users": [
-        "Diese Funktion ist nur für zahlende Benutzer verfügbar"
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Lade einen öffentlichen Schlüssel hoch, um das Senden von Ende-zu-Ende-verschlüsselten Nachrichten an diese E-Mail-Adresse zu ermöglichen"

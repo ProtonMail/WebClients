@@ -26,9 +26,6 @@
       "Activate recovery": [
         "Aktivirajte oporavak"
       ],
-      "Add": [
-        "Dodaj"
-      ],
       "Add address": [
         "Dodaj adresu"
       ],
@@ -123,7 +120,7 @@
         "Zatvori"
       ],
       "Close modal": [
-        "Zatvori skočni prozor"
+        "Close"
       ],
       "Close navigation": [
         "Zatvori navigaciju"
@@ -332,12 +329,6 @@
       "move emails to": [
         "premjesti e-poštu u"
       ],
-      "Move to Allow List": [
-        "Premjesti u popis dopuštenih"
-      ],
-      "Move to Block List": [
-        "Premjesti u popis nedopuštenih"
-      ],
       "Need help?": [
         "Trebate pomoć?"
       ],
@@ -538,6 +529,9 @@
       ],
       "Sort": [
         "Sortiranje"
+      ],
+      "Spam": [
+        "Neželjena pošta"
       ],
       "Start import": [
         "Započni uvoz"
@@ -1258,9 +1252,6 @@
       "Domain not available, try again later": [
         "Domena nije dostupna, pokušajte ponovo kasnije"
       ],
-      "Email address invalid": [
-        "Adresa e-pošte nije valjana"
-      ],
       "Email is not valid": [
         "Adresa e-pošte nije važeća"
       ],
@@ -1299,6 +1290,9 @@
       ],
       "Invalid domain": [
         "Nevažeća domena"
+      ],
+      "Invalid email address": [
+        "Nevažeća adresa e-pošte"
       ],
       "Invalid expiration date": [
         "Nevažeći datum isteka"
@@ -1776,9 +1770,6 @@
       ]
     },
     "FilterSettings": {
-      "Apply sender-specific spam rules. Messages from addresses or domains on the Allow List always go to your Inbox while messages from addresses or domains on the Block List always go to Spam. Marking a message as spam adds its address to the Block List. Marking a message as not spam adds it to the Allow List.": [
-        "Ovdje se može primijeniti pravila neželjene pošte za neželjene pošiljatelje. Poruke s adresa ili domena iz popisa dopuštenih adresa uvijek ide u pristiglu poštu, dok poruke s adresa ili domena iz popisa nedopuštenih uvijek idu u neželjenu poštu. Označavanje poruke kao neželjene poruke dodaje adresu na popis nedopuštenih. Označavanje poruke kao željene poruke dodaje adresu na popis dopuštenih."
-      ],
       "Search in Allow List and Block List": [
         "Pretraga popisa dopuštenih i nedopuštenih"
       ]
@@ -2952,14 +2943,8 @@
       "Your account will be updated once the payment is cleared.": [
         "Vaš račun će se ažurirati nakon uspješnog plaćanja."
       ],
-      "Your Allow List is empty.": [
-        "Vaš popis dopuštenih je prazan."
-      ],
       "Your bank requires 3-D Secure verification for security purposes.": [
         "Vaša banka zahtijeva 3-D Secure potvrdu iz sigurnosnih razloga."
-      ],
-      "Your Block List is empty.": [
-        "Vaš popis nedopuštenih je prazan."
       ],
       "Your email will only be used for this one-time verification.": [
         "Vaša adresa e-pošte koristit će se samo za ovu jednokratnu provjeru."
@@ -3122,9 +3107,6 @@
       ],
       "Close draft": [
         "Zatvori skicu"
-      ],
-      "Create filter with...": [
-        "Stvori filtar s..."
       ],
       "Delete permanently": [
         "Trajno izbriši"
@@ -3638,6 +3620,12 @@
       "Move to": [
         "Premjesti u"
       ],
+      "Move to Archive": [
+        "Premjesti u Arhivu"
+      ],
+      "Move to Inbox": [
+        "Premjesti u Pristiglu poštu"
+      ],
       "Name": [
         "Naziv"
       ],
@@ -3758,6 +3746,9 @@
       "Signature": [
         "Potpis"
       ],
+      "Spam": [
+        "Neželjena pošta"
+      ],
       "Starred": [
         "Sa zvjezdicom"
       ],
@@ -3835,9 +3826,6 @@
       ],
       "Verification code": [
         "Kôd za provjeru"
-      ],
-      "Want to add": [
-        "Želite dodati"
       ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Žao nam je što odlazite. Molimo vas da objasnite zašto odlazite kako bi nam pomogli da se poboljšamo."
@@ -4239,15 +4227,10 @@
         "na treću srijedu"
       ]
     },
-    "Moved to black/whitelist": {
-      "${ Domain } removed": [
-        "${ Domain } izbrisano"
-      ],
-      "${ Email } removed": [
-        "${ Email } izbrisano"
-      ]
-    },
     "Navigation": {
+      "All": [
+        "Sve"
+      ],
       "Back": [
         "Natrag"
       ],
@@ -4256,6 +4239,9 @@
       ],
       "Back to Drive": [
         "Natrag na Drive"
+      ],
+      "Spam": [
+        "Neželjena pošta"
       ]
     },
     "New Label form": {
@@ -4825,36 +4811,6 @@
         "Korisničko ime"
       ]
     },
-    "Spam filter moved to blacklist": {
-      "${ Domain } moved to Block List": [
-        "${ Domain } premješteno u popis nedopuštenih"
-      ],
-      "${ Email } moved to Block List": [
-        "${ Email } premješteno u popis nedopuštenih"
-      ]
-    },
-    "Spam filter moved to whitelist": {
-      "${ Domain } moved to Allow List": [
-        "${ Domain } premješteno u popis dopuštenih"
-      ],
-      "${ Email } moved to Allow List": [
-        "${ Email } premješteno u popis dopuštenih"
-      ]
-    },
-    "Spam notification": {
-      "${ domain } added": [
-        "${ domain } dodano"
-      ],
-      "${ domain } updated": [
-        "${ domain } ažurirano"
-      ],
-      "${ email } added": [
-        "${ email } dodano"
-      ],
-      "${ email } updated": [
-        "${ email } ažurirano"
-      ]
-    },
     "State": {
       "Downgrading your account, please wait": [
         "Snižavanje statusa vašeg računa, molimo pričekajte"
@@ -5062,6 +5018,12 @@
       "CSV field": [
         "CSV polje"
       ],
+      "Edit": [
+        "Uredi"
+      ],
+      "Email address": [
+        "Adresa e-pošte"
+      ],
       "Import": [
         "Uvoz"
       ],
@@ -5150,12 +5112,6 @@
       "Add Sieve filter": [
         "Dodaj Sieve filtar"
       ],
-      "Add to Allow List": [
-        "Dodaj na popis dopuštenih"
-      ],
-      "Add to Block List": [
-        "Dodaj na popis nedopuštenih"
-      ],
       "Add user": [
         "Dodaj korisnika"
       ],
@@ -5167,9 +5123,6 @@
       ],
       "Allocate storage": [
         "Dodijelite prostor za pohranu"
-      ],
-      "Allow List": [
-        "Popis dopuštenih"
       ],
       "Amount": [
         "Iznos"
@@ -5200,9 +5153,6 @@
       ],
       "Billing details": [
         "Detalji plaćanja"
-      ],
-      "Block List": [
-        "Popis nedopuštenih"
       ],
       "Bridge for ${ platform }": [
         "Bridge za ${ platform }"
@@ -5302,12 +5252,6 @@
       ],
       "Domain names": [
         "Nazivi domena"
-      ],
-      "Edit Allow List": [
-        "Uredi popis dopuštenih"
-      ],
-      "Edit Block List": [
-        "Uredi popis nedopuštenih"
       ],
       "Edit credit/debit card": [
         "Uredi kreditnu/debitnu karticu"
@@ -5569,9 +5513,6 @@
       ],
       "Sort labels alphabetically": [
         "Sortiraj oznake abecedno"
-      ],
-      "Spam filters": [
-        "Filtri neželjene pošte"
       ],
       "Start a new import": [
         "Započni novi uvoz"

@@ -84,7 +84,7 @@
         "Terminhinweis schließen"
       ],
       "Close modal": [
-        "Fenster schließen"
+        "Close"
       ],
       "Close navigation": [
         "Menü schließen"
@@ -3530,11 +3530,20 @@
       "Mailbox password": [
         "Postfach-Passwort"
       ],
+      "Manage categories": [
+        "Kategorien verwalten"
+      ],
       "Manage folders": [
         "Ordner verwalten"
       ],
       "Manage labels": [
         "Kategorien verwalten"
+      ],
+      "Move to Archive": [
+        "Ins Archiv verschieben"
+      ],
+      "Move to Inbox": [
+        "In Posteingang verschieben"
       ],
       "Name": [
         "Name"
@@ -5054,6 +5063,9 @@
       ],
       "Encrypted data with verified digital signature": [
         "Verschlüsselte Daten mit bestätigter digitaler Signatur"
+      ],
+      "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
+        "Gmail kategorisiert automatisch einige E-Mails als Soziale Netzwerke oder Werbeaktionen. Du kannst auswählen, wohin diese E-Mails importiert werden sollen."
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Wähle das PGP-Schema, das beim Signieren oder Verschlüsseln für einen Benutzer verwendet werden soll. Beachte, dass PGP/Inline das Senden von Reintextnachrichten erzwingt."

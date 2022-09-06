@@ -99,7 +99,7 @@
         "Kapat"
       ],
       "Close modal": [
-        "Pencereyi kapat"
+        "Close"
       ],
       "Close navigation": [
         "Gezinmeyi kapat"
@@ -144,16 +144,16 @@
         "Bağlantıyı kopyala"
       ],
       "Create": [
-        "Oluştur"
+        "Ekle"
       ],
       "Create a new contact group": [
-        "Yeni bir kişi grubu oluştur"
+        "Yeni bir kişi grubu ekle"
       ],
       "Create link": [
         "Bağlantı oluştur"
       ],
       "Create new folder": [
-        "Yeni klasör oluştur"
+        "Yeni klasör ekle"
       ],
       "Customize": [
         "Özelleştir"
@@ -1744,7 +1744,7 @@
         "Takvim sayısı sınırına ulaşıldı"
       ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        "Kişisel takvim sınırı nedeniyle içe aktarılan tüm takvimler için yeni takvimler oluşturulamıyor."
+        "Kişisel takvim sayısı sınırı nedeniyle içe aktarılan tüm takvimler için yeni takvimler eklenemiyor."
       ],
       "Contact could not be saved": [
         "Kişi kaydedilemedi"
@@ -2422,16 +2422,16 @@
         "İçe aktarılan iletiler için bir etiket, bu içe aktarma için bir zaman aralığı ve içe aktarmak istediğiniz etiketler oluşturun."
       ],
       "Create a new contact group": [
-        "Yeni bir kişi grubu oluştur"
+        "Yeni bir kişi grubu ekle"
       ],
       "Create in": [
-        "Şurada oluştur"
+        "Şuraya ekle"
       ],
       "Create links and share your files with others.": [
         "Bağlantı oluşturun ve dosyalarınızı başkalarıyla paylaşın."
       ],
       "Create your first folder and start moving your files.": [
-        "İlk klasörünüzü oluşturun ve dosyalarınızı taşımaya başlayın."
+        "İlk klasörünüzü ekleyin ve dosyalarınızı taşımaya başlayın."
       ],
       "Creating": [
         "Oluşturuluyor"
@@ -2823,7 +2823,7 @@
         "Google üzerinden içe aktarmak istediklerinizi seçin."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        "İçe aktarılacak takvimleri seçin. En fazla 20 tane olmak üzere içe aktarılan her takvim için yeni bir takvim oluşturulur."
+        "İçe aktarılacak takvimleri seçin. En fazla 20 tane olmak üzere içe aktarılan her takvim için yeni bir takvim eklenir."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Sunuculara erişilemiyor. Lütfen birkaç dakika sonra yeniden deneyin"
@@ -2888,8 +2888,8 @@
       "There are no files yet": [
         "Henüz bir dosya yok"
       ],
-      "These files were shared using end-to-end encryption. To ensure their security — and the security of all your documents, photos, and files — store them in Proton Drive, the cloud storage service you can trust.": [
-        "Bu dosyalar uçtan uca şifreleme kullanılarak paylaşıldı. Tüm belgelerinizin, fotoğraflarınızın ve dosyalarınızın güvenliğini sağlamak için bunları güvenebileceğiniz Proton Drive bulut depolama hizmetinde saklayın."
+      "These files were shared using end-to-end encryption. To keep them secure — and all your documents, photos, and files private — store them in your own Proton Drive. It's easy-to-use and free.": [
+        "Bu dosyalar uçtan uca şifreleme kullanılarak paylaşıldı. Bu dosyaları ve diğer tüm belgelerinizi, fotoğraflarınızı ve dosyalarınızı kişisel gizliliğinizi koruyarak saklamak için kendi Proton Drive depolama alanınızı kullanın. Kolay kullanılır ve ücretsizdir."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Bu hesap, bir ilke ihlali olasılığı nedeniyle askıya alındı."
@@ -3338,6 +3338,9 @@
       "Malware": [
         "Kötü amaçlı yazılım"
       ],
+      "Manage categories": [
+        "Kategori yönetimi"
+      ],
       "Manage folders": [
         "Klasör yönetimi"
       ],
@@ -3349,6 +3352,12 @@
       ],
       "Modified": [
         "Değiştirilme"
+      ],
+      "Move to Archive": [
+        "Arşive taşı"
+      ],
+      "Move to Inbox": [
+        "Gelen kutusuna taşı"
       ],
       "Name": [
         "Ad"
@@ -3507,10 +3516,10 @@
     },
     "Label/folder modal": {
       "Create folder": [
-        "Klasör oluştur"
+        "Klasör ekle"
       ],
       "Create label": [
-        "Etiket oluştur"
+        "Etiket ekle"
       ],
       "Edit folder": [
         "Klasörü düzenle"
@@ -3521,7 +3530,7 @@
     },
     "label/folder notification": {
       "${ Label.Name } created": [
-        "${ Label.Name } oluşturuldu"
+        "${ Label.Name } eklendi"
       ]
     },
     "Link": {
@@ -3639,13 +3648,13 @@
     },
     "Notification": {
       "\"${ name }\" created successfully": [
-        "\"${ name }\" oluşturuldu"
+        "\"${ name }\" eklendi"
       ],
       "\"${ name }\" deleted permanently from trash": [
         "\"${ name }\" çöp kutusundan kalıcı olarak silindi"
       ],
       "\"${ name }\" failed to be created": [
-        "\"${ name }\" oluşturulamadı"
+        "\"${ name }\" eklenemedi"
       ],
       "\"${ name }\" failed to be deleted permanently from trash": [
         "\"${ name } çöp kutusundan kalıcı olarak silinemedi"
@@ -3722,7 +3731,7 @@
         "Tüm ögeler yakında çöp kutusundan kalıcı olarak silinecek"
       ],
       "Contact group created": [
-        "Kişi grubu oluşturuldu"
+        "Kişi grubu eklendi"
       ],
       "Contact group updated": [
         "Kişi grubu güncellendi"
@@ -3841,7 +3850,7 @@
     },
     "Onboarding Proton": {
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
-        "Kuruluşunuzun tüm üyelerinin korunduğundan emin olmak için kuruluşunuzu yapılandırın, etki alanı adınızı bağlayın ve hesaplar oluşturun."
+        "Kuruluşunuzun tüm üyelerinin korunduğundan emin olmak için kuruluşunuzu yapılandırın, etki alanı adınızı bağlayın ve hesaplar ekleyin."
       ],
       "Discover all Proton services": [
         "Tüm Proton hizmetlerini keşfedin"
@@ -3869,7 +3878,7 @@
         "Var olan gruba ekle"
       ],
       "Create new group": [
-        "Yeni grup oluştur"
+        "Yeni grup ekle"
       ],
       "Ignore group": [
         "Grubu yok say"
@@ -3880,7 +3889,7 @@
     },
     "Option group label": {
       "Create new calendar": [
-        "Yeni takvim oluştur"
+        "Yeni takvim ekle"
       ],
       "Merge with calendar": [
         "Takvim ile birleştir"
@@ -4270,13 +4279,13 @@
         "Kişiler"
       ],
       "Create a new folder": [
-        "Yeni bir klasör oluştur"
+        "Yeni bir klasör ekle"
       ],
       "Create contact": [
-        "Kişi oluştur"
+        "Kişi ekle"
       ],
       "Create new group": [
-        "Yeni grup oluştur"
+        "Yeni grup ekle"
       ],
       "Currency": [
         "Para birimi"
@@ -4651,6 +4660,9 @@
       "Encrypted data with verified digital signature": [
         "Doğrulanmış dijital imza ile şifrelenmiş veri"
       ],
+      "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
+        "Gmail bazı e-postaları Sosyal ya da Tanıtım gibi kategorilere ayırır. Bu e-postaların nereye içe aktarılacağını seçebilirsiniz."
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Bir kullanıcı için imzalama veya şifreleme sırasında kullanılacak PGP şemasını seçin. PGP/Inline için iletilerin düz metin biçiminde olması gerektiğini unutmayın"
       ],
@@ -4680,7 +4692,8 @@
       "Name cannot include invisible characters, / or \\.": [
         "Ad içinde görünmez karakterler ile / veya \\ karakterleri bulunamaz."
       ],
-      "Name must be ${ MAX_NAME_LENGTH } characters long at most": [
+      "Name must be ${ MAX_NAME_LENGTH } character long at most": [
+        "Ad en fazla ${ MAX_NAME_LENGTH } karakter uzunluğunda olabilir",
         "Ad en fazla ${ MAX_NAME_LENGTH } karakter uzunluğunda olabilir"
       ],
       "Name must not be empty": [

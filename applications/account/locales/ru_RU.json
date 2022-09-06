@@ -43,9 +43,6 @@
       "Activate recovery": [
         "Активировать восстановление"
       ],
-      "Add": [
-        "Добавить"
-      ],
       "Add ${ BRAND_NAME } Account": [
         "Добавить учетную запись ${ BRAND_NAME }"
       ],
@@ -115,6 +112,9 @@
       "Back": [
         "Назад"
       ],
+      "Block": [
+        "Заблокировать"
+      ],
       "Bold": [
         "Жирный"
       ],
@@ -152,7 +152,7 @@
         "Закрыть"
       ],
       "Close modal": [
-        "Закрыть окно"
+        "Close"
       ],
       "Close navigation": [
         "Cкрыть панель навигации"
@@ -445,6 +445,12 @@
       "Mark as default": [
         "Установить по умолчанию"
       ],
+      "Mark as not spam": [
+        "Отметить как не спам"
+      ],
+      "Mark as spam": [
+        "Отметить как спам"
+      ],
       "mark emails as": [
         "отметить письма как"
       ],
@@ -459,12 +465,6 @@
       ],
       "move emails to": [
         "переместить письма в"
-      ],
-      "Move to Allow List": [
-        "Переместить в список разрешённых"
-      ],
-      "Move to Block List": [
-        "Переместить в список блокируемых"
       ],
       "Need help?": [
         "Нужна помощь?"
@@ -549,6 +549,9 @@
       ],
       "Remove": [
         "Удалить"
+      ],
+      "Remove Block": [
+        "Удалить блокировку"
       ],
       "Remove bonuses": [
         "Удалить бонусы"
@@ -723,6 +726,9 @@
       ],
       "Sort": [
         "Сортировать"
+      ],
+      "Spam": [
+        "Спам"
       ],
       "Start import": [
         "Начать импорт"
@@ -2699,9 +2705,6 @@
       "Domain not available, try again later": [
         "Домен недоступен, попробуйте позже"
       ],
-      "Email address invalid": [
-        "Неверный адрес электронной почты"
-      ],
       "Email is not valid": [
         "Эл. почта недействительна"
       ],
@@ -2752,6 +2755,9 @@
       ],
       "Invalid domain": [
         "Недействительный домен"
+      ],
+      "Invalid email address": [
+        "Недействительный адрес электронной почты"
       ],
       "Invalid expiration date": [
         "Недействительный срок действия"
@@ -3039,6 +3045,12 @@
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "Произошла непредвиденная ошибка. Импорт должен быть перезапущен."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } event.": [
+        "В файле ${ formattedFilename } более ${ MAX_IMPORT_EVENTS_STRING } события.",
+        "В файле ${ formattedFilename } более ${ MAX_IMPORT_EVENTS_STRING } событий.",
+        "В файле ${ formattedFilename } более ${ MAX_IMPORT_EVENTS_STRING } событий.",
+        "В файле ${ formattedFilename } более ${ MAX_IMPORT_EVENTS_STRING } событий."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "Ваш файл ${ formattedFilename } имеет недопустимый формат и не может быть импортирован."
@@ -3490,8 +3502,11 @@
       "Add a custom filter to automatically perform certain actions, like labeling or archiving messages. Filters can be edited and created directly via Sieve programming language.": [
         "Добавьте настраиваемый фильтр для таких действий, как пометка или архивирование сообщений. Фильтры можно редактировать и создавать с помощью языка программирования Sieve."
       ],
-      "Apply sender-specific spam rules. Messages from addresses or domains on the Allow List always go to your Inbox while messages from addresses or domains on the Block List always go to Spam. Marking a message as spam adds its address to the Block List. Marking a message as not spam adds it to the Allow List.": [
-        "Применить правила фильтрации спама для отправителя. Адреса, находящиеся в списке разрешённых, всегда попадают во Входящие, в списке блокируемых – в Спам. Если пометить сообщение как спам, то адрес, указанный в нём, будет занесён в список блокируемых. В случае, если сообщение помечено как не-спам, адрес будет занесён в список разрешённых."
+      "Emails from addresses marked as spam by you or Proton will go to your spam folder. If you want to allow emails from one of these addresses, mark it as \"not spam\".": [
+        "Эл. почта с адресов, отмеченных как спам вами или компанией Proton, попадет в папку спама. Если хотите разрешить письма с одного из этих адресов, отметьте его как \"не спам\"."
+      ],
+      "Emails from blocked addresses won't be delivered.": [
+        "Эл. почта, поступающая с заблокированных адресов, не будет доставлена."
       ],
       "Search in Allow List and Block List": [
         "Поиск в списке разрешённых и списке блокируемых"
@@ -5364,6 +5379,9 @@
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Эта ссылка ведет на сайт, который может пытаться украсть вашу информацию, например, пароли и данные кредитной карты."
       ],
+      "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
+        "Эта ссылка может быть омографической атакой и не может быть открыта браузерами Edge. Если вы уверены, что ссылка подлинная, используйте другой браузер для ее открытия."
+      ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Эта ссылка может быть омографической атакой, при которой символы одного алфавита подменяются похожими символами из другого. Пожалуйста, проверьте, что это именно та ссылка, которую вы хотите посетить, или не переходите по ней."
       ],
@@ -5751,14 +5769,8 @@
       "Your account will be updated once the payment is cleared.": [
         "Ваш аккаунт будет обновлен, когда платеж будет проверен."
       ],
-      "Your Allow List is empty.": [
-        "Список разрешённых пуст."
-      ],
       "Your bank requires 3-D Secure verification for security purposes.": [
         "Ваш банк требует проверки 3-D Secure в целях безопасности."
-      ],
-      "Your Block List is empty.": [
-        "Список блокируемых пуст."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Ваши данные готовы к импорту из ${ importedEmailAddressStrong } в ваш аккаунт Proton."
@@ -6008,9 +6020,6 @@
       ],
       "Close draft": [
         "Закрыть черновик"
-      ],
-      "Create filter with...": [
-        "Создать фильтр с помощью..."
       ],
       "Delete permanently": [
         "Удалить навсегда"
@@ -6263,6 +6272,9 @@
       "Address": [
         "Адрес"
       ],
+      "Address type": [
+        "Тип адреса"
+      ],
       "Addresses": [
         "Адреса"
       ],
@@ -6337,6 +6349,9 @@
       ],
       "Block malware, ads and trackers": [
         "Блокировать вредоносные программы, рекламу и трекеры"
+      ],
+      "Blocked": [
+        "Заблокировано"
       ],
       "bonus storage": [
         "бонусное хранилище"
@@ -6668,6 +6683,9 @@
       "Mailbox password": [
         "Пароль почтового ящика"
       ],
+      "Manage categories": [
+        "Управлять категориями"
+      ],
       "Manage folders": [
         "Управление папками"
       ],
@@ -6685,6 +6703,12 @@
       ],
       "Move to": [
         "Переместить в"
+      ],
+      "Move to Archive": [
+        "Переместить в архив"
+      ],
+      "Move to Inbox": [
+        "Переместить в входящие"
       ],
       "Name": [
         "Имя"
@@ -6709,6 +6733,9 @@
       ],
       "No label found": [
         "Ярлыки не найдены"
+      ],
+      "Non Spam": [
+        "Не спам"
       ],
       "Non-standard ports": [
         "Нестандартные порты"
@@ -6860,6 +6887,9 @@
       "Signature": [
         "Подпись"
       ],
+      "Spam": [
+        "Спам"
+      ],
       "Starred": [
         "Важные"
       ],
@@ -6961,9 +6991,6 @@
       ],
       "Waiting for subscription": [
         "Ожидание подписки"
-      ],
-      "Want to add": [
-        "Хотите добавить"
       ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Жаль, что вы уходите. Пожалуйста, объясните, почему вы уходите, чтобы помочь нам улучшать нашу службу."
@@ -7523,15 +7550,10 @@
         "в третью среду"
       ]
     },
-    "Moved to black/whitelist": {
-      "${ Domain } removed": [
-        "${ Domain } удалён"
-      ],
-      "${ Email } removed": [
-        "${ Email } удалён"
-      ]
-    },
     "Navigation": {
+      "All": [
+        "Все"
+      ],
       "Back": [
         "Назад"
       ],
@@ -7543,6 +7565,15 @@
       ],
       "Back to Mail": [
         "Вернуться к почте"
+      ],
+      "Blocked": [
+        "Заблокировано"
+      ],
+      "Non spam": [
+        "Не спам"
+      ],
+      "Spam": [
+        "Спам"
       ]
     },
     "New Label form": {
@@ -7889,26 +7920,6 @@
         "Управление командами"
       ]
     },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Обеспечьте конфиденциальность по умолчанию для резервного копирования, хранения, обмена и поиска файлов."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "В противном случае доступ к вашему аккаунту будет ограничен, и в конечном итоге отключен."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Чтобы продолжить использование ${ MAIL_APP_NAME } с платными функциями, выберите подписку и способ оплаты."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Улучшите до пакета для предприятий с доступом ко всем платным службам Proton."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Улучшите до пакета максимальной конфиденциальности и получите доступ ко всем платным службам Proton."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Ваш пробный период заканчивается ${ formattedTrialExpirationDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } заканчивающийся ${ last4 }"
@@ -7975,6 +7986,26 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Вы пользуетесь акционной ценой на свой текущий тариф. Если вы перейдете на более дешевую версию аккаунта, то потеряете возмоножность пользоваться акционной ценой, которая также будет недоступна, если вы попробуете повторно подписаться на тариф."
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Обеспечьте конфиденциальность по умолчанию для резервного копирования, хранения, обмена и поиска файлов."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "В противном случае доступ к вашему аккаунту будет ограничен, и в конечном итоге отключен."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Чтобы продолжить использование ${ MAIL_APP_NAME } с платными функциями, выберите подписку и способ оплаты."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Улучшите до пакета для предприятий с доступом ко всем платным службам Proton."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Улучшите до пакета максимальной конфиденциальности и получите доступ ко всем платным службам Proton."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Ваш пробный период заканчивается ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -8663,11 +8694,17 @@
       "Confirm password": [
         "Подтвердить пароль"
       ],
+      "domain.com": [
+        "domain.com"
+      ],
       "E.g., ": [
         "Например, "
       ],
       "Email address": [
         "Адрес электронной почты"
+      ],
+      "example@domain.com": [
+        "example@domain.com"
       ],
       "Feedback": [
         "Обратная связь"
@@ -8989,34 +9026,33 @@
         "Имя пользователя"
       ]
     },
-    "Spam filter moved to blacklist": {
-      "${ Domain } moved to Block List": [
-        "${ Domain } перемещён в список блокируемых"
-      ],
-      "${ Email } moved to Block List": [
-        "${ Email } перемещён в список блокируемых"
-      ]
-    },
-    "Spam filter moved to whitelist": {
-      "${ Domain } moved to Allow List": [
-        "${ Domain } перемещён в список разрешённых"
-      ],
-      "${ Email } moved to Allow List": [
-        "${ Email } перемещён в список разрешённых"
-      ]
-    },
     "Spam notification": {
-      "${ domain } added": [
-        "${ domain } добавлен"
+      "${ name } added": [
+        "${ name } добавлен"
       ],
-      "${ domain } updated": [
-        "${ domain } обновлён"
+      "${ name } deletion failed": [
+        "Сбой при удалении ${ name }"
       ],
-      "${ email } added": [
-        "${ email } добавлен"
+      "${ name } failed to move to Block List": [
+        "${ name } не перемещён в список блокируемых из-за сбоя"
       ],
-      "${ email } updated": [
-        "${ email } обновлён"
+      "${ name } failed to move to Non spam List": [
+        "Сбой при перемещении ${ name } в список не-спама"
+      ],
+      "${ name } failed to move to Spam List": [
+        "Сбой при перемещении ${ name } в список спама"
+      ],
+      "${ name } moved to Block List": [
+        "${ name } перемещён в список блокируемых"
+      ],
+      "${ name } moved to Non spam list": [
+        "${ name } перемещён в список не-спама"
+      ],
+      "${ name } moved to Spam list": [
+        "${ name } перемещён в список спама"
+      ],
+      "${ name } successfully deleted": [
+        "${ name } успешно удален"
       ]
     },
     "Spotlight": {
@@ -9456,8 +9492,17 @@
       "CSV field": [
         "Поле CSV файла"
       ],
+      "Edit": [
+        "Изменить"
+      ],
+      "Email address": [
+        "Адрес эл. почты"
+      ],
       "Import": [
         "Импорт"
+      ],
+      "Marked as": [
+        "Отмечено как"
       ],
       "Name": [
         "Название"
@@ -9590,11 +9635,14 @@
       "Add Sieve filter": [
         "Добавить фильтр Sieve"
       ],
-      "Add to Allow List": [
-        "Добавить в список разрешённых"
-      ],
-      "Add to Block List": [
+      "Add to block list": [
         "Добавить в список блокируемых"
+      ],
+      "Add to not spam list": [
+        "Добавить в список надежных (не спам)"
+      ],
+      "Add to spam list": [
+        "Добавить в список спама"
       ],
       "Add user": [
         "Добавить пользователя"
@@ -9607,9 +9655,6 @@
       ],
       "Allocate storage": [
         "Выделение объёма в хранилище"
-      ],
-      "Allow List": [
-        "Список разрешённых"
       ],
       "Amount": [
         "Сумма"
@@ -9649,9 +9694,6 @@
       ],
       "Billing details": [
         "Платёжная информация"
-      ],
-      "Block List": [
-        "Список блокируемых"
       ],
       "Bridge for ${ platform }": [
         "Bridge для ${ platform }"
@@ -9829,12 +9871,6 @@
       ],
       "Download ${ VPN_APP_NAME }": [
         "Скачать ${ VPN_APP_NAME }"
-      ],
-      "Edit Allow List": [
-        "Изменить список разрешённых"
-      ],
-      "Edit Block List": [
-        "Изменить список блокируемых"
       ],
       "Edit calendar": [
         "Изменить календарь"
@@ -10199,8 +10235,8 @@
       "Sort labels alphabetically": [
         "Сортировать ярлыки по алфавиту"
       ],
-      "Spam filters": [
-        "Фильтры спама"
+      "Spam and block list": [
+        "Список спама и блокировки"
       ],
       "Start a new import": [
         "Начать новый импорт"
@@ -10439,6 +10475,9 @@
       "Enabling advanced logs records the IP address for each event in the security log.": [
         "Включение расширенного журналирования записывает IP-адрес каждого события в журнале безопасности."
       ],
+      "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
+        "Gmail автоматически категоризирует некоторые эл. письма, такие как уведомления соцсетей и рекламу. Вы можете выбрать, куда импортировать эти письма."
+      ],
       "Group emails in the same conversation together in your Inbox or display them separately.": [
         "Группировать сообщения из одной цепочки в папке \"Входящие\" или отображать их отдельно."
       ],
@@ -10571,6 +10610,16 @@
       ],
       "Upgrade to a Mail paid plan to share your personal calendar via link with anyone.": [
         "Перейдите на платный тариф Почты, чтобы делиться личным календарем по ссылке с кем угодно."
+      ]
+    },
+    "User referee invited via email": {
+      "Invited via email": [
+        "Приглашено по электронной почте"
+      ]
+    },
+    "User referee signed up using referral link": {
+      "Signed up via your link": [
+        "Зарегистрировался по вашей ссылке"
       ]
     },
     "User role": {

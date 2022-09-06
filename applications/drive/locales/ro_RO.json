@@ -99,7 +99,7 @@
         "Închidere"
       ],
       "Close modal": [
-        "Închidere"
+        "Close"
       ],
       "Close navigation": [
         "Închidere navigare"
@@ -2939,8 +2939,8 @@
       "There are no files yet": [
         "Încă nu există fișiere."
       ],
-      "These files were shared using end-to-end encryption. To ensure their security — and the security of all your documents, photos, and files — store them in Proton Drive, the cloud storage service you can trust.": [
-        "Aceste fișiere au fost partajate folosind criptarea în ambele părți. Pentru a le asigura securitatea - și securitatea tuturor documentelor, fotografiilor și fișierelor dvs. - stocați-le în Proton Drive, serviciul de stocare în cloud în care puteți avea încredere."
+      "These files were shared using end-to-end encryption. To keep them secure — and all your documents, photos, and files private — store them in your own Proton Drive. It's easy-to-use and free.": [
+        "Aceste fișiere au fost partajate utilizând criptarea la ambele capete. Pentru a le păstra în siguranță - și toate documentele, fotografiile și fișierele să rămână private - stocați-le în propria unitate Proton Drive. Este ușor de utilizat și gratuit."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Acest cont a fost suspendat din cauza unei posibile încălcări a politicii."
@@ -3391,6 +3391,9 @@
       "Malware": [
         "Malware"
       ],
+      "Manage categories": [
+        "Gestionare categorii"
+      ],
       "Manage folders": [
         "Gestionare foldere"
       ],
@@ -3402,6 +3405,12 @@
       ],
       "Modified": [
         "Modificat"
+      ],
+      "Move to Archive": [
+        "Mutare în «Arhivă»"
+      ],
+      "Move to Inbox": [
+        "Mutare în «Primite»"
       ],
       "Name": [
         "Nume"
@@ -4738,6 +4747,9 @@
       "Encrypted data with verified digital signature": [
         "Date criptate cu semnătură digitală verificată"
       ],
+      "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
+        "Gmail categorizează automat unele mesaje ca „Rețele sociale” sau „Oferte”. Puteți selecta unde să fie importate acestea."
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Selectați schema PGP ce va fi folosită la semnare sau criptare de către un utilizator. Rețineți că PGP integrat forțează folosirea mesajelor simple."
       ],
@@ -4768,8 +4780,10 @@
       "Name cannot include invisible characters, / or \\.": [
         "Numele nu poate include caractere invizibile, / sau \\."
       ],
-      "Name must be ${ MAX_NAME_LENGTH } characters long at most": [
-        "Numele trebuie să aibe maxim ${ MAX_NAME_LENGTH } caractere."
+      "Name must be ${ MAX_NAME_LENGTH } character long at most": [
+        "Numele trebuie să aibă cel mult un caracter.",
+        "Numele trebuie să aibă cel mult ${ MAX_NAME_LENGTH } caractere.",
+        "Numele trebuie să aibă cel mult ${ MAX_NAME_LENGTH } de caractere."
       ],
       "Name must not be empty": [
         "Numele nu poate fi gol."

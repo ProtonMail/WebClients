@@ -29,9 +29,6 @@
       "Activate recovery": [
         "Aktiver gendannelse"
       ],
-      "Add": [
-        "Tilføj"
-      ],
       "Add ${ BRAND_NAME } Account": [
         "Tilføj ${ BRAND_NAME }-konto"
       ],
@@ -135,7 +132,7 @@
         "Luk"
       ],
       "Close modal": [
-        "Luk dialog"
+        "Close"
       ],
       "Close navigation": [
         "Luk navigation"
@@ -443,12 +440,6 @@
       "move emails to": [
         "flyt e-mails til"
       ],
-      "Move to Allow List": [
-        "Flyt til godkendt-liste"
-      ],
-      "Move to Block List": [
-        "Flyt til blokeringsliste"
-      ],
       "Need help?": [
         "Brug for hjælp?"
       ],
@@ -706,6 +697,9 @@
       ],
       "Sort": [
         "Sortér"
+      ],
+      "Spam": [
+        "Spam"
       ],
       "Start import": [
         "Start importering"
@@ -2464,9 +2458,6 @@
       "Domain not available, try again later": [
         "Domæne er ikke tilgængeligt, prøv igen senere"
       ],
-      "Email address invalid": [
-        "Ugyldig emailadresse"
-      ],
       "Email is not valid": [
         "E-mail er ikke gyldig"
       ],
@@ -2517,6 +2508,9 @@
       ],
       "Invalid domain": [
         "Ugyldigt domæne"
+      ],
+      "Invalid email address": [
+        "Ugyldig e-mailadresse"
       ],
       "Invalid expiration date": [
         "Ugyldig udløbsdato"
@@ -3153,9 +3147,6 @@
       ]
     },
     "FilterSettings": {
-      "Apply sender-specific spam rules. Messages from addresses or domains on the Allow List always go to your Inbox while messages from addresses or domains on the Block List always go to Spam. Marking a message as spam adds its address to the Block List. Marking a message as not spam adds it to the Allow List.": [
-        "Anvend afsenderspecifikke spamregler. Beskeder fra adresser eller domæner på Godkendt-listen fortsætter altid til din indbakke, mens blokerede adresser altid ryger i spam. Markering af en besked som spam føjer adressen til blokeringslisten. Markering af en besked som ikke-spam føjer den til listen over godkendte afsendere."
-      ],
       "Search in Allow List and Block List": [
         "Søg i godkendt-liste og blokeringsliste"
       ]
@@ -5258,14 +5249,8 @@
       "Your account will be updated once the payment is cleared.": [
         "Din konto vil blive opdateret, når betalingen er godkendt."
       ],
-      "Your Allow List is empty.": [
-        "Din tilladelsesliste er tom."
-      ],
       "Your bank requires 3-D Secure verification for security purposes.": [
         "Din bank kræver 3-D Secure-bekræftelse af sikkerhedshensyn."
-      ],
-      "Your Block List is empty.": [
-        "Din blokeringsliste er tom."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Dine data er klar til at blive importeret fra ${ importedEmailAddressStrong } til din Proton-konto."
@@ -5491,9 +5476,6 @@
       ],
       "Close draft": [
         "Luk kladde"
-      ],
-      "Create filter with...": [
-        "Opret filter med..."
       ],
       "Delete permanently": [
         "Slet permanent"
@@ -6148,6 +6130,12 @@
       "Move to": [
         "Flyt til"
       ],
+      "Move to Archive": [
+        "Flyt til Arkiv"
+      ],
+      "Move to Inbox": [
+        "Flyt til Indbakke"
+      ],
       "Name": [
         "Navn"
       ],
@@ -6310,6 +6298,9 @@
       "Signature": [
         "Signatur"
       ],
+      "Spam": [
+        "Spam"
+      ],
       "Starred": [
         "Stjernemarkeret"
       ],
@@ -6411,9 +6402,6 @@
       ],
       "Waiting for subscription": [
         "Venter på abonnement"
-      ],
-      "Want to add": [
-        "Ønsker at tilføje"
       ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Vi er kede af at du forlader os. Forklar venligst hvorfor, så vi kan forbedre os."
@@ -6937,15 +6925,10 @@
         "på den tredje onsdag"
       ]
     },
-    "Moved to black/whitelist": {
-      "${ Domain } removed": [
-        "${ Domain } fjernet"
-      ],
-      "${ Email } removed": [
-        "${ Email } fjernet"
-      ]
-    },
     "Navigation": {
+      "All": [
+        "Alle"
+      ],
       "Back": [
         "Tilbage"
       ],
@@ -6957,6 +6940,9 @@
       ],
       "Back to Mail": [
         "Tilbage til Mail"
+      ],
+      "Spam": [
+        "Spam"
       ]
     },
     "New Label form": {
@@ -7041,17 +7027,17 @@
         "Support"
       ]
     },
-    "new_plans: Info": {
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Opgrader til den ultimative privatlivspakke og adgang til alle premium Proton-tjenester."
-      ]
-    },
     "new_plans: info": {
       "Comprehensive privacy and security with all Proton services combined.": [
         "Omfattende privatliv og sikkerhed med alle Proton-tjenester kombineret."
       ],
       "Set automatic replies to inform contacts you are out of the office or unable to respond.": [
         "Brug automatiske svar til at informere kontakter om, at du ikke er på kontoret eller på anden måde ikke er i stand til at svare."
+      ]
+    },
+    "new_plans: Info": {
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Opgrader til den ultimative privatlivspakke og adgang til alle premium Proton-tjenester."
       ]
     },
     "new_plans: Label": {
@@ -7744,36 +7730,6 @@
         "Brugernavn"
       ]
     },
-    "Spam filter moved to blacklist": {
-      "${ Domain } moved to Block List": [
-        "${ Domain } flyttet til blokeringsliste"
-      ],
-      "${ Email } moved to Block List": [
-        "${ Email } flyttet til blokeringsliste"
-      ]
-    },
-    "Spam filter moved to whitelist": {
-      "${ Domain } moved to Allow List": [
-        "${ Domain } flyttet til godkendt-liste"
-      ],
-      "${ Email } moved to Allow List": [
-        "${ Email } flyttet til godkendt-liste"
-      ]
-    },
-    "Spam notification": {
-      "${ domain } added": [
-        "${ domain } tilføjet"
-      ],
-      "${ domain } updated": [
-        "${ domain } opdateret"
-      ],
-      "${ email } added": [
-        "${ email } tilføjet"
-      ],
-      "${ email } updated": [
-        "${ email } opdateret"
-      ]
-    },
     "Spotlight": {
       "Get up to 18 months of ${ planName } for free": [
         "Få op til 18 måneder med ${ planName } gratis"
@@ -8157,6 +8113,12 @@
       "CSV field": [
         "CSV-felt"
       ],
+      "Edit": [
+        "Redigér"
+      ],
+      "Email address": [
+        "E-mail"
+      ],
       "Import": [
         "Importér"
       ],
@@ -8285,12 +8247,6 @@
       "Add Sieve filter": [
         "Tilføj Sieve-filter"
       ],
-      "Add to Allow List": [
-        "Føj til godkendt-liste"
-      ],
-      "Add to Block List": [
-        "Føj til blokeringsliste"
-      ],
       "Add user": [
         "Tilføj bruger"
       ],
@@ -8302,9 +8258,6 @@
       ],
       "Allocate storage": [
         "Tildel lagerplads"
-      ],
-      "Allow List": [
-        "Godkendt-liste"
       ],
       "Amount": [
         "Beløb"
@@ -8341,9 +8294,6 @@
       ],
       "Billing details": [
         "Faktureringsdetaljer"
-      ],
-      "Block List": [
-        "Blokeringsliste"
       ],
       "Bridge for ${ platform }": [
         "Bro til ${ platform }"
@@ -8512,12 +8462,6 @@
       ],
       "Download ${ VPN_APP_NAME }": [
         "Download ${ VPN_APP_NAME }"
-      ],
-      "Edit Allow List": [
-        "Rediger godkendt-liste"
-      ],
-      "Edit Block List": [
-        "Rediger blokeringsliste"
       ],
       "Edit calendar": [
         "Rediger kalender"
@@ -8864,9 +8808,6 @@
       ],
       "Sort labels alphabetically": [
         "Sortér etiketter alfabetisk"
-      ],
-      "Spam filters": [
-        "Spamfiltre"
       ],
       "Start a new import": [
         "Start en ny import"

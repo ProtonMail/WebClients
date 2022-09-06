@@ -99,7 +99,7 @@
         "Luk"
       ],
       "Close modal": [
-        "Luk dialog"
+        "Close"
       ],
       "Close navigation": [
         "Luk navigation"
@@ -2882,9 +2882,6 @@
       "There are no files yet": [
         "Der er ingen filer endnu"
       ],
-      "These files were shared using end-to-end encryption. To ensure their security — and the security of all your documents, photos, and files — store them in Proton Drive, the cloud storage service you can trust.": [
-        "Disse filer blev delt med ende til ende kryptering. For at sikre deres sikkerhed - og sikkerheden for alle dine dokumenter, billeder og filer - gem dem i Proton Drive, skylageret du kan stole på."
-      ],
       "This account has been suspended due to a potential policy violation.": [
         "Denne konto er blevet suspenderet på grund af en potentiel overtrædelse af politik."
       ],
@@ -3340,6 +3337,12 @@
       ],
       "Modified": [
         "Ændret"
+      ],
+      "Move to Archive": [
+        "Flyt til Arkiv"
+      ],
+      "Move to Inbox": [
+        "Flyt til Indbakke"
       ],
       "Name": [
         "Navn"
@@ -4670,9 +4673,6 @@
       ],
       "Name cannot include invisible characters, / or \\.": [
         "Navn kan ikke indeholde usynlige tegn, / eller \\."
-      ],
-      "Name must be ${ MAX_NAME_LENGTH } characters long at most": [
-        "Navnet skal være på højst ${ MAX_NAME_LENGTH } tegn"
       ],
       "Name must not be empty": [
         "Navn må ikke være tomt"
