@@ -1,7 +1,7 @@
 import { SimpleMap } from '@proton/shared/lib/interfaces';
 
 export enum TelemetryMeasurementGroups {
-    mailSimpleLogin = 'mail.web.simple_login',
+    mailSimpleLogin = 'mail.web.simple_login_popups',
 }
 
 export enum TelemetrySimpleLoginEvents {
