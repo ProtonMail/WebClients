@@ -1,7 +1,7 @@
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { attachmentsSize } from '@proton/shared/lib/mail/messages';
+import { attachmentsSize, isDraft, isReceived, isSent } from '@proton/shared/lib/mail/messages';
 import uniqueBy from '@proton/utils/uniqueBy';
 
 import { MARK_AS_STATUS } from '../../hooks/actions/useMarkAs';
@@ -16,7 +16,7 @@ import {
 import { getContent, setContent } from './messageContent';
 import { getEmbeddedImages } from './messageImages';
 
-const { ALL_DRAFTS, ALL_SENT, SPAM, INBOX } = MAILBOX_LABEL_IDS;
+const { SENT, DRAFTS, SPAM, INBOX } = MAILBOX_LABEL_IDS;
 
 export const getAttachmentCounts = (attachments: Attachment[], messageImages: MessageImages | undefined) => {
     const size = attachmentsSize({ Attachments: attachments } as Message);
@@ -70,27 +70,21 @@ export const mergeMessages = (
     } as MessageState;
 };
 
-const getIsSelfMessage = (message: Message) => {
-    const { Sender, ToList = [], CCList = [], BCCList = [] } = message;
-
-    const isSelfToList = ToList.find((recipient) => recipient.Address === Sender.Address);
-    const isSelfCCList = CCList.find((recipient) => recipient.Address === Sender.Address);
-    const isSelfBCCList = BCCList.find((recipient) => recipient.Address === Sender.Address);
-    return isSelfToList || isSelfCCList || isSelfBCCList;
-};
-
 export const getMessagesAuthorizedToMove = (messages: Message[], destinationFolderID: string) => {
     return messages.filter((message) => {
-        const { LabelIDs } = message;
+        if ([SENT, DRAFTS, INBOX].includes(destinationFolderID as MAILBOX_LABEL_IDS)) {
+            const excludedDestinations = [];
 
-        if (LabelIDs.includes(ALL_DRAFTS) || LabelIDs.includes(ALL_SENT)) {
-            // If the user sent the message to himself, he can move it to inbox
-            const isSelfMessage = getIsSelfMessage(message);
+            if (isReceived(message)) {
+                excludedDestinations.push(...[SENT, DRAFTS]);
+            }
 
-            const excludedDestinations = [SPAM];
+            if (isSent(message)) {
+                excludedDestinations.push(...[INBOX, DRAFTS, SPAM]);
+            }
 
-            if (!isSelfMessage) {
-                excludedDestinations.push(INBOX);
+            if (isDraft(message)) {
+                excludedDestinations.push(...[INBOX, SENT, SPAM]);
             }
 
             return !(excludedDestinations as string[]).includes(destinationFolderID);
