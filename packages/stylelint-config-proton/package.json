@@ -7,7 +7,9 @@
         "index.js"
     ],
     "dependencies": {
-        "stylelint": "^13.13.1",
-        "stylelint-config-prettier": "^9.0.3"
+        "stylelint": "^14.11.0",
+        "stylelint-config-prettier-scss": "^0.0.1",
+        "stylelint-config-standard-scss": "^5.0.0",
+        "stylelint-use-logical": "^2.0.0"
     }
 }

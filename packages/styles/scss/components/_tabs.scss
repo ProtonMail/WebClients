@@ -10,7 +10,7 @@
 			padding-inline: 0.75em;
 			border-block-end: 2px solid transparent;
 			color: var(--text-weak);
-			transition: 0.15s easing(easeOutQuint);
+			transition: 0.15s easing(ease-out-quint);
 
 			&:hover,
 			&:focus {
@@ -54,8 +54,9 @@
 				transform-origin: right center;
 			}
 		}
+
 		transform: translateX(var(--translate)) scaleX(var(--scale));
 		border-block-end: 2px solid var(--interaction-norm);
-		transition: transform 0.15s easing(easeOutQuad);
+		transition: transform 0.15s easing(ease-out-quad);
 	}
 }

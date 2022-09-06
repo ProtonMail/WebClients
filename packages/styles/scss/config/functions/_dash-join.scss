@@ -13,7 +13,6 @@
 
 		@if $e != null and $e != '' {
 			$result: if($i == 1 or $first-add == true, #{$e}, #{$result}#{$glue}#{$e});
-
 			$first-add: false;
 		}
 	}

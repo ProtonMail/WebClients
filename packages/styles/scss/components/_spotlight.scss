@@ -21,6 +21,7 @@
 			transform: scale(0.75);
 			opacity: 0;
 		}
+
 		to {
 			transform: scale(1);
 			opacity: 1;
@@ -36,6 +37,7 @@
 				transform: scale(1);
 				opacity: 1;
 			}
+
 			to {
 				transform: scale(0.75);
 				opacity: 0;
@@ -115,6 +117,7 @@
 			inset-inline-start: max(calc(var(--arrow-offset, 0) - #{math.div($arrow-width, 2)}) + 0.5px, 0px);
 		}
 	}
+
 	&--top-right,
 	&--bottom-right {
 		&::before {
@@ -161,6 +164,7 @@
 					border-inline-start: 0;
 				}
 			}
+
 			&--bottom,
 			&--bottom-left,
 			&--bottom-right {
