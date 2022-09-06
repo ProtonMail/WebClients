@@ -99,7 +99,7 @@
         "Schließen"
       ],
       "Close modal": [
-        "Dialog schließen"
+        "Close"
       ],
       "Close navigation": [
         "Menü schließen"
@@ -2888,9 +2888,6 @@
       "There are no files yet": [
         "Es sind noch keine Dateien vorhanden"
       ],
-      "These files were shared using end-to-end encryption. To ensure their security — and the security of all your documents, photos, and files — store them in Proton Drive, the cloud storage service you can trust.": [
-        "Diese Dateien wurden mittels Ende-zu-Ende-Verschlüsselung geteilt. Um deren Sicherheit — und die Sicherheit all deiner Dokumente, Bilder und Dateien zu gewährleisten — speichere sie in Proton Drive, dem Cloud-Speicherdienst, dem du vertrauen kannst."
-      ],
       "This account has been suspended due to a potential policy violation.": [
         "Dieses Konto wurde wegen einer möglichen Verletzung der Richtlinien gesperrt."
       ],
@@ -3338,6 +3335,9 @@
       "Malware": [
         "Malware"
       ],
+      "Manage categories": [
+        "Kategorien verwalten"
+      ],
       "Manage folders": [
         "Ordner verwalten"
       ],
@@ -3349,6 +3349,12 @@
       ],
       "Modified": [
         "Geändert"
+      ],
+      "Move to Archive": [
+        "Ins Archiv verschieben"
+      ],
+      "Move to Inbox": [
+        "In Posteingang verschieben"
       ],
       "Name": [
         "Name"
@@ -4651,6 +4657,9 @@
       "Encrypted data with verified digital signature": [
         "Verschlüsselte Daten mit bestätigter digitaler Signatur"
       ],
+      "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
+        "Gmail kategorisiert automatisch einige E-Mails als Soziale Netzwerke oder Werbeaktionen. Du kannst auswählen, wohin diese E-Mails importiert werden sollen."
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Wähle das PGP-Schema, das beim Signieren oder Verschlüsseln für einen Benutzer verwendet werden soll. Beachte, dass PGP/Inline das Senden von Klartextnachrichten erzwingt."
       ],
@@ -4680,7 +4689,8 @@
       "Name cannot include invisible characters, / or \\.": [
         "Der Name darf weder unsichtbaren Zeichen noch / oder \\ enthalten."
       ],
-      "Name must be ${ MAX_NAME_LENGTH } characters long at most": [
+      "Name must be ${ MAX_NAME_LENGTH } character long at most": [
+        "Name darf höchstens ${ MAX_NAME_LENGTH } Zeichen lang sein",
         "Name darf höchstens ${ MAX_NAME_LENGTH } Zeichen lang sein"
       ],
       "Name must not be empty": [

@@ -99,7 +99,7 @@
         "Bezárás"
       ],
       "Close modal": [
-        "Ablak bezárása"
+        "Close"
       ],
       "Close navigation": [
         "Navigáció bezárása"
@@ -2789,9 +2789,6 @@
       "There are no files yet": [
         "Még nincsenek fájlok"
       ],
-      "These files were shared using end-to-end encryption. To ensure their security — and the security of all your documents, photos, and files — store them in Proton Drive, the cloud storage service you can trust.": [
-        "Ezek a fájlok végpontok közti titkosítással lettek megosztva. A biztonságuk - és az összes dokumentumának, fotójának és fájljának biztonsága - garantálása érdekében tárolja őket a Proton Drive-on, a felhőtároló szolgáltatásban, melyben megbízhat."
-      ],
       "This account has been suspended due to a potential policy violation.": [
         "Ez a fiók felfüggesztésre került a szabályzat valószínűsíthető megsértése miatt."
       ],
@@ -3247,6 +3244,12 @@
       ],
       "Modified": [
         "Módosítva"
+      ],
+      "Move to Archive": [
+        "Áthelyezés az archívumba"
+      ],
+      "Move to Inbox": [
+        "Áthelyezés a beérkezett üzenetekhez"
       ],
       "Name": [
         "Név"
@@ -4557,9 +4560,6 @@
       ],
       "Name cannot include invisible characters, / or \\.": [
         "A név nem tartalmazhat láthatatlan karaktereket, / vagy \\ karaktert."
-      ],
-      "Name must be ${ MAX_NAME_LENGTH } characters long at most": [
-        "A név maximum ${ MAX_NAME_LENGTH } karakter hosszú lehet"
       ],
       "Name must not be empty": [
         "A név nem lehet üres"

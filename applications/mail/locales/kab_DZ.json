@@ -23,9 +23,6 @@
       "Add address": [
         "Rnu tansa"
       ],
-      "Add condition": [
-        "Rnu tawtilt"
-      ],
       "Add contact": [
         "Rnu anermis"
       ],
@@ -77,6 +74,9 @@
       "All Unstarred": [
         "Akk wid ur nelli d inurifen"
       ],
+      "Allow messages": [
+        "Sireg iznan"
+      ],
       "Apply": [
         "Snes"
       ],
@@ -94,6 +94,9 @@
       ],
       "Beta Access": [
         "Anekcum Biṭa"
+      ],
+      "Block": [
+        "Sewḥel"
       ],
       "Bold": [
         "Azuran"
@@ -147,13 +150,16 @@
         "Mdel amsuddes"
       ],
       "Close modal": [
-        "Mdel"
+        "Close"
       ],
       "Close navigation": [
         "Mdel tunigin"
       ],
       "Close this banner": [
         "Mdel aɣarrac-a"
+      ],
+      "Collapse URL": [
+        "Fneẓ URL"
       ],
       "Color": [
         "Ini"
@@ -194,20 +200,17 @@
       "Create a new contact group": [
         "Snulfu-d agraw n unermes amaynut"
       ],
-      "Create folder": [
-        "Snulfu-d akaram"
+      "Create a new folder": [
+        "Rnu tabzimt tamaynut"
       ],
-      "Create label": [
-        "Rnu tabzimt"
+      "Create a new label": [
+        "Rnu tabzimt tamaynut"
       ],
       "Create new contact": [
         "Snulfu-d anermis amaynut"
       ],
       "Create new message": [
         "Rnu izen amaynut"
-      ],
-      "Custom filter": [
-        "Imsizdeg udmawan"
       ],
       "Customize": [
         "Sagen"
@@ -280,6 +283,9 @@
       "Edit email address": [
         "Ẓreg tansa imayl"
       ],
+      "Edit encryption": [
+        "Ẓreg awgelhen"
+      ],
       "Edit label": [
         "Ẓreg tabzimt"
       ],
@@ -291,6 +297,9 @@
       ],
       "Email settings": [
         "Iɣewwaren n yimayl"
+      ],
+      "Emoji": [
+        "Imujit"
       ],
       "Enable": [
         "Rmed"
@@ -319,8 +328,11 @@
       "Export contacts": [
         "Kter inermisen"
       ],
-      "Filter on...": [
-        "Imsizdeg ɣef..."
+      "External encryption": [
+        "Awgelhen azɣaray"
+      ],
+      "Fewer search options": [
+        "Drus n textiṛiyin n unadi"
       ],
       "Font": [
         "Tasefsit"
@@ -437,9 +449,6 @@
       "Label as...": [
         "Tabzimt am..."
       ],
-      "label emails as": [
-        "cṛeḍ imaylen am"
-      ],
       "Learn more": [
         "Issin ugar"
       ],
@@ -475,9 +484,6 @@
       ],
       "Mark as unread": [
         "Creḍ ur yettwaɣer ara"
-      ],
-      "mark emails as": [
-        "creḍ imaylen am"
       ],
       "Mark for deletion": [
         "Creḍ i tukksa"
@@ -518,8 +524,8 @@
       "Move": [
         "Senkez"
       ],
-      "move emails to": [
-        "senkez imaylen ɣer"
+      "Move all to trash": [
+        "Smutti kullec ɣer tqecwalt"
       ],
       "Move to": [
         "Senkez ɣer"
@@ -602,9 +608,6 @@
       "Pause": [
         "Seḥbes"
       ],
-      "Preview": [
-        "Taskant"
-      ],
       "Preview ${ attachmentName }": [
         "Sken ${ attachmentName }"
       ],
@@ -638,6 +641,9 @@
       "Re-sign": [
         "Ales azmul"
       ],
+      "Read message": [
+        "Ɣeṛ izen"
+      ],
       "Read receipt sent": [
         "Asentem n tɣuri yettwazen"
       ],
@@ -659,8 +665,11 @@
       "Remove ${ attachmentName }": [
         "Kkes ${ attachmentName }"
       ],
-      "Remove this label": [
-        "Kkes tabzimt-a"
+      "Remove encryption": [
+        "Kkes awgelhen"
+      ],
+      "Remove expiration time": [
+        "Kkes azemz n keffu"
       ],
       "Rename": [
         "Beddel isem"
@@ -682,6 +691,9 @@
       ],
       "Reset": [
         "Wennez"
+      ],
+      "Reset search form": [
+        "Wennez taferkit n unadi"
       ],
       "Reset zoom": [
         "Ales awennez n usemɣer"
@@ -731,9 +743,6 @@
       "Send anyway": [
         "Azen akken ibɣu yili"
       ],
-      "send auto-reply email": [
-        "azen imayl n tririt tawurmant"
-      ],
       "Send feedback": [
         "Azen-d iwinniten inek•inem"
       ],
@@ -745,6 +754,9 @@
       ],
       "Set as default": [
         "Sbadu-t d amezwer"
+      ],
+      "Set encryption": [
+        "Sbadu awgelhen"
       ],
       "Set expiration time": [
         "Sbadu azemz n ufati"
@@ -769,6 +781,9 @@
       ],
       "Show details": [
         "Sken ifutas"
+      ],
+      "Show fewer search options": [
+        "Sken drus n textiṛiyin n unadi"
       ],
       "Show folders": [
         "Sken ikaramen"
@@ -830,6 +845,9 @@
       "Trust key": [
         "Tasarut yettwamanen",
         "Tisura yettwamanen"
+      ],
+      "Trust public key": [
+        "Tasarut tazayezt yettwamanen"
       ],
       "Try again": [
         "Ɛreḍ tikkelt-nniḍen"
@@ -1419,6 +1437,12 @@
       ]
     },
     "color": {
+      "apple": [
+        "tatteffaḥt"
+      ],
+      "blanched almond": [
+        "tajujet tacebḥant"
+      ],
       "carrot": [
         "zṛudyya"
       ],
@@ -1428,11 +1452,20 @@
       "cobalt": [
         "kubalt"
       ],
+      "field drab": [
+        "aqehwi"
+      ],
       "forest": [
         "tiẓgi"
       ],
+      "japanese laurel": [
+        "ilili n Japun"
+      ],
       "kiwi": [
         "kiwi"
+      ],
+      "mughal green": [
+        "adal"
       ],
       "olive": [
         "azemmur"
@@ -1442,6 +1475,12 @@
       ],
       "plum": [
         "taxuxet"
+      ],
+      "sahara": [
+        "sseḥra"
+      ],
+      "satin sheen gold": [
+        "awraɣ yettemcilliɛen"
       ],
       "soil": [
         "akal"
@@ -2346,26 +2385,6 @@
         "Tigzirin n Aland"
       ]
     },
-    "CustomFilter": {
-      "Attachment": [
-        "Amedday"
-      ],
-      "Filter on": [
-        "Imzizdeg ɣef"
-      ],
-      "Next": [
-        "Γer zdat"
-      ],
-      "Recipient": [
-        "Aɣerwaḍ"
-      ],
-      "Sender": [
-        "Amazan"
-      ],
-      "Subject": [
-        "Asentel"
-      ]
-    },
     "Daily recurring event, frequency": {
       "${ count } time": [
         "${ count } n tikkelt",
@@ -2594,9 +2613,6 @@
         "Fren azemz deg ${ SCHEDULED_MAX_DATE_DAYS } n wass i d-itteddun.",
         "Fren azemz deg ${ SCHEDULED_MAX_DATE_DAYS } n wussan i d-itteddun."
       ],
-      "Condition incomplete": [
-        "Tawtilt tarummidt"
-      ],
       "Contact could not be saved": [
         "Ur nezmir ara ad nsekles anermis"
       ],
@@ -2627,17 +2643,11 @@
       "Email is not valid": [
         "Imayl mačči d ameɣtu"
       ],
-      "Empty condition": [
-        "Tawtilt d tilemt"
-      ],
       "Enter 6 digits": [
         "Sekcem 6 n izwilen"
       ],
       "Enter a password": [
         "Sekcem awal uffir"
-      ],
-      "Error in one of the conditions": [
-        "Tella-d tuccḍa deg yiwet gar tiwtilin"
       ],
       "Error while saving draft. Please try again.": [
         "Tella-d tuccḍa deg usekles n urewway. Ttxil ɛreḍ tikkelt-nniḍen."
@@ -2650,9 +2660,6 @@
       ],
       "Failed to encrypt attachment. Please try again.": [
         "Tuccḍa deg uwgelhen n ufaylu yeddan. Ttxil-k eɛreḍ tikkelt-nniḍen."
-      ],
-      "Filter with this name already exists": [
-        "Amsizdeg yesɛan isem-agi yella yakan"
       ],
       "Folder name cannot be empty.": [
         "Isem n ukaram ur ilaq ara ad yili d ilem."
@@ -2747,12 +2754,6 @@
       "Request timed out": [
         "Akud n usuter yemmut"
       ],
-      "Require at least one action": [
-        "Yesra ma ulac yiwet n tigawt"
-      ],
-      "Require at least one condition": [
-        "Yesra ma ulac yiwet n tewtilt"
-      ],
       "Signature not verified": [
         "Azmul ur yettwasenqed ara"
       ],
@@ -2831,9 +2832,6 @@
       ],
       "This message has already been sent. A new draft has been saved.": [
         "Izen-a dayen yettwazen. Arewway amaynut yettwasekles."
-      ],
-      "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
-        "Aṭas n yimsizedgen urmiden. Ma ulac aɣilif, leqqem ɣer uɣawas s lexlaṣ i wakken ad tremdeḍ ugar n yimsizedgen."
       ],
       "Trusted keys are not valid for sending": [
         "Tisura yettwasentmen ur ɣtint ara i tuzna"
@@ -3118,18 +3116,6 @@
       ]
     },
     "Filter modal type": {
-      "If the attachments": [
-        "Ma ifuyla yeddan"
-      ],
-      "If the recipient": [
-        "Ma aɣerwaḍ"
-      ],
-      "If the sender": [
-        "Ma amazan"
-      ],
-      "If the subject": [
-        "Ma asentel"
-      ],
       "Select…": [
         "Fren…"
       ],
@@ -3149,9 +3135,6 @@
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } yettwaleqqem"
-      ],
-      "Filter ${ Filter.Name } updated": [
-        "Imsizdeg ${ Filter.Name } yettwaleqqem"
       ]
     },
     "Filter option": {
@@ -3169,14 +3152,6 @@
       ],
       "Unread": [
         "Ur yettwaɣri ara"
-      ]
-    },
-    "Filter preview": {
-      "read": [
-        "ɣeṛ"
-      ],
-      "starred": [
-        "s yitran"
       ]
     },
     "Font Face Default": {
@@ -3437,6 +3412,10 @@
         "${ numContacts } n unermis",
         "${ numContacts } n yinermisen"
       ],
+      "${ numOccurrences } occurrence found": [
+        "${ numOccurrences } n temseḍriwt i yettwafen",
+        "${ numOccurrences } n temseḍriwin i yettwafen"
+      ],
       "${ pureAttachmentsCount } file attached": [
         "Afaylu ${ pureAttachmentsCount } yeddan",
         "Ifuyla ${ pureAttachmentsCount } yeddan"
@@ -3492,12 +3471,6 @@
         "(${ memberCount } n uɛeggal)",
         "(${ memberCount } n yiɛeggalen)"
       ],
-      "(Filter if ALL of the following conditions are met)": [
-        "(Sizdeg ma AKK tiwtilin-agi llant)"
-      ],
-      "(Filter if ANY of the following conditions are met)": [
-        "(Sizdeg ma tella ɣas yiwet seg tewtilin-agi)"
-      ],
       "(No Recipient)": [
         "(Ulac iɣerwaḍen)"
       ],
@@ -3545,9 +3518,6 @@
       "All your calendars are disabled.": [
         "Akk iwitayen-inek m nsan."
       ],
-      "All your changes will be lost.": [
-        "Ad ruḥen akk ibeddilen-inek/m."
-      ],
       "An unknown public key has been detected for this recipient.": [
         "Tasarut tazayezt ur nettwassen ara tettwaf i uɣerwaḍ-agi."
       ],
@@ -3559,9 +3529,6 @@
       ],
       "Are you sure you want to delete all messages with this label?": [
         "Tebɣiḍ s tidet ad tekkseḍ akk iznan s tebzimt-a?"
-      ],
-      "Are you sure you want to discard your changes?": [
-        "D tidet tebɣiḍ ad tesfesxeḍ ibeddilen-ik m?"
       ],
       "Are you sure you want to permanently delete ${ count } conversation?": [
         "Tebɣiḍ s tidet ad tekkseḍ i lebda ${ count } n udiwenni?",
@@ -3704,6 +3671,15 @@
       "Duplicate key updated": [
         "Sisleg tasarut yettwaleqqmen"
       ],
+      "Edit encryption": [
+        "Ẓreg awgelhen"
+      ],
+      "Edit expiration time": [
+        "Ẓreg azemz n ufati"
+      ],
+      "Edit link": [
+        "Ẓreg aseɣwen"
+      ],
       "Email address": [
         "Tansa imayl"
       ],
@@ -3745,9 +3721,6 @@
       "file attached": [
         "afaylu yeddan",
         "afaylu yeddan"
-      ],
-      "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
-        "Imsizedgen teddun ɣef meṛṛa imaylen, ula ɣef yimaylen yettwaremsen d wid yettwaznen. Yal amsizdeg ilaq ad yesɛu xerṣum isem, tawtilt d tigawt."
       ],
       "Folder": [
         "Akaram"
@@ -3798,9 +3771,6 @@
       ],
       "Image URL": [
         "URL n tugna"
-      ],
-      "Images have been removed because they are not allowed in auto-reply": [
-        "Tugniwin ttwakksent acku ur ttusirgent ara deg tririt tawurmant"
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Kter ${ contactsFragment } yerna ${ contactsGroupsFragment }"
@@ -3920,9 +3890,6 @@
       "New": [
         "Amaynut"
       ],
-      "No action selected": [
-        "Ulac tigawt yettwafernen"
-      ],
       "No contacts added yet": [
         "Ur ɛad ttwarnan inermisen"
       ],
@@ -3935,17 +3902,11 @@
       "No folder found": [
         "Ulac akaram yettwafen"
       ],
-      "No folder selected": [
-        "Ulac akaram yettwafranen"
-      ],
       "No group found": [
         "Ulac agraw"
       ],
       "No label found": [
         "Ulac tabzimt yettwafen"
-      ],
-      "No label selected": [
-        "Ulac tabzimt yettwafernen"
       ],
       "No more results found": [
         "Ulac igmaḍ-nniḍen yettwafen"
@@ -3958,6 +3919,9 @@
       ],
       "No trackers found, but some images could not be loaded with tracking protection": [
         "Ulacineḍfaren, maca kra n tugniwin ulamek ara d-alint s ummesten n uḍfar"
+      ],
+      "non-Proton Mail": [
+        "mačči-Proton Mail"
       ],
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         "Ula d yiwet seg tsura i d-yettwasulin dtameɣtut i uwgelhen. Awgelhen yettusens s wudem awurman."
@@ -4508,9 +4472,6 @@
       "Close draft": [
         "Mdel arewway"
       ],
-      "Create filter with...": [
-        "Rnu imsizdeg s..."
-      ],
       "Delete permanently": [
         "Kkes i lebda"
       ],
@@ -4678,17 +4639,8 @@
       ]
     },
     "Label": {
-      " and ": [
-        " akked "
-      ],
-      " and ${ l }": [
-        " akked ${ l }"
-      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Ulac-it akka tura. Ma ulac aɣilif, senqed ticki.)"
-      ],
-      "Actions": [
-        "Tigawin"
       ],
       "Add email address": [
         "Rnu tansa n yimayl"
@@ -4702,23 +4654,8 @@
       "Address": [
         "Tansa"
       ],
-      "ALL": [
-        "AKK"
-      ],
       "Also archive": [
         "Γber daɣen"
-      ],
-      "AND": [
-        "AKKED"
-      ],
-      "and": [
-        "akked"
-      ],
-      "And": [
-        "Akked"
-      ],
-      "ANY": [
-        "Ayen yellan"
       ],
       "Attach screenshot(s)": [
         "Seddu tuṭṭfa(win) n ugdil"
@@ -4764,9 +4701,6 @@
       ],
       "Code is 6 digits without spaces": [
         "Tangalt tesɛa 6 n yizwilen war tallunt"
-      ],
-      "Conditions": [
-        "Tiwtilin"
       ],
       "Confirm password": [
         "Sentem awal uffir"
@@ -4816,9 +4750,6 @@
       "Extended address": [
         "Asiɣzef n tansa"
       ],
-      "Filter Name": [
-        "Isem n imsizdeg"
-      ],
       "Folder location": [
         "Ideg n ukaram"
       ],
@@ -4845,12 +4776,6 @@
       ],
       "How would you describe your experience with the new Proton?": [
         "Amek ara tgelmeḍ tarmit-inek•inem akked Proton amaynut?"
-      ],
-      "IF": [
-        "MA"
-      ],
-      "If": [
-        "Ma"
       ],
       "Import all messages": [
         "Kter akk iznan"
@@ -4900,17 +4825,17 @@
       "Manage my addresses": [
         "Sefrek tansiwin-inu"
       ],
-      "Mark as": [
-        "Creḍ am"
-      ],
       "Move to": [
         "Senkez ɣer"
       ],
+      "Move to Archive": [
+        "Awi ar uɣbar"
+      ],
+      "Move to Inbox": [
+        "Awi ar tanaka n urmas"
+      ],
       "Name": [
         "Isem"
-      ],
-      "No label found": [
-        "Ulac tabzimt"
       ],
       "Notification": [
         "Ilɣa"
@@ -4923,15 +4848,6 @@
       ],
       "Operating system version": [
         "Lqem n unagraw n wammud"
-      ],
-      "OR": [
-        "NEƔ"
-      ],
-      "or": [
-        "neɣ"
-      ],
-      "Or": [
-        "Neɣ"
       ],
       "Participants": [
         "Imttekkiyen"
@@ -4960,9 +4876,6 @@
       "Public keys": [
         "Tisura tizuyaz"
       ],
-      "Read": [
-        "Ɣeṛ"
-      ],
       "Recipient": [
         "Aɣerwaḍ"
       ],
@@ -4987,9 +4900,6 @@
       "Select how your mailbox looks like by default.": [
         "Fren amek ara tettban tnaka n imayl inek•inem s lexṣas."
       ],
-      "Send auto-reply": [
-        "Azen tiririt tawurmant"
-      ],
       "Sender": [
         "Amazan"
       ],
@@ -4999,32 +4909,11 @@
       "Size:": [
         "Teɣzi:"
       ],
-      "Starred": [
-        "S yitran"
-      ],
-      "Statement": [
-        "Tuttra"
-      ],
       "Street address": [
         "Tansa n uxxam"
       ],
       "System information": [
         "Talɣut n unagraw"
-      ],
-      "The email was sent ${ attachment }": [
-        "Imayl yettwazen ${ attachment }"
-      ],
-      "the email was sent ${ attachment }": [
-        "imayl yettwazen ${ attachment }"
-      ],
-      "The email was sent ${ attachmentStrong }": [
-        "Imayl yettwazen ${ attachmentStrong }"
-      ],
-      "the email was sent ${ label }": [
-        "imayl yettwazen ${ label }"
-      ],
-      "Then": [
-        "Sakin"
       ],
       "Time": [
         "Akud"
@@ -5055,21 +4944,6 @@
       ],
       "What happened?": [
         "D acu akka ay yeḍran?"
-      ],
-      "With attachment": [
-        "S ufaylu yeddan"
-      ],
-      "with attachments": [
-        "s ifuyla yeddan"
-      ],
-      "Without attachment": [
-        "War afaylu yeddan"
-      ],
-      "without attachment": [
-        "war afaylu yeddan"
-      ],
-      "without attachments": [
-        "war ifuyla yeddan"
       ],
       "Wonderful": [
         "Igerrez"
@@ -5147,12 +5021,6 @@
     "Link": {
       "Activate": [
         "Sermed"
-      ],
-      "Add folder": [
-        "Rnu akaram"
-      ],
-      "Add label": [
-        "Rnu tabzimt"
       ],
       "All mail": [
         "Akk Imaylen"
@@ -5530,9 +5398,6 @@
       ]
     },
     "Notification": {
-      "${ _Filter.Name } created": [
-        "${ _Filter.Name } Yettwarna"
-      ],
       "Contact group created": [
         "Agraw n unermes yettwarna"
       ],
@@ -5594,9 +5459,6 @@
       ]
     },
     "Option group": {
-      "Custom folders": [
-        "Ikaramen udmawanen"
-      ],
       "Default folders": [
         "Ikaramen imezwar"
       ],
@@ -5722,9 +5584,6 @@
       ],
       "Text": [
         "Aḍris"
-      ],
-      "Type text or keyword": [
-        "Aru aḍris neɣ awal ufrin"
       ],
       "Write your message": [
         "Arut izen-nwen"
@@ -5982,20 +5841,6 @@
     "Status": {
       "This message is from a mailing list.": [
         "Izen-agi yekka-d si tebdart n tnezwit."
-      ]
-    },
-    "Step in filter modal": {
-      "Actions": [
-        "Tigawin"
-      ],
-      "Conditions": [
-        "Tiwtilin"
-      ],
-      "Name": [
-        "Isem"
-      ],
-      "Preview": [
-        "Taskant"
       ]
     },
     "Storage": {
@@ -6355,9 +6200,6 @@
       "Add contact group name": [
         "Rnu isem n ugraw n unermes"
       ],
-      "Add filter": [
-        "Rnu imsizdeg"
-      ],
       "Add to ${ groupCount } group": [
         "Rnu ɣer ${ groupCount } n ugraw",
         "Rnu ɣer ${ groupCount } n yigrawen"
@@ -6370,9 +6212,6 @@
       ],
       "Archive": [
         "Tarcivt"
-      ],
-      "Are you sure you want to close?": [
-        "D tidet tebɣiḍ ad t-tmedleḍ?"
       ],
       "Attachments": [
         "Ticeqqufin"
@@ -6421,12 +6260,6 @@
       ],
       "Conversation list": [
         "Tabdert n udiwenni"
-      ],
-      "Create a new folder": [
-        "Rnu tabzimt tamaynut"
-      ],
-      "Create a new label": [
-        "Rnu tabzimt tamaynut"
       ],
       "Create contact": [
         "Snulfu-d anermis"
@@ -6499,9 +6332,6 @@
       "Edit contact group": [
         "Ẓreg agraw n unermes"
       ],
-      "Edit filter": [
-        "Ẓreg amsizdeg"
-      ],
       "Edit image": [
         "Ẓreg tugna"
       ],
@@ -6532,11 +6362,11 @@
       "Exporting contacts": [
         "Kter inermisen"
       ],
+      "External encryption": [
+        "Awgelhen azɣaray"
+      ],
       "Feedback": [
         "Awennit"
-      ],
-      "Filter on": [
-        "Imsizdeg deg"
       ],
       "Forward": [
         "Ɣer zdat"
@@ -6836,9 +6666,6 @@
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
         "Tigawt-a ad d-tsader meṛṛa iznan i wakken ad tzemreḍ ad ten-tnadiḍ s wudem adigan. Asfaḍ n yisefka n yiminig-ik·im neɣ tuffɣa ad tsens taxtiṛt-a."
-      ],
-      "This feature is only available for paid users": [
-        "Tamahilt-agi tella kan i yiseqdacen s lexlaṣ"
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Sali-d tasarut tazayezt i wakken ad tremdeḍ tuzna n yimaylen yettwawgelhen seg yixef ɣer yixef ɣer yimayl-a"

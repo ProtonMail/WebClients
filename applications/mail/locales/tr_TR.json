@@ -23,9 +23,6 @@
       "Add address": [
         "Adres ekle"
       ],
-      "Add condition": [
-        "Koşul ekle"
-      ],
       "Add contact": [
         "Kişi ekle"
       ],
@@ -77,6 +74,9 @@
       "All Unstarred": [
         "Tüm yıldızsızlar"
       ],
+      "Allow messages": [
+        "İletilere izin ver"
+      ],
       "Apply": [
         "Uygula"
       ],
@@ -94,6 +94,12 @@
       ],
       "Beta Access": [
         "Beta erişimi"
+      ],
+      "Block": [
+        "Engelle"
+      ],
+      "Block messages from this sender": [
+        "Bu göndericiden gelen iletileri engelle"
       ],
       "Bold": [
         "Koyu"
@@ -147,7 +153,7 @@
         "Oluşturucuyu kapat"
       ],
       "Close modal": [
-        "Pencereyi kapat"
+        "Close"
       ],
       "Close navigation": [
         "Gezinmeyi kapat"
@@ -198,22 +204,19 @@
         "Parolayı panoya kopyala"
       ],
       "Create a new contact group": [
-        "Yeni bir kişi grubu oluştur"
+        "Yeni bir kişi grubu ekle"
       ],
-      "Create folder": [
-        "Klasör oluştur"
+      "Create a new folder": [
+        "Yeni bir klasör ekle"
       ],
-      "Create label": [
-        "Etiket oluştur"
+      "Create a new label": [
+        "Yeni bir etiket ekle"
       ],
       "Create new contact": [
-        "Yeni kişi oluştur"
+        "Yeni kişi ekle"
       ],
       "Create new message": [
         "Yeni ileti oluştur"
-      ],
-      "Custom filter": [
-        "Özel süzgeç"
       ],
       "Customize": [
         "Özelleştir"
@@ -343,9 +346,6 @@
       "Fewer search options": [
         "Daha fazla arama seçeneği"
       ],
-      "Filter on...": [
-        "Şuna göre süz..."
-      ],
       "Font": [
         "Yazı tipi"
       ],
@@ -470,9 +470,6 @@
       "Label as...": [
         "Etiketle..."
       ],
-      "label emails as": [
-        "e-postalar şöyle etiketlensin"
-      ],
       "Learn more": [
         "Ayrıntılı bilgi alın"
       ],
@@ -508,9 +505,6 @@
       ],
       "Mark as unread": [
         "Okunmamış olarak işaretle"
-      ],
-      "mark emails as": [
-        "e-postalar şöyle işaretlensin"
       ],
       "Mark for deletion": [
         "Silinecek olarak işaretle"
@@ -571,9 +565,6 @@
       ],
       "Move all to trash": [
         "Tümünü çöpe at"
-      ],
-      "move emails to": [
-        "e-postaları şuraya taşı"
       ],
       "Move to": [
         "Şuraya taşınsın"
@@ -662,9 +653,6 @@
       "Pause": [
         "Duraklat"
       ],
-      "Preview": [
-        "Ön izleme"
-      ],
       "Preview ${ attachmentName }": [
         "${ attachmentName } dosyasını ön izle"
       ],
@@ -730,9 +718,6 @@
       ],
       "Remove expiration time": [
         "Geçerlilik süresini kaldır"
-      ],
-      "Remove this label": [
-        "Bu etiketi kaldır"
       ],
       "Rename": [
         "Yeniden adlandır"
@@ -805,9 +790,6 @@
       ],
       "Send anyway": [
         "Yine de gönder"
-      ],
-      "send auto-reply email": [
-        "otomatik yanıt e-postası gönder"
       ],
       "Send feedback": [
         "Geri bildirim gönder"
@@ -1893,6 +1875,11 @@
         "Yomi"
       ]
     },
+    "Context filtering disabled": {
+      "Your selection contains only yourself as sender": [
+        "Seçiminiz gönderici olarak yalnızca sizi içeriyor"
+      ]
+    },
     "Country name": {
       "Abkhazia": [
         "Abhazya"
@@ -2660,26 +2647,6 @@
         "Aland Adaları"
       ]
     },
-    "CustomFilter": {
-      "Attachment": [
-        "Ek dosya"
-      ],
-      "Filter on": [
-        "Şuna göre süz"
-      ],
-      "Next": [
-        "İleri"
-      ],
-      "Recipient": [
-        "Alıcı"
-      ],
-      "Sender": [
-        "Gönderici"
-      ],
-      "Subject": [
-        "Konu"
-      ]
-    },
     "Daily recurring event, frequency": {
       "${ count } time": [
         "${ count } kez",
@@ -2756,6 +2723,15 @@
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Kişiler birleştiriliyor... Bu işlem birkaç dakika sürebilir. İşlem tamamlandığında, bu pencereyi kapatabilirsiniz."
+      ],
+      "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted. ${ manageBlockedAddressesSettingsLink } in settings.": [
+        "${ senderEmailAddress } adresinden gönderilen yeni e-postalar alınmayacak ve kalıcı olarak silinecek. Bu durumu ${ manageBlockedAddressesSettingsLink } bölümünden değiştirebilirsiniz."
+      ],
+      "No folders": [
+        "Henüz bir klasör yok"
+      ],
+      "No labels": [
+        "Henüz bir etiket yok"
       ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Dosya en fazla ${ MAX_IMPORT_FILE_SIZE_STRING } boyutunda olmalı ve en fazla ${ MAX_IMPORT_CONTACTS_STRING } kişi kaydı içermeli. Dosyanız daha büyükse, daha küçük dosyalara bölün.",
@@ -2931,7 +2907,7 @@
         "Takvim sınırına ulaşıldı"
       ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        "Kişisel takvim sınırı nedeniyle içe aktarılan tüm takvimler için yeni takvimler oluşturulamıyor."
+        "Kişisel takvim sınırı nedeniyle içe aktarılan tüm takvimler için yeni takvimler eklenemiyor."
       ],
       "Choose a date in the future.": [
         "Gelecekte bir zaman seçin."
@@ -2939,9 +2915,6 @@
       "Choose a date within the next ${ SCHEDULED_MAX_DATE_DAYS } day.": [
         "Gelecek ${ SCHEDULED_MAX_DATE_DAYS } gün içindeki bir tarih seçin.",
         "Gelecek ${ SCHEDULED_MAX_DATE_DAYS } gün içindeki bir tarih seçin."
-      ],
-      "Condition incomplete": [
-        "Koşul eksik"
       ],
       "Contact could not be saved": [
         "Kişi kaydedilemedi"
@@ -2984,17 +2957,11 @@
       "Email is not valid": [
         "E-posta geçersiz"
       ],
-      "Empty condition": [
-        "Koşul boş"
-      ],
       "Enter 6 digits": [
         "6 rakam yazın"
       ],
       "Enter a password": [
         "Bir parola yazın"
-      ],
-      "Error in one of the conditions": [
-        "Koşullardan biri hatalı"
       ],
       "Error while saving draft. Please try again.": [
         "Taslak kaydedilirken sorun çıktı. Lütfen yeniden deneyin."
@@ -3007,9 +2974,6 @@
       ],
       "Failed to encrypt attachment. Please try again.": [
         "Ek dosya şifrelenemedi. Lütfen yeniden deneyin."
-      ],
-      "Filter with this name already exists": [
-        "Aynı adlı bir süzgeç zaten var"
       ],
       "Folder name cannot be empty.": [
         "Klasör adı boş olamaz."
@@ -3127,12 +3091,6 @@
       "Request timed out": [
         "İstek zaman aşımına uğradı"
       ],
-      "Require at least one action": [
-        "En az bir işlem olmalıdır"
-      ],
-      "Require at least one condition": [
-        "En az bir koşul olmalıdır"
-      ],
       "Signature not verified": [
         "İmza doğrulanamadı"
       ],
@@ -3214,9 +3172,6 @@
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser.": [
         "Bu iletide, geçerli tarayıcınızda açılamayacak bazı bağlantı adresleri bulunuyor olabilir."
-      ],
-      "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
-        "Çok fazla süzgeç etkin. Daha fazla süzgeç etkinleştirebilmek için ücretli bir tarifeye geçin."
       ],
       "Trusted keys are not valid for sending": [
         "Güvenilen anahtarlar gönderim için geçerli değil"
@@ -3570,18 +3525,6 @@
       ]
     },
     "Filter modal type": {
-      "If the attachments": [
-        "Ek dosyalar şöyle ise"
-      ],
-      "If the recipient": [
-        "Alıcı şöyle ise"
-      ],
-      "If the sender": [
-        "Gönderici şöyle ise"
-      ],
-      "If the subject": [
-        "Konu şöyle ise"
-      ],
       "Select…": [
         "Seçin…"
       ],
@@ -3601,9 +3544,6 @@
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } güncellendi"
-      ],
-      "Filter ${ Filter.Name } updated": [
-        "${ Filter.Name } süzgeci güncellendi"
       ]
     },
     "Filter option": {
@@ -3621,14 +3561,6 @@
       ],
       "Unread": [
         "Okunmamış"
-      ]
-    },
-    "Filter preview": {
-      "read": [
-        "okunmuş"
-      ],
-      "starred": [
-        "yıldızlı"
       ]
     },
     "Font Face Default": {
@@ -3841,7 +3773,7 @@
     },
     "Import ICS file from Mail": {
       "Calendar event created": [
-        "Takvim etkinliği oluşturuldu"
+        "Takvim etkinliği eklendi"
       ],
       "Creating calendar event failed": [
         "Takvim etkinliği oluşturulamadı"
@@ -3987,12 +3919,6 @@
         "(${ memberCount } üye)",
         "(${ memberCount } üye)"
       ],
-      "(Filter if ALL of the following conditions are met)": [
-        "(Aşağıdaki koşulların TÜMÜ karşılandığında süzülür)"
-      ],
-      "(Filter if ANY of the following conditions are met)": [
-        "(Aşağıdaki koşullardan BİRİ karşılandığında süzülür)"
-      ],
       "(No Recipient)": [
         "(Alıcı yok)"
       ],
@@ -4043,9 +3969,6 @@
       "All your calendars are disabled.": [
         "Tüm takvimleriniz devre dışı."
       ],
-      "All your changes will be lost.": [
-        "Yaptığınız tüm değişiklikler kaybolacak."
-      ],
       "An unknown public key has been detected for this recipient.": [
         "Bu alıcı için bilinmeyen bir herkese açık anahtar algılandı."
       ],
@@ -4057,9 +3980,6 @@
       ],
       "Are you sure you want to delete all messages with this label?": [
         "Bu şekilde etiketlenmiş tüm iletileri silmek istediğinize emin misiniz?"
-      ],
-      "Are you sure you want to discard your changes?": [
-        "Değişiklikleri silmek istediğinize emin misiniz?"
       ],
       "Are you sure you want to move all messages in this location to Trash?": [
         "Bu klasördeki tüm iletileri çöpe atmak istediğinize emin misiniz?"
@@ -4150,10 +4070,10 @@
         "İçe aktarılan iletiler için bir etiket, bu içe aktarma için bir zaman aralığı ve içe aktarmak istediğiniz etiketler oluşturun."
       ],
       "Create a new contact group": [
-        "Yeni bir kişi grubu oluştur"
+        "Yeni bir kişi grubu ekle"
       ],
       "Create in": [
-        "Şurada oluştur"
+        "Şuraya ekle"
       ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora ve diğer bazı uygulamaların CSV dosyalarıyla birlikte vCard 3.1 ve 4.0 biçimlerindeki (UTF-8) dosyalar desteklenir."
@@ -4290,9 +4210,6 @@
         "dosya eklendi",
         "dosya eklendi"
       ],
-      "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
-        "Süzgeçler, alınan ve gönderilen tüm e-postalara uygulanır. Her süzgeçte en az bir ad ve geçerli bir Sieve komut dosyası bulunmalıdır."
-      ],
       "Folder": [
         "Klasör"
       ],
@@ -4354,9 +4271,6 @@
       ],
       "Image URL": [
         "Görsel adresi"
-      ],
-      "Images have been removed because they are not allowed in auto-reply": [
-        "Otomatik yanıt içinde kullanılmasına izin verilmediğinden görseller kaldırıldı"
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "${ contactsFragment } ve ${ contactsGroupsFragment } kayıtlarını içe aktar"
@@ -4482,9 +4396,6 @@
       "New": [
         "Yeni"
       ],
-      "No action selected": [
-        "Herhangi bir işlem seçilmemiş"
-      ],
       "No contacts added yet": [
         "Henüz bir kişi eklenmemiş"
       ],
@@ -4497,17 +4408,11 @@
       "No folder found": [
         "Herhangi bir klasör bulunamadı"
       ],
-      "No folder selected": [
-        "Herhangi bir klasör seçilmemiş"
-      ],
       "No group found": [
         "Grup bulunamadı"
       ],
       "No label found": [
         "Herhangi bir etiket bulunamadı"
-      ],
-      "No label selected": [
-        "Herhangi bir etiket seçilmemiş"
       ],
       "No more results found": [
         "Başka bir sonuç bulunamadı"
@@ -4674,6 +4579,9 @@
       ],
       "Send an encrypted, password protected message to a ${ boldText } email address.": [
         "${ boldText } e-posta adresine şifrelenmiş ve parola ile korunan bir ileti gönderin."
+      ],
+      "Sender has been blocked.": [
+        "Gönderici engellendi."
       ],
       "Sending": [
         "Gönderiliyor"
@@ -5193,7 +5101,7 @@
         "\"Anahtara güven\" üzerine tıklamak bu herkese açık anahtarı bu göndericiyle ilişkilendirir. Bu adresten gelen e-postalar otomatik olarak şifreyle doğrulanır."
       ],
       "Clicking \"Trust Key\" will create a new contact and associate this public key with\nthis sender. Emails from this address will be automatically cryptographically verified.": [
-        "\"Anahtara güven\" üzerine tıklamak yeni bir kişi oluşturur ve bu herkese açık anahtarı bu göndericiyle ilişkilendirir. Bu adresten gelen e-postalar otomatik olarak şifreyle doğrulanır."
+        "\"Anahtara güven\" üzerine tıklamak yeni bir kişi ekler ve bu herkese açık anahtarı bu göndericiyle ilişkilendirir. Bu adresten gelen e-postalar otomatik olarak şifreyle doğrulanır."
       ],
       "Do you want to trust the primary public key with the following fingerprint?": [
         "Aşağıdaki parmak izine sahip birincil ortak anahtara güvenmek istiyor musunuz?",
@@ -5227,9 +5135,6 @@
       ],
       "Close draft": [
         "Taslağı kapat"
-      ],
-      "Create filter with...": [
-        "Şununla süzgeç oluştur..."
       ],
       "Delete permanently": [
         "Kalıcı olarak sil"
@@ -5398,17 +5303,8 @@
       ]
     },
     "Label": {
-      " and ": [
-        " ve "
-      ],
-      " and ${ l }": [
-        " ve ${ l }"
-      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Geçici olarak kullanılamıyor. Lütfen bir süre sonra yeniden bakın.)"
-      ],
-      "Actions": [
-        "İşlemler"
       ],
       "Add email address": [
         "E-posta adresi ekle"
@@ -5422,26 +5318,14 @@
       "Address": [
         "Adres"
       ],
-      "ALL": [
-        "TÜMÜ"
-      ],
       "Also archive": [
         "Arşive taşı"
       ],
-      "AND": [
-        "VE"
+      "Always label senders emails": [
+        "Göndericinin e-postaları şu şekilde etiketlensin"
       ],
-      "and": [
-        "ve"
-      ],
-      "And": [
-        "Ve"
-      ],
-      "ANY": [
-        "BİRİ"
-      ],
-      "Apply filter to existing emails": [
-        "Süzgeci var olan e-postalara uygula"
+      "Always move senders emails": [
+        "Göndericinin e-postaları şuraya taşınsın"
       ],
       "Attach screenshot(s)": [
         "Ekran görüntüsü ekle"
@@ -5491,9 +5375,6 @@
       "Code is 6 digits without spaces": [
         "Doğrulama kodu boşluk içermeyen 6 rakamdan oluşur"
       ],
-      "Conditions": [
-        "Koşullar"
-      ],
       "Confirm password": [
         "Parolayı onayla"
       ],
@@ -5518,6 +5399,9 @@
       "Do not ask again": [
         "Bir daha sorma"
       ],
+      "Don't show this again": [
+        "Bunu bir daha gösterme"
+      ],
       "Email": [
         "E-posta"
       ],
@@ -5541,9 +5425,6 @@
       ],
       "Extended address": [
         "Açık adres"
-      ],
-      "Filter Name": [
-        "Süzgeç adı"
       ],
       "Folder location": [
         "Klasör konumu"
@@ -5574,12 +5455,6 @@
       ],
       "I understand the risk": [
         "Riski anladım"
-      ],
-      "IF": [
-        "EĞER"
-      ],
-      "If": [
-        "Eğer"
       ],
       "Import all messages": [
         "Tüm iletileri içe aktar"
@@ -5620,6 +5495,9 @@
       "Mailbox password": [
         "Posta kutusu parolası"
       ],
+      "Manage categories": [
+        "Kategori yönetimi"
+      ],
       "Manage folders": [
         "Klasör yönetimi"
       ],
@@ -5629,17 +5507,17 @@
       "Manage my addresses": [
         "Adreslerimi yönet"
       ],
-      "Mark as": [
-        "Şöyle işaretlensin"
-      ],
       "Move to": [
         "Şuraya taşınsın"
       ],
+      "Move to Archive": [
+        "Arşive taşı"
+      ],
+      "Move to Inbox": [
+        "Gelen kutusuna taşı"
+      ],
       "Name": [
         "Ad"
-      ],
-      "No label found": [
-        "Herhangi bir etiket bulunamadı"
       ],
       "Notification": [
         "Bildirim"
@@ -5652,15 +5530,6 @@
       ],
       "Operating system version": [
         "İşletim sistemi sürümü"
-      ],
-      "OR": [
-        "VEYA"
-      ],
-      "or": [
-        "veya"
-      ],
-      "Or": [
-        "Veya"
       ],
       "Participants": [
         "Katılımcılar"
@@ -5689,9 +5558,6 @@
       "Public keys": [
         "Herkese açık anahtarlar"
       ],
-      "Read": [
-        "Okunmuş"
-      ],
       "Recipient": [
         "Alıcı"
       ],
@@ -5719,9 +5585,6 @@
       "Select how your mailbox looks like by default.": [
         "Posta kutunuzun varsayılan olarak nasıl görüneceğini seçin."
       ],
-      "Send auto-reply": [
-        "Otomatik yanıtlansın"
-      ],
       "Sender": [
         "Gönderici"
       ],
@@ -5731,32 +5594,11 @@
       "Size:": [
         "Boyut:"
       ],
-      "Starred": [
-        "Yıldızlı"
-      ],
-      "Statement": [
-        "Değerlendirme"
-      ],
       "Street address": [
         "Sokak adresi"
       ],
       "System information": [
         "Sistem bilgileri"
-      ],
-      "The email was sent ${ attachment }": [
-        "Gönderilen e-postada ${ attachment }"
-      ],
-      "the email was sent ${ attachment }": [
-        "gönderilen e-postada ${ attachment }"
-      ],
-      "The email was sent ${ attachmentStrong }": [
-        "Gönderilen e-postada ${ attachmentStrong }"
-      ],
-      "the email was sent ${ label }": [
-        "gönderilen e-postada ${ label }"
-      ],
-      "Then": [
-        "Önce"
       ],
       "Time": [
         "Saat"
@@ -5787,21 +5629,6 @@
       ],
       "What happened?": [
         "Ne oldu?"
-      ],
-      "With attachment": [
-        "Ek dosyası olan"
-      ],
-      "with attachments": [
-        "ek dosyası olan"
-      ],
-      "Without attachment": [
-        "Ek dosyası olmayan"
-      ],
-      "without attachment": [
-        "ek dosyası olmayan"
-      ],
-      "without attachments": [
-        "ek dosyaları olmayan"
       ],
       "Wonderful": [
         "Çok iyi"
@@ -5851,10 +5678,10 @@
     },
     "Label/folder modal": {
       "Create folder": [
-        "Klasör oluştur"
+        "Klasör ekle"
       ],
       "Create label": [
-        "Etiket oluştur"
+        "Etiket ekle"
       ],
       "Edit folder": [
         "Klasörü düzenle"
@@ -5865,7 +5692,7 @@
     },
     "label/folder notification": {
       "${ Label.Name } created": [
-        "${ Label.Name } oluşturuldu"
+        "${ Label.Name } eklendi"
       ]
     },
     "Layout mode": {
@@ -5880,12 +5707,6 @@
       "Activate": [
         "Etkinleştir"
       ],
-      "Add folder": [
-        "Klasör ekle"
-      ],
-      "Add label": [
-        "Etiket ekle"
-      ],
       "All mail": [
         "Tüm e-postalar"
       ],
@@ -5896,16 +5717,16 @@
         "web tarayıcınızın ön belleğini temizlemek"
       ],
       "Create a calendar linked to an active email address.": [
-        "Etkin bir e-posta adresine bağlı bir takvim oluşturun."
+        "Etkin bir e-posta adresine bağlı bir takvim ekleyin."
       ],
       "Create a new calendar to add this event": [
-        "Bu etkinliği eklemek için yeni bir takvim oluşturun"
+        "Bu etkinliği eklemek için yeni bir takvim ekleyin"
       ],
       "Create a new calendar to answer this invitation": [
-        "Bu daveti yanıtlamak için yeni bir takvim oluşturun"
+        "Bu daveti yanıtlamak için yeni bir takvim ekleyin"
       ],
       "Create a new calendar to manage your invitations": [
-        "Davetlerinizi yönetmek için yeni bir takvim oluşturun"
+        "Davetlerinizi yönetmek için yeni bir takvim ekleyin"
       ],
       "Drafts": [
         "Taslaklar"
@@ -5943,6 +5764,9 @@
       "Less": [
         "Daha az göster"
       ],
+      "Manage blocked email addresses": [
+        "Engellenmiş e-posta adresleri yönetimi"
+      ],
       "Manage your folders": [
         "Klasörlerinizi yönetin"
       ],
@@ -5962,7 +5786,7 @@
         "Güncellenen etkinliği ${ calendarAppName } ile aç"
       ],
       "Or you can delete one of your calendars and create a new one linked to an active email address.": [
-        "Ya da takvimlerinizden birini silebilir ve etkin bir e-posta adresine bağlı yeni bir takvim oluşturabilirsiniz."
+        "Ya da takvimlerinizden birini silebilir ve etkin bir e-posta adresine bağlı yeni bir takvim ekleyebilirsiniz."
       ],
       "Outbox": [
         "Giden kutusu"
@@ -6047,7 +5871,7 @@
         "Neredeyse tamam"
       ],
       "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
-        "Oluşturulan takvim sayısı: ${ createdCalendars } / ${ calendarsToBeCreated }"
+        "Eklenen takvim sayısı: ${ createdCalendars } / ${ calendarsToBeCreated }"
       ],
       "Creating new calendars": [
         "Yeni takvimler oluşturuluyor"
@@ -6319,17 +6143,20 @@
       ]
     },
     "Notification": {
-      "${ _Filter.Name } created": [
-        "${ _Filter.Name } oluşturuldu"
+      "Block removed": [
+        "Engelleme kaldırıldı"
       ],
       "Contact group created": [
-        "Kişi grubu oluşturuldu"
+        "Kişi grubu eklendi"
       ],
       "Contact group updated": [
         "Kişi grubu güncellendi"
       ],
       "Password has been set successfully": [
         "Parola ayarlandı"
+      ],
+      "Sender ${ senderEmail } blocked": [
+        "${ senderEmail } göndericisi engellendi"
       ]
     },
     "Oauth instructions": {
@@ -6360,7 +6187,7 @@
     },
     "Onboarding Proton": {
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
-        "Kuruluşunuzun tüm üyelerinin korunduğundan emin olmak için kuruluşunuzu yapılandırın, etki alanı adınızı bağlayın ve hesaplar oluşturun."
+        "Kuruluşunuzun tüm üyelerinin korunduğundan emin olmak için kuruluşunuzu yapılandırın, etki alanı adınızı bağlayın ve hesaplar ekleyin."
       ],
       "Discover all Proton services": [
         "Tüm Proton hizmetlerini keşfedin"
@@ -6386,7 +6213,7 @@
         "Tümü"
       ],
       "Create new group": [
-        "Yeni grup oluştur"
+        "Yeni grup ekle"
       ],
       "Ignore group": [
         "Grubu yok say"
@@ -6396,9 +6223,6 @@
       ]
     },
     "Option group": {
-      "Custom folders": [
-        "Özel klasörler"
-      ],
       "Default folders": [
         "Varsayılan klasörler"
       ],
@@ -6408,7 +6232,7 @@
     },
     "Option group label": {
       "Create new calendar": [
-        "Yeni takvim oluştur"
+        "Yeni takvim ekle"
       ],
       "Merge with calendar": [
         "Takvim ile birleştir"
@@ -6541,9 +6365,6 @@
       "Text": [
         "Metin"
       ],
-      "Type text or keyword": [
-        "Metin ya da anahtar sözcük yazın"
-      ],
       "Write your message": [
         "İletinizi yazın"
       ]
@@ -6655,7 +6476,7 @@
         "Davet yanıtlanamadı"
       ],
       "Calendar event created": [
-        "Takvim etkinliği oluşturuldu"
+        "Takvim etkinliği eklendi"
       ],
       "Calendar event updated": [
         "Takvim etkinliği güncellendi"
@@ -6839,20 +6660,6 @@
         "Abonelikten ayrıldınız"
       ]
     },
-    "Step in filter modal": {
-      "Actions": [
-        "İşlemler"
-      ],
-      "Conditions": [
-        "Koşullar"
-      ],
-      "Name": [
-        "Ad"
-      ],
-      "Preview": [
-        "Ön izleme"
-      ]
-    },
     "Storage": {
       "Get extra storage for free": [
         "Ücretsiz ek depolama alanı kazanın"
@@ -6997,6 +6804,12 @@
       "Conversation removed from ${ labelName }.": [
         "Yazışmadan ${ labelName } etiketi kaldırıldı."
       ],
+      "Conversations from ${ sendersList } will be labelled as ${ labelsList }": [
+        "${ sendersList } tarafından gönderilen yazışmalar ${ labelsList } olarak etiketlenecek"
+      ],
+      "Conversations from ${ sendersList } will be moved to ${ folder }": [
+        "${ sendersList } tarafından gönderilen yazışmalar ${ folder } klasörüne taşınacak"
+      ],
       "Draft deleted": [
         "Taslak silindi"
       ],
@@ -7053,6 +6866,12 @@
       ],
       "Message removed from ${ labelName }.": [
         "İletiden ${ labelName } etiketi kaldırıldı."
+      ],
+      "Messages from ${ sendersList } will be labelled as ${ labelsList }": [
+        "${ sendersList } tarafından gönderilen iletiler ${ labelsList } olarak etiketlenecek"
+      ],
+      "Messages from ${ sendersList } will be moved to ${ folder }": [
+        "${ sendersList } tarafından gönderilen iletiler ${ folder } klasörüne taşınacak"
       ],
       "Move ${ selectionCount } conversation": [
         "${ selectionCount } yazışmayı taşıma",
@@ -7213,9 +7032,6 @@
       "Add contact group name": [
         "Kişi grubu adı ekle"
       ],
-      "Add filter": [
-        "Süzgeç ekle"
-      ],
       "Add to ${ groupCount } group": [
         "${ groupCount } gruba ekle",
         "${ groupCount } gruba ekle"
@@ -7228,9 +7044,6 @@
       ],
       "Archive": [
         "Arşivle"
-      ],
-      "Are you sure you want to close?": [
-        "Oturumu kapatmak istediğinize emin misiniz?"
       ],
       "Attachments": [
         "Ek dosyalar"
@@ -7246,6 +7059,9 @@
       ],
       "Blind Carbon Copy": [
         "Gizli kopya"
+      ],
+      "Block sender": [
+        "Göndericiyi engelle"
       ],
       "Carbon Copy": [
         "Kopya"
@@ -7280,23 +7096,17 @@
       "Conversation list": [
         "Yazışma listesi"
       ],
-      "Create a new folder": [
-        "Yeni bir klasör oluştur"
-      ],
-      "Create a new label": [
-        "Yeni bir etiket oluştur"
-      ],
       "Create contact": [
-        "Kişi oluştur"
+        "Kişi ekle"
       ],
       "Create folder": [
-        "Klasör oluştur"
+        "Klasör ekle"
       ],
       "Create label": [
-        "Etiket oluştur"
+        "Etiket ekle"
       ],
       "Create new group": [
-        "Yeni grup oluştur"
+        "Yeni grup ekle"
       ],
       "Currency": [
         "Para birimi"
@@ -7360,9 +7170,6 @@
       "Edit contact group": [
         "Kişi grubunu düzenle"
       ],
-      "Edit filter": [
-        "Süzgeci düzenle"
-      ],
       "Edit image": [
         "Görseli düzenle"
       ],
@@ -7401,9 +7208,6 @@
       ],
       "Feedback": [
         "Geri bildirim"
-      ],
-      "Filter on": [
-        "Şuna göre süz"
       ],
       "Forward": [
         "İlet"
@@ -7704,6 +7508,9 @@
       "Encrypted data with verified digital signature": [
         "Doğrulanmış dijital imza ile şifrelenmiş veri"
       ],
+      "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
+        "Gmail bazı e-postaları Sosyal ya da Tanıtım gibi kategorilere ayırır. Bu e-postaların nereye içe aktarılacağını seçebilirsiniz."
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Bir kullanıcı için imzalama veya şifreleme sırasında kullanılacak PGP şemasını seçin. PGP/Inline için iletilerin düz metin biçiminde olması gerektiğini unutmayın"
       ],
@@ -7715,9 +7522,6 @@
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
         "Bu işlem tüm iletileri indirir. Böylece iletiler yerel olarak aranabilir. Web tarayıcınızın verilerini silerseniz bu seçenek devre dışı kalır."
-      ],
-      "This feature is only available for paid users": [
-        "Bu özelliği yalnızca ücretli tarife kullanıcıları kullanabilir"
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Bu e-posta adresine uçtan uca şifrelenmiş e-postalar göndermek için bir herkese açık anahtar yükleyin"

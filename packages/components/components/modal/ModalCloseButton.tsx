@@ -11,7 +11,7 @@ interface ModalCloseButtonProps {
 }
 
 const ModalCloseButton = ({ closeTextModal, onClose }: ModalCloseButtonProps) => {
-    const closeText = closeTextModal || c('Action').t`Close modal`;
+    const closeText = closeTextModal || c('Action').t`Close`;
 
     return (
         <Button icon shape="ghost" size="small" className="modal-close" title={closeText} onClick={onClose}>

@@ -23,9 +23,6 @@
       "Add address": [
         "Afegeix adreça"
       ],
-      "Add condition": [
-        "Afegeix condició"
-      ],
       "Add contact": [
         "Afegir contacte"
       ],
@@ -77,6 +74,9 @@
       "All Unstarred": [
         "Tots els no destacats"
       ],
+      "Allow messages": [
+        "Permet missatges"
+      ],
       "Apply": [
         "Aplica"
       ],
@@ -94,6 +94,12 @@
       ],
       "Beta Access": [
         "Accés beta"
+      ],
+      "Block": [
+        "Bloqueja"
+      ],
+      "Block messages from this sender": [
+        "Bloqueja els missatges d'aquest remitent"
       ],
       "Bold": [
         "Negreta"
@@ -147,7 +153,7 @@
         "Tancar l'editor"
       ],
       "Close modal": [
-        "Tanca la finestra"
+        "Close"
       ],
       "Close navigation": [
         "Tanca la navegació"
@@ -200,20 +206,17 @@
       "Create a new contact group": [
         "Crear un nou grup de contactes"
       ],
-      "Create folder": [
-        "Crear carpeta"
+      "Create a new folder": [
+        "Crear una nova carpeta"
       ],
-      "Create label": [
-        "Crear etiqueta"
+      "Create a new label": [
+        "Crea una etiqueta"
       ],
       "Create new contact": [
         "Crea un nou contacte"
       ],
       "Create new message": [
         "Crear un missatge nou"
-      ],
-      "Custom filter": [
-        "Filtre personalitzat"
       ],
       "Customize": [
         "Personalitza"
@@ -343,9 +346,6 @@
       "Fewer search options": [
         "Menys opcions de cerca"
       ],
-      "Filter on...": [
-        "Filtrar per..."
-      ],
       "Font": [
         "Font"
       ],
@@ -470,9 +470,6 @@
       "Label as...": [
         "Etiquetar com a..."
       ],
-      "label emails as": [
-        "etiquetar correus electrònics com"
-      ],
       "Learn more": [
         "Saber-ne més"
       ],
@@ -508,9 +505,6 @@
       ],
       "Mark as unread": [
         "Marcar com a no llegit"
-      ],
-      "mark emails as": [
-        "marcar correus electrònics com"
       ],
       "Mark for deletion": [
         "Marcar per eliminar"
@@ -571,9 +565,6 @@
       ],
       "Move all to trash": [
         "Mou tot a la paperera"
-      ],
-      "move emails to": [
-        "moure correus electrònics a"
       ],
       "Move to": [
         "Moure a"
@@ -662,9 +653,6 @@
       "Pause": [
         "Pausar"
       ],
-      "Preview": [
-        "Previsualització"
-      ],
       "Preview ${ attachmentName }": [
         "Previsualitzar ${ attachmentName }"
       ],
@@ -730,9 +718,6 @@
       ],
       "Remove expiration time": [
         "Elimina el temps de caducitat"
-      ],
-      "Remove this label": [
-        "Elimina aquesta etiqueta"
       ],
       "Rename": [
         "Canvia el nom"
@@ -805,9 +790,6 @@
       ],
       "Send anyway": [
         "Enviar de totes maneres"
-      ],
-      "send auto-reply email": [
-        "enviar correu d’auto-resposta"
       ],
       "Send feedback": [
         "Enviar comentaris"
@@ -1067,6 +1049,11 @@
       ],
       "Participant added": [
         "Participant afegit"
+      ]
+    },
+    "Adding expiration to a message will create an expiring message": {
+      "Expiring message": [
+        "Missatge amb expiració"
       ]
     },
     "Alert": {
@@ -1590,6 +1577,9 @@
       ],
       "outer space": [
         "espai exterior"
+      ],
+      "pacific": [
+        "pacífic"
       ],
       "persian red": [
         "vermell persa"
@@ -2524,26 +2514,6 @@
         "Illes Aland"
       ]
     },
-    "CustomFilter": {
-      "Attachment": [
-        "Adjunt"
-      ],
-      "Filter on": [
-        "Filtrat"
-      ],
-      "Next": [
-        "Següent"
-      ],
-      "Recipient": [
-        "Destinatari"
-      ],
-      "Sender": [
-        "Remitent"
-      ],
-      "Subject": [
-        "Assumpte"
-      ]
-    },
     "Daily recurring event, frequency": {
       "${ count } time": [
         "${ count } vegada",
@@ -2617,6 +2587,12 @@
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Combinant contactes... Pot trigar uns minuts. Quan el procés s'hagi completat, podreu tancar aquest diàleg."
+      ],
+      "No folders": [
+        "Cap carpeta"
+      ],
+      "No labels": [
+        "Cap etiqueta"
       ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "El fitxer ha de tenir una mida màxima de ${ MAX_IMPORT_FILE_SIZE_STRING } i tenir fins a ${ MAX_IMPORT_CONTACTS_STRING } contacte. Si el fitxer és més gran, dividiu-lo en fitxers més petits.",
@@ -2801,9 +2777,6 @@
         "Escolliu una data dintre del proper ${ SCHEDULED_MAX_DATE_DAYS } dia.",
         "Escolliu una data dintre dels propers ${ SCHEDULED_MAX_DATE_DAYS } dies."
       ],
-      "Condition incomplete": [
-        "Condició incompleta"
-      ],
       "Contact could not be saved": [
         "El contacte no pot ser desat"
       ],
@@ -2845,17 +2818,11 @@
       "Email is not valid": [
         "El correu electrònic no és vàlid"
       ],
-      "Empty condition": [
-        "Condició buida"
-      ],
       "Enter 6 digits": [
         "Introduïu 6 dígits"
       ],
       "Enter a password": [
         "Introduïu una contrasenya"
-      ],
-      "Error in one of the conditions": [
-        "Errada en una de les condicions"
       ],
       "Error while saving draft. Please try again.": [
         "Error desant l'esborrany. Torneu a intentar-ho."
@@ -2868,9 +2835,6 @@
       ],
       "Failed to encrypt attachment. Please try again.": [
         "No s'ha pogut xifrar el fitxer adjunt. Si us plau torna-ho a provar."
-      ],
-      "Filter with this name already exists": [
-        "Ja existeix un filtre amb aquest nom"
       ],
       "Folder name cannot be empty.": [
         "El nom de la carpeta no pot estar buit."
@@ -2985,12 +2949,6 @@
       "Request timed out": [
         "S'ha esgotat el temps d'espera"
       ],
-      "Require at least one action": [
-        "Requereix al menys una acció"
-      ],
-      "Require at least one condition": [
-        "Requereix al menys una condició"
-      ],
       "Signature not verified": [
         "Signatura no verificada"
       ],
@@ -3072,9 +3030,6 @@
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser.": [
         "Aquest missatge pot contenir algunes adreces URL que no es poden obrir amb el navegador actual."
-      ],
-      "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
-        "Massa filtres actius. Actualitzeu a un pla de pagament per activar més filtres."
       ],
       "Trusted keys are not valid for sending": [
         "Les claus de confiança no són vàlides per enviar-les"
@@ -3403,18 +3358,6 @@
       ]
     },
     "Filter modal type": {
-      "If the attachments": [
-        "Si els adjunts"
-      ],
-      "If the recipient": [
-        "Si el destinatari"
-      ],
-      "If the sender": [
-        "Si el remitent"
-      ],
-      "If the subject": [
-        "Si l'assumpte"
-      ],
       "Select…": [
         "Seleccionar…"
       ],
@@ -3434,9 +3377,6 @@
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } actualitzat"
-      ],
-      "Filter ${ Filter.Name } updated": [
-        "Filtre ${ Filter.Name } actualitzat"
       ]
     },
     "Filter option": {
@@ -3454,14 +3394,6 @@
       ],
       "Unread": [
         "No llegit"
-      ]
-    },
-    "Filter preview": {
-      "read": [
-        "llegit"
-      ],
-      "starred": [
-        "destacat"
       ]
     },
     "Font Face Default": {
@@ -3812,12 +3744,6 @@
         "(${ memberCount } membre)",
         "(${ memberCount } membres)"
       ],
-      "(Filter if ALL of the following conditions are met)": [
-        "(Filtre si es compleixen totes les condicions següents)"
-      ],
-      "(Filter if ANY of the following conditions are met)": [
-        "(Filtre si es compleixen ALGUNES de les condicions següents)"
-      ],
       "(No Recipient)": [
         "(Cap Destinatari)"
       ],
@@ -3868,9 +3794,6 @@
       "All your calendars are disabled.": [
         "Tots els calendaris estan deshabilitats."
       ],
-      "All your changes will be lost.": [
-        "Tots els vostres canvis es perdran."
-      ],
       "An unknown public key has been detected for this recipient.": [
         "S'ha detectat una clau pública desconegut per aquest receptor."
       ],
@@ -3882,9 +3805,6 @@
       ],
       "Are you sure you want to delete all messages with this label?": [
         "Segur que voleu eliminar tots els missatges amb aquesta etiqueta?"
-      ],
-      "Are you sure you want to discard your changes?": [
-        "N'estás segur que desitges descartar els teus canvis?"
       ],
       "Are you sure you want to move all messages in this location to Trash?": [
         "Segur que voleu moure tots els missatges d'aquesta carpeta a la paperera?"
@@ -4112,9 +4032,6 @@
         "arxiu adjunt",
         "arxius adjunts"
       ],
-      "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
-        "Els filtres funcionen en tots els correus electrònics, inclosos els que es reben i els enviats. Cada filtre ha de contenir almenys un nom, una condició i una acció."
-      ],
       "Folder": [
         "Carpeta"
       ],
@@ -4170,9 +4087,6 @@
       ],
       "Image URL": [
         "URL de la imatge"
-      ],
-      "Images have been removed because they are not allowed in auto-reply": [
-        "Les imatges s'han eliminat perquè no estan permeses a les respostes automàtiques"
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Importar ${ contactsFragment } i ${ contactsGroupsFragment }"
@@ -4292,9 +4206,6 @@
       "New": [
         "Nova"
       ],
-      "No action selected": [
-        "No s'ha seleccionat cap acció"
-      ],
       "No contacts added yet": [
         "Encara no s'han afegit contactes"
       ],
@@ -4307,17 +4218,11 @@
       "No folder found": [
         "No s'ha trobat cap carpeta"
       ],
-      "No folder selected": [
-        "No hi ha carpetes seleccionades"
-      ],
       "No group found": [
         "No s'ha trobat cap grup"
       ],
       "No label found": [
         "No s'ha trobat cap etiqueta"
-      ],
-      "No label selected": [
-        "No s'ha seleccionat cap etiqueta"
       ],
       "No more results found": [
         "No s'han trobat més resultats"
@@ -4476,6 +4381,9 @@
       "Send an encrypted, password protected message to a ${ boldText } email address.": [
         "Envia un correu encriptat protegit amb contrasenya a una adreça de correu ${ boldText }."
       ],
+      "Sender has been blocked.": [
+        "S'ha bloquejat el remitent."
+      ],
       "Sending": [
         "Enviant"
       ],
@@ -4620,6 +4528,10 @@
       ],
       "This message is signed by the key attached, that has not been trusted yet.": [
         "Aquest missatge està signat per una clau que encara no s'ha confiat."
+      ],
+      "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
+        "Aquest missatge serà marcat com a correu brossa. Us agradaria també cancel·lar la subscripció per a futurs correus?",
+        "Aquests missatges seran marcat com a correu brossa. Us agradaria també cancel·lar la subscripció per a futurs correus?"
       ],
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
         "Aquest missatge es mourà als Esborranys perquè pugueu editar-lo. Necessitareu tornar a programar quan s'enviarà."
@@ -4997,9 +4909,6 @@
       "Close draft": [
         "Tancar esborrany"
       ],
-      "Create filter with...": [
-        "Crear filtre amb..."
-      ],
       "Delete permanently": [
         "Suprimeix permanentment"
       ],
@@ -5167,17 +5076,8 @@
       ]
     },
     "Label": {
-      " and ": [
-        " i "
-      ],
-      " and ${ l }": [
-        " i ${ l }"
-      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(No disponible temporalment. Comproveu-ho de nou més tard.)"
-      ],
-      "Actions": [
-        "Accions"
       ],
       "Add email address": [
         "Afegir adreça de correu electrònic"
@@ -5191,26 +5091,8 @@
       "Address": [
         "Adreça"
       ],
-      "ALL": [
-        "TOT"
-      ],
       "Also archive": [
         "Arxivar també"
-      ],
-      "AND": [
-        "I"
-      ],
-      "and": [
-        "i"
-      ],
-      "And": [
-        "I"
-      ],
-      "ANY": [
-        "CUALSEVOL"
-      ],
-      "Apply filter to existing emails": [
-        "Aplica el filtre als correus existents"
       ],
       "Attach screenshot(s)": [
         "Adjunta captura/es de pantalla"
@@ -5260,9 +5142,6 @@
       "Code is 6 digits without spaces": [
         "El codi consta de 6 dígits sense espais"
       ],
-      "Conditions": [
-        "Condicions"
-      ],
       "Confirm password": [
         "Confirmar la contrasenya"
       ],
@@ -5287,6 +5166,9 @@
       "Do not ask again": [
         "No tornis a preguntar"
       ],
+      "Don't show this again": [
+        "No ho tornis a mostrar"
+      ],
       "Email": [
         "Correu electrònic"
       ],
@@ -5310,9 +5192,6 @@
       ],
       "Extended address": [
         "Adreça completa"
-      ],
-      "Filter Name": [
-        "Nom del filtre"
       ],
       "Folder location": [
         "Ubicació de la carpeta"
@@ -5343,12 +5222,6 @@
       ],
       "I understand the risk": [
         "Entenc el risc"
-      ],
-      "IF": [
-        "SI"
-      ],
-      "If": [
-        "Si"
       ],
       "Import all messages": [
         "Importar tots els missatges"
@@ -5389,6 +5262,9 @@
       "Mailbox password": [
         "Contrasenya de la bústia"
       ],
+      "Manage categories": [
+        "Gestiona les categories"
+      ],
       "Manage folders": [
         "Gestionar carpetes"
       ],
@@ -5398,17 +5274,17 @@
       "Manage my addresses": [
         "Gestionar les meves adreces"
       ],
-      "Mark as": [
-        "Marca com a"
-      ],
       "Move to": [
         "Moure a"
       ],
+      "Move to Archive": [
+        "Moure al Arxiu"
+      ],
+      "Move to Inbox": [
+        "Moure a la Safata d'entrada"
+      ],
       "Name": [
         "Nom"
-      ],
-      "No label found": [
-        "No s'ha trobat cap etiqueta"
       ],
       "Notification": [
         "Notificació"
@@ -5421,15 +5297,6 @@
       ],
       "Operating system version": [
         "Versió del sistema operatiu"
-      ],
-      "OR": [
-        "O"
-      ],
-      "or": [
-        "o"
-      ],
-      "Or": [
-        "O"
       ],
       "Participants": [
         "Participants"
@@ -5458,9 +5325,6 @@
       "Public keys": [
         "Claus públiques"
       ],
-      "Read": [
-        "Llegit"
-      ],
       "Recipient": [
         "Destinatari"
       ],
@@ -5488,9 +5352,6 @@
       "Select how your mailbox looks like by default.": [
         "Seleccioneu com es veu per defecte la vostra bústia de correu."
       ],
-      "Send auto-reply": [
-        "Enviar resposta automàtica"
-      ],
       "Sender": [
         "Remitent"
       ],
@@ -5500,32 +5361,11 @@
       "Size:": [
         "Mida:"
       ],
-      "Starred": [
-        "Destacat"
-      ],
-      "Statement": [
-        "Declaració"
-      ],
       "Street address": [
         "Adreça de carrer"
       ],
       "System information": [
         "Informació del sistema"
-      ],
-      "The email was sent ${ attachment }": [
-        "El correu ha estat enviat ${ attachment }"
-      ],
-      "the email was sent ${ attachment }": [
-        "el correu ha estat enviat ${ attachment }"
-      ],
-      "The email was sent ${ attachmentStrong }": [
-        "El correu ha estat enviat ${ attachmentStrong }"
-      ],
-      "the email was sent ${ label }": [
-        "el correu ha estat enviat ${ label }"
-      ],
-      "Then": [
-        "Aleshores"
       ],
       "Time": [
         "Hora"
@@ -5556,21 +5396,6 @@
       ],
       "What happened?": [
         "Què ha passat?"
-      ],
-      "With attachment": [
-        "Amb fitxers adjunts"
-      ],
-      "with attachments": [
-        "amb fitxers adjunts"
-      ],
-      "Without attachment": [
-        "Sense fitxers adjunts"
-      ],
-      "without attachment": [
-        "sense fitxers adjunts"
-      ],
-      "without attachments": [
-        "sense fitxers adjunts"
       ],
       "Wonderful": [
         "Meravellosa"
@@ -5648,12 +5473,6 @@
     "Link": {
       "Activate": [
         "Activa"
-      ],
-      "Add folder": [
-        "Afegir carpeta"
-      ],
-      "Add label": [
-        "Afegir etiqueta"
       ],
       "All mail": [
         "Tot el correu"
@@ -5883,6 +5702,11 @@
         "Hi ha disponible una nova versió de ${ appName }. ${ reloadButton }."
       ]
     },
+    "Message has been sent to the user via a SimpleLogin alias": {
+      "Delivered via SimpleLogin by Proton": [
+        "Lliurat amb SimpleLogin de Proton"
+      ]
+    },
     "Message image": {
       "Image has not been loaded in order to protect your privacy.": [
         "La imatge no s'ha carregat per tal de protegir la vostra privacitat."
@@ -6075,9 +5899,6 @@
       ]
     },
     "Notification": {
-      "${ _Filter.Name } created": [
-        "${ _Filter.Name } creat"
-      ],
       "Contact group created": [
         "Grup de contactes creat"
       ],
@@ -6142,9 +5963,6 @@
       ]
     },
     "Option group": {
-      "Custom folders": [
-        "Carpetes personalitzades"
-      ],
       "Default folders": [
         "Carpetes per defecte"
       ],
@@ -6272,9 +6090,6 @@
       ],
       "Text": [
         "Text"
-      ],
-      "Type text or keyword": [
-        "Escrigui text o paraula clau"
       ],
       "Write your message": [
         "Escriviu el vostre missatge"
@@ -6543,20 +6358,6 @@
         "Aquest missatge és d'una llista de correu."
       ]
     },
-    "Step in filter modal": {
-      "Actions": [
-        "Accions"
-      ],
-      "Conditions": [
-        "Condicions"
-      ],
-      "Name": [
-        "Nom"
-      ],
-      "Preview": [
-        "Vista prèvia"
-      ]
-    },
     "Storage": {
       "Get extra storage for free": [
         "Obteniu emmagatzematge extra gratuïtament"
@@ -6791,6 +6592,11 @@
         "Èxit de verificació"
       ]
     },
+    "Success notification when user send feedback": {
+      "Feedback sent": [
+        "S'ha enviat l'opinió"
+      ]
+    },
     "Suffix for price": {
       "/month": [
         "/mes"
@@ -6912,9 +6718,6 @@
       "Add contact group name": [
         "Afegir nom de grup de contactes"
       ],
-      "Add filter": [
-        "Afegir filtre"
-      ],
       "Add to ${ groupCount } group": [
         "Afegir a ${ groupCount } grup",
         "Afegir a ${ groupCount } grups"
@@ -6927,9 +6730,6 @@
       ],
       "Archive": [
         "Arxiu"
-      ],
-      "Are you sure you want to close?": [
-        "Està segur que vol tancar?"
       ],
       "Attachments": [
         "Adjunts"
@@ -6978,12 +6778,6 @@
       ],
       "Conversation list": [
         "Llista de converses"
-      ],
-      "Create a new folder": [
-        "Crear una nova carpeta"
-      ],
-      "Create a new label": [
-        "Crea una etiqueta nova"
       ],
       "Create contact": [
         "Crea un contacte"
@@ -7056,9 +6850,6 @@
       "Edit contact group": [
         "Edita Grup de Contactes"
       ],
-      "Edit filter": [
-        "Editar filtre"
-      ],
       "Edit image": [
         "Editar imatge"
       ],
@@ -7097,9 +6888,6 @@
       ],
       "Feedback": [
         "Comentaris"
-      ],
-      "Filter on": [
-        "Filtrat"
       ],
       "Forward": [
         "Reenviar"
@@ -7402,9 +7190,6 @@
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
         "Es descarregaran tots els missatges per a que es puguin cercar localment. Netejar les dades del vostre navegador deshabitarà aquesta opció."
-      ],
-      "This feature is only available for paid users": [
-        "Aquesta funció només està disponible per a usuaris de pagament"
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Pengeu una clau pública per permetre l'enviament de missatges de correu electrònic xifrats de final a extrem a aquest correu electrònic"

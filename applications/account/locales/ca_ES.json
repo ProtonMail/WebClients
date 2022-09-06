@@ -43,9 +43,6 @@
       "Activate recovery": [
         "Activar la recuperació"
       ],
-      "Add": [
-        "Afegir"
-      ],
       "Add ${ BRAND_NAME } Account": [
         "Afegeix un compte de ${ BRAND_NAME }"
       ],
@@ -112,6 +109,9 @@
       "Back": [
         "Torna"
       ],
+      "Block": [
+        "Bloqueja"
+      ],
       "Bold": [
         "Negreta"
       ],
@@ -146,7 +146,7 @@
         "Tancar"
       ],
       "Close modal": [
-        "Tancar el modal"
+        "Close"
       ],
       "Close navigation": [
         "Tanca la navegació"
@@ -439,12 +439,6 @@
       "move emails to": [
         "moure correus electrònics a"
       ],
-      "Move to Allow List": [
-        "Mou a la llista de permesos"
-      ],
-      "Move to Block List": [
-        "Mou a la llista de bloqueig"
-      ],
       "Need help?": [
         "Necessiteu ajuda?"
       ],
@@ -690,6 +684,9 @@
       ],
       "Sort": [
         "Ordena"
+      ],
+      "Spam": [
+        "Correu brossa"
       ],
       "Start import": [
         "Començar importació"
@@ -1168,6 +1165,9 @@
       ],
       "outer space": [
         "espai exterior"
+      ],
+      "pacific": [
+        "pacífic"
       ],
       "persian red": [
         "vermell persa"
@@ -2374,9 +2374,6 @@
       "Domain not available, try again later": [
         "El domini no està disponible; torneu-ho a provar més tard"
       ],
-      "Email address invalid": [
-        "L'adreça de correu electrònic no és vàlida"
-      ],
       "Email is not valid": [
         "El correu electrònic no és vàlid"
       ],
@@ -2424,6 +2421,9 @@
       ],
       "Invalid domain": [
         "Domini invàlid"
+      ],
+      "Invalid email address": [
+        "Adreça de correu electrònic invàlida"
       ],
       "Invalid expiration date": [
         "Data de caducitat invàlida"
@@ -3012,9 +3012,6 @@
       ]
     },
     "FilterSettings": {
-      "Apply sender-specific spam rules. Messages from addresses or domains on the Allow List always go to your Inbox while messages from addresses or domains on the Block List always go to Spam. Marking a message as spam adds its address to the Block List. Marking a message as not spam adds it to the Allow List.": [
-        "Aplicar regles de correu no desitjat específiques depenent del remitent. Els missatges d'adreces o dominis a la llista de Permesos sempre van a parar a la vostra Safata d'entrada, mentre que missatges d'adreces o dominis de la llista de No desitjats sempre van a parar a Correu brossa. Marcar un missatge com a correu brossa n'afegeix l'adreça a la llista de No desitjats; marcar un missatge com a no correu brossa l'afegeix a la llista de Permesos."
-      ],
       "Search in Allow List and Block List": [
         "Cerca a les llistes de permesos i de bloqueig"
       ]
@@ -4590,14 +4587,8 @@
       "Your account will be updated once the payment is cleared.": [
         "El vostre compte s’actualitzarà un cop suprimit el pagament."
       ],
-      "Your Allow List is empty.": [
-        "La vostra llista de permesos està buida."
-      ],
       "Your bank requires 3-D Secure verification for security purposes.": [
         "El vostre banc requereix una verificació segura en 3-D amb finalitats de seguretat."
-      ],
-      "Your Block List is empty.": [
-        "La vostra llista de no desitjats està buida."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Les vostres dades estan a punt per importar des de ${ importedEmailAddressStrong } al vostre compte de Proton."
@@ -4796,9 +4787,6 @@
       ],
       "Close draft": [
         "Tancar esborrany"
-      ],
-      "Create filter with...": [
-        "Crear filtre amb..."
       ],
       "Delete permanently": [
         "Suprimeix permanentment"
@@ -5383,6 +5371,9 @@
       "Mailbox password": [
         "Contrasenya de la bústia"
       ],
+      "Manage categories": [
+        "Gestiona les categories"
+      ],
       "Manage folders": [
         "Gestionar carpetes"
       ],
@@ -5397,6 +5388,12 @@
       ],
       "Move to": [
         "Moure a"
+      ],
+      "Move to Archive": [
+        "Moure al Arxiu"
+      ],
+      "Move to Inbox": [
+        "Moure a la Safata d'entrada"
       ],
       "Name": [
         "Nom"
@@ -5551,6 +5548,9 @@
       "Signature": [
         "Signatura"
       ],
+      "Spam": [
+        "Correu brossa"
+      ],
       "Starred": [
         "Destacat"
       ],
@@ -5640,9 +5640,6 @@
       ],
       "Verification code": [
         "Codi de verificació"
-      ],
-      "Want to add": [
-        "Voleu afegir"
       ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Ens sap greu que marxeu. Si us plau expliqueu perquè us n'aneu per ajudar-nos a millorar."
@@ -6106,15 +6103,10 @@
         "en el tercer Dimecres"
       ]
     },
-    "Moved to black/whitelist": {
-      "${ Domain } removed": [
-        "${ Domain } esborrat"
-      ],
-      "${ Email } removed": [
-        "${ Email } esborrat"
-      ]
-    },
     "Navigation": {
+      "All": [
+        "Tot"
+      ],
       "Back": [
         "Torna"
       ],
@@ -6126,6 +6118,9 @@
       ],
       "Back to Mail": [
         "Tornar al Correu"
+      ],
+      "Spam": [
+        "Correu brossa"
       ]
     },
     "New Label form": {
@@ -6836,36 +6831,6 @@
         "Nom d'usuari"
       ]
     },
-    "Spam filter moved to blacklist": {
-      "${ Domain } moved to Block List": [
-        "${ Domain } s'ha mogut a la llista de bloqueig"
-      ],
-      "${ Email } moved to Block List": [
-        "${ Email } s'ha mogut a la llista de bloqueig"
-      ]
-    },
-    "Spam filter moved to whitelist": {
-      "${ Domain } moved to Allow List": [
-        "${ Domain } s'ha mogut a la llista de permesos"
-      ],
-      "${ Email } moved to Allow List": [
-        "${ Email } s'ha mogut a la llista de permesos"
-      ]
-    },
-    "Spam notification": {
-      "${ domain } added": [
-        "${ domain } afegit"
-      ],
-      "${ domain } updated": [
-        "${ domain } actualitzat"
-      ],
-      "${ email } added": [
-        "${ email } afegit"
-      ],
-      "${ email } updated": [
-        "${ email } actualitzat"
-      ]
-    },
     "Spotlight": {
       "Get up to 18 months of ${ planName } for free": [
         "Aconseguiu fins a 18 mesos de ${ planName } gratuïtament"
@@ -7184,6 +7149,12 @@
       "CSV field": [
         "Camp CSV"
       ],
+      "Edit": [
+        "Edita"
+      ],
+      "Email address": [
+        "Adreça de correu electrònic"
+      ],
       "Import": [
         "Importar"
       ],
@@ -7294,12 +7265,6 @@
       "Add Sieve filter": [
         "Afegir filtre Sieve"
       ],
-      "Add to Allow List": [
-        "Afegeix a la llista de permesos"
-      ],
-      "Add to Block List": [
-        "Afegeix a la llista de bloqueig"
-      ],
       "Add user": [
         "Afegir usuari"
       ],
@@ -7311,9 +7276,6 @@
       ],
       "Allocate storage": [
         "Assignar espai"
-      ],
-      "Allow List": [
-        "Llista de permesos"
       ],
       "Amount": [
         "Quantitat"
@@ -7350,9 +7312,6 @@
       ],
       "Billing details": [
         "Detalls de facturació"
-      ],
-      "Block List": [
-        "Llista de bloqueig"
       ],
       "Bridge for ${ platform }": [
         "Bridge per ${ platform }"
@@ -7515,12 +7474,6 @@
       ],
       "Download ${ VPN_APP_NAME }": [
         "Baixa ${ VPN_APP_NAME }"
-      ],
-      "Edit Allow List": [
-        "Edita la llista de permesos"
-      ],
-      "Edit Block List": [
-        "Edita la Lista de Bloqueig"
       ],
       "Edit calendar": [
         "Editeu el calendari"
@@ -7870,9 +7823,6 @@
       ],
       "Sort labels alphabetically": [
         "Ordena les etiquetes alfabèticament"
-      ],
-      "Spam filters": [
-        "Filtres de correu brossa"
       ],
       "Start a new import": [
         "Iniciar una nova importació"

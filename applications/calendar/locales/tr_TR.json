@@ -84,7 +84,7 @@
         "Etkinlik açılan penceresini kapat"
       ],
       "Close modal": [
-        "Pencereyi kapat"
+        "Close"
       ],
       "Close navigation": [
         "Gezinmeyi kapat"
@@ -117,13 +117,13 @@
         "E-postayı panoya kopyala"
       ],
       "Create a new contact group": [
-        "Yeni bir kişi grubu oluştur"
+        "Yeni bir kişi grubu ekle"
       ],
       "Create calendar": [
-        "Takvim oluştur"
+        "Takvim ekle"
       ],
       "Create event": [
-        "Etkinlik oluştur"
+        "Etkinlik ekle"
       ],
       "Customize": [
         "Özelleştir"
@@ -1970,7 +1970,7 @@
         "Takvim sınırına ulaşıldı"
       ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        "Kişisel takvim sınırı nedeniyle içe aktarılan tüm takvimler için yeni takvimler oluşturulamıyor."
+        "Kişisel takvim sınırı nedeniyle içe aktarılan tüm takvimler için yeni takvimler eklenemedi."
       ],
       "Cancellation failed to be sent": [
         "İptal bilgilendirmesi gönderilemedi"
@@ -2059,7 +2059,7 @@
         "Davet gönderilemedi"
       ],
       "It is only possible to create events between ${ minDateString } - ${ maxDateString }": [
-        "Yalnızca ${ minDateString } - ${ maxDateString } arasında etkinlikler oluşturulabilir"
+        "Yalnızca ${ minDateString } - ${ maxDateString } arasında etkinlikler eklenebilir"
       ],
       "It is only possible to move events between ${ minDateString } - ${ maxDateString }": [
         "Yalnızca ${ minDateString } - ${ maxDateString } arasında etkinlikler taşınabilir"
@@ -2110,7 +2110,7 @@
         "Parola ile onayı aynı değil"
       ],
       "Please create an address first.": [
-        "Lütfen önce bir adres oluşturun."
+        "Lütfen önce bir adres ekleyin."
       ],
       "Please fix the highlighted conflict to proceed.": [
         "İlerlemek için lütfen vurgulanan çakışmayı düzeltin.",
@@ -2870,10 +2870,10 @@
         "İçe aktarılan iletiler için bir etiket, bu içe aktarma için bir zaman aralığı ve içe aktarmak istediğiniz etiketler oluşturun."
       ],
       "Create a new contact group": [
-        "Yeni kişi grubu oluştur"
+        "Yeni kişi grubu ekle"
       ],
       "Create in": [
-        "Şurada oluştur"
+        "Şuraya ekle"
       ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora ve diğer bazı uygulamaların CSV dosyalarıyla birlikte vCard 3.1 ve 4.0 biçimlerindeki (UTF-8) dosyalar desteklenir."
@@ -3097,7 +3097,7 @@
         "Google üzerinden içe aktarmak istediklerinizi seçin."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        "İçe aktarılacak takvimleri seçin. En fazla 20 tane olmak üzere içe aktarılan her takvim için yeni bir takvim oluşturulur."
+        "İçe aktarılacak takvimleri seçin. En fazla 20 tane olmak üzere içe aktarılan her takvim için yeni bir takvim eklenir."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Sunuculara erişilemiyor. Lütfen birkaç dakika sonra yeniden deneyin"
@@ -3530,11 +3530,20 @@
       "Mailbox password": [
         "Posta kutusu parolası"
       ],
+      "Manage categories": [
+        "Kategori yönetimi"
+      ],
       "Manage folders": [
         "Klasör yönetimi"
       ],
       "Manage labels": [
         "Etiket yönetimi"
+      ],
+      "Move to Archive": [
+        "Arşive taşı"
+      ],
+      "Move to Inbox": [
+        "Gelen kutusuna taşı"
       ],
       "Name": [
         "Ad"
@@ -3646,10 +3655,10 @@
     },
     "Label/folder modal": {
       "Create folder": [
-        "Klasör oluştur"
+        "Klasör ekle"
       ],
       "Create label": [
-        "Etiket oluştur"
+        "Etiket ekle"
       ],
       "Edit folder": [
         "Klasörü düzenle"
@@ -3660,7 +3669,7 @@
     },
     "label/folder notification": {
       "${ Label.Name } created": [
-        "${ Label.Name } oluşturuldu"
+        "${ Label.Name } eklendi"
       ]
     },
     "Link": {
@@ -3700,7 +3709,7 @@
         "Neredeyse tamam"
       ],
       "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
-        "Oluşturulan takvim sayısı: ${ createdCalendars } / ${ calendarsToBeCreated }"
+        "Eklenen takvim sayısı: ${ createdCalendars } / ${ calendarsToBeCreated }"
       ],
       "Creating new calendars": [
         "Yeni takvimler oluşturuluyor"
@@ -3941,7 +3950,7 @@
     },
     "Notification": {
       "Contact group created": [
-        "Kişi grubu oluşturuldu"
+        "Kişi grubu eklendi"
       ],
       "Contact group updated": [
         "Kişi grubu güncellendi"
@@ -4092,7 +4101,7 @@
     },
     "Onboarding Proton": {
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
-        "Kuruluşunuzun tüm üyelerinin korunduğundan emin olmak için kuruluşunuzu yapılandırın, etki alanı adınızı bağlayın ve hesaplar oluşturun."
+        "Kuruluşunuzun tüm üyelerinin korunduğundan emin olmak için kuruluşunuzu yapılandırın, etki alanı adınızı bağlayın ve hesaplar ekleyin."
       ],
       "Discover all Proton services": [
         "Tüm Proton hizmetlerini keşfedin"
@@ -4118,7 +4127,7 @@
         "Tüm etkinlikler"
       ],
       "Create new group": [
-        "Yeni grup oluştur"
+        "Yeni grup ekle"
       ],
       "Custom": [
         "Özel"
@@ -4169,7 +4178,7 @@
     },
     "Option group label": {
       "Create new calendar": [
-        "Yeni takvim oluştur"
+        "Yeni takvim ekle"
       ],
       "Merge with calendar": [
         "Takvim ile birleştir"
@@ -4192,7 +4201,7 @@
     },
     "Personal calendar limit reached modal body": {
       "Unable to create more calendars. You have reached the maximum of personal calendars within your plan.": [
-        "Daha fazla takvim oluşturulamıyor. Tarifenizin en fazla kişisel takvim sayısına ulaştınız."
+        "Daha fazla takvim eklenemiyor. Tarifenizin en fazla kişisel takvim sayısı sınırına ulaştınız."
       ]
     },
     "PGP key encryption warning": {
@@ -4474,7 +4483,7 @@
         "Takvim eklendi. Eşitlenmesi birkaç dakika sürebilir."
       ],
       "Calendar created": [
-        "Takvim oluşturuldu"
+        "Takvim eklendi"
       ],
       "Calendar information updated": [
         "Takvim bilgileri güncellendi"
@@ -4515,7 +4524,7 @@
         "E-posta adresi panoya kopyalandı"
       ],
       "Event created": [
-        "Etkinlik oluşturuldu"
+        "Etkinlik eklendi"
       ],
       "Event deleted": [
         "Etkinlik silindi"
@@ -4524,7 +4533,7 @@
         "Etkinlik güncellendi"
       ],
       "Events created": [
-        "Etkinlikler oluşturuldu"
+        "Etkinlikler eklendi"
       ],
       "Fingerprint copied to clipboard": [
         "Parmak izi panoya kopyalandı"
@@ -4539,10 +4548,10 @@
         "Davet gönderildi ve tüm etkinlikler güncellendi"
       ],
       "Invitation sent and event created": [
-        "Davet gönderildi ve etkinlik oluşturuldu"
+        "Davet gönderildi ve etkinlik eklendi"
       ],
       "Invitation sent and events created": [
-        "Davet gönderildi ve etkinlikler oluşturuldu"
+        "Davet gönderildi ve etkinlikler eklendi"
       ],
       "Invitation sent and participants added": [
         "Davet gönderildi ve katılımcılar eklendi"
@@ -4753,13 +4762,13 @@
         "Kısmi içe aktarmay ile ilerlensin mi?"
       ],
       "Create calendar": [
-        "Takvim oluştur"
+        "Takvim ekle"
       ],
       "Create contact": [
-        "Kişi oluştur"
+        "Kişi ekle"
       ],
       "Create new group": [
-        "Yeni grup oluştur"
+        "Yeni grup ekle"
       ],
       "Currency": [
         "Para birimi"
@@ -5054,6 +5063,9 @@
       ],
       "Encrypted data with verified digital signature": [
         "Doğrulanmış dijital imza ile şifrelenmiş veri"
+      ],
+      "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
+        "Gmail bazı e-postaları Sosyal ya da Tanıtım gibi kategorilere ayırır. Bu e-postaların nereye içe aktarılacağını seçebilirsiniz."
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Bir kullanıcı için imzalama veya şifreleme sırasında kullanılacak PGP şemasını seçin. PGP/Inline için iletilerin düz metin biçiminde olması gerektiğini unutmayın"

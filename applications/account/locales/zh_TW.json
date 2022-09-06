@@ -34,9 +34,6 @@
       "Activate recovery": [
         "啟動還原"
       ],
-      "Add": [
-        "加入"
-      ],
       "Add ${ BRAND_NAME } Account": [
         "加入 ${ BRAND_NAME } 帳號"
       ],
@@ -106,6 +103,9 @@
       "Back": [
         "上一步"
       ],
+      "Block": [
+        "封鎖"
+      ],
       "Bold": [
         "粗體"
       ],
@@ -143,7 +143,7 @@
         "關閉"
       ],
       "Close modal": [
-        "關閉方塊"
+        "Close"
       ],
       "Close navigation": [
         "關閉導覽"
@@ -234,6 +234,9 @@
       ],
       "Delete": [
         "刪除"
+      ],
+      "Delete link": [
+        "刪除連結"
       ],
       "Delete permanently": [
         "永久刪除"
@@ -394,6 +397,9 @@
       "Import emails": [
         "匯入電郵"
       ],
+      "Import from ICS": [
+        "從 ICS 匯入"
+      ],
       "Import key": [
         "匯入金鑰"
       ],
@@ -430,6 +436,12 @@
       "Mark as default": [
         "標記為預設值"
       ],
+      "Mark as not spam": [
+        "標示為非垃圾郵件"
+      ],
+      "Mark as spam": [
+        "標示為垃圾郵件"
+      ],
       "mark emails as": [
         "將電郵標記為"
       ],
@@ -444,12 +456,6 @@
       ],
       "move emails to": [
         "將電郵移動到"
-      ],
-      "Move to Allow List": [
-        "移動到允許清單"
-      ],
-      "Move to Block List": [
-        "移動到封鎖清單"
       ],
       "Need help?": [
         "需要說明嗎？"
@@ -534,6 +540,9 @@
       ],
       "Remove": [
         "移除"
+      ],
+      "Remove Block": [
+        "解除封鎖"
       ],
       "Remove bonuses": [
         "移除贈品"
@@ -637,6 +646,9 @@
       "Select files": [
         "選取檔案"
       ],
+      "Select language for invitation emails": [
+        "為邀請信選擇語言"
+      ],
       "Select timezone": [
         "選取時區"
       ],
@@ -688,6 +700,9 @@
       "Sign out": [
         "登出"
       ],
+      "Sign out from ${ nameToDisplay } ${ maybeEmailInBrackets }": [
+        "登出 ${ nameToDisplay } ${ maybeEmailInBrackets }"
+      ],
       "Sign out of all accounts": [
         "登出所有帳號"
       ],
@@ -702,6 +717,9 @@
       ],
       "Sort": [
         "排序"
+      ],
+      "Spam": [
+        "垃圾郵件"
       ],
       "Start import": [
         "開始匯入"
@@ -2429,9 +2447,6 @@
       "Domain not available, try again later": [
         "網域無法使用，請稍後再試"
       ],
-      "Email address invalid": [
-        "電郵位址無效"
-      ],
       "Email is not valid": [
         "電郵無效"
       ],
@@ -2482,6 +2497,9 @@
       ],
       "Invalid domain": [
         "網域無效"
+      ],
+      "Invalid email address": [
+        "電郵位址無效"
       ],
       "Invalid expiration date": [
         "到期日無效"
@@ -2674,6 +2692,9 @@
       ],
       "This label name is not available. Please choose a different name.": [
         "此標籤名稱無法使用。請換另一個名稱。"
+      ],
+      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
+        "此郵件可能包含某些您目前的瀏覽器無法正確開啟的 URL。"
       ],
       "Unknown error": [
         "未知錯誤"
@@ -2928,6 +2949,9 @@
       ]
     },
     "Error notification": {
+      "Certificate ${ name } not found or already revoked": [
+        "找不到憑證 ${ name } 或已被撤銷"
+      ],
       "First name and last name cannot be unchecked at the same time": [
         "姓氏和名字不能同時取消勾選"
       ]
@@ -2990,8 +3014,14 @@
       "${ totalProcessed }/${ totalToProcess } event exported": [
         "${ totalProcessed }/${ totalToProcess } 個事件已匯出"
       ],
+      "Calendar successfully exported. You can now save the ICS file.": [
+        "行事曆已成功匯出。您現在可儲存 ICS 檔案。"
+      ],
       "Loading events": [
         "載入活動中"
+      ],
+      "You can save an ICS file of the events that were successfully exported.": [
+        "您現在可儲存已成功匯出事件的 ICS 檔案。"
       ]
     },
     "Feature": {
@@ -3110,8 +3140,8 @@
       ]
     },
     "FilterSettings": {
-      "Apply sender-specific spam rules. Messages from addresses or domains on the Allow List always go to your Inbox while messages from addresses or domains on the Block List always go to Spam. Marking a message as spam adds its address to the Block List. Marking a message as not spam adds it to the Allow List.": [
-        "套用視乎寄件人而定的垃圾郵件規則。來自允許清單中電郵位址或網域的郵件一律納入收件匣，而來自封鎖清單中電郵位址或網域的郵件則一概歸於垃圾郵件中。將郵件標記為垃圾郵件時，其電郵位址會加入到封鎖清單中。將郵件標記為非垃圾郵件則會把其加入到允許清單中。"
+      "Add a custom filter to automatically perform certain actions, like labeling or archiving messages. Filters can be edited and created directly via Sieve programming language.": [
+        "新增一個自訂的篩選器可以自動進行某些操作，例如為郵件添加標籤或歸檔。篩選器可以直接使用 Sieve 語言建立或修改。"
       ],
       "Search in Allow List and Block List": [
         "在允許清單與封鎖清單中搜尋"
@@ -3899,6 +3929,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "請求新的驗證碼前，請先檢查您的垃圾郵件資料夾，並檢查 ${ strong } 的位址是否正確。"
       ],
+      "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following MX records to your DNS. This can typically be done in the control panel of your domain name registrar.": [
+        "要在 ${ MAIL_APP_NAME } 以自訂網域地址接收電子郵件，您需要新增以下 MX 記錄到您的 DNS 中。這通常可以在您的網域名稱註冊機構的控制台中設定完成。"
+      ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "您的新電郵位址還需建立加密金鑰，才可用來傳送和接收電郵。"
       ],
@@ -4003,6 +4036,9 @@
       ],
       "Data locked": [
         "資料已上鎖"
+      ],
+      "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
+        "刪除其他 MX 紀錄或確保 ${ MAIL_APP_NAME } 的優先順序是最低的數字。"
       ],
       "Discount applied to your subscription with coupon ${ code }": [
         "您使用優惠券 ${ code } 的訂閱已享用折扣"
@@ -4769,6 +4805,9 @@
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "此連結指向一個可能嘗試竊取您資訊（如密碼與信用卡資訊等）的網站。"
       ],
+      "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
+        "此連結可能為同形異字的域名釣魚攻擊 (homograph attack)，且無法以 Edge 瀏覽器開啟。如果您確定這是一個正當的連結，請使用其它瀏覽器來開啟。"
+      ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "此連結可能是同形異義詞的偽裝攻擊 (homograph attack)。請核對這是您欲造訪的連結，否則不要開啟。"
       ],
@@ -4816,6 +4855,9 @@
       ],
       "to continue to ${ toAppName }": [
         "繼續使用 ${ toAppName }"
+      ],
+      "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
+        "為持續精進我們的服務品質，我們有時會蒐集一些資料用以監控應用程式的功能是否正常。此類資訊不會與第三方服務共享。"
       ],
       "To decrypt and view your emails and other data, you need a recovery file.": [
         "為解密您的郵件與其它資料，需要帳號救援檔案"
@@ -5135,14 +5177,8 @@
       "Your account will be updated once the payment is cleared.": [
         "付款一結算完成，您的帳號將會升級。"
       ],
-      "Your Allow List is empty.": [
-        "您的允許清單是空的。"
-      ],
       "Your bank requires 3-D Secure verification for security purposes.": [
         "為確保安全，您的銀行要求您進行 3-D Secure 驗證。"
-      ],
-      "Your Block List is empty.": [
-        "您的封鎖清單是空的。"
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "你的資料已經準備好從 ${ importedEmailAddressStrong } 匯入你的 Proton 帳號。"
@@ -5368,9 +5404,6 @@
       ],
       "Close draft": [
         "關閉草稿"
-      ],
-      "Create filter with...": [
-        "建立篩選器為..."
       ],
       "Delete permanently": [
         "永久刪除"
@@ -6013,6 +6046,9 @@
       "Mailbox password": [
         "郵箱密碼"
       ],
+      "Manage categories": [
+        "管理分類"
+      ],
       "Manage folders": [
         "管理資料夾"
       ],
@@ -6030,6 +6066,12 @@
       ],
       "Move to": [
         "移動到"
+      ],
+      "Move to Archive": [
+        "移至「封存」"
+      ],
+      "Move to Inbox": [
+        "移動到收件匣"
       ],
       "Name": [
         "名稱"
@@ -6196,6 +6238,9 @@
       "Signature": [
         "簽名"
       ],
+      "Spam": [
+        "垃圾郵件"
+      ],
       "Starred": [
         "已加星號"
       ],
@@ -6297,9 +6342,6 @@
       ],
       "Waiting for subscription": [
         "正等候訂閱"
-      ],
-      "Want to add": [
-        "加入類型"
       ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "很抱歉您想離開。請告訴我們原因以讓我們改進。"
@@ -6822,15 +6864,10 @@
         "第三個週三"
       ]
     },
-    "Moved to black/whitelist": {
-      "${ Domain } removed": [
-        "${ Domain } 已移除"
-      ],
-      "${ Email } removed": [
-        "${ Email } 已移除"
-      ]
-    },
     "Navigation": {
+      "All": [
+        "全部"
+      ],
       "Back": [
         "返回"
       ],
@@ -6842,6 +6879,9 @@
       ],
       "Back to Mail": [
         "回到信箱"
+      ],
+      "Spam": [
+        "垃圾郵件"
       ]
     },
     "New Label form": {
@@ -6987,6 +7027,9 @@
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "我們的 ${ visionary } 計畫不再可用於新的訂閱者，這是一個給予原 ${ BRAND_NAME } 使用者的特殊方案，具有特別功能與福利。"
       ],
+      "Price for future renewal: includes all applicable non-expired coupons saved to your account": [
+        "未來續費價格：包含您帳戶中所有有效的優惠券"
+      ],
       "Set automatic replies to inform contacts you are out of the office or unable to respond.": [
         "設定自動回覆，可告知來訪者您不在辦公室或暫時無法親自回應。"
       ],
@@ -7013,6 +7056,9 @@
       ],
       "Payment details": [
         "付款細節"
+      ],
+      "Save your email address or phone number to use for verification if you need to reset your account.": [
+        "保存您的電子郵件或手機號碼，當您需要重設帳戶時可用於驗證。"
       ],
       "Subscription": [
         "訂閲"
@@ -7057,6 +7103,9 @@
       ],
       "A disabled address cannot be primary": [
         "已停用的電郵位址不能成為主要"
+      ],
+      "Key with fingerprint ${ fp } has been deleted.": [
+        "指紋為 ${ fp } 的金鑰已刪除。"
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "OpenVPN / IKEv2 認證已重新生成"
@@ -7407,6 +7456,9 @@
       "Confirm password": [
         "確認密碼"
       ],
+      "domain.com": [
+        "domain.com"
+      ],
       "E.g., ": [
         "範例："
       ],
@@ -7609,8 +7661,14 @@
       ]
     },
     "Remove calendar section title": {
+      "Delete calendar?": [
+        "刪除行事曆?"
+      ],
       "Remove calendar": [
         "移除行事曆"
+      ],
+      "Unsubscribe?": [
+        "取消訂閱?"
       ]
     },
     "Restore administrator panel": {
@@ -7708,36 +7766,6 @@
       ],
       "Username": [
         "使用者名稱"
-      ]
-    },
-    "Spam filter moved to blacklist": {
-      "${ Domain } moved to Block List": [
-        "${ Domain } 已移動至封鎖清單"
-      ],
-      "${ Email } moved to Block List": [
-        "${ Email } 已移動至封鎖清單"
-      ]
-    },
-    "Spam filter moved to whitelist": {
-      "${ Domain } moved to Allow List": [
-        "${ Domain } 已移動至允許清單"
-      ],
-      "${ Email } moved to Allow List": [
-        "${ Email } 已移動至允許清單"
-      ]
-    },
-    "Spam notification": {
-      "${ domain } added": [
-        "${ domain } 已加入"
-      ],
-      "${ domain } updated": [
-        "${ domain } 已更新"
-      ],
-      "${ email } added": [
-        "${ email } 已加入"
-      ],
-      "${ email } updated": [
-        "${ email } 已更新"
       ]
     },
     "Spotlight": {
@@ -7862,7 +7890,7 @@
     },
     "Subscription saving": {
       "Save": [
-        "儲存"
+        "省下"
       ]
     },
     "Subtitle for trial plan": {
@@ -8099,6 +8127,12 @@
       "CSV field": [
         "CSV 欄位"
       ],
+      "Edit": [
+        "編輯"
+      ],
+      "Email address": [
+        "電郵位址"
+      ],
       "Import": [
         "匯入"
       ],
@@ -8188,6 +8222,9 @@
       "Action": [
         "動作"
       ],
+      "Activate account and generate keys": [
+        "啟用帳戶並生成金鑰"
+      ],
       "Activate organization key": [
         "啟用組織金鑰"
       ],
@@ -8221,12 +8258,6 @@
       "Add Sieve filter": [
         "加入 Sieve 篩選器"
       ],
-      "Add to Allow List": [
-        "加入至允許清單"
-      ],
-      "Add to Block List": [
-        "加入至封鎖清單"
-      ],
       "Add user": [
         "加入使用者"
       ],
@@ -8238,9 +8269,6 @@
       ],
       "Allocate storage": [
         "分配儲存空間"
-      ],
-      "Allow List": [
-        "允許清單"
       ],
       "Amount": [
         "金額"
@@ -8280,9 +8308,6 @@
       ],
       "Billing details": [
         "帳單詳情"
-      ],
-      "Block List": [
-        "封鎖清單"
       ],
       "Bridge for ${ platform }": [
         "適用於 ${ platform } 的 Bridge"
@@ -8346,6 +8371,9 @@
       ],
       "Confirm phone number": [
         "確認手機號碼"
+      ],
+      "Congratulations on choosing privacy!": [
+        "恭喜您選擇了隱私！"
       ],
       "Connect ${ name }": [
         "連接 ${ name }"
@@ -8458,12 +8486,6 @@
       "Download ${ VPN_APP_NAME }": [
         "下載 ${ VPN_APP_NAME }"
       ],
-      "Edit Allow List": [
-        "編輯允許清單"
-      ],
-      "Edit Block List": [
-        "編輯封鎖清單"
-      ],
       "Edit calendar": [
         "編輯行事曆"
       ],
@@ -8515,6 +8537,9 @@
       "Export public key": [
         "匯出公鑰"
       ],
+      "Extension": [
+        "附加元件"
+      ],
       "External PGP settings": [
         "外部 PGP 設定"
       ],
@@ -8550,6 +8575,9 @@
       ],
       "How does it work?": [
         "那是如何運作的？"
+      ],
+      "How your free trial works": [
+        "您的免費試用是如何工作的"
       ],
       "Human verification": [
         "真人驗證"
@@ -8692,6 +8720,9 @@
       "Previous": [
         "上一頁"
       ],
+      "Privacy and data collection": [
+        "隱私與資料蒐集"
+      ],
       "Processing": [
         "處理中"
       ],
@@ -8748,6 +8779,9 @@
       ],
       "Secure email based in Switzerland": [
         "總部設於瑞士的安全電郵"
+      ],
+      "Security and privacy": [
+        "安全與隱私"
       ],
       "Security logs": [
         "安全記錄檔"
@@ -8812,9 +8846,6 @@
       "Sort labels alphabetically": [
         "依照字母排序標籤"
       ],
-      "Spam filters": [
-        "垃圾郵件篩選器"
-      ],
       "Start a new import": [
         "開始新匯入"
       ],
@@ -8850,6 +8881,9 @@
       ],
       "Time zone": [
         "時區"
+      ],
+      "Try the best of ${ MAIL_APP_NAME } for free": [
+        "免費試試我們最讚的 ${ MAIL_APP_NAME }"
       ],
       "Two-factor authentication": [
         "兩步驟驗證"
@@ -8916,6 +8950,9 @@
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         "您的免費使用將要結束，將於 ${ formattedEndDate } 結束"
+      ],
+      "Your import history": [
+        "您的匯入記錄"
       ],
       "Your plan": [
         "您的方案"
@@ -9045,6 +9082,9 @@
       ],
       "Enabling advanced logs records the IP address for each event in the security log.": [
         "啟用進階日誌記錄安全記錄檔中每項事件的 IP 位址。"
+      ],
+      "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
+        "Gmail 會自動將一些電子郵件分類，例如促銷內容或社交網路。您可以自行決定要將這些郵件匯入的地方。"
       ],
       "Group emails in the same conversation together in your Inbox or display them separately.": [
         "將同一會話中的電郵在 [收件匣] 分組顯示，還是獨立顯示。"

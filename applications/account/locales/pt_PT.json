@@ -23,9 +23,6 @@
       "Activate organization key": [
         "Activar chave de organização"
       ],
-      "Add": [
-        "Adicionar"
-      ],
       "Add address": [
         "Adicionar endereço"
       ],
@@ -114,7 +111,7 @@
         "Fechar"
       ],
       "Close modal": [
-        "Fechar janela"
+        "Close"
       ],
       "Close navigation": [
         "Fechar navegação"
@@ -314,12 +311,6 @@
       "move emails to": [
         "mover emails para"
       ],
-      "Move to Allow List": [
-        "Mover para lista de permissões"
-      ],
-      "Move to Block List": [
-        "Mover para lista de bloqueios"
-      ],
       "Need help?": [
         "Precisa de ajuda?"
       ],
@@ -511,6 +502,9 @@
       ],
       "Sort": [
         "Ordenar"
+      ],
+      "Spam": [
+        "Spam"
       ],
       "Start import": [
         "Iniciar a importação"
@@ -1208,9 +1202,6 @@
       "Domain not available, try again later": [
         "Domínio indisponível, tente novamente mais tarde"
       ],
-      "Email address invalid": [
-        "Endereço de email inválido"
-      ],
       "Email is not valid": [
         "Email inválido"
       ],
@@ -1249,6 +1240,9 @@
       ],
       "Invalid domain": [
         "Domínio inválido"
+      ],
+      "Invalid email address": [
+        "Endereço electrónico inválido"
       ],
       "Invalid expiration date": [
         "Data de validade inválida"
@@ -1737,9 +1731,6 @@
       ]
     },
     "FilterSettings": {
-      "Apply sender-specific spam rules. Messages from addresses or domains on the Allow List always go to your Inbox while messages from addresses or domains on the Block List always go to Spam. Marking a message as spam adds its address to the Block List. Marking a message as not spam adds it to the Allow List.": [
-        "Aplique regras de spam específicas para cada remetente. As mensagens de endereços ou domínios na lista de permissões vão sempre para a caixa de entrada, enquanto as mensagens de endereços ou domínios na lista de bloqueios vão sempre para o spam. Marcar uma mensagem como spam adiciona o seu endereço à lista de bloqueios. Marcar uma mensagem como não sendo spam adiciona-o à lista de permissões."
-      ],
       "Search in Allow List and Block List": [
         "Procurar nas listas de permissões e bloqueios"
       ]
@@ -2945,14 +2936,8 @@
       "Your account will be updated once the payment is cleared.": [
         "A conta será actualizada assim que o pagamento for aprovado."
       ],
-      "Your Allow List is empty.": [
-        "A sua lista de permissões está vazia."
-      ],
       "Your bank requires 3-D Secure verification for security purposes.": [
         "O seu banco requer verificação 3-D Secure por motivos de segurança."
-      ],
-      "Your Block List is empty.": [
-        "A sua lista de bloqueios está vazia."
       ],
       "Your email will only be used for this one-time verification.": [
         "O seu email só será usado para esta verificação única."
@@ -3121,9 +3106,6 @@
       ],
       "Close draft": [
         "Fechar rascunho"
-      ],
-      "Create filter with...": [
-        "Criar filtro com..."
       ],
       "Delete permanently": [
         "Eliminar permanentemente"
@@ -3635,6 +3617,9 @@
       "Mailbox password": [
         "Senha da caixa de correio"
       ],
+      "Manage categories": [
+        "Gerir categorias"
+      ],
       "Manage folders": [
         "Gerir pastas"
       ],
@@ -3649,6 +3634,12 @@
       ],
       "Move to": [
         "Mover para"
+      ],
+      "Move to Archive": [
+        "Mover para Arquivo"
+      ],
+      "Move to Inbox": [
+        "Mover para Caixa de entrada"
       ],
       "Name": [
         "Nome"
@@ -3773,6 +3764,9 @@
       "Signature": [
         "Assinatura"
       ],
+      "Spam": [
+        "Spam"
+      ],
       "Starred": [
         "Com estrela"
       ],
@@ -3850,9 +3844,6 @@
       ],
       "Verification code": [
         "Código de verificação"
-      ],
-      "Want to add": [
-        "Quer adicionar"
       ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Lamentamos a sua partida. Por favor, diga-nos porquê, para podermos melhorar o serviço."
@@ -4259,15 +4250,10 @@
         "na terceira Quarta-feira"
       ]
     },
-    "Moved to black/whitelist": {
-      "${ Domain } removed": [
-        "${ Domain } removido"
-      ],
-      "${ Email } removed": [
-        "${ Email } removido"
-      ]
-    },
     "Navigation": {
+      "All": [
+        "Todos"
+      ],
       "Back": [
         "Recuar"
       ],
@@ -4276,6 +4262,9 @@
       ],
       "Back to Drive": [
         "Voltar ao Drive"
+      ],
+      "Spam": [
+        "Spam"
       ]
     },
     "New Label form": {
@@ -4835,36 +4824,6 @@
         "Utilizador"
       ]
     },
-    "Spam filter moved to blacklist": {
-      "${ Domain } moved to Block List": [
-        "${ Domain } movido para a lista de bloqueios"
-      ],
-      "${ Email } moved to Block List": [
-        "${ Email } movido para a lista de bloqueios"
-      ]
-    },
-    "Spam filter moved to whitelist": {
-      "${ Domain } moved to Allow List": [
-        "${ Domain } movido para a lista de permissões"
-      ],
-      "${ Email } moved to Allow List": [
-        "${ Email } movido para a lista de permissões"
-      ]
-    },
-    "Spam notification": {
-      "${ domain } added": [
-        "${ domain } adicionado"
-      ],
-      "${ domain } updated": [
-        "${ domain } atualizado"
-      ],
-      "${ email } added": [
-        "${ email } adicionado"
-      ],
-      "${ email } updated": [
-        "${ email } atualizado"
-      ]
-    },
     "Spotlight": {
       "Get up to 18 months of ${ planName } for free": [
         "Obtenha até 18 meses grátis de ${ planName }"
@@ -5086,6 +5045,12 @@
       "CSV field": [
         "Campo CSV"
       ],
+      "Edit": [
+        "Editar"
+      ],
+      "Email address": [
+        "Endereço de email"
+      ],
       "Import": [
         "Importar"
       ],
@@ -5172,12 +5137,6 @@
       "Add Sieve filter": [
         "Adicionar filtro Sieve"
       ],
-      "Add to Allow List": [
-        "Adicionar à lista de permissões"
-      ],
-      "Add to Block List": [
-        "Adicionar à lista de bloqueios"
-      ],
       "Add user": [
         "Adicionar utilizador"
       ],
@@ -5189,9 +5148,6 @@
       ],
       "Allocate storage": [
         "Alocar armazenamento"
-      ],
-      "Allow List": [
-        "Lista de permissões"
       ],
       "Amount": [
         "Quantia"
@@ -5222,9 +5178,6 @@
       ],
       "Billing details": [
         "Detalhes da facturação"
-      ],
-      "Block List": [
-        "Lista de bloqueios"
       ],
       "Bridge for ${ platform }": [
         "Bridge para ${ platform }"
@@ -5324,12 +5277,6 @@
       ],
       "Domain names": [
         "Nomes de domínio"
-      ],
-      "Edit Allow List": [
-        "Editar lista de permissões"
-      ],
-      "Edit Block List": [
-        "Editar lista de bloqueios"
       ],
       "Edit credit/debit card": [
         "Editar cartão de crédito/débito"
@@ -5591,9 +5538,6 @@
       ],
       "Sort labels alphabetically": [
         "Ordenar etiquetas alfabeticamente"
-      ],
-      "Spam filters": [
-        "Filtros de spam"
       ],
       "Start a new import": [
         "Iniciar nova importação"

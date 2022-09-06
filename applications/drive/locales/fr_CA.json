@@ -99,7 +99,7 @@
         "Fermer"
       ],
       "Close modal": [
-        "Fermer la boîte de dialogue"
+        "Close"
       ],
       "Close navigation": [
         "Fermer la navigation"
@@ -2882,9 +2882,6 @@
       "There are no files yet": [
         "Il n'y a pas encore de fichiers"
       ],
-      "These files were shared using end-to-end encryption. To ensure their security — and the security of all your documents, photos, and files — store them in Proton Drive, the cloud storage service you can trust.": [
-        "Ces fichiers ont été partagés à l'aide d'un chiffrement de bout en bout. Pour garantir leur sécurité (et celle de tous vos documents, photos et fichiers), stockez-les dans Proton Drive, le service de stockage en ligne auquel vous pouvez faire confiance."
-      ],
       "This account has been suspended due to a potential policy violation.": [
         "Ce compte a été suspendu en raison d'une violation potentielle des règles d'utilisation."
       ],
@@ -3340,6 +3337,12 @@
       ],
       "Modified": [
         "Modifié"
+      ],
+      "Move to Archive": [
+        "Déplacer vers les archives"
+      ],
+      "Move to Inbox": [
+        "Déplacer vers Boîte de réception"
       ],
       "Name": [
         "Nom"
@@ -4670,9 +4673,6 @@
       ],
       "Name cannot include invisible characters, / or \\.": [
         "Le nom ne peut pas inclure de caractères invisibles, / ou \\."
-      ],
-      "Name must be ${ MAX_NAME_LENGTH } characters long at most": [
-        "Le nom doit comporter ${ MAX_NAME_LENGTH } caractères au plus"
       ],
       "Name must not be empty": [
         "Le nom ne doit pas être vide"

@@ -99,7 +99,7 @@
         "Закрыть"
       ],
       "Close modal": [
-        "Закрыть окно"
+        "Close"
       ],
       "Close navigation": [
         "Закрыть панель навигации"
@@ -2990,8 +2990,8 @@
       "There are no files yet": [
         "Пока здесь пусто"
       ],
-      "These files were shared using end-to-end encryption. To ensure their security — and the security of all your documents, photos, and files — store them in Proton Drive, the cloud storage service you can trust.": [
-        "Эти файлы были переданы с использованием сквозного шифрования. Чтобы обеспечить их безопасность и безопасность всех ваших документов, фотографий и файлов, храните их в Proton Drive, облачном хранилище, которому вы можете доверять."
+      "These files were shared using end-to-end encryption. To keep them secure — and all your documents, photos, and files private — store them in your own Proton Drive. It's easy-to-use and free.": [
+        "Эти файлы были отправлены с конечным шифрованием. Чтобы сохранить их в безопасности — как и все ваши документы, фото и личные файлы — сохраните их на своем собственном Proton Drive. Он прост в использовании и бесплатен."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Этот аккаунт был отключен из-за возможного нарушения политики."
@@ -3004,6 +3004,9 @@
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Эта ссылка ведет на сайт, который может пытаться украсть вашу информацию, например, пароли и информацию кредитной карты."
+      ],
+      "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
+        "Эта ссылка может быть омографической атакой и не может быть открыта браузерами Edge. Если вы уверены, что ссылка подлинная, используйте другой браузер для ее открытия."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Эта ссылка может быть омографической атакой, при которой символы одного алфавита подменяются похожими символами из другого. Пожалуйста, проверьте, что это именно та ссылка, которую вы хотите посетить, или не переходите по ней."
@@ -3441,6 +3444,9 @@
       "Malware": [
         "Вредоносная программа"
       ],
+      "Manage categories": [
+        "Управлять категориями"
+      ],
       "Manage folders": [
         "Управление папками"
       ],
@@ -3452,6 +3458,12 @@
       ],
       "Modified": [
         "Изменено"
+      ],
+      "Move to Archive": [
+        "Переместить в архив"
+      ],
+      "Move to Inbox": [
+        "Переместить в входящие"
       ],
       "Name": [
         "Имя"
@@ -4822,6 +4834,9 @@
       "Encrypted data with verified digital signature": [
         "Зашифрованные данные с подтвержденной цифровой подписью"
       ],
+      "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
+        "Gmail автоматически категоризирует некоторые эл. письма, такие как уведомления соцсетей и рекламу. Вы можете выбрать, куда импортировать эти письма."
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Выберите схему PGP, которая будет использоваться при подписи или шифровании сообщений пользователю. Учтите, что PGP/Inline работает с неформатированным текстом."
       ],
@@ -4853,8 +4868,11 @@
       "Name cannot include invisible characters, / or \\.": [
         "Имя не может включать невидимые символы, / или \\."
       ],
-      "Name must be ${ MAX_NAME_LENGTH } characters long at most": [
-        "Имя не может быть более ${ MAX_NAME_LENGTH } символов"
+      "Name must be ${ MAX_NAME_LENGTH } character long at most": [
+        "Имя должно быть до ${ MAX_NAME_LENGTH } символа",
+        "Имя должно быть до ${ MAX_NAME_LENGTH } символов",
+        "Имя должно быть до ${ MAX_NAME_LENGTH } символов",
+        "Имя должно быть до ${ MAX_NAME_LENGTH } символов"
       ],
       "Name must not be empty": [
         "Имя не может быть пустым"
