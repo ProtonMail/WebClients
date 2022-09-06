@@ -11,7 +11,7 @@ import clsx from '@proton/utils/clsx';
 import { Table, TableBody, TableHeader, TableRow } from '../../components';
 import { useEventManager } from '../../hooks';
 import AddressCatchAll from './AddressCatchAll';
-import AddressStatus from './AddressStatus';
+import DomainAddressStatus from './DomainAddressStatus';
 
 interface Props {
     domain: Domain;
@@ -56,7 +56,7 @@ const AddressesTable = ({ domain, domainAddresses }: Props) => {
                                                 } as const;
                                             })
                                         );
-                                        call();
+                                        void call();
                                     }}
                                 />,
                                 <div
@@ -66,7 +66,7 @@ const AddressesTable = ({ domain, domainAddresses }: Props) => {
                                 >
                                     {address.Email}
                                 </div>,
-                                <AddressStatus key={key} address={address} />,
+                                <DomainAddressStatus key={key} address={address} />,
                             ]}
                         />
                     );
