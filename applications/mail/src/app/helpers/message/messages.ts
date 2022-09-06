@@ -16,7 +16,7 @@ import {
 import { getContent, setContent } from './messageContent';
 import { getEmbeddedImages } from './messageImages';
 
-const { SENT, DRAFTS, INBOX } = MAILBOX_LABEL_IDS;
+const { SENT, DRAFTS, INBOX, SPAM } = MAILBOX_LABEL_IDS;
 
 export const getAttachmentCounts = (attachments: Attachment[], messageImages: MessageImages | undefined) => {
     const size = attachmentsSize({ Attachments: attachments } as Message);
@@ -72,7 +72,7 @@ export const mergeMessages = (
 
 export const getMessagesAuthorizedToMove = (messages: Message[], destinationFolderID: string) => {
     return messages.filter((message) => {
-        if ([SENT, DRAFTS, INBOX].includes(destinationFolderID as MAILBOX_LABEL_IDS)) {
+        if ([SENT, DRAFTS, INBOX, SPAM].includes(destinationFolderID as MAILBOX_LABEL_IDS)) {
             const excludedDestinations = [];
 
             if (!isSentAndReceived(message)) {
@@ -81,15 +81,15 @@ export const getMessagesAuthorizedToMove = (messages: Message[], destinationFold
                 }
 
                 if (isSent(message)) {
-                    excludedDestinations.push(...[INBOX, DRAFTS]);
+                    excludedDestinations.push(...[INBOX, DRAFTS, SPAM]);
                 }
             }
 
             if (isDraft(message)) {
-                excludedDestinations.push(...[INBOX, SENT]);
+                excludedDestinations.push(...[INBOX, SENT, SPAM]);
             }
 
-            return !(excludedDestinations as string[]).includes(destinationFolderID);
+            return !excludedDestinations.includes(destinationFolderID as MAILBOX_LABEL_IDS);
         }
 
         return true;
