@@ -5,7 +5,7 @@ import { getRecipients, getSender } from '@proton/shared/lib/mail/messages';
 import { MessageImage, MessageImages } from '../../logic/messages/messagesTypes';
 import { getAttachmentCounts, getMessagesAuthorizedToMove } from './messages';
 
-const { INBOX, SENT, DRAFTS, TRASH } = MAILBOX_LABEL_IDS;
+const { INBOX, SENT, DRAFTS, TRASH, SPAM } = MAILBOX_LABEL_IDS;
 
 describe('message', () => {
     describe('getSender', () => {
@@ -57,6 +57,12 @@ describe('message', () => {
         it('should authorize move to Inbox when message is sent to himself', () => {
             const message = { ID: '0', LabelIDs: [SENT], Flags: 3 } as Message;
             expect(getMessagesAuthorizedToMove([message], INBOX)).toEqual([message]);
+        });
+
+        it('should not move Sent and Draft messages to Spam', () => {
+            expect(getMessagesAuthorizedToMove([inboxMessage, sentMessage, draftMessage], SPAM)).toEqual([
+                inboxMessage,
+            ]);
         });
     });
 
