@@ -180,7 +180,7 @@ const LoginForm = ({
                     <div className="flex flex-row flex-align-items-start">
                         <Checkbox
                             id="staySignedIn"
-                            className="mt0-5"
+                            className="mt0-5 mr0-5"
                             checked={persistent}
                             onChange={submitting ? noop : () => setPersistent(!persistent)}
                         />
