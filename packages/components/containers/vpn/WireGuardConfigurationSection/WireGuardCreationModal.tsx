@@ -1,0 +1,58 @@
+import { c } from 'ttag';
+import { escape } from "@proton/shared/lib/sanitize/escape";
+
+import {
+    Button,
+    Loader,
+    ModalTwo,
+    ModalTwoContent,
+    ModalTwoFooter,
+    ModalTwoHeader,
+    ModalProps,
+} from '../../../components';
+import {FormEvent} from "react";
+
+export interface WireGuardCreationModalProps extends ModalProps {
+    text?: string;
+    serverName?: string;
+    config?: string;
+    onDownload?: (() => void);
+    onClose?: (() => void);
+}
+
+const WireGuardCreationModal = ({ open, text, serverName, config, onDownload, onClose }: WireGuardCreationModalProps) => {
+    const close = () => {
+        onClose?.();
+    };
+
+    return (
+        <ModalTwo open={open} size="large" className="contacts-modal" as="form" onSubmit={(e: FormEvent) => {
+            e.preventDefault();
+            onDownload?.();
+        }} onClose={close}>
+            <ModalTwoHeader title={serverName} />
+            <ModalTwoContent>
+                {config
+                    ? <div className="text-center">
+                        <p>{text}</p>
+                        <pre className="text-left">{escape(config)}</pre>
+                    </div>
+                    : <div className="text-center">
+                        <p>{
+                            // translator: serverName is code name for a logical server such as NL-FREE#1
+                            c('Success notification').t`Creating config file for ${serverName}`
+                        }</p>
+                        <Loader />
+                    </div>}
+            </ModalTwoContent>
+            <ModalTwoFooter>
+                <Button onClick={close}>{c('Action').t`Close`}</Button>
+                <Button color="norm" type="submit" loading={!config} disabled={!config}>
+                    {c('Action').t`Download`}
+                </Button>
+            </ModalTwoFooter>
+        </ModalTwo>
+    );
+};
+
+export default WireGuardCreationModal;
