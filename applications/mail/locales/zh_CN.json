@@ -23,9 +23,6 @@
       "Add address": [
         "添加地址"
       ],
-      "Add condition": [
-        "添加条件"
-      ],
       "Add contact": [
         "添加联系人"
       ],
@@ -77,6 +74,9 @@
       "All Unstarred": [
         "所有非星标邮件"
       ],
+      "Allow messages": [
+        "允许邮件"
+      ],
       "Apply": [
         "应用"
       ],
@@ -94,6 +94,12 @@
       ],
       "Beta Access": [
         "测试版功能"
+      ],
+      "Block": [
+        "屏蔽"
+      ],
+      "Block messages from this sender": [
+        "屏蔽来自此发件人的所有邮件"
       ],
       "Bold": [
         "粗体"
@@ -147,7 +153,7 @@
         "关闭编辑窗"
       ],
       "Close modal": [
-        "关闭"
+        "Close"
       ],
       "Close navigation": [
         "关闭导航栏"
@@ -200,10 +206,10 @@
       "Create a new contact group": [
         "创建联系人群组"
       ],
-      "Create folder": [
-        "创建文件夹"
+      "Create a new folder": [
+        "新建文件夹"
       ],
-      "Create label": [
+      "Create a new label": [
         "创建标签"
       ],
       "Create new contact": [
@@ -211,9 +217,6 @@
       ],
       "Create new message": [
         "创建新邮件"
-      ],
-      "Custom filter": [
-        "定制筛选规则"
       ],
       "Customize": [
         "定制"
@@ -341,9 +344,6 @@
       "Fewer search options": [
         "收起搜索选项"
       ],
-      "Filter on...": [
-        "筛选依据..."
-      ],
       "Font": [
         "字体"
       ],
@@ -467,9 +467,6 @@
       "Label as...": [
         "加标签..."
       ],
-      "label emails as": [
-        "给邮件加标签"
-      ],
       "Learn more": [
         "了解详情"
       ],
@@ -505,9 +502,6 @@
       ],
       "Mark as unread": [
         "标为未读"
-      ],
-      "mark emails as": [
-        "将邮件标为"
       ],
       "Mark for deletion": [
         "标记以删除"
@@ -568,9 +562,6 @@
       ],
       "Move all to trash": [
         "全部移至废件箱"
-      ],
-      "move emails to": [
-        "将邮件移至"
       ],
       "Move to": [
         "移至"
@@ -659,9 +650,6 @@
       "Pause": [
         "暂停"
       ],
-      "Preview": [
-        "预览"
-      ],
       "Preview ${ attachmentName }": [
         "预览 ${ attachmentName }"
       ],
@@ -727,9 +715,6 @@
       ],
       "Remove expiration time": [
         "移除失效时间"
-      ],
-      "Remove this label": [
-        "移除此标签"
       ],
       "Rename": [
         "重命名"
@@ -802,9 +787,6 @@
       ],
       "Send anyway": [
         "仍然发送"
-      ],
-      "send auto-reply email": [
-        "自动回复"
       ],
       "Send feedback": [
         "发送反馈"
@@ -1566,17 +1548,59 @@
       "apple": [
         "苹果"
       ],
+      "azureish white": [
+        "蓝白色"
+      ],
       "blanched almond": [
         "白杏仁"
+      ],
+      "blue-gray": [
+        "蓝灰色"
       ],
       "caramel": [
         "焦糖色"
       ],
+      "carrot": [
+        "胡萝卜橙"
+      ],
+      "cerise": [
+        "水红色"
+      ],
+      "cinnabar": [
+        "朱红色"
+      ],
+      "cobalt": [
+        "钴蓝色"
+      ],
+      "copper": [
+        "紫铜色"
+      ],
+      "cyan-blue azure": [
+        "青蓝色"
+      ],
       "dandelion": [
         "蒲公英"
       ],
+      "dark cerulean": [
+        "藏蓝色"
+      ],
+      "dark midnight blue": [
+        "午夜蓝"
+      ],
       "dim gray": [
         "暗灰"
+      ],
+      "enzian": [
+        "浅紫蓝色"
+      ],
+      "fern": [
+        "丝袍绿"
+      ],
+      "field drab": [
+        "田野褐"
+      ],
+      "forest": [
+        "森林绿"
       ],
       "gainsboro": [
         "淡灰色"
@@ -1590,6 +1614,15 @@
       "lemon yellow": [
         "柠檬黄"
       ],
+      "light carmine pink": [
+        "淡胭脂粉"
+      ],
+      "light moss green": [
+        "青苔绿"
+      ],
+      "light red": [
+        "浅红色"
+      ],
       "maize": [
         "玉米"
       ],
@@ -1597,10 +1630,31 @@
         "莫卧儿绿"
       ],
       "ocean": [
-        "海洋"
+        "海蓝色"
+      ],
+      "olive": [
+        "橄榄绿"
       ],
       "outer space": [
         "外太空"
+      ],
+      "pacific": [
+        "太平洋蓝"
+      ],
+      "palatinate blue": [
+        "普法尔茨蓝"
+      ],
+      "pale cerulean": [
+        "淡青色"
+      ],
+      "pastel gray": [
+        "淡灰色"
+      ],
+      "persian plum": [
+        "波斯杨李色"
+      ],
+      "persian red": [
+        "波斯红"
       ],
       "philippine gray": [
         "菲律宾灰"
@@ -1608,17 +1662,50 @@
       "philippine silver": [
         "菲律宾银"
       ],
+      "pickle": [
+        "橄榄黄"
+      ],
       "pine": [
-        "松树"
+        "松林绿"
       ],
       "pink": [
         "粉色"
       ],
+      "pistachio": [
+        "淡草绿色"
+      ],
+      "plum": [
+        "绛紫色"
+      ],
       "purple": [
         "紫色"
       ],
+      "raisin black": [
+        "葡萄干黑"
+      ],
+      "reef": [
+        "珊瑚绿"
+      ],
+      "ruddy pink": [
+        "红粉色"
+      ],
+      "sahara": [
+        "撒哈拉棕"
+      ],
+      "satin sheen gold": [
+        "缎光金"
+      ],
+      "slateblue": [
+        "石蓝色"
+      ],
       "soil": [
         "土地"
+      ],
+      "strawberry": [
+        "紫红色"
+      ],
+      "vivid auburn": [
+        "红褐色"
       ],
       "white": [
         "白色"
@@ -1781,6 +1868,11 @@
       ],
       "Yomi": [
         "读音"
+      ]
+    },
+    "Context filtering disabled": {
+      "Your selection contains only yourself as sender": [
+        "您选择仅把您自己列入收件人"
       ]
     },
     "Country name": {
@@ -2550,26 +2642,6 @@
         "奥兰群岛"
       ]
     },
-    "CustomFilter": {
-      "Attachment": [
-        "附件"
-      ],
-      "Filter on": [
-        "筛选依据"
-      ],
-      "Next": [
-        "下一步"
-      ],
-      "Recipient": [
-        "收件人"
-      ],
-      "Sender": [
-        "发件人"
-      ],
-      "Subject": [
-        "主题"
-      ]
-    },
     "Daily recurring event, frequency": {
       "${ count } time": [
         "${ count } 次"
@@ -2642,6 +2714,15 @@
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "正在合并联系人，可能需要几分钟的时间。完成后您就可以关闭此对话框了。"
+      ],
+      "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted. ${ manageBlockedAddressesSettingsLink } in settings.": [
+        "来自${senderEmailAddress}的新邮件将会被屏蔽并永久删除。${manageBlockedAddressesSettingsLink}位于设置中。"
+      ],
+      "No folders": [
+        "无文件夹"
+      ],
+      "No labels": [
+        "无标签"
       ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "文件大小上限为 ${ MAX_IMPORT_FILE_SIZE_STRING }，且联系人总数上限为 ${ MAX_IMPORT_CONTACTS_STRING }。若您的文件超出限制，请先拆分成较小的文件。"
@@ -2823,9 +2904,6 @@
       "Choose a date within the next ${ SCHEDULED_MAX_DATE_DAYS } day.": [
         "请在接下来的 ${ SCHEDULED_MAX_DATE_DAYS } 天内选择一个日期。"
       ],
-      "Condition incomplete": [
-        "条件不完整"
-      ],
       "Contact could not be saved": [
         "无法保存联系人"
       ],
@@ -2865,17 +2943,11 @@
       "Email is not valid": [
         "无效邮箱"
       ],
-      "Empty condition": [
-        "条件为空"
-      ],
       "Enter 6 digits": [
         "请输入 6 位验证码"
       ],
       "Enter a password": [
         "输入密码"
-      ],
-      "Error in one of the conditions": [
-        "条件存在错误"
       ],
       "Error while saving draft. Please try again.": [
         "保存草稿失败，请重试。"
@@ -2888,9 +2960,6 @@
       ],
       "Failed to encrypt attachment. Please try again.": [
         "加密附件失败，请重试。"
-      ],
-      "Filter with this name already exists": [
-        "这个名称已经用过了"
       ],
       "Folder name cannot be empty.": [
         "文件夹名称不能为空。"
@@ -3003,12 +3072,6 @@
       "Request timed out": [
         "请求超时"
       ],
-      "Require at least one action": [
-        "至少应有一项操作"
-      ],
-      "Require at least one condition": [
-        "至少应有一个条件"
-      ],
       "Signature not verified": [
         "签名未验证"
       ],
@@ -3089,9 +3152,6 @@
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser.": [
         "此邮件可能含有当前浏览器无法正确打开的链接。"
-      ],
-      "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
-        "启用的规则数量已达上限，开通付费账户即可使用更多筛选规则。"
       ],
       "Trusted keys are not valid for sending": [
         "已信任的密钥对发送无效"
@@ -3439,18 +3499,6 @@
       ]
     },
     "Filter modal type": {
-      "If the attachments": [
-        "如果附件"
-      ],
-      "If the recipient": [
-        "如果收件人"
-      ],
-      "If the sender": [
-        "如果发件人"
-      ],
-      "If the subject": [
-        "如果主题"
-      ],
       "Select…": [
         "选择…"
       ],
@@ -3470,9 +3518,6 @@
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } 标签已更改"
-      ],
-      "Filter ${ Filter.Name } updated": [
-        "${ Filter.Name } 规则已更改"
       ]
     },
     "Filter option": {
@@ -3490,14 +3535,6 @@
       ],
       "Unread": [
         "未读"
-      ]
-    },
-    "Filter preview": {
-      "read": [
-        "已读"
-      ],
-      "starred": [
-        "星标邮件"
       ]
     },
     "Font Face Default": {
@@ -3820,12 +3857,6 @@
       "(${ memberCount } member)": [
         "（${ memberCount } 位成员）"
       ],
-      "(Filter if ALL of the following conditions are met)": [
-        "（满足下列所有条件）"
-      ],
-      "(Filter if ANY of the following conditions are met)": [
-        "（满足下列任一条件）"
-      ],
       "(No Recipient)": [
         "(无收件人)"
       ],
@@ -3874,9 +3905,6 @@
       "All your calendars are disabled.": [
         "您的所有日历都已禁用。"
       ],
-      "All your changes will be lost.": [
-        "您的所有改动都将丢失。"
-      ],
       "An unknown public key has been detected for this recipient.": [
         "检测到此收件人的一枚未知公钥。"
       ],
@@ -3888,9 +3916,6 @@
       ],
       "Are you sure you want to delete all messages with this label?": [
         "确定要删除带有此标签的所有邮件吗？"
-      ],
-      "Are you sure you want to discard your changes?": [
-        "确定要放弃修改吗？"
       ],
       "Are you sure you want to move all messages in this location to Trash?": [
         "确定要将此处所有邮件移至废件箱吗？"
@@ -4111,9 +4136,6 @@
       "file attached": [
         "个附件"
       ],
-      "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
-        "筛选规则对所有邮件都有效，既包括收到的，也包括发出的。每条规则包括名称、条件和操作三部分。"
-      ],
       "Folder": [
         "文件夹"
       ],
@@ -4173,9 +4195,6 @@
       ],
       "Image URL": [
         "图片地址"
-      ],
-      "Images have been removed because they are not allowed in auto-reply": [
-        "自动回复内容不能包含图片，故图片已移除"
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "导入 ${ contactsFragment }和 ${ contactsGroupsFragment }"
@@ -4300,9 +4319,6 @@
       "New": [
         "新建"
       ],
-      "No action selected": [
-        "未选择操作"
-      ],
       "No contacts added yet": [
         "尚未添加联系人"
       ],
@@ -4315,17 +4331,11 @@
       "No folder found": [
         "未找到文件夹"
       ],
-      "No folder selected": [
-        "未选择文件夹"
-      ],
       "No group found": [
         "未找到群组"
       ],
       "No label found": [
         "未找到标签"
-      ],
-      "No label selected": [
-        "未选择标签"
       ],
       "No more results found": [
         "到底了"
@@ -4492,6 +4502,9 @@
       "Send an encrypted, password protected message to a ${ boldText } email address.": [
         "向 ${ boldText } 邮箱发送加密且需要密码才能打开的邮件。"
       ],
+      "Sender has been blocked.": [
+        "发件人已被屏蔽。"
+      ],
       "Sending": [
         "正在发送"
       ],
@@ -4629,6 +4642,9 @@
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "此链接指向的网站可能会窃取您的密码、信用卡等信息。"
+      ],
+      "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
+        "此链接可能使用了欺骗性域名，Edge 浏览器无法打开。若您确认链接可靠，请使用其他浏览器打开"
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "此链接可能使用了欺骗性域名，请确认可靠性后再打开。"
@@ -5028,9 +5044,6 @@
       "Close draft": [
         "关闭草稿"
       ],
-      "Create filter with...": [
-        "创建筛选规则"
-      ],
       "Delete permanently": [
         "永久删除"
       ],
@@ -5198,17 +5211,8 @@
       ]
     },
     "Label": {
-      " and ": [
-        "、"
-      ],
-      " and ${ l }": [
-        "、${ l }"
-      ],
       "(Temporarily unavailable. Please check back later.)": [
         "（暂时不可用。请稍后再试。）"
-      ],
-      "Actions": [
-        "操作"
       ],
       "Add email address": [
         "添加邮箱地址"
@@ -5222,26 +5226,14 @@
       "Address": [
         "地址"
       ],
-      "ALL": [
-        "且"
-      ],
       "Also archive": [
         "同时存档"
       ],
-      "AND": [
-        "且"
+      "Always label senders emails": [
+        "始终标记发件人电子邮件"
       ],
-      "and": [
-        "、"
-      ],
-      "And": [
-        "且"
-      ],
-      "ANY": [
-        "或"
-      ],
-      "Apply filter to existing emails": [
-        "对现有邮件执行筛选规则"
+      "Always move senders emails": [
+        "始终移除发件人电子邮件"
       ],
       "Attach screenshot(s)": [
         "截图"
@@ -5291,9 +5283,6 @@
       "Code is 6 digits without spaces": [
         "验证码是无空格的六位数"
       ],
-      "Conditions": [
-        "条件"
-      ],
       "Confirm password": [
         "确认密码"
       ],
@@ -5318,6 +5307,9 @@
       "Do not ask again": [
         "不再询问"
       ],
+      "Don't show this again": [
+        "不再显示此内容"
+      ],
       "Email": [
         "邮箱"
       ],
@@ -5341,9 +5333,6 @@
       ],
       "Extended address": [
         "详细地址"
-      ],
-      "Filter Name": [
-        "筛选规则名称"
       ],
       "Folder location": [
         "文件夹位置"
@@ -5374,12 +5363,6 @@
       ],
       "I understand the risk": [
         "风险已知悉"
-      ],
-      "IF": [
-        "如果"
-      ],
-      "If": [
-        "如果"
       ],
       "Import all messages": [
         "导入所有邮件"
@@ -5420,6 +5403,9 @@
       "Mailbox password": [
         "邮箱密码"
       ],
+      "Manage categories": [
+        "管理分类"
+      ],
       "Manage folders": [
         "管理文件夹"
       ],
@@ -5429,17 +5415,17 @@
       "Manage my addresses": [
         "管理邮箱地址"
       ],
-      "Mark as": [
-        "标为"
-      ],
       "Move to": [
         "移至"
       ],
+      "Move to Archive": [
+        "存档"
+      ],
+      "Move to Inbox": [
+        "移至收件箱"
+      ],
       "Name": [
         "姓名"
-      ],
-      "No label found": [
-        "无标签"
       ],
       "Notification": [
         "通知"
@@ -5452,15 +5438,6 @@
       ],
       "Operating system version": [
         "操作系统版本"
-      ],
-      "OR": [
-        "或"
-      ],
-      "or": [
-        "或"
-      ],
-      "Or": [
-        "或"
       ],
       "Participants": [
         "参与者"
@@ -5489,9 +5466,6 @@
       "Public keys": [
         "公钥"
       ],
-      "Read": [
-        "已读"
-      ],
       "Recipient": [
         "收件人"
       ],
@@ -5519,9 +5493,6 @@
       "Select how your mailbox looks like by default.": [
         "请选择邮箱的默认外观"
       ],
-      "Send auto-reply": [
-        "自动回复"
-      ],
       "Sender": [
         "发件人"
       ],
@@ -5531,32 +5502,11 @@
       "Size:": [
         "大小："
       ],
-      "Starred": [
-        "星标"
-      ],
-      "Statement": [
-        "要求"
-      ],
       "Street address": [
         "街道地址"
       ],
       "System information": [
         "系统信息"
-      ],
-      "The email was sent ${ attachment }": [
-        "邮件${ attachment }"
-      ],
-      "the email was sent ${ attachment }": [
-        "邮件${ attachment }"
-      ],
-      "The email was sent ${ attachmentStrong }": [
-        "邮件${ attachmentStrong }"
-      ],
-      "the email was sent ${ label }": [
-        "邮件${ label }"
-      ],
-      "Then": [
-        "则"
       ],
       "Time": [
         "时间"
@@ -5587,21 +5537,6 @@
       ],
       "What happened?": [
         "发生了什么？"
-      ],
-      "With attachment": [
-        "含有附件"
-      ],
-      "with attachments": [
-        "含有附件"
-      ],
-      "Without attachment": [
-        "不含附件"
-      ],
-      "without attachment": [
-        "不含附件"
-      ],
-      "without attachments": [
-        "不含附件"
       ],
       "Wonderful": [
         "非常好"
@@ -5680,12 +5615,6 @@
       "Activate": [
         "立即领取"
       ],
-      "Add folder": [
-        "创建文件夹"
-      ],
-      "Add label": [
-        "创建标签"
-      ],
       "All mail": [
         "所有邮件"
       ],
@@ -5742,6 +5671,9 @@
       ],
       "Less": [
         "收起"
+      ],
+      "Manage blocked email addresses": [
+        "管理屏蔽的电子邮件地址"
       ],
       "Manage your folders": [
         "管理文件夹"
@@ -6114,8 +6046,8 @@
       ]
     },
     "Notification": {
-      "${ _Filter.Name } created": [
-        "${ _Filter.Name } 已创建"
+      "Block removed": [
+        "移除屏蔽"
       ],
       "Contact group created": [
         "群组已创建"
@@ -6125,6 +6057,9 @@
       ],
       "Password has been set successfully": [
         "密码已设置成功"
+      ],
+      "Sender ${ senderEmail } blocked": [
+        "发件人${senderEmail}已被屏蔽"
       ]
     },
     "Oauth instructions": {
@@ -6191,9 +6126,6 @@
       ]
     },
     "Option group": {
-      "Custom folders": [
-        "用户文件夹"
-      ],
       "Default folders": [
         "系统文件夹"
       ],
@@ -6335,9 +6267,6 @@
       ],
       "Text": [
         "文本"
-      ],
-      "Type text or keyword": [
-        "输入文本或关键词"
       ],
       "Write your message": [
         "在此撰写邮件内容"
@@ -6626,20 +6555,6 @@
         "已退订"
       ]
     },
-    "Step in filter modal": {
-      "Actions": [
-        "操作"
-      ],
-      "Conditions": [
-        "条件"
-      ],
-      "Name": [
-        "名称"
-      ],
-      "Preview": [
-        "预览"
-      ]
-    },
     "Storage": {
       "Get extra storage for free": [
         "免费获取额外的存储空间"
@@ -6763,6 +6678,12 @@
       "Conversation removed from ${ labelName }.": [
         "会话已移除 ${ labelName } 标签。"
       ],
+      "Conversations from ${ sendersList } will be labelled as ${ labelsList }": [
+        "来自 ${ sendersList } 的对话将被标记为 ${ labelsList }"
+      ],
+      "Conversations from ${ sendersList } will be moved to ${ folder }": [
+        "来自 ${ sendersList } 的对话将移至 ${ folder }"
+      ],
       "Draft deleted": [
         "草稿已删除"
       ],
@@ -6819,6 +6740,12 @@
       ],
       "Message removed from ${ labelName }.": [
         "邮件已移除 ${ labelName } 标签。"
+      ],
+      "Messages from ${ sendersList } will be labelled as ${ labelsList }": [
+        "来自 ${ sendersList } 的邮件将被标记为 ${ labelsList }"
+      ],
+      "Messages from ${ sendersList } will be moved to ${ folder }": [
+        "来自 ${ sendersList } 的邮件将被移动到 ${ folder }"
       ],
       "Move ${ selectionCount } conversation": [
         "移动 ${ selectionCount } 条会话"
@@ -6970,9 +6897,6 @@
       "Add contact group name": [
         "添加联系人群组名称"
       ],
-      "Add filter": [
-        "创建规则"
-      ],
       "Add to ${ groupCount } group": [
         "添加到 ${ groupCount } 个群组"
       ],
@@ -6984,9 +6908,6 @@
       ],
       "Archive": [
         "存档"
-      ],
-      "Are you sure you want to close?": [
-        "确定要关闭吗？"
       ],
       "Attachments": [
         "附件"
@@ -7002,6 +6923,9 @@
       ],
       "Blind Carbon Copy": [
         "盲抄本"
+      ],
+      "Block sender": [
+        "屏蔽发件人"
       ],
       "Carbon Copy": [
         "副本"
@@ -7035,12 +6959,6 @@
       ],
       "Conversation list": [
         "会话列表"
-      ],
-      "Create a new folder": [
-        "创建文件夹"
-      ],
-      "Create a new label": [
-        "创建标签"
       ],
       "Create contact": [
         "创建联系人"
@@ -7111,9 +7029,6 @@
       "Edit contact group": [
         "更改联系人群组"
       ],
-      "Edit filter": [
-        "更改规则"
-      ],
       "Edit image": [
         "更改图片"
       ],
@@ -7152,9 +7067,6 @@
       ],
       "Feedback": [
         "用户反馈"
-      ],
-      "Filter on": [
-        "筛选依据"
       ],
       "Forward": [
         "转发"
@@ -7454,6 +7366,9 @@
       "Encrypted data with verified digital signature": [
         "已加密并验证数字签名"
       ],
+      "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
+        "Gmail会自动对某些电子邮件（如社交或促销）进行分类。 您可以选择这些电子邮件导入的位置。"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "选择在向用户签名或加密时要使用的 PGP 方案。请注意, PGP/内嵌强制纯文本消息。"
       ],
@@ -7465,9 +7380,6 @@
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
         "此操作将从服务器下载所有邮件并在本地进行搜索，清除浏览器数据将禁用此选项。"
-      ],
-      "This feature is only available for paid users": [
-        "此功能仅供付费用户使用"
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "上传公钥后方可向此地址发送端到端加密邮件"

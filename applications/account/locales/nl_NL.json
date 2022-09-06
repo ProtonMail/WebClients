@@ -37,9 +37,6 @@
       "Activate recovery": [
         "Herstel activeren"
       ],
-      "Add": [
-        "Toevoegen"
-      ],
       "Add ${ BRAND_NAME } Account": [
         "${ BRAND_NAME } Account Toevoegen"
       ],
@@ -146,7 +143,7 @@
         "Sluiten"
       ],
       "Close modal": [
-        "Venster sluiten"
+        "Close"
       ],
       "Close navigation": [
         "Navigatie sluiten"
@@ -448,12 +445,6 @@
       "move emails to": [
         "e-mails verplaatsen naar"
       ],
-      "Move to Allow List": [
-        "Verplaatsen naar Toestane Lijst"
-      ],
-      "Move to Block List": [
-        "Verplaats naar Bloklijst"
-      ],
       "Need help?": [
         "Hulp nodig?"
       ],
@@ -711,6 +702,9 @@
       ],
       "Sort": [
         "Sorteer"
+      ],
+      "Spam": [
+        "Spam"
       ],
       "Start import": [
         "Begin met importeren"
@@ -2604,9 +2598,6 @@
       "Domain not available, try again later": [
         "Domein niet beschikbaar, probeer het later opnieuw"
       ],
-      "Email address invalid": [
-        "E-mailadres ongeldig"
-      ],
       "Email is not valid": [
         "E-mailadres is ongeldig"
       ],
@@ -2657,6 +2648,9 @@
       ],
       "Invalid domain": [
         "Ongeldige domeinnaam"
+      ],
+      "Invalid email address": [
+        "Ongeldig e-mailadres"
       ],
       "Invalid expiration date": [
         "Ongeldige vervaldatum"
@@ -2940,6 +2934,10 @@
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "Er is een onverwachte fout opgetreden. Importeren moet opnieuw gestart worden."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } event.": [
+        "Uw bestand ${ formattedFilename } bevat meer dan ${ MAX_IMPORT_EVENTS_STRING } afspraak.",
+        "Uw bestand ${ formattedFilename } bevat meer dan ${ MAX_IMPORT_EVENTS_STRING } afspraken."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "Uw bestand ${ formattedFilename } heeft een ongeldige methode en kan niet worden geïmporteerd."
@@ -3374,9 +3372,6 @@
     "FilterSettings": {
       "Add a custom filter to automatically perform certain actions, like labeling or archiving messages. Filters can be edited and created directly via Sieve programming language.": [
         "Voeg een aangepast filter toe om automatisch bepaalde acties uit te voeren, zoals het labelen of archiveren van berichten. Filters kunnen rechtstreeks via de programmeertaal Sieve worden bewerkt en aangemaakt."
-      ],
-      "Apply sender-specific spam rules. Messages from addresses or domains on the Allow List always go to your Inbox while messages from addresses or domains on the Block List always go to Spam. Marking a message as spam adds its address to the Block List. Marking a message as not spam adds it to the Allow List.": [
-        "Pas afzender-specifieke spamregels toe. Berichten uit adressen of domeinen in de Toegestane Lijst gaan altijd naar uw Inbox terwijl berichten van adressen of domeinen in de bloklijst altijd naar Spam gaan. Een bericht als Spam markeren voegt zijn adres toe aan de bloklijst. Een bericht niet als Spam markeren voegt het toe aan de Toegestane Lijst."
       ],
       "Search in Allow List and Block List": [
         "Zoeken in Toestane Lijst en Bloklijst"
@@ -5521,14 +5516,8 @@
       "Your account will be updated once the payment is cleared.": [
         "Uw account zal worden bijgewerkt zodra de betaling is gewist."
       ],
-      "Your Allow List is empty.": [
-        "Uw Toegestane Lijst is leeg."
-      ],
       "Your bank requires 3-D Secure verification for security purposes.": [
         "Uw bank vereist 3-D Secure verificatie voor veiligheidsdoeleinden."
-      ],
-      "Your Block List is empty.": [
-        "Uw Bloklijst is leeg."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Uw gegevens zijn klaar om te importeren van ${ importedEmailAddressStrong } naar uw Proton account."
@@ -5775,9 +5764,6 @@
       ],
       "Close draft": [
         "Concept sluiten"
-      ],
-      "Create filter with...": [
-        "Filter maken met..."
       ],
       "Delete permanently": [
         "Permanent verwijderen"
@@ -6423,6 +6409,9 @@
       "Mailbox password": [
         "Mailboxwachtwoord"
       ],
+      "Manage categories": [
+        "Beheer categorieën"
+      ],
       "Manage folders": [
         "Mappen beheren"
       ],
@@ -6440,6 +6429,12 @@
       ],
       "Move to": [
         "Verplaatsen naar"
+      ],
+      "Move to Archive": [
+        "Verplaats naar Archief"
+      ],
+      "Move to Inbox": [
+        "Verplaats naar inbox"
       ],
       "Name": [
         "Naam"
@@ -6612,6 +6607,9 @@
       "Signature": [
         "Handtekening"
       ],
+      "Spam": [
+        "Spam"
+      ],
       "Starred": [
         "Met Ster"
       ],
@@ -6713,9 +6711,6 @@
       ],
       "Waiting for subscription": [
         "Wachten op abonnement"
-      ],
-      "Want to add": [
-        "Toevoegen"
       ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "We vinden het jammer u te zien gaan. Leg uit waarom u vertrekt om ons te helpen te verbeteren."
@@ -7257,15 +7252,10 @@
         "op de derde woensdag"
       ]
     },
-    "Moved to black/whitelist": {
-      "${ Domain } removed": [
-        "${ Domain } verwijderd"
-      ],
-      "${ Email } removed": [
-        "${ Email } verwijderd"
-      ]
-    },
     "Navigation": {
+      "All": [
+        "Alles"
+      ],
       "Back": [
         "Terug"
       ],
@@ -7277,6 +7267,9 @@
       ],
       "Back to Mail": [
         "Terug naar mail"
+      ],
+      "Spam": [
+        "Spam"
       ]
     },
     "New Label form": {
@@ -7592,26 +7585,6 @@
         "Teambeheer"
       ]
     },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Maak privacy uw standaard voor back-ups, opslag, delen en herstel van bestanden."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Anders zal de toegang tot uw account worden beperkt en wordt uw account uiteindelijk uitgeschakeld."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Om ${ MAIL_APP_NAME } te blijven gebruiken met premium functies, kiest u uw abonnement en betaalwijze."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Upgrade naar het zakelijke pakket met toegang tot alle premium Proton-services."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Upgrade naar het ultieme privacypakket met toegang tot alle premium Proton-services."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Uw proefperiode eindigt op ${ formattedTrialExpirationDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } eindigend met ${ last4 }"
@@ -7678,6 +7651,26 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "U profiteert van een kortingsprijs op uw huidige abonnement. Als u uw account downgradet, raakt u de korting kwijt en is dit abonnement niet meer beschikbaar wanneer u een nieuw abonnement wilt afsluiten."
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Maak privacy uw standaard voor back-ups, opslag, delen en herstel van bestanden."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Anders zal de toegang tot uw account worden beperkt en wordt uw account uiteindelijk uitgeschakeld."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Om ${ MAIL_APP_NAME } te blijven gebruiken met premium functies, kiest u uw abonnement en betaalwijze."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Upgrade naar het zakelijke pakket met toegang tot alle premium Proton-services."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Upgrade naar het ultieme privacypakket met toegang tot alle premium Proton-services."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Uw proefperiode eindigt op ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -8660,36 +8653,6 @@
         "Gebruikersnaam"
       ]
     },
-    "Spam filter moved to blacklist": {
-      "${ Domain } moved to Block List": [
-        "${ Domain } verplaatst naar Bloklijst"
-      ],
-      "${ Email } moved to Block List": [
-        "${ Email } verplaatst naar Bloklijst"
-      ]
-    },
-    "Spam filter moved to whitelist": {
-      "${ Domain } moved to Allow List": [
-        "${ Domain } verplaatst naar Toegestane Lijst"
-      ],
-      "${ Email } moved to Allow List": [
-        "${ Email } verplaatst naar Toegestane Lijst"
-      ]
-    },
-    "Spam notification": {
-      "${ domain } added": [
-        "${ domain } toegevoegd"
-      ],
-      "${ domain } updated": [
-        "${ domain } bijgewerkt"
-      ],
-      "${ email } added": [
-        "${ email } toegevoegd"
-      ],
-      "${ email } updated": [
-        "${ email } bijgewerkt"
-      ]
-    },
     "Spotlight": {
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "${ DRIVE_APP_NAME } is uit de bèta! Geef uw bestanden dezelfde beveiliging als uw e-mails."
@@ -9087,6 +9050,12 @@
       "CSV field": [
         "CSV-veld"
       ],
+      "Edit": [
+        "Bewerken"
+      ],
+      "Email address": [
+        "E-mailadres"
+      ],
       "Import": [
         "Importeren"
       ],
@@ -9212,12 +9181,6 @@
       "Add Sieve filter": [
         "Sievefilter toevoegen"
       ],
-      "Add to Allow List": [
-        "Toevoegen aan Toestane Lijst"
-      ],
-      "Add to Block List": [
-        "Toevoegen aan Bloklijst"
-      ],
       "Add user": [
         "Gebruiker toevoegen"
       ],
@@ -9229,9 +9192,6 @@
       ],
       "Allocate storage": [
         "Opslag toewijzen"
-      ],
-      "Allow List": [
-        "Toegestane Lijst"
       ],
       "Amount": [
         "Bedrag"
@@ -9271,9 +9231,6 @@
       ],
       "Billing details": [
         "Factuurgegevens"
-      ],
-      "Block List": [
-        "Bloklijst"
       ],
       "Bridge for ${ platform }": [
         "Bridge voor ${ platform }"
@@ -9448,12 +9405,6 @@
       ],
       "Download ${ VPN_APP_NAME }": [
         "Download ${ VPN_APP_NAME }"
-      ],
-      "Edit Allow List": [
-        "Bewerk Toestane Lijst"
-      ],
-      "Edit Block List": [
-        "Bewerk Bloklijst"
       ],
       "Edit calendar": [
         "Agenda bijwerken"
@@ -9804,9 +9755,6 @@
       "Sort labels alphabetically": [
         "Sorteer labels alfabetisch"
       ],
-      "Spam filters": [
-        "Spamfilters"
-      ],
       "Start a new import": [
         "Start een nieuwe import"
       ],
@@ -10044,6 +9992,9 @@
       "Enabling advanced logs records the IP address for each event in the security log.": [
         "Inschakelen van geavanceerd logboek recordt het IP-adres van elke gebeurtenis in het beveiligingslogboek."
       ],
+      "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
+        "Gmail categorizeert sommige e-mails automatisch zoals like Sociaal of Reclame. U kunt kiezen naar waar u die wil importeren."
+      ],
       "Group emails in the same conversation together in your Inbox or display them separately.": [
         "Groepeer e-mails in hetzelfde gesprek samen in uw Inbox of geef ze apart weer."
       ],
@@ -10172,6 +10123,16 @@
       ],
       "Upgrade to a Mail paid plan to share your personal calendar via link with anyone.": [
         "Upgrade naar een betaald Mail-abonnement om uw persoonlijke agenda via een link met iedereen te delen."
+      ]
+    },
+    "User referee invited via email": {
+      "Invited via email": [
+        "Uitgenodigd via e-mail"
+      ]
+    },
+    "User referee signed up using referral link": {
+      "Signed up via your link": [
+        "Geregistreerd via uw link"
       ]
     },
     "User role": {

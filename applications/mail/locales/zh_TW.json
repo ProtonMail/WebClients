@@ -23,9 +23,6 @@
       "Add address": [
         "加入電郵位址"
       ],
-      "Add condition": [
-        "加入條件"
-      ],
       "Add contact": [
         "加入聯絡人"
       ],
@@ -77,6 +74,9 @@
       "All Unstarred": [
         "全部取消星號郵件"
       ],
+      "Allow messages": [
+        "允許郵件"
+      ],
       "Apply": [
         "套用"
       ],
@@ -94,6 +94,12 @@
       ],
       "Beta Access": [
         "測試版體驗"
+      ],
+      "Block": [
+        "封鎖"
+      ],
+      "Block messages from this sender": [
+        "封鎖此寄件者的所有來信"
       ],
       "Bold": [
         "粗體"
@@ -147,7 +153,7 @@
         "關閉撰寫器"
       ],
       "Close modal": [
-        "關閉交談視窗"
+        "Close"
       ],
       "Close navigation": [
         "關閉導覽"
@@ -200,20 +206,17 @@
       "Create a new contact group": [
         "創建新連絡人群組"
       ],
-      "Create folder": [
-        "建立資料夾"
+      "Create a new folder": [
+        "建立新資料夾"
       ],
-      "Create label": [
-        "創建標籤"
+      "Create a new label": [
+        "建立新標籤"
       ],
       "Create new contact": [
         "建立新聯絡人"
       ],
       "Create new message": [
         "建立新訊息"
-      ],
-      "Custom filter": [
-        "自訂篩選器"
       ],
       "Customize": [
         "自訂"
@@ -341,9 +344,6 @@
       "Fewer search options": [
         "較少搜尋選項"
       ],
-      "Filter on...": [
-        "篩選..."
-      ],
       "Font": [
         "字型"
       ],
@@ -467,9 +467,6 @@
       "Label as...": [
         "將郵件加上標籤..."
       ],
-      "label emails as": [
-        "給電郵加上標籤"
-      ],
       "Learn more": [
         "瞭解詳情"
       ],
@@ -505,9 +502,6 @@
       ],
       "Mark as unread": [
         "標示為未讀取"
-      ],
-      "mark emails as": [
-        "將電郵標示為"
       ],
       "Mark for deletion": [
         "標記作刪除"
@@ -568,9 +562,6 @@
       ],
       "Move all to trash": [
         "全部丟到垃圾桶"
-      ],
-      "move emails to": [
-        "將電郵移動到"
       ],
       "Move to": [
         "移至"
@@ -659,9 +650,6 @@
       "Pause": [
         "暫停"
       ],
-      "Preview": [
-        "預覽"
-      ],
       "Preview ${ attachmentName }": [
         "預覽 ${ attachmentName }"
       ],
@@ -728,9 +716,6 @@
       "Remove expiration time": [
         "移除到期時間"
       ],
-      "Remove this label": [
-        "移除此標籤"
-      ],
       "Rename": [
         "重新命名"
       ],
@@ -796,9 +781,6 @@
       ],
       "Send anyway": [
         "仍然傳送"
-      ],
-      "send auto-reply email": [
-        "傳送自動回覆電郵"
       ],
       "Send feedback": [
         "傳送意見反饋"
@@ -2521,26 +2503,6 @@
         "奧蘭群島"
       ]
     },
-    "CustomFilter": {
-      "Attachment": [
-        "附件"
-      ],
-      "Filter on": [
-        "篩選"
-      ],
-      "Next": [
-        "下一步"
-      ],
-      "Recipient": [
-        "收件人"
-      ],
-      "Sender": [
-        "寄件人"
-      ],
-      "Subject": [
-        "主旨"
-      ]
-    },
     "Daily recurring event, frequency": {
       "${ count } time": [
         "總共 ${ count } 次"
@@ -2767,6 +2729,9 @@
       "A group with this name already exists": [
         "此名稱的群組已存在"
       ],
+      "A problem occurred, please try again": [
+        "發生錯誤，請再試一次"
+      ],
       "Address primary private key not found": [
         "找不到電子郵件地址主要私密金鑰"
       ],
@@ -2790,9 +2755,6 @@
       ],
       "Choose a date within the next ${ SCHEDULED_MAX_DATE_DAYS } day.": [
         "在接下來的${ SCHEDULED_MAX_DATE_DAYS }天內選擇一個日期。"
-      ],
-      "Condition incomplete": [
-        "條件不完整"
       ],
       "Contact could not be saved": [
         "無法儲存聯絡人"
@@ -2833,17 +2795,11 @@
       "Email is not valid": [
         "電郵無效"
       ],
-      "Empty condition": [
-        "條件空白"
-      ],
       "Enter 6 digits": [
         "請輸入 6 位驗證碼"
       ],
       "Enter a password": [
         "請輸入您的密碼"
-      ],
-      "Error in one of the conditions": [
-        "其中一個條件有誤"
       ],
       "Error while saving draft. Please try again.": [
         "儲存草稿時發生錯誤，請再試一次。"
@@ -2856,9 +2812,6 @@
       ],
       "Failed to encrypt attachment. Please try again.": [
         "加密附件失敗。請再試一次。"
-      ],
-      "Filter with this name already exists": [
-        "篩選器名稱重複"
       ],
       "Folder name cannot be empty.": [
         "資料夾名稱不能留空。"
@@ -2935,6 +2888,9 @@
       "Passwords do not match": [
         "密碼不一致"
       ],
+      "Please activate your content search again": [
+        "請再次啟用內容搜尋功能"
+      ],
       "Please fix the highlighted conflict to proceed.": [
         "請先修正已標示的衝突以便繼續。"
       ],
@@ -2950,6 +2906,9 @@
       "Primary address key is not decrypted.": [
         "主要位址金鑰並未被解密。"
       ],
+      "Primary key is not valid for sending": [
+        "寄件用的主金鑰不正確。"
+      ],
       "Primary key retrieved for internal user is not valid for sending": [
         "擷取出的內部使用者專屬主金鑰不適用於發送郵件"
       ],
@@ -2964,12 +2923,6 @@
       ],
       "Request timed out": [
         "請求逾時"
-      ],
-      "Require at least one action": [
-        "必須有至少一個動作"
-      ],
-      "Require at least one condition": [
-        "必須有至少一個條件"
       ],
       "Signature not verified": [
         "簽章尚未驗證"
@@ -3046,8 +2999,8 @@
       "This message has already been sent. A new draft has been saved.": [
         "這個郵件已經傳送。新的草稿已儲存。"
       ],
-      "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
-        "使用中的篩選器以達上限，請升級至付費方案以建立更多的篩選器。"
+      "This message may contain some link's URL that cannot be properly opened by your current browser.": [
+        "此郵件可能包含某些您目前的瀏覽器無法正確開啟的 URL。"
       ],
       "Trusted keys are not valid for sending": [
         "已信任的密鑰用於寄送時無效"
@@ -3395,18 +3348,6 @@
       ]
     },
     "Filter modal type": {
-      "If the attachments": [
-        "如附件"
-      ],
-      "If the recipient": [
-        "如收件人"
-      ],
-      "If the sender": [
-        "如寄件人"
-      ],
-      "If the subject": [
-        "如主旨"
-      ],
       "Select…": [
         "請選擇…"
       ],
@@ -3426,9 +3367,6 @@
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } 已更新"
-      ],
-      "Filter ${ Filter.Name } updated": [
-        "篩選器 ${ Filter.Name } 已更新"
       ]
     },
     "Filter option": {
@@ -3446,14 +3384,6 @@
       ],
       "Unread": [
         "未讀"
-      ]
-    },
-    "Filter preview": {
-      "read": [
-        "已讀"
-      ],
-      "starred": [
-        "已加星號"
       ]
     },
     "Font Face Default": {
@@ -3776,12 +3706,6 @@
       "(${ memberCount } member)": [
         "(${ memberCount } 個成員)"
       ],
-      "(Filter if ALL of the following conditions are met)": [
-        "(篩選須符合下列「全部」條件)"
-      ],
-      "(Filter if ANY of the following conditions are met)": [
-        "(篩選須符合下列「任一」條件)"
-      ],
       "(No Recipient)": [
         "(無收件人)"
       ],
@@ -3830,9 +3754,6 @@
       "All your calendars are disabled.": [
         "您所有的行事曆停用中。"
       ],
-      "All your changes will be lost.": [
-        "您將會失去全部已作出的變更。"
-      ],
       "An unknown public key has been detected for this recipient.": [
         "已檢測到此收件者的未知公開金鑰。"
       ],
@@ -3844,9 +3765,6 @@
       ],
       "Are you sure you want to delete all messages with this label?": [
         "您確定要刪除有此標籤的全部郵件？"
-      ],
-      "Are you sure you want to discard your changes?": [
-        "您確定要捨棄所作的變更嗎？"
       ],
       "Are you sure you want to move all messages in this location to Trash?": [
         "您確定您要把所有郵件移動至此位置進行刪除嗎？"
@@ -3980,6 +3898,9 @@
       "Don't forget to share the password with the recipient": [
         "別忘記與您的收件者共享金鑰密碼"
       ],
+      "Downloading message ${ esProgress } out of ${ totalProgressToShow }": [
+        "正在下載 ${ totalProgressToShow } 則訊息中的 ${ esProgress } 則"
+      ],
       "Draft": [
         "草稿"
       ],
@@ -4064,9 +3985,6 @@
       "file attached": [
         "檔案已附加"
       ],
-      "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
-        "篩選器適用於所有電子郵件，包括內送及外寄電子郵件。每一個篩選器起碼必須包含一個名稱、一個條件及一個動作。"
-      ],
       "Folder": [
         "資料夾"
       ],
@@ -4126,9 +4044,6 @@
       ],
       "Image URL": [
         "圖像 URL"
-      ],
-      "Images have been removed because they are not allowed in auto-reply": [
-        "圖像檔案全數已移除，因在自動回覆無法使用它們"
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "匯入 ${ contactsFragment } 和 ${ contactsGroupsFragment }"
@@ -4253,9 +4168,6 @@
       "New": [
         "加入"
       ],
-      "No action selected": [
-        "未選取任何動作"
-      ],
       "No contacts added yet": [
         "仍未加入任何通訊錄"
       ],
@@ -4268,17 +4180,11 @@
       "No folder found": [
         "找不到資料夾"
       ],
-      "No folder selected": [
-        "未選取任何資料夾"
-      ],
       "No group found": [
         "未找到群組"
       ],
       "No label found": [
         "找不到標籤"
-      ],
-      "No label selected": [
-        "未選取任何標籤"
       ],
       "No more results found": [
         "找不到更多結果"
@@ -4376,6 +4282,9 @@
       "Priority support": [
         "優先支援"
       ],
+      "Protect your email from being leaked to mailing lists or spammers with ${ maskMyEmailButton }.": [
+        "防止您的郵件地址外洩到郵件清單或垃圾郵件發送者手上，使用 ${ maskMyEmailButton }。"
+      ],
       "Proton doesn't make money by abusing privacy.": [
         "Proton 不會透過濫用隱私來賺錢。"
       ],
@@ -4396,6 +4305,9 @@
       ],
       "Request read receipt": [
         "要求讀取回條"
+      ],
+      "Rich text": [
+        "富文本"
       ],
       "Right to Left": [
         "由右至左"
@@ -4439,6 +4351,9 @@
       "Send an encrypted, password protected message to a ${ boldText } email address.": [
         "傳送一封加密、密碼保護的郵件至 ${ boldText } 電郵位址。"
       ],
+      "Sender has been blocked.": [
+        "寄件者已被封鎖。"
+      ],
       "Sending": [
         "傳送中"
       ],
@@ -4457,6 +4372,9 @@
       "Session timed out": [
         "工作階段已逾時"
       ],
+      "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
+        "將 ${ MAIL_APP_NAME } 設為您的瀏覽器預設郵件應用程式。當您點擊電郵地址連結時，${ MAIL_APP_NAME } 將會自動開啟。"
+      ],
       "Set a recovery phrase": [
         "設定還原短語"
       ],
@@ -4465,6 +4383,12 @@
       ],
       "Show original message": [
         "顯示原始訊息"
+      ],
+      "SimpleLogin is a Proton service, and your Proton Account includes Hide My Email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
+        "間單登入是一項 Proton 服務，您的 Proton 帳戶包含「隱藏我的郵件別名」功能。要開始隱藏您的電子信箱，請造訪簡單登入並建立您的第一個別名。"
+      ],
+      "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
+        "簡單登入提供了一個簡單的方法，讓您可以建立使用者但不需要將您的真實電子郵件透露給不可信的第三方網站。"
       ],
       "Sorry, this message does not exist or has already expired.": [
         "抱歉，此訊息不存在或已過期。"
@@ -4558,6 +4482,9 @@
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "此連結指向的網站可能試圖竊取您的資訊，例如密碼或信用卡細節 。"
+      ],
+      "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
+        "此連結可能為同形異字的域名釣魚攻擊 (homograph attack)，且無法以 Edge 瀏覽器開啟。如果您確定這是一個正當的連結，請使用其它瀏覽器來開啟。"
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "此連結可能是同形異義字攻擊，請核對此連結是否是您想要造訪的連結，否則請不要開啟。"
@@ -4859,6 +4786,9 @@
       "Your phone number will only be used for this one-time verification.": [
         "您的手機號碼只會用於此一次性驗證。"
       ],
+      "Your Proton Account includes SimpleLogin. Install the browser extension with one click to get started.": [
+        "您的 Proton 帳戶包含簡單登入。安裝瀏覽器外掛可實現一鍵開始。"
+      ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "您的 Proton 帳號目前被凍結。如要繼續使用您的帳號，請先支付逾期帳單。"
       ],
@@ -4941,9 +4871,6 @@
       ],
       "Close draft": [
         "關閉草稿"
-      ],
-      "Create filter with...": [
-        "建立篩選器為..."
       ],
       "Delete permanently": [
         "永久刪除"
@@ -5112,17 +5039,8 @@
       ]
     },
     "Label": {
-      " and ": [
-        " 且 "
-      ],
-      " and ${ l }": [
-        " 且 ${ l }"
-      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(暫時無法使用。請稍後再試。)"
-      ],
-      "Actions": [
-        "操作"
       ],
       "Add email address": [
         "加入電郵位址"
@@ -5136,26 +5054,8 @@
       "Address": [
         "電郵位址"
       ],
-      "ALL": [
-        "全部"
-      ],
       "Also archive": [
         "同時封存"
-      ],
-      "AND": [
-        "且"
-      ],
-      "and": [
-        "且"
-      ],
-      "And": [
-        "且"
-      ],
-      "ANY": [
-        "任一"
-      ],
-      "Apply filter to existing emails": [
-        "將篩選器套用至現有的電郵"
       ],
       "Attach screenshot(s)": [
         "附加螢幕截圖"
@@ -5205,9 +5105,6 @@
       "Code is 6 digits without spaces": [
         "驗證碼為六位數且無空格"
       ],
-      "Conditions": [
-        "條件"
-      ],
       "Confirm password": [
         "確認密碼"
       ],
@@ -5256,9 +5153,6 @@
       "Extended address": [
         "詳細位址"
       ],
-      "Filter Name": [
-        "篩選器名稱"
-      ],
       "Folder location": [
         "資料夾位置"
       ],
@@ -5288,12 +5182,6 @@
       ],
       "I understand the risk": [
         "我已了解此可能的風險"
-      ],
-      "IF": [
-        "如"
-      ],
-      "If": [
-        "如"
       ],
       "Import all messages": [
         "匯入全部郵件"
@@ -5334,6 +5222,9 @@
       "Mailbox password": [
         "信箱密碼"
       ],
+      "Manage categories": [
+        "管理分類"
+      ],
       "Manage folders": [
         "管理資料夾"
       ],
@@ -5343,17 +5234,17 @@
       "Manage my addresses": [
         "管理我的電郵位址"
       ],
-      "Mark as": [
-        "標示為"
-      ],
       "Move to": [
         "移至"
       ],
+      "Move to Archive": [
+        "移至「封存」"
+      ],
+      "Move to Inbox": [
+        "移動到收件匣"
+      ],
       "Name": [
         "名稱"
-      ],
-      "No label found": [
-        "找不到標籤"
       ],
       "Notification": [
         "通知"
@@ -5366,15 +5257,6 @@
       ],
       "Operating system version": [
         "作業系統版本"
-      ],
-      "OR": [
-        "或"
-      ],
-      "or": [
-        "或"
-      ],
-      "Or": [
-        "或"
       ],
       "Participants": [
         "參與者"
@@ -5403,9 +5285,6 @@
       "Public keys": [
         "公開金鑰"
       ],
-      "Read": [
-        "已讀"
-      ],
       "Recipient": [
         "收件者"
       ],
@@ -5433,9 +5312,6 @@
       "Select how your mailbox looks like by default.": [
         "選取預設情況下的收件匣外觀。"
       ],
-      "Send auto-reply": [
-        "傳送自動回覆"
-      ],
       "Sender": [
         "寄件者"
       ],
@@ -5445,32 +5321,11 @@
       "Size:": [
         "大小："
       ],
-      "Starred": [
-        "已加星號"
-      ],
-      "Statement": [
-        "陳述式"
-      ],
       "Street address": [
         "街道位址"
       ],
       "System information": [
         "系統資訊"
-      ],
-      "The email was sent ${ attachment }": [
-        "電郵已傳送${ attachment }"
-      ],
-      "the email was sent ${ attachment }": [
-        "電郵${ attachment }送出"
-      ],
-      "The email was sent ${ attachmentStrong }": [
-        "電郵已傳送${ attachmentStrong }"
-      ],
-      "the email was sent ${ label }": [
-        "電郵已送出${ label }"
-      ],
-      "Then": [
-        "則"
       ],
       "Time": [
         "時間"
@@ -5501,21 +5356,6 @@
       ],
       "What happened?": [
         "發生了甚麼問題？"
-      ],
-      "With attachment": [
-        "包含附件"
-      ],
-      "with attachments": [
-        "包含附件"
-      ],
-      "Without attachment": [
-        "不帶附件"
-      ],
-      "without attachment": [
-        "不包含附件"
-      ],
-      "without attachments": [
-        "不帶附件"
       ],
       "Wonderful": [
         "太棒了"
@@ -5593,12 +5433,6 @@
     "Link": {
       "Activate": [
         "啟用"
-      ],
-      "Add folder": [
-        "加入資料夾"
-      ],
-      "Add label": [
-        "加入標籤"
       ],
       "All mail": [
         "所有郵件"
@@ -5816,6 +5650,9 @@
       ],
       "Re:": [
         "Re:"
+      ],
+      "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
+        "您的免費試用期已結束。您即將無法存取您的帳戶。${ action }"
       ]
     },
     "Message display when a new app version is available": {
@@ -6020,9 +5857,6 @@
       ]
     },
     "Notification": {
-      "${ _Filter.Name } created": [
-        "${ _Filter.Name } 已建立"
-      ],
       "Contact group created": [
         "聯絡人群組已建立"
       ],
@@ -6097,9 +5931,6 @@
       ]
     },
     "Option group": {
-      "Custom folders": [
-        "自訂資料夾"
-      ],
       "Default folders": [
         "預設資料夾"
       ],
@@ -6238,9 +6069,6 @@
       ],
       "Text": [
         "文字"
-      ],
-      "Type text or keyword": [
-        "鍵入文字或關鍵詞"
       ],
       "Write your message": [
         "撰寫您的訊息"
@@ -6527,20 +6355,6 @@
       ],
       "Unsubscribed": [
         "已取消訂閱"
-      ]
-    },
-    "Step in filter modal": {
-      "Actions": [
-        "操作"
-      ],
-      "Conditions": [
-        "條件"
-      ],
-      "Name": [
-        "名稱"
-      ],
-      "Preview": [
-        "預覽"
       ]
     },
     "Storage": {
@@ -6873,9 +6687,6 @@
       "Add contact group name": [
         "加入聯絡人群組名稱"
       ],
-      "Add filter": [
-        "加入篩選器"
-      ],
       "Add to ${ groupCount } group": [
         "加入至 ${ groupCount } 個群組"
       ],
@@ -6887,9 +6698,6 @@
       ],
       "Archive": [
         "封存"
-      ],
-      "Are you sure you want to close?": [
-        "您確定要關閉嗎？"
       ],
       "Attachments": [
         "附件"
@@ -6938,12 +6746,6 @@
       ],
       "Conversation list": [
         "交談群組清單"
-      ],
-      "Create a new folder": [
-        "建立新資料夾"
-      ],
-      "Create a new label": [
-        "建立新標籤"
       ],
       "Create contact": [
         "建立聯絡人"
@@ -7014,9 +6816,6 @@
       "Edit contact group": [
         "編輯聯絡人群組"
       ],
-      "Edit filter": [
-        "編輯篩選器"
-      ],
       "Edit image": [
         "編輯圖像"
       ],
@@ -7055,9 +6854,6 @@
       ],
       "Feedback": [
         "意見反饋"
-      ],
-      "Filter on": [
-        "篩選"
       ],
       "Forward": [
         "轉寄"
@@ -7357,6 +7153,9 @@
       "Encrypted data with verified digital signature": [
         "數位簽署驗證的加密資料"
       ],
+      "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
+        "Gmail 會自動將一些電子郵件分類，例如促銷內容或社交網路。您可以自行決定要將這些郵件匯入的地方。"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "請選擇簽署或加密至某使用者時採用的 PGP 方法。請注意 PGP/inline 強制使用純文字郵件格式"
       ],
@@ -7365,9 +7164,6 @@
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
         "此動作將下載所有郵件，以供本機搜尋。清除您的瀏覽器資料將停用此選項。"
-      ],
-      "This feature is only available for paid users": [
-        "此功能僅提供給付費使用者"
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "上載公開金鑰以啟用傳送端對端加密電郵到此電郵位址"

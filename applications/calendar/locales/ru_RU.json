@@ -84,7 +84,7 @@
         "Закрыть окно события"
       ],
       "Close modal": [
-        "Закрыть окно"
+        "Close"
       ],
       "Close navigation": [
         "Скрыть панель навигации"
@@ -2265,6 +2265,12 @@
       "An unexpected error occurred. Import must be restarted.": [
         "Произошла непредвиденная ошибка. Необходимо начать импорт заново."
       ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } event.": [
+        "В файле ${ formattedFilename } более ${ MAX_IMPORT_EVENTS_STRING } события.",
+        "В файле ${ formattedFilename } более ${ MAX_IMPORT_EVENTS_STRING } событий.",
+        "В файле ${ formattedFilename } более ${ MAX_IMPORT_EVENTS_STRING } событий.",
+        "В файле ${ formattedFilename } более ${ MAX_IMPORT_EVENTS_STRING } событий."
+      ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "Ваш файл ${ formattedFilename } имеет недопустимый метод и не может быть импортирован."
       ],
@@ -3279,6 +3285,9 @@
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Эта ссылка ведет на сайт, который может пытаться украсть вашу информацию, например, пароли и данные кредитной карты."
       ],
+      "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
+        "Эта ссылка может быть омографической атакой и не может быть открыта браузерами Edge. Если вы уверены, что ссылка подлинная, используйте другой браузер для ее открытия."
+      ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Эта ссылка может быть омографической атакой, при которой символы одного алфавита подменяются похожими символами из другого. Пожалуйста, проверьте, что это именно та ссылка, которую вы хотите посетить, или не переходите по ней."
       ],
@@ -3635,11 +3644,20 @@
       "Mailbox password": [
         "Пароль почтового ящика"
       ],
+      "Manage categories": [
+        "Управлять категориями"
+      ],
       "Manage folders": [
         "Управлять папками"
       ],
       "Manage labels": [
         "Управление ярлыками"
+      ],
+      "Move to Archive": [
+        "Переместить в архив"
+      ],
+      "Move to Inbox": [
+        "Переместить в входящие"
       ],
       "Name": [
         "Название"
@@ -5241,6 +5259,9 @@
       ],
       "Encrypted data with verified digital signature": [
         "Зашифрованные данные с подтвержденной цифровой подписью"
+      ],
+      "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
+        "Gmail автоматически категоризирует некоторые эл. письма, такие как уведомления соцсетей и рекламу. Вы можете выбрать, куда импортировать эти письма."
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Выберите схему PGP, которая будет использоваться для подписи или шифрования сообщений пользователю. Учтите, что PGP/Inline работает с неформатированным текстом"

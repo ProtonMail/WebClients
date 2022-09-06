@@ -23,9 +23,6 @@
       "Add address": [
         "Tambah alamat"
       ],
-      "Add condition": [
-        "Tambahkan syarat"
-      ],
       "Add contact": [
         "Tambah kontak"
       ],
@@ -77,6 +74,9 @@
       "All Unstarred": [
         "Semua yang Tidak Dibintangi"
       ],
+      "Allow messages": [
+        "Izinkan pesan"
+      ],
       "Apply": [
         "Terapkan"
       ],
@@ -94,6 +94,12 @@
       ],
       "Beta Access": [
         "Akses Beta"
+      ],
+      "Block": [
+        "Blokir"
+      ],
+      "Block messages from this sender": [
+        "Blokir pesan dari pengirim ini"
       ],
       "Bold": [
         "Tebal"
@@ -147,7 +153,7 @@
         "Tutup komposer"
       ],
       "Close modal": [
-        "Tutup jendela"
+        "Close"
       ],
       "Close navigation": [
         "Tutup navigasi"
@@ -200,20 +206,17 @@
       "Create a new contact group": [
         "Buat grup kontak baru"
       ],
-      "Create folder": [
-        "Buat folder"
+      "Create a new folder": [
+        "Buat folder baru"
       ],
-      "Create label": [
-        "Buat label"
+      "Create a new label": [
+        "Buat label baru"
       ],
       "Create new contact": [
         "Buat kontak baru"
       ],
       "Create new message": [
         "Buat pesan baru"
-      ],
-      "Custom filter": [
-        "Filter khusus"
       ],
       "Customize": [
         "Atur"
@@ -341,9 +344,6 @@
       "Fewer search options": [
         "Lebih sedikit opsi pencarian"
       ],
-      "Filter on...": [
-        "Filter pada..."
-      ],
       "Font": [
         "Font"
       ],
@@ -467,9 +467,6 @@
       "Label as...": [
         "Labeli sebagai..."
       ],
-      "label emails as": [
-        "labeli email sebagai"
-      ],
       "Learn more": [
         "Pelajari lebih lanjut"
       ],
@@ -505,9 +502,6 @@
       ],
       "Mark as unread": [
         "Tandai belum dibaca"
-      ],
-      "mark emails as": [
-        "tandai email sebagai"
       ],
       "Mark for deletion": [
         "Tandai untuk dihapus"
@@ -568,9 +562,6 @@
       ],
       "Move all to trash": [
         "Pindahkan semua ke sampah"
-      ],
-      "move emails to": [
-        "pindahkan email ke"
       ],
       "Move to": [
         "Pindah ke"
@@ -659,9 +650,6 @@
       "Pause": [
         "Jeda"
       ],
-      "Preview": [
-        "Pratinjau"
-      ],
       "Preview ${ attachmentName }": [
         "Pratinjau ${ attachmentName }"
       ],
@@ -727,9 +715,6 @@
       ],
       "Remove expiration time": [
         "Hapus waktu kedaluawarsa"
-      ],
-      "Remove this label": [
-        "Hapus label ini"
       ],
       "Rename": [
         "Ubah nama"
@@ -802,9 +787,6 @@
       ],
       "Send anyway": [
         "Tetap kirim"
-      ],
-      "send auto-reply email": [
-        "kirim pesan balasan otomatis"
       ],
       "Send feedback": [
         "Kirim tanggapan"
@@ -1888,6 +1870,11 @@
         "Yomi"
       ]
     },
+    "Context filtering disabled": {
+      "Your selection contains only yourself as sender": [
+        "Pilihan Anda hanya mencakup Anda sebagai pengirim seorang diri"
+      ]
+    },
     "Country name": {
       "Abkhazia": [
         "Abkhazia"
@@ -2655,26 +2642,6 @@
         "Kepulauan Åland"
       ]
     },
-    "CustomFilter": {
-      "Attachment": [
-        "Lampiran"
-      ],
-      "Filter on": [
-        "Filter berdasarkan"
-      ],
-      "Next": [
-        "Selanjutnya"
-      ],
-      "Recipient": [
-        "Penerima"
-      ],
-      "Sender": [
-        "Pengirim"
-      ],
-      "Subject": [
-        "Subjek"
-      ]
-    },
     "Daily recurring event, frequency": {
       "${ count } time": [
         "${ count } kali"
@@ -2747,6 +2714,15 @@
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Penggabungan kontak memakan beberapa menit. Anda dapat menutup jendela ini setelah proses selesai."
+      ],
+      "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted. ${ manageBlockedAddressesSettingsLink } in settings.": [
+        "Email baru yang datang dari ${ senderEmailAddress } tidak akan disampaikan kepada Anda dan akan langsung dihapus secara permanen. ${ manageBlockedAddressesSettingsLink } di Pengaturan."
+      ],
+      "No folders": [
+        "Tidak ada folder"
+      ],
+      "No labels": [
+        "Tidak ada label"
       ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Berkas harus memiliki ukuran maksimum ${ MAX_IMPORT_FILE_SIZE_STRING } dan memiliki sampai ${ MAX_IMPORT_CONTACTS_STRING } kontak. Jika berkas Anda lebih besar, silahkan bagi dan pisahkan ke dalam berkas-berkas yang lebih kecil."
@@ -2928,9 +2904,6 @@
       "Choose a date within the next ${ SCHEDULED_MAX_DATE_DAYS } day.": [
         "Pilih tanggal yang berjarak ${ SCHEDULED_MAX_DATE_DAYS } hari dari sekarang."
       ],
-      "Condition incomplete": [
-        "Kondisi tidak lengkap"
-      ],
       "Contact could not be saved": [
         "Kontak tidak dapat disimpan"
       ],
@@ -2970,17 +2943,11 @@
       "Email is not valid": [
         "Email tidak valid"
       ],
-      "Empty condition": [
-        "Kondisi kosong"
-      ],
       "Enter 6 digits": [
         "Masukkan 6 digit"
       ],
       "Enter a password": [
         "Masukkan kata sandi"
-      ],
-      "Error in one of the conditions": [
-        "Kesalahan pada salah satu kondisi"
       ],
       "Error while saving draft. Please try again.": [
         "Terjadi kesalahan dalam menyimpan draf. Silakan coba lagi."
@@ -2993,9 +2960,6 @@
       ],
       "Failed to encrypt attachment. Please try again.": [
         "Gagal mengenkripsi lampiran. Silakan coba lagi."
-      ],
-      "Filter with this name already exists": [
-        "Filter dengan nama ini sudah ada"
       ],
       "Folder name cannot be empty.": [
         "Nama folder tidak boleh kosong."
@@ -3108,12 +3072,6 @@
       "Request timed out": [
         "Waktu permintaan habis"
       ],
-      "Require at least one action": [
-        "Perlu minimal satu tindakan"
-      ],
-      "Require at least one condition": [
-        "Perlu minimal satu kondisi"
-      ],
       "Signature not verified": [
         "Tanda tangan tidak terverifikasi"
       ],
@@ -3194,9 +3152,6 @@
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser.": [
         "Pesan ini terindikasi memiliki tautan yang tidak dapat dibuka dengan benar oleh browser Anda."
-      ],
-      "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
-        "Terlalu banyak filter yang aktif. Mohon tingkatkan jenis akun Anda ke akun berbayar untuk dapat mengaktifkan lebih banyak filter."
       ],
       "Trusted keys are not valid for sending": [
         "Kunci terpercaya tidak valid untuk mengirim"
@@ -3544,18 +3499,6 @@
       ]
     },
     "Filter modal type": {
-      "If the attachments": [
-        "Jika lampiran"
-      ],
-      "If the recipient": [
-        "Jika penerima"
-      ],
-      "If the sender": [
-        "Jika pengirim"
-      ],
-      "If the subject": [
-        "Jika subjek"
-      ],
       "Select…": [
         "Pilih…"
       ],
@@ -3575,9 +3518,6 @@
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } berhasil diperbarui"
-      ],
-      "Filter ${ Filter.Name } updated": [
-        "Filter ${ Filter.Name } berhasil diperbarui"
       ]
     },
     "Filter option": {
@@ -3595,14 +3535,6 @@
       ],
       "Unread": [
         "Belum dibaca"
-      ]
-    },
-    "Filter preview": {
-      "read": [
-        "telah dibaca"
-      ],
-      "starred": [
-        "dibintangi"
       ]
     },
     "Font Face Default": {
@@ -3925,12 +3857,6 @@
       "(${ memberCount } member)": [
         "(${ memberCount } anggota)"
       ],
-      "(Filter if ALL of the following conditions are met)": [
-        "(Saring jika SEMUA kondisi terpenuhi)"
-      ],
-      "(Filter if ANY of the following conditions are met)": [
-        "(Saring jika ADA kondisi yang terpenuhi)"
-      ],
       "(No Recipient)": [
         "(Tidak Ada Penerima)"
       ],
@@ -3979,9 +3905,6 @@
       "All your calendars are disabled.": [
         "Semua kalender Anda dinonaktifkan."
       ],
-      "All your changes will be lost.": [
-        "Seluruh perubahan Anda akan hilang."
-      ],
       "An unknown public key has been detected for this recipient.": [
         "Kunci publik tidak dikenal terdeteksi untuk penerima ini."
       ],
@@ -3993,9 +3916,6 @@
       ],
       "Are you sure you want to delete all messages with this label?": [
         "Apakah Anda yakin ingin menghapu semua pesan yang ditandai dengan label ini?"
-      ],
-      "Are you sure you want to discard your changes?": [
-        "Yakin ingin membuang perubahan?"
       ],
       "Are you sure you want to move all messages in this location to Trash?": [
         "Apakah Anda yakin untuk memindahkan seluruh pesan yang ada pada lokasi ini ke Sampah?"
@@ -4216,9 +4136,6 @@
       "file attached": [
         "file terlampir"
       ],
-      "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
-        "Filter bekerja di semua surel, termasuk surel yang masuk dan terkirim. Setiap filter harus memuat minimal nama, kondisi dan tindakan."
-      ],
       "Folder": [
         "Folder"
       ],
@@ -4278,9 +4195,6 @@
       ],
       "Image URL": [
         "URL gambar"
-      ],
-      "Images have been removed because they are not allowed in auto-reply": [
-        "Gambar-gambar yang ada telah dihapus karena tidak dapat diikutsertakan dalam pesan balasan otomatis"
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Impor ${ contactsFragment } dan ${ contactsGroupsFragment }"
@@ -4405,9 +4319,6 @@
       "New": [
         "Baru"
       ],
-      "No action selected": [
-        "Tidak ada tindakan yang dipilih"
-      ],
       "No contacts added yet": [
         "Belum ada kontak yang ditambahkan"
       ],
@@ -4420,17 +4331,11 @@
       "No folder found": [
         "Tidak ada folder yang ditemukan"
       ],
-      "No folder selected": [
-        "Tidak ada folder yang dipilih"
-      ],
       "No group found": [
         "Grup tidak ditemukan"
       ],
       "No label found": [
         "Tidak ada label yang ditemukan"
-      ],
-      "No label selected": [
-        "Tidak ada label yang dipilih"
       ],
       "No more results found": [
         "Tidak ada hasil lainnya yang ditemukan"
@@ -4597,6 +4502,9 @@
       "Send an encrypted, password protected message to a ${ boldText } email address.": [
         "Kirimkan pesan yang terenkripsi dan terlindungi oleh kata sandi kepada alamat email ${ boldText }."
       ],
+      "Sender has been blocked.": [
+        "Pengirim pesan telah diblokir."
+      ],
       "Sending": [
         "Mengirim"
       ],
@@ -4734,6 +4642,9 @@
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Tautan ini tertuju pada situs web yang dapat mencuri informasi pribadi Anda, seperti kata sandi dan rincian kartu kredit yang Anda miliki."
+      ],
+      "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
+        "Tautan ini mungkin merupakan sebuah serangan homograf dan tidak dapat dibuka oleh Internet Explorer dan Edge. Apabila Anda yakin tautan tersebut absah, silakan gunakan browser lain untuk membukanya."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Tautan ini mungkin serangan homograf. Mohon verifikasi tautan yang ingin Anda kunjungi, atau jangan kunjungi sama sekali."
@@ -5133,9 +5044,6 @@
       "Close draft": [
         "Tutup draf"
       ],
-      "Create filter with...": [
-        "Buat filter dengan..."
-      ],
       "Delete permanently": [
         "Hapus permanen"
       ],
@@ -5303,17 +5211,8 @@
       ]
     },
     "Label": {
-      " and ": [
-        " dan "
-      ],
-      " and ${ l }": [
-        " dan ${ l }"
-      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Sedang tidak tersedia. Mohon periksa lagi nanti.)"
-      ],
-      "Actions": [
-        "Tindakan"
       ],
       "Add email address": [
         "Tambah alamat email"
@@ -5327,26 +5226,14 @@
       "Address": [
         "Alamat"
       ],
-      "ALL": [
-        "SEMUA"
-      ],
       "Also archive": [
         "Arsipkan"
       ],
-      "AND": [
-        "DAN"
+      "Always label senders emails": [
+        "Selalu labeli email pengirim"
       ],
-      "and": [
-        "dan"
-      ],
-      "And": [
-        "Dan"
-      ],
-      "ANY": [
-        "SEMBARANG"
-      ],
-      "Apply filter to existing emails": [
-        "Terapkan filter untuk email yang sudah ada"
+      "Always move senders emails": [
+        "Selalu pindahkan email pengirim"
       ],
       "Attach screenshot(s)": [
         "Lampirkan tangkapan layar"
@@ -5396,9 +5283,6 @@
       "Code is 6 digits without spaces": [
         "Kode tersusun atas 6 digit angka tanpa spasi"
       ],
-      "Conditions": [
-        "Syarat"
-      ],
       "Confirm password": [
         "Konfirmasi kata sandi"
       ],
@@ -5423,6 +5307,9 @@
       "Do not ask again": [
         "Jangan tanyakan lagi"
       ],
+      "Don't show this again": [
+        "Jangan tampilkan lagi"
+      ],
       "Email": [
         "Email"
       ],
@@ -5446,9 +5333,6 @@
       ],
       "Extended address": [
         "Alamat lengkap"
-      ],
-      "Filter Name": [
-        "Nama Filter"
       ],
       "Folder location": [
         "Lokasi folder"
@@ -5479,12 +5363,6 @@
       ],
       "I understand the risk": [
         "Saya paham akan resikonya"
-      ],
-      "IF": [
-        "JIKA"
-      ],
-      "If": [
-        "Jika"
       ],
       "Import all messages": [
         "Impor seluruh pesan"
@@ -5525,6 +5403,9 @@
       "Mailbox password": [
         "Kata sandi kotak pesan"
       ],
+      "Manage categories": [
+        "Kelola kategori"
+      ],
       "Manage folders": [
         "Kelola folder"
       ],
@@ -5534,17 +5415,17 @@
       "Manage my addresses": [
         "Kelola alamat saya"
       ],
-      "Mark as": [
-        "Tandai sebagai"
-      ],
       "Move to": [
         "Pindah ke"
       ],
+      "Move to Archive": [
+        "Pindahkan ke Arsip"
+      ],
+      "Move to Inbox": [
+        "Pindahkan ke Kotak masuk"
+      ],
       "Name": [
         "Nama"
-      ],
-      "No label found": [
-        "Label tidak ditemukan"
       ],
       "Notification": [
         "Pemberitahuan"
@@ -5557,15 +5438,6 @@
       ],
       "Operating system version": [
         "Versi sistem operasi"
-      ],
-      "OR": [
-        "ATAU"
-      ],
-      "or": [
-        "atau"
-      ],
-      "Or": [
-        "Atau"
       ],
       "Participants": [
         "Peserta"
@@ -5594,9 +5466,6 @@
       "Public keys": [
         "Kunci publik"
       ],
-      "Read": [
-        "Telah dibaca"
-      ],
       "Recipient": [
         "Penerima"
       ],
@@ -5624,9 +5493,6 @@
       "Select how your mailbox looks like by default.": [
         "Pilih bagaimana kotak surat Anda akan telihat secara bawaan."
       ],
-      "Send auto-reply": [
-        "Kirim balasan otomatis"
-      ],
       "Sender": [
         "Pengirim"
       ],
@@ -5636,32 +5502,11 @@
       "Size:": [
         "Ukuran:"
       ],
-      "Starred": [
-        "Dibintangi"
-      ],
-      "Statement": [
-        "Pernyataan"
-      ],
       "Street address": [
         "Alamat jalan"
       ],
       "System information": [
         "Informasi sistem"
-      ],
-      "The email was sent ${ attachment }": [
-        "Email terkirim ${ attachment }"
-      ],
-      "the email was sent ${ attachment }": [
-        "email terkirim ${ attachment }"
-      ],
-      "The email was sent ${ attachmentStrong }": [
-        "Email terkirim ${ attachmentStrong }"
-      ],
-      "the email was sent ${ label }": [
-        "email terkirim ${ label }"
-      ],
-      "Then": [
-        "Maka"
       ],
       "Time": [
         "Waktu"
@@ -5692,21 +5537,6 @@
       ],
       "What happened?": [
         "Apa yang terjadi?"
-      ],
-      "With attachment": [
-        "Dengan lampiran"
-      ],
-      "with attachments": [
-        "dengan lampiran"
-      ],
-      "Without attachment": [
-        "Tanpa lampiran"
-      ],
-      "without attachment": [
-        "tanpa lampiran"
-      ],
-      "without attachments": [
-        "tanpa lampiran"
       ],
       "Wonderful": [
         "Luar Biasa"
@@ -5785,12 +5615,6 @@
       "Activate": [
         "Aktifkan"
       ],
-      "Add folder": [
-        "Tambah folder"
-      ],
-      "Add label": [
-        "Tambah label"
-      ],
       "All mail": [
         "Semua surat"
       ],
@@ -5847,6 +5671,9 @@
       ],
       "Less": [
         "Lebih sedikit"
+      ],
+      "Manage blocked email addresses": [
+        "Kelola alamat email yang diblokir"
       ],
       "Manage your folders": [
         "Kelola folder Anda"
@@ -6219,8 +6046,8 @@
       ]
     },
     "Notification": {
-      "${ _Filter.Name } created": [
-        "${ _Filter.Name } dibuat"
+      "Block removed": [
+        "Blokir dicabut"
       ],
       "Contact group created": [
         "Grup kontak telah dibuat"
@@ -6230,6 +6057,9 @@
       ],
       "Password has been set successfully": [
         "Kata sandi telah berhasil ditentukan"
+      ],
+      "Sender ${ senderEmail } blocked": [
+        "Pengirim ${ senderEmail } diblokir"
       ]
     },
     "Oauth instructions": {
@@ -6296,9 +6126,6 @@
       ]
     },
     "Option group": {
-      "Custom folders": [
-        "Folder khusus"
-      ],
       "Default folders": [
         "Folder default"
       ],
@@ -6440,9 +6267,6 @@
       ],
       "Text": [
         "Teks"
-      ],
-      "Type text or keyword": [
-        "Ketik teks atau kata kunci"
       ],
       "Write your message": [
         "Tulis pesan Anda"
@@ -6731,20 +6555,6 @@
         "Langganan diberhentikan"
       ]
     },
-    "Step in filter modal": {
-      "Actions": [
-        "Tindakan"
-      ],
-      "Conditions": [
-        "Kondisi"
-      ],
-      "Name": [
-        "Nama"
-      ],
-      "Preview": [
-        "Pratinjau"
-      ]
-    },
     "Storage": {
       "Get extra storage for free": [
         "Dapatkan kapasitas penyimpanan tambahan secara gratis"
@@ -6868,6 +6678,12 @@
       "Conversation removed from ${ labelName }.": [
         "Percakapan dihapus dari ${ labelName }."
       ],
+      "Conversations from ${ sendersList } will be labelled as ${ labelsList }": [
+        "Percakapan yang berasal dari ${ sendersList } akan dilabeli sebagai ${ labelsList }"
+      ],
+      "Conversations from ${ sendersList } will be moved to ${ folder }": [
+        "Percakapan yang berasal dari ${ sendersList } akan dipindahkan ke ${ folder }"
+      ],
       "Draft deleted": [
         "Draf terhapus"
       ],
@@ -6924,6 +6740,12 @@
       ],
       "Message removed from ${ labelName }.": [
         "Pesan dihapus dari ${ labelName }."
+      ],
+      "Messages from ${ sendersList } will be labelled as ${ labelsList }": [
+        "Pesan yang berasal dari ${ sendersList } akan dilabeli sebagai ${ labelsList }"
+      ],
+      "Messages from ${ sendersList } will be moved to ${ folder }": [
+        "Pesan yang berasal dari ${ sendersList } akan dipindahkan ke ${ folder }"
       ],
       "Move ${ selectionCount } conversation": [
         "${ selectionCount } percakapan dipindahkan"
@@ -7075,9 +6897,6 @@
       "Add contact group name": [
         "Tambah nama grup kontak"
       ],
-      "Add filter": [
-        "Tambah filter"
-      ],
       "Add to ${ groupCount } group": [
         "Tambahkan ke ${ groupCount } grup"
       ],
@@ -7089,9 +6908,6 @@
       ],
       "Archive": [
         "Arsip"
-      ],
-      "Are you sure you want to close?": [
-        "Yakin ingin menutupnya?"
       ],
       "Attachments": [
         "Lampiran"
@@ -7107,6 +6923,9 @@
       ],
       "Blind Carbon Copy": [
         "Tembusan Tertutup"
+      ],
+      "Block sender": [
+        "Blokir pengirim"
       ],
       "Carbon Copy": [
         "Tembusan"
@@ -7140,12 +6959,6 @@
       ],
       "Conversation list": [
         "Daftar percakapan"
-      ],
-      "Create a new folder": [
-        "Buat folder baru"
-      ],
-      "Create a new label": [
-        "Buat label baru"
       ],
       "Create contact": [
         "Buat kontak"
@@ -7216,9 +7029,6 @@
       "Edit contact group": [
         "Sunting grup kontak"
       ],
-      "Edit filter": [
-        "Sunting filter"
-      ],
       "Edit image": [
         "Sunting gambar"
       ],
@@ -7257,9 +7067,6 @@
       ],
       "Feedback": [
         "Kritik dan Saran"
-      ],
-      "Filter on": [
-        "Filter pada"
       ],
       "Forward": [
         "Teruskan"
@@ -7559,6 +7366,9 @@
       "Encrypted data with verified digital signature": [
         "Data terenkripsi dengan tanda tangan digital terverifikasi"
       ],
+      "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
+        "Gmail secara otomatis mengelompokkan email tertentu ke dalam kategori seperti Sosial dan Promosi. Anda dapat menentukan ke kategori mana email berikut akan diimpor."
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Pilih skema PGP untuk menandatangani atau mengenkripsi pesan. PGP/Inline mewajibkan penggunaan pesan teks polos"
       ],
@@ -7570,9 +7380,6 @@
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
         "Tindakan ini akan mengunduh semua pesan agar pesan tersebut dapat dicari secara lokal. Membersihkan data peramban web atau keluar dari mail Anda akan menonaktifkan opsi ini."
-      ],
-      "This feature is only available for paid users": [
-        "Fitur ini hanya tersedia untuk pengguna berbayar"
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Unggah kunci publik untuk mengaktifkan pengiriman pesan terenkripsi end-to-end ke alamat ini"

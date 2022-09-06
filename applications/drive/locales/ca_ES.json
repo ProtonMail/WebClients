@@ -96,7 +96,7 @@
         "Tancar"
       ],
       "Close modal": [
-        "Tancar el modal"
+        "Close"
       ],
       "Close navigation": [
         "Tanca la navegació"
@@ -219,6 +219,9 @@
       ],
       "Expand": [
         "Amplia"
+      ],
+      "Expand folder": [
+        "Amplia la carpeta"
       ],
       "Export": [
         "Exportar"
@@ -2962,6 +2965,9 @@
       "Mailbox password": [
         "Contrasenya de la bústia"
       ],
+      "Manage categories": [
+        "Gestiona les categories"
+      ],
       "Manage folders": [
         "Gestionar carpetes"
       ],
@@ -2973,6 +2979,12 @@
       ],
       "Modified": [
         "Modificat"
+      ],
+      "Move to Archive": [
+        "Moure al Arxiu"
+      ],
+      "Move to Inbox": [
+        "Moure a la Safata d'entrada"
       ],
       "Name": [
         "Nom"
@@ -3529,6 +3541,11 @@
         "Èxit de verificació"
       ]
     },
+    "Success notification when user send feedback": {
+      "Feedback sent": [
+        "S'ha enviat l'opinió"
+      ]
+    },
     "Suffix for price": {
       "/month": [
         "/mes"
@@ -4041,6 +4058,9 @@
       "You have no folders yet": [
         "Encara no tens cap carpeta"
       ],
+      "You've got files": [
+        "Tens fitxers"
+      ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         "El vostre període de prova acaba aviat, el ${ formattedEndDate }"
       ]
@@ -4094,9 +4114,6 @@
       ],
       "Name cannot include invisible characters, / or \\.": [
         "El nom no pot incloure caràcters invisibles, / o \\."
-      ],
-      "Name must be ${ MAX_NAME_LENGTH } characters long at most": [
-        "El nom ha de tenir com a màxim ${ MAX_NAME_LENGTH } caràcters"
       ],
       "Name must not be empty": [
         "El nom no pot estar buit"

@@ -43,9 +43,6 @@
       "Activate recovery": [
         "Aktywuj odzyskiwanie"
       ],
-      "Add": [
-        "Dodaj"
-      ],
       "Add ${ BRAND_NAME } Account": [
         "Dodaj konto ${ BRAND_NAME }"
       ],
@@ -115,6 +112,9 @@
       "Back": [
         "Wstecz"
       ],
+      "Block": [
+        "Zablokuj"
+      ],
       "Bold": [
         "Pogrubienie"
       ],
@@ -152,7 +152,7 @@
         "Zamknij"
       ],
       "Close modal": [
-        "Zamknij okno"
+        "Close"
       ],
       "Close navigation": [
         "Zamknij nawigację"
@@ -445,6 +445,12 @@
       "Mark as default": [
         "Oznacz jako domyślną"
       ],
+      "Mark as not spam": [
+        "To nie jest spam"
+      ],
+      "Mark as spam": [
+        "Oznacz jako spam"
+      ],
       "mark emails as": [
         "oznacz wiadomości jako"
       ],
@@ -459,12 +465,6 @@
       ],
       "move emails to": [
         "przenieś wiadomości do"
-      ],
-      "Move to Allow List": [
-        "Przenieś do listy dozwolonych"
-      ],
-      "Move to Block List": [
-        "Przenieś do listy odrzuconych"
       ],
       "Need help?": [
         "Potrzebujesz pomocy?"
@@ -549,6 +549,9 @@
       ],
       "Remove": [
         "Usuń"
+      ],
+      "Remove Block": [
+        "Odblokuj"
       ],
       "Remove bonuses": [
         "Zrezygnuj z bonusów"
@@ -723,6 +726,9 @@
       ],
       "Sort": [
         "Sortuj"
+      ],
+      "Spam": [
+        "Spam"
       ],
       "Start import": [
         "Rozpocznij importowanie"
@@ -2702,9 +2708,6 @@
       "Domain not available, try again later": [
         "Domena nie jest dostępna. Spróbuj ponownie później"
       ],
-      "Email address invalid": [
-        "Adres e-mail jest nieprawidłowy"
-      ],
       "Email is not valid": [
         "Adres e-mail nie jest prawidłowy"
       ],
@@ -2755,6 +2758,9 @@
       ],
       "Invalid domain": [
         "Domena jest nieprawidłowa"
+      ],
+      "Invalid email address": [
+        "Adres e-mail jest nieprawidłowy"
       ],
       "Invalid expiration date": [
         "Termin ważności jest nieprawidłowy"
@@ -3499,8 +3505,11 @@
       "Add a custom filter to automatically perform certain actions, like labeling or archiving messages. Filters can be edited and created directly via Sieve programming language.": [
         "Dodaj filtr niestandardowy do wykonywania automatycznych czynności, takich jak etykietowanie lub archiwizacja wiadomości. Filtry mogą być tworzone i edytowane w języku programowania Sieve."
       ],
-      "Apply sender-specific spam rules. Messages from addresses or domains on the Allow List always go to your Inbox while messages from addresses or domains on the Block List always go to Spam. Marking a message as spam adds its address to the Block List. Marking a message as not spam adds it to the Allow List.": [
-        "Ustaw swoje preferencje dla nadawców spamu. Wiadomości z adresów i domen z listy dozwolonych są zawsze dostarczane do skrzynki odbiorczej, a z listy odrzuconych zawsze przenoszone do Spamu. Oznaczenie wiadomości jako spam, dodaje adres nadawcy do listy odrzuconych, a oznaczenie wiadomości jako wolnej od spamu dodaje adres do listy dozwolonych."
+      "Emails from addresses marked as spam by you or Proton will go to your spam folder. If you want to allow emails from one of these addresses, mark it as \"not spam\".": [
+        "Wiadomości z adresów oznaczonych jako spam przez Ciebie lub Proton zostaną przeniesione do folderu Spam. Jeśli chcesz zezwolić na wiadomości z jednego z tych adresów, oznacz adres jako \"To nie jest spam\"."
+      ],
+      "Emails from blocked addresses won't be delivered.": [
+        "Wiadomości od zablokowanych adresów nie zostaną dostarczone."
       ],
       "Search in Allow List and Block List": [
         "Przeszukaj listę dozwolonych i odrzuconych"
@@ -5763,14 +5772,8 @@
       "Your account will be updated once the payment is cleared.": [
         "Konto zostanie zaktualizowane po zaksięgowaniu płatności."
       ],
-      "Your Allow List is empty.": [
-        "Lista dozwolonych jest pusta."
-      ],
       "Your bank requires 3-D Secure verification for security purposes.": [
         "Ze względów bezpieczeństwa, Twój bank wymaga weryfikacji 3-D Secure."
-      ],
-      "Your Block List is empty.": [
-        "Lista odrzuconych jest pusta."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Dane z konta ${ importedEmailAddressStrong } są gotowe do zaimportowania do konta Proton."
@@ -6020,9 +6023,6 @@
       ],
       "Close draft": [
         "Zamknij szkic"
-      ],
-      "Create filter with...": [
-        "Utwórz filtr..."
       ],
       "Delete permanently": [
         "Usuń trwale"
@@ -6275,6 +6275,9 @@
       "Address": [
         "Adres"
       ],
+      "Address type": [
+        "Typ adresu"
+      ],
       "Addresses": [
         "Adresy"
       ],
@@ -6349,6 +6352,9 @@
       ],
       "Block malware, ads and trackers": [
         "Zablokuj złośliwe oprogramowanie, reklamy i skrypty śledzące"
+      ],
+      "Blocked": [
+        "Zablokowany"
       ],
       "bonus storage": [
         "bonusowa przestrzeń dyskowa"
@@ -6680,6 +6686,9 @@
       "Mailbox password": [
         "Hasło skrzynki pocztowej"
       ],
+      "Manage categories": [
+        "Zarządzaj kategoriami"
+      ],
       "Manage folders": [
         "Zarządzaj folderami"
       ],
@@ -6697,6 +6706,12 @@
       ],
       "Move to": [
         "Przenieś do"
+      ],
+      "Move to Archive": [
+        "Przenieś do Archiwum"
+      ],
+      "Move to Inbox": [
+        "Przenieś do Odebranych"
       ],
       "Name": [
         "Nazwa"
@@ -6721,6 +6736,9 @@
       ],
       "No label found": [
         "Nie znaleziono etykiety"
+      ],
+      "Non Spam": [
+        "To nie jest spam"
       ],
       "Non-standard ports": [
         "Niestandardowe porty"
@@ -6872,6 +6890,9 @@
       "Signature": [
         "Podpis"
       ],
+      "Spam": [
+        "Spam"
+      ],
       "Starred": [
         "Wyróżnione"
       ],
@@ -6973,9 +6994,6 @@
       ],
       "Waiting for subscription": [
         "Oczekiwanie na subskrypcję"
-      ],
-      "Want to add": [
-        "Co chcesz dodać"
       ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Przykro nam, że odchodzisz. Wyjaśnij nam, dlaczego nas opuszczasz, aby pomóc ulepszać nasze usługi."
@@ -7535,15 +7553,10 @@
         "w trzecią środę"
       ]
     },
-    "Moved to black/whitelist": {
-      "${ Domain } removed": [
-        "Domena ${ Domain } została usunięta"
-      ],
-      "${ Email } removed": [
-        "Adres ${ Email } został usunięty"
-      ]
-    },
     "Navigation": {
+      "All": [
+        "Wszystkie"
+      ],
       "Back": [
         "Wstecz"
       ],
@@ -7555,6 +7568,15 @@
       ],
       "Back to Mail": [
         "Powrót do poczty"
+      ],
+      "Blocked": [
+        "Zablokowany"
+      ],
+      "Non spam": [
+        "To nie jest spam"
+      ],
+      "Spam": [
+        "Spam"
       ]
     },
     "New Label form": {
@@ -7901,26 +7923,6 @@
         "Zarządzanie zespołem"
       ]
     },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Zapewnij sobie prywatność podczas tworzenia kopii zapasowej, przechowywania i udostępniania plików."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "W przeciwnym razie, dostęp do konta zostanie ograniczony, a następnie wyłączony."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Wybierz plan i metodę płatności, aby kontynuować używanie aplikacji ${ MAIL_APP_NAME } z funkcjami premium."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Ulepsz do pakietu biznesowego z dostępem do wszystkich usług Proton premium."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Ulepsz do najwyższego pakietu prywatności i uzyskaj dostęp do wszystkich usług Proton premium."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Wersja próbna zakończy się ${ formattedTrialExpirationDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } kończąca się na ${ last4 }"
@@ -7987,6 +7989,26 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Korzystasz z promocyjnej ceny na swój obecny plan. Jeśli obniżysz plan, stracisz promocyjną cenę i nie będzie ona dostępna przy ponownej subskrypcji."
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Zapewnij sobie prywatność podczas tworzenia kopii zapasowej, przechowywania i udostępniania plików."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "W przeciwnym razie, dostęp do konta zostanie ograniczony, a następnie wyłączony."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Wybierz plan i metodę płatności, aby kontynuować używanie aplikacji ${ MAIL_APP_NAME } z funkcjami premium."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Ulepsz do pakietu biznesowego z dostępem do wszystkich usług Proton premium."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Ulepsz do najwyższego pakietu prywatności i uzyskaj dostęp do wszystkich usług Proton premium."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Wersja próbna zakończy się ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -8675,11 +8697,17 @@
       "Confirm password": [
         "Potwierdź hasło"
       ],
+      "domain.com": [
+        "domena.pl"
+      ],
       "E.g., ": [
         "Np. "
       ],
       "Email address": [
         "Adres e-mail"
+      ],
+      "example@domain.com": [
+        "przyklad@domena.pl"
       ],
       "Feedback": [
         "Opinia"
@@ -9001,34 +9029,33 @@
         "Nazwa użytkownika"
       ]
     },
-    "Spam filter moved to blacklist": {
-      "${ Domain } moved to Block List": [
-        "Domena ${ Domain } została przeniesiona do listy odrzuconych"
-      ],
-      "${ Email } moved to Block List": [
-        "Adres ${ Email } został przeniesiony do listy odrzuconych"
-      ]
-    },
-    "Spam filter moved to whitelist": {
-      "${ Domain } moved to Allow List": [
-        "Domena ${ Domain } została przeniesiona do listy dozwolonych"
-      ],
-      "${ Email } moved to Allow List": [
-        "Adres ${ Email } został przeniesiony do listy dozwolonych"
-      ]
-    },
     "Spam notification": {
-      "${ domain } added": [
-        "Domena ${ domain } została dodana"
+      "${ name } added": [
+        "Dodano ${ name }"
       ],
-      "${ domain } updated": [
-        "Domena ${ domain } została zaktualizowana"
+      "${ name } deletion failed": [
+        "Usuwanie ${ name } nie powiodło się"
       ],
-      "${ email } added": [
-        "Adres ${ email } został dodany"
+      "${ name } failed to move to Block List": [
+        "Przenoszenie ${ name } do listy odrzuconych nie powiodło się"
       ],
-      "${ email } updated": [
-        "Adres ${ email } został zaktualizowany"
+      "${ name } failed to move to Non spam List": [
+        "Usunięcie ${ name } z listy spamu nie powiodło się"
+      ],
+      "${ name } failed to move to Spam List": [
+        "Przenoszenie ${ name } do listy spamu nie powiodło się"
+      ],
+      "${ name } moved to Block List": [
+        "${ name } przeniesiono do listy odrzuconych"
+      ],
+      "${ name } moved to Non spam list": [
+        "${ name } usunięto z listy spamu"
+      ],
+      "${ name } moved to Spam list": [
+        "${ name } przeniesiono do listy spamu"
+      ],
+      "${ name } successfully deleted": [
+        "Usunięto ${ name }"
       ]
     },
     "Spotlight": {
@@ -9468,8 +9495,17 @@
       "CSV field": [
         "Pole CSV"
       ],
+      "Edit": [
+        "Edytuj"
+      ],
+      "Email address": [
+        "Adres e-mail"
+      ],
       "Import": [
         "Importuj"
+      ],
+      "Marked as": [
+        "Oznaczone jako"
       ],
       "Name": [
         "Nazwa"
@@ -9602,11 +9638,14 @@
       "Add Sieve filter": [
         "Dodaj filtr Sieve"
       ],
-      "Add to Allow List": [
-        "Dodaj do listy dozwolonych"
-      ],
-      "Add to Block List": [
+      "Add to block list": [
         "Dodaj do listy odrzuconych"
+      ],
+      "Add to not spam list": [
+        "Usuń z listy spamu"
+      ],
+      "Add to spam list": [
+        "Dodaj do listy spamu"
       ],
       "Add user": [
         "Dodaj użytkownika"
@@ -9619,9 +9658,6 @@
       ],
       "Allocate storage": [
         "Przydziel przestrzeń dyskową"
-      ],
-      "Allow List": [
-        "Lista dozwolonych"
       ],
       "Amount": [
         "Kwota"
@@ -9661,9 +9697,6 @@
       ],
       "Billing details": [
         "Szczegóły płatności"
-      ],
-      "Block List": [
-        "Lista odrzuconych"
       ],
       "Bridge for ${ platform }": [
         "Aplikacja Bridge na ${ platform }"
@@ -9841,12 +9874,6 @@
       ],
       "Download ${ VPN_APP_NAME }": [
         "Pobierz ${ VPN_APP_NAME }"
-      ],
-      "Edit Allow List": [
-        "Edytuj listę dozwolonych"
-      ],
-      "Edit Block List": [
-        "Edytuj listę odrzuconych"
       ],
       "Edit calendar": [
         "Edytuj kalendarz"
@@ -10211,8 +10238,8 @@
       "Sort labels alphabetically": [
         "Sortuj etykiety alfabetycznie"
       ],
-      "Spam filters": [
-        "Filtry antyspamowe"
+      "Spam and block list": [
+        "Spam i lista odrzuconych"
       ],
       "Start a new import": [
         "Rozpocznij nowy import"
@@ -10450,6 +10477,9 @@
       ],
       "Enabling advanced logs records the IP address for each event in the security log.": [
         "Włączenie zaawansowanych logów spowoduje zapisywanie adresu IP każdej aktywności."
+      ],
+      "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
+        "Gmail automatycznie dodaje kategorie (jak Społeczności lub Oferty) do niektórych wiadomości. Wybierz, gdzie zaimportować te wiadomości."
       ],
       "Group emails in the same conversation together in your Inbox or display them separately.": [
         "Grupuj wiadomości w skrzynce pocztowej do wątku lub wyświetlaj je oddzielnie."

@@ -29,9 +29,6 @@
       "Activate recovery": [
         "Ενεργοποίηση ανάκτησης"
       ],
-      "Add": [
-        "Προσθήκη"
-      ],
       "Add ${ BRAND_NAME } Account": [
         "Προσθήκη Λογαριασμού ${ BRAND_NAME }"
       ],
@@ -135,7 +132,7 @@
         "Κλείσιμο"
       ],
       "Close modal": [
-        "Κλείσιμο παραθύρου"
+        "Close"
       ],
       "Close navigation": [
         "Κλείσιμο μενού πλοήγησης"
@@ -434,12 +431,6 @@
       "move emails to": [
         "μεταφέρετε τα email στο"
       ],
-      "Move to Allow List": [
-        "Μετακίνηση στη λίστα επιτρεπόμενων"
-      ],
-      "Move to Block List": [
-        "Μετακίνηση στη Λίστα Φραγμένων"
-      ],
       "Need help?": [
         "Χρειάζεστε βοήθεια;"
       ],
@@ -685,6 +676,9 @@
       ],
       "Sort": [
         "Ταξινόμηση"
+      ],
+      "Spam": [
+        "Ενοχλητικά"
       ],
       "Start import": [
         "Έναρξη εισαγωγής"
@@ -2423,9 +2417,6 @@
       "Domain not available, try again later": [
         "Ο τομέας δεν είναι διαθέσιμος, προσπαθήστε ξανά αργότερα"
       ],
-      "Email address invalid": [
-        "Η διεύθυνση E-mail δεν είναι έγκυρη"
-      ],
       "Email is not valid": [
         "Η διεύθυνση email δεν είναι έγκυρη"
       ],
@@ -2476,6 +2467,9 @@
       ],
       "Invalid domain": [
         "Μη έγκυρος τομέας"
+      ],
+      "Invalid email address": [
+        "Μη έγκυρη διεύθυνση email"
       ],
       "Invalid expiration date": [
         "Μη έγκυρη ημερομηνία λήξης"
@@ -3068,9 +3062,6 @@
     "FilterSettings": {
       "Add a custom filter to automatically perform certain actions, like labeling or archiving messages. Filters can be edited and created directly via Sieve programming language.": [
         "Για την αυτόματη εκτέλεση κάποιων ενεργειών, όπως απόδοση ετικετών ή αρχειοθέτηση μηνυμάτων, προσθέστε ένα προσαρμοσμένο φίλτρο. Τα φίλτρα μπορούν να συνταχθούν και διορθωθούν άμεσα, στη γλώσσα προγραμματισμού Sieve."
-      ],
-      "Apply sender-specific spam rules. Messages from addresses or domains on the Allow List always go to your Inbox while messages from addresses or domains on the Block List always go to Spam. Marking a message as spam adds its address to the Block List. Marking a message as not spam adds it to the Allow List.": [
-        "Εφαρμόστε κανόνες ανεπιθύμητων για συγκεκριμένους αποστολείς. Τα μηνύματα από διευθύνσεις ή τομείς στη Λίστα Επιτρεπόμενων πηγαίνουν πάντα στα Εισερχόμενα, ενώ τα μηνύματα από διευθύνσεις ή τομείς στη Λίστα Αποκλεισμού πηγαίνουν πάντα στα Ανεπιθύμητα. Η επισήμανση ενός μηνύματος ως ανεπιθύμητου προσθέτει τη διεύθυνσή του στη Λίστα Αποκλεισμού. Η επισήμανση ενός μηνύματος ως μη ανεπιθύμητου προσθέτει τη διεύθυνσή του στη Λίστα Επιτρεπόμενων."
       ],
       "Search in Allow List and Block List": [
         "Αναζήτηση στη Λίστα Επιτρεπτών και στη Λίστα Φραγμένων"
@@ -5101,14 +5092,8 @@
       "Your account will be updated once the payment is cleared.": [
         "Ο λογαριασμός σας θα ενημερωθεί μόλις γίνει εκκαθάριση της πληρωμής."
       ],
-      "Your Allow List is empty.": [
-        "Η Λίστα Επιτρεπόμενων είναι κενή."
-      ],
       "Your bank requires 3-D Secure verification for security purposes.": [
         "Η τράπεζα σας, απαιτεί ασφαλή επαλήθευση 3-D για λόγους ασφαλείας."
-      ],
-      "Your Block List is empty.": [
-        "Η Λίστα Αποκλεισμού είναι κενή."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Τα δεδομένα σας είναι έτοιμα για εισαγωγή από ${ importedEmailAddressStrong } στο λογαριασμό σας στο Proton."
@@ -5331,9 +5316,6 @@
       ],
       "Close draft": [
         "Κλείσιμο προχείρου"
-      ],
-      "Create filter with...": [
-        "Δημιουργία φίλτρου με..."
       ],
       "Delete permanently": [
         "Οριστική διαγραφή"
@@ -5973,6 +5955,12 @@
       "Move to": [
         "Μετακίνηση σε"
       ],
+      "Move to Archive": [
+        "Μεταφορά στα Αρχειοθετημένα"
+      ],
+      "Move to Inbox": [
+        "Μετακίνηση στα Εισερχόμενα"
+      ],
       "Name": [
         "Όνομα"
       ],
@@ -6135,6 +6123,9 @@
       "Signature": [
         "Υπογραφή"
       ],
+      "Spam": [
+        "Ενοχλητικά"
+      ],
       "Starred": [
         "Με αστέρι"
       ],
@@ -6236,9 +6227,6 @@
       ],
       "Waiting for subscription": [
         "Αναμονή για συνδρομή"
-      ],
-      "Want to add": [
-        "Θέλω να προσθέσω"
       ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Λυπούμαστε που φεύγετε. Παρακαλούμε εξηγήστε τον λόγο, για να μας βοηθήσετε να βελτιωθούμε."
@@ -6750,15 +6738,10 @@
         "κάθε τρίτη Τετάρτη"
       ]
     },
-    "Moved to black/whitelist": {
-      "${ Domain } removed": [
-        "${ Domain } αφαιρέθηκε"
-      ],
-      "${ Email } removed": [
-        "${ Email } αφαιρέθηκε"
-      ]
-    },
     "Navigation": {
+      "All": [
+        "Όλα"
+      ],
       "Back": [
         "Πίσω"
       ],
@@ -6770,6 +6753,9 @@
       ],
       "Back to Mail": [
         "Πίσω στο Γραμματοκιβώτιο"
+      ],
+      "Spam": [
+        "Ενοχλητικά"
       ]
     },
     "New Label form": {
@@ -7016,17 +7002,6 @@
         "Διαχείριση ομάδας"
       ]
     },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Κάντε την ιδιωτικότητα προεπιλογή σας, για αντίγραφα ασφαλείας, αποθήκευση, κοινοποίηση και ανάκτηση αρχείων."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Για συνέχιση της χρήσης του ${ MAIL_APP_NAME } με προνομιακά χαρακτηριστικά, επιλέξτε τη συνδρομή και τον τρόπο πληρωμής σας."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Η δοκιμαστική σας περίοδος λήγει στις ${ formattedTrialExpirationDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } που λήγει σε ${ last4 }"
@@ -7045,6 +7020,17 @@
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Διασφαλισμένος αποθηκευτικός χώρος νέφους που επιτρέπει αποθήκευση, συγχρονισμό και κοινοποίηση αρχείων, εύκολα και διασφαλισμένα."
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Κάντε την ιδιωτικότητα προεπιλογή σας, για αντίγραφα ασφαλείας, αποθήκευση, κοινοποίηση και ανάκτηση αρχείων."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Για συνέχιση της χρήσης του ${ MAIL_APP_NAME } με προνομιακά χαρακτηριστικά, επιλέξτε τη συνδρομή και τον τρόπο πληρωμής σας."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Η δοκιμαστική σας περίοδος λήγει στις ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -7790,36 +7776,6 @@
         "Όνομα χρήστη"
       ]
     },
-    "Spam filter moved to blacklist": {
-      "${ Domain } moved to Block List": [
-        "${ Domain } μετακινήθηκε στη Λίστα Αποκλεισμών"
-      ],
-      "${ Email } moved to Block List": [
-        "${ Email } μετακινήθηκε στη Λίστα Αποκλεισμών"
-      ]
-    },
-    "Spam filter moved to whitelist": {
-      "${ Domain } moved to Allow List": [
-        "${ Domain } μετακινήθηκε στη Λίστα Επιτρέπονται"
-      ],
-      "${ Email } moved to Allow List": [
-        "${ Email } μετακινήθηκε στη Λίστα Επιτρέπονται"
-      ]
-    },
-    "Spam notification": {
-      "${ domain } added": [
-        "${ domain } προστέθηκαν"
-      ],
-      "${ domain } updated": [
-        "${ domain } ενημερώθηκε"
-      ],
-      "${ email } added": [
-        "${ email } προστέθηκαν"
-      ],
-      "${ email } updated": [
-        "${ email } ενημερώθηκε"
-      ]
-    },
     "Spotlight": {
       "Get up to 18 months of ${ planName } for free": [
         "Λάβετε δωρεάν έως 18 μήνες του ${ planName }"
@@ -8129,6 +8085,12 @@
       "CSV field": [
         "CSV πεδίο"
       ],
+      "Edit": [
+        "Επεξεργασία"
+      ],
+      "Email address": [
+        "Διεύθυνση email"
+      ],
       "Import": [
         "Εισαγωγή"
       ],
@@ -8254,12 +8216,6 @@
       "Add Sieve filter": [
         "Προσθήκη φίλτρου Sieve"
       ],
-      "Add to Allow List": [
-        "Προσθήκη στη λίστα επιθυμιτών"
-      ],
-      "Add to Block List": [
-        "Προσθήκη στην μαύρη λίστα"
-      ],
       "Add user": [
         "Προσθήκη χρήστη"
       ],
@@ -8271,9 +8227,6 @@
       ],
       "Allocate storage": [
         "Κατανομή αποθηκευτικού χώρου"
-      ],
-      "Allow List": [
-        "Λίστα επιθυμητών"
       ],
       "Amount": [
         "Ποσό"
@@ -8310,9 +8263,6 @@
       ],
       "Billing details": [
         "Στοιχεία χρέωσης"
-      ],
-      "Block List": [
-        "Λίστα αποκλεισμένων"
       ],
       "Bridge for ${ platform }": [
         "Bridge για ${ platform }"
@@ -8478,12 +8428,6 @@
       ],
       "Download ${ VPN_APP_NAME }": [
         "Λήψη ${ VPN_APP_NAME }"
-      ],
-      "Edit Allow List": [
-        "Επεξεργασία λίστας επιθυμητών"
-      ],
-      "Edit Block List": [
-        "Επεξεργασία Λίστας Φραγμένων"
       ],
       "Edit calendar": [
         "Επεξεργασία ημερολογίου"
@@ -8827,9 +8771,6 @@
       ],
       "Sort labels alphabetically": [
         "Ταξινόμηση ετικετών αλφαβητικά"
-      ],
-      "Spam filters": [
-        "Φίλτρα ενοχλητικών"
       ],
       "Start a new import": [
         "Ξεκινήστε μια νέα εισαγωγή"

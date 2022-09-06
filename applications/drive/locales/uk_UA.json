@@ -99,7 +99,7 @@
         "Закрити"
       ],
       "Close modal": [
-        "Закрити вікно"
+        "Close"
       ],
       "Close navigation": [
         "Закрити панель навігації"
@@ -2990,8 +2990,8 @@
       "There are no files yet": [
         "Поки що тут немає файлів"
       ],
-      "These files were shared using end-to-end encryption. To ensure their security — and the security of all your documents, photos, and files — store them in Proton Drive, the cloud storage service you can trust.": [
-        "Ці файли були надіслані наскрізно зашифрованими. Щоб бути впевненими їх безпеці, і безпеці всіх ваших документів, світлин і файлів — зберігайте їх у Proton Drive, хмарному сховищі, якому ви можете довіряти."
+      "These files were shared using end-to-end encryption. To keep them secure — and all your documents, photos, and files private — store them in your own Proton Drive. It's easy-to-use and free.": [
+        "Ці файли були надіслані наскрізно зашифрованими. Щоб захистити їх — і всі ваші документи, світлини та файли були приватними — зберігайте їх у своєму власному Proton Drive. Він простий у користуванні та безплатний."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Цей обліковий запис було призупинено через потенційне порушення правил."
@@ -3444,6 +3444,9 @@
       "Malware": [
         "Зловмисні програми"
       ],
+      "Manage categories": [
+        "Керувати категоріями"
+      ],
       "Manage folders": [
         "Керувати теками"
       ],
@@ -3455,6 +3458,12 @@
       ],
       "Modified": [
         "Змінено"
+      ],
+      "Move to Archive": [
+        "Перемістити до архіву"
+      ],
+      "Move to Inbox": [
+        "Перемістити до вхідних"
       ],
       "Name": [
         "Назва"
@@ -4825,6 +4834,9 @@
       "Encrypted data with verified digital signature": [
         "Зашифровані дані з перевіреним цифровим підписом"
       ],
+      "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
+        "Gmail автоматично класифікує деякі електронні листи, як-от «Соцмережі» або «Реклама». Ви можете вибрати, куди імпортувати ці електронні листи."
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Оберіть PGP-схему для використання при підписуванні чи шифруванні для користувача. Зауважте, що PGP/Inline примусово перетворює повідомлення у звичайний текст"
       ],
@@ -4856,7 +4868,10 @@
       "Name cannot include invisible characters, / or \\.": [
         "Назва не може містити невидимі символи, / або \\."
       ],
-      "Name must be ${ MAX_NAME_LENGTH } characters long at most": [
+      "Name must be ${ MAX_NAME_LENGTH } character long at most": [
+        "Назва повинна бути до ${ MAX_NAME_LENGTH } символу",
+        "Назва повинна бути до ${ MAX_NAME_LENGTH } символів",
+        "Назва повинна бути до ${ MAX_NAME_LENGTH } символів",
         "Назва повинна бути до ${ MAX_NAME_LENGTH } символів"
       ],
       "Name must not be empty": [
