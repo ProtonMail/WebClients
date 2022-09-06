@@ -27,6 +27,7 @@ import {
     TextArea,
     Toggle,
 } from '../../../components';
+import { useModalTwo } from '../../../components/modalTwo/useModalTwo';
 import { getObjectKeys } from '../../../helpers';
 import { getCountryByAbbr } from '../../../helpers/countries';
 import { useApi, useApiResult, useModals, useNotifications, useUser, useUserVPN, useVPNLogicals } from '../../../hooks';
@@ -55,6 +56,7 @@ import {
 } from './feature';
 import { normalize } from './normalize';
 import useCertificates from './useCertificates';
+import WireGuardCreationModal, { WireGuardCreationModalProps } from './WireGuardCreationModal';
 
 enum PLATFORM {
     MACOS = 'macOS',
@@ -210,6 +212,7 @@ const WireGuardConfigurationSection = () => {
     const certificateCacheRef = useRef<Record<string, Certificate>>({});
     const certificateCache = certificateCacheRef.current;
     const [logical, setLogical] = useState<Logical | undefined>();
+    const [creationModal, handleShowCreationModal] = useModalTwo<WireGuardCreationModalProps, void>(WireGuardCreationModal, false);
     const [creating, setCreating] = useState<boolean>(false);
     const [removing, setRemoving] = useState<Record<string, boolean>>({});
     const [removedCertificates, setRemovedCertificates] = useState<string[]>([]);
@@ -363,7 +366,7 @@ const WireGuardConfigurationSection = () => {
         [featuresConfig, peer, platform]
     );
 
-    const add = async (addedPeer?: Peer) => {
+    const add = async (addedPeer?: Peer, silent = false) => {
         if (creating) {
             return;
         }
@@ -371,6 +374,21 @@ const WireGuardConfigurationSection = () => {
         setCreating(true);
 
         try {
+            const serverName = addedPeer?.name;
+
+            if (!silent && serverName) {
+                handleShowCreationModal({
+                    open: true,
+                    serverName: serverName,
+                    text: undefined,
+                    config: undefined,
+                    onClose() {
+                        silent = true;
+                        handleShowCreationModal({open: false});
+                    },
+                });
+            }
+
             const { privateKey, publicKey } = await getKeyPair();
             const x25519PrivateKey = await getX25519PrivateKey(privateKey);
             const deviceName = nameInputRef?.current?.value || '';
@@ -384,11 +402,25 @@ const WireGuardConfigurationSection = () => {
             const id = newCertificate.id;
             const name = newCertificate.name || newCertificate.publicKeyFingerprint || newCertificate.publicKey;
 
-            createNotification({
-                // translator: name a name given by the user to a config file
-                text: c('Success notification')
-                    .t`Config "${name}" created, note that the private key is not stored and won't be shown again, you should copy or download this config.`,
-            });
+            if (!silent) {
+                const downloadCallback = getDownloadCallback(newCertificate);
+
+                handleShowCreationModal({
+                    open: true,
+                    serverName: serverName,
+                    // translator: name a name given by the user to a config file
+                    text: c('Success notification')
+                        .t`Config "${name}" created, note that the private key is not stored and won't be shown again, you should copy or download this config.`,
+                    config: newCertificate?.config || '',
+                    onDownload() {
+                        downloadCallback();
+                        handleShowCreationModal({open: false});
+                    },
+                    onClose() {
+                        handleShowCreationModal({open: false});
+                    },
+                });
+            }
 
             flushSync(() => {
                 setCurrentCertificate(id);
@@ -421,7 +453,7 @@ const WireGuardConfigurationSection = () => {
                 };
 
                 if (doAdd) {
-                    addPromise = add(newPeer);
+                    addPromise = add(newPeer, silent);
                 }
 
                 if (peer.ip !== server.EntryIP) {
@@ -430,13 +462,6 @@ const WireGuardConfigurationSection = () => {
             }
 
             setLogical({ ...logical });
-
-            if (!silent && serverName) {
-                createNotification({
-                    // translator: serverName is code name for a logical server such as NL-FREE#1
-                    text: c('Success notification').t`Creating config file for ${serverName}`,
-                });
-            }
 
             if (addPromise) {
                 await addPromise;
@@ -574,7 +599,7 @@ const WireGuardConfigurationSection = () => {
         }
     };
 
-    const getDownloadCallback = (certificate: Certificate) => async () => {
+    const getDownloadCallback = (certificate: Certificate) => () => {
         if (creating) {
             return;
         }
@@ -597,6 +622,7 @@ const WireGuardConfigurationSection = () => {
             <SettingsParagraph>
                 {c('Info').t`These configurations are provided to work with WireGuard routers and official clients.`}
             </SettingsParagraph>
+            {creationModal}
             {logicalInfoLoading || certificatesLoading ? (
                 <div aria-busy="true" className="text-center mb1">
                     <CircleLoader />
