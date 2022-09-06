@@ -19,10 +19,12 @@ const OrganizationSettingsRouter = ({
     redirect,
     path,
     organizationAppRoutes,
+    isBulkUserUploadEnabled,
 }: {
     redirect: ReactNode;
     path: string;
     organizationAppRoutes: ReturnType<typeof getOrganizationAppRoutes>;
+    isBulkUserUploadEnabled: boolean;
 }) => {
     const onceRef = useRef(false);
     const [organization] = useOrganization();
@@ -72,7 +74,7 @@ const OrganizationSettingsRouter = ({
                 <Route path={getSectionPath(path, users)}>
                     <PrivateMainSettingsArea config={users}>
                         <UsersAndAddressesSection />
-                        <MultiUserCreationSection />
+                        {isBulkUserUploadEnabled && <MultiUserCreationSection />}
                     </PrivateMainSettingsArea>
                 </Route>
             )}
