@@ -9,7 +9,7 @@ import { AppLink, useConfig, useFeature, useUser } from '../..';
 import { FeatureCode } from '../features';
 import TopBanner from './TopBanner';
 
-const ACCOUNT_CREATION_DATE_LIMIT = new Date('2022-07-15');
+const ACCOUNT_CREATION_DATE_LIMIT = new Date('2022-09-01');
 
 const DriveReleaseTopBanner = () => {
     const config = useConfig();
