@@ -1,8 +1,12 @@
 import { useState } from 'react';
 
+
+
 import { c } from 'ttag';
 
+import { ADDRESS_STATUS, RECEIVE_ADDRESS } from '@proton/shared/lib/constants';
 import { Domain, DomainAddress } from '@proton/shared/lib/interfaces';
+import clsx from '@proton/utils/clsx';
 
 import { Table, TableBody, TableHeader, TableRow } from '../../components';
 import { useEventManager } from '../../hooks';
@@ -30,12 +34,16 @@ const AddressesTable = ({ domain, domainAddresses }: Props) => {
             <TableBody>
                 {addresses.map((address) => {
                     const key = address.ID;
+                    const { Status, Receive } = address;
+                    const isAddressActive =
+                        Status === ADDRESS_STATUS.STATUS_ENABLED && Receive === RECEIVE_ADDRESS.RECEIVE_YES;
                     return (
                         <TableRow
                             key={key}
                             cells={[
                                 <AddressCatchAll
                                     key={key}
+                                    disabled={!isAddressActive}
                                     address={address}
                                     domain={domain}
                                     onChange={(id, value) => {
@@ -51,7 +59,11 @@ const AddressesTable = ({ domain, domainAddresses }: Props) => {
                                         call();
                                     }}
                                 />,
-                                <div key={key} className="text-ellipsis" title={address.Email}>
+                                <div
+                                    key={key}
+                                    className={clsx('text-ellipsis', !isAddressActive && 'color-disabled')}
+                                    title={address.Email}
+                                >
                                     {address.Email}
                                 </div>,
                                 <AddressStatus key={key} address={address} />,
