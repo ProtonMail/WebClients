@@ -43,9 +43,6 @@
       "Activate recovery": [
         "Aktivovat obnovení"
       ],
-      "Add": [
-        "Přidat"
-      ],
       "Add ${ BRAND_NAME } Account": [
         "Přidat ${ BRAND_NAME } Účet"
       ],
@@ -115,6 +112,9 @@
       "Back": [
         "Zpět"
       ],
+      "Block": [
+        "Blokovat"
+      ],
       "Bold": [
         "Tučně"
       ],
@@ -152,7 +152,7 @@
         "Zavřít"
       ],
       "Close modal": [
-        "Zavřít okno"
+        "Close"
       ],
       "Close navigation": [
         "Zavřít menu"
@@ -445,6 +445,12 @@
       "Mark as default": [
         "Označit jako výchozí"
       ],
+      "Mark as not spam": [
+        "Označit jako \"není spam\""
+      ],
+      "Mark as spam": [
+        "Označit jako spam"
+      ],
       "mark emails as": [
         "označit e-maily jako"
       ],
@@ -459,12 +465,6 @@
       ],
       "move emails to": [
         "přesunout e-maily do"
-      ],
-      "Move to Allow List": [
-        "Přesunout na seznam povolených"
-      ],
-      "Move to Block List": [
-        "Přidat na černou listinu"
       ],
       "Need help?": [
         "Potřebujete poradit?"
@@ -549,6 +549,9 @@
       ],
       "Remove": [
         "Odstranit"
+      ],
+      "Remove Block": [
+        "Odblokovat"
       ],
       "Remove bonuses": [
         "Odebrat bonusy"
@@ -723,6 +726,9 @@
       ],
       "Sort": [
         "Třídit"
+      ],
+      "Spam": [
+        "Spam"
       ],
       "Start import": [
         "Spustit import"
@@ -2702,9 +2708,6 @@
       "Domain not available, try again later": [
         "Doména není dostupná, zkuste to znovu později"
       ],
-      "Email address invalid": [
-        "E-mailová adresa je neplatná"
-      ],
       "Email is not valid": [
         "E-mailová adresa není platná"
       ],
@@ -2755,6 +2758,9 @@
       ],
       "Invalid domain": [
         "Neplatná doména"
+      ],
+      "Invalid email address": [
+        "Neplatná e-mailová adresa"
       ],
       "Invalid expiration date": [
         "Neplatné datum expirace"
@@ -3499,8 +3505,11 @@
       "Add a custom filter to automatically perform certain actions, like labeling or archiving messages. Filters can be edited and created directly via Sieve programming language.": [
         "Přidejte vlastní filtr pro automatické provádění určitých akcí, jako je označování nebo archivace zpráv. Filtry lze upravovat a vytvářet přímo prostřednictvím programovacího jazyka Sieve."
       ],
-      "Apply sender-specific spam rules. Messages from addresses or domains on the Allow List always go to your Inbox while messages from addresses or domains on the Block List always go to Spam. Marking a message as spam adds its address to the Block List. Marking a message as not spam adds it to the Allow List.": [
-        "Zde můžete nastavit své předvolby pro odesílatele spamu. Zprávy od povolených příjemců se vždy doručují do doručené pošty a zprávy z blokovaných adres se vždy přesunují do spamu. Označení zprávy jako spam přidá adresu na seznam blokovaných adres a označení zprávy, která není spam přidá adresu na seznam povolených adres."
+      "Emails from addresses marked as spam by you or Proton will go to your spam folder. If you want to allow emails from one of these addresses, mark it as \"not spam\".": [
+        "E-maily z adres, které jste vy nebo společnost Proton označili jako spam, budou odeslány do složky Spam. Pokud chcete e-maily z některé z těchto adres povolit, označte je jako \"není spam\"."
+      ],
+      "Emails from blocked addresses won't be delivered.": [
+        "E-maily z blokovaných adres nebudou doručeny."
       ],
       "Search in Allow List and Block List": [
         "Prohledat Seznam povolených a Seznam blokovaných"
@@ -5763,14 +5772,8 @@
       "Your account will be updated once the payment is cleared.": [
         "Jakmile bude platba zrušena, váš účet bude aktualizován."
       ],
-      "Your Allow List is empty.": [
-        "Váš seznam povolených odesílatelů je prázdný."
-      ],
       "Your bank requires 3-D Secure verification for security purposes.": [
         "Z důvodu bezpečnosti Vaše banka vyžaduje ověření pomocí 3-D Secure."
-      ],
-      "Your Block List is empty.": [
-        "Váš seznam blokovaných odesílatelů je prázdný."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Vaše data jsou připravena k importu z ${ importedEmailAddressStrong } do vašeho účtu Proton."
@@ -6020,9 +6023,6 @@
       ],
       "Close draft": [
         "Zavřít koncept"
-      ],
-      "Create filter with...": [
-        "Vytvořit filtr s..."
       ],
       "Delete permanently": [
         "Navždy smazat"
@@ -6275,6 +6275,9 @@
       "Address": [
         "Adresa"
       ],
+      "Address type": [
+        "Typ adresy"
+      ],
       "Addresses": [
         "Adresy"
       ],
@@ -6349,6 +6352,9 @@
       ],
       "Block malware, ads and trackers": [
         "Blokovat malware, reklamy a sledovače"
+      ],
+      "Blocked": [
+        "Blokováno"
       ],
       "bonus storage": [
         "bonusové úložiště"
@@ -6680,6 +6686,9 @@
       "Mailbox password": [
         "Heslo k poštovní schránce"
       ],
+      "Manage categories": [
+        "Zpravovat kategorie"
+      ],
       "Manage folders": [
         "Spravovat složky"
       ],
@@ -6697,6 +6706,12 @@
       ],
       "Move to": [
         "Přesunout do"
+      ],
+      "Move to Archive": [
+        "Přesunout do archivu"
+      ],
+      "Move to Inbox": [
+        "Přesunout do Doručené pošty"
       ],
       "Name": [
         "Jméno"
@@ -6721,6 +6736,9 @@
       ],
       "No label found": [
         "Nebyl nalezen žádný štítek"
+      ],
+      "Non Spam": [
+        "Není spam"
       ],
       "Non-standard ports": [
         "Nestandardní porty"
@@ -6872,6 +6890,9 @@
       "Signature": [
         "Podpis"
       ],
+      "Spam": [
+        "Spam"
+      ],
       "Starred": [
         "Oblíbené"
       ],
@@ -6973,9 +6994,6 @@
       ],
       "Waiting for subscription": [
         "Čekání na předplatné"
-      ],
-      "Want to add": [
-        "Chci přidat"
       ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Je nám líto, že odcházíte. Sdělte nám svůj důvod, abychom pomohli zlepšit naše služby."
@@ -7535,15 +7553,10 @@
         "třetí středu"
       ]
     },
-    "Moved to black/whitelist": {
-      "${ Domain } removed": [
-        "${ Domain } odebrána"
-      ],
-      "${ Email } removed": [
-        "${ Email } odebrán"
-      ]
-    },
     "Navigation": {
+      "All": [
+        "Vše"
+      ],
       "Back": [
         "Zpět"
       ],
@@ -7555,6 +7568,15 @@
       ],
       "Back to Mail": [
         "Zpět na e-mail"
+      ],
+      "Blocked": [
+        "Blokováno"
+      ],
+      "Non spam": [
+        "Není spam"
+      ],
+      "Spam": [
+        "Spam"
       ]
     },
     "New Label form": {
@@ -7901,26 +7923,6 @@
         "Řízení týmu"
       ]
     },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Zvolte si soukromí jako standard pro zálohu souborů, úložiště, sdílení a stahování."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "V opačném případě bude přístup k vašemu účtu omezen a váš účet bude nakonec deaktivován."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Pro další používání ${ MAIL_APP_NAME } s prémiovými funkcemi si vyberte předplatné a platební metodu."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Získejte obchodní balíček s přístupem ke všem prémiovým službám Proton."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Získejte nejvyšší balíček ochrany soukromí s přístupem ke všem prémiovým službám Proton."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Zkušební verze končí ${ formattedTrialExpirationDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } končící ${ last4 }"
@@ -7987,6 +7989,26 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Ve svém aktuálním tarifu využíváte akční cenu. Pokud přejdete na nižší verzi účtu, ztratíte možnost nadále využívat tuto cenu a při opětovném přihlášení k předplatnému již nebude dostupná."
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Zvolte si soukromí jako standard pro zálohu souborů, úložiště, sdílení a stahování."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "V opačném případě bude přístup k vašemu účtu omezen a váš účet bude nakonec deaktivován."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Pro další používání ${ MAIL_APP_NAME } s prémiovými funkcemi si vyberte předplatné a platební metodu."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Získejte obchodní balíček s přístupem ke všem prémiovým službám Proton."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Získejte nejvyšší balíček ochrany soukromí s přístupem ke všem prémiovým službám Proton."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Zkušební verze končí ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -8675,11 +8697,17 @@
       "Confirm password": [
         "Potvrdit heslo"
       ],
+      "domain.com": [
+        "domena.cz"
+      ],
       "E.g., ": [
         "Např., "
       ],
       "Email address": [
         "E-mailová adresa"
+      ],
+      "example@domain.com": [
+        "priklad@domena.cz"
       ],
       "Feedback": [
         "Zpětná vazba"
@@ -8999,36 +9027,6 @@
       ],
       "Username": [
         "Uživatelské jméno"
-      ]
-    },
-    "Spam filter moved to blacklist": {
-      "${ Domain } moved to Block List": [
-        "${ Domain } přesunuta na Seznam blokovaných"
-      ],
-      "${ Email } moved to Block List": [
-        "${ Email } byl přesunut na Seznam blokovaných"
-      ]
-    },
-    "Spam filter moved to whitelist": {
-      "${ Domain } moved to Allow List": [
-        "${ Domain } byla přesunuta na Seznam povolených"
-      ],
-      "${ Email } moved to Allow List": [
-        "${ Email } byl přesunut na Seznam povolených"
-      ]
-    },
-    "Spam notification": {
-      "${ domain } added": [
-        "${ domain } přidána"
-      ],
-      "${ domain } updated": [
-        "${ domain } aktualizována"
-      ],
-      "${ email } added": [
-        "${ email } přidán"
-      ],
-      "${ email } updated": [
-        "${ email } aktualizován"
       ]
     },
     "Spotlight": {
@@ -9468,8 +9466,17 @@
       "CSV field": [
         "CSV položka"
       ],
+      "Edit": [
+        "Upravit"
+      ],
+      "Email address": [
+        "E-mailová adresa"
+      ],
       "Import": [
         "Import"
+      ],
+      "Marked as": [
+        "Označeno jako"
       ],
       "Name": [
         "Jméno"
@@ -9602,11 +9609,14 @@
       "Add Sieve filter": [
         "Přidat filtr Sieve"
       ],
-      "Add to Allow List": [
-        "Přidat na seznam povolených"
+      "Add to block list": [
+        "Přidat na Seznam blokovaných"
       ],
-      "Add to Block List": [
-        "Přidat na černou listinu"
+      "Add to not spam list": [
+        "Přidat do seznamu \"není spam\""
+      ],
+      "Add to spam list": [
+        "Přidat do seznamu \"spam\""
       ],
       "Add user": [
         "Přidat uživatele"
@@ -9619,9 +9629,6 @@
       ],
       "Allocate storage": [
         "Přiřadit úložiště"
-      ],
-      "Allow List": [
-        "Seznam povolených"
       ],
       "Amount": [
         "Částka"
@@ -9661,9 +9668,6 @@
       ],
       "Billing details": [
         "Fakturační údaje"
-      ],
-      "Block List": [
-        "Seznam blokovaných"
       ],
       "Bridge for ${ platform }": [
         "Most pro ${ platform }"
@@ -9841,12 +9845,6 @@
       ],
       "Download ${ VPN_APP_NAME }": [
         "Stáhnout ${ VPN_APP_NAME }"
-      ],
-      "Edit Allow List": [
-        "Upravit seznam povolených"
-      ],
-      "Edit Block List": [
-        "Upravit černou listinu"
       ],
       "Edit calendar": [
         "Upravit kalendář"
@@ -10211,8 +10209,8 @@
       "Sort labels alphabetically": [
         "Řadit štítky abecedně"
       ],
-      "Spam filters": [
-        "Filtry nevyžádané pošty"
+      "Spam and block list": [
+        "Spam a seznam blokovaných"
       ],
       "Start a new import": [
         "Zahájit nový import"
@@ -10450,6 +10448,9 @@
       ],
       "Enabling advanced logs records the IP address for each event in the security log.": [
         "Umožňuje nahrávat pokročilé protokoly IP adres v bezpečnostním protokolu pro každou událost."
+      ],
+      "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
+        "Gmail automaticky zařazuje některé e-maily do kategorií, například Sociální sítě nebo Propagační akce. Můžete si vybrat, kam chcete tyto e-maily importovat."
       ],
       "Group emails in the same conversation together in your Inbox or display them separately.": [
         "Seskupte e-maily ve stejné konverzaci ve Vaší Doručené poště nebo je zobrazte samostatně."

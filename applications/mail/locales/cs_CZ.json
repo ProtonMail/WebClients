@@ -23,9 +23,6 @@
       "Add address": [
         "Přidat adresu"
       ],
-      "Add condition": [
-        "Přidat podmínku"
-      ],
       "Add contact": [
         "Přidat kontakt"
       ],
@@ -77,6 +74,9 @@
       "All Unstarred": [
         "Všechny bez hvězdičky"
       ],
+      "Allow messages": [
+        "Povolit zprávy"
+      ],
       "Apply": [
         "Použít"
       ],
@@ -94,6 +94,12 @@
       ],
       "Beta Access": [
         "Beta přístup"
+      ],
+      "Block": [
+        "Blokovat"
+      ],
+      "Block messages from this sender": [
+        "Blokovat zprávy tohoto odesílatele"
       ],
       "Bold": [
         "Tučně"
@@ -147,7 +153,7 @@
         "Zavřít editor"
       ],
       "Close modal": [
-        "Zavřít okno"
+        "Close"
       ],
       "Close navigation": [
         "Zavřít menu"
@@ -200,20 +206,17 @@
       "Create a new contact group": [
         "Vytvořit novou skupinu kontaktů"
       ],
-      "Create folder": [
-        "Vytvořit složku"
+      "Create a new folder": [
+        "Vytvořit novou složku"
       ],
-      "Create label": [
-        "Vytvořit štítek"
+      "Create a new label": [
+        "Vytvořit nový štítek"
       ],
       "Create new contact": [
         "Vytvořit nový kontakt"
       ],
       "Create new message": [
         "Vytvořit novou zprávu"
-      ],
-      "Custom filter": [
-        "Vlastní filtr"
       ],
       "Customize": [
         "Přizpůsobit"
@@ -347,9 +350,6 @@
       "Fewer search options": [
         "Méně možností vyhledávání"
       ],
-      "Filter on...": [
-        "Filtrovat…"
-      ],
       "Font": [
         "Písmo"
       ],
@@ -476,9 +476,6 @@
       "Label as...": [
         "Označit jako..."
       ],
-      "label emails as": [
-        "označit e-maily jako"
-      ],
       "Learn more": [
         "Více informací"
       ],
@@ -514,9 +511,6 @@
       ],
       "Mark as unread": [
         "Označit jako nepřečtené"
-      ],
-      "mark emails as": [
-        "označit e-maily jako"
       ],
       "Mark for deletion": [
         "Označit pro odstranění"
@@ -577,9 +571,6 @@
       ],
       "Move all to trash": [
         "Přesunout vše do koše"
-      ],
-      "move emails to": [
-        "přesunout e-maily do"
       ],
       "Move to": [
         "Přesunout do"
@@ -668,9 +659,6 @@
       "Pause": [
         "Pozastavit"
       ],
-      "Preview": [
-        "Nahled"
-      ],
       "Preview ${ attachmentName }": [
         "Náhled ${ attachmentName }"
       ],
@@ -736,9 +724,6 @@
       ],
       "Remove expiration time": [
         "Odebrat dobu platnosti"
-      ],
-      "Remove this label": [
-        "Odebrat štítek"
       ],
       "Rename": [
         "Přejmenovat"
@@ -811,9 +796,6 @@
       ],
       "Send anyway": [
         "Přesto odeslat"
-      ],
-      "send auto-reply email": [
-        "odeslat automatickou odpověď"
       ],
       "Send feedback": [
         "Odeslat zpětnou vazbu"
@@ -1903,6 +1885,11 @@
         "Yomi"
       ]
     },
+    "Context filtering disabled": {
+      "Your selection contains only yourself as sender": [
+        "Váš výběr obsahuje pouze vás jako odesílatele"
+      ]
+    },
     "Country name": {
       "Abkhazia": [
         "Abcházie"
@@ -2670,26 +2657,6 @@
         "Ålandské ostrovy"
       ]
     },
-    "CustomFilter": {
-      "Attachment": [
-        "Příloha"
-      ],
-      "Filter on": [
-        "Filtr zapnut"
-      ],
-      "Next": [
-        "Další"
-      ],
-      "Recipient": [
-        "Příjemce"
-      ],
-      "Sender": [
-        "Odesílatel"
-      ],
-      "Subject": [
-        "Předmět"
-      ]
-    },
     "Daily recurring event, frequency": {
       "${ count } time": [
         "${ count } krát",
@@ -2774,6 +2741,15 @@
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Slučování kontaktů... Tento proces může trvat několik minut. Po dokončení můžete okno zavřít."
+      ],
+      "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted. ${ manageBlockedAddressesSettingsLink } in settings.": [
+        "Nové e-maily od ${ senderEmailAddress } nebudou doručeny a budou trvale smazány. ${ manageBlockedAddressesSettingsLink } v nastavení."
+      ],
+      "No folders": [
+        "Žádné složky"
+      ],
+      "No labels": [
+        "Bez štítků"
       ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Soubor by měl mít maximální velikost ${ MAX_IMPORT_FILE_SIZE_STRING } a obsahovat pouze ${ MAX_IMPORT_CONTACTS_STRING } kontakt. Pokud je váš soubor větší, rozdělte jej do menších souborů.",
@@ -2964,9 +2940,6 @@
         "Vyberte datum v příštích ${ SCHEDULED_MAX_DATE_DAYS } dnech.",
         "Vyberte datum v příštích ${ SCHEDULED_MAX_DATE_DAYS } dnech."
       ],
-      "Condition incomplete": [
-        "Neúplná podmínka"
-      ],
       "Contact could not be saved": [
         "Kontakt se nepodařilo uložit"
       ],
@@ -3012,17 +2985,11 @@
       "Email is not valid": [
         "E-mailová adresa není platná"
       ],
-      "Empty condition": [
-        "Prázdná podmínka"
-      ],
       "Enter 6 digits": [
         "Zadejte 6 číslic"
       ],
       "Enter a password": [
         "Zadejte heslo"
-      ],
-      "Error in one of the conditions": [
-        "Chyba v jedné z podmínek"
       ],
       "Error while saving draft. Please try again.": [
         "Chyba při ukládání konceptu. Zkuste to prosím znovu."
@@ -3035,9 +3002,6 @@
       ],
       "Failed to encrypt attachment. Please try again.": [
         "Selhalo šifrování přílohy. Zkuste to znovu."
-      ],
-      "Filter with this name already exists": [
-        "Filtr s tímto názvem již existuje"
       ],
       "Folder name cannot be empty.": [
         "Název složky nesmí být prázdný."
@@ -3165,12 +3129,6 @@
       "Request timed out": [
         "Vypršel časový limit žádosti"
       ],
-      "Require at least one action": [
-        "Vyžaduje alespoň jednu akci"
-      ],
-      "Require at least one condition": [
-        "Vyžaduje alespoň jednu podmínku"
-      ],
       "Signature not verified": [
         "Podpis nebyl ověřen"
       ],
@@ -3254,9 +3212,6 @@
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser.": [
         "Tato zpráva může obsahovat URL odkazy, které nelze bez problému otevřít vaším aktuálním prohlížečem."
-      ],
-      "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
-        "Byl dosažen maximální počet aktivních filtrů. Přejděte prosím na placený tarif, abyste mohli aktivovat více filtrů."
       ],
       "Trusted keys are not valid for sending": [
         "Důvěryhodné klíče nejsou použitelné pro odesílání"
@@ -3622,18 +3577,6 @@
       ]
     },
     "Filter modal type": {
-      "If the attachments": [
-        "Pokud přílohy"
-      ],
-      "If the recipient": [
-        "Pokud příjemce"
-      ],
-      "If the sender": [
-        "Pokud odesílatel"
-      ],
-      "If the subject": [
-        "Pokud předmět"
-      ],
       "Select…": [
         "Vyberte…"
       ],
@@ -3653,9 +3596,6 @@
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } byl aktualizován"
-      ],
-      "Filter ${ Filter.Name } updated": [
-        "Filtr ${ Filter.Name } byl aktualizován"
       ]
     },
     "Filter option": {
@@ -3673,14 +3613,6 @@
       ],
       "Unread": [
         "Nepřečteno"
-      ]
-    },
-    "Filter preview": {
-      "read": [
-        "číst"
-      ],
-      "starred": [
-        "s hvězdičkou"
       ]
     },
     "Font Face Default": {
@@ -4111,12 +4043,6 @@
         "(${ memberCount } členů)",
         "(${ memberCount } členů)"
       ],
-      "(Filter if ALL of the following conditions are met)": [
-        "(Filtrovat pokud jsou splněny VŠECHNY následující podmínky)"
-      ],
-      "(Filter if ANY of the following conditions are met)": [
-        "(Filtrovat pokud je splněna JAKÁKOLIV z následujících podmínek)"
-      ],
       "(No Recipient)": [
         "(Žádný příjemce)"
       ],
@@ -4171,9 +4097,6 @@
       "All your calendars are disabled.": [
         "Všechny vaše kalendáře jsou zakázané."
       ],
-      "All your changes will be lost.": [
-        "Veškeré vaše změny budou ztraceny."
-      ],
       "An unknown public key has been detected for this recipient.": [
         "Pro tohoto příjemce byl zjištěn neznámý veřejný klíč."
       ],
@@ -4185,9 +4108,6 @@
       ],
       "Are you sure you want to delete all messages with this label?": [
         "Opravdu chcete smazat všechny zprávy s tímto štítkem?"
-      ],
-      "Are you sure you want to discard your changes?": [
-        "Určitě chcete zahodit všechny provedené změny?"
       ],
       "Are you sure you want to move all messages in this location to Trash?": [
         "Jste si jisti, že chcete přesunout všechny zprávy odtud do Koše?"
@@ -4438,9 +4358,6 @@
         "souborů připojeno",
         "souborů připojeno"
       ],
-      "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
-        "Filtry fungují na všech e-mailech, včetně příchozích i odeslaných e-mailů. Každý filtr musí obsahovat alespoň jméno, podmínku a činnost k vykonání."
-      ],
       "Folder": [
         "Složka"
       ],
@@ -4506,9 +4423,6 @@
       ],
       "Image URL": [
         "URL adresa obrázku"
-      ],
-      "Images have been removed because they are not allowed in auto-reply": [
-        "Obrázky byly odstraněny, protože nejsou povoleny v automatické odpovědi"
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Importovat ${ contactsFragment } a ${ contactsGroupsFragment }"
@@ -4636,9 +4550,6 @@
       "New": [
         "Nový"
       ],
-      "No action selected": [
-        "Není vybrána žádná akce"
-      ],
       "No contacts added yet": [
         "Doposud nebyly přidány žádné kontakty"
       ],
@@ -4651,17 +4562,11 @@
       "No folder found": [
         "Nenalezena žádná složka"
       ],
-      "No folder selected": [
-        "Není vybrána žádná složka"
-      ],
       "No group found": [
         "Nebyla nalezena žádná skupina"
       ],
       "No label found": [
         "Nebyl nalezen žádný štítek"
-      ],
-      "No label selected": [
-        "Není vybrán žádný štítek"
       ],
       "No more results found": [
         "Nebylo nalezeno více výsledků"
@@ -4830,6 +4735,9 @@
       ],
       "Send an encrypted, password protected message to a ${ boldText } email address.": [
         "Odeslat šifrovanou, heslem chráněnou zprávu pro e-mailovou adresu ${ boldText }."
+      ],
+      "Sender has been blocked.": [
+        "Odesílatel byl zablokován."
       ],
       "Sending": [
         "Odesílání"
@@ -5412,9 +5320,6 @@
       "Close draft": [
         "Zavřít koncept"
       ],
-      "Create filter with...": [
-        "Vytvořit filtr s..."
-      ],
       "Delete permanently": [
         "Trvale smazat"
       ],
@@ -5582,17 +5487,8 @@
       ]
     },
     "Label": {
-      " and ": [
-        " a "
-      ],
-      " and ${ l }": [
-        " a ${ l }"
-      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Dočasně nedostupné. Zkontrolujte to prosím později.)"
-      ],
-      "Actions": [
-        "Akce"
       ],
       "Add email address": [
         "Přidat e-mailovou adresu"
@@ -5606,26 +5502,14 @@
       "Address": [
         "Adresa"
       ],
-      "ALL": [
-        "VŠE"
-      ],
       "Also archive": [
         "Také archivovat"
       ],
-      "AND": [
-        "A"
+      "Always label senders emails": [
+        "Vždy označit e-maily odesílatelů"
       ],
-      "and": [
-        "a"
-      ],
-      "And": [
-        "Do"
-      ],
-      "ANY": [
-        "JAKÝKOLI"
-      ],
-      "Apply filter to existing emails": [
-        "Použít filtr na existující e-maily"
+      "Always move senders emails": [
+        "Vždy přesunout e-maily odesílatelů"
       ],
       "Attach screenshot(s)": [
         "Přiložit sním(ek/ky) obrazovky"
@@ -5675,9 +5559,6 @@
       "Code is 6 digits without spaces": [
         "Kód má 6 číslic bez mezer"
       ],
-      "Conditions": [
-        "Podmínky"
-      ],
       "Confirm password": [
         "Potvrdit heslo"
       ],
@@ -5702,6 +5583,9 @@
       "Do not ask again": [
         "Příště se neptat"
       ],
+      "Don't show this again": [
+        "Příště nezobrazovat"
+      ],
       "Email": [
         "E-mail"
       ],
@@ -5725,9 +5609,6 @@
       ],
       "Extended address": [
         "Rozšířená adresa"
-      ],
-      "Filter Name": [
-        "Název filtru"
       ],
       "Folder location": [
         "Umístění složky"
@@ -5758,12 +5639,6 @@
       ],
       "I understand the risk": [
         "Rozumím rizikům"
-      ],
-      "IF": [
-        "KDYŽ"
-      ],
-      "If": [
-        "Když"
       ],
       "Import all messages": [
         "Importovat všechny zprávy"
@@ -5804,6 +5679,9 @@
       "Mailbox password": [
         "Heslo k poštovní schránce"
       ],
+      "Manage categories": [
+        "Zpravovat kategorie"
+      ],
       "Manage folders": [
         "Správa složek"
       ],
@@ -5813,17 +5691,17 @@
       "Manage my addresses": [
         "Správa mých adres"
       ],
-      "Mark as": [
-        "Označit jako"
-      ],
       "Move to": [
         "Přesunout do"
       ],
+      "Move to Archive": [
+        "Přesunout do archivu"
+      ],
+      "Move to Inbox": [
+        "Přesunout do Doručené pošty"
+      ],
       "Name": [
         "Jméno"
-      ],
-      "No label found": [
-        "Nebyl nalezen žádný štítek"
       ],
       "Notification": [
         "Oznámení"
@@ -5836,15 +5714,6 @@
       ],
       "Operating system version": [
         "Verze operačního systému"
-      ],
-      "OR": [
-        "NEBO"
-      ],
-      "or": [
-        "nebo"
-      ],
-      "Or": [
-        "Nebo"
       ],
       "Participants": [
         "Účastníci"
@@ -5873,9 +5742,6 @@
       "Public keys": [
         "Veřejné klíče"
       ],
-      "Read": [
-        "Přečteno"
-      ],
       "Recipient": [
         "Příjemce"
       ],
@@ -5903,9 +5769,6 @@
       "Select how your mailbox looks like by default.": [
         "Vyberte vzhled vaší schránky."
       ],
-      "Send auto-reply": [
-        "Poslat automatickou odpověď"
-      ],
       "Sender": [
         "Odesílatel"
       ],
@@ -5915,32 +5778,11 @@
       "Size:": [
         "Velikost:"
       ],
-      "Starred": [
-        "S hvězdičkou"
-      ],
-      "Statement": [
-        "Prohlášení"
-      ],
       "Street address": [
         "Ulice a č. p."
       ],
       "System information": [
         "Informace o systému"
-      ],
-      "The email was sent ${ attachment }": [
-        "E-mail byl odeslán ${ attachment }"
-      ],
-      "the email was sent ${ attachment }": [
-        "e-mail byl odeslán ${ attachment }"
-      ],
-      "The email was sent ${ attachmentStrong }": [
-        "E-mail byl odeslán ${ attachmentStrong }"
-      ],
-      "the email was sent ${ label }": [
-        "e-mail byl odeslán ${ label }"
-      ],
-      "Then": [
-        "Potom"
       ],
       "Time": [
         "Čas"
@@ -5971,21 +5813,6 @@
       ],
       "What happened?": [
         "Co se stalo?"
-      ],
-      "With attachment": [
-        "S přílohami"
-      ],
-      "with attachments": [
-        "s přílohami"
-      ],
-      "Without attachment": [
-        "Bez příloh"
-      ],
-      "without attachment": [
-        "bez příloh"
-      ],
-      "without attachments": [
-        "bez příloh"
       ],
       "Wonderful": [
         "Úžasné"
@@ -6064,12 +5891,6 @@
       "Activate": [
         "Aktivovat"
       ],
-      "Add folder": [
-        "Přidat složku"
-      ],
-      "Add label": [
-        "Přidat štítek"
-      ],
       "All mail": [
         "Všechny zprávy"
       ],
@@ -6126,6 +5947,9 @@
       ],
       "Less": [
         "Méně"
+      ],
+      "Manage blocked email addresses": [
+        "Spravovat blokované e-mailové adresy"
       ],
       "Manage your folders": [
         "Spravovat složky"
@@ -6513,8 +6337,8 @@
       ]
     },
     "Notification": {
-      "${ _Filter.Name } created": [
-        "${ _Filter.Name } byl vytvořen"
+      "Block removed": [
+        "Blokovat odstraněné"
       ],
       "Contact group created": [
         "Skupina kontaktů byla vytvořena"
@@ -6524,6 +6348,9 @@
       ],
       "Password has been set successfully": [
         "Heslo bylo úspěšně nastaveno"
+      ],
+      "Sender ${ senderEmail } blocked": [
+        "Odesílatel ${ senderEmail } zablokován"
       ]
     },
     "Oauth instructions": {
@@ -6590,9 +6417,6 @@
       ]
     },
     "Option group": {
-      "Custom folders": [
-        "Vlastní složky"
-      ],
       "Default folders": [
         "Výchozí složky"
       ],
@@ -6734,9 +6558,6 @@
       ],
       "Text": [
         "Text"
-      ],
-      "Type text or keyword": [
-        "Zadejte text nebo klíčové slovo"
       ],
       "Write your message": [
         "Napište zprávu"
@@ -7049,20 +6870,6 @@
         "Odběr byl odhlášen"
       ]
     },
-    "Step in filter modal": {
-      "Actions": [
-        "Akce"
-      ],
-      "Conditions": [
-        "Podmínky"
-      ],
-      "Name": [
-        "Jméno"
-      ],
-      "Preview": [
-        "Náhled"
-      ]
-    },
     "Storage": {
       "Get extra storage for free": [
         "Získat další úložiště zdarma"
@@ -7249,6 +7056,12 @@
       "Conversation removed from ${ labelName }.": [
         "Konverzace odstraněna z ${ labelName }."
       ],
+      "Conversations from ${ sendersList } will be labelled as ${ labelsList }": [
+        "Konverzace od ${ sendersList } budou označeny jako ${ labelsList }"
+      ],
+      "Conversations from ${ sendersList } will be moved to ${ folder }": [
+        "Konverzace od ${ sendersList } budou přesunuty do ${ folder }"
+      ],
       "Draft deleted": [
         "Návrh vymazán"
       ],
@@ -7305,6 +7118,12 @@
       ],
       "Message removed from ${ labelName }.": [
         "Zpráva odstraněna z ${ labelName }."
+      ],
+      "Messages from ${ sendersList } will be labelled as ${ labelsList }": [
+        "Zprávy od ${ sendersList } budou označeny jako ${ labelsList }"
+      ],
+      "Messages from ${ sendersList } will be moved to ${ folder }": [
+        "Zprávy od ${ sendersList } budou přesunuty do ${ folder }"
       ],
       "Move ${ selectionCount } conversation": [
         "Přesunout ${ selectionCount } konverzaci",
@@ -7483,9 +7302,6 @@
       "Add contact group name": [
         "Přidat název skupiny kontaktů"
       ],
-      "Add filter": [
-        "Přidat filtr"
-      ],
       "Add to ${ groupCount } group": [
         "Přidat do ${ groupCount } skupiny",
         "Přidat do ${ groupCount } skupin",
@@ -7501,9 +7317,6 @@
       "Archive": [
         "Archiv"
       ],
-      "Are you sure you want to close?": [
-        "Opravdu chcete zavřít editor filtrů?"
-      ],
       "Attachments": [
         "Přílohy"
       ],
@@ -7518,6 +7331,9 @@
       ],
       "Blind Carbon Copy": [
         "Skrytá kopie"
+      ],
+      "Block sender": [
+        "Blokovat odesílatele"
       ],
       "Carbon Copy": [
         "Kopie"
@@ -7551,12 +7367,6 @@
       ],
       "Conversation list": [
         "Seznam konverzací"
-      ],
-      "Create a new folder": [
-        "Vytvořit novou složku"
-      ],
-      "Create a new label": [
-        "Vytvořit nový štítek"
       ],
       "Create contact": [
         "Vytvořit kontakt"
@@ -7642,9 +7452,6 @@
       "Edit contact group": [
         "Upravit skupinu kontaktů"
       ],
-      "Edit filter": [
-        "Upravit filtr"
-      ],
       "Edit image": [
         "Upravit obrázek"
       ],
@@ -7683,9 +7490,6 @@
       ],
       "Feedback": [
         "Zpětná vazba"
-      ],
-      "Filter on": [
-        "Zapnout filtr"
       ],
       "Forward": [
         "Přeposlat"
@@ -7988,6 +7792,9 @@
       "Encrypted data with verified digital signature": [
         "Zašifrovaná data s ověřeným digitálním podpisem"
       ],
+      "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
+        "Gmail automaticky zařazuje některé e-maily do kategorií, například Sociální sítě nebo Propagační akce. Můžete si vybrat, kam chcete tyto e-maily importovat."
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Vyberte PGP schéma, které se použije při podepisování, nebo šifrování uživatele. Nezapomeňte, že PGP/Inline vyžaduje zprávy ve formátu prostého textu"
       ],
@@ -7999,9 +7806,6 @@
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
         "Tato akce stáhne všechny zprávy, aby mohly být lokálně prohledávány. Vymazání dat prohlížeče deaktivuje tuto volbu."
-      ],
-      "This feature is only available for paid users": [
-        "Tato funkce je k dispozici pouze platícím uživatelům"
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Nahrajte veřejný klíč, pro umožnění zasílání end-to-end šifrování e-mailů k tomuto e-mailu"

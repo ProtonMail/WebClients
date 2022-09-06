@@ -99,7 +99,7 @@
         "Fechar"
       ],
       "Close modal": [
-        "Fechar janela"
+        "Close"
       ],
       "Close navigation": [
         "Fechar navegação"
@@ -2458,6 +2458,12 @@
       "Download failed": [
         "Falha no download"
       ],
+      "Download failed due to ${ error }": [
+        "Download falhou devido a ${ error }"
+      ],
+      "Download finished": [
+        "Download concluído"
+      ],
       "Download of ${ downloadFileName } will be aborted": [
         "Download de ${ downloadFileName } será abortado"
       ],
@@ -2854,9 +2860,6 @@
       ],
       "There are no files yet": [
         "Ainda não há arquivos"
-      ],
-      "These files were shared using end-to-end encryption. To ensure their security — and the security of all your documents, photos, and files — store them in Proton Drive, the cloud storage service you can trust.": [
-        "Esses arquivos se compartilharam usando criptografia de ponta a ponta. Para garantir sua segurança, e privacidade de todos seus documentos, fotos e arquivos, armazene no Proton Drive, o serviço de armazenamento em nuvem em quem você pode confiar."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Essa conta foi suspensa devido a uma possível violação da política de uso."
@@ -3299,6 +3302,9 @@
       "Malware": [
         "Malware"
       ],
+      "Manage categories": [
+        "Gerenciar categorias"
+      ],
       "Manage folders": [
         "Gerenciar pastas"
       ],
@@ -3310,6 +3316,12 @@
       ],
       "Modified": [
         "Modificado"
+      ],
+      "Move to Archive": [
+        "Mover para Arquivo"
+      ],
+      "Move to Inbox": [
+        "Mover para Caixa de Entrada"
       ],
       "Name": [
         "Nome"
@@ -4163,6 +4175,18 @@
         "${ emailsCount } membro",
         "${ emailsCount } membros"
       ],
+      "${ numberOfFailedTransfer.total } failed download": [
+        "${ numberOfFailedTransfer.total } falha em download",
+        "${ numberOfFailedTransfer.total } falhas em downloads"
+      ],
+      "${ numberOfFailedTransfer.total } failed transfer": [
+        "${ numberOfFailedTransfer.total } falha em transferência",
+        "${ numberOfFailedTransfer.total } falhas em transferências"
+      ],
+      "${ numberOfFailedTransfer.total } failed upload": [
+        "${ numberOfFailedTransfer.total } falha em upload",
+        "${ numberOfFailedTransfer.total } falhas em uploads"
+      ],
       "Account suspended": [
         "Conta suspensa"
       ],
@@ -4600,6 +4624,9 @@
       "Encrypted data with verified digital signature": [
         "Dados criptografados com assinatura digital verificada"
       ],
+      "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
+        "Gmail automaticamente categoriza alguns e-mails como Social e Promoções. Você pode selecionar para onde importar esses e-mails."
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Selecione o esquema PGP a ser usado durante a assinatura ou criptografia de um usuário. Observe que o PGP/Incorporado força o envio de mensagens de texto sem formatação"
       ],
@@ -4629,7 +4656,8 @@
       "Name cannot include invisible characters, / or \\.": [
         "Nome não pode incluir caracteres invisíveis, / ou \\."
       ],
-      "Name must be ${ MAX_NAME_LENGTH } characters long at most": [
+      "Name must be ${ MAX_NAME_LENGTH } character long at most": [
+        "",
         "O nome deve ter no máximo ${ MAX_NAME_LENGTH } caracteres"
       ],
       "Name must not be empty": [

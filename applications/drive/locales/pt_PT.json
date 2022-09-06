@@ -72,7 +72,7 @@
         "Fechar"
       ],
       "Close modal": [
-        "Fechar janela"
+        "Close"
       ],
       "Close navigation": [
         "Fechar navegação"
@@ -1294,6 +1294,9 @@
       "There are no files yet": [
         "Ainda não há ficheiros"
       ],
+      "These files were shared using end-to-end encryption. To keep them secure — and all your documents, photos, and files private — store them in your own Proton Drive. It's easy-to-use and free.": [
+        "Estes ficheiros foram partilhados usando encriptação ponto a ponto. Para os manter seguros — assim como todos os seus documentos, fotos, e ficheiros privados — armazene-os no Proton Drive. É fácil de usar e gratuito."
+      ],
       "This account has been suspended due to a potential policy violation.": [
         "Esta conta foi suspensa devido a uma potencial violação da política."
       ],
@@ -1542,11 +1545,20 @@
       "Mailbox password": [
         "Senha da caixa de correio"
       ],
+      "Manage categories": [
+        "Gerir categorias"
+      ],
       "Merge a folder": [
         "Unir uma pasta"
       ],
       "Modified": [
         "Modificado"
+      ],
+      "Move to Archive": [
+        "Mover para Arquivo"
+      ],
+      "Move to Inbox": [
+        "Mover para Caixa de entrada"
       ],
       "Name": [
         "Nome"
@@ -2406,7 +2418,8 @@
       "Name cannot include invisible characters, / or \\.": [
         "O nome não pode incluir caracteres invisíveis, / ou \\."
       ],
-      "Name must be ${ MAX_NAME_LENGTH } characters long at most": [
+      "Name must be ${ MAX_NAME_LENGTH } character long at most": [
+        "O nome deve ter no máximo ${ MAX_NAME_LENGTH } caracteres",
         "O nome deve ter no máximo ${ MAX_NAME_LENGTH } caracteres"
       ],
       "Name must not be empty": [

@@ -23,9 +23,6 @@
       "Add address": [
         "Додати адресу"
       ],
-      "Add condition": [
-        "Додати умову"
-      ],
       "Add contact": [
         "Додати контакт"
       ],
@@ -77,6 +74,9 @@
       "All Unstarred": [
         "Усі без зірочки"
       ],
+      "Allow messages": [
+        "Дозволити повідомлення"
+      ],
       "Apply": [
         "Застосувати"
       ],
@@ -94,6 +94,12 @@
       ],
       "Beta Access": [
         "Бета-доступ"
+      ],
+      "Block": [
+        "Заблкувати"
+      ],
+      "Block messages from this sender": [
+        "Заблокувати повідомлення від цього відправника"
       ],
       "Bold": [
         "Жирний"
@@ -147,7 +153,7 @@
         "Закрити редактор"
       ],
       "Close modal": [
-        "Закрити вікно"
+        "Close"
       ],
       "Close navigation": [
         "Закрити панель навігації"
@@ -200,20 +206,17 @@
       "Create a new contact group": [
         "Створити нову групу контактів"
       ],
-      "Create folder": [
-        "Створити теку"
+      "Create a new folder": [
+        "Створити нову теку"
       ],
-      "Create label": [
-        "Створити мітку"
+      "Create a new label": [
+        "Створити нову мітку"
       ],
       "Create new contact": [
         "Створити новий контакт"
       ],
       "Create new message": [
         "Створити повідомлення"
-      ],
-      "Custom filter": [
-        "Власний фільтр"
       ],
       "Customize": [
         "Налаштувати"
@@ -347,9 +350,6 @@
       "Fewer search options": [
         "Менше варіантів пошуку"
       ],
-      "Filter on...": [
-        "Фільтр..."
-      ],
       "Font": [
         "Шрифт"
       ],
@@ -476,9 +476,6 @@
       "Label as...": [
         "Позначити міткою..."
       ],
-      "label emails as": [
-        "позначати листи міткою"
-      ],
       "Learn more": [
         "Докладніше"
       ],
@@ -514,9 +511,6 @@
       ],
       "Mark as unread": [
         "Позначити непрочитаним"
-      ],
-      "mark emails as": [
-        "позначити листи"
       ],
       "Mark for deletion": [
         "Позначити для видалення"
@@ -577,9 +571,6 @@
       ],
       "Move all to trash": [
         "Перемістити все до смітника"
-      ],
-      "move emails to": [
-        "перемістити листи"
       ],
       "Move to": [
         "Перемістити"
@@ -668,9 +659,6 @@
       "Pause": [
         "Призупинити"
       ],
-      "Preview": [
-        "Перегляд"
-      ],
       "Preview ${ attachmentName }": [
         "Переглянути ${ attachmentName }"
       ],
@@ -736,9 +724,6 @@
       ],
       "Remove expiration time": [
         "Вилучити термін дії"
-      ],
-      "Remove this label": [
-        "Вилучити цю мітку"
       ],
       "Rename": [
         "Перейменувати"
@@ -811,9 +796,6 @@
       ],
       "Send anyway": [
         "Все одно надіслати"
-      ],
-      "send auto-reply email": [
-        "надіслати лист з автоматичною відповіддю"
       ],
       "Send feedback": [
         "Надіслати відгук"
@@ -1903,6 +1885,11 @@
         "Yomi"
       ]
     },
+    "Context filtering disabled": {
+      "Your selection contains only yourself as sender": [
+        "Ваш вибір містить відправником лише вас"
+      ]
+    },
     "Country name": {
       "Abkhazia": [
         "Абхазія"
@@ -2670,26 +2657,6 @@
         "Аландські острови"
       ]
     },
-    "CustomFilter": {
-      "Attachment": [
-        "Вкладення"
-      ],
-      "Filter on": [
-        "Фільтрувати"
-      ],
-      "Next": [
-        "Далі"
-      ],
-      "Recipient": [
-        "Отримувач"
-      ],
-      "Sender": [
-        "Відправник"
-      ],
-      "Subject": [
-        "Тема"
-      ]
-    },
     "Daily recurring event, frequency": {
       "${ count } time": [
         "${ count } раз",
@@ -2774,6 +2741,15 @@
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Об'єднання контактів... Це може тривати кілька хвилин. Коли процес завершиться, ви можете закрити це вікно."
+      ],
+      "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted. ${ manageBlockedAddressesSettingsLink } in settings.": [
+        "Нові електронні листи від ${ senderEmailAddress } не доставлятимуться та будуть назавжди видалені. ${ manageBlockedAddressesSettingsLink } у налаштуваннях."
+      ],
+      "No folders": [
+        "Немає тек"
+      ],
+      "No labels": [
+        "Немає міток"
       ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Файл повинен мати максимальний розмір ${ MAX_IMPORT_FILE_SIZE_STRING } та містити до ${ MAX_IMPORT_CONTACTS_STRING } контакту. Якщо ваш файл більший, розділіть його на менші файли.",
@@ -2964,9 +2940,6 @@
         "Виберіть дату в межах наступних ${ SCHEDULED_MAX_DATE_DAYS } днів.",
         "Виберіть дату в межах наступних ${ SCHEDULED_MAX_DATE_DAYS } днів."
       ],
-      "Condition incomplete": [
-        "Неповна умова"
-      ],
       "Contact could not be saved": [
         "Не вдалося зберегти контакт"
       ],
@@ -3012,17 +2985,11 @@
       "Email is not valid": [
         "Е-пошта недійсна"
       ],
-      "Empty condition": [
-        "Порожня умова"
-      ],
       "Enter 6 digits": [
         "Введіть 6 цифр"
       ],
       "Enter a password": [
         "Введіть пароль"
-      ],
-      "Error in one of the conditions": [
-        "Помилка в одній з умов"
       ],
       "Error while saving draft. Please try again.": [
         "Помилка збереження чернетки. Повторіть спробу."
@@ -3035,9 +3002,6 @@
       ],
       "Failed to encrypt attachment. Please try again.": [
         "Не вдалося зашифрувати вкладення. Спробуйте ще раз."
-      ],
-      "Filter with this name already exists": [
-        "Фільтр з цією назвою вже існує"
       ],
       "Folder name cannot be empty.": [
         "Тека не може бути без назви."
@@ -3165,12 +3129,6 @@
       "Request timed out": [
         "Час очікування запиту завершився"
       ],
-      "Require at least one action": [
-        "Необхідна принаймні одна дія"
-      ],
-      "Require at least one condition": [
-        "Необхідна принаймні одна умова"
-      ],
       "Signature not verified": [
         "Підпис не перевірено"
       ],
@@ -3254,9 +3212,6 @@
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser.": [
         "Це повідомлення може містити URL-посилання, які неможливо правильно відкрити у цьому браузері."
-      ],
-      "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
-        "Забагато активних фільтрів. Перейдіть на платний тарифний план, щоб активувати більше фільтрів."
       ],
       "Trusted keys are not valid for sending": [
         "Довірені ключі недійсні для надсилання"
@@ -3622,18 +3577,6 @@
       ]
     },
     "Filter modal type": {
-      "If the attachments": [
-        "Якщо вкладення"
-      ],
-      "If the recipient": [
-        "Якщо отримувач"
-      ],
-      "If the sender": [
-        "Якщо відправник"
-      ],
-      "If the subject": [
-        "Якщо тема"
-      ],
       "Select…": [
         "Обрати…"
       ],
@@ -3653,9 +3596,6 @@
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } оновлено"
-      ],
-      "Filter ${ Filter.Name } updated": [
-        "Фільтр ${ Filter.Name } оновлено"
       ]
     },
     "Filter option": {
@@ -3673,14 +3613,6 @@
       ],
       "Unread": [
         "Непрочитані"
-      ]
-    },
-    "Filter preview": {
-      "read": [
-        "прочитані"
-      ],
-      "starred": [
-        "позначені зірочкою"
       ]
     },
     "Font Face Default": {
@@ -4111,12 +4043,6 @@
         "(${ memberCount } учасників)",
         "(${ memberCount } учасників)"
       ],
-      "(Filter if ALL of the following conditions are met)": [
-        "(Фільтрувати, якщо виконуються ВСІ зазначені умови)"
-      ],
-      "(Filter if ANY of the following conditions are met)": [
-        "(Фільтрувати, якщо виконується БУДЬ-ЯКА із зазначених умов)"
-      ],
       "(No Recipient)": [
         "(Немає отримувача)"
       ],
@@ -4171,9 +4097,6 @@
       "All your calendars are disabled.": [
         "Усі ваші календарі вимкнені."
       ],
-      "All your changes will be lost.": [
-        "Всі зміни будуть втрачені."
-      ],
       "An unknown public key has been detected for this recipient.": [
         "Для цього отримувача було виявлено невідомий відкритий ключ."
       ],
@@ -4185,9 +4108,6 @@
       ],
       "Are you sure you want to delete all messages with this label?": [
         "Ви дійсно хочете видалити всі повідомлення з цією міткою?"
-      ],
-      "Are you sure you want to discard your changes?": [
-        "Ви справді хочете відхилити зміни?"
       ],
       "Are you sure you want to move all messages in this location to Trash?": [
         "Ви справді хочете перемістити всі повідомлення з цього розташування до смітника?"
@@ -4438,9 +4358,6 @@
         "вкладених файлів",
         "вкладених файлів"
       ],
-      "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
-        "Фільтри працюють для всіх листів, включно з вхідними та надісланими. Кожен фільтр повинен містити принаймні назву, умову та дію."
-      ],
       "Folder": [
         "Тека"
       ],
@@ -4506,9 +4423,6 @@
       ],
       "Image URL": [
         "URL-адреса зображення"
-      ],
-      "Images have been removed because they are not allowed in auto-reply": [
-        "Зображення були вилучені, оскільки вони не дозволені в автовідповіді"
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Імпорт ${ contactsFragment } і ${ contactsGroupsFragment }"
@@ -4636,9 +4550,6 @@
       "New": [
         "Нове"
       ],
-      "No action selected": [
-        "Жодної дії не вибрано"
-      ],
       "No contacts added yet": [
         "Контактів ще не додано"
       ],
@@ -4651,17 +4562,11 @@
       "No folder found": [
         "Теку не знайдено"
       ],
-      "No folder selected": [
-        "Жодної теки не вибрано"
-      ],
       "No group found": [
         "Групу не знайдено"
       ],
       "No label found": [
         "Мітку не знайдено"
-      ],
-      "No label selected": [
-        "Жодної мітки не вибрано"
       ],
       "No more results found": [
         "Більше нічого не знайдено"
@@ -4830,6 +4735,9 @@
       ],
       "Send an encrypted, password protected message to a ${ boldText } email address.": [
         "Надіслати зашифроване, захищене паролем повідомлення на електронну адресу ${ boldText }."
+      ],
+      "Sender has been blocked.": [
+        "Відправника заблоковано."
       ],
       "Sending": [
         "Надсилається"
@@ -5412,9 +5320,6 @@
       "Close draft": [
         "Закрити чернетку"
       ],
-      "Create filter with...": [
-        "Створити фільтр..."
-      ],
       "Delete permanently": [
         "Видалити остаточно"
       ],
@@ -5582,17 +5487,8 @@
       ]
     },
     "Label": {
-      " and ": [
-        " і "
-      ],
-      " and ${ l }": [
-        " та ${ l }"
-      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Тимчасово недоступно. Повторіть спробу пізніше.)"
-      ],
-      "Actions": [
-        "Дії"
       ],
       "Add email address": [
         "Додати адресу е-пошти"
@@ -5606,26 +5502,14 @@
       "Address": [
         "Адреса"
       ],
-      "ALL": [
-        "ВСЕ"
-      ],
       "Also archive": [
         "Також архівувати"
       ],
-      "AND": [
-        "ТА"
+      "Always label senders emails": [
+        "Завжди позначати мітками е-пошту відправників"
       ],
-      "and": [
-        "і"
-      ],
-      "And": [
-        "Та"
-      ],
-      "ANY": [
-        "БУДЬ-ЯКЕ"
-      ],
-      "Apply filter to existing emails": [
-        "Застосувати фільтр до наявних електронних листів"
+      "Always move senders emails": [
+        "Завжди переміщувати е-пошту відправників"
       ],
       "Attach screenshot(s)": [
         "Додати знімки екрана"
@@ -5675,9 +5559,6 @@
       "Code is 6 digits without spaces": [
         "Код складається з 6 цифр без пробілів"
       ],
-      "Conditions": [
-        "Умови"
-      ],
       "Confirm password": [
         "Підтвердити пароль"
       ],
@@ -5702,6 +5583,9 @@
       "Do not ask again": [
         "Не питати знову"
       ],
+      "Don't show this again": [
+        "Більше не показувати"
+      ],
       "Email": [
         "Е-пошта"
       ],
@@ -5725,9 +5609,6 @@
       ],
       "Extended address": [
         "Розширена адреса"
-      ],
-      "Filter Name": [
-        "Назва фільтра"
       ],
       "Folder location": [
         "Розташування теки"
@@ -5758,12 +5639,6 @@
       ],
       "I understand the risk": [
         "Я розумію ризик"
-      ],
-      "IF": [
-        "ЯКЩО"
-      ],
-      "If": [
-        "Якщо"
       ],
       "Import all messages": [
         "Імпортувати всі повідомлення"
@@ -5804,6 +5679,9 @@
       "Mailbox password": [
         "Пароль поштової скриньки"
       ],
+      "Manage categories": [
+        "Керувати категоріями"
+      ],
       "Manage folders": [
         "Керувати теками"
       ],
@@ -5813,17 +5691,17 @@
       "Manage my addresses": [
         "Керувати моїми адресами"
       ],
-      "Mark as": [
-        "Позначити як"
-      ],
       "Move to": [
         "Перемістити"
       ],
+      "Move to Archive": [
+        "Перемістити до архіву"
+      ],
+      "Move to Inbox": [
+        "Перемістити до вхідних"
+      ],
       "Name": [
         "Назва"
-      ],
-      "No label found": [
-        "Мітку не знайдено"
       ],
       "Notification": [
         "Сповіщення"
@@ -5836,15 +5714,6 @@
       ],
       "Operating system version": [
         "Версія операційної системи"
-      ],
-      "OR": [
-        "АБО"
-      ],
-      "or": [
-        "або"
-      ],
-      "Or": [
-        "Або"
       ],
       "Participants": [
         "Учасники"
@@ -5873,9 +5742,6 @@
       "Public keys": [
         "Відкриті ключі"
       ],
-      "Read": [
-        "Прочитані"
-      ],
       "Recipient": [
         "Отримувач"
       ],
@@ -5903,9 +5769,6 @@
       "Select how your mailbox looks like by default.": [
         "Оберіть типовий вигляд поштової скриньки."
       ],
-      "Send auto-reply": [
-        "Надіслати автовідповідь"
-      ],
       "Sender": [
         "Відправник"
       ],
@@ -5915,32 +5778,11 @@
       "Size:": [
         "Розмір:"
       ],
-      "Starred": [
-        "Із зірочкою"
-      ],
-      "Statement": [
-        "Відомість"
-      ],
       "Street address": [
         "Вулиця"
       ],
       "System information": [
         "Інформація про систему"
-      ],
-      "The email was sent ${ attachment }": [
-        "Лист було надіслано ${ attachment }"
-      ],
-      "the email was sent ${ attachment }": [
-        "лист було надіслано ${ attachment }"
-      ],
-      "The email was sent ${ attachmentStrong }": [
-        "Лист було надіслано ${ attachmentStrong }"
-      ],
-      "the email was sent ${ label }": [
-        "лист було надіслано ${ label }"
-      ],
-      "Then": [
-        "Потім"
       ],
       "Time": [
         "Час"
@@ -5971,21 +5813,6 @@
       ],
       "What happened?": [
         "Що сталося?"
-      ],
-      "With attachment": [
-        "Має вкладення"
-      ],
-      "with attachments": [
-        "має вкладення"
-      ],
-      "Without attachment": [
-        "Без вкладення"
-      ],
-      "without attachment": [
-        "без вкладень"
-      ],
-      "without attachments": [
-        "без вкладень"
       ],
       "Wonderful": [
         "Дивовижно"
@@ -6064,12 +5891,6 @@
       "Activate": [
         "Активувати"
       ],
-      "Add folder": [
-        "Додати теку"
-      ],
-      "Add label": [
-        "Додати мітку"
-      ],
       "All mail": [
         "Уся пошта"
       ],
@@ -6126,6 +5947,9 @@
       ],
       "Less": [
         "Менше"
+      ],
+      "Manage blocked email addresses": [
+        "Керувати заблокованими адресами е-пошти"
       ],
       "Manage your folders": [
         "Керуйте своїми теками"
@@ -6513,8 +6337,8 @@
       ]
     },
     "Notification": {
-      "${ _Filter.Name } created": [
-        "${ _Filter.Name } створено"
+      "Block removed": [
+        "Блокування вилучено"
       ],
       "Contact group created": [
         "Групу контактів створено"
@@ -6524,6 +6348,9 @@
       ],
       "Password has been set successfully": [
         "Пароль успішно встановлено"
+      ],
+      "Sender ${ senderEmail } blocked": [
+        "Відправника ${ senderEmail } заблоковано"
       ]
     },
     "Oauth instructions": {
@@ -6590,9 +6417,6 @@
       ]
     },
     "Option group": {
-      "Custom folders": [
-        "Власні теки"
-      ],
       "Default folders": [
         "Типові теки"
       ],
@@ -6734,9 +6558,6 @@
       ],
       "Text": [
         "Текст"
-      ],
-      "Type text or keyword": [
-        "Введіть текст чи ключове слово"
       ],
       "Write your message": [
         "Напишіть повідомлення"
@@ -7049,20 +6870,6 @@
         "Підписку скасовано"
       ]
     },
-    "Step in filter modal": {
-      "Actions": [
-        "Дії"
-      ],
-      "Conditions": [
-        "Умови"
-      ],
-      "Name": [
-        "Назва"
-      ],
-      "Preview": [
-        "Перегляд"
-      ]
-    },
     "Storage": {
       "Get extra storage for free": [
         "Отримайте додаткове сховище безплатно"
@@ -7249,6 +7056,12 @@
       "Conversation removed from ${ labelName }.": [
         "Розмову вилучено з ${ labelName }."
       ],
+      "Conversations from ${ sendersList } will be labelled as ${ labelsList }": [
+        "Розмови з ${ sendersList } буде позначено міткою ${ labelsList }"
+      ],
+      "Conversations from ${ sendersList } will be moved to ${ folder }": [
+        "Розмови з ${ sendersList } переміщено до теки ${ folder }"
+      ],
       "Draft deleted": [
         "Чернетку видалено"
       ],
@@ -7305,6 +7118,12 @@
       ],
       "Message removed from ${ labelName }.": [
         "Повідомлення вилучено з ${ labelName }."
+      ],
+      "Messages from ${ sendersList } will be labelled as ${ labelsList }": [
+        "Повідомлення від ${ sendersList } буде позначено міткою ${ labelsList }"
+      ],
+      "Messages from ${ sendersList } will be moved to ${ folder }": [
+        "Повідомлення від ${ sendersList } переміщено до теки ${ folder }"
       ],
       "Move ${ selectionCount } conversation": [
         "Перемістити ${ selectionCount } розмову",
@@ -7483,9 +7302,6 @@
       "Add contact group name": [
         "Додати назву групи контактів"
       ],
-      "Add filter": [
-        "Додати фільтр"
-      ],
       "Add to ${ groupCount } group": [
         "Додати до ${ groupCount } групи",
         "Додати до ${ groupCount } груп",
@@ -7501,9 +7317,6 @@
       "Archive": [
         "Архів"
       ],
-      "Are you sure you want to close?": [
-        "Ви дійсно хочете закрити?"
-      ],
       "Attachments": [
         "Вкладення"
       ],
@@ -7518,6 +7331,9 @@
       ],
       "Blind Carbon Copy": [
         "Прихована копія"
+      ],
+      "Block sender": [
+        "Блокувати відправника"
       ],
       "Carbon Copy": [
         "Копія"
@@ -7551,12 +7367,6 @@
       ],
       "Conversation list": [
         "Список розмов"
-      ],
-      "Create a new folder": [
-        "Створити нову теку"
-      ],
-      "Create a new label": [
-        "Створити нову мітку"
       ],
       "Create contact": [
         "Створити контакт"
@@ -7642,9 +7452,6 @@
       "Edit contact group": [
         "Редагувати групу контактів"
       ],
-      "Edit filter": [
-        "Змінити фільтр"
-      ],
       "Edit image": [
         "Змінити зображення"
       ],
@@ -7683,9 +7490,6 @@
       ],
       "Feedback": [
         "Відгук"
-      ],
-      "Filter on": [
-        "Фільтр"
       ],
       "Forward": [
         "Переслати"
@@ -7988,6 +7792,9 @@
       "Encrypted data with verified digital signature": [
         "Зашифровані дані з перевіреним цифровим підписом"
       ],
+      "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
+        "Gmail автоматично класифікує деякі електронні листи, як-от «Соцмережі» або «Реклама». Ви можете вибрати, куди імпортувати ці електронні листи."
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Оберіть PGP-схему для використання при підписуванні чи шифруванні для користувача. Зауважте, що PGP/Inline примусово перетворює повідомлення у звичайний текст"
       ],
@@ -7999,9 +7806,6 @@
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
         "Ця дія завантажить усі повідомлення для можливості їх локального пошуку. Очищення даних браузера вимкне цю можливість."
-      ],
-      "This feature is only available for paid users": [
-        "Ця функція доступна лише користувачам, які мають передплату"
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Вивантажте відкритий ключ, щоб увімкнути надсилання наскрізно зашифрованих листів на цю адресу"

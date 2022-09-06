@@ -14,11 +14,17 @@
       "Close modal": [
         "关闭"
       ],
+      "Didn't receive the code?": [
+        "没收到验证码？"
+      ],
       "Edit email address": [
         "修改邮箱地址"
       ],
       "Edit phone number": [
         "修改电话号码"
+      ],
+      "Edit sign-in details": [
+        "编辑登录信息"
       ],
       "Get verification code": [
         "获取验证码"
@@ -38,8 +44,34 @@
       "Verify": [
         "验证"
       ],
+      "Verify account": [
+        "验证账户"
+      ],
+      "Verify email": [
+        "验证邮箱"
+      ],
       "View invoice": [
         "查看账单"
+      ]
+    },
+    "Country name": {
+      "Canada": [
+        "加拿大"
+      ],
+      "China": [
+        "中国"
+      ],
+      "Côte d'Ivoire": [
+        "科特迪瓦"
+      ],
+      "Germany": [
+        "德国"
+      ],
+      "Switzerland": [
+        "瑞士"
+      ],
+      "United Arab Emirates": [
+        "阿联酋"
       ]
     },
     "Delinquent modal title": {
@@ -85,6 +117,9 @@
       ],
       "Please ${ refresh } or check your connection.": [
         "请${ refresh }或检查网络连接。"
+      ],
+      "Something went wrong. Please refresh the page or try again later.": [
+        "出错了，请刷新页面或稍后重试。"
       ],
       "There was a problem connecting to Proton.": [
         "连接 Proton 失败。"
@@ -164,6 +199,9 @@
       ]
     },
     "Label": {
+      "Code is 6 digits without spaces": [
+        "验证码是无空格的六位数字"
+      ],
       "Email address": [
         "邮箱地址"
       ],
@@ -189,6 +227,11 @@
       ],
       "Request an invite": [
         "申请注册"
+      ]
+    },
+    "Placeholder": {
+      "Password": [
+        "密码"
       ]
     },
     "Success": {

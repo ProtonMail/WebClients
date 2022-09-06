@@ -23,9 +23,6 @@
       "Add address": [
         "住所を追加"
       ],
-      "Add condition": [
-        "条件を追加"
-      ],
       "Add contact": [
         "連絡先を追加"
       ],
@@ -95,6 +92,9 @@
       "Beta Access": [
         "ベータ版アクセス"
       ],
+      "Block messages from this sender": [
+        "この差出人のメッセージをブロック"
+      ],
       "Bold": [
         "太字"
       ],
@@ -147,7 +147,7 @@
         "閉じる"
       ],
       "Close modal": [
-        "画面を閉じる"
+        "Close"
       ],
       "Close navigation": [
         "ナビゲーションを閉じる"
@@ -200,20 +200,17 @@
       "Create a new contact group": [
         "新規連絡先グループを作成"
       ],
-      "Create folder": [
-        "フォルダーを作成"
+      "Create a new folder": [
+        "新規フォルダーの作成"
       ],
-      "Create label": [
-        "ラベルを作成"
+      "Create a new label": [
+        "新しいラベルを作成"
       ],
       "Create new contact": [
         "新しい連絡先を作成"
       ],
       "Create new message": [
         "新しいメッセージを作成"
-      ],
-      "Custom filter": [
-        "カスタムフィルター"
       ],
       "Customize": [
         "カスタマイズ"
@@ -341,9 +338,6 @@
       "Fewer search options": [
         "検索オプションを非表示"
       ],
-      "Filter on...": [
-        "仕分け対象..."
-      ],
       "Font": [
         "フォント"
       ],
@@ -461,9 +455,6 @@
       "Label as...": [
         "ラベル付け..."
       ],
-      "label emails as": [
-        "電子メールにラベル付け"
-      ],
       "Learn more": [
         "詳細"
       ],
@@ -499,9 +490,6 @@
       ],
       "Mark as unread": [
         "未読にする"
-      ],
-      "mark emails as": [
-        "電子メールをマーク"
       ],
       "Mark for deletion": [
         "削除マーク"
@@ -562,9 +550,6 @@
       ],
       "Move all to trash": [
         "すべてをごみ箱に移動"
-      ],
-      "move emails to": [
-        "電子メールを移動"
       ],
       "Move to": [
         "移動先"
@@ -653,9 +638,6 @@
       "Pause": [
         "一時停止"
       ],
-      "Preview": [
-        "プレビュー"
-      ],
       "Preview ${ attachmentName }": [
         "${ attachmentName } をプレビュー"
       ],
@@ -721,9 +703,6 @@
       ],
       "Remove expiration time": [
         "有効期限を削除"
-      ],
-      "Remove this label": [
-        "このラベルを削除"
       ],
       "Rename": [
         "名前を変更"
@@ -793,9 +772,6 @@
       ],
       "Send anyway": [
         "このまま送信"
-      ],
-      "send auto-reply email": [
-        "自動返信メールを送信"
       ],
       "Send feedback": [
         "フィードバックを送信"
@@ -2465,26 +2441,6 @@
         "オーランド諸島"
       ]
     },
-    "CustomFilter": {
-      "Attachment": [
-        "添付ファイル"
-      ],
-      "Filter on": [
-        "フィルター対象"
-      ],
-      "Next": [
-        "次へ"
-      ],
-      "Recipient": [
-        "宛先"
-      ],
-      "Sender": [
-        "差出人"
-      ],
-      "Subject": [
-        "件名"
-      ]
-    },
     "Daily recurring event, frequency": {
       "${ count } time": [
         "${ count } 回"
@@ -2730,9 +2686,6 @@
       "Choose a date within the next ${ SCHEDULED_MAX_DATE_DAYS } day.": [
         "次の ${ SCHEDULED_MAX_DATE_DAYS } 日から日付を選択してください。"
       ],
-      "Condition incomplete": [
-        "条件が不完全です"
-      ],
       "Contact could not be saved": [
         "連絡先を保存できませんでした"
       ],
@@ -2772,17 +2725,11 @@
       "Email is not valid": [
         "メールアドレスが無効です"
       ],
-      "Empty condition": [
-        "条件が空です"
-      ],
       "Enter 6 digits": [
         "6 桁の数字を入力してください"
       ],
       "Enter a password": [
         "パスワードを入力してください"
-      ],
-      "Error in one of the conditions": [
-        "いずれかの条件にエラーがあります"
       ],
       "Error while saving draft. Please try again.": [
         "下書きを保存しているときにエラーが発生しました。再度お試しください。"
@@ -2795,9 +2742,6 @@
       ],
       "Failed to encrypt attachment. Please try again.": [
         "添付ファイルの暗号化に失敗しました。もう一度お試しください。"
-      ],
-      "Filter with this name already exists": [
-        "この名前のフィルターが既に存在します"
       ],
       "Folder name cannot be empty.": [
         "フォルダー名は空にできません。"
@@ -2904,12 +2848,6 @@
       "Request timed out": [
         "リクエストがタイムアウトしました"
       ],
-      "Require at least one action": [
-        "少なくとも 1 つのアクションが必要です"
-      ],
-      "Require at least one condition": [
-        "少なくとも 1 つの条件が必要です"
-      ],
       "Signature not verified": [
         "署名が検証されていません"
       ],
@@ -2990,9 +2928,6 @@
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser.": [
         "このメッセージには現在のブラウザーで正しく開けない URL を含んでいる可能性があります。"
-      ],
-      "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
-        "有効なフィルターが多すぎます。さらに有効なフィルターを使用するには有料プランにアップグレードしてください。"
       ],
       "Trusted keys are not valid for sending": [
         "信頼された鍵が送信に使用できません"
@@ -3328,18 +3263,6 @@
       ]
     },
     "Filter modal type": {
-      "If the attachments": [
-        "添付ファイル"
-      ],
-      "If the recipient": [
-        "宛先"
-      ],
-      "If the sender": [
-        "差出人"
-      ],
-      "If the subject": [
-        "件名"
-      ],
       "Select…": [
         "選択してください…"
       ],
@@ -3359,9 +3282,6 @@
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } は更新されました"
-      ],
-      "Filter ${ Filter.Name } updated": [
-        "フィルター ${ Filter.Name } が更新されました"
       ]
     },
     "Filter option": {
@@ -3379,14 +3299,6 @@
       ],
       "Unread": [
         "未読"
-      ]
-    },
-    "Filter preview": {
-      "read": [
-        "既読にする"
-      ],
-      "starred": [
-        "星印を付ける"
       ]
     },
     "Font Face Default": {
@@ -3706,12 +3618,6 @@
       "(${ memberCount } member)": [
         "(${ memberCount } メンバー)"
       ],
-      "(Filter if ALL of the following conditions are met)": [
-        "(以下のすべての条件が満たされた場合に動作します)"
-      ],
-      "(Filter if ANY of the following conditions are met)": [
-        "(以下のいずれかの条件が満たされた場合に動作します)"
-      ],
       "(No Recipient)": [
         "(宛先なし)"
       ],
@@ -3760,9 +3666,6 @@
       "All your calendars are disabled.": [
         "すべてのカレンダーが無効です。"
       ],
-      "All your changes will be lost.": [
-        "変更内容はすべて失われます。"
-      ],
       "An unknown public key has been detected for this recipient.": [
         "この受信者の不明な公開鍵が検出されました。"
       ],
@@ -3774,9 +3677,6 @@
       ],
       "Are you sure you want to delete all messages with this label?": [
         "このフォルダー内のすべてのラベルを削除してよろしいですか?"
-      ],
-      "Are you sure you want to discard your changes?": [
-        "変更を破棄してよろしいですか?"
       ],
       "Are you sure you want to move all messages in this location to Trash?": [
         "この場所にあるすべてのメッセージを削除してよろしいですか?"
@@ -3904,6 +3804,9 @@
       "Don't forget to share the password with the recipient": [
         "宛先にパスワードを伝えることを忘れないでください"
       ],
+      "Downloading message ${ esProgress } out of ${ totalProgressToShow }": [
+        "${ esProgress }/${ totalProgressToShow } メッセージをダウンロードしています"
+      ],
       "Draft": [
         "下書き"
       ],
@@ -3985,9 +3888,6 @@
       "file attached": [
         "個のファイル添付"
       ],
-      "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
-        "フィルターは送信したメールと受信したメールを含むすべてのメールで動作します。各フィルターには少なくとも有効な名前、条件、動作が含まれている必要があります。"
-      ],
       "Folder": [
         "フォルダー"
       ],
@@ -4041,9 +3941,6 @@
       ],
       "Image URL": [
         "画像のURL"
-      ],
-      "Images have been removed because they are not allowed in auto-reply": [
-        "自動返信では許可されていないため画像は削除されました"
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "${ contactsFragment } と ${ contactsGroupsFragment } をインポート"
@@ -4162,9 +4059,6 @@
       "New": [
         "新規"
       ],
-      "No action selected": [
-        "アクションが選択されていません"
-      ],
       "No contacts added yet": [
         "まだ連絡先が追加されていません"
       ],
@@ -4177,17 +4071,11 @@
       "No folder found": [
         "フォルダーが見つかりませんでした"
       ],
-      "No folder selected": [
-        "フォルダーが選択されていません"
-      ],
       "No group found": [
         "グループが見つかりませんでした"
       ],
       "No label found": [
         "ラベルが見つかりませんでした"
-      ],
-      "No label selected": [
-        "ラベルが選択されていません"
       ],
       "No more results found": [
         "これ以上の結果が見つかりません"
@@ -4347,6 +4235,9 @@
       ],
       "Send an encrypted, password protected message to a ${ boldText } email address.": [
         "パスワード保護され暗号化されたメッセージを${ boldText } メールアドレスに送信します。"
+      ],
+      "Sender has been blocked.": [
+        "差出人はブロックされました。"
       ],
       "Sending": [
         "送信中"
@@ -4848,9 +4739,6 @@
       "Close draft": [
         "下書きを閉じる"
       ],
-      "Create filter with...": [
-        "フィルターを作成..."
-      ],
       "Delete permanently": [
         "完全に削除"
       ],
@@ -5018,17 +4906,8 @@
       ]
     },
     "Label": {
-      " and ": [
-        " および "
-      ],
-      " and ${ l }": [
-        " と ${ l }"
-      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(一時的に利用できません。あとでお試しください。)"
-      ],
-      "Actions": [
-        "動作"
       ],
       "Add email address": [
         "メールアドレスの追加"
@@ -5042,26 +4921,8 @@
       "Address": [
         "メールアドレス"
       ],
-      "ALL": [
-        "すべて"
-      ],
       "Also archive": [
         "アーカイブも実施する"
-      ],
-      "AND": [
-        "かつ"
-      ],
-      "and": [
-        "かつ"
-      ],
-      "And": [
-        "終了日"
-      ],
-      "ANY": [
-        "いずれか"
-      ],
-      "Apply filter to existing emails": [
-        "存在するメールにフィルターを適用"
       ],
       "Attach screenshot(s)": [
         "スクリーンショットを添付"
@@ -5111,9 +4972,6 @@
       "Code is 6 digits without spaces": [
         "コードは空白なしの 6 桁の数字です"
       ],
-      "Conditions": [
-        "条件"
-      ],
       "Confirm password": [
         "パスワードの確認"
       ],
@@ -5138,6 +4996,9 @@
       "Do not ask again": [
         "今後表示しない"
       ],
+      "Don't show this again": [
+        "次回から表示しない"
+      ],
       "Email": [
         "メールアドレス"
       ],
@@ -5161,9 +5022,6 @@
       ],
       "Extended address": [
         "拡張アドレス"
-      ],
-      "Filter Name": [
-        "フィルター名"
       ],
       "Folder location": [
         "フォルダーの場所"
@@ -5194,12 +5052,6 @@
       ],
       "I understand the risk": [
         "リスクを承知しました"
-      ],
-      "IF": [
-        "もし"
-      ],
-      "If": [
-        "条件"
       ],
       "Import all messages": [
         "すべてのメッセージをインポート"
@@ -5249,17 +5101,17 @@
       "Manage my addresses": [
         "アドレスの管理"
       ],
-      "Mark as": [
-        "印をつける"
-      ],
       "Move to": [
         "移動先"
       ],
+      "Move to Archive": [
+        "アーカイブに移動"
+      ],
+      "Move to Inbox": [
+        "受信トレイに移動"
+      ],
       "Name": [
         "名前"
-      ],
-      "No label found": [
-        "ラベルが見つかりませんでした"
       ],
       "Notification": [
         "通知"
@@ -5272,15 +5124,6 @@
       ],
       "Operating system version": [
         "OSのバージョン"
-      ],
-      "OR": [
-        "または"
-      ],
-      "or": [
-        "または"
-      ],
-      "Or": [
-        "または"
       ],
       "Participants": [
         "参加者"
@@ -5309,9 +5152,6 @@
       "Public keys": [
         "公開鍵"
       ],
-      "Read": [
-        "既読にする"
-      ],
       "Recipient": [
         "宛先"
       ],
@@ -5339,9 +5179,6 @@
       "Select how your mailbox looks like by default.": [
         "デフォルトで使用される受信トレイの見た目を選択してください。"
       ],
-      "Send auto-reply": [
-        "自動返信を送信"
-      ],
       "Sender": [
         "差出人"
       ],
@@ -5351,32 +5188,11 @@
       "Size:": [
         "サイズ:"
       ],
-      "Starred": [
-        "星印付き"
-      ],
-      "Statement": [
-        "適用状態"
-      ],
       "Street address": [
         "番地"
       ],
       "System information": [
         "システム情報"
-      ],
-      "The email was sent ${ attachment }": [
-        "${ attachment } でメールを送信"
-      ],
-      "the email was sent ${ attachment }": [
-        "${ attachment } でメールを送信しました"
-      ],
-      "The email was sent ${ attachmentStrong }": [
-        "${ attachmentStrong } でメールを送信"
-      ],
-      "the email was sent ${ label }": [
-        "${ label } でメールを送信"
-      ],
-      "Then": [
-        "その後"
       ],
       "Time": [
         "時刻"
@@ -5407,21 +5223,6 @@
       ],
       "What happened?": [
         "どのような問題が発生しましたか?"
-      ],
-      "With attachment": [
-        "添付ファイルあり"
-      ],
-      "with attachments": [
-        "添付ファイルあり"
-      ],
-      "Without attachment": [
-        "添付ファイルなし"
-      ],
-      "without attachment": [
-        "添付ファイルなし"
-      ],
-      "without attachments": [
-        "添付ファイルなし"
       ],
       "Wonderful": [
         "すばらしい"
@@ -5499,12 +5300,6 @@
     "Link": {
       "Activate": [
         "有効化"
-      ],
-      "Add folder": [
-        "フォルダーを追加"
-      ],
-      "Add label": [
-        "ラベルを追加"
       ],
       "All mail": [
         "すべてのメール"
@@ -5917,8 +5712,8 @@
       ]
     },
     "Notification": {
-      "${ _Filter.Name } created": [
-        "${ _Filter.Name } が作成されました。"
+      "Block removed": [
+        "ブロックが解除されました"
       ],
       "Contact group created": [
         "連絡先グループが作成されました"
@@ -5994,9 +5789,6 @@
       ]
     },
     "Option group": {
-      "Custom folders": [
-        "独自フォルダー"
-      ],
       "Default folders": [
         "既定のフォルダー"
       ],
@@ -6133,9 +5925,6 @@
       ],
       "Text": [
         "テキスト"
-      ],
-      "Type text or keyword": [
-        "テキストまたはキーワードを入力してください"
       ],
       "Write your message": [
         "メッセージを入力してください"
@@ -6417,20 +6206,6 @@
       ],
       "Unsubscribed": [
         "登録解除されました"
-      ]
-    },
-    "Step in filter modal": {
-      "Actions": [
-        "動作"
-      ],
-      "Conditions": [
-        "条件"
-      ],
-      "Name": [
-        "名前"
-      ],
-      "Preview": [
-        "プレビュー"
       ]
     },
     "Storage": {
@@ -6763,9 +6538,6 @@
       "Add contact group name": [
         "連絡先グループの名前を追加"
       ],
-      "Add filter": [
-        "フィルターの追加"
-      ],
       "Add to ${ groupCount } group": [
         "${ groupCount } グループに追加"
       ],
@@ -6777,9 +6549,6 @@
       ],
       "Archive": [
         "アーカイブ"
-      ],
-      "Are you sure you want to close?": [
-        "本当に画面を閉じてよろしいですか？"
       ],
       "Attachments": [
         "添付ファイル"
@@ -6795,6 +6564,9 @@
       ],
       "Blind Carbon Copy": [
         "Blind Carbon Copy"
+      ],
+      "Block sender": [
+        "差出人をブロック"
       ],
       "Carbon Copy": [
         "Carbon Copy"
@@ -6828,12 +6600,6 @@
       ],
       "Conversation list": [
         "スレッドリスト"
-      ],
-      "Create a new folder": [
-        "新しいフォルダーの作成"
-      ],
-      "Create a new label": [
-        "ラベルの新規作成"
       ],
       "Create contact": [
         "連絡先の作成"
@@ -6904,9 +6670,6 @@
       "Edit contact group": [
         "連絡先グループを編集"
       ],
-      "Edit filter": [
-        "フィルターの編集"
-      ],
       "Edit image": [
         "画像の編集"
       ],
@@ -6945,9 +6708,6 @@
       ],
       "Feedback": [
         "フィードバック"
-      ],
-      "Filter on": [
-        "フィルター対象"
       ],
       "Forward": [
         "転送"
@@ -7249,9 +7009,6 @@
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
         "すべてのメッセージをダウンロードし、ローカルで検索可能にします。ブラウザのデータを削除するとこの機能は無効になります。"
-      ],
-      "This feature is only available for paid users": [
-        "この機能は課金ユーザーのみが利用できます"
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "公開鍵をアップロードすると、このメールアドレス宛の電子メールをエンドツーエンド暗号化することができます"

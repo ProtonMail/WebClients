@@ -29,9 +29,6 @@
       "Activate recovery": [
         "Helyreállítás aktiválása"
       ],
-      "Add": [
-        "Hozzáadás"
-      ],
       "Add ${ BRAND_NAME } Account": [
         "${ BRAND_NAME } fiók hozzáadása"
       ],
@@ -132,7 +129,7 @@
         "Bezárás"
       ],
       "Close modal": [
-        "Ablak bezárása"
+        "Close"
       ],
       "Close navigation": [
         "Navigáció bezárása"
@@ -419,12 +416,6 @@
       "move emails to": [
         "áthelyezés ide:"
       ],
-      "Move to Allow List": [
-        "Áthelyezés a engedélyezett listára"
-      ],
-      "Move to Block List": [
-        "Áthelyezés a tiltólistára"
-      ],
       "Need help?": [
         "Segíthetünk?"
       ],
@@ -661,6 +652,9 @@
       ],
       "Sort": [
         "Rendezés"
+      ],
+      "Spam": [
+        "Levélszemét"
       ],
       "Start import": [
         "Importálás indítása"
@@ -2495,9 +2489,6 @@
       "Domain not available, try again later": [
         "A domain név nem érhető el, próbálja meg később"
       ],
-      "Email address invalid": [
-        "Érvénytelen e-mail cím"
-      ],
       "Email is not valid": [
         "Érvénytelen e-mail cím"
       ],
@@ -2548,6 +2539,9 @@
       ],
       "Invalid domain": [
         "Érvénytelen domain név"
+      ],
+      "Invalid email address": [
+        "Érvénytelen e-mail cím"
       ],
       "Invalid expiration date": [
         "Érvénytelen lejárati dátum"
@@ -3155,9 +3149,6 @@
     "FilterSettings": {
       "Add a custom filter to automatically perform certain actions, like labeling or archiving messages. Filters can be edited and created directly via Sieve programming language.": [
         "Hozzon létre szűrőket, bizonyos műveletek automatikus végrehajtásához, mint például címke hozzárendelése vagy üzenet archiválása. A szűrők Sieve programnyelven hozhatók létre."
-      ],
-      "Apply sender-specific spam rules. Messages from addresses or domains on the Allow List always go to your Inbox while messages from addresses or domains on the Block List always go to Spam. Marking a message as spam adds its address to the Block List. Marking a message as not spam adds it to the Allow List.": [
-        "Alkalmazzon küldőspecifikus levélszemét-szabályokat. Az Engedélyezett listán szereplő címekről vagy domain nevekről érkező levelek mindig a beérkezett üzenetekhez, míg a Tiltólistás címek mindig a levélszemétbe kerülnek. Egy üzenet megjelölése levélszemétként a Tiltólistához adja a feladót. Egy üzenet megjelölése nem levélszemétként az Engedélyezett listához adja a feladót."
       ],
       "Search in Allow List and Block List": [
         "Keresés az engedélyezett és tiltott címekben"
@@ -5224,14 +5215,8 @@
       "Your account will be updated once the payment is cleared.": [
         "A fiókját frissítjük, mihelyst megérkezik a befizetés."
       ],
-      "Your Allow List is empty.": [
-        "Az engedélyezett lista üres."
-      ],
       "Your bank requires 3-D Secure verification for security purposes.": [
         "Biztonsági okokból a bankja megköveteli a 3-D Secure biztonsági ellenőrzést."
-      ],
-      "Your Block List is empty.": [
-        "A tiltott lista üres."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Az adatok a Proton fiókjába importálásra készen állnak a(z) ${ importedEmailAddressStrong } címről."
@@ -5457,9 +5442,6 @@
       ],
       "Close draft": [
         "Piszkozat bezárása"
-      ],
-      "Create filter with...": [
-        "Szűrő készítése..."
       ],
       "Delete permanently": [
         "Végleges törlés"
@@ -6099,6 +6081,12 @@
       "Move to": [
         "Mozgatás ide"
       ],
+      "Move to Archive": [
+        "Áthelyezés az archívumba"
+      ],
+      "Move to Inbox": [
+        "Áthelyezés a beérkezett üzenetekhez"
+      ],
       "Name": [
         "Név"
       ],
@@ -6261,6 +6249,9 @@
       "Signature": [
         "Aláírás"
       ],
+      "Spam": [
+        "Levélszemét"
+      ],
       "Starred": [
         "Csillagozott"
       ],
@@ -6362,9 +6353,6 @@
       ],
       "Waiting for subscription": [
         "Várakozás feliratkozásra"
-      ],
-      "Want to add": [
-        "Hozzáadás:"
       ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Sajnáljuk, hogy megszünteti a fiókját. Kérjük, ossza meg velünk az indokait, hogy fejlődhessünk."
@@ -6883,15 +6871,10 @@
         "harmadik szerda"
       ]
     },
-    "Moved to black/whitelist": {
-      "${ Domain } removed": [
-        "${ Domain } eltávolítva"
-      ],
-      "${ Email } removed": [
-        "${ Email } eltávolítva"
-      ]
-    },
     "Navigation": {
+      "All": [
+        "Mind"
+      ],
       "Back": [
         "Vissza"
       ],
@@ -6903,6 +6886,9 @@
       ],
       "Back to Mail": [
         "Vissza a levelekhez"
+      ],
+      "Spam": [
+        "Levélszemét"
       ]
     },
     "New Label form": {
@@ -7218,26 +7204,6 @@
         "Csoport menedzsment"
       ]
     },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Tegye az adatbiztonságot alapértelmezetté biztonsági mentésekhez, tároláshoz, megosztáshoz és visszakereséshez."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Máskülönben a fiókjához való hozzáférése korlátozott lesz, és a fiókja végül letiltásra kerül."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Ahhoz, hogy tudja folytatni a ${ MAIL_APP_NAME } használatát a prémium funkciókkal, válassza ki előfizetési csomagját és a fizetés módját."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Váltson az üzleti csomagra, a Proton összes prémium szolgáltatásának eléréshez."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Váltson a legnagyobb adatvédelmi csomagra, a Proton összes prémium szolgáltatásának eléréshez."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Próbaideje véget ér: ${ formattedTrialExpirationDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand }, szám vége: ${ last4 }"
@@ -7304,6 +7270,26 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Önnek kedvezményes ára van a jelenlegi csomagjához, Ha kisebb csomagra vált, elveszíti a kedvezményes árat és ezt nem fogja tudni igénybe venni, ha újra előfizet."
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Tegye az adatbiztonságot alapértelmezetté biztonsági mentésekhez, tároláshoz, megosztáshoz és visszakereséshez."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Máskülönben a fiókjához való hozzáférése korlátozott lesz, és a fiókja végül letiltásra kerül."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Ahhoz, hogy tudja folytatni a ${ MAIL_APP_NAME } használatát a prémium funkciókkal, válassza ki előfizetési csomagját és a fizetés módját."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Váltson az üzleti csomagra, a Proton összes prémium szolgáltatásának eléréshez."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Váltson a legnagyobb adatvédelmi csomagra, a Proton összes prémium szolgáltatásának eléréshez."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Próbaideje véget ér: ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -8222,36 +8208,6 @@
         "Felhasználónév"
       ]
     },
-    "Spam filter moved to blacklist": {
-      "${ Domain } moved to Block List": [
-        "${ Domain } áthelyezve a feketelistára"
-      ],
-      "${ Email } moved to Block List": [
-        "${ Email } áthelyezve a feketelistára"
-      ]
-    },
-    "Spam filter moved to whitelist": {
-      "${ Domain } moved to Allow List": [
-        "${ Domain } áthelyezve a fehérlistára"
-      ],
-      "${ Email } moved to Allow List": [
-        "${ Email } áthelyezve a fehérlistára"
-      ]
-    },
-    "Spam notification": {
-      "${ domain } added": [
-        "${ domain } hozzáadva"
-      ],
-      "${ domain } updated": [
-        "${ domain } frissítve"
-      ],
-      "${ email } added": [
-        "${ email } hozzáadva"
-      ],
-      "${ email } updated": [
-        "${ email } frissítve"
-      ]
-    },
     "Spotlight": {
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "A ${ DRIVE_APP_NAME } kijött a bétából! Adja meg fájljainak ugyanazt a biztonságot, amit az emiljei is kapnak."
@@ -8630,6 +8586,12 @@
       "CSV field": [
         "CSV mező"
       ],
+      "Edit": [
+        "Szerkesztés"
+      ],
+      "Email address": [
+        "E-mail cím"
+      ],
       "Import": [
         "Importálás"
       ],
@@ -8755,12 +8717,6 @@
       "Add Sieve filter": [
         "Új Sieve szűrő"
       ],
-      "Add to Allow List": [
-        "Engedélyezett listához adás"
-      ],
-      "Add to Block List": [
-        "Tiltólistához adás"
-      ],
       "Add user": [
         "Felhasználó hozzáadása"
       ],
@@ -8772,9 +8728,6 @@
       ],
       "Allocate storage": [
         "Tárhely lefoglalása"
-      ],
-      "Allow List": [
-        "Engedélyezett lista"
       ],
       "Amount": [
         "Összeg"
@@ -8811,9 +8764,6 @@
       ],
       "Billing details": [
         "Számlázási adatok"
-      ],
-      "Block List": [
-        "Tiltó lista"
       ],
       "Bridge for ${ platform }": [
         "Bridge ${ platform } eszközökre"
@@ -8979,12 +8929,6 @@
       ],
       "Download ${ VPN_APP_NAME }": [
         "${ VPN_APP_NAME } letöltése"
-      ],
-      "Edit Allow List": [
-        "Engedélyezett lista szerkesztése"
-      ],
-      "Edit Block List": [
-        "Tiltólista szerkesztése"
       ],
       "Edit calendar": [
         "Naptár szerkesztése"
@@ -9325,9 +9269,6 @@
       ],
       "Sort labels alphabetically": [
         "Címkék rendezése betűrendbe"
-      ],
-      "Spam filters": [
-        "Levélszemét szűrők"
       ],
       "Start a new import": [
         "Új importálás indítása"

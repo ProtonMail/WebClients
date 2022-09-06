@@ -23,9 +23,6 @@
       "Add address": [
         "Cím hozzáadása"
       ],
-      "Add condition": [
-        "Új feltétel"
-      ],
       "Add contact": [
         "Új névjegy"
       ],
@@ -147,7 +144,7 @@
         "Szerkesztő bezárása"
       ],
       "Close modal": [
-        "Ablak bezárása"
+        "Close"
       ],
       "Close navigation": [
         "Navigáció bezárása"
@@ -197,20 +194,14 @@
       "Create a new contact group": [
         "Új névjegy csoport létrehozása"
       ],
-      "Create folder": [
-        "Mappa létrehozása"
-      ],
-      "Create label": [
-        "Címke létrehozása"
+      "Create a new folder": [
+        "Új mappa létrehozása"
       ],
       "Create new contact": [
         "Új névjegy létrehozása"
       ],
       "Create new message": [
         "Új üzenet létrehozása"
-      ],
-      "Custom filter": [
-        "Saját szűrő"
       ],
       "Customize": [
         "Testreszabás"
@@ -337,9 +328,6 @@
       "Fewer search options": [
         "Kevesebb keresési beállítás"
       ],
-      "Filter on...": [
-        "Szűrés..."
-      ],
       "Font": [
         "Betűtípus"
       ],
@@ -452,9 +440,6 @@
       "Label as...": [
         "Címkézés, mint..."
       ],
-      "label emails as": [
-        "címke hozzáadása:"
-      ],
       "Learn more": [
         "További információk"
       ],
@@ -490,9 +475,6 @@
       ],
       "Mark as unread": [
         "Megjelölés olvasatlanként"
-      ],
-      "mark emails as": [
-        "megjelölés mint:"
       ],
       "Mark for deletion": [
         "Törlésre jelöl"
@@ -550,9 +532,6 @@
       ],
       "Move all messages from this label": [
         "Helyezzen át minden üzenetet ebből a címkéből"
-      ],
-      "move emails to": [
-        "áthelyezés ide:"
       ],
       "Move to": [
         "Mozgatás ide"
@@ -638,9 +617,6 @@
       "Pause": [
         "Felfüggesztés"
       ],
-      "Preview": [
-        "Előnézet"
-      ],
       "Preview ${ attachmentName }": [
         "${ attachmentName } előnézete"
       ],
@@ -707,9 +683,6 @@
       "Remove expiration time": [
         "Időkorlát eltávolítása"
       ],
-      "Remove this label": [
-        "Címke eltávolítása"
-      ],
       "Rename": [
         "Átnevezés"
       ],
@@ -772,9 +745,6 @@
       ],
       "Send anyway": [
         "Küldés mindenképpen"
-      ],
-      "send auto-reply email": [
-        "automatikus válasz küldése"
       ],
       "Send feedback": [
         "Visszajelzés küldése"
@@ -2580,26 +2550,6 @@
         "Aland-szigetek"
       ]
     },
-    "CustomFilter": {
-      "Attachment": [
-        "Melléklet"
-      ],
-      "Filter on": [
-        "Szűrés be"
-      ],
-      "Next": [
-        "Következő"
-      ],
-      "Recipient": [
-        "Címzett"
-      ],
-      "Sender": [
-        "Feladó"
-      ],
-      "Subject": [
-        "Tárgy"
-      ]
-    },
     "Daily recurring event, frequency": {
       "${ count } time": [
         "${ count } alkalommal",
@@ -2854,9 +2804,6 @@
         "A következő ${ SCHEDULED_MAX_DATE_DAYS } napon belüli dátumot válasszon.",
         "A következő ${ SCHEDULED_MAX_DATE_DAYS } napon belüli dátumot válasszon."
       ],
-      "Condition incomplete": [
-        "Hiányos feltétel"
-      ],
       "Contact could not be saved": [
         "A névjegy mentése nem sikerült"
       ],
@@ -2895,17 +2842,11 @@
       "Email is not valid": [
         "Érvénytelen e-mail cím"
       ],
-      "Empty condition": [
-        "Üres feltétel"
-      ],
       "Enter 6 digits": [
         "6 számjegyet írjon be"
       ],
       "Enter a password": [
         "Írja be a jelszót"
-      ],
-      "Error in one of the conditions": [
-        "Hiba az egyik feltételben"
       ],
       "Error while saving draft. Please try again.": [
         "Hiba a piszkozat mentése közben. Próbálja újra."
@@ -2918,9 +2859,6 @@
       ],
       "Failed to encrypt attachment. Please try again.": [
         "Hiba a melléklet titkosítása során. Próbálja újra."
-      ],
-      "Filter with this name already exists": [
-        "Ilyen nevű szűrő már létezik"
       ],
       "Folder name cannot be empty.": [
         "A mappa nevének megadása szükséges."
@@ -3035,12 +2973,6 @@
       "Request timed out": [
         "A kérés túllépte az időkorlátot"
       ],
-      "Require at least one action": [
-        "Legalább egy művelet szükséges"
-      ],
-      "Require at least one condition": [
-        "Legalább egy feltétel szükséges"
-      ],
       "Signature not verified": [
         "Aláírás nincs ellenőrizve"
       ],
@@ -3119,9 +3051,6 @@
       ],
       "This message has already been sent. A new draft has been saved.": [
         "Az üzenet már elküldésre került. Egy új piszkozat került mentésre."
-      ],
-      "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
-        "Túl sok bekapcsolt szűrő. Váltson nagyobb csomagra további szűrők bekapcsolásához."
       ],
       "Trusted keys are not valid for sending": [
         "A küldéshez nem érvényesek a megbízhatóként megjelölt kulcsok"
@@ -3436,18 +3365,6 @@
       ]
     },
     "Filter modal type": {
-      "If the attachments": [
-        "Ha a mellékletek"
-      ],
-      "If the recipient": [
-        "Ha a címzett"
-      ],
-      "If the sender": [
-        "Ha a feladó"
-      ],
-      "If the subject": [
-        "Ha a tárgy"
-      ],
       "Select…": [
         "Választás…"
       ],
@@ -3467,9 +3384,6 @@
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } frissítve"
-      ],
-      "Filter ${ Filter.Name } updated": [
-        "${ Filter.Name } szűrő frissítve"
       ]
     },
     "Filter option": {
@@ -3487,14 +3401,6 @@
       ],
       "Unread": [
         "Olvasatlan"
-      ]
-    },
-    "Filter preview": {
-      "read": [
-        "olvasott"
-      ],
-      "starred": [
-        "csillagozott"
       ]
     },
     "Font Face Default": {
@@ -3845,12 +3751,6 @@
         "(${ memberCount } tag)",
         "(${ memberCount } tagok)"
       ],
-      "(Filter if ALL of the following conditions are met)": [
-        "(Szűrés ha az alábbi ÖSSZES feltétel teljesül)"
-      ],
-      "(Filter if ANY of the following conditions are met)": [
-        "(Szűrés ha az alábbi feltételek közül BÁRMELYIK teljesül)"
-      ],
       "(No Recipient)": [
         "(Nincs címzett)"
       ],
@@ -3901,9 +3801,6 @@
       "All your calendars are disabled.": [
         "Minden naptára le van tiltva."
       ],
-      "All your changes will be lost.": [
-        "A változtatások el fognak veszni."
-      ],
       "An unknown public key has been detected for this recipient.": [
         "Egy ismeretlen publikus kulcsot észleltünk ehhez a címzetthez."
       ],
@@ -3915,9 +3812,6 @@
       ],
       "Are you sure you want to delete all messages with this label?": [
         "Biztosan törli az összes, ezzel a címkével megjelölt üzenetet?"
-      ],
-      "Are you sure you want to discard your changes?": [
-        "Biztos abban, hogy elveti a módosításokat?"
       ],
       "Are you sure you want to move all messages in this location to Trash?": [
         "Biztosan áthelyezi az összes üzenetet ebben a Kukába?"
@@ -4139,9 +4033,6 @@
         "fájl csatolva",
         "fájlok csatolva"
       ],
-      "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
-        "A szűrők minden levélre vonatkoznak, a bejövő és az elküldött üzenetekre is. Minden szűrőnek szükséges legalább egy név, egy feltétel és egy művelet."
-      ],
       "Folder": [
         "Mappa"
       ],
@@ -4194,9 +4085,6 @@
       ],
       "Image URL": [
         "Kép URL"
-      ],
-      "Images have been removed because they are not allowed in auto-reply": [
-        "A képek eltávolításra kerültek, mert automatikus válaszban nem engedélyezettek"
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Importálandó ${ contactsFragment } és ${ contactsGroupsFragment }"
@@ -4322,9 +4210,6 @@
       "New": [
         "Új"
       ],
-      "No action selected": [
-        "Nincs kiválasztva művelet"
-      ],
       "No contacts added yet": [
         "Még nincsenek névjegyek"
       ],
@@ -4337,17 +4222,11 @@
       "No folder found": [
         "Nem található mappa"
       ],
-      "No folder selected": [
-        "Nincs kiválasztva mappa"
-      ],
       "No group found": [
         "Nem található csoport"
       ],
       "No label found": [
         "Nem található címke"
-      ],
-      "No label selected": [
-        "Nincs kiválasztva címke"
       ],
       "No more results found": [
         "Nincs több találat"
@@ -5021,9 +4900,6 @@
       "Close draft": [
         "Piszkozat bezárása"
       ],
-      "Create filter with...": [
-        "Szűrő készítése..."
-      ],
       "Delete permanently": [
         "Végleges törlés"
       ],
@@ -5191,17 +5067,8 @@
       ]
     },
     "Label": {
-      " and ": [
-        " és "
-      ],
-      " and ${ l }": [
-        " és ${ l }"
-      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Átmenetileg nem elérhető. Próbálja meg később.)"
-      ],
-      "Actions": [
-        "Műveletek"
       ],
       "Add email address": [
         "E-mail cím hozzáadása"
@@ -5215,23 +5082,8 @@
       "Address": [
         "Cím"
       ],
-      "ALL": [
-        "MIND"
-      ],
       "Also archive": [
         "Archiválás is"
-      ],
-      "AND": [
-        "ÉS"
-      ],
-      "and": [
-        "és"
-      ],
-      "And": [
-        "És"
-      ],
-      "ANY": [
-        "BÁRMELYIK"
       ],
       "Attach screenshot(s)": [
         "Képernyőkép(ek) csatolása"
@@ -5281,9 +5133,6 @@
       "Code is 6 digits without spaces": [
         "A kód hatjegyű, szóközök nélkül"
       ],
-      "Conditions": [
-        "Feltételek"
-      ],
       "Confirm password": [
         "Jelszó megerősítése"
       ],
@@ -5332,9 +5181,6 @@
       "Extended address": [
         "Bővebb cím"
       ],
-      "Filter Name": [
-        "Szűrő neve"
-      ],
       "Folder location": [
         "Mappa helye"
       ],
@@ -5364,12 +5210,6 @@
       ],
       "I understand the risk": [
         "Megértettem a kockázatot"
-      ],
-      "IF": [
-        "HA"
-      ],
-      "If": [
-        "Ha"
       ],
       "Import all messages": [
         "Összes üzenet importálása"
@@ -5419,17 +5259,17 @@
       "Manage my addresses": [
         "Saját címek kezelése"
       ],
-      "Mark as": [
-        "Megjelölés mint"
-      ],
       "Move to": [
         "Mozgatás ide"
       ],
+      "Move to Archive": [
+        "Áthelyezés az archívumba"
+      ],
+      "Move to Inbox": [
+        "Áthelyezés a beérkezett üzenetekhez"
+      ],
       "Name": [
         "Név"
-      ],
-      "No label found": [
-        "Nem található címke"
       ],
       "Notification": [
         "Értesítés"
@@ -5442,15 +5282,6 @@
       ],
       "Operating system version": [
         "Az operációs rendszer verziója"
-      ],
-      "OR": [
-        "VAGY"
-      ],
-      "or": [
-        "vagy"
-      ],
-      "Or": [
-        "Vagy"
       ],
       "Participants": [
         "Résztvevők"
@@ -5479,9 +5310,6 @@
       "Public keys": [
         "Nyilvános kulcsok"
       ],
-      "Read": [
-        "Olvasott"
-      ],
       "Recipient": [
         "Címzett"
       ],
@@ -5506,9 +5334,6 @@
       "Select how your mailbox looks like by default.": [
         "Válassza ki, hogy alapértelmezetten hogyan jelenjen meg a levelezése."
       ],
-      "Send auto-reply": [
-        "Automatikus válasz küldése"
-      ],
       "Sender": [
         "Feladó"
       ],
@@ -5518,32 +5343,11 @@
       "Size:": [
         "Méret:"
       ],
-      "Starred": [
-        "Csillagozott"
-      ],
-      "Statement": [
-        "Feltétel"
-      ],
       "Street address": [
         "Utca, házszám"
       ],
       "System information": [
         "Rendszer információk"
-      ],
-      "The email was sent ${ attachment }": [
-        "Az e-mail ${ attachment }"
-      ],
-      "the email was sent ${ attachment }": [
-        "az e-mail ${ attachment }"
-      ],
-      "The email was sent ${ attachmentStrong }": [
-        "Az e-mail ${ attachmentStrong }"
-      ],
-      "the email was sent ${ label }": [
-        "az e-mail ${ label }"
-      ],
-      "Then": [
-        "Akkor"
       ],
       "Time": [
         "Időpont"
@@ -5574,21 +5378,6 @@
       ],
       "What happened?": [
         "Mi történt?"
-      ],
-      "With attachment": [
-        "Mellékletet tartalmaz"
-      ],
-      "with attachments": [
-        "mellékletet tartalmaz"
-      ],
-      "Without attachment": [
-        "Nem tartalmaz mellékletet"
-      ],
-      "without attachment": [
-        "nem tartalmaz mellékletet"
-      ],
-      "without attachments": [
-        "nem tartalmaz mellékletet"
       ],
       "Wonderful": [
         "Csodás"
@@ -5666,12 +5455,6 @@
     "Link": {
       "Activate": [
         "Aktiválás"
-      ],
-      "Add folder": [
-        "Új mappa"
-      ],
-      "Add label": [
-        "Új címke"
       ],
       "All mail": [
         "Összes levél"
@@ -6093,9 +5876,6 @@
       ]
     },
     "Notification": {
-      "${ _Filter.Name } created": [
-        "${ _Filter.Name } létrehozva"
-      ],
       "Contact group created": [
         "Névjegy csoport létrehozva"
       ],
@@ -6170,9 +5950,6 @@
       ]
     },
     "Option group": {
-      "Custom folders": [
-        "Saját mappák"
-      ],
       "Default folders": [
         "Alapértelmezett mappák"
       ],
@@ -6309,9 +6086,6 @@
       ],
       "Text": [
         "Szöveg"
-      ],
-      "Type text or keyword": [
-        "Írjon be szöveget"
       ],
       "Write your message": [
         "Üzenet írása"
@@ -6598,20 +6372,6 @@
       ],
       "Unsubscribed": [
         "Leiratkozás kész"
-      ]
-    },
-    "Step in filter modal": {
-      "Actions": [
-        "Műveletek"
-      ],
-      "Conditions": [
-        "Feltételek"
-      ],
-      "Name": [
-        "Név"
-      ],
-      "Preview": [
-        "Előnézet"
       ]
     },
     "Storage": {
@@ -6974,9 +6734,6 @@
       "Add contact group name": [
         "Adjon nevet a névjegy csoportnak"
       ],
-      "Add filter": [
-        "Új szűrő"
-      ],
       "Add to ${ groupCount } group": [
         "Hozzáadás ${ groupCount } csoporthoz",
         "Hozzáadás ${ groupCount } csoporthoz"
@@ -6989,9 +6746,6 @@
       ],
       "Archive": [
         "Archívum"
-      ],
-      "Are you sure you want to close?": [
-        "Biztosan bezárja?"
       ],
       "Attachments": [
         "Mellékletek"
@@ -7040,12 +6794,6 @@
       ],
       "Conversation list": [
         "Beszélgetéslista"
-      ],
-      "Create a new folder": [
-        "Új mappa létrehozása"
-      ],
-      "Create a new label": [
-        "Új címke létrehozása"
       ],
       "Create contact": [
         "Névjegy létrehozása"
@@ -7118,9 +6866,6 @@
       "Edit contact group": [
         "Névjegy csoport szerkesztése"
       ],
-      "Edit filter": [
-        "Szűrő szerkesztése"
-      ],
       "Edit image": [
         "Kép szerkesztése"
       ],
@@ -7159,9 +6904,6 @@
       ],
       "Feedback": [
         "Visszajelzés"
-      ],
-      "Filter on": [
-        "Szűrés be"
       ],
       "Forward": [
         "Továbbítás"
@@ -7464,9 +7206,6 @@
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
         "Ez a művelet letölti az összes üzenetet, hogy helyben kereshetők legyenek. A böngésző adatainak törlése kikapcsolja ezt a lehetőséget."
-      ],
-      "This feature is only available for paid users": [
-        "Ez a lehetőség csak előfizetéses csomagokban érhető érhető el"
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Töltsön fel egy nyilvános kulcsot, hogy erre a címre lehetővé tegye végpontok közt titkosított üzenetek küldését"

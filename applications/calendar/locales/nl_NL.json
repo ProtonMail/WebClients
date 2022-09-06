@@ -84,7 +84,7 @@
         "Afspraak popover sluiten"
       ],
       "Close modal": [
-        "Venster sluiten"
+        "Close"
       ],
       "Close navigation": [
         "Sluit navigatie"
@@ -2229,6 +2229,10 @@
       "An unexpected error occurred. Import must be restarted.": [
         "Er is een onverwachte fout opgetreden. Importeren moet opnieuw gestart worden."
       ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } event.": [
+        "Uw bestand ${ formattedFilename } bevat meer dan ${ MAX_IMPORT_EVENTS_STRING } afspraak.",
+        "Uw bestand ${ formattedFilename } bevat meer dan ${ MAX_IMPORT_EVENTS_STRING } afspraken."
+      ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "Uw bestand ${ formattedFilename } heeft een ongeldige methode en kan niet worden geïmporteerd."
       ],
@@ -3526,11 +3530,20 @@
       "Mailbox password": [
         "Mailbox-wachtwoord"
       ],
+      "Manage categories": [
+        "Beheer categorieën"
+      ],
       "Manage folders": [
         "Mappen beheren"
       ],
       "Manage labels": [
         "Beheer labels"
+      ],
+      "Move to Archive": [
+        "Verplaats naar Archief"
+      ],
+      "Move to Inbox": [
+        "Verplaats naar inbox"
       ],
       "Name": [
         "Naam"
@@ -4364,6 +4377,9 @@
       "Don't miss any events": [
         "Mis geen afspraken"
       ],
+      "Easily accept invites": [
+        "Accepteer eenvoudig uitnodigingen"
+      ],
       "Get up to 18 months of ${ planName } for free": [
         "Krijg tot 18 maanden ${ planName } gratis"
       ],
@@ -4372,6 +4388,9 @@
       ],
       "No more missed appointments": [
         "Geen gemiste afspraken meer"
+      ],
+      "Now invitations appear in your calendar as pending events. Just open an event to respond. ${ goToSettingsLink }": [
+        "Uitnodigingen verschijnen nu in uw agenda als afspraken in afwachting. Open de afspraak om te antwoorden. ${ goToSettingsLink }"
       ],
       "Try ${ DRIVE_APP_NAME }": [
         "Probeer ${ DRIVE_APP_NAME }"
@@ -5044,6 +5063,9 @@
       ],
       "Encrypted data with verified digital signature": [
         "Versleutelde gegevens met geverifieerde digitale ondertekening"
+      ],
+      "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
+        "Gmail categorizeert sommige e-mails automatisch zoals like Sociaal of Reclame. U kunt kiezen naar waar u die wil importeren."
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Selecteer het PGP-schema dat wordt gebruikt bij het ondertekenen of versleutelen naar een gebruiker. Merk op dat PGP/Inline berichten zonder opmaak forceert"

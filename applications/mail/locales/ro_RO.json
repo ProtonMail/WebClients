@@ -23,9 +23,6 @@
       "Add address": [
         "Adăugare adresă"
       ],
-      "Add condition": [
-        "Adăugare condiție"
-      ],
       "Add contact": [
         "Adăugare contact"
       ],
@@ -77,6 +74,9 @@
       "All Unstarred": [
         "Toate fără stea"
       ],
+      "Allow messages": [
+        "Permitere mesaje"
+      ],
       "Apply": [
         "Aplicare"
       ],
@@ -94,6 +94,12 @@
       ],
       "Beta Access": [
         "Acces la Beta"
+      ],
+      "Block": [
+        "Blocare"
+      ],
+      "Block messages from this sender": [
+        "Blocare mesaje de la acest expeditor"
       ],
       "Bold": [
         "Îngroşat"
@@ -147,7 +153,7 @@
         "Închidere panou editare"
       ],
       "Close modal": [
-        "Închidere"
+        "Close"
       ],
       "Close navigation": [
         "Închidere navigare"
@@ -200,10 +206,10 @@
       "Create a new contact group": [
         "Creare grup de contacte"
       ],
-      "Create folder": [
+      "Create a new folder": [
         "Creare folder"
       ],
-      "Create label": [
+      "Create a new label": [
         "Creare etichetă"
       ],
       "Create new contact": [
@@ -211,9 +217,6 @@
       ],
       "Create new message": [
         "Creare mesaj"
-      ],
-      "Custom filter": [
-        "Filtru personal"
       ],
       "Customize": [
         "Personalizare"
@@ -345,9 +348,6 @@
       "Fewer search options": [
         "Mai puține opțiuni de căutare"
       ],
-      "Filter on...": [
-        "Filtrare după..."
-      ],
       "Font": [
         "Font"
       ],
@@ -473,9 +473,6 @@
       "Label as...": [
         "Etichetare cu..."
       ],
-      "label emails as": [
-        "etichetare mesaje ca"
-      ],
       "Learn more": [
         "Detalii"
       ],
@@ -511,9 +508,6 @@
       ],
       "Mark as unread": [
         "Marcare ca necitit"
-      ],
-      "mark emails as": [
-        "marcare mesaje ca"
       ],
       "Mark for deletion": [
         "Marcare pentru ștergere"
@@ -574,9 +568,6 @@
       ],
       "Move all to trash": [
         "Mutare tot în «Gunoi»"
-      ],
-      "move emails to": [
-        "mutare mesaje în"
       ],
       "Move to": [
         "Mutare în"
@@ -665,9 +656,6 @@
       "Pause": [
         "Pauză"
       ],
-      "Preview": [
-        "Examinare"
-      ],
       "Preview ${ attachmentName }": [
         "Examinare ${ attachmentName }"
       ],
@@ -733,9 +721,6 @@
       ],
       "Remove expiration time": [
         "Eliminare dată expirare"
-      ],
-      "Remove this label": [
-        "Eliminare etichetă"
       ],
       "Rename": [
         "Redenumire"
@@ -808,9 +793,6 @@
       ],
       "Send anyway": [
         "Trimitere așa"
-      ],
-      "send auto-reply email": [
-        "trimitere răspuns automat"
       ],
       "Send feedback": [
         "Trimitere feedback"
@@ -1898,6 +1880,11 @@
         "Yomi"
       ]
     },
+    "Context filtering disabled": {
+      "Your selection contains only yourself as sender": [
+        "Selecția vă conține doar pe dvs. ca expeditor."
+      ]
+    },
     "Country name": {
       "Abkhazia": [
         "Abhazia"
@@ -2665,26 +2652,6 @@
         "Insulele Åland"
       ]
     },
-    "CustomFilter": {
-      "Attachment": [
-        "Atașament"
-      ],
-      "Filter on": [
-        "Filtrare după"
-      ],
-      "Next": [
-        "Înainte"
-      ],
-      "Recipient": [
-        "Destinatar"
-      ],
-      "Sender": [
-        "Expeditor"
-      ],
-      "Subject": [
-        "Subiect"
-      ]
-    },
     "Daily recurring event, frequency": {
       "${ count } time": [
         "O dată",
@@ -2765,6 +2732,15 @@
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Îmbinare contacte... Ar putea dura câteva minute. După finalizarea operației, veți putea închide această fereastră."
+      ],
+      "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted. ${ manageBlockedAddressesSettingsLink } in settings.": [
+        "Mesajele noi de la ${ senderEmailAddress } nu vor fi livrate și vor fi șterse permanent. ${ manageBlockedAddressesSettingsLink } în setări."
+      ],
+      "No folders": [
+        "Nu sunt foldere."
+      ],
+      "No labels": [
+        "Nu sunt etichete."
       ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Fișierul ar trebui să aibă dimensiunea maximă de ${ MAX_IMPORT_FILE_SIZE_STRING } și să un contact. Dacă fișierul este mai mare, împărțiți-l în fișiere mai mici.",
@@ -2952,9 +2928,6 @@
         "Alegeți o dată în următoarele ${ SCHEDULED_MAX_DATE_DAYS } zile.",
         "Alegeți o dată în următoarele ${ SCHEDULED_MAX_DATE_DAYS } de zile."
       ],
-      "Condition incomplete": [
-        "Condiție incompletă"
-      ],
       "Contact could not be saved": [
         "Contactul nu a putut fi salvat"
       ],
@@ -2998,17 +2971,11 @@
       "Email is not valid": [
         "E-mailul nu este valid"
       ],
-      "Empty condition": [
-        "Condiție goală"
-      ],
       "Enter 6 digits": [
         "Introduceți 6 cifre"
       ],
       "Enter a password": [
         "Introduceți o parolă."
-      ],
-      "Error in one of the conditions": [
-        "Eroare în una dintre condiții"
       ],
       "Error while saving draft. Please try again.": [
         "Eroare la salvarea ciornei. Mai reîncercaţi."
@@ -3021,9 +2988,6 @@
       ],
       "Failed to encrypt attachment. Please try again.": [
         "Eșuare criptare atașament. Reîncercați."
-      ],
-      "Filter with this name already exists": [
-        "Filtrul cu acest nume există deja"
       ],
       "Folder name cannot be empty.": [
         "Numele folderului nu poate fi gol."
@@ -3146,12 +3110,6 @@
       "Request timed out": [
         "Solicitarea a expirat"
       ],
-      "Require at least one action": [
-        "Necesită cel puțin o acțiune"
-      ],
-      "Require at least one condition": [
-        "Necesită cel puțin o condiție"
-      ],
       "Signature not verified": [
         "Semnătură neverificată"
       ],
@@ -3234,9 +3192,6 @@
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser.": [
         "Acest mesaj poate conține unele legături care nu pot fi deschise corect de navigatorul actual."
-      ],
-      "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
-        "Prea multe filtre active. Trebuie să treceți la un plan cu plată pentru a putea activa mai multe filtre."
       ],
       "Trusted keys are not valid for sending": [
         "Cheile de încredere nu sunt valide pentru trimitere"
@@ -3596,18 +3551,6 @@
       ]
     },
     "Filter modal type": {
-      "If the attachments": [
-        "Dacă atașamentul"
-      ],
-      "If the recipient": [
-        "Dacă destinatarul"
-      ],
-      "If the sender": [
-        "Dacă expeditorul"
-      ],
-      "If the subject": [
-        "Dacă subiectul"
-      ],
       "Select…": [
         "Selectare…"
       ],
@@ -3627,9 +3570,6 @@
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } actualizată"
-      ],
-      "Filter ${ Filter.Name } updated": [
-        "Filtrul ${ Filter.Name } actualizat"
       ]
     },
     "Filter option": {
@@ -3647,14 +3587,6 @@
       ],
       "Unread": [
         "Necitite"
-      ]
-    },
-    "Filter preview": {
-      "read": [
-        "citit"
-      ],
-      "starred": [
-        "cu stea"
       ]
     },
     "Font Face Default": {
@@ -4049,12 +3981,6 @@
         "(${ memberCount } membri)",
         "(${ memberCount } de membri)"
       ],
-      "(Filter if ALL of the following conditions are met)": [
-        "(Filtrare dacă TOATE condițiile următoare sunt îndeplinite)"
-      ],
-      "(Filter if ANY of the following conditions are met)": [
-        "(Filtrare dacă ORICARE din condițiile următoare sunt îndeplinite)"
-      ],
       "(No Recipient)": [
         "(Fără destinatar)"
       ],
@@ -4107,9 +4033,6 @@
       "All your calendars are disabled.": [
         "Toate calendarele sunt dezactivate."
       ],
-      "All your changes will be lost.": [
-        "Toate modificările vor fi pierdute."
-      ],
       "An unknown public key has been detected for this recipient.": [
         "S-a detectat o cheie publică necunoscută pentru acest destinatar."
       ],
@@ -4121,9 +4044,6 @@
       ],
       "Are you sure you want to delete all messages with this label?": [
         "Sigur doriți să ștergeți toate mesajele cu această etichetă?"
-      ],
-      "Are you sure you want to discard your changes?": [
-        "Sigur doriți să renunțați la modificări?"
       ],
       "Are you sure you want to move all messages in this location to Trash?": [
         "Sunteți sigur că doriți să mutați toate mesajele de aici în «Gunoi»?"
@@ -4364,9 +4284,6 @@
         "fișiere atașate",
         "fișiere atașate"
       ],
-      "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
-        "Filtrele funcționează asupra tuturor mesajelor, incluzându-le atât pe cele primite cât și pe cele trimise. Fiecare filtru trebuie să conțină cel puțin un nume, o condiție și o acțiune."
-      ],
       "Folder": [
         "Folder"
       ],
@@ -4430,9 +4347,6 @@
       ],
       "Image URL": [
         "URL imagine"
-      ],
-      "Images have been removed because they are not allowed in auto-reply": [
-        "Imaginile au fost eliminate deoarece nu sunt permise în răspunsurile automate"
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Importare ${ contactsFragment } și ${ contactsGroupsFragment }"
@@ -4559,9 +4473,6 @@
       "New": [
         "Nou"
       ],
-      "No action selected": [
-        "Nicio acțiune selectată"
-      ],
       "No contacts added yet": [
         "Încă nu s-au adăugat contacte"
       ],
@@ -4574,17 +4485,11 @@
       "No folder found": [
         "Nu există folder"
       ],
-      "No folder selected": [
-        "Niciun folder selectat"
-      ],
       "No group found": [
         "Nu există grupuri"
       ],
       "No label found": [
         "Nu există etichete"
-      ],
-      "No label selected": [
-        "Nicio etichetă selectată"
       ],
       "No more results found": [
         "Nu s-au mai găsit rezultate"
@@ -4752,6 +4657,9 @@
       ],
       "Send an encrypted, password protected message to a ${ boldText } email address.": [
         "Trimitere mesaj criptat, protejat cu parolă, la o adresă de e-mail ${ boldText }."
+      ],
+      "Sender has been blocked.": [
+        "Expeditorul a fost blocat."
       ],
       "Sending": [
         "Se trimite"
@@ -5320,9 +5228,6 @@
       "Close draft": [
         "Închidere ciornă"
       ],
-      "Create filter with...": [
-        "Creare filtru cu..."
-      ],
       "Delete permanently": [
         "Ștergere permanentă"
       ],
@@ -5490,17 +5395,8 @@
       ]
     },
     "Label": {
-      " and ": [
-        " și "
-      ],
-      " and ${ l }": [
-        " și ${ l }"
-      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Temporar indisponibil. Vă rugăm să reveniți mai târziu.)"
-      ],
-      "Actions": [
-        "Acțiuni"
       ],
       "Add email address": [
         "Adăugare e-mail"
@@ -5514,26 +5410,14 @@
       "Address": [
         "Adresa"
       ],
-      "ALL": [
-        "TOATE"
-      ],
       "Also archive": [
         "Și arhivare"
       ],
-      "AND": [
-        "ȘI"
+      "Always label senders emails": [
+        "Etichetare întotdeauna mesaje expeditori"
       ],
-      "and": [
-        "și"
-      ],
-      "And": [
-        "Şi"
-      ],
-      "ANY": [
-        "ORICARE"
-      ],
-      "Apply filter to existing emails": [
-        "Aplicare filtru la mesajele existente"
+      "Always move senders emails": [
+        "Mutare întotdeauna mesaje expeditori"
       ],
       "Attach screenshot(s)": [
         "Atașare capturi de ecran"
@@ -5583,9 +5467,6 @@
       "Code is 6 digits without spaces": [
         "Codul este format din 6 cifre fără spații"
       ],
-      "Conditions": [
-        "Condiții"
-      ],
       "Confirm password": [
         "Confirmare parolă"
       ],
@@ -5610,6 +5491,9 @@
       "Do not ask again": [
         "Nu mă mai întreba"
       ],
+      "Don't show this again": [
+        "Nu mai arăta asta"
+      ],
       "Email": [
         "E-mail"
       ],
@@ -5633,9 +5517,6 @@
       ],
       "Extended address": [
         "Adresa extinsă"
-      ],
-      "Filter Name": [
-        "Nume filtru"
       ],
       "Folder location": [
         "Amplasare folder"
@@ -5666,12 +5547,6 @@
       ],
       "I understand the risk": [
         "Înțeleg riscul"
-      ],
-      "IF": [
-        "DACĂ"
-      ],
-      "If": [
-        "Dacă"
       ],
       "Import all messages": [
         "Importare toate mesajele"
@@ -5712,6 +5587,9 @@
       "Mailbox password": [
         "Parolă mesaje"
       ],
+      "Manage categories": [
+        "Gestionare categorii"
+      ],
       "Manage folders": [
         "Gestionare foldere"
       ],
@@ -5721,17 +5599,17 @@
       "Manage my addresses": [
         "Gestionare adrese"
       ],
-      "Mark as": [
-        "Marcare"
-      ],
       "Move to": [
         "Mutare în"
       ],
+      "Move to Archive": [
+        "Mutare în «Arhivă»"
+      ],
+      "Move to Inbox": [
+        "Mutare în «Primite»"
+      ],
       "Name": [
         "Nume"
-      ],
-      "No label found": [
-        "Nicio etichetă găsită"
       ],
       "Notification": [
         "Notificare"
@@ -5744,15 +5622,6 @@
       ],
       "Operating system version": [
         "Versiune sistem de operare"
-      ],
-      "OR": [
-        "SAU"
-      ],
-      "or": [
-        "sau"
-      ],
-      "Or": [
-        "Sau"
       ],
       "Participants": [
         "Participanți"
@@ -5781,9 +5650,6 @@
       "Public keys": [
         "Chei publice"
       ],
-      "Read": [
-        "Ca citit"
-      ],
       "Recipient": [
         "Destinatar"
       ],
@@ -5811,9 +5677,6 @@
       "Select how your mailbox looks like by default.": [
         "Selectați cum să arate căsuța poștală în mod implicit."
       ],
-      "Send auto-reply": [
-        "Trimitere autorăspuns"
-      ],
       "Sender": [
         "Expeditor"
       ],
@@ -5823,32 +5686,11 @@
       "Size:": [
         "Mărime:"
       ],
-      "Starred": [
-        "Cu stea"
-      ],
-      "Statement": [
-        "Declaraţie"
-      ],
       "Street address": [
         "Strada"
       ],
       "System information": [
         "Informații sistem"
-      ],
-      "The email was sent ${ attachment }": [
-        "Mesajul a fost trimis ${ attachment }"
-      ],
-      "the email was sent ${ attachment }": [
-        "mesajul a fost trimis ${ attachment }"
-      ],
-      "The email was sent ${ attachmentStrong }": [
-        "Mesajul a fost trimis ${ attachmentStrong }"
-      ],
-      "the email was sent ${ label }": [
-        "mesajul a fost trimis ${ label }"
-      ],
-      "Then": [
-        "Atunci"
       ],
       "Time": [
         "Ora"
@@ -5879,21 +5721,6 @@
       ],
       "What happened?": [
         "Ce s-a întâmplat?"
-      ],
-      "With attachment": [
-        "Cu atașamente"
-      ],
-      "with attachments": [
-        "cu atașamente"
-      ],
-      "Without attachment": [
-        "Fără atașamente"
-      ],
-      "without attachment": [
-        "fără atașamente"
-      ],
-      "without attachments": [
-        "fără atașamente"
       ],
       "Wonderful": [
         "Minunată"
@@ -5972,12 +5799,6 @@
       "Activate": [
         "Activare"
       ],
-      "Add folder": [
-        "Adăugare folder"
-      ],
-      "Add label": [
-        "Adăugare etichetă"
-      ],
       "All mail": [
         "Toate mesajele"
       ],
@@ -6034,6 +5855,9 @@
       ],
       "Less": [
         "Mai puține"
+      ],
+      "Manage blocked email addresses": [
+        "Gestionați adresele de e-mail blocate"
       ],
       "Manage your folders": [
         "Gestionare foldere"
@@ -6416,8 +6240,8 @@
       ]
     },
     "Notification": {
-      "${ _Filter.Name } created": [
-        "${ _Filter.Name } a fost creat"
+      "Block removed": [
+        "Blocare eliminată."
       ],
       "Contact group created": [
         "Grup de contacte creat"
@@ -6427,6 +6251,9 @@
       ],
       "Password has been set successfully": [
         "Parola a fost setată cu succes."
+      ],
+      "Sender ${ senderEmail } blocked": [
+        "Expeditorul ${ senderEmail } a fost blocat."
       ]
     },
     "Oauth instructions": {
@@ -6493,9 +6320,6 @@
       ]
     },
     "Option group": {
-      "Custom folders": [
-        "Foldere personale"
-      ],
       "Default folders": [
         "Foldere implicite"
       ],
@@ -6637,9 +6461,6 @@
       ],
       "Text": [
         "Text"
-      ],
-      "Type text or keyword": [
-        "Scrieți un text sau cuvânt cheie"
       ],
       "Write your message": [
         "Scrieți mesajul"
@@ -6944,20 +6765,6 @@
         "Dezabonat"
       ]
     },
-    "Step in filter modal": {
-      "Actions": [
-        "Acțiuni"
-      ],
-      "Conditions": [
-        "Condiții"
-      ],
-      "Name": [
-        "Nume"
-      ],
-      "Preview": [
-        "Examinare"
-      ]
-    },
     "Storage": {
       "Get extra storage for free": [
         "Obțineți gratuit spațiu de stocare"
@@ -7123,6 +6930,12 @@
       "Conversation removed from ${ labelName }.": [
         "Conversație ștearsă din ${ labelName }."
       ],
+      "Conversations from ${ sendersList } will be labelled as ${ labelsList }": [
+        "Conversațiile din ${ sendersList } vor fi etichetate ca ${ labelsList }."
+      ],
+      "Conversations from ${ sendersList } will be moved to ${ folder }": [
+        "Conversațiile de la ${ sendersList } vor fi mutate în ${ folder }."
+      ],
       "Draft deleted": [
         "Ciorna s-a șters"
       ],
@@ -7179,6 +6992,12 @@
       ],
       "Message removed from ${ labelName }.": [
         "Mesaj eliminat din ${ labelName }."
+      ],
+      "Messages from ${ sendersList } will be labelled as ${ labelsList }": [
+        "Mesajele de la ${ sendersList } vor fi etichetate ca ${ labelsList }."
+      ],
+      "Messages from ${ sendersList } will be moved to ${ folder }": [
+        "Mesajele de la ${ sendersList } vor fi mutate în ${ folder }."
       ],
       "Move ${ selectionCount } conversation": [
         "Mutare o conversație",
@@ -7348,9 +7167,6 @@
       "Add contact group name": [
         "Adăugare nume grup contacte"
       ],
-      "Add filter": [
-        "Adăugare filtru"
-      ],
       "Add to ${ groupCount } group": [
         "Adăugare la un grup",
         "Adăugare la ${ groupCount } grupuri",
@@ -7364,9 +7180,6 @@
       ],
       "Archive": [
         "Arhivă"
-      ],
-      "Are you sure you want to close?": [
-        "Sigur doriți să închideți?"
       ],
       "Attachments": [
         "Atașamente"
@@ -7382,6 +7195,9 @@
       ],
       "Blind Carbon Copy": [
         "Copie ascunsă"
+      ],
+      "Block sender": [
+        "Blocare expeditor"
       ],
       "Carbon Copy": [
         "Copie identică"
@@ -7415,12 +7231,6 @@
       ],
       "Conversation list": [
         "Lista conversații"
-      ],
-      "Create a new folder": [
-        "Creare folder"
-      ],
-      "Create a new label": [
-        "Creare etichetă"
       ],
       "Create contact": [
         "Creare contact"
@@ -7501,9 +7311,6 @@
       "Edit contact group": [
         "Editare grup de contacte"
       ],
-      "Edit filter": [
-        "Editare filtru"
-      ],
       "Edit image": [
         "Editare imagine"
       ],
@@ -7542,9 +7349,6 @@
       ],
       "Feedback": [
         "Feedback"
-      ],
-      "Filter on": [
-        "Filtrare după"
       ],
       "Forward": [
         "Redirecționare"
@@ -7846,6 +7650,9 @@
       "Encrypted data with verified digital signature": [
         "Date criptate cu semnătură digitală verificată"
       ],
+      "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
+        "Gmail categorizează automat unele mesaje ca „Rețele sociale” sau „Oferte”. Puteți selecta unde să fie importate acestea."
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Selectați schema PGP ce va fi folosită la semnare sau criptare de către un utilizator. Rețineți că PGP integrat forțează folosirea mesajelor simple."
       ],
@@ -7857,9 +7664,6 @@
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
         "Această acțiune va descărca toate mesajele pentru a putea fi interogate local. Ștergerea datelor din navigator va dezactiva această opțiune."
-      ],
-      "This feature is only available for paid users": [
-        "Această opțiune este valabilă doar pentru utilizatorii cu plată."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Încărcați o cheie publică pentru a activa trimiterea mesajelor criptate în ambele părți la această adresă."

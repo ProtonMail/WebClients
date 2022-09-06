@@ -23,9 +23,6 @@
       "Add address": [
         "Aggiungi indirizzo"
       ],
-      "Add condition": [
-        "Aggiungi condizione"
-      ],
       "Add contact": [
         "Aggiungi contatto"
       ],
@@ -77,6 +74,9 @@
       "All Unstarred": [
         "Tutti Non Preferiti"
       ],
+      "Allow messages": [
+        "Consentire i messaggi"
+      ],
       "Apply": [
         "Applica"
       ],
@@ -94,6 +94,12 @@
       ],
       "Beta Access": [
         "Accesso Beta"
+      ],
+      "Block": [
+        "Blocca"
+      ],
+      "Block messages from this sender": [
+        "Blocca i messaggi da questo mittente"
       ],
       "Bold": [
         "Grassetto"
@@ -147,7 +153,7 @@
         "Chiudi il compositore"
       ],
       "Close modal": [
-        "Chiudi finestra"
+        "Close"
       ],
       "Close navigation": [
         "Chiudi navigazione"
@@ -200,20 +206,17 @@
       "Create a new contact group": [
         "Crea un nuovo gruppo di contatto"
       ],
-      "Create folder": [
-        "Crea cartella"
+      "Create a new folder": [
+        "Crea una nuova cartella"
       ],
-      "Create label": [
-        "Crea etichetta"
+      "Create a new label": [
+        "Crea una nuova etichetta"
       ],
       "Create new contact": [
         "Crea un nuovo contatto"
       ],
       "Create new message": [
         "Crea un nuovo messaggio"
-      ],
-      "Custom filter": [
-        "Filtro personalizzato"
       ],
       "Customize": [
         "Personalizza"
@@ -343,9 +346,6 @@
       "Fewer search options": [
         "Meno opzioni di ricerca"
       ],
-      "Filter on...": [
-        "Filtra per..."
-      ],
       "Font": [
         "Carattere"
       ],
@@ -470,9 +470,6 @@
       "Label as...": [
         "Etichetta come..."
       ],
-      "label emails as": [
-        "etichetta l'email come"
-      ],
       "Learn more": [
         "Scopri di più"
       ],
@@ -508,9 +505,6 @@
       ],
       "Mark as unread": [
         "Segna come non letto"
-      ],
-      "mark emails as": [
-        "segna l'email come"
       ],
       "Mark for deletion": [
         "Seleziona per la cancellazione"
@@ -571,9 +565,6 @@
       ],
       "Move all to trash": [
         "Sposta tutto nel cestino"
-      ],
-      "move emails to": [
-        "sposta l'email in"
       ],
       "Move to": [
         "Sposta in"
@@ -662,9 +653,6 @@
       "Pause": [
         "Pausa"
       ],
-      "Preview": [
-        "Anteprima"
-      ],
       "Preview ${ attachmentName }": [
         "Vedi ${ attachmentName } in anteprima"
       ],
@@ -730,9 +718,6 @@
       ],
       "Remove expiration time": [
         "Rimuovi l'ora di scadenza"
-      ],
-      "Remove this label": [
-        "Rimuovi questa etichetta"
       ],
       "Rename": [
         "Rinomina"
@@ -805,9 +790,6 @@
       ],
       "Send anyway": [
         "Invia comunque"
-      ],
-      "send auto-reply email": [
-        "invia email di risposta automatica"
       ],
       "Send feedback": [
         "Invia il tuo feedback"
@@ -1893,6 +1875,11 @@
         "Yomi"
       ]
     },
+    "Context filtering disabled": {
+      "Your selection contains only yourself as sender": [
+        "La tua selezione contiene solo te stesso come mittente"
+      ]
+    },
     "Country name": {
       "Abkhazia": [
         "Abcasia"
@@ -2660,26 +2647,6 @@
         "Isole Aland"
       ]
     },
-    "CustomFilter": {
-      "Attachment": [
-        "Allegato"
-      ],
-      "Filter on": [
-        "Filtra"
-      ],
-      "Next": [
-        "Successiva"
-      ],
-      "Recipient": [
-        "Destinatario"
-      ],
-      "Sender": [
-        "Mittente"
-      ],
-      "Subject": [
-        "Oggetto"
-      ]
-    },
     "Daily recurring event, frequency": {
       "${ count } time": [
         "${ count } volta",
@@ -2756,6 +2723,15 @@
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Unione dei contatti in corso... L'operazione potrebbe richiedere alcuni minuti. Quando il processo sarà completato, potrai chiudere questa finestra."
+      ],
+      "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted. ${ manageBlockedAddressesSettingsLink } in settings.": [
+        "Le nuove email da ${ senderEmailAddress } non verranno consegnate e verranno eliminate definitivamente. ${ manageBlockedAddressesSettingsLink } nelle impostazioni."
+      ],
+      "No folders": [
+        "Nessuna cartella"
+      ],
+      "No labels": [
+        "Nessuna etichetta"
       ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Il file dovrebbe avere una dimensione massima di ${ MAX_IMPORT_FILE_SIZE_STRING } e avere fino a ${ MAX_IMPORT_CONTACTS_STRING } contatto. Se il tuo file è più grande dividilo in file più piccoli.",
@@ -2940,9 +2916,6 @@
         "Scegli una data entro il prossimo ${ SCHEDULED_MAX_DATE_DAYS } giorno.",
         "Scegli una data entro i prossimi ${ SCHEDULED_MAX_DATE_DAYS } giorni."
       ],
-      "Condition incomplete": [
-        "Condizione incompleta"
-      ],
       "Contact could not be saved": [
         "Il contatto non può essere salvato"
       ],
@@ -2984,17 +2957,11 @@
       "Email is not valid": [
         "Email non valida"
       ],
-      "Empty condition": [
-        "Condizione vuota"
-      ],
       "Enter 6 digits": [
         "Inserisci 6 cifre"
       ],
       "Enter a password": [
         "Inserisci la password"
-      ],
-      "Error in one of the conditions": [
-        "Errore in una delle condizioni"
       ],
       "Error while saving draft. Please try again.": [
         "Errore nel salvataggio della bozza. Per favore riprova."
@@ -3007,9 +2974,6 @@
       ],
       "Failed to encrypt attachment. Please try again.": [
         "Fallito nel crittografare l'allegato. Per favore, riprova."
-      ],
-      "Filter with this name already exists": [
-        "Esiste già un filtro con questo nome"
       ],
       "Folder name cannot be empty.": [
         "Il nome della cartella non può essere vuoto."
@@ -3127,12 +3091,6 @@
       "Request timed out": [
         "Timeout della richiesta"
       ],
-      "Require at least one action": [
-        "Richiede almeno un azione"
-      ],
-      "Require at least one condition": [
-        "Richiede almeno una condizione"
-      ],
       "Signature not verified": [
         "Firma non verificata"
       ],
@@ -3214,9 +3172,6 @@
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser.": [
         "Questo messaggio potrebbe contenere alcuni link URL che potrebbero non essere aperti correttamente dal browser corrente."
-      ],
-      "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
-        "Troppi filtri attivi. Effettua l'upgrade ad un piano a pagamento per attivare più filtri."
       ],
       "Trusted keys are not valid for sending": [
         "Le chiavi attendibili non sono valide per l'invio"
@@ -3570,18 +3525,6 @@
       ]
     },
     "Filter modal type": {
-      "If the attachments": [
-        "Se gli allegati"
-      ],
-      "If the recipient": [
-        "Se il destinatario"
-      ],
-      "If the sender": [
-        "Se il mittente"
-      ],
-      "If the subject": [
-        "Se l'oggetto"
-      ],
       "Select…": [
         "Seleziona…"
       ],
@@ -3601,9 +3544,6 @@
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } aggiornato"
-      ],
-      "Filter ${ Filter.Name } updated": [
-        "Filtro ${ Filter.Name } aggiornato"
       ]
     },
     "Filter option": {
@@ -3621,14 +3561,6 @@
       ],
       "Unread": [
         "Da leggere"
-      ]
-    },
-    "Filter preview": {
-      "read": [
-        "leggi"
-      ],
-      "starred": [
-        "preferito"
       ]
     },
     "Font Face Default": {
@@ -3987,12 +3919,6 @@
         "(${ memberCount } membro)",
         "(${ memberCount } membri)"
       ],
-      "(Filter if ALL of the following conditions are met)": [
-        "(Filtrare se TUTTE le condizioni seguenti sono soddisfatte)"
-      ],
-      "(Filter if ANY of the following conditions are met)": [
-        "(Filtrare se QUALSIASI delle condizioni seguenti sono soddisfatte)"
-      ],
       "(No Recipient)": [
         "(Nessun Destinatario)"
       ],
@@ -4043,9 +3969,6 @@
       "All your calendars are disabled.": [
         "Tutti i tuoi calendari sono disabilitati."
       ],
-      "All your changes will be lost.": [
-        "Tutte le modifiche andranno perse."
-      ],
       "An unknown public key has been detected for this recipient.": [
         "Una chiave pubblica sconosciuta è stata rilevata per questo destinatario."
       ],
@@ -4057,9 +3980,6 @@
       ],
       "Are you sure you want to delete all messages with this label?": [
         "Sei sicuro di voler eliminare tutti i messaggi con quest'etichetta?"
-      ],
-      "Are you sure you want to discard your changes?": [
-        "Vuoi davvero ignorare le modifiche?"
       ],
       "Are you sure you want to move all messages in this location to Trash?": [
         "Sei sicuro di voler spostare tutti i messaggi in questa posizione nel Cestino?"
@@ -4290,9 +4210,6 @@
         "file allegato",
         "file allegati"
       ],
-      "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
-        "I filtri funzionano su tutte le email, incluse le email in arrivo e quelle inviate. Ogni filtro deve contenere almeno un nome, una condizione e un'azione."
-      ],
       "Folder": [
         "Cartella"
       ],
@@ -4354,9 +4271,6 @@
       ],
       "Image URL": [
         "URL dell'immagine"
-      ],
-      "Images have been removed because they are not allowed in auto-reply": [
-        "Le immagini sono state rimosse perché non sono permesse nella risposta automatica"
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Importa ${ contactsFragment } e ${ contactsGroupsFragment }"
@@ -4482,9 +4396,6 @@
       "New": [
         "Nuovo"
       ],
-      "No action selected": [
-        "Nessuna azione selezionata"
-      ],
       "No contacts added yet": [
         "Nessun contatto ancora aggiunto"
       ],
@@ -4497,17 +4408,11 @@
       "No folder found": [
         "Nessuna cartella trovata"
       ],
-      "No folder selected": [
-        "Nessuna cartella selezionata"
-      ],
       "No group found": [
         "Nessun gruppo trovato"
       ],
       "No label found": [
         "Nessuna etichetta trovata"
-      ],
-      "No label selected": [
-        "Nessuna etichetta selezionata"
       ],
       "No more results found": [
         "Nessun altro risultato trovato"
@@ -4674,6 +4579,9 @@
       ],
       "Send an encrypted, password protected message to a ${ boldText } email address.": [
         "Invia un messaggio crittografato e protetto da password a un indirizzo email ${ boldText }."
+      ],
+      "Sender has been blocked.": [
+        "Il mittente è stato bloccato."
       ],
       "Sending": [
         "Invio in corso"
@@ -5228,9 +5136,6 @@
       "Close draft": [
         "Chiudi bozza"
       ],
-      "Create filter with...": [
-        "Crea filtro con..."
-      ],
       "Delete permanently": [
         "Elimina definitivamente"
       ],
@@ -5398,17 +5303,8 @@
       ]
     },
     "Label": {
-      " and ": [
-        " e "
-      ],
-      " and ${ l }": [
-        " e ${ l }"
-      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Temporaneamente non disponibile. Sei pregato di ricontrollare in seguito.)"
-      ],
-      "Actions": [
-        "Azioni"
       ],
       "Add email address": [
         "Aggiungi indirizzo email"
@@ -5422,26 +5318,14 @@
       "Address": [
         "Indirizzo"
       ],
-      "ALL": [
-        "TUTTI"
-      ],
       "Also archive": [
         "Archivia anche"
       ],
-      "AND": [
-        "E"
+      "Always label senders emails": [
+        "Etichetta sempre le email dei mittenti"
       ],
-      "and": [
-        "e"
-      ],
-      "And": [
-        "E"
-      ],
-      "ANY": [
-        "QUALSIASI"
-      ],
-      "Apply filter to existing emails": [
-        "Applica filtro alle email esistenti"
+      "Always move senders emails": [
+        "Sposta sempre le email dei mittenti"
       ],
       "Attach screenshot(s)": [
         "Allega screenshot"
@@ -5491,9 +5375,6 @@
       "Code is 6 digits without spaces": [
         "Il codice è di 6 cifre senza spazi"
       ],
-      "Conditions": [
-        "Condizioni"
-      ],
       "Confirm password": [
         "Conferma password"
       ],
@@ -5518,6 +5399,9 @@
       "Do not ask again": [
         "Non chiedermelo più"
       ],
+      "Don't show this again": [
+        "Non mostrare più"
+      ],
       "Email": [
         "Email"
       ],
@@ -5541,9 +5425,6 @@
       ],
       "Extended address": [
         "Indirizzo completo"
-      ],
-      "Filter Name": [
-        "Nome del filtro"
       ],
       "Folder location": [
         "Percorso cartella"
@@ -5574,12 +5455,6 @@
       ],
       "I understand the risk": [
         "Comprendo i rischi"
-      ],
-      "IF": [
-        "SE"
-      ],
-      "If": [
-        "Se"
       ],
       "Import all messages": [
         "Importa tutti i messaggi"
@@ -5620,6 +5495,9 @@
       "Mailbox password": [
         "Password della casella email"
       ],
+      "Manage categories": [
+        "Gestione delle categorie"
+      ],
       "Manage folders": [
         "Gestisci cartelle"
       ],
@@ -5629,17 +5507,17 @@
       "Manage my addresses": [
         "Gestisci i miei indirizzi"
       ],
-      "Mark as": [
-        "Segna come"
-      ],
       "Move to": [
         "Sposta in"
       ],
+      "Move to Archive": [
+        "Sposta in Archivio"
+      ],
+      "Move to Inbox": [
+        "Sposta in Posta in arrivo"
+      ],
       "Name": [
         "Nome"
-      ],
-      "No label found": [
-        "Nessuna etichetta trovata"
       ],
       "Notification": [
         "Notifica"
@@ -5652,15 +5530,6 @@
       ],
       "Operating system version": [
         "Versione del sistema operativo"
-      ],
-      "OR": [
-        "O"
-      ],
-      "or": [
-        "o"
-      ],
-      "Or": [
-        "O"
       ],
       "Participants": [
         "Partecipanti"
@@ -5689,9 +5558,6 @@
       "Public keys": [
         "Chiavi pubbliche"
       ],
-      "Read": [
-        "Letto"
-      ],
       "Recipient": [
         "Destinatario"
       ],
@@ -5719,9 +5585,6 @@
       "Select how your mailbox looks like by default.": [
         "Seleziona come far apparire la casella di posta per impostazione predefinita."
       ],
-      "Send auto-reply": [
-        "Invia risposta automatica"
-      ],
       "Sender": [
         "Mittente"
       ],
@@ -5731,32 +5594,11 @@
       "Size:": [
         "Dimensione:"
       ],
-      "Starred": [
-        "Preferito"
-      ],
-      "Statement": [
-        "Istruzione"
-      ],
       "Street address": [
         "Indirizzo"
       ],
       "System information": [
         "Informazioni sul sistema"
-      ],
-      "The email was sent ${ attachment }": [
-        "L'email è stata inviata ${ attachment }"
-      ],
-      "the email was sent ${ attachment }": [
-        "l'email è stata inviata ${ attachment }"
-      ],
-      "The email was sent ${ attachmentStrong }": [
-        "L'email è stata inviata ${ attachmentStrong }"
-      ],
-      "the email was sent ${ label }": [
-        "l'email è stata inviata ${ label }"
-      ],
-      "Then": [
-        "Poi"
       ],
       "Time": [
         "Orario"
@@ -5787,21 +5629,6 @@
       ],
       "What happened?": [
         "Cos'è successo?"
-      ],
-      "With attachment": [
-        "Con allegato"
-      ],
-      "with attachments": [
-        "con allegati"
-      ],
-      "Without attachment": [
-        "Senza allegato"
-      ],
-      "without attachment": [
-        "senza allegato"
-      ],
-      "without attachments": [
-        "senza allegati"
       ],
       "Wonderful": [
         "Fantastica"
@@ -5880,12 +5707,6 @@
       "Activate": [
         "Attiva"
       ],
-      "Add folder": [
-        "Aggiungi cartella"
-      ],
-      "Add label": [
-        "Aggiungi etichetta"
-      ],
       "All mail": [
         "Tutte le mail"
       ],
@@ -5942,6 +5763,9 @@
       ],
       "Less": [
         "Meno"
+      ],
+      "Manage blocked email addresses": [
+        "Gestire gli indirizzi email bloccati"
       ],
       "Manage your folders": [
         "Gestisci le tue cartelle"
@@ -6319,8 +6143,8 @@
       ]
     },
     "Notification": {
-      "${ _Filter.Name } created": [
-        "${ _Filter.Name } creato"
+      "Block removed": [
+        "Blocco rimosso"
       ],
       "Contact group created": [
         "Gruppo di contatto creato"
@@ -6330,6 +6154,9 @@
       ],
       "Password has been set successfully": [
         "La password è stata impostata con successo"
+      ],
+      "Sender ${ senderEmail } blocked": [
+        "Il mittente ${ senderEmail } è stato bloccato"
       ]
     },
     "Oauth instructions": {
@@ -6396,9 +6223,6 @@
       ]
     },
     "Option group": {
-      "Custom folders": [
-        "Cartelle personalizzate"
-      ],
       "Default folders": [
         "Cartelle predefinite"
       ],
@@ -6540,9 +6364,6 @@
       ],
       "Text": [
         "Testo"
-      ],
-      "Type text or keyword": [
-        "Digita testo o parola chiave"
       ],
       "Write your message": [
         "Scrivi un messaggio"
@@ -6839,20 +6660,6 @@
         "Abbonamento annullato"
       ]
     },
-    "Step in filter modal": {
-      "Actions": [
-        "Azioni"
-      ],
-      "Conditions": [
-        "Condizioni"
-      ],
-      "Name": [
-        "Nome"
-      ],
-      "Preview": [
-        "Anteprima"
-      ]
-    },
     "Storage": {
       "Get extra storage for free": [
         "Ottieni spazio aggiuntivo gratis"
@@ -6997,6 +6804,12 @@
       "Conversation removed from ${ labelName }.": [
         "Conversazione rimossa da ${ labelName }."
       ],
+      "Conversations from ${ sendersList } will be labelled as ${ labelsList }": [
+        "Le conversazioni da ${ sendersList } saranno etichettate come ${ labelsList }"
+      ],
+      "Conversations from ${ sendersList } will be moved to ${ folder }": [
+        "Le conversioni da ${ sendersList } saranno spostate in ${ folder }"
+      ],
       "Draft deleted": [
         "Bozza eliminata"
       ],
@@ -7053,6 +6866,12 @@
       ],
       "Message removed from ${ labelName }.": [
         "Messaggio rimosso da ${ labelName }."
+      ],
+      "Messages from ${ sendersList } will be labelled as ${ labelsList }": [
+        "I messaggi da ${ sendersList } saranno etichettati come ${ labelsList }"
+      ],
+      "Messages from ${ sendersList } will be moved to ${ folder }": [
+        "I messaggi da ${ sendersList } saranno spostati in ${ folder }"
       ],
       "Move ${ selectionCount } conversation": [
         "Sposta ${ selectionCount } conversazione",
@@ -7213,9 +7032,6 @@
       "Add contact group name": [
         "Aggiungi nome gruppo di contatti"
       ],
-      "Add filter": [
-        "Aggiungi filtro"
-      ],
       "Add to ${ groupCount } group": [
         "Aggiungi a ${ groupCount } gruppo",
         "Aggiungi a ${ groupCount } gruppi"
@@ -7228,9 +7044,6 @@
       ],
       "Archive": [
         "Archivio"
-      ],
-      "Are you sure you want to close?": [
-        "Confermi di voler chiudere?"
       ],
       "Attachments": [
         "Allegati"
@@ -7246,6 +7059,9 @@
       ],
       "Blind Carbon Copy": [
         "Copia carbone nascosta"
+      ],
+      "Block sender": [
+        "Blocca mittente"
       ],
       "Carbon Copy": [
         "Copia carbone"
@@ -7279,12 +7095,6 @@
       ],
       "Conversation list": [
         "Elenco conversazioni"
-      ],
-      "Create a new folder": [
-        "Crea una nuova cartella"
-      ],
-      "Create a new label": [
-        "Crea una nuova etichetta"
       ],
       "Create contact": [
         "Crea contatto"
@@ -7360,9 +7170,6 @@
       "Edit contact group": [
         "Modifica gruppo di contatti"
       ],
-      "Edit filter": [
-        "Modifica filtro"
-      ],
       "Edit image": [
         "Modifica immagine"
       ],
@@ -7401,9 +7208,6 @@
       ],
       "Feedback": [
         "Feedback"
-      ],
-      "Filter on": [
-        "Filtra"
       ],
       "Forward": [
         "Inoltra"
@@ -7704,6 +7508,9 @@
       "Encrypted data with verified digital signature": [
         "Dati crittografati con firma digitale verificata"
       ],
+      "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
+        "Gmail automaticamente sposta alcune email nelle proprie categorie, come Social o Promozioni. Puoi selezionare dove importare queste email."
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Seleziona lo schema PGP da usare quando si firma o si crittografa per un utente. Nota che PGP/Inline forza i testi in messaggi semplici"
       ],
@@ -7715,9 +7522,6 @@
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
         "Quest'azione scaricherà tutti i messaggi così che possano esser ricercati localmente. Cancellare i dati del tuo browser disabiliterà quest'opzione."
-      ],
-      "This feature is only available for paid users": [
-        "Questa funzionalità è disponibile solo per utenti paganti"
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Carica una chiave pubblica per abilitare l'invio di email crittografate end-to-end a questa email"

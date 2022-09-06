@@ -23,9 +23,6 @@
       "Add address": [
         "Добавить адрес"
       ],
-      "Add condition": [
-        "Добавить условие"
-      ],
       "Add contact": [
         "Добавить контакт"
       ],
@@ -77,6 +74,9 @@
       "All Unstarred": [
         "Все Неважные"
       ],
+      "Allow messages": [
+        "Разрешить сообщения"
+      ],
       "Apply": [
         "Применить"
       ],
@@ -94,6 +94,12 @@
       ],
       "Beta Access": [
         "Бета-доступ"
+      ],
+      "Block": [
+        "Заблокировать"
+      ],
+      "Block messages from this sender": [
+        "Заблокировать сообщения этого отправителя"
       ],
       "Bold": [
         "Полужирный"
@@ -147,7 +153,7 @@
         "Закрыть редактор"
       ],
       "Close modal": [
-        "Закрыть окно"
+        "Close"
       ],
       "Close navigation": [
         "Закрыть навигацию"
@@ -200,20 +206,17 @@
       "Create a new contact group": [
         "Создать новую группу контактов"
       ],
-      "Create folder": [
-        "Создать папку"
+      "Create a new folder": [
+        "Создать новую папку"
       ],
-      "Create label": [
-        "Создать ярлык"
+      "Create a new label": [
+        "Создать новый ярлык"
       ],
       "Create new contact": [
         "Создать новый контакт"
       ],
       "Create new message": [
         "Создать новое сообщение"
-      ],
-      "Custom filter": [
-        "Пользовательский фильтр"
       ],
       "Customize": [
         "Настроить"
@@ -347,9 +350,6 @@
       "Fewer search options": [
         "Меньше настроек поиска"
       ],
-      "Filter on...": [
-        "Фильтр по..."
-      ],
       "Font": [
         "Шрифт"
       ],
@@ -476,9 +476,6 @@
       "Label as...": [
         "Отметить как..."
       ],
-      "label emails as": [
-        "отметить письма ярлыком"
-      ],
       "Learn more": [
         "Подробнее"
       ],
@@ -514,9 +511,6 @@
       ],
       "Mark as unread": [
         "Отметить как непрочитанное"
-      ],
-      "mark emails as": [
-        "отметить письма как"
       ],
       "Mark for deletion": [
         "Отметить для удаления"
@@ -577,9 +571,6 @@
       ],
       "Move all to trash": [
         "Переместить все в корзину"
-      ],
-      "move emails to": [
-        "переместить письма в"
       ],
       "Move to": [
         "Переместить в"
@@ -668,9 +659,6 @@
       "Pause": [
         "Приостановить"
       ],
-      "Preview": [
-        "Предпросмотр"
-      ],
       "Preview ${ attachmentName }": [
         "Предпросмотр ${ attachmentName }"
       ],
@@ -736,9 +724,6 @@
       ],
       "Remove expiration time": [
         "Удалить время истечения срока действия"
-      ],
-      "Remove this label": [
-        "Удалить этот ярлык"
       ],
       "Rename": [
         "Переименовать"
@@ -811,9 +796,6 @@
       ],
       "Send anyway": [
         "Все равно отправить"
-      ],
-      "send auto-reply email": [
-        "отправить автоответ"
       ],
       "Send feedback": [
         "Отправить отзыв"
@@ -1075,6 +1057,11 @@
       ],
       "Participant added": [
         "Участник добавлен"
+      ]
+    },
+    "Adding expiration to a message will create an expiring message": {
+      "Expiring message": [
+        "Сообщение с истекающим сроком действия"
       ]
     },
     "Alert": {
@@ -1898,6 +1885,11 @@
         "Ёми"
       ]
     },
+    "Context filtering disabled": {
+      "Your selection contains only yourself as sender": [
+        "Во всех выбранных письмах отправителем являетесь вы сами"
+      ]
+    },
     "Country name": {
       "Abkhazia": [
         "Абхазия"
@@ -2665,26 +2657,6 @@
         "Аландские острова"
       ]
     },
-    "CustomFilter": {
-      "Attachment": [
-        "Вложение"
-      ],
-      "Filter on": [
-        "Вкл фильтр"
-      ],
-      "Next": [
-        "Далее"
-      ],
-      "Recipient": [
-        "Получатель"
-      ],
-      "Sender": [
-        "Отправитель"
-      ],
-      "Subject": [
-        "Тема"
-      ]
-    },
     "Daily recurring event, frequency": {
       "${ count } time": [
         "${ count } раз",
@@ -2769,6 +2741,15 @@
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Выполняется объединение контактов. Это может занять несколько минут. Когда процесс завершится, вы сможете закрыть это сообщение."
+      ],
+      "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted. ${ manageBlockedAddressesSettingsLink } in settings.": [
+        "Новые письма от ${ senderEmailAddress } не будут доставлены, и будут безвозвратно удалены. ${ manageBlockedAddressesSettingsLink } в настройках."
+      ],
+      "No folders": [
+        "Нет папок"
+      ],
+      "No labels": [
+        "Нет ярлыков"
       ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Максимальный размер файла может быть не более ${ MAX_IMPORT_FILE_SIZE_STRING } и иметь не более ${ MAX_IMPORT_CONTACTS_STRING } контакта. Если ваш файл больше, то, пожалуйста, разбейте его на меньшие файлы.",
@@ -2959,9 +2940,6 @@
         "Выберите дату с течении ${ SCHEDULED_MAX_DATE_DAYS } дней.",
         "Выберите дату с течении ${ SCHEDULED_MAX_DATE_DAYS } дня(ей)"
       ],
-      "Condition incomplete": [
-        "Условие неполное"
-      ],
       "Contact could not be saved": [
         "Невозможно сохранить контакт"
       ],
@@ -3007,17 +2985,11 @@
       "Email is not valid": [
         "Эл. почта недействительна"
       ],
-      "Empty condition": [
-        "Пустое условие"
-      ],
       "Enter 6 digits": [
         "Введите 6 цифр"
       ],
       "Enter a password": [
         "Введите пароль"
-      ],
-      "Error in one of the conditions": [
-        "Ошибка в одном из условий"
       ],
       "Error while saving draft. Please try again.": [
         "Ошибка при сохранении черновика. Пожалуйста, попробуйте снова."
@@ -3030,9 +3002,6 @@
       ],
       "Failed to encrypt attachment. Please try again.": [
         "Не удалось зашифровать вложение. Попробуйте еще раз."
-      ],
-      "Filter with this name already exists": [
-        "Фильтр с таким именем уже существует"
       ],
       "Folder name cannot be empty.": [
         "Название папки не может быть пустым."
@@ -3160,12 +3129,6 @@
       "Request timed out": [
         "Время запроса истекло"
       ],
-      "Require at least one action": [
-        "Требуется как минимум одно действие"
-      ],
-      "Require at least one condition": [
-        "Требуется как минимум одно условие"
-      ],
       "Signature not verified": [
         "Подпись подтверждена"
       ],
@@ -3249,9 +3212,6 @@
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser.": [
         "Это сообщение может содержать ссылки, которые не могут быть правильно открыты в вашем текущем браузере."
-      ],
-      "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
-        "Слишком много активных фильтров. Пожалуйста, улучшите до платного тарифа для активации дополнительных фильтров."
       ],
       "Trusted keys are not valid for sending": [
         "Доверенные ключи не действительны для отправки"
@@ -3617,18 +3577,6 @@
       ]
     },
     "Filter modal type": {
-      "If the attachments": [
-        "Если вложения"
-      ],
-      "If the recipient": [
-        "Если получатель"
-      ],
-      "If the sender": [
-        "Если отправитель"
-      ],
-      "If the subject": [
-        "Если тема"
-      ],
       "Select…": [
         "Выбрать…"
       ],
@@ -3648,9 +3596,6 @@
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } обновлён"
-      ],
-      "Filter ${ Filter.Name } updated": [
-        "Фильтр ${ Filter.Name } обновлён"
       ]
     },
     "Filter option": {
@@ -3668,14 +3613,6 @@
       ],
       "Unread": [
         "Непрочитанные"
-      ]
-    },
-    "Filter preview": {
-      "read": [
-        "прочитано"
-      ],
-      "starred": [
-        "со звёздами"
       ]
     },
     "Font Face Default": {
@@ -4106,12 +4043,6 @@
         "(${ memberCount } участников)",
         "(${ memberCount } участника)"
       ],
-      "(Filter if ALL of the following conditions are met)": [
-        "(Фильтровать, если ВСЕ из следующих условий выполнены)"
-      ],
-      "(Filter if ANY of the following conditions are met)": [
-        "(Фильтровать, если ЛЮБОЕ из следующих условий выполнено)"
-      ],
       "(No Recipient)": [
         "(Нет получателей)"
       ],
@@ -4166,9 +4097,6 @@
       "All your calendars are disabled.": [
         "Все ваши календари отключены."
       ],
-      "All your changes will be lost.": [
-        "Все ваши изменения будут потеряны."
-      ],
       "An unknown public key has been detected for this recipient.": [
         "Для этого получателя обнаружен неизвестный публичный ключ."
       ],
@@ -4180,9 +4108,6 @@
       ],
       "Are you sure you want to delete all messages with this label?": [
         "Вы уверены, что хотите удалить все письма с этим ярлыком?"
-      ],
-      "Are you sure you want to discard your changes?": [
-        "Вы уверены, что хотите отменить изменения?"
       ],
       "Are you sure you want to move all messages in this location to Trash?": [
         "Вы уверены, что хотите переместить все сообщения отсюда в корзину?"
@@ -4433,9 +4358,6 @@
         "файлов прикреплено",
         "файлов прикреплено"
       ],
-      "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
-        "Фильтры применяются ко всем письмам: как ко входящим, так и к отправленным. В каждом фильтре должно быть как минимум имя, условие и действие."
-      ],
       "Folder": [
         "Папка"
       ],
@@ -4501,9 +4423,6 @@
       ],
       "Image URL": [
         "URL изображения"
-      ],
-      "Images have been removed because they are not allowed in auto-reply": [
-        "Изображения были удалены, поскольку они не допускаются в автоответчике"
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Импорт ${ contactsFragment } и ${ contactsGroupsFragment }"
@@ -4631,9 +4550,6 @@
       "New": [
         "Новый"
       ],
-      "No action selected": [
-        "Действие не выбрано"
-      ],
       "No contacts added yet": [
         "Контакты ещё не добавлены"
       ],
@@ -4646,17 +4562,11 @@
       "No folder found": [
         "Папки не найдены"
       ],
-      "No folder selected": [
-        "Папка не выбрана"
-      ],
       "No group found": [
         "Группа не найдена"
       ],
       "No label found": [
         "Ярлыки не найдены"
-      ],
-      "No label selected": [
-        "Ярлык не выбран"
       ],
       "No more results found": [
         "Больше результатов не найдено"
@@ -4826,6 +4736,9 @@
       "Send an encrypted, password protected message to a ${ boldText } email address.": [
         "Отправьте зашифрованное, защищенное паролем сообщение на адрес электронной почты ${ boldText }."
       ],
+      "Sender has been blocked.": [
+        "Отправитель был заблокирован."
+      ],
       "Sending": [
         "Отправка"
       ],
@@ -4969,6 +4882,9 @@
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Эта ссылка ведет на сайт, который может пытаться украсть вашу информацию, например, пароли и данные кредитной карты."
+      ],
+      "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
+        "Эта ссылка может быть омографической атакой и не может быть открыта браузерами Edge. Если вы уверены, что ссылка подлинная, используйте другой браузер для ее открытия."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Эта ссылка может быть омографической атакой, при которой символы одного алфавита подменяются похожими символами из другого. Пожалуйста, проверьте, что это именно та ссылка, которую вы хотите посетить, или не переходите по ней."
@@ -5404,9 +5320,6 @@
       "Close draft": [
         "Закрыть черновик"
       ],
-      "Create filter with...": [
-        "Создать фильтр с помощью..."
-      ],
       "Delete permanently": [
         "Удалить навсегда"
       ],
@@ -5574,17 +5487,8 @@
       ]
     },
     "Label": {
-      " and ": [
-        " и "
-      ],
-      " and ${ l }": [
-        " и ${ l }"
-      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Временно недоступно. Пожалуйста, проверьте позже.)"
-      ],
-      "Actions": [
-        "Действия"
       ],
       "Add email address": [
         "Добавить адрес эл. почты"
@@ -5598,26 +5502,14 @@
       "Address": [
         "Адрес"
       ],
-      "ALL": [
-        "ВСЁ"
-      ],
       "Also archive": [
         "Также перенести в архив"
       ],
-      "AND": [
-        "И"
+      "Always label senders emails": [
+        "Всегда отмечать сообщения этого отправителя"
       ],
-      "and": [
-        "и"
-      ],
-      "And": [
-        "И"
-      ],
-      "ANY": [
-        "ЛЮБОЕ"
-      ],
-      "Apply filter to existing emails": [
-        "Применить к существующему сообщению"
+      "Always move senders emails": [
+        "Всегда перемещать сообщения этого отправителя"
       ],
       "Attach screenshot(s)": [
         "Вложить снимок(ки) экрана"
@@ -5667,9 +5559,6 @@
       "Code is 6 digits without spaces": [
         "Код состоит из 6 цифр без пробелов"
       ],
-      "Conditions": [
-        "Условия"
-      ],
       "Confirm password": [
         "Подтвердить пароль"
       ],
@@ -5694,6 +5583,9 @@
       "Do not ask again": [
         "Больше не спрашивать"
       ],
+      "Don't show this again": [
+        "Больше не показывать"
+      ],
       "Email": [
         "Электронная почта"
       ],
@@ -5717,9 +5609,6 @@
       ],
       "Extended address": [
         "Расширенный адрес"
-      ],
-      "Filter Name": [
-        "Название фильтра"
       ],
       "Folder location": [
         "Размещение папки"
@@ -5750,12 +5639,6 @@
       ],
       "I understand the risk": [
         "Я понимаю риск"
-      ],
-      "IF": [
-        "ЕСЛИ"
-      ],
-      "If": [
-        "Если"
       ],
       "Import all messages": [
         "Импортировать все сообщения"
@@ -5796,6 +5679,9 @@
       "Mailbox password": [
         "Пароль почтового ящика"
       ],
+      "Manage categories": [
+        "Управлять категориями"
+      ],
       "Manage folders": [
         "Управление папками"
       ],
@@ -5805,17 +5691,17 @@
       "Manage my addresses": [
         "Управление моими адресами"
       ],
-      "Mark as": [
-        "Отметить как"
-      ],
       "Move to": [
         "Переместить в"
       ],
+      "Move to Archive": [
+        "Переместить в архив"
+      ],
+      "Move to Inbox": [
+        "Переместить в входящие"
+      ],
       "Name": [
         "Имя"
-      ],
-      "No label found": [
-        "Ярлыков не найдено"
       ],
       "Notification": [
         "Уведомление"
@@ -5828,15 +5714,6 @@
       ],
       "Operating system version": [
         "Версия операционной системы"
-      ],
-      "OR": [
-        "ИЛИ"
-      ],
-      "or": [
-        "или"
-      ],
-      "Or": [
-        "Или"
       ],
       "Participants": [
         "Участники"
@@ -5865,9 +5742,6 @@
       "Public keys": [
         "Публичные ключи"
       ],
-      "Read": [
-        "Прочитанное"
-      ],
       "Recipient": [
         "Получатель"
       ],
@@ -5895,9 +5769,6 @@
       "Select how your mailbox looks like by default.": [
         "Выберите как будет выглядеть ваш почтовый ящик по умолчанию."
       ],
-      "Send auto-reply": [
-        "Отправить автоответ"
-      ],
       "Sender": [
         "Отправитель"
       ],
@@ -5907,32 +5778,11 @@
       "Size:": [
         "Размер:"
       ],
-      "Starred": [
-        "Со звездочкой"
-      ],
-      "Statement": [
-        "Выражение"
-      ],
       "Street address": [
         "Адрес"
       ],
       "System information": [
         "Сведения о системе"
-      ],
-      "The email was sent ${ attachment }": [
-        "Письмо было отправлено ${ attachment }"
-      ],
-      "the email was sent ${ attachment }": [
-        "письмо было отправлено ${ attachment }"
-      ],
-      "The email was sent ${ attachmentStrong }": [
-        "Письмо было отправлено ${ attachmentStrong }"
-      ],
-      "the email was sent ${ label }": [
-        "письмо было отправлено ${ label }"
-      ],
-      "Then": [
-        "Затем"
       ],
       "Time": [
         "Время"
@@ -5963,21 +5813,6 @@
       ],
       "What happened?": [
         "Что случилось?"
-      ],
-      "With attachment": [
-        "С вложением"
-      ],
-      "with attachments": [
-        "с вложениями"
-      ],
-      "Without attachment": [
-        "Без вложения"
-      ],
-      "without attachment": [
-        "без вложения"
-      ],
-      "without attachments": [
-        "без вложений"
       ],
       "Wonderful": [
         "Прекрасно"
@@ -6056,12 +5891,6 @@
       "Activate": [
         "Активировать"
       ],
-      "Add folder": [
-        "Добавить папку"
-      ],
-      "Add label": [
-        "Добавить ярлык"
-      ],
       "All mail": [
         "Вся почта"
       ],
@@ -6118,6 +5947,9 @@
       ],
       "Less": [
         "Меньше"
+      ],
+      "Manage blocked email addresses": [
+        "Управлять списком заблокированных эл. адресов"
       ],
       "Manage your folders": [
         "Управлять вашими папками"
@@ -6292,6 +6124,11 @@
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "Доступна новая версия ${ appName } . ${ reloadButton }."
+      ]
+    },
+    "Message has been sent to the user via a SimpleLogin alias": {
+      "Delivered via SimpleLogin by Proton": [
+        "Доставлено через SimpleLogin от Proton"
       ]
     },
     "Message image": {
@@ -6500,8 +6337,8 @@
       ]
     },
     "Notification": {
-      "${ _Filter.Name } created": [
-        "${ _Filter.Name } создан"
+      "Block removed": [
+        "Блокировка удалена"
       ],
       "Contact group created": [
         "Группа контактов создана"
@@ -6511,6 +6348,9 @@
       ],
       "Password has been set successfully": [
         "Пароль был успешно установлен"
+      ],
+      "Sender ${ senderEmail } blocked": [
+        "Отправитель ${ senderEmail } заблокирован"
       ]
     },
     "Oauth instructions": {
@@ -6577,9 +6417,6 @@
       ]
     },
     "Option group": {
-      "Custom folders": [
-        "Настраиваемые папки"
-      ],
       "Default folders": [
         "Папки по умолчанию"
       ],
@@ -6721,9 +6558,6 @@
       ],
       "Text": [
         "Текст"
-      ],
-      "Type text or keyword": [
-        "Введите текст или ключевое слово"
       ],
       "Write your message": [
         "Напишите сообщение"
@@ -7036,20 +6870,6 @@
         "Подписка отменена"
       ]
     },
-    "Step in filter modal": {
-      "Actions": [
-        "Действия"
-      ],
-      "Conditions": [
-        "Условия"
-      ],
-      "Name": [
-        "Название"
-      ],
-      "Preview": [
-        "Предпросмотр"
-      ]
-    },
     "Storage": {
       "Get extra storage for free": [
         "Получите дополнительное хранилище бесплатно"
@@ -7236,6 +7056,12 @@
       "Conversation removed from ${ labelName }.": [
         "Цепочка писем удалена из ${ labelName }."
       ],
+      "Conversations from ${ sendersList } will be labelled as ${ labelsList }": [
+        "Цепочки писем от ${ sendersList } будут помечены ${ labelsList }"
+      ],
+      "Conversations from ${ sendersList } will be moved to ${ folder }": [
+        "Цепочки писем от ${ sendersList } будут перемещены в ${ folder }"
+      ],
       "Draft deleted": [
         "Черновик удален"
       ],
@@ -7292,6 +7118,12 @@
       ],
       "Message removed from ${ labelName }.": [
         "Сообщение удалено из ${ labelName }."
+      ],
+      "Messages from ${ sendersList } will be labelled as ${ labelsList }": [
+        "Сообщения от ${ sendersList } будут помечены ${ labelsList }"
+      ],
+      "Messages from ${ sendersList } will be moved to ${ folder }": [
+        "Сообщения от ${ sendersList } будут перемещены в ${ folder }"
       ],
       "Move ${ selectionCount } conversation": [
         "Переместить ${ selectionCount } цепочку писем",
@@ -7470,9 +7302,6 @@
       "Add contact group name": [
         "Добавление имени для группы контактов"
       ],
-      "Add filter": [
-        "Добавить фильтр"
-      ],
       "Add to ${ groupCount } group": [
         "Добавление в ${ groupCount } группу",
         "Добавление в ${ groupCount } группы",
@@ -7488,9 +7317,6 @@
       "Archive": [
         "Архив"
       ],
-      "Are you sure you want to close?": [
-        "Вы уверены, что хотите закрыть?"
-      ],
       "Attachments": [
         "Вложения"
       ],
@@ -7505,6 +7331,9 @@
       ],
       "Blind Carbon Copy": [
         "Скрытая копия"
+      ],
+      "Block sender": [
+        "Заблокировать отправителя"
       ],
       "Carbon Copy": [
         "Копия"
@@ -7538,12 +7367,6 @@
       ],
       "Conversation list": [
         "Цепочка писем"
-      ],
-      "Create a new folder": [
-        "Создать новую папку"
-      ],
-      "Create a new label": [
-        "Создать новый ярлык"
       ],
       "Create contact": [
         "Создать контакт"
@@ -7629,9 +7452,6 @@
       "Edit contact group": [
         "Изменение группы контактов"
       ],
-      "Edit filter": [
-        "Изменение фильтра"
-      ],
       "Edit image": [
         "Изменение изображения"
       ],
@@ -7670,9 +7490,6 @@
       ],
       "Feedback": [
         "Отзыв"
-      ],
-      "Filter on": [
-        "Фильтр включен"
       ],
       "Forward": [
         "Переслать"
@@ -7975,6 +7792,9 @@
       "Encrypted data with verified digital signature": [
         "Зашифрованные данные с подтверждённой цифровой подписью"
       ],
+      "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
+        "Gmail автоматически категоризирует некоторые эл. письма, такие как уведомления соцсетей и рекламу. Вы можете выбрать, куда импортировать эти письма."
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Выберите схему PGP, которая будет применяться при подписи или шифровании для пользователя. Учтите, что PGP/Inline принудительно устанавливает формат сообщений на \"простой текст\""
       ],
@@ -7986,9 +7806,6 @@
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
         "Это действие скачает все сообщения, чтобы их можно было искать локально. Очистка данных браузера или выход из системы отключат эту настройку."
-      ],
-      "This feature is only available for paid users": [
-        "Эта функция доступна только пользователям с платными тарифами"
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Загрузите публичный ключ, чтобы включить отправку зашифрованных писем на этот адрес"
