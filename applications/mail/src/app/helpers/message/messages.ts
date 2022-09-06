@@ -1,7 +1,7 @@
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { attachmentsSize, isDraft, isReceived, isSent } from '@proton/shared/lib/mail/messages';
+import { attachmentsSize, isDraft, isReceived, isSent, isSentAndReceived } from '@proton/shared/lib/mail/messages';
 import uniqueBy from '@proton/utils/uniqueBy';
 
 import { MARK_AS_STATUS } from '../../hooks/actions/useMarkAs';
@@ -16,7 +16,7 @@ import {
 import { getContent, setContent } from './messageContent';
 import { getEmbeddedImages } from './messageImages';
 
-const { SENT, DRAFTS, SPAM, INBOX } = MAILBOX_LABEL_IDS;
+const { SENT, DRAFTS, INBOX } = MAILBOX_LABEL_IDS;
 
 export const getAttachmentCounts = (attachments: Attachment[], messageImages: MessageImages | undefined) => {
     const size = attachmentsSize({ Attachments: attachments } as Message);
@@ -75,16 +75,18 @@ export const getMessagesAuthorizedToMove = (messages: Message[], destinationFold
         if ([SENT, DRAFTS, INBOX].includes(destinationFolderID as MAILBOX_LABEL_IDS)) {
             const excludedDestinations = [];
 
-            if (isReceived(message)) {
-                excludedDestinations.push(...[SENT, DRAFTS]);
-            }
+            if (!isSentAndReceived(message)) {
+                if (isReceived(message)) {
+                    excludedDestinations.push(...[SENT, DRAFTS]);
+                }
 
-            if (isSent(message)) {
-                excludedDestinations.push(...[INBOX, DRAFTS, SPAM]);
+                if (isSent(message)) {
+                    excludedDestinations.push(...[INBOX, DRAFTS]);
+                }
             }
 
             if (isDraft(message)) {
-                excludedDestinations.push(...[INBOX, SENT, SPAM]);
+                excludedDestinations.push(...[INBOX, SENT]);
             }
 
             return !(excludedDestinations as string[]).includes(destinationFolderID);
