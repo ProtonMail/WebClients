@@ -5,7 +5,7 @@ import { getRecipients, getSender } from '@proton/shared/lib/mail/messages';
 import { MessageImage, MessageImages } from '../../logic/messages/messagesTypes';
 import { getAttachmentCounts, getMessagesAuthorizedToMove } from './messages';
 
-const { INBOX, TRASH, SENT } = MAILBOX_LABEL_IDS;
+const { INBOX, SENT, DRAFTS, SPAM, TRASH } = MAILBOX_LABEL_IDS;
 
 describe('message', () => {
     describe('getSender', () => {
@@ -32,10 +32,25 @@ describe('message', () => {
     });
 
     describe('getMessagesAuthorizedToMove', () => {
-        it('should filter out messages from Drafts, All Drafts, Sent and All Sent if destination folder is Spam or Inbox', () => {
-            const message1 = { ID: '0', LabelIDs: [TRASH] } as Message;
-            const message2 = { ID: '1', LabelIDs: [SENT] } as Message;
-            expect(getMessagesAuthorizedToMove([message1, message2], INBOX)).toEqual([message1]);
+        it('should return messages authorized to move', () => {
+            const inboxMessage = { ID: '0', LabelIDs: [INBOX], Flags: 1 } as Message;
+            const sentMessage = { ID: '1', LabelIDs: [SENT], Flags: 2 } as Message;
+            const draftMessage = { ID: '2', LabelIDs: [DRAFTS], Flags: 0 } as Message;
+            expect(getMessagesAuthorizedToMove([inboxMessage, sentMessage, draftMessage], INBOX)).toEqual([
+                inboxMessage,
+            ]);
+            expect(getMessagesAuthorizedToMove([inboxMessage, sentMessage, draftMessage], SENT)).toEqual([sentMessage]);
+            expect(getMessagesAuthorizedToMove([inboxMessage, sentMessage, draftMessage], DRAFTS)).toEqual([
+                draftMessage,
+            ]);
+            expect(getMessagesAuthorizedToMove([inboxMessage, sentMessage, draftMessage], SPAM)).toEqual([
+                inboxMessage,
+            ]);
+            expect(getMessagesAuthorizedToMove([inboxMessage, sentMessage, draftMessage], TRASH)).toEqual([
+                inboxMessage,
+                sentMessage,
+                draftMessage,
+            ]);
         });
     });
 
