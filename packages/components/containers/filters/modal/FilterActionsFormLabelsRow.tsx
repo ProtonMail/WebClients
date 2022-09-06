@@ -104,6 +104,7 @@ const FilterActionsFormLabelsRow = ({ actions, isNarrow, handleUpdateActions, la
                                 labels.map((label) => (
                                     <div className="mb0-5 inline-block text-ellipsis" key={label.Path}>
                                         <Checkbox
+                                            title={label.Name}
                                             className="mr1 flex-nowrap"
                                             checked={labelAs.labels.includes(label.Path)}
                                             onChange={() => handleCheckLabel(label)}
@@ -115,7 +116,6 @@ const FilterActionsFormLabelsRow = ({ actions, isNarrow, handleUpdateActions, la
                                                         {
                                                             name: label.Name,
                                                             color: label.Color,
-                                                            title: label.Name,
                                                         },
                                                     ]}
                                                 />
