@@ -1,3 +1,16 @@
+## Release 5.0.7 - September 7, 2022
+
+### Improvements
+
+-   Added the ability to quickly take actions from the list view
+-   Changed the emoji icon
+-   Message list improvements
+
+### Bug fix
+
+-   Fixed an issue on label/folder name causing Safari to show the autofill
+-   Fixed an issue on the composer to avoid triggering shortcuts while a message is being sent
+
 ## Release 5.0.6.0 - August 17, 2022
 
 ### Improvements
