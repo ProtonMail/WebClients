@@ -94,14 +94,16 @@ const useEncryptedSearchList = ({ isSearch, loading, page, total }: Props) => {
     }
 
     const limitedContentTitle = (
-        <div className="mr1 ml1">
-            <span className="text-bold mr0-5">
+        <div>
+            <span className="text-semibold mr0-5">
                 {limitedContentIndex !== -1
                     ? c('Info').t`End of search results from past 30 days`
                     : c('Info').t`No search results from past 30 days. Searching the rest of your inbox`}
             </span>
             <Info
                 questionMark
+                filled
+                colorPrimary={false}
                 title={c('Tooltip')
                     .t`For messages older than 30 days, only the subject line and recipient list is searched`}
             />
@@ -109,7 +111,7 @@ const useEncryptedSearchList = ({ isSearch, loading, page, total }: Props) => {
     );
 
     const paidPlansButton = (
-        <AppLink to={`/dashboard?ref=${ES_BANNER_REF}`} toApp={APPS.PROTONACCOUNT} className="text-bold">
+        <AppLink to={`/dashboard?ref=${ES_BANNER_REF}`} toApp={APPS.PROTONACCOUNT} className="text-no-wrap">
             {
                 // translator: sentence appears when a free user has content search available only for most recent messages. Complete sentence example: "Content search of the entire inbox is available for paid plans."
                 c('Link').t`paid plan`
@@ -118,7 +120,7 @@ const useEncryptedSearchList = ({ isSearch, loading, page, total }: Props) => {
     );
 
     const limitedContentText = (
-        <div className="mr1 ml1">
+        <div className="text-sm">
             {
                 // translator: sentence appears when a free user has content search available only for most recent messages. Complete sentence example: "Content search of the entire inbox is available for paid plans."
                 c('Info').jt`Search full content of older messages with a ${paidPlansButton}`
@@ -128,11 +130,15 @@ const useEncryptedSearchList = ({ isSearch, loading, page, total }: Props) => {
 
     const limitedContentElement = (
         <div
-            className="flex flex-nowrap flex-column flex-align-items-center flex-justify-center color-weak pt0-5 pb0-5 bg-strong"
+            className="flex flex-nowrap flex-gap-1 flex-align-items-center flex-justify-space-between color-weak bg-norm py1 px1-5"
             key="ESLimitedContentElement"
         >
-            {limitedContentTitle}
-            {limitedContentText}
+            <hr className="m0 w10 flex-item-grow-2" />
+            <div className="flex wauto flex-nowrap flex-column text-center">
+                {limitedContentTitle}
+                {limitedContentText}
+            </div>
+            <hr className="m0 w10 flex-item-grow-2" />
         </div>
     );
 
