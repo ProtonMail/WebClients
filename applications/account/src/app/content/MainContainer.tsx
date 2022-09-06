@@ -75,16 +75,26 @@ const MainContainer = () => {
         FeatureCode.CalendarInviteLocale,
         FeatureCode.CalendarAutoImportInvite,
         FeatureCode.ReferralProgram,
+        FeatureCode.BulkUserUpload,
         FeatureCode.CalendarSubscription,
         FeatureCode.SubscribedCalendarReminder,
         FeatureCode.DrivePlan,
         FeatureCode.EasySwitch,
         FeatureCode.EasySwitchGmailNewScope,
     ]);
-    const [spyTrackerFeature, calendarInviteLocaleFeature, calendarAutoImportInviteFeature, referralProgramFeature] =
-        features;
+    const [
+        spyTrackerFeature,
+        calendarInviteLocaleFeature,
+        calendarAutoImportInviteFeature,
+        referralProgramFeature,
+        bulkUserUploadFeature,
+    ] = features;
+
+    const isSpyTrackerEnabled = spyTrackerFeature.feature?.Value === true;
     const isInviteLocaleFeatureEnabled = calendarInviteLocaleFeature.feature?.Value === true;
     const isAutoImportInviteFeatureEnabled = calendarAutoImportInviteFeature.feature?.Value === true;
+    const isBulkUserUploadEnabled = bulkUserUploadFeature.feature?.Value === true;
+
     const { enabled, unavailable } = useCalendarSubscribeFeature();
     const [isDataRecoveryAvailable, loadingDataRecovery] = useIsDataRecoveryAvailable();
     const loadingFeatures = features.some(({ loading }) => loading) || loadingDataRecovery;
@@ -95,9 +105,10 @@ const MainContainer = () => {
         addresses,
         organization,
         isSubscribeCalendarEnabled: enabled,
-        isSpyTrackerEnabled: spyTrackerFeature.feature?.Value === true,
+        isSpyTrackerEnabled,
         isInviteSettingEnabled: isInviteLocaleFeatureEnabled || isAutoImportInviteFeatureEnabled,
         isReferralProgramEnabled: referralProgramFeature?.feature?.Value && userSettings.Referral?.Eligible,
+        isBulkUserUploadEnabled,
         isDataRecoveryAvailable,
         recoveryNotification: recoveryNotification?.color,
     });
@@ -192,6 +203,7 @@ const MainContainer = () => {
                     <OrganizationSettingsRouter
                         path={prefixPath}
                         organizationAppRoutes={routes.organization}
+                        isBulkUserUploadEnabled={isBulkUserUploadEnabled}
                         redirect={redirect}
                     />
                 </Route>
