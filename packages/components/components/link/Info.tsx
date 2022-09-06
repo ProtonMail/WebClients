@@ -16,6 +16,7 @@ interface Props {
     buttonTabIndex?: number;
     className?: string;
     questionMark?: boolean;
+    filled?: boolean;
     colorPrimary?: boolean;
 }
 const Info = ({
@@ -26,6 +27,7 @@ const Info = ({
     buttonTabIndex,
     className = '',
     questionMark = false,
+    filled = false,
     colorPrimary = true,
     ...rest
 }: Props) => {
@@ -54,6 +56,16 @@ const Info = ({
 
     const tooltipHandlers = useTooltipHandlers(open, close, isOpen);
     const safeTitle = title || '';
+    const icon = () => {
+        if (questionMark && !filled) {
+            return 'question-circle';
+        } else if (questionMark && filled) {
+            return 'question-circle-filled';
+        } else if (!questionMark && filled) {
+            return 'info-circle-filled';
+        }
+        return 'info-circle';
+    };
 
     return (
         <>
@@ -69,7 +81,7 @@ const Info = ({
             >
                 <Icon
                     className={classnames(['icon-16p', colorPrimary && 'color-primary', className])}
-                    name={questionMark ? 'question-circle' : 'info-circle'}
+                    name={icon()}
                     alt={c('Action').t`More info: ${safeTitle}`}
                     {...rest}
                 />
