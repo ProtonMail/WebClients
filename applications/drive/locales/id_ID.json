@@ -99,7 +99,7 @@
         "Tutup"
       ],
       "Close modal": [
-        "Tutup jendela"
+        "Close"
       ],
       "Close navigation": [
         "Tutup navigasi"
@@ -1780,7 +1780,7 @@
         "Berkas tidak dapat digabungkan dengan folder"
       ],
       "File selection is already downloading": [
-        "Proses unduhan berkas-berkas yang dipilih sedang berlangsung"
+        "Proses unduhan berkas yang dipilih sedang berlangsung"
       ],
       "Folder \"${ name }\" is already downloading": [
         "Proses unduhan folder \"${ name }\" sedang berlangsung"
@@ -2837,8 +2837,8 @@
       "There are no files yet": [
         "Tidak ada berkas"
       ],
-      "These files were shared using end-to-end encryption. To ensure their security — and the security of all your documents, photos, and files — store them in Proton Drive, the cloud storage service you can trust.": [
-        "Berkas-berkas berikut dibagikan dengan enkripsi end-to-end. Untuk menjamin keamanan mereka — serta keamanan seluruh dokumen, foto, dan berkas lainnya yang Anda miliki — gunakanlah Proton Drive, layanan penyimpanan data berbasis cloud yang dapat Anda percayai."
+      "These files were shared using end-to-end encryption. To keep them secure — and all your documents, photos, and files private — store them in your own Proton Drive. It's easy-to-use and free.": [
+        "Berkas berikut dibagikan dengan enkripsi end-to-end. Untuk menjaga keamanan berkas ini — dan juga privasi seluruh dokumen, foto, serta berkas lainnya yang Anda miliki — simpanlah semuanya di Proton Drive milik Anda. Mudah digunakan dan gratis."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Akun ini telah ditangguhkan karena kemungkinan pelanggaran kebijakan."
@@ -2851,6 +2851,9 @@
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Tautan ini tertuju pada situs web yang dapat mencuri informasi pribadi Anda, seperti kata sandi dan rincian kartu kredit yang Anda miliki."
+      ],
+      "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
+        "Tautan ini mungkin merupakan sebuah serangan homograf dan tidak dapat dibuka oleh Internet Explorer dan Edge. Apabila Anda yakin tautan tersebut absah, silakan gunakan browser lain untuk membukanya."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Tautan ini mungkin adalah sebuah serangan homograf. Mohon verifikasi tautan yang ingin Anda kunjungi, atau jangan membukanya."
@@ -3282,6 +3285,9 @@
       "Malware": [
         "Malware"
       ],
+      "Manage categories": [
+        "Kelola kategori"
+      ],
       "Manage folders": [
         "Kelola folder"
       ],
@@ -3293,6 +3299,12 @@
       ],
       "Modified": [
         "Dimodifikasi"
+      ],
+      "Move to Archive": [
+        "Pindahkan ke Arsip"
+      ],
+      "Move to Inbox": [
+        "Pindahkan ke Kotak masuk"
       ],
       "Name": [
         "Nama"
@@ -4561,6 +4573,9 @@
       "Encrypted data with verified digital signature": [
         "Data terenkripsi dengan tanda tangan digital terverifikasi"
       ],
+      "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
+        "Gmail secara otomatis mengelompokkan email tertentu ke dalam kategori seperti Sosial dan Promosi. Anda dapat menentukan ke kategori mana email berikut akan diimpor."
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Pilih skema PGP untuk menandatangani atau mengenkripsi pesan. PGP/Inline mewajibkan penggunaan pesan teks polos"
       ],
@@ -4589,8 +4604,8 @@
       "Name cannot include invisible characters, / or \\.": [
         "Nama tidak boleh mengandung karakter tidak terlihat, / atau \\."
       ],
-      "Name must be ${ MAX_NAME_LENGTH } characters long at most": [
-        "Panjang nama dibatasi ${ MAX_NAME_LENGTH } karakter"
+      "Name must be ${ MAX_NAME_LENGTH } character long at most": [
+        "Nama tidak boleh melebihi ${ MAX_NAME_LENGTH } karakter"
       ],
       "Name must not be empty": [
         "Nama tidak boleh kosong"

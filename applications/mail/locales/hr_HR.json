@@ -23,9 +23,6 @@
       "Add address": [
         "Dodajte adresu"
       ],
-      "Add condition": [
-        "Dodaj uvjet"
-      ],
       "Add contact": [
         "Dodaj kontakt"
       ],
@@ -141,7 +138,7 @@
         "Zatvori prozor za novu poruku"
       ],
       "Close modal": [
-        "Zatvori skočni prozor"
+        "Close"
       ],
       "Close navigation": [
         "Zatvori navigaciju"
@@ -185,20 +182,14 @@
       "Create a new contact group": [
         "Kreiraj novu grupu kontakata"
       ],
-      "Create folder": [
-        "Stvori mapu"
-      ],
-      "Create label": [
-        "Stvori oznaku"
+      "Create a new folder": [
+        "Stvori novu mapu"
       ],
       "Create new contact": [
         "Stvori novi kontakt"
       ],
       "Create new message": [
         "Stvori novu poruku"
-      ],
-      "Custom filter": [
-        "Prilagođeni filtri"
       ],
       "Customize": [
         "Prilagodi"
@@ -302,9 +293,6 @@
       ],
       "Export contacts": [
         "Uvezi kontakte"
-      ],
-      "Filter on...": [
-        "Filtar za..."
       ],
       "Font": [
         "Font"
@@ -419,9 +407,6 @@
       "Label as...": [
         "Označi kao..."
       ],
-      "label emails as": [
-        "označi e-poštu kao"
-      ],
       "Learn more": [
         "Saznajte više"
       ],
@@ -458,9 +443,6 @@
       "Mark as unread": [
         "Označi kao nepročitano"
       ],
-      "mark emails as": [
-        "označi e-poštu kao"
-      ],
       "Mark for deletion": [
         "Označi za brisanje"
       ],
@@ -493,9 +475,6 @@
       ],
       "More search options": [
         "Više opcija pretraživanja"
-      ],
-      "move emails to": [
-        "premjesti e-poštu u"
       ],
       "Move to": [
         "Premjesti u"
@@ -572,9 +551,6 @@
       "Pause": [
         "Pauziraj"
       ],
-      "Preview": [
-        "Pregled"
-      ],
       "Preview ${ attachmentName }": [
         "Pregledaj ${ attachmentName }"
       ],
@@ -629,9 +605,6 @@
       "Remove ${ attachmentName }": [
         "Izbriši ${ attachmentName }"
       ],
-      "Remove this label": [
-        "Ukloni ovu oznaku"
-      ],
       "Rename": [
         "Preimenuj"
       ],
@@ -685,9 +658,6 @@
       ],
       "Send anyway": [
         "Svejedno pošalji"
-      ],
-      "send auto-reply email": [
-        "pošalji automatski odgovor"
       ],
       "Set": [
         "Postavi"
@@ -1327,26 +1297,6 @@
         "Yomi"
       ]
     },
-    "CustomFilter": {
-      "Attachment": [
-        "Privitak"
-      ],
-      "Filter on": [
-        "Filtar za"
-      ],
-      "Next": [
-        "Sljedeće"
-      ],
-      "Recipient": [
-        "Primatelj"
-      ],
-      "Sender": [
-        "Pošiljatelj"
-      ],
-      "Subject": [
-        "Predmet"
-      ]
-    },
     "Daily recurring event, frequency": {
       "${ count } time": [
         "${ count } put",
@@ -1548,9 +1498,6 @@
       "Choose a date in the future.": [
         "Odaberite datum u budućnosti."
       ],
-      "Condition incomplete": [
-        "Uvjet je nepotpun"
-      ],
       "Contact could not be saved": [
         "Nije bilo moguće spremanje kontakata"
       ],
@@ -1575,20 +1522,11 @@
       "Email is not valid": [
         "Adresa e-pošte nije važeća"
       ],
-      "Empty condition": [
-        "Prazan uvjet"
-      ],
       "Enter 6 digits": [
         "Unesite 6 znamenki"
       ],
-      "Error in one of the conditions": [
-        "Pogreška u jednom od uvjeta"
-      ],
       "Failed to encrypt attachment. Please try again.": [
         "Neuspješno šifriranje privitka. Molimo pokušajte ponovno."
-      ],
-      "Filter with this name already exists": [
-        "Filtar s ovim nazivom već postoji"
       ],
       "Image upload failed": [
         "Neuspješno učitavanje slike"
@@ -1638,12 +1576,6 @@
       ],
       "Public key could not be trusted": [
         "Javnom ključu se ne može vjerovati"
-      ],
-      "Require at least one action": [
-        "Zahtijeva najmanje jednu radnju"
-      ],
-      "Require at least one condition": [
-        "Zahtijeva najmanje jedan uvjet"
       ],
       "Signature not verified": [
         "Potpis nije ovjeren"
@@ -1929,18 +1861,6 @@
       ]
     },
     "Filter modal type": {
-      "If the attachments": [
-        "Ako privitci"
-      ],
-      "If the recipient": [
-        "Ako je primatelj"
-      ],
-      "If the sender": [
-        "Ako je pošiljatelj"
-      ],
-      "If the subject": [
-        "Ako je predmet"
-      ],
       "Select…": [
         "Odaberi…"
       ],
@@ -1960,9 +1880,6 @@
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } ažurirano"
-      ],
-      "Filter ${ Filter.Name } updated": [
-        "Filtar ${ Filter.Name } ažuriran"
       ]
     },
     "Filter option": {
@@ -1980,14 +1897,6 @@
       ],
       "Unread": [
         "Nepročitano"
-      ]
-    },
-    "Filter preview": {
-      "read": [
-        "pročitano"
-      ],
-      "starred": [
-        "označeno zvijezdicom"
       ]
     },
     "Font Face Default": {
@@ -2229,12 +2138,6 @@
         "(${ memberCount } člana)",
         "(${ memberCount } članova)"
       ],
-      "(Filter if ALL of the following conditions are met)": [
-        "(Filtriraj ako su ispunjeni SVI sljedeći uvjeti)"
-      ],
-      "(Filter if ANY of the following conditions are met)": [
-        "(Filtriraj ako su ispunjeni BILO KOJI sljedeći uvjeti)"
-      ],
       "(No Recipient)": [
         "(Nema primatelja)"
       ],
@@ -2262,17 +2165,11 @@
       "All your calendars are disabled.": [
         "Svi vaši kalendari su onemogućeni."
       ],
-      "All your changes will be lost.": [
-        "Sve vaše promjene će biti izgubljene."
-      ],
       "An unknown public key has been detected for this recipient.": [
         "Otkriven je nepoznati javni ključ za ovog primatelja."
       ],
       "and": [
         "i"
-      ],
-      "Are you sure you want to discard your changes?": [
-        "Jeste li sigurni da želite odbaciti vaše promjene?"
       ],
       "Are you sure you want to permanently delete ${ count } conversation?": [
         "Jeste li sigurni da želite trajno izbrisati ${ count } razgovor?",
@@ -2416,9 +2313,6 @@
         "privitka dodana",
         "privitaka dodano"
       ],
-      "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
-        "Filtri rade na svim porukama e-pošte, uključujući dolazne i poslane. Svaki filtar mora sadržavati barem naziv, uvjet i radnju."
-      ],
       "For increased security, activate 2FA.": [
         "Za povećanu sigurnost, omogućite dvofaktorsku autentikaciju."
       ],
@@ -2531,9 +2425,6 @@
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Dodijelite naziv svojoj novoj mapi i odaberite roditeljsku mapu u koju je želite staviti. Ako ne odaberete roditeljsku mapu, nova će se mapa stvoriti kao mapa najviše razine."
       ],
-      "No action selected": [
-        "Nije odabrana nijedna radnja"
-      ],
       "No contacts added yet": [
         "Nema dodanih kontakata"
       ],
@@ -2543,17 +2434,11 @@
       "No folder found": [
         "Nema pronađenih mapa"
       ],
-      "No folder selected": [
-        "Nije odabrana nijedna mapa"
-      ],
       "No group found": [
         "Nije pronađena nijedna grupa"
       ],
       "No label found": [
         "Nema pronađene oznake"
-      ],
-      "No label selected": [
-        "Nije odabrana nijedna oznaka"
       ],
       "No more results found": [
         "Nema više rezultata"
@@ -2933,9 +2818,6 @@
       "Close draft": [
         "Zatvori skicu"
       ],
-      "Create filter with...": [
-        "Stvori filtar s..."
-      ],
       "Delete permanently": [
         "Trajno izbriši"
       ],
@@ -3103,15 +2985,6 @@
       ]
     },
     "Label": {
-      " and ": [
-        " i "
-      ],
-      " and ${ l }": [
-        " i ${ l }"
-      ],
-      "Actions": [
-        "Radnje"
-      ],
       "Add email address": [
         "Dodaj adresu e-pošte"
       ],
@@ -3124,23 +2997,8 @@
       "Address": [
         "Adresa"
       ],
-      "ALL": [
-        "SVE"
-      ],
       "Also archive": [
         "Također i arhivu"
-      ],
-      "AND": [
-        "I"
-      ],
-      "and": [
-        "i"
-      ],
-      "And": [
-        "I"
-      ],
-      "ANY": [
-        "BILO KOJI"
       ],
       "Attach screenshot(s)": [
         "Priložite snimku(e) zaslona"
@@ -3174,9 +3032,6 @@
       ],
       "City": [
         "Grad"
-      ],
-      "Conditions": [
-        "Uvjeti"
       ],
       "Contacts": [
         "Kontakti"
@@ -3220,9 +3075,6 @@
       "Extended address": [
         "Produžena adresa"
       ],
-      "Filter Name": [
-        "Naziv filtra"
-      ],
       "Folder location": [
         "Lokacija mape"
       ],
@@ -3237,12 +3089,6 @@
       ],
       "Hide password": [
         "Sakrij lozinku"
-      ],
-      "IF": [
-        "AKO"
-      ],
-      "If": [
-        "Ako"
       ],
       "Import contacts": [
         "Uvezi kontakte"
@@ -3259,17 +3105,17 @@
       "Mailbox password": [
         "Lozinka sandučića e-pošte"
       ],
-      "Mark as": [
-        "Označi kao"
-      ],
       "Move to": [
         "Premjesti u"
       ],
+      "Move to Archive": [
+        "Premjesti u Arhivu"
+      ],
+      "Move to Inbox": [
+        "Premjesti u Pristiglu poštu"
+      ],
       "Name": [
         "Naziv"
-      ],
-      "No label found": [
-        "Nije pronađena oznaka"
       ],
       "Notification": [
         "Obavijest"
@@ -3282,15 +3128,6 @@
       ],
       "Operating system version": [
         "Verzija operativnog sustava"
-      ],
-      "OR": [
-        "ILI"
-      ],
-      "or": [
-        "ili"
-      ],
-      "Or": [
-        "Ili"
       ],
       "Password": [
         "Lozinka"
@@ -3310,9 +3147,6 @@
       "Public keys": [
         "Javni ključevi"
       ],
-      "Read": [
-        "Pročitano"
-      ],
       "Recipient": [
         "Primatelj"
       ],
@@ -3331,9 +3165,6 @@
       "Select how your mailbox looks like by default.": [
         "Odaberite kako će se vaš prozor za nove poruke otvarati po zadanom."
       ],
-      "Send auto-reply": [
-        "Pošalji automatski odgovor"
-      ],
       "Sender": [
         "Pošiljatelj"
       ],
@@ -3343,32 +3174,11 @@
       "Size:": [
         "Veličina:"
       ],
-      "Starred": [
-        "Sa zvjezdicom"
-      ],
-      "Statement": [
-        "Izjava"
-      ],
       "Street address": [
         "Adresa"
       ],
       "System information": [
         "Informacije o sustavu"
-      ],
-      "The email was sent ${ attachment }": [
-        "E-pošta je poslana ${ attachment }"
-      ],
-      "the email was sent ${ attachment }": [
-        "e-pošta je poslana ${ attachment }"
-      ],
-      "The email was sent ${ attachmentStrong }": [
-        "E-pošta je poslana ${ attachmentStrong }"
-      ],
-      "the email was sent ${ label }": [
-        "e-pošta je poslana ${ label }"
-      ],
-      "Then": [
-        "Zatim"
       ],
       "Time": [
         "Vrijeme"
@@ -3393,21 +3203,6 @@
       ],
       "What happened?": [
         "Što se dogodilo?"
-      ],
-      "With attachment": [
-        "S privitkom"
-      ],
-      "with attachments": [
-        "s privitcima"
-      ],
-      "Without attachment": [
-        "Bez privitka"
-      ],
-      "without attachment": [
-        "bez privitka"
-      ],
-      "without attachments": [
-        "bez privitaka"
       ]
     },
     "Label for contact group color": {
@@ -3482,12 +3277,6 @@
     "Link": {
       "Activate": [
         "Aktiviraj"
-      ],
-      "Add folder": [
-        "Dodaj mapu"
-      ],
-      "Add label": [
-        "Dodaj oznaku"
       ],
       "All mail": [
         "Sva pošta"
@@ -3816,9 +3605,6 @@
       ]
     },
     "Notification": {
-      "${ _Filter.Name } created": [
-        "${ _Filter.Name } stvoren"
-      ],
       "Contact group created": [
         "Kontaktna grupa je stvorena"
       ],
@@ -3869,9 +3655,6 @@
       ]
     },
     "Option group": {
-      "Custom folders": [
-        "Prilagođene mape"
-      ],
       "Default folders": [
         "Zadane mape"
       ],
@@ -3966,9 +3749,6 @@
       ],
       "Text": [
         "Tekst"
-      ],
-      "Type text or keyword": [
-        "Unesite tekst ili ključnu riječ"
       ],
       "Write your message": [
         "Napišite vašu poruku"
@@ -4203,20 +3983,6 @@
     "Status": {
       "This message is from a mailing list.": [
         "Ovo poruka je s mailing liste."
-      ]
-    },
-    "Step in filter modal": {
-      "Actions": [
-        "Radnje"
-      ],
-      "Conditions": [
-        "Uvjeti"
-      ],
-      "Name": [
-        "Naziv"
-      ],
-      "Preview": [
-        "Pregled"
       ]
     },
     "Storage": {
@@ -4513,9 +4279,6 @@
       "Add contact group name": [
         "Dodaj naziv grupi kontakata"
       ],
-      "Add filter": [
-        "Dodaj filtar"
-      ],
       "Add to ${ groupCount } group": [
         "Dodaj u ${ groupCount } grupu",
         "Dodaj u ${ groupCount } grupe",
@@ -4529,9 +4292,6 @@
       ],
       "Archive": [
         "Arhiva"
-      ],
-      "Are you sure you want to close?": [
-        "Jeste li sigurni da želite zatvoriti?"
       ],
       "Attachments": [
         "Privitci"
@@ -4577,12 +4337,6 @@
       ],
       "Conversation list": [
         "Popis razgovora"
-      ],
-      "Create a new folder": [
-        "Stvori novu mapu"
-      ],
-      "Create a new label": [
-        "Stvori novu oznaku"
       ],
       "Create contact": [
         "Stvori kontakt"
@@ -4651,9 +4405,6 @@
       "Edit contact group": [
         "Uredi grupu kontakata"
       ],
-      "Edit filter": [
-        "Uredi filtar"
-      ],
       "Edit image": [
         "Uredi sliku"
       ],
@@ -4674,9 +4425,6 @@
       ],
       "Exporting contacts": [
         "Izvoz kontakata"
-      ],
-      "Filter on": [
-        "Filtar za"
       ],
       "Forward": [
         "Proslijedi"
@@ -4929,9 +4677,6 @@
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
         "Ovom će se radnjom preuzeti sve poruke kako bi se mogle pretraživati lokalno. Brisanje podataka preglednika onemogućiti će ovu opciju."
-      ],
-      "This feature is only available for paid users": [
-        "Ova značajka je dostupna samo za plaćene korisnike"
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Prenesite javni ključ za omogućavanje slanja end-to-end šifriranih e-poruka na ovu adresu e-pošte"

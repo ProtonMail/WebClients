@@ -43,9 +43,6 @@
       "Activate recovery": [
         "リカバリーを有効化"
       ],
-      "Add": [
-        "追加"
-      ],
       "Add ${ BRAND_NAME } Account": [
         "${ BRAND_NAME } アカウントを追加"
       ],
@@ -152,7 +149,7 @@
         "閉じる"
       ],
       "Close modal": [
-        "画面を閉じる"
+        "Close"
       ],
       "Close navigation": [
         "ナビゲーションを閉じる"
@@ -320,7 +317,7 @@
         "電話番号を編集"
       ],
       "Edit sieve": [
-        "仕分けの編集"
+        "Sieve を編集"
       ],
       "Edit sign-in details": [
         "サインイン詳細を編集"
@@ -459,12 +456,6 @@
       ],
       "move emails to": [
         "メールを移動"
-      ],
-      "Move to Allow List": [
-        "許可リストに移動"
-      ],
-      "Move to Block List": [
-        "ブロックリストに移動"
       ],
       "Need help?": [
         "問題がある場合"
@@ -617,7 +608,7 @@
         "レビュー"
       ],
       "Revoke": [
-        "失効させる"
+        "失効"
       ],
       "Revoke ${ name }": [
         "${ name } を失効させる"
@@ -723,6 +714,9 @@
       ],
       "Sort": [
         "並べ替え"
+      ],
+      "Spam": [
+        "迷惑メール"
       ],
       "Start import": [
         "インポート開始"
@@ -2583,9 +2577,6 @@
       "Domain not available, try again later": [
         "ドメインが利用できません。後でもう一度お試しください。"
       ],
-      "Email address invalid": [
-        "無効なメールアドレスです"
-      ],
       "Email is not valid": [
         "メールアドレスが無効です"
       ],
@@ -2636,6 +2627,9 @@
       ],
       "Invalid domain": [
         "無効なドメインです"
+      ],
+      "Invalid email address": [
+        "無効なメールアドレスです"
       ],
       "Invalid expiration date": [
         "無効な有効期限"
@@ -3311,8 +3305,8 @@
       ]
     },
     "FilterSettings": {
-      "Apply sender-specific spam rules. Messages from addresses or domains on the Allow List always go to your Inbox while messages from addresses or domains on the Block List always go to Spam. Marking a message as spam adds its address to the Block List. Marking a message as not spam adds it to the Allow List.": [
-        "送信者ごとに迷惑メールのルールを適用します。許可リストにあるアドレスやドメインからのメッセージは常に受信トレイに送られ、ブロックリストにあるアドレスやドメインからのメッセージは常に迷惑メールフォルダーに送られます。メッセージを迷惑メールとしてマークすると、そのアドレスはブロックリストに追加されます。メッセージを迷惑メールではないとしてマークすると、そのアドレスは許可リストに追加されます。"
+      "Add a custom filter to automatically perform certain actions, like labeling or archiving messages. Filters can be edited and created directly via Sieve programming language.": [
+        "仕分けフィルターを追加すると、メッセージのラベル付けやアーカイブなど特定の操作を自動で実行できます。Sieve プログラミング言語で直接フィルターを編集や作成することもできます。"
       ],
       "Search in Allow List and Block List": [
         "許可リストとブロックリストを検索"
@@ -3881,7 +3875,7 @@
         "${ n } 件のアドレス"
       ],
       "${ none } has no effect on email delivery, but we recommend ${ quarantine } for better security.": [
-        "${ none } はメールの配信には影響しませんが、セキュリティのため ${ quarantine } をおすすめします。"
+        "${ none } はメールの配信に影響を与えません。セキュリティ向上のため ${ quarantine } をおすすめします。"
       ],
       "${ number } city": [
         "${ number } つの都市"
@@ -4414,6 +4408,9 @@
       "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
         "システムのタイムゾーンが現在のタイムゾーンの設定と一致しない場合、更新するよう求められます (最大1日1回)。"
       ],
+      "If this domain is currently receiving emails, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
+        "このドメインで現在メールを受信している場合は、MX レコード変更前に${ boldAddresses }タブで使用しているすべてのメールアドレスを追加しておくと、スムーズに移行できます。"
+      ],
       "If this is due to an old password reset, you can stop the message from showing again": [
         "古いパスワードのリセットが原因の場合は、メッセージを再表示しないようにすることができます。"
       ],
@@ -4435,6 +4432,9 @@
       "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
         "2 要素認証を初めて使う場合、${ guideButton }。"
       ],
+      "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
+        "SPF と DKIM の両方を設定した場合、SPF と DKIM の両方のチェックに失敗した場合に他のメールサービスがあなたのドメインのメールを配信する方法を DMARC で指定できます。これにより、あなたになりすますスパマーに対処できますが、適切に設定しないと配信に問題を引き起こす可能性があります。"
+      ],
       "If you lose your login details and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
         "ログイン情報を失いアカウントをリセットすることになった場合、${ boldAccountRecovery }を両方用意することが${ boldImperative }。"
       ],
@@ -4455,6 +4455,9 @@
       ],
       "If you recently reset your password, you can use a data recovery method to unlock your data": [
         "最近、パスワードをリセットしたのであれば、回復手段を使ってデータのロックを解除することができます"
+      ],
+      "If you want to keep an existing SPF record, you can just add ${ spf } to it after the ${ spfValue }. Do not create multiple SPF records.": [
+        "既存の SPF レコードを維持したい場合は、${ spfValue } の後に ${ spf } を追加してください。SPF レコードは複数作成しないでください。"
       ],
       "If you wish to combine this account with another one, do NOT delete it.": [
         "他のアカウントと統合する場合は、このアカウントを削除しないでください。"
@@ -5380,14 +5383,8 @@
       "Your account will be updated once the payment is cleared.": [
         "支払いが完了すると、アカウントは更新されます。"
       ],
-      "Your Allow List is empty.": [
-        "許可リストは空です。"
-      ],
       "Your bank requires 3-D Secure verification for security purposes.": [
         "セキュリティ上の観点から、3D セキュア認証に対応した銀行口座が必要です。"
-      ],
-      "Your Block List is empty.": [
-        "ブロックリストは空です。"
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "データは ${ importedEmailAddressStrong } から Proton アカウントにインポートできる状態です。"
@@ -5605,9 +5602,6 @@
       ],
       "Close draft": [
         "下書きを閉じる"
-      ],
-      "Create filter with...": [
-        "フィルターを作成..."
       ],
       "Delete permanently": [
         "完全に削除"
@@ -6268,6 +6262,12 @@
       "Move to": [
         "移動先"
       ],
+      "Move to Archive": [
+        "アーカイブに移動"
+      ],
+      "Move to Inbox": [
+        "受信トレイに移動"
+      ],
       "Name": [
         "名前"
       ],
@@ -6442,6 +6442,9 @@
       "Signature": [
         "署名"
       ],
+      "Spam": [
+        "迷惑メール"
+      ],
       "Starred": [
         "星印付き"
       ],
@@ -6543,9 +6546,6 @@
       ],
       "Waiting for subscription": [
         "サブスクリプション待ち"
-      ],
-      "Want to add": [
-        "対象"
       ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "今後の改善のため、アカウントを削除する理由をお聞かせください。"
@@ -7076,15 +7076,10 @@
         "第3水曜日"
       ]
     },
-    "Moved to black/whitelist": {
-      "${ Domain } removed": [
-        "${ Domain } が削除されました"
-      ],
-      "${ Email } removed": [
-        "${ Email } が削除されました"
-      ]
-    },
     "Navigation": {
+      "All": [
+        "すべて"
+      ],
       "Back": [
         "戻る"
       ],
@@ -7096,6 +7091,9 @@
       ],
       "Back to Mail": [
         "Mail に戻る"
+      ],
+      "Spam": [
+        "迷惑メール"
       ]
     },
     "New Label form": {
@@ -7382,20 +7380,6 @@
         "チームマネジメント"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "そうでない場合は、アカウントへのアクセスが制限され、最終的にはアカウントが無効化されます。"
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "プレミアム機能の ${ MAIL_APP_NAME } を使い続けるには、サブスクリプションと支払方法を選択してください。"
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "究極のプライバシーパックにアップレードして、すべてのプレミアムな Proton サービスにアクセスします。"
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "トライアルは ${ formattedTrialExpirationDate } で終了します"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ last4 } で終わる ${ brand }"
@@ -7441,6 +7425,20 @@
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "すべての人にプライバシーを提供するための、無料のスタータープランです。"
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "そうでない場合は、アカウントへのアクセスが制限され、最終的にはアカウントが無効化されます。"
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "プレミアム機能の ${ MAIL_APP_NAME } を使い続けるには、サブスクリプションと支払方法を選択してください。"
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "究極のプライバシーパックにアップレードして、すべてのプレミアムな Proton サービスにアクセスします。"
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "トライアルは ${ formattedTrialExpirationDate } で終了します"
       ]
     },
     "new_plans: Label": {
@@ -8305,36 +8303,6 @@
         "ユーザー名"
       ]
     },
-    "Spam filter moved to blacklist": {
-      "${ Domain } moved to Block List": [
-        "${ Domain } がブロックリストに移動されました"
-      ],
-      "${ Email } moved to Block List": [
-        "${ Email } がブロックリストに移動されました"
-      ]
-    },
-    "Spam filter moved to whitelist": {
-      "${ Domain } moved to Allow List": [
-        "${ Domain } を許可リストに移動されました"
-      ],
-      "${ Email } moved to Allow List": [
-        "${ Email } が許可リストに移動されました"
-      ]
-    },
-    "Spam notification": {
-      "${ domain } added": [
-        "${ domain } を追加しました"
-      ],
-      "${ domain } updated": [
-        "${ domain } が更新されました"
-      ],
-      "${ email } added": [
-        "${ email } を追加しました"
-      ],
-      "${ email } updated": [
-        "${ email } が更新されました"
-      ]
-    },
     "Spotlight": {
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "${ DRIVE_APP_NAME } はベータ版を卒業しました! メールと変わらないセキュリティをファイルでも体感しましょう。"
@@ -8598,10 +8566,10 @@
         "インポートを再開"
       ],
       "Session revoked": [
-        "セッションが失効させられました"
+        "セッションを失効しました"
       ],
       "Sessions revoked": [
-        "セッションが失効させられました"
+        "セッションを失効しました"
       ],
       "SPF value copied to clipboard": [
         "SPF値がクリップボードにコピーされました"
@@ -8719,6 +8687,12 @@
       ],
       "CSV field": [
         "CSV フィールド"
+      ],
+      "Edit": [
+        "編集"
+      ],
+      "Email address": [
+        "メールアドレス"
       ],
       "Import": [
         "インポート"
@@ -8845,12 +8819,6 @@
       "Add Sieve filter": [
         "Sieve フィルターの追加"
       ],
-      "Add to Allow List": [
-        "許可リストに追加"
-      ],
-      "Add to Block List": [
-        "ブロックリストに追加"
-      ],
       "Add user": [
         "ユーザーを追加"
       ],
@@ -8862,9 +8830,6 @@
       ],
       "Allocate storage": [
         "ストレージを割り当てる"
-      ],
-      "Allow List": [
-        "許可リスト"
       ],
       "Amount": [
         "金額"
@@ -8904,9 +8869,6 @@
       ],
       "Billing details": [
         "請求の詳細"
-      ],
-      "Block List": [
-        "ブロックリスト"
       ],
       "Bridge for ${ platform }": [
         "${ platform } 版 Bridge"
@@ -9081,12 +9043,6 @@
       ],
       "Download ${ VPN_APP_NAME }": [
         "${ VPN_APP_NAME } をダウンロード"
-      ],
-      "Edit Allow List": [
-        "許可リストの編集"
-      ],
-      "Edit Block List": [
-        "ブロックリストの編集"
       ],
       "Edit calendar": [
         "カレンダーを編集"
@@ -9441,9 +9397,6 @@
       ],
       "Sort labels alphabetically": [
         "ラベルをアルファベット順に並べ替え"
-      ],
-      "Spam filters": [
-        "迷惑メールフィルター"
       ],
       "Start a new import": [
         "新しいインポートを開始"

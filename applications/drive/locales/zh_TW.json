@@ -99,7 +99,7 @@
         "關閉"
       ],
       "Close modal": [
-        "關閉方塊"
+        "Close"
       ],
       "Close navigation": [
         "關閉導覽"
@@ -1728,6 +1728,9 @@
       "A group with this name already exists": [
         "此名稱的群組已存在"
       ],
+      "A problem occurred, please try again": [
+        "發生錯誤，請再試一次"
+      ],
       "Authentication canceled.": [
         "認證已取消。"
       ],
@@ -1835,6 +1838,9 @@
       ],
       "Passwords do not match": [
         "密碼不相符"
+      ],
+      "Please activate your content search again": [
+        "請再次啟用內容搜尋功能"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "請先修正已標示的衝突以便繼續。"
@@ -2831,8 +2837,8 @@
       "There are no files yet": [
         "目前還沒有任何檔案"
       ],
-      "These files were shared using end-to-end encryption. To ensure their security — and the security of all your documents, photos, and files — store them in Proton Drive, the cloud storage service you can trust.": [
-        "這些檔案使用端對端加密分享。為確保這些檔案的安全性──以至您所有文件、圖片和檔案的安全性──請儲存於 Proton Drive：值得您信賴的雲端儲存服務。"
+      "These files were shared using end-to-end encryption. To keep them secure — and all your documents, photos, and files private — store them in your own Proton Drive. It's easy-to-use and free.": [
+        "這些檔案將以端到端加密分享。安全儲存這些檔案－包含您全部的文件、照片、私人檔案－保存在僅屬於您的 Proton Drive。它不但免費且易於使用。"
       ],
       "This account has been suspended due to a potential policy violation.": [
         "此帳號可能因違反政策而遭停用。"
@@ -2845,6 +2851,9 @@
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "此連結指向的網站可能試圖竊取您的資訊，例如密碼和信用卡詳細資訊。"
+      ],
+      "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
+        "此連結可能為同形異字的域名釣魚攻擊 (homograph attack)，且無法以 Edge 瀏覽器開啟。如果您確定這是一個正當的連結，請使用其它瀏覽器來開啟。"
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "此連結可能為同形異字的域名釣魚攻擊 (homograph attack)。請核對這是您欲造訪的連結，否則不要開啟。"
@@ -3276,6 +3285,9 @@
       "Malware": [
         "惡意軟體"
       ],
+      "Manage categories": [
+        "管理分類"
+      ],
       "Manage folders": [
         "管理資料夾"
       ],
@@ -3287,6 +3299,12 @@
       ],
       "Modified": [
         "已修改"
+      ],
+      "Move to Archive": [
+        "移至「封存」"
+      ],
+      "Move to Inbox": [
+        "移動到收件匣"
       ],
       "Name": [
         "名稱"
@@ -4555,6 +4573,9 @@
       "Encrypted data with verified digital signature": [
         "已加密並驗證數碼簽章"
       ],
+      "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
+        "Gmail 會自動將一些電子郵件分類，例如促銷內容或社交網路。您可以自行決定要將這些郵件匯入的地方。"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "請選擇向特定使用者簽署時，所需使用的簽章或PGP 方案。請注意 PGP/inline 模式將強制使用純文字郵件格式。"
       ],
@@ -4583,7 +4604,7 @@
       "Name cannot include invisible characters, / or \\.": [
         "名稱不能包含不可見的字元以及 / 或 \\。"
       ],
-      "Name must be ${ MAX_NAME_LENGTH } characters long at most": [
+      "Name must be ${ MAX_NAME_LENGTH } character long at most": [
         "名稱長度最多為 ${ MAX_NAME_LENGTH } 個字元"
       ],
       "Name must not be empty": [

@@ -84,7 +84,7 @@
         "关闭事件弹出框"
       ],
       "Close modal": [
-        "关闭"
+        "Close"
       ],
       "Close navigation": [
         "关闭导航栏"
@@ -807,20 +807,65 @@
       ]
     },
     "color": {
+      "carrot": [
+        "胡萝卜橙"
+      ],
+      "cerise": [
+        "水红色"
+      ],
+      "cobalt": [
+        "钴蓝色"
+      ],
+      "copper": [
+        "紫铜色"
+      ],
+      "enzian": [
+        "浅紫蓝色"
+      ],
+      "fern": [
+        "丝袍绿"
+      ],
+      "forest": [
+        "森林绿"
+      ],
       "ocean": [
-        "海洋"
+        "海蓝色"
+      ],
+      "olive": [
+        "橄榄绿"
+      ],
+      "pacific": [
+        "太平洋蓝"
+      ],
+      "pickle": [
+        "橄榄黄"
       ],
       "pine": [
-        "松树"
+        "松林绿"
       ],
       "pink": [
         "粉色"
       ],
+      "plum": [
+        "绛紫色"
+      ],
       "purple": [
         "紫色"
       ],
+      "reef": [
+        "珊瑚绿"
+      ],
+      "sahara": [
+        "撒哈拉棕"
+      ],
+      "slateblue": [
+        "石蓝色"
+      ],
       "soil": [
         "土地"
+      ],
+      "strawberry": [
+        "紫红色"
       ]
     },
     "Confirm modal title": {
@@ -2166,6 +2211,9 @@
       "An unexpected error occurred. Import must be restarted.": [
         "发生未知错误，需重新导入"
       ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } event.": [
+        "文件 ${ formattedFilename } 中的日程数已超过 ${ MAX_IMPORT_EVENTS_STRING }。"
+      ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "您的文件 ${ formattedFilename } 包含一个无效的 method 属性，无法导入。"
       ],
@@ -3066,6 +3114,9 @@
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "此链接指向的网站可能会窃取您的密码、信用卡等信息。"
       ],
+      "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
+        "此链接可能使用了欺骗性域名，Edge 浏览器无法打开。若您确认链接可靠，请使用其他浏览器打开"
+      ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "此链接可能使用了欺骗性域名，请确认其可靠性后再打开"
       ],
@@ -3422,11 +3473,20 @@
       "Mailbox password": [
         "邮箱密码"
       ],
+      "Manage categories": [
+        "管理分类"
+      ],
       "Manage folders": [
         "管理文件夹"
       ],
       "Manage labels": [
         "管理标签"
+      ],
+      "Move to Archive": [
+        "存档"
+      ],
+      "Move to Inbox": [
+        "移至收件箱"
       ],
       "Name": [
         "姓名"
@@ -4905,6 +4965,9 @@
       ],
       "Encrypted data with verified digital signature": [
         "已通过数字签名验证的加密数据"
+      ],
+      "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
+        "Gmail会自动对某些电子邮件（如社交或促销）进行分类。 您可以选择这些电子邮件导入的位置。"
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "选择加密和数字签名的 PGP 格式，请注意 PGP/Inline 只能用于纯文本邮件"

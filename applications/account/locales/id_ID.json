@@ -43,9 +43,6 @@
       "Activate recovery": [
         "Aktifkan metode pemulihan"
       ],
-      "Add": [
-        "Tambah"
-      ],
       "Add ${ BRAND_NAME } Account": [
         "Tambah Akun ${ BRAND_NAME }"
       ],
@@ -115,6 +112,9 @@
       "Back": [
         "Kembali"
       ],
+      "Block": [
+        "Blokir"
+      ],
       "Bold": [
         "Tebal"
       ],
@@ -152,7 +152,7 @@
         "Tutup"
       ],
       "Close modal": [
-        "Tutup jendela"
+        "Close"
       ],
       "Close navigation": [
         "Tutup navigasi"
@@ -445,6 +445,12 @@
       "Mark as default": [
         "Tandai sebagai standar"
       ],
+      "Mark as not spam": [
+        "Tandai sebagai bukan spam"
+      ],
+      "Mark as spam": [
+        "Tandai sebagai spam"
+      ],
       "mark emails as": [
         "tandai email sebagai"
       ],
@@ -459,12 +465,6 @@
       ],
       "move emails to": [
         "pindahkan email ke"
-      ],
-      "Move to Allow List": [
-        "Pindahkan ke Daftar Izin"
-      ],
-      "Move to Block List": [
-        "Pindahkan ke Daftar Blokir"
       ],
       "Need help?": [
         "Butuh bantuan?"
@@ -549,6 +549,9 @@
       ],
       "Remove": [
         "Hapus"
+      ],
+      "Remove Block": [
+        "Buka Blokir"
       ],
       "Remove bonuses": [
         "Hapus bonus"
@@ -723,6 +726,9 @@
       ],
       "Sort": [
         "Urut"
+      ],
+      "Spam": [
+        "Spam"
       ],
       "Start import": [
         "Mulai impor"
@@ -2645,9 +2651,6 @@
       "Domain not available, try again later": [
         "Domain tidak tersedia, coba lagi nanti"
       ],
-      "Email address invalid": [
-        "Alamat email tidak valid"
-      ],
       "Email is not valid": [
         "Email tidak valid"
       ],
@@ -2698,6 +2701,9 @@
       ],
       "Invalid domain": [
         "Domain tidak valid"
+      ],
+      "Invalid email address": [
+        "Alamat surel tidak valid"
       ],
       "Invalid expiration date": [
         "Tanggal kedaluwarsa tidak valid"
@@ -2979,6 +2985,9 @@
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "Terdapat kesalahan yang tidak terduga. Proses impor harus diulang."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } event.": [
+        "Berkas ${ formattedFilename } milik Anda mengandung lebih dari ${ MAX_IMPORT_EVENTS_STRING } acara."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "Berkas ${ formattedFilename } milik Anda tidak dapat diimpor karena mengandung metode yang tidak valid."
@@ -3406,8 +3415,11 @@
       "Add a custom filter to automatically perform certain actions, like labeling or archiving messages. Filters can be edited and created directly via Sieve programming language.": [
         "Tambahkan filter khusus agar berbagai proses tertentu, seperti pelabelan atau pengarsipan pesan, dapat berlangsung secara otomatis. Filter dapat disunting dan dibuat secara langsung dengan menggunakan bahasa pemrograman Sieve."
       ],
-      "Apply sender-specific spam rules. Messages from addresses or domains on the Allow List always go to your Inbox while messages from addresses or domains on the Block List always go to Spam. Marking a message as spam adds its address to the Block List. Marking a message as not spam adds it to the Allow List.": [
-        "Terapkan aturan spam khusus bagi pengirim tertentu. Pesan dari alamat atau domain yang ada di Daftar Izin akan selalu tertuju ke Kotak masuk, sedangkan pesan dari alamat atau domain yang ada di Daftar Blokir selalu akan selalu tertuju ke Spam. Menandai pesan sebagai spam menambahkan alamat pengirimnya ke Daftar Blokir. Menandai pesan sebagai bukan spam akan menambahkan alamat pengirimnya ke Daftar Izin."
+      "Emails from addresses marked as spam by you or Proton will go to your spam folder. If you want to allow emails from one of these addresses, mark it as \"not spam\".": [
+        "Email yang berasal dari alamat yang ditandai spam oleh Anda atau Proton akan masuk ke dalam folder spam Anda. Apabila Anda ingin menerima email dari satu atau lebih alamat yang telah ditandai spam, tandai alamat yang bersangkutan sebagai \"bukan spam\"."
+      ],
+      "Emails from blocked addresses won't be delivered.": [
+        "Email yang berasal dari alamat yang diblokir tidak akan disampaikan."
       ],
       "Search in Allow List and Block List": [
         "Cari di Daftar Izin dan Daftar Blokir"
@@ -5166,6 +5178,9 @@
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Tautan ini tertuju pada situs web yang dapat mencuri informasi pribadi Anda, seperti kata sandi dan rincian kartu kredit yang Anda miliki."
       ],
+      "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
+        "Tautan ini mungkin merupakan sebuah serangan homograf dan tidak dapat dibuka oleh Internet Explorer dan Edge. Apabila Anda yakin tautan tersebut absah, silakan gunakan browser lain untuk membukanya."
+      ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Tautan ini mungkin adalah sebuah serangan homograf. Mohon verifikasi tautan yang ingin Anda kunjungi, atau jangan membukanya."
       ],
@@ -5553,14 +5568,8 @@
       "Your account will be updated once the payment is cleared.": [
         "Akun Anda akan diperbarui setelah pembayaran Anda diterima."
       ],
-      "Your Allow List is empty.": [
-        "Daftar Izin Anda kosong."
-      ],
       "Your bank requires 3-D Secure verification for security purposes.": [
         "Bank Anda mewajibkan verifikasi 3-D Secure demi keamanan."
-      ],
-      "Your Block List is empty.": [
-        "Daftar Blokir Anda kosong."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Data-data Anda telah siap untuk diimpor dari ${ importedEmailAddressStrong } ke akun Proton Anda."
@@ -5811,9 +5820,6 @@
       "Close draft": [
         "Tutup draf"
       ],
-      "Create filter with...": [
-        "Buat filter dengan..."
-      ],
       "Delete permanently": [
         "Hapus permanen"
       ],
@@ -6056,6 +6062,9 @@
       "Address": [
         "Alamat"
       ],
+      "Address type": [
+        "Tipe alamat"
+      ],
       "Addresses": [
         "Alamat"
       ],
@@ -6130,6 +6139,9 @@
       ],
       "Block malware, ads and trackers": [
         "Blokir malware, iklan dan pelacak"
+      ],
+      "Blocked": [
+        "Diblokir"
       ],
       "bonus storage": [
         "bonus penyimpanan"
@@ -6461,6 +6473,9 @@
       "Mailbox password": [
         "Kata sandi kotak pesan"
       ],
+      "Manage categories": [
+        "Kelola kategori"
+      ],
       "Manage folders": [
         "Kelola folder"
       ],
@@ -6478,6 +6493,12 @@
       ],
       "Move to": [
         "Pindah ke"
+      ],
+      "Move to Archive": [
+        "Pindahkan ke Arsip"
+      ],
+      "Move to Inbox": [
+        "Pindahkan ke Kotak masuk"
       ],
       "Name": [
         "Nama"
@@ -6502,6 +6523,9 @@
       ],
       "No label found": [
         "Tidak ada label yang ditemukan"
+      ],
+      "Non Spam": [
+        "Bukan Spam"
       ],
       "Non-standard ports": [
         "Port non-standar"
@@ -6653,6 +6677,9 @@
       "Signature": [
         "Tanda tangan"
       ],
+      "Spam": [
+        "Spam"
+      ],
       "Starred": [
         "Dibintangi"
       ],
@@ -6754,9 +6781,6 @@
       ],
       "Waiting for subscription": [
         "Menanti langganan"
-      ],
-      "Want to add": [
-        "Menambahkan"
       ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Kami sedih dengan kepergian Anda. Mohon jelaskan alasan kepergian Anda agar kami dapat menjadi lebih baik ke depannya."
@@ -7298,15 +7322,10 @@
         "pada hari Rabu ketiga"
       ]
     },
-    "Moved to black/whitelist": {
-      "${ Domain } removed": [
-        "${ Domain } dihapus"
-      ],
-      "${ Email } removed": [
-        "${ Email } dihapus"
-      ]
-    },
     "Navigation": {
+      "All": [
+        "Semua"
+      ],
       "Back": [
         "Kembali"
       ],
@@ -7318,6 +7337,15 @@
       ],
       "Back to Mail": [
         "Kembali ke Kotak Surat"
+      ],
+      "Blocked": [
+        "Diblokir"
+      ],
+      "Non spam": [
+        "Bukan spam"
+      ],
+      "Spam": [
+        "Spam"
       ]
     },
     "New Label form": {
@@ -7622,26 +7650,6 @@
         "Manajemen tim"
       ]
     },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Jadikan privasi sebagai hal yang baku dalam hal penyimpanan, pencadangan, pembagian, dan penerimaan berkas."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Apabila tidak, akses menuju akun Anda akan dibatasi dan akun Anda akan dinonaktifkan ke depannya."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Untuk dapat tetap menggunakan ${ MAIL_APP_NAME } dengan berbagai fitur premium, pilih jenis langganan dan metode pembayaran yang Anda kehendaki."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Tingkatkan akun Anda ke paket bisnis dengan akses ke seluruh layanan premium Proton."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Tingkatkan akun Anda ke paket privasi menyeluruh dan akses seluruh layanan premium yang Proton miliki."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Masa uji coba Anda akan berakhir ${ formattedTrialExpirationDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } akan berakhir dalam ${ last4 }"
@@ -7708,6 +7716,26 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Anda sedang berlangganan ke paket Anda saat ini dengan harga diskon. Dengan menurunkan jenis akun Anda, Anda tidak akan lagi dapat membeli langganan dengan harga diskon ke depannya."
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Jadikan privasi sebagai hal yang baku dalam hal penyimpanan, pencadangan, pembagian, dan penerimaan berkas."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Apabila tidak, akses menuju akun Anda akan dibatasi dan akun Anda akan dinonaktifkan ke depannya."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Untuk dapat tetap menggunakan ${ MAIL_APP_NAME } dengan berbagai fitur premium, pilih jenis langganan dan metode pembayaran yang Anda kehendaki."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Tingkatkan akun Anda ke paket bisnis dengan akses ke seluruh layanan premium Proton."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Tingkatkan akun Anda ke paket privasi menyeluruh dan akses seluruh layanan premium yang Proton miliki."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Masa uji coba Anda akan berakhir ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -8375,11 +8403,17 @@
       "Confirm password": [
         "Konfirmasi kata sandi"
       ],
+      "domain.com": [
+        "domain.com"
+      ],
       "E.g., ": [
         "Mis., "
       ],
       "Email address": [
         "Alamat email"
+      ],
+      "example@domain.com": [
+        "contoh@domain.com"
       ],
       "Feedback": [
         "Kritik dan Saran"
@@ -8698,34 +8732,33 @@
         "Nama pengguna"
       ]
     },
-    "Spam filter moved to blacklist": {
-      "${ Domain } moved to Block List": [
-        "${ Domain } dipindah ke Daftar Blokir"
-      ],
-      "${ Email } moved to Block List": [
-        "${ Email } dipindah ke Daftar Blokir"
-      ]
-    },
-    "Spam filter moved to whitelist": {
-      "${ Domain } moved to Allow List": [
-        "${ Domain } dipindah ke Daftar Izin"
-      ],
-      "${ Email } moved to Allow List": [
-        "${ Email } dipindah ke Daftar Izin"
-      ]
-    },
     "Spam notification": {
-      "${ domain } added": [
-        "${ domain } ditambahkan"
+      "${ name } added": [
+        "${ name } ditambahkan"
       ],
-      "${ domain } updated": [
-        "${ domain } diperbarui"
+      "${ name } deletion failed": [
+        "${ name } gagal dihapus"
       ],
-      "${ email } added": [
-        "${ email } ditambahkan"
+      "${ name } failed to move to Block List": [
+        "${ name } gagal dipindahkan ke Daftar Blokir"
       ],
-      "${ email } updated": [
-        "${ email } diperbarui"
+      "${ name } failed to move to Non spam List": [
+        "${ name } gagal dipindahkan ke daftar Bukan spam"
+      ],
+      "${ name } failed to move to Spam List": [
+        "${ name } gagal dipindahkan ke daftar Spam"
+      ],
+      "${ name } moved to Block List": [
+        "${ name } dipindahkan ke Daftar Blokir"
+      ],
+      "${ name } moved to Non spam list": [
+        "${ name } dipindahkan ke daftar Bukan spam"
+      ],
+      "${ name } moved to Spam list": [
+        "${ name } dipindahkan ke daftar Spam"
+      ],
+      "${ name } successfully deleted": [
+        "${ name } berhasil dihapus"
       ]
     },
     "Spotlight": {
@@ -9126,8 +9159,17 @@
       "CSV field": [
         "Kolom CSV"
       ],
+      "Edit": [
+        "Sunting"
+      ],
+      "Email address": [
+        "Alamat email"
+      ],
       "Import": [
         "Impor"
+      ],
+      "Marked as": [
+        "Ditandai sebagai"
       ],
       "Name": [
         "Nama"
@@ -9251,11 +9293,14 @@
       "Add Sieve filter": [
         "Tambah filter Sieve"
       ],
-      "Add to Allow List": [
-        "Tambahkan ke Daftar Izin"
+      "Add to block list": [
+        "Tambahkan ke daftar blokir"
       ],
-      "Add to Block List": [
-        "Tambahkan ke Daftar Blokir"
+      "Add to not spam list": [
+        "Tambahkan ke daftar bukan spam"
+      ],
+      "Add to spam list": [
+        "Tambahkan ke daftar spam"
       ],
       "Add user": [
         "Tambah pengguna"
@@ -9268,9 +9313,6 @@
       ],
       "Allocate storage": [
         "Alokasi penyimpanan"
-      ],
-      "Allow List": [
-        "Daftar Izin"
       ],
       "Amount": [
         "Jumlah"
@@ -9310,9 +9352,6 @@
       ],
       "Billing details": [
         "Rincian tagihan"
-      ],
-      "Block List": [
-        "Daftar Blokir"
       ],
       "Bridge for ${ platform }": [
         "Bridge untuk ${ platform }"
@@ -9491,12 +9530,6 @@
       "Download ${ VPN_APP_NAME }": [
         "Unduh ${ VPN_APP_NAME }"
       ],
-      "Edit Allow List": [
-        "Sunting Daftar Izin"
-      ],
-      "Edit Block List": [
-        "Sunting Daftar Blokir"
-      ],
       "Edit calendar": [
         "Sunting kalender"
       ],
@@ -9547,6 +9580,9 @@
       ],
       "Export public key": [
         "Ekspor kunci publik"
+      ],
+      "Extension": [
+        "Ekstensi"
       ],
       "External PGP settings": [
         "Pengaturan PGP eksternal"
@@ -9854,8 +9890,8 @@
       "Sort labels alphabetically": [
         "Urutkan sesuai abjad"
       ],
-      "Spam filters": [
-        "Filter spam"
+      "Spam and block list": [
+        "Daftar spam dan blokir"
       ],
       "Start a new import": [
         "Mulai impor baru"
@@ -9961,6 +9997,9 @@
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         "Masa uji coba gratis Anda akan segera berakhir pada ${ formattedEndDate }"
+      ],
+      "Your import history": [
+        "Riwayat impor Anda"
       ],
       "Your plan": [
         "Paket anda"
@@ -10091,6 +10130,9 @@
       "Enabling advanced logs records the IP address for each event in the security log.": [
         "Mengaktifkan catatan lanjut merekam alamat IP untuk setiap kejadian di catatan keamanan."
       ],
+      "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
+        "Gmail secara otomatis mengelompokkan email tertentu ke dalam kategori seperti Sosial dan Promosi. Anda dapat menentukan ke kategori mana email berikut akan diimpor."
+      ],
       "Group emails in the same conversation together in your Inbox or display them separately.": [
         "Tentukan apakah email-email yang terhubung pada suatu rantai percakapan akan dikelompokkan sebagai satu atau ditampilkan secara terpisah pada Kotak Masuk Anda."
       ],
@@ -10217,6 +10259,16 @@
       ],
       "Upgrade to a Mail paid plan to share your personal calendar via link with anyone.": [
         "Tingkatkan akun Anda ke akun Mail berbayar untuk dapat membagikan kalender personal melalui tautan kepada siapapun."
+      ]
+    },
+    "User referee invited via email": {
+      "Invited via email": [
+        "Diundang via email"
+      ]
+    },
+    "User referee signed up using referral link": {
+      "Signed up via your link": [
+        "Mendaftar melalui tautan Anda"
       ]
     },
     "User role": {
