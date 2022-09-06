@@ -1,4 +1,5 @@
 @use 'sass:math';
+
 /**
  * Calculate the vertical rhythm from a font size
  * Based on http://soqr.fr/vertical-rhythm/ thanks @goetter & @eQRoeil
@@ -8,7 +9,7 @@
  * @return {Number} - The $px value converted in rem
  */
 @function line-height($font-size, $base-height, $base-font-size) {
-	$coef: ceil(math.div(1, (math.div(($base-height * $base-font-size), $font-size))));
+	$coef: math.ceil(math.div(1, (math.div(($base-height * $base-font-size), $font-size))));
 	$height: math.div($base-font-size * $base-height, $font-size);
 
 	@return ($height * $coef);

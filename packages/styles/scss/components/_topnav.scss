@@ -64,6 +64,7 @@
 		.topnav-link {
 			padding-inline: rem(5);
 		}
+
 		.navigation-title {
 			// collapse for ALL without any exception
 			// equivalent of .sr-only, but impossible to extend in a breakpoint
@@ -76,6 +77,7 @@
 			position: absolute;
 			inline-size: 1px;
 		}
+
 		.topnav-icon {
 			margin-inline-end: 0;
 		}
@@ -93,6 +95,7 @@
 			padding-inline: rem(5);
 		}
 	}
+
 	.navigation-title {
 		// collapse for ALL without any exception
 		// equivalent of .sr-only, but impossible to extend in a breakpoint
@@ -105,6 +108,7 @@
 		position: absolute;
 		inline-size: 1px;
 	}
+
 	.topnav-icon {
 		&#{&} {
 			// Specificity -_-v

@@ -27,6 +27,7 @@ $field-container: rem(260) !default;
 			block-size: auto; // crazy chrome bug in details (share drive modal)
 		}
 	}
+
 	padding-inline: em(16);
 	padding-block: em(6); // design want 34px height (actually 35 to avoid .5px)
 	border-radius: var(--border-radius-md);
@@ -35,7 +36,7 @@ $field-container: rem(260) !default;
 	color: var(--field-text-color);
 	outline: none;
 	filter: none; // fixes Firefox autofill color
-	transition: 0.15s easing(easeOutQuint), visibility 0s; // Disable visibility transition due to auto focus, e.g. login form
+	transition: 0.15s easing(ease-out-quint), visibility 0s; // Disable visibility transition due to auto focus, e.g. login form
 
 	@at-root {
 		details & {
@@ -103,6 +104,7 @@ $field-container: rem(260) !default;
 
 	&.select {
 		padding-inline-end: rem(6);
+
 		&:focus-visible {
 			&#{&} {
 				outline: 0; // focus is provided by input fields
@@ -197,12 +199,14 @@ textarea.field {
 /* field with icon */
 .field-icon-container {
 	@extend .field; // added focus-within inside on field for this fake-field :)
+
 	padding: 0;
 
 	> .field {
 		border: 0;
 		inline-size: calc(100% - 1.5em);
 	}
+
 	&,
 	&-empty {
 		// for drive, to keep the same height
@@ -233,6 +237,7 @@ textarea.field {
 /*
  * REMOVE THIS IF POSSIBLE
  */
+
 /* @protonmail.com field */
 .field--username,
 .sign-layout-container .field--username.field--username {

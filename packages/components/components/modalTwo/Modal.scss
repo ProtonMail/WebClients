@@ -101,7 +101,7 @@
 		box-shadow: var(--shadow-lifted);
 		background: var(--modal-background-color);
 		color: var(--modal-text-color);
-		animation: 0.25s easing(easeOutCubic) both;
+		animation: 0.25s easing(ease-out-cubic) both;
 		animation-name: anime-modal-two-dialog-in;
 
 		&-container {
@@ -124,6 +124,7 @@
 
 		&--full {
 			--size: 100%;
+
 			inline-size: var(--size);
 		}
 
