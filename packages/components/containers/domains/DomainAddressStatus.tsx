@@ -1,11 +1,15 @@
-import PropTypes from 'prop-types';
 import { c } from 'ttag';
 
 import { ADDRESS_STATUS, RECEIVE_ADDRESS } from '@proton/shared/lib/constants';
+import { DomainAddress } from '@proton/shared/lib/interfaces';
 
 import { Badge } from '../../components';
 
-const AddressStatus = ({ address }) => {
+interface Props {
+    address: DomainAddress;
+}
+
+const DomainAddressStatus = ({ address }: Props) => {
     const { Status, Receive, HasKeys } = address;
 
     if (HasKeys === 0) {
@@ -23,8 +27,4 @@ const AddressStatus = ({ address }) => {
     return null;
 };
 
-AddressStatus.propTypes = {
-    address: PropTypes.object.isRequired,
-};
-
-export default AddressStatus;
+export default DomainAddressStatus;
