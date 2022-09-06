@@ -99,7 +99,7 @@
         "关闭"
       ],
       "Close modal": [
-        "关闭"
+        "Close"
       ],
       "Close navigation": [
         "关闭导航栏"
@@ -190,6 +190,9 @@
       ],
       "Download": [
         "下載"
+      ],
+      "Download (${ count })": [
+        "下载 (${ count })"
       ],
       "Download all": [
         "全部下载"
@@ -747,20 +750,65 @@
       ]
     },
     "color": {
+      "carrot": [
+        "胡萝卜橙"
+      ],
+      "cerise": [
+        "水红色"
+      ],
+      "cobalt": [
+        "钴蓝色"
+      ],
+      "copper": [
+        "紫铜色"
+      ],
+      "enzian": [
+        "浅紫蓝色"
+      ],
+      "fern": [
+        "丝袍绿"
+      ],
+      "forest": [
+        "森林绿"
+      ],
       "ocean": [
-        "海洋"
+        "海蓝色"
+      ],
+      "olive": [
+        "橄榄绿"
+      ],
+      "pacific": [
+        "太平洋蓝"
+      ],
+      "pickle": [
+        "橄榄黄"
       ],
       "pine": [
-        "松树"
+        "松林绿"
       ],
       "pink": [
         "粉色"
       ],
+      "plum": [
+        "绛紫色"
+      ],
       "purple": [
         "紫色"
       ],
+      "reef": [
+        "珊瑚绿"
+      ],
+      "sahara": [
+        "撒哈拉棕"
+      ],
+      "slateblue": [
+        "石蓝色"
+      ],
       "soil": [
         "土地"
+      ],
+      "strawberry": [
+        "紫红色"
       ]
     },
     "Confirm modal title": {
@@ -2276,6 +2324,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "请求新的验证码之前，请检查您的垃圾邮件并确认 ${ strong } 地址的正确性。"
       ],
+      "Bulk uploads may reduce your computer’s performance. Consider limiting memory-intensive activities like streaming during upload. Or try uploading in batches.": [
+        "批量上传可能会降低计算机的性能。应考虑上传过程中，限制如串流等内存密集型活动。 或者尝试分批上传。"
+      ],
       "Canceled": [
         "已取消"
       ],
@@ -2393,6 +2444,9 @@
       "Enabling drive search": [
         "正在启用网盘搜索"
       ],
+      "Encrypted": [
+        "已加密"
+      ],
       "Encrypted search is here": [
         "已推出加密搜索功能"
       ],
@@ -2491,6 +2545,9 @@
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "将您的数据从${ importedEmailAddress } 导入到${ toEmail }"
+      ],
+      "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
+        "为项目编制索引：${ esProgress } 条 / 共 ${ totalProgressToShow } 条"
       ],
       "Indexing search results…": [
         "正在索引搜索结果…"
@@ -2594,11 +2651,17 @@
       "Not a valid URL": [
         "非有效链接"
       ],
+      "Not all files were transferred. Try uploading or downloading the files again.": [
+        "并非所有文件都已传输。请尝试重新上传或下载文件。"
+      ],
       "Note: Data may still be available locally on devices where you have installed ${ appName }.": [
         "请注意：安装过 ${ appName } 的设备上仍可能存在本地数据。"
       ],
       "of": [
         "/"
+      ],
+      "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
+        "其中一个加密网盘已被锁定。 这很可能是由于最近密码重置。"
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "您信任的某些密钥已被其所有者标为「已泄露」，建议您不再信任这些密钥。"
@@ -2753,6 +2816,9 @@
       "support team": [
         "客服团队"
       ],
+      "Swiss privacy": [
+        "瑞士隐私"
+      ],
       "Tap the + button to upload a file or folder.": [
         "点击按钮 + 来上传文件或文件夹。"
       ],
@@ -2771,6 +2837,9 @@
       "There are no files yet": [
         "还没有文件"
       ],
+      "These files were shared using end-to-end encryption. To keep them secure — and all your documents, photos, and files private — store them in your own Proton Drive. It's easy-to-use and free.": [
+        "这些文件是使用端到端加密共享的。 为了确保它们的安全，以及所有文档、照片和文件的私密性，请将其存储在Proton Drive中。 使用方便，而且免费。"
+      ],
       "This account has been suspended due to a potential policy violation.": [
         "此帐户因可能违反用户协议而被封禁"
       ],
@@ -2783,8 +2852,14 @@
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "此链接指向的网站可能会窃取您的密码、信用卡等信息。"
       ],
+      "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
+        "此链接可能使用了欺骗性域名，Edge 浏览器无法打开。若您确认链接可靠，请使用其他浏览器打开"
+      ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "此链接可能使用了欺骗性域名，请确认可靠性后再打开。"
+      ],
+      "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
+        "此链接是通过旧网盘版本创建的，且无法修改。请删除此链接并创建一个新链接以更改设置。"
       ],
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
         "此链接将被永久禁用，无人再能通过此链接访问您的文件。您需要新建一个链接才能重新共享该文件。"
@@ -2930,6 +3005,9 @@
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "您的账户有逾期未支付的账单，很快将被限制使用。${ payInvoiceLink }"
       ],
+      "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
+        "由于服务人员不在，当前的浏览器不支持下载大型文件。 下载大文件可能会冻结浏览器或使其无响应。 请使用 ${ recommendedBrowser } 的最新版本，然后再试一次。"
+      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "从 ${ importedEmailAddressStrong } 到您的 Proton 账户的导入数据已准备就绪。"
       ],
@@ -2968,6 +3046,21 @@
     "Item": {
       "file attributes": [
         "文件属性"
+      ],
+      "file data": [
+        "文件数据"
+      ],
+      "file data key": [
+        "文件数据密匙"
+      ],
+      "keys": [
+        "密钥"
+      ],
+      "name": [
+        "名称"
+      ],
+      "name hash": [
+        "名称哈希值"
       ],
       "thumbnail": [
         "缩略图"
@@ -3192,6 +3285,9 @@
       "Malware": [
         "恶意软件"
       ],
+      "Manage categories": [
+        "管理分类"
+      ],
       "Manage folders": [
         "管理文件夹"
       ],
@@ -3203,6 +3299,12 @@
       ],
       "Modified": [
         "修改时间"
+      ],
+      "Move to Archive": [
+        "存档"
+      ],
+      "Move to Inbox": [
+        "移至收件箱"
       ],
       "Name": [
         "名称"
@@ -3490,6 +3592,75 @@
       ]
     },
     "Notification": {
+      "\"${ name }\" created successfully": [
+        "“${ name }”创建成功"
+      ],
+      "\"${ name }\" deleted permanently from trash": [
+        "\"${ name }\" 已从回收站永久删除"
+      ],
+      "\"${ name }\" failed to be created": [
+        "\"${ name }\" 创建失败"
+      ],
+      "\"${ name }\" failed to be deleted permanently from trash": [
+        "\"${ name }\" 回收站永久删除失败"
+      ],
+      "\"${ name }\" failed to be moved": [
+        "\"${ name }\" 移动失败"
+      ],
+      "\"${ name }\" failed to be moved to trash": [
+        "\"${ name }\" 移到回收站失败"
+      ],
+      "\"${ name }\" failed to be restored from trash": [
+        "\"${ name }\" 从回收站还原失败"
+      ],
+      "\"${ name }\" moved to trash": [
+        "\"${ name }\" 已移动到回收站"
+      ],
+      "\"${ name }\" restored from trash": [
+        "\"${ name }\" 已从回收站恢复"
+      ],
+      "\"${ name }\" successfully moved": [
+        "\"${ name }\" 移动成功"
+      ],
+      "\"${ newName }\" failed to be renamed": [
+        "\"${ newName }\" 重命名失败"
+      ],
+      "\"${ newName }\" renamed successfully": [
+        "\"${ newName } 重命名成功"
+      ],
+      "${ count } item failed to be decrypted": [
+        "${ count } 个项目解密失败"
+      ],
+      "${ numberOfItems } item deleted permanently from trash": [
+        "${ numberOfItems } 个项目已从回收站永久删除"
+      ],
+      "${ numberOfItems } item failed to be deleted permanently from trash": [
+        "${ numberOfItems }\" 个项目从回收站永久删除失败"
+      ],
+      "${ numberOfItems } item failed to be moved": [
+        "${ numberOfItems } 个项目移动失败"
+      ],
+      "${ numberOfItems } item failed to be moved to trash": [
+        "${ numberOfItems } 个项目移到回收站失败"
+      ],
+      "${ numberOfItems } item failed to be restored from trash": [
+        "${ numberOfItems }\" 个项目从回收站还原失败"
+      ],
+      "${ numberOfItems } item moved to trash": [
+        "${ numberOfItems } 个项目已移动到回收站"
+      ],
+      "${ numberOfItems } item restored from trash": [
+        "从回收站还原了${ numberOfItems } 个项目"
+      ],
+      "${ numberOfItems } item successfully moved": [
+        "${ numberOfItems } 个项目移动成功"
+      ],
+      "${ numberOfItems } link to your item failed to be deleted": [
+        "${ numberOfItems } 个项目链接删除失败"
+      ],
+      "${ numberOfItems } link to your item was deleted": [
+        "${ numberOfItems } 个项目链接已删除"
+      ],
       "All items will soon be permanently deleted from trash": [
         "所有项目将很快从回收站永久删除"
       ],
@@ -3498,6 +3669,9 @@
       ],
       "Contact group updated": [
         "群组已更改"
+      ],
+      "Encrypted search activated": [
+        "加密搜索已激活"
       ],
       "Failed to download files: ${ err }": [
         "下载文件失败：${ err }"
@@ -3516,6 +3690,9 @@
       ],
       "File or folder is missing a name": [
         "文件或文件夹缺少名称"
+      ],
+      "Item failed to be verified": [
+        "项目验证失败"
       ],
       "Link failed to be loaded": [
         "链接加载失败"
@@ -3538,6 +3715,9 @@
       "Move ${ movingCount } item": [
         "移动 ${ movingCount } 个项目"
       ],
+      "Next page failed to be loaded": [
+        "下一页加载失败"
+      ],
       "Not enough space to upload ${ formattedTotal }": [
         "没有足够的空间来上传这 ${ formattedTotal }"
       ],
@@ -3547,11 +3727,26 @@
       "Subfolder failed to be loaded": [
         "加载子文件夹失败"
       ],
+      "The link to \"${ name }\" failed to be deleted": [
+        "\"${ name }\" 链接删除失败"
+      ],
+      "The link to \"${ name }\" was deleted": [
+        "\"${ name }\" 链接已删除"
+      ],
+      "The link to your item failed to be deleted": [
+        "项目链接删除失败"
+      ],
+      "The link to your item was deleted": [
+        "项目链接已删除"
+      ],
       "Trash failed to be emptied": [
         "未能清空回收站"
       ],
       "Your old files will be deleted in 72 hours": [
         "您的旧文件将在 72 小时内删除"
+      ],
+      "Your settings failed to be saved": [
+        "您的设置保存失败"
       ],
       "Your settings have been changed successfully": [
         "设置已更改"
@@ -3775,6 +3970,9 @@
       "Invite friends and earn rewards!": [
         "邀请好友注册赢取奖励！"
       ],
+      "Now you can easily search Drive files while keeping your data secure.": [
+        "现在，您可以保持数据安全，同时轻松搜索网盘文件。"
+      ],
       "Try ${ DRIVE_APP_NAME }": [
         "体验 ${ DRIVE_APP_NAME }"
       ]
@@ -3936,6 +4134,9 @@
       "${ numberOfFailedTransfer.total } failed download": [
         "${ numberOfFailedTransfer.total } 个失败的下载"
       ],
+      "${ numberOfFailedTransfer.total } failed transfer": [
+        "${ numberOfFailedTransfer.total } 传输失败"
+      ],
       "${ numberOfFailedTransfer.total } failed upload": [
         "${ numberOfFailedTransfer.total } 个失败的上传"
       ],
@@ -4017,6 +4218,9 @@
       "Date": [
         "日期"
       ],
+      "Decrypting": [
+        "正在解密"
+      ],
       "Delete ${ count } contact": [
         "删除 ${ count } 个联系人"
       ],
@@ -4037,6 +4241,9 @@
       ],
       "Discard changes?": [
         "放弃更改？"
+      ],
+      "Download shared file": [
+        "下载共享文件"
       ],
       "Download unverified file?": [
         "下载未经验证的文件？"
@@ -4109,6 +4316,9 @@
       ],
       "Found ${ searchView.numberOfResults } result": [
         "找到${ searchView.numberOfResults }条结果"
+      ],
+      "Getting files": [
+        "获得文件"
       ],
       "Groups": [
         "群组"
@@ -4275,6 +4485,9 @@
       "The link either does not exist or has expired": [
         "该链接不存在或已失效"
       ],
+      "The link expired": [
+        "该链接已过期"
+      ],
       "The link failed to be loaded": [
         "链接加载失败"
       ],
@@ -4283,6 +4496,9 @@
       ],
       "This folder has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "此文件夹的签名缺失或无效，请转至菜单 (⋮) → 详细信息以获取相关信息。"
+      ],
+      "This link is password protected": [
+        "此链接受密码保护"
       ],
       "Total size": [
         "总大小"
@@ -4326,6 +4542,9 @@
       "You have no folders yet": [
         "您尚未添加文件夹"
       ],
+      "You've got files": [
+        "你已获得文件"
+      ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         "您的免费试用期即将于 ${ formattedEndDate } 结束"
       ]
@@ -4353,6 +4572,9 @@
       ],
       "Encrypted data with verified digital signature": [
         "已加密并验证数字签名"
+      ],
+      "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
+        "Gmail会自动对某些电子邮件（如社交或促销）进行分类。 您可以选择这些电子邮件导入的位置。"
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "选择在向用户签名或加密时要使用的 PGP 方案。请注意, PGP/内嵌强制纯文本消息。"
@@ -4382,8 +4604,8 @@
       "Name cannot include invisible characters, / or \\.": [
         "名称中不能包含不可见字符，/ 或 \\。"
       ],
-      "Name must be ${ MAX_NAME_LENGTH } characters long at most": [
-        "名称长度最多为 ${ MAX_NAME_LENGTH } 个字符"
+      "Name must be ${ MAX_NAME_LENGTH } character long at most": [
+        "名称不能超过 ${ MAX_NAME_LENGTH } 个字符"
       ],
       "Name must not be empty": [
         "名称不能为空"

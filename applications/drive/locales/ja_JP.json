@@ -99,7 +99,7 @@
         "閉じる"
       ],
       "Close modal": [
-        "画面を閉じる"
+        "Close"
       ],
       "Close navigation": [
         "ナビゲーションを閉じる"
@@ -2785,8 +2785,8 @@
       "There are no files yet": [
         "まだファイルがありません"
       ],
-      "These files were shared using end-to-end encryption. To ensure their security — and the security of all your documents, photos, and files — store them in Proton Drive, the cloud storage service you can trust.": [
-        "これらのファイルは、エンドツーエンド暗号化を使用して共有されています。ドキュメント、写真、ファイルなどのセキュリティ確保のため、信頼できるクラウドストレージサービスの Proton Drive を使用しましょう。"
+      "These files were shared using end-to-end encryption. To keep them secure — and all your documents, photos, and files private — store them in your own Proton Drive. It's easy-to-use and free.": [
+        "これらのファイルはエンドツーエンド暗号化を使用して共有されています。あなたのドキュメント、写真、ファイルを安全に保管するには Proton Drive をご利用ください。使いやすく、無料で利用できます。"
       ],
       "This account has been suspended due to a potential policy violation.": [
         "このアカウントは、ポリシー違反の可能性があるため停止されています。"
@@ -3235,6 +3235,12 @@
       ],
       "Modified": [
         "更新日時"
+      ],
+      "Move to Archive": [
+        "アーカイブに移動"
+      ],
+      "Move to Inbox": [
+        "受信トレイに移動"
       ],
       "Name": [
         "名前"
@@ -4522,9 +4528,6 @@
       ],
       "Name cannot include invisible characters, / or \\.": [
         "名前に \"/\" または \"\\\" の文字を使うことができません。 "
-      ],
-      "Name must be ${ MAX_NAME_LENGTH } characters long at most": [
-        "名前は ${ MAX_NAME_LENGTH } 文字までである必要があります"
       ],
       "Name must not be empty": [
         "名前を空にすることはできません"

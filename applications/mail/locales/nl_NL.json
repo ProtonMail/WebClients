@@ -23,9 +23,6 @@
       "Add address": [
         "Adres toevoegen"
       ],
-      "Add condition": [
-        "Voorwaarde toevoegen"
-      ],
       "Add contact": [
         "Contactpersoon toevoegen"
       ],
@@ -147,7 +144,7 @@
         "Opstelvenster sluiten"
       ],
       "Close modal": [
-        "Sluit het venster"
+        "Close"
       ],
       "Close navigation": [
         "Navigatie sluiten"
@@ -200,20 +197,14 @@
       "Create a new contact group": [
         "Nieuwe contactgroep maken"
       ],
-      "Create folder": [
-        "Map aanmaken"
-      ],
-      "Create label": [
-        "Label aanmaken"
+      "Create a new folder": [
+        "Nieuwe map aanmaken"
       ],
       "Create new contact": [
         "Nieuwe contactpersoon aanmaken"
       ],
       "Create new message": [
         "Nieuw bericht maken"
-      ],
-      "Custom filter": [
-        "Aangepaste filter"
       ],
       "Customize": [
         "Personaliseer"
@@ -343,9 +334,6 @@
       "Fewer search options": [
         "Minder zoekopties"
       ],
-      "Filter on...": [
-        "Filteren op..."
-      ],
       "Font": [
         "Lettertype"
       ],
@@ -467,9 +455,6 @@
       "Label as...": [
         "Labelen als..."
       ],
-      "label emails as": [
-        "e-mail labellen als"
-      ],
       "Learn more": [
         "Meer informatie"
       ],
@@ -505,9 +490,6 @@
       ],
       "Mark as unread": [
         "Markeren als ongelezen"
-      ],
-      "mark emails as": [
-        "e-mails markeren als"
       ],
       "Mark for deletion": [
         "Markeren voor verwijderen"
@@ -568,9 +550,6 @@
       ],
       "Move all to trash": [
         "Alles naar de prullenbak verplaatsen"
-      ],
-      "move emails to": [
-        "e-mails verplaatsen naar"
       ],
       "Move to": [
         "Verplaatsen naar"
@@ -659,9 +638,6 @@
       "Pause": [
         "Pauzeer"
       ],
-      "Preview": [
-        "Voorbeeld"
-      ],
       "Preview ${ attachmentName }": [
         "Bekijk ${ attachmentName }"
       ],
@@ -727,9 +703,6 @@
       ],
       "Remove expiration time": [
         "Vervaltijd verwijderen"
-      ],
-      "Remove this label": [
-        "Label verwijderen"
       ],
       "Rename": [
         "Hernoem"
@@ -802,9 +775,6 @@
       ],
       "Send anyway": [
         "Toch verzenden"
-      ],
-      "send auto-reply email": [
-        "automatisch antwoord versturen"
       ],
       "Send feedback": [
         "Feedback versturen"
@@ -1064,6 +1034,11 @@
       ],
       "Participant added": [
         "Deelnemer toegevoegd"
+      ]
+    },
+    "Adding expiration to a message will create an expiring message": {
+      "Expiring message": [
+        "Verlopend bericht"
       ]
     },
     "Alert": {
@@ -2647,26 +2622,6 @@
         "Aland Eilanden"
       ]
     },
-    "CustomFilter": {
-      "Attachment": [
-        "Bijlage"
-      ],
-      "Filter on": [
-        "Filteren op"
-      ],
-      "Next": [
-        "Volgende"
-      ],
-      "Recipient": [
-        "Ontvanger"
-      ],
-      "Sender": [
-        "Afzender"
-      ],
-      "Subject": [
-        "Onderwerp"
-      ]
-    },
     "Daily recurring event, frequency": {
       "${ count } time": [
         "${ count } keer",
@@ -2927,9 +2882,6 @@
         "Kies een datum binnen de volgende ${ SCHEDULED_MAX_DATE_DAYS } dag.",
         "Kies een datum binnen de volgende ${ SCHEDULED_MAX_DATE_DAYS } dagen."
       ],
-      "Condition incomplete": [
-        "Onvolledig ingevulde voorwaarde"
-      ],
       "Contact could not be saved": [
         "Contact kan niet opgeslagen worden"
       ],
@@ -2971,17 +2923,11 @@
       "Email is not valid": [
         "E-mailadres is ongeldig"
       ],
-      "Empty condition": [
-        "Lege voorwaarde"
-      ],
       "Enter 6 digits": [
         "Voer 6 cijfers in"
       ],
       "Enter a password": [
         "Voer een wachtwoord in"
-      ],
-      "Error in one of the conditions": [
-        "Fout in de volgende voorwaarden"
       ],
       "Error while saving draft. Please try again.": [
         "Fout bij het opslaan van concept. Gelieve opnieuw te proberen."
@@ -2994,9 +2940,6 @@
       ],
       "Failed to encrypt attachment. Please try again.": [
         "Fout tijdens het versleutelen van de bijlage. Probeer alstublieft opnieuw."
-      ],
-      "Filter with this name already exists": [
-        "Filter met deze naam bestaat reeds"
       ],
       "Folder name cannot be empty.": [
         "Mapnaam mag niet leeg zijn."
@@ -3114,12 +3057,6 @@
       "Request timed out": [
         "Reactietijd verzoek overschreden"
       ],
-      "Require at least one action": [
-        "Vereist minstens één actie"
-      ],
-      "Require at least one condition": [
-        "Vereist minstens één voorwaarde"
-      ],
       "Signature not verified": [
         "Handtekening niet geverifieerd"
       ],
@@ -3201,9 +3138,6 @@
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser.": [
         "Dit bericht kan koppelingen bevatten die niet op de juiste wijze geopend kunnen worden door uw huidige browser."
-      ],
-      "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
-        "Te veel actieve filters. Upgrade naar een betaald abonnement om meer filters te activeren."
       ],
       "Trusted keys are not valid for sending": [
         "Vertrouwde sleutels zijn niet geldig om mee te verzenden"
@@ -3557,18 +3491,6 @@
       ]
     },
     "Filter modal type": {
-      "If the attachments": [
-        "Als de bijlagen"
-      ],
-      "If the recipient": [
-        "Als de ontvanger"
-      ],
-      "If the sender": [
-        "Als de afzender"
-      ],
-      "If the subject": [
-        "Als het onderwerp"
-      ],
       "Select…": [
         "Selecteren…"
       ],
@@ -3588,9 +3510,6 @@
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } bijgewerkt"
-      ],
-      "Filter ${ Filter.Name } updated": [
-        "Filter ${ Filter.Name } bijgewerkt"
       ]
     },
     "Filter option": {
@@ -3608,14 +3527,6 @@
       ],
       "Unread": [
         "Ongelezen"
-      ]
-    },
-    "Filter preview": {
-      "read": [
-        "lezen"
-      ],
-      "starred": [
-        "Met ster"
       ]
     },
     "Font Face Default": {
@@ -3974,12 +3885,6 @@
         "(${ memberCount } lid)",
         "(${ memberCount } leden)"
       ],
-      "(Filter if ALL of the following conditions are met)": [
-        "(Filter als aan ALLE van de volgende voorwaarden is voldaan)"
-      ],
-      "(Filter if ANY of the following conditions are met)": [
-        "(Filter als aan een van de volgende voorwaarden is voldaan)"
-      ],
       "(No Recipient)": [
         "(Geen ontvanger)"
       ],
@@ -4030,9 +3935,6 @@
       "All your calendars are disabled.": [
         "Alle agenda's zijn uitgeschakeld."
       ],
-      "All your changes will be lost.": [
-        "Alle wijzigingen gaan verloren."
-      ],
       "An unknown public key has been detected for this recipient.": [
         "Er is een onbekende openbare sleutel gevonden voor deze ontvanger."
       ],
@@ -4044,9 +3946,6 @@
       ],
       "Are you sure you want to delete all messages with this label?": [
         "Weet u zeker dat u alle berichten met dit label wilt verwijderen?"
-      ],
-      "Are you sure you want to discard your changes?": [
-        "Weet u zeker dat u uw wijzigingen ongedaan wilt maken?"
       ],
       "Are you sure you want to move all messages in this location to Trash?": [
         "Weet u zeker dat u alle berichten in deze locatie wilt verplaatsen naar de prullenbak?"
@@ -4277,9 +4176,6 @@
         "bestandsbijlage",
         "bestandsbijlagen"
       ],
-      "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
-        "Filters werken op alle e-mails, zowel inkomende als uitgaande. Elk filter moet minstens een naam, voorwaarde en actie bevatten."
-      ],
       "Folder": [
         "Map"
       ],
@@ -4341,9 +4237,6 @@
       ],
       "Image URL": [
         "Afbeeldings-URL"
-      ],
-      "Images have been removed because they are not allowed in auto-reply": [
-        "Afbeeldingen werden verwijderd omdat ze niet toegelaten zijn in automatisch antwoord"
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Importeer ${ contactsFragment } en ${ contactsGroupsFragment }"
@@ -4469,9 +4362,6 @@
       "New": [
         "Nieuw"
       ],
-      "No action selected": [
-        "Geen actie geselecteerd"
-      ],
       "No contacts added yet": [
         "Nog geen contactpersonen toegevoegd"
       ],
@@ -4484,17 +4374,11 @@
       "No folder found": [
         "Geen map gevonden"
       ],
-      "No folder selected": [
-        "Geen map geselecteerd"
-      ],
       "No group found": [
         "Geen groep gevonden"
       ],
       "No label found": [
         "Geen label gevonden"
-      ],
-      "No label selected": [
-        "Geen label geselecteerd"
       ],
       "No more results found": [
         "Geen resultaten meer gevonden"
@@ -5203,9 +5087,6 @@
       "Close draft": [
         "Concept sluiten"
       ],
-      "Create filter with...": [
-        "Filter maken met..."
-      ],
       "Delete permanently": [
         "Permanent verwijderen"
       ],
@@ -5373,17 +5254,8 @@
       ]
     },
     "Label": {
-      " and ": [
-        " en "
-      ],
-      " and ${ l }": [
-        " en ${ l }"
-      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Tijdelijk onbeschikbaar. Probeer later opnieuw.)"
-      ],
-      "Actions": [
-        "Acties"
       ],
       "Add email address": [
         "E-mailadres toevoegen"
@@ -5397,26 +5269,8 @@
       "Address": [
         "Adres"
       ],
-      "ALL": [
-        "ALLES"
-      ],
       "Also archive": [
         "Ook archiveren"
-      ],
-      "AND": [
-        "EN"
-      ],
-      "and": [
-        "en"
-      ],
-      "And": [
-        "En"
-      ],
-      "ANY": [
-        "ELK"
-      ],
-      "Apply filter to existing emails": [
-        "Filter toepassen op bestaande e-mails"
       ],
       "Attach screenshot(s)": [
         "Schermafbeelding(en) toevoegen"
@@ -5466,9 +5320,6 @@
       "Code is 6 digits without spaces": [
         "Code is 6 cijfers zonder spaties"
       ],
-      "Conditions": [
-        "Voorwaarden"
-      ],
       "Confirm password": [
         "Bevestig wachtwoord"
       ],
@@ -5517,9 +5368,6 @@
       "Extended address": [
         "Adrestoevoeging"
       ],
-      "Filter Name": [
-        "Filternaam"
-      ],
       "Folder location": [
         "Map locatie"
       ],
@@ -5549,12 +5397,6 @@
       ],
       "I understand the risk": [
         "Ik begrijp het risico"
-      ],
-      "IF": [
-        "ALS"
-      ],
-      "If": [
-        "Als"
       ],
       "Import all messages": [
         "Alle berichten importeren"
@@ -5595,6 +5437,9 @@
       "Mailbox password": [
         "Mailboxwachtwoord"
       ],
+      "Manage categories": [
+        "Beheer categorieën"
+      ],
       "Manage folders": [
         "Mappen beheren"
       ],
@@ -5604,17 +5449,17 @@
       "Manage my addresses": [
         "Mijn adressen beheren"
       ],
-      "Mark as": [
-        "Markeren als"
-      ],
       "Move to": [
         "Verplaatsen naar"
       ],
+      "Move to Archive": [
+        "Verplaats naar Archief"
+      ],
+      "Move to Inbox": [
+        "Verplaats naar inbox"
+      ],
       "Name": [
         "Naam"
-      ],
-      "No label found": [
-        "Geen label gevonden"
       ],
       "Notification": [
         "Notificatie"
@@ -5627,15 +5472,6 @@
       ],
       "Operating system version": [
         "Versie van besturingssysteem"
-      ],
-      "OR": [
-        "OF"
-      ],
-      "or": [
-        "of"
-      ],
-      "Or": [
-        "Of"
       ],
       "Participants": [
         "Deelnemers"
@@ -5664,9 +5500,6 @@
       "Public keys": [
         "Openbare sleutels"
       ],
-      "Read": [
-        "Gelezen"
-      ],
       "Recipient": [
         "Ontvanger"
       ],
@@ -5694,9 +5527,6 @@
       "Select how your mailbox looks like by default.": [
         "Selecteer hoe uw mailbox er standaard uitziet."
       ],
-      "Send auto-reply": [
-        "Automatisch antwoord versturen"
-      ],
       "Sender": [
         "Afzender"
       ],
@@ -5706,32 +5536,11 @@
       "Size:": [
         "Grootte:"
       ],
-      "Starred": [
-        "Met ster"
-      ],
-      "Statement": [
-        "Voorwaarde"
-      ],
       "Street address": [
         "Adres"
       ],
       "System information": [
         "Systeeminformatie"
-      ],
-      "The email was sent ${ attachment }": [
-        "De e-mail was verzonden ${ attachment }"
-      ],
-      "the email was sent ${ attachment }": [
-        "de e-mail was verzonden ${ attachment }"
-      ],
-      "The email was sent ${ attachmentStrong }": [
-        "De e-mail was verzonden ${ attachmentStrong }"
-      ],
-      "the email was sent ${ label }": [
-        "de e-mail was verzonden ${ label }"
-      ],
-      "Then": [
-        "Dan"
       ],
       "Time": [
         "Tijd"
@@ -5762,21 +5571,6 @@
       ],
       "What happened?": [
         "Wat is er gebeurd?"
-      ],
-      "With attachment": [
-        "Met bijlage"
-      ],
-      "with attachments": [
-        "met bijlagen"
-      ],
-      "Without attachment": [
-        "Zonder bijlage"
-      ],
-      "without attachment": [
-        "zonder bijlagen"
-      ],
-      "without attachments": [
-        "zonder bijlagen"
       ],
       "Wonderful": [
         "Uitstekend"
@@ -5854,12 +5648,6 @@
     "Link": {
       "Activate": [
         "Activeren"
-      ],
-      "Add folder": [
-        "Map toevoegen"
-      ],
-      "Add label": [
-        "Label toevoegen"
       ],
       "All mail": [
         "Alle e-mail"
@@ -6089,6 +5877,11 @@
         "Er is een nieuwe versie van ${ appName } beschikbaar. ${ reloadButton }."
       ]
     },
+    "Message has been sent to the user via a SimpleLogin alias": {
+      "Delivered via SimpleLogin by Proton": [
+        "Afgeleverd via SimpleLogin van Proton"
+      ]
+    },
     "Message image": {
       "Image has not been loaded in order to protect your privacy.": [
         "Afbeelding is niet geladen om uw privacy te beschermen."
@@ -6289,9 +6082,6 @@
       ]
     },
     "Notification": {
-      "${ _Filter.Name } created": [
-        "${ _Filter.Name } aangemaakt"
-      ],
       "Contact group created": [
         "Contactgroep aangemaakt"
       ],
@@ -6366,9 +6156,6 @@
       ]
     },
     "Option group": {
-      "Custom folders": [
-        "Aangepaste mappen"
-      ],
       "Default folders": [
         "Standaard mappen"
       ],
@@ -6510,9 +6297,6 @@
       ],
       "Text": [
         "Tekst"
-      ],
-      "Type text or keyword": [
-        "Voer tekst of trefwoord in"
       ],
       "Write your message": [
         "Schrijf uw bericht"
@@ -6807,20 +6591,6 @@
       ],
       "Unsubscribed": [
         "Opgezegd"
-      ]
-    },
-    "Step in filter modal": {
-      "Actions": [
-        "Acties"
-      ],
-      "Conditions": [
-        "Voorwaarden"
-      ],
-      "Name": [
-        "Naam"
-      ],
-      "Preview": [
-        "Voorbeeld"
       ]
     },
     "Storage": {
@@ -7183,9 +6953,6 @@
       "Add contact group name": [
         "Naam contactgroep toevoegen"
       ],
-      "Add filter": [
-        "Filter toevoegen"
-      ],
       "Add to ${ groupCount } group": [
         "Toevoegen aan ${ groupCount } groep",
         "Toevoegen aan ${ groupCount } groepen"
@@ -7198,9 +6965,6 @@
       ],
       "Archive": [
         "Archief"
-      ],
-      "Are you sure you want to close?": [
-        "Weet u zeker dat u wil afsluiten?"
       ],
       "Attachments": [
         "Bijlagen"
@@ -7249,12 +7013,6 @@
       ],
       "Conversation list": [
         "Gesprekslijst"
-      ],
-      "Create a new folder": [
-        "Nieuwe map aanmaken"
-      ],
-      "Create a new label": [
-        "Nieuwe label maken"
       ],
       "Create contact": [
         "Contact aanmaken"
@@ -7330,9 +7088,6 @@
       "Edit contact group": [
         "Contactgroep bewerken"
       ],
-      "Edit filter": [
-        "Filter bewerken"
-      ],
       "Edit image": [
         "Afbeelding bewerken"
       ],
@@ -7371,9 +7126,6 @@
       ],
       "Feedback": [
         "Feedback"
-      ],
-      "Filter on": [
-        "Filteren op"
       ],
       "Forward": [
         "Doorsturen"
@@ -7671,6 +7423,9 @@
       "Encrypted data with verified digital signature": [
         "Versleutelde gegevens met geverifieerde digitale ondertekening"
       ],
+      "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
+        "Gmail categorizeert sommige e-mails automatisch zoals like Sociaal of Reclame. U kunt kiezen naar waar u die wil importeren."
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Selecteer het PGP-schema dat wordt gebruikt bij het ondertekenen of versleutelen naar een gebruiker. Merk op dat PGP/Inline berichten zonder opmaak forceert"
       ],
@@ -7682,9 +7437,6 @@
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
         "Deze actie zal alle berichten downloaden zodat ze lokaal kunnen worden gezocht. Het wissen van uw browsergegevens zal deze optie uitschakelen."
-      ],
-      "This feature is only available for paid users": [
-        "Deze functionaliteit is alleen beschikbaar voor betalende gebruikers"
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Upload een openbare sleutel om het sturen van end-to-end versleutelde berichten naar dit e-mailadres mogelijk te maken"

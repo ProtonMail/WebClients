@@ -43,9 +43,6 @@
       "Activate recovery": [
         "Активувати відновлення"
       ],
-      "Add": [
-        "Додати"
-      ],
       "Add ${ BRAND_NAME } Account": [
         "Додати обліковий запис ${ BRAND_NAME }"
       ],
@@ -115,6 +112,9 @@
       "Back": [
         "Назад"
       ],
+      "Block": [
+        "Заблкувати"
+      ],
       "Bold": [
         "Жирний"
       ],
@@ -152,7 +152,7 @@
         "Закрити"
       ],
       "Close modal": [
-        "Закрити вікно"
+        "Close"
       ],
       "Close navigation": [
         "Закрити панель навігації"
@@ -445,6 +445,12 @@
       "Mark as default": [
         "Позначити типовим"
       ],
+      "Mark as not spam": [
+        "Позначити не спамом"
+      ],
+      "Mark as spam": [
+        "Позначити спамом"
+      ],
       "mark emails as": [
         "позначити листи"
       ],
@@ -459,12 +465,6 @@
       ],
       "move emails to": [
         "перемістити листи"
-      ],
-      "Move to Allow List": [
-        "Перемістити до списку дозволених"
-      ],
-      "Move to Block List": [
-        "Перемістити до списку блокування"
       ],
       "Need help?": [
         "Потрібна допомога?"
@@ -549,6 +549,9 @@
       ],
       "Remove": [
         "Вилучити"
+      ],
+      "Remove Block": [
+        "Вилучити блокування"
       ],
       "Remove bonuses": [
         "Вилучити бонуси"
@@ -723,6 +726,9 @@
       ],
       "Sort": [
         "Сортувати"
+      ],
+      "Spam": [
+        "Спам"
       ],
       "Start import": [
         "Запустити імпорт"
@@ -2702,9 +2708,6 @@
       "Domain not available, try again later": [
         "Домен недоступний. Спробуйте ще раз пізніше"
       ],
-      "Email address invalid": [
-        "Недійсна адреса електронної пошти"
-      ],
       "Email is not valid": [
         "Е-пошта недійсна"
       ],
@@ -2755,6 +2758,9 @@
       ],
       "Invalid domain": [
         "Недійсний домен"
+      ],
+      "Invalid email address": [
+        "Недійсна адреса електронної пошти"
       ],
       "Invalid expiration date": [
         "Недійсний термін дії картки"
@@ -3499,8 +3505,11 @@
       "Add a custom filter to automatically perform certain actions, like labeling or archiving messages. Filters can be edited and created directly via Sieve programming language.": [
         "Додайте власний фільтр для автовиконання певних дій, наприклад, позначення міткою або архівування повідомлень. Фільтри можна редагувати та створювати безпосередньо за допомогою мови програмування Sieve."
       ],
-      "Apply sender-specific spam rules. Messages from addresses or domains on the Allow List always go to your Inbox while messages from addresses or domains on the Block List always go to Spam. Marking a message as spam adds its address to the Block List. Marking a message as not spam adds it to the Allow List.": [
-        "Застосовуйте правила спаму призначені для певних користувачів. Повідомлення з адрес чи доменів зі списку дозволів завжди надходять до вашої теки Вхідні, а повідомлення з адрес чи доменів зі списку блокування завжди надходять до спаму. Позначення повідомлення небажаним додає його адресу до списку блокування. Позначення повідомлення потрібним додає його до списку дозволів."
+      "Emails from addresses marked as spam by you or Proton will go to your spam folder. If you want to allow emails from one of these addresses, mark it as \"not spam\".": [
+        "Електронні листи з адрес, які ви або Proton позначили спамом, потраплятимуть у вашу теку зі спамом. Якщо ви хочете дозволити електронні листи з однієї з цих адрес, позначте її «не спам»."
+      ],
+      "Emails from blocked addresses won't be delivered.": [
+        "Електронні листи із заблокованих адрес не доставлятимуться."
       ],
       "Search in Allow List and Block List": [
         "Пошук в списку дозволених і списку блокування"
@@ -5763,14 +5772,8 @@
       "Your account will be updated once the payment is cleared.": [
         "Ваш обліковий запис оновиться одразу після підтвердження платежу."
       ],
-      "Your Allow List is empty.": [
-        "Ваш список дозволів порожній."
-      ],
       "Your bank requires 3-D Secure verification for security purposes.": [
         "З міркувань безпеки, ваш банк вимагає перевірки 3-D Secure."
-      ],
-      "Your Block List is empty.": [
-        "Ваш список блокувань порожній."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Ваші дані для імпорту з ${ importedEmailAddressStrong } до облікового запису Proton готові."
@@ -6020,9 +6023,6 @@
       ],
       "Close draft": [
         "Закрити чернетку"
-      ],
-      "Create filter with...": [
-        "Створити фільтр..."
       ],
       "Delete permanently": [
         "Видалити остаточно"
@@ -6275,6 +6275,9 @@
       "Address": [
         "Адреса"
       ],
+      "Address type": [
+        "Тип адреси"
+      ],
       "Addresses": [
         "Адреси"
       ],
@@ -6349,6 +6352,9 @@
       ],
       "Block malware, ads and trackers": [
         "Блокувати зловмисні програми, рекламу і стеження"
+      ],
+      "Blocked": [
+        "Заблоковано"
       ],
       "bonus storage": [
         "бонусне сховище"
@@ -6680,6 +6686,9 @@
       "Mailbox password": [
         "Пароль поштової скриньки"
       ],
+      "Manage categories": [
+        "Керувати категоріями"
+      ],
       "Manage folders": [
         "Керувати теками"
       ],
@@ -6697,6 +6706,12 @@
       ],
       "Move to": [
         "Перемістити"
+      ],
+      "Move to Archive": [
+        "Перемістити до архіву"
+      ],
+      "Move to Inbox": [
+        "Перемістити до вхідних"
       ],
       "Name": [
         "Назва"
@@ -6721,6 +6736,9 @@
       ],
       "No label found": [
         "Мітку не знайдено"
+      ],
+      "Non Spam": [
+        "Не спам"
       ],
       "Non-standard ports": [
         "Нестандартні порти"
@@ -6872,6 +6890,9 @@
       "Signature": [
         "Підпис"
       ],
+      "Spam": [
+        "Спам"
+      ],
       "Starred": [
         "Із зірочкою"
       ],
@@ -6973,9 +6994,6 @@
       ],
       "Waiting for subscription": [
         "Очікування передплати"
-      ],
-      "Want to add": [
-        "Хочете додати"
       ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Нам шкода, що ви йдете. Будь ласка, розкажіть чому ви покидаєте нас, щоб допомогти нам вдосконалитися."
@@ -7535,15 +7553,10 @@
         "третьої середи"
       ]
     },
-    "Moved to black/whitelist": {
-      "${ Domain } removed": [
-        "${ Domain } вилучено"
-      ],
-      "${ Email } removed": [
-        "${ Email } вилучено"
-      ]
-    },
     "Navigation": {
+      "All": [
+        "Усі"
+      ],
       "Back": [
         "Назад"
       ],
@@ -7555,6 +7568,15 @@
       ],
       "Back to Mail": [
         "Назад до пошти"
+      ],
+      "Blocked": [
+        "Заблоковано"
+      ],
+      "Non spam": [
+        "Не спам"
+      ],
+      "Spam": [
+        "Спам"
       ]
     },
     "New Label form": {
@@ -7901,26 +7923,6 @@
         "Керування командою"
       ]
     },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Зробіть приватність усталеною для резервних копій, зберігання, обміну та отримання файлів."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "В іншому випадку доступ до вашого облікового запису буде обмежено, а з часом деактивовано."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Щоб і надалі користуватися ${ MAIL_APP_NAME } з преміумфункціями, оберіть тарифний план та спосіб оплати."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Оновіться до комплекту для бізнесу й користуйтеся всіма преміумфункціями служб Proton."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Оновіться до виняткового комплекту приватності й користуйтеся всіма преміумфункціями служб Proton."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Ваш пробний період завершується ${ formattedTrialExpirationDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand }, що закінчується на ${ last4 }"
@@ -7987,6 +7989,26 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Ви користуєтеся спеціальною ціною чинного тарифного плану. Якщо ви понизите свій обліковий запис, то втратите спеціальну ціну передплати й більше не зможете скористатися нею, коли вирішите знову його передплатити."
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Зробіть приватність усталеною для резервних копій, зберігання, обміну та отримання файлів."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "В іншому випадку доступ до вашого облікового запису буде обмежено, а з часом деактивовано."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Щоб і надалі користуватися ${ MAIL_APP_NAME } з преміумфункціями, оберіть тарифний план та спосіб оплати."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Оновіться до комплекту для бізнесу й користуйтеся всіма преміумфункціями служб Proton."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Оновіться до виняткового комплекту приватності й користуйтеся всіма преміумфункціями служб Proton."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Ваш пробний період завершується ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -8675,11 +8697,17 @@
       "Confirm password": [
         "Підтвердити пароль"
       ],
+      "domain.com": [
+        "domain.com"
+      ],
       "E.g., ": [
         "Наприклад, "
       ],
       "Email address": [
         "Адреса е-пошти"
+      ],
+      "example@domain.com": [
+        "example@domain.com"
       ],
       "Feedback": [
         "Зворотній зв’язок"
@@ -9001,34 +9029,33 @@
         "Ім'я користувача"
       ]
     },
-    "Spam filter moved to blacklist": {
-      "${ Domain } moved to Block List": [
-        "${ Domain } переміщено до списку блокування"
-      ],
-      "${ Email } moved to Block List": [
-        "${ Email } переміщено до списку блокування"
-      ]
-    },
-    "Spam filter moved to whitelist": {
-      "${ Domain } moved to Allow List": [
-        "${ Domain } переміщено до списку дозволених"
-      ],
-      "${ Email } moved to Allow List": [
-        "${ Email } переміщено до списку дозволених"
-      ]
-    },
     "Spam notification": {
-      "${ domain } added": [
-        "${ domain } додано"
+      "${ name } added": [
+        "${ name } додано"
       ],
-      "${ domain } updated": [
-        "${ domain } оновлено"
+      "${ name } deletion failed": [
+        "Не вдалося видалити ${ name }"
       ],
-      "${ email } added": [
-        "${ email } додано"
+      "${ name } failed to move to Block List": [
+        "Не вдалося перемістити ${ name } до списку блокування"
       ],
-      "${ email } updated": [
-        "${ email } оновлено"
+      "${ name } failed to move to Non spam List": [
+        "Не вдалося перемістити ${ name } до списку не спаму"
+      ],
+      "${ name } failed to move to Spam List": [
+        "Не вдалося перемістити ${ name } до списку спаму"
+      ],
+      "${ name } moved to Block List": [
+        "${ name } переміщено до списку блокування"
+      ],
+      "${ name } moved to Non spam list": [
+        "${ name } переміщено до списку не спаму"
+      ],
+      "${ name } moved to Spam list": [
+        "${ name } переміщено до списку спаму"
+      ],
+      "${ name } successfully deleted": [
+        "${ name } успішно видалено"
       ]
     },
     "Spotlight": {
@@ -9468,8 +9495,17 @@
       "CSV field": [
         "Поле CSV"
       ],
+      "Edit": [
+        "Змінити"
+      ],
+      "Email address": [
+        "Адреса е-пошти"
+      ],
       "Import": [
         "Імпорт"
+      ],
+      "Marked as": [
+        "Позначено як"
       ],
       "Name": [
         "Назва"
@@ -9602,11 +9638,14 @@
       "Add Sieve filter": [
         "Додати фільтр Sieve"
       ],
-      "Add to Allow List": [
-        "Додати до списку дозволів"
-      ],
-      "Add to Block List": [
+      "Add to block list": [
         "Додати до списку блокування"
+      ],
+      "Add to not spam list": [
+        "Додати до списку не спаму"
+      ],
+      "Add to spam list": [
+        "Додати до списку спаму"
       ],
       "Add user": [
         "Додати користувача"
@@ -9619,9 +9658,6 @@
       ],
       "Allocate storage": [
         "Призначити обсяг сховища"
-      ],
-      "Allow List": [
-        "Список дозволів"
       ],
       "Amount": [
         "Всього"
@@ -9661,9 +9697,6 @@
       ],
       "Billing details": [
         "Подробиці платежу"
-      ],
-      "Block List": [
-        "Список блокування"
       ],
       "Bridge for ${ platform }": [
         "Bridge для ${ platform }"
@@ -9841,12 +9874,6 @@
       ],
       "Download ${ VPN_APP_NAME }": [
         "Завантажити ${ VPN_APP_NAME }"
-      ],
-      "Edit Allow List": [
-        "Змінити список дозволів"
-      ],
-      "Edit Block List": [
-        "Змінити список блокування"
       ],
       "Edit calendar": [
         "Редагувати календар"
@@ -10211,8 +10238,8 @@
       "Sort labels alphabetically": [
         "Сортувати мітки за алфавітом"
       ],
-      "Spam filters": [
-        "Фільтри спаму"
+      "Spam and block list": [
+        "Спам і список блокування"
       ],
       "Start a new import": [
         "Почати новий імпорт"
@@ -10450,6 +10477,9 @@
       ],
       "Enabling advanced logs records the IP address for each event in the security log.": [
         "Увімкнення розширеного журналу записує IP-адресу для кожної події в журналі безпеки."
+      ],
+      "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
+        "Gmail автоматично класифікує деякі електронні листи, як-от «Соцмережі» або «Реклама». Ви можете вибрати, куди імпортувати ці електронні листи."
       ],
       "Group emails in the same conversation together in your Inbox or display them separately.": [
         "Групуйте повідомлення в одній розмові або переглядайте їх окремо."

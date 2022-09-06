@@ -43,9 +43,6 @@
       "Activate recovery": [
         "Kurtarmayı etkinleştir"
       ],
-      "Add": [
-        "Ekle"
-      ],
       "Add ${ BRAND_NAME } Account": [
         "${ BRAND_NAME } hesabı ekle"
       ],
@@ -115,6 +112,9 @@
       "Back": [
         "Geri"
       ],
+      "Block": [
+        "Engelle"
+      ],
       "Bold": [
         "Koyu"
       ],
@@ -152,7 +152,7 @@
         "Kapat"
       ],
       "Close modal": [
-        "Pencereyi kapat"
+        "Close"
       ],
       "Close navigation": [
         "Gezinmeyi kapat"
@@ -197,28 +197,28 @@
         "Bağlantıyı kopyala"
       ],
       "Create": [
-        "Oluştur"
+        "Ekle"
       ],
       "Create a secure ${ MAIL_APP_NAME } address instead": [
         "Bunun yerine güvenli bir ${ MAIL_APP_NAME } adresi oluşturun"
       ],
       "Create account": [
-        "Hesap oluştur"
+        "Hesap ekle"
       ],
       "Create address": [
         "Adres oluştur"
       ],
       "Create calendar": [
-        "Takvim oluştur"
+        "Takvim ekle"
       ],
       "Create folder": [
-        "Klasör oluştur"
+        "Klasör ekle"
       ],
       "Create free account": [
         "Ücretsiz bir hesap açın"
       ],
       "Create label": [
-        "Etiket oluştur"
+        "Etiket ekle"
       ],
       "Create link": [
         "Bağlantı oluştur"
@@ -445,6 +445,12 @@
       "Mark as default": [
         "Varsayılan olarak işaretle"
       ],
+      "Mark as not spam": [
+        "İstenmeyen değil olarak işaretle"
+      ],
+      "Mark as spam": [
+        "İstenmeyen olarak işaretle"
+      ],
       "mark emails as": [
         "e-postalar şöyle işaretlensin"
       ],
@@ -459,12 +465,6 @@
       ],
       "move emails to": [
         "e-postalar şuraya taşınsın"
-      ],
-      "Move to Allow List": [
-        "İzin verilenler listesine taşı"
-      ],
-      "Move to Block List": [
-        "Engellenenler listesine taşı"
       ],
       "Need help?": [
         "Yardım gerekiyor mu?"
@@ -549,6 +549,9 @@
       ],
       "Remove": [
         "Sil"
+      ],
+      "Remove Block": [
+        "Engellemeyi kaldır"
       ],
       "Remove bonuses": [
         "Ödülleri kaldır"
@@ -723,6 +726,9 @@
       ],
       "Sort": [
         "Sırala"
+      ],
+      "Spam": [
+        "İstenmeyen"
       ],
       "Start import": [
         "İçe aktarmayı başlat"
@@ -1151,7 +1157,7 @@
     },
     "Calendar limit warning": {
       "You have reached the maximum number of personal calendars you can create within your plan.": [
-        "Tarifenizle oluşturabileceğiniz en fazla kişisel takvim sayısına ulaştınız."
+        "Tarifenizle ekleyebileceğiniz en fazla kişisel takvim sayısına ulaştınız."
       ],
       "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS } subscribed calendar.": [
         "Abone olunabilecek en fazla ${ MAX_SUBSCRIBED_CALENDARS } takvim sayısına ulaştınız.",
@@ -2645,7 +2651,7 @@
         "Kullanıcı adı denetlenemedi. Bir süre sonra yeniden deneyin"
       ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        "Kişisel takvim sınırı nedeniyle içe aktarılan takvimlerin tümü oluşturulamadı."
+        "Kişisel takvim sayısı sınırı nedeniyle içe aktarılan takvimlerin tümü eklenemedi."
       ],
       "Checkout expired, please try again": [
         "Ödeme süresi dolmuş. Lütfen yeniden deneyin"
@@ -2663,9 +2669,6 @@
       ],
       "Domain not available, try again later": [
         "Etki alanı kullanılamıyor. Bir süre sonra yeniden deneyin"
-      ],
-      "Email address invalid": [
-        "E-posta adresi geçersiz"
       ],
       "Email is not valid": [
         "E-posta geçersiz"
@@ -2717,6 +2720,9 @@
       ],
       "Invalid domain": [
         "Etki alanı geçersiz"
+      ],
+      "Invalid email address": [
+        "E-posta adresi geçersiz"
       ],
       "Invalid expiration date": [
         "Son kullanma tarihi geçersiz"
@@ -3439,8 +3445,11 @@
       "Add a custom filter to automatically perform certain actions, like labeling or archiving messages. Filters can be edited and created directly via Sieve programming language.": [
         "İletileri etiketlemek ya da arşivlemek gibi belirli işlemleri otomatik olarak yapacak bir özel süzgeç ekleyin. Süzgeçler düzeltilebilir ve doğrudan Sieve programlama diliyle oluşturulabilir."
       ],
-      "Apply sender-specific spam rules. Messages from addresses or domains on the Allow List always go to your Inbox while messages from addresses or domains on the Block List always go to Spam. Marking a message as spam adds its address to the Block List. Marking a message as not spam adds it to the Allow List.": [
-        "Göndericiye özel istenmeyen e-posta kuralları uygulayın. İzin verilenler listesindeki adreslerden veya etki alanlarından gelen iletiler her zaman gelen kutunuza giderken, engellenenler listesindeki adreslerden veya etki alanlarından gelen iletiler her zaman istenmeyen kutusuna gider. Bir ileti istenmeyen olarak işaretlendiğinde, adresi de engellenenler listesine eklenir. Bir ileti istenmeyen değil olarak işaretlendiğinde, adresi izin verilenler listesine eklenir."
+      "Emails from addresses marked as spam by you or Proton will go to your spam folder. If you want to allow emails from one of these addresses, mark it as \"not spam\".": [
+        "Siz ya da Proton tarafından istenmeyen olarak işaretlenmiş e-postalar İstenmeyen klasörünüze taşınır. Bu adreslerden gelen e-postalara izin vermek için e-postayı \"İstenmeyen değil\" olarak işaretleyebilirsiniz."
+      ],
+      "Emails from blocked addresses won't be delivered.": [
+        "Engellenmiş adreslerden gelen e-postalar alınmaz."
       ],
       "Search in Allow List and Block List": [
         "İzin verilenler ve engellenenler listesinde arama"
@@ -4330,7 +4339,7 @@
         "Bu adresi oluşturmadan önce bir parola belirtmeli ve adresin şifreleme anahtarlarını üretmelisiniz."
       ],
       "Before enabling the account you need to provide a password and create encryption keys for the new addresses.": [
-        "Hesabı etkinleştirmeden önce bir parola belirtmeli ve yeni adresin şifreleme anahtarlarını üretmelisiniz."
+        "Hesabı etkinleştirmeden önce bir parola belirtmeli ve yeni adresin şifreleme anahtarlarını oluşturmalısınız."
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Yeni bir doğrulama kodu istemeden önce istenmeyen e-postalar kutunuza bakın ve ${ strong } adresinin doğru olduğundan emin olun."
@@ -4409,16 +4418,16 @@
         "Takviminize bir bağlantı oluşturun ve bunu Proton kullanmayan bir kişiyle paylaşın. Etkinlikleri yalnızca siz ekleyebilir ya da kaldırabilirsiniz."
       ],
       "Create a new account and share the email address and password with the user.": [
-        "Yeni bir hesap açın ve e-posta adresi ile parolasını kullanıcı ile paylaşın."
+        "Yeni bir hesap ekleyin ve e-posta adresi ile parolasını kullanıcı ile paylaşın."
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
-        "Alt hesaplar oluşturun ve yönetin. Özel etki alanınızda e-posta adresleri atayın."
+        "Alt hesaplar ekleyin ve yönetin. Özel etki alanınızda e-posta adresleri atayın."
       ],
       "Create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group. Get started by adding your organization name and custom domain (e.g. @yourcompany.com). ": [
-        "Diğer kişiler için e-posta adresleri oluşturun. Bir işletme, okul ya da grubu ${ MAIL_APP_NAME } üzerinden yönetin. Kuruluşunuzun adını ve özel etki alanını ekleyerek başlayın (@sirketiniz.com gibi). "
+        "Diğer kişiler için e-posta adresleri ekleyin. Bir işletme, okul ya da grubu ${ MAIL_APP_NAME } üzerinden yönetin. Kuruluşunuzun adını ve özel etki alanını ekleyerek başlayın (@sirketiniz.com gibi). "
       ],
       "Create in": [
-        "Şurada oluştur"
+        "Şuraya ekle"
       ],
       "Creating your account": [
         "Hesabınız oluşturuluyor"
@@ -4671,7 +4680,7 @@
         "Parolanızı yakın zamanda sıfırladıysanız, bir veri kurtarma yöntemini kullanarak verilerinizin kilidini açabilirsiniz"
       ],
       "If you want to keep an existing SPF record, you can just add ${ spf } to it after the ${ spfValue }. Do not create multiple SPF records.": [
-        "Var olan bir SPF kaydını korumak istiyorsanız, ${ spfValue } sonrasına yalnızca ${ spf } ekleyebilirsiniz. Birden çok SPF kaydı oluşturmayın."
+        "Var olan bir SPF kaydını korumak istiyorsanız, ${ spfValue } sonrasına yalnızca ${ spf } ekleyebilirsiniz. Birden çok SPF kaydı eklemeyin."
       ],
       "If you wish to combine this account with another one, do NOT delete it.": [
         "Bu hesabı başka bir hesapla birleştirmek isterseniz, SİLMEYİN."
@@ -5109,7 +5118,7 @@
         "Google üzerinden içe aktarmak istediklerinizi seçin."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        "İçe aktarılacak takvimleri seçin. En fazla 20 tane olmak üzere içe aktarılan her takvim için yeni bir takvim oluşturulur."
+        "İçe aktarılacak takvimleri seçin. En fazla 20 tane olmak üzere içe aktarılan her takvim için yeni bir takvim eklenir."
       ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "Bu ileti <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> güvenli e-posta hizmetiyle gönderilmiştir."
@@ -5475,7 +5484,7 @@
         "Aboneliğiniz yenilendiğinde, ödeme için yukarıdaki yönteme başvurmadan önce var olan tüm kredileri kullanacağız."
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
-        "Etkinleştirme yapılmadan yeni kullanıcılar oluşturulamaz. Var olan kullanıcılara adres ekleyemez veya kişisel olmayan kullanıcı hesaplarına erişemezsiniz."
+        "Etkinleştirme yapılmadan yeni kullanıcılar eklenemez. Var olan kullanıcılara adres ekleyemez veya kişisel olmayan kullanıcı hesaplarına erişemezsiniz."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Yeni bir doğrulama kodu almak ya da alternatif bir doğrulama yöntemi kullanmak ister misiniz?"
@@ -5627,14 +5636,8 @@
       "Your account will be updated once the payment is cleared.": [
         "Ödemeniz onaylandıktan sonra hesabınız güncellenecek."
       ],
-      "Your Allow List is empty.": [
-        "İzin verilenler listeniz boş."
-      ],
       "Your bank requires 3-D Secure verification for security purposes.": [
         "Bankanız güvenlik için 3-D Secure ile doğrulama istiyor."
-      ],
-      "Your Block List is empty.": [
-        "Engellenenler listeniz boş."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Verileriniz ${ importedEmailAddressStrong } üzerinden Proton hesabınız içine aktarılmaya hazır."
@@ -5885,9 +5888,6 @@
       "Close draft": [
         "Taslağı kapat"
       ],
-      "Create filter with...": [
-        "Şununla süzgeç oluştur..."
-      ],
       "Delete permanently": [
         "Kalıcı olarak sil"
       ],
@@ -6133,6 +6133,9 @@
       "Address": [
         "Adres"
       ],
+      "Address type": [
+        "Adres türü"
+      ],
       "Addresses": [
         "Adresler"
       ],
@@ -6207,6 +6210,9 @@
       ],
       "Block malware, ads and trackers": [
         "Kötü amaçlı yazılımlar, reklamlar ve etkinlik izleyiciler engellensin"
+      ],
+      "Blocked": [
+        "Engellenmiş"
       ],
       "bonus storage": [
         "ödül depolama alanı"
@@ -6538,6 +6544,9 @@
       "Mailbox password": [
         "Posta kutusu parolası"
       ],
+      "Manage categories": [
+        "Kategori yönetimi"
+      ],
       "Manage folders": [
         "Klasör yönetimi"
       ],
@@ -6555,6 +6564,12 @@
       ],
       "Move to": [
         "Şuraya taşınsın"
+      ],
+      "Move to Archive": [
+        "Arşive taşı"
+      ],
+      "Move to Inbox": [
+        "Gelen kutusuna taşı"
       ],
       "Name": [
         "Ad"
@@ -6579,6 +6594,9 @@
       ],
       "No label found": [
         "Herhangi bir etiket bulunamadı"
+      ],
+      "Non Spam": [
+        "İstenmeyen değil"
       ],
       "Non-standard ports": [
         "Standart olmayan bağlantı noktaları"
@@ -6730,6 +6748,9 @@
       "Signature": [
         "İmza"
       ],
+      "Spam": [
+        "İstenmeyen"
+      ],
       "Starred": [
         "Yıldızlı"
       ],
@@ -6831,9 +6852,6 @@
       ],
       "Waiting for subscription": [
         "Abone olunması bekleniyor"
-      ],
-      "Want to add": [
-        "Eklemek ister misiniz"
       ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Gitmenize üzüldük. Lütfen kendimizi geliştirmemize yardımcı olmak için neden ayrıldığınızı açıklayın."
@@ -7006,10 +7024,10 @@
     },
     "Label/folder modal": {
       "Create folder": [
-        "Klasör oluştur"
+        "Klasör ekle"
       ],
       "Create label": [
-        "Etiket oluştur"
+        "Etiket ekle"
       ],
       "Edit folder": [
         "Klasörü düzenle"
@@ -7020,7 +7038,7 @@
     },
     "label/folder notification": {
       "${ Label.Name } created": [
-        "${ Label.Name } oluşturuldu"
+        "${ Label.Name } eklendi"
       ],
       "${ label.Name } updated": [
         "${ label.Name } güncellendi"
@@ -7100,7 +7118,7 @@
         "Hüküm ve koşullar"
       ],
       "Trouble signing in?": [
-        "Otturum açmakta sorun mu yaşıyorsunuz?"
+        "Oturum açmakta sorun mu yaşıyorsunuz?"
       ],
       "Upgrade": [
         "Yükselt"
@@ -7123,7 +7141,7 @@
         "Neredeyse tamam"
       ],
       "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
-        "Oluşturulan takvim sayısı: ${ createdCalendars } / ${ calendarsToBeCreated }"
+        "Eklenen takvim sayısı: ${ createdCalendars } / ${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [
         "E-posta hizmeti sağlayıcınızla bağlantı kuruluyor"
@@ -7381,15 +7399,10 @@
         "üçüncü Çarşamba günü"
       ]
     },
-    "Moved to black/whitelist": {
-      "${ Domain } removed": [
-        "${ Domain } kaldırıldı"
-      ],
-      "${ Email } removed": [
-        "${ Email } kaldırıldı"
-      ]
-    },
     "Navigation": {
+      "All": [
+        "Tümü"
+      ],
       "Back": [
         "Geri"
       ],
@@ -7401,6 +7414,15 @@
       ],
       "Back to Mail": [
         "Mail uygulamasına dön"
+      ],
+      "Blocked": [
+        "Engellenmiş"
+      ],
+      "Non spam": [
+        "İstenmeyen değil"
+      ],
+      "Spam": [
+        "İstenmeyen"
       ]
     },
     "New Label form": {
@@ -7719,32 +7741,12 @@
         "Ekip yönetimi"
       ]
     },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Dosya yedekleme, depolama, paylaşma ve alma işlemlerinizde kişisel gizliliği standardınız yapın."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Yoksa hesabınıza erişim sınırlanacak ve sonunda hesabınız devre dışı bırakılacak."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "${ MAIL_APP_NAME } uygulamasını ücretli tarife özellikleriyle kullanmayı sürdürmek istiyorsanız, abonelik ve ödeme seçeneklerinizi belirleyin."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Tüm ücretli Proton hizmetlerine erişim sağlayan kurumsal kişisel gizililik paketine yükseltin."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Tüm ücretli Proton hizmetlerine erişim sağlayan en üst düzey kişisel gizililik paketine yükseltin."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Deneme süreniz ${ formattedTrialExpirationDate } tarihinde sona eriyor"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand }, ${ last4 } içinde sona erecek"
       ],
       "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
-        "${ BRAND_NAME } alt kullanıcı hesapları ve e-posta adresleri açarak yönetmenizi sağlar. Aile ve kuruluşlar için idealdir."
+        "${ BRAND_NAME } alt kullanıcı hesapları ve e-posta adresleri ekleyerek yönetmenizi sağlar. Aile ve kuruluşlar için idealdir."
       ],
       "* With 1-month subscription. Other subscription options available at checkout.": [
         "* 1 aylık abonelik ile. Diğer abonelik seçenekleri ödeme sırasında görülebilir."
@@ -7805,6 +7807,26 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Geçerli tarifenizde bir fırsat fiyatından yararlanıyorsunuz. Hesap tarifenizi düşürürseniz, fırsat fiyatınızı kaybedersiniz ve bu tarifeye yeniden abone olamazsınız."
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Dosya yedekleme, depolama, paylaşma ve alma işlemlerinizde kişisel gizliliği standardınız yapın."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Yoksa hesabınıza erişim sınırlanacak ve sonunda hesabınız devre dışı bırakılacak."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "${ MAIL_APP_NAME } uygulamasını ücretli tarife özellikleriyle kullanmayı sürdürmek istiyorsanız, abonelik ve ödeme seçeneklerinizi belirleyin."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Tüm ücretli Proton hizmetlerine erişim sağlayan kurumsal kişisel gizililik paketine yükseltin."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Tüm ücretli Proton hizmetlerine erişim sağlayan en üst düzey kişisel gizililik paketine yükseltin."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Deneme süreniz ${ formattedTrialExpirationDate } tarihinde sona eriyor"
       ]
     },
     "new_plans: Label": {
@@ -8100,7 +8122,7 @@
     },
     "Notification": {
       "${ _Filter.Name } created": [
-        "${ _Filter.Name } oluşturuldu"
+        "${ _Filter.Name } eklendi"
       ],
       "A disabled address cannot be primary": [
         "Devre dışı bırakılmış bir adres birincil olamaz"
@@ -8282,7 +8304,7 @@
         "Ülke yapılandırmaları"
       ],
       "Create new group": [
-        "Yeni grup oluştur"
+        "Yeni grup ekle"
       ],
       "Fixed duration": [
         "Sabit süreli"
@@ -8396,7 +8418,7 @@
     },
     "Option group label": {
       "Create new calendar": [
-        "Yeni takvim oluştur"
+        "Yeni takvim ekle"
       ],
       "Merge with calendar": [
         "Takvim ile birleştir"
@@ -8479,11 +8501,17 @@
       "Confirm password": [
         "Parolayı onayla"
       ],
+      "domain.com": [
+        "etkialani.com"
+      ],
       "E.g., ": [
         "Örneğin, "
       ],
       "Email address": [
         "E-posta adresi"
+      ],
+      "example@domain.com": [
+        "ornek@etkialani.com"
       ],
       "Feedback": [
         "Geri bildirim"
@@ -8803,34 +8831,33 @@
         "Kullanıcı adı"
       ]
     },
-    "Spam filter moved to blacklist": {
-      "${ Domain } moved to Block List": [
-        "${ Domain } engellenenler listesine taşındı"
-      ],
-      "${ Email } moved to Block List": [
-        "${ Email } engellenen listesine taşındı"
-      ]
-    },
-    "Spam filter moved to whitelist": {
-      "${ Domain } moved to Allow List": [
-        "${ Domain } izin verilenler listesine eklendi"
-      ],
-      "${ Email } moved to Allow List": [
-        "${ Email } izin verilenler listesine eklendi"
-      ]
-    },
     "Spam notification": {
-      "${ domain } added": [
-        "${ domain } eklendi"
+      "${ name } added": [
+        "${ name } eklendi"
       ],
-      "${ domain } updated": [
-        "${ domain } güncellendi"
+      "${ name } deletion failed": [
+        "${ name } silinemedi"
       ],
-      "${ email } added": [
-        "${ email } eklendi"
+      "${ name } failed to move to Block List": [
+        "${ name } engellenenler listesine eklenemedi"
       ],
-      "${ email } updated": [
-        "${ email } güncellendi"
+      "${ name } failed to move to Non spam List": [
+        "${ name } istenmeyen değil listesine eklenemedi"
+      ],
+      "${ name } failed to move to Spam List": [
+        "${ name } istenmeyenler listesine eklenemedi"
+      ],
+      "${ name } moved to Block List": [
+        "${ name } engellenen listesine taşındı"
+      ],
+      "${ name } moved to Non spam list": [
+        "${ name } istenmeyen değil listesine eklendi"
+      ],
+      "${ name } moved to Spam list": [
+        "${ name } istenmeyenler listesine eklendi"
+      ],
+      "${ name } successfully deleted": [
+        "${ name } silindi"
       ]
     },
     "Spotlight": {
@@ -9024,7 +9051,7 @@
         "Takvim eklendi. Eşlenmesi birkaç dakika sürebilir."
       ],
       "Calendar created": [
-        "Takvim oluşturuldu"
+        "Takvim eklendi"
       ],
       "Calendar information updated": [
         "Takvim bilgileri güncellendi"
@@ -9111,7 +9138,7 @@
         "Tercih kaydedildi"
       ],
       "Premium address created": [
-        "Ücretli hesap oluşturuldu"
+        "Ücretli hesap eklendi"
       ],
       "Resuming import": [
         "İçe aktarma sürdürülüyor"
@@ -9126,7 +9153,7 @@
         "SPF değeri panoya kopyalandı"
       ],
       "User created": [
-        "Kullanıcı oluşturuldu"
+        "Kullanıcı eklendi"
       ],
       "User updated": [
         "Kullanıcı güncellendi"
@@ -9244,8 +9271,17 @@
       "CSV field": [
         "CSV alanı"
       ],
+      "Edit": [
+        "Düzenle"
+      ],
+      "Email address": [
+        "E-posta adresi"
+      ],
       "Import": [
         "İçe aktar"
+      ],
+      "Marked as": [
+        "Şöyle işaretlenmiş"
       ],
       "Name": [
         "Ad"
@@ -9372,11 +9408,14 @@
       "Add Sieve filter": [
         "Sieve süzgeci ekle"
       ],
-      "Add to Allow List": [
-        "İzin verilenler listesine ekle"
-      ],
-      "Add to Block List": [
+      "Add to block list": [
         "Engellenenler listesine ekle"
+      ],
+      "Add to not spam list": [
+        "İstenmeyen değil listesine ekle"
+      ],
+      "Add to spam list": [
+        "İstenmeyenler listesine ekle"
       ],
       "Add user": [
         "Kullanıcı ekle"
@@ -9389,9 +9428,6 @@
       ],
       "Allocate storage": [
         "Depolama alanını dağıt"
-      ],
-      "Allow List": [
-        "İzin verilenler listesi"
       ],
       "Amount": [
         "Tutar"
@@ -9431,9 +9467,6 @@
       ],
       "Billing details": [
         "Fatura bilgileri"
-      ],
-      "Block List": [
-        "Engellenenler listesi"
       ],
       "Bridge for ${ platform }": [
         "${ platform } için Bridge"
@@ -9514,7 +9547,7 @@
         "Bir ${ MAIL_APP_NAME } adresi oluştur"
       ],
       "Create calendar": [
-        "Takvim oluştur"
+        "Takvim ekle"
       ],
       "Create your ${ BRAND_NAME } Account": [
         "${ BRAND_NAME } hesabınızı açın"
@@ -9611,12 +9644,6 @@
       ],
       "Download ${ VPN_APP_NAME }": [
         "${ VPN_APP_NAME } indir"
-      ],
-      "Edit Allow List": [
-        "İzin verilenler listesini düzenle"
-      ],
-      "Edit Block List": [
-        "Engellenenler listesini düzenle"
       ],
       "Edit calendar": [
         "Takvimi düzenle"
@@ -9979,8 +10006,8 @@
       "Sort labels alphabetically": [
         "Etiketler alfabetik olarak sıralansın"
       ],
-      "Spam filters": [
-        "İstenmeyen e-posta süzgeçleri"
+      "Spam and block list": [
+        "İstenmeyenler ve engellenenler listesi"
       ],
       "Start a new import": [
         "Yeni bir içe aktarma başlatın"
@@ -10219,6 +10246,9 @@
       "Enabling advanced logs records the IP address for each event in the security log.": [
         "Gelişmiş günlük kaydı etkinleştirildiğinde, her etkinliğin IP adresi kaydedilir."
       ],
+      "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
+        "Gmail bazı e-postaları Sosyal ya da Tanıtım gibi kategorilere ayırır. Bu e-postaların nereye içe aktarılacağını seçebilirsiniz."
+      ],
       "Group emails in the same conversation together in your Inbox or display them separately.": [
         "Aynı yazışmadaki e-postaları gelen kutunuzda gruplayın veya ayrı ayrı görüntüleyin."
       ],
@@ -10342,8 +10372,8 @@
     },
     "Upgrade notice": {
       "Upgrade to a Mail paid plan to create up to ${ MAX_CALENDARS_PAID } calendar, allowing you to make calendars for work, to share with friends, and just for yourself.": [
-        "İş için takvimler oluşturmanıza, arkadaşlarınızla paylaşmanıza ve sadece kendiniz için ${ MAX_CALENDARS_PAID } takvime kadar takvim oluşturmanıza olanak tanıyan ücretli bir Mail tarifesine yükseltin.",
-        "İş için takvimler oluşturmanıza, arkadaşlarınızla paylaşmanıza ve sadece kendiniz için ${ MAX_CALENDARS_PAID } takvime kadar takvim oluşturmanıza olanak tanıyan ücretli bir Mail tarifesine yükseltin."
+        "İş için takvimler oluşturmanızı, arkadaşlarınızla paylaşmanızı ve yalnızca kendiniz için ${ MAX_CALENDARS_PAID } takvime kadar takvim eklemenizi sağlayan ücretli bir Mail tarifesine yükseltin.",
+        "İş için takvimler oluşturmanızı, arkadaşlarınızla paylaşmanızı ve yalnızca kendiniz için ${ MAX_CALENDARS_PAID } takvime kadar takvim eklemenizi sağlayan ücretli bir Mail tarifesine yükseltin."
       ],
       "Upgrade to a Mail paid plan to share your personal calendar via link with anyone.": [
         "Takviminizi bağlantı üzerinden başkaları ile paylaşmak için ücretli bir Mail tarifesine yükseltin."

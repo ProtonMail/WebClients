@@ -90,7 +90,7 @@
         "Zatvori"
       ],
       "Close modal": [
-        "Zatvori skočni prozor"
+        "Close"
       ],
       "Close navigation": [
         "Zatvori navigaciju"
@@ -1588,6 +1588,12 @@
       "Modified": [
         "Promijenjeno"
       ],
+      "Move to Archive": [
+        "Premjesti u Arhivu"
+      ],
+      "Move to Inbox": [
+        "Premjesti u Pristiglu poštu"
+      ],
       "Name": [
         "Naziv"
       ],
@@ -2452,9 +2458,6 @@
       ],
       "Name cannot include invisible characters, / or \\.": [
         "Naziv ne može sadržavati nevidljive znakove, / ili \\."
-      ],
-      "Name must be ${ MAX_NAME_LENGTH } characters long at most": [
-        "Naziv mora imati najmanje ${ MAX_NAME_LENGTH } znakova"
       ],
       "Name must not be empty": [
         "Naziv ne smije biti prazan"

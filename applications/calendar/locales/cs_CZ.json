@@ -84,7 +84,7 @@
         "Zavřít okno události"
       ],
       "Close modal": [
-        "Zavřít okno"
+        "Close"
       ],
       "Close navigation": [
         "Zavřít menu"
@@ -3644,11 +3644,20 @@
       "Mailbox password": [
         "Heslo k e-mailové schránce"
       ],
+      "Manage categories": [
+        "Zpravovat kategorie"
+      ],
       "Manage folders": [
         "Spravovat složky"
       ],
       "Manage labels": [
         "Spravovat štítky"
+      ],
+      "Move to Archive": [
+        "Přesunout do archivu"
+      ],
+      "Move to Inbox": [
+        "Přesunout do Doručené pošty"
       ],
       "Name": [
         "Jméno"
@@ -5250,6 +5259,9 @@
       ],
       "Encrypted data with verified digital signature": [
         "Zašifrovaná data s ověřeným digitálním podpisem"
+      ],
+      "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
+        "Gmail automaticky zařazuje některé e-maily do kategorií, například Sociální sítě nebo Propagační akce. Můžete si vybrat, kam chcete tyto e-maily importovat."
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Vyberte PGP schéma, které bude použito při podepisování, nebo šifrování uživatele. Nezapomeňte, že PGP/Inline vyžaduje zprávy ve formátu prostého textu"

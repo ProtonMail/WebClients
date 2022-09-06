@@ -99,7 +99,7 @@
         "Fermer"
       ],
       "Close modal": [
-        "Fermer la boîte de dialogue"
+        "Close"
       ],
       "Close navigation": [
         "Fermer la navigation"
@@ -2888,8 +2888,8 @@
       "There are no files yet": [
         "Il n'y a pas encore de fichiers"
       ],
-      "These files were shared using end-to-end encryption. To ensure their security — and the security of all your documents, photos, and files — store them in Proton Drive, the cloud storage service you can trust.": [
-        "Ces fichiers ont été partagés à l'aide d'un chiffrement de bout en bout. Pour garantir leur sécurité (et celle de tous vos documents, photos et fichiers), stockez-les dans Proton Drive, le service de stockage en ligne auquel vous pouvez faire confiance."
+      "These files were shared using end-to-end encryption. To keep them secure — and all your documents, photos, and files private — store them in your own Proton Drive. It's easy-to-use and free.": [
+        "Ces fichiers ont été partagés avec un chiffrement de bout en bout. Pour les garder protégés et privés, enregistrez-les (ainsi que tous vos documents, photos et fichiers) dans votre propre Proton Drive. Il est simple à utiliser et il est gratuit."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Ce compte a été suspendu en raison d'une potentielle infraction aux règles d'utilisation."
@@ -3338,6 +3338,9 @@
       "Malware": [
         "Logiciel malveillant"
       ],
+      "Manage categories": [
+        "Gérer les catégories"
+      ],
       "Manage folders": [
         "Gérer les dossiers"
       ],
@@ -3349,6 +3352,12 @@
       ],
       "Modified": [
         "Modifié"
+      ],
+      "Move to Archive": [
+        "Archiver"
+      ],
+      "Move to Inbox": [
+        "Déplacer vers Boîte de réception"
       ],
       "Name": [
         "Nom"
@@ -4651,6 +4660,9 @@
       "Encrypted data with verified digital signature": [
         "Données chiffrées avec une signature numérique vérifiée"
       ],
+      "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
+        "Gmail catégorise automatiquement certains emails comme « Réseau sociaux » ou « Promotions ». Vous pouvez sélectionner où importer ces emails."
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Sélectionnez le schéma PGP à utiliser lors de la signature ou du chiffrement vers un autre utilisateur. Notez que PGP/Inline force le format des messages en texte brut"
       ],
@@ -4680,8 +4692,9 @@
       "Name cannot include invisible characters, / or \\.": [
         "Le nom ne peut pas inclure de caractères invisibles, / ou \\."
       ],
-      "Name must be ${ MAX_NAME_LENGTH } characters long at most": [
-        "Le nom doit comporter ${ MAX_NAME_LENGTH } caractères au maximum."
+      "Name must be ${ MAX_NAME_LENGTH } character long at most": [
+        "Le nom doit être composé d'${ MAX_NAME_LENGTH } caractère au maximum.",
+        "Le nom doit être composé de ${ MAX_NAME_LENGTH } caractères au maximum."
       ],
       "Name must not be empty": [
         "Le nom ne doit pas être vide."

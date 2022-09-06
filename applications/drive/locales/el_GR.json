@@ -99,7 +99,7 @@
         "Κλείσιμο"
       ],
       "Close modal": [
-        "Κλείσιμο παραθύρου"
+        "Close"
       ],
       "Close navigation": [
         "Κλείσιμο μενού πλοήγησης"
@@ -3091,6 +3091,12 @@
       "Modified": [
         "Τροποποιήθηκε"
       ],
+      "Move to Archive": [
+        "Μεταφορά στα Αρχειοθετημένα"
+      ],
+      "Move to Inbox": [
+        "Μετακίνηση στα Εισερχόμενα"
+      ],
       "Name": [
         "Όνομα"
       ],
@@ -4332,9 +4338,6 @@
       ],
       "Name cannot include invisible characters, / or \\.": [
         "Το όνομα δεν μπορεί να περιλαμβάνει αόρατους χαρακτήρες, / ή \\."
-      ],
-      "Name must be ${ MAX_NAME_LENGTH } characters long at most": [
-        "Το όνομα πρέπει να είναι το μέγιστο ${ MAX_NAME_LENGTH } χαρακτήρες"
       ],
       "Name must not be empty": [
         "Το όνομα δεν πρέπει να είναι άδειο"

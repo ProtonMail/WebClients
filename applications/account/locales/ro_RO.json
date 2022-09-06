@@ -43,9 +43,6 @@
       "Activate recovery": [
         "Activare recuperare"
       ],
-      "Add": [
-        "Adăugare"
-      ],
       "Add ${ BRAND_NAME } Account": [
         "Adăugare cont ${ BRAND_NAME }"
       ],
@@ -115,6 +112,9 @@
       "Back": [
         "Înapoi"
       ],
+      "Block": [
+        "Blocare"
+      ],
       "Bold": [
         "Îngroşat"
       ],
@@ -152,7 +152,7 @@
         "Închidere"
       ],
       "Close modal": [
-        "Închidere"
+        "Close"
       ],
       "Close navigation": [
         "Închidere navigare"
@@ -445,6 +445,12 @@
       "Mark as default": [
         "Setare ca implicită"
       ],
+      "Mark as not spam": [
+        "Marcare ca dorit"
+      ],
+      "Mark as spam": [
+        "Marcare ca nedorit"
+      ],
       "mark emails as": [
         "marcare mesaje ca"
       ],
@@ -459,12 +465,6 @@
       ],
       "move emails to": [
         "mutare mesaje în"
-      ],
-      "Move to Allow List": [
-        "Mutare în listă permise"
-      ],
-      "Move to Block List": [
-        "Mutare în listă blocate"
       ],
       "Need help?": [
         "Aveţi nevoie de ajutor?"
@@ -549,6 +549,9 @@
       ],
       "Remove": [
         "Eliminare"
+      ],
+      "Remove Block": [
+        "Eliminare blocare"
       ],
       "Remove bonuses": [
         "Anulare bonusuri"
@@ -723,6 +726,9 @@
       ],
       "Sort": [
         "Sortare"
+      ],
+      "Spam": [
+        "Nedorite"
       ],
       "Start import": [
         "Pornire importare"
@@ -2683,9 +2689,6 @@
       "Domain not available, try again later": [
         "Domeniul nu este disponibil, reîncercați mai târziu."
       ],
-      "Email address invalid": [
-        "Adresă de e-mail nevalidă."
-      ],
       "Email is not valid": [
         "E-mailul nu este valid"
       ],
@@ -2736,6 +2739,9 @@
       ],
       "Invalid domain": [
         "Domeniu nevalid"
+      ],
+      "Invalid email address": [
+        "Adresă de e-mail nevalidă."
       ],
       "Invalid expiration date": [
         "Data expirării nu este validă."
@@ -3469,8 +3475,11 @@
       "Add a custom filter to automatically perform certain actions, like labeling or archiving messages. Filters can be edited and created directly via Sieve programming language.": [
         "Adăugați un filtru personalizat pentru a efectua automat anumite acțiuni, cum ar fi etichetarea sau arhivarea mesajelor. Filtrele pot fi editate și create direct prin intermediul limbajului de programare Sieve."
       ],
-      "Apply sender-specific spam rules. Messages from addresses or domains on the Allow List always go to your Inbox while messages from addresses or domains on the Block List always go to Spam. Marking a message as spam adds its address to the Block List. Marking a message as not spam adds it to the Allow List.": [
-        "Aplicare reguli de blocare specifice expeditorului. Mesajele de la adresele sau domeniile din «Listă adrese permise» merg întotdeauna în folderul «Primite», iar mesajele de la adresele sau domeniile din «Listă adrese blocate» merg întotdeauna în folderul «Nedorite». Marcarea unui mesaj ca nedorit adaugă adresa sa în «Listă adrese blocate». Marcarea unui mesaj ca nefiind nedorit, adaugă adresa în «Listă adrese permise»."
+      "Emails from addresses marked as spam by you or Proton will go to your spam folder. If you want to allow emails from one of these addresses, mark it as \"not spam\".": [
+        "Mesajele de la adresele marcate ca nedorite de către dvs. sau de către Proton vor ajunge în folderul «Nedorite». Dacă doriți să permiteți mesajele de la una dintre aceste adrese, marcați-o ca „dorit”."
+      ],
+      "Emails from blocked addresses won't be delivered.": [
+        "Mesajele de la adresele blocate nu vor fi livrate."
       ],
       "Search in Allow List and Block List": [
         "Căutare în lista de adrese permise și blocate"
@@ -5695,14 +5704,8 @@
       "Your account will be updated once the payment is cleared.": [
         "Contul va fi modificat după verificarea plății."
       ],
-      "Your Allow List is empty.": [
-        "Lista de adrese permise este goală."
-      ],
       "Your bank requires 3-D Secure verification for security purposes.": [
         "Banca solicită verificarea cu sistemul 3-D Secure din motive de securitate."
-      ],
-      "Your Block List is empty.": [
-        "Lista de adrese blocate este goală."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Datele vă sunt pregătite pentru importare din ${ importedEmailAddressStrong } în contul Proton."
@@ -5953,9 +5956,6 @@
       "Close draft": [
         "Închidere ciornă"
       ],
-      "Create filter with...": [
-        "Creare filtru cu..."
-      ],
       "Delete permanently": [
         "Ștergere permanentă"
       ],
@@ -6204,6 +6204,9 @@
       "Address": [
         "Adresa"
       ],
+      "Address type": [
+        "Tip adresă"
+      ],
       "Addresses": [
         "Adrese"
       ],
@@ -6278,6 +6281,9 @@
       ],
       "Block malware, ads and trackers": [
         "Blocare malware, reclame și urmăritori"
+      ],
+      "Blocked": [
+        "Blocat"
       ],
       "bonus storage": [
         "spațiu bonus"
@@ -6609,6 +6615,9 @@
       "Mailbox password": [
         "Parolă mesaje"
       ],
+      "Manage categories": [
+        "Gestionare categorii"
+      ],
       "Manage folders": [
         "Gestionare foldere"
       ],
@@ -6626,6 +6635,12 @@
       ],
       "Move to": [
         "Mutare în"
+      ],
+      "Move to Archive": [
+        "Mutare în «Arhivă»"
+      ],
+      "Move to Inbox": [
+        "Mutare în «Primite»"
       ],
       "Name": [
         "Nume"
@@ -6650,6 +6665,9 @@
       ],
       "No label found": [
         "Nicio etichetă găsită"
+      ],
+      "Non Spam": [
+        "Nu e nedorit"
       ],
       "Non-standard ports": [
         "Porturi nonstandard"
@@ -6801,6 +6819,9 @@
       "Signature": [
         "Semnătura"
       ],
+      "Spam": [
+        "Nedorite"
+      ],
       "Starred": [
         "Cu stea"
       ],
@@ -6902,9 +6923,6 @@
       ],
       "Waiting for subscription": [
         "În așteptarea abonamentului"
-      ],
-      "Want to add": [
-        "Doriți să adăugați"
       ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Ne pare rău că ne părăsiți. Vă rugăm să ne explicaţi de ce plecaţi pentru a ne ajuta să îmbunătăţim serviciul."
@@ -7458,15 +7476,10 @@
         "în a treia miercuri"
       ]
     },
-    "Moved to black/whitelist": {
-      "${ Domain } removed": [
-        "${ Domain } eliminat"
-      ],
-      "${ Email } removed": [
-        "${ Email } eliminat"
-      ]
-    },
     "Navigation": {
+      "All": [
+        "Toate"
+      ],
       "Back": [
         "Înapoi"
       ],
@@ -7478,6 +7491,15 @@
       ],
       "Back to Mail": [
         "Înapoi la e-mail"
+      ],
+      "Blocked": [
+        "Blocat"
+      ],
+      "Non spam": [
+        "Dorite"
+      ],
+      "Spam": [
+        "Nedorite"
       ]
     },
     "New Label form": {
@@ -7810,26 +7832,6 @@
         "Gestionare echipă"
       ]
     },
-    "new_plans: Info": {
-      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
-        "Faceți confidențialitatea ca implicită pentru conservarea fișierelor, stocarea, partajarea și recuperarea lor."
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Altfel accesul la cont va fi limitat și eventual va fi dezactivat."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Pentru a continua să utilizați ${ MAIL_APP_NAME } cu funcțiile premium, alegeți tipul de abonament și opțiunea de plată."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Treceți la pachetul de afaceri cu acces la toate serviciile premium Proton."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Treceți la pachetul de confidențialitate complet și accesați toate serviciile premium Proton."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Perioada de probă se termină ${ formattedTrialExpirationDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } care se termină cu ${ last4 }"
@@ -7896,6 +7898,26 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Vă bucurați de un preț promoțional la planul dvs. actual. Dacă vă retrogradați contul, veți pierde prețul promoțional și nu va fi disponibil dacă încercați să vă abonați din nou."
+      ]
+    },
+    "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Faceți confidențialitatea ca implicită pentru conservarea fișierelor, stocarea, partajarea și recuperarea lor."
+      ],
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Altfel accesul la cont va fi limitat și eventual va fi dezactivat."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Pentru a continua să utilizați ${ MAIL_APP_NAME } cu funcțiile premium, alegeți tipul de abonament și opțiunea de plată."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Treceți la pachetul de afaceri cu acces la toate serviciile premium Proton."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Treceți la pachetul de confidențialitate complet și accesați toate serviciile premium Proton."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Perioada de probă se termină ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -8577,11 +8599,17 @@
       "Confirm password": [
         "Confirmare parolă"
       ],
+      "domain.com": [
+        "domeniu.com"
+      ],
       "E.g., ": [
         "Ex.: "
       ],
       "Email address": [
         "Adresa de e-mail"
+      ],
+      "example@domain.com": [
+        "exemplu@domeniu.com"
       ],
       "Feedback": [
         "Feedback"
@@ -8902,34 +8930,33 @@
         "Utilizator"
       ]
     },
-    "Spam filter moved to blacklist": {
-      "${ Domain } moved to Block List": [
-        "${ Domain } mutat în lista celor blocate"
-      ],
-      "${ Email } moved to Block List": [
-        "${ Email } mutat în lista celor blocate"
-      ]
-    },
-    "Spam filter moved to whitelist": {
-      "${ Domain } moved to Allow List": [
-        "${ Domain } mutat în lista celor permise"
-      ],
-      "${ Email } moved to Allow List": [
-        "${ Email } mutat în lista celor permise"
-      ]
-    },
     "Spam notification": {
-      "${ domain } added": [
-        "${ domain } adăugat"
+      "${ name } added": [
+        "${ name } s-a adăugat."
       ],
-      "${ domain } updated": [
-        "${ domain } actualizat"
+      "${ name } deletion failed": [
+        "Ștergerea lui ${ name } a eșuat."
       ],
-      "${ email } added": [
-        "${ email } adăugat"
+      "${ name } failed to move to Block List": [
+        "${ name } nu s-a putut muta în lista de blocare."
       ],
-      "${ email } updated": [
-        "${ email } actualizat"
+      "${ name } failed to move to Non spam List": [
+        "${ name } nu s-a putut muta în lista de dorite."
+      ],
+      "${ name } failed to move to Spam List": [
+        "${ name } nu s-a putut muta în lista de nedorite."
+      ],
+      "${ name } moved to Block List": [
+        "${ name } s-a mutat în lista de blocare."
+      ],
+      "${ name } moved to Non spam list": [
+        "${ name } s-a mutat în lista de dorite."
+      ],
+      "${ name } moved to Spam list": [
+        "${ name } s-a mutat în lista de nedorite."
+      ],
+      "${ name } successfully deleted": [
+        "S-a reușit ștergerea ${ name }."
       ]
     },
     "Spotlight": {
@@ -9356,8 +9383,17 @@
       "CSV field": [
         "Câmp CSV"
       ],
+      "Edit": [
+        "Editare"
+      ],
+      "Email address": [
+        "Adresă e-mail"
+      ],
       "Import": [
         "Importare"
+      ],
+      "Marked as": [
+        "Marcat ca"
       ],
       "Name": [
         "Nume"
@@ -9487,11 +9523,14 @@
       "Add Sieve filter": [
         "Adăugare filtru Sieve"
       ],
-      "Add to Allow List": [
-        "Adăugare la adrese permise"
+      "Add to block list": [
+        "Adăugare la lista de blocare"
       ],
-      "Add to Block List": [
-        "Adăugare la adrese blocate"
+      "Add to not spam list": [
+        "Adăugare la lista de acceptate"
+      ],
+      "Add to spam list": [
+        "Adăugare la lista de nedorite"
       ],
       "Add user": [
         "Adăugare utilizator"
@@ -9504,9 +9543,6 @@
       ],
       "Allocate storage": [
         "Alocare spațiu"
-      ],
-      "Allow List": [
-        "Listă adrese permise"
       ],
       "Amount": [
         "Suma"
@@ -9546,9 +9582,6 @@
       ],
       "Billing details": [
         "Detalii de facturare"
-      ],
-      "Block List": [
-        "Listă adrese blocate"
       ],
       "Bridge for ${ platform }": [
         "Bridge pentru ${ platform }"
@@ -9726,12 +9759,6 @@
       ],
       "Download ${ VPN_APP_NAME }": [
         "Descărcare ${ VPN_APP_NAME }"
-      ],
-      "Edit Allow List": [
-        "Editare adrese permise"
-      ],
-      "Edit Block List": [
-        "Editare adrese blocate"
       ],
       "Edit calendar": [
         "Editare calendar"
@@ -10095,8 +10122,8 @@
       "Sort labels alphabetically": [
         "Sortare alfabetică etichete"
       ],
-      "Spam filters": [
-        "Filtre mesaje nedorite"
+      "Spam and block list": [
+        "Listă de nedorite și de blocare"
       ],
       "Start a new import": [
         "Începere importare nouă"
@@ -10334,6 +10361,9 @@
       ],
       "Enabling advanced logs records the IP address for each event in the security log.": [
         "Activarea jurnalelor detaliate înregistrează adresa IP pentru fiecare eveniment în jurnalul de securitate."
+      ],
+      "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
+        "Gmail categorizează automat unele mesaje ca „Rețele sociale” sau „Oferte”. Puteți selecta unde să fie importate acestea."
       ],
       "Group emails in the same conversation together in your Inbox or display them separately.": [
         "Grupare mesaje din aceeași conversație sau afișare separată."

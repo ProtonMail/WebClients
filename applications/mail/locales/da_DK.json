@@ -23,9 +23,6 @@
       "Add address": [
         "Tilføj adresse"
       ],
-      "Add condition": [
-        "Tilføj betingelse"
-      ],
       "Add contact": [
         "Tilføj kontakt"
       ],
@@ -147,7 +144,7 @@
         "Luk skrivevinduet"
       ],
       "Close modal": [
-        "Luk vindue"
+        "Close"
       ],
       "Close navigation": [
         "Luk navigation"
@@ -200,20 +197,14 @@
       "Create a new contact group": [
         "Opret en ny kontaktgruppe"
       ],
-      "Create folder": [
-        "Opret mappe"
-      ],
-      "Create label": [
-        "Opret etiket"
+      "Create a new folder": [
+        "Opret ny mappe"
       ],
       "Create new contact": [
         "Opret ny kontakt"
       ],
       "Create new message": [
         "Opret ny besked"
-      ],
-      "Custom filter": [
-        "Brugerfilter"
       ],
       "Customize": [
         "Tilpas"
@@ -343,9 +334,6 @@
       "Fewer search options": [
         "Færre søgemuligheder"
       ],
-      "Filter on...": [
-        "Filtrer efter..."
-      ],
       "Font": [
         "Skrifttype"
       ],
@@ -470,9 +458,6 @@
       "Label as...": [
         "Anvend etiketten..."
       ],
-      "label emails as": [
-        "giv e-mails etiketten"
-      ],
       "Learn more": [
         "Få mere at vide"
       ],
@@ -508,9 +493,6 @@
       ],
       "Mark as unread": [
         "Markér som ulæst"
-      ],
-      "mark emails as": [
-        "markér e-mails som"
       ],
       "Mark for deletion": [
         "Markér til sletning"
@@ -571,9 +553,6 @@
       ],
       "Move all to trash": [
         "Flyt alle til papirkurv"
-      ],
-      "move emails to": [
-        "flyt e-mails til"
       ],
       "Move to": [
         "Flyt til"
@@ -662,9 +641,6 @@
       "Pause": [
         "Sæt på pause"
       ],
-      "Preview": [
-        "Forhåndsvisning"
-      ],
       "Preview ${ attachmentName }": [
         "Forhåndsvis ${ attachmentName }"
       ],
@@ -730,9 +706,6 @@
       ],
       "Remove expiration time": [
         "Fjern udløbstid"
-      ],
-      "Remove this label": [
-        "Fjern denne etiket"
       ],
       "Rename": [
         "Omdøb"
@@ -805,9 +778,6 @@
       ],
       "Send anyway": [
         "Send alligevel"
-      ],
-      "send auto-reply email": [
-        "send e-mail med auto-svar"
       ],
       "Send feedback": [
         "Send feedback"
@@ -2477,26 +2447,6 @@
         "Ålandsøerne"
       ]
     },
-    "CustomFilter": {
-      "Attachment": [
-        "Vedhæftning"
-      ],
-      "Filter on": [
-        "Filtrer efter"
-      ],
-      "Next": [
-        "Næste"
-      ],
-      "Recipient": [
-        "Adressat"
-      ],
-      "Sender": [
-        "Afsender"
-      ],
-      "Subject": [
-        "Emne"
-      ]
-    },
     "Daily recurring event, frequency": {
       "${ count } time": [
         "${ count } gang",
@@ -2751,9 +2701,6 @@
         "Vælg en dato indenfor den næste ${ SCHEDULED_MAX_DATE_DAYS } dag.",
         "Vælg en dato indenfor de næste ${ SCHEDULED_MAX_DATE_DAYS } dage."
       ],
-      "Condition incomplete": [
-        "Betingelse mangelfuld"
-      ],
       "Contact could not be saved": [
         "Kontakt kunne ikke gemmes"
       ],
@@ -2795,17 +2742,11 @@
       "Email is not valid": [
         "E-mail er ikke gyldig"
       ],
-      "Empty condition": [
-        "Betingelse er tom"
-      ],
       "Enter 6 digits": [
         "Indtast 6 cifre"
       ],
       "Enter a password": [
         "Angiv en adgangskode"
-      ],
-      "Error in one of the conditions": [
-        "Fejl i en af betingelserne"
       ],
       "Error while saving draft. Please try again.": [
         "Fejl under lagring af kladde. Prøv venligst igen."
@@ -2818,9 +2759,6 @@
       ],
       "Failed to encrypt attachment. Please try again.": [
         "Kryptering af vedhæftning mislykkedes. Forsøg igen."
-      ],
-      "Filter with this name already exists": [
-        "Et filter med dette navn findes allerede"
       ],
       "Folder name cannot be empty.": [
         "Mappenavn må ikke være tomt."
@@ -2935,12 +2873,6 @@
       "Request timed out": [
         "Forespørgsel fik timeout"
       ],
-      "Require at least one action": [
-        "Kræver mindst en handling"
-      ],
-      "Require at least one condition": [
-        "Kræver mindst en betingelse"
-      ],
       "Signature not verified": [
         "Signatur ikke bekræftet"
       ],
@@ -3019,9 +2951,6 @@
       ],
       "This message has already been sent. A new draft has been saved.": [
         "Denne besked er allerede blevet sendt. En ny kladde er blevet gemt."
-      ],
-      "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
-        "For mange aktive filtre. Opgrader venligst til et betalt abonnement for at aktivere flere filtre."
       ],
       "Trusted keys are not valid for sending": [
         "Betroede nøgler er ikke gyldige til afsendelse"
@@ -3372,18 +3301,6 @@
       ]
     },
     "Filter modal type": {
-      "If the attachments": [
-        "Hvis vedhæftningerne"
-      ],
-      "If the recipient": [
-        "Hvis modtageren"
-      ],
-      "If the sender": [
-        "Hvis afsenderen"
-      ],
-      "If the subject": [
-        "Hvis emnet"
-      ],
       "Select…": [
         "Vælg…"
       ],
@@ -3403,9 +3320,6 @@
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } opdateret"
-      ],
-      "Filter ${ Filter.Name } updated": [
-        "Filter ${ Filter.Name } opdateret"
       ]
     },
     "Filter option": {
@@ -3423,14 +3337,6 @@
       ],
       "Unread": [
         "Ulæst"
-      ]
-    },
-    "Filter preview": {
-      "read": [
-        "læst"
-      ],
-      "starred": [
-        "stjernemarkeret"
       ]
     },
     "Font Face Default": {
@@ -3789,12 +3695,6 @@
         "(${ memberCount } medlem)",
         "(${ memberCount } medlemmer)"
       ],
-      "(Filter if ALL of the following conditions are met)": [
-        "(Filtrer hvis ALLE af følgende betingelser er opfyldt)"
-      ],
-      "(Filter if ANY of the following conditions are met)": [
-        "(Filtrer hvis NOGEN af følgende betingelser er opfyldt)"
-      ],
       "(No Recipient)": [
         "(Ingen modtager)"
       ],
@@ -3845,9 +3745,6 @@
       "All your calendars are disabled.": [
         "Alle dine kalendere er deaktiveret."
       ],
-      "All your changes will be lost.": [
-        "Alle dine ændringer vil gå tabt."
-      ],
       "An unknown public key has been detected for this recipient.": [
         "En ukendt offentlig nøgle er fundet for denne modtager."
       ],
@@ -3859,9 +3756,6 @@
       ],
       "Are you sure you want to delete all messages with this label?": [
         "Er du sikker på, at du vil slette alle beskeder med denne etikette?"
-      ],
-      "Are you sure you want to discard your changes?": [
-        "Er du sikker på at du vil kassere dine ændringer?"
       ],
       "Are you sure you want to move all messages in this location to Trash?": [
         "Er du sikker på, at du vil flytte alle beskeder på denne placeirng til papirkurven?"
@@ -4089,9 +3983,6 @@
         "fil vedhæftet",
         "filer vedhæftet"
       ],
-      "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
-        "Filtre virker på alle e-mails, herunder indgående samt sendte e-mails. Hvert filter skal indeholde mindst et navn, en betingelse og en handling."
-      ],
       "Folder": [
         "Mapppe"
       ],
@@ -4147,9 +4038,6 @@
       ],
       "Image URL": [
         "Billed-URL"
-      ],
-      "Images have been removed because they are not allowed in auto-reply": [
-        "Billeder er blevet fjernet, fordi de ikke er tilladte i auto-svar"
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Importer ${ contactsFragment } og ${ contactsGroupsFragment }"
@@ -4275,9 +4163,6 @@
       "New": [
         "Ny"
       ],
-      "No action selected": [
-        "Ingen handling valgt"
-      ],
       "No contacts added yet": [
         "Ingen kontakter tilføjet endnu"
       ],
@@ -4290,17 +4175,11 @@
       "No folder found": [
         "Ingen mappe fundet"
       ],
-      "No folder selected": [
-        "Ingen mappe valgt"
-      ],
       "No group found": [
         "Ingen gruppe fundet"
       ],
       "No label found": [
         "Ingen etikette fundet"
-      ],
-      "No label selected": [
-        "Ingen etiket valgt"
       ],
       "No more results found": [
         "Der er ikke flere resultater"
@@ -5000,9 +4879,6 @@
       "Close draft": [
         "Luk kladde"
       ],
-      "Create filter with...": [
-        "Opret filter med..."
-      ],
       "Delete permanently": [
         "Slet permanent"
       ],
@@ -5170,17 +5046,8 @@
       ]
     },
     "Label": {
-      " and ": [
-        " og "
-      ],
-      " and ${ l }": [
-        " og ${ l }"
-      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Midlertidigt utilgængelig. Tjek igen senere.)"
-      ],
-      "Actions": [
-        "Handlinger"
       ],
       "Add email address": [
         "Tilføj e-mailadresse"
@@ -5194,26 +5061,8 @@
       "Address": [
         "Adresse"
       ],
-      "ALL": [
-        "ALL"
-      ],
       "Also archive": [
         "Arkivér også"
-      ],
-      "AND": [
-        "OG"
-      ],
-      "and": [
-        "og"
-      ],
-      "And": [
-        "Og"
-      ],
-      "ANY": [
-        "ANY"
-      ],
-      "Apply filter to existing emails": [
-        "Anvend filter på eksisterende e-mails"
       ],
       "Attach screenshot(s)": [
         "Vedhæft skærmfoto(s)"
@@ -5263,9 +5112,6 @@
       "Code is 6 digits without spaces": [
         "Koden er på 6 cifre uden mellemrum"
       ],
-      "Conditions": [
-        "Betingelser"
-      ],
       "Confirm password": [
         "Bekræft adgangskode"
       ],
@@ -5314,9 +5160,6 @@
       "Extended address": [
         "Udvidet adresse"
       ],
-      "Filter Name": [
-        "Filternavn"
-      ],
       "Folder location": [
         "Mappeplacering"
       ],
@@ -5346,12 +5189,6 @@
       ],
       "I understand the risk": [
         "Jeg er indforstået med risikoen"
-      ],
-      "IF": [
-        "IF"
-      ],
-      "If": [
-        "Hvis"
       ],
       "Import all messages": [
         "Importer alle beskeder"
@@ -5401,17 +5238,17 @@
       "Manage my addresses": [
         "Administrer mine adresser"
       ],
-      "Mark as": [
-        "Markér som"
-      ],
       "Move to": [
         "Flyt til"
       ],
+      "Move to Archive": [
+        "Flyt til Arkiv"
+      ],
+      "Move to Inbox": [
+        "Flyt til Indbakke"
+      ],
       "Name": [
         "Navn"
-      ],
-      "No label found": [
-        "Ingen etikette fundet"
       ],
       "Notification": [
         "Notifikation"
@@ -5424,15 +5261,6 @@
       ],
       "Operating system version": [
         "Operativsystemversion"
-      ],
-      "OR": [
-        "ELLER"
-      ],
-      "or": [
-        "eller"
-      ],
-      "Or": [
-        "Eller"
       ],
       "Participants": [
         "Deltagere"
@@ -5461,9 +5289,6 @@
       "Public keys": [
         "Offentlige nøgler"
       ],
-      "Read": [
-        "Læst"
-      ],
       "Recipient": [
         "Adressat"
       ],
@@ -5488,9 +5313,6 @@
       "Select how your mailbox looks like by default.": [
         "Vælg hvordan din postkasse ser ud som standard."
       ],
-      "Send auto-reply": [
-        "Send auto-svar"
-      ],
       "Sender": [
         "Afsender"
       ],
@@ -5500,32 +5322,11 @@
       "Size:": [
         "Størrelse:"
       ],
-      "Starred": [
-        "Stjernemarkeret"
-      ],
-      "Statement": [
-        "Udsagn"
-      ],
       "Street address": [
         "Adresse"
       ],
       "System information": [
         "Systemoplysninger"
-      ],
-      "The email was sent ${ attachment }": [
-        "E-mailen blev sendt ${ attachment }"
-      ],
-      "the email was sent ${ attachment }": [
-        "e-mailen blev sendt ${ attachment }"
-      ],
-      "The email was sent ${ attachmentStrong }": [
-        "E-mailen blev sendt ${ attachmentStrong }"
-      ],
-      "the email was sent ${ label }": [
-        "e-mailen blev sendt ${ label }"
-      ],
-      "Then": [
-        "Så"
       ],
       "Time": [
         "Tid"
@@ -5556,21 +5357,6 @@
       ],
       "What happened?": [
         "Hvad skete der?"
-      ],
-      "With attachment": [
-        "Med vedhæftning"
-      ],
-      "with attachments": [
-        "med vedhæftninger"
-      ],
-      "Without attachment": [
-        "Uden vedhæftning"
-      ],
-      "without attachment": [
-        "uden vedhæftning"
-      ],
-      "without attachments": [
-        "uden vedhæftninger"
       ],
       "Wonderful": [
         "Vidunderlig"
@@ -5648,12 +5434,6 @@
     "Link": {
       "Activate": [
         "Aktivér"
-      ],
-      "Add folder": [
-        "Tilføj mappe"
-      ],
-      "Add label": [
-        "Tilføj etiket"
       ],
       "All mail": [
         "Alle e-mails"
@@ -6083,9 +5863,6 @@
       ]
     },
     "Notification": {
-      "${ _Filter.Name } created": [
-        "${ _Filter.Name } oprettet"
-      ],
       "Contact group created": [
         "Kontaktgruppe oprettet"
       ],
@@ -6160,9 +5937,6 @@
       ]
     },
     "Option group": {
-      "Custom folders": [
-        "Brugerdefinerede mapper"
-      ],
       "Default folders": [
         "Standard-mapper"
       ],
@@ -6299,9 +6073,6 @@
       ],
       "Text": [
         "Tekst"
-      ],
-      "Type text or keyword": [
-        "Indtast tekst eller nøgleord"
       ],
       "Write your message": [
         "Skriv din besked"
@@ -6582,20 +6353,6 @@
       ],
       "Unsubscribed": [
         "Afmeldt"
-      ]
-    },
-    "Step in filter modal": {
-      "Actions": [
-        "Handlinger"
-      ],
-      "Conditions": [
-        "Betingelser"
-      ],
-      "Name": [
-        "Navn"
-      ],
-      "Preview": [
-        "Forhåndsvisning"
       ]
     },
     "Storage": {
@@ -6958,9 +6715,6 @@
       "Add contact group name": [
         "Tilføj kontaktgruppenavn"
       ],
-      "Add filter": [
-        "Tilføj filter"
-      ],
       "Add to ${ groupCount } group": [
         "Føj til ${ groupCount } gruppe",
         "Føj til ${ groupCount } grupper"
@@ -6973,9 +6727,6 @@
       ],
       "Archive": [
         "Arkivér"
-      ],
-      "Are you sure you want to close?": [
-        "Er du sikker på, at du vil lukke?"
       ],
       "Attachments": [
         "Vedhæftninger"
@@ -7024,12 +6775,6 @@
       ],
       "Conversation list": [
         "Samtaleliste"
-      ],
-      "Create a new folder": [
-        "Opret ny mappe"
-      ],
-      "Create a new label": [
-        "Opret ny etiket"
       ],
       "Create contact": [
         "Opret kontakt"
@@ -7102,9 +6847,6 @@
       "Edit contact group": [
         "Redigér kontaktgruppe"
       ],
-      "Edit filter": [
-        "Rediger filter"
-      ],
       "Edit image": [
         "Redigér billede"
       ],
@@ -7143,9 +6885,6 @@
       ],
       "Feedback": [
         "Feedback"
-      ],
-      "Filter on": [
-        "Filtrer efter"
       ],
       "Forward": [
         "Videresend"
@@ -7451,9 +7190,6 @@
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
         "Denne handling vil downloade alle beskeder, så de kan gennemsøges lokalt. Rydder du dine browserdata, deaktiveres denne indstilling."
-      ],
-      "This feature is only available for paid users": [
-        "Denne funktion er kun tilgængelig for betalende brugere"
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Upload en offentlig nøgle for at aktivere afsendelse af end-to-end krypterede e-mails til denne e-mail"

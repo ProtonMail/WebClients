@@ -23,9 +23,6 @@
       "Add address": [
         "Προσθήκη διεύθυνσης"
       ],
-      "Add condition": [
-        "Προσθήκη συνθήκης"
-      ],
       "Add contact": [
         "Προσθήκη επαφής"
       ],
@@ -144,7 +141,7 @@
         "Κλείσιμο συντάκτη"
       ],
       "Close modal": [
-        "Κλείσιμο παραθύρου"
+        "Close"
       ],
       "Close navigation": [
         "Κλείσιμο μενού πλοήγησης"
@@ -194,20 +191,14 @@
       "Create a new contact group": [
         "Δημιουργία νέας ομάδας επαφών"
       ],
-      "Create folder": [
-        "Δημιουργία φακέλου"
-      ],
-      "Create label": [
-        "Δημιουργία ετικέτας"
+      "Create a new folder": [
+        "Δημιουργία νέου φακέλου"
       ],
       "Create new contact": [
         "Δημιουργία νέας επαφής"
       ],
       "Create new message": [
         "Δημιουργία νέου μηνύματος"
-      ],
-      "Custom filter": [
-        "Προσαρμοσμένο φίλτρο"
       ],
       "Customize": [
         "Προσαρμογή"
@@ -331,9 +322,6 @@
       "Fewer search options": [
         "Λιγότερες επιλογές αναζήτησης"
       ],
-      "Filter on...": [
-        "Φιλτράρισμα σε..."
-      ],
       "Font": [
         "Γραμματοσειρά"
       ],
@@ -446,9 +434,6 @@
       "Label as...": [
         "Ορίστε ετικέτα..."
       ],
-      "label emails as": [
-        "ορίστε ετικέτα στα email ως"
-      ],
       "Learn more": [
         "Μάθετε περισσότερα"
       ],
@@ -484,9 +469,6 @@
       ],
       "Mark as unread": [
         "Σήμανση ως μη διαβασμένο"
-      ],
-      "mark emails as": [
-        "σήμανση μηνυμάτων ως"
       ],
       "Mark for deletion": [
         "Σήμανση για διαγραφή"
@@ -544,9 +526,6 @@
       ],
       "Move all messages from this label": [
         "Μετακίνηση όλων των μηνυμάτων από αυτήν την ετικέτα"
-      ],
-      "move emails to": [
-        "μεταφέρετε τα email στο"
       ],
       "Move to": [
         "Μετακίνηση σε"
@@ -632,9 +611,6 @@
       "Pause": [
         "Παύση"
       ],
-      "Preview": [
-        "Προεπισκόπηση"
-      ],
       "Preview ${ attachmentName }": [
         "Προεπισκόπηση ${ attachmentName }"
       ],
@@ -694,9 +670,6 @@
       ],
       "Remove expiration time": [
         "Αφαίρεση χρόνου λήξης"
-      ],
-      "Remove this label": [
-        "Αφαίρεση αυτής της ετικέτας"
       ],
       "Rename": [
         "Μετονομασία"
@@ -760,9 +733,6 @@
       ],
       "Send anyway": [
         "Αποστολή οπωσδήποτε"
-      ],
-      "send auto-reply email": [
-        "αποστολή μηνύματος αυτόματης απάντησης"
       ],
       "Send feedback": [
         "Αποστολή σχολίων"
@@ -2371,26 +2341,6 @@
         "Νήσοι Άλαντ"
       ]
     },
-    "CustomFilter": {
-      "Attachment": [
-        "Συνημμένο"
-      ],
-      "Filter on": [
-        "Φίλτρο σε"
-      ],
-      "Next": [
-        "Επόμενο"
-      ],
-      "Recipient": [
-        "Παραλήπτης"
-      ],
-      "Sender": [
-        "Αποστολέας"
-      ],
-      "Subject": [
-        "Θέμα"
-      ]
-    },
     "Daily recurring event, frequency": {
       "${ count } time": [
         "${ count } φορά",
@@ -2645,9 +2595,6 @@
         "Επιλέξτε μια ημ/νία εντός της επόμενης ${ SCHEDULED_MAX_DATE_DAYS } ημέρας.",
         "Επιλέξτε μια ημ/νία εντός των επόμενων ${ SCHEDULED_MAX_DATE_DAYS } ημερών."
       ],
-      "Condition incomplete": [
-        "Μη ολοκληρωμένη συνθήκη"
-      ],
       "Contact could not be saved": [
         "Η αποθήκευση της επαφής απέτυχε"
       ],
@@ -2686,17 +2633,11 @@
       "Email is not valid": [
         "Η διεύθυνση email δεν είναι έγκυρη"
       ],
-      "Empty condition": [
-        "Κενή συνθήκη"
-      ],
       "Enter 6 digits": [
         "Εισάγετε 6 ψηφία"
       ],
       "Enter a password": [
         "Εισάγετε κωδικό πρόσβασης"
-      ],
-      "Error in one of the conditions": [
-        "Σφάλμα σε μια από τις συνθήκες"
       ],
       "Error while saving draft. Please try again.": [
         "Σφάλμα κατά την αποθήκευση του πρόχειρου. Παρακαλούμε δοκιμάστε ξανά."
@@ -2709,9 +2650,6 @@
       ],
       "Failed to encrypt attachment. Please try again.": [
         "Αποτυχία κρυπτογράφησης του συννημένου. Παρακαλούμε δοκιμάστε ξανά."
-      ],
-      "Filter with this name already exists": [
-        "Το φίλτρο με αυτό το όνομα υπάρχει ήδη"
       ],
       "Folder name cannot be empty.": [
         "Το όνομα φακέλου δεν γίνεται να είναι κενό."
@@ -2823,12 +2761,6 @@
       "Request timed out": [
         "Λήξη χρονικού ορίου αιτήματος"
       ],
-      "Require at least one action": [
-        "Απαίτηση τουλάχιστον μίας ενέργειας"
-      ],
-      "Require at least one condition": [
-        "Απαιτείται τουλάχιστον μία συνθήκη"
-      ],
       "Signature not verified": [
         "Υπογραφή δεν πιστοποιήθηκε"
       ],
@@ -2907,9 +2839,6 @@
       ],
       "This message has already been sent. A new draft has been saved.": [
         "Αυτό το μήνυμα έχει ήδη αποσταλεί. Αποθηκεύτηκε ένα νέο πρόχειρο."
-      ],
-      "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
-        "Υπερβολικός αριθμός ενεργών φίλτρων. Για ενεργοποίηση περισσότερων φίλτρων, παρακαλούμε αναβαθμίστε σε πρόγραμμα επί πληρωμή."
       ],
       "Trusted keys are not valid for sending": [
         "Τα αξιόπιστα κλειδιά δεν είναι έγκυρα για την αποστολή"
@@ -3210,18 +3139,6 @@
       ]
     },
     "Filter modal type": {
-      "If the attachments": [
-        "Εάν τα συνημμένα"
-      ],
-      "If the recipient": [
-        "Εάν ο παραλήπτης"
-      ],
-      "If the sender": [
-        "Εάν ο αποστολέας"
-      ],
-      "If the subject": [
-        "Εάν το θέμα"
-      ],
       "Select…": [
         "Επιλογή…"
       ],
@@ -3241,9 +3158,6 @@
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } ενημερώθηκε"
-      ],
-      "Filter ${ Filter.Name } updated": [
-        "Το φίλτρο ${ Filter.Name } ενημερώθηκε"
       ]
     },
     "Filter option": {
@@ -3261,14 +3175,6 @@
       ],
       "Unread": [
         "Μη διαβασμένα"
-      ]
-    },
-    "Filter preview": {
-      "read": [
-        "ανάγνωση"
-      ],
-      "starred": [
-        "με αστέρι"
       ]
     },
     "Font Face Default": {
@@ -3609,12 +3515,6 @@
         "(${ memberCount } μέλος)",
         "(${ memberCount } μέλη)"
       ],
-      "(Filter if ALL of the following conditions are met)": [
-        "(Φιλτράρετε εάν πληρούνται ΟΛΕΣ οι ακόλουθες συνθήκες)"
-      ],
-      "(Filter if ANY of the following conditions are met)": [
-        "(Φιλτράρετε εάν πληρούνται ΟΠΟΙΕΣΔΗΠΟΤΕ από τις ακόλουθες συνθήκες)"
-      ],
       "(No Recipient)": [
         "(Κανένας παραλήπτης)"
       ],
@@ -3662,9 +3562,6 @@
       "All your calendars are disabled.": [
         "Όλα τα ημερολόγιά σας είναι απενεργοποιημένα."
       ],
-      "All your changes will be lost.": [
-        "Όλες οι αλλαγές σας θα χαθούν."
-      ],
       "An unknown public key has been detected for this recipient.": [
         "Έχει εντοπιστεί ένα άγνωστο δημόσιο κλειδί για αυτόν τον παραλήπτη."
       ],
@@ -3676,9 +3573,6 @@
       ],
       "Are you sure you want to delete all messages with this label?": [
         "Θέλετε σίγουρα να διαγράψετε όλα τα μηνύματα με αυτή την ετικέτα;"
-      ],
-      "Are you sure you want to discard your changes?": [
-        "Είστε βέβαιοι ότι θέλετε να απορρίψετε τις αλλαγές σας;"
       ],
       "Are you sure you want to move all messages in this location to Trash?": [
         "Θέλετε σίγουρα να μετακινήσετε στα Διαγραμμένα όλα τα μηνύματα αυτής της τοποθεσίας;"
@@ -3891,9 +3785,6 @@
         "συνημμένο αρχείο",
         "συνημμένα αρχεία"
       ],
-      "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
-        "Τα φίλτρα λειτουργούν σε όλα τα μηνύματα ηλεκτρονικού ταχυδρομείου, συμπεριλαμβανομένων των εισερχόμενων καθώς και των απεσταλμένων μηνυμάτων ηλεκτρονικού ταχυδρομείου. Κάθε φίλτρο πρέπει να περιέχει τουλάχιστον ένα όνομα, μια συνθήκη και μια ενέργεια."
-      ],
       "Folder": [
         "Φάκελος"
       ],
@@ -3946,9 +3837,6 @@
       ],
       "Image URL": [
         "URL εικόνας"
-      ],
-      "Images have been removed because they are not allowed in auto-reply": [
-        "Οι εικόνες αφαιρέθηκαν, επειδή δεν επιτρέπονται στις αυτόματες απαντήσεις"
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Εισαγωγή ${ contactsFragment } και ${ contactsGroupsFragment }"
@@ -4059,9 +3947,6 @@
       "New": [
         "Νέο"
       ],
-      "No action selected": [
-        "Δεν έχει επιλεγεί καμία ενέργεια"
-      ],
       "No contacts added yet": [
         "Δεν έχουν προστεθεί επαφές ακόμα"
       ],
@@ -4074,17 +3959,11 @@
       "No folder found": [
         "Δε βρέθηκε φάκελος"
       ],
-      "No folder selected": [
-        "Δεν επιλέχθηκε φάκελος"
-      ],
       "No group found": [
         "Καμία ομάδα δεν βρέθηκε"
       ],
       "No label found": [
         "Δεν βρέθηκε ετικέτα"
-      ],
-      "No label selected": [
-        "Δεν επιλέχθηκε ετικέτα"
       ],
       "No more results found": [
         "Δεν βρέθηκαν άλλα αποτελέσματα"
@@ -4703,9 +4582,6 @@
       "Close draft": [
         "Κλείσιμο προχείρου"
       ],
-      "Create filter with...": [
-        "Δημιουργία φίλτρου με..."
-      ],
       "Delete permanently": [
         "Οριστική διαγραφή"
       ],
@@ -4873,17 +4749,8 @@
       ]
     },
     "Label": {
-      " and ": [
-        " και "
-      ],
-      " and ${ l }": [
-        " και ${ l }"
-      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Προσωρινά μη διαθέσιμο. Παρακαλούμε ελέγξτε ξανά αργότερα.)"
-      ],
-      "Actions": [
-        "Ενέργειες"
       ],
       "Add email address": [
         "Προσθήκη διεύθυνσης E-mail"
@@ -4897,23 +4764,8 @@
       "Address": [
         "Διεύθυνση"
       ],
-      "ALL": [
-        "ΟΛΑ"
-      ],
       "Also archive": [
         "Επίσης αρχειοθετείστε"
-      ],
-      "AND": [
-        "ΚΑΙ"
-      ],
-      "and": [
-        "και"
-      ],
-      "And": [
-        "Και"
-      ],
-      "ANY": [
-        "ΟΠΟΙΑΔΗΠΟΤΕ"
       ],
       "Attach screenshot(s)": [
         "Επισύναψη στιγμιότυπου/ων οθόνης"
@@ -4963,9 +4815,6 @@
       "Code is 6 digits without spaces": [
         "Ο κωδικός είναι 6 ψηφία χωρίς κενά"
       ],
-      "Conditions": [
-        "Προϋποθέσεις"
-      ],
       "Confirm password": [
         "Επιβεβαίωση κωδικού πρόσβασης"
       ],
@@ -5014,9 +4863,6 @@
       "Extended address": [
         "Εκτεταμένη διεύθυνση"
       ],
-      "Filter Name": [
-        "Όνομα φίλτρου"
-      ],
       "Folder location": [
         "Τοποθεσία φακέλου"
       ],
@@ -5046,12 +4892,6 @@
       ],
       "I understand the risk": [
         "Καταλαβαίνω τον κίνδυνο"
-      ],
-      "IF": [
-        "ΑΝ"
-      ],
-      "If": [
-        "Αν"
       ],
       "Import all messages": [
         "Εισαγωγή όλων των μηνυμάτων"
@@ -5101,17 +4941,17 @@
       "Manage my addresses": [
         "Διαχείριση διευθύνσεων"
       ],
-      "Mark as": [
-        "Σήμανση ως"
-      ],
       "Move to": [
         "Μετακίνηση σε"
       ],
+      "Move to Archive": [
+        "Μεταφορά στα Αρχειοθετημένα"
+      ],
+      "Move to Inbox": [
+        "Μετακίνηση στα Εισερχόμενα"
+      ],
       "Name": [
         "Όνομα"
-      ],
-      "No label found": [
-        "Δεν βρέθηκε ετικέτα"
       ],
       "Notification": [
         "Ειδοποίηση"
@@ -5124,15 +4964,6 @@
       ],
       "Operating system version": [
         "Έκδοση λειτουργικού συστήματος"
-      ],
-      "OR": [
-        "'Η"
-      ],
-      "or": [
-        "ή"
-      ],
-      "Or": [
-        "Ή"
       ],
       "Participants": [
         "Συμμετέχοντες"
@@ -5161,9 +4992,6 @@
       "Public keys": [
         "Δημόσια κλειδιά"
       ],
-      "Read": [
-        "Διαβασμένα"
-      ],
       "Recipient": [
         "Παραλήπτης"
       ],
@@ -5188,9 +5016,6 @@
       "Select how your mailbox looks like by default.": [
         "Επιλογή προεπιλεγμένης όψης της θυρίδας σας."
       ],
-      "Send auto-reply": [
-        "Αποστολή αυτόματης απάντησης"
-      ],
       "Sender": [
         "Αποστολέας"
       ],
@@ -5200,32 +5025,11 @@
       "Size:": [
         "Μέγεθος:"
       ],
-      "Starred": [
-        "Με αστέρι"
-      ],
-      "Statement": [
-        "Δήλωση"
-      ],
       "Street address": [
         "Οδός"
       ],
       "System information": [
         "Πληροφορίες Συστήματος"
-      ],
-      "The email was sent ${ attachment }": [
-        "Το μήνυμα ηλεκτρονικού ταχυδρομείου στάλθηκε ${ attachment }"
-      ],
-      "the email was sent ${ attachment }": [
-        "το email στάλθηκε ${ attachment }"
-      ],
-      "The email was sent ${ attachmentStrong }": [
-        "Το μήνυμα ηλεκτρονικού ταχυδρομείου στάλθηκε ${ attachmentStrong }"
-      ],
-      "the email was sent ${ label }": [
-        "το email στάλθηκε ${ label }"
-      ],
-      "Then": [
-        "Τότε"
       ],
       "Time": [
         "Ώρα"
@@ -5256,21 +5060,6 @@
       ],
       "What happened?": [
         "Τι συνέβη;"
-      ],
-      "With attachment": [
-        "Με συνημμένα"
-      ],
-      "with attachments": [
-        "με συνημμένα"
-      ],
-      "Without attachment": [
-        "Χωρίς συνημμένα"
-      ],
-      "without attachment": [
-        "χωρίς συνημμένα"
-      ],
-      "without attachments": [
-        "χωρίς συνημμένα"
       ],
       "Wonderful": [
         "Θαυμάσια"
@@ -5348,12 +5137,6 @@
     "Link": {
       "Activate": [
         "Ενεργοποίηση"
-      ],
-      "Add folder": [
-        "Προσθήκη φακέλου"
-      ],
-      "Add label": [
-        "Προσθήκη ετικέτας"
       ],
       "All mail": [
         "Όλα τα μηνύματα"
@@ -5769,9 +5552,6 @@
       ]
     },
     "Notification": {
-      "${ _Filter.Name } created": [
-        "${ _Filter.Name } δημιουργήθηκε"
-      ],
       "Contact group created": [
         "Η ομάδα επαφών δημιουργήθηκε"
       ],
@@ -5843,9 +5623,6 @@
       ]
     },
     "Option group": {
-      "Custom folders": [
-        "Προσαρμοσμένοι φάκελοι"
-      ],
       "Default folders": [
         "Προεπιλεγμένοι φάκελοι"
       ],
@@ -5971,9 +5748,6 @@
       ],
       "Text": [
         "Κείμενο"
-      ],
-      "Type text or keyword": [
-        "Πληκτρολόγηση κειμένου ή λέξης-κλειδιού"
       ],
       "Write your message": [
         "Γράψτε το μήνυμά σας"
@@ -6251,20 +6025,6 @@
     "Status": {
       "This message is from a mailing list.": [
         "Αυτό το μήνυμα προέρχεται από λίστα αλληλογραφίας."
-      ]
-    },
-    "Step in filter modal": {
-      "Actions": [
-        "Ενέργειες"
-      ],
-      "Conditions": [
-        "Προϋποθέσεις"
-      ],
-      "Name": [
-        "Όνομα"
-      ],
-      "Preview": [
-        "Προεπισκόπηση"
       ]
     },
     "Storage": {
@@ -6627,9 +6387,6 @@
       "Add contact group name": [
         "Προσθήκη ονόματος ομάδας επαφών"
       ],
-      "Add filter": [
-        "Προσθήκη φίλτρου"
-      ],
       "Add to ${ groupCount } group": [
         "Προσθέστε στη ${ groupCount } ομάδα επαφών",
         "Προσθέστε στις ${ groupCount } ομάδες επαφών"
@@ -6642,9 +6399,6 @@
       ],
       "Archive": [
         "Αρχειοθετημένα"
-      ],
-      "Are you sure you want to close?": [
-        "Είστε βέβαιοι ότι θέλετε να κλείσετε το παράθυρο;"
       ],
       "Attachments": [
         "Συνημμένα"
@@ -6693,12 +6447,6 @@
       ],
       "Conversation list": [
         "Λίστα συζητήσεων"
-      ],
-      "Create a new folder": [
-        "Δημιουργία νέου φακέλου"
-      ],
-      "Create a new label": [
-        "Δημιουργία νέας ετικέτας"
       ],
       "Create contact": [
         "Δημιουργία επαφής"
@@ -6771,9 +6519,6 @@
       "Edit contact group": [
         "Επεξεργασία ομάδας επαφών"
       ],
-      "Edit filter": [
-        "Επεξεργασία φίλτρου"
-      ],
       "Edit image": [
         "Επεξεργασία εικόνας"
       ],
@@ -6812,9 +6557,6 @@
       ],
       "Feedback": [
         "Σχόλια"
-      ],
-      "Filter on": [
-        "Φίλτρο σε"
       ],
       "Forward": [
         "Προώθηση"
@@ -7114,9 +6856,6 @@
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
         "Αυτή η ενέργεια θα κάνει λήψη όλων των μηνυμάτων, ώστε να μπορείτε να κάνετε αναζήτηση τοπικά. Η εκκαθάριση των δεδομένων του προγράμματος περιήγησης θα απενεργοποιήσει αυτήν την επιλογή."
-      ],
-      "This feature is only available for paid users": [
-        "Αυτή η λειτουργία είναι διαθέσιμη μόνο για χρήστες επί πληρωμή"
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Για ενεργοποίηση της αποστολής διατερματικά κρυπτογραφημένων μηνυμάτων προς αυτήν τη διεύθυνση, ανεβάστε ένα δημόσιο κλειδί"

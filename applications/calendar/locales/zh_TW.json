@@ -84,7 +84,7 @@
         "關閉事件彈出式視窗"
       ],
       "Close modal": [
-        "關閉視窗"
+        "Close"
       ],
       "Close navigation": [
         "關閉導覽"
@@ -3111,6 +3111,9 @@
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "此連結指向一個可能嘗試竊取您資訊（如密碼與信用卡資訊等）的網站。"
       ],
+      "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
+        "此連結可能為同形異字的域名釣魚攻擊 (homograph attack)，且無法以 Edge 瀏覽器開啟。如果您確定這是一個正當的連結，請使用其它瀏覽器來開啟。"
+      ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "此連結可能是同形異義詞的偽裝攻擊 (homograph attack)。請核對這是您欲造訪的連結，否則不要開啟。"
       ],
@@ -3467,11 +3470,20 @@
       "Mailbox password": [
         "郵箱密碼"
       ],
+      "Manage categories": [
+        "管理分類"
+      ],
       "Manage folders": [
         "管理資料夾"
       ],
       "Manage labels": [
         "管理標籤"
+      ],
+      "Move to Archive": [
+        "移至「封存」"
+      ],
+      "Move to Inbox": [
+        "移動到收件匣"
       ],
       "Name": [
         "名稱"
@@ -4273,6 +4285,9 @@
       "Don't miss any events": [
         "別錯過任何活動"
       ],
+      "Easily accept invites": [
+        "簡單地同意邀請"
+      ],
       "Get up to 18 months of ${ planName } for free": [
         "免費取得最多18個月的 ${ planName }"
       ],
@@ -4281,6 +4296,9 @@
       ],
       "No more missed appointments": [
         "無其他遺漏的預定"
+      ],
+      "Now invitations appear in your calendar as pending events. Just open an event to respond. ${ goToSettingsLink }": [
+        "現在，邀請會在您的行事曆中以擱置中事件的方式顯示。只要開啟事件回應就可以了。${ goToSettingsLink }"
       ],
       "Try ${ DRIVE_APP_NAME }": [
         "試試 ${ DRIVE_APP_NAME }"
@@ -4944,6 +4962,9 @@
       ],
       "Encrypted data with verified digital signature": [
         "經加密資料，已驗證數碼簽章"
+      ],
+      "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
+        "Gmail 會自動將一些電子郵件分類，例如促銷內容或社交網路。您可以自行決定要將這些郵件匯入的地方。"
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "請選擇使用者簽章或加密所使用的 PGP 配置。請注意：「PGP/內嵌」將強制純文字郵件"
