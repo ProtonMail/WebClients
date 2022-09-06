@@ -5,16 +5,17 @@ $use-vertical-align-img-iframe: false;
 @import '@proton/styles/scss/base/scrollbar';
 @import '@proton/styles/scss/base/custom-properties';
 
-/*----------------------
-       EMAIL RESET
-------------------------*/
+/* ----------------------
+      EMAIL RESET
+------------------------ */
 
 body {
 	/* in case nothing is set, set a default font and size */
 	font-family: system-ui, sans-serif;
 	font-size: em($base-font-size, $root-default-font-size);
+
 	/* this is clearly needed if we want consistency  */
-	text-rendering: geometricPrecision;
+	text-rendering: geometricprecision;
 	-webkit-font-smoothing: antialiased;
 	overflow-y: hidden;
 	overflow-x: auto;
@@ -84,9 +85,9 @@ code {
 	background-color: transparent;
 }
 
-/*---------------------------------
+/* ---------------------------------
       CUSTOM STYLES AND HELPERS
------------------------------------*/
+----------------------------------- */
 a {
 	color: var(--interaction-norm);
 	text-decoration: underline;
@@ -145,11 +146,12 @@ a:active {
  * 3. set at least a min width or it's possible it won't be shown
  * 4. remove min-inline-size when image loaded - for tiny images
  */
-.proton-embedded:not([width]):not([style*='width']) {
+.proton-embedded:not([width], [style*='width']) {
 	max-inline-size: 100%;
 	min-inline-size: 38px;
 }
-.proton-embedded:not([width]):not([style*='width'])[src] {
+
+.proton-embedded:not([width], [style*='width'])[src] {
 	min-inline-size: 0;
 }
 
@@ -160,6 +162,7 @@ blockquote.protonmail_quote {
 	border-inline-start-width: 3px;
 	border-inline-start-style: solid;
 }
+
 blockquote.protonmail_quote
 	blockquote.protonmail_quote
 	blockquote.protonmail_quote
@@ -170,22 +173,22 @@ blockquote.protonmail_quote
 	border-inline-start-width: 0;
 }
 
-/*-----------------------
+/* -----------------------
 	PLAIN TEXT
--------------------------*/
+------------------------- */
 
 .proton-plain-text {
 	font-family: $font-family-monospace;
 	background: var(--background-norm);
 	color: var(--text-norm);
 	white-space: pre-wrap;
-	text-rendering: geometricPrecision;
+	text-rendering: geometricprecision;
 	-webkit-font-smoothing: antialiased;
 }
 
-/*---------------------------------
+/* ---------------------------------
       BUTTONS
------------------------------------*/
+----------------------------------- */
 
 .proton-toggle-button {
 	display: inline-block;
@@ -218,11 +221,12 @@ blockquote.protonmail_quote
 	}
 }
 
-/*---------------------------------
+/* ---------------------------------
       IMAGE PLACEHOLDER
------------------------------------*/
+----------------------------------- */
 
 .proton-image-placeholder {
+	/* stylelint-disable-next-line color-hex-length */
 	background-color: #00000011;
 	box-sizing: border-box;
 	display: inline-flex;
@@ -245,13 +249,14 @@ blockquote.protonmail_quote
 	block-size: 1.25rem;
 	display: inline-block;
 	vertical-align: middle;
-	fill: currentColor;
+	fill: currentcolor;
 }
 
 @keyframes anime-loader-rotation {
 	from {
 		transform: rotate(0);
 	}
+
 	to {
 		transform: rotate(360deg);
 	}
@@ -268,7 +273,7 @@ blockquote.protonmail_quote
 }
 
 .proton-circle-loader-track {
-	stroke: currentColor;
+	stroke: currentcolor;
 	opacity: 0.2;
 }
 
@@ -283,27 +288,31 @@ blockquote.protonmail_quote
 	0% {
 		stroke-dashoffset: 440;
 	}
+
 	50% {
 		stroke-dashoffset: 0;
 	}
+
 	50.1% {
 		stroke-dashoffset: 880;
 	}
 }
 
 .proton-circle-loader-circle {
-	stroke: currentColor;
+	stroke: currentcolor;
 	stroke-dasharray: 440;
 	stroke-dashoffset: 440;
 	animation: anime-loader-stroke 4s linear infinite;
 }
 
-/*----------------------
+/* ---------------------
         PRINT
-------------------------*/
+------------------------ */
 
 .proton-print {
+	/* stylelint-disable-next-line no-invalid-position-at-import-rule */
 	@import '~@proton/styles/scss/helpers/flex';
+	/* stylelint-disable-next-line no-invalid-position-at-import-rule */
 	@import '~@proton/styles/scss/helpers/outline';
 
 	font-family: var(--font-family);
@@ -311,7 +320,7 @@ blockquote.protonmail_quote
 	line-height: 1.5;
 	color: var(--text-norm);
 	background-color: var(--background-norm);
-	text-rendering: geometricPrecision;
+	text-rendering: geometricprecision;
 	-webkit-font-smoothing: antialiased;
 	padding-block-end: 1em;
 	overflow: auto;
@@ -374,9 +383,11 @@ blockquote.protonmail_quote
 
 		&-sizes {
 			margin-block-end: 1em;
+
 			&-label {
 				margin-inline-end: 1em;
 			}
+
 			&-label,
 			&-count,
 			&-embedded-count {

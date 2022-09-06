@@ -51,7 +51,8 @@ $container-to-width: 4em !default;
 	border: 1px solid var(--border-weak);
 	border-radius: var(--border-radius-md);
 	@extend %appearing-container;
-	transition: 0.15s easing(easeOutQuint);
+
+	transition: 0.15s easing(ease-out-quint);
 
 	/* states classes */
 	&.is-opened {
@@ -63,6 +64,7 @@ $container-to-width: 4em !default;
 			background-color: var(--email-message-view-background-color);
 		}
 	}
+
 	&.is-unread {
 		border-color: var(--border-norm);
 	}
@@ -103,7 +105,7 @@ $container-to-width: 4em !default;
 	// }
 
 	// &.is-loading .message-recipient-item-icon {
-	// 	background-color: currentColor;
+	// 	background-color: currentcolor;
 	// 	opacity: 0;
 	// }
 
@@ -175,13 +177,13 @@ $container-to-width: 4em !default;
 	padding-block-start: 0.65em; // value to avoid shifts on right icons
 
 	.message-header-expand-button {
-		margin-inline-end: #{em(5) * -1};
-		// aligned with tracker protection icon
+		margin-inline-end: #{em(5) * -1}; // aligned with tracker protection icon
 	}
 
 	.message-recipient-item-label-address {
 		margin-block-end: 0.5em;
 	}
+
 	.message-header-from-container {
 		.message-recipient-item-lock-icon {
 			transform: translateY(#{em(2)}); // Magic number for visual alignment
@@ -209,16 +211,19 @@ $container-to-width: 4em !default;
 			max-inline-size: 100%;
 			overflow: hidden;
 			margin-inline-start: -0.5em;
+
 			* {
 				flex-wrap: nowrap;
 				text-overflow: '';
 				display: inline;
 				overflow: visible;
 			}
+
 			svg {
 				margin-block-start: -0.15em;
 			}
 		}
+
 		.container-to {
 			padding-block-start: 0.05em;
 		}
@@ -228,12 +233,14 @@ $container-to-width: 4em !default;
 	.message-header-recipient-mobile {
 		.message-recipient-item-label {
 			font-size: em(16);
+
 			&::after {
 				// force breaking with CSS
 				content: '\A';
 				white-space: pre;
 			}
 		}
+
 		.message-recipient-item-address {
 			margin-inline-start: 0;
 		}
@@ -245,11 +252,13 @@ $container-to-width: 4em !default;
 		margin-block-start: 0.1em;
 		padding-block-start: 0.2em;
 	}
+
 	.message-recipient-item-expanded-content {
 		margin-block-start: 0.1em;
 		display: flex;
 		flex-direction: column;
 	}
+
 	.message-recipient-item-lock-icon {
 		transform: translateY(#{em(2)}); // Magic number for visual alignment
 		vertical-align: baseline;
@@ -336,9 +345,11 @@ $container-to-width: 4em !default;
 	border-start-end-radius: 0;
 	border-end-start-radius: var(--border-radius-md);
 	border-end-end-radius: var(--border-radius-md);
+
 	.message-container.has-attachments & {
 		border-radius: 0;
 	}
+
 	// force color until real dark mode
 	// as mail content is forced on white bg, button has to be forced as well
 	.toggle-original-message-button {
@@ -361,6 +372,7 @@ $container-to-width: 4em !default;
 		&::before {
 			@extend %item-loading-pseudo;
 			@extend %placeholder-loading;
+
 			inline-size: 100%;
 		}
 	}
@@ -372,7 +384,7 @@ $container-to-width: 4em !default;
 
 .message-iframe {
 	opacity: 1;
-	transition: 0.1s easing(easeOutSine);
+	transition: 0.1s easing(ease-out-sine);
 	transition-property: opacity;
 
 	&.message-iframe--hidden {

@@ -16,7 +16,7 @@
 	&-weeknumbers,
 	&-weekdays,
 	&-monthdays {
-		grid-gap: 1px 0px;
+		grid-gap: 1px 0;
 		user-select: none;
 
 		& > * {
@@ -44,6 +44,7 @@
 		&:not(.with-weeknumbers) {
 			grid-template-columns: 7fr; // It could be 1fr, but well… just for you to understand ^^
 			grid-template-rows: auto;
+			/* stylelint-disable-next-line declaration-block-no-redundant-longhand-properties */
 			grid-template-areas:
 				'weekdays'
 				'monthdays';
@@ -52,6 +53,7 @@
 		&.with-weeknumbers {
 			grid-template-columns: 1fr 1px 7fr;
 			grid-template-rows: auto;
+			/* stylelint-disable-next-line declaration-block-no-redundant-longhand-properties */
 			grid-template-areas:
 				'weeknumbers rule weekdays'
 				'weeknumbers rule monthdays';
@@ -138,7 +140,7 @@
 			border-radius: var(--border-radius-sm);
 			border: 1px solid transparent;
 			pointer-events: none;
-			transition: 0.15s easing(easeOutQuad);
+			transition: 0.15s easing(ease-out-quad);
 		}
 
 		&-number {

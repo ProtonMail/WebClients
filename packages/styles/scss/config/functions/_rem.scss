@@ -1,4 +1,5 @@
 @use 'sass:math';
+
 /**
  * Calculate an rem value from a px value
  * @param {Number} $px - A value to be converted in em
@@ -7,7 +8,7 @@
  * @return {Number} - The $px value converted in rem
  */
 @function rem($px, $reset-applied: $root-equiv-10-px, $user-default-font-size: $root-default-font-size) {
-	@if ($reset-applied==true) {
+	@if $reset-applied==true {
 		@return (math.div($px, 10)) * 1rem;
 	} @else {
 		@return (math.div($px, $user-default-font-size)) * 1rem;
