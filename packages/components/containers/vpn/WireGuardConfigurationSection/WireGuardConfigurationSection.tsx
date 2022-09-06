@@ -39,6 +39,7 @@ import OpenVPNConfigurationSection from '../OpenVPNConfigurationSection/OpenVPNC
 import { getFlagSvg } from '../flag';
 import { CertificateDTO, CertificateDeletionParams, CertificateGenerationParams } from './Certificate';
 import { KeyPair } from './KeyPair';
+import WireGuardCreationModal, { WireGuardCreationModalProps } from './WireGuardCreationModal';
 import { deleteCertificates, generateCertificate, getKey, queryVPNClientConfig } from './api';
 import { CURVE } from './curve';
 import {
@@ -56,7 +57,6 @@ import {
 } from './feature';
 import { normalize } from './normalize';
 import useCertificates from './useCertificates';
-import WireGuardCreationModal, { WireGuardCreationModalProps } from './WireGuardCreationModal';
 
 enum PLATFORM {
     MACOS = 'macOS',
@@ -212,7 +212,10 @@ const WireGuardConfigurationSection = () => {
     const certificateCacheRef = useRef<Record<string, Certificate>>({});
     const certificateCache = certificateCacheRef.current;
     const [logical, setLogical] = useState<Logical | undefined>();
-    const [creationModal, handleShowCreationModal] = useModalTwo<WireGuardCreationModalProps, void>(WireGuardCreationModal, false);
+    const [creationModal, handleShowCreationModal] = useModalTwo<WireGuardCreationModalProps, void>(
+        WireGuardCreationModal,
+        false
+    );
     const [creating, setCreating] = useState<boolean>(false);
     const [removing, setRemoving] = useState<Record<string, boolean>>({});
     const [removedCertificates, setRemovedCertificates] = useState<string[]>([]);
@@ -366,6 +369,19 @@ const WireGuardConfigurationSection = () => {
         [featuresConfig, peer, platform]
     );
 
+    const getDownloadCallback = (certificate: Certificate) => () => {
+        if (creating) {
+            return;
+        }
+
+        const serverName = `${certificate?.features?.peerName || peer.name}`.substring(0, 20);
+
+        downloadFile(
+            new Blob([certificate.config || '']),
+            normalize((certificate.name || certificate.publicKeyFingerprint) + '-' + serverName) + '.conf'
+        );
+    };
+
     const add = async (addedPeer?: Peer, silent = false) => {
         if (creating) {
             return;
@@ -384,13 +400,13 @@ const WireGuardConfigurationSection = () => {
                     config: undefined,
                     onClose() {
                         silent = true;
-                        handleShowCreationModal({open: false});
+                        handleShowCreationModal({ open: false });
                     },
                 });
             }
 
             try {
-                const {privateKey, publicKey} = await getKeyPair();
+                const { privateKey, publicKey } = await getKeyPair();
                 const x25519PrivateKey = await getX25519PrivateKey(privateKey);
                 const deviceName = nameInputRef?.current?.value || '';
                 const certificate = await queryCertificate(publicKey, deviceName, getFeatureValues(addedPeer));
@@ -415,10 +431,10 @@ const WireGuardConfigurationSection = () => {
                         config: newCertificate?.config || '',
                         onDownload() {
                             downloadCallback();
-                            handleShowCreationModal({open: false});
+                            handleShowCreationModal({ open: false });
                         },
                         onClose() {
-                            handleShowCreationModal({open: false});
+                            handleShowCreationModal({ open: false });
                         },
                     });
                 }
@@ -435,7 +451,7 @@ const WireGuardConfigurationSection = () => {
                 }
             } catch (e) {
                 if (!silent && serverName) {
-                    handleShowCreationModal({open: false});
+                    handleShowCreationModal({ open: false });
                 }
 
                 throw e;
@@ -605,19 +621,6 @@ const WireGuardConfigurationSection = () => {
         } finally {
             setCreating(false);
         }
-    };
-
-    const getDownloadCallback = (certificate: Certificate) => () => {
-        if (creating) {
-            return;
-        }
-
-        const serverName = `${certificate?.features?.peerName || peer.name}`.substring(0, 20);
-
-        downloadFile(
-            new Blob([certificate.config || '']),
-            normalize((certificate.name || certificate.publicKeyFingerprint) + '-' + serverName) + '.conf'
-        );
     };
 
     useEffect(() => {
