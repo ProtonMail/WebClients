@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
+
+
 import { updateCatchAll } from '@proton/shared/lib/api/domains';
-import { ADDRESS_STATUS, RECEIVE_ADDRESS } from '@proton/shared/lib/constants';
 import { Domain, DomainAddress } from '@proton/shared/lib/interfaces';
 
 import { Radio } from '../../components';
@@ -11,20 +12,18 @@ interface Props {
     address: DomainAddress;
     domain: Domain;
     onChange: (ID: string, value: boolean) => void;
+    disabled: boolean;
 }
 
-const AddressCatchAll = ({ address, domain, onChange }: Props) => {
+const AddressCatchAll = ({ address, domain, onChange, disabled }: Props) => {
     const { request, loading } = useApiWithoutResult(updateCatchAll);
     const { createNotification } = useNotifications();
-    const { Status, Receive } = address;
-
-    const isAddressActive = Status === ADDRESS_STATUS.STATUS_ENABLED && Receive === RECEIVE_ADDRESS.RECEIVE_YES;
 
     return (
         <Radio
             name="catchAllRadioGroup"
             id={address.ID}
-            disabled={loading || !isAddressActive}
+            disabled={loading || disabled}
             checked={!!address.CatchAll}
             onChange={async ({ target }) => {
                 const newValue = target.checked;
