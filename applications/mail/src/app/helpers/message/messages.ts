@@ -16,7 +16,7 @@ import {
 import { getContent, setContent } from './messageContent';
 import { getEmbeddedImages } from './messageImages';
 
-const { ALL_DRAFTS, ALL_SENT, DRAFTS, SENT, SPAM, INBOX } = MAILBOX_LABEL_IDS;
+const { ALL_DRAFTS, ALL_SENT, SPAM, INBOX } = MAILBOX_LABEL_IDS;
 
 export const getAttachmentCounts = (attachments: Attachment[], messageImages: MessageImages | undefined) => {
     const size = attachmentsSize({ Attachments: attachments } as Message);
@@ -83,16 +83,12 @@ export const getMessagesAuthorizedToMove = (messages: Message[], destinationFold
     return messages.filter((message) => {
         const { LabelIDs } = message;
 
-        if (
-            LabelIDs.includes(DRAFTS) ||
-            LabelIDs.includes(ALL_DRAFTS) ||
-            LabelIDs.includes(SENT) ||
-            LabelIDs.includes(ALL_SENT)
-        ) {
+        if (LabelIDs.includes(ALL_DRAFTS) || LabelIDs.includes(ALL_SENT)) {
             // If the user sent the message to himself, he can move it to inbox
             const isSelfMessage = getIsSelfMessage(message);
 
             const excludedDestinations = [SPAM];
+
             if (!isSelfMessage) {
                 excludedDestinations.push(INBOX);
             }
