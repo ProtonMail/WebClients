@@ -22,6 +22,7 @@ import { mnemonicToBase64RandomBytes } from '@proton/shared/lib/mnemonic';
 import {
     attemptDeviceRecovery,
     getIsDeviceRecoveryAvailable,
+    removeDeviceRecovery,
     storeDeviceRecovery,
 } from '@proton/shared/lib/recoveryFile/deviceRecovery';
 import { srpAuth, srpVerify } from '@proton/shared/lib/srp';
@@ -131,6 +132,8 @@ export const handleNewPassword = async ({
                     trusted = true;
                 }
             }
+        } else {
+            removeDeviceRecovery(User.ID);
         }
     }
 
