@@ -107,16 +107,16 @@ const ItemRowLayout = ({
                         title={Subject}
                         data-testid="message-row:subject"
                     >
-                        {conversationMode && (
-                            <NumMessages
-                                className={classnames(['mr0-25', unread && 'text-bold'])}
-                                conversation={element}
-                            />
-                        )}
                         {showIcon && (
                             <span className="mr0-25 inline-flex flex-item-noshrink align-bottom">
                                 <ItemLocation element={element} labelID={labelID} />
                             </span>
+                        )}
+                        {conversationMode && (
+                            <NumMessages
+                                className={classnames(['mr0-25 flex-item-noshrink', unread && 'text-bold'])}
+                                conversation={element}
+                            />
                         )}
                         {subjectContent}
                     </span>

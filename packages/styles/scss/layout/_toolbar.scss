@@ -9,17 +9,24 @@
 	background-color: var(--toolbar-background-color);
 	color: var(--toolbar-text-color);
 
+	&-inner {
+		margin: em(5.5); // trick to get square button icons
+		gap: em(12);
+	}
+
 	&-button {
 		@extend .interactive;
 
+		position: relative;
+		display: flex; // alignment fix on Chrome
 		padding-inline: var(--padding-toolbar-button);
 		border-radius: var(--border-radius-md);
-		display: flex; // alignment fix on Chrome
-		margin-inline: 0.25em;
 
-		// to avoid double margin on side by side buttons
-		& + & {
-			margin-inline-start: 0;
+		// Increase click area to toolbar height
+		&::before {
+			content: '';
+			position: absolute;
+			inset: em(-6);
 		}
 
 		&--dropdown {
@@ -45,10 +52,6 @@
 		pointer-events: none;
 	}
 
-	&-inner {
-		margin-block: em(5.5); // trick to get square button icons
-	}
-
 	// new select
 	.select {
 		@extend .interactive;
@@ -63,6 +66,14 @@
 
 	// select all
 	.select-all {
+		&-container {
+			margin-inline-start: em(16);
+
+			@include respond-to($breakpoint-small, 'min') {
+				margin-inline-start: em(25);
+			}
+		}
+
 		.checkbox-fakecheck {
 			margin-inline-end: 0;
 		}
@@ -70,9 +81,11 @@
 
 	// adaptations for compact mode
 	.is-compact & {
-		@include respond-to($breakpoint-small, 'min') {
-			.select-all-container {
-				margin-inline-start: em(12);
+		.select-all-container {
+			margin-inline-start: em(10);
+
+			@include respond-to($breakpoint-small, 'min') {
+				margin-inline-start: em(7);
 				padding-inline-start: 0;
 			}
 		}

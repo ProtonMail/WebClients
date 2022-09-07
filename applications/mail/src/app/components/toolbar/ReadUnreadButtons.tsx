@@ -3,7 +3,6 @@ import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
-import { Vr } from '@proton/atoms';
 import { Icon, ToolbarButton, useMailSettings } from '@proton/components';
 
 import { MARK_AS_STATUS } from '../../hooks/actions/useMarkAs';
@@ -52,7 +51,6 @@ const ReadUnreadButtons = ({ selectedIDs, onMarkAs }: Props) => {
 
     return (
         <>
-            <Vr />
             {buttonMarkAsRead ? (
                 <ToolbarButton
                     key="read"

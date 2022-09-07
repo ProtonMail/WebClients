@@ -11,15 +11,13 @@ import {
     useEventManager,
     useIsMnemonicAvailable,
     useItemsDraggable,
-    useMailSettings,
     useModalState,
     useModals,
     useSettingsLink,
     useUser,
-    useUserSettings,
 } from '@proton/components';
 import { DENSITY } from '@proton/shared/lib/constants';
-import { ChecklistKey } from '@proton/shared/lib/interfaces';
+import { ChecklistKey, MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 
 import { MESSAGE_ACTIONS } from '../../constants';
 import { useOnCompose } from '../../containers/ComposeProvider';
@@ -32,7 +30,7 @@ import { usePaging } from '../../hooks/usePaging';
 import { usePlaceholders } from '../../hooks/usePlaceholders';
 import { showLabelTaskRunningBanner } from '../../logic/elements/elementsSelectors';
 import { Element } from '../../models/element';
-import { Filter } from '../../models/tools';
+import { Filter, Sort } from '../../models/tools';
 import { Breakpoints } from '../../models/utils';
 import GetStartedChecklist from '../checklist/GetStartedChecklist';
 import ModalGetMobileApp from '../checklist/ModalGetMobileApp';
@@ -41,6 +39,7 @@ import PaidUserGetStartedChecklist from '../checklist/PaidUserGetStartedChecklis
 import EmptyView from '../view/EmptyView';
 import ESSlowToolbar from './ESSlowToolbar';
 import Item from './Item';
+import ListSettings from './ListSettings';
 import { ResizeHandle } from './ResizeHandle';
 import TaskRunningBanner from './TaskRunningBanner';
 import useEncryptedSearchList from './useEncryptedSearchList';
@@ -78,6 +77,11 @@ interface Props {
     onMove: (labelID: string) => void;
     onDelete: () => void;
     onBack: () => void;
+    sort: Sort;
+    onSort: (sort: Sort) => void;
+    onFilter: (filter: Filter) => void;
+    mailSettings: MailSettings;
+    userSettings: UserSettings;
 }
 
 const List = (
@@ -110,12 +114,14 @@ const List = (
         onDelete,
         onMove,
         onBack,
+        sort,
+        onSort,
+        onFilter,
+        mailSettings,
+        userSettings,
     }: Props,
     ref: Ref<HTMLDivElement>
 ) => {
-    const [userSettings] = useUserSettings();
-    const [mailSettings] = useMailSettings();
-
     const { shouldHighlight } = useEncryptedSearchContext();
     // Override compactness of the list view to accomodate body preview when showing encrypted search results
     const isCompactView = userSettings.Density === DENSITY.COMPACT && !shouldHighlight();
@@ -189,7 +195,17 @@ const List = (
                 <h1 className="sr-only">
                     {conversationMode ? c('Title').t`Conversation list` : c('Title').t`Message list`}
                 </h1>
-                <div className="items-column-list-inner opacity-on-hover-supercontainer flex flex-nowrap flex-column relative items-column-list-inner--mail">
+                <div className="items-column-list-inner flex flex-nowrap flex-column relative items-column-list-inner--mail">
+                    <ListSettings
+                        sort={sort}
+                        onSort={onSort}
+                        onFilter={onFilter}
+                        filter={filter}
+                        conversationMode={conversationMode}
+                        mailSettings={mailSettings}
+                        isSearch={isSearch}
+                        labelID={labelID}
+                    />
                     {showESSlowToolbar && <ESSlowToolbar />}
                     {showTaskRunningBanner && <TaskRunningBanner className={showESSlowToolbar ? '' : 'mt1'} />}
                     {elements.length === 0 ? (

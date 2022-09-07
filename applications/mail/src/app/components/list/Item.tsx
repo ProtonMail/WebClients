@@ -4,6 +4,7 @@ import { ItemCheckbox, classnames, useLabels, useMailSettings } from '@proton/co
 import { MAILBOX_LABEL_IDS, VIEW_MODE } from '@proton/shared/lib/constants';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { getRecipients as getMessageRecipients, getSender, isDraft, isSent } from '@proton/shared/lib/mail/messages';
+import clsx from '@proton/utils/clsx';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { getRecipients as getConversationRecipients, getSenders } from '../../helpers/conversation';
@@ -124,7 +125,12 @@ const Item = ({
     };
 
     return (
-        <div className={classnames(['item-container-wrapper relative', !unread && 'read'])}>
+        <div
+            className={clsx(
+                'item-container-wrapper relative',
+                (isCompactView || !columnLayout) && 'border-bottom border-weak'
+            )}
+        >
             <div
                 onContextMenu={(event) => onContextMenu(event, element)}
                 onClick={handleClick}
@@ -176,6 +182,7 @@ const Item = ({
                     loading={loading}
                     breakpoints={breakpoints}
                     onBack={onBack}
+                    isSelected={isSelected}
                 />
             </div>
         </div>
