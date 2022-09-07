@@ -13,7 +13,7 @@ import {
 } from '@proton/components';
 import { MAILBOX_LABEL_IDS, VIEW_MODE } from '@proton/shared/lib/constants';
 import { getSearchParams } from '@proton/shared/lib/helpers/url';
-import { MailSettings } from '@proton/shared/lib/interfaces';
+import { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { isDraft } from '@proton/shared/lib/mail/messages';
 
@@ -56,6 +56,7 @@ import { MailboxContainerContextProvider } from './MailboxContainerProvider';
 interface Props {
     labelID: string;
     mailSettings: MailSettings;
+    userSettings: UserSettings;
     breakpoints: Breakpoints;
     elementID?: string;
     messageID?: string;
@@ -65,6 +66,7 @@ interface Props {
 const MailboxContainer = ({
     labelID: inputLabelID,
     mailSettings,
+    userSettings,
     breakpoints,
     elementID,
     messageID,
@@ -310,14 +312,10 @@ const MailboxContainer = ({
                             onCheck={handleCheck}
                             page={page}
                             total={total}
-                            filter={filter}
-                            sort={sort}
                             isSearch={isSearch}
                             onPage={handlePage}
                             onBack={handleBack}
                             onElement={handleElement}
-                            onFilter={handleFilter}
-                            onSort={handleSort}
                             onMarkAs={handleMarkAs}
                             onMove={handleMove}
                             onDelete={handleDelete}
@@ -363,6 +361,11 @@ const MailboxContainer = ({
                             onDelete={handleDelete}
                             onMove={handleMove}
                             onBack={handleBack}
+                            mailSettings={mailSettings}
+                            userSettings={userSettings}
+                            sort={sort}
+                            onSort={handleSort}
+                            onFilter={handleFilter}
                         />
                     </ErrorBoundary>
                     <ErrorBoundary>

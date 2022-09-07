@@ -30,7 +30,7 @@
     --border-norm: #4a4658;
     --border-weak: #343140;
 
-    --background-norm: #1c1b24;
+    --background-norm: #16141c;
     --background-weak: #292733;
     --background-strong: #3f3b4c;
 
@@ -52,8 +52,10 @@
     --optional-link-hover: var(--interaction-norm-major-2);
     --optional-link-active: var(--interaction-norm-major-3);
 
-    --optional-email-item-read-background-color: #16141c;
-    --optional-email-item-read-text-color: var(--text-norm);
+    --optional-email-item-unread-background-color: #1E1C26;
+
+    --optional-email-item-read-background-color: var(--background-norm);
+    --optional-email-item-read-text-color: var(--text-weak);
 
     --optional-mini-calendar-today-color: white;
 
