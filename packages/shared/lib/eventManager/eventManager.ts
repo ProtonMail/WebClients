@@ -1,10 +1,8 @@
 import { getEvents } from '../api/events';
-import { INTERVAL_EVENT_TIMER } from '../constants';
+import { FIBONACCI_LIST, INTERVAL_EVENT_TIMER } from '../constants';
 import createListeners, { Listener } from '../helpers/listeners';
 import { onceWithQueue } from '../helpers/onceWithQueue';
 import { Api } from '../interfaces';
-
-const FIBONACCI = [1, 1, 2, 3, 5, 8];
 
 export enum EVENT_ID_KEYS {
     DEFAULT = 'EventID',
@@ -88,7 +86,7 @@ const eventManager = ({
     const increaseRetryIndex = () => {
         const index = getRetryIndex();
         // Increase the retry index when the call fails to not spam.
-        if (index < FIBONACCI.length - 1) {
+        if (index < FIBONACCI_LIST.length - 1) {
             setRetryIndex(index + 1);
         }
     };
@@ -103,7 +101,7 @@ const eventManager = ({
             return;
         }
 
-        const ms = interval * FIBONACCI[retryIndex];
+        const ms = interval * FIBONACCI_LIST[retryIndex];
         // eslint-disable-next-line
         STATE.timeoutHandle = setTimeout(call, ms);
     };
