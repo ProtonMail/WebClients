@@ -18,7 +18,12 @@ export const updateKeyPackets = (modelMessage: MessageState, syncedMessage: Mess
     return { changed, Attachments };
 };
 
-export const getPureAttachments = (attachments: Attachment[]) => {
+export const getPureAttachments = (attachments: Attachment[], isNumAttachmentsWithoutEmbedded: boolean) => {
+    // If the Feature flag is not set we need to return all attachments
+    if (!isNumAttachmentsWithoutEmbedded) {
+        return attachments;
+    }
+
     return attachments.filter(({ Headers }) => {
         // If the attachment disposition is inline and has the header content-id it's an embedded image
         // In the attachment list, we want to hide embedded images so we need to filter them
