@@ -52,10 +52,10 @@ describe('Mailbox retries and waitings', () => {
         const { getItems } = await setup({ totalConversations: conversations.length });
 
         expect(conversationRequestSpy).toHaveBeenCalledTimes(1);
-        expectElements(getItems, conversations.length, true);
+        expectElements(getItems, conversations.length, false);
 
         await act(async () => {
-            await wait(1000);
+            await wait(10000);
         });
 
         expect(conversationRequestSpy).toHaveBeenCalledTimes(2);
