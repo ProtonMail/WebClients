@@ -148,14 +148,6 @@ describe('MailHeader', () => {
 
             assertAppLink(upgradeLabel, '/mail/upgrade?ref=upsell_mail-button-1');
         });
-
-        it('should show upgrade button', async () => {
-            const { getByText } = await setup();
-
-            const upgradeLabel = getByText('Upgrade');
-
-            assertAppLink(upgradeLabel, '/mail/upgrade?ref=upsell_mail-button-1');
-        });
     });
 
     describe('Search features', () => {

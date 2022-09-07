@@ -1,0 +1,92 @@
+@import '~@proton/styles/scss/config';
+
+$amount-size: 36;
+
+.offer {
+	&-modal {
+		&.modal-two-dialog--large {
+			// only increasing size for large case = when 3 plans
+			--size: #{em(1000)}; // to define
+		}
+
+		& .modal-two-header-title {
+			inline-size: 100%;
+			padding-inline-start: em(36); // to compensate close button
+		}
+	}
+
+	&-proton-logo {
+		margin-block-start: em(-12); // magic number to align with close button
+		@include respond-to($breakpoint-small) {
+			inline-size: em(30); // just to avoid having images going to another next line on mobile
+		}
+	}
+	@include respond-to($breakpoint-small) {
+		&-proton-logo {
+			inline-size: em(30); // just to avoid having images going to another next line on mobile
+			margin-block-start: em(-12); // magic number to align with close button on mobile
+		}
+	}
+
+	&-countdown {
+		&-number {
+			font-variant: tabular-nums;
+			min-inline-size: 2em;
+		}
+	}
+
+	&-plan-container {
+		flex: 1;
+		max-inline-size: 25em;
+
+		&:not(:first-child) {
+			margin-inline-start: 1em;
+			@include respond-to($breakpoint-small) {
+				margin-inline-start: 0;
+			}
+		}
+		@include respond-to($breakpoint-small) {
+			max-inline-size: none;
+		}
+	}
+
+	&-plan {
+		padding-inline: em(24);
+
+		&.is-focused {
+			border-color: var(--field-focus);
+			box-shadow: 0 0 0 #{$fields-focus-ring-size} var(--field-highlight);
+		}
+	}
+
+	&-percentage {
+		inset-inline-start: 50%;
+		transform: translateX(-50%) translateY(-50%);
+
+		[dir='rtl'] & {
+			transform: translateX(50%) translateY(-50%);
+		}
+
+		border-radius: 1em;
+		z-index: 1;
+	}
+
+	&-monthly-price {
+		display: block;
+
+		.amount,
+		.currency {
+			font-size: em($amount-size);
+			font-weight: var(--font-weight-bold);
+		}
+
+		.suffix {
+			margin-inline-start: 0.5em;
+			color: var(--text-weak);
+		}
+	}
+
+	&-features:empty {
+		display: none;
+	}
+}
