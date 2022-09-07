@@ -7,9 +7,8 @@ import { APPS, BLACK_FRIDAY, COUPON_CODES } from '@proton/shared/lib/constants';
 
 import { Badge } from '../../components';
 
-const vpnAppName = getAppName(APPS.PROTONVPN_SETTINGS);
-
 const { BUNDLE, PROTONTEAM, BLACK_FRIDAY_2018, BLACK_FRIDAY_2019, BLACK_FRIDAY_2020 } = COUPON_CODES;
+const vpnAppName = getAppName(APPS.PROTONVPN_SETTINGS);
 
 interface Props {
     code: string;

@@ -494,7 +494,7 @@ export enum CYCLE {
 }
 
 export const BLACK_FRIDAY = {
-    COUPON_CODE: 'BF2021',
+    COUPON_CODE: 'BF2022',
     START: new Date(Date.UTC(2021, 10, 1, 5)), // 6 AM CET
     END: new Date(Date.UTC(2022, 0, 1, 17)), // 6 PM CET
     CYBER_START: new Date(Date.UTC(2020, 10, 30, 6)),
@@ -644,6 +644,7 @@ export enum COUPON_CODES {
     BLACK_FRIDAY_2018 = 'TWO4ONE2018',
     BLACK_FRIDAY_2019 = 'BF2019',
     BLACK_FRIDAY_2020 = 'BF2020',
+    BLACK_FRIDAY_2022 = 'BF2022',
     LIFETIME = 'LIFETIME',
     VISIONARYFOREVER = 'VISIONARYFOREVER',
     REFERRAL = 'REFERRAL',
