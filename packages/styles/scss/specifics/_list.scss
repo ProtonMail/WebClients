@@ -46,11 +46,9 @@
 
 $item-container-height: rem(66) !default;
 $item-container-padding-block: em(13) !default;
-
 $item-container-padding-inline-start: em(16) !default;
 $item-container-padding-inline-end: em(12) !default;
 $item-container-padding-inline: $item-container-padding-inline-start $item-container-padding-inline-end;
-
 $item-container-height-compact-mode: rem(56) !default;
 $item-container-row-height-compact-mode: rem(36) !default;
 $item-container-row-padding-block: em(5) !default; // design wants 48px
