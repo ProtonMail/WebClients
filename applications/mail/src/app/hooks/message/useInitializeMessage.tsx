@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 
 import { PayloadAction } from '@reduxjs/toolkit';
 
-import { useApi, useMailSettings } from '@proton/components';
+import { FeatureCode, useApi, useFeature, useMailSettings } from '@proton/components';
 import { WorkerDecryptionResult } from '@proton/crypto';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
@@ -56,6 +56,8 @@ export const useInitializeMessage = () => {
     const [mailSettings] = useMailSettings();
     const { verifyKeys } = useKeyVerification();
 
+    const isNumAttachmentsWithoutEmbedded = useFeature(FeatureCode.NumAttachmentsWithoutEmbedded).feature?.Value;
+
     const onUpdateAttachment = (ID: string, attachment: WorkerDecryptionResult<Uint8Array>) => {
         dispatch(updateAttachment({ ID, attachment }));
     };
@@ -98,13 +100,13 @@ export const useInitializeMessage = () => {
             const mimeAttachments = decryption.attachments || [];
 
             // Get Pure Mime Attachments to prevent display of embedded images in the attachment list
-            const pureMimeAttachments = getPureAttachments(mimeAttachments);
+            const pureMimeAttachments = getPureAttachments(mimeAttachments, isNumAttachmentsWithoutEmbedded);
 
             // The backend is supposed to filter embedded images,
             // but we sometimes we receive messages with a NumAttachment = 0 which contains pure attachments,
             // This leads to hide the attachment list, and the user is not able to see the message attachments
             // We are doing an additional verification to update NumAttachments if needed
-            const pureAttachments = getPureAttachments(getData().Attachments);
+            const pureAttachments = getPureAttachments(getData().Attachments, isNumAttachmentsWithoutEmbedded);
 
             // If we calculate a different NumAttachments than the one received,
             // we need to update the message to display the attachment list
