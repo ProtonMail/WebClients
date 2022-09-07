@@ -7,9 +7,7 @@ import { Icon, ToolbarButton } from '@proton/components';
 
 import { MARK_AS_STATUS } from '../../hooks/actions/useMarkAs';
 import { useElementBreakpoints } from '../../hooks/useElementBreakpoints';
-import { Filter, Sort } from '../../models/tools';
 import { Breakpoints } from '../../models/utils';
-import FilterActions from './FilterActions';
 import LabelsAndFolders from './LabelsAndFolders';
 import MoreDropdown from './MoreDropdown';
 import MoveButtons from './MoveButtons';
@@ -17,7 +15,6 @@ import NavigationControls from './NavigationControls';
 import PagingControls from './PagingControls';
 import ReadUnreadButtons from './ReadUnreadButtons';
 import SelectAll from './SelectAll';
-import SortDropdown from './SortDropdown';
 
 const defaultSelectedIDs: string[] = [];
 
@@ -35,14 +32,10 @@ interface Props {
     breakpoints: Breakpoints;
     page: number;
     total: number | undefined;
-    filter: Filter;
-    sort: Sort;
     isSearch: boolean;
     onPage: (page: number) => void;
     onBack: () => void;
     onElement: (elementID: string | undefined) => void;
-    onFilter: (filter: Filter) => void;
-    onSort: (sort: Sort) => void;
     onMarkAs: (status: MARK_AS_STATUS) => Promise<void>;
     onMove: (labelID: string) => Promise<void>;
     onDelete: () => Promise<void>;
@@ -65,13 +58,9 @@ const Toolbar = ({
     onBack,
     page,
     total,
-    filter,
-    sort,
     isSearch,
     onPage,
     onElement,
-    onFilter,
-    onSort,
     onMarkAs,
     onMove,
     onDelete,
@@ -136,32 +125,23 @@ const Toolbar = ({
                         onBack={onBack}
                     />
                 ) : null}
-                <MoreDropdown
-                    labelID={labelID}
-                    elementIDs={elementIDs}
-                    selectedIDs={selectedIDs}
-                    isSearch={isSearch}
-                    isNarrow={isNarrow}
-                    isTiny={isTiny}
-                    isExtraTiny={breakpoint === 'extratiny'}
-                    onMove={onMove}
-                    onDelete={onDelete}
-                    onBack={onBack}
-                    breakpoints={breakpoints}
-                    conversationMode={conversationMode}
-                />
             </div>
             <div className="flex toolbar-inner">
                 {listInView ? (
                     <>
-                        <FilterActions icon={!isMedium} filter={filter} onFilter={onFilter} />
-                        <SortDropdown
+                        <MoreDropdown
                             labelID={labelID}
-                            conversationMode={conversationMode}
-                            icon={!isMedium}
-                            sort={sort}
-                            onSort={onSort}
+                            elementIDs={elementIDs}
+                            selectedIDs={selectedIDs}
                             isSearch={isSearch}
+                            isNarrow={isNarrow}
+                            isTiny={isTiny}
+                            isExtraTiny={breakpoint === 'extratiny'}
+                            onMove={onMove}
+                            onDelete={onDelete}
+                            onBack={onBack}
+                            breakpoints={breakpoints}
+                            conversationMode={conversationMode}
                         />
                         <PagingControls
                             narrowMode={isNarrow}

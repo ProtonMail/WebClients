@@ -2,7 +2,6 @@ import { useLocation } from 'react-router';
 
 import { c } from 'ttag';
 
-import { Vr } from '@proton/atoms';
 import {
     DropdownMenu,
     DropdownMenuButton,
@@ -53,7 +52,6 @@ const PagingControls = ({ loading, page: inputPage, total: inputTotal, onPage: i
     if (narrowMode) {
         return (
             <>
-                <Vr />
                 <ToolbarDropdown
                     title={c('Action').t`Change page`}
                     content={String(page)}
@@ -90,12 +88,12 @@ const PagingControls = ({ loading, page: inputPage, total: inputTotal, onPage: i
         );
     }
 
+    const totalText = total || 1; // total is 0 when no items
     // translator: Used for pagination, both values are number. Ex: "3 of 15"
-    const paginationLabel = c('Pagination').t`${page} of ${total}`;
+    const paginationLabel = c('Pagination').t`${page} of ${totalText}`;
 
     return (
         <>
-            <Vr />
             <ToolbarButton
                 disabled={loading || page <= 1}
                 title={c('Action').t`Previous page`}
@@ -107,33 +105,14 @@ const PagingControls = ({ loading, page: inputPage, total: inputTotal, onPage: i
             <ToolbarDropdown
                 title={c('Action').t`Change page`}
                 content={paginationLabel}
-                disabled={total <= 1}
+                disabled={loading || total <= 1}
                 size="narrow"
                 data-testid="toolbar:page-number-dropdown"
                 hasCaret={false}
             >
                 {() => (
                     <DropdownMenu>
-                        <DropdownMenuButton
-                            loading={loading}
-                            disabled={page === 1}
-                            onClick={() => onPage(1)}
-                            aria-label={c('Action').t`Go to first page`}
-                            data-testid={`toolbar:first-page`}
-                        >
-                            {c('Action').t`Go to first page`}
-                        </DropdownMenuButton>
-                        <DropdownMenuButton
-                            loading={loading}
-                            disabled={page === total}
-                            onClick={() => onPage(total)}
-                            aria-label={c('Action').t`Go to last page`}
-                            data-testid={`toolbar:last-page`}
-                            className="border-bottom"
-                        >
-                            {c('Action').t`Go to last page`}
-                        </DropdownMenuButton>
-                        <Scroll style={{ height: '120px' }}>
+                        <Scroll>
                             {[...Array(total)].map((_, i) => {
                                 const pageNumber = i + 1; // paging tooling is 0 based
                                 const active = page === pageNumber;

@@ -40,10 +40,6 @@ const config: ThemeConfig[] = [
                 path: './themes/src/carbon/standard-base.css',
                 type: 'dark',
             },
-            {
-                path: './themes/src/carbon/prominent-base.css',
-                type: 'dark',
-            },
         ],
     },
     {
@@ -86,10 +82,6 @@ const config: ThemeConfig[] = [
         files: [
             {
                 path: './themes/src/monokai/standard-base.css',
-                type: 'dark',
-            },
-            {
-                path: './themes/src/monokai/prominent-base.css',
                 type: 'dark',
             },
         ],

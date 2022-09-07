@@ -27,6 +27,7 @@
 
 		&-inner {
 			padding-inline: em(8, 12);
+			border-radius: inherit;
 			text-align: start;
 
 			&.with-delete {
