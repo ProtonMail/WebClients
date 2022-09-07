@@ -1,5 +1,5 @@
 import { c } from 'ttag';
-import { SectionConfig, getShowNewDomainSection } from '@proton/components';
+import { SectionConfig } from '@proton/components';
 import { Address, Organization, UserModel, UserType } from '@proton/shared/lib/interfaces';
 import { ADDRESS_TYPE, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 
@@ -20,13 +20,11 @@ export const getMailAppRoutes = ({
     addresses,
     organization,
     isSpyTrackerEnabled,
-    newDomain,
 }: {
     user: UserModel;
     addresses: Address[];
     organization: Organization;
     isSpyTrackerEnabled: boolean;
-    newDomain?: string;
 }) => {
     const hasOrganization = !!organization?.HasKeys;
     return <const>{
@@ -68,11 +66,6 @@ export const getMailAppRoutes = ({
                 to: '/identity-addresses',
                 icon: 'card-identity',
                 subsections: [
-                    {
-                        text: `@${newDomain}`,
-                        id: 'new-domain',
-                        available: getShowNewDomainSection({ user, domain: newDomain }),
-                    },
                     {
                         text: c('Title').t`Display name and signature`,
                         id: 'name-signature',
