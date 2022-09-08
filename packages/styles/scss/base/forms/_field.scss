@@ -48,6 +48,10 @@ $field-container: rem(260) !default;
 		}
 	}
 
+	@include respond-to($breakpoint-small, 'max') {
+		font-size: max(16px, $base-font-size);
+	}
+
 	&.field--tiny,
 	&.field--small,
 	&.field--large {
