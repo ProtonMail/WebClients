@@ -63,7 +63,8 @@ td,
 th {
 	font-size: 1em;
 	line-height: 1.5;
-	margin: 1.5em 0;
+	margin-block: 1.5em;
+	margin-inline: 0;
 }
 
 input,

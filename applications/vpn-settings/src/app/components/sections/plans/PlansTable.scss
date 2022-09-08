@@ -36,11 +36,11 @@
 	thead {
 		tr:first-of-type {
 			& :nth-child(2) {
-				border-top-left-radius: var(--border-radius-md);
+				border-start-start-radius: var(--border-radius-md);
 			}
 
 			& :last-child {
-				border-top-right-radius: var(--border-radius-md);
+				border-start-end-radius: var(--border-radius-md);
 			}
 		}
 	}
@@ -48,7 +48,7 @@
 	tbody {
 		tr {
 			&:first-of-type .simple-table-row-th {
-				border-top-left-radius: var(--border-radius-md);
+				border-start-start-radius: var(--border-radius-md);
 			}
 
 			&:last-of-type {
@@ -78,6 +78,7 @@
 }
 
 /* modifiers for highlighting a plan */
+
 /* ADR :
 	 - getting type or unit from attr is not supported by any browser => https://developer.mozilla.org/en-US/docs/Web/CSS/attr
 	 - CSS custom properties can't be used in selectors => https://css-irl.info/practical-tips-css-variables/

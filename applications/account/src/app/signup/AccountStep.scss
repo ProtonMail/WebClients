@@ -2,5 +2,5 @@
 // These values (0.5 em) go with the bodyClassName on the challenge
 .challenge-width-increase {
 	margin-inline-start: -0.5em;
-	width: calc(100% + 1em);
+	inline-size: calc(100% + 1em);
 }

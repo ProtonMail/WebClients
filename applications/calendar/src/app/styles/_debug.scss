@@ -15,8 +15,7 @@
 	.is-week-view,
 	.is-month-view {
 		&::after {
-			padding-block-end: 8em;
-			// thanks Apple for the fixed toolbar at the bottom
+			padding-block-end: 8em; // thanks Apple for the fixed toolbar at the bottom
 		}
 	}
 }

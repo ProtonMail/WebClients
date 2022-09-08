@@ -43,6 +43,7 @@
 		font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
 		font-size: rem(14);
 		line-height: 1.65;
+
 		// margin-inline-start: rem(8);
 		margin-block-start: rem(8);
 		color: grey;
@@ -102,7 +103,7 @@
 
 .editor-toolbar-more-dropdown {
 	.editor-toolbar-icon {
-		width: em(16);
-		height: em(16);
+		inline-size: em(16);
+		block-size: em(16);
 	}
 }
