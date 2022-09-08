@@ -36,18 +36,22 @@
 			.contactsummary-container {
 				display: block;
 			}
+
 			.contactsummary-photo-container {
 				inline-size: auto;
 				margin-block-end: 0.5em;
 				margin-inline: auto;
 			}
+
 			.contactsummary-contact-name-container {
 				padding-inline-start: 0;
 			}
+
 			.contactsummary-contact-name {
 				margin-block-end: 1em;
 				text-align: center;
 			}
+
 			.contactsummary-action-buttons {
 				text-align: center;
 			}
@@ -56,6 +60,7 @@
 			.contact-view-cta {
 				padding-inline: 0;
 			}
+
 			.contact-summary-wrapper {
 				margin-inline: 0;
 			}
@@ -63,9 +68,11 @@
 			.contact-view-row-left {
 				flex-direction: column;
 			}
+
 			.contact-view-row-label {
 				max-inline-size: 100%;
 			}
+
 			.contact-view-row-content {
 				flex-basis: auto;
 				padding-inline-start: 0;

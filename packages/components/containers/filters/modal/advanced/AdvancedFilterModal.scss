@@ -3,14 +3,14 @@
 .advanced-filter-modal {
 	// Special case for the Sieve editor
 	--size: #{rem(1200)};
+
 	block-size: 100%;
 
 	.scroll-inner,
 	.scroll-child,
 	.modal-two-content {
 		display: flex;
-		flex-direction: column;
-		flex-wrap: nowrap;
+		flex-flow: column nowrap;
 		flex: 1 1 auto;
 	}
 
@@ -22,6 +22,7 @@
 	.react-codemirror2 {
 		flex: 1 1 auto;
 	}
+
 	.CodeMirror {
 		block-size: 100%;
 		min-block-size: 13em;

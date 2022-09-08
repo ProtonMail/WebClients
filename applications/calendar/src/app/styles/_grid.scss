@@ -9,7 +9,7 @@
 
 		&-day {
 			@include respond-to($breakpoint-small, 'max') {
-				width: 100%;
+				inline-size: 100%;
 			}
 
 			@include respond-to($breakpoint-small, 'min') {

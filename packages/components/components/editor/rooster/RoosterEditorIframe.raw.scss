@@ -17,28 +17,32 @@ body.isDarkMode {
 }
 
 *::-webkit-scrollbar {
-	width: 0.625rem; /* 10px */
-	height: 0.625rem;
+	inline-size: 0.625rem; /* 10px */
+	block-size: 0.625rem;
 }
+
 *::-webkit-scrollbar-thumb {
 	border: 0.125rem solid transparent; /* 2px */
 	background-clip: padding-box;
 	border-radius: 0.313rem; /* 5px */
 	background-color: var(--scrollbar-thumb-color, rgb(0 0 0 / 0.35));
 }
+
 *::-webkit-scrollbar-track {
 	background-color: transparent;
 }
+
 *::-webkit-scrollbar-thumb:horizontal:hover,
 *::-webkit-scrollbar-thumb:vertical:hover {
 	background-color: var(--scrollbar-thumb-hover-color, rgb(0 0 0 / 0.5));
 }
+
 *::-webkit-scrollbar-corner {
 	visibility: hidden;
 }
 
 html {
-	height: 100%;
+	block-size: 100%;
 	font-size: 100%;
 	cursor: text;
 }
@@ -50,6 +54,7 @@ body {
 	line-height: 1.5; // Need to be bigger so that we don't have jumps when adding emojis
 	color: black;
 	background: white;
+
 	/* to fix, CSS var are not passing through the iframe */
 	word-wrap: break-word;
 	margin: 0;
@@ -64,7 +69,7 @@ body a {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	height: 100%;
+	block-size: 100%;
 }
 
 #rooster-editor-wrapper {
@@ -81,9 +86,10 @@ body a {
 }
 
 blockquote {
-	padding: 0 0 0 1rem;
+	padding-block: 0;
+	padding-inline: 1rem 0;
 	margin: 0;
-	border-left: 4px solid #e5e5e5;
+	border-inline-start: 4px solid #e5e5e5;
 }
 
 blockquote blockquote blockquote {
@@ -109,8 +115,8 @@ blockquote blockquote blockquote {
 }
 
 .icon-14p {
-	width: 14px;
-	height: 14px;
+	inline-size: 14px;
+	block-size: 14px;
 }
 
 .proton-toggle-button {
@@ -146,12 +152,12 @@ blockquote blockquote blockquote {
 
 .proton-embedded:not([src]) {
 	position: relative;
-	min-height: 38px;
+	min-block-size: 38px;
 	border: 1px solid;
 	border-color: #444 #ccc #ccc #444;
 }
 
-.proton-embedded:not([src]):not([alt]) {
+.proton-embedded:not([src], [alt]) {
 	background-position-x: 50%;
 }
 
@@ -162,14 +168,15 @@ blockquote blockquote blockquote {
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
-	padding: 10px 0 0 20px;
+	padding-block: 10px 0;
+	padding-inline: 20px 0;
 	color: rgb(0 0 0 / 0.5);
 }
 
 /* see embedded.scss rules */
-.proton-embedded:not([width]):not([style*='width']) {
-	max-width: 100%;
-	min-width: 38px;
+.proton-embedded:not([width], [style*='width']) {
+	max-inline-size: 100%;
+	min-inline-size: 38px;
 }
 
 .protonmail_quote {

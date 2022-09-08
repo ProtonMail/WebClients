@@ -18,6 +18,7 @@
 		flex: 1;
 		border: none;
 		block-size: 100%;
+
 		&:first-child {
 			flex-grow: 0;
 			flex-basis: rem(35);

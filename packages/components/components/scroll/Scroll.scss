@@ -39,7 +39,7 @@ $scrollshadow-size: rem(5) !default;
 				position: absolute;
 				inset-block-start: 0;
 				inline-size: $scrollshadow-size;
-				height: 100%;
+				block-size: 100%;
 				opacity: 0;
 				transition: 250ms easing(ease-out-cubic);
 			}

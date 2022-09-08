@@ -2,7 +2,8 @@
 
 .modal-two-footer {
 	display: flex;
-	margin: 1em var(--margin) calc(var(--margin) - 0.5em) var(--margin);
+	margin-block: 1em calc(var(--margin) - 0.5em);
+	margin-inline: var(--margin);
 	justify-content: space-between;
 	flex-wrap: wrap-reverse;
 

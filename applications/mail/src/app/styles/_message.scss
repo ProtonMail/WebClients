@@ -310,7 +310,7 @@ $container-to-width: 4em !default;
 
 	// only for message details, recipient should take full width
 	.message-detail-modal-container & {
-		width: 100%;
+		inline-size: 100%;
 	}
 }
 
@@ -389,7 +389,7 @@ $container-to-width: 4em !default;
 
 	&.message-iframe--hidden {
 		opacity: 0;
-		height: 0;
+		block-size: 0;
 		overflow: hidden;
 	}
 }
