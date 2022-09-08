@@ -174,10 +174,10 @@ const SubscriptionCycleSelector = ({
                 const isSelected = cycle === cycleSelected;
                 const { total, totalPerMonth, discount } = totals[cycle];
                 return (
-                    <li key={`${cycle}`} className="rounded bg-norm flex flex-align-items-stretch">
+                    <li key={`${cycle}`} className="flex flex-align-items-stretch mb1">
                         <button
                             className={classnames([
-                                'w100 p1 plan-cycle-button flex flex-nowrap border rounded text-left mb1',
+                                'w100 p1 plan-cycle-button flex flex-nowrap border rounded text-left',
                                 isSelected && 'border-primary',
                             ])}
                             disabled={disabled}
