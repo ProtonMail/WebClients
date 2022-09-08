@@ -8,7 +8,7 @@
 	color: var(--field-text-color);
 	outline: none;
 	filter: none; // fixes Firefox autofill color
-	transition: 0.15s easing(ease-out-quint), height 0s;
+	transition: 0.15s easing(ease-out-quint), block-size 0s;
 
 	&:hover,
 	&.hover {

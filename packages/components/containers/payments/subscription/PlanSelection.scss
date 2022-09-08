@@ -7,6 +7,7 @@
 	.cycle-currency-selectors {
 		&.flex-nowrap {
 			flex-wrap: wrap;
+
 			> .flex-item-fluid {
 				min-inline-size: 100%;
 				margin-inline-start: 0;
@@ -20,10 +21,12 @@
 	display: grid;
 	grid-gap: 1.5em;
 	grid-template-columns: repeat(var(--plan-selection-number, 4), 1fr);
+
 	& &-plan {
 		// specificity ^^
 		border-radius: var(--border-radius-lg);
 	}
+
 	// dirty, but to avoid inserting content in tabs
 	&-currency-selector {
 		margin-block-end: -2.5em;
@@ -45,6 +48,7 @@
 	.plan-selection {
 		&-plan-recommended {
 			border-width: 2px;
+
 			&-pill {
 				&-container {
 					position: absolute;
@@ -64,6 +68,7 @@
 				text-align: start;
 				block-size: auto;
 				background: transparent;
+
 				svg {
 					inline-size: rem(16);
 					block-size: rem(16);
@@ -118,13 +123,16 @@
 		&-container {
 			position: static;
 		}
+
 		&-top-container {
 			flex-direction: column;
+
 			& > * {
 				inline-size: 100%;
 				flex-basis: auto;
 			}
 		}
+
 		&-options {
 			&,
 			& .payment-container {

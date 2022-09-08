@@ -30,11 +30,14 @@
 	&:focus:focus-visible {
 		outline: none;
 	}
+
 	// transition: all .25s ease; should be applied only when opened and end of animation <-- this is solved by react-transition-group
 	&-header {
 		&--draggable {
-			padding: rem(24) rem(24) 0;
-			margin: rem(-24) rem(-24) 0;
+			padding-block: rem(24) 0;
+			padding-inline: rem(24);
+			margin-block: rem(-24) 0;
+			margin-inline: rem(-24);
 			cursor: grab;
 
 			&:active {
@@ -42,6 +45,7 @@
 			}
 		}
 	}
+
 	&-actions {
 		> * + * {
 			margin-inline-start: rem(8);
@@ -116,6 +120,7 @@
 	from {
 		opacity: 0;
 	}
+
 	to {
 		opacity: 1;
 	}

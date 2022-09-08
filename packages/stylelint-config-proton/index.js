@@ -74,7 +74,7 @@ module.exports = {
         'function-name-case': 'lower',
         'function-url-quotes': 'never',
 
-        'csstools/use-logical': 'always',
+        'liberty/use-logical-spec': 'always',
     },
-    plugins: ['stylelint-use-logical'],
+    plugins: ['stylelint-use-logical-spec'],
 };

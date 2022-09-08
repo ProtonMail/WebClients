@@ -7,7 +7,6 @@ $price-size: 21;
 .blackfriday-mail-modal.modal {
 	background: transparent url(./bg-mountains.svg) 50% 50%;
 	background-size: cover;
-
 	inline-size: rem(800);
 	max-inline-size: rem(800);
 
@@ -16,14 +15,17 @@ $price-size: 21;
 	.modal-header {
 		color: white;
 	}
+
 	.modal-content-inner,
 	.scrollshadow-static {
 		background: transparent;
 	}
+
 	.scrollshadow-sticky {
 		&--top {
 			background-image: none;
 		}
+
 		&--bottom {
 			inset-block-end: 0;
 			background-image: none;
@@ -47,10 +49,12 @@ $price-size: 21;
 	.modal-header {
 		padding-block-end: 0.5em;
 	}
+
 	.modal-title {
 		text-align: center;
 		padding-inline-end: 0;
 	}
+
 	// no dark theme
 	.blackfriday-plan {
 		background-color: white;
@@ -64,7 +68,6 @@ $price-size: 21;
 
 		--primary: #4da358 !important;
 		--primary-contrast: white !important;
-
 		--interaction-norm: #4da358 !important;
 		--interaction-norm-hover: #3e8447 !important;
 		--interaction-norm-active: #2e7037 !important;
@@ -100,9 +103,11 @@ $price-size: 21;
 .blackfriday-percentage {
 	inset-inline-start: 50%;
 	transform: translateX(-50%) translateY(-50%);
+
 	[dir='rtl'] & {
 		transform: translateX(50%) translateY(-50%);
 	}
+
 	border-radius: 1em;
 	padding-block: 0.1em;
 	padding-inline: 0.75em;
@@ -111,17 +116,21 @@ $price-size: 21;
 
 .blackfriday-monthly-price.blackfriday-monthly-price {
 	display: block;
+
 	.suffix {
 		display: block;
 	}
+
 	.amount {
 		font-size: em($amount-size);
 		font-weight: var(--font-weight-bold);
 	}
+
 	.currency {
 		font-size: em($price-size);
 		font-weight: var(--font-weight-bold);
 	}
+
 	.decimal {
 		font-size: em($price-size, $amount-size);
 		font-weight: var(--font-weight-bold);
@@ -131,6 +140,7 @@ $price-size: 21;
 .blackfriday-plan-container {
 	flex: 1;
 	max-inline-size: 25em;
+
 	&:not(:first-child) {
 		margin-inline-start: 1em;
 		@include respond-to($breakpoint-small) {
@@ -164,9 +174,8 @@ $price-size: 21;
 	.blackfriday-plan {
 		border-start-start-radius: 0;
 		border-start-end-radius: 0;
-		//border-width: 2px;
-		//border-color: var(--primary);
 	}
+
 	.blackfriday-percentage {
 		inset-block-start: -2.8em;
 		z-index: 1;
@@ -177,6 +186,7 @@ $price-size: 21;
 	.blackfriday-plan-container {
 		margin-block-end: 2em;
 	}
+
 	.blackfriday-plan-container--productPayer {
 		margin-block-end: 0;
 	}
