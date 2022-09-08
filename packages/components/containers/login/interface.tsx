@@ -25,6 +25,7 @@ export enum AuthStep {
 }
 
 export interface AuthCacheResult {
+    appName: APP_NAMES;
     authVersion: AuthVersion;
     authResult: AuthResponse;
     api: Api;
@@ -38,6 +39,7 @@ export interface AuthCacheResult {
     loginPassword: string;
     hasGenerateKeys: boolean;
     hasInternalAddressSetup: boolean;
+    hasTrustedDeviceRecovery: boolean;
     ignoreUnlock: boolean;
     internalAddressSetup?: InternalAddressGeneration;
 }
@@ -60,6 +62,7 @@ export interface AuthSession {
     flow?: AuthFlows;
     appIntent?: AppIntent;
     persistent: boolean;
+    trusted: boolean;
 }
 
 export type AuthActionResponse =

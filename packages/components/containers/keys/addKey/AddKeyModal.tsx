@@ -37,15 +37,14 @@ const AddKeyModal = ({ existingAlgorithms, type, onAdd, ...rest }: Props) => {
     const [encryptionType, setEncryptionType] = useState<ENCRYPTION_TYPES>(DEFAULT_ENCRYPTION_CONFIG);
     const [newKeyFingerprint, setNewKeyFingerprint] = useState<string>();
 
-    const handleProcess = () => {
-        onAdd(ENCRYPTION_CONFIGS[encryptionType])
-            .then((fingerprint) => {
-                setNewKeyFingerprint(fingerprint);
-                setStep(STEPS.SUCCESS);
-            })
-            .catch(() => {
-                rest.onClose?.();
-            });
+    const handleProcess = async () => {
+        try {
+            const fingerprint = await onAdd(ENCRYPTION_CONFIGS[encryptionType]);
+            setNewKeyFingerprint(fingerprint);
+            setStep(STEPS.SUCCESS);
+        } catch (error) {
+            rest.onClose?.();
+        }
     };
 
     const { children, onSubmit, submit, close, loading } = (() => {
@@ -58,7 +57,7 @@ const AddKeyModal = ({ existingAlgorithms, type, onAdd, ...rest }: Props) => {
                     const nextStep = algorithmExists ? STEPS.WARNING : STEPS.GENERATE_KEY;
                     setStep(nextStep);
                     if (nextStep === STEPS.GENERATE_KEY) {
-                        handleProcess();
+                        void handleProcess();
                     }
                 },
                 submit: c('Action').t`Continue`,
@@ -80,7 +79,7 @@ const AddKeyModal = ({ existingAlgorithms, type, onAdd, ...rest }: Props) => {
             return {
                 onSubmit: () => {
                     setStep(STEPS.GENERATE_KEY);
-                    handleProcess();
+                    void handleProcess();
                 },
                 close: c('Action').t`No`,
                 submit: c('Action').t`Continue`,

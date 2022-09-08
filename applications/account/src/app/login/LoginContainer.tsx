@@ -2,7 +2,15 @@ import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { AbuseModal, OnLoginCallback, useApi, useErrorHandler } from '@proton/components';
+import {
+    AbuseModal,
+    FeatureCode,
+    OnLoginCallback,
+    useApi,
+    useConfig,
+    useErrorHandler,
+    useFeature,
+} from '@proton/components';
 import { AuthActionResponse, AuthCacheResult, AuthStep } from '@proton/components/containers/login/interface';
 import {
     handleLogin,
@@ -14,7 +22,7 @@ import {
 import { revoke } from '@proton/shared/lib/api/auth';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import { BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import { APPS, BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import noop from '@proton/utils/noop';
 
@@ -51,8 +59,18 @@ const LoginContainer = ({
     hasGenerateKeys = true,
     hasActiveSessions = false,
 }: Props) => {
+    const { APP_NAME } = useConfig();
     const errorHandler = useErrorHandler();
     const [abuseModal, setAbuseModal] = useState<{ apiErrorMessage?: string } | undefined>(undefined);
+    const originalTrustedDeviceRecoveryFeature = useFeature<boolean>(FeatureCode.TrustedDeviceRecovery);
+    const trustedDeviceRecoveryFeature =
+        APP_NAME === APPS.PROTONVPN_SETTINGS
+            ? {
+                  loading: false,
+                  feature: { Value: false },
+              }
+            : originalTrustedDeviceRecoveryFeature;
+    const hasTrustedDeviceRecovery = !!trustedDeviceRecoveryFeature.feature?.Value;
 
     const normalApi = useApi();
     const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });
@@ -132,6 +150,7 @@ const LoginContainer = ({
                             defaultUsername={previousUsernameRef.current}
                             hasRemember={hasRemember}
                             hasActiveSessions={hasActiveSessions}
+                            trustedDeviceRecoveryFeature={trustedDeviceRecoveryFeature}
                             onSubmit={async ({ username, password, payload, persistent }) => {
                                 return handleLogin({
                                     username,
@@ -139,6 +158,8 @@ const LoginContainer = ({
                                     persistent,
                                     api: silentApi,
                                     hasGenerateKeys,
+                                    hasTrustedDeviceRecovery,
+                                    appName: APP_NAME,
                                     ignoreUnlock: false,
                                     hasInternalAddressSetup: !!shouldSetupInternalAddress,
                                     payload,
