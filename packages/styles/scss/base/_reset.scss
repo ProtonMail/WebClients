@@ -57,7 +57,8 @@ td,
 th {
 	font-size: 1em;
 	line-height: inherit;
-	margin: $base-line-height * 1em 0;
+	margin-block: $base-line-height * 1em;
+	margin-inline: 0;
 }
 
 @if $use-reset-button==true {

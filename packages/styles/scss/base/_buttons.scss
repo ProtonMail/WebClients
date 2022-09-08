@@ -192,7 +192,8 @@
 	}
 
 	&.button-large {
-		padding: em(13, 16);
+		padding-block: em(13, 16);
+		padding-inline: em(13, 16);
 	}
 
 	& > svg {

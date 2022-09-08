@@ -11,7 +11,7 @@
 	background: var(--background-norm);
 
 	@include respond-to($breakpoint-tiny, 'height') {
-		max-height: 100%;
+		max-block-size: 100%;
 	}
 
 	@include respond-to($breakpoint-small, 'max') {
@@ -54,7 +54,7 @@
 		background-color: var(--background-norm);
 		color: var(--text-norm);
 		transition: inherit;
-		height: 100%;
+		block-size: 100%;
 		margin-block-start: -0.5em;
 	}
 
@@ -66,8 +66,8 @@
 
 	&--minimized {
 		@include respond-to($breakpoint-tiny, 'height') {
-			max-height: initial;
-			height: initial;
+			max-block-size: initial;
+			block-size: initial;
 		}
 	}
 
@@ -91,7 +91,7 @@
 
 		@include respond-to($breakpoint-tiny, 'min-height') {
 			&:last-child {
-				border-bottom: none;
+				border-block-end: none;
 			}
 		}
 
@@ -136,6 +136,7 @@
 				margin-inline-start: 0.5em;
 			}
 		}
+
 		.transfers-manager-list-item-controls-button {
 			opacity: 0;
 			will-change: opacity;
