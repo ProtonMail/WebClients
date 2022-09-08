@@ -160,7 +160,7 @@ textarea.field {
 
 /* errors */
 .error-zone {
-	transition: transform 0.15s linear, max-height 0.15s linear;
+	transition: transform 0.15s linear, max-block-size 0.15s linear;
 	transform: scaleY(1);
 	transform-origin: top center;
 

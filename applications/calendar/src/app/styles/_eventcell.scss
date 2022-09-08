@@ -207,8 +207,8 @@
 	}
 
 	&:is(#{&}--sm, #{&}--xs, #{&}--2xs) &-lock-icon {
-		width: min(#{$line-height}, #{rem(16)});
-		height: min(#{$line-height}, #{rem(16)});
+		inline-size: min(#{$line-height}, #{rem(16)});
+		block-size: min(#{$line-height}, #{rem(16)});
 	}
 
 	&--sm &-title {
