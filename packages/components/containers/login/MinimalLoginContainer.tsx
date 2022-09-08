@@ -8,7 +8,7 @@ import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import noop from '@proton/utils/noop';
 
 import { CircleLoader, Input, Label, PasswordInput, PrimaryButton, UnderlineButton } from '../../components';
-import { useApi, useErrorHandler, useLoading, useNotifications } from '../../hooks';
+import { useApi, useConfig, useErrorHandler, useLoading, useNotifications } from '../../hooks';
 import { OnLoginCallback } from '../app/interface';
 import { Challenge, ChallengeError, ChallengeRef, ChallengeResult } from '../challenge';
 import AbuseModal from './AbuseModal';
@@ -225,6 +225,7 @@ interface Props {
 }
 
 const MinimalLoginContainer = ({ onLogin, hasChallenge = false, ignoreUnlock = false, needHelp, footer }: Props) => {
+    const { APP_NAME } = useConfig();
     const { createNotification } = useNotifications();
     const [abuseModal, setAbuseModal] = useState<{ apiErrorMessage?: string } | undefined>(undefined);
 
@@ -289,6 +290,7 @@ const MinimalLoginContainer = ({ onLogin, hasChallenge = false, ignoreUnlock = f
                     hasChallenge={hasChallenge}
                     onSubmit={(username, password, payload) => {
                         return handleLogin({
+                            appName: APP_NAME,
                             username,
                             password,
                             payload,
@@ -296,6 +298,7 @@ const MinimalLoginContainer = ({ onLogin, hasChallenge = false, ignoreUnlock = f
                             hasGenerateKeys: false,
                             ignoreUnlock,
                             hasInternalAddressSetup: false,
+                            hasTrustedDeviceRecovery: false,
                             persistent: false,
                         })
                             .then(handleResult)

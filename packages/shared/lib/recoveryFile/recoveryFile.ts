@@ -3,10 +3,10 @@ import { concatArrays } from '@proton/crypto/lib/utils';
 import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { KEY_FILE_EXTENSION } from '../constants';
+import { APPS, APP_NAMES, KEY_FILE_EXTENSION } from '../constants';
 import downloadFile from '../helpers/downloadFile';
-import { DecryptedKey, KeyWithRecoverySecret } from '../interfaces';
-import { ArmoredKeyWithInfo } from '../keys';
+import { Address, DecryptedKey, Key, KeyWithRecoverySecret, User } from '../interfaces';
+import { ArmoredKeyWithInfo, getHasMigratedAddressKeys, getPrimaryKey } from '../keys';
 
 const decryptRecoveryFile = (recoverySecrets: KeyWithRecoverySecret[]) => async (file: string) => {
     try {
@@ -66,15 +66,15 @@ export const generateRecoverySecret = async (privateKey: PrivateKeyReference) =>
     };
 };
 
-export const exportRecoveryFile = async ({
+export const generateRecoveryFileMessage = async ({
     recoverySecret,
-    userKeys,
+    privateKeys,
 }: {
     recoverySecret: string;
-    userKeys: DecryptedKey[];
+    privateKeys: PrivateKeyReference[];
 }) => {
     const userKeysArray = await Promise.all(
-        userKeys.map(({ privateKey }) =>
+        privateKeys.map((privateKey) =>
             CryptoProxy.exportPrivateKey({ privateKey: privateKey, passphrase: null, format: 'binary' })
         )
     );
@@ -84,6 +84,20 @@ export const exportRecoveryFile = async ({
         passwords: [recoverySecret],
     });
 
+    return message;
+};
+
+export const exportRecoveryFile = async ({
+    recoverySecret,
+    userKeys,
+}: {
+    recoverySecret: string;
+    userKeys: DecryptedKey[];
+}) => {
+    const message = await generateRecoveryFileMessage({
+        recoverySecret,
+        privateKeys: userKeys.map(({ privateKey }) => privateKey),
+    });
     const blob = new Blob([message], { type: 'text/plain' });
     downloadFile(blob, `proton_recovery${KEY_FILE_EXTENSION}`);
 };
@@ -99,4 +113,38 @@ export const validateRecoverySecret = async (recoverySecret: KeyWithRecoverySecr
     });
 
     return verified === VERIFICATION_STATUS.SIGNED_AND_VALID;
+};
+
+export const getKeyWithRecoverySecret = (key: Key | undefined) => {
+    if (!key?.RecoverySecret || !key?.RecoverySecretSignature) {
+        return;
+    }
+    return key as KeyWithRecoverySecret;
+};
+
+export const getRecoverySecrets = (Keys: Key[] = []): KeyWithRecoverySecret[] => {
+    return Keys.map(getKeyWithRecoverySecret).filter(isTruthy);
+};
+
+export const getPrimaryRecoverySecret = (Keys: Key[] = []): KeyWithRecoverySecret | undefined => {
+    return getKeyWithRecoverySecret(Keys?.[0]);
+};
+
+export const getIsRecoveryFileAvailable = ({
+    user,
+    addresses,
+    userKeys,
+    appName,
+}: {
+    user: User;
+    addresses: Address[];
+    userKeys: DecryptedKey[];
+    appName: APP_NAMES;
+}) => {
+    const hasMigratedKeys = getHasMigratedAddressKeys(addresses);
+    const primaryKey = getPrimaryKey(userKeys);
+
+    const isPrivateUser = Boolean(user.Private);
+
+    return !!primaryKey?.privateKey && hasMigratedKeys && isPrivateUser && appName !== APPS.PROTONVPN_SETTINGS;
 };

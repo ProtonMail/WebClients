@@ -5,17 +5,19 @@ import { auth2FA, getInfo, revoke } from '@proton/shared/lib/api/auth';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getKeySalts } from '@proton/shared/lib/api/keys';
-import { upgradePassword } from '@proton/shared/lib/api/settings';
+import { getSettings, upgradePassword } from '@proton/shared/lib/api/settings';
 import { getUser } from '@proton/shared/lib/api/user';
 import { InfoResponse } from '@proton/shared/lib/authentication/interface';
 import loginWithFallback from '@proton/shared/lib/authentication/loginWithFallback';
 import { maybeResumeSessionByUser, persistSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
+import { APP_NAMES } from '@proton/shared/lib/constants';
 import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
 import { withAuthHeaders } from '@proton/shared/lib/fetch/headers';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import {
     Api,
+    UserSettings,
     UserType,
     Address as tsAddress,
     KeySalt as tsKeySalt,
@@ -23,6 +25,7 @@ import {
 } from '@proton/shared/lib/interfaces';
 import {
     InternalAddressGenerationPayload,
+    getDecryptedUserKeysHelper,
     getInternalAddressSetupMode,
     getSentryError,
     handleInternalAddressGeneration,
@@ -30,6 +33,12 @@ import {
 } from '@proton/shared/lib/keys';
 import { handleSetupAddressKeys } from '@proton/shared/lib/keys/setupAddressKeys';
 import { getHasV2KeysToUpgrade, upgradeV2KeysHelper } from '@proton/shared/lib/keys/upgradeKeysV2';
+import {
+    attemptDeviceRecovery,
+    getIsDeviceRecoveryAvailable,
+    removeDeviceRecovery,
+    storeDeviceRecovery,
+} from '@proton/shared/lib/recoveryFile/deviceRecovery';
 import { srpVerify } from '@proton/shared/lib/srp';
 import { AUTH_VERSION } from '@proton/srp';
 import noop from '@proton/utils/noop';
@@ -48,7 +57,7 @@ const finalizeLogin = async ({
     loginPassword,
     keyPassword,
     user: maybeUser,
-    addresses: maybeAddresess,
+    addresses: maybeAddresses,
 }: {
     cache: AuthCacheResult;
     loginPassword: string;
@@ -56,7 +65,16 @@ const finalizeLogin = async ({
     user?: tsUser;
     addresses?: tsAddress[];
 }): Promise<AuthActionResponse> => {
-    const { authResult, authVersion, api, authApi, persistent, hasInternalAddressSetup } = cache;
+    const {
+        authResult,
+        authVersion,
+        api,
+        authApi,
+        persistent,
+        hasInternalAddressSetup,
+        appName,
+        hasTrustedDeviceRecovery,
+    } = cache;
 
     if (authVersion < AUTH_VERSION) {
         await srpVerify({
@@ -66,12 +84,12 @@ const finalizeLogin = async ({
         });
     }
 
-    const User = !maybeUser ? await authApi<{ User: tsUser }>(getUser()).then(({ User }) => User) : maybeUser;
+    let User = !maybeUser ? await authApi<{ User: tsUser }>(getUser()).then(({ User }) => User) : maybeUser;
 
     if (hasInternalAddressSetup && User.Type === UserType.EXTERNAL) {
         const [{ Domains = [] }, addresses] = await Promise.all([
             authApi<{ Domains: string[] }>(queryAvailableDomains('signup')),
-            maybeAddresess || getAllAddresses(authApi),
+            maybeAddresses || getAllAddresses(authApi),
         ]);
         return {
             to: AuthStep.GENERATE_INTERNAL,
@@ -95,15 +113,60 @@ const finalizeLogin = async ({
         };
     }
 
-    await persistSession({ ...authResult, User, keyPassword, api, persistent });
+    let trusted = false;
+    if (hasTrustedDeviceRecovery && keyPassword) {
+        const numberOfReactivatedKeys = await attemptDeviceRecovery({
+            api: authApi,
+            user: User,
+            addresses: maybeAddresses,
+            keyPassword,
+        }).catch(noop);
+
+        if (numberOfReactivatedKeys !== undefined && numberOfReactivatedKeys > 0) {
+            // Refetch user with new reactivated keys
+            User = await authApi<{ User: tsUser }>(getUser()).then(({ User }) => User);
+            maybeAddresses = undefined;
+        }
+
+        // Store device recovery information
+        if (persistent) {
+            const [userKeys, addresses] = await Promise.all([
+                getDecryptedUserKeysHelper(User, keyPassword),
+                getAllAddresses(authApi),
+            ]);
+            const isDeviceRecoveryAvailable = getIsDeviceRecoveryAvailable({
+                user: User,
+                addresses,
+                userKeys,
+                appName,
+            });
+
+            if (isDeviceRecoveryAvailable) {
+                const userSettings = await authApi<{ UserSettings: UserSettings }>(getSettings()).then(
+                    ({ UserSettings }) => UserSettings
+                );
+
+                if (userSettings.DeviceRecovery) {
+                    await storeDeviceRecovery({ api: authApi, user: User, userKeys });
+                    trusted = true;
+                }
+            }
+        } else {
+            removeDeviceRecovery(User.ID);
+        }
+    }
+
+    await persistSession({ ...authResult, User, keyPassword, api, persistent, trusted });
+
     return {
         to: AuthStep.DONE,
         session: {
             ...authResult,
             User,
-            Addresses: maybeAddresess,
+            Addresses: maybeAddresses,
             keyPassword,
             persistent,
+            trusted,
         },
     };
 };
@@ -136,7 +199,7 @@ const handleKeyMigration = async ({
     loginPassword,
     keyPassword,
     user: maybeUser,
-    addresses: maybeAddresess,
+    addresses: maybeAddresses,
 }: {
     cache: AuthCacheResult;
     loginPassword: string;
@@ -148,7 +211,7 @@ const handleKeyMigration = async ({
 
     const [User, Addresses] = await Promise.all([
         maybeUser || authApi<{ User: tsUser }>(getUser()).then(({ User }) => User),
-        maybeAddresess || hasGenerateKeys ? getAllAddresses(authApi) : undefined,
+        maybeAddresses || hasGenerateKeys ? getAllAddresses(authApi) : undefined,
     ]);
 
     let hasDoneMigration = false;
@@ -392,6 +455,8 @@ export const handleLogin = async ({
     api,
     ignoreUnlock,
     hasGenerateKeys,
+    hasTrustedDeviceRecovery,
+    appName,
     hasInternalAddressSetup,
     payload,
 }: {
@@ -401,6 +466,8 @@ export const handleLogin = async ({
     api: Api;
     ignoreUnlock: boolean;
     hasGenerateKeys: boolean;
+    hasTrustedDeviceRecovery: boolean;
+    appName: APP_NAMES;
     hasInternalAddressSetup: boolean;
     payload?: ChallengeResult;
 }): Promise<AuthActionResponse> => {
@@ -418,6 +485,7 @@ export const handleLogin = async ({
         authResult,
         authVersion,
         api,
+        appName,
         authApi,
         ...getAuthTypes(authResult),
         username,
@@ -426,6 +494,7 @@ export const handleLogin = async ({
         ignoreUnlock,
         hasGenerateKeys,
         hasInternalAddressSetup,
+        hasTrustedDeviceRecovery,
     };
 
     return next({ cache, from: AuthStep.LOGIN });

@@ -57,7 +57,7 @@ export const handleDone = async ({
     cache: SignupCacheResult;
     appIntent?: AppIntent;
 }): Promise<SignupActionResponse> => {
-    const { persistent, setupData } = cache;
+    const { persistent, trusted, setupData } = cache;
     if (!setupData?.authResponse) {
         throw new Error('Missing auth response');
     }
@@ -65,6 +65,7 @@ export const handleDone = async ({
         session: {
             ...setupData.authResponse,
             persistent,
+            trusted,
             User: setupData.user,
             keyPassword: setupData.keyPassword,
             flow: 'signup',
@@ -251,10 +252,12 @@ export const handleSetupUser = async ({
         authApi(updateLocale(localeCode)).catch(noop),
     ]);
 
-    await persistSession({ ...authResponse, User: user, keyPassword, api, persistent });
+    const trusted = false;
+    await persistSession({ ...authResponse, User: user, keyPassword, api, persistent, trusted });
 
     const newCache = {
         ...cache,
+        trusted,
         setupData: {
             user,
             keyPassword,

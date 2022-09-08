@@ -1,6 +1,6 @@
 import { decodeUtf8Base64, encodeUtf8Base64 } from '@proton/crypto/lib/utils';
 
-import { LOCAL_ID_KEY, MAILBOX_PASSWORD_KEY, PERSIST_SESSION_KEY, UID_KEY } from '../constants';
+import { LOCAL_ID_KEY, MAILBOX_PASSWORD_KEY, PERSIST_SESSION_KEY, TRUST_SESSION_KEY, UID_KEY } from '../constants';
 
 interface Arguments {
     set: (key: string, value: any) => void;
@@ -26,7 +26,7 @@ const createAuthenticationStore = ({ set, get }: Arguments) => {
         return decodeUtf8Base64(value);
     };
 
-    const setLocalID = (LocalID: number) => set(LOCAL_ID_KEY, LocalID);
+    const setLocalID = (LocalID: number | undefined) => set(LOCAL_ID_KEY, LocalID);
     const getLocalID = () => get(LOCAL_ID_KEY);
 
     const hasSession = () => !!getUID();
@@ -34,6 +34,9 @@ const createAuthenticationStore = ({ set, get }: Arguments) => {
     const setPersistent = (persist: boolean | undefined) => set(PERSIST_SESSION_KEY, persist);
     // Keep old default behavior
     const getPersistent = () => get(PERSIST_SESSION_KEY) ?? true;
+
+    const setTrusted = (trusted: boolean | undefined) => set(TRUST_SESSION_KEY, trusted);
+    const getTrusted = () => get(TRUST_SESSION_KEY) ?? false;
 
     return {
         getUID,
@@ -45,6 +48,8 @@ const createAuthenticationStore = ({ set, get }: Arguments) => {
         getPassword,
         setPersistent,
         getPersistent,
+        setTrusted,
+        getTrusted,
     };
 };
 

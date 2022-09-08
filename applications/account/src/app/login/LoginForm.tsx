@@ -42,6 +42,7 @@ interface Props {
     defaultUsername?: string;
     hasRemember?: boolean;
     hasActiveSessions?: boolean;
+    trustedDeviceRecoveryFeature?: { loading?: boolean; feature: { Value: boolean } | undefined };
 }
 
 const LoginForm = ({
@@ -50,8 +51,9 @@ const LoginForm = ({
     signInText = c('Action').t`Sign in`,
     hasRemember,
     hasActiveSessions,
+    trustedDeviceRecoveryFeature,
 }: Props) => {
-    const [loading, withLoading] = useLoading();
+    const [submitting, withSubmitting] = useLoading();
     const [username, setUsername] = useState(defaultUsername);
     const [password, setPassword] = useState('');
     const [persistent, setPersistent] = useLocalState(false, defaultPersistentKey);
@@ -98,29 +100,39 @@ const LoginForm = ({
             className="color-inherit"
             key="learn-more"
             url={getKnowledgeBaseUrl('/how-to-access-protonmail-in-private-incognito-mode')}
-        >{c('Info').t`Learn more`}</Href>
+        >
+            {c('Info').t`Learn more`}
+        </Href>
     );
+
+    const keepMeSignedInLearnMoreLink = (
+        <Href className="color-inherit" key="learn-more" url={getKnowledgeBaseUrl('/keep-me-signed-in')}>
+            {c('Info').t`Why?`}
+        </Href>
+    );
+
+    const loading = challengeLoading || trustedDeviceRecoveryFeature?.loading;
 
     return (
         <>
-            {challengeLoading && (
+            {loading && (
                 <div className="text-center absolute absolute-center">
                     <Loader />
                 </div>
             )}
             <form
                 name="loginForm"
-                className={challengeLoading ? 'visibility-hidden' : undefined}
+                className={loading ? 'visibility-hidden' : undefined}
                 onSubmit={(event) => {
                     event.preventDefault();
-                    if (loading || !onFormSubmit()) {
+                    if (submitting || !onFormSubmit()) {
                         return;
                     }
                     const run = async () => {
                         const payload = await challengeRefLogin.current?.getChallenge();
                         return onSubmit({ username, password, persistent, payload });
                     };
-                    withLoading(run()).catch(noop);
+                    withSubmitting(run()).catch(noop);
                 }}
                 method="post"
             >
@@ -145,7 +157,7 @@ const LoginForm = ({
                     bigger
                     label={c('Label').t`Email or username`}
                     error={validator([requiredValidator(username)])}
-                    disableChange={loading}
+                    disableChange={submitting}
                     autoComplete="username"
                     value={username}
                     onValue={setUsername}
@@ -157,7 +169,7 @@ const LoginForm = ({
                     label={c('Label').t`Password`}
                     error={validator([requiredValidator(password)])}
                     as={PasswordInputTwo}
-                    disableChange={loading}
+                    disableChange={submitting}
                     autoComplete="current-password"
                     value={password}
                     onValue={setPassword}
@@ -170,29 +182,41 @@ const LoginForm = ({
                             id="staySignedIn"
                             className="mt0-5"
                             checked={persistent}
-                            onChange={loading ? noop : () => setPersistent(!persistent)}
+                            onChange={submitting ? noop : () => setPersistent(!persistent)}
                         />
-                        <div className="flex-item-fluid">
-                            <Label htmlFor="staySignedIn" className="flex flex-align-items-center">
-                                <span className="pr0-5">{c('Label').t`Keep me signed in`}</span>
-                                <span className="flex">
-                                    <Info
-                                        title={c('Info').t`You'll stay signed in even after you close the browser.`}
-                                    />
-                                </span>
-                            </Label>
-                            <div className="color-weak">
-                                {c('Info')
-                                    .jt`Not your device? Use a private browsing window to sign in and close it when done. ${learnMore}`}
+
+                        {trustedDeviceRecoveryFeature?.feature?.Value ? (
+                            <div className="flex-item-fluid">
+                                <Label htmlFor="staySignedIn" className="flex flex-align-items-center">
+                                    {c('Label').t`Keep me signed in`}
+                                </Label>
+                                <div className="color-weak">
+                                    {c('Info').jt`Recommended on trusted devices. ${keepMeSignedInLearnMoreLink}`}
+                                </div>
                             </div>
-                        </div>
+                        ) : (
+                            <div className="flex-item-fluid">
+                                <Label htmlFor="staySignedIn" className="flex flex-align-items-center">
+                                    <span className="pr0-5">{c('Label').t`Keep me signed in`}</span>
+                                    <span className="flex">
+                                        <Info
+                                            title={c('Info').t`You'll stay signed in even after you close the browser.`}
+                                        />
+                                    </span>
+                                </Label>
+                                <div className="color-weak">
+                                    {c('Info')
+                                        .jt`Not your device? Use a private browsing window to sign in and close it when done. ${learnMore}`}
+                                </div>
+                            </div>
+                        )}
                     </div>
                 )}
 
-                <Button size="large" color="norm" type="submit" fullWidth loading={loading} className="mt1-75">
+                <Button size="large" color="norm" type="submit" fullWidth loading={submitting} className="mt1-75">
                     {
                         // translator: when the "sign in" button is in loading state, it gets updated to "Signing in"
-                        loading ? c('Action').t`Signing in` : signInText
+                        submitting ? c('Action').t`Signing in` : signInText
                     }
                 </Button>
 
@@ -204,7 +228,7 @@ const LoginForm = ({
                     color="norm"
                     as={Link}
                     to={SSO_PATHS.SIGNUP}
-                    disabled={loading}
+                    disabled={submitting}
                 >
                     {c('Action').t`Create free account`}
                 </ButtonLike>

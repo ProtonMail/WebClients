@@ -144,6 +144,7 @@ export interface SignupCacheResult {
     inviteData: InviteData | undefined;
     referralData: ReferralData | undefined;
     persistent: boolean;
+    trusted: boolean;
     generateKeys: boolean;
     clientType: CLIENT_TYPES;
     ignoreExplore: boolean;

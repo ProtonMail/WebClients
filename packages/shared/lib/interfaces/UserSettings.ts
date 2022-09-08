@@ -51,29 +51,6 @@ export interface Flags {
 }
 
 export interface UserSettings {
-    AppWelcome: {
-        Account?: string[];
-        Calendar?: string[];
-        Contacts?: string[];
-        Mail?: string[];
-        Drive?: string[];
-    };
-    Email: {
-        Value: string;
-        Status: SETTINGS_STATUS;
-        Notify: number;
-        Reset: number;
-    };
-    Phone: {
-        Value: string;
-        Status: SETTINGS_STATUS;
-        Notify: number;
-        Reset: number;
-    };
-    Password: {
-        Mode: SETTINGS_PASSWORD_MODE;
-        ExpirationTime: number; // If set, after this time force password change
-    };
     '2FA': {
         Enabled: number; // 0 for disabled, 1 for OTP, 2 for U2F, 3 for both
         Allowed: number; // 0 for disabled, 1 for OTP, 2 for U2F, 3 for both
@@ -86,33 +63,57 @@ export interface UserSettings {
             }
         ];
     };
-    News: number;
+    AppWelcome: {
+        Account?: string[];
+        Calendar?: string[];
+        Contacts?: string[];
+        Mail?: string[];
+        Drive?: string[];
+    };
+    Checklists?: ChecklistId[];
+    CrashReports: 1 | 0;
+    DateFormat: SETTINGS_DATE_FORMAT;
+    DeviceRecovery: 0 | 1;
+    Density: DENSITY;
+    EarlyAccess: number;
+    Email: {
+        Value: string;
+        Status: SETTINGS_STATUS;
+        Notify: number;
+        Reset: number;
+    };
+    Flags: Flags;
+    InvoiceText: number;
     Locale: string;
     LogAuth: SETTINGS_LOG_AUTH_STATE;
-    InvoiceText: number;
-    Density: DENSITY;
-    Theme: string;
-    ThemeType: number;
-    WeekStart: SETTINGS_WEEK_START;
-    DateFormat: SETTINGS_DATE_FORMAT;
-    TimeFormat: SETTINGS_TIME_FORMAT;
-    Telemetry: 1 | 0;
-    CrashReports: 1 | 0;
-    Welcome: number;
-    WelcomeFlag: number;
-    EarlyAccess: number;
-    Flags: Flags;
-    Checklists?: ChecklistId[];
+    News: number;
+    Phone: {
+        Value: string;
+        Status: SETTINGS_STATUS;
+        Notify: number;
+        Reset: number;
+    };
+    Password: {
+        Mode: SETTINGS_PASSWORD_MODE;
+        ExpirationTime: number; // If set, after this time force password change
+    };
     Referral?: {
-        /**
-         * The referral link
-         * will always be a string containing the link.
-         */
-        Link: string;
         /**
          * 0 - Not elligible to
          * 1 - Elligible to "refer a friend"
          */
         Eligible: boolean;
+        /**
+         * The referral link
+         * will always be a string containing the link.
+         */
+        Link: string;
     };
+    Telemetry: 1 | 0;
+    Theme: string;
+    ThemeType: number;
+    TimeFormat: SETTINGS_TIME_FORMAT;
+    WeekStart: SETTINGS_WEEK_START;
+    WelcomeFlag: number;
+    Welcome: number;
 }

@@ -2,7 +2,7 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import { removeLastRefreshDate } from '../api/helpers/refreshStorage';
 import { getItem, removeItem, setItem } from '../helpers/storage';
-import { PersistedSession, PersistedSessionBlob } from './SessionInterface';
+import { PersistedSession, PersistedSessionBlob, PersistedSessionWithLocalID } from './SessionInterface';
 import { InvalidPersistentSessionError } from './error';
 import { getDecryptedBlob, getEncryptedBlob } from './sessionBlobCryptoHelper';
 import { getValidatedLocalID } from './sessionForkValidation';
@@ -23,6 +23,7 @@ export const getPersistedSession = (localID: number): PersistedSession | undefin
             blob: parsedValue.blob || '',
             isSubUser: parsedValue.isSubUser || false,
             persistent: typeof parsedValue.persistent === 'boolean' ? parsedValue.persistent : true, // Default to true (old behavior)
+            trusted: parsedValue.trusted || false,
         };
     } catch (e: any) {
         return undefined;
@@ -40,7 +41,7 @@ export const removePersistedSession = (localID: number, UID: string) => {
     removeItem(getKey(localID));
 };
 
-export const getPersistedSessions = () => {
+export const getPersistedSessions = (): PersistedSessionWithLocalID[] => {
     const localStorageKeys = Object.keys(localStorage);
     return localStorageKeys
         .filter((key) => key.startsWith(STORAGE_PREFIX))
@@ -89,7 +90,14 @@ export const getDecryptedPersistedSessionBlob = async (
 export const setPersistedSessionWithBlob = async (
     localID: number,
     key: CryptoKey,
-    data: { UserID: string; UID: string; keyPassword: string; isSubUser: boolean; persistent: boolean }
+    data: {
+        UserID: string;
+        UID: string;
+        keyPassword: string;
+        isSubUser: boolean;
+        persistent: boolean;
+        trusted: boolean;
+    }
 ) => {
     const persistedSession: PersistedSession = {
         UserID: data.UserID,
@@ -97,16 +105,21 @@ export const setPersistedSessionWithBlob = async (
         isSubUser: data.isSubUser,
         blob: await getEncryptedBlob(key, JSON.stringify({ keyPassword: data.keyPassword })),
         persistent: data.persistent,
+        trusted: data.trusted,
     };
     setItem(getKey(localID), JSON.stringify(persistedSession));
 };
 
-export const setPersistedSession = (localID: number, data: { UID: string; UserID: string; persistent: boolean }) => {
+export const setPersistedSession = (
+    localID: number,
+    data: { UID: string; UserID: string; persistent: boolean; trusted: boolean }
+) => {
     const persistedSession: PersistedSession = {
         UserID: data.UserID,
         UID: data.UID,
         isSubUser: false,
         persistent: data.persistent,
+        trusted: data.trusted,
     };
     setItem(getKey(localID), JSON.stringify(persistedSession));
 };

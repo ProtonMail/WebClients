@@ -62,6 +62,7 @@ interface SESSION {
         keyPassword?: string;
         User: tsUser;
         persistent: boolean;
+        trusted: boolean;
         tag?: Environment;
     };
 }

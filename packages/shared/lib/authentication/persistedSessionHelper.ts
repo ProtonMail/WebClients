@@ -1,4 +1,5 @@
 import { updateVersionCookie, versionCookieAtLoad } from '@proton/components/hooks/useEarlyAccess';
+import { PersistedSessionWithLocalID } from '@proton/shared/lib/authentication/SessionInterface';
 import getRandomString from '@proton/utils/getRandomString';
 
 import { getLocalKey, getLocalSessions, setCookies, setLocalKey } from '../api/auth';
@@ -30,6 +31,7 @@ export type ResumedSessionResult = {
     keyPassword?: string;
     User: tsUser;
     persistent: boolean;
+    trusted: boolean;
 };
 
 const handleSideApp = (localID: number) => {
@@ -45,7 +47,7 @@ const handleSideApp = (localID: number) => {
 
     const handler = (event: MessageEvent<SIDE_APP_ACTION>) => {
         if (event.data.type === SIDE_APP_EVENTS.SIDE_APP_SESSION) {
-            const { UID, keyPassword, User, persistent, tag } = event.data.payload;
+            const { UID, keyPassword, User, persistent, trusted, tag } = event.data.payload;
             window.removeEventListener('message', handler);
 
             if (timeout) {
@@ -59,7 +61,7 @@ const handleSideApp = (localID: number) => {
                 window.location.reload();
             }
 
-            resolve({ UID, keyPassword, User, persistent, LocalID: localID });
+            resolve({ UID, keyPassword, User, persistent, trusted, LocalID: localID });
         }
     };
 
@@ -93,6 +95,7 @@ export const resumeSession = async (api: Api, localID: number, User?: tsUser): P
         UserID: persistedUserID,
         blob: persistedSessionBlobString,
         persistent,
+        trusted,
     } = persistedSession;
 
     // User with password
@@ -108,7 +111,7 @@ export const resumeSession = async (api: Api, localID: number, User?: tsUser): P
             if (persistedUserID !== persistedUser.ID) {
                 throw InactiveSessionError();
             }
-            return { UID: persistedUID, LocalID: localID, keyPassword, User: persistedUser, persistent };
+            return { UID: persistedUID, LocalID: localID, keyPassword, User: persistedUser, persistent, trusted };
         } catch (e: any) {
             if (getIs401Error(e)) {
                 removePersistedSession(localID, persistedUID);
@@ -128,7 +131,7 @@ export const resumeSession = async (api: Api, localID: number, User?: tsUser): P
         if (persistedUserID !== User.ID) {
             throw InactiveSessionError();
         }
-        return { UID: persistedUID, LocalID: localID, User, persistent };
+        return { UID: persistedUID, LocalID: localID, User, persistent, trusted };
     } catch (e: any) {
         if (getIs401Error(e)) {
             removePersistedSession(localID, persistedUID);
@@ -145,6 +148,7 @@ interface PersistSessionWithPasswordArgs {
     UID: string;
     LocalID: number;
     persistent: boolean;
+    trusted: boolean;
 }
 
 export const persistSessionWithPassword = async ({
@@ -154,6 +158,7 @@ export const persistSessionWithPassword = async ({
     UID,
     LocalID,
     persistent,
+    trusted,
 }: PersistSessionWithPasswordArgs) => {
     const rawKey = crypto.getRandomValues(new Uint8Array(32));
     const key = await getKey(rawKey);
@@ -165,6 +170,7 @@ export const persistSessionWithPassword = async ({
         keyPassword,
         isSubUser: !!User.OrganizationPrivateKey,
         persistent,
+        trusted,
     });
 };
 
@@ -173,6 +179,7 @@ interface PersistLoginArgs {
     User: tsUser;
     keyPassword?: string;
     persistent: boolean;
+    trusted: boolean;
     AccessToken: string;
     RefreshToken: string;
     UID: string;
@@ -188,14 +195,15 @@ export const persistSession = async ({
     AccessToken,
     RefreshToken,
     persistent,
+    trusted,
 }: PersistLoginArgs) => {
     const authApi = <T>(config: any) => api<T>(withAuthHeaders(UID, AccessToken, config));
 
     if (isSSOMode) {
         if (keyPassword) {
-            await persistSessionWithPassword({ api: authApi, UID, User, LocalID, keyPassword, persistent });
+            await persistSessionWithPassword({ api: authApi, UID, User, LocalID, keyPassword, persistent, trusted });
         } else {
-            setPersistedSession(LocalID, { UID, UserID: User.ID, persistent });
+            setPersistedSession(LocalID, { UID, UserID: User.ID, persistent, trusted });
         }
     }
 
@@ -210,7 +218,12 @@ export const getActiveSessionByUserID = (UserID: string, isSubUser: boolean) => 
     });
 };
 
-export type GetActiveSessionsResult = { session?: ResumedSessionResult; sessions: LocalSessionResponse[] };
+export interface LocalSessionPersisted {
+    remote: LocalSessionResponse;
+    persisted: PersistedSessionWithLocalID;
+}
+
+export type GetActiveSessionsResult = { session?: ResumedSessionResult; sessions: LocalSessionPersisted[] };
 export const getActiveSessions = async (api: Api): Promise<GetActiveSessionsResult> => {
     const persistedSessions = getPersistedSessions();
     for (const persistedSession of persistedSessions) {
@@ -220,9 +233,12 @@ export const getActiveSessions = async (api: Api): Promise<GetActiveSessionsResu
                 withUIDHeaders(validatedSession.UID, getLocalSessions())
             );
             // The returned sessions have to exist in localstorage to be able to activate
-            const maybeActiveSessions = Sessions.filter(({ LocalID }) => {
-                return persistedSessions.some(({ localID }) => localID === LocalID);
-            });
+            const maybeActiveSessions = Sessions.map((remoteSession) => {
+                return {
+                    persisted: persistedSessions.find(({ localID }) => localID === remoteSession.LocalID),
+                    remote: remoteSession,
+                };
+            }).filter((value): value is LocalSessionPersisted => !!value.persisted);
             return {
                 session: validatedSession,
                 sessions: maybeActiveSessions,

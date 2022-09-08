@@ -12,3 +12,9 @@ export const deleteRecoverySecrets = () => ({
     url: 'core/v4/settings/recovery/secret',
     method: 'delete',
 });
+
+export const updateDeviceRecovery = (data: { DeviceRecovery: number }) => ({
+    url: 'core/v4/settings/devicerecovery',
+    method: 'PUT',
+    data,
+});

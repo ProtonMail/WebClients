@@ -22,7 +22,7 @@ const StorageListener = () => {
                 data?.localID === authentication.getLocalID?.() &&
                 !getIsSelf(id)
             ) {
-                authentication.logout('soft');
+                authentication.logout({ type: 'soft' });
             }
         };
         window.addEventListener('storage', cb);
