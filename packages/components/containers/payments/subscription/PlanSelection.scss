@@ -23,7 +23,6 @@
 	grid-template-columns: repeat(var(--plan-selection-number, 4), 1fr);
 
 	& &-plan {
-		// specificity ^^
 		border-radius: var(--border-radius-lg);
 	}
 
@@ -34,11 +33,13 @@
 
 	&-suffix {
 		min-block-size: rem(22); // just to keep elements aligned
+
 		&:empty {
 			@include respond-to($breakpoint-small) {
 				min-block-size: 0;
 			}
 		}
+
 		@include respond-to(1250) {
 			// to check with l10n issues
 			min-inline-size: 100%;
@@ -78,24 +79,30 @@
 
 		&-info {
 			min-block-size: 6em;
+
 			@include respond-to(1100) {
 				min-block-size: 7em;
 			}
+
 			@include respond-to(970) {
 				min-block-size: 8.5em;
 			}
+
 			@include respond-to($breakpoint-medium) {
 				min-block-size: 7em;
 			}
+
 			@include respond-to($breakpoint-small) {
 				min-block-size: 0;
 			}
 		}
 	}
+
 	@include respond-to($breakpoint-medium) {
 		grid-template-columns: repeat(2, 1fr);
 		grid-gap: 2.2em 1em;
 	}
+
 	@include respond-to($breakpoint-small) {
 		grid-template-columns: repeat(1, 1fr);
 	}
@@ -115,6 +122,7 @@
 		@include respond-to($breakpoint-medium) {
 			inline-size: rem(300); // to avoid left content shrinking too much
 		}
+
 		@include respond-to(800) {
 			inline-size: 100%; // a bit earlier than mobile breakpoint, same reason as above
 		}
@@ -124,20 +132,18 @@
 			position: static;
 		}
 
-		&-top-container {
-			flex-direction: column;
-
-			& > * {
-				inline-size: 100%;
-				flex-basis: auto;
-			}
-		}
-
 		&-options {
 			&,
 			& .payment-container {
 				max-inline-size: 100%;
 			}
+		}
+	}
+
+	@include respond-to(800, 'min') {
+		&-top-container {
+			display: flex;
+			flex-wrap: nowrap;
 		}
 	}
 }
