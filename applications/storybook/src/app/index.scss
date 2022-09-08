@@ -12,7 +12,7 @@ pre code {
 
 // dirty fixes while whaiting to have better solutions
 .language-markup code {
-	width: 100%;
+	inline-size: 100%;
 	white-space: pre-wrap;
 }
 
@@ -60,7 +60,8 @@ pre code {
 		position: absolute;
 		inset-block-start: 0.75em;
 		inset-inline-end: 0;
-		padding: 0 0.5em 0 0;
+		padding-block: 0;
+		padding-inline: 0 0.5em;
 		font-size: 2em;
 	}
 }
@@ -108,6 +109,7 @@ table {
 .sbdocs-a {
 	&#{&} {
 		@extend .link;
+
 		color: var(--link-norm) !important;
 	}
 }
@@ -193,7 +195,8 @@ table {
 }
 
 .docblock-colorpalette [title^='var(--'] {
-	padding: 0 0.1rem;
+	padding-block: 0;
+	padding-inline: 0.1rem;
 	font-size: 0.8em;
 	user-select: all;
 }
@@ -206,7 +209,8 @@ body.sb-main-fullscreen::before {
 	color: var(--primary-contrast);
 	border-radius: var(--border-radius-sm);
 	font-size: 0.8em;
-	padding: 0 0.3em;
+	padding-block: 0;
+	padding-inline: 0.3em;
 	inset-inline-end: 0;
 	z-index: 12000;
 }

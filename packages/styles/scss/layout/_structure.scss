@@ -59,7 +59,7 @@ html,
 .sidebar {
 	inline-size: var(--width-sidebar, #{rem($width-sidebar)});
 	visibility: visible;
-	transition: visibility 0s ease, transform 1s ease, width 0.6s ease, opacity 1s ease;
+	transition: visibility 0s ease, transform 1s ease, inline-size 0.6s ease, opacity 1s ease;
 	transition-delay: 0s;
 	overflow: auto;
 	background-color: var(--sidebar-background-color);

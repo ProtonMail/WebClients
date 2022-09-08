@@ -6,6 +6,7 @@
 	&::before {
 		@extend %item-loading-pseudo;
 		@extend %placeholder-loading;
+
 		inline-size: 70%;
 	}
 }

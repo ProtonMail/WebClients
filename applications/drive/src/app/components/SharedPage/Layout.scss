@@ -84,7 +84,6 @@
 		// Big screen has both columns in one big box.
 		background-color: white;
 		border-radius: var(--border-radius-lg);
-
 		max-block-size: 75vh;
 		min-block-size: rem(315); // To fit exactly 4 items on different screens before its expanded.
 
@@ -110,7 +109,6 @@
 			& > div {
 				background-color: white;
 				border-radius: var(--border-radius-lg);
-
 				padding: em(11);
 			}
 

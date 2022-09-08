@@ -1,11 +1,12 @@
 @import '~@proton/styles/scss/config';
 
 .background-container {
-	background-image: url('../../assets/tv_bg.svg');
+	background-image: url(../../assets/tv_bg.svg);
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: 1200px 800px;
 }
+
 .code-input-div {
 	.field,
 	.field:focus,
@@ -16,9 +17,10 @@
 		color: white;
 		block-size: rem(45) !important;
 		font-size: rem(15);
-		background-color: rgba(0, 0, 0, 0.301);
+		background-color: rgb(0 0 0 / 0.301);
+
 		&::placeholder {
-			color: rgba(255, 255, 255, 0.76);
+			color: rgb(255 255 255 / 0.76);
 		}
 	}
 }

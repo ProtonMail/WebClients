@@ -10,7 +10,7 @@
 		border-radius: 50%;
 		padding: 0.5em;
 		box-shadow: var(--shadow-lifted);
-		transition: bottom 0.5s easing(ease-out-quart);
+		transition: inset-block-end 0.5s easing(ease-out-quart);
 
 		&--is-higher {
 			inset-block-end: 4em;
