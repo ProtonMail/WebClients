@@ -83,6 +83,7 @@ export enum FeatureCode {
     SpotlightAutoAddedInvites = 'SpotlightAutoAddedInvites',
     ContextFiltering = 'ContextFiltering',
     EasySwitchGmailNewScope = 'EasySwitchGmailNewScope',
+    TrustedDeviceRecovery = 'TrustedDeviceRecovery',
 }
 
 export interface FeaturesContextValue {

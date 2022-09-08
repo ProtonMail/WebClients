@@ -17,6 +17,7 @@ import {
     useActiveBreakpoint,
     useAddresses,
     useCalendarSubscribeFeature,
+    useDeviceRecovery,
     useFeatures,
     useIsDataRecoveryAvailable,
     useNewDomainOptIn,
@@ -107,6 +108,8 @@ const MainContainer = () => {
     useEffect(() => {
         setExpand(false);
     }, [location.pathname, location.hash]);
+
+    useDeviceRecovery();
 
     const app = getAppFromPathnameSafe(location.pathname) || DEFAULT_APP;
     const appSlug = getSlugFromApp(app);

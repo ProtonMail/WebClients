@@ -19,9 +19,12 @@ import { pushForkSession } from '@proton/shared/lib/api/auth';
 import { OAuthLastAccess, getOAuthLastAccess } from '@proton/shared/lib/api/oauth';
 import { getAppHref, getClientID, getExtension, getInvoicesPathname } from '@proton/shared/lib/apps/helper';
 import { DEFAULT_APP, getAppFromPathname, getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
-import { LocalSessionResponse, PushForkResponse } from '@proton/shared/lib/authentication/interface';
+import { PushForkResponse } from '@proton/shared/lib/authentication/interface';
 import { stripLocalBasenameFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
-import { GetActiveSessionsResult } from '@proton/shared/lib/authentication/persistedSessionHelper';
+import {
+    GetActiveSessionsResult,
+    LocalSessionPersisted,
+} from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { produceFork, produceOAuthFork } from '@proton/shared/lib/authentication/sessionForking';
 import {
     APPS,
@@ -38,6 +41,7 @@ import { stripLeadingAndTrailingSlash } from '@proton/shared/lib/helpers/string'
 import { UserType } from '@proton/shared/lib/interfaces';
 import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 
+import HandleLogout from '../containers/HandleLogout';
 import LoginContainer from '../login/LoginContainer';
 import AuthExtension from '../public/AuthExtension';
 import EmailUnsubscribeContainer from '../public/EmailUnsubscribeContainer';
@@ -112,7 +116,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
     const api = useApi();
     const [forkState, setForkState] = useState<ActiveSessionData>();
     const [confirmForkData, setConfirmForkState] = useState<Extract<ProduceForkData, { type: SSOType.OAuth }>>();
-    const [activeSessions, setActiveSessions] = useState<LocalSessionResponse[]>();
+    const [activeSessions, setActiveSessions] = useState<LocalSessionPersisted[]>();
     const ignoreAutoRef = useRef(false);
     const [hasBackToSwitch, setHasBackToSwitch] = useState(false);
 
@@ -219,10 +223,10 @@ const PublicApp = ({ onLogin, locales }: Props) => {
             } catch (error) {}
         }
 
-        const { keyPassword, UID, User, LocalID, persistent, appIntent: maybeFlowAppIntent } = args;
+        const { keyPassword, UID, User: user, LocalID, persistent, trusted, appIntent: maybeFlowAppIntent } = args;
         const toAppIntent = maybeFlowAppIntent?.app || maybePreAppIntent;
         // Special case for external users to redirect to VPN until more apps are supported, when no app intent is provided.
-        const toApp = toAppIntent || (User.Type === UserType.EXTERNAL ? APPS.PROTONVPN_SETTINGS : DEFAULT_APP);
+        const toApp = toAppIntent || (user.Type === UserType.EXTERNAL ? APPS.PROTONVPN_SETTINGS : DEFAULT_APP);
 
         // Handle special case going for internal vpn on account settings.
         const localRedirect =
@@ -230,7 +234,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
             (toApp === APPS.PROTONVPN_SETTINGS ? getLocalRedirect(APPS_CONFIGURATION[toApp].settingsSlug) : undefined);
 
         // Upon login, if user is delinquent, the fork is aborted and the user is redirected to invoices
-        if (User.Delinquent >= UNPAID_STATE.DELINQUENT) {
+        if (user.Delinquent >= UNPAID_STATE.DELINQUENT) {
             return onLogin({
                 ...args,
                 path: `${getSlugFromApp(toApp)}${getInvoicesPathname(config.APP_NAME)}`,
@@ -241,7 +245,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
         if (forkState?.type === SSOType.Proton && getExtension(forkState.payload.app)) {
             await handleProduceFork({
                 type: SSOType.Proton,
-                payload: { ...forkState.payload, UID, keyPassword, persistent },
+                payload: { ...forkState.payload, UID, keyPassword, persistent, trusted },
             });
             return;
         }
@@ -256,7 +260,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
         if (forkState?.type === SSOType.Proton && args.flow !== 'signup') {
             await handleProduceFork({
                 type: SSOType.Proton,
-                payload: { ...forkState.payload, UID, keyPassword, persistent },
+                payload: { ...forkState.payload, UID, keyPassword, persistent, trusted },
             });
             return;
         }
@@ -344,18 +348,14 @@ const PublicApp = ({ onLogin, locales }: Props) => {
         return false;
     };
 
-    const handleSignOutAll = () => {
-        setActiveSessions([]);
-        setHasBackToSwitch(false);
-        history.push('/login');
-    };
-
-    const handleSignOut = (updatedActiveSessions?: LocalSessionResponse[]) => {
-        if (updatedActiveSessions?.length === 0) {
-            handleSignOutAll();
+    const handleSignOut = (updatedActiveSessions?: LocalSessionPersisted[]) => {
+        if (!updatedActiveSessions?.length) {
+            setActiveSessions([]);
+            setHasBackToSwitch(false);
+            history.push('/login');
             return;
         }
-        setActiveSessions(updatedActiveSessions);
+        setActiveSessions(updatedActiveSessions || []);
     };
 
     const handleAddAccount = () => {
@@ -371,6 +371,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
 
     return (
         <>
+            <HandleLogout />
             <ModalsChildren />
             <Switch>
                 <Route path={`${UNAUTHENTICATED_ROUTES.UNSUBSCRIBE}/:subscriptions`}>
@@ -450,7 +451,6 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                                                     toAppName={toAppName}
                                                     onLogin={handleLogin}
                                                     onSignOut={handleSignOut}
-                                                    onSignOutAll={handleSignOutAll}
                                                     onAddAccount={handleAddAccount}
                                                 />
                                             </Route>

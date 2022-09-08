@@ -43,6 +43,9 @@ module.exports = (config) => {
             'text/x-typescript': ['ts', 'tsx'],
         },
         reporters: ['spec'],
+        specReporter: {
+            suppressSkipped: true, // do not print information about skipped tests
+        },
         port: 9876,
         colors: true,
         logLevel: config.LOG_INFO,

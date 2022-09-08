@@ -1,4 +1,5 @@
 import { AuthResponse } from '@proton/shared/lib/authentication/interface';
+import { APP_NAMES } from '@proton/shared/lib/constants';
 import { Address, Api, DecryptedKey } from '@proton/shared/lib/interfaces';
 
 import { AuthSession } from '../login/interface';
@@ -30,6 +31,7 @@ interface MnemonicData {
 }
 
 export interface ResetCacheResult {
+    appName: APP_NAMES;
     username: string;
     persistent: boolean;
     Methods: RecoveryMethod[];
@@ -39,6 +41,7 @@ export interface ResetCacheResult {
     resetResponse?: ValidateResetTokenResponse;
     mnemonicData?: MnemonicData;
     hasGenerateKeys: boolean;
+    hasTrustedDeviceRecovery: boolean;
 }
 
 export type ResetActionResponse =

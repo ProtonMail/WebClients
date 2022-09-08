@@ -408,6 +408,7 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType }: Prop
                             inviteData: model.inviteData,
                             referralData: model.referralData,
                             persistent,
+                            trusted: false,
                             clientType,
                         };
                         return handleCreateAccount({

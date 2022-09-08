@@ -1,4 +1,4 @@
-import { Address, DecryptedKey, Key, UserModel } from '@proton/shared/lib/interfaces';
+import { Address, DecryptedKey, Key, User } from '@proton/shared/lib/interfaces';
 
 export interface KeyReactivationRequestStateData {
     id: string;
@@ -9,7 +9,7 @@ export interface KeyReactivationRequestStateData {
 
 export type KeyReactivationRequestState =
     | {
-          user: UserModel;
+          user: User;
           address: undefined;
           keys: DecryptedKey[];
           keysToReactivate: KeyReactivationRequestStateData[];
@@ -23,7 +23,7 @@ export type KeyReactivationRequestState =
 
 export type KeyReactivationRequest =
     | {
-          user: UserModel;
+          user: User;
           address?: undefined;
           keys: DecryptedKey[];
           keysToReactivate: Key[];

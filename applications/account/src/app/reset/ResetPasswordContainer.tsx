@@ -6,11 +6,14 @@ import { c } from 'ttag';
 import {
     Button,
     ButtonLike,
+    FeatureCode,
     GenericError,
     Href,
     OnLoginCallback,
     useApi,
+    useConfig,
     useErrorHandler,
+    useFeature,
     useLocalState,
     useMyLocation,
     useNotifications,
@@ -24,7 +27,7 @@ import {
     handleRequestToken,
     handleValidateResetToken,
 } from '@proton/components/containers/resetPassword/resetActions';
-import { BRAND_NAME } from '@proton/shared/lib/constants';
+import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 import { getStaticURL } from '@proton/shared/lib/helpers/url';
 
 import LoginSupportDropdown from '../login/LoginSupportDropdown';
@@ -45,6 +48,7 @@ interface Props {
 }
 
 const ResetPasswordContainer = ({ onLogin, hasGenerateKeys = true }: Props) => {
+    const { APP_NAME } = useConfig();
     const history = useHistory();
     const cacheRef = useRef<ResetCacheResult | undefined>(undefined);
     const errorHandler = useErrorHandler();
@@ -53,6 +57,15 @@ const ResetPasswordContainer = ({ onLogin, hasGenerateKeys = true }: Props) => {
     const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });
     const { createNotification } = useNotifications();
     const [persistent] = useLocalState(false, defaultPersistentKey);
+    const originalTrustedDeviceRecoveryFeature = useFeature<boolean>(FeatureCode.TrustedDeviceRecovery);
+    const trustedDeviceRecoveryFeature =
+        APP_NAME === APPS.PROTONVPN_SETTINGS
+            ? {
+                  loading: false,
+                  feature: { Value: false },
+              }
+            : originalTrustedDeviceRecoveryFeature;
+    const hasTrustedDeviceRecovery = !!trustedDeviceRecoveryFeature.feature?.Value;
 
     const [myLocation] = useMyLocation();
     const defaultCountry = myLocation?.Country?.toUpperCase();
@@ -67,10 +80,12 @@ const ResetPasswordContainer = ({ onLogin, hasGenerateKeys = true }: Props) => {
         const { username, persistent } = cacheRef.current || {};
         cacheRef.current = undefined;
         cacheRef.current = {
+            appName: APP_NAME,
             persistent: persistent ?? true,
             username: username ?? '',
             Methods: [],
             hasGenerateKeys,
+            hasTrustedDeviceRecovery,
         };
         setStep(STEPS.REQUEST_RECOVERY_METHODS);
     };
@@ -100,31 +115,39 @@ const ResetPasswordContainer = ({ onLogin, hasGenerateKeys = true }: Props) => {
         }
     };
 
-    useSearchParamsEffect((params) => {
-        const username = params.get('username');
-        const token = params.get('token');
-        if (username && token) {
-            setAutomaticVerification({ username, loading: true });
+    useSearchParamsEffect(
+        (params) => {
+            if (trustedDeviceRecoveryFeature.loading === true) {
+                return;
+            }
+            const username = params.get('username');
+            const token = params.get('token');
+            if (username && token) {
+                setAutomaticVerification({ username, loading: true });
 
-            handleValidateResetToken({
-                cache: {
-                    username,
-                    Methods: [],
-                    persistent,
-                    hasGenerateKeys,
-                },
-                api: silentApi,
-                token,
-            })
-                .then(handleResult)
-                .catch(handleError)
-                .finally(() => {
-                    setAutomaticVerification({ username, loading: false });
-                });
+                handleValidateResetToken({
+                    cache: {
+                        appName: APP_NAME,
+                        username,
+                        Methods: [],
+                        persistent,
+                        hasGenerateKeys,
+                        hasTrustedDeviceRecovery,
+                    },
+                    api: silentApi,
+                    token,
+                })
+                    .then(handleResult)
+                    .catch(handleError)
+                    .finally(() => {
+                        setAutomaticVerification({ username, loading: false });
+                    });
 
-            return new URLSearchParams();
-        }
-    }, []);
+                return new URLSearchParams();
+            }
+        },
+        [trustedDeviceRecoveryFeature.loading]
+    );
 
     const cache = cacheRef.current;
 
@@ -157,7 +180,9 @@ const ResetPasswordContainer = ({ onLogin, hasGenerateKeys = true }: Props) => {
                             defaultUsername={cache?.username || automaticVerification.username}
                             onSubmit={(username) => {
                                 return handleRequestRecoveryMethods({
+                                    appName: APP_NAME,
                                     hasGenerateKeys,
+                                    hasTrustedDeviceRecovery,
                                     username,
                                     persistent,
                                     api: silentApi,

@@ -178,6 +178,7 @@ const ChangePasswordModal = ({ mode, onClose, ...rest }: Props) => {
                 UID: authentication.getUID(),
                 LocalID: localID,
                 persistent: authentication.getPersistent(),
+                trusted: authentication.getTrusted(),
             });
             sendMessageToTabs(PASSWORD_CHANGE_MESSAGE_TYPE, { localID, status: true });
         } catch (e: any) {

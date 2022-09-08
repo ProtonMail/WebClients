@@ -1,16 +1,9 @@
-import { KeyWithRecoverySecret } from '@proton/shared/lib/interfaces';
-
+import { getPrimaryRecoverySecret } from '@proton/shared/lib/recoveryFile/recoveryFile';
 import { useUser } from './useUser';
 
-const usePrimaryRecoverySecret = (): KeyWithRecoverySecret | undefined => {
-    const [user] = useUser();
-    const primaryUserKey = user?.Keys?.[0];
-
-    if (!primaryUserKey?.RecoverySecret || !primaryUserKey?.RecoverySecretSignature) {
-        return;
-    }
-
-    return primaryUserKey as KeyWithRecoverySecret;
+const usePrimaryRecoverySecret = () => {
+    const [{ Keys }] = useUser();
+    return getPrimaryRecoverySecret(Keys);
 };
 
 export default usePrimaryRecoverySecret;
