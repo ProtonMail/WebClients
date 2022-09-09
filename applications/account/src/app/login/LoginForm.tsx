@@ -254,8 +254,6 @@ const LoginForm = ({
 
                 {showPasswordManagerHint && (
                     <Card className="text-center mt2" rounded>
-                        {c('Info').t`Issues signing in?`}
-                        <br />
                         <Href key="update-password-manager-url" url={getKnowledgeBaseUrl('/update-password-manager')}>
                             {c('Info').t`Update the URL in your password manager`}
                         </Href>
