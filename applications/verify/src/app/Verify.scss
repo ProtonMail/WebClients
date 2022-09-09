@@ -24,7 +24,6 @@ body.embedded {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-
 	background-color: var(--background-norm);
 
 	@include respond-to($breakpoint-small, 'max') {

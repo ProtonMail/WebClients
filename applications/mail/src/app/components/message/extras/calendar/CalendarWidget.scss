@@ -35,8 +35,8 @@
 
 		&--icon {
 			&::before {
-				height: 100%;
-				width: 100%;
+				block-size: 100%;
+				inline-size: 100%;
 				border-radius: 50%;
 			}
 		}
@@ -44,6 +44,6 @@
 
 	// Removing the margin of the last IconRow item
 	.form--icon-labels:last-child {
-		margin-bottom: 0;
+		margin-block-end: 0;
 	}
 }

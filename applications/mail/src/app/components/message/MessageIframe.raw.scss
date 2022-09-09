@@ -38,7 +38,7 @@ code {
 
 /* Forbidden height with pourcentage on images */
 img[height$='%'] {
-	height: unset !important;
+	block-size: unset !important;
 }
 
 // remove reset margins
@@ -136,8 +136,8 @@ a:active {
 }
 
 .icon-14p {
-	width: 14px;
-	height: 14px;
+	inline-size: 14px;
+	block-size: 14px;
 }
 
 /*

@@ -11,7 +11,7 @@ $width-hv-modal: 730 !default;
 
 		// below this value, we get back to normal modal
 		@include respond-to($width-hv-modal) {
-			max-width: 98%;
+			max-inline-size: 98%;
 		}
 	}
 }

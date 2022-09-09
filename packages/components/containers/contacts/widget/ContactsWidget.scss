@@ -9,10 +9,12 @@
 	.item-container {
 		padding-inline: em(24);
 	}
+
 	&-tabs {
 		padding-block-start: em(12);
 		margin-inline: em(24);
 	}
+
 	.ReactVirtualized__Grid__innerScrollContainer {
 		border: 0;
 	}
