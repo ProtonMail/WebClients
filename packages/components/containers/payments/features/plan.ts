@@ -81,7 +81,7 @@ export const getDrivePlan = (plan: Plan): ShortPlan => {
             .t`Secure cloud storage that lets you store, sync, and share files easily and securely.`,
         cta: getCTA(plan.Title),
         features: [
-            getStorageFeature(plan.MaxSpace),
+            getStorageFeature(plan.MaxSpace, { boldStorageSize: true }),
             getNAddressesFeature({ n: plan.MaxAddresses || 1 }),
             getNCalendarsFeature(1),
             getVPNConnections(1),
