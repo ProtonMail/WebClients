@@ -53,7 +53,7 @@
 	&--fullscreen &-dialog {
 		flex: 1 0 100%;
 		border-radius: 0;
-		max-width: unset;
+		max-inline-size: unset;
 	}
 
 	&--is-behind-backdrop {

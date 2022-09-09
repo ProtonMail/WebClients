@@ -32,6 +32,7 @@
 	&:focus {
 		background-color: var(--background-weak);
 	}
+
 	&:focus-visible {
 		outline: 0; // not needed, provided by file-browser-grid-item--highlight
 	}
@@ -62,6 +63,7 @@
 	inline-size: 100%;
 	block-size: rem(42);
 	line-height: rem(42);
+
 	// On the side is small options button.
 	padding-block: 0;
 	padding-inline: rem(40);
@@ -70,7 +72,7 @@
 .file-browser-grid-view--signature-icon {
 	position: absolute;
 	inset-inline-start: rem(4);
-	height: 100%;
+	block-size: 100%;
 }
 
 .file-browser-grid-view--options {

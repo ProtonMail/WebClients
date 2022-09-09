@@ -2,16 +2,18 @@
 	from {
 		transform: rotate(0deg);
 	}
+
 	to {
 		transform: rotate(360deg);
 	}
 }
+
 .location-refresh-rotate {
 	animation: rotating 0.5s linear infinite;
 }
 
 .drive-sidebar--icon {
-	width: rem(16);
+	inline-size: rem(16);
 }
 
 .drive-sidebar--button-expand {

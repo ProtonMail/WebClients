@@ -29,12 +29,12 @@
 
 	&::-webkit-progress-value {
 		background: var(--signal-info);
-		transition: 0.25s width easing(ease-in-out-quint);
+		transition: 0.25s inline-size easing(ease-in-out-quint);
 	}
 
 	&::-moz-progress-bar {
 		background: var(--signal-info);
-		transition: 0.25s width easing(ease-in-out-quint);
+		transition: 0.25s inline-size easing(ease-in-out-quint);
 	}
 
 	&::-ms-fill {
