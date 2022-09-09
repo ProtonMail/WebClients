@@ -2,9 +2,9 @@
 
 .subscription-cancel-plan {
 	&-info {
-		min-height: 4em;
+		min-block-size: 4em;
 		@include respond-to($breakpoint-small) {
-			min-height: unset;
+			min-block-size: unset;
 		}
 	}
 }

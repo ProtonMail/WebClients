@@ -1,5 +1,6 @@
 .modal-two-content {
-	margin: 0.5em var(--margin) 1em;
+	margin-block: 0.5em 1em;
+	margin-inline: var(--margin);
 
 	& > *:first-child {
 		margin-block-start: 0;

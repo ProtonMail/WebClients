@@ -1,8 +1,8 @@
 @import '~@proton/styles/scss/config';
 
 .slider-mark {
-	width: 1px;
-	height: rem(12);
+	inline-size: 1px;
+	block-size: rem(12);
 	background: var(--text-norm);
 	position: absolute;
 	inset-block-start: 100%;
@@ -19,7 +19,6 @@
 .slider-mark-label {
 	inset-block-start: 100%;
 	position: absolute;
-
 	transform: translateX(calc(-50% + 0.5px));
 
 	[dir='rtl'] & {

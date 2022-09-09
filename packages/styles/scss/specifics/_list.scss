@@ -103,7 +103,8 @@ $item-container-row-padding-block: em(5) !default; // design wants 48px
 	&::after {
 		content: '';
 		position: absolute;
-		inset: -1px 0;
+		inset-block: -1px;
+		inset-inline: 0;
 		border: 1px solid transparent;
 		border-radius: inherit;
 		pointer-events: none;
@@ -150,7 +151,7 @@ $item-container-row-padding-block: em(5) !default; // design wants 48px
 	// Encrypted search shows a preview of the body in the item,
 	// which therefore has to be bigger
 	&.es-three-rows {
-		height: auto;
+		block-size: auto;
 	}
 }
 
@@ -226,7 +227,7 @@ $item-container-row-padding-block: em(5) !default; // design wants 48px
 }
 
 .item-hover-action-buttons {
-	width: 0;
+	inline-size: 0;
 	transform: scale(0);
 	margin-inline-end: rem(-6); // Magic number to get perfect alignment with star on hover :D
 	opacity: 0;
@@ -237,7 +238,7 @@ $item-container-row-padding-block: em(5) !default; // design wants 48px
 	.item-container:hover,
 	.item-container-row:hover {
 		.item-hover-action-buttons {
-			width: auto;
+			inline-size: auto;
 			transform: scale(1);
 			opacity: 1;
 			visibility: visible;

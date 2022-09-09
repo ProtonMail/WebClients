@@ -2,12 +2,9 @@
 
 $field-container: rem(260) !default;
 $modal-max-width: rem(700) !default;
-
 $modal-breakpoint-width: 52em !default;
 $breakpoint-low-height-modal: em(500, 16) !default;
-
 $modal-max-height: 80% !default;
-
 $modal-full-dimension: 98% !default;
 
 .inner-modal {
@@ -57,7 +54,6 @@ $modal-full-dimension: 98% !default;
 		flex: 1 1 auto;
 		padding-block: 0;
 		padding-inline: rem(30);
-
 		background: var(--background-norm) no-repeat;
 
 		& > p:first-child {
