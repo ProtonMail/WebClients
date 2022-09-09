@@ -6,7 +6,7 @@ import { PLANS } from '@proton/shared/lib/constants';
 import { Audience } from '@proton/shared/lib/interfaces';
 
 import { CalendarLogo, DriveLogo, Icon, Info, MailLogo, VpnLogo } from '../../../components';
-import { classnames } from '../../../helpers';
+import { classnames, generateUID } from '../../../helpers';
 import { AllFeatures, getFeatureDefinitions } from '../features';
 import { PlanCardFeatureDefinition, ShortPlan } from '../features/interface';
 
@@ -40,8 +40,9 @@ export const PlanCardFeatureList = ({ features, icon, fire = true }: FeatureList
                     return <Icon size={20} name="cross" className="mt0-1" />;
                 })();
 
+                const key = typeof feature.featureName === 'string' ? feature.featureName : generateUID('featureName');
                 return (
-                    <li key={feature.featureName} className="px0-75 py0-5 flex rounded">
+                    <li key={key} className="px0-75 py0-5 flex rounded">
                         <div
                             className={classnames([
                                 'flex-no-min-children flex-nowrap',
