@@ -48,7 +48,7 @@ class FileSaver {
                 abortController.signal.addEventListener('abort', () => {
                     reject(new TransferCancel({ message: `Transfer canceled` }));
                 });
-                stream.pipeTo(saveStream, { preventCancel: true }).then(resolve);
+                stream.pipeTo(saveStream, { preventCancel: true }).then(resolve).catch(reject);
             });
         } catch (err: any) {
             if (!isTransferCancelError(err)) {
