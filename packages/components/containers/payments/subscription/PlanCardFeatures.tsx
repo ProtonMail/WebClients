@@ -20,6 +20,26 @@ export const PlanCardFeatureList = ({ features, icon, fire = true }: FeatureList
     return (
         <ul className="bg-weak-odd unstyled mt1 mb2 on-mobile-mb0">
             {features.map((feature) => {
+                const iconToDisplay = (() => {
+                    if (feature.fire && fire) {
+                        return <Icon size={20} name="fire" className="color-warning" />;
+                    }
+
+                    if (feature.included) {
+                        return (
+                            <span className="color-success">
+                                {icon && feature.icon ? (
+                                    <Icon size={20} name={feature.icon} />
+                                ) : (
+                                    <Icon size={20} name="checkmark" />
+                                )}
+                            </span>
+                        );
+                    }
+
+                    return <Icon size={20} name="cross" className="mt0-1" />;
+                })();
+
                 return (
                     <li key={feature.featureName} className="px0-75 py0-5 flex rounded">
                         <div
@@ -28,21 +48,7 @@ export const PlanCardFeatureList = ({ features, icon, fire = true }: FeatureList
                                 !feature.included && 'color-hint',
                             ])}
                         >
-                            <span className="flex flex-item-noshrink mr0-75">
-                                {feature.fire && fire ? (
-                                    <Icon size={20} name="fire" className="color-warning" />
-                                ) : feature.included ? (
-                                    <span className="color-success">
-                                        {icon && feature.icon ? (
-                                            <Icon size={20} name={feature.icon} />
-                                        ) : (
-                                            <Icon size={20} name="checkmark" />
-                                        )}
-                                    </span>
-                                ) : (
-                                    <Icon size={20} name="cross" className="mt0-1" />
-                                )}
-                            </span>
+                            <span className="flex flex-item-noshrink mr0-75">{iconToDisplay}</span>
                             <span className="flex-item-fluid">
                                 <span className="mr0-5 align-middle">{feature.featureName}</span>
                                 {feature.tooltip ? (
