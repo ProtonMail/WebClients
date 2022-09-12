@@ -99,6 +99,30 @@
 			}
 		}
 	}
+	@include respond-to($breakpoint-small) {
+		&-two-column {
+			&#{&} {
+				.sign-layout-upsell {
+					margin-block-end: 0;
+				}
+				.sign-layout-main-content {
+					padding-block-end: 2em;
+				}
+			}
+		}
+	}
+	@include respond-to($breakpoint-tiny) {
+		&-two-column {
+			&#{&} {
+				.sign-layout-upsell {
+					border-block-end: 1px solid var(--border-weak);
+					border-radius: 0;
+				}
+			}
+		}
+	}
+
+
 
 	&-backbutton {
 		inset-block-start: 12em; // fixed height to avoid shifts
