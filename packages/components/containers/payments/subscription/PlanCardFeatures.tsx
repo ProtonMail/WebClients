@@ -18,7 +18,7 @@ interface FeatureListProps {
 
 export const PlanCardFeatureList = ({ features, icon, fire = true }: FeatureListProps) => {
     return (
-        <ul className="bg-weak-odd unstyled mt1 mb2">
+        <ul className="bg-weak-odd unstyled mt1 mb2 on-mobile-mb0">
             {features.map((feature) => {
                 return (
                     <li key={feature.featureName} className="px0-75 py0-5 flex rounded">
