@@ -46,6 +46,7 @@ export interface PlanIDs {
 export interface SubscriptionData {
     currency: Currency;
     cycle: Cycle;
+    minimumCycle?: Cycle;
     skipUpsell: boolean;
     planIDs: PlanIDs;
     checkResult: SubscriptionCheckResponse;
