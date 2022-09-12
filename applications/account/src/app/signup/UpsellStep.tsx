@@ -77,10 +77,10 @@ const UpsellStep = ({
     return (
         <div className="sign-layout-two-column w100 flex flex-align-items-start flex-justify-center flex-gap-2">
             {shortFreePlan && (
-                <Main center={false} className="on-tablet-mb2">
+                <Main center={false} className="on-tablet-mb2 sign-layout-upsell">
                     <Header title={shortFreePlan.title} onBack={onBack} />
                     <Content>
-                        <Text>{shortFreePlan.description}</Text>
+                        <Text className="on-mobile-mb0-5">{shortFreePlan.description}</Text>
                         <UpsellPlanCard
                             icon={!noIcon}
                             plan={shortFreePlan}
@@ -112,7 +112,7 @@ const UpsellStep = ({
                 </Main>
             )}
             {upsellShortPlan && (
-                <Main center={false}>
+                <Main center={false} className="sign-layout-upsell">
                     <Header
                         title={upsellShortPlan.title}
                         right={
@@ -122,7 +122,7 @@ const UpsellStep = ({
                         }
                     />
                     <Content>
-                        <Text>{upsellShortPlan.description}</Text>
+                        <Text className="on-mobile-mb0-5">{upsellShortPlan.description}</Text>
                         <UpsellPlanCard
                             icon={!noIcon}
                             plan={upsellShortPlan}
