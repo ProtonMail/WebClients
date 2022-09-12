@@ -3,9 +3,16 @@ import { ChangeEvent, DragEvent, MouseEvent, memo, useMemo, useRef } from 'react
 import { ItemCheckbox, classnames, useLabels, useMailSettings } from '@proton/components';
 import { MAILBOX_LABEL_IDS, VIEW_MODE } from '@proton/shared/lib/constants';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { getRecipients as getMessageRecipients, getSender, isDraft, isSent } from '@proton/shared/lib/mail/messages';
+import {
+    getRecipients as getMessageRecipients,
+    getSender,
+    isDMARCValidationFailure,
+    isDraft,
+    isSent,
+} from '@proton/shared/lib/mail/messages';
 import clsx from '@proton/utils/clsx';
 
+import { WHITE_LISTED_ADDRESSES } from '../../constants';
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { getRecipients as getConversationRecipients, getSenders } from '../../helpers/conversation';
 import { isMessage, isUnread } from '../../helpers/elements';
@@ -96,6 +103,9 @@ const Item = ({
         )
         .flat();
 
+    const allSendersVerified = senders?.every((sender) => WHITE_LISTED_ADDRESSES.includes(sender?.Address || ''));
+    const hasVerifiedBadge = !displayRecipients && allSendersVerified && !isDMARCValidationFailure(element);
+
     const ItemLayout = columnLayout ? ItemColumnLayout : ItemRowLayout;
     const unread = isUnread(element, labelID);
     const displaySenderImage = !!element.DisplaySenderImage;
@@ -180,6 +190,7 @@ const Item = ({
                     breakpoints={breakpoints}
                     onBack={onBack}
                     isSelected={isSelected}
+                    hasVerifiedBadge={hasVerifiedBadge}
                 />
             </div>
         </div>
