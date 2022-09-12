@@ -168,6 +168,7 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType }: Prop
                 });
             return {
                 cycle: signupParameters.cycle,
+                minimumCycle: signupParameters.minimumCycle,
                 currency: checkResult.Currency,
                 checkResult,
                 planIDs: planIDs || {},
@@ -216,7 +217,7 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType }: Prop
             });
         };
 
-        withLoading(
+        void withLoading(
             fetchDependencies().catch(() => {
                 setStep([[], NO_SIGNUP]);
             })
