@@ -7,6 +7,7 @@ import { useUserSettings } from '@proton/components/hooks/';
 import { DENSITY } from '@proton/shared/lib/constants';
 import { Label } from '@proton/shared/lib/interfaces/Label';
 import { getHasOnlyIcsAttachments } from '@proton/shared/lib/mail/messages';
+import verifiedBadge from '@proton/styles/assets/img/illustrations/verified-badge.svg';
 import clsx from '@proton/utils/clsx';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
@@ -41,6 +42,7 @@ interface Props {
     unread: boolean;
     onBack: () => void;
     isSelected: boolean;
+    hasVerifiedBadge?: boolean;
 }
 
 const ItemColumnLayout = ({
@@ -58,6 +60,7 @@ const ItemColumnLayout = ({
     unread,
     onBack,
     isSelected,
+    hasVerifiedBadge = false,
 }: Props) => {
     const [userSettings] = useUserSettings();
     const { shouldHighlight, highlightMetadata } = useEncryptedSearchContext();
@@ -126,6 +129,9 @@ const ItemColumnLayout = ({
                             >
                                 {sendersContent}
                             </span>
+                            {hasVerifiedBadge && (
+                                <img src={verifiedBadge} alt={c('Info').t`Proton verified`} className="ml0-25" />
+                            )}
                         </div>
 
                         <span className="item-firstline-infos flex-item-noshrink flex flex-nowrap flex-align-items-center">
