@@ -24,7 +24,7 @@ const RewardsTable = ({ loading, referrals, hasReachedRewardLimit }: Props) => {
         <>
             <Table>
                 <TableHeader
-                    cells={[c('Label').t`User`, c('Label').t`Date`, c('Label').t`Activity`, c('Label').t`Your reward`]}
+                    cells={[c('Label').t`User`, c('Label').t`Date`, c('Label').t`Activity`, c('Label').t`Credits`]}
                 />
                 {referrals.length > 0 && (
                     <TableBody loading={loading}>
