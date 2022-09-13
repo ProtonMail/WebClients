@@ -87,14 +87,15 @@ const UpsellStep = ({
                             footer={getFooterNotes(shortFreePlan.plan, cycle)}
                             button={
                                 <Button
-                                    color="norm"
                                     fullWidth
+                                    color="norm"
+                                    shape="outline"
                                     size="large"
                                     loading={loading && type === 'free'}
                                     disabled={loading}
                                     onClick={() => {
                                         setType('free');
-                                        withLoading(onPlan({}));
+                                        void withLoading(onPlan({}));
                                     }}
                                 >{c('new_plans: action').t`Continue with Free`}</Button>
                             }
@@ -132,12 +133,11 @@ const UpsellStep = ({
                                     fullWidth
                                     color="norm"
                                     size="large"
-                                    shape="outline"
                                     loading={loading && type === 'bundle'}
                                     disabled={loading}
                                     onClick={() => {
                                         setType('bundle');
-                                        withLoading(onPlan({ [upsellShortPlan.plan]: 1 }));
+                                        void withLoading(onPlan({ [upsellShortPlan.plan]: 1 }));
                                     }}
                                 >{c('new_plans: action').t`Get ${upsellShortPlan.title}`}</Button>
                             }
