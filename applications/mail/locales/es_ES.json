@@ -152,9 +152,6 @@
       "Close composer": [
         "Cerrar el editor"
       ],
-      "Close modal": [
-        "Close"
-      ],
       "Close navigation": [
         "Cerrar la navegación"
       ],
@@ -1076,6 +1073,9 @@
       ],
       "Star message": [
         "Destacar mensaje"
+      ],
+      "Unread email": [
+        "Correo no leído"
       ],
       "Unstar conversation": [
         "No destacar la conversación"
@@ -4439,6 +4439,9 @@
       "Recipient: ": [
         "Destinatario: "
       ],
+      "Recovery information will remain on this device unless you select to delete it.": [
+        "La información de recuperación permanecerá en este dispositivo salvo que selecciones eliminarla."
+      ],
       "Recovery phrase copied to clipboard": [
         "Frase de recuperación copiada en el portapapeles"
       ],
@@ -5315,6 +5318,9 @@
       "Delete": [
         "Eliminar"
       ],
+      "Delete recovery-related information.": [
+        "Eliminar la información de recuperación."
+      ],
       "Do not ask again": [
         "No preguntar de nuevo"
       ],
@@ -5755,6 +5761,9 @@
       "Upgrade account": [
         "Mejorar cuenta"
       ],
+      "What’s this?": [
+        "¿Qué es esto?"
+      ],
       "You need to activate your calendar keys to add this event": [
         "Tiene que activar las claves de su calendario para añadir este evento"
       ],
@@ -6158,8 +6167,8 @@
       ]
     },
     "Pagination": {
-      "${ page } of ${ total }": [
-        "${ page } de ${ total }"
+      "${ page } of ${ totalText }": [
+        "${ page } de ${ totalText }"
       ]
     },
     "Paid user checklist item": {
@@ -6524,11 +6533,6 @@
       ],
       "Sender's trusted keys verification failed": [
         "La verificación de las claves de confianza del remitente ha fallado"
-      ]
-    },
-    "Sort": {
-      "Sort": [
-        "Ordenar"
       ]
     },
     "Sort option": {
@@ -7337,6 +7341,9 @@
       ],
       "Sign in and grant access": [
         "Iniciar sesión y otorgar acceso"
+      ],
+      "Sign out": [
+        "Cerrar sesión"
       ],
       "Sort conversations": [
         "Ordenar conversaciones"

@@ -50,11 +50,11 @@
       "Chat with us": [
         "Converse conosco"
       ],
+      "Clear two-factor authentication code": [
+        "Limpar código de autenticação de dois fatores"
+      ],
       "Close": [
         "Fechar"
-      ],
-      "Close modal": [
-        "Close"
       ],
       "Close navigation": [
         "Fechar navegação"
@@ -2065,9 +2065,6 @@
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Importante: certifique-se de salvar os códigos de recuperação. Caso contrário, você pode perder permanentemente o acesso à sua conta se perder seu dispositivo de autenticação de dois fatores."
       ],
-      "In case you lose your login details, we’ll send you recovery instructions via email or SMS.": [
-        "Caso você perca acesso, enviaremos instruções de recuperação por e-mail ou SMS."
-      ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
         "Instale um arquivo de configuração do País para se conectar a um servidor aleatório no país de sua escolha."
       ],
@@ -2202,6 +2199,12 @@
       ],
       "read our two-factor authentication guide first": [
         "leia nosso guia de autenticação de dois fatores primeiro"
+      ],
+      "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
+        "Recomendado em dispositivos confiáveis. ${ keepMeSignedInLearnMoreLink }"
+      ],
+      "Recovery information will remain on this device unless you select to delete it.": [
+        "As informações de recuperação permanecerão neste dispositivo, a menos que você opte por excluí-las."
       ],
       "recovery method": [
         "método de recuperação"
@@ -2407,6 +2410,9 @@
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Quando sua assinatura renovar, nós aplicaremos quaisquer créditos disponíveis antes de mudar o método de pagamento acima."
       ],
+      "Why?": [
+        "Porque?"
+      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Você gostaria de receber um novo código de verificação ou usar um método de verificação diferente?"
       ],
@@ -2569,6 +2575,9 @@
       "Billed": [
         "Faturado"
       ],
+      "Gifted": [
+        "Dotado"
+      ],
       "Paid": [
         "Pago"
       ],
@@ -2726,6 +2735,9 @@
       ],
       "Delete": [
         "Excluir"
+      ],
+      "Delete recovery-related information.": [
+        "Excluir a informação de recuperação."
       ],
       "Device/certificate name": [
         "Nome do dispositivo/certificado"
@@ -3031,6 +3043,9 @@
       ],
       "What is the difference between UDP and TCP protocols?": [
         "Qual é a diferença entre os protocolos UDP e TCP?"
+      ],
+      "What’s this?": [
+        "O que é isso?"
       ]
     },
     "Member downgrade modal": {
@@ -4480,6 +4495,9 @@
       ],
       "Sign in again to continue": [
         "Inicie a sessão novamente para continuar"
+      ],
+      "Sign out": [
+        "Encerrar sessão"
       ],
       "Status": [
         "Status"

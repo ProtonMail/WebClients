@@ -11,9 +11,6 @@
       "Close": [
         "Fechar"
       ],
-      "Close modal": [
-        "Fechar janela"
-      ],
       "Didn't receive the code?": [
         "Não recebeu o código?"
       ],
@@ -24,7 +21,7 @@
         "Editar número de telefone"
       ],
       "Edit sign-in details": [
-        "Editar detalhes de acesso"
+        "Editar detalhes de login"
       ],
       "Get verification code": [
         "Obter código de verificação"
@@ -92,7 +89,7 @@
         "salmoura"
       ],
       "pine": [
-        "pinheiro"
+        "pinho"
       ],
       "pink": [
         "rosa"
@@ -145,7 +142,7 @@
         "Anguilla"
       ],
       "Antarctica": [
-        "Antártida"
+        "Antártica"
       ],
       "Antigua and Barbuda": [
         "Antígua e Barbuda"
@@ -175,10 +172,10 @@
         "Bahamas"
       ],
       "Bahrain": [
-        "Reino do Barém"
+        "Bahrein"
       ],
       "Bangladesh": [
-        "Bangladesh"
+        "Banglasdesh"
       ],
       "Barbados": [
         "Barbados"
@@ -229,7 +226,7 @@
         "Bulgária"
       ],
       "Burkina Faso": [
-        "Burquina Fasso"
+        "Burkina Faso"
       ],
       "Burundi": [
         "Burundi"
@@ -292,22 +289,22 @@
         "Cuba"
       ],
       "Curaçao": [
-        "Curaçau"
+        "Curaçao"
       ],
       "Cyprus": [
         "Chipre"
       ],
       "Czech Republic": [
-        "República Checa"
+        "República Tcheca"
       ],
       "Côte d'Ivoire": [
-        "Costa do Marfim"
+        "A Costa do Marfim"
       ],
       "Denmark": [
         "Dinamarca"
       ],
       "Djibouti": [
-        "Djibuti"
+        "Djibouti"
       ],
       "Dominica": [
         "Dominica"
@@ -694,7 +691,7 @@
         "Santa Lúcia"
       ],
       "Saint Martin (French Part)": [
-        "São Martinho (Parte Francesa)"
+        "São Martim (Parte Francesa)"
       ],
       "Saint Pierre and Miquelon": [
         "São Pedro e Miquelão"
@@ -865,7 +862,7 @@
         "Ilhas Virgens Britânicas"
       ],
       "Virgin Islands, U.S.": [
-        "Ilhas Virgens Americanas"
+        "Ilhas Virgens Americanas."
       ],
       "Wallis and Futuna": [
         "Wallis e Futuna"
@@ -905,7 +902,7 @@
         "Não é um número válido"
       ],
       "Passwords do not match": [
-        "As senhas não coincidem"
+        "As senhas não correspondem"
       ],
       "Request timed out": [
         "A solicitação expirou"
@@ -914,7 +911,7 @@
         "Este campo é obrigatório"
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
-        "Esse campo requer um mínimo de ${ minimumLength } caracteres."
+        "Este campo exige um mínimo de ${ minimumLength } caracteres."
       ],
       "Unknown error": [
         "Erro desconhecido"
@@ -931,13 +928,13 @@
         "Por favor, ${ refresh } ou verifique sua conexão."
       ],
       "Something went wrong. Please refresh the page or try again later.": [
-        "Fique tranquilo, logo iremos corrigir este erro."
+        "Fique tranquilo, logo corrigiremos este erro."
       ],
       "There was a problem connecting to Proton.": [
-        "Ocorreu um problema ao conectar à Proton."
+        "Houve um problema de conexão com o Proton."
       ],
       "You may also ${ refresh } or try again later.": [
-        "Você pode ${ refresh } ou tentar novamente mais tarde."
+        "Você também pode ${ refresh } ou tentar novamente mais tarde."
       ]
     },
     "Human verification method": {
@@ -959,7 +956,7 @@
     },
     "Info": {
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
-        "Antes de solicitar um novo código de verificação, confira sua pasta de spam e verifique se ${ strong } é o endereço correto."
+        "Antes de pedir um novo código de verificação, verifique sua pasta de spam e verifique que ${ strong } é o endereço correto."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Clique em \"Solicitar novo código\" para que um novo código seja enviado para ${ strong }. Se esse número de telefone estiver incorreto, clique em \"Editar\" para corrigir isso."
@@ -968,10 +965,10 @@
         "Digite o código de verificação que foi enviado para ${ destinationText }."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
-        "Se estiver com problemas para criar sua conta, abra um chamado e responderemos no prazo de um dia útil."
+        "Se você estiver tendo problemas para criar sua conta, solicite um convite e nós responderemos no prazo de um dia útil."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
-        "Se você não encontrar o e-mail na caixa de entrada, por favor, verifique a pasta de spam."
+        "Se você não encontrar o e-mail na caixa de entrada. Por favor, verifique a pasta de spam."
       ],
       "Internet connection lost": [
         "Perda de conexão com a internet"
@@ -989,7 +986,7 @@
         "Sessão expirada"
       ],
       "To fight spam and abuse, please verify you are human.": [
-        "Para combater o spam, verifique se você é humano."
+        "Para combater o spam e/ou abuso, verifique se você é humano."
       ],
       "We'll send a new verification code to ${ strong }": [
         "Enviaremos um novo código de verificação para ${ strong }"
@@ -1001,10 +998,10 @@
         "Deseja receber um novo código de verificação?"
       ],
       "Your email will only be used for this one-time verification.": [
-        "O seu e-mail será utilizado somente nesta verificação única."
+        "Seu e-mail só será utilizado para essa verificação única."
       ],
       "Your phone number will only be used for this one-time verification.": [
-        "O seu número de telefone será utilizado somente nesta verificação única."
+        "Seu número de telefone somente será utilizado nessa verificação única."
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Sua conta Proton está atualmente suspensa. Para continuar usando sua conta, pague as faturas pendentes."
@@ -1012,7 +1009,7 @@
     },
     "Label": {
       "Code is 6 digits without spaces": [
-        "O código deve ter 6 dígitos sem espaços"
+        "O código é de 6 dígitos sem espaços"
       ],
       "Email address": [
         "Endereço de e-mail"
@@ -1024,7 +1021,7 @@
         "Senha"
       ],
       "Phone number": [
-        "Número de telefone"
+        "Número do telefone"
       ],
       "Reveal password": [
         "Mostrar senha"

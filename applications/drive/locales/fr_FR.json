@@ -98,9 +98,6 @@
       "Close": [
         "Fermer"
       ],
-      "Close modal": [
-        "Close"
-      ],
       "Close navigation": [
         "Fermer la navigation"
       ],
@@ -2577,7 +2574,7 @@
         "Si vous ne trouvez pas le message dans votre boîte de réception, vérifiez votre dossier indésirables/spam ."
       ],
       "If you have one of these, continue to Proton account setting to\nstart the unblock process.": [
-        "Si vous en possédez l’un de ces éléments, passez à la configuration du compte Proton pour\ncommencer le processus de déblocage."
+        "Si vous avez un de ces éléments, passez à la configuration du compte Proton pour commencer le processus de déblocage."
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Importer ${ contactsFragment } et ${ contactsGroupsFragment }"
@@ -2791,6 +2788,9 @@
       ],
       "recommended browser": [
         "navigateur recommandé"
+      ],
+      "Recovery information will remain on this device unless you select to delete it.": [
+        "Les informations de récupération resteront sur cet appareil jusqu'à ce que vous demandiez à les supprimer."
       ],
       "Recovery process might take some time.": [
         "Le processus de récupération peut prendre un certain temps."
@@ -3233,6 +3233,9 @@
         "Supprimer le disque ?",
         "Supprimer les disques ?"
       ],
+      "Delete recovery-related information.": [
+        "Supprimer les informations liées à la récupération."
+      ],
       "Deleted": [
         "Supprimé"
       ],
@@ -3560,6 +3563,9 @@
       ],
       "Upgrade account": [
         "Changer d'offre"
+      ],
+      "What’s this?": [
+        "Qu'est-ce que c'est ?"
       ]
     },
     "Loading info": {
@@ -4553,6 +4559,9 @@
       ],
       "Sign in and grant access": [
         "Se connecter et donner l'accès"
+      ],
+      "Sign out": [
+        "Se déconnecter"
       ],
       "Size": [
         "Taille"

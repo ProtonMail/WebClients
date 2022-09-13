@@ -152,9 +152,6 @@
       "Close composer": [
         "Verfassen-Fenster schließen"
       ],
-      "Close modal": [
-        "Close"
-      ],
       "Close navigation": [
         "Navigation schließen"
       ],
@@ -1076,6 +1073,9 @@
       ],
       "Star message": [
         "Nachricht kennzeichnen"
+      ],
+      "Unread email": [
+        "Ungelesene E-Mail"
       ],
       "Unstar conversation": [
         "Kennzeichnung der Unterhaltung entfernen"
@@ -4451,6 +4451,9 @@
       "Recipient: ": [
         "Empfänger: "
       ],
+      "Recovery information will remain on this device unless you select to delete it.": [
+        "Die Wiederherstellungsinformationen verbleiben auf diesem Gerät, sofern du sie nicht löschst."
+      ],
       "Recovery phrase copied to clipboard": [
         "Wiederherstellungsphrase wurde in die Zwischenablage kopiert"
       ],
@@ -5327,6 +5330,9 @@
       "Delete": [
         "Löschen"
       ],
+      "Delete recovery-related information.": [
+        "Wiederherstellungsbezogene Informationen löschen."
+      ],
       "Do not ask again": [
         "Nicht mehr fragen"
       ],
@@ -5767,6 +5773,9 @@
       "Upgrade account": [
         "Konto-Upgrade durchführen"
       ],
+      "What’s this?": [
+        "Was ist das?"
+      ],
       "You need to activate your calendar keys to add this event": [
         "Du musst deine Kalenderschlüssel aktivieren, um dieses Ereignis hinzufügen zu können"
       ],
@@ -6170,8 +6179,8 @@
       ]
     },
     "Pagination": {
-      "${ page } of ${ total }": [
-        "${ page } von ${ total }"
+      "${ page } of ${ totalText }": [
+        "${ page } von ${ totalText }"
       ]
     },
     "Paid user checklist item": {
@@ -6536,11 +6545,6 @@
       ],
       "Sender's trusted keys verification failed": [
         "Verifizierung der vertrauenswürdigen Schlüssel des Absenders fehlgeschlagen"
-      ]
-    },
-    "Sort": {
-      "Sort": [
-        "Sortieren"
       ]
     },
     "Sort option": {
@@ -7349,6 +7353,9 @@
       ],
       "Sign in and grant access": [
         "Anmelden und Zugang gewähren"
+      ],
+      "Sign out": [
+        "Abmelden"
       ],
       "Sort conversations": [
         "Themen sortieren"

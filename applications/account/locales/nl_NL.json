@@ -142,9 +142,6 @@
       "Close": [
         "Sluiten"
       ],
-      "Close modal": [
-        "Close"
-      ],
       "Close navigation": [
         "Navigatie sluiten"
       ],
@@ -799,14 +796,14 @@
       "View plans details": [
         "Abonnementsgegevens bekijken"
       ],
+      "Void": [
+        "Ongeldig"
+      ],
       "Void all recovery files": [
         "Alle herstelbestanden ongeldig maken"
       ],
       "Void all recovery files?": [
         "Alle herstelbestanden ongeldig maken?"
-      ],
-      "Void anyway": [
-        "Hoe dan ook leeg"
       ],
       "What do I get?": [
         "Wat krijg ik?"
@@ -4077,9 +4074,6 @@
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Een naam om u te helpen identificeren waar u het gebruikt zodat u het later eenvoudig kan intrekken of verlengen."
       ],
-      "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password.": [
-        "Met een herstelzin kunt u toegang krijgen tot uw account en uw gecodeerde berichten herstellen als u uw wachtwoord bent vergeten."
-      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Een gebruiker is een account geassocieerd met een enkele gebruikersnaam, mailbox en persoon"
       ],
@@ -4125,9 +4119,6 @@
       ],
       "Admin account allocation": [
         "Toewijzing beheerdersaccount"
-      ],
-      "After a password reset your data is locked in encrypted form to keep it safe.": [
-        "Na een wachtwoordherstel worden uw gegevens opgesloten op een versleutelde manier om ze veilig te houden."
       ],
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
         "Na het betalen van uw Bitcoin betaling, volg de onderstaande instructies om te upgraden."
@@ -4620,9 +4611,6 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Het importeren van uw gegevens van ${ importedEmailAddress } naar ${ toEmail }."
       ],
-      "In case you lose your login details, we’ll send you recovery instructions via email or SMS.": [
-        "Als u uw inloggegevens verliest, sturen wij u herstelinstructies via e-mail of sms."
-      ],
       "Inherited from parent folder": [
         "Overgenomen van bovenliggende map"
       ],
@@ -4955,11 +4943,17 @@
       "read our two-factor authentication guide first": [
         "lees eerst de instructies over tweestapsverificatie (2FA)"
       ],
+      "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
+        "Aanbevolen op vertrouwde apparaten. ${ keepMeSignedInLearnMoreLink }"
+      ],
       "Recovery file downloaded": [
         "Herstelbestand gedownload"
       ],
       "Recovery files have been voided": [
         "Herstelbestanden zijn ongeldig gemaakt"
+      ],
+      "Recovery information will remain on this device unless you select to delete it.": [
+        "Herstelinformatie blijft op dit toestel behalve wanneer u kiest om het te verwijderen."
       ],
       "recovery method": [
         "herstelmethode"
@@ -5186,15 +5180,6 @@
       "to continue to ${ toAppName }": [
         "om door te gaan naar ${ toAppName }"
       ],
-      "To decrypt and view your emails and other data, you need a recovery file.": [
-        "Om uw e-mails en andere gegevens te decoderen en bekijken, heeft u een herstelbestand nodig."
-      ],
-      "To decrypt and view your emails and other data, you need a recovery phrase or recovery file.": [
-        "Om uw e-mails en andere gegevens te decoderen en bekijken, heeft u een herstelzin nodig."
-      ],
-      "To decrypt and view your emails and other data, you need a recovery phrase.": [
-        "Om uw e-mails en andere gegevens te decoderen en bekijken, heeft u een herstelzin nodig."
-      ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Om uw vergrendelde gegevens te decoderen en te bekijken na een wachtwoordreset, selecteert u een herstelmethode."
       ],
@@ -5369,6 +5354,9 @@
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Wanneer uw abonnement verlengt, passen we alle beschikbare credits toe voordat we de bovenstaande betaalmethode in rekening brengen."
       ],
+      "Why?": [
+        "Waarom?"
+      ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Zonder activatie kun u nog geen nieuwe gebruikers maken, adressen aan bestaande gebruikers toewijzen of toegang krijgen tot niet-privé gebruikersaccounts."
       ],
@@ -5485,9 +5473,6 @@
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Binnenkort wordt u doorverwezen naar PayPal om uw betaling te verifiëren."
-      ],
-      "You won't be able to recover encrypted data after an account reset using your downloaded recovery files.": [
-        "U zult niet in staat zijn om versleutelde gegevens te herstellen na een accountreset met behulp van uw gedownloade herstelbestanden."
       ],
       "You'll stay signed in even after you close the browser.": [
         "U zult ingelogd blijven, zelfs als u de browser sluit."
@@ -6025,6 +6010,9 @@
       "Allow recovery by recovery phrase": [
         "Laat herstel door herstelzin toe"
       ],
+      "Allow recovery using a trusted device": [
+        "Herstel toestaan met een vertrouwd apparaat"
+      ],
       "Amount": [
         "Bedrag"
       ],
@@ -6222,6 +6210,9 @@
       ],
       "Delete": [
         "Verwijder"
+      ],
+      "Delete recovery-related information.": [
+        "Verwijder herstel-gerelateerde informatie."
       ],
       "Density": [
         "Dichtheid"
@@ -6940,6 +6931,9 @@
       "Learn more": [
         "Meer informatie"
       ],
+      "Learn more about data recovery": [
+        "Meer informatie over dataherstel"
+      ],
       "Need help?": [
         "Hulp nodig?"
       ],
@@ -6984,6 +6978,9 @@
       ],
       "What is the difference between UDP and TCP protocols?": [
         "Wat is het verschil tussen UDP en TCP-protocollen?"
+      ],
+      "What’s this?": [
+        "Wat is dit?"
       ],
       "Why set recovery methods?": [
         "Waarom herstelmethode instellen?"
@@ -9748,6 +9745,9 @@
       ],
       "Sign in and grant access": [
         "Inloggen en toegang verlenen"
+      ],
+      "Sign out": [
+        "Uitloggen"
       ],
       "Sort folders alphabetically": [
         "Sorteer mappen alfabetisch"

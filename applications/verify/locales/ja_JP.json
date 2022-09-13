@@ -11,9 +11,6 @@
       "Close": [
         "閉じる"
       ],
-      "Close modal": [
-        "画面を閉じる"
-      ],
       "Didn't receive the code?": [
         "コードを受け取っていませんか?"
       ],
@@ -27,13 +24,13 @@
         "サインイン詳細を編集"
       ],
       "Get verification code": [
-        "検証コードを取得"
+        "認証コードを取得"
       ],
       "refresh the page": [
         "ページを更新"
       ],
       "Request new code": [
-        "新しいコードをリクエスト"
+        "新しいコードのリクエスト"
       ],
       "Search countries": [
         "国を検索"
@@ -54,7 +51,7 @@
         "メールを認証"
       ],
       "View invoice": [
-        "請求書を参照"
+        "請求書を参照する"
       ]
     },
     "color": {
@@ -888,7 +885,7 @@
     },
     "Delinquent modal title": {
       "Overdue invoice": [
-        "未払いの請求"
+        "未払いの請求書"
       ]
     },
     "Error": {
@@ -899,7 +896,7 @@
         "6 桁の数字を入力してください"
       ],
       "Invalid verification code": [
-        "無効な検証コードです"
+        "無効な検証コード"
       ],
       "Not a valid number": [
         "無効な番号です"
@@ -914,10 +911,10 @@
         "この項目の入力は必須です"
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
-        "このフィールドには${ minimumLength } 文字以上の入力が必要です。"
+        "このフィールドには ${ minimumLength } 文字以上の入力が必要です。"
       ],
       "Unknown error": [
-        "不明なエラー"
+        "原因不明なエラーが発生しました"
       ]
     },
     "Error message": {
@@ -934,7 +931,7 @@
         "問題が発生しました。ページを更新するか再度お試しください。"
       ],
       "There was a problem connecting to Proton.": [
-        "Proton への接続中に問題が発生しました。"
+        "Proton への接続に問題がありました。"
       ],
       "You may also ${ refresh } or try again later.": [
         "${ refresh } するか再度お試しください。"
@@ -945,7 +942,7 @@
         "CAPTCHA"
       ],
       "Email": [
-        "電子メール"
+        "メールアドレス"
       ],
       "Manual": [
         "マニュアル"
@@ -968,7 +965,7 @@
         "${ destinationText } に送信された認証コードを入力してください。"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
-        "アカウントの作成に問題がある場合は、招待をリクエストしてください。1営業日以内に対応します。"
+        "アカウントの作成に問題がある場合は、招待をリクエストしてください。1 営業日以内に対応します。"
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "受信トレイに関連するメッセージを見つけなかった場合、迷惑メールフォルダーを確認してください。"
@@ -980,7 +977,7 @@
         "読み込み中"
       ],
       "No results found": [
-        "該当する項目がありません"
+        "該当する結果が見つかりませんでした"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "サーバーに接続できません。数分後にもう一度お試しください"
@@ -989,7 +986,7 @@
         "セッションがタイムアウトしました"
       ],
       "To fight spam and abuse, please verify you are human.": [
-        "迷惑メールと悪用の防止のため、人間である立証をお願いします。"
+        "迷惑メールや悪用を防止するために、あなたがコンピューターではないことを確認します。"
       ],
       "We'll send a new verification code to ${ strong }": [
         "新しい認証コードを ${ strong } に送信しました"
@@ -1007,7 +1004,7 @@
         "電話番号は、この一度限りの認証にのみ使用されます。"
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "あなたの Proton アカウントは現在保留中です。アカウントの使用を続けたい場合は滞納した請求を支払ってください。"
+        "あなたの Proton アカウントは現在利用停止中です。引き続きアカウントを使用する場合は、すべての未払いの請求書を精算してください。"
       ]
     },
     "Label": {
@@ -1035,10 +1032,10 @@
     },
     "Link": {
       "Learn more": [
-        "より詳しく"
+        "詳細"
       ],
       "Request an invite": [
-        "登録を申請する"
+        "登録を申請"
       ]
     },
     "Placeholder": {
@@ -1059,13 +1056,13 @@
         "人間であることの検証"
       ],
       "Invalid verification code": [
-        "無効な検証コードです"
+        "無効な検証コード"
       ],
       "Request new code": [
-        "新しいコードをリクエスト"
+        "新しいコードのリクエスト"
       ],
       "Sign in again to continue": [
-        "再度サインインして続行"
+        "続行するには再度ログインしてください"
       ]
     },
     "Validation": {

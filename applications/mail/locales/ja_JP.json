@@ -74,6 +74,9 @@
       "All Unstarred": [
         "すべての星印なし"
       ],
+      "Allow messages": [
+        "メッセージを許可"
+      ],
       "Apply": [
         "適用"
       ],
@@ -91,6 +94,9 @@
       ],
       "Beta Access": [
         "ベータ版アクセス"
+      ],
+      "Block": [
+        "ブロック"
       ],
       "Block messages from this sender": [
         "この差出人のメッセージをブロック"
@@ -145,9 +151,6 @@
       ],
       "Close composer": [
         "閉じる"
-      ],
-      "Close modal": [
-        "Close"
       ],
       "Close navigation": [
         "ナビゲーションを閉じる"
@@ -406,6 +409,9 @@
       ],
       "Hide messages": [
         "メッセージを非表示"
+      ],
+      "Hide my email": [
+        "Hide My Email"
       ],
       "I have a question": [
         "サポートに質問"
@@ -2514,6 +2520,12 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "連絡先の統合しています... これには数分かかる場合があります。処理が完了したらこのモーダルを閉じることができます。"
       ],
+      "No folders": [
+        "フォルダーがありません。"
+      ],
+      "No labels": [
+        "ラベルがありません"
+      ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "ファイルの最大サイズは ${ MAX_IMPORT_FILE_SIZE_STRING } で、連絡先は ${ MAX_IMPORT_CONTACTS_STRING } 件までです。 ファイルが大きい場合は、それを小さいファイルに分割してください。"
       ],
@@ -3924,6 +3936,9 @@
       "Hour": [
         "時間"
       ],
+      "How Hide My Email works": [
+        "Hide My Email の仕組み"
+      ],
       "I'm sending this message to a non-Proton Mail user.": [
         "このメッセージを非 Proton ユーザーに送信しています。"
       ],
@@ -4269,6 +4284,12 @@
       "Show original message": [
         "元のメッセージを表示"
       ],
+      "SimpleLogin is a Proton service, and your Proton Account includes Hide My Email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
+        "SimpleLogin は Proton サービスで、あなたの Proton アカウントには Hide My Email エイリアスが含まれています。SimpleLogin で最初のエイリアスを作成し、あなたのメールアドレスの保護を始めましょう。"
+      ],
+      "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
+        "SimpleLogin は、実際のメールアドレスを公開したくない信頼のおけない第三者サイトで、アカウントを作成するためのシンプルな方法を提供しています。"
+      ],
       "Sorry, this message does not exist or has already expired.": [
         "このメッセージは存在しないか有効期限切れです。"
       ],
@@ -4328,6 +4349,9 @@
       ],
       "Themes can give your inbox a new look.": [
         "テーマで受信トレイを新しい見た目に変更できます。"
+      ],
+      "They can't spam you if they don't know your email address. Protect your inbox with Hide My Email.": [
+        "あなたのメールアドレスがわからなければ、迷惑メールも送れません。Hide My Email で受信トレイを保護しましょう。"
       ],
       "This account has been suspended due to a potential policy violation.": [
         "このアカウントは、ポリシー違反の可能性があるため停止されています。"
@@ -5092,6 +5116,9 @@
       "Mailbox password": [
         "メールボックスのパスワード"
       ],
+      "Manage categories": [
+        "カテゴリーを管理"
+      ],
       "Manage folders": [
         "フォルダーを管理"
       ],
@@ -5804,11 +5831,6 @@
         "カレンダーと結合"
       ]
     },
-    "Pagination": {
-      "${ page } of ${ total }": [
-        "${ page } / ${ total }"
-      ]
-    },
     "Paid user checklist item": {
       "Get mobile app": [
         "モバイルアプリを入手する"
@@ -6155,11 +6177,6 @@
         "送信者の信頼されたキーの検証に失敗しました"
       ]
     },
-    "Sort": {
-      "Sort": [
-        "並べ替え"
-      ]
-    },
     "Sort option": {
       "Largest first": [
         "容量の大きい順"
@@ -6331,6 +6348,12 @@
       "Conversation removed from ${ labelName }.": [
         "会話を ${ labelName } から削除しました。"
       ],
+      "Conversations from ${ sendersList } will be labelled as ${ labelsList }": [
+        "${ sendersList } からの会話に ${ labelsList } ラベルをつけます"
+      ],
+      "Conversations from ${ sendersList } will be moved to ${ folder }": [
+        "${ sendersList } からの会話を ${ folder } に移動します"
+      ],
       "Draft deleted": [
         "下書きが削除されました"
       ],
@@ -6387,6 +6410,12 @@
       ],
       "Message removed from ${ labelName }.": [
         "メッセージを ${ labelName } から削除しました。"
+      ],
+      "Messages from ${ sendersList } will be labelled as ${ labelsList }": [
+        "${ sendersList } からのメッセージに ${ labelsList } ラベルをつけます"
+      ],
+      "Messages from ${ sendersList } will be moved to ${ folder }": [
+        "${ sendersList } からのメッセージを ${ folder } に移動します"
       ],
       "Move ${ selectionCount } conversation": [
         "${ selectionCount } 件の会話を移動"
@@ -6662,7 +6691,7 @@
         "連絡先を削除しています"
       ],
       "Don't give spam a chance": [
-        "スパムにチャンスを与えません"
+        "迷惑メールを送らせない"
       ],
       "Edit contact": [
         "連絡先の編集"
@@ -6714,6 +6743,9 @@
       ],
       "Groups": [
         "グループ"
+      ],
+      "Hide your email with SimpleLogin by Proton": [
+        "Proton の SimpleLogin であなたのメールアドレスを保護する"
       ],
       "Human verification": [
         "人間であることの検証"
@@ -6916,6 +6948,9 @@
       "Sign in and grant access": [
         "サインインして権限を付与"
       ],
+      "Sign out": [
+        "サインアウト"
+      ],
       "Sort conversations": [
         "会話をソート"
       ],
@@ -6945,6 +6980,9 @@
       ],
       "Unsubscribe": [
         "退会"
+      ],
+      "Unsubscribe request sent": [
+        "登録解除リクエストを送信"
       ],
       "Upgrade required": [
         "アップグレードが必要です"

@@ -151,9 +151,6 @@
       "Close": [
         "Fermer"
       ],
-      "Close modal": [
-        "Close"
-      ],
       "Close navigation": [
         "Fermer la navigation"
       ],
@@ -823,14 +820,14 @@
       "View plans details": [
         "Voir le détail des abonnements"
       ],
+      "Void": [
+        "Annulée"
+      ],
       "Void all recovery files": [
         "Annuler tous les fichiers de récupération"
       ],
       "Void all recovery files?": [
         "Annuler tous les fichiers de récupération ?"
-      ],
-      "Void anyway": [
-        "Annuler quand même"
       ],
       "What do I get?": [
         "Votre abonnement comprend :"
@@ -938,10 +935,10 @@
     },
     "Alert": {
       "By leaving now, some contacts may not be imported": [
-        "En quittant maintenant, il est possible que certains contacts ne soient pas importés"
+        "En quittant maintenant, il est possible que certains contacts ne soient pas importés."
       ],
       "By leaving now, some events may not be imported": [
-        "En quittant maintenant, certains événements pourraient ne pas être importés"
+        "En quittant maintenant, certains événements pourraient ne pas être importés."
       ]
     },
     "Alter": {
@@ -4164,12 +4161,6 @@
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Un nom pour vous aider à identifier l'endroit où vous l'utilisez afin de pouvoir facilement le révoquer ou le prolonger ultérieurement."
       ],
-      "A recovery file lets you unlock and view your data after an account reset.": [
-        "Un fichier de récupération vous permet de déverrouiller et d'afficher vos données après une réinitialisation de compte."
-      ],
-      "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password.": [
-        "Une phrase de récupération vous permet d’accéder à votre compte et de récupérer vos messages chiffrés si vous avez oublié votre mot de passe."
-      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Un utilisateur est un compte associé à un seul nom d'utilisateur, une seule boîte aux lettres et une seule personne."
       ],
@@ -4215,9 +4206,6 @@
       ],
       "Admin account allocation": [
         "Attribution de compte administrateur"
-      ],
-      "After a password reset your data is locked in encrypted form to keep it safe.": [
-        "Après une réinitialisation de mot de passe, vos données sont verrouillées sous forme chiffrée pour les protéger."
       ],
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
         "Après avoir effectué votre paiement Bitcoin, suivez les instructions ci-dessous pour changer d'abonnement."
@@ -4722,9 +4710,6 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Importation de vos données de ${ importedEmailAddress } vers ${ toEmail }."
       ],
-      "In case you lose your login details, we’ll send you recovery instructions via email or SMS.": [
-        "Si vous perdez vos données de connexion, nous vous enverrons des instructions de récupération par e-mail ou par SMS."
-      ],
       "Inherited from parent folder": [
         "Hérité du dossier dans lequel il est placé"
       ],
@@ -5066,6 +5051,9 @@
       "Recovery files have been voided": [
         "Les fichiers de récupération ont été annulés."
       ],
+      "Recovery information will remain on this device unless you select to delete it.": [
+        "Les informations de récupération resteront sur cet appareil jusqu'à ce que vous demandiez à les supprimer."
+      ],
       "recovery method": [
         "méthode de récupération"
       ],
@@ -5106,7 +5094,7 @@
         "Scanner plutôt le code QR"
       ],
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Scannez ce code en utilisant votre application d'authentication à deux facteurs pour configurer votre compte. ${ switchButton }."
+        "Scannez ce code en utilisant votre application d'authentification à deux facteurs pour configurer votre compte. ${ switchButton }."
       ],
       "Securing your account": [
         "Sécurisation de votre compte"
@@ -5300,15 +5288,6 @@
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
         "Afin d'améliorer continuellement nos services, nous collectons parfois des données pour contrôler le bon fonctionnement de nos applications. Ces informations ne sont pas partagées avec des services tiers."
       ],
-      "To decrypt and view your emails and other data, you need a recovery file.": [
-        "Pour déchiffrer et afficher vos e-mails et autres données, vous avez besoin d'un fichier de récupération."
-      ],
-      "To decrypt and view your emails and other data, you need a recovery phrase or recovery file.": [
-        "Pour déchiffrer et afficher vos e-mails et autres données, vous avez besoin d'une phrase ou d'un fichier de récupération."
-      ],
-      "To decrypt and view your emails and other data, you need a recovery phrase.": [
-        "Pour déchiffrer et afficher vos e-mails et autres données, vous avez besoin d'une phrase de récupération."
-      ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Pour déchiffrer et afficher vos données verrouillées après une réinitialisation de mot de passe, sélectionnez une méthode de récupération."
       ],
@@ -5483,6 +5462,9 @@
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Lors du renouvellement de votre abonnement, nous utiliserons tous vos crédits disponibles avant de débiter vos modes de paiement ci-dessus."
       ],
+      "Why?": [
+        "Pourquoi ?"
+      ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Sans activation, vous ne pourrez pas créer de nouveaux utilisateurs, ajouter des adresses aux utilisateurs existants ou accéder aux comptes d'utilisateurs non privés."
       ],
@@ -5547,7 +5529,7 @@
         "Vous ne pouvez pas utiliser les identifiants OpenVPN/IKEv2 pour vous connecter aux applications ${ VPN_APP_NAME } ou au tableau de bord ${ VPN_APP_NAME }. ${ learnMore }"
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
-        "Vous n'avez pas défini de méthode de récupération. Cela signifie que si vous oubliez votre mot de passe, la récupération de votre compte ne sera pas possible. Voulez-vous continuer sans méthode de récupération ?"
+        "Vous n'avez pas défini de méthode de récupération : si vous oubliez votre mot de passe, la récupération de votre compte ne sera pas possible. Voulez-vous continuer sans méthode de récupération ?"
       ],
       "You have no personal calendars to export.": [
         "Vous n'avez aucun calendrier personnel à exporter."
@@ -5605,9 +5587,6 @@
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Vous serez bientôt redirigé vers PayPal pour vérifier votre paiement."
-      ],
-      "You won't be able to recover encrypted data after an account reset using your downloaded recovery files.": [
-        "Vous ne pourrez pas récupérer les données chiffrées après une réinitialisation du compte en utilisant les fichiers de récupération que vous avez téléchargés."
       ],
       "You'll stay signed in even after you close the browser.": [
         "Vous resterez connecté même après avoir fermé le navigateur."
@@ -6357,6 +6336,9 @@
       ],
       "Delete": [
         "Supprimer"
+      ],
+      "Delete recovery-related information.": [
+        "Supprimer les informations liées à la récupération."
       ],
       "Density": [
         "Densité"
@@ -7131,6 +7113,9 @@
       ],
       "What is the difference between UDP and TCP protocols?": [
         "Quelle est la différence entre les protocoles UDP et TCP ?"
+      ],
+      "What’s this?": [
+        "Qu'est-ce que c'est ?"
       ],
       "Why set recovery methods?": [
         "Pourquoi définir une méthode de récupération ?"
@@ -9999,6 +9984,9 @@
       ],
       "Sign in and grant access": [
         "Se connecter et donner l'accès"
+      ],
+      "Sign out": [
+        "Se déconnecter"
       ],
       "Sort folders alphabetically": [
         "Trier les dossiers par ordre alphabétique"
