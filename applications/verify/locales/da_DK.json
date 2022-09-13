@@ -6,13 +6,10 @@
   "contexts": {
     "Action": {
       "Cancel": [
-        "Annuller"
+        "Annullér"
       ],
       "Close": [
         "Luk"
-      ],
-      "Close modal": [
-        "Luk dialogboks"
       ],
       "Didn't receive the code?": [
         "Ikke modtaget koden?"
@@ -30,7 +27,7 @@
         "Få bekræftelseskode"
       ],
       "refresh the page": [
-        "genopfrisk siden"
+        "opdater siden"
       ],
       "Request new code": [
         "Anmod om ny kode"
@@ -55,23 +52,6 @@
       ],
       "View invoice": [
         "Vis faktura"
-      ]
-    },
-    "color": {
-      "carrot": [
-        "gulerod"
-      ],
-      "pink": [
-        "pink"
-      ],
-      "purple": [
-        "lilla"
-      ],
-      "sahara": [
-        "sahara"
-      ],
-      "strawberry": [
-        "jordbær"
       ]
     },
     "Country name": {
@@ -287,6 +267,9 @@
       ],
       "Estonia": [
         "Estland"
+      ],
+      "Eswatini": [
+        "Eswatini"
       ],
       "Ethiopia": [
         "Etiopien"
@@ -851,19 +834,19 @@
         "Indtast 6 cifre"
       ],
       "Invalid verification code": [
-        "Ugyldig bekræftelseskode"
+        "Ugyldig verifikationskode"
       ],
       "Not a valid number": [
         "Ikke et gyldigt nummer"
       ],
       "Passwords do not match": [
-        "Adgangskoderne er ikke ens"
+        "Adgangskoder matcher ikke"
       ],
       "Request timed out": [
         "Forespørgsel fik timeout"
       ],
       "This field is required": [
-        "Dette felt er påkrævet"
+        "Feltet er påkrævet"
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Dette felt kræver minimum ${ minimumLength } tegn."
@@ -880,7 +863,7 @@
         "Ups, noget gik galt"
       ],
       "Please ${ refresh } or check your connection.": [
-        "${ refresh } eller tjek din forbindelse."
+        "Du bedes venligst ${ refresh } eller tjekke din forbindelse."
       ],
       "Something went wrong. Please refresh the page or try again later.": [
         "Noget gik galt. Genopfrisk siden eller prøv igen senere."
@@ -959,7 +942,7 @@
         "Dit telefonnummer vil kun blive anvendt til denne engangsbekræftelse."
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "Din Proton-konto er i øjeblikket suspenderet. For at fortsætte med at bruge din konto bedes du betale eventuelle forfaldne fakturaer."
+        "Din Proton-konto er suspenderet. For at fortsætte med at bruge din konto skal du betale eventuelle forfaldne fakturaer."
       ]
     },
     "Label": {
@@ -967,7 +950,7 @@
         "Koden er på 6 cifre uden mellemrum"
       ],
       "Email address": [
-        "E-mailadresse"
+        "E-mail"
       ],
       "Hide password": [
         "Skjul adgangskode"
@@ -979,18 +962,18 @@
         "Telefonnummer"
       ],
       "Reveal password": [
-        "Afslør adgangskode"
+        "Vis adgangskode"
       ],
       "Verification code": [
-        "Bekræftelseskode"
+        "Verifikationskode"
       ]
     },
     "Link": {
       "Learn more": [
-        "Få yderligere information"
+        "Få mere at vide"
       ],
       "Request an invite": [
-        "Anmod om en invitation"
+        "Anmod om invitation"
       ]
     },
     "Placeholder": {
@@ -1008,10 +991,10 @@
     },
     "Title": {
       "Human verification": [
-        "Menneskelig godkendelse"
+        "Menneskelig bekræftelse"
       ],
       "Invalid verification code": [
-        "Ugyldig bekræftelseskode"
+        "Ugyldig verifikationskode"
       ],
       "Request new code": [
         "Anmod om ny kode"

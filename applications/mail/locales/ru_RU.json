@@ -152,9 +152,6 @@
       "Close composer": [
         "Закрыть редактор"
       ],
-      "Close modal": [
-        "Close"
-      ],
       "Close navigation": [
         "Закрыть навигацию"
       ],
@@ -6432,11 +6429,6 @@
         "Объединение с календарем"
       ]
     },
-    "Pagination": {
-      "${ page } of ${ total }": [
-        "${ page } из ${ total }"
-      ]
-    },
     "Paid user checklist item": {
       "Get mobile app": [
         "Получить мобильное приложение"
@@ -6815,11 +6807,6 @@
       ],
       "Sender's trusted keys verification failed": [
         "Проверка доверенных ключей отправителя была безуспешна"
-      ]
-    },
-    "Sort": {
-      "Sort": [
-        "Сортировать"
       ]
     },
     "Sort option": {
@@ -7700,6 +7687,9 @@
       ],
       "Sign in and grant access": [
         "Войдите и предоставьте доступ"
+      ],
+      "Sign out": [
+        "Выйти"
       ],
       "Sort conversations": [
         "Сортировка цепочек писем"

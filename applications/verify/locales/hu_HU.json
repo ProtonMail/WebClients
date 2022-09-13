@@ -11,9 +11,6 @@
       "Close": [
         "Bezárás"
       ],
-      "Close modal": [
-        "Ablak bezárása"
-      ],
       "Didn't receive the code?": [
         "Nem kapta meg a kódot?"
       ],
@@ -30,7 +27,7 @@
         "Ellenőrző kód küldése"
       ],
       "refresh the page": [
-        "oldalfrissítés"
+        "frissítse az oldalt"
       ],
       "Request new code": [
         "Új kód kérése"
@@ -52,6 +49,68 @@
       ],
       "View invoice": [
         "Számla megtekintése"
+      ]
+    },
+    "color": {
+      "carrot": [
+        "sárgarépa"
+      ],
+      "cerise": [
+        "cseresznye"
+      ],
+      "cobalt": [
+        "kobalt"
+      ],
+      "copper": [
+        "réz"
+      ],
+      "enzian": [
+        "encián"
+      ],
+      "fern": [
+        "páfrány"
+      ],
+      "forest": [
+        "erdő"
+      ],
+      "ocean": [
+        "óceán"
+      ],
+      "olive": [
+        "olíva"
+      ],
+      "pacific": [
+        "csendes-óceáni"
+      ],
+      "pickle": [
+        "pác"
+      ],
+      "pine": [
+        "fenyő"
+      ],
+      "pink": [
+        "rózsaszín"
+      ],
+      "plum": [
+        "szilva"
+      ],
+      "purple": [
+        "lila"
+      ],
+      "reef": [
+        "zátony"
+      ],
+      "sahara": [
+        "szahara"
+      ],
+      "slateblue": [
+        "palakék"
+      ],
+      "soil": [
+        "föld"
+      ],
+      "strawberry": [
+        "eper"
       ]
     },
     "Country name": {
@@ -86,7 +145,7 @@
         "Antigua és Barbuda"
       ],
       "Argentina": [
-        "1"
+        "Argentína"
       ],
       "Armenia": [
         "Örményország"
@@ -831,13 +890,13 @@
         "Érvénytelen szám"
       ],
       "Passwords do not match": [
-        "A jelszavak nem egyeznek meg"
+        "A jelszavak nem egyeznek"
       ],
       "Request timed out": [
         "A kérés túllépte az időkorlátot"
       ],
       "This field is required": [
-        "Kötelező mező"
+        "A mező kitöltése kötelező"
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Legalább ${ minimumLength } karakter szükséges ebben a mezőben."
@@ -857,7 +916,7 @@
         "Kérjük, ${ refresh } vagy ellenőrizze az internetkapcsolatot."
       ],
       "There was a problem connecting to Proton.": [
-        "Hiba lépett fel a Proton-hoz történő csatlakozás során."
+        "Hiba lépett fel a Protonhoz történő csatlakozás során."
       ],
       "You may also ${ refresh } or try again later.": [
         "Megpróbálhatja ${ refresh } az oldalt vagy később újra próbálni."
@@ -882,7 +941,7 @@
     },
     "Info": {
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
-        "Mielőtt új ellenőrző kódot igényelne, kérjük nézze meg a levélszemét mappát illetve bizonyosodjon meg arról, hogy ${ strong } a megfelelő cím."
+        "Mielőtt új megerősítő kódot igényelne, kérjük tekintse meg a spam mappát illetve bizonyosodjon meg arról, hogy ${ strong } a megfelelő cím."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Kattintson az \"Új kód kérése\" gombra, hogy a ${ strong } számra új ellenőrzési kódot küldjünk. Ha hibás ez a szám, kattintson a Szerkesztés gombra."
@@ -924,7 +983,7 @@
         "Szeretne kapni egy új ellenőrzési kódot?"
       ],
       "Your email will only be used for this one-time verification.": [
-        "Az e-mail cím csak erre az egyszeri ellenőrzésre lesz felhasználva."
+        "Az e-mail csak erre az egyszeri ellenőrzésre lesz felhasználva."
       ],
       "Your phone number will only be used for this one-time verification.": [
         "A telefonszám csak erre az egyszeri ellenőrzésre lesz felhasználva."
@@ -941,7 +1000,7 @@
         "E-mail cím"
       ],
       "Hide password": [
-        "A jelszó elrejtése"
+        "Jelszó elrejtése"
       ],
       "Password": [
         "Jelszó"

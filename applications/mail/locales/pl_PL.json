@@ -152,9 +152,6 @@
       "Close composer": [
         "Zamknij edytor"
       ],
-      "Close modal": [
-        "Close"
-      ],
       "Close navigation": [
         "Zamknij nawigację"
       ],
@@ -1084,6 +1081,9 @@
       ],
       "Star message": [
         "Wyróżnij wiadomość"
+      ],
+      "Unread email": [
+        "Nieprzeczytana wiadomość"
       ],
       "Unstar conversation": [
         "Usuń wyróżnienie wątku"
@@ -4676,6 +4676,9 @@
       "Recipient: ": [
         "Odbiorca: "
       ],
+      "Recovery information will remain on this device unless you select to delete it.": [
+        "Informacje o odzyskiwaniu pozostaną na urządzeniu, chyba że usuniesz te dane."
+      ],
       "Recovery phrase copied to clipboard": [
         "Hasło odzyskiwania zostało skopiowane do schowka"
       ],
@@ -5577,6 +5580,9 @@
       "Delete": [
         "Usuń"
       ],
+      "Delete recovery-related information.": [
+        "Usuń informacje o odzyskiwaniu."
+      ],
       "Do not ask again": [
         "Nie pytaj ponownie"
       ],
@@ -6017,6 +6023,9 @@
       "Upgrade account": [
         "Ulepsz konto"
       ],
+      "What’s this?": [
+        "Co to jest?"
+      ],
       "You need to activate your calendar keys to add this event": [
         "Musisz aktywować klucze kalendarza, aby dodać wydarzenie"
       ],
@@ -6430,8 +6439,8 @@
       ]
     },
     "Pagination": {
-      "${ page } of ${ total }": [
-        "${ page } z ${ total }"
+      "${ page } of ${ totalText }": [
+        "${ page } z ${ totalText }"
       ]
     },
     "Paid user checklist item": {
@@ -6812,11 +6821,6 @@
       ],
       "Sender's trusted keys verification failed": [
         "Weryfikacja zaufanych kluczy nadawcy nie powiodła się"
-      ]
-    },
-    "Sort": {
-      "Sort": [
-        "Sortuj"
       ]
     },
     "Sort option": {
@@ -7697,6 +7701,9 @@
       ],
       "Sign in and grant access": [
         "Zaloguj się i przyznaj dostęp"
+      ],
+      "Sign out": [
+        "Wyloguj"
       ],
       "Sort conversations": [
         "Sortuj wątki"

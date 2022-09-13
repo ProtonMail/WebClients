@@ -151,9 +151,6 @@
       "Close": [
         "Cerrar"
       ],
-      "Close modal": [
-        "Close"
-      ],
       "Close navigation": [
         "Cerrar navegación"
       ],
@@ -646,6 +643,9 @@
       "Search settings": [
         "Ajustes de búsqueda"
       ],
+      "See plan features": [
+        "Ver funcionalidades del plan"
+      ],
       "Select ${ planTitle }": [
         "Seleccione ${ planTitle }"
       ],
@@ -823,14 +823,14 @@
       "View plans details": [
         "Ver detalles de planes"
       ],
+      "Void": [
+        "Nula"
+      ],
       "Void all recovery files": [
         "Anular todos los archivos de recuperación"
       ],
       "Void all recovery files?": [
         "¿Anular todos los archivos de recuperación?"
-      ],
-      "Void anyway": [
-        "Anular de todos modos"
       ],
       "What do I get?": [
         "¿Qué obtengo?"
@@ -4164,11 +4164,11 @@
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Un nombre que le ayude a identificar dónde lo usa para poder revocarlo o ampliarlo fácilmente más adelante."
       ],
-      "A recovery file lets you unlock and view your data after an account reset.": [
-        "Un archivo de recuperación le permite desbloquear y ver sus datos después de restablecer la cuenta."
+      "A recovery file lets you unlock and view your data after an account reset": [
+        "Un archivo de recuperación le permite desbloquear y ver sus datos después de restablecer la cuenta"
       ],
-      "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password.": [
-        "Una frase de recuperación le permite acceder a su cuenta y recuperar sus mensajes cifrados si olvida su contraseña."
+      "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password": [
+        "Una frase de recuperación le permite acceder a su cuenta y recuperar sus mensajes cifrados si olvida su contraseña"
       ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Un usuario es una cuenta asociada con un único nombre de usuario, buzón y persona"
@@ -4187,6 +4187,9 @@
       ],
       "Account successfully updated": [
         "Cuenta actualizada con éxito"
+      ],
+      "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
+        "Active al menos un método de recuperación de datos para asegurarse de tener acceso a los contenidos de su cuenta de ${ BRAND_NAME } si pierde la contraseña."
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Añada una dirección de correo @pm.me a su cuenta. Este dominio simple y más corto significa \"${ MAIL_APP_NAME }\" o \"Mensaje privado\" en inglés."
@@ -4215,9 +4218,6 @@
       ],
       "Admin account allocation": [
         "Cuenta administrador de asignación"
-      ],
-      "After a password reset your data is locked in encrypted form to keep it safe.": [
-        "Al restablecer una contraseña, sus datos se bloquean con cifrado para mantenerlos seguros."
       ],
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
         "Después de realizar el pago con Bitcoin, siga estas instrucciones para actualizar."
@@ -4722,9 +4722,6 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Importando sus datos desde ${ importedEmailAddress } a ${ toEmail }."
       ],
-      "In case you lose your login details, we’ll send you recovery instructions via email or SMS.": [
-        "En caso de que pierda sus datos de ingreso, enviaremos instrucciones de recuperación por correo o SMS."
-      ],
       "Inherited from parent folder": [
         "Heredada de la carpeta padre"
       ],
@@ -5060,11 +5057,17 @@
       "read our two-factor authentication guide first": [
         "leer primero nuestra guía de autenticación de dos factores"
       ],
+      "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
+        "Recomendado en dispositivos de confianza. ${ keepMeSignedInLearnMoreLink }"
+      ],
       "Recovery file downloaded": [
         "Archivo de recuperación descargado"
       ],
       "Recovery files have been voided": [
         "Los archivos de recuperación se han anulado"
+      ],
+      "Recovery information will remain on this device unless you select to delete it.": [
+        "La información de recuperación se mantendrá en este dispositivo a menos que la elimine."
       ],
       "recovery method": [
         "método de recuperación"
@@ -5300,15 +5303,6 @@
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
         "Para mejorar continuamente nuestros servicios, a veces recopilamos datos para controlar el funcionamiento correcto de nuestras aplicaciones. Esta información no se comparte con ningún servicio de terceros."
       ],
-      "To decrypt and view your emails and other data, you need a recovery file.": [
-        "Para descifrar y ver sus correos y otros datos, necesita un archivo de recuperación."
-      ],
-      "To decrypt and view your emails and other data, you need a recovery phrase or recovery file.": [
-        "Para descifrar y ver sus correos y otros datos, necesita una frase o archivo de recuperación."
-      ],
-      "To decrypt and view your emails and other data, you need a recovery phrase.": [
-        "Para descifrar y ver sus correos y otros datos, necesita una frase de recuperación."
-      ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Para descifrar y ver sus datos bloqueados después de restablecer la contraseña, seleccione un método de recuperación."
       ],
@@ -5438,6 +5432,9 @@
       "We recommend using your recovery phrase instead.": [
         "Recomendamos usar su frase de recuperación en su lugar."
       ],
+      "We securely store recovery information on your trusted device to prevent you from losing your data": [
+        "Almacenamos de forma segura la información de recuperación en su dispositivo de confianza para evitar que pierda sus datos"
+      ],
       "We use 3-D Secure to protect your payments.": [
         "Usamos seguridad 3-D para proteger sus pagos."
       ],
@@ -5482,6 +5479,9 @@
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Cuando su suscripción se renueve, aplicaremos cualquier crédito disponible antes de cobrar al método de pago anterior."
+      ],
+      "Why?": [
+        "¿Por qué?"
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Sin activación, no podrá crear usuarios nuevos, añadir direcciones a usuarios existentes o acceder a cuentas de usuario no privadas."
@@ -5606,8 +5606,11 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "Pronto será redirigido a PayPal para verificar su pago."
       ],
-      "You won't be able to recover encrypted data after an account reset using your downloaded recovery files.": [
-        "No podrá recuperar datos cifrados después de restablecer la cuenta con los archivos de recuperación descargados."
+      "You won’t be able to recover locked data using your downloaded recovery files.": [
+        "No podrá recuperar datos bloqueados usando sus archivos de recuperación descargados."
+      ],
+      "You won’t be able to recover locked data using your downloaded recovery files. This will also void trusted device-recovery information.": [
+        "No podrá recuperar datos bloqueados usando sus archivos de recuperación descargados. Esto también anulará la información de recuperación de dispositivos de confianza."
       ],
       "You'll stay signed in even after you close the browser.": [
         "Seguirá conectado incluso después de cerrar el navegador."
@@ -6154,6 +6157,9 @@
       "Allow recovery by recovery phrase": [
         "Permitir recuperación mediante frase de recuperación"
       ],
+      "Allow recovery using a trusted device": [
+        "Permitir recuperación usando un dispositivo de confianza"
+      ],
       "Amount": [
         "Monto"
       ],
@@ -6357,6 +6363,9 @@
       ],
       "Delete": [
         "Eliminar"
+      ],
+      "Delete recovery-related information.": [
+        "Eliminar información de recuperación relacionada."
       ],
       "Density": [
         "Densidad"
@@ -6911,6 +6920,9 @@
       ],
       "Recovery phrase": [
         "Frase de recuperación"
+      ],
+      "Trusted device recovery": [
+        "Dispositivo de confianza de recuperación"
       ]
     },
     "Label for adding a new custom domain": {
@@ -7087,6 +7099,9 @@
       "Learn more": [
         "Más información"
       ],
+      "Learn more about data recovery": [
+        "Más información acerca de la recuperación de datos"
+      ],
       "Need help?": [
         "¿Necesita ayuda?"
       ],
@@ -7131,6 +7146,9 @@
       ],
       "What is the difference between UDP and TCP protocols?": [
         "¿Cuál es la diferencia entre los protocolos UDP y TCP?"
+      ],
+      "What’s this?": [
+        "¿Qué es esto?"
       ],
       "Why set recovery methods?": [
         "¿Por qué establecer métodos de recuperación?"
@@ -9999,6 +10017,9 @@
       ],
       "Sign in and grant access": [
         "Iniciar sesión y otorgar acceso"
+      ],
+      "Sign out": [
+        "Cerrar sesión"
       ],
       "Sort folders alphabetically": [
         "Ordenar carpetas alfabéticamente"

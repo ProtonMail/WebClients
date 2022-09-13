@@ -152,9 +152,6 @@
       "Close composer": [
         "Zavřít editor"
       ],
-      "Close modal": [
-        "Close"
-      ],
       "Close navigation": [
         "Zavřít menu"
       ],
@@ -1085,6 +1082,9 @@
       "Star message": [
         "Označit zprávu"
       ],
+      "Unread email": [
+        "Nepřečtená pošta"
+      ],
       "Unstar conversation": [
         "Odznačit konverzaci"
       ],
@@ -1728,13 +1728,13 @@
     },
     "Composer email icon": {
       "End-to-end encrypted": [
-        "End-to-end šifrováno"
+        "Koncové šifrování"
       ],
       "End-to-end encrypted to verified recipient": [
-        "Zašifrováno end-to-end ověřenému příjemci"
+        "Zpráva ověřenému příjemci s koncovým šifrováním"
       ],
       "End-to-end encrypted. ${ warningsText }": [
-        "End-to-end šifrováno. ${ warningsText }"
+        "Koncové šifrování. ${ warningsText }"
       ],
       "PGP-encrypted": [
         "PGP-šifrováno"
@@ -2892,7 +2892,7 @@
         "Pozvání na událost začínající v ${ formattedStart }"
       ],
       "Update for an event on ${ formattedStart }": [
-        "Aktualizace události ${ formattedStart }"
+        "Aktualizace události v ${ formattedStart }"
       ],
       "Update for an event starting on ${ formattedStart }": [
         "Aktualizace události začínající v ${ formattedStart }"
@@ -4593,7 +4593,7 @@
         "z"
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
-        "Jeden nebo více důvěryhodných klíčů byl vlastníkem označen jako \"kompromitovaný\". Doporučujeme, abyste takovým klíčům \"nedůvěřovali\"."
+        "Jeden nebo více důvěryhodných klíčů byl vlastníkem označen jako \"kompromitovaný\". Doporučujeme, abyste u takových klíčů vybrali volbu \"Nedůvěřovat\"."
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Tato nastavení změňte, pouze pokud používáte PGP s příjemci, kteří nepoužívají službu ${ BRAND_NAME }."
@@ -4676,6 +4676,9 @@
       "Recipient: ": [
         "Příjemce: "
       ],
+      "Recovery information will remain on this device unless you select to delete it.": [
+        "Informace o obnovení zůstanou v tomto zařízení, pokud nezvolíte jejich odstranění."
+      ],
       "Recovery phrase copied to clipboard": [
         "Obnovovací fráze byla zkopírovaná do schránky"
       ],
@@ -4749,7 +4752,7 @@
         "Odesílání zpráv z adresy @pm.me je placená funkce. Vaše zpráva bude odeslána z vaší výchozí adresy ${ email }"
       ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
-        "Odesláno z bezpečného <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
+        "Odesláno z bezpečného <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }u</a>."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Servery jsou nedostupné. Zkuste to prosím znovu za několik minut"
@@ -4788,7 +4791,7 @@
         "Předmět"
       ],
       "Subject is end-to-end encrypted": [
-        "Předmět zprávy je end-to-end šifrovaný"
+        "Předmět zprávy je koncově šifrovaný"
       ],
       "Subject:": [
         "Předmět:"
@@ -5580,6 +5583,9 @@
       "Delete": [
         "Odstranit"
       ],
+      "Delete recovery-related information.": [
+        "Odstranit informace související s obnovením."
+      ],
       "Do not ask again": [
         "Příště se neptat"
       ],
@@ -5934,7 +5940,7 @@
         "Složky"
       ],
       "Go to subscription plans": [
-        "Prohlédněte si plány předplatného"
+        "Zobrazit tarify předplatného"
       ],
       "Inbox": [
         "Doručená pošta"
@@ -6019,6 +6025,9 @@
       ],
       "Upgrade account": [
         "Navýšit účet"
+      ],
+      "What’s this?": [
+        "Co je to?"
       ],
       "You need to activate your calendar keys to add this event": [
         "Pro přidání této události musíte aktivovat vaše klíče kalendáře"
@@ -6433,8 +6442,8 @@
       ]
     },
     "Pagination": {
-      "${ page } of ${ total }": [
-        "${ page } z ${ total }"
+      "${ page } of ${ totalText }": [
+        "${ page } z ${ totalText }"
       ]
     },
     "Paid user checklist item": {
@@ -6469,7 +6478,7 @@
         "${ emailAddress } označil(a) tento klíč jako zastaralý. Tento klíč lze použít pouze pro ověření podpisu."
       ],
       "We recommend that you \"untrust\" this key.": [
-        "Doporučujeme, abyste tomuto klíči \"nedůvěřovali\"."
+        "Doporučujeme, abyste u tohoto klíče zvolili \"Nedůvěřovat\"."
       ]
     },
     "PGP key warning": {
@@ -6628,13 +6637,13 @@
     },
     "Received email icon": {
       "End-to-end encrypted and signed message": [
-        "End-to-End šifrovaná a podepsaná zpráva"
+        "Podepsaná zpráva s koncovým šifrováním"
       ],
       "End-to-end encrypted message": [
         "End-to-end šifrovaná zpráva"
       ],
       "End-to-end encrypted message from verified sender": [
-        "End-to-end šifrovaná zpráva od ověřeného odesílatele"
+        "Zpráva od ověřeného ověřeného odesílatele s koncovým šifrováním"
       ],
       "PGP-encrypted and signed message": [
         "PGP-šifrovaná a podepsaná zpráva"
@@ -6764,10 +6773,10 @@
         "End-to-end šifrováno"
       ],
       "End-to-end encrypted to PGP recipient": [
-        "End-to-end šifrování PGP příjemci"
+        "Koncové šifrování a pro PGP příjemce"
       ],
       "End-to-end encrypted to verified PGP recipient": [
-        "End-to-end šifrování ověřenému PGP příjemci"
+        "Koncové šifrování, pro ověřeného PGP příjemce"
       ],
       "End-to-end encrypted to verified recipient": [
         "Zašifrováno end-to-end ověřenému příjemci"
@@ -6788,10 +6797,10 @@
         "Odesláno Vámi s end-to-end šifrováním"
       ],
       "Sent by you with end-to-end encryption to verified recipient": [
-        "Odesláno vámi s end-to-end šifrováním ověřenému příjemci",
-        "Odesláno vámi s end-to-end šifrováním ověřeným příjemcům",
-        "Odesláno vámi s end-to-end šifrováním ověřeným příjemcům",
-        "Odesláno vámi s end-to-end šifrováním ověřeným příjemcům"
+        "Odesláno vámi s koncovým šifrováním ověřenému příjemci",
+        "Odesláno vámi s koncovým šifrováním ověřeným příjemcům",
+        "Odesláno vámi s koncovým šifrováním ověřeným příjemcům",
+        "Odesláno vámi s koncovým šifrováním ověřeným příjemcům"
       ],
       "Stored with zero-access encryption": [
         "Uloženo včetně šifrování s nulovým přístupem"
@@ -6815,11 +6824,6 @@
       ],
       "Sender's trusted keys verification failed": [
         "Ověření důvěrných klíčů odesílatele selhalo"
-      ]
-    },
-    "Sort": {
-      "Sort": [
-        "Seřadit"
       ]
     },
     "Sort option": {
@@ -7701,6 +7705,9 @@
       "Sign in and grant access": [
         "Přihlaste se a povolte přístup"
       ],
+      "Sign out": [
+        "Odhlásit se"
+      ],
       "Sort conversations": [
         "Seřadit konverzace"
       ],
@@ -7808,7 +7815,7 @@
         "Tato akce stáhne všechny zprávy, aby mohly být lokálně prohledávány. Vymazání dat prohlížeče deaktivuje tuto volbu."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
-        "Nahrajte veřejný klíč, pro umožnění zasílání end-to-end šifrování e-mailů k tomuto e-mailu"
+        "Pro zasílání e-mailů s koncovým šifrováním na tuto e-mailovou adresu, nahrajte prosím veřejný klíč"
       ],
       "You do not have any contacts to export": [
         "Nemáte žádné kontakty k exportu"
@@ -7875,13 +7882,13 @@
         "Jestliže si nepamatujete heslo, není možné znovu aktivovat váš klíč. Můžeme zrušit výstražnou zprávu, ale tím trvale ztratíte přístup ke všem datům šifrovaným tímto klíčem."
       ],
       "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
-        "Živý chat je prémiová funkce, která je k dispozici pouze uživatelům s placenými ${ VPN_APP_NAME } plány. Prosím otevřete běžný požadavek na podporu."
+        "Živý chat je prémiová funkce, která je k dispozici pouze uživatelům s placenými ${ VPN_APP_NAME } tarify. Prosím otevřete běžný požadavek na podporu."
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
         "Proto sloučí všechny složky se stejnými názvy. Pokud si to nepřejete, změňte názvy před importem."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
-        "Hlášení nejsou end-to-end šifrována, neposílejte žádné citlivé informace."
+        "Hlášení nejsou zabezpečena koncovým šifrováním, neposílejte žádné citlivé informace."
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Některé kontakty vykazují chybu při spojení. Prosím, zkontrolujte je individuálně"

@@ -151,9 +151,6 @@
       "Close": [
         "Kapat"
       ],
-      "Close modal": [
-        "Close"
-      ],
       "Close navigation": [
         "Gezinmeyi kapat"
       ],
@@ -646,6 +643,9 @@
       "Search settings": [
         "Arama ayarları"
       ],
+      "See plan features": [
+        "Tarife özelliklerini görün"
+      ],
       "Select ${ planTitle }": [
         "${ planTitle } seçin"
       ],
@@ -823,14 +823,14 @@
       "View plans details": [
         "Tarife ayrıntılarını görüntüle"
       ],
+      "Void": [
+        "Geçersiz"
+      ],
       "Void all recovery files": [
         "Tüm kurtarma dosyalarını geçersiz kıl"
       ],
       "Void all recovery files?": [
         "Tüm kurtarma dosyaları geçersiz kılınsın mı?"
-      ],
-      "Void anyway": [
-        "Yine de geçersiz kıl"
       ],
       "What do I get?": [
         "Ne alacağım?"
@@ -4164,11 +4164,11 @@
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Daha sonra sertifikayı kolayca geçersiz kılmaya ya da uzatmaya yardımcı olacak bir ad."
       ],
-      "A recovery file lets you unlock and view your data after an account reset.": [
-        "Bir kurtarma dosyası, bir hesabı sıfırladığınızda verilerinizin kilidini açmanızı ve görüntülemenizi sağlar."
+      "A recovery file lets you unlock and view your data after an account reset": [
+        "Bir kurtarma dosyası, bir hesabı sıfırladığınızda verilerinizin kilidini açmanızı ve görüntülemenizi sağlar"
       ],
-      "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password.": [
-        "Kurtarma ifadesi, parolanızı unutursanız hesabınıza erişmenizi sağlar ve şifrelenmiş iletilerinizi kurtarır."
+      "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password": [
+        "Kurtarma ifadesi, parolanızı unutursanız hesabınıza erişmenizi sağlar ve şifrelenmiş iletilerinizi kurtarır"
       ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Bir kullanıcı, tek bir kullanıcı adı, e-posta kutusu ya da kişi ile ilişkili olan bir hesaptır"
@@ -4187,6 +4187,9 @@
       ],
       "Account successfully updated": [
         "Hesap güncellendi"
+      ],
+      "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
+        "Parolanızı kaybederseniz, ${ BRAND_NAME } hesabınızın içeriğine erişmeyi sürdürebileceğinizden emin olmak için en az bir veri kurtarma yöntemini etkinleştirin."
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Hesabınıza @pm.me e-posta adresini ekler. Bu basit ve kısa etki alanı \"Bana ${ MAIL_APP_NAME } gönder\" (ProtonMail me) veya \"Bana özel ileti gönder\" (Private Message me) şeklinde anlamlandırılabilir"
@@ -4215,9 +4218,6 @@
       ],
       "Admin account allocation": [
         "Yönetici hesabına ayrılan"
-      ],
-      "After a password reset your data is locked in encrypted form to keep it safe.": [
-        "Parola sıfırlama işleminden sonra güvenliğinizi sağlamak için verileriniz şifrelenmiş olarak kilitlenir."
       ],
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
         "Bitcoin ödemenizi yaptıktan sonra, tarifenizi yükseltmek için aşağıdaki yönergeleri izleyin."
@@ -4722,9 +4722,6 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "${ importedEmailAddress } verileriniz ${ toEmail } içine aktarılıyor."
       ],
-      "In case you lose your login details, we’ll send you recovery instructions via email or SMS.": [
-        "Oturum açma bilgilerinizi kaybederseniz, size e-posta ya da SMS ile kurtarma yönergeleri göndereceğiz."
-      ],
       "Inherited from parent folder": [
         "Üst klasörden devralındı"
       ],
@@ -5060,11 +5057,17 @@
       "read our two-factor authentication guide first": [
         "önce iki aşamalı kimlik doğrulama rehberimizi okuyun"
       ],
+      "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
+        "Güvenilir aygıtlar üzerinde önerilir. ${ keepMeSignedInLearnMoreLink }"
+      ],
       "Recovery file downloaded": [
         "Kurtarma dosyası indirildi"
       ],
       "Recovery files have been voided": [
         "Kurtarma dosyaları geçersiz kılındı"
+      ],
+      "Recovery information will remain on this device unless you select to delete it.": [
+        "Siz silmeyi seçmedikçe kurtarma bilgileri bu aygıt üzerinde kalacak."
       ],
       "recovery method": [
         "kurtarma yöntemi"
@@ -5300,15 +5303,6 @@
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
         "Hizmetlerimizi sürekli olarak geliştirmek için bazen uygulamalarımızın düzgün çalışıp çalışmadığını izlemek amacıyla veri topluyoruz. Bu bilgiler herhangi bir 3. taraf ile paylaşılmıyor."
       ],
-      "To decrypt and view your emails and other data, you need a recovery file.": [
-        "E-postalarınızın ve diğer verilerinizin şifresini çözmek ve görüntülemek için bir kurtarma dosyanız olmalıdır."
-      ],
-      "To decrypt and view your emails and other data, you need a recovery phrase or recovery file.": [
-        "E-postalarınızın ve diğer verilerinizin şifresini çözmek ve görüntülemek için bir kurtarma ifadeniz veya kurtarma dosyanız olmalıdır."
-      ],
-      "To decrypt and view your emails and other data, you need a recovery phrase.": [
-        "E-postalarınızın ve diğer verilerinizin şifresini çözmek ve görüntülemek için bir kurtarma dosyanız veya kurtarma ifadeniz olmalıdır."
-      ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Parola sıfırlandıktan sonra erişilmesi engellenen verilerinizin şifresini çözmek ve bunları görüntülemek için bir kurtarma yöntemi belirleyin."
       ],
@@ -5438,6 +5432,9 @@
       "We recommend using your recovery phrase instead.": [
         "Bunun yerine kurtarma ifadesini kullanmanızı öneririz."
       ],
+      "We securely store recovery information on your trusted device to prevent you from losing your data": [
+        "Verilerinizi kaybetmenizi önlemek için kurtarma bilgilerini güvenilir aygıtnızda güvenli bir şekilde saklarız"
+      ],
       "We use 3-D Secure to protect your payments.": [
         "Ödemelerinizi korumak için 3-D Secure kullanıyoruz."
       ],
@@ -5482,6 +5479,9 @@
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Aboneliğiniz yenilendiğinde, ödeme için yukarıdaki yönteme başvurmadan önce var olan tüm kredileri kullanacağız."
+      ],
+      "Why?": [
+        "Neden?"
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Etkinleştirme yapılmadan yeni kullanıcılar eklenemez. Var olan kullanıcılara adres ekleyemez veya kişisel olmayan kullanıcı hesaplarına erişemezsiniz."
@@ -5606,8 +5606,11 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "Birazdan ödemenizi doğrulamak için PayPal sitesine yönlendirileceksiniz."
       ],
-      "You won't be able to recover encrypted data after an account reset using your downloaded recovery files.": [
-        "İndirdiğiniz kurtarma dosyalarını kullanarak bir hesabı sıfırladıktan sonra şifrelenmiş verileri kurtaramazsınız."
+      "You won’t be able to recover locked data using your downloaded recovery files.": [
+        "İndirdiğiniz kurtarma dosyalarını kullanarak kilitli verileri kurtaramazsınız."
+      ],
+      "You won’t be able to recover locked data using your downloaded recovery files. This will also void trusted device-recovery information.": [
+        "İndirdiğiniz kurtarma dosyalarını kullanarak kilitli verileri kurtaramazsınız. Bu seçenek, güvenilir aygıt kurtarma bilgilerini de geçersiz kılar."
       ],
       "You'll stay signed in even after you close the browser.": [
         "Web tarayıcıyı kapattıktan sonra bile oturumunuz açık kalır."
@@ -6154,6 +6157,9 @@
       "Allow recovery by recovery phrase": [
         "Kurtarma ifadesi ile kurtarma yapılabilsin"
       ],
+      "Allow recovery using a trusted device": [
+        "Kurtarma için güvenilir bir aygıt kullanın"
+      ],
       "Amount": [
         "Tutar"
       ],
@@ -6357,6 +6363,9 @@
       ],
       "Delete": [
         "Sil"
+      ],
+      "Delete recovery-related information.": [
+        "Kurtarma ile ilgili bilgileri sil."
       ],
       "Density": [
         "Yoğunluk"
@@ -6911,6 +6920,9 @@
       ],
       "Recovery phrase": [
         "Kurtarma ifadesi"
+      ],
+      "Trusted device recovery": [
+        "Güvenilir aygıt ile kurtarma"
       ]
     },
     "Label for adding a new custom domain": {
@@ -7087,6 +7099,9 @@
       "Learn more": [
         "Ayrıntılı bilgi alın"
       ],
+      "Learn more about data recovery": [
+        "Veri kurtarma hakkında ayrıntılı bilgi alın"
+      ],
       "Need help?": [
         "Yardım gerekiyor mu?"
       ],
@@ -7131,6 +7146,9 @@
       ],
       "What is the difference between UDP and TCP protocols?": [
         "UDP ve TCP iletişim kuralları arasındaki fark nedir?"
+      ],
+      "What’s this?": [
+        "Bu nedir?"
       ],
       "Why set recovery methods?": [
         "Neden kurtarma yöntemleri ayarlanmalı?"
@@ -9999,6 +10017,9 @@
       ],
       "Sign in and grant access": [
         "Oturum açın ve erişim izni verin"
+      ],
+      "Sign out": [
+        "Oturumu kapat"
       ],
       "Sort folders alphabetically": [
         "Klasörler alfabetik olarak sıralansın"

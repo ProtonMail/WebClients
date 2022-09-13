@@ -143,9 +143,6 @@
       "Close composer": [
         "Opstelvenster sluiten"
       ],
-      "Close modal": [
-        "Close"
-      ],
       "Close navigation": [
         "Navigatie sluiten"
       ],
@@ -199,6 +196,9 @@
       ],
       "Create a new folder": [
         "Nieuwe map aanmaken"
+      ],
+      "Create a new label": [
+        "Nieuw label maken"
       ],
       "Create new contact": [
         "Nieuwe contactpersoon aanmaken"
@@ -537,16 +537,16 @@
         "Verplaatsen"
       ],
       "Move all conversations from this folder": [
-        "Alle gesprekken van deze map verplaatsen"
+        "Verplaats alle gesprekken van deze map"
       ],
       "Move all conversations from this label": [
-        "Alle gesprekken van dit label verplaatsen"
+        "Verplaats alle gesprekken van dit label"
       ],
       "Move all messages from this folder": [
-        "Alle berichten van deze map verplaatsen"
+        "Verplaats alle berichten van deze map"
       ],
       "Move all messages from this label": [
-        "Alle berichten van dit label verplaatsen"
+        "Verplaats alle berichten van dit label"
       ],
       "Move all to trash": [
         "Alles naar de prullenbak verplaatsen"
@@ -1061,6 +1061,9 @@
       ],
       "Star message": [
         "Ster bericht"
+      ],
+      "Unread email": [
+        "Ongelezen mail"
       ],
       "Unstar conversation": [
         "Ster verwijderen van Gesprek"
@@ -4486,6 +4489,9 @@
       "Recipient: ": [
         "Ontvanger: "
       ],
+      "Recovery information will remain on this device unless you select to delete it.": [
+        "Herstelinformatie blijft op dit toestel behalve wanneer u kiest om het te verwijderen."
+      ],
       "Recovery phrase copied to clipboard": [
         "Herstelzin gekopieerd naar klembord"
       ],
@@ -5341,6 +5347,9 @@
       "Delete": [
         "Verwijderen"
       ],
+      "Delete recovery-related information.": [
+        "Verwijder herstel-gerelateerde informatie."
+      ],
       "Do not ask again": [
         "Niet opnieuw vragen"
       ],
@@ -5775,6 +5784,9 @@
       "Upgrade account": [
         "Account upgraden"
       ],
+      "What’s this?": [
+        "Wat is dit?"
+      ],
       "You need to activate your calendar keys to add this event": [
         "U moet uw agendasleutels activeren om deze afspraak toe te voegen"
       ],
@@ -6172,8 +6184,8 @@
       ]
     },
     "Pagination": {
-      "${ page } of ${ total }": [
-        "${ page } van ${ total }"
+      "${ page } of ${ totalText }": [
+        "${ page } van ${ totalText }"
       ]
     },
     "Paid user checklist item": {
@@ -6208,7 +6220,7 @@
         "${ emailAddress } heeft deze sleutel gemarkeerd als verouderd. Deze sleutel kan alleen nog gebruikt worden voor de verificatie van handtekeningen."
       ],
       "We recommend that you \"untrust\" this key.": [
-        "We adviseren je deze sleutel niet meer te vertrouwen."
+        "We adviseren u deze sleutel niet meer te vertrouwen."
       ]
     },
     "PGP key warning": {
@@ -6538,11 +6550,6 @@
       ],
       "Sender's trusted keys verification failed": [
         "Verificatie van de vertrouwde sleutels van de afzender is mislukt"
-      ]
-    },
-    "Sort": {
-      "Sort": [
-        "Sorteren"
       ]
     },
     "Sort option": {
@@ -7333,6 +7340,9 @@
       ],
       "Sign in and grant access": [
         "Inloggen en toegang verlenen"
+      ],
+      "Sign out": [
+        "Uitloggen"
       ],
       "Sort conversations": [
         "Gesprekken sorteren"

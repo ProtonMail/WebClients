@@ -117,13 +117,13 @@
         "Changer de page"
       ],
       "Chat with us": [
-        "Dialoguez avec nous"
+        "Discutez avec nous"
       ],
       "Check import progress": [
-        "Voir l'évolution de l'importation"
+        "Vérifier la progression de l'importation"
       ],
       "Choose a file or drag it here": [
-        "Choisissez un fichier ou faites-le glisser ici"
+        "Choisissez un fichier ou faites-le glisser ici."
       ],
       "Clear": [
         "Effacer"
@@ -151,9 +151,6 @@
       ],
       "Close composer": [
         "Fermer le composeur"
-      ],
-      "Close modal": [
-        "Close"
       ],
       "Close navigation": [
         "Fermer la navigation"
@@ -263,7 +260,7 @@
         "Détails"
       ],
       "Didn't receive the code?": [
-        "Vous n'avez pas reçu le code ?"
+        "Vous n'avez pas reçu le code  ?"
       ],
       "Discard": [
         "Abandonner"
@@ -302,7 +299,7 @@
         "Modifier le numéro de téléphone"
       ],
       "Edit sign-in details": [
-        "Modifier les détails de connexion"
+        "Modifier les informations de connexion"
       ],
       "Email settings": [
         "Paramètres d'e-mail"
@@ -323,7 +320,7 @@
         "excluez le contenu des messages"
       ],
       "Expand composer": [
-        "Développer le composeur"
+        "Agrandir le composeur"
       ],
       "Expand URL": [
         "Afficher toute l'URL"
@@ -425,7 +422,7 @@
         "J’ai une question"
       ],
       "Images will be loaded without a proxy": [
-        "Les images seront chargées sans proxy"
+        "Les images seront chargées sans proxy."
       ],
       "Import": [
         "Importer"
@@ -437,7 +434,7 @@
         "Importer depuis un .csv ou une vCard"
       ],
       "Inline": [
-        "Image intégrée"
+        "Intégrée"
       ],
       "Insert": [
         "Insérer"
@@ -486,7 +483,7 @@
         "Charger plus"
       ],
       "Load unprotected": [
-        "Chargement non protégé"
+        "Charger sans protection"
       ],
       "Loading${ ellipsis }": [
         "Chargement${ ellipsis }"
@@ -513,7 +510,7 @@
         "Marquer comme légitime"
       ],
       "Maximize composer": [
-        "Maximiser le composeur"
+        "Agrandir le composeur"
       ],
       "Maybe": [
         "Peut-être"
@@ -534,7 +531,7 @@
         "Messages vers ce destinataire"
       ],
       "Minimize composer": [
-        "Minimiser le composeur"
+        "Réduire le composeur"
       ],
       "More": [
         "Plus"
@@ -543,7 +540,7 @@
         "Plus d'informations à propos de ${ ariaLabelTitle }"
       ],
       "More info: ${ safeTitle }": [
-        "Plus d'infos : ${ safeTitle }"
+        "Plus d'informations : ${ safeTitle }"
       ],
       "More search options": [
         "Plus d'options de recherche"
@@ -573,7 +570,7 @@
         "Déplacer vers les archives"
       ],
       "Move to inbox": [
-        "Déplacer vers la boîte de réception"
+        "Déplacer vers la Boîte de réception"
       ],
       "Move to inbox (not spam)": [
         "Déplacer vers la boîte de réception (non indésirable/spam)"
@@ -585,7 +582,7 @@
         "Déplacer vers les indésirables/spam et se désabonner"
       ],
       "Move to trash": [
-        "Déplacer vers la corbeille"
+        "Déplacer vers la Corbeille"
       ],
       "Move to...": [
         "Déplacer vers…"
@@ -618,7 +615,7 @@
         "Non"
       ],
       "No trackers found, but some images could not be loaded with tracking protection.": [
-        "Aucun traqueur trouvé, mais certaines images n'ont pas pu être chargées avec la protection contre le tracking."
+        "Aucun traqueur n'a été trouvé, mais certaines images n'ont pas pu être chargées en raison de la protection contre les traqueurs."
       ],
       "No, I won't attend": [
         "Non, je ne participerai pas"
@@ -888,7 +885,7 @@
         "Ce message comporte du contenu distant."
       ],
       "Trust": [
-        "Approuver"
+        "Faire confiance"
       ],
       "Trust key": [
         "Approuver la clé",
@@ -943,7 +940,7 @@
         "Mettre à jour la phrase de récupération"
       ],
       "Upgrade": [
-        "Changer d'offre"
+        "Changer d'abonnement"
       ],
       "Upgrade now": [
         "Mettre à niveau maintenant"
@@ -958,7 +955,7 @@
         "Utiliser pour l'envoi"
       ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
-        "Utilisez votre souris pour redimensionner la vue. Si vous utilisez votre clavier, vous pouvez vous servir des touches fléchées gauche et droite pour redimensionner."
+        "Utilisez votre souris pour redimensionner la vue. Si vous utilisez votre clavier, vous pouvez utiliser les touches fléchées gauche et droite pour redimensionner."
       ],
       "Use “${ label }” setting": [
         "Utiliser le paramètre « ${ label } »"
@@ -976,7 +973,7 @@
         "Afficher"
       ],
       "View contact details": [
-        "Voir les détails du contact"
+        "Voir les informations du contact"
       ],
       "View headers": [
         "Voir les en-têtes"
@@ -1003,7 +1000,7 @@
         "Voir le rendu HTML"
       ],
       "Why not?": [
-        "Pourquoi donc ?"
+        "Pourquoi ?"
       ],
       "Yes": [
         "Oui"
@@ -1058,7 +1055,7 @@
     },
     "Alert": {
       "By leaving now, some contacts may not be imported": [
-        "En quittant maintenant, il est possible que certains contacts ne soient pas importés"
+        "En quittant maintenant, il est possible que certains contacts ne soient pas importés."
       ]
     },
     "Alt": {
@@ -1076,6 +1073,9 @@
       ],
       "Star message": [
         "Ajouter le message aux favoris"
+      ],
+      "Unread email": [
+        "E-mail non lu"
       ],
       "Unstar conversation": [
         "Retirer la conversation des favoris"
@@ -1482,7 +1482,7 @@
         "Vous avez déjà provisoirement accepté cette invitation."
       ],
       "Your email address is not in the participants list": [
-        "Votre adresse électronique n'est pas dans la liste des participants"
+        "Votre adresse électronique n'est pas dans la liste des participants."
       ]
     },
     "Calendar status": {
@@ -2850,10 +2850,10 @@
     },
     "Email reminder out of date alert": {
       "Event was canceled": [
-        "L'événement a été annulé"
+        "L'événement a été annulé."
       ],
       "Event was updated. This reminder is out-of-date.": [
-        "L'événement a été mis à jour. Ce rappel est obsolète."
+        "L'événement a été mis à jour. Ce rappel n'est plus d'actualité."
       ]
     },
     "Email subject": {
@@ -2870,7 +2870,7 @@
         "Invitation pour un événement commençant le ${ formattedStart }"
       ],
       "Update for an event on ${ formattedStart }": [
-        "Mise à jour pour un événement du ${ formattedStart }"
+        "Mise à jour pour un événement le ${ formattedStart }"
       ],
       "Update for an event starting on ${ formattedStart }": [
         "Mise à jour pour un événement commençant le ${ formattedStart }"
@@ -3976,34 +3976,34 @@
         "et"
       ],
       "Are you sure you want to delete all messages in this folder?": [
-        "Êtes-vous sûr de vouloir supprimer tous les messages de ce dossier ?"
+        "Voulez-vous vraiment supprimer tous les messages de ce dossier ?"
       ],
       "Are you sure you want to delete all messages with this label?": [
-        "Êtes-vous sûr de vouloir supprimer tous les messages avec ce label ?"
+        "Voulez-vous vraiment supprimer tous les messages avec ce label ?"
       ],
       "Are you sure you want to move all messages in this location to Trash?": [
         "Voulez-vous vraiment déplacer tous les messages de cet emplacement vers la Corbeille ?"
       ],
       "Are you sure you want to permanently delete ${ count } conversation?": [
-        "Êtes-vous sûr de vouloir supprimer définitivement ${ count } conversation ?",
-        "Êtes-vous sûr de vouloir supprimer définitivement ${ count } conversations ?"
+        "Voulez-vous vraiment supprimer définitivement ${ count } conversation ?",
+        "Voulez-vous vraiment supprimer définitivement ${ count } conversations ?"
       ],
       "Are you sure you want to permanently delete ${ count } draft?": [
-        "Êtes-vous sûr de vouloir supprimer définitivement ${ count } brouillon ?",
-        "Êtes-vous sûr de vouloir supprimer définitivement ${ count } brouillons ?"
+        "Voulez-vous vraiment supprimer définitivement ${ count } brouillon ?",
+        "Voulez-vous vraiment supprimer définitivement ${ count } brouillons ?"
       ],
       "Are you sure you want to permanently delete ${ count } message?": [
-        "Êtes-vous sûr de vouloir supprimer définitivement ${ count } message ?",
-        "Êtes-vous sûr de vouloir supprimer définitivement ${ count } messages ?"
+        "Voulez-vous vraiment supprimer définitivement ${ count } message ?",
+        "Voulez-vous vraiment supprimer définitivement ${ count } messages ?"
       ],
       "Are you sure you want to permanently delete this conversation?": [
-        "Êtes-vous sûr de vouloir supprimer définitivement cette conversation ?"
+        "Voulez-vous vraiment supprimer définitivement cette conversation ?"
       ],
       "Are you sure you want to permanently delete this draft?": [
-        "Êtes-vous sûr de vouloir supprimer définitivement ce brouillon ?"
+        "Voulez-vous vraiment supprimer définitivement ce brouillon ?"
       ],
       "Are you sure you want to permanently delete this message?": [
-        "Êtes-vous sûr de vouloir supprimer définitivement ce message ?"
+        "Voulez-vous vraiment supprimer définitivement ce message ?"
       ],
       "Attach public key": [
         "Joindre une clé publique"
@@ -4024,7 +4024,7 @@
         "Corps : "
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
-        "Vous ne vous souvenez pas de votre mot de passe ? Nous pouvons vous aider à effacer les données chiffrées de tous les contacts chiffrés avec cette clé et, par la même occasion, à supprimer l'alerte."
+        "Vous ne vous souvenez pas de votre mot de passe ? Nous pouvons vous aider à effacer les données chiffrées de tous les contacts chiffrés avec cette clé et, par la même occasion, à supprimer l'alerte."
       ],
       "Center": [
         "Centrer"
@@ -4036,13 +4036,13 @@
         "Effacer les données"
       ],
       "Clearing browser data also deactivates message content search on this device. All messages will need to be downloaded again to search within them.": [
-        "L'effacement des données du navigateur désactive également la recherche de contenu de message sur cet appareil. Tous les messages devront être téléchargés à nouveau pour effectuer une recherche à l'intérieur de ceux-ci."
+        "L'effacement des données du navigateur désactive également la recherche de contenu de message sur cet appareil. Tous les messages devront être téléchargés à nouveau pour pouvoir y effectuer des recherches."
       ],
       "Clears browser data related to message content search including downloaded messages": [
-        "Efface les données du navigateur liées à la recherche de contenu de message, y compris les messages téléchargés"
+        "Efface les données du navigateur liées à la recherche de contenu de message, y compris les messages téléchargés."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "Cliquez sur « Demander un nouveau code » pour envoyer un nouveau code de vérification à ${ strong }. Si ce numéro de téléphone est incorrect, cliquez sur « Modifier » pour le corriger."
+        "Cliquez sur Demander un nouveau code pour envoyer un nouveau code de vérification à ${ strong }. Si ce numéro de téléphone est incorrect, cliquez sur Modifier pour le corriger."
       ],
       "Click to view group details": [
         "Cliquez pour afficher les détails du groupe"
@@ -4085,20 +4085,20 @@
         "Chaque jour (personnalisé)"
       ],
       "Custom monthly": [
-        "Mensuellement (personnalisé)"
+        "Chaque mois (personnalisé)"
       ],
       "Custom weekly": [
-        "Hebdomadairement (personnalisé)"
+        "Chaque semaine (personnalisé)"
       ],
       "Custom yearly": [
-        "Annuellement (personnalisé)"
+        "Chaque année (personnalisé)"
       ],
       "Daily": [
-        "Quotidiennement"
+        "Chaque jour"
       ],
       "Day": [
-        "Jour",
-        "Jours"
+        "jour",
+        "jours"
       ],
       "Default email application": [
         "Application de messagerie par défaut"
@@ -4107,17 +4107,17 @@
         "Désactiver la recherche de contenu de message"
       ],
       "Do you want to download this attachment anyway?": [
-        "Voulez-vous quand même télécharger cette pièce jointe ?",
-        "Voulez-vous quand même télécharger ces pièces jointes ?"
+        "Voulez-vous quand même télécharger cette pièce jointe ?",
+        "Voulez-vous quand même télécharger ces pièces jointes ?"
       ],
       "Do you want to re-sign the contact details and in the process trust the keys with the following fingerprints?": [
-        "Voulez-vous signer une nouvelle fois les coordonnées du contact et donc faire confiance aux clés avec les empreintes suivantes ?"
+        "Voulez-vous signer une nouvelle fois les coordonnées du contact et donc faire confiance aux clés avec les empreintes suivantes ?"
       ],
       "Do you want to re-sign the contact details?": [
         "Souhaitez-vous signer à nouveau les coordonnées du contact ?"
       ],
       "Don't forget to share the password with the recipient": [
-        "N'oubliez pas de communiquer le mot de passe au destinataire"
+        "N'oubliez pas de communiquer le mot de passe au destinataire."
       ],
       "Downloading message ${ esProgress } out of ${ totalProgressToShow }": [
         "Téléchargement du message ${ esProgress } sur ${ totalProgressToShow }"
@@ -4156,14 +4156,14 @@
         "L'e-mail est transféré dans votre boîte aux lettres et votre adresse e-mail reste cachée."
       ],
       "Email tracker protection is disabled": [
-        "La protection contre les traqueurs dans les e-mails est désactivée"
+        "La protection contre les traqueurs dans les e-mails est désactivée."
       ],
       "Email trackers can violate your privacy. Proton did not find any trackers on this message.": [
         "Les traqueurs dans les e-mails peuvent violer votre vie privée. Proton n'en a pas trouvé dans ce message."
       ],
       "Email trackers can violate your privacy. Proton found and blocked ${ numberOfTrackers } tracker.": [
-        "Les traqueurs dans les e-mails peuvent violer votre vie privée. Proton a trouvé et bloqué ${ numberOfTrackers } traqueur.",
-        "Les traqueurs dans les e-mails peuvent violer votre vie privée. Proton a trouvé et bloqué ${ numberOfTrackers } traqueurs."
+        "Les traqueurs dans les e-mails peuvent porter atteinte à votre vie privée. Proton a trouvé et bloqué ${ numberOfTrackers } traqueur.",
+        "Les traqueurs dans les e-mails peuvent porter atteinte à votre vie privée. Proton a trouvé et bloqué ${ numberOfTrackers } traqueurs."
       ],
       "Email trackers can violate your privacy. Turn on tracker protection to prevent senders from knowing whether and when you have opened a message.": [
         "Les traqueurs dans les e-mails peuvent violer votre vie privée. Activez la protection contre les traqueurs pour empêcher les expéditeurs de savoir si et quand vous avez ouvert un message."
@@ -4179,11 +4179,11 @@
         "Entrez le code de vérification qui a été envoyé à ${ destinationText }."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
-        "Temps restant estimé : ${ estimatedMinutes } minute",
-        "Temps restant estimé : ${ estimatedMinutes } minutes"
+        "Temps restant estimé : ${ estimatedMinutes } minute",
+        "Temps restant estimé : ${ estimatedMinutes } minutes"
       ],
       "Estimated time remaining: Less than a minute": [
-        "Temps restant estimé : moins d'une minute"
+        "Temps restant estimé : moins d'une minute"
       ],
       "Estimating time remaining...": [
         "Estimation du temps restant..."
@@ -4214,7 +4214,7 @@
         "Dossier"
       ],
       "For increased security, activate 2FA.": [
-        "Pour une sécurité accrue, activez la double authentification (2FA)."
+        "Pour renforcer la sécurité, activez l'authentification à deux facteurs (2FA)."
       ],
       "For messages newer than ${ oldestDate }": [
         "Pour les messages plus récents que ${ oldestDate }"
@@ -4229,14 +4229,14 @@
         "De"
       ],
       "Get more storage and premium features.": [
-        "Obtenez plus de stockage et des fonctionnalités premium."
+        "Obtenez plus d'espace de stockage et des fonctionnalités premium."
       ],
       "Group assignment applied": [
         "Affectation de groupe appliquée"
       ],
       "Has ${ numAttachments } attachment": [
-        "Possède ${ numAttachments } pièce jointe",
-        "Possède ${ numAttachments } pièces jointes"
+        "Avec ${ numAttachments } pièce jointe",
+        "Avec ${ numAttachments } pièces jointes"
       ],
       "here": [
         "ici"
@@ -4245,8 +4245,8 @@
         "Masquer le message d'origine"
       ],
       "Hour": [
-        "Heure",
-        "Heures"
+        "heure",
+        "heures"
       ],
       "How Hide My Email works": [
         "Comment fonctionne Masquer mon adresse e-mail"
@@ -4310,7 +4310,7 @@
         "Connexion internet perdue. Vérifiez que votre appareil est bien connecté."
       ],
       "Internet connection restored.": [
-        "Connexion Internet rétablie."
+        "Connexion internet rétablie."
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Confirmez simplement votre sélection et nous ferons le reste."
@@ -4376,16 +4376,16 @@
         "Message envoyé."
       ],
       "Message will be sent on ${ dateString } at ${ formattedTime }": [
-        "Le message sera envoyé le ${ dateString } à ${ formattedTime }"
+        "Le message sera envoyé le ${ dateString } à ${ formattedTime }."
       ],
       "Message will be sent today at ${ formattedTime }": [
-        "Ce message va être envoyé aujourd'hui à ${ formattedTime }"
+        "Ce message va être envoyé aujourd'hui à ${ formattedTime }."
       ],
       "Message will be sent tomorrow at ${ formattedTime }": [
-        "Le message sera envoyé demain à ${ formattedTime }"
+        "Le message sera envoyé demain à ${ formattedTime }."
       ],
       "Monthly ${ onDayString }": [
-        "Mensuellement, ${ onDayString }"
+        "Chaque mois ${ onDayString }"
       ],
       "Moving a large amount of messages. This may take a while.": [
         "Transfert de nombreux messages en cours, cela peut prendre un certain temps."
@@ -4515,10 +4515,13 @@
         "Protégez votre adresse électronique des fuites vers les listes de diffusion ou les spammeurs avec ${ maskMyEmailButton }."
       ],
       "Proton doesn't make money by abusing privacy.": [
-        "Proton ne gagne pas d'argent en abusant de la vie privée."
+        "Proton ne s'enrichit pas en exploitant la vie privée."
       ],
       "Recipient: ": [
         "Destinataire : "
+      ],
+      "Recovery information will remain on this device unless you select to delete it.": [
+        "Les informations de récupération resteront sur cet appareil jusqu'à ce que vous demandiez à les supprimer."
       ],
       "Recovery phrase copied to clipboard": [
         "Phrase de récupération copiée dans le presse-papiers"
@@ -4530,7 +4533,7 @@
         "Rafraîchir la page ou ${ link } résoudra automatiquement la plupart des problèmes."
       ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
-        "Signaler un message comme étant une tentative d'hameçonnage nous enverra le message afin que nous puissions l'analyser et améliorer nos filtres. Ceci signifie que nous pourrons voir le contenu du message dans son intégralité."
+        "Signaler un message comme une tentative d'hameçonnage nous enverra le message afin que nous puissions l'analyser et améliorer nos filtres. Cela signifie que nous serons en mesure de voir le contenu du message dans son intégralité."
       ],
       "Request read receipt": [
         "Demander une confirmation de lecture"
@@ -4542,7 +4545,7 @@
         "De droite à gauche"
       ],
       "Right-click for options": [
-        "Cliquez avec le bouton droit de la souris pour afficher les options"
+        "Cliquez avec le bouton droit de la souris pour afficher les options."
       ],
       "Saved ${ dateString }": [
         "Enregistré le ${ dateString }"
@@ -4566,7 +4569,7 @@
         "La recherche prend trop de temps ? ${ dropdownButton } ou ${ toggleOffButton } de cette session de recherche."
       ],
       "Seems like you are all caught up for now": [
-        "Il semblerait que vous ayez fait tout ce qu’il y avait à faire pour aujourd’hui"
+        "Il semble que vous soyez à jour pour le moment."
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Sélectionnez le format d'e-mail que vous souhaitez utiliser par défaut lors de l'envoi d'un e-mail à cette adresse électronique."
@@ -4590,7 +4593,7 @@
         "Envoi du message en cours..."
       ],
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
-        "L'envoi de messages depuis une adresse @pm.me est une fonctionnalité payante. Votre message sera envoyé à partir de votre adresse par défaut ${ email }"
+        "L'envoi de messages depuis une adresse @pm.me est une fonctionnalité payante. Votre message sera envoyé à partir de votre adresse par défaut ${ email }."
       ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         "Envoyé avec la messagerie sécurisée <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
@@ -4608,7 +4611,7 @@
         "Créer une phrase de récupération"
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
-        "La configuration de PGP vous permet d'envoyer des courriels chiffrés de bout en bout à une personne qui n'utilise pas ${ BRAND_NAME }, mais qui se sert d'un service compatible PGP."
+        "La configuration de PGP vous permet d'envoyer des e-mails chiffrés de bout en bout à une personne qui n'utilise pas ${ BRAND_NAME }, mais qui se sert d'un service compatible PGP."
       ],
       "Show original message": [
         "Afficher le message d'origine"
@@ -4681,10 +4684,10 @@
         "La vérification de ${ contactNames } a échoué : les contacts ne sont pas signés correctement.\nCeci est peut-être dû à une réinitialisation du mot de passe.\nVous devez signer à nouveau les contacts afin d'envoyer un message à ${ contactAddresses } ou modifier les contacts."
       ],
       "Themes can give your inbox a new look.": [
-        "Les thèmes peuvent donner un nouveau look à votre boite de réception."
+        "Les thèmes donnent un nouveau look à votre boite de réception."
       ],
       "There has been an error with the signature used to verify the contact details, which may be the result of a password reset.": [
-        "Il y a eu une erreur avec la signature utilisée pour vérifier les coordonnées qui peut provenir d'une réinitialisation du mot de passe."
+        "Il y a eu une erreur dans la signature utilisée pour vérifier les coordonnées, pouvant résulter d'une réinitialisation du mot de passe."
       ],
       "They can't spam you if they don't know your email address. Protect your inbox with Hide My Email.": [
         "On ne peut pas vous spammer si l'on ne connaît pas votre adresse électronique. Protégez votre boîte aux lettres avec Masquer mon adresse e-mail."
@@ -4699,7 +4702,7 @@
         "Cette adresse est désactivée. Pour pouvoir envoyer à cette adresse, le propriétaire doit d'abord activer cette adresse."
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
-        "Ce navigateur ne prend pas en charge l'aperçu des documents PDF. Veuillez télécharger le fichier."
+        "Ce navigateur ne prend pas en charge l'aperçu des documents PDF. Téléchargez le fichier."
       ],
       "This conversation contains a scheduled message. Sending of this message will be cancelled.": [
         "Cette conversation contient un message programmé. L'envoi de ce message sera annulé."
@@ -4727,7 +4730,7 @@
         "Ce lien pourrait être une attaque homographique et ne peut pas être ouvert avec le navigateur Edge. Si vous êtes certain de la légitimité de ce lien, utilisez un autre navigateur pour l'ouvrir."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
-        "Ce lien pourrait être une attaque homographique. Assurez vous qu'il s'agit bien du lien que vous souhaitez visiter, ou ne l'ouvrez pas."
+        "Ce lien pourrait être une attaque homographique. Assurez-vous qu'il s'agit bien du lien que vous souhaitez visiter, ou ne l'ouvrez pas."
       ],
       "This message has been adjusted to comply with a dark background.": [
         "Ce message a été ajusté pour être adapté à un fond sombre."
@@ -4736,7 +4739,7 @@
         "Ce message a été généré automatiquement en réponse à un message précédent."
       ],
       "This message is expired!": [
-        "Ce message a expiré !"
+        "Ce message a expiré."
       ],
       "This message is from a mailing list.": [
         "Ce message provient d’une liste de diffusion."
@@ -4752,31 +4755,31 @@
         "Ces messages seront marqués comme indésirables/spam. Souhaitez-vous aussi vous désinscrire des futurs e-mails ?"
       ],
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
-        "Ce message va être déplacé dans les brouillons afin que vous puissiez le modifier. Vous devrez reprogrammer la date et heure d'envoi."
+        "Ce message sera déplacé dans les Brouillons pour que vous puissiez le modifier. Vous devrez reprogrammer la date et l'heure d'envoi."
       ],
       "This message will be sent on ${ dateString } at ${ formattedTime }": [
-        "Ce message sera envoyé le ${ dateString } à ${ formattedTime }"
+        "Ce message sera envoyé le ${ dateString } à ${ formattedTime }."
       ],
       "This message will be sent shortly": [
-        "Ce message va être envoyé sous peu"
+        "Ce message sera bientôt envoyé."
       ],
       "This message will be sent today at ${ formattedTime }": [
-        "Ce message va être envoyé aujourd'hui à ${ formattedTime }"
+        "Ce message sera envoyé aujourd'hui à ${ formattedTime }."
       ],
       "This message will be sent tomorrow at ${ formattedTime }": [
-        "Ce message sera envoyé demain à ${ formattedTime }"
+        "Ce message sera envoyé demain à ${ formattedTime }."
       ],
       "This message will expire ${ formattedDate }": [
-        "Ce message expirera le ${ formattedDate }"
+        "Ce message expirera le ${ formattedDate }."
       ],
       "This message will expire on ${ dateString } at ${ formattedTime }": [
-        "Ce message expirera ${ dateString } à ${ formattedTime }"
+        "Ce message expirera ${ dateString } à ${ formattedTime }."
       ],
       "This message will expire today at ${ formattedTime }": [
-        "Ce message expirera aujourd'hui à ${ formattedTime }"
+        "Ce message expirera aujourd'hui à ${ formattedTime }."
       ],
       "This message will expire tomorrow at ${ formattedTime }": [
-        "Ce message expirera aujourd'hui à ${ formattedTime }"
+        "Ce message expirera aujourd'hui à ${ formattedTime }."
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Cette clé publique sera automatiquement utilisée pour chiffrer les e-mails envoyés à cette adresse."
@@ -4797,7 +4800,7 @@
         "Pour vous désabonner de cette liste de diffusion, un e-mail sera envoyé avec les détails suivants à partir de ${ boldFrom }, tel que défini par l'expéditeur de la lettre d'information :"
       ],
       "To unsubscribe from this mailing list, you will be taken to the following URL where instructions will be provided by the sender of the newsletter:": [
-        "Pour vous désabonner de cette liste de diffusion, vous serez dirigé vers l'URL suivante où des instructions seront fournies par l'expéditeur de la lettre d’information :"
+        "Pour vous désabonner de cette liste de diffusion, vous serez dirigé vers l'URL suivante où des instructions seront fournies par l'expéditeur de la newsletter :"
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Pour utiliser la vérification d'adresse, vous devez approuver une ou plusieurs clés publiques disponibles, y compris celles que vous souhaitez utiliser pour l'envoi. Cela empêche la falsification des clés de chiffrement."
@@ -4845,7 +4848,7 @@
         "Passez à l’offre supérieure pour envoyer facilement des messages aux groupes de contacts."
       ],
       "Upgrade to support a privacy-first internet.": [
-        "Passez à l’offre supérieure pour soutenir un Internet privilégiant la vie privée avant tout."
+        "Passez à l’offre supérieure pour soutenir un internet respectueux de la vie privée."
       ],
       "Upgrade to support our mission of privacy for all.": [
         "Passez à l’offre supérieure pour soutenir notre mission de protection de la vie privé pour tous."
@@ -4893,10 +4896,10 @@
         "Nous vous informerons lorsque l'importation sera terminée."
       ],
       "We'll send a new verification code to ${ strong }": [
-        "Nous enverrons un nouveau code de vérification à ${ strong }"
+        "Nous enverrons un nouveau code de vérification à ${ strong }."
       ],
       "We're moving! Join us at our new site: ${ link }.": [
-        "Nous déménageons ! Rejoignez-nous sur notre nouveau site : ${ link }."
+        "Nous déménageons ! Rejoignez-nous sur notre nouveau site : ${ link }."
       ],
       "Web URL": [
         "URL web"
@@ -4905,7 +4908,7 @@
         "Semaine"
       ],
       "When do you want your message to be sent?": [
-        "Quand souhaitez-vous que votre message soit envoyé ?"
+        "Quand souhaitez-vous que votre message soit envoyé ?"
       ],
       "When giving out your email, use a unique, disposable Hide My Email alias instead of your real email address.": [
         "Lorsque vous communiquez votre e-mail, utilisez un alias unique Masquer mon adresse e-mail au lieu de votre véritable adresse e-mail."
@@ -4920,7 +4923,7 @@
         "Souhaiteriez-vous recevoir un nouveau code de vérification ?"
       ],
       "Yearly": [
-        "Annuellement"
+        "Chaque année"
       ],
       "You are about to open another browser tab and visit:": [
         "Vous êtes sur le point d'ouvrir un autre onglet de navigateur et de visiter :"
@@ -4929,7 +4932,7 @@
         "Vous êtes actuellement connecté en tant que ${ user.Name } (${ user.Email })."
       ],
       "You can add it as an attachment or display it inline in your mail body.": [
-        "Vous pouvez l'ajouter en pièce jointe ou l'afficher en ligne dans le corps de votre courrier."
+        "Vous pouvez l'ajouter en tant que pièce jointe ou l'intégrer dans le corps de votre message."
       ],
       "You can also merge imported calendars with existing Proton calendars.": [
         "Vous pouvez également fusionner des calendriers importés avec des calendriers Proton existants."
@@ -4938,10 +4941,10 @@
         "Vous pouvez vérifier la progression ${ importProgressLink }."
       ],
       "You can either update your search query or ${ button }": [
-        "Vous pouvez soit mettre à jour votre recherche soit ${ button }"
+        "Vous pouvez mettre à jour votre requête de recherche ou ${ button }"
       ],
       "You can either update your search query or clear it": [
-        "Vous pouvez soit mettre à jour votre recherche soit l'effacer"
+        "Vous pouvez mettre à jour votre recherche ou bien l'effacer."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Vous pouvez activer les notifications pour recevoir des alertes lorsque de nouveaux messages arrivent dans ce dossier."
@@ -4953,7 +4956,7 @@
         "Vous ne pouvez pas répondre à partir de l'adresse invitée."
       ],
       "You do not have any messages here": [
-        "Vous n'avez aucun message ici"
+        "Vous n'avez aucun message ici."
       ],
       "You have ${ totalLabel } in your inbox.": [
         "Vous avez ${ totalLabel } dans votre boîte de réception."
@@ -4962,20 +4965,20 @@
         "Vous avez ${ unreadsLabel } dans votre boîte de réception."
       ],
       "You have **${ count } conversation** stored in this folder": [
-        "Vous avez **${ count } conversation** stockée dans ce dossier",
-        "Vous avez **${ count } conversations** stockées dans ce dossier"
+        "Vous avez **${ count } conversation** stockée dans ce dossier.",
+        "Vous avez **${ count } conversations** stockées dans ce dossier."
       ],
       "You have **${ count } conversation** tagged with this label": [
-        "Vous avez marqué **${ count } conversation** avec ce label",
-        "Vous avez marqué **${ count } conversations** avec ce label"
+        "Vous avez marqué **${ count } conversation** avec ce label.",
+        "Vous avez marqué **${ count } conversations** avec ce label."
       ],
       "You have **${ count } message** stored in this folder": [
-        "Vous avez **${ count } message** stocké dans ce dossier",
-        "Vous avez **${ count } messages** stockés dans ce dossier"
+        "Vous avez **${ count } message** stocké dans ce dossier.",
+        "Vous avez **${ count } messages** stockés dans ce dossier."
       ],
       "You have **${ count } message** tagged with this label": [
-        "Vous avez marqué **${ count } message** avec ce label",
-        "Vous avez marqué **${ count } messages** avec ce label"
+        "Vous avez marqué **${ count } message** avec ce label.",
+        "Vous avez marqué **${ count } messages** avec ce label."
       ],
       "You have not given your email any subject. Do you want to send the message anyway?": [
         "Vous n'avez donné aucun objet/sujet à votre message. Voulez-vous quand même l'envoyer ?"
@@ -4993,26 +4996,26 @@
         "Vous avez atteint 100 % de votre capacité de stockage. Vous ne pouvez pas envoyer ou recevoir de nouveaux e-mails. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You selected **${ count } conversation** from this folder": [
-        "Vous avez sélectionné **${ count } conversation** de ce dossier",
-        "Vous avez sélectionné **${ count } conversations** de ce dossier"
+        "Vous avez sélectionné **${ count } conversation** de ce dossier.",
+        "Vous avez sélectionné **${ count } conversations** de ce dossier."
       ],
       "You selected **${ count } conversation** with this label": [
-        "Vous avez sélectionné **${ count } conversation** avec ce label",
-        "Vous avez sélectionné **${ count } conversations** avec ce label"
+        "Vous avez sélectionné **${ count } conversation** avec ce label.",
+        "Vous avez sélectionné **${ count } conversations** avec ce label."
       ],
       "You selected **${ count } message** from this folder": [
-        "Vous avez sélectionné **${ count } message** de ce dossier",
-        "Vous avez sélectionné **${ count } messages** de ce dossier"
+        "Vous avez sélectionné **${ count } message** de ce dossier.",
+        "Vous avez sélectionné **${ count } messages** de ce dossier."
       ],
       "You selected **${ count } message** with this label": [
-        "Vous avez sélectionné **${ count } message** avec ce label",
-        "Vous avez sélectionné **${ count } messages** avec ce label"
+        "Vous avez sélectionné **${ count } message** avec ce label.",
+        "Vous avez sélectionné **${ count } messages** avec ce label."
       ],
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
-        "Vous avez écrit « ${ attachmentsFoundKeyword } », mais aucune pièce jointe n’a été ajoutée. Souhaitez-vous tout de même envoyer votre message ?"
+        "Vous avez écrit « ${ attachmentsFoundKeyword } », mais aucune pièce jointe n’a été ajoutée. Voulez-vous quand même envoyer votre message ?"
       ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
-        "Votre compte possède au moins une facture impayée. Votre accès a été restreint. ${ payInvoiceLink }"
+        "Votre compte a au moins une facture en retard. Votre accès a été restreint. ${ payInvoiceLink }"
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Votre compte a au moins une facture en retard. Votre accès sera bientôt restreint. ${ payInvoiceLink }"
@@ -5024,13 +5027,13 @@
         "Votre adresse électronique ne sera utilisée que pour cette vérification unique."
       ],
       "Your message will be deleted from the recipient's inbox and your sent folder on ${ dateString } at ${ formattedTime }": [
-        "Votre message sera supprimé de la boîte de réception du destinataire et de votre dossier d'envoi le ${ dateString } à ${ formattedTime }"
+        "Votre message sera supprimé de la boîte de réception du destinataire et de votre dossier d'envoi le ${ dateString } à ${ formattedTime }."
       ],
       "Your message will be deleted from the recipient's inbox and your sent folder today at ${ formattedTime }": [
-        "Votre message sera supprimé de la boîte de réception du destinataire et de votre dossier d'envoi aujourd'hui à ${ formattedTime }"
+        "Votre message sera supprimé de la boîte de réception du destinataire et de votre dossier d'envoi aujourd'hui à ${ formattedTime }."
       ],
       "Your message will be deleted from the recipient's inbox and your sent folder tomorrow at ${ formattedTime }": [
-        "Votre message sera supprimé de la boîte de réception du destinataire et de votre dossier d'envoi aujourd'hui à ${ formattedTime }"
+        "Votre message sera supprimé de la boîte de réception du destinataire et de votre dossier d'envoi aujourd'hui à ${ formattedTime }."
       ],
       "Your message will expire in ${ numberOfDays } day.": [
         "Votre message expirera dans ${ numberOfDays } jour.",
@@ -5395,6 +5398,9 @@
       ],
       "Delete": [
         "Supprimer"
+      ],
+      "Delete recovery-related information.": [
+        "Supprimer les informations liées à la récupération."
       ],
       "Do not ask again": [
         "Ne plus demander"
@@ -5831,10 +5837,13 @@
         "Corbeille"
       ],
       "Upgrade": [
-        "Changer d'offre"
+        "Changer d'abonnement"
       ],
       "Upgrade account": [
-        "Changer d'offre"
+        "Passer à un abonnement supérieur"
+      ],
+      "What’s this?": [
+        "Qu'est-ce que c'est ?"
       ],
       "You need to activate your calendar keys to add this event": [
         "Vous devez activer vos clés de calendrier pour ajouter cet événement"
@@ -6239,8 +6248,8 @@
       ]
     },
     "Pagination": {
-      "${ page } of ${ total }": [
-        "Page ${ page } sur ${ total }"
+      "${ page } of ${ totalText }": [
+        "${ page } sur ${ totalText }"
       ]
     },
     "Paid user checklist item": {
@@ -6605,11 +6614,6 @@
       ],
       "Sender's trusted keys verification failed": [
         "La vérification des clés de confiance de l'expéditeur a échoué"
-      ]
-    },
-    "Sort": {
-      "Sort": [
-        "Trier"
       ]
     },
     "Sort option": {
@@ -7418,6 +7422,9 @@
       ],
       "Sign in and grant access": [
         "Se connecter et donner l'accès"
+      ],
+      "Sign out": [
+        "Se déconnecter"
       ],
       "Sort conversations": [
         "Trier les conversations"

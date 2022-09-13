@@ -11,9 +11,6 @@
       "Close": [
         "Schließen"
       ],
-      "Close modal": [
-        "Dialog schließen"
-      ],
       "Didn't receive the code?": [
         "Code nicht erhalten?"
       ],
@@ -21,16 +18,16 @@
         "E-Mail-Adresse bearbeiten"
       ],
       "Edit phone number": [
-        "Rufnummer bearbeiten"
+        "Telefonnummer bearbeiten"
       ],
       "Edit sign-in details": [
         "Anmeldeinformationen bearbeiten"
       ],
       "Get verification code": [
-        "Bestätigungscode abrufen"
+        "Verifizierungscode anfordern"
       ],
       "refresh the page": [
-        "die Seite aktualisieren"
+        "aktualisiere die Seite"
       ],
       "Request new code": [
         "Neuen Code anfordern"
@@ -42,10 +39,10 @@
         "Senden"
       ],
       "Try another method": [
-        "Eine weitere Methode verwenden"
+        "Eine andere Methode ausprobieren"
       ],
       "Verify": [
-        "Bestätigen"
+        "Verifizieren"
       ],
       "Verify account": [
         "Konto verifizieren"
@@ -899,7 +896,7 @@
         "6 Ziffern eingeben"
       ],
       "Invalid verification code": [
-        "Bestätigungscode ungültig"
+        "Ungültiger Verifizierungscode"
       ],
       "Not a valid number": [
         "Keine gültige Zahl"
@@ -925,7 +922,7 @@
         "Fehler: ${ errorMessage }"
       ],
       "Oops, something went wrong": [
-        "Leider ist ein Problem aufgetreten"
+        "Es ist ein Problem aufgetreten"
       ],
       "Please ${ refresh } or check your connection.": [
         "Bitte ${ refresh } oder überprüfe deine Verbindung."
@@ -934,10 +931,10 @@
         "Etwas ist schiefgelaufen. Bitte aktualisiere die Seite oder versuche es später erneut."
       ],
       "There was a problem connecting to Proton.": [
-        "Es gab ein Problem mit der Verbindung zu Proton."
+        "Es gab ein Problem bei der Verbindung zu Proton."
       ],
       "You may also ${ refresh } or try again later.": [
-        "Sie können auch ${ refresh } oder es später noch einmal versuchen."
+        "Du kannst auch die ${ refresh } oder es später noch einmal versuchen."
       ]
     },
     "Human verification method": {
@@ -951,7 +948,7 @@
         "Manuell"
       ],
       "No verification method available": [
-        "Keine Bestätigungsmethode verfügbar"
+        "Keine Verifizierungsmethode verfügbar"
       ],
       "SMS": [
         "SMS"
@@ -962,40 +959,40 @@
         "Bevor du einen neuen Bestätigungscode anforderst, überprüfe deinen Spam-Ordner und stelle sicher, dass ${ strong } die richtige Adresse ist."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "Klicken Sie auf „Neuen Code anfordern”, um einen neuen Verifizierungscode an ${ strong } senden zu lassen. Wenn diese die falsche Rufnummer ist, klicken Sie auf „Bearbeiten”, um sie zu korrigieren."
+        "Klicke auf „Neuen Code anfordern“, um einen neuen Verifizierungscode an ${ strong } senden zu lassen. Wenn diese Telefonnummer nicht stimmt, klicke auf „Bearbeiten“, um sie zu korrigieren."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
-        "Geben Sie den an ${ destinationText } gesendeten Bestätigungsschlüssel ein."
+        "Gib den an ${ destinationText } gesendeten Verifizierungscode ein."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
-        "Wenn du Probleme bei der Erstellung deines Kontos hast, stelle bitte eine Anfrage, und wir werden dir innerhalb eines Werktages antworten."
+        "Wenn du Probleme bei der Erstellung deines Kontos hast, fordere bitte eine Einladung an. Wir werden dir innerhalb eines Werktages antworten."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
-        "Solltest du die E-Mail nicht in deinem Posteingang vorfinden, überprüfe bitte deinen Spam-Ordner."
+        "Wenn du die E-Mail nicht in deinem Posteingang finden kannst, überprüfe bitte deinen Spam-Ordner."
       ],
       "Internet connection lost": [
         "Internetverbindung unterbrochen"
       ],
       "Loading": [
-        "Wird geladen …"
+        "Wird geladen"
       ],
       "No results found": [
         "Keine Ergebnisse"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
-        "Die Server sind nicht erreichbar. Bitte versuche es in ein einigen Minuten erneut."
+        "Die Server sind unerreichbar. Bitte versuche es in ein paar Minuten erneut"
       ],
       "Session timed out": [
         "Zeitüberschreitung der Sitzung"
       ],
       "To fight spam and abuse, please verify you are human.": [
-        "Um Spam und Missbrauch zu bekämpfen, wird überprüft, ob Sie ein Mensch sind."
+        "Bitte beweise, dass du ein Mensch bist, um Spam und Missbrauch zu vermeiden."
       ],
       "We'll send a new verification code to ${ strong }": [
         "Wir senden einen neuen Verifizierungscode an ${ strong }"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
-        "Möchten Sie einen neuen Bestätigungsschlüssel erhalten oder eine alternative Bestätigungsmethode verwenden?"
+        "Möchtest du einen neuen Verifizierungscode anfordern oder eine alternative Verifizierungsmethode verwenden?"
       ],
       "Would you like to receive a new verification code?": [
         "Möchtest du einen neuen Verifizierungscode erhalten?"
@@ -1007,7 +1004,7 @@
         "Deine Rufnummer wird nur für diese einmalige Überprüfung verwendet."
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "Dein Proton-Konto ist derzeit gesperrt. Um es weiter nutzen zu können, begleiche bitte alle überfälligen Rechnungen."
+        "Dein Proton-Konto ist derzeit gesperrt. Um dein Konto weiterhin nutzen zu können, begleiche bitte alle überfälligen Rechnungen."
       ]
     },
     "Label": {
@@ -1024,13 +1021,13 @@
         "Passwort"
       ],
       "Phone number": [
-        "Rufnummer"
+        "Telefonnummer"
       ],
       "Reveal password": [
-        "Passwort einblenden"
+        "Passwort anzeigen"
       ],
       "Verification code": [
-        "Bestätigungscode"
+        "Verifizierungscode"
       ]
     },
     "Link": {
@@ -1038,7 +1035,7 @@
         "Mehr erfahren"
       ],
       "Request an invite": [
-        "Anfrage einreichen"
+        "Einladung anfordern"
       ]
     },
     "Placeholder": {
@@ -1051,7 +1048,7 @@
         "Code gesendet an ${ methodTo }"
       ],
       "Verification successful": [
-        "Erfolgreich bestätigt"
+        "Verifizierung erfolgreich"
       ]
     },
     "Title": {
@@ -1059,7 +1056,7 @@
         "Captcha"
       ],
       "Invalid verification code": [
-        "Bestätigungscode ungültig"
+        "Ungültiger Verifizierungscode"
       ],
       "Request new code": [
         "Neuen Code anfordern"

@@ -6,75 +6,63 @@
   "contexts": {
     "Action": {
       "Cancel": [
-        "Cancel·lar"
+        "Cancel·la"
       ],
       "Close": [
-        "Tancar"
-      ],
-      "Close modal": [
-        "Tancar el modal"
+        "Tanca"
       ],
       "Didn't receive the code?": [
         "No heu rebut el codi?"
       ],
       "Edit email address": [
-        "Editar l'adreça de correu electrònic"
+        "Edita l'adreça de correu"
       ],
       "Edit phone number": [
-        "Editar el número de telèfon"
+        "Edita el número de telèfon"
       ],
       "Edit sign-in details": [
-        "Editar detalls d'inici de sessió"
+        "Edita detalls d'inici de sessió"
       ],
       "Get verification code": [
         "Obtenir codi de verificació"
       ],
       "refresh the page": [
-        "recarregar la pàgina"
+        "refresqueu la pàgina"
       ],
       "Request new code": [
-        "Demanar codi nou"
+        "Demana un nou codi"
       ],
       "Search countries": [
         "Cerca països"
       ],
       "Submit": [
-        "Enviar"
+        "Envia"
       ],
       "Try another method": [
         "Proveu amb un altre mètode"
       ],
       "Verify": [
-        "Verificar"
+        "Verifica"
       ],
       "Verify account": [
-        "Verificar el compte"
+        "Verifiqueu el compte"
       ],
       "Verify email": [
-        "Verificar el correu electrònic"
+        "Verifiqueu el correu electrònic"
       ],
       "View invoice": [
-        "Veure factura"
+        "Mostra la factura"
       ]
     },
     "color": {
       "carrot": [
         "pastanaga"
       ],
-      "cerise": [
-        "cerise"
-      ],
       "cobalt": [
         "cobalt"
       ],
       "copper": [
         "coure"
-      ],
-      "enzian": [
-        "enzian"
-      ],
-      "fern": [
-        "falguera"
       ],
       "forest": [
         "bosc"
@@ -88,9 +76,6 @@
       "pacific": [
         "pacífic"
       ],
-      "pickle": [
-        "escabetx"
-      ],
       "pine": [
         "pi"
       ],
@@ -103,17 +88,11 @@
       "purple": [
         "porpra"
       ],
-      "reef": [
-        "escull"
-      ],
       "sahara": [
         "sahara"
       ],
-      "slateblue": [
-        "blau pissarra"
-      ],
       "soil": [
-        "sòl"
+        "terra"
       ],
       "strawberry": [
         "maduixa"
@@ -184,7 +163,7 @@
         "Barbados"
       ],
       "Belarus": [
-        "Bielorússia"
+        "Belarús"
       ],
       "Belgium": [
         "Bèlgica"
@@ -332,9 +311,6 @@
       ],
       "Estonia": [
         "Estònia"
-      ],
-      "Eswatini": [
-        "Eswatini"
       ],
       "Ethiopia": [
         "Etiòpia"
@@ -501,9 +477,6 @@
       "Lebanon": [
         "Líban"
       ],
-      "Lesotho": [
-        "Lesotho"
-      ],
       "Liberia": [
         "Libèria"
       ],
@@ -578,9 +551,6 @@
       ],
       "Mozambique": [
         "Moçambic"
-      ],
-      "Myanmar": [
-        "Myanmar"
       ],
       "Namibia": [
         "Namíbia"
@@ -687,9 +657,6 @@
       "Saint Helena": [
         "Santa Helena"
       ],
-      "Saint Kitts and Nevis": [
-        "Illa de Sant Christopher i Nevis"
-      ],
       "Saint Lucia": [
         "Saint Lucia"
       ],
@@ -786,23 +753,14 @@
       "Taiwan": [
         "Taiwan"
       ],
-      "Tajikistan": [
-        "Tadjikistan"
-      ],
       "Tanzania": [
         "Tanzània"
       ],
       "Thailand": [
         "Tailàndia"
       ],
-      "Timor-Leste": [
-        "Timor-Leste"
-      ],
       "Togo": [
         "Togo"
-      ],
-      "Tokelau": [
-        "Tokelau"
       ],
       "Tonga": [
         "Tonga"
@@ -821,9 +779,6 @@
       ],
       "Turkmenistan": [
         "Turkmenistan"
-      ],
-      "Turks and Caicos Islands": [
-        "Illes Turks i Caicos"
       ],
       "Tuvalu": [
         "Tuvalu"
@@ -862,10 +817,10 @@
         "Vietnam"
       ],
       "Virgin Islands, British": [
-        "Illes Verges britàniques"
+        "Illes Verges, Britàniques"
       ],
       "Virgin Islands, U.S.": [
-        "Illes Verges nord-americanes"
+        "Illes Verges, Americanes"
       ],
       "Wallis and Futuna": [
         "Wallis i Futuna"
@@ -899,7 +854,7 @@
         "Introduïu 6 dígits"
       ],
       "Invalid verification code": [
-        "Codi de verificació invàlid"
+        "Codi de verificació no vàlid"
       ],
       "Not a valid number": [
         "Número no vàlid"
@@ -928,10 +883,7 @@
         "Vaja, alguna cosa ha anat malament"
       ],
       "Please ${ refresh } or check your connection.": [
-        "Si us plau, ${ refresh } o comproveu la vostra connexió."
-      ],
-      "Something went wrong. Please refresh the page or try again later.": [
-        "Alguna cosa ha anat malament. Actualitzeu la pàgina o torneu-ho a provar més tard."
+        "Si us play, ${ refresh } o comproveu la vostra connexió."
       ],
       "There was a problem connecting to Proton.": [
         "S'ha produït un problema en connectar amb Proton."
@@ -974,7 +926,7 @@
         "Si no trobeu el correu electrònic a la safata d'entrada, comproveu la vostra carpeta de correu brossa."
       ],
       "Internet connection lost": [
-        "S'ha perdut la connexió a internet"
+        "S'ha perdut la connexió a Internet"
       ],
       "Loading": [
         "Carregant"
@@ -986,7 +938,7 @@
         "Servidors inaccessibles. Torneu a provar-ho en uns minuts"
       ],
       "Session timed out": [
-        "Temps de sessió esgotat"
+        "S'ha esgotat el temps de sessió"
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Per combatre el correu brossa, si us plau verifiqueu que sou humà."
@@ -1018,7 +970,7 @@
         "Adreça de correu electrònic"
       ],
       "Hide password": [
-        "Oculta la contrasenya"
+        "Amaga la contrasenya"
       ],
       "Password": [
         "Contrasenya"
@@ -1035,10 +987,10 @@
     },
     "Link": {
       "Learn more": [
-        "Saber-ne més"
+        "Més informació"
       ],
       "Request an invite": [
-        "Demanar una invitació"
+        "Demana una invitació"
       ]
     },
     "Placeholder": {
@@ -1059,19 +1011,19 @@
         "Verificació humana"
       ],
       "Invalid verification code": [
-        "Codi de verificació invàlid"
+        "Codi de verificació no vàlid"
       ],
       "Request new code": [
-        "Demanar un codi nou"
+        "Demana un nou codi"
       ],
       "Sign in again to continue": [
-        "Torneu a iniciar per continuar"
+        "Inicia sessió per continuar"
       ]
     },
     "Validation": {
       "Password must contain at least ${ length } character": [
-        "La contrasenya ha de contenir com a mínim ${ length } caràcter",
-        "La contrasenya ha de contenir com a mínim ${ length } caràcters"
+        "La contrasenya ha de tenir com a mínim ${ length } caràcter",
+        "La contrasenya ha de tenir com a mínim ${ length } caràcters"
       ]
     }
   }

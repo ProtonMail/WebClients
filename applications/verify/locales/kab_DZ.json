@@ -11,14 +11,17 @@
       "Close": [
         "Mdel"
       ],
-      "Close modal": [
-        "Mdel"
+      "Didn't receive the code?": [
+        "Ur d-teṭṭifeḍ ara tangalt?"
       ],
       "Edit email address": [
-        "Ẓreg tansa n yimayl"
+        "Ẓreg tansa imayl"
       ],
       "Edit phone number": [
         "Ẓreg uṭṭun n tiliɣri"
+      ],
+      "Edit sign-in details": [
+        "Ẓreg ttfaṣil n tuqqna"
       ],
       "Get verification code": [
         "Awi tangalt n usentem"
@@ -29,17 +32,792 @@
       "Request new code": [
         "Suter tangalt tamaynut"
       ],
+      "Search countries": [
+        "Nadi timura"
+      ],
       "Submit": [
         "Azen"
       ],
       "Try another method": [
-        "Ɛreḍ tarrayt-nniḍen"
+        "Ɛreḍ tarrayt nniḍen"
       ],
       "Verify": [
         "Senqed"
       ],
+      "Verify account": [
+        "Selken amiḍan"
+      ],
+      "Verify email": [
+        "Selken imayl"
+      ],
       "View invoice": [
-        "Wali tafaṭurt"
+        "Wali tafaturt"
+      ]
+    },
+    "color": {
+      "carrot": [
+        "zṛudyya"
+      ],
+      "cerise": [
+        "areḍli"
+      ],
+      "cobalt": [
+        "kubalt"
+      ],
+      "forest": [
+        "tiẓgi"
+      ],
+      "olive": [
+        "azemmur"
+      ],
+      "pink": [
+        "axuxi"
+      ],
+      "plum": [
+        "taxuxet"
+      ],
+      "sahara": [
+        "sseḥra"
+      ],
+      "soil": [
+        "akal"
+      ]
+    },
+    "Country name": {
+      "Abkhazia": [
+        "Abxazya"
+      ],
+      "Afghanistan": [
+        "Afɣanistan"
+      ],
+      "Albania": [
+        "Albanya"
+      ],
+      "Algeria": [
+        "Lezzayer"
+      ],
+      "American Samoa": [
+        "Samwa Tamarikanit"
+      ],
+      "Andorra": [
+        "Andurra"
+      ],
+      "Angola": [
+        "Angula"
+      ],
+      "Anguilla": [
+        "Angiya"
+      ],
+      "Antarctica": [
+        "Antaṛktic"
+      ],
+      "Antigua and Barbuda": [
+        "Antiga d Barbuda"
+      ],
+      "Argentina": [
+        "Aṛjuntin"
+      ],
+      "Armenia": [
+        "Aṛminya"
+      ],
+      "Aruba": [
+        "Aruba"
+      ],
+      "Australia": [
+        "Ustṛalya"
+      ],
+      "Austria": [
+        "Ustriya"
+      ],
+      "Azerbaijan": [
+        "Tazerbiǧanit"
+      ],
+      "Bahamas": [
+        "Bahamas"
+      ],
+      "Bahrain": [
+        "Baḥrin"
+      ],
+      "Bangladesh": [
+        "Bangladec"
+      ],
+      "Barbados": [
+        "Barbadus"
+      ],
+      "Belarus": [
+        "Bilarus"
+      ],
+      "Belgium": [
+        "Biljik"
+      ],
+      "Belize": [
+        "Biliz"
+      ],
+      "Benin": [
+        "Binin"
+      ],
+      "Bermuda": [
+        "Bermuda"
+      ],
+      "Bhutan": [
+        "Bhutan"
+      ],
+      "Bolivia": [
+        "Bulivya"
+      ],
+      "Bonaire, Sint Eustatius and Saba": [
+        "Buniṛ, Sint Usṭasius d Saba"
+      ],
+      "Bosnia and Herzegovina": [
+        "Busna d Rziguvin"
+      ],
+      "Botswana": [
+        "Butswana"
+      ],
+      "Bouvet Island": [
+        "Tigzirin Buvet"
+      ],
+      "Brazil": [
+        "Brizil"
+      ],
+      "British Indian Ocean Territory": [
+        "Timura n ugaraw ahendi abṛitani"
+      ],
+      "Brunei Darussalam": [
+        "Brunay Darussalam"
+      ],
+      "Bulgaria": [
+        "Tabulgarit"
+      ],
+      "Burkina Faso": [
+        "Burkina Fasu"
+      ],
+      "Burundi": [
+        "Burundi"
+      ],
+      "Cambodia": [
+        "Cambudya"
+      ],
+      "Cameroon": [
+        "Kamirun"
+      ],
+      "Canada": [
+        "Kanada"
+      ],
+      "Cape Verde": [
+        "Aqerru azegzaw"
+      ],
+      "Cayman Islands": [
+        "Tigzirin n Kayman"
+      ],
+      "Central African Republic": [
+        "Tigduda n Tefriqt Talemmast"
+      ],
+      "Chad": [
+        "Čad"
+      ],
+      "Chile": [
+        "Cili"
+      ],
+      "China": [
+        "Cin"
+      ],
+      "Christmas Island": [
+        "Tigzrin n Kristmaṣ"
+      ],
+      "Cocos (Keeling) Islands": [
+        "Tigzirin n kuku (Kiling)"
+      ],
+      "Colombia": [
+        "Kulumbi"
+      ],
+      "Comoros": [
+        "Kumuṛ"
+      ],
+      "Congo": [
+        "Kungu"
+      ],
+      "Congo, Democratic Republic of the": [
+        "Kungu, Tagelda Tagdudant n"
+      ],
+      "Cook Islands": [
+        "Tigzirin n Kuk"
+      ],
+      "Costa Rica": [
+        "Kusta Rika"
+      ],
+      "Croatia": [
+        "Karwaṣya"
+      ],
+      "Cuba": [
+        "Kuba"
+      ],
+      "Curaçao": [
+        "Kuraṣaw"
+      ],
+      "Cyprus": [
+        "Cipr"
+      ],
+      "Czech Republic": [
+        "Tagduda Tačikit"
+      ],
+      "Denmark": [
+        "Danmark"
+      ],
+      "Djibouti": [
+        "Ǧibuti"
+      ],
+      "Dominica": [
+        "Duminik"
+      ],
+      "Dominican Republic": [
+        "Tigduda Taduminikit"
+      ],
+      "Ecuador": [
+        "Ikwaṭur"
+      ],
+      "Egypt": [
+        "Maṣer"
+      ],
+      "El Salvador": [
+        "Salvaduṛ"
+      ],
+      "Equatorial Guinea": [
+        "Ginya Tasebgast"
+      ],
+      "Eritrea": [
+        "Iritirya"
+      ],
+      "Estonia": [
+        "Istunya"
+      ],
+      "Ethiopia": [
+        "Ityupya"
+      ],
+      "Faroe Islands": [
+        "Tigzirin n Faṛwi"
+      ],
+      "Fiji": [
+        "Fiji"
+      ],
+      "Finland": [
+        "Finland"
+      ],
+      "France": [
+        "Fransa"
+      ],
+      "French Guiana": [
+        "Γana tafransist"
+      ],
+      "French Polynesia": [
+        "Pulinizya Tafṛansist"
+      ],
+      "French Southern Territories": [
+        "Lexlawi n Unẓul n Fransa"
+      ],
+      "Gabon": [
+        "Gabun"
+      ],
+      "Gambia": [
+        "Gambya"
+      ],
+      "Georgia": [
+        "Jyuṛjya"
+      ],
+      "Germany": [
+        "Lalman"
+      ],
+      "Ghana": [
+        "Ɣana"
+      ],
+      "Gibraltar": [
+        "Gibraltar"
+      ],
+      "Greece": [
+        "Legrig"
+      ],
+      "Greenland": [
+        "Grinland"
+      ],
+      "Grenada": [
+        "Grinada"
+      ],
+      "Guadeloupe": [
+        "Gwadlup"
+      ],
+      "Guam": [
+        "Gwam"
+      ],
+      "Guatemala": [
+        "Gwatimala"
+      ],
+      "Guernsey": [
+        "Girnizi"
+      ],
+      "Guinea": [
+        "Ginya"
+      ],
+      "Guinea-Bissau": [
+        "Ginya bisaw"
+      ],
+      "Guyana": [
+        "Guyana"
+      ],
+      "Haiti": [
+        "Hayti"
+      ],
+      "Heard Island and McDonald Islands": [
+        "Tigzirin n Hird d Tigzirin n MakDunald"
+      ],
+      "Honduras": [
+        "Hunduṛas"
+      ],
+      "Hong Kong": [
+        "Hung Kung"
+      ],
+      "Hungary": [
+        "Hungri"
+      ],
+      "Iceland": [
+        "Island"
+      ],
+      "India": [
+        "Lhend"
+      ],
+      "Indonesia": [
+        "Indunisya"
+      ],
+      "International": [
+        "Agraɣlan"
+      ],
+      "Iran": [
+        "Iran"
+      ],
+      "Iraq": [
+        "Ɛiraq"
+      ],
+      "Ireland": [
+        "Irland"
+      ],
+      "Isle of Man": [
+        "Tigzirt n Man"
+      ],
+      "Israel": [
+        "Izrayil"
+      ],
+      "Italy": [
+        "Ṭelyan"
+      ],
+      "Jamaica": [
+        "Jamayika"
+      ],
+      "Japan": [
+        "Japun"
+      ],
+      "Jersey": [
+        "Jiṛzi"
+      ],
+      "Jordan": [
+        "Juṛdan"
+      ],
+      "Kazakhstan": [
+        "Kazaxistan"
+      ],
+      "Kenya": [
+        "Kinya"
+      ],
+      "Kiribati": [
+        "Kiribati"
+      ],
+      "Kosovo": [
+        "Kuṣuvu"
+      ],
+      "Kuwait": [
+        "Kuwayt"
+      ],
+      "Kyrgyzstan": [
+        "Kirigistan"
+      ],
+      "Laos": [
+        "Lawus"
+      ],
+      "Latvia": [
+        "Litunya"
+      ],
+      "Lebanon": [
+        "Lubnan"
+      ],
+      "Lesotho": [
+        "Lizuṭu"
+      ],
+      "Liberia": [
+        "Libirya"
+      ],
+      "Libya": [
+        "Libya"
+      ],
+      "Liechtenstein": [
+        "Lictencṭayn"
+      ],
+      "Lithuania": [
+        "Litwanya"
+      ],
+      "Luxembourg": [
+        "Luksamburg"
+      ],
+      "Macao": [
+        "Makawu"
+      ],
+      "Madagascar": [
+        "Madagaskaṛ"
+      ],
+      "Malawi": [
+        "Malawi"
+      ],
+      "Malaysia": [
+        "Malizya"
+      ],
+      "Maldives": [
+        "Maldiv"
+      ],
+      "Mali": [
+        "Mali"
+      ],
+      "Malta": [
+        "Malta"
+      ],
+      "Marshall Islands": [
+        "Tigzirin n Marcal"
+      ],
+      "Martinique": [
+        "Maṛtinik"
+      ],
+      "Mauritania": [
+        "Muriṭanya"
+      ],
+      "Mauritius": [
+        "Muris"
+      ],
+      "Mayotte": [
+        "Mayuṭ"
+      ],
+      "Mexico": [
+        "Miksik"
+      ],
+      "Moldova": [
+        "Muldavya"
+      ],
+      "Monaco": [
+        "Munaku"
+      ],
+      "Mongolia": [
+        "Mungulya"
+      ],
+      "Montenegro": [
+        "Muntinigru"
+      ],
+      "Montserrat": [
+        "Munsirat"
+      ],
+      "Morocco": [
+        "Merruk"
+      ],
+      "Mozambique": [
+        "Muzumbik"
+      ],
+      "Namibia": [
+        "Namibya"
+      ],
+      "Nauru": [
+        "Tanurwant"
+      ],
+      "Nepal": [
+        "Nipal"
+      ],
+      "Netherlands": [
+        "Timura n Wadda"
+      ],
+      "New Caledonia": [
+        "Kalidunya Tamaynut"
+      ],
+      "New Zealand": [
+        "Ziland Tamaynut"
+      ],
+      "Nicaragua": [
+        "Nikaṛagwa"
+      ],
+      "Niger": [
+        "Nijer"
+      ],
+      "Nigeria": [
+        "Nijirya"
+      ],
+      "Niue": [
+        "Niyu"
+      ],
+      "Norfolk Island": [
+        "Tigzirtn n Nuṛfulk"
+      ],
+      "North Korea": [
+        "Kuriya n Ugafa"
+      ],
+      "North Macedonia": [
+        "Masidunya n Unẓul"
+      ],
+      "Northern Mariana Islands": [
+        "Tigzirin n Maryan Ufella"
+      ],
+      "Norway": [
+        "Nuṛwij"
+      ],
+      "Oman": [
+        "Uman"
+      ],
+      "Pakistan": [
+        "Pakistan"
+      ],
+      "Palau": [
+        "Palawu"
+      ],
+      "Palestine": [
+        "Filasṭin"
+      ],
+      "Panama": [
+        "Panama"
+      ],
+      "Papua New Guinea": [
+        "Ɣinya Tamaynut Tapaput"
+      ],
+      "Paraguay": [
+        "Paragway"
+      ],
+      "Peru": [
+        "Piru"
+      ],
+      "Philippines": [
+        "Filipin"
+      ],
+      "Pitcairn": [
+        "Pitkaṛn"
+      ],
+      "Poland": [
+        "Pulund"
+      ],
+      "Portugal": [
+        "Purtugal"
+      ],
+      "Puerto Rico": [
+        "Puṛṭu Riku"
+      ],
+      "Qatar": [
+        "Qaṭar"
+      ],
+      "Reunion": [
+        "Timlilit"
+      ],
+      "Romania": [
+        "Ṛumanya"
+      ],
+      "Russia": [
+        "Rruss"
+      ],
+      "Rwanda": [
+        "Rwanda"
+      ],
+      "Saint Barthélemy": [
+        "San Baṛtilimi"
+      ],
+      "Saint Helena": [
+        "Saint Helena"
+      ],
+      "Saint Kitts and Nevis": [
+        "Saint Kitts and Nevis"
+      ],
+      "Saint Lucia": [
+        "Sant Lusi"
+      ],
+      "Saint Martin (French Part)": [
+        "San Maṛtan (aḥric afṛansis)"
+      ],
+      "Saint Pierre and Miquelon": [
+        "San-Pyir-d-Miklun"
+      ],
+      "Saint Vincent and the Grenadines": [
+        "San-Vansun-d-grinadin"
+      ],
+      "Samoa": [
+        "Samwa"
+      ],
+      "San Marino": [
+        "San Maṛinu"
+      ],
+      "Sao Tome and Principe": [
+        "Ṣaw Tumi d Prinsip"
+      ],
+      "Saudi Arabia": [
+        "Suɛudiya Taɛrabt"
+      ],
+      "Senegal": [
+        "Sinigal"
+      ],
+      "Serbia": [
+        "Ṣirbya"
+      ],
+      "Seychelles": [
+        "Sicil"
+      ],
+      "Sierra Leone": [
+        "Sirra Lyun"
+      ],
+      "Singapore": [
+        "Singapur"
+      ],
+      "Slovakia": [
+        "Sluvakya"
+      ],
+      "Slovenia": [
+        "Sluvinya"
+      ],
+      "Solomon Islands": [
+        "Tigzirin n Sulumun"
+      ],
+      "Somalia": [
+        "Ṣumal"
+      ],
+      "South Africa": [
+        "Tafriqt n Unẓul"
+      ],
+      "South Georgia and the South Sandwich Islands": [
+        "Tigzirin n Jyuṛjya n Unzul akked Sandwič n Unẓul"
+      ],
+      "South Korea": [
+        "Kuriya n Unẓul"
+      ],
+      "South Sudan": [
+        "Sudan n unẓul"
+      ],
+      "Spain": [
+        "Spanya"
+      ],
+      "Sri Lanka": [
+        "Sri Lanka"
+      ],
+      "Sudan": [
+        "Sudan"
+      ],
+      "Suriname": [
+        "Surinam"
+      ],
+      "Svalbard and Jan Mayen": [
+        "Svalbard d Jan Mayen"
+      ],
+      "Sweden": [
+        "Sswid"
+      ],
+      "Switzerland": [
+        "Swis"
+      ],
+      "Syria": [
+        "Sirya"
+      ],
+      "Taiwan": [
+        "Taywan"
+      ],
+      "Tajikistan": [
+        "Tajikistan"
+      ],
+      "Tanzania": [
+        "Tanẓanya"
+      ],
+      "Thailand": [
+        "Ṭayland"
+      ],
+      "Timor-Leste": [
+        "Timur n usamar"
+      ],
+      "Togo": [
+        "Ṭugu"
+      ],
+      "Tokelau": [
+        "Ṭuklu"
+      ],
+      "Tonga": [
+        "Ṭunga"
+      ],
+      "Trinidad and Tobago": [
+        "Ṭrindad d Ṭubagu"
+      ],
+      "Tunisia": [
+        "Tunes"
+      ],
+      "Turkey": [
+        "Ṭurk"
+      ],
+      "Turkmenistan": [
+        "Ṭurkmanistan"
+      ],
+      "Turks and Caicos Islands": [
+        "Ṭurk d Tegzirin n Kaykus"
+      ],
+      "Tuvalu": [
+        "Tuvalu"
+      ],
+      "Uganda": [
+        "Uganda"
+      ],
+      "Ukraine": [
+        "Ukran"
+      ],
+      "United Arab Emirates": [
+        "Tigeldunin Yedduklen Taɛrabin"
+      ],
+      "United Kingdom": [
+        "Tagelda Yedduklen"
+      ],
+      "United States": [
+        "Iwanaken-Yeddukklen-N-Temrikt"
+      ],
+      "United States Minor Outlying Islands": [
+        "Tigzirin timecṭaḥ ibeɛden n Marikan"
+      ],
+      "Uruguay": [
+        "Urugway"
+      ],
+      "Uzbekistan": [
+        "Uzbikistan"
+      ],
+      "Vanuatu": [
+        "Vanwatu"
+      ],
+      "Venezuela": [
+        "Vanzwila"
+      ],
+      "Vietnam": [
+        "Vyiṭnam"
+      ],
+      "Virgin Islands, British": [
+        "Tigzirin n VirGin, Briṭan"
+      ],
+      "Virgin Islands, U.S.": [
+        "Tigzirin n VirGin, Marikan."
+      ],
+      "Wallis and Futuna": [
+        "Wallis d Futuna"
+      ],
+      "Western Sahara": [
+        "Seḥra n umalu"
+      ],
+      "Yemen": [
+        "Yaman"
+      ],
+      "Zambia": [
+        "Ẓumbiya"
+      ],
+      "Zimbabwe": [
+        "Zimbabwi"
+      ],
+      "Åland Islands": [
+        "Tigzirin n Aland"
       ]
     },
     "Delinquent modal title": {
@@ -61,10 +839,13 @@
         "Mačči d uṭṭun ameɣtu"
       ],
       "Passwords do not match": [
-        "Awalen n uɛeddi mgraden"
+        "Awalen uffiren ur menṭaḍen ara"
+      ],
+      "Request timed out": [
+        "Akud n usuter yemmut"
       ],
       "This field is required": [
-        "Urti-a ilaq"
+        "Urti-agi ilaq"
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Urti-a isra ma drus ${ minimumLength } n yizamulen."
@@ -74,11 +855,20 @@
       ]
     },
     "Error message": {
+      "Error: ${ errorMessage }": [
+        "Tuccḍa: ${ errorMessage }"
+      ],
       "Oops, something went wrong": [
         "Ihuh, yeḍran-d wugur"
       ],
+      "Please ${ refresh } or check your connection.": [
+        "Ma ulac aɣilif ${ refresh } neɣ senqed tuqqna."
+      ],
+      "There was a problem connecting to Proton.": [
+        "Tella-d tuccḍa deg tuqqna ɣer Proton."
+      ],
       "You may also ${ refresh } or try again later.": [
-        "Ahat ilaq daɣen ${ refresh } εreḍ ticki."
+        "Ahat ilaq daɣen ${ refresh } neɣ εreḍ ticki."
       ]
     },
     "Human verification method": {
@@ -89,7 +879,7 @@
         "Imayl"
       ],
       "Manual": [
-        "Awfus"
+        "S ufus"
       ],
       "No verification method available": [
         "Ulac tarrayt n usenqed"
@@ -111,17 +901,29 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Ma ur tufiḍ ara imayl deg tnaka n urmas, ttxil-k/m wali deg ukaram n ispamen."
       ],
+      "Internet connection lost": [
+        "Tuqqna internet truḥ"
+      ],
       "Loading": [
         "Azdam"
       ],
       "No results found": [
         "Ulac igmaḍ yettwafen"
       ],
+      "Session timed out": [
+        "Yemmed wakud n tɣimit"
+      ],
       "To fight spam and abuse, please verify you are human.": [
         "Akken ad nennaɣ mgal ispament, senqed ma yella kečč d amdan."
       ],
+      "We'll send a new verification code to ${ strong }": [
+        "Ad nazen tangalt tamaynutt n uselken ɣer ${ strong }"
+      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Tebɣiḍ ad d-teṭṭfeḍ tangalt n usenqed tamaynut neɣ ad tesqedceḍ ttawil n usenqed nniḍen?"
+      ],
+      "Would you like to receive a new verification code?": [
+        "Tebɣiḍ ad teṭṭfeḍ tangalt tamaynutt n uselken ?"
       ],
       "Your email will only be used for this one-time verification.": [
         "Imayl-ik ad yettwaseqdec kan tikkelt deg usenqed-agi."
@@ -130,12 +932,15 @@
         "Uṭṭun-ik n tiliɣṛi ad yettwaseqdec kan tikkelt deg usenqed-agi."
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "Amiḍan-inek·inem Proton yettwaḥbes akka tura. Akken ad tkemmleḍ aseqdec n umiḍan-inek·inem, ttxil-k·m xelleṣ tifaturin yellan."
+        "Amiḍan-inek/m Proton yettwaḥbes akka tura. Akken ad tkemmleḍ aseqdec n umiḍan-inek/m, ttxil-k/m xelleṣ tifaturin yellan."
       ]
     },
     "Label": {
+      "Code is 6 digits without spaces": [
+        "Tangalt tesɛa 6 n yizwilen war tallunt"
+      ],
       "Email address": [
-        "Tansa n l'email"
+        "Tansa imayl"
       ],
       "Hide password": [
         "Ffer awal uffir"
@@ -147,7 +952,7 @@
         "Uṭṭun n tiliɣri"
       ],
       "Reveal password": [
-        "Sken-d awal uffir"
+        "Sken awal uffir"
       ],
       "Verification code": [
         "Tangalt n usenqed"
@@ -159,6 +964,11 @@
       ],
       "Request an invite": [
         "Suter tinubga"
+      ]
+    },
+    "Placeholder": {
+      "Password": [
+        "Awal uffir"
       ]
     },
     "Success": {
@@ -175,6 +985,9 @@
       ],
       "Invalid verification code": [
         "Tangalt n usentem mačči d tameɣtut"
+      ],
+      "Request new code": [
+        "Suter tangalt tamaynut"
       ],
       "Sign in again to continue": [
         "Qqen tikelt-nniḍen akken ad tkemmled"

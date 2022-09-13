@@ -152,9 +152,6 @@
       "Close composer": [
         "Închidere panou editare"
       ],
-      "Close modal": [
-        "Close"
-      ],
       "Close navigation": [
         "Închidere navigare"
       ],
@@ -1080,6 +1077,9 @@
       ],
       "Star message": [
         "Mesaj cu stea"
+      ],
+      "Unread email": [
+        "Mesaj necitit"
       ],
       "Unstar conversation": [
         "Conversație fără stea"
@@ -4598,6 +4598,9 @@
       "Recipient: ": [
         "Destinatar: "
       ],
+      "Recovery information will remain on this device unless you select to delete it.": [
+        "Informațiile de recuperare vor rămâne pe acest dispozitiv până când le selectați să fie șterse."
+      ],
       "Recovery phrase copied to clipboard": [
         "Fraza de recuperare a fost copiată în memorie."
       ],
@@ -5488,6 +5491,9 @@
       "Delete": [
         "Ștergere"
       ],
+      "Delete recovery-related information.": [
+        "Ștergere informații privind recuperarea."
+      ],
       "Do not ask again": [
         "Nu mă mai întreba"
       ],
@@ -5928,6 +5934,9 @@
       "Upgrade account": [
         "Migrare cont"
       ],
+      "What’s this?": [
+        "Ce este asta?"
+      ],
       "You need to activate your calendar keys to add this event": [
         "Trebuie să activați cheile calendarului pentru a adăuga acest eveniment"
       ],
@@ -6336,8 +6345,8 @@
       ]
     },
     "Pagination": {
-      "${ page } of ${ total }": [
-        "${ page } din ${ total }"
+      "${ page } of ${ totalText }": [
+        "${ page } din ${ totalText }"
       ]
     },
     "Paid user checklist item": {
@@ -6710,11 +6719,6 @@
       ],
       "Sender's trusted keys verification failed": [
         "Verificarea cheilor de încredere a expeditorului a eșuat"
-      ]
-    },
-    "Sort": {
-      "Sort": [
-        "Sortare"
       ]
     },
     "Sort option": {
@@ -7559,6 +7563,9 @@
       ],
       "Sign in and grant access": [
         "Conectați-vă și acordați acces"
+      ],
+      "Sign out": [
+        "Deconectare"
       ],
       "Sort conversations": [
         "Sortare conversații"
