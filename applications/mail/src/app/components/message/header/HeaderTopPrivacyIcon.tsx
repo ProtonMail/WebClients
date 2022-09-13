@@ -60,7 +60,7 @@ const HeaderTopPrivacyIcon = ({ message }: Props) => {
                     color="weak"
                     shape="outline"
                     pill
-                    content={<Icon name="envelope-lock" />}
+                    content={<Icon name="envelope-lock" className="color-primary" />}
                     hasCaret={false}
                     className="pt0 pr0-75 pl0-75"
                 >
@@ -72,8 +72,10 @@ const HeaderTopPrivacyIcon = ({ message }: Props) => {
                             <DropdownMenuButton className="text-left" onClick={() => setSimpleLoginModalOpen(true)}>
                                 <div className="flex flex-nowrap flex-align-items-center">
                                     <Icon
-                                        name="simple-login"
+                                        name="brand-simple-login"
                                         className="mr0-5 relative inline-flex flex-align-items-center"
+                                        color="#D42C83"
+                                        alt={c('Alternative text for simple login image').t`Simple Login`}
                                     />
                                     <span className="pl0-25 flex-item-fluid">
                                         {
