@@ -8,8 +8,7 @@ import { removeMember, updateRole } from '@proton/shared/lib/api/members';
 import { DOMAIN_STATE, MEMBER_ROLE } from '@proton/shared/lib/constants';
 import { getInitials, normalize } from '@proton/shared/lib/helpers/string';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { CachedOrganizationKey, Domain, Member, Organization as tsOrganization } from '@proton/shared/lib/interfaces';
-import { getOrganizationKeyInfo } from '@proton/shared/lib/organization/helper';
+import { Member } from '@proton/shared/lib/interfaces';
 
 import {
     Badge,
@@ -43,42 +42,7 @@ import MemberAddresses from './MemberAddresses';
 import MemberFeatures from './MemberFeatures';
 import MemberModal from './MemberModal';
 import MemberRole from './MemberRole';
-
-const validateAddUser = (
-    organization: tsOrganization,
-    organizationKey: CachedOrganizationKey | undefined,
-    verifiedDomains: Domain[]
-) => {
-    const organizationKeyInfo = getOrganizationKeyInfo(organization, organizationKey);
-    const { MaxMembers, HasKeys, UsedMembers, MaxAddresses, UsedAddresses, MaxSpace, AssignedSpace } = organization;
-    if (MaxMembers === 1) {
-        return c('Error').t`Please upgrade to a business plan with more than 1 user to manage multiple users.`;
-    }
-    if (!HasKeys) {
-        return c('Error').t`Please enable multi-user support before adding users to your organization.`;
-    }
-    if (!verifiedDomains.length) {
-        return c('Error').t`Please configure a custom domain before adding users to your organization.`;
-    }
-    if (MaxMembers - UsedMembers < 1) {
-        return c('Error').t`You have used all users in your plan. Please upgrade your plan to add a new user.`;
-    }
-    if (MaxAddresses - UsedAddresses < 1) {
-        return c('Error').t`You have used all addresses in your plan. Please upgrade your plan to add a new address.`;
-    }
-    if (MaxSpace - AssignedSpace < 1) {
-        return c('Error').t`All storage space has been allocated. Please reduce storage allocated to other users.`;
-    }
-    if (organizationKeyInfo.userNeedsToActivateKey) {
-        return c('Error').t`The organization key must be activated first.`;
-    }
-    if (organizationKeyInfo.userNeedsToReactivateKey) {
-        return c('Error').t`Permission denied, administrator privileges have been restricted.`;
-    }
-    if (!organizationKey?.privateKey) {
-        return c('Error').t`Organization key is not decrypted.`;
-    }
-};
+import validateAddUser from './validateAddUser';
 
 const { DOMAIN_STATE_ACTIVE } = DOMAIN_STATE;
 
