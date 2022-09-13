@@ -47,9 +47,6 @@ const RewardsTable = ({ loading, referrals, hasReachedRewardLimit }: Props) => {
                     </TableBody>
                 )}
             </Table>
-            {referrals.length === 0 && (
-                <p className="color-weak">{c('info').t`Track your referral link activities here`}</p>
-            )}
         </>
     );
 };
