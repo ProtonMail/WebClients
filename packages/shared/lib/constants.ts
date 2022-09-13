@@ -908,6 +908,8 @@ export const EXTENSIONS = {
 
 export const AES256 = 'aes256';
 
+export const REFERRAL_PROGRAM_MAX_AMOUNT = 9000;
+
 export const FIBONACCI_LIST = [1, 1, 2, 3, 5, 8, 13];
 
 /* Here is a list of product not to be translated */
