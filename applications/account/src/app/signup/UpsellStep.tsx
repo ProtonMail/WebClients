@@ -6,6 +6,7 @@ import { Button, CurrencySelector, Price, useLoading } from '@proton/components'
 import { PlanCardFeatureDefinition } from '@proton/components/containers/payments/features/interface';
 import { getFreePlan, getFreeVPNPlan, getShortPlan } from '@proton/components/containers/payments/features/plan';
 import { CYCLE, PLANS } from '@proton/shared/lib/constants';
+import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { Currency, Cycle, Plan, PlanIDs, VPNCountries, VPNServers } from '@proton/shared/lib/interfaces';
 
@@ -64,6 +65,7 @@ const UpsellStep = ({
 
     const upsellShortPlan = getShortPlan(upsellPlanName, plansMap, vpnCountries, vpnServers);
     const upsellPlan = plansMap[upsellPlanName];
+    const upsellPlanHumanSize = humanSize(upsellPlan.MaxSpace, undefined, undefined, 0);
 
     const [loading, withLoading] = useLoading();
     const [type, setType] = useState('free');
@@ -139,7 +141,11 @@ const UpsellStep = ({
                                         setType('bundle');
                                         void withLoading(onPlan({ [upsellShortPlan.plan]: 1 }));
                                     }}
-                                >{c('new_plans: action').t`Get ${upsellShortPlan.title}`}</Button>
+                                >
+                                    {upsellPlanName === PLANS.DRIVE
+                                        ? c('new_plans: action').t`Upgrade to ${upsellPlanHumanSize}`
+                                        : c('new_plans: action').t`Get ${upsellShortPlan.title}`}
+                                </Button>
                             }
                             price={
                                 <Price
