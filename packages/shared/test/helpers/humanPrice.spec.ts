@@ -53,11 +53,6 @@ describe('humanPriceWithCurrency', () => {
         expect(humanPriceWithCurrency(111, 'USD')).toBe('$1.11');
     });
 
-    it('should return positive amount', () => {
-        expect(humanPriceWithCurrency(-100, 'EUR')).toBe('1 €');
-        expect(humanPriceWithCurrency(-123, 'EUR')).toBe('1.23 €');
-    });
-
     it('should return negative amount', () => {
         expect(humanPriceWithCurrency(-123, 'EUR')).toBe('-1.23 €');
         expect(humanPriceWithCurrency(-111, 'CHF')).toBe('-CHF 1.11');
