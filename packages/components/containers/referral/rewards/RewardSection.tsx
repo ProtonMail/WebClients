@@ -36,8 +36,7 @@ const RewardSection = () => {
                     {c('Description').t`You can continue to invite friends, but you wont be able to earn more credits`}
                 </Card>
             ) : (
-                <p className="color-weak">{c('Description')
-                    .t`Track how many people click on your link, sign up, and become paid subscribers. Watch your free months add up.`}</p>
+                <p className="color-weak">{c('Description').t`Track the status and activity of your referrals.`}</p>
             )}
 
             {showRewardSection && (
