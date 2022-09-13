@@ -86,6 +86,7 @@ export enum FeatureCode {
     BulkUserUpload = 'BulkUserUpload',
     DriveBeta = 'DriveBeta',
     PartialEncryptedSearch = 'PartialEncryptedSearch',
+    ConversationHeaderInScroll = 'ConversationHeaderInScroll',
 }
 
 export interface FeaturesContextValue {
