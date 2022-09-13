@@ -126,12 +126,7 @@ const ItemColumnLayout = ({
                     </span>
                 </div>
 
-                <span
-                    className={classnames([
-                        'flex-item-noshrink item-firstline-infos flex flex-nowrap flex-align-items-center',
-                        isCompactView && !breakpoints.isNarrow && 'opacity-on-hover-hide',
-                    ])}
-                >
+                <span className="item-firstline-infos flex-item-noshrink flex flex-nowrap flex-align-items-center">
                     <ItemDate element={element} labelID={labelID} className="item-senddate-col text-sm" useTooltip />
                 </span>
             </div>
@@ -157,7 +152,7 @@ const ItemColumnLayout = ({
 
                 <div className="item-icons flex flex-item-noshrink flex-nowrap no-mobile">
                     <ItemHoverButtons element={element} labelID={labelID} elementID={elementID} onBack={onBack} />
-                    <span className="flex opacity-on-hover-hide">
+                    <span className="flex item-meta-infos">
                         {hasExpiration && (
                             <ItemExpiration expirationTime={expirationTime} className="ml0-25 flex-align-self-center" />
                         )}
