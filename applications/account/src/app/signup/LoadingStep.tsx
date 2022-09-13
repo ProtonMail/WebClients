@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { CircleLoader, Icon, ProtonLogo, classnames } from '@proton/components';
 import useInterval from '@proton/hooks/useInterval';
+import { APPS, APP_NAMES } from '@proton/shared/lib/constants';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
@@ -13,13 +14,16 @@ import Main from '../public/Main';
 interface Props {
     onSetup: () => Promise<void>;
     hasPayment?: boolean;
+    toApp?: APP_NAMES;
 }
 
-const LoadingStep = ({ onSetup, hasPayment }: Props) => {
+const LoadingStep = ({ onSetup, hasPayment, toApp }: Props) => {
+    const driveIntent = toApp === APPS.PROTONDRIVE;
     const steps: string[] = [
         c('Info').t`Creating your account`,
         c('Info').t`Securing your account`,
         hasPayment && c('Info').t`Verifying your payment`,
+        driveIntent && c('Info').t`Setting up your Drive`,
     ].filter(isTruthy);
 
     const [stepIndex, setStepIndex] = useState(0);
