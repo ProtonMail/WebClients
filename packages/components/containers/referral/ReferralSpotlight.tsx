@@ -2,10 +2,11 @@ import { ReactElement, RefObject } from 'react';
 
 import { c } from 'ttag';
 
-import { Price, SettingsLink, Spotlight } from '@proton/components';
+import { SettingsLink, Spotlight } from '@proton/components';
 import { APPS } from '@proton/shared/lib/constants';
 import { UserModel } from '@proton/shared/lib/interfaces';
 import starImg from '@proton/styles/assets/img/illustrations/spotlight-stars.svg';
+import { humanPriceWithCurrency } from '@proton/shared/lib/helpers/humanPrice';
 
 interface Props {
     children: ReactElement;
@@ -17,11 +18,7 @@ interface Props {
 }
 
 const ReferralSpotlight = ({ children, show, onDisplayed, anchorRef, user }: Props) => {
-    const credits = (
-        <Price key="credits" currency={user.Currency}>
-            {9000}
-        </Price>
-    );
+    const credits = humanPriceWithCurrency(9000, user.Currency);
     return (
         <Spotlight
             show={show}
@@ -35,7 +32,7 @@ const ReferralSpotlight = ({ children, show, onDisplayed, anchorRef, user }: Pro
                         </div>
                         <div>
                             <p className="mt0 mb0-5 text-bold">{c('Spotlight').t`Invite friends to Proton`}</p>
-                            <p className="m0">{c('Spotlight').jt`Get up to ${credits} in credits.`}</p>
+                            <p className="m0">{c('Spotlight').t`Get up to ${credits} in credits.`}</p>
                             <SettingsLink path="/referral" app={APPS.PROTONMAIL}>{c('Link')
                                 .t`Learn more`}</SettingsLink>
                         </div>
