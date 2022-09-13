@@ -1,4 +1,4 @@
-import { Currency } from "../interfaces";
+import { Currency } from '../interfaces';
 
 /**
  * Make amount readable
@@ -11,17 +11,22 @@ const humanPrice = (amount: number = 0, divisor: number = 100) => {
 
 export default humanPrice;
 
-export const humanPriceWithCurrency = (price: number, currency: Currency, divisor?: number) => {
-    const value = humanPrice(price, divisor);
-    const [integer, decimal] = `${value}`.split('.');
-    
+export const humanPriceWithCurrency = (amount: number, currency: Currency, divisor?: number) => {
+    const value = humanPrice(amount, divisor);
+    const isNegative = amount < 0;
+    const prefix = isNegative ? '-' : '';
+
     if (currency === 'EUR') {
-        return `${integer}.${decimal} €`;
+        return `${prefix}${value} €`;
     }
 
     if (currency === 'CHF') {
-        return `CHF ${integer}.${decimal}`;
+        return `${prefix}CHF ${value}`;
     }
-    
-    return `$${integer}.${decimal}`;
+
+    if (currency === 'USD') {
+        return `${prefix}$${value}`;
+    }
+
+    return `${prefix}${value}`;
 };
