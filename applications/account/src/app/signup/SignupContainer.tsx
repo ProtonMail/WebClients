@@ -540,6 +540,7 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType }: Prop
             )}
             {step === CREATING_ACCOUNT && (
                 <LoadingStep
+                    toApp={toApp}
                     hasPayment={
                         hasPlanIDs(model.subscriptionData.planIDs) && model.subscriptionData.checkResult.AmountDue > 0
                     }
