@@ -234,7 +234,7 @@ $item-container-row-padding-block: em(5) !default; // design wants 48px
 	visibility: hidden;
 }
 
-@media (hover: hover) and (pointer: fine) {
+@media (hover: hover) and (pointer: fine) and (min-width: #{em($breakpoint-small + 1, $root-default-font-size)}) {
 	.item-container:hover,
 	.item-container-row:hover {
 		.item-hover-action-buttons {
@@ -243,6 +243,12 @@ $item-container-row-padding-block: em(5) !default; // design wants 48px
 			opacity: 1;
 			visibility: visible;
 		}
+	}
+
+	.item-container:hover .item-meta-infos,
+	.item-container:hover .item-firstline-infos,
+	.item-container-row:hover .item-senddate-row {
+		display: none;
 	}
 }
 
