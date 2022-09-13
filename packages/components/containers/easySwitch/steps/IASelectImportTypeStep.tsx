@@ -32,8 +32,10 @@ import { classnames } from '../../../helpers';
 import { useModals } from '../../../hooks';
 import CustomizeCalendarImportModal from '../calendar/modals/CustomizeCalendarImportModal';
 import { CALENDAR_TO_BE_CREATED_PREFIX, GMAIL_CATEGORIES } from '../constants';
+import { getCheckedProducts, hasDataToImport } from '../helpers';
 import useIAMailPayload from '../hooks/useIAMailPayload';
 import CustomizeMailImportModal from '../mail/modals/CustomizeMailImportModal';
+import IADisabledCheckbox from './IAErroredChecked';
 
 interface Props {
     addresses: Address[];
@@ -113,10 +115,10 @@ const IASelectImportTypeStep = ({
 
     const topParagraphRenderer = () => {
         if (!oauthProps) {
-            return <div>{c('Info').t`Select what you want to import from Google.`}</div>;
+            return <div>{c('Info').t`Select what you want to import.`}</div>;
         }
 
-        return (
+        return hasDataToImport(modalModel.data, getCheckedProducts(checkedTypes)) ? (
             <>
                 <div className="mb1">
                     {c('Info')
@@ -124,7 +126,7 @@ const IASelectImportTypeStep = ({
                 </div>
                 <div>{c('Info').t`Just confirm your selection and we'll do the rest.`}</div>
             </>
-        );
+        ) : null;
     };
 
     const handleMailModelUpdate = (selectedPeriod: TIME_PERIOD, payload: MailImporterPayload) => {
@@ -288,7 +290,11 @@ const IASelectImportTypeStep = ({
             ].includes(e as MailImportPayloadError)
         );
 
-        return (
+        const error = modalModel.data[MAIL].error;
+
+        return error ? (
+            <IADisabledCheckbox id="mail">{error}</IADisabledCheckbox>
+        ) : (
             <FormLabel
                 htmlFor="mail"
                 className={classnames([
@@ -429,8 +435,11 @@ const IASelectImportTypeStep = ({
         }
 
         const showSummary = oauthProps && !disableCalendar && checkedTypes[CALENDAR];
+        const error = modalModel.data[CALENDAR].error;
 
-        return (
+        return error ? (
+            <IADisabledCheckbox id="calendar">{error}</IADisabledCheckbox>
+        ) : (
             <FormLabel
                 htmlFor="calendar"
                 className={classnames(['pt1-5 pb1-5 flex label w100', disableCalendar && 'cursor-default color-weak'])}
@@ -512,8 +521,11 @@ const IASelectImportTypeStep = ({
         }
 
         const showSummary = oauthProps && !disableContacts && checkedTypes[CONTACTS];
+        const error = modalModel.data[CONTACTS].error;
 
-        return (
+        return error ? (
+            <IADisabledCheckbox id="contacts">{error}</IADisabledCheckbox>
+        ) : (
             <FormLabel
                 htmlFor="contacts"
                 className={classnames([
