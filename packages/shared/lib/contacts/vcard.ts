@@ -254,11 +254,8 @@ export const vCardPropertiesToICAL = (properties: VCardProperty[]) => {
             property.resetType('text');
         }
 
-        if (Array.isArray(value)) {
-            property.setValues(value.map((val) => internalValueToIcalValue(field, params?.type, val)));
-        } else {
-            property.setValue(internalValueToIcalValue(field, params?.type, value));
-        }
+        const iCalValue = internalValueToIcalValue(field, params?.type, value);
+        property.setValue(iCalValue);
 
         Object.entries(params || {}).forEach(([key, value]) => {
             property.setParameter(key, value.toString());
