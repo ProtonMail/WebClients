@@ -1,4 +1,4 @@
-import { KeyboardEvent, useEffect, useRef, useState } from 'react';
+import { Fragment, KeyboardEvent, useEffect, useRef, useState } from 'react';
 import { flushSync } from 'react-dom';
 import { Link } from 'react-router-dom';
 
@@ -229,9 +229,13 @@ const AccountStep = ({
     }
 
     const terms = (
-        <Href key="terms" url={getTermsURL(clientType === CLIENT_TYPES.VPN ? APPS.PROTONVPN_SETTINGS : undefined)}>{c(
-            'new_plans: signup'
-        ).t`terms and conditions`}</Href>
+        <Fragment key="terms">
+            <br />
+            <Href url={getTermsURL(clientType === CLIENT_TYPES.VPN ? APPS.PROTONVPN_SETTINGS : undefined)}>{
+                // translator: Full sentence "By creating a Proton account, you agree to our terms and conditions"
+                c('new_plans: signup').t`terms and conditions`
+            }</Href>
+        </Fragment>
     );
 
     return (
@@ -387,7 +391,10 @@ const AccountStep = ({
                     </ButtonLike>
 
                     <div className="color-weak text-center text-sm mt1 pl2 pr2">
-                        {c('new_plans: signup').jt`By creating a ${BRAND_NAME} account, you agree to our ${terms}.`}
+                        {
+                            // translator: Full sentence "By creating a Proton account, you agree to our terms and conditions"
+                            c('new_plans: signup').jt`By creating a ${BRAND_NAME} account, you agree to our ${terms}`
+                        }
                     </div>
                 </form>
             </Content>
