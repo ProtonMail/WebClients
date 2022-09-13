@@ -167,18 +167,10 @@
 		opacity: 1;
 	}
 
-	&-container:focus-within &-hide {
-		display: none;
-	}
-
 	@media (hover: hover) and (pointer: fine) {
 		&-container:hover &,
 		&-container:hover &-only-desktop {
 			opacity: 1;
-		}
-
-		&-container:hover &-hide {
-			display: none;
 		}
 
 		&-only-desktop {
