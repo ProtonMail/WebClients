@@ -63,7 +63,6 @@ export enum FeatureCode {
     PaymentsDisabled = 'PaymentsDisabled',
     DriveSearchSpotlight = 'DriveSearchSpotlight',
     MailServiceWorker = 'MailServiceWorker',
-    NewDomainOptIn = 'NewDomainOptIn',
     SeenV5WelcomeModal = 'SeenV5WelcomeModal',
     MailContextMenu = 'MailContextMenu',
     NudgeProton = 'NudgeProton',

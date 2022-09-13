@@ -19,7 +19,6 @@ import {
     MessagesGeneralSection,
     MessagesOtherSection,
     MessagesSection,
-    NewDomainSection,
     PmMeSection,
     PrivateMainAreaLoading,
     PrivateMainSettingsArea,
@@ -36,13 +35,9 @@ import { getHasPmMeAddress, getMailAppRoutes } from './routes';
 const MailSettingsRouter = ({
     mailAppRoutes,
     redirect,
-    newDomain,
-    setNewDomain,
 }: {
     mailAppRoutes: ReturnType<typeof getMailAppRoutes>;
     redirect: ReactNode;
-    newDomain: string;
-    setNewDomain: (value: string) => void;
 }) => {
     const { path } = useRouteMatch();
     const [addresses, loadingAddresses] = useAddresses();
@@ -67,7 +62,6 @@ const MailSettingsRouter = ({
             </Route>
             <Route path={getSectionPath(path, identity)}>
                 <PrivateMainSettingsArea config={identity}>
-                    <NewDomainSection domain={newDomain} onDone={() => setNewDomain('')} />
                     <IdentitySection />
                     <AddressesSection isOnlySelf />
                 </PrivateMainSettingsArea>
