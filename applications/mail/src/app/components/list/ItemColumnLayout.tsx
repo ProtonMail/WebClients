@@ -113,7 +113,7 @@ const ItemColumnLayout = ({
                     <ItemUnread
                         element={element}
                         labelID={labelID}
-                        className={clsx('item-unread-dot', isCompactView && 'mr0-25')}
+                        className={clsx('item-unread-dot flex-item-noshrink', isCompactView && 'mr0-25')}
                         isSelected={isSelected}
                     />
                     <ItemAction element={element} className="mr0-25 myauto flex-item-noshrink" />
