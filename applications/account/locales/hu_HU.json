@@ -128,9 +128,6 @@
       "Close": [
         "Bezárás"
       ],
-      "Close modal": [
-        "Close"
-      ],
       "Close navigation": [
         "Navigáció bezárása"
       ],
@@ -749,14 +746,14 @@
       "View plans details": [
         "Csomag részletei"
       ],
+      "Void": [
+        "Sztornó"
+      ],
       "Void all recovery files": [
         "Minden helyreállító fájl érvénytelenítése"
       ],
       "Void all recovery files?": [
         "Érvénytelenít minden helyreállító fájlt?"
-      ],
-      "Void anyway": [
-        "Érvénytelenítés mindenképp"
       ],
       "Wipe": [
         "Törlés"
@@ -3851,9 +3848,6 @@
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Egy név, ami segít azonosítani, hogy hol használja, így később könnyedén visszavonhatja vagy kiterjesztheti."
       ],
-      "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password.": [
-        "A helyreállító jelmondat segít visszaszerezni ez elérését a fiókjához és helyreállítani a titkosított leveleit, ha elfelejtené a jelszavát."
-      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "A felhasználó egy fiókot jelent, amely egyetlen felhasználói nevet, e-mail fiókot és személyt takar"
       ],
@@ -3899,9 +3893,6 @@
       ],
       "Admin account allocation": [
         "Tárhely admin fiók számára"
-      ],
-      "After a password reset your data is locked in encrypted form to keep it safe.": [
-        "Jelszó visszaállítás után, a biztonság érdekében, adatai titkosított formában zárolva vannak."
       ],
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
         "A Bitcoin fizetés után, kövesse a lenti utasításokat a nagyobb csomagra váltáshoz."
@@ -4366,9 +4357,6 @@
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Adatok importálása a(z) ${ importedEmailAddress } címről a(z) ${ toEmail } címre."
-      ],
-      "In case you lose your login details, we’ll send you recovery instructions via email or SMS.": [
-        "Ha elveszíti a belépéshez szükséges adatait, e-mail vagy SMS üzenetet fogunk küldeni a helyreállítási útmutatóval."
       ],
       "Inherited from parent folder": [
         "Örökölve a felsőbb szintű mappából"
@@ -4915,15 +4903,6 @@
       "to continue to ${ toAppName }": [
         "alkalmazás: ${ toAppName }"
       ],
-      "To decrypt and view your emails and other data, you need a recovery file.": [
-        "A visszafejtéshez, az e-mailek és egyéb adatok megjelenítéséhez, helyreállító fájlra van szüksége."
-      ],
-      "To decrypt and view your emails and other data, you need a recovery phrase or recovery file.": [
-        "A levelek és egyéb adatok visszafejtéshez és megjelenítéséhez, helyreállító fájlra vagy jelmondatra van szüksége."
-      ],
-      "To decrypt and view your emails and other data, you need a recovery phrase.": [
-        "A visszafejtéshez, az e-mailek és egyéb adatok megjelenítéséhez, helyreállító jelmondatra van szüksége."
-      ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "A jelszó visszaállítás után zárolt adatainak visszafejtéséhez és megjelenítéséhez, válasszon egy helyreállítási módszert."
       ],
@@ -5187,9 +5166,6 @@
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "A kifizetés ellenőrzéséhez hamarosan átirányítunk a PayPal oldalára."
-      ],
-      "You won't be able to recover encrypted data after an account reset using your downloaded recovery files.": [
-        "Nem fogja tudni helyreállítani az adatait, egy fiók jelszó visszaállítás után, a letöltött helyreállítási fájlokkal."
       ],
       "You'll stay signed in even after you close the browser.": [
         "Bejelentkezve marad, a böngésző bezárása után is."
@@ -9263,6 +9239,9 @@
       ],
       "Sign in and grant access": [
         "Jelentkezzen be és adjon hozzáférést"
+      ],
+      "Sign out": [
+        "Kijelentkezés"
       ],
       "Sort folders alphabetically": [
         "Mappák rendezése betűrendbe"

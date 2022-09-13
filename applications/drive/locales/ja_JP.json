@@ -98,9 +98,6 @@
       "Close": [
         "閉じる"
       ],
-      "Close modal": [
-        "Close"
-      ],
       "Close navigation": [
         "ナビゲーションを閉じる"
       ],
@@ -2392,6 +2389,9 @@
       "Download of ${ downloadFileName } will be aborted": [
         "${ downloadFileName } のダウンロードは中断します"
       ],
+      "Download paused due to connection issue; it will resume automatically": [
+        "接続に問題が発生したためダウンロードが中止されました。これは自動的に再開されます。"
+      ],
       "Downloaded": [
         "ダウンロード完了"
       ],
@@ -2620,6 +2620,9 @@
       "of": [
         " / "
       ],
+      "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
+        "最近パスワードをリセットしたため、暗号化されたドライブはロックされています。"
+      ],
       "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } character is allowed": [
         "${ MAX_CUSTOM_PASSWORD_LENGTH } 文字まで利用できます"
       ],
@@ -2802,6 +2805,9 @@
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "このリンクはホモグラフ攻撃の可能性があります。 これがあなたのアクセスしたいリンクであることを確認するか、開かないようにしてください。"
+      ],
+      "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
+        "このリンクは古いバージョンの Drive で作成されたため修正できません。このリンクを削除し、新しいリンクを作ることで設定を変更します。"
       ],
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
         "このリンクは永久に無効化され、このリンクを知っている人は今後あなたのファイルにアクセスできません。ファイルを再度共有した場合、新しいリンクが作成されます。"
@@ -3223,6 +3229,9 @@
       ],
       "Malware": [
         "マルウェア"
+      ],
+      "Manage categories": [
+        "カテゴリーを管理"
       ],
       "Manage folders": [
         "フォルダーを管理"
@@ -4398,6 +4407,9 @@
       "Sign in and grant access": [
         "サインインして権限を付与"
       ],
+      "Sign out": [
+        "サインアウト"
+      ],
       "Size": [
         "サイズ"
       ],
@@ -4528,6 +4540,9 @@
       ],
       "Name cannot include invisible characters, / or \\.": [
         "名前に \"/\" または \"\\\" の文字を使うことができません。 "
+      ],
+      "Name must be ${ MAX_NAME_LENGTH } character long at most": [
+        "名前は ${ MAX_NAME_LENGTH } 以内である必要があります"
       ],
       "Name must not be empty": [
         "名前を空にすることはできません"

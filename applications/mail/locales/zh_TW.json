@@ -152,9 +152,6 @@
       "Close composer": [
         "關閉撰寫器"
       ],
-      "Close modal": [
-        "Close"
-      ],
       "Close navigation": [
         "關閉導覽"
       ],
@@ -210,7 +207,7 @@
         "建立新資料夾"
       ],
       "Create a new label": [
-        "建立新標籤"
+        "創建新標籤"
       ],
       "Create new contact": [
         "建立新聯絡人"
@@ -1061,6 +1058,9 @@
       ],
       "Star message": [
         "已加星號郵件"
+      ],
+      "Unread email": [
+        "未讀郵件"
       ],
       "Unstar conversation": [
         "點選以取消星號"
@@ -5947,8 +5947,8 @@
       ]
     },
     "Pagination": {
-      "${ page } of ${ total }": [
-        "${ page } 頁在 ${ total }"
+      "${ page } of ${ totalText }": [
+        "第 ${ page } 頁，共 ${ totalText } 頁"
       ]
     },
     "Paid user checklist item": {
@@ -6302,11 +6302,6 @@
       ],
       "Sender's trusted keys verification failed": [
         "寄件人的已信任金鑰驗證失敗"
-      ]
-    },
-    "Sort": {
-      "Sort": [
-        "排序"
       ]
     },
     "Sort option": {
@@ -7064,6 +7059,9 @@
       ],
       "Sign in and grant access": [
         "登入並授予存取權"
+      ],
+      "Sign out": [
+        "登出"
       ],
       "Sort conversations": [
         "交談排序"

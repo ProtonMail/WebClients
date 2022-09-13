@@ -83,9 +83,6 @@
       "Close event popover": [
         "Zavřít okno události"
       ],
-      "Close modal": [
-        "Close"
-      ],
       "Close navigation": [
         "Zavřít menu"
       ],
@@ -3198,6 +3195,9 @@
       "Priority support": [
         "Prioritní podpora"
       ],
+      "Recovery information will remain on this device unless you select to delete it.": [
+        "Informace o obnovení zůstanou v tomto zařízení, pokud nezvolíte jejich odstranění."
+      ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Obnovením stránky nebo ${ link } se automaticky vyřeší většina problémů."
       ],
@@ -3548,6 +3548,9 @@
       "Delete": [
         "Odstranit"
       ],
+      "Delete recovery-related information.": [
+        "Odstranit informace související s obnovením."
+      ],
       "Description": [
         "Popis"
       ],
@@ -3818,6 +3821,9 @@
       ],
       "Upgrade account": [
         "Přejít na vyšší tarif"
+      ],
+      "What’s this?": [
+        "Co je to?"
       ]
     },
     "Loading info": {
@@ -4375,7 +4381,7 @@
     },
     "Personal calendar limit reached modal body": {
       "Unable to create more calendars. You have reached the maximum of personal calendars within your plan.": [
-        "Nelze vytvořit další kalendáře. Dosáhli jste maximálního počtu osobních kalendářů v rámci svého plánu."
+        "Nelze vytvořit další kalendáře. Dosáhli jste maximálního počtu osobních kalendářů v rámci svého tarifu."
       ]
     },
     "PGP key encryption warning": {
@@ -4624,7 +4630,7 @@
     },
     "Subscribed calendar limit reached modal body": {
       "Unable to add more calendars. You have reached the maximum of subscribed calendars within your plan.": [
-        "Nelze přidat další kalendáře. Dosáhli jste maximálního počtu odebíraných kalendářů v rámci vašeho plánu."
+        "Nelze přidat další kalendáře. Dosáhli jste maximálního počtu odebíraných kalendářů v rámci vašeho tarifu."
       ]
     },
     "Subscribed calendar URL length warning": {
@@ -5199,6 +5205,9 @@
       ],
       "Sign in and grant access": [
         "Přihlaste se a povolte přístup"
+      ],
+      "Sign out": [
+        "Odhlásit se"
       ],
       "Update event": [
         "Aktualizovat událost"

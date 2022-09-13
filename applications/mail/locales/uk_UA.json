@@ -96,7 +96,7 @@
         "Бета-доступ"
       ],
       "Block": [
-        "Заблкувати"
+        "Блокувати"
       ],
       "Block messages from this sender": [
         "Заблокувати повідомлення від цього відправника"
@@ -151,9 +151,6 @@
       ],
       "Close composer": [
         "Закрити редактор"
-      ],
-      "Close modal": [
-        "Close"
       ],
       "Close navigation": [
         "Закрити панель навігації"
@@ -1084,6 +1081,9 @@
       ],
       "Star message": [
         "Позначити зірочкою"
+      ],
+      "Unread email": [
+        "Непрочитана пошта"
       ],
       "Unstar conversation": [
         "Прибрати зірочку з розмови"
@@ -4676,6 +4676,9 @@
       "Recipient: ": [
         "Отримувач: "
       ],
+      "Recovery information will remain on this device unless you select to delete it.": [
+        "Інформація про відновлення залишиться на цьому пристрої, якщо ви не вирішите її видалити."
+      ],
       "Recovery phrase copied to clipboard": [
         "Фразу відновлення скопійовано до буфера обміну"
       ],
@@ -5580,6 +5583,9 @@
       "Delete": [
         "Видалити"
       ],
+      "Delete recovery-related information.": [
+        "Видалити інформацію повʼязану з відновленням."
+      ],
       "Do not ask again": [
         "Не питати знову"
       ],
@@ -6020,6 +6026,9 @@
       "Upgrade account": [
         "Покращити обліковий запис"
       ],
+      "What’s this?": [
+        "Що це?"
+      ],
       "You need to activate your calendar keys to add this event": [
         "Щоб додати цю подію, вам необхідно активувати свої ключі календаря"
       ],
@@ -6433,8 +6442,8 @@
       ]
     },
     "Pagination": {
-      "${ page } of ${ total }": [
-        "${ page } з ${ total }"
+      "${ page } of ${ totalText }": [
+        "${ page } з ${ totalText }"
       ]
     },
     "Paid user checklist item": {
@@ -6815,11 +6824,6 @@
       ],
       "Sender's trusted keys verification failed": [
         "Не вдалося перевірити довірені ключі відправника"
-      ]
-    },
-    "Sort": {
-      "Sort": [
-        "Упорядкувати"
       ]
     },
     "Sort option": {
@@ -7700,6 +7704,9 @@
       ],
       "Sign in and grant access": [
         "Увійдіть і надайте доступ"
+      ],
+      "Sign out": [
+        "Вийти"
       ],
       "Sort conversations": [
         "Впорядкувати розмови"

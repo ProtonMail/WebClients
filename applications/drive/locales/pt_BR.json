@@ -98,9 +98,6 @@
       "Close": [
         "Fechar"
       ],
-      "Close modal": [
-        "Close"
-      ],
       "Close navigation": [
         "Fechar navegação"
       ],
@@ -2369,6 +2366,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Antes de pedir um novo código de verificação, verifique sua pasta de spam e verifique que ${ strong } é o endereço correto."
       ],
+      "Bulk uploads may reduce your computer’s performance. Consider limiting memory-intensive activities like streaming during upload. Or try uploading in batches.": [
+        "Os envios em massa podem reduzir o desempenho do seu computador. Considere limitar atividades com uso intensivo de memória, como streaming durante o envio. Ou tente fazer o envio em lotes."
+      ],
       "Canceled": [
         "Cancelado"
       ],
@@ -2466,6 +2466,9 @@
       ],
       "Download of ${ downloadFileName } will be aborted": [
         "Download de ${ downloadFileName } será abortado"
+      ],
+      "Download paused due to connection issue; it will resume automatically": [
+        "Transferência pausada devido a problemas de conexão; ela será retomado automaticamente"
       ],
       "Downloaded": [
         "Baixado"
@@ -2628,6 +2631,9 @@
       "Link failed to be loaded": [
         "Falha ao carregar o link"
       ],
+      "Links failed to be loaded": [
+        "Os links não foram carregados"
+      ],
       "Loading": [
         "Carregando"
       ],
@@ -2691,18 +2697,24 @@
       "Not a valid URL": [
         "Não é uma URL válida"
       ],
+      "Not all files were transferred. Try uploading or downloading the files again.": [
+        "Nem todos os arquivos foram transferidos. Tente carregar ou baixar os arquivos novamente."
+      ],
       "Note: Data may still be available locally on devices where you have installed ${ appName }.": [
         "Observação: Os dados ainda podem estar disponíveis localmente em dispositivos onde você instalou ${ appName }."
       ],
       "of": [
         "de"
       ],
+      "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
+        "Uma de suas unidades criptografadas está bloqueada. Isso provavelmente se deve a uma redefinição de senha recente."
+      ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Uma ou mais de suas chaves confiáveis foram marcadas como \"comprometidas\" pelo proprietário. Recomendamos que você \"desconfie\" dessas chaves."
       ],
       "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } character is allowed": [
-        "É permitido apenas ${ MAX_CUSTOM_PASSWORD_LENGTH } caracteres",
-        ""
+        "Apenas ${ MAX_CUSTOM_PASSWORD_LENGTH } caractere é permitido",
+        "Apenas ${ MAX_CUSTOM_PASSWORD_LENGTH } caracteres são permitidos"
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Altere essas configurações apenas se você estiver usando o PGP com destinatários que não usam o ${ BRAND_NAME }."
@@ -2777,6 +2789,9 @@
       "recommended browser": [
         "navegador recomendado"
       ],
+      "Recovery information will remain on this device unless you select to delete it.": [
+        "As informações de recuperação permanecerão neste dispositivo, a menos que você opte por excluí-las."
+      ],
       "Recovery process might take some time.": [
         "O processo de recuperação pode levar algum tempo."
       ],
@@ -2794,6 +2809,9 @@
       ],
       "Secure sharing": [
         "Compartilhamento seguro"
+      ],
+      "Secure your documents and data": [
+        "Proteja seus documentos e dados"
       ],
       "Select an uploaded file or folder and create a link to it.": [
         "Selecione um arquivo ou pasta enviado e crie um link para ele."
@@ -2819,11 +2837,17 @@
       "Share files with links": [
         "Compartilhar arquivos com links"
       ],
+      "Shareable link for ${ boldNameText }": [
+        "Link compartilhável para ${ boldNameText }"
+      ],
       "Signature check will be ignored": [
         "Verificação de assinatura será ignorada"
       ],
       "Signature issue": [
         "Problema de assinatura"
+      ],
+      "Some files failed to download. Try downloading the files again.": [
+        "Alguns arquivos falharam ao baixar. Tente baixar os arquivos novamente."
       ],
       "Some files failed to upload. Try uploading the files again.": [
         "O envio de alguns arquivos falhou. Tente enviá-los novamente."
@@ -2858,8 +2882,14 @@
       "The following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Os seguintes podem ter sido adulterados: ${ items }. Abra apenas se você confiar."
       ],
+      "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
+        "Há arquivos que ainda precisam ser transferidos. Fechar o gerenciador de transferência encerrará todas as operações."
+      ],
       "There are no files yet": [
         "Ainda não há arquivos"
+      ],
+      "These files were shared using end-to-end encryption. To keep them secure — and all your documents, photos, and files private — store them in your own Proton Drive. It's easy-to-use and free.": [
+        "Esses arquivos foram compartilhados usando criptografia de ponta a ponta. Para mantê-los seguros — e todos os seus documentos, fotos e arquivos privados — armazene-os em seu próprio Proton Drive. É fácil de usar e gratuito."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Essa conta foi suspensa devido a uma possível violação da política de uso."
@@ -2878,6 +2908,9 @@
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Este link pode ser um ataque homógrafo. Por favor, verifique se este é o link que deseja visitar ou não o abra."
+      ],
+      "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
+        "Este link foi criado com a versão antiga do Drive e não pode ser modificado. Exclua este link e crie um novo para alterar as configurações."
       ],
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
         "Este link será desativado permanentemente. Ninguém com este link será capaz de acessar o seu arquivo. Para compartilhar novamente o arquivo, você precisará de um novo link."
@@ -3069,6 +3102,9 @@
       "file data": [
         "dados do arquivo"
       ],
+      "file data key": [
+        "Chave de dados do arquivo"
+      ],
       "keys": [
         "chaves"
       ],
@@ -3196,6 +3232,9 @@
       "Delete drive?": [
         "Excluir drive?",
         "Excluir drives?"
+      ],
+      "Delete recovery-related information.": [
+        "Excluir a informação de recuperação."
       ],
       "Deleted": [
         "Excluído"
@@ -3524,6 +3563,9 @@
       ],
       "Upgrade account": [
         "Fazer upgrade na conta"
+      ],
+      "What’s this?": [
+        "O que é isso?"
       ]
     },
     "Loading info": {
@@ -4518,6 +4560,9 @@
       "Sign in and grant access": [
         "Iniciar sessão e conceder acesso"
       ],
+      "Sign out": [
+        "Encerrar sessão"
+      ],
       "Size": [
         "Tamanho"
       ],
@@ -4657,7 +4702,7 @@
         "Nome não pode incluir caracteres invisíveis, / ou \\."
       ],
       "Name must be ${ MAX_NAME_LENGTH } character long at most": [
-        "",
+        "O nome deve ter no máximo ${ MAX_NAME_LENGTH } caractere",
         "O nome deve ter no máximo ${ MAX_NAME_LENGTH } caracteres"
       ],
       "Name must not be empty": [

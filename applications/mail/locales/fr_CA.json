@@ -74,6 +74,9 @@
       "All Unstarred": [
         "Tous les non-favoris"
       ],
+      "Allow messages": [
+        "Autoriser les messages"
+      ],
       "Apply": [
         "Appliquer"
       ],
@@ -91,6 +94,12 @@
       ],
       "Beta Access": [
         "Accès à la version bêta"
+      ],
+      "Block": [
+        "Bloquer"
+      ],
+      "Block messages from this sender": [
+        "Bloquer les messages de cet expéditeur"
       ],
       "Bold": [
         "Gras"
@@ -142,9 +151,6 @@
       ],
       "Close composer": [
         "Fermer le composeur"
-      ],
-      "Close modal": [
-        "Close"
       ],
       "Close navigation": [
         "Fermer la navigation"
@@ -199,6 +205,9 @@
       ],
       "Create a new folder": [
         "Créer un nouveau dossier"
+      ],
+      "Create a new label": [
+        "Créer un nouveau label"
       ],
       "Create new contact": [
         "Créer un nouveau contact"
@@ -551,6 +560,9 @@
       "Move all messages from this label": [
         "Déplacer tous les messages de ce label"
       ],
+      "Move all to trash": [
+        "Tout déplacer vers la Corbeille"
+      ],
       "Move to": [
         "Déplacer vers"
       ],
@@ -721,6 +733,12 @@
       ],
       "Request new code": [
         "Demander un nouveau code"
+      ],
+      "Reset": [
+        "Réinitialiser"
+      ],
+      "Reset search form": [
+        "Réinitialiser le formulaire de recherche"
       ],
       "Reset zoom": [
         "Réinitialiser le zoom"
@@ -1030,6 +1048,11 @@
         "Participant·e ajouté·e"
       ]
     },
+    "Adding expiration to a message will create an expiring message": {
+      "Expiring message": [
+        "Message avec date d’expiration"
+      ]
+    },
     "Alert": {
       "By leaving now, some contacts may not be imported": [
         "En quittant maintenant, il est possible que certains contacts ne soient pas importés"
@@ -1050,6 +1073,9 @@
       ],
       "Star message": [
         "Ajouter le message aux favoris"
+      ],
+      "Unread email": [
+        "Courriel non lu"
       ],
       "Unstar conversation": [
         "Retirer la conversation des favoris"
@@ -1430,6 +1456,9 @@
       ],
       "This invitation is out of date. The event has been updated.": [
         "Cette invitation est obsolète. L'événement a été mis à jour."
+      ],
+      "This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar.": [
+        "Cette nouvelle proposition horaire ne correspond pas aux détails de votre invitation. Vérifiez les détails de l'invitation dans votre calendrier."
       ],
       "This response doesn't match your invitation details. Please verify the invitation details in your calendar.": [
         "Cette réponse ne correspond pas aux détails de votre invitation. Veuillez vérifier les détails de l'invitation dans votre calendrier."
@@ -1844,6 +1873,11 @@
       ],
       "Yomi": [
         "Yomi"
+      ]
+    },
+    "Context filtering disabled": {
+      "Your selection contains only yourself as sender": [
+        "Votre sélection ne contient que vous-même comme expéditeur"
       ]
     },
     "Country name": {
@@ -2690,6 +2724,15 @@
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Fusion des contacts... ceci peut prendre quelques minutes. Lorsque le processus sera terminé, vous pourrez fermer cette boîte de dialogue."
       ],
+      "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted. ${ manageBlockedAddressesSettingsLink } in settings.": [
+        "Les nouveaux messages de ${ senderEmailAddress } ne seront pas délivrés et seront définitivement supprimés. ${ manageBlockedAddressesSettingsLink } dans les paramètres."
+      ],
+      "No folders": [
+        "Aucun dossier"
+      ],
+      "No labels": [
+        "Aucun label"
+      ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
         "Le fichier doit avoir une taille maximale de ${ MAX_IMPORT_FILE_SIZE_STRING } et avoir jusqu'à ${ MAX_IMPORT_CONTACTS_STRING } contact. Si votre fichier est plus grand, veuillez le diviser en fichiers plus petits.",
         "Le fichier doit avoir une taille maximale de ${ MAX_IMPORT_FILE_SIZE_STRING } et avoir jusqu'à ${ MAX_IMPORT_CONTACTS_STRING } contacts. Si votre fichier est plus grand, veuillez le diviser en fichiers plus petits."
@@ -2844,6 +2887,9 @@
       ],
       "A group with this name already exists": [
         "Un groupe portant ce nom existe déjà"
+      ],
+      "A problem occurred, please try again": [
+        "Une erreur est survenue, veuillez réessayer"
       ],
       "Address primary private key not found": [
         "La clé privée principale de l'adresse n'a pas été trouvée"
@@ -3006,6 +3052,9 @@
       ],
       "Passwords do not match": [
         "Les mots de passe ne correspondent pas"
+      ],
+      "Please activate your content search again": [
+        "Veuillez réactiver la recherche de contenu"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Veuillez corriger le conflit en surbrillance pour continuer.",
@@ -4070,6 +4119,9 @@
       "Don't forget to share the password with the recipient": [
         "N'oubliez pas de communiquer le mot de passe au destinataire"
       ],
+      "Downloading message ${ esProgress } out of ${ totalProgressToShow }": [
+        "Téléchargement du message ${ esProgress } sur ${ totalProgressToShow }"
+      ],
       "Draft": [
         "Brouillon"
       ],
@@ -4468,6 +4520,9 @@
       "Recipient: ": [
         "Destinataire: "
       ],
+      "Recovery information will remain on this device unless you select to delete it.": [
+        "Les informations de récupération resteront sur cet appareil jusqu'à ce que vous demandiez à les supprimer."
+      ],
       "Recovery phrase copied to clipboard": [
         "Phrase de récupération copiée dans le presse-papiers"
       ],
@@ -4527,6 +4582,9 @@
       ],
       "Send an encrypted, password protected message to a ${ boldText } email address.": [
         "Envoyez un message chiffré, protégé par un mot de passe, à une adresse électronique ${ boldText }."
+      ],
+      "Sender has been blocked.": [
+        "L'expéditeur a été bloqué."
       ],
       "Sending": [
         "Envoi en cours"
@@ -4667,6 +4725,9 @@
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Ce lien mène à un site Web qui pourrait essayer de voler vos informations, comme les mots de passe et les détails de carte de crédit."
+      ],
+      "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
+        "Ce lien pourrait être une attaque homographique et ne peut pas être ouvert avec le navigateur Edge. Si vous êtes certain de la légitimité de ce lien, utilisez un autre navigateur pour l'ouvrir."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Ce lien pourrait être une attaque homographique. Assurez vous qu'il s'agit bien du lien que vous souhaitez visiter, ou ne l'ouvrez pas."
@@ -5263,6 +5324,12 @@
       "Also archive": [
         "Archiver aussi"
       ],
+      "Always label senders emails": [
+        "Toujours labelliser les courriels des expéditeurs"
+      ],
+      "Always move senders emails": [
+        "Toujours déplacer les courriels des expéditeurs"
+      ],
       "Attach screenshot(s)": [
         "Joindre une ou plusieurs captures d’écran"
       ],
@@ -5332,8 +5399,14 @@
       "Delete": [
         "Supprimer"
       ],
+      "Delete recovery-related information.": [
+        "Supprimer les informations liées à la récupération."
+      ],
       "Do not ask again": [
         "Ne plus demander"
+      ],
+      "Don't show this again": [
+        "Ne plus afficher"
       ],
       "Email": [
         "Courriel"
@@ -5427,6 +5500,9 @@
       ],
       "Mailbox password": [
         "Mot de passe de la messagerie"
+      ],
+      "Manage categories": [
+        "Gérer les catégories"
       ],
       "Manage folders": [
         "Gérer les dossiers"
@@ -5694,6 +5770,9 @@
       "Less": [
         "Moins"
       ],
+      "Manage blocked email addresses": [
+        "Gérer les adresses courriel bloquées"
+      ],
       "Manage your folders": [
         "Gérer vos dossiers"
       ],
@@ -5762,6 +5841,9 @@
       ],
       "Upgrade account": [
         "Changer d'offre"
+      ],
+      "What’s this?": [
+        "Qu'est-ce que c'est?"
       ],
       "You need to activate your calendar keys to add this event": [
         "Vous devez activer vos clés de calendrier pour ajouter cet événement"
@@ -5863,6 +5945,11 @@
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "Une nouvelle version de ${ appName } est disponible. ${ reloadButton }."
+      ]
+    },
+    "Message has been sent to the user via a SimpleLogin alias": {
+      "Delivered via SimpleLogin by Proton": [
+        "Délivré via SimpleLogin par Proton"
       ]
     },
     "Message image": {
@@ -6065,6 +6152,9 @@
       ]
     },
     "Notification": {
+      "Block removed": [
+        "Le blocage a été supprimé"
+      ],
       "Contact group created": [
         "Groupe de contacts créé"
       ],
@@ -6073,6 +6163,9 @@
       ],
       "Password has been set successfully": [
         "Le mot de passe a été correctement défini"
+      ],
+      "Sender ${ senderEmail } blocked": [
+        "L'expéditeur ${ senderEmail } est bloqué"
       ]
     },
     "Oauth instructions": {
@@ -6155,8 +6248,8 @@
       ]
     },
     "Pagination": {
-      "${ page } of ${ total }": [
-        "Page ${ page } sur ${ total }"
+      "${ page } of ${ totalText }": [
+        "${ page } sur ${ totalText }"
       ]
     },
     "Paid user checklist item": {
@@ -6523,11 +6616,6 @@
         "La vérification des clés de confiance de l'expéditeur·rice a échoué"
       ]
     },
-    "Sort": {
-      "Sort": [
-        "Trier"
-      ]
-    },
     "Sort option": {
       "Largest first": [
         "Le plus grand en premier"
@@ -6720,6 +6808,12 @@
       "Conversation removed from ${ labelName }.": [
         "Conversation retirée de ${ labelName }."
       ],
+      "Conversations from ${ sendersList } will be labelled as ${ labelsList }": [
+        "Les conversations de ${ sendersList } seront labélisées comme ${ labelsList }"
+      ],
+      "Conversations from ${ sendersList } will be moved to ${ folder }": [
+        "Les conversations de ${ sendersList } seront déplacées vers ${ folder }"
+      ],
       "Draft deleted": [
         "Brouillon supprimé"
       ],
@@ -6776,6 +6870,12 @@
       ],
       "Message removed from ${ labelName }.": [
         "Message retiré de ${ labelName }."
+      ],
+      "Messages from ${ sendersList } will be labelled as ${ labelsList }": [
+        "Les messages de ${ sendersList } seront labélisés comme ${ labelsList }"
+      ],
+      "Messages from ${ sendersList } will be moved to ${ folder }": [
+        "Les messages de ${ sendersList } seront déplacés vers ${ folder }"
       ],
       "Move ${ selectionCount } conversation": [
         "Déplacer ${ selectionCount } conversation",
@@ -6963,6 +7063,9 @@
       ],
       "Blind Carbon Copy": [
         "Copie carbone invisible"
+      ],
+      "Block sender": [
+        "Bloquer l'expéditeur"
       ],
       "Carbon Copy": [
         "Copie carbone"
@@ -7320,6 +7423,9 @@
       "Sign in and grant access": [
         "Se connecter et donner l'accès"
       ],
+      "Sign out": [
+        "Se déconnecter"
+      ],
       "Sort conversations": [
         "Trier les conversations"
       ],
@@ -7408,6 +7514,9 @@
       ],
       "Encrypted data with verified digital signature": [
         "Données chiffrées avec une signature numérique vérifiée"
+      ],
+      "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
+        "Gmail catégorise automatiquement certains courriels comme « Réseau sociaux » ou « Promotions ». Vous pouvez sélectionner où importer ces courriels."
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Sélectionnez le schéma PGP à utiliser lors de la signature ou du chiffrement vers un autre utilisateur. Notez que PGP/Inline force le format des messages en texte brut"

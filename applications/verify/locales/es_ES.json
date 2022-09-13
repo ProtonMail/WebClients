@@ -11,9 +11,6 @@
       "Close": [
         "Cerrar"
       ],
-      "Close modal": [
-        "Cerrar ventana"
-      ],
       "Didn't receive the code?": [
         "¿No has recibido el código?"
       ],
@@ -51,7 +48,7 @@
         "Verificar cuenta"
       ],
       "Verify email": [
-        "Verificar correo"
+        "Verificar correo electrónico"
       ],
       "View invoice": [
         "Ver factura"
@@ -61,14 +58,59 @@
       "carrot": [
         "zanahoria"
       ],
+      "cerise": [
+        "cereza"
+      ],
+      "cobalt": [
+        "cobalto"
+      ],
+      "copper": [
+        "cobre"
+      ],
+      "enzian": [
+        "genciana"
+      ],
+      "fern": [
+        "helecho"
+      ],
+      "forest": [
+        "bosque"
+      ],
+      "ocean": [
+        "océano"
+      ],
+      "olive": [
+        "aceituna"
+      ],
+      "pacific": [
+        "pacífico"
+      ],
+      "pickle": [
+        "pepinillo"
+      ],
+      "pine": [
+        "pino"
+      ],
       "pink": [
         "rosa"
+      ],
+      "plum": [
+        "ciruela"
       ],
       "purple": [
         "morado"
       ],
+      "reef": [
+        "arrecife"
+      ],
       "sahara": [
-        "sáhara"
+        "sahara"
+      ],
+      "slateblue": [
+        "azul pizarra"
+      ],
+      "soil": [
+        "tierra"
       ],
       "strawberry": [
         "fresa"
@@ -130,7 +172,7 @@
         "Bahamas"
       ],
       "Bahrain": [
-        "Bahrain"
+        "Bahréin"
       ],
       "Bangladesh": [
         "Bangladesh"
@@ -151,7 +193,7 @@
         "Benín"
       ],
       "Bermuda": [
-        "Bermuda"
+        "Bermudas"
       ],
       "Bhutan": [
         "Bután"
@@ -166,7 +208,7 @@
         "Bosnia Herzegovina"
       ],
       "Botswana": [
-        "Botsuana"
+        "Bostwana"
       ],
       "Bouvet Island": [
         "Isla Bouvet"
@@ -220,19 +262,19 @@
         "Isla de Navidad"
       ],
       "Cocos (Keeling) Islands": [
-        "Islas Cocos (Keeling)"
+        "Islas Cocos"
       ],
       "Colombia": [
         "Colombia"
       ],
       "Comoros": [
-        "Comoros"
+        "Comores"
       ],
       "Congo": [
         "Congo"
       ],
       "Congo, Democratic Republic of the": [
-        "República Democrática del Congo"
+        "Congo, República Democrática del"
       ],
       "Cook Islands": [
         "Islas Cook"
@@ -289,7 +331,7 @@
         "Estonia"
       ],
       "Eswatini": [
-        "Esuatini"
+        "Suazilandia"
       ],
       "Ethiopia": [
         "Etiopía"
@@ -463,7 +505,7 @@
         "Liberia"
       ],
       "Libya": [
-        "Libia"
+        "Líbia"
       ],
       "Liechtenstein": [
         "Liechtenstein"
@@ -505,7 +547,7 @@
         "Mauritania"
       ],
       "Mauritius": [
-        "Mauricio"
+        "Mauricio, islas"
       ],
       "Mayotte": [
         "Mayotte"
@@ -535,7 +577,7 @@
         "Mozambique"
       ],
       "Myanmar": [
-        "Myanmar/Birmania"
+        "Myanmar"
       ],
       "Namibia": [
         "Namibia"
@@ -628,7 +670,7 @@
         "Reunión"
       ],
       "Romania": [
-        "Rumania"
+        "Rumanía"
       ],
       "Russia": [
         "Rusia"
@@ -820,7 +862,7 @@
         "Islas Vírgenes Británicas"
       ],
       "Virgin Islands, U.S.": [
-        "Islas Vírgenes de EE.UU."
+        "Islas Vírgenes de los Estados Unidos."
       ],
       "Wallis and Futuna": [
         "Wallis y Futuna"
@@ -848,7 +890,7 @@
     },
     "Error": {
       "Email is not valid": [
-        "El correo electrónico no es válido"
+        "El correo no es válido"
       ],
       "Enter 6 digits": [
         "Introduce 6 dígitos"
@@ -863,7 +905,7 @@
         "Las contraseñas no coinciden"
       ],
       "Request timed out": [
-        "Tiempo de espera de la petición agotado"
+        "Tiempo de espera agotado"
       ],
       "This field is required": [
         "Este campo es obligatorio"
@@ -880,19 +922,19 @@
         "Error: ${ errorMessage }"
       ],
       "Oops, something went wrong": [
-        "Ups, algo ha salido mal"
+        "Oops, algo ha salido mal"
       ],
       "Please ${ refresh } or check your connection.": [
-        "Por favor ${ refresh } o comprueba tu conexión."
+        "Por favor, ${ refresh } o comprueba tu conexión."
       ],
       "Something went wrong. Please refresh the page or try again later.": [
         "Algo ha ido mal. Por favor, actualiza la página o inténtalo más tarde."
       ],
       "There was a problem connecting to Proton.": [
-        "Hubo un problema al conectarse a Proton."
+        "Ha ocurrido un problema al conectarse a Proton."
       ],
       "You may also ${ refresh } or try again later.": [
-        "También puede ${ refresh } o intentarlo de nuevo más tarde."
+        "También puedes ${ refresh } o intentarlo de nuevo más tarde."
       ]
     },
     "Human verification method": {
@@ -914,19 +956,19 @@
     },
     "Info": {
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
-        "Antes de solicitar un nuevo código de verificación, revise su carpeta de spam y comprueba que ${ strong } es la dirección correcta."
+        "Antes de solicitar un nuevo código de verificación revise su carpeta de spam y compruebe que ${ strong } la dirección es correcta."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "Haga clic en \"Solicitar nuevo código\" para recibir un nuevo código de verificación en ${ strong }. Si este número de teléfono es incorrecto, haga clic en \"Editar\" para corregirlo."
+        "Haz clic en \"Solicitar nuevo código\" para enviarte un nuevo código de verificación a ${ strong }. Si esta dirección de correo electrónico es incorrecta, haz clic en \"Editar\" para corregirla."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Introduce el código de verificación que se ha enviado a ${ destinationText }."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
-        "Si está teniendo problemas para crear su cuenta, por favor solicite una invitación y le responderemos como máximo en un día hábil."
+        "Si tienes problemas para crear tu cuenta, por favor solicita una invitación y responderemos en un día hábil."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
-        "Si no encuentra el correo electrónico en su bandeja de entrada, por favor, compruebe su carpeta de spam."
+        "Si no encuentras el correo electrónico en tu bandeja de entrada, por favor, comprueba tu carpeta de spam."
       ],
       "Internet connection lost": [
         "Se ha perdido la conexión a Internet"
@@ -941,28 +983,28 @@
         "No se puede acceder a los servidores. Por favor, inténtelo de nuevo en unos minutos"
       ],
       "Session timed out": [
-        "El tiempo de sesión ha expirado"
+        "El tiempo de la sesión ha expirado"
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Para luchar contra el spam y el abuso, verifica que eres humano."
       ],
       "We'll send a new verification code to ${ strong }": [
-        "Enviaremos un nuevo código de verificación a ${ strong }"
+        "Enviaremos un código de verificación nuevo a ${ strong }"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
-        "¿Le gustaría recibir un nuevo código de verificación o utilizar un método de verificación alternativo?"
+        "¿Te gustaría recibir un nuevo código de verificación o utilizar un método de verificación alternativo?"
       ],
       "Would you like to receive a new verification code?": [
-        "¿Desea recibir un nuevo código de verificación?"
+        "¿Quiere recibir un código de verificación nuevo?"
       ],
       "Your email will only be used for this one-time verification.": [
-        "Tu correo electrónico sólo se utilizará para esta verificación."
+        "Tu correo electrónico sólo se utilizará para esta verificación única."
       ],
       "Your phone number will only be used for this one-time verification.": [
-        "Su número de teléfono se utilizará únicamente para esta verificación."
+        "Tu número de teléfono sólo se utilizará para esta verificación única."
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "Su cuenta de Proton está actualmente suspendida. Para continuar usando su cuenta, por favor abone cualquier factura atrasada."
+        "Tu cuenta de Proton está actualmente en espera. Para continuar usando tu cuenta, por favor abona cualquier factura atrasada."
       ]
     },
     "Label": {
@@ -1017,10 +1059,10 @@
         "Código de verificación no válido"
       ],
       "Request new code": [
-        "Solicitar nuevo código"
+        "Solicitar un nuevo código"
       ],
       "Sign in again to continue": [
-        "Inicia sesión de nuevo para continuar"
+        "Inicia sesión otra vez para continuar"
       ]
     },
     "Validation": {

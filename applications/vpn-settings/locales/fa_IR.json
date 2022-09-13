@@ -56,9 +56,6 @@
       "Close": [
         "بستن"
       ],
-      "Close modal": [
-        "Close"
-      ],
       "Close navigation": [
         "بستن پیمایش"
       ],
@@ -2068,9 +2065,6 @@
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "مهم: لطفاً مطمئن شوید که کدهای بازیابی را ذخیره می‌کنید. در غیر اینصورت شما می‌توانید برای همیشه دسترسی به حساب خود را اگر که دستگاه تأیید هویت دو-مرحله ای خود را گم کنید، از دست دهید."
       ],
-      "In case you lose your login details, we’ll send you recovery instructions via email or SMS.": [
-        "در صورت از دست دادن جزئیات ورود خود، به شما دستورالعمل های بازیابی را از راه رایانامه یا پیامک ارسال خواهیم کرد."
-      ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
         "نصب یک پرونده تنظیمات کشور برای وصل شدن به یک سرور تصادفی در کشور انتخابی شما."
       ],
@@ -2205,6 +2199,12 @@
       ],
       "read our two-factor authentication guide first": [
         "ابتدا راهنمای تایید هویت دو مرحله‌ای ما را مطالعه کنید"
+      ],
+      "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
+        "بر روی دستگاه های قابل اعتماد توصیه می شود. ${ keepMeSignedInLearnMoreLink }"
+      ],
+      "Recovery information will remain on this device unless you select to delete it.": [
+        "اطلاعات بازیابی بر روی این دستگاه باقی خواهد ماند مگر اینکه شما آن را برای حذف انتخاب کنید."
       ],
       "recovery method": [
         "روش بازیابی"
@@ -2409,6 +2409,9 @@
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "هنگامی که اشتراک شما تمدید می‌شود، قبل از اینکه روش پرداخت فوق را شارژ کنیم، اعتبارات موجود را اعمال خواهیم کرد."
+      ],
+      "Why?": [
+        "چرا؟"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "آیا می‌خواهید یک کد تایید جدید دریافت نمایید یا از یک روش تایید جایگزین استفاده کنید؟"
@@ -2733,6 +2736,9 @@
       "Delete": [
         "حذف"
       ],
+      "Delete recovery-related information.": [
+        "اطلاعات مربوط به بازیابی حذف شود."
+      ],
       "Device/certificate name": [
         "نام دستگاه/گواهی"
       ],
@@ -3037,6 +3043,9 @@
       ],
       "What is the difference between UDP and TCP protocols?": [
         "تفاوت بین پروتکلهای UDP و TCP چیست؟"
+      ],
+      "What’s this?": [
+        "این چیست؟"
       ]
     },
     "Member downgrade modal": {
@@ -3102,7 +3111,7 @@
         "دریافت ${ upsellShortPlan.title }"
       ],
       "Got it": [
-        "فهمیدم"
+        "متوجه شدم"
       ],
       "Keep ${ plan }": [
         "${ plan } را نگه دار"
@@ -4486,6 +4495,9 @@
       ],
       "Sign in again to continue": [
         "براى ادامه، وارد شويد"
+      ],
+      "Sign out": [
+        "خروج"
       ],
       "Status": [
         "وضعیت"

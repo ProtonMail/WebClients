@@ -11,14 +11,11 @@
       "Close": [
         "Fermer"
       ],
-      "Close modal": [
-        "Fermer la boîte de dialogue"
-      ],
       "Didn't receive the code?": [
         "Vous n'avez pas reçu le code?"
       ],
       "Edit email address": [
-        "Modifier l'adresse courriel"
+        "Modifier l'adresse électronique"
       ],
       "Edit phone number": [
         "Modifier le numéro de téléphone"
@@ -27,10 +24,10 @@
         "Modifier les détails de connexion"
       ],
       "Get verification code": [
-        "Obtenir un code de vérification"
+        "Demander un code de vérification"
       ],
       "refresh the page": [
-        "rafraîchir la page"
+        "actualiser la page"
       ],
       "Request new code": [
         "Demander un nouveau code"
@@ -54,7 +51,7 @@
         "Vérifier le courriel"
       ],
       "View invoice": [
-        "Afficher la facture"
+        "Voir la facture"
       ]
     },
     "color": {
@@ -223,7 +220,7 @@
         "Territoire britannique de l'océan Indien"
       ],
       "Brunei Darussalam": [
-        "Brunéi Darussalam"
+        "Brunei Darussalam"
       ],
       "Bulgaria": [
         "Bulgarie"
@@ -358,7 +355,7 @@
         "France"
       ],
       "French Guiana": [
-        "Guyane"
+        "Guyane française"
       ],
       "French Polynesia": [
         "Polynésie française"
@@ -664,7 +661,7 @@
         "Portugal"
       ],
       "Puerto Rico": [
-        "Puerto Rico"
+        "Porto Rico"
       ],
       "Qatar": [
         "Qatar"
@@ -835,7 +832,7 @@
         "Ukraine"
       ],
       "United Arab Emirates": [
-        "Émirats arabes unis"
+        "Émirats Arabes Unis"
       ],
       "United Kingdom": [
         "Royaume-Uni"
@@ -856,7 +853,7 @@
         "Vanuatu"
       ],
       "Venezuela": [
-        "Vénézuela"
+        "Vénézuéla"
       ],
       "Vietnam": [
         "Vietnam"
@@ -893,7 +890,7 @@
     },
     "Error": {
       "Email is not valid": [
-        "Adresse courriel invalide"
+        "L'adresse électronique n'est pas valide"
       ],
       "Enter 6 digits": [
         "Saisissez 6 chiffres"
@@ -902,7 +899,7 @@
         "Code de vérification invalide"
       ],
       "Not a valid number": [
-        "Numéro invalide"
+        "Numéro non valide"
       ],
       "Passwords do not match": [
         "Les mots de passe ne correspondent pas"
@@ -911,7 +908,7 @@
         "La requête a expiré"
       ],
       "This field is required": [
-        "Ce champ est obligatoire"
+        "Ce champ est requis"
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Ce champ nécessite un minimum de ${ minimumLength } caractères."
@@ -931,10 +928,10 @@
         "Veuillez ${ refresh } ou vérifier votre connexion."
       ],
       "Something went wrong. Please refresh the page or try again later.": [
-        "Quelque chose s'est mal passé. Veuillez actualiser la page ou essayer à nouveau ultérieurement."
+        "Une erreur s'est produite. Veuillez rafraîchir la page ou réessayer plus tard."
       ],
       "There was a problem connecting to Proton.": [
-        "Un problème s’est produit lors de la connexion à Proton."
+        "Un problème s'est produit lors de la connexion à Proton."
       ],
       "You may also ${ refresh } or try again later.": [
         "Vous pouvez également ${ refresh } ou réessayer plus tard."
@@ -962,7 +959,7 @@
         "Avant de demander un nouveau code de vérification, vérifiez votre dossier Indésirables et vérifiez que ${ strong } est la bonne adresse."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "Cliquez sur « Demander un nouveau code » pour envoyer un nouveau code de vérification à ${ strong }. Si ce numéro de téléphone est incorrect, cliquez sur « Modifier » pour le corriger."
+        "Cliquez sur « Demander un nouveau code » pour envoyer un nouveau code de vérification à ${ strong }. Si ce numéro de téléphone est incorrect, cliquez sur « Modifier » pour le corriger."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Entrez le code de vérification qui a été envoyé à ${ destinationText }."
@@ -971,7 +968,7 @@
         "Si vous rencontrez des difficultés à créer votre compte, veuillez demander une invitation et nous vous répondrons dans un délai d'un jour ouvrable."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
-        "Si vous ne trouvez pas le message dans votre boîte de réception, veuillez vérifier votre dossier indésirables."
+        "Si vous ne trouvez pas le courriel dans votre boîte de réception, veuillez vérifier votre dossier de pourriel."
       ],
       "Internet connection lost": [
         "Connexion Internet perdue"
@@ -989,7 +986,7 @@
         "Session expirée"
       ],
       "To fight spam and abuse, please verify you are human.": [
-        "Pour lutter contre les messages indésirables et les abus, veuillez prouver que vous êtes humain."
+        "Pour lutter contre les pourriels et les abus, veuillez vérifier que vous êtes humain."
       ],
       "We'll send a new verification code to ${ strong }": [
         "Nous enverrons un nouveau code de vérification à ${ strong }"
@@ -1007,7 +1004,7 @@
         "Votre numéro de téléphone ne sera utilisé que pour cette vérification unique."
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "Votre compte Proton est actuellement suspendu. Pour continuer à utiliser votre compte, veuillez régler les factures impayées."
+        "Votre compte Proton est actuellement suspendu. Pour continuer à utiliser votre compte, veuillez payer les factures impayées."
       ]
     },
     "Label": {
@@ -1056,7 +1053,7 @@
     },
     "Title": {
       "Human verification": [
-        "Vérification humaine"
+        "Vérification de l'existence de l'utilisateur"
       ],
       "Invalid verification code": [
         "Code de vérification invalide"

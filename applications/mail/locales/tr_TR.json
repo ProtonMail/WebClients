@@ -152,9 +152,6 @@
       "Close composer": [
         "Oluşturucuyu kapat"
       ],
-      "Close modal": [
-        "Close"
-      ],
       "Close navigation": [
         "Gezinmeyi kapat"
       ],
@@ -1076,6 +1073,9 @@
       ],
       "Star message": [
         "İletiye yıldız koy"
+      ],
+      "Unread email": [
+        "Okunmamış e-posta"
       ],
       "Unstar conversation": [
         "Yazışmanın yıldızını kaldır"
@@ -4520,6 +4520,9 @@
       "Recipient: ": [
         "Alıcı: "
       ],
+      "Recovery information will remain on this device unless you select to delete it.": [
+        "Siz silmeyi seçmedikçe kurtarma bilgileri bu aygıt üzerinde kalacak."
+      ],
       "Recovery phrase copied to clipboard": [
         "Kurtarma ifadesi panoya kopyalandı"
       ],
@@ -5396,6 +5399,9 @@
       "Delete": [
         "Sil"
       ],
+      "Delete recovery-related information.": [
+        "Kurtarma ile ilgili bilgileri sil."
+      ],
       "Do not ask again": [
         "Bir daha sorma"
       ],
@@ -5836,6 +5842,9 @@
       "Upgrade account": [
         "Hesabı yükselt"
       ],
+      "What’s this?": [
+        "Bu nedir?"
+      ],
       "You need to activate your calendar keys to add this event": [
         "Bu etkinliği eklemek için takvim anahtarlarınızı etkinleştirmelisiniz"
       ],
@@ -6239,8 +6248,8 @@
       ]
     },
     "Pagination": {
-      "${ page } of ${ total }": [
-        "${ page } / ${ total }"
+      "${ page } of ${ totalText }": [
+        "${ page } / ${ totalText }"
       ]
     },
     "Paid user checklist item": {
@@ -6605,11 +6614,6 @@
       ],
       "Sender's trusted keys verification failed": [
         "Göndericinin güvenilen anahtarları doğrulanamadı"
-      ]
-    },
-    "Sort": {
-      "Sort": [
-        "Sırala"
       ]
     },
     "Sort option": {
@@ -7418,6 +7422,9 @@
       ],
       "Sign in and grant access": [
         "Oturum açın ve erişim izni verin"
+      ],
+      "Sign out": [
+        "Oturumu kapat"
       ],
       "Sort conversations": [
         "Yazışmaları sırala"

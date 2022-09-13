@@ -56,9 +56,6 @@
       "Close": [
         "Sluit"
       ],
-      "Close modal": [
-        "Close"
-      ],
       "Close navigation": [
         "Sluit navigatie"
       ],
@@ -2068,9 +2065,6 @@
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Belangrijk: Zorg ervoor dat u de herstelcodes opslaat. Anders kunt u permanent toegang tot uw account verliezen als u uw tweestapsverificatieapparaat kwijtraakt."
       ],
-      "In case you lose your login details, we’ll send you recovery instructions via email or SMS.": [
-        "Als u uw inloggegevens verliest, sturen wij u herstelinstructies via e-mail of sms."
-      ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
         "Installeer een Land configuratiebestand om te verbinden met een willekeurige server in het land van uw keuze."
       ],
@@ -2205,6 +2199,12 @@
       ],
       "read our two-factor authentication guide first": [
         "lees eerst de instructies over tweestapsverificatie (2FA)"
+      ],
+      "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
+        "Aanbevolen op vertrouwde apparaten. ${ keepMeSignedInLearnMoreLink }"
+      ],
+      "Recovery information will remain on this device unless you select to delete it.": [
+        "Herstelinformatie blijft op dit toestel behalve wanneer u kiest om het te verwijderen."
       ],
       "recovery method": [
         "herstelmethode"
@@ -2409,6 +2409,9 @@
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Wanneer uw abonnement verlengt, passen we alle beschikbare credits toe voordat we de bovenstaande betaalmethode in rekening brengen."
+      ],
+      "Why?": [
+        "Waarom?"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Wilt u een nieuwe verificatiecode ontvangen of een alternatieve verificatiemethode gebruiken?"
@@ -2730,6 +2733,9 @@
       "Delete": [
         "Verwijderen"
       ],
+      "Delete recovery-related information.": [
+        "Verwijder herstel-gerelateerde informatie."
+      ],
       "Device/certificate name": [
         "Apparaat/certificaat naam"
       ],
@@ -3034,6 +3040,9 @@
       ],
       "What is the difference between UDP and TCP protocols?": [
         "Wat is het verschil tussen UDP en TCP-protocollen?"
+      ],
+      "What’s this?": [
+        "Wat is dit?"
       ]
     },
     "Member downgrade modal": {
@@ -4480,6 +4489,9 @@
       ],
       "Sign in again to continue": [
         "Log opnieuw in om door te gaan"
+      ],
+      "Sign out": [
+        "Uitloggen"
       ],
       "Status": [
         "Status"

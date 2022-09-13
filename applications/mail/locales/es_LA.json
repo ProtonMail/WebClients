@@ -152,9 +152,6 @@
       "Close composer": [
         "Cerrar compositor"
       ],
-      "Close modal": [
-        "Close"
-      ],
       "Close navigation": [
         "Cerrar navegación"
       ],
@@ -1076,6 +1073,9 @@
       ],
       "Star message": [
         "Destacar"
+      ],
+      "Unread email": [
+        "Correo no leído"
       ],
       "Unstar conversation": [
         "No destacar"
@@ -4520,6 +4520,9 @@
       "Recipient: ": [
         "Destinatario: "
       ],
+      "Recovery information will remain on this device unless you select to delete it.": [
+        "La información de recuperación se mantendrá en este dispositivo a menos que la elimine."
+      ],
       "Recovery phrase copied to clipboard": [
         "Frase recuperación copiada al portapapeles"
       ],
@@ -5396,6 +5399,9 @@
       "Delete": [
         "Eliminar"
       ],
+      "Delete recovery-related information.": [
+        "Eliminar información de recuperación relacionada."
+      ],
       "Do not ask again": [
         "No volver a preguntar"
       ],
@@ -5836,6 +5842,9 @@
       "Upgrade account": [
         "Mejorar cuenta"
       ],
+      "What’s this?": [
+        "¿Qué es esto?"
+      ],
       "You need to activate your calendar keys to add this event": [
         "Necesita activar las claves del calendario para añadir este evento"
       ],
@@ -6239,8 +6248,8 @@
       ]
     },
     "Pagination": {
-      "${ page } of ${ total }": [
-        "${ page } de ${ total }"
+      "${ page } of ${ totalText }": [
+        "${ page } de ${ totalText }"
       ]
     },
     "Paid user checklist item": {
@@ -6605,11 +6614,6 @@
       ],
       "Sender's trusted keys verification failed": [
         "Falló la verificación de las claves de confianza del remitente"
-      ]
-    },
-    "Sort": {
-      "Sort": [
-        "Ordenar"
       ]
     },
     "Sort option": {
@@ -7418,6 +7422,9 @@
       ],
       "Sign in and grant access": [
         "Iniciar sesión y otorgar acceso"
+      ],
+      "Sign out": [
+        "Cerrar sesión"
       ],
       "Sort conversations": [
         "Ordenar conversaciones"

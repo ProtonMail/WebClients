@@ -151,9 +151,6 @@
       "Close": [
         "Zavřít"
       ],
-      "Close modal": [
-        "Close"
-      ],
       "Close navigation": [
         "Zavřít menu"
       ],
@@ -224,7 +221,7 @@
         "Vytvořit odkaz"
       ],
       "Current plan": [
-        "Současné předplatné"
+        "Aktuální tarif"
       ],
       "Customize": [
         "Přizpůsobit"
@@ -233,7 +230,7 @@
         "Přizpůsobit import"
       ],
       "Customize plan": [
-        "Přizpůsobit plán"
+        "Přizpůsobit tarif"
       ],
       "Decrease": [
         "Snížit"
@@ -341,7 +338,7 @@
         "Zašifrovat a exportovat"
       ],
       "Explore other ${ BRAND_NAME } plans": [
-        "Objevte další ${ BRAND_NAME } plány"
+        "Objevte další ${ BRAND_NAME } tarify"
       ],
       "Export": [
         "Export"
@@ -646,6 +643,9 @@
       "Search settings": [
         "Nastavení vyhledávání"
       ],
+      "See plan features": [
+        "Zobrazit funkce tarifu"
+      ],
       "Select ${ planTitle }": [
         "Vybrat ${ planTitle }"
       ],
@@ -821,16 +821,16 @@
         "Zobrazit fakturu"
       ],
       "View plans details": [
-        "Zobrazit detaily plánu"
+        "Zobrazit detaily tarifu"
+      ],
+      "Void": [
+        "Neplatné"
       ],
       "Void all recovery files": [
         "Zrušit všechny soubory pro obnovení"
       ],
       "Void all recovery files?": [
         "Zrušit všechny soubory pro obnovení?"
-      ],
-      "Void anyway": [
-        "Přesto zrušit"
       ],
       "What do I get?": [
         "Co získám?"
@@ -2874,10 +2874,10 @@
         "Zkuste se znovu ověřit a zkontrolujte, zda jsou oprávnění nastavena správně."
       ],
       "Please upgrade to a business plan with more than 1 user to get multi-user support": [
-        "Chcete-li získat podporu pro více uživatelů, přejděte na obchodní plán s více než 1 uživatelem"
+        "Chcete-li získat podporu pro více uživatelů, přejděte na firemní tarif"
       ],
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
-        "Chcete-li spravovat více uživatelů, přejděte na obchodní plán s více než 1 uživatelem."
+        "Chcete-li spravovat více uživatelů, přejděte na firemní tarif"
       ],
       "Primary address key is not decrypted": [
         "Klíč hlavní adresy není dešifrován"
@@ -3012,7 +3012,7 @@
         "Všechny adresy ve vašem tarifu jsou vyčerpány. Přejděte na vyšší tarif, abyste mohli přidat další adresu."
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
-        "Limit počtu uživatelů ve vašem plánu byl vyčerpán. Přejděte na vyšší tarif, abyste mohli přidat dalšího uživatele."
+        "Limit počtu uživatelů ve vašem tarifu byl vyčerpán. Přejděte na vyšší tarif, abyste mohli přidat dalšího uživatele."
       ],
       "You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Musíte aktivovat klíče organizace. Bez aktivace nebudete moci vytvářet nové uživatele, přidávat adresy stávajícím uživatelům, nebo přistupovat k veřejným uživatelským účtům."
@@ -4231,7 +4231,7 @@
         "${ strongAddressAvailable } Tuto e-mailovou adresu použijete k přihlášení do všech služeb ${ BRAND_NAME }."
       ],
       "${ vpnBasic }, ${ vpnPlus } or ${ visionary } required for Country level connection.": [
-        "Pro připojení na úrovni země je vyžadován plán ${ vpnBasic }, ${ vpnPlus } nebo ${ visionary }."
+        "Pro připojení na úrovni země je vyžadován tarif ${ vpnBasic }, ${ vpnPlus } nebo ${ visionary }."
       ],
       "${ vpnPlus } or ${ visionary } required for Secure Core feature.": [
         "Funkce Secure Core vyžaduje ${ vpnPlus } nebo ${ visionary }."
@@ -4284,11 +4284,11 @@
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Název, který vám pomůže zapamatovat si jeho použití, abyste později mohli konfiguraci snadno zrušit nebo rozšířit."
       ],
-      "A recovery file lets you unlock and view your data after an account reset.": [
-        "Soubor pro obnovení vám umožňuje odemknout a zobrazit data po resetování účtu."
+      "A recovery file lets you unlock and view your data after an account reset": [
+        "Soubor pro obnovení vám umožňuje odemknout a zobrazit data po resetování účtu"
       ],
-      "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password.": [
-        "V případě, že zapomenete heslo, obnovovací fráze umožňuje přístup k účtu a obnovu zašifrovaných zpráv."
+      "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password": [
+        "V případě, že zapomenete heslo, obnovovací fráze umožňuje přístup k účtu a obnovu zašifrovaných zpráv"
       ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Uživatelem je účet spojený s jedním uživatelským jménem, poštovní schránkou a osobou"
@@ -4307,6 +4307,9 @@
       ],
       "Account successfully updated": [
         "Účet byl úspěšně aktualizován"
+      ],
+      "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
+        "Aktivujte alespoň jednu metodu obnovy dat, abyste měli jistotu, že v případě ztráty hesla budete mít i nadále přístup k obsahu svého účtu ${ BRAND_NAME }."
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Přidejte e-mailovou adresu @pm.me do svého účtu. Tato jednoduchá a kratší doména znamená \"${ MAIL_APP_NAME } me\" nebo \"Private Message me.\""
@@ -4337,9 +4340,6 @@
       ],
       "Admin account allocation": [
         "Přidělení účtu správce"
-      ],
-      "After a password reset your data is locked in encrypted form to keep it safe.": [
-        "Po resetování hesla jsou vaše data uzamčena v zašifrované podobě, aby byla v bezpečí."
       ],
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
         "Po provedení Bitcoin platby postupujte podle níže uvedených pokynů a proveďte upgrade."
@@ -4564,7 +4564,7 @@
         "Kredit za nevyužitou část vašeho předchozího předplatného"
       ],
       "Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.": [
-        "V současné době je veškerý diskový prostor přidělen k účtu správce. Uvolněte prosím část diskového prostoru dalším uživatelům. Kapacitu úložiště můžete kdykoliv navýšit změnou plánu."
+        "V současné době je veškerý diskový prostor přidělen k účtu správce. Uvolněte prosím část diskového prostoru dalším uživatelům. Kapacitu úložiště můžete kdykoliv navýšit změnou tarifu."
       ],
       "Custom": [
         "Vlastní"
@@ -4624,7 +4624,7 @@
         "Hotovo! Odeslali jsme kód na adresu ${ destination }."
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
-        "Změnou plánu ukončíte všechna spojení s placenými ${ VPN_APP_NAME } servery."
+        "Snížením tarifu ukončíte všechna spojení s placenými ${ VPN_APP_NAME } servery."
       ],
       "Download recovery file": [
         "Stáhnout soubor pro obnovení"
@@ -4744,7 +4744,7 @@
         "Vygenerováním nové obnovovací fráze bude deaktivovaná stará."
       ],
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
-        "Dejte svůj veřejný klíč svým přátelům nebo jej publikujte online, aby vám každý mohl poslat end-to-end šifrovaný e-mail!"
+        "Dejte svůj veřejný klíč svým přátelům nebo jej zveřejněte online, aby vám každý mohl poslat koncově šifrovaný e-mail!"
       ],
       "Google records your online activity and reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
         "Google zaznamenává Vaši online aktivitu a čte Vaše osobní údaje s cílem poskytnout přístup inzerentům a dalším třetím stranám. Pro lepší soukromí vytvořte bezpečnou e-mailovou adresu."
@@ -4853,9 +4853,6 @@
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Importujeme Vaše data z ${ importedEmailAddress } do ${ toEmail }."
-      ],
-      "In case you lose your login details, we’ll send you recovery instructions via email or SMS.": [
-        "V případě, že ztratíte své přihlašovací údaje, zašleme Vám pokyny pro obnovení e-mailem nebo SMS."
       ],
       "Inherited from parent folder": [
         "Zděděno z nadřazené složky"
@@ -5095,13 +5092,13 @@
         "P2P"
       ],
       "Paid for a ${ rewardMonths } month plan": [
-        "Zaplaceno za ${ rewardMonths } měsíční plán",
-        "Zaplaceno za ${ rewardMonths } měsíční plány",
-        "Zaplaceno za ${ rewardMonths } měsíčních plánů",
-        "Zaplaceno za ${ rewardMonths } měsíčních plánů"
+        "Zaplaceno za ${ rewardMonths } měsíční tarif",
+        "Zaplaceno za ${ rewardMonths } měsíční tarif",
+        "Zaplaceno za ${ rewardMonths } měsíční tarif",
+        "Zaplaceno za ${ rewardMonths } měsíční tarif"
       ],
       "Paid for a monthly plan": [
-        "Zaplaceno za měsíční plán"
+        "Zaplaceno za měsíční tarif"
       ],
       "Payment can take a few minutes to fully verify.": [
         "Než bude platba zcela ověřena, může to trvat i několik minut."
@@ -5196,11 +5193,17 @@
       "read our two-factor authentication guide first": [
         "přečtěte si nejprve našeho průvodce dvoufázovým ověřováním"
       ],
+      "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
+        "Doporučeno na důvěryhodných zařízeních. ${ keepMeSignedInLearnMoreLink }"
+      ],
       "Recovery file downloaded": [
         "Soubor pro obnovení byl stažen"
       ],
       "Recovery files have been voided": [
         "Soubory pro obnovení byly zrušeny"
+      ],
+      "Recovery information will remain on this device unless you select to delete it.": [
+        "Informace o obnovení zůstanou v tomto zařízení, pokud nezvolíte jejich odstranění."
       ],
       "recovery method": [
         "metoda obnovení"
@@ -5436,15 +5439,6 @@
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
         "Abychom průběžně vylepšovali naše služby, shromažďujeme data kvůli monitorování funkčnosti našich aplikací. Tato data nejsou sdílena se službami třetích stran."
       ],
-      "To decrypt and view your emails and other data, you need a recovery file.": [
-        "K dešifrování a zobrazení e-mailů a dalších dat potřebujete soubor pro obnovení."
-      ],
-      "To decrypt and view your emails and other data, you need a recovery phrase or recovery file.": [
-        "Chcete-li dešifrovat a zobrazit e-maily a další data, potřebujete frázi pro obnovení nebo soubor pro obnovení."
-      ],
-      "To decrypt and view your emails and other data, you need a recovery phrase.": [
-        "K dešifrování a zobrazení e-mailů a dalších dat potřebujete frázi pro obnovení."
-      ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Chcete-li po resetování hesla dešifrovat a zobrazit uzamčená data, vyberte metodu obnovení."
       ],
@@ -5574,6 +5568,9 @@
       "We recommend using your recovery phrase instead.": [
         "Místo toho doporučujeme použít frázi pro obnovení."
       ],
+      "We securely store recovery information on your trusted device to prevent you from losing your data": [
+        "Abyste o svá data nepřišli, bezpečně ukládáme informace pro obnovení do vašeho důvěryhodného zařízení"
+      ],
       "We use 3-D Secure to protect your payments.": [
         "K zabezpečení Vašich plateb používáme 3-D Secure."
       ],
@@ -5614,10 +5611,13 @@
         "Pokud máte zapnuta upozornění a obdržíte nové zprávy ve Vašem účtu ${ MAIL_APP_NAME }, pošleme Vám upozornění na adresu pro obnovení / oznámení."
       ],
       "When they subscribe to a paid plan, 1 to 3 months of ${ planName } will be credited to your account.": [
-        "Když si předplatí placený plán, bude na váš účet připsáno 1 až 3 měsíce ${ planName }."
+        "Když si předplatí placený tarif, bude na váš účet připsáno 1 až 3 měsíce ${ planName }."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Až se Vaše předplatné obnoví, použijeme všechny dostupné kredity před tím, než budeme účtovat výše uvedenou platební metodu."
+      ],
+      "Why?": [
+        "Proč?"
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Bez aktivace nebudete moci vytvářet nové uživatele, přidávat adresy stávajícím uživatelům, nebo přistupovat k veřejným uživatelským účtům."
@@ -5662,7 +5662,7 @@
         "Importovat můžete vždy jeden typ dat."
       ],
       "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
-        "Nyní můžete přijímat zprávy na svou adresu @pm.me. Upgradujte na placený plán, abyste mohli také odesílat e-maily pomocí své adresy @pm.me a vytvářet další adresy @pm.me."
+        "Nyní můžete přijímat zprávy na svou adresu @pm.me. Upgradujte na placený tarif, abyste mohli také odesílat e-maily pomocí své adresy @pm.me a vytvářet další adresy @pm.me."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Můžete zapnout upozornění abyste obdrželi oznámení v případě, že do této složky přijde nový e-mail."
@@ -5742,8 +5742,11 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "Za účelem ověření platby budete přesměrováni na PayPal."
       ],
-      "You won't be able to recover encrypted data after an account reset using your downloaded recovery files.": [
-        "Po resetování účtu pomocí stažených souborů pro obnovení nebudete moci obnovit zašifrovaná data."
+      "You won’t be able to recover locked data using your downloaded recovery files.": [
+        "Pomocí stažených souborů pro obnovení nebude možné obnovit uzamčená data."
+      ],
+      "You won’t be able to recover locked data using your downloaded recovery files. This will also void trusted device-recovery information.": [
+        "Pomocí stažených souborů pro obnovení nebude možné obnovit uzamčená data. Tím se také zruší důvěryhodné informace o obnovení zařízení."
       ],
       "You'll stay signed in even after you close the browser.": [
         "Zůstanete přihlášeni i po uzavření prohlížeče."
@@ -5800,7 +5803,7 @@
         "Heslo organizace lze sdílet se všemi uživateli, kterým chcete přidělit oprávnění správce. Heslo slouží také jako nouzový kód pro obnovení přístupu do Vaší organizace v případě, že ztratíte přístup ke svému hlavnímu účtu. Heslo uložte a držte v bezpečí."
       ],
       "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
-        "E-maily vaší organizace jsou chráněny end-to-end šifrováním pomocí klíče organizace. Tento otisk prstu lze použít k ověření, že všichni správci účtu mají stejný klíč."
+        "E-maily vaší organizace jsou chráněny koncovým šifrováním pomocí klíče organizace. Tento otisk klíče lze použít k ověření, že všichni správci účtu mají stejný klíč."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "Vaše platební údaje jsou chráněny šifrováním TLS a švýcarskými zákony o ochraně soukromí."
@@ -6296,6 +6299,9 @@
       "Allow recovery by recovery phrase": [
         "Povolte obnovu podle obnovovací fráze"
       ],
+      "Allow recovery using a trusted device": [
+        "Povolení obnovení pomocí důvěryhodného zařízení"
+      ],
       "Amount": [
         "Částka"
       ],
@@ -6499,6 +6505,9 @@
       ],
       "Delete": [
         "Odstranit"
+      ],
+      "Delete recovery-related information.": [
+        "Odstranit informace související s obnovením."
       ],
       "Density": [
         "Hustota"
@@ -7229,6 +7238,9 @@
       "Learn more": [
         "Více informací"
       ],
+      "Learn more about data recovery": [
+        "Další informace o obnově dat"
+      ],
       "Need help?": [
         "Potřebujete pomoc?"
       ],
@@ -7273,6 +7285,9 @@
       ],
       "What is the difference between UDP and TCP protocols?": [
         "Jaký je rozdíl mezi protokoly UDP a TCP?"
+      ],
+      "What’s this?": [
+        "Co je to?"
       ],
       "Why set recovery methods?": [
         "Proč nastavit metody obnovení?"
@@ -7606,7 +7621,7 @@
         "Snížit na ${ downgradedPlanName }"
       ],
       "Explore all ${ BRAND_NAME } plans": [
-        "Objevte všechny ${ BRAND_NAME } plány"
+        "Objevte všechny ${ BRAND_NAME } tarify"
       ],
       "From ${ _price }": [
         "Od ${ _price }"
@@ -7659,7 +7674,7 @@
         "Přepnout nebo přidat účet"
       ],
       "Switch plan": [
-        "Změnit plán"
+        "Změnit tarif"
       ]
     },
     "new_plans: attribute": {
@@ -7946,16 +7961,16 @@
         "Komplexní ochrana soukromí a zabezpečení se všemi službami Protonu dohromady."
       ],
       "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
-        "Pokud svůj účet odstraníte, ztratíte všechny výhody plánu ${ visionary } a při vytvoření nového účtu nebudou k dispozici."
+        "Pokud svůj účet odstraníte, ztratíte všechny výhody tarifu ${ visionary } a při vytvoření nového účtu nebudou k dispozici."
       ],
       "If you downgrade your account, you lose all ${ visionary } plan benefits and it won’t be available if you try to subscribe again.": [
-        "Pokud svůj účet snížíte, ztratíte všechny výhody plánu ${ visionary } a při dalším pokusu o předplatné nebude k dispozici."
+        "Pokud svůj účet snížíte, ztratíte všechny výhody tarifu ${ visionary } a při dalším pokusu o předplatné nebude k dispozici."
       ],
       "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
-        "Pokud přejdete na jiný plán, ztratíte všechny výhody plánu ${ visionary } a nebudete moci přejít zpět na plán ${ visionary }."
+        "Pokud přejdete na jiný tarif, ztratíte všechny výhody tarifu ${ visionary } a nebudete moci přejít zpět na tarif ${ visionary }."
       ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
-        "Náš plán ${ visionary } již není k dispozici novým předplatitelům, protože se jedná o speciální plán pro původní uživatele ${ BRAND_NAME } se speciálními funkcemi a výhodami."
+        "Náš tarif ${ visionary } již není k dispozici novým předplatitelům, protože se jedná o speciální plán pro původní uživatele ${ BRAND_NAME } se speciálními funkcemi a výhodami."
       ],
       "Popular": [
         "Oblíbené"
@@ -8002,7 +8017,7 @@
         "Pro další používání ${ MAIL_APP_NAME } s prémiovými funkcemi si vyberte předplatné a platební metodu."
       ],
       "Upgrade to the business pack with access to all premium Proton services.": [
-        "Získejte obchodní balíček s přístupem ke všem prémiovým službám Proton."
+        "Získejte firemní balíček s přístupem ke všem prémiovým službám Proton."
       ],
       "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
         "Získejte nejvyšší balíček ochrany soukromí s přístupem ke všem prémiovým službám Proton."
@@ -8052,7 +8067,7 @@
         "Vaše předplatné ${ planName } je nyní aktivní."
       ],
       "Your selected plan: ${ planName }": [
-        "Váš vybraný plán: ${ planName }"
+        "Váš vybraný tarif: ${ planName }"
       ]
     },
     "new_plans: Title": {
@@ -8074,7 +8089,7 @@
         "Snížit účet na nižší úroveň?"
       ],
       "Improved plans coming soon!": [
-        "Vylepšené plány již brzy!"
+        "Vylepšené tarify již brzy!"
       ],
       "Review subscription and pay": [
         "Zkontrolovat předplatné a zaplatit"
@@ -8083,7 +8098,7 @@
         "Začněte objevovat svět Protonu"
       ],
       "Switch plans?": [
-        "Změnit plán?"
+        "Změnit tarif?"
       ],
       "Unlock premium features by upgrading": [
         "Odemknout prémiové funkce navýšením účtu"
@@ -8130,10 +8145,10 @@
         "Snadno sdílejte své kalendáře s rodinou, přáteli nebo kolegy prostřednictvím odkazu"
       ],
       "End-to-end encrypted calendar": [
-        "End-to-end plně šifrovaný kalendář"
+        "Kalendář s koncovým šifrováním"
       ],
       "End-to-end encrypted file storage": [
-        "End-to-end plně šifrovaný úložný prostor"
+        "Úložný prostor s koncovým šifrováním"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Zajistí, že dostanete všechny e-maily odeslané na vaší doménu, dokonce i když jsou odeslány na adresu, která neexistuje a nebo má chybu"
@@ -8205,7 +8220,7 @@
         "Směrujte svůj internetový provoz skrz sít Tor jediným kliknutím"
       ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even Proton can't access them.": [
-        "Bezpečně ukládejte údaje vašich kontaktů, např. telefonní číslo, adresu, narozeniny a osobní poznámky. Šifrování bez přístupu (end-to-end) znamená, že ani Proton si nemůže přečíst tyto údaje."
+        "Bezpečně ukládejte údaje vašich kontaktů, např. telefonní číslo, adresu, narozeniny a osobní poznámky. Šifrování bez přístupu (koncové) znamená, že ani Proton si nemůže přečíst tyto údaje."
       ],
       "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
         "Odešlete e-maily velkým skupinám rychle a snadno vytvořením kontaktních skupin (až 100 kontaktů na skupinu)"
@@ -8777,7 +8792,7 @@
         "kontaktujte"
       ],
       "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
-        "Vyberte počet uživatelů, kteří mají být do plánu zahrnuti. Každý další uživatel stojí ${ price }."
+        "Vyberte počet uživatelů, kteří mají být do tarifu zahrnuti. Každý další uživatel stojí ${ price }."
       ],
       "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
         "Pokud potřebujete více než ${ maxUsers } uživatelský účet, prosím ${ contact } náš obchodní tým.",
@@ -9029,6 +9044,14 @@
         "Uživatelské jméno"
       ]
     },
+    "Spam notification": {
+      "${ name } failed to move to Block List": [
+        "${ name } se nepodařilo přesunout na Seznam blokovaných"
+      ],
+      "${ name } moved to Block List": [
+        "${ name } přesunuta na Seznam blokovaných"
+      ]
+    },
     "Spotlight": {
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "${ DRIVE_APP_NAME } již není beta verzí! Zabezpečte své soubory stejně dobře, jako své e-maily."
@@ -9051,7 +9074,7 @@
     },
     "State": {
       "Downgrading your account, please wait": [
-        "Probíhá přechod na nižší plán předplatného, počkejte prosím"
+        "Probíhá přechod na nižší tarif, počkejte prosím"
       ]
     },
     "Step in filter modal": {
@@ -9775,7 +9798,7 @@
         "Přizpůsobte si proces importování e-mailů"
       ],
       "Customize your plan": [
-        "Přizpůsobte si svůj plán"
+        "Přizpůsobte svůj tarif"
       ],
       "Dashboard": [
         "Přehled"
@@ -10078,7 +10101,7 @@
         "Telefon"
       ],
       "Plan summary": [
-        "Shrnutí plánu"
+        "Shrnutí tarifu"
       ],
       "Previous": [
         "Předchozí"
@@ -10150,7 +10173,7 @@
         "Bezpečnostní protokoly"
       ],
       "Select a plan": [
-        "Vyberte plán"
+        "Vyberte tarif"
       ],
       "Select action to take on contact group": [
         "Vyberte akci k provedení ve skupině kontaktů"
@@ -10202,6 +10225,9 @@
       ],
       "Sign in and grant access": [
         "Přihlaste se a povolte přístup"
+      ],
+      "Sign out": [
+        "Odhlásit se"
       ],
       "Sort folders alphabetically": [
         "Řadit složky abecedně"
@@ -10264,7 +10290,7 @@
         "Nepodporovaný prohlížeč"
       ],
       "Upgrade plan": [
-        "Navýšit plán"
+        "Navýšit tarif"
       ],
       "Username": [
         "Uživatelské jméno"
@@ -10312,7 +10338,7 @@
         "URL adresa kalendáře"
       ],
       "Your current plan": [
-        "Váš aktuální plán"
+        "Váš aktuální tarif"
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         "Vaše bezplatná zkušební verze brzy skončí, dne ${ formattedEndDate }"
@@ -10321,7 +10347,7 @@
         "Aktuální a minulé importy"
       ],
       "Your plan": [
-        "Váš plán"
+        "Váš tarif"
       ],
       "Your recovery status": [
         "Stav obnovy"
