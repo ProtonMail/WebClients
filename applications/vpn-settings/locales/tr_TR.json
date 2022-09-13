@@ -56,9 +56,6 @@
       "Close": [
         "Kapat"
       ],
-      "Close modal": [
-        "Close"
-      ],
       "Close navigation": [
         "Gezinmeyi kapat"
       ],
@@ -2068,9 +2065,6 @@
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Önemli: Lütfen kurtarma kodlarını kaydettiğinize emin olun. Yoksa, iki aşamalı kimlik doğrulama aygıtınızı kaybederseniz hesap erişiminizi kalıcı olarak kaybedebilirsiniz."
       ],
-      "In case you lose your login details, we’ll send you recovery instructions via email or SMS.": [
-        "Oturum açma bilgilerinizi kaybederseniz, size e-posta ya da SMS ile kurtarma yönergelerini göndereceğiz."
-      ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
         "Seçtiğiniz ülkedeki rastgele bir sunucuya bağlanmak için bir ülke yapılandırma dosyası yükleyin."
       ],
@@ -2205,6 +2199,12 @@
       ],
       "read our two-factor authentication guide first": [
         "önce iki aşamalı kimlik doğrulama rehberimizi okuyun"
+      ],
+      "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
+        "Güvenilir aygıtlar üzerinde önerilir. ${ keepMeSignedInLearnMoreLink }"
+      ],
+      "Recovery information will remain on this device unless you select to delete it.": [
+        "Siz silmeyi seçmedikçe kurtarma bilgileri bu aygıt üzerinde kalacak."
       ],
       "recovery method": [
         "kurtarma yöntemi"
@@ -2409,6 +2409,9 @@
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Aboneliğiniz yenilendiğinde, ödeme için yukarıdaki yönteme başvurmadan önce var olan tüm kredileri kullanacağız."
+      ],
+      "Why?": [
+        "Neden?"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Yeni bir doğrulama kodu almak ya da alternatif bir doğrulama yöntemi kullanmak ister misiniz?"
@@ -2733,6 +2736,9 @@
       "Delete": [
         "Sil"
       ],
+      "Delete recovery-related information.": [
+        "Kurtarma ile ilgili bilgileri sil."
+      ],
       "Device/certificate name": [
         "Aygıt/sertifika adı"
       ],
@@ -3037,6 +3043,9 @@
       ],
       "What is the difference between UDP and TCP protocols?": [
         "UDP ve TCP iletişim kuralları arasındaki fark nedir?"
+      ],
+      "What’s this?": [
+        "Bu nedir?"
       ]
     },
     "Member downgrade modal": {
@@ -4486,6 +4495,9 @@
       ],
       "Sign in again to continue": [
         "İlerlemek için yeniden oturum açın"
+      ],
+      "Sign out": [
+        "Oturumu kapat"
       ],
       "Status": [
         "Durum"

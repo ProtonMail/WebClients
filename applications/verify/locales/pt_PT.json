@@ -11,9 +11,6 @@
       "Close": [
         "Fechar"
       ],
-      "Close modal": [
-        "Fechar janela"
-      ],
       "Edit email address": [
         "Editar o endereço de email"
       ],
@@ -64,7 +61,7 @@
         "As senhas não coincidem"
       ],
       "This field is required": [
-        "Este campo é obrigatório"
+        "Este campo é requerido"
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Este campo requer um mínimo de ${ minimumLength } caracteres."
@@ -74,8 +71,17 @@
       ]
     },
     "Error message": {
+      "Error: ${ errorMessage }": [
+        "Erro: ${ errorMessage }"
+      ],
       "Oops, something went wrong": [
         "Ups. Algo correu mal"
+      ],
+      "Please ${ refresh } or check your connection.": [
+        "Por favor ${ refresh } ou verifique a sua ligação."
+      ],
+      "There was a problem connecting to Proton.": [
+        "Ocorreu um problema ao ligar ao Proton."
       ],
       "You may also ${ refresh } or try again later.": [
         "Também pode ${ refresh } ou tentar mais tarde."
@@ -86,7 +92,7 @@
         "CAPTCHA"
       ],
       "Email": [
-        "Correio"
+        "Email"
       ],
       "Manual": [
         "Manual"
@@ -103,13 +109,13 @@
         "Clique em \"Pedir novo código\" para receber um novo código de verificação em ${ strong }. Se o telefone estiver incorrecto, clique em \"Editar\" para o corrigir."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
-        "Insira o código de verificação enviado para ${ destinationText }."
+        "Insira o código de verificação que foi enviado para ${ destinationText }."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
-        "Se tiver problemas para criar a conta, por favor solicite um convite e responderemos dentro de um dia útil."
+        "Se tiver problemas ao criar a conta, por favor solicite um convite e responderemos dentro de um dia útil."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
-        "Se não encontrar o email na sua caixa de entrada, verifique a pasta de spam."
+        "Se não encontrar o e-mail na sua caixa de entrada, verifique a pasta de spam."
       ],
       "Loading": [
         "A carregar"
@@ -118,7 +124,7 @@
         "Nenhum resultado"
       ],
       "To fight spam and abuse, please verify you are human.": [
-        "Para combater o assédio e o abuso, por favor confirme que é um ser humano."
+        "Para combater o spam e abusos, confirme que é um ser humano."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Deseja receber um novo código de verificação ou usar um método de verificação alternativo?"
@@ -135,7 +141,7 @@
     },
     "Label": {
       "Email address": [
-        "Endereço electrónico"
+        "Endereço de email"
       ],
       "Hide password": [
         "Ocultar senha"
@@ -147,7 +153,7 @@
         "Número de telefone"
       ],
       "Reveal password": [
-        "Mostrar palavra-passe"
+        "Mostrar senha"
       ],
       "Verification code": [
         "Código de verificação"
@@ -159,6 +165,11 @@
       ],
       "Request an invite": [
         "Pedir um convite"
+      ]
+    },
+    "Placeholder": {
+      "Password": [
+        "Senha"
       ]
     },
     "Success": {
@@ -176,6 +187,9 @@
       "Invalid verification code": [
         "Código de verificação inválido"
       ],
+      "Request new code": [
+        "Pedir novo código"
+      ],
       "Sign in again to continue": [
         "Reinicie sessão para continuar"
       ]
@@ -183,7 +197,7 @@
     "Validation": {
       "Password must contain at least ${ length } character": [
         "A senha deve conter pelo menos ${ length } carácter",
-        "A senha deve conter pelo menos $ ${ length } caracteres"
+        "A senha deve conter pelo menos ${ length } caracteres"
       ]
     }
   }

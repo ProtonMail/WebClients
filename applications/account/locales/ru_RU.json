@@ -151,9 +151,6 @@
       "Close": [
         "Закрыть"
       ],
-      "Close modal": [
-        "Close"
-      ],
       "Close navigation": [
         "Cкрыть панель навигации"
       ],
@@ -823,14 +820,14 @@
       "View plans details": [
         "Посмотреть детали тарифа"
       ],
+      "Void": [
+        "Аннулировано"
+      ],
       "Void all recovery files": [
         "Уничтожить все файлы восстановления"
       ],
       "Void all recovery files?": [
         "Уничтожить все файлы восстановления?"
-      ],
-      "Void anyway": [
-        "Все равно очистить"
       ],
       "What do I get?": [
         "Что я получу?"
@@ -4281,12 +4278,6 @@
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Имя, которое поможет вам определить, где вы его используете, чтобы вы могли легко отозвать или продлить его позже."
       ],
-      "A recovery file lets you unlock and view your data after an account reset.": [
-        "Файл восстановления позволяет разблокировать и просмотреть данные после сброса учетной записи."
-      ],
-      "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password.": [
-        "Фразу для восстановления доступа к учетной записи позволит вам зайти в ваш аккаунт и восстановить ваши зашифрованные сообщения, если вы забудете ваш пароль."
-      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Пользователь – это учетная запись, связанная с одним именем пользователя, почтовым ящиком и лицом"
       ],
@@ -4334,9 +4325,6 @@
       ],
       "Admin account allocation": [
         "Распределение аккаунтов администраторов"
-      ],
-      "After a password reset your data is locked in encrypted form to keep it safe.": [
-        "После сброса пароля ваши данные блокируются в зашифрованном виде для обеспечения их сохранности."
       ],
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
         "После внесения оплаты Bitcoin, пожалуйста, следуйте согласно указаниям ниже, чтобы произвести улучшение."
@@ -4850,9 +4838,6 @@
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Импорт ваших данных из ${ importedEmailAddress } в ${ toEmail }."
-      ],
-      "In case you lose your login details, we’ll send you recovery instructions via email or SMS.": [
-        "В случае, если вы потеряете информацию для входа, мы отправим вам инструкцию на электронную почту или через SMS."
       ],
       "Inherited from parent folder": [
         "Унаследовано от родительской папки"
@@ -5433,15 +5418,6 @@
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
         "Для постоянного совершенствования наших услуг мы иногда собираем данные для контроля надлежащего функционирования наших приложений. Эта информация не передается никаким сторонним службам."
       ],
-      "To decrypt and view your emails and other data, you need a recovery file.": [
-        "Для расшифровки и просмотра писем и других данных необходим файл восстановления."
-      ],
-      "To decrypt and view your emails and other data, you need a recovery phrase or recovery file.": [
-        "Для расшифровки и просмотра писем и других данных вам понадобится фраза восстановления или файл восстановления."
-      ],
-      "To decrypt and view your emails and other data, you need a recovery phrase.": [
-        "Для расшифровки и просмотра писем и других данных необходима фраза восстановления."
-      ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Чтобы расшифровать и просмотреть заблокированные данные после сброса пароля, выберите метод восстановления."
       ],
@@ -5738,9 +5714,6 @@
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Скоро вы будете перенаправлены на сайт PayPal для подтверждения вашего платежа."
-      ],
-      "You won't be able to recover encrypted data after an account reset using your downloaded recovery files.": [
-        "Вы не сможете восстановить зашифрованные данные после сброса аккаунта с помощью скачанных файлов восстановления."
       ],
       "You'll stay signed in even after you close the browser.": [
         "Вы сохраните авторизацию даже после закрытия браузера."
@@ -10228,6 +10201,9 @@
       ],
       "Sign in and grant access": [
         "Войдите и предоставьте доступ"
+      ],
+      "Sign out": [
+        "Выйти"
       ],
       "Sort folders alphabetically": [
         "Сортировать папки по алфавиту"

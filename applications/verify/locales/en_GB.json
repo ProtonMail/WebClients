@@ -11,14 +11,17 @@
       "Close": [
         "Close"
       ],
-      "Close modal": [
-        "Close modal"
+      "Didn't receive the code?": [
+        "Didn't receive the code?"
       ],
       "Edit email address": [
         "Edit email address"
       ],
       "Edit phone number": [
         "Edit phone number"
+      ],
+      "Edit sign-in details": [
+        "Edit sign-in details"
       ],
       "Get verification code": [
         "Get verification code"
@@ -29,6 +32,9 @@
       "Request new code": [
         "Request new code"
       ],
+      "Search countries": [
+        "Search countries"
+      ],
       "Submit": [
         "Submit"
       ],
@@ -37,6 +43,12 @@
       ],
       "Verify": [
         "Verify"
+      ],
+      "Verify account": [
+        "Verify account"
+      ],
+      "Verify email": [
+        "Verify email"
       ],
       "View invoice": [
         "View invoice"
@@ -61,7 +73,7 @@
         "Invalid number"
       ],
       "Passwords do not match": [
-        "Passwords do not match"
+        "Password doesn’t match"
       ],
       "This field is required": [
         "This field is required"
@@ -74,8 +86,17 @@
       ]
     },
     "Error message": {
+      "Error: ${ errorMessage }": [
+        "Error: ${ errorMessage }"
+      ],
       "Oops, something went wrong": [
         "Oops, something went wrong"
+      ],
+      "Please ${ refresh } or check your connection.": [
+        "Please ${ refresh } or check your connection."
+      ],
+      "There was a problem connecting to Proton.": [
+        "There was a problem connecting to Proton."
       ]
     },
     "Human verification method": {
@@ -96,6 +117,9 @@
       ]
     },
     "Info": {
+      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
+        "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address."
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it."
       ],
@@ -117,8 +141,14 @@
       "To fight spam and abuse, please verify you are human.": [
         "To fight spam and abuse, please verify you are human."
       ],
+      "We'll send a new verification code to ${ strong }": [
+        "We'll send a new verification code to ${ strong }"
+      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Would you like to receive a new verification code or use an alternative verification method?"
+      ],
+      "Would you like to receive a new verification code?": [
+        "Would you like to receive a new verification code?"
       ],
       "Your email will only be used for this one-time verification.": [
         "Your email will only be used for this one-time verification."
@@ -158,6 +188,11 @@
         "Request an invite"
       ]
     },
+    "Placeholder": {
+      "Password": [
+        "Password"
+      ]
+    },
     "Success": {
       "Code sent to ${ methodTo }": [
         "Code sent to ${ methodTo }"
@@ -172,6 +207,9 @@
       ],
       "Invalid verification code": [
         "Invalid verification code"
+      ],
+      "Request new code": [
+        "Request new code"
       ],
       "Sign in again to continue": [
         "Sign in again to continue"

@@ -75,7 +75,7 @@
         "所有非星标邮件"
       ],
       "Allow messages": [
-        "允许邮件"
+        "允许接收其邮件"
       ],
       "Apply": [
         "应用"
@@ -151,9 +151,6 @@
       ],
       "Close composer": [
         "关闭编辑窗"
-      ],
-      "Close modal": [
-        "Close"
       ],
       "Close navigation": [
         "关闭导航栏"
@@ -1072,6 +1069,9 @@
       ],
       "Star message": [
         "星标邮件"
+      ],
+      "Unread email": [
+        "未读邮件"
       ],
       "Unstar conversation": [
         "取消星标会话"
@@ -3864,7 +3864,7 @@
         "10 个电子邮件地址"
       ],
       "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
-        "“恢复密语”是保护账户访问权限的最安全方法之一。如果您忘记了密码，您可以用它来访问账户并恢复加密数据。"
+        "恢复密语为您对账户的控制权提供了可靠保障。假如您不慎忘记密码，可以通过它找回账户并解锁所有加密的数据。"
       ],
       "A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.": [
         "此操作将向邮件发送方请求退订，并由其自动处理退订请求。"
@@ -4395,7 +4395,7 @@
         "请填写此项。"
       ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
-        "请妥善保管。如果遇到密码重置，您将需要通过它来访问您的账户以及解密您的数据。"
+        "请妥善保存，将来如需重置密码，只有通过它才能恢复账户并解密数据。"
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "请注意，分配给此组的地址将不会被删除。"
@@ -4441,6 +4441,9 @@
       ],
       "Recipient: ": [
         "收件人："
+      ],
+      "Recovery information will remain on this device unless you select to delete it.": [
+        "只要不选择删除，账户数据恢复信息就会一直保存在此设备上。"
       ],
       "Recovery phrase copied to clipboard": [
         "恢复短语已复制到剪贴板"
@@ -4710,7 +4713,7 @@
         "要给联系人重新签名，我们需要对照您账户中可用的密钥列表来检查每一位联系人。如果找不到匹配项，您的联系人将使用主密钥重新签名。"
       ],
       "To recover your data, you need to re-activate the contact encryption key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
-        "要想恢复数据，您需要重新激活创建数据时使用的联系人密钥。该过程需提供生成密钥时使用的密码。"
+        "恢复数据需要重新激活数据创建时使用的通讯录密钥，这意味着您必须持有生成该密钥时的账户密码。"
       ],
       "To unsubscribe from this mailing list, an email will be sent from ${ boldFrom } with following details as defined by the sender of the newsletter:": [
         "退订此邮件列表需要从 ${ boldFrom } 向列表发送者发送其指定的下列信息："
@@ -4965,7 +4968,7 @@
         "您的恢复密语"
       ],
       "Your recovery phrase is a series of 12 words in a specific order.": [
-        "恢复密语是按特定顺序排列的一系列 12 个单词。"
+        "恢复密语是按特定顺序排列的 12 个英文单词。"
       ]
     },
     "info": {
@@ -5303,6 +5306,9 @@
       ],
       "Delete": [
         "删除"
+      ],
+      "Delete recovery-related information.": [
+        "删除恢复相关的数据"
       ],
       "Do not ask again": [
         "不再询问"
@@ -5744,6 +5750,9 @@
       "Upgrade account": [
         "升级账户"
       ],
+      "What’s this?": [
+        "这是什么？"
+      ],
       "You need to activate your calendar keys to add this event": [
         "您需要激活您的日历密钥才能添加此日程"
       ],
@@ -6142,8 +6151,8 @@
       ]
     },
     "Pagination": {
-      "${ page } of ${ total }": [
-        "${ page } / ${ total }"
+      "${ page } of ${ totalText }": [
+        "${ page } / ${ totalText }"
       ]
     },
     "Paid user checklist item": {
@@ -6500,11 +6509,6 @@
       ],
       "Sender's trusted keys verification failed": [
         "已信任的发件人密钥验证失败"
-      ]
-    },
-    "Sort": {
-      "Sort": [
-        "排序"
       ]
     },
     "Sort option": {
@@ -7277,6 +7281,9 @@
       ],
       "Sign in and grant access": [
         "登录并授予权限"
+      ],
+      "Sign out": [
+        "退出"
       ],
       "Sort conversations": [
         "会话排序"

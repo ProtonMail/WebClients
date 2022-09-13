@@ -152,9 +152,6 @@
       "Close composer": [
         "Chiudi il compositore"
       ],
-      "Close modal": [
-        "Close"
-      ],
       "Close navigation": [
         "Chiudi navigazione"
       ],
@@ -1076,6 +1073,9 @@
       ],
       "Star message": [
         "Aggiungi messaggio ai preferiti"
+      ],
+      "Unread email": [
+        "Email non lette"
       ],
       "Unstar conversation": [
         "Rimuovi conversazione dai preferiti"
@@ -6239,8 +6239,8 @@
       ]
     },
     "Pagination": {
-      "${ page } of ${ total }": [
-        "Pagina ${ page } di ${ total }"
+      "${ page } of ${ totalText }": [
+        "${ page } di ${ totalText }"
       ]
     },
     "Paid user checklist item": {
@@ -6605,11 +6605,6 @@
       ],
       "Sender's trusted keys verification failed": [
         "Verifica delle chiavi attendibili del mittente fallita"
-      ]
-    },
-    "Sort": {
-      "Sort": [
-        "Ordina"
       ]
     },
     "Sort option": {
@@ -7418,6 +7413,9 @@
       ],
       "Sign in and grant access": [
         "Accedi e concedi l'accesso"
+      ],
+      "Sign out": [
+        "Esci"
       ],
       "Sort conversations": [
         "Ordina conversazioni"

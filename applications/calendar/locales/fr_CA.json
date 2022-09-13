@@ -83,9 +83,6 @@
       "Close event popover": [
         "Fermer la boite de dialogue de l'événement"
       ],
-      "Close modal": [
-        "Close"
-      ],
       "Close navigation": [
         "Fermer la navigation"
       ],
@@ -2229,6 +2226,10 @@
       "An unexpected error occurred. Import must be restarted.": [
         "Une erreur inattendue s'est produite. L'importation doit être relancée."
       ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } event.": [
+        "Votre fichier ${ formattedFilename } contient plus de ${ MAX_IMPORT_EVENTS_STRING } événement.",
+        "Votre fichier ${ formattedFilename } contient plus de ${ MAX_IMPORT_EVENTS_STRING } événements."
+      ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "Votre fichier ${ formattedFilename } possède une forme invalide et ne peut être importé."
       ],
@@ -3080,6 +3081,9 @@
       "Priority support": [
         "Assistance prioritaire"
       ],
+      "Recovery information will remain on this device unless you select to delete it.": [
+        "Les informations de récupération resteront sur cet appareil jusqu'à ce que vous demandiez à les supprimer."
+      ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Rafraîchir la page ou ${ link } résoudra automatiquement la plupart des problèmes."
       ],
@@ -3166,6 +3170,9 @@
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Ce lien mène à un site Web qui pourrait essayer de voler vos informations, comme les mots de passe et les détails de carte de crédit."
+      ],
+      "This link may be a homograph attack and cannot be opened by Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
+        "Ce lien pourrait être une attaque homographique et ne peut pas être ouvert avec le navigateur Edge. Si vous êtes certain de la légitimité de ce lien, utilisez un autre navigateur pour l'ouvrir."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Ce lien pourrait être une attaque homographique. Veuillez vous assurer qu'il s'agit bien du lien que vous souhaitez visiter ou ne l'ouvrez pas."
@@ -3427,6 +3434,9 @@
       "Delete": [
         "Supprimer"
       ],
+      "Delete recovery-related information.": [
+        "Supprimer les informations liées à la récupération."
+      ],
       "Description": [
         "Description"
       ],
@@ -3522,6 +3532,9 @@
       ],
       "Mailbox password": [
         "Mot de passe de messagerie"
+      ],
+      "Manage categories": [
+        "Gérer les catégories"
       ],
       "Manage folders": [
         "Gérer les dossiers"
@@ -3692,6 +3705,9 @@
       ],
       "Upgrade account": [
         "Changer d'offre"
+      ],
+      "What’s this?": [
+        "Qu'est-ce que c'est?"
       ]
     },
     "Loading info": {
@@ -4367,6 +4383,9 @@
       "Don't miss any events": [
         "Ne manquez aucun événement"
       ],
+      "Easily accept invites": [
+        "Acceptez facilement les invitations"
+      ],
       "Get up to 18 months of ${ planName } for free": [
         "Obtenez jusqu'à 18 mois de ${ planName } gratuitement"
       ],
@@ -4375,6 +4394,9 @@
       ],
       "No more missed appointments": [
         "Plus de rendez-vous manqués"
+      ],
+      "Now invitations appear in your calendar as pending events. Just open an event to respond. ${ goToSettingsLink }": [
+        "Les invitations sont maintenant affichées dans votre calendrier comme des événements en attente. Pour répondre, il suffit d'ouvrir un événement. ${ goToSettingsLink }"
       ],
       "Try ${ DRIVE_APP_NAME }": [
         "Essayez ${ DRIVE_APP_NAME }"
@@ -4988,6 +5010,9 @@
       "Sign in and grant access": [
         "Se connecter et donner l'accès"
       ],
+      "Sign out": [
+        "Se déconnecter"
+      ],
       "Update event": [
         "Mettre à jour l'événement"
       ],
@@ -5047,6 +5072,9 @@
       ],
       "Encrypted data with verified digital signature": [
         "Données chiffrées avec une signature numérique vérifiée"
+      ],
+      "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
+        "Gmail catégorise automatiquement certains courriels comme « Réseau sociaux » ou « Promotions ». Vous pouvez sélectionner où importer ces courriels."
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Sélectionnez le schéma PGP à utiliser lors de la signature ou du chiffrement vers un autre utilisateur. Notez que PGP/Inline force le format des messages en texte brut"

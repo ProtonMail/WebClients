@@ -142,9 +142,6 @@
       "Close": [
         "關閉"
       ],
-      "Close modal": [
-        "Close"
-      ],
       "Close navigation": [
         "關閉導覽"
       ],
@@ -637,6 +634,9 @@
       "Search settings": [
         "搜尋的設定值"
       ],
+      "See plan features": [
+        "看看方案功能"
+      ],
       "Select ${ planTitle }": [
         "選擇方案 ${ planTitle }"
       ],
@@ -814,14 +814,14 @@
       "View plans details": [
         "檢視方案詳細內容"
       ],
+      "Void": [
+        "無效"
+      ],
       "Void all recovery files": [
         "廢止所有帳號救援檔案"
       ],
       "Void all recovery files?": [
         "要廢止所有帳號救援檔案嗎？"
-      ],
-      "Void anyway": [
-        "仍然廢止"
       ],
       "What do I get?": [
         "我的方案服務內容"
@@ -3773,9 +3773,6 @@
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "一個好記且讓您很快辨識它用在何處，如此一來就可輕鬆將其撤銷或是延展。"
       ],
-      "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password.": [
-        "如果您忘記密碼，復原短語將讓您可以存取您的帳號並復原您的加密訊息。"
-      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "一位使用者意味著一個帳號與單一使用者名稱、信箱及個人對應"
       ],
@@ -3820,9 +3817,6 @@
       ],
       "Admin account allocation": [
         "管理員帳號指派"
-      ],
-      "After a password reset your data is locked in encrypted form to keep it safe.": [
-        "在重設密碼之後，您的資料將上鎖以確保安全。"
       ],
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
         "進行比特幣付款後，請依照下列指示來升級。"
@@ -4288,9 +4282,6 @@
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "匯入您的資料自 ${ importedEmailAddress } 至 ${ toEmail }。"
-      ],
-      "In case you lose your login details, we’ll send you recovery instructions via email or SMS.": [
-        "如果您遺失了您的登入資訊，我們將會透過電郵或簡訊傳送救援資訊給您。"
       ],
       "Inherited from parent folder": [
         "繼承自上層資料夾"
@@ -4859,15 +4850,6 @@
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
         "為持續精進我們的服務品質，我們有時會蒐集一些資料用以監控應用程式的功能是否正常。此類資訊不會與第三方服務共享。"
       ],
-      "To decrypt and view your emails and other data, you need a recovery file.": [
-        "為解密您的郵件與其它資料，需要帳號救援檔案"
-      ],
-      "To decrypt and view your emails and other data, you need a recovery phrase or recovery file.": [
-        "為解密您的郵件與其它資料，需要救援短語或是帳號救援檔案"
-      ],
-      "To decrypt and view your emails and other data, you need a recovery phrase.": [
-        "為解密您的郵件與其它資料，需要救援短語"
-      ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "為了能在密碼重設後存取加密的資料，選擇帳號復原方法。"
       ],
@@ -5146,9 +5128,6 @@
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "即將重新導向到 PayPal 驗證您的付款。"
-      ],
-      "You won't be able to recover encrypted data after an account reset using your downloaded recovery files.": [
-        "在你重設帳號後，你將無法使用先前下載的帳號救援金鑰復原你的帳號。"
       ],
       "You'll stay signed in even after you close the browser.": [
         "即使關閉瀏覽器，您仍會維持登入狀態。"
@@ -6096,6 +6075,9 @@
       ],
       "No label found": [
         "找不到標籤"
+      ],
+      "Non Spam": [
+        "非垃圾郵件"
       ],
       "Non-standard ports": [
         "非標準的連接埠"
@@ -8839,6 +8821,9 @@
       ],
       "Sign in and grant access": [
         "登入並授予存取權"
+      ],
+      "Sign out": [
+        "登出"
       ],
       "Sort folders alphabetically": [
         "按英文字母排序資料夾"

@@ -151,9 +151,6 @@
       "Close": [
         "Chiudi"
       ],
-      "Close modal": [
-        "Close"
-      ],
       "Close navigation": [
         "Chiudi navigazione"
       ],
@@ -646,6 +643,9 @@
       "Search settings": [
         "Impostazioni di ricerca"
       ],
+      "See plan features": [
+        "Visualizzare le funzionalità del piano"
+      ],
       "Select ${ planTitle }": [
         "Seleziona ${ planTitle }"
       ],
@@ -823,14 +823,14 @@
       "View plans details": [
         "Visualizza i dettagli del piano"
       ],
+      "Void": [
+        "Nullo"
+      ],
       "Void all recovery files": [
         "Annullare tutti i file di ripristino"
       ],
       "Void all recovery files?": [
         "Annullare tutti i file di ripristino?"
-      ],
-      "Void anyway": [
-        "Annulla comunque"
       ],
       "What do I get?": [
         "Cosa ottengo?"
@@ -4164,12 +4164,6 @@
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Un nome che aiuti a ricordarne l'utilizzo, in modo da facilitare la revoca o l'estensione in un secondo momento."
       ],
-      "A recovery file lets you unlock and view your data after an account reset.": [
-        "Un file di ripristino ti consente di sbloccare e visualizzare i tuoi dati dopo il ripristino dell'account."
-      ],
-      "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password.": [
-        "Una frase di recupero ti consente di accedere al tuo account e recuperare i tuoi messaggi crittografati se dimentichi la password."
-      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Un utente è un account associato a un unico nome utente, cassetta postale e persona"
       ],
@@ -4215,9 +4209,6 @@
       ],
       "Admin account allocation": [
         "Allocazione dell'account amministratore"
-      ],
-      "After a password reset your data is locked in encrypted form to keep it safe.": [
-        "Dopo la reimpostazione della password, i tuoi dati vengono bloccati in forma crittografata per tenerli al sicuro."
       ],
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
         "Dopo aver effettuato il pagamento in Bitcoin, segui le istruzioni qui sotto per effettuare l'upgrade."
@@ -4721,9 +4712,6 @@
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Importazione dei tuoi dati da ${ importedEmailAddress } a ${ toEmail }."
-      ],
-      "In case you lose your login details, we’ll send you recovery instructions via email or SMS.": [
-        "Nel caso in cui dovessi perdere i tuoi dati di accesso, ti invieremo le istruzioni per il recupero via e-mail o SMS."
       ],
       "Inherited from parent folder": [
         "Ereditato dalla cartella superiore"
@@ -5300,15 +5288,6 @@
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
         "Per migliorare continuamente i nostri servizi, a volte raccogliamo dati per monitorare il corretto funzionamento delle nostre applicazioni. Queste informazioni non sono condivise con servizi di terze parti."
       ],
-      "To decrypt and view your emails and other data, you need a recovery file.": [
-        "Per decrittografare e visualizzare le tue e-mail e altri dati, hai bisogno di un file di ripristino."
-      ],
-      "To decrypt and view your emails and other data, you need a recovery phrase or recovery file.": [
-        "Per decrittografare e visualizzare le tue email e altri dati, necessiti di una frase o un file di ripristino."
-      ],
-      "To decrypt and view your emails and other data, you need a recovery phrase.": [
-        "Per decrittografare e visualizzare le tue e-mail e altri dati, hai bisogno di una frase di ripristino."
-      ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Per decrittografare e visualizzare i dati bloccati dopo la reimpostazione della password, seleziona un metodo di ripristino."
       ],
@@ -5605,9 +5584,6 @@
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Sarai presto reindirizzato a PayPal per verificare il pagamento."
-      ],
-      "You won't be able to recover encrypted data after an account reset using your downloaded recovery files.": [
-        "Non sarai in grado di recuperare i dati crittografati dopo il ripristino dell'account utilizzando i file di ripristino scaricati."
       ],
       "You'll stay signed in even after you close the browser.": [
         "Rimarrai connesso anche dopo aver chiuso il browser."
@@ -9999,6 +9975,9 @@
       ],
       "Sign in and grant access": [
         "Accedi e concedi l'accesso"
+      ],
+      "Sign out": [
+        "Esci"
       ],
       "Sort folders alphabetically": [
         "Ordina le cartelle in modo alfabetico"

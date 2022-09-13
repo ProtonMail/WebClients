@@ -131,9 +131,6 @@
       "Close": [
         "Κλείσιμο"
       ],
-      "Close modal": [
-        "Close"
-      ],
       "Close navigation": [
         "Κλείσιμο μενού πλοήγησης"
       ],
@@ -773,14 +770,14 @@
       "View plans details": [
         "Προβολή λεπτομερειών προγραμμάτων"
       ],
+      "Void": [
+        "Κενό"
+      ],
       "Void all recovery files": [
         "Ακύρωση όλων των αρχείων ανάκτησης"
       ],
       "Void all recovery files?": [
         "Ακύρωση όλων των αρχείων ανάκτησης;"
-      ],
-      "Void anyway": [
-        "Ακύρωση οπωσδήποτε"
       ],
       "Wipe": [
         "Εκκαθάριση"
@@ -3728,9 +3725,6 @@
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Ένα όνομα που σας βοηθά να αναγνωρίζετε πού το χρησιμοποιείτε, ώστε αργότερα να μπορείτε εύκολα να το ανακαλέσετε ή επεκτείνετε."
       ],
-      "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password.": [
-        "Μια φράση ανάκτησης, σας επιτρέπει να έχετε πρόσβαση στο λογαριασμό σας και να ανακτήσετε τα κρυπτογραφημένα μηνύματά σας εάν ξεχάσετε τον κωδικό πρόσβασής σας."
-      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Χρήστης νοείται ένας λογαριασμός συσχετισμένος με μοναδικό όνομα, θυρίδα και πρόσωπο"
       ],
@@ -3776,9 +3770,6 @@
       ],
       "Admin account allocation": [
         "Κατανομή στον λογαριασμό του διαχειριστή"
-      ],
-      "After a password reset your data is locked in encrypted form to keep it safe.": [
-        "Έπειτα από την επαναφορά του κωδικού τα δεδομένα σας κλειδώνονται σε κρυπτογραφημένη μορφή για να διασφαλίσουμε."
       ],
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
         "Αφού κάνετε την πληρωμή Bitcoin, ακολουθήστε τις παρακάτω οδηγίες για αναβάθμιση."
@@ -4243,9 +4234,6 @@
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Γίνεται εισαγωγή δεδομένων από ${ importedEmailAddress } προς ${ toEmail }."
-      ],
-      "In case you lose your login details, we’ll send you recovery instructions via email or SMS.": [
-        "Σε περίπτωση που χάσετε τα στοιχεία σύνδεσής σας, θα σας στείλουμε οδηγίες ανάκτησης μέσω email ή SMS."
       ],
       "Inherited from parent folder": [
         "Κληρονoμήθηκαν από το γονικό φάκελο"
@@ -4792,15 +4780,6 @@
       "to continue to ${ toAppName }": [
         "για συνέχιση στο ${ toAppName }"
       ],
-      "To decrypt and view your emails and other data, you need a recovery file.": [
-        "Για να αποκρυπτογραφήσετε και να δείτε τα email και άλλα δεδομένα, χρειάζεστε ένα αρχείο ανάκτησης."
-      ],
-      "To decrypt and view your emails and other data, you need a recovery phrase or recovery file.": [
-        "Για να αποκρυπτογραφήσετε και να δείτε τα email και άλλα δεδομένα, χρειάζεστε μια φράση ανάκτησης ή ένα αρχείο ανάκτησης."
-      ],
-      "To decrypt and view your emails and other data, you need a recovery phrase.": [
-        "Για να αποκρυπτογραφήσετε και να δείτε τα email και άλλα δεδομένα, χρειάζεστε μια φράση ανάκτησης."
-      ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Για αποκρυπτογράφηση και προβολή των κλειδωμένων δεδομένων σας μετά από επαναφορά κωδικού πρόσβασης, επιλέξτε μια μέθοδο ανάκτησης."
       ],
@@ -5064,9 +5043,6 @@
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Θα ανακατευθυνθείτε σύντομα στο Paypal, για να επαληθεύσετε την πληρωμή σας."
-      ],
-      "You won't be able to recover encrypted data after an account reset using your downloaded recovery files.": [
-        "Η επαναφορά λογαριασμού καθιστά αδύνατη την ανάκτηση κρυπτογραφημένων δεδομένων με χρήση κατεβασμένων αρχείων ανάκτησης."
       ],
       "You'll stay signed in even after you close the browser.": [
         "Η είσοδός σας θα διατηρηθεί ακόμα και μετά το κλείσιμο του περιηγητή."
@@ -8765,6 +8741,9 @@
       ],
       "Sign in and grant access": [
         "Εισέλθετε και παραχωρήστε πρόσβαση"
+      ],
+      "Sign out": [
+        "Αποσύνδεση"
       ],
       "Sort folders alphabetically": [
         "Ταξινόμηση φακέλων αλφαβητικά"

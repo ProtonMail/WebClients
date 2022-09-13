@@ -113,7 +113,7 @@
         "Назад"
       ],
       "Block": [
-        "Заблкувати"
+        "Заблокувати"
       ],
       "Bold": [
         "Жирний"
@@ -150,9 +150,6 @@
       ],
       "Close": [
         "Закрити"
-      ],
-      "Close modal": [
-        "Close"
       ],
       "Close navigation": [
         "Закрити панель навігації"
@@ -646,6 +643,9 @@
       "Search settings": [
         "Шукати налаштування"
       ],
+      "See plan features": [
+        "Переглянути можливості тарифного плану"
+      ],
       "Select ${ planTitle }": [
         "Оберіть ${ planTitle }"
       ],
@@ -823,14 +823,14 @@
       "View plans details": [
         "Переглянути подробиці тарифного плану"
       ],
+      "Void": [
+        "Анульовано"
+      ],
       "Void all recovery files": [
         "Видалити всі файли відновлення"
       ],
       "Void all recovery files?": [
         "Видалити всі файли відновлення?"
-      ],
-      "Void anyway": [
-        "Все одно видалити"
       ],
       "What do I get?": [
         "Що я отримую?"
@@ -4284,11 +4284,11 @@
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Назва, яка допоможе вам визначити, де ви використовуєте його, щоб ви могли легко відкликати його або продовжити його пізніше."
       ],
-      "A recovery file lets you unlock and view your data after an account reset.": [
-        "Файл відновлення дає змогу розблокувати й переглянути дані після скидання облікового запису."
+      "A recovery file lets you unlock and view your data after an account reset": [
+        "Файл відновлення забезпечує можливість розблокування та перегляду даних після скидання облікового запису"
       ],
-      "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password.": [
-        "Фраза відновлення дає вам змогу отримати доступ до облікового запису та відновити зашифровані повідомлення, якщо ви забудете пароль."
+      "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password": [
+        "Фраза відновлення дасть змогу отримати доступ до вашого облікового запису та відновити зашифровані повідомлення, якщо ви забудете пароль"
       ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Користувач — це обліковий запис, пов'язаний з певним іменем користувача, поштовою скринькою та людиною"
@@ -4307,6 +4307,9 @@
       ],
       "Account successfully updated": [
         "Обліковий запис успішно оновлено"
+      ],
+      "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
+        "Активуйте принаймні один метод відновлення даних, щоб не втратити доступ до вмісту свого облікового запису ${ BRAND_NAME }, якщо ви забудете пароль."
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Додайте адресу @pm.me до свого облікового запису. Цей простий короткий домен означає скорочення від «${ MAIL_APP_NAME } me» або «Private Message me.»"
@@ -4337,9 +4340,6 @@
       ],
       "Admin account allocation": [
         "Розподілення для облікового запису адміністратора"
-      ],
-      "After a password reset your data is locked in encrypted form to keep it safe.": [
-        "Після скидання пароля, з міркувань безпеки, ваші дані блокуються в зашифрованому вигляді."
       ],
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
         "Після здійснення платежу в Bitcoin, дотримуйтесь наведених далі настанов для оновлення."
@@ -4854,9 +4854,6 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Імпортування ваших даних із ${ importedEmailAddress } до ${ toEmail }."
       ],
-      "In case you lose your login details, we’ll send you recovery instructions via email or SMS.": [
-        "Якщо ви втратите свої облікові дані для входу, ми надішлемо вам інструкції з відновлення електронною поштою або в SMS."
-      ],
       "Inherited from parent folder": [
         "Успадковано від теки вищого рівня"
       ],
@@ -5196,11 +5193,17 @@
       "read our two-factor authentication guide first": [
         "прочитайте спершу нашу інструкцію про двоетапну перевірку"
       ],
+      "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
+        "Рекомендовано на довірених пристроях. ${ keepMeSignedInLearnMoreLink }"
+      ],
       "Recovery file downloaded": [
         "Файл відновлення завантажено"
       ],
       "Recovery files have been voided": [
         "Фали відновлення були видалені"
+      ],
+      "Recovery information will remain on this device unless you select to delete it.": [
+        "Інформація про відновлення залишиться на цьому пристрої, якщо ви не вирішите її видалити."
       ],
       "recovery method": [
         "спосіб відновлення"
@@ -5436,15 +5439,6 @@
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
         "Щоб постійно вдосконалювати наші служби, ми іноді збираємо дані для моніторингу належного функціонування наших застосунків. Ці дані не передаються жодним стороннім службам."
       ],
-      "To decrypt and view your emails and other data, you need a recovery file.": [
-        "Щоб розшифрувати й переглядати свої дані, вам необхідний файл відновлення."
-      ],
-      "To decrypt and view your emails and other data, you need a recovery phrase or recovery file.": [
-        "Щоб розшифрувати й переглядати свої дані, вам необхідна фраза або файл відновлення."
-      ],
-      "To decrypt and view your emails and other data, you need a recovery phrase.": [
-        "Щоб розшифрувати й переглядати свої дані, вам необхідна фраза відновлення."
-      ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Щоб розшифрувати й переглянути свої заблоковані дані після скидання пароля, виберіть спосіб відновлення."
       ],
@@ -5574,6 +5568,9 @@
       "We recommend using your recovery phrase instead.": [
         "Радимо натомість скористатися вашою фразою відновлення."
       ],
+      "We securely store recovery information on your trusted device to prevent you from losing your data": [
+        "Ми надійно зберігаємо інформацію для відновлення на вашому довіреному пристрої, щоб запобігти втраті ваших даних"
+      ],
       "We use 3-D Secure to protect your payments.": [
         "Ми використовуємо 3-D Secure для захисту ваших платежів."
       ],
@@ -5618,6 +5615,9 @@
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "При продовженні вашої передплати ми застосуємо наявні кредити в першу чергу перед використанням зазначеного вище способу оплати."
+      ],
+      "Why?": [
+        "Навіщо?"
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Без активації ви не зможете створювати нових користувачів, додавати адреси для наявних користувачів або мати доступ до не приватних облікових записів."
@@ -5742,8 +5742,11 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "Вас невдовзі буде перенаправлено до PayPal для підтвердження платежу."
       ],
-      "You won't be able to recover encrypted data after an account reset using your downloaded recovery files.": [
-        "Ви не зможете відновити зашифровані дані після скидання облікового запису за допомогою завантажених файлів відновлення."
+      "You won’t be able to recover locked data using your downloaded recovery files.": [
+        "Ви не зможете відновити заблоковані дані за допомогою завантажених файлів відновлення."
+      ],
+      "You won’t be able to recover locked data using your downloaded recovery files. This will also void trusted device-recovery information.": [
+        "Ви не зможете відновити заблоковані дані за допомогою завантажених файлів відновлення. Це також призведе до втрати довіреної інформації для відновлення пристрою."
       ],
       "You'll stay signed in even after you close the browser.": [
         "Сеанс буде активним навіть після закриття браузера."
@@ -6296,6 +6299,9 @@
       "Allow recovery by recovery phrase": [
         "Дозволити доступ за фразою відновлення"
       ],
+      "Allow recovery using a trusted device": [
+        "Дозволити відновлення за допомогою довіреного пристрою"
+      ],
       "Amount": [
         "Всього"
       ],
@@ -6499,6 +6505,9 @@
       ],
       "Delete": [
         "Видалити"
+      ],
+      "Delete recovery-related information.": [
+        "Видалити інформацію повʼязану з відновленням."
       ],
       "Density": [
         "Щільність"
@@ -7053,6 +7062,9 @@
       ],
       "Recovery phrase": [
         "Фраза відновлення"
+      ],
+      "Trusted device recovery": [
+        "Відновлення за допомогою довіреного пристрою"
       ]
     },
     "Label for adding a new custom domain": {
@@ -7229,6 +7241,9 @@
       "Learn more": [
         "Докладніше"
       ],
+      "Learn more about data recovery": [
+        "Дізнатися більше про відновлення даних"
+      ],
       "Need help?": [
         "Потрібна допомога?"
       ],
@@ -7273,6 +7288,9 @@
       ],
       "What is the difference between UDP and TCP protocols?": [
         "Яка різниця між протоколами UDP і TCP?"
+      ],
+      "What’s this?": [
+        "Що це?"
       ],
       "Why set recovery methods?": [
         "Навіщо додавати спосіб відновлення?"
@@ -10231,6 +10249,9 @@
       ],
       "Sign in and grant access": [
         "Увійдіть і надайте доступ"
+      ],
+      "Sign out": [
+        "Вийти"
       ],
       "Sort folders alphabetically": [
         "Сортувати теки за алфавітом"

@@ -11,9 +11,6 @@
       "Close": [
         "Sluiten"
       ],
-      "Close modal": [
-        "Sluit het venster"
-      ],
       "Didn't receive the code?": [
         "Code niet ontvangen?"
       ],
@@ -27,13 +24,13 @@
         "Bewerk aanmeldgegevens"
       ],
       "Get verification code": [
-        "Krijg verificatiecode"
+        "Krijg verificatie code"
       ],
       "refresh the page": [
-        "Ververs de pagina"
+        "pagina vernieuwen"
       ],
       "Request new code": [
-        "Vraag een nieuwe code aan"
+        "Nieuwe code aanvragen"
       ],
       "Search countries": [
         "Zoek landen"
@@ -899,10 +896,10 @@
         "Voer 6 cijfers in"
       ],
       "Invalid verification code": [
-        "Ongeldige verificatiecode"
+        "De ingevoerde code is ongeldig"
       ],
       "Not a valid number": [
-        "Ongeldig getal"
+        "Geen geldig getal"
       ],
       "Passwords do not match": [
         "Wachtwoorden komen niet overeen"
@@ -911,7 +908,7 @@
         "Reactietijd verzoek overschreden"
       ],
       "This field is required": [
-        "Dit veld is verplicht"
+        "Dit veld is vereist"
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Dit veld vereist een minimum van ${ minimumLength } tekens."
@@ -931,7 +928,7 @@
         "${ refresh } alstublieft of controleer uw verbinding."
       ],
       "Something went wrong. Please refresh the page or try again later.": [
-        "Er ging iets mis. Vernieuw de pagina of probeer later opnieuw."
+        "Er is iets misgegaan. Vernieuw de pagina of probeer het later opnieuw."
       ],
       "There was a problem connecting to Proton.": [
         "Fout bij het verbinden met Proton."
@@ -945,7 +942,7 @@
         "CAPTCHA"
       ],
       "Email": [
-        "E-mail"
+        "E-mailadres"
       ],
       "Manual": [
         "Handmatig"
@@ -965,13 +962,13 @@
         "Klik op \"Vraag nieuwe code aan\" om een nieuwe verificatiecode te sturen naar ${ strong }. Als dit telefoonnummer onjuist is, klik op \"Bewerken\" om het te corrigeren."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
-        "Voer de verificatiecode in die is verzonden naar ${ destinationText }."
+        "Vul de verificatiecode in die naar ${ destinationText } verzonden is."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Als u problemen ondervindt met het aanmaken van uw account, vraag dan een uitnodiging aan. Wij reageren op uw verzoek binnen een werkdag."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
-        "Als u de mail niet kunt vinden in uw inbox, check dan eerst de map 'Spam'."
+        "Als u de e-mail niet in de inbox kan vinden, check dan uw map met spam."
       ],
       "Internet connection lost": [
         "Internetverbinding verbroken"
@@ -995,7 +992,7 @@
         "We verzenden een nieuwe verificatiecode naar ${ strong }"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
-        "Wilt u een nieuwe verificatiecode ontvangen of een alternatieve verificatiemethode gebruiken?"
+        "Wilt u een nieuwe verificatiecode ontvangen of een alternatieve verificatiemethode kiezen?"
       ],
       "Would you like to receive a new verification code?": [
         "Wil u graag een nieuwe verificatiecode ontvangen?"
@@ -1059,7 +1056,7 @@
         "Persoonsverificatie"
       ],
       "Invalid verification code": [
-        "Ongeldige verificatiecode"
+        "De ingevoerde code is ongeldig"
       ],
       "Request new code": [
         "Nieuwe code aanvragen"
