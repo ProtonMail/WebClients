@@ -206,6 +206,10 @@ export const getShortcuts = () => {
                     keys: 'U',
                 },
                 {
+                    name: c('Keyboard shortcut name').t`Mark as read`,
+                    keys: 'R',
+                },
+                {
                     name: c('Keyboard shortcut name').t`Label as...`,
                     keys: 'L',
                 },
