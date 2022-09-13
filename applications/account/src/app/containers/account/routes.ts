@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 import { SectionConfig } from '@proton/components';
 import { ThemeColor } from '@proton/colors';
-import { DEFAULT_CURRENCY, PRODUCT_NAMES } from '@proton/shared/lib/constants';
+import { DEFAULT_CURRENCY, PRODUCT_NAMES, REFERRAL_PROGRAM_MAX_AMOUNT } from '@proton/shared/lib/constants';
 import { UserModel } from '@proton/shared/lib/interfaces';
 import { humanPriceWithCurrency } from '@proton/shared/lib/helpers/humanPrice';
 
@@ -19,7 +19,7 @@ export const getAccountAppRoutes = ({
     recoveryNotification?: ThemeColor;
 }) => {
     const { isFree, canPay, isPaid, isPrivate, isMember, Currency } = user;
-    const credits = humanPriceWithCurrency(9000, Currency || DEFAULT_CURRENCY);
+    const credits = humanPriceWithCurrency(REFERRAL_PROGRAM_MAX_AMOUNT, Currency || DEFAULT_CURRENCY);
     return <const>{
         header: c('Settings section title').t`Account`,
         routes: {
