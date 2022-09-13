@@ -83,9 +83,6 @@
       "Close event popover": [
         "Fechar"
       ],
-      "Close modal": [
-        "Close"
-      ],
       "Close navigation": [
         "Fechar navegação"
       ],
@@ -3084,6 +3081,9 @@
       "Priority support": [
         "Suporte prioritário"
       ],
+      "Recovery information will remain on this device unless you select to delete it.": [
+        "As informações de recuperação permanecerão neste dispositivo, a menos que você opte por excluí-las."
+      ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Atualizando a página ou ${ link } irá resolver automaticamente a maioria dos problemas."
       ],
@@ -3434,6 +3434,9 @@
       "Delete": [
         "Excluir"
       ],
+      "Delete recovery-related information.": [
+        "Excluir a informação de recuperação."
+      ],
       "Description": [
         "Descrição"
       ],
@@ -3702,6 +3705,9 @@
       ],
       "Upgrade account": [
         "Fazer upgrade de conta"
+      ],
+      "What’s this?": [
+        "O que é isso?"
       ]
     },
     "Loading info": {
@@ -4374,6 +4380,9 @@
       "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
         "${ DRIVE_APP_NAME } saiu do beta! Dê aos seus arquivos a mesma segurança que seus e-mails recebem."
       ],
+      "Don't miss any events": [
+        "Não perca nenhum evento"
+      ],
       "Easily accept invites": [
         "Aceita facilmente convites"
       ],
@@ -4386,11 +4395,17 @@
       "No more missed appointments": [
         "Não há mais compromissos perdidos"
       ],
+      "Now invitations appear in your calendar as pending events. Just open an event to respond. ${ goToSettingsLink }": [
+        "Agora os convites aparecem no seu calendário como eventos pendentes. Basta abrir um evento para responder. ${ goToSettingsLink }"
+      ],
       "Try ${ DRIVE_APP_NAME }": [
         "Experimente ${ DRIVE_APP_NAME }"
       ],
       "With email notifications, you decide which events to be notified about and when.": [
         "Com as notificações por e-mail, você decide sobre quais eventos será notificado e quando."
+      ],
+      "You can now add notifications to calendars you subscribed to.": [
+        "Agora você pode adicionar notificações aos calendários em que se inscreveu."
       ]
     },
     "Spotlight settings link": {
@@ -4994,6 +5009,9 @@
       ],
       "Sign in and grant access": [
         "Inicie sessão e conceda acesso"
+      ],
+      "Sign out": [
+        "Encerrar sessão"
       ],
       "Update event": [
         "Atualizar evento"

@@ -145,9 +145,6 @@
       "Close": [
         "Cerrar"
       ],
-      "Close modal": [
-        "Close"
-      ],
       "Close navigation": [
         "Cerrar la navegación"
       ],
@@ -631,6 +628,9 @@
       "Search countries": [
         "Buscar países"
       ],
+      "See plan features": [
+        "Ver las características del plan"
+      ],
       "Select ${ planTitle }": [
         "Selecciona ${ planTitle }"
       ],
@@ -808,14 +808,14 @@
       "View plans details": [
         "Ver detalles de los planes"
       ],
+      "Void": [
+        "Nula"
+      ],
       "Void all recovery files": [
         "Anular todos los archivos de recuperación"
       ],
       "Void all recovery files?": [
         "¿Anular todos los archivos de recuperación?"
-      ],
-      "Void anyway": [
-        "Anular de todos modos"
       ],
       "What do I get?": [
         "¿Qué obtengo?"
@@ -4026,9 +4026,6 @@
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Un nombre que te ayude a identificar dónde lo utilizas para poder revocarlo o ampliarlo fácilmente más adelante."
       ],
-      "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password.": [
-        "Una frase de recuperación te permite acceder a tu cuenta y recuperar tus mensajes cifrados si olvidas tu contraseña."
-      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Un usuario es una cuenta asociada a un único nombre de usuario, buzón y persona"
       ],
@@ -4074,9 +4071,6 @@
       ],
       "Admin account allocation": [
         "Asignación de cuenta de administrador"
-      ],
-      "After a password reset your data is locked in encrypted form to keep it safe.": [
-        "Al restablecer una contraseña, tus datos se bloquean con cifrado para mantenerlos seguros."
       ],
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
         "Después de realizar el pago con Bitcoin, sigue estas instrucciones para actualizar."
@@ -4569,9 +4563,6 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Importando tus datos desde ${ importedEmailAddress } a ${ toEmail }."
       ],
-      "In case you lose your login details, we’ll send you recovery instructions via email or SMS.": [
-        "En caso de que pierdas tus datos de acceso, te enviaremos las instrucciones de recuperación por correo electrónico o SMS."
-      ],
       "Inherited from parent folder": [
         "Heredado de la carpeta principal"
       ],
@@ -4907,6 +4898,9 @@
       "Recovery files have been voided": [
         "Los archivos de recuperación han sido anulados"
       ],
+      "Recovery information will remain on this device unless you select to delete it.": [
+        "La información de recuperación permanecerá en este dispositivo salvo que selecciones eliminarla."
+      ],
       "recovery method": [
         "método de recuperación"
       ],
@@ -5134,15 +5128,6 @@
       ],
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
         "Para mejorar continuamente nuestros servicios, a veces recopilamos datos para controlar el buen funcionamiento de nuestras aplicaciones. Esta información no se comparte con ningún servicio de terceros."
-      ],
-      "To decrypt and view your emails and other data, you need a recovery file.": [
-        "Para desencriptar y ver sus correos electrónicos y otros datos, necesitas un archivo de recuperación."
-      ],
-      "To decrypt and view your emails and other data, you need a recovery phrase or recovery file.": [
-        "Para descifrar y visualizar tus correos y otros datos, necesitas una frase o archivo de recuperación."
-      ],
-      "To decrypt and view your emails and other data, you need a recovery phrase.": [
-        "Para descifrar y ver tus correos y otros datos, necesitas una frase de recuperación."
       ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Selecciona el método de recuperación, para desencriptar y ver los datos protegidos después de resetear la contraseña."
@@ -5432,8 +5417,8 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "Pronto serás redirigido a PayPal para verificar tu pago."
       ],
-      "You won't be able to recover encrypted data after an account reset using your downloaded recovery files.": [
-        "No podrás recuperar datos cifrados después de restablecer la cuenta con los archivos de recuperación descargados."
+      "You won’t be able to recover locked data using your downloaded recovery files. This will also void trusted device-recovery information.": [
+        "No podrás recuperar datos bloqueados usando tus archivos de recuperación descargados. Esto también invalidará la información de recuperación de dispositivo de confianza."
       ],
       "You'll stay signed in even after you close the browser.": [
         "Seguirás conectado incluso después de cerrar el navegador."
@@ -6171,6 +6156,9 @@
       ],
       "Delete": [
         "Eliminar"
+      ],
+      "Delete recovery-related information.": [
+        "Eliminar la información de recuperación."
       ],
       "Density": [
         "Densidad"
@@ -6930,6 +6918,9 @@
       ],
       "What is the difference between UDP and TCP protocols?": [
         "¿Cuál es la diferencia entre los protocolos UDP y TCP?"
+      ],
+      "What’s this?": [
+        "¿Qué es esto?"
       ],
       "Why set recovery methods?": [
         "¿Por qué establecer métodos de recuperación?"
@@ -9745,6 +9736,9 @@
       ],
       "Sign in and grant access": [
         "Iniciar sesión y otorgar acceso"
+      ],
+      "Sign out": [
+        "Cerrar sesión"
       ],
       "Sort folders alphabetically": [
         "Ordenar carpetas alfabéticamente"

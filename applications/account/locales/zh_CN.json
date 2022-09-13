@@ -151,9 +151,6 @@
       "Close": [
         "关闭"
       ],
-      "Close modal": [
-        "Close"
-      ],
       "Close navigation": [
         "关闭导航栏"
       ],
@@ -646,6 +643,9 @@
       "Search settings": [
         "搜索设置"
       ],
+      "See plan features": [
+        "查看套餐内容"
+      ],
       "Select ${ planTitle }": [
         "开通 ${ planTitle }"
       ],
@@ -823,14 +823,14 @@
       "View plans details": [
         "查看等级详情"
       ],
+      "Void": [
+        "确定废除"
+      ],
       "Void all recovery files": [
-        "作废所有恢复文件"
+        "废除所有恢复文件"
       ],
       "Void all recovery files?": [
-        "作废所有恢复文件？"
-      ],
-      "Void anyway": [
-        "仍然作废"
+        "废除所有恢复文件？"
       ],
       "What do I get?": [
         "我可获得什么？"
@@ -4104,11 +4104,11 @@
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "名称中可注明证书用途，便于今后续期或吊销。"
       ],
-      "A recovery file lets you unlock and view your data after an account reset.": [
-        "恢复文件可让您在账户重置后解锁并查看数据。"
+      "A recovery file lets you unlock and view your data after an account reset": [
+        "假如将来需要重置账户，恢复文件可用于解锁您的数据"
       ],
-      "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password.": [
-        "如果您不小心忘记了密码，恢复密语可让您访问您的账户并恢复加密邮件。"
+      "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password": [
+        "若不慎忘记密码，恢复密语可用于找回账户并解锁加密邮件"
       ],
       "A user is an account associated with a single username, mailbox, and person": [
         "\"一个用户\"指联系着一个用户名、邮箱和个体的账号。"
@@ -4117,16 +4117,19 @@
         "由于有未支付的账单，账户已受限。请联系您的账户管理员。"
       ],
       "account recovery and data recovery method": [
-        "账户恢复和数据恢复方法"
+        "账户恢复和数据恢复方式"
       ],
       "account recovery method": [
-        "账户恢复方法"
+        "账户恢复方式"
       ],
       "Account size": [
         "账户大小"
       ],
       "Account successfully updated": [
         "账户已成功更新"
+      ],
+      "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
+        "建议至少设置一种数据恢复方式，确保即使忘记密码也能找回 ${ BRAND_NAME } 账户中的信息。"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "您可以增设一个后缀为 @pm.me 的邮箱地址，这个简短的域名代表 ${ MAIL_APP_NAME } me 或者 Private Message me。"
@@ -4154,9 +4157,6 @@
       ],
       "Admin account allocation": [
         "分配管理员账户"
-      ],
-      "After a password reset your data is locked in encrypted form to keep it safe.": [
-        "密码重置后，您的数据将被加密锁定以确保其安全。"
       ],
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
         "使用比特币支付后，请按下面的说明升级账户。"
@@ -4333,7 +4333,7 @@
         "关闭此窗口以退出。"
       ],
       "Continue anyway?": [
-        "仍然继续？"
+        "确定要继续吗？"
       ],
       "Continue with ${ planName }": [
         "升级至 ${ planName } 并继续"
@@ -4656,9 +4656,6 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "正在将您的数据从 ${ importedEmailAddress } 导入到 ${ toEmail }。"
       ],
-      "In case you lose your login details, we’ll send you recovery instructions via email or SMS.": [
-        "如果您忘记了账号或密码，我们将通过邮件或短信帮助您找回账户。"
-      ],
       "Inherited from parent folder": [
         "与上层文件夹一致"
       ],
@@ -4768,7 +4765,7 @@
         "试图使用您的 Proton 账户登录任何 Proton 产品的操作都会被记录。"
       ],
       "lose access to all current encrypted data": [
-        "无法访问当前所有的加密数据"
+        "所有加密数据"
       ],
       "Mail.ru reads your personal data in order to provide access for advertisers, Russian government agencies and other third parties. For better privacy, create a secure email address.": [
         "Mail.ru 读取您的个人数据，以便为广告商、俄罗斯政府机构和其他第三方提供访问。为了更好地保护您的隐私，请创建一个安全的电子邮件地址。"
@@ -4801,7 +4798,7 @@
         "新建"
       ],
       "No account recovery method set; you are at risk of losing access to your account": [
-        "未设置账户恢复方法，您存在失去账户访问权限的风险"
+        "账户恢复方式未设置，若忘记密码您将永远无法登录账户"
       ],
       "No action selected": [
         "未选择操作"
@@ -4816,7 +4813,7 @@
         "无需信用卡"
       ],
       "No data recovery method set; you are at risk of losing access to your data": [
-        "未设置数据恢复方法，您存在失去数据访问权限的风险"
+        "数据恢复方式未设置，若重置密码您将无法解密账户内的数据"
       ],
       "No folder selected": [
         "未选择文件夹"
@@ -4885,7 +4882,7 @@
         "恢复文件已过时，请更新以确保能访问您的数据"
       ],
       "Outdated recovery methods; update to ensure access to your data": [
-        "恢复方法已过时，请更新以确保能访问您的数据"
+        "恢复方式已失效，请更新以保障数据安全性"
       ],
       "Outdated recovery phrase; update to ensure access to your data": [
         "恢复密语已过时，请更新以确保能访问您的数据"
@@ -4992,14 +4989,20 @@
       "read our two-factor authentication guide first": [
         "首先阅读我们的双重认证指南"
       ],
+      "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
+        "建议仅在可信设备上勾选。${ keepMeSignedInLearnMoreLink }"
+      ],
       "Recovery file downloaded": [
         "恢复文件已下载"
       ],
       "Recovery files have been voided": [
         "恢复文件已作废"
       ],
+      "Recovery information will remain on this device unless you select to delete it.": [
+        "只要不选择删除，账户数据恢复信息就会一直保存在此设备上。"
+      ],
       "recovery method": [
-        "恢复方法"
+        "恢复方式"
       ],
       "Recovery phrase copied to clipboard": [
         "恢复短语已复制到剪贴板"
@@ -5232,17 +5235,8 @@
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
         "为持续改进我们的服务，我们有时会收集数据用于侦测系统运行是否正常。这些数据不会传输至任何第三方平台。"
       ],
-      "To decrypt and view your emails and other data, you need a recovery file.": [
-        "要解密并查看您的邮件和其他数据，您需要提供恢复文件。"
-      ],
-      "To decrypt and view your emails and other data, you need a recovery phrase or recovery file.": [
-        "要解密并查看您的邮件和其他数据，您需要提供恢复密语或恢复文件。"
-      ],
-      "To decrypt and view your emails and other data, you need a recovery phrase.": [
-        "要解密并查看您的邮件和其他数据，您需要提供恢复密语。"
-      ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
-        "要在密码重置之后解密并查看锁定的数据，请选择一种恢复方法。"
+        "密码重置后如需解密账户数据，请选择一种恢复方式。"
       ],
       "To ensure continuous access to your account, set an account recovery method": [
         "设置账户恢复方式可进一步保障您对账户的控制权"
@@ -5254,7 +5248,7 @@
         "您可以订阅我们的各类邮件或阅读我们的博客了解 Proton 产品的动态。"
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
-        "要想继续，请选择一种账户恢复方法用于验证请求。"
+        "您需要选择一种账户恢复方式，验证身份后方可继续操作。"
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a ${ VPN_APP_NAME } server.": [
         "若需要保护与互联网之间的连接，下载并安装 ${ VPN_APP_NAME } 应用程序并连接至 ${ VPN_APP_NAME } 服务器。"
@@ -5370,6 +5364,9 @@
       "We recommend using your recovery phrase instead.": [
         "我们建议您改为使用恢复密语。"
       ],
+      "We securely store recovery information on your trusted device to prevent you from losing your data": [
+        "我们会将账户恢复信息安全地存储在您的可信设备上，避免数据意外丢失"
+      ],
       "We use 3-D Secure to protect your payments.": [
         "我们使用 3-D Secure 保护您的支付安全。"
       ],
@@ -5414,6 +5411,9 @@
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "账户续费将先扣除余额，再通过上述支付方式扣费。"
+      ],
+      "Why?": [
+        "为什么？"
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "若不激活，您将无法添加用户、地址或登录非私密的成员账户。"
@@ -5527,7 +5527,7 @@
         "您仍然需要回复活动举办方的邀请，让他们看到您的回应。"
       ],
       "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
-        "你将会丢失${ BRAND_NAME } 账户下的${ loseAllData }。要想恢复，请输入原来的密码。"
+        "您将失去该 ${ BRAND_NAME } 账户中的${ loseAllData }，只有将来想起旧密码后才能恢复。"
       ],
       "You will be soon redirected to your bank to verify your payment.": [
         "即将为您转至银行网站完成验证。"
@@ -5538,8 +5538,11 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "即将为您转至 PayPal 确认支付。"
       ],
-      "You won't be able to recover encrypted data after an account reset using your downloaded recovery files.": [
-        "通过下载的恢复文件重置帐账户后，您将无法恢复加密数据。"
+      "You won’t be able to recover locked data using your downloaded recovery files.": [
+        "重置密码时您将无法再通过此前下载的恢复文件解锁账户数据。"
+      ],
+      "You won’t be able to recover locked data using your downloaded recovery files. This will also void trusted device-recovery information.": [
+        "重置密码时您将无法再通过此前下载的恢复文件解锁账户数据。此操作还会使所有可信设备一并失效。"
       ],
       "You'll stay signed in even after you close the browser.": [
         "即使您关闭浏览器也不会退出账户。"
@@ -5563,7 +5566,7 @@
         "正在为您升级账户，请稍等半分钟。"
       ],
       "Your account recovery method is set": [
-        "账户恢复方法已设置"
+        "账户恢复方式已设置"
       ],
       "Your account will be updated once the payment is cleared.": [
         "支付成功后账户将立即完成升级。"
@@ -5575,7 +5578,7 @@
         "从 ${ importedEmailAddressStrong } 到您的 Proton 账户的导入数据已准备就绪。"
       ],
       "Your data recovery method is set": [
-        "数据恢复方法已设置"
+        "数据恢复方式已设置"
       ],
       "Your email will only be used for this one-time verification.": [
         "您的电子邮件将仅用于此一次性验证。"
@@ -5698,7 +5701,7 @@
     },
     "Info when deleting payment method": {
       "To avoid any service interruption due to unpaid invoices, please make sure that you have at least 1 valid payment method saved at any point in time.": [
-        "为了避免由于未付发票而造成任何服务中断， 请确保您在任何时间点保存至少一种有效的支付方法。"
+        "为避免欠费导致服务中断，请确保账户中随时都有一种有效的支付方式。"
       ]
     },
     "Invoice state display as badge": {
@@ -6083,6 +6086,9 @@
       "Allow recovery by recovery phrase": [
         "允许通过恢复密语来恢复"
       ],
+      "Allow recovery using a trusted device": [
+        "允许通过可信设备恢复"
+      ],
       "Amount": [
         "金额"
       ],
@@ -6126,7 +6132,7 @@
         "自动回复"
       ],
       "Auto-unsubscribe": [
-        "自动取消订阅"
+        "自动退订邮件"
       ],
       "Billing cycle": [
         "计费周期"
@@ -6286,6 +6292,9 @@
       ],
       "Delete": [
         "删除"
+      ],
+      "Delete recovery-related information.": [
+        "删除恢复相关的数据"
       ],
       "Density": [
         "密度"
@@ -6840,6 +6849,9 @@
       ],
       "Recovery phrase": [
         "恢复密语"
+      ],
+      "Trusted device recovery": [
+        "可信设备恢复"
       ]
     },
     "Label for adding a new custom domain": {
@@ -7016,6 +7028,9 @@
       "Learn more": [
         "了解详情"
       ],
+      "Learn more about data recovery": [
+        "详细了解数据恢复"
+      ],
       "Need help?": [
         "需要帮助吗？"
       ],
@@ -7061,8 +7076,11 @@
       "What is the difference between UDP and TCP protocols?": [
         "UDP 和 TCP 协议有何区别？"
       ],
+      "What’s this?": [
+        "这是什么？"
+      ],
       "Why set recovery methods?": [
-        "为什么要设置恢复方法？"
+        "为什么要设置恢复方式？"
       ]
     },
     "Loading info": {
@@ -8251,10 +8269,10 @@
         "常规"
       ],
       "Off": [
-        "关"
+        "关闭"
       ],
       "On": [
-        "在"
+        "开启"
       ],
       "Permanent": [
         "长期"
@@ -9884,6 +9902,9 @@
       "Sign in and grant access": [
         "登录并授予权限"
       ],
+      "Sign out": [
+        "退出"
+      ],
       "Sort folders alphabetically": [
         "按字母顺序排列文件夹"
       ],
@@ -10024,7 +10045,7 @@
         "操作"
       ],
       "Method": [
-        "方法"
+        "支付方式"
       ],
       "Status": [
         "状态"
@@ -10188,13 +10209,13 @@
         "由于您的 DNS 配置存在问题，我们已中止 DKIM 签名。请参照下列步骤进行配置。"
       ],
       "When you add a label to a message in a conversation, it will automatically be applied to all future messages you send or receive in that conversation.": [
-        "当您在对话中为信息添加标签时，此标签将自动应用于您在本对话中发送或接收的所有信息。"
+        "给会话中的某一邮件加标签后，自动为将来该会话中的所有往来邮件加上同一标签。"
       ],
       "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
         "点击链接后向您确认要打开的网址，谨防欺诈网站。"
       ],
       "When you move an email to spam, you’ll automatically be unsubscribed from the sender’s mailing lists.": [
-        "当您将电子邮件移动到垃圾邮件时，将从发件人的邮件列表自动取消订阅。"
+        "标为垃圾邮件时自动退订来自对方的同类邮件。"
       ],
       "You have locally decrypted this key": [
         "此密钥已在本机解密"

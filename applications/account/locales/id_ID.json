@@ -151,9 +151,6 @@
       "Close": [
         "Tutup"
       ],
-      "Close modal": [
-        "Close"
-      ],
       "Close navigation": [
         "Tutup navigasi"
       ],
@@ -646,6 +643,9 @@
       "Search settings": [
         "Cari di pengaturan"
       ],
+      "See plan features": [
+        "Lihat seluruh fitur paket"
+      ],
       "Select ${ planTitle }": [
         "Pilih ${ planTitle }"
       ],
@@ -823,14 +823,14 @@
       "View plans details": [
         "Lihat rincian paket"
       ],
+      "Void": [
+        "Batal"
+      ],
       "Void all recovery files": [
         "Anulir seluruh berkas pemulihan"
       ],
       "Void all recovery files?": [
         "Anulir seluruh berkas pemulihan?"
-      ],
-      "Void anyway": [
-        "Tetap anulir"
       ],
       "What do I get?": [
         "Apa yang akan saya dapatkan?"
@@ -4104,12 +4104,6 @@
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Sebuah nama untuk membantu Anda mengidentifikasi di mana Anda menggunakannya sehingga dapat dengan mudah mencabut atau memperpanjangnya nanti."
       ],
-      "A recovery file lets you unlock and view your data after an account reset.": [
-        "Berkas pemulihan akan memungkinkan Anda untuk dapat mengakses dan melihat data yang ada pada akun yang telah disetel ulang."
-      ],
-      "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password.": [
-        "Frasa pemulihan memungkinkan Anda untuk dapat mengakses akun dan memulihkan pesan terenkripsi seandainya Anda lupa kata sandi."
-      ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Pengguna di sini didefiniskan sebagai akun yang terkait dengan nama pengguna, kotak surat, serta oknum tunggal"
       ],
@@ -4154,9 +4148,6 @@
       ],
       "Admin account allocation": [
         "Alokasi akun admin"
-      ],
-      "After a password reset your data is locked in encrypted form to keep it safe.": [
-        "Setelah kata sandi Anda diatur ulang, data Anda akan dikunci dan dienkripsi secara otomatis agar tetap aman."
       ],
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
         "Usai melakukan pembayaran dengan Bitcoin, harap ikuti instruksi di bawah untuk meningkatkan."
@@ -4655,9 +4646,6 @@
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Mengimpor data-data Anda dari ${ importedEmailAddress } menuju ${ toEmail }."
-      ],
-      "In case you lose your login details, we’ll send you recovery instructions via email or SMS.": [
-        "Apabila Anda kehilangan rincian login Anda, kami akan memberikan Anda arahan untuk memulihkan akses menuju akun Anda melalui email atau SMS."
       ],
       "Inherited from parent folder": [
         "Diwariskan dari folder induk"
@@ -5232,15 +5220,6 @@
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
         "Agar layanan kami dapat terus berkembang, kami mengumpulkan berbagai data yang akan digunakan untuk memonitor kinerja aplikasi kami dari waktu ke waktu. Seluruh informasi yang kami kumpulkan tidak akan dibagikan kepada layanan pihak ketiga manapun."
       ],
-      "To decrypt and view your emails and other data, you need a recovery file.": [
-        "Untuk dapat mendekripsi dan mengakses kembali seluruh email dan data lainnya yang Anda miliki, Anda akan membutuhkan berkas keamanan."
-      ],
-      "To decrypt and view your emails and other data, you need a recovery phrase or recovery file.": [
-        "Untuk dapat mendekripsi dan mengakses kembali seluruh email dan data lainnya yang Anda miliki, Anda akan membutuhkan frasa atau berkas keamanan."
-      ],
-      "To decrypt and view your emails and other data, you need a recovery phrase.": [
-        "Untuk dapat mendekripsi dan mengakses kembali seluruh email dan data lainnya yang Anda miliki, Anda akan membutuhkan frasa keamanan."
-      ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Untuk dapat mendekripsi dan mengakses data Anda yang terkunci setelah pengaturan ulang kata sandi, pilih metode pemulihan yang Anda kehendaki."
       ],
@@ -5537,9 +5516,6 @@
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Anda akan segera dialihkan menuju PayPal untuk memverifikasi pembayaran anda."
-      ],
-      "You won't be able to recover encrypted data after an account reset using your downloaded recovery files.": [
-        "Anda tidak akan dapat memulihkan data-data yang terenkripsi dengan berkas-berkas pemulihan yang ada pada akun yang telah disetel ulang."
       ],
       "You'll stay signed in even after you close the browser.": [
         "Anda akan tetap masuk bahkan setelah Anda menutup browser."
@@ -9883,6 +9859,9 @@
       ],
       "Sign in and grant access": [
         "Masuk dan berikan izin akses"
+      ],
+      "Sign out": [
+        "Keluar"
       ],
       "Sort folders alphabetically": [
         "Urut folder sesuai abjad"

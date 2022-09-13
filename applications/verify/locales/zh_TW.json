@@ -11,9 +11,6 @@
       "Close": [
         "關閉"
       ],
-      "Close modal": [
-        "關閉對話框"
-      ],
       "Didn't receive the code?": [
         "沒有收到驗證碼嗎？"
       ],
@@ -21,7 +18,7 @@
         "編輯電郵位址"
       ],
       "Edit phone number": [
-        "編輯電話號碼"
+        "編輯手機號碼"
       ],
       "Edit sign-in details": [
         "編輯登入詳細資訊"
@@ -33,16 +30,16 @@
         "重新整理此頁面"
       ],
       "Request new code": [
-        "申請新驗證碼"
+        "重新傳送驗證碼"
       ],
       "Search countries": [
-        "搜尋國家"
+        "搜尋國家與地區"
       ],
       "Submit": [
         "送出"
       ],
       "Try another method": [
-        "換另一個方法試試"
+        "嘗試其它驗證方式"
       ],
       "Verify": [
         "驗證"
@@ -61,20 +58,11 @@
       "carrot": [
         "胡蘿蔔"
       ],
-      "cerise": [
-        "櫻桃"
-      ],
       "cobalt": [
         "鈷"
       ],
       "copper": [
         "銅"
-      ],
-      "enzian": [
-        "enzian"
-      ],
-      "fern": [
-        "蕨類"
       ],
       "forest": [
         "森林"
@@ -85,9 +73,6 @@
       "olive": [
         "橄欖"
       ],
-      "pacific": [
-        "太平洋"
-      ],
       "pickle": [
         "泡菜"
       ],
@@ -97,26 +82,11 @@
       "pink": [
         "粉紅色"
       ],
-      "plum": [
-        "梅子"
-      ],
       "purple": [
         "紫色"
       ],
-      "reef": [
-        "礁石"
-      ],
-      "sahara": [
-        "撒哈拉"
-      ],
-      "slateblue": [
-        "板岩藍"
-      ],
       "soil": [
         "土壤"
-      ],
-      "strawberry": [
-        "草莓"
       ]
     },
     "Country name": {
@@ -148,7 +118,7 @@
         "南極洲"
       ],
       "Antigua and Barbuda": [
-        "安地卡及巴布達"
+        "安提瓜和巴布達"
       ],
       "Argentina": [
         "阿根廷"
@@ -160,7 +130,7 @@
         "阿魯巴"
       ],
       "Ascension Island": [
-        "阿森松島"
+        "亞森欣島"
       ],
       "Australia": [
         "澳洲"
@@ -416,9 +386,6 @@
       ],
       "Haiti": [
         "海地"
-      ],
-      "Heard Island and McDonald Islands": [
-        "赫德島及麥唐納群島"
       ],
       "Holy See (Vatican City State)": [
         "梵蒂岡"
@@ -708,9 +675,6 @@
       "San Marino": [
         "聖馬利諾"
       ],
-      "Sao Tome and Principe": [
-        "聖多美普林西比"
-      ],
       "Saudi Arabia": [
         "沙烏地阿拉伯"
       ],
@@ -784,7 +748,7 @@
         "敘利亞"
       ],
       "Taiwan": [
-        "臺灣"
+        "台灣"
       ],
       "Tajikistan": [
         "塔吉克"
@@ -905,7 +869,7 @@
         "號碼無效"
       ],
       "Passwords do not match": [
-        "密碼不相符"
+        "密碼不一致"
       ],
       "Request timed out": [
         "請求逾時"
@@ -928,21 +892,21 @@
         "糟糕，出了一點問題"
       ],
       "Please ${ refresh } or check your connection.": [
-        "請 ${ refresh } 或檢查您的連線。"
+        "請${ refresh }或檢查您的連線。"
       ],
       "Something went wrong. Please refresh the page or try again later.": [
-        "不好意思，這個錯誤有待修正。我們將會處理。"
+        "出了一點問題。請重新整理頁面或稍後再試。"
       ],
       "There was a problem connecting to Proton.": [
-        "連線至 Proton 時發生問題。"
+        "連線到 Proton 時發生問題。"
       ],
       "You may also ${ refresh } or try again later.": [
-        "您亦可${ refresh }或稍後再試一次。"
+        "您亦可${ refresh } 或稍後再試一次。"
       ]
     },
     "Human verification method": {
       "CAPTCHA": [
-        "CAPTCHA"
+        "驗證碼"
       ],
       "Email": [
         "電郵"
@@ -951,68 +915,68 @@
         "手動"
       ],
       "No verification method available": [
-        "無適用的驗證方法"
+        "沒有可用的驗證方法"
       ],
       "SMS": [
-        "簡訊"
+        "短訊"
       ]
     },
     "Info": {
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
-        "在您申請一組新驗證碼前，請先查看驗證碼郵件是否在垃圾郵件資料夾，並檢查 ${ strong } 的位址是否正確。"
+        "在申請一組新的驗證碼之前，請檢查您的垃圾郵件資料夾以及 ${ strong } 的位址正確無誤。"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "點擊「申請新代碼」以便將一組新的驗證碼傳送至 ${ strong }。如果此電話號碼不正確，請點擊「編輯」進行更正。"
+        "按一下「重新傳送驗證碼」向 ${ strong } 傳送新的驗證碼。如此手機號碼不正確，請按一下「編輯」作出修正。"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
-        "請輸入 ${ destinationText } 接收到的驗證碼。"
+        "驗證碼已傳送至 ${ destinationText }，請在下方輸入。"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
-        "若您在創建帳號時出現問題，可提出邀請需求，我們會在一個工作日內回覆。"
+        "若您在建立帳號時遇上問題，請聯絡我們。我們將會於一個工作天內處理您的申請。"
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
-        "若您在收件匣中找不到該電郵，請查看垃圾郵件資料夾。"
+        "若您在收件匣中找不到該電郵，請查看「垃圾郵件」資料夾。"
       ],
       "Internet connection lost": [
         "網際網路連線中斷"
       ],
       "Loading": [
-        "載入中"
+        "正在載入"
       ],
       "No results found": [
         "找不到相符的結果"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
-        "無法連線至伺服器。請在幾分鐘後再試一次"
+        "無法連線至伺服器。請過幾分鐘後再試"
       ],
       "Session timed out": [
         "工作階段已逾時"
       ],
       "To fight spam and abuse, please verify you are human.": [
-        "為反制垃圾郵件及濫用，請驗證您是真人。"
+        "為防止垃圾郵件及濫用行為，請驗證您是真人。"
       ],
       "We'll send a new verification code to ${ strong }": [
-        "我們將傳送新的驗證碼至 ${ strong }"
+        "我們將會向 ${ strong } 傳送新的驗證碼"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
-        "請問您需要申請新的驗證碼，或嘗試另一種驗證方法？"
+        "您想要接收新的驗證碼，還是更換驗證方式？"
       ],
       "Would you like to receive a new verification code?": [
-        "請問您需要申請新的驗證碼嗎？"
+        "您想要收到新的驗證碼嗎？"
       ],
       "Your email will only be used for this one-time verification.": [
-        "您的電郵位址僅作為一次性驗證用途。"
+        "您的電郵只會用於此一次性驗證。"
       ],
       "Your phone number will only be used for this one-time verification.": [
-        "您的電話號碼僅作為一次性驗證用途。"
+        "您的手機號碼只會用於此一次性驗證。"
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "您的 Proton 帳號目前暫時無法提供服務。為確保您的帳號權益，請儘速繳納逾期帳單。"
+        "您的 Proton 帳號目前被凍結。如要繼續使用您的帳號，請先支付逾期帳單。"
       ]
     },
     "Label": {
       "Code is 6 digits without spaces": [
-        "驗證碼為 6 位數字且無空格"
+        "驗證碼為六位數且無空格"
       ],
       "Email address": [
         "電郵位址"
@@ -1024,7 +988,7 @@
         "密碼"
       ],
       "Phone number": [
-        "電話號碼"
+        "手機號碼"
       ],
       "Reveal password": [
         "顯示密碼"
@@ -1035,10 +999,10 @@
     },
     "Link": {
       "Learn more": [
-        "了解更多"
+        "瞭解詳情"
       ],
       "Request an invite": [
-        "提出邀請需求"
+        "請求邀請"
       ]
     },
     "Placeholder": {
@@ -1048,7 +1012,7 @@
     },
     "Success": {
       "Code sent to ${ methodTo }": [
-        "驗證碼已傳送至 ${ methodTo }"
+        "驗證碼已發送至 ${ methodTo }"
       ],
       "Verification successful": [
         "驗證成功"
@@ -1056,13 +1020,13 @@
     },
     "Title": {
       "Human verification": [
-        "真人驗證"
+        "真人身分驗證"
       ],
       "Invalid verification code": [
-        "無效的驗證碼"
+        "驗證碼無效"
       ],
       "Request new code": [
-        "申請新驗證碼"
+        "重新傳送驗證碼"
       ],
       "Sign in again to continue": [
         "請重新登入以繼續"
@@ -1070,7 +1034,7 @@
     },
     "Validation": {
       "Password must contain at least ${ length } character": [
-        "密碼必須包含至少 ${ length } 個字元"
+        "密碼至少必須包含 ${ length } 個字元"
       ]
     }
   }

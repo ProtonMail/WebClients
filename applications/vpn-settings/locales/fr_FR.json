@@ -56,9 +56,6 @@
       "Close": [
         "Fermer"
       ],
-      "Close modal": [
-        "Close"
-      ],
       "Close navigation": [
         "Fermer la navigation"
       ],
@@ -2068,9 +2065,6 @@
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Important : veuillez vous assurer de sauvegarder les codes de récupération. Sinon, vous pouvez perdre définitivement l'accès à votre compte si vous égarez votre appareil d'authentification à deux facteurs."
       ],
-      "In case you lose your login details, we’ll send you recovery instructions via email or SMS.": [
-        "En cas de perte de vos données de connexion, nous vous enverrons des instructions de récupération par e-mail ou par SMS."
-      ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
         "Installez un fichier de configuration du pays de votre choix pour vous connecter à un serveur aléatoire."
       ],
@@ -2205,6 +2199,9 @@
       ],
       "read our two-factor authentication guide first": [
         "lire d'abord notre guide sur l'authentification à deux facteurs"
+      ],
+      "Recovery information will remain on this device unless you select to delete it.": [
+        "Les informations de récupération resteront sur cet appareil jusqu'à ce que vous demandiez à les supprimer."
       ],
       "recovery method": [
         "méthode de récupération"
@@ -2409,6 +2406,9 @@
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Lors du renouvellement de votre abonnement, tous les crédits disponibles seront d'abord utilisés avant que nous ne débitions vos modes de paiement ci-dessus."
+      ],
+      "Why?": [
+        "Pourquoi ?"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Voulez-vous recevoir un nouveau code de vérification ou utiliser une autre méthode de vérification ?"
@@ -2733,6 +2733,9 @@
       "Delete": [
         "Supprimer"
       ],
+      "Delete recovery-related information.": [
+        "Supprimer les informations liées à la récupération."
+      ],
       "Device/certificate name": [
         "Nom de l'appareil/certificat"
       ],
@@ -3037,6 +3040,9 @@
       ],
       "What is the difference between UDP and TCP protocols?": [
         "Quelle est la différence entre les protocoles UDP et TCP ?"
+      ],
+      "What’s this?": [
+        "Qu'est-ce que c'est ?"
       ]
     },
     "Member downgrade modal": {
@@ -4486,6 +4492,9 @@
       ],
       "Sign in again to continue": [
         "Connectez-vous à nouveau pour continuer"
+      ],
+      "Sign out": [
+        "Se déconnecter"
       ],
       "Status": [
         "Statut"

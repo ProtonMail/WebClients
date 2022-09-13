@@ -56,9 +56,6 @@
       "Close": [
         "Закрити"
       ],
-      "Close modal": [
-        "Close"
-      ],
       "Close navigation": [
         "Закрити панель навігації"
       ],
@@ -2108,9 +2105,6 @@
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Важливо: Впевніться, що ви зберегли коди відновлення. Інакше ви можете назавжди втратити доступ до свого облікового запису в разі втрати пристрою двоетапної перевірки."
       ],
-      "In case you lose your login details, we’ll send you recovery instructions via email or SMS.": [
-        "Якщо ви втратите свої облікові дані для входу, ми надішлемо вам інструкції з відновлення електронною поштою або в SMS."
-      ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
         "Встановіть файл конфігурації країни для підключення до випадкового сервера у вибраній країні."
       ],
@@ -2245,6 +2239,12 @@
       ],
       "read our two-factor authentication guide first": [
         "прочитайте спершу нашу інструкцію про двоетапну перевірку"
+      ],
+      "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
+        "Рекомендовано на довірених пристроях. ${ keepMeSignedInLearnMoreLink }"
+      ],
+      "Recovery information will remain on this device unless you select to delete it.": [
+        "Інформація про відновлення залишиться на цьому пристрої, якщо ви не вирішите її видалити."
       ],
       "recovery method": [
         "спосіб відновлення"
@@ -2449,6 +2449,9 @@
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "При продовженні вашої передплати ми застосуємо наявні кредити в першу чергу перед використанням зазначеного вище способу оплати."
+      ],
+      "Why?": [
+        "Навіщо?"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Бажаєте отримати новий код перевірки чи скористатися іншим способом перевірки?"
@@ -2775,6 +2778,9 @@
       "Delete": [
         "Видалити"
       ],
+      "Delete recovery-related information.": [
+        "Видалити інформацію повʼязану з відновленням."
+      ],
       "Device/certificate name": [
         "Назва пристрою/сертифіката"
       ],
@@ -3079,6 +3085,9 @@
       ],
       "What is the difference between UDP and TCP protocols?": [
         "Яка різниця між протоколами UDP і TCP?"
+      ],
+      "What’s this?": [
+        "Що це?"
       ]
     },
     "Member downgrade modal": {
@@ -4592,6 +4601,9 @@
       ],
       "Sign in again to continue": [
         "Увійдіть знову для продовження"
+      ],
+      "Sign out": [
+        "Вийти"
       ],
       "Status": [
         "Стан"

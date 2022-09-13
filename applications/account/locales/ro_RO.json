@@ -151,9 +151,6 @@
       "Close": [
         "Închidere"
       ],
-      "Close modal": [
-        "Close"
-      ],
       "Close navigation": [
         "Închidere navigare"
       ],
@@ -823,14 +820,14 @@
       "View plans details": [
         "Afișare detalii planuri"
       ],
+      "Void": [
+        "Nulă"
+      ],
       "Void all recovery files": [
         "Anulare toate fișierele de recuperare"
       ],
       "Void all recovery files?": [
         "Anulați toate fișierele de recuperare?"
-      ],
-      "Void anyway": [
-        "Continuare anulare"
       ],
       "What do I get?": [
         "Ce primesc?"
@@ -4224,10 +4221,10 @@
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Un nume care vă ajută să identificați unde o folosiți pentru a o anula sau extinde mai târziu."
       ],
-      "A recovery file lets you unlock and view your data after an account reset.": [
+      "A recovery file lets you unlock and view your data after an account reset": [
         "Un fișier de recuperare vă permite să vă deblocați și să vă accesați datele după o resetare a contului."
       ],
-      "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password.": [
+      "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password": [
         "O frază de recuperare vă permite să vă accesați contul și să vă recuperați mesajele criptate dacă vă uitați parola."
       ],
       "A user is an account associated with a single username, mailbox, and person": [
@@ -4247,6 +4244,9 @@
       ],
       "Account successfully updated": [
         "Cont actualizat cu succes"
+      ],
+      "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
+        "Activați cel puțin o metodă de recuperare a datelor pentru a vă asigura că puteți accesa conținutul din contul ${ BRAND_NAME } dacă vă pierdeți parola."
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Adăugați-vă o adresă de e-mail @pm.me în cont. Acest domeniu simplu, mai scurt, înseamnă \"${ MAIL_APP_NAME } me\" sau \"Private Message me\"."
@@ -4276,9 +4276,6 @@
       ],
       "Admin account allocation": [
         "Alocare cont admin"
-      ],
-      "After a password reset your data is locked in encrypted form to keep it safe.": [
-        "După resetarea parolei datele sunt blocate într-o formă criptată pentru a le păstra sigure."
       ],
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
         "După efectuarea plății cu Bitcoin, urmați instrucțiunile de mai jos pentru migrare."
@@ -4788,9 +4785,6 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Se importă datele de la ${ importedEmailAddress } la ${ toEmail }."
       ],
-      "In case you lose your login details, we’ll send you recovery instructions via email or SMS.": [
-        "În cazul în care vă pierdeți datele de conectare, veţi primi instrucțiuni de recuperare prin e-mail sau SMS."
-      ],
       "Inherited from parent folder": [
         "Moştenit de la folderul părinte"
       ],
@@ -5128,11 +5122,17 @@
       "read our two-factor authentication guide first": [
         "citiți mai întâi ghidul nostru de autentificare cu doi factori"
       ],
+      "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
+        "Recomandat pe dispozitivele de încredere. ${ keepMeSignedInLearnMoreLink }"
+      ],
       "Recovery file downloaded": [
         "Fișier de recuperare descărcat"
       ],
       "Recovery files have been voided": [
         "Fișierele de recuperare au fost anulate."
+      ],
+      "Recovery information will remain on this device unless you select to delete it.": [
+        "Informațiile de recuperare vor rămâne pe acest dispozitiv până când le selectați să fie șterse."
       ],
       "recovery method": [
         "metodă de recuperare"
@@ -5368,15 +5368,6 @@
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
         "Pentru a îmbunătăți continuu serviciile noastre, uneori colectăm date pentru a monitoriza buna funcționare a aplicațiilor noastre. Aceste informații nu sunt partajate cu niciun serviciu terț."
       ],
-      "To decrypt and view your emails and other data, you need a recovery file.": [
-        "Pentru a decripta și vedea mesajele și alte date aveți nevoie de un fișier de recuperare."
-      ],
-      "To decrypt and view your emails and other data, you need a recovery phrase or recovery file.": [
-        "Pentru a decripta și vizualiza e-mailurile și alte date, aveți nevoie de o frază sau de un fișier de recuperare."
-      ],
-      "To decrypt and view your emails and other data, you need a recovery phrase.": [
-        "Pentru a decripta și vedea mesajele și alte date aveți nevoie de o frază de recuperare."
-      ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "Pentru a decripta și vedea datele blocate după resetarea parolei, selectați o metodă de recuperare."
       ],
@@ -5506,6 +5497,9 @@
       "We recommend using your recovery phrase instead.": [
         "Vă recomandăm să folosiți în schimb fraza de recuperare."
       ],
+      "We securely store recovery information on your trusted device to prevent you from losing your data": [
+        "Stocăm în siguranță informațiile de recuperare pe dispozitivul dvs. de încredere pentru a preveni pierderea datelor."
+      ],
       "We use 3-D Secure to protect your payments.": [
         "Folosim 3-D Secure pentru a proteja plățile."
       ],
@@ -5550,6 +5544,9 @@
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Când abonamentul se înnoiește, se va folosi mai întâi creditul disponibil înainte de a folosi metoda de plată de mai sus."
+      ],
+      "Why?": [
+        "De ce?"
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Fără activare nu veți putea crea noi utilizatori, adăuga adrese la utilizatorii existenți sau accesa conturile utilizatorilor non-privați."
@@ -5674,8 +5671,11 @@
       "You will soon be redirected to PayPal to verify your payment.": [
         "Pentru verificarea plății se va deschide o filă către PayPal."
       ],
-      "You won't be able to recover encrypted data after an account reset using your downloaded recovery files.": [
-        "Nu veți putea recupera datele criptate după o resetare a contului folosind fișierele de recuperare descărcate."
+      "You won’t be able to recover locked data using your downloaded recovery files.": [
+        "Nu veți putea recupera datele blocate folosind fișierele de recuperare descărcate."
+      ],
+      "You won’t be able to recover locked data using your downloaded recovery files. This will also void trusted device-recovery information.": [
+        "Nu veți putea recupera datele blocate folosind fișierele de recuperare descărcate. Aceasta va goli și informațiile de recuperare de încredere aflate pe dispozitiv."
       ],
       "You'll stay signed in even after you close the browser.": [
         "Conexiunea va rămâne activă chiar și după ce închideți navigatorul."
@@ -6225,6 +6225,9 @@
       "Allow recovery by recovery phrase": [
         "Permitere recuperare prin fraza de recuperare"
       ],
+      "Allow recovery using a trusted device": [
+        "Permite recuperarea folosind un dispozitiv de încredere."
+      ],
       "Amount": [
         "Suma"
       ],
@@ -6428,6 +6431,9 @@
       ],
       "Delete": [
         "Ștergere"
+      ],
+      "Delete recovery-related information.": [
+        "Ștergere informații privind recuperarea."
       ],
       "Density": [
         "Densitate"
@@ -6982,6 +6988,9 @@
       ],
       "Recovery phrase": [
         "Fraza de recuperare"
+      ],
+      "Trusted device recovery": [
+        "Dispozitiv de recuperare de încredere"
       ]
     },
     "Label for adding a new custom domain": {
@@ -7158,6 +7167,9 @@
       "Learn more": [
         "Detalii"
       ],
+      "Learn more about data recovery": [
+        "Aflați mai multe despre recuperarea datelor"
+      ],
       "Need help?": [
         "Doriți ajutor?"
       ],
@@ -7202,6 +7214,9 @@
       ],
       "What is the difference between UDP and TCP protocols?": [
         "Care este diferenţa dintre protocoalele UDP şi TCP?"
+      ],
+      "What’s this?": [
+        "Ce este asta?"
       ],
       "Why set recovery methods?": [
         "De ce să setați metode de recuperare?"
@@ -10115,6 +10130,9 @@
       ],
       "Sign in and grant access": [
         "Conectați-vă și acordați acces"
+      ],
+      "Sign out": [
+        "Deconectare"
       ],
       "Sort folders alphabetically": [
         "Sortare alfabetică foldere"

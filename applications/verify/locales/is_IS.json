@@ -11,14 +11,17 @@
       "Close": [
         "Loka"
       ],
-      "Close modal": [
-        "Loka glugga"
+      "Didn't receive the code?": [
+        "Fékkstu ekki kóðann?"
       ],
       "Edit email address": [
         "Breyta netfangi"
       ],
       "Edit phone number": [
         "Breyta símanúmeri"
+      ],
+      "Edit sign-in details": [
+        "Breyttu innskráningarupplýsingum"
       ],
       "Get verification code": [
         "Sækja staðfestingarkóða"
@@ -29,6 +32,9 @@
       "Request new code": [
         "Biðja um nýjan kóða"
       ],
+      "Search countries": [
+        "Leita að löndum"
+      ],
       "Submit": [
         "Senda inn"
       ],
@@ -38,8 +44,834 @@
       "Verify": [
         "Sannreyna"
       ],
+      "Verify account": [
+        "Staðfestu reikning"
+      ],
+      "Verify email": [
+        "Staðfestu netfang"
+      ],
       "View invoice": [
         "Skoða reikning"
+      ]
+    },
+    "color": {
+      "carrot": [
+        "gulrót"
+      ],
+      "cerise": [
+        "kirsuberja"
+      ],
+      "cobalt": [
+        "kóbalt"
+      ],
+      "copper": [
+        "kopar"
+      ],
+      "enzian": [
+        "enzían"
+      ],
+      "fern": [
+        "laufgrænn"
+      ],
+      "forest": [
+        "skógur"
+      ],
+      "ocean": [
+        "haf"
+      ],
+      "olive": [
+        "ólífa"
+      ],
+      "pacific": [
+        "kyrrahaf"
+      ],
+      "pickle": [
+        "súrar gúrkur"
+      ],
+      "pine": [
+        "fura"
+      ],
+      "pink": [
+        "bleikur"
+      ],
+      "plum": [
+        "plómu"
+      ],
+      "purple": [
+        "purpuri"
+      ],
+      "reef": [
+        "rif"
+      ],
+      "sahara": [
+        "sahara"
+      ],
+      "slateblue": [
+        "flísblár"
+      ],
+      "soil": [
+        "jarðvegur"
+      ],
+      "strawberry": [
+        "jarðaber"
+      ]
+    },
+    "Country name": {
+      "Abkhazia": [
+        "Abkasía"
+      ],
+      "Afghanistan": [
+        "Afganistan"
+      ],
+      "Albania": [
+        "Albanía"
+      ],
+      "Algeria": [
+        "Alsír"
+      ],
+      "American Samoa": [
+        "Bandaríska Samóa"
+      ],
+      "Andorra": [
+        "Andorra"
+      ],
+      "Angola": [
+        "Angóla"
+      ],
+      "Anguilla": [
+        "Angvilla"
+      ],
+      "Antarctica": [
+        "Suðurskautsland"
+      ],
+      "Antigua and Barbuda": [
+        "Antígva og Barbúda"
+      ],
+      "Argentina": [
+        "Argentína"
+      ],
+      "Armenia": [
+        "Armenía"
+      ],
+      "Aruba": [
+        "Arúba"
+      ],
+      "Ascension Island": [
+        "Ascension-eyja"
+      ],
+      "Australia": [
+        "Ástralía"
+      ],
+      "Austria": [
+        "Austurríki"
+      ],
+      "Azerbaijan": [
+        "Aserbaísjan"
+      ],
+      "Bahamas": [
+        "Bahamaeyjar"
+      ],
+      "Bahrain": [
+        "Barein"
+      ],
+      "Bangladesh": [
+        "Bangladess"
+      ],
+      "Barbados": [
+        "Barbados"
+      ],
+      "Belarus": [
+        "Hvíta-Rússland"
+      ],
+      "Belgium": [
+        "Belgía"
+      ],
+      "Belize": [
+        "Belís"
+      ],
+      "Benin": [
+        "Benín"
+      ],
+      "Bermuda": [
+        "Bermúda"
+      ],
+      "Bhutan": [
+        "Bútan"
+      ],
+      "Bolivia": [
+        "Bólivía"
+      ],
+      "Bonaire, Sint Eustatius and Saba": [
+        "Bonaire, Sint Eustatius and Saba"
+      ],
+      "Bosnia and Herzegovina": [
+        "Bosnía og Hersegóvína"
+      ],
+      "Botswana": [
+        "Botsvana"
+      ],
+      "Bouvet Island": [
+        "Bouvet Island"
+      ],
+      "Brazil": [
+        "Brasilía"
+      ],
+      "British Indian Ocean Territory": [
+        "Bresku Indlandshafseyjar"
+      ],
+      "Brunei Darussalam": [
+        "Brúnei"
+      ],
+      "Bulgaria": [
+        "Búlgaría"
+      ],
+      "Burkina Faso": [
+        "Búrkína Fasó"
+      ],
+      "Burundi": [
+        "Búrúndí"
+      ],
+      "Cambodia": [
+        "Kambódía"
+      ],
+      "Cameroon": [
+        "Kamerún"
+      ],
+      "Canada": [
+        "Kanada"
+      ],
+      "Cape Verde": [
+        "Grænhöfðaeyjar"
+      ],
+      "Cayman Islands": [
+        "Caymaneyjar"
+      ],
+      "Central African Republic": [
+        "Mið-Afríkulýðveldið"
+      ],
+      "Chad": [
+        "Tjad"
+      ],
+      "Chile": [
+        "Síle"
+      ],
+      "China": [
+        "Kína"
+      ],
+      "Christmas Island": [
+        "Jólaeyja"
+      ],
+      "Cocos (Keeling) Islands": [
+        "Kókoseyjar (Keeling)"
+      ],
+      "Colombia": [
+        "Kólombía"
+      ],
+      "Comoros": [
+        "Kómoreyjar"
+      ],
+      "Congo": [
+        "Kongó"
+      ],
+      "Congo, Democratic Republic of the": [
+        "Lýðveldið Kongó"
+      ],
+      "Cook Islands": [
+        "Cooks-eyjar"
+      ],
+      "Costa Rica": [
+        "Kosta Ríka"
+      ],
+      "Croatia": [
+        "Króatía"
+      ],
+      "Cuba": [
+        "Kúba"
+      ],
+      "Curaçao": [
+        "Curaçao"
+      ],
+      "Cyprus": [
+        "Kýpur"
+      ],
+      "Czech Republic": [
+        "Tékkland"
+      ],
+      "Denmark": [
+        "Danmörk"
+      ],
+      "Djibouti": [
+        "Djibútí"
+      ],
+      "Dominica": [
+        "Dóminíka"
+      ],
+      "Dominican Republic": [
+        "Dóminíska lýðveldið"
+      ],
+      "Ecuador": [
+        "Ekvador"
+      ],
+      "Egypt": [
+        "Egyptaland"
+      ],
+      "El Salvador": [
+        "El Salvador"
+      ],
+      "Equatorial Guinea": [
+        "Miðbaugs-Gínea"
+      ],
+      "Eritrea": [
+        "Eritrea"
+      ],
+      "Estonia": [
+        "Eistland"
+      ],
+      "Ethiopia": [
+        "Eþíópía"
+      ],
+      "Falkland Islands": [
+        "Falklandseyjar"
+      ],
+      "Faroe Islands": [
+        "Færeyjar"
+      ],
+      "Federated States of Micronesia": [
+        "Míkrónesía"
+      ],
+      "Fiji": [
+        "Fidjieyjar"
+      ],
+      "Finland": [
+        "Finnland"
+      ],
+      "France": [
+        "Frakkland"
+      ],
+      "French Guiana": [
+        "Franska-Gvæjana"
+      ],
+      "French Polynesia": [
+        "Franska Pólýnesía"
+      ],
+      "French Southern Territories": [
+        "Frönsku suðlægu landsvæðin"
+      ],
+      "Gabon": [
+        "Gabon"
+      ],
+      "Gambia": [
+        "Gambía"
+      ],
+      "Georgia": [
+        "Georgía"
+      ],
+      "Germany": [
+        "Þýskaland"
+      ],
+      "Ghana": [
+        "Gana"
+      ],
+      "Gibraltar": [
+        "Gíbraltar"
+      ],
+      "Greece": [
+        "Grikkland"
+      ],
+      "Greenland": [
+        "Grænland"
+      ],
+      "Grenada": [
+        "Grenada"
+      ],
+      "Guadeloupe": [
+        "Gvadelúpeyjar"
+      ],
+      "Guam": [
+        "Guam"
+      ],
+      "Guatemala": [
+        "Gvatemala"
+      ],
+      "Guernsey": [
+        "Guernsey"
+      ],
+      "Guinea": [
+        "Guinea"
+      ],
+      "Guinea-Bissau": [
+        "Gínea-Bissaú"
+      ],
+      "Guyana": [
+        "Gvæjana"
+      ],
+      "Haiti": [
+        "Haítí"
+      ],
+      "Heard Island and McDonald Islands": [
+        "Heard og McDonalds-eyjar"
+      ],
+      "Holy See (Vatican City State)": [
+        "Páfagarður"
+      ],
+      "Honduras": [
+        "Hondúras"
+      ],
+      "Hong Kong": [
+        "Hong Kong"
+      ],
+      "Hungary": [
+        "Ungverjaland"
+      ],
+      "Iceland": [
+        "Ísland"
+      ],
+      "India": [
+        "Indland"
+      ],
+      "Indonesia": [
+        "Indónesía"
+      ],
+      "International": [
+        "Alþjóðlegt"
+      ],
+      "Iran": [
+        "Íran"
+      ],
+      "Iraq": [
+        "Írak"
+      ],
+      "Ireland": [
+        "Írland"
+      ],
+      "Isle of Man": [
+        "Mön"
+      ],
+      "Israel": [
+        "Ísrael"
+      ],
+      "Italy": [
+        "Ítalía"
+      ],
+      "Jamaica": [
+        "Jamaíka"
+      ],
+      "Japan": [
+        "Japan"
+      ],
+      "Jersey": [
+        "Jersey"
+      ],
+      "Jordan": [
+        "Jórdanía"
+      ],
+      "Kazakhstan": [
+        "Kasakstan"
+      ],
+      "Kenya": [
+        "Kenía"
+      ],
+      "Kiribati": [
+        "Kíribatí"
+      ],
+      "Kosovo": [
+        "Kósovó"
+      ],
+      "Kuwait": [
+        "Kúveit"
+      ],
+      "Kyrgyzstan": [
+        "Kirgisistan"
+      ],
+      "Laos": [
+        "Laos"
+      ],
+      "Latvia": [
+        "Lettland"
+      ],
+      "Lebanon": [
+        "Líbanon"
+      ],
+      "Lesotho": [
+        "Lesótó"
+      ],
+      "Liberia": [
+        "Líbería"
+      ],
+      "Libya": [
+        "Líbía"
+      ],
+      "Liechtenstein": [
+        "Liechtenstein"
+      ],
+      "Lithuania": [
+        "Litháen"
+      ],
+      "Luxembourg": [
+        "Lúxemborg"
+      ],
+      "Macao": [
+        "Makaó"
+      ],
+      "Madagascar": [
+        "Madagaskar"
+      ],
+      "Malawi": [
+        "Malaví"
+      ],
+      "Malaysia": [
+        "Malasía"
+      ],
+      "Maldives": [
+        "Maldívur"
+      ],
+      "Mali": [
+        "Malí"
+      ],
+      "Malta": [
+        "Malta"
+      ],
+      "Marshall Islands": [
+        "Marshalleyjar"
+      ],
+      "Martinique": [
+        "Martinique"
+      ],
+      "Mauritania": [
+        "Máritanía"
+      ],
+      "Mauritius": [
+        "Máritíus"
+      ],
+      "Mayotte": [
+        "Mayotte"
+      ],
+      "Mexico": [
+        "Mexíkó"
+      ],
+      "Moldova": [
+        "Moldóva"
+      ],
+      "Monaco": [
+        "Mónakó"
+      ],
+      "Mongolia": [
+        "Mongólía"
+      ],
+      "Montenegro": [
+        "Svartfjallaland"
+      ],
+      "Montserrat": [
+        "Montserrat"
+      ],
+      "Morocco": [
+        "Marokkó"
+      ],
+      "Mozambique": [
+        "Mósambík"
+      ],
+      "Namibia": [
+        "Namibía"
+      ],
+      "Nauru": [
+        "Naúrú"
+      ],
+      "Nepal": [
+        "Nepal"
+      ],
+      "Netherlands": [
+        "Holland"
+      ],
+      "New Caledonia": [
+        "Nýja-Kaledónía"
+      ],
+      "New Zealand": [
+        "Nýja Sjáland"
+      ],
+      "Nicaragua": [
+        "Níkaragva"
+      ],
+      "Niger": [
+        "Níger"
+      ],
+      "Nigeria": [
+        "Nígería"
+      ],
+      "Niue": [
+        "Niue"
+      ],
+      "Norfolk Island": [
+        "Norfolkeyja"
+      ],
+      "North Korea": [
+        "Norður-Kórea"
+      ],
+      "North Macedonia": [
+        "Norður-Makedónía"
+      ],
+      "Northern Mariana Islands": [
+        "Norður-Maríanaeyjar"
+      ],
+      "Norway": [
+        "Noregur"
+      ],
+      "Oman": [
+        "Óman"
+      ],
+      "Pakistan": [
+        "Pakistan"
+      ],
+      "Palau": [
+        "Palaú"
+      ],
+      "Palestine": [
+        "Palestína"
+      ],
+      "Panama": [
+        "Panama"
+      ],
+      "Papua New Guinea": [
+        "Papúa Nýja-Gínea"
+      ],
+      "Paraguay": [
+        "Paragvæ"
+      ],
+      "Peru": [
+        "Perú"
+      ],
+      "Philippines": [
+        "Filippseyjar"
+      ],
+      "Pitcairn": [
+        "Pitcairn"
+      ],
+      "Poland": [
+        "Pólland"
+      ],
+      "Portugal": [
+        "Portúgal"
+      ],
+      "Puerto Rico": [
+        "Púertó Ríkó"
+      ],
+      "Qatar": [
+        "Katar"
+      ],
+      "Reunion": [
+        "Réunion"
+      ],
+      "Romania": [
+        "Rúmenía"
+      ],
+      "Russia": [
+        "Rússland"
+      ],
+      "Rwanda": [
+        "Rúanda"
+      ],
+      "Saint Barthélemy": [
+        "Saint Barthélemy"
+      ],
+      "Saint Helena": [
+        "Sankti Helena"
+      ],
+      "Saint Kitts and Nevis": [
+        "Sankti Kristófer og Nevis"
+      ],
+      "Saint Lucia": [
+        "Sankti Lúsía"
+      ],
+      "Saint Martin (French Part)": [
+        "Saint Martin (franski hluti)"
+      ],
+      "Saint Pierre and Miquelon": [
+        "Sankti Pierre og Miquelon"
+      ],
+      "Saint Vincent and the Grenadines": [
+        "Sankti Vinsent og Grenadínur"
+      ],
+      "Samoa": [
+        "Samóa"
+      ],
+      "San Marino": [
+        "San Marínó"
+      ],
+      "Sao Tome and Principe": [
+        "Saó Tóme og Prinsípe"
+      ],
+      "Saudi Arabia": [
+        "Sádí-Arabía"
+      ],
+      "Senegal": [
+        "Senegal"
+      ],
+      "Serbia": [
+        "Serbía"
+      ],
+      "Seychelles": [
+        "Seychelleyjar"
+      ],
+      "Sierra Leone": [
+        "Síerra Leóne"
+      ],
+      "Singapore": [
+        "Singapore"
+      ],
+      "Sint Maarten": [
+        "Sint Maarten"
+      ],
+      "Slovakia": [
+        "Slóvakía"
+      ],
+      "Slovenia": [
+        "Slóvenía"
+      ],
+      "Solomon Islands": [
+        "Salómonseyjar"
+      ],
+      "Somalia": [
+        "Sómalía"
+      ],
+      "South Africa": [
+        "Suður-Afríka"
+      ],
+      "South Georgia and the South Sandwich Islands": [
+        "Suður-Georgía og Suður-Sandvíkureyjar"
+      ],
+      "South Korea": [
+        "Suður-Kórea"
+      ],
+      "South Ossetia": [
+        "Suður Ossetía"
+      ],
+      "South Sudan": [
+        "Suður-Súdan"
+      ],
+      "Spain": [
+        "Spánn"
+      ],
+      "Sri Lanka": [
+        "Srí Lanka"
+      ],
+      "Sudan": [
+        "Súdan"
+      ],
+      "Suriname": [
+        "Súrínam"
+      ],
+      "Svalbard and Jan Mayen": [
+        "Svalbarð og Jan Mayen"
+      ],
+      "Sweden": [
+        "Svíþjóð"
+      ],
+      "Switzerland": [
+        "Sviss"
+      ],
+      "Syria": [
+        "Sýrland"
+      ],
+      "Taiwan": [
+        "Taívan"
+      ],
+      "Tajikistan": [
+        "Tadsjikistan"
+      ],
+      "Tanzania": [
+        "Tansanía"
+      ],
+      "Thailand": [
+        "Tæland"
+      ],
+      "Timor-Leste": [
+        "Austur-Tímor"
+      ],
+      "Togo": [
+        "Tógó"
+      ],
+      "Tokelau": [
+        "Tókelá"
+      ],
+      "Tonga": [
+        "Tonga"
+      ],
+      "Trinidad and Tobago": [
+        "Trínidad og Tóbagó"
+      ],
+      "Tristan da Cunha": [
+        "Tristan da Cunha"
+      ],
+      "Tunisia": [
+        "Túnis"
+      ],
+      "Turkey": [
+        "Tyrkland"
+      ],
+      "Turkmenistan": [
+        "Túrkmenistan"
+      ],
+      "Turks and Caicos Islands": [
+        "Turks- og Caicoseyjar"
+      ],
+      "Tuvalu": [
+        "Túvalú"
+      ],
+      "Uganda": [
+        "Úganda"
+      ],
+      "Ukraine": [
+        "Úkraína"
+      ],
+      "United Arab Emirates": [
+        "Sameinuðu arabísku furstadæmin"
+      ],
+      "United Kingdom": [
+        "Bretland"
+      ],
+      "United States": [
+        "Bandaríkin"
+      ],
+      "United States Minor Outlying Islands": [
+        "Smáeyjar Bandaríkjanna"
+      ],
+      "Uruguay": [
+        "Úrúgvæ"
+      ],
+      "Uzbekistan": [
+        "Úsbekistan"
+      ],
+      "Vanuatu": [
+        "Vanúatú"
+      ],
+      "Venezuela": [
+        "Venesúela"
+      ],
+      "Vietnam": [
+        "Víetnam"
+      ],
+      "Virgin Islands, British": [
+        "Bresku Jómfrúaeyjar"
+      ],
+      "Virgin Islands, U.S.": [
+        "Bandarísku Jómfrúaeyjar"
+      ],
+      "Wallis and Futuna": [
+        "Wallis- og Fútúnaeyjar"
+      ],
+      "Western Sahara": [
+        "Vestur-Sahara"
+      ],
+      "Yemen": [
+        "Jemen"
+      ],
+      "Zambia": [
+        "Sambía"
+      ],
+      "Zimbabwe": [
+        "Simbabve"
+      ],
+      "Åland Islands": [
+        "Álandseyjar"
       ]
     },
     "Delinquent modal title": {
@@ -48,25 +880,49 @@
       ]
     },
     "Error": {
+      "Email is not valid": [
+        "Netfang ekki gilt"
+      ],
       "Enter 6 digits": [
         "Sláðu inn 6 tölustafi"
       ],
       "Invalid verification code": [
         "Ógildur sannvottunarkóði"
       ],
+      "Not a valid number": [
+        "Ekki gild tala"
+      ],
       "Passwords do not match": [
-        "Lykilorðin stemma ekki"
+        "Lykilorð passa ekki saman"
+      ],
+      "Request timed out": [
+        "Beiðni rann út á tíma"
       ],
       "This field is required": [
-        "Þessi reitur er nauðsynlegur"
+        "Þessi reitur er skilyrtur"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Þessi reitur krefst að lágmarki ${ minimumLength } stafi."
       ],
       "Unknown error": [
         "Óþekkt villa"
       ]
     },
     "Error message": {
+      "Error: ${ errorMessage }": [
+        "Villa: ${ errorMessage }"
+      ],
       "Oops, something went wrong": [
         "Úbbs! Eitthvað fór úrskeiðis"
+      ],
+      "Please ${ refresh } or check your connection.": [
+        "Athugaðu nettenginguna þína eða reyndu að ${ refresh }."
+      ],
+      "There was a problem connecting to Proton.": [
+        "Það kom upp villa þegar tengst var við Proton."
+      ],
+      "You may also ${ refresh } or try again later.": [
+        "Þú getur einnig ${ refresh } eða reynt aftur síðar."
       ]
     },
     "Human verification method": {
@@ -74,7 +930,7 @@
         "CAPTCHA-mennskupróf"
       ],
       "Email": [
-        "Tölvupóstur"
+        "Tölvupóstfang"
       ],
       "Manual": [
         "Handvirkt"
@@ -87,6 +943,9 @@
       ]
     },
     "Info": {
+      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
+        "Áður en þú biður um nýjan staðfestingarkóða skaltu athuga ruslmöppuna þína og athuga hvort ${ strong } sé rétt heimilisfang."
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Smelltu á „Óska eftir nýjum kóða“ til að fá nýjan staðfestingarkóða sendan ${ strong }. Ef þetta símanúmer er rangt skaltu smella á „Breyta“ til að leiðrétta það."
       ],
@@ -97,7 +956,10 @@
         "Ef þú átt í vandræðum með að útbúa notandaaðgang, geturðu sent inn beiðni um aðgang og við munum svara innan næsta virka dags."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
-        "Ef þú finnur ekki tölvupóstinn í pósthólfinu þínu, skaltu skoða í ruslpóstmöppuna þína."
+        "Ef þú finnur ekki tölvupóstinn í pósthólfinu þínu, skaltu skoða í ruslpósthólfið þitt."
+      ],
+      "Internet connection lost": [
+        "Nettenging rofnaði"
       ],
       "Loading": [
         "Hleð inn"
@@ -105,11 +967,23 @@
       "No results found": [
         "Engar niðurstöður fundust"
       ],
+      "Servers are unreachable. Please try again in a few minutes": [
+        "Ekki er hægt að ná til netþjóna. Vinsamlegast reyndu aftur eftir nokkrar mínútur"
+      ],
+      "Session timed out": [
+        "Setan rann út á tíma"
+      ],
       "To fight spam and abuse, please verify you are human.": [
         "Til að koma í veg fyrir ruslpóstsendingar og aðra misnotkun, verðum við að ganga úr skugga um að þú sért mannvera."
       ],
+      "We'll send a new verification code to ${ strong }": [
+        "Við sendum nýjan staðfestingarkóða til ${ strong }"
+      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Viltu fá sendan nýjan sannvottunarkóða eða nota aðra aðferð til auðkenningar?"
+      ],
+      "Would you like to receive a new verification code?": [
+        "Viltu fá nýjan sannvottunarkóða?"
       ],
       "Your email will only be used for this one-time verification.": [
         "Netfangið þitt verður aðeins notað við þessa einu sinni staðfestingu."
@@ -122,6 +996,9 @@
       ]
     },
     "Label": {
+      "Code is 6 digits without spaces": [
+        "Kóðinn er 6 tölustafir án bils"
+      ],
       "Email address": [
         "Tölvupóstfang"
       ],
@@ -149,6 +1026,11 @@
         "Beiðni um boð"
       ]
     },
+    "Placeholder": {
+      "Password": [
+        "Lykilorð"
+      ]
+    },
     "Success": {
       "Code sent to ${ methodTo }": [
         "Kóði var sendur á ${ methodTo }"
@@ -164,8 +1046,17 @@
       "Invalid verification code": [
         "Ógildur sannvottunarkóði"
       ],
+      "Request new code": [
+        "Biðja um nýjan kóða"
+      ],
       "Sign in again to continue": [
         "Skráðu þig inn aftur til að halda áfram"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "Lykilorð verður að innihalda að lágmarki ${ length } stafi",
+        "Lykilorð verður að innihalda að lágmarki ${ length } stafi"
       ]
     }
   }
