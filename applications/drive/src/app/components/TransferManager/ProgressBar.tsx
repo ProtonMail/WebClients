@@ -10,7 +10,7 @@ export enum ProgressBarStatus {
 
 interface Props {
     status?: ProgressBarStatus;
-    value?: number;
+    value: number;
     max?: number;
 }
 

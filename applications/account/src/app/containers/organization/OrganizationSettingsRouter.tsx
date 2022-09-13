@@ -4,6 +4,7 @@ import { Redirect, Route, Switch } from 'react-router-dom';
 import {
     CatchAllSection,
     DomainsSection,
+    MultiUserCreationSection,
     OrganizationPasswordSection,
     OrganizationSection,
     PrivateMainSettingsArea,
@@ -18,10 +19,12 @@ const OrganizationSettingsRouter = ({
     redirect,
     path,
     organizationAppRoutes,
+    isBulkUserUploadEnabled,
 }: {
     redirect: ReactNode;
     path: string;
     organizationAppRoutes: ReturnType<typeof getOrganizationAppRoutes>;
+    isBulkUserUploadEnabled: boolean;
 }) => {
     const onceRef = useRef(false);
     const [organization] = useOrganization();
@@ -71,6 +74,7 @@ const OrganizationSettingsRouter = ({
                 <Route path={getSectionPath(path, users)}>
                     <PrivateMainSettingsArea config={users}>
                         <UsersAndAddressesSection />
+                        {isBulkUserUploadEnabled && <MultiUserCreationSection />}
                     </PrivateMainSettingsArea>
                 </Route>
             )}

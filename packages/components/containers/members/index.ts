@@ -6,3 +6,4 @@ export { default as MemberFeatures } from './MemberFeatures';
 export { default as MemberActions } from './MemberActions';
 export { default as MemberModal } from './MemberModal';
 export { default as MemberAddresses } from './MemberAddresses';
+export { default as MultiUserCreationSection } from './multipleUserCreation/MultiUserCreationSection';
