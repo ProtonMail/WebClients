@@ -12,6 +12,10 @@ const humanPrice = (amount: number = 0, divisor: number = 100) => {
 export default humanPrice;
 
 export const humanPriceWithCurrency = (amount: number, currency: Currency, divisor?: number) => {
+    if (typeof amount !== 'number' || typeof currency !== 'string') {
+        throw new Error('humanPriceWithCurrency: Invalid parameters');
+    }
+
     const value = humanPrice(amount, divisor);
     const isNegative = amount < 0;
     const prefix = isNegative ? '-' : '';

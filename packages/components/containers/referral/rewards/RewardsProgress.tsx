@@ -26,7 +26,7 @@ const RewardsProgress = ({ rewards, rewardsLimit }: Props) => {
             </div>
             <div className="flex-item-fluid">{rewards > 0 && <Meter value={rewards} max={rewardsLimit} />}</div>
             <div className="flex-item-fluid text-right">{
-                // translator: The months are free months of mailplus subscription. Full sentence can be something like this : "$30 of $90"
+                // translator: Full sentence can be something like this : "$30 of $90"
                 c('Info').t`${current} of ${total}`
             }</div>
         </div>
